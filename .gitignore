@@ -3,3 +3,5 @@ node_modules/
 out/
 .DS_Store
 npm-debug.log*
+/路线介绍ui设计.mp4
+DESIGN-BRIEF-*.md

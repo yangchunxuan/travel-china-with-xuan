@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://yangchunxuan.github.io/travel-china-with-xuan/images/hero-zhangjiajie.jpg",
+        url: "https://homegroundchina.com/images/hero-zhangjiajie.jpg",
         width: 2200,
         height: 1238,
         alt: "The sandstone peaks of Zhangjiajie",

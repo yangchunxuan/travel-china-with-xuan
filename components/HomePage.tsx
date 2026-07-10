@@ -25,7 +25,7 @@ import { RouteExplorer } from "./RouteExplorer";
 import { FloatingContact, SiteFooter, SiteHeader } from "./Site";
 import { TripBrief } from "./TripBrief";
 
-const basePath = "/travel-china-with-xuan";
+const basePath = "";
 
 const jsonLd = {
   "@context": "https://schema.org",
