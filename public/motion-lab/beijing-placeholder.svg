@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M100 636C243 584 367 584 481 620c122 39 227 37 316-7 95-48 195-55 300-21l-1 116H99z" fill="#b7c2ba" opacity=".27"/>
+    <path d="M138 662c92-70 181-93 268-70 67 18 130 12 188-16 83-41 172-37 267 12 65 34 137 41 216 23l-7 83H142z" fill="#8fa096" opacity=".18"/>
+    <path d="M92 645c101-38 187-73 259-107 71-33 150-38 235-15 88 23 168 7 240-49 70-55 155-74 254-57" stroke="#7f9188" stroke-width="31" stroke-linecap="round" opacity=".28"/>
+    <path d="M98 644c98-38 181-69 250-94 77-29 154-30 232-5 91 30 171 15 240-44 73-61 162-80 268-58" stroke="#66736e" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+    <path d="M255 585c60-13 111-12 153 4l-13 55-147 4z" fill="#68736e" opacity=".42"/>
+    <path d="M274 528l106-7 29 58-166 4z" fill="#6f7873" opacity=".56"/>
+    <path d="M292 477h75l13 44-106 7z" fill="#59645f" opacity=".7"/>
+    <path d="M307 439h45l15 38h-75z" fill="#4e5853" opacity=".76"/>
+    <path d="M286 430l43-24 43 24-20 9h-45z" fill="#404944" opacity=".78"/>
+    <path d="M305 538h26v34h-26zm49-2h21v36h-21z" fill="#313a36" opacity=".7"/>
+    <path d="M437 563c60-18 111-16 154 5M477 541c48-19 92-19 131 0M702 512c50-28 96-35 139-20M775 468c52-32 102-39 149-20" stroke="#4c5954" stroke-width="7" stroke-linecap="round" opacity=".54"/>
+    <path d="M214 614c-12-52-4-93 22-124m-7 76-27-31m34-5 23-32m657-59c-8-61 1-106 27-135m-22 79-31-35m42-15 25-38" stroke="#5e6964" stroke-width="6" stroke-linecap="round" opacity=".36"/>
+    <g fill="#2f3935" opacity=".64">
+      <path d="M192 504l18-7 9 13-16 9z"/>
+      <path d="M223 473l20-6 8 16-20 8z"/>
+      <path d="M898 328l21-8 10 19-25 8z"/>
+      <path d="M930 296l18-8 9 16-21 8z"/>
+    </g>
+    <path d="M175 700c203-27 366-22 487 14 123 37 247 38 373 2" stroke="#9fa9a3" stroke-width="12" stroke-linecap="round" opacity=".16"/>
+    <path d="M145 730c143-21 259-18 347 8m330 7c91-24 176-29 255-16" stroke="#737f79" stroke-width="4" stroke-linecap="round" opacity=".2"/>
+  </g>
+</svg>
