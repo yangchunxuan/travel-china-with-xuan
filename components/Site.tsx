@@ -122,19 +122,10 @@ export function SiteHeader({
   );
 }
 
-export function FloatingContact({ label }: { label: string }) {
-  return (
-    <a
-      className="floating-contact"
-      href={messengerUrl}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={label}
-    >
-      <MessageCircle size={19} />
-      <span>{label}</span>
-    </a>
-  );
+export function FloatingContact({ label: _label }: { label: string }) {
+  // Retired in favour of the Tawk.to on-site chat widget (bottom-right).
+  // Keeping the export so callers don't need editing while the route-map WIP is open.
+  return null;
 }
 
 export function SiteFooter({ t, lang }: { t: Dict; lang: Lang }) {
