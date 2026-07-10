@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter } from "../../components/Site";
+import { translations } from "../../lib/i18n";
 
 export const metadata: Metadata = {
   title: "China Is Now Visa-Free for UK & Canadian Travelers — 2026 Guide",
@@ -24,7 +25,7 @@ const jsonLd = {
     name: "Xuan",
     description: "Zhangjiajie-born China trip planner",
   },
-  publisher: { "@type": "TravelAgency", name: "Travel China with Xuan" },
+  publisher: { "@type": "TravelAgency", name: "Homeground China" },
 };
 
 export default function VisaFreeArticle() {
@@ -34,7 +35,7 @@ export default function VisaFreeArticle() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SiteHeader nav={false} />
+      <SiteHeader t={translations.en} lang="en" nav={false} />
 
       <article className="post">
         <div className="wrap">
@@ -176,7 +177,7 @@ export default function VisaFreeArticle() {
         </div>
       </article>
 
-      <SiteFooter />
+      <SiteFooter t={translations.en} lang="en" />
     </>
   );
 }

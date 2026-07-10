@@ -4,8 +4,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yangchunxuan.github.io/travel-china-with-xuan/"),
   title: {
-    default: "Travel China with Xuan — Private, Fully-Handled China Trips",
-    template: "%s — Travel China with Xuan",
+    default: "Homeground China — Private, Fully-Handled China Trips",
+    template: "%s — Homeground China",
   },
   description:
     "Private, tailor-made China trips planned by a Zhangjiajie-born local. No shopping stops, no hidden fees — payments, transport, tickets and an English-speaking guide, all handled.",

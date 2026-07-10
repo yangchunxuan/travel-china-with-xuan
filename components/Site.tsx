@@ -1,51 +1,174 @@
+"use client";
+
 import Link from "next/link";
+import { ArrowLeft, Mail, Menu, MessageCircle, X } from "lucide-react";
+import { useState } from "react";
+import { langLabels, langPrefix, type Dict, type Lang } from "../lib/i18n";
+
+const messengerUrl = "https://m.me/1176159805586468";
 
 export function Brand() {
   return (
     <span className="brandrow">
-      <span className="pin" />
-      <span>Travel China with Xuan</span>
+      <span className="brandmark" aria-hidden="true">
+        <span />
+      </span>
+      <span className="brandcopy">
+        <strong>Homeground</strong>
+        <small>China</small>
+      </span>
     </span>
   );
 }
 
-export function SiteHeader({ nav = true }: { nav?: boolean }) {
+function LangSwitch({ lang }: { lang: Lang }) {
+  const langs: Lang[] = ["en", "ko", "zh"];
   return (
-    <header className="site">
-      <div className="wrap">
-        <Link href="/" className="homelink">
+    <div className="lang-switch" aria-label="Language">
+      {langs.map((l) => (
+        <Link
+          key={l}
+          href={`${langPrefix[l]}/`}
+          className={l === lang ? "is-active" : ""}
+          aria-current={l === lang ? "page" : undefined}
+        >
+          {langLabels[l]}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+export function SiteHeader({
+  t,
+  lang,
+  nav = true,
+}: {
+  t: Dict;
+  lang: Lang;
+  nav?: boolean;
+}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const home = langPrefix[lang];
+
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <header className="site-header">
+      <div className="wrap header-inner">
+        <Link href={`${home}/`} className="homelink" onClick={closeMenu}>
           <Brand />
         </Link>
+
         {nav ? (
-          <nav>
-            <Link href="/#trips">Sample trips</Link>
-            <Link href="/#about">About</Link>
-            <Link href="/china-visa-free-uk-canada/">Visa-free 2026</Link>
-            <Link href="/#contact">Contact</Link>
-          </nav>
+          <>
+            <nav className="desktop-nav" aria-label="Primary navigation">
+              <Link href={`${home}/#journeys`}>{t.header.navJourneys}</Link>
+              <Link href={`${home}/#included`}>{t.header.navHandled}</Link>
+              <Link href={`${home}/#about`}>{t.header.navWhy}</Link>
+              <Link href="/china-visa-free-uk-canada/">{t.header.navGuide}</Link>
+            </nav>
+            <LangSwitch lang={lang} />
+            <a className="header-cta" href="#plan">
+              {t.header.cta}
+            </a>
+            <button
+              className="menu-toggle"
+              type="button"
+              aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </>
         ) : (
-          <nav>
-            <Link href="/">← Back to home</Link>
+          <nav className="article-back" aria-label="Article navigation">
+            <Link href="/">
+              <ArrowLeft size={16} /> {t.header.backHome}
+            </Link>
           </nav>
         )}
       </div>
+
+      {nav && (
+        <nav
+          id="mobile-navigation"
+          className={`mobile-nav ${menuOpen ? "is-open" : ""}`}
+          aria-label="Mobile navigation"
+        >
+          <Link href={`${home}/#journeys`} onClick={closeMenu}>
+            {t.header.mobileJourneys}
+          </Link>
+          <Link href={`${home}/#included`} onClick={closeMenu}>
+            {t.header.navHandled}
+          </Link>
+          <Link href={`${home}/#about`} onClick={closeMenu}>
+            {t.header.navWhy}
+          </Link>
+          <Link href="/china-visa-free-uk-canada/" onClick={closeMenu}>
+            {t.header.navGuide}
+          </Link>
+          <div className="mobile-lang">
+            <LangSwitch lang={lang} />
+          </div>
+          <a href="#plan" className="mobile-nav-cta" onClick={closeMenu}>
+            {t.header.cta}
+          </a>
+        </nav>
+      )}
     </header>
   );
 }
 
-export function SiteFooter() {
+export function FloatingContact({ label }: { label: string }) {
   return (
-    <footer className="site">
-      <div className="wrap">
-        <Brand />
+    <a
+      className="floating-contact"
+      href={messengerUrl}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+    >
+      <MessageCircle size={19} />
+      <span>{label}</span>
+    </a>
+  );
+}
+
+export function SiteFooter({ t, lang }: { t: Dict; lang: Lang }) {
+  const home = langPrefix[lang];
+  return (
+    <footer className="site-footer">
+      <div className="wrap footer-grid">
+        <div className="footer-brand">
+          <Brand />
+          <p>{t.footer.brandLine}</p>
+        </div>
+
         <div>
-          Private, fully-handled China trips · Zhangjiajie-born, personally
-          planned · <Link href="/china-visa-free-uk-canada/">China visa-free guide 2026</Link>
+          <h2>{t.footer.exploreH}</h2>
+          <Link href={`${home}/#journeys`}>{t.footer.linkJourneys}</Link>
+          <Link href={`${home}/#included`}>{t.footer.linkHandled}</Link>
+          <Link href={`${home}/#about`}>{t.footer.linkAbout}</Link>
+          <Link href="/china-visa-free-uk-canada/">{t.footer.linkGuide}</Link>
         </div>
-        <div style={{ marginTop: 6 }}>
-          Visa and entry policies change — always confirm current rules with
-          your airline or embassy before travel.
+
+        <div>
+          <h2>{t.footer.talkH}</h2>
+          <a href={messengerUrl} target="_blank" rel="noreferrer">
+            <MessageCircle size={15} /> {t.footer.messenger}
+          </a>
+          <a href="mailto:yangchunxuan1@gmail.com">
+            <Mail size={15} /> yangchunxuan1@gmail.com
+          </a>
+          <p className="footer-response">{t.footer.langsSpoken}</p>
         </div>
+      </div>
+      <div className="wrap footer-legal">
+        <span>{t.footer.legalLeft}</span>
+        <span>{t.footer.legalRight}</span>
       </div>
     </footer>
   );
