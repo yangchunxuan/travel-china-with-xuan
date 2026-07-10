@@ -4,56 +4,72 @@ import {
   ArrowRight,
   CalendarDays,
   Check,
+  Footprints,
   MapPin,
+  PlaneLanding,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import type { Dict } from "../lib/i18n";
 
 const basePath = "/travel-china-with-xuan";
 
-const journeyStatics = [
+const moduleStatics = [
   {
-    id: "home-turf",
-    image: `${basePath}/images/hero-zhangjiajie.jpg`,
-    alt: "The sandstone peaks and forest of Zhangjiajie",
+    id: "triangle",
+    image: `${basePath}/images/beijing-forbidden-city.jpg`,
+    alt: "The golden roofs of Beijing's Forbidden City at sunset",
   },
   {
-    id: "first-china",
+    id: "guilin",
     image: `${basePath}/images/china-classic.jpg`,
-    alt: "A panorama of China's Great Wall, mountains, old towns and high-speed rail",
+    alt: "China's rivers, karst peaks and old towns",
   },
   {
-    id: "family-pace",
+    id: "pandas",
     image: `${basePath}/images/family-journey.jpg`,
     alt: "A multi-generation family walking through a traditional Chinese town",
   },
   {
-    id: "food-culture",
-    image: `${basePath}/images/food-journey.jpg`,
-    alt: "A table filled with regional Chinese dishes in a lantern-lit old town",
+    id: "zhangjiajie",
+    image: `${basePath}/images/hero-zhangjiajie.jpg`,
+    alt: "The sandstone pillars of Zhangjiajie in mist",
+  },
+  {
+    id: "yangtze",
+    image: `${basePath}/images/chongqing-monorail.jpg`,
+    alt: "Chongqing, gateway to the Yangtze Three Gorges",
+  },
+  {
+    id: "grand",
+    image: `${basePath}/images/lijiang-old-town.jpg`,
+    alt: "Lijiang old town beneath Jade Dragon Snow Mountain",
   },
 ];
 
 export function RouteExplorer({ t }: { t: Dict }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = t.journeys.items[activeIndex];
-  const activeStatic = journeyStatics[activeIndex];
+  const [activeIndex, setActiveIndex] = useState(3); // default: Zhangjiajie, our home ground
+  const j = t.journeys;
+  const active = j.modules[activeIndex];
+  const activeStatic = moduleStatics[activeIndex];
+  const isHomeground = activeStatic.id === "zhangjiajie";
 
   return (
     <div className="route-explorer">
-      <div className="route-tabs" role="tablist" aria-label="Sample journeys">
-        {t.journeys.items.map((journey, index) => (
+      <div className="route-tabs" role="tablist" aria-label={j.chipsAria}>
+        {j.modules.map((module, index) => (
           <button
-            key={journeyStatics[index].id}
-            id={`tab-${journeyStatics[index].id}`}
+            key={moduleStatics[index].id}
+            id={`tab-${moduleStatics[index].id}`}
             type="button"
             role="tab"
             aria-selected={index === activeIndex}
             aria-controls="journey-panel"
+            className={moduleStatics[index].id === "zhangjiajie" ? "is-homeground" : ""}
             onClick={() => setActiveIndex(index)}
           >
-            {journey.tab}
+            {module.chip}
           </button>
         ))}
       </div>
@@ -69,23 +85,32 @@ export function RouteExplorer({ t }: { t: Dict }) {
           <img src={activeStatic.image} alt={activeStatic.alt} />
           <div className="route-media-label">
             <MapPin size={16} />
-            <span>{active.tab}</span>
+            <span>{active.chip}</span>
           </div>
         </div>
 
         <div className="route-copy">
-          <span className="section-kicker">{active.kicker}</span>
+          <span className="section-kicker">
+            {active.kicker}
+            {isHomeground && (
+              <em className="homeground-badge">{j.homegroundBadge}</em>
+            )}
+          </span>
           <h3>{active.title}</h3>
           <p>{active.summary}</p>
 
           <div className="route-facts">
             <span>
               <CalendarDays size={17} />
-              <strong>{active.duration}</strong>
+              <strong>{active.days}</strong>
             </span>
             <span>
               <Users size={17} />
               <strong>{active.bestFor}</strong>
+            </span>
+            <span>
+              <Footprints size={17} />
+              <strong>{active.pace}</strong>
             </span>
           </div>
 
@@ -97,7 +122,7 @@ export function RouteExplorer({ t }: { t: Dict }) {
             ))}
           </ul>
 
-          <div className="route-line" aria-label="Example route">
+          <div className="route-line" aria-label="Route">
             {active.route.map((stop, index) => (
               <span key={stop}>
                 <b>{index + 1}</b>
@@ -107,9 +132,17 @@ export function RouteExplorer({ t }: { t: Dict }) {
           </div>
 
           <a className="text-link" href="#plan">
-            {t.journeys.adapt} <ArrowRight size={17} />
+            {j.adapt} <ArrowRight size={17} />
           </a>
         </div>
+      </div>
+
+      <div className="stopover-note">
+        <PlaneLanding size={18} />
+        <span>
+          <strong>{j.stopover.title}</strong> {j.stopover.body}{" "}
+          <Link href="/china-visa-free-uk-canada/">→</Link>
+        </span>
       </div>
     </div>
   );
