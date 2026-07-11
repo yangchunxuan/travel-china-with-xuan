@@ -257,7 +257,7 @@ const en = {
     kicker: "Straight answers",
     h2: "Questions worth asking before a China trip",
     lead: "Prefer to ask directly? Message Xuan and describe the part that feels uncertain.",
-    ask: "Ask on Messenger",
+    ask: "Ask us directly",
     items: [
       {
         q: "Is this a private tour or a group package?",
@@ -312,12 +312,12 @@ const en = {
     briefInterests: "Main interests",
     briefOpen: "Open to suggestions",
     briefOutro: "Could you suggest a route and a sample quote?",
-    copyOpen: "Copy & open Messenger",
+    copyOpen: "Copy & open live chat",
     copyOnly: "Copy only",
     copied: "Copied",
     emailBtn: "Send by email",
     emailSubject: "Private China trip enquiry",
-    copiedStatus: "Trip brief copied. Paste it into Messenger when it opens.",
+    copiedStatus: "Trip brief copied. Paste it into the chat when it opens.",
   },
   footer: {
     brandLine:
@@ -328,7 +328,7 @@ const en = {
     linkAbout: "About Xuan",
     linkGuide: "2026 entry guide",
     talkH: "Talk to Xuan",
-    messenger: "Facebook Messenger",
+    messenger: "Live chat",
     langsSpoken: "English · 中文 · 한국어",
     legalLeft: "© 2026 Homeground China",
     legalRight:
@@ -581,7 +581,7 @@ const ko: Dict = {
     kicker: "정직한 답변",
     h2: "중국 여행 전에 물어볼 만한 질문들",
     lead: "직접 물어보고 싶으신가요? 마음에 걸리는 부분을 그대로 쉬안에게 보내주세요.",
-    ask: "메신저로 물어보기",
+    ask: "바로 물어보기",
     items: [
       {
         q: "프라이빗 여행인가요, 단체 패키지인가요?",
@@ -630,12 +630,12 @@ const ko: Dict = {
     briefInterests: "주요 관심사",
     briefOpen: "추천에 맡길게요",
     briefOutro: "동선과 예상 견적을 제안해 주실 수 있나요?",
-    copyOpen: "복사하고 메신저 열기",
+    copyOpen: "복사하고 채팅 열기",
     copyOnly: "복사만",
     copied: "복사됨",
     emailBtn: "이메일로 보내기",
     emailSubject: "프라이빗 중국 여행 문의",
-    copiedStatus: "브리프가 복사되었습니다. 메신저가 열리면 붙여넣어 주세요.",
+    copiedStatus: "브리프가 복사되었습니다. 채팅창이 열리면 붙여넣어 주세요.",
   },
   footer: {
     brandLine:
@@ -646,7 +646,7 @@ const ko: Dict = {
     linkAbout: "쉬안 소개",
     linkGuide: "2026 입국 가이드",
     talkH: "쉬안에게 문의",
-    messenger: "페이스북 메신저",
+    messenger: "실시간 채팅",
     langsSpoken: "English · 中文 · 한국어",
     legalLeft: "© 2026 Homeground China",
     legalRight: "비자·입국 정책은 변경될 수 있습니다. 출발 전 항공사나 대사관에서 최신 규정을 확인하세요.",
@@ -866,7 +866,7 @@ const zh: Dict = {
     kicker: "直接的回答",
     h2: "去中国之前,值得先问清的问题",
     lead: "想直接问?把你最拿不准的那部分,原样发给쉬안就行。",
-    ask: "在 Messenger 上提问",
+    ask: "直接向我们提问",
     items: [
       {
         q: "这是私人行程还是拼团套餐?",
@@ -915,12 +915,12 @@ const zh: Dict = {
     briefInterests: "主要兴趣",
     briefOpen: "听你的建议",
     briefOutro: "能给我一条路线建议和示例报价吗?",
-    copyOpen: "复制并打开 Messenger",
+    copyOpen: "复制并打开在线聊天",
     copyOnly: "仅复制",
     copied: "已复制",
     emailBtn: "用邮件发送",
     emailSubject: "私人中国行咨询",
-    copiedStatus: "需求已复制。Messenger 打开后粘贴发送即可。",
+    copiedStatus: "需求已复制。聊天窗打开后粘贴发送即可。",
   },
   footer: {
     brandLine: "由张家界本地人设计、中国各地持牌合作方共同执行的私人中国之旅。",
@@ -930,7 +930,7 @@ const zh: Dict = {
     linkAbout: "关于쉬안",
     linkGuide: "2026 入境指南",
     talkH: "联系쉬안",
-    messenger: "Facebook Messenger",
+    messenger: "Live chat",
     langsSpoken: "English · 中文 · 한국어",
     legalLeft: "© 2026 Homeground China",
     legalRight: "签证与入境政策随时可能调整,出发前请向航空公司或使领馆核实最新规定。",

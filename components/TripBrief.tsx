@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { Dict } from "../lib/i18n";
+import { openSiteChat } from "./Site";
 
 export function TripBrief({ t }: { t: Dict }) {
   const p = t.plan;
@@ -54,9 +55,9 @@ export function TripBrief({ t }: { t: Dict }) {
     }
   };
 
-  const copyAndOpenMessenger = () => {
+  const copyAndOpenChat = () => {
     void copyBrief();
-    window.open("https://m.me/1176159805586468", "_blank", "noopener,noreferrer");
+    openSiteChat();
   };
 
   return (
@@ -159,7 +160,7 @@ export function TripBrief({ t }: { t: Dict }) {
           </div>
 
           <div className="brief-actions">
-            <button type="button" className="btn btn-primary" onClick={copyAndOpenMessenger}>
+            <button type="button" className="btn btn-primary" onClick={copyAndOpenChat}>
               <MessageCircle size={18} /> {p.copyOpen}
             </button>
             <button type="button" className="btn btn-secondary" onClick={copyBrief}>

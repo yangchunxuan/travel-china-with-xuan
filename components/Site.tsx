@@ -5,7 +5,12 @@ import { ArrowLeft, Mail, Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 import { langLabels, langPrefix, type Dict, type Lang } from "../lib/i18n";
 
-const messengerUrl = "https://m.me/1176159805586468";
+/** Opens the on-site Tawk chat; falls back to email if the widget is unavailable. */
+export function openSiteChat() {
+  const w = window as Window & { Tawk_API?: { maximize?: () => void } };
+  if (w.Tawk_API?.maximize) w.Tawk_API.maximize();
+  else window.location.href = "mailto:yangchunxuan1@gmail.com";
+}
 
 export function Brand() {
   return (
@@ -148,7 +153,14 @@ export function SiteFooter({ t, lang }: { t: Dict; lang: Lang }) {
 
         <div>
           <h2>{t.footer.talkH}</h2>
-          <a href={messengerUrl} target="_blank" rel="noreferrer">
+          <a
+            href="#chat"
+            role="button"
+            onClick={(e) => {
+              e.preventDefault();
+              openSiteChat();
+            }}
+          >
             <MessageCircle size={15} /> {t.footer.messenger}
           </a>
           <a href="mailto:yangchunxuan1@gmail.com">

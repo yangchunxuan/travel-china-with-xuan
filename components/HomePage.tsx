@@ -262,7 +262,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               <span className="section-kicker">{t.faq.kicker}</span>
               <h2>{t.faq.h2}</h2>
               <p>{t.faq.lead}</p>
-              <a href="https://m.me/1176159805586468" target="_blank" rel="noreferrer">
+              <a href="#plan">
                 {t.faq.ask} <ArrowRight size={16} />
               </a>
             </div>

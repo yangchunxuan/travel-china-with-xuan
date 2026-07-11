@@ -167,8 +167,8 @@ export default function VisaFreeArticle() {
               Tell us who&apos;s traveling and roughly when — we&apos;ll send
               back a free sample itinerary and quote, no obligation.
             </p>
-            <a className="btn-light" href="https://m.me/1176159805586468">
-              Message us on Facebook
+            <a className="btn-light" href="/#plan">
+              Send your trip brief
             </a>
             <a className="mail" href="mailto:yangchunxuan1@gmail.com">
               or email yangchunxuan1@gmail.com
