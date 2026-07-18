@@ -15,7 +15,11 @@ import {
   useState,
   type FormEvent,
 } from "react";
-import type { RouteMatch } from "../lib/routeFinder";
+import {
+  getAnswerLabels,
+  getCityName,
+  type RouteMatch,
+} from "../lib/routeFinder";
 import {
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
@@ -40,8 +44,8 @@ export type HandoffStatus =
 
 export type HandoffRouteState = "current" | "editing";
 
-type ReplyMethod = "email" | "whatsapp";
-type ValidationField = "contact" | "email" | "whatsapp" | "note";
+type ContactMethod = "email" | "direct-whatsapp";
+type ValidationField = "contact" | "email" | "note";
 type ValidationErrors = Partial<Record<ValidationField, string>>;
 type FailureKind =
   | "request_too_large"
@@ -55,6 +59,7 @@ type FailureKind =
 interface InquirySnapshot {
   body: string;
   idempotencyKey: string;
+  replyEmail: string;
   routeIdentity: string;
 }
 
@@ -72,7 +77,6 @@ interface ApiSuccessEnvelope {
 }
 
 const maximumEmailLength = 254;
-const maximumPhoneLength = 64;
 const maximumNoteLength = 2_000;
 const maximumRequestBytes = 16 * 1024;
 const requestTimeoutMilliseconds = 20_000;
@@ -102,9 +106,20 @@ function isValidEmail(value: string): boolean {
   );
 }
 
-function isValidInternationalPhone(value: string): boolean {
-  const normalized = value.trim().replace(/[\s().-]/gu, "");
-  return /^\+[1-9][0-9]{7,14}$/u.test(normalized);
+function isValidWhatsAppNumber(value: string): boolean {
+  return /^[1-9][0-9]{7,14}$/u.test(value);
+}
+
+function maskEmail(value: string): string {
+  const normalized = value.trim();
+  const separatorIndex = normalized.lastIndexOf("@");
+  if (separatorIndex <= 0 || separatorIndex === normalized.length - 1) {
+    return "***";
+  }
+
+  const localPart = normalized.slice(0, separatorIndex);
+  const domain = normalized.slice(separatorIndex + 1);
+  return `${localPart.slice(0, 1)}***@${domain}`;
 }
 
 function localizedRetryDelay(
@@ -207,8 +222,10 @@ export function PlannerHandoff({
     process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true";
   const privacyReady =
     process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true";
-  const whatsappEnabled =
-    process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_ENABLED === "true";
+  const directWhatsappEnabled =
+    process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED === "true";
+  const whatsappNumber =
+    process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER?.trim() || "";
   const replySla =
     locale === "zh"
       ? process.env.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH?.trim()
@@ -216,30 +233,45 @@ export function PlannerHandoff({
         ? process.env.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO?.trim()
         : process.env.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN?.trim();
   const brandEmailReady = isValidEmail(brandEmail);
-  const configurationReady = Boolean(
+  const emailConfigurationReady = Boolean(
     inquiryEnabled &&
       apiUrl &&
       privacyReady &&
       privacyNoticeUrl &&
       replySla,
   );
+  const directWhatsappReady = Boolean(
+    directWhatsappEnabled &&
+      privacyReady &&
+      privacyNoticeUrl &&
+      isValidWhatsAppNumber(whatsappNumber),
+  );
+  const configurationReady =
+    emailConfigurationReady || directWhatsappReady;
+  const contactLegend =
+    emailConfigurationReady && directWhatsappReady
+      ? copy.handoff.contactLegend
+      : emailConfigurationReady
+        ? copy.handoff.emailOption
+        : copy.handoff.whatsappOption;
 
   const [status, setStatus] = useState<HandoffStatus>(
     configurationReady ? "idle" : "disabled",
   );
-  const [replyMethod, setReplyMethod] = useState<ReplyMethod>("email");
+  const [contactMethod, setContactMethod] =
+    useState<ContactMethod | null>(null);
   const [email, setEmail] = useState("");
-  const [phoneRaw, setPhoneRaw] = useState("");
+  const [submittedEmail, setSubmittedEmail] = useState("");
   const [note, setNote] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
+  const [whatsappLaunchAttempted, setWhatsappLaunchAttempted] =
+    useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [failureKind, setFailureKind] = useState<FailureKind | null>(null);
   const [failureOverride, setFailureOverride] = useState("");
   const [publicReference, setPublicReference] = useState("");
   const [previousSubmissionReference, setPreviousSubmissionReference] =
     useState("");
-  const [submittedChannel, setSubmittedChannel] =
-    useState<ReplyMethod>("email");
   const [retryAfterLabel, setRetryAfterLabel] = useState("");
   const [retryAvailableAt, setRetryAvailableAt] = useState<number | null>(null);
 
@@ -255,14 +287,11 @@ export function PlannerHandoff({
   const idPrefix = useId();
   const contactGroupId = `${idPrefix}-contact`;
   const emailId = `${idPrefix}-email`;
-  const phoneId = `${idPrefix}-whatsapp`;
   const noteId = `${idPrefix}-note`;
   const emailHintId = `${emailId}-hint`;
-  const phoneHintId = `${phoneId}-hint`;
   const noteHintId = `${noteId}-hint`;
   const contactErrorId = `${contactGroupId}-error`;
   const emailErrorId = `${emailId}-error`;
-  const phoneErrorId = `${phoneId}-error`;
   const noteErrorId = `${noteId}-error`;
   const routeReference = `${match.routeId}@${match.ruleVersion}`;
   const routeIdentity = JSON.stringify({
@@ -285,11 +314,54 @@ export function PlannerHandoff({
     return `mailto:${brandEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }, [brandEmail, brandEmailReady, copy.handoff, routeReference]);
 
+  const answerLabels = useMemo(
+    () => getAnswerLabels(match.answers, locale),
+    [locale, match.answers],
+  );
+  const whatsappRoute = useMemo(
+    () =>
+      match.cityNights
+        .map(
+          (stop) =>
+            `${getCityName(stop.city, locale)} (${copy.finder.nights(
+              stop.nights,
+            )})`,
+        )
+        .join(" → "),
+    [copy.finder, locale, match.cityNights],
+  );
+  const whatsappMessage = useMemo(() => {
+    const separator = locale === "zh" ? "：" : ": ";
+    const lines = [
+      copy.handoff.whatsappMessageIntro,
+      "",
+      `${copy.handoff.whatsappMessageRouteLabel}${separator}${whatsappRoute}`,
+      `${copy.handoff.whatsappMessagePartyLabel}${separator}${answerLabels.party}`,
+      `${copy.handoff.whatsappMessageStyleLabel}${separator}${answerLabels.travelStyle}`,
+      `${copy.handoff.whatsappMessageLengthLabel}${separator}${copy.finder.nights(
+        match.totalNights,
+      )}`,
+      `${copy.handoff.whatsappMessagePaceLabel}${separator}${answerLabels.pace}`,
+      "",
+      copy.handoff.whatsappMessageClosing,
+    ];
+    return lines.join("\n");
+  }, [
+    answerLabels.pace,
+    answerLabels.party,
+    answerLabels.travelStyle,
+    copy.finder,
+    copy.handoff,
+    match.totalNights,
+    whatsappRoute,
+  ]);
+  const whatsappUrl = directWhatsappReady
+    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        whatsappMessage,
+      )}`
+    : "";
   const formIsDirty =
-    email.trim().length > 0 ||
-    phoneRaw.trim().length > 0 ||
-    note.trim().length > 0 ||
-    replyMethod !== "email";
+    email.trim().length > 0 || note.trim().length > 0;
   const hasUnsavedContactDraft =
     formIsDirty && status !== "success" && status !== "disabled";
 
@@ -384,6 +456,7 @@ export function PlannerHandoff({
     }
 
     snapshotRef.current = null;
+    setWhatsappLaunchAttempted(false);
     setErrors({});
     setFailureKind(null);
     setFailureOverride("");
@@ -428,7 +501,7 @@ export function PlannerHandoff({
     setStatus("editing");
   };
 
-  const changeReplyMethod = (method: ReplyMethod) => {
+  const changeContactMethod = (method: ContactMethod) => {
     if (
       status === "submitting" ||
       status === "uncertain" ||
@@ -438,12 +511,15 @@ export function PlannerHandoff({
       return;
     }
 
-    setReplyMethod(method);
+    setContactMethod(method);
+    setWhatsappLaunchAttempted(false);
     setErrors((current) => {
       const next = { ...current };
       delete next.contact;
       delete next.email;
-      delete next.whatsapp;
+      if (method === "direct-whatsapp") {
+        delete next.note;
+      }
       return next;
     });
     setFailureKind(null);
@@ -451,7 +527,7 @@ export function PlannerHandoff({
     setRetryAfterLabel("");
     setRetryAvailableAt(null);
     snapshotRef.current = null;
-    setStatus("editing");
+    setStatus(method === "email" || formIsDirty ? "editing" : "idle");
   };
 
   const setBlurError = (
@@ -470,15 +546,10 @@ export function PlannerHandoff({
   const validate = (): ValidationErrors => {
     const nextErrors: ValidationErrors = {};
 
-    if (replyMethod !== "email" && replyMethod !== "whatsapp") {
+    if (contactMethod !== "email") {
       nextErrors.contact = copy.handoff.contactError;
-    } else if (replyMethod === "email" && !isValidEmail(email)) {
+    } else if (!isValidEmail(email)) {
       nextErrors.email = copy.handoff.emailError;
-    } else if (
-      replyMethod === "whatsapp" &&
-      !isValidInternationalPhone(phoneRaw)
-    ) {
-      nextErrors.whatsapp = copy.handoff.whatsappError;
     }
 
     if (noteLength(note) > maximumNoteLength) {
@@ -532,16 +603,10 @@ export function PlannerHandoff({
         routeId: match.routeId,
         ruleVersion: match.ruleVersion,
       },
-      contact:
-        replyMethod === "email"
-          ? {
-              channel: "email",
-              email: email.trim(),
-            }
-          : {
-              channel: "whatsapp",
-              phoneRaw: phoneRaw.trim(),
-            },
+      contact: {
+        channel: "email",
+        email: email.trim(),
+      },
       note: note.trim(),
       privacyNoticeVersion: currentPrivacyNoticeVersion,
       attribution,
@@ -559,9 +624,6 @@ export function PlannerHandoff({
       if (fields["contact.email"]) {
         nextErrors.email = copy.handoff.emailError;
       }
-      if (fields["contact.phoneRaw"]) {
-        nextErrors.whatsapp = copy.handoff.whatsappError;
-      }
       if (fields["contact.channel"]) {
         nextErrors.contact = copy.handoff.contactError;
       }
@@ -573,11 +635,7 @@ export function PlannerHandoff({
       }
     }
     if (Object.keys(nextErrors).length === 0) {
-      if (replyMethod === "email") {
-        nextErrors.email = copy.handoff.emailError;
-      } else {
-        nextErrors.whatsapp = copy.handoff.whatsappError;
-      }
+      nextErrors.email = copy.handoff.emailError;
     }
 
     setErrors(nextErrors);
@@ -604,7 +662,7 @@ export function PlannerHandoff({
 
   const dispatchSnapshot = async (snapshot: InquirySnapshot) => {
     if (dispatchingRef.current) return;
-    if (!configurationReady) {
+    if (!emailConfigurationReady) {
       snapshotRef.current = null;
       setStatus("disabled");
       return;
@@ -646,7 +704,7 @@ export function PlannerHandoff({
           success.publicReference.trim().length > 0
         ) {
           const nextPublicReference = success.publicReference.trim();
-          setSubmittedChannel(replyMethod);
+          setSubmittedEmail(snapshot.replyEmail);
           setErrors({});
           if (snapshot.routeIdentity === routeIdentityRef.current) {
             setPreviousSubmissionReference("");
@@ -705,12 +763,6 @@ export function PlannerHandoff({
         );
         return;
       }
-      if (code === "whatsapp_disabled") {
-        setErrors({ contact: copy.handoff.whatsappUnavailable });
-        setStatus("validation-error");
-        focusErrorSummary();
-        return;
-      }
       if (response.status === 422 || code === "validation_failed") {
         applyServerValidation(envelope?.error?.fieldErrors);
         return;
@@ -741,7 +793,7 @@ export function PlannerHandoff({
   };
 
   const submitCurrentValues = async () => {
-    if (!configurationReady) {
+    if (!emailConfigurationReady) {
       snapshotRef.current = null;
       setStatus("disabled");
       return;
@@ -778,6 +830,7 @@ export function PlannerHandoff({
           : {
               body,
               idempotencyKey: createUuid(),
+              replyEmail: email.trim(),
               routeIdentity,
             };
     } catch {
@@ -845,7 +898,6 @@ export function PlannerHandoff({
   const errorTargets: Record<ValidationField, string> = {
     contact: contactGroupId,
     email: emailId,
-    whatsapp: phoneId,
     note: noteId,
   };
   const errorEntries = Object.entries(errors) as Array<
@@ -897,13 +949,14 @@ export function PlannerHandoff({
                 {copy.handoff.successTitle}
               </h3>
               <p>{copy.handoff.successBody}</p>
+              <p>
+                {copy.handoff.successReplyEmail(
+                  maskEmail(submittedEmail),
+                  replySla,
+                )}
+              </p>
               <p className={styles.publicReference}>
                 {copy.handoff.successReference(publicReference)}
-              </p>
-              <p>
-                {submittedChannel === "email"
-                  ? copy.handoff.successReplyEmail(replySla)
-                  : copy.handoff.successReplyWhatsapp(replySla)}
               </p>
               <a className={styles.routeLink} href="#route-finder">
                 {copy.handoff.backToRoute}
@@ -962,29 +1015,29 @@ export function PlannerHandoff({
                       <p>{failureMessage}</p>
                       {allowsFallbackEmail &&
                         routeState === "current" && (
-                        <>
-                          <p>
-                            {copy.handoff.fallbackFailureBody(routeReference)}
-                          </p>
-                          {fallbackMailto ? (
-                            <>
-                              <a
-                                className={styles.inlineLink}
-                                href={fallbackMailto}
-                              >
-                                {copy.handoff.emailFallback}
-                              </a>
-                              <span className={styles.fallbackAddress}>
-                                {brandEmail}
-                              </span>
-                            </>
-                          ) : (
-                            <p className={styles.unavailableNote}>
-                              {copy.handoff.brandEmailUnavailable}
+                          <>
+                            <p>
+                              {copy.handoff.fallbackFailureBody(routeReference)}
                             </p>
-                          )}
-                        </>
-                      )}
+                            {fallbackMailto ? (
+                              <>
+                                <a
+                                  className={styles.inlineLink}
+                                  href={fallbackMailto}
+                                >
+                                  {copy.handoff.emailFallback}
+                                </a>
+                                <span className={styles.fallbackAddress}>
+                                  {brandEmail}
+                                </span>
+                              </>
+                            ) : (
+                              <p className={styles.unavailableNote}>
+                                {copy.handoff.brandEmailUnavailable}
+                              </p>
+                            )}
+                          </>
+                        )}
                       {allowsImmediateRetry && (
                         <button
                           className={styles.retryButton}
@@ -1029,52 +1082,64 @@ export function PlannerHandoff({
                   disabled={controlsLocked}
                 >
                   <legend>
-                    {copy.handoff.contactLegend}{" "}
+                    {contactLegend}{" "}
                     <span className={styles.required}>
                       {copy.handoff.requiredText}
                     </span>
                   </legend>
                   <div className={styles.channelOptions}>
-                    <label
-                      className={`${styles.channelOption} ${
-                        replyMethod === "email"
-                          ? styles.channelOptionSelected
-                          : ""
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="replyMethod"
-                        value="email"
-                        checked={replyMethod === "email"}
-                        required
-                        onChange={() => {
-                          changeReplyMethod("email");
-                        }}
-                      />
-                      <Mail aria-hidden="true" size={18} />
-                      <span>{copy.handoff.emailOption}</span>
-                    </label>
-                    {whatsappEnabled && (
+                    {emailConfigurationReady && (
                       <label
                         className={`${styles.channelOption} ${
-                          replyMethod === "whatsapp"
+                          contactMethod === "email"
                             ? styles.channelOptionSelected
                             : ""
                         }`}
                       >
                         <input
                           type="radio"
-                          name="replyMethod"
-                          value="whatsapp"
-                          checked={replyMethod === "whatsapp"}
+                          name="contactMethod"
+                          value="email"
+                          checked={contactMethod === "email"}
                           required
                           onChange={() => {
-                            changeReplyMethod("whatsapp");
+                            changeContactMethod("email");
+                          }}
+                        />
+                        <Mail aria-hidden="true" size={18} />
+                        <span className={styles.channelOptionCopy}>
+                          <strong>{copy.handoff.emailOption}</strong>
+                          <small>
+                            {copy.handoff.emailOptionDescription}
+                          </small>
+                        </span>
+                      </label>
+                    )}
+                    {directWhatsappReady && (
+                      <label
+                        className={`${styles.channelOption} ${
+                          contactMethod === "direct-whatsapp"
+                            ? styles.channelOptionSelected
+                            : ""
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="contactMethod"
+                          value="direct-whatsapp"
+                          checked={contactMethod === "direct-whatsapp"}
+                          required
+                          onChange={() => {
+                            changeContactMethod("direct-whatsapp");
                           }}
                         />
                         <MessageCircle aria-hidden="true" size={18} />
-                        <span>{copy.handoff.whatsappOption}</span>
+                        <span className={styles.channelOptionCopy}>
+                          <strong>{copy.handoff.whatsappOption}</strong>
+                          <small>
+                            {copy.handoff.whatsappOptionDescription}
+                          </small>
+                        </span>
                       </label>
                     )}
                   </div>
@@ -1089,228 +1154,242 @@ export function PlannerHandoff({
                   )}
                 </fieldset>
 
-                {replyMethod === "email" ? (
-                  <div className={styles.field}>
-                    <label htmlFor={emailId}>
-                      {copy.handoff.emailLabel}{" "}
-                      <span className={styles.required}>
-                        {copy.handoff.requiredText}
-                      </span>
-                    </label>
-                    <input
-                      id={emailId}
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      inputMode="email"
-                      dir="auto"
-                      maxLength={maximumEmailLength}
-                      required
-                      value={email}
-                      disabled={controlsLocked}
-                      aria-invalid={Boolean(errors.email)}
-                      aria-describedby={`${emailHintId}${
-                        errors.email ? ` ${emailErrorId}` : ""
-                      }`}
-                      onBlur={() =>
-                        setBlurError(
-                          "email",
-                          isValidEmail(email)
-                            ? undefined
-                            : copy.handoff.emailError,
-                        )
-                      }
-                      onChange={(event) => {
-                        setEmail(event.target.value);
-                        markEditing("email");
-                      }}
-                    />
-                    <p className={styles.hint} id={emailHintId}>
-                      {copy.handoff.emailHint}
-                    </p>
-                    {errors.email && (
-                      <p
-                        className={styles.fieldError}
-                        id={emailErrorId}
-                        role="alert"
-                      >
-                        {errors.email}
+                {contactMethod === "email" && (
+                  <>
+                    <div className={styles.field}>
+                      <label htmlFor={emailId}>
+                        {copy.handoff.emailLabel}{" "}
+                        <span className={styles.required}>
+                          {copy.handoff.requiredText}
+                        </span>
+                      </label>
+                      <input
+                        id={emailId}
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        inputMode="email"
+                        dir="auto"
+                        maxLength={maximumEmailLength}
+                        required
+                        value={email}
+                        disabled={controlsLocked}
+                        aria-invalid={Boolean(errors.email)}
+                        aria-describedby={`${emailHintId}${
+                          errors.email ? ` ${emailErrorId}` : ""
+                        }`}
+                        onBlur={() =>
+                          setBlurError(
+                            "email",
+                            isValidEmail(email)
+                              ? undefined
+                              : copy.handoff.emailError,
+                          )
+                        }
+                        onChange={(event) => {
+                          setEmail(event.target.value);
+                          markEditing("email");
+                        }}
+                      />
+                      <p className={styles.hint} id={emailHintId}>
+                        {copy.handoff.emailHint}
                       </p>
-                    )}
-                  </div>
-                ) : (
-                  <div className={styles.field}>
-                    <label htmlFor={phoneId}>
-                      {copy.handoff.whatsappLabel}{" "}
-                      <span className={styles.required}>
-                        {copy.handoff.requiredText}
-                      </span>
-                    </label>
-                    <input
-                      id={phoneId}
-                      name="phoneRaw"
-                      type="tel"
-                      autoComplete="tel"
-                      inputMode="tel"
-                      dir="auto"
-                      maxLength={maximumPhoneLength}
-                      required
-                      value={phoneRaw}
-                      disabled={controlsLocked}
-                      aria-invalid={Boolean(errors.whatsapp)}
-                      aria-describedby={`${phoneHintId}${
-                        errors.whatsapp ? ` ${phoneErrorId}` : ""
-                      }`}
-                      onBlur={() =>
-                        setBlurError(
-                          "whatsapp",
-                          isValidInternationalPhone(phoneRaw)
-                            ? undefined
-                            : copy.handoff.whatsappError,
-                        )
-                      }
-                      onChange={(event) => {
-                        setPhoneRaw(event.target.value);
-                        markEditing("whatsapp");
-                      }}
-                    />
-                    <p className={styles.hint} id={phoneHintId}>
-                      {copy.handoff.whatsappHint}
-                    </p>
-                    {errors.whatsapp && (
-                      <p
-                        className={styles.fieldError}
-                        id={phoneErrorId}
-                        role="alert"
-                      >
-                        {errors.whatsapp}
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                <div className={styles.field}>
-                  <label htmlFor={noteId}>{copy.handoff.noteLabel}</label>
-                  <textarea
-                    id={noteId}
-                    name="note"
-                    value={note}
-                    maxLength={maximumNoteLength}
-                    disabled={controlsLocked}
-                    dir="auto"
-                    rows={5}
-                    aria-invalid={Boolean(errors.note)}
-                    aria-describedby={`${noteHintId}${
-                      errors.note ? ` ${noteErrorId}` : ""
-                    }`}
-                    onBlur={() => {
-                      const error =
-                        noteLength(note) > maximumNoteLength
-                          ? copy.handoff.noteTooLong
-                          : hasUnsupportedControlCharacters(note)
-                            ? copy.handoff.noteInvalid
-                            : undefined;
-                      setBlurError("note", error);
-                    }}
-                    onChange={(event) => {
-                      setNote(event.target.value);
-                      markEditing("note");
-                    }}
-                  />
-                  <div className={styles.noteMeta}>
-                    <p className={styles.hint} id={noteHintId}>
-                      {copy.handoff.noteHint}
-                    </p>
-                    <span>
-                      {copy.handoff.noteCount(
-                        noteLength(note),
-                        maximumNoteLength,
+                      {errors.email && (
+                        <p
+                          className={styles.fieldError}
+                          id={emailErrorId}
+                          role="alert"
+                        >
+                          {errors.email}
+                        </p>
                       )}
-                    </span>
-                  </div>
-                  {note.trim().length > 0 && (
-                    <p className={styles.noteAttached} role="status">
-                      {copy.handoff.noteAttached}
-                    </p>
-                  )}
-                  {errors.note && (
-                    <p
-                      className={styles.fieldError}
-                      id={noteErrorId}
-                      role="alert"
+                    </div>
+
+                    <div className={styles.field}>
+                      <label htmlFor={noteId}>
+                        {copy.handoff.noteLabel}
+                      </label>
+                      <textarea
+                        id={noteId}
+                        name="note"
+                        value={note}
+                        maxLength={maximumNoteLength}
+                        disabled={controlsLocked}
+                        dir="auto"
+                        rows={5}
+                        aria-invalid={Boolean(errors.note)}
+                        aria-describedby={`${noteHintId}${
+                          errors.note ? ` ${noteErrorId}` : ""
+                        }`}
+                        onBlur={() => {
+                          const error =
+                            noteLength(note) > maximumNoteLength
+                              ? copy.handoff.noteTooLong
+                              : hasUnsupportedControlCharacters(note)
+                                ? copy.handoff.noteInvalid
+                                : undefined;
+                          setBlurError("note", error);
+                        }}
+                        onChange={(event) => {
+                          setNote(event.target.value);
+                          markEditing("note");
+                        }}
+                      />
+                      <div className={styles.noteMeta}>
+                        <p className={styles.hint} id={noteHintId}>
+                          {copy.handoff.noteHint}
+                        </p>
+                        <span>
+                          {copy.handoff.noteCount(
+                            noteLength(note),
+                            maximumNoteLength,
+                          )}
+                        </span>
+                      </div>
+                      {note.trim().length > 0 && (
+                        <p className={styles.noteAttached} role="status">
+                          {copy.handoff.noteAttached}
+                        </p>
+                      )}
+                      {errors.note && (
+                        <p
+                          className={styles.fieldError}
+                          id={noteErrorId}
+                          role="alert"
+                        >
+                          {errors.note}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className={styles.honeypot} aria-hidden="true">
+                      <label htmlFor={`${idPrefix}-company`}>
+                        Company website
+                      </label>
+                      <input
+                        id={`${idPrefix}-company`}
+                        name="companyWebsite"
+                        type="text"
+                        autoComplete="off"
+                        tabIndex={-1}
+                        value={companyWebsite}
+                        disabled={controlsLocked}
+                        onChange={(event) =>
+                          setCompanyWebsite(event.target.value)
+                        }
+                      />
+                    </div>
+
+                    <div className={styles.nextStep}>
+                      <strong>{copy.handoff.nextTitle}</strong>
+                      <p>{copy.handoff.nextBody}</p>
+                    </div>
+
+                    <div className={styles.privacy}>
+                      <p>{copy.handoff.privacyBody}</p>
+                      <a
+                        href={privacyNoticeUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {copy.handoff.privacyLink}
+                      </a>
+                      <p>{copy.handoff.serviceBoundary}</p>
+                    </div>
+
+                    {status === "submitting" && (
+                      <div className={styles.submittingStatus} role="status">
+                        <LoaderCircle
+                          aria-hidden="true"
+                          className={styles.spinner}
+                          size={18}
+                        />
+                        {copy.handoff.submitting}
+                      </div>
+                    )}
+
+                    <button
+                      className={styles.primaryAction}
+                      type="submit"
+                      disabled={controlsLocked || status === "failed"}
                     >
-                      {errors.note}
-                    </p>
-                  )}
-                </div>
-
-                <div className={styles.honeypot} aria-hidden="true">
-                  <label htmlFor={`${idPrefix}-company`}>
-                    Company website
-                  </label>
-                  <input
-                    id={`${idPrefix}-company`}
-                    name="companyWebsite"
-                    type="text"
-                    autoComplete="off"
-                    tabIndex={-1}
-                    value={companyWebsite}
-                    disabled={controlsLocked}
-                    onChange={(event) =>
-                      setCompanyWebsite(event.target.value)
-                    }
-                  />
-                </div>
-
-                <div className={styles.nextStep}>
-                  <strong>{copy.handoff.nextTitle}</strong>
-                  <p>{copy.handoff.nextBody}</p>
-                </div>
-
-                <div className={styles.privacy}>
-                  <p>{copy.handoff.privacyBody}</p>
-                  <a
-                    href={privacyNoticeUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {copy.handoff.privacyLink}
-                  </a>
-                  <p>{copy.handoff.serviceBoundary}</p>
-                </div>
-
-                {status === "submitting" && (
-                  <div className={styles.submittingStatus} role="status">
-                    <LoaderCircle
-                      aria-hidden="true"
-                      className={styles.spinner}
-                      size={18}
-                    />
-                    {copy.handoff.submitting}
-                  </div>
+                      {status === "submitting" && (
+                        <LoaderCircle
+                          aria-hidden="true"
+                          className={styles.spinner}
+                          size={18}
+                        />
+                      )}
+                      {status === "submitting"
+                        ? copy.handoff.submitting
+                        : copy.handoff.submit}
+                    </button>
+                  </>
                 )}
 
-                <button
-                  className={styles.primaryAction}
-                  type="submit"
-                  disabled={
-                    controlsLocked || status === "failed"
-                  }
-                >
-                  {status === "submitting" && (
-                    <LoaderCircle
-                      aria-hidden="true"
-                      className={styles.spinner}
-                      size={18}
-                    />
+                {contactMethod === "direct-whatsapp" &&
+                  directWhatsappReady && (
+                    <div className={styles.whatsappPanel}>
+                      <div className={styles.whatsappIntro}>
+                        <MessageCircle aria-hidden="true" size={22} />
+                        <p>{copy.handoff.whatsappLaunchHint}</p>
+                      </div>
+                      <div className={styles.whatsappPrivacy}>
+                        <p>{copy.handoff.whatsappPrivacyNote}</p>
+                        <a
+                          href={privacyNoticeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {copy.handoff.privacyLink}
+                        </a>
+                      </div>
+                      {!controlsLocked && (
+                        <a
+                          className={styles.whatsappAction}
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => {
+                            setWhatsappLaunchAttempted(true);
+                          }}
+                        >
+                          <MessageCircle aria-hidden="true" size={18} />
+                          {whatsappLaunchAttempted
+                            ? copy.handoff.whatsappOpenAgain
+                            : copy.handoff.whatsappOpen}
+                        </a>
+                      )}
+                      {whatsappLaunchAttempted && (
+                        <div
+                          className={styles.whatsappAttempt}
+                          role="status"
+                          aria-live="polite"
+                        >
+                          <strong>
+                            {copy.handoff.whatsappAttemptTitle}
+                          </strong>
+                          <p>{copy.handoff.whatsappAttemptBody}</p>
+                          {!controlsLocked && emailConfigurationReady && (
+                            <div className={styles.whatsappAttemptActions}>
+                              <button
+                                className={styles.textAction}
+                                type="button"
+                                onClick={() => {
+                                  changeContactMethod("email");
+                                }}
+                              >
+                                {copy.handoff.whatsappUseEmail}
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   )}
-                  {status === "submitting"
-                    ? copy.handoff.submitting
-                    : copy.handoff.submit}
-                </button>
               </form>
             )}
-        </div>
+          </div>
       </div>
     </section>
   );

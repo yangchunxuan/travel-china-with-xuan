@@ -4,4 +4,4 @@
  */
 export const inquirySchemaVersion = 1 as const;
 export const currentInquiryFormVersion = "2026-07-18.1";
-export const currentPrivacyNoticeVersion = "2026-07-18.2";
+export const currentPrivacyNoticeVersion = "2026-07-19.1";

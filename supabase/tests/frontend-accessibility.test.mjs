@@ -46,15 +46,15 @@ test("success keeps the full public reference as secondary three-language copy",
 
   assert.equal(
     getHomegroundCopy("en").handoff.successReference(publicReference),
-    `Reference number (only needed when contacting the studio): ${publicReference}`,
+    `Support reference: ${publicReference}`,
   );
   assert.equal(
     getHomegroundCopy("zh").handoff.successReference(publicReference),
-    `参考号（仅联系工作室时需要）：${publicReference}`,
+    `查询参考号：${publicReference}`,
   );
   assert.equal(
     getHomegroundCopy("ko").handoff.successReference(publicReference),
-    `참조 번호(스튜디오에 문의할 때만 필요): ${publicReference}`,
+    `문의 확인 번호: ${publicReference}`,
   );
 
   assert.match(
@@ -77,4 +77,82 @@ test("success keeps the full public reference as secondary three-language copy",
   );
   assert.match(referenceStyles, /font-size:\s*0\.78rem/);
   assert.doesNotMatch(referenceStyles, /background|border|font-weight/);
+});
+
+test("direct WhatsApp is a customer-initiated external handoff, not an Inquiry submit", async () => {
+  const plannerHandoff = await source(plannerHandoffPath);
+
+  assert.match(
+    plannerHandoff,
+    /NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED/,
+  );
+  assert.match(
+    plannerHandoff,
+    /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/,
+  );
+  assert.match(
+    plannerHandoff,
+    /https:\/\/wa\.me\/\$\{whatsappNumber\}\?text=\$\{encodeURIComponent/,
+  );
+  assert.match(plannerHandoff, /value="direct-whatsapp"/);
+  assert.match(plannerHandoff, /setWhatsappLaunchAttempted\(true\)/);
+  assert.match(plannerHandoff, /rel="noopener noreferrer"/);
+  assert.doesNotMatch(plannerHandoff, /phoneRaw/);
+  assert.doesNotMatch(plannerHandoff, /type="tel"/);
+  assert.doesNotMatch(
+    plannerHandoff,
+    /contact:\s*\{[\s\S]{0,120}channel:\s*"whatsapp"/,
+  );
+  const dirtyStart = plannerHandoff.indexOf("const formIsDirty");
+  const dirtyEnd = plannerHandoff.indexOf(
+    "const hasUnsavedContactDraft",
+    dirtyStart,
+  );
+  const dirtyState = plannerHandoff.slice(dirtyStart, dirtyEnd);
+  assert.match(dirtyState, /email\.trim\(\)/);
+  assert.match(dirtyState, /note\.trim\(\)/);
+  assert.doesNotMatch(dirtyState, /contactMethod|whatsapp/);
+
+  const messageStart = plannerHandoff.indexOf("const whatsappMessage");
+  const messageEnd = plannerHandoff.indexOf(
+    "const whatsappUrl",
+    messageStart,
+  );
+  const messageBuilder = plannerHandoff.slice(messageStart, messageEnd);
+  assert.match(messageBuilder, /whatsappMessageRouteLabel/);
+  assert.match(messageBuilder, /whatsappMessagePartyLabel/);
+  assert.match(messageBuilder, /whatsappMessageStyleLabel/);
+  assert.match(messageBuilder, /whatsappMessageLengthLabel/);
+  assert.match(messageBuilder, /whatsappMessagePaceLabel/);
+  assert.doesNotMatch(
+    messageBuilder,
+    /routeId|routeReference|publicReference|email|note|utm|attribution|source/i,
+  );
+  assert.doesNotMatch(plannerHandoff, /knownAttributionSource|whatsappSource/);
+
+  const whatsappBranchStart = plannerHandoff.indexOf(
+    '{contactMethod === "direct-whatsapp" &&',
+  );
+  const whatsappBranch = plannerHandoff.slice(whatsappBranchStart);
+  assert.ok(whatsappBranchStart >= 0);
+  assert.doesNotMatch(whatsappBranch, /type="submit"/);
+  assert.doesNotMatch(whatsappBranch, /setStatus\("success"\)/);
+});
+
+test("direct WhatsApp states tell all three locales that opening is not sending", () => {
+  const english = getHomegroundCopy("en").handoff;
+  const chinese = getHomegroundCopy("zh").handoff;
+  const korean = getHomegroundCopy("ko").handoff;
+
+  assert.equal(english.whatsappOpen, "Continue in WhatsApp");
+  assert.match(english.whatsappAttemptBody, /can’t confirm/);
+  assert.match(english.whatsappAttemptBody, /message was sent/);
+
+  assert.equal(chinese.whatsappOpen, "在 WhatsApp 中继续");
+  assert.match(chinese.whatsappAttemptBody, /无法确认/);
+  assert.match(chinese.whatsappAttemptBody, /消息是否已经发送/);
+
+  assert.equal(korean.whatsappOpen, "WhatsApp에서 계속하기");
+  assert.match(korean.whatsappAttemptBody, /확인할 수 없습니다/);
+  assert.match(korean.whatsappAttemptBody, /메시지가 전송/);
 });

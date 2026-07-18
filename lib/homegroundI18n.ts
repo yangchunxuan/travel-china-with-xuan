@@ -115,12 +115,26 @@ export interface HomegroundCopy {
     boundary: string;
     contactLegend: string;
     emailOption: string;
+    emailOptionDescription: string;
     whatsappOption: string;
+    whatsappOptionDescription: string;
     requiredText: string;
     emailLabel: string;
     emailHint: string;
-    whatsappLabel: string;
-    whatsappHint: string;
+    whatsappLaunchHint: string;
+    whatsappPrivacyNote: string;
+    whatsappOpen: string;
+    whatsappAttemptTitle: string;
+    whatsappAttemptBody: string;
+    whatsappOpenAgain: string;
+    whatsappUseEmail: string;
+    whatsappMessageIntro: string;
+    whatsappMessageRouteLabel: string;
+    whatsappMessagePartyLabel: string;
+    whatsappMessageStyleLabel: string;
+    whatsappMessageLengthLabel: string;
+    whatsappMessagePaceLabel: string;
+    whatsappMessageClosing: string;
     noteLabel: string;
     noteHint: string;
     noteAttached: string;
@@ -135,17 +149,14 @@ export interface HomegroundCopy {
     errorSummary: string;
     contactError: string;
     emailError: string;
-    whatsappError: string;
     noteTooLong: string;
     noteInvalid: string;
     formVersionUnsupported: string;
     privacyNoticeUnsupported: string;
-    whatsappUnavailable: string;
     successTitle: string;
     successBody: string;
     successReference: (publicReference: string) => string;
-    successReplyEmail: (replySla?: string) => string;
-    successReplyWhatsapp: (replySla?: string) => string;
+    successReplyEmail: (maskedEmail: string, replySla?: string) => string;
     backToRoute: string;
     previousRequestNotice: (publicReference: string) => string;
     routeEditingNotice: string;
@@ -468,22 +479,39 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       newTitle: "Find the shape of your China trip first.",
     },
     handoff: {
-      eyebrow: "Personal planning",
-      title: "Want us to make this route work for your trip?",
+      eyebrow: "Human planning",
+      title: "How would you like to continue?",
       body:
-        "Your route and four answers will be included, so you won’t need to explain them again.",
-      boundary:
-        "This is a starting route. Dates, airports, seasonal transport and specific services have not yet been checked or booked.",
-      contactLegend: "How should we reply?",
+        "Your starting route and four answers are ready. Choose one way to contact us—you won’t need to explain them again.",
+      boundary: "This is an enquiry, not a booking.",
+      contactLegend: "Choose Email or WhatsApp",
       emailOption: "Email",
+      emailOptionDescription:
+        "Send your route and receive a human reply by email.",
       whatsappOption: "WhatsApp",
+      whatsappOptionDescription:
+        "Open WhatsApp with your route summary ready to send.",
       requiredText: "(required)",
-      emailLabel: "Your email address",
-      emailHint:
-        "We’ll only use this address to reply to this request.",
-      whatsappLabel: "WhatsApp number, including country code",
-      whatsappHint:
-        "For example, +44 7700 900123. We’ll only use it to reply to this request.",
+      emailLabel: "Your email",
+      emailHint: "Only for replying to this enquiry.",
+      whatsappLaunchHint:
+        "WhatsApp will open with your route summary. Tap Send there to start the conversation.",
+      whatsappPrivacyNote:
+        "Your route summary is passed to WhatsApp to prepare the message. Homeground receives it only after you tap Send.",
+      whatsappOpen: "Continue in WhatsApp",
+      whatsappAttemptTitle: "We tried to open WhatsApp.",
+      whatsappAttemptBody:
+        "We can’t confirm whether it opened or whether your message was sent. If the conversation did not start, open WhatsApp again and tap Send.",
+      whatsappOpenAgain: "Open WhatsApp again",
+      whatsappUseEmail: "Use email instead",
+      whatsappMessageIntro:
+        "Hi Homeground, I’d like help planning this China trip.",
+      whatsappMessageRouteLabel: "Starting route",
+      whatsappMessagePartyLabel: "Travellers",
+      whatsappMessageStyleLabel: "Travel style",
+      whatsappMessageLengthLabel: "Length",
+      whatsappMessagePaceLabel: "Pace",
+      whatsappMessageClosing: "What information do you need next?",
       noteLabel: "Anything this route should respect? (optional)",
       noteHint:
         "Fixed places, flights already booked, places you have visited, walking needs, or anything else. Please do not include medical records.",
@@ -493,19 +521,16 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `${current} of ${maximum} characters`,
       nextTitle: "What happens next",
       nextBody:
-        "We’ll first confirm your dates, arrival and departure points, walking needs and anything that cannot change. Detailed planning and pricing come after that conversation.",
+        "A planner will confirm dates, arrival and departure points, and anything that cannot change before discussing details or price.",
       privacyBody:
         "By sending this request, you acknowledge that Homeground may use these details to reply to this enquiry. We will not use them for marketing without separate permission.",
       privacyLink: "Read our Privacy Notice",
-      serviceBoundary:
-        "Sending this request is not a booking. Homeground will check suitable local services only after the real travel details are clear.",
-      submit: "Send this route to a planner",
+      serviceBoundary: "Nothing has been booked.",
+      submit: "Send my route",
       submitting: "Sending your request…",
       errorSummary: "Check the details below.",
       contactError: "Choose Email or WhatsApp.",
       emailError: "Enter a valid email address.",
-      whatsappError:
-        "Enter a WhatsApp number with its country code, for example +44 7700 900123.",
       noteTooLong: "Keep this note to 2,000 characters or fewer.",
       noteInvalid:
         "Remove unsupported control characters from the optional note.",
@@ -513,17 +538,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "This request form is out of date. Refresh the page before trying again.",
       privacyNoticeUnsupported:
         "The Privacy Notice for this form is no longer current. Refresh the page before trying again.",
-      whatsappUnavailable:
-        "WhatsApp replies are not available right now. Choose Email instead.",
-      successTitle: "Your request is with Homeground.",
+      successTitle: "Your route is saved.",
       successBody:
-        "We’ve saved your route, answers and contact details.",
+        "We’ve saved your route and four answers for a human review.",
       successReference: (publicReference) =>
-        `Reference number (only needed when contacting the studio): ${publicReference}`,
-      successReplyEmail: (replySla) =>
-        `We’ll reply by email${replySla ? ` within ${replySla}` : ""}. Nothing has been booked.`,
-      successReplyWhatsapp: (replySla) =>
-        `We’ll reply on WhatsApp${replySla ? ` within ${replySla}` : ""}. Nothing has been booked.`,
+        `Support reference: ${publicReference}`,
+      successReplyEmail: (maskedEmail, replySla) =>
+        `We’ll reply to ${maskedEmail}${replySla ? ` within ${replySla}` : ""}. Nothing has been booked.`,
       backToRoute: "Back to my route",
       previousRequestNotice: (publicReference) =>
         `Your earlier request ${publicReference} was sent with the previous route. These changes have not been sent.`,
@@ -963,21 +984,37 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     handoff: {
       eyebrow: "人工旅行规划",
-      title: "想让我们把这条路线调整到真正适合你吗？",
+      title: "你想通过哪种方式继续？",
       body:
-        "你的路线和前面的四项选择会一并提交，不需要再从头解释。",
-      boundary:
-        "这只是一条初步路线。具体日期、进出城市、季节交通和服务都尚未核对或预订。",
-      contactLegend: "希望我们通过哪种方式回复？",
+        "你的初步路线和四项选择已经整理好。选择一种方式联系工作室，不需要重新说明。",
+      boundary: "这只是咨询，不是预订。",
+      contactLegend: "选择电子邮件或 WhatsApp",
       emailOption: "电子邮件",
+      emailOptionDescription: "通过网站发送路线，由人工通过电子邮件回复。",
       whatsappOption: "WhatsApp",
+      whatsappOptionDescription: "打开 WhatsApp，路线摘要会自动填入。",
       requiredText: "（必填）",
       emailLabel: "你的电子邮箱",
-      emailHint: "我们只会用这个地址回复本次咨询。",
-      whatsappLabel: "WhatsApp 号码（含国际区号）",
-      whatsappHint:
-        "例如 +44 7700 900123。我们只会用这个号码回复本次咨询。",
-      noteLabel: "这条路线还需要尊重哪些条件？（选填）",
+      emailHint: "仅用于回复本次咨询。",
+      whatsappLaunchHint:
+        "WhatsApp 将打开并填入你的路线摘要。请在 WhatsApp 中选择“发送”，对话才会开始。",
+      whatsappPrivacyNote:
+        "为了准备消息，路线摘要会交给 WhatsApp。只有在你选择“发送”后，Homeground 才会收到消息。",
+      whatsappOpen: "在 WhatsApp 中继续",
+      whatsappAttemptTitle: "我们已尝试打开 WhatsApp。",
+      whatsappAttemptBody:
+        "网站无法确认 WhatsApp 是否成功打开，也无法确认消息是否已经发送。如果对话没有开始，请再次打开 WhatsApp 并选择“发送”。",
+      whatsappOpenAgain: "再次打开 WhatsApp",
+      whatsappUseEmail: "改用电子邮件",
+      whatsappMessageIntro:
+        "你好，Homeground。我想继续规划这趟中国旅行。",
+      whatsappMessageRouteLabel: "初步路线",
+      whatsappMessagePartyLabel: "同行者",
+      whatsappMessageStyleLabel: "旅行偏好",
+      whatsappMessageLengthLabel: "时长",
+      whatsappMessagePaceLabel: "节奏",
+      whatsappMessageClosing: "接下来需要我提供哪些信息？",
+      noteLabel: "还有哪些需要我们注意的条件？（选填）",
       noteHint:
         "例如必去地点、已订航班、去过的地方、步行需求或其他事项。请不要填写病历等医疗记录。",
       noteAttached:
@@ -985,35 +1022,28 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       noteCount: (current, maximum) => `已输入 ${current} / ${maximum} 字`,
       nextTitle: "接下来会发生什么",
       nextBody:
-        "我们会先确认日期、进出城市、步行需求和不能改变的事项。更细的规划与价格会在这次沟通之后再讨论。",
+        "规划师会先确认日期、进出城市和不能改变的事项，再讨论细节与价格。",
       privacyBody:
         "发送本次咨询即表示你知悉 Homeground 会使用这些信息回复本次咨询。未经单独许可，我们不会将其用于营销。",
       privacyLink: "阅读隐私说明",
-      serviceBoundary:
-        "发送咨询不等于预订。只有在真实旅行条件明确后，Homeground 才会人工核对合适的当地服务。",
-      submit: "把这条路线发送给规划师",
+      serviceBoundary: "目前没有任何预订。",
+      submit: "发送我的路线",
       submitting: "正在发送咨询…",
       errorSummary: "请检查以下信息。",
       contactError: "请选择电子邮件或 WhatsApp。",
       emailError: "请输入有效的电子邮箱。",
-      whatsappError:
-        "请输入包含国际区号的 WhatsApp 号码，例如 +44 7700 900123。",
       noteTooLong: "选填说明不能超过 2,000 字。",
       noteInvalid: "请删除选填说明中不支持的控制字符。",
       formVersionUnsupported:
         "当前咨询表单版本已经过期，请刷新页面后再试。",
       privacyNoticeUnsupported:
         "当前表单对应的隐私说明已经更新，请刷新页面后再试。",
-      whatsappUnavailable:
-        "目前无法通过 WhatsApp 回复，请改选电子邮件。",
-      successTitle: "Homeground 已收到你的咨询。",
-      successBody: "我们已经保存你的路线、选择和联系方式。",
+      successTitle: "你的路线已保存。",
+      successBody: "我们已保存你的路线和四项选择，供人工查看。",
       successReference: (publicReference) =>
-        `参考号（仅联系工作室时需要）：${publicReference}`,
-      successReplyEmail: (replySla) =>
-        `我们会通过电子邮件回复${replySla ? `，预计在${replySla}内` : ""}。目前没有任何项目被预订。`,
-      successReplyWhatsapp: (replySla) =>
-        `我们会通过 WhatsApp 回复${replySla ? `，预计在${replySla}内` : ""}。目前没有任何项目被预订。`,
+        `查询参考号：${publicReference}`,
+      successReplyEmail: (maskedEmail, replySla) =>
+        `我们会${replySla ? `在${replySla}内` : ""}回复至 ${maskedEmail}。目前没有任何预订。`,
       backToRoute: "返回我的路线",
       previousRequestNotice: (publicReference) =>
         `之前的咨询 ${publicReference} 使用的是上一版路线；当前修改尚未发送。`,
@@ -1434,21 +1464,39 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       newTitle: "중국 여행의 전체 형태부터 찾아보세요.",
     },
     handoff: {
-      eyebrow: "사람이 직접 하는 여행 설계",
-      title: "이 동선을 실제 여행에 맞게 함께 다듬어 볼까요?",
+      eyebrow: "1:1 여행 플래닝",
+      title: "어떤 방법으로 이어갈까요?",
       body:
-        "앞에서 확인한 여행 동선과 네 가지 답변이 함께 전송되므로 처음부터 다시 설명할 필요가 없습니다.",
-      boundary:
-        "아직 첫 여행 동선일 뿐입니다. 날짜, 입출국 도시, 계절별 교통과 구체적인 서비스는 확인되거나 예약되지 않았습니다.",
-      contactLegend: "어떤 방법으로 답변을 받으시겠어요?",
+        "초기 여행 동선과 네 가지 답변이 정리되었습니다. 한 가지 연락 방법을 선택하면 처음부터 다시 설명하지 않아도 됩니다.",
+      boundary: "문의 단계이며 예약이 아닙니다.",
+      contactLegend: "이메일 또는 WhatsApp 선택",
       emailOption: "이메일",
+      emailOptionDescription:
+        "웹사이트에서 여행 동선을 보내면 이메일로 직접 답변드립니다.",
       whatsappOption: "WhatsApp",
+      whatsappOptionDescription:
+        "여행 동선 요약이 미리 입력된 WhatsApp 채팅창이 열립니다.",
       requiredText: "(필수)",
-      emailLabel: "본인의 이메일 주소",
+      emailLabel: "이메일 주소",
       emailHint: "이 문의에 답변하는 용도로만 사용합니다.",
-      whatsappLabel: "국가 코드를 포함한 WhatsApp 번호",
-      whatsappHint:
-        "예: +44 7700 900123. 이 문의에 답변하는 용도로만 사용합니다.",
+      whatsappLaunchHint:
+        "WhatsApp에 여행 동선 요약이 미리 입력됩니다. 대화를 시작하려면 WhatsApp에서 ‘보내기’를 선택해 주세요.",
+      whatsappPrivacyNote:
+        "메시지를 준비하기 위해 여행 동선 요약이 WhatsApp으로 전달됩니다. Homeground는 ‘보내기’를 누른 뒤에만 메시지를 받습니다.",
+      whatsappOpen: "WhatsApp에서 계속하기",
+      whatsappAttemptTitle: "WhatsApp 열기를 요청했습니다.",
+      whatsappAttemptBody:
+        "WhatsApp이 실제로 열리는지 또는 메시지가 전송되었는지는 웹사이트에서 확인할 수 없습니다. 대화가 시작되지 않았다면 WhatsApp을 다시 열고 ‘보내기’를 선택해 주세요.",
+      whatsappOpenAgain: "WhatsApp 다시 열기",
+      whatsappUseEmail: "이메일로 보내기",
+      whatsappMessageIntro:
+        "Homeground와 함께 이번 중국 여행을 더 구체적으로 계획하고 싶습니다.",
+      whatsappMessageRouteLabel: "초기 여행 동선",
+      whatsappMessagePartyLabel: "일행",
+      whatsappMessageStyleLabel: "여행 취향",
+      whatsappMessageLengthLabel: "기간",
+      whatsappMessagePaceLabel: "여행 페이스",
+      whatsappMessageClosing: "다음으로 어떤 정보를 드리면 될까요?",
       noteLabel: "이 동선에서 꼭 고려해야 할 내용이 있나요? (선택)",
       noteHint:
         "꼭 가야 할 곳, 이미 예약한 항공편, 이전에 방문한 곳, 도보 조건 등을 적어 주세요. 진료 기록과 같은 의료 정보는 입력하지 마세요.",
@@ -1457,35 +1505,28 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       noteCount: (current, maximum) => `${current} / ${maximum}자`,
       nextTitle: "문의 후 진행 과정",
       nextBody:
-        "먼저 날짜, 입출국 도시, 도보 조건과 바꿀 수 없는 사항을 확인합니다. 세부 설계와 가격은 그 대화 이후에 논의합니다.",
+        "플래너가 날짜, 입출국 도시와 바꿀 수 없는 사항을 먼저 확인한 뒤 세부 내용과 가격을 논의합니다.",
       privacyBody:
         "문의를 보내면 Homeground가 본 문의에 답변하기 위해 이 정보를 사용하는 것을 확인한 것으로 간주합니다. 별도 동의 없이 마케팅에 사용하지 않습니다.",
       privacyLink: "개인정보 처리 안내 보기",
-      serviceBoundary:
-        "문의 전송은 예약이 아닙니다. 실제 여행 조건이 명확해진 뒤에만 Homeground가 적합한 현지 서비스를 확인합니다.",
-      submit: "이 동선을 플래너에게 보내기",
+      serviceBoundary: "아직 예약된 항목은 없습니다.",
+      submit: "내 여행 동선 보내기",
       submitting: "문의를 보내는 중…",
       errorSummary: "아래 내용을 확인해 주세요.",
       contactError: "이메일 또는 WhatsApp을 선택해 주세요.",
       emailError: "올바른 이메일 주소를 입력해 주세요.",
-      whatsappError:
-        "국가 코드를 포함한 WhatsApp 번호를 입력해 주세요. 예: +44 7700 900123.",
       noteTooLong: "선택 메모는 2,000자 이내로 작성해 주세요.",
       noteInvalid: "선택 메모에서 지원하지 않는 제어 문자를 삭제해 주세요.",
       formVersionUnsupported:
         "현재 문의 양식이 이전 버전입니다. 페이지를 새로 고친 뒤 다시 시도해 주세요.",
       privacyNoticeUnsupported:
         "이 양식의 개인정보 처리 안내가 업데이트되었습니다. 페이지를 새로 고친 뒤 다시 시도해 주세요.",
-      whatsappUnavailable:
-        "현재 WhatsApp 답변을 이용할 수 없습니다. 이메일을 선택해 주세요.",
-      successTitle: "Homeground가 문의를 받았습니다.",
-      successBody: "여행 동선, 답변과 연락처를 안전하게 저장했습니다.",
+      successTitle: "여행 동선이 저장되었습니다.",
+      successBody: "여행 동선과 네 가지 답변을 사람의 검토를 위해 저장했습니다.",
       successReference: (publicReference) =>
-        `참조 번호(스튜디오에 문의할 때만 필요): ${publicReference}`,
-      successReplyEmail: (replySla) =>
-        `이메일로 답변드리겠습니다${replySla ? ` (${replySla} 이내)` : ""}. 아직 예약된 항목은 없습니다.`,
-      successReplyWhatsapp: (replySla) =>
-        `WhatsApp으로 답변드리겠습니다${replySla ? ` (${replySla} 이내)` : ""}. 아직 예약된 항목은 없습니다.`,
+        `문의 확인 번호: ${publicReference}`,
+      successReplyEmail: (maskedEmail, replySla) =>
+        `${replySla ? `${replySla} 이내에 ` : ""}${maskedEmail}로 답변드리겠습니다. 아직 예약된 항목은 없습니다.`,
       backToRoute: "내 여행 동선으로 돌아가기",
       previousRequestNotice: (publicReference) =>
         `이전 문의 ${publicReference}는 이전 여행 동선으로 전송되었습니다. 현재 변경 사항은 아직 전송되지 않았습니다.`,
