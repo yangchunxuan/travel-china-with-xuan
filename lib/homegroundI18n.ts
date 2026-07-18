@@ -199,6 +199,7 @@ export interface HomegroundCopy {
     back: string;
     showRoute: string;
     continue: string;
+    answerRequired: string;
     resultKicker: string;
     routeAriaLabel: string;
     nights: (count: number) => string;
@@ -518,7 +519,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       successBody:
         "We’ve saved your route, answers and contact details.",
       successReference: (publicReference) =>
-        `Request reference: ${publicReference}`,
+        `Reference number (only needed when contacting the studio): ${publicReference}`,
       successReplyEmail: (replySla) =>
         `We’ll reply by email${replySla ? ` within ${replySla}` : ""}. Nothing has been booked.`,
       successReplyWhatsapp: (replySla) =>
@@ -716,6 +717,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       back: "Back",
       showRoute: "Show my starting route",
       continue: "Continue",
+      answerRequired: "Choose one answer to continue.",
       resultKicker: "Your starting route",
       routeAriaLabel: "Suggested route, in order",
       nights: (count) => `${count} ${count === 1 ? "night" : "nights"}`,
@@ -1007,7 +1009,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       successTitle: "Homeground 已收到你的咨询。",
       successBody: "我们已经保存你的路线、选择和联系方式。",
       successReference: (publicReference) =>
-        `咨询编号：${publicReference}`,
+        `参考号（仅联系工作室时需要）：${publicReference}`,
       successReplyEmail: (replySla) =>
         `我们会通过电子邮件回复${replySla ? `，预计在${replySla}内` : ""}。目前没有任何项目被预订。`,
       successReplyWhatsapp: (replySla) =>
@@ -1190,6 +1192,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       back: "返回",
       showRoute: "查看我的初步路线",
       continue: "继续",
+      answerRequired: "请选择一个答案后继续。",
       resultKicker: "你的初步路线",
       routeAriaLabel: "按顺序排列的建议路线",
       nights: (count) => `${count}晚`,
@@ -1478,7 +1481,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       successTitle: "Homeground가 문의를 받았습니다.",
       successBody: "여행 동선, 답변과 연락처를 안전하게 저장했습니다.",
       successReference: (publicReference) =>
-        `문의 참조 번호: ${publicReference}`,
+        `참조 번호(스튜디오에 문의할 때만 필요): ${publicReference}`,
       successReplyEmail: (replySla) =>
         `이메일로 답변드리겠습니다${replySla ? ` (${replySla} 이내)` : ""}. 아직 예약된 항목은 없습니다.`,
       successReplyWhatsapp: (replySla) =>
@@ -1675,6 +1678,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       back: "이전",
       showRoute: "내 여행 동선 보기",
       continue: "계속",
+      answerRequired: "계속하려면 답변 하나를 선택해 주세요.",
       resultKicker: "나의 여행 동선 초안",
       routeAriaLabel: "순서대로 표시한 추천 여행 동선",
       nights: (count) => `${count}박`,

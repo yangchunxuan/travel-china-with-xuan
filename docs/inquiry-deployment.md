@@ -18,11 +18,19 @@ Current production configuration:
 The main website remains a GitHub Pages-compatible static export. Inquiry data
 is handled by separate Supabase Edge Functions and private Postgres tables.
 
+The independent outbox monitor added in this revision exists only as source
+until migration `202607190001`, the `inquiry-health` function, matching
+Edge/GitHub copies of `OUTBOX_MONITOR_SECRET` and the GitHub repository
+variable are configured. Do not treat the workflow file alone as production
+monitoring.
+
 ## What is included
 
 - `supabase/functions/v1-inquiries`: public `POST` / `OPTIONS` handler.
 - `supabase/functions/notify-inquiries`: authenticated outbox worker using
   Resend.
+- `supabase/functions/inquiry-health`: read-only, independently authenticated
+  aggregate outbox health endpoint.
 - `supabase/migrations/202607180001_homeground_inquiries.sql`: private
   `inquiries`, `notification_outbox`, hashed rate-limit buckets, transaction
   RPCs, and deny-by-default RLS.
@@ -31,6 +39,10 @@ is handled by separate Supabase Edge Functions and private Postgres tables.
 - `supabase/migrations/202607180003_homeground_rate_limit_retention.sql`:
   one-minute recurring deletion of secret-keyed rate-limit buckets after their
   24-hour window expires.
+- `supabase/migrations/202607190001_homeground_outbox_health.sql`: service-role
+  RPC returning only pending, processing, failed and stale outbox counts.
+- `.github/workflows/inquiry-health.yml`: independent 15-minute health check;
+  an unhealthy outbox makes the workflow fail without using Resend.
 - `lib/inquiryContract.ts`: runtime-neutral input validation,
   canonicalization, current route recomputation, and route-version checks.
 - `tools/mock-inquiry-api.mjs`: local-only, in-memory API for browser E2E.
@@ -100,6 +112,32 @@ The worker sends a claimed batch sequentially. Configuration fails closed
 unless the lease is longer than the worst-case batch provider time plus a
 five-second per-job finishing allowance. Keep the pilot batch at `1`; increase
 it only after measuring real provider and database latency.
+
+### `inquiry-health` monitor
+
+| Variable | Purpose |
+|---|---|
+| `SUPABASE_URL` | Project URL |
+| `SUPABASE_SECRET_KEYS` | Preferred server-only RPC credential dictionary |
+| `SUPABASE_SERVICE_ROLE_KEY` | Legacy server-only RPC fallback |
+| `OUTBOX_MONITOR_SECRET` | High-entropy monitor authentication secret; it must differ from the notification worker secret and Resend key |
+
+The monitor accepts only `GET` with the `x-monitor-secret` header. It returns
+aggregate outbox counts, never Inquiry IDs, routes, contact details or notes.
+It returns HTTP `503` whenever a terminal failure exists, a due pending job is
+more than five minutes late, an expired processing lease is more than five
+minutes stale, or the health query itself is unavailable.
+
+GitHub Actions needs:
+
+- repository variable `OUTBOX_HEALTH_URL` set to
+  `https://<project-ref>.supabase.co/functions/v1/inquiry-health`;
+- Actions secret `OUTBOX_MONITOR_SECRET` set to the same independent value as
+  the Edge Function secret.
+
+Assign a technical owner and enable GitHub Actions failure notifications. The
+scheduled workflow is the independent signal; it does not call Resend and
+does not print the response body or secret.
 
 The Resend message contains the public reference, language, route summary,
 the four route answers, selected reply channel, traveller email or phone,
@@ -182,11 +220,12 @@ those defaults. The runtime prefers the `default` entry in
 dictionary is absent. New opaque secret keys are sent only in the `apikey`
 header; the legacy JWT additionally uses `Authorization: Bearer`.
 
-Deploy both functions:
+Deploy all three functions:
 
 ```bash
 supabase functions deploy v1-inquiries --no-verify-jwt
 supabase functions deploy notify-inquiries --no-verify-jwt
+supabase functions deploy inquiry-health --no-verify-jwt
 ```
 
 The native public URL is:
@@ -261,6 +300,24 @@ new lease token/version, and uses the Inquiry ID as the Resend idempotency key.
 A stale worker cannot overwrite a reclaimed job. Retry intervals are one
 minute, five minutes, thirty minutes, and two hours before terminal failure.
 
+## Independent outbox health check
+
+After migration `202607190001` and the `inquiry-health` function are deployed,
+verify the endpoint without printing its response:
+
+```bash
+curl --fail --silent --show-error \
+  --output /dev/null \
+  --header "x-monitor-secret: $OUTBOX_MONITOR_SECRET" \
+  "$OUTBOX_HEALTH_URL"
+```
+
+Run `.github/workflows/inquiry-health.yml` once with `workflow_dispatch`, then
+confirm its 15-minute scheduled run is green. A `401` means the GitHub and
+Edge secrets do not match; `503` means the monitor is unconfigured,
+unavailable, or has detected a failed/stale outbox job. The daily manual
+aggregate query and response actions are in `docs/studio-inquiry-runbook.md`.
+
 ## Database security
 
 - All PII tables are in `homeground_private`.
@@ -318,6 +375,9 @@ Before enabling the public form:
 10. Open the website's email fallback and confirm its
     `[Homeground][Fallback]` subject receives the `Homeground inquiries`
     label in the same monitored inbox as API notifications.
+11. Run the `Inquiry outbox health` workflow manually, confirm it is green,
+    then force a staging terminal/stale outbox count and confirm the workflow
+    fails without sending through Resend.
 
 ## Rollback
 

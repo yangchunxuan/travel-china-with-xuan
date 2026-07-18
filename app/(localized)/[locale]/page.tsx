@@ -44,7 +44,7 @@ export async function generateMetadata({
         {
           url: "https://homegroundchina.com/images/home/beijing-hero-2400.jpg",
           width: 2400,
-          height: 1599,
+          height: 1600,
           alt: copy.hero.imageAlt,
         },
       ],

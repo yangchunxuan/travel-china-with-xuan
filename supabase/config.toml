@@ -9,3 +9,8 @@ verify_jwt = false
 # Scheduled invocations authenticate with the server-only
 # NOTIFICATION_WORKER_SECRET header. This function is not browser-facing.
 verify_jwt = false
+
+[functions.inquiry-health]
+# GitHub Actions authenticates with an independent OUTBOX_MONITOR_SECRET.
+# This read-only function returns aggregate outbox counts and no Inquiry data.
+verify_jwt = false

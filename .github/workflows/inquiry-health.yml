@@ -1,0 +1,66 @@
+name: Inquiry outbox health
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: inquiry-outbox-health
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check aggregate outbox health
+        env:
+          OUTBOX_HEALTH_URL: ${{ vars.OUTBOX_HEALTH_URL }}
+          OUTBOX_MONITOR_SECRET: ${{ secrets.OUTBOX_MONITOR_SECRET }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${OUTBOX_HEALTH_URL}" || -z "${OUTBOX_MONITOR_SECRET}" ]]; then
+            echo "::error::Inquiry health URL or monitor secret is not configured."
+            exit 1
+          fi
+
+          response_file="$(mktemp)"
+          trap 'rm -f "${response_file}"' EXIT
+
+          http_status="$(
+            curl \
+              --silent \
+              --show-error \
+              --connect-timeout 10 \
+              --max-time 30 \
+              --retry 2 \
+              --retry-all-errors \
+              --output "${response_file}" \
+              --write-out "%{http_code}" \
+              --header "x-monitor-secret: ${OUTBOX_MONITOR_SECRET}" \
+              "${OUTBOX_HEALTH_URL}"
+          )"
+
+          if [[ "${http_status}" != "200" ]]; then
+            echo "::error::Inquiry outbox health check failed with HTTP ${http_status}."
+            exit 1
+          fi
+
+          if ! jq -e '
+            .ok == true and
+            .status == "healthy" and
+            (.counts.pending | type == "number") and
+            (.counts.processing | type == "number") and
+            (.counts.failed == 0) and
+            (.counts.overduePending == 0) and
+            (.counts.expiredProcessing == 0)
+          ' "${response_file}" >/dev/null; then
+            echo "::error::Inquiry health endpoint returned an invalid or unhealthy response."
+            exit 1
+          fi

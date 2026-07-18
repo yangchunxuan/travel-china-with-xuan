@@ -897,9 +897,9 @@ export function PlannerHandoff({
                 {copy.handoff.successTitle}
               </h3>
               <p>{copy.handoff.successBody}</p>
-              <strong className={styles.publicReference}>
+              <p className={styles.publicReference}>
                 {copy.handoff.successReference(publicReference)}
-              </strong>
+              </p>
               <p>
                 {submittedChannel === "email"
                   ? copy.handoff.successReplyEmail(replySla)

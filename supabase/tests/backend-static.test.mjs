@@ -11,8 +11,13 @@ const scheduleMigrationPath =
   "supabase/migrations/202607180002_homeground_notification_schedule.sql";
 const rateLimitRetentionMigrationPath =
   "supabase/migrations/202607180003_homeground_rate_limit_retention.sql";
+const outboxHealthMigrationPath =
+  "supabase/migrations/202607190001_homeground_outbox_health.sql";
+const healthFunctionPath = "supabase/functions/inquiry-health/index.ts";
+const supabaseConfigPath = "supabase/config.toml";
 const envExamplePath = ".env.example";
 const deployWorkflowPath = ".github/workflows/deploy.yml";
+const healthWorkflowPath = ".github/workflows/inquiry-health.yml";
 const handoffCopyPath = "lib/homegroundI18n.ts";
 const studioRunbookPath = "docs/studio-inquiry-runbook.md";
 const plannerHandoffPath = "components/PlannerHandoff.tsx";
@@ -201,6 +206,95 @@ test("notification schedule is Vault-backed, fail-closed, and cron-driven", asyn
   assert.doesNotMatch(sql, /https:\/\/[a-z0-9-]+\.supabase\.co/);
 });
 
+test("outbox health RPC returns only aggregate non-PII counts", async () => {
+  const sql = await source(outboxHealthMigrationPath);
+  assert.match(
+    sql,
+    /create or replace function public\.get_homeground_outbox_health\(\)/,
+  );
+  for (const count of [
+    "pending_count",
+    "processing_count",
+    "failed_count",
+    "overdue_pending_count",
+    "expired_processing_count",
+  ]) {
+    assert.match(sql, new RegExp(`\\b${count}\\b`));
+  }
+  assert.match(
+    sql,
+    /from homeground_private\.notification_outbox outbox/,
+  );
+  assert.match(sql, /now\(\) - interval '5 minutes'/);
+  assert.match(
+    sql,
+    /revoke all on function public\.get_homeground_outbox_health\(\)[\s\S]*from public, anon, authenticated/,
+  );
+  assert.match(
+    sql,
+    /grant execute on function public\.get_homeground_outbox_health\(\)[\s\S]*to service_role/,
+  );
+  assert.doesNotMatch(
+    sql,
+    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|\bnote\b/,
+  );
+});
+
+test("independent health function is secret-protected and fails on unhealthy counts", async () => {
+  const code = await source(healthFunctionPath);
+  const config = await source(supabaseConfigPath);
+  assert.match(code, /OUTBOX_MONITOR_SECRET/);
+  assert.match(code, /x-monitor-secret/);
+  assert.match(code, /constantTimeEqual/);
+  assert.match(code, /request\.method !== "GET"/);
+  assert.match(code, /"get_homeground_outbox_health"/);
+  assert.match(
+    code,
+    /counts\.failed === 0[\s\S]*counts\.overduePending === 0[\s\S]*counts\.expiredProcessing === 0/,
+  );
+  assert.match(code, /return jsonResponse\(healthy \? 200 : 503/);
+  assert.doesNotMatch(code, /console\.(?:log|info|warn|error)/);
+  assert.doesNotMatch(
+    code,
+    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|\bnote\b/,
+  );
+  assert.match(
+    config,
+    /\[functions\.inquiry-health\][\s\S]*verify_jwt = false/,
+  );
+});
+
+test("GitHub Actions checks outbox health every fifteen minutes without Resend", async () => {
+  const workflow = await source(healthWorkflowPath);
+  const runbook = await source(studioRunbookPath);
+  assert.match(workflow, /cron: "\*\/15 \* \* \* \*"/);
+  assert.match(
+    workflow,
+    /OUTBOX_HEALTH_URL: \$\{\{ vars\.OUTBOX_HEALTH_URL \}\}/,
+  );
+  assert.match(
+    workflow,
+    /OUTBOX_MONITOR_SECRET: \$\{\{ secrets\.OUTBOX_MONITOR_SECRET \}\}/,
+  );
+  assert.match(workflow, /x-monitor-secret/);
+  assert.match(workflow, /http_status/);
+  assert.match(workflow, /\.counts\.failed == 0/);
+  assert.doesNotMatch(
+    workflow,
+    /RESEND_API_KEY|NOTIFICATION_WORKER_SECRET|BRAND_NOTIFICATION_EMAIL/,
+  );
+  assert.doesNotMatch(workflow, /cat\s+["']?\$\{?response_file/);
+  assert.match(
+    runbook,
+    /label:"Homeground inquiries" is:unread older:2d/,
+  );
+  assert.match(runbook, /public\.get_homeground_outbox_health\(\)/);
+  assert.match(
+    runbook,
+    /failed_count[\s\S]*overdue_pending_count[\s\S]*expired_processing_count/,
+  );
+});
+
 test("hashed rate-limit buckets have an independent 24-hour purge", async () => {
   const sql = await source(rateLimitRetentionMigrationPath);
   const consumeStart = sql.indexOf(
@@ -295,6 +389,9 @@ test("backend sources contain no hardcoded personal contact or secret", async ()
       source(runtimePath),
       source(scheduleMigrationPath),
       source(rateLimitRetentionMigrationPath),
+      source(outboxHealthMigrationPath),
+      source(healthFunctionPath),
+      source(healthWorkflowPath),
     ])
   ).join("\n");
   assert.doesNotMatch(combined, /defaultContactEmail|defaultWhatsAppNumber/);
@@ -303,7 +400,7 @@ test("backend sources contain no hardcoded personal contact or secret", async ()
   assert.doesNotMatch(combined, /re_[A-Za-z0-9]{16,}/);
 });
 
-test("environment template covers the public form and both server functions", async () => {
+test("environment template covers the public form and server functions", async () => {
   const example = await source(envExamplePath);
   for (const variable of [
     "NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED",
@@ -334,6 +431,8 @@ test("environment template covers the public form and both server functions", as
     "NOTIFICATION_BATCH_SIZE",
     "NOTIFICATION_LEASE_SECONDS",
     "NOTIFICATION_PROVIDER_TIMEOUT_SECONDS",
+    "OUTBOX_MONITOR_SECRET",
+    "OUTBOX_HEALTH_URL",
   ]) {
     assert.match(example, new RegExp(`^${variable}=`, "m"));
   }

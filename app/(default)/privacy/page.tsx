@@ -5,13 +5,17 @@ import { getHomegroundPrivacyCopy } from "../../../lib/homegroundPrivacyI18n";
 const copy = getHomegroundPrivacyCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.metadata.title,
+  title: {
+    absolute: copy.metadata.title,
+  },
   description: copy.metadata.description,
   alternates: {
+    canonical: "/privacy/",
     languages: {
       en: "/privacy/",
       ko: "/ko/privacy/",
       "zh-Hans": "/zh/privacy/",
+      "x-default": "/privacy/",
     },
   },
 };

@@ -24,6 +24,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Test inquiry contract
+        run: npm run test:inquiry
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: Audit production dependencies
+        run: npm audit --omit=dev
       - name: Build static site
         run: npm run build
         env:

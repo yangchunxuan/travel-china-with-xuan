@@ -192,7 +192,7 @@ export function HomegroundHomePage({
               src="/images/home/beijing-hero-2400.jpg"
               alt={copy.hero.imageAlt}
               width="2400"
-              height="1599"
+              height="1600"
               fetchPriority="high"
             />
           </picture>

@@ -55,6 +55,50 @@ If both team members are working, the person who starts a reply sends one
 short message in the team chat: “I’m handling HG-…”. No mailbox claim label is
 needed. At a shift handover, say which starred threads still need action.
 
+### Daily missed-enquiry check
+
+The named technical owner performs these two checks once every day. They are
+health checks, not a second customer queue or a CRM.
+
+1. In Gmail, run:
+
+   ```text
+   label:"Homeground inquiries" is:unread older:2d
+   ```
+
+   Any result is already outside the current 48-hour reply commitment. Verify
+   that no reply was sent, then answer or hand it to the person on duty
+   immediately. Keep the existing Gmail thread as the handling record.
+
+2. In the Supabase SQL editor, run the non-PII aggregate query:
+
+   ```sql
+   select *
+   from public.get_homeground_outbox_health();
+   ```
+
+   `failed_count`, `overdue_pending_count` and
+   `expired_processing_count` must all be zero. `pending_count` or
+   `processing_count` may briefly be non-zero while a notification is being
+   delivered; recheck after five minutes. The query returns counts only—never
+   Inquiry IDs, contact details or notes.
+
+The GitHub Actions workflow named `Inquiry outbox health` runs the same health
+check every 15 minutes through an independently authenticated endpoint. Its
+failure is the operational alert when the outbox reaches terminal failure or
+the worker/scheduler leaves a job stale. The technical owner must enable
+GitHub Actions failure notifications and investigate a red run; do not paste
+its secret or response into team chat.
+
+If any failure count remains non-zero, or the workflow stays red:
+
+1. stop new public submissions by disabling
+   `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` in the next deployment;
+2. check the notification schedule, Edge Function and Resend configuration
+   using `inquiry-deployment.md`;
+3. restore the cause before retrying failed jobs;
+4. repeat the aggregate query and confirm the workflow returns green.
+
 ## 4. What the first reply asks
 
 Ask only for facts needed to make the next planning decision:

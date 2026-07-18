@@ -469,15 +469,12 @@
   color: #98382b;
 }
 
-.publicReference {
-  background: #edf3ee;
-  border: 1px solid #bad0c0;
-  border-radius: 0.55rem;
-  color: #183c32;
-  display: inline-block;
-  font-size: 0.9rem;
+.statusState .publicReference {
+  color: #526158;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin: 0;
   overflow-wrap: anywhere;
-  padding: 0.55rem 0.7rem;
 }
 
 .leaveWarning {

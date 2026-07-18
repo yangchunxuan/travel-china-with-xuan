@@ -152,6 +152,7 @@ export function RouteFinder({
   const [match, setMatch] = useState<RouteMatch | null>(null);
   const [journey, setJourney] = useState<RouteJourney | null>(null);
   const [editingMode, setEditingMode] = useState<EditingMode>("none");
+  const [questionError, setQuestionError] = useState<AnswerKey | null>(null);
   const [sessionReady, setSessionReady] = useState(false);
   const answersBeforeEdit = useRef<Partial<RouteFinderAnswers> | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
@@ -162,6 +163,9 @@ export function RouteFinder({
 
   const question = questions[stepIndex];
   const currentAnswer = answers[question.key];
+  const questionHelpId = `${id}-${question.key}-help`;
+  const questionErrorId = `${id}-${question.key}-error`;
+  const hasQuestionError = questionError === question.key;
 
   useEffect(() => {
     try {
@@ -348,12 +352,20 @@ export function RouteFinder({
       trackPlannerEvent("planner_started", { page_language: locale });
     }
     onStatusChange?.("in-progress");
+    setQuestionError(null);
     setAnswers((current) => ({ ...current, [key]: value }));
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!currentAnswer) return;
+    if (!currentAnswer) {
+      setQuestionError(question.key);
+      window.requestAnimationFrame(() => {
+        headingRef.current?.focus();
+      });
+      return;
+    }
+    setQuestionError(null);
 
     trackPlannerEvent("planner_step_completed", {
       question: question.key,
@@ -371,6 +383,7 @@ export function RouteFinder({
   };
 
   const handleBack = () => {
+    setQuestionError(null);
     if (editingMode === "single" || (editingMode === "all" && stepIndex === 0)) {
       if (answersBeforeEdit.current) {
         const previousAnswers = answersBeforeEdit.current;
@@ -393,6 +406,7 @@ export function RouteFinder({
 
   const editAnswer = (index: number) => {
     answersBeforeEdit.current = { ...answers };
+    setQuestionError(null);
     setEditingMode("single");
     setStepIndex(index);
     setView("questions");
@@ -401,6 +415,7 @@ export function RouteFinder({
 
   const editAllAnswers = () => {
     answersBeforeEdit.current = { ...answers };
+    setQuestionError(null);
     setEditingMode("all");
     setStepIndex(0);
     setView("questions");
@@ -413,6 +428,7 @@ export function RouteFinder({
     setMatch(null);
     setJourney(null);
     setEditingMode("none");
+    setQuestionError(null);
     setStepIndex(0);
     setView("questions");
     hasTrackedStart.current = false;
@@ -447,7 +463,7 @@ export function RouteFinder({
 
       <div className={styles.card}>
         {view === "questions" ? (
-          <form onSubmit={handleSubmit}>
+          <form noValidate onSubmit={handleSubmit}>
             <div className={styles.progressBlock}>
               <p id={`${id}-progress`}>
                 {copy.finder.progress(stepIndex + 1, questions.length)}
@@ -461,7 +477,10 @@ export function RouteFinder({
 
             <fieldset
               className={styles.question}
-              aria-describedby={`${id}-${question.key}-help`}
+              aria-describedby={`${questionHelpId}${
+                hasQuestionError ? ` ${questionErrorId}` : ""
+              }`}
+              aria-invalid={hasQuestionError}
             >
               <legend>
                 <span className={styles.questionEyebrow}>
@@ -476,11 +495,20 @@ export function RouteFinder({
                 </span>
               </legend>
               <p
-                id={`${id}-${question.key}-help`}
+                id={questionHelpId}
                 className={styles.questionHelp}
               >
                 {question.help}
               </p>
+              {hasQuestionError && (
+                <p
+                  className={styles.questionError}
+                  id={questionErrorId}
+                  role="alert"
+                >
+                  {copy.finder.answerRequired}
+                </p>
+              )}
 
               <div className={styles.options}>
                 {question.options.map((option, optionIndex) => {
@@ -501,6 +529,10 @@ export function RouteFinder({
                         id={optionId}
                         name={`${id}-${question.key}`}
                         onChange={() => selectAnswer(question.key, option.id)}
+                        aria-describedby={
+                          hasQuestionError ? questionErrorId : undefined
+                        }
+                        aria-invalid={hasQuestionError}
                         required={optionIndex === 0}
                         type="radio"
                         value={option.id}
