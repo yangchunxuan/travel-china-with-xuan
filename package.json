@@ -3,7 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
+    "check:font-coverage": "node tools/check-font-coverage.mjs",
+    "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
+    "build": "npm run check:font-coverage && next build",
+    "postbuild": "node tools/prune-production-export.mjs",
     "start": "next start"
   },
   "dependencies": {
@@ -15,6 +19,7 @@
   "devDependencies": {
     "@types/node": "20.17.6",
     "@types/react": "19.2.17",
+    "fontkit": "^2.0.4",
     "typescript": "5.8.2"
   },
   "overrides": {

@@ -1,0 +1,11 @@
+project_id = "homeground-local"
+
+[functions.v1-inquiries]
+# The public function performs its own strict Origin, method, content-type,
+# schema, idempotency, and rate-limit checks. It never trusts a browser JWT.
+verify_jwt = false
+
+[functions.notify-inquiries]
+# Scheduled invocations authenticate with the server-only
+# NOTIFICATION_WORKER_SECRET header. This function is not browser-facing.
+verify_jwt = false

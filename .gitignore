@@ -3,5 +3,13 @@ node_modules/
 out/
 .DS_Store
 npm-debug.log*
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.env*
+!.env.example
+/supabase/.temp/
 /路线介绍ui设计.mp4
 DESIGN-BRIEF-*.md
+.art-lab/
+/tools/models/*.onnx

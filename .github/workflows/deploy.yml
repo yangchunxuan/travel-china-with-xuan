@@ -24,7 +24,23 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - name: Build static site
+        run: npm run build
+        env:
+          # Public, build-time values only. Unset or incomplete values keep the
+          # Inquiry handoff fail-closed; never put server secrets here.
+          NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED }}
+          NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL }}
+          NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_EN: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_EN }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_ZH: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_ZH }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_KO: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_KO }}
+          NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN }}
+          NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH }}
+          NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO }}
+          NEXT_PUBLIC_HOMEGROUND_WHATSAPP_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_ENABLED }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
