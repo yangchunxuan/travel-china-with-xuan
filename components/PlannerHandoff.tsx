@@ -16,14 +16,16 @@ import {
   type FormEvent,
 } from "react";
 import {
-  getAnswerLabels,
-  getCityName,
-  type RouteMatch,
-} from "../lib/routeFinder";
+  type DestinationPlan,
+} from "../lib/destinationPlanner";
 import {
-  currentInquiryFormVersion,
+  getDestinationNames,
+  getDestinationPlannerCopy,
+} from "../lib/destinationPlannerI18n";
+import {
+  currentDestinationInquiryFormVersion,
   currentPrivacyNoticeVersion,
-  inquirySchemaVersion,
+  destinationInquirySchemaVersion,
 } from "../lib/inquiryVersions";
 import {
   getHomegroundCopy,
@@ -189,13 +191,14 @@ export function PlannerHandoff({
 }: {
   embedded?: boolean;
   locale: HomegroundLocale;
-  match: RouteMatch;
+  match: DestinationPlan;
   journey?: RouteJourney;
   routeState?: HandoffRouteState;
   onDirtyChange?: (dirty: boolean) => void;
   onStatusChange?: (status: HandoffStatus) => void;
 }) {
   const copy = getHomegroundCopy(locale);
+  const plannerCopy = getDestinationPlannerCopy(locale);
   const apiUrl =
     process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL?.trim() || "";
   const brandEmail =
@@ -306,54 +309,97 @@ export function PlannerHandoff({
     routeIdentityRef.current = routeIdentity;
   }
 
+  const destinationNames = useMemo(
+    () => getDestinationNames(match.answers.destinationIds, locale),
+    [locale, match.answers.destinationIds],
+  );
+  const mustSeeNames = useMemo(
+    () => getDestinationNames(match.answers.mustSeeIds, locale),
+    [locale, match.answers.mustSeeIds],
+  );
+  const wishlistLabel = useMemo(() => {
+    if (match.answers.destinationMode === "classic-start") {
+      return plannerCopy.result.classicStartValue;
+    }
+
+    const values = [...destinationNames];
+    if (match.answers.otherPlace) {
+      values.push(
+        `${plannerCopy.result.otherLabel}: ${match.answers.otherPlace}`,
+      );
+    }
+    return values.join(", ");
+  }, [
+    destinationNames,
+    match.answers.destinationMode,
+    match.answers.otherPlace,
+    plannerCopy.result.classicStartValue,
+    plannerCopy.result.otherLabel,
+  ]);
+  const briefLines = useMemo(() => {
+    const lines = [
+      `${plannerCopy.result.answerLabels.destinations}: ${wishlistLabel}`,
+      `${plannerCopy.result.answerLabels.nights}: ${plannerCopy.result.nights(
+        match.answers.totalNights,
+      )}`,
+      `${plannerCopy.result.answerLabels.party}: ${
+        plannerCopy.partyLabels[match.answers.party]
+      }`,
+      `${plannerCopy.result.answerLabels.pace}: ${
+        plannerCopy.paceLabels[match.answers.pace]
+      }`,
+      `${plannerCopy.result.timingTitle}: ${
+        plannerCopy.result.titles[match.timing.status]
+      }`,
+    ];
+    if (mustSeeNames.length > 0) {
+      lines.push(
+        `${plannerCopy.result.mustSeeTitle}: ${mustSeeNames.join(", ")}`,
+      );
+    }
+    if (note.trim()) {
+      lines.push(`${copy.handoff.noteLabel}: ${note.trim()}`);
+    }
+    lines.push(plannerCopy.result.boundary);
+    return lines;
+  }, [
+    copy.handoff.noteLabel,
+    match.answers.pace,
+    match.answers.party,
+    match.answers.totalNights,
+    match.timing.status,
+    mustSeeNames,
+    note,
+    plannerCopy,
+    wishlistLabel,
+  ]);
+  const briefText = useMemo(
+    () => briefLines.join("\n"),
+    [briefLines],
+  );
   const fallbackMailto = useMemo(() => {
     if (!brandEmailReady) return "";
 
-    const subject = copy.handoff.fallbackEmailSubject(routeReference);
-    const body = copy.handoff.fallbackEmailBody(routeReference);
-    return `mailto:${brandEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [brandEmail, brandEmailReady, copy.handoff, routeReference]);
-
-  const answerLabels = useMemo(
-    () => getAnswerLabels(match.answers, locale),
-    [locale, match.answers],
-  );
-  const whatsappRoute = useMemo(
-    () =>
-      match.cityNights
-        .map(
-          (stop) =>
-            `${getCityName(stop.city, locale)} (${copy.finder.nights(
-              stop.nights,
-            )})`,
-        )
-        .join(" → "),
-    [copy.finder, locale, match.cityNights],
-  );
+    const subject = `Homeground China — ${plannerCopy.result.answersTitle}`;
+    return `mailto:${brandEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(briefText)}`;
+  }, [
+    brandEmail,
+    brandEmailReady,
+    briefText,
+    plannerCopy.result.answersTitle,
+  ]);
   const whatsappMessage = useMemo(() => {
-    const separator = locale === "zh" ? "：" : ": ";
     const lines = [
       copy.handoff.whatsappMessageIntro,
       "",
-      `${copy.handoff.whatsappMessageRouteLabel}${separator}${whatsappRoute}`,
-      `${copy.handoff.whatsappMessagePartyLabel}${separator}${answerLabels.party}`,
-      `${copy.handoff.whatsappMessageStyleLabel}${separator}${answerLabels.travelStyle}`,
-      `${copy.handoff.whatsappMessageLengthLabel}${separator}${copy.finder.nights(
-        match.totalNights,
-      )}`,
-      `${copy.handoff.whatsappMessagePaceLabel}${separator}${answerLabels.pace}`,
+      ...briefLines,
       "",
       copy.handoff.whatsappMessageClosing,
     ];
     return lines.join("\n");
   }, [
-    answerLabels.pace,
-    answerLabels.party,
-    answerLabels.travelStyle,
-    copy.finder,
+    briefLines,
     copy.handoff,
-    match.totalNights,
-    whatsappRoute,
   ]);
   const whatsappUrl = directWhatsappReady
     ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -517,9 +563,6 @@ export function PlannerHandoff({
       const next = { ...current };
       delete next.contact;
       delete next.email;
-      if (method === "direct-whatsapp") {
-        delete next.note;
-      }
       return next;
     });
     setFailureKind(null);
@@ -593,9 +636,9 @@ export function PlannerHandoff({
     }
 
     return {
-      schemaVersion: inquirySchemaVersion,
-      formVersion: currentInquiryFormVersion,
-      entryPath: "generated_route",
+      schemaVersion: destinationInquirySchemaVersion,
+      formVersion: currentDestinationInquiryFormVersion,
+      entryPath: "destination_timing",
       locale,
       journey: {
         ...currentJourney(),
@@ -913,9 +956,23 @@ export function PlannerHandoff({
       <div className={styles.inner}>
         <div className={styles.copy}>
           <p className={styles.eyebrow}>{copy.handoff.eyebrow}</p>
-          <h2 id="planner-handoff-title" ref={headingRef} tabIndex={-1}>
-            {copy.handoff.title}
-          </h2>
+          {embedded ? (
+            <h3
+              id="planner-handoff-title"
+              ref={headingRef}
+              tabIndex={-1}
+            >
+              {copy.handoff.title}
+            </h3>
+          ) : (
+            <h2
+              id="planner-handoff-title"
+              ref={headingRef}
+              tabIndex={-1}
+            >
+              {copy.handoff.title}
+            </h2>
+          )}
           <p className={styles.body}>{copy.handoff.body}</p>
           <p className={styles.boundary}>{copy.handoff.boundary}</p>
         </div>
@@ -1073,6 +1130,63 @@ export function PlannerHandoff({
                   </div>
                 )}
 
+                <div className={styles.field}>
+                  <label htmlFor={noteId}>
+                    {copy.handoff.noteLabel}
+                  </label>
+                  <textarea
+                    id={noteId}
+                    name="note"
+                    value={note}
+                    maxLength={maximumNoteLength}
+                    disabled={controlsLocked}
+                    dir="auto"
+                    rows={5}
+                    aria-invalid={Boolean(errors.note)}
+                    aria-describedby={`${noteHintId}${
+                      errors.note ? ` ${noteErrorId}` : ""
+                    }`}
+                    onBlur={() => {
+                      const error =
+                        noteLength(note) > maximumNoteLength
+                          ? copy.handoff.noteTooLong
+                          : hasUnsupportedControlCharacters(note)
+                            ? copy.handoff.noteInvalid
+                            : undefined;
+                      setBlurError("note", error);
+                    }}
+                    onChange={(event) => {
+                      setNote(event.target.value);
+                      markEditing("note");
+                    }}
+                  />
+                  <div className={styles.noteMeta}>
+                    <p className={styles.hint} id={noteHintId}>
+                      {copy.handoff.noteHint}
+                    </p>
+                    <span>
+                      {copy.handoff.noteCount(
+                        noteLength(note),
+                        maximumNoteLength,
+                      )}
+                    </span>
+                  </div>
+                  {note.trim().length > 0 && (
+                    <p className={styles.noteAttached} role="status">
+                      {copy.handoff.noteAttached}
+                    </p>
+                  )}
+                  {errors.note && (
+                    <p
+                      className={styles.fieldError}
+                      id={noteErrorId}
+                      role="alert"
+                    >
+                      {errors.note}
+                    </p>
+                  )}
+                </div>
+
                 <fieldset
                   id={contactGroupId}
                   className={styles.contactFieldset}
@@ -1201,63 +1315,6 @@ export function PlannerHandoff({
                           role="alert"
                         >
                           {errors.email}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className={styles.field}>
-                      <label htmlFor={noteId}>
-                        {copy.handoff.noteLabel}
-                      </label>
-                      <textarea
-                        id={noteId}
-                        name="note"
-                        value={note}
-                        maxLength={maximumNoteLength}
-                        disabled={controlsLocked}
-                        dir="auto"
-                        rows={5}
-                        aria-invalid={Boolean(errors.note)}
-                        aria-describedby={`${noteHintId}${
-                          errors.note ? ` ${noteErrorId}` : ""
-                        }`}
-                        onBlur={() => {
-                          const error =
-                            noteLength(note) > maximumNoteLength
-                              ? copy.handoff.noteTooLong
-                              : hasUnsupportedControlCharacters(note)
-                                ? copy.handoff.noteInvalid
-                                : undefined;
-                          setBlurError("note", error);
-                        }}
-                        onChange={(event) => {
-                          setNote(event.target.value);
-                          markEditing("note");
-                        }}
-                      />
-                      <div className={styles.noteMeta}>
-                        <p className={styles.hint} id={noteHintId}>
-                          {copy.handoff.noteHint}
-                        </p>
-                        <span>
-                          {copy.handoff.noteCount(
-                            noteLength(note),
-                            maximumNoteLength,
-                          )}
-                        </span>
-                      </div>
-                      {note.trim().length > 0 && (
-                        <p className={styles.noteAttached} role="status">
-                          {copy.handoff.noteAttached}
-                        </p>
-                      )}
-                      {errors.note && (
-                        <p
-                          className={styles.fieldError}
-                          id={noteErrorId}
-                          role="alert"
-                        >
-                          {errors.note}
                         </p>
                       )}
                     </div>

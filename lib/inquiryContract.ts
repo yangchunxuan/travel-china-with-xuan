@@ -25,23 +25,42 @@ import {
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./routeRules.ts";
 import {
+  computeDestinationTiming,
+  destinationIds,
+  destinationPaceIds,
+  destinationTimingRuleVersion,
+  type CanonicalDestinationTiming,
+  type DestinationId,
+  type DestinationPaceId,
+  // @ts-ignore Source-TypeScript runtimes require the explicit extension.
+} from "./destinationTiming.ts";
+import {
+  currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  destinationInquirySchemaVersion,
   inquirySchemaVersion,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./inquiryVersions.ts";
 
 export {
+  currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  destinationInquirySchemaVersion,
   inquirySchemaVersion,
   currentRouteRuleVersion,
+  destinationIds,
+  destinationPaceIds,
+  destinationTimingRuleVersion,
   travelPartyIds,
   travelStyleIds,
   tripNightsIds,
   tripPaceIds,
 };
 export type {
+  DestinationId,
+  DestinationPaceId,
   RouteFamilyId,
   RouteProfile,
   TravelPartyId,
@@ -56,6 +75,28 @@ export type InquiryLocale = (typeof inquiryLocales)[number];
 export type InquiryAnswers = RouteAnswers;
 export type CanonicalCityNights = CityNights;
 export type CanonicalRouteSnapshot = ComputedRoutePlan;
+
+export const destinationTravelPartyIds = [
+  "solo",
+  "two-adults",
+  "family-with-children",
+  "older-relatives",
+  "multigenerational-family",
+  "friends-private-group",
+] as const;
+
+export type DestinationTravelPartyId =
+  (typeof destinationTravelPartyIds)[number];
+
+export interface DestinationInquiryAnswers {
+  destinationMode: "wishlist" | "classic-start";
+  destinationIds: readonly DestinationId[];
+  otherPlace: string | null;
+  totalNights: number;
+  party: DestinationTravelPartyId;
+  pace: DestinationPaceId;
+  mustSeeIds: readonly DestinationId[];
+}
 
 export type NormalizedInquiryContact =
   | {
@@ -74,7 +115,7 @@ export interface NormalizedInquiryAttribution {
   utmCampaign: string | null;
 }
 
-export interface NormalizedInquiryPayload {
+export interface NormalizedRouteInquiryPayload {
   schemaVersion: typeof inquirySchemaVersion;
   formVersion: string;
   entryPath: "generated_route";
@@ -93,6 +134,30 @@ export interface NormalizedInquiryPayload {
   attribution: NormalizedInquiryAttribution;
   experiment: null;
 }
+
+export interface NormalizedDestinationInquiryPayload {
+  schemaVersion: typeof destinationInquirySchemaVersion;
+  formVersion: string;
+  entryPath: "destination_timing";
+  locale: InquiryLocale;
+  journey: {
+    journeyId: string;
+    revision: number;
+    answers: DestinationInquiryAnswers;
+    routeId: "destination-timing";
+    ruleVersion: string;
+  };
+  routeSnapshot: CanonicalDestinationTiming;
+  contact: NormalizedInquiryContact;
+  note: string | null;
+  privacyNoticeVersion: string;
+  attribution: NormalizedInquiryAttribution;
+  experiment: null;
+}
+
+export type NormalizedInquiryPayload =
+  | NormalizedRouteInquiryPayload
+  | NormalizedDestinationInquiryPayload;
 
 export interface InquiryValidationConfig {
   allowedFormVersions: readonly string[];
@@ -258,6 +323,40 @@ export function semanticInquiryPayload(
       ? { channel: "email", email: value.contact.email }
       : { channel: "whatsapp", phoneE164: value.contact.phoneE164 };
 
+  if (value.schemaVersion === destinationInquirySchemaVersion) {
+    return {
+      schemaVersion: value.schemaVersion,
+      formVersion: value.formVersion,
+      entryPath: value.entryPath,
+      locale: value.locale,
+      journey: {
+        journeyId: value.journey.journeyId,
+        revision: value.journey.revision,
+        answers: {
+          destinationMode: value.journey.answers.destinationMode,
+          destinationIds: value.journey.answers.destinationIds,
+          otherPlace: value.journey.answers.otherPlace,
+          totalNights: value.journey.answers.totalNights,
+          party: value.journey.answers.party,
+          pace: value.journey.answers.pace,
+          mustSeeIds: value.journey.answers.mustSeeIds,
+        },
+        routeId: value.journey.routeId,
+        ruleVersion: value.journey.ruleVersion,
+      },
+      contact,
+      note: value.note,
+      privacyNoticeVersion: value.privacyNoticeVersion,
+      attribution: {
+        landingPath: value.attribution.landingPath,
+        utmSource: value.attribution.utmSource,
+        utmMedium: value.attribution.utmMedium,
+        utmCampaign: value.attribution.utmCampaign,
+      },
+      experiment: null,
+    };
+  }
+
   return {
     schemaVersion: value.schemaVersion,
     formVersion: value.formVersion,
@@ -288,6 +387,513 @@ export function semanticInquiryPayload(
   };
 }
 
+function classicStartTimingSnapshot(
+  totalNights: number,
+  pace: DestinationPaceId,
+): CanonicalDestinationTiming {
+  return {
+    ruleVersion: destinationTimingRuleVersion,
+    destinationIds: [],
+    knownDestinationCount: 0,
+    hasOtherPlace: false,
+    totalNights,
+    pace,
+    essentialsMinimumNights: null,
+    selectedPaceRange: null,
+    essentialsShortfallNights: null,
+    selectedPaceShortfallNights: null,
+    nightsAboveSelectedPaceMax: null,
+    knownDestinationsStatus: null,
+    status: "manual_only",
+    routeFeasibility: "unverified",
+  };
+}
+
+function validateAndNormalizeDestinationInquiry(
+  input: Record<string, unknown>,
+  config: InquiryValidationConfig,
+): InquiryValidationResult {
+  const fieldErrors: Record<string, string> = {};
+  hasOnlyKeys(
+    input,
+    [
+      "schemaVersion",
+      "formVersion",
+      "entryPath",
+      "locale",
+      "journey",
+      "contact",
+      "note",
+      "privacyNoticeVersion",
+      "attribution",
+      "experiment",
+      "antiAbuse",
+    ],
+    "",
+    fieldErrors,
+  );
+
+  if (input.schemaVersion !== destinationInquirySchemaVersion) {
+    fieldErrors.schemaVersion = "unsupported";
+  }
+  if (
+    typeof input.formVersion !== "string" ||
+    input.formVersion !== currentDestinationInquiryFormVersion ||
+    !config.allowedFormVersions.includes(input.formVersion)
+  ) {
+    fieldErrors.formVersion = "unsupported";
+  }
+  if (input.entryPath !== "destination_timing") {
+    fieldErrors.entryPath = "invalid";
+  }
+  if (!isOneOf(input.locale, inquiryLocales)) {
+    fieldErrors.locale = "invalid";
+  }
+  if (
+    typeof input.privacyNoticeVersion !== "string" ||
+    !config.allowedPrivacyNoticeVersions.includes(input.privacyNoticeVersion)
+  ) {
+    fieldErrors.privacyNoticeVersion = "unsupported";
+  }
+  if (input.experiment !== null) {
+    fieldErrors.experiment = "must_be_null";
+  }
+
+  const journey = input.journey;
+  let journeyId = "";
+  let journeyRevision = 0;
+  let clientRouteId = "";
+  let clientRuleVersion = "";
+  let normalizedAnswers: DestinationInquiryAnswers | null = null;
+  if (!isPlainObject(journey)) {
+    fieldErrors.journey = "required";
+  } else {
+    hasOnlyKeys(
+      journey,
+      ["journeyId", "revision", "answers", "routeId", "ruleVersion"],
+      "journey",
+      fieldErrors,
+    );
+    if (
+      typeof journey.journeyId !== "string" ||
+      !uuidV4Pattern.test(journey.journeyId)
+    ) {
+      fieldErrors["journey.journeyId"] = "invalid";
+    } else {
+      journeyId = journey.journeyId.toLowerCase();
+    }
+    if (
+      typeof journey.revision !== "number" ||
+      !Number.isSafeInteger(journey.revision) ||
+      journey.revision < 1 ||
+      journey.revision > 1_000_000
+    ) {
+      fieldErrors["journey.revision"] = "invalid";
+    } else {
+      journeyRevision = journey.revision;
+    }
+    if (journey.routeId !== "destination-timing") {
+      fieldErrors["journey.routeId"] = "mismatch";
+    } else {
+      clientRouteId = journey.routeId;
+    }
+    if (
+      typeof journey.ruleVersion !== "string" ||
+      journey.ruleVersion.length > 64
+    ) {
+      fieldErrors["journey.ruleVersion"] = "invalid";
+    } else {
+      clientRuleVersion = journey.ruleVersion;
+    }
+
+    if (!isPlainObject(journey.answers)) {
+      fieldErrors["journey.answers"] = "required";
+    } else {
+      const candidate = journey.answers;
+      hasOnlyKeys(
+        candidate,
+        [
+          "destinationMode",
+          "destinationIds",
+          "otherPlace",
+          "totalNights",
+          "party",
+          "pace",
+          "mustSeeIds",
+        ],
+        "journey.answers",
+        fieldErrors,
+      );
+
+      const destinationMode =
+        candidate.destinationMode === "wishlist" ||
+        candidate.destinationMode === "classic-start"
+          ? candidate.destinationMode
+          : null;
+      if (destinationMode === null) {
+        fieldErrors["journey.answers.destinationMode"] = "invalid";
+      }
+
+      const normalizedDestinationIds: DestinationId[] = [];
+      if (
+        !Array.isArray(candidate.destinationIds) ||
+        candidate.destinationIds.length > destinationIds.length
+      ) {
+        fieldErrors["journey.answers.destinationIds"] = "invalid";
+      } else {
+        const seen = new Set<DestinationId>();
+        for (const value of candidate.destinationIds) {
+          if (!isOneOf(value, destinationIds)) {
+            fieldErrors["journey.answers.destinationIds"] = "invalid";
+            break;
+          }
+          if (seen.has(value)) {
+            fieldErrors["journey.answers.destinationIds"] = "duplicate";
+            break;
+          }
+          seen.add(value);
+          normalizedDestinationIds.push(value);
+        }
+        normalizedDestinationIds.sort(
+          (left, right) =>
+            destinationIds.indexOf(left) - destinationIds.indexOf(right),
+        );
+      }
+
+      let otherPlace: string | null = null;
+      if (
+        candidate.otherPlace !== undefined &&
+        candidate.otherPlace !== null
+      ) {
+        if (typeof candidate.otherPlace !== "string") {
+          fieldErrors["journey.answers.otherPlace"] = "invalid";
+        } else {
+          const normalizedOtherPlace = normalizeText(
+            candidate.otherPlace,
+          ).trim();
+          if (
+            unicodeLength(normalizedOtherPlace) > 120 ||
+            /[\n\t]/u.test(normalizedOtherPlace) ||
+            disallowedControlCharacters.test(normalizedOtherPlace)
+          ) {
+            fieldErrors["journey.answers.otherPlace"] = "invalid";
+          } else if (normalizedOtherPlace.length > 0) {
+            otherPlace = normalizedOtherPlace;
+          }
+        }
+      }
+
+      let totalNights = 0;
+      if (
+        typeof candidate.totalNights !== "number" ||
+        !Number.isSafeInteger(candidate.totalNights) ||
+        candidate.totalNights < 1 ||
+        candidate.totalNights > 60
+      ) {
+        fieldErrors["journey.answers.totalNights"] = "invalid";
+      } else {
+        totalNights = candidate.totalNights;
+      }
+
+      const party = isOneOf(
+        candidate.party,
+        destinationTravelPartyIds,
+      )
+        ? candidate.party
+        : null;
+      if (party === null) {
+        fieldErrors["journey.answers.party"] = "invalid";
+      }
+
+      const pace = isOneOf(candidate.pace, destinationPaceIds)
+        ? candidate.pace
+        : null;
+      if (pace === null) {
+        fieldErrors["journey.answers.pace"] = "invalid";
+      }
+
+      const normalizedMustSeeIds: DestinationId[] = [];
+      if (
+        !Array.isArray(candidate.mustSeeIds) ||
+        candidate.mustSeeIds.length > 3
+      ) {
+        fieldErrors["journey.answers.mustSeeIds"] = "invalid";
+      } else {
+        const selected = new Set(normalizedDestinationIds);
+        const seen = new Set<DestinationId>();
+        for (const value of candidate.mustSeeIds) {
+          if (
+            !isOneOf(value, destinationIds) ||
+            !selected.has(value)
+          ) {
+            fieldErrors["journey.answers.mustSeeIds"] = "not_selected";
+            break;
+          }
+          if (seen.has(value)) {
+            fieldErrors["journey.answers.mustSeeIds"] = "duplicate";
+            break;
+          }
+          seen.add(value);
+          normalizedMustSeeIds.push(value);
+        }
+        normalizedMustSeeIds.sort(
+          (left, right) =>
+            destinationIds.indexOf(left) - destinationIds.indexOf(right),
+        );
+      }
+
+      if (destinationMode === "wishlist") {
+        if (
+          normalizedDestinationIds.length === 0 &&
+          otherPlace === null
+        ) {
+          fieldErrors["journey.answers.destinationIds"] = "required";
+        }
+      } else if (destinationMode === "classic-start") {
+        if (normalizedDestinationIds.length > 0) {
+          fieldErrors["journey.answers.destinationIds"] =
+            "must_be_empty";
+        }
+        if (otherPlace !== null) {
+          fieldErrors["journey.answers.otherPlace"] = "must_be_null";
+        }
+        if (normalizedMustSeeIds.length > 0) {
+          fieldErrors["journey.answers.mustSeeIds"] = "must_be_empty";
+        }
+      }
+
+      if (
+        destinationMode !== null &&
+        totalNights > 0 &&
+        party !== null &&
+        pace !== null &&
+        !fieldErrors["journey.answers.destinationIds"] &&
+        !fieldErrors["journey.answers.otherPlace"] &&
+        !fieldErrors["journey.answers.mustSeeIds"]
+      ) {
+        normalizedAnswers = {
+          destinationMode,
+          destinationIds: normalizedDestinationIds,
+          otherPlace,
+          totalNights,
+          party,
+          pace,
+          mustSeeIds: normalizedMustSeeIds,
+        };
+      }
+    }
+  }
+
+  const contact = input.contact;
+  let normalizedContact: NormalizedInquiryContact | null = null;
+  let contactCode: InquiryValidationCode | null = null;
+  if (!isPlainObject(contact)) {
+    fieldErrors.contact = "required";
+  } else if (contact.channel === "email") {
+    hasOnlyKeys(contact, ["channel", "email"], "contact", fieldErrors);
+    if (typeof contact.email !== "string") {
+      fieldErrors["contact.email"] = "required";
+    } else {
+      const email = normalizeEmail(contact.email);
+      if (email === null) {
+        fieldErrors["contact.email"] = "invalid";
+      } else {
+        normalizedContact = { channel: "email", email };
+      }
+    }
+  } else if (contact.channel === "whatsapp") {
+    hasOnlyKeys(contact, ["channel", "phoneRaw"], "contact", fieldErrors);
+    // V3 WhatsApp is a customer-initiated wa.me handoff and never a saved
+    // phone-number submission. Keep the legacy saved-phone branch below for
+    // schema 1 only.
+    fieldErrors["contact.channel"] = "disabled";
+    contactCode = "whatsapp_disabled";
+  } else {
+    hasOnlyKeys(contact, ["channel"], "contact", fieldErrors);
+    fieldErrors["contact.channel"] = "invalid";
+  }
+
+  let note: string | null = null;
+  if (input.note !== undefined && input.note !== null) {
+    if (typeof input.note !== "string") {
+      fieldErrors.note = "invalid";
+    } else {
+      const normalizedNote = normalizeText(input.note).trim();
+      if (unicodeLength(normalizedNote) > 2_000) {
+        fieldErrors.note = "too_long";
+      } else if (disallowedControlCharacters.test(normalizedNote)) {
+        fieldErrors.note = "invalid_control_character";
+      } else if (normalizedNote.length > 0) {
+        note = normalizedNote;
+      }
+    }
+  }
+
+  const attribution = input.attribution;
+  let normalizedAttribution: NormalizedInquiryAttribution | null = null;
+  if (!isPlainObject(attribution)) {
+    fieldErrors.attribution = "required";
+  } else {
+    hasOnlyKeys(
+      attribution,
+      ["landingPath", "utmSource", "utmMedium", "utmCampaign"],
+      "attribution",
+      fieldErrors,
+    );
+    const landingPath =
+      typeof attribution.landingPath === "string"
+        ? normalizeText(attribution.landingPath).trim()
+        : "";
+    if (
+      landingPath.length === 0 ||
+      landingPath.length > 200 ||
+      !landingPath.startsWith("/") ||
+      landingPath.startsWith("//") ||
+      landingPath.includes("://") ||
+      disallowedControlCharacters.test(landingPath)
+    ) {
+      fieldErrors["attribution.landingPath"] = "invalid";
+    }
+
+    const normalizeUtm = (key: "utmSource" | "utmMedium" | "utmCampaign") => {
+      const raw = attribution[key];
+      if (raw === undefined || raw === null || raw === "") return null;
+      if (typeof raw !== "string") {
+        fieldErrors[`attribution.${key}`] = "invalid";
+        return null;
+      }
+      const normalized = normalizeText(raw).trim();
+      if (
+        unicodeLength(normalized) > 100 ||
+        disallowedControlCharacters.test(normalized)
+      ) {
+        fieldErrors[`attribution.${key}`] = "invalid";
+        return null;
+      }
+      return normalized || null;
+    };
+
+    normalizedAttribution = {
+      landingPath,
+      utmSource: normalizeUtm("utmSource"),
+      utmMedium: normalizeUtm("utmMedium"),
+      utmCampaign: normalizeUtm("utmCampaign"),
+    };
+  }
+
+  const antiAbuse = input.antiAbuse;
+  if (!isPlainObject(antiAbuse)) {
+    fieldErrors.antiAbuse = "required";
+  } else {
+    hasOnlyKeys(antiAbuse, ["companyWebsite"], "antiAbuse", fieldErrors);
+    if (
+      typeof antiAbuse.companyWebsite !== "string" ||
+      antiAbuse.companyWebsite.trim() !== ""
+    ) {
+      fieldErrors.request = "invalid";
+    }
+  }
+
+  if (
+    clientRuleVersion &&
+    clientRuleVersion !== destinationTimingRuleVersion
+  ) {
+    return {
+      ok: false,
+      code: "unsupported_rule_version",
+      fieldErrors: {
+        ...fieldErrors,
+        "journey.ruleVersion": "unsupported",
+      },
+    };
+  }
+  if (
+    clientRouteId &&
+    clientRouteId !== "destination-timing"
+  ) {
+    return {
+      ok: false,
+      code: "route_mismatch",
+      fieldErrors: {
+        ...fieldErrors,
+        "journey.routeId": "mismatch",
+      },
+    };
+  }
+
+  let routeSnapshot: CanonicalDestinationTiming | null = null;
+  if (normalizedAnswers !== null) {
+    routeSnapshot =
+      normalizedAnswers.destinationMode === "classic-start"
+        ? classicStartTimingSnapshot(
+            normalizedAnswers.totalNights,
+            normalizedAnswers.pace,
+          )
+        : computeDestinationTiming({
+            destinationIds: normalizedAnswers.destinationIds,
+            totalNights: normalizedAnswers.totalNights,
+            pace: normalizedAnswers.pace,
+            hasOtherPlace: normalizedAnswers.otherPlace !== null,
+          });
+
+    if (
+      normalizedAnswers.mustSeeIds.length > 0 &&
+      routeSnapshot.knownDestinationsStatus !== "needs_prioritization"
+    ) {
+      fieldErrors["journey.answers.mustSeeIds"] =
+        "not_applicable";
+      routeSnapshot = null;
+    }
+  }
+
+  if (contactCode !== null) {
+    return { ok: false, code: contactCode, fieldErrors };
+  }
+  if (
+    Object.keys(fieldErrors).length > 0 ||
+    !normalizedAnswers ||
+    !routeSnapshot ||
+    !normalizedContact ||
+    !normalizedAttribution ||
+    !isOneOf(input.locale, inquiryLocales) ||
+    typeof input.formVersion !== "string" ||
+    typeof input.privacyNoticeVersion !== "string"
+  ) {
+    let code: InquiryValidationCode = "validation_failed";
+    if (fieldErrors.formVersion === "unsupported") {
+      code = "unsupported_form_version";
+    } else if (fieldErrors.privacyNoticeVersion === "unsupported") {
+      code = "unsupported_privacy_notice";
+    } else if (fieldErrors["journey.routeId"] === "mismatch") {
+      code = "route_mismatch";
+    }
+    return { ok: false, code, fieldErrors };
+  }
+
+  return {
+    ok: true,
+    value: {
+      schemaVersion: destinationInquirySchemaVersion,
+      formVersion: input.formVersion,
+      entryPath: "destination_timing",
+      locale: input.locale,
+      journey: {
+        journeyId,
+        revision: journeyRevision,
+        answers: normalizedAnswers,
+        routeId: "destination-timing",
+        ruleVersion: destinationTimingRuleVersion,
+      },
+      routeSnapshot,
+      contact: normalizedContact,
+      note,
+      privacyNoticeVersion: input.privacyNoticeVersion,
+      attribution: normalizedAttribution,
+      experiment: null,
+    },
+  };
+}
+
 export function validateAndNormalizeInquiry(
   input: unknown,
   config: InquiryValidationConfig,
@@ -299,6 +905,9 @@ export function validateAndNormalizeInquiry(
       code: "validation_failed",
       fieldErrors: { request: "invalid" },
     };
+  }
+  if (input.schemaVersion === destinationInquirySchemaVersion) {
+    return validateAndNormalizeDestinationInquiry(input, config);
   }
 
   hasOnlyKeys(
@@ -325,6 +934,7 @@ export function validateAndNormalizeInquiry(
   }
   if (
     typeof input.formVersion !== "string" ||
+    input.formVersion !== currentInquiryFormVersion ||
     !config.allowedFormVersions.includes(input.formVersion)
   ) {
     fieldErrors.formVersion = "unsupported";

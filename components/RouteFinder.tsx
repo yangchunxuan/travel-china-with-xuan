@@ -8,6 +8,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import {
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -16,35 +17,47 @@ import {
   type ReactNode,
 } from "react";
 import {
-  findStartingRoute,
-  getAnswerLabels,
-  getCityName,
-  type ChoiceOption,
-  type RouteFinderAnswers,
-  type RouteMatch,
-} from "../lib/routeFinder";
+  createDestinationPlan,
+  destinationIds,
+  type DestinationId,
+  type DestinationPlan,
+  type DestinationPlannerAnswers,
+  type DestinationPlannerPartyId,
+  type DestinationPaceId,
+} from "../lib/destinationPlanner";
 import {
-  getHomegroundCopy,
-  type HomegroundLocale,
-} from "../lib/homegroundI18n";
+  getDestinationNames,
+  getDestinationPlannerCopy,
+} from "../lib/destinationPlannerI18n";
+import type { HomegroundLocale } from "../lib/homegroundI18n";
 import styles from "./RouteFinder.module.css";
 
-type AnswerKey = keyof RouteFinderAnswers;
+type QuestionKey = "destinations" | "nights" | "party" | "pace";
 type FinderView = "questions" | "result";
-type EditingMode = "none" | "single" | "all";
 export type PlannerStatus = "new" | "in-progress" | "result";
+type PlannerHistoryView = QuestionKey | "result";
+
+interface PlannerHistoryState {
+  homegroundPlanner: PlannerHistoryView;
+  homegroundPlannerFlowId: string;
+  homegroundPlannerDepth: number;
+}
 
 export interface RouteJourney {
   journeyId: string;
   revision: number;
 }
 
-interface Question {
-  key: AnswerKey;
-  eyebrow: string;
-  title: string;
-  help: string;
-  options: readonly ChoiceOption<string>[];
+interface PlannerDraft {
+  destinationMode: "wishlist" | "classic-start";
+  selectedDestinationIds: DestinationId[];
+  otherEnabled: boolean;
+  otherPlace: string;
+  nightsChoice: "" | "7" | "10" | "14" | "18" | "custom";
+  customNights: string;
+  party: DestinationPlannerPartyId | "";
+  pace: DestinationPaceId | "";
+  mustSeeIds: DestinationId[];
 }
 
 export interface RouteFinderProps {
@@ -52,34 +65,11 @@ export interface RouteFinderProps {
   locale?: HomegroundLocale;
   variant?: "default" | "hero";
   interactionLocked?: boolean;
+  contactDraftDirty?: boolean;
   handoff?: ReactNode;
-  onRouteFound?: (match: RouteMatch, journey: RouteJourney) => void;
+  onRouteFound?: (match: DestinationPlan, journey: RouteJourney) => void;
   onRouteCleared?: () => void;
   onStatusChange?: (status: PlannerStatus) => void;
-}
-
-const answerKeys: readonly AnswerKey[] = [
-  "party",
-  "travelStyle",
-  "nights",
-  "pace",
-];
-
-const validAnswerIds: Record<AnswerKey, readonly string[]> = {
-  party: ["couple", "family", "parents", "friends", "solo"],
-  travelStyle: ["classic", "landscape", "food", "slow", "unsure"],
-  nights: ["7", "10", "14", "18"],
-  pace: ["gentle", "balanced", "full"],
-};
-
-function questionsFor(locale: HomegroundLocale): readonly Question[] {
-  const finder = getHomegroundCopy(locale).finder;
-
-  return answerKeys.map((key) => ({
-    key,
-    ...finder.questions[key],
-    options: finder.options[key] as readonly ChoiceOption<string>[],
-  }));
 }
 
 type PlannerEventName =
@@ -88,7 +78,27 @@ type PlannerEventName =
   | "planner_result_viewed"
   | "planner_result_revised";
 
-const sessionStorageKey = "homeground-route-finder-v1";
+const questions: readonly QuestionKey[] = [
+  "destinations",
+  "nights",
+  "party",
+  "pace",
+];
+const presetNights = ["7", "10", "14", "18"] as const;
+const sessionStorageKey = "homeground-destination-planner-v3";
+const plannerQueryKey = "planner";
+
+const emptyDraft: PlannerDraft = {
+  destinationMode: "wishlist",
+  selectedDestinationIds: [],
+  otherEnabled: false,
+  otherPlace: "",
+  nightsChoice: "",
+  customNights: "",
+  party: "",
+  pace: "",
+  mustSeeIds: [],
+};
 
 function trackPlannerEvent(
   name: PlannerEventName,
@@ -112,26 +122,197 @@ function trackPlannerEvent(
   analyticsWindow.dataLayer.push({ event: name, ...parameters });
 }
 
-function hasAllAnswers(
-  answers: Partial<RouteFinderAnswers>,
-): answers is RouteFinderAnswers {
-  return answerKeys.every((key) => Boolean(answers[key]));
+function isDestinationId(value: unknown): value is DestinationId {
+  return (
+    typeof value === "string" &&
+    destinationIds.includes(value as DestinationId)
+  );
 }
 
-function restoreAnswers(value: unknown): Partial<RouteFinderAnswers> {
-  if (!value || typeof value !== "object") return {};
+function restoreDraft(value: unknown): PlannerDraft {
+  if (!value || typeof value !== "object") return emptyDraft;
+  const candidate = value as Partial<Record<keyof PlannerDraft, unknown>>;
+  const storedDestinationIds = Array.isArray(
+    candidate.selectedDestinationIds,
+  )
+    ? candidate.selectedDestinationIds
+    : [];
+  const storedMustSeeIds = Array.isArray(candidate.mustSeeIds)
+    ? candidate.mustSeeIds
+    : [];
+  const selectedDestinationIds = storedDestinationIds.length > 0
+    ? destinationIds.filter((id) =>
+        storedDestinationIds.includes(id),
+      )
+    : [];
+  const mustSeeIds = storedMustSeeIds.length > 0
+    ? destinationIds.filter(
+        (id) =>
+          storedMustSeeIds.includes(id) &&
+          selectedDestinationIds.includes(id),
+      )
+    : [];
+  const nightsChoice =
+    candidate.nightsChoice === "custom" ||
+    presetNights.includes(
+      candidate.nightsChoice as (typeof presetNights)[number],
+    )
+      ? (candidate.nightsChoice as PlannerDraft["nightsChoice"])
+      : "";
+  const partyOptions: readonly DestinationPlannerPartyId[] = [
+    "solo",
+    "two-adults",
+    "family-with-children",
+    "older-relatives",
+    "multigenerational-family",
+    "friends-private-group",
+  ];
+  const paceOptions: readonly DestinationPaceId[] = [
+    "essentials",
+    "classic",
+    "unhurried",
+  ];
 
-  const candidate = value as Record<string, unknown>;
-  return answerKeys.reduce<Partial<RouteFinderAnswers>>((restored, key) => {
-    const storedValue = candidate[key];
-    if (
-      typeof storedValue === "string" &&
-      validAnswerIds[key].includes(storedValue)
-    ) {
-      Object.assign(restored, { [key]: storedValue });
-    }
-    return restored;
-  }, {});
+  return {
+    destinationMode:
+      candidate.destinationMode === "classic-start"
+        ? "classic-start"
+        : "wishlist",
+    selectedDestinationIds,
+    otherEnabled:
+      candidate.destinationMode === "classic-start"
+        ? false
+        : candidate.otherEnabled === true,
+    otherPlace:
+      candidate.destinationMode === "classic-start" ||
+      typeof candidate.otherPlace !== "string"
+        ? ""
+        : candidate.otherPlace.slice(0, 120),
+    nightsChoice,
+    customNights:
+      typeof candidate.customNights === "string"
+        ? candidate.customNights.slice(0, 2)
+        : "",
+    party: partyOptions.includes(
+      candidate.party as DestinationPlannerPartyId,
+    )
+      ? (candidate.party as DestinationPlannerPartyId)
+      : "",
+    pace: paceOptions.includes(candidate.pace as DestinationPaceId)
+      ? (candidate.pace as DestinationPaceId)
+      : "",
+    mustSeeIds,
+  };
+}
+
+function draftNights(draft: PlannerDraft): number | null {
+  const raw =
+    draft.nightsChoice === "custom"
+      ? draft.customNights
+      : draft.nightsChoice;
+  if (!raw || !/^[0-9]+$/u.test(raw)) return null;
+  const value = Number.parseInt(raw, 10);
+  return Number.isSafeInteger(value) && value >= 1 && value <= 60
+    ? value
+    : null;
+}
+
+function completeAnswers(
+  draft: PlannerDraft,
+): DestinationPlannerAnswers | null {
+  const totalNights = draftNights(draft);
+  if (!totalNights || !draft.party || !draft.pace) return null;
+  if (
+    draft.destinationMode === "wishlist" &&
+    draft.selectedDestinationIds.length === 0 &&
+    !draft.otherEnabled
+  ) {
+    return null;
+  }
+  if (
+    draft.destinationMode === "wishlist" &&
+    draft.otherEnabled &&
+    draft.otherPlace.trim().length === 0
+  ) {
+    return null;
+  }
+
+  return {
+    destinationMode: draft.destinationMode,
+    destinationIds:
+      draft.destinationMode === "classic-start"
+        ? []
+        : draft.selectedDestinationIds,
+    otherPlace:
+      draft.destinationMode === "wishlist" && draft.otherEnabled
+        ? draft.otherPlace.trim()
+        : null,
+    totalNights,
+    party: draft.party,
+    pace: draft.pace,
+    mustSeeIds:
+      draft.destinationMode === "wishlist" ? draft.mustSeeIds : [],
+  };
+}
+
+function plannerUrl(value: QuestionKey | "result"): string {
+  const url = new URL(window.location.href);
+  url.searchParams.set(plannerQueryKey, value);
+  url.hash = "route-finder";
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
+function stepFromUrl(): number | "result" | null {
+  const value = new URL(window.location.href).searchParams.get(
+    plannerQueryKey,
+  );
+  if (value === "result") return "result";
+  const index = questions.indexOf(value as QuestionKey);
+  return index >= 0 ? index : null;
+}
+
+function readPlannerHistoryState(
+  value: unknown,
+): PlannerHistoryState | null {
+  if (!value || typeof value !== "object") return null;
+  const state = value as Partial<PlannerHistoryState>;
+  const validView =
+    state.homegroundPlanner === "result" ||
+    questions.includes(state.homegroundPlanner as QuestionKey);
+  if (
+    !validView ||
+    typeof state.homegroundPlannerFlowId !== "string" ||
+    state.homegroundPlannerFlowId.length === 0 ||
+    !Number.isInteger(state.homegroundPlannerDepth) ||
+    (state.homegroundPlannerDepth ?? -1) < 0
+  ) {
+    return null;
+  }
+  return state as PlannerHistoryState;
+}
+
+function plannerHistoryState(
+  view: PlannerHistoryView,
+  flowId: string,
+  depth: number,
+): PlannerHistoryState {
+  return {
+    homegroundPlanner: view,
+    homegroundPlannerFlowId: flowId,
+    homegroundPlannerDepth: depth,
+  };
+}
+
+function firstIncompleteStep(draft: PlannerDraft): number {
+  const hasDestinations =
+    draft.destinationMode === "classic-start" ||
+    draft.selectedDestinationIds.length > 0 ||
+    (draft.otherEnabled && draft.otherPlace.trim().length > 0);
+  if (!hasDestinations) return 0;
+  if (draftNights(draft) === null) return 1;
+  if (!draft.party) return 2;
+  if (!draft.pace) return 3;
+  return questions.length;
 }
 
 export function RouteFinder({
@@ -139,555 +320,1140 @@ export function RouteFinder({
   locale = "en",
   variant = "default",
   interactionLocked = false,
+  contactDraftDirty = false,
   handoff,
   onRouteFound,
   onRouteCleared,
   onStatusChange,
 }: RouteFinderProps) {
-  const copy = getHomegroundCopy(locale);
-  const questions = questionsFor(locale);
-  const [answers, setAnswers] = useState<Partial<RouteFinderAnswers>>({});
+  const copy = getDestinationPlannerCopy(locale);
+  const [draft, setDraft] = useState<PlannerDraft>(emptyDraft);
   const [stepIndex, setStepIndex] = useState(0);
   const [view, setView] = useState<FinderView>("questions");
-  const [match, setMatch] = useState<RouteMatch | null>(null);
+  const [match, setMatch] = useState<DestinationPlan | null>(null);
   const [journey, setJourney] = useState<RouteJourney | null>(null);
-  const [editingMode, setEditingMode] = useState<EditingMode>("none");
-  const [questionError, setQuestionError] = useState<AnswerKey | null>(null);
+  const [questionError, setQuestionError] = useState("");
+  const [mustSeeMessage, setMustSeeMessage] = useState("");
   const [sessionReady, setSessionReady] = useState(false);
-  const answersBeforeEdit = useRef<Partial<RouteFinderAnswers> | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const resultHeadingRef = useRef<HTMLHeadingElement | null>(null);
-  const hasMounted = useRef(false);
+  const otherPlaceRef = useRef<HTMLInputElement | null>(null);
+  const customNightsRef = useRef<HTMLInputElement | null>(null);
   const hasTrackedStart = useRef(false);
-  const hasShownResult = useRef(false);
+  const hasMounted = useRef(false);
+  const plannerFlowIdRef = useRef("");
+  const plannerDepthRef = useRef(0);
+  const pendingHistoryResetFlowIdRef = useRef<string | null>(null);
 
-  const question = questions[stepIndex];
-  const currentAnswer = answers[question.key];
-  const questionHelpId = `${id}-${question.key}-help`;
-  const questionErrorId = `${id}-${question.key}-error`;
-  const hasQuestionError = questionError === question.key;
+  const questionKey = questions[stepIndex];
+  const questionCopy = copy.questions[questionKey];
+  const questionHelpId = `${id}-${questionKey}-help`;
+  const questionErrorId = `${id}-${questionKey}-error`;
+  const totalNights = draftNights(draft);
+
+  const emitResult = useCallback(
+    (
+      answers: DestinationPlannerAnswers,
+      nextJourney: RouteJourney,
+      eventName: "planner_result_viewed" | "planner_result_revised",
+    ) => {
+      const nextMatch = createDestinationPlan(answers);
+      setMatch(nextMatch);
+      setJourney(nextJourney);
+      setView("result");
+      setQuestionError("");
+      onStatusChange?.("result");
+      onRouteFound?.(nextMatch, nextJourney);
+      trackPlannerEvent(eventName, {
+        page_language: locale,
+        destination_count: answers.destinationIds.length,
+        has_other_place: Boolean(answers.otherPlace),
+        destination_mode: answers.destinationMode,
+        timing_status: nextMatch.timing.status,
+        total_nights: answers.totalNights,
+      });
+    },
+    [locale, onRouteFound, onStatusChange],
+  );
 
   useEffect(() => {
     try {
-      const stored = window.sessionStorage.getItem(sessionStorageKey);
-      const parsed = stored
-        ? (JSON.parse(stored) as {
-            answers?: unknown;
-            answersBeforeEdit?: unknown;
-            editingMode?: unknown;
+      const raw = window.sessionStorage.getItem(sessionStorageKey);
+      const parsed = raw
+        ? (JSON.parse(raw) as {
+            draft?: unknown;
             journey?: unknown;
-            stepIndex?: unknown;
             view?: unknown;
+            stepIndex?: unknown;
           })
         : null;
-      const restored = restoreAnswers(parsed?.answers);
-      const restoredBeforeEdit = restoreAnswers(parsed?.answersBeforeEdit);
+      const restoredDraft = restoreDraft(parsed?.draft);
       const restoredJourney =
         parsed?.journey &&
         typeof parsed.journey === "object" &&
         typeof (parsed.journey as RouteJourney).journeyId === "string" &&
-        Number.isInteger((parsed.journey as RouteJourney).revision) &&
-        (parsed.journey as RouteJourney).revision > 0
+        Number.isInteger((parsed.journey as RouteJourney).revision)
           ? (parsed.journey as RouteJourney)
           : null;
-      const answeredCount = Object.keys(restored).length;
+      const urlState = stepFromUrl();
+      const restoredAnswers = completeAnswers(restoredDraft);
+      const canRestoreResult =
+        urlState === "result" &&
+        restoredAnswers !== null &&
+        restoredJourney !== null;
+      const savedStep =
+        typeof parsed?.stepIndex === "number" &&
+        parsed.stepIndex >= 0 &&
+        parsed.stepIndex < questions.length
+          ? parsed.stepIndex
+          : 0;
+      const requestedStep =
+        typeof urlState === "number" ? urlState : savedStep;
+      const nextStep = Math.min(
+        requestedStep,
+        firstIncompleteStep(restoredDraft),
+      );
+      const historyView: PlannerHistoryView = canRestoreResult
+        ? "result"
+        : questions[nextStep];
+      const existingHistory = readPlannerHistoryState(
+        window.history.state,
+      );
 
-      if (answeredCount > 0) {
-        setAnswers(restored);
-        hasTrackedStart.current = true;
+      if (
+        existingHistory &&
+        existingHistory.homegroundPlanner === historyView
+      ) {
+        plannerFlowIdRef.current =
+          existingHistory.homegroundPlannerFlowId;
+        plannerDepthRef.current =
+          existingHistory.homegroundPlannerDepth;
+      } else {
+        const flowId = window.crypto.randomUUID();
+        plannerFlowIdRef.current = flowId;
+        plannerDepthRef.current = 0;
+        window.history.replaceState(
+          plannerHistoryState(historyView, flowId, 0),
+          "",
+          plannerUrl(historyView),
+        );
       }
 
-      if (hasAllAnswers(restored) && parsed?.view === "result") {
-        const restoredMatch = findStartingRoute(restored, locale);
-        const activeJourney =
-          restoredJourney ?? {
-            journeyId: window.crypto.randomUUID(),
-            revision: 1,
-          };
-        setMatch(restoredMatch);
-        setJourney(activeJourney);
-        setView("result");
-        hasShownResult.current = true;
-        onStatusChange?.("result");
-        onRouteFound?.(restoredMatch, activeJourney);
-      } else if (answeredCount > 0) {
-        const firstUnanswered = questions.findIndex(
-          (item) => !restored[item.key],
+      setDraft(restoredDraft);
+      if (restoredJourney) setJourney(restoredJourney);
+
+      if (canRestoreResult) {
+        emitResult(
+          restoredAnswers!,
+          restoredJourney!,
+          "planner_result_viewed",
         );
-        const savedStep =
-          typeof parsed?.stepIndex === "number" &&
-          parsed.stepIndex >= 0 &&
-          parsed.stepIndex < questions.length
-            ? parsed.stepIndex
-            : firstUnanswered >= 0
-              ? firstUnanswered
-              : 0;
-        const savedEditingMode =
-          parsed?.editingMode === "single" || parsed?.editingMode === "all"
-            ? parsed.editingMode
-            : "none";
-        setStepIndex(savedStep);
-        setEditingMode(savedEditingMode);
-        if (Object.keys(restoredBeforeEdit).length > 0) {
-          answersBeforeEdit.current = restoredBeforeEdit;
-          if (restoredJourney) setJourney(restoredJourney);
-          if (hasAllAnswers(restoredBeforeEdit)) {
-            const previousMatch = findStartingRoute(
-              restoredBeforeEdit,
-              locale,
-            );
-            setMatch(previousMatch);
-            hasShownResult.current = true;
-          }
-        }
-        onStatusChange?.("in-progress");
       } else {
-        onStatusChange?.("new");
+        setStepIndex(nextStep);
+        setView("questions");
+        onStatusChange?.(
+          nextStep > 0 ||
+            restoredDraft.selectedDestinationIds.length > 0 ||
+            restoredDraft.destinationMode === "classic-start" ||
+            restoredDraft.otherEnabled
+            ? "in-progress"
+            : "new",
+        );
+        if (
+          urlState === "result" ||
+          (typeof urlState === "number" && urlState !== nextStep)
+        ) {
+          window.history.replaceState(
+            plannerHistoryState(
+              questions[nextStep],
+              plannerFlowIdRef.current,
+              plannerDepthRef.current,
+            ),
+            "",
+            plannerUrl(questions[nextStep]),
+          );
+        }
       }
     } catch {
       window.sessionStorage.removeItem(sessionStorageKey);
-      onStatusChange?.("new");
     } finally {
       setSessionReady(true);
     }
-  }, [locale, onRouteFound, onStatusChange]);
+  }, [emitResult, onStatusChange]);
 
   useEffect(() => {
     if (!sessionReady) return;
     window.sessionStorage.setItem(
       sessionStorageKey,
-      JSON.stringify({
-        answers,
-        answersBeforeEdit: answersBeforeEdit.current,
-        editingMode,
-        journey,
-        stepIndex,
-        view,
-      }),
+      JSON.stringify({ draft, journey, stepIndex, view }),
     );
-  }, [answers, editingMode, journey, sessionReady, stepIndex, view]);
+  }, [draft, journey, sessionReady, stepIndex, view]);
 
   useEffect(() => {
     if (!sessionReady) return;
+    const handlePopState = (event: PopStateEvent) => {
+      const pendingFlowId = pendingHistoryResetFlowIdRef.current;
+      if (pendingFlowId) {
+        pendingHistoryResetFlowIdRef.current = null;
+        plannerFlowIdRef.current = pendingFlowId;
+        plannerDepthRef.current = 0;
+        setStepIndex(0);
+        setView("questions");
+        setQuestionError("");
+        onStatusChange?.("new");
+        window.history.replaceState(
+          plannerHistoryState(questions[0], pendingFlowId, 0),
+          "",
+          plannerUrl(questions[0]),
+        );
+        return;
+      }
 
+      const historyState = readPlannerHistoryState(event.state);
+      if (
+        !historyState ||
+        historyState.homegroundPlannerFlowId !==
+          plannerFlowIdRef.current
+      ) {
+        const flowId = window.crypto.randomUUID();
+        plannerFlowIdRef.current = flowId;
+        plannerDepthRef.current = 0;
+        setStepIndex(0);
+        setView("questions");
+        setQuestionError("");
+        onStatusChange?.("new");
+        window.history.replaceState(
+          plannerHistoryState(questions[0], flowId, 0),
+          "",
+          plannerUrl(questions[0]),
+        );
+        return;
+      }
+
+      plannerDepthRef.current =
+        historyState.homegroundPlannerDepth;
+      const urlState = stepFromUrl();
+      if (urlState === "result") {
+        const answers = completeAnswers(draft);
+        if (answers && journey) {
+          const restoredMatch = createDestinationPlan(answers);
+          setMatch(restoredMatch);
+          setView("result");
+          onStatusChange?.("result");
+          onRouteFound?.(restoredMatch, journey);
+          return;
+        }
+      }
+
+      const nextStep =
+        typeof urlState === "number" ? urlState : 0;
+      const allowedStep = Math.min(nextStep, firstIncompleteStep(draft));
+      setStepIndex(allowedStep);
+      setView("questions");
+      setQuestionError("");
+      onStatusChange?.(allowedStep === 0 ? "new" : "in-progress");
+      if (allowedStep !== nextStep || urlState === "result") {
+        window.history.replaceState(
+          plannerHistoryState(
+            questions[allowedStep],
+            plannerFlowIdRef.current,
+            plannerDepthRef.current,
+          ),
+          "",
+          plannerUrl(questions[allowedStep]),
+        );
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [draft, journey, onRouteFound, onStatusChange, sessionReady]);
+
+  useEffect(() => {
+    if (!sessionReady) return;
+    const target =
+      view === "result" ? resultHeadingRef.current : headingRef.current;
     if (!hasMounted.current) {
       hasMounted.current = true;
       return;
     }
-
-    const frame = window.requestAnimationFrame(() => {
-      if (view === "result") {
-        resultHeadingRef.current?.focus();
-      } else {
-        headingRef.current?.focus();
-      }
-    });
-
-    return () => window.cancelAnimationFrame(frame);
+    window.requestAnimationFrame(() => target?.focus());
   }, [sessionReady, stepIndex, view]);
 
-  const answerSummary = useMemo(() => {
-    if (!hasAllAnswers(answers)) return [];
-
-    const labels = getAnswerLabels(answers, locale);
-    return [
-      {
-        label: copy.finder.answerLabels.party,
-        value: labels.party,
-        step: 0,
-      },
-      {
-        label: copy.finder.answerLabels.travelStyle,
-        value: labels.travelStyle,
-        step: 1,
-      },
-      {
-        label: copy.finder.answerLabels.nights,
-        value: labels.nights,
-        step: 2,
-      },
-      {
-        label: copy.finder.answerLabels.pace,
-        value: labels.pace,
-        step: 3,
-      },
-    ];
-  }, [answers, copy, locale]);
-
-  const showResult = (completeAnswers: RouteFinderAnswers) => {
-    const nextMatch = findStartingRoute(completeAnswers, locale);
-    const nextJourney = journey
-      ? {
-          journeyId: journey.journeyId,
-          revision: journey.revision + 1,
-        }
-      : {
-          journeyId: window.crypto.randomUUID(),
-          revision: 1,
-        };
-    setMatch(nextMatch);
-    setJourney(nextJourney);
-    setView("result");
-    setEditingMode("none");
-    answersBeforeEdit.current = null;
-    const resultEvent = hasShownResult.current
-      ? "planner_result_revised"
-      : "planner_result_viewed";
-    trackPlannerEvent(resultEvent, {
-      route_id: nextMatch.routeId,
-      rule_version: nextMatch.ruleVersion,
-      route_family: nextMatch.familyId,
-      total_nights: nextMatch.totalNights,
-      between_city_moves: nextMatch.betweenCityMoves,
-      page_language: locale,
-    });
-    hasShownResult.current = true;
-    onStatusChange?.("result");
-    onRouteFound?.(nextMatch, nextJourney);
-  };
-
-  const selectAnswer = (key: AnswerKey, value: string) => {
+  const updateDraft = (next: PlannerDraft) => {
+    setDraft(next);
+    setQuestionError("");
+    setMustSeeMessage("");
     if (!hasTrackedStart.current) {
       hasTrackedStart.current = true;
       trackPlannerEvent("planner_started", { page_language: locale });
     }
     onStatusChange?.("in-progress");
-    setQuestionError(null);
-    setAnswers((current) => ({ ...current, [key]: value }));
+  };
+
+  const pushPlannerHistory = (nextView: PlannerHistoryView) => {
+    const flowId =
+      plannerFlowIdRef.current || window.crypto.randomUUID();
+    const nextDepth = plannerDepthRef.current + 1;
+    plannerFlowIdRef.current = flowId;
+    plannerDepthRef.current = nextDepth;
+    window.history.pushState(
+      plannerHistoryState(nextView, flowId, nextDepth),
+      "",
+      plannerUrl(nextView),
+    );
+  };
+
+  const returnPlannerHistoryToStart = () => {
+    const currentHistory = readPlannerHistoryState(
+      window.history.state,
+    );
+    const nextFlowId = window.crypto.randomUUID();
+    if (
+      currentHistory &&
+      currentHistory.homegroundPlannerFlowId ===
+        plannerFlowIdRef.current &&
+      currentHistory.homegroundPlannerDepth > 0
+    ) {
+      pendingHistoryResetFlowIdRef.current = nextFlowId;
+      window.history.go(-currentHistory.homegroundPlannerDepth);
+      return;
+    }
+
+    plannerFlowIdRef.current = nextFlowId;
+    plannerDepthRef.current = 0;
+    window.history.replaceState(
+      plannerHistoryState(questions[0], nextFlowId, 0),
+      "",
+      plannerUrl(questions[0]),
+    );
+  };
+
+  const validateCurrentQuestion = (): string => {
+    if (questionKey === "destinations") {
+      if (
+        draft.destinationMode === "wishlist" &&
+        draft.selectedDestinationIds.length === 0 &&
+        !draft.otherEnabled
+      ) {
+        return copy.questions.destinations.error;
+      }
+      if (
+        draft.destinationMode === "wishlist" &&
+        draft.otherEnabled &&
+        draft.otherPlace.trim().length === 0
+      ) {
+        return copy.questions.destinations.otherError;
+      }
+    }
+    if (questionKey === "nights" && totalNights === null) {
+      return copy.questions.nights.error;
+    }
+    if (questionKey === "party" && !draft.party) {
+      return copy.questions.party.error;
+    }
+    if (questionKey === "pace" && !draft.pace) {
+      return copy.questions.pace.error;
+    }
+    return "";
+  };
+
+  const showResult = () => {
+    const answers = completeAnswers(draft);
+    if (!answers) return;
+    const nextJourney: RouteJourney = journey
+      ? { ...journey, revision: journey.revision + 1 }
+      : { journeyId: window.crypto.randomUUID(), revision: 1 };
+    emitResult(
+      answers,
+      nextJourney,
+      match ? "planner_result_revised" : "planner_result_viewed",
+    );
+    pushPlannerHistory("result");
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!currentAnswer) {
-      setQuestionError(question.key);
+    const error = validateCurrentQuestion();
+    if (error) {
+      setQuestionError(error);
       window.requestAnimationFrame(() => {
+        if (
+          questionKey === "destinations" &&
+          draft.otherEnabled &&
+          !draft.otherPlace.trim()
+        ) {
+          otherPlaceRef.current?.focus();
+          return;
+        }
+        if (questionKey === "nights" && draft.nightsChoice === "custom") {
+          customNightsRef.current?.focus();
+          return;
+        }
         headingRef.current?.focus();
       });
       return;
     }
-    setQuestionError(null);
 
     trackPlannerEvent("planner_step_completed", {
-      question: question.key,
-      step: stepIndex + 1,
-      editing: editingMode !== "none",
       page_language: locale,
+      step: stepIndex + 1,
+      question: questionKey,
     });
-
-    if (editingMode === "single" || stepIndex === questions.length - 1) {
-      if (hasAllAnswers(answers)) showResult(answers);
+    if (stepIndex === questions.length - 1) {
+      showResult();
       return;
     }
 
-    setStepIndex((current) => current + 1);
+    const nextStep = stepIndex + 1;
+    setStepIndex(nextStep);
+    setQuestionError("");
+    pushPlannerHistory(questions[nextStep]);
   };
 
   const handleBack = () => {
-    setQuestionError(null);
-    if (editingMode === "single" || (editingMode === "all" && stepIndex === 0)) {
-      if (answersBeforeEdit.current) {
-        const previousAnswers = answersBeforeEdit.current;
-        setAnswers(previousAnswers);
-        if (hasAllAnswers(previousAnswers)) {
-          const previousMatch = findStartingRoute(previousAnswers, locale);
-          setMatch(previousMatch);
-          if (journey) onRouteFound?.(previousMatch, journey);
-        }
-      }
-      answersBeforeEdit.current = null;
-      setEditingMode("none");
-      setView("result");
-      onStatusChange?.("result");
-      return;
-    }
-
-    setStepIndex((current) => Math.max(0, current - 1));
+    if (stepIndex === 0) return;
+    window.history.back();
   };
 
-  const editAnswer = (index: number) => {
-    answersBeforeEdit.current = { ...answers };
-    setQuestionError(null);
-    setEditingMode("single");
-    setStepIndex(index);
+  const confirmDiscardContact = () =>
+    !contactDraftDirty || window.confirm(copy.discardContactConfirm);
+
+  const handleEdit = () => {
+    if (!confirmDiscardContact()) return;
     setView("questions");
-    onStatusChange?.("in-progress");
-  };
-
-  const editAllAnswers = () => {
-    answersBeforeEdit.current = { ...answers };
-    setQuestionError(null);
-    setEditingMode("all");
     setStepIndex(0);
-    setView("questions");
+    setQuestionError("");
     onStatusChange?.("in-progress");
+    returnPlannerHistoryToStart();
   };
 
-  const restart = () => {
-    answersBeforeEdit.current = null;
-    setAnswers({});
+  const handleRestart = () => {
+    if (!confirmDiscardContact()) return;
+    setDraft(emptyDraft);
     setMatch(null);
     setJourney(null);
-    setEditingMode("none");
-    setQuestionError(null);
-    setStepIndex(0);
     setView("questions");
+    setStepIndex(0);
+    setQuestionError("");
+    setMustSeeMessage("");
     hasTrackedStart.current = false;
-    hasShownResult.current = false;
     window.sessionStorage.removeItem(sessionStorageKey);
     onRouteCleared?.();
     onStatusChange?.("new");
+    returnPlannerHistoryToStart();
   };
+
+  const toggleDestination = (id: DestinationId) => {
+    const selected = draft.selectedDestinationIds.includes(id);
+    updateDraft({
+      ...draft,
+      destinationMode: "wishlist",
+      selectedDestinationIds: selected
+        ? draft.selectedDestinationIds.filter((item) => item !== id)
+        : [...draft.selectedDestinationIds, id],
+      mustSeeIds: selected
+        ? draft.mustSeeIds.filter((item) => item !== id)
+        : draft.mustSeeIds,
+    });
+  };
+
+  const chooseClassicStart = () => {
+    const hasWishlist =
+      draft.selectedDestinationIds.length > 0 ||
+      draft.otherEnabled ||
+      draft.otherPlace.trim().length > 0;
+    if (
+      draft.destinationMode !== "classic-start" &&
+      hasWishlist &&
+      !window.confirm(copy.questions.destinations.classicStartConfirm)
+    ) {
+      return;
+    }
+    updateDraft({
+      ...draft,
+      destinationMode: "classic-start",
+      selectedDestinationIds: [],
+      otherEnabled: false,
+      otherPlace: "",
+      mustSeeIds: [],
+    });
+  };
+
+  const updateMustSee = (id: DestinationId) => {
+    if (interactionLocked || !match || !journey) return;
+    const selected = match.answers.mustSeeIds.includes(id);
+    if (!selected && match.answers.mustSeeIds.length >= 3) {
+      setMustSeeMessage(copy.result.mustSeeLimit);
+      return;
+    }
+
+    const mustSeeIds = selected
+      ? match.answers.mustSeeIds.filter((item) => item !== id)
+      : [...match.answers.mustSeeIds, id];
+    const answers = { ...match.answers, mustSeeIds };
+    const nextMatch = createDestinationPlan(answers);
+    const nextJourney = { ...journey, revision: journey.revision + 1 };
+    setDraft((current) => ({ ...current, mustSeeIds: [...mustSeeIds] }));
+    setMatch(nextMatch);
+    setJourney(nextJourney);
+    setMustSeeMessage("");
+    onRouteFound?.(nextMatch, nextJourney);
+  };
+
+  const resultMeta = useMemo(() => {
+    if (!match) return null;
+    const answerCopy = copy.result.answerLabels;
+    return [
+      {
+        label: answerCopy.nights,
+        value: copy.result.nights(match.answers.totalNights),
+      },
+      {
+        label: answerCopy.party,
+        value: copy.partyLabels[match.answers.party],
+      },
+      {
+        label: answerCopy.pace,
+        value: copy.paceLabels[match.answers.pace],
+      },
+    ];
+  }, [copy, match]);
+
+  const resultBody = useMemo(() => {
+    if (!match) return "";
+    const timing = match.timing;
+    const paceLabel = copy.paceLabels[match.answers.pace];
+    if (match.answers.destinationMode === "classic-start") {
+      return copy.result.bodies.classicStart;
+    }
+    if (timing.status === "manual_only") {
+      return copy.result.bodies.otherOnly(match.answers.otherPlace ?? "");
+    }
+    if (timing.status === "partial_manual_check") {
+      return copy.result.bodies.partialManual(
+        match.answers.otherPlace ?? "",
+      );
+    }
+    if (timing.knownDestinationsStatus === "needs_prioritization") {
+      return copy.result.bodies.needsPrioritization(
+        timing.essentialsMinimumNights ?? 0,
+        timing.totalNights,
+        timing.essentialsShortfallNights ?? 0,
+      );
+    }
+    if (
+      timing.knownDestinationsStatus ===
+      "tighter_than_selected_pace"
+    ) {
+      return copy.result.bodies.tighterThanPace(
+        timing.totalNights,
+        paceLabel,
+        timing.selectedPaceRange?.minNights ?? 0,
+      );
+    }
+    if (
+      timing.knownDestinationsStatus === "within_reference_range"
+    ) {
+      return copy.result.bodies.withinRange(paceLabel);
+    }
+    return copy.result.bodies.roomToShape(
+      timing.nightsAboveSelectedPaceMax ?? 0,
+    );
+  }, [copy, match]);
+
+  const resultTitle = match
+    ? copy.result.titles[match.timing.status]
+    : "";
+  const showMustSee =
+    Boolean(match) &&
+    match?.timing.knownDestinationsStatus === "needs_prioritization" &&
+    match.answers.destinationIds.length > 1;
+  const hasCompressedCondition =
+    Boolean(match) &&
+    match?.answers.pace === "essentials" &&
+    match.answers.destinationIds.some(
+      (id) =>
+        id === "zhangjiajie" || id === "hangzhou-suzhou",
+    );
+
+  if (!sessionReady) {
+    return (
+      <section
+        id={id}
+        className={`${styles.finder} ${
+          variant === "hero" ? styles.heroVariant : ""
+        }`}
+        aria-busy="true"
+      >
+        <div className={styles.loadingShell} aria-hidden="true" />
+      </section>
+    );
+  }
 
   return (
     <section
       id={id}
-      aria-labelledby={`${id}-title`}
       className={`${styles.finder} ${
         variant === "hero" ? styles.heroVariant : ""
-      } ${locale === "zh" ? styles.zhLocale : ""} ${
-        locale === "ko" ? styles.koLocale : ""
       }`}
+      aria-labelledby={`${id}-title`}
     >
-      {variant === "hero" && (
-        <h2 className={styles.visuallyHidden} id={`${id}-title`}>
-          {copy.finder.hiddenTitle}
-        </h2>
-      )}
-      {variant === "default" && (
-        <header className={styles.intro}>
-          <p className={styles.kicker}>{copy.finder.introEyebrow}</p>
-          <h2 id={`${id}-title`}>{copy.finder.introTitle}</h2>
-          <p>{copy.finder.introBody}</p>
-        </header>
-      )}
+      {view === "questions" ? (
+        <form noValidate onSubmit={handleSubmit}>
+          <div className={styles.progressRow}>
+            <span>{copy.progress(stepIndex + 1, questions.length)}</span>
+            <progress
+              value={stepIndex + 1}
+              max={questions.length}
+              aria-label={copy.progress(stepIndex + 1, questions.length)}
+            />
+          </div>
 
-      <div className={styles.card}>
-        {view === "questions" ? (
-          <form noValidate onSubmit={handleSubmit}>
-            <div className={styles.progressBlock}>
-              <p id={`${id}-progress`}>
-                {copy.finder.progress(stepIndex + 1, questions.length)}
-              </p>
-              <progress
-                aria-labelledby={`${id}-progress`}
-                max={questions.length}
-                value={stepIndex + 1}
-              />
-            </div>
+          <div className={styles.questionHeader}>
+            <p className={styles.kicker}>{questionCopy.eyebrow}</p>
+            <h2 id={`${id}-title`} ref={headingRef} tabIndex={-1}>
+              {stepIndex === 0 ? copy.introTitle : questionCopy.title}
+            </h2>
+            <p id={questionHelpId}>
+              {stepIndex === 0 ? copy.introBody : questionCopy.help}
+            </p>
+          </div>
 
+          {questionKey === "destinations" && (
             <fieldset
-              className={styles.question}
+              className={styles.fieldset}
               aria-describedby={`${questionHelpId}${
-                hasQuestionError ? ` ${questionErrorId}` : ""
+                questionError ? ` ${questionErrorId}` : ""
               }`}
-              aria-invalid={hasQuestionError}
             >
-              <legend>
-                <span className={styles.questionEyebrow}>
-                  {question.eyebrow}
-                </span>
-                <span
-                  ref={headingRef}
-                  tabIndex={-1}
-                  className={styles.questionTitle}
-                >
-                  {question.title}
-                </span>
+              <legend className={styles.srOnly}>
+                {copy.questions.destinations.legend}
               </legend>
-              <p
-                id={questionHelpId}
-                className={styles.questionHelp}
-              >
-                {question.help}
+              <p className={styles.selectionNote}>
+                {copy.questions.destinations.selectionNote}
               </p>
-              {hasQuestionError && (
-                <p
-                  className={styles.questionError}
-                  id={questionErrorId}
-                  role="alert"
-                >
-                  {copy.finder.answerRequired}
-                </p>
-              )}
-
-              <div className={styles.options}>
-                {question.options.map((option, optionIndex) => {
-                  const optionId = `${id}-${question.key}-${option.id}`;
-                  const selected = currentAnswer === option.id;
-
+              <div className={styles.destinationGrid}>
+                {destinationIds.map((destinationId) => {
+                  const selected =
+                    draft.destinationMode === "wishlist" &&
+                    draft.selectedDestinationIds.includes(destinationId);
                   return (
                     <label
-                      className={`${styles.option} ${
+                      className={`${styles.destinationOption} ${
                         selected ? styles.optionSelected : ""
                       }`}
-                      htmlFor={optionId}
-                      key={option.id}
+                      key={destinationId}
                     >
                       <input
+                        type="checkbox"
+                        value={destinationId}
                         checked={selected}
-                        disabled={interactionLocked}
-                        id={optionId}
-                        name={`${id}-${question.key}`}
-                        onChange={() => selectAnswer(question.key, option.id)}
-                        aria-describedby={
-                          hasQuestionError ? questionErrorId : undefined
-                        }
-                        aria-invalid={hasQuestionError}
-                        required={optionIndex === 0}
-                        type="radio"
-                        value={option.id}
+                        onChange={() => toggleDestination(destinationId)}
                       />
-                      <span className={styles.optionMark} aria-hidden="true">
-                        {selected && <Check size={15} strokeWidth={2.5} />}
-                      </span>
-                      <span>
-                        <strong>{option.label}</strong>
-                        <small>{option.description}</small>
-                      </span>
+                      <span>{copy.destinations[destinationId]}</span>
+                      <Check aria-hidden="true" size={17} />
                     </label>
                   );
                 })}
               </div>
+
+              <div className={styles.secondaryChoices}>
+                <label
+                  className={`${styles.secondaryOption} ${
+                    draft.destinationMode === "wishlist" &&
+                    draft.otherEnabled
+                      ? styles.optionSelected
+                      : ""
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={
+                      draft.destinationMode === "wishlist" &&
+                      draft.otherEnabled
+                    }
+                    onChange={(event) =>
+                      updateDraft({
+                        ...draft,
+                        destinationMode: "wishlist",
+                        otherEnabled: event.target.checked,
+                        otherPlace: event.target.checked
+                          ? draft.otherPlace
+                          : "",
+                      })
+                    }
+                  />
+                  <span>{copy.questions.destinations.otherToggle}</span>
+                </label>
+                {draft.destinationMode === "wishlist" &&
+                  draft.otherEnabled && (
+                    <div className={styles.otherField}>
+                      <label htmlFor={`${id}-other-place`}>
+                        {copy.questions.destinations.otherLabel}
+                      </label>
+                      <input
+                        id={`${id}-other-place`}
+                        ref={otherPlaceRef}
+                        type="text"
+                        maxLength={120}
+                        dir="auto"
+                        value={draft.otherPlace}
+                        placeholder={
+                          copy.questions.destinations.otherPlaceholder
+                        }
+                        aria-invalid={Boolean(questionError)}
+                        aria-describedby={`${id}-other-place-hint${
+                          questionError ? ` ${questionErrorId}` : ""
+                        }`}
+                        onChange={(event) =>
+                          updateDraft({
+                            ...draft,
+                            destinationMode: "wishlist",
+                            otherPlace: event.target.value,
+                          })
+                        }
+                      />
+                      <small id={`${id}-other-place-hint`}>
+                        {copy.questions.destinations.otherHint}
+                      </small>
+                    </div>
+                  )}
+                <button
+                  className={`${styles.classicStartOption} ${
+                    draft.destinationMode === "classic-start"
+                      ? styles.optionSelected
+                      : ""
+                  }`}
+                  type="button"
+                  aria-pressed={
+                    draft.destinationMode === "classic-start"
+                  }
+                  onClick={chooseClassicStart}
+                >
+                  <span>
+                    <strong>
+                      {copy.questions.destinations.classicStartLabel}
+                    </strong>
+                    <small>
+                      {
+                        copy.questions.destinations
+                          .classicStartDescription
+                      }
+                    </small>
+                  </span>
+                  {draft.destinationMode === "classic-start" && (
+                    <Check aria-hidden="true" size={17} />
+                  )}
+                </button>
+              </div>
             </fieldset>
+          )}
 
-            <div className={styles.formActions}>
-              {(stepIndex > 0 || editingMode !== "none") && (
-                <button
-                  className={styles.secondaryButton}
-                  disabled={interactionLocked}
-                  onClick={handleBack}
-                  type="button"
+          {questionKey === "nights" && (
+            <fieldset
+              className={styles.fieldset}
+              aria-describedby={`${questionHelpId}${
+                questionError ? ` ${questionErrorId}` : ""
+              }`}
+            >
+              <legend className={styles.srOnly}>
+                {copy.questions.nights.legend}
+              </legend>
+              <div className={styles.nightsGrid}>
+                {presetNights.map((value) => (
+                  <label
+                    className={`${styles.choiceOption} ${
+                      draft.nightsChoice === value
+                        ? styles.optionSelected
+                        : ""
+                    }`}
+                    key={value}
+                  >
+                    <input
+                      type="radio"
+                      name={`${id}-nights`}
+                      value={value}
+                      checked={draft.nightsChoice === value}
+                      onChange={() =>
+                        updateDraft({
+                          ...draft,
+                          nightsChoice: value,
+                        })
+                      }
+                    />
+                    <span>{copy.questions.nights.nights(Number(value))}</span>
+                  </label>
+                ))}
+                <label
+                  className={`${styles.choiceOption} ${
+                    draft.nightsChoice === "custom"
+                      ? styles.optionSelected
+                      : ""
+                  }`}
                 >
-                  <ArrowLeft aria-hidden="true" size={17} />
-                  {editingMode === "single" ||
-                  (editingMode === "all" && stepIndex === 0)
-                    ? copy.finder.cancelEdits
-                    : copy.finder.back}
-                </button>
+                  <input
+                    type="radio"
+                    name={`${id}-nights`}
+                    value="custom"
+                    checked={draft.nightsChoice === "custom"}
+                    onChange={() =>
+                      updateDraft({
+                        ...draft,
+                        nightsChoice: "custom",
+                      })
+                    }
+                  />
+                  <span>{copy.questions.nights.custom}</span>
+                </label>
+              </div>
+              {draft.nightsChoice === "custom" && (
+                <div className={styles.customNights}>
+                  <label htmlFor={`${id}-custom-nights`}>
+                    {copy.questions.nights.customLabel}
+                  </label>
+                  <input
+                    id={`${id}-custom-nights`}
+                    ref={customNightsRef}
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength={2}
+                    value={draft.customNights}
+                    aria-invalid={Boolean(questionError)}
+                    aria-describedby={
+                      questionError ? questionErrorId : undefined
+                    }
+                    onChange={(event) =>
+                      updateDraft({
+                        ...draft,
+                        customNights: event.target.value.replace(
+                          /[^0-9]/gu,
+                          "",
+                        ),
+                      })
+                    }
+                  />
+                </div>
               )}
-              <button
-                className={styles.primaryButton}
-                disabled={interactionLocked}
-                type="submit"
-              >
-                {editingMode === "single" ||
-                stepIndex === questions.length - 1
-                  ? copy.finder.showRoute
-                  : copy.finder.continue}
-                <ArrowRight aria-hidden="true" size={17} />
-              </button>
-            </div>
-          </form>
-        ) : (
-          match && (
-            <div className={styles.result}>
-              <p className={styles.kicker}>{copy.finder.resultKicker}</p>
-              <h3 ref={resultHeadingRef} tabIndex={-1}>
-                {match.title}
-              </h3>
-              <p className={styles.resultLead}>{match.summary}</p>
+            </fieldset>
+          )}
 
-              <ol
-                className={styles.route}
-                aria-label={copy.finder.routeAriaLabel}
-              >
-                {match.cityNights.map((stop, index) => (
-                  <li key={`${stop.city}-${index}`}>
+          {questionKey === "party" && (
+            <fieldset
+              className={styles.fieldset}
+              aria-describedby={`${questionHelpId}${
+                questionError ? ` ${questionErrorId}` : ""
+              }`}
+            >
+              <legend className={styles.srOnly}>
+                {copy.questions.party.legend}
+              </legend>
+              <div className={styles.optionGrid}>
+                {copy.partyOptions.map((option) => (
+                  <label
+                    className={`${styles.choiceOption} ${
+                      draft.party === option.id
+                        ? styles.optionSelected
+                        : ""
+                    }`}
+                    key={option.id}
+                  >
+                    <input
+                      type="radio"
+                      name={`${id}-party`}
+                      value={option.id}
+                      checked={draft.party === option.id}
+                      onChange={() =>
+                        updateDraft({ ...draft, party: option.id })
+                      }
+                    />
                     <span>
-                      <strong>{getCityName(stop.city, locale)}</strong>
-                      <small>{copy.finder.nights(stop.nights)}</small>
+                      <strong>{option.label}</strong>
+                      <small>{option.description}</small>
                     </span>
-                    {index < match.cityNights.length - 1 && (
-                      <ArrowRight aria-hidden="true" size={16} />
-                    )}
-                  </li>
+                  </label>
                 ))}
-              </ol>
-
-              <p className={styles.routeMeta}>
-                <strong>{copy.finder.totalNights(match.totalNights)}</strong>
-                <span aria-hidden="true">·</span>
-                <span>{copy.finder.moves(match.betweenCityMoves)}</span>
-                <small>{copy.finder.transferNote}</small>
-              </p>
-
-              <div className={styles.reasonGrid}>
-                <div>
-                  <h4>{copy.finder.whyTitle}</h4>
-                  <ol>
-                    {match.reasons.map((reason) => (
-                      <li key={reason}>{reason}</li>
-                    ))}
-                  </ol>
-                </div>
-                <div>
-                  <h4>{copy.finder.omittedTitle}</h4>
-                  <p>{match.tradeoff}</p>
-                </div>
               </div>
+            </fieldset>
+          )}
 
-              <p className={styles.scopeNote}>
-                {copy.finder.scopeNote}
-              </p>
-            </div>
-          )
-        )}
+          {questionKey === "pace" && (
+            <fieldset
+              className={styles.fieldset}
+              aria-describedby={`${questionHelpId}${
+                questionError ? ` ${questionErrorId}` : ""
+              }`}
+            >
+              <legend className={styles.srOnly}>
+                {copy.questions.pace.legend}
+              </legend>
+              <div className={styles.paceGrid}>
+                {copy.paceOptions.map((option) => (
+                  <label
+                    className={`${styles.choiceOption} ${
+                      draft.pace === option.id
+                        ? styles.optionSelected
+                        : ""
+                    }`}
+                    key={option.id}
+                  >
+                    <input
+                      type="radio"
+                      name={`${id}-pace`}
+                      value={option.id}
+                      checked={draft.pace === option.id}
+                      onChange={() =>
+                        updateDraft({ ...draft, pace: option.id })
+                      }
+                    />
+                    <span>
+                      <strong>{option.label}</strong>
+                      <small>{option.description}</small>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          )}
 
-        {handoff}
+          {questionError && (
+            <p className={styles.questionError} id={questionErrorId} role="alert">
+              {questionError}
+            </p>
+          )}
 
-        {view === "result" && match && (
+          <div className={styles.formActions}>
+            {stepIndex > 0 && (
+              <button
+                className={styles.secondaryButton}
+                type="button"
+                onClick={handleBack}
+              >
+                <ArrowLeft aria-hidden="true" size={17} />
+                {copy.back}
+              </button>
+            )}
+            <button className={styles.primaryButton} type="submit">
+              {stepIndex === questions.length - 1
+                ? copy.showCheck
+                : copy.continue}
+              <ArrowRight aria-hidden="true" size={17} />
+            </button>
+          </div>
+        </form>
+      ) : (
+        match && (
           <div className={styles.result}>
-            <div className={styles.assumptions}>
-              <h4>{copy.finder.assumptionsTitle}</h4>
-              <ul>
-                {match.assumptions.map((assumption) => (
-                  <li key={assumption}>{assumption}</li>
-                ))}
-              </ul>
-            </div>
+            <header className={styles.resultHeader}>
+              <p className={styles.kicker}>{copy.result.kicker}</p>
+              <h2
+                id={`${id}-title`}
+                ref={resultHeadingRef}
+                tabIndex={-1}
+              >
+                {resultTitle}
+              </h2>
+              <p className={styles.resultLead}>{resultBody}</p>
+              {resultMeta && (
+                <div className={styles.resultMetaRow}>
+                  <dl>
+                    {resultMeta.map((item) => (
+                      <div key={item.label}>
+                        <dt>{item.label}</dt>
+                        <dd>{item.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <button
+                    type="button"
+                    disabled={interactionLocked}
+                    onClick={handleEdit}
+                  >
+                    <Pencil aria-hidden="true" size={15} />
+                    {copy.editAnswers}
+                  </button>
+                </div>
+              )}
+            </header>
 
-            <div className={styles.answerReview}>
-              <div className={styles.reviewHeading}>
-                <h4>{copy.finder.answersTitle}</h4>
-                <button
-                  disabled={interactionLocked}
-                  type="button"
-                  onClick={editAllAnswers}
-                >
-                  <Pencil aria-hidden="true" size={15} />
-                  {copy.finder.editAll}
-                </button>
+            <section
+              className={styles.wishlistSummary}
+              aria-labelledby={`${id}-wishlist-title`}
+            >
+              <div className={styles.sectionHeading}>
+                <h3 id={`${id}-wishlist-title`}>
+                  {copy.result.wishlistTitle}
+                </h3>
+                <span>
+                  {match.answers.destinationMode === "classic-start"
+                    ? copy.result.classicStartValue
+                    : match.answers.destinationIds.length +
+                      (match.answers.otherPlace ? 1 : 0)}
+                </span>
               </div>
+              {match.answers.destinationMode === "classic-start" ? (
+                <p className={styles.openChoice}>
+                  {copy.result.classicStartValue}
+                </p>
+              ) : (
+                <>
+                  <ul className={styles.wishlist}>
+                    {match.answers.destinationIds.map((destinationId) => (
+                      <li key={destinationId}>
+                        {copy.destinations[destinationId]}
+                      </li>
+                    ))}
+                    {match.answers.otherPlace && (
+                      <li dir="auto">
+                        {copy.result.otherLabel}:{" "}
+                        {match.answers.otherPlace}
+                      </li>
+                    )}
+                  </ul>
+                  <p className={styles.keptAll}>
+                    <Check aria-hidden="true" size={16} />
+                    {copy.result.keptAll}
+                  </p>
+                </>
+              )}
+            </section>
+
+            <section
+              className={styles.timingSummary}
+              aria-labelledby={`${id}-timing-title`}
+            >
+              <h3 id={`${id}-timing-title`}>
+                {copy.result.timingTitle}
+              </h3>
               <dl>
-                {answerSummary.map((item) => (
-                  <div key={item.label}>
-                    <dt>{item.label}</dt>
-                    <dd>{item.value}</dd>
-                    <button
-                      aria-label={copy.finder.changeAria(item.label)}
-                      disabled={interactionLocked}
-                      onClick={() => editAnswer(item.step)}
-                      type="button"
-                    >
-                      {copy.finder.change}
-                    </button>
+                <div>
+                  <dt>{copy.result.available}</dt>
+                  <dd>
+                    {copy.result.nights(match.answers.totalNights)}
+                  </dd>
+                </div>
+                <div>
+                  <dt>{copy.result.essentials}</dt>
+                  <dd>
+                    {match.timing.essentialsMinimumNights === null
+                      ? copy.result.notCalculated
+                      : copy.result.nights(
+                          match.timing.essentialsMinimumNights,
+                        )}
+                  </dd>
+                </div>
+                {match.answers.pace !== "essentials" && (
+                  <div>
+                    <dt>
+                      {copy.result.selectedPace(
+                        copy.paceLabels[match.answers.pace],
+                      )}
+                    </dt>
+                    <dd>
+                      {match.timing.selectedPaceRange
+                        ? copy.result.range(
+                            match.timing.selectedPaceRange.minNights,
+                            match.timing.selectedPaceRange.maxNights,
+                          )
+                        : copy.result.notCalculated}
+                    </dd>
                   </div>
-                ))}
+                )}
               </dl>
-            </div>
+              {hasCompressedCondition && (
+                <p className={styles.conditionalNote}>
+                  {copy.result.conditionalNote}
+                </p>
+              )}
+              <p className={styles.boundary}>
+                {copy.result.boundary}
+              </p>
+            </section>
+
+            {showMustSee && (
+              <section
+                className={styles.mustSee}
+                aria-labelledby={`${id}-must-see-title`}
+              >
+                <h3 id={`${id}-must-see-title`}>
+                  {copy.result.mustSeeTitle}
+                </h3>
+                <p>{copy.result.mustSeeBody}</p>
+                <div className={styles.mustSeeGrid}>
+                  {match.answers.destinationIds.map((destinationId) => {
+                    const selected =
+                      match.answers.mustSeeIds.includes(destinationId);
+                    return (
+                      <label
+                        className={`${styles.mustSeeOption} ${
+                          selected ? styles.optionSelected : ""
+                        }`}
+                        key={destinationId}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selected}
+                          disabled={interactionLocked}
+                          onChange={() => updateMustSee(destinationId)}
+                        />
+                        <span>{copy.destinations[destinationId]}</span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <button
+                  className={styles.equalPriority}
+                  type="button"
+                  disabled={
+                    interactionLocked ||
+                    match.answers.mustSeeIds.length === 0
+                  }
+                  onClick={() => {
+                    if (!match.answers.mustSeeIds.length) return;
+                    const answers = { ...match.answers, mustSeeIds: [] };
+                    const nextMatch = createDestinationPlan(answers);
+                    const nextJourney = journey
+                      ? { ...journey, revision: journey.revision + 1 }
+                      : {
+                          journeyId: window.crypto.randomUUID(),
+                          revision: 1,
+                        };
+                    setDraft((current) => ({
+                      ...current,
+                      mustSeeIds: [],
+                    }));
+                    setMatch(nextMatch);
+                    setJourney(nextJourney);
+                    onRouteFound?.(nextMatch, nextJourney);
+                  }}
+                >
+                  {copy.result.mustSeeEqual}
+                </button>
+                <p
+                  className={styles.mustSeeMessage}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {mustSeeMessage}
+                </p>
+              </section>
+            )}
+
+            {handoff}
 
             <button
               className={styles.restartButton}
-              disabled={interactionLocked}
-              onClick={restart}
               type="button"
+              disabled={interactionLocked}
+              onClick={handleRestart}
             >
               <RotateCcw aria-hidden="true" size={16} />
-              {copy.finder.restart}
+              {copy.restart}
             </button>
           </div>
-        )}
-      </div>
+        )
+      )}
     </section>
   );
 }

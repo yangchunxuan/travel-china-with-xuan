@@ -15,7 +15,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import type { RouteMatch } from "../lib/routeFinder";
+import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   HomegroundHeader,
   resolvePlannerCta,
@@ -96,7 +96,9 @@ export function HomegroundHomePage({
   locale?: HomegroundLocale;
 }) {
   const [plannerStatus, setPlannerStatus] = useState<PlannerStatus>("new");
-  const [routeMatch, setRouteMatch] = useState<RouteMatch | null>(null);
+  const [routeMatch, setRouteMatch] = useState<DestinationPlan | null>(
+    null,
+  );
   const [routeJourney, setRouteJourney] = useState<RouteJourney | null>(null);
   const [handoffStatus, setHandoffStatus] =
     useState<HandoffStatus>("disabled");
@@ -130,7 +132,7 @@ export function HomegroundHomePage({
     handoffStatus === "submitting" || handoffStatus === "uncertain";
 
   const handleRouteFound = useCallback(
-    (match: RouteMatch, journey: RouteJourney) => {
+    (match: DestinationPlan, journey: RouteJourney) => {
       setRouteMatch(match);
       setRouteJourney(journey);
     },
@@ -222,6 +224,7 @@ export function HomegroundHomePage({
                 locale={locale}
                 variant="hero"
                 interactionLocked={routeInteractionLocked}
+                contactDraftDirty={handoffDirty}
                 handoff={
                   routeMatch ? (
                     <PlannerHandoff

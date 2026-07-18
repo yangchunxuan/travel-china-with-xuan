@@ -14,6 +14,7 @@ import {
   validateAndNormalizeInquiry,
 } from "../lib/inquiryContract.ts";
 import {
+  currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
 } from "../lib/inquiryVersions.ts";
@@ -247,7 +248,10 @@ const server = createServer(async (request, response) => {
   }
 
   const validation = validateAndNormalizeInquiry(rawPayload, {
-    allowedFormVersions: [currentInquiryFormVersion],
+    allowedFormVersions: [
+      currentInquiryFormVersion,
+      currentDestinationInquiryFormVersion,
+    ],
     allowedPrivacyNoticeVersions: privacyNoticeVersions,
     whatsappEnabled,
   });

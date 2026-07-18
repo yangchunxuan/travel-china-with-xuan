@@ -3,8 +3,11 @@ import test from "node:test";
 import {
   canonicalizeJson,
   computeCanonicalRouteSnapshot,
+  currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentRouteRuleVersion,
+  destinationInquirySchemaVersion,
+  destinationTimingRuleVersion,
   inquirySchemaVersion,
   semanticInquiryPayload,
   travelPartyIds,
@@ -15,7 +18,10 @@ import {
 } from "../../lib/inquiryContract.ts";
 
 const validationConfig = {
-  allowedFormVersions: [currentInquiryFormVersion],
+  allowedFormVersions: [
+    currentInquiryFormVersion,
+    currentDestinationInquiryFormVersion,
+  ],
   allowedPrivacyNoticeVersions: ["test-privacy-v1"],
   whatsappEnabled: false,
 };
@@ -51,6 +57,51 @@ function validPayload() {
       utmSource: "youtube",
       utmMedium: "video",
       utmCampaign: "first-china-trip",
+    },
+    experiment: null,
+    antiAbuse: {
+      companyWebsite: "",
+    },
+  };
+}
+
+function validDestinationPayload() {
+  return {
+    schemaVersion: destinationInquirySchemaVersion,
+    formVersion: currentDestinationInquiryFormVersion,
+    entryPath: "destination_timing",
+    locale: "en",
+    journey: {
+      journeyId: "7aa3c986-1713-4bc7-b3dd-2a1f5c00e995",
+      revision: 1,
+      answers: {
+        destinationMode: "wishlist",
+        destinationIds: [
+          "beijing-great-wall",
+          "shanghai",
+          "xian",
+          "zhangjiajie",
+        ],
+        otherPlace: null,
+        totalNights: 9,
+        party: "two-adults",
+        pace: "classic",
+        mustSeeIds: ["beijing-great-wall", "shanghai"],
+      },
+      routeId: "destination-timing",
+      ruleVersion: destinationTimingRuleVersion,
+    },
+    contact: {
+      channel: "email",
+      email: "Traveller@Example.COM",
+    },
+    note: "Please keep every selected place in the planner handoff.",
+    privacyNoticeVersion: "test-privacy-v1",
+    attribution: {
+      landingPath: "/?utm_source=youtube",
+      utmSource: "youtube",
+      utmMedium: "video",
+      utmCampaign: "wish-list",
     },
     experiment: null,
     antiAbuse: {
@@ -169,4 +220,173 @@ test("semantic payload excludes the honeypot", () => {
   const canonical = canonicalizeJson(semanticInquiryPayload(result.value));
   assert.equal(canonical.includes("companyWebsite"), false);
   assert.equal(canonical.includes("antiAbuse"), false);
+});
+
+test("V3 preserves the complete wish list and recomputes timing on the server", () => {
+  const payload = validDestinationPayload();
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+
+  assert.equal(result.value.schemaVersion, destinationInquirySchemaVersion);
+  assert.deepEqual(
+    result.value.journey.answers.destinationIds,
+    payload.journey.answers.destinationIds,
+  );
+  assert.deepEqual(result.value.journey.answers.mustSeeIds, [
+    "beijing-great-wall",
+    "shanghai",
+  ]);
+  assert.equal(result.value.routeSnapshot.essentialsMinimumNights, 10);
+  assert.deepEqual(result.value.routeSnapshot.selectedPaceRange, {
+    minNights: 11,
+    maxNights: 14,
+  });
+  assert.equal(result.value.routeSnapshot.status, "needs_prioritization");
+  assert.equal(result.value.routeSnapshot.routeFeasibility, "unverified");
+});
+
+test("V3 never accepts a client-authored timing snapshot", () => {
+  const payload = validDestinationPayload();
+  payload.timingSnapshot = {
+    status: "within_reference_range",
+    essentialsMinimumNights: 1,
+  };
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  assert.equal(result.fieldErrors.timingSnapshot, "unknown");
+});
+
+test("schema generations cannot borrow each other's form version", () => {
+  const legacy = validPayload();
+  legacy.formVersion = currentDestinationInquiryFormVersion;
+  const legacyResult = validateAndNormalizeInquiry(
+    legacy,
+    validationConfig,
+  );
+  assert.equal(legacyResult.ok, false);
+  if (!legacyResult.ok) {
+    assert.equal(legacyResult.code, "unsupported_form_version");
+  }
+
+  const destination = validDestinationPayload();
+  destination.formVersion = currentInquiryFormVersion;
+  const destinationResult = validateAndNormalizeInquiry(
+    destination,
+    validationConfig,
+  );
+  assert.equal(destinationResult.ok, false);
+  if (!destinationResult.ok) {
+    assert.equal(destinationResult.code, "unsupported_form_version");
+  }
+});
+
+test("V3 keeps Other outside the calculator and supports Other-only handoff", () => {
+  const payload = validDestinationPayload();
+  payload.journey.answers.destinationIds = [];
+  payload.journey.answers.otherPlace = "  Huangshan Scenic Area  ";
+  payload.journey.answers.mustSeeIds = [];
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+
+  assert.equal(
+    result.value.journey.answers.otherPlace,
+    "Huangshan Scenic Area",
+  );
+  assert.equal(result.value.routeSnapshot.status, "manual_only");
+  assert.equal(result.value.routeSnapshot.essentialsMinimumNights, null);
+});
+
+test("V3 uses Unicode code points consistently for Other length", () => {
+  const accepted = validDestinationPayload();
+  accepted.journey.answers.destinationIds = [];
+  accepted.journey.answers.mustSeeIds = [];
+  accepted.journey.answers.otherPlace = "🗺️".repeat(40);
+  const acceptedResult = validateAndNormalizeInquiry(
+    accepted,
+    validationConfig,
+  );
+  assert.equal(acceptedResult.ok, true);
+
+  const rejected = validDestinationPayload();
+  rejected.journey.answers.destinationIds = [];
+  rejected.journey.answers.mustSeeIds = [];
+  rejected.journey.answers.otherPlace = "😀".repeat(121);
+  const rejectedResult = validateAndNormalizeInquiry(
+    rejected,
+    validationConfig,
+  );
+  assert.equal(rejectedResult.ok, false);
+  if (!rejectedResult.ok) {
+    assert.equal(
+      rejectedResult.fieldErrors["journey.answers.otherPlace"],
+      "invalid",
+    );
+  }
+});
+
+test("V3 never stores a WhatsApp phone even when the V1 feature flag is enabled", () => {
+  const payload = validDestinationPayload();
+  payload.contact = {
+    channel: "whatsapp",
+    phoneRaw: "+44 7700 900123",
+  };
+  const result = validateAndNormalizeInquiry(payload, {
+    ...validationConfig,
+    whatsappEnabled: true,
+  });
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  assert.equal(result.code, "whatsapp_disabled");
+});
+
+test("V3 classic-start is an explicit manual-only placeholder, not a fake template", () => {
+  const payload = validDestinationPayload();
+  payload.journey.answers.destinationMode = "classic-start";
+  payload.journey.answers.destinationIds = [];
+  payload.journey.answers.mustSeeIds = [];
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+
+  assert.equal(result.value.routeSnapshot.status, "manual_only");
+  assert.equal(result.value.routeSnapshot.knownDestinationCount, 0);
+  assert.equal(result.value.routeSnapshot.routeFeasibility, "unverified");
+});
+
+test("V3 must-see choices are only accepted for a real known-place conflict", () => {
+  const payload = validDestinationPayload();
+  payload.journey.answers.destinationIds = ["shanghai"];
+  payload.journey.answers.totalNights = 3;
+  payload.journey.answers.mustSeeIds = ["shanghai"];
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  assert.equal(
+    result.fieldErrors["journey.answers.mustSeeIds"],
+    "not_applicable",
+  );
+});
+
+test("V3 semantic hash includes every human-handoff answer", () => {
+  const result = validateAndNormalizeInquiry(
+    validDestinationPayload(),
+    validationConfig,
+  );
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  const canonical = canonicalizeJson(semanticInquiryPayload(result.value));
+
+  for (const value of [
+    "beijing-great-wall",
+    "zhangjiajie",
+    "two-adults",
+    "classic",
+    "Please keep every selected place in the planner handoff.",
+  ]) {
+    assert.equal(canonical.includes(value), true);
+  }
+  assert.equal(canonical.includes("routeSnapshot"), false);
 });

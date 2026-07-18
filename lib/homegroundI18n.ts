@@ -306,10 +306,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "English",
     languageShort: "EN",
     metadata: {
-      title: "Plan a China trip that fits you",
+      title: "Plan a China trip around your real wishlist",
       description:
-        "Answer four questions to see a sensible China starting route, including cities, nights and the trade-offs behind it. Personal planner review comes after the result.",
-      openGraphTitle: "Homeground China — Plan a China trip that fits you",
+        "Choose every place you want, compare the wishlist with your nights in China, then carry the same brief into a human planning conversation.",
+      openGraphTitle: "Homeground China — Check your China trip wishlist",
     },
     skipLink: "Skip to main content",
     brandTagline: "Independent China trip planning",
@@ -328,9 +328,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "Open navigation",
       closeMenu: "Close navigation",
       plannerCta: {
-        new: "Find my starting route",
-        inProgress: "Continue my route",
-        result: "Ask a planner to review my route",
+        new: "Check my China wishlist",
+        inProgress: "Continue my timing check",
+        result: "Send my trip brief to a planner",
         disabled: "Contact Homeground",
         validationError: "Finish my request",
         submitting: "Sending request…",
@@ -343,12 +343,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       eyebrow: "Independent China trips, planned around real people",
       title: "A China trip that actually fits you.",
       lead:
-        "Answer four questions to get a sensible China starting route. A person checks the real travel details and suitable local services only after you choose to get in touch.",
+        "Choose every place you genuinely want, add your nights and preferred pace, then see where the time fits—or conflicts. Nothing is removed, and the same brief goes to a human planner if you contact us.",
       trustLabel: "What to expect",
       trust: [
         "No budget question",
         "No contact details before your result",
-        "Group and pace can change the route structure",
+        "Every place you select stays on your wishlist",
       ],
       imageAlt:
         "The Forbidden City Corner Tower in Beijing reflected in its moat",
@@ -356,9 +356,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     proof: {
       eyebrow: "What personal planning changes",
-      title: "A route is more than a list of cities.",
+      title: "A realistic route needs more than a list of cities.",
       intro:
-        "The first result gives you the shape. Human planning turns it into a journey that works on the ground.",
+        "The first result only checks destination stay time. Human planning then tests transport, entry and exit cities, dates and the details that make the trip work.",
       imageAlt: "Small boats crossing a misty lake in Hangzhou",
       imageBadge: "Illustrative planning extract · Hangzhou",
       cardLabel: "What gets added after the route",
@@ -388,7 +388,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
       pointLabel: "The point:",
       point:
-        "the route finder chooses the shape. Personal planning resolves the decisions that make that shape workable.",
+        "the timing check finds the tension without deleting your wishes. A planner resolves the actual route with you.",
       handledLabel: "What the studio works through",
       handledTitle: "The decisions behind the route",
       handled: [
@@ -440,7 +440,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     faq: {
       eyebrow: "What to know next",
       title: "The questions that change the decision.",
-      intro: "Everything else can wait until your route has a useful shape.",
+      intro: "The first check finds the useful conflict; a person handles the decisions.",
       items: [
         {
           question: "Is this a group tour?",
@@ -450,7 +450,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "What happens after I request a planner review?",
           answer:
-            "A planner checks the starting route against your dates, arrival and departure points, walking needs and non-negotiables. Detailed planning and a quote come only after that deeper conversation.",
+            "A planner receives the same wishlist, nights, party, pace, priorities and note you entered. We then check dates, arrival and departure points, transport, walking needs and non-negotiables before detailed planning or a quote.",
         },
         {
           question: "Who actually delivers the trip?",
@@ -466,38 +466,38 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "What if flights or a few cities are already booked?",
           answer:
-            "Keep them. The starting route is a draft, and a planner can rebuild it around fixed airports, dates or must-visit places.",
+            "Keep them and add them to the note. The automatic result does not pretend to solve the final order; a planner can build around fixed airports, dates and must-visit places.",
         },
       ],
     },
     finalCta: {
-      resultLabel: "Your route is ready for a human review",
+      resultLabel: "Your trip brief is ready for a human review",
       inProgressLabel: "Your answers are saved as you go",
-      newLabel: "Your starting point is four answers away",
-      resultTitle: "Ready to turn this starting route into a real trip?",
-      inProgressTitle: "Finish the remaining questions to see your route.",
-      newTitle: "Find the shape of your China trip first.",
+      newLabel: "Your first timing check is four answers away",
+      resultTitle: "Ready to turn this wishlist into a workable China trip?",
+      inProgressTitle: "Finish the remaining questions to check your time.",
+      newTitle: "Start with what you actually want from China.",
     },
     handoff: {
       eyebrow: "Human planning",
       title: "How would you like to continue?",
       body:
-        "Your starting route and four answers are ready. Choose one way to contact us—you won’t need to explain them again.",
+        "Your wishlist, nights, group, pace, timing result and priorities are ready. Choose one way to contact us—you won’t need to explain them again.",
       boundary: "This is an enquiry, not a booking.",
       contactLegend: "Choose Email or WhatsApp",
       emailOption: "Email",
       emailOptionDescription:
-        "Send your route and receive a human reply by email.",
+        "Send your trip brief and receive a human reply by email.",
       whatsappOption: "WhatsApp",
       whatsappOptionDescription:
-        "Open WhatsApp with your route summary ready to send.",
+        "Open WhatsApp with your trip brief ready to send.",
       requiredText: "(required)",
       emailLabel: "Your email",
       emailHint: "Only for replying to this enquiry.",
       whatsappLaunchHint:
-        "WhatsApp will open with your route summary. Tap Send there to start the conversation.",
+        "WhatsApp will open with your complete trip brief. Tap Send there to start the conversation.",
       whatsappPrivacyNote:
-        "Your route summary is passed to WhatsApp to prepare the message. Homeground receives it only after you tap Send.",
+        "Your trip brief is passed to WhatsApp to prepare the message. Homeground receives it only after you tap Send.",
       whatsappOpen: "Continue in WhatsApp",
       whatsappAttemptTitle: "We tried to open WhatsApp.",
       whatsappAttemptBody:
@@ -512,11 +512,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappMessageLengthLabel: "Length",
       whatsappMessagePaceLabel: "Pace",
       whatsappMessageClosing: "What information do you need next?",
-      noteLabel: "Anything this route should respect? (optional)",
+      noteLabel: "Anything else we should know? (optional)",
       noteHint:
         "Fixed places, flights already booked, places you have visited, walking needs, or anything else. Please do not include medical records.",
       noteAttached:
-        "This note will be attached for planner review. It has not changed the starting route.",
+        "This note will be included in the same trip brief for planner review.",
       noteCount: (current, maximum) =>
         `${current} of ${maximum} characters`,
       nextTitle: "What happens next",
@@ -526,7 +526,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "By sending this request, you acknowledge that Homeground may use these details to reply to this enquiry. We will not use them for marketing without separate permission.",
       privacyLink: "Read our Privacy Notice",
       serviceBoundary: "Nothing has been booked.",
-      submit: "Send my route",
+      submit: "Send my trip brief",
       submitting: "Sending your request…",
       errorSummary: "Check the details below.",
       contactError: "Choose Email or WhatsApp.",
@@ -538,14 +538,14 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "This request form is out of date. Refresh the page before trying again.",
       privacyNoticeUnsupported:
         "The Privacy Notice for this form is no longer current. Refresh the page before trying again.",
-      successTitle: "Your route is saved.",
+      successTitle: "Your trip brief is saved.",
       successBody:
-        "We’ve saved your route and four answers for a human review.",
+        "We’ve saved your wishlist and trip details for a human review.",
       successReference: (publicReference) =>
         `Support reference: ${publicReference}`,
       successReplyEmail: (maskedEmail, replySla) =>
         `We’ll reply to ${maskedEmail}${replySla ? ` within ${replySla}` : ""}. Nothing has been booked.`,
-      backToRoute: "Back to my route",
+      backToRoute: "Back to my timing check",
       previousRequestNotice: (publicReference) =>
         `Your earlier request ${publicReference} was sent with the previous route. These changes have not been sent.`,
       routeEditingNotice:
@@ -562,9 +562,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       rateLimited: (retryAfter) =>
         `Too many requests have been sent. Try again after ${retryAfter}.`,
       routeMismatch:
-        "This route has been updated. Review the refreshed route, then send your request again.",
+        "This timing result has been updated. Review it, then send your request again.",
       unsupportedRuleVersion:
-        "This route was created with an older rule version. Refresh it, review the updated route and send again.",
+        "This timing result uses an older rule version. Refresh it, review the update and send again.",
       idempotencyConflict:
         "This request changed while it was being sent. Review the details and submit it again.",
       retry: "Try again",
@@ -574,10 +574,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       fallbackEmailBody: (routeReference) =>
         `Hello Homeground,\n\nI’d like a human review of route ${routeReference}.\n\nPlease tell me what trip details you need next.\n`,
       fallbackFailureBody: (routeReference) =>
-        `The request was not saved. If you use the verified brand email, include route code ${routeReference}.`,
+        `The request was not saved. If you use the verified brand email, include reference ${routeReference}.`,
       disabledTitle: "Planner requests are temporarily unavailable.",
       disabledBody: (routeReference) =>
-        `The secure request service is not configured for this site build. Route code: ${routeReference}.`,
+        `The secure request service is not configured for this site build. Reference: ${routeReference}.`,
       brandEmailUnavailable:
         "A verified Homeground email is not configured either, so there is no working fallback on this page yet.",
       uncertainTitle:
@@ -595,7 +595,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China. Tailored journeys, planned with context.`,
     },
     schemaDescription:
-      "A China trip-planning studio creating tailored starting routes and manually checking suitable local services after travel details are clear.",
+      "A China trip-planning studio that checks a traveller’s destination wishlist against available time, then plans the real route with suitable local services.",
     finder: {
       hiddenTitle: "Find a sensible starting route",
       introEyebrow: "Start with you, not a map",
@@ -819,10 +819,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "简体中文",
     languageShort: "中文",
     metadata: {
-      title: "找到真正适合你的中国旅行路线",
+      title: "从真实愿望开始规划中国旅行",
       description:
-        "回答四个问题，先查看包含城市、住宿晚数与路线取舍的中国旅行初步方案，再决定是否请旅行规划师进一步调整。",
-      openGraphTitle: "Homeground China｜找到适合你的中国旅行路线",
+        "保留所有想去的地方，对照在中国的住宿晚数找出时间冲突，再把同一份需求直接交给人工旅行规划师。",
+      openGraphTitle: "Homeground China｜检查你的中国旅行愿望清单",
     },
     skipLink: "跳到主要内容",
     brandTagline: "独立中国旅行规划",
@@ -841,9 +841,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "打开导航",
       closeMenu: "关闭导航",
       plannerCta: {
-        new: "找到我的初步路线",
-        inProgress: "继续选择路线",
-        result: "请规划师复核这条路线",
+        new: "检查我的旅行愿望",
+        inProgress: "继续时间检查",
+        result: "把旅行需求交给规划师",
         disabled: "联系 Homeground",
         validationError: "完成咨询信息",
         submitting: "正在发送…",
@@ -856,21 +856,21 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       eyebrow: "为真实同行者规划独立中国旅行",
       title: "真正适合你的中国之旅。",
       lead:
-        "回答四个问题，先得到一条包含城市、住宿晚数和明确取舍的初步路线。只有在你选择联系后，我们才会人工核对真实条件和合适的当地服务。",
+        "选出所有真正想去的地方，填写在中国的住宿晚数和理想节奏，先看时间是否合适或发生冲突。系统不会擅自删掉城市；你选择联系后，同一份需求会直接交给人工规划师。",
       trustLabel: "你可以放心",
       trust: [
         "暂时不问预算",
         "看到结果前无需留下联系方式",
-        "同行者和旅行节奏会真正改变路线结构",
+        "你选择的每个地方都会保留",
       ],
       imageAlt: "北京故宫角楼倒映在护城河中",
       caption: "北京 · 故宫角楼",
     },
     proof: {
       eyebrow: "旅行规划师会补上什么",
-      title: "一条路线，不只是几个城市的排列。",
+      title: "可执行的路线，不只是几个城市的排列。",
       intro:
-        "初步结果先给出旅行的骨架；旅行规划师再把它细化成一段真正可执行的行程。",
+        "初步结果只比较目的地停留时间；旅行规划师再核对交通、进出城市、日期和真正影响落地的细节。",
       imageAlt: "小船驶过杭州薄雾中的湖面",
       imageBadge: "规划示例节选 · 杭州",
       cardLabel: "得到路线之后，我们会补上什么",
@@ -897,7 +897,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
       pointLabel: "重点在于：",
       point:
-        "路线工具负责确定整体结构，旅行规划师负责补全让这套结构真正可执行的细节。",
+        "时间检查负责发现冲突，但不替你删掉愿望；人工规划师再与你一起解决真正的路线。",
       handledLabel: "工作室会逐项梳理",
       handledTitle: "藏在路线背后的决定",
       handled: [
@@ -945,7 +945,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     faq: {
       eyebrow: "接下来需要知道的",
       title: "真正影响决定的几个问题。",
-      intro: "其他细节，可以等路线先有一个清楚的形状再讨论。",
+      intro: "第一步先找出有价值的冲突，真正的取舍交给人与人沟通。",
       items: [
         {
           question: "这是跟团游吗？",
@@ -955,7 +955,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "请旅行规划师进一步调整后会发生什么？",
           answer:
-            "旅行规划师会结合具体日期、进出城市、步行需求和不能妥协的事项检查初步路线。深入沟通后，才会进入详细规划和报价。",
+            "旅行规划师会收到你填写的完整愿望清单、晚数、同行者、节奏、优先项和补充说明，再核对日期、进出城市、交通、步行需求和不能妥协的事项。深入沟通后，才会进入详细规划和报价。",
         },
         {
           question: "最终是谁来落地执行？",
@@ -970,36 +970,36 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "如果机票或部分城市已经订好了怎么办？",
           answer:
-            "保留即可。初步路线只是草案，旅行规划师可以围绕已经确定的机场、日期或必去地点重新调整。",
+            "保留，并写进补充说明。自动结果不会假装已经解决最终顺序；旅行规划师会围绕已确定的机场、日期和必去地点安排。",
         },
       ],
     },
     finalCta: {
-      resultLabel: "你的路线已准备好进入人工复核",
+      resultLabel: "你的旅行需求已准备好进入人工复核",
       inProgressLabel: "你的选择会随进度保留",
-      newLabel: "再回答四个问题，就能看到起点",
-      resultTitle: "准备把这条初步路线变成真正可执行的旅行吗？",
-      inProgressTitle: "完成剩余问题，查看你的初步路线。",
-      newTitle: "先找到这趟中国旅行该有的结构。",
+      newLabel: "回答四个问题，先做一次时间检查",
+      resultTitle: "准备把这份愿望清单变成真正可执行的旅行吗？",
+      inProgressTitle: "完成剩余问题，查看时间是否匹配。",
+      newTitle: "先从你真正想去的地方开始。",
     },
     handoff: {
       eyebrow: "人工旅行规划",
       title: "你想通过哪种方式继续？",
       body:
-        "你的初步路线和四项选择已经整理好。选择一种方式联系工作室，不需要重新说明。",
+        "愿望清单、住宿晚数、同行者、节奏、时间结果和优先项已经整理好。选择一种方式联系工作室，不需要重新说明。",
       boundary: "这只是咨询，不是预订。",
       contactLegend: "选择电子邮件或 WhatsApp",
       emailOption: "电子邮件",
-      emailOptionDescription: "通过网站发送路线，由人工通过电子邮件回复。",
+      emailOptionDescription: "通过网站发送旅行需求，由人工通过电子邮件回复。",
       whatsappOption: "WhatsApp",
-      whatsappOptionDescription: "打开 WhatsApp，路线摘要会自动填入。",
+      whatsappOptionDescription: "打开 WhatsApp，完整旅行需求会自动填入。",
       requiredText: "（必填）",
       emailLabel: "你的电子邮箱",
       emailHint: "仅用于回复本次咨询。",
       whatsappLaunchHint:
-        "WhatsApp 将打开并填入你的路线摘要。请在 WhatsApp 中选择“发送”，对话才会开始。",
+        "WhatsApp 将打开并填入你的完整旅行需求。请在 WhatsApp 中选择“发送”，对话才会开始。",
       whatsappPrivacyNote:
-        "为了准备消息，路线摘要会交给 WhatsApp。只有在你选择“发送”后，Homeground 才会收到消息。",
+        "为了准备消息，旅行需求会交给 WhatsApp。只有在你选择“发送”后，Homeground 才会收到消息。",
       whatsappOpen: "在 WhatsApp 中继续",
       whatsappAttemptTitle: "我们已尝试打开 WhatsApp。",
       whatsappAttemptBody:
@@ -1014,11 +1014,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappMessageLengthLabel: "时长",
       whatsappMessagePaceLabel: "节奏",
       whatsappMessageClosing: "接下来需要我提供哪些信息？",
-      noteLabel: "还有哪些需要我们注意的条件？（选填）",
+      noteLabel: "还有什么需要我们提前知道？（选填）",
       noteHint:
         "例如必去地点、已订航班、去过的地方、步行需求或其他事项。请不要填写病历等医疗记录。",
       noteAttached:
-        "这段说明会附在咨询中供规划师查看，但不会自动改变当前初步路线。",
+        "这段说明会放进同一份旅行需求中，交给规划师查看。",
       noteCount: (current, maximum) => `已输入 ${current} / ${maximum} 字`,
       nextTitle: "接下来会发生什么",
       nextBody:
@@ -1027,7 +1027,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "发送本次咨询即表示你知悉 Homeground 会使用这些信息回复本次咨询。未经单独许可，我们不会将其用于营销。",
       privacyLink: "阅读隐私说明",
       serviceBoundary: "目前没有任何预订。",
-      submit: "发送我的路线",
+      submit: "发送我的旅行需求",
       submitting: "正在发送咨询…",
       errorSummary: "请检查以下信息。",
       contactError: "请选择电子邮件或 WhatsApp。",
@@ -1038,13 +1038,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "当前咨询表单版本已经过期，请刷新页面后再试。",
       privacyNoticeUnsupported:
         "当前表单对应的隐私说明已经更新，请刷新页面后再试。",
-      successTitle: "你的路线已保存。",
-      successBody: "我们已保存你的路线和四项选择，供人工查看。",
+      successTitle: "你的旅行需求已保存。",
+      successBody: "我们已保存你的愿望清单和旅行信息，供人工查看。",
       successReference: (publicReference) =>
         `查询参考号：${publicReference}`,
       successReplyEmail: (maskedEmail, replySla) =>
         `我们会${replySla ? `在${replySla}内` : ""}回复至 ${maskedEmail}。目前没有任何预订。`,
-      backToRoute: "返回我的路线",
+      backToRoute: "返回时间检查",
       previousRequestNotice: (publicReference) =>
         `之前的咨询 ${publicReference} 使用的是上一版路线；当前修改尚未发送。`,
       routeEditingNotice:
@@ -1060,9 +1060,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       rateLimited: (retryAfter) =>
         `短时间内发送次数过多，请在 ${retryAfter} 后再试。`,
       routeMismatch:
-        "这条路线已经更新。请先查看更新后的路线，再重新发送咨询。",
+        "时间判断已经更新。请先查看最新结果，再重新发送咨询。",
       unsupportedRuleVersion:
-        "这条路线由旧版规则生成。请刷新并查看更新后的路线，再重新发送。",
+        "这份时间判断使用了旧版规则。请刷新并查看更新结果，再重新发送。",
       idempotencyConflict:
         "发送过程中咨询内容发生了变化。请检查后重新提交。",
       retry: "重试",
@@ -1072,10 +1072,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       fallbackEmailBody: (routeReference) =>
         `Homeground 团队，你好：\n\n我希望人工复核路线 ${routeReference}。\n\n请说明接下来需要补充哪些旅行信息。\n`,
       fallbackFailureBody: (routeReference) =>
-        `本次咨询没有保存。如使用已验证的品牌邮箱，请在邮件中写明路线代码 ${routeReference}。`,
+        `本次咨询没有保存。如使用已验证的品牌邮箱，请在邮件中写明参考编号 ${routeReference}。`,
       disabledTitle: "人工咨询目前暂不可用。",
       disabledBody: (routeReference) =>
-        `此版本网站尚未配置安全咨询服务。路线代码：${routeReference}。`,
+        `此版本网站尚未配置安全咨询服务。参考编号：${routeReference}。`,
       brandEmailUnavailable:
         "网站也尚未配置已验证的 Homeground 品牌邮箱，因此当前没有可用的备用联系方式。",
       uncertainTitle: "暂时无法确认咨询是否已经送达。",
@@ -1092,7 +1092,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China。每一段旅程，都从真实需求出发。`,
     },
     schemaDescription:
-      "一家提供定制初步路线，并在旅行条件明确后人工核对合适当地服务的中国旅行规划工作室。",
+      "一家先把旅客的目的地愿望与可用时间进行比较，再人工规划真实路线和合适当地服务的中国旅行工作室。",
     finder: {
       hiddenTitle: "找到一条合理的初步路线",
       introEyebrow: "先看你需要什么，而不是先看地图",
@@ -1296,10 +1296,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "한국어",
     languageShort: "한국어",
     metadata: {
-      title: "나에게 맞는 중국 여행 동선 찾기",
+      title: "진짜 희망 목록에서 시작하는 중국 여행",
       description:
-        "네 가지 질문에 답하고 도시, 숙박일수, 선택 기준이 담긴 중국 여행 동선 초안을 확인하세요. 자세한 상담과 견적은 그다음에 진행됩니다.",
-      openGraphTitle: "Homeground China | 나에게 맞는 중국 여행 동선",
+        "가고 싶은 곳을 모두 남기고 중국 체류 숙박일수와 비교한 뒤, 같은 여행 요청서를 사람 플래너에게 전달하세요.",
+      openGraphTitle: "Homeground China | 중국 여행 희망 목록 확인",
     },
     skipLink: "본문으로 바로가기",
     brandTagline: "독립 중국 여행 플래닝",
@@ -1318,9 +1318,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       plannerCta: {
-        new: "나의 여행 동선 찾기",
-        inProgress: "여행 동선 찾기 계속하기",
-        result: "플래너에게 이 동선 검토 요청하기",
+        new: "나의 여행 희망 목록 확인",
+        inProgress: "시간 확인 계속하기",
+        result: "플래너에게 여행 요청서 보내기",
         disabled: "Homeground에 문의하기",
         validationError: "문의 작성 마치기",
         submitting: "문의 보내는 중…",
@@ -1333,21 +1333,21 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       eyebrow: "실제 일행을 기준으로 설계하는 독립 중국 여행",
       title: "나에게 정말 맞는 중국 여행.",
       lead:
-        "네 가지 질문에 답하면 도시, 숙박일수, 솔직한 선택 기준이 담긴 여행 동선 초안을 볼 수 있습니다. 연락을 선택한 뒤에야 사람이 실제 조건과 적합한 현지 서비스를 확인합니다.",
+        "정말 가고 싶은 곳을 모두 고르고 중국 체류 숙박일수와 원하는 속도를 입력하세요. 시간이 맞는지, 어디서 충돌하는지 먼저 보여 드립니다. 선택한 장소는 삭제하지 않으며 연락을 선택하면 같은 요청서가 사람 플래너에게 전달됩니다.",
       trustLabel: "먼저 확인할 수 있는 것",
       trust: [
         "예산은 아직 묻지 않습니다",
         "결과를 보기 전에는 연락처가 필요 없습니다",
-        "일행과 여행 속도가 실제 동선 구조를 바꿉니다",
+        "선택한 모든 장소를 희망 목록에 남깁니다",
       ],
       imageAlt: "해자에 비친 베이징 자금성 각루",
       caption: "베이징 · 자금성 각루",
     },
     proof: {
       eyebrow: "개인 맞춤 설계가 바꾸는 것",
-      title: "여행 동선은 도시 이름의 목록이 아닙니다.",
+      title: "실행 가능한 동선은 도시 이름 목록만으로 완성되지 않습니다.",
       intro:
-        "첫 결과가 여행의 뼈대를 보여 준다면, 사람의 설계는 그 뼈대가 실제 현장에서 작동하도록 만듭니다.",
+        "첫 결과는 목적지 체류 시간만 비교합니다. 이후 사람 플래너가 교통, 입출국 도시, 날짜와 실제 여행을 좌우하는 조건을 확인합니다.",
       imageAlt: "안개 낀 항저우 호수를 지나는 작은 배",
       imageBadge: "여행 설계 예시 · 항저우",
       cardLabel: "동선 초안이 나온 뒤 더해지는 것",
@@ -1376,7 +1376,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
       pointLabel: "핵심은:",
       point:
-        "동선 찾기가 전체 형태를 정하고, 개인 맞춤 설계가 그 형태를 실행할 수 있도록 세부 결정을 구체화합니다.",
+        "시간 확인은 희망 장소를 지우지 않고 충돌을 찾습니다. 실제 동선은 플래너와 함께 해결합니다.",
       handledLabel: "스튜디오가 함께 검토하는 것",
       handledTitle: "여행 동선 뒤에 있는 실제 결정들",
       handled: [
@@ -1425,7 +1425,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     faq: {
       eyebrow: "다음으로 알아둘 것",
       title: "결정을 바꾸는 중요한 질문들.",
-      intro: "나머지는 여행 동선의 형태가 잡힌 뒤에 확인해도 늦지 않습니다.",
+      intro: "첫 확인은 중요한 충돌을 찾고, 실제 선택은 사람과의 대화에서 해결합니다.",
       items: [
         {
           question: "단체 패키지여행인가요?",
@@ -1435,7 +1435,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "플래너 검토를 요청하면 다음에는 무엇을 하나요?",
           answer:
-            "플래너가 날짜, 입출국 도시, 도보 조건과 꼭 지켜야 할 사항을 기준으로 여행 동선 초안을 검토합니다. 자세한 설계와 견적은 충분히 이야기한 뒤에 진행됩니다.",
+            "플래너는 입력한 전체 희망 목록, 숙박일수, 일행, 속도, 우선순위와 메모를 그대로 받습니다. 날짜, 입출국 도시, 교통, 도보 조건과 꼭 지켜야 할 사항을 확인한 뒤 자세한 설계와 견적을 논의합니다.",
         },
         {
           question: "실제 여행 서비스는 누가 운영하나요?",
@@ -1451,38 +1451,38 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "항공권이나 일부 도시를 이미 예약했다면요?",
           answer:
-            "그대로 두셔도 됩니다. 여행 동선은 초안이므로 확정된 공항, 날짜, 꼭 가고 싶은 장소에 맞춰 다시 구성할 수 있습니다.",
+            "그대로 두고 메모에 적어 주세요. 자동 결과는 최종 순서를 해결했다고 가장하지 않으며, 플래너가 확정된 공항, 날짜와 꼭 가고 싶은 장소에 맞춰 구성합니다.",
         },
       ],
     },
     finalCta: {
-      resultLabel: "여행 동선이 사람의 검토를 받을 준비가 되었습니다",
+      resultLabel: "여행 요청서가 사람의 검토를 받을 준비가 되었습니다",
       inProgressLabel: "답변은 진행하는 동안 저장됩니다",
-      newLabel: "네 가지 답변이면 출발점이 보입니다",
-      resultTitle: "이 동선을 실제 여행으로 이어갈 준비가 되셨나요?",
-      inProgressTitle: "남은 질문에 답하고 여행 동선 초안을 확인하세요.",
-      newTitle: "중국 여행의 전체 형태부터 찾아보세요.",
+      newLabel: "네 가지 답변으로 첫 시간 확인을 시작합니다",
+      resultTitle: "이 희망 목록을 실행 가능한 중국 여행으로 만들까요?",
+      inProgressTitle: "남은 질문에 답하고 시간이 맞는지 확인하세요.",
+      newTitle: "중국에서 정말 가고 싶은 곳부터 시작하세요.",
     },
     handoff: {
       eyebrow: "1:1 여행 플래닝",
       title: "어떤 방법으로 이어갈까요?",
       body:
-        "초기 여행 동선과 네 가지 답변이 정리되었습니다. 한 가지 연락 방법을 선택하면 처음부터 다시 설명하지 않아도 됩니다.",
+        "희망 목록, 숙박일수, 일행, 속도, 시간 결과와 우선순위가 정리되었습니다. 한 가지 연락 방법을 선택하면 처음부터 다시 설명하지 않아도 됩니다.",
       boundary: "문의 단계이며 예약이 아닙니다.",
       contactLegend: "이메일 또는 WhatsApp 선택",
       emailOption: "이메일",
       emailOptionDescription:
-        "웹사이트에서 여행 동선을 보내면 이메일로 직접 답변드립니다.",
+        "웹사이트에서 여행 요청서를 보내면 이메일로 직접 답변드립니다.",
       whatsappOption: "WhatsApp",
       whatsappOptionDescription:
-        "여행 동선 요약이 미리 입력된 WhatsApp 채팅창이 열립니다.",
+        "전체 여행 요청서가 미리 입력된 WhatsApp 채팅창이 열립니다.",
       requiredText: "(필수)",
       emailLabel: "이메일 주소",
       emailHint: "이 문의에 답변하는 용도로만 사용합니다.",
       whatsappLaunchHint:
-        "WhatsApp에 여행 동선 요약이 미리 입력됩니다. 대화를 시작하려면 WhatsApp에서 ‘보내기’를 선택해 주세요.",
+        "WhatsApp에 전체 여행 요청서가 미리 입력됩니다. 대화를 시작하려면 WhatsApp에서 ‘보내기’를 선택해 주세요.",
       whatsappPrivacyNote:
-        "메시지를 준비하기 위해 여행 동선 요약이 WhatsApp으로 전달됩니다. Homeground는 ‘보내기’를 누른 뒤에만 메시지를 받습니다.",
+        "메시지를 준비하기 위해 여행 요청서가 WhatsApp으로 전달됩니다. Homeground는 ‘보내기’를 누른 뒤에만 메시지를 받습니다.",
       whatsappOpen: "WhatsApp에서 계속하기",
       whatsappAttemptTitle: "WhatsApp 열기를 요청했습니다.",
       whatsappAttemptBody:
@@ -1497,11 +1497,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappMessageLengthLabel: "기간",
       whatsappMessagePaceLabel: "여행 페이스",
       whatsappMessageClosing: "다음으로 어떤 정보를 드리면 될까요?",
-      noteLabel: "이 동선에서 꼭 고려해야 할 내용이 있나요? (선택)",
+      noteLabel: "미리 알아야 할 내용이 더 있나요? (선택)",
       noteHint:
         "꼭 가야 할 곳, 이미 예약한 항공편, 이전에 방문한 곳, 도보 조건 등을 적어 주세요. 진료 기록과 같은 의료 정보는 입력하지 마세요.",
       noteAttached:
-        "이 내용은 플래너 검토용으로 첨부되며 현재 여행 동선을 자동으로 변경하지 않습니다.",
+        "이 내용은 같은 여행 요청서에 포함되어 플래너에게 전달됩니다.",
       noteCount: (current, maximum) => `${current} / ${maximum}자`,
       nextTitle: "문의 후 진행 과정",
       nextBody:
@@ -1510,7 +1510,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "문의를 보내면 Homeground가 본 문의에 답변하기 위해 이 정보를 사용하는 것을 확인한 것으로 간주합니다. 별도 동의 없이 마케팅에 사용하지 않습니다.",
       privacyLink: "개인정보 처리 안내 보기",
       serviceBoundary: "아직 예약된 항목은 없습니다.",
-      submit: "내 여행 동선 보내기",
+      submit: "내 여행 요청서 보내기",
       submitting: "문의를 보내는 중…",
       errorSummary: "아래 내용을 확인해 주세요.",
       contactError: "이메일 또는 WhatsApp을 선택해 주세요.",
@@ -1521,13 +1521,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "현재 문의 양식이 이전 버전입니다. 페이지를 새로 고친 뒤 다시 시도해 주세요.",
       privacyNoticeUnsupported:
         "이 양식의 개인정보 처리 안내가 업데이트되었습니다. 페이지를 새로 고친 뒤 다시 시도해 주세요.",
-      successTitle: "여행 동선이 저장되었습니다.",
-      successBody: "여행 동선과 네 가지 답변을 사람의 검토를 위해 저장했습니다.",
+      successTitle: "여행 요청서가 저장되었습니다.",
+      successBody: "희망 목록과 여행 정보를 사람의 검토를 위해 저장했습니다.",
       successReference: (publicReference) =>
         `문의 확인 번호: ${publicReference}`,
       successReplyEmail: (maskedEmail, replySla) =>
         `${replySla ? `${replySla} 이내에 ` : ""}${maskedEmail}로 답변드리겠습니다. 아직 예약된 항목은 없습니다.`,
-      backToRoute: "내 여행 동선으로 돌아가기",
+      backToRoute: "시간 확인으로 돌아가기",
       previousRequestNotice: (publicReference) =>
         `이전 문의 ${publicReference}는 이전 여행 동선으로 전송되었습니다. 현재 변경 사항은 아직 전송되지 않았습니다.`,
       routeEditingNotice:
@@ -1544,9 +1544,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       rateLimited: (retryAfter) =>
         `짧은 시간에 너무 많은 문의가 전송되었습니다. ${retryAfter} 후 다시 시도해 주세요.`,
       routeMismatch:
-        "여행 동선이 업데이트되었습니다. 새 동선을 확인한 뒤 문의를 다시 보내 주세요.",
+        "시간 판단이 업데이트되었습니다. 새 결과를 확인한 뒤 문의를 다시 보내 주세요.",
       unsupportedRuleVersion:
-        "이 여행 동선은 이전 규칙으로 만들어졌습니다. 새로 고침 후 업데이트된 동선을 확인하고 다시 보내 주세요.",
+        "이 시간 판단은 이전 규칙으로 만들어졌습니다. 새로 고침 후 업데이트된 결과를 확인하고 다시 보내 주세요.",
       idempotencyConflict:
         "전송 중 문의 내용이 변경되었습니다. 내용을 확인한 뒤 다시 제출해 주세요.",
       retry: "다시 시도",
@@ -1556,10 +1556,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       fallbackEmailBody: (routeReference) =>
         `Homeground 팀께,\n\n여행 동선 ${routeReference}의 사람 검토를 요청드립니다.\n\n다음으로 필요한 여행 정보를 알려 주세요.\n`,
       fallbackFailureBody: (routeReference) =>
-        `문의가 저장되지 않았습니다. 확인된 브랜드 이메일을 이용할 경우 동선 코드 ${routeReference}를 적어 주세요.`,
+        `문의가 저장되지 않았습니다. 확인된 브랜드 이메일을 이용할 경우 참조 번호 ${routeReference}를 적어 주세요.`,
       disabledTitle: "현재 플래너 문의를 이용할 수 없습니다.",
       disabledBody: (routeReference) =>
-        `이 사이트 버전에는 안전한 문의 서비스가 설정되지 않았습니다. 동선 코드: ${routeReference}.`,
+        `이 사이트 버전에는 안전한 문의 서비스가 설정되지 않았습니다. 참조 번호: ${routeReference}.`,
       brandEmailUnavailable:
         "확인된 Homeground 브랜드 이메일도 설정되지 않아 현재 이 페이지에서 이용할 수 있는 대체 연락 방법이 없습니다.",
       uncertainTitle: "문의 도착 여부를 확인할 수 없습니다.",
@@ -1576,7 +1576,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China. 실제 조건을 바탕으로 설계하는 맞춤 여행.`,
     },
     schemaDescription:
-      "맞춤형 중국 여행 동선 초안을 만들고 여행 조건이 분명해진 뒤 적합한 현지 서비스를 사람이 확인하는 여행 플래닝 스튜디오.",
+      "여행자의 목적지 희망 목록을 가능한 시간과 비교한 뒤 실제 동선과 적합한 현지 서비스를 사람이 설계하는 중국 여행 플래닝 스튜디오.",
     finder: {
       hiddenTitle: "현실적인 여행 동선 찾기",
       introEyebrow: "지도보다 사람부터",

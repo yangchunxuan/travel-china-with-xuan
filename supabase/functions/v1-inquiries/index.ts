@@ -1,5 +1,6 @@
 import {
   canonicalizeJson,
+  destinationInquirySchemaVersion,
   semanticInquiryPayload,
   validateAndNormalizeInquiry,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
@@ -359,14 +360,16 @@ async function handleRequest(request: Request): Promise<Response> {
   let persistenceResult;
   try {
     persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
-      "create_homeground_inquiry",
+      payload.schemaVersion === destinationInquirySchemaVersion
+        ? "create_homeground_destination_inquiry"
+        : "create_homeground_inquiry",
       {
         p_schema_version: payload.schemaVersion,
         p_form_version: payload.formVersion,
         p_locale: payload.locale,
         p_journey_id: payload.journey.journeyId,
         p_journey_revision: payload.journey.revision,
-        p_route_id: payload.routeSnapshot.routeId,
+        p_route_id: payload.journey.routeId,
         p_rule_version: payload.routeSnapshot.ruleVersion,
         p_answers: payload.journey.answers,
         p_route_snapshot: payload.routeSnapshot,

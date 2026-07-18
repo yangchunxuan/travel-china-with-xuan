@@ -99,20 +99,20 @@ export const homegroundPrivacyCopy: Record<
     metadata: {
       title: "Privacy notice | Homeground China",
       description:
-        "How Homeground handles route, contact and travel enquiry information.",
+        "How Homeground handles trip-wishlist, contact and travel enquiry information.",
     },
     skipLink: "Skip to privacy notice",
     navigation: {
       homeLabel: "Homeground China home",
       languageLabel: "Choose privacy notice language",
       privacyLabel: "Privacy",
-      homeCta: "Back to route finder",
+      homeCta: "Back to the trip check",
     },
     status: {
       eyebrow: "Enquiry privacy at a glance",
       title: "Your details are used for a human reply",
       body:
-        "Homeground uses the route and email details you submit to review and answer your travel request. If you choose WhatsApp, the website prepares a route summary but does not ask for or store your WhatsApp number. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
+        "Homeground uses the trip brief and email details you submit to review and answer your travel request. If you choose WhatsApp, the website prepares the same brief but does not ask for or store your WhatsApp number. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
       blockersTitle: "Key points",
       blockers: [
         "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
@@ -125,18 +125,18 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Homeground · privacy",
       title: "How an enquiry is handled",
       intro:
-        "After seeing a starting route, a traveller can send an email enquiry or open a prepared WhatsApp message. The email form is for replying to that active request, not for automatic booking or unrelated marketing.",
+        "After checking a wishlist against available nights, a traveller can send an email enquiry or open a prepared WhatsApp message. The email form is for replying to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
       reviewedValue: "19 July 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
       paragraphs: [
-        "The route finder may keep the four route answers in this browser’s session storage so progress can be restored. It does not store the traveller’s email address or optional note there.",
-        "When a traveller submits the email form, Supabase validates and saves the route context, email address and optional trip note. The page shows a saved state only after that save succeeds.",
+        "The trip checker may keep the four questionnaire answers in this browser’s session storage so progress can be restored. It does not store the traveller’s email address or optional note there.",
+        "When a traveller submits the email form, Supabase validates and saves the trip brief, email address and optional trip note. The page shows a saved state only after that save succeeds.",
         "If the landing URL contains utm_source, utm_medium or utm_campaign labels, they are stored with the submitted email enquiry to show how that request reached Homeground. They are not added to the WhatsApp message and are not used for cross-site tracking.",
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For email enquiries, Reply-To is the traveller’s address, so a person can answer directly from the Gmail thread.",
-        "If a traveller chooses WhatsApp, clicking the direct link passes the structured route summary and page language to WhatsApp to prepare a message. The link does not contain the traveller’s email, name, phone number or optional note, and it does not create a website enquiry.",
+        "If a traveller chooses WhatsApp, clicking the direct link passes the structured trip brief, page language and any optional note entered to WhatsApp to prepare a message. The link does not contain the traveller’s email, name or phone number, and it does not create a website enquiry.",
         "Homeground receives the WhatsApp message and the traveller’s WhatsApp number only after the traveller taps Send in WhatsApp. The website cannot confirm whether WhatsApp opened or whether the message was sent.",
         "A prepared email link is only an emergency fallback after the service confirms that an enquiry was not saved. It is not the normal contact path and opening it is never described as a successful submission.",
       ],
@@ -145,13 +145,13 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Purpose and fields",
       title: "Only what is needed for the active request",
       intro:
-        "A traveller can use the route finder without contacting Homeground. These are the information groups used if they later send an email enquiry or open the direct WhatsApp handoff.",
+        "A traveller can use the trip checker without contacting Homeground. These are the information groups used if they later send an email enquiry or open the direct WhatsApp handoff.",
       items: [
         {
-          name: "Route context",
+          name: "Trip brief",
           stage: "Browser session, submitted email enquiry or WhatsApp prefill",
           purpose:
-            "Party, travel style, total nights, pace, proposed cities and page language describe the starting route. An email enquiry also keeps the internal route version; the WhatsApp prefill does not.",
+            "Selected destinations, another place entered, total nights, party, pace, must-see priorities, timing status and page language describe the request. An email enquiry also keeps the internal rules version; the WhatsApp prefill does not.",
         },
         {
           name: "Traveller email",
@@ -161,21 +161,21 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           name: "Optional trip note",
-          stage: "Submitted with an email enquiry only when entered",
+          stage: "Submitted email enquiry or WhatsApp prefill when entered",
           purpose:
-            "Fixed dates, flights, cities, walking needs and other priorities help a person review the route. Medical records should not be entered.",
+            "Fixed dates, flights, cities, walking needs and other priorities help a person review the trip. Medical records should not be entered.",
         },
         {
           name: "Direct WhatsApp handoff",
           stage: "Outbound link after the traveller chooses WhatsApp",
           purpose:
-            "The structured route summary and page language are passed to WhatsApp to prepare a message. The website does not ask for a WhatsApp number; Homeground receives the message and number only after the traveller taps Send.",
+            "The structured trip brief, page language and any optional note entered are passed to WhatsApp to prepare a message. The website does not ask for a WhatsApp number; Homeground receives the message and number only after the traveller taps Send.",
         },
         {
           name: "Technical request record",
           stage: "Email enquiry service",
           purpose:
-            "A public reference, time, form version, route revision, landing path, optional URL campaign labels and limited anti-abuse data support reliable submission, source understanding and duplicate prevention.",
+            "A public reference, time, form version, brief revision, landing path, optional URL campaign labels and limited anti-abuse data support reliable submission, source understanding and duplicate prevention.",
         },
       ],
     },
@@ -213,7 +213,7 @@ export const homegroundPrivacyCopy: Record<
           label: "WhatsApp",
           value: "Direct handoff · no website number field",
           detail:
-            "Receives the structured route summary when the traveller opens the direct link. The studio receives the message and traveller number only after the traveller taps Send. WhatsApp and Meta may process the handoff and later conversation under their own terms and infrastructure.",
+            "Receives the structured trip brief and optional note when the traveller opens the direct link. The studio receives the message and traveller number only after the traveller taps Send. WhatsApp and Meta may process the handoff and later conversation under their own terms and infrastructure.",
         },
         {
           label: "Analytics and AI chat",
@@ -296,20 +296,20 @@ export const homegroundPrivacyCopy: Record<
     languageShort: "中文",
     metadata: {
       title: "隐私说明 | Homeground China",
-      description: "Homeground 如何处理路线、联系方式和旅行咨询信息。",
+      description: "Homeground 如何处理旅行愿望、联系方式和旅行咨询信息。",
     },
     skipLink: "跳到隐私说明正文",
     navigation: {
       homeLabel: "Homeground China 首页",
       languageLabel: "选择隐私说明语言",
       privacyLabel: "隐私",
-      homeCta: "返回路线工具",
+      homeCta: "返回旅行时间检查",
     },
     status: {
       eyebrow: "咨询隐私摘要",
       title: "你的信息只用于人工回复",
       body:
-        "Homeground 使用你主动提交的路线与邮箱信息来人工复核和回复本次旅行需求。选择 WhatsApp 时，网站只准备路线摘要，不会要求或保存你的 WhatsApp 号码。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
+        "Homeground 使用你主动提交的旅行需求与邮箱信息来人工复核和回复本次咨询。选择 WhatsApp 时，网站会准备同一份需求，但不会要求或保存你的 WhatsApp 号码。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
       blockersTitle: "关键规则",
       blockers: [
         "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
@@ -322,18 +322,18 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Homeground · 隐私",
       title: "一次咨询会如何被处理",
       intro:
-        "看到初步路线后，访客可以发送邮件咨询，或打开已经填入路线摘要的 WhatsApp 消息。邮件表单只用于回复当前咨询，不代表自动预订，也不等于同意无关营销。",
+        "把愿望清单与可用晚数进行比较后，访客可以发送邮件咨询，或打开已经填入旅行需求的 WhatsApp 消息。邮件表单只用于回复当前咨询，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
       reviewedValue: "2026 年 7 月 19 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
       paragraphs: [
-        "路线工具可能把四项路线答案保存在当前浏览器会话中，以便恢复进度；访客的邮箱和选填说明不会存入这里。",
-        "访客提交邮件表单时，Supabase 会验证并保存路线背景、邮箱和选填旅行说明。只有保存成功后，网页才会显示已保存。",
+        "旅行时间检查可能把四项问卷答案保存在当前浏览器会话中，以便恢复进度；访客的邮箱和选填说明不会存入这里。",
+        "访客提交邮件表单时，Supabase 会验证并保存旅行需求、邮箱和选填说明。只有保存成功后，网页才会显示已保存。",
         "如果落地页网址包含 utm_source、utm_medium 或 utm_campaign 标签，这些标签会随已提交的邮件咨询保存，用于了解该咨询如何到达 Homeground；它们不会写入 WhatsApp 消息，也不会用于跨网站追踪。",
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。对于邮件咨询，Reply-To 会设置为访客填写的邮箱，因此工作人员可以在 Gmail 会话中直接回复。",
-        "如果访客选择 WhatsApp，打开直接入口时，结构化路线摘要和页面语言会交给 WhatsApp，用于准备一条尚未发送的消息。入口中不包含访客邮箱、名字、电话号码或选填说明，也不会生成网站咨询记录。",
+        "如果访客选择 WhatsApp，打开直接入口时，结构化旅行需求、页面语言和访客填写的选填说明会交给 WhatsApp，用于准备一条尚未发送的消息。入口中不包含访客邮箱、名字或电话号码，也不会生成网站咨询记录。",
         "只有访客在 WhatsApp 中选择“发送”后，Homeground 才会收到消息和访客的 WhatsApp 号码。网站无法确认 WhatsApp 是否成功打开，也无法确认消息是否已经发送。",
         "只有当系统明确确认咨询没有保存时，页面才可提供预填邮件作为应急方式。它不是正常入口，打开邮件应用也绝不能被描述成提交成功。",
       ],
@@ -342,13 +342,13 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "目的和字段",
       title: "只收集当前咨询需要的信息",
       intro:
-        "访客可以只使用路线工具而不联系 Homeground。之后发送邮件咨询或打开 WhatsApp 直接入口时，会使用以下几类信息。",
+        "访客可以只使用旅行时间检查而不联系 Homeground。之后发送邮件咨询或打开 WhatsApp 直接入口时，会使用以下几类信息。",
       items: [
         {
-          name: "路线背景",
+          name: "旅行需求",
           stage: "浏览器会话、已提交邮件咨询或 WhatsApp 预填消息",
           purpose:
-            "同行者、旅行偏好、总晚数、节奏、建议城市和页面语言用于描述初步路线。邮件咨询还会保存内部路线版本；WhatsApp 预填消息不会包含该版本。",
+            "所选目的地、其他地点、总晚数、同行者、节奏、必去优先项、时间状态和页面语言用于描述本次需求。邮件咨询还会保存内部规则版本；WhatsApp 预填消息不会包含该版本。",
         },
         {
           name: "访客邮箱",
@@ -358,21 +358,21 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           name: "选填旅行说明",
-          stage: "仅随邮件咨询，访客填写后才提交",
+          stage: "填写后随邮件咨询提交或写入 WhatsApp 预填消息",
           purpose:
-            "固定日期、航班、城市、步行需求和其他重点用于人工复核路线。请不要填写病历等医疗记录。",
+            "固定日期、航班、城市、步行需求和其他重点用于人工复核旅行需求。请不要填写病历等医疗记录。",
         },
         {
           name: "WhatsApp 直接接力",
           stage: "访客选择 WhatsApp 后打开的外部入口",
           purpose:
-            "结构化路线摘要和页面语言会交给 WhatsApp 准备消息。网站不会要求 WhatsApp 号码；只有访客选择“发送”后，Homeground 才会收到消息和号码。",
+            "结构化旅行需求、页面语言和访客填写的选填说明会交给 WhatsApp 准备消息。网站不会要求 WhatsApp 号码；只有访客选择“发送”后，Homeground 才会收到消息和号码。",
         },
         {
           name: "技术请求记录",
           stage: "邮件咨询服务",
           purpose:
-            "公开咨询编号、时间、表单版本、路线修订、落地页路径、可选的网址活动标签和有限的防滥用信息，用于可靠提交、了解来源与避免重复。",
+            "公开咨询编号、时间、表单版本、需求修订、落地页路径、可选的网址活动标签和有限的防滥用信息，用于可靠提交、了解来源与避免重复。",
         },
       ],
     },
@@ -407,7 +407,7 @@ export const homegroundPrivacyCopy: Record<
           label: "WhatsApp",
           value: "直接接力 · 网站不填写号码",
           detail:
-            "访客打开直接入口时，WhatsApp 会收到结构化路线摘要用于准备消息；只有访客选择“发送”后，工作室才会收到消息和号码。WhatsApp 与 Meta 可能依据其自身条款和基础设施处理这次接力及后续对话。",
+            "访客打开直接入口时，WhatsApp 会收到结构化旅行需求和选填说明用于准备消息；只有访客选择“发送”后，工作室才会收到消息和号码。WhatsApp 与 Meta 可能依据其自身条款和基础设施处理这次接力及后续对话。",
         },
         {
           label: "统计与 AI 聊天",
@@ -489,20 +489,20 @@ export const homegroundPrivacyCopy: Record<
     metadata: {
       title: "개인정보 안내 | Homeground China",
       description:
-        "Homeground가 여행 동선, 연락처 및 문의 정보를 처리하는 방식입니다.",
+        "Homeground가 여행 희망 목록, 연락처 및 문의 정보를 처리하는 방식입니다.",
     },
     skipLink: "개인정보 안내 본문으로 바로가기",
     navigation: {
       homeLabel: "Homeground China 홈",
       languageLabel: "개인정보 안내 언어 선택",
       privacyLabel: "개인정보",
-      homeCta: "여행 동선 찾기로 돌아가기",
+      homeCta: "여행 시간 확인으로 돌아가기",
     },
     status: {
       eyebrow: "문의 개인정보 요약",
       title: "제출한 정보는 사람의 답변에만 사용합니다",
       body:
-        "Homeground는 여행자가 직접 제출한 여행 동선과 이메일 정보를 이번 여행 요청을 검토하고 답변하는 데 사용합니다. WhatsApp을 선택하면 웹사이트는 여행 동선 요약만 준비하며 WhatsApp 번호를 요청하거나 저장하지 않습니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
+        "Homeground는 여행자가 직접 제출한 여행 요청서와 이메일 정보를 이번 문의를 검토하고 답변하는 데 사용합니다. WhatsApp을 선택하면 웹사이트는 같은 요청서를 준비하지만 WhatsApp 번호를 요청하거나 저장하지 않습니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
       blockersTitle: "핵심 원칙",
       blockers: [
         "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
@@ -515,18 +515,18 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Homeground · 개인정보",
       title: "여행 문의는 이렇게 처리됩니다",
       intro:
-        "초기 여행 동선을 확인한 뒤 이메일 문의를 보내거나 여행 동선 요약이 미리 입력된 WhatsApp 메시지를 열 수 있습니다. 이메일 양식은 현재 요청에 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
+        "희망 목록과 가능한 숙박일수를 비교한 뒤 이메일 문의를 보내거나 여행 요청서가 미리 입력된 WhatsApp 메시지를 열 수 있습니다. 이메일 양식은 현재 요청에 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
       reviewedValue: "2026년 7월 19일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
       paragraphs: [
-        "여행 동선 찾기는 진행 상태를 복원하기 위해 네 가지 답변을 현재 브라우저 세션에 보관할 수 있습니다. 이메일과 선택 메모는 여기에 저장하지 않습니다.",
-        "여행자가 이메일 양식을 제출하면 Supabase가 여행 동선 정보, 이메일 주소와 선택 여행 메모를 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
+        "여행 시간 확인은 진행 상태를 복원하기 위해 네 가지 설문 답변을 현재 브라우저 세션에 보관할 수 있습니다. 이메일과 선택 메모는 여기에 저장하지 않습니다.",
+        "여행자가 이메일 양식을 제출하면 Supabase가 여행 요청서, 이메일 주소와 선택 메모를 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
         "방문 주소에 utm_source, utm_medium 또는 utm_campaign 표지가 있으면 Homeground에 문의가 유입된 경로를 확인하기 위해 제출된 이메일 문의와 함께 저장합니다. 이 표지는 WhatsApp 메시지에 넣지 않으며 사이트 간 추적에 사용하지 않습니다.",
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의의 Reply-To는 여행자가 입력한 주소이므로 담당자가 Gmail 대화에서 직접 답장할 수 있습니다.",
-        "WhatsApp 직접 연결을 선택하는 시점에 구조화된 여행 동선 요약과 페이지 언어가 WhatsApp으로 전달되어 아직 보내지 않은 메시지로 준비됩니다. 이 주소에는 여행자의 이메일, 이름, 전화번호 또는 선택 메모가 포함되지 않으며 웹사이트 문의 기록도 생성되지 않습니다.",
+        "WhatsApp 직접 연결을 선택하는 시점에 구조화된 여행 요청서, 페이지 언어와 여행자가 입력한 선택 메모가 WhatsApp으로 전달되어 아직 보내지 않은 메시지로 준비됩니다. 이 주소에는 여행자의 이메일, 이름 또는 전화번호가 포함되지 않으며 웹사이트 문의 기록도 생성되지 않습니다.",
         "여행자가 WhatsApp에서 ‘보내기’를 선택한 뒤에만 Homeground가 메시지와 여행자의 WhatsApp 번호를 받습니다. 웹사이트에서는 WhatsApp이 실제로 열리는지 또는 메시지가 전송되었는지 확인할 수 없습니다.",
         "서비스가 문의를 저장하지 않았다고 명확히 확인한 경우에만 작성된 이메일을 비상 대안으로 제공합니다. 이는 일반 문의 경로가 아니며 이메일 앱을 여는 것을 접수 완료라고 표시하지 않습니다.",
       ],
@@ -535,13 +535,13 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "목적과 항목",
       title: "현재 문의에 필요한 정보만",
       intro:
-        "Homeground에 연락하지 않고 여행 동선 찾기만 이용할 수 있습니다. 이후 이메일 문의를 보내거나 WhatsApp 직접 연결을 열 때 다음 정보가 사용됩니다.",
+        "Homeground에 연락하지 않고 여행 시간 확인만 이용할 수 있습니다. 이후 이메일 문의를 보내거나 WhatsApp 직접 연결을 열 때 다음 정보가 사용됩니다.",
       items: [
         {
-          name: "여행 동선 정보",
+          name: "여행 요청서",
           stage: "브라우저 세션, 제출된 이메일 문의 또는 WhatsApp 미리 입력 메시지",
           purpose:
-            "일행, 여행 취향, 총 숙박일수, 속도, 추천 도시와 페이지 언어로 첫 동선을 설명합니다. 이메일 문의에는 내부 동선 버전도 저장하지만 WhatsApp 미리 입력 메시지에는 넣지 않습니다.",
+            "선택한 목적지, 추가 장소, 총 숙박일수, 일행, 속도, 꼭 가야 할 우선순위, 시간 상태와 페이지 언어로 요청을 설명합니다. 이메일 문의에는 내부 규칙 버전도 저장하지만 WhatsApp 미리 입력 메시지에는 넣지 않습니다.",
         },
         {
           name: "여행자 이메일",
@@ -551,21 +551,21 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           name: "선택 여행 메모",
-          stage: "이메일 문의에서 여행자가 입력한 경우에만 제출",
+          stage: "입력한 경우 이메일 문의 또는 WhatsApp 미리 입력 메시지",
           purpose:
-            "확정 날짜, 항공편, 도시, 도보 조건과 우선순위는 사람의 검토에 사용합니다. 진료 기록은 입력하지 마세요.",
+            "확정 날짜, 항공편, 도시, 도보 조건과 우선순위는 사람의 여행 검토에 사용합니다. 진료 기록은 입력하지 마세요.",
         },
         {
           name: "WhatsApp 직접 연결",
           stage: "여행자가 WhatsApp을 선택한 뒤 여는 외부 주소",
           purpose:
-            "구조화된 여행 동선 요약과 페이지 언어가 WhatsApp으로 전달되어 메시지를 준비합니다. 웹사이트는 WhatsApp 번호를 요청하지 않으며 여행자가 ‘보내기’를 선택한 뒤에만 Homeground가 메시지와 번호를 받습니다.",
+            "구조화된 여행 요청서, 페이지 언어와 여행자가 입력한 선택 메모가 WhatsApp으로 전달되어 메시지를 준비합니다. 웹사이트는 WhatsApp 번호를 요청하지 않으며 여행자가 ‘보내기’를 선택한 뒤에만 Homeground가 메시지와 번호를 받습니다.",
         },
         {
           name: "기술 요청 기록",
           stage: "이메일 문의 서비스",
           purpose:
-            "공개 문의 번호, 시간, 양식 버전, 동선 수정 정보, 방문 경로, 선택 URL 캠페인 표지와 제한된 악용 방지 데이터로 안정적인 제출, 유입 경로 확인과 중복 방지를 지원합니다.",
+            "공개 문의 번호, 시간, 양식 버전, 요청서 수정 정보, 방문 경로, 선택 URL 캠페인 표지와 제한된 악용 방지 데이터로 안정적인 제출, 유입 경로 확인과 중복 방지를 지원합니다.",
         },
       ],
     },
@@ -602,7 +602,7 @@ export const homegroundPrivacyCopy: Record<
           label: "WhatsApp",
           value: "직접 연결 · 웹사이트 번호 입력 없음",
           detail:
-            "여행자가 직접 연결을 선택하면 구조화된 여행 동선 요약을 받아 메시지를 준비합니다. 여행자가 ‘보내기’를 선택한 뒤에만 스튜디오가 메시지와 번호를 받습니다. WhatsApp과 Meta는 자체 약관과 인프라에 따라 이 연결 과정과 이후 대화를 처리할 수 있습니다.",
+            "여행자가 직접 연결을 선택하면 구조화된 여행 요청서와 선택 메모를 받아 메시지를 준비합니다. 여행자가 ‘보내기’를 선택한 뒤에만 스튜디오가 메시지와 번호를 받습니다. WhatsApp과 Meta는 자체 약관과 인프라에 따라 이 연결 과정과 이후 대화를 처리할 수 있습니다.",
         },
         {
           label: "분석 및 AI 채팅",

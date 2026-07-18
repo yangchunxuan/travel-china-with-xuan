@@ -18,16 +18,8 @@ interface NotificationJob {
   public_reference: string;
   locale: "en" | "zh" | "ko";
   route_id: string;
-  answers: {
-    party?: unknown;
-    travelStyle?: unknown;
-    nights?: unknown;
-    pace?: unknown;
-  };
-  route_snapshot: {
-    cityNights?: unknown;
-    totalNights?: unknown;
-  };
+  answers: Record<string, unknown>;
+  route_snapshot: Record<string, unknown>;
   reply_channel: "email" | "whatsapp";
   contact_email: string | null;
   contact_phone_e164: string | null;
@@ -59,6 +51,18 @@ const routeAnswerFields = [
   { key: "nights", label: "Total nights" },
   { key: "pace", label: "Daily pace" },
 ] as const;
+const destinationLabels: Record<string, string> = {
+  "beijing-great-wall": "Beijing & Great Wall",
+  shanghai: "Shanghai",
+  xian: "Xi’an",
+  chengdu: "Chengdu",
+  chongqing: "Chongqing",
+  zhangjiajie: "Zhangjiajie",
+  "guilin-yangshuo": "Guilin & Yangshuo",
+  "hangzhou-suzhou": "Hangzhou & Suzhou",
+  "yunnan-dali-lijiang": "Yunnan — Dali & Lijiang",
+  "guangzhou-shenzhen": "Guangzhou & Shenzhen",
+};
 
 function ensureHeaderSafe(value: string, name: string): string {
   if (/[\r\n]/u.test(value)) throw new Error(`invalid_env:${name}`);
@@ -124,6 +128,33 @@ function escapeHtml(value: string): string {
 }
 
 function routeSummary(job: NotificationJob): string {
+  if (
+    job.route_id === "destination-timing" &&
+    Array.isArray(job.route_snapshot?.destinationIds)
+  ) {
+    const destinations = validatedStringArray(
+      job.route_snapshot.destinationIds,
+      "route_snapshot.destinationIds",
+      10,
+    ).map((id) => destinationLabels[id] ?? id);
+    const other =
+      job.answers.otherPlace === null ||
+        job.answers.otherPlace === undefined
+        ? null
+        : validatedShortString(
+            job.answers.otherPlace,
+            "answers.otherPlace",
+            120,
+          );
+    const wishlist = [
+      ...destinations,
+      ...(other ? [`Other: ${other}`] : []),
+    ];
+    return wishlist.length > 0
+      ? `Destination timing: ${wishlist.join(", ")}`
+      : "Destination timing: classic starting point requested";
+  }
+
   const cityNights = job.route_snapshot?.cityNights;
   if (!Array.isArray(cityNights)) return job.route_id;
 
@@ -145,6 +176,247 @@ function routeSummary(job: NotificationJob): string {
     : job.route_id;
 }
 
+function validatedShortString(
+  value: unknown,
+  name: string,
+  maximumLength = 80,
+): string {
+  if (
+    typeof value !== "string" ||
+    value.length === 0 ||
+    Array.from(value).length > maximumLength ||
+    /[\r\n\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(value)
+  ) {
+    throw new Error(`invalid_job:${name}`);
+  }
+  return value;
+}
+
+function validatedStringArray(
+  value: unknown,
+  name: string,
+  maximumItems: number,
+): string[] {
+  if (!Array.isArray(value) || value.length > maximumItems) {
+    throw new Error(`invalid_job:${name}`);
+  }
+  return value.map((entry, index) =>
+    validatedShortString(entry, `${name}.${index}`)
+  );
+}
+
+function canonicalTimingAnswers(job: NotificationJob): Array<{
+  label: string;
+  value: string;
+}> {
+  const answers = job.answers;
+  const snapshot = job.route_snapshot;
+  const destinationMode = validatedShortString(
+    answers.destinationMode,
+    "answers.destinationMode",
+  );
+  const destinationIds = validatedStringArray(
+    answers.destinationIds,
+    "answers.destinationIds",
+    10,
+  );
+  const mustSeeIds = validatedStringArray(
+    answers.mustSeeIds,
+    "answers.mustSeeIds",
+    3,
+  );
+  const totalNights = answers.totalNights;
+  if (
+    typeof totalNights !== "number" ||
+    !Number.isSafeInteger(totalNights) ||
+    totalNights < 1 ||
+    totalNights > 60
+  ) {
+    throw new Error("invalid_job:answers.totalNights");
+  }
+
+  const otherPlace =
+    answers.otherPlace === null || answers.otherPlace === undefined
+      ? "(None)"
+      : validatedShortString(
+          answers.otherPlace,
+          "answers.otherPlace",
+          120,
+        );
+  const selectedPaceRange = snapshot.selectedPaceRange;
+  let selectedPaceRangeDisplay = "(Manual review)";
+  if (selectedPaceRange !== null && selectedPaceRange !== undefined) {
+    if (
+      typeof selectedPaceRange !== "object" ||
+      Array.isArray(selectedPaceRange)
+    ) {
+      throw new Error("invalid_job:route_snapshot.selectedPaceRange");
+    }
+    const range = selectedPaceRange as Record<string, unknown>;
+    if (
+      typeof range.minNights !== "number" ||
+      !Number.isSafeInteger(range.minNights) ||
+      typeof range.maxNights !== "number" ||
+      !Number.isSafeInteger(range.maxNights)
+    ) {
+      throw new Error("invalid_job:route_snapshot.selectedPaceRange");
+    }
+    selectedPaceRangeDisplay =
+      `${range.minNights}–${range.maxNights} nights`;
+  }
+
+  const essentialsMinimum = snapshot.essentialsMinimumNights;
+  if (
+    essentialsMinimum !== null &&
+    essentialsMinimum !== undefined &&
+    (
+      typeof essentialsMinimum !== "number" ||
+      !Number.isSafeInteger(essentialsMinimum)
+    )
+  ) {
+    throw new Error(
+      "invalid_job:route_snapshot.essentialsMinimumNights",
+    );
+  }
+  const essentialsShortfall = snapshot.essentialsShortfallNights;
+  if (
+    essentialsShortfall !== null &&
+    essentialsShortfall !== undefined &&
+    (
+      typeof essentialsShortfall !== "number" ||
+      !Number.isSafeInteger(essentialsShortfall) ||
+      essentialsShortfall < 0
+    )
+  ) {
+    throw new Error(
+      "invalid_job:route_snapshot.essentialsShortfallNights",
+    );
+  }
+  const selectedPaceShortfall = snapshot.selectedPaceShortfallNights;
+  if (
+    selectedPaceShortfall !== null &&
+    selectedPaceShortfall !== undefined &&
+    (
+      typeof selectedPaceShortfall !== "number" ||
+      !Number.isSafeInteger(selectedPaceShortfall) ||
+      selectedPaceShortfall < 0
+    )
+  ) {
+    throw new Error(
+      "invalid_job:route_snapshot.selectedPaceShortfallNights",
+    );
+  }
+  const nightsAboveSelectedPaceMax =
+    snapshot.nightsAboveSelectedPaceMax;
+  if (
+    nightsAboveSelectedPaceMax !== null &&
+    nightsAboveSelectedPaceMax !== undefined &&
+    (
+      typeof nightsAboveSelectedPaceMax !== "number" ||
+      !Number.isSafeInteger(nightsAboveSelectedPaceMax) ||
+      nightsAboveSelectedPaceMax < 0
+    )
+  ) {
+    throw new Error(
+      "invalid_job:route_snapshot.nightsAboveSelectedPaceMax",
+    );
+  }
+
+  const displayDestinations = destinationIds.map(
+    (id) => destinationLabels[id] ?? id,
+  );
+  const displayMustSee = mustSeeIds.map(
+    (id) => destinationLabels[id] ?? id,
+  );
+  return [
+    { label: "Destination mode", value: destinationMode },
+    {
+      label: "Wish list",
+      value:
+        displayDestinations.length > 0
+          ? displayDestinations.join(", ")
+          : "(No standard destination selected)",
+    },
+    { label: "Other place", value: otherPlace },
+    { label: "Total nights in China", value: String(totalNights) },
+    {
+      label: "Travelling party",
+      value: validatedShortString(answers.party, "answers.party"),
+    },
+    {
+      label: "Requested pace",
+      value: validatedShortString(answers.pace, "answers.pace"),
+    },
+    {
+      label: "Must-see priorities",
+      value:
+        displayMustSee.length > 0
+          ? displayMustSee.join(", ")
+          : "(None marked)",
+    },
+    {
+      label: "Timing status",
+      value: validatedShortString(
+        snapshot.status,
+        "route_snapshot.status",
+      ),
+    },
+    {
+      label: "Known-place timing",
+      value:
+        snapshot.knownDestinationsStatus === null ||
+          snapshot.knownDestinationsStatus === undefined
+          ? "(Manual review)"
+          : validatedShortString(
+              snapshot.knownDestinationsStatus,
+              "route_snapshot.knownDestinationsStatus",
+            ),
+    },
+    {
+      label: "Essentials minimum",
+      value:
+        essentialsMinimum === null || essentialsMinimum === undefined
+          ? "(Manual review)"
+          : `${essentialsMinimum} nights`,
+    },
+    {
+      label: "Essentials shortfall",
+      value:
+        essentialsShortfall === null ||
+          essentialsShortfall === undefined
+          ? "(Manual review)"
+          : `${essentialsShortfall} nights`,
+    },
+    {
+      label: "Selected pace reference",
+      value: selectedPaceRangeDisplay,
+    },
+    {
+      label: "Selected pace shortfall",
+      value:
+        selectedPaceShortfall === null ||
+          selectedPaceShortfall === undefined
+          ? "(Manual review)"
+          : `${selectedPaceShortfall} nights`,
+    },
+    {
+      label: "Nights above selected pace",
+      value:
+        nightsAboveSelectedPaceMax === null ||
+          nightsAboveSelectedPaceMax === undefined
+          ? "(Manual review)"
+          : `${nightsAboveSelectedPaceMax} nights`,
+    },
+    {
+      label: "Route feasibility",
+      value: validatedShortString(
+        snapshot.routeFeasibility,
+        "route_snapshot.routeFeasibility",
+      ),
+    },
+  ];
+}
+
 function routeAnswers(job: NotificationJob): Array<{
   label: string;
   value: string;
@@ -155,6 +427,10 @@ function routeAnswers(job: NotificationJob): Array<{
     Array.isArray(job.answers)
   ) {
     throw new Error("invalid_job:answers");
+  }
+
+  if (job.route_id === "destination-timing") {
+    return canonicalTimingAnswers(job);
   }
 
   return routeAnswerFields.map(({ key, label }) => {
@@ -206,6 +482,12 @@ async function sendThroughResend(
   const contact = contactDetails(job);
   const route = routeSummary(job);
   const answers = routeAnswers(job);
+  const briefLabel =
+    job.route_id === "destination-timing" ? "Planning brief" : "Route";
+  const answerSectionLabel =
+    job.route_id === "destination-timing"
+      ? "Traveller answers"
+      : "Route answers";
   const note = job.note?.trim() || "(No note provided)";
   const subject =
     `[Homeground][New] ${job.public_reference} · ${locale} · ${channel}`;
@@ -214,8 +496,8 @@ async function sendThroughResend(
     "",
     `Reference: ${job.public_reference}`,
     `Language: ${locale}`,
-    `Route: ${route}`,
-    "Route answers:",
+    `${briefLabel}: ${route}`,
+    `${answerSectionLabel}:`,
     ...answers.map(({ label, value }) => `${label}: ${value}`),
     `Reply channel: ${channel}`,
     `Traveller contact: ${contact.display}`,
@@ -235,7 +517,7 @@ async function sendThroughResend(
     <dl>
       <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
       <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
-      <dt>Route</dt><dd>${escapeHtml(route)}</dd>
+      <dt>${escapeHtml(briefLabel)}</dt><dd>${escapeHtml(route)}</dd>
       ${answers
         .map(
           ({ label, value }) =>

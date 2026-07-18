@@ -4,6 +4,7 @@ import test from "node:test";
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
 
 const routeFinderPath = "components/RouteFinder.tsx";
+const destinationCopyPath = "lib/destinationPlannerI18n.ts";
 const plannerHandoffPath = "components/PlannerHandoff.tsx";
 const plannerHandoffStylesPath = "components/PlannerHandoff.module.css";
 
@@ -13,30 +14,61 @@ async function source(path) {
 
 test("route questions own one localized accessible validation message", async () => {
   const routeFinder = await source(routeFinderPath);
+  const destinationCopy = await source(destinationCopyPath);
 
   assert.match(routeFinder, /<form noValidate onSubmit=\{handleSubmit\}>/);
-  assert.match(routeFinder, /setQuestionError\(question\.key\)/);
+  assert.match(routeFinder, /const validateCurrentQuestion = \(\): string/);
+  assert.match(routeFinder, /setQuestionError\(error\)/);
   assert.match(routeFinder, /headingRef\.current\?\.focus\(\)/);
-  assert.match(routeFinder, /aria-invalid=\{hasQuestionError\}/);
   assert.match(
     routeFinder,
-    /aria-describedby=\{\s*hasQuestionError \? questionErrorId : undefined\s*\}/,
+    /questionError \? ` \$\{questionErrorId\}` : ""/,
   );
-  assert.match(routeFinder, /\{copy\.finder\.answerRequired\}/);
+  assert.match(routeFinder, /id=\{questionErrorId\} role="alert"/);
   assert.equal(routeFinder.match(/role="alert"/g)?.length, 1);
 
-  assert.equal(
-    getHomegroundCopy("en").finder.answerRequired,
-    "Choose one answer to continue.",
+  assert.match(destinationCopy, /Choose at least one place/);
+  assert.match(destinationCopy, /请至少选择一个地方/);
+  assert.match(destinationCopy, /장소를 하나 이상 선택/);
+  assert.match(destinationCopy, /Choose or enter a whole number/);
+  assert.match(destinationCopy, /请选择或输入1至60/);
+  assert.match(destinationCopy, /1박부터 60박 사이/);
+});
+
+test("must-see priorities cannot change while a handoff is locked", async () => {
+  const routeFinder = await source(routeFinderPath);
+
+  assert.match(
+    routeFinder,
+    /const updateMustSee = \(id: DestinationId\) => \{\s*if \(interactionLocked \|\| !match \|\| !journey\) return;/,
   );
-  assert.equal(
-    getHomegroundCopy("zh").finder.answerRequired,
-    "请选择一个答案后继续。",
+  assert.match(
+    routeFinder,
+    /checked=\{selected\}\s*disabled=\{interactionLocked\}\s*onChange=\{\(\) => updateMustSee\(destinationId\)\}/,
   );
-  assert.equal(
-    getHomegroundCopy("ko").finder.answerRequired,
-    "계속하려면 답변 하나를 선택해 주세요.",
+});
+
+test("restart collapses one planner flow instead of adding duplicate back steps", async () => {
+  const routeFinder = await source(routeFinderPath);
+
+  assert.match(routeFinder, /homegroundPlannerFlowId/);
+  assert.match(routeFinder, /homegroundPlannerDepth/);
+  assert.match(
+    routeFinder,
+    /window\.history\.go\(-currentHistory\.homegroundPlannerDepth\)/,
   );
+  assert.match(
+    routeFinder,
+    /pendingHistoryResetFlowIdRef\.current = nextFlowId/,
+  );
+  const restartStart = routeFinder.indexOf("const handleRestart");
+  const restartEnd = routeFinder.indexOf(
+    "const toggleDestination",
+    restartStart,
+  );
+  const restartHandler = routeFinder.slice(restartStart, restartEnd);
+  assert.match(restartHandler, /returnPlannerHistoryToStart\(\)/);
+  assert.doesNotMatch(restartHandler, /history\.pushState/);
 });
 
 test("success keeps the full public reference as secondary three-language copy", async () => {
@@ -119,15 +151,21 @@ test("direct WhatsApp is a customer-initiated external handoff, not an Inquiry s
     messageStart,
   );
   const messageBuilder = plannerHandoff.slice(messageStart, messageEnd);
-  assert.match(messageBuilder, /whatsappMessageRouteLabel/);
-  assert.match(messageBuilder, /whatsappMessagePartyLabel/);
-  assert.match(messageBuilder, /whatsappMessageStyleLabel/);
-  assert.match(messageBuilder, /whatsappMessageLengthLabel/);
-  assert.match(messageBuilder, /whatsappMessagePaceLabel/);
+  assert.match(messageBuilder, /\.\.\.briefLines/);
   assert.doesNotMatch(
     messageBuilder,
-    /routeId|routeReference|publicReference|email|note|utm|attribution|source/i,
+    /routeId|routeReference|publicReference|email|utm|attribution|source/i,
   );
+  const briefStart = plannerHandoff.indexOf("const briefLines");
+  const briefBuilder = plannerHandoff.slice(briefStart, messageStart);
+  assert.match(briefBuilder, /wishlistLabel/);
+  assert.match(briefBuilder, /totalNights/);
+  assert.match(briefBuilder, /partyLabels/);
+  assert.match(briefBuilder, /paceLabels/);
+  assert.match(briefBuilder, /timing\.status/);
+  assert.match(briefBuilder, /mustSeeNames/);
+  assert.match(briefBuilder, /note\.trim\(\)/);
+  assert.match(briefBuilder, /result\.boundary/);
   assert.doesNotMatch(plannerHandoff, /knownAttributionSource|whatsappSource/);
 
   const whatsappBranchStart = plannerHandoff.indexOf(

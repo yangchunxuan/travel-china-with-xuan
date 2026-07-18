@@ -3,10 +3,15 @@ import { once } from "node:events";
 import { spawn } from "node:child_process";
 import test from "node:test";
 import {
+  currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  destinationInquirySchemaVersion,
   inquirySchemaVersion,
 } from "../../lib/inquiryVersions.ts";
+import {
+  destinationTimingRuleVersion,
+} from "../../lib/destinationTiming.ts";
 
 const hostname = "127.0.0.1";
 const port = 19_000 + Math.floor(Math.random() * 1_000);
@@ -37,6 +42,51 @@ function payload(note = "A test note") {
       email: "traveller@example.com",
     },
     note,
+    privacyNoticeVersion: currentPrivacyNoticeVersion,
+    attribution: {
+      landingPath: "/",
+      utmSource: null,
+      utmMedium: null,
+      utmCampaign: null,
+    },
+    experiment: null,
+    antiAbuse: {
+      companyWebsite: "",
+    },
+  };
+}
+
+function destinationPayload() {
+  return {
+    schemaVersion: destinationInquirySchemaVersion,
+    formVersion: currentDestinationInquiryFormVersion,
+    entryPath: "destination_timing",
+    locale: "en",
+    journey: {
+      journeyId: "0f85ec69-c181-4c0b-8bdf-3e8a373b448d",
+      revision: 1,
+      answers: {
+        destinationMode: "wishlist",
+        destinationIds: [
+          "beijing-great-wall",
+          "shanghai",
+          "xian",
+          "zhangjiajie",
+        ],
+        otherPlace: null,
+        totalNights: 9,
+        party: "two-adults",
+        pace: "classic",
+        mustSeeIds: ["beijing-great-wall"],
+      },
+      routeId: "destination-timing",
+      ruleVersion: destinationTimingRuleVersion,
+    },
+    contact: {
+      channel: "email",
+      email: "traveller@example.com",
+    },
+    note: "Keep every place in the planner handoff.",
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
       landingPath: "/",
@@ -140,6 +190,37 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   });
   assert.equal(conflict.status, 409);
   assert.equal((await conflict.json()).error.code, "idempotency_conflict");
+
+  const destinationKey = "27af1aa5-921e-484b-8ae6-10dfa47c761f";
+  const destinationFirst = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Origin: origin,
+      "Content-Type": "application/json",
+      "Idempotency-Key": destinationKey,
+    },
+    body: JSON.stringify(destinationPayload()),
+  });
+  assert.equal(destinationFirst.status, 201);
+  const destinationFirstBody = await destinationFirst.json();
+  assert.equal(destinationFirstBody.duplicate, false);
+
+  const destinationReplay = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Origin: origin,
+      "Content-Type": "application/json",
+      "Idempotency-Key": destinationKey,
+    },
+    body: JSON.stringify(destinationPayload()),
+  });
+  assert.equal(destinationReplay.status, 200);
+  const destinationReplayBody = await destinationReplay.json();
+  assert.equal(destinationReplayBody.duplicate, true);
+  assert.equal(
+    destinationReplayBody.inquiryId,
+    destinationFirstBody.inquiryId,
+  );
 
   const forbidden = await fetch(endpoint, {
     method: "POST",
