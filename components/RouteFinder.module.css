@@ -188,7 +188,7 @@
   align-items: center;
   font-size: 0.875rem;
   font-weight: 680;
-  justify-content: space-between;
+  justify-content: flex-start;
   line-height: 1.35;
 }
 
@@ -198,6 +198,11 @@
 .choiceOption > span {
   min-inline-size: 0;
   overflow-wrap: anywhere;
+}
+
+.destinationOption > span {
+  flex: 1;
+  text-align: start;
 }
 
 .destinationOption:hover,
