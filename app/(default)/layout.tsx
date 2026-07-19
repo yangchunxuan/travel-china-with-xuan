@@ -3,6 +3,7 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://homegroundchina.com/"),
+  referrer: "strict-origin-when-cross-origin",
   title: {
     default: "Homeground China — China Trip Planning Studio",
     template: "%s — Homeground China",

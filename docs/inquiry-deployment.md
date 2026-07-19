@@ -110,6 +110,7 @@ new successful deployment has no effect on the website.
 | `ALLOWED_ORIGINS` | Comma-separated exact origins, with no paths or wildcards |
 | `ALLOWED_FORM_VERSIONS` | Accepted form versions |
 | `ALLOWED_PRIVACY_NOTICE_VERSIONS` | Comma-separated accepted published Privacy Notice versions |
+| `INQUIRY_ACCEPTING_SUBMISSIONS` | Emergency server-side intake switch; defaults to `true`. Set `false` to return `503 intake_paused` before reading a POST body |
 | `WHATSAPP_ENABLED` | Legacy API mode that saves a traveller-provided WhatsApp number; keep `false` for the direct-chat release |
 | `IDEMPOTENCY_HASH_SECRET` | High-entropy HMAC secret for idempotency-key storage |
 | `RATE_LIMIT_HASH_SECRET` | Separate HMAC secret for ephemeral IP buckets |
@@ -120,6 +121,14 @@ new successful deployment has no effect on the website.
 Production origins must use HTTPS. The handler accepts HTTP only for an
 explicit `localhost` development origin.
 
+`NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` and
+`INQUIRY_ACCEPTING_SUBMISSIONS` solve different problems. The public variable
+controls what the next static-site deployment displays. The server variable
+stops callers that already know the API URL, so it is the first switch to use
+during malicious traffic or an Email delivery incident. After changing it,
+verify the live endpoint returns the expected status; if the hosted worker has
+not picked up the new secret, redeploy `v1-inquiries`.
+
 ### `notify-inquiries` worker
 
 | Variable | Purpose |
@@ -128,6 +137,7 @@ explicit `localhost` development origin.
 | `SUPABASE_SECRET_KEYS` | Preferred server-only RPC credential dictionary |
 | `SUPABASE_SERVICE_ROLE_KEY` | Legacy server-only RPC fallback |
 | `NOTIFICATION_WORKER_SECRET` | High-entropy scheduler authentication secret |
+| `NOTIFICATION_PROCESSING_ENABLED` | Emergency worker switch; defaults to `true`. Set `false` to keep queued evidence without sending more Gmail notifications |
 | `RESEND_API_KEY` | Server-only Resend API key |
 | `RESEND_FROM_EMAIL` | Verified brand-domain sender |
 | `BRAND_NOTIFICATION_EMAIL` | Monitored studio inbox; for the current pilot this may be the Gmail account the two-person team already checks |
@@ -148,12 +158,16 @@ it only after measuring real provider and database latency.
 | `SUPABASE_SECRET_KEYS` | Preferred server-only RPC credential dictionary |
 | `SUPABASE_SERVICE_ROLE_KEY` | Legacy server-only RPC fallback |
 | `OUTBOX_MONITOR_SECRET` | High-entropy monitor authentication secret; it must differ from the notification worker secret and Resend key |
+| `INQUIRY_ALERT_10_MINUTES` | Optional non-PII volume threshold; defaults to `10` |
+| `INQUIRY_ALERT_1_HOUR` | Optional non-PII volume threshold; defaults to `30` |
+| `INQUIRY_ALERT_24_HOURS` | Optional non-PII volume threshold; defaults to `100` |
 
 The monitor accepts only `GET` with the `x-monitor-secret` header. It returns
-aggregate outbox counts, never Inquiry IDs, routes, contact details or notes.
-It returns HTTP `503` whenever a terminal failure exists, a due pending job is
-more than five minutes late, an expired processing lease is more than five
-minutes stale, or the health query itself is unavailable.
+aggregate outbox and rolling intake counts, never Inquiry IDs, routes, contact
+details or notes. It returns HTTP `503` whenever a terminal failure exists, a
+due pending job is more than five minutes late, an expired processing lease is
+more than five minutes stale, a configured intake-volume threshold is reached,
+or the health query itself is unavailable.
 
 GitHub Actions needs:
 

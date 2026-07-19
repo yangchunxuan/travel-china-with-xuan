@@ -11,7 +11,7 @@ globalThis.Deno = {
   },
 };
 
-const { callSupabaseRpc } = await import(
+const { callSupabaseRpc, requestIp } = await import(
   "../functions/_shared/runtime.ts"
 );
 
@@ -74,4 +74,23 @@ test("malformed new-key configuration fails closed", async () => {
     callSupabaseRpc("test_rpc", {}),
     /invalid_env:SUPABASE_SECRET_KEYS/,
   );
+});
+
+test("rate limiting follows the Supabase-documented forwarded client IP", () => {
+  const request = new Request("https://example.test", {
+    headers: {
+      "cf-connecting-ip": "2001:db8::1",
+      "x-forwarded-for": "198.51.100.99, 203.0.113.10",
+    },
+  });
+  assert.equal(requestIp(request), "198.51.100.99");
+});
+
+test("malformed forwarded IP values fall into the shared safe bucket", () => {
+  const request = new Request("https://example.test", {
+    headers: {
+      "x-forwarded-for": "attacker-controlled-value",
+    },
+  });
+  assert.equal(requestIp(request), "missing-client-ip");
 });

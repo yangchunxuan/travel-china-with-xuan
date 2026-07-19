@@ -12,6 +12,7 @@ function localizedLocale(value: string): LocalizedLocale {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://homegroundchina.com/"),
+  referrer: "strict-origin-when-cross-origin",
   title: {
     default: "Homeground China",
     template: "%s — Homeground China",

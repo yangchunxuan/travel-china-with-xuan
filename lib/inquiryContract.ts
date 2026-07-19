@@ -194,7 +194,9 @@ const uuidV4Pattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const e164Pattern = /^\+[1-9][0-9]{7,14}$/;
 const disallowedControlCharacters =
-  /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u;
+  /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/iu;
+const emailLocalPartPattern =
+  /^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+$/i;
 
 function normalizeText(value: string): string {
   return value.normalize("NFC").replace(/\r\n?/g, "\n");
@@ -253,7 +255,15 @@ function normalizeEmail(value: string): string | null {
   const localPart = normalized.slice(0, separator);
   const domain = normalized.slice(separator + 1).toLowerCase();
   if (localPart.length > 64 || domain.length > 253) return null;
-  if (!/^[^\s@]+$/u.test(localPart)) return null;
+  if (
+    !emailLocalPartPattern.test(localPart) ||
+    localPart.startsWith(".") ||
+    localPart.endsWith(".") ||
+    localPart.includes("..") ||
+    !domain.includes(".")
+  ) {
+    return null;
+  }
   if (
     !domain
       .split(".")
@@ -758,16 +768,12 @@ function validateAndNormalizeDestinationInquiry(
     const normalizeUtm = (key: "utmSource" | "utmMedium" | "utmCampaign") => {
       const raw = attribution[key];
       if (raw === undefined || raw === null || raw === "") return null;
-      if (typeof raw !== "string") {
-        fieldErrors[`attribution.${key}`] = "invalid";
-        return null;
-      }
+      if (typeof raw !== "string") return null;
       const normalized = normalizeText(raw).trim();
       if (
         unicodeLength(normalized) > 100 ||
         disallowedControlCharacters.test(normalized)
       ) {
-        fieldErrors[`attribution.${key}`] = "invalid";
         return null;
       }
       return normalized || null;
@@ -1123,16 +1129,12 @@ export function validateAndNormalizeInquiry(
     const normalizeUtm = (key: "utmSource" | "utmMedium" | "utmCampaign") => {
       const raw = attribution[key];
       if (raw === undefined || raw === null || raw === "") return null;
-      if (typeof raw !== "string") {
-        fieldErrors[`attribution.${key}`] = "invalid";
-        return null;
-      }
+      if (typeof raw !== "string") return null;
       const normalized = normalizeText(raw).trim();
       if (
         unicodeLength(normalized) > 100 ||
         disallowedControlCharacters.test(normalized)
       ) {
-        fieldErrors[`attribution.${key}`] = "invalid";
         return null;
       }
       return normalized || null;

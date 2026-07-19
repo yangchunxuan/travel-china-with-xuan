@@ -125,6 +125,24 @@ test("normalizes a valid email Inquiry and recomputes its route", () => {
   assert.equal(result.value.routeSnapshot.totalNights, 14);
 });
 
+test("rejects ambiguous or non-routable email addresses", () => {
+  for (const email of [
+    "a,b@example.com",
+    "<x>@example.com",
+    "a..b@example.com",
+    ".ab@example.com",
+    "ab.@example.com",
+    "traveller@localhost",
+  ]) {
+    const payload = validPayload();
+    payload.contact.email = email;
+    const result = validateAndNormalizeInquiry(payload, validationConfig);
+    assert.equal(result.ok, false, email);
+    if (result.ok) continue;
+    assert.equal(result.fieldErrors["contact.email"], "invalid", email);
+  }
+});
+
 test("rejects unknown fields at every structured boundary", () => {
   const payload = validPayload();
   payload.cityChoices = ["Beijing"];
@@ -166,7 +184,7 @@ test("keeps WhatsApp disabled unless explicitly enabled", () => {
   assert.equal(result.code, "whatsapp_disabled");
 });
 
-test("rejects control characters and overlong attribution", () => {
+test("rejects control characters while dropping invalid attribution", () => {
   const payload = validPayload();
   payload.note = "normal\u0000hidden";
   payload.attribution.utmCampaign = "x".repeat(101);
@@ -174,7 +192,44 @@ test("rejects control characters and overlong attribution", () => {
   assert.equal(result.ok, false);
   if (result.ok) return;
   assert.equal(result.fieldErrors.note, "invalid_control_character");
-  assert.equal(result.fieldErrors["attribution.utmCampaign"], "invalid");
+  assert.equal(result.fieldErrors["attribution.utmCampaign"], undefined);
+});
+
+test("invalid UTM labels never block an otherwise valid inquiry", () => {
+  const payload = validDestinationPayload();
+  payload.attribution.utmSource = "youtube\u202ehidden";
+  payload.attribution.utmMedium = { unexpected: true };
+  payload.attribution.utmCampaign = "x".repeat(101);
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.equal(result.value.attribution.utmSource, null);
+  assert.equal(result.value.attribution.utmMedium, null);
+  assert.equal(result.value.attribution.utmCampaign, null);
+});
+
+test("V1 also drops invalid UTM labels without blocking an inquiry", () => {
+  const payload = validPayload();
+  payload.attribution.utmSource = "reddit\u200fhidden";
+  payload.attribution.utmMedium = { unexpected: true };
+  payload.attribution.utmCampaign = "x".repeat(101);
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.equal(result.value.attribution.utmSource, null);
+  assert.equal(result.value.attribution.utmMedium, null);
+  assert.equal(result.value.attribution.utmCampaign, null);
+});
+
+test("rejects bidirectional text controls in traveller-provided copy", () => {
+  const payload = validDestinationPayload();
+  payload.journey.answers.otherPlace = "Shanghai\u200fexample.com";
+  payload.note = "Please open\u061c this link";
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  assert.equal(result.fieldErrors["journey.answers.otherPlace"], "invalid");
+  assert.equal(result.fieldErrors.note, "invalid_control_character");
 });
 
 test("canonical JSON is stable across input key order", () => {

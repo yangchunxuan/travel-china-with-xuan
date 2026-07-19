@@ -105,8 +105,10 @@ WhatsApp has no database or Gmail failure signal.
    `failed_count`, `overdue_pending_count` and
    `expired_processing_count` must all be zero. `pending_count` or
    `processing_count` may briefly be non-zero while a notification is being
-   delivered; recheck after five minutes. The query returns counts only—never
-   Inquiry IDs, contact details or notes.
+   delivered; recheck after five minutes. Compare
+   `created_last_10_minutes`, `created_last_1_hour` and
+   `created_last_24_hours` with the pilot traffic thresholds below. The query
+   returns counts only—never Inquiry IDs, contact details or notes.
 
 3. In WhatsApp Business, check unread conversations and the `Follow up` label.
    Because a direct WhatsApp click never reaches Homeground's API, no Supabase
@@ -121,12 +123,53 @@ its secret or response into team chat.
 
 If any failure count remains non-zero, or the workflow stays red:
 
-1. stop new public submissions by disabling
-   `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` in the next deployment;
-2. check the notification schedule, Edge Function and Resend configuration
+1. stop the API immediately by setting the Supabase Edge Function secret
+   `INQUIRY_ACCEPTING_SUBMISSIONS=false`; confirm a valid production-origin
+   POST receives `503` with `intake_paused`;
+2. disable `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` and redeploy so customers
+   no longer see a form that cannot be accepted;
+3. check the notification schedule, Edge Function and Resend configuration
    using `inquiry-deployment.md`;
-3. restore the cause before retrying failed jobs;
-4. repeat the aggregate query and confirm the workflow returns green.
+4. restore the cause before retrying failed jobs;
+5. repeat the aggregate query and confirm the workflow returns green;
+6. set `INQUIRY_ACCEPTING_SUBMISSIONS=true`, make one labelled QA submission,
+   and only then re-enable and redeploy the public form.
+
+### Malicious traffic and account incident response
+
+The static website can withstand much more traffic than the public Inquiry
+API. CORS, the hidden honeypot and the visible form are not authentication:
+a targeted script can call the API directly. Use these operating thresholds
+for the pilot, then tune them after two weeks of real advertising traffic:
+
+- 10 saved enquiries in 10 minutes: inspect the newest Gmail notifications
+  for repeated text, addresses or impossible trips;
+- 30 saved enquiries in one hour or 100 in one day: set
+  `INQUIRY_ACCEPTING_SUBMISSIONS=false`, set
+  `NOTIFICATION_PROCESSING_ENABLED=false` if Gmail is being flooded, and
+  investigate before accepting or sending more;
+- more than 10 pending notifications for five minutes, or any failed,
+  overdue or expired notification for 15 minutes: pause the API;
+- five obvious new WhatsApp spam contacts in 10 minutes or 10 in one hour:
+  disable the public WhatsApp link in the next deployment, then block and
+  report the senders in WhatsApp Business. Hiding the link does not make an
+  already published phone number private.
+
+During a pause, do not delete evidence or retry every notification at once.
+Record the start time, check Supabase Function invocations, database counts,
+Resend usage and Gmail delivery, and resume only after one controlled QA
+submission reaches the correct inbox exactly once. Resume the notification
+worker before reopening intake.
+
+For Gmail, SaleSmartly and WhatsApp Business:
+
+1. each person uses a separate member account; never share the main password;
+2. enable two-factor authentication and keep one recovery owner;
+3. review Google third-party access, SaleSmartly members and WhatsApp linked
+   devices weekly;
+4. after an unfamiliar login, revoke the integration/session first, reset the
+   password, inspect sent messages and forwarding rules, and reconnect only
+   the required channel.
 
 ### Monthly retention and privacy-request check
 

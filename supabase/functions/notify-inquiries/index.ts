@@ -1,10 +1,12 @@
 import {
+  booleanEnv,
   callSupabaseRpc,
   constantTimeEqual,
   jsonResponse,
   positiveIntegerEnv,
   requiredEnv,
   safeRequestId,
+  SUPABASE_RPC_TIMEOUT_MILLISECONDS,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/runtime.ts";
 
@@ -35,6 +37,7 @@ interface ResendResult {
   accepted: boolean;
   providerMessageId: string | null;
   errorCode: string | null;
+  retryable: boolean;
 }
 
 interface NotificationConfig {
@@ -503,6 +506,7 @@ async function sendThroughResend(
     `Traveller contact: ${contact.display}`,
     "Traveller note:",
     note,
+    "Safety: traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.",
     "",
     `Received: ${job.inquiry_created_at}`,
     `First response due: ${job.first_response_due_at}`,
@@ -535,6 +539,7 @@ async function sendThroughResend(
         ? "<p>Reply directly to this message; Reply-To is already set to the traveller.</p>"
         : `<p><a href="${escapeHtml(contact.whatsappUrl ?? "")}">Continue in the studio WhatsApp account</a>.</p>`
     }
+    <p><strong>Safety:</strong> traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.</p>
     <p>The Gmail thread and its Sent message are the handling record.</p>
   `.trim();
 
@@ -569,6 +574,7 @@ async function sendThroughResend(
       errorCode: timeoutController.signal.aborted
         ? "provider_timeout"
         : "provider_network_error",
+      retryable: true,
     };
   } finally {
     clearTimeout(timeoutId);
@@ -580,6 +586,11 @@ async function sendThroughResend(
       accepted: false,
       providerMessageId: null,
       errorCode: `provider_http_${response.status}`,
+      retryable:
+        response.status === 408 ||
+        response.status === 409 ||
+        response.status === 429 ||
+        response.status >= 500,
     };
   }
 
@@ -598,6 +609,7 @@ async function sendThroughResend(
     accepted: true,
     providerMessageId,
     errorCode: null,
+    retryable: false,
   };
 }
 
@@ -626,6 +638,25 @@ async function handleRequest(request: Request): Promise<Response> {
     });
   }
 
+  let processingEnabled: boolean;
+  try {
+    processingEnabled = booleanEnv(
+      "NOTIFICATION_PROCESSING_ENABLED",
+      true,
+    );
+  } catch {
+    return jsonResponse(503, {
+      error: { code: "worker_not_configured", requestId },
+    });
+  }
+  if (!processingEnabled) {
+    return jsonResponse(200, {
+      ok: true,
+      status: "paused",
+      requestId,
+    });
+  }
+
   let config: NotificationConfig;
   let batchSize: number;
   let leaseSeconds: number;
@@ -644,7 +675,13 @@ async function handleRequest(request: Request): Promise<Response> {
       300,
     );
     const worstCaseBatchMilliseconds =
-      batchSize * (config.providerTimeoutMilliseconds + 5_000);
+      SUPABASE_RPC_TIMEOUT_MILLISECONDS +
+      batchSize *
+        (
+          config.providerTimeoutMilliseconds +
+          SUPABASE_RPC_TIMEOUT_MILLISECONDS +
+          5_000
+        );
     if (worstCaseBatchMilliseconds >= leaseSeconds * 1_000) {
       throw new Error("invalid_env:NOTIFICATION_LEASE_SECONDS");
     }
@@ -693,12 +730,14 @@ async function handleRequest(request: Request): Promise<Response> {
         accepted: false,
         providerMessageId: null,
         errorCode: "worker_configuration_error",
+        retryable: false,
       };
     }
 
     const retryIndex = Math.max(0, job.attempt_count - 1);
     const terminal =
-      !providerResult.accepted && retryIndex >= retryMinutes.length;
+      !providerResult.accepted &&
+      (!providerResult.retryable || retryIndex >= retryMinutes.length);
     const nextAttemptAt =
       providerResult.accepted || terminal
         ? null

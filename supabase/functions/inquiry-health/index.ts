@@ -3,6 +3,7 @@ import {
   constantTimeEqual,
   jsonResponse,
   optionalEnv,
+  positiveIntegerEnv,
   safeRequestId,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/runtime.ts";
@@ -17,6 +18,9 @@ interface OutboxHealthCounts {
   failed: number;
   overduePending: number;
   expiredProcessing: number;
+  createdLast10Minutes: number;
+  createdLast1Hour: number;
+  createdLast24Hours: number;
 }
 
 interface OutboxHealthRpcRow {
@@ -25,6 +29,9 @@ interface OutboxHealthRpcRow {
   failed_count: unknown;
   overdue_pending_count: unknown;
   expired_processing_count: unknown;
+  created_last_10_minutes: unknown;
+  created_last_1_hour: unknown;
+  created_last_24_hours: unknown;
 }
 
 function monitorSecret(): string {
@@ -67,12 +74,24 @@ function parseCounts(data: unknown): OutboxHealthCounts | null {
   const expiredProcessing = nonNegativeSafeInteger(
     row.expired_processing_count,
   );
+  const createdLast10Minutes = nonNegativeSafeInteger(
+    row.created_last_10_minutes,
+  );
+  const createdLast1Hour = nonNegativeSafeInteger(
+    row.created_last_1_hour,
+  );
+  const createdLast24Hours = nonNegativeSafeInteger(
+    row.created_last_24_hours,
+  );
   if (
     pending === null ||
     processing === null ||
     failed === null ||
     overduePending === null ||
-    expiredProcessing === null
+    expiredProcessing === null ||
+    createdLast10Minutes === null ||
+    createdLast1Hour === null ||
+    createdLast24Hours === null
   ) {
     return null;
   }
@@ -83,6 +102,9 @@ function parseCounts(data: unknown): OutboxHealthCounts | null {
     failed,
     overduePending,
     expiredProcessing,
+    createdLast10Minutes,
+    createdLast1Hour,
+    createdLast24Hours,
   };
 }
 
@@ -137,10 +159,41 @@ async function handleRequest(request: Request): Promise<Response> {
     });
   }
 
+  let alert10Minutes: number;
+  let alert1Hour: number;
+  let alert24Hours: number;
+  try {
+    alert10Minutes = positiveIntegerEnv(
+      "INQUIRY_ALERT_10_MINUTES",
+      10,
+      1,
+      100_000,
+    );
+    alert1Hour = positiveIntegerEnv(
+      "INQUIRY_ALERT_1_HOUR",
+      30,
+      1,
+      1_000_000,
+    );
+    alert24Hours = positiveIntegerEnv(
+      "INQUIRY_ALERT_24_HOURS",
+      100,
+      1,
+      10_000_000,
+    );
+  } catch {
+    return jsonResponse(503, {
+      error: { code: "monitor_not_configured", requestId },
+    });
+  }
+
   const healthy =
     counts.failed === 0 &&
     counts.overduePending === 0 &&
-    counts.expiredProcessing === 0;
+    counts.expiredProcessing === 0 &&
+    counts.createdLast10Minutes < alert10Minutes &&
+    counts.createdLast1Hour < alert1Hour &&
+    counts.createdLast24Hours < alert24Hours;
   return jsonResponse(healthy ? 200 : 503, {
     ok: healthy,
     status: healthy ? "healthy" : "unhealthy",

@@ -33,6 +33,40 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import type { RouteJourney } from "./RouteFinder";
+
+const homegroundInquiryApiHostname =
+  "xbymvlxethfzqcgyoieb.supabase.co";
+
+function trustedInquiryApiUrl(value: string): string {
+  if (!value) return "";
+  try {
+    const parsed = new URL(value);
+    const path = parsed.pathname.replace(/\/+$/, "");
+    const isDevelopmentMock =
+      process.env.NODE_ENV !== "production" &&
+      parsed.protocol === "http:" &&
+      (parsed.hostname === "127.0.0.1" ||
+        parsed.hostname === "localhost") &&
+      path === "/v1/inquiries";
+    const isHostedInquiryApi =
+      parsed.protocol === "https:" &&
+      parsed.hostname === homegroundInquiryApiHostname &&
+      !parsed.port &&
+      path === "/functions/v1/v1-inquiries";
+    if (
+      (!isDevelopmentMock && !isHostedInquiryApi) ||
+      parsed.username ||
+      parsed.password ||
+      parsed.search ||
+      parsed.hash
+    ) {
+      return "";
+    }
+    return parsed.toString().replace(/\/$/, "");
+  } catch {
+    return "";
+  }
+}
 import styles from "./PlannerHandoff.module.css";
 
 export type HandoffStatus =
@@ -97,7 +131,15 @@ function noteLength(value: string): number {
 }
 
 function hasUnsupportedControlCharacters(value: string): boolean {
-  return /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/u.test(value);
+  return /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069]/u
+    .test(value);
+}
+
+function stripUnsupportedControlCharacters(value: string): string {
+  return value.replace(
+    /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069]/gu,
+    "",
+  );
 }
 
 function isValidEmail(value: string): boolean {
@@ -200,8 +242,9 @@ export function PlannerHandoff({
 }) {
   const copy = getHomegroundCopy(locale);
   const plannerCopy = getDestinationPlannerCopy(locale);
-  const apiUrl =
-    process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL?.trim() || "";
+  const apiUrl = trustedInquiryApiUrl(
+    process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL?.trim() || "",
+  );
   const brandEmail =
     process.env.NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL?.trim() || "";
   const defaultPrivacyNoticeUrl =
@@ -632,7 +675,9 @@ export function PlannerHandoff({
       ["utm_campaign", "utmCampaign"],
     ] as const;
     for (const [queryKey, payloadKey] of attributionFields) {
-      const value = search.get(queryKey)?.trim();
+      const value = stripUnsupportedControlCharacters(
+        search.get(queryKey) ?? "",
+      ).trim();
       if (value) attribution[payloadKey] = value.slice(0, 100);
     }
 

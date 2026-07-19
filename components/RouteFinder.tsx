@@ -87,6 +87,8 @@ const questions: readonly QuestionKey[] = [
 const presetNights = ["7", "10", "14", "18"] as const;
 const sessionStorageKey = "homeground-destination-planner-v3";
 const plannerQueryKey = "planner";
+const unsafeInlineControlCharacters =
+  /[\u0000-\u001f\u007f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/gu;
 
 const emptyDraft: PlannerDraft = {
   destinationMode: "wishlist",
@@ -99,6 +101,13 @@ const emptyDraft: PlannerDraft = {
   pace: "",
   mustSeeIds: [],
 };
+
+function sanitizeOtherPlace(value: string): string {
+  return value
+    .normalize("NFC")
+    .replace(unsafeInlineControlCharacters, "")
+    .slice(0, 120);
+}
 
 function trackPlannerEvent(
   name: PlannerEventName,
@@ -187,7 +196,7 @@ function restoreDraft(value: unknown): PlannerDraft {
       candidate.destinationMode === "classic-start" ||
       typeof candidate.otherPlace !== "string"
         ? ""
-        : candidate.otherPlace.slice(0, 120),
+        : sanitizeOtherPlace(candidate.otherPlace),
     nightsChoice,
     customNights:
       typeof candidate.customNights === "string"
@@ -245,7 +254,7 @@ function completeAnswers(
         : draft.selectedDestinationIds,
     otherPlace:
       draft.destinationMode === "wishlist" && draft.otherEnabled
-        ? draft.otherPlace.trim()
+        ? sanitizeOtherPlace(draft.otherPlace).trim()
         : null,
     totalNights,
     party: draft.party,
@@ -1010,7 +1019,9 @@ export function RouteFinder({
                           updateDraft({
                             ...draft,
                             destinationMode: "wishlist",
-                            otherPlace: event.target.value,
+                            otherPlace: sanitizeOtherPlace(
+                              event.target.value,
+                            ),
                           })
                         }
                       />

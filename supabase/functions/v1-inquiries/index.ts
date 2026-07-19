@@ -201,6 +201,33 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
+  let acceptingSubmissions: boolean;
+  try {
+    acceptingSubmissions = booleanEnv(
+      "INQUIRY_ACCEPTING_SUBMISSIONS",
+      true,
+    );
+  } catch {
+    return errorResponse(
+      503,
+      "service_not_configured",
+      false,
+      "not_persisted",
+      requestId,
+      responseHeaders,
+    );
+  }
+  if (!acceptingSubmissions) {
+    return errorResponse(
+      503,
+      "intake_paused",
+      false,
+      "not_persisted",
+      requestId,
+      responseHeaders,
+    );
+  }
+
   const contentType = request.headers.get("content-type") ?? "";
   if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(contentType)) {
     return errorResponse(

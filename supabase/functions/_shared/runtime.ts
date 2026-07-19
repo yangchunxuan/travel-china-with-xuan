@@ -15,6 +15,8 @@ interface SupabaseAdminCredential {
   usesLegacyAuthorization: boolean;
 }
 
+export const SUPABASE_RPC_TIMEOUT_MILLISECONDS = 10_000;
+
 export function optionalEnv(name: string): string | undefined {
   const value = Deno.env.get(name)?.trim();
   return value ? value : undefined;
@@ -160,22 +162,33 @@ export async function callSupabaseRpc<T>(
 ): Promise<RpcResult<T>> {
   const supabaseUrl = requiredEnv("SUPABASE_URL").replace(/\/+$/, "");
   const adminCredential = supabaseAdminCredential();
-
-  const response = await fetch(
-    `${supabaseUrl}/rest/v1/rpc/${encodeURIComponent(rpcName)}`,
-    {
-      method: "POST",
-      headers: {
-        apikey: adminCredential.key,
-        ...(adminCredential.usesLegacyAuthorization
-          ? { Authorization: `Bearer ${adminCredential.key}` }
-          : {}),
-        "Content-Type": "application/json",
-        Prefer: "return=representation",
-      },
-      body: JSON.stringify(argumentsObject),
-    },
+  const timeoutController = new AbortController();
+  const timeoutId = setTimeout(
+    () => timeoutController.abort(),
+    SUPABASE_RPC_TIMEOUT_MILLISECONDS,
   );
+
+  let response: Response;
+  try {
+    response = await fetch(
+      `${supabaseUrl}/rest/v1/rpc/${encodeURIComponent(rpcName)}`,
+      {
+        method: "POST",
+        headers: {
+          apikey: adminCredential.key,
+          ...(adminCredential.usesLegacyAuthorization
+            ? { Authorization: `Bearer ${adminCredential.key}` }
+            : {}),
+          "Content-Type": "application/json",
+          Prefer: "return=representation",
+        },
+        body: JSON.stringify(argumentsObject),
+        signal: timeoutController.signal,
+      },
+    );
+  } finally {
+    clearTimeout(timeoutId);
+  }
 
   if (!response.ok) {
     // Never return or log the PostgREST response body: it may include details
@@ -194,16 +207,33 @@ export async function callSupabaseRpc<T>(
 export function requestIp(request: Request): string {
   const forwarded = request.headers.get("x-forwarded-for");
   if (forwarded) {
-    const first = forwarded.split(",")[0]?.trim();
+    const first = normalizedIpAddress(forwarded.split(",")[0] ?? null);
     if (first) return first;
   }
-  const cloudflareIp = request.headers.get("cf-connecting-ip")?.trim();
+
+  const cloudflareIp = normalizedIpAddress(
+    request.headers.get("cf-connecting-ip"),
+  );
   if (cloudflareIp) return cloudflareIp;
 
-  // The Supabase gateway normally supplies X-Forwarded-For. If it does not,
-  // use one shared conservative bucket instead of silently disabling rate
-  // limiting for the request.
+  // Supabase documents X-Forwarded-For as the client-IP source. If the
+  // gateway supplies neither documented XFF nor a Cloudflare fallback, use
+  // one shared conservative bucket instead of disabling rate limiting.
   return "missing-client-ip";
+}
+
+function normalizedIpAddress(value: string | null): string | null {
+  if (!value) return null;
+  const normalized = value.trim().toLowerCase();
+  if (
+    normalized.length < 2 ||
+    normalized.length > 45 ||
+    !/^[0-9a-f:.]+$/i.test(normalized) ||
+    (!normalized.includes(".") && !normalized.includes(":"))
+  ) {
+    return null;
+  }
+  return normalized;
 }
 
 export function safeRequestId(): string {

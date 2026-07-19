@@ -13,6 +13,8 @@ const rateLimitRetentionMigrationPath =
   "supabase/migrations/202607180003_homeground_rate_limit_retention.sql";
 const outboxHealthMigrationPath =
   "supabase/migrations/202607190001_homeground_outbox_health.sql";
+const inquiryVolumeHealthMigrationPath =
+  "supabase/migrations/202607190003_homeground_inquiry_volume_health.sql";
 const healthFunctionPath = "supabase/functions/inquiry-health/index.ts";
 const supabaseConfigPath = "supabase/config.toml";
 const envExamplePath = ".env.example";
@@ -119,6 +121,12 @@ test("public function is fail-closed and configuration-driven", async () => {
   const code = await source(publicFunctionPath);
   const runtime = await source(runtimePath);
   assert.match(code, /ALLOWED_ORIGINS/);
+  assert.match(code, /INQUIRY_ACCEPTING_SUBMISSIONS/);
+  assert.match(code, /"intake_paused"/);
+  assert.ok(
+    code.indexOf("INQUIRY_ACCEPTING_SUBMISSIONS") <
+      code.indexOf("readLimitedBody(request)"),
+  );
   assert.match(code, /WHATSAPP_ENABLED/);
   assert.match(runtime, /SUPABASE_SECRET_KEYS/);
   assert.match(runtime, /SUPABASE_SERVICE_ROLE_KEY/);
@@ -136,6 +144,19 @@ test("public function is fail-closed and configuration-driven", async () => {
   assert.doesNotMatch(code, /(?:\+?86)?1[3-9][0-9]{9}/);
 });
 
+test("frontend sends personal data only to the expected Supabase function", async () => {
+  const code = await source(plannerHandoffPath);
+  assert.match(code, /trustedInquiryApiUrl/);
+  assert.match(code, /parsed\.hostname === homegroundInquiryApiHostname/);
+  assert.match(code, /path === "\/functions\/v1\/v1-inquiries"/);
+  assert.match(
+    code,
+    /process\.env\.NODE_ENV !== "production"[\s\S]*path === "\/v1\/inquiries"/,
+  );
+  assert.match(code, /const apiUrl = trustedInquiryApiUrl/);
+  assert.match(code, /xbymvlxethfzqcgyoieb\.supabase\.co/);
+});
+
 test("notification worker gives the monitored inbox a complete human handoff", async () => {
   const code = await source(workerPath);
   assert.match(code, /public_reference/);
@@ -149,9 +170,16 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /reply_to/);
   assert.match(code, /BRAND_NOTIFICATION_EMAIL/);
   assert.match(code, /RESEND_API_KEY/);
+  assert.match(code, /NOTIFICATION_PROCESSING_ENABLED/);
+  assert.match(code, /status: "paused"/);
+  assert.ok(
+    code.indexOf("NOTIFICATION_PROCESSING_ENABLED") <
+      code.indexOf('"claim_homeground_notification_jobs"'),
+  );
   assert.match(code, /NOTIFICATION_PROVIDER_TIMEOUT_SECONDS/);
   assert.match(code, /signal: timeoutController\.signal/);
   assert.match(code, /worstCaseBatchMilliseconds/);
+  assert.match(code, /SUPABASE_RPC_TIMEOUT_MILLISECONDS/);
   assert.doesNotMatch(code, /OPS_INQUIRY_URL_BASE/);
   assert.doesNotMatch(code, /console\.(?:log|info|warn|error)/);
   assert.doesNotMatch(code, /@gmail\.com/i);
@@ -159,6 +187,15 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.doesNotMatch(code, /Claimed|Replied|Closed/);
   assert.match(code, /Reply-To is already set to the traveller/);
   assert.match(code, /Gmail thread and its Sent message/);
+  assert.match(code, /traveller-provided text and links are untrusted/);
+  assert.match(
+    code,
+    /response\.status === 408[\s\S]*response\.status === 409[\s\S]*response\.status === 429[\s\S]*response\.status >= 500/,
+  );
+  assert.match(
+    code,
+    /!providerResult\.retryable \|\| retryIndex >= retryMinutes\.length/,
+  );
   for (const answerField of ["party", "travelStyle", "nights", "pace"]) {
     assert.match(code, new RegExp(`key: "${answerField}"`));
   }
@@ -240,6 +277,26 @@ test("outbox health RPC returns only aggregate non-PII counts", async () => {
   );
 });
 
+test("health snapshot detects successful intake floods without returning PII", async () => {
+  const sql = await source(inquiryVolumeHealthMigrationPath);
+  for (const count of [
+    "created_last_10_minutes",
+    "created_last_1_hour",
+    "created_last_24_hours",
+  ]) {
+    assert.match(sql, new RegExp(`\\b${count}\\b`));
+  }
+  assert.match(sql, /from homeground_private\.inquiries inquiry/);
+  assert.match(
+    sql,
+    /grant execute on function public\.get_homeground_outbox_health\(\)[\s\S]*to service_role/,
+  );
+  assert.doesNotMatch(
+    sql,
+    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|\bnote\b/,
+  );
+});
+
 test("independent health function is secret-protected and fails on unhealthy counts", async () => {
   const code = await source(healthFunctionPath);
   const config = await source(supabaseConfigPath);
@@ -253,6 +310,13 @@ test("independent health function is secret-protected and fails on unhealthy cou
     /counts\.failed === 0[\s\S]*counts\.overduePending === 0[\s\S]*counts\.expiredProcessing === 0/,
   );
   assert.match(code, /return jsonResponse\(healthy \? 200 : 503/);
+  assert.match(code, /INQUIRY_ALERT_10_MINUTES/);
+  assert.match(code, /INQUIRY_ALERT_1_HOUR/);
+  assert.match(code, /INQUIRY_ALERT_24_HOURS/);
+  assert.match(
+    code,
+    /counts\.createdLast10Minutes < alert10Minutes[\s\S]*counts\.createdLast1Hour < alert1Hour[\s\S]*counts\.createdLast24Hours < alert24Hours/,
+  );
   assert.doesNotMatch(code, /console\.(?:log|info|warn|error)/);
   assert.doesNotMatch(
     code,
@@ -279,6 +343,9 @@ test("GitHub Actions checks outbox health every fifteen minutes without Resend",
   assert.match(workflow, /x-monitor-secret/);
   assert.match(workflow, /http_status/);
   assert.match(workflow, /\.counts\.failed == 0/);
+  assert.match(workflow, /\.counts\.createdLast10Minutes/);
+  assert.match(workflow, /\.counts\.createdLast1Hour/);
+  assert.match(workflow, /\.counts\.createdLast24Hours/);
   assert.doesNotMatch(
     workflow,
     /RESEND_API_KEY|NOTIFICATION_WORKER_SECRET|BRAND_NOTIFICATION_EMAIL/,

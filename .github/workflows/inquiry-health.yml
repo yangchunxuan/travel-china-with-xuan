@@ -59,7 +59,10 @@ jobs:
             (.counts.processing | type == "number") and
             (.counts.failed == 0) and
             (.counts.overduePending == 0) and
-            (.counts.expiredProcessing == 0)
+            (.counts.expiredProcessing == 0) and
+            (.counts.createdLast10Minutes | type == "number") and
+            (.counts.createdLast1Hour | type == "number") and
+            (.counts.createdLast24Hours | type == "number")
           ' "${response_file}" >/dev/null; then
             echo "::error::Inquiry health endpoint returned an invalid or unhealthy response."
             exit 1
