@@ -2,7 +2,7 @@
 
 Status: pilot workflow for a one- or two-person studio.
 
-This is deliberately a two-inbox routine. The complete research spec remains
+This is deliberately a small two-channel routine. The complete research spec remains
 in `homeground-v1-inquiry-handoff-spec.md`; this file describes only what the
 studio actually does today.
 
@@ -15,10 +15,10 @@ Email
     → Gmail applies “Homeground inquiries”
     → the person on duty replies in the same thread
 
-Direct WhatsApp
-  Traveller opens the prefilled Homeground link
-    → traveller taps Send in WhatsApp
-    → the message appears in the studio WhatsApp Business inbox
+WhatsApp
+  Traveller enters their own WhatsApp number in the same website form
+    → Supabase saves the enquiry and Resend notifies Gmail
+    → authorised staff open the staff-side WhatsApp link
     → the person on duty replies in that conversation
 ```
 
@@ -26,19 +26,18 @@ Direct WhatsApp
 - Gmail label: `Homeground inquiries`
 - Monitored WhatsApp Business number: `+86 131 7421 5999`
 - WhatsApp Business action label: `Follow up` (create or confirm it before
-  Direct WhatsApp is enabled)
-- Direct WhatsApp remains disabled until a real external account has sent a
-  message and this business inbox has received it.
+  WhatsApp intake is enabled)
+- WhatsApp intake remains disabled until one external-number QA submission is
+  saved, notified to Gmail and answered from this business inbox.
 
 The saved Inquiry form is the normal customer path. A prepared email is only
 shown after the service definitively confirms that an enquiry was not saved;
 it must reach this same monitored inbox. Do not copy traveller details into
 personal notes, analytics or a separate spreadsheet.
 
-Direct WhatsApp does not submit to the Inquiry API, save an Inquiry or outbox
-row, or notify Gmail. Opening WhatsApp is not a received enquiry. Only a
-message visibly received in the studio WhatsApp Business inbox enters the
-work queue.
+WhatsApp submissions use the same Inquiry API, outbox and Gmail notification
+as Email submissions. The saved Inquiry is the technical receipt. The later
+WhatsApp conversation is the handling record.
 
 ## 2. Gmail setup
 
@@ -60,11 +59,10 @@ Both form notifications (`[Homeground][New]`) and rare failure fallbacks
 2. Check both Gmail and WhatsApp Business at least once in the morning and
    once in the evening.
 3. In Gmail, open the `Homeground inquiries` label and start with unread
-   threads. Reply directly; form notifications set `Reply-To` to the
-   traveller, but verify the recipient before sending.
-4. In WhatsApp Business, start with unread incoming conversations. Confirm
-   that the customer actually sent the prefilled route before treating it as
-   an enquiry.
+   threads. For Email, reply directly after verifying the recipient. For
+   WhatsApp, use the staff-side link and verify the number before sending.
+4. In WhatsApp Business, start with unread conversations and keep the original
+   Gmail notification until the first reply has been sent.
 5. Opening a thread may mark it as read. If you cannot reply immediately,
    mark it unread again and add a Gmail star or the WhatsApp Business
    `Follow up` label before leaving the conversation.
@@ -81,9 +79,9 @@ conversations that still need action.
 
 ### Daily missed-enquiry check
 
-The named technical owner performs the Email delivery checks once every day.
-The person on duty separately checks WhatsApp Business because direct
-WhatsApp has no database or Gmail failure signal.
+The named technical owner performs the saved-enquiry delivery checks once
+every day. The person on duty also checks WhatsApp Business for conversations
+that need a reply.
 
 1. In Gmail, run:
 
@@ -111,8 +109,7 @@ WhatsApp has no database or Gmail failure signal.
    returns counts only—never Inquiry IDs, contact details or notes.
 
 3. In WhatsApp Business, check unread conversations and the `Follow up` label.
-   Because a direct WhatsApp click never reaches Homeground's API, no Supabase
-   query or Gmail alert can reveal a missed WhatsApp conversation.
+   Cross-check any unhandled WhatsApp Gmail notification before closing it.
 
 The GitHub Actions workflow named `Inquiry outbox health` runs the same health
 check every 15 minutes through an independently authenticated endpoint. Its
@@ -223,27 +220,28 @@ If the form can save inquiries but Gmail notifications are not visible,
 disable `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` in the next deployment. Use
 `inquiry-deployment.md` for the Supabase, Resend and scheduler recovery steps.
 
-### Direct WhatsApp
+### WhatsApp
 
-1. Keep `NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED=false` while the new
-   Privacy Notice versions and business number are being configured.
-2. From an external WhatsApp account, test the English, Chinese and Korean
-   route links on a real phone. Tap Send; merely seeing WhatsApp open does not
-   pass the test.
-3. Confirm the studio WhatsApp Business inbox receives the correct route
-   summary from the external account.
-4. Confirm the test creates no Supabase Inquiry/outbox row and no Gmail
-   notification.
-5. Set the GitHub repository variables to the verified number and `true`, then
-   run a new successful `Deploy to GitHub Pages` workflow. Repository-variable
-   edits do not change the already deployed static site.
-6. On production, send one message marked `QA` from the external account and
-   confirm the person on duty can reply from WhatsApp Business.
+1. Keep `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` and
+   server-only `WHATSAPP_ENABLED=false` while the new Privacy Notice, RPC and
+   notification worker are being deployed.
+2. Enable the server switch first. From an external number, submit one QA
+   enquiry in English, Chinese and Korean with the public frontend still
+   hidden.
+3. Confirm each test creates exactly one Supabase Inquiry/outbox row and one
+   Gmail notification with the correct trip brief, country and number.
+4. Use the staff-side link in Gmail to start the correct conversation from
+   the studio WhatsApp Business account. Confirm the external account receives
+   the reply.
+5. Set `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=true`, then run a new
+   successful `Deploy to GitHub Pages` workflow. Repository-variable edits do
+   not change the already deployed static site.
+6. On production, repeat one QA submission and confirm the person on duty can
+   reply from WhatsApp Business.
 
-If WhatsApp fails, set
-`NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED=false`, redeploy, and leave
-the Email route running. The server-only `WHATSAPP_ENABLED` value remains
-`false`.
+If WhatsApp fails, set server-only `WHATSAPP_ENABLED=false`, then set
+`NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` and redeploy. Leave the
+Email route running.
 
 ## 6. Keep the pilot routine small
 

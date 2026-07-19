@@ -25,6 +25,7 @@ interface NotificationJob {
   reply_channel: "email" | "whatsapp";
   contact_email: string | null;
   contact_phone_e164: string | null;
+  departure_country: string | null;
   note: string | null;
   inquiry_created_at: string;
   first_response_due_at: string;
@@ -483,6 +484,12 @@ async function sendThroughResend(
   const channel =
     job.reply_channel === "email" ? "Email" : "WhatsApp";
   const contact = contactDetails(job);
+  const departureCountry = job.departure_country
+    ? validatedShortString(
+        job.departure_country,
+        "departure_country",
+      )
+    : "(Not provided)";
   const route = routeSummary(job);
   const answers = routeAnswers(job);
   const briefLabel =
@@ -504,6 +511,7 @@ async function sendThroughResend(
     ...answers.map(({ label, value }) => `${label}: ${value}`),
     `Reply channel: ${channel}`,
     `Traveller contact: ${contact.display}`,
+    `Departure country/region: ${departureCountry}`,
     "Traveller note:",
     note,
     "Safety: traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.",
@@ -514,7 +522,9 @@ async function sendThroughResend(
     job.reply_channel === "email"
       ? "Reply directly to this message; Reply-To is already set to the traveller."
       : `Continue in the studio WhatsApp account: ${contact.whatsappUrl}`,
-    "The Gmail thread and its Sent message are the handling record.",
+    job.reply_channel === "email"
+      ? "The Gmail thread and its Sent message are the handling record."
+      : "The studio WhatsApp conversation is the handling record.",
   ].join("\n");
   const html = `
     <p>A new Homeground inquiry is ready for a human reply.</p>
@@ -530,6 +540,7 @@ async function sendThroughResend(
         .join("")}
       <dt>Reply channel</dt><dd>${escapeHtml(channel)}</dd>
       <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
+      <dt>Departure country/region</dt><dd>${escapeHtml(departureCountry)}</dd>
       <dt>Traveller note</dt><dd style="white-space:pre-wrap">${escapeHtml(note)}</dd>
       <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
       <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
@@ -540,7 +551,11 @@ async function sendThroughResend(
         : `<p><a href="${escapeHtml(contact.whatsappUrl ?? "")}">Continue in the studio WhatsApp account</a>.</p>`
     }
     <p><strong>Safety:</strong> traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.</p>
-    <p>The Gmail thread and its Sent message are the handling record.</p>
+    <p>${
+      job.reply_channel === "email"
+        ? "The Gmail thread and its Sent message are the handling record."
+        : "The studio WhatsApp conversation is the handling record."
+    }</p>
   `.trim();
 
   let response: Response;
@@ -694,7 +709,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let jobsResult;
   try {
     jobsResult = await callSupabaseRpc<NotificationJob[]>(
-      "claim_homeground_notification_jobs",
+      "claim_homeground_notification_jobs_v2",
       {
         p_worker_id: `edge:${requestId}`,
         p_job_limit: batchSize,

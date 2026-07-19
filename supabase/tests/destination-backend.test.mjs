@@ -4,6 +4,8 @@ import test from "node:test";
 
 const migrationPath =
   "supabase/migrations/202607190002_homeground_destination_inquiries.sql";
+const contactMigrationPath =
+  "supabase/migrations/202607200001_homeground_contact_intake.sql";
 const publicFunctionPath = "supabase/functions/v1-inquiries/index.ts";
 const workerPath = "supabase/functions/notify-inquiries/index.ts";
 const contractPath = "lib/inquiryContract.ts";
@@ -25,7 +27,11 @@ test("V3 has a separate schema and form version without changing V1 constants", 
   assert.match(versions, /destinationInquirySchemaVersion = 2 as const/);
   assert.match(
     versions,
-    /currentDestinationInquiryFormVersion = "2026-07-19\.1"/,
+    /previousDestinationInquiryFormVersion = "2026-07-19\.1"/,
+  );
+  assert.match(
+    versions,
+    /currentDestinationInquiryFormVersion = "2026-07-20\.1"/,
   );
 });
 
@@ -85,8 +91,31 @@ test("V3 persistence preserves idempotency and creates the outbox atomically", a
   assert.doesNotMatch(migration, /grant execute[\s\S]*\bto anon\b/);
 });
 
+test("current contact intake versions the RPC and stores optional departure country", async () => {
+  const migration = await source(contactMigrationPath);
+  assert.match(
+    migration,
+    /add column if not exists departure_country text/,
+  );
+  assert.match(
+    migration,
+    /create or replace function public\.create_homeground_destination_inquiry_v2/,
+  );
+  assert.match(migration, /p_form_version <> '2026-07-20\.1'/);
+  assert.match(migration, /p_privacy_notice_version <> '2026-07-20\.1'/);
+  assert.match(migration, /public\.create_homeground_destination_inquiry\(/);
+  assert.match(migration, /departure_country = nullif\(trim\(p_departure_country\), ''\)/);
+  assert.match(
+    migration,
+    /create or replace function public\.claim_homeground_notification_jobs_v2/,
+  );
+  assert.match(migration, /inquiry\.departure_country/);
+  assert.doesNotMatch(migration, /grant execute[\s\S]*\bto anon\b/);
+});
+
 test("Edge function selects the V3 RPC but keeps the V1 path", async () => {
   const edge = await source(publicFunctionPath);
+  assert.match(edge, /create_homeground_destination_inquiry_v2/);
   assert.match(edge, /create_homeground_destination_inquiry/);
   assert.match(edge, /create_homeground_inquiry/);
   assert.match(
@@ -121,6 +150,8 @@ test("notification handoff includes V3 wishes, priorities, and canonical timing"
   assert.match(worker, /Array\.from\(value\)\.length > maximumLength/);
   assert.match(worker, /Planning brief/);
   assert.match(worker, /Traveller answers/);
+  assert.match(worker, /departure_country/);
+  assert.match(worker, /claim_homeground_notification_jobs_v2/);
   assert.match(worker, /Idempotency-Key": job\.inquiry_id/);
   assert.doesNotMatch(worker, /(?:\+?86)?1[3-9][0-9]{9}/);
   assert.doesNotMatch(worker, /@gmail\.com/i);
@@ -130,13 +161,13 @@ test("development mock accepts both form generations", async () => {
   const mock = await source(mockPath);
   const example = await source(envExamplePath);
   assert.match(mock, /currentInquiryFormVersion/);
-  assert.match(mock, /currentDestinationInquiryFormVersion/);
+  assert.match(mock, /supportedDestinationInquiryFormVersions/);
   assert.match(
     mock,
-    /allowedFormVersions:\s*\[[\s\S]*currentInquiryFormVersion[\s\S]*currentDestinationInquiryFormVersion/,
+    /allowedFormVersions:\s*\[[\s\S]*currentInquiryFormVersion[\s\S]*\.\.\.supportedDestinationInquiryFormVersions/,
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=2026-07-18\.1,2026-07-19\.1$/m,
+    /^ALLOWED_FORM_VERSIONS=2026-07-18\.1,2026-07-19\.1,2026-07-20\.1$/m,
   );
 });

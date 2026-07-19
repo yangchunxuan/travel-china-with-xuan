@@ -10,15 +10,14 @@ Current production configuration:
 - Supabase project region: Seoul (`ap-northeast-2`).
 - Resend notification region: Tokyo (`ap-northeast-1`).
 - Monitored notification inbox: `yangchunxuan1@gmail.com`.
-- Frontend Privacy Notice version in this release: `2026-07-19.1`.
+- Frontend Privacy Notice version in this release: `2026-07-20.1`.
 - Transition allow-list:
-  `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-18.2,2026-07-19.1`. Keep both
+  `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1`. Keep both
   versions accepted while the new static build and any in-flight retry are
   being verified.
-- Saved-phone WhatsApp intake and non-essential analytics: disabled.
-- Direct WhatsApp is a separate public frontend link. Keep it disabled until
-  the updated Privacy Notice is accepted and a real external-account test has
-  reached the studio WhatsApp Business inbox.
+- WhatsApp intake uses the same saved-enquiry path as Email and is controlled
+  by independent frontend and server switches.
+- Non-essential analytics and AI chat remain disabled.
 
 The main website remains a GitHub Pages-compatible static export. Inquiry data
 is handled by separate Supabase Edge Functions and private Postgres tables.
@@ -46,6 +45,9 @@ monitoring.
   24-hour window expires.
 - `supabase/migrations/202607190001_homeground_outbox_health.sql`: service-role
   RPC returning only pending, processing, failed and stale outbox counts.
+- `supabase/migrations/202607200001_homeground_contact_intake.sql`: optional
+  departure-country storage plus versioned create/claim RPCs for saved
+  WhatsApp enquiries.
 - `.github/workflows/inquiry-health.yml`: independent 15-minute health check;
   an unhealthy outbox makes the workflow fail without using Resend.
 - `lib/inquiryContract.ts`: runtime-neutral input validation,
@@ -60,10 +62,10 @@ Inquiry.
 ## Required environment
 
 No production inbox, project identifier, password or key is embedded in the
-application bundle as a secret. Set production addresses and the public
-WhatsApp Business number through repository variables; set private credentials
-only as server-side Edge Function secrets. The WhatsApp number is public
-build-time configuration. Never store a Gmail or WhatsApp password here.
+application bundle as a secret. Set only public launch switches and URLs
+through repository variables; set private credentials only as server-side
+Edge Function secrets. The studio WhatsApp number is not embedded in the
+frontend. Never store a Gmail or WhatsApp password here.
 
 ### Static frontend build
 
@@ -75,27 +77,26 @@ build-time configuration, never Edge Function secrets.
 
 Keep `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED`,
 `NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY` and
-`NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED` `false` until their matching
+`NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED` `false` until their matching
 acceptance checks are complete. The Email form remains disabled when any
 required URL, notice, monitored inbox or localized reply commitment is absent.
 `NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL` must reach the same monitored inbox as
 `BRAND_NOTIFICATION_EMAIL`; this keeps the API notification and
 `[Homeground][Fallback]` mailto path in one Email queue.
 
-Set these direct-chat repository variables only after the external WhatsApp
-test passes:
+Set this WhatsApp intake repository variable only after the saved-enquiry and
+staff reply test passes:
 
 | Variable | Purpose |
 |---|---|
-| `NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED` | Public build-time switch for the customer-initiated `wa.me` link; default `false` |
-| `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER` | Studio WhatsApp Business number as international digits only, for example `8613174215999` |
+| `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED` | Public build-time switch that reveals “Use WhatsApp instead”; default `false` |
 
-The server-only `WHATSAPP_ENABLED` variable below is a different, legacy
-saved-phone intake switch and remains `false`; changing the public direct-chat
-variables must not change it.
+The server-only `WHATSAPP_ENABLED` variable below independently authorises
+phone-number submission at the API. Both switches must be true for the channel
+to work.
 
 Repository-variable changes do not alter the already published static files.
-After adding, changing or disabling either direct-chat variable, run the
+After changing the WhatsApp intake variable, run the
 `Deploy to GitHub Pages` workflow again (or push the intended commit to
 `main`) and verify the resulting production page. A variable edit without a
 new successful deployment has no effect on the website.
@@ -111,7 +112,7 @@ new successful deployment has no effect on the website.
 | `ALLOWED_FORM_VERSIONS` | Accepted form versions |
 | `ALLOWED_PRIVACY_NOTICE_VERSIONS` | Comma-separated accepted published Privacy Notice versions |
 | `INQUIRY_ACCEPTING_SUBMISSIONS` | Emergency server-side intake switch; defaults to `true`. Set `false` to return `503 intake_paused` before reading a POST body |
-| `WHATSAPP_ENABLED` | Legacy API mode that saves a traveller-provided WhatsApp number; keep `false` for the direct-chat release |
+| `WHATSAPP_ENABLED` | Server-side switch for saving a traveller-provided WhatsApp number; default `false` |
 | `IDEMPOTENCY_HASH_SECRET` | High-entropy HMAC secret for idempotency-key storage |
 | `RATE_LIMIT_HASH_SECRET` | Separate HMAC secret for ephemeral IP buckets |
 | `RATE_LIMIT_10_MINUTES` | Optional; defaults to `5` |
@@ -181,56 +182,49 @@ scheduled workflow is the independent signal; it does not call Resend and
 does not print the response body or secret.
 
 The Resend message contains the public reference, language, route summary,
-the four route answers, traveller email, note and timestamps. The traveller
-address is also the message `Reply-To`, so the studio operator can click Reply
-in the monitored Gmail inbox and answer from that account.
+the route answers, selected contact, optional departure country, any legacy
+note and timestamps. For Email, the traveller address is the message
+`Reply-To`. For WhatsApp, the notification contains a staff-side link to the
+submitted number; the customer-facing website never creates a `wa.me` link.
 
-Direct WhatsApp is deliberately outside this pipeline:
-
-```text
-customer opens the prefilled wa.me link
-  → customer taps Send in WhatsApp
-  → the message appears in the studio WhatsApp Business inbox
-```
-
-Opening the link does not call `v1-inquiries`, write an Inquiry or outbox row,
-or send a Resend/Gmail notification. It also cannot prove that the customer
-tapped Send. Only a visible incoming message in WhatsApp Business is a
-WhatsApp enquiry.
-
-The pilot therefore has two human inboxes: Gmail for saved Email inquiries
-and WhatsApp Business for customer-initiated direct conversations. The
-database remains the technical record only for saved Email submissions and
-outbox delivery. Gmail unread/sent/star state and WhatsApp unread/Follow up
-state are the handling records; see `docs/studio-inquiry-runbook.md`.
+The pilot has one saved-enquiry intake and two reply channels. Every Email or
+WhatsApp submission creates an Inquiry and Gmail notification. Staff reply
+from Gmail for Email enquiries and from the studio WhatsApp account for
+WhatsApp enquiries. The database is the technical receipt record; Gmail or the
+WhatsApp conversation is the human handling record. See
+`docs/studio-inquiry-runbook.md`.
 
 The published Privacy Notice names the configured providers and primary
 regions, the monitored privacy contact, the 12-month enquiry rule, the
 24-hour hashed rate-limit window and scheduled-deletion rule, and the
-verified-request procedure. A direct WhatsApp release also needs the notice
-to explain that the customer leaves Homeground, that no WhatsApp number or
-message is saved by the Homeground Email Inquiry API, and that Meta/WhatsApp
-handles the conversation after the customer taps Send.
+verified-request procedure. The WhatsApp release must also explain that the
+submitted number is saved for this enquiry and that Meta/WhatsApp handles the
+later conversation.
 
 Privacy versions must overlap during deployment so the old static page does
 not start receiving `unsupported_privacy_notice_version` while the new page
 is rolling out:
 
-1. Before publishing any new static page, set the `v1-inquiries` secret to
-   `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-18.2,2026-07-19.1`. Redeploy the
-   function only if required by the Supabase environment.
-2. Confirm a request carrying the currently published `2026-07-18.2` version
+1. Before publishing the new static page, set the `v1-inquiries` secrets to
+   `ALLOWED_FORM_VERSIONS=2026-07-18.1,2026-07-19.1,2026-07-20.1`,
+   `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1`, and keep
+   `WHATSAPP_ENABLED=false`.
+2. Deploy migration `202607200001`, then deploy `notify-inquiries` and
+   `v1-inquiries`.
+3. Confirm a request carrying the currently published `2026-07-19.1` version
    still succeeds.
-3. Publish the English, Chinese and Korean Privacy Notice plus the Email form
-   that carries `2026-07-19.1`. Keep
-   `NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED=false` for this deployment.
-4. Confirm a production Email enquiry carrying `2026-07-19.1` is saved,
+4. Publish the English, Chinese and Korean Privacy Notice plus the form that
+   carries `2026-07-20.1`. Keep
+   `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` for this deployment.
+5. Confirm a production Email enquiry carrying `2026-07-20.1` is saved,
    notified to Gmail and replyable.
-5. Complete the external-account WhatsApp send/receive test. Only then set the
-   verified public WhatsApp number and change the Direct WhatsApp flag to
-   `true`; run another successful GitHub Pages deployment.
-6. After the new build is live and the old build/retry window is over, remove
-   `2026-07-18.2` from the server allow-list.
+6. Set server-only `WHATSAPP_ENABLED=true`, submit a QA enquiry from an
+   external WhatsApp number, and confirm Gmail receives it and the staff-side
+   link opens the correct number in the studio account.
+7. Set `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=true` and run another
+   successful GitHub Pages deployment.
+8. After the old build/retry window is over, remove `2026-07-19.1` from the
+   form and privacy allow-lists.
 
 Never remove the old version before the new static build is live. Keep
 `NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY=false` until the corresponding data
@@ -440,8 +434,8 @@ Before enabling the public form:
    outbox retries, then restore Resend and confirm exactly one real message
    reaches the monitored inbox with the expected contact, note and `Reply-To`.
 4. Confirm every enabled locale preserves Unicode through Postgres.
-5. Confirm the legacy saved-phone API path stays unavailable while
-   server-only `WHATSAPP_ENABLED` is unset or `false`.
+5. Confirm WhatsApp submissions stay unavailable while server-only
+   `WHATSAPP_ENABLED` is unset or `false`, and Email remains usable.
 6. Inspect Edge logs and verify they contain no email, phone, note, request
    body, or provider response body.
 7. Perform a real monitored-inbox delivery test.
@@ -456,13 +450,12 @@ Before enabling the public form:
 11. Run the `Inquiry outbox health` workflow manually, confirm it is green,
     then force a staging terminal/stale outbox count and confirm the workflow
     fails without sending through Resend.
-12. With `NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED=false`, confirm the
-    direct option is absent and the Email path remains usable.
-13. Before enabling direct WhatsApp, build with the exact public business
-    number, open each locale from a mobile device and desktop, and use an
-    external WhatsApp account to tap Send. Confirm the incoming message and
-    route summary appear in the studio WhatsApp Business inbox. Confirm the
-    click created no Inquiry/outbox row and no Gmail notification.
+12. With `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false`, confirm the
+    WhatsApp switch is absent and the Email path remains usable.
+13. Before enabling WhatsApp publicly, submit from each locale using an
+    external number. Confirm one Inquiry/outbox row and one Gmail notification,
+    then use the staff-side link to start the correct studio WhatsApp
+    conversation.
 
 ## Rollback
 
@@ -476,9 +469,9 @@ the same retry key into a second Inquiry. Treat that secret as a controlled
 data migration with an explicit retry-window plan. Never delete saved
 Inquiries as a rollback shortcut.
 
-If only direct WhatsApp has a number, device, staffing or delivery problem,
-set repository variable
-`NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED=false` and run a new GitHub
-Pages deployment. Do not change server-only `WHATSAPP_ENABLED`, the Email API,
-the database or the outbox. Remove the Facebook Page WhatsApp action button
-until the same external-account receipt test passes again.
+If WhatsApp has a number, device, staffing or delivery problem, first set
+server-only `WHATSAPP_ENABLED=false`, then set repository variable
+`NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` and run a new GitHub
+Pages deployment. Keep the Email API, database and outbox running. Remove the
+Facebook Page WhatsApp action button until the same external-account receipt
+test passes again.

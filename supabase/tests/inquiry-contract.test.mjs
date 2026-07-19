@@ -5,10 +5,12 @@ import {
   computeCanonicalRouteSnapshot,
   currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
+  currentPrivacyNoticeVersion,
   currentRouteRuleVersion,
   destinationInquirySchemaVersion,
   destinationTimingRuleVersion,
   inquirySchemaVersion,
+  previousDestinationInquiryFormVersion,
   semanticInquiryPayload,
   travelPartyIds,
   travelStyleIds,
@@ -95,6 +97,7 @@ function validDestinationPayload() {
       channel: "email",
       email: "Traveller@Example.COM",
     },
+    departureCountry: null,
     note: "Please keep every selected place in the planner handoff.",
     privacyNoticeVersion: "test-privacy-v1",
     attribution: {
@@ -382,19 +385,72 @@ test("V3 uses Unicode code points consistently for Other length", () => {
   }
 });
 
-test("V3 never stores a WhatsApp phone even when the V1 feature flag is enabled", () => {
+test("current destination form accepts one normalized WhatsApp contact when enabled", () => {
   const payload = validDestinationPayload();
+  payload.contact = {
+    channel: "whatsapp",
+    phoneRaw: "+44 7700 900123",
+  };
+  payload.privacyNoticeVersion = currentPrivacyNoticeVersion;
+  payload.departureCountry = "  United Kingdom  ";
+  const result = validateAndNormalizeInquiry(payload, {
+    ...validationConfig,
+    allowedPrivacyNoticeVersions: [
+      "test-privacy-v1",
+      currentPrivacyNoticeVersion,
+    ],
+    whatsappEnabled: true,
+  });
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.deepEqual(result.value.contact, {
+    channel: "whatsapp",
+    phoneE164: "+447700900123",
+  });
+  assert.equal(result.value.departureCountry, "United Kingdom");
+});
+
+test("previous destination form cannot submit a phone under the old privacy notice", () => {
+  const payload = validDestinationPayload();
+  payload.formVersion = previousDestinationInquiryFormVersion;
   payload.contact = {
     channel: "whatsapp",
     phoneRaw: "+44 7700 900123",
   };
   const result = validateAndNormalizeInquiry(payload, {
     ...validationConfig,
+    allowedFormVersions: [
+      currentInquiryFormVersion,
+      previousDestinationInquiryFormVersion,
+      currentDestinationInquiryFormVersion,
+    ],
     whatsappEnabled: true,
   });
   assert.equal(result.ok, false);
   if (result.ok) return;
   assert.equal(result.code, "whatsapp_disabled");
+});
+
+test("current destination form rejects invalid WhatsApp and country input", () => {
+  const payload = validDestinationPayload();
+  payload.contact = {
+    channel: "whatsapp",
+    phoneRaw: "07700 900123",
+  };
+  payload.departureCountry = "x".repeat(81);
+  payload.privacyNoticeVersion = currentPrivacyNoticeVersion;
+  const result = validateAndNormalizeInquiry(payload, {
+    ...validationConfig,
+    allowedPrivacyNoticeVersions: [
+      "test-privacy-v1",
+      currentPrivacyNoticeVersion,
+    ],
+    whatsappEnabled: true,
+  });
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  assert.equal(result.fieldErrors["contact.phoneRaw"], "invalid");
+  assert.equal(result.fieldErrors.departureCountry, "invalid");
 });
 
 test("V3 classic-start is an explicit manual-only placeholder, not a fake template", () => {
@@ -444,4 +500,23 @@ test("V3 semantic hash includes every human-handoff answer", () => {
     assert.equal(canonical.includes(value), true);
   }
   assert.equal(canonical.includes("routeSnapshot"), false);
+});
+
+test("destination semantic hash includes contact method and optional departure country", () => {
+  const first = validDestinationPayload();
+  first.departureCountry = "Canada";
+  const firstResult = validateAndNormalizeInquiry(first, validationConfig);
+  assert.equal(firstResult.ok, true);
+  if (!firstResult.ok) return;
+
+  const second = validDestinationPayload();
+  second.departureCountry = "Australia";
+  const secondResult = validateAndNormalizeInquiry(second, validationConfig);
+  assert.equal(secondResult.ok, true);
+  if (!secondResult.ok) return;
+
+  assert.notEqual(
+    canonicalizeJson(semanticInquiryPayload(firstResult.value)),
+    canonicalizeJson(semanticInquiryPayload(secondResult.value)),
+  );
 });
