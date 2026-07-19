@@ -7,6 +7,11 @@ const routeFinderPath = "components/RouteFinder.tsx";
 const destinationCopyPath = "lib/destinationPlannerI18n.ts";
 const plannerHandoffPath = "components/PlannerHandoff.tsx";
 const plannerHandoffStylesPath = "components/PlannerHandoff.module.css";
+const homegroundHeaderPath = "components/HomegroundHeader.tsx";
+const homegroundPagePath = "components/HomegroundHomePage.tsx";
+const homegroundPageStylesPath =
+  "components/HomegroundHomePage.module.css";
+const homegroundNavigationPath = "lib/homegroundNavigation.ts";
 
 async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -69,6 +74,105 @@ test("restart collapses one planner flow instead of adding duplicate back steps"
   const restartHandler = routeFinder.slice(restartStart, restartEnd);
   assert.match(restartHandler, /returnPlannerHistoryToStart\(\)/);
   assert.doesNotMatch(restartHandler, /history\.pushState/);
+});
+
+test("planner CTAs preserve the result while moving to the human handoff", async () => {
+  const header = await source(homegroundHeaderPath);
+  const page = await source(homegroundPagePath);
+  const navigation = await source(homegroundNavigationPath);
+
+  assert.match(navigation, /event\.preventDefault\(\)/);
+  assert.match(navigation, /window\.history\.replaceState/);
+  assert.match(navigation, /targetElement\.scrollIntoView/);
+  assert.match(
+    navigation,
+    /"#main-content": "main-content"/,
+  );
+  assert.match(
+    navigation,
+    /getElementById\(focusTargetId\[target\]\)[\s\S]*focus\(\{ preventScroll: true \}\)/,
+  );
+  assert.doesNotMatch(navigation, /window\.location\.hash\s*=/);
+  assert.equal(
+    header.match(/handleHomegroundHashClick\(event, plannerTarget\)/g)
+      ?.length,
+    2,
+  );
+  assert.equal(
+    page.match(/handleHomegroundHashClick\(event, plannerTarget\)/g)
+      ?.length,
+    2,
+  );
+});
+
+test("all production same-page links preserve planner history depth", async () => {
+  const header = await source(homegroundHeaderPath);
+  const page = await source(homegroundPagePath);
+  const handoff = await source(plannerHandoffPath);
+  const combined = `${header}\n${page}\n${handoff}`;
+
+  for (const target of [
+    "#main-content",
+    "#route-finder",
+    "#planning-proof",
+    "#studio",
+    "#faq",
+  ]) {
+    const escaped = target.replace("-", "\\-");
+    const hrefCount =
+      combined.match(new RegExp(`href="${escaped}"`, "g"))?.length ?? 0;
+    const handlerCount =
+      combined.match(
+        new RegExp(
+          `handleHomegroundHashClick\\(event, "${escaped}"\\)`,
+          "g",
+        ),
+      )?.length ?? 0;
+
+    assert.ok(hrefCount > 0, `expected a production link to ${target}`);
+    assert.equal(
+      handlerCount,
+      hrefCount,
+      `every ${target} link should preserve the planner history entry`,
+    );
+  }
+});
+
+test("same-page navigation moves keyboard focus to its content target", async () => {
+  const page = await source(homegroundPagePath);
+
+  assert.match(page, /<main id="main-content" tabIndex=\{-1\}>/);
+  for (const headingId of [
+    "planning-proof-title",
+    "studio-title",
+    "faq-title",
+  ]) {
+    assert.match(
+      page,
+      new RegExp(`<h2 id="${headingId}" tabIndex=\\{-1\\}>`),
+    );
+  }
+});
+
+test("language changes preserve a completed planner result", async () => {
+  const header = await source(homegroundHeaderPath);
+
+  assert.equal(
+    header.match(
+      /plannerStatus === "result"[\s\S]{0,100}\?planner=result\$\{languageHash\}/g,
+    )?.length,
+    2,
+  );
+});
+
+test("the sticky header is opaque over mobile hero text", async () => {
+  const styles = await source(homegroundPageStylesPath);
+  const headerStart = styles.indexOf(".siteHeader {");
+  const headerEnd = styles.indexOf("\n}", headerStart);
+  const headerStyles = styles.slice(headerStart, headerEnd);
+
+  assert.match(headerStyles, /background:\s*#faf9f5/);
+  assert.doesNotMatch(headerStyles, /rgb\([^)]*\/\s*[0-9]+%/);
 });
 
 test("success keeps the full public reference as secondary three-language copy", async () => {

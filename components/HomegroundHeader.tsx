@@ -14,6 +14,10 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  handleHomegroundHashClick,
+  type HomegroundHashTarget,
+} from "../lib/homegroundNavigation";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import styles from "./HomegroundHomePage.module.css";
@@ -70,8 +74,11 @@ export function HomegroundHeader({
     plannerStatus,
     handoffStatus,
   );
-  const plannerTarget =
-    plannerStatus === "result" ? "#planner-handoff" : "#route-finder";
+  const plannerTarget = (
+    plannerStatus === "result"
+      ? "#planner-handoff"
+      : "#route-finder"
+  ) satisfies HomegroundHashTarget;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
 
@@ -153,9 +160,30 @@ export function HomegroundHeader({
           className={styles.desktopNav}
           aria-label={copy.navigation.primaryLabel}
         >
-          <a href="#planning-proof">{copy.navigation.planning}</a>
-          <a href="#studio">{copy.navigation.studio}</a>
-          <a href="#faq">{copy.navigation.faq}</a>
+          <a
+            href="#planning-proof"
+            onClick={(event) =>
+              handleHomegroundHashClick(event, "#planning-proof")
+            }
+          >
+            {copy.navigation.planning}
+          </a>
+          <a
+            href="#studio"
+            onClick={(event) =>
+              handleHomegroundHashClick(event, "#studio")
+            }
+          >
+            {copy.navigation.studio}
+          </a>
+          <a
+            href="#faq"
+            onClick={(event) =>
+              handleHomegroundHashClick(event, "#faq")
+            }
+          >
+            {copy.navigation.faq}
+          </a>
         </nav>
 
         <div className={styles.headerActions}>
@@ -165,12 +193,16 @@ export function HomegroundHeader({
           >
             {homegroundLocales.map((targetLocale) => {
               const target = getHomegroundCopy(targetLocale);
+              const languageHref =
+                plannerStatus === "result"
+                  ? `${target.path}?planner=result${languageHash}`
+                  : `${target.path}${languageHash}`;
               return (
                 <a
                   aria-current={
                     targetLocale === locale ? "page" : undefined
                   }
-                  href={`${target.path}${languageHash}`}
+                  href={languageHref}
                   hrefLang={target.htmlLang}
                   key={targetLocale}
                   lang={target.htmlLang}
@@ -183,7 +215,13 @@ export function HomegroundHeader({
               );
             })}
           </nav>
-          <a className={styles.headerCta} href={plannerTarget}>
+          <a
+            className={styles.headerCta}
+            href={plannerTarget}
+            onClick={(event) =>
+              handleHomegroundHashClick(event, plannerTarget)
+            }
+          >
             {plannerCta}
           </a>
           <button
@@ -210,13 +248,31 @@ export function HomegroundHeader({
         aria-label={copy.navigation.mobileLabel}
         hidden={!open}
       >
-        <a href="#planning-proof" onClick={close}>
+        <a
+          href="#planning-proof"
+          onClick={(event) => {
+            close();
+            handleHomegroundHashClick(event, "#planning-proof");
+          }}
+        >
           {copy.navigation.planning}
         </a>
-        <a href="#studio" onClick={close}>
+        <a
+          href="#studio"
+          onClick={(event) => {
+            close();
+            handleHomegroundHashClick(event, "#studio");
+          }}
+        >
           {copy.navigation.studio}
         </a>
-        <a href="#faq" onClick={close}>
+        <a
+          href="#faq"
+          onClick={(event) => {
+            close();
+            handleHomegroundHashClick(event, "#faq");
+          }}
+        >
           {copy.navigation.faq}
         </a>
         <div
@@ -226,12 +282,16 @@ export function HomegroundHeader({
         >
           {homegroundLocales.map((targetLocale) => {
             const target = getHomegroundCopy(targetLocale);
+            const languageHref =
+              plannerStatus === "result"
+                ? `${target.path}?planner=result${languageHash}`
+                : `${target.path}${languageHash}`;
             return (
               <a
                 aria-current={
                   targetLocale === locale ? "page" : undefined
                 }
-                href={`${target.path}${languageHash}`}
+                href={languageHref}
                 hrefLang={target.htmlLang}
                 key={targetLocale}
                 lang={target.htmlLang}
@@ -244,7 +304,14 @@ export function HomegroundHeader({
             );
           })}
         </div>
-        <a className={styles.mobileCta} href={plannerTarget} onClick={close}>
+        <a
+          className={styles.mobileCta}
+          href={plannerTarget}
+          onClick={(event) => {
+            close();
+            handleHomegroundHashClick(event, plannerTarget);
+          }}
+        >
           {plannerCta}
         </a>
       </nav>

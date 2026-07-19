@@ -27,6 +27,7 @@ import {
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
 } from "../lib/inquiryVersions";
+import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -1015,7 +1016,13 @@ export function PlannerHandoff({
               <p className={styles.publicReference}>
                 {copy.handoff.successReference(publicReference)}
               </p>
-              <a className={styles.routeLink} href="#route-finder">
+              <a
+                className={styles.routeLink}
+                href="#route-finder"
+                onClick={(event) =>
+                  handleHomegroundHashClick(event, "#route-finder")
+                }
+              >
                 {copy.handoff.backToRoute}
               </a>
             </div>

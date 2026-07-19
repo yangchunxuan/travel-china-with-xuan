@@ -20,6 +20,7 @@ import {
   HomegroundHeader,
   resolvePlannerCta,
 } from "./HomegroundHeader";
+import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
 import {
   PlannerHandoff,
   type HandoffStatus,
@@ -176,7 +177,13 @@ export function HomegroundHomePage({
       lang={copy.htmlLang}
       data-homeground-locale={locale}
     >
-      <a className={styles.skipLink} href="#main-content">
+      <a
+        className={styles.skipLink}
+        href="#main-content"
+        onClick={(event) =>
+          handleHomegroundHashClick(event, "#main-content")
+        }
+      >
         {copy.skipLink}
       </a>
       <HomegroundHeader
@@ -186,7 +193,7 @@ export function HomegroundHomePage({
         handoffDirty={handoffDirty}
       />
 
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <section className={styles.hero} aria-labelledby="home-hero-title">
           <picture className={styles.heroPicture}>
             <source media="(max-width: 700px)" srcSet="/images/home/beijing-hero-1200.jpg" />
@@ -254,7 +261,9 @@ export function HomegroundHomePage({
         <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
           <div className={styles.sectionIntro}>
             <p className={styles.eyebrowDark}>{copy.proof.eyebrow}</p>
-            <h2 id="planning-proof-title">{copy.proof.title}</h2>
+            <h2 id="planning-proof-title" tabIndex={-1}>
+              {copy.proof.title}
+            </h2>
             <p>{copy.proof.intro}</p>
           </div>
 
@@ -320,7 +329,9 @@ export function HomegroundHomePage({
         <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">
           <div className={styles.studioIntro}>
             <p className={styles.eyebrow}>{copy.studio.eyebrow}</p>
-            <h2 id="studio-title">{copy.studio.title}</h2>
+            <h2 id="studio-title" tabIndex={-1}>
+              {copy.studio.title}
+            </h2>
             <p>{copy.studio.intro}</p>
           </div>
 
@@ -336,7 +347,13 @@ export function HomegroundHomePage({
             ))}
           </ol>
 
-          <a className={styles.textCta} href={plannerTarget}>
+          <a
+            className={styles.textCta}
+            href={plannerTarget}
+            onClick={(event) =>
+              handleHomegroundHashClick(event, plannerTarget)
+            }
+          >
             {plannerCta} <ArrowRight aria-hidden="true" size={18} />
           </a>
         </section>
@@ -344,7 +361,9 @@ export function HomegroundHomePage({
         <section className={styles.faqSection} id="faq" aria-labelledby="faq-title">
           <div className={styles.faqIntro}>
             <p className={styles.eyebrowDark}>{copy.faq.eyebrow}</p>
-            <h2 id="faq-title">{copy.faq.title}</h2>
+            <h2 id="faq-title" tabIndex={-1}>
+              {copy.faq.title}
+            </h2>
             <p>{copy.faq.intro}</p>
           </div>
           <div className={styles.faqList}>
@@ -365,7 +384,14 @@ export function HomegroundHomePage({
             </p>
             <h2 id="final-cta-title">{finalCta.title}</h2>
           </div>
-          <a href={plannerTarget}>{plannerCta} <ArrowRight aria-hidden="true" size={18} /></a>
+          <a
+            href={plannerTarget}
+            onClick={(event) =>
+              handleHomegroundHashClick(event, plannerTarget)
+            }
+          >
+            {plannerCta} <ArrowRight aria-hidden="true" size={18} />
+          </a>
         </section>
       </main>
 
@@ -376,9 +402,30 @@ export function HomegroundHomePage({
             <span>{copy.footer.studioLabel}</span>
           </div>
           <nav aria-label={copy.navigation.footerLabel}>
-            <a href="#planning-proof">{copy.navigation.planning}</a>
-            <a href="#studio">{copy.navigation.studio}</a>
-            <a href="#faq">{copy.navigation.faq}</a>
+            <a
+              href="#planning-proof"
+              onClick={(event) =>
+                handleHomegroundHashClick(event, "#planning-proof")
+              }
+            >
+              {copy.navigation.planning}
+            </a>
+            <a
+              href="#studio"
+              onClick={(event) =>
+                handleHomegroundHashClick(event, "#studio")
+              }
+            >
+              {copy.navigation.studio}
+            </a>
+            <a
+              href="#faq"
+              onClick={(event) =>
+                handleHomegroundHashClick(event, "#faq")
+              }
+            >
+              {copy.navigation.faq}
+            </a>
             <a href={privacyPath}>{copy.footer.privacy}</a>
           </nav>
         </div>
