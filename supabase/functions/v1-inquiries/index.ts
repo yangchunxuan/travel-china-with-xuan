@@ -1,5 +1,6 @@
 import {
   canonicalizeJson,
+  currentDestinationInquiryFormVersion,
   destinationInquirySchemaVersion,
   semanticInquiryPayload,
   validateAndNormalizeInquiry,
@@ -386,10 +387,15 @@ async function handleRequest(request: Request): Promise<Response> {
 
   let persistenceResult;
   try {
+    const isCurrentDestinationInquiry =
+      payload.schemaVersion === destinationInquirySchemaVersion &&
+      payload.formVersion === currentDestinationInquiryFormVersion;
     persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
-      payload.schemaVersion === destinationInquirySchemaVersion
-        ? "create_homeground_destination_inquiry"
-        : "create_homeground_inquiry",
+      isCurrentDestinationInquiry
+        ? "create_homeground_destination_inquiry_v2"
+        : payload.schemaVersion === destinationInquirySchemaVersion
+          ? "create_homeground_destination_inquiry"
+          : "create_homeground_inquiry",
       {
         p_schema_version: payload.schemaVersion,
         p_form_version: payload.formVersion,
@@ -407,6 +413,9 @@ async function handleRequest(request: Request): Promise<Response> {
           payload.contact.channel === "whatsapp"
             ? payload.contact.phoneE164
             : null,
+        ...(isCurrentDestinationInquiry
+          ? { p_departure_country: payload.departureCountry }
+          : {}),
         p_note: payload.note,
         p_privacy_notice_version: payload.privacyNoticeVersion,
         p_landing_path: payload.attribution.landingPath,

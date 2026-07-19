@@ -1,7 +1,11 @@
 # Homeground Email + WhatsApp 人工接力实施计划
 
+- 归档说明：这是 2026-07-19 的外跳 WhatsApp 方案记录。自
+  2026-07-20 起，现行实现改为 Email／WhatsApp 均在网站提交并保存，
+  具体上线与运营方式以 `inquiry-deployment.md` 和
+  `studio-inquiry-runbook.md` 为准。
 - 版本：2026-07-19
-- 状态：方案已确认，等待实施
+- 状态：已被 2026-07-20 统一咨询入口取代
 - 适用市场：英文长线游客为主，同时支持中文、韩文
 - 与旧规格的关系：保留 `homeground-v1-inquiry-handoff-spec.md` 作为研究记录；本计划替代其中“客户填写自己的 WhatsApp 号码、等待工作室主动联系”的前端方案。
 

@@ -40,6 +40,8 @@ import {
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   inquirySchemaVersion,
+  previousDestinationInquiryFormVersion,
+  supportedDestinationInquiryFormVersions,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./inquiryVersions.ts";
 
@@ -49,6 +51,7 @@ export {
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   inquirySchemaVersion,
+  previousDestinationInquiryFormVersion,
   currentRouteRuleVersion,
   destinationIds,
   destinationPaceIds,
@@ -149,6 +152,7 @@ export interface NormalizedDestinationInquiryPayload {
   };
   routeSnapshot: CanonicalDestinationTiming;
   contact: NormalizedInquiryContact;
+  departureCountry: string | null;
   note: string | null;
   privacyNoticeVersion: string;
   attribution: NormalizedInquiryAttribution;
@@ -355,6 +359,7 @@ export function semanticInquiryPayload(
         ruleVersion: value.journey.ruleVersion,
       },
       contact,
+      departureCountry: value.departureCountry,
       note: value.note,
       privacyNoticeVersion: value.privacyNoticeVersion,
       attribution: {
@@ -433,6 +438,7 @@ function validateAndNormalizeDestinationInquiry(
       "locale",
       "journey",
       "contact",
+      "departureCountry",
       "note",
       "privacyNoticeVersion",
       "attribution",
@@ -448,7 +454,9 @@ function validateAndNormalizeDestinationInquiry(
   }
   if (
     typeof input.formVersion !== "string" ||
-    input.formVersion !== currentDestinationInquiryFormVersion ||
+    !supportedDestinationInquiryFormVersions.includes(
+      input.formVersion as (typeof supportedDestinationInquiryFormVersions)[number],
+    ) ||
     !config.allowedFormVersions.includes(input.formVersion)
   ) {
     fieldErrors.formVersion = "unsupported";
@@ -713,14 +721,46 @@ function validateAndNormalizeDestinationInquiry(
     }
   } else if (contact.channel === "whatsapp") {
     hasOnlyKeys(contact, ["channel", "phoneRaw"], "contact", fieldErrors);
-    // V3 WhatsApp is a customer-initiated wa.me handoff and never a saved
-    // phone-number submission. Keep the legacy saved-phone branch below for
-    // schema 1 only.
-    fieldErrors["contact.channel"] = "disabled";
-    contactCode = "whatsapp_disabled";
+    const currentConsentVersion =
+      input.formVersion === currentDestinationInquiryFormVersion &&
+      input.privacyNoticeVersion === currentPrivacyNoticeVersion;
+    if (!config.whatsappEnabled || !currentConsentVersion) {
+      fieldErrors["contact.channel"] = "disabled";
+      contactCode = "whatsapp_disabled";
+    }
+    if (typeof contact.phoneRaw !== "string") {
+      fieldErrors["contact.phoneRaw"] = "required";
+    } else {
+      const phoneE164 = normalizePhone(contact.phoneRaw);
+      if (phoneE164 === null) {
+        fieldErrors["contact.phoneRaw"] = "invalid";
+      } else if (config.whatsappEnabled && currentConsentVersion) {
+        normalizedContact = { channel: "whatsapp", phoneE164 };
+      }
+    }
   } else {
     hasOnlyKeys(contact, ["channel"], "contact", fieldErrors);
     fieldErrors["contact.channel"] = "invalid";
+  }
+
+  let departureCountry: string | null = null;
+  if (
+    input.departureCountry !== undefined &&
+    input.departureCountry !== null
+  ) {
+    if (typeof input.departureCountry !== "string") {
+      fieldErrors.departureCountry = "invalid";
+    } else {
+      const normalizedCountry = normalizeText(input.departureCountry).trim();
+      if (
+        Array.from(normalizedCountry).length > 80 ||
+        disallowedControlCharacters.test(normalizedCountry)
+      ) {
+        fieldErrors.departureCountry = "invalid";
+      } else if (normalizedCountry.length > 0) {
+        departureCountry = normalizedCountry;
+      }
+    }
   }
 
   let note: string | null = null;
@@ -892,6 +932,7 @@ function validateAndNormalizeDestinationInquiry(
       },
       routeSnapshot,
       contact: normalizedContact,
+      departureCountry,
       note,
       privacyNoticeVersion: input.privacyNoticeVersion,
       attribution: normalizedAttribution,

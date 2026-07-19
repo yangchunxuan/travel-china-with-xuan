@@ -14,9 +14,9 @@ import {
   validateAndNormalizeInquiry,
 } from "../lib/inquiryContract.ts";
 import {
-  currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  supportedDestinationInquiryFormVersions,
 } from "../lib/inquiryVersions.ts";
 
 const port = parsePositiveInteger(process.env.MOCK_INQUIRY_PORT, 8787);
@@ -250,7 +250,7 @@ const server = createServer(async (request, response) => {
   const validation = validateAndNormalizeInquiry(rawPayload, {
     allowedFormVersions: [
       currentInquiryFormVersion,
-      currentDestinationInquiryFormVersion,
+      ...supportedDestinationInquiryFormVersions,
     ],
     allowedPrivacyNoticeVersions: privacyNoticeVersions,
     whatsappEnabled,

@@ -86,6 +86,7 @@ function destinationPayload() {
       channel: "email",
       email: "traveller@example.com",
     },
+    departureCountry: null,
     note: "Keep every place in the planner handoff.",
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
@@ -99,6 +100,17 @@ function destinationPayload() {
       companyWebsite: "",
     },
   };
+}
+
+function destinationWhatsappPayload() {
+  const value = destinationPayload();
+  value.contact = {
+    channel: "whatsapp",
+    phoneRaw: "+44 7700 900123",
+  };
+  value.departureCountry = "United Kingdom";
+  value.note = null;
+  return value;
 }
 
 async function waitUntilReady(child) {
@@ -128,6 +140,7 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
         MOCK_INQUIRY_HOST: hostname,
         MOCK_INQUIRY_PORT: String(port),
         MOCK_INQUIRY_ALLOWED_ORIGINS: origin,
+        MOCK_WHATSAPP_ENABLED: "true",
       },
       stdio: ["ignore", "pipe", "pipe"],
     },
@@ -220,6 +233,35 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal(
     destinationReplayBody.inquiryId,
     destinationFirstBody.inquiryId,
+  );
+
+  const whatsappKey = "97c7438e-3904-4827-b782-6c07e6aa6238";
+  const whatsappFirst = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Origin: origin,
+      "Content-Type": "application/json",
+      "Idempotency-Key": whatsappKey,
+    },
+    body: JSON.stringify(destinationWhatsappPayload()),
+  });
+  assert.equal(whatsappFirst.status, 201);
+
+  const changedCountry = destinationWhatsappPayload();
+  changedCountry.departureCountry = "Canada";
+  const whatsappConflict = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Origin: origin,
+      "Content-Type": "application/json",
+      "Idempotency-Key": whatsappKey,
+    },
+    body: JSON.stringify(changedCountry),
+  });
+  assert.equal(whatsappConflict.status, 409);
+  assert.equal(
+    (await whatsappConflict.json()).error.code,
+    "idempotency_conflict",
   );
 
   const forbidden = await fetch(endpoint, {

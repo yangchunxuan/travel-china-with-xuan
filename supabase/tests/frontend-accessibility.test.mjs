@@ -215,30 +215,28 @@ test("success keeps the full public reference as secondary three-language copy",
   assert.doesNotMatch(referenceStyles, /background|border|font-weight/);
 });
 
-test("direct WhatsApp is a customer-initiated external handoff, not an Inquiry submit", async () => {
+test("email and WhatsApp use one accessible in-site enquiry submit", async () => {
   const plannerHandoff = await source(plannerHandoffPath);
 
   assert.match(
     plannerHandoff,
-    /NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED/,
+    /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED/,
   );
+  assert.doesNotMatch(plannerHandoff, /DIRECT_WHATSAPP|WHATSAPP_NUMBER/);
+  assert.doesNotMatch(plannerHandoff, /wa\.me|direct-whatsapp/);
+  assert.match(plannerHandoff, /type="email"/);
+  assert.match(plannerHandoff, /autoComplete="email"/);
+  assert.match(plannerHandoff, /type="tel"/);
+  assert.match(plannerHandoff, /autoComplete="tel"/);
+  assert.match(plannerHandoff, /autoComplete="country-name"/);
   assert.match(
     plannerHandoff,
-    /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/,
+    /contactMethod === "email"[\s\S]*channel: "email"[\s\S]*channel: "whatsapp"[\s\S]*phoneRaw: phone\.trim\(\)/,
   );
-  assert.match(
-    plannerHandoff,
-    /https:\/\/wa\.me\/\$\{whatsappNumber\}\?text=\$\{encodeURIComponent/,
-  );
-  assert.match(plannerHandoff, /value="direct-whatsapp"/);
-  assert.match(plannerHandoff, /setWhatsappLaunchAttempted\(true\)/);
-  assert.match(plannerHandoff, /rel="noopener noreferrer"/);
-  assert.doesNotMatch(plannerHandoff, /phoneRaw/);
-  assert.doesNotMatch(plannerHandoff, /type="tel"/);
-  assert.doesNotMatch(
-    plannerHandoff,
-    /contact:\s*\{[\s\S]{0,120}channel:\s*"whatsapp"/,
-  );
+  assert.match(plannerHandoff, /departureCountry: departureCountry\.trim\(\) \|\| null/);
+  assert.match(plannerHandoff, /note: null/);
+  assert.match(plannerHandoff, /type="submit"/);
+
   const dirtyStart = plannerHandoff.indexOf("const formIsDirty");
   const dirtyEnd = plannerHandoff.indexOf(
     "const hasUnsavedContactDraft",
@@ -246,55 +244,35 @@ test("direct WhatsApp is a customer-initiated external handoff, not an Inquiry s
   );
   const dirtyState = plannerHandoff.slice(dirtyStart, dirtyEnd);
   assert.match(dirtyState, /email\.trim\(\)/);
-  assert.match(dirtyState, /note\.trim\(\)/);
-  assert.doesNotMatch(dirtyState, /contactMethod|whatsapp/);
+  assert.match(dirtyState, /phone\.trim\(\)/);
+  assert.match(dirtyState, /departureCountry\.trim\(\)/);
 
-  const messageStart = plannerHandoff.indexOf("const whatsappMessage");
-  const messageEnd = plannerHandoff.indexOf(
-    "const whatsappUrl",
-    messageStart,
-  );
-  const messageBuilder = plannerHandoff.slice(messageStart, messageEnd);
-  assert.match(messageBuilder, /\.\.\.briefLines/);
-  assert.doesNotMatch(
-    messageBuilder,
-    /routeId|routeReference|publicReference|email|utm|attribution|source/i,
-  );
   const briefStart = plannerHandoff.indexOf("const briefLines");
-  const briefBuilder = plannerHandoff.slice(briefStart, messageStart);
+  const briefEnd = plannerHandoff.indexOf("const briefText", briefStart);
+  const briefBuilder = plannerHandoff.slice(briefStart, briefEnd);
   assert.match(briefBuilder, /wishlistLabel/);
   assert.match(briefBuilder, /totalNights/);
   assert.match(briefBuilder, /partyLabels/);
   assert.match(briefBuilder, /paceLabels/);
   assert.match(briefBuilder, /timing\.status/);
   assert.match(briefBuilder, /mustSeeNames/);
-  assert.match(briefBuilder, /note\.trim\(\)/);
   assert.match(briefBuilder, /result\.boundary/);
-  assert.doesNotMatch(plannerHandoff, /knownAttributionSource|whatsappSource/);
-
-  const whatsappBranchStart = plannerHandoff.indexOf(
-    '{contactMethod === "direct-whatsapp" &&',
-  );
-  const whatsappBranch = plannerHandoff.slice(whatsappBranchStart);
-  assert.ok(whatsappBranchStart >= 0);
-  assert.doesNotMatch(whatsappBranch, /type="submit"/);
-  assert.doesNotMatch(whatsappBranch, /setStatus\("success"\)/);
 });
 
-test("direct WhatsApp states tell all three locales that opening is not sending", () => {
+test("all three locales explain the single reply channel and optional country", () => {
   const english = getHomegroundCopy("en").handoff;
   const chinese = getHomegroundCopy("zh").handoff;
   const korean = getHomegroundCopy("ko").handoff;
 
-  assert.equal(english.whatsappOpen, "Continue in WhatsApp");
-  assert.match(english.whatsappAttemptBody, /can’t confirm/);
-  assert.match(english.whatsappAttemptBody, /message was sent/);
+  assert.equal(english.useWhatsapp, "Use WhatsApp instead");
+  assert.match(english.whatsappHint, /country code/);
+  assert.match(english.departureCountryLabel, /optional/);
 
-  assert.equal(chinese.whatsappOpen, "在 WhatsApp 中继续");
-  assert.match(chinese.whatsappAttemptBody, /无法确认/);
-  assert.match(chinese.whatsappAttemptBody, /消息是否已经发送/);
+  assert.equal(chinese.useWhatsapp, "改用 WhatsApp");
+  assert.match(chinese.whatsappHint, /国家或地区代码/);
+  assert.match(chinese.departureCountryLabel, /选填/);
 
-  assert.equal(korean.whatsappOpen, "WhatsApp에서 계속하기");
-  assert.match(korean.whatsappAttemptBody, /확인할 수 없습니다/);
-  assert.match(korean.whatsappAttemptBody, /메시지가 전송/);
+  assert.equal(korean.useWhatsapp, "WhatsApp으로 받기");
+  assert.match(korean.whatsappHint, /국가 번호/);
+  assert.match(korean.departureCountryLabel, /선택/);
 });

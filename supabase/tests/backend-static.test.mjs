@@ -174,7 +174,7 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /status: "paused"/);
   assert.ok(
     code.indexOf("NOTIFICATION_PROCESSING_ENABLED") <
-      code.indexOf('"claim_homeground_notification_jobs"'),
+      code.indexOf('"claim_homeground_notification_jobs_v2"'),
   );
   assert.match(code, /NOTIFICATION_PROVIDER_TIMEOUT_SECONDS/);
   assert.match(code, /signal: timeoutController\.signal/);
@@ -212,7 +212,9 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(claimRpc, /inquiry\.answers_json/);
 
   const configurationCheck = code.indexOf("config = notificationConfig()");
-  const outboxClaim = code.indexOf('"claim_homeground_notification_jobs"');
+  const outboxClaim = code.indexOf(
+    '"claim_homeground_notification_jobs_v2"',
+  );
   assert.ok(configurationCheck >= 0);
   assert.ok(outboxClaim > configurationCheck);
 });
@@ -434,18 +436,18 @@ test("published privacy copy reflects the production data path", async () => {
   assert.match(copy, /30 天内/);
   assert.match(copy, /30일 이내/);
   assert.equal(copy.match(/utm_source/g)?.length, 3);
-  assert.match(copy, /They are not added to the WhatsApp message/);
-  assert.match(copy, /它们不会写入 WhatsApp 消息/);
-  assert.match(copy, /WhatsApp 메시지에 넣지 않으며/);
-  assert.match(copy, /When the website offers a direct WhatsApp handoff/);
-  assert.match(copy, /当网站显示 WhatsApp 直接入口时/);
-  assert.match(
-    copy,
-    /웹사이트에 WhatsApp 직접 연결 선택지가 표시되는 경우/,
-  );
+  assert.match(copy, /either an email address or a WhatsApp number/);
+  assert.match(copy, /邮箱或 WhatsApp 号码中的一种/);
+  assert.match(copy, /이메일 주소 또는 WhatsApp 번호 중 하나/);
+  assert.match(copy, /optional departure country or region/);
+  assert.match(copy, /选填的出发国家或地区/);
+  assert.match(copy, /선택 입력한 출발 국가 또는 지역/);
+  assert.doesNotMatch(copy, /direct WhatsApp handoff/);
+  assert.doesNotMatch(copy, /WhatsApp 直接入口/);
+  assert.doesNotMatch(copy, /WhatsApp 직접 연결/);
   assert.match(
     versions,
-    /currentPrivacyNoticeVersion = "2026-07-19\.1"/,
+    /currentPrivacyNoticeVersion = "2026-07-20\.1"/,
   );
   assert.doesNotMatch(defaultPage, /index:\s*false|follow:\s*false/);
   assert.doesNotMatch(localizedPage, /index:\s*false|follow:\s*false/);
@@ -488,8 +490,7 @@ test("environment template covers the public form and server functions", async (
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN",
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH",
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO",
-    "NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED",
-    "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER",
+    "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED",
     "SUPABASE_URL",
     "SUPABASE_SECRET_KEYS",
     "SUPABASE_SERVICE_ROLE_KEY",
@@ -521,11 +522,7 @@ test("environment template covers the public form and server functions", async (
   assert.match(example, /^NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY=false$/m);
   assert.match(
     example,
-    /^NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED=false$/m,
-  );
-  assert.match(
-    example,
-    /^NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER=[1-9][0-9]{7,14}$/m,
+    /^NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false$/m,
   );
   assert.doesNotMatch(
     example,
@@ -548,8 +545,7 @@ test("GitHub Pages build receives only explicit public Inquiry variables", async
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN",
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH",
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO",
-    "NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED",
-    "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER",
+    "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED",
   ]) {
     assert.match(
       workflow,
@@ -578,11 +574,9 @@ test("fallback email enters the same monitored Gmail workflow", async () => {
 test("frontend launch gates and permanent privacy entry stay connected", async () => {
   const planner = await source(plannerHandoffPath);
   const homePage = await source(homePagePath);
-  const emailReadinessStart = planner.indexOf(
-    "const emailConfigurationReady",
-  );
-  const readinessEnd = planner.indexOf("const [status", emailReadinessStart);
-  const readiness = planner.slice(emailReadinessStart, readinessEnd);
+  const readinessStart = planner.indexOf("const configurationReady");
+  const readinessEnd = planner.indexOf("const [status", readinessStart);
+  const readiness = planner.slice(readinessStart, readinessEnd);
   const disabledStart = planner.indexOf('{status === "disabled"');
   const disabledEnd = planner.indexOf('{status === "success"', disabledStart);
   const disabledState = planner.slice(disabledStart, disabledEnd);
@@ -598,12 +592,15 @@ test("frontend launch gates and permanent privacy entry stay connected", async (
   );
   assert.match(
     readiness,
-    /directWhatsappEnabled[\s\S]*privacyReady[\s\S]*privacyNoticeUrl[\s\S]*isValidWhatsAppNumber\(whatsappNumber\)/,
+    /whatsappIntakeReady[\s\S]*configurationReady[\s\S]*whatsappIntakeEnabled/,
   );
   assert.doesNotMatch(readiness, /brandEmailReady/);
   assert.doesNotMatch(disabledState, /fallbackMailto|mailto:/);
   assert.match(failedState, /allowsFallbackEmail[\s\S]*fallbackMailto/);
   assert.match(planner, /\{brandEmail\}/);
+  assert.match(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED/);
+  assert.doesNotMatch(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/);
+  assert.doesNotMatch(planner, /wa\.me/);
   assert.match(homePage, /copy\.footer\.privacy/);
   assert.match(homePage, /privacyPath/);
 });

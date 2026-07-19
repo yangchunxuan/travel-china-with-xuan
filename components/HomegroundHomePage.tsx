@@ -282,10 +282,10 @@ export function HomegroundHomePage({
             <article className={styles.sampleRoute} aria-labelledby="sample-route-title">
               <div className={styles.sampleRouteImage}>
                 <img
-                  src="/images/home/hangzhou-1600.jpg"
+                  src="/images/home/zhangjiajie-1600.jpg"
                   alt={copy.proof.imageAlt}
                   width="1600"
-                  height="1066"
+                  height="954"
                   loading="lazy"
                 />
                 <span>{copy.proof.imageBadge}</span>
