@@ -992,6 +992,64 @@ export function PlannerHandoff({
   const errorEntries = Object.entries(errors) as Array<
     [ValidationField, string]
   >;
+  const noteField = (
+    <div className={`${styles.field} ${styles.noteSection}`}>
+      <label htmlFor={noteId}>
+        {copy.handoff.noteLabel}
+      </label>
+      <textarea
+        id={noteId}
+        name="note"
+        value={note}
+        maxLength={maximumNoteLength}
+        disabled={controlsLocked}
+        dir="auto"
+        rows={5}
+        aria-invalid={Boolean(errors.note)}
+        aria-describedby={`${noteHintId}${
+          errors.note ? ` ${noteErrorId}` : ""
+        }`}
+        onBlur={() => {
+          const error =
+            noteLength(note) > maximumNoteLength
+              ? copy.handoff.noteTooLong
+              : hasUnsupportedControlCharacters(note)
+                ? copy.handoff.noteInvalid
+                : undefined;
+          setBlurError("note", error);
+        }}
+        onChange={(event) => {
+          setNote(event.target.value);
+          markEditing("note");
+        }}
+      />
+      <div className={styles.noteMeta}>
+        <p className={styles.hint} id={noteHintId}>
+          {copy.handoff.noteHint}
+        </p>
+        <span>
+          {copy.handoff.noteCount(
+            noteLength(note),
+            maximumNoteLength,
+          )}
+        </span>
+      </div>
+      {note.trim().length > 0 && (
+        <p className={styles.noteAttached} role="status">
+          {copy.handoff.noteAttached}
+        </p>
+      )}
+      {errors.note && (
+        <p
+          className={styles.fieldError}
+          id={noteErrorId}
+          role="alert"
+        >
+          {errors.note}
+        </p>
+      )}
+    </div>
+  );
 
   return (
     <section
@@ -1182,63 +1240,6 @@ export function PlannerHandoff({
                   </div>
                 )}
 
-                <div className={styles.field}>
-                  <label htmlFor={noteId}>
-                    {copy.handoff.noteLabel}
-                  </label>
-                  <textarea
-                    id={noteId}
-                    name="note"
-                    value={note}
-                    maxLength={maximumNoteLength}
-                    disabled={controlsLocked}
-                    dir="auto"
-                    rows={5}
-                    aria-invalid={Boolean(errors.note)}
-                    aria-describedby={`${noteHintId}${
-                      errors.note ? ` ${noteErrorId}` : ""
-                    }`}
-                    onBlur={() => {
-                      const error =
-                        noteLength(note) > maximumNoteLength
-                          ? copy.handoff.noteTooLong
-                          : hasUnsupportedControlCharacters(note)
-                            ? copy.handoff.noteInvalid
-                            : undefined;
-                      setBlurError("note", error);
-                    }}
-                    onChange={(event) => {
-                      setNote(event.target.value);
-                      markEditing("note");
-                    }}
-                  />
-                  <div className={styles.noteMeta}>
-                    <p className={styles.hint} id={noteHintId}>
-                      {copy.handoff.noteHint}
-                    </p>
-                    <span>
-                      {copy.handoff.noteCount(
-                        noteLength(note),
-                        maximumNoteLength,
-                      )}
-                    </span>
-                  </div>
-                  {note.trim().length > 0 && (
-                    <p className={styles.noteAttached} role="status">
-                      {copy.handoff.noteAttached}
-                    </p>
-                  )}
-                  {errors.note && (
-                    <p
-                      className={styles.fieldError}
-                      id={noteErrorId}
-                      role="alert"
-                    >
-                      {errors.note}
-                    </p>
-                  )}
-                </div>
-
                 <fieldset
                   id={contactGroupId}
                   className={styles.contactFieldset}
@@ -1406,6 +1407,8 @@ export function PlannerHandoff({
                       <p>{copy.handoff.serviceBoundary}</p>
                     </div>
 
+                    {noteField}
+
                     {status === "submitting" && (
                       <div className={styles.submittingStatus} role="status">
                         <LoaderCircle
@@ -1453,6 +1456,7 @@ export function PlannerHandoff({
                           {copy.handoff.privacyLink}
                         </a>
                       </div>
+                      {noteField}
                       {!controlsLocked && (
                         <a
                           className={styles.whatsappAction}

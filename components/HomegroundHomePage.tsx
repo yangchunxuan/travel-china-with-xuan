@@ -194,7 +194,12 @@ export function HomegroundHomePage({
       />
 
       <main id="main-content" tabIndex={-1}>
-        <section className={styles.hero} aria-labelledby="home-hero-title">
+        <section
+          className={`${styles.hero} ${
+            plannerStatus === "result" ? styles.heroResult : ""
+          }`}
+          aria-labelledby="home-hero-title"
+        >
           <picture className={styles.heroPicture}>
             <source media="(max-width: 700px)" srcSet="/images/home/beijing-hero-1200.jpg" />
             <img
@@ -209,20 +214,26 @@ export function HomegroundHomePage({
 
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
+              {plannerStatus !== "result" && (
+                <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
+              )}
               <h1 id="home-hero-title">{copy.hero.title}</h1>
-              <p className={styles.heroLead}>{copy.hero.lead}</p>
-              <ul
-                className={styles.heroTrust}
-                aria-label={copy.hero.trustLabel}
-              >
-                {copy.hero.trust.map((item) => (
-                  <li key={item}>
-                    <Check aria-hidden="true" size={17} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              {plannerStatus !== "result" && (
+                <>
+                  <p className={styles.heroLead}>{copy.hero.lead}</p>
+                  <ul
+                    className={styles.heroTrust}
+                    aria-label={copy.hero.trustLabel}
+                  >
+                    {copy.hero.trust.map((item) => (
+                      <li key={item}>
+                        <Check aria-hidden="true" size={17} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
 
             <div className={styles.heroPlanner}>
@@ -296,13 +307,6 @@ export function HomegroundHomePage({
                 ))}
               </dl>
 
-              <div className={styles.routeNote}>
-                <FileCheck2 aria-hidden="true" size={19} />
-                <p>
-                  <strong>{copy.proof.pointLabel}</strong>{" "}
-                  {copy.proof.point}
-                </p>
-              </div>
             </article>
 
             <aside className={styles.handledCard} aria-labelledby="handled-title">
@@ -347,15 +351,6 @@ export function HomegroundHomePage({
             ))}
           </ol>
 
-          <a
-            className={styles.textCta}
-            href={plannerTarget}
-            onClick={(event) =>
-              handleHomegroundHashClick(event, plannerTarget)
-            }
-          >
-            {plannerCta} <ArrowRight aria-hidden="true" size={18} />
-          </a>
         </section>
 
         <section className={styles.faqSection} id="faq" aria-labelledby="faq-title">

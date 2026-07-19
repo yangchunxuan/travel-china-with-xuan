@@ -1,4 +1,5 @@
 .handoff {
+  --handoff-focus: #0b6f73;
   background: #e9eee8;
   color: #17251f;
   padding-block: clamp(3.5rem, 8vw, 7rem);
@@ -6,10 +7,11 @@
 }
 
 .embedded {
-  border: 1px solid #c5d0c8;
-  border-radius: 1.1rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
   margin-block-start: 1.25rem;
-  padding-block: clamp(1.35rem, 4vw, 2.25rem);
+  padding-block: clamp(1.1rem, 3vw, 1.75rem) 0;
 }
 
 .inner {
@@ -23,7 +25,7 @@
 .embedded .inner {
   gap: clamp(1.5rem, 4vw, 2.25rem);
   grid-template-columns: minmax(0, 1fr);
-  padding-inline: clamp(1rem, 3vw, 1.5rem);
+  padding-inline: 0;
 }
 
 .eyebrow {
@@ -58,7 +60,7 @@
 .failureState h3:focus-visible,
 .errorSummary:focus-visible {
   border-radius: 0.12rem;
-  outline: 3px solid #7b2d1c;
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 4px;
 }
 
@@ -89,9 +91,23 @@
   padding: clamp(1.1rem, 3.2vw, 1.8rem);
 }
 
+.embedded .card {
+  background: transparent;
+  border: 0;
+  border-block-start: 1px solid #c5d0c8;
+  border-radius: 0;
+  box-shadow: none;
+  padding: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+}
+
 .form {
   display: grid;
   gap: 1.25rem;
+  min-inline-size: 0;
+}
+
+.form > * {
+  min-inline-size: 0;
 }
 
 .contactFieldset {
@@ -147,7 +163,7 @@
 }
 
 .channelOption:focus-within {
-  outline: 3px solid #7b2d1c;
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 2px;
 }
 
@@ -201,6 +217,7 @@
   border: 1px solid #99aa9f;
   border-radius: 0.75rem;
   color: #17251f;
+  box-sizing: border-box;
   display: block;
   font: inherit;
   font-size: 1rem;
@@ -208,6 +225,8 @@
   line-height: 1.55;
   margin-block-start: 0.65rem;
   min-block-size: 3rem;
+  max-inline-size: 100%;
+  min-inline-size: 0;
   padding: 0.72rem 0.82rem;
 }
 
@@ -223,8 +242,8 @@
 
 .field input:focus-visible,
 .field textarea:focus-visible {
-  border-color: #7b2d1c;
-  outline: 3px solid #7b2d1c;
+  border-color: var(--handoff-focus);
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 2px;
 }
 
@@ -232,6 +251,11 @@
 .field textarea[aria-invalid="true"] {
   border-color: #a52d2d;
   box-shadow: inset 0 0 0 1px #a52d2d;
+}
+
+.noteSection {
+  border-block-start: 1px solid #d8dfda;
+  padding-block-start: 1.15rem;
 }
 
 .hint {
@@ -282,6 +306,7 @@
 .whatsappPanel {
   display: grid;
   gap: 1rem;
+  min-inline-size: 0;
 }
 
 .whatsappIntro {
@@ -348,7 +373,7 @@
 
 .whatsappPrivacy a:focus-visible,
 .whatsappAction:focus-visible {
-  outline: 3px solid #7b2d1c;
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 3px;
 }
 
@@ -396,7 +421,7 @@
 }
 
 .textAction:focus-visible {
-  outline: 3px solid #7b2d1c;
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 3px;
 }
 
@@ -404,6 +429,15 @@
   background: #f3f5f1;
   border-radius: 0.8rem;
   padding: 0.9rem 1rem;
+}
+
+.embedded .nextStep,
+.embedded .whatsappIntro {
+  background: transparent;
+  border: 0;
+  border-block-start: 1px solid #d8dfda;
+  border-radius: 0;
+  padding: 0.9rem 0 0;
 }
 
 .nextStep strong {
@@ -445,7 +479,7 @@
 .inlineLink:focus-visible,
 .routeLink:focus-visible {
   border-radius: 0.1rem;
-  outline: 3px solid #7b2d1c;
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 3px;
 }
 
@@ -496,7 +530,7 @@
 .primaryAction:focus-visible,
 .secondaryAction:focus-visible,
 .retryButton:focus-visible {
-  outline: 3px solid #7b2d1c;
+  outline: 3px solid var(--handoff-focus);
   outline-offset: 3px;
 }
 

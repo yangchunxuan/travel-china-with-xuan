@@ -586,7 +586,14 @@ export function RouteFinder({
       hasMounted.current = true;
       return;
     }
-    window.requestAnimationFrame(() => target?.focus());
+    window.requestAnimationFrame(() => {
+      if (!target) return;
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({
+        block: "start",
+        inline: "nearest",
+      });
+    });
   }, [sessionReady, stepIndex, view]);
 
   const updateDraft = (next: PlannerDraft) => {

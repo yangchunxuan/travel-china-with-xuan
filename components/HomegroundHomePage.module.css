@@ -499,6 +499,67 @@
   min-width: 0;
 }
 
+.heroResult {
+  background: #f7f5ef;
+  color: #17251f;
+  min-height: 0;
+  overflow: visible;
+}
+
+.heroResult .heroPicture,
+.heroResult .heroPicture img,
+.heroResult .heroShade {
+  height: clamp(14rem, 28vw, 22rem);
+}
+
+.heroResult .heroShade {
+  background:
+    linear-gradient(0deg, rgb(7 20 16 / 72%) 0%, rgb(7 20 16 / 20%) 75%),
+    linear-gradient(90deg, rgb(8 24 19 / 58%) 0%, rgb(7 18 15 / 18%) 72%);
+}
+
+.heroResult .heroGrid {
+  display: block;
+  max-width: none;
+  min-height: 0;
+  padding: 0;
+}
+
+.heroResult .heroCopy {
+  align-items: flex-end;
+  color: #fff;
+  display: flex;
+  height: clamp(14rem, 28vw, 22rem);
+  inline-size: 100%;
+  margin-inline: auto;
+  max-width: 1260px;
+  padding: clamp(1.5rem, 4vw, 3rem) 2rem;
+}
+
+.heroResult .heroCopy h1 {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.02;
+  margin: 0;
+  max-width: 15ch;
+}
+
+.heroResult .heroPlanner {
+  background: #f7f5ef;
+  padding: clamp(1.5rem, 4vw, 3.5rem)
+    max(1rem, calc((100vw - 62rem) / 2))
+    clamp(3.5rem, 7vw, 6rem);
+  position: relative;
+}
+
+.heroResult .heroPlanner > * {
+  inline-size: min(100%, 62rem);
+  margin-inline: auto;
+}
+
+.heroResult .photoCaption {
+  display: none;
+}
+
 .photoCaption {
   bottom: 1rem;
   color: rgb(255 255 255 / 66%);
@@ -514,7 +575,7 @@
 .faqSection {
   background: #f7f5ef;
   color: #17251f;
-  padding: clamp(5rem, 9vw, 8rem) max(1rem, calc((100vw - 1260px) / 2));
+  padding: clamp(4.5rem, 8vw, 7rem) max(1rem, calc((100vw - 1260px) / 2));
 }
 
 .sectionIntro,
@@ -548,7 +609,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-  margin-top: 3.5rem;
+  margin-top: 2.75rem;
 }
 
 .sampleRoute,
@@ -651,33 +712,6 @@
   margin: 0.35rem 0 0;
 }
 
-.routeNote {
-  align-items: flex-start;
-  background: #f7f1e9;
-  border-left: 3px solid #a74731;
-  display: grid;
-  gap: 0.8rem;
-  grid-template-columns: auto minmax(0, 1fr);
-  margin-top: 1.4rem;
-  padding: 1rem;
-}
-
-.routeNote svg {
-  color: #a74731;
-  margin-top: 0.12rem;
-}
-
-.routeNote p {
-  color: #4b5851;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.routeNote strong {
-  color: #17251f;
-}
-
 .handledCard {
   background: #183c32;
   color: #fff;
@@ -729,9 +763,9 @@
   background: #132f27;
   color: #fff;
   display: grid;
-  gap: clamp(3rem, 8vw, 7rem);
+  gap: clamp(2.75rem, 6vw, 5.5rem);
   grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr);
-  padding: clamp(5rem, 9vw, 8rem) max(1rem, calc((100vw - 1260px) / 2));
+  padding: clamp(4.5rem, 8vw, 7rem) max(1rem, calc((100vw - 1260px) / 2));
 }
 
 .studioIntro > p:last-child {
@@ -777,20 +811,9 @@
   margin: 0.35rem 0 0;
 }
 
-.textCta {
-  align-items: center;
-  color: #fff;
-  display: inline-flex;
-  font-weight: 740;
-  gap: 0.5rem;
-  justify-self: start;
-  text-decoration-color: #e9ad96;
-  text-underline-offset: 0.35rem;
-}
-
 .faqSection {
   display: grid;
-  gap: clamp(3rem, 8vw, 7rem);
+  gap: clamp(2.75rem, 6vw, 5.5rem);
   grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr);
 }
 
@@ -850,7 +873,7 @@
   display: grid;
   gap: 1.5rem;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  padding: clamp(3rem, 6vw, 5rem) max(1rem, calc((100vw - 1260px) / 2));
+  padding: clamp(2.75rem, 5vw, 4.25rem) max(1rem, calc((100vw - 1260px) / 2));
 }
 
 .finalCta > svg {
@@ -965,6 +988,14 @@
     padding-top: 3.5rem;
   }
 
+  .heroResult .heroGrid {
+    padding: 0;
+  }
+
+  .heroResult .heroCopy {
+    max-width: none;
+  }
+
   .heroCopy {
     max-width: 650px;
   }
@@ -975,6 +1006,12 @@
 
   .heroShade {
     background: linear-gradient(180deg, rgb(7 22 17 / 88%) 0%, rgb(7 22 17 / 67%) 34%, rgb(7 22 17 / 78%) 68%, rgb(7 22 17 / 94%) 100%);
+  }
+
+  .heroResult .heroShade {
+    background:
+      linear-gradient(0deg, rgb(7 20 16 / 72%) 0%, rgb(7 20 16 / 18%) 75%),
+      linear-gradient(90deg, rgb(8 24 19 / 55%) 0%, rgb(7 18 15 / 16%) 72%);
   }
 
   .photoCaption {
@@ -1026,6 +1063,26 @@
     padding: 1.35rem 1rem 1rem;
   }
 
+  .heroResult .heroPicture,
+  .heroResult .heroPicture img,
+  .heroResult .heroShade,
+  .heroResult .heroCopy {
+    height: clamp(11rem, 48vw, 14rem);
+  }
+
+  .heroResult .heroCopy {
+    padding: 1.25rem 1rem;
+  }
+
+  .heroResult .heroCopy h1 {
+    font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  .heroResult .heroPlanner {
+    padding: 1rem 1rem 3.75rem;
+  }
+
   .heroCopy h1 {
     font-size: clamp(2.25rem, 11.5vw, 3.2rem);
     line-height: 0.98;
@@ -1054,8 +1111,18 @@
   .proofSection,
   .studioSection,
   .faqSection {
+    padding-block: 3.75rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .proofBoard {
+    margin-top: 2.25rem;
+  }
+
+  .studioSection,
+  .faqSection {
+    gap: 2.5rem;
   }
 
   .sampleRouteHeading {
@@ -1074,6 +1141,7 @@
 
   .finalCta {
     display: block;
+    padding-block: 2.75rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }

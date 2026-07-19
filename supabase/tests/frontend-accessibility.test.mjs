@@ -101,7 +101,7 @@ test("planner CTAs preserve the result while moving to the human handoff", async
   assert.equal(
     page.match(/handleHomegroundHashClick\(event, plannerTarget\)/g)
       ?.length,
-    2,
+    1,
   );
 });
 
