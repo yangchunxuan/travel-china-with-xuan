@@ -1,22 +1,32 @@
 # Homeground Inquiry backend deployment
 
 Status: the production Supabase functions, private schema, Resend notification
-path and 24-hour rate-limit cleanup are deployed. Real English, Chinese and
-Korean receipt tests passed, so the public frontend switches are enabled for
-the production website release.
+path and 24-hour rate-limit cleanup are deployed for the `2026-07-20.1`
+contact release. The optional-budget `2026-07-20.2` release must follow the
+additive migration and overlapping rollout below before its static frontend is
+published.
 
 Current production configuration:
 
 - Supabase project region: Seoul (`ap-northeast-2`).
 - Resend notification region: Tokyo (`ap-northeast-1`).
 - Monitored notification inbox: `yangchunxuan1@gmail.com`.
-- Frontend Privacy Notice version in this release: `2026-07-20.1`.
-- Transition allow-list:
-  `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1`. Keep both
-  versions accepted while the new static build and any in-flight retry are
-  being verified.
+- Target frontend Privacy Notice version: `2026-07-20.2`.
+- Transition form allow-list:
+  `ALLOWED_FORM_VERSIONS=2026-07-18.1,2026-07-19.1,2026-07-20.1,2026-07-20.2`.
+- Transition Privacy Notice allow-list:
+  `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1,2026-07-20.2`.
+  Keep the old versions accepted while the new static build and any in-flight
+  retry are being verified.
 - WhatsApp intake uses the same saved-enquiry path as Email and is controlled
   by independent frontend and server switches.
+- A traveller may optionally submit a rough per-person budget for the China
+  portion of the trip, excluding international flights. It is saved and shown
+  to staff as traveller context, never as a Homeground quote.
+- Gmail and WhatsApp are connected to SaleSmartly for the current studio
+  workflow. A Gmail notification containing the optional budget may therefore
+  be copied into that project; SaleSmartly access and retention must follow the
+  controls below.
 - Non-essential analytics and AI chat remain disabled.
 
 The main website remains a GitHub Pages-compatible static export. Inquiry data
@@ -48,6 +58,10 @@ monitoring.
 - `supabase/migrations/202607200001_homeground_contact_intake.sql`: optional
   departure-country storage plus versioned create/claim RPCs for saved
   WhatsApp enquiries.
+- `supabase/migrations/202607200002_homeground_budget_intake.sql`: nullable
+  rough-budget storage plus `create_homeground_destination_inquiry_v3` and
+  `claim_homeground_notification_jobs_v3`, while keeping both older destination
+  RPC generations available during static-page rollout.
 - `.github/workflows/inquiry-health.yml`: independent 15-minute health check;
   an unhealthy outbox makes the workflow fail without using Resend.
 - `lib/inquiryContract.ts`: runtime-neutral input validation,
@@ -89,7 +103,7 @@ staff reply test passes:
 
 | Variable | Purpose |
 |---|---|
-| `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED` | Public build-time switch that reveals “Use WhatsApp instead”; default `false` |
+| `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED` | Public build-time switch that reveals the explicit Email/WhatsApp reply-method choice; default `false` |
 
 The server-only `WHATSAPP_ENABLED` variable below independently authorises
 phone-number submission at the API. Both switches must be true for the channel
@@ -182,10 +196,25 @@ scheduled workflow is the independent signal; it does not call Resend and
 does not print the response body or secret.
 
 The Resend message contains the public reference, language, route summary,
-the route answers, selected contact, optional departure country, any legacy
-note and timestamps. For Email, the traveller address is the message
+the route answers, selected contact, optional departure country, optional
+traveller-stated rough budget, any legacy note and timestamps. The budget
+label explicitly says that international flights are excluded and that the
+value is traveller context, not a Homeground quote. It is not placed in the
+message subject or a URL. For Email, the traveller address is the message
 `Reply-To`. For WhatsApp, the notification contains a staff-side link to the
 submitted number; the customer-facing website never creates a `wa.me` link.
+
+Because Gmail and WhatsApp are connected to SaleSmartly, the notification and
+later conversation—including a budget when the traveller provided one—may be
+synchronised into the SaleSmartly project. Configure that project to retain
+Homeground enquiry and conversation data for no more than 12 months after the
+last substantive contact, unless a client relationship, legal duty, dispute or
+security hold requires longer. Give each operator a separate member account,
+grant only the channels and permissions needed for their work, require
+two-factor authentication where supported, and never share the Gmail main
+password. Review Google OAuth access, Gmail forwarding and filter rules,
+SaleSmartly members, and WhatsApp linked devices regularly and after any
+unfamiliar login.
 
 The pilot has one saved-enquiry intake and two reply channels. Every Email or
 WhatsApp submission creates an Inquiry and Gmail notification. Staff reply
@@ -195,40 +224,71 @@ WhatsApp conversation is the human handling record. See
 `docs/studio-inquiry-runbook.md`.
 
 The published Privacy Notice names the configured providers and primary
-regions, the monitored privacy contact, the 12-month enquiry rule, the
-24-hour hashed rate-limit window and scheduled-deletion rule, and the
-verified-request procedure. The WhatsApp release must also explain that the
-submitted number is saved for this enquiry and that Meta/WhatsApp handles the
-later conversation.
+regions, the monitored privacy contact, the optional departure and budget
+fields, the 12-month enquiry rule, the 24-hour hashed rate-limit window and
+scheduled-deletion rule, and the verified-request procedure. The WhatsApp
+release must also explain that the submitted number is saved for this enquiry
+and that Meta/WhatsApp handles the later conversation. The notice and the
+studio's processor register must remain accurate for the active SaleSmartly
+connection before the budget form is published.
 
-Privacy versions must overlap during deployment so the old static page does
-not start receiving `unsupported_privacy_notice_version` while the new page
-is rolling out:
+Form and Privacy Notice versions must overlap during deployment so an already
+open static page does not start receiving `unsupported_form_version`,
+`unsupported_privacy_notice` or `whatsapp_disabled` while the new page is
+rolling out:
 
-1. Before publishing the new static page, set the `v1-inquiries` secrets to
-   `ALLOWED_FORM_VERSIONS=2026-07-18.1,2026-07-19.1,2026-07-20.1`,
-   `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1`, and keep
-   `WHATSAPP_ENABLED=false`.
-2. Deploy migration `202607200001`, then deploy `notify-inquiries` and
-   `v1-inquiries`.
-3. Confirm a request carrying the currently published `2026-07-19.1` version
-   still succeeds.
-4. Publish the English, Chinese and Korean Privacy Notice plus the form that
-   carries `2026-07-20.1`. Keep
-   `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` for this deployment.
-5. Confirm a production Email enquiry carrying `2026-07-20.1` is saved,
-   notified to Gmail and replyable.
-6. Set server-only `WHATSAPP_ENABLED=true`, submit a QA enquiry from an
-   external WhatsApp number, and confirm Gmail receives it and the staff-side
-   link opens the correct number in the studio account.
-7. Set `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=true` and run another
-   successful GitHub Pages deployment.
-8. After the old build/retry window is over, remove `2026-07-19.1` from the
-   form and privacy allow-lists.
+1. Start a controlled maintenance window. Set
+   `INQUIRY_ACCEPTING_SUBMISSIONS=false` and
+   `NOTIFICATION_PROCESSING_ENABLED=false`, then verify a valid
+   production-origin POST returns `503 intake_paused`. Keep the saved outbox
+   intact; pausing the worker must not delete or manually retry jobs.
+2. Wait for every invocation that started before the pause to finish. The wait
+   must be at least the configured `NOTIFICATION_LEASE_SECONDS` plus the
+   provider request timeout (the pilot lease defaults to 90 seconds). Confirm
+   there is no job still in a live `processing` lease before changing the
+   claim function. This removes the old-worker/new-row overlap window.
+3. While intake remains paused, set the `v1-inquiries` secrets to
+   `ALLOWED_FORM_VERSIONS=2026-07-18.1,2026-07-19.1,2026-07-20.1,2026-07-20.2`
+   and
+   `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1,2026-07-20.2`.
+   Keep the current `WHATSAPP_ENABLED` state unchanged.
+4. Deploy migration `202607200002`. It adds a nullable column and v3
+   create/claim RPCs without removing the `2026-07-19.1` legacy RPC or the
+   `2026-07-20.1` v2 RPC.
+5. Deploy `notify-inquiries` first so every newly claimed job uses
+   `claim_homeground_notification_jobs_v3` and includes the optional budget.
+   Existing rows have `NULL` and remain valid. Keep
+   `NOTIFICATION_PROCESSING_ENABLED=false` until the deployment is healthy.
+6. Deploy `v1-inquiries` while intake is still paused. Confirm its explicit
+   routing:
+   `2026-07-19.1` → legacy destination RPC,
+   `2026-07-20.1` → v2 RPC, and
+   `2026-07-20.2` → v3 RPC. Do not collapse these to a current/old two-way
+   branch; that could silently discard departure or budget data.
+7. Restore `NOTIFICATION_PROCESSING_ENABLED=true`, verify the outbox health
+   endpoint, then restore `INQUIRY_ACCEPTING_SUBMISSIONS=true`. Before changing
+   the static site, submit Email and WhatsApp QA requests from
+   the currently published `2026-07-20.1` page. Confirm both are still saved,
+   notified to Gmail once and replyable.
+8. Publish the English, Chinese and Korean Privacy Notice and form carrying
+   `2026-07-20.2` in the same successful GitHub Pages deployment.
+9. Submit a `2026-07-20.2` Email request with a budget, a WhatsApp request with
+   a budget, and one request with the budget blank. Confirm the exact value or
+   “Not provided” reaches Gmail, the notification calls it traveller context
+   rather than a quote, Reply-To/WhatsApp routing still works, and SaleSmartly
+   receives only the data its authorised project members should see.
+10. Verify that an older form carrying the new budget field is rejected rather
+   than accepted and silently stored without the value. Also confirm a changed
+   budget under the same idempotency key returns `409`.
+11. Keep `2026-07-20.1` and its Privacy Notice accepted until the static cache
+   and browser retry window is over. Remove older values only after production
+   logs show they are no longer needed; do not remove the legacy route version
+   merely because the budget rollout succeeded.
 
-Never remove the old version before the new static build is live. Keep
-`NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY=false` until the corresponding data
-flow, migration and real English, Chinese and Korean acceptance checks pass.
+Never remove an old version before the new static build is live. Keep
+`NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY=false` for a release whose notice,
+storage, notification, SaleSmartly handling and real English, Chinese and
+Korean acceptance checks have not all passed.
 
 ## Local validation
 
@@ -254,10 +314,10 @@ allowed browser origins:
   http://localhost:3001
   http://127.0.0.1:3001
 privacy notice version:
-  2026-07-18.2
+  2026-07-20.2
 saved-phone API WhatsApp:
   disabled
-direct frontend WhatsApp:
+public frontend WhatsApp choice:
   disabled
 ```
 
@@ -406,7 +466,12 @@ aggregate query and response actions are in `docs/studio-inquiry-runbook.md`.
 - Request bodies and provider error bodies are not logged.
 - `public_reference` contains 60 random bits and grants no record access.
 - The outbox claim exposes PII only to the service-role worker. The worker does
-  not log request bodies, contacts, notes or provider response bodies.
+  not log request bodies, contacts, budgets, notes or provider response bodies.
+- The rough budget is rendered only in the escaped Gmail body. It is not put
+  into the subject, Reply-To, WhatsApp URL, monitor response or application
+  logs.
+- SaleSmartly operators use individual accounts and least privilege; the Gmail
+  password is not an integration credential and is never shared.
 
 The migration intentionally does not grant studio operators direct table
 access and does not expose claim/reply mutations. Operators work in the
@@ -432,12 +497,15 @@ Before enabling the public form:
    row; submit a changed payload with that key and confirm `409`.
 3. Force a Resend failure and confirm the Inquiry still returns success, the
    outbox retries, then restore Resend and confirm exactly one real message
-   reaches the monitored inbox with the expected contact, note and `Reply-To`.
-4. Confirm every enabled locale preserves Unicode through Postgres.
+   reaches the monitored inbox with the expected contact, optional departure,
+   optional rough budget, any legacy note and `Reply-To`.
+4. Confirm every enabled locale preserves ordinary Unicode through Postgres,
+   while multiline input, over-100-character budget text, bidirectional
+   controls and Unicode line separators are rejected.
 5. Confirm WhatsApp submissions stay unavailable while server-only
    `WHATSAPP_ENABLED` is unset or `false`, and Email remains usable.
-6. Inspect Edge logs and verify they contain no email, phone, note, request
-   body, or provider response body.
+6. Inspect Edge logs and verify they contain no email, phone, budget, note,
+   request body, or provider response body.
 7. Perform a real monitored-inbox delivery test.
 8. Confirm the technical owner can see pending/failed outbox counts with the
    runbook query and knows when to retry or disable the public form.
@@ -456,6 +524,16 @@ Before enabling the public form:
     external number. Confirm one Inquiry/outbox row and one Gmail notification,
     then use the staff-side link to start the correct studio WhatsApp
     conversation.
+14. Confirm all three destination generations still route to their matching
+    legacy, v2 and v3 RPCs during the overlap window.
+15. Submit the current form once with a traveller-stated budget and once
+    without one. Confirm Gmail displays the preserved currency/range or
+    “Not provided”, excludes the value from the subject and states that it is
+    not a Homeground quote.
+16. Confirm the connected SaleSmartly project has separate least-privilege
+    members, two-factor authentication where supported, no shared Gmail main
+    password, no unexpected OAuth access or forwarding rule, and a Homeground
+    project retention setting of no more than 12 months.
 
 ## Rollback
 
@@ -468,6 +546,12 @@ routine rollback step: changing it during the browser retry window can turn
 the same retry key into a second Inquiry. Treat that secret as a controlled
 data migration with an explicit retry-window plan. Never delete saved
 Inquiries as a rollback shortcut.
+
+If the budget release must be rolled back, republish the `2026-07-20.1`
+frontend but leave the nullable budget column, v3 RPC, v3 claim worker and
+`2026-07-20.2` allow-list entries available for saved requests and retries.
+Do not roll the notification worker back to v2 while a v3 enquiry may still be
+pending, because the older claim shape cannot include its budget in Gmail.
 
 If WhatsApp has a number, device, staffing or delivery problem, first set
 server-only `WHATSAPP_ENABLED=false`, then set repository variable

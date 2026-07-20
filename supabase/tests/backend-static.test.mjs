@@ -15,6 +15,8 @@ const outboxHealthMigrationPath =
   "supabase/migrations/202607190001_homeground_outbox_health.sql";
 const inquiryVolumeHealthMigrationPath =
   "supabase/migrations/202607190003_homeground_inquiry_volume_health.sql";
+const budgetMigrationPath =
+  "supabase/migrations/202607200002_homeground_budget_intake.sql";
 const healthFunctionPath = "supabase/functions/inquiry-health/index.ts";
 const supabaseConfigPath = "supabase/config.toml";
 const envExamplePath = ".env.example";
@@ -166,6 +168,7 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /reply_channel/);
   assert.match(code, /contact_email/);
   assert.match(code, /contact_phone_e164/);
+  assert.match(code, /rough_budget_per_person/);
   assert.match(code, /job\.note/);
   assert.match(code, /reply_to/);
   assert.match(code, /BRAND_NOTIFICATION_EMAIL/);
@@ -174,7 +177,7 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /status: "paused"/);
   assert.ok(
     code.indexOf("NOTIFICATION_PROCESSING_ENABLED") <
-      code.indexOf('"claim_homeground_notification_jobs_v2"'),
+      code.indexOf('"claim_homeground_notification_jobs_v3"'),
   );
   assert.match(code, /NOTIFICATION_PROVIDER_TIMEOUT_SECONDS/);
   assert.match(code, /signal: timeoutController\.signal/);
@@ -188,6 +191,23 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /Reply-To is already set to the traveller/);
   assert.match(code, /Gmail thread and its Sent message/);
   assert.match(code, /traveller-provided text and links are untrusted/);
+  assert.match(
+    code,
+    /Traveller-stated rough budget per person \(international flights excluded\)/,
+  );
+  assert.match(
+    code,
+    /Budget note: traveller context only, not a Homeground quote/,
+  );
+  assert.match(code, /escapeHtml\(roughBudgetPerPerson\)/);
+  const subjectStart = code.indexOf("const subject =");
+  const textStart = code.indexOf("const text =", subjectStart);
+  assert.ok(subjectStart >= 0);
+  assert.ok(textStart > subjectStart);
+  assert.doesNotMatch(
+    code.slice(subjectStart, textStart),
+    /roughBudget|rough_budget|budget/i,
+  );
   assert.match(
     code,
     /response\.status === 408[\s\S]*response\.status === 409[\s\S]*response\.status === 429[\s\S]*response\.status >= 500/,
@@ -213,7 +233,7 @@ test("notification worker gives the monitored inbox a complete human handoff", a
 
   const configurationCheck = code.indexOf("config = notificationConfig()");
   const outboxClaim = code.indexOf(
-    '"claim_homeground_notification_jobs_v2"',
+    '"claim_homeground_notification_jobs_v3"',
   );
   assert.ok(configurationCheck >= 0);
   assert.ok(outboxClaim > configurationCheck);
@@ -275,7 +295,7 @@ test("outbox health RPC returns only aggregate non-PII counts", async () => {
   );
   assert.doesNotMatch(
     sql,
-    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|\bnote\b/,
+    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|rough_budget|\bbudget\b|\bnote\b/,
   );
 });
 
@@ -295,7 +315,7 @@ test("health snapshot detects successful intake floods without returning PII", a
   );
   assert.doesNotMatch(
     sql,
-    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|\bnote\b/,
+    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|rough_budget|\bbudget\b|\bnote\b/,
   );
 });
 
@@ -322,7 +342,7 @@ test("independent health function is secret-protected and fails on unhealthy cou
   assert.doesNotMatch(code, /console\.(?:log|info|warn|error)/);
   assert.doesNotMatch(
     code,
-    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|\bnote\b/,
+    /contact_email|contact_phone|public_reference|route_snapshot|answers_json|rough_budget|\bbudget\b|\bnote\b/,
   );
   assert.match(
     config,
@@ -439,15 +459,24 @@ test("published privacy copy reflects the production data path", async () => {
   assert.match(copy, /either an email address or a WhatsApp number/);
   assert.match(copy, /邮箱或 WhatsApp 号码中的一种/);
   assert.match(copy, /이메일 주소 또는 WhatsApp 번호 중 하나/);
-  assert.match(copy, /optional departure country or region/);
+  assert.match(copy, /optional departure country or region/i);
   assert.match(copy, /选填的出发国家或地区/);
   assert.match(copy, /선택 입력한 출발 국가 또는 지역/);
+  assert.match(copy, /Optional rough budget per person/);
+  assert.match(copy, /选填的每人大致预算/);
+  assert.match(copy, /선택 입력한 1인당 대략적인 예산/);
+  assert.match(copy, /excludes international flights/);
+  assert.match(copy, /不含国际机票/);
+  assert.match(copy, /국제선 항공권은 제외/);
+  assert.match(copy, /is not a Homeground quote/);
+  assert.match(copy, /不是 Homeground 的正式报价/);
+  assert.match(copy, /Homeground의 정식 견적이 아니/);
   assert.doesNotMatch(copy, /direct WhatsApp handoff/);
   assert.doesNotMatch(copy, /WhatsApp 直接入口/);
   assert.doesNotMatch(copy, /WhatsApp 직접 연결/);
   assert.match(
     versions,
-    /currentPrivacyNoticeVersion = "2026-07-20\.1"/,
+    /currentPrivacyNoticeVersion = "2026-07-20\.2"/,
   );
   assert.doesNotMatch(defaultPage, /index:\s*false|follow:\s*false/);
   assert.doesNotMatch(localizedPage, /index:\s*false|follow:\s*false/);
@@ -469,6 +498,7 @@ test("backend sources contain no hardcoded personal contact or secret", async ()
       source(scheduleMigrationPath),
       source(rateLimitRetentionMigrationPath),
       source(outboxHealthMigrationPath),
+      source(budgetMigrationPath),
       source(healthFunctionPath),
       source(healthWorkflowPath),
     ])
@@ -524,6 +554,14 @@ test("environment template covers the public form and server functions", async (
     example,
     /^NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false$/m,
   );
+  assert.match(
+    example,
+    /^ALLOWED_FORM_VERSIONS=2026-07-18\.1,2026-07-19\.1,2026-07-20\.1,2026-07-20\.2$/m,
+  );
+  assert.match(
+    example,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19\.1,2026-07-20\.1,2026-07-20\.2$/m,
+  );
   assert.doesNotMatch(
     example,
     /^NEXT_PUBLIC_HOMEGROUND_WHATSAPP_ENABLED=/m,
@@ -569,6 +607,26 @@ test("fallback email enters the same monitored Gmail workflow", async () => {
   assert.match(runbook, /same\s+monitored inbox/);
   assert.match(runbook, /Homeground inquiries/);
   assert.doesNotMatch(runbook, /New → Claimed → Replied → Closed/);
+});
+
+test("studio runbook treats the optional budget as context rather than a quote", async () => {
+  const runbook = await source(studioRunbookPath);
+  assert.match(
+    runbook,
+    /traveller-stated rough budget[\s\S]*international flights[\s\S]*not a Homeground quote/i,
+  );
+  assert.match(
+    runbook,
+    /budget is absent or unclear|budget was not provided|not provided/i,
+  );
+  assert.match(runbook, /currency and range as entered/i);
+  assert.match(
+    runbook,
+    /SaleSmartly[\s\S]*12 months[\s\S]*separate member account/i,
+  );
+  assert.match(runbook, /two-factor authentication/i);
+  assert.match(runbook, /OAuth[\s\S]*forwarding rules/i);
+  assert.match(runbook, /never share the (?:Gmail )?main password/i);
 });
 
 test("frontend launch gates and permanent privacy entry stay connected", async () => {

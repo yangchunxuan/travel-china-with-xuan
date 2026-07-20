@@ -112,7 +112,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Enquiry privacy at a glance",
       title: "Your details are used for a human reply",
       body:
-        "Homeground uses the trip brief, the one contact method you choose and any optional departure country or region to review and answer this travel request. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
+        "Homeground uses the trip brief, the one contact method you choose and any optional departure country, region or rough per-person budget to review and answer this travel request. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
       blockersTitle: "Key points",
       blockers: [
         "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
@@ -132,10 +132,11 @@ export const homegroundPrivacyCopy: Record<
     currentFlow: {
       title: "From the website to a human reply",
       paragraphs: [
-        "The trip checker may keep questionnaire answers in this browser’s session storage so progress can be restored. It does not store the traveller’s contact details or optional departure country there.",
-        "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional departure country or region. The page shows a saved state only after that save succeeds.",
+        "The trip checker may keep questionnaire answers in this browser’s session storage so progress can be restored. It does not store the traveller’s contact details, optional departure country or rough budget there.",
+        "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
         "If the landing URL contains utm_source, utm_medium or utm_campaign labels, they are stored with the submitted enquiry to show how that request reached Homeground. They are not used for cross-site tracking.",
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
+        "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
         "A prepared email link is only an emergency fallback after the service confirms that an enquiry was not saved. It is not the normal contact path and opening it is never described as a successful submission.",
       ],
@@ -148,21 +149,31 @@ export const homegroundPrivacyCopy: Record<
       items: [
         {
           name: "Trip brief",
-          stage: "Browser session and submitted enquiry",
+          stage:
+            "Browser session, submitted enquiry, notification and connected team inbox",
           purpose:
             "Selected destinations, another place entered, total nights, party, pace, must-see priorities, timing status, page language and internal rules version describe the request.",
         },
         {
           name: "Chosen reply contact",
-          stage: "Submitted enquiry and Gmail notification",
+          stage:
+            "Submitted enquiry, Gmail notification and connected team inbox",
           purpose:
             "The traveller submits either an email address or a WhatsApp number. It is used to reply to this enquiry and is not consent for unrelated marketing.",
         },
         {
           name: "Optional departure country or region",
-          stage: "Submitted enquiry when entered",
+          stage:
+            "Submitted enquiry, notification and connected team inbox when entered",
           purpose:
             "This optional context helps the studio understand the traveller’s likely departure point. It can be provided later instead.",
+        },
+        {
+          name: "Optional rough budget per person",
+          stage:
+            "Submitted enquiry, notification and connected team inbox when entered",
+          purpose:
+            "This traveller-stated range helps the studio prepare realistic options. It excludes international flights, is not a Homeground quote and can be left blank.",
         },
         {
           name: "Technical request record",
@@ -209,6 +220,12 @@ export const homegroundPrivacyCopy: Record<
             "If the traveller selects WhatsApp, the number is saved with the enquiry so authorised staff can start the requested conversation. WhatsApp and Meta may process that later conversation under their own terms and infrastructure.",
         },
         {
+          label: "Shared team inbox",
+          value: "SaleSmartly · connected Gmail and WhatsApp channels",
+          detail:
+            "Synchronises selected Gmail folders and WhatsApp conversations so authorised studio members can handle the enquiry together. SaleSmartly and its service providers may process this information under their own terms and infrastructure.",
+        },
+        {
           label: "Analytics and AI chat",
           value: "Disabled",
           detail:
@@ -231,9 +248,9 @@ export const homegroundPrivacyCopy: Record<
         {
           label: "Processing and storage region",
           value:
-            "Supabase Seoul · Resend Tokyo · Gmail and WhatsApp global infrastructure",
+            "Supabase Seoul · Resend Tokyo · Gmail, WhatsApp and SaleSmartly provider infrastructure",
           detail:
-            "These are the configured primary regions; email delivery, WhatsApp conversations, security and support may involve provider infrastructure in other countries.",
+            "Seoul and Tokyo are the configured primary regions. Email delivery, team-inbox synchronisation, WhatsApp conversations, security and support may involve provider infrastructure in other countries.",
         },
         {
           label: "Inquiry retention",
@@ -266,7 +283,7 @@ export const homegroundPrivacyCopy: Record<
         "Do not submit the enquiry form.",
         "Ask what personal information is held and request access, correction or deletion after reasonable identity verification.",
         "Continue using the route finder without contacting Homeground.",
-        "Choose either email or WhatsApp for the human reply, and leave the optional departure country blank.",
+        "Choose either email or WhatsApp for the human reply, and leave the optional departure country or rough budget blank.",
       ],
     },
     contact: {
@@ -302,7 +319,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "咨询隐私摘要",
       title: "你的信息只用于人工回复",
       body:
-        "Homeground 使用你主动提交的旅行需求、所选的一种联系方式以及选填的出发国家或地区，来人工复核并回复本次咨询。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
+        "Homeground 使用你主动提交的旅行需求、所选的一种联系方式，以及选填的出发国家、地区或每人大致预算，来人工复核并回复本次咨询。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
       blockersTitle: "关键规则",
       blockers: [
         "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
@@ -322,10 +339,11 @@ export const homegroundPrivacyCopy: Record<
     currentFlow: {
       title: "从网站到人工回复",
       paragraphs: [
-        "旅行时间检查可能把问卷答案保存在当前浏览器会话中，以便恢复进度；访客的联系方式和选填出发国家或地区不会存入这里。",
-        "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家或地区。只有保存成功后，网页才会显示已保存。",
+        "旅行时间检查可能把问卷答案保存在当前浏览器会话中，以便恢复进度；访客的联系方式、选填出发国家或地区和大致预算不会存入这里。",
+        "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家、地区或每人大致预算。只有保存成功后，网页才会显示已保存。",
         "如果落地页网址包含 utm_source、utm_medium 或 utm_campaign 标签，这些标签会随已提交的咨询保存，用于了解该咨询如何到达 Homeground；它们不会用于跨网站追踪。",
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
+        "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
         "只有当系统明确确认咨询没有保存时，页面才可提供预填邮件作为应急方式。它不是正常入口，打开邮件应用也绝不能被描述成提交成功。",
       ],
@@ -338,21 +356,27 @@ export const homegroundPrivacyCopy: Record<
       items: [
         {
           name: "旅行需求",
-          stage: "浏览器会话与已提交咨询",
+          stage: "浏览器会话、已提交咨询、通知与已连接的团队收件箱",
           purpose:
             "所选目的地、其他地点、总晚数、同行者、节奏、必去优先项、时间状态、页面语言和内部规则版本用于描述本次需求。",
         },
         {
           name: "所选回复联系方式",
-          stage: "已提交咨询与 Gmail 通知",
+          stage: "已提交咨询、Gmail 通知与已连接的团队收件箱",
           purpose:
             "访客提交邮箱或 WhatsApp 号码中的一种，只用于回复本次咨询，不代表同意接收无关营销。",
         },
         {
           name: "选填的出发国家或地区",
-          stage: "填写后随咨询提交",
+          stage: "填写后进入已提交咨询、通知与已连接的团队收件箱",
           purpose:
             "这项选填信息帮助工作室理解访客可能从哪里出发，也可以稍后再提供。",
+        },
+        {
+          name: "选填的每人大致预算",
+          stage: "填写后进入已提交咨询、通知与已连接的团队收件箱",
+          purpose:
+            "访客填写的金额或范围仅帮助工作室准备更现实的选项，不含国际机票，不是 Homeground 的正式报价，也可以留空。",
         },
         {
           name: "技术请求记录",
@@ -396,6 +420,12 @@ export const homegroundPrivacyCopy: Record<
             "访客选择 WhatsApp 时，号码会随咨询保存，以便获授权的工作人员发起访客所请求的对话。WhatsApp 与 Meta 可能依据其自身条款和基础设施处理后续对话。",
         },
         {
+          label: "团队共享收件箱",
+          value: "SaleSmartly · 已连接 Gmail 与 WhatsApp 渠道",
+          detail:
+            "同步选定的 Gmail 文件夹和 WhatsApp 对话，让获授权的工作室成员共同处理咨询。SaleSmartly 及其服务商可能依据自身条款和基础设施处理这些信息。",
+        },
+        {
           label: "统计与 AI 聊天",
           value: "关闭",
           detail:
@@ -416,9 +446,10 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           label: "处理与存储地区",
-          value: "Supabase 首尔 · Resend 东京 · Gmail 与 WhatsApp 全球基础设施",
+          value:
+            "Supabase 首尔 · Resend 东京 · Gmail、WhatsApp 与 SaleSmartly 服务商基础设施",
           detail:
-            "首尔和东京是当前配置的主要地区；邮件投递、WhatsApp 对话、安全和技术支持可能使用服务商在其他国家或地区的基础设施。",
+            "首尔和东京是当前配置的主要地区；邮件投递、团队收件箱同步、WhatsApp 对话、安全和技术支持可能使用服务商在其他国家或地区的基础设施。",
         },
         {
           label: "咨询信息保留",
@@ -451,7 +482,7 @@ export const homegroundPrivacyCopy: Record<
         "选择不提交咨询表单。",
         "在合理核验身份后，查询已保存的信息并申请访问、更正或删除。",
         "不联系 Homeground，继续使用路线工具。",
-        "选择邮箱或 WhatsApp 接收人工回复，并可不填写出发国家或地区。",
+        "选择邮箱或 WhatsApp 接收人工回复，并可不填写出发国家、地区或大致预算。",
       ],
     },
     contact: {
@@ -488,7 +519,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "문의 개인정보 요약",
       title: "제출한 정보는 사람의 답변에만 사용합니다",
       body:
-        "Homeground는 여행자가 직접 제출한 여행 요청서, 선택한 한 가지 연락 방법과 선택 입력한 출발 국가 또는 지역을 이번 문의를 검토하고 답변하는 데 사용합니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
+        "Homeground는 여행자가 직접 제출한 여행 요청서, 선택한 한 가지 연락 방법과 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 이번 문의를 검토하고 답변하는 데 사용합니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
       blockersTitle: "핵심 원칙",
       blockers: [
         "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
@@ -508,10 +539,11 @@ export const homegroundPrivacyCopy: Record<
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
       paragraphs: [
-        "여행 시간 확인은 진행 상태를 복원하기 위해 설문 답변을 현재 브라우저 세션에 보관할 수 있습니다. 연락처와 선택 입력한 출발 국가 또는 지역은 여기에 저장하지 않습니다.",
-        "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가 또는 지역을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
+        "여행 시간 확인은 진행 상태를 복원하기 위해 설문 답변을 현재 브라우저 세션에 보관할 수 있습니다. 연락처, 선택 입력한 출발 국가 또는 지역과 대략적인 예산은 여기에 저장하지 않습니다.",
+        "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
         "방문 주소에 utm_source, utm_medium 또는 utm_campaign 표지가 있으면 Homeground에 문의가 유입된 경로를 확인하기 위해 제출된 문의와 함께 저장합니다. 이 표지는 사이트 간 추적에 사용하지 않습니다.",
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
+        "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
         "서비스가 문의를 저장하지 않았다고 명확히 확인한 경우에만 작성된 이메일을 비상 대안으로 제공합니다. 이는 일반 문의 경로가 아니며 이메일 앱을 여는 것을 접수 완료라고 표시하지 않습니다.",
       ],
@@ -524,21 +556,31 @@ export const homegroundPrivacyCopy: Record<
       items: [
         {
           name: "여행 요청서",
-          stage: "브라우저 세션과 제출된 문의",
+          stage:
+            "브라우저 세션, 제출된 문의, 알림 및 연결된 팀 받은편지함",
           purpose:
             "선택한 목적지, 추가 장소, 총 숙박일수, 일행, 속도, 꼭 가야 할 우선순위, 시간 상태, 페이지 언어와 내부 규칙 버전으로 요청을 설명합니다.",
         },
         {
           name: "선택한 답변 연락처",
-          stage: "제출된 문의와 Gmail 알림",
+          stage:
+            "제출된 문의, Gmail 알림 및 연결된 팀 받은편지함",
           purpose:
             "여행자는 이메일 주소 또는 WhatsApp 번호 중 하나를 제출합니다. 이 문의에 답하는 데만 사용하며 관련 없는 마케팅 동의로 보지 않습니다.",
         },
         {
           name: "선택 입력한 출발 국가 또는 지역",
-          stage: "입력한 경우 제출된 문의",
+          stage:
+            "입력한 경우 제출된 문의, 알림 및 연결된 팀 받은편지함",
           purpose:
             "이 선택 정보는 여행자가 어디에서 출발할 가능성이 있는지 이해하는 데 도움이 되며 나중에 알려 줘도 됩니다.",
+        },
+        {
+          name: "선택 입력한 1인당 대략적인 예산",
+          stage:
+            "입력한 경우 제출된 문의, 알림 및 연결된 팀 받은편지함",
+          purpose:
+            "여행자가 입력한 금액 또는 범위는 현실적인 선택지를 준비하는 데만 사용합니다. 국제선 항공권은 제외하며 Homeground의 정식 견적이 아니고 비워 둘 수 있습니다.",
         },
         {
           name: "기술 요청 기록",
@@ -584,6 +626,12 @@ export const homegroundPrivacyCopy: Record<
             "여행자가 WhatsApp을 선택하면 권한이 있는 담당자가 요청된 대화를 시작할 수 있도록 번호를 문의와 함께 저장합니다. WhatsApp과 Meta는 자체 약관과 인프라에 따라 이후 대화를 처리할 수 있습니다.",
         },
         {
+          label: "공유 팀 받은편지함",
+          value: "SaleSmartly · 연결된 Gmail 및 WhatsApp 채널",
+          detail:
+            "선택한 Gmail 폴더와 WhatsApp 대화를 동기화하여 권한 있는 스튜디오 구성원이 함께 문의를 처리할 수 있게 합니다. SaleSmartly와 그 서비스 제공업체는 자체 약관과 인프라에 따라 이 정보를 처리할 수 있습니다.",
+        },
+        {
           label: "분석 및 AI 채팅",
           value: "사용 안 함",
           detail:
@@ -606,9 +654,9 @@ export const homegroundPrivacyCopy: Record<
         {
           label: "처리 및 저장 지역",
           value:
-            "Supabase 서울 · Resend 도쿄 · Gmail 및 WhatsApp 글로벌 인프라",
+            "Supabase 서울 · Resend 도쿄 · Gmail, WhatsApp 및 SaleSmartly 제공업체 인프라",
           detail:
-            "서울과 도쿄는 현재 설정된 주요 리전이며 이메일 전송, WhatsApp 대화, 보안 및 기술 지원에는 다른 국가의 제공업체 인프라가 사용될 수 있습니다.",
+            "서울과 도쿄는 현재 설정된 주요 리전이며 이메일 전송, 팀 받은편지함 동기화, WhatsApp 대화, 보안 및 기술 지원에는 다른 국가의 제공업체 인프라가 사용될 수 있습니다.",
         },
         {
           label: "문의 정보 보관",
@@ -641,7 +689,7 @@ export const homegroundPrivacyCopy: Record<
         "문의 양식을 제출하지 않을 수 있습니다.",
         "합리적인 본인 확인 후 보관 정보의 열람, 수정 또는 삭제를 요청할 수 있습니다.",
         "Homeground에 연락하지 않고 여행 동선 찾기를 계속 이용할 수 있습니다.",
-        "이메일 또는 WhatsApp으로 사람의 답장을 받도록 선택하고 출발 국가 또는 지역은 비워 둘 수 있습니다.",
+        "이메일 또는 WhatsApp으로 사람의 답장을 받도록 선택하고 출발 국가, 지역 또는 대략적인 예산은 비워 둘 수 있습니다.",
       ],
     },
     contact: {

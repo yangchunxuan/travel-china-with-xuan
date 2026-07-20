@@ -84,7 +84,8 @@ type ValidationField =
   | "contact"
   | "email"
   | "phone"
-  | "departureCountry";
+  | "departureCountry"
+  | "roughBudgetPerPerson";
 type ValidationErrors = Partial<Record<ValidationField, string>>;
 type FailureKind =
   | "request_too_large"
@@ -119,6 +120,7 @@ interface ApiSuccessEnvelope {
 const maximumEmailLength = 254;
 const maximumPhoneLength = 64;
 const maximumDepartureCountryLength = 80;
+const maximumRoughBudgetLength = 100;
 const maximumRequestBytes = 16 * 1024;
 const requestTimeoutMilliseconds = 20_000;
 
@@ -131,13 +133,13 @@ function createUuid(): string {
 }
 
 function hasUnsupportedControlCharacters(value: string): boolean {
-  return /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069]/u
+  return /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069\uD800-\uDFFF]/u
     .test(value);
 }
 
 function stripUnsupportedControlCharacters(value: string): string {
   return value.replace(
-    /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069]/gu,
+    /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069\uD800-\uDFFF]/gu,
     "",
   );
 }
@@ -189,6 +191,15 @@ function maskPhone(value: string): string {
 function isValidDepartureCountry(value: string): boolean {
   return (
     Array.from(value.trim()).length <= maximumDepartureCountryLength &&
+    !/[\r\n\t\u2028\u2029]/u.test(value) &&
+    !hasUnsupportedControlCharacters(value)
+  );
+}
+
+function isValidRoughBudget(value: string): boolean {
+  return (
+    Array.from(value.trim()).length <= maximumRoughBudgetLength &&
+    !/[\r\n\t\u2028\u2029]/u.test(value) &&
     !hasUnsupportedControlCharacters(value)
   );
 }
@@ -322,6 +333,8 @@ export function PlannerHandoff({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [departureCountry, setDepartureCountry] = useState("");
+  const [roughBudgetPerPerson, setRoughBudgetPerPerson] =
+    useState("");
   const [submittedChannel, setSubmittedChannel] =
     useState<ContactMethod>("email");
   const [submittedContact, setSubmittedContact] = useState("");
@@ -346,16 +359,22 @@ export function PlannerHandoff({
 
   const idPrefix = useId();
   const contactGroupId = `${idPrefix}-contact`;
+  const emailMethodId = `${contactGroupId}-email-method`;
+  const whatsappMethodId = `${contactGroupId}-whatsapp-method`;
   const emailId = `${idPrefix}-email`;
   const phoneId = `${idPrefix}-phone`;
+  const optionalDetailsHintId = `${idPrefix}-optional-details-hint`;
   const departureCountryId = `${idPrefix}-departure-country`;
+  const roughBudgetId = `${idPrefix}-rough-budget`;
   const emailHintId = `${emailId}-hint`;
   const phoneHintId = `${phoneId}-hint`;
   const departureCountryHintId = `${departureCountryId}-hint`;
+  const roughBudgetHintId = `${roughBudgetId}-hint`;
   const contactErrorId = `${contactGroupId}-error`;
   const emailErrorId = `${emailId}-error`;
   const phoneErrorId = `${phoneId}-error`;
   const departureCountryErrorId = `${departureCountryId}-error`;
+  const roughBudgetErrorId = `${roughBudgetId}-error`;
   const routeReference = `${match.routeId}@${match.ruleVersion}`;
   const routeIdentity = JSON.stringify({
     journeyId: journey?.journeyId ?? null,
@@ -446,7 +465,8 @@ export function PlannerHandoff({
   const formIsDirty =
     email.trim().length > 0 ||
     phone.trim().length > 0 ||
-    departureCountry.trim().length > 0;
+    departureCountry.trim().length > 0 ||
+    roughBudgetPerPerson.trim().length > 0;
   const hasUnsavedContactDraft =
     formIsDirty && status !== "success" && status !== "disabled";
 
@@ -640,6 +660,10 @@ export function PlannerHandoff({
       nextErrors.departureCountry =
         copy.handoff.departureCountryError;
     }
+    if (!isValidRoughBudget(roughBudgetPerPerson)) {
+      nextErrors.roughBudgetPerPerson =
+        copy.handoff.roughBudgetError;
+    }
 
     return nextErrors;
   };
@@ -699,6 +723,8 @@ export function PlannerHandoff({
               phoneRaw: phone.trim(),
             },
       departureCountry: departureCountry.trim() || null,
+      roughBudgetPerPerson:
+        roughBudgetPerPerson.trim() || null,
       note: null,
       privacyNoticeVersion: currentPrivacyNoticeVersion,
       attribution,
@@ -725,6 +751,10 @@ export function PlannerHandoff({
       if (fields.departureCountry) {
         nextErrors.departureCountry =
           copy.handoff.departureCountryError;
+      }
+      if (fields.roughBudgetPerPerson) {
+        nextErrors.roughBudgetPerPerson =
+          copy.handoff.roughBudgetError;
       }
     }
     if (Object.keys(nextErrors).length === 0) {
@@ -998,10 +1028,12 @@ export function PlannerHandoff({
     status === "submitting" ||
     status === "uncertain";
   const errorTargets: Record<ValidationField, string> = {
-    contact: contactGroupId,
+    contact:
+      contactMethod === "email" ? emailMethodId : whatsappMethodId,
     email: emailId,
     phone: phoneId,
     departureCountry: departureCountryId,
+    roughBudgetPerPerson: roughBudgetId,
   };
   const errorEntries = Object.entries(errors) as Array<
     [ValidationField, string]
@@ -1199,41 +1231,83 @@ export function PlannerHandoff({
                   </div>
                 )}
 
-                <div
-                  id={contactGroupId}
-                  className={styles.contactSwitcher}
-                  aria-describedby={
-                    errors.contact ? contactErrorId : undefined
-                  }
-                >
-                  {whatsappIntakeReady && (
-                    <button
-                      className={styles.switchMethod}
-                      type="button"
-                      disabled={controlsLocked}
-                      onClick={() =>
-                        changeContactMethod(
-                          contactMethod === "email"
-                            ? "whatsapp"
-                            : "email",
-                        )
-                      }
-                    >
-                      {contactMethod === "email"
-                        ? copy.handoff.useWhatsapp
-                        : copy.handoff.useEmail}
-                    </button>
-                  )}
-                  {errors.contact && (
-                    <p
-                      className={styles.fieldError}
-                      id={contactErrorId}
-                      role="alert"
-                    >
-                      {errors.contact}
-                    </p>
-                  )}
-                </div>
+                {(whatsappIntakeReady || errors.contact) && (
+                  <div
+                    id={contactGroupId}
+                    className={styles.contactMethodRegion}
+                  >
+                    {whatsappIntakeReady && (
+                      <fieldset
+                        className={styles.contactMethodGroup}
+                        disabled={controlsLocked}
+                        aria-describedby={
+                          errors.contact ? contactErrorId : undefined
+                        }
+                      >
+                        <legend
+                          className={styles.contactMethodLegend}
+                        >
+                          {copy.handoff.contactMethodLabel}
+                        </legend>
+                        <div
+                          className={styles.contactMethodOptions}
+                        >
+                          <label
+                            className={styles.contactMethodOption}
+                            data-selected={
+                              contactMethod === "email"
+                            }
+                            data-disabled={controlsLocked}
+                          >
+                            <input
+                              id={emailMethodId}
+                              className={styles.contactMethodRadio}
+                              type="radio"
+                              name="contactMethod"
+                              value="email"
+                              checked={contactMethod === "email"}
+                              onChange={() =>
+                                changeContactMethod("email")
+                              }
+                            />
+                            <span>{copy.handoff.emailOption}</span>
+                          </label>
+                          <label
+                            className={styles.contactMethodOption}
+                            data-selected={
+                              contactMethod === "whatsapp"
+                            }
+                            data-disabled={controlsLocked}
+                          >
+                            <input
+                              id={whatsappMethodId}
+                              className={styles.contactMethodRadio}
+                              type="radio"
+                              name="contactMethod"
+                              value="whatsapp"
+                              checked={contactMethod === "whatsapp"}
+                              onChange={() =>
+                                changeContactMethod("whatsapp")
+                              }
+                            />
+                            <span>
+                              {copy.handoff.whatsappOption}
+                            </span>
+                          </label>
+                        </div>
+                      </fieldset>
+                    )}
+                    {errors.contact && (
+                      <p
+                        className={styles.fieldError}
+                        id={contactErrorId}
+                        role="alert"
+                      >
+                        {errors.contact}
+                      </p>
+                    )}
+                  </div>
+                )}
 
                 {contactMethod === "email" ? (
                   <div className={styles.field}>
@@ -1338,51 +1412,115 @@ export function PlannerHandoff({
                   </div>
                 )}
 
-                <div className={styles.field}>
-                  <label htmlFor={departureCountryId}>
-                    {copy.handoff.departureCountryLabel}
-                  </label>
-                  <input
-                    id={departureCountryId}
-                    name="departureCountry"
-                    type="text"
-                    autoComplete="country-name"
-                    dir="auto"
-                    maxLength={maximumDepartureCountryLength}
-                    value={departureCountry}
-                    disabled={controlsLocked}
-                    aria-invalid={Boolean(errors.departureCountry)}
-                    aria-describedby={`${departureCountryHintId}${
-                      errors.departureCountry
-                        ? ` ${departureCountryErrorId}`
-                        : ""
-                    }`}
-                    onBlur={() =>
-                      setBlurError(
-                        "departureCountry",
-                        isValidDepartureCountry(departureCountry)
-                          ? undefined
-                          : copy.handoff.departureCountryError,
-                      )
-                    }
-                    onChange={(event) => {
-                      setDepartureCountry(event.target.value);
-                      markEditing("departureCountry");
-                    }}
-                  />
-                  <p className={styles.hint} id={departureCountryHintId}>
-                    {copy.handoff.departureCountryHint}
+                <fieldset
+                  className={styles.optionalDetails}
+                  aria-describedby={optionalDetailsHintId}
+                >
+                  <legend className={styles.optionalDetailsLegend}>
+                    {copy.handoff.optionalDetailsLabel}
+                  </legend>
+                  <p
+                    className={styles.optionalDetailsHint}
+                    id={optionalDetailsHintId}
+                  >
+                    {copy.handoff.optionalDetailsHint}
                   </p>
-                  {errors.departureCountry && (
-                    <p
-                      className={styles.fieldError}
-                      id={departureCountryErrorId}
-                      role="alert"
-                    >
-                      {errors.departureCountry}
+
+                  <div className={styles.field}>
+                    <label htmlFor={departureCountryId}>
+                      {copy.handoff.departureCountryLabel}
+                    </label>
+                    <input
+                      id={departureCountryId}
+                      name="departureCountry"
+                      type="text"
+                      autoComplete="country-name"
+                      dir="auto"
+                      maxLength={maximumDepartureCountryLength}
+                      value={departureCountry}
+                      disabled={controlsLocked}
+                      aria-invalid={Boolean(errors.departureCountry)}
+                      aria-describedby={`${departureCountryHintId}${
+                        errors.departureCountry
+                          ? ` ${departureCountryErrorId}`
+                          : ""
+                      }`}
+                      onBlur={() =>
+                        setBlurError(
+                          "departureCountry",
+                          isValidDepartureCountry(departureCountry)
+                            ? undefined
+                            : copy.handoff.departureCountryError,
+                        )
+                      }
+                      onChange={(event) => {
+                        setDepartureCountry(event.target.value);
+                        markEditing("departureCountry");
+                      }}
+                    />
+                    <p className={styles.hint} id={departureCountryHintId}>
+                      {copy.handoff.departureCountryHint}
                     </p>
-                  )}
-                </div>
+                    {errors.departureCountry && (
+                      <p
+                        className={styles.fieldError}
+                        id={departureCountryErrorId}
+                        role="alert"
+                      >
+                        {errors.departureCountry}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className={styles.field}>
+                    <label htmlFor={roughBudgetId}>
+                      {copy.handoff.roughBudgetLabel}
+                    </label>
+                    <input
+                      id={roughBudgetId}
+                      name="roughBudgetPerPerson"
+                      type="text"
+                      autoComplete="off"
+                      dir="auto"
+                      maxLength={maximumRoughBudgetLength}
+                      placeholder={copy.handoff.roughBudgetPlaceholder}
+                      value={roughBudgetPerPerson}
+                      disabled={controlsLocked}
+                      aria-invalid={Boolean(
+                        errors.roughBudgetPerPerson,
+                      )}
+                      aria-describedby={`${roughBudgetHintId}${
+                        errors.roughBudgetPerPerson
+                          ? ` ${roughBudgetErrorId}`
+                          : ""
+                      }`}
+                      onBlur={() =>
+                        setBlurError(
+                          "roughBudgetPerPerson",
+                          isValidRoughBudget(roughBudgetPerPerson)
+                            ? undefined
+                            : copy.handoff.roughBudgetError,
+                        )
+                      }
+                      onChange={(event) => {
+                        setRoughBudgetPerPerson(event.target.value);
+                        markEditing("roughBudgetPerPerson");
+                      }}
+                    />
+                    <p className={styles.hint} id={roughBudgetHintId}>
+                      {copy.handoff.roughBudgetHint}
+                    </p>
+                    {errors.roughBudgetPerPerson && (
+                      <p
+                        className={styles.fieldError}
+                        id={roughBudgetErrorId}
+                        role="alert"
+                      >
+                        {errors.roughBudgetPerPerson}
+                      </p>
+                    )}
+                  </div>
+                </fieldset>
 
                 <div className={styles.honeypot} aria-hidden="true">
                   <label htmlFor={`${idPrefix}-company`}>

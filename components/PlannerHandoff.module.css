@@ -120,40 +120,105 @@
   padding: 0;
 }
 
-.contactSwitcher {
-  display: flex;
-  justify-content: flex-end;
-  min-block-size: 2.75rem;
+.contactMethodRegion {
+  min-inline-size: 0;
   scroll-margin-top: 6rem;
 }
 
-.switchMethod {
-  background: transparent;
+.contactMethodGroup {
   border: 0;
-  border-radius: 0.25rem;
-  color: #7b2d1c;
+  margin: 0;
+  min-inline-size: 0;
+  padding: 0;
+}
+
+.contactMethodLegend {
+  color: #17251f;
+  font-family: var(--hg-ui-display, inherit);
+  font-size: 1rem;
+  font-weight: 730;
+  line-height: 1.4;
+  padding: 0;
+}
+
+.contactMethodOptions {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-block-start: 0.65rem;
+}
+
+.contactMethodOption {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #99aa9f;
+  border-radius: 0.75rem;
+  color: #17251f;
   cursor: pointer;
-  font: inherit;
-  font-size: 0.84rem;
+  display: flex;
+  font-family: var(--hg-ui-display, inherit);
+  font-size: 0.94rem;
   font-weight: 720;
-  min-block-size: 2.75rem;
-  padding: 0.55rem 0.2rem;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  gap: 0.65rem;
+  min-block-size: 3.25rem;
+  min-inline-size: 0;
+  padding: 0.72rem 0.82rem;
 }
 
-.switchMethod:hover {
-  text-decoration-thickness: 2px;
+.contactMethodOption:hover {
+  border-color: #536d60;
 }
 
-.switchMethod:focus-visible {
+.contactMethodOption:focus-within {
+  border-color: var(--handoff-focus);
   outline: 3px solid var(--handoff-focus);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
-.switchMethod:disabled {
+.contactMethodOption[data-selected="true"] {
+  background: #eef6f2;
+  border-color: #183c32;
+  box-shadow: inset 0 0 0 1px #183c32;
+}
+
+.contactMethodOption[data-disabled="true"] {
   color: #66756d;
   cursor: wait;
+  opacity: 0.72;
+}
+
+.contactMethodRadio {
+  accent-color: #183c32;
+  block-size: 1.15rem;
+  flex: 0 0 auto;
+  inline-size: 1.15rem;
+  margin: 0;
+}
+
+.optionalDetails {
+  border: 0;
+  border-block-start: 1px solid #d8dfda;
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  min-inline-size: 0;
+  padding: 1.15rem 0 0;
+}
+
+.optionalDetailsLegend {
+  color: #17251f;
+  font-family: var(--hg-ui-display, inherit);
+  font-size: 1rem;
+  font-weight: 730;
+  line-height: 1.4;
+  padding: 0;
+}
+
+.optionalDetailsHint {
+  color: #4d5e55;
+  font-size: 0.79rem;
+  line-height: 1.55;
+  margin: -0.65rem 0 0;
 }
 
 .required {
@@ -544,6 +609,7 @@
 
 @media (prefers-contrast: more) {
   .card,
+  .contactMethodOption,
   .field input,
   .primaryAction,
   .secondaryAction,

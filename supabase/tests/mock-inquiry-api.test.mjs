@@ -87,6 +87,7 @@ function destinationPayload() {
       email: "traveller@example.com",
     },
     departureCountry: null,
+    roughBudgetPerPerson: "USD 2,000–3,000",
     note: "Keep every place in the planner handoff.",
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
@@ -233,6 +234,23 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal(
     destinationReplayBody.inquiryId,
     destinationFirstBody.inquiryId,
+  );
+
+  const changedBudget = destinationPayload();
+  changedBudget.roughBudgetPerPerson = "USD 3,000–4,000";
+  const budgetConflict = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Origin: origin,
+      "Content-Type": "application/json",
+      "Idempotency-Key": destinationKey,
+    },
+    body: JSON.stringify(changedBudget),
+  });
+  assert.equal(budgetConflict.status, 409);
+  assert.equal(
+    (await budgetConflict.json()).error.code,
+    "idempotency_conflict",
   );
 
   const whatsappKey = "97c7438e-3904-4827-b782-6c07e6aa6238";

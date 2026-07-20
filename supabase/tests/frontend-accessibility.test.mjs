@@ -228,12 +228,41 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(plannerHandoff, /autoComplete="email"/);
   assert.match(plannerHandoff, /type="tel"/);
   assert.match(plannerHandoff, /autoComplete="tel"/);
+  assert.match(plannerHandoff, /<fieldset/);
+  assert.match(
+    plannerHandoff,
+    /copy\.handoff\.contactMethodLabel/,
+  );
+  assert.match(plannerHandoff, /type="radio"/);
+  assert.match(plannerHandoff, /name="contactMethod"/);
+  assert.match(plannerHandoff, /copy\.handoff\.emailOption/);
+  assert.match(plannerHandoff, /copy\.handoff\.whatsappOption/);
+  assert.doesNotMatch(plannerHandoff, /switchMethod/);
   assert.match(plannerHandoff, /autoComplete="country-name"/);
+  assert.match(
+    plannerHandoff,
+    /<fieldset[\s\S]*copy\.handoff\.optionalDetailsLabel/,
+  );
+  assert.match(
+    plannerHandoff,
+    /<label htmlFor=\{roughBudgetId\}>[\s\S]*copy\.handoff\.roughBudgetLabel/,
+  );
+  assert.match(plannerHandoff, /name="roughBudgetPerPerson"/);
+  assert.match(plannerHandoff, /maxLength=\{maximumRoughBudgetLength\}/);
+  assert.match(plannerHandoff, /aria-invalid=\{Boolean\([\s\S]*errors\.roughBudgetPerPerson/);
+  assert.match(
+    plannerHandoff,
+    /aria-describedby=\{`\$\{roughBudgetHintId\}\$\{[\s\S]*roughBudgetErrorId/,
+  );
   assert.match(
     plannerHandoff,
     /contactMethod === "email"[\s\S]*channel: "email"[\s\S]*channel: "whatsapp"[\s\S]*phoneRaw: phone\.trim\(\)/,
   );
   assert.match(plannerHandoff, /departureCountry: departureCountry\.trim\(\) \|\| null/);
+  assert.match(
+    plannerHandoff,
+    /roughBudgetPerPerson:\s*roughBudgetPerPerson\.trim\(\) \|\| null/,
+  );
   assert.match(plannerHandoff, /note: null/);
   assert.match(plannerHandoff, /type="submit"/);
 
@@ -246,6 +275,7 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(dirtyState, /email\.trim\(\)/);
   assert.match(dirtyState, /phone\.trim\(\)/);
   assert.match(dirtyState, /departureCountry\.trim\(\)/);
+  assert.match(dirtyState, /roughBudgetPerPerson\.trim\(\)/);
 
   const briefStart = plannerHandoff.indexOf("const briefLines");
   const briefEnd = plannerHandoff.indexOf("const briefText", briefStart);
@@ -259,20 +289,84 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(briefBuilder, /result\.boundary/);
 });
 
-test("all three locales explain the single reply channel and optional country", () => {
+test("optional budget has accessible one-line validation and server errors", async () => {
+  const plannerHandoff = await source(plannerHandoffPath);
+
+  assert.match(plannerHandoff, /const maximumRoughBudgetLength = 100/);
+  assert.match(
+    plannerHandoff,
+    /function isValidRoughBudget\(value: string\): boolean/,
+  );
+  assert.match(
+    plannerHandoff,
+    /Array\.from\(value\.trim\(\)\)\.length <= maximumRoughBudgetLength/,
+  );
+  assert.match(plannerHandoff, /!\/\[\\r\\n\\t\\u2028\\u2029\]\/u\.test\(value\)/);
+  assert.match(
+    plannerHandoff,
+    /!hasUnsupportedControlCharacters\(value\)/,
+  );
+  assert.match(
+    plannerHandoff,
+    /setBlurError\(\s*"roughBudgetPerPerson",[\s\S]*isValidRoughBudget\(roughBudgetPerPerson\)/,
+  );
+  assert.match(
+    plannerHandoff,
+    /fields\.roughBudgetPerPerson[\s\S]*copy\.handoff\.roughBudgetError/,
+  );
+  assert.match(
+    plannerHandoff,
+    /roughBudgetPerPerson:\s*roughBudgetId/,
+  );
+});
+
+test("all three locales explain reply choice and optional trip details", () => {
   const english = getHomegroundCopy("en").handoff;
   const chinese = getHomegroundCopy("zh").handoff;
   const korean = getHomegroundCopy("ko").handoff;
 
-  assert.equal(english.useWhatsapp, "Use WhatsApp instead");
+  assert.equal(english.contactMethodLabel, "How should we reply?");
+  assert.equal(english.emailOption, "Email");
+  assert.equal(english.whatsappOption, "WhatsApp");
   assert.match(english.whatsappHint, /country code/);
   assert.match(english.departureCountryLabel, /optional/);
+  assert.equal(english.optionalDetailsLabel, "Helpful trip details");
+  assert.match(english.roughBudgetLabel, /per person/);
+  assert.match(english.roughBudgetLabel, /China trip/);
+  assert.match(english.roughBudgetLabel, /optional/);
+  assert.match(english.roughBudgetHint, /international flights/);
+  assert.match(english.roughBudgetHint, /currency or range/);
+  assert.match(english.roughBudgetHint, /not a quote/);
+  assert.match(english.roughBudgetError, /100 characters/);
+  assert.match(english.roughBudgetError, /one line/);
 
-  assert.equal(chinese.useWhatsapp, "改用 WhatsApp");
+  assert.equal(chinese.contactMethodLabel, "希望我们如何回复？");
+  assert.equal(chinese.emailOption, "电子邮件");
+  assert.equal(chinese.whatsappOption, "WhatsApp");
   assert.match(chinese.whatsappHint, /国家或地区代码/);
   assert.match(chinese.departureCountryLabel, /选填/);
+  assert.equal(chinese.optionalDetailsLabel, "有帮助的旅行信息");
+  assert.match(chinese.roughBudgetLabel, /每人/);
+  assert.match(chinese.roughBudgetLabel, /中国行/);
+  assert.match(chinese.roughBudgetLabel, /选填/);
+  assert.match(chinese.roughBudgetHint, /国际机票/);
+  assert.match(chinese.roughBudgetHint, /任意币种/);
+  assert.match(chinese.roughBudgetHint, /并非正式报价/);
+  assert.match(chinese.roughBudgetError, /100 个字符/);
+  assert.match(chinese.roughBudgetError, /单行/);
 
-  assert.equal(korean.useWhatsapp, "WhatsApp으로 받기");
+  assert.equal(korean.contactMethodLabel, "어떤 방법으로 답변드릴까요?");
+  assert.equal(korean.emailOption, "이메일");
+  assert.equal(korean.whatsappOption, "WhatsApp");
   assert.match(korean.whatsappHint, /국가 번호/);
   assert.match(korean.departureCountryLabel, /선택/);
+  assert.equal(korean.optionalDetailsLabel, "도움이 되는 여행 정보");
+  assert.match(korean.roughBudgetLabel, /1인당/);
+  assert.match(korean.roughBudgetLabel, /중국 여행/);
+  assert.match(korean.roughBudgetLabel, /선택/);
+  assert.match(korean.roughBudgetHint, /국제선 항공권/);
+  assert.match(korean.roughBudgetHint, /통화/);
+  assert.match(korean.roughBudgetHint, /정식 견적이 아닙니다/);
+  assert.match(korean.roughBudgetError, /100자/);
+  assert.match(korean.roughBudgetError, /한 줄/);
 });

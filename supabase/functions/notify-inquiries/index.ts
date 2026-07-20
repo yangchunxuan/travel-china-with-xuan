@@ -26,6 +26,7 @@ interface NotificationJob {
   contact_email: string | null;
   contact_phone_e164: string | null;
   departure_country: string | null;
+  rough_budget_per_person: string | null;
   note: string | null;
   inquiry_created_at: string;
   first_response_due_at: string;
@@ -189,7 +190,9 @@ function validatedShortString(
     typeof value !== "string" ||
     value.length === 0 ||
     Array.from(value).length > maximumLength ||
-    /[\r\n\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(value)
+    /[\r\n\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u061c\u200e\u200f\u2028\u2029\u202a-\u202e\u2066-\u2069\ud800-\udfff]/u.test(
+      value,
+    )
   ) {
     throw new Error(`invalid_job:${name}`);
   }
@@ -490,6 +493,13 @@ async function sendThroughResend(
         "departure_country",
       )
     : "(Not provided)";
+  const roughBudgetPerPerson = job.rough_budget_per_person
+    ? validatedShortString(
+        job.rough_budget_per_person,
+        "rough_budget_per_person",
+        100,
+      )
+    : "(Not provided)";
   const route = routeSummary(job);
   const answers = routeAnswers(job);
   const briefLabel =
@@ -512,6 +522,8 @@ async function sendThroughResend(
     `Reply channel: ${channel}`,
     `Traveller contact: ${contact.display}`,
     `Departure country/region: ${departureCountry}`,
+    `Traveller-stated rough budget per person (international flights excluded): ${roughBudgetPerPerson}`,
+    "Budget note: traveller context only, not a Homeground quote.",
     "Traveller note:",
     note,
     "Safety: traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.",
@@ -541,6 +553,7 @@ async function sendThroughResend(
       <dt>Reply channel</dt><dd>${escapeHtml(channel)}</dd>
       <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
       <dt>Departure country/region</dt><dd>${escapeHtml(departureCountry)}</dd>
+      <dt>Traveller-stated rough budget per person (international flights excluded)</dt><dd>${escapeHtml(roughBudgetPerPerson)}</dd>
       <dt>Traveller note</dt><dd style="white-space:pre-wrap">${escapeHtml(note)}</dd>
       <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
       <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
@@ -550,6 +563,7 @@ async function sendThroughResend(
         ? "<p>Reply directly to this message; Reply-To is already set to the traveller.</p>"
         : `<p><a href="${escapeHtml(contact.whatsappUrl ?? "")}">Continue in the studio WhatsApp account</a>.</p>`
     }
+    <p><strong>Budget note:</strong> traveller context only, not a Homeground quote.</p>
     <p><strong>Safety:</strong> traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.</p>
     <p>${
       job.reply_channel === "email"
@@ -709,7 +723,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let jobsResult;
   try {
     jobsResult = await callSupabaseRpc<NotificationJob[]>(
-      "claim_homeground_notification_jobs_v2",
+      "claim_homeground_notification_jobs_v3",
       {
         p_worker_id: `edge:${requestId}`,
         p_job_limit: batchSize,

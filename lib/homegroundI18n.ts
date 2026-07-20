@@ -113,8 +113,11 @@ export interface HomegroundCopy {
     title: string;
     body: string;
     boundary: string;
-    useEmail: string;
-    useWhatsapp: string;
+    contactMethodLabel: string;
+    emailOption: string;
+    whatsappOption: string;
+    optionalDetailsLabel: string;
+    optionalDetailsHint: string;
     requiredText: string;
     emailLabel: string;
     emailHint: string;
@@ -123,6 +126,9 @@ export interface HomegroundCopy {
     whatsappConsent: string;
     departureCountryLabel: string;
     departureCountryHint: string;
+    roughBudgetLabel: string;
+    roughBudgetPlaceholder: string;
+    roughBudgetHint: string;
     privacyBody: string;
     privacyLink: string;
     submit: string;
@@ -132,6 +138,7 @@ export interface HomegroundCopy {
     whatsappError: string;
     whatsappUnavailable: string;
     departureCountryError: string;
+    roughBudgetError: string;
     formVersionUnsupported: string;
     privacyNoticeUnsupported: string;
     successTitle: string;
@@ -331,7 +338,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "Choose every place you genuinely want, add your nights and preferred pace, then see where the time fits—or conflicts. Nothing is removed, and the same brief goes to a human planner if you contact us.",
       trustLabel: "What to expect",
       trust: [
-        "No budget question",
+        "No budget required to see your result",
         "No contact details before your result",
         "Every place you select stays on your wishlist",
       ],
@@ -466,12 +473,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     handoff: {
       eyebrow: "Human planning",
-      title: "Where should we reply?",
+      title: "Send your trip brief",
       body:
-        "Your trip brief is ready. Leave one working contact and the same wishlist, timing result and priorities will come with it.",
+        "Leave one working contact. Optional trip details help us prepare a more useful first reply.",
       boundary: "This is an enquiry, not a booking.",
-      useEmail: "Use email instead",
-      useWhatsapp: "Use WhatsApp instead",
+      contactMethodLabel: "How should we reply?",
+      emailOption: "Email",
+      whatsappOption: "WhatsApp",
+      optionalDetailsLabel: "Helpful trip details",
+      optionalDetailsHint: "Skip these if you’re not sure.",
       requiredText: "(required)",
       emailLabel: "Email address",
       emailHint: "We’ll reply to this inbox.",
@@ -481,8 +491,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappConsent:
         "Submitting asks Homeground to message this number only about this trip request.",
       departureCountryLabel:
-        "Which country or region will you travel from? (optional)",
+        "Country or region you’ll travel from (optional)",
       departureCountryHint: "You can also tell us later.",
+      roughBudgetLabel:
+        "Rough budget per person for your China trip (optional)",
+      roughBudgetPlaceholder: "Currency + amount or range",
+      roughBudgetHint:
+        "Excluding international flights. Any currency or range is fine. This helps us prepare; it is not a quote.",
       privacyBody:
         "We’ll use these details only to reply to this enquiry. No marketing without separate permission.",
       privacyLink: "Privacy Notice",
@@ -496,6 +511,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "WhatsApp intake is temporarily unavailable. Use email instead.",
       departureCountryError:
         "Keep the country or region to 80 characters or fewer.",
+      roughBudgetError:
+        "Keep the budget to 100 characters on one line.",
       formVersionUnsupported:
         "This request form is out of date. Refresh the page before trying again.",
       privacyNoticeUnsupported:
@@ -821,7 +838,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "选出所有真正想去的地方，填写在中国的住宿晚数和理想节奏，先看时间是否合适或发生冲突。系统不会擅自删掉城市；你选择联系后，同一份需求会直接交给人工规划师。",
       trustLabel: "你可以放心",
       trust: [
-        "暂时不问预算",
+        "无需填写预算即可查看结果",
         "看到结果前无需留下联系方式",
         "你选择的每个地方都会保留",
       ],
@@ -946,12 +963,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     handoff: {
       eyebrow: "人工旅行规划",
-      title: "希望我们通过哪种方式回复？",
+      title: "提交旅行需求",
       body:
-        "旅行需求已经整理好。只需留下一个有效联系方式，愿望清单、时间结果和优先项会一同提交。",
+        "请留下一个有效联系方式。选填的旅行信息能帮助我们准备更有针对性的首次回复。",
       boundary: "这只是咨询，不是预订。",
-      useEmail: "改用电子邮件",
-      useWhatsapp: "改用 WhatsApp",
+      contactMethodLabel: "希望我们如何回复？",
+      emailOption: "电子邮件",
+      whatsappOption: "WhatsApp",
+      optionalDetailsLabel: "有帮助的旅行信息",
+      optionalDetailsHint: "如果还不确定，可以留空。",
       requiredText: "（必填）",
       emailLabel: "电子邮箱",
       emailHint: "我们会回复到这个邮箱。",
@@ -960,8 +980,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappConsent:
         "提交即表示你希望 Homeground 仅就本次旅行需求联系这个号码。",
       departureCountryLabel:
-        "你将从哪个国家或地区出发？（选填）",
+        "出发国家或地区（选填）",
       departureCountryHint: "也可以稍后告诉我们。",
+      roughBudgetLabel: "每人本次中国行的大致预算（选填）",
+      roughBudgetPlaceholder: "币种 + 金额或范围",
+      roughBudgetHint:
+        "不含往返中国的国际机票。可填写任意币种或金额范围，仅供准备回复，并非正式报价。",
       privacyBody:
         "我们只使用这些信息回复本次咨询；未经单独许可，不会用于营销。",
       privacyLink: "隐私说明",
@@ -972,6 +996,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappError: "请输入包含国家或地区代码的有效 WhatsApp 号码。",
       whatsappUnavailable: "WhatsApp 暂时无法接收咨询，请改用电子邮件。",
       departureCountryError: "国家或地区不能超过 80 个字符。",
+      roughBudgetError: "预算内容请控制在 100 个字符以内并保持单行。",
       formVersionUnsupported:
         "当前咨询表单版本已经过期，请刷新页面后再试。",
       privacyNoticeUnsupported:
@@ -1275,7 +1300,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "정말 가고 싶은 곳을 모두 고르고 중국 체류 숙박일수와 원하는 속도를 입력하세요. 시간이 맞는지, 어디서 충돌하는지 먼저 보여 드립니다. 선택한 장소는 삭제하지 않으며 연락을 선택하면 같은 요청서가 사람 플래너에게 전달됩니다.",
       trustLabel: "먼저 확인할 수 있는 것",
       trust: [
-        "예산은 아직 묻지 않습니다",
+        "예산 입력 없이 결과 확인",
         "결과를 보기 전에는 연락처가 필요 없습니다",
         "선택한 모든 장소를 희망 목록에 남깁니다",
       ],
@@ -1404,12 +1429,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     handoff: {
       eyebrow: "1:1 여행 플래닝",
-      title: "어떤 방법으로 답변드릴까요?",
+      title: "여행 요청서 보내기",
       body:
-        "여행 요청서가 준비되었습니다. 연락 가능한 방법 하나만 남기면 희망 목록, 시간 결과와 우선순위가 함께 전송됩니다.",
+        "연락 가능한 방법 하나를 남겨 주세요. 선택 입력한 여행 정보는 더 도움이 되는 첫 답변을 준비하는 데 사용됩니다.",
       boundary: "문의 단계이며 예약이 아닙니다.",
-      useEmail: "이메일로 받기",
-      useWhatsapp: "WhatsApp으로 받기",
+      contactMethodLabel: "어떤 방법으로 답변드릴까요?",
+      emailOption: "이메일",
+      whatsappOption: "WhatsApp",
+      optionalDetailsLabel: "도움이 되는 여행 정보",
+      optionalDetailsHint: "아직 모르시면 비워 두셔도 됩니다.",
       requiredText: "(필수)",
       emailLabel: "이메일 주소",
       emailHint: "이 이메일 주소로 답변드립니다.",
@@ -1419,8 +1447,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       whatsappConsent:
         "제출하면 Homeground가 이 여행 문의에 한해 해당 번호로 연락합니다.",
       departureCountryLabel:
-        "어느 국가 또는 지역에서 출발하시나요? (선택)",
+        "출발 국가 또는 지역 (선택)",
       departureCountryHint: "나중에 알려 주셔도 됩니다.",
+      roughBudgetLabel: "1인당 중국 여행 예상 예산 (선택)",
+      roughBudgetPlaceholder: "통화 + 금액 또는 범위",
+      roughBudgetHint:
+        "중국 왕복 국제선 항공권은 제외합니다. 통화와 금액 범위는 자유롭게 입력할 수 있으며 정식 견적이 아닙니다.",
       privacyBody:
         "입력한 정보는 이번 문의에 답변하는 데에만 사용합니다. 별도 동의 없이 마케팅에 사용하지 않습니다.",
       privacyLink: "개인정보 처리 안내",
@@ -1434,6 +1466,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "현재 WhatsApp 문의를 받을 수 없습니다. 이메일을 이용해 주세요.",
       departureCountryError:
         "국가 또는 지역은 80자 이내로 입력해 주세요.",
+      roughBudgetError:
+        "예산은 한 줄로 100자 이내에 입력해 주세요.",
       formVersionUnsupported:
         "현재 문의 양식이 이전 버전입니다. 페이지를 새로 고친 뒤 다시 시도해 주세요.",
       privacyNoticeUnsupported:

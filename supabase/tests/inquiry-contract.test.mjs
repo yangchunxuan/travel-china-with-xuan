@@ -10,7 +10,10 @@ import {
   destinationInquirySchemaVersion,
   destinationTimingRuleVersion,
   inquirySchemaVersion,
+  legacyDestinationInquiryFormVersion,
+  legacyPrivacyNoticeVersion,
   previousDestinationInquiryFormVersion,
+  previousPrivacyNoticeVersion,
   semanticInquiryPayload,
   travelPartyIds,
   travelStyleIds,
@@ -24,7 +27,12 @@ const validationConfig = {
     currentInquiryFormVersion,
     currentDestinationInquiryFormVersion,
   ],
-  allowedPrivacyNoticeVersions: ["test-privacy-v1"],
+  allowedPrivacyNoticeVersions: [
+    "test-privacy-v1",
+    legacyPrivacyNoticeVersion,
+    previousPrivacyNoticeVersion,
+    currentPrivacyNoticeVersion,
+  ],
   whatsappEnabled: false,
 };
 
@@ -98,8 +106,9 @@ function validDestinationPayload() {
       email: "Traveller@Example.COM",
     },
     departureCountry: null,
+    roughBudgetPerPerson: null,
     note: "Please keep every selected place in the planner handoff.",
-    privacyNoticeVersion: "test-privacy-v1",
+    privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
       landingPath: "/?utm_source=youtube",
       utmSource: "youtube",
@@ -385,6 +394,172 @@ test("V3 uses Unicode code points consistently for Other length", () => {
   }
 });
 
+test("current destination budget is an independent optional one-line field", () => {
+  const empty = validDestinationPayload();
+  empty.roughBudgetPerPerson = "   ";
+  const emptyResult = validateAndNormalizeInquiry(
+    empty,
+    validationConfig,
+  );
+  assert.equal(emptyResult.ok, true);
+  if (!emptyResult.ok) return;
+  assert.equal(emptyResult.value.roughBudgetPerPerson, null);
+
+  const accepted = validDestinationPayload();
+  accepted.roughBudgetPerPerson = `  ${"😀".repeat(100)}  `;
+  accepted.note = "Keep the walking days gentle.";
+  const acceptedResult = validateAndNormalizeInquiry(
+    accepted,
+    validationConfig,
+  );
+  assert.equal(acceptedResult.ok, true);
+  if (!acceptedResult.ok) return;
+  assert.equal(
+    acceptedResult.value.roughBudgetPerPerson,
+    "😀".repeat(100),
+  );
+  assert.equal(
+    acceptedResult.value.note,
+    "Keep the walking days gentle.",
+  );
+
+  for (const invalidBudget of [
+    "😀".repeat(101),
+    "USD 2,000\nUSD 3,000",
+    "USD 2,000\rUSD 3,000",
+    "USD\t2,000",
+    "USD\u20282,000",
+    "USD\u20292,000",
+    "USD\u00002,000",
+    "USD\u00852,000",
+    "USD\u202e2,000",
+    "USD\ud8002,000",
+  ]) {
+    const rejected = validDestinationPayload();
+    rejected.roughBudgetPerPerson = invalidBudget;
+    const rejectedResult = validateAndNormalizeInquiry(
+      rejected,
+      validationConfig,
+    );
+    assert.equal(rejectedResult.ok, false, JSON.stringify(invalidBudget));
+    if (rejectedResult.ok) continue;
+    assert.equal(
+      rejectedResult.fieldErrors.roughBudgetPerPerson,
+      "invalid",
+      JSON.stringify(invalidBudget),
+    );
+  }
+
+  for (const invalidType of [2_000, ["USD 2,000"], { amount: 2_000 }]) {
+    const rejected = validDestinationPayload();
+    rejected.roughBudgetPerPerson = invalidType;
+    const rejectedResult = validateAndNormalizeInquiry(
+      rejected,
+      validationConfig,
+    );
+    assert.equal(rejectedResult.ok, false);
+    if (rejectedResult.ok) continue;
+    assert.equal(
+      rejectedResult.fieldErrors.roughBudgetPerPerson,
+      "invalid",
+    );
+  }
+});
+
+test("destination form and privacy versions stay paired without changing old semantic hashes", () => {
+  const versionConfig = {
+    ...validationConfig,
+    allowedFormVersions: [
+      currentInquiryFormVersion,
+      legacyDestinationInquiryFormVersion,
+      previousDestinationInquiryFormVersion,
+      currentDestinationInquiryFormVersion,
+    ],
+  };
+
+  const previous = validDestinationPayload();
+  previous.formVersion = previousDestinationInquiryFormVersion;
+  previous.privacyNoticeVersion = previousPrivacyNoticeVersion;
+  delete previous.roughBudgetPerPerson;
+  previous.departureCountry = "Canada";
+  const previousResult = validateAndNormalizeInquiry(
+    previous,
+    versionConfig,
+  );
+  assert.equal(previousResult.ok, true);
+  if (!previousResult.ok) return;
+  const previousSemantic = semanticInquiryPayload(previousResult.value);
+  assert.equal(
+    Object.hasOwn(previousSemantic, "departureCountry"),
+    true,
+  );
+  assert.equal(
+    Object.hasOwn(previousSemantic, "roughBudgetPerPerson"),
+    false,
+  );
+
+  const legacy = validDestinationPayload();
+  legacy.formVersion = legacyDestinationInquiryFormVersion;
+  legacy.privacyNoticeVersion = legacyPrivacyNoticeVersion;
+  delete legacy.departureCountry;
+  delete legacy.roughBudgetPerPerson;
+  const legacyResult = validateAndNormalizeInquiry(
+    legacy,
+    versionConfig,
+  );
+  assert.equal(legacyResult.ok, true);
+  if (!legacyResult.ok) return;
+  const legacySemantic = semanticInquiryPayload(legacyResult.value);
+  assert.equal(Object.hasOwn(legacySemantic, "departureCountry"), false);
+  assert.equal(
+    Object.hasOwn(legacySemantic, "roughBudgetPerPerson"),
+    false,
+  );
+
+  const changedOldPayload = structuredClone(previous);
+  changedOldPayload.roughBudgetPerPerson = null;
+  const changedOldResult = validateAndNormalizeInquiry(
+    changedOldPayload,
+    versionConfig,
+  );
+  assert.equal(changedOldResult.ok, false);
+  if (!changedOldResult.ok) {
+    assert.equal(
+      changedOldResult.fieldErrors.roughBudgetPerPerson,
+      "unsupported",
+    );
+  }
+
+  for (const [formVersion, privacyNoticeVersion] of [
+    [
+      currentDestinationInquiryFormVersion,
+      previousPrivacyNoticeVersion,
+    ],
+    [
+      previousDestinationInquiryFormVersion,
+      currentPrivacyNoticeVersion,
+    ],
+  ]) {
+    const mismatched = validDestinationPayload();
+    mismatched.formVersion = formVersion;
+    mismatched.privacyNoticeVersion = privacyNoticeVersion;
+    if (formVersion !== currentDestinationInquiryFormVersion) {
+      delete mismatched.roughBudgetPerPerson;
+    }
+    const mismatchedResult = validateAndNormalizeInquiry(
+      mismatched,
+      versionConfig,
+    );
+    assert.equal(mismatchedResult.ok, false);
+    if (mismatchedResult.ok) continue;
+    assert.equal(mismatchedResult.code, "unsupported_privacy_notice");
+    assert.equal(
+      mismatchedResult.fieldErrors.privacyNoticeVersion,
+      "unsupported",
+    );
+  }
+});
+
 test("current destination form accepts one normalized WhatsApp contact when enabled", () => {
   const payload = validDestinationPayload();
   payload.contact = {
@@ -410,9 +585,11 @@ test("current destination form accepts one normalized WhatsApp contact when enab
   assert.equal(result.value.departureCountry, "United Kingdom");
 });
 
-test("previous destination form cannot submit a phone under the old privacy notice", () => {
+test("previous destination form keeps its matching WhatsApp consent pair", () => {
   const payload = validDestinationPayload();
   payload.formVersion = previousDestinationInquiryFormVersion;
+  delete payload.roughBudgetPerPerson;
+  payload.privacyNoticeVersion = previousPrivacyNoticeVersion;
   payload.contact = {
     channel: "whatsapp",
     phoneRaw: "+44 7700 900123",
@@ -426,9 +603,12 @@ test("previous destination form cannot submit a phone under the old privacy noti
     ],
     whatsappEnabled: true,
   });
-  assert.equal(result.ok, false);
-  if (result.ok) return;
-  assert.equal(result.code, "whatsapp_disabled");
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.deepEqual(result.value.contact, {
+    channel: "whatsapp",
+    phoneE164: "+447700900123",
+  });
 });
 
 test("current destination form rejects invalid WhatsApp and country input", () => {
@@ -502,21 +682,33 @@ test("V3 semantic hash includes every human-handoff answer", () => {
   assert.equal(canonical.includes("routeSnapshot"), false);
 });
 
-test("destination semantic hash includes contact method and optional departure country", () => {
+test("destination semantic hash includes contact, country, and current budget", () => {
   const first = validDestinationPayload();
   first.departureCountry = "Canada";
+  first.roughBudgetPerPerson = "USD 2,000–3,000";
   const firstResult = validateAndNormalizeInquiry(first, validationConfig);
   assert.equal(firstResult.ok, true);
   if (!firstResult.ok) return;
 
   const second = validDestinationPayload();
-  second.departureCountry = "Australia";
+  second.departureCountry = "Canada";
+  second.roughBudgetPerPerson = "USD 3,000–4,000";
   const secondResult = validateAndNormalizeInquiry(second, validationConfig);
   assert.equal(secondResult.ok, true);
   if (!secondResult.ok) return;
 
+  const firstSemantic = semanticInquiryPayload(firstResult.value);
+  const secondSemantic = semanticInquiryPayload(secondResult.value);
+  assert.equal(
+    firstSemantic.roughBudgetPerPerson,
+    "USD 2,000–3,000",
+  );
+  assert.equal(
+    secondSemantic.roughBudgetPerPerson,
+    "USD 3,000–4,000",
+  );
   assert.notEqual(
-    canonicalizeJson(semanticInquiryPayload(firstResult.value)),
-    canonicalizeJson(semanticInquiryPayload(secondResult.value)),
+    canonicalizeJson(firstSemantic),
+    canonicalizeJson(secondSemantic),
   );
 });

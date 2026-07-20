@@ -2,6 +2,8 @@ import {
   canonicalizeJson,
   currentDestinationInquiryFormVersion,
   destinationInquirySchemaVersion,
+  legacyDestinationInquiryFormVersion,
+  previousDestinationInquiryFormVersion,
   semanticInquiryPayload,
   validateAndNormalizeInquiry,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
@@ -390,10 +392,18 @@ async function handleRequest(request: Request): Promise<Response> {
     const isCurrentDestinationInquiry =
       payload.schemaVersion === destinationInquirySchemaVersion &&
       payload.formVersion === currentDestinationInquiryFormVersion;
+    const isPreviousDestinationInquiry =
+      payload.schemaVersion === destinationInquirySchemaVersion &&
+      payload.formVersion === previousDestinationInquiryFormVersion;
+    const isLegacyDestinationInquiry =
+      payload.schemaVersion === destinationInquirySchemaVersion &&
+      payload.formVersion === legacyDestinationInquiryFormVersion;
     persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
       isCurrentDestinationInquiry
-        ? "create_homeground_destination_inquiry_v2"
-        : payload.schemaVersion === destinationInquirySchemaVersion
+        ? "create_homeground_destination_inquiry_v3"
+        : isPreviousDestinationInquiry
+          ? "create_homeground_destination_inquiry_v2"
+          : isLegacyDestinationInquiry
           ? "create_homeground_destination_inquiry"
           : "create_homeground_inquiry",
       {
@@ -413,8 +423,14 @@ async function handleRequest(request: Request): Promise<Response> {
           payload.contact.channel === "whatsapp"
             ? payload.contact.phoneE164
             : null,
-        ...(isCurrentDestinationInquiry
+        ...(isCurrentDestinationInquiry || isPreviousDestinationInquiry
           ? { p_departure_country: payload.departureCountry }
+          : {}),
+        ...(isCurrentDestinationInquiry
+          ? {
+              p_rough_budget_per_person:
+                payload.roughBudgetPerPerson,
+            }
           : {}),
         p_note: payload.note,
         p_privacy_notice_version: payload.privacyNoticeVersion,

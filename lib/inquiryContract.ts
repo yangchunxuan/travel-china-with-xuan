@@ -40,7 +40,10 @@ import {
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   inquirySchemaVersion,
+  legacyDestinationInquiryFormVersion,
+  legacyPrivacyNoticeVersion,
   previousDestinationInquiryFormVersion,
+  previousPrivacyNoticeVersion,
   supportedDestinationInquiryFormVersions,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./inquiryVersions.ts";
@@ -51,7 +54,10 @@ export {
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   inquirySchemaVersion,
+  legacyDestinationInquiryFormVersion,
+  legacyPrivacyNoticeVersion,
   previousDestinationInquiryFormVersion,
+  previousPrivacyNoticeVersion,
   currentRouteRuleVersion,
   destinationIds,
   destinationPaceIds,
@@ -153,6 +159,7 @@ export interface NormalizedDestinationInquiryPayload {
   routeSnapshot: CanonicalDestinationTiming;
   contact: NormalizedInquiryContact;
   departureCountry: string | null;
+  roughBudgetPerPerson: string | null;
   note: string | null;
   privacyNoticeVersion: string;
   attribution: NormalizedInquiryAttribution;
@@ -198,7 +205,7 @@ const uuidV4Pattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const e164Pattern = /^\+[1-9][0-9]{7,14}$/;
 const disallowedControlCharacters =
-  /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/iu;
+  /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069\ud800-\udfff]/iu;
 const emailLocalPartPattern =
   /^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+$/i;
 
@@ -359,7 +366,12 @@ export function semanticInquiryPayload(
         ruleVersion: value.journey.ruleVersion,
       },
       contact,
-      departureCountry: value.departureCountry,
+      ...(value.formVersion !== legacyDestinationInquiryFormVersion
+        ? { departureCountry: value.departureCountry }
+        : {}),
+      ...(value.formVersion === currentDestinationInquiryFormVersion
+        ? { roughBudgetPerPerson: value.roughBudgetPerPerson }
+        : {}),
       note: value.note,
       privacyNoticeVersion: value.privacyNoticeVersion,
       attribution: {
@@ -439,6 +451,7 @@ function validateAndNormalizeDestinationInquiry(
       "journey",
       "contact",
       "departureCountry",
+      "roughBudgetPerPerson",
       "note",
       "privacyNoticeVersion",
       "attribution",
@@ -470,6 +483,20 @@ function validateAndNormalizeDestinationInquiry(
   if (
     typeof input.privacyNoticeVersion !== "string" ||
     !config.allowedPrivacyNoticeVersions.includes(input.privacyNoticeVersion)
+  ) {
+    fieldErrors.privacyNoticeVersion = "unsupported";
+  }
+  const supportedVersionPair =
+    (input.formVersion === currentDestinationInquiryFormVersion &&
+      input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+    (input.formVersion === previousDestinationInquiryFormVersion &&
+      input.privacyNoticeVersion === previousPrivacyNoticeVersion) ||
+    (input.formVersion === legacyDestinationInquiryFormVersion &&
+      input.privacyNoticeVersion === legacyPrivacyNoticeVersion);
+  if (
+    typeof input.formVersion === "string" &&
+    typeof input.privacyNoticeVersion === "string" &&
+    !supportedVersionPair
   ) {
     fieldErrors.privacyNoticeVersion = "unsupported";
   }
@@ -591,7 +618,7 @@ function validateAndNormalizeDestinationInquiry(
           ).trim();
           if (
             unicodeLength(normalizedOtherPlace) > 120 ||
-            /[\n\t]/u.test(normalizedOtherPlace) ||
+            /[\r\n\t\u2028\u2029]/u.test(normalizedOtherPlace) ||
             disallowedControlCharacters.test(normalizedOtherPlace)
           ) {
             fieldErrors["journey.answers.otherPlace"] = "invalid";
@@ -721,10 +748,12 @@ function validateAndNormalizeDestinationInquiry(
     }
   } else if (contact.channel === "whatsapp") {
     hasOnlyKeys(contact, ["channel", "phoneRaw"], "contact", fieldErrors);
-    const currentConsentVersion =
-      input.formVersion === currentDestinationInquiryFormVersion &&
-      input.privacyNoticeVersion === currentPrivacyNoticeVersion;
-    if (!config.whatsappEnabled || !currentConsentVersion) {
+    const supportedConsentPair =
+      (input.formVersion === currentDestinationInquiryFormVersion &&
+        input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+      (input.formVersion === previousDestinationInquiryFormVersion &&
+        input.privacyNoticeVersion === previousPrivacyNoticeVersion);
+    if (!config.whatsappEnabled || !supportedConsentPair) {
       fieldErrors["contact.channel"] = "disabled";
       contactCode = "whatsapp_disabled";
     }
@@ -734,7 +763,7 @@ function validateAndNormalizeDestinationInquiry(
       const phoneE164 = normalizePhone(contact.phoneRaw);
       if (phoneE164 === null) {
         fieldErrors["contact.phoneRaw"] = "invalid";
-      } else if (config.whatsappEnabled && currentConsentVersion) {
+      } else if (config.whatsappEnabled && supportedConsentPair) {
         normalizedContact = { channel: "whatsapp", phoneE164 };
       }
     }
@@ -746,6 +775,11 @@ function validateAndNormalizeDestinationInquiry(
   let departureCountry: string | null = null;
   if (
     input.departureCountry !== undefined &&
+    input.formVersion === legacyDestinationInquiryFormVersion
+  ) {
+    fieldErrors.departureCountry = "unsupported";
+  } else if (
+    input.departureCountry !== undefined &&
     input.departureCountry !== null
   ) {
     if (typeof input.departureCountry !== "string") {
@@ -754,11 +788,40 @@ function validateAndNormalizeDestinationInquiry(
       const normalizedCountry = normalizeText(input.departureCountry).trim();
       if (
         Array.from(normalizedCountry).length > 80 ||
+        /[\r\n\t\u2028\u2029]/u.test(normalizedCountry) ||
         disallowedControlCharacters.test(normalizedCountry)
       ) {
         fieldErrors.departureCountry = "invalid";
       } else if (normalizedCountry.length > 0) {
         departureCountry = normalizedCountry;
+      }
+    }
+  }
+
+  let roughBudgetPerPerson: string | null = null;
+  if (
+    input.roughBudgetPerPerson !== undefined &&
+    input.formVersion !== currentDestinationInquiryFormVersion
+  ) {
+    fieldErrors.roughBudgetPerPerson = "unsupported";
+  } else if (
+    input.roughBudgetPerPerson !== undefined &&
+    input.roughBudgetPerPerson !== null
+  ) {
+    if (typeof input.roughBudgetPerPerson !== "string") {
+      fieldErrors.roughBudgetPerPerson = "invalid";
+    } else {
+      const normalizedBudget = normalizeText(
+        input.roughBudgetPerPerson,
+      ).trim();
+      if (
+        unicodeLength(normalizedBudget) > 100 ||
+        /[\r\n\t\u2028\u2029]/u.test(normalizedBudget) ||
+        disallowedControlCharacters.test(normalizedBudget)
+      ) {
+        fieldErrors.roughBudgetPerPerson = "invalid";
+      } else if (normalizedBudget.length > 0) {
+        roughBudgetPerPerson = normalizedBudget;
       }
     }
   }
@@ -933,6 +996,7 @@ function validateAndNormalizeDestinationInquiry(
       routeSnapshot,
       contact: normalizedContact,
       departureCountry,
+      roughBudgetPerPerson,
       note,
       privacyNoticeVersion: input.privacyNoticeVersion,
       attribution: normalizedAttribution,

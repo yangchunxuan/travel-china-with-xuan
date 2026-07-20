@@ -39,6 +39,14 @@ WhatsApp submissions use the same Inquiry API, outbox and Gmail notification
 as Email submissions. The saved Inquiry is the technical receipt. The later
 WhatsApp conversation is the handling record.
 
+The notification also shows any traveller-stated rough budget per person,
+with international flights excluded. This is context for the first human
+reply, not a Homeground quote. Gmail and WhatsApp are connected to
+SaleSmartly, so the notification or later conversation—including that budget—
+may also appear in the authorised SaleSmartly project. SaleSmartly is a shared
+working view of the same two reply channels, not a third customer contact
+method and not a separate source of truth.
+
 ## 2. Gmail setup
 
 Create one filter with this search:
@@ -63,12 +71,15 @@ Both form notifications (`[Homeground][New]`) and rare failure fallbacks
    WhatsApp, use the staff-side link and verify the number before sending.
 4. In WhatsApp Business, start with unread conversations and keep the original
    Gmail notification until the first reply has been sent.
-5. Opening a thread may mark it as read. If you cannot reply immediately,
+5. If working from SaleSmartly, verify the selected outbound channel and
+   Homeground account before sending, and check Gmail or WhatsApp first so two
+   team members do not send duplicate replies.
+6. Opening a thread may mark it as read. If you cannot reply immediately,
    mark it unread again and add a Gmail star or the WhatsApp Business
    `Follow up` label before leaving the conversation.
-6. Keep a Gmail star or the WhatsApp Business `Follow up` label only when the
+7. Keep a Gmail star or the WhatsApp Business `Follow up` label only when the
    next action belongs to Homeground. Remove it when waiting for the customer.
-7. Archive the Gmail thread when no immediate studio action remains. Do not
+8. Archive the Gmail thread when no immediate studio action remains. Do not
    delete WhatsApp conversations as a way to mark work complete.
 
 If both team members are working, the person who starts a reply sends one
@@ -160,29 +171,34 @@ worker before reopening intake.
 
 For Gmail, SaleSmartly and WhatsApp Business:
 
-1. each person uses a separate member account; never share the main password;
-2. enable two-factor authentication and keep one recovery owner;
-3. review Google third-party access, SaleSmartly members and WhatsApp linked
-   devices weekly;
-4. after an unfamiliar login, revoke the integration/session first, reset the
-   password, inspect sent messages and forwarding rules, and reconnect only
-   the required channel.
+1. set the SaleSmartly Homeground project retention to no more than 12 months
+   after the last substantive contact, subject to the same client, legal,
+   dispute and security-hold exceptions as the source records;
+2. each person uses a separate member account with only the channels and
+   permissions needed for their work; never share the Gmail main password;
+3. enable two-factor authentication and keep one recovery owner;
+4. review Google OAuth grants, Gmail forwarding rules and filters,
+   SaleSmartly members and roles, and WhatsApp linked devices weekly;
+5. after an unfamiliar login, revoke the integration or session first, reset
+   the affected password, inspect sent messages, OAuth access and forwarding
+   rules, and reconnect only the required channel.
 
 ### Monthly retention and privacy-request check
 
-Once each month, the named owner checks both `Homeground inquiries` in Gmail
-and the WhatsApp Business inbox:
+Once each month, the named owner checks `Homeground inquiries` in Gmail, the
+WhatsApp Business inbox and the connected SaleSmartly project:
 
 1. Find Homeground-controlled enquiry, notification and conversation records
    whose last substantive contact was more than 12 months ago.
-2. Delete those records from Gmail, Supabase and WhatsApp Business unless the
-   traveller became a client, a contract or legal duty requires retention, or
-   a dispute/security hold applies. Handling labels are not a reason to keep
-   an otherwise expired record.
+2. Delete those records from Gmail, Supabase, WhatsApp Business and SaleSmartly
+   unless the traveller became a client, a contract or legal duty requires
+   retention, or a dispute/security hold applies. Handling labels and
+   synchronised copies are not reasons to keep an otherwise expired record.
 3. For an access, correction or deletion request received at the privacy
    email, verify the requester reasonably, then search both Email records and
-   WhatsApp Business using the verified email address, public reference or
-   WhatsApp number. Complete the applicable action within 30 days.
+   WhatsApp Business and SaleSmartly using the verified email address, public
+   reference or WhatsApp number. Complete the applicable action within 30
+   days.
 4. Keep the completion reply in the privacy-email thread. Do not create a
    separate spreadsheet containing the traveller's details.
 
@@ -194,8 +210,14 @@ Ask only for facts needed to make the next planning decision:
 2. arrival and departure cities, plus transport already booked;
 3. adults, children and children’s ages;
 4. preferred communication or guide language;
-5. hotel comfort, room setup and a rough budget range;
+5. hotel comfort and room setup; ask about budget only when the website budget
+   is absent or unclear;
 6. fixed cities, must-do experiences, walking limits or things to avoid.
+
+When a budget is present, keep the traveller's currency and range as entered.
+Treat it as a rough per-person budget for the China portion of the trip with
+international flights excluded. Clarify scope when necessary; never convert it
+into a promised package price or describe it as a Homeground quote.
 
 Do not promise a price, inventory, booking or local operator until a person
 has checked the real trip conditions.
@@ -209,8 +231,10 @@ Use external test accounts, not the studio Gmail:
 1. Submit one saved enquiry from the English, Chinese and Korean pages using
    external traveller email addresses.
 2. Confirm Gmail applies `Homeground inquiries` to all three.
-3. Confirm each notification contains the route, four answers, traveller
-   email and optional note.
+3. Confirm each notification contains the route, traveller answers, email,
+   optional departure country, any legacy note, and either the exact optional
+   budget or “Not provided”. Confirm the budget label excludes international
+   flights and says that it is traveller context, not a Homeground quote.
 4. Reply from Gmail and confirm `Reply-To` sends the response to the external
    traveller address.
 5. Confirm the notification is delivered once and a forced Resend failure can
@@ -229,7 +253,8 @@ disable `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` in the next deployment. Use
    enquiry in English, Chinese and Korean with the public frontend still
    hidden.
 3. Confirm each test creates exactly one Supabase Inquiry/outbox row and one
-   Gmail notification with the correct trip brief, country and number.
+   Gmail notification with the correct trip brief, country, budget (or “Not
+   provided”) and number.
 4. Use the staff-side link in Gmail to start the correct conversation from
    the studio WhatsApp Business account. Confirm the external account receives
    the reply.
@@ -238,6 +263,10 @@ disable `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED` in the next deployment. Use
    not change the already deployed static site.
 6. On production, repeat one QA submission and confirm the person on duty can
    reply from WhatsApp Business.
+
+For both channels, confirm the connected SaleSmartly project receives the
+expected conversation without creating a duplicate outbound reply, and that
+only authorised members can see the traveller contact and optional budget.
 
 If WhatsApp fails, set server-only `WHATSAPP_ENABLED=false`, then set
 `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` and redeploy. Leave the
