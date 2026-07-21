@@ -45,6 +45,8 @@ jobs:
           NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH }}
           NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO }}
           NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED }}
+      - name: Check ten-day guide export
+        run: npm run check:ten-day-guide-export
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: out

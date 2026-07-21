@@ -1,9 +1,47 @@
 # Production export boundary
 
-The public Homeground build contains the three localized homepages, their
-privacy pages, and production brand, font, and homepage media. Experimental
-composition and journey labs are intentionally excluded from the deployed
-artifact.
+The public Homeground build contains the English, Simplified Chinese and Korean
+homepages, privacy pages and production guides, together with their production
+brand, font and media assets. Experimental composition and journey labs are
+intentionally excluded from the deployed artifact.
+
+The production guide routes are:
+
+- `/guides/zhangjiajie-itinerary/`
+- `/zh/guides/zhangjiajie-itinerary/`
+- `/ko/guides/zhangjiajie-itinerary/`
+- `/guides/beijing-zhangjiajie-shanghai-10-days/`
+- `/zh/guides/beijing-zhangjiajie-shanghai-10-days/`
+- `/ko/guides/beijing-zhangjiajie-shanghai-10-days/`
+
+English remains unprefixed. Simplified Chinese uses `/zh/` with `zh-Hans`
+language metadata, and Korean uses `/ko/` with `ko` language metadata.
+
+## Ten-day guide release check
+
+After producing `out/`, run:
+
+```sh
+node tools/check-ten-day-guide-export.mjs
+```
+
+The check reads `out/` without changing it and fails with a non-zero exit code
+unless all of the following are true:
+
+- the English, Simplified Chinese and Korean ten-day guide HTML files exist;
+- every guide has the correct HTML language and a self-referencing canonical;
+- every guide has one reciprocal `en`, `zh-Hans`, `ko` and `x-default`
+  hreflang set, with `x-default` pointing to English;
+- no localized guide contains a `noindex` directive;
+- Article JSON-LD uses the localized page URL and matching `inLanguage`;
+- `sitemap.xml` contains all three guide URLs with the same reciprocal
+  hreflang set; and
+- every root-path link in every exported HTML file resolves to a file in the
+  static export.
+
+The checker does not make network requests. External links, GitHub Pages custom
+domain settings, DNS, HTTPS and the deployed response headers remain separate
+release checks.
 
 ## What stays recoverable
 
@@ -14,7 +52,8 @@ artifact.
 
 No source artwork is removed. `npm run build` runs
 `tools/prune-production-export.mjs` after Next finishes and removes only the
-generated lab copies inside `out/`.
+generated lab copies inside `out/`. The ten-day guide checker is a separate
+post-build validation command; it does not prune or write any exported files.
 
 ## Re-enable a lab locally
 

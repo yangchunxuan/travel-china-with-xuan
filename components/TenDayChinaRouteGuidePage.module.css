@@ -10,7 +10,7 @@
   --rust-dark: #74311f;
   --peach: #e8b49e;
   --sage: #dbe4dd;
-  --display: var(--hg-font-editorial), Georgia, "Times New Roman", serif;
+  --display: var(--serif);
   background: #f9f6f0;
   color: var(--ink);
   min-width: 0;
@@ -60,7 +60,7 @@
 .headerInner {
   align-items: center;
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
   margin-inline: auto;
   min-height: 4.75rem;
   padding-inline: 1.25rem;
@@ -134,6 +134,38 @@
 .primaryNav a:hover,
 .primaryNav a:focus-visible {
   color: var(--rust-dark);
+}
+
+.languageNav {
+  align-items: center;
+  border-inline-start: 1px solid var(--line);
+  display: flex;
+  gap: 0.15rem;
+  padding-inline-start: 0.85rem;
+}
+
+.languageNav a {
+  align-items: center;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.68rem;
+  font-weight: 720;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-inline: 0.3rem;
+  text-decoration: none;
+}
+
+.languageNav a:hover,
+.languageNav a:focus-visible,
+.languageNav a[aria-current="page"] {
+  color: var(--rust-dark);
+}
+
+.languageNav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 0.12rem;
+  text-underline-offset: 0.32rem;
 }
 
 .headerCta {
@@ -1364,6 +1396,48 @@
   width: min(100%, 78rem);
 }
 
+.pageRoot:is(
+    [data-homeground-locale="zh"],
+    [data-homeground-locale="ko"]
+  ) {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.pageRoot:is(
+    [data-homeground-locale="zh"],
+    [data-homeground-locale="ko"]
+  ) :is(.eyebrow, .sectionLabel, .sectionLabelLight, .recommendTag, .calendar li > span, .cityCount small, .transferFormula figcaption, .evidenceFigure figcaption span) {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.pageRoot[data-homeground-locale="ko"] :is(
+    .heroCopy h1,
+    .heroAnswer h2,
+    .sectionHeading h2,
+    .sectionHeadingSplit h2,
+    .sectionHeadingSplitLight h2,
+    .trustIntro h2,
+    .finalCta h2
+  ) {
+  letter-spacing: -0.016em;
+  line-height: 1.18;
+}
+
+.pageRoot[data-homeground-locale="ko"] .heroCopy h1 {
+  max-width: 13em;
+}
+
+.pageRoot[data-homeground-locale="ko"] :is(
+    .heroAnswer > p:last-child,
+    .methodGrid p,
+    .questionList p,
+    .footer nav a
+  ) {
+  font-size: 0.86rem;
+}
+
 @media (max-width: 64rem) {
   .primaryNav {
     display: none;
@@ -1401,6 +1475,7 @@
 
 @media (max-width: 48rem) {
   .headerInner {
+    gap: 0.75rem;
     min-height: 4.25rem;
     padding-inline: 1rem;
   }
@@ -1411,6 +1486,10 @@
 
   .headerCta {
     padding-inline: 0.9rem;
+  }
+
+  .languageNav {
+    padding-inline-start: 0.55rem;
   }
 
   .hero {
@@ -1573,6 +1652,30 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0;
+  }
+}
+
+@media (max-width: 32rem) {
+  .brandCopy {
+    display: none;
+  }
+
+  .headerInner {
+    gap: 0.45rem;
+  }
+
+  .languageNav {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+
+  .languageNav a {
+    font-size: 0.64rem;
+    padding-inline: 0.2rem;
+  }
+
+  .headerCta {
+    padding-inline: 0.7rem;
   }
 }
 

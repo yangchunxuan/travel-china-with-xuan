@@ -2,7 +2,10 @@ import type { HomegroundLocale } from "./homegroundI18n";
 
 const SITE_URL = "https://homegroundchina.com";
 
-export const guideIds = ["zhangjiajie-itinerary"] as const;
+export const guideIds = [
+  "zhangjiajie-itinerary",
+  "beijing-zhangjiajie-shanghai-10-days",
+] as const;
 
 export type GuideId = (typeof guideIds)[number];
 
@@ -73,6 +76,55 @@ export const guideRegistry = [
         heroAlt: "안개 사이로 솟아오른 장자제 국가삼림공원의 사암 봉우리.",
         navTitle: "장자제 일정 가이드",
         featuredLinkLabel: "장자제 2–4일에 실제로 가능한 일정 보기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "beijing-zhangjiajie-shanghai-10-days",
+    type: "planning",
+    featured: false,
+    heroImagePath:
+      "/images/guides/beijing-zhangjiajie-shanghai-10-days/zhangjiajie-base-1800.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/beijing-zhangjiajie-shanghai-10-days/zhangjiajie-base-1800.jpg",
+    datePublished: "2026-07-21",
+    dateModified: "2026-07-21",
+    sourceReviewedDate: "2026-07-21",
+    locales: {
+      en: {
+        path: "/guides/beijing-zhangjiajie-shanghai-10-days/",
+        title: "Beijing–Zhangjiajie–Shanghai in 10 Days: Is It Realistic?",
+        headline:
+          "Beijing–Zhangjiajie–Shanghai in 10 Days: Is It Actually Realistic?",
+        description:
+          "Can Beijing, Zhangjiajie and Shanghai fit into 10 days? Count the real sightseeing days, see the trade-offs, and test whether your exact trip still works.",
+        heroAlt:
+          "Zhangjiajie city buildings beside a river, with mountains rising behind them.",
+        navTitle: "10-day China route guide",
+        featuredLinkLabel: "Check whether three cities really fit into 10 days",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/beijing-zhangjiajie-shanghai-10-days/",
+        title: "北京—张家界—上海 10 天够吗？现实路线拆解",
+        headline: "北京—张家界—上海，10 天真的够吗？",
+        description:
+          "北京、张家界和上海能否放进 10 天？先计算真正完整的游览日，再看每座城市必须做出的取舍，以及你的具体行程是否仍然成立。",
+        heroAlt: "河畔的张家界市区楼房，背后为群山。",
+        navTitle: "北京—张家界—上海 10 天指南",
+        featuredLinkLabel: "检查三座城市能否真正放进 10 天",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/beijing-zhangjiajie-shanghai-10-days/",
+        title: "베이징·장자제·상하이 10일 일정, 현실적으로 가능할까",
+        headline: "베이징·장자제·상하이 10일 여행, 현실적으로 가능할까요?",
+        description:
+          "베이징·장자제·상하이를 10일 안에 여행할 수 있을까요? 실제 관광일을 계산하고, 도시별로 무엇을 포기해야 하는지, 내 일정도 가능한지 확인해 보세요.",
+        heroAlt: "강 건너 장자제 시내와 그 뒤로 이어지는 산봉우리.",
+        navTitle: "베이징·장자제·상하이 10일 가이드",
+        featuredLinkLabel: "세 도시를 10일에 넣을 수 있는지 확인하기",
         openGraphLocale: "ko_KR",
       },
     },
