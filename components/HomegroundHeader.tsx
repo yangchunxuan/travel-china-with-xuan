@@ -90,7 +90,7 @@ export function HomegroundHeader({
   const plannerHref =
     pageContext === "home"
       ? plannerTarget
-      : `${copy.path}?utm_source=${guideId}&utm_medium=owned&utm_campaign=route-guide&planner=destinations#route-finder`;
+      : `${copy.path}?planner=destinations#route-finder`;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
 

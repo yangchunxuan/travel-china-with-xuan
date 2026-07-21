@@ -149,6 +149,12 @@ function createStructuredData(
         url: "https://homegroundchina.com/",
       },
       {
+        "@type": "Person",
+        "@id": "https://homegroundchina.com/#xuan",
+        name: "Xuan",
+        worksFor: { "@id": "https://homegroundchina.com/#organization" },
+      },
+      {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
         url: guide.canonicalUrl,
@@ -165,6 +171,7 @@ function createStructuredData(
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
         author: { "@id": "https://homegroundchina.com/#organization" },
+        contributor: { "@id": "https://homegroundchina.com/#xuan" },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         citation: ZHANGJIAJIE_GUIDE_SOURCES.map((source, index) => ({
           "@type": "WebPage",
@@ -209,7 +216,7 @@ export function ZhangjiajieGuidePage({
 }) {
   const copy = getZhangjiajieGuideCopy(locale);
   const guide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-guide&utm_medium=owned&utm_campaign=route-guide&planner=destinations#route-finder`;
+  const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale, copy);
 
   return (
@@ -300,8 +307,18 @@ export function ZhangjiajieGuidePage({
               </nav>
               <div className={styles.fullDayRule}>
                 <strong>{copy.quick.fullDayLabel}</strong>
-                <p>{copy.quick.fullDayBody}</p>
+                <div>
+                  <p>{copy.quick.fullDayBody}</p>
+                  <p className={styles.fullDayExample}>
+                    <span>{copy.quick.fullDayExampleLabel}</span>{" "}
+                    {copy.quick.fullDayExample}
+                  </p>
+                </div>
               </div>
+              <Link className={styles.quickPlannerLink} href={plannerHref}>
+                {copy.quick.action}
+                <ArrowRight aria-hidden="true" size={17} />
+              </Link>
             </section>
 
             <section

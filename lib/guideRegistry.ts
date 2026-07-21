@@ -46,7 +46,7 @@ export const guideRegistry = [
         title: "Zhangjiajie Itinerary: What Fits in 2, 3 or 4 Days",
         headline: "Zhangjiajie in 2, 3 or 4 Days: What Actually Fits",
         description:
-          "A realistic Zhangjiajie itinerary for 2, 3 or 4 full days, including what to skip, where to stay and when Fenghuang fits as your next stop.",
+          "A realistic Zhangjiajie itinerary for 2, 3 or 4 days, with exact park sequences, full-day and night-count rules, what to skip and when Fenghuang fits.",
         heroAlt:
           "Sandstone pillars rising through mist in Zhangjiajie National Forest Park.",
         navTitle: "Zhangjiajie guide",
@@ -58,7 +58,7 @@ export const guideRegistry = [
         title: "张家界 2、3、4 天行程：时间到底够不够",
         headline: "张家界玩 2、3 或 4 天，分别能安排什么？",
         description:
-          "一份现实可行的张家界 2–4 天路线指南：国家森林公园和天门山如何取舍、住武陵源还是市区，以及凤凰古城什么时候适合作为下一站。",
+          "一份现实可行的张家界 2–4 天指南：森林公园具体顺序、完整游览日与住宿晚数、景点取舍，以及凤凰古城什么时候适合作为下一站。",
         heroAlt: "云雾中的张家界国家森林公园石英砂岩峰林。",
         navTitle: "张家界路线指南",
         featuredLinkLabel: "查看张家界 2–4 天到底能安排什么",
@@ -69,7 +69,7 @@ export const guideRegistry = [
         title: "장자제 2·3·4일 일정: 실제로 어디까지 가능할까",
         headline: "장자제 2일, 3일, 4일—실제로 가능한 일정",
         description:
-          "장자제에서 2~4일을 보낼 때 국가삼림공원과 톈먼산을 어떻게 나눌지, 어디에 숙박할지, 펑황고성을 다음 목적지로 넣을 수 있는지를 현실적으로 정리한 가이드입니다.",
+          "장자제 2~4일의 공원 순서, 온전한 관광일과 숙박일 계산, 제외할 곳과 펑황고성을 다음 목적지로 넣는 조건을 현실적으로 정리했습니다.",
         heroAlt: "안개 사이로 솟아오른 장자제 국가삼림공원의 사암 봉우리.",
         navTitle: "장자제 일정 가이드",
         featuredLinkLabel: "장자제 2–4일에 실제로 가능한 일정 보기",

@@ -68,6 +68,27 @@ test("guide itineraries use semantic editorial lists and sources stay quiet by d
   assert.match(styles, /\.branchGrid\s*\{\s*align-items: start;/s);
 });
 
+test("guide answers full-day counting and park-order intent without inventing attribution", async () => {
+  const guide = await source("components/ZhangjiajieGuidePage.tsx");
+  const header = await source("components/HomegroundHeader.tsx");
+  const copy = await source("lib/zhangjiajieGuideI18n.ts");
+  const sources = await source("lib/zhangjiajieGuide.ts");
+
+  assert.match(copy, /Arrive Monday evening and tour Tuesday plus Wednesday/);
+  assert.match(copy, /East Gate → Tianzi Mountain → Yuanjiajie → Bailong Elevator/);
+  assert.match(copy, /South Gate → Huangshi Village → Golden Whip Stream → East Gate/);
+  assert.match(copy, /Conditional, not the default/);
+  assert.match(copy, /local background: Xuan grew up in Zhangjiajie/);
+  assert.match(sources, /zjjdaxiagu\.com\/guide\.html/);
+  assert.match(guide, /"@type": "Person"/);
+  assert.match(guide, /author: \{ "@id": "https:\/\/homegroundchina\.com\/#organization" \}/);
+  assert.match(guide, /contributor: \{ "@id": "https:\/\/homegroundchina\.com\/#xuan" \}/);
+  assert.match(guide, /\?planner=destinations#route-finder/);
+  assert.match(header, /\?planner=destinations#route-finder/);
+  assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
+  assert.doesNotMatch(header, /utm_(?:source|medium|campaign)/);
+});
+
 test("guide metadata, sitemap and visible dates share one source", async () => {
   const page = await source(
     "app/(default)/guides/zhangjiajie-itinerary/page.tsx",

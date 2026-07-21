@@ -34,4 +34,16 @@ export const ZHANGJIAJIE_GUIDE_SOURCES = [
     name: "Hunan Government: Fenghuang station transfer guide",
     url: "https://www.enghunan.gov.cn/hneng/Tourism/GoldenTravelRoutes/202508/t20250802_33979569.html",
   },
+  {
+    name: "Zhangjiajie Grand Canyon: official visitor routes and estimated duration",
+    url: "https://zjjdaxiagu.com/guide.html",
+  },
+  {
+    name: "Hunan Road Transport Administration: Zhangjiajie Grand Canyon corridor",
+    url: "https://jtt.hunan.gov.cn/hnygj/szdtyg/202405/t20240507_33294107.html",
+  },
+  {
+    name: "Hunan Department of Culture and Tourism: Huanglong Cave overview",
+    url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhjqjd/202208/t20220816_27583725.html",
+  },
 ] as const;
