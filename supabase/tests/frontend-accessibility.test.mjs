@@ -21,7 +21,10 @@ test("route questions own one localized accessible validation message", async ()
   const routeFinder = await source(routeFinderPath);
   const destinationCopy = await source(destinationCopyPath);
 
-  assert.match(routeFinder, /<form noValidate onSubmit=\{handleSubmit\}>/);
+  assert.match(
+    routeFinder,
+    /<form[\s\S]{0,240}noValidate\s+onSubmit=\{handleSubmit\}/,
+  );
   assert.match(routeFinder, /const validateCurrentQuestion = \(\): string/);
   assert.match(routeFinder, /setQuestionError\(error\)/);
   assert.match(routeFinder, /headingRef\.current\?\.focus\(\)/);
@@ -29,7 +32,7 @@ test("route questions own one localized accessible validation message", async ()
     routeFinder,
     /questionError \? ` \$\{questionErrorId\}` : ""/,
   );
-  assert.match(routeFinder, /id=\{questionErrorId\} role="alert"/);
+  assert.match(routeFinder, /id=\{questionErrorId\}\s+role="alert"/);
   assert.equal(routeFinder.match(/role="alert"/g)?.length, 1);
 
   assert.match(destinationCopy, /Choose at least one place/);
@@ -38,6 +41,38 @@ test("route questions own one localized accessible validation message", async ()
   assert.match(destinationCopy, /Choose or enter a whole number/);
   assert.match(destinationCopy, /请选择或输入1至60/);
   assert.match(destinationCopy, /1박부터 60박 사이/);
+});
+
+test("planner step changes preserve the current viewport", async () => {
+  const routeFinder = await source(routeFinderPath);
+  const homegroundPage = await source(homegroundPagePath);
+
+  assert.doesNotMatch(routeFinder, /target\.scrollIntoView/);
+  assert.match(
+    routeFinder,
+    /pendingScrollPositionRef\.current = \{\s*left: window\.scrollX,\s*top: window\.scrollY,/,
+  );
+  assert.match(
+    routeFinder,
+    /window\.scrollTo\(\s*pendingScrollPosition\.left,\s*pendingScrollPosition\.top,/,
+  );
+  assert.match(
+    routeFinder,
+    /pendingHistoryFocusRef\.current = true/,
+  );
+  assert.match(
+    routeFinder,
+    /pendingStartRevealRef\.current[\s\S]{0,180}scrollIntoView\(\{ block: "start" \}\)/,
+  );
+
+  const hashEffectStart = homegroundPage.indexOf("const allowedHashes");
+  const hashEffectEnd = homegroundPage.indexOf(
+    "\n\n  return (\n    <div",
+    hashEffectStart,
+  );
+  const hashEffect = homegroundPage.slice(hashEffectStart, hashEffectEnd);
+  assert.match(hashEffect, /\}, \[locale\]\);/);
+  assert.doesNotMatch(hashEffect, /\[locale, plannerStatus\]/);
 });
 
 test("must-see priorities cannot change while a handoff is locked", async () => {
@@ -65,6 +100,45 @@ test("restart collapses one planner flow instead of adding duplicate back steps"
   assert.match(
     routeFinder,
     /pendingHistoryResetFlowIdRef\.current = nextFlowId/,
+  );
+  const historyReturnStart = routeFinder.indexOf(
+    "const returnPlannerHistoryToStart",
+  );
+  const historyReturnEnd = routeFinder.indexOf(
+    "const validateCurrentQuestion",
+    historyReturnStart,
+  );
+  const historyReturn = routeFinder.slice(
+    historyReturnStart,
+    historyReturnEnd,
+  );
+  assert.match(
+    historyReturn,
+    /addEventListener\(\s*"popstate",[\s\S]{0,420}\{ once: true \}/,
+  );
+  assert.match(
+    historyReturn,
+    /sessionStorage\.setItem\(startFocusStorageKey, "true"\)/,
+  );
+  assert.match(
+    routeFinder,
+    /focusStartOnMountRef\.current =\s*window\.sessionStorage\.getItem\(startFocusStorageKey\) === "true"/,
+  );
+  assert.match(
+    routeFinder,
+    /if \(!focusStartOnMountRef\.current\) return;/,
+  );
+  assert.match(
+    routeFinder,
+    /headingRef\.current\?\.focus\(\{ preventScroll: true \}\);\s*focusStartOnMountRef\.current = false;\s*window\.sessionStorage\.removeItem\(startFocusStorageKey\)/,
+  );
+  assert.match(
+    routeFinder,
+    /setHistoryFocusRequest\(\(request\) => request \+ 1\)/,
+  );
+  assert.match(
+    routeFinder,
+    /\[historyFocusRequest, sessionReady, stepIndex, view\]/,
   );
   const restartStart = routeFinder.indexOf("const handleRestart");
   const restartEnd = routeFinder.indexOf(

@@ -10,6 +10,7 @@ import {
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -93,6 +94,7 @@ const questions: readonly QuestionKey[] = [
 ];
 const presetNights = ["7", "10", "14", "18"] as const;
 const sessionStorageKey = "homeground-destination-planner-v3";
+const startFocusStorageKey = `${sessionStorageKey}:focus-start`;
 const plannerQueryKey = "planner";
 const destinationsQueryKey = "destinations";
 const unsafeInlineControlCharacters =
@@ -406,6 +408,7 @@ export function RouteFinder({
   const [questionError, setQuestionError] = useState("");
   const [mustSeeMessage, setMustSeeMessage] = useState("");
   const [sessionReady, setSessionReady] = useState(false);
+  const [historyFocusRequest, setHistoryFocusRequest] = useState(0);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const resultHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const otherPlaceRef = useRef<HTMLInputElement | null>(null);
@@ -415,6 +418,13 @@ export function RouteFinder({
   const plannerFlowIdRef = useRef("");
   const plannerDepthRef = useRef(0);
   const pendingHistoryResetFlowIdRef = useRef<string | null>(null);
+  const pendingHistoryFocusRef = useRef(false);
+  const pendingStartRevealRef = useRef(false);
+  const focusStartOnMountRef = useRef(false);
+  const pendingScrollPositionRef = useRef<{
+    left: number;
+    top: number;
+  } | null>(null);
 
   const questionKey = questions[stepIndex];
   const questionCopy = copy.questions[questionKey];
@@ -449,6 +459,8 @@ export function RouteFinder({
 
   useEffect(() => {
     try {
+      focusStartOnMountRef.current =
+        window.sessionStorage.getItem(startFocusStorageKey) === "true";
       const parsed = readStoredPlannerSession();
       const storedDraft = restoreDraft(parsed?.draft);
       const storedJourney =
@@ -573,6 +585,8 @@ export function RouteFinder({
   useEffect(() => {
     if (!sessionReady) return;
     const handlePopState = (event: PopStateEvent) => {
+      pendingHistoryFocusRef.current = true;
+      setHistoryFocusRequest((request) => request + 1);
       const pendingFlowId = pendingHistoryResetFlowIdRef.current;
       if (pendingFlowId) {
         pendingHistoryResetFlowIdRef.current = null;
@@ -650,23 +664,51 @@ export function RouteFinder({
     return () => window.removeEventListener("popstate", handlePopState);
   }, [draft, journey, onRouteFound, onStatusChange, sessionReady]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!sessionReady) return;
     const target =
       view === "result" ? resultHeadingRef.current : headingRef.current;
     if (!hasMounted.current) {
       hasMounted.current = true;
-      return;
+      if (!focusStartOnMountRef.current) return;
     }
-    window.requestAnimationFrame(() => {
-      if (!target) return;
-      target.focus({ preventScroll: true });
-      target.scrollIntoView({
-        block: "start",
-        inline: "nearest",
-      });
+    if (!target) return;
+    target.focus({ preventScroll: true });
+    const pendingScrollPosition = pendingScrollPositionRef.current;
+    if (pendingScrollPosition) {
+      window.scrollTo(
+        pendingScrollPosition.left,
+        pendingScrollPosition.top,
+      );
+      pendingScrollPositionRef.current = null;
+    }
+    if (
+      pendingStartRevealRef.current &&
+      view === "questions" &&
+      stepIndex === 0
+    ) {
+      document.getElementById(id)?.scrollIntoView({ block: "start" });
+      pendingStartRevealRef.current = false;
+    }
+  }, [id, sessionReady, stepIndex, view]);
+
+  useEffect(() => {
+    if (!sessionReady || !focusStartOnMountRef.current) return;
+    headingRef.current?.focus({ preventScroll: true });
+    focusStartOnMountRef.current = false;
+    window.sessionStorage.removeItem(startFocusStorageKey);
+  }, [sessionReady]);
+
+  useEffect(() => {
+    if (!sessionReady || !pendingHistoryFocusRef.current) return;
+    const target =
+      view === "result" ? resultHeadingRef.current : headingRef.current;
+    const frame = window.requestAnimationFrame(() => {
+      target?.focus({ preventScroll: true });
+      pendingHistoryFocusRef.current = false;
     });
-  }, [sessionReady, stepIndex, view]);
+    return () => window.cancelAnimationFrame(frame);
+  }, [historyFocusRequest, sessionReady, stepIndex, view]);
 
   const updateDraft = (next: PlannerDraft) => {
     setDraft(next);
@@ -704,6 +746,18 @@ export function RouteFinder({
       currentHistory.homegroundPlannerDepth > 0
     ) {
       pendingHistoryResetFlowIdRef.current = nextFlowId;
+      window.sessionStorage.setItem(startFocusStorageKey, "true");
+      window.addEventListener(
+        "popstate",
+        () => {
+          pendingHistoryFocusRef.current = true;
+          setHistoryFocusRequest((request) => request + 1);
+          window.setTimeout(() => {
+            window.sessionStorage.removeItem(startFocusStorageKey);
+          }, 2000);
+        },
+        { once: true },
+      );
       window.history.go(-currentHistory.homegroundPlannerDepth);
       return;
     }
@@ -783,6 +837,11 @@ export function RouteFinder({
       return;
     }
 
+    pendingScrollPositionRef.current = {
+      left: window.scrollX,
+      top: window.scrollY,
+    };
+
     trackPlannerEvent("planner_step_completed", {
       page_language: locale,
       step: stepIndex + 1,
@@ -809,6 +868,7 @@ export function RouteFinder({
 
   const handleEdit = () => {
     if (!confirmDiscardContact()) return;
+    pendingStartRevealRef.current = true;
     setView("questions");
     setStepIndex(0);
     setQuestionError("");
@@ -818,6 +878,7 @@ export function RouteFinder({
 
   const handleRestart = () => {
     if (!confirmDiscardContact()) return;
+    pendingStartRevealRef.current = true;
     setDraft(emptyDraft);
     setMatch(null);
     setJourney(null);
@@ -964,6 +1025,28 @@ export function RouteFinder({
       (id) =>
         id === "zhangjiajie" || id === "hangzhou-suzhou",
     );
+  const destinationSelectionReady =
+    questionKey === "destinations" &&
+    (draft.destinationMode === "classic-start" ||
+      (draft.destinationMode === "wishlist" &&
+        (draft.selectedDestinationIds.length > 0 || draft.otherEnabled) &&
+        (!draft.otherEnabled || draft.otherPlace.trim().length > 0)));
+  const selectedDestinationLabels =
+    draft.destinationMode === "classic-start"
+      ? [copy.questions.destinations.classicStartLabel]
+      : [
+          ...draft.selectedDestinationIds.map(
+            (destinationId) => copy.destinations[destinationId],
+          ),
+          ...(draft.otherEnabled && draft.otherPlace.trim()
+            ? [draft.otherPlace.trim()]
+            : []),
+        ];
+  const selectedDestinationPreview = selectedDestinationLabels.slice(0, 2);
+  const remainingDestinationCount = Math.max(
+    0,
+    selectedDestinationLabels.length - selectedDestinationPreview.length,
+  );
 
   if (!sessionReady) {
     return (
@@ -988,25 +1071,61 @@ export function RouteFinder({
       aria-labelledby={`${id}-title`}
     >
       {view === "questions" ? (
-        <form noValidate onSubmit={handleSubmit}>
-          <div className={styles.progressRow}>
-            <span>{copy.progress(stepIndex + 1, questions.length)}</span>
-            <progress
-              value={stepIndex + 1}
-              max={questions.length}
+        <form
+          className={
+            destinationSelectionReady ? styles.hasMobileActionDock : undefined
+          }
+          noValidate
+          onSubmit={handleSubmit}
+        >
+          <div className={styles.progressHeader}>
+            <div className={styles.progressRow}>
+              <span>
+                {copy.progress(stepIndex + 1, questions.length)} ·{" "}
+                {copy.stepLabels[questionKey]}
+              </span>
+              <progress
+                value={stepIndex + 1}
+                max={questions.length}
+                aria-label={copy.progress(stepIndex + 1, questions.length)}
+              />
+            </div>
+            <ol
+              className={styles.stepRail}
               aria-label={copy.progress(stepIndex + 1, questions.length)}
-            />
+            >
+              {questions.map((step, index) => (
+                <li
+                  className={`${styles.stepItem} ${
+                    index === stepIndex ? styles.stepActive : ""
+                  } ${index < stepIndex ? styles.stepComplete : ""}`}
+                  aria-current={index === stepIndex ? "step" : undefined}
+                  aria-label={`${index + 1}. ${copy.stepLabels[step]}`}
+                  key={step}
+                >
+                  <span className={styles.stepNumber} aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className={styles.stepLabel} aria-hidden="true">
+                    {copy.stepLabels[step]}
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
 
-          <div className={styles.questionHeader}>
-            <p className={styles.kicker}>{questionCopy.eyebrow}</p>
-            <h2 id={`${id}-title`} ref={headingRef} tabIndex={-1}>
-              {stepIndex === 0 ? copy.introTitle : questionCopy.title}
-            </h2>
-            <p id={questionHelpId}>
-              {stepIndex === 0 ? copy.introBody : questionCopy.help}
-            </p>
-          </div>
+          <div className={styles.questionLayout}>
+            <div className={styles.questionHeader}>
+              <p className={styles.kicker}>{questionCopy.eyebrow}</p>
+              <h2 id={`${id}-title`} ref={headingRef} tabIndex={-1}>
+                {stepIndex === 0 ? copy.introTitle : questionCopy.title}
+              </h2>
+              <p id={questionHelpId}>
+                {stepIndex === 0 ? copy.introBody : questionCopy.help}
+              </p>
+            </div>
+
+            <div className={styles.questionBody}>
 
           {questionKey === "destinations" && (
             <fieldset
@@ -1307,30 +1426,67 @@ export function RouteFinder({
             </fieldset>
           )}
 
-          {questionError && (
-            <p className={styles.questionError} id={questionErrorId} role="alert">
-              {questionError}
-            </p>
-          )}
+              {questionError && (
+                <p
+                  className={styles.questionError}
+                  id={questionErrorId}
+                  role="alert"
+                >
+                  {questionError}
+                </p>
+              )}
 
-          <div className={styles.formActions}>
-            {stepIndex > 0 && (
-              <button
-                className={styles.secondaryButton}
-                type="button"
-                onClick={handleBack}
-              >
-                <ArrowLeft aria-hidden="true" size={17} />
-                {copy.back}
-              </button>
-            )}
-            <button className={styles.primaryButton} type="submit">
-              {stepIndex === questions.length - 1
-                ? copy.showCheck
-                : copy.continue}
-              <ArrowRight aria-hidden="true" size={17} />
-            </button>
+              <div className={styles.formActions}>
+                {stepIndex > 0 && (
+                  <button
+                    className={styles.secondaryButton}
+                    type="button"
+                    onClick={handleBack}
+                  >
+                    <ArrowLeft aria-hidden="true" size={17} />
+                    {copy.back}
+                  </button>
+                )}
+                <button className={styles.primaryButton} type="submit">
+                  {stepIndex === questions.length - 1
+                    ? copy.showCheck
+                    : copy.continue}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </button>
+              </div>
+            </div>
           </div>
+
+          {destinationSelectionReady && (
+            <div
+              className={styles.mobileActionDock}
+              role="group"
+              aria-label={copy.progress(stepIndex + 1, questions.length)}
+            >
+              <div className={styles.mobileSelectionSummary}>
+                <strong>
+                  {copy.selectedCount(selectedDestinationLabels.length)}
+                </strong>
+                <div>
+                  {selectedDestinationPreview.map((label) => (
+                    <span key={label}>{label}</span>
+                  ))}
+                  {remainingDestinationCount > 0 && (
+                    <span>+{remainingDestinationCount}</span>
+                  )}
+                </div>
+              </div>
+              <ul className={styles.mobileTrust} aria-label={copy.introEyebrow}>
+                {copy.mobileTrust.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <button className={styles.mobileDockButton} type="submit">
+                {copy.continue}
+                <ArrowRight aria-hidden="true" size={17} />
+              </button>
+            </div>
+          )}
         </form>
       ) : (
         match && (

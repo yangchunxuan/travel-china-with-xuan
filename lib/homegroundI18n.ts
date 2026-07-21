@@ -88,6 +88,9 @@ export interface HomegroundCopy {
     cityStayLabel: string;
     wholeRouteLabel: string;
     eveningChoiceLabel: string;
+    cityStayDuration: string;
+    wholeRouteDuration: string;
+    eveningChoiceDuration: string;
   };
   studio: {
     eyebrow: string;
@@ -420,6 +423,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       cityStayLabel: "City stay guide",
       wholeRouteLabel: "Whole-route guide",
       eveningChoiceLabel: "Evening decision guide",
+      cityStayDuration: "2–4 days",
+      wholeRouteDuration: "10 days · 3 cities",
+      eveningChoiceDuration: "3 shows · 1 evening",
     },
     studio: {
       eyebrow: "The studio",
@@ -918,6 +924,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       cityStayLabel: "城市停留指南",
       wholeRouteLabel: "整条路线指南",
       eveningChoiceLabel: "夜间安排决策指南",
+      cityStayDuration: "2–4 天",
+      wholeRouteDuration: "10 天 · 3 座城市",
+      eveningChoiceDuration: "3 场演出 · 1 个晚上",
     },
     studio: {
       eyebrow: "工作室",
@@ -1390,6 +1399,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       cityStayLabel: "도시 체류 가이드",
       wholeRouteLabel: "전체 동선 가이드",
       eveningChoiceLabel: "저녁 일정 선택 가이드",
+      cityStayDuration: "2–4일",
+      wholeRouteDuration: "10일 · 3개 도시",
+      eveningChoiceDuration: "공연 3개 · 저녁 1회",
     },
     studio: {
       eyebrow: "스튜디오",

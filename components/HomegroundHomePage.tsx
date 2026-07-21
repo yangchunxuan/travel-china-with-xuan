@@ -16,6 +16,7 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
+import { getZhangjiajieGuideCopy } from "../lib/zhangjiajieGuideI18n";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   HomegroundHeader,
@@ -109,21 +110,42 @@ export function HomegroundHomePage({
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
   const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
+  const wholeRouteGuide = getGuideEntry(
+    "beijing-zhangjiajie-shanghai-10-days",
+    locale,
+  );
+  const nightShowGuide = getGuideEntry("best-zhangjiajie-night-show", locale);
+  const zhangjiajieGuideCopy = getZhangjiajieGuideCopy(locale);
   const planningGuides = [
     {
       guide: featuredGuide,
       label: copy.guides.cityStayLabel,
+      duration: copy.guides.cityStayDuration,
+      number: "01",
+      imagePath: "/images/guides/zhangjiajie/tianmen-1200.jpg",
+      imageAlt: zhangjiajieGuideCopy.figures.tianmen.alt,
+      imageWidth: 1200,
+      imageHeight: 780,
     },
     {
-      guide: getGuideEntry(
-        "beijing-zhangjiajie-shanghai-10-days",
-        locale,
-      ),
+      guide: wholeRouteGuide,
       label: copy.guides.wholeRouteLabel,
+      duration: copy.guides.wholeRouteDuration,
+      number: "02",
+      imagePath: wholeRouteGuide.heroImagePath,
+      imageAlt: wholeRouteGuide.heroAlt,
+      imageWidth: 1800,
+      imageHeight: 1200,
     },
     {
-      guide: getGuideEntry("best-zhangjiajie-night-show", locale),
+      guide: nightShowGuide,
       label: copy.guides.eveningChoiceLabel,
+      duration: copy.guides.eveningChoiceDuration,
+      number: "03",
+      imagePath: nightShowGuide.heroImagePath,
+      imageAlt: nightShowGuide.heroAlt,
+      imageWidth: 1536,
+      imageHeight: 1024,
     },
   ] as const;
   const plannerTarget =
@@ -189,7 +211,7 @@ export function HomegroundHomePage({
       window.cancelAnimationFrame(firstFrame);
       window.cancelAnimationFrame(secondFrame);
     };
-  }, [locale, plannerStatus]);
+  }, [locale]);
 
   return (
     <div
@@ -358,22 +380,56 @@ export function HomegroundHomePage({
               <h3 id="planning-guides-title">{copy.guides.title}</h3>
             </div>
             <div className={styles.planningGuideList}>
-              {planningGuides.map(({ guide, label }) => (
-                <a
-                  className={styles.planningGuideCard}
-                  href={guide.canonicalPath}
-                  key={guide.id}
-                >
-                  <span className={styles.planningGuideLabel}>{label}</span>
-                  <strong className={styles.planningGuideTitle}>
-                    {guide.headline}
-                  </strong>
-                  <span className={styles.planningGuideCta}>
-                    {guide.featuredLinkLabel}
-                    <ArrowRight aria-hidden="true" size={17} />
-                  </span>
-                </a>
-              ))}
+              {planningGuides.map(
+                ({
+                  guide,
+                  label,
+                  duration,
+                  number,
+                  imagePath,
+                  imageAlt,
+                  imageWidth,
+                  imageHeight,
+                }) => (
+                  <a
+                    className={styles.planningGuideCard}
+                    href={guide.canonicalPath}
+                    key={guide.id}
+                  >
+                    <span className={styles.planningGuideImage}>
+                      <img
+                        src={imagePath}
+                        alt={imageAlt}
+                        width={imageWidth}
+                        height={imageHeight}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span
+                      className={styles.planningGuideNumber}
+                      aria-hidden="true"
+                    >
+                      {number}
+                    </span>
+                    <span className={styles.planningGuideContent}>
+                      <span className={styles.planningGuideMeta}>
+                        <span className={styles.planningGuideLabel}>
+                          {label}
+                        </span>
+                        <span>{duration}</span>
+                      </span>
+                      <strong className={styles.planningGuideTitle}>
+                        {guide.headline}
+                      </strong>
+                      <span className={styles.planningGuideCta}>
+                        {guide.featuredLinkLabel}
+                        <ArrowRight aria-hidden="true" size={17} />
+                      </span>
+                    </span>
+                  </a>
+                ),
+              )}
             </div>
           </nav>
         </section>

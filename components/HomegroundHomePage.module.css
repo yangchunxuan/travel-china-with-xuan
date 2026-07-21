@@ -751,22 +751,24 @@
 }
 
 .planningGuideCard {
-  align-content: start;
-  background: #fff;
-  border: 1px solid #deded7;
-  border-radius: 1rem;
-  color: #17251f;
-  display: grid;
-  gap: 0.6rem;
-  min-height: 10.5rem;
-  padding: 1.15rem;
+  align-items: flex-end;
+  background: #183c32;
+  border: 1px solid rgb(23 37 31 / 18%);
+  border-radius: 1.15rem;
+  color: #fff;
+  display: flex;
+  min-height: 24rem;
+  overflow: hidden;
+  padding: 1.45rem;
+  position: relative;
   text-decoration: none;
-  transition: border-color 140ms ease, box-shadow 140ms ease;
+  transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-.planningGuideCard:hover {
-  border-color: #bcbdb5;
-  box-shadow: 0 12px 28px rgb(22 38 30 / 7%);
+.planningGuideCard:hover,
+.planningGuideCard:focus-visible {
+  box-shadow: 0 18px 38px rgb(22 38 30 / 16%);
+  transform: translateY(-2px);
 }
 
 .planningGuideCard:focus-visible {
@@ -774,33 +776,104 @@
   outline-offset: 3px;
 }
 
-.planningGuideLabel {
-  color: #8c3a27;
-  font-size: 0.69rem;
+.planningGuideImage,
+.planningGuideImage::after,
+.planningGuideImage img {
+  inset: 0;
+  position: absolute;
+}
+
+.planningGuideImage::after {
+  background: linear-gradient(
+    180deg,
+    rgb(6 23 18 / 4%) 24%,
+    rgb(6 23 18 / 88%) 100%
+  );
+  content: "";
+}
+
+.planningGuideImage img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+  width: 100%;
+}
+
+.planningGuideCard:hover .planningGuideImage img,
+.planningGuideCard:focus-visible .planningGuideImage img {
+  transform: scale(1.025);
+}
+
+.planningGuideNumber {
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 72%);
+  border-radius: 999px;
+  display: inline-flex;
+  font-family: var(--hg-card-display);
+  font-size: 1.1rem;
+  height: 3.1rem;
+  justify-content: center;
+  left: 1.35rem;
+  position: absolute;
+  top: 1.35rem;
+  width: 3.1rem;
+  z-index: 1;
+}
+
+.planningGuideContent {
+  display: grid;
+  gap: 0.75rem;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.planningGuideMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.planningGuideMeta > span {
+  backdrop-filter: blur(8px);
+  background: rgb(7 28 22 / 32%);
+  border: 1px solid rgb(255 255 255 / 48%);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.64rem;
   font-weight: 780;
-  letter-spacing: 0.1em;
-  line-height: 1.3;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  padding: 0.38rem 0.55rem;
   text-transform: uppercase;
+}
+
+.planningGuideLabel {
+  color: #fff;
 }
 
 .planningGuideTitle {
   font-family: var(--hg-card-display);
-  font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.18;
+  line-height: 1.05;
+  max-width: 22ch;
+  text-wrap: balance;
 }
 
 .planningGuideCta {
   align-items: center;
   align-self: end;
-  color: #7f321f;
+  color: #fff;
   display: inline-flex;
-  font-size: 0.8rem;
-  font-weight: 740;
+  font-size: 0.72rem;
+  font-weight: 780;
   gap: 0.42rem;
   line-height: 1.35;
-  margin-top: auto;
+  letter-spacing: 0.08em;
+  min-height: 2.75rem;
+  text-transform: uppercase;
 }
 
 .handledCard {
@@ -1225,7 +1298,7 @@
   }
 
   .planningGuideCard {
-    min-height: 0;
+    min-height: 22rem;
   }
 
   .studioSection,
@@ -1308,7 +1381,8 @@
 @media (prefers-reduced-motion: reduce) {
   .skipLink,
   .faqList summary span,
-  .planningGuideCard {
+  .planningGuideCard,
+  .planningGuideImage img {
     transition: none;
   }
 }
