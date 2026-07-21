@@ -1,20 +1,24 @@
 .pageRoot {
-  --ink: #17251f;
-  --muted: #5d6962;
-  --paper: #f6f3ec;
-  --surface: #fffefa;
-  --line: #d8dad3;
-  --green: #183c32;
-  --deep-green: #0e211b;
-  --rust: #a74731;
-  --rust-dark: #7f2e1d;
-  --peach: #efb7a1;
+  --ink: #25221e;
+  --muted: #655f57;
+  --paper: #f3efe7;
+  --surface: #fffdf8;
+  --line: #d8d0c5;
+  --green: #21463a;
+  --charcoal: #24211e;
+  --rust: #994832;
+  --rust-dark: #74311f;
+  --peach: #e8b49e;
   --sage: #dbe4dd;
   --display: var(--hg-font-editorial), Georgia, "Times New Roman", serif;
-  background: #fbfaf7;
+  background: #f9f6f0;
   color: var(--ink);
   min-width: 0;
-  overflow-x: clip;
+}
+
+.pageRoot :where(a, summary):focus-visible {
+  outline: 3px solid #0b6b59;
+  outline-offset: 3px;
 }
 
 .pageRoot main {
@@ -41,7 +45,7 @@
 
 .siteHeader {
   background: rgb(255 254 250 / 94%);
-  border-block-end: 1px solid rgb(24 60 50 / 12%);
+  border-block-end: 1px solid var(--line);
   inset-block-start: 0;
   position: sticky;
   z-index: 50;
@@ -155,40 +159,21 @@
 }
 
 .hero {
-  background:
-    radial-gradient(circle at 83% 18%, rgb(239 183 161 / 17%), transparent 25rem),
-    linear-gradient(145deg, #132d26 0%, var(--deep-green) 62%, #091712 100%);
-  color: #fff;
-  min-height: 43rem;
+  background: var(--paper);
+  border-block-end: 1px solid var(--line);
+  color: var(--ink);
+  min-height: auto;
   position: relative;
 }
 
 .hero::before,
 .hero::after {
-  border: 1px solid rgb(239 183 161 / 15%);
-  border-radius: 50%;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-}
-
-.hero::before {
-  height: 31rem;
-  inset-block-start: -15rem;
-  inset-inline-end: -7rem;
-  width: 31rem;
-}
-
-.hero::after {
-  height: 16rem;
-  inset-block-end: -8rem;
-  inset-inline-start: -5rem;
-  width: 16rem;
+  content: none;
 }
 
 .heroInner {
   margin-inline: auto;
-  padding: clamp(2.5rem, 6vw, 5rem) 1.25rem clamp(4.25rem, 8vw, 6.5rem);
+  padding: clamp(2.25rem, 4.5vw, 4rem) 1.25rem clamp(3.25rem, 6vw, 5rem);
   position: relative;
   width: min(100%, 78rem);
   z-index: 1;
@@ -200,12 +185,12 @@
   flex-wrap: wrap;
   gap: 0.6rem;
   list-style: none;
-  margin: 0 0 clamp(2.5rem, 5vw, 4.75rem);
+  margin: 0 0 clamp(1.75rem, 3.5vw, 3rem);
   padding: 0;
 }
 
 .breadcrumb li {
-  color: rgb(255 255 255 / 57%);
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 680;
 }
@@ -216,14 +201,14 @@
 }
 
 .breadcrumb a {
-  color: #fff;
+  color: var(--ink);
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
 }
 
 .heroGrid {
-  align-items: end;
+  align-items: center;
   display: grid;
   gap: clamp(2.5rem, 7vw, 7rem);
   grid-template-columns: minmax(0, 1.3fr) minmax(20rem, 0.7fr);
@@ -238,12 +223,12 @@
   text-transform: uppercase;
 }
 
-.eyebrow,
 .sectionLabelLight {
   color: var(--peach);
 }
 
 .eyebrow {
+  color: var(--rust);
   margin: 0 0 1.15rem;
 }
 
@@ -261,18 +246,18 @@
 }
 
 .heroCopy h1 {
-  font-size: clamp(2.75rem, 6.8vw, 5.9rem);
+  font-size: clamp(2.75rem, 5.2vw, 4.75rem);
   line-height: 0.96;
   margin: 0;
-  max-width: 12.5ch;
+  max-width: 14ch;
 }
 
 .heroCopy h1 span {
-  color: var(--peach);
+  color: var(--rust);
 }
 
 .heroLead {
-  color: rgb(255 255 255 / 76%);
+  color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.14rem);
   line-height: 1.75;
   margin: 1.65rem 0 0;
@@ -280,14 +265,15 @@
 }
 
 .heroAnswer {
-  background: rgb(255 255 255 / 7%);
-  border: 1px solid rgb(255 255 255 / 16%);
-  border-radius: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-block-start: 0.28rem solid var(--rust);
+  border-radius: 0.35rem;
   padding: clamp(1.4rem, 3vw, 2.1rem);
 }
 
 .heroAnswer > p:first-child {
-  color: var(--peach);
+  color: var(--rust);
   font-size: 0.7rem;
   font-weight: 780;
   letter-spacing: 0.11em;
@@ -303,7 +289,7 @@
 
 .heroMetric {
   align-items: center;
-  border-block: 1px solid rgb(255 255 255 / 16%);
+  border-block: 1px solid var(--line);
   display: grid;
   gap: 0.25rem 0.65rem;
   grid-template-columns: auto 1fr auto auto 1fr;
@@ -312,24 +298,24 @@
 }
 
 .heroMetric strong {
-  color: var(--peach);
+  color: var(--rust);
   font-family: var(--display);
   font-size: 2rem;
   font-weight: 400;
 }
 
 .heroMetric span {
-  color: rgb(255 255 255 / 72%);
+  color: var(--muted);
   font-size: 0.7rem;
   line-height: 1.25;
 }
 
 .heroMetric svg {
-  color: rgb(255 255 255 / 44%);
+  color: #8f877d;
 }
 
 .heroAnswer > p:last-child {
-  color: rgb(255 255 255 / 72%);
+  color: var(--muted);
   font-size: 0.86rem;
   line-height: 1.7;
   margin: 0;
@@ -340,7 +326,7 @@
   display: grid;
   gap: 0.85rem;
   grid-template-columns: auto minmax(2rem, 1fr) auto minmax(2rem, 1fr) auto;
-  margin-block-start: clamp(3.5rem, 7vw, 6rem);
+  margin-block-start: clamp(2.25rem, 4.5vw, 3.75rem);
 }
 
 .routeBand span {
@@ -349,14 +335,14 @@
 }
 
 .routeBand i {
-  background: linear-gradient(90deg, var(--peach), rgb(239 183 161 / 18%));
+  background: var(--line);
   height: 1px;
   position: relative;
 }
 
 .routeBand i::after {
   border-block: 3px solid transparent;
-  border-inline-start: 5px solid var(--peach);
+  border-inline-start: 5px solid var(--rust);
   content: "";
   inset-block-start: -2.5px;
   inset-inline-end: 0;
@@ -364,7 +350,7 @@
 }
 
 .editorialNote {
-  color: rgb(255 255 255 / 47%);
+  color: var(--muted);
   font-size: 0.7rem;
   line-height: 1.55;
   margin: 1.35rem 0 0;
@@ -388,8 +374,8 @@
 .definition {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 1.35rem;
-  box-shadow: 0 22px 60px rgb(20 45 36 / 7%);
+  border-radius: 0.55rem;
+  box-shadow: 0 10px 30px rgb(37 34 30 / 4%);
   margin-block-start: clamp(-2.5rem, -3vw, -1.5rem);
   padding: clamp(1.5rem, 4.5vw, 3.5rem);
   position: relative;
@@ -463,7 +449,7 @@
 .countCard,
 .countCardFeatured {
   border: 1px solid var(--line);
-  border-radius: 1rem;
+  border-radius: 0.55rem;
   display: flex;
   flex-direction: column;
   min-height: 18rem;
@@ -475,9 +461,9 @@
 }
 
 .countCardFeatured {
-  background: var(--green);
-  border-color: var(--green);
-  color: #fff;
+  background: #eee2d8;
+  border-color: #cfb4a5;
+  color: var(--ink);
   transform: translateY(-0.65rem);
 }
 
@@ -489,7 +475,7 @@
 }
 
 .countCardFeatured .countNumber {
-  color: var(--peach);
+  color: var(--rust);
 }
 
 .countCard h3,
@@ -513,7 +499,7 @@
 }
 
 .countCardFeatured p {
-  color: rgb(255 255 255 / 72%);
+  color: var(--muted);
 }
 
 .countCard strong,
@@ -531,14 +517,14 @@
 }
 
 .countCardFeatured strong {
-  border-color: rgb(255 255 255 / 17%);
-  color: var(--peach);
+  border-color: #cfb4a5;
+  color: var(--rust-dark);
 }
 
 .planningRule {
   align-items: flex-start;
   background: #f0e8df;
-  border-radius: 0.85rem;
+  border-radius: 0.45rem;
   color: #553a30;
   display: flex;
   font-size: 0.84rem;
@@ -572,7 +558,7 @@
 .lengthCard,
 .lengthCardRecommended {
   border: 1px solid var(--line);
-  border-radius: 1.05rem;
+  border-radius: 0.55rem;
   min-height: 21rem;
   padding: clamp(1.25rem, 3vw, 2rem);
   position: relative;
@@ -583,12 +569,12 @@
 }
 
 .lengthCardRecommended {
-  background: #edf1ec;
-  border-color: #96a99e;
+  background: #f2e5db;
+  border-color: #cba693;
 }
 
 .recommendTag {
-  background: var(--green);
+  background: var(--rust);
   border-radius: 999px;
   color: #fff;
   display: inline-flex;
@@ -598,6 +584,10 @@
   margin-block-end: 1.15rem;
   padding: 0.4rem 0.65rem;
   text-transform: uppercase;
+}
+
+.lengthCardRecommended .lengthSplit {
+  color: var(--rust-dark);
 }
 
 .lengthTopline {
@@ -648,15 +638,20 @@
 }
 
 .calendarSection {
-  background: var(--deep-green);
-  border-radius: 1.5rem;
-  color: #fff;
+  background: transparent;
+  border-block: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
   margin-block-start: clamp(5rem, 10vw, 9rem);
-  padding: clamp(1.5rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 6vw, 4.75rem) 0;
 }
 
 .sectionHeadingSplitLight > p {
-  color: rgb(255 255 255 / 67%);
+  color: var(--muted);
+}
+
+.calendarSection .sectionLabelLight {
+  color: var(--rust);
 }
 
 .calendar {
@@ -669,8 +664,8 @@
 }
 
 .calendar li {
-  border: 1px solid rgb(255 255 255 / 14%);
-  border-radius: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
   display: flex;
   flex-direction: column;
   min-height: 12.75rem;
@@ -678,20 +673,20 @@
 }
 
 .calendar li[data-kind="full"] {
-  background: rgb(255 255 255 / 8%);
+  background: var(--surface);
 }
 
 .calendar li[data-kind="transfer"] {
-  background: rgb(167 71 49 / 31%);
-  border-color: rgb(239 183 161 / 38%);
+  background: #f1dfd6;
+  border-color: #cda390;
 }
 
 .calendar li[data-kind="edge"] {
-  background: rgb(255 255 255 / 3%);
+  background: #ece7df;
 }
 
 .calendar li > span {
-  color: var(--peach);
+  color: var(--rust);
   font-size: 0.66rem;
   font-weight: 760;
   letter-spacing: 0.06em;
@@ -708,7 +703,7 @@
 }
 
 .calendar li > small {
-  color: rgb(255 255 255 / 58%);
+  color: var(--muted);
   font-size: 0.67rem;
   line-height: 1.45;
   margin-block-start: auto;
@@ -716,7 +711,7 @@
 }
 
 .calendarSummary {
-  border-block-start: 1px solid rgb(255 255 255 / 15%);
+  border-block-start: 1px solid var(--line);
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -725,12 +720,12 @@
 }
 
 .calendarSummary span {
-  color: rgb(255 255 255 / 68%);
+  color: var(--muted);
   font-size: 0.78rem;
 }
 
 .calendarSummary strong {
-  color: var(--peach);
+  color: var(--rust);
   font-family: var(--display);
   font-size: 1.7rem;
   font-weight: 400;
@@ -746,7 +741,7 @@
 .tradeoffGrid > article {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   min-height: 24rem;
@@ -791,7 +786,7 @@
 .sacrifice {
   align-items: flex-start;
   background: #f2e7df;
-  border-radius: 0.75rem;
+  border-radius: 0.4rem;
   color: #563c31;
   display: flex;
   font-size: 0.76rem;
@@ -820,7 +815,7 @@
 .evidenceFigure {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 1.1rem;
+  border-radius: 0.5rem;
   display: grid;
   gap: 0;
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.32fr);
@@ -842,7 +837,7 @@
 
 .evidenceFigure figcaption {
   align-self: stretch;
-  background: #edf1ec;
+  background: #eee6dc;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -858,7 +853,7 @@
 }
 
 .evidenceFigure figcaption p {
-  color: var(--green);
+  color: var(--ink);
   font-family: var(--display);
   font-size: clamp(1.15rem, 2vw, 1.55rem);
   line-height: 1.32;
@@ -915,7 +910,7 @@
 .transferFormula {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 1.1rem;
+  border-radius: 0.5rem;
   margin: 0;
   overflow: hidden;
   padding: clamp(1.25rem, 3.5vw, 2.5rem);
@@ -986,8 +981,8 @@
 }
 
 .directionNote {
-  background: #edf1ec;
-  border-inline-start: 3px solid var(--green);
+  background: #f1e9df;
+  border-inline-start: 3px solid var(--rust);
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.7;
@@ -997,7 +992,7 @@
 }
 
 .directionNote strong {
-  color: var(--green);
+  color: var(--rust-dark);
 }
 
 .fitGrid {
@@ -1009,16 +1004,16 @@
 .worksCard,
 .longerCard {
   border: 1px solid var(--line);
-  border-radius: 1.1rem;
+  border-radius: 0.5rem;
   padding: clamp(1.35rem, 4vw, 2.5rem);
 }
 
 .worksCard {
-  background: #edf2ee;
+  background: var(--surface);
 }
 
 .longerCard {
-  background: #f3e9e2;
+  background: #f2e5dc;
 }
 
 .worksCard h3,
@@ -1070,7 +1065,7 @@
   align-items: start;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 0.9rem;
+  border-radius: 0.5rem;
   display: grid;
   gap: 1rem;
   grid-template-columns: auto minmax(0, 1fr);
@@ -1101,8 +1096,8 @@
 }
 
 .trustSection {
-  background: var(--deep-green);
-  border-radius: 1.5rem;
+  background: var(--charcoal);
+  border-radius: 0.55rem;
   color: #fff;
   margin-block-start: clamp(5rem, 10vw, 9rem);
   padding: clamp(1.6rem, 5vw, 4rem);
@@ -1125,7 +1120,7 @@
 
 .planningIllustration {
   background: #f8f4ec;
-  border-radius: 1rem;
+  border-radius: 0.35rem;
   color: var(--green);
   margin: 0;
   overflow: hidden;
@@ -1156,8 +1151,8 @@
 
 .methodGrid li {
   background: rgb(255 255 255 / 6%);
-  border: 1px solid rgb(255 255 255 / 14%);
-  border-radius: 0.9rem;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 0.35rem;
   min-height: 15rem;
   padding: 1.25rem;
 }
@@ -1183,7 +1178,7 @@
 }
 
 .boundaryStatement {
-  border-block-start: 1px solid rgb(255 255 255 / 15%);
+  border-block-start: 1px solid rgb(255 255 255 / 28%);
   color: rgb(255 255 255 / 70%);
   font-size: 0.78rem;
   line-height: 1.65;
@@ -1236,7 +1231,7 @@
 .finalCta {
   align-items: end;
   background: var(--rust);
-  border-radius: 1.5rem;
+  border-radius: 0.55rem;
   color: #fff;
   display: grid;
   gap: 2rem clamp(3rem, 8vw, 8rem);
@@ -1246,7 +1241,17 @@
 }
 
 .finalCta > div:first-child > p:last-child {
-  color: rgb(255 255 255 / 78%);
+  color: rgb(255 255 255 / 88%);
+}
+
+.finalCta .sectionLabelLight {
+  color: var(--paper);
+}
+
+.trustSection :where(a, summary):focus-visible,
+.finalCta :where(a, summary):focus-visible,
+.footer :where(a, summary):focus-visible {
+  outline-color: var(--paper);
 }
 
 .ctaAction {
@@ -1279,7 +1284,7 @@
 }
 
 .ctaAction small {
-  color: rgb(255 255 255 / 78%);
+  color: rgb(255 255 255 / 88%);
   font-size: 0.72rem;
   line-height: 1.5;
   text-align: center;
@@ -1314,7 +1319,7 @@
 }
 
 .footer {
-  background: #0b1914;
+  background: #211f1c;
   color: #fff;
   padding: 2.25rem 1.25rem 1.5rem;
 }
@@ -1342,7 +1347,9 @@
 }
 
 .footer nav a {
+  align-items: center;
   color: rgb(255 255 255 / 68%);
+  display: inline-flex;
   font-size: 0.75rem;
   min-height: 2.75rem;
   padding-block: 0.75rem;
@@ -1350,8 +1357,8 @@
 
 .footer > p {
   border-block-start: 1px solid rgb(255 255 255 / 11%);
-  color: rgb(255 255 255 / 40%);
-  font-size: 0.65rem;
+  color: rgb(255 255 255 / 65%);
+  font-size: 0.75rem;
   margin: 1.4rem auto 0;
   padding-block-start: 1.1rem;
   width: min(100%, 78rem);
@@ -1474,12 +1481,17 @@
     min-height: 0;
   }
 
-  .calendarSection,
   .trustSection,
   .finalCta {
-    border-radius: 1rem;
+    border-radius: 0.55rem;
     margin-inline: -0.25rem;
     padding: 1.25rem;
+  }
+
+  .calendarSection {
+    border-radius: 0;
+    margin-inline: 0;
+    padding: 2.5rem 0;
   }
 
   .calendar {
