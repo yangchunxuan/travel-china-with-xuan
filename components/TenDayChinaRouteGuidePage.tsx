@@ -189,28 +189,57 @@ export function TenDayChinaRouteGuidePage({
                     <span>{copy.hero.accent}</span>
                   </h1>
                   <p className={styles.heroLead}>{copy.hero.lead}</p>
+
+                  <section className={styles.heroFact} aria-labelledby="answer-title">
+                    <div className={styles.heroFactCopy}>
+                      <p>{copy.hero.quickLabel}</p>
+                      <h2 id="answer-title">{copy.hero.quickTitle}</h2>
+                    </div>
+
+                    <div className={styles.heroMetric}>
+                      <strong>10</strong>
+                      <span>{copy.hero.hotelNights}</span>
+                      <ArrowRight aria-hidden="true" size={20} />
+                      <strong>7</strong>
+                      <span>{copy.hero.fullSightseeingDays}</span>
+                    </div>
+                  </section>
                 </div>
 
-                <aside className={styles.heroAnswer} aria-labelledby="answer-title">
-                  <p>{copy.hero.quickLabel}</p>
-                  <h2 id="answer-title">{copy.hero.quickTitle}</h2>
-                  <div className={styles.heroMetric}>
-                    <strong>10</strong>
-                    <span>{copy.hero.hotelNights}</span>
-                    <ArrowRight aria-hidden="true" size={20} />
-                    <strong>7</strong>
-                    <span>{copy.hero.fullSightseeingDays}</span>
-                  </div>
-                  <p>{copy.hero.quickBody}</p>
-                </aside>
-              </div>
+                <div className={styles.heroRouteVisual}>
+                  <figure className={styles.heroMap}>
+                    <picture>
+                      <source
+                        sizes="(max-width: 48rem) calc(100vw - 2rem), 26rem"
+                        srcSet={`${guideAssetPath}/planning-method-720.webp 720w, ${guideAssetPath}/planning-method-1200.webp 1200w, ${guideAssetPath}/planning-method-1536.webp 1536w`}
+                        type="image/webp"
+                      />
+                      <img
+                        alt={copy.trust.imageAlt}
+                        decoding="async"
+                        fetchPriority="high"
+                        height="1024"
+                        src={`${guideAssetPath}/planning-method-1536.png`}
+                        width="1536"
+                      />
+                    </picture>
+                  </figure>
 
-              <div className={styles.routeBand} aria-label={copy.hero.routeLabel}>
-                <span>{copy.hero.places[0]}</span>
-                <i aria-hidden="true" />
-                <span>{copy.hero.places[1]}</span>
-                <i aria-hidden="true" />
-                <span>{copy.hero.places[2]}</span>
+                  <section className={styles.routePlan} aria-label={copy.hero.routeLabel}>
+                    <p>{copy.hero.planLabel}</p>
+                    <ol>
+                      {copy.hero.places.map((place, index) => (
+                        <li key={place}>
+                          <span>{place}</span>
+                          <strong>{copy.hero.planDays[index]}</strong>
+                          <small>{copy.hero.planUnit}</small>
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+
+                  <p className={styles.heroTransferNote}>{copy.hero.quickBody}</p>
+                </div>
               </div>
 
               <p className={styles.editorialNote}>{copy.hero.editorialNote}</p>
@@ -485,26 +514,6 @@ export function TenDayChinaRouteGuidePage({
                   <p>{copy.trust.intro}</p>
                 </div>
 
-                <figure className={styles.planningIllustration}>
-                  <picture>
-                    <source
-                      sizes="(max-width: 48rem) calc(100vw - 4.5rem), 34rem"
-                      srcSet={`${guideAssetPath}/planning-method-720.webp 720w, ${guideAssetPath}/planning-method-1200.webp 1200w, ${guideAssetPath}/planning-method-1536.webp 1536w`}
-                      type="image/webp"
-                    />
-                    <img
-                      alt={copy.trust.imageAlt}
-                      decoding="async"
-                      height="1024"
-                      loading="lazy"
-                      src={`${guideAssetPath}/planning-method-1536.png`}
-                      width="1536"
-                    />
-                  </picture>
-                  <figcaption>
-                    {copy.trust.imageCaption}
-                  </figcaption>
-                </figure>
               </div>
 
               <ol className={styles.methodGrid}>

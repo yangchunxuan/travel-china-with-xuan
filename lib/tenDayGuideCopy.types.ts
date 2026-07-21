@@ -27,6 +27,9 @@ export interface TenDayGuideCopy {
     fullSightseeingDays: string;
     quickBody: string;
     routeLabel: string;
+    planLabel: string;
+    planUnit: string;
+    planDays: readonly [string, string, string];
     places: readonly [string, string, string];
     editorialNote: string;
   };

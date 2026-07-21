@@ -29,8 +29,11 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     hotelNights: "hotel nights",
     fullSightseeingDays: "full sightseeing days",
     quickBody:
-      "A workable split is 3 days in Beijing, 2 in Zhangjiajie and 2 in Shanghai, with both intercity movements treated as transfer days—not bonus sightseeing days.",
+      "Both intercity moves count as transfer days—not bonus sightseeing days.",
     routeLabel: "Route overview",
+    planLabel: "A realistic 10-night split",
+    planUnit: "full days",
+    planDays: ["3", "2", "2"],
     places: ["Beijing", "Zhangjiajie", "Shanghai"],
     editorialNote:
       "Homeground planning framework · not a fixed tour product · live transport and entry conditions checked again for your dates",

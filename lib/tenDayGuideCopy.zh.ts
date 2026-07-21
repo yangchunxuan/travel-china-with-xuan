@@ -29,8 +29,11 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
     hotelNights: "住宿晚数",
     fullSightseeingDays: "完整游览日",
     quickBody:
-      "一种可执行的分配是：北京 3 个完整游览日、张家界 2 个、上海 2 个。两次换城都应按转场日计算，不能当成额外的游览日。",
+      "两次换城都应按转场日计算，不能当成额外的游览日。",
     routeLabel: "路线概览",
+    planLabel: "一条可执行的 10 晚分配",
+    planUnit: "完整游览日",
+    planDays: ["3", "2", "2"],
     places: ["北京", "张家界", "上海"],
     editorialNote:
       "Homeground 规划框架 · 非固定旅游产品 · 交通班次与入园条件需按出行日期重新核对",

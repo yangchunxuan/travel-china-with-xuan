@@ -29,8 +29,11 @@ export const tenDayGuideKorean: TenDayGuideCopy = {
     hotelNights: "박",
     fullSightseeingDays: "온전한 관광일",
     quickBody:
-      "베이징 3일, 장자제 2일, 상하이 2일로 나눌 수 있습니다. 두 차례의 도시 간 이동일은 관광일에 포함하지 않습니다.",
+      "두 차례의 도시 간 이동은 추가 관광일이 아닌 이동일로 계산합니다.",
     routeLabel: "여행 동선 요약",
+    planLabel: "실행 가능한 10박 배분",
+    planUnit: "온전한 관광일",
+    planDays: ["3", "2", "2"],
     places: ["베이징", "장자제", "상하이"],
     editorialNote:
       "Homeground의 여행 설계 기준 · 정해진 패키지 상품이 아님 · 교통편과 관광지 운영·입장 조건은 실제 여행 날짜에 맞춰 다시 확인",
