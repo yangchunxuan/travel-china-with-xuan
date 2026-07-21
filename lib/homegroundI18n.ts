@@ -82,6 +82,12 @@ export interface HomegroundCopy {
       detail: string;
     }[];
   };
+  guides: {
+    eyebrow: string;
+    title: string;
+    cityStayLabel: string;
+    wholeRouteLabel: string;
+  };
   studio: {
     eyebrow: string;
     title: string;
@@ -406,6 +412,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "What is planned, who delivers it and what remains outside the arrangement.",
         },
       ],
+    },
+    guides: {
+      eyebrow: "Planning guides",
+      title: "Read the route question before you commit to it.",
+      cityStayLabel: "City stay guide",
+      wholeRouteLabel: "Whole-route guide",
     },
     studio: {
       eyebrow: "The studio",
@@ -898,6 +910,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         },
       ],
     },
+    guides: {
+      eyebrow: "路线规划指南",
+      title: "先看清路线问题，再决定怎么走。",
+      cityStayLabel: "城市停留指南",
+      wholeRouteLabel: "整条路线指南",
+    },
     studio: {
       eyebrow: "工作室",
       title: "一条清晰的规划主线，明确的交接。",
@@ -1362,6 +1380,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "무엇을 설계하고 누가 실행하며 어떤 항목이 포함되지 않는지.",
         },
       ],
+    },
+    guides: {
+      eyebrow: "여행 설계 가이드",
+      title: "결정하기 전에, 먼저 동선의 질문을 확인하세요.",
+      cityStayLabel: "도시 체류 가이드",
+      wholeRouteLabel: "전체 동선 가이드",
     },
     studio: {
       eyebrow: "스튜디오",

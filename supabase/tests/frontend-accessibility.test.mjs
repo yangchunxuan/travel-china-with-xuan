@@ -76,6 +76,25 @@ test("restart collapses one planner flow instead of adding duplicate back steps"
   assert.doesNotMatch(restartHandler, /history\.pushState/);
 });
 
+test("article route deep links seed their cities once, then release the URL", async () => {
+  const routeFinder = await source(routeFinderPath);
+
+  assert.match(routeFinder, /const destinationsQueryKey = "destinations"/);
+  assert.match(
+    routeFinder,
+    /destinationIds\.filter\(\(id\) => values\.includes\(id\)\)/,
+  );
+  assert.match(
+    routeFinder,
+    /url\.searchParams\.delete\(destinationsQueryKey\)[\s\S]*window\.history\.replaceState/,
+  );
+  assert.match(routeFinder, /if \(arrivedWithDestinationQuery\) clearDestinationsQuery\(\)/);
+  assert.match(
+    routeFinder,
+    /const requestedStep = arrivedWithDestinationQuery\s*\? 0/,
+  );
+});
+
 test("planner CTAs preserve the result while moving to the human handoff", async () => {
   const header = await source(homegroundHeaderPath);
   const page = await source(homegroundPagePath);

@@ -87,6 +87,7 @@ const questions: readonly QuestionKey[] = [
 const presetNights = ["7", "10", "14", "18"] as const;
 const sessionStorageKey = "homeground-destination-planner-v3";
 const plannerQueryKey = "planner";
+const destinationsQueryKey = "destinations";
 const unsafeInlineControlCharacters =
   /[\u0000-\u001f\u007f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/gu;
 
@@ -280,6 +281,46 @@ function stepFromUrl(): number | "result" | null {
   return index >= 0 ? index : null;
 }
 
+function destinationsFromUrl(): DestinationId[] | null {
+  const values = new URL(window.location.href)
+    .searchParams
+    .getAll(destinationsQueryKey)
+    .flatMap((value) => value.split(","));
+  const selected = destinationIds.filter((id) => values.includes(id));
+
+  return selected.length > 0 ? selected : null;
+}
+
+function hasDestinationsQuery(): boolean {
+  return new URL(window.location.href).searchParams.has(
+    destinationsQueryKey,
+  );
+}
+
+function clearDestinationsQuery(): void {
+  const url = new URL(window.location.href);
+  url.searchParams.delete(destinationsQueryKey);
+  window.history.replaceState(
+    window.history.state,
+    "",
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+}
+
+function applyLinkedDestinations(
+  draft: PlannerDraft,
+  selectedDestinationIds: DestinationId[],
+): PlannerDraft {
+  return {
+    ...draft,
+    destinationMode: "wishlist",
+    selectedDestinationIds,
+    otherEnabled: false,
+    otherPlace: "",
+    mustSeeIds: [],
+  };
+}
+
 function readPlannerHistoryState(
   value: unknown,
 ): PlannerHistoryState | null {
@@ -396,14 +437,25 @@ export function RouteFinder({
             stepIndex?: unknown;
           })
         : null;
-      const restoredDraft = restoreDraft(parsed?.draft);
-      const restoredJourney =
+      const storedDraft = restoreDraft(parsed?.draft);
+      const storedJourney =
         parsed?.journey &&
         typeof parsed.journey === "object" &&
         typeof (parsed.journey as RouteJourney).journeyId === "string" &&
         Number.isInteger((parsed.journey as RouteJourney).revision)
           ? (parsed.journey as RouteJourney)
           : null;
+      const linkedDestinationIds = destinationsFromUrl();
+      const arrivedWithDestinationQuery = hasDestinationsQuery();
+      const restoredDraft = linkedDestinationIds
+        ? applyLinkedDestinations(storedDraft, linkedDestinationIds)
+        : arrivedWithDestinationQuery
+          ? emptyDraft
+          : storedDraft;
+      const restoredJourney = arrivedWithDestinationQuery
+        ? null
+        : storedJourney;
+      if (arrivedWithDestinationQuery) clearDestinationsQuery();
       const urlState = stepFromUrl();
       const restoredAnswers = completeAnswers(restoredDraft);
       const canRestoreResult =
@@ -416,8 +468,11 @@ export function RouteFinder({
         parsed.stepIndex < questions.length
           ? parsed.stepIndex
           : 0;
-      const requestedStep =
-        typeof urlState === "number" ? urlState : savedStep;
+      const requestedStep = arrivedWithDestinationQuery
+        ? 0
+        : typeof urlState === "number"
+          ? urlState
+          : savedStep;
       const nextStep = Math.min(
         requestedStep,
         firstIncompleteStep(restoredDraft),

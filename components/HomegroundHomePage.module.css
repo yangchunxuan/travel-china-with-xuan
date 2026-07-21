@@ -713,22 +713,94 @@
   margin: 0.35rem 0 0;
 }
 
-.guideLink {
-  align-items: center;
-  color: #7f321f;
-  display: inline-flex;
-  font-size: 0.86rem;
-  font-weight: 740;
-  gap: 0.45rem;
-  margin-top: 1.35rem;
-  min-height: 2.75rem;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+.planningGuides {
+  border-top: 1px solid #d9dbd5;
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
 }
 
-.guideLink:hover,
-.guideLink:focus-visible {
-  color: #521f15;
+.planningGuidesIntro {
+  align-items: flex-end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.planningGuidesIntro .cardLabel {
+  flex: none;
+  margin: 0;
+}
+
+.planningGuidesIntro h3 {
+  color: #17251f;
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 34rem;
+}
+
+.planningGuideList {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.planningGuideCard {
+  align-content: start;
+  background: #fff;
+  border: 1px solid #deded7;
+  border-radius: 1rem;
+  color: #17251f;
+  display: grid;
+  gap: 0.6rem;
+  min-height: 10.5rem;
+  padding: 1.15rem;
+  text-decoration: none;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.planningGuideCard:hover {
+  border-color: #bcbdb5;
+  box-shadow: 0 12px 28px rgb(22 38 30 / 7%);
+}
+
+.planningGuideCard:focus-visible {
+  outline: 3px solid #9e3f29;
+  outline-offset: 3px;
+}
+
+.planningGuideLabel {
+  color: #8c3a27;
+  font-size: 0.69rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.planningGuideTitle {
+  font-family: var(--hg-card-display);
+  font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+}
+
+.planningGuideCta {
+  align-items: center;
+  align-self: end;
+  color: #7f321f;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 740;
+  gap: 0.42rem;
+  line-height: 1.35;
+  margin-top: auto;
 }
 
 .handledCard {
@@ -1142,6 +1214,20 @@
     margin-top: 2.25rem;
   }
 
+  .planningGuidesIntro {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .planningGuideList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .planningGuideCard {
+    min-height: 0;
+  }
+
   .studioSection,
   .faqSection {
     gap: 2.5rem;
@@ -1221,7 +1307,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .skipLink,
-  .faqList summary span {
+  .faqList summary span,
+  .planningGuideCard {
     transition: none;
   }
 }

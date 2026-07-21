@@ -15,7 +15,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import { getFeaturedGuides } from "../lib/guideRegistry";
+import { getGuideEntry } from "../lib/guideRegistry";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   HomegroundHeader,
@@ -108,7 +108,20 @@ export function HomegroundHomePage({
   const copy = getHomegroundCopy(locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
-  const [featuredGuide] = getFeaturedGuides(locale, 1);
+  const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
+  const planningGuides = [
+    {
+      guide: featuredGuide,
+      label: copy.guides.cityStayLabel,
+    },
+    {
+      guide: getGuideEntry(
+        "beijing-zhangjiajie-shanghai-10-days",
+        locale,
+      ),
+      label: copy.guides.wholeRouteLabel,
+    },
+  ] as const;
   const plannerTarget =
     plannerStatus === "result" && routeMatch
       ? "#planner-handoff"
@@ -310,16 +323,6 @@ export function HomegroundHomePage({
                 ))}
               </dl>
 
-              {featuredGuide && (
-                <a
-                  className={styles.guideLink}
-                  href={featuredGuide.canonicalPath}
-                >
-                  {featuredGuide.featuredLinkLabel}
-                  <ArrowRight aria-hidden="true" size={17} />
-                </a>
-              )}
-
             </article>
 
             <aside className={styles.handledCard} aria-labelledby="handled-title">
@@ -341,6 +344,34 @@ export function HomegroundHomePage({
               </ul>
             </aside>
           </div>
+
+          <nav
+            className={styles.planningGuides}
+            aria-labelledby="planning-guides-title"
+          >
+            <div className={styles.planningGuidesIntro}>
+              <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
+              <h3 id="planning-guides-title">{copy.guides.title}</h3>
+            </div>
+            <div className={styles.planningGuideList}>
+              {planningGuides.map(({ guide, label }) => (
+                <a
+                  className={styles.planningGuideCard}
+                  href={guide.canonicalPath}
+                  key={guide.id}
+                >
+                  <span className={styles.planningGuideLabel}>{label}</span>
+                  <strong className={styles.planningGuideTitle}>
+                    {guide.headline}
+                  </strong>
+                  <span className={styles.planningGuideCta}>
+                    {guide.featuredLinkLabel}
+                    <ArrowRight aria-hidden="true" size={17} />
+                  </span>
+                </a>
+              ))}
+            </div>
+          </nav>
         </section>
 
         <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">

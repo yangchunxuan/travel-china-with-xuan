@@ -135,8 +135,9 @@ test("public guide remains available to search, citation and training crawlers",
   assert.match(page, /index: true/);
   assert.match(page, /follow: true/);
   assert.doesNotMatch(guide, /FAQPage|HowTo|AggregateRating/);
-  assert.match(home, /href=\{featuredGuide\.canonicalPath\}/);
-  assert.match(home, /featuredGuide\.featuredLinkLabel/);
+  assert.match(home, /guide: featuredGuide/);
+  assert.match(home, /href=\{guide\.canonicalPath\}/);
+  assert.match(home, /guide\.featuredLinkLabel/);
   assert.match(footer, /href=\{guide\.canonicalPath\}/);
   assert.match(header, /getGuideEntry\([\s\S]*targetLocale[\s\S]*\)\.canonicalPath/);
 });
