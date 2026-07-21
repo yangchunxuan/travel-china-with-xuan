@@ -11,10 +11,10 @@
 }
 
 .localeRoot {
-  --hg-brand: Georgia, "Times New Roman", serif;
-  --hg-card-display: Georgia, "Times New Roman", serif;
-  --hg-editorial: Georgia, "Times New Roman", serif;
-  --hg-ui-display: Georgia, "Times New Roman", serif;
+  --hg-brand: var(--hg-font-brand);
+  --hg-card-display: var(--hg-font-editorial);
+  --hg-editorial: var(--hg-font-editorial);
+  --hg-ui-display: var(--hg-font-editorial);
 }
 
 .localeRoot[data-homeground-locale="zh"] {
@@ -195,6 +195,7 @@
   align-items: center;
   display: inline-flex;
   gap: 0.7rem;
+  min-height: 2.75rem;
   min-width: 0;
   text-decoration: none;
 }
@@ -301,7 +302,7 @@
   color: #7f321f;
 }
 
-.languageNav a[aria-current="page"] {
+.languageNav a[aria-current] {
   background: #fff;
   box-shadow: 0 1px 4px rgb(23 37 31 / 10%);
   color: #17251f;
@@ -385,7 +386,7 @@
   text-decoration: none;
 }
 
-.mobileLanguageNav a[aria-current="page"] {
+.mobileLanguageNav a[aria-current] {
   background: #183c32;
   border-color: #183c32;
   color: #fff;
@@ -712,6 +713,24 @@
   margin: 0.35rem 0 0;
 }
 
+.guideLink {
+  align-items: center;
+  color: #7f321f;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 740;
+  gap: 0.45rem;
+  margin-top: 1.35rem;
+  min-height: 2.75rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.guideLink:hover,
+.guideLink:focus-visible {
+  color: #521f15;
+}
+
 .handledCard {
   background: #183c32;
   color: #fff;
@@ -941,9 +960,12 @@
 
 .footerTop a,
 .footerTop span[aria-current] {
+  align-items: center;
   color: rgb(255 255 255 / 72%);
+  display: inline-flex;
   font-size: 0.82rem;
   font-weight: 650;
+  min-height: 2.75rem;
   text-decoration: none;
 }
 

@@ -15,6 +15,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { getFeaturedGuides } from "../lib/guideRegistry";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   HomegroundHeader,
@@ -107,6 +108,7 @@ export function HomegroundHomePage({
   const copy = getHomegroundCopy(locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
+  const [featuredGuide] = getFeaturedGuides(locale, 1);
   const plannerTarget =
     plannerStatus === "result" && routeMatch
       ? "#planner-handoff"
@@ -124,6 +126,7 @@ export function HomegroundHomePage({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://homegroundchina.com/#organization",
     name: "Homeground China",
     url: "https://homegroundchina.com/",
     description: copy.schemaDescription,
@@ -306,6 +309,16 @@ export function HomegroundHomePage({
                   </div>
                 ))}
               </dl>
+
+              {featuredGuide && (
+                <a
+                  className={styles.guideLink}
+                  href={featuredGuide.canonicalPath}
+                >
+                  {featuredGuide.featuredLinkLabel}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </a>
+              )}
 
             </article>
 

@@ -1,4 +1,9 @@
 import type { MetadataRoute } from "next";
+import {
+  getGuideEntry,
+  getGuideLanguageUrls,
+  guideIds,
+} from "../lib/guideRegistry";
 
 export const dynamic = "force-static";
 
@@ -15,12 +20,27 @@ const privacyLanguages = {
   "zh-Hans": `${base}/zh/privacy/`,
   "x-default": `${base}/privacy/`,
 };
+const guideEntries = guideIds.flatMap((guideId) => {
+  const languages = getGuideLanguageUrls(guideId);
+
+  return (["en", "zh", "ko"] as const).map((locale) => {
+    const guide = getGuideEntry(guideId, locale);
+
+    return {
+      url: guide.canonicalUrl,
+      lastModified: guide.dateModified,
+      changeFrequency: "monthly" as const,
+      priority: locale === "en" ? 0.7 : 0.65,
+      alternates: { languages },
+    };
+  });
+});
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${base}/`,
-      lastModified: "2026-07-18",
+      lastModified: "2026-07-20",
       changeFrequency: "weekly",
       priority: 1,
       alternates: { languages: homepageLanguages },
@@ -39,6 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       alternates: { languages: homepageLanguages },
     },
+    ...guideEntries,
     {
       url: `${base}/privacy/`,
       lastModified: "2026-07-19",

@@ -16,6 +16,10 @@ const labExportRoots = [
   "waterway-lab",
 ];
 
+const sourceOnlyAssetRoots = [
+  "images/guides/zhangjiajie/restored",
+];
+
 const packageJson = JSON.parse(await readFile(packagePath, "utf8"));
 
 if (packageJson.name !== "travel-china-with-xuan") {
@@ -34,6 +38,16 @@ for (const relativeRoot of labExportRoots) {
   const target = path.resolve(outputRoot, relativeRoot);
 
   if (path.dirname(target) !== outputRoot) {
+    throw new Error(`Refusing to prune path outside export root: ${target}`);
+  }
+
+  await rm(target, { recursive: true, force: true });
+}
+
+for (const relativeRoot of sourceOnlyAssetRoots) {
+  const target = path.resolve(outputRoot, relativeRoot);
+
+  if (!target.startsWith(`${outputRoot}${path.sep}`)) {
     throw new Error(`Refusing to prune path outside export root: ${target}`);
   }
 
@@ -60,5 +74,5 @@ for (const requiredPage of ["index.html", "zh/index.html", "ko/index.html"]) {
 }
 
 console.log(
-  `✓ Production export excludes ${labExportRoots.length} experimental route/asset roots; source assets remain untouched in public/.`,
+  `✓ Production export excludes ${labExportRoots.length} experimental roots and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
 );

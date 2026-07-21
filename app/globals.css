@@ -40,6 +40,18 @@
   --line-dark: #c9d0cd;
   --serif: Georgia, "Times New Roman", Cambria, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --hg-font-brand: Georgia, "Times New Roman", serif;
+  --hg-font-editorial: Georgia, "Times New Roman", serif;
+  --hg-color-ink: #17251f;
+  --hg-color-muted: #59675f;
+  --hg-color-paper: #f7f5ef;
+  --hg-color-surface: #ffffff;
+  --hg-color-line: #d7d9d2;
+  --hg-color-green: #183c32;
+  --hg-color-deep-green: #0e211b;
+  --hg-color-rust: #a74731;
+  --hg-color-dark-rust: #7f2e1d;
+  --hg-color-peach: #efb7a1;
 }
 
 html[lang="zh-Hans"] {
@@ -64,6 +76,12 @@ html[lang="ko"] {
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
