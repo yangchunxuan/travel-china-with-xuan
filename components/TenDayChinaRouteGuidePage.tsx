@@ -16,6 +16,9 @@ import styles from "./TenDayChinaRouteGuidePage.module.css";
 const plannerHref =
   "/?planner=destinations&destinations=beijing-great-wall%2Czhangjiajie%2Cshanghai#route-finder";
 
+const guideAssetPath =
+  "/images/guides/beijing-zhangjiajie-shanghai-10-days";
+
 const tripCounts = [
   {
     number: "6",
@@ -525,6 +528,31 @@ export function TenDayChinaRouteGuidePage() {
                 </p>
               </div>
 
+              <figure className={styles.evidenceFigure}>
+                <picture>
+                  <source
+                    sizes="(max-width: 48rem) calc(100vw - 2rem), min(75rem, calc(100vw - 2.5rem))"
+                    srcSet={`${guideAssetPath}/zhangjiajie-base-720.webp 720w, ${guideAssetPath}/zhangjiajie-base-1200.webp 1200w, ${guideAssetPath}/zhangjiajie-base-1800.webp 1800w`}
+                    type="image/webp"
+                  />
+                  <img
+                    alt="Zhangjiajie city buildings beside a river, with mountains rising behind them"
+                    decoding="async"
+                    height="1200"
+                    loading="lazy"
+                    src={`${guideAssetPath}/zhangjiajie-base-1800.jpg`}
+                    width="1800"
+                  />
+                </picture>
+                <figcaption>
+                  <span>Hotel-base decision</span>
+                  <p>
+                    A real Zhangjiajie stay includes the city base and the next
+                    morning&rsquo;s ground journey—not only the scenic-area wishlist.
+                  </p>
+                </figcaption>
+              </figure>
+
               <ol className={styles.diagnosticList}>
                 {hiddenDecisions.map((item, index) => {
                   const Icon = item.icon;
@@ -554,6 +582,31 @@ export function TenDayChinaRouteGuidePage() {
                   transport choice can still consume the day.
                 </p>
               </div>
+
+              <figure className={styles.evidenceFigure}>
+                <picture>
+                  <source
+                    sizes="(max-width: 48rem) calc(100vw - 2rem), min(75rem, calc(100vw - 2.5rem))"
+                    srcSet={`${guideAssetPath}/airport-transfer-720.webp 720w, ${guideAssetPath}/airport-transfer-1200.webp 1200w, ${guideAssetPath}/airport-transfer-1800.webp 1800w`}
+                    type="image/webp"
+                  />
+                  <img
+                    alt="Aircraft, terminal bridges and a control tower seen through an airport window"
+                    decoding="async"
+                    height="1200"
+                    loading="lazy"
+                    src={`${guideAssetPath}/airport-transfer-1800.jpg`}
+                    width="1800"
+                  />
+                </picture>
+                <figcaption>
+                  <span>Transfer-day evidence</span>
+                  <p>
+                    The scheduled flight time is one line inside a longer
+                    hotel-to-hotel movement.
+                  </p>
+                </figcaption>
+              </figure>
 
               <figure className={styles.transferFormula}>
                 <figcaption>Count the complete movement</figcaption>
@@ -629,14 +682,37 @@ export function TenDayChinaRouteGuidePage() {
             </section>
 
             <section className={styles.trustSection} aria-labelledby="trust-title">
-              <div className={styles.trustIntro}>
-                <p className={styles.sectionLabelLight}>What Homeground would check</p>
-                <h2 id="trust-title">The calendar first. The quote later.</h2>
-                <p>
-                  We would not start by forcing your dates into a fixed package. We
-                  would first test whether the route protects what matters to your
-                  group—and tell you where it does not.
-                </p>
+              <div className={styles.trustLead}>
+                <div className={styles.trustIntro}>
+                  <p className={styles.sectionLabelLight}>What Homeground would check</p>
+                  <h2 id="trust-title">The calendar first. The quote later.</h2>
+                  <p>
+                    We would not start by forcing your dates into a fixed package. We
+                    would first test whether the route protects what matters to your
+                    group—and tell you where it does not.
+                  </p>
+                </div>
+
+                <figure className={styles.planningIllustration}>
+                  <picture>
+                    <source
+                      sizes="(max-width: 48rem) calc(100vw - 4.5rem), 34rem"
+                      srcSet={`${guideAssetPath}/planning-method-720.webp 720w, ${guideAssetPath}/planning-method-1200.webp 1200w, ${guideAssetPath}/planning-method-1536.webp 1536w`}
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Illustration of a folded route map, calendar, travel ticket, luggage tag and pencil"
+                      decoding="async"
+                      height="1024"
+                      loading="lazy"
+                      src={`${guideAssetPath}/planning-method-1536.png`}
+                      width="1536"
+                    />
+                  </picture>
+                  <figcaption>
+                    Illustration: how Homeground stress-tests a route before pricing.
+                  </figcaption>
+                </figure>
               </div>
 
               <ol className={styles.methodGrid}>
@@ -721,8 +797,8 @@ export function TenDayChinaRouteGuidePage() {
                     <li><a href="https://enghunan.gov.cn/hneng/News/Localnews/202506/t20250623_33717855.html">Hunan government Zhangjiajie reservation and weather notice</a></li>
                   </ul>
                   <p>
-                    The public page remains out of search until a final sample check,
-                    new image rights review and browser QA are complete.
+                    The page remains out of search until its final pre-publication
+                    sample check and owner approval are complete.
                   </p>
                 </div>
               </details>

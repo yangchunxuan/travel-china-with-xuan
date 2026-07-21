@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     canonical: "/guides/beijing-zhangjiajie-shanghai-10-days/",
   },
   robots: {
-    // Release gate: enable indexing only after the final transport spot-check
-    // and newly supplied, rights-cleared photography have both passed review.
+    // Release gate: enable indexing only after the final pre-publication
+    // sample check and explicit owner approval.
     index: false,
     follow: false,
   },
