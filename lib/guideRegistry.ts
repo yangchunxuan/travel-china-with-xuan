@@ -4,6 +4,7 @@ const SITE_URL = "https://homegroundchina.com";
 
 export const guideIds = [
   "zhangjiajie-itinerary",
+  "best-zhangjiajie-night-show",
   "beijing-zhangjiajie-shanghai-10-days",
 ] as const;
 
@@ -41,7 +42,7 @@ export const guideRegistry = [
     heroImageUrl:
       "https://homegroundchina.com/images/guides/zhangjiajie/hero-1600.jpg",
     datePublished: "2026-07-20",
-    dateModified: "2026-07-21",
+    dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-21",
     locales: {
       en: {
@@ -81,6 +82,54 @@ export const guideRegistry = [
     },
   },
   {
+    id: "best-zhangjiajie-night-show",
+    type: "planning",
+    featured: false,
+    heroImagePath:
+      "/images/guides/best-zhangjiajie-night-show/night-show-decision-1536.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/best-zhangjiajie-night-show/night-show-decision-1536.jpg",
+    datePublished: "2026-07-22",
+    dateModified: "2026-07-22",
+    sourceReviewedDate: "2026-07-22",
+    locales: {
+      en: {
+        path: "/guides/best-zhangjiajie-night-show/",
+        title: "Best Zhangjiajie Night Show? Compare 3 Major Shows",
+        headline: "Which Zhangjiajie Night Show Fits Your Trip?",
+        description:
+          "Compare Tianmen Fox Fairy, Charming Xiangxi and Eternal Love by hotel base, weather, English support and next-day timing—and when to skip all three.",
+        heroAlt:
+          "Editorial illustration comparing an outdoor canyon stage, folk-performance objects and an indoor theatre.",
+        navTitle: "Zhangjiajie night-show guide",
+        featuredLinkLabel: "Compare three shows against the whole evening",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/best-zhangjiajie-night-show/",
+        title: "张家界三大夜间演出怎么选？天门狐仙、魅力湘西、千古情对比",
+        headline: "哪一场张家界夜间演出真正适合你的行程？",
+        description:
+          "按酒店位置、天气、英语支持和次日安排，对比天门狐仙、魅力湘西与张家界千古情，并判断什么时候三场都不看更合理。",
+        heroAlt: "对比峡谷实景舞台、民俗演艺意象与室内剧场的编辑插画。",
+        navTitle: "张家界夜间演出指南",
+        featuredLinkLabel: "把三场演出放进整个晚上再比较",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/best-zhangjiajie-night-show/",
+        title: "장자제 야간 공연 비교: 천문호선·매력상서·천고정",
+        headline: "어떤 장자제 야간 공연이 내 일정에 맞을까요?",
+        description:
+          "숙소 위치, 날씨, 영어 지원, 다음 날 일정으로 천문호선·매력상서·장자제 천고정을 비교하고, 세 공연을 모두 건너뛰는 편이 나은 경우도 확인하세요.",
+        heroAlt: "야외 협곡 무대, 민속 공연 소품, 실내 극장을 비교하는 편집 일러스트.",
+        navTitle: "장자제 야간 공연 가이드",
+        featuredLinkLabel: "세 공연을 저녁 전체 일정과 함께 비교하기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
     id: "beijing-zhangjiajie-shanghai-10-days",
     type: "planning",
     featured: false,
@@ -89,7 +138,7 @@ export const guideRegistry = [
     heroImageUrl:
       "https://homegroundchina.com/images/guides/beijing-zhangjiajie-shanghai-10-days/zhangjiajie-base-1800.jpg",
     datePublished: "2026-07-21",
-    dateModified: "2026-07-21",
+    dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-21",
     locales: {
       en: {

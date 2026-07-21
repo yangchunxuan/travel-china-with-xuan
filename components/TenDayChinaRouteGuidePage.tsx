@@ -41,6 +41,33 @@ const sourceHrefs = [
   "https://enghunan.gov.cn/hneng/News/Localnews/202506/t20250623_33717855.html",
 ] as const;
 
+const nightShowRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string; action: string }
+> = {
+  en: {
+    label: "Optional Zhangjiajie evening",
+    title: "A night show only fits after the hotel base does.",
+    body:
+      "See whether Tianmen Fox Fairy, Charming Xiangxi or Eternal Love strengthens this route—or makes the next morning weaker.",
+    action: "Compare the three night shows",
+  },
+  zh: {
+    label: "可选的张家界晚上",
+    title: "先让住宿安排成立，再考虑夜间演出。",
+    body:
+      "看看天门狐仙、魅力湘西或张家界千古情会让这条路线更完整，还是会拖累第二天。",
+    action: "比较三场夜间演出",
+  },
+  ko: {
+    label: "선택 가능한 장자제 저녁",
+    title: "숙소 동선이 맞아야 야간 공연도 맞습니다.",
+    body:
+      "톈먼호선, 매력상서, 장자제 천고정이 이 일정에 도움이 되는지, 다음 날을 더 힘들게 하는지 확인하세요.",
+    action: "세 야간 공연 비교하기",
+  },
+};
+
 function createStructuredData(
   locale: HomegroundLocale,
   copy: TenDayGuideCopy,
@@ -123,6 +150,11 @@ export function TenDayChinaRouteGuidePage({
   const localePrefix = locale === "en" ? "" : `/${locale}`;
   const plannerHref = `${homeHref}?utm_source=${guideId}&utm_medium=owned&utm_campaign=route-guide&planner=destinations&destinations=beijing-great-wall%2Czhangjiajie%2Cshanghai#route-finder`;
   const zhangjiajieGuideHref = `${localePrefix}/guides/zhangjiajie-itinerary/#quick-answer`;
+  const nightShowGuideHref = getGuideEntry(
+    "best-zhangjiajie-night-show",
+    locale,
+  ).canonicalPath;
+  const nightShowCopy = nightShowRelatedCopy[locale];
   const privacyHref = `${localePrefix}/privacy/`;
   const languagePaths = getGuideLanguagePaths(guideId);
   const languageOptions = [
@@ -409,6 +441,18 @@ export function TenDayChinaRouteGuidePage({
                   );
                 })}
               </ol>
+
+              <aside className={styles.nightShowRelated} aria-labelledby="ten-day-night-show-title">
+                <div>
+                  <span>{nightShowCopy.label}</span>
+                  <h3 id="ten-day-night-show-title">{nightShowCopy.title}</h3>
+                  <p>{nightShowCopy.body}</p>
+                </div>
+                <Link href={nightShowGuideHref}>
+                  {nightShowCopy.action}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
             </section>
 
             <section className={styles.transferSection} aria-labelledby="transfer-title">

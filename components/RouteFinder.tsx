@@ -60,6 +60,13 @@ interface PlannerDraft {
   mustSeeIds: DestinationId[];
 }
 
+interface StoredPlannerSession {
+  draft?: unknown;
+  journey?: unknown;
+  view?: unknown;
+  stepIndex?: unknown;
+}
+
 export interface RouteFinderProps {
   id?: string;
   locale?: HomegroundLocale;
@@ -102,6 +109,20 @@ const emptyDraft: PlannerDraft = {
   pace: "",
   mustSeeIds: [],
 };
+
+function readStoredPlannerSession(): StoredPlannerSession | null {
+  try {
+    const raw = window.sessionStorage.getItem(sessionStorageKey);
+    return raw ? (JSON.parse(raw) as StoredPlannerSession) : null;
+  } catch {
+    try {
+      window.sessionStorage.removeItem(sessionStorageKey);
+    } catch {
+      // Storage can be unavailable; the URL seed must still remain usable.
+    }
+    return null;
+  }
+}
 
 function sanitizeOtherPlace(value: string): string {
   return value
@@ -428,15 +449,7 @@ export function RouteFinder({
 
   useEffect(() => {
     try {
-      const raw = window.sessionStorage.getItem(sessionStorageKey);
-      const parsed = raw
-        ? (JSON.parse(raw) as {
-            draft?: unknown;
-            journey?: unknown;
-            view?: unknown;
-            stepIndex?: unknown;
-          })
-        : null;
+      const parsed = readStoredPlannerSession();
       const storedDraft = restoreDraft(parsed?.draft);
       const storedJourney =
         parsed?.journey &&
@@ -455,7 +468,6 @@ export function RouteFinder({
       const restoredJourney = arrivedWithDestinationQuery
         ? null
         : storedJourney;
-      if (arrivedWithDestinationQuery) clearDestinationsQuery();
       const urlState = stepFromUrl();
       const restoredAnswers = completeAnswers(restoredDraft);
       const canRestoreResult =
@@ -544,6 +556,11 @@ export function RouteFinder({
       setSessionReady(true);
     }
   }, [emitResult, onStatusChange]);
+
+  useEffect(() => {
+    if (!sessionReady || !hasDestinationsQuery()) return;
+    clearDestinationsQuery();
+  }, [sessionReady]);
 
   useEffect(() => {
     if (!sessionReady) return;

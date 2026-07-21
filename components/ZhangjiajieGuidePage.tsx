@@ -14,6 +14,33 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieGuidePage.module.css";
 
+const nightShowRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string; action: string }
+> = {
+  en: {
+    label: "Planning an evening show?",
+    title: "Choose it after the hotel base and next morning are clear.",
+    body:
+      "Compare Tianmen Fox Fairy, Charming Xiangxi and Eternal Love by the whole evening they create—not only the ticket or online rating.",
+    action: "Compare Zhangjiajie night shows",
+  },
+  zh: {
+    label: "准备安排夜间演出？",
+    title: "先确定住宿区域和第二天安排，再选演出。",
+    body:
+      "把天门狐仙、魅力湘西和张家界千古情放进整个晚上比较，而不只看票价或网络评分。",
+    action: "比较张家界三大夜间演出",
+  },
+  ko: {
+    label: "야간 공연을 계획하시나요?",
+    title: "숙소 지역과 다음 날 일정을 정한 뒤 공연을 고르세요.",
+    body:
+      "톈먼호선, 매력상서, 장자제 천고정을 입장권이나 평점이 아니라 저녁 전체 일정으로 비교합니다.",
+    action: "장자제 야간 공연 비교하기",
+  },
+};
+
 function Timeline({
   stops,
   headingLevel = 3,
@@ -216,6 +243,8 @@ export function ZhangjiajieGuidePage({
 }) {
   const copy = getZhangjiajieGuideCopy(locale);
   const guide = getGuideEntry("zhangjiajie-itinerary", locale);
+  const nightShowGuide = getGuideEntry("best-zhangjiajie-night-show", locale);
+  const nightShowCopy = nightShowRelatedCopy[locale];
   const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -350,6 +379,18 @@ export function ZhangjiajieGuidePage({
                 </ol>
               </figure>
             </section>
+
+            <aside className={styles.nightShowRelated} aria-labelledby="night-show-related-title">
+              <div>
+                <p>{nightShowCopy.label}</p>
+                <h2 id="night-show-related-title">{nightShowCopy.title}</h2>
+                <span>{nightShowCopy.body}</span>
+              </div>
+              <Link href={nightShowGuide.canonicalPath}>
+                {nightShowCopy.action}
+                <ArrowRight aria-hidden="true" size={17} />
+              </Link>
+            </aside>
 
             <section
               className={styles.itinerarySection}

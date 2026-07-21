@@ -110,7 +110,7 @@ test("guide metadata, sitemap and visible dates share one source", async () => {
   assert.match(guide, /guide\.datePublished/);
   assert.match(guide, /guide\.dateModified/);
   assert.match(registry, /datePublished: "2026-07-20"/);
-  assert.match(registry, /dateModified: "2026-07-21"/);
+  assert.match(registry, /dateModified: "2026-07-22"/);
   assert.match(registry, /path: "\/guides\/zhangjiajie-itinerary\/"/);
   assert.match(registry, /path: "\/zh\/guides\/zhangjiajie-itinerary\/"/);
   assert.match(registry, /path: "\/ko\/guides\/zhangjiajie-itinerary\/"/);

@@ -40,21 +40,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${base}/`,
-      lastModified: "2026-07-20",
+      lastModified: "2026-07-22",
       changeFrequency: "weekly",
       priority: 1,
       alternates: { languages: homepageLanguages },
     },
     {
       url: `${base}/ko/`,
-      lastModified: "2026-07-18",
+      lastModified: "2026-07-22",
       changeFrequency: "weekly",
       priority: 0.8,
       alternates: { languages: homepageLanguages },
     },
     {
       url: `${base}/zh/`,
-      lastModified: "2026-07-18",
+      lastModified: "2026-07-22",
       changeFrequency: "weekly",
       priority: 0.8,
       alternates: { languages: homepageLanguages },

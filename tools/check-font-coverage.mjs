@@ -15,6 +15,8 @@ const explicitSources = [
   "lib/homegroundPrivacyI18n.ts",
   "lib/guideRegistry.ts",
   "lib/zhangjiajieGuideI18n.ts",
+  "lib/nightShowGuideCopy.zh.ts",
+  "lib/nightShowGuideCopy.ko.ts",
   "lib/destinationPlannerI18n.ts",
   "lib/routeFinder.ts",
 ];

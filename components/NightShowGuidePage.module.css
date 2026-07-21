@@ -1,0 +1,1336 @@
+.pageRoot {
+  --night: #172531;
+  --night-deep: #101a22;
+  --ink: #24221f;
+  --muted: #68625b;
+  --paper: #f7f3eb;
+  --surface: #fffdf9;
+  --line: #d9d1c6;
+  --rust: #93442f;
+  --rust-dark: #73311f;
+  --amber: #d5a15d;
+  --display: var(--serif);
+  background: var(--surface);
+  color: var(--ink);
+  min-width: 0;
+}
+
+.pageRoot[data-homeground-locale="ko"] {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.pageRoot :where(a, summary):focus-visible {
+  outline: 3px solid #0b6b59;
+  outline-offset: 3px;
+}
+
+.pageRoot main {
+  min-width: 0;
+  scroll-margin-block-start: 6rem;
+}
+
+.skipLink {
+  background: #fff;
+  border: 2px solid var(--rust);
+  color: var(--ink);
+  inset-block-start: 0.75rem;
+  inset-inline-start: 1rem;
+  padding: 0.65rem 1rem;
+  position: fixed;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 140ms ease;
+  z-index: 1000;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.hero {
+  background: #f5f1e9;
+  border-block-end: 1px solid var(--line);
+}
+
+.heroInner,
+.articleBody {
+  margin-inline: auto;
+  min-width: 0;
+  width: min(100%, 74rem);
+}
+
+.heroInner {
+  padding: clamp(1.1rem, 2.5vw, 2rem) 1.25rem clamp(2.25rem, 5vw, 4.5rem);
+}
+
+.breadcrumb ol {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0 0 clamp(1.2rem, 2.5vw, 2rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 680;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-inline-end: 0.6rem;
+}
+
+.breadcrumb a {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  min-height: 2.25rem;
+}
+
+.heroGrid {
+  align-items: start;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.75rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
+}
+
+.heroCopy,
+.heroFigure {
+  min-width: 0;
+}
+
+.eyebrow,
+.sectionLabel {
+  color: var(--rust);
+  font-size: 0.7rem;
+  font-weight: 790;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 0.9rem;
+}
+
+.heroCopy h1,
+.heroCopy h2,
+.sectionHeading h2,
+.sectionHeadingSplit h2,
+.sectionHeadingSplitLight h2,
+.qilouAside h2,
+.relatedGuides h2,
+.finalCta h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.heroCopy h1 {
+  font-size: clamp(2.65rem, 5vw, 4.75rem);
+  line-height: 0.98;
+  margin: 0;
+  max-width: 11ch;
+}
+
+.heroLead {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.14rem);
+  line-height: 1.68;
+  margin: 1.2rem 0 0;
+  max-width: 39rem;
+}
+
+.quickAnswer {
+  border-block: 1px solid var(--line);
+  margin-block-start: 1.5rem;
+  padding-block: 1.15rem 1.25rem;
+}
+
+.quickAnswer > p:first-child {
+  color: var(--rust);
+  font-size: 0.68rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.quickAnswer h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.quickAnswer > p:last-child {
+  color: #4f4a44;
+  font-size: 0.91rem;
+  line-height: 1.64;
+  margin: 0.75rem 0 0;
+}
+
+.checkedLine {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  gap: 0.4rem 0.75rem;
+  margin: 1rem 0 0;
+}
+
+.checkedLine span {
+  font-weight: 760;
+}
+
+.checkedLine time::before {
+  content: "·";
+  margin-inline-end: 0.75rem;
+}
+
+.heroFigure {
+  margin: 0;
+  padding-block-start: 0.15rem;
+}
+
+.heroFigure picture,
+.heroFigure img {
+  display: block;
+  width: 100%;
+}
+
+.heroFigure picture {
+  background: var(--night);
+  border: 1px solid #cfc6ba;
+  overflow: hidden;
+}
+
+.heroFigure img {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+}
+
+.heroFigure figcaption {
+  color: var(--muted);
+  font-size: 0.69rem;
+  line-height: 1.5;
+  margin-block-start: 0.65rem;
+}
+
+.decisionStrip {
+  border-block-start: 1px solid var(--line);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+  padding: 1.25rem 0 0;
+}
+
+.decisionStrip li {
+  align-items: flex-start;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  padding-inline: 1.15rem;
+}
+
+.decisionStrip li:first-child {
+  padding-inline-start: 0;
+}
+
+.decisionStrip li + li {
+  border-inline-start: 1px solid var(--line);
+}
+
+.decisionStrip svg {
+  color: var(--rust);
+  margin-block-start: 0.2rem;
+}
+
+.decisionStrip span,
+.decisionStrip strong,
+.decisionStrip p {
+  display: block;
+}
+
+.decisionStrip span {
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.decisionStrip strong {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-block-start: 0.25rem;
+}
+
+.decisionStrip p {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0.35rem 0 0;
+}
+
+.articleBody {
+  padding: 0 1.25rem;
+}
+
+.articleBody > section,
+.articleBody > aside,
+.articleBody > nav {
+  scroll-margin-block-start: 6.5rem;
+}
+
+.articleBody > section {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.articleBody > section + section {
+  border-block-start: 1px solid var(--line);
+}
+
+.sectionHeading,
+.sectionHeadingSplit,
+.sectionHeadingSplitLight {
+  margin-block-end: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.sectionHeading {
+  max-width: 48rem;
+}
+
+.sectionHeadingSplit,
+.sectionHeadingSplitLight {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem 3rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 1.1fr);
+}
+
+.sectionHeading .sectionLabel,
+.sectionHeadingSplit .sectionLabel,
+.sectionHeadingSplitLight .sectionLabel,
+.qilouAside .sectionLabel,
+.relatedGuides .sectionLabel,
+.finalCta .sectionLabel {
+  margin: 0 0 0.75rem;
+}
+
+.sectionHeading h2,
+.sectionHeadingSplit h2,
+.sectionHeadingSplitLight h2,
+.qilouAside h2,
+.relatedGuides h2,
+.finalCta h2 {
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  line-height: 1.03;
+  margin: 0;
+}
+
+.sectionHeading > p:last-child,
+.sectionHeadingSplit > p,
+.sectionHeadingSplitLight > p,
+.relatedGuides > div > p:last-child,
+.finalCta > div > p:not(.sectionLabel) {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin: 1rem 0 0;
+}
+
+.sectionHeadingSplit > p,
+.sectionHeadingSplitLight > p {
+  margin: 0;
+}
+
+.tableScroller {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.tableScroller:focus-visible {
+  outline: 3px solid #0b6b59;
+  outline-offset: 4px;
+}
+
+.comparisonTable,
+.eveningMatrix {
+  border-collapse: collapse;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.comparisonTable {
+  min-width: 58rem;
+}
+
+.comparisonTable th,
+.comparisonTable td,
+.eveningMatrix th,
+.eveningMatrix td {
+  border-block-end: 1px solid var(--line);
+  padding: 1rem 1.1rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+.comparisonTable thead th,
+.eveningMatrix thead th {
+  background: var(--night);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.comparisonTable thead th:first-child {
+  width: 10rem;
+}
+
+.comparisonTable tbody th,
+.eveningMatrix tbody th {
+  color: var(--rust-dark);
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.comparisonTable td,
+.eveningMatrix td {
+  color: #4d4842;
+  font-size: 0.86rem;
+}
+
+.boundaryNote,
+.keyInsight,
+.handoffNote {
+  border-inline-start: 3px solid var(--rust);
+  color: #4f4943;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin: 1.5rem 0 0;
+  max-width: 62rem;
+  padding-inline-start: 1rem;
+}
+
+.needSection {
+  display: grid;
+  gap: 2rem 4rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(24rem, 1.2fr);
+}
+
+.needSection .sectionHeading {
+  margin: 0;
+}
+
+.skipPanel {
+  background: var(--paper);
+  border-block: 1px solid var(--line);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.skipLead {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.skipLead svg {
+  color: var(--rust);
+  flex: none;
+}
+
+.skipLead h3 {
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.skipPanel ul {
+  display: grid;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+
+.skipPanel li {
+  color: #4f4943;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  padding-inline-start: 1.35rem;
+  position: relative;
+}
+
+.skipPanel li::before {
+  color: var(--rust);
+  content: "—";
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+.skipPanel > p {
+  border-block-start: 1px solid var(--line);
+  font-family: var(--display);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin: 1.5rem 0 0;
+  padding-block-start: 1.2rem;
+}
+
+.eveningMatrix {
+  min-width: 52rem;
+}
+
+.eveningMatrix thead th:first-child {
+  width: 31%;
+}
+
+.eveningMatrix tbody th {
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.hotelSection {
+  background: #fbf8f2;
+  box-shadow: 50vw 0 #fbf8f2, -50vw 0 #fbf8f2;
+}
+
+.sectionHeading a {
+  color: var(--rust-dark);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.baseDiagram {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7rem minmax(0, 1fr);
+  margin: 0;
+}
+
+.baseDiagram > div:not(.baseConnector) {
+  border-block-start: 4px solid var(--night);
+  padding-block-start: 1.25rem;
+}
+
+.baseDiagram > div > span {
+  color: var(--rust);
+  font-size: 0.7rem;
+  font-weight: 790;
+  letter-spacing: 0.1em;
+}
+
+.baseDiagram h3 {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+  font-weight: 400;
+  margin: 0.35rem 0 0;
+}
+
+.baseDiagram strong {
+  color: var(--rust-dark);
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  margin-block-start: 0.55rem;
+}
+
+.baseDiagram p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0.8rem 0 0;
+  max-width: 30rem;
+}
+
+.baseConnector {
+  align-items: center;
+  color: var(--rust);
+  display: flex;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.baseConnector span {
+  border-block-start: 1px dashed #9d9388;
+  flex: 1;
+}
+
+.baseDiagram figcaption {
+  border-block-start: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.76rem;
+  grid-column: 1 / -1;
+  line-height: 1.6;
+  margin-block-start: 2rem;
+  padding-block-start: 1rem;
+}
+
+.sourceRef a {
+  color: var(--rust-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  margin-inline-start: 0.18rem;
+  text-decoration: none;
+}
+
+.showList {
+  display: grid;
+  gap: 2rem;
+}
+
+.showProfile {
+  border-block-start: 1px solid var(--line);
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.28fr);
+  padding-block-start: 2rem;
+  scroll-margin-block-start: 6.5rem;
+}
+
+.showProfile > header {
+  align-items: flex-start;
+  display: grid;
+  gap: 1rem;
+  grid-row: 1 / span 2;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.showProfile > header > span {
+  color: var(--rust);
+  font-family: var(--display);
+  font-size: 1.1rem;
+}
+
+.showProfile h3 {
+  font-family: var(--display);
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.showProfile header p {
+  color: var(--rust-dark);
+  font-size: 0.72rem;
+  font-weight: 760;
+  line-height: 1.45;
+  margin: 0.65rem 0 0;
+}
+
+.showDescription {
+  color: #4e4943;
+  font-size: 0.94rem;
+  line-height: 1.72;
+  margin: 0;
+}
+
+.fitGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fitGrid section {
+  background: var(--paper);
+  border-block-start: 3px solid var(--night);
+  padding: 1.25rem;
+}
+
+.fitGrid section:last-child {
+  border-block-start-color: var(--rust);
+}
+
+.fitGrid h4 {
+  color: var(--rust-dark);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.fitGrid ul {
+  display: grid;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.fitGrid li {
+  color: #514c46;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding-inline-start: 1.15rem;
+  position: relative;
+}
+
+.fitGrid li svg {
+  color: var(--rust);
+  inset-inline-start: -0.15rem;
+  position: absolute;
+  top: 0.12rem;
+}
+
+.fitGrid section:last-child li::before {
+  color: var(--rust);
+  content: "—";
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+.showNotes {
+  display: grid;
+  gap: 0;
+  grid-column: 2;
+  margin: 0;
+}
+
+.showNotes > div {
+  border-block-start: 1px solid var(--line);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  padding-block: 1rem;
+}
+
+.showNotes dt {
+  color: var(--rust-dark);
+  font-size: 0.66rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.showNotes dd {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.qilouAside {
+  background: var(--paper);
+  border-block: 1px solid var(--line);
+  display: grid;
+  gap: 2rem 4rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 1.15fr);
+  margin-block: 0 clamp(3.5rem, 7vw, 6.5rem);
+  padding: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.qilouAside h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.85rem);
+}
+
+.qilouAside > div:last-child p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.68;
+  margin: 0;
+}
+
+.qilouAside > div:last-child p + p {
+  border-block-start: 1px solid var(--line);
+  margin-block-start: 1rem;
+  padding-block-start: 1rem;
+}
+
+.eveningSection {
+  background: var(--night);
+  box-shadow: 50vw 0 var(--night), -50vw 0 var(--night);
+  color: #fff;
+}
+
+.sectionHeadingSplitLight .sectionLabel {
+  color: #efb99f;
+}
+
+.sectionHeadingSplitLight > p {
+  color: #cbd2d5;
+}
+
+.eveningChain {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.eveningChain li {
+  border-block-start: 1px solid #65717a;
+  min-width: 0;
+  padding: 1rem 0.6rem 0 0;
+  position: relative;
+}
+
+.eveningChain li::before {
+  background: var(--amber);
+  border: 4px solid var(--night);
+  border-radius: 50%;
+  content: "";
+  height: 0.8rem;
+  inset-block-start: -0.43rem;
+  inset-inline-start: 0;
+  position: absolute;
+  width: 0.8rem;
+}
+
+.eveningChain span,
+.eveningChain strong {
+  display: block;
+}
+
+.eveningChain span {
+  color: #d4a765;
+  font-size: 0.65rem;
+  font-weight: 780;
+}
+
+.eveningChain strong {
+  font-size: 0.75rem;
+  font-weight: 620;
+  line-height: 1.45;
+  margin-block-start: 0.45rem;
+}
+
+.formula {
+  align-items: center;
+  border-block: 1px solid #65717a;
+  display: flex;
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+  gap: 0.8rem;
+  margin-block-start: 2.5rem;
+  padding-block: 1.1rem;
+}
+
+.formula svg {
+  color: var(--amber);
+  flex: none;
+}
+
+.calculationConclusion {
+  color: #d7dddf;
+  font-size: 0.91rem;
+  line-height: 1.65;
+  margin: 1.25rem 0 0;
+  max-width: 48rem;
+}
+
+.midCta {
+  align-items: center;
+  background: #fffaf1;
+  color: var(--ink);
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-block-start: 2.5rem;
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+}
+
+.midCta h3 {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+  font-weight: 500;
+  margin: 0;
+}
+
+.midCta p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  margin: 0.6rem 0 0;
+  max-width: 43rem;
+}
+
+.midCta small,
+.finalCta small {
+  color: var(--muted);
+  display: block;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  margin-block-start: 0.65rem;
+}
+
+.midCta a,
+.relatedGuides a,
+.finalCta a {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 760;
+  gap: 0.55rem;
+  justify-content: center;
+  min-height: 2.85rem;
+  text-decoration: none;
+}
+
+.midCta a,
+.finalCta a {
+  background: var(--rust);
+  color: #fff;
+  padding: 0.75rem 1.15rem;
+}
+
+.midCta a:hover,
+.finalCta a:hover {
+  background: var(--rust-dark);
+}
+
+.checklistGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklistGrid li {
+  border: 1px solid var(--line);
+  margin-inline-start: -1px;
+  padding: 1.3rem;
+}
+
+.checklistGrid li > div {
+  align-items: center;
+  color: var(--rust);
+  display: flex;
+  justify-content: space-between;
+}
+
+.checklistGrid li > div span {
+  font-family: var(--display);
+  font-size: 0.95rem;
+}
+
+.checklistGrid h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 1.4rem 0 0;
+}
+
+.checklistGrid p {
+  color: var(--muted);
+  font-size: 0.79rem;
+  line-height: 1.55;
+  margin: 0.65rem 0 0;
+}
+
+.relatedGuides {
+  border-block: 1px solid var(--line);
+  display: grid;
+  gap: 2rem 4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.relatedGuides h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+}
+
+.relatedGuides > div:last-child {
+  align-content: center;
+  display: grid;
+  gap: 0;
+}
+
+.relatedGuides a {
+  border-block-start: 1px solid var(--line);
+  color: var(--rust-dark);
+  justify-content: space-between;
+  line-height: 1.4;
+  padding-block: 0.85rem;
+}
+
+.relatedGuides a:last-child {
+  border-block-end: 1px solid var(--line);
+}
+
+.faqSection {
+  display: grid;
+  gap: 2rem 4rem;
+  grid-template-columns: minmax(0, 0.7fr) minmax(24rem, 1.3fr);
+}
+
+.faqSection .sectionHeading {
+  margin: 0;
+}
+
+.faqList details {
+  border-block-start: 1px solid var(--line);
+}
+
+.faqList details:last-child {
+  border-block-end: 1px solid var(--line);
+}
+
+.faqList summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  gap: 1rem;
+  justify-content: space-between;
+  line-height: 1.35;
+  list-style: none;
+  min-height: 3.5rem;
+  padding-block: 0.9rem;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary span {
+  color: var(--rust);
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: transform 140ms ease;
+}
+
+.faqList details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faqList details p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 42rem;
+  padding: 0 2.5rem 1.2rem 0;
+}
+
+.sourcesSection {
+  padding-block-start: 0 !important;
+}
+
+.sourceDisclosure {
+  border-block: 1px solid var(--line);
+}
+
+.sourceDisclosure > summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+  min-height: 4.5rem;
+  padding-block: 1rem;
+}
+
+.sourceDisclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sourceDisclosure > summary span:first-child {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sourceDisclosure > summary strong {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sourceDisclosure > summary small {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.sourceDisclosure > summary > span:last-child {
+  color: var(--rust);
+  font-size: 1.4rem;
+}
+
+.sourceDisclosure[open] > summary > span:last-child {
+  transform: rotate(45deg);
+}
+
+.sourceDisclosure > div {
+  color: var(--muted);
+  max-width: 55rem;
+  padding-block: 0.5rem 1.5rem;
+}
+
+.sourceDisclosure p,
+.sourceDisclosure li {
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.sourceDisclosure ol {
+  display: grid;
+  gap: 0.4rem;
+  padding-inline-start: 1.25rem;
+}
+
+.sourceDisclosure a {
+  color: var(--rust-dark);
+  text-underline-offset: 0.18em;
+}
+
+.finalCta {
+  align-items: center;
+  background: #f1e9dd;
+  display: grid;
+  gap: 2rem 4rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4.25rem) max(1.25rem, calc((100vw - 71.5rem) / 2));
+}
+
+.finalCta > div {
+  max-width: 50rem;
+}
+
+.finalCta h2 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+}
+
+.finalCta > div > p:not(.sectionLabel) {
+  max-width: 46rem;
+}
+
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.noBreak {
+  white-space: nowrap;
+}
+
+@media (max-width: 64rem) {
+  .heroGrid {
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 0.95fr) minmax(21rem, 1.05fr);
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(2.5rem, 5.4vw, 4rem);
+  }
+
+  .checklistGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 56rem) {
+  .heroGrid,
+  .sectionHeadingSplit,
+  .sectionHeadingSplitLight,
+  .needSection,
+  .qilouAside,
+  .faqSection,
+  .relatedGuides,
+  .finalCta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroCopy h1 {
+    max-width: 14ch;
+  }
+
+  .heroFigure {
+    width: 100%;
+  }
+
+  .decisionStrip {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block-start: 0;
+  }
+
+  .decisionStrip li,
+  .decisionStrip li:first-child {
+    border-block-start: 1px solid var(--line);
+    padding: 1rem 0;
+  }
+
+  .decisionStrip li + li {
+    border-inline-start: 0;
+  }
+
+  .needSection .sectionHeading,
+  .faqSection .sectionHeading {
+    margin-block-end: 0;
+  }
+
+  .showProfile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .showProfile > header {
+    grid-row: auto;
+  }
+
+  .showNotes {
+    grid-column: auto;
+  }
+
+  .midCta {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .midCta a,
+  .finalCta a {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 42rem) {
+  .heroInner,
+  .articleBody {
+    padding-inline: 1rem;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(2.35rem, 12vw, 3.5rem);
+    max-width: none;
+  }
+
+  .pageRoot[data-homeground-locale="zh"] .heroCopy h1 {
+    font-size: clamp(2.2rem, 10.7vw, 3.2rem);
+    letter-spacing: 0;
+    line-height: 1.08;
+    text-wrap: wrap;
+  }
+
+  .pageRoot[data-homeground-locale="ko"] .heroCopy h1 {
+    font-size: clamp(2.1rem, 10.5vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .heroLead {
+    font-size: 0.96rem;
+  }
+
+  .checkedLine time::before {
+    content: none;
+  }
+
+  .sectionHeading h2,
+  .sectionHeadingSplit h2,
+  .sectionHeadingSplitLight h2,
+  .finalCta h2 {
+    font-size: clamp(1.9rem, 9vw, 2.75rem);
+  }
+
+  .baseDiagram {
+    gap: 1.25rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .baseConnector {
+    flex-direction: column;
+    min-height: 3rem;
+  }
+
+  .baseConnector span {
+    border-block-start: 0;
+    border-inline-start: 1px dashed #9d9388;
+    flex: 1;
+  }
+
+  .baseDiagram figcaption {
+    grid-column: auto;
+    margin-block-start: 0.5rem;
+  }
+
+  .fitGrid,
+  .checklistGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .showNotes > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .eveningChain {
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .eveningChain li {
+    border-block-start: 0;
+    border-inline-start: 1px solid #65717a;
+    min-height: 3.5rem;
+    padding: 0 0 0.85rem 1.5rem;
+  }
+
+  .eveningChain li::before {
+    inset-block-start: 0.1rem;
+    inset-inline-start: -0.43rem;
+  }
+
+  .midCta a,
+  .finalCta a {
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .qilouAside {
+    margin-inline: -1rem;
+  }
+
+  .faqList summary {
+    font-size: 1rem;
+  }
+
+  .faqList details p {
+    padding-inline-end: 0;
+  }
+
+  .finalCta {
+    padding-inline: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageRoot *,
+  .pageRoot *::before,
+  .pageRoot *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

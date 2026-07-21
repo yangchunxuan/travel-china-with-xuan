@@ -121,6 +121,10 @@ export function HomegroundHomePage({
       ),
       label: copy.guides.wholeRouteLabel,
     },
+    {
+      guide: getGuideEntry("best-zhangjiajie-night-show", locale),
+      label: copy.guides.eveningChoiceLabel,
+    },
   ] as const;
   const plannerTarget =
     plannerStatus === "result" && routeMatch

@@ -479,6 +479,60 @@
   padding-block: clamp(3.5rem, 6vw, 4.75rem);
 }
 
+.nightShowRelated {
+  align-items: center;
+  border-block: 1px solid var(--guide-line);
+  display: grid;
+  gap: 1.5rem 3rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-block: clamp(1rem, 2vw, 1.5rem) clamp(3.5rem, 6vw, 4.75rem);
+  padding-block: 1.5rem;
+}
+
+.nightShowRelated p {
+  color: var(--guide-rust);
+  font-size: 0.7rem;
+  font-weight: 780;
+  letter-spacing: 0.09em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.nightShowRelated h2 {
+  font-family: var(--hg-editorial), Georgia, serif;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0.45rem 0 0;
+}
+
+.nightShowRelated span {
+  color: var(--guide-muted);
+  display: block;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  margin-block-start: 0.65rem;
+  max-width: 47rem;
+}
+
+.nightShowRelated a {
+  align-items: center;
+  color: var(--guide-dark-rust);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 740;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 48rem) {
+  .nightShowRelated {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .optionGrid,
 .branchGrid {
   display: grid;

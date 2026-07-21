@@ -88,7 +88,19 @@ test("article route deep links seed their cities once, then release the URL", as
     routeFinder,
     /url\.searchParams\.delete\(destinationsQueryKey\)[\s\S]*window\.history\.replaceState/,
   );
-  assert.match(routeFinder, /if \(arrivedWithDestinationQuery\) clearDestinationsQuery\(\)/);
+  assert.doesNotMatch(
+    routeFinder,
+    /if \(arrivedWithDestinationQuery\) clearDestinationsQuery\(\)/,
+  );
+  assert.match(
+    routeFinder,
+    /if \(!sessionReady \|\| !hasDestinationsQuery\(\)\) return;\s*clearDestinationsQuery\(\)/,
+  );
+  assert.match(
+    routeFinder,
+    /function readStoredPlannerSession\(\)[\s\S]*JSON\.parse\(raw\)[\s\S]*catch[\s\S]*return null/,
+  );
+  assert.match(routeFinder, /const parsed = readStoredPlannerSession\(\)/);
   assert.match(
     routeFinder,
     /const requestedStep = arrivedWithDestinationQuery\s*\? 0/,

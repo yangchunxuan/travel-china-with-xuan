@@ -36,6 +36,8 @@ const explicitSources = [
   "lib/routeFinder.ts",
   "lib/guideRegistry.ts",
   "lib/zhangjiajieGuideI18n.ts",
+  "lib/nightShowGuideCopy.zh.ts",
+  "lib/nightShowGuideCopy.ko.ts",
 ];
 const sourceDirectories = ["app/(default)", "app/(localized)"];
 

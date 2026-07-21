@@ -87,6 +87,7 @@ export interface HomegroundCopy {
     title: string;
     cityStayLabel: string;
     wholeRouteLabel: string;
+    eveningChoiceLabel: string;
   };
   studio: {
     eyebrow: string;
@@ -418,6 +419,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "Read the route question before you commit to it.",
       cityStayLabel: "City stay guide",
       wholeRouteLabel: "Whole-route guide",
+      eveningChoiceLabel: "Evening decision guide",
     },
     studio: {
       eyebrow: "The studio",
@@ -915,6 +917,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "先看清路线问题，再决定怎么走。",
       cityStayLabel: "城市停留指南",
       wholeRouteLabel: "整条路线指南",
+      eveningChoiceLabel: "夜间安排决策指南",
     },
     studio: {
       eyebrow: "工作室",
@@ -1386,6 +1389,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "결정하기 전에, 먼저 동선의 질문을 확인하세요.",
       cityStayLabel: "도시 체류 가이드",
       wholeRouteLabel: "전체 동선 가이드",
+      eveningChoiceLabel: "저녁 일정 선택 가이드",
     },
     studio: {
       eyebrow: "스튜디오",
