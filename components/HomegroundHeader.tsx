@@ -31,8 +31,9 @@ interface HomegroundHeaderProps {
   plannerStatus?: PlannerStatus;
   handoffStatus?: HandoffStatus;
   handoffDirty?: boolean;
-  pageContext?: "home" | "guide" | "studio";
+  pageContext?: "home" | "guide" | "studio" | "content";
   guideId?: GuideId;
+  showLanguageNav?: boolean;
 }
 
 export function resolvePlannerCta(
@@ -72,6 +73,7 @@ export function HomegroundHeader({
   handoffDirty = false,
   pageContext = "home",
   guideId = "zhangjiajie-itinerary",
+  showLanguageNav = true,
 }: HomegroundHeaderProps) {
   const [open, setOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
@@ -217,6 +219,8 @@ export function HomegroundHeader({
           <nav
             className={styles.languageNav}
             aria-label={copy.navigation.languageLabel}
+            hidden={!showLanguageNav}
+            style={showLanguageNav ? undefined : { display: "none" }}
           >
             {homegroundLocales.map((targetLocale) => {
               const target = getHomegroundCopy(targetLocale);
@@ -333,6 +337,8 @@ export function HomegroundHeader({
           className={styles.mobileLanguageNav}
           role="group"
           aria-label={copy.navigation.languageLabel}
+          hidden={!showLanguageNav}
+          style={showLanguageNav ? undefined : { display: "none" }}
         >
           {homegroundLocales.map((targetLocale) => {
             const target = getHomegroundCopy(targetLocale);

@@ -86,10 +86,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
       alternates: { languages: studioLanguages },
     },
+    {
+      url: `${base}/china-itinerary-review/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
     ...guideEntries,
     {
       url: `${base}/privacy/`,
-      lastModified: "2026-07-19",
+      lastModified: "2026-07-22",
       changeFrequency: "monthly",
       priority: 0.3,
       alternates: { languages: privacyLanguages },

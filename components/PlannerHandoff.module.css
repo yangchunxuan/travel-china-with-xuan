@@ -82,6 +82,39 @@
   padding-inline-start: 0.9rem;
 }
 
+.serviceIntent {
+  background: #f7ebe4;
+  border: 1px solid #d7b8a9;
+  border-inline-start: 4px solid #a7462d;
+  border-radius: 0.75rem;
+  display: grid;
+  gap: 0.25rem;
+  margin-block-start: 1.25rem;
+  max-inline-size: 58ch;
+  padding: 0.8rem 0.9rem;
+}
+
+.serviceIntent span {
+  color: #7b2d1c;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.serviceIntent strong {
+  font-family: var(--hg-editorial, Georgia, "Times New Roman", serif);
+  font-size: 1.12rem;
+  line-height: 1.28;
+}
+
+.serviceIntent p {
+  color: #3f5148;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin: 0.1rem 0 0;
+}
+
 .card {
   background: #fff;
   border: 1px solid #c5d0c8;
@@ -229,12 +262,21 @@
   white-space: nowrap;
 }
 
+.optionalTag {
+  color: #5a6c62;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
 .field {
   min-inline-size: 0;
   scroll-margin-top: 6rem;
 }
 
-.field input {
+.field input,
+.field textarea {
   background: #fff;
   border: 1px solid #99aa9f;
   border-radius: 0.75rem;
@@ -252,17 +294,25 @@
   padding: 0.72rem 0.82rem;
 }
 
-.field input:hover {
+.field textarea {
+  min-block-size: 7.5rem;
+  resize: vertical;
+}
+
+.field input:hover,
+.field textarea:hover {
   border-color: #536d60;
 }
 
-.field input:focus-visible {
+.field input:focus-visible,
+.field textarea:focus-visible {
   border-color: var(--handoff-focus);
   outline: 3px solid var(--handoff-focus);
   outline-offset: 2px;
 }
 
-.field input[aria-invalid="true"] {
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
   border-color: #a52d2d;
   box-shadow: inset 0 0 0 1px #a52d2d;
 }
@@ -611,6 +661,7 @@
   .card,
   .contactMethodOption,
   .field input,
+  .field textarea,
   .primaryAction,
   .secondaryAction,
   .retryButton {

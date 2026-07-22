@@ -13,6 +13,7 @@ Current website derivatives:
 - Responsive WebP derivatives alongside both guide photographs
 - `public/images/guides/beijing-zhangjiajie-shanghai-10-days/planning-method-1536.png`
 - Responsive WebP derivatives of the planning-method illustration
+- `public/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp`
 
 The Beijing derivatives come from the supplied `北京.jpg`; the Zhangjiajie
 derivative comes from the supplied `张家界.png`. Other supplied city images
@@ -34,6 +35,12 @@ not used because it duplicates the stronger `R0002093.JPG` view.
 The planning-method image is an original generated editorial illustration. It
 is deliberately labelled as an illustration on the page and must not be
 presented as a photograph of a real client file or a real Homeground workplace.
+
+The transfer-platform image is a softened, metadata-stripped editorial
+derivative of owner-supplied `R0000928.JPG`. Visible place and operational
+labels were neutralized so the image can express the idea of a transfer without
+making a location claim. It must not be captioned as evidence of a particular
+station, city, railway system or official procedure.
 
 Generation brief: create one original editorial spot illustration for a
 premium private China travel-planning website; show a folded abstract
