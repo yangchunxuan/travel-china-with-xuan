@@ -69,7 +69,11 @@ for (const requiredPage of [
   "zh/index.html",
   "ko/index.html",
   "china-itinerary-review/index.html",
+  "zh/china-itinerary-review/index.html",
+  "ko/china-itinerary-review/index.html",
   "guides/is-your-china-itinerary-too-rushed/index.html",
+  "zh/guides/is-your-china-itinerary-too-rushed/index.html",
+  "ko/guides/is-your-china-itinerary-too-rushed/index.html",
 ]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);

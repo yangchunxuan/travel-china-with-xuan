@@ -23,6 +23,9 @@ const explicitSources = [
   "lib/tenDayGuideCopy.zh.ts",
   "lib/tenDayGuideCopy.ko.ts",
   "lib/beijingZhangjiajieShanghaiTransportI18n.ts",
+  "lib/chinaItineraryTooRushedI18n.ts",
+  "lib/chinaItineraryReviewI18n.ts",
+  "lib/routeServiceInterest.ts",
   "lib/destinationPlannerI18n.ts",
   "lib/routeFinder.ts",
 ];

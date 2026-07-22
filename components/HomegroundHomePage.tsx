@@ -210,20 +210,14 @@ export function HomegroundHomePage({
   };
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
-  const activeRouteServiceInterest =
-    locale === "en" ? routeServiceInterest : null;
+  const activeRouteServiceInterest = routeServiceInterest;
 
   useEffect(() => {
     const syncRouteServiceInterest = () => {
-      if (locale !== "en") {
-        setRouteServiceInterest(null);
-        return;
-      }
-
       const serviceId = new URL(window.location.href).searchParams.get(
         routeServiceQueryKey,
       );
-      setRouteServiceInterest(getRouteServiceInterest(serviceId));
+      setRouteServiceInterest(getRouteServiceInterest(serviceId, locale));
     };
 
     syncRouteServiceInterest();

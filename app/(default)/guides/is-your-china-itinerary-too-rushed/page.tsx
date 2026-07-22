@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { ChinaItineraryTooRushedPage } from "../../../../components/ChinaItineraryTooRushedPage";
+import {
+  getGuideEntry,
+  getGuideLanguagePaths,
+} from "../../../../lib/guideRegistry";
 
-const title = "China Itinerary Too Rushed? A Practical Check";
-const description =
-  "Check whether your China itinerary is too rushed by testing city changes, door-to-door transfers, hotel moves, fixed bookings and recovery time.";
-const socialImage =
-  "/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp";
+const guide = getGuideEntry("is-your-china-itinerary-too-rushed", "en");
 
 export const metadata: Metadata = {
-  title,
-  description,
+  title: guide.title,
+  description: guide.description,
   alternates: {
-    canonical: "/guides/is-your-china-itinerary-too-rushed/",
+    canonical: guide.canonicalPath,
+    languages: getGuideLanguagePaths(guide.id),
   },
   robots: {
     index: true,
@@ -24,27 +25,28 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title,
-    description,
+    title: guide.title,
+    description: guide.description,
     type: "article",
-    locale: "en_US",
-    url: "/guides/is-your-china-itinerary-too-rushed/",
-    publishedTime: "2026-07-22",
-    modifiedTime: "2026-07-22",
+    locale: guide.openGraphLocale,
+    alternateLocale: ["zh_CN", "ko_KR"],
+    url: guide.canonicalPath,
+    publishedTime: guide.datePublished,
+    modifiedTime: guide.dateModified,
     images: [
       {
-        url: socialImage,
+        url: guide.heroImageUrl,
         width: 1200,
         height: 800,
-        alt: "A softened railway platform used as a non-location-specific illustration of a transfer day.",
+        alt: guide.heroAlt,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
-    images: [socialImage],
+    title: guide.title,
+    description: guide.description,
+    images: [guide.heroImageUrl],
   },
 };
 
