@@ -10,9 +10,15 @@ The production guide routes are:
 - `/guides/zhangjiajie-itinerary/`
 - `/zh/guides/zhangjiajie-itinerary/`
 - `/ko/guides/zhangjiajie-itinerary/`
+- `/guides/best-zhangjiajie-night-show/`
+- `/zh/guides/best-zhangjiajie-night-show/`
+- `/ko/guides/best-zhangjiajie-night-show/`
 - `/guides/beijing-zhangjiajie-shanghai-10-days/`
 - `/zh/guides/beijing-zhangjiajie-shanghai-10-days/`
 - `/ko/guides/beijing-zhangjiajie-shanghai-10-days/`
+- `/guides/beijing-zhangjiajie-shanghai-transport/`
+- `/zh/guides/beijing-zhangjiajie-shanghai-transport/`
+- `/ko/guides/beijing-zhangjiajie-shanghai-transport/`
 
 English remains unprefixed. Simplified Chinese uses `/zh/` with `zh-Hans`
 language metadata, and Korean uses `/ko/` with `ko` language metadata.
