@@ -31,7 +31,7 @@ interface HomegroundHeaderProps {
   plannerStatus?: PlannerStatus;
   handoffStatus?: HandoffStatus;
   handoffDirty?: boolean;
-  pageContext?: "home" | "guide";
+  pageContext?: "home" | "guide" | "studio";
   guideId?: GuideId;
 }
 
@@ -91,6 +91,7 @@ export function HomegroundHeader({
     pageContext === "home"
       ? plannerTarget
       : `${copy.path}?planner=destinations#route-finder`;
+  const studioHref = `${copy.path}studio/`;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
 
@@ -182,12 +183,7 @@ export function HomegroundHeader({
               >
                 {copy.navigation.planning}
               </a>
-              <a
-                href="#studio"
-                onClick={(event) =>
-                  handleHomegroundHashClick(event, "#studio")
-                }
-              >
+              <a href={studioHref}>
                 {copy.navigation.studio}
               </a>
               <a
@@ -204,7 +200,10 @@ export function HomegroundHeader({
               <a href={`${copy.path}#planning-proof`}>
                 {copy.navigation.planning}
               </a>
-              <a href={`${copy.path}#studio`}>
+              <a
+                aria-current={pageContext === "studio" ? "page" : undefined}
+                href={studioHref}
+              >
                 {copy.navigation.studio}
               </a>
               <a href={`${copy.path}#faq`}>
@@ -227,6 +226,8 @@ export function HomegroundHeader({
                       guideId,
                       targetLocale,
                     ).canonicalPath
+                  : pageContext === "studio"
+                    ? `${target.path}studio/`
                   : plannerStatus === "result"
                   ? `${target.path}?planner=result${languageHash}`
                   : `${target.path}${languageHash}`;
@@ -298,13 +299,7 @@ export function HomegroundHeader({
             >
               {copy.navigation.planning}
             </a>
-            <a
-              href="#studio"
-              onClick={(event) => {
-                close();
-                handleHomegroundHashClick(event, "#studio");
-              }}
-            >
+            <a href={studioHref} onClick={close}>
               {copy.navigation.studio}
             </a>
             <a
@@ -322,7 +317,11 @@ export function HomegroundHeader({
             <a href={`${copy.path}#planning-proof`} onClick={close}>
               {copy.navigation.planning}
             </a>
-            <a href={`${copy.path}#studio`} onClick={close}>
+            <a
+              aria-current={pageContext === "studio" ? "page" : undefined}
+              href={studioHref}
+              onClick={close}
+            >
               {copy.navigation.studio}
             </a>
             <a href={`${copy.path}#faq`} onClick={close}>
@@ -343,6 +342,8 @@ export function HomegroundHeader({
                     guideId,
                     targetLocale,
                   ).canonicalPath
+                : pageContext === "studio"
+                  ? `${target.path}studio/`
                 : plannerStatus === "result"
                 ? `${target.path}?planner=result${languageHash}`
                 : `${target.path}${languageHash}`;

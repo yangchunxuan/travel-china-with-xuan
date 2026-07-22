@@ -975,6 +975,32 @@
   margin: 0.35rem 0 0;
 }
 
+.studioLink {
+  align-items: center;
+  border-radius: 0.2rem;
+  color: #efb59f;
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 760;
+  gap: 0.55rem;
+  grid-column: 2;
+  justify-self: start;
+  margin-top: -2.5rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.2rem;
+  text-decoration: none;
+}
+
+.studioLink:hover,
+.studioLink:focus-visible {
+  color: #fff;
+}
+
+.studioLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 0.2rem;
+}
+
 .faqSection {
   display: grid;
   gap: clamp(2.75rem, 6vw, 5.5rem);
@@ -1191,6 +1217,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .studioLink {
+    grid-column: 1;
+    margin-top: -1rem;
+  }
+
   .finalCta {
     grid-template-columns: auto minmax(0, 1fr);
   }
@@ -1304,6 +1335,13 @@
   .studioSection,
   .faqSection {
     gap: 2.5rem;
+  }
+
+  .localeRoot[data-homeground-locale="zh"] .studioIntro h2 {
+    font-size: 2.2rem;
+    overflow-wrap: normal;
+    text-wrap: pretty;
+    word-break: keep-all;
   }
 
   .sampleRouteHeading {

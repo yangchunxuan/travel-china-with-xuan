@@ -12,6 +12,7 @@ const explicitSources = [
   "components/PlannerHandoff.tsx",
   "components/RouteFinder.tsx",
   "lib/homegroundI18n.ts",
+  "lib/homegroundStudioI18n.ts",
   "lib/homegroundPrivacyI18n.ts",
   "lib/guideRegistry.ts",
   "lib/zhangjiajieGuideI18n.ts",

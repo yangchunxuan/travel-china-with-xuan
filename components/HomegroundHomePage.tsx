@@ -22,6 +22,7 @@ import {
   HomegroundHeader,
   resolvePlannerCta,
 } from "./HomegroundHeader";
+import { HomegroundFooter } from "./HomegroundFooter";
 import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
 import {
   PlannerHandoff,
@@ -107,8 +108,6 @@ export function HomegroundHomePage({
     useState<HandoffStatus>("disabled");
   const [handoffDirty, setHandoffDirty] = useState(false);
   const copy = getHomegroundCopy(locale);
-  const privacyPath =
-    locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
   const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
   const wholeRouteGuide = getGuideEntry(
     "beijing-zhangjiajie-shanghai-10-days",
@@ -455,6 +454,11 @@ export function HomegroundHomePage({
             ))}
           </ol>
 
+          <a className={styles.studioLink} href={`${copy.path}studio/`}>
+            {copy.studio.cta}
+            <ArrowRight aria-hidden="true" size={17} />
+          </a>
+
         </section>
 
         <section className={styles.faqSection} id="faq" aria-labelledby="faq-title">
@@ -494,44 +498,7 @@ export function HomegroundHomePage({
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerTop}>
-          <div>
-            <strong lang="en">Homeground</strong>
-            <span>{copy.footer.studioLabel}</span>
-          </div>
-          <nav aria-label={copy.navigation.footerLabel}>
-            <a
-              href="#planning-proof"
-              onClick={(event) =>
-                handleHomegroundHashClick(event, "#planning-proof")
-              }
-            >
-              {copy.navigation.planning}
-            </a>
-            <a
-              href="#studio"
-              onClick={(event) =>
-                handleHomegroundHashClick(event, "#studio")
-              }
-            >
-              {copy.navigation.studio}
-            </a>
-            <a
-              href="#faq"
-              onClick={(event) =>
-                handleHomegroundHashClick(event, "#faq")
-              }
-            >
-              {copy.navigation.faq}
-            </a>
-            <a href={privacyPath}>{copy.footer.privacy}</a>
-          </nav>
-        </div>
-        <p className={styles.footerNote}>
-          {copy.footer.copyright(new Date().getFullYear())}
-        </p>
-      </footer>
+      <HomegroundFooter locale={locale} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
     </div>

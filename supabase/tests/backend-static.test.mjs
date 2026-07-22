@@ -27,6 +27,7 @@ const studioRunbookPath = "docs/studio-inquiry-runbook.md";
 const plannerHandoffPath = "components/PlannerHandoff.tsx";
 const homePagePath = "components/HomegroundHomePage.tsx";
 const headerPath = "components/HomegroundHeader.tsx";
+const footerPath = "components/HomegroundFooter.tsx";
 const privacyCopyPath = "lib/homegroundPrivacyI18n.ts";
 const inquiryVersionsPath = "lib/inquiryVersions.ts";
 const defaultPrivacyPagePath = "app/(default)/privacy/page.tsx";
@@ -632,6 +633,7 @@ test("studio runbook treats the optional budget as context rather than a quote",
 test("frontend launch gates and permanent privacy entry stay connected", async () => {
   const planner = await source(plannerHandoffPath);
   const homePage = await source(homePagePath);
+  const footer = await source(footerPath);
   const readinessStart = planner.indexOf("const configurationReady");
   const readinessEnd = planner.indexOf("const [status", readinessStart);
   const readiness = planner.slice(readinessStart, readinessEnd);
@@ -659,8 +661,9 @@ test("frontend launch gates and permanent privacy entry stay connected", async (
   assert.match(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED/);
   assert.doesNotMatch(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/);
   assert.doesNotMatch(planner, /wa\.me/);
-  assert.match(homePage, /copy\.footer\.privacy/);
-  assert.match(homePage, /privacyPath/);
+  assert.match(homePage, /<HomegroundFooter locale=\{locale\}/);
+  assert.match(footer, /copy\.footer\.privacy/);
+  assert.match(footer, /privacyPath/);
 });
 
 test("language changes do not silently discard a customer contact draft", async () => {

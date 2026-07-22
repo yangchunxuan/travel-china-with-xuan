@@ -20,6 +20,12 @@ const privacyLanguages = {
   "zh-Hans": `${base}/zh/privacy/`,
   "x-default": `${base}/privacy/`,
 };
+const studioLanguages = {
+  en: `${base}/studio/`,
+  ko: `${base}/ko/studio/`,
+  "zh-Hans": `${base}/zh/studio/`,
+  "x-default": `${base}/studio/`,
+};
 const guideEntries = guideIds.flatMap((guideId) => {
   const languages = getGuideLanguageUrls(guideId);
 
@@ -58,6 +64,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
       alternates: { languages: homepageLanguages },
+    },
+    {
+      url: `${base}/studio/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: studioLanguages },
+    },
+    {
+      url: `${base}/zh/studio/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: studioLanguages },
+    },
+    {
+      url: `${base}/ko/studio/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: studioLanguages },
     },
     ...guideEntries,
     {

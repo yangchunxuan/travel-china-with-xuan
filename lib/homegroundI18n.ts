@@ -96,6 +96,7 @@ export interface HomegroundCopy {
     eyebrow: string;
     title: string;
     intro: string;
+    cta: string;
     roles: readonly {
       title: string;
       detail: string;
@@ -429,24 +430,25 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     studio: {
       eyebrow: "The studio",
-      title: "One planning thread, clear handoffs.",
+      title: "One lead planner. A team behind the route.",
       intro:
-        "Homeground is a coordinated China trip-planning studio. One planning thread holds the route and written brief; suitable local services are checked only after the real travel details are clear.",
+        "We match each trip with a lead planner based on language, travelling party, route complexity and destination focus. They shape the complete multi-city journey, while another planner reviews the pace and destination-experienced teammates check what needs to work locally.",
+      cta: "Meet the Homeground studio",
       roles: [
         {
-          title: "One planner owns the brief",
+          title: "Matched to the trip",
           detail:
-            "Your priorities and open questions stay in one place instead of being restarted at every handoff.",
+            "We choose the lead around your route—not simply whoever is available. If one destination is central, a teammate who knows it well may take the lead.",
         },
         {
-          title: "Specialists join where useful",
+          title: "One view of the whole journey",
           detail:
-            "Team members and local partners enter for the cities and services their knowledge actually covers.",
+            "The lead connects cities, transport, pace and personal priorities into one coherent plan and remains your main planning contact.",
         },
         {
-          title: "Responsibility stays explicit",
+          title: "Reviewed from two angles",
           detail:
-            "Before confirmation, the written scope should show who plans, who delivers and what remains outside it.",
+            "A second planner checks the overall rhythm; destination-experienced members or the local team confirm current conditions and responsibilities.",
         },
       ],
     },
@@ -930,24 +932,25 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     studio: {
       eyebrow: "工作室",
-      title: "一条清晰的规划主线，明确的交接。",
+      title: "主规划师统筹全程，团队分层复核。",
       intro:
-        "Homeground 是一个协作式中国旅行规划工作室。路线和书面需求由同一条规划主线统筹；条件明确后，再人工核对合适的当地服务。",
+        "每份旅程会根据语言、同行者、路线复杂度和核心目的地匹配主规划师。主规划师统筹整条跨城市路线；另一位规划师复核整体节奏，熟悉当地接待的成员再确认现场可行性。",
+      cta: "认识 Homeground 工作室团队",
       roles: [
         {
-          title: "由一位旅行规划师负责完整需求",
+          title: "按旅程匹配主规划师",
           detail:
-            "你的重点与待确认问题始终集中在一处，不会每次交接都重新讲一遍。",
+            "不是简单交给当时有空的人。若一地是行程核心，熟悉当地的成员可以直接牵头。",
         },
         {
-          title: "需要时再加入对应专家",
+          title: "一位主规划师统筹全程",
           detail:
-            "团队成员和当地合作方只在其真正熟悉的城市与服务环节参与。",
+            "把城市、交通、节奏和个人优先级连成一条路线，并作为主要规划联系人。",
         },
         {
-          title: "责任边界保持清楚",
+          title: "从两个角度共同复核",
           detail:
-            "确认之前，书面范围会说明谁规划、谁执行，以及哪些事项不包含在内。",
+            "另一位规划师检查整体逻辑，当地经验成员或执行团队确认现场条件和分工。",
         },
       ],
     },
@@ -1405,24 +1408,25 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     studio: {
       eyebrow: "스튜디오",
-      title: "하나의 설계 흐름, 분명한 인계.",
+      title: "한 명의 플래너가 전체를 잇고, 팀이 다른 관점에서 검토합니다.",
       intro:
-        "Homeground는 협업형 중국 여행 플래닝 스튜디오입니다. 한 흐름 안에서 여행 동선과 요청서를 관리하고, 실제 조건이 분명해진 뒤 적합한 현지 서비스를 사람이 확인합니다.",
+        "언어, 동행 구성, 동선의 난이도와 핵심 목적지를 기준으로 여행에 가장 적합한 담당 플래너를 정합니다. 담당 플래너가 여러 도시를 하나의 여정으로 설계하고, 다른 플래너가 전체 속도를 검토하며, 해당 지역 경험이 있는 구성원이 현지에서 실제로 가능한 조건을 확인합니다.",
+      cta: "Homeground 스튜디오 팀 만나기",
       roles: [
         {
-          title: "한 명의 플래너가 요청서를 책임집니다",
+          title: "여행에 맞는 담당자 배정",
           detail:
-            "중요한 조건과 미해결 질문이 한곳에 남아, 인계할 때마다 처음부터 설명하지 않아도 됩니다.",
+            "단순히 가능한 사람에게 맡기지 않습니다. 한 지역이 여행의 중심이라면 그곳을 잘 아는 구성원이 전체 계획을 이끌 수 있습니다.",
         },
         {
-          title: "필요한 지점에 전문가가 합류합니다",
+          title: "전체 여정을 보는 한 명의 플래너",
           detail:
-            "팀원과 현지 파트너는 실제로 잘 아는 도시와 서비스 영역에 참여합니다.",
+            "담당 플래너는 도시 간 이동, 여행 속도와 고객의 우선순위를 하나의 계획으로 연결하고 주요 연락 창구가 됩니다.",
         },
         {
-          title: "책임 범위를 분명히 합니다",
+          title: "서로 다른 관점의 검토",
           detail:
-            "확정 전 문서에서 누가 설계하고 누가 실행하며 무엇이 범위 밖인지 확인합니다.",
+            "다른 플래너가 전체 흐름을 살펴본 뒤, 해당 지역 경험이 있는 구성원이나 현지 운영팀이 운영 조건과 역할 분담을 확인합니다.",
         },
       ],
     },

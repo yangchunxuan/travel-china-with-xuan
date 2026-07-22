@@ -220,7 +220,6 @@ test("all production same-page links preserve planner history depth", async () =
     "#main-content",
     "#route-finder",
     "#planning-proof",
-    "#studio",
     "#faq",
   ]) {
     const escaped = target.replace("-", "\\-");
@@ -241,6 +240,9 @@ test("all production same-page links preserve planner history depth", async () =
       `every ${target} link should preserve the planner history entry`,
     );
   }
+
+  assert.match(header, /const studioHref = `\$\{copy\.path\}studio\/`/);
+  assert.doesNotMatch(header, /href="#studio"/);
 });
 
 test("same-page navigation moves keyboard focus to its content target", async () => {
