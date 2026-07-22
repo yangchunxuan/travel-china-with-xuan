@@ -413,6 +413,18 @@
   margin: 0;
 }
 
+.sectionHeadingSplit > p a {
+  color: var(--review-green);
+  font-weight: 760;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.17em;
+}
+
+.sectionHeadingSplit > p a:focus-visible {
+  outline: 3px solid var(--review-rust);
+  outline-offset: 3px;
+}
+
 .pressureGrid {
   display: grid;
   gap: 1px;

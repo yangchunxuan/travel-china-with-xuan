@@ -528,7 +528,12 @@ export function ChinaItineraryReviewPage() {
               </div>
               <p>
                 Most rushed itineraries do not fail because one train or flight is impossible.
-                They fail because several small demands land on the same day.
+                They fail because several small demands land on the same day. If you are still
+                diagnosing the problem, start with our{" "}
+                <Link href="/guides/is-your-china-itinerary-too-rushed/">
+                  practical China itinerary pace check
+                </Link>
+                .
               </p>
             </div>
             <div className={styles.pressureGrid}>
@@ -625,7 +630,7 @@ export function ChinaItineraryReviewPage() {
               <p className={styles.sectionLabel}>Illustrative example — not a client trip</p>
               <h2 id="example-title">Removing a city is not the point. Knowing what it returns is.</h2>
               <p>
-                Imagine ten nights, five hotel bases and four intercity moves. One transfer
+                Imagine ten travel days, four hotel bases and three intercity moves. One transfer
                 day includes a timed museum visit; the next morning has an early departure.
                 Every item may be possible. Together, they leave almost no room for a slow
                 check-in, a delayed transfer or a lower-energy day.

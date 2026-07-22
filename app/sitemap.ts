@@ -92,6 +92,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.65,
     },
+    {
+      url: `${base}/guides/is-your-china-itinerary-too-rushed/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     ...guideEntries,
     {
       url: `${base}/privacy/`,

@@ -42,6 +42,25 @@ labels were neutralized so the image can express the idea of a transfer without
 making a location claim. It must not be captioned as evidence of a particular
 station, city, railway system or official procedure.
 
+For the China itinerary pace article, the project owner supplied and approved
+three personal travel photographs for non-location-specific editorial use on
+July 22, 2026. The responsive release records are kept separately so that each
+family remains traceable:
+
+- `transfer-platform-soft-focus-*` comes from `R0000928.JPG` and depicts the
+  general idea of waiting on a rail platform.
+- `train-cabin-soft-focus-*` comes from `R0000924.JPG` and depicts the general
+  idea of time spent inside an intercity train.
+- `airport-waiting-soft-focus-*` comes from `R0001989.JPG` and depicts the
+  general idea of waiting during an airport transfer.
+
+Only the metadata-stripped WebP derivatives are published. Place names,
+operational text and identifiable passers-by were softened before export.
+These images support the transfer-day concept; they must not be presented as
+evidence of a particular city, railway, airport or official procedure. This
+record notes that the project owner supplied and approved the files for the
+site without making an additional claim about who operated the camera.
+
 For the Beijing–Zhangjiajie–Shanghai transport guide, the project owner
 directly supplied five image attachments for the article on July 21, 2026.
 Three were selected: an exterior view of Beijing West Railway Station, a wide
