@@ -430,25 +430,25 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     studio: {
       eyebrow: "The studio",
-      title: "One lead planner. A team behind the route.",
+      title: "One lead planner sees the whole journey. One team makes every detail work.",
       intro:
-        "We match each trip with a lead planner based on language, travelling party, route complexity and destination focus. They shape the complete multi-city journey, while another planner reviews the pace and destination-experienced teammates check what needs to work locally.",
+        "From the first conversation, your lead planner listens to how you want to experience China, then brings the cities, transport and pace into one coherent journey. You have one person who knows the trip from beginning to end, backed by a team bringing first-hand experience into the same plan.",
       cta: "Meet the Homeground studio",
       roles: [
         {
-          title: "Matched to the trip",
+          title: "We start by listening",
           detail:
-            "We choose the lead around your route—not simply whoever is available. If one destination is central, a teammate who knows it well may take the lead.",
+            "Who you are travelling with, what matters most and how you want each day to feel become the starting point—not an afterthought.",
         },
         {
-          title: "One view of the whole journey",
+          title: "One person knows the whole journey",
           detail:
-            "The lead connects cities, transport, pace and personal priorities into one coherent plan and remains your main planning contact.",
+            "From the first conversation to the finished plan, your lead planner keeps the cities, transport, pace and priorities connected.",
         },
         {
-          title: "Reviewed from two angles",
+          title: "Real experience shapes the details",
           detail:
-            "A second planner checks the overall rhythm; destination-experienced members or the local team confirm current conditions and responsibilities.",
+            "The team brings relevant planning and on-the-ground experience into the same itinerary, so it works beyond the page.",
         },
       ],
     },
@@ -932,25 +932,25 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     studio: {
       eyebrow: "工作室",
-      title: "主规划师统筹全程，团队分层复核。",
+      title: "一位主规划师了解你的全程，一支团队让每个细节落地。",
       intro:
-        "每份旅程会根据语言、同行者、路线复杂度和核心目的地匹配主规划师。主规划师统筹整条跨城市路线；另一位规划师复核整体节奏，熟悉当地接待的成员再确认现场可行性。",
+        "从第一次沟通开始，主规划师会先听懂你想怎样看中国，再把城市、交通和停留节奏连成一段完整旅程。你始终只需要和一位了解全程的人沟通；在背后，团队会把各自在当地接待中积累的经验带进同一份方案。",
       cta: "认识 Homeground 工作室团队",
       roles: [
         {
-          title: "按旅程匹配主规划师",
+          title: "先听懂你想怎样看中国",
           detail:
-            "不是简单交给当时有空的人。若一地是行程核心，熟悉当地的成员可以直接牵头。",
+            "和谁同行、最期待什么、每天想走多快，都会成为路线的起点，而不是最后补上的备注。",
         },
         {
-          title: "一位主规划师统筹全程",
+          title: "一位主规划师了解全程",
           detail:
-            "把城市、交通、节奏和个人优先级连成一条路线，并作为主要规划联系人。",
+            "从第一次沟通到方案落定，始终有人掌握城市、交通、节奏和你的优先级。",
         },
         {
-          title: "从两个角度共同复核",
+          title: "一支团队让细节落地",
           detail:
-            "另一位规划师检查整体逻辑，当地经验成员或执行团队确认现场条件和分工。",
+            "团队把相关的规划与当地接待经验带进同一份方案，让路线不只停留在页面上。",
         },
       ],
     },
@@ -1408,25 +1408,25 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     studio: {
       eyebrow: "스튜디오",
-      title: "한 명의 플래너가 전체를 잇고, 팀이 다른 관점에서 검토합니다.",
+      title: "한 명의 전담 플래너가 여정 전체를 이해하고, 한 팀이 모든 디테일을 완성합니다.",
       intro:
-        "언어, 동행 구성, 동선의 난이도와 핵심 목적지를 기준으로 여행에 가장 적합한 담당 플래너를 정합니다. 담당 플래너가 여러 도시를 하나의 여정으로 설계하고, 다른 플래너가 전체 속도를 검토하며, 해당 지역 경험이 있는 구성원이 현지에서 실제로 가능한 조건을 확인합니다.",
+        "첫 상담부터 전담 플래너가 어떤 방식으로 중국을 경험하고 싶은지 듣고, 도시와 교통, 여행 속도를 하나의 자연스러운 여정으로 연결합니다. 여행자는 전체 일정을 이해하는 한 명의 플래너를 중심으로 편하게 소통하고, 그 뒤에서는 팀의 현장 경험이 같은 계획에 더해집니다.",
       cta: "Homeground 스튜디오 팀 만나기",
       roles: [
         {
-          title: "여행에 맞는 담당자 배정",
+          title: "먼저 여행자를 이해합니다",
           detail:
-            "단순히 가능한 사람에게 맡기지 않습니다. 한 지역이 여행의 중심이라면 그곳을 잘 아는 구성원이 전체 계획을 이끌 수 있습니다.",
+            "누구와 함께하는지, 무엇이 가장 중요한지, 하루를 어떤 속도로 보내고 싶은지가 계획의 출발점이 됩니다.",
         },
         {
-          title: "전체 여정을 보는 한 명의 플래너",
+          title: "한 명이 여정 전체를 압니다",
           detail:
-            "담당 플래너는 도시 간 이동, 여행 속도와 고객의 우선순위를 하나의 계획으로 연결하고 주요 연락 창구가 됩니다.",
+            "첫 상담부터 계획이 완성될 때까지, 전담 플래너가 도시, 교통, 여행 속도와 우선순위를 하나로 연결합니다.",
         },
         {
-          title: "서로 다른 관점의 검토",
+          title: "현장 경험이 디테일을 완성합니다",
           detail:
-            "다른 플래너가 전체 흐름을 살펴본 뒤, 해당 지역 경험이 있는 구성원이나 현지 운영팀이 운영 조건과 역할 분담을 확인합니다.",
+            "팀의 관련 여행 설계와 현지 응대 경험을 같은 일정에 더해, 화면 밖 실제 여행에서도 자연스럽게 이어지도록 합니다.",
         },
       ],
     },
