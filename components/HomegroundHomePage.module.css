@@ -721,6 +721,60 @@
   padding-top: 1.75rem;
 }
 
+.planningServiceLink {
+  align-items: center;
+  background: #f4eee7;
+  border: 1px solid #d7cabd;
+  border-radius: 1rem;
+  color: #17251f;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  min-height: 4.75rem;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.planningServiceLink > span {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.planningServiceLink small {
+  color: #8b3928;
+  font-size: 0.68rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.planningServiceLink strong {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 520;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.planningServiceLink svg {
+  flex: none;
+}
+
+.planningServiceLink:hover,
+.planningServiceLink:focus-visible {
+  background: #f8f3ee;
+  border-color: #9e3f29;
+}
+
+.planningServiceLink:focus-visible {
+  outline: 3px solid #9e3f29;
+  outline-offset: 3px;
+}
+
 .planningGuidesIntro {
   align-items: flex-end;
   display: flex;

@@ -20,7 +20,7 @@ export function HomegroundFooter({
   guideId = "zhangjiajie-itinerary",
 }: {
   locale?: HomegroundLocale;
-  pageContext?: "home" | "guide" | "studio";
+  pageContext?: "home" | "guide" | "studio" | "content";
   guideId?: GuideId;
 }) {
   const copy = getHomegroundCopy(locale);
@@ -59,6 +59,11 @@ export function HomegroundFooter({
             <span aria-current="page">{copy.navigation.studio}</span>
           ) : (
             <a href={studioPath}>{copy.navigation.studio}</a>
+          )}
+          {locale === "en" && (
+            <a href="/china-itinerary-review/">
+              Route review &amp; planning
+            </a>
           )}
           <a
             href={sectionHref("#faq")}

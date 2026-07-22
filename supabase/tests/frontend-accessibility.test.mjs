@@ -370,7 +370,21 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
     plannerHandoff,
     /roughBudgetPerPerson:\s*roughBudgetPerPerson\.trim\(\) \|\| null/,
   );
-  assert.match(plannerHandoff, /note: null/);
+  assert.match(plannerHandoff, /note: inquiryNote/);
+  assert.match(plannerHandoff, /name="tripContext"/);
+  assert.match(plannerHandoff, /<label htmlFor=\{tripContextId\}>/);
+  assert.match(
+    plannerHandoff,
+    /maxLength=\{maximumTripContextLength\}/,
+  );
+  assert.match(
+    plannerHandoff,
+    /aria-invalid=\{Boolean\(errors\.tripContext\)\}/,
+  );
+  assert.match(
+    plannerHandoff,
+    /aria-describedby=\{`\$\{tripContextHintId\}\$\{[\s\S]*tripContextErrorId/,
+  );
   assert.match(plannerHandoff, /type="submit"/);
 
   const dirtyStart = plannerHandoff.indexOf("const formIsDirty");
@@ -383,6 +397,14 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(dirtyState, /phone\.trim\(\)/);
   assert.match(dirtyState, /departureCountry\.trim\(\)/);
   assert.match(dirtyState, /roughBudgetPerPerson\.trim\(\)/);
+  assert.match(dirtyState, /tripContext\.trim\(\)/);
+
+  const noteStart = plannerHandoff.indexOf("const inquiryNote");
+  const noteEnd = plannerHandoff.indexOf("const briefLines", noteStart);
+  const noteBuilder = plannerHandoff.slice(noteStart, noteEnd);
+  assert.match(noteBuilder, /serviceInterest\.note/);
+  assert.match(noteBuilder, /Traveller context:/);
+  assert.doesNotMatch(noteBuilder, /URLSearchParams|utm_source|utm_medium|utm_campaign/);
 
   const briefStart = plannerHandoff.indexOf("const briefLines");
   const briefEnd = plannerHandoff.indexOf("const briefText", briefStart);
@@ -394,6 +416,46 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(briefBuilder, /timing\.status/);
   assert.match(briefBuilder, /mustSeeNames/);
   assert.match(briefBuilder, /result\.boundary/);
+  assert.match(briefBuilder, /inquiryNote/);
+});
+
+test("optional service context has accessible multiline validation and server errors", async () => {
+  const routeFinder = await source(routeFinderPath);
+  const plannerHandoff = await source(plannerHandoffPath);
+  const plannerStyles = await source(plannerHandoffStylesPath);
+
+  assert.match(routeFinder, /serviceInterest\?: RouteServiceInterest \| null/);
+  assert.match(routeFinder, /serviceInterest = null/);
+  assert.match(routeFinder, /<aside[\s\S]*styles\.serviceIntent/);
+  assert.match(plannerHandoff, /serviceInterest\?: RouteServiceInterest \| null/);
+  assert.match(plannerHandoff, /serviceInterest = null/);
+  assert.match(plannerHandoff, /const maximumTripContextLength = 1_800/);
+  assert.match(
+    plannerHandoff,
+    /function isValidTripContext\(value: string\): boolean/,
+  );
+  assert.match(
+    plannerHandoff,
+    /Array\.from\(value\.trim\(\)\)\.length <= maximumTripContextLength/,
+  );
+  assert.match(
+    plannerHandoff,
+    /!hasUnsupportedControlCharacters\(value\)/,
+  );
+  assert.match(
+    plannerHandoff,
+    /setBlurError\(\s*"tripContext",[\s\S]*isValidTripContext\(tripContext\)/,
+  );
+  assert.match(
+    plannerHandoff,
+    /fields\.note && serviceInterest[\s\S]*nextErrors\.tripContext/,
+  );
+  assert.match(plannerHandoff, /tripContext:\s*tripContextId/);
+  assert.match(plannerHandoff, /name="tripContext"\s+dir="auto"/);
+  assert.match(plannerHandoff, /Do not include passport or ID images/);
+  assert.doesNotMatch(plannerHandoff, /type="file"/);
+  assert.match(plannerStyles, /\.field input,\s*\.field textarea/);
+  assert.match(plannerStyles, /\.field textarea \{[\s\S]*resize: vertical/);
 });
 
 test("optional budget has accessible one-line validation and server errors", async () => {

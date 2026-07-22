@@ -112,7 +112,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Enquiry privacy at a glance",
       title: "Your details are used for a human reply",
       body:
-        "Homeground uses the trip brief, the one contact method you choose and any optional departure country, region or rough per-person budget to review and answer this travel request. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
+        "Homeground uses the trip brief — including any optional planning-service choice or concise route context — the one contact method you choose and any optional departure country, region or rough per-person budget to review and answer this travel request. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
       blockersTitle: "Key points",
       blockers: [
         "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
@@ -132,9 +132,9 @@ export const homegroundPrivacyCopy: Record<
     currentFlow: {
       title: "From the website to a human reply",
       paragraphs: [
-        "The trip checker may keep questionnaire answers in this browser’s session storage so progress can be restored. It does not store the traveller’s contact details, optional departure country or rough budget there.",
-        "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
-        "If the landing URL contains utm_source, utm_medium or utm_campaign labels, they are stored with the submitted enquiry to show how that request reached Homeground. They are not used for cross-site tracking.",
+        "The trip checker may keep questionnaire answers in this browser’s session storage so progress can be restored. It does not store the traveller’s contact details, optional free-text route context, departure country or rough budget there.",
+        "When a traveller submits the form, Supabase validates and saves the trip brief — which may include an optional planning-service choice or concise route context — the selected email address or WhatsApp number, and any optional departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
+        "For the standard trip-check enquiry, utm_source, utm_medium or utm_campaign labels already present in the landing URL may be stored to show how that request reached Homeground. They are not used for cross-site tracking. The English route-service enquiry keeps the selected service in the trip note instead and does not attach those campaign labels.",
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
         "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
@@ -152,7 +152,7 @@ export const homegroundPrivacyCopy: Record<
           stage:
             "Browser session, submitted enquiry, notification and connected team inbox",
           purpose:
-            "Selected destinations, another place entered, total nights, party, pace, must-see priorities, timing status, page language and internal rules version describe the request.",
+            "Selected destinations, another place entered, total nights, party, pace, must-see priorities, timing status, page language and internal rules version describe the request. For the English route-review and route-planning service, the same trip brief may also contain the selected service and an optional concise route outline, important constraints or shareable planning link. The free-text field can be left blank; full itinerary files are requested later by reply only when needed.",
         },
         {
           name: "Chosen reply contact",
@@ -283,7 +283,7 @@ export const homegroundPrivacyCopy: Record<
         "Do not submit the enquiry form.",
         "Ask what personal information is held and request access, correction or deletion after reasonable identity verification.",
         "Continue using the route finder without contacting Homeground.",
-        "Choose either email or WhatsApp for the human reply, and leave the optional departure country or rough budget blank.",
+        "Choose either email or WhatsApp for the human reply, and leave the optional route context, departure country or rough budget blank.",
       ],
     },
     contact: {
@@ -297,7 +297,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: "Available when legally required",
     },
     footer:
-      "This notice covers Homeground’s current route finder and enquiry service with email or WhatsApp reply. It does not provide marketing consent or enable AI chat or non-essential analytics.",
+      "This notice covers Homeground’s current route finder, English route-review and route-planning enquiry, and email or WhatsApp reply. It does not provide marketing consent or enable AI chat or non-essential analytics.",
   },
   zh: {
     htmlLang: "zh-Hans",

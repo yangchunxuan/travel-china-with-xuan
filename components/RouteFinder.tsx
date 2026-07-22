@@ -31,6 +31,7 @@ import {
   getDestinationPlannerCopy,
 } from "../lib/destinationPlannerI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import styles from "./RouteFinder.module.css";
 
 type QuestionKey = "destinations" | "nights" | "party" | "pace";
@@ -72,6 +73,7 @@ export interface RouteFinderProps {
   id?: string;
   locale?: HomegroundLocale;
   variant?: "default" | "hero";
+  serviceInterest?: RouteServiceInterest | null;
   interactionLocked?: boolean;
   contactDraftDirty?: boolean;
   handoff?: ReactNode;
@@ -392,6 +394,7 @@ export function RouteFinder({
   id = "route-finder",
   locale = "en",
   variant = "default",
+  serviceInterest = null,
   interactionLocked = false,
   contactDraftDirty = false,
   handoff,
@@ -1115,6 +1118,18 @@ export function RouteFinder({
           </div>
 
           <div className={styles.questionLayout}>
+            {serviceInterest && (
+              <aside
+                className={styles.serviceIntent}
+                aria-label="Selected Homeground planning service"
+              >
+                <span>Planning request</span>
+                <strong>
+                  {serviceInterest.label} · {serviceInterest.priceLabel}
+                </strong>
+                <p>{serviceInterest.finderSummary}</p>
+              </aside>
+            )}
             <div className={styles.questionHeader}>
               <p className={styles.kicker}>{questionCopy.eyebrow}</p>
               <h2 id={`${id}-title`} ref={headingRef} tabIndex={-1}>

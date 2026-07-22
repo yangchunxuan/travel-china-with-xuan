@@ -130,6 +130,43 @@
   padding: clamp(1.15rem, 3vw, 1.8rem);
 }
 
+.serviceIntent {
+  background: #f7ebe4;
+  border: 1px solid #d7b8a9;
+  border-inline-start: 4px solid var(--rf-rust);
+  border-radius: 0.75rem;
+  display: grid;
+  gap: 0.22rem;
+  margin-block-end: 1.15rem;
+  padding: 0.75rem 0.82rem;
+}
+
+.serviceIntent span {
+  color: var(--rf-rust);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.serviceIntent strong {
+  color: var(--rf-ink);
+  font-family: var(
+    --hg-editorial,
+    var(--serif, Georgia, "Times New Roman", serif)
+  );
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.serviceIntent p {
+  color: var(--rf-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0.12rem 0 0;
+}
+
 .questionBody {
   min-inline-size: 0;
 }
@@ -762,6 +799,11 @@
   }
 
   .heroVariant .questionHeader {
+    margin-block-end: 0;
+  }
+
+  .heroVariant .serviceIntent {
+    grid-column: 1 / -1;
     margin-block-end: 0;
   }
 

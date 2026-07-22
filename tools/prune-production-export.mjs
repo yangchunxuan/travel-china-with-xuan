@@ -64,12 +64,28 @@ if (remainingLabRoots.length > 0) {
   );
 }
 
-for (const requiredPage of ["index.html", "zh/index.html", "ko/index.html"]) {
+for (const requiredPage of [
+  "index.html",
+  "zh/index.html",
+  "ko/index.html",
+  "china-itinerary-review/index.html",
+]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);
 
   if (!requiredStat.isFile()) {
     throw new Error(`Required production page is missing: ${requiredPage}`);
+  }
+}
+
+for (const requiredAsset of [
+  "images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
+]) {
+  const requiredPath = path.join(outputRoot, requiredAsset);
+  const requiredStat = await lstat(requiredPath);
+
+  if (!requiredStat.isFile()) {
+    throw new Error(`Required production asset is missing: ${requiredAsset}`);
   }
 }
 

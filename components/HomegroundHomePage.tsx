@@ -19,6 +19,11 @@ import { getGuideEntry } from "../lib/guideRegistry";
 import { getZhangjiajieGuideCopy } from "../lib/zhangjiajieGuideI18n";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
+  getRouteServiceInterest,
+  routeServiceQueryKey,
+  type RouteServiceInterest,
+} from "../lib/routeServiceInterest";
+import {
   HomegroundHeader,
   resolvePlannerCta,
 } from "./HomegroundHeader";
@@ -107,6 +112,8 @@ export function HomegroundHomePage({
   const [handoffStatus, setHandoffStatus] =
     useState<HandoffStatus>("disabled");
   const [handoffDirty, setHandoffDirty] = useState(false);
+  const [routeServiceInterest, setRouteServiceInterest] =
+    useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
   const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
   const wholeRouteGuide = getGuideEntry(
@@ -172,6 +179,27 @@ export function HomegroundHomePage({
   };
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
+  const activeRouteServiceInterest =
+    locale === "en" ? routeServiceInterest : null;
+
+  useEffect(() => {
+    const syncRouteServiceInterest = () => {
+      if (locale !== "en") {
+        setRouteServiceInterest(null);
+        return;
+      }
+
+      const serviceId = new URL(window.location.href).searchParams.get(
+        routeServiceQueryKey,
+      );
+      setRouteServiceInterest(getRouteServiceInterest(serviceId));
+    };
+
+    syncRouteServiceInterest();
+    window.addEventListener("popstate", syncRouteServiceInterest);
+    return () =>
+      window.removeEventListener("popstate", syncRouteServiceInterest);
+  }, [locale]);
 
   const handleRouteFound = useCallback(
     (match: DestinationPlan, journey: RouteJourney) => {
@@ -282,6 +310,7 @@ export function HomegroundHomePage({
                 id="route-finder"
                 locale={locale}
                 variant="hero"
+                serviceInterest={activeRouteServiceInterest}
                 interactionLocked={routeInteractionLocked}
                 contactDraftDirty={handoffDirty}
                 handoff={
@@ -291,6 +320,7 @@ export function HomegroundHomePage({
                       locale={locale}
                       match={routeMatch}
                       journey={routeJourney ?? undefined}
+                      serviceInterest={activeRouteServiceInterest}
                       routeState={
                         plannerStatus === "result"
                           ? "current"
@@ -430,6 +460,18 @@ export function HomegroundHomePage({
                 ),
               )}
             </div>
+            {locale === "en" && (
+              <a
+                className={styles.planningServiceLink}
+                href="/china-itinerary-review/"
+              >
+                <span>
+                  <small>Route review &amp; planning</small>
+                  <strong>Review or build my China route</strong>
+                </span>
+                <ArrowRight aria-hidden="true" size={19} />
+              </a>
+            )}
           </nav>
         </section>
 
