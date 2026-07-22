@@ -42,6 +42,37 @@ import styles from "./HomegroundHomePage.module.css";
 
 const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 
+const planningServicePaths = [
+  {
+    service: getRouteServiceInterest("itinerary-review")!,
+    number: "01",
+    startingPoint: "I already have a usable day-by-day route.",
+    summary:
+      "We test the route for pressure points, fragile transfers and hotel moves, then show what to keep, move or remove.",
+    href: "/china-itinerary-review/#review-my-route",
+    cta: "See what the route review includes",
+  },
+  {
+    service: getRouteServiceInterest("route-build")!,
+    number: "02",
+    startingPoint: "I have dates and priorities, but no usable route.",
+    summary:
+      "We turn your cities, nights and constraints into a workable order, night allocation and day skeleton.",
+    href: "/china-itinerary-review/#build-my-route",
+    cta: "See what the route build includes",
+  },
+  {
+    service: getRouteServiceInterest("full-trip-support")!,
+    number: "03",
+    startingPoint:
+      "I want planning carried into selected arrangements or local coordination.",
+    summary:
+      "We define a written scope around the actual trip, including only the planning, coordination or local support you want us to handle.",
+    href: "/china-itinerary-review/#full-trip-support",
+    cta: "See how full-trip support works",
+  },
+] as const;
+
 function resolveFinalCta(
   copy: HomegroundCopy,
   plannerStatus: PlannerStatus,
@@ -460,20 +491,65 @@ export function HomegroundHomePage({
                 ),
               )}
             </div>
-            {locale === "en" && (
-              <a
-                className={styles.planningServiceLink}
-                href="/china-itinerary-review/"
-              >
-                <span>
-                  <small>Route review &amp; planning</small>
-                  <strong>Review or build my China route</strong>
-                </span>
-                <ArrowRight aria-hidden="true" size={19} />
-              </a>
-            )}
           </nav>
         </section>
+
+        {locale === "en" && (
+          <section
+            className={styles.servicePathways}
+            id="planning-services"
+            aria-labelledby="planning-services-title"
+          >
+            <div className={styles.servicePathwaysIntro}>
+              <div>
+                <p className={styles.eyebrow}>Ways to work with Homeground</p>
+                <h2 id="planning-services-title">
+                  Choose the part of the trip you want us to solve.
+                </h2>
+              </div>
+              <p>
+                You can use the free wishlist check without contacting us. When
+                you want human planning, start with the option closest to what
+                you already have.
+              </p>
+            </div>
+
+            <div className={styles.servicePathwayGrid}>
+              {planningServicePaths.map(
+                ({ service, number, startingPoint, summary, href, cta }) => (
+                  <article className={styles.servicePathwayCard} key={service.id}>
+                    <a href={href}>
+                      <span className={styles.servicePathwayNumber} aria-hidden="true">
+                        {number}
+                      </span>
+                      <span className={styles.servicePathwayStartingPoint}>
+                        {startingPoint}
+                      </span>
+                      <h3>{service.label}</h3>
+                      <p>{summary}</p>
+                      <span className={styles.servicePathwayFooter}>
+                        <strong>
+                          {service.priceLabel}
+                          {service.id === "full-trip-support" ? "" : " per trip"}
+                        </strong>
+                        <span>
+                          {cta}
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </span>
+                      </span>
+                    </a>
+                  </article>
+                ),
+              )}
+            </div>
+
+            <p className={styles.servicePathwaysScope}>
+              US$69 and US$129 cover the standard scope: up to 10 travel days,
+              4 overnight bases and one shared route for 1–4 travellers.
+              Full-trip support is quoted separately.
+            </p>
+          </section>
+        )}
 
         <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">
           <div className={styles.studioIntro}>

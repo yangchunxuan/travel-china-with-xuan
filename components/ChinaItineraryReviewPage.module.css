@@ -44,6 +44,7 @@
 
 .heroInner,
 .serviceSection,
+.studioBridge,
 .intro,
 .process,
 .example,
@@ -645,35 +646,115 @@
   margin-top: 0.7rem;
 }
 
-.choiceGuide {
-  align-items: start;
-  background: #ebe5db;
+.fullSupportChoice {
+  align-items: center;
+  background: #e9e1d6;
+  border-inline-start: 4px solid var(--review-green);
   display: grid;
-  gap: 0.65rem clamp(1rem, 3vw, 2rem);
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  margin-top: 1rem;
-  padding: 1.15rem 1.25rem;
+  gap: 1.25rem clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(12rem, 0.7fr) minmax(18rem, 1.2fr) minmax(10rem, 0.5fr);
+  margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  padding: clamp(1.35rem, 3vw, 2.2rem);
 }
 
-.choiceGuide strong {
-  font-family: var(--review-display);
-  font-size: 1.12rem;
-  font-weight: 400;
+.fullSupportChoiceLead {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
 }
 
-.choiceGuide p,
-.choiceGuide a {
-  color: var(--review-muted);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  margin: 0;
-}
-
-.choiceGuide a {
+.fullSupportChoiceLead .serviceIcon {
+  background: #d4e0d7;
   color: var(--review-green);
-  font-weight: 780;
+}
+
+.fullSupportChoiceLead p {
+  color: #56615b;
+  font-size: 0.73rem;
+  font-weight: 760;
+  letter-spacing: 0.045em;
+  line-height: 1.5;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.fullSupportChoice h3 {
+  font-family: var(--review-display);
+  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.fullSupportChoice > div:nth-child(2) p {
+  color: #56615b;
+  font-size: 0.84rem;
+  line-height: 1.62;
+  margin: 0.85rem 0 0;
+  max-width: 37rem;
+}
+
+.fullSupportChoiceAction {
+  display: grid;
+  gap: 0.7rem;
+  justify-items: start;
+}
+
+.fullSupportChoiceAction strong {
+  color: var(--review-green);
+  font-size: 0.78rem;
+  font-weight: 820;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fullSupportChoiceAction a,
+.studioBridge a {
+  align-items: center;
+  color: var(--review-green);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 790;
+  gap: 0.5rem;
   min-height: 2.75rem;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
+}
+
+.fullSupportChoiceAction svg,
+.studioBridge a svg {
+  flex: none;
+}
+
+.studioBridge {
+  align-items: end;
+  background: var(--review-sand);
+  box-shadow: 0 0 0 100vmax var(--review-sand);
+  clip-path: inset(0 -100vmax);
+  display: grid;
+  gap: 1.5rem clamp(2rem, 8vw, 7rem);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
+  padding-block: clamp(3.75rem, 7vw, 6rem);
+}
+
+.studioBridge h2 {
+  font-family: var(--review-display);
+  font-size: clamp(2.2rem, 4.2vw, 3.75rem);
+  font-weight: 400;
+  letter-spacing: -0.044em;
+  line-height: 1.02;
+  margin: 0.75rem 0 0;
+  max-width: 13ch;
+  text-wrap: balance;
+}
+
+.studioBridge > div:last-child > p {
+  color: #56615b;
+  font-size: 0.95rem;
+  line-height: 1.72;
+  margin: 0 0 1rem;
+  max-width: 34rem;
 }
 
 .pressureCard h3 {
@@ -1208,6 +1289,8 @@
 @media (max-width: 980px) {
   .heroGrid,
   .sectionHeadingSplit,
+  .fullSupportChoice,
+  .studioBridge,
   .outputHeading,
   .fullSupport,
   .finalCta {
@@ -1245,14 +1328,20 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .choiceGuide {
-    grid-template-columns: minmax(0, 1fr);
+  .fullSupportChoice {
+    align-items: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fullSupportChoiceLead {
+    grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 680px) {
   .heroInner,
   .serviceSection,
+  .studioBridge,
   .intro,
   .process,
   .example,
@@ -1353,6 +1442,18 @@
 
   .serviceButton {
     align-self: stretch;
+  }
+
+  .fullSupportChoice {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fullSupportChoiceLead {
+    grid-column: auto;
+  }
+
+  .fullSupportChoiceAction a {
+    width: 100%;
   }
 
   .fullSupport {

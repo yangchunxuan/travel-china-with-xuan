@@ -167,6 +167,7 @@
 }
 
 .proofSection,
+.servicePathways,
 .studioSection,
 .faqSection {
   scroll-margin-top: 5.75rem;
@@ -258,14 +259,24 @@
 }
 
 .desktopNav a {
+  align-items: center;
   color: #435049;
+  display: inline-flex;
   font-size: 0.83rem;
   font-weight: 680;
+  min-height: 2.75rem;
   text-decoration: none;
 }
 
 .desktopNav a:hover {
   color: #9e3f29;
+}
+
+.desktopNav a[aria-current="page"] {
+  color: #8b3928;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.4em;
 }
 
 .headerActions {
@@ -364,6 +375,10 @@
   font-weight: 680;
   padding: 0.9rem 0.2rem;
   text-decoration: none;
+}
+
+.mobileNav > a[aria-current="page"] {
+  color: #8b3928;
 }
 
 .mobileLanguageNav {
@@ -721,60 +736,6 @@
   padding-top: 1.75rem;
 }
 
-.planningServiceLink {
-  align-items: center;
-  background: #f4eee7;
-  border: 1px solid #d7cabd;
-  border-radius: 1rem;
-  color: #17251f;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  min-height: 4.75rem;
-  padding: 1rem 1.15rem;
-  text-decoration: none;
-  transition: background-color 180ms ease, border-color 180ms ease;
-}
-
-.planningServiceLink > span {
-  display: grid;
-  gap: 0.25rem;
-  min-width: 0;
-}
-
-.planningServiceLink small {
-  color: #8b3928;
-  font-size: 0.68rem;
-  font-weight: 780;
-  letter-spacing: 0.1em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.planningServiceLink strong {
-  font-family: var(--hg-ui-display);
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  font-weight: 520;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  overflow-wrap: anywhere;
-}
-
-.planningServiceLink svg {
-  flex: none;
-}
-
-.planningServiceLink:hover,
-.planningServiceLink:focus-visible {
-  background: #f8f3ee;
-  border-color: #9e3f29;
-}
-
-.planningServiceLink:focus-visible {
-  outline: 3px solid #9e3f29;
-  outline-offset: 3px;
-}
-
 .planningGuidesIntro {
   align-items: flex-end;
   display: flex;
@@ -928,6 +889,149 @@
   letter-spacing: 0.08em;
   min-height: 2.75rem;
   text-transform: uppercase;
+}
+
+.servicePathways {
+  background: #f1ece4;
+  padding: clamp(4.75rem, 8vw, 7rem) max(1rem, calc((100vw - 1260px) / 2));
+}
+
+.servicePathwaysIntro {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1.12fr) minmax(19rem, 0.68fr);
+  margin-bottom: clamp(2.25rem, 5vw, 4rem);
+}
+
+.servicePathwaysIntro h2 {
+  color: #17251f;
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.65rem, 5vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  margin: 0.9rem 0 0;
+  max-width: 12ch;
+  text-wrap: balance;
+}
+
+.servicePathwaysIntro > p {
+  color: #536159;
+  font-size: 1rem;
+  line-height: 1.72;
+  margin: 0 0 0.25rem;
+  max-width: 34rem;
+}
+
+.servicePathwayGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.servicePathwayCard {
+  background: #fbfaf7;
+  min-width: 0;
+}
+
+.servicePathwayCard > a {
+  color: #17251f;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 31rem;
+  padding: clamp(1.35rem, 2.7vw, 2.15rem);
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.servicePathwayCard > a:hover,
+.servicePathwayCard > a:focus-visible {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.servicePathwayCard > a:focus-visible {
+  outline: 3px solid #9e3f29;
+  outline-offset: -3px;
+  position: relative;
+  z-index: 1;
+}
+
+.servicePathwayNumber {
+  color: #a74731;
+  font-family: var(--hg-editorial);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.servicePathwayStartingPoint {
+  color: #6b756f;
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.075em;
+  line-height: 1.5;
+  margin-top: clamp(2.6rem, 5vw, 4.4rem);
+  min-height: 3.25rem;
+  text-transform: uppercase;
+}
+
+.servicePathwayCard h3 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 1rem 0 0;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.servicePathwayCard p {
+  color: #536159;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 1.25rem 0 2rem;
+}
+
+.servicePathwayFooter {
+  border-top: 1px solid #d7d2c9;
+  display: grid;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.15rem;
+}
+
+.servicePathwayFooter > strong {
+  color: #8f3b29;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+}
+
+.servicePathwayFooter > span {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 780;
+  gap: 0.45rem;
+  line-height: 1.4;
+  min-height: 2.75rem;
+}
+
+.servicePathwayFooter svg {
+  flex: none;
+}
+
+.servicePathwaysScope {
+  border-inline-start: 2px solid #a74731;
+  color: #5b6861;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  margin: 1.5rem 0 0;
+  max-width: 57rem;
+  padding-inline-start: 0.9rem;
 }
 
 .handledCard {
@@ -1194,6 +1298,10 @@
   text-decoration: none;
 }
 
+.footerTop span[aria-current] {
+  color: #fff;
+}
+
 .footerNote {
   border-top: 1px solid rgb(255 255 255 / 12%);
   color: rgb(255 255 255 / 58%);
@@ -1213,7 +1321,7 @@
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1120px) {
   .desktopNav,
   .headerCta,
   .languageNav {
@@ -1227,6 +1335,9 @@
   .menuButton {
     display: inline-flex;
   }
+}
+
+@media (max-width: 1040px) {
 
   .heroGrid {
     align-items: start;
@@ -1266,9 +1377,26 @@
   }
 
   .proofBoard,
+  .servicePathwaysIntro,
   .studioSection,
   .faqSection {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .servicePathwaysIntro > p {
+    max-width: 44rem;
+  }
+
+  .servicePathwayGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicePathwayCard:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .servicePathwayCard:last-child > a {
+    min-height: 25rem;
   }
 
   .studioLink {
@@ -1361,6 +1489,7 @@
   }
 
   .proofSection,
+  .servicePathways,
   .studioSection,
   .faqSection {
     padding-block: 3.75rem;
@@ -1380,6 +1509,24 @@
 
   .planningGuideList {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .servicePathwayGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .servicePathwayCard:last-child {
+    grid-column: auto;
+  }
+
+  .servicePathwayCard > a,
+  .servicePathwayCard:last-child > a {
+    min-height: 0;
+  }
+
+  .servicePathwayStartingPoint {
+    margin-top: 2.35rem;
+    min-height: 0;
   }
 
   .planningGuideCard {
@@ -1461,6 +1608,7 @@
 
   .heroGrid,
   .proofSection,
+  .servicePathways,
   .studioSection,
   .faqSection,
   .finalCta,
@@ -1474,6 +1622,7 @@
   .skipLink,
   .faqList summary span,
   .planningGuideCard,
+  .servicePathwayCard > a,
   .planningGuideImage img {
     transition: none;
   }
