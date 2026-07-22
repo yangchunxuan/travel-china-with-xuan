@@ -41,6 +41,30 @@ const nightShowRelatedCopy: Record<
   },
 };
 
+const transportRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string }
+> = {
+  en: {
+    label: "Planning the long transfers?",
+    title: "Count the whole travel day, not only the timetable.",
+    body:
+      "Compare train and flight for Beijing → Zhangjiajie and Zhangjiajie → Shanghai, including station or airport access and arrival timing.",
+  },
+  zh: {
+    label: "准备安排长距离转场？",
+    title: "不要只看车程或飞行时间，要计算完整转场日。",
+    body:
+      "把进出车站或机场、候车和值机以及落地时间一起算入，对比北京 → 张家界和张家界 → 上海的高铁与飞机。",
+  },
+  ko: {
+    label: "장거리 이동을 계획하시나요?",
+    title: "시간표만 보지 말고 이동일 전체를 계산하세요.",
+    body:
+      "역·공항 접근과 대기, 도착 시각까지 포함해 베이징 → 장자제와 장자제 → 상하이 구간의 기차와 항공편을 비교합니다.",
+  },
+};
+
 function Timeline({
   stops,
   headingLevel = 3,
@@ -245,6 +269,11 @@ export function ZhangjiajieGuidePage({
   const guide = getGuideEntry("zhangjiajie-itinerary", locale);
   const nightShowGuide = getGuideEntry("best-zhangjiajie-night-show", locale);
   const nightShowCopy = nightShowRelatedCopy[locale];
+  const transportGuide = getGuideEntry(
+    "beijing-zhangjiajie-shanghai-transport",
+    locale,
+  );
+  const transportCopy = transportRelatedCopy[locale];
   const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -380,17 +409,31 @@ export function ZhangjiajieGuidePage({
               </figure>
             </section>
 
-            <aside className={styles.nightShowRelated} aria-labelledby="night-show-related-title">
-              <div>
-                <p>{nightShowCopy.label}</p>
-                <h2 id="night-show-related-title">{nightShowCopy.title}</h2>
-                <span>{nightShowCopy.body}</span>
-              </div>
-              <Link href={nightShowGuide.canonicalPath}>
-                {nightShowCopy.action}
-                <ArrowRight aria-hidden="true" size={17} />
-              </Link>
-            </aside>
+            <div className={styles.relatedGuideStack}>
+              <aside className={styles.nightShowRelated} aria-labelledby="night-show-related-title">
+                <div>
+                  <p>{nightShowCopy.label}</p>
+                  <h2 id="night-show-related-title">{nightShowCopy.title}</h2>
+                  <span>{nightShowCopy.body}</span>
+                </div>
+                <Link href={nightShowGuide.canonicalPath}>
+                  {nightShowCopy.action}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+
+              <aside className={styles.nightShowRelated} aria-labelledby="transport-related-title">
+                <div>
+                  <p>{transportCopy.label}</p>
+                  <h2 id="transport-related-title">{transportCopy.title}</h2>
+                  <span>{transportCopy.body}</span>
+                </div>
+                <Link href={transportGuide.canonicalPath}>
+                  {transportGuide.featuredLinkLabel}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+            </div>
 
             <section
               className={styles.itinerarySection}

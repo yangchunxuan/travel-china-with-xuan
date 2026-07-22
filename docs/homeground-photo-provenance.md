@@ -42,6 +42,23 @@ labels were neutralized so the image can express the idea of a transfer without
 making a location claim. It must not be captioned as evidence of a particular
 station, city, railway system or official procedure.
 
+For the Beijing–Zhangjiajie–Shanghai transport guide, the project owner
+directly supplied five image attachments for the article on July 21, 2026.
+Three were selected: an exterior view of Beijing West Railway Station, a wide
+view of Zhangjiajie West Railway Station, and an airport wayfinding interior.
+They were exported as the following responsive release families:
+
+- `public/images/guides/beijing-zhangjiajie-shanghai-transport/beijing-west-*`
+- `public/images/guides/beijing-zhangjiajie-shanghai-transport/zhangjiajie-west-*`
+- `public/images/guides/beijing-zhangjiajie-shanghai-transport/airport-wayfinding-*`
+
+The release derivatives include JPG fallbacks plus WebP and AVIF sizes. Their
+source metadata was not retained. Two other supplied alternatives were not
+selected. On July 22, 2026, the project owner explicitly confirmed that this
+image set is their own and may be used for the Homeground website. This record
+does not separately claim that every image was personally photographed by the
+owner.
+
 Generation brief: create one original editorial spot illustration for a
 premium private China travel-planning website; show a folded abstract
 three-stop route map, three location markers, calendar card, railway-ticket

@@ -68,6 +68,33 @@ const nightShowRelatedCopy: Record<
   },
 };
 
+const transportRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string; action: string }
+> = {
+  en: {
+    label: "Make the transfers concrete",
+    title: "Compare train and flight by hotel-arrival time.",
+    body:
+      "The transport guide breaks down both long legs, including station or airport access, waiting time and the Zhangjiajie hotel base.",
+    action: "Compare the two travel days",
+  },
+  zh: {
+    label: "把转场时间算清楚",
+    title: "按到达酒店的时间比较高铁与飞机。",
+    body:
+      "交通指南分别拆解两段长距离转场，把进出车站或机场、等候时间和张家界住宿区域一起计算。",
+    action: "比较两段真实转场时间",
+  },
+  ko: {
+    label: "이동시간을 구체적으로 계산하기",
+    title: "호텔 도착 시각을 기준으로 기차와 항공편을 비교하세요.",
+    body:
+      "교통 가이드는 역·공항 접근과 대기, 장자제 숙소 위치까지 포함해 두 장거리 구간을 각각 계산합니다.",
+    action: "두 이동일의 실제 시간 비교하기",
+  },
+};
+
 function createStructuredData(
   locale: HomegroundLocale,
   copy: TenDayGuideCopy,
@@ -155,6 +182,11 @@ export function TenDayChinaRouteGuidePage({
     locale,
   ).canonicalPath;
   const nightShowCopy = nightShowRelatedCopy[locale];
+  const transportGuideHref = getGuideEntry(
+    "beijing-zhangjiajie-shanghai-transport",
+    locale,
+  ).canonicalPath;
+  const transportCopy = transportRelatedCopy[locale];
   const privacyHref = `${localePrefix}/privacy/`;
   const languagePaths = getGuideLanguagePaths(guideId);
   const languageOptions = [
@@ -499,6 +531,23 @@ export function TenDayChinaRouteGuidePage({
               <p className={styles.directionNote}>
                 <strong>{copy.transfer.directionTitle}</strong> {copy.transfer.directionBody}
               </p>
+
+              <aside
+                className={styles.nightShowRelated}
+                aria-labelledby="ten-day-transport-guide-title"
+              >
+                <div>
+                  <span>{transportCopy.label}</span>
+                  <h3 id="ten-day-transport-guide-title">
+                    {transportCopy.title}
+                  </h3>
+                  <p>{transportCopy.body}</p>
+                </div>
+                <Link href={transportGuideHref}>
+                  {transportCopy.action}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
 
               <Link className={styles.textLink} href={plannerHref}>
                 {copy.transfer.plannerLink}

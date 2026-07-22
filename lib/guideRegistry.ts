@@ -6,6 +6,7 @@ export const guideIds = [
   "zhangjiajie-itinerary",
   "best-zhangjiajie-night-show",
   "beijing-zhangjiajie-shanghai-10-days",
+  "beijing-zhangjiajie-shanghai-transport",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -174,6 +175,55 @@ export const guideRegistry = [
         heroAlt: "강 건너 장자제 시내와 그 뒤로 이어지는 산봉우리.",
         navTitle: "베이징·장자제·상하이 10일 가이드",
         featuredLinkLabel: "세 도시를 10일에 넣을 수 있는지 확인하기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "beijing-zhangjiajie-shanghai-transport",
+    type: "planning",
+    featured: false,
+    heroImagePath:
+      "/images/guides/beijing-zhangjiajie-shanghai-transport/zhangjiajie-west-1600.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/beijing-zhangjiajie-shanghai-transport/zhangjiajie-west-1600.jpg",
+    datePublished: "2026-07-22",
+    dateModified: "2026-07-22",
+    sourceReviewedDate: "2026-07-22",
+    locales: {
+      en: {
+        path: "/guides/beijing-zhangjiajie-shanghai-transport/",
+        title: "Beijing–Zhangjiajie–Shanghai: Train or Flight?",
+        headline:
+          "Beijing → Zhangjiajie → Shanghai: What the Travel Days Actually Cost",
+        description:
+          "Compare the real door-to-door time from Beijing to Zhangjiajie to Shanghai by train and plane, including station and airport transfers and late arrivals.",
+        heroAlt:
+          "Wide view of Zhangjiajie West Railway Station and its forecourt.",
+        navTitle: "Beijing–Zhangjiajie–Shanghai transport guide",
+        featuredLinkLabel: "Compare the real train and flight time",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
+        title: "北京—张家界—上海：坐高铁还是飞机？",
+        headline: "北京 → 张家界 → 上海：两段交通真正会占掉多少时间",
+        description:
+          "飞行时间看起来更短，但机场接驳、提前到达和深夜落地都会改变结果。对比北京—张家界—上海坐飞机与高铁的真实门到门时间。",
+        heroAlt: "张家界西站及站前广场的横向全景。",
+        navTitle: "北京—张家界—上海交通指南",
+        featuredLinkLabel: "比较飞机与高铁的真实时间",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
+        title: "베이징–장자제–상하이: 기차와 비행기 중 무엇이 나을까?",
+        headline: "베이징 → 장자제 → 상하이: 이동일에 실제로 드는 시간",
+        description:
+          "비행시간만 보면 항공편이 빠르지만 공항 이동과 늦은 도착까지 계산하면 답이 달라집니다. 베이징–장자제–상하이 구간의 실제 문전 이동시간을 비교합니다.",
+        heroAlt: "장자제서역과 역 앞 광장의 넓은 전경.",
+        navTitle: "베이징–장자제–상하이 교통 가이드",
+        featuredLinkLabel: "기차와 항공편의 실제 시간 비교",
         openGraphLocale: "ko_KR",
       },
     },
