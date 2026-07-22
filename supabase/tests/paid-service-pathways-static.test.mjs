@@ -6,21 +6,39 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("English Home presents all three paid paths as information links", async () => {
-  const [home, services] = await Promise.all([
+test("Home planning desk presents three paid paths and one free path before the shared questions", async () => {
+  const [home, planningDesk, planningCopy, services] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomepagePlanningDesk.tsx"),
+    source("lib/homepagePlanningDesk.ts"),
     source("lib/routeServiceInterest.ts"),
   ]);
 
-  assert.match(home, /\{locale === "en" && \(\s*<section[\s\S]*Ways to work with Homeground/);
-  assert.equal(home.match(/service: getRouteServiceInterest\("/g)?.length, 3);
+  assert.equal(home.match(/<RouteFinder\b/g)?.length, 1);
+  assert.match(home, /planningIntent=\{planningIntent\}/);
+  assert.match(
+    home,
+    /onPlanningIntentChange=\{handlePlanningIntentChange\}/,
+  );
+  assert.match(
+    planningDesk,
+    /copy\.options\.filter\(\(option\) => option\.kind === "paid"\)/,
+  );
+  assert.match(
+    planningDesk,
+    /copy\.options\.find\(\(option\) => option\.kind === "free"\)/,
+  );
+  assert.match(planningDesk, /name="homeground-planning-intent"/);
+  assert.match(planningDesk, /onContinue\(draft\)/);
+  assert.match(planningCopy, /id: "itinerary-review"/);
+  assert.match(planningCopy, /id: "route-build"/);
+  assert.match(planningCopy, /id: "full-trip-support"/);
+  assert.match(planningCopy, /id: "explore"/);
+  assert.match(planningCopy, /label: "Free route timing check"/);
   assert.match(services, /label: "Review My Route"/);
   assert.match(services, /label: "Build My Route"/);
   assert.match(services, /label: "Full Trip Planning & Ground Support"/);
-  assert.match(home, /href: "\/china-itinerary-review\/#review-my-route"/);
-  assert.match(home, /href: "\/china-itinerary-review\/#build-my-route"/);
-  assert.match(home, /href: "\/china-itinerary-review\/#full-trip-support"/);
-  assert.doesNotMatch(home, /href=[^>\n]*service=/);
+  assert.doesNotMatch(planningCopy, /id: "explore"[\s\S]{0,500}US\$/);
 });
 
 test("Planning Services presents all three paths before education and links to localized Studio", async () => {

@@ -23,6 +23,7 @@ import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
+import { routeServiceIds } from "../lib/routeServiceInterest";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import styles from "./HomegroundHomePage.module.css";
@@ -32,21 +33,65 @@ interface HomegroundHeaderProps {
   plannerStatus?: PlannerStatus;
   handoffStatus?: HandoffStatus;
   handoffDirty?: boolean;
+  freeResult?: boolean;
   pageContext?: "home" | "guide" | "studio" | "services" | "content";
   guideId?: GuideId;
   showLanguageNav?: boolean;
+}
+
+const allowedHeaderHashes = new Set([
+  "#route-finder",
+  "#planner-handoff",
+  "#planning-proof",
+  "#studio",
+  "#faq",
+  "#choose-service",
+  "#review-my-route",
+  "#build-my-route",
+  "#full-trip-support",
+]);
+const allowedPlannerQueries = new Set([
+  "destinations",
+  "nights",
+  "party",
+  "pace",
+  "result",
+]);
+const allowedServiceQueries = new Set<string>(routeServiceIds);
+
+function preservedHomeQuery(plannerStatus: PlannerStatus): string {
+  const current = new URL(window.location.href);
+  const preserved = new URLSearchParams();
+  const planner = current.searchParams.get("planner");
+  const service = current.searchParams.get("service");
+
+  if (planner && allowedPlannerQueries.has(planner)) {
+    preserved.set("planner", planner);
+  } else if (plannerStatus === "result") {
+    preserved.set("planner", "result");
+  }
+  if (service && allowedServiceQueries.has(service)) {
+    preserved.set("service", service);
+  }
+
+  const query = preserved.toString();
+  return query ? `?${query}` : "";
 }
 
 export function resolvePlannerCta(
   copy: HomegroundCopy,
   plannerStatus: PlannerStatus,
   handoffStatus: HandoffStatus,
+  freeResult = false,
 ): string {
   if (plannerStatus === "new") {
     return copy.navigation.plannerCta.new;
   }
   if (plannerStatus === "in-progress") {
     return copy.navigation.plannerCta.inProgress;
+  }
+  if (freeResult) {
+    return copy.navigation.plannerCta.freeResult;
   }
 
   switch (handoffStatus) {
@@ -72,21 +117,24 @@ export function HomegroundHeader({
   plannerStatus = "new",
   handoffStatus = "disabled",
   handoffDirty = false,
+  freeResult = false,
   pageContext = "home",
   guideId = "zhangjiajie-itinerary",
   showLanguageNav = true,
 }: HomegroundHeaderProps) {
   const [open, setOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
+  const [languageQuery, setLanguageQuery] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const copy = getHomegroundCopy(locale);
   const plannerCta = resolvePlannerCta(
     copy,
     plannerStatus,
     handoffStatus,
+    freeResult,
   );
   const plannerTarget = (
-    plannerStatus === "result"
+    plannerStatus === "result" && !freeResult
       ? "#planner-handoff"
       : "#route-finder"
   ) satisfies HomegroundHashTarget;
@@ -101,27 +149,25 @@ export function HomegroundHeader({
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
 
   useEffect(() => {
-    const allowedHashes = new Set([
-      "#route-finder",
-      "#planner-handoff",
-      "#planning-proof",
-      "#studio",
-      "#faq",
-      "#choose-service",
-      "#review-my-route",
-      "#build-my-route",
-      "#full-trip-support",
-    ]);
-    const syncHash = () => {
+    const syncLocation = () => {
       setActiveHash(
-        allowedHashes.has(window.location.hash) ? window.location.hash : "",
+        allowedHeaderHashes.has(window.location.hash)
+          ? window.location.hash
+          : "",
       );
+      setLanguageQuery(preservedHomeQuery(plannerStatus));
     };
 
-    syncHash();
-    window.addEventListener("hashchange", syncHash);
-    return () => window.removeEventListener("hashchange", syncHash);
-  }, []);
+    syncLocation();
+    window.addEventListener("hashchange", syncLocation);
+    window.addEventListener("popstate", syncLocation);
+    window.addEventListener("homeground:locationchange", syncLocation);
+    return () => {
+      window.removeEventListener("hashchange", syncLocation);
+      window.removeEventListener("popstate", syncLocation);
+      window.removeEventListener("homeground:locationchange", syncLocation);
+    };
+  }, [plannerStatus]);
 
   useEffect(() => {
     if (pageContext !== "services") return;
@@ -286,9 +332,9 @@ export function HomegroundHeader({
                     ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
                   : pageContext === "studio"
                     ? `${target.path}studio/`
-                  : plannerStatus === "result"
+                  : plannerStatus === "result" && !languageQuery
                   ? `${target.path}?planner=result${languageHash}`
-                  : `${target.path}${languageHash}`;
+                  : `${target.path}${languageQuery}${languageHash}`;
               return (
                 <a
                   aria-current={
@@ -418,9 +464,9 @@ export function HomegroundHeader({
                   ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
                 : pageContext === "studio"
                   ? `${target.path}studio/`
-                : plannerStatus === "result"
+                : plannerStatus === "result" && !languageQuery
                 ? `${target.path}?planner=result${languageHash}`
-                : `${target.path}${languageHash}`;
+                : `${target.path}${languageQuery}${languageHash}`;
             return (
               <a
                 aria-current={

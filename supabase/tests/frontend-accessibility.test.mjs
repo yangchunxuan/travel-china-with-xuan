@@ -72,7 +72,7 @@ test("planner step changes preserve the current viewport", async () => {
     hashEffectStart,
   );
   const hashEffect = homegroundPage.slice(hashEffectStart, hashEffectEnd);
-  assert.match(hashEffect, /\}, \[locale\]\);/);
+  assert.match(hashEffect, /\}, \[locale, planningIntent\]\);/);
   assert.doesNotMatch(hashEffect, /\[locale, plannerStatus\]/);
 });
 
@@ -169,8 +169,9 @@ test("article route deep links seed their cities once, then release the URL", as
   );
   assert.match(
     routeFinder,
-    /if \(!sessionReady \|\| !hasDestinationsQuery\(\)\) return;\s*clearDestinationsQuery\(\)/,
+    /if \(!planningIntent \|\| !sessionReady \|\| !hasDestinationsQuery\(\)\) return;\s*clearDestinationsQuery\(\)/,
   );
+  assert.match(routeFinder, /\}, \[planningIntent, sessionReady\]\);/);
   assert.match(
     routeFinder,
     /function readStoredPlannerSession\(\)[\s\S]*JSON\.parse\(raw\)[\s\S]*catch[\s\S]*return null/,
@@ -430,9 +431,15 @@ test("optional service context has accessible multiline validation and server er
 
   assert.match(routeFinder, /serviceInterest\?: RouteServiceInterest \| null/);
   assert.match(routeFinder, /serviceInterest = null/);
-  assert.match(routeFinder, /<aside[\s\S]*styles\.serviceIntent/);
+  assert.match(routeFinder, /planningIntent\?: HomepagePlanningIntentId \| null/);
+  assert.match(routeFinder, /<HomepageSelectedIntent/);
+  assert.match(
+    routeFinder,
+    /planningCopy\.paidBriefs\[serviceInterest\.id\]/,
+  );
   assert.match(plannerHandoff, /serviceInterest\?: RouteServiceInterest \| null/);
   assert.match(plannerHandoff, /serviceInterest = null/);
+  assert.match(plannerHandoff, /<aside[\s\S]*styles\.serviceIntent/);
   assert.match(plannerHandoff, /const maximumTripContextLength = 1_800/);
   assert.match(
     plannerHandoff,

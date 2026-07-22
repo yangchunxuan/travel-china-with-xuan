@@ -30,6 +30,10 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  getHomepagePlanningDeskCopy,
+  routeNeedsScopeConfirmation,
+} from "../lib/homepagePlanningDesk";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
 
@@ -276,6 +280,7 @@ export function PlannerHandoff({
   match,
   journey,
   serviceInterest = null,
+  serviceContextRevision = 0,
   routeState = "current",
   onDirtyChange,
   onStatusChange,
@@ -285,11 +290,20 @@ export function PlannerHandoff({
   match: DestinationPlan;
   journey?: RouteJourney;
   serviceInterest?: RouteServiceInterest | null;
+  serviceContextRevision?: number;
   routeState?: HandoffRouteState;
   onDirtyChange?: (dirty: boolean) => void;
   onStatusChange?: (status: HandoffStatus) => void;
 }) {
   const copy = getHomegroundCopy(locale);
+  const planningCopy = getHomepagePlanningDeskCopy(locale);
+  const paidBriefCopy = serviceInterest
+    ? planningCopy.paidBriefs[serviceInterest.id]
+    : null;
+  const scopeConfirmationRequired = Boolean(
+    serviceInterest &&
+      routeNeedsScopeConfirmation(match, serviceInterest.id),
+  );
   const plannerCopy = getDestinationPlannerCopy(locale);
   const apiUrl = trustedInquiryApiUrl(
     process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL?.trim() || "",
@@ -335,7 +349,7 @@ export function PlannerHandoff({
       replySla,
   );
   const whatsappIntakeReady =
-    configurationReady && whatsappIntakeEnabled;
+    configurationReady && whatsappIntakeEnabled && !serviceInterest;
 
   const [status, setStatus] = useState<HandoffStatus>(
     configurationReady ? "idle" : "disabled",
@@ -369,6 +383,10 @@ export function PlannerHandoff({
   const localJourneyRevisionRef = useRef(1);
   const routeIdentityRef = useRef("");
   const dispatchingRef = useRef(false);
+  const previousServiceIdRef = useRef(serviceInterest?.id ?? null);
+  const previousServiceContextRevisionRef = useRef(
+    serviceContextRevision,
+  );
 
   const idPrefix = useId();
   const contactGroupId = `${idPrefix}-contact`;
@@ -435,14 +453,23 @@ export function PlannerHandoff({
   const inquiryNote = useMemo(() => {
     if (!serviceInterest) return null;
 
-    const noteParts = [serviceInterest.note];
+    const noteParts = [
+      scopeConfirmationRequired
+        ? planningCopy.outsideStandardScope.note(serviceInterest.label)
+        : serviceInterest.note,
+    ];
     if (tripContext.trim()) {
       noteParts.push(
         `${serviceInterest.contextNoteLabel}:\n${tripContext.trim()}`,
       );
     }
     return noteParts.join("\n\n");
-  }, [serviceInterest, tripContext]);
+  }, [
+    planningCopy.outsideStandardScope,
+    scopeConfirmationRequired,
+    serviceInterest,
+    tripContext,
+  ]);
   const briefLines = useMemo(() => {
     const lines = [
       `${plannerCopy.result.answerLabels.destinations}: ${wishlistLabel}`,
@@ -507,6 +534,28 @@ export function PlannerHandoff({
   useEffect(() => {
     onStatusChange?.(status);
   }, [onStatusChange, status]);
+
+  useEffect(() => {
+    const nextServiceId = serviceInterest?.id ?? null;
+    if (
+      previousServiceIdRef.current === nextServiceId &&
+      previousServiceContextRevisionRef.current ===
+        serviceContextRevision
+    ) {
+      return;
+    }
+
+    previousServiceIdRef.current = nextServiceId;
+    previousServiceContextRevisionRef.current = serviceContextRevision;
+    setTripContext("");
+    setErrors((current) => {
+      if (!current.tripContext) return current;
+      const next = { ...current };
+      delete next.tripContext;
+      return next;
+    });
+    snapshotRef.current = null;
+  }, [serviceContextRevision, serviceInterest?.id]);
 
   useEffect(() => {
     onDirtyChange?.(hasUnsavedContactDraft);
@@ -1117,9 +1166,16 @@ export function PlannerHandoff({
             >
               <span>{serviceInterest.handoffLabel}</span>
               <strong>
-                {serviceInterest.label} · {serviceInterest.priceLabel}
+                {serviceInterest.label} ·{" "}
+                {scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.priceLabel
+                  : serviceInterest.priceLabel}
               </strong>
-              <p>{serviceInterest.handoffSummary}</p>
+              <p>
+                {scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.scope
+                  : serviceInterest.handoffSummary}
+              </p>
             </aside>
           )}
         </div>
@@ -1150,9 +1206,9 @@ export function PlannerHandoff({
                 size={27}
               />
               <h3 ref={statusHeadingRef} tabIndex={-1}>
-                {copy.handoff.successTitle}
+                {paidBriefCopy?.successTitle ?? copy.handoff.successTitle}
               </h3>
-              <p>{copy.handoff.successBody}</p>
+              <p>{paidBriefCopy?.successBody ?? copy.handoff.successBody}</p>
               <p>
                 {copy.handoff.successReplyContact(
                   submittedChannel === "email" ? "Email" : "WhatsApp",
@@ -1172,7 +1228,7 @@ export function PlannerHandoff({
                   handleHomegroundHashClick(event, "#route-finder")
                 }
               >
-                {copy.handoff.backToRoute}
+                {paidBriefCopy?.successBackLabel ?? copy.handoff.backToRoute}
               </a>
             </div>
           )}
@@ -1679,7 +1735,7 @@ export function PlannerHandoff({
                   )}
                   {status === "submitting"
                     ? copy.handoff.submitting
-                    : copy.handoff.submit}
+                    : paidBriefCopy?.submitLabel ?? copy.handoff.submit}
                 </button>
               </form>
             )}

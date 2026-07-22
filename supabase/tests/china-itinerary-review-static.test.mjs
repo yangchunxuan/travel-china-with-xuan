@@ -95,16 +95,31 @@ test("localized service intent reaches the existing enquiry mechanism", async ()
   ]);
 
   assert.match(home, /getRouteServiceInterest\(serviceId, locale\)/);
-  assert.match(home, /const activeRouteServiceInterest = routeServiceInterest/);
+  assert.match(
+    home,
+    /const activeRouteServiceInterest: RouteServiceInterest \| null =\s*planningIntent && planningIntent !== "explore"\s*\? getRouteServiceInterest\(planningIntent, locale\)\s*: null/,
+  );
   assert.doesNotMatch(home, /locale === "en" \? routeServiceInterest : null/);
   assert.match(home, /serviceInterest=\{activeRouteServiceInterest\}/);
+  assert.match(home, /planningIntent=\{planningIntent\}/);
+  assert.match(
+    home,
+    /onPlanningIntentChange=\{handlePlanningIntentChange\}/,
+  );
   assert.match(services, /routeServiceInterestByLocale/);
   assert.match(services, /审核我的路线/);
   assert.match(services, /내 일정 검토/);
   assert.match(services, /selectedServiceAriaLabel/);
   assert.match(services, /tripContextHint/);
-  assert.match(finder, /serviceInterest\.finderLabel/);
-  assert.match(finder, /serviceInterest\.selectedServiceAriaLabel/);
+  assert.match(finder, /<HomepagePlanningIntentSelector/);
+  assert.match(
+    finder,
+    /<HomepageSelectedIntent[\s\S]*value=\{planningIntent\}/,
+  );
+  assert.match(
+    finder,
+    /planningCopy\.paidBriefs\[serviceInterest\.id\]/,
+  );
   assert.match(handoff, /serviceInterest\.handoffLabel/);
   assert.match(handoff, /serviceInterest\.tripContextLabel/);
   assert.match(handoff, /serviceInterest\.tripContextHint/);

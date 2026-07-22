@@ -31,7 +31,16 @@ import {
   getDestinationPlannerCopy,
 } from "../lib/destinationPlannerI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  getHomepagePlanningDeskCopy,
+  routeNeedsScopeConfirmation,
+  type HomepagePlanningIntentId,
+} from "../lib/homepagePlanningDesk";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
+import {
+  HomepagePlanningIntentSelector,
+  HomepageSelectedIntent,
+} from "./HomepagePlanningDesk";
 import styles from "./RouteFinder.module.css";
 
 type QuestionKey = "destinations" | "nights" | "party" | "pace";
@@ -73,6 +82,8 @@ export interface RouteFinderProps {
   id?: string;
   locale?: HomegroundLocale;
   variant?: "default" | "hero";
+  planningIntent?: HomepagePlanningIntentId | null;
+  onPlanningIntentChange?: (intent: HomepagePlanningIntentId) => void;
   serviceInterest?: RouteServiceInterest | null;
   interactionLocked?: boolean;
   contactDraftDirty?: boolean;
@@ -86,7 +97,8 @@ type PlannerEventName =
   | "planner_started"
   | "planner_step_completed"
   | "planner_result_viewed"
-  | "planner_result_revised";
+  | "planner_result_revised"
+  | "paid_brief_ready_viewed";
 
 const questions: readonly QuestionKey[] = [
   "destinations",
@@ -99,6 +111,7 @@ const sessionStorageKey = "homeground-destination-planner-v3";
 const startFocusStorageKey = `${sessionStorageKey}:focus-start`;
 const plannerQueryKey = "planner";
 const destinationsQueryKey = "destinations";
+const locationChangeEventName = "homeground:locationchange";
 const unsafeInlineControlCharacters =
   /[\u0000-\u001f\u007f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/gu;
 
@@ -330,6 +343,7 @@ function clearDestinationsQuery(): void {
     "",
     `${url.pathname}${url.search}${url.hash}`,
   );
+  window.dispatchEvent(new Event(locationChangeEventName));
 }
 
 function applyLinkedDestinations(
@@ -371,7 +385,14 @@ function plannerHistoryState(
   flowId: string,
   depth: number,
 ): PlannerHistoryState {
+  const existingState =
+    typeof window !== "undefined" &&
+    window.history.state &&
+    typeof window.history.state === "object"
+      ? window.history.state
+      : {};
   return {
+    ...existingState,
     homegroundPlanner: view,
     homegroundPlannerFlowId: flowId,
     homegroundPlannerDepth: depth,
@@ -394,6 +415,8 @@ export function RouteFinder({
   id = "route-finder",
   locale = "en",
   variant = "default",
+  planningIntent = null,
+  onPlanningIntentChange,
   serviceInterest = null,
   interactionLocked = false,
   contactDraftDirty = false,
@@ -403,6 +426,7 @@ export function RouteFinder({
   onStatusChange,
 }: RouteFinderProps) {
   const copy = getDestinationPlannerCopy(locale);
+  const planningCopy = getHomepagePlanningDeskCopy(locale);
   const [draft, setDraft] = useState<PlannerDraft>(emptyDraft);
   const [stepIndex, setStepIndex] = useState(0);
   const [view, setView] = useState<FinderView>("questions");
@@ -412,12 +436,19 @@ export function RouteFinder({
   const [mustSeeMessage, setMustSeeMessage] = useState("");
   const [sessionReady, setSessionReady] = useState(false);
   const [historyFocusRequest, setHistoryFocusRequest] = useState(0);
+  const [intentPickerOpen, setIntentPickerOpen] = useState(
+    planningIntent === null,
+  );
+  const [intentAnnouncement, setIntentAnnouncement] = useState("");
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const resultHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const otherPlaceRef = useRef<HTMLInputElement | null>(null);
   const customNightsRef = useRef<HTMLInputElement | null>(null);
   const hasTrackedStart = useRef(false);
   const hasMounted = useRef(false);
+  const hasInitializedPlanner = useRef(false);
+  const planningIntentRef = useRef(planningIntent);
+  const previousIntentPropRef = useRef(planningIntent);
   const plannerFlowIdRef = useRef("");
   const plannerDepthRef = useRef(0);
   const pendingHistoryResetFlowIdRef = useRef<string | null>(null);
@@ -431,6 +462,9 @@ export function RouteFinder({
 
   const questionKey = questions[stepIndex];
   const questionCopy = copy.questions[questionKey];
+  const intentQuestionCopy = planningIntent
+    ? planningCopy.questionContexts[planningIntent]
+    : null;
   const questionHelpId = `${id}-${questionKey}-help`;
   const questionErrorId = `${id}-${questionKey}-error`;
   const totalNights = draftNights(draft);
@@ -448,19 +482,56 @@ export function RouteFinder({
       setQuestionError("");
       onStatusChange?.("result");
       onRouteFound?.(nextMatch, nextJourney);
-      trackPlannerEvent(eventName, {
+      const activeIntent = planningIntentRef.current;
+      trackPlannerEvent(
+        activeIntent && activeIntent !== "explore"
+          ? "paid_brief_ready_viewed"
+          : eventName,
+        {
         page_language: locale,
+        planning_intent: activeIntent ?? "unselected",
         destination_count: answers.destinationIds.length,
         has_other_place: Boolean(answers.otherPlace),
         destination_mode: answers.destinationMode,
         timing_status: nextMatch.timing.status,
         total_nights: answers.totalNights,
-      });
+        },
+      );
     },
     [locale, onRouteFound, onStatusChange],
   );
 
   useEffect(() => {
+    planningIntentRef.current = planningIntent;
+    if (previousIntentPropRef.current !== planningIntent) {
+      setIntentPickerOpen(planningIntent === null);
+      previousIntentPropRef.current = planningIntent;
+      const selectedOption = planningCopy.options.find(
+        (option) => option.id === planningIntent,
+      );
+      if (selectedOption) {
+        setIntentAnnouncement(
+          planningCopy.selectedAnnouncement(selectedOption.label),
+        );
+        window.requestAnimationFrame(() => {
+          const target =
+            view === "result"
+              ? resultHeadingRef.current
+              : headingRef.current;
+          target?.focus({ preventScroll: true });
+        });
+      }
+    }
+  }, [planningCopy, planningIntent, view]);
+
+  useEffect(() => {
+    if (!planningIntent) {
+      setSessionReady(true);
+      return;
+    }
+    if (hasInitializedPlanner.current) return;
+    hasInitializedPlanner.current = true;
+    setSessionReady(false);
     try {
       focusStartOnMountRef.current =
         window.sessionStorage.getItem(startFocusStorageKey) === "true";
@@ -566,27 +637,35 @@ export function RouteFinder({
         }
       }
     } catch {
-      window.sessionStorage.removeItem(sessionStorageKey);
+      try {
+        window.sessionStorage.removeItem(sessionStorageKey);
+      } catch {
+        // Storage can be unavailable; start with an in-memory planner.
+      }
     } finally {
       setSessionReady(true);
     }
-  }, [emitResult, onStatusChange]);
+  }, [emitResult, onStatusChange, planningIntent]);
 
   useEffect(() => {
-    if (!sessionReady || !hasDestinationsQuery()) return;
+    if (!planningIntent || !sessionReady || !hasDestinationsQuery()) return;
     clearDestinationsQuery();
-  }, [sessionReady]);
+  }, [planningIntent, sessionReady]);
 
   useEffect(() => {
-    if (!sessionReady) return;
-    window.sessionStorage.setItem(
-      sessionStorageKey,
-      JSON.stringify({ draft, journey, stepIndex, view }),
-    );
-  }, [draft, journey, sessionReady, stepIndex, view]);
+    if (!planningIntent || !sessionReady) return;
+    try {
+      window.sessionStorage.setItem(
+        sessionStorageKey,
+        JSON.stringify({ draft, journey, stepIndex, view }),
+      );
+    } catch {
+      // The planner still works when storage is unavailable.
+    }
+  }, [draft, journey, planningIntent, sessionReady, stepIndex, view]);
 
   useEffect(() => {
-    if (!sessionReady) return;
+    if (!planningIntent || !sessionReady) return;
     const handlePopState = (event: PopStateEvent) => {
       pendingHistoryFocusRef.current = true;
       setHistoryFocusRequest((request) => request + 1);
@@ -665,7 +744,14 @@ export function RouteFinder({
 
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, [draft, journey, onRouteFound, onStatusChange, sessionReady]);
+  }, [
+    draft,
+    journey,
+    onRouteFound,
+    onStatusChange,
+    planningIntent,
+    sessionReady,
+  ]);
 
   useLayoutEffect(() => {
     if (!sessionReady) return;
@@ -735,6 +821,7 @@ export function RouteFinder({
       "",
       plannerUrl(nextView),
     );
+    window.dispatchEvent(new Event(locationChangeEventName));
   };
 
   const returnPlannerHistoryToStart = () => {
@@ -772,6 +859,7 @@ export function RouteFinder({
       "",
       plannerUrl(questions[0]),
     );
+    window.dispatchEvent(new Event(locationChangeEventName));
   };
 
   const validateCurrentQuestion = (): string => {
@@ -868,6 +956,52 @@ export function RouteFinder({
 
   const confirmDiscardContact = () =>
     !contactDraftDirty || window.confirm(copy.discardContactConfirm);
+
+  const handlePlanningIntentSelection = (
+    nextIntent: HomepagePlanningIntentId,
+  ) => {
+    if (
+      planningIntent &&
+      nextIntent !== planningIntent &&
+      contactDraftDirty &&
+      !window.confirm(planningCopy.changeWarning)
+    ) {
+      return;
+    }
+
+    const selectedOption = planningCopy.options.find(
+      (option) => option.id === nextIntent,
+    );
+    onPlanningIntentChange?.(nextIntent);
+    setIntentPickerOpen(false);
+    setIntentAnnouncement(
+      selectedOption
+        ? planningCopy.selectedAnnouncement(selectedOption.label)
+        : "",
+    );
+    window.requestAnimationFrame(() => {
+      const target =
+        view === "result" ? resultHeadingRef.current : headingRef.current;
+      target?.focus({ preventScroll: true });
+    });
+  };
+
+  const handleOpenIntentPicker = () => {
+    if (interactionLocked) return;
+    setIntentPickerOpen(true);
+    window.requestAnimationFrame(() => {
+      document.getElementById("planning-intent-title")?.focus();
+    });
+  };
+
+  const handleCloseIntentPicker = () => {
+    setIntentPickerOpen(false);
+    window.requestAnimationFrame(() => {
+      document
+        .getElementById(`${id}-planning-intent-change`)
+        ?.focus({ preventScroll: true });
+    });
+  };
 
   const handleEdit = () => {
     if (!confirmDiscardContact()) return;
@@ -1017,6 +1151,14 @@ export function RouteFinder({
   const resultTitle = match
     ? copy.result.titles[match.timing.status]
     : "";
+  const paidBriefCopy = serviceInterest
+    ? planningCopy.paidBriefs[serviceInterest.id]
+    : null;
+  const scopeConfirmationRequired = Boolean(
+    match &&
+      serviceInterest &&
+      routeNeedsScopeConfirmation(match, serviceInterest.id),
+  );
   const showMustSee =
     Boolean(match) &&
     match?.timing.knownDestinationsStatus === "needs_prioritization" &&
@@ -1051,7 +1193,7 @@ export function RouteFinder({
     selectedDestinationLabels.length - selectedDestinationPreview.length,
   );
 
-  if (!sessionReady) {
+  if (!sessionReady && planningIntent) {
     return (
       <section
         id={id}
@@ -1071,9 +1213,23 @@ export function RouteFinder({
       className={`${styles.finder} ${
         variant === "hero" ? styles.heroVariant : ""
       }`}
-      aria-labelledby={`${id}-title`}
+      aria-labelledby={
+        intentPickerOpen || !planningIntent
+          ? "planning-intent-title"
+          : `${id}-title`
+      }
     >
-      {view === "questions" ? (
+      <p className={styles.srOnly} aria-live="polite" aria-atomic="true">
+        {intentAnnouncement}
+      </p>
+      {intentPickerOpen || !planningIntent ? (
+        <HomepagePlanningIntentSelector
+          locale={locale}
+          value={planningIntent}
+          onContinue={handlePlanningIntentSelection}
+          onCancel={planningIntent ? handleCloseIntentPicker : undefined}
+        />
+      ) : view === "questions" ? (
         <form
           className={
             destinationSelectionReady ? styles.hasMobileActionDock : undefined
@@ -1118,25 +1274,33 @@ export function RouteFinder({
           </div>
 
           <div className={styles.questionLayout}>
-            {serviceInterest && (
-              <aside
-                className={styles.serviceIntent}
-                aria-label={serviceInterest.selectedServiceAriaLabel}
-              >
-                <span>{serviceInterest.finderLabel}</span>
-                <strong>
-                  {serviceInterest.label} · {serviceInterest.priceLabel}
-                </strong>
-                <p>{serviceInterest.finderSummary}</p>
-              </aside>
-            )}
+            <HomepageSelectedIntent
+              locale={locale}
+              value={planningIntent}
+              disabled={interactionLocked}
+              onChange={handleOpenIntentPicker}
+              changeButtonId={`${id}-planning-intent-change`}
+              priceLabelOverride={
+                scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.priceLabel
+                  : undefined
+              }
+              scopeOverride={
+                scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.scope
+                  : undefined
+              }
+            />
             <div className={styles.questionHeader}>
               <p className={styles.kicker}>{questionCopy.eyebrow}</p>
               <h2 id={`${id}-title`} ref={headingRef} tabIndex={-1}>
-                {stepIndex === 0 ? copy.introTitle : questionCopy.title}
+                {intentQuestionCopy?.titles[questionKey] ??
+                  (stepIndex === 0 ? copy.introTitle : questionCopy.title)}
               </h2>
               <p id={questionHelpId}>
-                {stepIndex === 0 ? copy.introBody : questionCopy.help}
+                {stepIndex === 0
+                  ? intentQuestionCopy?.introBody ?? copy.introBody
+                  : questionCopy.help}
               </p>
             </div>
 
@@ -1464,7 +1628,7 @@ export function RouteFinder({
                 )}
                 <button className={styles.primaryButton} type="submit">
                   {stepIndex === questions.length - 1
-                    ? copy.showCheck
+                    ? intentQuestionCopy?.completeLabel ?? copy.showCheck
                     : copy.continue}
                   <ArrowRight aria-hidden="true" size={17} />
                 </button>
@@ -1505,17 +1669,53 @@ export function RouteFinder({
         </form>
       ) : (
         match && (
-          <div className={styles.result}>
+          <div
+            className={styles.result}
+            data-result-mode={
+              paidBriefCopy ? "paid-brief-ready" : "free-route-check"
+            }
+            data-standard-scope-status={
+              scopeConfirmationRequired ? "needs-confirmation" : "standard"
+            }
+          >
+            <HomepageSelectedIntent
+              locale={locale}
+              value={planningIntent}
+              disabled={interactionLocked}
+              onChange={handleOpenIntentPicker}
+              changeButtonId={`${id}-planning-intent-change`}
+              priceLabelOverride={
+                scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.priceLabel
+                  : undefined
+              }
+              scopeOverride={
+                scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.scope
+                  : undefined
+              }
+            />
             <header className={styles.resultHeader}>
-              <p className={styles.kicker}>{copy.result.kicker}</p>
+              <p className={styles.kicker}>
+                {paidBriefCopy?.kicker ?? copy.result.kicker}
+              </p>
               <h2
                 id={`${id}-title`}
                 ref={resultHeadingRef}
                 tabIndex={-1}
               >
-                {resultTitle}
+                {paidBriefCopy?.title ?? resultTitle}
               </h2>
-              <p className={styles.resultLead}>{resultBody}</p>
+              <p className={styles.resultLead}>
+                {scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.briefBody
+                  : paidBriefCopy?.body ?? resultBody}
+              </p>
+              {paidBriefCopy && (
+                <p className={styles.paidBriefNotice}>
+                  {paidBriefCopy.noPayment}
+                </p>
+              )}
               {resultMeta && (
                 <div className={styles.resultMetaRow}>
                   <dl>
@@ -1538,6 +1738,61 @@ export function RouteFinder({
               )}
             </header>
 
+            {paidBriefCopy ? (
+              <div className={styles.paidBriefGrid}>
+                <section className={styles.paidBriefPanel}>
+                  <h3>
+                    {scopeConfirmationRequired
+                      ? planningCopy.outsideStandardScope.scopeLabel
+                      : paidBriefCopy.scopeLabel}
+                  </h3>
+                  <p>
+                    {scopeConfirmationRequired
+                      ? planningCopy.outsideStandardScope.scope
+                      : paidBriefCopy.scope}
+                  </p>
+                  <h3>{copy.result.wishlistTitle}</h3>
+                  <p>
+                    {match.answers.destinationMode === "classic-start"
+                      ? copy.result.classicStartValue
+                      : [
+                          ...match.answers.destinationIds.map(
+                            (destinationId) =>
+                              copy.destinations[destinationId],
+                          ),
+                          ...(match.answers.otherPlace
+                            ? [match.answers.otherPlace]
+                            : []),
+                        ].join(" · ")}
+                  </p>
+                </section>
+                <section className={styles.paidBriefPanel}>
+                  <h3>{paidBriefCopy.deliverablesLabel}</h3>
+                  <ul className={styles.paidBriefList}>
+                    {paidBriefCopy.deliverables.map((item) => (
+                      <li key={item}>
+                        <Check aria-hidden="true" size={16} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+                <section className={styles.paidBriefPanel}>
+                  <h3>{paidBriefCopy.nextLabel}</h3>
+                  <ol className={styles.paidNextSteps}>
+                    {paidBriefCopy.nextSteps.map((item, index) => (
+                      <li key={item}>
+                        <span aria-hidden="true">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <p>{item}</p>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              </div>
+            ) : (
+              <>
             <section
               className={styles.wishlistSummary}
               aria-labelledby={`${id}-wishlist-title`}
@@ -1700,20 +1955,31 @@ export function RouteFinder({
                 </p>
               </section>
             )}
+              </>
+            )}
 
-            {handoff}
-
-            <button
-              className={styles.restartButton}
-              type="button"
-              disabled={interactionLocked}
-              onClick={handleRestart}
-            >
-              <RotateCcw aria-hidden="true" size={16} />
-              {copy.restart}
-            </button>
           </div>
         )
+      )}
+      {view === "result" && match && (
+        <>
+          <div className={styles.handoffSlot} hidden={intentPickerOpen}>
+            {handoff}
+          </div>
+          {!intentPickerOpen && (
+            <div className={styles.resultFooter}>
+              <button
+                className={styles.restartButton}
+                type="button"
+                disabled={interactionLocked}
+                onClick={handleRestart}
+              >
+                <RotateCcw aria-hidden="true" size={16} />
+                {copy.restart}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </section>
   );

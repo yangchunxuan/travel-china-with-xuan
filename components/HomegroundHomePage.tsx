@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   BedDouble,
@@ -24,6 +24,9 @@ import {
   type RouteServiceInterest,
 } from "../lib/routeServiceInterest";
 import {
+  type HomepagePlanningIntentId,
+} from "../lib/homepagePlanningDesk";
+import {
   HomegroundHeader,
   resolvePlannerCta,
 } from "./HomegroundHeader";
@@ -38,45 +41,18 @@ import {
   type PlannerStatus,
   type RouteJourney,
 } from "./RouteFinder";
+import { HomepagePlanningUpgrade } from "./HomepagePlanningDesk";
 import styles from "./HomegroundHomePage.module.css";
 
 const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 
-const planningServicePaths = [
-  {
-    service: getRouteServiceInterest("itinerary-review")!,
-    number: "01",
-    startingPoint: "I already have a usable day-by-day route.",
-    summary:
-      "We test the route for pressure points, fragile transfers and hotel moves, then show what to keep, move or remove.",
-    href: "/china-itinerary-review/#review-my-route",
-    cta: "See what the route review includes",
-  },
-  {
-    service: getRouteServiceInterest("route-build")!,
-    number: "02",
-    startingPoint: "I have dates and priorities, but no usable route.",
-    summary:
-      "We turn your cities, nights and constraints into a workable order, night allocation and day skeleton.",
-    href: "/china-itinerary-review/#build-my-route",
-    cta: "See what the route build includes",
-  },
-  {
-    service: getRouteServiceInterest("full-trip-support")!,
-    number: "03",
-    startingPoint:
-      "I want planning carried into selected arrangements or local coordination.",
-    summary:
-      "We define a written scope around the actual trip, including only the planning, coordination or local support you want us to handle.",
-    href: "/china-itinerary-review/#full-trip-support",
-    cta: "See how full-trip support works",
-  },
-] as const;
+const planningIntentStorageKey = "homeground-planning-intent-v1";
 
 function resolveFinalCta(
   copy: HomegroundCopy,
   plannerStatus: PlannerStatus,
   handoffStatus: HandoffStatus,
+  freeResult: boolean,
 ): { label: string; title: string } {
   if (plannerStatus === "new") {
     return {
@@ -88,6 +64,13 @@ function resolveFinalCta(
     return {
       label: copy.finalCta.inProgressLabel,
       title: copy.finalCta.inProgressTitle,
+    };
+  }
+
+  if (freeResult) {
+    return {
+      label: copy.finalCta.freeResultLabel,
+      title: copy.finalCta.freeResultTitle,
     };
   }
 
@@ -143,7 +126,11 @@ export function HomegroundHomePage({
   const [handoffStatus, setHandoffStatus] =
     useState<HandoffStatus>("disabled");
   const [handoffDirty, setHandoffDirty] = useState(false);
-  const [routeServiceInterest, setRouteServiceInterest] =
+  const [planningIntent, setPlanningIntent] =
+    useState<HomepagePlanningIntentId | null>(null);
+  const planningIntentRef = useRef<HomepagePlanningIntentId | null>(null);
+  const [serviceContextRevision, setServiceContextRevision] = useState(0);
+  const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
   const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
@@ -186,18 +173,24 @@ export function HomegroundHomePage({
     },
   ] as const;
   const plannerTarget =
-    plannerStatus === "result" && routeMatch
+    plannerStatus === "result" &&
+    routeMatch &&
+    planningIntent !== "explore"
       ? "#planner-handoff"
       : "#route-finder";
+  const freeResult =
+    plannerStatus === "result" && planningIntent === "explore";
   const plannerCta = resolvePlannerCta(
     copy,
     plannerStatus,
     handoffStatus,
+    freeResult,
   );
   const finalCta = resolveFinalCta(
     copy,
     plannerStatus,
     handoffStatus,
+    freeResult,
   );
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -210,21 +203,155 @@ export function HomegroundHomePage({
   };
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
-  const activeRouteServiceInterest = routeServiceInterest;
+  const activeRouteServiceInterest: RouteServiceInterest | null =
+    planningIntent && planningIntent !== "explore"
+      ? getRouteServiceInterest(planningIntent, locale)
+      : null;
+  const handoffServiceInterest =
+    activeRouteServiceInterest ?? retainedRouteServiceInterest;
 
   useEffect(() => {
-    const syncRouteServiceInterest = () => {
-      const serviceId = new URL(window.location.href).searchParams.get(
-        routeServiceQueryKey,
+    planningIntentRef.current = planningIntent;
+  }, [planningIntent]);
+
+  useEffect(() => {
+    if (planningIntent && planningIntent !== "explore") {
+      setRetainedRouteServiceInterest(
+        getRouteServiceInterest(planningIntent, locale),
       );
-      setRouteServiceInterest(getRouteServiceInterest(serviceId, locale));
+    }
+  }, [locale, planningIntent]);
+
+  useEffect(() => {
+    const syncPlanningIntent = (event?: PopStateEvent) => {
+      const url = new URL(window.location.href);
+      const serviceId = url.searchParams.get(routeServiceQueryKey);
+      const hasServiceQuery = url.searchParams.has(routeServiceQueryKey);
+      const service = getRouteServiceInterest(serviceId, locale);
+      const isCurrentPlannerFlow =
+        event?.state &&
+        typeof event.state === "object" &&
+        typeof (event.state as Record<string, unknown>)
+          .homegroundPlannerFlowId === "string";
+
+      if (isCurrentPlannerFlow && planningIntentRef.current) {
+        if (planningIntentRef.current === "explore") {
+          url.searchParams.delete(routeServiceQueryKey);
+        } else {
+          url.searchParams.set(
+            routeServiceQueryKey,
+            planningIntentRef.current,
+          );
+        }
+        window.history.replaceState(
+          event.state,
+          "",
+          `${url.pathname}${url.search}${url.hash}`,
+        );
+        window.dispatchEvent(new Event("homeground:locationchange"));
+        return;
+      }
+
+      if (service) {
+        planningIntentRef.current = service.id;
+        setPlanningIntent(service.id);
+        try {
+          window.sessionStorage.removeItem(planningIntentStorageKey);
+        } catch {
+          // URL deep links remain sufficient when storage is unavailable.
+        }
+        return;
+      }
+
+      if (hasServiceQuery) {
+        planningIntentRef.current = null;
+        setPlanningIntent(null);
+        url.searchParams.delete(routeServiceQueryKey);
+        window.history.replaceState(
+          window.history.state,
+          "",
+          `${url.pathname}${url.search}${url.hash}`,
+        );
+        window.dispatchEvent(new Event("homeground:locationchange"));
+        try {
+          window.sessionStorage.removeItem(planningIntentStorageKey);
+        } catch {
+          // Invalid service URLs still fall back to the visible chooser.
+        }
+        return;
+      }
+
+      try {
+        const storedIntent = window.sessionStorage.getItem(
+          planningIntentStorageKey,
+        );
+        const canRestoreFreeFlow =
+          url.searchParams.has("planner") && storedIntent === "explore";
+        planningIntentRef.current = canRestoreFreeFlow ? "explore" : null;
+        setPlanningIntent(planningIntentRef.current);
+        if (!canRestoreFreeFlow) {
+          window.sessionStorage.removeItem(planningIntentStorageKey);
+        }
+      } catch {
+        planningIntentRef.current = null;
+        setPlanningIntent(null);
+      }
     };
 
-    syncRouteServiceInterest();
-    window.addEventListener("popstate", syncRouteServiceInterest);
+    syncPlanningIntent();
+    window.addEventListener("popstate", syncPlanningIntent);
     return () =>
-      window.removeEventListener("popstate", syncRouteServiceInterest);
+      window.removeEventListener("popstate", syncPlanningIntent);
   }, [locale]);
+
+  const handlePlanningIntentChange = useCallback(
+    (nextIntent: HomepagePlanningIntentId) => {
+      if (
+        planningIntentRef.current &&
+        planningIntentRef.current !== nextIntent
+      ) {
+        setServiceContextRevision((revision) => revision + 1);
+      }
+      planningIntentRef.current = nextIntent;
+      setPlanningIntent(nextIntent);
+      const url = new URL(window.location.href);
+      if (nextIntent === "explore") {
+        url.searchParams.delete(routeServiceQueryKey);
+      } else {
+        url.searchParams.set(routeServiceQueryKey, nextIntent);
+      }
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `${url.pathname}${url.search}${url.hash}`,
+      );
+      window.dispatchEvent(new Event("homeground:locationchange"));
+
+      try {
+        if (nextIntent === "explore") {
+          window.sessionStorage.setItem(
+            planningIntentStorageKey,
+            nextIntent,
+          );
+        } else {
+          window.sessionStorage.removeItem(planningIntentStorageKey);
+        }
+      } catch {
+        // The selected path remains available in React state.
+      }
+
+      const analyticsWindow = window as typeof window & {
+        dataLayer?: Array<Record<string, unknown>>;
+      };
+      analyticsWindow.dataLayer ??= [];
+      analyticsWindow.dataLayer.push({
+        event: "planning_intent_selected",
+        planning_intent: nextIntent,
+        page_language: locale,
+      });
+    },
+    [locale],
+  );
 
   const handleRouteFound = useCallback(
     (match: DestinationPlan, journey: RouteJourney) => {
@@ -263,7 +390,7 @@ export function HomegroundHomePage({
       window.cancelAnimationFrame(firstFrame);
       window.cancelAnimationFrame(secondFrame);
     };
-  }, [locale]);
+  }, [locale, planningIntent]);
 
   return (
     <div
@@ -285,6 +412,7 @@ export function HomegroundHomePage({
         plannerStatus={plannerStatus}
         handoffStatus={handoffStatus}
         handoffDirty={handoffDirty}
+        freeResult={freeResult}
       />
 
       <main id="main-content" tabIndex={-1}>
@@ -335,25 +463,40 @@ export function HomegroundHomePage({
                 id="route-finder"
                 locale={locale}
                 variant="hero"
+                planningIntent={planningIntent}
+                onPlanningIntentChange={handlePlanningIntentChange}
                 serviceInterest={activeRouteServiceInterest}
                 interactionLocked={routeInteractionLocked}
                 contactDraftDirty={handoffDirty}
                 handoff={
                   routeMatch ? (
-                    <PlannerHandoff
-                      embedded
-                      locale={locale}
-                      match={routeMatch}
-                      journey={routeJourney ?? undefined}
-                      serviceInterest={activeRouteServiceInterest}
-                      routeState={
-                        plannerStatus === "result"
-                          ? "current"
-                          : "editing"
-                      }
-                      onDirtyChange={setHandoffDirty}
-                      onStatusChange={setHandoffStatus}
-                    />
+                    <>
+                      {handoffServiceInterest && (
+                        <div hidden={!activeRouteServiceInterest}>
+                          <PlannerHandoff
+                            embedded
+                            locale={locale}
+                            match={routeMatch}
+                            journey={routeJourney ?? undefined}
+                            serviceInterest={handoffServiceInterest}
+                            serviceContextRevision={serviceContextRevision}
+                            routeState={
+                              plannerStatus === "result"
+                                ? "current"
+                                : "editing"
+                            }
+                            onDirtyChange={setHandoffDirty}
+                            onStatusChange={setHandoffStatus}
+                          />
+                        </div>
+                      )}
+                      {planningIntent === "explore" && (
+                        <HomepagePlanningUpgrade
+                          locale={locale}
+                          onSelect={handlePlanningIntentChange}
+                        />
+                      )}
+                    </>
                   ) : undefined
                 }
                 onRouteCleared={handleRouteCleared}
@@ -487,63 +630,6 @@ export function HomegroundHomePage({
             </div>
           </nav>
         </section>
-
-        {locale === "en" && (
-          <section
-            className={styles.servicePathways}
-            id="planning-services"
-            aria-labelledby="planning-services-title"
-          >
-            <div className={styles.servicePathwaysIntro}>
-              <div>
-                <p className={styles.eyebrow}>Ways to work with Homeground</p>
-                <h2 id="planning-services-title">
-                  Choose the part of the trip you want us to solve.
-                </h2>
-              </div>
-              <p>
-                You can use the free wishlist check without contacting us. When
-                you want human planning, start with the option closest to what
-                you already have.
-              </p>
-            </div>
-
-            <div className={styles.servicePathwayGrid}>
-              {planningServicePaths.map(
-                ({ service, number, startingPoint, summary, href, cta }) => (
-                  <article className={styles.servicePathwayCard} key={service.id}>
-                    <a href={href}>
-                      <span className={styles.servicePathwayNumber} aria-hidden="true">
-                        {number}
-                      </span>
-                      <span className={styles.servicePathwayStartingPoint}>
-                        {startingPoint}
-                      </span>
-                      <h3>{service.label}</h3>
-                      <p>{summary}</p>
-                      <span className={styles.servicePathwayFooter}>
-                        <strong>
-                          {service.priceLabel}
-                          {service.id === "full-trip-support" ? "" : " per trip"}
-                        </strong>
-                        <span>
-                          {cta}
-                          <ArrowRight aria-hidden="true" size={17} />
-                        </span>
-                      </span>
-                    </a>
-                  </article>
-                ),
-              )}
-            </div>
-
-            <p className={styles.servicePathwaysScope}>
-              US$69 and US$129 cover the standard scope: up to 10 travel days,
-              4 overnight bases and one shared route for 1–4 travellers.
-              Full-trip support is quoted separately.
-            </p>
-          </section>
-        )}
 
         <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">
           <div className={styles.studioIntro}>

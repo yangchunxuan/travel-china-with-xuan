@@ -39,10 +39,11 @@ export interface HomegroundCopy {
     visa: string;
     openMenu: string;
     closeMenu: string;
-    plannerCta: {
-      new: string;
-      inProgress: string;
-      result: string;
+      plannerCta: {
+        new: string;
+        inProgress: string;
+        freeResult: string;
+        result: string;
       disabled: string;
       validationError: string;
       submitting: string;
@@ -113,9 +114,11 @@ export interface HomegroundCopy {
   };
   finalCta: {
     resultLabel: string;
+    freeResultLabel: string;
     inProgressLabel: string;
     newLabel: string;
     resultTitle: string;
+    freeResultTitle: string;
     inProgressTitle: string;
     newTitle: string;
   };
@@ -331,8 +334,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "Open navigation",
       closeMenu: "Close navigation",
       plannerCta: {
-        new: "Check my China wishlist",
+        new: "Start my trip brief",
         inProgress: "Continue my timing check",
+        freeResult: "View my free route check",
         result: "Send my trip brief to Homeground",
         disabled: "Contact Homeground",
         validationError: "Finish my request",
@@ -343,15 +347,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "Independent China trips, planned around real people",
-      title: "A China trip that actually fits you.",
+      eyebrow: "One short trip brief, four clear next steps",
+      title: "Tell us where your China trip stands.",
       lead:
-        "Choose every place you genuinely want, add your nights and preferred pace, then see where the time fits—or conflicts. Nothing is removed, and the same brief goes to a human planner if you contact us.",
-      trustLabel: "What to expect",
+        "Answer four shared questions about places, nights, travellers and pace. Use the free automated timing check, or send the same brief to Homeground for a paid route review, route build or full-trip planning.",
+      trustLabel: "Before you begin",
       trust: [
-        "No budget required to see your result",
-        "No contact details before your result",
-        "Every place you select stays on your wishlist",
+        "Every option starts with the same four questions",
+        "The free check needs no contact details",
+        "Paid requests begin with a human fit and scope review",
       ],
       imageAlt:
         "The Forbidden City Corner Tower in Beijing reflected in its moat",
@@ -487,9 +491,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     finalCta: {
       resultLabel: "Your trip brief is ready for a human review",
+      freeResultLabel: "Your free route timing check is ready",
       inProgressLabel: "Your answers are saved as you go",
       newLabel: "Your first timing check is four answers away",
       resultTitle: "Ready to turn this wishlist into a workable China trip?",
+      freeResultTitle:
+        "Review the timing result, or choose how much human planning you want.",
       inProgressTitle: "Finish the remaining questions to check your time.",
       newTitle: "Start with what you actually want from China.",
     },
@@ -842,8 +849,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "打开导航",
       closeMenu: "关闭导航",
       plannerCta: {
-        new: "检查我的旅行愿望",
+        new: "开始填写旅行需求",
         inProgress: "继续时间检查",
+        freeResult: "查看免费路线检查",
         result: "提交旅行需求",
         disabled: "联系 Homeground",
         validationError: "完成咨询信息",
@@ -854,15 +862,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "为真实同行者规划独立中国旅行",
-      title: "真正适合你的中国之旅。",
+      eyebrow: "一份简短需求，四种清晰的下一步",
+      title: "先告诉我们，你的中国旅行准备到哪一步了。",
       lead:
-        "选出所有真正想去的地方，填写在中国的住宿晚数和理想节奏，先看时间是否合适或发生冲突。系统不会擅自删掉城市；你选择联系后，同一份需求会直接交给人工规划师。",
-      trustLabel: "你可以放心",
+        "回答四个共用问题：想去哪里、住几晚、和谁同行、希望什么节奏。你可以先用免费自动检查，也可以把同一份需求交给 Homeground，选择付费的路线审核、路线规划或全程定制服务。",
+      trustLabel: "开始前先说明",
       trust: [
-        "无需填写预算即可查看结果",
-        "看到结果前无需留下联系方式",
-        "你选择的每个地方都会保留",
+        "四个选择都从同一组基础问题开始",
+        "免费检查无需填写联系方式",
+        "付费需求会先由真人确认是否适合及服务范围",
       ],
       imageAlt: "北京故宫角楼倒映在护城河中",
       caption: "北京 · 故宫角楼",
@@ -988,9 +996,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     finalCta: {
       resultLabel: "你的旅行需求已准备好进入人工复核",
+      freeResultLabel: "你的免费路线时间检查已完成",
       inProgressLabel: "你的选择会随进度保留",
       newLabel: "回答四个问题，先做一次时间检查",
       resultTitle: "准备把这份愿望清单变成真正可执行的旅行吗？",
+      freeResultTitle: "先查看时间检查结果，再决定是否需要人工路线服务。",
       inProgressTitle: "完成剩余问题，查看时间是否匹配。",
       newTitle: "先从你真正想去的地方开始。",
     },
@@ -1315,8 +1325,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       plannerCta: {
-        new: "나의 여행 희망 목록 확인",
+        new: "여행 요청서 시작하기",
         inProgress: "시간 확인 계속하기",
+        freeResult: "무료 동선 점검 보기",
         result: "Homeground에 여행 요청 보내기",
         disabled: "Homeground에 문의하기",
         validationError: "문의 작성 마치기",
@@ -1327,15 +1338,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "실제 일행을 기준으로 설계하는 독립 중국 여행",
-      title: "나에게 정말 맞는 중국 여행.",
+      eyebrow: "하나의 짧은 여행 요청서, 네 가지 다음 단계",
+      title: "중국 여행 준비, 어디까지 하셨나요?",
       lead:
-        "정말 가고 싶은 곳을 모두 고르고 중국 체류 숙박일수와 원하는 속도를 입력하세요. 시간이 맞는지, 어디서 충돌하는지 먼저 보여 드립니다. 선택한 장소는 삭제하지 않으며 연락을 선택하면 같은 요청서가 사람 플래너에게 전달됩니다.",
-      trustLabel: "먼저 확인할 수 있는 것",
+        "가고 싶은 곳, 숙박일수, 여행 일행, 원하는 속도에 관한 네 가지 공통 질문에 답하세요. 무료 자동 일정 점검을 이용하거나 같은 요청서를 Homeground에 보내 유료 일정 검토, 동선 설계 또는 전체 여행 설계를 요청할 수 있습니다.",
+      trustLabel: "시작하기 전에",
       trust: [
-        "예산 입력 없이 결과 확인",
-        "결과를 보기 전에는 연락처가 필요 없습니다",
-        "선택한 모든 장소를 희망 목록에 남깁니다",
+        "네 가지 선택 모두 같은 기본 질문에서 시작합니다",
+        "무료 점검에는 연락처가 필요하지 않습니다",
+        "유료 요청은 사람이 적합성과 서비스 범위를 먼저 확인합니다",
       ],
       imageAlt: "해자에 비친 베이징 자금성 각루",
       caption: "베이징 · 자금성 각루",
@@ -1465,9 +1476,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     finalCta: {
       resultLabel: "여행 요청서가 사람의 검토를 받을 준비가 되었습니다",
+      freeResultLabel: "무료 동선 시간 확인이 완료되었습니다",
       inProgressLabel: "답변은 진행하는 동안 저장됩니다",
       newLabel: "네 가지 답변으로 첫 시간 확인을 시작합니다",
       resultTitle: "이 희망 목록을 실행 가능한 중국 여행으로 만들까요?",
+      freeResultTitle:
+        "시간 확인 결과를 본 뒤 필요한 1:1 플래닝 범위를 선택하세요.",
       inProgressTitle: "남은 질문에 답하고 시간이 맞는지 확인하세요.",
       newTitle: "중국에서 정말 가고 싶은 곳부터 시작하세요.",
     },
