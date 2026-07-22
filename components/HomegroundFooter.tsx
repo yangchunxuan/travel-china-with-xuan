@@ -20,13 +20,14 @@ export function HomegroundFooter({
   guideId = "zhangjiajie-itinerary",
 }: {
   locale?: HomegroundLocale;
-  pageContext?: "home" | "guide" | "studio" | "content";
+  pageContext?: "home" | "guide" | "studio" | "services" | "content";
   guideId?: GuideId;
 }) {
   const copy = getHomegroundCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
+  const planningServicesPath = "/china-itinerary-review/";
   const studioPath = `${copy.path}studio/`;
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
@@ -55,15 +56,16 @@ export function HomegroundFooter({
           >
             {copy.navigation.planning}
           </a>
+          {locale === "en" &&
+            (pageContext === "services" ? (
+              <span aria-current="page">Planning services</span>
+            ) : (
+              <a href={planningServicesPath}>Planning services</a>
+            ))}
           {pageContext === "studio" ? (
             <span aria-current="page">{copy.navigation.studio}</span>
           ) : (
             <a href={studioPath}>{copy.navigation.studio}</a>
-          )}
-          {locale === "en" && (
-            <a href="/china-itinerary-review/">
-              Route review &amp; planning
-            </a>
           )}
           <a
             href={sectionHref("#faq")}

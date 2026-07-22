@@ -25,6 +25,9 @@ export function HomegroundStudioPage({
   const copy = getHomegroundStudioCopy(locale);
   const motionRootId = `homeground-studio-${locale}`;
   const plannerHref = `${homeCopy.path}?utm_source=studio&utm_medium=owned&utm_campaign=team-page&planner=destinations#route-finder`;
+  const planningServicesHref =
+    "/china-itinerary-review/?utm_source=studio&utm_medium=owned&utm_campaign=planning-services&utm_content=final-cta#choose-service";
+  const isEnglish = locale === "en";
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -173,16 +176,39 @@ export function HomegroundStudioPage({
 
         <section className={styles.ctaSection} aria-labelledby="studio-cta-title">
           <p className={styles.eyebrow} data-studio-reveal>
-            {copy.cta.label}
+            {isEnglish ? "Choose the level of help" : copy.cta.label}
           </p>
           <div className={styles.ctaGrid} data-studio-reveal>
-            <h2 id="studio-cta-title">{copy.cta.title}</h2>
+            <h2 id="studio-cta-title">
+              {isEnglish
+                ? "Start with the part of the trip you want us to solve."
+                : copy.cta.title}
+            </h2>
             <div>
-              <p>{copy.cta.body}</p>
-              <a href={plannerHref}>
-                {copy.cta.button}
-                <ArrowRight aria-hidden="true" size={18} />
-              </a>
+              <p>
+                {isEnglish
+                  ? "Have a usable route? We can review it. Have dates and priorities but no route? We can build the structure. If you want planning carried into selected arrangements or local coordination, we will define a custom written scope."
+                  : copy.cta.body}
+              </p>
+              {isEnglish ? (
+                <div className={styles.ctaActions}>
+                  <a
+                    className={styles.ctaPrimary}
+                    href={planningServicesHref}
+                  >
+                    Compare planning services
+                    <ArrowRight aria-hidden="true" size={18} />
+                  </a>
+                  <a className={styles.ctaSecondary} href={plannerHref}>
+                    Start with the free wishlist check
+                  </a>
+                </div>
+              ) : (
+                <a className={styles.ctaPrimary} href={plannerHref}>
+                  {copy.cta.button}
+                  <ArrowRight aria-hidden="true" size={18} />
+                </a>
+              )}
             </div>
           </div>
         </section>

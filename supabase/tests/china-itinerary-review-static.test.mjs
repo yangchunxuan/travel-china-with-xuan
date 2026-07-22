@@ -83,13 +83,15 @@ test("route-service intent reaches the existing enquiry without becoming URL att
   assert.match(home, /getRouteServiceInterest/);
   assert.match(home, /locale === "en" \? routeServiceInterest : null/);
   assert.match(home, /serviceInterest=\{activeRouteServiceInterest\}/);
-  assert.match(home, /href="\/china-itinerary-review\/"/);
+  assert.match(home, /href: "\/china-itinerary-review\/#review-my-route"/);
+  assert.match(home, /href: "\/china-itinerary-review\/#build-my-route"/);
+  assert.match(home, /href: "\/china-itinerary-review\/#full-trip-support"/);
   assert.match(finder, /Selected Homeground planning service/);
   assert.match(handoff, /note: inquiryNote/);
   assert.match(handoff, /name="tripContext"/);
   assert.match(handoff, /maximumTripContextLength/);
   assert.match(handoff, /full file after the fit check/);
-  assert.match(footer, /Route review &amp; planning/);
+  assert.match(footer, /Planning services/);
   assert.match(
     privacy,
     /trip brief — including any optional planning-service choice or concise route context/,

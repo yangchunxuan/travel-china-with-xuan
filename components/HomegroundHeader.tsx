@@ -31,7 +31,7 @@ interface HomegroundHeaderProps {
   plannerStatus?: PlannerStatus;
   handoffStatus?: HandoffStatus;
   handoffDirty?: boolean;
-  pageContext?: "home" | "guide" | "studio" | "content";
+  pageContext?: "home" | "guide" | "studio" | "services" | "content";
   guideId?: GuideId;
   showLanguageNav?: boolean;
 }
@@ -93,6 +93,7 @@ export function HomegroundHeader({
     pageContext === "home"
       ? plannerTarget
       : `${copy.path}?planner=destinations#route-finder`;
+  const planningServicesHref = "/china-itinerary-review/";
   const studioHref = `${copy.path}studio/`;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
@@ -115,6 +116,40 @@ export function HomegroundHeader({
     window.addEventListener("hashchange", syncHash);
     return () => window.removeEventListener("hashchange", syncHash);
   }, []);
+
+  useEffect(() => {
+    if (pageContext !== "services") return;
+
+    const allowedServiceHashes = new Set([
+      "#choose-service",
+      "#review-my-route",
+      "#build-my-route",
+      "#full-trip-support",
+    ]);
+    const hash = window.location.hash;
+    if (!allowedServiceHashes.has(hash)) return;
+
+    let cancelled = false;
+    let firstFrame = 0;
+    let secondFrame = 0;
+    const alignAnchorAfterFonts = () => {
+      if (cancelled) return;
+      firstFrame = window.requestAnimationFrame(() => {
+        secondFrame = window.requestAnimationFrame(() => {
+          document
+            .getElementById(hash.slice(1))
+            ?.scrollIntoView({ block: "start" });
+        });
+      });
+    };
+
+    void document.fonts.ready.then(alignAnchorAfterFonts);
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+    };
+  }, [pageContext]);
 
   useEffect(() => {
     if (!open) return;
@@ -185,6 +220,9 @@ export function HomegroundHeader({
               >
                 {copy.navigation.planning}
               </a>
+              {locale === "en" && (
+                <a href={planningServicesHref}>Planning services</a>
+              )}
               <a href={studioHref}>
                 {copy.navigation.studio}
               </a>
@@ -202,6 +240,16 @@ export function HomegroundHeader({
               <a href={`${copy.path}#planning-proof`}>
                 {copy.navigation.planning}
               </a>
+              {locale === "en" && (
+                <a
+                  aria-current={
+                    pageContext === "services" ? "page" : undefined
+                  }
+                  href={planningServicesHref}
+                >
+                  Planning services
+                </a>
+              )}
               <a
                 aria-current={pageContext === "studio" ? "page" : undefined}
                 href={studioHref}
@@ -303,6 +351,11 @@ export function HomegroundHeader({
             >
               {copy.navigation.planning}
             </a>
+            {locale === "en" && (
+              <a href={planningServicesHref} onClick={close}>
+                Planning services
+              </a>
+            )}
             <a href={studioHref} onClick={close}>
               {copy.navigation.studio}
             </a>
@@ -321,6 +374,17 @@ export function HomegroundHeader({
             <a href={`${copy.path}#planning-proof`} onClick={close}>
               {copy.navigation.planning}
             </a>
+            {locale === "en" && (
+              <a
+                aria-current={
+                  pageContext === "services" ? "page" : undefined
+                }
+                href={planningServicesHref}
+                onClick={close}
+              >
+                Planning services
+              </a>
+            )}
             <a
               aria-current={pageContext === "studio" ? "page" : undefined}
               href={studioHref}

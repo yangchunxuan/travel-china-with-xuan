@@ -325,7 +325,7 @@ export function ChinaItineraryReviewPage() {
       </a>
       <HomegroundHeader
         locale="en"
-        pageContext="content"
+        pageContext="services"
         showLanguageNav={false}
       />
 
@@ -336,7 +336,7 @@ export function ChinaItineraryReviewPage() {
               <nav className={styles.breadcrumb} aria-label="Breadcrumb">
                 <ol>
                   <li><Link href="/">Home</Link></li>
-                  <li aria-current="page">Route planning</li>
+                  <li aria-current="page">Planning services</li>
                 </ol>
               </nav>
 
@@ -345,14 +345,15 @@ export function ChinaItineraryReviewPage() {
                   <p className={styles.eyebrow}>China itinerary review &amp; route planning</p>
                   <h1>Get the route right before you book the rest.</h1>
                   <p className={styles.heroLead}>
-                    Already have a day-by-day plan? We can test where it becomes tight
-                    or fragile. Starting with dates, ideas and a wishlist? We can build
-                    the route structure first.
+                    Already have a day-by-day plan? We can review it. Starting with
+                    dates, priorities and a wishlist? We can build the route structure.
+                    Want selected arrangements or local coordination as well? We can
+                    define a trip-specific scope.
                   </p>
                   <div className={styles.heroPrices} aria-label="Route planning prices">
                     <span><b>US$69</b> route review</span>
                     <span><b>US$129</b> route build</span>
-                    <span>per trip · 1–4 travellers</span>
+                    <span><b>Custom quote</b> full-trip support</span>
                   </div>
                   <div className={styles.heroActions}>
                     <a className={styles.primaryButton} href="#choose-service">
@@ -364,9 +365,9 @@ export function ChinaItineraryReviewPage() {
                     </a>
                   </div>
                   <p className={styles.heroBoundary}>
-                    Both are fixed-scope written services. This page starts an enquiry;
-                    it does not take payment or accept file uploads. Bookings and support
-                    during the trip are quoted separately around the actual journey.
+                    The US$69 and US$129 options are fixed-scope written services.
+                    Full-trip support begins with a trip-specific written scope and quote.
+                    This page starts an enquiry; it does not take payment or accept file uploads.
                   </p>
                 </div>
                 <ReviewBoard />
@@ -378,11 +379,12 @@ export function ChinaItineraryReviewPage() {
             <div className={styles.sectionHeadingSplit}>
               <div>
                 <p className={styles.sectionLabel}>Choose where you are starting</p>
-                <h2 id="service-title">Have a route, or need one built?</h2>
+                <h2 id="service-title">Which kind of help fits your trip now?</h2>
               </div>
               <p>
-                The fixed price applies when your request fits the standard scope below.
-                Longer or more complex trips are checked before any payment is requested.
+                Choose Review or Build for a written route service. Choose Full Trip
+                Support when you also want selected arrangements or local coordination
+                included in the agreed scope.
               </p>
             </div>
 
@@ -468,15 +470,54 @@ export function ChinaItineraryReviewPage() {
               </article>
             </div>
 
-            <aside className={styles.choiceGuide} aria-label="Which route service should I choose?">
-              <strong>Not sure which one fits?</strong>
+            <article
+              className={styles.fullSupportChoice}
+              aria-labelledby="full-support-choice-title"
+            >
+              <div className={styles.fullSupportChoiceLead}>
+                <span className={styles.serviceIcon}>
+                  <Check aria-hidden="true" size={23} />
+                </span>
+                <p>
+                  I want planning carried into selected arrangements or local coordination.
+                </p>
+              </div>
+              <div>
+                <h3 id="full-support-choice-title">
+                  Full Trip Planning &amp; Ground Support
+                </h3>
+                <p>
+                  A trip-specific written scope for detailed planning and the parts of
+                  delivery you want Homeground to coordinate.
+                </p>
+              </div>
+              <div className={styles.fullSupportChoiceAction}>
+                <strong>Custom quote</strong>
+                <a href="#full-trip-support">
+                  See full-trip support
+                  <ArrowRight aria-hidden="true" size={18} />
+                </a>
+              </div>
+            </article>
+          </section>
+
+          <section className={styles.studioBridge} aria-labelledby="studio-bridge-title">
+            <div>
+              <p className={styles.sectionLabel}>Who works on your request</p>
+              <h2 id="studio-bridge-title">
+                A small planning studio, with one clear planning thread.
+              </h2>
+            </div>
+            <div>
               <p>
-                If another person could follow your existing plan day by day, choose
-                Review My Route. If you mainly have dates, destinations and ideas, choose
-                Build My Route.
+                A lead planner owns the work. When the agreed scope needs destination
+                or delivery input, relevant teammates or local partners are brought in.
               </p>
-              <a href="#full-trip-support">Need bookings or local coordination?</a>
-            </aside>
+              <a href="/studio/">
+                Meet the people behind Homeground
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+            </div>
           </section>
 
           <section className={styles.intro} aria-labelledby="possible-title">
@@ -706,7 +747,7 @@ export function ChinaItineraryReviewPage() {
         </article>
       </main>
 
-      <HomegroundFooter locale="en" pageContext="content" />
+      <HomegroundFooter locale="en" pageContext="services" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
