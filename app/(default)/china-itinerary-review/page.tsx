@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import { ChinaItineraryReviewPage } from "../../../components/ChinaItineraryReviewPage";
+import {
+  getChinaItineraryReviewCopy,
+  getChinaItineraryReviewLanguagePaths,
+} from "../../../lib/chinaItineraryReviewI18n";
 
-const title = "China Itinerary Review & Route Planning";
-const description =
-  "Have your China itinerary reviewed for US$69, or get a practical route built for US$129. Clear advice on city order, transfers, hotel bases and pace.";
+const copy = getChinaItineraryReviewCopy("en");
 const socialImage =
   "/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp";
 
 export const metadata: Metadata = {
-  title,
-  description,
+  title: copy.metadata.title,
+  description: copy.metadata.description,
   alternates: {
-    canonical: "/china-itinerary-review/",
+    canonical: copy.path,
+    languages: getChinaItineraryReviewLanguagePaths(),
   },
   robots: {
     index: true,
@@ -24,22 +27,22 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Plan a China route that works beyond the map | Homeground",
-    description:
-      "Start with the route you have—or ask Homeground to build the structure before you book the rest.",
+    title: copy.metadata.openGraphTitle,
+    description: copy.metadata.openGraphDescription,
     type: "website",
     locale: "en_US",
-    url: "/china-itinerary-review/",
+    alternateLocale: ["zh_CN", "ko_KR"],
+    url: copy.path,
     images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     images: [socialImage],
   },
 };
 
 export default function ChinaItineraryReviewRoute() {
-  return <ChinaItineraryReviewPage />;
+  return <ChinaItineraryReviewPage locale="en" />;
 }

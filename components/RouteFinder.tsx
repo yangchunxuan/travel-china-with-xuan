@@ -1121,9 +1121,9 @@ export function RouteFinder({
             {serviceInterest && (
               <aside
                 className={styles.serviceIntent}
-                aria-label="Selected Homeground planning service"
+                aria-label={serviceInterest.selectedServiceAriaLabel}
               >
-                <span>Planning request</span>
+                <span>{serviceInterest.finderLabel}</span>
                 <strong>
                   {serviceInterest.label} · {serviceInterest.priceLabel}
                 </strong>

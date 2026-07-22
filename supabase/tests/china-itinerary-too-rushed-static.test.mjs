@@ -8,69 +8,74 @@ async function source(path) {
 
 test("pace article gives a server-readable answer without inventing a city limit", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
+  const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
 
   assert.match(
     article,
     /<main id="itinerary-article-content" tabIndex=\{-1\}>/,
   );
   assert.equal(article.match(/<h1>/g)?.length, 1);
-  assert.match(article, /<h1>Is Your China Itinerary Too Rushed\?<\/h1>/);
+  assert.match(article, /<h1>\{copy\.metadata\.headline\}<\/h1>/);
   assert.match(
-    article,
+    copy,
     /There is no fixed city count that makes a China trip rushed/,
   );
   assert.match(
-    article,
+    copy,
     /How many cities can you realistically visit in China\?/,
   );
-  assert.match(article, /Neither style is automatically better/);
+  assert.match(copy, /Neither style is automatically better/);
   assert.match(article, /<table className=\{styles\.paceTable\}>/);
-  assert.match(article, /<th scope="col">A compact route<\/th>/);
-  assert.match(article, /two “yes” answers—or one high-consequence conflict/);
-  assert.match(article, /non-refundable booking/);
-  assert.doesNotMatch(article, /universal city limit of|exactly [0-9]+ cities/);
+  assert.match(article, /<th scope="col">\{copy\.pace\.compactHeading\}<\/th>/);
+  assert.match(copy, /two “yes” answers—or one high-consequence conflict/);
+  assert.match(copy, /non-refundable booking/);
+  assert.doesNotMatch(copy, /universal city limit of|exactly [0-9]+ cities/);
 });
 
 test("illustrative example stays inside the fixed-price service boundary", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
-  const service = await source("components/ChinaItineraryReviewPage.tsx");
+  const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
+  const service = await source("lib/chinaItineraryReviewI18n.ts");
 
-  for (const page of [article, service]) {
+  for (const page of [copy, service]) {
     assert.match(
       page,
       /ten travel days, four hotel bases and three\s+intercity moves/i,
     );
     assert.doesNotMatch(page, /ten nights, five hotel bases and four intercity moves/i);
   }
-  assert.match(article, /Illustrative example — not a client trip/);
+  assert.match(copy, /Illustrative example — not a client trip/);
+  assert.match(article, /copy\.workedExample\.options\.map/);
 });
 
 test("article separates two paid services from the automated free finder", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
+  const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
 
-  assert.match(article, /href="\/china-itinerary-review\/#review-my-route"/);
-  assert.match(article, /Review My Route — US\$69/);
-  assert.match(article, /href="\/china-itinerary-review\/#build-my-route"/);
-  assert.match(article, /Build My Route — US\$129/);
-  assert.match(article, /Use the free Route Finder/);
-  assert.match(article, /No human review is included/);
+  assert.match(article, /href=\{`\$\{copy\.servicePath\}#review-my-route`\}/);
+  assert.match(copy, /Review My Route — US\$69/);
+  assert.match(article, /href=\{`\$\{copy\.servicePath\}#build-my-route`\}/);
+  assert.match(copy, /Build My Route — US\$129/);
+  assert.match(copy, /Use the free Route Finder/);
+  assert.match(copy, /No human review is included/);
   assert.match(article, /utm_source=china-itinerary-too-rushed/);
   assert.match(article, /utm_campaign=article-to-route-finder/);
-  assert.doesNotMatch(article, /free (?:human )?(?:route|itinerary) review/i);
-  assert.doesNotMatch(article, /Start a free route check/);
+  assert.doesNotMatch(copy, /free (?:human )?(?:route|itinerary) review/i);
+  assert.doesNotMatch(copy, /Start a free route check/);
 });
 
 test("article has visible FAQs and only Article plus BreadcrumbList schema", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
+  const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
 
-  assert.equal((article.match(/question:/g) ?? []).length, 5);
+  assert.equal((copy.match(/question: "/g) ?? []).length, 15);
   assert.match(article, /<details key=\{item\.question\}>/);
   assert.match(article, /<summary>\{item\.question\}<\/summary>/);
   assert.match(article, /"@type": "Article"/);
   assert.match(article, /"@type": "BreadcrumbList"/);
   assert.doesNotMatch(article, /FAQPage/);
-  assert.match(article, /Homeground Editorial Team/);
-  assert.match(article, /<Link href="\/studio\/">Homeground Editorial Team<\/Link>/);
+  assert.match(copy, /Homeground Editorial Team/);
+  assert.match(article, /<Link href=\{copy\.studioPath\}>\{copy\.authorLabel\}<\/Link>/);
   assert.match(article, /datePublished: "2026-07-22"/);
   assert.match(article, /dateModified: "2026-07-22"/);
 });
@@ -79,20 +84,26 @@ test("metadata, sitemap and contextual links expose the English article", async 
   const route = await source(
     "app/(default)/guides/is-your-china-itinerary-too-rushed/page.tsx",
   );
+  const localizedRoute = await source(
+    "app/(localized)/[locale]/guides/is-your-china-itinerary-too-rushed/page.tsx",
+  );
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
   const sitemap = await source("app/sitemap.ts");
+  const registry = await source("lib/guideRegistry.ts");
   const service = await source("components/ChinaItineraryReviewPage.tsx");
   const productionExport = await source("tools/prune-production-export.mjs");
 
   assert.match(
-    route,
-    /const title = "China Itinerary Too Rushed\? A Practical Check"/,
+    registry,
+    /title: "China Itinerary Too Rushed\? A Practical Check"/,
   );
   assert.match(route, /card: "summary_large_image"/);
-  assert.match(route, /transfer-platform-soft-focus-1200\.webp/);
+  assert.match(route, /getGuideLanguagePaths\(guide\.id\)/);
+  assert.match(localizedRoute, /getGuideLanguagePaths\(guide\.id\)/);
+  assert.match(registry, /transfer-platform-soft-focus-1200\.webp/);
   assert.match(
     article,
-    /href="\/guides\/beijing-zhangjiajie-shanghai-transport\/"/,
+    /href=\{copy\.transportGuidePath\}/,
   );
   assert.match(article, /https:\/\/www\.12306\.cn\/en\/faq\.html\?item=1/);
   assert.match(article, /https:\/\/intl\.dpm\.org\.cn\/visit\.html/);
@@ -100,15 +111,23 @@ test("metadata, sitemap and contextual links expose the English article", async 
   assert.doesNotMatch(article, /\bF\d+\b/);
   assert.match(
     sitemap,
-    /url: `\$\{base\}\/guides\/is-your-china-itinerary-too-rushed\/`,[\s\S]*?priority: 0\.7/,
+    /const guideEntries = guideIds\.flatMap/,
   );
   assert.match(
     service,
-    /href="\/guides\/is-your-china-itinerary-too-rushed\/"/,
+    /const rushGuideHref = `\$\{homeCopy\.path\}guides\/is-your-china-itinerary-too-rushed\/`/,
   );
   assert.match(
     productionExport,
     /guides\/is-your-china-itinerary-too-rushed\/index\.html/,
+  );
+  assert.match(
+    productionExport,
+    /zh\/guides\/is-your-china-itinerary-too-rushed\/index\.html/,
+  );
+  assert.match(
+    productionExport,
+    /ko\/guides\/is-your-china-itinerary-too-rushed\/index\.html/,
   );
   assert.match(productionExport, /train-cabin-soft-focus-1200\.webp/);
   assert.match(productionExport, /airport-waiting-soft-focus-1200\.webp/);

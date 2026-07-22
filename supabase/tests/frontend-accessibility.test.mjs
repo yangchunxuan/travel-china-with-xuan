@@ -12,6 +12,7 @@ const homegroundPagePath = "components/HomegroundHomePage.tsx";
 const homegroundPageStylesPath =
   "components/HomegroundHomePage.module.css";
 const homegroundNavigationPath = "lib/homegroundNavigation.ts";
+const routeServiceInterestPath = "lib/routeServiceInterest.ts";
 
 async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -324,6 +325,7 @@ test("success keeps the full public reference as secondary three-language copy",
 
 test("email and WhatsApp use one accessible in-site enquiry submit", async () => {
   const plannerHandoff = await source(plannerHandoffPath);
+  const routeServiceInterest = await source(routeServiceInterestPath);
 
   assert.match(
     plannerHandoff,
@@ -403,7 +405,8 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   const noteEnd = plannerHandoff.indexOf("const briefLines", noteStart);
   const noteBuilder = plannerHandoff.slice(noteStart, noteEnd);
   assert.match(noteBuilder, /serviceInterest\.note/);
-  assert.match(noteBuilder, /Traveller context:/);
+  assert.match(noteBuilder, /serviceInterest\.contextNoteLabel/);
+  assert.match(routeServiceInterest, /contextNoteLabel: "Traveller context"/);
   assert.doesNotMatch(noteBuilder, /URLSearchParams|utm_source|utm_medium|utm_campaign/);
 
   const briefStart = plannerHandoff.indexOf("const briefLines");
@@ -423,6 +426,7 @@ test("optional service context has accessible multiline validation and server er
   const routeFinder = await source(routeFinderPath);
   const plannerHandoff = await source(plannerHandoffPath);
   const plannerStyles = await source(plannerHandoffStylesPath);
+  const routeServiceInterest = await source(routeServiceInterestPath);
 
   assert.match(routeFinder, /serviceInterest\?: RouteServiceInterest \| null/);
   assert.match(routeFinder, /serviceInterest = null/);
@@ -452,7 +456,8 @@ test("optional service context has accessible multiline validation and server er
   );
   assert.match(plannerHandoff, /tripContext:\s*tripContextId/);
   assert.match(plannerHandoff, /name="tripContext"\s+dir="auto"/);
-  assert.match(plannerHandoff, /Do not include passport or ID images/);
+  assert.match(plannerHandoff, /serviceInterest\.tripContextHint/);
+  assert.match(routeServiceInterest, /Do not include passport or ID images/);
   assert.doesNotMatch(plannerHandoff, /type="file"/);
   assert.match(plannerStyles, /\.field input,\s*\.field textarea/);
   assert.match(plannerStyles, /\.field textarea \{[\s\S]*resize: vertical/);

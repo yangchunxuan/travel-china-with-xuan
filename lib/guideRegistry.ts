@@ -7,6 +7,7 @@ export const guideIds = [
   "best-zhangjiajie-night-show",
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
+  "is-your-china-itinerary-too-rushed",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -224,6 +225,54 @@ export const guideRegistry = [
         heroAlt: "장자제서역과 역 앞 광장의 넓은 전경.",
         navTitle: "베이징–장자제–상하이 교통 가이드",
         featuredLinkLabel: "기차와 항공편의 실제 시간 비교",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "is-your-china-itinerary-too-rushed",
+    type: "planning",
+    featured: false,
+    heroImagePath:
+      "/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
+    datePublished: "2026-07-22",
+    dateModified: "2026-07-22",
+    sourceReviewedDate: "2026-07-22",
+    locales: {
+      en: {
+        path: "/guides/is-your-china-itinerary-too-rushed/",
+        title: "China Itinerary Too Rushed? A Practical Check",
+        headline: "Is Your China Itinerary Too Rushed?",
+        description:
+          "Check whether your China itinerary is too rushed by testing city changes, door-to-door transfers, hotel moves, fixed bookings and recovery time.",
+        heroAlt:
+          "A softened railway platform used as a non-location-specific illustration of a transfer day.",
+        navTitle: "China itinerary pace guide",
+        featuredLinkLabel: "Check whether your China itinerary is too rushed",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/is-your-china-itinerary-too-rushed/",
+        title: "中国行程是不是太赶？一份现实检查",
+        headline: "你的中国行程是不是太赶了？",
+        description:
+          "从换城市、门到门转场、换酒店、固定预约与恢复时间，判断你的中国行程是否安排得太赶。",
+        heroAlt: "经过柔化处理的火车站站台，用于表达旅行转场日。",
+        navTitle: "中国行程节奏指南",
+        featuredLinkLabel: "检查你的中国行程是否太赶",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/is-your-china-itinerary-too-rushed/",
+        title: "중국 여행 일정이 너무 빠듯한가요? 현실 점검 가이드",
+        headline: "중국 여행 일정이 너무 빠듯한가요?",
+        description:
+          "도시 이동, 출발지부터 도착지까지의 전체 이동, 숙소 변경, 고정 예약과 회복 시간을 기준으로 중국 여행 일정이 너무 빠듯한지 확인해 보세요.",
+        heroAlt: "이동일을 표현하기 위해 부드럽게 처리한 기차역 승강장 이미지.",
+        navTitle: "중국 일정 속도 가이드",
+        featuredLinkLabel: "중국 일정이 너무 빠듯한지 확인하기",
         openGraphLocale: "ko_KR",
       },
     },

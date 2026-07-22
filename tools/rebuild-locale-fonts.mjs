@@ -44,6 +44,9 @@ const explicitSources = [
   "lib/tenDayGuideCopy.zh.ts",
   "lib/tenDayGuideCopy.ko.ts",
   "lib/beijingZhangjiajieShanghaiTransportI18n.ts",
+  "lib/chinaItineraryTooRushedI18n.ts",
+  "lib/chinaItineraryReviewI18n.ts",
+  "lib/routeServiceInterest.ts",
 ];
 const sourceDirectories = ["app/(default)", "app/(localized)"];
 

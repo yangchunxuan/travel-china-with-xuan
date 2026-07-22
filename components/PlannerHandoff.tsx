@@ -437,7 +437,9 @@ export function PlannerHandoff({
 
     const noteParts = [serviceInterest.note];
     if (tripContext.trim()) {
-      noteParts.push(`Traveller context:\n${tripContext.trim()}`);
+      noteParts.push(
+        `${serviceInterest.contextNoteLabel}:\n${tripContext.trim()}`,
+      );
     }
     return noteParts.join("\n\n");
   }, [serviceInterest, tripContext]);
@@ -697,8 +699,7 @@ export function PlannerHandoff({
         copy.handoff.roughBudgetError;
     }
     if (serviceInterest && !isValidTripContext(tripContext)) {
-      nextErrors.tripContext =
-        "Keep this note under 1,800 characters and remove unsupported control characters.";
+      nextErrors.tripContext = serviceInterest.tripContextError;
     }
 
     return nextErrors;
@@ -795,8 +796,7 @@ export function PlannerHandoff({
           copy.handoff.roughBudgetError;
       }
       if (fields.note && serviceInterest) {
-        nextErrors.tripContext =
-          "Check the trip context and remove unsupported characters.";
+        nextErrors.tripContext = serviceInterest.tripContextServerError;
       }
     }
     if (Object.keys(nextErrors).length === 0) {
@@ -1113,9 +1113,9 @@ export function PlannerHandoff({
           {serviceInterest && (
             <aside
               className={styles.serviceIntent}
-              aria-label="Selected Homeground planning service"
+              aria-label={serviceInterest.selectedServiceAriaLabel}
             >
-              <span>Service requested</span>
+              <span>{serviceInterest.handoffLabel}</span>
               <strong>
                 {serviceInterest.label} · {serviceInterest.priceLabel}
               </strong>
@@ -1470,8 +1470,10 @@ export function PlannerHandoff({
                 {serviceInterest && (
                   <div className={styles.field}>
                     <label htmlFor={tripContextId}>
-                      Route outline or important constraints{" "}
-                      <span className={styles.optionalTag}>Optional</span>
+                      {serviceInterest.tripContextLabel}{" "}
+                      <span className={styles.optionalTag}>
+                        {serviceInterest.optionalLabel}
+                      </span>
                     </label>
                     <textarea
                       id={tripContextId}
@@ -1490,7 +1492,7 @@ export function PlannerHandoff({
                           "tripContext",
                           isValidTripContext(tripContext)
                             ? undefined
-                            : "Keep this note under 1,800 characters and remove unsupported control characters.",
+                            : serviceInterest.tripContextError,
                         )
                       }
                       onChange={(event) => {
@@ -1499,10 +1501,7 @@ export function PlannerHandoff({
                       }}
                     />
                     <p className={styles.hint} id={tripContextHintId}>
-                      Paste a concise day-by-day outline or a shareable route
-                      link. Do not include passport or ID images, payment
-                      details, QR codes or unredacted booking references. We
-                      can request the full file after the fit check.
+                      {serviceInterest.tripContextHint}
                     </p>
                     {errors.tripContext && (
                       <p

@@ -4,6 +4,7 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import {
   getGuideEntry,
   type GuideId,
@@ -27,7 +28,8 @@ export function HomegroundFooter({
   const guide = getGuideEntry(guideId, locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
-  const planningServicesPath = "/china-itinerary-review/";
+  const planningServicesCopy = getChinaItineraryReviewCopy(locale);
+  const planningServicesPath = planningServicesCopy.path;
   const studioPath = `${copy.path}studio/`;
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
@@ -56,12 +58,15 @@ export function HomegroundFooter({
           >
             {copy.navigation.planning}
           </a>
-          {locale === "en" &&
-            (pageContext === "services" ? (
-              <span aria-current="page">Planning services</span>
-            ) : (
-              <a href={planningServicesPath}>Planning services</a>
-            ))}
+          {pageContext === "services" ? (
+            <span aria-current="page">
+              {planningServicesCopy.navigationLabel}
+            </span>
+          ) : (
+            <a href={planningServicesPath}>
+              {planningServicesCopy.navigationLabel}
+            </a>
+          )}
           {pageContext === "studio" ? (
             <span aria-current="page">{copy.navigation.studio}</span>
           ) : (

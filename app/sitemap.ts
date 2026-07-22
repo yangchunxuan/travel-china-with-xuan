@@ -26,6 +26,12 @@ const studioLanguages = {
   "zh-Hans": `${base}/zh/studio/`,
   "x-default": `${base}/studio/`,
 };
+const itineraryReviewLanguages = {
+  en: `${base}/china-itinerary-review/`,
+  ko: `${base}/ko/china-itinerary-review/`,
+  "zh-Hans": `${base}/zh/china-itinerary-review/`,
+  "x-default": `${base}/china-itinerary-review/`,
+};
 const guideEntries = guideIds.flatMap((guideId) => {
   const languages = getGuideLanguageUrls(guideId);
 
@@ -91,12 +97,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: "2026-07-22",
       changeFrequency: "monthly",
       priority: 0.65,
+      alternates: { languages: itineraryReviewLanguages },
     },
     {
-      url: `${base}/guides/is-your-china-itinerary-too-rushed/`,
+      url: `${base}/zh/china-itinerary-review/`,
       lastModified: "2026-07-22",
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.6,
+      alternates: { languages: itineraryReviewLanguages },
+    },
+    {
+      url: `${base}/ko/china-itinerary-review/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: { languages: itineraryReviewLanguages },
     },
     ...guideEntries,
     {
