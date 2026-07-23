@@ -5,6 +5,13 @@ privacy pages, and production brand, font, and homepage media. Experimental
 composition and journey labs are intentionally excluded from the deployed
 artifact.
 
+The `/admin/` HTML shell is not confidential and contains no enquiry data.
+Without complete public Auth/API configuration it makes no business-data
+request. With configuration present, the two read-only responses still require
+an authenticated `aal2` session and the server-side Auth user UUID allow-list.
+See `docs/admin-insights-deployment.md`; do not describe an unlinked URL,
+`robots.txt` or `noindex` as access control.
+
 ## What stays recoverable
 
 - Lab components remain under `components/`.

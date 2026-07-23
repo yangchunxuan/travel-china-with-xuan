@@ -159,13 +159,21 @@ function supabaseAdminCredential(): SupabaseAdminCredential {
 export async function callSupabaseRpc<T>(
   rpcName: string,
   argumentsObject: Record<string, unknown>,
+  timeoutMilliseconds = SUPABASE_RPC_TIMEOUT_MILLISECONDS,
 ): Promise<RpcResult<T>> {
+  if (
+    !Number.isSafeInteger(timeoutMilliseconds) ||
+    timeoutMilliseconds < 250 ||
+    timeoutMilliseconds > SUPABASE_RPC_TIMEOUT_MILLISECONDS
+  ) {
+    throw new Error("invalid_rpc_timeout");
+  }
   const supabaseUrl = requiredEnv("SUPABASE_URL").replace(/\/+$/, "");
   const adminCredential = supabaseAdminCredential();
   const timeoutController = new AbortController();
   const timeoutId = setTimeout(
     () => timeoutController.abort(),
-    SUPABASE_RPC_TIMEOUT_MILLISECONDS,
+    timeoutMilliseconds,
   );
 
   let response: Response;

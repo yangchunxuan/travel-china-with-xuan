@@ -14,3 +14,15 @@ verify_jwt = false
 # GitHub Actions authenticates with an independent OUTBOX_MONITOR_SECRET.
 # This read-only function returns aggregate outbox counts and no Inquiry data.
 verify_jwt = false
+
+[functions.admin-insights]
+# The gateway verifies the signed-in user JWT. The handler additionally calls
+# Auth /user, enforces aal2 and a fixed UUID allowlist, and returns only a
+# k-suppressed aggregate contract.
+verify_jwt = true
+
+[functions.admin-health]
+# Defense in depth matches admin-insights: gateway JWT verification plus
+# server-side Auth /user, claims, MFA, allowlist, Origin, and kill-switch
+# checks before the restricted health RPC is called.
+verify_jwt = true
