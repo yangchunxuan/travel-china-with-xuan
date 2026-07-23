@@ -242,30 +242,47 @@ async function checkGuideHtml(locale) {
   checkJsonLd(html, locale, expectedUrl);
 }
 
-async function checkHomepageGuideEntries() {
+async function checkHomepageGuidePaths() {
   for (const locale of guideLocales) {
     const homepageRoute = locale.route.startsWith("/zh/")
       ? "/zh/"
       : locale.route.startsWith("/ko/")
         ? "/ko/"
         : "/";
+    const guideHubRoute = `${homepageRoute}guides/`;
     const homepagePath = exportPathForRoute(homepageRoute);
+    const guideHubPath = exportPathForRoute(guideHubRoute);
+    const expectedGuideHubUrl = `${siteUrl}${guideHubRoute}`;
     const expectedGuideUrl = `${siteUrl}${locale.route}`;
 
     if (!(await isFile(homepagePath))) {
-      fail(`${homepageRoute}: missing homepage export for guide-entry check`);
+      fail(`${homepageRoute}: missing homepage export for guide-path check`);
       continue;
     }
 
-    const html = await readFile(homepagePath, "utf8");
-    const matchingLinks = tags(html, "a")
+    const homepageHtml = await readFile(homepagePath, "utf8");
+    const guideHubLinks = tags(homepageHtml, "a")
+      .map((tag) => attributes(tag).get("href") ?? "")
+      .filter((href) => normalizeAbsoluteUrl(href) === expectedGuideHubUrl);
+
+    if (guideHubLinks.length === 0) {
+      fail(
+        `${homepageRoute}: missing homepage entry for ${guideHubRoute}`,
+      );
+    }
+
+    if (!(await isFile(guideHubPath))) {
+      fail(`${guideHubRoute}: missing guide-hub export`);
+      continue;
+    }
+
+    const guideHubHtml = await readFile(guideHubPath, "utf8");
+    const guideLinks = tags(guideHubHtml, "a")
       .map((tag) => attributes(tag).get("href") ?? "")
       .filter((href) => normalizeAbsoluteUrl(href) === expectedGuideUrl);
 
-    if (matchingLinks.length === 0) {
-      fail(
-        `${homepageRoute}: missing homepage entry for ${locale.route}`,
-      );
+    if (guideLinks.length === 0) {
+      fail(`${guideHubRoute}: missing guide entry for ${locale.route}`);
     }
   }
 }
@@ -379,7 +396,7 @@ try {
     fail("out/: missing or not a completed static export");
   } else {
     for (const locale of guideLocales) await checkGuideHtml(locale);
-    await checkHomepageGuideEntries();
+    await checkHomepageGuidePaths();
     await checkSitemap();
     await checkInternalRootLinks();
   }
@@ -393,6 +410,6 @@ if (failures.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    "✓ Ten-day guide export has three indexable, reciprocal localized pages, homepage entries, matching sitemap entries, and no broken root-path links.",
+    "✓ Ten-day guide export has three indexable, reciprocal localized pages, homepage-to-hub paths, matching sitemap entries, and no broken root-path links.",
   );
 }
