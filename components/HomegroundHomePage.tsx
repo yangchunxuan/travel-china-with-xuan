@@ -14,8 +14,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import { getGuideEntry } from "../lib/guideRegistry";
-import { getZhangjiajieGuideCopy } from "../lib/zhangjiajieGuideI18n";
+import { getHomeFeaturedGuides } from "../lib/guideRegistry";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   getRouteServiceInterest,
@@ -50,6 +49,21 @@ const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 const planningIntentStorageKey = "homeground-planning-intent-v1";
 const planningStarterIntentStorageKey =
   "homeground-planning-starter-intent-v1";
+
+const guideDateLocales: Record<HomegroundLocale, string> = {
+  en: "en-GB",
+  zh: "zh-CN",
+  ko: "ko-KR",
+};
+
+function formatGuideDate(date: string, locale: HomegroundLocale) {
+  return new Intl.DateTimeFormat(guideDateLocales[locale], {
+    day: "numeric",
+    month: "short",
+    timeZone: "UTC",
+    year: "numeric",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
 
 function resolveFinalCta(
   copy: HomegroundCopy,
@@ -139,45 +153,9 @@ export function HomegroundHomePage({
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
-  const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const wholeRouteGuide = getGuideEntry(
-    "beijing-zhangjiajie-shanghai-10-days",
-    locale,
-  );
-  const nightShowGuide = getGuideEntry("best-zhangjiajie-night-show", locale);
-  const zhangjiajieGuideCopy = getZhangjiajieGuideCopy(locale);
-  const planningGuides = [
-    {
-      guide: featuredGuide,
-      label: copy.guides.cityStayLabel,
-      duration: copy.guides.cityStayDuration,
-      number: "01",
-      imagePath: "/images/guides/zhangjiajie/tianmen-1200.jpg",
-      imageAlt: zhangjiajieGuideCopy.figures.tianmen.alt,
-      imageWidth: 1200,
-      imageHeight: 780,
-    },
-    {
-      guide: wholeRouteGuide,
-      label: copy.guides.wholeRouteLabel,
-      duration: copy.guides.wholeRouteDuration,
-      number: "02",
-      imagePath: wholeRouteGuide.heroImagePath,
-      imageAlt: wholeRouteGuide.heroAlt,
-      imageWidth: 1800,
-      imageHeight: 1200,
-    },
-    {
-      guide: nightShowGuide,
-      label: copy.guides.eveningChoiceLabel,
-      duration: copy.guides.eveningChoiceDuration,
-      number: "03",
-      imagePath: nightShowGuide.heroImagePath,
-      imageAlt: nightShowGuide.heroAlt,
-      imageWidth: 1536,
-      imageHeight: 1024,
-    },
-  ] as const;
+  const featuredGuides = getHomeFeaturedGuides(locale);
+  const guidesIndexPath =
+    locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const plannerTarget =
     plannerStatus === "result" &&
     routeMatch &&
@@ -647,64 +625,65 @@ export function HomegroundHomePage({
           </div>
 
           <nav
-            className={styles.planningGuides}
-            aria-labelledby="planning-guides-title"
+            className={styles.travelGuides}
+            aria-labelledby="travel-guides-title"
           >
-            <div className={styles.planningGuidesIntro}>
-              <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
-              <h3 id="planning-guides-title">{copy.guides.title}</h3>
+            <div className={styles.travelGuidesHeader}>
+              <div className={styles.travelGuidesIntro}>
+                <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
+                <h3 id="travel-guides-title">{copy.guides.title}</h3>
+              </div>
+              <a className={styles.travelGuidesIndexLink} href={guidesIndexPath}>
+                {copy.guides.viewAllLabel}
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
             </div>
-            <div className={styles.planningGuideList}>
-              {planningGuides.map(
-                ({
-                  guide,
-                  label,
-                  duration,
-                  number,
-                  imagePath,
-                  imageAlt,
-                  imageWidth,
-                  imageHeight,
-                }) => (
+            <div className={styles.travelGuideGrid}>
+              {featuredGuides.map((guide, index) => {
+                const typeLabel =
+                  guide.type === "field-note"
+                    ? copy.guides.typeLabels.fieldNote
+                    : copy.guides.typeLabels[guide.type];
+
+                return (
                   <a
-                    className={styles.planningGuideCard}
+                    className={`${styles.travelGuideCard} ${
+                      index === 0
+                        ? styles.travelGuideLead
+                        : styles.travelGuideCompact
+                    }`}
                     href={guide.canonicalPath}
                     key={guide.id}
                   >
-                    <span className={styles.planningGuideImage}>
+                    <span className={styles.travelGuideImage}>
                       <img
-                        src={imagePath}
-                        alt={imageAlt}
-                        width={imageWidth}
-                        height={imageHeight}
+                        src={guide.heroImagePath}
+                        alt={guide.heroAlt}
+                        width={guide.imageWidth}
+                        height={guide.imageHeight}
                         loading="lazy"
                         decoding="async"
                       />
                     </span>
-                    <span
-                      className={styles.planningGuideNumber}
-                      aria-hidden="true"
-                    >
-                      {number}
-                    </span>
-                    <span className={styles.planningGuideContent}>
-                      <span className={styles.planningGuideMeta}>
-                        <span className={styles.planningGuideLabel}>
-                          {label}
-                        </span>
-                        <span>{duration}</span>
+                    <span className={styles.travelGuideContent}>
+                      <span className={styles.travelGuideMeta}>
+                        <span>{typeLabel}</span>
+                        <time dateTime={guide.dateModified}>
+                          {copy.guides.updatedLabel}{" "}
+                          {formatGuideDate(guide.dateModified, locale)}
+                        </time>
                       </span>
-                      <strong className={styles.planningGuideTitle}>
+                      <strong className={styles.travelGuideTitle}>
                         {guide.headline}
                       </strong>
-                      <span className={styles.planningGuideCta}>
+                      <span className={styles.travelGuideCta}>
                         {guide.featuredLinkLabel}
                         <ArrowRight aria-hidden="true" size={17} />
                       </span>
                     </span>
                   </a>
-                ),
-              )}
+                );
+              })}
             </div>
           </nav>
         </section>

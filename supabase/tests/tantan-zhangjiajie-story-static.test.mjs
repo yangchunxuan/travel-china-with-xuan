@@ -48,7 +48,7 @@ test("Tantan field note uses its own localized registry routes and metadata", as
   assert.match(registry, /path: "\/ko\/guides\/zhangjiajie-glass-bridge-vs-skywalk\/"/);
   assert.match(
     registry,
-    /id: "zhangjiajie-glass-bridge-vs-skywalk"[\s\S]{0,320}datePublished: "2026-07-23"/,
+    /id: "zhangjiajie-glass-bridge-vs-skywalk"[\s\S]*?datePublished: "2026-07-23"/,
   );
   assert.match(copy, /updatedDate: "23 July 2026"/);
   assert.match(copy, /updatedDate: "2026 年 7 月 23 日"/);

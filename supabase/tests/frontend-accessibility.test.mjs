@@ -221,7 +221,6 @@ test("all production same-page links preserve planner history depth", async () =
   for (const target of [
     "#main-content",
     "#route-finder",
-    "#planning-proof",
     "#faq",
   ]) {
     const escaped = target.replace("-", "\\-");

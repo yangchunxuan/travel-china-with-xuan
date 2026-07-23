@@ -14,6 +14,16 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieGuidePage.module.css";
 
+const guideHubLabels: Record<HomegroundLocale, string> = {
+  en: "Travel guides",
+  zh: "旅行指南",
+  ko: "여행 가이드",
+};
+
+function guideHubPath(locale: HomegroundLocale) {
+  return locale === "en" ? "/guides/" : `/${locale}/guides/`;
+}
+
 const nightShowRelatedCopy: Record<
   HomegroundLocale,
   { label: string; title: string; body: string; action: string }
@@ -274,6 +284,12 @@ function createStructuredData(
           {
             "@type": "ListItem",
             position: 2,
+            name: guideHubLabels[locale],
+            item: `https://homegroundchina.com${guideHubPath(locale)}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: copy.breadcrumbCurrent,
             item: guide.canonicalUrl,
           },
@@ -348,6 +364,11 @@ export function ZhangjiajieGuidePage({
                 <ol>
                   <li>
                     <Link href={copy.homePath}>{copy.breadcrumbHome}</Link>
+                  </li>
+                  <li>
+                    <Link href={guideHubPath(locale)}>
+                      {guideHubLabels[locale]}
+                    </Link>
                   </li>
                   <li aria-current="page">{copy.breadcrumbCurrent}</li>
                 </ol>
@@ -722,7 +743,6 @@ export function ZhangjiajieGuidePage({
       <HomegroundFooter
         locale={locale}
         pageContext="guide"
-        guideId="zhangjiajie-itinerary"
       />
 
       <script

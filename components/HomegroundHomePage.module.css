@@ -1465,167 +1465,270 @@
   margin: 0.35rem 0 0;
 }
 
-.planningGuides {
+.travelGuides {
   border-top: 1px solid #d9dbd5;
   display: grid;
-  gap: 1.25rem;
-  margin-top: 1.75rem;
-  padding-top: 1.75rem;
+  gap: clamp(1.35rem, 2.6vw, 2rem);
+  margin-block-start: 2rem;
+  padding-block-start: 2rem;
 }
 
-.planningGuidesIntro {
+.travelGuidesHeader {
   align-items: flex-end;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: space-between;
 }
 
-.planningGuidesIntro .cardLabel {
-  flex: none;
-  margin: 0;
-}
-
-.planningGuidesIntro h3 {
-  color: var(--hg-color-ink);
-  font-family: var(--hg-ui-display);
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin: 0;
-  max-width: 34rem;
-}
-
-.planningGuideList {
+.travelGuidesIntro {
   display: grid;
-  gap: 0.8rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  max-inline-size: 43rem;
 }
 
-.planningGuideCard {
-  align-items: flex-end;
+.travelGuidesIntro .cardLabel {
+  margin: 0;
+}
+
+.travelGuidesIntro h3 {
+  color: var(--hg-color-ink);
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.travelGuidesIndexLink {
+  align-items: center;
   background: var(--hg-color-charcoal);
-  border: 1px solid rgb(20 20 19 / 18%);
-  border-radius: 1.15rem;
+  border: 1px solid var(--hg-color-charcoal);
+  border-radius: 999px;
   color: var(--hg-color-on-dark);
-  display: flex;
-  min-height: 24rem;
+  display: inline-flex;
+  flex: none;
+  font-size: 0.78rem;
+  font-weight: 740;
+  gap: 0.55rem;
+  min-block-size: 2.75rem;
+  padding: 0.68rem 1rem;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.travelGuidesIndexLink:hover,
+.travelGuidesIndexLink:focus-visible {
+  background: var(--hg-color-charcoal-hover);
+  transform: translateY(-2px);
+}
+
+.travelGuidesIndexLink:focus-visible {
+  outline: 3px solid var(--hg-color-focus);
+  outline-offset: 3px;
+}
+
+.travelGuideGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.85fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.travelGuideCard {
+  border: 1px solid #d7d8d2;
+  border-radius: 1.15rem;
+  min-inline-size: 0;
   overflow: hidden;
-  padding: 1.45rem;
   position: relative;
   text-decoration: none;
   transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-.planningGuideCard:hover,
-.planningGuideCard:focus-visible {
+.travelGuideCard:hover,
+.travelGuideCard:focus-visible {
   box-shadow: 0 18px 38px rgb(20 20 19 / 16%);
   transform: translateY(-2px);
 }
 
-.planningGuideCard:focus-visible {
-  outline: 3px solid #9e3f29;
+.travelGuideCard:focus-visible {
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 3px;
 }
 
-.planningGuideImage,
-.planningGuideImage::after,
-.planningGuideImage img {
+.travelGuideLead {
+  align-items: flex-end;
+  background: var(--hg-color-charcoal);
+  color: var(--hg-color-on-dark);
+  display: flex;
+  grid-row: 1 / 3;
+  min-block-size: 35rem;
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+}
+
+.travelGuideImage {
+  display: block;
+  overflow: hidden;
+}
+
+.travelGuideImage img {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.travelGuideLead .travelGuideImage,
+.travelGuideLead .travelGuideImage::after {
   inset: 0;
   position: absolute;
 }
 
-.planningGuideImage::after {
+.travelGuideLead .travelGuideImage::after {
   background: linear-gradient(
     180deg,
-    rgb(20 20 19 / 4%) 24%,
-    rgb(20 20 19 / 88%) 100%
+    rgb(20 20 19 / 3%) 24%,
+    rgb(20 20 19 / 30%) 52%,
+    rgb(20 20 19 / 92%) 100%
   );
   content: "";
 }
 
-.planningGuideImage img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform 420ms ease;
-  width: 100%;
+.travelGuideCard:hover .travelGuideImage img,
+.travelGuideCard:focus-visible .travelGuideImage img {
+  transform: scale(1.035);
 }
 
-.planningGuideCard:hover .planningGuideImage img,
-.planningGuideCard:focus-visible .planningGuideImage img {
-  transform: scale(1.025);
-}
-
-.planningGuideNumber {
-  align-items: center;
-  border: 1px solid rgb(255 255 255 / 72%);
-  border-radius: 999px;
-  display: inline-flex;
-  font-family: var(--hg-card-display);
-  font-size: 1.1rem;
-  height: 3.1rem;
-  justify-content: center;
-  left: 1.35rem;
-  position: absolute;
-  top: 1.35rem;
-  width: 3.1rem;
-  z-index: 1;
-}
-
-.planningGuideContent {
+.travelGuideCompact {
+  background: var(--hg-color-card);
+  color: var(--hg-color-ink);
   display: grid;
-  gap: 0.75rem;
+  grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 1.2fr);
+  min-block-size: 17rem;
+}
+
+.travelGuideCompact .travelGuideImage {
+  min-block-size: 100%;
+}
+
+.travelGuideContent {
+  display: grid;
+  gap: 0.85rem;
+  min-inline-size: 0;
+}
+
+.travelGuideLead .travelGuideContent {
+  inline-size: min(100%, 44rem);
   position: relative;
-  width: 100%;
   z-index: 1;
 }
 
-.planningGuideMeta {
+.travelGuideCompact .travelGuideContent {
+  align-content: center;
+  padding: clamp(1.05rem, 2vw, 1.45rem);
+}
+
+.travelGuideMeta {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem 0.65rem;
 }
 
-.planningGuideMeta > span {
-  backdrop-filter: blur(8px);
-  background: rgb(20 20 19 / 32%);
-  border: 1px solid rgb(255 255 255 / 48%);
-  border-radius: 999px;
-  color: var(--hg-color-on-dark);
+.travelGuideMeta > span,
+.travelGuideMeta time {
   font-size: 0.64rem;
-  font-weight: 780;
+  font-weight: 760;
   letter-spacing: 0.08em;
-  line-height: 1.2;
-  padding: 0.38rem 0.55rem;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
-.planningGuideLabel {
-  color: var(--hg-color-on-dark);
+.travelGuideLead .travelGuideMeta > span {
+  border: 1px solid rgb(255 255 255 / 58%);
+  border-radius: 999px;
+  padding: 0.34rem 0.52rem;
 }
 
-.planningGuideTitle {
-  font-family: var(--hg-card-display);
-  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  max-width: 22ch;
+.travelGuideLead .travelGuideMeta time {
+  color: rgb(250 249 245 / 78%);
+}
+
+.travelGuideCompact .travelGuideMeta > span {
+  color: var(--hg-color-rust);
+}
+
+.travelGuideCompact .travelGuideMeta time {
+  color: var(--hg-color-muted);
+}
+
+.travelGuideCompact .travelGuideMeta time::before {
+  content: "·";
+  margin-inline-end: 0.65rem;
+}
+
+.travelGuideTitle {
+  overflow-wrap: break-word;
   text-wrap: balance;
 }
 
-.planningGuideCta {
+.travelGuideLead .travelGuideTitle {
+  font-family: var(--hg-card-display);
+  font-size: clamp(2.15rem, 4.1vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.01;
+  max-inline-size: 19ch;
+}
+
+.travelGuideCompact .travelGuideTitle {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.2rem, 1.75vw, 1.55rem);
+  font-weight: 520;
+  letter-spacing: -0.018em;
+  line-height: 1.16;
+}
+
+.travelGuideCta {
   align-items: center;
   align-self: end;
-  color: var(--hg-color-on-dark);
   display: inline-flex;
-  font-size: 0.72rem;
-  font-weight: 780;
+  font-size: 0.7rem;
+  font-weight: 760;
   gap: 0.42rem;
+  letter-spacing: 0.07em;
   line-height: 1.35;
-  letter-spacing: 0.08em;
-  min-height: 2.75rem;
+  min-block-size: 2.75rem;
   text-transform: uppercase;
+}
+
+.localeRoot[data-homeground-locale="zh"] .travelGuideMeta > span,
+.localeRoot[data-homeground-locale="zh"] .travelGuideMeta time,
+.localeRoot[data-homeground-locale="zh"] .travelGuideCta,
+.localeRoot[data-homeground-locale="ko"] .travelGuideMeta > span,
+.localeRoot[data-homeground-locale="ko"] .travelGuideMeta time,
+.localeRoot[data-homeground-locale="ko"] .travelGuideCta {
+  letter-spacing: 0.015em;
+  text-transform: none;
+}
+
+.travelGuideLead .travelGuideCta {
+  color: var(--hg-color-on-dark);
+}
+
+.travelGuideCompact .travelGuideCta {
+  color: var(--hg-color-rust);
+}
+
+.travelGuideCta svg {
+  flex: none;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.travelGuideCard:hover .travelGuideCta svg,
+.travelGuideCard:focus-visible .travelGuideCta svg {
+  transform: translateX(3px);
 }
 
 .servicePathways {
@@ -2156,6 +2259,16 @@
   .intentOption {
     min-block-size: 0;
   }
+
+  .travelGuideGrid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .travelGuideLead {
+    grid-row: auto;
+    min-block-size: 29rem;
+  }
 }
 
 @media (max-width: 680px) {
@@ -2296,14 +2409,15 @@
     margin-top: 2.25rem;
   }
 
-  .planningGuidesIntro {
+  .travelGuidesHeader {
     align-items: start;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
-  .planningGuideList {
-    grid-template-columns: minmax(0, 1fr);
+  .travelGuidesIndexLink {
+    align-self: stretch;
+    justify-content: space-between;
   }
 
   .servicePathwayGrid {
@@ -2324,8 +2438,23 @@
     min-height: 0;
   }
 
-  .planningGuideCard {
-    min-height: 22rem;
+  .travelGuideLead {
+    min-block-size: 27rem;
+    padding: 1.25rem;
+  }
+
+  .travelGuideCompact {
+    grid-template-columns: minmax(0, 1fr);
+    min-block-size: 0;
+  }
+
+  .travelGuideCompact .travelGuideImage {
+    aspect-ratio: 16 / 8;
+    min-block-size: 0;
+  }
+
+  .travelGuideCompact .travelGuideContent {
+    padding: 1.15rem;
   }
 
   .studioSection,
@@ -2455,9 +2584,11 @@
   .brandMark,
   .brandMark span,
   .faqList summary span,
-  .planningGuideCard,
+  .travelGuideCard,
+  .travelGuidesIndexLink,
   .servicePathwayCard > a,
-  .planningGuideImage img,
+  .travelGuideImage img,
+  .travelGuideCta svg,
   .intentOption,
   .intentOption::before,
   .intentOptionIcon,

@@ -16,7 +16,7 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
   breadcrumb: {
     label: "Breadcrumb",
     home: "Home",
-    current: "10-day route check",
+    current: "10-day route guide",
   },
   hero: {
     eyebrow: "Whole-route decision guide",

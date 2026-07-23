@@ -24,6 +24,16 @@ import styles from "./NightShowGuidePage.module.css";
 const guideId = "best-zhangjiajie-night-show" as const;
 const assetPath = "/images/guides/best-zhangjiajie-night-show";
 
+const guideHubLabels: Record<HomegroundLocale, string> = {
+  en: "Travel guides",
+  zh: "旅行指南",
+  ko: "여행 가이드",
+};
+
+function guideHubPath(locale: HomegroundLocale) {
+  return locale === "en" ? "/guides/" : `/${locale}/guides/`;
+}
+
 const decisionIcons = [MapPinned, MoonStar, Clock3] as const;
 const checklistIcons = [Clock3, MapPinned, Route, Languages] as const;
 
@@ -126,6 +136,12 @@ function createStructuredData(
           {
             "@type": "ListItem",
             position: 2,
+            name: guideHubLabels[locale],
+            item: `https://homegroundchina.com${guideHubPath(locale)}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: copy.breadcrumbCurrent,
             item: guide.canonicalUrl,
           },
@@ -206,6 +222,11 @@ export function NightShowGuidePage({
               <nav className={styles.breadcrumb} aria-label={copy.breadcrumbLabel}>
                 <ol>
                   <li><Link href={copy.homePath}>{copy.breadcrumbHome}</Link></li>
+                  <li>
+                    <Link href={guideHubPath(locale)}>
+                      {guideHubLabels[locale]}
+                    </Link>
+                  </li>
                   <li aria-current="page">{copy.breadcrumbCurrent}</li>
                 </ol>
               </nav>
@@ -572,7 +593,7 @@ export function NightShowGuidePage({
         </article>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guide" guideId={guideId} />
+      <HomegroundFooter locale={locale} pageContext="guide" />
 
       <script
         type="application/ld+json"

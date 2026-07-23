@@ -13,7 +13,30 @@ export const guideIds = [
 
 export type GuideId = (typeof guideIds)[number];
 
-interface GuideLocaleEntry {
+export type GuideFormat =
+  | "itinerary"
+  | "route-analysis"
+  | "transport"
+  | "decision-guide"
+  | "field-note"
+  | "planning-guide";
+
+export type GuideTopic =
+  | "itinerary-design"
+  | "pace"
+  | "transport"
+  | "attractions"
+  | "evenings"
+  | "trip-planning"
+  | "on-the-ground";
+
+export type GuideDestination =
+  | "china"
+  | "beijing"
+  | "zhangjiajie"
+  | "shanghai";
+
+export interface GuideLocaleEntry {
   path: string;
   title: string;
   headline: string;
@@ -24,12 +47,19 @@ interface GuideLocaleEntry {
   openGraphLocale: string;
 }
 
-interface GuideEntry {
+export interface GuideEntry {
   id: GuideId;
+  /** Kept for compatibility with existing article and homepage consumers. */
   type: "route" | "planning" | "field-note";
   featured: boolean;
+  format: GuideFormat;
+  topics: readonly GuideTopic[];
+  destinations: readonly GuideDestination[];
+  homeFeaturedRank?: number;
   heroImagePath: string;
   heroImageUrl: string;
+  imageWidth: number;
+  imageHeight: number;
   datePublished: string;
   dateModified: string;
   sourceReviewedDate: string;
@@ -41,9 +71,15 @@ export const guideRegistry = [
     id: "zhangjiajie-itinerary",
     type: "route",
     featured: true,
+    format: "itinerary",
+    topics: ["itinerary-design", "pace", "trip-planning"],
+    destinations: ["zhangjiajie"],
+    homeFeaturedRank: 2,
     heroImagePath: "/images/guides/zhangjiajie/hero-1600.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/zhangjiajie/hero-1600.jpg",
+    imageWidth: 1600,
+    imageHeight: 954,
     datePublished: "2026-07-20",
     dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-21",
@@ -79,7 +115,7 @@ export const guideRegistry = [
           "장자제 2~4일의 공원 순서, 온전한 관광일과 숙박일 계산, 제외할 곳과 펑황고성을 다음 목적지로 넣는 조건을 현실적으로 정리했습니다.",
         heroAlt: "안개 사이로 솟아오른 장자제 국가삼림공원의 사암 봉우리.",
         navTitle: "장자제 일정 가이드",
-        featuredLinkLabel: "장자제 2–4일에 실제로 가능한 일정 보기",
+        featuredLinkLabel: "장자제에서 2~4일 동안 가능한 일정 보기",
         openGraphLocale: "ko_KR",
       },
     },
@@ -87,11 +123,17 @@ export const guideRegistry = [
   {
     id: "zhangjiajie-glass-bridge-vs-skywalk",
     type: "field-note",
-    featured: false,
+    featured: true,
+    format: "field-note",
+    topics: ["attractions", "trip-planning", "on-the-ground"],
+    destinations: ["zhangjiajie"],
+    homeFeaturedRank: 3,
     heroImagePath:
       "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
     datePublished: "2026-07-23",
     dateModified: "2026-07-23",
     sourceReviewedDate: "2026-07-22",
@@ -139,10 +181,15 @@ export const guideRegistry = [
     id: "best-zhangjiajie-night-show",
     type: "planning",
     featured: false,
+    format: "decision-guide",
+    topics: ["evenings", "trip-planning", "attractions"],
+    destinations: ["zhangjiajie"],
     heroImagePath:
       "/images/guides/best-zhangjiajie-night-show/night-show-decision-1536.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/best-zhangjiajie-night-show/night-show-decision-1536.jpg",
+    imageWidth: 1536,
+    imageHeight: 1024,
     datePublished: "2026-07-22",
     dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-22",
@@ -187,10 +234,15 @@ export const guideRegistry = [
     id: "beijing-zhangjiajie-shanghai-10-days",
     type: "planning",
     featured: false,
+    format: "route-analysis",
+    topics: ["itinerary-design", "pace", "trip-planning"],
+    destinations: ["beijing", "zhangjiajie", "shanghai"],
     heroImagePath:
       "/images/guides/beijing-zhangjiajie-shanghai-10-days/zhangjiajie-base-1800.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/beijing-zhangjiajie-shanghai-10-days/zhangjiajie-base-1800.jpg",
+    imageWidth: 1800,
+    imageHeight: 1200,
     datePublished: "2026-07-21",
     dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-21",
@@ -236,10 +288,15 @@ export const guideRegistry = [
     id: "beijing-zhangjiajie-shanghai-transport",
     type: "planning",
     featured: false,
+    format: "transport",
+    topics: ["transport", "trip-planning"],
+    destinations: ["beijing", "zhangjiajie", "shanghai"],
     heroImagePath:
       "/images/guides/beijing-zhangjiajie-shanghai-transport/zhangjiajie-west-1600.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/beijing-zhangjiajie-shanghai-transport/zhangjiajie-west-1600.jpg",
+    imageWidth: 1600,
+    imageHeight: 692,
     datePublished: "2026-07-22",
     dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-22",
@@ -273,7 +330,7 @@ export const guideRegistry = [
         title: "베이징–장자제–상하이: 기차와 비행기 중 무엇이 나을까?",
         headline: "베이징 → 장자제 → 상하이: 이동일에 실제로 드는 시간",
         description:
-          "비행시간만 보면 항공편이 빠르지만 공항 이동과 늦은 도착까지 계산하면 답이 달라집니다. 베이징–장자제–상하이 구간의 실제 문전 이동시간을 비교합니다.",
+          "비행시간만 보면 항공편이 빠르지만 공항 이동과 늦은 도착까지 계산하면 답이 달라집니다. 베이징–장자제–상하이 구간의 출발지부터 목적지까지 실제 총이동 시간을 비교합니다.",
         heroAlt: "장자제서역과 역 앞 광장의 넓은 전경.",
         navTitle: "베이징–장자제–상하이 교통 가이드",
         featuredLinkLabel: "기차와 항공편의 실제 시간 비교",
@@ -284,11 +341,17 @@ export const guideRegistry = [
   {
     id: "is-your-china-itinerary-too-rushed",
     type: "planning",
-    featured: false,
+    featured: true,
+    format: "planning-guide",
+    topics: ["pace", "itinerary-design", "trip-planning"],
+    destinations: ["china"],
+    homeFeaturedRank: 1,
     heroImagePath:
       "/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
+    imageWidth: 1200,
+    imageHeight: 800,
     datePublished: "2026-07-22",
     dateModified: "2026-07-22",
     sourceReviewedDate: "2026-07-22",
@@ -355,10 +418,31 @@ export function getFeaturedGuides(
   locale: HomegroundLocale = "en",
   limit = 3,
 ) {
+  return getHomeFeaturedGuides(locale).slice(0, Math.max(0, limit));
+}
+
+export function getHomeFeaturedGuides(
+  locale: HomegroundLocale = "en",
+) {
   return guideRegistry
-    .filter((entry) => entry.featured)
-    .slice(0, Math.max(0, limit))
+    .filter((entry) => "homeFeaturedRank" in entry)
+    .sort((a, b) => a.homeFeaturedRank - b.homeFeaturedRank)
     .map((entry) => getGuideEntry(entry.id, locale));
+}
+
+export function getAllGuides(locale: HomegroundLocale = "en") {
+  return guideRegistry
+    .map((entry, registryIndex) => ({
+      entry,
+      registryIndex,
+    }))
+    .sort(
+      (a, b) =>
+        b.entry.dateModified.localeCompare(a.entry.dateModified) ||
+        b.entry.datePublished.localeCompare(a.entry.datePublished) ||
+        a.registryIndex - b.registryIndex,
+    )
+    .map(({ entry }) => getGuideEntry(entry.id, locale));
 }
 
 export function getGuideLanguagePaths(id: GuideId) {

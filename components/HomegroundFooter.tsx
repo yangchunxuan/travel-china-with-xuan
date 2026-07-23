@@ -6,30 +6,44 @@ import {
 } from "../lib/homegroundI18n";
 import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import {
-  getGuideEntry,
-  type GuideId,
-} from "../lib/guideRegistry";
-import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
+import type { HomegroundPageContext } from "./HomegroundHeader";
 import styles from "./HomegroundHomePage.module.css";
+
+const footerSections: Record<
+  HomegroundLocale,
+  { guides: string; services: string }
+> = {
+  en: {
+    guides: "Travel guides",
+    services: "Trip planning services",
+  },
+  zh: {
+    guides: "旅行指南",
+    services: "旅行规划服务",
+  },
+  ko: {
+    guides: "여행 가이드",
+    services: "여행 설계 서비스",
+  },
+};
 
 export function HomegroundFooter({
   locale = "en",
   pageContext = "home",
-  guideId = "zhangjiajie-itinerary",
 }: {
   locale?: HomegroundLocale;
-  pageContext?: "home" | "guide" | "studio" | "services" | "content";
-  guideId?: GuideId;
+  pageContext?: HomegroundPageContext;
 }) {
   const copy = getHomegroundCopy(locale);
-  const guide = getGuideEntry(guideId, locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesPath = planningServicesCopy.path;
+  const guideHubPath = `${copy.path}guides/`;
+  const sectionLabels = footerSections[locale];
   const studioPath = `${copy.path}studio/`;
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
@@ -50,21 +64,18 @@ export function HomegroundFooter({
           <span>{copy.footer.studioLabel}</span>
         </div>
         <nav aria-label={copy.navigation.footerLabel}>
-          <a
-            href={sectionHref("#planning-proof")}
-            onClick={(event) =>
-              handleSectionClick(event, "#planning-proof")
-            }
-          >
-            {copy.navigation.planning}
-          </a>
+          {pageContext === "guides" ? (
+            <span aria-current="page">{sectionLabels.guides}</span>
+          ) : (
+            <a href={guideHubPath}>{sectionLabels.guides}</a>
+          )}
           {pageContext === "services" ? (
             <span aria-current="page">
-              {planningServicesCopy.navigationLabel}
+              {sectionLabels.services}
             </span>
           ) : (
             <a href={planningServicesPath}>
-              {planningServicesCopy.navigationLabel}
+              {sectionLabels.services}
             </a>
           )}
           {pageContext === "studio" ? (
@@ -78,11 +89,6 @@ export function HomegroundFooter({
           >
             {copy.navigation.faq}
           </a>
-          {pageContext === "guide" ? (
-            <span aria-current="page">{guide.navTitle}</span>
-          ) : (
-            <a href={guide.canonicalPath}>{guide.navTitle}</a>
-          )}
           <a href={privacyPath}>{copy.footer.privacy}</a>
         </nav>
       </div>

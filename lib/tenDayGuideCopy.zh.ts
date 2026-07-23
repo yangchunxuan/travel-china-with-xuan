@@ -16,7 +16,7 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
   breadcrumb: {
     label: "面包屑导航",
     home: "首页",
-    current: "10 天路线检查",
+    current: "10 天路线指南",
   },
   hero: {
     eyebrow: "整体路线判断指南",

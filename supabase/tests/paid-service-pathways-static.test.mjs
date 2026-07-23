@@ -88,9 +88,12 @@ test("global navigation exposes localized Planning Services and current-page sta
     source("components/ChinaItineraryReviewPage.tsx"),
   ]);
 
-  assert.match(header, /pageContext\?:[^;]*"services"/);
+  assert.match(header, /export type HomegroundPageContext =[\s\S]*\| "services"/);
+  assert.match(header, /pageContext\?: HomegroundPageContext/);
   assert.match(header, /getChinaItineraryReviewCopy\(locale\)/);
-  assert.match(header, /planningServicesCopy\.navigationLabel/);
+  assert.match(header, /services: "Trip planning services"/);
+  assert.match(header, /services: "旅行规划服务"/);
+  assert.match(header, /services: "여행 설계 서비스"/);
   assert.match(header, /getChinaItineraryReviewCopy\(targetLocale\)\.path/);
   assert.match(header, /pageContext\s*===\s*"services"\s*\?\s*"page"/);
   assert.match(header, /allowedServiceHashes/);
@@ -99,7 +102,9 @@ test("global navigation exposes localized Planning Services and current-page sta
   assert.match(header, /"#full-trip-support"/);
 
   assert.match(footer, /getChinaItineraryReviewCopy\(locale\)/);
-  assert.match(footer, /planningServicesCopy\.navigationLabel/);
+  assert.match(footer, /services: "Trip planning services"/);
+  assert.match(footer, /services: "旅行规划服务"/);
+  assert.match(footer, /services: "여행 설계 서비스"/);
   assert.match(footer, /pageContext === "services"/);
   assert.match(footer, /aria-current="page"/);
   assert.equal(servicePage.match(/pageContext="services"/g)?.length, 2);

@@ -11,6 +11,16 @@ import styles from "./TantanZhangjiajieStoryPage.module.css";
 const guideId = "zhangjiajie-glass-bridge-vs-skywalk" as const;
 const assetPath = "/images/guides/tantan-zhangjiajie";
 
+const guideHubLabels: Record<HomegroundLocale, string> = {
+  en: "Travel guides",
+  zh: "旅行指南",
+  ko: "여행 가이드",
+};
+
+function guideHubPath(locale: HomegroundLocale) {
+  return locale === "en" ? "/guides/" : `/${locale}/guides/`;
+}
+
 function createStructuredData(locale: HomegroundLocale) {
   const copy = getTantanZhangjiajieStoryCopy(locale);
   const guide = getGuideEntry(guideId, locale);
@@ -71,8 +81,8 @@ function createStructuredData(locale: HomegroundLocale) {
           {
             "@type": "ListItem",
             position: 2,
-            name: copy.breadcrumbStudio,
-            item: studioPageUrl,
+            name: guideHubLabels[locale],
+            item: `https://homegroundchina.com${guideHubPath(locale)}`,
           },
           {
             "@type": "ListItem",
@@ -145,7 +155,11 @@ export function TantanZhangjiajieStoryPage({
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumbLabel}>
               <ol>
                 <li><Link href={copy.homePath}>{copy.breadcrumbHome}</Link></li>
-                <li><Link href={studioHref}>{copy.breadcrumbStudio}</Link></li>
+                <li>
+                  <Link href={guideHubPath(locale)}>
+                    {guideHubLabels[locale]}
+                  </Link>
+                </li>
                 <li aria-current="page">{copy.breadcrumbCurrent}</li>
               </ol>
             </nav>
@@ -322,7 +336,7 @@ export function TantanZhangjiajieStoryPage({
         </article>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guide" guideId={guideId} />
+      <HomegroundFooter locale={locale} pageContext="guide" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -21,6 +21,16 @@ const siteUrl = "https://homegroundchina.com";
 const socialImageUrl =
   "https://homegroundchina.com/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp";
 
+const guideHubLabels: Record<HomegroundLocale, string> = {
+  en: "Travel guides",
+  zh: "旅行指南",
+  ko: "여행 가이드",
+};
+
+function guideHubPath(locale: HomegroundLocale) {
+  return locale === "en" ? "/guides/" : `/${locale}/guides/`;
+}
+
 function TransferScene({
   name,
   sizes,
@@ -94,6 +104,12 @@ function createStructuredData(locale: HomegroundLocale) {
           {
             "@type": "ListItem",
             position: 2,
+            name: guideHubLabels[locale],
+            item: `${siteUrl}${guideHubPath(locale)}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: copy.metadata.headline,
             item: pageUrl,
           },
@@ -136,6 +152,11 @@ export function ChinaItineraryTooRushedPage({
                 <ol>
                   <li>
                     <Link href={copy.homePath}>{copy.breadcrumbHome}</Link>
+                  </li>
+                  <li>
+                    <Link href={guideHubPath(locale)}>
+                      {guideHubLabels[locale]}
+                    </Link>
                   </li>
                   <li aria-current="page">{copy.breadcrumbCurrent}</li>
                 </ol>
@@ -463,7 +484,6 @@ export function ChinaItineraryTooRushedPage({
       <HomegroundFooter
         locale={locale}
         pageContext="guide"
-        guideId={itineraryRushGuideId}
       />
       <script
         type="application/ld+json"

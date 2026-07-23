@@ -26,6 +26,12 @@ const studioLanguages = {
   "zh-Hans": `${base}/zh/studio/`,
   "x-default": `${base}/studio/`,
 };
+const guideHubLanguages = {
+  en: `${base}/guides/`,
+  ko: `${base}/ko/guides/`,
+  "zh-Hans": `${base}/zh/guides/`,
+  "x-default": `${base}/guides/`,
+};
 const itineraryReviewLanguages = {
   en: `${base}/china-itinerary-review/`,
   ko: `${base}/ko/china-itinerary-review/`,
@@ -91,6 +97,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.65,
       alternates: { languages: studioLanguages },
+    },
+    {
+      url: `${base}/guides/`,
+      lastModified: "2026-07-23",
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: { languages: guideHubLanguages },
+    },
+    {
+      url: `${base}/zh/guides/`,
+      lastModified: "2026-07-23",
+      changeFrequency: "weekly",
+      priority: 0.75,
+      alternates: { languages: guideHubLanguages },
+    },
+    {
+      url: `${base}/ko/guides/`,
+      lastModified: "2026-07-23",
+      changeFrequency: "weekly",
+      priority: 0.75,
+      alternates: { languages: guideHubLanguages },
     },
     {
       url: `${base}/china-itinerary-review/`,

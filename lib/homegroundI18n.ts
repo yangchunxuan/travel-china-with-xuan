@@ -85,12 +85,13 @@ export interface HomegroundCopy {
   guides: {
     eyebrow: string;
     title: string;
-    cityStayLabel: string;
-    wholeRouteLabel: string;
-    eveningChoiceLabel: string;
-    cityStayDuration: string;
-    wholeRouteDuration: string;
-    eveningChoiceDuration: string;
+    viewAllLabel: string;
+    updatedLabel: string;
+    typeLabels: {
+      route: string;
+      planning: string;
+      fieldNote: string;
+    };
   };
   studio: {
     eyebrow: string;
@@ -421,14 +422,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "Planning guides",
-      title: "Read the route question before you commit to it.",
-      cityStayLabel: "City stay guide",
-      wholeRouteLabel: "Whole-route guide",
-      eveningChoiceLabel: "Evening decision guide",
-      cityStayDuration: "2–4 days",
-      wholeRouteDuration: "10 days · 3 cities",
-      eveningChoiceDuration: "3 shows · 1 evening",
+      eyebrow: "China travel guides",
+      title: "Read the questions that make a China trip work.",
+      viewAllLabel: "View all guides",
+      updatedLabel: "Updated",
+      typeLabels: {
+        route: "Itinerary",
+        planning: "Planning guide",
+        fieldNote: "Field note",
+      },
     },
     studio: {
       eyebrow: "The studio",
@@ -926,14 +928,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "路线规划指南",
-      title: "先看清路线问题，再决定怎么走。",
-      cityStayLabel: "城市停留指南",
-      wholeRouteLabel: "整条路线指南",
-      eveningChoiceLabel: "夜间安排决策指南",
-      cityStayDuration: "2–4 天",
-      wholeRouteDuration: "10 天 · 3 座城市",
-      eveningChoiceDuration: "3 场演出 · 1 个晚上",
+      eyebrow: "中国旅行指南",
+      title: "从路线、交通到现场细节，先看清真正影响旅行的问题。",
+      viewAllLabel: "查看全部指南",
+      updatedLabel: "更新于",
+      typeLabels: {
+        route: "行程参考",
+        planning: "规划指南",
+        fieldNote: "现场笔记",
+      },
     },
     studio: {
       eyebrow: "工作室",
@@ -1404,14 +1407,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "여행 설계 가이드",
-      title: "결정하기 전에, 먼저 동선의 질문을 확인하세요.",
-      cityStayLabel: "도시 체류 가이드",
-      wholeRouteLabel: "전체 동선 가이드",
-      eveningChoiceLabel: "저녁 일정 선택 가이드",
-      cityStayDuration: "2–4일",
-      wholeRouteDuration: "10일 · 3개 도시",
-      eveningChoiceDuration: "공연 3개 · 저녁 1회",
+      eyebrow: "중국 여행 가이드",
+      title: "동선과 교통, 현장 정보까지—여행을 바꾸는 질문을 먼저 확인하세요.",
+      viewAllLabel: "전체 가이드 보기",
+      updatedLabel: "최근 업데이트",
+      typeLabels: {
+        route: "추천 일정",
+        planning: "여행 계획 가이드",
+        fieldNote: "현장 노트",
+      },
     },
     studio: {
       eyebrow: "스튜디오",

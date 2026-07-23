@@ -142,8 +142,10 @@ test("localized navigation switches between matching service pages", async () =>
 
   assert.match(header, /getChinaItineraryReviewCopy\(locale\)/);
   assert.match(header, /pageContext === "services"[\s\S]*getChinaItineraryReviewCopy\(targetLocale\)\.path[\s\S]*languageHash/);
-  assert.match(header, /planningServicesCopy\.navigationLabel/);
-  assert.match(footer, /planningServicesCopy\.navigationLabel/);
+  assert.match(header, /services: "Trip planning services"/);
+  assert.match(header, /services: "旅行规划服务"/);
+  assert.match(header, /services: "여행 설계 서비스"/);
+  assert.match(footer, /services: "Trip planning services"/);
   assert.match(footer, /pageContext === "services"/);
   assert.match(footer, /aria-current="page"/);
 });
