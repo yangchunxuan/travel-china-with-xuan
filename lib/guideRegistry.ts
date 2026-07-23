@@ -190,10 +190,15 @@ export const guideRegistry = [
     id: "kevin-before-the-hotel-pickup",
     type: "field-note",
     featured: false,
+    format: "field-note",
+    topics: ["trip-planning", "on-the-ground"],
+    destinations: ["china", "zhangjiajie"],
     heroImagePath:
       "/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
     datePublished: "2026-07-23",
     dateModified: "2026-07-23",
     sourceReviewedDate: "2026-07-23",

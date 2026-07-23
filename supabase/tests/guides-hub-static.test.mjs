@@ -6,11 +6,11 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("guides hub is registry-driven and exposes all six current guides", async () => {
+test("guides hub is registry-driven and exposes all seven current guides", async () => {
   const hub = await source("components/GuidesHubPage.tsx");
   const registry = await source("lib/guideRegistry.ts");
 
-  assert.equal((registry.match(/\n    id: "/g) ?? []).length, 6);
+  assert.equal((registry.match(/\n    id: "/g) ?? []).length, 7);
   assert.match(hub, /const guides = getAllGuides\(locale\)/);
   assert.match(hub, /guides\.map\(\(guide, index\) =>/);
   assert.doesNotMatch(

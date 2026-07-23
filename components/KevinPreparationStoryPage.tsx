@@ -554,7 +554,7 @@ export function KevinPreparationStoryPage({
         </article>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guide" guideId={guideId} />
+      <HomegroundFooter locale={locale} pageContext="guide" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

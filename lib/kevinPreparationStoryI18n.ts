@@ -148,7 +148,7 @@ const copies: Record<HomegroundLocale, KevinPreparationStoryCopy> = {
     },
     beforePickup: {
       eyebrow: "Before pickup",
-      title: "The day starts after four questions are closed",
+      title: "The day starts once four questions are settled",
       paragraphs: [
         "Before departure, Kevin checks four parts of the day against one another:",
         "None of these details is difficult on its own. The problem appears when one detail no longer fits the others. A reservation may still be valid but clash with the transfer time. A pickup point may be correct for one entrance but inconvenient for the route being used that day.",
