@@ -4,6 +4,7 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import {
   getGuideEntry,
   type GuideId,
@@ -20,13 +21,16 @@ export function HomegroundFooter({
   guideId = "zhangjiajie-itinerary",
 }: {
   locale?: HomegroundLocale;
-  pageContext?: "home" | "guide";
+  pageContext?: "home" | "guide" | "studio" | "services" | "content";
   guideId?: GuideId;
 }) {
   const copy = getHomegroundCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
+  const planningServicesCopy = getChinaItineraryReviewCopy(locale);
+  const planningServicesPath = planningServicesCopy.path;
+  const studioPath = `${copy.path}studio/`;
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
   const handleSectionClick = (
@@ -54,14 +58,20 @@ export function HomegroundFooter({
           >
             {copy.navigation.planning}
           </a>
-          <a
-            href={sectionHref("#studio")}
-            onClick={(event) =>
-              handleSectionClick(event, "#studio")
-            }
-          >
-            {copy.navigation.studio}
-          </a>
+          {pageContext === "services" ? (
+            <span aria-current="page">
+              {planningServicesCopy.navigationLabel}
+            </span>
+          ) : (
+            <a href={planningServicesPath}>
+              {planningServicesCopy.navigationLabel}
+            </a>
+          )}
+          {pageContext === "studio" ? (
+            <span aria-current="page">{copy.navigation.studio}</span>
+          ) : (
+            <a href={studioPath}>{copy.navigation.studio}</a>
+          )}
           <a
             href={sectionHref("#faq")}
             onClick={(event) => handleSectionClick(event, "#faq")}

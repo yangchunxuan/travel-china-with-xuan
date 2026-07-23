@@ -12,6 +12,7 @@ const homegroundPagePath = "components/HomegroundHomePage.tsx";
 const homegroundPageStylesPath =
   "components/HomegroundHomePage.module.css";
 const homegroundNavigationPath = "lib/homegroundNavigation.ts";
+const routeServiceInterestPath = "lib/routeServiceInterest.ts";
 
 async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -21,7 +22,10 @@ test("route questions own one localized accessible validation message", async ()
   const routeFinder = await source(routeFinderPath);
   const destinationCopy = await source(destinationCopyPath);
 
-  assert.match(routeFinder, /<form noValidate onSubmit=\{handleSubmit\}>/);
+  assert.match(
+    routeFinder,
+    /<form[\s\S]{0,240}noValidate\s+onSubmit=\{handleSubmit\}/,
+  );
   assert.match(routeFinder, /const validateCurrentQuestion = \(\): string/);
   assert.match(routeFinder, /setQuestionError\(error\)/);
   assert.match(routeFinder, /headingRef\.current\?\.focus\(\)/);
@@ -29,7 +33,7 @@ test("route questions own one localized accessible validation message", async ()
     routeFinder,
     /questionError \? ` \$\{questionErrorId\}` : ""/,
   );
-  assert.match(routeFinder, /id=\{questionErrorId\} role="alert"/);
+  assert.match(routeFinder, /id=\{questionErrorId\}\s+role="alert"/);
   assert.equal(routeFinder.match(/role="alert"/g)?.length, 1);
 
   assert.match(destinationCopy, /Choose at least one place/);
@@ -38,6 +42,38 @@ test("route questions own one localized accessible validation message", async ()
   assert.match(destinationCopy, /Choose or enter a whole number/);
   assert.match(destinationCopy, /请选择或输入1至60/);
   assert.match(destinationCopy, /1박부터 60박 사이/);
+});
+
+test("planner step changes preserve the current viewport", async () => {
+  const routeFinder = await source(routeFinderPath);
+  const homegroundPage = await source(homegroundPagePath);
+
+  assert.doesNotMatch(routeFinder, /target\.scrollIntoView/);
+  assert.match(
+    routeFinder,
+    /pendingScrollPositionRef\.current = \{\s*left: window\.scrollX,\s*top: window\.scrollY,/,
+  );
+  assert.match(
+    routeFinder,
+    /window\.scrollTo\(\s*pendingScrollPosition\.left,\s*pendingScrollPosition\.top,/,
+  );
+  assert.match(
+    routeFinder,
+    /pendingHistoryFocusRef\.current = true/,
+  );
+  assert.match(
+    routeFinder,
+    /pendingStartRevealRef\.current[\s\S]{0,180}scrollIntoView\(\{ block: "start" \}\)/,
+  );
+
+  const hashEffectStart = homegroundPage.indexOf("const allowedHashes");
+  const hashEffectEnd = homegroundPage.indexOf(
+    "\n\n  return (\n    <div",
+    hashEffectStart,
+  );
+  const hashEffect = homegroundPage.slice(hashEffectStart, hashEffectEnd);
+  assert.match(hashEffect, /\}, \[locale, planningIntent\]\);/);
+  assert.doesNotMatch(hashEffect, /\[locale, plannerStatus\]/);
 });
 
 test("must-see priorities cannot change while a handoff is locked", async () => {
@@ -66,6 +102,45 @@ test("restart collapses one planner flow instead of adding duplicate back steps"
     routeFinder,
     /pendingHistoryResetFlowIdRef\.current = nextFlowId/,
   );
+  const historyReturnStart = routeFinder.indexOf(
+    "const returnPlannerHistoryToStart",
+  );
+  const historyReturnEnd = routeFinder.indexOf(
+    "const validateCurrentQuestion",
+    historyReturnStart,
+  );
+  const historyReturn = routeFinder.slice(
+    historyReturnStart,
+    historyReturnEnd,
+  );
+  assert.match(
+    historyReturn,
+    /addEventListener\(\s*"popstate",[\s\S]{0,420}\{ once: true \}/,
+  );
+  assert.match(
+    historyReturn,
+    /sessionStorage\.setItem\(startFocusStorageKey, "true"\)/,
+  );
+  assert.match(
+    routeFinder,
+    /focusStartOnMountRef\.current =\s*window\.sessionStorage\.getItem\(startFocusStorageKey\) === "true"/,
+  );
+  assert.match(
+    routeFinder,
+    /if \(!focusStartOnMountRef\.current\) return;/,
+  );
+  assert.match(
+    routeFinder,
+    /headingRef\.current\?\.focus\(\{ preventScroll: true \}\);\s*focusStartOnMountRef\.current = false;\s*window\.sessionStorage\.removeItem\(startFocusStorageKey\)/,
+  );
+  assert.match(
+    routeFinder,
+    /setHistoryFocusRequest\(\(request\) => request \+ 1\)/,
+  );
+  assert.match(
+    routeFinder,
+    /\[historyFocusRequest, sessionReady, stepIndex, view\]/,
+  );
   const restartStart = routeFinder.indexOf("const handleRestart");
   const restartEnd = routeFinder.indexOf(
     "const toggleDestination",
@@ -74,6 +149,38 @@ test("restart collapses one planner flow instead of adding duplicate back steps"
   const restartHandler = routeFinder.slice(restartStart, restartEnd);
   assert.match(restartHandler, /returnPlannerHistoryToStart\(\)/);
   assert.doesNotMatch(restartHandler, /history\.pushState/);
+});
+
+test("article route deep links seed their cities once, then release the URL", async () => {
+  const routeFinder = await source(routeFinderPath);
+
+  assert.match(routeFinder, /const destinationsQueryKey = "destinations"/);
+  assert.match(
+    routeFinder,
+    /destinationIds\.filter\(\(id\) => values\.includes\(id\)\)/,
+  );
+  assert.match(
+    routeFinder,
+    /url\.searchParams\.delete\(destinationsQueryKey\)[\s\S]*window\.history\.replaceState/,
+  );
+  assert.doesNotMatch(
+    routeFinder,
+    /if \(arrivedWithDestinationQuery\) clearDestinationsQuery\(\)/,
+  );
+  assert.match(
+    routeFinder,
+    /if \(!planningIntent \|\| !sessionReady \|\| !hasDestinationsQuery\(\)\) return;\s*clearDestinationsQuery\(\)/,
+  );
+  assert.match(routeFinder, /\}, \[planningIntent, sessionReady\]\);/);
+  assert.match(
+    routeFinder,
+    /function readStoredPlannerSession\(\)[\s\S]*JSON\.parse\(raw\)[\s\S]*catch[\s\S]*return null/,
+  );
+  assert.match(routeFinder, /const parsed = readStoredPlannerSession\(\)/);
+  assert.match(
+    routeFinder,
+    /const requestedStep = arrivedWithDestinationQuery\s*\? 0/,
+  );
 });
 
 test("planner CTAs preserve the result while moving to the human handoff", async () => {
@@ -115,7 +222,6 @@ test("all production same-page links preserve planner history depth", async () =
     "#main-content",
     "#route-finder",
     "#planning-proof",
-    "#studio",
     "#faq",
   ]) {
     const escaped = target.replace("-", "\\-");
@@ -136,6 +242,9 @@ test("all production same-page links preserve planner history depth", async () =
       `every ${target} link should preserve the planner history entry`,
     );
   }
+
+  assert.match(header, /const studioHref = `\$\{copy\.path\}studio\/`/);
+  assert.doesNotMatch(header, /href="#studio"/);
 });
 
 test("same-page navigation moves keyboard focus to its content target", async () => {
@@ -217,6 +326,7 @@ test("success keeps the full public reference as secondary three-language copy",
 
 test("email and WhatsApp use one accessible in-site enquiry submit", async () => {
   const plannerHandoff = await source(plannerHandoffPath);
+  const routeServiceInterest = await source(routeServiceInterestPath);
 
   assert.match(
     plannerHandoff,
@@ -263,7 +373,21 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
     plannerHandoff,
     /roughBudgetPerPerson:\s*roughBudgetPerPerson\.trim\(\) \|\| null/,
   );
-  assert.match(plannerHandoff, /note: null/);
+  assert.match(plannerHandoff, /note: inquiryNote/);
+  assert.match(plannerHandoff, /name="tripContext"/);
+  assert.match(plannerHandoff, /<label htmlFor=\{tripContextId\}>/);
+  assert.match(
+    plannerHandoff,
+    /maxLength=\{maximumTripContextLength\}/,
+  );
+  assert.match(
+    plannerHandoff,
+    /aria-invalid=\{Boolean\(errors\.tripContext\)\}/,
+  );
+  assert.match(
+    plannerHandoff,
+    /aria-describedby=\{`\$\{tripContextHintId\}\$\{[\s\S]*tripContextErrorId/,
+  );
   assert.match(plannerHandoff, /type="submit"/);
 
   const dirtyStart = plannerHandoff.indexOf("const formIsDirty");
@@ -276,6 +400,15 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(dirtyState, /phone\.trim\(\)/);
   assert.match(dirtyState, /departureCountry\.trim\(\)/);
   assert.match(dirtyState, /roughBudgetPerPerson\.trim\(\)/);
+  assert.match(dirtyState, /tripContext\.trim\(\)/);
+
+  const noteStart = plannerHandoff.indexOf("const inquiryNote");
+  const noteEnd = plannerHandoff.indexOf("const briefLines", noteStart);
+  const noteBuilder = plannerHandoff.slice(noteStart, noteEnd);
+  assert.match(noteBuilder, /serviceInterest\.note/);
+  assert.match(noteBuilder, /serviceInterest\.contextNoteLabel/);
+  assert.match(routeServiceInterest, /contextNoteLabel: "Traveller context"/);
+  assert.doesNotMatch(noteBuilder, /URLSearchParams|utm_source|utm_medium|utm_campaign/);
 
   const briefStart = plannerHandoff.indexOf("const briefLines");
   const briefEnd = plannerHandoff.indexOf("const briefText", briefStart);
@@ -287,6 +420,54 @@ test("email and WhatsApp use one accessible in-site enquiry submit", async () =>
   assert.match(briefBuilder, /timing\.status/);
   assert.match(briefBuilder, /mustSeeNames/);
   assert.match(briefBuilder, /result\.boundary/);
+  assert.match(briefBuilder, /inquiryNote/);
+});
+
+test("optional service context has accessible multiline validation and server errors", async () => {
+  const routeFinder = await source(routeFinderPath);
+  const plannerHandoff = await source(plannerHandoffPath);
+  const plannerStyles = await source(plannerHandoffStylesPath);
+  const routeServiceInterest = await source(routeServiceInterestPath);
+
+  assert.match(routeFinder, /serviceInterest\?: RouteServiceInterest \| null/);
+  assert.match(routeFinder, /serviceInterest = null/);
+  assert.match(routeFinder, /planningIntent\?: HomepagePlanningIntentId \| null/);
+  assert.match(routeFinder, /<HomepageSelectedIntent/);
+  assert.match(
+    routeFinder,
+    /planningCopy\.paidBriefs\[serviceInterest\.id\]/,
+  );
+  assert.match(plannerHandoff, /serviceInterest\?: RouteServiceInterest \| null/);
+  assert.match(plannerHandoff, /serviceInterest = null/);
+  assert.match(plannerHandoff, /<aside[\s\S]*styles\.serviceIntent/);
+  assert.match(plannerHandoff, /const maximumTripContextLength = 1_800/);
+  assert.match(
+    plannerHandoff,
+    /function isValidTripContext\(value: string\): boolean/,
+  );
+  assert.match(
+    plannerHandoff,
+    /Array\.from\(value\.trim\(\)\)\.length <= maximumTripContextLength/,
+  );
+  assert.match(
+    plannerHandoff,
+    /!hasUnsupportedControlCharacters\(value\)/,
+  );
+  assert.match(
+    plannerHandoff,
+    /setBlurError\(\s*"tripContext",[\s\S]*isValidTripContext\(tripContext\)/,
+  );
+  assert.match(
+    plannerHandoff,
+    /fields\.note && serviceInterest[\s\S]*nextErrors\.tripContext/,
+  );
+  assert.match(plannerHandoff, /tripContext:\s*tripContextId/);
+  assert.match(plannerHandoff, /name="tripContext"\s+dir="auto"/);
+  assert.match(plannerHandoff, /serviceInterest\.tripContextHint/);
+  assert.match(routeServiceInterest, /Do not include passport or ID images/);
+  assert.doesNotMatch(plannerHandoff, /type="file"/);
+  assert.match(plannerStyles, /\.field input,\s*\.field textarea/);
+  assert.match(plannerStyles, /\.field textarea \{[\s\S]*resize: vertical/);
 });
 
 test("optional budget has accessible one-line validation and server errors", async () => {

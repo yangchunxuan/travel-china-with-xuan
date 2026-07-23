@@ -39,10 +39,11 @@ export interface HomegroundCopy {
     visa: string;
     openMenu: string;
     closeMenu: string;
-    plannerCta: {
-      new: string;
-      inProgress: string;
-      result: string;
+      plannerCta: {
+        new: string;
+        inProgress: string;
+        freeResult: string;
+        result: string;
       disabled: string;
       validationError: string;
       submitting: string;
@@ -82,10 +83,21 @@ export interface HomegroundCopy {
       detail: string;
     }[];
   };
+  guides: {
+    eyebrow: string;
+    title: string;
+    cityStayLabel: string;
+    wholeRouteLabel: string;
+    eveningChoiceLabel: string;
+    cityStayDuration: string;
+    wholeRouteDuration: string;
+    eveningChoiceDuration: string;
+  };
   studio: {
     eyebrow: string;
     title: string;
     intro: string;
+    cta: string;
     roles: readonly {
       title: string;
       detail: string;
@@ -102,9 +114,11 @@ export interface HomegroundCopy {
   };
   finalCta: {
     resultLabel: string;
+    freeResultLabel: string;
     inProgressLabel: string;
     newLabel: string;
     resultTitle: string;
+    freeResultTitle: string;
     inProgressTitle: string;
     newTitle: string;
   };
@@ -320,8 +334,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "Open navigation",
       closeMenu: "Close navigation",
       plannerCta: {
-        new: "Check my China wishlist",
+        new: "Start my trip brief",
         inProgress: "Continue my timing check",
+        freeResult: "View my free route check",
         result: "Send my trip brief to Homeground",
         disabled: "Contact Homeground",
         validationError: "Finish my request",
@@ -332,15 +347,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "Independent China trips, planned around real people",
-      title: "A China trip that actually fits you.",
+      eyebrow: "One short trip brief, four clear next steps",
+      title: "Tell us where your China trip stands.",
       lead:
-        "Choose every place you genuinely want, add your nights and preferred pace, then see where the time fits—or conflicts. Nothing is removed, and the same brief goes to a human planner if you contact us.",
-      trustLabel: "What to expect",
+        "Answer four shared questions about places, nights, travellers and pace. Use the free automated timing check, or send the same brief to Homeground for a paid route review, route build or full-trip planning.",
+      trustLabel: "Before you begin",
       trust: [
-        "No budget required to see your result",
-        "No contact details before your result",
-        "Every place you select stays on your wishlist",
+        "Every option starts with the same four questions",
+        "The free check needs no contact details",
+        "Paid requests begin with a human fit and scope review",
       ],
       imageAlt:
         "The Forbidden City Corner Tower in Beijing reflected in its moat",
@@ -407,26 +422,37 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         },
       ],
     },
+    guides: {
+      eyebrow: "Planning guides",
+      title: "Read the route question before you commit to it.",
+      cityStayLabel: "City stay guide",
+      wholeRouteLabel: "Whole-route guide",
+      eveningChoiceLabel: "Evening decision guide",
+      cityStayDuration: "2–4 days",
+      wholeRouteDuration: "10 days · 3 cities",
+      eveningChoiceDuration: "3 shows · 1 evening",
+    },
     studio: {
       eyebrow: "The studio",
-      title: "One planning thread, clear handoffs.",
+      title: "One lead planner sees the whole journey. One team makes every detail work.",
       intro:
-        "Homeground is a coordinated China trip-planning studio. One planning thread holds the route and written brief; suitable local services are checked only after the real travel details are clear.",
+        "From the first conversation, your lead planner listens to how you want to experience China, then brings the cities, transport and pace into one coherent journey. You have one person who knows the trip from beginning to end, backed by a team bringing first-hand experience into the same plan.",
+      cta: "Meet the Homeground studio",
       roles: [
         {
-          title: "One planner owns the brief",
+          title: "We start by listening",
           detail:
-            "Your priorities and open questions stay in one place instead of being restarted at every handoff.",
+            "Who you are travelling with, what matters most and how you want each day to feel become the starting point—not an afterthought.",
         },
         {
-          title: "Specialists join where useful",
+          title: "One person knows the whole journey",
           detail:
-            "Team members and local partners enter for the cities and services their knowledge actually covers.",
+            "From the first conversation to the finished plan, your lead planner keeps the cities, transport, pace and priorities connected.",
         },
         {
-          title: "Responsibility stays explicit",
+          title: "Real experience shapes the details",
           detail:
-            "Before confirmation, the written scope should show who plans, who delivers and what remains outside it.",
+            "The team brings relevant planning and on-the-ground experience into the same itinerary, so it works beyond the page.",
         },
       ],
     },
@@ -465,9 +491,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     finalCta: {
       resultLabel: "Your trip brief is ready for a human review",
+      freeResultLabel: "Your free route timing check is ready",
       inProgressLabel: "Your answers are saved as you go",
       newLabel: "Your first timing check is four answers away",
       resultTitle: "Ready to turn this wishlist into a workable China trip?",
+      freeResultTitle:
+        "Review the timing result, or choose how much human planning you want.",
       inProgressTitle: "Finish the remaining questions to check your time.",
       newTitle: "Start with what you actually want from China.",
     },
@@ -820,8 +849,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "打开导航",
       closeMenu: "关闭导航",
       plannerCta: {
-        new: "检查我的旅行愿望",
+        new: "开始填写旅行需求",
         inProgress: "继续时间检查",
+        freeResult: "查看免费路线检查",
         result: "提交旅行需求",
         disabled: "联系 Homeground",
         validationError: "完成咨询信息",
@@ -832,15 +862,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "为真实同行者规划独立中国旅行",
-      title: "真正适合你的中国之旅。",
+      eyebrow: "一份简短需求，四种清晰的下一步",
+      title: "先告诉我们，你的中国旅行准备到哪一步了。",
       lead:
-        "选出所有真正想去的地方，填写在中国的住宿晚数和理想节奏，先看时间是否合适或发生冲突。系统不会擅自删掉城市；你选择联系后，同一份需求会直接交给人工规划师。",
-      trustLabel: "你可以放心",
+        "回答四个共用问题：想去哪里、住几晚、和谁同行、希望什么节奏。你可以先用免费自动检查，也可以把同一份需求交给 Homeground，选择付费的路线审核、路线规划或全程定制服务。",
+      trustLabel: "开始前先说明",
       trust: [
-        "无需填写预算即可查看结果",
-        "看到结果前无需留下联系方式",
-        "你选择的每个地方都会保留",
+        "四个选择都从同一组基础问题开始",
+        "免费检查无需填写联系方式",
+        "付费需求会先由真人确认是否适合及服务范围",
       ],
       imageAlt: "北京故宫角楼倒映在护城河中",
       caption: "北京 · 故宫角楼",
@@ -898,26 +928,37 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         },
       ],
     },
+    guides: {
+      eyebrow: "路线规划指南",
+      title: "先看清路线问题，再决定怎么走。",
+      cityStayLabel: "城市停留指南",
+      wholeRouteLabel: "整条路线指南",
+      eveningChoiceLabel: "夜间安排决策指南",
+      cityStayDuration: "2–4 天",
+      wholeRouteDuration: "10 天 · 3 座城市",
+      eveningChoiceDuration: "3 场演出 · 1 个晚上",
+    },
     studio: {
       eyebrow: "工作室",
-      title: "一条清晰的规划主线，明确的交接。",
+      title: "一位主规划师了解你的全程，一支团队让每个细节落地。",
       intro:
-        "Homeground 是一个协作式中国旅行规划工作室。路线和书面需求由同一条规划主线统筹；条件明确后，再人工核对合适的当地服务。",
+        "从第一次沟通开始，主规划师会先听懂你想怎样看中国，再把城市、交通和停留节奏连成一段完整旅程。你始终只需要和一位了解全程的人沟通；在背后，团队会把各自在当地接待中积累的经验带进同一份方案。",
+      cta: "认识 Homeground 工作室团队",
       roles: [
         {
-          title: "由一位旅行规划师负责完整需求",
+          title: "先听懂你想怎样看中国",
           detail:
-            "你的重点与待确认问题始终集中在一处，不会每次交接都重新讲一遍。",
+            "和谁同行、最期待什么、每天想走多快，都会成为路线的起点，而不是最后补上的备注。",
         },
         {
-          title: "需要时再加入对应专家",
+          title: "一位主规划师了解全程",
           detail:
-            "团队成员和当地合作方只在其真正熟悉的城市与服务环节参与。",
+            "从第一次沟通到方案落定，始终有人掌握城市、交通、节奏和你的优先级。",
         },
         {
-          title: "责任边界保持清楚",
+          title: "一支团队让细节落地",
           detail:
-            "确认之前，书面范围会说明谁规划、谁执行，以及哪些事项不包含在内。",
+            "团队把相关的规划与当地接待经验带进同一份方案，让路线不只停留在页面上。",
         },
       ],
     },
@@ -955,9 +996,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     finalCta: {
       resultLabel: "你的旅行需求已准备好进入人工复核",
+      freeResultLabel: "你的免费路线时间检查已完成",
       inProgressLabel: "你的选择会随进度保留",
       newLabel: "回答四个问题，先做一次时间检查",
       resultTitle: "准备把这份愿望清单变成真正可执行的旅行吗？",
+      freeResultTitle: "先查看时间检查结果，再决定是否需要人工路线服务。",
       inProgressTitle: "完成剩余问题，查看时间是否匹配。",
       newTitle: "先从你真正想去的地方开始。",
     },
@@ -1282,8 +1325,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       plannerCta: {
-        new: "나의 여행 희망 목록 확인",
+        new: "여행 요청서 시작하기",
         inProgress: "시간 확인 계속하기",
+        freeResult: "무료 동선 점검 보기",
         result: "Homeground에 여행 요청 보내기",
         disabled: "Homeground에 문의하기",
         validationError: "문의 작성 마치기",
@@ -1294,15 +1338,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "실제 일행을 기준으로 설계하는 독립 중국 여행",
-      title: "나에게 정말 맞는 중국 여행.",
+      eyebrow: "하나의 짧은 여행 요청서, 네 가지 다음 단계",
+      title: "중국 여행 준비, 어디까지 하셨나요?",
       lead:
-        "정말 가고 싶은 곳을 모두 고르고 중국 체류 숙박일수와 원하는 속도를 입력하세요. 시간이 맞는지, 어디서 충돌하는지 먼저 보여 드립니다. 선택한 장소는 삭제하지 않으며 연락을 선택하면 같은 요청서가 사람 플래너에게 전달됩니다.",
-      trustLabel: "먼저 확인할 수 있는 것",
+        "가고 싶은 곳, 숙박일수, 여행 일행, 원하는 속도에 관한 네 가지 공통 질문에 답하세요. 무료 자동 일정 점검을 이용하거나 같은 요청서를 Homeground에 보내 유료 일정 검토, 동선 설계 또는 전체 여행 설계를 요청할 수 있습니다.",
+      trustLabel: "시작하기 전에",
       trust: [
-        "예산 입력 없이 결과 확인",
-        "결과를 보기 전에는 연락처가 필요 없습니다",
-        "선택한 모든 장소를 희망 목록에 남깁니다",
+        "네 가지 선택 모두 같은 기본 질문에서 시작합니다",
+        "무료 점검에는 연락처가 필요하지 않습니다",
+        "유료 요청은 사람이 적합성과 서비스 범위를 먼저 확인합니다",
       ],
       imageAlt: "해자에 비친 베이징 자금성 각루",
       caption: "베이징 · 자금성 각루",
@@ -1363,26 +1407,37 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         },
       ],
     },
+    guides: {
+      eyebrow: "여행 설계 가이드",
+      title: "결정하기 전에, 먼저 동선의 질문을 확인하세요.",
+      cityStayLabel: "도시 체류 가이드",
+      wholeRouteLabel: "전체 동선 가이드",
+      eveningChoiceLabel: "저녁 일정 선택 가이드",
+      cityStayDuration: "2–4일",
+      wholeRouteDuration: "10일 · 3개 도시",
+      eveningChoiceDuration: "공연 3개 · 저녁 1회",
+    },
     studio: {
       eyebrow: "스튜디오",
-      title: "하나의 설계 흐름, 분명한 인계.",
+      title: "한 명의 전담 플래너가 여정 전체를 이해하고, 한 팀이 모든 디테일을 완성합니다.",
       intro:
-        "Homeground는 협업형 중국 여행 플래닝 스튜디오입니다. 한 흐름 안에서 여행 동선과 요청서를 관리하고, 실제 조건이 분명해진 뒤 적합한 현지 서비스를 사람이 확인합니다.",
+        "첫 상담부터 전담 플래너가 어떤 방식으로 중국을 경험하고 싶은지 듣고, 도시와 교통, 여행 속도를 하나의 자연스러운 여정으로 연결합니다. 여행자는 전체 일정을 이해하는 한 명의 플래너를 중심으로 편하게 소통하고, 그 뒤에서는 팀의 현장 경험이 같은 계획에 더해집니다.",
+      cta: "Homeground 스튜디오 팀 만나기",
       roles: [
         {
-          title: "한 명의 플래너가 요청서를 책임집니다",
+          title: "먼저 여행자를 이해합니다",
           detail:
-            "중요한 조건과 미해결 질문이 한곳에 남아, 인계할 때마다 처음부터 설명하지 않아도 됩니다.",
+            "누구와 함께하는지, 무엇이 가장 중요한지, 하루를 어떤 속도로 보내고 싶은지가 계획의 출발점이 됩니다.",
         },
         {
-          title: "필요한 지점에 전문가가 합류합니다",
+          title: "한 명이 여정 전체를 압니다",
           detail:
-            "팀원과 현지 파트너는 실제로 잘 아는 도시와 서비스 영역에 참여합니다.",
+            "첫 상담부터 계획이 완성될 때까지, 전담 플래너가 도시, 교통, 여행 속도와 우선순위를 하나로 연결합니다.",
         },
         {
-          title: "책임 범위를 분명히 합니다",
+          title: "현장 경험이 디테일을 완성합니다",
           detail:
-            "확정 전 문서에서 누가 설계하고 누가 실행하며 무엇이 범위 밖인지 확인합니다.",
+            "팀의 관련 여행 설계와 현지 응대 경험을 같은 일정에 더해, 화면 밖 실제 여행에서도 자연스럽게 이어지도록 합니다.",
         },
       ],
     },
@@ -1421,9 +1476,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     finalCta: {
       resultLabel: "여행 요청서가 사람의 검토를 받을 준비가 되었습니다",
+      freeResultLabel: "무료 동선 시간 확인이 완료되었습니다",
       inProgressLabel: "답변은 진행하는 동안 저장됩니다",
       newLabel: "네 가지 답변으로 첫 시간 확인을 시작합니다",
       resultTitle: "이 희망 목록을 실행 가능한 중국 여행으로 만들까요?",
+      freeResultTitle:
+        "시간 확인 결과를 본 뒤 필요한 1:1 플래닝 범위를 선택하세요.",
       inProgressTitle: "남은 질문에 답하고 시간이 맞는지 확인하세요.",
       newTitle: "중국에서 정말 가고 싶은 곳부터 시작하세요.",
     },

@@ -30,6 +30,11 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  getHomepagePlanningDeskCopy,
+  routeNeedsScopeConfirmation,
+} from "../lib/homepagePlanningDesk";
+import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
 
 const homegroundInquiryApiHostname =
@@ -85,7 +90,8 @@ type ValidationField =
   | "email"
   | "phone"
   | "departureCountry"
-  | "roughBudgetPerPerson";
+  | "roughBudgetPerPerson"
+  | "tripContext";
 type ValidationErrors = Partial<Record<ValidationField, string>>;
 type FailureKind =
   | "request_too_large"
@@ -121,6 +127,7 @@ const maximumEmailLength = 254;
 const maximumPhoneLength = 64;
 const maximumDepartureCountryLength = 80;
 const maximumRoughBudgetLength = 100;
+const maximumTripContextLength = 1_800;
 const maximumRequestBytes = 16 * 1024;
 const requestTimeoutMilliseconds = 20_000;
 
@@ -204,6 +211,13 @@ function isValidRoughBudget(value: string): boolean {
   );
 }
 
+function isValidTripContext(value: string): boolean {
+  return (
+    Array.from(value.trim()).length <= maximumTripContextLength &&
+    !hasUnsupportedControlCharacters(value)
+  );
+}
+
 function localizedRetryDelay(
   headerValue: string | null,
   locale: HomegroundLocale,
@@ -265,6 +279,8 @@ export function PlannerHandoff({
   locale,
   match,
   journey,
+  serviceInterest = null,
+  serviceContextRevision = 0,
   routeState = "current",
   onDirtyChange,
   onStatusChange,
@@ -273,11 +289,21 @@ export function PlannerHandoff({
   locale: HomegroundLocale;
   match: DestinationPlan;
   journey?: RouteJourney;
+  serviceInterest?: RouteServiceInterest | null;
+  serviceContextRevision?: number;
   routeState?: HandoffRouteState;
   onDirtyChange?: (dirty: boolean) => void;
   onStatusChange?: (status: HandoffStatus) => void;
 }) {
   const copy = getHomegroundCopy(locale);
+  const planningCopy = getHomepagePlanningDeskCopy(locale);
+  const paidBriefCopy = serviceInterest
+    ? planningCopy.paidBriefs[serviceInterest.id]
+    : null;
+  const scopeConfirmationRequired = Boolean(
+    serviceInterest &&
+      routeNeedsScopeConfirmation(match, serviceInterest.id),
+  );
   const plannerCopy = getDestinationPlannerCopy(locale);
   const apiUrl = trustedInquiryApiUrl(
     process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL?.trim() || "",
@@ -323,7 +349,7 @@ export function PlannerHandoff({
       replySla,
   );
   const whatsappIntakeReady =
-    configurationReady && whatsappIntakeEnabled;
+    configurationReady && whatsappIntakeEnabled && !serviceInterest;
 
   const [status, setStatus] = useState<HandoffStatus>(
     configurationReady ? "idle" : "disabled",
@@ -335,6 +361,7 @@ export function PlannerHandoff({
   const [departureCountry, setDepartureCountry] = useState("");
   const [roughBudgetPerPerson, setRoughBudgetPerPerson] =
     useState("");
+  const [tripContext, setTripContext] = useState("");
   const [submittedChannel, setSubmittedChannel] =
     useState<ContactMethod>("email");
   const [submittedContact, setSubmittedContact] = useState("");
@@ -356,6 +383,10 @@ export function PlannerHandoff({
   const localJourneyRevisionRef = useRef(1);
   const routeIdentityRef = useRef("");
   const dispatchingRef = useRef(false);
+  const previousServiceIdRef = useRef(serviceInterest?.id ?? null);
+  const previousServiceContextRevisionRef = useRef(
+    serviceContextRevision,
+  );
 
   const idPrefix = useId();
   const contactGroupId = `${idPrefix}-contact`;
@@ -366,15 +397,18 @@ export function PlannerHandoff({
   const optionalDetailsHintId = `${idPrefix}-optional-details-hint`;
   const departureCountryId = `${idPrefix}-departure-country`;
   const roughBudgetId = `${idPrefix}-rough-budget`;
+  const tripContextId = `${idPrefix}-trip-context`;
   const emailHintId = `${emailId}-hint`;
   const phoneHintId = `${phoneId}-hint`;
   const departureCountryHintId = `${departureCountryId}-hint`;
   const roughBudgetHintId = `${roughBudgetId}-hint`;
+  const tripContextHintId = `${tripContextId}-hint`;
   const contactErrorId = `${contactGroupId}-error`;
   const emailErrorId = `${emailId}-error`;
   const phoneErrorId = `${phoneId}-error`;
   const departureCountryErrorId = `${departureCountryId}-error`;
   const roughBudgetErrorId = `${roughBudgetId}-error`;
+  const tripContextErrorId = `${tripContextId}-error`;
   const routeReference = `${match.routeId}@${match.ruleVersion}`;
   const routeIdentity = JSON.stringify({
     journeyId: journey?.journeyId ?? null,
@@ -382,6 +416,7 @@ export function PlannerHandoff({
     routeId: match.routeId,
     ruleVersion: match.ruleVersion,
     answers: match.answers,
+    serviceInterest: serviceInterest?.id ?? null,
   });
 
   if (!routeIdentityRef.current) {
@@ -415,6 +450,26 @@ export function PlannerHandoff({
     plannerCopy.result.classicStartValue,
     plannerCopy.result.otherLabel,
   ]);
+  const inquiryNote = useMemo(() => {
+    if (!serviceInterest) return null;
+
+    const noteParts = [
+      scopeConfirmationRequired
+        ? planningCopy.outsideStandardScope.note(serviceInterest.label)
+        : serviceInterest.note,
+    ];
+    if (tripContext.trim()) {
+      noteParts.push(
+        `${serviceInterest.contextNoteLabel}:\n${tripContext.trim()}`,
+      );
+    }
+    return noteParts.join("\n\n");
+  }, [
+    planningCopy.outsideStandardScope,
+    scopeConfirmationRequired,
+    serviceInterest,
+    tripContext,
+  ]);
   const briefLines = useMemo(() => {
     const lines = [
       `${plannerCopy.result.answerLabels.destinations}: ${wishlistLabel}`,
@@ -437,8 +492,10 @@ export function PlannerHandoff({
       );
     }
     lines.push(plannerCopy.result.boundary);
+    if (inquiryNote) lines.push("", inquiryNote);
     return lines;
   }, [
+    inquiryNote,
     match.answers.pace,
     match.answers.party,
     match.answers.totalNights,
@@ -454,25 +511,51 @@ export function PlannerHandoff({
   const fallbackMailto = useMemo(() => {
     if (!brandEmailReady) return "";
 
-    const subject = `Homeground China — ${plannerCopy.result.answersTitle}`;
+    const subject = serviceInterest
+      ? `Homeground China — ${serviceInterest.label}`
+      : `Homeground China — ${plannerCopy.result.answersTitle}`;
     return `mailto:${brandEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(briefText)}`;
   }, [
     brandEmail,
     brandEmailReady,
     briefText,
     plannerCopy.result.answersTitle,
+    serviceInterest,
   ]);
   const formIsDirty =
     email.trim().length > 0 ||
     phone.trim().length > 0 ||
     departureCountry.trim().length > 0 ||
-    roughBudgetPerPerson.trim().length > 0;
+    roughBudgetPerPerson.trim().length > 0 ||
+    tripContext.trim().length > 0;
   const hasUnsavedContactDraft =
     formIsDirty && status !== "success" && status !== "disabled";
 
   useEffect(() => {
     onStatusChange?.(status);
   }, [onStatusChange, status]);
+
+  useEffect(() => {
+    const nextServiceId = serviceInterest?.id ?? null;
+    if (
+      previousServiceIdRef.current === nextServiceId &&
+      previousServiceContextRevisionRef.current ===
+        serviceContextRevision
+    ) {
+      return;
+    }
+
+    previousServiceIdRef.current = nextServiceId;
+    previousServiceContextRevisionRef.current = serviceContextRevision;
+    setTripContext("");
+    setErrors((current) => {
+      if (!current.tripContext) return current;
+      const next = { ...current };
+      delete next.tripContext;
+      return next;
+    });
+    snapshotRef.current = null;
+  }, [serviceContextRevision, serviceInterest?.id]);
 
   useEffect(() => {
     onDirtyChange?.(hasUnsavedContactDraft);
@@ -664,6 +747,9 @@ export function PlannerHandoff({
       nextErrors.roughBudgetPerPerson =
         copy.handoff.roughBudgetError;
     }
+    if (serviceInterest && !isValidTripContext(tripContext)) {
+      nextErrors.tripContext = serviceInterest.tripContextError;
+    }
 
     return nextErrors;
   };
@@ -694,11 +780,13 @@ export function PlannerHandoff({
       ["utm_medium", "utmMedium"],
       ["utm_campaign", "utmCampaign"],
     ] as const;
-    for (const [queryKey, payloadKey] of attributionFields) {
-      const value = stripUnsupportedControlCharacters(
-        search.get(queryKey) ?? "",
-      ).trim();
-      if (value) attribution[payloadKey] = value.slice(0, 100);
+    if (!serviceInterest) {
+      for (const [queryKey, payloadKey] of attributionFields) {
+        const value = stripUnsupportedControlCharacters(
+          search.get(queryKey) ?? "",
+        ).trim();
+        if (value) attribution[payloadKey] = value.slice(0, 100);
+      }
     }
 
     return {
@@ -725,7 +813,7 @@ export function PlannerHandoff({
       departureCountry: departureCountry.trim() || null,
       roughBudgetPerPerson:
         roughBudgetPerPerson.trim() || null,
-      note: null,
+      note: inquiryNote,
       privacyNoticeVersion: currentPrivacyNoticeVersion,
       attribution,
       experiment: null,
@@ -755,6 +843,9 @@ export function PlannerHandoff({
       if (fields.roughBudgetPerPerson) {
         nextErrors.roughBudgetPerPerson =
           copy.handoff.roughBudgetError;
+      }
+      if (fields.note && serviceInterest) {
+        nextErrors.tripContext = serviceInterest.tripContextServerError;
       }
     }
     if (Object.keys(nextErrors).length === 0) {
@@ -1034,6 +1125,7 @@ export function PlannerHandoff({
     phone: phoneId,
     departureCountry: departureCountryId,
     roughBudgetPerPerson: roughBudgetId,
+    tripContext: tripContextId,
   };
   const errorEntries = Object.entries(errors) as Array<
     [ValidationField, string]
@@ -1067,6 +1159,25 @@ export function PlannerHandoff({
           )}
           <p className={styles.body}>{copy.handoff.body}</p>
           <p className={styles.boundary}>{copy.handoff.boundary}</p>
+          {serviceInterest && (
+            <aside
+              className={styles.serviceIntent}
+              aria-label={serviceInterest.selectedServiceAriaLabel}
+            >
+              <span>{serviceInterest.handoffLabel}</span>
+              <strong>
+                {serviceInterest.label} ·{" "}
+                {scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.priceLabel
+                  : serviceInterest.priceLabel}
+              </strong>
+              <p>
+                {scopeConfirmationRequired
+                  ? planningCopy.outsideStandardScope.scope
+                  : serviceInterest.handoffSummary}
+              </p>
+            </aside>
+          )}
         </div>
 
         <div className={styles.card}>
@@ -1095,9 +1206,9 @@ export function PlannerHandoff({
                 size={27}
               />
               <h3 ref={statusHeadingRef} tabIndex={-1}>
-                {copy.handoff.successTitle}
+                {paidBriefCopy?.successTitle ?? copy.handoff.successTitle}
               </h3>
-              <p>{copy.handoff.successBody}</p>
+              <p>{paidBriefCopy?.successBody ?? copy.handoff.successBody}</p>
               <p>
                 {copy.handoff.successReplyContact(
                   submittedChannel === "email" ? "Email" : "WhatsApp",
@@ -1117,7 +1228,7 @@ export function PlannerHandoff({
                   handleHomegroundHashClick(event, "#route-finder")
                 }
               >
-                {copy.handoff.backToRoute}
+                {paidBriefCopy?.successBackLabel ?? copy.handoff.backToRoute}
               </a>
             </div>
           )}
@@ -1412,6 +1523,54 @@ export function PlannerHandoff({
                   </div>
                 )}
 
+                {serviceInterest && (
+                  <div className={styles.field}>
+                    <label htmlFor={tripContextId}>
+                      {serviceInterest.tripContextLabel}{" "}
+                      <span className={styles.optionalTag}>
+                        {serviceInterest.optionalLabel}
+                      </span>
+                    </label>
+                    <textarea
+                      id={tripContextId}
+                      name="tripContext"
+                      dir="auto"
+                      maxLength={maximumTripContextLength}
+                      rows={5}
+                      value={tripContext}
+                      disabled={controlsLocked}
+                      aria-invalid={Boolean(errors.tripContext)}
+                      aria-describedby={`${tripContextHintId}${
+                        errors.tripContext ? ` ${tripContextErrorId}` : ""
+                      }`}
+                      onBlur={() =>
+                        setBlurError(
+                          "tripContext",
+                          isValidTripContext(tripContext)
+                            ? undefined
+                            : serviceInterest.tripContextError,
+                        )
+                      }
+                      onChange={(event) => {
+                        setTripContext(event.target.value);
+                        markEditing("tripContext");
+                      }}
+                    />
+                    <p className={styles.hint} id={tripContextHintId}>
+                      {serviceInterest.tripContextHint}
+                    </p>
+                    {errors.tripContext && (
+                      <p
+                        className={styles.fieldError}
+                        id={tripContextErrorId}
+                        role="alert"
+                      >
+                        {errors.tripContext}
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 <fieldset
                   className={styles.optionalDetails}
                   aria-describedby={optionalDetailsHintId}
@@ -1576,7 +1735,7 @@ export function PlannerHandoff({
                   )}
                   {status === "submitting"
                     ? copy.handoff.submitting
-                    : copy.handoff.submit}
+                    : paidBriefCopy?.submitLabel ?? copy.handoff.submit}
                 </button>
               </form>
             )}

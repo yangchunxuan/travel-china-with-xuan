@@ -202,7 +202,30 @@ WhatsApp Business inbox and the connected SaleSmartly project:
 4. Keep the completion reply in the privacy-email thread. Do not create a
    separate spreadsheet containing the traveller's details.
 
-## 4. What the first reply asks
+## 4. Lead matching and planning review
+
+The lead planner is not a generic inbox owner. Match the lead to the traveller's
+language, party, route complexity and destination focus. When a trip centres on
+one destination, a planner with relevant local handling experience may lead it.
+For a multi-city trip, choose the person best placed to integrate the complete
+route and keep one shared planning record.
+
+1. Before the route is finalised, the lead confirms the traveller's priorities,
+   fixed dates, open questions and assumptions. A second planner reviews the
+   whole journey for pace, transfers and easy-to-miss conflicts.
+2. At local handover, a teammate or operating team with relevant handling
+   experience confirms the current route, on-the-ground conditions, service
+   scope, responsibilities and unresolved items. Keep changes in the same
+   planning record.
+3. Before departure, the lead checks the latest agreed arrangements, named
+   contacts, handoff points and any still-open item. Escalate a conflict rather
+   than silently changing the traveller's priorities.
+
+This separates three jobs clearly: integrating the whole route, reviewing the
+whole route, and validating local delivery. Do not promise zero errors, approval
+by every studio member or knowledge of every city.
+
+## 5. What the first reply asks
 
 Ask only for facts needed to make the next planning decision:
 
@@ -222,7 +245,7 @@ into a promised package price or describe it as a Homeground quote.
 Do not promise a price, inventory, booking or local operator until a person
 has checked the real trip conditions.
 
-## 5. Receipt tests before enabling a channel
+## 6. Receipt tests before enabling a channel
 
 Use external test accounts, not the studio Gmail:
 
@@ -272,7 +295,7 @@ If WhatsApp fails, set server-only `WHATSAPP_ENABLED=false`, then set
 `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED=false` and redeploy. Leave the
 Email route running.
 
-## 6. Keep the pilot routine small
+## 7. Keep the pilot routine small
 
 Use only the two inboxes and the duty rules above while one or two people can
 see every open conversation. Add separate staff accounts or more handling

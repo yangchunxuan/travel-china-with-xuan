@@ -5,8 +5,10 @@
     "dev": "next dev",
     "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
     "check:font-coverage": "node tools/check-font-coverage.mjs",
+    "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
-    "build": "npm run check:font-coverage && next build",
+    "prebuild": "npm run check:font-coverage",
+    "build": "next build",
     "postbuild": "node tools/prune-production-export.mjs",
     "start": "next start"
   },
@@ -24,6 +26,7 @@
     "typescript": "5.8.2"
   },
   "overrides": {
-    "postcss": "8.5.10"
+    "postcss": "8.5.10",
+    "sharp": "0.35.3"
   }
 }

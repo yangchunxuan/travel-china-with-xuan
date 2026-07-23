@@ -46,6 +46,9 @@ export interface ZhangjiajieGuideCopy {
     jumpLabel: string;
     fullDayLabel: string;
     fullDayBody: string;
+    fullDayExampleLabel: string;
+    fullDayExample: string;
+    action: string;
     decisions: readonly {
       days: string;
       href: string;
@@ -183,7 +186,8 @@ const english: ZhangjiajieGuideCopy = {
     eyebrow: "Route guide · Full days on the ground",
     lead:
       "See the national park properly, understand which sights can share a day, and know when adding Furong or Fenghuang changes the whole route.",
-    preparedBy: "Prepared by Homeground China",
+    preparedBy:
+      "Prepared by Homeground China · local background: Xuan grew up in Zhangjiajie",
     publishedLabel: "Published",
     publishedDate: "20 July 2026",
     updatedLabel: "Updated",
@@ -200,7 +204,11 @@ const english: ZhangjiajieGuideCopy = {
     jumpLabel: "Jump to an itinerary",
     fullDayLabel: "A full day assumes",
     fullDayBody:
-      "Sleep in the right base before Day 1; do not count an intercity arrival as sightseeing time.",
+      "You are already sleeping in the right base before Day 1. An intercity arrival at noon is an arrival day, not a full sightseeing day.",
+    fullDayExampleLabel: "Concrete example",
+    fullDayExample:
+      "Arrive Monday evening and tour Tuesday plus Wednesday: that is 2 full days. Two nights work only with a safe Wednesday-evening departure; three nights is more comfortable. Apply the same rule to 3 or 4 full sightseeing days. A Day 4 transfer to Fenghuang is a four-day regional route, not four full Zhangjiajie sightseeing days.",
+    action: "Check these days against my China route",
     decisions: [
       {
         days: "2 days",
@@ -218,7 +226,7 @@ const english: ZhangjiajieGuideCopy = {
         days: "4 days",
         href: "#itinerary-4-days",
         label: "Make one clear choice",
-        detail: "Add more Zhangjiajie, or continue west to Fenghuang.",
+        detail: "Use four full days locally, or make Day 4 the westbound travel day.",
       },
     ],
   },
@@ -273,17 +281,18 @@ const english: ZhangjiajieGuideCopy = {
           {
             day: "Day 1",
             zone: "Wulingyuan",
-            coreVisit: "National Forest Park · high viewpoints",
+            coreVisit: "East Gate → Tianzi Mountain → Yuanjiajie → Bailong Elevator",
             sleepBase: "Wulingyuan",
-            condition: "Morning entry; sleep in Wulingyuan the night before.",
+            condition:
+              "Morning entry; recheck the reserved gate, cableway and elevator operation.",
           },
           {
             day: "Day 2",
             zone: "Wulingyuan",
-            coreVisit: "National Forest Park · valleys and walking routes",
+            coreVisit: "South Gate → Huangshi Village → Golden Whip Stream → East Gate",
             sleepBase: "Wulingyuan",
             condition:
-              "Walking pace and the next intercity departure remain realistic.",
+              "Allow more than the official walking estimates for viewpoints, queues, rest and wet paths.",
           },
         ],
         tradeoff:
@@ -296,9 +305,10 @@ const english: ZhangjiajieGuideCopy = {
           {
             day: "Day 1",
             zone: "Wulingyuan",
-            coreVisit: "National Forest Park · compact highlights",
+            coreVisit: "East Gate → Tianzi Mountain → Yuanjiajie → Bailong Elevator",
             sleepBase: "Move downtown after the park day",
-            condition: "The hotel change and luggage plan are confirmed in advance.",
+            condition:
+              "Treat this as a highlights edit; confirm entry, luggage and the hotel transfer in advance.",
           },
           {
             day: "Day 2",
@@ -322,16 +332,18 @@ const english: ZhangjiajieGuideCopy = {
       {
         day: "Day 1",
         zone: "Wulingyuan",
-        coreVisit: "National Forest Park · high viewpoints",
+        coreVisit: "East Gate → Tianzi Mountain → Yuanjiajie → Bailong Elevator",
         sleepBase: "Wulingyuan",
-        condition: "Morning entry; route order still follows live conditions.",
+        condition:
+          "Morning entry; the reserved gate and operating conditions can still change the order.",
       },
       {
         day: "Day 2",
         zone: "Wulingyuan",
-        coreVisit: "National Forest Park · valleys and walking routes",
+        coreVisit: "South Gate → Huangshi Village → Golden Whip Stream → East Gate",
         sleepBase: "Move downtown after sightseeing",
-        condition: "Luggage and the base change are arranged before Day 3.",
+        condition:
+          "Allow extra time beyond the official walking estimates, then arrange luggage and the base change.",
       },
       {
         day: "Day 3",
@@ -349,26 +361,28 @@ const english: ZhangjiajieGuideCopy = {
     backLink: "Back to 2, 3 or 4-day choices",
   },
   fourDay: {
-    sectionLabel: "4 full days",
+    sectionLabel: "4 days · one branch uses a travel day",
     title: "Keep two park days, then choose a direction.",
     intro:
-      "Stay deeper around Zhangjiajie, or use Day 4 to continue west. Four days cannot do both.",
+      "Use four full sightseeing days to stay deeper around Zhangjiajie, or make Day 4 the travel-and-arrival day to Fenghuang. Four calendar days cannot do both.",
     sharedLabel: "Days 1–2 · Shared start",
     sharedTimelineLabel: "Shared first two days",
     sharedStops: [
       {
         day: "Day 1",
         zone: "Wulingyuan",
-        coreVisit: "National Forest Park · high viewpoints",
+        coreVisit: "East Gate → Tianzi Mountain → Yuanjiajie → Bailong Elevator",
         sleepBase: "Wulingyuan",
-        condition: "Morning entry and a useful arrival the previous night.",
+        condition:
+          "Morning entry; recheck the reserved gate, cableway and elevator operation.",
       },
       {
         day: "Day 2",
         zone: "Wulingyuan",
-        coreVisit: "National Forest Park · valleys and walking routes",
+        coreVisit: "South Gate → Huangshi Village → Golden Whip Stream → East Gate",
         sleepBase: "Depends on the Day 3 branch",
-        condition: "Choose the branch before booking the second hotel base.",
+        condition:
+          "Allow extra walking time and choose the branch before booking the second hotel base.",
       },
     ],
     branchMarker: "Days 3–4 · Choose one direction",
@@ -384,9 +398,10 @@ const english: ZhangjiajieGuideCopy = {
           {
             day: "Day 3",
             zone: "Wulingyuan area",
-            coreVisit: "Grand Canyon + Huanglong Cave",
+            coreVisit: "Grand Canyon · Huanglong Cave only if live checks allow",
             sleepBase: "Wulingyuan, then move downtown",
-            condition: "Possible long day only with compatible tickets and transfer.",
+            condition:
+              "Plan the Canyon as the core. Add the cave only with compatible entry times, arranged transport and no evening departure.",
           },
           {
             day: "Day 4",
@@ -453,7 +468,7 @@ const english: ZhangjiajieGuideCopy = {
           {
             title: "Grand Canyon + Huanglong Cave",
             detail:
-              "A possible long day when ticket periods and a confirmed transfer align.",
+              "Conditional, not the default. The Canyon’s complete B route alone is listed at about 3.5 hours; add the cave only with compatible entry times, arranged transport, an early start and no evening departure.",
           },
         ],
       },
@@ -476,7 +491,7 @@ const english: ZhangjiajieGuideCopy = {
   },
   evidence: {
     sectionLabel: "Why this recommendation",
-    title: "Four pieces of evidence change the route.",
+    title: "Five pieces of evidence change the route.",
     calculationLabel: "Input and calculation",
     liveConfirmation: "Requires live ticket and operator confirmation",
     checkedLabel: "Checked",
@@ -518,6 +533,19 @@ const english: ZhangjiajieGuideCopy = {
         consequence: "Recheck live tickets, transfers, season and traveller pace.",
         sources: [],
       },
+      {
+        type: "Official duration + planning judgement",
+        title: "Grand Canyon + Huanglong Cave is conditional",
+        fact:
+          "The Grand Canyon’s official guide lists about 3.5 hours for its complete B route. An official transport corridor reaches Huanglong Cave before the Canyon, but that does not make two timed attractions automatic.",
+        consequence:
+          "Keep the Canyon as the core; add the cave only after entry periods, transport, mobility and the evening buffer are confirmed.",
+        sources: [
+          { index: 7, label: "Official Canyon route times" },
+          { index: 8, label: "Official transport corridor" },
+          { index: 9, label: "Official Huanglong Cave overview" },
+        ],
+      },
     ],
   },
   faq: {
@@ -535,6 +563,11 @@ const english: ZhangjiajieGuideCopy = {
           "Do not plan them together by default. They sit in different zones, both are vulnerable to queues and timed entry, and the transfer removes the recovery time a mountain day needs.",
       },
       {
+        question: "Can Zhangjiajie Grand Canyon and Huanglong Cave share one day?",
+        answer:
+          "Sometimes, but treat it as a conditional long day rather than the default. Start early from Wulingyuan, confirm compatible entry periods and transport, and do not attach a train or flight that evening. Keep only the Grand Canyon if queues, weather or mobility reduce the buffer.",
+      },
+      {
         question: "Should I stay in Wulingyuan or downtown Zhangjiajie?",
         answer:
           "Use Wulingyuan for the national park, Grand Canyon and Huanglong Cave. Downtown is more practical for Tianmen Mountain, Zhangjiajie 72 Qilou and the main rail connections. A split stay often saves repeated backtracking.",
@@ -549,7 +582,7 @@ const english: ZhangjiajieGuideCopy = {
   sources: {
     hiddenTitle: "Sources and live checks",
     disclosureTitle: "Sources & live checks",
-    summary: "7 official references · checked 21 July 2026",
+    summary: "10 official references · checked 21 July 2026",
     intro:
       "We use official destination and transport sources, then recheck entry times, operating conditions and transfers before booking.",
     names: [
@@ -560,12 +593,16 @@ const english: ZhangjiajieGuideCopy = {
       "Hunan Government: Zhangjiajie 72 Qilou as an evening experience",
       "Ministry of Culture and Tourism: Zhangjiajie–Furong–Fenghuang rail connections",
       "Hunan Government: Fenghuang station transfer guide",
+      "Zhangjiajie Grand Canyon: official visitor routes and estimated duration",
+      "Hunan Road Transport Administration: Zhangjiajie Grand Canyon corridor",
+      "Hunan Department of Culture and Tourism: Huanglong Cave overview",
     ],
   },
   finalCta: {
     sectionLabel: "Your whole China route",
     title: "Check Zhangjiajie against your whole China wishlist.",
-    body: "Keep every city. We surface the timing conflict before a person shapes the route.",
+    body:
+      "Choose your China stops, total nights, party and pace. A person then checks Zhangjiajie arrival and departure timing, hotel changes and live ticket conflicts.",
     action: "Check my trip timing",
   },
   structuredData: {
@@ -591,7 +628,7 @@ const chinese: ZhangjiajieGuideCopy = {
     eyebrow: "路线指南 · 按完整游览日计算",
     lead:
       "认真游览国家森林公园，分清哪些景点可以同日安排，也看清加入芙蓉镇或凤凰古城后整条路线会如何改变。",
-    preparedBy: "由 Homeground China 整理",
+    preparedBy: "由 Homeground China 整理 · 本地背景：Xuan 在张家界长大",
     publishedLabel: "发布于",
     publishedDate: "2026年7月20日",
     updatedLabel: "更新于",
@@ -606,7 +643,12 @@ const chinese: ZhangjiajieGuideCopy = {
     summaryAfterEmphasis: "继续前往凤凰古城。",
     jumpLabel: "跳到对应天数的行程",
     fullDayLabel: "“完整一天”的前提",
-    fullDayBody: "第 1 天前一晚已经住在合适的区域；跨城市抵达当天不算完整游览时间。",
+    fullDayBody:
+      "第 1 天前一晚已经住在合适的区域。中午才从其他城市抵达，只能算抵达日，不能算完整游览日。",
+    fullDayExampleLabel: "具体例子",
+    fullDayExample:
+      "周一晚抵达，周二和周三游览，才算 2 个完整游览日。只有周三晚能安全离开时，2 晚才成立；更舒适是住 3 晚。3 或 4 个完整游览日也按同一规则计算。若第 4 天前往凤凰，那是四日区域路线，不是四个完整的张家界游览日。",
+    action: "把这些天数放进我的中国路线检查",
     decisions: [
       {
         days: "2 天",
@@ -624,7 +666,7 @@ const chinese: ZhangjiajieGuideCopy = {
         days: "4 天",
         href: "#itinerary-4-days",
         label: "明确选择一个方向",
-        detail: "继续深挖张家界，或向西前往凤凰古城。",
+        detail: "四个完整日留在张家界，或把第 4 天作为向西移动日。",
       },
     ],
   },
@@ -678,16 +720,16 @@ const chinese: ZhangjiajieGuideCopy = {
           {
             day: "第 1 天",
             zone: "武陵源",
-            coreVisit: "国家森林公园 · 山上观景区",
+            coreVisit: "东门 → 天子山 → 袁家界 → 百龙天梯",
             sleepBase: "武陵源",
-            condition: "早上入园；前一晚已经住在武陵源。",
+            condition: "早上入园；重新核对预约入口、索道与电梯运营情况。",
           },
           {
             day: "第 2 天",
             zone: "武陵源",
-            coreVisit: "国家森林公园 · 山谷与步行路线",
+            coreVisit: "南门 → 黄石寨 → 金鞭溪 → 东门",
             sleepBase: "武陵源",
-            condition: "步行强度与下一段跨城交通都留有现实余量。",
+            condition: "在官方步行估时之外，为观景、排队、休息和湿滑路面留出更多时间。",
           },
         ],
         tradeoff: "天门山、大峡谷、黄龙洞、芙蓉镇和凤凰古城。",
@@ -699,9 +741,9 @@ const chinese: ZhangjiajieGuideCopy = {
           {
             day: "第 1 天",
             zone: "武陵源",
-            coreVisit: "国家森林公园 · 精简重点",
+            coreVisit: "东门 → 天子山 → 袁家界 → 百龙天梯",
             sleepBase: "游览结束后转住市区",
-            condition: "提前确认换酒店与行李安排。",
+            condition: "这是一日重点版；提前确认入口、行李和换酒店安排。",
           },
           {
             day: "第 2 天",
@@ -724,16 +766,16 @@ const chinese: ZhangjiajieGuideCopy = {
       {
         day: "第 1 天",
         zone: "武陵源",
-        coreVisit: "国家森林公园 · 山上观景区",
+        coreVisit: "东门 → 天子山 → 袁家界 → 百龙天梯",
         sleepBase: "武陵源",
-        condition: "早上入园；当天顺序仍要根据实时情况调整。",
+        condition: "早上入园；预约入口与实时运营仍可能改变当天顺序。",
       },
       {
         day: "第 2 天",
         zone: "武陵源",
-        coreVisit: "国家森林公园 · 山谷与步行路线",
+        coreVisit: "南门 → 黄石寨 → 金鞭溪 → 东门",
         sleepBase: "游览结束后转住市区",
-        condition: "提前安排好行李和第 3 天前的住宿切换。",
+        condition: "在官方步行估时外另留余量，再安排好行李和住宿切换。",
       },
       {
         day: "第 3 天",
@@ -750,25 +792,26 @@ const chinese: ZhangjiajieGuideCopy = {
     backLink: "返回 2、3、4 天方案选择",
   },
   fourDay: {
-    sectionLabel: "4 个完整游览日",
+    sectionLabel: "4 天 · 其中一个分支含移动日",
     title: "保留森林公园两天，再选择一个方向。",
-    intro: "要么深入张家界周边，要么第 4 天向西继续；4 天不能两者都做。",
+    intro:
+      "四个完整游览日可以深入张家界周边；也可以把第 4 天作为前往凤凰的移动与抵达日。四个自然日不能两者都做。",
     sharedLabel: "第 1–2 天 · 两条分支相同",
     sharedTimelineLabel: "两条方案共同的前两天",
     sharedStops: [
       {
         day: "第 1 天",
         zone: "武陵源",
-        coreVisit: "国家森林公园 · 山上观景区",
+        coreVisit: "东门 → 天子山 → 袁家界 → 百龙天梯",
         sleepBase: "武陵源",
-        condition: "早上入园，且前一晚能有效抵达。",
+        condition: "早上入园；重新核对预约入口、索道与电梯运营情况。",
       },
       {
         day: "第 2 天",
         zone: "武陵源",
-        coreVisit: "国家森林公园 · 山谷与步行路线",
+        coreVisit: "南门 → 黄石寨 → 金鞭溪 → 东门",
         sleepBase: "取决于第 3 天选择的分支",
-        condition: "预订第二个住宿基地前先确定分支。",
+        condition: "为步行另留余量，并在预订第二个住宿基地前先确定分支。",
       },
     ],
     branchMarker: "第 3–4 天 · 选择一个方向",
@@ -784,9 +827,9 @@ const chinese: ZhangjiajieGuideCopy = {
           {
             day: "第 3 天",
             zone: "武陵源周边",
-            coreVisit: "大峡谷 + 黄龙洞",
+            coreVisit: "大峡谷；实时条件允许时再加黄龙洞",
             sleepBase: "武陵源，之后转住市区",
-            condition: "只有门票时段与接驳能配合时，才适合安排成长日。",
+            condition: "以大峡谷为核心；只有入园时段、车辆和晚间余量都匹配时才加入黄龙洞。",
           },
           {
             day: "第 4 天",
@@ -848,7 +891,8 @@ const chinese: ZhangjiajieGuideCopy = {
           },
           {
             title: "大峡谷 + 黄龙洞",
-            detail: "门票时段与接驳确认匹配后，可以组成一个较长的游览日。",
+            detail:
+              "这是有条件的长日，不是默认方案。大峡谷完整 B 线官方估时已约 3.5 小时；只有早出发、入园时段和车辆匹配，且当晚没有离开交通时，才加入黄龙洞。",
           },
         ],
       },
@@ -869,7 +913,7 @@ const chinese: ZhangjiajieGuideCopy = {
   },
   evidence: {
     sectionLabel: "为什么这样建议",
-    title: "四条依据会改变路线。",
+    title: "五条依据会改变路线。",
     calculationLabel: "输入与计算",
     liveConfirmation: "需要实时确认门票和实际运营条件",
     checkedLabel: "核对于",
@@ -908,6 +952,19 @@ const chinese: ZhangjiajieGuideCopy = {
         consequence: "预订前重新核对实时门票、接驳、季节和客人体力。",
         sources: [],
       },
+      {
+        type: "官方时长 + 路线判断",
+        title: "大峡谷与黄龙洞只能有条件组合",
+        fact:
+          "大峡谷官方导览给完整 B 线的参考时长约为 3.5 小时。官方客运线路先经黄龙洞再到大峡谷，但同一交通走廊不等于两个分时景点能自动同日完成。",
+        consequence:
+          "以大峡谷为核心；确认入园时段、车辆、步行能力和晚间余量后，再决定是否加入黄龙洞。",
+        sources: [
+          { index: 7, label: "大峡谷官方路线时长" },
+          { index: 8, label: "官方景区交通走廊" },
+          { index: 9, label: "黄龙洞官方介绍" },
+        ],
+      },
     ],
   },
   faq: {
@@ -925,6 +982,11 @@ const chinese: ZhangjiajieGuideCopy = {
           "默认不要这样安排。两地分属不同区域，都容易受排队和分时入园影响，转场还会挤掉山地游览所需的休息余量。",
       },
       {
+        question: "大峡谷和黄龙洞能安排在同一天吗？",
+        answer:
+          "有时可以，但只能当作有条件的长日，而不是默认方案。需要从武陵源早出发，确认相容的入园时段与车辆，并且当晚不安排火车或航班。如果排队、天气或步行能力压缩了余量，就只保留大峡谷。",
+      },
+      {
         question: "住武陵源还是张家界市区？",
         answer:
           "国家森林公园、大峡谷和黄龙洞适合住武陵源；天门山、七十二奇楼和主要铁路衔接适合住市区。拆分住宿通常比每天来回折返更省时间。",
@@ -939,7 +1001,7 @@ const chinese: ZhangjiajieGuideCopy = {
   sources: {
     hiddenTitle: "信息来源与实时核对",
     disclosureTitle: "信息来源与实时核对",
-    summary: "7 条官方参考 · 核对于 2026年7月21日",
+    summary: "10 条官方参考 · 核对于 2026年7月21日",
     intro: "我们先使用目的地和交通官方信息，预订前再核对入园时段、运营情况与接驳。",
     names: [
       "武陵源区：2025 年暑期分时预约通知（历史背景）",
@@ -949,12 +1011,16 @@ const chinese: ZhangjiajieGuideCopy = {
       "湖南省政府：七十二奇楼夜游体验",
       "文化和旅游部：张家界—芙蓉镇—凤凰铁路衔接",
       "湖南省政府：凤凰站接驳指南",
+      "张家界大峡谷：官方游览路线与参考时长",
+      "湖南省道路运输管理局：张家界大峡谷景区交通走廊",
+      "湖南省文化和旅游厅：黄龙洞介绍",
     ],
   },
   finalCta: {
     sectionLabel: "你的整条中国路线",
     title: "把张家界放回整条中国旅行里检查。",
-    body: "保留每个想去的地方。我们先发现时间冲突，再由人工整理路线。",
+    body:
+      "选择想去的城市、总晚数、同行人和旅行节奏。之后由人工核对张家界抵离时间、换酒店安排和实时门票冲突。",
     action: "检查我的旅行时间",
   },
   structuredData: {
@@ -975,7 +1041,7 @@ const korean: ZhangjiajieGuideCopy = {
     eyebrow: "일정 가이드 · 현지에서 온전히 보내는 날짜 기준",
     lead:
       "국가삼림공원을 제대로 보는 방법, 하루에 묶을 수 있는 명소, 푸룽진이나 펑황고성을 더할 때 전체 동선이 어떻게 달라지는지 정리했습니다.",
-    preparedBy: "Homeground China 작성",
+    preparedBy: "Homeground China 작성 · 현지 배경: Xuan은 장자제에서 자랐습니다",
     publishedLabel: "게시",
     publishedDate: "2026년 7월 20일",
     updatedLabel: "업데이트",
@@ -990,7 +1056,12 @@ const korean: ZhangjiajieGuideCopy = {
     summaryAfterEmphasis: " 펑황고성으로 이동할 수 있습니다.",
     jumpLabel: "일정별 안내로 이동",
     fullDayLabel: "‘온전한 하루’의 전제",
-    fullDayBody: "1일 차 전날 알맞은 지역에서 숙박해야 하며, 다른 도시에서 도착하는 날은 온전한 관광일로 계산하지 않습니다.",
+    fullDayBody:
+      "1일 차 전날 알맞은 지역에서 숙박해야 합니다. 다른 도시에서 정오에 도착하는 날은 도착일이지 온전한 관광일이 아닙니다.",
+    fullDayExampleLabel: "구체적인 예",
+    fullDayExample:
+      "월요일 저녁 도착 후 화요일과 수요일에 관광하면 온전한 2일입니다. 수요일 저녁 안전하게 출발할 수 있을 때만 2박이 가능하고, 3박이 더 편합니다. 온전한 3일이나 4일도 같은 방식으로 계산하세요. 4일 차에 펑황으로 이동하면 4일 지역 일정이지 장자제에서 온전히 관광하는 4일은 아닙니다.",
+    action: "이 일수를 내 중국 전체 일정과 확인하기",
     decisions: [
       {
         days: "2일",
@@ -1008,7 +1079,7 @@ const korean: ZhangjiajieGuideCopy = {
         days: "4일",
         href: "#itinerary-4-days",
         label: "한 방향을 분명히 선택",
-        detail: "장자제를 더 깊게 보거나 서쪽 펑황고성으로 이동합니다.",
+        detail: "온전한 4일을 현지에서 보내거나 4일 차를 서쪽 이동일로 씁니다.",
       },
     ],
   },
@@ -1062,16 +1133,16 @@ const korean: ZhangjiajieGuideCopy = {
           {
             day: "1일 차",
             zone: "우링위안",
-            coreVisit: "국가삼림공원 · 고지대 전망 구간",
+            coreVisit: "동문 → 톈쯔산 → 위안자제 → 바이룽 엘리베이터",
             sleepBase: "우링위안",
-            condition: "아침 입장; 전날 밤 우링위안에서 숙박합니다.",
+            condition: "아침 입장; 예약한 입구와 케이블카·엘리베이터 운영을 다시 확인합니다.",
           },
           {
             day: "2일 차",
             zone: "우링위안",
-            coreVisit: "국가삼림공원 · 계곡과 도보 구간",
+            coreVisit: "남문 → 황스자이 → 진볜시 → 동문",
             sleepBase: "우링위안",
-            condition: "걷는 속도와 다음 도시로의 이동에 현실적인 여유를 둡니다.",
+            condition: "공식 도보 예상 시간 외에 전망, 대기, 휴식과 젖은 길을 위한 시간을 더 둡니다.",
           },
         ],
         tradeoff: "톈먼산, 대협곡, 황룽동, 푸룽진, 펑황고성.",
@@ -1083,9 +1154,9 @@ const korean: ZhangjiajieGuideCopy = {
           {
             day: "1일 차",
             zone: "우링위안",
-            coreVisit: "국가삼림공원 · 핵심 구간 압축",
+            coreVisit: "동문 → 톈쯔산 → 위안자제 → 바이룽 엘리베이터",
             sleepBase: "공원 관광 후 장자제 시내로 이동",
-            condition: "숙소 변경과 짐 이동을 미리 확정합니다.",
+            condition: "핵심만 보는 하루입니다. 입구, 짐과 숙소 이동을 미리 확정합니다.",
           },
           {
             day: "2일 차",
@@ -1108,16 +1179,16 @@ const korean: ZhangjiajieGuideCopy = {
       {
         day: "1일 차",
         zone: "우링위안",
-        coreVisit: "국가삼림공원 · 고지대 전망 구간",
+        coreVisit: "동문 → 톈쯔산 → 위안자제 → 바이룽 엘리베이터",
         sleepBase: "우링위안",
-        condition: "아침 입장; 세부 순서는 당일 운영 상황에 맞춥니다.",
+        condition: "아침 입장; 예약한 입구와 당일 운영 상황에 따라 순서가 달라질 수 있습니다.",
       },
       {
         day: "2일 차",
         zone: "우링위안",
-        coreVisit: "국가삼림공원 · 계곡과 도보 구간",
+        coreVisit: "남문 → 황스자이 → 진볜시 → 동문",
         sleepBase: "관광 후 장자제 시내로 이동",
-        condition: "3일 차 전에 짐과 숙소 이동을 정리합니다.",
+        condition: "공식 도보 예상 시간 외에 여유를 두고 짐과 숙소 이동을 정리합니다.",
       },
       {
         day: "3일 차",
@@ -1133,25 +1204,26 @@ const korean: ZhangjiajieGuideCopy = {
     backLink: "2·3·4일 선택으로 돌아가기",
   },
   fourDay: {
-    sectionLabel: "온전한 4일",
+    sectionLabel: "4일 · 한 방향은 이동일 포함",
     title: "공원 이틀을 지키고, 한 방향을 선택하세요.",
-    intro: "장자제 주변을 더 깊게 보거나 4일 차에 서쪽으로 이동합니다. 4일 안에 두 방향을 모두 할 수는 없습니다.",
+    intro:
+      "온전한 관광일 4일은 장자제 주변을 더 깊게 보는 데 쓰거나, 4일 차를 펑황으로 이동하고 도착하는 날로 씁니다. 달력상 4일 안에 두 방향을 모두 할 수는 없습니다.",
     sharedLabel: "1–2일 차 · 공통 시작",
     sharedTimelineLabel: "두 일정의 공통 첫 이틀",
     sharedStops: [
       {
         day: "1일 차",
         zone: "우링위안",
-        coreVisit: "국가삼림공원 · 고지대 전망 구간",
+        coreVisit: "동문 → 톈쯔산 → 위안자제 → 바이룽 엘리베이터",
         sleepBase: "우링위안",
-        condition: "아침 입장; 전날 밤 실질적으로 도착해 있어야 합니다.",
+        condition: "아침 입장; 예약한 입구와 케이블카·엘리베이터 운영을 다시 확인합니다.",
       },
       {
         day: "2일 차",
         zone: "우링위안",
-        coreVisit: "국가삼림공원 · 계곡과 도보 구간",
+        coreVisit: "남문 → 황스자이 → 진볜시 → 동문",
         sleepBase: "3일 차에 선택할 방향에 따라 결정",
-        condition: "두 번째 숙소를 예약하기 전에 방향을 정합니다.",
+        condition: "도보 시간을 넉넉히 잡고 두 번째 숙소를 예약하기 전에 방향을 정합니다.",
       },
     ],
     branchMarker: "3–4일 차 · 한 방향 선택",
@@ -1167,9 +1239,9 @@ const korean: ZhangjiajieGuideCopy = {
           {
             day: "3일 차",
             zone: "우링위안 일대",
-            coreVisit: "대협곡 + 황룽동",
+            coreVisit: "대협곡 · 최신 조건이 맞을 때만 황룽동 추가",
             sleepBase: "우링위안, 이후 장자제 시내로 이동",
-            condition: "입장 시간과 차량 이동이 맞을 때만 긴 하루로 묶을 수 있습니다.",
+            condition: "대협곡을 핵심으로 두고, 입장 시간·차량·저녁 여유가 모두 맞을 때만 황룽동을 더합니다.",
           },
           {
             day: "4일 차",
@@ -1231,7 +1303,8 @@ const korean: ZhangjiajieGuideCopy = {
           },
           {
             title: "대협곡 + 황룽동",
-            detail: "입장 시간과 확정된 차량 이동이 맞으면 긴 하루로 구성할 수 있습니다.",
+            detail:
+              "조건부 긴 일정이지 기본 일정이 아닙니다. 대협곡 전체 B 코스만 공식 예상 약 3.5시간이므로, 일찍 출발하고 입장 시간과 차량이 맞으며 저녁 이동이 없을 때만 황룽동을 더하세요.",
           },
         ],
       },
@@ -1252,7 +1325,7 @@ const korean: ZhangjiajieGuideCopy = {
   },
   evidence: {
     sectionLabel: "이렇게 권하는 이유",
-    title: "네 가지 근거가 동선을 바꿉니다.",
+    title: "다섯 가지 근거가 동선을 바꿉니다.",
     calculationLabel: "입력값과 계산",
     liveConfirmation: "실시간 입장권과 현지 운영 확인이 필요합니다",
     checkedLabel: "확인일",
@@ -1290,6 +1363,19 @@ const korean: ZhangjiajieGuideCopy = {
         consequence: "예약 전 최신 입장권, 차량 이동, 계절, 여행자의 보행 속도를 다시 확인합니다.",
         sources: [],
       },
+      {
+        type: "공식 소요 시간 + 일정 판단",
+        title: "대협곡과 황룽동 조합은 조건부입니다",
+        fact:
+          "대협곡 공식 안내는 전체 B 코스를 약 3.5시간으로 제시합니다. 공식 교통 노선은 황룽동을 거쳐 대협곡으로 가지만, 같은 이동 구간이라고 두 시간 지정 명소를 자동으로 하루에 끝낼 수 있는 것은 아닙니다.",
+        consequence:
+          "대협곡을 핵심으로 두고 입장 시간, 차량, 보행 능력과 저녁 여유를 확인한 뒤 황룽동 추가 여부를 정합니다.",
+        sources: [
+          { index: 7, label: "대협곡 공식 코스 시간" },
+          { index: 8, label: "공식 관광 교통 구간" },
+          { index: 9, label: "황룽동 공식 안내" },
+        ],
+      },
     ],
   },
   faq: {
@@ -1305,6 +1391,10 @@ const korean: ZhangjiajieGuideCopy = {
         answer: "기본 일정으로는 권하지 않습니다. 서로 다른 지역에 있고, 둘 다 대기와 시간 지정 입장의 영향을 받습니다. 지역 간 이동은 산악 관광에 필요한 회복 시간도 없앱니다.",
       },
       {
+        question: "대협곡과 황룽동을 같은 날 볼 수 있나요?",
+        answer: "경우에 따라 가능하지만 기본 일정이 아니라 조건부 긴 하루입니다. 우링위안에서 일찍 출발하고, 서로 맞는 입장 시간과 차량을 확인하며, 그날 저녁 기차나 항공편을 두지 마세요. 대기, 날씨나 보행 능력 때문에 여유가 줄면 대협곡만 남깁니다.",
+      },
+      {
         question: "우링위안과 장자제 시내 중 어디에 숙박해야 하나요?",
         answer: "국가삼림공원, 대협곡, 황룽동은 우링위안에서 접근하기 좋습니다. 톈먼산, 72기루, 주요 철도 연결은 장자제 시내가 편리합니다. 숙박지를 나누면 반복 왕복을 줄일 수 있습니다.",
       },
@@ -1317,7 +1407,7 @@ const korean: ZhangjiajieGuideCopy = {
   sources: {
     hiddenTitle: "출처와 최신 정보 확인",
     disclosureTitle: "출처와 최신 정보 확인",
-    summary: "공식 자료 7건 · 2026년 7월 21일 확인",
+    summary: "공식 자료 10건 · 2026년 7월 21일 확인",
     intro: "공식 관광·교통 자료를 사용하고, 예약 전 입장 시간, 운영 상황, 차량 이동을 다시 확인합니다.",
     names: [
       "우링위안구: 2025년 여름 시간대별 입장 안내(과거 운영 참고)",
@@ -1327,12 +1417,16 @@ const korean: ZhangjiajieGuideCopy = {
       "후난성 정부: 장자제 72기루 야간 체험",
       "중국 문화여유부: 장자제–푸룽진–펑황 철도 연결",
       "후난성 정부: 펑황역 환승 안내",
+      "장자제 대협곡: 공식 관광 코스와 예상 소요 시간",
+      "후난성 도로운수관리국: 장자제 대협곡 관광 교통 구간",
+      "후난성 문화관광청: 황룽동 안내",
     ],
   },
   finalCta: {
     sectionLabel: "중국 전체 일정",
     title: "장자제를 중국 전체 희망 일정과 함께 확인하세요.",
-    body: "가고 싶은 도시는 모두 남겨 두세요. 사람이 동선을 짜기 전에 시간 충돌부터 확인합니다.",
+    body:
+      "가고 싶은 도시, 총 숙박일, 동행 유형과 여행 속도를 선택하세요. 이후 담당자가 장자제 도착·출발 시간, 숙소 변경과 최신 입장권 충돌을 확인합니다.",
     action: "내 여행 시간 확인하기",
   },
   structuredData: {

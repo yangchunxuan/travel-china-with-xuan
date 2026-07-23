@@ -14,6 +14,57 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieGuidePage.module.css";
 
+const nightShowRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string; action: string }
+> = {
+  en: {
+    label: "Planning an evening show?",
+    title: "Choose it after the hotel base and next morning are clear.",
+    body:
+      "Compare Tianmen Fox Fairy, Charming Xiangxi and Eternal Love by the whole evening they create—not only the ticket or online rating.",
+    action: "Compare Zhangjiajie night shows",
+  },
+  zh: {
+    label: "准备安排夜间演出？",
+    title: "先确定住宿区域和第二天安排，再选演出。",
+    body:
+      "把天门狐仙、魅力湘西和张家界千古情放进整个晚上比较，而不只看票价或网络评分。",
+    action: "比较张家界三大夜间演出",
+  },
+  ko: {
+    label: "야간 공연을 계획하시나요?",
+    title: "숙소 지역과 다음 날 일정을 정한 뒤 공연을 고르세요.",
+    body:
+      "톈먼호선, 매력상서, 장자제 천고정을 입장권이나 평점이 아니라 저녁 전체 일정으로 비교합니다.",
+    action: "장자제 야간 공연 비교하기",
+  },
+};
+
+const transportRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string }
+> = {
+  en: {
+    label: "Planning the long transfers?",
+    title: "Count the whole travel day, not only the timetable.",
+    body:
+      "Compare train and flight for Beijing → Zhangjiajie and Zhangjiajie → Shanghai, including station or airport access and arrival timing.",
+  },
+  zh: {
+    label: "准备安排长距离转场？",
+    title: "不要只看车程或飞行时间，要计算完整转场日。",
+    body:
+      "把进出车站或机场、候车和值机以及落地时间一起算入，对比北京 → 张家界和张家界 → 上海的高铁与飞机。",
+  },
+  ko: {
+    label: "장거리 이동을 계획하시나요?",
+    title: "시간표만 보지 말고 이동일 전체를 계산하세요.",
+    body:
+      "역·공항 접근과 대기, 도착 시각까지 포함해 베이징 → 장자제와 장자제 → 상하이 구간의 기차와 항공편을 비교합니다.",
+  },
+};
+
 function Timeline({
   stops,
   headingLevel = 3,
@@ -149,6 +200,12 @@ function createStructuredData(
         url: "https://homegroundchina.com/",
       },
       {
+        "@type": "Person",
+        "@id": "https://homegroundchina.com/#xuan",
+        name: "Xuan",
+        worksFor: { "@id": "https://homegroundchina.com/#organization" },
+      },
+      {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
         url: guide.canonicalUrl,
@@ -165,6 +222,7 @@ function createStructuredData(
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
         author: { "@id": "https://homegroundchina.com/#organization" },
+        contributor: { "@id": "https://homegroundchina.com/#xuan" },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         citation: ZHANGJIAJIE_GUIDE_SOURCES.map((source, index) => ({
           "@type": "WebPage",
@@ -209,7 +267,14 @@ export function ZhangjiajieGuidePage({
 }) {
   const copy = getZhangjiajieGuideCopy(locale);
   const guide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-guide&utm_medium=owned&utm_campaign=route-guide&planner=destinations#route-finder`;
+  const nightShowGuide = getGuideEntry("best-zhangjiajie-night-show", locale);
+  const nightShowCopy = nightShowRelatedCopy[locale];
+  const transportGuide = getGuideEntry(
+    "beijing-zhangjiajie-shanghai-transport",
+    locale,
+  );
+  const transportCopy = transportRelatedCopy[locale];
+  const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale, copy);
 
   return (
@@ -300,8 +365,18 @@ export function ZhangjiajieGuidePage({
               </nav>
               <div className={styles.fullDayRule}>
                 <strong>{copy.quick.fullDayLabel}</strong>
-                <p>{copy.quick.fullDayBody}</p>
+                <div>
+                  <p>{copy.quick.fullDayBody}</p>
+                  <p className={styles.fullDayExample}>
+                    <span>{copy.quick.fullDayExampleLabel}</span>{" "}
+                    {copy.quick.fullDayExample}
+                  </p>
+                </div>
               </div>
+              <Link className={styles.quickPlannerLink} href={plannerHref}>
+                {copy.quick.action}
+                <ArrowRight aria-hidden="true" size={17} />
+              </Link>
             </section>
 
             <section
@@ -333,6 +408,32 @@ export function ZhangjiajieGuidePage({
                 </ol>
               </figure>
             </section>
+
+            <div className={styles.relatedGuideStack}>
+              <aside className={styles.nightShowRelated} aria-labelledby="night-show-related-title">
+                <div>
+                  <p>{nightShowCopy.label}</p>
+                  <h2 id="night-show-related-title">{nightShowCopy.title}</h2>
+                  <span>{nightShowCopy.body}</span>
+                </div>
+                <Link href={nightShowGuide.canonicalPath}>
+                  {nightShowCopy.action}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+
+              <aside className={styles.nightShowRelated} aria-labelledby="transport-related-title">
+                <div>
+                  <p>{transportCopy.label}</p>
+                  <h2 id="transport-related-title">{transportCopy.title}</h2>
+                  <span>{transportCopy.body}</span>
+                </div>
+                <Link href={transportGuide.canonicalPath}>
+                  {transportGuide.featuredLinkLabel}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+            </div>
 
             <section
               className={styles.itinerarySection}

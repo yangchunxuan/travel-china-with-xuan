@@ -68,6 +68,27 @@ test("guide itineraries use semantic editorial lists and sources stay quiet by d
   assert.match(styles, /\.branchGrid\s*\{\s*align-items: start;/s);
 });
 
+test("guide answers full-day counting and park-order intent without inventing attribution", async () => {
+  const guide = await source("components/ZhangjiajieGuidePage.tsx");
+  const header = await source("components/HomegroundHeader.tsx");
+  const copy = await source("lib/zhangjiajieGuideI18n.ts");
+  const sources = await source("lib/zhangjiajieGuide.ts");
+
+  assert.match(copy, /Arrive Monday evening and tour Tuesday plus Wednesday/);
+  assert.match(copy, /East Gate → Tianzi Mountain → Yuanjiajie → Bailong Elevator/);
+  assert.match(copy, /South Gate → Huangshi Village → Golden Whip Stream → East Gate/);
+  assert.match(copy, /Conditional, not the default/);
+  assert.match(copy, /local background: Xuan grew up in Zhangjiajie/);
+  assert.match(sources, /zjjdaxiagu\.com\/guide\.html/);
+  assert.match(guide, /"@type": "Person"/);
+  assert.match(guide, /author: \{ "@id": "https:\/\/homegroundchina\.com\/#organization" \}/);
+  assert.match(guide, /contributor: \{ "@id": "https:\/\/homegroundchina\.com\/#xuan" \}/);
+  assert.match(guide, /\?planner=destinations#route-finder/);
+  assert.match(header, /\?planner=destinations#route-finder/);
+  assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
+  assert.doesNotMatch(header, /utm_(?:source|medium|campaign)/);
+});
+
 test("guide metadata, sitemap and visible dates share one source", async () => {
   const page = await source(
     "app/(default)/guides/zhangjiajie-itinerary/page.tsx",
@@ -89,7 +110,7 @@ test("guide metadata, sitemap and visible dates share one source", async () => {
   assert.match(guide, /guide\.datePublished/);
   assert.match(guide, /guide\.dateModified/);
   assert.match(registry, /datePublished: "2026-07-20"/);
-  assert.match(registry, /dateModified: "2026-07-21"/);
+  assert.match(registry, /dateModified: "2026-07-22"/);
   assert.match(registry, /path: "\/guides\/zhangjiajie-itinerary\/"/);
   assert.match(registry, /path: "\/zh\/guides\/zhangjiajie-itinerary\/"/);
   assert.match(registry, /path: "\/ko\/guides\/zhangjiajie-itinerary\/"/);
@@ -114,8 +135,9 @@ test("public guide remains available to search, citation and training crawlers",
   assert.match(page, /index: true/);
   assert.match(page, /follow: true/);
   assert.doesNotMatch(guide, /FAQPage|HowTo|AggregateRating/);
-  assert.match(home, /href=\{featuredGuide\.canonicalPath\}/);
-  assert.match(home, /featuredGuide\.featuredLinkLabel/);
+  assert.match(home, /guide: featuredGuide/);
+  assert.match(home, /href=\{guide\.canonicalPath\}/);
+  assert.match(home, /guide\.featuredLinkLabel/);
   assert.match(footer, /href=\{guide\.canonicalPath\}/);
   assert.match(header, /getGuideEntry\([\s\S]*targetLocale[\s\S]*\)\.canonicalPath/);
 });

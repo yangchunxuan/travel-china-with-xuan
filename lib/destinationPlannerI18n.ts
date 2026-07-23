@@ -20,6 +20,14 @@ interface DestinationPlannerCopy {
   introTitle: string;
   introBody: string;
   progress: (current: number, total: number) => string;
+  stepLabels: {
+    destinations: string;
+    nights: string;
+    party: string;
+    pace: string;
+  };
+  mobileTrust: readonly [string, string, string];
+  selectedCount: (count: number) => string;
   questions: {
     destinations: {
       eyebrow: string;
@@ -182,6 +190,19 @@ export const destinationPlannerCopy: Record<
     introBody:
       "Choose every place that genuinely interests you. We will keep them all, show any time tension and carry the same brief to a person.",
     progress: (current, total) => `Question ${current} of ${total}`,
+    stepLabels: {
+      destinations: "Wishlist",
+      nights: "Nights",
+      party: "Group",
+      pace: "Pace",
+    },
+    mobileTrust: [
+      "No budget needed",
+      "No contact yet",
+      "Every place stays",
+    ],
+    selectedCount: (count) =>
+      `${count} ${count === 1 ? "place" : "places"} selected`,
     questions: {
       destinations: {
         eyebrow: "Keep the whole wishlist",
@@ -379,6 +400,18 @@ export const destinationPlannerCopy: Record<
     introBody:
       "把真正感兴趣的地方都选上。我们会保留全部愿望，指出时间矛盾，并把同一份信息交给人工规划师。",
     progress: (current, total) => `第 ${current} 题，共 ${total} 题`,
+    stepLabels: {
+      destinations: "愿望清单",
+      nights: "住宿晚数",
+      party: "同行成员",
+      pace: "旅行节奏",
+    },
+    mobileTrust: [
+      "无需先填预算",
+      "结果前不留联系方式",
+      "每个地点都会保留",
+    ],
+    selectedCount: (count) => `已选择 ${count} 个地点`,
     questions: {
       destinations: {
         eyebrow: "完整保留愿望",
@@ -561,6 +594,18 @@ export const destinationPlannerCopy: Record<
     introBody:
       "진심으로 가고 싶은 곳을 모두 선택하세요. 선택을 그대로 보존하고 시간의 충돌을 보여 준 뒤 같은 내용을 사람 플래너에게 전달합니다.",
     progress: (current, total) => `${total}개 중 ${current}번째 질문`,
+    stepLabels: {
+      destinations: "위시리스트",
+      nights: "숙박일",
+      party: "동행",
+      pace: "여행 속도",
+    },
+    mobileTrust: [
+      "예산 입력 불필요",
+      "결과 전 연락처 불필요",
+      "선택지는 모두 유지",
+    ],
+    selectedCount: (count) => `${count}곳 선택`,
     questions: {
       destinations: {
         eyebrow: "희망을 모두 보존합니다",

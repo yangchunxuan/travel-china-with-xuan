@@ -167,6 +167,7 @@
 }
 
 .proofSection,
+.servicePathways,
 .studioSection,
 .faqSection {
   scroll-margin-top: 5.75rem;
@@ -258,14 +259,24 @@
 }
 
 .desktopNav a {
+  align-items: center;
   color: #435049;
+  display: inline-flex;
   font-size: 0.83rem;
   font-weight: 680;
+  min-height: 2.75rem;
   text-decoration: none;
 }
 
 .desktopNav a:hover {
   color: #9e3f29;
+}
+
+.desktopNav a[aria-current="page"] {
+  color: #8b3928;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.4em;
 }
 
 .headerActions {
@@ -366,6 +377,10 @@
   text-decoration: none;
 }
 
+.mobileNav > a[aria-current="page"] {
+  color: #8b3928;
+}
+
 .mobileLanguageNav {
   display: grid;
   gap: 0.5rem;
@@ -393,48 +408,59 @@
 }
 
 .hero {
-  background: #10231d;
-  color: #fff;
-  min-height: 760px;
+  background: #f4efe7;
+  color: #17251f;
+  min-height: 720px;
   overflow: hidden;
   position: relative;
 }
 
-.heroPicture,
-.heroPicture img,
-.heroShade {
-  height: 100%;
-  inset: 0;
+.heroPicture {
+  border: 1px solid rgb(23 37 31 / 10%);
+  border-radius: 1.2rem;
+  bottom: clamp(2.5rem, 5vw, 4rem);
+  box-shadow: 0 18px 42px rgb(59 47 37 / 10%);
+  height: clamp(12rem, 19vw, 16rem);
+  left: max(2rem, calc((100vw - 1260px) / 2));
+  overflow: hidden;
   position: absolute;
-  width: 100%;
+  width: min(31vw, 22.5rem);
 }
 
 .heroPicture img {
+  height: 100%;
   object-fit: cover;
-  object-position: 50% 54%;
+  object-position: 50% 57%;
+  width: 100%;
 }
 
 .heroShade {
-  background:
-    linear-gradient(90deg, rgb(8 24 19 / 92%) 0%, rgb(9 27 21 / 78%) 38%, rgb(7 18 15 / 42%) 68%, rgb(6 16 13 / 58%) 100%),
-    linear-gradient(0deg, rgb(7 20 16 / 72%) 0%, transparent 45%);
+  background: linear-gradient(180deg, rgb(244 239 231 / 0%) 0%, rgb(244 239 231 / 22%) 100%);
+  border-radius: 1.2rem;
+  bottom: clamp(2.5rem, 5vw, 4rem);
+  height: clamp(12rem, 19vw, 16rem);
+  left: max(2rem, calc((100vw - 1260px) / 2));
+  pointer-events: none;
+  position: absolute;
+  width: min(31vw, 22.5rem);
 }
 
 .heroGrid {
   align-items: center;
   display: grid;
-  gap: clamp(2rem, 4vw, 4rem);
-  grid-template-columns: minmax(320px, 0.78fr) minmax(560px, 1.22fr);
+  gap: clamp(2rem, 4.25vw, 4.25rem);
+  grid-template-columns: minmax(18rem, 0.58fr) minmax(34rem, 1fr);
   margin: 0 auto;
-  max-width: 1440px;
-  min-height: 760px;
-  padding: clamp(2.5rem, 5vw, 5rem) 2rem;
+  max-width: 1260px;
+  min-height: 720px;
+  padding: clamp(2.75rem, 5vw, 4.5rem) 2rem;
   position: relative;
   z-index: 1;
 }
 
 .heroCopy {
-  max-width: 560px;
+  max-width: 29rem;
+  padding-block-end: clamp(13rem, 21vw, 17.5rem);
 }
 
 .eyebrow,
@@ -448,7 +474,7 @@
 }
 
 .eyebrow {
-  color: #f3c9b8;
+  color: #913b28;
 }
 
 .eyebrowDark,
@@ -458,20 +484,20 @@
 
 .heroCopy h1 {
   font-family: var(--hg-editorial);
-  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-size: clamp(2.75rem, 4.7vw, 4.85rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 0.96;
+  line-height: 0.98;
   margin: 0.85rem 0 1.35rem;
   text-wrap: balance;
 }
 
 .heroLead {
-  color: rgb(255 255 255 / 84%);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #526158;
+  font-size: clamp(0.98rem, 1.4vw, 1.12rem);
   line-height: 1.65;
   margin: 0;
-  max-width: 590px;
+  max-width: 34rem;
 }
 
 .heroTrust {
@@ -485,7 +511,7 @@
 
 .heroTrust li {
   align-items: center;
-  color: rgb(255 255 255 / 86%);
+  color: #46554d;
   display: flex;
   font-size: 0.81rem;
   font-weight: 650;
@@ -493,7 +519,7 @@
 }
 
 .heroTrust svg {
-  color: #f0b9a3;
+  color: #a74731;
 }
 
 .heroPlanner {
@@ -501,54 +527,42 @@
 }
 
 .heroResult {
-  background: #f7f5ef;
+  background: #f4efe7;
   color: #17251f;
   min-height: 0;
   overflow: visible;
 }
 
 .heroResult .heroPicture,
-.heroResult .heroPicture img,
 .heroResult .heroShade {
-  height: clamp(14rem, 28vw, 22rem);
-}
-
-.heroResult .heroShade {
-  background:
-    linear-gradient(0deg, rgb(7 20 16 / 72%) 0%, rgb(7 20 16 / 20%) 75%),
-    linear-gradient(90deg, rgb(8 24 19 / 58%) 0%, rgb(7 18 15 / 18%) 72%);
+  display: none;
 }
 
 .heroResult .heroGrid {
   display: block;
-  max-width: none;
+  max-width: 68rem;
   min-height: 0;
-  padding: 0;
+  padding: clamp(2rem, 4vw, 3.5rem) 2rem clamp(3.5rem, 7vw, 6rem);
 }
 
 .heroResult .heroCopy {
-  align-items: flex-end;
-  color: #fff;
-  display: flex;
-  height: clamp(14rem, 28vw, 22rem);
-  inline-size: 100%;
-  margin-inline: auto;
-  max-width: 1260px;
-  padding: clamp(1.5rem, 4vw, 3rem) 2rem;
+  color: #17251f;
+  height: auto;
+  margin-block-end: 1.5rem;
+  max-width: 46rem;
+  padding: 0;
 }
 
 .heroResult .heroCopy h1 {
-  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.02;
   margin: 0;
-  max-width: 15ch;
+  max-width: 18ch;
 }
 
 .heroResult .heroPlanner {
-  background: #f7f5ef;
-  padding: clamp(1.5rem, 4vw, 3.5rem)
-    max(1rem, calc((100vw - 62rem) / 2))
-    clamp(3.5rem, 7vw, 6rem);
+  background: transparent;
+  padding: 0;
   position: relative;
 }
 
@@ -562,14 +576,437 @@
 }
 
 .photoCaption {
-  bottom: 1rem;
-  color: rgb(255 255 255 / 66%);
+  bottom: clamp(1.15rem, 2.2vw, 1.75rem);
+  color: #4f5c56;
   font-size: 0.69rem;
-  left: 2rem;
+  left: max(2rem, calc((100vw - 1260px) / 2));
   letter-spacing: 0.06em;
   margin: 0;
   position: absolute;
   z-index: 2;
+}
+
+.intentView {
+  background: #fffdf9;
+  color: #17251f;
+  padding: clamp(1.15rem, 2.6vw, 1.8rem);
+}
+
+.intentHeader {
+  margin-block-end: 1.2rem;
+  max-width: 48rem;
+}
+
+.intentEyebrow {
+  color: #913b28;
+  font-size: 0.7rem;
+  font-weight: 780;
+  letter-spacing: 0.13em;
+  margin: 0 0 0.48rem;
+  text-transform: uppercase;
+}
+
+.intentHeader h2 {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  font-weight: 560;
+  letter-spacing: -0.028em;
+  line-height: 1.1;
+  margin: 0;
+  scroll-margin-top: 6rem;
+  text-wrap: balance;
+}
+
+.intentHeader h2:focus-visible {
+  border-radius: 0.2rem;
+  outline: 3px solid #007a70;
+  outline-offset: 4px;
+}
+
+.intentHeader > p:last-child {
+  color: #59675f;
+  font-size: 0.9rem;
+  line-height: 1.58;
+  margin: 0.65rem 0 0;
+}
+
+.intentFieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.srOnly {
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.intentPaidGrid {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.intentFreeRow {
+  margin-block-start: 0.65rem;
+}
+
+.intentOption {
+  align-items: start;
+  background: #fff;
+  border: 1px solid #d3d7d0;
+  border-radius: 0.9rem;
+  cursor: pointer;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: 1.35rem 2rem minmax(0, 1fr);
+  min-block-size: 100%;
+  min-inline-size: 0;
+  padding: 0.9rem;
+  position: relative;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.intentOption:hover {
+  background: #fffdfa;
+  border-color: #82938a;
+  transform: translateY(-1px);
+}
+
+.intentOption[data-selected="true"] {
+  background: #f2f5f1;
+  border-color: #31584b;
+  box-shadow: inset 0 0 0 1px #31584b;
+}
+
+.intentOption:has(input:focus-visible) {
+  outline: 3px solid #007a70;
+  outline-offset: 2px;
+}
+
+.intentOption > input {
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.intentOptionFree {
+  align-items: center;
+  background: #f7f2ea;
+  min-block-size: 4.75rem;
+}
+
+.intentRadio {
+  align-items: center;
+  border: 1.5px solid #88968e;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  height: 1.25rem;
+  justify-content: center;
+  margin-block-start: 0.1rem;
+  width: 1.25rem;
+}
+
+.intentOption[data-selected="true"] .intentRadio {
+  background: #214d40;
+  border-color: #214d40;
+}
+
+.intentOptionIcon {
+  align-items: center;
+  background: #f2e7de;
+  border-radius: 0.62rem;
+  color: #913b28;
+  display: inline-flex;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.intentOptionBody {
+  display: grid;
+  gap: 0.34rem;
+  min-width: 0;
+}
+
+.intentStatement {
+  color: #7c4738;
+  font-size: 0.68rem;
+  font-weight: 720;
+  line-height: 1.4;
+}
+
+.intentOptionHeading {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.intentOptionHeading strong {
+  color: #17251f;
+  font-size: 0.94rem;
+  line-height: 1.3;
+}
+
+.intentOptionHeading > span {
+  color: #913b28;
+  font-size: 0.74rem;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.intentSummary,
+.intentScope {
+  overflow-wrap: anywhere;
+}
+
+.intentSummary {
+  color: #526158;
+  font-size: 0.77rem;
+  line-height: 1.48;
+}
+
+.intentScope {
+  border-block-start: 1px solid #e0e2dc;
+  color: #56615b;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  margin-block-start: 0.18rem;
+  padding-block-start: 0.42rem;
+}
+
+.intentError {
+  color: #842a2a;
+  font-size: 0.78rem;
+  font-weight: 670;
+  line-height: 1.45;
+  margin: 0.62rem 0 0;
+  min-block-size: 1.15rem;
+}
+
+.intentActions {
+  align-items: center;
+  display: flex;
+  gap: 0.65rem;
+  justify-content: flex-end;
+  margin-block-start: 0.35rem;
+}
+
+.intentSecondaryButton,
+.intentContinueButton,
+.selectedIntent button,
+.planningUpgradeOptions button {
+  align-items: center;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 740;
+  justify-content: center;
+  min-block-size: 2.75rem;
+}
+
+.intentSecondaryButton {
+  background: transparent;
+  border: 1px solid #aab2ac;
+  color: #173a31;
+  padding: 0.65rem 1rem;
+}
+
+.intentContinueButton {
+  background: #214d40;
+  border: 1px solid #214d40;
+  color: #fff;
+  gap: 0.42rem;
+  padding: 0.65rem 1.05rem;
+}
+
+.intentSecondaryButton:hover {
+  background: #edf1ed;
+  border-color: #557165;
+}
+
+.intentContinueButton:hover {
+  background: #173a31;
+}
+
+.intentSecondaryButton:focus-visible,
+.intentContinueButton:focus-visible,
+.selectedIntent button:focus-visible,
+.planningUpgradeOptions button:focus-visible {
+  outline: 3px solid #007a70;
+  outline-offset: 2px;
+}
+
+.intentBoundary {
+  border-block-start: 1px solid #dedfd9;
+  color: #6b756f;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+  padding-block-start: 0.75rem;
+}
+
+.selectedIntent {
+  align-items: center;
+  background: #f6f1e9;
+  border-block-end: 1px solid #d8d5cd;
+  color: #17251f;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  justify-content: space-between;
+  padding: 0.72rem clamp(1.15rem, 3vw, 1.8rem);
+}
+
+.selectedIntent > div {
+  align-items: center;
+  display: grid;
+  gap: 0.35rem 0.65rem;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  min-width: 0;
+}
+
+.selectedIntentLabel {
+  color: #526158;
+  font-size: 0.64rem;
+  font-weight: 780;
+  grid-column: 1 / -1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.selectedIntent .intentOptionIcon {
+  grid-column: 1;
+}
+
+.selectedIntent .intentOptionBody {
+  grid-column: 2;
+}
+
+.selectedIntent .intentOptionHeading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.65rem;
+}
+
+.selectedIntent .intentSummary {
+  font-size: 0.72rem;
+}
+
+.selectedIntent button {
+  background: #fff;
+  border: 1px solid #aab2ac;
+  color: #173a31;
+  flex: none;
+  min-inline-size: 4.25rem;
+  padding: 0.55rem 0.85rem;
+}
+
+.selectedIntentBoundary {
+  border-block-start: 1px solid #d8d5cd;
+  color: #526158;
+  font-size: 0.7rem;
+  grid-column: 1 / -1;
+  line-height: 1.5;
+  margin: 0;
+  padding-block-start: 0.6rem;
+}
+
+.intentScopeCompact {
+  margin-block-start: 0.08rem;
+}
+
+.selectedIntent button:hover {
+  background: #edf1ed;
+  border-color: #557165;
+}
+
+.selectedIntent button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.planningUpgrade {
+  background: #f7f2ea;
+  border: 1px solid #d8d5cd;
+  border-radius: 1rem;
+  margin-block-start: 0.85rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.planningUpgrade h3 {
+  color: #17251f;
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.planningUpgrade > p:not(.intentEyebrow) {
+  color: #59675f;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0.55rem 0 0;
+}
+
+.planningUpgradeOptions {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-block-start: 0.9rem;
+}
+
+.planningUpgradeOptions button {
+  background: #fff;
+  border: 1px solid #cbd0c9;
+  border-radius: 0.75rem;
+  color: #173a31;
+  gap: 0.55rem;
+  justify-content: flex-start;
+  min-width: 0;
+  padding: 0.72rem;
+  text-align: start;
+}
+
+.planningUpgradeOptions button:hover {
+  background: #f0f4f0;
+  border-color: #557165;
+}
+
+.planningUpgradeOptions button > span {
+  display: grid;
+  flex: 1;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.planningUpgradeOptions strong,
+.planningUpgradeOptions small {
+  overflow-wrap: anywhere;
+}
+
+.planningUpgradeOptions strong {
+  font-size: 0.76rem;
+  line-height: 1.3;
+}
+
+.planningUpgradeOptions small {
+  color: #913b28;
+  font-size: 0.67rem;
+  font-weight: 720;
 }
 
 .proofSection,
@@ -713,22 +1150,310 @@
   margin: 0.35rem 0 0;
 }
 
-.guideLink {
-  align-items: center;
-  color: #7f321f;
-  display: inline-flex;
-  font-size: 0.86rem;
-  font-weight: 740;
-  gap: 0.45rem;
-  margin-top: 1.35rem;
-  min-height: 2.75rem;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+.planningGuides {
+  border-top: 1px solid #d9dbd5;
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
 }
 
-.guideLink:hover,
-.guideLink:focus-visible {
-  color: #521f15;
+.planningGuidesIntro {
+  align-items: flex-end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.planningGuidesIntro .cardLabel {
+  flex: none;
+  margin: 0;
+}
+
+.planningGuidesIntro h3 {
+  color: #17251f;
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 34rem;
+}
+
+.planningGuideList {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.planningGuideCard {
+  align-items: flex-end;
+  background: #183c32;
+  border: 1px solid rgb(23 37 31 / 18%);
+  border-radius: 1.15rem;
+  color: #fff;
+  display: flex;
+  min-height: 24rem;
+  overflow: hidden;
+  padding: 1.45rem;
+  position: relative;
+  text-decoration: none;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.planningGuideCard:hover,
+.planningGuideCard:focus-visible {
+  box-shadow: 0 18px 38px rgb(22 38 30 / 16%);
+  transform: translateY(-2px);
+}
+
+.planningGuideCard:focus-visible {
+  outline: 3px solid #9e3f29;
+  outline-offset: 3px;
+}
+
+.planningGuideImage,
+.planningGuideImage::after,
+.planningGuideImage img {
+  inset: 0;
+  position: absolute;
+}
+
+.planningGuideImage::after {
+  background: linear-gradient(
+    180deg,
+    rgb(6 23 18 / 4%) 24%,
+    rgb(6 23 18 / 88%) 100%
+  );
+  content: "";
+}
+
+.planningGuideImage img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+  width: 100%;
+}
+
+.planningGuideCard:hover .planningGuideImage img,
+.planningGuideCard:focus-visible .planningGuideImage img {
+  transform: scale(1.025);
+}
+
+.planningGuideNumber {
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 72%);
+  border-radius: 999px;
+  display: inline-flex;
+  font-family: var(--hg-card-display);
+  font-size: 1.1rem;
+  height: 3.1rem;
+  justify-content: center;
+  left: 1.35rem;
+  position: absolute;
+  top: 1.35rem;
+  width: 3.1rem;
+  z-index: 1;
+}
+
+.planningGuideContent {
+  display: grid;
+  gap: 0.75rem;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.planningGuideMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.planningGuideMeta > span {
+  backdrop-filter: blur(8px);
+  background: rgb(7 28 22 / 32%);
+  border: 1px solid rgb(255 255 255 / 48%);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  padding: 0.38rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.planningGuideLabel {
+  color: #fff;
+}
+
+.planningGuideTitle {
+  font-family: var(--hg-card-display);
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+.planningGuideCta {
+  align-items: center;
+  align-self: end;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 780;
+  gap: 0.42rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  min-height: 2.75rem;
+  text-transform: uppercase;
+}
+
+.servicePathways {
+  background: #f1ece4;
+  padding: clamp(4.75rem, 8vw, 7rem) max(1rem, calc((100vw - 1260px) / 2));
+}
+
+.servicePathwaysIntro {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1.12fr) minmax(19rem, 0.68fr);
+  margin-bottom: clamp(2.25rem, 5vw, 4rem);
+}
+
+.servicePathwaysIntro h2 {
+  color: #17251f;
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.65rem, 5vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  margin: 0.9rem 0 0;
+  max-width: 12ch;
+  text-wrap: balance;
+}
+
+.servicePathwaysIntro > p {
+  color: #536159;
+  font-size: 1rem;
+  line-height: 1.72;
+  margin: 0 0 0.25rem;
+  max-width: 34rem;
+}
+
+.servicePathwayGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.servicePathwayCard {
+  background: #fbfaf7;
+  min-width: 0;
+}
+
+.servicePathwayCard > a {
+  color: #17251f;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 31rem;
+  padding: clamp(1.35rem, 2.7vw, 2.15rem);
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.servicePathwayCard > a:hover,
+.servicePathwayCard > a:focus-visible {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.servicePathwayCard > a:focus-visible {
+  outline: 3px solid #9e3f29;
+  outline-offset: -3px;
+  position: relative;
+  z-index: 1;
+}
+
+.servicePathwayNumber {
+  color: #a74731;
+  font-family: var(--hg-editorial);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.servicePathwayStartingPoint {
+  color: #6b756f;
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.075em;
+  line-height: 1.5;
+  margin-top: clamp(2.6rem, 5vw, 4.4rem);
+  min-height: 3.25rem;
+  text-transform: uppercase;
+}
+
+.servicePathwayCard h3 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 1rem 0 0;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.servicePathwayCard p {
+  color: #536159;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 1.25rem 0 2rem;
+}
+
+.servicePathwayFooter {
+  border-top: 1px solid #d7d2c9;
+  display: grid;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.15rem;
+}
+
+.servicePathwayFooter > strong {
+  color: #8f3b29;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+}
+
+.servicePathwayFooter > span {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 780;
+  gap: 0.45rem;
+  line-height: 1.4;
+  min-height: 2.75rem;
+}
+
+.servicePathwayFooter svg {
+  flex: none;
+}
+
+.servicePathwaysScope {
+  border-inline-start: 2px solid #a74731;
+  color: #5b6861;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  margin: 1.5rem 0 0;
+  max-width: 57rem;
+  padding-inline-start: 0.9rem;
 }
 
 .handledCard {
@@ -830,6 +1555,32 @@
   margin: 0.35rem 0 0;
 }
 
+.studioLink {
+  align-items: center;
+  border-radius: 0.2rem;
+  color: #efb59f;
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 760;
+  gap: 0.55rem;
+  grid-column: 2;
+  justify-self: start;
+  margin-top: -2.5rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.2rem;
+  text-decoration: none;
+}
+
+.studioLink:hover,
+.studioLink:focus-visible {
+  color: #fff;
+}
+
+.studioLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 0.2rem;
+}
+
 .faqSection {
   display: grid;
   gap: clamp(2.75rem, 6vw, 5.5rem);
@@ -896,11 +1647,11 @@
 }
 
 .finalCta > svg {
-  color: #f7d6c8;
+  color: #fff3ed;
 }
 
 .finalCta .cardLabel {
-  color: #f7d6c8;
+  color: #fff3ed;
 }
 
 .finalCta h2 {
@@ -969,6 +1720,10 @@
   text-decoration: none;
 }
 
+.footerTop span[aria-current] {
+  color: #fff;
+}
+
 .footerNote {
   border-top: 1px solid rgb(255 255 255 / 12%);
   color: rgb(255 255 255 / 58%);
@@ -984,11 +1739,11 @@
 
   .heroGrid {
     gap: 2rem;
-    grid-template-columns: minmax(300px, 0.68fr) minmax(520px, 1.32fr);
+    grid-template-columns: minmax(17rem, 0.56fr) minmax(32rem, 1fr);
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1120px) {
   .desktopNav,
   .headerCta,
   .languageNav {
@@ -1002,38 +1757,42 @@
   .menuButton {
     display: inline-flex;
   }
+}
+
+@media (max-width: 1040px) {
+
+  .hero {
+    min-height: 0;
+  }
 
   .heroGrid {
     align-items: start;
     grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
     padding-bottom: 3rem;
     padding-top: 3.5rem;
   }
 
   .heroResult .heroGrid {
-    padding: 0;
+    padding: 3rem 2rem 4.5rem;
   }
 
   .heroResult .heroCopy {
-    max-width: none;
+    max-width: 46rem;
   }
 
   .heroCopy {
     max-width: 650px;
+    padding-block-end: 0;
   }
 
   .heroCopy h1 {
     max-width: 700px;
   }
 
+  .heroPicture,
   .heroShade {
-    background: linear-gradient(180deg, rgb(7 22 17 / 88%) 0%, rgb(7 22 17 / 67%) 34%, rgb(7 22 17 / 78%) 68%, rgb(7 22 17 / 94%) 100%);
-  }
-
-  .heroResult .heroShade {
-    background:
-      linear-gradient(0deg, rgb(7 20 16 / 72%) 0%, rgb(7 20 16 / 18%) 75%),
-      linear-gradient(90deg, rgb(8 24 19 / 55%) 0%, rgb(7 18 15 / 16%) 72%);
+    display: none;
   }
 
   .photoCaption {
@@ -1041,9 +1800,31 @@
   }
 
   .proofBoard,
+  .servicePathwaysIntro,
   .studioSection,
   .faqSection {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .servicePathwaysIntro > p {
+    max-width: 44rem;
+  }
+
+  .servicePathwayGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicePathwayCard:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .servicePathwayCard:last-child > a {
+    min-height: 25rem;
+  }
+
+  .studioLink {
+    grid-column: 1;
+    margin-top: -1rem;
   }
 
   .finalCta {
@@ -1053,6 +1834,17 @@
   .finalCta > a {
     grid-column: 2;
     justify-self: start;
+  }
+}
+
+@media (max-width: 820px) {
+  .intentPaidGrid,
+  .planningUpgradeOptions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intentOption {
+    min-block-size: 0;
   }
 }
 
@@ -1081,19 +1873,18 @@
   }
 
   .heroGrid {
-    gap: 0.7rem;
-    padding: 1.35rem 1rem 1rem;
+    gap: 1.25rem;
+    padding: 1.65rem 1rem 2.5rem;
   }
 
-  .heroResult .heroPicture,
-  .heroResult .heroPicture img,
-  .heroResult .heroShade,
-  .heroResult .heroCopy {
-    height: clamp(11rem, 48vw, 14rem);
+  .heroResult .heroGrid {
+    padding: 1.75rem 1rem 3.75rem;
   }
 
   .heroResult .heroCopy {
-    padding: 1.25rem 1rem;
+    height: auto;
+    margin-block-end: 1.1rem;
+    padding: 0;
   }
 
   .heroResult .heroCopy h1 {
@@ -1102,7 +1893,7 @@
   }
 
   .heroResult .heroPlanner {
-    padding: 1rem 1rem 3.75rem;
+    padding: 0;
   }
 
   .heroCopy h1 {
@@ -1130,7 +1921,46 @@
     display: none;
   }
 
+  .intentView {
+    padding: 1rem;
+  }
+
+  .intentHeader {
+    margin-block-end: 1rem;
+  }
+
+  .intentOption {
+    gap: 0.58rem;
+    grid-template-columns: 1.25rem 1.9rem minmax(0, 1fr);
+    padding: 0.78rem;
+  }
+
+  .intentOptionIcon {
+    height: 1.9rem;
+    width: 1.9rem;
+  }
+
+  .intentActions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .intentSecondaryButton,
+  .intentContinueButton {
+    inline-size: 100%;
+  }
+
+  .selectedIntent {
+    align-items: flex-start;
+    padding: 0.72rem 1rem;
+  }
+
+  .planningUpgradeOptions button {
+    min-block-size: 3rem;
+  }
+
   .proofSection,
+  .servicePathways,
   .studioSection,
   .faqSection {
     padding-block: 3.75rem;
@@ -1142,9 +1972,48 @@
     margin-top: 2.25rem;
   }
 
+  .planningGuidesIntro {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .planningGuideList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .servicePathwayGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .servicePathwayCard:last-child {
+    grid-column: auto;
+  }
+
+  .servicePathwayCard > a,
+  .servicePathwayCard:last-child > a {
+    min-height: 0;
+  }
+
+  .servicePathwayStartingPoint {
+    margin-top: 2.35rem;
+    min-height: 0;
+  }
+
+  .planningGuideCard {
+    min-height: 22rem;
+  }
+
   .studioSection,
   .faqSection {
     gap: 2.5rem;
+  }
+
+  .localeRoot[data-homeground-locale="zh"] .studioIntro h2 {
+    font-size: 2.2rem;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+    word-break: normal;
   }
 
   .sampleRouteHeading {
@@ -1210,6 +2079,7 @@
 
   .heroGrid,
   .proofSection,
+  .servicePathways,
   .studioSection,
   .faqSection,
   .finalCta,
@@ -1217,11 +2087,83 @@
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
+
+  .heroResult .heroGrid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .intentView {
+    padding: 0.8rem;
+  }
+
+  .intentOption {
+    gap: 0.48rem;
+    grid-template-columns: 1.2rem 1.8rem minmax(0, 1fr);
+    padding: 0.68rem;
+  }
+
+  .intentOptionIcon {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  .selectedIntent {
+    gap: 0.5rem;
+    padding-inline: 0.8rem;
+  }
+
+  .selectedIntent > div {
+    gap: 0.28rem 0.48rem;
+  }
+
+  .selectedIntent button {
+    min-inline-size: 3.75rem;
+    padding-inline: 0.65rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .skipLink,
-  .faqList summary span {
+  .faqList summary span,
+  .planningGuideCard,
+  .servicePathwayCard > a,
+  .planningGuideImage img,
+  .intentOption {
     transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .heroPicture,
+  .intentOption,
+  .selectedIntent,
+  .planningUpgrade,
+  .planningUpgradeOptions button {
+    border: 1px solid CanvasText;
+  }
+
+  .intentOption[data-selected="true"] {
+    outline: 2px solid Highlight;
+    outline-offset: -3px;
+  }
+
+  .intentRadio,
+  .intentOptionIcon {
+    background: Canvas;
+    border: 1px solid CanvasText;
+    color: CanvasText;
+  }
+
+  .intentOption[data-selected="true"] .intentRadio {
+    background: Highlight;
+    color: HighlightText;
+  }
+
+  .intentSecondaryButton,
+  .intentContinueButton,
+  .selectedIntent button,
+  .planningUpgradeOptions button {
+    border: 1px solid ButtonText;
   }
 }

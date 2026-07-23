@@ -64,12 +64,41 @@ if (remainingLabRoots.length > 0) {
   );
 }
 
-for (const requiredPage of ["index.html", "zh/index.html", "ko/index.html"]) {
+for (const requiredPage of [
+  "index.html",
+  "zh/index.html",
+  "ko/index.html",
+  "china-itinerary-review/index.html",
+  "zh/china-itinerary-review/index.html",
+  "ko/china-itinerary-review/index.html",
+  "guides/is-your-china-itinerary-too-rushed/index.html",
+  "zh/guides/is-your-china-itinerary-too-rushed/index.html",
+  "ko/guides/is-your-china-itinerary-too-rushed/index.html",
+]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);
 
   if (!requiredStat.isFile()) {
     throw new Error(`Required production page is missing: ${requiredPage}`);
+  }
+}
+
+for (const requiredAsset of [
+  "images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
+  "images/guides/china-itinerary-reality/transfer-platform-soft-focus-480.webp",
+  "images/guides/china-itinerary-reality/transfer-platform-soft-focus-768.webp",
+  "images/guides/china-itinerary-reality/train-cabin-soft-focus-480.webp",
+  "images/guides/china-itinerary-reality/train-cabin-soft-focus-768.webp",
+  "images/guides/china-itinerary-reality/train-cabin-soft-focus-1200.webp",
+  "images/guides/china-itinerary-reality/airport-waiting-soft-focus-480.webp",
+  "images/guides/china-itinerary-reality/airport-waiting-soft-focus-768.webp",
+  "images/guides/china-itinerary-reality/airport-waiting-soft-focus-1200.webp",
+]) {
+  const requiredPath = path.join(outputRoot, requiredAsset);
+  const requiredStat = await lstat(requiredPath);
+
+  if (!requiredStat.isFile()) {
+    throw new Error(`Required production asset is missing: ${requiredAsset}`);
   }
 }
 

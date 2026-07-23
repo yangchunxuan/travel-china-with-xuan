@@ -30,12 +30,23 @@ const explicitSources = [
   "components/HomegroundPrivacyPage.tsx",
   "components/PlannerHandoff.tsx",
   "components/RouteFinder.tsx",
+  "components/ZhangjiajieGuidePage.tsx",
+  "components/TenDayChinaRouteGuidePage.tsx",
   "lib/homegroundI18n.ts",
+  "lib/homegroundStudioI18n.ts",
   "lib/homegroundPrivacyI18n.ts",
   "lib/destinationPlannerI18n.ts",
   "lib/routeFinder.ts",
   "lib/guideRegistry.ts",
   "lib/zhangjiajieGuideI18n.ts",
+  "lib/nightShowGuideCopy.zh.ts",
+  "lib/nightShowGuideCopy.ko.ts",
+  "lib/tenDayGuideCopy.zh.ts",
+  "lib/tenDayGuideCopy.ko.ts",
+  "lib/beijingZhangjiajieShanghaiTransportI18n.ts",
+  "lib/chinaItineraryTooRushedI18n.ts",
+  "lib/chinaItineraryReviewI18n.ts",
+  "lib/routeServiceInterest.ts",
 ];
 const sourceDirectories = ["app/(default)", "app/(localized)"];
 

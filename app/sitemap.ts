@@ -20,6 +20,18 @@ const privacyLanguages = {
   "zh-Hans": `${base}/zh/privacy/`,
   "x-default": `${base}/privacy/`,
 };
+const studioLanguages = {
+  en: `${base}/studio/`,
+  ko: `${base}/ko/studio/`,
+  "zh-Hans": `${base}/zh/studio/`,
+  "x-default": `${base}/studio/`,
+};
+const itineraryReviewLanguages = {
+  en: `${base}/china-itinerary-review/`,
+  ko: `${base}/ko/china-itinerary-review/`,
+  "zh-Hans": `${base}/zh/china-itinerary-review/`,
+  "x-default": `${base}/china-itinerary-review/`,
+};
 const guideEntries = guideIds.flatMap((guideId) => {
   const languages = getGuideLanguageUrls(guideId);
 
@@ -40,29 +52,71 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${base}/`,
-      lastModified: "2026-07-20",
+      lastModified: "2026-07-22",
       changeFrequency: "weekly",
       priority: 1,
       alternates: { languages: homepageLanguages },
     },
     {
       url: `${base}/ko/`,
-      lastModified: "2026-07-18",
+      lastModified: "2026-07-22",
       changeFrequency: "weekly",
       priority: 0.8,
       alternates: { languages: homepageLanguages },
     },
     {
       url: `${base}/zh/`,
-      lastModified: "2026-07-18",
+      lastModified: "2026-07-22",
       changeFrequency: "weekly",
       priority: 0.8,
       alternates: { languages: homepageLanguages },
     },
+    {
+      url: `${base}/studio/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: studioLanguages },
+    },
+    {
+      url: `${base}/zh/studio/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: studioLanguages },
+    },
+    {
+      url: `${base}/ko/studio/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: studioLanguages },
+    },
+    {
+      url: `${base}/china-itinerary-review/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: itineraryReviewLanguages },
+    },
+    {
+      url: `${base}/zh/china-itinerary-review/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: { languages: itineraryReviewLanguages },
+    },
+    {
+      url: `${base}/ko/china-itinerary-review/`,
+      lastModified: "2026-07-22",
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: { languages: itineraryReviewLanguages },
+    },
     ...guideEntries,
     {
       url: `${base}/privacy/`,
-      lastModified: "2026-07-19",
+      lastModified: "2026-07-22",
       changeFrequency: "monthly",
       priority: 0.3,
       alternates: { languages: privacyLanguages },
