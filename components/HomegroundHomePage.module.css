@@ -2453,6 +2453,11 @@
     min-block-size: 0;
   }
 
+  .travelGuideCompact[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
+    .travelGuideImage {
+    aspect-ratio: 1;
+  }
+
   .travelGuideCompact .travelGuideContent {
     padding: 1.15rem;
   }

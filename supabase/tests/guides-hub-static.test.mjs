@@ -23,6 +23,8 @@ test("guides hub is registry-driven and exposes all six current guides", async (
 });
 
 test("homepage guide selection is explicit, ranked and stable", async () => {
+  const homepage = await source("components/HomegroundHomePage.tsx");
+  const homepageCss = await source("components/HomegroundHomePage.module.css");
   const registry = await source("lib/guideRegistry.ts");
 
   assert.match(
@@ -41,6 +43,15 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
   assert.match(
     registry,
     /\.sort\(\(a, b\) => a\.homeFeaturedRank - b\.homeFeaturedRank\)/,
+  );
+  assert.match(
+    registry,
+    /homeCardImagePath:\s*"\/images\/guides\/tantan-zhangjiajie\/tantan-hero-1200\.jpg"/,
+  );
+  assert.match(homepage, /data-guide-id=\{guide\.id\}/);
+  assert.match(
+    homepageCss,
+    /\[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"\][\s\S]*?aspect-ratio: 1;/,
   );
 });
 

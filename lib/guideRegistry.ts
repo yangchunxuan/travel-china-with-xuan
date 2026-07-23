@@ -56,6 +56,10 @@ export interface GuideEntry {
   topics: readonly GuideTopic[];
   destinations: readonly GuideDestination[];
   homeFeaturedRank?: number;
+  /** Optional crop selected specifically for the homepage guide card. */
+  homeCardImagePath?: string;
+  homeCardImageWidth?: number;
+  homeCardImageHeight?: number;
   heroImagePath: string;
   heroImageUrl: string;
   imageWidth: number;
@@ -128,6 +132,10 @@ export const guideRegistry = [
     topics: ["attractions", "trip-planning", "on-the-ground"],
     destinations: ["zhangjiajie"],
     homeFeaturedRank: 3,
+    homeCardImagePath:
+      "/images/guides/tantan-zhangjiajie/tantan-hero-1200.jpg",
+    homeCardImageWidth: 1200,
+    homeCardImageHeight: 1500,
     heroImagePath:
       "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
     heroImageUrl:
