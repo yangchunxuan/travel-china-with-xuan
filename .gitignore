@@ -1,6 +1,11 @@
 node_modules/
 .next/
 out/
+# Timestamped build-output backups. The `.next/` and `out/` rules above match
+# only those exact directory names, so `.next.pre-*` and `.next.production-*`
+# slipped through and left ~960 MB of webpack cache stageable by `git add .`.
+.next.*/
+out.*/
 .DS_Store
 npm-debug.log*
 *.tsbuildinfo
