@@ -4,6 +4,10 @@ import {
   getGuideLanguageUrls,
   guideIds,
 } from "../lib/guideRegistry";
+import {
+  VISA_FREE_ENTRY_MODIFIED,
+  VISA_FREE_ENTRY_URL,
+} from "../lib/visaFreeEntry";
 
 export const dynamic = "force-static";
 
@@ -125,6 +129,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.65,
       alternates: { languages: itineraryReviewLanguages },
+    },
+    {
+      url: VISA_FREE_ENTRY_URL,
+      lastModified: VISA_FREE_ENTRY_MODIFIED,
+      changeFrequency: "weekly",
+      priority: 0.75,
     },
     {
       url: `${base}/zh/china-itinerary-review/`,

@@ -68,6 +68,7 @@ for (const requiredPage of [
   "index.html",
   "zh/index.html",
   "ko/index.html",
+  "china-visa-free-uk-canada/index.html",
   "china-itinerary-review/index.html",
   "zh/china-itinerary-review/index.html",
   "ko/china-itinerary-review/index.html",

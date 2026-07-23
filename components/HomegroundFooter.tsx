@@ -69,6 +69,11 @@ export function HomegroundFooter({
           ) : (
             <a href={guideHubPath}>{sectionLabels.guides}</a>
           )}
+          {locale === "en" ? (
+            <a href="/china-visa-free-uk-canada/">
+              {copy.navigation.visa}
+            </a>
+          ) : null}
           {pageContext === "services" ? (
             <span aria-current="page">
               {sectionLabels.services}
