@@ -181,7 +181,6 @@ test("English, Chinese and Korean expose the same neutral conversation, paid sho
         /Review My Route/u,
         /Build My Route/u,
         /Full Trip Planning & Ground Support/u,
-        /Not ready to contact us\? Try the free route timing check/u,
         /Free to enquire/u,
         /No payment is taken here/u,
       ],
@@ -199,7 +198,6 @@ test("English, Chinese and Korean expose the same neutral conversation, paid sho
         /审核我的路线/u,
         /为我规划路线/u,
         /全程规划与落地支持/u,
-        /还不想留下联系方式？先使用免费路线时间检查/u,
         /提交需求免费/u,
         /本页不会收款/u,
       ],
@@ -217,7 +215,6 @@ test("English, Chinese and Korean expose the same neutral conversation, paid sho
         /내 일정 검토/u,
         /내 동선 설계/u,
         /전체 여행 설계 및 현지 지원/u,
-        /무료 동선 시간 점검을 이용하세요/u,
         /문의 제출 무료/u,
         /이 페이지에서는 결제가 진행되지 않습니다/u,
       ],
@@ -284,7 +281,7 @@ test("English, Chinese and Korean expose the same neutral conversation, paid sho
   );
 });
 
-test("the first planning view keeps a neutral starter, compact paid shortcuts and a separate free tool", async () => {
+test("the first planning view keeps a neutral starter and compact paid shortcuts", async () => {
   const [home, planningDesk, styles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
@@ -300,7 +297,7 @@ test("the first planning view keeps a neutral starter, compact paid shortcuts an
     /copy\.options\.filter\([\s\S]{0,100}option\.kind === ["']paid["']/u,
   );
   assert.match(planningDesk, /className=\{styles\.intentServiceShortcut\}/u);
-  assert.match(planningDesk, /className=\{styles\.intentFreeTool\}/u);
+  assert.doesNotMatch(planningDesk, /className=\{styles\.intentFreeTool\}/u);
   assert.match(
     planningDesk,
     /onContinue\(selectedPrompt\.planningIntent, selectedPrompt\.id\)/u,

@@ -6,7 +6,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("Home planning desk leads with a neutral conversation and keeps three paid shortcuts plus a separate free tool", async () => {
+test("Home planning desk leads with a neutral conversation and keeps three paid shortcuts", async () => {
   const [home, planningDesk, planningCopy, services] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
@@ -34,7 +34,8 @@ test("Home planning desk leads with a neutral conversation and keeps three paid 
     /onContinue\(selectedPrompt\.planningIntent, selectedPrompt\.id\)/,
   );
   assert.match(planningDesk, /onContinue\(option\.id\)/);
-  assert.match(planningDesk, /onContinue\(freeOption\.id\)/);
+  assert.doesNotMatch(planningDesk, /onContinue\(freeOption\.id\)/);
+  assert.doesNotMatch(planningCopy, /freeTool(?:Label|Meta)/);
   assert.match(planningCopy, /id: "conversation"/);
   assert.match(planningCopy, /kind: "conversation"/);
   assert.match(planningCopy, /id: "itinerary-review"/);

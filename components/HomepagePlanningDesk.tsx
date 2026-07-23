@@ -110,7 +110,6 @@ export function HomepagePlanningIntentSelector({
   const paidOptions = copy.options.filter(
     (option) => option.kind === "paid",
   );
-  const freeOption = copy.options.find((option) => option.id === "explore")!;
 
   useEffect(() => {
     setDraft(
@@ -276,21 +275,6 @@ export function HomepagePlanningIntentSelector({
         </div>
         <p className={styles.intentSharedScope}>{copy.fixedPriceScope}</p>
       </section>
-
-      <button
-        type="button"
-        className={styles.intentFreeTool}
-        onClick={() => onContinue(freeOption.id)}
-      >
-        <span>
-          <Compass aria-hidden="true" size={18} strokeWidth={1.8} />
-          <span>
-            <strong>{copy.freeToolLabel}</strong>
-            <small>{copy.freeToolMeta}</small>
-          </span>
-        </span>
-        <ArrowRight aria-hidden="true" size={17} />
-      </button>
     </div>
   );
 }

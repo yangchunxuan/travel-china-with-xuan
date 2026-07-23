@@ -789,59 +789,6 @@
   transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.intentFreeTool {
-  align-items: center;
-  background: transparent;
-  border: 0;
-  color: var(--hg-color-ink);
-  cursor: pointer;
-  display: flex;
-  font: inherit;
-  gap: 0.8rem;
-  inline-size: 100%;
-  justify-content: space-between;
-  margin-block-start: 0.75rem;
-  min-block-size: 2.9rem;
-  padding: 0.42rem 0.2rem;
-  text-align: start;
-}
-
-.intentFreeTool > span {
-  align-items: center;
-  display: grid;
-  gap: 0.65rem;
-  grid-template-columns: 1.7rem minmax(0, 1fr);
-  min-inline-size: 0;
-}
-
-.intentFreeTool > span > svg {
-  color: var(--hg-color-rust);
-  justify-self: center;
-}
-
-.intentFreeTool > span > span {
-  display: grid;
-  gap: 0.08rem;
-  min-inline-size: 0;
-}
-
-.intentFreeTool strong {
-  font-size: 0.76rem;
-  line-height: 1.35;
-  overflow-wrap: anywhere;
-}
-
-.intentFreeTool small {
-  color: var(--hg-color-muted);
-  font-size: 0.65rem;
-  line-height: 1.35;
-}
-
-.intentFreeTool > svg {
-  flex: none;
-  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 .intentOption {
   align-items: start;
   background: #fff;
@@ -1139,20 +1086,17 @@
     background: var(--hg-color-ink);
   }
 
-  .intentServiceShortcut:hover,
-  .intentFreeTool:hover {
+  .intentServiceShortcut:hover {
     background: rgb(20 20 19 / 4%);
   }
 
-  .intentServiceShortcut:hover > svg:last-child,
-  .intentFreeTool:hover > svg {
+  .intentServiceShortcut:hover > svg:last-child {
     transform: translateX(3px);
   }
 }
 
 .intentStarterOption:has(input:focus-visible),
 .intentServiceShortcut:focus-visible,
-.intentFreeTool:focus-visible,
 .intentSecondaryButton:focus-visible,
 .intentContinueButton:focus-visible,
 .selectedIntent button:focus-visible,
@@ -2521,8 +2465,6 @@
   .intentStarterOption,
   .intentServiceShortcut,
   .intentServiceShortcut svg,
-  .intentFreeTool,
-  .intentFreeTool svg,
   .intentNoteField textarea,
   .planningUpgradeConversation,
   .planningUpgradeConversation svg,
@@ -2582,8 +2524,7 @@
   }
 
   .intentStarterOption,
-  .intentServiceShortcut,
-  .intentFreeTool {
+  .intentServiceShortcut {
     animation: intentCardIn 480ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
   }
 
@@ -2724,7 +2665,6 @@
   .intentOption,
   .intentStarterOption,
   .intentServiceShortcut,
-  .intentFreeTool,
   .selectedIntent,
   .planningUpgrade,
   .planningUpgradeOptions button {
@@ -2758,7 +2698,6 @@
   .intentSecondaryButton,
   .intentContinueButton,
   .intentServiceShortcut,
-  .intentFreeTool,
   .selectedIntent button,
   .planningUpgradeOptions button {
     border: 1px solid ButtonText;

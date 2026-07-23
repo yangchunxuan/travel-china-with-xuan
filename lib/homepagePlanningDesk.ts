@@ -108,8 +108,6 @@ export interface HomepagePlanningDeskCopy {
   noteHint: string;
   serviceShortcutLabel: string;
   serviceShortcutIntro: string;
-  freeToolLabel: string;
-  freeToolMeta: string;
   options: readonly HomepagePlanningIntentOption[];
   continue: string;
   keepCurrent: string;
@@ -193,8 +191,6 @@ const en: HomepagePlanningDeskCopy = {
   serviceShortcutLabel: "Already know what you need?",
   serviceShortcutIntro:
     "Start directly with a published service. You can still change the path before payment.",
-  freeToolLabel: "Not ready to contact us? Try the free route timing check",
-  freeToolMeta: "Instant self-check · no planner review · no contact required",
   options: [
     {
       id: "conversation",
@@ -505,8 +501,6 @@ const zh: HomepagePlanningDeskCopy = {
   serviceShortcutLabel: "已经知道自己需要什么？",
   serviceShortcutIntro:
     "可以直接从公开服务开始；付款前仍可根据实际需求调整路径。",
-  freeToolLabel: "还不想留下联系方式？先使用免费路线时间检查",
-  freeToolMeta: "即时自动检查 · 不含真人审核 · 无需联系方式",
   options: [
     {
       id: "conversation",
@@ -806,8 +800,6 @@ const ko: HomepagePlanningDeskCopy = {
   serviceShortcutLabel: "필요한 서비스를 이미 알고 있나요?",
   serviceShortcutIntro:
     "공개된 서비스에서 바로 시작할 수 있으며, 결제 전 실제 필요에 따라 경로를 바꿀 수 있습니다.",
-  freeToolLabel: "아직 연락하지 않고 먼저 확인하고 싶다면 무료 동선 시간 점검을 이용하세요",
-  freeToolMeta: "즉시 자동 점검 · 사람 검토 없음 · 연락처 불필요",
   options: [
     {
       id: "conversation",
