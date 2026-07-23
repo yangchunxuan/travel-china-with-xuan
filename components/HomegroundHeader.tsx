@@ -28,13 +28,21 @@ import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import styles from "./HomegroundHomePage.module.css";
 
+export type HomegroundPageContext =
+  | "home"
+  | "guide"
+  | "guides"
+  | "studio"
+  | "services"
+  | "content";
+
 interface HomegroundHeaderProps {
   locale?: HomegroundLocale;
   plannerStatus?: PlannerStatus;
   handoffStatus?: HandoffStatus;
   handoffDirty?: boolean;
   freeResult?: boolean;
-  pageContext?: "home" | "guide" | "studio" | "services" | "content";
+  pageContext?: HomegroundPageContext;
   guideId?: GuideId;
   showLanguageNav?: boolean;
 }
@@ -58,6 +66,23 @@ const allowedPlannerQueries = new Set([
   "result",
 ]);
 const allowedServiceQueries = new Set<string>(routeServiceIds);
+const navigationSections: Record<
+  HomegroundLocale,
+  { guides: string; services: string }
+> = {
+  en: {
+    guides: "Travel guides",
+    services: "Trip planning services",
+  },
+  zh: {
+    guides: "旅行指南",
+    services: "旅行规划服务",
+  },
+  ko: {
+    guides: "여행 가이드",
+    services: "여행 설계 서비스",
+  },
+};
 
 function preservedHomeQuery(plannerStatus: PlannerStatus): string {
   const current = new URL(window.location.href);
@@ -144,6 +169,8 @@ export function HomegroundHeader({
       : `${copy.path}?planner=destinations#route-finder`;
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesHref = planningServicesCopy.path;
+  const guideHubHref = `${copy.path}guides/`;
+  const sectionLabels = navigationSections[locale];
   const studioHref = `${copy.path}studio/`;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
@@ -264,16 +291,9 @@ export function HomegroundHeader({
         >
           {pageContext === "home" ? (
             <>
-              <a
-                href="#planning-proof"
-                onClick={(event) =>
-                  handleHomegroundHashClick(event, "#planning-proof")
-                }
-              >
-                {copy.navigation.planning}
-              </a>
+              <a href={guideHubHref}>{sectionLabels.guides}</a>
               <a href={planningServicesHref}>
-                {planningServicesCopy.navigationLabel}
+                {sectionLabels.services}
               </a>
               <a href={studioHref}>
                 {copy.navigation.studio}
@@ -289,8 +309,13 @@ export function HomegroundHeader({
             </>
           ) : (
             <>
-              <a href={`${copy.path}#planning-proof`}>
-                {copy.navigation.planning}
+              <a
+                aria-current={
+                  pageContext === "guides" ? "page" : undefined
+                }
+                href={guideHubHref}
+              >
+                {sectionLabels.guides}
               </a>
               <a
                 aria-current={
@@ -298,7 +323,7 @@ export function HomegroundHeader({
                 }
                 href={planningServicesHref}
               >
-                {planningServicesCopy.navigationLabel}
+                {sectionLabels.services}
               </a>
               <a
                 aria-current={pageContext === "studio" ? "page" : undefined}
@@ -328,6 +353,8 @@ export function HomegroundHeader({
                       guideId,
                       targetLocale,
                     ).canonicalPath
+                  : pageContext === "guides"
+                    ? `${target.path}guides/`
                   : pageContext === "services"
                     ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
                   : pageContext === "studio"
@@ -394,17 +421,11 @@ export function HomegroundHeader({
       >
         {pageContext === "home" ? (
           <>
-            <a
-              href="#planning-proof"
-              onClick={(event) => {
-                close();
-                handleHomegroundHashClick(event, "#planning-proof");
-              }}
-            >
-              {copy.navigation.planning}
+            <a href={guideHubHref} onClick={close}>
+              {sectionLabels.guides}
             </a>
             <a href={planningServicesHref} onClick={close}>
-              {planningServicesCopy.navigationLabel}
+              {sectionLabels.services}
             </a>
             <a href={studioHref} onClick={close}>
               {copy.navigation.studio}
@@ -421,8 +442,14 @@ export function HomegroundHeader({
           </>
         ) : (
           <>
-            <a href={`${copy.path}#planning-proof`} onClick={close}>
-              {copy.navigation.planning}
+            <a
+              aria-current={
+                pageContext === "guides" ? "page" : undefined
+              }
+              href={guideHubHref}
+              onClick={close}
+            >
+              {sectionLabels.guides}
             </a>
             <a
               aria-current={
@@ -431,7 +458,7 @@ export function HomegroundHeader({
               href={planningServicesHref}
               onClick={close}
             >
-              {planningServicesCopy.navigationLabel}
+              {sectionLabels.services}
             </a>
             <a
               aria-current={pageContext === "studio" ? "page" : undefined}
@@ -460,6 +487,8 @@ export function HomegroundHeader({
                     guideId,
                     targetLocale,
                   ).canonicalPath
+                : pageContext === "guides"
+                  ? `${target.path}guides/`
                 : pageContext === "services"
                   ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
                 : pageContext === "studio"

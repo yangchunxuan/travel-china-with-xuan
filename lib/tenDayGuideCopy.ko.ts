@@ -16,7 +16,7 @@ export const tenDayGuideKorean: TenDayGuideCopy = {
   breadcrumb: {
     label: "현재 위치",
     home: "홈",
-    current: "10일 동선 확인",
+    current: "10일 동선 가이드",
   },
   hero: {
     eyebrow: "전체 동선을 점검하는 여행 가이드",

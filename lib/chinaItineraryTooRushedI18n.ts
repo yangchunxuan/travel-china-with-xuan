@@ -159,7 +159,7 @@ const en: ItineraryRushGuideCopy = {
   skipLink: "Skip to article",
   breadcrumbLabel: "Breadcrumb",
   breadcrumbHome: "Home",
-  breadcrumbCurrent: "China itinerary reality check",
+  breadcrumbCurrent: "Is this China itinerary too rushed?",
   eyebrow: "China itinerary reality check",
   heroLead:
     "A practical check for city changes, full transfer days, hotel moves, timed visits and the pace your group can actually keep.",
@@ -444,7 +444,7 @@ const zh: ItineraryRushGuideCopy = {
   skipLink: "跳到正文",
   breadcrumbLabel: "面包屑导航",
   breadcrumbHome: "首页",
-  breadcrumbCurrent: "中国行程现实检查",
+  breadcrumbCurrent: "中国行程是否太赶",
   eyebrow: "中国行程现实检查",
   heroLead:
     "从换城市、完整转场日、换酒店、定时预约，以及同行者真正能承受的节奏，检查你的路线是否合理。",
@@ -698,7 +698,7 @@ const ko: ItineraryRushGuideCopy = {
   skipLink: "본문으로 건너뛰기",
   breadcrumbLabel: "현재 위치",
   breadcrumbHome: "홈",
-  breadcrumbCurrent: "중국 일정 현실 점검",
+  breadcrumbCurrent: "중국 일정이 너무 빠듯한지 점검",
   eyebrow: "중국 일정 현실 점검",
   heroLead:
     "도시 변경, 온전한 이동일, 숙소 변경, 시간 지정 예약, 그리고 일행이 실제로 감당할 수 있는 속도로 일정을 점검합니다.",

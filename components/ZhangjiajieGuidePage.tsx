@@ -14,6 +14,16 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieGuidePage.module.css";
 
+const guideHubLabels: Record<HomegroundLocale, string> = {
+  en: "Travel guides",
+  zh: "旅行指南",
+  ko: "여행 가이드",
+};
+
+function guideHubPath(locale: HomegroundLocale) {
+  return locale === "en" ? "/guides/" : `/${locale}/guides/`;
+}
+
 const nightShowRelatedCopy: Record<
   HomegroundLocale,
   { label: string; title: string; body: string; action: string }
@@ -62,6 +72,29 @@ const transportRelatedCopy: Record<
     title: "시간표만 보지 말고 이동일 전체를 계산하세요.",
     body:
       "역·공항 접근과 대기, 도착 시각까지 포함해 베이징 → 장자제와 장자제 → 상하이 구간의 기차와 항공편을 비교합니다.",
+  },
+};
+
+const fieldNoteRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string }
+> = {
+  en: {
+    label: "A note from the ground",
+    title: "The Glass Bridge is not the glass skywalk.",
+    body:
+      "Tantan explains the seven details she checks before an English itinerary becomes a real Zhangjiajie day.",
+  },
+  zh: {
+    label: "来自现场的提醒",
+    title: "玻璃桥不是玻璃栈道。",
+    body: "Tantan 讲清一份英文行程真正落地前，她会替客人核对的 7 个细节。",
+  },
+  ko: {
+    label: "현장에서 온 노트",
+    title: "유리다리와 유리잔도는 다릅니다.",
+    body:
+      "영문 일정표가 실제 장가계의 하루가 되기 전, 탄탄이 확인하는 7가지 디테일을 읽어 보세요.",
   },
 };
 
@@ -251,6 +284,12 @@ function createStructuredData(
           {
             "@type": "ListItem",
             position: 2,
+            name: guideHubLabels[locale],
+            item: `https://homegroundchina.com${guideHubPath(locale)}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: copy.breadcrumbCurrent,
             item: guide.canonicalUrl,
           },
@@ -274,6 +313,11 @@ export function ZhangjiajieGuidePage({
     locale,
   );
   const transportCopy = transportRelatedCopy[locale];
+  const fieldNoteGuide = getGuideEntry(
+    "zhangjiajie-glass-bridge-vs-skywalk",
+    locale,
+  );
+  const fieldNoteCopy = fieldNoteRelatedCopy[locale];
   const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -320,6 +364,11 @@ export function ZhangjiajieGuidePage({
                 <ol>
                   <li>
                     <Link href={copy.homePath}>{copy.breadcrumbHome}</Link>
+                  </li>
+                  <li>
+                    <Link href={guideHubPath(locale)}>
+                      {guideHubLabels[locale]}
+                    </Link>
                   </li>
                   <li aria-current="page">{copy.breadcrumbCurrent}</li>
                 </ol>
@@ -410,6 +459,18 @@ export function ZhangjiajieGuidePage({
             </section>
 
             <div className={styles.relatedGuideStack}>
+              <aside className={styles.nightShowRelated} aria-labelledby="field-note-related-title">
+                <div>
+                  <p>{fieldNoteCopy.label}</p>
+                  <h2 id="field-note-related-title">{fieldNoteCopy.title}</h2>
+                  <span>{fieldNoteCopy.body}</span>
+                </div>
+                <Link href={fieldNoteGuide.canonicalPath}>
+                  {fieldNoteGuide.featuredLinkLabel}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+
               <aside className={styles.nightShowRelated} aria-labelledby="night-show-related-title">
                 <div>
                   <p>{nightShowCopy.label}</p>
@@ -682,7 +743,6 @@ export function ZhangjiajieGuidePage({
       <HomegroundFooter
         locale={locale}
         pageContext="guide"
-        guideId="zhangjiajie-itinerary"
       />
 
       <script

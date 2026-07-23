@@ -1,13 +1,13 @@
 .pageRoot {
-  --article-ink: #17251f;
-  --article-muted: #56645d;
-  --article-paper: #f7f5ef;
-  --article-surface: #fffdf9;
-  --article-line: #d8d9d2;
+  --article-ink: var(--hg-color-ink);
+  --article-muted: var(--hg-color-muted);
+  --article-paper: var(--hg-color-canvas);
+  --article-surface: var(--hg-color-surface);
+  --article-line: var(--hg-color-line);
   --article-link: #7f321f;
-  --article-rust: #a74731;
+  --article-rust: var(--hg-color-rust);
   --article-display: var(--hg-editorial), Georgia, "Times New Roman", serif;
-  background: #fbfaf7;
+  background: var(--article-paper);
   color: var(--article-ink);
   min-width: 0;
   overflow: clip;
@@ -20,7 +20,12 @@
 .hero {
   background:
     radial-gradient(circle at 82% 12%, rgb(167 71 49 / 10%), transparent 23rem),
-    linear-gradient(145deg, #f2ede5 0%, #fbfaf7 64%, #f4eee6 100%);
+    linear-gradient(
+      145deg,
+      var(--article-paper) 0%,
+      var(--article-surface) 64%,
+      var(--hg-color-soft) 100%
+    );
   border-bottom: 1px solid var(--article-line);
   color: var(--article-ink);
   isolation: isolate;
@@ -29,8 +34,8 @@
 
 .hero::before {
   background-image:
-    linear-gradient(rgb(23 37 31 / 4%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(23 37 31 / 4%) 1px, transparent 1px);
+    linear-gradient(rgb(20 20 19 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(20 20 19 / 4%) 1px, transparent 1px);
   background-size: 3.75rem 3.75rem;
   content: "";
   inset: 0;
@@ -198,7 +203,7 @@
   background: var(--article-surface);
   border: 1px solid var(--article-line);
   border-radius: 1.25rem;
-  box-shadow: 0 24px 60px rgb(22 38 30 / 7%);
+  box-shadow: 0 24px 60px rgb(20 20 19 / 7%);
   margin-top: clamp(-2.5rem, -3vw, -1.25rem);
   padding: clamp(1.35rem, 4vw, 3rem);
   position: relative;

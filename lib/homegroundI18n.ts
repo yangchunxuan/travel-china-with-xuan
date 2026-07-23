@@ -58,8 +58,7 @@ export interface HomegroundCopy {
     lead: string;
     trustLabel: string;
     trust: readonly string[];
-    imageAlt: string;
-    caption: string;
+    socialImageAlt: string;
   };
   proof: {
     eyebrow: string;
@@ -86,12 +85,13 @@ export interface HomegroundCopy {
   guides: {
     eyebrow: string;
     title: string;
-    cityStayLabel: string;
-    wholeRouteLabel: string;
-    eveningChoiceLabel: string;
-    cityStayDuration: string;
-    wholeRouteDuration: string;
-    eveningChoiceDuration: string;
+    viewAllLabel: string;
+    updatedLabel: string;
+    typeLabels: {
+      route: string;
+      planning: string;
+      fieldNote: string;
+    };
   };
   studio: {
     eyebrow: string;
@@ -335,7 +335,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       closeMenu: "Close navigation",
       plannerCta: {
         new: "Start my trip brief",
-        inProgress: "Continue my timing check",
+        inProgress: "Continue my trip brief",
         freeResult: "View my free route check",
         result: "Send my trip brief to Homeground",
         disabled: "Contact Homeground",
@@ -347,19 +347,18 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "One short trip brief, four clear next steps",
-      title: "Tell us where your China trip stands.",
+      eyebrow: "One brief · A human next step",
+      title: "Tell us the China trip you want. We’ll work out the right way to help.",
       lead:
-        "Answer four shared questions about places, nights, travellers and pace. Use the free automated timing check, or send the same brief to Homeground for a paid route review, route build or full-trip planning.",
-      trustLabel: "Before you begin",
+        "Share the basics once. A Homeground planner will review what you need, recommend the appropriate next step, and confirm the scope and price before any paid work begins.",
+      trustLabel: "What happens next",
       trust: [
-        "Every option starts with the same four questions",
-        "The free check needs no contact details",
-        "Paid requests begin with a human fit and scope review",
+        "Free to enquire",
+        "Reviewed by a real planner",
+        "You decide before payment",
       ],
-      imageAlt:
+      socialImageAlt:
         "The Forbidden City Corner Tower in Beijing reflected in its moat",
-      caption: "Beijing · The Forbidden City Corner Tower",
     },
     proof: {
       eyebrow: "What personal planning changes",
@@ -423,14 +422,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "Planning guides",
-      title: "Read the route question before you commit to it.",
-      cityStayLabel: "City stay guide",
-      wholeRouteLabel: "Whole-route guide",
-      eveningChoiceLabel: "Evening decision guide",
-      cityStayDuration: "2–4 days",
-      wholeRouteDuration: "10 days · 3 cities",
-      eveningChoiceDuration: "3 shows · 1 evening",
+      eyebrow: "China travel guides",
+      title: "Read the questions that make a China trip work.",
+      viewAllLabel: "View all guides",
+      updatedLabel: "Updated",
+      typeLabels: {
+        route: "Itinerary",
+        planning: "Planning guide",
+        fieldNote: "Field note",
+      },
     },
     studio: {
       eyebrow: "The studio",
@@ -493,11 +493,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       resultLabel: "Your trip brief is ready for a human review",
       freeResultLabel: "Your free route timing check is ready",
       inProgressLabel: "Your answers are saved as you go",
-      newLabel: "Your first timing check is four answers away",
+      newLabel: "Your first trip brief is four answers away",
       resultTitle: "Ready to turn this wishlist into a workable China trip?",
       freeResultTitle:
         "Review the timing result, or choose how much human planning you want.",
-      inProgressTitle: "Finish the remaining questions to check your time.",
+      inProgressTitle: "Finish the remaining questions to prepare your trip brief.",
       newTitle: "Start with what you actually want from China.",
     },
     handoff: {
@@ -850,7 +850,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       closeMenu: "关闭导航",
       plannerCta: {
         new: "开始填写旅行需求",
-        inProgress: "继续时间检查",
+        inProgress: "继续填写旅行信息",
         freeResult: "查看免费路线检查",
         result: "提交旅行需求",
         disabled: "联系 Homeground",
@@ -862,18 +862,17 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "一份简短需求，四种清晰的下一步",
-      title: "先告诉我们，你的中国旅行准备到哪一步了。",
+      eyebrow: "一份旅行简报 · 由真人继续",
+      title: "先说说你想要怎样的中国旅行。我们会判断接下来该怎样帮你。",
       lead:
-        "回答四个共用问题：想去哪里、住几晚、和谁同行、希望什么节奏。你可以先用免费自动检查，也可以把同一份需求交给 Homeground，选择付费的路线审核、路线规划或全程定制服务。",
-      trustLabel: "开始前先说明",
+        "基本信息只需填写一次。Homeground 规划师会先理解你的需求、建议合适的下一步，并在任何付费工作开始前确认范围和价格。",
+      trustLabel: "接下来会发生什么",
       trust: [
-        "四个选择都从同一组基础问题开始",
-        "免费检查无需填写联系方式",
-        "付费需求会先由真人确认是否适合及服务范围",
+        "提交需求免费",
+        "由真人规划师查看",
+        "付款前由你决定",
       ],
-      imageAlt: "北京故宫角楼倒映在护城河中",
-      caption: "北京 · 故宫角楼",
+      socialImageAlt: "北京故宫角楼倒映在护城河中",
     },
     proof: {
       eyebrow: "旅行规划师会补上什么",
@@ -929,14 +928,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "路线规划指南",
-      title: "先看清路线问题，再决定怎么走。",
-      cityStayLabel: "城市停留指南",
-      wholeRouteLabel: "整条路线指南",
-      eveningChoiceLabel: "夜间安排决策指南",
-      cityStayDuration: "2–4 天",
-      wholeRouteDuration: "10 天 · 3 座城市",
-      eveningChoiceDuration: "3 场演出 · 1 个晚上",
+      eyebrow: "中国旅行指南",
+      title: "从路线、交通到现场细节，先看清真正影响旅行的问题。",
+      viewAllLabel: "查看全部指南",
+      updatedLabel: "更新于",
+      typeLabels: {
+        route: "行程参考",
+        planning: "规划指南",
+        fieldNote: "现场笔记",
+      },
     },
     studio: {
       eyebrow: "工作室",
@@ -998,10 +998,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       resultLabel: "你的旅行需求已准备好进入人工复核",
       freeResultLabel: "你的免费路线时间检查已完成",
       inProgressLabel: "你的选择会随进度保留",
-      newLabel: "回答四个问题，先做一次时间检查",
+      newLabel: "回答四个问题，先准备一份旅行简报",
       resultTitle: "准备把这份愿望清单变成真正可执行的旅行吗？",
       freeResultTitle: "先查看时间检查结果，再决定是否需要人工路线服务。",
-      inProgressTitle: "完成剩余问题，查看时间是否匹配。",
+      inProgressTitle: "完成剩余问题，准备你的旅行简报。",
       newTitle: "先从你真正想去的地方开始。",
     },
     handoff: {
@@ -1326,7 +1326,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       closeMenu: "메뉴 닫기",
       plannerCta: {
         new: "여행 요청서 시작하기",
-        inProgress: "시간 확인 계속하기",
+        inProgress: "여행 정보 계속 입력하기",
         freeResult: "무료 동선 점검 보기",
         result: "Homeground에 여행 요청 보내기",
         disabled: "Homeground에 문의하기",
@@ -1338,18 +1338,17 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "하나의 짧은 여행 요청서, 네 가지 다음 단계",
-      title: "중국 여행 준비, 어디까지 하셨나요?",
+      eyebrow: "하나의 여행 브리프 · 사람 플래너의 다음 단계",
+      title: "원하는 중국 여행을 들려주세요. 어떤 도움이 필요한지 함께 판단합니다.",
       lead:
-        "가고 싶은 곳, 숙박일수, 여행 일행, 원하는 속도에 관한 네 가지 공통 질문에 답하세요. 무료 자동 일정 점검을 이용하거나 같은 요청서를 Homeground에 보내 유료 일정 검토, 동선 설계 또는 전체 여행 설계를 요청할 수 있습니다.",
-      trustLabel: "시작하기 전에",
+        "기본 여행 정보는 한 번만 알려 주세요. Homeground 플래너가 요청을 검토하고 적절한 다음 단계를 제안한 뒤, 유료 작업 전에 범위와 가격을 확인합니다.",
+      trustLabel: "다음 단계",
       trust: [
-        "네 가지 선택 모두 같은 기본 질문에서 시작합니다",
-        "무료 점검에는 연락처가 필요하지 않습니다",
-        "유료 요청은 사람이 적합성과 서비스 범위를 먼저 확인합니다",
+        "문의 제출 무료",
+        "사람 플래너가 직접 검토",
+        "결제 전 직접 결정",
       ],
-      imageAlt: "해자에 비친 베이징 자금성 각루",
-      caption: "베이징 · 자금성 각루",
+      socialImageAlt: "해자에 비친 베이징 자금성 각루",
     },
     proof: {
       eyebrow: "개인 맞춤 설계가 바꾸는 것",
@@ -1408,14 +1407,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "여행 설계 가이드",
-      title: "결정하기 전에, 먼저 동선의 질문을 확인하세요.",
-      cityStayLabel: "도시 체류 가이드",
-      wholeRouteLabel: "전체 동선 가이드",
-      eveningChoiceLabel: "저녁 일정 선택 가이드",
-      cityStayDuration: "2–4일",
-      wholeRouteDuration: "10일 · 3개 도시",
-      eveningChoiceDuration: "공연 3개 · 저녁 1회",
+      eyebrow: "중국 여행 가이드",
+      title: "동선과 교통, 현장 정보까지—여행을 바꾸는 질문을 먼저 확인하세요.",
+      viewAllLabel: "전체 가이드 보기",
+      updatedLabel: "최근 업데이트",
+      typeLabels: {
+        route: "추천 일정",
+        planning: "여행 계획 가이드",
+        fieldNote: "현장 노트",
+      },
     },
     studio: {
       eyebrow: "스튜디오",
@@ -1478,11 +1478,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       resultLabel: "여행 요청서가 사람의 검토를 받을 준비가 되었습니다",
       freeResultLabel: "무료 동선 시간 확인이 완료되었습니다",
       inProgressLabel: "답변은 진행하는 동안 저장됩니다",
-      newLabel: "네 가지 답변으로 첫 시간 확인을 시작합니다",
+      newLabel: "네 가지 답변으로 첫 여행 브리프를 준비합니다",
       resultTitle: "이 희망 목록을 실행 가능한 중국 여행으로 만들까요?",
       freeResultTitle:
         "시간 확인 결과를 본 뒤 필요한 1:1 플래닝 범위를 선택하세요.",
-      inProgressTitle: "남은 질문에 답하고 시간이 맞는지 확인하세요.",
+      inProgressTitle: "남은 질문에 답하고 여행 브리프를 준비하세요.",
       newTitle: "중국에서 정말 가고 싶은 곳부터 시작하세요.",
     },
     handoff: {

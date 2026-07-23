@@ -91,7 +91,6 @@ test("night-show metadata, locales and sitemap share the guide registry", async 
 test("night-show guide exposes sources, original illustration and contextual internal links", async () => {
   const guide = await source("components/NightShowGuidePage.tsx");
   const sources = await source("lib/nightShowGuide.ts");
-  const home = await source("components/HomegroundHomePage.tsx");
   const zhangjiajie = await source("components/ZhangjiajieGuidePage.tsx");
   const tenDay = await source("components/TenDayChinaRouteGuidePage.tsx");
 
@@ -102,7 +101,6 @@ test("night-show guide exposes sources, original illustration and contextual int
   assert.match(guide, /night-show-decision-1536\.webp/);
   assert.match(guide, /width="1536"\s+height="1024"/);
   assert.doesNotMatch(guide, /night-show-decision[^\n]+loading="lazy"/);
-  assert.match(home, /getGuideEntry\("best-zhangjiajie-night-show", locale\)/);
   assert.match(zhangjiajie, /getGuideEntry\("best-zhangjiajie-night-show", locale\)/);
   assert.match(tenDay, /getGuideEntry\(\s*"best-zhangjiajie-night-show"/);
 });

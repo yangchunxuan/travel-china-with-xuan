@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   BedDouble,
-  Check,
   FileCheck2,
   MapPinned,
   Tickets,
@@ -15,8 +14,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import { getGuideEntry } from "../lib/guideRegistry";
-import { getZhangjiajieGuideCopy } from "../lib/zhangjiajieGuideI18n";
+import { getHomeFeaturedGuides } from "../lib/guideRegistry";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   getRouteServiceInterest,
@@ -24,7 +22,9 @@ import {
   type RouteServiceInterest,
 } from "../lib/routeServiceInterest";
 import {
+  isHomepageStarterIntentId,
   type HomepagePlanningIntentId,
+  type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
 import {
   HomegroundHeader,
@@ -47,6 +47,23 @@ import styles from "./HomegroundHomePage.module.css";
 const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 
 const planningIntentStorageKey = "homeground-planning-intent-v1";
+const planningStarterIntentStorageKey =
+  "homeground-planning-starter-intent-v1";
+
+const guideDateLocales: Record<HomegroundLocale, string> = {
+  en: "en-GB",
+  zh: "zh-CN",
+  ko: "ko-KR",
+};
+
+function formatGuideDate(date: string, locale: HomegroundLocale) {
+  return new Intl.DateTimeFormat(guideDateLocales[locale], {
+    day: "numeric",
+    month: "short",
+    timeZone: "UTC",
+    year: "numeric",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
 
 function resolveFinalCta(
   copy: HomegroundCopy,
@@ -128,50 +145,17 @@ export function HomegroundHomePage({
   const [handoffDirty, setHandoffDirty] = useState(false);
   const [planningIntent, setPlanningIntent] =
     useState<HomepagePlanningIntentId | null>(null);
+  const [planningStarterIntent, setPlanningStarterIntent] =
+    useState<HomepageStarterIntentId | null>(null);
+  const [planningStarterNote, setPlanningStarterNote] = useState("");
   const planningIntentRef = useRef<HomepagePlanningIntentId | null>(null);
   const [serviceContextRevision, setServiceContextRevision] = useState(0);
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
-  const featuredGuide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const wholeRouteGuide = getGuideEntry(
-    "beijing-zhangjiajie-shanghai-10-days",
-    locale,
-  );
-  const nightShowGuide = getGuideEntry("best-zhangjiajie-night-show", locale);
-  const zhangjiajieGuideCopy = getZhangjiajieGuideCopy(locale);
-  const planningGuides = [
-    {
-      guide: featuredGuide,
-      label: copy.guides.cityStayLabel,
-      duration: copy.guides.cityStayDuration,
-      number: "01",
-      imagePath: "/images/guides/zhangjiajie/tianmen-1200.jpg",
-      imageAlt: zhangjiajieGuideCopy.figures.tianmen.alt,
-      imageWidth: 1200,
-      imageHeight: 780,
-    },
-    {
-      guide: wholeRouteGuide,
-      label: copy.guides.wholeRouteLabel,
-      duration: copy.guides.wholeRouteDuration,
-      number: "02",
-      imagePath: wholeRouteGuide.heroImagePath,
-      imageAlt: wholeRouteGuide.heroAlt,
-      imageWidth: 1800,
-      imageHeight: 1200,
-    },
-    {
-      guide: nightShowGuide,
-      label: copy.guides.eveningChoiceLabel,
-      duration: copy.guides.eveningChoiceDuration,
-      number: "03",
-      imagePath: nightShowGuide.heroImagePath,
-      imageAlt: nightShowGuide.heroAlt,
-      imageWidth: 1536,
-      imageHeight: 1024,
-    },
-  ] as const;
+  const featuredGuides = getHomeFeaturedGuides(locale);
+  const guidesIndexPath =
+    locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const plannerTarget =
     plannerStatus === "result" &&
     routeMatch &&
@@ -204,21 +188,37 @@ export function HomegroundHomePage({
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
   const activeRouteServiceInterest: RouteServiceInterest | null =
-    planningIntent && planningIntent !== "explore"
-      ? getRouteServiceInterest(planningIntent, locale)
-      : null;
+    getRouteServiceInterest(planningIntent, locale);
   const handoffServiceInterest =
-    activeRouteServiceInterest ?? retainedRouteServiceInterest;
+    planningIntent === "conversation"
+      ? null
+      : activeRouteServiceInterest ?? retainedRouteServiceInterest;
+  const starterNoteDirty =
+    planningStarterNote.trim().length > 0 &&
+    handoffStatus !== "success";
 
   useEffect(() => {
     planningIntentRef.current = planningIntent;
   }, [planningIntent]);
 
   useEffect(() => {
-    if (planningIntent && planningIntent !== "explore") {
-      setRetainedRouteServiceInterest(
-        getRouteServiceInterest(planningIntent, locale),
-      );
+    if (!starterNoteDirty) return;
+
+    const confirmLeave = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", confirmLeave);
+    return () =>
+      window.removeEventListener("beforeunload", confirmLeave);
+  }, [starterNoteDirty]);
+
+  useEffect(() => {
+    const service = getRouteServiceInterest(planningIntent, locale);
+    if (service) {
+      setRetainedRouteServiceInterest(service);
+    } else if (planningIntent === "conversation") {
+      setRetainedRouteServiceInterest(null);
     }
   }, [locale, planningIntent]);
 
@@ -235,13 +235,17 @@ export function HomegroundHomePage({
           .homegroundPlannerFlowId === "string";
 
       if (isCurrentPlannerFlow && planningIntentRef.current) {
-        if (planningIntentRef.current === "explore") {
-          url.searchParams.delete(routeServiceQueryKey);
-        } else {
+        const currentService = getRouteServiceInterest(
+          planningIntentRef.current,
+          locale,
+        );
+        if (currentService) {
           url.searchParams.set(
             routeServiceQueryKey,
-            planningIntentRef.current,
+            currentService.id,
           );
+        } else {
+          url.searchParams.delete(routeServiceQueryKey);
         }
         window.history.replaceState(
           event.state,
@@ -255,8 +259,12 @@ export function HomegroundHomePage({
       if (service) {
         planningIntentRef.current = service.id;
         setPlanningIntent(service.id);
+        setPlanningStarterIntent(null);
         try {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         } catch {
           // URL deep links remain sufficient when storage is unavailable.
         }
@@ -266,6 +274,7 @@ export function HomegroundHomePage({
       if (hasServiceQuery) {
         planningIntentRef.current = null;
         setPlanningIntent(null);
+        setPlanningStarterIntent(null);
         url.searchParams.delete(routeServiceQueryKey);
         window.history.replaceState(
           window.history.state,
@@ -275,6 +284,9 @@ export function HomegroundHomePage({
         window.dispatchEvent(new Event("homeground:locationchange"));
         try {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         } catch {
           // Invalid service URLs still fall back to the visible chooser.
         }
@@ -285,16 +297,33 @@ export function HomegroundHomePage({
         const storedIntent = window.sessionStorage.getItem(
           planningIntentStorageKey,
         );
-        const canRestoreFreeFlow =
-          url.searchParams.has("planner") && storedIntent === "explore";
-        planningIntentRef.current = canRestoreFreeFlow ? "explore" : null;
+        const storedStarterIntent = window.sessionStorage.getItem(
+          planningStarterIntentStorageKey,
+        );
+        const canRestoreNonServiceFlow =
+          url.searchParams.has("planner") &&
+          (storedIntent === "conversation" || storedIntent === "explore");
+        planningIntentRef.current = canRestoreNonServiceFlow
+          ? storedIntent
+          : null;
         setPlanningIntent(planningIntentRef.current);
-        if (!canRestoreFreeFlow) {
+        setPlanningStarterIntent(
+          canRestoreNonServiceFlow &&
+            storedIntent === "conversation" &&
+            isHomepageStarterIntentId(storedStarterIntent)
+            ? storedStarterIntent
+            : null,
+        );
+        if (!canRestoreNonServiceFlow) {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         }
       } catch {
         planningIntentRef.current = null;
         setPlanningIntent(null);
+        setPlanningStarterIntent(null);
       }
     };
 
@@ -305,7 +334,10 @@ export function HomegroundHomePage({
   }, [locale]);
 
   const handlePlanningIntentChange = useCallback(
-    (nextIntent: HomepagePlanningIntentId) => {
+    (
+      nextIntent: HomepagePlanningIntentId,
+      nextStarterIntent?: HomepageStarterIntentId,
+    ) => {
       if (
         planningIntentRef.current &&
         planningIntentRef.current !== nextIntent
@@ -314,11 +346,15 @@ export function HomegroundHomePage({
       }
       planningIntentRef.current = nextIntent;
       setPlanningIntent(nextIntent);
+      setPlanningStarterIntent(
+        nextIntent === "conversation" ? nextStarterIntent ?? null : null,
+      );
       const url = new URL(window.location.href);
-      if (nextIntent === "explore") {
-        url.searchParams.delete(routeServiceQueryKey);
+      const nextService = getRouteServiceInterest(nextIntent, locale);
+      if (nextService) {
+        url.searchParams.set(routeServiceQueryKey, nextService.id);
       } else {
-        url.searchParams.set(routeServiceQueryKey, nextIntent);
+        url.searchParams.delete(routeServiceQueryKey);
       }
       window.history.replaceState(
         window.history.state,
@@ -328,13 +364,23 @@ export function HomegroundHomePage({
       window.dispatchEvent(new Event("homeground:locationchange"));
 
       try {
-        if (nextIntent === "explore") {
+        if (nextIntent === "explore" || nextIntent === "conversation") {
           window.sessionStorage.setItem(
             planningIntentStorageKey,
             nextIntent,
           );
         } else {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+        }
+        if (nextIntent === "conversation" && nextStarterIntent) {
+          window.sessionStorage.setItem(
+            planningStarterIntentStorageKey,
+            nextStarterIntent,
+          );
+        } else {
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         }
       } catch {
         // The selected path remains available in React state.
@@ -347,6 +393,7 @@ export function HomegroundHomePage({
       analyticsWindow.dataLayer.push({
         event: "planning_intent_selected",
         planning_intent: nextIntent,
+        planning_starter_intent: nextStarterIntent ?? null,
         page_language: locale,
       });
     },
@@ -411,7 +458,7 @@ export function HomegroundHomePage({
         locale={locale}
         plannerStatus={plannerStatus}
         handoffStatus={handoffStatus}
-        handoffDirty={handoffDirty}
+        handoffDirty={handoffDirty || starterNoteDirty}
         freeResult={freeResult}
       />
 
@@ -422,18 +469,6 @@ export function HomegroundHomePage({
           }`}
           aria-labelledby="home-hero-title"
         >
-          <picture className={styles.heroPicture}>
-            <source media="(max-width: 700px)" srcSet="/images/home/beijing-hero-1200.jpg" />
-            <img
-              src="/images/home/beijing-hero-2400.jpg"
-              alt={copy.hero.imageAlt}
-              width="2400"
-              height="1600"
-              fetchPriority="high"
-            />
-          </picture>
-          <div className={styles.heroShade} aria-hidden="true" />
-
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
               {plannerStatus !== "result" && (
@@ -443,17 +478,24 @@ export function HomegroundHomePage({
               {plannerStatus !== "result" && (
                 <>
                   <p className={styles.heroLead}>{copy.hero.lead}</p>
-                  <ul
-                    className={styles.heroTrust}
-                    aria-label={copy.hero.trustLabel}
-                  >
-                    {copy.hero.trust.map((item) => (
-                      <li key={item}>
-                        <Check aria-hidden="true" size={17} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={styles.heroFacts}>
+                    <p className={styles.heroFactsLabel}>
+                      {copy.hero.trustLabel}
+                    </p>
+                    <ol
+                      className={styles.heroTrust}
+                      aria-label={copy.hero.trustLabel}
+                    >
+                      {copy.hero.trust.map((item, index) => (
+                        <li key={item}>
+                          <span aria-hidden="true">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                 </>
               )}
             </div>
@@ -464,6 +506,9 @@ export function HomegroundHomePage({
                 locale={locale}
                 variant="hero"
                 planningIntent={planningIntent}
+                planningStarterIntent={planningStarterIntent}
+                planningStarterNote={planningStarterNote}
+                onPlanningStarterNoteChange={setPlanningStarterNote}
                 onPlanningIntentChange={handlePlanningIntentChange}
                 serviceInterest={activeRouteServiceInterest}
                 interactionLocked={routeInteractionLocked}
@@ -471,25 +516,37 @@ export function HomegroundHomePage({
                 handoff={
                   routeMatch ? (
                     <>
-                      {handoffServiceInterest && (
-                        <div hidden={!activeRouteServiceInterest}>
-                          <PlannerHandoff
-                            embedded
-                            locale={locale}
-                            match={routeMatch}
-                            journey={routeJourney ?? undefined}
-                            serviceInterest={handoffServiceInterest}
-                            serviceContextRevision={serviceContextRevision}
-                            routeState={
-                              plannerStatus === "result"
-                                ? "current"
-                                : "editing"
-                            }
-                            onDirtyChange={setHandoffDirty}
-                            onStatusChange={setHandoffStatus}
-                          />
-                        </div>
-                      )}
+                      <div
+                        hidden={
+                          !planningIntent || planningIntent === "explore"
+                        }
+                      >
+                        <PlannerHandoff
+                          embedded
+                          locale={locale}
+                          match={routeMatch}
+                          journey={routeJourney ?? undefined}
+                          serviceInterest={handoffServiceInterest}
+                          starterIntent={
+                            planningIntent === "conversation"
+                              ? planningStarterIntent
+                              : null
+                          }
+                          starterNote={
+                            planningIntent === "conversation"
+                              ? planningStarterNote
+                              : null
+                          }
+                          serviceContextRevision={serviceContextRevision}
+                          routeState={
+                            plannerStatus === "result"
+                              ? "current"
+                              : "editing"
+                          }
+                          onDirtyChange={setHandoffDirty}
+                          onStatusChange={setHandoffStatus}
+                        />
+                      </div>
                       {planningIntent === "explore" && (
                         <HomepagePlanningUpgrade
                           locale={locale}
@@ -505,7 +562,6 @@ export function HomegroundHomePage({
               />
             </div>
           </div>
-          <p className={styles.photoCaption}>{copy.hero.caption}</p>
         </section>
 
         <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
@@ -569,64 +625,66 @@ export function HomegroundHomePage({
           </div>
 
           <nav
-            className={styles.planningGuides}
-            aria-labelledby="planning-guides-title"
+            className={styles.travelGuides}
+            aria-labelledby="travel-guides-title"
           >
-            <div className={styles.planningGuidesIntro}>
-              <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
-              <h3 id="planning-guides-title">{copy.guides.title}</h3>
+            <div className={styles.travelGuidesHeader}>
+              <div className={styles.travelGuidesIntro}>
+                <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
+                <h3 id="travel-guides-title">{copy.guides.title}</h3>
+              </div>
+              <a className={styles.travelGuidesIndexLink} href={guidesIndexPath}>
+                {copy.guides.viewAllLabel}
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
             </div>
-            <div className={styles.planningGuideList}>
-              {planningGuides.map(
-                ({
-                  guide,
-                  label,
-                  duration,
-                  number,
-                  imagePath,
-                  imageAlt,
-                  imageWidth,
-                  imageHeight,
-                }) => (
+            <div className={styles.travelGuideGrid}>
+              {featuredGuides.map((guide, index) => {
+                const typeLabel =
+                  guide.type === "field-note"
+                    ? copy.guides.typeLabels.fieldNote
+                    : copy.guides.typeLabels[guide.type];
+
+                return (
                   <a
-                    className={styles.planningGuideCard}
+                    className={`${styles.travelGuideCard} ${
+                      index === 0
+                        ? styles.travelGuideLead
+                        : styles.travelGuideCompact
+                    }`}
+                    data-guide-id={guide.id}
                     href={guide.canonicalPath}
                     key={guide.id}
                   >
-                    <span className={styles.planningGuideImage}>
+                    <span className={styles.travelGuideImage}>
                       <img
-                        src={imagePath}
-                        alt={imageAlt}
-                        width={imageWidth}
-                        height={imageHeight}
+                        src={guide.cardImagePath}
+                        alt={guide.heroAlt}
+                        width={guide.cardImageWidth}
+                        height={guide.cardImageHeight}
                         loading="lazy"
                         decoding="async"
                       />
                     </span>
-                    <span
-                      className={styles.planningGuideNumber}
-                      aria-hidden="true"
-                    >
-                      {number}
-                    </span>
-                    <span className={styles.planningGuideContent}>
-                      <span className={styles.planningGuideMeta}>
-                        <span className={styles.planningGuideLabel}>
-                          {label}
-                        </span>
-                        <span>{duration}</span>
+                    <span className={styles.travelGuideContent}>
+                      <span className={styles.travelGuideMeta}>
+                        <span>{typeLabel}</span>
+                        <time dateTime={guide.dateModified}>
+                          {copy.guides.updatedLabel}{" "}
+                          {formatGuideDate(guide.dateModified, locale)}
+                        </time>
                       </span>
-                      <strong className={styles.planningGuideTitle}>
+                      <strong className={styles.travelGuideTitle}>
                         {guide.headline}
                       </strong>
-                      <span className={styles.planningGuideCta}>
+                      <span className={styles.travelGuideCta}>
                         {guide.featuredLinkLabel}
                         <ArrowRight aria-hidden="true" size={17} />
                       </span>
                     </span>
                   </a>
-                ),
-              )}
+                );
+              })}
             </div>
           </nav>
         </section>

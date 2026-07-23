@@ -1,16 +1,16 @@
 .pageRoot {
-  --night: #172531;
-  --night-deep: #101a22;
-  --ink: #24221f;
-  --muted: #68625b;
-  --paper: #f7f3eb;
-  --surface: #fffdf9;
-  --line: #d9d1c6;
-  --rust: #93442f;
+  --night: var(--hg-color-charcoal-secondary);
+  --night-deep: var(--hg-color-ink);
+  --ink: var(--hg-color-ink);
+  --muted: var(--hg-color-muted);
+  --paper: var(--hg-color-canvas);
+  --surface: var(--hg-color-surface);
+  --line: var(--hg-color-line);
+  --rust: var(--hg-color-rust);
   --rust-dark: #73311f;
   --amber: #d5a15d;
   --display: var(--serif);
-  background: var(--surface);
+  background: var(--paper);
   color: var(--ink);
   min-width: 0;
 }
@@ -21,7 +21,7 @@
 }
 
 .pageRoot :where(a, summary):focus-visible {
-  outline: 3px solid #0b6b59;
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 3px;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .hero {
-  background: #f5f1e9;
+  background: var(--paper);
   border-block-end: 1px solid var(--line);
 }
 
@@ -363,7 +363,7 @@
 }
 
 .tableScroller:focus-visible {
-  outline: 3px solid #0b6b59;
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 4px;
 }
 
@@ -391,7 +391,7 @@
 .comparisonTable thead th,
 .eveningMatrix thead th {
   background: var(--night);
-  color: #fff;
+  color: var(--hg-color-on-dark);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -758,15 +758,15 @@
 .eveningSection {
   background: var(--night);
   box-shadow: 50vw 0 var(--night), -50vw 0 var(--night);
-  color: #fff;
+  color: var(--hg-color-on-dark);
 }
 
 .sectionHeadingSplitLight .sectionLabel {
-  color: #efb99f;
+  color: var(--hg-color-on-dark);
 }
 
 .sectionHeadingSplitLight > p {
-  color: #cbd2d5;
+  color: var(--hg-color-on-dark-muted);
 }
 
 .eveningChain {
@@ -779,14 +779,14 @@
 }
 
 .eveningChain li {
-  border-block-start: 1px solid #65717a;
+  border-block-start: 1px solid var(--hg-color-on-dark-line);
   min-width: 0;
   padding: 1rem 0.6rem 0 0;
   position: relative;
 }
 
 .eveningChain li::before {
-  background: var(--amber);
+  background: var(--hg-color-on-dark-muted);
   border: 4px solid var(--night);
   border-radius: 50%;
   content: "";
@@ -803,7 +803,7 @@
 }
 
 .eveningChain span {
-  color: #d4a765;
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.65rem;
   font-weight: 780;
 }
@@ -817,7 +817,7 @@
 
 .formula {
   align-items: center;
-  border-block: 1px solid #65717a;
+  border-block: 1px solid var(--hg-color-on-dark-line);
   display: flex;
   font-family: var(--display);
   font-size: clamp(1.25rem, 2.3vw, 1.85rem);
@@ -827,12 +827,12 @@
 }
 
 .formula svg {
-  color: var(--amber);
+  color: var(--hg-color-on-dark-muted);
   flex: none;
 }
 
 .calculationConclusion {
-  color: #d7dddf;
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.91rem;
   line-height: 1.65;
   margin: 1.25rem 0 0;

@@ -35,6 +35,7 @@ import {
   getHomepagePlanningDeskCopy,
   routeNeedsScopeConfirmation,
   type HomepagePlanningIntentId,
+  type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import {
@@ -83,7 +84,13 @@ export interface RouteFinderProps {
   locale?: HomegroundLocale;
   variant?: "default" | "hero";
   planningIntent?: HomepagePlanningIntentId | null;
-  onPlanningIntentChange?: (intent: HomepagePlanningIntentId) => void;
+  planningStarterIntent?: HomepageStarterIntentId | null;
+  planningStarterNote?: string;
+  onPlanningStarterNoteChange?: (note: string) => void;
+  onPlanningIntentChange?: (
+    intent: HomepagePlanningIntentId,
+    starterIntent?: HomepageStarterIntentId,
+  ) => void;
   serviceInterest?: RouteServiceInterest | null;
   interactionLocked?: boolean;
   contactDraftDirty?: boolean;
@@ -98,6 +105,7 @@ type PlannerEventName =
   | "planner_step_completed"
   | "planner_result_viewed"
   | "planner_result_revised"
+  | "conversation_brief_ready_viewed"
   | "paid_brief_ready_viewed";
 
 const questions: readonly QuestionKey[] = [
@@ -416,6 +424,9 @@ export function RouteFinder({
   locale = "en",
   variant = "default",
   planningIntent = null,
+  planningStarterIntent = null,
+  planningStarterNote = "",
+  onPlanningStarterNoteChange,
   onPlanningIntentChange,
   serviceInterest = null,
   interactionLocked = false,
@@ -465,8 +476,27 @@ export function RouteFinder({
   const intentQuestionCopy = planningIntent
     ? planningCopy.questionContexts[planningIntent]
     : null;
+  const selectedStarterLabel = planningStarterIntent
+    ? planningStarterIntent === "open-text"
+      ? planningCopy.openStarterLabel
+      : planningCopy.starterPrompts.find(
+          (prompt) => prompt.id === planningStarterIntent,
+        )?.label
+    : undefined;
   const questionHelpId = `${id}-${questionKey}-help`;
   const questionErrorId = `${id}-${questionKey}-error`;
+  const currentQuestionHelp =
+    stepIndex === 0
+      ? intentQuestionCopy
+        ? intentQuestionCopy.introBody
+        : copy.introBody
+      : questionCopy.help;
+  const questionDescribedBy = [
+    currentQuestionHelp ? questionHelpId : null,
+    questionError ? questionErrorId : null,
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(" ") || undefined;
   const totalNights = draftNights(draft);
 
   const emitResult = useCallback(
@@ -484,9 +514,11 @@ export function RouteFinder({
       onRouteFound?.(nextMatch, nextJourney);
       const activeIntent = planningIntentRef.current;
       trackPlannerEvent(
-        activeIntent && activeIntent !== "explore"
-          ? "paid_brief_ready_viewed"
-          : eventName,
+        activeIntent === "conversation"
+          ? "conversation_brief_ready_viewed"
+          : activeIntent && activeIntent !== "explore"
+            ? "paid_brief_ready_viewed"
+            : eventName,
         {
         page_language: locale,
         planning_intent: activeIntent ?? "unselected",
@@ -599,6 +631,7 @@ export function RouteFinder({
           "",
           plannerUrl(historyView),
         );
+        window.dispatchEvent(new Event(locationChangeEventName));
       }
 
       setDraft(restoredDraft);
@@ -634,6 +667,7 @@ export function RouteFinder({
             "",
             plannerUrl(questions[nextStep]),
           );
+          window.dispatchEvent(new Event(locationChangeEventName));
         }
       }
     } catch {
@@ -959,6 +993,7 @@ export function RouteFinder({
 
   const handlePlanningIntentSelection = (
     nextIntent: HomepagePlanningIntentId,
+    nextStarterIntent?: HomepageStarterIntentId,
   ) => {
     if (
       planningIntent &&
@@ -972,11 +1007,18 @@ export function RouteFinder({
     const selectedOption = planningCopy.options.find(
       (option) => option.id === nextIntent,
     );
-    onPlanningIntentChange?.(nextIntent);
+    const selectedStarter = nextStarterIntent
+      ? planningCopy.starterPrompts.find(
+          (prompt) => prompt.id === nextStarterIntent,
+        )
+      : null;
+    onPlanningIntentChange?.(nextIntent, nextStarterIntent);
     setIntentPickerOpen(false);
     setIntentAnnouncement(
-      selectedOption
-        ? planningCopy.selectedAnnouncement(selectedOption.label)
+      selectedStarter || selectedOption
+        ? planningCopy.selectedAnnouncement(
+            selectedStarter?.label ?? selectedOption!.label,
+          )
         : "",
     );
     window.requestAnimationFrame(() => {
@@ -1151,9 +1193,12 @@ export function RouteFinder({
   const resultTitle = match
     ? copy.result.titles[match.timing.status]
     : "";
-  const paidBriefCopy = serviceInterest
-    ? planningCopy.paidBriefs[serviceInterest.id]
-    : null;
+  const briefCopy =
+    planningIntent === "conversation"
+      ? planningCopy.conversationBrief
+      : serviceInterest
+        ? planningCopy.paidBriefs[serviceInterest.id]
+        : null;
   const scopeConfirmationRequired = Boolean(
     match &&
       serviceInterest &&
@@ -1218,6 +1263,9 @@ export function RouteFinder({
           ? "planning-intent-title"
           : `${id}-title`
       }
+      data-planning-view={
+        intentPickerOpen || !planningIntent ? "intent" : view
+      }
     >
       <p className={styles.srOnly} aria-live="polite" aria-atomic="true">
         {intentAnnouncement}
@@ -1226,14 +1274,17 @@ export function RouteFinder({
         <HomepagePlanningIntentSelector
           locale={locale}
           value={planningIntent}
+          starterValue={planningStarterIntent}
+          starterNote={planningStarterNote}
+          onStarterNoteChange={onPlanningStarterNoteChange}
           onContinue={handlePlanningIntentSelection}
           onCancel={planningIntent ? handleCloseIntentPicker : undefined}
         />
       ) : view === "questions" ? (
         <form
-          className={
-            destinationSelectionReady ? styles.hasMobileActionDock : undefined
-          }
+          className={`${styles.questionForm} ${
+            destinationSelectionReady ? styles.hasMobileActionDock : ""
+          }`}
           noValidate
           onSubmit={handleSubmit}
         >
@@ -1285,6 +1336,7 @@ export function RouteFinder({
                   ? planningCopy.outsideStandardScope.priceLabel
                   : undefined
               }
+              summaryOverride={selectedStarterLabel}
               scopeOverride={
                 scopeConfirmationRequired
                   ? planningCopy.outsideStandardScope.scope
@@ -1297,11 +1349,9 @@ export function RouteFinder({
                 {intentQuestionCopy?.titles[questionKey] ??
                   (stepIndex === 0 ? copy.introTitle : questionCopy.title)}
               </h2>
-              <p id={questionHelpId}>
-                {stepIndex === 0
-                  ? intentQuestionCopy?.introBody ?? copy.introBody
-                  : questionCopy.help}
-              </p>
+              {currentQuestionHelp && (
+                <p id={questionHelpId}>{currentQuestionHelp}</p>
+              )}
             </div>
 
             <div className={styles.questionBody}>
@@ -1309,9 +1359,7 @@ export function RouteFinder({
           {questionKey === "destinations" && (
             <fieldset
               className={styles.fieldset}
-              aria-describedby={`${questionHelpId}${
-                questionError ? ` ${questionErrorId}` : ""
-              }`}
+              aria-describedby={questionDescribedBy}
             >
               <legend className={styles.srOnly}>
                 {copy.questions.destinations.legend}
@@ -1441,9 +1489,7 @@ export function RouteFinder({
           {questionKey === "nights" && (
             <fieldset
               className={styles.fieldset}
-              aria-describedby={`${questionHelpId}${
-                questionError ? ` ${questionErrorId}` : ""
-              }`}
+              aria-describedby={questionDescribedBy}
             >
               <legend className={styles.srOnly}>
                 {copy.questions.nights.legend}
@@ -1530,9 +1576,7 @@ export function RouteFinder({
           {questionKey === "party" && (
             <fieldset
               className={styles.fieldset}
-              aria-describedby={`${questionHelpId}${
-                questionError ? ` ${questionErrorId}` : ""
-              }`}
+              aria-describedby={questionDescribedBy}
             >
               <legend className={styles.srOnly}>
                 {copy.questions.party.legend}
@@ -1569,9 +1613,7 @@ export function RouteFinder({
           {questionKey === "pace" && (
             <fieldset
               className={styles.fieldset}
-              aria-describedby={`${questionHelpId}${
-                questionError ? ` ${questionErrorId}` : ""
-              }`}
+              aria-describedby={questionDescribedBy}
             >
               <legend className={styles.srOnly}>
                 {copy.questions.pace.legend}
@@ -1672,7 +1714,7 @@ export function RouteFinder({
           <div
             className={styles.result}
             data-result-mode={
-              paidBriefCopy ? "paid-brief-ready" : "free-route-check"
+              briefCopy ? "human-brief-ready" : "free-route-check"
             }
             data-standard-scope-status={
               scopeConfirmationRequired ? "needs-confirmation" : "standard"
@@ -1689,6 +1731,7 @@ export function RouteFinder({
                   ? planningCopy.outsideStandardScope.priceLabel
                   : undefined
               }
+              summaryOverride={selectedStarterLabel}
               scopeOverride={
                 scopeConfirmationRequired
                   ? planningCopy.outsideStandardScope.scope
@@ -1697,23 +1740,23 @@ export function RouteFinder({
             />
             <header className={styles.resultHeader}>
               <p className={styles.kicker}>
-                {paidBriefCopy?.kicker ?? copy.result.kicker}
+                {briefCopy?.kicker ?? copy.result.kicker}
               </p>
               <h2
                 id={`${id}-title`}
                 ref={resultHeadingRef}
                 tabIndex={-1}
               >
-                {paidBriefCopy?.title ?? resultTitle}
+                {briefCopy?.title ?? resultTitle}
               </h2>
               <p className={styles.resultLead}>
                 {scopeConfirmationRequired
                   ? planningCopy.outsideStandardScope.briefBody
-                  : paidBriefCopy?.body ?? resultBody}
+                  : briefCopy?.body ?? resultBody}
               </p>
-              {paidBriefCopy && (
+              {briefCopy && (
                 <p className={styles.paidBriefNotice}>
-                  {paidBriefCopy.noPayment}
+                  {briefCopy.noPayment}
                 </p>
               )}
               {resultMeta && (
@@ -1738,18 +1781,18 @@ export function RouteFinder({
               )}
             </header>
 
-            {paidBriefCopy ? (
+            {briefCopy ? (
               <div className={styles.paidBriefGrid}>
                 <section className={styles.paidBriefPanel}>
                   <h3>
                     {scopeConfirmationRequired
                       ? planningCopy.outsideStandardScope.scopeLabel
-                      : paidBriefCopy.scopeLabel}
+                      : briefCopy.scopeLabel}
                   </h3>
                   <p>
                     {scopeConfirmationRequired
                       ? planningCopy.outsideStandardScope.scope
-                      : paidBriefCopy.scope}
+                      : briefCopy.scope}
                   </p>
                   <h3>{copy.result.wishlistTitle}</h3>
                   <p>
@@ -1767,9 +1810,9 @@ export function RouteFinder({
                   </p>
                 </section>
                 <section className={styles.paidBriefPanel}>
-                  <h3>{paidBriefCopy.deliverablesLabel}</h3>
+                  <h3>{briefCopy.deliverablesLabel}</h3>
                   <ul className={styles.paidBriefList}>
-                    {paidBriefCopy.deliverables.map((item) => (
+                    {briefCopy.deliverables.map((item) => (
                       <li key={item}>
                         <Check aria-hidden="true" size={16} />
                         <span>{item}</span>
@@ -1778,9 +1821,9 @@ export function RouteFinder({
                   </ul>
                 </section>
                 <section className={styles.paidBriefPanel}>
-                  <h3>{paidBriefCopy.nextLabel}</h3>
+                  <h3>{briefCopy.nextLabel}</h3>
                   <ol className={styles.paidNextSteps}>
-                    {paidBriefCopy.nextSteps.map((item, index) => (
+                    {briefCopy.nextSteps.map((item, index) => (
                       <li key={item}>
                         <span aria-hidden="true">
                           {String(index + 1).padStart(2, "0")}
@@ -1961,25 +2004,24 @@ export function RouteFinder({
           </div>
         )
       )}
-      {view === "result" && match && (
-        <>
-          <div className={styles.handoffSlot} hidden={intentPickerOpen}>
-            {handoff}
-          </div>
-          {!intentPickerOpen && (
-            <div className={styles.resultFooter}>
-              <button
-                className={styles.restartButton}
-                type="button"
-                disabled={interactionLocked}
-                onClick={handleRestart}
-              >
-                <RotateCcw aria-hidden="true" size={16} />
-                {copy.restart}
-              </button>
-            </div>
-          )}
-        </>
+      <div
+        className={styles.handoffSlot}
+        hidden={view !== "result" || !match || intentPickerOpen}
+      >
+        {handoff}
+      </div>
+      {view === "result" && match && !intentPickerOpen && (
+        <div className={styles.resultFooter}>
+          <button
+            className={styles.restartButton}
+            type="button"
+            disabled={interactionLocked}
+            onClick={handleRestart}
+          >
+            <RotateCcw aria-hidden="true" size={16} />
+            {copy.restart}
+          </button>
+        </div>
       )}
     </section>
   );

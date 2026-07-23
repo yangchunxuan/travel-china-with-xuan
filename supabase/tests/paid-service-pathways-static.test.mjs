@@ -6,7 +6,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("Home planning desk presents three paid paths and one free path before the shared questions", async () => {
+test("Home planning desk leads with a neutral conversation and keeps three paid shortcuts", async () => {
   const [home, planningDesk, planningCopy, services] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
@@ -26,14 +26,23 @@ test("Home planning desk presents three paid paths and one free path before the 
   );
   assert.match(
     planningDesk,
-    /copy\.options\.find\(\(option\) => option\.kind === "free"\)/,
+    /copy\.starterPrompts\.map\(\(prompt\) =>/,
   );
-  assert.match(planningDesk, /name="homeground-planning-intent"/);
-  assert.match(planningDesk, /onContinue\(draft\)/);
+  assert.match(planningDesk, /name="homeground-planning-start"/);
+  assert.match(
+    planningDesk,
+    /onContinue\(selectedPrompt\.planningIntent, selectedPrompt\.id\)/,
+  );
+  assert.match(planningDesk, /onContinue\(option\.id\)/);
+  assert.doesNotMatch(planningDesk, /onContinue\(freeOption\.id\)/);
+  assert.doesNotMatch(planningCopy, /freeTool(?:Label|Meta)/);
+  assert.match(planningCopy, /id: "conversation"/);
+  assert.match(planningCopy, /kind: "conversation"/);
   assert.match(planningCopy, /id: "itinerary-review"/);
   assert.match(planningCopy, /id: "route-build"/);
   assert.match(planningCopy, /id: "full-trip-support"/);
   assert.match(planningCopy, /id: "explore"/);
+  assert.match(planningCopy, /planningIntent: "conversation"/);
   assert.match(planningCopy, /label: "Free route timing check"/);
   assert.match(services, /label: "Review My Route"/);
   assert.match(services, /label: "Build My Route"/);
@@ -79,9 +88,12 @@ test("global navigation exposes localized Planning Services and current-page sta
     source("components/ChinaItineraryReviewPage.tsx"),
   ]);
 
-  assert.match(header, /pageContext\?:[^;]*"services"/);
+  assert.match(header, /export type HomegroundPageContext =[\s\S]*\| "services"/);
+  assert.match(header, /pageContext\?: HomegroundPageContext/);
   assert.match(header, /getChinaItineraryReviewCopy\(locale\)/);
-  assert.match(header, /planningServicesCopy\.navigationLabel/);
+  assert.match(header, /services: "Trip planning services"/);
+  assert.match(header, /services: "旅行规划服务"/);
+  assert.match(header, /services: "여행 설계 서비스"/);
   assert.match(header, /getChinaItineraryReviewCopy\(targetLocale\)\.path/);
   assert.match(header, /pageContext\s*===\s*"services"\s*\?\s*"page"/);
   assert.match(header, /allowedServiceHashes/);
@@ -90,7 +102,9 @@ test("global navigation exposes localized Planning Services and current-page sta
   assert.match(header, /"#full-trip-support"/);
 
   assert.match(footer, /getChinaItineraryReviewCopy\(locale\)/);
-  assert.match(footer, /planningServicesCopy\.navigationLabel/);
+  assert.match(footer, /services: "Trip planning services"/);
+  assert.match(footer, /services: "旅行规划服务"/);
+  assert.match(footer, /services: "여행 설계 서비스"/);
   assert.match(footer, /pageContext === "services"/);
   assert.match(footer, /aria-current="page"/);
   assert.equal(servicePage.match(/pageContext="services"/g)?.length, 2);

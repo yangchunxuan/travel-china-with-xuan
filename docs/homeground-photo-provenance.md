@@ -19,6 +19,26 @@ The Beijing derivatives come from the supplied `北京.jpg`; the Zhangjiajie
 derivative comes from the supplied `张家界.png`. Other supplied city images
 remain local candidates and are not part of the current production release.
 
+On July 23, 2026, the project owner supplied and identified two additional
+self-photographed editorial candidates and approved their future use on the
+Homeground website:
+
+- `3154 2.JPG` shows Beijing's contemporary skyline, with China Zun and the
+  CCTV Headquarters visible above the surrounding neighbourhoods. It is a
+  strong candidate for a future article about modern Beijing, city contrasts,
+  or how to structure time across different parts of Beijing.
+- `a5da18551726453b78de6b0130d47dd6.JPG` shows the Great Wall climbing across
+  a spring hillside near Beijing. The exact wall section should not be claimed
+  without separate confirmation. It is a strong candidate for a future Great
+  Wall planning, walking-load, timing, or seasonal-conditions article.
+
+The originals remain local candidates and have not been published or added to
+the production bundle. Any future release should use metadata-stripped,
+responsive derivatives and a caption that does not overstate the exact
+location. Neither image is intended for the current homepage hero: that entry
+point is deliberately destination-neutral so the four planning paths remain
+the primary decision.
+
 For the Beijing–Zhangjiajie–Shanghai guide, the project owner supplied
 `R0001990.JPG` and `R0002093.JPG` on July 21, 2026 and stated that both were
 self-photographed. The airport derivative is an editorial crop from
@@ -87,6 +107,26 @@ black linework, flat paper-cut shapes, a warm off-white background and only
 Homeground forest green, muted terracotta, soft peach and a small amount of pale
 blue. Keep generous negative space and avoid logos, names, readable text,
 people, interfaces, photorealism, flags and stereotypical Chinese motifs.
+
+For Tantan's Zhangjiajie field note, the project owner confirmed on July 23,
+2026 that the interview behind the article took place, that Tantan agreed to be
+named, photographed and published on the Homeground website, and that the
+travelling guests appearing in two of the photographs also agreed to their
+inclusion.
+
+Current website derivatives:
+
+- `public/images/guides/tantan-zhangjiajie/tantan-hero-720.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-hero-1200.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-with-guests-mountains-1200.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-with-guests-rest-1200.*`
+
+Each is released as a JPG fallback plus WebP and AVIF derivatives, written
+without EXIF, GPS or ICC metadata. The guests' faces are blurred in both group
+photographs. Tantan's work badge appears in one frame; its text and number are
+not legible at the published resolution, and no identity document, booking
+reference or payment detail is readable in any derivative.
 
 This note records how the files entered the project; it does not independently
 establish third-party copyright ownership. Before using the photographs in

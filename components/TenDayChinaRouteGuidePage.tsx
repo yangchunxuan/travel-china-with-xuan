@@ -16,11 +16,30 @@ import {
   localePath,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
 
 const guideId = "beijing-zhangjiajie-shanghai-10-days" as const;
+
+const navigationSections: Record<
+  HomegroundLocale,
+  { guides: string; services: string }
+> = {
+  en: {
+    guides: "Travel guides",
+    services: "Trip planning services",
+  },
+  zh: {
+    guides: "旅行指南",
+    services: "旅行规划服务",
+  },
+  ko: {
+    guides: "여행 가이드",
+    services: "여행 설계 서비스",
+  },
+};
 
 const guideAssetPath =
   "/images/guides/beijing-zhangjiajie-shanghai-10-days";
@@ -138,6 +157,14 @@ function createStructuredData(
           {
             "@type": "ListItem",
             position: 2,
+            name: navigationSections[locale].guides,
+            item: `https://homegroundchina.com${
+              locale === "en" ? "/guides/" : `/${locale}/guides/`
+            }`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: guide.headline,
             item: guide.canonicalUrl,
           },
@@ -175,6 +202,9 @@ export function TenDayChinaRouteGuidePage({
   const copy = getTenDayGuideCopy(locale);
   const homeHref = localePath(locale);
   const localePrefix = locale === "en" ? "" : `/${locale}`;
+  const guideHubHref = `${homeHref}guides/`;
+  const planningServicesHref = getChinaItineraryReviewCopy(locale).path;
+  const sectionLabels = navigationSections[locale];
   const plannerHref = `${homeHref}?utm_source=${guideId}&utm_medium=owned&utm_campaign=route-guide&planner=destinations&destinations=beijing-great-wall%2Czhangjiajie%2Cshanghai#route-finder`;
   const zhangjiajieGuideHref = `${localePrefix}/guides/zhangjiajie-itinerary/#quick-answer`;
   const nightShowGuideHref = getGuideEntry(
@@ -210,7 +240,8 @@ export function TenDayChinaRouteGuidePage({
         <div className={styles.headerInner}>
           <Brand copy={copy} homeHref={homeHref} />
           <nav className={styles.primaryNav} aria-label={copy.navigation.primaryLabel}>
-            <a href={`${homeHref}#planning-proof`}>{copy.navigation.planning}</a>
+            <Link href={guideHubHref}>{sectionLabels.guides}</Link>
+            <Link href={planningServicesHref}>{sectionLabels.services}</Link>
             <a href={`${homeHref}#studio`}>{copy.navigation.studio}</a>
             <a href={`${homeHref}#faq`}>{copy.navigation.questions}</a>
           </nav>
@@ -240,6 +271,9 @@ export function TenDayChinaRouteGuidePage({
                 <ol>
                   <li>
                     <Link href={homeHref}>{copy.breadcrumb.home}</Link>
+                  </li>
+                  <li>
+                    <Link href={guideHubHref}>{sectionLabels.guides}</Link>
                   </li>
                   <li aria-current="page">{copy.breadcrumb.current}</li>
                 </ol>
@@ -681,7 +715,7 @@ export function TenDayChinaRouteGuidePage({
         <div className={styles.footerInner}>
           <Brand copy={copy} homeHref={homeHref} />
           <nav aria-label={copy.footer.navigationLabel}>
-            <Link href={zhangjiajieGuideHref}>{copy.footer.zhangjiajieGuide}</Link>
+            <Link href={guideHubHref}>{sectionLabels.guides}</Link>
             <Link href={privacyHref}>{copy.footer.privacy}</Link>
             <a href={plannerHref}>{copy.footer.cta}</a>
           </nav>
