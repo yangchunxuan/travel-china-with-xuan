@@ -132,3 +132,25 @@ This note records how the files entered the project; it does not independently
 establish third-party copyright ownership. Before using the photographs in
 paid advertising, print, resale, or partner distribution, the studio should
 retain the original license or photographer permission where applicable.
+
+For Kevin's trip-preparation field note, the project owner supplied five
+photographs on July 23, 2026 for the Homeground website and identified Kevin as
+the featured team member. Four photographs were selected for responsive
+derivatives:
+
+- `public/images/guides/kevin-preparation/kevin-hero-*`
+- `public/images/guides/kevin-preparation/kevin-solo-*`
+- `public/images/guides/kevin-preparation/kevin-guiding-*`
+- `public/images/guides/kevin-preparation/kevin-rain-*`
+
+The hero and open-graph images use a solo portrait of Kevin. Guest and
+bystander faces in the two working photographs were obscured in the image
+files before publication; the originals were not copied into `public/`. A
+separate photograph featuring a child was not selected for publication. The
+released JPG, WebP and AVIF derivatives were exported without original EXIF,
+GPS or device metadata and carry a small Homeground watermark.
+
+The two operational situations described in the article were anonymised and
+narratively reconstructed from Kevin's interview. The photographs illustrate
+Kevin's field experience; they are not presented as documentary evidence of
+either reconstructed situation.

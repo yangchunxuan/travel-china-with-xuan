@@ -70,8 +70,14 @@ test("Tantan story images are responsive, privacy edited and contextually linked
   assert.match(page, /utm_campaign=trip-conversation/);
   assert.doesNotMatch(page, /planner=destinations|service=/);
   assert.match(copy, /guest faces are blurred for privacy/);
-  assert.match(studio, /member\.id === "tantan"/);
-  assert.match(studio, /tantanStory\.canonicalPath/);
+  assert.match(
+    studio,
+    /tantan: "zhangjiajie-glass-bridge-vs-skywalk"/,
+  );
+  assert.match(
+    studio,
+    /<MemberStoryLink memberId=\{member\.id\} locale=\{locale\} \/>/,
+  );
   assert.match(
     zhangjiajie,
     /getGuideEntry\(\s*"zhangjiajie-glass-bridge-vs-skywalk"/,
@@ -91,13 +97,20 @@ test("Tantan story images are responsive, privacy edited and contextually linked
 test("Tantan contents navigation tracks the visible check accessibly", async () => {
   const page = await source("components/TantanZhangjiajieStoryPage.tsx");
   const contents = await source("components/TantanStoryContentsNav.tsx");
+  const scrollSpy = await source("components/useStoryScrollSpy.ts");
 
   assert.match(page, /<TantanStoryContentsNav/);
   assert.match(contents, /^"use client";/);
   assert.match(contents, /<nav className=\{styles\.contents\}/);
   assert.match(contents, /aria-current=\{isActive \? "location" : undefined\}/);
-  assert.match(contents, /const activeZoneEnd = nextSection\?\.rect\.top \?\? section\.rect\.bottom/);
-  assert.match(contents, /requestAnimationFrame\(updateActiveSection\)/);
-  assert.match(contents, /addEventListener\("scroll", scheduleUpdate, \{ passive: true \}\)/);
+  assert.match(
+    scrollSpy,
+    /const activeZoneEnd = nextSection\?\.rect\.top \?\? section\.rect\.bottom/,
+  );
+  assert.match(scrollSpy, /requestAnimationFrame\(updateActiveSection\)/);
+  assert.match(
+    scrollSpy,
+    /addEventListener\("scroll", scheduleUpdate, \{ passive: true \}\)/,
+  );
   assert.match(contents, /className=\{styles\.contentsArrow\}/);
 });

@@ -1,15 +1,15 @@
 "use client";
 
 import { ChevronRight } from "lucide-react";
-import styles from "./TantanZhangjiajieStoryPage.module.css";
 import { useStoryScrollSpy } from "./useStoryScrollSpy";
+import styles from "./KevinPreparationStoryPage.module.css";
 
 type ContentsSection = {
   id: string;
   title: string;
 };
 
-export function TantanStoryContentsNav({
+export function KevinStoryContentsNav({
   label,
   title,
   sections,
@@ -23,9 +23,9 @@ export function TantanStoryContentsNav({
   );
 
   return (
-    <nav className={styles.contents} aria-labelledby="story-contents-title">
+    <nav className={styles.contents} aria-labelledby="kevin-contents-title">
       <p>{label}</p>
-      <h2 id="story-contents-title">{title}</h2>
+      <h2 id="kevin-contents-title">{title}</h2>
       <ol>
         {sections.map((section, index) => {
           const isActive = activeId === section.id;

@@ -18,6 +18,33 @@ function photoSources(
   return `${image.smallSrc} ${image.smallWidth}w, ${image.src} ${image.width}w`;
 }
 
+const memberStoryGuideIds = {
+  tantan: "zhangjiajie-glass-bridge-vs-skywalk",
+  kevin: "kevin-before-the-hotel-pickup",
+} as const;
+
+function MemberStoryLink({
+  memberId,
+  locale,
+}: {
+  memberId: string;
+  locale: HomegroundLocale;
+}) {
+  const guideId =
+    memberStoryGuideIds[memberId as keyof typeof memberStoryGuideIds];
+
+  if (!guideId) return null;
+
+  const guide = getGuideEntry(guideId, locale);
+
+  return (
+    <Link className={styles.memberStoryLink} href={guide.canonicalPath}>
+      {guide.featuredLinkLabel}
+      <ArrowRight aria-hidden="true" size={17} />
+    </Link>
+  );
+}
+
 export function HomegroundStudioPage({
   locale = "en",
 }: {
@@ -25,10 +52,6 @@ export function HomegroundStudioPage({
 }) {
   const homeCopy = getHomegroundCopy(locale);
   const copy = getHomegroundStudioCopy(locale);
-  const tantanStory = getGuideEntry(
-    "zhangjiajie-glass-bridge-vs-skywalk",
-    locale,
-  );
   const motionRootId = `homeground-studio-${locale}`;
   const plannerHref = `${homeCopy.path}?utm_source=studio&utm_medium=owned&utm_campaign=team-page&planner=destinations#route-finder`;
   const planningServicesHref =
@@ -154,12 +177,7 @@ export function HomegroundStudioPage({
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
-                  {member.id === "tantan" ? (
-                    <Link className={styles.memberStoryLink} href={tantanStory.canonicalPath}>
-                      {tantanStory.featuredLinkLabel}
-                      <ArrowRight aria-hidden="true" size={17} />
-                    </Link>
-                  ) : null}
+                  <MemberStoryLink memberId={member.id} locale={locale} />
                 </div>
               </article>
             ))}

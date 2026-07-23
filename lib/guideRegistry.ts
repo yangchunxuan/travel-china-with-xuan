@@ -5,6 +5,7 @@ const SITE_URL = "https://homegroundchina.com";
 export const guideIds = [
   "zhangjiajie-itinerary",
   "zhangjiajie-glass-bridge-vs-skywalk",
+  "kevin-before-the-hotel-pickup",
   "best-zhangjiajie-night-show",
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
@@ -181,6 +182,57 @@ export const guideRegistry = [
         heroAlt: "대나무 지붕 아래에서 긴 나무 공이로 절구 체험을 하는 탄탄.",
         navTitle: "탄탄의 장가계 현장 노트",
         featuredLinkLabel: "탄탄이 현장에서 확인하는 7가지 보기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "kevin-before-the-hotel-pickup",
+    type: "field-note",
+    featured: false,
+    heroImagePath:
+      "/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
+    datePublished: "2026-07-23",
+    dateModified: "2026-07-23",
+    sourceReviewedDate: "2026-07-23",
+    locales: {
+      en: {
+        path: "/guides/kevin-before-the-hotel-pickup/",
+        title:
+          "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
+        headline:
+          "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
+        description:
+          "Kevin explains what happens before a guided day begins—from reservations and pickup details to traveller needs, backup routes and the next handoff.",
+        heroAlt:
+          "Kevin standing beside the coast in warm evening light.",
+        navTitle: "Kevin’s pre-departure field note",
+        featuredLinkLabel: "See how Kevin prepares before meeting a guest",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/kevin-before-the-hotel-pickup/",
+        title: "酒店接人之前：Kevin 如何为中国一日行程做准备",
+        headline: "客人看到的是一天行程，Kevin 的准备从见面前就开始了",
+        description:
+          "从预订时间、接送位置，到客人的身体与饮食需求、备用路线和下一站交接，看看 Kevin 如何在见面前准备好一天。",
+        heroAlt: "Kevin 在傍晚海边的暖色光线中留影。",
+        navTitle: "Kevin 的出发前现场笔记",
+        featuredLinkLabel: "看看 Kevin 在见到客人前如何准备",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/kevin-before-the-hotel-pickup/",
+        title: "호텔 픽업 전부터 시작되는 하루: Kevin의 중국 일정 준비",
+        headline:
+          "손님에게는 하루 일정이지만, Kevin의 준비는 만나기 전부터 시작됩니다",
+        description:
+          "예약과 픽업 장소부터 여행자의 건강·식사 정보, 대체 동선과 다음 일정 인계까지 Kevin이 여행 하루를 준비하는 과정을 소개합니다.",
+        heroAlt: "따뜻한 저녁빛이 비치는 해안가에 서 있는 Kevin.",
+        navTitle: "Kevin의 출발 전 현장 노트",
+        featuredLinkLabel: "Kevin이 손님을 만나기 전에 준비하는 과정 보기",
         openGraphLocale: "ko_KR",
       },
     },

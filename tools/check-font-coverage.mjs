@@ -14,6 +14,7 @@ const explicitSources = [
   "components/ZhangjiajieGuidePage.tsx",
   "components/TenDayChinaRouteGuidePage.tsx",
   "components/TantanZhangjiajieStoryPage.tsx",
+  "components/KevinPreparationStoryPage.tsx",
   "lib/homegroundI18n.ts",
   "lib/homegroundStudioI18n.ts",
   "lib/homegroundPrivacyI18n.ts",
@@ -28,6 +29,7 @@ const explicitSources = [
   "lib/chinaItineraryReviewI18n.ts",
   "lib/routeServiceInterest.ts",
   "lib/tantanZhangjiajieStoryI18n.ts",
+  "lib/kevinPreparationStoryI18n.ts",
   "lib/destinationPlannerI18n.ts",
   "lib/routeFinder.ts",
 ];
