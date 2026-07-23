@@ -92,8 +92,8 @@ export const guideRegistry = [
       "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
-    datePublished: "2026-07-22",
-    dateModified: "2026-07-22",
+    datePublished: "2026-07-23",
+    dateModified: "2026-07-23",
     sourceReviewedDate: "2026-07-22",
     locales: {
       en: {

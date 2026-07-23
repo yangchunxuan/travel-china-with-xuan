@@ -74,7 +74,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     authorRole: "Trip planner · Hunan local coordination",
     readTime: "8 min read",
     updatedLabel: "Published",
-    updatedDate: "22 July 2026",
+    updatedDate: "23 July 2026",
     heroAlt:
       "Tantan smiling while using a wooden pestle beneath a bamboo-roofed shelter.",
     heroCaption:
@@ -187,10 +187,10 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
       "Insurance, group size and change terms",
     ],
     ctaEyebrow: "Bring us the trip you are considering",
-    ctaTitle: "Let’s check what the itinerary really means on the ground.",
+    ctaTitle: "Start with the trip brief. We’ll confirm the right review path.",
     ctaBody:
-      "Tell us how many days you have, which places matter most and what pace feels right. If you already have an itinerary, add it to your notes and we will review the attraction names, timing, hotel locations and included items with you.",
-    ctaAction: "Send my trip brief",
+      "Tell us how many days you have, which places matter most and what pace feels right. A planner first confirms fit, scope, delivery timing and price at no charge. A complete human itinerary review begins after you approve the US$69 Review My Route service and payment is confirmed.",
+    ctaAction: "Start my free trip brief",
     relatedEyebrow: "Keep planning",
     relatedTitle: "Put the field note into context",
     routeLinkLabel: "Zhangjiajie in 2, 3 or 4 days",
@@ -223,7 +223,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     authorRole: "行程规划 · 湖南在地协调",
     readTime: "阅读约 8 分钟",
     updatedLabel: "发布于",
-    updatedDate: "2026 年 7 月 22 日",
+    updatedDate: "2026 年 7 月 23 日",
     heroAlt: "Tantan 在竹棚下体验用木杵舂制食物。",
     heroCaption:
       "旅行中的 Tantan。她把这种不匆忙、愿意观察细节的方式，也带进了客人的行程。",
@@ -334,10 +334,10 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
       "保险、团队规模与变更条件",
     ],
     ctaEyebrow: "把你正在考虑的行程带来",
-    ctaTitle: "一起核对，这份行程到了现场究竟意味着什么。",
+    ctaTitle: "先提交旅行简报，再确认适合怎样审核。",
     ctaBody:
-      "告诉我们旅行天数、最想去的地方和喜欢的节奏。如果已经拿到一份行程，也可以在备注里告诉我们；我们会和你一起核对景点名称、真实时间、酒店位置与包含项。",
-    ctaAction: "提交旅行需求",
+      "告诉我们旅行天数、最想去的地方和喜欢的节奏。规划师会先免费确认是否适合、服务范围、交付时间和价格；完整的人工路线审核会在你确认 69 美元「审核我的路线」服务并完成付款后开始。",
+    ctaAction: "免费提交旅行简报",
     relatedEyebrow: "继续规划",
     relatedTitle: "把现场经验放回整段路线",
     routeLinkLabel: "张家界 2、3、4 天分别能安排什么",
@@ -365,7 +365,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     authorRole: "여행 플래너 · 후난 현지 일정 조율",
     readTime: "약 8분",
     updatedLabel: "게시일",
-    updatedDate: "2026년 7월 22일",
+    updatedDate: "2026년 7월 23일",
     heroAlt: "대나무 지붕 아래에서 긴 나무 공이로 절구 체험을 하는 탄탄.",
     heroCaption:
       "여행지에서 현지 체험을 즐기는 탄탄. 서두르지 않고 디테일을 살피는 태도를 여행 일정에도 담습니다.",
@@ -477,10 +477,10 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
       "보험, 일행 규모와 일정 변경 조건",
     ],
     ctaEyebrow: "검토 중인 일정을 보여 주세요",
-    ctaTitle: "이 일정이 현장에서 실제로 무엇을 의미하는지 함께 확인해 보세요.",
+    ctaTitle: "여행 브리프부터 보내고, 맞는 검토 경로를 확인하세요.",
     ctaBody:
-      "여행 기간과 가장 가고 싶은 장소, 편안한 속도를 알려 주세요. 이미 받은 일정표가 있다면 메모에 적어 주세요. 관광지 이름, 이동 시간, 숙소 위치와 포함 항목을 함께 살펴봅니다.",
-    ctaAction: "Homeground에 여행 요청 보내기",
+      "여행 기간과 가장 가고 싶은 장소, 편안한 속도를 알려 주세요. 플래너가 적합성, 범위, 납기와 가격을 먼저 무료로 확인합니다. 전체 사람 검토는 US$69 ‘내 일정 검토’ 서비스를 확인하고 결제가 완료된 뒤 시작됩니다.",
+    ctaAction: "무료 여행 브리프 시작하기",
     relatedEyebrow: "계속 계획하기",
     relatedTitle: "현장 노트를 전체 여정에 연결해 보세요",
     routeLinkLabel: "장가계 2·3·4일에 실제로 가능한 일정",

@@ -1743,22 +1743,6 @@
   }
 }
 
-@media (max-width: 1390px) {
-  .desktopNav,
-  .headerCta,
-  .languageNav {
-    display: none;
-  }
-
-  .headerActions {
-    margin-left: auto;
-  }
-
-  .menuButton {
-    display: inline-flex;
-  }
-}
-
 @media (max-width: 1120px) {
   .desktopNav,
   .headerCta,

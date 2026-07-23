@@ -14,9 +14,11 @@ const assetPath = "/images/guides/tantan-zhangjiajie";
 function createStructuredData(locale: HomegroundLocale) {
   const copy = getTantanZhangjiajieStoryCopy(locale);
   const guide = getGuideEntry(guideId, locale);
-  const studioUrl = `https://homegroundchina.com${
+  const studioPageUrl = `https://homegroundchina.com${
     locale === "en" ? "/studio/" : `/${locale}/studio/`
-  }#team-tantan`;
+  }`;
+  const studioProfileUrl = `${studioPageUrl}#team-tantan`;
+  const personId = `${studioPageUrl}#tantan`;
 
   return {
     "@context": "https://schema.org",
@@ -29,10 +31,10 @@ function createStructuredData(locale: HomegroundLocale) {
       },
       {
         "@type": "Person",
-        "@id": `${studioUrl}#person`,
+        "@id": personId,
         name: "Tantan",
         jobTitle: copy.schemaRole,
-        url: studioUrl,
+        url: studioProfileUrl,
         worksFor: { "@id": "https://homegroundchina.com/#organization" },
       },
       {
@@ -52,7 +54,7 @@ function createStructuredData(locale: HomegroundLocale) {
           height: 630,
           caption: copy.heroCaption,
         },
-        author: { "@id": `${studioUrl}#person` },
+        author: { "@id": personId },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         about: copy.schemaAbout.map((name) => ({ "@type": "Thing", name })),
       },
@@ -70,7 +72,7 @@ function createStructuredData(locale: HomegroundLocale) {
             "@type": "ListItem",
             position: 2,
             name: copy.breadcrumbStudio,
-            item: studioUrl.split("#")[0],
+            item: studioPageUrl,
           },
           {
             "@type": "ListItem",
@@ -123,7 +125,7 @@ export function TantanZhangjiajieStoryPage({
   const guide = getGuideEntry(guideId, locale);
   const routeGuide = getGuideEntry("zhangjiajie-itinerary", locale);
   const studioHref = `${locale === "en" ? "" : `/${locale}`}/studio/#team-tantan`;
-  const plannerHref = `${copy.homePath}?utm_source=tantan-field-note&utm_medium=owned&utm_campaign=zhangjiajie-story&planner=destinations&destinations=zhangjiajie#route-finder`;
+  const plannerHref = `${copy.homePath}?utm_source=tantan-field-note&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (
