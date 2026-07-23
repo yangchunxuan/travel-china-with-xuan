@@ -4,6 +4,7 @@ const SITE_URL = "https://homegroundchina.com";
 
 export const guideIds = [
   "zhangjiajie-itinerary",
+  "zhangjiajie-glass-bridge-vs-skywalk",
   "best-zhangjiajie-night-show",
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
@@ -25,7 +26,7 @@ interface GuideLocaleEntry {
 
 interface GuideEntry {
   id: GuideId;
-  type: "route" | "planning";
+  type: "route" | "planning" | "field-note";
   featured: boolean;
   heroImagePath: string;
   heroImageUrl: string;
@@ -79,6 +80,57 @@ export const guideRegistry = [
         heroAlt: "안개 사이로 솟아오른 장자제 국가삼림공원의 사암 봉우리.",
         navTitle: "장자제 일정 가이드",
         featuredLinkLabel: "장자제 2–4일에 실제로 가능한 일정 보기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "zhangjiajie-glass-bridge-vs-skywalk",
+    type: "field-note",
+    featured: false,
+    heroImagePath:
+      "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
+    datePublished: "2026-07-22",
+    dateModified: "2026-07-22",
+    sourceReviewedDate: "2026-07-22",
+    locales: {
+      en: {
+        path: "/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+        title: "Zhangjiajie Glass Bridge vs Skywalk: Tantan’s 7 Checks",
+        headline:
+          "The Glass Bridge Is Not the Glass Skywalk: 7 Things Tantan Checks Before a Zhangjiajie Trip",
+        description:
+          "Meet Tantan and discover seven details she checks—from glass attractions and timing to hotels and ticket inclusions—when planning a Zhangjiajie trip.",
+        heroAlt:
+          "Tantan smiling while using a wooden pestle beneath a bamboo-roofed shelter.",
+        navTitle: "Tantan’s Zhangjiajie field note",
+        featuredLinkLabel: "Read Tantan’s seven on-the-ground checks",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+        title: "张家界玻璃桥和玻璃栈道有什么区别？Tantan 核对的 7 个细节",
+        headline:
+          "玻璃桥不是玻璃栈道：Tantan 在张家界替客人核对的 7 个细节",
+        description:
+          "从玻璃桥与玻璃栈道、真实游览时间，到酒店位置和门票包含项：看看 Tantan 在张家界行程付款前会替客人核对的 7 个细节。",
+        heroAlt: "Tantan 在竹棚下体验用木杵舂制食物。",
+        navTitle: "Tantan 的张家界现场笔记",
+        featuredLinkLabel: "阅读 Tantan 在现场会核对的 7 个细节",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+        title: "장가계 유리다리·유리잔도 차이｜여행 전 확인할 7가지",
+        headline:
+          "유리다리와 유리잔도는 다릅니다: 탄탄이 장가계 여행 전 확인하는 7가지",
+        description:
+          "장가계 대협곡 유리다리와 천문산 유리잔도는 서로 다른 코스입니다. 탄탄이 관광지 이름, 이동 시간, 숙소 위치와 포함 항목 등 예약 전 확인할 7가지를 전합니다.",
+        heroAlt: "대나무 지붕 아래에서 긴 나무 공이로 절구 체험을 하는 탄탄.",
+        navTitle: "탄탄의 장가계 현장 노트",
+        featuredLinkLabel: "탄탄이 현장에서 확인하는 7가지 보기",
         openGraphLocale: "ko_KR",
       },
     },
