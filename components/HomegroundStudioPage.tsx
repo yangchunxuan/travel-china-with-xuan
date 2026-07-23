@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { getGuideEntry } from "../lib/guideRegistry";
 import { getHomegroundStudioCopy } from "../lib/homegroundStudioI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -23,6 +25,10 @@ export function HomegroundStudioPage({
 }) {
   const homeCopy = getHomegroundCopy(locale);
   const copy = getHomegroundStudioCopy(locale);
+  const tantanStory = getGuideEntry(
+    "zhangjiajie-glass-bridge-vs-skywalk",
+    locale,
+  );
   const motionRootId = `homeground-studio-${locale}`;
   const plannerHref = `${homeCopy.path}?utm_source=studio&utm_medium=owned&utm_campaign=team-page&planner=destinations#route-finder`;
   const planningServicesHref =
@@ -148,6 +154,12 @@ export function HomegroundStudioPage({
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
+                  {member.id === "tantan" ? (
+                    <Link className={styles.memberStoryLink} href={tantanStory.canonicalPath}>
+                      {tantanStory.featuredLinkLabel}
+                      <ArrowRight aria-hidden="true" size={17} />
+                    </Link>
+                  ) : null}
                 </div>
               </article>
             ))}

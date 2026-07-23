@@ -336,6 +336,29 @@
   padding: 0.58rem 0.78rem;
 }
 
+.memberStoryLink {
+  align-items: center;
+  color: var(--studio-green);
+  display: inline-flex;
+  font-size: 0.84rem;
+  font-weight: 780;
+  gap: 0.55rem;
+  margin-block-start: 1.6rem;
+  text-decoration-color: color-mix(in srgb, var(--studio-rust) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.memberStoryLink svg {
+  color: var(--studio-rust);
+  transition: transform 160ms ease;
+}
+
+.memberStoryLink:hover svg,
+.memberStoryLink:focus-visible svg {
+  transform: translateX(0.25rem);
+}
+
 .trustSection {
   background: var(--studio-green);
   color: var(--hg-color-on-dark);

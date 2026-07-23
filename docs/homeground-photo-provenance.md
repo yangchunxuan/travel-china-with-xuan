@@ -108,6 +108,26 @@ Homeground forest green, muted terracotta, soft peach and a small amount of pale
 blue. Keep generous negative space and avoid logos, names, readable text,
 people, interfaces, photorealism, flags and stereotypical Chinese motifs.
 
+For Tantan's Zhangjiajie field note, the project owner confirmed on July 23,
+2026 that the interview behind the article took place, that Tantan agreed to be
+named, photographed and published on the Homeground website, and that the
+travelling guests appearing in two of the photographs also agreed to their
+inclusion.
+
+Current website derivatives:
+
+- `public/images/guides/tantan-zhangjiajie/tantan-hero-720.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-hero-1200.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-with-guests-mountains-1200.*`
+- `public/images/guides/tantan-zhangjiajie/tantan-with-guests-rest-1200.*`
+
+Each is released as a JPG fallback plus WebP and AVIF derivatives, written
+without EXIF, GPS or ICC metadata. The guests' faces are blurred in both group
+photographs. Tantan's work badge appears in one frame; its text and number are
+not legible at the published resolution, and no identity document, booking
+reference or payment detail is readable in any derivative.
+
 This note records how the files entered the project; it does not independently
 establish third-party copyright ownership. Before using the photographs in
 paid advertising, print, resale, or partner distribution, the studio should

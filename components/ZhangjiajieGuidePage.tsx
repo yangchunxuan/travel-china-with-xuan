@@ -65,6 +65,29 @@ const transportRelatedCopy: Record<
   },
 };
 
+const fieldNoteRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string }
+> = {
+  en: {
+    label: "A note from the ground",
+    title: "The Glass Bridge is not the glass skywalk.",
+    body:
+      "Tantan explains the seven details she checks before an English itinerary becomes a real Zhangjiajie day.",
+  },
+  zh: {
+    label: "来自现场的提醒",
+    title: "玻璃桥不是玻璃栈道。",
+    body: "Tantan 讲清一份英文行程真正落地前，她会替客人核对的 7 个细节。",
+  },
+  ko: {
+    label: "현장에서 온 노트",
+    title: "유리다리와 유리잔도는 다릅니다.",
+    body:
+      "영문 일정표가 실제 장가계의 하루가 되기 전, 탄탄이 확인하는 7가지 디테일을 읽어 보세요.",
+  },
+};
+
 function Timeline({
   stops,
   headingLevel = 3,
@@ -274,6 +297,11 @@ export function ZhangjiajieGuidePage({
     locale,
   );
   const transportCopy = transportRelatedCopy[locale];
+  const fieldNoteGuide = getGuideEntry(
+    "zhangjiajie-glass-bridge-vs-skywalk",
+    locale,
+  );
+  const fieldNoteCopy = fieldNoteRelatedCopy[locale];
   const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -410,6 +438,18 @@ export function ZhangjiajieGuidePage({
             </section>
 
             <div className={styles.relatedGuideStack}>
+              <aside className={styles.nightShowRelated} aria-labelledby="field-note-related-title">
+                <div>
+                  <p>{fieldNoteCopy.label}</p>
+                  <h2 id="field-note-related-title">{fieldNoteCopy.title}</h2>
+                  <span>{fieldNoteCopy.body}</span>
+                </div>
+                <Link href={fieldNoteGuide.canonicalPath}>
+                  {fieldNoteGuide.featuredLinkLabel}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+
               <aside className={styles.nightShowRelated} aria-labelledby="night-show-related-title">
                 <div>
                   <p>{nightShowCopy.label}</p>
