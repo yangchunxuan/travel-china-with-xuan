@@ -1,4 +1,5 @@
 import {
+  budgetDestinationInquiryFormVersion,
   canonicalizeJson,
   currentDestinationInquiryFormVersion,
   destinationInquirySchemaVersion,
@@ -395,11 +396,16 @@ async function handleRequest(request: Request): Promise<Response> {
     const isPreviousDestinationInquiry =
       payload.schemaVersion === destinationInquirySchemaVersion &&
       payload.formVersion === previousDestinationInquiryFormVersion;
+    const isBudgetDestinationInquiry =
+      payload.schemaVersion === destinationInquirySchemaVersion &&
+      payload.formVersion === budgetDestinationInquiryFormVersion;
     const isLegacyDestinationInquiry =
       payload.schemaVersion === destinationInquirySchemaVersion &&
       payload.formVersion === legacyDestinationInquiryFormVersion;
     persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
       isCurrentDestinationInquiry
+        ? "create_homeground_destination_inquiry_v4"
+        : isBudgetDestinationInquiry
         ? "create_homeground_destination_inquiry_v3"
         : isPreviousDestinationInquiry
           ? "create_homeground_destination_inquiry_v2"
@@ -423,10 +429,13 @@ async function handleRequest(request: Request): Promise<Response> {
           payload.contact.channel === "whatsapp"
             ? payload.contact.phoneE164
             : null,
-        ...(isCurrentDestinationInquiry || isPreviousDestinationInquiry
+        ...(
+          isCurrentDestinationInquiry ||
+            isBudgetDestinationInquiry ||
+            isPreviousDestinationInquiry
           ? { p_departure_country: payload.departureCountry }
           : {}),
-        ...(isCurrentDestinationInquiry
+        ...(isCurrentDestinationInquiry || isBudgetDestinationInquiry
           ? {
               p_rough_budget_per_person:
                 payload.roughBudgetPerPerson,
@@ -516,7 +525,6 @@ async function handleRequest(request: Request): Promise<Response> {
   return jsonResponse(
     result.outcome === "created" ? 201 : 200,
     {
-      inquiryId: result.inquiryId,
       publicReference: result.publicReference,
       state: "submitted",
       receivedAt: result.receivedAt,

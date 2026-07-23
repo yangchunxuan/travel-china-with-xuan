@@ -35,10 +35,13 @@ import {
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./destinationTiming.ts";
 import {
+  budgetDestinationInquiryFormVersion,
+  budgetPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
+  inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
   legacyPrivacyNoticeVersion,
@@ -49,10 +52,13 @@ import {
 } from "./inquiryVersions.ts";
 
 export {
+  budgetDestinationInquiryFormVersion,
+  budgetPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
+  inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
   legacyPrivacyNoticeVersion,
@@ -118,6 +124,10 @@ export type NormalizedInquiryContact =
     };
 
 export interface NormalizedInquiryAttribution {
+  /**
+   * Legacy transport name. For the current destination form this is a fixed,
+   * locale-specific submit surface, not a landing page or source attribution.
+   */
   landingPath: string;
   utmSource: string | null;
   utmMedium: string | null;
@@ -345,6 +355,9 @@ export function semanticInquiryPayload(
       : { channel: "whatsapp", phoneE164: value.contact.phoneE164 };
 
   if (value.schemaVersion === destinationInquirySchemaVersion) {
+    const includesBudget =
+      value.formVersion === currentDestinationInquiryFormVersion ||
+      value.formVersion === budgetDestinationInquiryFormVersion;
     return {
       schemaVersion: value.schemaVersion,
       formVersion: value.formVersion,
@@ -369,7 +382,7 @@ export function semanticInquiryPayload(
       ...(value.formVersion !== legacyDestinationInquiryFormVersion
         ? { departureCountry: value.departureCountry }
         : {}),
-      ...(value.formVersion === currentDestinationInquiryFormVersion
+      ...(includesBudget
         ? { roughBudgetPerPerson: value.roughBudgetPerPerson }
         : {}),
       note: value.note,
@@ -489,6 +502,8 @@ function validateAndNormalizeDestinationInquiry(
   const supportedVersionPair =
     (input.formVersion === currentDestinationInquiryFormVersion &&
       input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+    (input.formVersion === budgetDestinationInquiryFormVersion &&
+      input.privacyNoticeVersion === budgetPrivacyNoticeVersion) ||
     (input.formVersion === previousDestinationInquiryFormVersion &&
       input.privacyNoticeVersion === previousPrivacyNoticeVersion) ||
     (input.formVersion === legacyDestinationInquiryFormVersion &&
@@ -751,6 +766,8 @@ function validateAndNormalizeDestinationInquiry(
     const supportedConsentPair =
       (input.formVersion === currentDestinationInquiryFormVersion &&
         input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+      (input.formVersion === budgetDestinationInquiryFormVersion &&
+        input.privacyNoticeVersion === budgetPrivacyNoticeVersion) ||
       (input.formVersion === previousDestinationInquiryFormVersion &&
         input.privacyNoticeVersion === previousPrivacyNoticeVersion);
     if (!config.whatsappEnabled || !supportedConsentPair) {
@@ -801,7 +818,8 @@ function validateAndNormalizeDestinationInquiry(
   let roughBudgetPerPerson: string | null = null;
   if (
     input.roughBudgetPerPerson !== undefined &&
-    input.formVersion !== currentDestinationInquiryFormVersion
+    input.formVersion !== currentDestinationInquiryFormVersion &&
+    input.formVersion !== budgetDestinationInquiryFormVersion
   ) {
     fieldErrors.roughBudgetPerPerson = "unsupported";
   } else if (
@@ -847,9 +865,13 @@ function validateAndNormalizeDestinationInquiry(
   if (!isPlainObject(attribution)) {
     fieldErrors.attribution = "required";
   } else {
+    const usesFixedSubmitSurface =
+      input.formVersion === currentDestinationInquiryFormVersion;
     hasOnlyKeys(
       attribution,
-      ["landingPath", "utmSource", "utmMedium", "utmCampaign"],
+      usesFixedSubmitSurface
+        ? ["landingPath"]
+        : ["landingPath", "utmSource", "utmMedium", "utmCampaign"],
       "attribution",
       fieldErrors,
     );
@@ -857,7 +879,17 @@ function validateAndNormalizeDestinationInquiry(
       typeof attribution.landingPath === "string"
         ? normalizeText(attribution.landingPath).trim()
         : "";
-    if (
+    const expectedSubmitSurface = isOneOf(input.locale, inquiryLocales)
+      ? inquirySubmitSurfaceByLocale[input.locale]
+      : null;
+    if (usesFixedSubmitSurface) {
+      if (
+        expectedSubmitSurface === null ||
+        landingPath !== expectedSubmitSurface
+      ) {
+        fieldErrors["attribution.landingPath"] = "invalid";
+      }
+    } else if (
       landingPath.length === 0 ||
       landingPath.length > 200 ||
       !landingPath.startsWith("/") ||
@@ -884,9 +916,11 @@ function validateAndNormalizeDestinationInquiry(
 
     normalizedAttribution = {
       landingPath,
-      utmSource: normalizeUtm("utmSource"),
-      utmMedium: normalizeUtm("utmMedium"),
-      utmCampaign: normalizeUtm("utmCampaign"),
+      utmSource: usesFixedSubmitSurface ? null : normalizeUtm("utmSource"),
+      utmMedium: usesFixedSubmitSurface ? null : normalizeUtm("utmMedium"),
+      utmCampaign: usesFixedSubmitSurface
+        ? null
+        : normalizeUtm("utmCampaign"),
     };
   }
 

@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  budgetDestinationInquiryFormVersion,
+  budgetPrivacyNoticeVersion,
   canonicalizeJson,
   computeCanonicalRouteSnapshot,
   currentDestinationInquiryFormVersion,
@@ -10,6 +12,7 @@ import {
   destinationInquirySchemaVersion,
   destinationTimingRuleVersion,
   inquirySchemaVersion,
+  inquirySubmitSurfaceByLocale,
   legacyDestinationInquiryFormVersion,
   legacyPrivacyNoticeVersion,
   previousDestinationInquiryFormVersion,
@@ -31,6 +34,7 @@ const validationConfig = {
     "test-privacy-v1",
     legacyPrivacyNoticeVersion,
     previousPrivacyNoticeVersion,
+    budgetPrivacyNoticeVersion,
     currentPrivacyNoticeVersion,
   ],
   whatsappEnabled: false,
@@ -110,10 +114,7 @@ function validDestinationPayload() {
     note: "Please keep every selected place in the planner handoff.",
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
-      landingPath: "/?utm_source=youtube",
-      utmSource: "youtube",
-      utmMedium: "video",
-      utmCampaign: "wish-list",
+      landingPath: inquirySubmitSurfaceByLocale.en,
     },
     experiment: null,
     antiAbuse: {
@@ -207,17 +208,77 @@ test("rejects control characters while dropping invalid attribution", () => {
   assert.equal(result.fieldErrors["attribution.utmCampaign"], undefined);
 });
 
-test("invalid UTM labels never block an otherwise valid inquiry", () => {
+test("current destination inquiries reject URL campaign labels", () => {
   const payload = validDestinationPayload();
   payload.attribution.utmSource = "youtube\u202ehidden";
   payload.attribution.utmMedium = { unexpected: true };
   payload.attribution.utmCampaign = "x".repeat(101);
   const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  assert.equal(result.fieldErrors["attribution.utmSource"], "unknown");
+  assert.equal(result.fieldErrors["attribution.utmMedium"], "unknown");
+  assert.equal(result.fieldErrors["attribution.utmCampaign"], "unknown");
+});
+
+test("current destination inquiries accept only the locale submit surface", () => {
+  for (const [locale, landingPath] of Object.entries(
+    inquirySubmitSurfaceByLocale,
+  )) {
+    const payload = validDestinationPayload();
+    payload.locale = locale;
+    payload.attribution.landingPath = landingPath;
+    const result = validateAndNormalizeInquiry(payload, validationConfig);
+    assert.equal(result.ok, true, locale);
+    if (!result.ok) continue;
+    assert.deepEqual(result.value.attribution, {
+      landingPath,
+      utmSource: null,
+      utmMedium: null,
+      utmCampaign: null,
+    });
+  }
+
+  const forged = validDestinationPayload();
+  forged.attribution.landingPath = "/guides/zhangjiajie/";
+  const forgedResult = validateAndNormalizeInquiry(
+    forged,
+    validationConfig,
+  );
+  assert.equal(forgedResult.ok, false);
+  if (!forgedResult.ok) {
+    assert.equal(
+      forgedResult.fieldErrors["attribution.landingPath"],
+      "invalid",
+    );
+  }
+});
+
+test("the 20 July budget form remains replay-compatible", () => {
+  const payload = validDestinationPayload();
+  payload.formVersion = budgetDestinationInquiryFormVersion;
+  payload.privacyNoticeVersion = budgetPrivacyNoticeVersion;
+  payload.attribution = {
+    landingPath: "/?utm_source=youtube",
+    utmSource: "youtube",
+    utmMedium: "video",
+    utmCampaign: "wish-list",
+  };
+  const result = validateAndNormalizeInquiry(payload, {
+    ...validationConfig,
+    allowedFormVersions: [
+      ...validationConfig.allowedFormVersions,
+      budgetDestinationInquiryFormVersion,
+    ],
+    allowedPrivacyNoticeVersions: [
+      ...validationConfig.allowedPrivacyNoticeVersions,
+      budgetPrivacyNoticeVersion,
+    ],
+  });
   assert.equal(result.ok, true);
   if (!result.ok) return;
-  assert.equal(result.value.attribution.utmSource, null);
-  assert.equal(result.value.attribution.utmMedium, null);
-  assert.equal(result.value.attribution.utmCampaign, null);
+  assert.equal(result.value.roughBudgetPerPerson, null);
+  assert.deepEqual(result.value.attribution, payload.attribution);
 });
 
 test("V1 also drops invalid UTM labels without blocking an inquiry", () => {
@@ -473,6 +534,7 @@ test("destination form and privacy versions stay paired without changing old sem
       currentInquiryFormVersion,
       legacyDestinationInquiryFormVersion,
       previousDestinationInquiryFormVersion,
+      budgetDestinationInquiryFormVersion,
       currentDestinationInquiryFormVersion,
     ],
   };

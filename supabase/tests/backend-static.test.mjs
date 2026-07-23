@@ -27,6 +27,7 @@ const studioRunbookPath = "docs/studio-inquiry-runbook.md";
 const plannerHandoffPath = "components/PlannerHandoff.tsx";
 const homePagePath = "components/HomegroundHomePage.tsx";
 const headerPath = "components/HomegroundHeader.tsx";
+const footerPath = "components/HomegroundFooter.tsx";
 const privacyCopyPath = "lib/homegroundPrivacyI18n.ts";
 const inquiryVersionsPath = "lib/inquiryVersions.ts";
 const defaultPrivacyPagePath = "app/(default)/privacy/page.tsx";
@@ -449,13 +450,20 @@ test("published privacy copy reflects the production data path", async () => {
   assert.match(copy, /Tokyo \(ap-northeast-1\)/);
   assert.match(copy, /东京（ap-northeast-1）/);
   assert.match(copy, /도쿄\(ap-northeast-1\)/);
-  assert.match(copy, /no more than 12 months/);
-  assert.match(copy, /最多 12 个月/);
-  assert.match(copy, /최대 12개월/);
+  assert.match(copy, /deleted no later than 12 months/);
+  assert.match(copy, /保存满 12 个月时删除/);
+  assert.match(copy, /12개월 안에 삭제/);
+  assert.match(copy, /does not extend the website copy/);
+  assert.match(copy, /网站副本不会因此保存更久/);
+  assert.match(copy, /웹사이트 사본을 더 오래 두지 않/);
   assert.match(copy, /within 30 days/);
   assert.match(copy, /30 天内/);
   assert.match(copy, /30일 이내/);
-  assert.equal(copy.match(/utm_source/g)?.length, 3);
+  assert.equal(copy.match(/utm_source/g)?.length ?? 0, 0);
+  assert.match(copy, /current form version does not copy UTM/i);
+  assert.match(copy, /fixed code records only which language-specific/);
+  assert.match(copy, /固定代码记录是哪个语言版本/);
+  assert.match(copy, /고정 번호는 어느 언어/);
   assert.match(copy, /either an email address or a WhatsApp number/);
   assert.match(copy, /邮箱或 WhatsApp 号码中的一种/);
   assert.match(copy, /이메일 주소 또는 WhatsApp 번호 중 하나/);
@@ -476,7 +484,7 @@ test("published privacy copy reflects the production data path", async () => {
   assert.doesNotMatch(copy, /WhatsApp 직접 연결/);
   assert.match(
     versions,
-    /currentPrivacyNoticeVersion = "2026-07-20\.2"/,
+    /currentPrivacyNoticeVersion = "2026-07-21\.1"/,
   );
   assert.doesNotMatch(defaultPage, /index:\s*false|follow:\s*false/);
   assert.doesNotMatch(localizedPage, /index:\s*false|follow:\s*false/);
@@ -556,11 +564,11 @@ test("environment template covers the public form and server functions", async (
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=2026-07-18\.1,2026-07-19\.1,2026-07-20\.1,2026-07-20\.2$/m,
+    /^ALLOWED_FORM_VERSIONS=2026-07-21\.1$/m,
   );
   assert.match(
     example,
-    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19\.1,2026-07-20\.1,2026-07-20\.2$/m,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-21\.1$/m,
   );
   assert.doesNotMatch(
     example,
@@ -632,6 +640,7 @@ test("studio runbook treats the optional budget as context rather than a quote",
 test("frontend launch gates and permanent privacy entry stay connected", async () => {
   const planner = await source(plannerHandoffPath);
   const homePage = await source(homePagePath);
+  const footer = await source(footerPath);
   const readinessStart = planner.indexOf("const configurationReady");
   const readinessEnd = planner.indexOf("const [status", readinessStart);
   const readiness = planner.slice(readinessStart, readinessEnd);
@@ -659,8 +668,9 @@ test("frontend launch gates and permanent privacy entry stay connected", async (
   assert.match(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED/);
   assert.doesNotMatch(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/);
   assert.doesNotMatch(planner, /wa\.me/);
-  assert.match(homePage, /copy\.footer\.privacy/);
-  assert.match(homePage, /privacyPath/);
+  assert.match(homePage, /<HomegroundFooter locale=\{locale\}/);
+  assert.match(footer, /copy\.footer\.privacy/);
+  assert.match(footer, /privacyPath/);
 });
 
 test("language changes do not silently discard a customer contact draft", async () => {

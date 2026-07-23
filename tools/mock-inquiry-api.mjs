@@ -302,7 +302,6 @@ const server = createServer(async (request, response) => {
   }
 
   const publicResult = {
-    inquiryId: randomUUID(),
     publicReference: makePublicReference(),
     state: "submitted",
     receivedAt: new Date().toISOString(),

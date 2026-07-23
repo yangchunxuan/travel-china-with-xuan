@@ -45,9 +45,6 @@ function payload(note = "A test note") {
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
       landingPath: "/",
-      utmSource: null,
-      utmMedium: null,
-      utmCampaign: null,
     },
     experiment: null,
     antiAbuse: {
@@ -92,9 +89,6 @@ function destinationPayload() {
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
       landingPath: "/",
-      utmSource: null,
-      utmMedium: null,
-      utmCampaign: null,
     },
     experiment: null,
     antiAbuse: {
@@ -177,6 +171,7 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal(first.status, 201);
   const firstBody = await first.json();
   assert.equal(firstBody.duplicate, false);
+  assert.equal("inquiryId" in firstBody, false);
   assert.match(firstBody.publicReference, /^HG-[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/);
 
   const replay = await fetch(endpoint, {
@@ -191,7 +186,9 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal(replay.status, 200);
   const replayBody = await replay.json();
   assert.equal(replayBody.duplicate, true);
-  assert.equal(replayBody.inquiryId, firstBody.inquiryId);
+  assert.equal("inquiryId" in replayBody, false);
+  assert.equal(replayBody.publicReference, firstBody.publicReference);
+  assert.equal(replayBody.receivedAt, firstBody.receivedAt);
 
   const conflict = await fetch(endpoint, {
     method: "POST",
@@ -218,6 +215,7 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal(destinationFirst.status, 201);
   const destinationFirstBody = await destinationFirst.json();
   assert.equal(destinationFirstBody.duplicate, false);
+  assert.equal("inquiryId" in destinationFirstBody, false);
 
   const destinationReplay = await fetch(endpoint, {
     method: "POST",
@@ -231,9 +229,14 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal(destinationReplay.status, 200);
   const destinationReplayBody = await destinationReplay.json();
   assert.equal(destinationReplayBody.duplicate, true);
+  assert.equal("inquiryId" in destinationReplayBody, false);
   assert.equal(
-    destinationReplayBody.inquiryId,
-    destinationFirstBody.inquiryId,
+    destinationReplayBody.publicReference,
+    destinationFirstBody.publicReference,
+  );
+  assert.equal(
+    destinationReplayBody.receivedAt,
+    destinationFirstBody.receivedAt,
   );
 
   const changedBudget = destinationPayload();

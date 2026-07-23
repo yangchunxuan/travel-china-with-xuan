@@ -19,7 +19,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("destination intake keeps schema 2 and supports three form generations", async () => {
+test("destination intake keeps schema 2 and supports four form generations", async () => {
   const versions = await source(versionsPath);
   assert.match(versions, /inquirySchemaVersion = 1 as const/);
   assert.match(
@@ -37,7 +37,11 @@ test("destination intake keeps schema 2 and supports three form generations", as
   );
   assert.match(
     versions,
-    /currentDestinationInquiryFormVersion = "2026-07-20\.2"/,
+    /budgetDestinationInquiryFormVersion = "2026-07-20\.2"/,
+  );
+  assert.match(
+    versions,
+    /currentDestinationInquiryFormVersion = "2026-07-21\.1"/,
   );
   assert.match(
     versions,
@@ -49,7 +53,11 @@ test("destination intake keeps schema 2 and supports three form generations", as
   );
   assert.match(
     versions,
-    /currentPrivacyNoticeVersion = "2026-07-20\.2"/,
+    /budgetPrivacyNoticeVersion = "2026-07-20\.2"/,
+  );
+  assert.match(
+    versions,
+    /currentPrivacyNoticeVersion = "2026-07-21\.1"/,
   );
 });
 
@@ -177,11 +185,13 @@ test("budget intake adds a nullable field and versioned create and claim RPCs", 
   assert.doesNotMatch(migration, /grant execute[\s\S]*\bto anon\b/);
 });
 
-test("Edge function routes all three destination form generations explicitly", async () => {
+test("Edge function routes all four destination form generations explicitly", async () => {
   const edge = await source(publicFunctionPath);
   assert.match(edge, /legacyDestinationInquiryFormVersion/);
   assert.match(edge, /previousDestinationInquiryFormVersion/);
   assert.match(edge, /currentDestinationInquiryFormVersion/);
+  assert.match(edge, /budgetDestinationInquiryFormVersion/);
+  assert.match(edge, /create_homeground_destination_inquiry_v4/);
   assert.match(edge, /create_homeground_destination_inquiry_v3/);
   assert.match(edge, /create_homeground_destination_inquiry_v2/);
   assert.match(edge, /create_homeground_destination_inquiry/);
@@ -198,7 +208,7 @@ test("Edge function routes all three destination form generations explicitly", a
   );
   assert.match(
     edge,
-    /isCurrentDestinationInquiry \|\| isPreviousDestinationInquiry[\s\S]*p_departure_country/,
+    /isCurrentDestinationInquiry[\s\S]*isBudgetDestinationInquiry[\s\S]*isPreviousDestinationInquiry[\s\S]*p_departure_country/,
   );
 });
 
@@ -243,7 +253,7 @@ test("notification handoff includes wishes, timing, and traveller-stated budget 
   assert.doesNotMatch(worker, /@gmail\.com/i);
 });
 
-test("development mock and environment accept the overlapping form generations", async () => {
+test("development mock retains transition fixtures while steady-state env allows the current pair", async () => {
   const mock = await source(mockPath);
   const example = await source(envExamplePath);
   assert.match(mock, /currentInquiryFormVersion/);
@@ -254,10 +264,10 @@ test("development mock and environment accept the overlapping form generations",
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=2026-07-18\.1,2026-07-19\.1,2026-07-20\.1,2026-07-20\.2$/m,
+    /^ALLOWED_FORM_VERSIONS=.*2026-07-21\.1.*$/m,
   );
   assert.match(
     example,
-    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19\.1,2026-07-20\.1,2026-07-20\.2$/m,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=.*2026-07-21\.1.*$/m,
   );
 });
