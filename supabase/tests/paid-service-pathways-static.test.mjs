@@ -6,7 +6,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("Home planning desk presents three paid paths and one free path before the shared questions", async () => {
+test("Home planning desk leads with a neutral conversation and keeps three paid shortcuts plus a separate free tool", async () => {
   const [home, planningDesk, planningCopy, services] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
@@ -26,14 +26,22 @@ test("Home planning desk presents three paid paths and one free path before the 
   );
   assert.match(
     planningDesk,
-    /copy\.options\.find\(\(option\) => option\.kind === "free"\)/,
+    /copy\.starterPrompts\.map\(\(prompt\) =>/,
   );
-  assert.match(planningDesk, /name="homeground-planning-intent"/);
-  assert.match(planningDesk, /onContinue\(draft\)/);
+  assert.match(planningDesk, /name="homeground-planning-start"/);
+  assert.match(
+    planningDesk,
+    /onContinue\(selectedPrompt\.planningIntent, selectedPrompt\.id\)/,
+  );
+  assert.match(planningDesk, /onContinue\(option\.id\)/);
+  assert.match(planningDesk, /onContinue\(freeOption\.id\)/);
+  assert.match(planningCopy, /id: "conversation"/);
+  assert.match(planningCopy, /kind: "conversation"/);
   assert.match(planningCopy, /id: "itinerary-review"/);
   assert.match(planningCopy, /id: "route-build"/);
   assert.match(planningCopy, /id: "full-trip-support"/);
   assert.match(planningCopy, /id: "explore"/);
+  assert.match(planningCopy, /planningIntent: "conversation"/);
   assert.match(planningCopy, /label: "Free route timing check"/);
   assert.match(services, /label: "Review My Route"/);
   assert.match(services, /label: "Build My Route"/);

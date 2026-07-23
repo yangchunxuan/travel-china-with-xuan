@@ -3,6 +3,7 @@ import type { DestinationPlan } from "./destinationPlanner";
 import type { RouteServiceId } from "./routeServiceInterest";
 
 export const homepagePlanningIntentIds = [
+  "conversation",
   "itinerary-review",
   "route-build",
   "full-trip-support",
@@ -12,6 +13,50 @@ export const homepagePlanningIntentIds = [
 export type HomepagePlanningIntentId =
   (typeof homepagePlanningIntentIds)[number];
 
+export const homepageStarterIntentIds = [
+  "arrange-trip",
+  "self-book-route",
+  "existing-route",
+  "unsure",
+  "open-text",
+] as const;
+
+export type HomepageStarterIntentId =
+  (typeof homepageStarterIntentIds)[number];
+
+export interface HomepageStarterIntentOption {
+  id: HomepageStarterIntentId;
+  label: string;
+  planningIntent: HomepagePlanningIntentId;
+}
+
+export const bookingResponsibilityIds = [
+  "traveller",
+  "homeground-selected",
+  "homeground-most",
+  "unsure",
+] as const;
+
+export type BookingResponsibilityId =
+  (typeof bookingResponsibilityIds)[number];
+
+export interface BookingResponsibilityCopy {
+  legend: string;
+  hint: string;
+  options: readonly { id: BookingResponsibilityId; label: string }[];
+  error: string;
+  fixedScopeHint: string;
+}
+
+export function isBookingResponsibilityId(
+  value: string | null | undefined,
+): value is BookingResponsibilityId {
+  return Boolean(
+    value &&
+      bookingResponsibilityIds.includes(value as BookingResponsibilityId),
+  );
+}
+
 export type PlanningQuestionKey =
   | "destinations"
   | "nights"
@@ -20,7 +65,7 @@ export type PlanningQuestionKey =
 
 export interface HomepagePlanningIntentOption {
   id: HomepagePlanningIntentId;
-  kind: "paid" | "free";
+  kind: "conversation" | "paid" | "free";
   statement: string;
   label: string;
   priceLabel: string;
@@ -30,7 +75,7 @@ export interface HomepagePlanningIntentOption {
 
 export interface PlanningQuestionContextCopy {
   introTitle: string;
-  introBody: string;
+  introBody?: string;
   titles: Record<PlanningQuestionKey, string>;
   completeLabel: string;
 }
@@ -56,6 +101,15 @@ export interface HomepagePlanningDeskCopy {
   eyebrow: string;
   title: string;
   intro: string;
+  starterPrompts: readonly HomepageStarterIntentOption[];
+  openStarterLabel: string;
+  noteLabel: string;
+  noteOptionalTag: string;
+  noteHint: string;
+  serviceShortcutLabel: string;
+  serviceShortcutIntro: string;
+  freeToolLabel: string;
+  freeToolMeta: string;
   options: readonly HomepagePlanningIntentOption[];
   continue: string;
   keepCurrent: string;
@@ -63,8 +117,10 @@ export interface HomepagePlanningDeskCopy {
   selectedLabel: string;
   change: string;
   boundary: string;
+  fixedPriceScope: string;
   changeWarning: string;
   selectedAnnouncement: (label: string) => string;
+  bookingResponsibility: BookingResponsibilityCopy;
   outsideStandardScope: {
     priceLabel: string;
     briefBody: string;
@@ -76,12 +132,15 @@ export interface HomepagePlanningDeskCopy {
     eyebrow: string;
     title: string;
     body: string;
+    conversationLabel: string;
+    conversationMeta: string;
     optionLabel: string;
   };
   questionContexts: Record<
     HomepagePlanningIntentId,
     PlanningQuestionContextCopy
   >;
+  conversationBrief: PaidBriefReadyCopy;
   paidBriefs: Record<RouteServiceId, PaidBriefReadyCopy>;
 }
 
@@ -100,11 +159,53 @@ export function routeNeedsScopeConfirmation(
 }
 
 const en: HomepagePlanningDeskCopy = {
-  eyebrow: "Homeground planning desk",
-  title: "What do you have so far?",
+  eyebrow: "Start a trip conversation",
+  title: "What would you like help with?",
   intro:
-    "Choose the sentence closest to where your China trip stands. You can change the path without re-entering the shared trip details.",
+    "Choose a starting point. It helps us ask the right questions without locking you into a service.",
+  starterPrompts: [
+    {
+      id: "arrange-trip",
+      label: "Plan and help arrange the trip",
+      planningIntent: "conversation",
+    },
+    {
+      id: "self-book-route",
+      label: "Build a route I’ll book myself",
+      planningIntent: "conversation",
+    },
+    {
+      id: "existing-route",
+      label: "Review a route I already have",
+      planningIntent: "conversation",
+    },
+    {
+      id: "unsure",
+      label: "I’m not sure yet",
+      planningIntent: "conversation",
+    },
+  ],
+  openStarterLabel: "Told us in your own words",
+  noteLabel: "Anything useful to know?",
+  noteOptionalTag: "Optional",
+  noteHint:
+    "Dates, travellers, places you’re considering, or what you’d like Homeground to handle. No passport or payment details, please.",
+  serviceShortcutLabel: "Already know what you need?",
+  serviceShortcutIntro:
+    "Start directly with a published service. You can still change the path before payment.",
+  freeToolLabel: "Not ready to contact us? Try the free route timing check",
+  freeToolMeta: "Instant self-check · no planner review · no contact required",
   options: [
+    {
+      id: "conversation",
+      kind: "conversation",
+      statement: "I want to explain the trip before choosing a service.",
+      label: "Trip conversation",
+      priceLabel: "Free to enquire",
+      summary:
+        "A Homeground planner reviews the brief and confirms the appropriate next step.",
+      scope: "No payment is taken here.",
+    },
     {
       id: "itinerary-review",
       kind: "paid",
@@ -147,17 +248,40 @@ const en: HomepagePlanningDeskCopy = {
       scope: "Automated first check · no human route review",
     },
   ],
-  continue: "Continue with this path",
+  continue: "Start my trip brief",
   keepCurrent: "Keep my current path",
-  requiredError: "Choose the option closest to your current trip stage.",
-  selectedLabel: "Selected planning path",
+  requiredError:
+    "Choose a starting point, or write a short note first — either works.",
+  selectedLabel: "Your starting point",
   change: "Change",
   boundary:
-    "This first brief is free. No payment or file upload happens here. For paid services, Homeground confirms fit, scope and delivery timing before emailing payment instructions.",
+    "Free to enquire. We use this first brief to confirm the right scope; detailed personalised route work begins after the agreed payment is confirmed. No payment is taken here.",
+  fixedPriceScope: `Fixed-price scope for Review My Route and Build My Route · ${standardScopeEn}`,
   changeWarning:
     "Changing the service will clear the service-specific route note you entered. Your shared trip answers and contact details will stay. Continue?",
   selectedAnnouncement: (label) =>
     `${label} selected. You can continue with the trip brief.`,
+  bookingResponsibility: {
+    legend: "Who do you expect to handle the bookings and arrangements?",
+    hint: "This is the single most useful signal for recommending the right service. Nothing is locked in.",
+    options: [
+      { id: "traveller", label: "I’ll make all bookings myself" },
+      {
+        id: "homeground-selected",
+        label: "I’d like Homeground to help with selected arrangements",
+      },
+      {
+        id: "homeground-most",
+        label:
+          "I’d like Homeground to plan and coordinate most of the trip",
+      },
+      { id: "unsure", label: "I’m not sure yet" },
+    ],
+    error:
+      "Choose who you expect to handle the bookings and arrangements.",
+    fixedScopeHint:
+      "Help with arrangements usually sits in the full-trip scope rather than a route document alone. You can still send this request — a planner confirms the right scope and price before any payment, and the fixed-price service stays available if you book everything yourself.",
+  },
   outsideStandardScope: {
     priceLabel: "Scope & price to confirm",
     briefBody:
@@ -170,12 +294,25 @@ const en: HomepagePlanningDeskCopy = {
   },
   freeUpgrade: {
     eyebrow: "Want human help next?",
-    title: "Continue with the part of the route you want us to solve.",
+    title: "Ask a planner what this trip actually needs.",
     body:
-      "Your free timing check stays available. Choose a paid path only if you want a human review, a new route structure or help across the full trip.",
+      "Your free timing check stays available. A planner can read the same answers and reply with the right next step — or start directly with a published service.",
+    conversationLabel: "Ask a planner what this trip needs",
+    conversationMeta:
+      "Free to enquire · a real planner replies with the right next step",
     optionLabel: "Human planning options",
   },
   questionContexts: {
+    conversation: {
+      introTitle: "Which places are you considering?",
+      titles: {
+        destinations: "Which places are you considering?",
+        nights: "About how many nights do you have?",
+        party: "Who will be travelling?",
+        pace: "What pace would feel right?",
+      },
+      completeLabel: "Prepare my trip brief",
+    },
     explore: {
       introTitle: "Which places are on your China wishlist?",
       introBody:
@@ -214,8 +351,6 @@ const en: HomepagePlanningDeskCopy = {
     },
     "full-trip-support": {
       introTitle: "Where are you thinking of going?",
-      introBody:
-        "A rough wishlist is enough. We use these basics to decide what needs a trip-specific planning and support scope.",
       titles: {
         destinations: "Where are you thinking of going?",
         nights: "About how many nights is the full trip?",
@@ -224,6 +359,33 @@ const en: HomepagePlanningDeskCopy = {
       },
       completeLabel: "Prepare my full-trip brief",
     },
+  },
+  conversationBrief: {
+    kicker: "Trip brief ready",
+    title: "We have the basics to decide the right next step.",
+    body:
+      "This is a free enquiry brief for a planner to review, not a finished route, booking or paid planning deliverable.",
+    noPayment: "No payment has been taken.",
+    scopeLabel: "What this first conversation does",
+    scope:
+      "Homeground uses the brief to understand the request, check fit and explain the appropriate service and price before paid work begins.",
+    deliverablesLabel: "What a planner will check",
+    deliverables: [
+      "Whether you need a route review, a new route or full-trip help",
+      "Which important details are still needed before work can be scoped",
+      "The next practical step, service price or quotation process",
+    ],
+    nextLabel: "What happens next",
+    nextSteps: [
+      "Leave one working contact and any essential trip constraints.",
+      "A Homeground planner reviews the brief and replies with the appropriate next step.",
+      "Detailed personalised work begins only after the scope and agreed payment are confirmed.",
+    ],
+    submitLabel: "Send my trip brief",
+    successTitle: "Your trip brief is in.",
+    successBody:
+      "No payment has been taken. We’ll review what you need and contact you with the appropriate next step.",
+    successBackLabel: "Back to my trip brief",
   },
   paidBriefs: {
     "itinerary-review": {
@@ -309,11 +471,52 @@ const en: HomepagePlanningDeskCopy = {
 };
 
 const zh: HomepagePlanningDeskCopy = {
-  eyebrow: "Homeground 旅行规划台",
-  title: "你现在已经准备到哪一步？",
+  eyebrow: "开始说说你的旅行",
+  title: "你希望 Homeground 帮你处理什么？",
   intro:
-    "选择最接近你当前状态的一项。之后更换服务时，共用的旅行信息无需重新填写。",
+    "先选择一个最接近的起点。这会帮助我们提出合适的问题，但不会把你锁定在某项服务里。",
+  starterPrompts: [
+    {
+      id: "arrange-trip",
+      label: "帮我规划并协调整趟旅行",
+      planningIntent: "conversation",
+    },
+    {
+      id: "self-book-route",
+      label: "为我搭建路线，预订由我自己完成",
+      planningIntent: "conversation",
+    },
+    {
+      id: "existing-route",
+      label: "审核我已经准备好的路线",
+      planningIntent: "conversation",
+    },
+    {
+      id: "unsure",
+      label: "我还不确定",
+      planningIntent: "conversation",
+    },
+  ],
+  openStarterLabel: "用自己的话说明",
+  noteLabel: "还有什么想先告诉我们？",
+  noteOptionalTag: "选填",
+  noteHint:
+    "可以写日期、同行者、考虑中的地方，或希望 Homeground 负责的部分。请不要填写护照或付款信息。",
+  serviceShortcutLabel: "已经知道自己需要什么？",
+  serviceShortcutIntro:
+    "可以直接从公开服务开始；付款前仍可根据实际需求调整路径。",
+  freeToolLabel: "还不想留下联系方式？先使用免费路线时间检查",
+  freeToolMeta: "即时自动检查 · 不含真人审核 · 无需联系方式",
   options: [
+    {
+      id: "conversation",
+      kind: "conversation",
+      statement: "我想先说明旅行需求，再决定服务。",
+      label: "旅行需求沟通",
+      priceLabel: "提交需求免费",
+      summary: "Homeground 规划师会查看简报，并确认适合的下一步。",
+      scope: "本页不会收款。",
+    },
     {
       id: "itinerary-review",
       kind: "paid",
@@ -351,16 +554,36 @@ const zh: HomepagePlanningDeskCopy = {
       scope: "自动初步检查 · 不包含真人路线审核",
     },
   ],
-  continue: "按这条路径继续",
+  continue: "开始填写旅行简报",
   keepCurrent: "保留当前选择",
-  requiredError: "请选择最接近你当前旅行准备阶段的一项。",
-  selectedLabel: "已选择的规划路径",
+  requiredError: "请先选择一个起点，或写几句你的旅行想法，两种都可以。",
+  selectedLabel: "你的起点",
   change: "更换",
   boundary:
-    "提交第一份旅行简报不收费，这里也不会付款或上传文件。付费服务由 Homeground 先确认是否适合、服务范围和交付时间，再通过邮件发送付款说明。",
+    "提交需求不收费。我们会用这份简报确认适合的范围；详细个性化路线在双方约定的款项确认后开始制作。本页不会收款。",
+  fixedPriceScope: `路线审核与路线规划的固定价格标准范围 · ${standardScopeZh}`,
   changeWarning:
     "更换服务会清空你填写的服务专属路线说明；共用的旅行答案和联系方式会保留。是否继续？",
   selectedAnnouncement: (label) => `已选择${label}，现在可以继续填写旅行简报。`,
+  bookingResponsibility: {
+    legend: "你希望由谁完成预订和具体安排？",
+    hint: "这是判断适合服务最重要的信号，不会锁定任何选择。",
+    options: [
+      { id: "traveller", label: "全部预订我自己完成" },
+      {
+        id: "homeground-selected",
+        label: "希望 Homeground 协助部分安排",
+      },
+      {
+        id: "homeground-most",
+        label: "希望 Homeground 负责大部分规划和协调",
+      },
+      { id: "unsure", label: "我还不确定" },
+    ],
+    error: "请选择你希望由谁完成预订和安排。",
+    fixedScopeHint:
+      "需要我们参与安排时，通常属于全程服务范围，而不只是路线文件。你仍然可以提交这份简报——付款前规划师会先确认适合的范围和价格；如果全部预订由你自己完成，所选的固定价服务仍然可用。",
+  },
   outsideStandardScope: {
     priceLabel: "范围与价格待确认",
     briefBody:
@@ -373,12 +596,24 @@ const zh: HomepagePlanningDeskCopy = {
   },
   freeUpgrade: {
     eyebrow: "下一步需要真人协助？",
-    title: "选择希望 Homeground 帮你解决的部分。",
+    title: "让规划师看看这趟旅行真正需要什么。",
     body:
-      "免费时间检查会继续保留。只有当你需要真人审核、新路线结构或整趟旅行协助时，才需要选择付费路径。",
+      "免费时间检查会继续保留。规划师可以基于同样的答案回复适合的下一步；你也可以直接从公开服务开始。",
+    conversationLabel: "让规划师判断这趟旅行需要什么",
+    conversationMeta: "提交需求免费 · 真人回复适合的下一步",
     optionLabel: "真人规划选项",
   },
   questionContexts: {
+    conversation: {
+      introTitle: "目前考虑去哪些地方？",
+      titles: {
+        destinations: "目前考虑去哪些地方？",
+        nights: "整趟旅行大约多少晚？",
+        party: "谁会一起旅行？",
+        pace: "怎样的旅行节奏更适合你？",
+      },
+      completeLabel: "准备旅行简报",
+    },
     explore: {
       introTitle: "哪些地方在你的中国旅行愿望里？",
       introBody:
@@ -417,8 +652,6 @@ const zh: HomepagePlanningDeskCopy = {
     },
     "full-trip-support": {
       introTitle: "目前考虑去哪些地方？",
-      introBody:
-        "粗略的愿望清单就足够。我们会用这些基本信息判断整趟旅行需要怎样的规划和支持范围。",
       titles: {
         destinations: "目前考虑去哪些地方？",
         nights: "整趟旅行大约多少晚？",
@@ -427,6 +660,33 @@ const zh: HomepagePlanningDeskCopy = {
       },
       completeLabel: "准备全程旅行简报",
     },
+  },
+  conversationBrief: {
+    kicker: "旅行简报已准备好",
+    title: "这些信息足以让我们判断合适的下一步。",
+    body:
+      "这是一份供规划师查看的免费需求简报，不是已经完成的路线、预订或付费规划成果。",
+    noPayment: "目前没有付款。",
+    scopeLabel: "第一次沟通会做什么",
+    scope:
+      "Homeground 会用这份简报理解需求、确认是否适合，并在付费工作开始前说明合适的服务和价格。",
+    deliverablesLabel: "规划师会判断什么",
+    deliverables: [
+      "适合路线审核、新路线规划，还是全程协助",
+      "正式确认工作范围前还需要哪些重要信息",
+      "下一步、公开服务价格或定制报价方式",
+    ],
+    nextLabel: "接下来会发生什么",
+    nextSteps: [
+      "留下一个可用的联系方式和必要的旅行限制。",
+      "Homeground 规划师查看简报，并回复适合的下一步。",
+      "详细个性化工作只在范围与约定款项确认后开始。",
+    ],
+    submitLabel: "提交旅行简报",
+    successTitle: "旅行简报已提交。",
+    successBody:
+      "目前没有付款。我们会查看你的需求，并联系你说明适合的下一步。",
+    successBackLabel: "返回旅行简报",
   },
   paidBriefs: {
     "itinerary-review": {
@@ -512,11 +772,53 @@ const zh: HomepagePlanningDeskCopy = {
 };
 
 const ko: HomepagePlanningDeskCopy = {
-  eyebrow: "Homeground 여행 플래닝 데스크",
-  title: "지금 어느 단계인가요?",
+  eyebrow: "여행 이야기 시작하기",
+  title: "Homeground가 어떤 부분을 도와드리면 좋을까요?",
   intro:
-    "현재 준비 상태와 가장 가까운 항목을 선택하세요. 나중에 서비스를 바꿔도 공통 여행 정보는 다시 입력하지 않아도 됩니다.",
+    "가장 가까운 출발점을 골라 주세요. 알맞은 질문을 드리기 위한 선택이며, 특정 서비스로 확정되는 것은 아닙니다.",
+  starterPrompts: [
+    {
+      id: "arrange-trip",
+      label: "여행 전체 설계와 일부 예약·현지 조율이 필요해요",
+      planningIntent: "conversation",
+    },
+    {
+      id: "self-book-route",
+      label: "예약은 직접 하고, 여행 동선만 설계받고 싶어요",
+      planningIntent: "conversation",
+    },
+    {
+      id: "existing-route",
+      label: "이미 준비한 일정을 검토받고 싶어요",
+      planningIntent: "conversation",
+    },
+    {
+      id: "unsure",
+      label: "아직 잘 모르겠어요",
+      planningIntent: "conversation",
+    },
+  ],
+  openStarterLabel: "직접 적은 이야기",
+  noteLabel: "먼저 알려 주고 싶은 내용이 있나요?",
+  noteOptionalTag: "선택",
+  noteHint:
+    "날짜, 여행자, 생각 중인 장소 또는 Homeground가 맡았으면 하는 부분을 적어 주세요. 여권이나 결제 정보는 입력하지 마세요.",
+  serviceShortcutLabel: "필요한 서비스를 이미 알고 있나요?",
+  serviceShortcutIntro:
+    "공개된 서비스에서 바로 시작할 수 있으며, 결제 전 실제 필요에 따라 경로를 바꿀 수 있습니다.",
+  freeToolLabel: "아직 연락하지 않고 먼저 확인하고 싶다면 무료 동선 시간 점검을 이용하세요",
+  freeToolMeta: "즉시 자동 점검 · 사람 검토 없음 · 연락처 불필요",
   options: [
+    {
+      id: "conversation",
+      kind: "conversation",
+      statement: "서비스를 고르기 전에 여행 요청부터 설명하고 싶어요.",
+      label: "여행 요청 상담",
+      priceLabel: "문의 제출 무료",
+      summary:
+        "Homeground 플래너가 브리프를 검토하고 적절한 다음 단계를 안내합니다.",
+      scope: "이 페이지에서는 결제가 진행되지 않습니다.",
+    },
     {
       id: "itinerary-review",
       kind: "paid",
@@ -554,16 +856,37 @@ const ko: HomepagePlanningDeskCopy = {
       scope: "자동 초기 점검 · 사람 플래너의 일정 검토는 포함되지 않음",
     },
   ],
-  continue: "이 경로로 계속하기",
+  continue: "여행 브리프 시작하기",
   keepCurrent: "현재 선택 유지하기",
-  requiredError: "현재 여행 준비 단계와 가장 가까운 항목을 선택해 주세요.",
-  selectedLabel: "선택한 플래닝 경로",
+  requiredError:
+    "출발점을 선택하거나 여행 메모를 간단히 적어 주세요. 둘 중 하나면 충분합니다.",
+  selectedLabel: "여행의 출발점",
   change: "변경",
   boundary:
-    "첫 여행 브리프는 무료이며 여기서는 결제나 파일 업로드가 진행되지 않습니다. 유료 서비스는 Homeground가 적합 여부, 범위와 완료 예정일을 먼저 확인한 뒤 이메일로 결제 방법을 안내합니다.",
+    "문의 제출은 무료입니다. 이 브리프로 적절한 범위를 먼저 확인하며, 상세 맞춤 일정 작업은 합의된 결제가 확인된 뒤 시작합니다. 이 페이지에서는 결제가 진행되지 않습니다.",
+  fixedPriceScope: `일정 검토와 동선 설계의 정가 적용 범위 · ${standardScopeKo}`,
   changeWarning:
     "서비스를 바꾸면 서비스별 일정 메모가 삭제됩니다. 공통 여행 답변과 연락처는 유지됩니다. 계속할까요?",
   selectedAnnouncement: (label) => `${label}을 선택했습니다. 여행 브리프를 계속 작성할 수 있습니다.`,
+  bookingResponsibility: {
+    legend: "예약과 준비는 누가 맡게 될까요?",
+    hint: "알맞은 서비스를 추천하는 데 가장 중요한 정보이며, 선택이 확정되는 것은 아닙니다.",
+    options: [
+      { id: "traveller", label: "예약은 모두 제가 직접 할 거예요" },
+      {
+        id: "homeground-selected",
+        label: "일부 준비는 Homeground의 도움을 받고 싶어요",
+      },
+      {
+        id: "homeground-most",
+        label: "여행 대부분의 설계와 조율을 Homeground에 맡기고 싶어요",
+      },
+      { id: "unsure", label: "아직 잘 모르겠어요" },
+    ],
+    error: "예약과 준비를 누가 맡을지 선택해 주세요.",
+    fixedScopeHint:
+      "예약이나 준비 지원은 보통 일정 문서만이 아니라 전체 여행 지원 범위에 해당합니다. 이대로 제출하셔도 됩니다. 결제 전에 플래너가 알맞은 범위와 가격을 먼저 확인하며, 모든 예약을 직접 하신다면 선택하신 정액 서비스도 그대로 이용할 수 있습니다.",
+  },
   outsideStandardScope: {
     priceLabel: "범위·가격 확인 필요",
     briefBody:
@@ -576,12 +899,24 @@ const ko: HomepagePlanningDeskCopy = {
   },
   freeUpgrade: {
     eyebrow: "다음 단계에 사람의 도움이 필요하신가요?",
-    title: "Homeground가 해결할 여행 부분을 선택하세요.",
+    title: "이 여행에 정말 필요한 것을 플래너에게 물어보세요.",
     body:
-      "무료 시간 점검 결과는 그대로 유지됩니다. 사람의 일정 검토, 새로운 동선 설계 또는 여행 전체 지원이 필요할 때만 유료 경로를 선택하세요.",
+      "무료 시간 점검 결과는 그대로 유지됩니다. 플래너가 같은 답변을 읽고 알맞은 다음 단계를 안내해 드리며, 공개된 서비스에서 바로 시작할 수도 있습니다.",
+    conversationLabel: "이 여행에 무엇이 필요한지 플래너에게 물어보기",
+    conversationMeta: "문의는 무료 · 사람 플래너가 알맞은 다음 단계를 안내합니다",
     optionLabel: "사람 플래닝 옵션",
   },
   questionContexts: {
+    conversation: {
+      introTitle: "어디로 갈 생각이신가요?",
+      titles: {
+        destinations: "어디로 갈 생각이신가요?",
+        nights: "전체 여행은 대략 몇 박인가요?",
+        party: "누가 함께 여행하나요?",
+        pace: "어떤 여행 속도가 편할까요?",
+      },
+      completeLabel: "여행 브리프 준비하기",
+    },
     explore: {
       introTitle: "중국에서 어디를 가고 싶으신가요?",
       introBody:
@@ -620,8 +955,6 @@ const ko: HomepagePlanningDeskCopy = {
     },
     "full-trip-support": {
       introTitle: "어디로 갈 생각이신가요?",
-      introBody:
-        "대략적인 희망 목록이면 충분합니다. 이 기본 정보로 여행별 플래닝과 지원 범위를 판단합니다.",
       titles: {
         destinations: "어디로 갈 생각이신가요?",
         nights: "전체 여행은 대략 몇 박인가요?",
@@ -630,6 +963,33 @@ const ko: HomepagePlanningDeskCopy = {
       },
       completeLabel: "전체 여행 브리프 준비하기",
     },
+  },
+  conversationBrief: {
+    kicker: "여행 브리프 준비 완료",
+    title: "알맞은 다음 단계를 판단할 기본 정보가 준비되었습니다.",
+    body:
+      "플래너가 검토할 무료 문의 브리프이며, 완성된 일정·예약 또는 유료 플래닝 결과물이 아닙니다.",
+    noPayment: "아직 결제된 금액은 없습니다.",
+    scopeLabel: "첫 상담에서 확인하는 것",
+    scope:
+      "Homeground는 브리프로 요청과 적합성을 확인하고, 유료 작업 전에 알맞은 서비스와 가격을 설명합니다.",
+    deliverablesLabel: "플래너가 판단하는 내용",
+    deliverables: [
+      "일정 검토, 새 동선 설계 또는 전체 여행 지원 중 알맞은 범위",
+      "작업 범위를 확정하기 전에 더 필요한 핵심 정보",
+      "다음 단계, 공개 서비스 가격 또는 맞춤 견적 방식",
+    ],
+    nextLabel: "다음 단계",
+    nextSteps: [
+      "연락 가능한 수단 하나와 중요한 여행 조건을 남깁니다.",
+      "Homeground 플래너가 브리프를 검토하고 알맞은 다음 단계를 안내합니다.",
+      "상세 맞춤 작업은 범위와 합의된 결제가 확인된 뒤에만 시작합니다.",
+    ],
+    submitLabel: "여행 브리프 보내기",
+    successTitle: "여행 브리프가 접수되었습니다.",
+    successBody:
+      "아직 결제된 금액은 없습니다. 필요한 내용을 검토한 뒤 적절한 다음 단계를 안내하겠습니다.",
+    successBackLabel: "여행 브리프로 돌아가기",
   },
   paidBriefs: {
     "itinerary-review": {
@@ -732,5 +1092,14 @@ export function isHomepagePlanningIntentId(
   return Boolean(
     value &&
       homepagePlanningIntentIds.includes(value as HomepagePlanningIntentId),
+  );
+}
+
+export function isHomepageStarterIntentId(
+  value: string | null | undefined,
+): value is HomepageStarterIntentId {
+  return Boolean(
+    value &&
+      homepageStarterIntentIds.includes(value as HomepageStarterIntentId),
   );
 }

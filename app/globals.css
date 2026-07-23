@@ -42,16 +42,30 @@
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --hg-font-brand: Georgia, "Times New Roman", serif;
   --hg-font-editorial: Georgia, "Times New Roman", serif;
-  --hg-color-ink: #17251f;
-  --hg-color-muted: #59675f;
-  --hg-color-paper: #f7f5ef;
-  --hg-color-surface: #ffffff;
-  --hg-color-line: #d7d9d2;
-  --hg-color-green: #183c32;
-  --hg-color-deep-green: #0e211b;
+  --hg-color-canvas: #faf9f5;
+  --hg-color-surface: #faf9f5;
+  --hg-color-card: #ffffff;
+  --hg-color-soft: #e8e6dc;
+  --hg-color-line: #d8d8d1;
+  --hg-color-ink: #141413;
+  --hg-color-muted: #5f5f5a;
+  --hg-color-on-dark: #faf9f5;
+  --hg-color-on-dark-muted: #b0aea5;
+  --hg-color-on-dark-line: rgb(250 249 245 / 18%);
+  --hg-color-charcoal: var(--hg-color-ink);
+  --hg-color-charcoal-secondary: var(--hg-color-ink);
+  --hg-color-charcoal-hover: var(--hg-color-ink);
   --hg-color-rust: #a74731;
+  --hg-color-focus: #b14f37;
+  --hg-color-rust-soft: #f2e7de;
+  --hg-color-success: #28644d;
+  --hg-color-error: #842a2a;
   --hg-color-dark-rust: #7f2e1d;
   --hg-color-peach: #efb7a1;
+  /* Compatibility aliases while page-level styles migrate to the shared palette. */
+  --hg-color-paper: var(--hg-color-canvas);
+  --hg-color-green: var(--hg-color-charcoal);
+  --hg-color-deep-green: var(--hg-color-ink);
 }
 
 html[lang="zh-Hans"] {
@@ -86,8 +100,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--white);
-  color: var(--ink);
+  background: var(--hg-color-canvas);
+  color: var(--hg-color-ink);
   font-family: var(--sans);
   line-height: 1.6;
 }
@@ -124,7 +138,7 @@ svg {
 }
 
 :focus-visible {
-  outline: 3px solid #0875b5;
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 3px;
 }
 

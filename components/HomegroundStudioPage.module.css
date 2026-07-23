@@ -1,11 +1,11 @@
 .studioPage {
-  --studio-paper: #f7f5ef;
-  --studio-warm: #eee8de;
-  --studio-ink: #17251f;
-  --studio-muted: #5e6a63;
-  --studio-green: #132f27;
-  --studio-rust: #a74731;
-  --studio-peach: #e9ad96;
+  --studio-paper: var(--hg-color-canvas);
+  --studio-warm: var(--hg-color-soft);
+  --studio-ink: var(--hg-color-ink);
+  --studio-muted: var(--hg-color-muted);
+  --studio-green: var(--hg-color-charcoal-secondary);
+  --studio-rust: var(--hg-color-rust);
+  --studio-peach: var(--hg-color-peach);
   background: var(--studio-paper);
   color: var(--studio-ink);
   min-height: 100vh;
@@ -29,7 +29,7 @@
 }
 
 .eyebrowLight {
-  color: var(--studio-peach);
+  color: var(--hg-color-on-dark);
 }
 
 .hero {
@@ -169,7 +169,7 @@
 }
 
 .peopleSection {
-  background: #fbfaf7;
+  background: var(--hg-color-surface);
   padding: clamp(5rem, 9vw, 9rem) max(1rem, calc((100vw - 1320px) / 2));
 }
 
@@ -327,7 +327,7 @@
 }
 
 .memberTags li {
-  border: 1px solid rgb(23 37 31 / 22%);
+  border: 1px solid rgb(20 20 19 / 22%);
   border-radius: 999px;
   color: #415047;
   font-size: 0.75rem;
@@ -338,7 +338,7 @@
 
 .trustSection {
   background: var(--studio-green);
-  color: #fff;
+  color: var(--hg-color-on-dark);
   display: grid;
   gap: clamp(3.5rem, 7vw, 8rem);
   grid-template-columns: minmax(300px, 0.78fr) minmax(480px, 1.22fr);
@@ -351,7 +351,7 @@
 }
 
 .trustIntro > p:last-child {
-  color: rgb(255 255 255 / 70%);
+  color: var(--hg-color-on-dark-muted);
   line-height: 1.78;
   margin: 2rem 0 0;
   max-width: 580px;
@@ -396,7 +396,7 @@
 }
 
 .trustPoints li > span {
-  color: var(--studio-peach);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.68rem;
   font-weight: 800;
   padding-top: 0.25rem;
@@ -411,14 +411,14 @@
 }
 
 .trustPoints p {
-  color: rgb(255 255 255 / 66%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.9rem;
   line-height: 1.62;
   margin: 0.45rem 0 0;
 }
 
 .trustPoints svg {
-  color: var(--studio-peach);
+  color: var(--hg-color-on-dark-muted);
   margin-top: 0.1rem;
 }
 
@@ -477,11 +477,11 @@
 .ctaGrid .ctaPrimary {
   background: var(--studio-green);
   border: 1px solid var(--studio-green);
-  color: #fff;
+  color: var(--hg-color-on-dark);
 }
 
 .ctaGrid .ctaPrimary:hover {
-  background: #0e211b;
+  background: var(--hg-color-charcoal-hover);
   transform: translateY(-2px);
 }
 

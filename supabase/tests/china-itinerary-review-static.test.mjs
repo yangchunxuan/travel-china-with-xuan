@@ -97,7 +97,11 @@ test("localized service intent reaches the existing enquiry mechanism", async ()
   assert.match(home, /getRouteServiceInterest\(serviceId, locale\)/);
   assert.match(
     home,
-    /const activeRouteServiceInterest: RouteServiceInterest \| null =\s*planningIntent && planningIntent !== "explore"\s*\? getRouteServiceInterest\(planningIntent, locale\)\s*: null/,
+    /const activeRouteServiceInterest: RouteServiceInterest \| null =\s*getRouteServiceInterest\(planningIntent, locale\)/,
+  );
+  assert.match(
+    home,
+    /planningIntent === "conversation"\s*\? null\s*:\s*activeRouteServiceInterest \?\? retainedRouteServiceInterest/,
   );
   assert.doesNotMatch(home, /locale === "en" \? routeServiceInterest : null/);
   assert.match(home, /serviceInterest=\{activeRouteServiceInterest\}/);

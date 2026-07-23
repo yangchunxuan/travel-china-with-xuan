@@ -1,10 +1,10 @@
 .localeRoot {
-  --privacy-accent: #9d402b;
-  --privacy-border: #d7ddd6;
-  --privacy-ink: #17251f;
-  --privacy-muted: #536159;
-  --privacy-paper: #f7f5ef;
-  --privacy-soft: #e9eee8;
+  --privacy-accent: var(--hg-color-rust);
+  --privacy-border: var(--hg-color-line);
+  --privacy-ink: var(--hg-color-ink);
+  --privacy-muted: var(--hg-color-muted);
+  --privacy-paper: var(--hg-color-canvas);
+  --privacy-soft: var(--hg-color-soft);
   background: var(--privacy-paper);
   color: var(--privacy-ink);
   font-family: var(--sans);
@@ -154,15 +154,15 @@
 
 .languageNav a[aria-current="page"] {
   background: #fff;
-  box-shadow: 0 1px 4px rgb(23 37 31 / 10%);
+  box-shadow: 0 1px 4px rgb(20 20 19 / 10%);
   color: var(--privacy-ink);
 }
 
 .homeCta {
   align-items: center;
-  background: #183c32;
+  background: var(--hg-color-charcoal);
   border-radius: 999px;
-  color: #fff;
+  color: var(--hg-color-on-dark);
   display: inline-flex;
   font-size: 0.83rem;
   font-weight: 750;
@@ -180,7 +180,7 @@
 
 .homeCta:hover,
 .homeCta:focus-visible {
-  background: #0f2c24;
+  background: var(--hg-color-charcoal-hover);
 }
 
 .hero {
@@ -528,8 +528,8 @@
 
 .footer {
   align-items: center;
-  background: #10251e;
-  color: #fff;
+  background: var(--hg-color-ink);
+  color: var(--hg-color-on-dark);
   display: flex;
   gap: 1.25rem;
   justify-content: space-between;
@@ -537,7 +537,7 @@
 }
 
 .footer p {
-  color: rgb(255 255 255 / 68%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.78rem;
   line-height: 1.55;
   margin: 0;
@@ -556,7 +556,7 @@
 }
 
 .localeRoot :focus-visible {
-  outline: 3px solid #0875b5;
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 3px;
 }
 

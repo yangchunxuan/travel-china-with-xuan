@@ -674,7 +674,11 @@ test("language changes do not silently discard a customer contact draft", async 
 
   assert.match(planner, /hasUnsavedContactDraft/);
   assert.match(planner, /onDirtyChange\?\.\(hasUnsavedContactDraft\)/);
-  assert.match(homePage, /handoffDirty=\{handoffDirty\}/);
+  assert.match(
+    homePage,
+    /handoffDirty=\{handoffDirty \|\| starterNoteDirty\}/,
+    "language warnings must also cover an unsent starter note",
+  );
   assert.match(header, /handoffDirty[\s\S]*window\.confirm/);
   assert.match(header, /event\.preventDefault\(\)/);
   assert.equal(

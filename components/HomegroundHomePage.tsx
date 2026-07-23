@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   BedDouble,
-  Check,
   FileCheck2,
   MapPinned,
   Tickets,
@@ -24,7 +23,9 @@ import {
   type RouteServiceInterest,
 } from "../lib/routeServiceInterest";
 import {
+  isHomepageStarterIntentId,
   type HomepagePlanningIntentId,
+  type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
 import {
   HomegroundHeader,
@@ -47,6 +48,8 @@ import styles from "./HomegroundHomePage.module.css";
 const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 
 const planningIntentStorageKey = "homeground-planning-intent-v1";
+const planningStarterIntentStorageKey =
+  "homeground-planning-starter-intent-v1";
 
 function resolveFinalCta(
   copy: HomegroundCopy,
@@ -128,6 +131,9 @@ export function HomegroundHomePage({
   const [handoffDirty, setHandoffDirty] = useState(false);
   const [planningIntent, setPlanningIntent] =
     useState<HomepagePlanningIntentId | null>(null);
+  const [planningStarterIntent, setPlanningStarterIntent] =
+    useState<HomepageStarterIntentId | null>(null);
+  const [planningStarterNote, setPlanningStarterNote] = useState("");
   const planningIntentRef = useRef<HomepagePlanningIntentId | null>(null);
   const [serviceContextRevision, setServiceContextRevision] = useState(0);
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
@@ -204,21 +210,37 @@ export function HomegroundHomePage({
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
   const activeRouteServiceInterest: RouteServiceInterest | null =
-    planningIntent && planningIntent !== "explore"
-      ? getRouteServiceInterest(planningIntent, locale)
-      : null;
+    getRouteServiceInterest(planningIntent, locale);
   const handoffServiceInterest =
-    activeRouteServiceInterest ?? retainedRouteServiceInterest;
+    planningIntent === "conversation"
+      ? null
+      : activeRouteServiceInterest ?? retainedRouteServiceInterest;
+  const starterNoteDirty =
+    planningStarterNote.trim().length > 0 &&
+    handoffStatus !== "success";
 
   useEffect(() => {
     planningIntentRef.current = planningIntent;
   }, [planningIntent]);
 
   useEffect(() => {
-    if (planningIntent && planningIntent !== "explore") {
-      setRetainedRouteServiceInterest(
-        getRouteServiceInterest(planningIntent, locale),
-      );
+    if (!starterNoteDirty) return;
+
+    const confirmLeave = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", confirmLeave);
+    return () =>
+      window.removeEventListener("beforeunload", confirmLeave);
+  }, [starterNoteDirty]);
+
+  useEffect(() => {
+    const service = getRouteServiceInterest(planningIntent, locale);
+    if (service) {
+      setRetainedRouteServiceInterest(service);
+    } else if (planningIntent === "conversation") {
+      setRetainedRouteServiceInterest(null);
     }
   }, [locale, planningIntent]);
 
@@ -235,13 +257,17 @@ export function HomegroundHomePage({
           .homegroundPlannerFlowId === "string";
 
       if (isCurrentPlannerFlow && planningIntentRef.current) {
-        if (planningIntentRef.current === "explore") {
-          url.searchParams.delete(routeServiceQueryKey);
-        } else {
+        const currentService = getRouteServiceInterest(
+          planningIntentRef.current,
+          locale,
+        );
+        if (currentService) {
           url.searchParams.set(
             routeServiceQueryKey,
-            planningIntentRef.current,
+            currentService.id,
           );
+        } else {
+          url.searchParams.delete(routeServiceQueryKey);
         }
         window.history.replaceState(
           event.state,
@@ -255,8 +281,12 @@ export function HomegroundHomePage({
       if (service) {
         planningIntentRef.current = service.id;
         setPlanningIntent(service.id);
+        setPlanningStarterIntent(null);
         try {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         } catch {
           // URL deep links remain sufficient when storage is unavailable.
         }
@@ -266,6 +296,7 @@ export function HomegroundHomePage({
       if (hasServiceQuery) {
         planningIntentRef.current = null;
         setPlanningIntent(null);
+        setPlanningStarterIntent(null);
         url.searchParams.delete(routeServiceQueryKey);
         window.history.replaceState(
           window.history.state,
@@ -275,6 +306,9 @@ export function HomegroundHomePage({
         window.dispatchEvent(new Event("homeground:locationchange"));
         try {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         } catch {
           // Invalid service URLs still fall back to the visible chooser.
         }
@@ -285,16 +319,33 @@ export function HomegroundHomePage({
         const storedIntent = window.sessionStorage.getItem(
           planningIntentStorageKey,
         );
-        const canRestoreFreeFlow =
-          url.searchParams.has("planner") && storedIntent === "explore";
-        planningIntentRef.current = canRestoreFreeFlow ? "explore" : null;
+        const storedStarterIntent = window.sessionStorage.getItem(
+          planningStarterIntentStorageKey,
+        );
+        const canRestoreNonServiceFlow =
+          url.searchParams.has("planner") &&
+          (storedIntent === "conversation" || storedIntent === "explore");
+        planningIntentRef.current = canRestoreNonServiceFlow
+          ? storedIntent
+          : null;
         setPlanningIntent(planningIntentRef.current);
-        if (!canRestoreFreeFlow) {
+        setPlanningStarterIntent(
+          canRestoreNonServiceFlow &&
+            storedIntent === "conversation" &&
+            isHomepageStarterIntentId(storedStarterIntent)
+            ? storedStarterIntent
+            : null,
+        );
+        if (!canRestoreNonServiceFlow) {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         }
       } catch {
         planningIntentRef.current = null;
         setPlanningIntent(null);
+        setPlanningStarterIntent(null);
       }
     };
 
@@ -305,7 +356,10 @@ export function HomegroundHomePage({
   }, [locale]);
 
   const handlePlanningIntentChange = useCallback(
-    (nextIntent: HomepagePlanningIntentId) => {
+    (
+      nextIntent: HomepagePlanningIntentId,
+      nextStarterIntent?: HomepageStarterIntentId,
+    ) => {
       if (
         planningIntentRef.current &&
         planningIntentRef.current !== nextIntent
@@ -314,11 +368,15 @@ export function HomegroundHomePage({
       }
       planningIntentRef.current = nextIntent;
       setPlanningIntent(nextIntent);
+      setPlanningStarterIntent(
+        nextIntent === "conversation" ? nextStarterIntent ?? null : null,
+      );
       const url = new URL(window.location.href);
-      if (nextIntent === "explore") {
-        url.searchParams.delete(routeServiceQueryKey);
+      const nextService = getRouteServiceInterest(nextIntent, locale);
+      if (nextService) {
+        url.searchParams.set(routeServiceQueryKey, nextService.id);
       } else {
-        url.searchParams.set(routeServiceQueryKey, nextIntent);
+        url.searchParams.delete(routeServiceQueryKey);
       }
       window.history.replaceState(
         window.history.state,
@@ -328,13 +386,23 @@ export function HomegroundHomePage({
       window.dispatchEvent(new Event("homeground:locationchange"));
 
       try {
-        if (nextIntent === "explore") {
+        if (nextIntent === "explore" || nextIntent === "conversation") {
           window.sessionStorage.setItem(
             planningIntentStorageKey,
             nextIntent,
           );
         } else {
           window.sessionStorage.removeItem(planningIntentStorageKey);
+        }
+        if (nextIntent === "conversation" && nextStarterIntent) {
+          window.sessionStorage.setItem(
+            planningStarterIntentStorageKey,
+            nextStarterIntent,
+          );
+        } else {
+          window.sessionStorage.removeItem(
+            planningStarterIntentStorageKey,
+          );
         }
       } catch {
         // The selected path remains available in React state.
@@ -347,6 +415,7 @@ export function HomegroundHomePage({
       analyticsWindow.dataLayer.push({
         event: "planning_intent_selected",
         planning_intent: nextIntent,
+        planning_starter_intent: nextStarterIntent ?? null,
         page_language: locale,
       });
     },
@@ -411,7 +480,7 @@ export function HomegroundHomePage({
         locale={locale}
         plannerStatus={plannerStatus}
         handoffStatus={handoffStatus}
-        handoffDirty={handoffDirty}
+        handoffDirty={handoffDirty || starterNoteDirty}
         freeResult={freeResult}
       />
 
@@ -422,18 +491,6 @@ export function HomegroundHomePage({
           }`}
           aria-labelledby="home-hero-title"
         >
-          <picture className={styles.heroPicture}>
-            <source media="(max-width: 700px)" srcSet="/images/home/beijing-hero-1200.jpg" />
-            <img
-              src="/images/home/beijing-hero-2400.jpg"
-              alt={copy.hero.imageAlt}
-              width="2400"
-              height="1600"
-              fetchPriority="high"
-            />
-          </picture>
-          <div className={styles.heroShade} aria-hidden="true" />
-
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
               {plannerStatus !== "result" && (
@@ -443,17 +500,24 @@ export function HomegroundHomePage({
               {plannerStatus !== "result" && (
                 <>
                   <p className={styles.heroLead}>{copy.hero.lead}</p>
-                  <ul
-                    className={styles.heroTrust}
-                    aria-label={copy.hero.trustLabel}
-                  >
-                    {copy.hero.trust.map((item) => (
-                      <li key={item}>
-                        <Check aria-hidden="true" size={17} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={styles.heroFacts}>
+                    <p className={styles.heroFactsLabel}>
+                      {copy.hero.trustLabel}
+                    </p>
+                    <ol
+                      className={styles.heroTrust}
+                      aria-label={copy.hero.trustLabel}
+                    >
+                      {copy.hero.trust.map((item, index) => (
+                        <li key={item}>
+                          <span aria-hidden="true">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                 </>
               )}
             </div>
@@ -464,6 +528,9 @@ export function HomegroundHomePage({
                 locale={locale}
                 variant="hero"
                 planningIntent={planningIntent}
+                planningStarterIntent={planningStarterIntent}
+                planningStarterNote={planningStarterNote}
+                onPlanningStarterNoteChange={setPlanningStarterNote}
                 onPlanningIntentChange={handlePlanningIntentChange}
                 serviceInterest={activeRouteServiceInterest}
                 interactionLocked={routeInteractionLocked}
@@ -471,25 +538,37 @@ export function HomegroundHomePage({
                 handoff={
                   routeMatch ? (
                     <>
-                      {handoffServiceInterest && (
-                        <div hidden={!activeRouteServiceInterest}>
-                          <PlannerHandoff
-                            embedded
-                            locale={locale}
-                            match={routeMatch}
-                            journey={routeJourney ?? undefined}
-                            serviceInterest={handoffServiceInterest}
-                            serviceContextRevision={serviceContextRevision}
-                            routeState={
-                              plannerStatus === "result"
-                                ? "current"
-                                : "editing"
-                            }
-                            onDirtyChange={setHandoffDirty}
-                            onStatusChange={setHandoffStatus}
-                          />
-                        </div>
-                      )}
+                      <div
+                        hidden={
+                          !planningIntent || planningIntent === "explore"
+                        }
+                      >
+                        <PlannerHandoff
+                          embedded
+                          locale={locale}
+                          match={routeMatch}
+                          journey={routeJourney ?? undefined}
+                          serviceInterest={handoffServiceInterest}
+                          starterIntent={
+                            planningIntent === "conversation"
+                              ? planningStarterIntent
+                              : null
+                          }
+                          starterNote={
+                            planningIntent === "conversation"
+                              ? planningStarterNote
+                              : null
+                          }
+                          serviceContextRevision={serviceContextRevision}
+                          routeState={
+                            plannerStatus === "result"
+                              ? "current"
+                              : "editing"
+                          }
+                          onDirtyChange={setHandoffDirty}
+                          onStatusChange={setHandoffStatus}
+                        />
+                      </div>
                       {planningIntent === "explore" && (
                         <HomepagePlanningUpgrade
                           locale={locale}
@@ -505,7 +584,6 @@ export function HomegroundHomePage({
               />
             </div>
           </div>
-          <p className={styles.photoCaption}>{copy.hero.caption}</p>
         </section>
 
         <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">

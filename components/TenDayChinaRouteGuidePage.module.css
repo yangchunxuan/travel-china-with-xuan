@@ -1,23 +1,23 @@
 .pageRoot {
-  --ink: #25221e;
-  --muted: #655f57;
-  --paper: #f3efe7;
-  --surface: #fffdf8;
-  --line: #d8d0c5;
-  --green: #21463a;
-  --charcoal: #24211e;
-  --rust: #994832;
+  --ink: var(--hg-color-ink);
+  --muted: var(--hg-color-muted);
+  --paper: var(--hg-color-canvas);
+  --surface: var(--hg-color-surface);
+  --line: var(--hg-color-line);
+  --green: var(--hg-color-charcoal);
+  --charcoal: var(--hg-color-charcoal-secondary);
+  --rust: var(--hg-color-rust);
   --rust-dark: #74311f;
   --peach: #e8b49e;
   --sage: #dbe4dd;
   --display: var(--serif);
-  background: #f9f6f0;
+  background: var(--paper);
   color: var(--ink);
   min-width: 0;
 }
 
 .pageRoot :where(a, summary):focus-visible {
-  outline: 3px solid #0b6b59;
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 3px;
 }
 
@@ -523,7 +523,7 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 0.55rem;
-  box-shadow: 0 8px 24px rgb(37 34 30 / 3%);
+  box-shadow: 0 8px 24px rgb(20 20 19 / 3%);
   margin-block-start: clamp(1.25rem, 3vw, 2.25rem);
   padding: clamp(1.5rem, 4.5vw, 3.5rem);
   position: relative;
@@ -1193,7 +1193,7 @@
 
 .worksCard li,
 .longerCard li {
-  border-block-start: 1px solid rgb(23 37 31 / 12%);
+  border-block-start: 1px solid rgb(20 20 19 / 12%);
   font-size: 0.86rem;
   line-height: 1.65;
   padding-block: 0.9rem;
@@ -1246,9 +1246,13 @@
 .trustSection {
   background: var(--charcoal);
   border-radius: 0.55rem;
-  color: #fff;
+  color: var(--hg-color-on-dark);
   margin-block-start: clamp(5rem, 10vw, 9rem);
   padding: clamp(1.6rem, 5vw, 4rem);
+}
+
+.trustSection .sectionLabelLight {
+  color: var(--hg-color-on-dark);
 }
 
 .trustIntro {
@@ -1256,7 +1260,7 @@
 }
 
 .trustIntro > p:last-child {
-  color: rgb(255 255 255 / 68%);
+  color: var(--hg-color-on-dark-muted);
 }
 
 .trustLead {
@@ -1281,7 +1285,7 @@
 }
 
 .methodGrid span {
-  color: var(--peach);
+  color: var(--hg-color-on-dark-muted);
   font-family: var(--display);
   font-size: 1.5rem;
 }
@@ -1294,7 +1298,7 @@
 }
 
 .methodGrid p {
-  color: rgb(255 255 255 / 72%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.82rem;
   line-height: 1.65;
   margin: 0.65rem 0 0;
@@ -1302,7 +1306,7 @@
 
 .boundaryStatement {
   border-block-start: 1px solid rgb(255 255 255 / 28%);
-  color: rgb(255 255 255 / 70%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.78rem;
   line-height: 1.65;
   margin: 1.5rem 0 0;
@@ -1442,8 +1446,8 @@
 }
 
 .footer {
-  background: #211f1c;
-  color: #fff;
+  background: var(--hg-color-ink);
+  color: var(--hg-color-on-dark);
   padding: 2.25rem 1.25rem 1.5rem;
 }
 
@@ -1460,7 +1464,11 @@
 }
 
 .footer .brandCopy strong {
-  color: #fff;
+  color: var(--hg-color-on-dark);
+}
+
+.footer .brandCopy small {
+  color: var(--hg-color-on-dark-muted);
 }
 
 .footer nav {
@@ -1471,7 +1479,7 @@
 
 .footer nav a {
   align-items: center;
-  color: rgb(255 255 255 / 68%);
+  color: var(--hg-color-on-dark-muted);
   display: inline-flex;
   font-size: 0.75rem;
   min-height: 2.75rem;
@@ -1479,8 +1487,8 @@
 }
 
 .footer > p {
-  border-block-start: 1px solid rgb(255 255 255 / 11%);
-  color: rgb(255 255 255 / 65%);
+  border-block-start: 1px solid var(--hg-color-on-dark-line);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.75rem;
   margin: 1.4rem auto 0;
   padding-block-start: 1.1rem;

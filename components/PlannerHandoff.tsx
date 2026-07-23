@@ -33,6 +33,8 @@ import {
 import {
   getHomepagePlanningDeskCopy,
   routeNeedsScopeConfirmation,
+  type BookingResponsibilityId,
+  type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
@@ -86,6 +88,7 @@ export type HandoffRouteState = "current" | "editing";
 
 type ContactMethod = "email" | "whatsapp";
 type ValidationField =
+  | "bookingResponsibility"
   | "contact"
   | "email"
   | "phone"
@@ -127,7 +130,10 @@ const maximumEmailLength = 254;
 const maximumPhoneLength = 64;
 const maximumDepartureCountryLength = 80;
 const maximumRoughBudgetLength = 100;
-const maximumTripContextLength = 1_800;
+// The server accepts 2,000 characters for the whole enquiry note. That note also
+// carries the requested service, booking responsibility and starter-intent lines,
+// whose longest localized combination costs roughly 280 characters.
+const maximumTripContextLength = 1_500;
 const maximumRequestBytes = 16 * 1024;
 const requestTimeoutMilliseconds = 20_000;
 
@@ -280,6 +286,8 @@ export function PlannerHandoff({
   match,
   journey,
   serviceInterest = null,
+  starterIntent = null,
+  starterNote = null,
   serviceContextRevision = 0,
   routeState = "current",
   onDirtyChange,
@@ -290,6 +298,8 @@ export function PlannerHandoff({
   match: DestinationPlan;
   journey?: RouteJourney;
   serviceInterest?: RouteServiceInterest | null;
+  starterIntent?: HomepageStarterIntentId | null;
+  starterNote?: string | null;
   serviceContextRevision?: number;
   routeState?: HandoffRouteState;
   onDirtyChange?: (dirty: boolean) => void;
@@ -299,6 +309,17 @@ export function PlannerHandoff({
   const planningCopy = getHomepagePlanningDeskCopy(locale);
   const paidBriefCopy = serviceInterest
     ? planningCopy.paidBriefs[serviceInterest.id]
+    : null;
+  const conversationBriefCopy = serviceInterest
+    ? null
+    : planningCopy.conversationBrief;
+  const starterPrompt = starterIntent
+    ? planningCopy.starterPrompts.find(
+        (prompt) => prompt.id === starterIntent,
+      ) ??
+      (starterIntent === "open-text"
+        ? { id: starterIntent, label: planningCopy.openStarterLabel }
+        : null)
     : null;
   const scopeConfirmationRequired = Boolean(
     serviceInterest &&
@@ -354,6 +375,9 @@ export function PlannerHandoff({
   const [status, setStatus] = useState<HandoffStatus>(
     configurationReady ? "idle" : "disabled",
   );
+  const [bookingResponsibility, setBookingResponsibility] = useState<
+    BookingResponsibilityId | ""
+  >("");
   const [contactMethod, setContactMethod] =
     useState<ContactMethod>("email");
   const [email, setEmail] = useState("");
@@ -389,6 +413,10 @@ export function PlannerHandoff({
   );
 
   const idPrefix = useId();
+  const responsibilityGroupId = `${idPrefix}-booking-responsibility`;
+  const responsibilityHintId = `${responsibilityGroupId}-hint`;
+  const responsibilityErrorId = `${responsibilityGroupId}-error`;
+  const responsibilityScopeHintId = `${responsibilityGroupId}-scope-hint`;
   const contactGroupId = `${idPrefix}-contact`;
   const emailMethodId = `${contactGroupId}-email-method`;
   const whatsappMethodId = `${contactGroupId}-whatsapp-method`;
@@ -417,6 +445,7 @@ export function PlannerHandoff({
     ruleVersion: match.ruleVersion,
     answers: match.answers,
     serviceInterest: serviceInterest?.id ?? null,
+    starterIntent: starterPrompt?.id ?? null,
   });
 
   if (!routeIdentityRef.current) {
@@ -451,23 +480,40 @@ export function PlannerHandoff({
     plannerCopy.result.otherLabel,
   ]);
   const inquiryNote = useMemo(() => {
-    if (!serviceInterest) return null;
-
-    const noteParts = [
-      scopeConfirmationRequired
-        ? planningCopy.outsideStandardScope.note(serviceInterest.label)
-        : serviceInterest.note,
-    ];
-    if (tripContext.trim()) {
+    const noteParts: string[] = [];
+    if (starterPrompt) {
+      noteParts.push(
+        `Homepage starter intent: ${starterPrompt.id} — ${starterPrompt.label}`,
+      );
+    }
+    if (serviceInterest) {
+      noteParts.push(
+        scopeConfirmationRequired
+          ? planningCopy.outsideStandardScope.note(serviceInterest.label)
+          : serviceInterest.note,
+      );
+    }
+    if (bookingResponsibility) {
+      noteParts.push(
+        `Booking responsibility: ${bookingResponsibility}`,
+      );
+    }
+    if (!serviceInterest && starterNote?.trim()) {
+      noteParts.push(`Traveller note:\n${starterNote.trim()}`);
+    }
+    if (serviceInterest && tripContext.trim()) {
       noteParts.push(
         `${serviceInterest.contextNoteLabel}:\n${tripContext.trim()}`,
       );
     }
-    return noteParts.join("\n\n");
+    return noteParts.length > 0 ? noteParts.join("\n\n") : null;
   }, [
+    bookingResponsibility,
     planningCopy.outsideStandardScope,
     scopeConfirmationRequired,
     serviceInterest,
+    starterNote,
+    starterPrompt,
     tripContext,
   ]);
   const briefLines = useMemo(() => {
@@ -523,6 +569,7 @@ export function PlannerHandoff({
     serviceInterest,
   ]);
   const formIsDirty =
+    bookingResponsibility !== "" ||
     email.trim().length > 0 ||
     phone.trim().length > 0 ||
     departureCountry.trim().length > 0 ||
@@ -729,6 +776,11 @@ export function PlannerHandoff({
 
   const validate = (): ValidationErrors => {
     const nextErrors: ValidationErrors = {};
+
+    if (!bookingResponsibility) {
+      nextErrors.bookingResponsibility =
+        planningCopy.bookingResponsibility.error;
+    }
 
     if (contactMethod === "email" && !isValidEmail(email)) {
       nextErrors.email = copy.handoff.emailError;
@@ -1118,7 +1170,14 @@ export function PlannerHandoff({
     routeState === "editing" ||
     status === "submitting" ||
     status === "uncertain";
+  const showFixedScopeHint = Boolean(
+    serviceInterest &&
+      serviceInterest.id !== "full-trip-support" &&
+      (bookingResponsibility === "homeground-selected" ||
+        bookingResponsibility === "homeground-most"),
+  );
   const errorTargets: Record<ValidationField, string> = {
+    bookingResponsibility: `${responsibilityGroupId}-traveller`,
     contact:
       contactMethod === "email" ? emailMethodId : whatsappMethodId,
     email: emailId,
@@ -1206,9 +1265,15 @@ export function PlannerHandoff({
                 size={27}
               />
               <h3 ref={statusHeadingRef} tabIndex={-1}>
-                {paidBriefCopy?.successTitle ?? copy.handoff.successTitle}
+                {paidBriefCopy?.successTitle ??
+                  conversationBriefCopy?.successTitle ??
+                  copy.handoff.successTitle}
               </h3>
-              <p>{paidBriefCopy?.successBody ?? copy.handoff.successBody}</p>
+              <p>
+                {paidBriefCopy?.successBody ??
+                  conversationBriefCopy?.successBody ??
+                  copy.handoff.successBody}
+              </p>
               <p>
                 {copy.handoff.successReplyContact(
                   submittedChannel === "email" ? "Email" : "WhatsApp",
@@ -1228,7 +1293,9 @@ export function PlannerHandoff({
                   handleHomegroundHashClick(event, "#route-finder")
                 }
               >
-                {paidBriefCopy?.successBackLabel ?? copy.handoff.backToRoute}
+                {paidBriefCopy?.successBackLabel ??
+                  conversationBriefCopy?.successBackLabel ??
+                  copy.handoff.backToRoute}
               </a>
             </div>
           )}
@@ -1341,6 +1408,80 @@ export function PlannerHandoff({
                     </ul>
                   </div>
                 )}
+
+                <div className={styles.responsibilityRegion}>
+                  <fieldset
+                    className={styles.responsibilityGroup}
+                    disabled={controlsLocked}
+                    aria-describedby={`${responsibilityHintId}${
+                      errors.bookingResponsibility
+                        ? ` ${responsibilityErrorId}`
+                        : ""
+                    }`}
+                  >
+                    <legend className={styles.responsibilityLegend}>
+                      {planningCopy.bookingResponsibility.legend}{" "}
+                      <span className={styles.required}>
+                        {copy.handoff.requiredText}
+                      </span>
+                    </legend>
+                    <p
+                      className={styles.responsibilityHint}
+                      id={responsibilityHintId}
+                    >
+                      {planningCopy.bookingResponsibility.hint}
+                    </p>
+                    <div className={styles.responsibilityOptions}>
+                      {planningCopy.bookingResponsibility.options.map(
+                        (option) => (
+                          <label
+                            className={styles.responsibilityOption}
+                            data-selected={
+                              bookingResponsibility === option.id
+                            }
+                            data-disabled={controlsLocked}
+                            key={option.id}
+                          >
+                            <input
+                              id={`${responsibilityGroupId}-${option.id}`}
+                              className={styles.responsibilityRadio}
+                              type="radio"
+                              name="bookingResponsibility"
+                              value={option.id}
+                              checked={
+                                bookingResponsibility === option.id
+                              }
+                              onChange={() => {
+                                setBookingResponsibility(option.id);
+                                markEditing("bookingResponsibility");
+                              }}
+                            />
+                            <span>{option.label}</span>
+                          </label>
+                        ),
+                      )}
+                    </div>
+                  </fieldset>
+                  {errors.bookingResponsibility && (
+                    <p
+                      className={styles.fieldError}
+                      id={responsibilityErrorId}
+                      role="alert"
+                    >
+                      {errors.bookingResponsibility}
+                    </p>
+                  )}
+                  <div aria-live="polite" aria-atomic="true">
+                    {showFixedScopeHint && (
+                      <p
+                        className={styles.responsibilityScopeHint}
+                        id={responsibilityScopeHintId}
+                      >
+                        {planningCopy.bookingResponsibility.fixedScopeHint}
+                      </p>
+                    )}
+                  </div>
+                </div>
 
                 {(whatsappIntakeReady || errors.contact) && (
                   <div
@@ -1735,7 +1876,9 @@ export function PlannerHandoff({
                   )}
                   {status === "submitting"
                     ? copy.handoff.submitting
-                    : paidBriefCopy?.submitLabel ?? copy.handoff.submit}
+                    : paidBriefCopy?.submitLabel ??
+                      conversationBriefCopy?.submitLabel ??
+                      copy.handoff.submit}
                 </button>
               </form>
             )}

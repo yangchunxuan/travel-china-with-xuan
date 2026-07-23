@@ -13,7 +13,7 @@
   --guide-rust: var(--hg-color-rust);
   --guide-dark-rust: var(--hg-color-dark-rust);
   --guide-peach: var(--hg-color-peach);
-  background: #fbfaf7;
+  background: var(--guide-paper);
   color: var(--guide-ink);
   font-family: var(--sans);
   min-width: 0;
@@ -66,11 +66,11 @@
   background:
     linear-gradient(
       90deg,
-      rgb(6 19 15 / 90%) 0%,
-      rgb(8 24 18 / 74%) 43%,
-      rgb(6 18 14 / 25%) 78%
+      rgb(20 20 19 / 90%) 0%,
+      rgb(20 20 19 / 74%) 43%,
+      rgb(20 20 19 / 25%) 78%
     ),
-    linear-gradient(0deg, rgb(6 19 15 / 80%) 0%, transparent 58%);
+    linear-gradient(0deg, rgb(20 20 19 / 80%) 0%, transparent 58%);
 }
 
 .heroContent {
@@ -109,7 +109,7 @@
 
 .breadcrumb a {
   align-items: center;
-  color: #fff;
+  color: var(--hg-color-on-dark);
   display: inline-flex;
   min-height: 2.75rem;
 }
@@ -124,7 +124,7 @@
 }
 
 .eyebrow {
-  color: var(--guide-peach);
+  color: var(--hg-color-on-dark);
   margin: 0 0 1rem;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .heroLead {
-  color: rgb(255 255 255 / 84%);
+  color: var(--hg-color-on-dark-muted);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.65;
   margin: 1.5rem 0 0;
@@ -155,11 +155,11 @@
 }
 
 .reviewed {
-  color: rgb(255 255 255 / 82%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.78rem;
   line-height: 1.5;
   margin: 1.5rem 0 0;
-  text-shadow: 0 1px 2px rgb(0 0 0 / 28%);
+  text-shadow: 0 1px 2px rgb(20 20 19 / 28%);
 }
 
 .articleBody {
@@ -182,7 +182,7 @@
   background: var(--guide-surface);
   border: 1px solid var(--guide-line);
   border-radius: 1.35rem;
-  box-shadow: 0 22px 55px rgb(22 38 30 / 7%);
+  box-shadow: 0 22px 55px rgb(20 20 19 / 7%);
   margin-block-start: clamp(-3rem, -4vw, -1.5rem);
   padding: clamp(1.5rem, 4vw, 3rem);
   position: relative;
@@ -366,21 +366,21 @@
 .routeLogic {
   background: var(--guide-green);
   border-radius: 1.35rem;
-  color: #fff;
+  color: var(--hg-color-on-dark);
   margin-block: clamp(3.75rem, 7vw, 5.5rem);
   padding: clamp(2rem, 5vw, 4rem);
 }
 
 .routeLogic .sectionLabel {
-  color: var(--guide-peach);
+  color: var(--hg-color-on-dark);
 }
 
 .routeLogic .sectionHeading h2 {
-  color: #fff;
+  color: var(--hg-color-on-dark);
 }
 
 .routeLogic .sectionHeading > p:last-child {
-  color: rgb(255 255 255 / 72%);
+  color: var(--hg-color-on-dark-muted);
 }
 
 .routeLogic figure {
@@ -388,7 +388,7 @@
 }
 
 .routeLogic figcaption {
-  color: rgb(255 255 255 / 58%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.75rem;
   margin-block-end: 1.2rem;
 }
@@ -427,7 +427,7 @@
 }
 
 .routeZoneNode {
-  background: var(--guide-peach);
+  background: var(--hg-color-on-dark-muted);
   border: 4px solid var(--guide-green);
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgb(255 255 255 / 34%);
@@ -446,7 +446,7 @@
 }
 
 .routeZoneNumber {
-  color: var(--guide-peach);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.75rem;
   font-weight: 760;
 }
@@ -459,7 +459,7 @@
 }
 
 .routeZoneContent > p {
-  color: rgb(255 255 255 / 68%);
+  color: var(--hg-color-on-dark-muted);
   font-size: 0.86rem;
   line-height: 1.58;
   margin: 0;
@@ -563,8 +563,8 @@
   background: var(--guide-surface);
   border-radius: 1.2rem;
   box-shadow:
-    0 1px 0 rgb(23 37 31 / 2%),
-    0 0.75rem 2rem rgb(23 37 31 / 3%);
+    0 1px 0 rgb(20 20 19 / 2%),
+    0 0.75rem 2rem rgb(20 20 19 / 3%);
   min-width: 0;
   padding: clamp(1.35rem, 3vw, 2rem);
 }

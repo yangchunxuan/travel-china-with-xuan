@@ -40,7 +40,7 @@ const commonEnglishFields = {
   tripContextHint:
     "Paste a concise day-by-day outline or a shareable route link. Do not include passport or ID images, payment details, QR codes or unredacted booking references. We can request the full file after the fit check.",
   tripContextError:
-    "Keep this note under 1,800 characters and remove unsupported control characters.",
+    "Keep this note under 1,500 characters and remove unsupported control characters.",
   tripContextServerError:
     "Check the trip context and remove unsupported characters.",
 } as const;
@@ -54,7 +54,7 @@ const commonChineseFields = {
   optionalLabel: "选填",
   tripContextHint:
     "可粘贴简短的逐日路线或可访问的分享链接。请勿填写护照或证件图片、付款信息、二维码或未遮盖的预订编号。确认需求适合后，我们可以再索取完整文件。",
-  tripContextError: "请将补充信息控制在 1,800 个字符以内，并删除不支持的控制字符。",
+  tripContextError: "请将补充信息控制在 1,500 个字符以内，并删除不支持的控制字符。",
   tripContextServerError: "请检查路线补充信息，并删除不支持的字符。",
 } as const;
 
@@ -67,7 +67,7 @@ const commonKoreanFields = {
   optionalLabel: "선택",
   tripContextHint:
     "간단한 일별 일정이나 공유 링크를 붙여 넣으세요. 여권·신분증 이미지, 결제 정보, QR 코드 또는 가리지 않은 예약 번호는 포함하지 마세요. 적합성을 확인한 뒤 전체 파일을 요청할 수 있습니다.",
-  tripContextError: "추가 정보는 1,800자 이내로 작성하고 지원하지 않는 제어 문자를 삭제해 주세요.",
+  tripContextError: "추가 정보는 1,500자 이내로 작성하고 지원하지 않는 제어 문자를 삭제해 주세요.",
   tripContextServerError: "일정 추가 정보를 확인하고 지원하지 않는 문자를 삭제해 주세요.",
 } as const;
 
@@ -121,7 +121,7 @@ const routeServiceInterestByLocale: Record<
       label: "为我规划路线",
       priceLabel: "US$129",
       finderSummary: "完成简短的路线问题后，此选择会随咨询一同保存。付款前，我们会确认服务范围与交付日期。",
-      handoffSummary: "路线规划选择会随本次咨询发送。请你付款前，我们会确认标准范围与交付日期。",
+      handoffSummary: "路线规划选择会随本次咨询发送。在你付款前，我们会确认标准范围与交付日期。",
       note: "申请的服务：路线规划（US$129）。",
     },
     "full-trip-support": {

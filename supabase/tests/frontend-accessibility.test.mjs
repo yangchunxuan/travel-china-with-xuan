@@ -280,7 +280,7 @@ test("the sticky header is opaque over mobile hero text", async () => {
   const headerEnd = styles.indexOf("\n}", headerStart);
   const headerStyles = styles.slice(headerStart, headerEnd);
 
-  assert.match(headerStyles, /background:\s*#faf9f5/);
+  assert.match(headerStyles, /background:\s*var\(--hg-color-surface\)/);
   assert.doesNotMatch(headerStyles, /rgb\([^)]*\/\s*[0-9]+%/);
 });
 
@@ -440,7 +440,7 @@ test("optional service context has accessible multiline validation and server er
   assert.match(plannerHandoff, /serviceInterest\?: RouteServiceInterest \| null/);
   assert.match(plannerHandoff, /serviceInterest = null/);
   assert.match(plannerHandoff, /<aside[\s\S]*styles\.serviceIntent/);
-  assert.match(plannerHandoff, /const maximumTripContextLength = 1_800/);
+  assert.match(plannerHandoff, /const maximumTripContextLength = 1_500/);
   assert.match(
     plannerHandoff,
     /function isValidTripContext\(value: string\): boolean/,
