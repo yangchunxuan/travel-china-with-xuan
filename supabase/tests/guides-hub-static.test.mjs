@@ -29,11 +29,11 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
 
   assert.match(
     registry,
-    /id: "is-your-china-itinerary-too-rushed"[\s\S]*?homeFeaturedRank: 1/,
+    /id: "is-your-china-itinerary-too-rushed"[\s\S]*?homeFeaturedRank: 2/,
   );
   assert.match(
     registry,
-    /id: "zhangjiajie-itinerary"[\s\S]*?homeFeaturedRank: 2/,
+    /id: "zhangjiajie-itinerary"[\s\S]*?homeFeaturedRank: 1/,
   );
   assert.match(
     registry,

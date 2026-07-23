@@ -78,7 +78,7 @@ export const guideRegistry = [
     format: "itinerary",
     topics: ["itinerary-design", "pace", "trip-planning"],
     destinations: ["zhangjiajie"],
-    homeFeaturedRank: 2,
+    homeFeaturedRank: 1,
     heroImagePath: "/images/guides/zhangjiajie/hero-1600.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/zhangjiajie/hero-1600.jpg",
@@ -353,7 +353,7 @@ export const guideRegistry = [
     format: "planning-guide",
     topics: ["pace", "itinerary-design", "trip-planning"],
     destinations: ["china"],
-    homeFeaturedRank: 1,
+    homeFeaturedRank: 2,
     heroImagePath:
       "/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
     heroImageUrl:
