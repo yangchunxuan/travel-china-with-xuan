@@ -56,10 +56,10 @@ export interface GuideEntry {
   topics: readonly GuideTopic[];
   destinations: readonly GuideDestination[];
   homeFeaturedRank?: number;
-  /** Optional crop selected specifically for the homepage guide card. */
-  homeCardImagePath?: string;
-  homeCardImageWidth?: number;
-  homeCardImageHeight?: number;
+  /** Optional editorial crop for guide cards; social metadata keeps the hero. */
+  cardImagePath?: string;
+  cardImageWidth?: number;
+  cardImageHeight?: number;
   heroImagePath: string;
   heroImageUrl: string;
   imageWidth: number;
@@ -132,10 +132,10 @@ export const guideRegistry = [
     topics: ["attractions", "trip-planning", "on-the-ground"],
     destinations: ["zhangjiajie"],
     homeFeaturedRank: 3,
-    homeCardImagePath:
+    cardImagePath:
       "/images/guides/tantan-zhangjiajie/tantan-hero-1200.jpg",
-    homeCardImageWidth: 1200,
-    homeCardImageHeight: 1500,
+    cardImageWidth: 1200,
+    cardImageHeight: 1500,
     heroImagePath:
       "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
     heroImageUrl:
@@ -413,10 +413,19 @@ export function getGuideEntry(
   }
 
   const localized = guide.locales[locale];
+  const cardImagePath =
+    "cardImagePath" in guide ? guide.cardImagePath : guide.heroImagePath;
+  const cardImageWidth =
+    "cardImageWidth" in guide ? guide.cardImageWidth : guide.imageWidth;
+  const cardImageHeight =
+    "cardImageHeight" in guide ? guide.cardImageHeight : guide.imageHeight;
 
   return {
     ...guide,
     ...localized,
+    cardImagePath,
+    cardImageWidth,
+    cardImageHeight,
     canonicalPath: localized.path,
     canonicalUrl: `${SITE_URL}${localized.path}`,
   };

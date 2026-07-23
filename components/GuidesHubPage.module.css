@@ -202,6 +202,11 @@
   aspect-ratio: 16 / 8.8;
 }
 
+.guideSlot[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
+  .guideImage {
+  aspect-ratio: 3 / 2;
+}
+
 .guideSlotWide .guideLink {
   display: grid;
   grid-template-columns: minmax(0, 0.94fr) minmax(20rem, 0.72fr);
@@ -432,6 +437,11 @@
   .guideSlotWide .guideImage {
     aspect-ratio: 16 / 10;
     min-height: 0;
+  }
+
+  .guideSlot[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
+    .guideImage {
+    aspect-ratio: 1;
   }
 }
 

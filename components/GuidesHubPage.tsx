@@ -172,16 +172,17 @@ export function GuidesHubPage({
                       ? styles.guideSlotWide
                       : ""
                 }`}
+                data-guide-id={guide.id}
                 key={guide.id}
               >
                 <article className={styles.guideCard}>
                   <Link className={styles.guideLink} href={guide.canonicalPath}>
                     <figure className={styles.guideImage}>
                       <img
-                        src={guide.heroImagePath}
+                        src={guide.cardImagePath}
                         alt={guide.heroAlt}
-                        width={guide.imageWidth}
-                        height={guide.imageHeight}
+                        width={guide.cardImageWidth}
+                        height={guide.cardImageHeight}
                         loading={index === 0 ? "eager" : "lazy"}
                         fetchPriority={index === 0 ? "high" : "auto"}
                         decoding="async"

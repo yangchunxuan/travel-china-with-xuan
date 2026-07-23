@@ -46,8 +46,10 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
   );
   assert.match(
     registry,
-    /homeCardImagePath:\s*"\/images\/guides\/tantan-zhangjiajie\/tantan-hero-1200\.jpg"/,
+    /cardImagePath:\s*"\/images\/guides\/tantan-zhangjiajie\/tantan-hero-1200\.jpg"/,
   );
+  assert.match(registry, /const cardImagePath =/);
+  assert.match(homepage, /src=\{guide\.cardImagePath\}/);
   assert.match(homepage, /data-guide-id=\{guide\.id\}/);
   assert.match(
     homepageCss,
@@ -77,14 +79,21 @@ test("three hub routes publish localized canonical and hreflang metadata", async
 
 test("hub output is semantic, dated, image-sized and structured", async () => {
   const hub = await source("components/GuidesHubPage.tsx");
+  const css = await source("components/GuidesHubPage.module.css");
 
   assert.doesNotMatch(hub, /^"use client";/);
   assert.match(hub, /<main id="guides-main" tabIndex=\{-1\}>/);
   assert.match(hub, /<ol className=\{styles\.guideGrid\}>/);
   assert.match(hub, /<article className=\{styles\.guideCard\}>/);
   assert.match(hub, /<time dateTime=\{guide\.dateModified\}>/);
-  assert.match(hub, /width=\{guide\.imageWidth\}/);
-  assert.match(hub, /height=\{guide\.imageHeight\}/);
+  assert.match(hub, /src=\{guide\.cardImagePath\}/);
+  assert.match(hub, /width=\{guide\.cardImageWidth\}/);
+  assert.match(hub, /height=\{guide\.cardImageHeight\}/);
+  assert.match(hub, /data-guide-id=\{guide\.id\}/);
+  assert.match(
+    css,
+    /\[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"\][\s\S]*?aspect-ratio: 3 \/ 2;/,
+  );
   assert.match(hub, /"@type": "CollectionPage"/);
   assert.match(hub, /"@type": "ItemList"/);
   assert.match(hub, /numberOfItems: guides\.length/);

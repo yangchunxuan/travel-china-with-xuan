@@ -644,18 +644,6 @@ export function HomegroundHomePage({
                   guide.type === "field-note"
                     ? copy.guides.typeLabels.fieldNote
                     : copy.guides.typeLabels[guide.type];
-                const homeCardImagePath =
-                  "homeCardImagePath" in guide
-                    ? guide.homeCardImagePath
-                    : guide.heroImagePath;
-                const homeCardImageWidth =
-                  "homeCardImageWidth" in guide
-                    ? guide.homeCardImageWidth
-                    : guide.imageWidth;
-                const homeCardImageHeight =
-                  "homeCardImageHeight" in guide
-                    ? guide.homeCardImageHeight
-                    : guide.imageHeight;
 
                 return (
                   <a
@@ -670,10 +658,10 @@ export function HomegroundHomePage({
                   >
                     <span className={styles.travelGuideImage}>
                       <img
-                        src={homeCardImagePath}
+                        src={guide.cardImagePath}
                         alt={guide.heroAlt}
-                        width={homeCardImageWidth}
-                        height={homeCardImageHeight}
+                        width={guide.cardImageWidth}
+                        height={guide.cardImageHeight}
                         loading="lazy"
                         decoding="async"
                       />
