@@ -31,9 +31,14 @@ test("verified business identity is centralized and displayed in the shared foot
     business,
     /张家界市永定区本境文化交流工作室（个体工商户）/,
   );
+  assert.match(
+    business,
+    /publicName: "张家界市永定区本境文化交流工作室"/,
+  );
   assert.match(business, /92430802MAE0TE500J/);
   assert.match(business, /https:\/\/www\.gsxt\.gov\.cn\/index\.html/);
-  assert.match(footer, /homegroundBusiness\.registeredName/);
+  assert.match(footer, /homegroundBusiness\.publicName/);
+  assert.doesNotMatch(footer, /registered individual business|등록 개인사업자/);
   assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
   assert.match(footer, /business-information/);
   assert.match(footer, /refund-delivery/);

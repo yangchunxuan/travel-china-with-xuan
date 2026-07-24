@@ -1,5 +1,6 @@
 export const homegroundBusiness = {
   brand: "Homeground",
+  publicName: "张家界市永定区本境文化交流工作室",
   registeredName:
     "张家界市永定区本境文化交流工作室（个体工商户）",
   legalForm: "个体工商户",

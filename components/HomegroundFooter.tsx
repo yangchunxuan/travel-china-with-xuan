@@ -32,9 +32,8 @@ const footerSections: Record<
     guides: "Travel guides",
     services: "Trip planning services",
     legalLabel: "Business and service information",
-    operatorPrefix: "Operated by",
-    operatorSuffix:
-      "a registered individual business in Zhangjiajie, Hunan, China.",
+    operatorPrefix: "Homeground is operated by",
+    operatorSuffix: ".",
     codeLabel: "Unified Social Credit Code",
   },
   zh: {
@@ -49,8 +48,8 @@ const footerSections: Record<
     guides: "여행 가이드",
     services: "여행 설계 서비스",
     legalLabel: "사업자 및 서비스 안내",
-    operatorPrefix: "Homeground 운영 사업자:",
-    operatorSuffix: "중국 후난성 장자제 등록 개인사업자.",
+    operatorPrefix: "Homeground는",
+    operatorSuffix: "에서 운영합니다.",
     codeLabel: "통일사회신용코드",
   },
 };
@@ -138,9 +137,8 @@ export function HomegroundFooter({
         <p>
           {sectionLabels.operatorPrefix}{" "}
           <a href={businessPath} lang="zh-Hans">
-            {homegroundBusiness.registeredName}
+            {homegroundBusiness.publicName}
           </a>
-          {locale === "en" ? ", " : " "}
           {sectionLabels.operatorSuffix}
           <span>
             {sectionLabels.codeLabel}:{" "}
