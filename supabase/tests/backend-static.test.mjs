@@ -669,7 +669,7 @@ test("frontend launch gates and permanent privacy entry stay connected", async (
   assert.doesNotMatch(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/);
   assert.doesNotMatch(planner, /wa\.me/);
   assert.match(homePage, /<HomegroundFooter locale=\{locale\}/);
-  assert.match(footer, /copy\.footer\.privacy/);
+  assert.match(footer, /legalCopy\.related\.privacy/);
   assert.match(footer, /privacyPath/);
 });
 

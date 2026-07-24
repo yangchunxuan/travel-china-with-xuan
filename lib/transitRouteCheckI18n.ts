@@ -253,7 +253,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground is an independent China trip-planning studio with our own ground team. Every figure on this page comes from the National Immigration Administration and official municipal guidance, checked 24 July 2026. We re-check monthly, because ports and country lists change.",
+      "Homeground is an independent China trip-planning studio drawing on our planning team’s first-hand local experience. Every figure on this page comes from the National Immigration Administration and official municipal guidance, checked 24 July 2026. We re-check monthly, because ports and country lists change.",
     reviewBoundary:
       "We screen route structure. We do not decide immigration eligibility, file visa applications, or guarantee entry — the airline and Chinese immigration make those calls.",
     sourcesLabel: "Official sources",

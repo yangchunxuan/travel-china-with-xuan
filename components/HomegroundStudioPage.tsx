@@ -217,7 +217,7 @@ export function HomegroundStudioPage({
             <div>
               <p>
                 {isEnglish
-                  ? "Have a usable route? We can review it. Have dates and priorities but no route? We can build the structure. If you want planning carried into selected arrangements or local coordination, we will define a custom written scope."
+                  ? "Have a usable route? We can review it. Have dates and priorities but no route? We can build the structure. If you also need travel arrangements, start an enquiry; the responsible licensed travel operator, contract scope and payment recipient are identified before any travel-service payment."
                   : copy.cta.body}
               </p>
               {isEnglish ? (

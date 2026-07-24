@@ -4,6 +4,7 @@ import {
   homegroundPrivacyLocales,
   type HomegroundPrivacyLocale,
 } from "../lib/homegroundPrivacyI18n";
+import { HomegroundFooter } from "./HomegroundFooter";
 import styles from "./HomegroundPrivacyPage.module.css";
 
 export function HomegroundPrivacyPage({
@@ -192,7 +193,9 @@ export function HomegroundPrivacyPage({
               <div>
                 <dt>{copy.contact.emailLabel}</dt>
                 <dd>
-                  <code>{copy.contact.emailPlaceholder}</code>
+                  <a href={`mailto:${copy.contact.emailPlaceholder}`}>
+                    <code>{copy.contact.emailPlaceholder}</code>
+                  </a>
                 </dd>
               </div>
               <div>
@@ -206,10 +209,7 @@ export function HomegroundPrivacyPage({
         </article>
       </main>
 
-      <footer className={styles.footer}>
-        <p>{copy.footer}</p>
-        <Link href={copy.homePath}>{copy.navigation.homeCta}</Link>
-      </footer>
+      <HomegroundFooter locale={locale} pageContext="content" />
     </div>
   );
 }

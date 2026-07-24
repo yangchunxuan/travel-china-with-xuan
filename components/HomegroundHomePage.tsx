@@ -14,6 +14,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomeFeaturedGuides } from "../lib/guideRegistry";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
@@ -181,9 +182,23 @@ export function HomegroundHomePage({
     "@type": "Organization",
     "@id": "https://homegroundchina.com/#organization",
     name: "Homeground China",
+    legalName: homegroundBusiness.registeredName,
     url: "https://homegroundchina.com/",
+    email: homegroundBusiness.serviceEmail,
     description: copy.schemaDescription,
     inLanguage: copy.htmlLang,
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "Unified Social Credit Code",
+      value: homegroundBusiness.unifiedSocialCreditCode,
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: homegroundBusiness.registeredAddress,
+      addressLocality: "Zhangjiajie",
+      addressRegion: "Hunan",
+      addressCountry: "CN",
+    },
   };
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";

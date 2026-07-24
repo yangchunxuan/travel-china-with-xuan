@@ -21,6 +21,7 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -136,7 +137,9 @@ function createStructuredData(
           "@type": "Organization",
           "@id": "https://homegroundchina.com/#organization",
           name: "Homeground China",
+          legalName: homegroundBusiness.registeredName,
           url: "https://homegroundchina.com/",
+          email: homegroundBusiness.serviceEmail,
         },
         offers: [
           {

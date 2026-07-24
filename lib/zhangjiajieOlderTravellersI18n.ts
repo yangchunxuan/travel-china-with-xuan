@@ -122,7 +122,7 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     pillarsCaption: "",
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground is from Zhangjiajie, with our own ground team. Route conditions on this page were confirmed with our operator on 23 July 2026. Ticketing, transport and access rules here change without much notice; we re-check this page at least every 90 days and date any change. The photographs are our own.",
+      "Homeground is from Zhangjiajie and draws on our planning team’s first-hand local experience. Route conditions on this page were checked with a local operator on 23 July 2026. Ticketing, transport and access rules here change without much notice; we re-check this page at least every 90 days and date any change. The photographs are our own.",
     faqTitle: "Common questions",
     faq: [
       {

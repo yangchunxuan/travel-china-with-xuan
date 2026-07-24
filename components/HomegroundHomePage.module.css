@@ -2146,6 +2146,55 @@
   color: var(--hg-color-on-dark);
 }
 
+.footerLegal {
+  align-items: start;
+  border-top: 1px solid var(--hg-color-on-dark-line);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(18rem, 1fr) auto;
+  margin-top: 2rem;
+  padding-top: 1.35rem;
+}
+
+.footerLegal p {
+  color: var(--hg-color-on-dark-muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 78ch;
+  text-wrap: pretty;
+}
+
+.footerLegal p a {
+  color: var(--hg-color-on-dark);
+  text-underline-offset: 0.2rem;
+}
+
+.footerLegal p span {
+  display: block;
+}
+
+.footerLegal nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  justify-content: flex-end;
+}
+
+.footerLegal nav a {
+  align-items: center;
+  color: var(--hg-color-on-dark-muted);
+  display: inline-flex;
+  font-size: 0.82rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.footerTop a:hover,
+.footerLegal a:hover {
+  color: var(--hg-color-on-dark);
+}
+
 .footerNote {
   border-top: 1px solid var(--hg-color-on-dark-line);
   color: var(--hg-color-on-dark-muted);
@@ -2507,6 +2556,21 @@
   .footerTop nav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footerLegal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footerLegal nav {
+    justify-content: flex-start;
+  }
+
+  .footerLegal p a[lang="zh-Hans"] {
+    display: block;
+    font-size: 0.8rem;
+    inline-size: fit-content;
+    max-inline-size: 100%;
   }
 
 }

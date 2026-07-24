@@ -4,6 +4,11 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
+import {
+  getHomegroundLegalCopy,
+  getHomegroundLegalPath,
+} from "../lib/homegroundLegalI18n";
 import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import {
   handleHomegroundHashClick,
@@ -14,19 +19,39 @@ import styles from "./HomegroundHomePage.module.css";
 
 const footerSections: Record<
   HomegroundLocale,
-  { guides: string; services: string }
+  {
+    guides: string;
+    services: string;
+    legalLabel: string;
+    operatorPrefix: string;
+    operatorSuffix: string;
+    codeLabel: string;
+  }
 > = {
   en: {
     guides: "Travel guides",
     services: "Trip planning services",
+    legalLabel: "Business and service information",
+    operatorPrefix: "Operated by",
+    operatorSuffix:
+      "a registered individual business in Zhangjiajie, Hunan, China.",
+    codeLabel: "Unified Social Credit Code",
   },
   zh: {
     guides: "旅行指南",
     services: "旅行规划服务",
+    legalLabel: "经营与服务信息",
+    operatorPrefix: "Homeground 由",
+    operatorSuffix: "运营。",
+    codeLabel: "统一社会信用代码",
   },
   ko: {
     guides: "여행 가이드",
     services: "여행 설계 서비스",
+    legalLabel: "사업자 및 서비스 안내",
+    operatorPrefix: "Homeground 운영 사업자:",
+    operatorSuffix: "중국 후난성 장자제 등록 개인사업자.",
+    codeLabel: "통일사회신용코드",
   },
 };
 
@@ -40,6 +65,19 @@ export function HomegroundFooter({
   const copy = getHomegroundCopy(locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
+  const businessPath = getHomegroundLegalPath(
+    "business-information",
+    locale,
+  );
+  const termsPath = getHomegroundLegalPath("terms", locale);
+  const refundPath = getHomegroundLegalPath(
+    "refund-delivery",
+    locale,
+  );
+  const legalCopy = getHomegroundLegalCopy(
+    "business-information",
+    locale,
+  );
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesPath = planningServicesCopy.path;
   const guideHubPath = `${copy.path}guides/`;
@@ -94,7 +132,29 @@ export function HomegroundFooter({
           >
             {copy.navigation.faq}
           </a>
-          <a href={privacyPath}>{copy.footer.privacy}</a>
+        </nav>
+      </div>
+      <div className={styles.footerLegal}>
+        <p>
+          {sectionLabels.operatorPrefix}{" "}
+          <a href={businessPath} lang="zh-Hans">
+            {homegroundBusiness.registeredName}
+          </a>
+          {locale === "en" ? ", " : " "}
+          {sectionLabels.operatorSuffix}
+          <span>
+            {sectionLabels.codeLabel}:{" "}
+            {homegroundBusiness.unifiedSocialCreditCode}
+          </span>
+        </p>
+        <nav aria-label={sectionLabels.legalLabel}>
+          <a href={businessPath}>{legalCopy.related.business}</a>
+          <a href={termsPath}>{legalCopy.related.terms}</a>
+          <a href={privacyPath}>{legalCopy.related.privacy}</a>
+          <a href={refundPath}>{legalCopy.related.refund}</a>
+          <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
+            {legalCopy.related.contact}
+          </a>
         </nav>
       </div>
       <p className={styles.footerNote}>

@@ -164,7 +164,7 @@ const en: ChinaItineraryReviewCopy = {
     eyebrow: "China itinerary review & route planning",
     title: "Get the route right before you book the rest.",
     lead:
-      "Already have a day-by-day plan? We can review it. Starting with dates, priorities and a wishlist? We can build the route structure. Want selected arrangements or local coordination as well? We can define a trip-specific scope.",
+      "Already have a day-by-day plan? We can review it. Starting with dates, priorities and a wishlist? We can build the route structure. Need full-trip arrangements as well? Start an enquiry so the responsible licensed travel operator and scope can be identified before any travel-service payment.",
     pricesAriaLabel: "Route planning prices",
     prices: [
       { price: "US$69", label: "route review" },
@@ -174,7 +174,7 @@ const en: ChinaItineraryReviewCopy = {
     choose: "Choose my planning path",
     freeFinder: "Try the free Route Finder",
     boundary:
-      "The US$69 and US$129 options are fixed-scope written services. Full-trip support begins with a trip-specific written scope and quote. This page starts an enquiry; it does not take payment or accept file uploads.",
+      "The US$69 and US$129 options are fixed-scope written consultation services. They do not include bookings, ticketing, supplier payments, guiding, transport delivery or in-trip support. Full-trip support is currently an enquiry path. This page does not take payment or accept file uploads.",
   },
   reviewBoard: {
     title: "Illustrative review excerpt",
@@ -209,7 +209,7 @@ const en: ChinaItineraryReviewCopy = {
     label: "Choose where you are starting",
     title: "Which kind of help fits your trip now?",
     intro:
-      "Choose Review or Build for a written route service. Choose Full Trip Support when you also want selected arrangements or local coordination included in the agreed scope.",
+      "Choose Review or Build for a written route consultation. Choose Full Trip Support to ask whether a licensed travel operator can provide the arrangements you need.",
     receive: "What you receive",
     perTrip: "per trip",
     review: {
@@ -256,10 +256,10 @@ const en: ChinaItineraryReviewCopy = {
     },
     fullChoice: {
       startingPoint:
-        "I want planning carried into selected arrangements or local coordination.",
+        "I also need travel arrangements or local delivery.",
       title: "Full Trip Planning & Ground Support",
       summary:
-        "A trip-specific written scope for detailed planning and the parts of delivery you want Homeground to coordinate.",
+        "An enquiry to identify the licensed travel operator, contract scope and payment recipient before any travel-service payment.",
       price: "Custom quote",
       link: "See full-trip support",
     },
@@ -268,7 +268,7 @@ const en: ChinaItineraryReviewCopy = {
     label: "Who works on your request",
     title: "A small planning studio, with one clear planning thread.",
     body:
-      "A lead planner owns the work. When the agreed scope needs destination or delivery input, relevant teammates or local partners are brought in.",
+      "A lead planner owns the written consultation. Relevant teammates can add first-hand destination and traveller-support experience without changing the published service boundary.",
     link: "Meet the people behind Homeground",
   },
   pressure: {
@@ -371,14 +371,14 @@ const en: ChinaItineraryReviewCopy = {
     label: "Full trip planning & ground support",
     title: "Need more than a route document?",
     paragraphs: [
-      "Depending on the trip, Homeground may help shape a more detailed plan and coordinate selected hotels, transport, tickets, guides, drivers or local handoffs. The useful scope depends on your dates, destinations, group, existing bookings and the support you want.",
-      "That is why full trip planning and ground support are quoted around the actual journey rather than sold at one fixed service fee.",
+      "Full Trip Planning & Ground Support is currently an enquiry path. No travel booking or full-trip payment is accepted through this website or by the current written-consultation operator.",
+      "If a licensed travel agency can provide the requested arrangements, its name, licence details, contracting role, scope and payment recipient will be confirmed before payment.",
     ],
     items: [
-      "what Homeground will plan or coordinate;",
-      "which costs come from hotels, transport or other third parties;",
+      "which licensed travel operator can contract for the arrangements;",
+      "what planning or travel services are included;",
       "who is responsible for delivering each service;",
-      "what remains outside the arrangement.",
+      "the quote, payment recipient and what remains outside the arrangement.",
     ],
     button: "Ask about full trip support",
     note: "This starts a planning enquiry. It is not a booking or payment.",
@@ -398,7 +398,7 @@ const en: ChinaItineraryReviewCopy = {
       { question: "When will I receive the route?", answer: "We confirm the delivery date after checking your brief and before asking you to pay. If you have a decision deadline, include it in the request." },
       { question: "Does this page take payment?", answer: "No. This page records a planning enquiry and the selected service. Any later working scope, commercial terms and delivery arrangements are confirmed directly after we check the request." },
       { question: "How do I send my itinerary for review?", answer: "Start with the short trip check and add a concise route outline or shareable link if useful. After confirming that the standard scope fits, we can request the full working itinerary by reply. Do not send passport or ID images, payment details, QR codes or unredacted booking references." },
-      { question: "Can Homeground book and coordinate the trip afterwards?", answer: "Potentially, depending on the route, dates and services required. Full trip planning and ground support have a separate written scope and custom quote." },
+      { question: "Can the trip be booked and coordinated afterwards?", answer: "Potentially, depending on the route, dates and services required. Before any travel-service payment, the responsible licensed travel agency, its licence details, contracting role, service scope and payment recipient must be confirmed." },
     ],
   },
   finalCta: {
@@ -439,7 +439,7 @@ const zh: ChinaItineraryReviewCopy = {
   hero: {
     eyebrow: "中国旅行路线审核与规划",
     title: "先把路线理顺，再继续预订。",
-    lead: "已经有逐日行程？我们可以审核。只有日期、重点和愿望清单？我们可以搭建路线结构。如果还需要代为衔接部分预订或当地协调，我们会按实际旅行定义服务范围。",
+    lead: "已经有逐日行程？我们可以审核。只有日期、重点和愿望清单？我们可以搭建路线结构。如果还需要全程旅游安排，请先提交咨询；任何旅游服务款支付前，都要先明确负责承接的持证旅行经营者与服务范围。",
     pricesAriaLabel: "路线规划价格",
     prices: [
       { price: "US$69", label: "路线审核" },
@@ -448,7 +448,7 @@ const zh: ChinaItineraryReviewCopy = {
     ],
     choose: "选择适合我的服务",
     freeFinder: "先试用免费路线检查工具",
-    boundary: "69 美元与 129 美元对应范围固定的书面服务。全程规划与落地支持会先根据具体行程确认书面范围与报价。本页只用于提交咨询，不收取在线付款，也不接收文件上传。",
+    boundary: "69 美元与 129 美元是范围固定的书面咨询服务，不包含代订、出票、代付供应商、导游、交通履约或旅途中支持。全程规划与落地支持目前只接收咨询。本页不收取在线付款，也不接收文件上传。",
   },
   reviewBoard: {
     title: "路线审核示意",
@@ -464,7 +464,7 @@ const zh: ChinaItineraryReviewCopy = {
   services: {
     label: "从你现在的进度开始",
     title: "此刻哪一种帮助更适合你的旅行？",
-    intro: "已有路线可选“路线审核”，还没有可用路线可选“路线规划”。如果希望把规划继续落实到部分预订或当地协调，请选择“全程规划与落地支持”。",
+    intro: "已有路线可选“路线审核”，还没有可用路线可选“路线规划”。如还需要旅游预订或在地安排，可通过“全程规划与落地支持”提交咨询；付款前会先明确承接该部分服务的持证旅行经营者。",
     receive: "你会收到",
     perTrip: "每趟旅行",
     review: {
@@ -504,9 +504,9 @@ const zh: ChinaItineraryReviewCopy = {
       note: "先完成简短的旅行检查。你可以补充路线摘要或可访问的分享链接；完整工作文件只会在确认适合后再索取。",
     },
     fullChoice: {
-      startingPoint: "我希望规划继续落实到部分预订或当地协调。",
+      startingPoint: "我还需要旅游预订或当地履约安排。",
       title: "全程规划与落地支持",
-      summary: "围绕实际旅行，以书面方式确认详细规划及由 Homeground 协调的执行部分。",
+      summary: "在支付任何旅游服务款前，先明确持证旅行经营者、合同范围与收款方。",
       price: "单独报价",
       link: "查看全程支持范围",
     },
@@ -514,7 +514,7 @@ const zh: ChinaItineraryReviewCopy = {
   studio: {
     label: "谁会处理你的需求",
     title: "小型规划工作室，一条清晰的负责线。",
-    body: "一位主规划师负责整体工作。如果约定范围需要目的地经验或执行支持，我们会让合适的团队成员或当地合作伙伴加入。",
+    body: "一位主规划师负责书面咨询。团队成员可以补充一线目的地和旅客接待经验，但不会改变页面公开的服务边界。",
     link: "认识 Homeground 团队",
   },
   pressure: {
@@ -586,10 +586,10 @@ const zh: ChinaItineraryReviewCopy = {
     label: "全程规划与落地支持",
     title: "需要的不只是一份路线文件？",
     paragraphs: [
-      "视具体旅行而定，Homeground 可以协助完善更详细的计划，并协调部分酒店、交通、门票、向导、车辆或当地衔接。合适的范围取决于日期、目的地、同行者、已有预订及你真正需要的支持。",
-      "因此，全程规划与落地支持会围绕实际旅程报价，而不是收取一个固定服务费。",
+      "全程规划与落地支持目前只接收咨询。本网站及当前书面咨询经营主体不接受旅游预订或全程旅游安排款。",
+      "如持证旅行社能够承接需求，付款前会明确旅行社名称、许可信息、合同角色、服务范围和收款方。",
     ],
-    items: ["Homeground 负责规划或协调哪些部分；", "哪些费用来自酒店、交通或其他第三方；", "每项服务由谁负责交付；", "哪些内容不在约定范围内。"],
+    items: ["哪一家持证旅行经营者能够承接旅游安排；", "包含哪些规划或旅游服务；", "每项服务由谁负责交付；", "报价、收款方与不在约定范围内的内容。"],
     button: "咨询全程旅行支持",
     note: "这只是规划咨询，不是预订或付款。",
   },
@@ -608,7 +608,7 @@ const zh: ChinaItineraryReviewCopy = {
       { question: "什么时候能收到路线？", answer: "我们会在检查旅行信息后、请你付款前确认交付日期。如果你有决定期限，请写在咨询中。" },
       { question: "这个页面会收款吗？", answer: "不会。本页只记录规划咨询和你选择的服务。我们检查需求后，再直接确认后续工作范围、商业条款和交付安排。" },
       { question: "怎样发送路线供审核？", answer: "先完成简短的旅行检查，并按需添加路线摘要或可访问的分享链接。确认符合标准范围后，我们会回复并索取完整工作路线。请勿发送护照或证件图片、付款信息、二维码或未遮盖的预订编号。" },
-      { question: "之后 Homeground 可以代订并协调行程吗？", answer: "有可能，取决于路线、日期和所需服务。全程规划与落地支持会另行确认书面范围与定制报价。" },
+      { question: "之后可以预订并协调行程吗？", answer: "有可能，取决于路线、日期和所需服务。收取任何旅游服务款前，必须先明确持证旅行社、许可信息、合同角色、服务范围和收款方。" },
     ],
   },
   finalCta: {
@@ -648,7 +648,7 @@ const ko: ChinaItineraryReviewCopy = {
   hero: {
     eyebrow: "중국 여행 일정 검토 및 동선 설계",
     title: "예약을 더 하기 전에 동선부터 제대로 잡으세요.",
-    lead: "이미 일별 일정이 있나요? 현실성을 검토해 드립니다. 날짜, 우선순위와 위시리스트만 있나요? 여행 동선의 구조를 설계해 드립니다. 일부 예약이나 현지 조율까지 필요하다면 실제 여행에 맞춰 별도 범위를 정합니다.",
+    lead: "이미 일별 일정이 있나요? 현실성을 검토해 드립니다. 날짜, 우선순위와 위시리스트만 있나요? 여행 동선의 구조를 설계해 드립니다. 전체 여행 예약·주선도 필요하다면 문의를 먼저 제출하세요. 여행 서비스 결제 전에 책임 있는 허가 여행사업자와 범위를 확인합니다.",
     pricesAriaLabel: "일정 설계 서비스 가격",
     prices: [
       { price: "US$69", label: "일정 검토" },
@@ -657,7 +657,7 @@ const ko: ChinaItineraryReviewCopy = {
     ],
     choose: "내게 맞는 서비스 선택하기",
     freeFinder: "무료 Route Finder 먼저 이용하기",
-    boundary: "US$69와 US$129 옵션은 범위가 정해진 서면 서비스입니다. 전체 여행 지원은 실제 여행에 맞춘 서면 범위와 견적을 먼저 확정합니다. 이 페이지는 상담 요청을 시작하는 곳이며 결제나 파일 업로드를 받지 않습니다.",
+    boundary: "US$69와 US$129 옵션은 범위가 정해진 서면 컨설팅입니다. 예약·발권, 공급업체 결제, 가이드, 차량 제공 또는 여행 중 지원은 포함하지 않습니다. 전체 여행 지원은 현재 문의만 접수하며 이 페이지에서는 결제나 파일 업로드를 받지 않습니다.",
   },
   reviewBoard: {
     title: "일정 검토 예시",
@@ -713,9 +713,9 @@ const ko: ChinaItineraryReviewCopy = {
       note: "먼저 간단한 여행 체크를 완료하세요. 필요하면 일정 요약이나 공유 링크를 추가할 수 있으며, 전체 작업 파일은 적합성을 확인한 뒤에만 요청합니다.",
     },
     fullChoice: {
-      startingPoint: "일부 예약이나 현지 조율까지 이어지는 계획이 필요해요.",
+      startingPoint: "여행 예약 또는 현지 이행도 필요해요.",
       title: "전체 여행 설계 및 현지 지원",
-      summary: "상세 계획과 Homeground가 조율할 실행 항목을 실제 여행에 맞춰 서면으로 정합니다.",
+      summary: "여행 서비스 결제 전에 허가 여행사업자, 계약 범위와 결제 수취인을 확인하는 문의입니다.",
       price: "맞춤 견적",
       link: "전체 여행 지원 보기",
     },
@@ -723,7 +723,7 @@ const ko: ChinaItineraryReviewCopy = {
   studio: {
     label: "누가 요청을 담당하나요",
     title: "작은 여행 설계 스튜디오, 하나의 분명한 담당 흐름.",
-    body: "한 명의 리드 플래너가 전체 작업을 책임집니다. 합의한 범위에 목적지 경험이나 실행 지원이 필요하면 관련 팀원 또는 현지 파트너가 함께합니다.",
+    body: "한 명의 리드 플래너가 서면 컨설팅을 책임집니다. 팀원은 공개된 서비스 범위를 바꾸지 않고 현장 목적지 경험과 여행자 응대 경험을 더할 수 있습니다.",
     link: "Homeground 팀 만나기",
   },
   pressure: {
@@ -795,10 +795,10 @@ const ko: ChinaItineraryReviewCopy = {
     label: "전체 여행 설계 및 현지 지원",
     title: "일정 문서 이상의 도움이 필요한가요?",
     paragraphs: [
-      "여행에 따라 Homeground가 더 상세한 계획을 만들고 일부 호텔, 교통, 티켓, 가이드, 차량 또는 현지 인계를 조율할 수 있습니다. 알맞은 범위는 날짜, 목적지, 일행, 기존 예약과 원하는 지원에 따라 달라집니다.",
-      "그래서 전체 여행 설계 및 현지 지원은 하나의 고정 서비스 요금이 아니라 실제 여행을 기준으로 견적을 냅니다.",
+      "전체 여행 설계 및 현지 지원은 현재 문의만 접수합니다. 이 웹사이트와 현재 서면 컨설팅 운영 사업자는 여행 예약이나 전체 여행 주선 대금을 받지 않습니다.",
+      "허가받은 여행사가 요청을 제공할 수 있는 경우 결제 전에 여행사명, 허가 정보, 계약 역할, 범위와 결제 수취인을 안내합니다.",
     ],
-    items: ["Homeground가 계획하거나 조율할 항목;", "호텔, 교통 또는 기타 제3자에게 지급하는 비용;", "각 서비스를 실제 제공하는 주체;", "합의 범위에 포함되지 않는 항목."],
+    items: ["어느 허가 여행사업자가 예약·주선을 맡을 수 있는지;", "포함되는 플래닝 또는 여행 서비스;", "각 서비스를 실제 제공하는 주체;", "견적, 결제 수취인과 범위 밖의 항목."],
     button: "전체 여행 지원 문의하기",
     note: "여행 설계 상담을 시작하는 단계이며 예약이나 결제가 아닙니다.",
   },
@@ -817,7 +817,7 @@ const ko: ChinaItineraryReviewCopy = {
       { question: "일정은 언제 받을 수 있나요?", answer: "여행 정보를 확인한 뒤, 결제를 요청하기 전에 납품일을 확정합니다. 결정해야 하는 기한이 있다면 요청에 적어 주세요." },
       { question: "이 페이지에서 결제하나요?", answer: "아닙니다. 이 페이지는 설계 상담과 선택한 서비스를 기록합니다. 요청을 확인한 뒤 작업 범위, 상업 조건과 납품 방식을 직접 확정합니다." },
       { question: "검토할 일정을 어떻게 보내나요?", answer: "간단한 여행 체크를 먼저 완료하고 필요하면 일정 요약이나 공유 링크를 추가하세요. 표준 범위에 맞는지 확인한 뒤 답장을 통해 전체 작업 일정을 요청할 수 있습니다. 여권·신분증 이미지, 결제 정보, QR 코드 또는 가리지 않은 예약 번호는 보내지 마세요." },
-      { question: "나중에 Homeground가 예약과 여행 조율도 할 수 있나요?", answer: "동선, 날짜와 필요한 서비스에 따라 가능할 수 있습니다. 전체 여행 설계 및 현지 지원은 별도의 서면 범위와 맞춤 견적으로 진행합니다." },
+      { question: "나중에 여행 예약과 조율도 가능한가요?", answer: "동선, 날짜와 필요한 서비스에 따라 가능할 수 있습니다. 여행 서비스 결제 전에 허가받은 여행사, 허가 정보, 계약 역할, 서비스 범위와 결제 수취인을 먼저 확인해야 합니다." },
     ],
   },
   finalCta: {

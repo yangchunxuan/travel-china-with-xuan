@@ -134,7 +134,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground is an independent China trip-planning studio with our own ground team. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book.",
+      "Homeground is an independent China trip-planning studio drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book.",
     sourcesLabel: "Official sources",
     sources: sharedSources,
     faqTitle: "Common questions",

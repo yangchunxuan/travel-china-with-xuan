@@ -603,7 +603,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China. Tailored journeys, planned with context.`,
     },
     schemaDescription:
-      "A China trip-planning studio that checks a traveller’s destination wishlist against available time, then plans the real route with suitable local services.",
+      "A registered China trip-planning studio offering fixed-scope written route consultations and an enquiry path for separately contracted licensed travel services.",
     finder: {
       hiddenTitle: "Find a sensible starting route",
       introEyebrow: "Start with you, not a map",
@@ -1100,7 +1100,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China。每一段旅程，都从真实需求出发。`,
     },
     schemaDescription:
-      "一家先把旅客的目的地愿望与可用时间进行比较，再人工规划真实路线和合适当地服务的中国旅行工作室。",
+      "一家已登记的中国旅行规划工作室，提供固定范围书面路线咨询，并为另行签约的持证旅游服务提供咨询入口。",
     finder: {
       hiddenTitle: "找到一条合理的初步路线",
       introEyebrow: "先看你需要什么，而不是先看地图",
@@ -1588,7 +1588,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China. 실제 조건을 바탕으로 설계하는 맞춤 여행.`,
     },
     schemaDescription:
-      "여행자의 목적지 희망 목록을 가능한 시간과 비교한 뒤 실제 동선과 적합한 현지 서비스를 사람이 설계하는 중국 여행 플래닝 스튜디오.",
+      "정해진 범위의 서면 여행 동선 컨설팅과 별도 계약되는 허가 여행 서비스 문의 경로를 제공하는 중국 등록 여행 플래닝 스튜디오.",
     finder: {
       hiddenTitle: "현실적인 여행 동선 찾기",
       introEyebrow: "지도보다 사람부터",

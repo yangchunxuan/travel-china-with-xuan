@@ -20,6 +20,7 @@ import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
+import { HomegroundFooter } from "./HomegroundFooter";
 
 const guideId = "beijing-zhangjiajie-shanghai-10-days" as const;
 
@@ -217,7 +218,6 @@ export function TenDayChinaRouteGuidePage({
     locale,
   ).canonicalPath;
   const transportCopy = transportRelatedCopy[locale];
-  const privacyHref = `${localePrefix}/privacy/`;
   const languagePaths = getGuideLanguagePaths(guideId);
   const languageOptions = [
     { locale: "en", label: "EN", href: languagePaths.en },
@@ -711,17 +711,7 @@ export function TenDayChinaRouteGuidePage({
         </article>
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <Brand copy={copy} homeHref={homeHref} />
-          <nav aria-label={copy.footer.navigationLabel}>
-            <Link href={guideHubHref}>{sectionLabels.guides}</Link>
-            <Link href={privacyHref}>{copy.footer.privacy}</Link>
-            <a href={plannerHref}>{copy.footer.cta}</a>
-          </nav>
-        </div>
-        <p>{copy.footer.copyright(new Date().getFullYear())}</p>
-      </footer>
+      <HomegroundFooter locale={locale} pageContext="guide" />
     </div>
   );
 }

@@ -101,10 +101,10 @@ const routeServiceInterestByLocale: Record<
       label: "Full Trip Planning & Ground Support",
       priceLabel: "Custom quote",
       finderSummary:
-        "Complete the short route questions so we can understand the journey and prepare the right written scope. No payment is taken here.",
+        "Complete the short route questions so we can understand the journey and check whether a licensed travel operator can provide the arrangements. No payment is taken here.",
       handoffSummary:
-        "Your full-trip-support request will be sent with this enquiry. The written scope and quote depend on the actual journey and support required.",
-      note: "Requested service: Full Trip Planning & Ground Support (custom quote).",
+        "Your request will be sent as an enquiry. Before any travel-service payment, the licensed operator, contract scope and payment recipient must be identified.",
+      note: "Requested path: Full Trip Planning & Ground Support (enquiry only at this stage).",
     },
   },
   zh: {
@@ -128,9 +128,9 @@ const routeServiceInterestByLocale: Record<
       ...commonChineseFields,
       label: "全程规划与落地支持",
       priceLabel: "单独报价",
-      finderSummary: "完成简短的路线问题，帮助我们理解实际旅行并准备合适的书面范围。这里不会收取付款。",
-      handoffSummary: "全程旅行支持需求会随本次咨询发送。书面范围与报价取决于实际行程及所需支持。",
-      note: "申请的服务：全程规划与落地支持（单独报价）。",
+      finderSummary: "完成简短的路线问题，帮助我们理解实际旅行，并判断是否有持证旅行经营者能够承接所需安排。这里不会收取付款。",
+      handoffSummary: "此需求会作为咨询发送。支付任何旅游服务款前，必须先明确持证经营者、合同范围与收款方。",
+      note: "申请路径：全程规划与落地支持（当前仅咨询）。",
     },
   },
   ko: {
@@ -154,9 +154,9 @@ const routeServiceInterestByLocale: Record<
       ...commonKoreanFields,
       label: "전체 여행 설계 및 현지 지원",
       priceLabel: "맞춤 견적",
-      finderSummary: "간단한 동선 질문을 완료해 실제 여행을 이해하고 알맞은 서면 범위를 준비할 수 있게 해 주세요. 여기서는 결제하지 않습니다.",
-      handoffSummary: "전체 여행 지원 요청이 상담과 함께 전송됩니다. 서면 범위와 견적은 실제 여행과 필요한 지원에 따라 달라집니다.",
-      note: "요청 서비스: 전체 여행 설계 및 현지 지원(맞춤 견적).",
+      finderSummary: "간단한 동선 질문으로 실제 여행을 이해하고 허가 여행사업자가 필요한 예약·주선을 맡을 수 있는지 확인합니다. 여기서는 결제하지 않습니다.",
+      handoffSummary: "요청은 문의로 전송됩니다. 여행 서비스 결제 전에 허가 사업자, 계약 범위와 결제 수취인을 확인해야 합니다.",
+      note: "요청 경로: 전체 여행 설계 및 현지 지원(현재 문의 단계).",
     },
   },
 };

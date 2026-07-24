@@ -228,10 +228,11 @@ const en: HomepagePlanningDeskCopy = {
       statement:
         "I want help with the full trip, including selected arrangements or local coordination.",
       label: "Full Trip Planning & Ground Support",
-      priceLabel: "Custom quote",
+      priceLabel: "Enquiry first",
       summary:
-        "A written scope built around the planning and delivery you want Homeground to handle.",
-      scope: "Scope and quote depend on the actual trip.",
+        "We first identify whether a licensed travel operator can provide the arrangements you need.",
+      scope:
+        "The responsible licensed operator, contract, scope and payment recipient are confirmed before any travel-service payment.",
     },
     {
       id: "explore",
@@ -251,7 +252,7 @@ const en: HomepagePlanningDeskCopy = {
   selectedLabel: "Your starting point",
   change: "Change",
   boundary:
-    "Free to enquire. We use this first brief to confirm the right scope; detailed personalised route work begins after the agreed payment is confirmed. No payment is taken here.",
+    "Free to enquire. We use this first brief to confirm the right path. Paid written route-consultation work begins only after its scope, terms and payment are confirmed. Full-trip arrangements remain enquiry-only here.",
   fixedPriceScope: `Fixed-price scope for Review My Route and Build My Route · ${standardScopeEn}`,
   changeWarning:
     "Changing the service will clear the service-specific route note you entered. Your shared trip answers and contact details will stay. Continue?",
@@ -264,19 +265,19 @@ const en: HomepagePlanningDeskCopy = {
       { id: "traveller", label: "I’ll make all bookings myself" },
       {
         id: "homeground-selected",
-        label: "I’d like Homeground to help with selected arrangements",
+        label: "I’d like help finding support for selected arrangements",
       },
       {
         id: "homeground-most",
         label:
-          "I’d like Homeground to plan and coordinate most of the trip",
+          "I need a licensed operator to handle most of the trip",
       },
       { id: "unsure", label: "I’m not sure yet" },
     ],
     error:
       "Choose who you expect to handle the bookings and arrangements.",
     fixedScopeHint:
-      "Help with arrangements usually sits in the full-trip scope rather than a route document alone. You can still send this request — a planner confirms the right scope and price before any payment, and the fixed-price service stays available if you book everything yourself.",
+      "Travel arrangements sit outside the fixed-price route documents. You can still send this request — a planner checks whether a licensed travel agency can provide the service and identifies the contracting party, scope and payment recipient before any travel-service payment.",
   },
   outsideStandardScope: {
     priceLabel: "Scope & price to confirm",
@@ -402,7 +403,7 @@ const en: HomepagePlanningDeskCopy = {
       nextSteps: [
         "Leave one working contact and an optional route outline.",
         "Homeground checks the fit and confirms the scope and delivery timing by email.",
-        "We send secure payment instructions; work begins after payment is confirmed and the necessary route material is complete.",
+        "We send payment instructions identifying the registered consultation operator; work begins after payment is confirmed and the necessary route material is complete.",
       ],
       submitLabel: "Request my route review",
       successTitle: "Your route-review request is in.",
@@ -428,7 +429,7 @@ const en: HomepagePlanningDeskCopy = {
       nextSteps: [
         "Leave one working contact and any essential priorities.",
         "Homeground checks the fit and confirms the scope and delivery timing by email.",
-        "We send secure payment instructions; work begins after payment is confirmed and the necessary trip material is complete.",
+        "We send payment instructions identifying the registered consultation operator; work begins after payment is confirmed and the necessary trip material is complete.",
       ],
       submitLabel: "Request my route build",
       successTitle: "Your route-build request is in.",
@@ -444,18 +445,18 @@ const en: HomepagePlanningDeskCopy = {
       noPayment: "No payment has been taken.",
       scopeLabel: "Trip-specific scope · custom quote",
       scope:
-        "The written scope can include detailed planning, selected arrangements and local coordination only where agreed.",
+        "This remains an enquiry. This website and the current written-consultation operator do not accept travel bookings or full-trip payments.",
       deliverablesLabel: "What we define with you",
       deliverables: [
-        "The planning and coordination Homeground will own",
-        "The arrangements, partners or traveller actions outside that scope",
-        "The quote, payment schedule and start conditions",
+        "Whether a licensed travel agency can provide the requested arrangements",
+        "Its licence details, contracting role and actual service scope",
+        "The quote, payment recipient and start conditions",
       ],
       nextLabel: "What happens next",
       nextSteps: [
         "Leave one working contact and the most important trip constraints.",
-        "Homeground reviews the brief and follows up to define the written scope and quote.",
-        "Planning begins after the agreed payment is confirmed and the necessary information is complete.",
+        "Homeground reviews the brief and follows up about the appropriate next step.",
+        "Before any travel-service payment, the licensed agency, contract scope and payment recipient must be identified.",
       ],
       submitLabel: "Request a custom scope",
       successTitle: "Your full-trip request is in.",
@@ -534,9 +535,10 @@ const zh: HomepagePlanningDeskCopy = {
       kind: "paid",
       statement: "我希望有人协助整趟旅行，包括部分具体安排或在地协调。",
       label: "全程规划与落地支持",
-      priceLabel: "单独报价",
-      summary: "根据你希望 Homeground 承担的规划和执行内容，先确认书面范围。",
-      scope: "服务范围和报价取决于实际行程。",
+      priceLabel: "先提交咨询",
+      summary: "我们会先判断是否有持证旅行经营者能够承接你需要的旅游安排。",
+      scope:
+        "支付任何旅游服务款前，会先明确持证经营者、合同、服务范围与收款方。",
     },
     {
       id: "explore",
@@ -554,7 +556,7 @@ const zh: HomepagePlanningDeskCopy = {
   selectedLabel: "你的起点",
   change: "更换",
   boundary:
-    "提交需求不收费。我们会用这份简报确认适合的范围；详细个性化路线在双方约定的款项确认后开始制作。本页不会收款。",
+    "提交需求不收费。我们会用这份简报确认适合的路径；付费书面路线咨询只在范围、条款与款项确认后开始制作。全程旅游安排在这里仍只是咨询。",
   fixedPriceScope: `路线审核与路线规划的固定价格标准范围 · ${standardScopeZh}`,
   changeWarning:
     "更换服务会清空你填写的服务专属路线说明；共用的旅行答案和联系方式会保留。是否继续？",
@@ -566,17 +568,17 @@ const zh: HomepagePlanningDeskCopy = {
       { id: "traveller", label: "全部预订我自己完成" },
       {
         id: "homeground-selected",
-        label: "希望 Homeground 协助部分安排",
+        label: "希望有人帮我对接部分旅游安排",
       },
       {
         id: "homeground-most",
-        label: "希望 Homeground 负责大部分规划和协调",
+        label: "希望持证旅行经营者负责大部分行程",
       },
       { id: "unsure", label: "我还不确定" },
     ],
     error: "请选择你希望由谁完成预订和安排。",
     fixedScopeHint:
-      "需要我们参与安排时，通常属于全程服务范围，而不只是路线文件。你仍然可以提交这份简报——付款前规划师会先确认适合的范围和价格；如果全部预订由你自己完成，所选的固定价服务仍然可用。",
+      "旅游预订与履约安排不属于固定价格路线文件。你仍然可以提交简报——规划师会先判断是否有持证旅行社能够承接，并在支付任何旅游服务款前明确合同主体、服务范围与收款方。",
   },
   outsideStandardScope: {
     priceLabel: "范围与价格待确认",
@@ -701,7 +703,7 @@ const zh: HomepagePlanningDeskCopy = {
       nextSteps: [
         "留下一个有效联系方式，可选填简短路线说明。",
         "Homeground 人工确认是否适合，并通过邮件确认范围和交付时间。",
-        "我们发送安全付款说明；支付确认且路线资料齐全后开始制作。",
+        "付款说明会明确登记咨询经营主体；支付确认且路线资料齐全后开始制作。",
       ],
       submitLabel: "提交路线审核申请",
       successTitle: "你的路线审核申请已提交。",
@@ -727,7 +729,7 @@ const zh: HomepagePlanningDeskCopy = {
       nextSteps: [
         "留下一个有效联系方式和最重要的旅行重点。",
         "Homeground 人工确认是否适合，并通过邮件确认范围和交付时间。",
-        "我们发送安全付款说明；支付确认且旅行资料齐全后开始制作。",
+        "付款说明会明确登记咨询经营主体；支付确认且旅行资料齐全后开始制作。",
       ],
       submitLabel: "提交路线规划申请",
       successTitle: "你的路线规划申请已提交。",
@@ -743,18 +745,18 @@ const zh: HomepagePlanningDeskCopy = {
       noPayment: "目前没有收取任何款项。",
       scopeLabel: "按行程确认范围 · 单独报价",
       scope:
-        "书面范围只包括双方确认的详细规划、部分具体安排和在地协调。",
+        "这仍然只是咨询。本网站及当前书面咨询经营主体不接受旅游预订或全程旅游安排款。",
       deliverablesLabel: "我们会与你确认什么",
       deliverables: [
-        "Homeground 负责的规划与协调内容",
-        "范围之外由合作方或旅行者负责的事项",
-        "报价、付款安排和正式开工条件",
+        "是否有持证旅行社能够承接所需旅游安排",
+        "旅行社许可信息、合同角色与实际服务范围",
+        "报价、收款方与正式开始条件",
       ],
       nextLabel: "接下来会发生什么",
       nextSteps: [
         "留下一个有效联系方式和最重要的旅行限制。",
-        "Homeground 审核简报，并进一步确认书面范围和报价。",
-        "双方约定的款项确认到账且必要资料齐全后，开始规划和执行。",
+        "Homeground 审核简报，并联系你说明适合的下一步。",
+        "收取任何旅游服务款前，必须先明确持证旅行社、合同范围和收款方。",
       ],
       submitLabel: "申请确认定制范围",
       successTitle: "你的全程旅行申请已提交。",
@@ -834,9 +836,11 @@ const ko: HomepagePlanningDeskCopy = {
       kind: "paid",
       statement: "일정뿐 아니라 일부 예약 준비나 현지 조율까지 도움받고 싶어요.",
       label: "전체 여행 설계 및 현지 지원",
-      priceLabel: "맞춤 견적",
-      summary: "Homeground가 맡을 플래닝과 실행 범위를 실제 여행에 맞춰 서면으로 정합니다.",
-      scope: "서비스 범위와 견적은 실제 여행에 따라 달라집니다.",
+      priceLabel: "문의부터 시작",
+      summary:
+        "필요한 여행 예약·주선을 맡을 수 있는 허가 여행사업자가 있는지 먼저 확인합니다.",
+      scope:
+        "여행 서비스 결제 전에 허가 사업자, 계약, 서비스 범위와 결제 수취인을 확인합니다.",
     },
     {
       id: "explore",
@@ -855,7 +859,7 @@ const ko: HomepagePlanningDeskCopy = {
   selectedLabel: "여행의 출발점",
   change: "변경",
   boundary:
-    "문의 제출은 무료입니다. 이 브리프로 적절한 범위를 먼저 확인하며, 상세 맞춤 일정 작업은 합의된 결제가 확인된 뒤 시작합니다. 이 페이지에서는 결제가 진행되지 않습니다.",
+    "문의 제출은 무료입니다. 이 브리프로 적절한 경로를 먼저 확인합니다. 유료 서면 일정 컨설팅은 범위, 조건과 결제가 확인된 뒤 시작하며 전체 여행 예약·주선은 여기서 문의 단계로만 진행됩니다.",
   fixedPriceScope: `일정 검토와 동선 설계의 정가 적용 범위 · ${standardScopeKo}`,
   changeWarning:
     "서비스를 바꾸면 서비스별 일정 메모가 삭제됩니다. 공통 여행 답변과 연락처는 유지됩니다. 계속할까요?",
@@ -867,17 +871,17 @@ const ko: HomepagePlanningDeskCopy = {
       { id: "traveller", label: "예약은 모두 제가 직접 할 거예요" },
       {
         id: "homeground-selected",
-        label: "일부 준비는 Homeground의 도움을 받고 싶어요",
+        label: "일부 여행 준비를 맡을 사업자를 찾는 도움이 필요해요",
       },
       {
         id: "homeground-most",
-        label: "여행 대부분의 설계와 조율을 Homeground에 맡기고 싶어요",
+        label: "허가 여행사업자가 여행 대부분을 맡았으면 해요",
       },
       { id: "unsure", label: "아직 잘 모르겠어요" },
     ],
     error: "예약과 준비를 누가 맡을지 선택해 주세요.",
     fixedScopeHint:
-      "예약이나 준비 지원은 보통 일정 문서만이 아니라 전체 여행 지원 범위에 해당합니다. 이대로 제출하셔도 됩니다. 결제 전에 플래너가 알맞은 범위와 가격을 먼저 확인하며, 모든 예약을 직접 하신다면 선택하신 정액 서비스도 그대로 이용할 수 있습니다.",
+      "여행 예약과 이행은 정액 동선 문서 범위 밖입니다. 그대로 브리프를 보내도 됩니다. 플래너가 허가 여행사가 맡을 수 있는지 확인하고 여행 서비스 결제 전에 계약 당사자, 범위와 결제 수취인을 안내합니다.",
   },
   outsideStandardScope: {
     priceLabel: "범위·가격 확인 필요",
@@ -1002,7 +1006,7 @@ const ko: HomepagePlanningDeskCopy = {
       nextSteps: [
         "사용 가능한 연락처와 선택 사항인 간단한 일정 설명을 남깁니다.",
         "Homeground가 적합 여부를 검토하고 이메일로 범위와 완료 예정일을 확인합니다.",
-        "안전한 결제 방법을 안내하며, 결제가 확인되고 필요한 일정 자료가 모두 준비되면 작업을 시작합니다.",
+        "등록 컨설팅 사업자가 명시된 결제 방법을 안내하며, 결제가 확인되고 필요한 일정 자료가 모두 준비되면 작업을 시작합니다.",
       ],
       submitLabel: "일정 검토 요청하기",
       successTitle: "일정 검토 요청을 접수했습니다.",
@@ -1028,7 +1032,7 @@ const ko: HomepagePlanningDeskCopy = {
       nextSteps: [
         "사용 가능한 연락처와 가장 중요한 여행 우선순위를 남깁니다.",
         "Homeground가 적합 여부를 검토하고 이메일로 범위와 완료 예정일을 확인합니다.",
-        "안전한 결제 방법을 안내하며, 결제가 확인되고 필요한 여행 자료가 모두 준비되면 작업을 시작합니다.",
+        "등록 컨설팅 사업자가 명시된 결제 방법을 안내하며, 결제가 확인되고 필요한 여행 자료가 모두 준비되면 작업을 시작합니다.",
       ],
       submitLabel: "동선 설계 요청하기",
       successTitle: "동선 설계 요청을 접수했습니다.",
@@ -1044,18 +1048,18 @@ const ko: HomepagePlanningDeskCopy = {
       noPayment: "아직 결제된 금액은 없습니다.",
       scopeLabel: "여행별 범위 · 맞춤 견적",
       scope:
-        "서면으로 합의한 세부 플래닝, 일부 예약 준비와 현지 조율만 범위에 포함됩니다.",
+        "현재는 문의 단계입니다. 이 웹사이트와 서면 컨설팅 운영 사업자는 여행 예약 또는 전체 여행 주선 대금을 받지 않습니다.",
       deliverablesLabel: "함께 정할 내용",
       deliverables: [
-        "Homeground가 맡을 플래닝과 조율 업무",
-        "범위 밖에서 파트너 또는 여행자가 맡을 업무",
-        "견적, 결제 일정과 작업 시작 조건",
+        "허가받은 여행사가 요청한 예약·주선을 맡을 수 있는지",
+        "여행사 허가 정보, 계약 역할과 실제 서비스 범위",
+        "견적, 결제 수취인과 작업 시작 조건",
       ],
       nextLabel: "다음 단계",
       nextSteps: [
         "사용 가능한 연락처와 가장 중요한 여행 조건을 남깁니다.",
-        "Homeground가 브리프를 검토하고 서면 범위와 견적을 함께 정합니다.",
-        "합의한 결제가 확인되고 필요한 정보가 모두 준비되면 플래닝과 실행을 시작합니다.",
+        "Homeground가 브리프를 검토하고 적절한 다음 단계를 안내합니다.",
+        "여행 서비스 결제 전에 허가 여행사, 계약 범위와 결제 수취인을 먼저 확인해야 합니다.",
       ],
       submitLabel: "맞춤 범위 요청하기",
       successTitle: "전체 여행 요청을 접수했습니다.",

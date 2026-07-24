@@ -8,6 +8,7 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const explicitSources = [
   "components/HomegroundHeader.tsx",
   "components/HomegroundHomePage.tsx",
+  "components/HomegroundLegalPage.tsx",
   "components/HomegroundPrivacyPage.tsx",
   "components/PlannerHandoff.tsx",
   "components/RouteFinder.tsx",
@@ -16,6 +17,8 @@ const explicitSources = [
   "components/TantanZhangjiajieStoryPage.tsx",
   "components/KevinPreparationStoryPage.tsx",
   "lib/homegroundI18n.ts",
+  "lib/homegroundBusiness.ts",
+  "lib/homegroundLegalI18n.ts",
   "lib/homegroundStudioI18n.ts",
   "lib/homegroundPrivacyI18n.ts",
   "lib/guideRegistry.ts",

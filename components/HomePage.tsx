@@ -20,6 +20,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import { translations, type Lang } from "../lib/i18n";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { HeroCarousel } from "./HeroCarousel";
 import { RouteExplorer } from "./RouteExplorer";
 import { FloatingContact, SiteFooter, SiteHeader } from "./Site";
@@ -29,11 +30,12 @@ const basePath = "";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "TravelAgency",
+  "@type": "Organization",
   name: "Homeground China",
+  legalName: homegroundBusiness.registeredName,
   alternateName: "Travel China with Xuan",
   description:
-    "Private, tailor-made China trips planned by a Zhangjiajie-born local and delivered with licensed local partners.",
+    "Fixed-scope written China route consultations and an enquiry path for separately contracted licensed travel services.",
   email: "yangchunxuan1@gmail.com",
   areaServed: "China",
   founder: {

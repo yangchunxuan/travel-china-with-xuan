@@ -1,3 +1,5 @@
+import { homegroundBusiness } from "./homegroundBusiness";
+
 export const homegroundPrivacyLocales = ["en", "zh", "ko"] as const;
 
 export type HomegroundPrivacyLocale =
@@ -127,7 +129,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "After checking a wishlist against available nights, a traveller can submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "22 July 2026",
+      reviewedValue: "24 July 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -139,6 +141,7 @@ export const homegroundPrivacyCopy: Record<
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
         "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
+        "Online checkout is not enabled. If a US$69 or US$129 written consultation is accepted, the scope and delivery date are confirmed first and payment instructions are sent separately. Do not submit card, bank or payment QR information through the enquiry form.",
         "A prepared email link is only an emergency fallback after the service confirms that an enquiry was not saved. It is not the normal contact path and opening it is never described as a successful submission.",
       ],
     },
@@ -248,10 +251,10 @@ export const homegroundPrivacyCopy: Record<
         "Homeground applies the following rules to the enquiry records and service copies it controls. Providers may retain limited security, billing or legal records under their own obligations.",
       rows: [
         {
-          label: "Data controller",
-          value: "Homeground China studio",
+          label: "Data controller and website operator",
+          value: `${homegroundBusiness.registeredName} (trading as Homeground)`,
           detail:
-            "The studio decides how enquiry information is used to answer and plan the traveller’s request and how compatible structured choices are counted in restricted service-improvement summaries.",
+            "The registered operator is responsible for website enquiries and for any accepted US$69 or US$129 written consultation. Homeground is the public-facing brand, not a separate company or a claim of travel agency status.",
         },
         {
           label: "Processing and storage region",
@@ -265,6 +268,12 @@ export const homegroundPrivacyCopy: Record<
           value: "Up to 12 months from the website enquiry’s saved time",
           detail:
             "The website period is not reset by later email or WhatsApp activity. If the enquiry becomes a client or contractual relationship, relevant records may be kept separately for service, business-record and legal obligations.",
+        },
+        {
+          label: "Transaction and service records",
+          value: "Kept under the applicable business-record period",
+          detail:
+            "If a written consultation is accepted, Homeground may keep the service confirmation, agreed scope, price and currency, payment confirmation, delivery correspondence and correction or refund record for service, accounting, dispute and legal obligations. These records do not use the website enquiry’s 12-month deletion period.",
         },
         {
           label: "Rate-limit retention",
@@ -302,7 +311,7 @@ export const homegroundPrivacyCopy: Record<
       emailLabel: "Privacy email",
       emailPlaceholder: privacyEmail,
       addressLabel: "Postal contact",
-      addressPlaceholder: "Available when legally required",
+      addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
       "This notice covers Homeground’s current route finder and enquiry service with email or WhatsApp reply. It does not provide marketing consent or enable AI chat or non-essential browser-behaviour analytics.",
@@ -342,7 +351,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "把愿望清单与可用晚数进行比较后，访客可以用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 7 月 21 日",
+      reviewedValue: "2026 年 7 月 24 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -354,6 +363,7 @@ export const homegroundPrivacyCopy: Record<
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
         "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
+        "本网站目前没有在线收银台。如 69 美元或 129 美元书面咨询被接受，会先确认范围和交付日期，再另行发送付款方式。请勿通过咨询表单提交银行卡、银行账户或付款二维码信息。",
         "只有当系统明确确认咨询没有保存时，页面才可提供预填邮件作为应急方式。它不是正常入口，打开邮件应用也绝不能被描述成提交成功。",
       ],
     },
@@ -449,10 +459,10 @@ export const homegroundPrivacyCopy: Record<
         "以下规则适用于 Homeground 能控制的咨询记录和服务副本。服务商可能依据自身的安全、计费或法律义务保留有限记录。",
       rows: [
         {
-          label: "数据控制者",
-          value: "Homeground China 工作室",
+          label: "个人信息处理者与网站经营主体",
+          value: `${homegroundBusiness.registeredName}（以 Homeground 品牌开展业务）`,
           detail:
-            "工作室决定如何使用咨询信息来回复并规划访客的请求，以及如何把可按同一规则读取的结构化选择计入受限的服务改进统计。",
+            "该登记主体负责网站咨询，以及被明确接受的 69 美元或 129 美元书面咨询服务。Homeground 是对外品牌名称，不是另一家公司，也不代表具有旅行社业务许可。",
         },
         {
           label: "处理与存储地区",
@@ -466,6 +476,12 @@ export const homegroundPrivacyCopy: Record<
           value: "从网站咨询保存时间起最多 12 个月",
           detail:
             "后续邮件或 WhatsApp 活动不会重置网站期限。如果咨询形成客户或合同关系，相关记录可依据服务、业务记录和法律义务另行保留。",
+        },
+        {
+          label: "交易与服务记录",
+          value: "按适用的业务记录期限保留",
+          detail:
+            "如书面咨询被接受，可能保存服务确认、约定范围、价格与币种、付款确认、交付往来及更正或退款记录，用于履行服务、财务记录、争议处理和法律义务。这类记录不适用网站咨询记录的 12 个月删除期限。",
         },
         {
           label: "限流数据保留",
@@ -503,7 +519,7 @@ export const homegroundPrivacyCopy: Record<
       emailLabel: "隐私邮箱",
       emailPlaceholder: privacyEmail,
       addressLabel: "通信地址",
-      addressPlaceholder: "法律要求时提供",
+      addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
       "本说明适用于 Homeground 当前的路线工具，以及通过邮箱或 WhatsApp 回复的咨询服务；不构成营销许可，也不启用 AI 聊天或非必要的浏览器行为统计。",
@@ -544,7 +560,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "희망 목록과 가능한 숙박일수를 비교한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 7월 21일",
+      reviewedValue: "2026년 7월 24일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -556,6 +572,7 @@ export const homegroundPrivacyCopy: Record<
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
         "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
+        "현재 웹사이트에는 온라인 결제가 없습니다. US$69 또는 US$129 서면 컨설팅이 수락되면 범위와 제공 예정일을 먼저 확인하고 결제 방법을 별도로 안내합니다. 문의 양식에 카드, 계좌 또는 결제 QR 정보를 제출하지 마세요.",
         "서비스가 문의를 저장하지 않았다고 명확히 확인한 경우에만 작성된 이메일을 비상 대안으로 제공합니다. 이는 일반 문의 경로가 아니며 이메일 앱을 여는 것을 접수 완료라고 표시하지 않습니다.",
       ],
     },
@@ -657,10 +674,10 @@ export const homegroundPrivacyCopy: Record<
         "다음 기준은 Homeground가 관리하는 문의 기록과 서비스 사본에 적용됩니다. 제공업체는 보안, 결제 또는 법적 의무에 필요한 제한된 기록을 별도로 보관할 수 있습니다.",
       rows: [
         {
-          label: "개인정보 처리 책임 주체",
-          value: "Homeground China 스튜디오",
+          label: "개인정보처리자 및 웹사이트 운영 사업자",
+          value: `${homegroundBusiness.registeredName}(Homeground 브랜드 운영)`,
           detail:
-            "스튜디오는 여행자의 문의에 답하고 계획하기 위해 정보를 사용하는 방식과 호환되는 구조화 선택을 제한된 서비스 개선 집계에 포함하는 방식을 결정합니다.",
+            "등록 사업자가 웹사이트 문의 및 수락된 US$69 또는 US$129 서면 컨설팅을 책임집니다. Homeground는 대외 브랜드이며 별도 법인이나 여행사 자격을 의미하지 않습니다.",
         },
         {
           label: "처리 및 저장 지역",
@@ -674,6 +691,12 @@ export const homegroundPrivacyCopy: Record<
           value: "웹사이트 문의가 저장된 시점부터 최대 12개월",
           detail:
             "이후 이메일 또는 WhatsApp 활동은 웹사이트 기간을 다시 시작하지 않습니다. 문의가 고객 또는 계약 관계로 이어지면 서비스, 업무 기록 및 법적 의무에 따라 관련 기록을 별도로 보관할 수 있습니다.",
+        },
+        {
+          label: "거래 및 서비스 기록",
+          value: "적용되는 업무 기록 보관 기준에 따라 보관",
+          detail:
+            "서면 컨설팅이 수락되면 서비스 확인, 합의 범위, 가격과 통화, 결제 확인, 제공 관련 대화, 수정 또는 환불 기록을 서비스 이행, 회계, 분쟁 및 법적 의무를 위해 보관할 수 있습니다. 해당 기록에는 웹사이트 문의의 12개월 삭제 기간이 적용되지 않습니다.",
         },
         {
           label: "속도 제한 정보 보관",
@@ -711,7 +734,7 @@ export const homegroundPrivacyCopy: Record<
       emailLabel: "개인정보 문의 이메일",
       emailPlaceholder: privacyEmail,
       addressLabel: "우편 연락처",
-      addressPlaceholder: "법적으로 필요한 경우 제공",
+      addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
       "이 안내는 Homeground의 현재 여행 동선 찾기와 이메일 또는 WhatsApp 답변 문의 서비스에 적용됩니다. 마케팅 동의가 아니며 AI 채팅이나 필수적이지 않은 브라우저 행동 분석을 사용하지 않습니다.",

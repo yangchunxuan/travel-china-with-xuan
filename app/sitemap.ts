@@ -5,6 +5,11 @@ import {
   getGuideLanguageUrls,
   guideIds,
 } from "../lib/guideRegistry";
+import {
+  getHomegroundLegalLanguagePaths,
+  getHomegroundLegalPath,
+  homegroundLegalPageIds,
+} from "../lib/homegroundLegalI18n";
 
 export const dynamic = "force-static";
 
@@ -53,6 +58,23 @@ const guideEntries = guideIds.flatMap((guideId) => {
       alternates: { languages },
     };
   });
+});
+const legalEntries = homegroundLegalPageIds.flatMap((pageId) => {
+  const relativeLanguages = getHomegroundLegalLanguagePaths(pageId);
+  const languages = Object.fromEntries(
+    Object.entries(relativeLanguages).map(([language, path]) => [
+      language,
+      `${base}${path}`,
+    ]),
+  );
+
+  return (["en", "zh", "ko"] as const).map((locale) => ({
+    url: `${base}${getHomegroundLegalPath(pageId, locale)}`,
+    lastModified: "2026-07-24",
+    changeFrequency: "monthly" as const,
+    priority: 0.3,
+    alternates: { languages },
+  }));
 });
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -154,23 +176,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: itineraryReviewLanguages },
     },
     ...guideEntries,
+    ...legalEntries,
     {
       url: `${base}/privacy/`,
-      lastModified: "2026-07-22",
+      lastModified: "2026-07-24",
       changeFrequency: "monthly",
       priority: 0.3,
       alternates: { languages: privacyLanguages },
     },
     {
       url: `${base}/ko/privacy/`,
-      lastModified: "2026-07-19",
+      lastModified: "2026-07-24",
       changeFrequency: "monthly",
       priority: 0.3,
       alternates: { languages: privacyLanguages },
     },
     {
       url: `${base}/zh/privacy/`,
-      lastModified: "2026-07-19",
+      lastModified: "2026-07-24",
       changeFrequency: "monthly",
       priority: 0.3,
       alternates: { languages: privacyLanguages },
