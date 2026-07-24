@@ -49,6 +49,7 @@ const explicitSources = [
   "lib/chinaItineraryReviewI18n.ts",
   "lib/routeServiceInterest.ts",
   "lib/tantanZhangjiajieStoryI18n.ts",
+  "lib/zhangjiajieOlderTravellersI18n.ts",
 ];
 const sourceDirectories = ["app/(default)", "app/(localized)"];
 

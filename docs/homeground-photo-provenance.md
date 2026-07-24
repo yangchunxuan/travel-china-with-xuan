@@ -128,6 +128,23 @@ photographs. Tantan's work badge appears in one frame; its text and number are
 not legible at the published resolution, and no identity document, booking
 reference or payment detail is readable in any derivative.
 
+For the Zhangjiajie older-travellers guide, the project owner supplied the source
+photographs and confirmed they are self-photographed and may be used on the
+Homeground website.
+
+Current website derivatives:
+
+- `public/images/guides/zhangjiajie-older-travellers/bailong-elevator-*`
+- `public/images/guides/zhangjiajie-older-travellers/natural-bridge-*`
+- `public/images/guides/zhangjiajie-older-travellers/park-shuttle-*`
+- `public/images/guides/zhangjiajie-older-travellers/pillars-*`
+
+Each is released as a JPG fallback plus WebP and AVIF derivatives at 720 and 1200
+widths, written without EXIF, GPS or ICC metadata. Several sources were stored
+rotated and were uprighted before cropping. Frames from the cableway boarding
+hall showing identifiable faces were held back from this release rather than
+published.
+
 This note records how the files entered the project; it does not independently
 establish third-party copyright ownership. Before using the photographs in
 paid advertising, print, resale, or partner distribution, the studio should

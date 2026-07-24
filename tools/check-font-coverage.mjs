@@ -28,6 +28,7 @@ const explicitSources = [
   "lib/chinaItineraryReviewI18n.ts",
   "lib/routeServiceInterest.ts",
   "lib/tantanZhangjiajieStoryI18n.ts",
+  "lib/zhangjiajieOlderTravellersI18n.ts",
   "lib/destinationPlannerI18n.ts",
   "lib/routeFinder.ts",
 ];
