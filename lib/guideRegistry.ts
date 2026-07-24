@@ -12,6 +12,7 @@ export const guideIds = [
   "beijing-zhangjiajie-shanghai-transport",
   "is-your-china-itinerary-too-rushed",
   "do-us-citizens-need-visa-china-2026",
+  "china-240-hour-visa-free-transit-route-check",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -564,6 +565,60 @@ export const guideRegistry = [
           "상하이 푸둥 국제공항 도착층, 머리 위로 안내 표지판이 보인다.",
         navTitle: "미국 비자·환승 가이드",
         featuredLinkLabel: "내 경로가 어느 입국 경로인지 확인하기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "china-240-hour-visa-free-transit-route-check",
+    type: "planning",
+    featured: false,
+    format: "planning-guide",
+    topics: ["trip-planning"],
+    destinations: ["china"],
+    heroImagePath:
+      "/images/guides/china-240-hour-visa-free-transit-route-check/route-rule-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-240-hour-visa-free-transit-route-check/route-rule-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
+    sourceReviewedDate: "2026-07-24",
+    locales: {
+      en: {
+        path: "/guides/china-240-hour-visa-free-transit-route-check/",
+        title: "China 240-Hour Visa-Free Transit: Does Your Route Qualify?",
+        headline: "China 240-Hour Visa-Free Transit: Does Your Route Qualify?",
+        description:
+          "One rule decides it: where you fly after China must differ from where you flew in from. Check your route against worked examples, port limits and the next-day clock.",
+        heroAlt:
+          "Diagram of the transit rule: country or region A, then mainland China, then a different country or region C.",
+        navTitle: "240-hour transit route check",
+        featuredLinkLabel: "Check whether your route qualifies",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/china-240-hour-visa-free-transit-route-check/",
+        title: "中国 240 小时过境免签:你的路线符合条件吗？",
+        headline: "中国 240 小时过境免签:你的路线符合条件吗？",
+        description:
+          "只有一条规则决定:离开中国后飞往的地方,必须和你飞进来之前的不同。对照真实航线例子、口岸范围与次日起算规则核一遍。",
+        heroAlt: "过境规则示意图:国家或地区 A,中国大陆,另一个不同的国家或地区 C。",
+        navTitle: "240 小时过境路线判断",
+        featuredLinkLabel: "看看你的路线符不符合",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/china-240-hour-visa-free-transit-route-check/",
+        title: "중국 240시간 무비자 환승: 내 경로는 조건을 만족할까요?",
+        headline: "중국 240시간 무비자 환승: 내 경로는 조건을 만족할까요?",
+        description:
+          "규칙은 하나입니다. 중국을 떠나 향하는 곳이 들어오기 전과 달라야 합니다. 실제 경로 예시와 허용 지역, 다음 날 기산 규칙으로 확인하세요.",
+        heroAlt:
+          "환승 규칙 다이어그램: 국가 또는 지역 A, 중국 본토, 그리고 다른 국가 또는 지역 C.",
+        navTitle: "240시간 환승 경로 확인",
+        featuredLinkLabel: "내 경로가 조건을 만족하는지 확인하기",
         openGraphLocale: "ko_KR",
       },
     },
