@@ -31,6 +31,14 @@ function getGuideLabel(guide: ReturnType<typeof getGuidesByPillar>[number]) {
     return "US passport guide";
   }
 
+  if (guide.audienceMarkets.includes("canada")) {
+    return "Canada passport guide";
+  }
+
+  if (guide.audienceMarkets.includes("singapore")) {
+    return "Singapore passport guide";
+  }
+
   return "Transit route guide";
 }
 
@@ -46,7 +54,7 @@ function createStructuredData() {
         url: PAGE_URL,
         name: "China Entry Guides",
         description:
-          "Current China entry rules by passport, travel purpose and route, with official-source guides for UK, US and eligible transit travellers.",
+          "Current China entry rules by passport, travel purpose and route, with official-source guides for UK, US, Canadian and Singaporean passports and eligible transit travellers.",
         inLanguage: "en",
         isPartOf: {
           "@type": "WebSite",

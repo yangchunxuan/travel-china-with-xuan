@@ -171,3 +171,19 @@ The two operational situations described in the article were anonymised and
 narratively reconstructed from Kevin's interview. The photographs illustrate
 Kevin's field experience; they are not presented as documentary evidence of
 either reconstructed situation.
+
+For the Canada visa-free entry guide, the project owner supplied
+`3154 2.JPG` on July 23, 2026 — the Beijing contemporary-skyline photograph
+already logged above as an approved future-use candidate. It was released as
+the hero, card and open-graph images without further cropping decisions
+beyond framing, since the source is already a clean portrait frame.
+
+Current website derivatives:
+
+- `public/images/guides/china-visa-free-canadian-citizens-2026/skyline-hero-*`
+- `public/images/guides/china-visa-free-canadian-citizens-2026/skyline-card-*`
+- `public/images/guides/china-visa-free-canadian-citizens-2026/skyline-og-*`
+
+Each is released as a JPG fallback plus WebP and AVIF derivatives, written
+without EXIF, GPS or ICC metadata, carrying the same small Homeground
+watermark used elsewhere on the site.

@@ -16,6 +16,7 @@ export const guideIds = [
   "is-your-china-itinerary-too-rushed",
   "do-us-citizens-need-visa-china-2026",
   "china-visa-free-uk-citizens-2026",
+  "china-visa-free-canadian-citizens-2026",
   "china-240-hour-visa-free-transit-route-check",
   "do-singaporeans-need-visa-china",
 ] as const;
@@ -656,6 +657,45 @@ export const guideRegistry = [
         featuredLinkLabel:
           "Check whether your UK passport and trip qualify",
         openGraphLocale: "en_GB",
+      },
+    },
+  },
+  {
+    id: "china-visa-free-canadian-citizens-2026",
+    type: "planning",
+    featured: false,
+    pillar: "entry-rules",
+    audienceMarkets: ["canada"],
+    format: "decision-guide",
+    topics: ["trip-planning"],
+    destinations: ["china"],
+    cardImagePath:
+      "/images/guides/china-visa-free-canadian-citizens-2026/skyline-card-1200.jpg",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/china-visa-free-canadian-citizens-2026/skyline-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-visa-free-canadian-citizens-2026/skyline-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
+    sourceReviewedDate: "2026-07-24",
+    locales: {
+      en: {
+        path: "/guides/china-visa-free-canadian-citizens-2026/",
+        title: "China Visa-Free for Canadian Citizens 2026: 30-Day Rules",
+        headline:
+          "China Visa-Free for Canadian Citizens in 2026: When Do You Still Need a Visa?",
+        description:
+          "A practical guide to China’s 30-day visa-free entry for Canadian citizens in 2026, including passport types, day counting, Hong Kong re-entry and when a visa is still required.",
+        heroAlt:
+          "Beijing’s contemporary skyline, including the China Zun tower, seen in clear daylight.",
+        navTitle: "Canada passport China entry guide",
+        featuredLinkLabel:
+          "Check whether your Canadian passport and trip qualify",
+        openGraphLocale: "en_CA",
       },
     },
   },
