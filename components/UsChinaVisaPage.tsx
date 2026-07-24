@@ -84,9 +84,20 @@ function createStructuredData(locale: HomegroundLocale) {
             name: guideHubLabels[locale],
             item: `https://homegroundchina.com${guideHubPath(locale)}`,
           },
+          ...(locale === "en"
+            ? [
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "China entry guides",
+                  item:
+                    "https://homegroundchina.com/guides/china-entry-requirements/",
+                },
+              ]
+            : []),
           {
             "@type": "ListItem",
-            position: 3,
+            position: locale === "en" ? 4 : 3,
             name: copy.breadcrumbCurrent,
             item: guide.canonicalUrl,
           },
@@ -132,6 +143,13 @@ export function UsChinaVisaPage({
                     {copy.breadcrumbGuides}
                   </Link>
                 </li>
+                {locale === "en" ? (
+                  <li>
+                    <Link href="/guides/china-entry-requirements/">
+                      China entry guides
+                    </Link>
+                  </li>
+                ) : null}
                 <li aria-current="page">{copy.breadcrumbCurrent}</li>
               </ol>
             </nav>

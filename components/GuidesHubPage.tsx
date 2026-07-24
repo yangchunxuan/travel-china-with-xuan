@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { getAllGuides } from "../lib/guideRegistry";
+import {
+  getAllGuides,
+  getGuidesByPillar,
+} from "../lib/guideRegistry";
 import {
   getHomegroundCopy,
   homegroundLocales,
@@ -15,6 +18,7 @@ import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./GuidesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+type HubGuide = ReturnType<typeof getAllGuides>[number];
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
   zh: "zh-CN",
@@ -88,6 +92,77 @@ function jsonLdForHub(locale: HomegroundLocale) {
   };
 }
 
+function GuideCard({
+  guide,
+  index,
+  locale,
+  labels,
+  slotClassName,
+}: {
+  guide: HubGuide;
+  index: number;
+  locale: HomegroundLocale;
+  labels: ReturnType<typeof getGuidesHubCopy>;
+  slotClassName?: string;
+}) {
+  return (
+    <li
+      className={`${styles.guideSlot} ${slotClassName ?? ""}`}
+      data-guide-id={guide.id}
+    >
+      <article className={styles.guideCard}>
+        <Link className={styles.guideLink} href={guide.canonicalPath}>
+          <figure className={styles.guideImage}>
+            <img
+              src={guide.cardImagePath}
+              alt={guide.heroAlt}
+              width={guide.cardImageWidth}
+              height={guide.cardImageHeight}
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "auto"}
+              decoding="async"
+            />
+          </figure>
+
+          <div className={styles.guideBody}>
+            <div className={styles.guideMeta}>
+              <span>{labels.formatLabels[guide.format]}</span>
+              <span aria-hidden="true">·</span>
+              <span>
+                {labels.updatedLabel}{" "}
+                <time dateTime={guide.dateModified}>
+                  {formatGuideDate(guide.dateModified, locale)}
+                </time>
+              </span>
+            </div>
+
+            <h3>{guide.headline}</h3>
+            <p className={styles.guideDescription}>{guide.description}</p>
+
+            <ul className={styles.guideTags}>
+              {guide.destinations.map((destination) => (
+                <li className={styles.destinationTag} key={destination}>
+                  {labels.destinationLabels[destination]}
+                </li>
+              ))}
+              {guide.topics.slice(0, 2).map((topic) => (
+                <li className={styles.topicTag} key={topic}>
+                  {labels.topicLabels[topic]}
+                </li>
+              ))}
+            </ul>
+
+            <span className={styles.readGuide}>
+              {labels.readLabel}
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </Link>
+      </article>
+    </li>
+  );
+}
+
 export function GuidesHubPage({
   locale = "en",
 }: {
@@ -96,13 +171,19 @@ export function GuidesHubPage({
   const home = getHomegroundCopy(locale);
   const copy = getGuidesHubCopy(locale);
   const guides = getAllGuides(locale);
+  const entryGuides = getGuidesByPillar("entry-rules", locale);
+  const planningGuides = guides.filter(
+    (guide) => guide.pillar !== "entry-rules",
+  );
   const schema = jsonLdForHub(locale);
-  const tailCount = Math.max(0, guides.length - 2);
+  const tailCount = Math.max(0, planningGuides.length - 2);
   const tailRemainder = tailCount % 3;
   const wideTailIndex =
-    tailRemainder === 1 ? guides.length - 1 : -1;
+    tailRemainder === 1 ? planningGuides.length - 1 : -1;
   const halfTailStart =
-    tailRemainder === 2 ? guides.length - 2 : guides.length;
+    tailRemainder === 2
+      ? planningGuides.length - 2
+      : planningGuides.length;
 
   return (
     <div
@@ -153,6 +234,28 @@ export function GuidesHubPage({
           </div>
         </header>
 
+        <nav
+          className={styles.collectionNav}
+          aria-label={copy.libraryNav.label}
+        >
+          <a href="#guides-catalog-title">
+            <span>01</span>
+            {copy.libraryNav.planning}
+            <strong>{planningGuides.length}</strong>
+          </a>
+          <a
+            href={
+              locale === "en"
+                ? "/guides/china-entry-requirements/"
+                : "#entry-guides-title"
+            }
+          >
+            <span>02</span>
+            {copy.libraryNav.entry}
+            <strong>{entryGuides.length}</strong>
+          </a>
+        </nav>
+
         <section
           className={styles.catalog}
           aria-labelledby="guides-catalog-title"
@@ -164,82 +267,83 @@ export function GuidesHubPage({
             </div>
             <div className={styles.catalogSummary}>
               <p>{copy.catalogIntroduction}</p>
-              <p className={styles.guideCount}>{copy.guideCount(guides.length)}</p>
+              <p className={styles.guideCount}>
+                {copy.guideCount(planningGuides.length)}
+              </p>
             </div>
           </div>
 
           <ol
             className={styles.guideGrid}
-            data-odd-count={guides.length % 2 === 1 ? "true" : "false"}
+            data-odd-count={
+              planningGuides.length % 2 === 1 ? "true" : "false"
+            }
           >
-            {guides.map((guide, index) => (
-              <li
-                className={`${styles.guideSlot} ${
+            {planningGuides.map((guide, index) => (
+              <GuideCard
+                guide={guide}
+                index={index}
+                key={guide.id}
+                labels={copy}
+                locale={locale}
+                slotClassName={
                   index === 0
                     ? styles.guideSlotLead
                     : index === wideTailIndex
                       ? styles.guideSlotWide
                       : index >= halfTailStart
                         ? styles.guideSlotHalf
-                      : ""
-                }`}
-                data-guide-id={guide.id}
-                key={guide.id}
-              >
-                <article className={styles.guideCard}>
-                  <Link className={styles.guideLink} href={guide.canonicalPath}>
-                    <figure className={styles.guideImage}>
-                      <img
-                        src={guide.cardImagePath}
-                        alt={guide.heroAlt}
-                        width={guide.cardImageWidth}
-                        height={guide.cardImageHeight}
-                        loading={index === 0 ? "eager" : "lazy"}
-                        fetchPriority={index === 0 ? "high" : "auto"}
-                        decoding="async"
-                      />
-                    </figure>
-
-                    <div className={styles.guideBody}>
-                      <div className={styles.guideMeta}>
-                        <span>{copy.formatLabels[guide.format]}</span>
-                        <span aria-hidden="true">·</span>
-                        <span>
-                          {copy.updatedLabel}{" "}
-                          <time dateTime={guide.dateModified}>
-                            {formatGuideDate(guide.dateModified, locale)}
-                          </time>
-                        </span>
-                      </div>
-
-                      <h3>{guide.headline}</h3>
-                      <p className={styles.guideDescription}>
-                        {guide.description}
-                      </p>
-
-                      <ul className={styles.guideTags}>
-                        {guide.destinations.map((destination) => (
-                          <li className={styles.destinationTag} key={destination}>
-                            {copy.destinationLabels[destination]}
-                          </li>
-                        ))}
-                        {guide.topics.slice(0, 2).map((topic) => (
-                          <li className={styles.topicTag} key={topic}>
-                            {copy.topicLabels[topic]}
-                          </li>
-                        ))}
-                      </ul>
-
-                      <span className={styles.readGuide}>
-                        {copy.readLabel}
-                        <span aria-hidden="true">→</span>
-                      </span>
-                    </div>
-                  </Link>
-                </article>
-              </li>
+                        : ""
+                }
+              />
             ))}
           </ol>
+        </section>
+
+        <section
+          className={styles.entryCollection}
+          aria-labelledby="entry-guides-title"
+        >
+          <div className={styles.entryInner}>
+            <div className={styles.entryIntro}>
+              <div>
+                <p className={styles.entryEyebrow}>
+                  {copy.entrySection.eyebrow}
+                </p>
+                <h2 id="entry-guides-title">{copy.entrySection.title}</h2>
+              </div>
+              <div>
+                <p>{copy.entrySection.introduction}</p>
+                {locale === "en" ? (
+                  <Link
+                    className={styles.entryAction}
+                    href="/guides/china-entry-requirements/"
+                  >
+                    {copy.entrySection.action}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                ) : null}
+              </div>
+            </div>
+
+            <ol
+              className={`${styles.guideGrid} ${styles.entryGuideGrid}`}
+              data-odd-count={
+                entryGuides.length % 2 === 1 ? "true" : "false"
+              }
+            >
+              {entryGuides.map((guide, index) => (
+                <GuideCard
+                  guide={guide}
+                  index={index + planningGuides.length}
+                  key={guide.id}
+                  labels={copy}
+                  locale={locale}
+                  slotClassName={styles.entryGuideSlot}
+                />
+              ))}
+            </ol>
+          </div>
         </section>
 
         <section className={styles.cta} aria-labelledby="guides-cta-title">

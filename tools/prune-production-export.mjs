@@ -73,6 +73,8 @@ for (const requiredPage of [
   "zh/china-itinerary-review/index.html",
   "ko/china-itinerary-review/index.html",
   "guides/is-your-china-itinerary-too-rushed/index.html",
+  "guides/china-entry-requirements/index.html",
+  "guides/china-visa-free-uk-citizens-2026/index.html",
   "zh/guides/is-your-china-itinerary-too-rushed/index.html",
   "ko/guides/is-your-china-itinerary-too-rushed/index.html",
 ]) {

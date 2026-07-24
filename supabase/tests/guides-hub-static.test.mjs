@@ -12,12 +12,16 @@ test("guides hub is registry-driven and exposes all ten current guides", async (
 
   assert.equal((registry.match(/\n    id: "/g) ?? []).length, 10);
   assert.match(hub, /const guides = getAllGuides\(locale\)/);
-  assert.match(hub, /guides\.map\(\(guide, index\) =>/);
+  assert.match(hub, /planningGuides\.map\(\(guide, index\) =>/);
+  assert.match(hub, /entryGuides\.map\(\(guide, index\) =>/);
+  assert.match(hub, /getGuidesByPillar\("entry-rules", locale\)/);
   assert.doesNotMatch(
     hub,
     /getGuideEntry\("(?:zhangjiajie|beijing|is-your)/,
   );
   assert.match(registry, /format: "itinerary"/);
+  assert.match(registry, /pillar: "entry-rules"/);
+  assert.match(registry, /audienceMarkets: \["uk"\]/);
   assert.match(registry, /topics: \["itinerary-design"/);
   assert.match(registry, /destinations: \["beijing", "zhangjiajie", "shanghai"\]/);
 });
@@ -100,7 +104,9 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /itemListElement: guides\.map/);
   assert.match(hub, /const tailRemainder = tailCount % 3/);
   assert.match(hub, /styles\.guideSlotHalf/);
-  assert.match(hub, /data-odd-count=\{guides\.length % 2 === 1/);
+  assert.match(hub, /planningGuides\.length % 2 === 1/);
+  assert.match(hub, /className=\{styles\.entryAction\}/);
+  assert.match(hub, /href="\/guides\/china-entry-requirements\/"/);
   assert.match(css, /\.guideSlotHalf\s*\{[\s\S]*?grid-column: span 6;/);
   assert.match(
     css,

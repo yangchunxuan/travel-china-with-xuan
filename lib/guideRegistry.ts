@@ -43,6 +43,18 @@ export type GuideDestination =
   | "zhangjiajie"
   | "shanghai";
 
+export type GuidePillar =
+  | "routes-and-pace"
+  | "transport"
+  | "entry-rules"
+  | "field-notes";
+
+export type GuideAudienceMarket =
+  | "global"
+  | "uk"
+  | "us"
+  | "canada";
+
 export interface GuideLocaleEntry {
   path: string;
   title: string;
@@ -59,6 +71,8 @@ export interface GuideEntry {
   /** Kept for compatibility with existing article and homepage consumers. */
   type: "route" | "planning" | "field-note";
   featured: boolean;
+  pillar: GuidePillar;
+  audienceMarkets: readonly GuideAudienceMarket[];
   format: GuideFormat;
   topics: readonly GuideTopic[];
   destinations: readonly GuideDestination[];
@@ -84,6 +98,8 @@ export const guideRegistry = [
     id: "zhangjiajie-itinerary",
     type: "route",
     featured: true,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
     format: "itinerary",
     topics: ["itinerary-design", "pace", "trip-planning"],
     destinations: ["zhangjiajie"],
@@ -138,6 +154,8 @@ export const guideRegistry = [
     id: "zhangjiajie-glass-bridge-vs-skywalk",
     type: "field-note",
     featured: true,
+    pillar: "field-notes",
+    audienceMarkets: ["global"],
     format: "field-note",
     topics: ["attractions", "trip-planning", "on-the-ground"],
     destinations: ["zhangjiajie"],
@@ -199,6 +217,8 @@ export const guideRegistry = [
     id: "kevin-before-the-hotel-pickup",
     type: "field-note",
     featured: false,
+    pillar: "field-notes",
+    audienceMarkets: ["global"],
     format: "field-note",
     topics: ["trip-planning", "on-the-ground"],
     destinations: ["china", "zhangjiajie"],
@@ -255,6 +275,8 @@ export const guideRegistry = [
     id: "zhangjiajie-older-travellers",
     type: "planning",
     featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
     format: "planning-guide",
     topics: ["trip-planning", "on-the-ground", "attractions"],
     destinations: ["zhangjiajie"],
@@ -310,6 +332,8 @@ export const guideRegistry = [
     id: "best-zhangjiajie-night-show",
     type: "planning",
     featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
     format: "decision-guide",
     topics: ["evenings", "trip-planning", "attractions"],
     destinations: ["zhangjiajie"],
@@ -363,6 +387,8 @@ export const guideRegistry = [
     id: "beijing-zhangjiajie-shanghai-10-days",
     type: "planning",
     featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
     format: "route-analysis",
     topics: ["itinerary-design", "pace", "trip-planning"],
     destinations: ["beijing", "zhangjiajie", "shanghai"],
@@ -417,6 +443,8 @@ export const guideRegistry = [
     id: "beijing-zhangjiajie-shanghai-transport",
     type: "planning",
     featured: false,
+    pillar: "transport",
+    audienceMarkets: ["global"],
     format: "transport",
     topics: ["transport", "trip-planning"],
     destinations: ["beijing", "zhangjiajie", "shanghai"],
@@ -471,6 +499,8 @@ export const guideRegistry = [
     id: "is-your-china-itinerary-too-rushed",
     type: "planning",
     featured: true,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
     format: "planning-guide",
     topics: ["pace", "itinerary-design", "trip-planning"],
     destinations: ["china"],
@@ -525,6 +555,8 @@ export const guideRegistry = [
     id: "do-us-citizens-need-visa-china-2026",
     type: "planning",
     featured: false,
+    pillar: "entry-rules",
+    audienceMarkets: ["us"],
     format: "planning-guide",
     topics: ["trip-planning"],
     destinations: ["china"],
@@ -543,7 +575,7 @@ export const guideRegistry = [
         title: "Do US Citizens Need a Visa for China in 2026?",
         headline: "Do US Citizens Need a Visa for China in 2026?",
         description:
-          "US passports need an L visa for a round trip to China. But 240-hour visa-free transit covers 65 ports and 55 nationalities, and whether you qualify is decided by where your flight goes after China.",
+          "US passports usually need an L visa for an ordinary mainland holiday. Compare the 240-hour transit route, Hainan’s 30-day regional policy and the rules for a standard round trip.",
         heroAlt:
           "Arrivals concourse at Shanghai Pudong International Airport, with bilingual wayfinding signs overhead.",
         navTitle: "US visa and transit guide",
@@ -555,7 +587,7 @@ export const guideRegistry = [
         title: "2026 年，美国护照去中国还需要签证吗？",
         headline: "2026 年，美国护照去中国还需要签证吗？",
         description:
-          "往返行程需要 L 签。但 240 小时过境免签覆盖 65 个口岸、55 个国家，而你符不符合条件，取决于离开中国后飞往哪里。",
+          "美国护照普通中国大陆旅行通常需要 L 签。本指南对比 240 小时过境免签、海南 30 天区域免签与标准往返行程。",
         heroAlt: "上海浦东国际机场到达层，头顶是中英双语指示牌。",
         navTitle: "美国签证与过境指南",
         featuredLinkLabel: "看看你的路线属于哪条入境路径",
@@ -566,7 +598,7 @@ export const guideRegistry = [
         title: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
         headline: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
         description:
-          "왕복 일정은 L 비자가 필요합니다. 다만 240시간 무비자 환승은 65개 항구와 55개국을 다루며, 조건 충족 여부는 중국을 떠난 뒤 어디로 가느냐가 정합니다.",
+          "미국 여권의 일반적인 중국 본토 여행에는 대체로 L 비자가 필요합니다. 240시간 무비자 환승, 하이난 30일 지역 무비자와 일반 왕복 일정을 비교합니다.",
         heroAlt:
           "상하이 푸둥 국제공항 도착층, 머리 위로 안내 표지판이 보인다.",
         navTitle: "미국 비자·환승 가이드",
@@ -579,6 +611,8 @@ export const guideRegistry = [
     id: "china-visa-free-uk-citizens-2026",
     type: "planning",
     featured: false,
+    pillar: "entry-rules",
+    audienceMarkets: ["uk"],
     format: "decision-guide",
     topics: ["trip-planning"],
     destinations: ["china"],
@@ -680,6 +714,13 @@ export function getAllGuides(locale: HomegroundLocale = "en") {
         a.registryIndex - b.registryIndex,
     )
     .map(({ entry }) => getGuideEntry(entry.id, locale));
+}
+
+export function getGuidesByPillar(
+  pillar: GuidePillar,
+  locale: HomegroundLocale = "en",
+) {
+  return getAllGuides(locale).filter((guide) => guide.pillar === pillar);
 }
 
 export function getGuideAvailableLocales(id: GuideId) {

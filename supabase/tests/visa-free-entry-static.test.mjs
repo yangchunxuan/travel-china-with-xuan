@@ -6,7 +6,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("visa-free page states the current 2026 rule without overclaiming", async () => {
+test("legacy UK and Canada URL no longer competes with the country guides", async () => {
   const page = await source(
     "app/(default)/china-visa-free-uk-canada/page.tsx",
   );
@@ -28,9 +28,10 @@ test("visa-free page states the current 2026 rule without overclaiming", async (
   assert.match(article, /counted from 00:00 on the[\s\S]*day after entry/);
   assert.match(article, /not the[\s\S]*240-hour[\s\S]*transit policy/);
   assert.match(article, /cannot be combined to create a 40-day stay/);
-  assert.match(page, /canonical: VISA_FREE_ENTRY_PATH/);
-  assert.match(page, /index: true/);
+  assert.match(page, /canonical: entryHubPath/);
+  assert.match(page, /index: false/);
   assert.match(page, /follow: true/);
+  assert.match(page, /ChinaEntryGuidesPage/);
 
   for (const unsupportedClaim of [
     /six months['’]? validity/i,
@@ -62,18 +63,36 @@ test("visa-free page uses Chinese official sources and preserves the policy boun
   assert.match(article, /utm_campaign=article-to-route-finder/);
 });
 
-test("visa-free URL is discoverable from the sitemap and English footer", async () => {
+test("entry hub replaces the legacy URL in sitemap and English footer", async () => {
   const sitemap = await source("app/sitemap.ts");
   const footer = await source("components/HomegroundFooter.tsx");
   const productionPruner = await source("tools/prune-production-export.mjs");
 
-  assert.match(sitemap, /VISA_FREE_ENTRY_URL/);
-  assert.match(sitemap, /VISA_FREE_ENTRY_MODIFIED/);
+  assert.doesNotMatch(sitemap, /VISA_FREE_ENTRY_URL/);
+  assert.match(sitemap, /guides\/china-entry-requirements/);
   assert.match(footer, /locale === "en"/);
-  assert.match(footer, /href="\/china-visa-free-uk-canada\/"/);
+  assert.match(footer, /href="\/guides\/china-entry-requirements\/"/);
   assert.match(footer, /\{copy\.navigation\.visa\}/);
   assert.match(
     productionPruner,
     /china-visa-free-uk-canada\/index\.html/,
   );
+});
+
+test("China entry hub is a bounded editorial collection, not a visa service", async () => {
+  const route = await source(
+    "app/(default)/guides/china-entry-requirements/page.tsx",
+  );
+  const hub = await source("components/ChinaEntryGuidesPage.tsx");
+  const registry = await source("lib/guideRegistry.ts");
+
+  assert.match(route, /canonical: path/);
+  assert.match(route, /index: true/);
+  assert.match(hub, /<h1>China entry guides<\/h1>/);
+  assert.match(hub, /getGuidesByPillar\("entry-rules", "en"\)/);
+  assert.match(hub, /does not file[\s\S]*visa applications/);
+  assert.match(hub, /does not[\s\S]*decide personal eligibility/);
+  assert.match(hub, /Start my free trip brief/);
+  assert.match(registry, /export type GuidePillar/);
+  assert.match(registry, /export function getGuidesByPillar/);
 });

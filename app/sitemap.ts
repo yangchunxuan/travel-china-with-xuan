@@ -5,10 +5,6 @@ import {
   getGuideLanguageUrls,
   guideIds,
 } from "../lib/guideRegistry";
-import {
-  VISA_FREE_ENTRY_MODIFIED,
-  VISA_FREE_ENTRY_URL,
-} from "../lib/visaFreeEntry";
 
 export const dynamic = "force-static";
 
@@ -105,21 +101,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/guides/`,
-      lastModified: "2026-07-23",
+      lastModified: "2026-07-24",
       changeFrequency: "weekly",
       priority: 0.8,
       alternates: { languages: guideHubLanguages },
     },
     {
       url: `${base}/zh/guides/`,
-      lastModified: "2026-07-23",
+      lastModified: "2026-07-24",
       changeFrequency: "weekly",
       priority: 0.75,
       alternates: { languages: guideHubLanguages },
     },
     {
       url: `${base}/ko/guides/`,
-      lastModified: "2026-07-23",
+      lastModified: "2026-07-24",
       changeFrequency: "weekly",
       priority: 0.75,
       alternates: { languages: guideHubLanguages },
@@ -132,10 +128,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: itineraryReviewLanguages },
     },
     {
-      url: VISA_FREE_ENTRY_URL,
-      lastModified: VISA_FREE_ENTRY_MODIFIED,
+      url: `${base}/guides/china-entry-requirements/`,
+      lastModified: "2026-07-24",
       changeFrequency: "weekly",
-      priority: 0.75,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${base}/guides/china-entry-requirements/`,
+          "x-default": `${base}/guides/china-entry-requirements/`,
+        },
+      },
     },
     {
       url: `${base}/zh/china-itinerary-review/`,

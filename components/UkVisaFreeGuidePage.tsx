@@ -79,6 +79,13 @@ function createStructuredData() {
           {
             "@type": "ListItem",
             position: 3,
+            name: "China entry guides",
+            item:
+              "https://homegroundchina.com/guides/china-entry-requirements/",
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
             name: "China visa-free for UK citizens",
             item: guide.canonicalUrl,
           },
@@ -130,6 +137,11 @@ export function UkVisaFreeGuidePage() {
                   </li>
                   <li>
                     <Link href="/guides/">Travel guides</Link>
+                  </li>
+                  <li>
+                    <Link href="/guides/china-entry-requirements/">
+                      China entry guides
+                    </Link>
                   </li>
                   <li aria-current="page">UK entry guide</li>
                 </ol>

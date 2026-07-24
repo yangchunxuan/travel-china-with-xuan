@@ -70,6 +70,11 @@ const sharedSources: SourceLink[] = [
     label: "Chinese Embassy in the United States — tourist (L) visa",
     url: "https://us.china-embassy.gov.cn/eng./lsfw/zj/qz2021/202509/t20250920_11712385.htm",
   },
+  {
+    label:
+      "National Immigration Administration — regional visa-free entry policies",
+    url: "https://en.nia.gov.cn/n147418/n147463/c180637/content.html",
+  },
 ];
 
 const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
@@ -85,9 +90,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     eyebrow: "Entry guide · United States",
     title: "Do US Citizens Need a Visa for China in 2026?",
     directAnswer:
-      "Yes, for an ordinary holiday — a US passport still needs an L visa to fly into China and home again. But one exemption lets Americans in with no visa at all, and it is wide enough for ten days in Beijing or Shanghai. Which one you fall under is not decided by your paperwork. It is decided by where your plane goes after China.",
+      "Usually, for an ordinary multi-city holiday. A US passport is not covered by China's nationwide unilateral tourism waiver, so a New York → Beijing → New York trip still needs an L visa. The important exceptions are route-specific: eligible travellers can use 240-hour visa-free transit on the way to a third country or region, while a separate policy allows eligible US passport holders to stay within Hainan for up to 30 days.",
     directAnswerTail:
-      "That is the part most people get backwards. They book the flights, then ask about the visa. By then the answer has already been chosen for them.",
+      "That is the part most people get backwards. They book the flights, then check the entry rule. By then the route may already have removed the option they wanted.",
     scopeNote:
       "This page covers ordinary US passports travelling to mainland China for tourism. It is not immigration advice, and we do not process visa applications.",
     updatedLabel: "Updated",
@@ -95,19 +100,20 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     heroAlt:
       "Arrivals concourse at Shanghai Pudong International Airport, with bilingual wayfinding signs overhead.",
     heroCaption:
-      "Whether you needed a visa was settled long before you reached this hall.",
+      "Your passport, purpose and route all need checking before you reach this hall.",
     sectionOne: {
       id: "round-trip",
-      title: "The round trip is the one with no exemption",
+      title: "The Beijing round trip has no transit exemption",
       paragraphs: [
         "Fly New York to Beijing and back to New York, and you need a tourist visa. Nothing in the last two years of visa-free announcements changes that. Those waves covered European, Australian, Korean and Japanese passports; the lists ran to dozens of countries, and the American one was never among them for ordinary tourism.",
         "What did change is the burden. Since 1 January 2024 the embassy stopped asking L visa applicants for round-trip air tickets, hotel reservations, a day-by-day itinerary, or an invitation letter. The visa is still required. It is simply no longer a research project.",
+        "That does not mean every US itinerary requires a visa. Ordinary US passports are included in a separate 30-day visa-free policy for stays within Hainan, and organised cruise groups have another narrow scheme. Those regional policies are not permission for an unrestricted mainland itinerary.",
       ],
     },
     sectionTwo: {
       id: "transit",
-      title: "Then there is the exemption almost no American uses",
-      lead: "US citizens sit on the list of 55 nationalities eligible for China's 240-hour visa-free transit. Ten days, no visa, no application, no fee.",
+      title: "The broad route-based exception is 240-hour transit",
+      lead: "US citizens sit on the list of 55 nationalities eligible for China's 240-hour visa-free transit. Eligible travellers do not obtain a visa in advance, but they still complete temporary-entry formalities at the port.",
       paragraphs: [
         "Since 5 November 2025 the policy covers 65 ports across 24 provincial-level regions — Beijing, Shanghai, Guangzhou, Xi'an and Chengdu among them.",
         "One condition carries the whole thing: your onward ticket has to leave for a third country or region, with a confirmed seat and date.",
@@ -119,9 +125,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     sectionThree: {
       id: "where-it-fails",
       title: "Where it actually goes wrong",
-      lead: "Not in China. At the departure gate in the United States.",
+      lead: "It can fail before departure or at the Chinese port of entry.",
       paragraphs: [
-        "The airline is the one that checks. An agent runs your passport against your onward ticket, sees a routing that does not satisfy the exemption, and you are not flying — hours before any Chinese official would have seen your documents. The refusal happens on your side of the ocean, and there is nothing to appeal.",
+        "An airline may check your passport and onward ticket before boarding. After arrival, the immigration inspection authority at the designated Chinese port handles the temporary-entry formalities and makes the entry decision. A ticket pattern is therefore necessary, but it is not a guarantee of admission.",
         "Which is why the errors that matter all happen weeks earlier, at the booking stage. Reserving the return leg to the US before checking whether the trip needed to end somewhere else. Reading “visa-free” as “unrestricted,” when the exemption is tied to designated ports and permitted areas. Assuming a policy you read about last year still describes this year's ports.",
         "Each of those is cheap to fix in the planning and expensive to discover at the airport.",
       ],
@@ -136,7 +142,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "Is China visa-free for Americans now?",
         answer:
-          "Not for a round trip. A US passport enters mainland China without a visa in one situation: transiting to a third country or region within 240 hours, through one of the designated ports.",
+          "Not under the nationwide unilateral tourism waiver. A US passport may still qualify under route- or region-specific policies, including 240-hour transit to a third country or region and the Hainan-only 30-day policy.",
       },
       {
         question: "Does Hong Kong count as leaving China?",
@@ -155,9 +161,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       },
     ],
     ctaEyebrow: "If the routing is what decides it",
-    ctaTitle: "Then the question was never really about visas.",
+    ctaTitle: "Put the route before the non-refundable bookings.",
     ctaBody:
-      "Whether you need one comes down to the order of your flights, the port you arrive at, and where you go next — the same three decisions that determine whether the trip itself is any good. Send us the route you are weighing up: the cities, roughly when, and where you were thinking of flying home from. We will tell you which entry path it falls under, and what would have to change for it to qualify.",
+      "Send us the route you are weighing up: the cities, approximate dates and where you were thinking of flying next. We can flag which published entry rule appears relevant and how the flight order affects the trip plan. You should confirm eligibility and final admission with the official authority.",
     ctaBoundary:
       "We plan trips; we are not a visa agency. We do not file applications and we never ask for passports or documents.",
     ctaAction: "Start a trip conversation",
@@ -184,27 +190,28 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     eyebrow: "入境指南 · 美国",
     title: "2026 年,美国护照去中国还需要签证吗?",
     directAnswer:
-      "普通旅游需要 —— 飞进中国再飞回美国,美国护照仍要办 L 签。但有一条免签通道对美国人是开的,而且宽到足够在北京或上海待满十天。你适用哪一条,不取决于你准备了什么材料,取决于你离开中国之后飞往哪里。",
+      "普通多城市旅行通常需要。美国护照不在中国单方面旅游免签名单内,所以纽约 → 北京 → 纽约仍需办理 L 签。重要例外与路线有关:符合条件者可在前往第三国或地区途中使用 240 小时过境免签;另有一项独立政策,允许符合条件的美国普通护照持有人在海南省内免签停留不超过 30 天。",
     directAnswerTail:
-      "多数人把顺序搞反了:先订机票,再问签证。等问的时候,答案早已经被机票定死了。",
+      "多数人把顺序搞反了:先订机票,再核对入境规则。等核对的时候,航线可能已经把原本想用的选项排除了。",
     scopeNote:
       "本页针对持普通美国护照、以旅游目的前往中国大陆的情况。这不是移民建议,我们也不代办签证。",
     updatedLabel: "最近更新",
     updatedDate: "2026 年 7 月 24 日",
     heroAlt: "上海浦东国际机场到达层,头顶是中英双语指示牌。",
-    heroCaption: "你需不需要签证,在走到这个大厅之前就已经定了。",
+    heroCaption: "走到这个大厅之前,护照、旅行目的和航线都需要核对。",
     sectionOne: {
       id: "round-trip",
-      title: "往返行程,是没有例外的那一种",
+      title: "北京往返行程不属于过境免签",
       paragraphs: [
         "纽约飞北京、再从北京飞回纽约,就需要旅游签证。过去两年那一波波免签公告都改变不了这一点 —— 那些名单覆盖的是欧洲、澳大利亚、韩国、日本等护照,数十个国家,普通旅游这一项里从来没有美国。",
         "真正变了的是材料。自 2024 年 1 月 1 日起,使馆办 L 签不再要求往返机票、酒店订单、逐日行程或邀请函。签证还是要办,只是不再像做课题。",
+        "这不等于所有美国行程都要签证。美国普通护照在海南 30 天区域免签名单内;由中国境内旅行机构接待的邮轮团另有范围较小的免签政策。这些区域政策并不等于可以不受限制地游览中国大陆。",
       ],
     },
     sectionTwo: {
       id: "transit",
-      title: "而那条几乎没有美国人用起来的免签通道",
-      lead: "美国在中国 240 小时过境免签的 55 个适用国家名单里。十天,免签,不用申请,不用交费。",
+      title: "覆盖面较广的路线型例外是 240 小时过境免签",
+      lead: "美国在中国 240 小时过境免签的 55 个适用国家名单里。符合条件者无需提前办理签证,但抵达指定口岸后仍要办理临时入境手续。",
       paragraphs: [
         "自 2025 年 11 月 5 日起,这项政策覆盖 24 个省级地区的 65 个口岸 —— 北京、上海、广州、西安、成都都在内。",
         "全靠一个条件撑着:你的续程票必须飞往第三国或地区,且座位与日期已确认。",
@@ -216,9 +223,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     sectionThree: {
       id: "where-it-fails",
       title: "真正出问题的地方",
-      lead: "不在中国,在美国的登机口。",
+      lead: "可能在出发前,也可能在中国入境口岸。",
       paragraphs: [
-        "查的是航空公司。地勤把你的护照和续程票对一遍,发现这个航线结构不满足免签条件,你就飞不了 —— 而这一切发生在任何中国边检见到你的证件之前好几个小时。拒绝发生在大洋的这一侧,而且无处申诉。",
+        "航空公司可能在登机前核对护照和续程票。抵达后,指定中国口岸的移民检查机关负责办理临时入境手续并作出入境决定。因此,航线结构是必要条件,但不是入境保证。",
         "所以真正致命的错误,都发生在几周之前的订票环节:先把回美国的那一程订好,再去想这趟旅行是不是本该结束在别的地方;把“免签”读成“不受限”,而这项免签是绑定指定口岸和允许停留区域的;或者拿去年读到的政策,当成今年的口岸清单。",
         "这些在规划阶段改起来都很便宜,到机场才发现就很贵。",
       ],
@@ -233,7 +240,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "现在美国人去中国免签了吗?",
         answer:
-          "往返行程不免。美国护照免签进入中国大陆只有一种情形:在 240 小时内经指定口岸过境前往第三国或地区。",
+          "美国护照不适用全国性的单方面旅游免签,但可能适用与路线或地区绑定的政策,包括前往第三国或地区的 240 小时过境免签,以及仅限海南省内的 30 天免签。",
       },
       {
         question: "香港算离开中国吗?",
@@ -251,9 +258,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       },
     ],
     ctaEyebrow: "如果决定权在航线",
-    ctaTitle: "那这件事从来就不是签证问题。",
+    ctaTitle: "先定航线,再付不可退的费用。",
     ctaBody:
-      "你要不要签证,取决于航班顺序、从哪个口岸入境、以及下一程去哪 —— 而这三件事,同时也决定了这趟旅行本身好不好。把你正在考虑的路线发给我们:城市、大概什么时候、原本打算从哪里飞回去。我们会告诉你它属于哪条入境路径,以及要符合条件需要改什么。",
+      "把你正在考虑的路线发给我们:城市、大概日期,以及下一程原本准备飞往哪里。我们可以指出哪一条公开规则看起来与路线相关,以及航班顺序怎样影响旅行规划。个人资格和最终入境决定仍需向官方机关确认。",
     ctaBoundary:
       "我们做旅行规划,不是签证代办。我们不递交申请,也从不索取护照或证件材料。",
     ctaAction: "开始一次行程沟通",
@@ -274,27 +281,28 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     eyebrow: "입국 가이드 · 미국",
     title: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
     directAnswer:
-      "일반적인 여행이라면 필요합니다. 중국에 들어갔다가 미국으로 돌아오는 일정이라면 미국 여권도 L 비자를 받아야 합니다. 다만 미국인에게 열려 있는 면제 통로가 하나 있고, 베이징이나 상하이에서 열흘을 보내기에 충분할 만큼 넓습니다. 어느 쪽에 해당하는지는 준비한 서류가 아니라, 중국을 떠난 뒤 어디로 가느냐가 정합니다.",
+      "일반적인 여러 도시 여행이라면 대체로 필요합니다. 미국 여권은 중국의 전국 단위 일방적 관광 무비자 대상이 아니므로 뉴욕 → 베이징 → 뉴욕 일정은 여전히 L 비자가 필요합니다. 중요한 예외는 경로에 따라 달라집니다. 조건을 충족하면 제3국·지역으로 가는 도중 240시간 무비자 환승을 이용할 수 있고, 별도의 정책으로 적격 미국 일반 여권 소지자는 하이난성 안에서 최대 30일까지 무비자로 체류할 수 있습니다.",
     directAnswerTail:
-      "많은 분이 순서를 거꾸로 밟습니다. 항공권부터 끊고 나서 비자를 묻습니다. 그때는 이미 항공권이 답을 정해 버린 뒤입니다.",
+      "많은 분이 순서를 거꾸로 밟습니다. 항공권부터 끊고 나서 입국 규정을 확인합니다. 그때는 이미 경로 때문에 원하던 선택지가 사라진 뒤일 수 있습니다.",
     scopeNote:
       "이 페이지는 일반 미국 여권으로 관광 목적의 중국 본토 방문을 다룹니다. 이민 관련 조언이 아니며, 저희는 비자를 대행하지 않습니다.",
     updatedLabel: "최종 업데이트",
     updatedDate: "2026년 7월 24일",
     heroAlt: "상하이 푸둥 국제공항 도착층, 머리 위로 중국어·영어 안내 표지판이 보인다.",
-    heroCaption: "비자가 필요한지 여부는 이 홀에 닿기 훨씬 전에 이미 정해집니다.",
+    heroCaption: "이 홀에 닿기 전에 여권, 방문 목적과 경로를 모두 확인해야 합니다.",
     sectionOne: {
       id: "round-trip",
-      title: "왕복 일정에는 예외가 없습니다",
+      title: "베이징 왕복 일정에는 환승 면제가 없습니다",
       paragraphs: [
         "뉴욕에서 베이징으로 갔다가 다시 뉴욕으로 돌아온다면 관광 비자가 필요합니다. 지난 2년간 이어진 무비자 발표들도 이 점은 바꾸지 못했습니다. 그 명단은 유럽·호주·한국·일본 여권을 다뤘고 수십 개국에 이르렀지만, 일반 관광 항목에 미국이 들어간 적은 없습니다.",
         "정말로 달라진 것은 서류 부담입니다. 2024년 1월 1일부터 대사관은 L 비자 신청 시 왕복 항공권, 호텔 예약, 일자별 일정표, 초청장을 요구하지 않습니다. 비자는 여전히 필요하지만, 더 이상 과제처럼 준비할 일은 아닙니다.",
+        "그렇다고 모든 미국 여정에 비자가 필요한 것은 아닙니다. 미국 일반 여권은 하이난 30일 지역 무비자 대상에 포함되고, 중국 여행 기관이 맡는 유람선 단체에는 별도의 범위가 작은 면제 제도가 있습니다. 이런 지역 정책은 중국 본토 전역을 제한 없이 여행할 수 있다는 뜻이 아닙니다.",
       ],
     },
     sectionTwo: {
       id: "transit",
-      title: "그리고 미국인이 거의 쓰지 않는 면제 통로",
-      lead: "미국은 중국 240시간 무비자 환승이 적용되는 55개국 명단에 있습니다. 열흘, 무비자, 신청도 수수료도 없습니다.",
+      title: "가장 폭넓은 경로형 예외는 240시간 무비자 환승입니다",
+      lead: "미국은 중국 240시간 무비자 환승이 적용되는 55개국 명단에 있습니다. 조건을 충족한 여행자는 비자를 미리 발급받지 않지만, 지정 항구에서 임시 입국 수속은 거쳐야 합니다.",
       paragraphs: [
         "2025년 11월 5일부터 이 정책은 24개 성급 지역의 65개 항구·공항에 적용됩니다. 베이징, 상하이, 광저우, 시안, 청두가 모두 포함됩니다.",
         "모든 것을 지탱하는 조건은 하나입니다. 다음 구간 항공권이 제3국 또는 제3지역으로 향해야 하고, 좌석과 날짜가 확정되어 있어야 합니다.",
@@ -306,9 +314,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     sectionThree: {
       id: "where-it-fails",
       title: "실제로 문제가 터지는 지점",
-      lead: "중국이 아니라, 미국의 탑승 게이트입니다.",
+      lead: "출발 전에도, 중국 입국 항구에서도 문제가 생길 수 있습니다.",
       paragraphs: [
-        "확인하는 주체는 항공사입니다. 직원이 여권과 다음 구간 항공권을 대조해 면제 조건을 만족하지 못하는 경로임을 확인하면 탑승할 수 없습니다. 중국 당국이 서류를 보기 몇 시간 전, 바다 이쪽 편에서 벌어지는 일이고, 이의를 제기할 곳도 없습니다.",
+        "항공사는 탑승 전에 여권과 다음 구간 항공권을 확인할 수 있습니다. 도착 후에는 지정된 중국 항구의 출입경 검사기관이 임시 입국 수속을 처리하고 입국 여부를 결정합니다. 따라서 항공권 경로는 필요한 조건이지만 입국을 보장하지는 않습니다.",
         "그래서 정말 중요한 실수는 모두 몇 주 전 예약 단계에서 일어납니다. 미국으로 돌아오는 구간을 먼저 확정한 뒤에야 이 여행이 다른 곳에서 끝났어야 했는지를 따져 보는 것. 지정된 항구와 허용 지역에 묶인 면제를 “무비자 = 제한 없음”으로 읽는 것. 작년에 읽은 정책을 올해의 항구 목록이라고 여기는 것.",
         "모두 계획 단계에서는 고치기 싼 문제이고, 공항에서 발견하면 비싼 문제입니다.",
       ],
@@ -323,7 +331,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "이제 미국인은 중국에 무비자로 갈 수 있나요?",
         answer:
-          "왕복 일정은 아닙니다. 미국 여권이 무비자로 중국 본토에 들어가는 경우는 하나입니다. 지정된 항구를 통해 240시간 안에 제3국 또는 제3지역으로 환승하는 경우입니다.",
+          "미국 여권은 전국 단위 일방적 관광 무비자 대상이 아닙니다. 다만 제3국·지역으로 가는 240시간 무비자 환승이나 하이난성에 한정된 30일 무비자처럼 경로·지역별 정책에 해당할 수 있습니다.",
       },
       {
         question: "홍콩은 중국을 떠난 것으로 치나요?",
@@ -342,9 +350,9 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       },
     ],
     ctaEyebrow: "경로가 결정한다면",
-    ctaTitle: "그렇다면 이것은 애초에 비자 문제가 아니었습니다.",
+    ctaTitle: "환불 불가 예약보다 경로를 먼저 정하세요.",
     ctaBody:
-      "비자가 필요한지는 항공편의 순서, 어느 항구로 들어가는지, 그다음에 어디로 가는지가 정합니다. 그리고 이 세 가지는 여행 자체가 좋은지를 결정하는 요소이기도 합니다. 고민 중인 경로를 보내 주세요. 도시, 대략의 시기, 그리고 원래 어디에서 돌아올 생각이었는지를요. 어느 입국 경로에 해당하는지, 조건을 맞추려면 무엇을 바꿔야 하는지 알려 드리겠습니다.",
+      "고민 중인 경로를 보내 주세요. 도시, 대략의 날짜, 그리고 다음에 어디로 갈 생각인지 알려 주시면 공개된 규정 중 어떤 것이 관련 있어 보이는지와 항공편 순서가 여행 계획에 미치는 영향을 짚어 드릴 수 있습니다. 개인 자격과 최종 입국 여부는 공식 기관에 확인해야 합니다.",
     ctaBoundary:
       "저희는 여행을 설계하며, 비자 대행사가 아닙니다. 신청을 접수하지 않고 여권이나 서류를 요구하지도 않습니다.",
     ctaAction: "여행 상담 시작하기",

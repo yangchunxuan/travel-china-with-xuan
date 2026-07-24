@@ -330,7 +330,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       planning: "How we plan",
       studio: "Studio",
       faq: "FAQ",
-      visa: "Visa guide",
+      visa: "Entry guides",
       openMenu: "Open navigation",
       closeMenu: "Close navigation",
       plannerCta: {
@@ -845,7 +845,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       planning: "我们如何规划",
       studio: "工作室",
       faq: "常见问题",
-      visa: "免签指南",
+      visa: "入境指南",
       openMenu: "打开导航",
       closeMenu: "关闭导航",
       plannerCta: {
@@ -1321,7 +1321,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       planning: "여행 설계 방식",
       studio: "스튜디오",
       faq: "자주 묻는 질문",
-      visa: "무비자 안내",
+      visa: "입국 가이드",
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       plannerCta: {

@@ -66,6 +66,8 @@ test("guide route, article schema, CTA and responsive visual assets are wired", 
 
   assert.match(page, /"@type": "Article"/);
   assert.match(page, /"@type": "BreadcrumbList"/);
+  assert.match(page, /China entry guides/);
+  assert.match(page, /\/guides\/china-entry-requirements\//);
   assert.match(page, /citation: UK_VISA_GUIDE_SOURCES\.map/);
   assert.match(page, /Start my China trip brief/);
   assert.match(page, /utm_campaign=trip-conversation/);

@@ -23,6 +23,17 @@ export interface GuidesHubCopy {
   catalogTitle: string;
   catalogIntroduction: string;
   guideCount: (count: number) => string;
+  libraryNav: {
+    label: string;
+    planning: string;
+    entry: string;
+  };
+  entrySection: {
+    eyebrow: string;
+    title: string;
+    introduction: string;
+    action: string;
+  };
   updatedLabel: string;
   readLabel: string;
   formatLabels: Record<GuideFormat, string>;
@@ -55,6 +66,18 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     catalogIntroduction:
       "Every guide begins with a planning decision: what fits, what a transfer costs, or which detail changes the rest of the trip.",
     guideCount: (count) => `${count} guides`,
+    libraryNav: {
+      label: "Browse guide collections",
+      planning: "Routes & trip planning",
+      entry: "Entry & visa-free rules",
+    },
+    entrySection: {
+      eyebrow: "Entry rules",
+      title: "Know the entry path before you build the route.",
+      introduction:
+        "Official-source explainers by passport, purpose and flight path. Homeground does not file visa applications or decide personal eligibility.",
+      action: "Open China entry guides",
+    },
     updatedLabel: "Updated",
     readLabel: "Read guide",
     formatLabels: {
@@ -106,6 +129,18 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     catalogIntroduction:
       "每一篇指南都从一个真实决定开始：时间到底够不够、一次转场会占掉什么，或哪个细节会改变整趟旅行。",
     guideCount: (count) => `共 ${count} 篇指南`,
+    libraryNav: {
+      label: "浏览指南栏目",
+      planning: "路线与旅行规划",
+      entry: "入境与免签规则",
+    },
+    entrySection: {
+      eyebrow: "入境规则",
+      title: "先弄清入境路径，再开始设计路线。",
+      introduction:
+        "按护照、旅行目的和航班路径整理公开规则。Homeground 不代办签证，也不判断个人签证资格。",
+      action: "查看中国入境指南",
+    },
     updatedLabel: "更新于",
     readLabel: "阅读指南",
     formatLabels: {
@@ -157,6 +192,18 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     catalogIntroduction:
       "각 가이드는 한 가지 현실적인 결정에서 시작합니다. 무엇이 가능한지, 이동에 실제로 얼마나 드는지, 어떤 작은 조건이 여행 전체를 바꾸는지를 살펴봅니다.",
     guideCount: (count) => `가이드 ${count}편`,
+    libraryNav: {
+      label: "가이드 모음",
+      planning: "동선과 여행 설계",
+      entry: "입국 및 무비자 규정",
+    },
+    entrySection: {
+      eyebrow: "입국 규정",
+      title: "입국 경로를 먼저 확인한 뒤 일정을 설계하세요.",
+      introduction:
+        "여권, 여행 목적과 항공 경로별 공개 규정을 공식 출처로 정리합니다. Homeground는 비자 신청을 대행하거나 개인 자격을 판정하지 않습니다.",
+      action: "중국 입국 가이드 보기",
+    },
     updatedLabel: "업데이트",
     readLabel: "가이드 읽기",
     formatLabels: {
