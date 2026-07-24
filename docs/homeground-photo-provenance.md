@@ -187,3 +187,18 @@ Current website derivatives:
 Each is released as a JPG fallback plus WebP and AVIF derivatives, written
 without EXIF, GPS or ICC metadata, carrying the same small Homeground
 watermark used elsewhere on the site.
+
+For the New Zealand visa-free entry guide, no unused owner-supplied
+photograph fit the article without repeating imagery already used for the
+UK or Canada guides. The hero, card and open-graph images are instead an
+original generated editorial timeline diagram (see
+`tools/build-nz-visa-diagram.mjs`) stating the policy window itself —
+30 November 2024 through 31 December 2026 — in the site's ink/rust/canvas
+palette. It carries no seal, stamp or badge that could imply official
+endorsement.
+
+Current website derivatives:
+
+- `public/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-hero-*`
+- `public/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-card-*`
+- `public/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-og-*`

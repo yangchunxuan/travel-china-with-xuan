@@ -17,6 +17,7 @@ export const guideIds = [
   "do-us-citizens-need-visa-china-2026",
   "china-visa-free-uk-citizens-2026",
   "china-visa-free-canadian-citizens-2026",
+  "china-visa-free-new-zealand-citizens-2026",
   "china-240-hour-visa-free-transit-route-check",
   "do-singaporeans-need-visa-china",
 ] as const;
@@ -57,7 +58,8 @@ export type GuideAudienceMarket =
   | "uk"
   | "us"
   | "canada"
-  | "singapore";
+  | "singapore"
+  | "new-zealand";
 
 export interface GuideLocaleEntry {
   path: string;
@@ -696,6 +698,45 @@ export const guideRegistry = [
         featuredLinkLabel:
           "Check whether your Canadian passport and trip qualify",
         openGraphLocale: "en_CA",
+      },
+    },
+  },
+  {
+    id: "china-visa-free-new-zealand-citizens-2026",
+    type: "planning",
+    featured: false,
+    pillar: "entry-rules",
+    audienceMarkets: ["new-zealand"],
+    format: "decision-guide",
+    topics: ["trip-planning"],
+    destinations: ["china"],
+    cardImagePath:
+      "/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-card-1200.jpg",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
+    sourceReviewedDate: "2026-07-24",
+    locales: {
+      en: {
+        path: "/guides/china-visa-free-new-zealand-citizens-2026/",
+        title: "China Visa-Free for New Zealand Citizens 2026: 30-Day Rules",
+        headline:
+          "China Visa-Free for New Zealand Citizens in 2026: When Do You Still Need a Visa?",
+        description:
+          "A practical guide to China’s 30-day visa-free entry for New Zealand citizens in 2026, including passport types, day counting, Hong Kong re-entry and when a visa is still required.",
+        heroAlt:
+          "An editorial timeline diagram showing New Zealand’s China visa-free policy window from 30 November 2024 through 31 December 2026.",
+        navTitle: "New Zealand passport China entry guide",
+        featuredLinkLabel:
+          "Check whether your New Zealand passport and trip qualify",
+        openGraphLocale: "en_NZ",
       },
     },
   },
