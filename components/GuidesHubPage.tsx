@@ -97,6 +97,12 @@ export function GuidesHubPage({
   const copy = getGuidesHubCopy(locale);
   const guides = getAllGuides(locale);
   const schema = jsonLdForHub(locale);
+  const tailCount = Math.max(0, guides.length - 2);
+  const tailRemainder = tailCount % 3;
+  const wideTailIndex =
+    tailRemainder === 1 ? guides.length - 1 : -1;
+  const halfTailStart =
+    tailRemainder === 2 ? guides.length - 2 : guides.length;
 
   return (
     <div
@@ -162,14 +168,19 @@ export function GuidesHubPage({
             </div>
           </div>
 
-          <ol className={styles.guideGrid}>
+          <ol
+            className={styles.guideGrid}
+            data-odd-count={guides.length % 2 === 1 ? "true" : "false"}
+          >
             {guides.map((guide, index) => (
               <li
                 className={`${styles.guideSlot} ${
                   index === 0
                     ? styles.guideSlotLead
-                    : index === guides.length - 1
+                    : index === wideTailIndex
                       ? styles.guideSlotWide
+                      : index >= halfTailStart
+                        ? styles.guideSlotHalf
                       : ""
                 }`}
                 data-guide-id={guide.id}

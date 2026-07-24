@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import {
+  getGuideAvailableLocales,
   getGuideEntry,
   getGuideLanguageUrls,
   guideIds,
@@ -45,7 +46,7 @@ const itineraryReviewLanguages = {
 const guideEntries = guideIds.flatMap((guideId) => {
   const languages = getGuideLanguageUrls(guideId);
 
-  return (["en", "zh", "ko"] as const).map((locale) => {
+  return getGuideAvailableLocales(guideId).map((locale) => {
     const guide = getGuideEntry(guideId, locale);
 
     return {

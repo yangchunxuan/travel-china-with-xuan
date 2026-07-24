@@ -178,6 +178,10 @@
   grid-column: span 12;
 }
 
+.guideSlotHalf {
+  grid-column: span 6;
+}
+
 .guideCard,
 .guideLink {
   height: 100%;
@@ -391,12 +395,27 @@
 @media (max-width: 64rem) {
   .guideSlot,
   .guideSlotLead,
-  .guideSlotLead + .guideSlot {
+  .guideSlotLead + .guideSlot,
+  .guideSlotHalf {
     grid-column: span 6;
   }
 
   .guideSlotWide {
     grid-column: span 12;
+  }
+
+  .guideGrid[data-odd-count="true"] .guideSlot:last-child {
+    grid-column: span 12;
+  }
+
+  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideLink {
+    display: grid;
+    grid-template-columns: minmax(0, 0.94fr) minmax(20rem, 0.72fr);
+  }
+
+  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideImage {
+    aspect-ratio: auto;
+    min-height: 24rem;
   }
 }
 
@@ -426,6 +445,7 @@
   .guideSlot,
   .guideSlotLead,
   .guideSlotLead + .guideSlot,
+  .guideSlotHalf,
   .guideSlotWide {
     grid-column: span 12;
   }
@@ -434,7 +454,16 @@
     display: flex;
   }
 
+  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideLink {
+    display: flex;
+  }
+
   .guideSlotWide .guideImage {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideImage {
     aspect-ratio: 16 / 10;
     min-height: 0;
   }

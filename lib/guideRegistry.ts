@@ -1,4 +1,7 @@
-import type { HomegroundLocale } from "./homegroundI18n";
+import {
+  homegroundLocales,
+  type HomegroundLocale,
+} from "./homegroundI18n";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -12,6 +15,7 @@ export const guideIds = [
   "beijing-zhangjiajie-shanghai-transport",
   "is-your-china-itinerary-too-rushed",
   "do-us-citizens-need-visa-china-2026",
+  "china-visa-free-uk-citizens-2026",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -59,6 +63,8 @@ export interface GuideEntry {
   topics: readonly GuideTopic[];
   destinations: readonly GuideDestination[];
   homeFeaturedRank?: number;
+  /** Keeps a durable editorial lead on the Guides hub as new guides arrive. */
+  hubLead?: boolean;
   /** Optional editorial crop for guide cards; social metadata keeps the hero. */
   cardImagePath?: string;
   cardImageWidth?: number;
@@ -70,7 +76,7 @@ export interface GuideEntry {
   datePublished: string;
   dateModified: string;
   sourceReviewedDate: string;
-  locales: Record<HomegroundLocale, GuideLocaleEntry>;
+  locales: Partial<Record<HomegroundLocale, GuideLocaleEntry>>;
 }
 
 export const guideRegistry = [
@@ -82,6 +88,7 @@ export const guideRegistry = [
     topics: ["itinerary-design", "pace", "trip-planning"],
     destinations: ["zhangjiajie"],
     homeFeaturedRank: 1,
+    hubLead: true,
     heroImagePath: "/images/guides/zhangjiajie/hero-1600.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/zhangjiajie/hero-1600.jpg",
@@ -568,19 +575,61 @@ export const guideRegistry = [
       },
     },
   },
+  {
+    id: "china-visa-free-uk-citizens-2026",
+    type: "planning",
+    featured: false,
+    format: "decision-guide",
+    topics: ["trip-planning"],
+    destinations: ["china"],
+    cardImagePath:
+      "/images/guides/china-visa-free-uk-citizens-2026/great-wall-card-1200.jpg",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/china-visa-free-uk-citizens-2026/great-wall-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-visa-free-uk-citizens-2026/great-wall-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
+    sourceReviewedDate: "2026-07-24",
+    locales: {
+      en: {
+        path: "/guides/china-visa-free-uk-citizens-2026/",
+        title: "China Visa-Free for UK Citizens 2026: 30-Day Rules",
+        headline:
+          "China Visa-Free for UK Citizens in 2026: When Do You Still Need a Visa?",
+        description:
+          "A practical guide to China’s 30-day visa-free entry for UK citizens in 2026, including passport types, day counting, Hong Kong re-entry and when a visa is still required.",
+        heroAlt:
+          "The Great Wall crossing a mountain ridge near Beijing in spring.",
+        navTitle: "UK passport China entry guide",
+        featuredLinkLabel:
+          "Check whether your UK passport and trip qualify",
+        openGraphLocale: "en_GB",
+      },
+    },
+  },
 ] as const satisfies readonly GuideEntry[];
 
 export function getGuideEntry(
   id: GuideId,
   locale: HomegroundLocale = "en",
 ) {
-  const guide = guideRegistry.find((entry) => entry.id === id);
+  const guide: GuideEntry | undefined = guideRegistry.find(
+    (entry) => entry.id === id,
+  );
 
   if (!guide) {
     throw new Error(`Unknown guide: ${id}`);
   }
 
   const localized = guide.locales[locale];
+  if (!localized) {
+    throw new Error(`Guide "${id}" is not available in locale "${locale}".`);
+  }
   const cardImagePath =
     "cardImagePath" in guide ? guide.cardImagePath : guide.heroImagePath;
   const cardImageWidth =
@@ -617,12 +666,15 @@ export function getHomeFeaturedGuides(
 
 export function getAllGuides(locale: HomegroundLocale = "en") {
   return guideRegistry
+    .filter((entry) => Boolean(entry.locales[locale]))
     .map((entry, registryIndex) => ({
       entry,
       registryIndex,
     }))
     .sort(
       (a, b) =>
+        Number("hubLead" in b.entry && Boolean(b.entry.hubLead)) -
+          Number("hubLead" in a.entry && Boolean(a.entry.hubLead)) ||
         b.entry.dateModified.localeCompare(a.entry.dateModified) ||
         b.entry.datePublished.localeCompare(a.entry.datePublished) ||
         a.registryIndex - b.registryIndex,
@@ -630,17 +682,31 @@ export function getAllGuides(locale: HomegroundLocale = "en") {
     .map(({ entry }) => getGuideEntry(entry.id, locale));
 }
 
-export function getGuideLanguagePaths(id: GuideId) {
-  const en = getGuideEntry(id, "en").canonicalPath;
-  const zh = getGuideEntry(id, "zh").canonicalPath;
-  const ko = getGuideEntry(id, "ko").canonicalPath;
+export function getGuideAvailableLocales(id: GuideId) {
+  const guide: GuideEntry | undefined = guideRegistry.find(
+    (entry) => entry.id === id,
+  );
 
-  return {
-    en,
-    ko,
-    "zh-Hans": zh,
-    "x-default": en,
-  } as const;
+  if (!guide) {
+    throw new Error(`Unknown guide: ${id}`);
+  }
+
+  return homegroundLocales.filter((locale) => Boolean(guide.locales[locale]));
+}
+
+export function getGuideLanguagePaths(id: GuideId) {
+  const paths: Record<string, string> = {};
+
+  getGuideAvailableLocales(id).forEach((locale) => {
+    const language = locale === "zh" ? "zh-Hans" : locale;
+    paths[language] = getGuideEntry(id, locale).canonicalPath;
+  });
+
+  if (paths.en) {
+    paths["x-default"] = paths.en;
+  }
+
+  return paths;
 }
 
 export function getGuideLanguageUrls(id: GuideId) {
@@ -651,5 +717,5 @@ export function getGuideLanguageUrls(id: GuideId) {
       language,
       `${SITE_URL}${path}`,
     ]),
-  ) as Record<keyof typeof paths, string>;
+  );
 }

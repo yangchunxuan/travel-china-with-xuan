@@ -6,11 +6,11 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("guides hub is registry-driven and exposes all nine current guides", async () => {
+test("guides hub is registry-driven and exposes all ten current guides", async () => {
   const hub = await source("components/GuidesHubPage.tsx");
   const registry = await source("lib/guideRegistry.ts");
 
-  assert.equal((registry.match(/\n    id: "/g) ?? []).length, 9);
+  assert.equal((registry.match(/\n    id: "/g) ?? []).length, 10);
   assert.match(hub, /const guides = getAllGuides\(locale\)/);
   assert.match(hub, /guides\.map\(\(guide, index\) =>/);
   assert.doesNotMatch(
@@ -83,7 +83,7 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
 
   assert.doesNotMatch(hub, /^"use client";/);
   assert.match(hub, /<main id="guides-main" tabIndex=\{-1\}>/);
-  assert.match(hub, /<ol className=\{styles\.guideGrid\}>/);
+  assert.match(hub, /className=\{styles\.guideGrid\}/);
   assert.match(hub, /<article className=\{styles\.guideCard\}>/);
   assert.match(hub, /<time dateTime=\{guide\.dateModified\}>/);
   assert.match(hub, /src=\{guide\.cardImagePath\}/);
@@ -98,6 +98,14 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /"@type": "ItemList"/);
   assert.match(hub, /numberOfItems: guides\.length/);
   assert.match(hub, /itemListElement: guides\.map/);
+  assert.match(hub, /const tailRemainder = tailCount % 3/);
+  assert.match(hub, /styles\.guideSlotHalf/);
+  assert.match(hub, /data-odd-count=\{guides\.length % 2 === 1/);
+  assert.match(css, /\.guideSlotHalf\s*\{[\s\S]*?grid-column: span 6;/);
+  assert.match(
+    css,
+    /\.guideGrid\[data-odd-count="true"\] \.guideSlot:last-child\s*\{[\s\S]*?grid-column: span 12;/,
+  );
 });
 
 test("hub has a visible trip-brief CTA and stays usable from 320px to wide screens", async () => {

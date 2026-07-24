@@ -148,8 +148,8 @@ test("guide locales have independent URLs, copy and language metadata", async ()
   const copy = await source("lib/zhangjiajieGuideI18n.ts");
   const sitemap = await source("app/sitemap.ts");
 
-  assert.match(registry, /"zh-Hans": zh/);
-  assert.match(registry, /"x-default": en/);
+  assert.match(registry, /locale === "zh" \? "zh-Hans" : locale/);
+  assert.match(registry, /paths\["x-default"\] = paths\.en/);
   assert.match(copy, /htmlLang: "zh-Hans"/);
   assert.match(copy, /htmlLang: "ko"/);
   assert.match(copy, /按真正完整的游览日来计算/);
