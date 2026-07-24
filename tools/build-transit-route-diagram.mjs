@@ -36,7 +36,7 @@ function diagramSvg(width, height) {
   const labelSize = Math.round(nodeH * 0.34);
   const midSize = Math.round(nodeH * 0.26);
   const titleSize = Math.round(width * (isWide ? 0.038 : 0.042));
-  const subSize = Math.round(width * (isWide ? 0.0195 : 0.022));
+  const subSize = Math.round(width * (isWide ? 0.035 : 0.038));
 
   const arrow = (fromX, toX) => {
     const y = nodeY + nodeH / 2;
@@ -82,7 +82,8 @@ function diagramSvg(width, height) {
         y2="${nodeY + nodeH * 1.62}" stroke="${line}" stroke-width="1.4"/>
 
   <text x="${cx}" y="${nodeY + nodeH * 2.12}" text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif" font-size="${subSize}" fill="${muted}">
+        font-family="Arial, Helvetica, sans-serif" font-size="${subSize}"
+        font-weight="600" fill="${muted}">
     A and C must be different countries or regions
   </text>
 </svg>`);

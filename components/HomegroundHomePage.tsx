@@ -659,7 +659,7 @@ export function HomegroundHomePage({
                     <span className={styles.travelGuideImage}>
                       <img
                         src={guide.cardImagePath}
-                        alt={guide.heroAlt}
+                        alt={guide.cardImageAlt}
                         width={guide.cardImageWidth}
                         height={guide.cardImageHeight}
                         loading="lazy"
