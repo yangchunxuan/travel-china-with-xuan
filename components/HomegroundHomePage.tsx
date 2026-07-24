@@ -14,6 +14,7 @@ import {
   type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomeFeaturedGuides } from "../lib/guideRegistry";
 import type { DestinationPlan } from "../lib/destinationPlanner";
@@ -394,14 +395,9 @@ export function HomegroundHomePage({
         // The selected path remains available in React state.
       }
 
-      const analyticsWindow = window as typeof window & {
-        dataLayer?: Array<Record<string, unknown>>;
-      };
-      analyticsWindow.dataLayer ??= [];
-      analyticsWindow.dataLayer.push({
-        event: "planning_intent_selected",
+      trackEvent("planning_intent_selected", {
         planning_intent: nextIntent,
-        planning_starter_intent: nextStarterIntent ?? null,
+        planning_starter_intent: nextStarterIntent ?? "none",
         page_language: locale,
       });
     },

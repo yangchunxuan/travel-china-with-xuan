@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteAnalytics } from "../../components/SiteAnalytics";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>{children}</body>
+      <SiteAnalytics />
     </html>
   );
 }

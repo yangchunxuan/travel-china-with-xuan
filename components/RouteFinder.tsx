@@ -26,6 +26,7 @@ import {
   type DestinationPlannerPartyId,
   type DestinationPaceId,
 } from "../lib/destinationPlanner";
+import { trackEvent, type HomegroundEventName } from "../lib/analytics";
 import {
   getDestinationNames,
   getDestinationPlannerCopy,
@@ -100,13 +101,16 @@ export interface RouteFinderProps {
   onStatusChange?: (status: PlannerStatus) => void;
 }
 
-type PlannerEventName =
+/** Derived from the shared list so a rename there fails the build here. */
+type PlannerEventName = Extract<
+  HomegroundEventName,
   | "planner_started"
   | "planner_step_completed"
   | "planner_result_viewed"
   | "planner_result_revised"
   | "conversation_brief_ready_viewed"
-  | "paid_brief_ready_viewed";
+  | "paid_brief_ready_viewed"
+>;
 
 const questions: readonly QuestionKey[] = [
   "destinations",
@@ -160,22 +164,7 @@ function trackPlannerEvent(
   name: PlannerEventName,
   parameters: Record<string, string | number | boolean> = {},
 ) {
-  const analyticsWindow = window as typeof window & {
-    dataLayer?: Array<Record<string, unknown>>;
-    gtag?: (
-      command: "event",
-      eventName: PlannerEventName,
-      eventParameters: Record<string, string | number | boolean>,
-    ) => void;
-  };
-
-  if (analyticsWindow.gtag) {
-    analyticsWindow.gtag("event", name, parameters);
-    return;
-  }
-
-  analyticsWindow.dataLayer ??= [];
-  analyticsWindow.dataLayer.push({ event: name, ...parameters });
+  trackEvent(name, parameters);
 }
 
 function isDestinationId(value: unknown): value is DestinationId {
