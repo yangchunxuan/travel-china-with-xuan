@@ -17,6 +17,7 @@ export const guideIds = [
   "do-us-citizens-need-visa-china-2026",
   "china-visa-free-uk-citizens-2026",
   "china-240-hour-visa-free-transit-route-check",
+  "do-singaporeans-need-visa-china",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -54,7 +55,8 @@ export type GuideAudienceMarket =
   | "global"
   | "uk"
   | "us"
-  | "canada";
+  | "canada"
+  | "singapore";
 
 export interface GuideLocaleEntry {
   path: string;
@@ -710,6 +712,63 @@ export const guideRegistry = [
         navTitle: "240시간 환승 경로 확인",
         featuredLinkLabel: "내 경로가 조건을 만족하는지 확인하기",
         openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "do-singaporeans-need-visa-china",
+    type: "planning",
+    featured: false,
+    pillar: "entry-rules",
+    audienceMarkets: ["singapore"],
+    format: "planning-guide",
+    topics: ["trip-planning"],
+    destinations: ["china"],
+    heroImagePath:
+      "/images/guides/zhangjiajie-older-travellers/pillars-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/zhangjiajie-older-travellers/pillars-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 675,
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
+    sourceReviewedDate: "2026-07-24",
+    locales: {
+      en: {
+        path: "/guides/do-singaporeans-need-visa-china/",
+        title: "You Don't Need a China Visa. Here's the Harder Question.",
+        headline: "You Don't Need a China Visa. Here's the Harder Question.",
+        description:
+          "A Singapore passport enters China visa-free for 30 days. The visa is settled in a paragraph; the real question is what to do with the time, and where a China route is won or lost.",
+        heroAlt:
+          "Sandstone pillars layered into a deep green valley in Zhangjiajie National Forest Park.",
+        navTitle: "Singapore passport China visa",
+        featuredLinkLabel: "The visa is easy — the 30 days are the question",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/do-singaporeans-need-visa-china/",
+        title: "You Don't Need a China Visa. Here's the Harder Question.",
+        headline: "You Don't Need a China Visa. Here's the Harder Question.",
+        description:
+          "A Singapore passport enters China visa-free for 30 days. The visa is settled in a paragraph; the real question is what to do with the time.",
+        heroAlt:
+          "Sandstone pillars layered into a deep green valley in Zhangjiajie National Forest Park.",
+        navTitle: "Singapore passport China visa",
+        featuredLinkLabel: "The visa is easy — the 30 days are the question",
+        openGraphLocale: "en_SG",
+      },
+      ko: {
+        path: "/ko/guides/do-singaporeans-need-visa-china/",
+        title: "You Don't Need a China Visa. Here's the Harder Question.",
+        headline: "You Don't Need a China Visa. Here's the Harder Question.",
+        description:
+          "A Singapore passport enters China visa-free for 30 days. The visa is settled in a paragraph; the real question is what to do with the time.",
+        heroAlt:
+          "Sandstone pillars layered into a deep green valley in Zhangjiajie National Forest Park.",
+        navTitle: "Singapore passport China visa",
+        featuredLinkLabel: "The visa is easy — the 30 days are the question",
+        openGraphLocale: "en_US",
       },
     },
   },
