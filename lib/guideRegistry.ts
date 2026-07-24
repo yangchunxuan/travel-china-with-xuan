@@ -240,6 +240,11 @@ export const guideRegistry = [
         heroAlt: "따뜻한 저녁빛이 비치는 해안가에 서 있는 Kevin.",
         navTitle: "Kevin의 출발 전 현장 노트",
         featuredLinkLabel: "Kevin이 손님을 만나기 전에 준비하는 과정 보기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
     id: "zhangjiajie-older-travellers",
     type: "planning",
     featured: false,
