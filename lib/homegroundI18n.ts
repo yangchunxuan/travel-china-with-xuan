@@ -366,8 +366,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       intro:
         "The first result only checks destination stay time. Human planning then tests transport, entry and exit cities, dates and the details that make the trip work.",
       imageAlt:
-        "Mist drifting between the sandstone pillars of Zhangjiajie",
-      imageBadge: "Illustrative planning extract · Zhangjiajie",
+        "Small wooden boats crossing a misty lake in Hangzhou, with layered green hills behind",
+      imageBadge: "Illustrative planning extract · Hangzhou",
       cardLabel: "What gets added after the route",
       cardTitle: "A transfer day that still feels like part of the trip",
       cardTag: "Example format, not a fixed package",
@@ -375,22 +375,22 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           term: "Move",
           detail:
-            "Beijing → Zhangjiajie, with enough buffer for the actual flight or rail connection.",
+            "Shanghai → Hangzhou, allowing for station access, luggage and the real transfer to the hotel.",
         },
         {
           term: "Base",
           detail:
-            "A base chosen around park access, walking load and the next departure.",
+            "A base chosen around West Lake access, Lingyin travel time and the next departure.",
         },
         {
           term: "Energy",
           detail:
-            "No full park day is forced onto the arrival day.",
+            "The arrival day stays light instead of forcing West Lake and Lingyin into one rushed block.",
         },
         {
           term: "Still to confirm",
           detail:
-            "Flight or train time, park entrance, luggage support and the actual arrival point.",
+            "Train time, arrival station, hotel location, luggage plan and weather.",
         },
       ],
       pointLabel: "The point:",
@@ -879,28 +879,29 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "可执行的路线，不只是几个城市的排列。",
       intro:
         "初步结果只比较目的地停留时间；旅行规划师再核对交通、进出城市、日期和真正影响落地的细节。",
-      imageAlt: "云雾缭绕的张家界砂岩峰林",
-      imageBadge: "规划示例节选 · 张家界",
+      imageAlt: "杭州薄雾中的湖面上，两艘木船驶过远处层叠的青山",
+      imageBadge: "规划示例节选 · 杭州",
       cardLabel: "得到路线之后，我们会补上什么",
       cardTitle: "让转场日也成为旅行的一部分",
       cardTag: "仅展示规划方式，并非固定产品",
       extract: [
         {
           term: "转场",
-          detail: "北京 → 张家界，根据实际航班或铁路衔接留出充足余量。",
+          detail:
+            "上海 → 杭州，不只计算车程，也预留进出车站、行李和到酒店的时间。",
         },
         {
           term: "落脚点",
           detail:
-            "结合景区入口、步行负担和下一程出发方式来选择住宿区域。",
+            "结合西湖步行便利度、前往灵隐的时间和下一程出发方式选择住宿区域。",
         },
         {
           term: "体力",
-          detail: "抵达当天不强塞一整天的景区行程。",
+          detail: "抵达日保持轻松，不把西湖和灵隐寺硬塞进一段匆忙行程。",
         },
         {
           term: "仍需确认",
-          detail: "航班或车次、景区入口、行李协助和实际抵达地点。",
+          detail: "车次、抵达车站、酒店位置、行李安排和当日天气。",
         },
       ],
       pointLabel: "重点在于：",
@@ -1355,8 +1356,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "실행 가능한 동선은 도시 이름 목록만으로 완성되지 않습니다.",
       intro:
         "첫 결과는 목적지 체류 시간만 비교합니다. 이후 사람 플래너가 교통, 입출국 도시, 날짜와 실제 여행을 좌우하는 조건을 확인합니다.",
-      imageAlt: "안개 사이로 솟은 장자제 사암 봉우리",
-      imageBadge: "여행 설계 예시 · 장자제",
+      imageAlt: "안개 낀 항저우 호수 위를 지나는 나룻배와 겹겹이 이어진 푸른 산",
+      imageBadge: "여행 설계 예시 · 항저우",
       cardLabel: "동선 초안이 나온 뒤 더해지는 것",
       cardTitle: "이동하는 날도 여행의 일부가 되도록",
       cardTag: "고정 패키지가 아닌 설계 방식 예시",
@@ -1364,21 +1365,22 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           term: "이동",
           detail:
-            "베이징 → 장자제, 실제 항공편이나 철도 연결에 충분한 여유 시간을 둡니다.",
+            "상하이 → 항저우, 열차 시간뿐 아니라 역 이동, 수하물과 호텔까지의 실제 환승 시간을 포함합니다.",
         },
         {
           term: "숙소 위치",
           detail:
-            "공원 입구, 도보 부담과 다음 출발 동선을 함께 보고 숙소 위치를 고릅니다.",
+            "서호 접근성, 링인사 이동 시간과 다음 출발 동선을 함께 보고 숙소 위치를 고릅니다.",
         },
         {
           term: "체력",
-          detail: "도착일에 하루 종일 이어지는 공원 일정을 억지로 넣지 않습니다.",
+          detail:
+            "도착일은 가볍게 두고 서호와 링인사를 서둘러 한 번에 넣지 않습니다.",
         },
         {
           term: "추가 확인",
           detail:
-            "항공편 또는 열차 시간, 공원 입구, 수하물 지원과 실제 도착 지점입니다.",
+            "열차 시간, 도착역, 호텔 위치, 수하물 계획과 당일 날씨입니다.",
         },
       ],
       pointLabel: "핵심은:",

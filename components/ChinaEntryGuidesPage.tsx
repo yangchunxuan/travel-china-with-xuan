@@ -22,6 +22,18 @@ function formatDate(value: string) {
   return dateFormatter.format(new Date(`${value}T00:00:00Z`));
 }
 
+function getGuideLabel(guide: ReturnType<typeof getGuidesByPillar>[number]) {
+  if (guide.audienceMarkets.includes("uk")) {
+    return "UK passport guide";
+  }
+
+  if (guide.audienceMarkets.includes("us")) {
+    return "US passport guide";
+  }
+
+  return "Transit route guide";
+}
+
 function createStructuredData() {
   const guides = getGuidesByPillar("entry-rules", "en");
 
@@ -34,7 +46,7 @@ function createStructuredData() {
         url: PAGE_URL,
         name: "China Entry Guides",
         description:
-          "Current China entry rules by passport, travel purpose and route, with official-source guides for UK and US travellers.",
+          "Current China entry rules by passport, travel purpose and route, with official-source guides for UK, US and eligible transit travellers.",
         inLanguage: "en",
         isPartOf: {
           "@type": "WebSite",
@@ -213,9 +225,7 @@ export function ChinaEntryGuidesPage() {
                     </figure>
                     <div className={styles.cardBody}>
                       <p>
-                        {guide.audienceMarkets[0] === "uk"
-                          ? "UK passport guide"
-                          : "US passport guide"}
+                        {getGuideLabel(guide)}
                         <span aria-hidden="true">·</span>
                         <time dateTime={guide.sourceReviewedDate}>
                           checked {formatDate(guide.sourceReviewedDate)}
@@ -259,8 +269,8 @@ export function ChinaEntryGuidesPage() {
               <h3>Route-based transit</h3>
               <p>
                 The next confirmed country or region can decide whether a
-                transit exemption applies. The US guide shows why a round trip
-                and an onward route are not the same.
+                transit exemption applies. The 240-hour route check shows why
+                a round trip and an onward route are not the same.
               </p>
             </article>
           </div>

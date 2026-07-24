@@ -3,7 +3,7 @@ import { ChinaEntryGuidesPage } from "../../../../components/ChinaEntryGuidesPag
 
 const title = "China Entry Guides: Visa-Free Rules by Passport & Route";
 const description =
-  "Current China entry rules by passport, purpose and route, including 2026 UK visa-free entry and US visa versus 240-hour transit guidance.";
+  "Current China entry rules by passport, purpose and route, including 2026 UK visa-free entry, US visa guidance and a 240-hour transit route check.";
 const path = "/guides/china-entry-requirements/";
 const socialImage =
   "https://homegroundchina.com/images/guides/china-visa-free-uk-citizens-2026/great-wall-og-1200.jpg";

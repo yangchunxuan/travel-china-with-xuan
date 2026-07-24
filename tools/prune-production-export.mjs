@@ -75,8 +75,11 @@ for (const requiredPage of [
   "guides/is-your-china-itinerary-too-rushed/index.html",
   "guides/china-entry-requirements/index.html",
   "guides/china-visa-free-uk-citizens-2026/index.html",
+  "guides/china-240-hour-visa-free-transit-route-check/index.html",
   "zh/guides/is-your-china-itinerary-too-rushed/index.html",
+  "zh/guides/china-240-hour-visa-free-transit-route-check/index.html",
   "ko/guides/is-your-china-itinerary-too-rushed/index.html",
+  "ko/guides/china-240-hour-visa-free-transit-route-check/index.html",
 ]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);
