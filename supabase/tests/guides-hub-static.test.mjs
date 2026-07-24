@@ -48,8 +48,14 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
     registry,
     /cardImagePath:\s*"\/images\/guides\/tantan-zhangjiajie\/tantan-hero-1200\.jpg"/,
   );
+  assert.match(
+    registry,
+    /id: "is-your-china-itinerary-too-rushed"[\s\S]*?cardImagePath:\s*"\/images\/guides\/china-itinerary-reality\/airport-apron-card-1200\.webp"/,
+  );
   assert.match(registry, /const cardImagePath =/);
+  assert.match(registry, /const cardImageAlt =/);
   assert.match(homepage, /src=\{guide\.cardImagePath\}/);
+  assert.match(homepage, /alt=\{guide\.cardImageAlt\}/);
   assert.match(homepage, /data-guide-id=\{guide\.id\}/);
   assert.match(
     homepageCss,
@@ -87,6 +93,7 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /<article className=\{styles\.guideCard\}>/);
   assert.match(hub, /<time dateTime=\{guide\.dateModified\}>/);
   assert.match(hub, /src=\{guide\.cardImagePath\}/);
+  assert.match(hub, /alt=\{guide\.cardImageAlt\}/);
   assert.match(hub, /width=\{guide\.cardImageWidth\}/);
   assert.match(hub, /height=\{guide\.cardImageHeight\}/);
   assert.match(hub, /data-guide-id=\{guide\.id\}/);

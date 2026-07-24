@@ -46,6 +46,7 @@ export interface GuideLocaleEntry {
   headline: string;
   description: string;
   heroAlt: string;
+  cardImageAlt?: string;
   navTitle: string;
   featuredLinkLabel: string;
   openGraphLocale: string;
@@ -469,6 +470,10 @@ export const guideRegistry = [
     topics: ["pace", "itinerary-design", "trip-planning"],
     destinations: ["china"],
     homeFeaturedRank: 2,
+    cardImagePath:
+      "/images/guides/china-itinerary-reality/airport-apron-card-1200.webp",
+    cardImageWidth: 1200,
+    cardImageHeight: 1800,
     heroImagePath:
       "/images/guides/china-itinerary-reality/transfer-platform-soft-focus-1200.webp",
     heroImageUrl:
@@ -487,6 +492,8 @@ export const guideRegistry = [
           "Check whether your China itinerary is too rushed by testing city changes, door-to-door transfers, hotel moves, fixed bookings and recovery time.",
         heroAlt:
           "A softened railway platform used as a non-location-specific illustration of a transfer day.",
+        cardImageAlt:
+          "Aircraft on an airport apron beneath grey clouds, seen through a terminal window.",
         navTitle: "China itinerary pace guide",
         featuredLinkLabel: "Check whether your China itinerary is too rushed",
         openGraphLocale: "en_US",
@@ -498,6 +505,7 @@ export const guideRegistry = [
         description:
           "从换城市、门到门转场、换酒店、固定预约与恢复时间，判断你的中国行程是否安排得太赶。",
         heroAlt: "经过柔化处理的火车站站台，用于表达旅行转场日。",
+        cardImageAlt: "从机场航站楼窗外看到停靠的客机。",
         navTitle: "中国行程节奏指南",
         featuredLinkLabel: "检查你的中国行程是否太赶",
         openGraphLocale: "zh_CN",
@@ -509,6 +517,8 @@ export const guideRegistry = [
         description:
           "도시 이동, 출발지부터 도착지까지의 전체 이동, 숙소 변경, 고정 예약과 회복 시간을 기준으로 중국 여행 일정이 너무 빠듯한지 확인해 보세요.",
         heroAlt: "이동일을 표현하기 위해 부드럽게 처리한 기차역 승강장 이미지.",
+        cardImageAlt:
+          "흐린 날 공항 터미널 창 너머로 보이는 계류장의 항공기.",
         navTitle: "중국 일정 속도 가이드",
         featuredLinkLabel: "중국 일정이 너무 빠듯한지 확인하기",
         openGraphLocale: "ko_KR",
@@ -642,6 +652,8 @@ export function getGuideEntry(
     "cardImageWidth" in guide ? guide.cardImageWidth : guide.imageWidth;
   const cardImageHeight =
     "cardImageHeight" in guide ? guide.cardImageHeight : guide.imageHeight;
+  const cardImageAlt =
+    "cardImageAlt" in localized ? localized.cardImageAlt : localized.heroAlt;
 
   return {
     ...guide,
@@ -649,6 +661,7 @@ export function getGuideEntry(
     cardImagePath,
     cardImageWidth,
     cardImageHeight,
+    cardImageAlt,
     canonicalPath: localized.path,
     canonicalUrl: `${SITE_URL}${localized.path}`,
   };

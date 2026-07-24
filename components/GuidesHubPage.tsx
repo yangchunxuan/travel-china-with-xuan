@@ -180,7 +180,7 @@ export function GuidesHubPage({
                     <figure className={styles.guideImage}>
                       <img
                         src={guide.cardImagePath}
-                        alt={guide.heroAlt}
+                        alt={guide.cardImageAlt}
                         width={guide.cardImageWidth}
                         height={guide.cardImageHeight}
                         loading={index === 0 ? "eager" : "lazy"}
