@@ -9,6 +9,7 @@ import {
   CANADA_VISA_NEEDED_CASES,
   CANADA_VISA_SCENARIOS,
 } from "../lib/canadaVisaFreeGuide";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./CanadaVisaFreeGuidePage.module.css";
@@ -489,10 +490,14 @@ export function CanadaVisaFreeGuidePage() {
                     Homeground planner can then discuss the right level of
                     route and ground support with you.
                   </p>
-                  <Link href={plannerHref}>
+                  <GuideCtaLink
+                    guideId="china-visa-free-canadian-citizens-2026"
+                    href={plannerHref}
+                    locale="en"
+                  >
                     Start my China trip brief
                     <ArrowRight aria-hidden="true" size={18} />
-                  </Link>
+                  </GuideCtaLink>
                   <small>
                     The trip brief is free. It does not provide a visa
                     eligibility decision.

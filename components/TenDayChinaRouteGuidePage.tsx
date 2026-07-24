@@ -20,6 +20,7 @@ import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 
 const guideId = "beijing-zhangjiajie-shanghai-10-days" as const;
@@ -257,9 +258,15 @@ export function TenDayChinaRouteGuidePage({
               </Link>
             ))}
           </nav>
-          <a className={styles.headerCta} href={plannerHref}>
+          <GuideCtaLink
+            className={styles.headerCta}
+            guideId={guideId}
+            href={plannerHref}
+            locale={locale}
+            position="header"
+          >
             {copy.navigation.cta}
-          </a>
+          </GuideCtaLink>
         </div>
       </header>
 
@@ -583,10 +590,16 @@ export function TenDayChinaRouteGuidePage({
                 </Link>
               </aside>
 
-              <Link className={styles.textLink} href={plannerHref}>
+              <GuideCtaLink
+                className={styles.textLink}
+                guideId={guideId}
+                href={plannerHref}
+                locale={locale}
+                position="inline"
+              >
                 {copy.transfer.plannerLink}
                 <ArrowRight aria-hidden="true" size={18} />
-              </Link>
+              </GuideCtaLink>
             </section>
 
             <section className={styles.fitTest} aria-labelledby="fit-title">
@@ -678,10 +691,14 @@ export function TenDayChinaRouteGuidePage({
                 <p>{copy.cta.intro}</p>
               </div>
               <div className={styles.ctaAction}>
-                <a href={plannerHref}>
+                <GuideCtaLink
+                  guideId={guideId}
+                  href={plannerHref}
+                  locale={locale}
+                >
                   {copy.cta.button}
                   <ArrowRight aria-hidden="true" size={19} />
-                </a>
+                </GuideCtaLink>
                 <small>{copy.cta.note}</small>
               </div>
             </section>

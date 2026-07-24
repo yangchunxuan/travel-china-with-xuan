@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getUsChinaVisaCopy } from "../lib/usChinaVisaI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./UsChinaVisaPage.module.css";
@@ -253,10 +254,14 @@ export function UsChinaVisaPage({
             <div>
               <p>{copy.ctaBody}</p>
               <p className={styles.ctaBoundary}>{copy.ctaBoundary}</p>
-              <Link href={plannerHref}>
+              <GuideCtaLink
+                guideId={guideId}
+                href={plannerHref}
+                locale={locale}
+              >
                 {copy.ctaAction}
                 <ArrowRight aria-hidden="true" size={18} />
-              </Link>
+              </GuideCtaLink>
             </div>
           </section>
 

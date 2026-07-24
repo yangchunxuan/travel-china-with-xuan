@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getTantanZhangjiajieStoryCopy } from "../lib/tantanZhangjiajieStoryI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { TantanStoryContentsNav } from "./TantanStoryContentsNav";
@@ -306,10 +307,14 @@ export function TantanZhangjiajieStoryPage({
             </div>
             <div>
               <p>{copy.ctaBody}</p>
-              <Link href={plannerHref}>
+              <GuideCtaLink
+                guideId={guideId}
+                href={plannerHref}
+                locale={locale}
+              >
                 {copy.ctaAction}
                 <ArrowRight aria-hidden="true" size={18} />
-              </Link>
+              </GuideCtaLink>
             </div>
           </section>
 

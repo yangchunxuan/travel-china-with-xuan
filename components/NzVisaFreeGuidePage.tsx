@@ -9,6 +9,7 @@ import {
   NZ_VISA_NEEDED_CASES,
   NZ_VISA_SCENARIOS,
 } from "../lib/nzVisaFreeGuide";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./NzVisaFreeGuidePage.module.css";
@@ -495,10 +496,14 @@ export function NzVisaFreeGuidePage() {
                     Homeground planner can then discuss the right level of
                     route and ground support with you.
                   </p>
-                  <Link href={plannerHref}>
+                  <GuideCtaLink
+                    guideId="china-visa-free-new-zealand-citizens-2026"
+                    href={plannerHref}
+                    locale="en"
+                  >
                     Start my China trip brief
                     <ArrowRight aria-hidden="true" size={18} />
-                  </Link>
+                  </GuideCtaLink>
                   <small>
                     The trip brief is free. It does not provide a visa
                     eligibility decision.

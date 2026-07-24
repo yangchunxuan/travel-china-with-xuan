@@ -17,6 +17,7 @@ import {
 } from "../lib/nightShowGuide";
 import { getNightShowGuideCopy } from "../lib/nightShowGuideCopy";
 import type { NightShowGuideCopy } from "../lib/nightShowGuideCopy.types";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./NightShowGuidePage.module.css";
@@ -495,10 +496,15 @@ export function NightShowGuidePage({
                   <p>{copy.evening.ctaBody}</p>
                   <small>{copy.evening.ctaNote}</small>
                 </div>
-                <Link href={plannerHref}>
+                <GuideCtaLink
+                  guideId={guideId}
+                  href={plannerHref}
+                  locale={locale}
+                  position="inline"
+                >
                   {copy.evening.ctaAction}
                   <ArrowRight aria-hidden="true" size={18} />
-                </Link>
+                </GuideCtaLink>
               </aside>
             </section>
 
@@ -586,9 +592,13 @@ export function NightShowGuidePage({
               <p>{copy.finalCta.body}</p>
               <small>{copy.finalCta.note}</small>
             </div>
-            <Link href={plannerHref}>
+            <GuideCtaLink
+              guideId={guideId}
+              href={plannerHref}
+              locale={locale}
+            >
               {copy.finalCta.action}<ArrowRight aria-hidden="true" size={18} />
-            </Link>
+            </GuideCtaLink>
           </section>
         </article>
       </main>

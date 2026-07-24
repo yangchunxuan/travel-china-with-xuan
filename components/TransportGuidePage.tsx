@@ -12,6 +12,7 @@ import {
   getTransportGuideCopy,
   type TransportGuideCopy,
 } from "../lib/beijingZhangjiajieShanghaiTransportI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./TransportGuidePage.module.css";
@@ -647,10 +648,14 @@ export function TransportGuidePage({
               <h2 id="transport-cta-title">{copy.finalCta.title}</h2>
               <p>{copy.finalCta.body}</p>
             </div>
-            <Link href={plannerHref}>
+            <GuideCtaLink
+              guideId={GUIDE_ID}
+              href={plannerHref}
+              locale={locale}
+            >
               {copy.finalCta.action}
               <ArrowRight aria-hidden="true" size={18} />
-            </Link>
+            </GuideCtaLink>
           </section>
         </article>
       </main>

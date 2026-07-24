@@ -15,6 +15,7 @@ import {
   type KevinPreparationStoryImageCopy,
   type KevinPreparationStorySectionCopy,
 } from "../lib/kevinPreparationStoryI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { KevinStoryContentsNav } from "./KevinStoryContentsNav";
@@ -523,10 +524,14 @@ export function KevinPreparationStoryPage({
               </div>
               <div>
                 <p className={styles.finalCtaBody}>{copy.ctaBody}</p>
-                <Link href={plannerHref}>
+                <GuideCtaLink
+                  guideId={guideId}
+                  href={plannerHref}
+                  locale={locale}
+                >
                   {copy.ctaAction}
                   <ArrowRight aria-hidden="true" size={18} />
-                </Link>
+                </GuideCtaLink>
               </div>
             </div>
           </section>

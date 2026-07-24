@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getSingaporeChinaVisaCopy } from "../lib/singaporeChinaVisaI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./SingaporeChinaVisaPage.module.css";
@@ -233,10 +234,14 @@ export function SingaporeChinaVisaPage({
             </div>
             <div>
               <p>{copy.ctaBody}</p>
-              <Link href={plannerHref}>
+              <GuideCtaLink
+                guideId={guideId}
+                href={plannerHref}
+                locale={locale}
+              >
                 {copy.ctaAction}
                 <ArrowRight aria-hidden="true" size={18} />
-              </Link>
+              </GuideCtaLink>
             </div>
           </section>
 

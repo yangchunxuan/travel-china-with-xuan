@@ -10,6 +10,7 @@ import {
   type GuideTimelineStop,
   type ZhangjiajieGuideCopy,
 } from "../lib/zhangjiajieGuideI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieGuidePage.module.css";
@@ -422,10 +423,16 @@ export function ZhangjiajieGuidePage({
                   </p>
                 </div>
               </div>
-              <Link className={styles.quickPlannerLink} href={plannerHref}>
+              <GuideCtaLink
+                className={styles.quickPlannerLink}
+                guideId="zhangjiajie-itinerary"
+                href={plannerHref}
+                locale={locale}
+                position="inline"
+              >
                 {copy.quick.action}
                 <ArrowRight aria-hidden="true" size={17} />
-              </Link>
+              </GuideCtaLink>
             </section>
 
             <section
@@ -732,10 +739,14 @@ export function ZhangjiajieGuidePage({
               <h2 id="guide-cta-title">{copy.finalCta.title}</h2>
               <p>{copy.finalCta.body}</p>
             </div>
-            <Link href={plannerHref}>
+            <GuideCtaLink
+              guideId="zhangjiajie-itinerary"
+              href={plannerHref}
+              locale={locale}
+            >
               {copy.finalCta.action}
               <ArrowRight aria-hidden="true" size={18} />
-            </Link>
+            </GuideCtaLink>
           </section>
         </article>
       </main>

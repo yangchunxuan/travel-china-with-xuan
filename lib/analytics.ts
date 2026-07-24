@@ -15,6 +15,7 @@ export const GA_MEASUREMENT_ID = "G-DPGR2SVC0G";
 
 /** Every event the public site is allowed to send. */
 export type HomegroundEventName =
+  | "guide_cta_clicked"
   | "planning_intent_selected"
   | "planner_started"
   | "planner_step_completed"

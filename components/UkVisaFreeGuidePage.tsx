@@ -9,6 +9,7 @@ import {
   UK_VISA_NEEDED_CASES,
   UK_VISA_SCENARIOS,
 } from "../lib/ukVisaFreeGuide";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./UkVisaFreeGuidePage.module.css";
@@ -485,10 +486,14 @@ export function UkVisaFreeGuidePage() {
                     Homeground planner can then discuss the right level of route
                     and ground support with you.
                   </p>
-                  <Link href={plannerHref}>
+                  <GuideCtaLink
+                    guideId="china-visa-free-uk-citizens-2026"
+                    href={plannerHref}
+                    locale="en"
+                  >
                     Start my China trip brief
                     <ArrowRight aria-hidden="true" size={18} />
-                  </Link>
+                  </GuideCtaLink>
                   <small>
                     The trip brief is free. It does not provide a visa
                     eligibility decision.

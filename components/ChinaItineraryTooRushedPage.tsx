@@ -12,6 +12,7 @@ import {
   itineraryRushGuideId,
 } from "../lib/chinaItineraryTooRushedI18n";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -432,10 +433,14 @@ export function ChinaItineraryTooRushedPage({
                 </div>
                 <div>
                   <p>{copy.services.conversationIntro}</p>
-                  <a href={conversationHref}>
+                  <GuideCtaLink
+                    guideId="is-your-china-itinerary-too-rushed"
+                    href={conversationHref}
+                    locale={locale}
+                  >
                     {copy.services.conversationCta}
                     <ArrowRight aria-hidden="true" size={18} />
-                  </a>
+                  </GuideCtaLink>
                   <small>{copy.services.conversationNote}</small>
                 </div>
               </div>
