@@ -196,13 +196,13 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "Business information",
         title: "Who operates Homeground",
         intro:
-          "Homeground is a public-facing brand operated by the registered individual business shown below in Zhangjiajie, Hunan, China. That operator is responsible for this website and for any US$69 or US$129 written consultation it expressly accepts.",
+          "Homeground is the public-facing brand of the registered individual business shown below in Zhangjiajie, Hunan, China. From one Homeground entry point, travellers can request a US$69 route review, a US$129 route build or custom full-trip planning and ground support.",
       },
       callout: {
-        label: "Important service boundary",
-        title: "Business registration is not a travel agency licence.",
+        label: "A clear way to begin",
+        title: "A real registered operator, with the scope confirmed before payment.",
         body:
-          "Full Trip Planning & Ground Support remains enquiry-only. If travel arrangements are later offered through a licensed travel agency, its identity, licence details, contracting role, service scope and payment recipient will be provided before payment.",
+          "Start with one trip brief. Homeground will clarify what you need and confirm the next step in writing. For accepted work, the service, price, scope, delivery timing and payment details are set out before you pay.",
       },
       sections: [
         {
@@ -234,7 +234,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "Relevant registered business scope",
               value: homegroundBusiness.relevantBusinessScope,
               detail:
-                "This is the general business item relevant to the current written-consultation service. Other activities shown on the licence may require separate approvals and are not represented by this website.",
+                "This is the registered business item relevant to Homeground’s current written-consultation services.",
             },
             {
               label: "Registration authority",
@@ -274,11 +274,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               title: "Full Trip Planning & Ground Support",
               body:
-                "Currently an enquiry path, not a travel booking sold by this website. Any later travel-arrangement contract must identify the licensed travel agency, licence information, contracting party, service provider and payment recipient before payment.",
+                "Bring the whole trip to Homeground. We begin by understanding your dates, travellers, priorities and the support you want, then confirm a workable next step, service scope and proposal.",
             },
           ],
           paragraphs: [
-            "The US$69 and US$129 services do not include reservations, ticketing, supplier payments, guiding, transport delivery or support during travel. This website currently accepts an enquiry only and does not take online payment.",
+            "The US$69 and US$129 options are fixed-scope written consultations. Full-trip support is discussed and scoped separately. For accepted work, written service and payment details are sent after the trip brief is reviewed.",
           ],
         },
         {
@@ -323,13 +323,13 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "经营主体信息",
         title: "谁在运营 Homeground",
         intro:
-          "Homeground 是由下方张家界登记个体工商户运营的对外品牌。该登记主体负责本网站，以及其明确接受的 69 美元或 129 美元书面路线咨询服务。",
+          "Homeground 是由下方张家界登记个体工商户运营的对外品牌。通过同一个 Homeground 入口，旅行者可以申请 69 美元路线审核、129 美元路线规划，或按实际行程定制的全程规划与落地支持。",
       },
       callout: {
-        label: "重要服务边界",
-        title: "个体工商户登记不等于旅行社业务经营许可。",
+        label: "清楚地开始",
+        title: "真实登记的经营主体，付款前把服务范围说清楚。",
         body:
-          "全程规划与落地支持目前只接收咨询。如后续由持证旅行社提供旅游安排，付款前必须明确旅行社名称、许可信息、合同主体、服务范围和收款方。",
+          "先提交一份旅行简报，Homeground 会梳理你的需求，并以书面方式确认下一步。对于确认承接的服务，付款前会清楚列明服务内容、价格、范围、交付时间与付款信息。",
       },
       sections: [
         {
@@ -352,7 +352,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "与本网站相关的登记经营范围",
               value: homegroundBusiness.relevantBusinessScope,
               detail:
-                "这是与当前书面咨询服务相关的一般经营项目。营业执照上的其他活动可能需要另行取得许可，本网站不据此作出相应服务承诺。",
+                "这是与 Homeground 当前书面路线咨询服务相关的登记经营项目。",
             },
             {
               label: "登记机关",
@@ -388,11 +388,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               title: "全程规划与落地支持",
               body:
-                "目前是咨询入口，不是本网站直接出售的旅游预订。任何后续旅游安排都必须在付款前明确持证旅行社、许可信息、合同主体、实际服务方和收款方。",
+                "把整趟旅行的需求交给 Homeground。我们先了解日期、同行者、旅行重点与希望获得的支持，再确认可执行的下一步、服务范围和方案。",
             },
           ],
           paragraphs: [
-            "69 美元与 129 美元服务不包含代订、出票、代付供应商、导游、交通履约或旅途中支持。本网站目前只接收咨询，不收取在线付款。",
+            "69 美元与 129 美元是固定范围的书面路线咨询；全程支持会根据实际需求另行沟通与确认。旅行简报审核后，我们会为确认承接的服务发送书面服务与付款信息。",
           ],
         },
         {
@@ -434,13 +434,13 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "사업자 정보",
         title: "Homeground 운영 사업자",
         intro:
-          "Homeground는 중국 후난성 장자제에 등록된 아래 개인사업자가 운영하는 브랜드입니다. 등록 사업자가 웹사이트 및 명시적으로 수락한 US$69 또는 US$129 서면 일정 컨설팅을 책임집니다.",
+          "Homeground는 중국 후난성 장자제에 등록된 아래 개인사업자가 운영하는 브랜드입니다. 하나의 Homeground 창구에서 US$69 일정 검토, US$129 동선 설계 또는 맞춤 전체 여행 설계 및 현지 지원을 요청할 수 있습니다.",
       },
       callout: {
-        label: "중요한 서비스 범위",
-        title: "사업자 등록은 여행사 업무 허가를 의미하지 않습니다.",
+        label: "명확한 시작",
+        title: "등록된 실제 사업자가 결제 전에 서비스 범위를 명확히 안내합니다.",
         body:
-          "전체 여행 설계 및 현지 지원은 현재 문의만 접수합니다. 여행 예약·주선이 허가받은 여행사를 통해 제공되는 경우 결제 전에 여행사명, 허가 정보, 계약 당사자, 서비스 범위와 결제 수취인을 안내합니다.",
+          "여행 브리프 하나로 시작하세요. Homeground가 필요한 내용을 정리하고 다음 단계를 서면으로 확인합니다. 수락한 업무는 결제 전에 서비스 내용, 가격, 범위, 제공 일정과 결제 정보를 안내합니다.",
       },
       sections: [
         {
@@ -463,7 +463,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "현재 웹사이트와 관련된 등록 업무 범위",
               value: homegroundBusiness.relevantBusinessScope,
               detail:
-                "현재 서면 컨설팅과 관련된 일반 등록 항목입니다. 등록증의 다른 활동은 별도 허가가 필요할 수 있으며 이 웹사이트가 해당 서비스를 약속한다는 뜻이 아닙니다.",
+                "Homeground의 현재 서면 일정 컨설팅과 관련된 등록 업무 항목입니다.",
             },
             {
               label: "등록 기관",
@@ -500,11 +500,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               title: "전체 여행 설계 및 현지 지원",
               body:
-                "현재 문의 경로이며 이 웹사이트가 판매하는 여행 예약이 아닙니다. 이후 여행 예약·주선이 진행되는 경우 결제 전에 허가받은 여행사, 허가 정보, 계약 당사자, 실제 서비스 제공자와 결제 수취인을 안내합니다.",
+                "전체 여행에 필요한 내용을 Homeground에 알려 주세요. 날짜, 일행, 우선순위와 원하는 지원을 먼저 파악한 뒤 실행 가능한 다음 단계, 서비스 범위와 제안을 확인합니다.",
             },
           ],
           paragraphs: [
-            "US$69와 US$129 서비스에는 예약·발권, 공급업체 결제, 가이드, 차량 제공 또는 여행 중 지원이 포함되지 않습니다. 현재 웹사이트는 문의만 접수하며 온라인 결제를 받지 않습니다.",
+            "US$69와 US$129는 범위가 정해진 서면 일정 컨설팅이며 전체 여행 지원은 실제 필요에 따라 별도로 논의하고 확정합니다. 브리프를 검토한 뒤 수락한 서비스의 서면 안내와 결제 정보를 보내 드립니다.",
           ],
         },
         {
@@ -611,10 +611,10 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         },
         {
           id: "full-trip",
-          title: "3. Full-trip enquiries",
+          title: "3. Full-trip planning and support",
           paragraphs: [
-            "A Full Trip Planning & Ground Support submission is an enquiry, not a booking or paid travel contract. This website and the current written-consultation operator do not accept payment for travel arrangements.",
-            "If a licensed travel agency can offer the requested arrangements, its name, licence details, contracting role, scope and payment recipient must be identified before payment.",
+            "A Full Trip Planning & Ground Support submission starts a planning conversation. Homeground first clarifies the route, travellers, priorities and support required.",
+            "If the request moves forward, the written proposal identifies the services, responsible provider, contracting party, scope, price and payment recipient before payment.",
           ],
         },
         {
@@ -720,10 +720,10 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         },
         {
           id: "full-trip",
-          title: "3. 全程旅行咨询",
+          title: "3. 全程规划与支持",
           paragraphs: [
-            "提交“全程规划与落地支持”只是咨询，不构成预订或付费旅游合同。本网站及当前书面咨询经营主体不收取旅游安排款。",
-            "如持证旅行社能够承接需求，付款前必须明确旅行社名称、许可信息、合同角色、服务范围与收款方。",
+            "提交“全程规划与落地支持”会开启一次规划沟通。Homeground 会先梳理路线、同行者、旅行重点与所需支持。",
+            "如需求继续推进，付款前的书面方案会明确服务项目、实际负责方、合同主体、服务范围、价格与收款方。",
           ],
         },
         {
@@ -829,10 +829,10 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         },
         {
           id: "full-trip",
-          title: "3. 전체 여행 문의",
+          title: "3. 전체 여행 설계 및 지원",
           paragraphs: [
-            "전체 여행 설계 및 현지 지원 제출은 문의이며 예약이나 유료 여행 계약이 아닙니다. 현재 웹사이트와 서면 컨설팅 운영 사업자는 여행 예약·주선 대금을 받지 않습니다.",
-            "허가받은 여행사가 요청을 맡을 수 있는 경우 결제 전에 여행사명, 허가 정보, 계약 역할, 서비스 범위와 결제 수취인을 밝혀야 합니다.",
+            "전체 여행 설계 및 현지 지원을 제출하면 플래닝 대화가 시작됩니다. Homeground가 먼저 동선, 일행, 우선순위와 필요한 지원을 정리합니다.",
+            "요청을 계속 진행하는 경우 결제 전 서면 제안에 서비스, 실제 담당자, 계약 당사자, 범위, 가격과 결제 수취인을 명확히 안내합니다.",
           ],
         },
         {

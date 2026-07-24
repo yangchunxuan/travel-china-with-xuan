@@ -108,7 +108,7 @@ export const homegroundPrivacyCopy: Record<
       homeLabel: "Homeground China home",
       languageLabel: "Choose privacy notice language",
       privacyLabel: "Privacy",
-      homeCta: "Back to the trip check",
+      homeCta: "Back to the trip brief",
     },
     status: {
       eyebrow: "Enquiry privacy at a glance",
@@ -127,14 +127,14 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Homeground · privacy",
       title: "How an enquiry is handled",
       intro:
-        "After checking a wishlist against available nights, a traveller can submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
+        "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
       reviewedValue: "24 July 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
       paragraphs: [
-        "After the traveller first interacts with it, the trip checker may keep selected structured answers in this browser’s session storage so progress can be restored. It never stores the free-text “other place”, route note, contact details, optional departure country or rough budget there. This browser copy is cleared after 30 minutes without planner activity, on restart and after a successful enquiry.",
+        "After the traveller first interacts with the trip brief, the form may keep selected structured answers in this browser’s session storage so progress can be restored. It never stores the free-text “other place”, route note, contact details, optional departure country or rough budget there. This browser copy is cleared after 30 minutes without planner activity, on restart and after a successful enquiry.",
         "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional planning-service choice, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
         "The current form version does not copy UTM labels, click identifiers or other URL campaign labels into the request. A fixed code records only which language-specific Homeground form accepted the submission; it is not a first-touch or traffic-source claim.",
         "Authorised staff may view restricted counts of saved structured trip choices to improve the route planner and travel information. These summaries exclude contact details, free text, individual enquiry records, source attribution and later email or WhatsApp activity.",
@@ -149,7 +149,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Purpose and fields",
       title: "Only what is needed for the active request",
       intro:
-        "A traveller can use the trip checker without contacting Homeground. These are the information groups used only if they submit an enquiry.",
+        "A traveller can prepare the structured trip answers in the browser before submitting. The following information groups are used only when the traveller deliberately sends the enquiry.",
       items: [
         {
           name: "Trip brief",
@@ -254,7 +254,7 @@ export const homegroundPrivacyCopy: Record<
           label: "Data controller and website operator",
           value: `${homegroundBusiness.registeredName} (trading as Homeground)`,
           detail:
-            "The registered operator is responsible for website enquiries and for any accepted US$69 or US$129 written consultation. Homeground is the public-facing brand, not a separate company or a claim of travel agency status.",
+            "The registered operator is responsible for this website and the Homeground enquiry records it receives. Homeground is the public-facing brand used by this registered operator.",
         },
         {
           label: "Processing and storage region",
@@ -291,15 +291,15 @@ export const homegroundPrivacyCopy: Record<
     },
     choices: {
       eyebrow: "Traveller choices",
-      title: "Contact remains optional",
+      title: "You decide whether to submit",
       paragraphs: [
-        "The route finder can be used without giving Homeground any contact details. Submitting the enquiry form is a separate, deliberate action.",
+        "Trip-brief answers remain in the browser until the traveller deliberately submits the form with one reply contact. Leaving or restarting before submission sends no enquiry to Homeground.",
         "Enquiry processing is separate from marketing consent. Homeground will not use the submitted contact for unrelated marketing without separate permission.",
       ],
       items: [
         "Do not submit the enquiry form.",
         "Ask what personal information is held and request access, correction or deletion after reasonable identity verification.",
-        "Continue using the route finder without contacting Homeground.",
+        "Restart or leave the trip brief before submission.",
         "Choose either email or WhatsApp for the human reply, and leave the optional departure country or rough budget blank.",
       ],
     },
@@ -314,7 +314,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
-      "This notice covers Homeground’s current route finder and enquiry service with email or WhatsApp reply. It does not provide marketing consent or enable AI chat or non-essential browser-behaviour analytics.",
+      "This notice covers Homeground’s current trip brief and enquiry service with email or WhatsApp reply. It does not provide marketing consent or enable AI chat or non-essential browser-behaviour analytics.",
   },
   zh: {
     htmlLang: "zh-Hans",
@@ -330,13 +330,13 @@ export const homegroundPrivacyCopy: Record<
       homeLabel: "Homeground China 首页",
       languageLabel: "选择隐私说明语言",
       privacyLabel: "隐私",
-      homeCta: "返回旅行时间检查",
+      homeCta: "返回旅行简报",
     },
     status: {
       eyebrow: "咨询隐私摘要",
       title: "你的信息用于本次回复和有限的服务改进",
       body:
-        "Homeground 使用你主动提交的旅行需求、所选的一种联系方式，以及选填的出发国家、地区或每人大致预算，来人工复核并回复本次咨询。结构化的旅行选择也可能进入受限统计，用于改进路线工具和旅行信息；这些统计不展示联系方式、自由文本或单条咨询。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
+        "Homeground 使用你主动提交的旅行需求、所选的一种联系方式，以及选填的出发国家、地区或每人大致预算，来人工复核并回复本次咨询。结构化的旅行选择也可能进入受限统计，用于改进旅行简报流程和旅行信息；这些统计不展示联系方式、自由文本或单条咨询。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
       blockersTitle: "关键规则",
       blockers: [
         "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
@@ -349,17 +349,17 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Homeground · 隐私",
       title: "一次咨询会如何被处理",
       intro:
-        "把愿望清单与可用晚数进行比较后，访客可以用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
+        "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
       reviewedValue: "2026 年 7 月 24 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
       paragraphs: [
-        "访客首次主动操作后，旅行时间检查可能把选定的结构化答案保存在当前浏览器会话中，以便恢复进度；“其他地点”自由文本、联系方式、选填出发国家或地区和大致预算永远不会存入这里。路线工具连续 30 分钟没有操作、重新开始或咨询保存成功后，这份浏览器副本会被清除。",
+        "访客首次操作旅行简报后，表单可能把选定的结构化答案保存在当前浏览器会话中，以便恢复进度；“其他地点”自由文本、路线说明、联系方式、选填出发国家或地区和大致预算永远不会存入这里。连续 30 分钟没有操作、重新开始或咨询保存成功后，这份浏览器副本会被清除。",
         "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家、地区或每人大致预算。只有保存成功后，网页才会显示已保存。",
         "当前表单版本不会把 UTM、广告标识或其他网址活动标签复制到请求中。系统只用一个固定代码记录是哪个语言版本的 Homeground 表单接收了提交；它不代表首次来源或流量来源。",
-        "获授权的工作人员可查看已保存结构化旅行选择的受限计数，用于改进路线工具和旅行信息。这些统计不包含联系方式、自由文本、单条咨询、来源判断或后续邮件与 WhatsApp 活动。",
+        "获授权的工作人员可查看已保存结构化旅行选择的受限计数，用于改进旅行简报流程和旅行信息。这些统计不包含联系方式、自由文本、单条咨询、来源判断或后续邮件与 WhatsApp 活动。",
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
         "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
@@ -371,13 +371,13 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "目的和字段",
       title: "只收集当前咨询需要的信息",
       intro:
-        "访客可以只使用旅行时间检查而不联系 Homeground。只有主动提交咨询时，才会使用以下几类信息。",
+        "访客可以先在浏览器中准备结构化旅行答案。只有主动提交咨询时，以下几类信息才会发送给 Homeground。",
       items: [
         {
           name: "旅行需求",
           stage: "浏览器会话、已提交咨询、通知与已连接的团队收件箱",
           purpose:
-            "所选目的地、其他地点、总晚数、同行者、节奏、必去优先项、时间状态、页面语言和内部规则版本用于描述本次需求。可按同一规则读取的结构化选择会进入受限统计，用于改进路线工具和旅行信息；“其他地点”自由文本不会进入统计。",
+            "所选目的地、其他地点、总晚数、同行者、节奏、必去优先项、时间状态、页面语言和内部规则版本用于描述本次需求。可按同一规则读取的结构化选择会进入受限统计，用于改进旅行简报流程和旅行信息；“其他地点”自由文本不会进入统计。",
         },
         {
           name: "所选回复联系方式",
@@ -448,7 +448,7 @@ export const homegroundPrivacyCopy: Record<
           label: "浏览器行为统计与 AI 聊天",
           value: "关闭",
           detail:
-            "当前网站不收集路线工具或页面行为事件，不使用第三方营销追踪或 AI 聊天组件；当前表单版本也不会把网址活动标签加入咨询。受限统计只使用已经成功保存的咨询中的结构化选择。",
+            "当前网站不收集旅行简报或页面行为事件，不使用第三方营销追踪或 AI 聊天组件；当前表单版本也不会把网址活动标签加入咨询。受限统计只使用已经成功保存的咨询中的结构化选择。",
         },
       ],
     },
@@ -462,7 +462,7 @@ export const homegroundPrivacyCopy: Record<
           label: "个人信息处理者与网站经营主体",
           value: `${homegroundBusiness.registeredName}（以 Homeground 品牌开展业务）`,
           detail:
-            "该登记主体负责网站咨询，以及被明确接受的 69 美元或 129 美元书面咨询服务。Homeground 是对外品牌名称，不是另一家公司，也不代表具有旅行社业务许可。",
+            "该登记主体负责本网站及其收到的 Homeground 咨询记录。Homeground 是该登记主体使用的对外品牌名称。",
         },
         {
           label: "处理与存储地区",
@@ -499,15 +499,15 @@ export const homegroundPrivacyCopy: Record<
     },
     choices: {
       eyebrow: "访客的选择",
-      title: "是否联系始终由访客决定",
+      title: "是否提交始终由访客决定",
       paragraphs: [
-        "访客无需提供任何联系方式，也可以使用路线工具。提交咨询表单是单独、主动的操作。",
+        "旅行简报答案会留在浏览器中，直到访客主动填写一种回复联系方式并提交。提交前离开或重新开始，不会向 Homeground 发送咨询。",
         "处理当前咨询与营销许可相互独立。未经单独同意，Homeground 不会把提交的联系方式用于无关营销。",
       ],
       items: [
         "选择不提交咨询表单。",
         "在合理核验身份后，查询已保存的信息并申请访问、更正或删除。",
-        "不联系 Homeground，继续使用路线工具。",
+        "提交前重新开始或离开旅行简报。",
         "选择邮箱或 WhatsApp 接收人工回复，并可不填写出发国家、地区或大致预算。",
       ],
     },
@@ -522,7 +522,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
-      "本说明适用于 Homeground 当前的路线工具，以及通过邮箱或 WhatsApp 回复的咨询服务；不构成营销许可，也不启用 AI 聊天或非必要的浏览器行为统计。",
+      "本说明适用于 Homeground 当前的旅行简报，以及通过邮箱或 WhatsApp 回复的咨询服务；不构成营销许可，也不启用 AI 聊天或非必要的浏览器行为统计。",
   },
   ko: {
     htmlLang: "ko",
@@ -539,13 +539,13 @@ export const homegroundPrivacyCopy: Record<
       homeLabel: "Homeground China 홈",
       languageLabel: "개인정보 안내 언어 선택",
       privacyLabel: "개인정보",
-      homeCta: "여행 시간 확인으로 돌아가기",
+      homeCta: "여행 브리프로 돌아가기",
     },
     status: {
       eyebrow: "문의 개인정보 요약",
       title: "제출한 정보는 답변과 제한적인 서비스 개선에 사용합니다",
       body:
-        "Homeground는 여행자가 직접 제출한 여행 요청서, 선택한 한 가지 연락 방법과 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 이번 문의를 검토하고 답변하는 데 사용합니다. 구조화된 여행 선택은 여행 동선 찾기와 여행 정보를 개선하기 위한 제한된 요약 집계에도 포함될 수 있습니다. 이 요약에는 연락처, 자유 입력 문구 또는 개별 문의가 표시되지 않습니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
+        "Homeground는 여행자가 직접 제출한 여행 요청서, 선택한 한 가지 연락 방법과 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 이번 문의를 검토하고 답변하는 데 사용합니다. 구조화된 여행 선택은 여행 브리프 흐름과 여행 정보를 개선하기 위한 제한된 요약 집계에도 포함될 수 있습니다. 이 요약에는 연락처, 자유 입력 문구 또는 개별 문의가 표시되지 않습니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
       blockersTitle: "핵심 원칙",
       blockers: [
         "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
@@ -558,17 +558,17 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Homeground · 개인정보",
       title: "여행 문의는 이렇게 처리됩니다",
       intro:
-        "희망 목록과 가능한 숙박일수를 비교한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
+        "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
       reviewedValue: "2026년 7월 24일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
       paragraphs: [
-        "여행자가 처음 직접 조작한 뒤 여행 시간 확인은 진행 상태를 복원하기 위해 선택한 구조화 답변을 현재 브라우저 세션에 보관할 수 있습니다. ‘그 밖의 장소’ 자유 입력 문구, 연락처, 선택 입력한 출발 국가 또는 지역과 대략적인 예산은 여기에 저장하지 않습니다. 여행 동선 찾기를 30분 동안 조작하지 않거나 다시 시작하거나 문의 저장에 성공하면 이 브라우저 사본을 삭제합니다.",
+        "여행자가 여행 브리프를 처음 조작한 뒤 양식은 진행 상태를 복원하기 위해 선택한 구조화 답변을 현재 브라우저 세션에 보관할 수 있습니다. ‘그 밖의 장소’ 자유 입력 문구, 동선 메모, 연락처, 선택 입력한 출발 국가 또는 지역과 대략적인 예산은 여기에 저장하지 않습니다. 30분 동안 조작하지 않거나 다시 시작하거나 문의 저장에 성공하면 이 브라우저 사본을 삭제합니다.",
         "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
         "현재 양식 버전은 UTM, 광고 식별자 또는 다른 URL 캠페인 표지를 문의에 복사하지 않습니다. 고정 번호는 어느 언어의 Homeground 양식이 제출을 접수했는지만 기록하며 최초 접점이나 유입 출처를 의미하지 않습니다.",
-        "권한 있는 담당자는 여행 동선 찾기와 여행 정보를 개선하기 위해 저장된 구조화 여행 선택의 제한된 집계를 볼 수 있습니다. 이 요약에는 연락처, 자유 입력 문구, 개별 문의, 유입 출처 또는 이후 이메일·WhatsApp 활동이 포함되지 않습니다.",
+        "권한 있는 담당자는 여행 브리프 흐름과 여행 정보를 개선하기 위해 저장된 구조화 여행 선택의 제한된 집계를 볼 수 있습니다. 이 요약에는 연락처, 자유 입력 문구, 개별 문의, 유입 출처 또는 이후 이메일·WhatsApp 활동이 포함되지 않습니다.",
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
         "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
@@ -580,14 +580,14 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "목적과 항목",
       title: "현재 문의에 필요한 정보만",
       intro:
-        "Homeground에 연락하지 않고 여행 시간 확인만 이용할 수 있습니다. 문의를 직접 제출한 경우에만 다음 정보가 사용됩니다.",
+        "구조화된 여행 답변은 제출 전에 브라우저에서 먼저 준비할 수 있습니다. 여행자가 문의를 직접 보낸 경우에만 다음 정보가 Homeground에 전달됩니다.",
       items: [
         {
           name: "여행 요청서",
           stage:
             "브라우저 세션, 제출된 문의, 알림 및 연결된 팀 받은편지함",
           purpose:
-            "선택한 목적지, 추가 장소, 총 숙박일수, 일행, 속도, 꼭 가야 할 우선순위, 시간 상태, 페이지 언어와 내부 규칙 버전으로 요청을 설명합니다. 같은 기준으로 처리할 수 있는 구조화 선택은 여행 동선 찾기와 여행 정보를 개선하기 위한 제한된 집계에 포함될 수 있으며 ‘그 밖의 장소’ 자유 입력 문구는 집계에서 제외합니다.",
+            "선택한 목적지, 추가 장소, 총 숙박일수, 일행, 속도, 꼭 가야 할 우선순위, 시간 상태, 페이지 언어와 내부 규칙 버전으로 요청을 설명합니다. 같은 기준으로 처리할 수 있는 구조화 선택은 여행 브리프 흐름과 여행 정보를 개선하기 위한 제한된 집계에 포함될 수 있으며 ‘그 밖의 장소’ 자유 입력 문구는 집계에서 제외합니다.",
         },
         {
           name: "선택한 답변 연락처",
@@ -663,7 +663,7 @@ export const homegroundPrivacyCopy: Record<
           label: "브라우저 행동 분석 및 AI 채팅",
           value: "사용 안 함",
           detail:
-            "현재 사이트는 여행 동선 찾기 또는 페이지 행동 기록을 수집하지 않고 제3자 마케팅 추적이나 AI 채팅 위젯을 사용하지 않습니다. 현재 양식 버전은 URL 캠페인 표지를 문의에 넣지 않습니다. 제한된 요약은 저장에 성공한 문의의 구조화 선택만 사용합니다.",
+            "현재 사이트는 여행 브리프 또는 페이지 행동 기록을 수집하지 않고 제3자 마케팅 추적이나 AI 채팅 위젯을 사용하지 않습니다. 현재 양식 버전은 URL 캠페인 표지를 문의에 넣지 않습니다. 제한된 요약은 저장에 성공한 문의의 구조화 선택만 사용합니다.",
         },
       ],
     },
@@ -677,7 +677,7 @@ export const homegroundPrivacyCopy: Record<
           label: "개인정보처리자 및 웹사이트 운영 사업자",
           value: `${homegroundBusiness.registeredName}(Homeground 브랜드 운영)`,
           detail:
-            "등록 사업자가 웹사이트 문의 및 수락된 US$69 또는 US$129 서면 컨설팅을 책임집니다. Homeground는 대외 브랜드이며 별도 법인이나 여행사 자격을 의미하지 않습니다.",
+            "등록 사업자가 이 웹사이트와 접수된 Homeground 문의 기록을 책임집니다. Homeground는 이 등록 사업자가 사용하는 대외 브랜드입니다.",
         },
         {
           label: "처리 및 저장 지역",
@@ -714,15 +714,15 @@ export const homegroundPrivacyCopy: Record<
     },
     choices: {
       eyebrow: "여행자의 선택",
-      title: "연락 여부는 여행자가 정합니다",
+      title: "제출 여부는 여행자가 정합니다",
       paragraphs: [
-        "연락처를 제공하지 않고 여행 동선 찾기만 사용할 수 있습니다. 문의 양식 제출은 별도의 명시적인 행동입니다.",
+        "여행 브리프 답변은 여행자가 한 가지 답변 연락처를 입력하고 직접 제출할 때까지 브라우저에만 남습니다. 제출 전에 나가거나 다시 시작하면 Homeground에 문의가 전송되지 않습니다.",
         "현재 문의 처리와 마케팅 동의는 별개입니다. 별도 동의 없이 제출한 연락처를 관련 없는 마케팅에 사용하지 않습니다.",
       ],
       items: [
         "문의 양식을 제출하지 않을 수 있습니다.",
         "합리적인 본인 확인 후 보관 정보의 열람, 수정 또는 삭제를 요청할 수 있습니다.",
-        "Homeground에 연락하지 않고 여행 동선 찾기를 계속 이용할 수 있습니다.",
+        "제출 전에 여행 브리프를 다시 시작하거나 페이지를 나갈 수 있습니다.",
         "이메일 또는 WhatsApp으로 사람의 답장을 받도록 선택하고 출발 국가, 지역 또는 대략적인 예산은 비워 둘 수 있습니다.",
       ],
     },
@@ -737,7 +737,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
-      "이 안내는 Homeground의 현재 여행 동선 찾기와 이메일 또는 WhatsApp 답변 문의 서비스에 적용됩니다. 마케팅 동의가 아니며 AI 채팅이나 필수적이지 않은 브라우저 행동 분석을 사용하지 않습니다.",
+      "이 안내는 Homeground의 현재 여행 브리프와 이메일 또는 WhatsApp 답변 문의 서비스에 적용됩니다. 마케팅 동의가 아니며 AI 채팅이나 필수적이지 않은 브라우저 행동 분석을 사용하지 않습니다.",
   },
 };
 

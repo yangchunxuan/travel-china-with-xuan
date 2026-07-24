@@ -93,7 +93,6 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
     "itinerary-review",
     "route-build",
     "full-trip-support",
-    "explore",
   ]);
   for (const id of homepagePlanningIntentIds) {
     assert.equal(isHomepagePlanningIntentId(id), true);
@@ -165,7 +164,7 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
   assert.doesNotMatch(surface, /service=conversation/u);
 });
 
-test("English, Chinese and Korean expose the same neutral conversation, paid shortcuts and honest free boundary", async () => {
+test("English, Chinese and Korean expose one free human conversation and three paid shortcuts", async () => {
   const localizedCopySource = await source("lib/homepagePlanningDesk.ts");
   const locales = [
     {
@@ -265,9 +264,16 @@ test("English, Chinese and Korean expose the same neutral conversation, paid sho
         planningDeskCopy.bookingResponsibility.fixedScopeHint.length > 0,
       `${locale} booking-responsibility validation and scope hint must exist`,
     );
-    assert.ok(
-      planningDeskCopy.freeUpgrade.conversationLabel.length > 0,
-      `${locale} free result must offer a planner conversation entry`,
+    assert.equal(planningDeskCopy.options.length, 4);
+    assert.equal(
+      planningDeskCopy.options.filter((option) => option.kind === "conversation").length,
+      1,
+      `${locale} must expose one free conversation path`,
+    );
+    assert.equal(
+      planningDeskCopy.options.filter((option) => option.kind === "paid").length,
+      3,
+      `${locale} must retain three paid paths`,
     );
     assert.equal(
       planningDeskCopy.questionContexts["full-trip-support"].introBody,
@@ -357,7 +363,7 @@ test("the planning-desk motion stays purposeful, responsive and reduced-motion s
   assert.match(finderStyles, /@media \(prefers-reduced-motion: reduce\)/u);
 });
 
-test("conversation and paid briefs end at a human handoff while explore alone renders the free result", async () => {
+test("every conversation and paid brief ends at the human handoff", async () => {
   const [
     home,
     finder,
@@ -387,43 +393,26 @@ test("conversation and paid briefs end at a human handoff while explore alone re
   assert.match(surface, /human-brief-ready/u);
   assert.match(
     finder,
-    /const briefCopy\s*=\s*planningIntent === ["']conversation["'][\s\S]{0,120}planningCopy\.conversationBrief[\s\S]{0,180}planningCopy\.paidBriefs\[serviceInterest\.id\][\s\S]{0,80}:\s*null/u,
+    /const briefCopy\s*=\s*serviceInterest[\s\S]{0,100}planningCopy\.paidBriefs\[serviceInterest\.id\][\s\S]{0,100}planningCopy\.conversationBrief/u,
   );
-  assert.match(
-    finder,
-    /briefCopy\s*\?\s*["']human-brief-ready["']\s*:\s*["']free-route-check["']/u,
-  );
-  const humanBriefBranchIndex = finder.indexOf("{briefCopy ? (");
+  assert.match(finder, /data-result-mode=["']human-brief-ready["']/u);
+  assert.doesNotMatch(finder, /free-route-check/u);
+  const humanBriefBranchIndex = finder.indexOf("styles.paidBriefGrid");
   const humanBriefScopeIndex = finder.indexOf(
     "briefCopy.scopeLabel",
     humanBriefBranchIndex,
   );
-  const freeTimingIndex = finder.indexOf(
-    "copy.result.timingTitle",
-    humanBriefBranchIndex,
-  );
   assert.ok(
     humanBriefBranchIndex >= 0,
-    "expected a guarded human brief branch",
+    "expected the human brief branch",
   );
   assert.ok(
     humanBriefScopeIndex > humanBriefBranchIndex,
     "the human branch should present the relevant conversation or service scope",
   );
-  assert.ok(
-    freeTimingIndex > humanBriefScopeIndex,
-    "the free timing result must be the alternative to every human brief",
-  );
   assert.equal(home.match(/<RouteFinder\b/gu)?.length, 1);
   assert.equal(finder.match(/<form\b/gu)?.length, 1);
-  assert.match(
-    home,
-    /planningIntent\s*===\s*["']explore["'][\s\S]{0,1500}<HomepagePlanningUpgrade\b/u,
-  );
-  assert.match(
-    home,
-    /hidden=\{[\s\S]{0,120}!planningIntent \|\| planningIntent === ["']explore["'][\s\S]{0,250}<PlannerHandoff\b/u,
-  );
+  assert.doesNotMatch(home, /HomepagePlanningUpgrade/u);
   assert.match(
     home,
     /<PlannerHandoff\b[\s\S]{0,300}serviceInterest=\{handoffServiceInterest\}[\s\S]{0,300}planningIntent === ["']conversation["'][\s\S]{0,120}\? planningStarterIntent/u,
@@ -604,11 +593,11 @@ test("the planning desk has 320px reflow and minimum touch-target safeguards", a
   );
   assert.match(
     styles,
-    /@media\s*\(max-width:\s*820px\)\s*\{[\s\S]{0,300}\.intentStarterGrid,[\s\S]{0,250}grid-template-columns:\s*minmax\(0,\s*1fr\)/u,
+    /@media\s*\(max-width:\s*820px\)\s*\{[\s\S]{0,300}\.intentStarterGrid\s*\{[\s\S]{0,250}grid-template-columns:\s*minmax\(0,\s*1fr\)/u,
   );
   assert.match(
     styles,
-    /\.intentSecondaryButton,[\s\S]{0,200}\.planningUpgradeOptions button\s*\{[\s\S]{0,350}min-block-size:\s*2\.75rem/u,
+    /\.intentSecondaryButton,[\s\S]{0,200}\.selectedIntent button\s*\{[\s\S]{0,350}min-block-size:\s*2\.75rem/u,
   );
   assert.match(
     styles,
@@ -631,12 +620,13 @@ test("one selected service stays authoritative across planner history and clean 
   );
   assert.match(
     home,
-    /nextIntent === ["']explore["'] \|\| nextIntent === ["']conversation["'][\s\S]{0,220}sessionStorage\.setItem/u,
+    /nextIntent === ["']conversation["'][\s\S]{0,220}sessionStorage\.setItem/u,
   );
   assert.match(home, /else \{[\s\S]{0,120}sessionStorage\.removeItem\(planningIntentStorageKey\)/u);
   assert.match(
     home,
-    /url\.searchParams\.has\(["']planner["']\)[\s\S]{0,160}storedIntent === ["']conversation["'][\s\S]{0,80}storedIntent === ["']explore["']/u,
+    /storedIntent === ["']explore["'] \? ["']conversation["'] : storedIntent[\s\S]{0,220}restoredIntent === ["']conversation["']/u,
+    "a legacy explore session must migrate into the human conversation",
   );
   assert.match(
     home,
@@ -645,7 +635,7 @@ test("one selected service stays authoritative across planner history and clean 
   );
 });
 
-test("paid contact drafts survive the free branch while service-only notes remain scoped", async () => {
+test("one mounted human handoff preserves shared contact drafts across service changes", async () => {
   const [home, finder, handoff] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/RouteFinder.tsx"),
@@ -658,10 +648,7 @@ test("paid contact drafts survive the free branch while service-only notes remai
     1,
     "one mounted handoff must preserve shared contact fields across every path",
   );
-  assert.match(
-    home,
-    /hidden=\{[\s\S]{0,120}planningIntent === ["']explore["'][\s\S]{0,250}<PlannerHandoff/u,
-  );
+  assert.doesNotMatch(home, /planningIntent === ["']explore["']/u);
   assert.match(home, /serviceInterest=\{handoffServiceInterest\}/u);
   assert.match(home, /serviceContextRevision/u);
   assert.match(handoff, /previousServiceContextRevisionRef/u);
@@ -841,32 +828,17 @@ test("the worst-case composed enquiry note still fits the server contract", asyn
   }
 });
 
-test("the free result upgrades into a planner conversation before any paid option", async () => {
-  const planningDesk = await source("components/HomepagePlanningDesk.tsx");
-  const conversationIndex = planningDesk.indexOf(
-    "planningUpgradeConversation",
-  );
-  const paidOptionsIndex = planningDesk.indexOf(
-    "planningUpgradeOptions",
-    conversationIndex,
-  );
+test("conversation is the only free path and the obsolete explore upgrade is absent", async () => {
+  const [planningDesk, copy, home] = await Promise.all([
+    source("components/HomepagePlanningDesk.tsx"),
+    source("lib/homepagePlanningDesk.ts"),
+    source("components/HomegroundHomePage.tsx"),
+  ]);
 
-  assert.ok(
-    conversationIndex >= 0,
-    "the free result must offer a conversation entry",
-  );
-  assert.ok(
-    paidOptionsIndex > conversationIndex,
-    "the conversation entry must lead the paid upgrade options",
-  );
-  assert.match(
-    planningDesk,
-    /onSelect\("conversation"\)/u,
-  );
-  assert.match(
-    planningDesk,
-    /copy\.freeUpgrade\.conversationLabel/u,
-  );
+  assert.match(planningDesk, /onContinue\(["']conversation["'], ["']open-text["']\)/u);
+  assert.doesNotMatch(planningDesk, /HomepagePlanningUpgrade|planningUpgrade/u);
+  assert.doesNotMatch(copy, /id:\s*["']explore["']|kind:\s*["']free["']/u);
+  assert.match(home, /storedIntent === ["']explore["'] \? ["']conversation["']/u);
 });
 
 test("standard scope, payment boundary and out-of-scope pricing remain explicit", async () => {
@@ -882,8 +854,7 @@ test("standard scope, payment boundary and out-of-scope pricing remain explicit"
   assert.match(copy, /routeNeedsScopeConfirmation/u);
   assert.match(finder, /data-standard-scope-status/u);
   assert.match(finder, /outsideStandardScope\.scopeLabel/u);
-  assert.match(home, /freeResultLabel/u);
-  assert.match(home, /freeResultTitle/u);
+  assert.doesNotMatch(home, /freeResultLabel|freeResultTitle/u);
 });
 
 test("the homepage planning example keeps its Hangzhou image and three-language copy aligned", async () => {

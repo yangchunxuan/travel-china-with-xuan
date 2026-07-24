@@ -260,10 +260,10 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       "A less distinctive show can be the better choice because it fits the correct base and protects the next day. Sometimes the best calculation ends with no ticket.",
     ctaTitle: "Does an evening show still fit your route?",
     ctaBody:
-      "Start with Zhangjiajie, your China nights, group and preferred pace. If you continue, a planner can ask for the exact date, hotel base and next-morning plan before recommending a show.",
-    ctaAction: "Check Zhangjiajie in my route",
+      "Share Zhangjiajie, your China nights, group and preferred pace in one free trip brief. A Homeground planner will continue the conversation and ask for the exact date, hotel base and next-morning plan before recommending a show.",
+    ctaAction: "Start my free trip brief",
     ctaNote:
-      "The Route Finder checks destination time first. Live sessions, seats and transfers are confirmed in the human follow-up.",
+      "The same brief carries your route context into a human reply.",
   },
   checklist: {
     sectionLabel: "What changes by date",
@@ -370,9 +370,9 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     sectionLabel: "A route answer, not a ticket ranking",
     title: "Check the evening only after the Zhangjiajie route works.",
     body:
-      "Start with your destination time and group. In the first reply, we can ask for the hotel base, daytime plan and next-morning timing, then check the live show details that actually affect the decision.",
-    action: "Check Zhangjiajie in my route",
-    note: "One contact is requested only if you choose to continue to a human planner.",
+      "Send one free trip brief with your destination time and group. A Homeground planner will reply personally, then confirm the hotel base, daytime plan, next-morning timing and live show details that affect the decision.",
+    action: "Start my free trip brief",
+    note: "One brief starts the conversation; no payment is taken here.",
   },
   structuredData: {
     homeName: "Homeground China",

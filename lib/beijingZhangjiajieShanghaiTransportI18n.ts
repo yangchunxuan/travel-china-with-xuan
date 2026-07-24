@@ -591,11 +591,11 @@ const english: TransportGuideCopy = {
     ],
   },
   finalCta: {
-    sectionLabel: "Check the shape first",
-    title: "Do these three cities fit your available nights?",
+    sectionLabel: "Continue with a planner",
+    title: "Turn these three cities into one workable trip brief.",
     body:
-      "Use the free Route Finder to compare your wishlist with your total nights and preferred pace. You see the timing result before sharing contact details. It is a first check, not a transport booking or finished itinerary.",
-    action: "Start the free route check",
+      "Share the cities, total nights, travel party and preferred pace once. The trip brief is free to submit, and a Homeground planner will continue the conversation with the right next step.",
+    action: "Start my free trip brief",
   },
   structuredData: {
     homeName: "Homeground China",
@@ -1009,11 +1009,11 @@ const chinese: TransportGuideCopy = {
     ],
   },
   finalCta: {
-    sectionLabel: "先检查路线结构",
-    title: "你的旅行晚数能放下这三座城市吗？",
+    sectionLabel: "继续与规划师沟通",
+    title: "把这三座城市放进同一份可执行的旅行简报。",
     body:
-      "使用免费的 Route Finder，把目的地愿望、总晚数和旅行节奏放在一起检查。无需先填写联系方式即可看到时间判断；它是第一轮路线检查，不是交通预订或完整行程。",
-    action: "开始免费路线检查",
+      "一次填写城市、总晚数、同行者和偏好节奏。旅行简报可以免费提交，Homeground 规划师会亲自继续与你沟通，并确认适合的下一步。",
+    action: "免费提交旅行简报",
   },
   structuredData: {
     homeName: "Homeground China",
@@ -1421,11 +1421,11 @@ const korean: TransportGuideCopy = {
     ],
   },
   finalCta: {
-    sectionLabel: "먼저 동선의 형태를 확인하세요",
-    title: "여행 숙박일수에 이 세 도시가 들어갈까요?",
+    sectionLabel: "플래너와 계속 상담하기",
+    title: "세 도시를 하나의 실행 가능한 여행 브리프에 담아 보세요.",
     body:
-      "무료 Route Finder에서 희망 목적지, 총 숙박일수와 여행 속도를 함께 확인하세요. 연락처를 입력하기 전에 시간 판단 결과를 볼 수 있습니다. 이는 1차 동선 점검이며 교통 예약이나 완성 일정은 아닙니다.",
-    action: "무료 동선 확인 시작하기",
+      "도시, 총 숙박일수, 일행과 선호하는 여행 속도를 한 번만 알려 주세요. 여행 브리프는 무료로 제출할 수 있으며 Homeground 플래너가 직접 상담을 이어가고 알맞은 다음 단계를 안내합니다.",
+    action: "무료 여행 브리프 시작하기",
   },
   structuredData: {
     homeName: "Homeground China",

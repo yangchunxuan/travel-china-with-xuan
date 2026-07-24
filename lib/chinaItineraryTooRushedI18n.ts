@@ -109,9 +109,9 @@ export interface ItineraryRushGuideCopy {
     reviewCta: string;
     buildIntro: string;
     buildCta: string;
-    exploreIntro: string;
-    exploreCta: string;
-    exploreNote: string;
+    conversationIntro: string;
+    conversationCta: string;
+    conversationNote: string;
   };
   faq: {
     label: string;
@@ -379,9 +379,11 @@ const en: ItineraryRushGuideCopy = {
     reviewCta: "Review My Route — US$69",
     buildIntro: "I have dates and priorities, but no workable route yet.",
     buildCta: "Build My Route — US$129",
-    exploreIntro: "I am still exploring and want an automated starting point.",
-    exploreCta: "Use the free Route Finder",
-    exploreNote: "No human review is included.",
+    conversationIntro:
+      "I want to explain the whole trip before choosing a service.",
+    conversationCta: "Start a free trip brief",
+    conversationNote:
+      "Leave one reply contact when you submit; Homeground follows up personally.",
   },
   faq: {
     label: "Common planning questions",
@@ -406,11 +408,6 @@ const en: ItineraryRushGuideCopy = {
         question: "Should I remove a city from my China trip?",
         answer:
           "Remove a city only when doing so returns something you actually value: a full sightseeing day, one less hotel move, protection around a fixed booking or a usable recovery window.",
-      },
-      {
-        question: "Does the free Route Finder include a human itinerary review?",
-        answer:
-          "No. The Route Finder is a free automated starting point for travellers who are still exploring. Human review of a usable day-by-day draft is a separate fixed-scope service priced at US$69.",
       },
     ],
   },
@@ -633,9 +630,10 @@ const zh: ItineraryRushGuideCopy = {
     reviewCta: "审核我的路线 — 69 美元",
     buildIntro: "我有日期和优先事项，但还没有一条可执行的路线。",
     buildCta: "帮我规划路线 — 129 美元",
-    exploreIntro: "我还在探索阶段，想先获得一个自动生成的起点。",
-    exploreCta: "使用免费路线查找器",
-    exploreNote: "不包含人工审核。",
+    conversationIntro: "我想先说明整趟旅行需求，再决定适合的服务。",
+    conversationCta: "免费提交旅行简报",
+    conversationNote:
+      "提交时留下一个回复联系方式，Homeground 会亲自联系你。",
   },
   faq: {
     label: "常见规划问题",
@@ -660,11 +658,6 @@ const zh: ItineraryRushGuideCopy = {
         question: "我应该从中国旅行中删掉一座城市吗？",
         answer:
           "只有当删掉一座城市能换回你真正重视的东西时再删：一个完整游览日、少一次换酒店、保护一项固定预约，或留出可用的恢复时间。",
-      },
-      {
-        question: "免费路线查找器包含人工行程审核吗？",
-        answer:
-          "不包含。路线查找器是给仍在探索阶段的旅客使用的免费自动化起点。人工审核一份可用的逐日草案，是另一项范围固定、价格为 69 美元的服务。",
       },
     ],
   },
@@ -887,9 +880,11 @@ const ko: ItineraryRushGuideCopy = {
     reviewCta: "내 일정 검토 — US$69",
     buildIntro: "날짜와 우선순위는 있지만 실행 가능한 일정은 아직 없습니다.",
     buildCta: "내 일정 설계 — US$129",
-    exploreIntro: "아직 탐색 중이며 자동으로 만든 출발점이 필요합니다.",
-    exploreCta: "무료 Route Finder 사용",
-    exploreNote: "사람이 직접 검토하는 서비스는 포함되지 않습니다.",
+    conversationIntro:
+      "서비스를 고르기 전에 전체 여행 요청부터 설명하고 싶습니다.",
+    conversationCta: "무료 여행 브리프 시작하기",
+    conversationNote:
+      "제출할 때 답변받을 연락처 하나를 남기면 Homeground가 직접 연락드립니다.",
   },
   faq: {
     label: "자주 묻는 일정 질문",
@@ -914,11 +909,6 @@ const ko: ItineraryRushGuideCopy = {
         question: "중국 여행에서 도시 하나를 빼야 할까요?",
         answer:
           "온전한 관광일, 한 번 줄어든 숙소 변경, 고정 예약 보호, 실제로 쉴 수 있는 시간처럼 내가 중요하게 생각하는 것을 되찾을 때만 도시를 빼세요.",
-      },
-      {
-        question: "무료 Route Finder에 사람의 일정 검토가 포함되나요?",
-        answer:
-          "아닙니다. Route Finder는 아직 탐색 중인 여행자를 위한 무료 자동 출발점입니다. 활용 가능한 일자별 초안을 사람이 검토하는 서비스는 별도의 고정 범위 서비스이며 가격은 US$69입니다.",
       },
     ],
   },

@@ -26,8 +26,21 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
   assert.match(page, /service=route-build/);
   assert.match(page, /service=full-trip-support/);
   assert.match(copy, /No online payment is taken/);
-  assert.match(copy, /does not take payment or accept file uploads/);
-  assert.match(copy, /It is not a booking or payment/);
+  assert.match(copy, /no payment or file upload is needed here/);
+  assert.match(copy, /Homeground will follow up personally/);
+  assert.match(page, /const conversationHref/);
+  assert.match(page, /utm_campaign=trip-conversation/);
+  assert.match(copy, /Start a free trip brief/);
+  assert.match(copy, /免费提交旅行简报/);
+  assert.match(copy, /무료 여행 브리프 시작하기/);
+  assert.doesNotMatch(
+    commercialSurface,
+    /freeFinderHref|free-route-finder|Try the free Route Finder|先试用免费路线检查工具|무료 Route Finder/,
+  );
+  assert.doesNotMatch(
+    copy,
+    /existing Route Finder|现有的路线检查工具|기존 Route Finder/,
+  );
   assert.doesNotMatch(commercialSurface, /Buy now|Checkout|Add to cart/);
   assert.doesNotMatch(commercialSurface, /consolidated clarification|structural revision/);
 });

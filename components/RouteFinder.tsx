@@ -444,7 +444,6 @@ export function RouteFinder({
   const [match, setMatch] = useState<DestinationPlan | null>(null);
   const [journey, setJourney] = useState<RouteJourney | null>(null);
   const [questionError, setQuestionError] = useState("");
-  const [mustSeeMessage, setMustSeeMessage] = useState("");
   const [sessionReady, setSessionReady] = useState(false);
   const [historyFocusRequest, setHistoryFocusRequest] = useState(0);
   const [intentPickerOpen, setIntentPickerOpen] = useState(
@@ -516,7 +515,7 @@ export function RouteFinder({
       trackPlannerEvent(
         activeIntent === "conversation"
           ? "conversation_brief_ready_viewed"
-          : activeIntent && activeIntent !== "explore"
+          : activeIntent
             ? "paid_brief_ready_viewed"
             : eventName,
         {
@@ -836,7 +835,6 @@ export function RouteFinder({
   const updateDraft = (next: PlannerDraft) => {
     setDraft(next);
     setQuestionError("");
-    setMustSeeMessage("");
     if (!hasTrackedStart.current) {
       hasTrackedStart.current = true;
       trackPlannerEvent("planner_started", { page_language: locale });
@@ -1064,7 +1062,6 @@ export function RouteFinder({
     setView("questions");
     setStepIndex(0);
     setQuestionError("");
-    setMustSeeMessage("");
     hasTrackedStart.current = false;
     window.sessionStorage.removeItem(sessionStorageKey);
     onRouteCleared?.();
@@ -1108,27 +1105,6 @@ export function RouteFinder({
     });
   };
 
-  const updateMustSee = (id: DestinationId) => {
-    if (interactionLocked || !match || !journey) return;
-    const selected = match.answers.mustSeeIds.includes(id);
-    if (!selected && match.answers.mustSeeIds.length >= 3) {
-      setMustSeeMessage(copy.result.mustSeeLimit);
-      return;
-    }
-
-    const mustSeeIds = selected
-      ? match.answers.mustSeeIds.filter((item) => item !== id)
-      : [...match.answers.mustSeeIds, id];
-    const answers = { ...match.answers, mustSeeIds };
-    const nextMatch = createDestinationPlan(answers);
-    const nextJourney = { ...journey, revision: journey.revision + 1 };
-    setDraft((current) => ({ ...current, mustSeeIds: [...mustSeeIds] }));
-    setMatch(nextMatch);
-    setJourney(nextJourney);
-    setMustSeeMessage("");
-    onRouteFound?.(nextMatch, nextJourney);
-  };
-
   const resultMeta = useMemo(() => {
     if (!match) return null;
     const answerCopy = copy.result.answerLabels;
@@ -1148,73 +1124,15 @@ export function RouteFinder({
     ];
   }, [copy, match]);
 
-  const resultBody = useMemo(() => {
-    if (!match) return "";
-    const timing = match.timing;
-    const paceLabel = copy.paceLabels[match.answers.pace];
-    if (match.answers.destinationMode === "classic-start") {
-      return copy.result.bodies.classicStart;
-    }
-    if (timing.status === "manual_only") {
-      return copy.result.bodies.otherOnly(match.answers.otherPlace ?? "");
-    }
-    if (timing.status === "partial_manual_check") {
-      return copy.result.bodies.partialManual(
-        match.answers.otherPlace ?? "",
-      );
-    }
-    if (timing.knownDestinationsStatus === "needs_prioritization") {
-      return copy.result.bodies.needsPrioritization(
-        timing.essentialsMinimumNights ?? 0,
-        timing.totalNights,
-        timing.essentialsShortfallNights ?? 0,
-      );
-    }
-    if (
-      timing.knownDestinationsStatus ===
-      "tighter_than_selected_pace"
-    ) {
-      return copy.result.bodies.tighterThanPace(
-        timing.totalNights,
-        paceLabel,
-        timing.selectedPaceRange?.minNights ?? 0,
-      );
-    }
-    if (
-      timing.knownDestinationsStatus === "within_reference_range"
-    ) {
-      return copy.result.bodies.withinRange(paceLabel);
-    }
-    return copy.result.bodies.roomToShape(
-      timing.nightsAboveSelectedPaceMax ?? 0,
-    );
-  }, [copy, match]);
-
-  const resultTitle = match
-    ? copy.result.titles[match.timing.status]
-    : "";
   const briefCopy =
-    planningIntent === "conversation"
-      ? planningCopy.conversationBrief
-      : serviceInterest
-        ? planningCopy.paidBriefs[serviceInterest.id]
-        : null;
+    serviceInterest
+      ? planningCopy.paidBriefs[serviceInterest.id]
+      : planningCopy.conversationBrief;
   const scopeConfirmationRequired = Boolean(
     match &&
       serviceInterest &&
       routeNeedsScopeConfirmation(match, serviceInterest.id),
   );
-  const showMustSee =
-    Boolean(match) &&
-    match?.timing.knownDestinationsStatus === "needs_prioritization" &&
-    match.answers.destinationIds.length > 1;
-  const hasCompressedCondition =
-    Boolean(match) &&
-    match?.answers.pace === "essentials" &&
-    match.answers.destinationIds.some(
-      (id) =>
-        id === "zhangjiajie" || id === "hangzhou-suzhou",
-    );
   const destinationSelectionReady =
     questionKey === "destinations" &&
     (draft.destinationMode === "classic-start" ||
@@ -1713,9 +1631,7 @@ export function RouteFinder({
         match && (
           <div
             className={styles.result}
-            data-result-mode={
-              briefCopy ? "human-brief-ready" : "free-route-check"
-            }
+            data-result-mode="human-brief-ready"
             data-standard-scope-status={
               scopeConfirmationRequired ? "needs-confirmation" : "standard"
             }
@@ -1740,25 +1656,23 @@ export function RouteFinder({
             />
             <header className={styles.resultHeader}>
               <p className={styles.kicker}>
-                {briefCopy?.kicker ?? copy.result.kicker}
+                {briefCopy.kicker}
               </p>
               <h2
                 id={`${id}-title`}
                 ref={resultHeadingRef}
                 tabIndex={-1}
               >
-                {briefCopy?.title ?? resultTitle}
+                {briefCopy.title}
               </h2>
               <p className={styles.resultLead}>
                 {scopeConfirmationRequired
                   ? planningCopy.outsideStandardScope.briefBody
-                  : briefCopy?.body ?? resultBody}
+                  : briefCopy.body}
               </p>
-              {briefCopy && (
-                <p className={styles.paidBriefNotice}>
-                  {briefCopy.noPayment}
-                </p>
-              )}
+              <p className={styles.paidBriefNotice}>
+                {briefCopy.noPayment}
+              </p>
               {resultMeta && (
                 <div className={styles.resultMetaRow}>
                   <dl>
@@ -1781,225 +1695,58 @@ export function RouteFinder({
               )}
             </header>
 
-            {briefCopy ? (
-              <div className={styles.paidBriefGrid}>
-                <section className={styles.paidBriefPanel}>
-                  <h3>
-                    {scopeConfirmationRequired
-                      ? planningCopy.outsideStandardScope.scopeLabel
-                      : briefCopy.scopeLabel}
-                  </h3>
-                  <p>
-                    {scopeConfirmationRequired
-                      ? planningCopy.outsideStandardScope.scope
-                      : briefCopy.scope}
-                  </p>
-                  <h3>{copy.result.wishlistTitle}</h3>
-                  <p>
-                    {match.answers.destinationMode === "classic-start"
-                      ? copy.result.classicStartValue
-                      : [
-                          ...match.answers.destinationIds.map(
-                            (destinationId) =>
-                              copy.destinations[destinationId],
-                          ),
-                          ...(match.answers.otherPlace
-                            ? [match.answers.otherPlace]
-                            : []),
-                        ].join(" · ")}
-                  </p>
-                </section>
-                <section className={styles.paidBriefPanel}>
-                  <h3>{briefCopy.deliverablesLabel}</h3>
-                  <ul className={styles.paidBriefList}>
-                    {briefCopy.deliverables.map((item) => (
-                      <li key={item}>
-                        <Check aria-hidden="true" size={16} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-                <section className={styles.paidBriefPanel}>
-                  <h3>{briefCopy.nextLabel}</h3>
-                  <ol className={styles.paidNextSteps}>
-                    {briefCopy.nextSteps.map((item, index) => (
-                      <li key={item}>
-                        <span aria-hidden="true">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <p>{item}</p>
-                      </li>
-                    ))}
-                  </ol>
-                </section>
-              </div>
-            ) : (
-              <>
-            <section
-              className={styles.wishlistSummary}
-              aria-labelledby={`${id}-wishlist-title`}
-            >
-              <div className={styles.sectionHeading}>
-                <h3 id={`${id}-wishlist-title`}>
-                  {copy.result.wishlistTitle}
+            <div className={styles.paidBriefGrid}>
+              <section className={styles.paidBriefPanel}>
+                <h3>
+                  {scopeConfirmationRequired
+                    ? planningCopy.outsideStandardScope.scopeLabel
+                    : briefCopy.scopeLabel}
                 </h3>
-                <span>
+                <p>
+                  {scopeConfirmationRequired
+                    ? planningCopy.outsideStandardScope.scope
+                    : briefCopy.scope}
+                </p>
+                <h3>{copy.result.wishlistTitle}</h3>
+                <p>
                   {match.answers.destinationMode === "classic-start"
                     ? copy.result.classicStartValue
-                    : match.answers.destinationIds.length +
-                      (match.answers.otherPlace ? 1 : 0)}
-                </span>
-              </div>
-              {match.answers.destinationMode === "classic-start" ? (
-                <p className={styles.openChoice}>
-                  {copy.result.classicStartValue}
-                </p>
-              ) : (
-                <>
-                  <ul className={styles.wishlist}>
-                    {match.answers.destinationIds.map((destinationId) => (
-                      <li key={destinationId}>
-                        {copy.destinations[destinationId]}
-                      </li>
-                    ))}
-                    {match.answers.otherPlace && (
-                      <li dir="auto">
-                        {copy.result.otherLabel}:{" "}
-                        {match.answers.otherPlace}
-                      </li>
-                    )}
-                  </ul>
-                  <p className={styles.keptAll}>
-                    <Check aria-hidden="true" size={16} />
-                    {copy.result.keptAll}
-                  </p>
-                </>
-              )}
-            </section>
-
-            <section
-              className={styles.timingSummary}
-              aria-labelledby={`${id}-timing-title`}
-            >
-              <h3 id={`${id}-timing-title`}>
-                {copy.result.timingTitle}
-              </h3>
-              <dl>
-                <div>
-                  <dt>{copy.result.available}</dt>
-                  <dd>
-                    {copy.result.nights(match.answers.totalNights)}
-                  </dd>
-                </div>
-                <div>
-                  <dt>{copy.result.essentials}</dt>
-                  <dd>
-                    {match.timing.essentialsMinimumNights === null
-                      ? copy.result.notCalculated
-                      : copy.result.nights(
-                          match.timing.essentialsMinimumNights,
-                        )}
-                  </dd>
-                </div>
-                {match.answers.pace !== "essentials" && (
-                  <div>
-                    <dt>
-                      {copy.result.selectedPace(
-                        copy.paceLabels[match.answers.pace],
-                      )}
-                    </dt>
-                    <dd>
-                      {match.timing.selectedPaceRange
-                        ? copy.result.range(
-                            match.timing.selectedPaceRange.minNights,
-                            match.timing.selectedPaceRange.maxNights,
-                          )
-                        : copy.result.notCalculated}
-                    </dd>
-                  </div>
-                )}
-              </dl>
-              {hasCompressedCondition && (
-                <p className={styles.conditionalNote}>
-                  {copy.result.conditionalNote}
-                </p>
-              )}
-              <p className={styles.boundary}>
-                {copy.result.boundary}
-              </p>
-            </section>
-
-            {showMustSee && (
-              <section
-                className={styles.mustSee}
-                aria-labelledby={`${id}-must-see-title`}
-              >
-                <h3 id={`${id}-must-see-title`}>
-                  {copy.result.mustSeeTitle}
-                </h3>
-                <p>{copy.result.mustSeeBody}</p>
-                <div className={styles.mustSeeGrid}>
-                  {match.answers.destinationIds.map((destinationId) => {
-                    const selected =
-                      match.answers.mustSeeIds.includes(destinationId);
-                    return (
-                      <label
-                        className={`${styles.mustSeeOption} ${
-                          selected ? styles.optionSelected : ""
-                        }`}
-                        key={destinationId}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selected}
-                          disabled={interactionLocked}
-                          onChange={() => updateMustSee(destinationId)}
-                        />
-                        <span>{copy.destinations[destinationId]}</span>
-                      </label>
-                    );
-                  })}
-                </div>
-                <button
-                  className={styles.equalPriority}
-                  type="button"
-                  disabled={
-                    interactionLocked ||
-                    match.answers.mustSeeIds.length === 0
-                  }
-                  onClick={() => {
-                    if (!match.answers.mustSeeIds.length) return;
-                    const answers = { ...match.answers, mustSeeIds: [] };
-                    const nextMatch = createDestinationPlan(answers);
-                    const nextJourney = journey
-                      ? { ...journey, revision: journey.revision + 1 }
-                      : {
-                          journeyId: window.crypto.randomUUID(),
-                          revision: 1,
-                        };
-                    setDraft((current) => ({
-                      ...current,
-                      mustSeeIds: [],
-                    }));
-                    setMatch(nextMatch);
-                    setJourney(nextJourney);
-                    onRouteFound?.(nextMatch, nextJourney);
-                  }}
-                >
-                  {copy.result.mustSeeEqual}
-                </button>
-                <p
-                  className={styles.mustSeeMessage}
-                  role="status"
-                  aria-live="polite"
-                >
-                  {mustSeeMessage}
+                    : [
+                        ...match.answers.destinationIds.map(
+                          (destinationId) =>
+                            copy.destinations[destinationId],
+                        ),
+                        ...(match.answers.otherPlace
+                          ? [match.answers.otherPlace]
+                          : []),
+                      ].join(" · ")}
                 </p>
               </section>
-            )}
-              </>
-            )}
+              <section className={styles.paidBriefPanel}>
+                <h3>{briefCopy.deliverablesLabel}</h3>
+                <ul className={styles.paidBriefList}>
+                  {briefCopy.deliverables.map((item) => (
+                    <li key={item}>
+                      <Check aria-hidden="true" size={16} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <section className={styles.paidBriefPanel}>
+                <h3>{briefCopy.nextLabel}</h3>
+                <ol className={styles.paidNextSteps}>
+                  {briefCopy.nextSteps.map((item, index) => (
+                    <li key={item}>
+                      <span aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p>{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            </div>
 
           </div>
         )

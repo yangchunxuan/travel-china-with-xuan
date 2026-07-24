@@ -51,18 +51,28 @@ test("night-show copy answers the itinerary decision without a fixed timetable",
   assert.doesNotMatch(english, /(?:Show Time|Ticket Price):|CNY\s*\d/i);
 });
 
-test("night-show CTA matches the current route finder boundary", async () => {
+test("night-show CTA carries Zhangjiajie context into a human trip-brief reply", async () => {
   const guide = await source("components/NightShowGuidePage.tsx");
   const english = await source("lib/nightShowGuideCopy.en.ts");
+  const chinese = await source("lib/nightShowGuideCopy.zh.ts");
+  const korean = await source("lib/nightShowGuideCopy.ko.ts");
+  const copy = `${english}\n${chinese}\n${korean}`;
 
   assert.match(
     guide,
     /\?planner=destinations&destinations=zhangjiajie#route-finder/,
   );
   assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
-  assert.match(english, /checks destination time first/i);
-  assert.match(english, /human follow-up/i);
-  assert.doesNotMatch(english, /Send Homeground your travel dates/);
+  assert.match(english, /Start my free trip brief/);
+  assert.match(english, /A Homeground planner will (?:continue|reply)/);
+  assert.match(chinese, /免费提交旅行简报/);
+  assert.match(chinese, /Homeground 规划师会亲自/);
+  assert.match(korean, /무료 여행 브리프 시작하기/);
+  assert.match(korean, /Homeground 플래너가 직접/);
+  assert.doesNotMatch(
+    copy,
+    /Route Finder|路线工具|One contact is requested only|只有在你选择继续|상담을 계속하기로 선택할 때만/,
+  );
 });
 
 test("night-show metadata, locales and sitemap share the guide registry", async () => {

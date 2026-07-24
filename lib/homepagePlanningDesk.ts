@@ -7,7 +7,6 @@ export const homepagePlanningIntentIds = [
   "itinerary-review",
   "route-build",
   "full-trip-support",
-  "explore",
 ] as const;
 
 export type HomepagePlanningIntentId =
@@ -65,7 +64,7 @@ export type PlanningQuestionKey =
 
 export interface HomepagePlanningIntentOption {
   id: HomepagePlanningIntentId;
-  kind: "conversation" | "paid" | "free";
+  kind: "conversation" | "paid";
   statement: string;
   label: string;
   priceLabel: string;
@@ -125,14 +124,6 @@ export interface HomepagePlanningDeskCopy {
     scopeLabel: string;
     scope: string;
     note: (label: string) => string;
-  };
-  freeUpgrade: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    conversationLabel: string;
-    conversationMeta: string;
-    optionLabel: string;
   };
   questionContexts: Record<
     HomepagePlanningIntentId,
@@ -196,7 +187,7 @@ const en: HomepagePlanningDeskCopy = {
       id: "conversation",
       kind: "conversation",
       statement: "I want to explain the trip before choosing a service.",
-      label: "Trip conversation",
+      label: "Free trip consultation",
       priceLabel: "Free to enquire",
       summary:
         "A Homeground planner reviews the brief and confirms the appropriate next step.",
@@ -228,21 +219,11 @@ const en: HomepagePlanningDeskCopy = {
       statement:
         "I want help with the full trip, including selected arrangements or local coordination.",
       label: "Full Trip Planning & Ground Support",
-      priceLabel: "Enquiry first",
+      priceLabel: "Custom quote",
       summary:
-        "We first identify whether a licensed travel operator can provide the arrangements you need.",
+        "We help shape the whole journey, including the planning, selected arrangements and local support you want handled.",
       scope:
-        "The responsible licensed operator, contract, scope and payment recipient are confirmed before any travel-service payment.",
-    },
-    {
-      id: "explore",
-      kind: "free",
-      statement: "I’m still exploring.",
-      label: "Free route timing check",
-      priceLabel: "Free",
-      summary:
-        "Compare your wishlist with the nights you have. No contact details required.",
-      scope: "Automated first check · no human route review",
+        "Trip-specific scope · proposal and quote confirmed with you before payment",
     },
   ],
   continue: "Start my trip brief",
@@ -252,7 +233,7 @@ const en: HomepagePlanningDeskCopy = {
   selectedLabel: "Your starting point",
   change: "Change",
   boundary:
-    "Free to enquire. We use this first brief to confirm the right path. Paid written route-consultation work begins only after its scope, terms and payment are confirmed. Full-trip arrangements remain enquiry-only here.",
+    "Start with one free trip brief. We use it to recommend the right path, then confirm the service scope, quote and next step before any payment.",
   fixedPriceScope: `Fixed-price scope for Review My Route and Build My Route · ${standardScopeEn}`,
   changeWarning:
     "Changing the service will clear the service-specific route note you entered. Your shared trip answers and contact details will stay. Continue?",
@@ -265,19 +246,18 @@ const en: HomepagePlanningDeskCopy = {
       { id: "traveller", label: "I’ll make all bookings myself" },
       {
         id: "homeground-selected",
-        label: "I’d like help finding support for selected arrangements",
+        label: "I’d like Homeground to help with selected arrangements",
       },
       {
         id: "homeground-most",
-        label:
-          "I need a licensed operator to handle most of the trip",
+        label: "I’d like help handling most of the trip",
       },
       { id: "unsure", label: "I’m not sure yet" },
     ],
     error:
       "Choose who you expect to handle the bookings and arrangements.",
     fixedScopeHint:
-      "Travel arrangements sit outside the fixed-price route documents. You can still send this request — a planner checks whether a licensed travel agency can provide the service and identifies the contracting party, scope and payment recipient before any travel-service payment.",
+      "The US$69 and US$129 options are written route services. If you want help beyond the document, send the same brief and a planner will discuss the broader scope and next step with you.",
   },
   outsideStandardScope: {
     priceLabel: "Scope & price to confirm",
@@ -289,16 +269,6 @@ const en: HomepagePlanningDeskCopy = {
     note: (label) =>
       `Requested service: ${label}. Standard-scope fit and the applicable price must be confirmed before payment.`,
   },
-  freeUpgrade: {
-    eyebrow: "Want human help next?",
-    title: "Ask a planner what this trip actually needs.",
-    body:
-      "Your free timing check stays available. A planner can read the same answers and reply with the right next step — or start directly with a published service.",
-    conversationLabel: "Ask a planner what this trip needs",
-    conversationMeta:
-      "Free to enquire · a real planner replies with the right next step",
-    optionLabel: "Human planning options",
-  },
   questionContexts: {
     conversation: {
       introTitle: "Which places are you considering?",
@@ -309,18 +279,6 @@ const en: HomepagePlanningDeskCopy = {
         pace: "What pace would feel right?",
       },
       completeLabel: "Prepare my trip brief",
-    },
-    explore: {
-      introTitle: "Which places are on your China wishlist?",
-      introBody:
-        "Choose every place you genuinely want. This free check compares the wishlist with the nights and pace you enter.",
-      titles: {
-        destinations: "Which places are on your China wishlist?",
-        nights: "How many nights do you have in China?",
-        party: "Who is travelling?",
-        pace: "What pace would feel right?",
-      },
-      completeLabel: "Show my free route check",
     },
     "itinerary-review": {
       introTitle: "Which cities are already in your draft route?",
@@ -389,7 +347,7 @@ const en: HomepagePlanningDeskCopy = {
       kicker: "Route review brief ready",
       title: "We have the basics for your route review.",
       body:
-        "This is the request brief for a human review, not the finished US$69 review and not the free automated timing result.",
+        "This is the request brief for a human review, not the finished US$69 review.",
       noPayment: "No payment has been taken.",
       scopeLabel: "US$69 per trip · standard scope",
       scope: standardScopeEn,
@@ -415,7 +373,7 @@ const en: HomepagePlanningDeskCopy = {
       kicker: "Route-build brief ready",
       title: "We have the basics for the route you want built.",
       body:
-        "This is the request brief for the US$129 human route-build service, not a finished route and not the free automated timing result.",
+        "This is the request brief for the US$129 human route-build service, not a finished route.",
       noPayment: "No payment has been taken.",
       scopeLabel: "US$129 per trip · standard scope",
       scope: standardScopeEn,
@@ -445,18 +403,18 @@ const en: HomepagePlanningDeskCopy = {
       noPayment: "No payment has been taken.",
       scopeLabel: "Trip-specific scope · custom quote",
       scope:
-        "This remains an enquiry. This website and the current written-consultation operator do not accept travel bookings or full-trip payments.",
+        "Homeground reviews the whole journey and turns this brief into a clear planning conversation, proposed scope and custom quote.",
       deliverablesLabel: "What we define with you",
       deliverables: [
-        "Whether a licensed travel agency can provide the requested arrangements",
-        "Its licence details, contracting role and actual service scope",
-        "The quote, payment recipient and start conditions",
+        "The route structure and priorities that matter most",
+        "The planning, booking and on-the-ground support you want handled",
+        "The proposed scope, custom quote and start conditions",
       ],
       nextLabel: "What happens next",
       nextSteps: [
         "Leave one working contact and the most important trip constraints.",
-        "Homeground reviews the brief and follows up about the appropriate next step.",
-        "Before any travel-service payment, the licensed agency, contract scope and payment recipient must be identified.",
+        "Homeground reviews the brief and follows up to shape the right solution with you.",
+        "Before payment, you receive the written scope, quote, start timing and payment details.",
       ],
       submitLabel: "Request a custom scope",
       successTitle: "Your full-trip request is in.",
@@ -507,7 +465,7 @@ const zh: HomepagePlanningDeskCopy = {
       id: "conversation",
       kind: "conversation",
       statement: "我想先说明旅行需求，再决定服务。",
-      label: "旅行需求沟通",
+      label: "免费旅行咨询",
       priceLabel: "提交需求免费",
       summary: "Homeground 规划师会查看简报，并确认适合的下一步。",
       scope: "本页不会收款。",
@@ -535,19 +493,10 @@ const zh: HomepagePlanningDeskCopy = {
       kind: "paid",
       statement: "我希望有人协助整趟旅行，包括部分具体安排或在地协调。",
       label: "全程规划与落地支持",
-      priceLabel: "先提交咨询",
-      summary: "我们会先判断是否有持证旅行经营者能够承接你需要的旅游安排。",
+      priceLabel: "单独报价",
+      summary: "我们会与你梳理整趟旅行，包括希望有人负责的规划、具体安排和在地支持。",
       scope:
-        "支付任何旅游服务款前，会先明确持证经营者、合同、服务范围与收款方。",
-    },
-    {
-      id: "explore",
-      kind: "free",
-      statement: "我还在找方向。",
-      label: "免费初步路线检查",
-      priceLabel: "免费",
-      summary: "比较愿望清单和可用夜数，无需留下联系方式。",
-      scope: "自动初步检查 · 不包含真人路线审核",
+        "按行程确认范围 · 付款前与你确认方案与报价",
     },
   ],
   continue: "开始填写旅行简报",
@@ -556,7 +505,7 @@ const zh: HomepagePlanningDeskCopy = {
   selectedLabel: "你的起点",
   change: "更换",
   boundary:
-    "提交需求不收费。我们会用这份简报确认适合的路径；付费书面路线咨询只在范围、条款与款项确认后开始制作。全程旅游安排在这里仍只是咨询。",
+    "免费提交一份旅行简报。我们会据此推荐适合的路径，并在付款前与你确认服务范围、报价与下一步。",
   fixedPriceScope: `路线审核与路线规划的固定价格标准范围 · ${standardScopeZh}`,
   changeWarning:
     "更换服务会清空你填写的服务专属路线说明；共用的旅行答案和联系方式会保留。是否继续？",
@@ -568,17 +517,17 @@ const zh: HomepagePlanningDeskCopy = {
       { id: "traveller", label: "全部预订我自己完成" },
       {
         id: "homeground-selected",
-        label: "希望有人帮我对接部分旅游安排",
+        label: "希望 Homeground 协助部分旅游安排",
       },
       {
         id: "homeground-most",
-        label: "希望持证旅行经营者负责大部分行程",
+        label: "希望有人帮我负责大部分行程安排",
       },
       { id: "unsure", label: "我还不确定" },
     ],
     error: "请选择你希望由谁完成预订和安排。",
     fixedScopeHint:
-      "旅游预订与履约安排不属于固定价格路线文件。你仍然可以提交简报——规划师会先判断是否有持证旅行社能够承接，并在支付任何旅游服务款前明确合同主体、服务范围与收款方。",
+      "69 美元与 129 美元是书面路线服务。如果你希望获得路线文件以外的帮助，可以继续提交同一份简报，规划师会与你沟通更完整的服务范围和下一步。",
   },
   outsideStandardScope: {
     priceLabel: "范围与价格待确认",
@@ -590,15 +539,6 @@ const zh: HomepagePlanningDeskCopy = {
     note: (label) =>
       `申请的服务：${label}。付款前必须确认是否符合标准范围及适用价格。`,
   },
-  freeUpgrade: {
-    eyebrow: "下一步需要真人协助？",
-    title: "让规划师看看这趟旅行真正需要什么。",
-    body:
-      "免费时间检查会继续保留。规划师可以基于同样的答案回复适合的下一步；你也可以直接从公开服务开始。",
-    conversationLabel: "让规划师判断这趟旅行需要什么",
-    conversationMeta: "提交需求免费 · 真人回复适合的下一步",
-    optionLabel: "真人规划选项",
-  },
   questionContexts: {
     conversation: {
       introTitle: "目前考虑去哪些地方？",
@@ -609,18 +549,6 @@ const zh: HomepagePlanningDeskCopy = {
         pace: "怎样的旅行节奏更适合你？",
       },
       completeLabel: "准备旅行简报",
-    },
-    explore: {
-      introTitle: "哪些地方在你的中国旅行愿望里？",
-      introBody:
-        "选出所有真正想去的地方。免费检查会把愿望清单与你填写的夜数和节奏进行比较。",
-      titles: {
-        destinations: "哪些地方在你的中国旅行愿望里？",
-        nights: "你在中国有多少晚？",
-        party: "谁会一起旅行？",
-        pace: "怎样的节奏更适合你？",
-      },
-      completeLabel: "查看免费路线检查",
     },
     "itinerary-review": {
       introTitle: "你现有的路线已经包括哪些城市？",
@@ -689,7 +617,7 @@ const zh: HomepagePlanningDeskCopy = {
       kicker: "路线审核简报已准备好",
       title: "我们已经了解路线审核所需的基本信息。",
       body:
-        "这是交给真人的服务申请，不是已经完成的 US$69 路线审核，也不是免费自动结果。",
+        "这是交给真人的服务申请，不是已经完成的 US$69 路线审核。",
       noPayment: "目前没有收取任何款项。",
       scopeLabel: "US$69／趟 · 标准范围",
       scope: standardScopeZh,
@@ -715,7 +643,7 @@ const zh: HomepagePlanningDeskCopy = {
       kicker: "路线规划简报已准备好",
       title: "我们已经了解你希望建立的路线基础。",
       body:
-        "这是 US$129 真人路线规划服务的申请，不是已经完成的路线，也不是免费自动结果。",
+        "这是 US$129 真人路线规划服务的申请，不是已经完成的路线。",
       noPayment: "目前没有收取任何款项。",
       scopeLabel: "US$129／趟 · 标准范围",
       scope: standardScopeZh,
@@ -745,18 +673,18 @@ const zh: HomepagePlanningDeskCopy = {
       noPayment: "目前没有收取任何款项。",
       scopeLabel: "按行程确认范围 · 单独报价",
       scope:
-        "这仍然只是咨询。本网站及当前书面咨询经营主体不接受旅游预订或全程旅游安排款。",
+        "Homeground 会从整趟旅行出发审核这份简报，与你梳理需求，并进一步确认服务范围与单独报价。",
       deliverablesLabel: "我们会与你确认什么",
       deliverables: [
-        "是否有持证旅行社能够承接所需旅游安排",
-        "旅行社许可信息、合同角色与实际服务范围",
-        "报价、收款方与正式开始条件",
+        "整趟旅行的路线结构与优先事项",
+        "你希望我们协助的规划、预订与落地支持",
+        "建议的服务范围、单独报价与开始条件",
       ],
       nextLabel: "接下来会发生什么",
       nextSteps: [
         "留下一个有效联系方式和最重要的旅行限制。",
-        "Homeground 审核简报，并联系你说明适合的下一步。",
-        "收取任何旅游服务款前，必须先明确持证旅行社、合同范围和收款方。",
+        "Homeground 审核简报，并联系你一起完善合适的方案。",
+        "付款前，你会收到书面范围、报价、开始时间与付款信息。",
       ],
       submitLabel: "申请确认定制范围",
       successTitle: "你的全程旅行申请已提交。",
@@ -807,7 +735,7 @@ const ko: HomepagePlanningDeskCopy = {
       id: "conversation",
       kind: "conversation",
       statement: "서비스를 고르기 전에 여행 요청부터 설명하고 싶어요.",
-      label: "여행 요청 상담",
+      label: "무료 여행 상담",
       priceLabel: "문의 제출 무료",
       summary:
         "Homeground 플래너가 브리프를 검토하고 적절한 다음 단계를 안내합니다.",
@@ -838,18 +766,9 @@ const ko: HomepagePlanningDeskCopy = {
       label: "전체 여행 설계 및 현지 지원",
       priceLabel: "문의부터 시작",
       summary:
-        "필요한 여행 예약·주선을 맡을 수 있는 허가 여행사업자가 있는지 먼저 확인합니다.",
+        "전체 여행의 동선, 예약 준비와 현지 지원 범위를 함께 정합니다.",
       scope:
-        "여행 서비스 결제 전에 허가 사업자, 계약, 서비스 범위와 결제 수취인을 확인합니다.",
-    },
-    {
-      id: "explore",
-      kind: "free",
-      statement: "아직 아이디어를 정리하는 단계예요.",
-      label: "무료 초기 동선 점검",
-      priceLabel: "무료",
-      summary: "희망 장소와 가능한 숙박일을 비교합니다. 연락처는 필요하지 않습니다.",
-      scope: "자동 초기 점검 · 사람 플래너의 일정 검토는 포함되지 않음",
+        "브리프를 검토한 뒤 맞춤 범위, 견적과 다음 단계를 안내합니다.",
     },
   ],
   continue: "여행 브리프 시작하기",
@@ -859,7 +778,7 @@ const ko: HomepagePlanningDeskCopy = {
   selectedLabel: "여행의 출발점",
   change: "변경",
   boundary:
-    "문의 제출은 무료입니다. 이 브리프로 적절한 경로를 먼저 확인합니다. 유료 서면 일정 컨설팅은 범위, 조건과 결제가 확인된 뒤 시작하며 전체 여행 예약·주선은 여기서 문의 단계로만 진행됩니다.",
+    "무료 여행 브리프 하나로 시작하세요. 알맞은 경로를 추천하고 결제 전에 서비스 범위, 견적과 다음 단계를 확인합니다.",
   fixedPriceScope: `일정 검토와 동선 설계의 정가 적용 범위 · ${standardScopeKo}`,
   changeWarning:
     "서비스를 바꾸면 서비스별 일정 메모가 삭제됩니다. 공통 여행 답변과 연락처는 유지됩니다. 계속할까요?",
@@ -871,17 +790,17 @@ const ko: HomepagePlanningDeskCopy = {
       { id: "traveller", label: "예약은 모두 제가 직접 할 거예요" },
       {
         id: "homeground-selected",
-        label: "일부 여행 준비를 맡을 사업자를 찾는 도움이 필요해요",
+        label: "Homeground가 일부 여행 준비를 도와주길 원해요",
       },
       {
         id: "homeground-most",
-        label: "허가 여행사업자가 여행 대부분을 맡았으면 해요",
+        label: "여행 대부분의 준비를 도움받고 싶어요",
       },
       { id: "unsure", label: "아직 잘 모르겠어요" },
     ],
     error: "예약과 준비를 누가 맡을지 선택해 주세요.",
     fixedScopeHint:
-      "여행 예약과 이행은 정액 동선 문서 범위 밖입니다. 그대로 브리프를 보내도 됩니다. 플래너가 허가 여행사가 맡을 수 있는지 확인하고 여행 서비스 결제 전에 계약 당사자, 범위와 결제 수취인을 안내합니다.",
+      "US$69와 US$129는 서면 일정 서비스입니다. 문서 외의 도움이 필요하면 같은 브리프를 보내 주세요. 플래너가 더 넓은 서비스 범위와 다음 단계를 함께 논의합니다.",
   },
   outsideStandardScope: {
     priceLabel: "범위·가격 확인 필요",
@@ -893,15 +812,6 @@ const ko: HomepagePlanningDeskCopy = {
     note: (label) =>
       `요청 서비스: ${label}. 결제 전에 표준 범위 적합성과 적용 가격을 확인해야 합니다.`,
   },
-  freeUpgrade: {
-    eyebrow: "다음 단계에 사람의 도움이 필요하신가요?",
-    title: "이 여행에 정말 필요한 것을 플래너에게 물어보세요.",
-    body:
-      "무료 시간 점검 결과는 그대로 유지됩니다. 플래너가 같은 답변을 읽고 알맞은 다음 단계를 안내해 드리며, 공개된 서비스에서 바로 시작할 수도 있습니다.",
-    conversationLabel: "이 여행에 무엇이 필요한지 플래너에게 물어보기",
-    conversationMeta: "문의는 무료 · 사람 플래너가 알맞은 다음 단계를 안내합니다",
-    optionLabel: "사람 플래닝 옵션",
-  },
   questionContexts: {
     conversation: {
       introTitle: "어디로 갈 생각이신가요?",
@@ -912,18 +822,6 @@ const ko: HomepagePlanningDeskCopy = {
         pace: "어떤 여행 속도가 편할까요?",
       },
       completeLabel: "여행 브리프 준비하기",
-    },
-    explore: {
-      introTitle: "중국에서 어디를 가고 싶으신가요?",
-      introBody:
-        "정말 가고 싶은 곳을 모두 선택하세요. 무료 점검은 희망 장소를 숙박일과 원하는 여행 속도에 맞춰 비교합니다.",
-      titles: {
-        destinations: "중국에서 어디를 가고 싶으신가요?",
-        nights: "중국에서 몇 박을 보내시나요?",
-        party: "누구와 함께 여행하시나요?",
-        pace: "어떤 여행 속도가 잘 맞나요?",
-      },
-      completeLabel: "무료 동선 점검 보기",
     },
     "itinerary-review": {
       introTitle: "현재 일정에 어떤 도시가 들어 있나요?",
@@ -992,7 +890,7 @@ const ko: HomepagePlanningDeskCopy = {
       kicker: "일정 검토 브리프 준비 완료",
       title: "일정 검토에 필요한 기본 정보를 확인했습니다.",
       body:
-        "이것은 사람 플래너에게 보내는 서비스 요청서입니다. US$69 일정 검토가 완료된 것이 아니며 무료 자동 결과도 아닙니다.",
+        "이것은 사람 플래너에게 보내는 서비스 요청서이며, 완료된 US$69 일정 검토가 아닙니다.",
       noPayment: "아직 결제된 금액은 없습니다.",
       scopeLabel: "여행 1건당 US$69 · 표준 범위",
       scope: standardScopeKo,
@@ -1018,7 +916,7 @@ const ko: HomepagePlanningDeskCopy = {
       kicker: "동선 설계 브리프 준비 완료",
       title: "원하시는 여행 동선의 기본 정보를 확인했습니다.",
       body:
-        "이것은 US$129 사람 플래너 동선 설계 서비스 요청서입니다. 완성된 동선이나 무료 자동 결과가 아닙니다.",
+        "이것은 US$129 사람 플래너 동선 설계 서비스 요청서이며, 완성된 동선이 아닙니다.",
       noPayment: "아직 결제된 금액은 없습니다.",
       scopeLabel: "여행 1건당 US$129 · 표준 범위",
       scope: standardScopeKo,
@@ -1048,18 +946,18 @@ const ko: HomepagePlanningDeskCopy = {
       noPayment: "아직 결제된 금액은 없습니다.",
       scopeLabel: "여행별 범위 · 맞춤 견적",
       scope:
-        "현재는 문의 단계입니다. 이 웹사이트와 서면 컨설팅 운영 사업자는 여행 예약 또는 전체 여행 주선 대금을 받지 않습니다.",
+        "Homeground가 여행 전체를 기준으로 브리프를 검토하고 필요한 내용을 정리한 뒤 맞춤 범위와 견적을 안내합니다.",
       deliverablesLabel: "함께 정할 내용",
       deliverables: [
-        "허가받은 여행사가 요청한 예약·주선을 맡을 수 있는지",
-        "여행사 허가 정보, 계약 역할과 실제 서비스 범위",
-        "견적, 결제 수취인과 작업 시작 조건",
+        "전체 여행의 동선 구조와 우선순위",
+        "도움이 필요한 플래닝, 예약 준비와 현지 지원",
+        "제안 범위, 맞춤 견적과 시작 조건",
       ],
       nextLabel: "다음 단계",
       nextSteps: [
         "사용 가능한 연락처와 가장 중요한 여행 조건을 남깁니다.",
-        "Homeground가 브리프를 검토하고 적절한 다음 단계를 안내합니다.",
-        "여행 서비스 결제 전에 허가 여행사, 계약 범위와 결제 수취인을 먼저 확인해야 합니다.",
+        "Homeground가 브리프를 검토하고 알맞은 여행안을 함께 다듬습니다.",
+        "결제 전에 서면 범위, 견적, 시작 일정과 결제 정보를 받습니다.",
       ],
       submitLabel: "맞춤 범위 요청하기",
       successTitle: "전체 여행 요청을 접수했습니다.",

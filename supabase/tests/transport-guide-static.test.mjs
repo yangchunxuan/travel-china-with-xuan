@@ -206,12 +206,13 @@ test("transport CTA carries its three-city context into the planner", async () =
     planner,
     /applyLinkedDestinations\(storedDraft, linkedDestinationIds\)/,
   );
-  assert.match(copy, /Start the free route check/);
-  assert.match(copy, /无需先填写联系方式即可看到时间判断/);
-  assert.match(copy, /연락처를 입력하기 전에 시간 판단 결과를 볼 수 있습니다/);
-  assert.doesNotMatch(copy, /A human planner replies through your chosen contact method/);
-  assert.doesNotMatch(copy, /人工回复时/);
-  assert.doesNotMatch(copy, /담당자가 직접 답변하면서/);
+  assert.match(copy, /Start my free trip brief/);
+  assert.match(copy, /Homeground 规划师会亲自继续与你沟通/);
+  assert.match(copy, /Homeground 플래너가 직접 상담을 이어가고/);
+  assert.doesNotMatch(
+    copy,
+    /free Route Finder|无需先填写联系方式|연락처를 입력하기 전에/,
+  );
 });
 
 test("existing Zhangjiajie guide links back to the new transport decision page", async () => {

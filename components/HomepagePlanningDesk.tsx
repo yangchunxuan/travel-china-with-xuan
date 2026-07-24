@@ -3,7 +3,6 @@
 import {
   ArrowRight,
   Check,
-  Compass,
   FileCheck2,
   Handshake,
   MapPinned,
@@ -28,7 +27,6 @@ const intentIcons = {
   "itinerary-review": FileCheck2,
   "route-build": MapPinned,
   "full-trip-support": Handshake,
-  explore: Compass,
 } as const;
 
 function IntentOptionContent({
@@ -327,59 +325,5 @@ export function HomepageSelectedIntent({
       </button>
       <p className={styles.selectedIntentBoundary}>{copy.boundary}</p>
     </aside>
-  );
-}
-
-export function HomepagePlanningUpgrade({
-  locale,
-  onSelect,
-}: {
-  locale: HomegroundLocale;
-  onSelect: (intent: HomepagePlanningIntentId) => void;
-}) {
-  const copy = getHomepagePlanningDeskCopy(locale);
-  const options = copy.options.filter((option) => option.kind === "paid");
-
-  return (
-    <section className={styles.planningUpgrade} aria-labelledby="planning-upgrade-title">
-      <p className={styles.intentEyebrow}>{copy.freeUpgrade.eyebrow}</p>
-      <h3 id="planning-upgrade-title">{copy.freeUpgrade.title}</h3>
-      <p>{copy.freeUpgrade.body}</p>
-      <button
-        type="button"
-        className={styles.planningUpgradeConversation}
-        onClick={() => onSelect("conversation")}
-      >
-        <MessageCircleMore aria-hidden="true" size={19} />
-        <span>
-          <strong>{copy.freeUpgrade.conversationLabel}</strong>
-          <small>{copy.freeUpgrade.conversationMeta}</small>
-        </span>
-        <ArrowRight aria-hidden="true" size={17} />
-      </button>
-      <div
-        className={styles.planningUpgradeOptions}
-        role="group"
-        aria-label={copy.freeUpgrade.optionLabel}
-      >
-        {options.map((option) => {
-          const Icon = intentIcons[option.id];
-          return (
-            <button
-              type="button"
-              onClick={() => onSelect(option.id)}
-              key={option.id}
-            >
-              <Icon aria-hidden="true" size={19} />
-              <span>
-                <strong>{option.label}</strong>
-                <small>{option.priceLabel}</small>
-              </span>
-              <ArrowRight aria-hidden="true" size={17} />
-            </button>
-          );
-        })}
-      </div>
-    </section>
   );
 }

@@ -101,10 +101,10 @@ const routeServiceInterestByLocale: Record<
       label: "Full Trip Planning & Ground Support",
       priceLabel: "Custom quote",
       finderSummary:
-        "Complete the short route questions so we can understand the journey and check whether a licensed travel operator can provide the arrangements. No payment is taken here.",
+        "Complete the short route questions so Homeground can understand the whole journey and shape the right planning, booking and ground-support scope with you.",
       handoffSummary:
-        "Your request will be sent as an enquiry. Before any travel-service payment, the licensed operator, contract scope and payment recipient must be identified.",
-      note: "Requested path: Full Trip Planning & Ground Support (enquiry only at this stage).",
+        "Your full-trip request and contact details will reach Homeground for a human follow-up, proposed scope and custom quote.",
+      note: "Requested path: Full Trip Planning & Ground Support.",
     },
   },
   zh: {
@@ -128,9 +128,9 @@ const routeServiceInterestByLocale: Record<
       ...commonChineseFields,
       label: "全程规划与落地支持",
       priceLabel: "单独报价",
-      finderSummary: "完成简短的路线问题，帮助我们理解实际旅行，并判断是否有持证旅行经营者能够承接所需安排。这里不会收取付款。",
-      handoffSummary: "此需求会作为咨询发送。支付任何旅游服务款前，必须先明确持证经营者、合同范围与收款方。",
-      note: "申请路径：全程规划与落地支持（当前仅咨询）。",
+      finderSummary: "完成简短的路线问题，帮助 Homeground 理解整趟旅行，并与你梳理合适的规划、预订与落地支持范围。",
+      handoffSummary: "全程旅行需求与联系方式会发送给 Homeground，由人工继续沟通、确认服务范围并提供单独报价。",
+      note: "申请路径：全程规划与落地支持。",
     },
   },
   ko: {
@@ -154,9 +154,9 @@ const routeServiceInterestByLocale: Record<
       ...commonKoreanFields,
       label: "전체 여행 설계 및 현지 지원",
       priceLabel: "맞춤 견적",
-      finderSummary: "간단한 동선 질문으로 실제 여행을 이해하고 허가 여행사업자가 필요한 예약·주선을 맡을 수 있는지 확인합니다. 여기서는 결제하지 않습니다.",
-      handoffSummary: "요청은 문의로 전송됩니다. 여행 서비스 결제 전에 허가 사업자, 계약 범위와 결제 수취인을 확인해야 합니다.",
-      note: "요청 경로: 전체 여행 설계 및 현지 지원(현재 문의 단계).",
+      finderSummary: "간단한 동선 질문으로 Homeground가 여행 전체를 이해하고 알맞은 플래닝, 예약 준비와 현지 지원 범위를 함께 정합니다.",
+      handoffSummary: "전체 여행 요청과 연락처가 Homeground에 전달되며 사람 플래너가 범위와 맞춤 견적을 이어서 안내합니다.",
+      note: "요청 경로: 전체 여행 설계 및 현지 지원.",
     },
   },
 };

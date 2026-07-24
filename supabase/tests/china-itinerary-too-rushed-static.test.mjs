@@ -48,7 +48,7 @@ test("illustrative example stays inside the fixed-price service boundary", async
   assert.match(article, /copy\.workedExample\.options\.map/);
 });
 
-test("article separates two paid services from the automated free finder", async () => {
+test("article keeps two paid service paths and sends the free path to a human trip brief", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
   const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
 
@@ -56,19 +56,28 @@ test("article separates two paid services from the automated free finder", async
   assert.match(copy, /Review My Route — US\$69/);
   assert.match(article, /href=\{`\$\{copy\.servicePath\}#build-my-route`\}/);
   assert.match(copy, /Build My Route — US\$129/);
-  assert.match(copy, /Use the free Route Finder/);
-  assert.match(copy, /No human review is included/);
-  assert.match(article, /utm_source=china-itinerary-too-rushed/);
-  assert.match(article, /utm_campaign=article-to-route-finder/);
-  assert.doesNotMatch(copy, /free (?:human )?(?:route|itinerary) review/i);
-  assert.doesNotMatch(copy, /Start a free route check/);
+  assert.match(article, /utm_campaign=trip-conversation/);
+  assert.match(copy, /Start a free trip brief/);
+  assert.match(copy, /Homeground follows up personally/);
+  assert.doesNotMatch(
+    copy,
+    /free Route Finder|免费路线查找器|무료 Route Finder/,
+  );
+  assert.doesNotMatch(
+    copy,
+    /No human review is included|不包含人工审核|사람이 직접 검토하는 서비스는 포함되지 않습니다/,
+  );
+  assert.doesNotMatch(
+    article,
+    /exploreIntro|exploreCta|exploreNote|article-to-route-finder/,
+  );
 });
 
 test("article has visible FAQs and only Article plus BreadcrumbList schema", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
   const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
 
-  assert.equal((copy.match(/question: "/g) ?? []).length, 15);
+  assert.equal((copy.match(/question: "/g) ?? []).length, 12);
   assert.match(article, /<details key=\{item\.question\}>/);
   assert.match(article, /<summary>\{item\.question\}<\/summary>/);
   assert.match(article, /"@type": "Article"/);

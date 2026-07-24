@@ -126,7 +126,7 @@ export function ChinaItineraryTooRushedPage({
 }) {
   const copy = getItineraryRushGuideCopy(locale);
   const homeCopy = getHomegroundCopy(locale);
-  const plannerHref = `${homeCopy.path}?utm_source=china-itinerary-too-rushed&utm_medium=owned&utm_campaign=article-to-route-finder&utm_content=exploring&planner=destinations#route-finder`;
+  const conversationHref = `${homeCopy.path}?utm_source=china-itinerary-too-rushed&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-brief&planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (
@@ -431,12 +431,12 @@ export function ChinaItineraryTooRushedPage({
                   </Link>
                 </div>
                 <div>
-                  <p>{copy.services.exploreIntro}</p>
-                  <a href={plannerHref}>
-                    {copy.services.exploreCta}
+                  <p>{copy.services.conversationIntro}</p>
+                  <a href={conversationHref}>
+                    {copy.services.conversationCta}
                     <ArrowRight aria-hidden="true" size={18} />
                   </a>
-                  <small>{copy.services.exploreNote}</small>
+                  <small>{copy.services.conversationNote}</small>
                 </div>
               </div>
             </section>

@@ -35,7 +35,7 @@ const jsonLd = {
   legalName: homegroundBusiness.registeredName,
   alternateName: "Travel China with Xuan",
   description:
-    "Fixed-scope written China route consultations and an enquiry path for separately contracted licensed travel services.",
+    "Fixed-scope written China route services and custom full-trip planning and ground support.",
   email: "yangchunxuan1@gmail.com",
   areaServed: "China",
   founder: {

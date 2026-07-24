@@ -186,9 +186,9 @@ export const destinationPlannerCopy: Record<
 > = {
   en: {
     introEyebrow: "Start with your wishlist",
-    introTitle: "Check what your China time can hold",
+    introTitle: "Prepare the basics for a China trip conversation",
     introBody:
-      "Choose every place that genuinely interests you. We will keep them all, show any time tension and carry the same brief to a person.",
+      "Choose every place that genuinely interests you. We keep the whole wishlist and carry the same brief to a Homeground planner.",
     progress: (current, total) => `Question ${current} of ${total}`,
     stepLabels: {
       destinations: "Wishlist",
@@ -198,7 +198,7 @@ export const destinationPlannerCopy: Record<
     },
     mobileTrust: [
       "No budget needed",
-      "No contact yet",
+      "One contact to submit",
       "Every place stays",
     ],
     selectedCount: (count) =>
@@ -310,7 +310,7 @@ export const destinationPlannerCopy: Record<
     ],
     back: "Back",
     continue: "Continue",
-    showCheck: "Check my wishlist",
+    showCheck: "Prepare my trip brief",
     restart: "Start again",
     editAnswers: "Edit answers",
     discardContactConfirm:
@@ -396,9 +396,9 @@ export const destinationPlannerCopy: Record<
   },
   zh: {
     introEyebrow: "先从愿望清单开始",
-    introTitle: "看看你的中国旅行时间能装下什么",
+    introTitle: "先准备一份中国旅行沟通简报",
     introBody:
-      "把真正感兴趣的地方都选上。我们会保留全部愿望，指出时间矛盾，并把同一份信息交给人工规划师。",
+      "把真正感兴趣的地方都选上。我们会保留完整愿望，并把同一份简报交给 Homeground 规划师。",
     progress: (current, total) => `第 ${current} 题，共 ${total} 题`,
     stepLabels: {
       destinations: "愿望清单",
@@ -408,7 +408,7 @@ export const destinationPlannerCopy: Record<
     },
     mobileTrust: [
       "无需先填预算",
-      "结果前不留联系方式",
+      "提交时留一种联系方式",
       "每个地点都会保留",
     ],
     selectedCount: (count) => `已选择 ${count} 个地点`,
@@ -510,7 +510,7 @@ export const destinationPlannerCopy: Record<
     ],
     back: "返回",
     continue: "继续",
-    showCheck: "检查我的愿望清单",
+    showCheck: "准备旅行简报",
     restart: "重新开始",
     editAnswers: "修改答案",
     discardContactConfirm: "修改规划答案会清空已经填写的联系方式。是否继续？",
@@ -590,9 +590,9 @@ export const destinationPlannerCopy: Record<
   },
   ko: {
     introEyebrow: "여행 희망 목록부터",
-    introTitle: "중국에서 보낼 시간에 무엇을 담을 수 있는지 확인하세요",
+    introTitle: "중국 여행 상담 브리프를 준비하세요",
     introBody:
-      "진심으로 가고 싶은 곳을 모두 선택하세요. 선택을 그대로 보존하고 시간의 충돌을 보여 준 뒤 같은 내용을 사람 플래너에게 전달합니다.",
+      "진심으로 가고 싶은 곳을 모두 선택하세요. 희망 목록을 그대로 보존해 같은 브리프를 Homeground 플래너에게 전달합니다.",
     progress: (current, total) => `${total}개 중 ${current}번째 질문`,
     stepLabels: {
       destinations: "위시리스트",
@@ -602,7 +602,7 @@ export const destinationPlannerCopy: Record<
     },
     mobileTrust: [
       "예산 입력 불필요",
-      "결과 전 연락처 불필요",
+      "제출 시 연락처 1개",
       "선택지는 모두 유지",
     ],
     selectedCount: (count) => `${count}곳 선택`,
@@ -704,7 +704,7 @@ export const destinationPlannerCopy: Record<
     ],
     back: "이전",
     continue: "계속",
-    showCheck: "희망 목록 확인하기",
+    showCheck: "여행 브리프 준비하기",
     restart: "처음부터",
     editAnswers: "답변 수정",
     discardContactConfirm:

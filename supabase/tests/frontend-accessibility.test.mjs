@@ -76,17 +76,11 @@ test("planner step changes preserve the current viewport", async () => {
   assert.doesNotMatch(hashEffect, /\[locale, plannerStatus\]/);
 });
 
-test("must-see priorities cannot change while a handoff is locked", async () => {
+test("the human-brief result does not expose the retired priority editor", async () => {
   const routeFinder = await source(routeFinderPath);
 
-  assert.match(
-    routeFinder,
-    /const updateMustSee = \(id: DestinationId\) => \{\s*if \(interactionLocked \|\| !match \|\| !journey\) return;/,
-  );
-  assert.match(
-    routeFinder,
-    /checked=\{selected\}\s*disabled=\{interactionLocked\}\s*onChange=\{\(\) => updateMustSee\(destinationId\)\}/,
-  );
+  assert.match(routeFinder, /data-result-mode="human-brief-ready"/);
+  assert.doesNotMatch(routeFinder, /const updateMustSee|onChange=\{\(\) => updateMustSee/);
 });
 
 test("restart collapses one planner flow instead of adding duplicate back steps", async () => {

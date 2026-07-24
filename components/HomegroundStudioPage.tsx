@@ -217,7 +217,7 @@ export function HomegroundStudioPage({
             <div>
               <p>
                 {isEnglish
-                  ? "Have a usable route? We can review it. Have dates and priorities but no route? We can build the structure. If you also need travel arrangements, start an enquiry; the responsible licensed travel operator, contract scope and payment recipient are identified before any travel-service payment."
+                  ? "Have a usable route? We can review it. Have dates and priorities but no route? We can build the structure. Need help with the whole journey as well? Start with the same trip brief and we will shape the wider planning, arrangements and ground-support scope with you."
                   : copy.cta.body}
               </p>
               {isEnglish ? (
@@ -230,7 +230,7 @@ export function HomegroundStudioPage({
                     <ArrowRight aria-hidden="true" size={18} />
                   </a>
                   <a className={styles.ctaSecondary} href={plannerHref}>
-                    Start with the free wishlist check
+                    Start a free trip consultation
                   </a>
                 </div>
               ) : (

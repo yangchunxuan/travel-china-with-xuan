@@ -42,7 +42,6 @@ export interface HomegroundCopy {
       plannerCta: {
         new: string;
         inProgress: string;
-        freeResult: string;
         result: string;
       disabled: string;
       validationError: string;
@@ -114,11 +113,9 @@ export interface HomegroundCopy {
   };
   finalCta: {
     resultLabel: string;
-    freeResultLabel: string;
     inProgressLabel: string;
     newLabel: string;
     resultTitle: string;
-    freeResultTitle: string;
     inProgressTitle: string;
     newTitle: string;
   };
@@ -336,7 +333,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       plannerCta: {
         new: "Start my trip brief",
         inProgress: "Continue my trip brief",
-        freeResult: "View my free route check",
         result: "Send my trip brief to Homeground",
         disabled: "Contact Homeground",
         validationError: "Finish my request",
@@ -485,18 +481,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "What if flights or a few cities are already booked?",
           answer:
-            "Keep them. When we reply, tell us the fixed airports, dates and must-visit places; the automatic result does not pretend to solve the final order.",
+            "Keep them. Include the fixed airports, dates and must-visit places in your brief or our follow-up so the planner can protect them.",
         },
       ],
     },
     finalCta: {
       resultLabel: "Your trip brief is ready for a human review",
-      freeResultLabel: "Your free route timing check is ready",
       inProgressLabel: "Your answers are saved as you go",
       newLabel: "Your first trip brief is four answers away",
       resultTitle: "Ready to turn this wishlist into a workable China trip?",
-      freeResultTitle:
-        "Review the timing result, or choose how much human planning you want.",
       inProgressTitle: "Finish the remaining questions to prepare your trip brief.",
       newTitle: "Start with what you actually want from China.",
     },
@@ -505,7 +498,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "Send your trip brief",
       body:
         "Leave one working contact. Optional trip details help us prepare a more useful first reply.",
-      boundary: "This is an enquiry, not a booking.",
+      boundary: "Homeground reviews every submitted brief and replies personally.",
       contactMethodLabel: "How should we reply?",
       emailOption: "Email",
       whatsappOption: "WhatsApp",
@@ -603,7 +596,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China. Tailored journeys, planned with context.`,
     },
     schemaDescription:
-      "A registered China trip-planning studio offering fixed-scope written route consultations and an enquiry path for separately contracted licensed travel services.",
+      "A registered China trip-planning studio offering fixed-scope written route services and custom full-trip planning and ground support.",
     finder: {
       hiddenTitle: "Find a sensible starting route",
       introEyebrow: "Start with you, not a map",
@@ -851,7 +844,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       plannerCta: {
         new: "开始填写旅行需求",
         inProgress: "继续填写旅行信息",
-        freeResult: "查看免费路线检查",
         result: "提交旅行需求",
         disabled: "联系 Homeground",
         validationError: "完成咨询信息",
@@ -991,17 +983,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "如果机票或部分城市已经订好了怎么办？",
           answer:
-            "保留。我们回复后，你再告诉我们已确定的机场、日期和必去地点；自动结果不会假装已经解决最终顺序。",
+            "保留。在旅行简报或后续沟通中告诉我们已经确定的机场、日期和必去地点，规划师会据此继续安排。",
         },
       ],
     },
     finalCta: {
       resultLabel: "你的旅行需求已准备好进入人工复核",
-      freeResultLabel: "你的免费路线时间检查已完成",
       inProgressLabel: "你的选择会随进度保留",
       newLabel: "回答四个问题，先准备一份旅行简报",
       resultTitle: "准备把这份愿望清单变成真正可执行的旅行吗？",
-      freeResultTitle: "先查看时间检查结果，再决定是否需要人工路线服务。",
       inProgressTitle: "完成剩余问题，准备你的旅行简报。",
       newTitle: "先从你真正想去的地方开始。",
     },
@@ -1010,7 +1000,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "提交旅行需求",
       body:
         "请留下一个有效联系方式。选填的旅行信息能帮助我们准备更有针对性的首次回复。",
-      boundary: "这只是咨询，不是预订。",
+      boundary: "Homeground 会人工查看每份已提交的简报，并直接联系你。",
       contactMethodLabel: "希望我们如何回复？",
       emailOption: "电子邮件",
       whatsappOption: "WhatsApp",
@@ -1100,7 +1090,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China。每一段旅程，都从真实需求出发。`,
     },
     schemaDescription:
-      "一家已登记的中国旅行规划工作室，提供固定范围书面路线咨询，并为另行签约的持证旅游服务提供咨询入口。",
+      "一家已登记的中国旅行规划工作室，提供固定范围的书面路线服务，以及按实际行程定制的全程规划与落地支持。",
     finder: {
       hiddenTitle: "找到一条合理的初步路线",
       introEyebrow: "先看你需要什么，而不是先看地图",
@@ -1328,7 +1318,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       plannerCta: {
         new: "여행 요청서 시작하기",
         inProgress: "여행 정보 계속 입력하기",
-        freeResult: "무료 동선 점검 보기",
         result: "Homeground에 여행 요청 보내기",
         disabled: "Homeground에 문의하기",
         validationError: "문의 작성 마치기",
@@ -1472,18 +1461,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "항공권이나 일부 도시를 이미 예약했다면요?",
           answer:
-            "그대로 두세요. 답변을 받은 뒤 확정된 공항, 날짜와 꼭 가고 싶은 장소를 알려 주세요. 자동 결과는 최종 순서를 해결했다고 가장하지 않습니다.",
+            "그대로 두세요. 여행 브리프나 후속 상담에서 확정된 공항, 날짜와 꼭 가고 싶은 장소를 알려 주시면 플래너가 반영합니다.",
         },
       ],
     },
     finalCta: {
       resultLabel: "여행 요청서가 사람의 검토를 받을 준비가 되었습니다",
-      freeResultLabel: "무료 동선 시간 확인이 완료되었습니다",
       inProgressLabel: "답변은 진행하는 동안 저장됩니다",
       newLabel: "네 가지 답변으로 첫 여행 브리프를 준비합니다",
       resultTitle: "이 희망 목록을 실행 가능한 중국 여행으로 만들까요?",
-      freeResultTitle:
-        "시간 확인 결과를 본 뒤 필요한 1:1 플래닝 범위를 선택하세요.",
       inProgressTitle: "남은 질문에 답하고 여행 브리프를 준비하세요.",
       newTitle: "중국에서 정말 가고 싶은 곳부터 시작하세요.",
     },
@@ -1492,7 +1478,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "여행 요청서 보내기",
       body:
         "연락 가능한 방법 하나를 남겨 주세요. 선택 입력한 여행 정보는 더 도움이 되는 첫 답변을 준비하는 데 사용됩니다.",
-      boundary: "문의 단계이며 예약이 아닙니다.",
+      boundary: "Homeground가 제출된 브리프를 직접 검토하고 연락드립니다.",
       contactMethodLabel: "어떤 방법으로 답변드릴까요?",
       emailOption: "이메일",
       whatsappOption: "WhatsApp",
@@ -1588,7 +1574,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `© ${year} Homeground China. 실제 조건을 바탕으로 설계하는 맞춤 여행.`,
     },
     schemaDescription:
-      "정해진 범위의 서면 여행 동선 컨설팅과 별도 계약되는 허가 여행 서비스 문의 경로를 제공하는 중국 등록 여행 플래닝 스튜디오.",
+      "범위가 명확한 서면 여행 동선 서비스와 맞춤 전체 여행 설계 및 현지 지원을 제공하는 중국 등록 여행 플래닝 스튜디오.",
     finder: {
       hiddenTitle: "현실적인 여행 동선 찾기",
       introEyebrow: "지도보다 사람부터",

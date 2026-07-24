@@ -39,29 +39,25 @@ test("verified business identity is centralized and displayed in the shared foot
   assert.match(footer, /refund-delivery/);
 });
 
-test("legal copy keeps written consultation separate from travel arrangements in all languages", async () => {
+test("legal copy leads with registered trust and keeps each paid scope explicit", async () => {
   const legal = await source("lib/homegroundLegalI18n.ts");
   const service = await source("lib/chinaItineraryReviewI18n.ts");
 
-  assert.match(legal, /fixed-scope written consultation services/);
-  assert.match(legal, /Full Trip Planning & Ground Support remains enquiry-only/);
-  assert.match(legal, /固定范围书面咨询服务/);
-  assert.match(legal, /全程规划与落地支持目前只接收咨询/);
+  assert.match(legal, /A real registered operator/);
+  assert.match(legal, /真实登记的经营主体/);
+  assert.match(legal, /등록된 실제 사업자/);
+  assert.match(legal, /Bring the whole trip to Homeground/);
+  assert.match(legal, /把整趟旅行的需求交给 Homeground/);
+  assert.match(legal, /전체 여행에 필요한 내용을 Homeground에 알려 주세요/);
   assert.match(legal, /유료 서면 컨설팅 진행 절차/);
-  assert.match(legal, /전체 여행 설계 및 현지 지원은 현재 문의만 접수/);
+  assert.doesNotMatch(legal, /travel agency licence|旅行社业务经营许可|여행사 업무 허가/);
 
-  assert.match(
-    service,
-    /do not include bookings, ticketing, supplier payments, guiding, transport delivery or in-trip support/,
-  );
-  assert.match(
-    service,
-    /不包含代订、出票、代付供应商、导游、交通履约或旅途中支持/,
-  );
-  assert.match(
-    service,
-    /예약·발권, 공급업체 결제, 가이드, 차량 제공 또는 여행 중 지원은 포함하지 않습니다/,
-  );
+  assert.match(service, /clearly scoped written route services/);
+  assert.match(service, /范围清楚的书面路线服务/);
+  assert.match(service, /범위가 명확한 서면 일정 서비스/);
+  assert.match(service, /Bring the whole journey to Homeground/);
+  assert.match(service, /把整趟旅行交给 Homeground/);
+  assert.match(service, /전체 여행을 Homeground에 알려 주세요/);
 });
 
 test("legal routes have canonical language alternates and appear in the sitemap and export guard", async () => {

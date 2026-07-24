@@ -41,7 +41,6 @@ interface HomegroundHeaderProps {
   plannerStatus?: PlannerStatus;
   handoffStatus?: HandoffStatus;
   handoffDirty?: boolean;
-  freeResult?: boolean;
   pageContext?: HomegroundPageContext;
   guideId?: GuideId;
   showLanguageNav?: boolean;
@@ -107,7 +106,6 @@ export function resolvePlannerCta(
   copy: HomegroundCopy,
   plannerStatus: PlannerStatus,
   handoffStatus: HandoffStatus,
-  freeResult = false,
 ): string {
   if (plannerStatus === "new") {
     return copy.navigation.plannerCta.new;
@@ -115,10 +113,6 @@ export function resolvePlannerCta(
   if (plannerStatus === "in-progress") {
     return copy.navigation.plannerCta.inProgress;
   }
-  if (freeResult) {
-    return copy.navigation.plannerCta.freeResult;
-  }
-
   switch (handoffStatus) {
     case "disabled":
       return copy.navigation.plannerCta.disabled;
@@ -142,7 +136,6 @@ export function HomegroundHeader({
   plannerStatus = "new",
   handoffStatus = "disabled",
   handoffDirty = false,
-  freeResult = false,
   pageContext = "home",
   guideId = "zhangjiajie-itinerary",
   showLanguageNav = true,
@@ -156,10 +149,9 @@ export function HomegroundHeader({
     copy,
     plannerStatus,
     handoffStatus,
-    freeResult,
   );
   const plannerTarget = (
-    plannerStatus === "result" && !freeResult
+    plannerStatus === "result"
       ? "#planner-handoff"
       : "#route-finder"
   ) satisfies HomegroundHashTarget;

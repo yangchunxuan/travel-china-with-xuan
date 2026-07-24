@@ -207,7 +207,7 @@ export function ChinaItineraryReviewPage({
   const plannerBase = `${homeCopy.path}?utm_source=china-itinerary-review&utm_medium=owned`;
   const reviewHref = `${plannerBase}&utm_campaign=route-planning&utm_content=review&service=itinerary-review&planner=destinations#route-finder`;
   const buildHref = `${plannerBase}&utm_campaign=route-planning&utm_content=build&service=route-build&planner=destinations#route-finder`;
-  const freeFinderHref = `${plannerBase}&utm_campaign=service-page&utm_content=free-route-finder&planner=destinations#route-finder`;
+  const conversationHref = `${plannerBase}&utm_campaign=trip-conversation&utm_content=service-page-brief&planner=destinations#route-finder`;
   const fullSupportHref = `${plannerBase}&utm_campaign=full-trip-support&utm_content=custom-scope&service=full-trip-support&planner=destinations#route-finder`;
   const rushGuideHref = `${homeCopy.path}guides/is-your-china-itinerary-too-rushed/`;
   const studioHref = `${homeCopy.path}studio/`;
@@ -252,8 +252,8 @@ export function ChinaItineraryReviewPage({
                       {copy.hero.choose}
                       <ArrowRight aria-hidden="true" size={18} />
                     </a>
-                    <a className={styles.secondaryButton} href={freeFinderHref}>
-                      {copy.hero.freeFinder}
+                    <a className={styles.secondaryButton} href={conversationHref}>
+                      {copy.hero.conversationCta}
                     </a>
                   </div>
                   <p className={styles.heroBoundary}>{copy.hero.boundary}</p>

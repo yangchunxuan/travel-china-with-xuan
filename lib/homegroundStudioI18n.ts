@@ -207,11 +207,11 @@ export const homegroundStudioCopy: Record<
       ],
     },
     cta: {
-      label: "Start with your real wishlist",
-      title: "Tell us the places you do not want to miss.",
+      label: "Start a trip conversation",
+      title: "Tell us what you want this trip to become.",
       body:
-        "Check how your destinations fit your nights first. If you contact us, the same brief comes to the team—so you do not have to start again.",
-      button: "Check my China wishlist",
+        "Share the destinations, dates, travellers and support you have in mind. Submit one reply contact and a Homeground planner will continue with you.",
+      button: "Start a free trip consultation",
     },
     homeLink: "Meet the people behind the plan",
   },
@@ -325,11 +325,11 @@ export const homegroundStudioCopy: Record<
       ],
     },
     cta: {
-      label: "从真实愿望开始",
-      title: "先告诉我们，你不想错过哪些地方。",
+      label: "开始旅行沟通",
+      title: "告诉我们，你希望这趟旅行变成什么样。",
       body:
-        "先检查目的地和住宿晚数是否匹配。你选择联系后，同一份旅行需求会直接交给团队，无需重新填写。",
-      button: "检查我的旅行愿望",
+        "填写考虑中的目的地、日期、同行者和希望获得的支持，提交一种回复联系方式后，Homeground 规划师会亲自继续与你沟通。",
+      button: "开始免费旅行咨询",
     },
     homeLink: "认识参与规划与落地的人",
   },
@@ -443,11 +443,11 @@ export const homegroundStudioCopy: Record<
       ],
     },
     cta: {
-      label: "진짜 희망 목록에서 시작하세요",
-      title: "놓치고 싶지 않은 장소를 먼저 알려 주세요.",
+      label: "여행 상담 시작하기",
+      title: "원하는 중국 여행의 모습을 알려 주세요.",
       body:
-        "목적지와 숙박일수가 맞는지 먼저 확인하세요. 문의를 선택하면 같은 여행 요청서가 팀에 전달되어 다시 작성할 필요가 없습니다.",
-      button: "나의 여행 희망 목록 확인",
+        "생각 중인 목적지, 날짜, 여행자와 필요한 지원을 알려 주세요. 답변받을 연락처 하나를 제출하면 Homeground 플래너가 직접 상담을 이어갑니다.",
+      button: "무료 여행 상담 시작하기",
     },
     homeLink: "여행을 설계하고 실행하는 팀 만나기",
   },

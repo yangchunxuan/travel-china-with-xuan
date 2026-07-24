@@ -42,7 +42,6 @@ import {
   type PlannerStatus,
   type RouteJourney,
 } from "./RouteFinder";
-import { HomepagePlanningUpgrade } from "./HomepagePlanningDesk";
 import styles from "./HomegroundHomePage.module.css";
 
 const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
@@ -70,7 +69,6 @@ function resolveFinalCta(
   copy: HomegroundCopy,
   plannerStatus: PlannerStatus,
   handoffStatus: HandoffStatus,
-  freeResult: boolean,
 ): { label: string; title: string } {
   if (plannerStatus === "new") {
     return {
@@ -82,13 +80,6 @@ function resolveFinalCta(
     return {
       label: copy.finalCta.inProgressLabel,
       title: copy.finalCta.inProgressTitle,
-    };
-  }
-
-  if (freeResult) {
-    return {
-      label: copy.finalCta.freeResultLabel,
-      title: copy.finalCta.freeResultTitle,
     };
   }
 
@@ -159,23 +150,18 @@ export function HomegroundHomePage({
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const plannerTarget =
     plannerStatus === "result" &&
-    routeMatch &&
-    planningIntent !== "explore"
+    routeMatch
       ? "#planner-handoff"
       : "#route-finder";
-  const freeResult =
-    plannerStatus === "result" && planningIntent === "explore";
   const plannerCta = resolvePlannerCta(
     copy,
     plannerStatus,
     handoffStatus,
-    freeResult,
   );
   const finalCta = resolveFinalCta(
     copy,
     plannerStatus,
     handoffStatus,
-    freeResult,
   );
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -315,20 +301,27 @@ export function HomegroundHomePage({
         const storedStarterIntent = window.sessionStorage.getItem(
           planningStarterIntentStorageKey,
         );
+        const restoredIntent =
+          storedIntent === "explore" ? "conversation" : storedIntent;
         const canRestoreNonServiceFlow =
           url.searchParams.has("planner") &&
-          (storedIntent === "conversation" || storedIntent === "explore");
+          restoredIntent === "conversation";
         planningIntentRef.current = canRestoreNonServiceFlow
-          ? storedIntent
+          ? restoredIntent
           : null;
         setPlanningIntent(planningIntentRef.current);
         setPlanningStarterIntent(
           canRestoreNonServiceFlow &&
-            storedIntent === "conversation" &&
             isHomepageStarterIntentId(storedStarterIntent)
             ? storedStarterIntent
             : null,
         );
+        if (canRestoreNonServiceFlow && storedIntent === "explore") {
+          window.sessionStorage.setItem(
+            planningIntentStorageKey,
+            "conversation",
+          );
+        }
         if (!canRestoreNonServiceFlow) {
           window.sessionStorage.removeItem(planningIntentStorageKey);
           window.sessionStorage.removeItem(
@@ -379,7 +372,7 @@ export function HomegroundHomePage({
       window.dispatchEvent(new Event("homeground:locationchange"));
 
       try {
-        if (nextIntent === "explore" || nextIntent === "conversation") {
+        if (nextIntent === "conversation") {
           window.sessionStorage.setItem(
             planningIntentStorageKey,
             nextIntent,
@@ -474,7 +467,6 @@ export function HomegroundHomePage({
         plannerStatus={plannerStatus}
         handoffStatus={handoffStatus}
         handoffDirty={handoffDirty || starterNoteDirty}
-        freeResult={freeResult}
       />
 
       <main id="main-content" tabIndex={-1}>
@@ -530,45 +522,31 @@ export function HomegroundHomePage({
                 contactDraftDirty={handoffDirty}
                 handoff={
                   routeMatch ? (
-                    <>
-                      <div
-                        hidden={
-                          !planningIntent || planningIntent === "explore"
-                        }
-                      >
-                        <PlannerHandoff
-                          embedded
-                          locale={locale}
-                          match={routeMatch}
-                          journey={routeJourney ?? undefined}
-                          serviceInterest={handoffServiceInterest}
-                          starterIntent={
-                            planningIntent === "conversation"
-                              ? planningStarterIntent
-                              : null
-                          }
-                          starterNote={
-                            planningIntent === "conversation"
-                              ? planningStarterNote
-                              : null
-                          }
-                          serviceContextRevision={serviceContextRevision}
-                          routeState={
-                            plannerStatus === "result"
-                              ? "current"
-                              : "editing"
-                          }
-                          onDirtyChange={setHandoffDirty}
-                          onStatusChange={setHandoffStatus}
-                        />
-                      </div>
-                      {planningIntent === "explore" && (
-                        <HomepagePlanningUpgrade
-                          locale={locale}
-                          onSelect={handlePlanningIntentChange}
-                        />
-                      )}
-                    </>
+                    <PlannerHandoff
+                      embedded
+                      locale={locale}
+                      match={routeMatch}
+                      journey={routeJourney ?? undefined}
+                      serviceInterest={handoffServiceInterest}
+                      starterIntent={
+                        planningIntent === "conversation"
+                          ? planningStarterIntent
+                          : null
+                      }
+                      starterNote={
+                        planningIntent === "conversation"
+                          ? planningStarterNote
+                          : null
+                      }
+                      serviceContextRevision={serviceContextRevision}
+                      routeState={
+                        plannerStatus === "result"
+                          ? "current"
+                          : "editing"
+                      }
+                      onDirtyChange={setHandoffDirty}
+                      onStatusChange={setHandoffStatus}
+                    />
                   ) : undefined
                 }
                 onRouteCleared={handleRouteCleared}

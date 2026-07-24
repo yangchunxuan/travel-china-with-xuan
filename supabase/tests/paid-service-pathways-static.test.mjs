@@ -22,7 +22,7 @@ test("Home planning desk leads with a neutral conversation and keeps three paid 
   );
   assert.match(
     planningDesk,
-    /copy\.options\.filter\(\(option\) => option\.kind === "paid"\)/,
+    /copy\.options\.filter\([\s\S]{0,100}\(option\) => option\.kind === "paid"/,
   );
   assert.match(
     planningDesk,
@@ -41,13 +41,12 @@ test("Home planning desk leads with a neutral conversation and keeps three paid 
   assert.match(planningCopy, /id: "itinerary-review"/);
   assert.match(planningCopy, /id: "route-build"/);
   assert.match(planningCopy, /id: "full-trip-support"/);
-  assert.match(planningCopy, /id: "explore"/);
   assert.match(planningCopy, /planningIntent: "conversation"/);
-  assert.match(planningCopy, /label: "Free route timing check"/);
+  assert.match(planningCopy, /label: "Free trip consultation"/);
   assert.match(services, /label: "Review My Route"/);
   assert.match(services, /label: "Build My Route"/);
   assert.match(services, /label: "Full Trip Planning & Ground Support"/);
-  assert.doesNotMatch(planningCopy, /id: "explore"[\s\S]{0,500}US\$/);
+  assert.doesNotMatch(planningCopy, /id: "explore"|kind: "free"/);
 });
 
 test("Planning Services presents all three paths before education and links to localized Studio", async () => {
@@ -70,14 +69,14 @@ test("Planning Services presents all three paths before education and links to l
   assert.match(copy, /작은 여행 설계 스튜디오/);
 });
 
-test("English Studio keeps a service comparison and separate free-tool exit", async () => {
+test("English Studio keeps a service comparison and free human-consultation entry", async () => {
   const page = await source("components/HomegroundStudioPage.tsx");
 
   assert.match(page, /const planningServicesHref\s*=/);
   assert.match(page, /\/china-itinerary-review\/[\s\S]*#choose-service/);
   assert.match(page, /const isEnglish = locale === "en"/);
   assert.match(page, /Compare planning services/);
-  assert.match(page, /Start with the free wishlist check/);
+  assert.match(page, /Start a free trip consultation/);
   assert.doesNotMatch(page, /service=(?:itinerary-review|route-build|full-trip-support)/);
 });
 
@@ -124,7 +123,7 @@ test("commercial surfaces do not introduce checkout or file upload", async () =>
   assert.doesNotMatch(commercialSurface, /(?:href|action)=["'][^"']*(?:checkout|payment|cart)[^"']*["']/i);
   assert.doesNotMatch(commercialSurface, /type=["']file["']/i);
   assert.doesNotMatch(packageJson, /"(?:@stripe\/[^"\s]+|stripe|@paypal\/[^"\s]+|paypal)"\s*:/i);
-  assert.match(serviceCopy, /does not take payment/i);
-  assert.match(serviceCopy, /不收取在线付款/);
-  assert.match(serviceCopy, /결제나 파일 업로드를 받지 않습니다/);
+  assert.match(serviceCopy, /no payment or file upload is needed here/i);
+  assert.match(serviceCopy, /不需要在这里付款或上传文件/);
+  assert.match(serviceCopy, /결제하거나 파일을 올릴 필요는 없습니다/);
 });
