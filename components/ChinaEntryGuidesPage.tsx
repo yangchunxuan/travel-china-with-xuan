@@ -186,7 +186,7 @@ export function ChinaEntryGuidesPage() {
         >
           <div className={styles.sectionIntro}>
             <div>
-              <p className={styles.eyebrow}>Current country guides</p>
+              <p className={styles.eyebrow}>Current entry guides</p>
               <h2 id="entry-collection-title">
                 Choose the passport and route you actually hold.
               </h2>

@@ -112,6 +112,10 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /planningGuides\.length % 2 === 1/);
   assert.match(hub, /className=\{styles\.entryAction\}/);
   assert.match(hub, /href="\/guides\/china-entry-requirements\/"/);
+  assert.match(
+    css,
+    /\.entryGuideSlot\s*\{[\s\S]*?grid-column: span 4;/,
+  );
   assert.match(css, /\.guideSlotHalf\s*\{[\s\S]*?grid-column: span 6;/);
   assert.match(
     css,

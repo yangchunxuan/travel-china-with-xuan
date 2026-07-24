@@ -432,7 +432,7 @@
 
 .entryGuideSlot {
   border-color: var(--hg-color-on-dark-line);
-  grid-column: span 6;
+  grid-column: span 4;
 }
 
 .entryGuideGrid .entryGuideSlot:only-child {
