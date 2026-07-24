@@ -11,6 +11,7 @@ export const guideIds = [
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
   "is-your-china-itinerary-too-rushed",
+  "do-us-citizens-need-visa-china-2026",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -504,6 +505,60 @@ export const guideRegistry = [
         heroAlt: "이동일을 표현하기 위해 부드럽게 처리한 기차역 승강장 이미지.",
         navTitle: "중국 일정 속도 가이드",
         featuredLinkLabel: "중국 일정이 너무 빠듯한지 확인하기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "do-us-citizens-need-visa-china-2026",
+    type: "planning",
+    featured: false,
+    format: "planning-guide",
+    topics: ["trip-planning"],
+    destinations: ["china"],
+    heroImagePath:
+      "/images/guides/beijing-zhangjiajie-shanghai-transport/airport-wayfinding-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/beijing-zhangjiajie-shanghai-transport/airport-wayfinding-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 800,
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
+    sourceReviewedDate: "2026-07-24",
+    locales: {
+      en: {
+        path: "/guides/do-us-citizens-need-visa-china-2026/",
+        title: "Do US Citizens Need a Visa for China in 2026?",
+        headline: "Do US Citizens Need a Visa for China in 2026?",
+        description:
+          "US passports need an L visa for a round trip to China. But 240-hour visa-free transit covers 65 ports and 55 nationalities, and whether you qualify is decided by where your flight goes after China.",
+        heroAlt:
+          "Arrivals concourse at Shanghai Pudong International Airport, with bilingual wayfinding signs overhead.",
+        navTitle: "US visa and transit guide",
+        featuredLinkLabel: "Check which entry path your route falls under",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/do-us-citizens-need-visa-china-2026/",
+        title: "2026 年，美国护照去中国还需要签证吗？",
+        headline: "2026 年，美国护照去中国还需要签证吗？",
+        description:
+          "往返行程需要 L 签。但 240 小时过境免签覆盖 65 个口岸、55 个国家，而你符不符合条件，取决于离开中国后飞往哪里。",
+        heroAlt: "上海浦东国际机场到达层，头顶是中英双语指示牌。",
+        navTitle: "美国签证与过境指南",
+        featuredLinkLabel: "看看你的路线属于哪条入境路径",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/do-us-citizens-need-visa-china-2026/",
+        title: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
+        headline: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
+        description:
+          "왕복 일정은 L 비자가 필요합니다. 다만 240시간 무비자 환승은 65개 항구와 55개국을 다루며, 조건 충족 여부는 중국을 떠난 뒤 어디로 가느냐가 정합니다.",
+        heroAlt:
+          "상하이 푸둥 국제공항 도착층, 머리 위로 안내 표지판이 보인다.",
+        navTitle: "미국 비자·환승 가이드",
+        featuredLinkLabel: "내 경로가 어느 입국 경로인지 확인하기",
         openGraphLocale: "ko_KR",
       },
     },
