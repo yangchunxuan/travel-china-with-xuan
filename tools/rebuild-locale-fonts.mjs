@@ -51,6 +51,7 @@ const explicitSources = [
   "lib/routeServiceInterest.ts",
   "lib/tantanZhangjiajieStoryI18n.ts",
   "lib/kevinPreparationStoryI18n.ts",
+  "lib/zhangjiajieOlderTravellersI18n.ts",
 ];
 const sourceDirectories = ["app/(default)", "app/(localized)"];
 
