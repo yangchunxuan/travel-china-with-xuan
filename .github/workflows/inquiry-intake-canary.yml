@@ -1,0 +1,162 @@
+name: Inquiry intake canary
+
+# The published site and the Edge Function are deployed by different pipelines,
+# so the frontend can start sending a form/privacy version the backend has not
+# been told to accept. When that happened on 2026-07-23 every submission was
+# rejected with 422 for two and a half days: the traveller saw an error, no row
+# was stored, and no notification was sent, so nothing anywhere went red.
+#
+# This check closes that specific gap. It reads the version the live site
+# actually publishes, offers that version to the live endpoint, and fails if the
+# endpoint says it does not support it. It needs no secret and no repository
+# variable: everything it uses is already public in the deployed page, which
+# also means it verifies the site is still pointed at the endpoint it should be.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: inquiry-intake-canary
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check the live site's form version is still accepted
+        env:
+          SITE_ORIGIN: https://homegroundchina.com
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          workdir="$(mktemp -d)"
+          trap 'rm -rf "${workdir}"' EXIT
+          bundle="${workdir}/bundle.js"
+
+          if ! curl \
+            --silent --show-error --fail \
+            --connect-timeout 10 --max-time 30 \
+            --retry 2 --retry-all-errors \
+            --output "${workdir}/index.html" \
+            "${SITE_ORIGIN}/"; then
+            echo "::error::${SITE_ORIGIN} did not serve its home page. The site \
+          is down or unreachable, so nobody can submit an enquiry at all."
+            exit 1
+          fi
+
+          cat "${workdir}/index.html" > "${bundle}"
+
+          # The version and endpoint live in the built JavaScript, not the HTML.
+          chunks="$(
+            grep -oE '/_next/static/chunks/[A-Za-z0-9_.-]+\.js' \
+              "${workdir}/index.html" | sort -u || true
+          )"
+          # A single timed-out chunk must not read as an outage, so failures are
+          # tolerated individually but counted: if none of them arrive, the
+          # missing version below is a network symptom, not an intake one.
+          fetched=0
+          for chunk in ${chunks}; do
+            if curl \
+              --silent --show-error --fail \
+              --connect-timeout 10 --max-time 30 \
+              --retry 2 --retry-all-errors \
+              "${SITE_ORIGIN}${chunk}" >> "${bundle}"; then
+              fetched=$((fetched + 1))
+            fi
+          done
+
+          # Older supported versions ship alongside the current one; the highest
+          # is the one the form submits.
+          version="$(
+            grep -oE '20[0-9]{2}-[0-1][0-9]-[0-3][0-9]\.[0-9]+' "${bundle}" \
+              | sort -V | tail -1 || true
+          )"
+          endpoint="$(
+            grep -oE 'https://[a-z0-9]+\.supabase\.co/functions/v1/v1-inquiries' \
+              "${bundle}" | head -1 || true
+          )"
+
+          if [[ -z "${version}" ]]; then
+            if [[ "${fetched}" -eq 0 ]]; then
+              echo "::error::Could not download any of the site's JavaScript \
+          (${SITE_ORIGIN}). The site itself may be unreachable; intake was not \
+          tested."
+            else
+              echo "::error::Downloaded the site but found no form version in \
+          it. Either the build changed shape or the site is not publishing one; \
+          check before assuming intake is healthy."
+            fi
+            exit 1
+          fi
+
+          if [[ -z "${endpoint}" ]]; then
+            echo "::error::The published site no longer references an inquiry \
+          endpoint. Submissions cannot reach the backend at all."
+            exit 1
+          fi
+
+          echo "Live site publishes ${version}"
+
+          # Deliberately incomplete. Required fields are missing, so a healthy
+          # endpoint always answers 422 and never stores a row; the version is
+          # reported separately from the missing fields, which is what we read.
+          body="$(
+            jq -nc --arg v "${version}" '{
+              schemaVersion: 2,
+              formVersion: $v,
+              privacyNoticeVersion: $v,
+              locale: "en"
+            }'
+          )"
+
+          response_file="${workdir}/response.json"
+          http_status="$(
+            curl \
+              --silent --show-error \
+              --connect-timeout 10 --max-time 30 \
+              --retry 2 --retry-all-errors \
+              --output "${response_file}" \
+              --write-out "%{http_code}" \
+              --request POST \
+              --header "Origin: ${SITE_ORIGIN}" \
+              --header "Content-Type: application/json" \
+              --header "idempotency-key: $(cat /proc/sys/kernel/random/uuid)" \
+              --data "${body}" \
+              "${endpoint}"
+          )"
+
+          echo "Endpoint answered HTTP ${http_status}"
+
+          error_code="$(jq -r '.error.code // ""' "${response_file}")"
+
+          if [[ "${error_code}" == "unsupported_form_version" ]]; then
+            echo "::error::Intake is DOWN. The live site publishes ${version}, \
+          which the endpoint rejects as unsupported. Every enquiry is being \
+          refused. Add ${version} to ALLOWED_FORM_VERSIONS and \
+          ALLOWED_PRIVACY_NOTICE_VERSIONS, and deploy the matching v1-inquiries \
+          revision. See docs/inquiry-deployment.md."
+            exit 1
+          fi
+
+          if [[ -z "${error_code}" ]]; then
+            echo "::error::The probe was not rejected. It omits required fields, \
+          so an accepted probe means validation changed and this check may have \
+          stored a row. Inspect the newest inquiry before trusting this result."
+            exit 1
+          fi
+
+          # 5xx means the function itself is unhealthy, which is also an outage.
+          if [[ "${http_status}" =~ ^5 ]]; then
+            echo "::error::The inquiry endpoint returned HTTP ${http_status}. \
+          Intake is unavailable regardless of the form version."
+            exit 1
+          fi
+
+          echo "Intake healthy: ${version} accepted; probe rejected as ${error_code}."
