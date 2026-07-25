@@ -247,7 +247,7 @@ export const homegroundPrivacyCopy: Record<
           label: "Browser-behaviour analytics and AI chat",
           value: "Disabled",
           detail:
-            "The current site does not collect planner or page-behaviour events and does not use third-party marketing tracking or an AI chat widget. Limited source context is saved only when a traveller deliberately submits an enquiry. Restricted reporting uses compatible structured choices and limited source fields from successfully saved enquiries as aggregate counts.",
+            "The current site counts page views and referrers with a cookieless analytics tool. It stores nothing on your device, does not identify individual visitors, and is not used to build a profile of you. The site does not collect planner events and does not use third-party marketing tracking or an AI chat widget. Limited source context is saved only when a traveller deliberately submits an enquiry. Restricted reporting uses compatible structured choices and limited source fields from successfully saved enquiries as aggregate counts.",
         },
       ],
     },
@@ -461,7 +461,7 @@ export const homegroundPrivacyCopy: Record<
           label: "浏览器行为统计与 AI 聊天",
           value: "关闭",
           detail:
-            "当前网站不收集旅行简报或页面行为事件，不使用第三方营销追踪或 AI 聊天组件。有限来源信息只会在访客主动提交咨询时随咨询保存；受限报表只把已成功保存咨询中可兼容的结构化选择和有限来源字段显示为汇总计数。",
+            "当前网站使用不依赖 cookie 的统计工具，记录页面访问量与来源渠道。它不会在你的设备上存储任何内容，不识别访客个人身份，也不会用于建立个人画像。网站不收集旅行简报事件，不使用第三方营销追踪或 AI 聊天组件。有限来源信息只会在访客主动提交咨询时随咨询保存；受限报表只把已成功保存咨询中可兼容的结构化选择和有限来源字段显示为汇总计数。",
         },
       ],
     },
@@ -683,7 +683,7 @@ export const homegroundPrivacyCopy: Record<
           label: "브라우저 행동 분석 및 AI 채팅",
           value: "사용 안 함",
           detail:
-            "현재 사이트는 여행 브리프 또는 페이지 행동 기록을 수집하지 않고 제3자 마케팅 추적이나 AI 채팅 위젯을 사용하지 않습니다. 제한된 유입 정보는 여행자가 문의를 직접 제출할 때만 문의와 함께 저장됩니다. 제한된 보고에는 저장에 성공한 문의에서 서로 호환되는 구조화 선택과 제한된 유입 항목의 집계된 건수만 사용합니다.",
+            "현재 사이트는 방문자 기기에 아무것도 저장하지 않는 분석 도구로 페이지 조회수와 유입 경로를 집계합니다. 이 도구는 개별 방문자를 식별하거나 프로필을 만들지 않습니다. 사이트는 여행 브리프 기록을 수집하지 않고 제3자 마케팅 추적이나 AI 채팅 위젯을 사용하지 않습니다. 제한된 유입 정보는 여행자가 문의를 직접 제출할 때만 문의와 함께 저장됩니다. 제한된 보고에는 저장에 성공한 문의에서 서로 호환되는 구조화 선택과 제한된 유입 항목의 집계된 건수만 사용합니다.",
         },
       ],
     },

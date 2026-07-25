@@ -32,9 +32,9 @@ test("analytics stays off while the privacy notice denies collection", async () 
 
   // The exact sentences that must be rewritten before collection may resume.
   const denials = [
-    /does not collect planner or page-behaviour events/,
-    /当前网站不收集旅行简报或页面行为事件/,
-    /현재 사이트는 여행 브리프 또는 페이지 행동 기록을 수집하지 않고/,
+    /does not collect planner events and does not use third-party marketing tracking/,
+    /网站不收集旅行简报事件，不使用第三方营销追踪/,
+    /사이트는 여행 브리프 기록을 수집하지 않고 제3자 마케팅 추적/,
   ];
 
   const stillDenies = denials.filter((pattern) => pattern.test(privacy));
@@ -87,6 +87,81 @@ test("no analytics script reaches the built pages while collection is off", asyn
     analytics,
     /dataLayer\.push\(\{ event:/,
     "disabled analytics must not accumulate unread behavioural events",
+  );
+});
+
+/**
+ * The cookieless counter needs no consent banner, but it does need disclosure —
+ * a notice claiming nothing is counted while a beacon ships is the same failure
+ * the GA test above exists to prevent, only quieter, because no banner is
+ * missing to make it obvious.
+ */
+test("the privacy notice discloses the cookieless page counter", async () => {
+  const privacy = await source("lib/homegroundPrivacyI18n.ts");
+
+  for (const disclosure of [
+    /cookieless analytics tool/,
+    /不依赖 cookie 的统计工具/,
+    /아무것도 저장하지 않는 분석 도구/,
+  ]) {
+    assert.match(
+      privacy,
+      disclosure,
+      "every language must describe the cookieless counter, not only English",
+    );
+  }
+
+  // The exemption from consent rests on these two facts; if the tool ever stops
+  // being true to them, the claim has to go before the tool does.
+  for (const claim of [
+    /stores nothing on your device/,
+    /不会在你的设备上存储任何内容/,
+    /방문자 기기에 아무것도 저장하지 않는/,
+  ]) {
+    assert.match(privacy, claim);
+  }
+});
+
+/**
+ * The counter must be inert until an account exists to point it at, so adding
+ * it cannot change production before the notice and the tool agree in practice.
+ */
+test("the cookieless counter renders nothing without a configured token", async () => {
+  const webAnalytics = await source("components/SiteWebAnalytics.tsx");
+
+  assert.match(
+    webAnalytics,
+    /if \(!beaconTokenPattern\.test\(beaconToken\)\) return null;/,
+    "an unset or malformed token must render no tag at all",
+  );
+  assert.match(
+    webAnalytics,
+    /process\.env\.NEXT_PUBLIC_HOMEGROUND_WEB_ANALYTICS_TOKEN/,
+    "the destination must stay configuration, never hardcoded",
+  );
+  assert.doesNotMatch(
+    webAnalytics,
+    /document\.cookie|localStorage|sessionStorage/,
+    "the counter must not store anything on the device; the notice promises it does not",
+  );
+});
+
+test("both public layouts mount the cookieless counter, and admin does not", async () => {
+  for (const layout of [
+    "app/(default)/layout.tsx",
+    "app/(localized)/[locale]/layout.tsx",
+  ]) {
+    assert.match(
+      await source(layout),
+      /<SiteWebAnalytics \/>/,
+      `${layout} must mount the counter, or paid traffic lands unmeasured`,
+    );
+  }
+
+  assert.doesNotMatch(
+    await source("app/(admin)/layout.tsx"),
+    /SiteWebAnalytics/,
+    "staff traffic must stay out of the visit counts",
   );
 });
 
