@@ -1,10 +1,11 @@
 # Homeground private saved-inquiry insights
 
 Status: deployed only to an independent Supabase Staging project and kept
-fail-closed. Production has not been changed. The Staging database objects and
-two Edge Functions exist, but the administrator has not completed password
-setup or TOTP, the Admin API remains disabled, public Inquiry submissions
-remain disabled, and no production hosting/security-header gate has passed.
+fail-closed. Production has not been changed. The twelve database migrations,
+both Admin Edge Functions and the updated public Inquiry handler exist in
+Staging, but the administrator has not completed password setup or TOTP, the
+Admin API remains disabled, public Inquiry submissions remain disabled, and
+no production hosting/security-header gate has passed.
 
 The approved product boundary is:
 
@@ -12,8 +13,13 @@ The approved product boundary is:
 - one 90-day aggregate response;
 - one operational-health response;
 - no individual enquiry, contact detail, public reference, free text, budget,
-  country, visitor event, platform metric, source attribution, CRM field,
-  search, export or write action.
+  country, visitor event, platform metric, UTM, entry path, CRM field, search,
+  export or write action;
+- one bounded auxiliary attribution view: only allowlisted guide slugs whose
+  browser-supplied planner-entry identifier appears on at least five saved enquiries in a
+  fixed 90-day window. It returns no total, suppressed count or individual
+  row and is not described as first-touch, a unique visitor or a conversion
+  cause.
 
 The HTML route is a static asset and its URL is not secret. Protection of the
 data comes from Supabase Auth, TOTP MFA, the server-side administrator UUID
@@ -35,19 +41,24 @@ fail-closed:
   processor/cross-border map, fixed retention, rights runbook and actual
   security-header delivery have been approved and verified.
 
-Eleven migrations were applied in timestamp order through the Staging SQL
-Editor and the expected objects, forced RLS, grants, fixed RPCs, contracts and
-cron definitions were inspected there. Because this was a manual console
-deployment, Supabase migration-history metadata was not populated; do not run
-an automatic `db push` against Staging until that history gap is deliberately
-reconciled. The two Admin functions are deployed. Negative endpoint checks
-return 403 for a wrong or missing Origin and 503 for the allowed local Origin
-while `ADMIN_API_ENABLED=false`.
+Twelve migrations were applied in timestamp order through the Staging SQL
+Editor or the isolated linked CLI workspace. The expected objects, forced RLS,
+grants, fixed RPCs, contracts and cron definitions were inspected there.
+Because this remains a manual deployment, Supabase migration-history metadata
+was not populated; do not run an automatic `db push` against Staging until
+that history gap is deliberately reconciled. The dual-version
+`admin-health`, updated `admin-insights`, updated `v1-inquiries`, and
+`202607250001` attribution migration are deployed in Staging. Negative Admin
+endpoint checks return 403 for a wrong or missing Origin and 503 for the exact
+temporary verification Origin while `ADMIN_API_ENABLED=false`.
 
-Source verification currently passes TypeScript, 115/115 contract and Admin
-tests, the production build, dependency audit, font coverage and desktop/320
-px browser checks. The local invite page is available while the owner finishes
-the one-time setup; this is not evidence of production activation.
+The current attribution implementation passes the complete 236-test suite,
+the production build and font coverage locally. Staging V5 persistence,
+idempotency, validation, aggregate suppression, ACL and data-quality-hold
+runtime checks passed. The Admin aggregate UI passed blind screenshot review
+at 1024 × 900 and 390 × 844. Authenticated Staging Admin evidence is still
+required after the owner completes password setup and TOTP; none of these
+checks is evidence of production activation.
 
 ## Data flow
 
@@ -58,8 +69,10 @@ the one-time setup; this is not evidence of production activation.
   -> GET admin-health / GET admin-insights
   -> exact-Origin and disabled-state checks
   -> server getUser verification + JWT claim checks + UUID allow-list
-  -> service-only fixed RPC
+  -> admin-insights runs two fixed service-role-only RPCs in parallel
   -> aggregate JSON with no individual enquiry data
+     - 90-day planning distributions
+     - 90-day, k>=5 allowlisted last-guide-CTA counts
 ```
 
 The browser sends both of the credentials required for an authenticated
@@ -87,7 +100,8 @@ enquiry data.
 
 The frontend accepts only:
 
-- `homeground-admin-insights.v1`;
+- `homeground-admin-insights.v2`, which contains the existing aggregate
+  read model and `homeground-admin-guide-inquiries.v1`;
 - `homeground-admin-health.v1`.
 
 It validates the full response shape, rejects forbidden field names and stops
@@ -167,21 +181,44 @@ Use a separate staging Supabase project first. Verify the linked project
 before every command.
 
 The steady-state public Inquiry API allow-list contains only the current paired
-form/privacy version (`2026-07-21.1`). If a static-site rollout requires an
-overlap for pages that were already open, record the owner and end time before
-temporarily adding the matching older pairs. Remove them when that bounded
-window closes. The older RPCs remain in source for controlled transition and
-idempotent compatibility; that is not permission to accept new attributed
-legacy submissions indefinitely.
+form/privacy version (`2026-07-25.1`). During this static-site rollout only,
+record the owner and end time before temporarily accepting the matching
+`2026-07-21.1,2026-07-25.1` pairs. Remove `2026-07-21.1` when the bounded
+cache/retry window closes. `admin-health` is expected to show `attention`
+during that deliberate overlap; it must return to current-only afterward.
+The older RPCs remain in source for controlled transition and idempotent
+compatibility; that is not permission to accept attributed legacy submissions
+indefinitely.
 
-For a normal CLI-managed environment, apply migrations in timestamp order,
-then deploy:
+For a normal CLI-managed environment, apply migrations in timestamp order.
+This Staging project has no reconciled migration ledger, so do not run
+`supabase db push` there. Before applying the 07-25 migration, verify that
+`public.get_homeground_admin_health()`, V4, and
+`homeground_private.admin_metric_compatibility` exist, while
+`homeground_private.get_homeground_admin_health_20260721()` does not. A failed
+preflight means the Staging baseline must be repaired; do not make the
+migration silently skip unknown state.
+
+Deploy the dual-version `admin-health` parser first. It accepts only the
+complete `07-21/07-21` and `07-25/07-25` producer pairs and rejects a mixed
+pair. This keeps health readable across the database cutover. Then review and
+execute only `202607250001_homeground_guide_attribution.sql` against Staging,
+validate V5 and both aggregate RPCs, and deploy the remaining functions:
 
 ```bash
-supabase db push
-supabase functions deploy admin-insights
 supabase functions deploy admin-health
+supabase functions deploy admin-insights
+supabase functions deploy v1-inquiries --no-verify-jwt
 ```
+
+Show the exact SQL and Staging runtime evidence to the owner and obtain
+explicit approval before any production database change. The production
+order is the dual-version `admin-health` parser, database migration,
+temporary paired-version secrets, `admin-insights`, `v1-inquiries`, the
+static site, then removal of `2026-07-21.1` after the cache/retry window.
+Do not roll `admin-health` back to the old single-version parser after the
+database producer changes. Never publish the `2026-07-25.1` form before its
+V5 RPC exists in that environment.
 
 The current Staging project signs Auth JWTs with an asymmetric key. Its legacy
 gateway `Verify JWT with legacy secret` switch is therefore disabled for both
@@ -192,17 +229,19 @@ business API. A later CLI deployment can change the gateway setting, so verify
 the setting and repeat all negative authorization tests after every deploy.
 Never disable handler-side verification or rely only on CORS.
 
-For this particular Staging project, the eleven migrations were applied
+For this particular Staging project, the twelve migrations were applied
 manually and no migration ledger was created. Reconcile that ledger before
 using `supabase db push`; do not mark migrations as applied without matching
 the actual database definitions.
 
-During console validation a Staging-only legacy credential surfaced in tool
-output. It was not copied into source or documentation. The legacy anon and
-service-role API keys were disabled, the previous legacy signing key was
-revoked, and the unused temporary secret key created during remediation was
-deleted. Current hosted publishable/secret-key dictionaries are preferred.
-Production credentials and configuration were not changed.
+During validation a Staging-only legacy service-role credential surfaced in
+restricted tool output. It was not copied into source or documentation, and
+no production credential was read or changed. The Staging project still lists
+legacy anon and service-role API keys alongside its current publishable and
+secret keys, so credential rotation is an open staging-hardening item rather
+than a completed claim. Keep both application kill switches off until that
+rotation is coordinated with the Edge secrets and followed by a complete
+authorization regression test.
 
 The database migration is privileged and must be reviewed before it reaches
 production. In particular, confirm:
@@ -244,23 +283,40 @@ load. Capture the actual production response headers as acceptance evidence.
 
 ## Activation sequence
 
+This sequence governs Admin data access, not the independent public
+first-party-attribution release. The V5 migration and public form may be
+approved under `docs/inquiry-deployment.md` while `ADMIN_API_ENABLED=false`;
+doing so does not satisfy the password, TOTP, authorized-read, audit-ledger,
+prune or response-header checks below. If the migration was already applied by
+that public rollout, verify its checksum and database objects instead of
+executing it a second time.
+
 1. Approve the purpose matrix, legal basis, three-language notice, processors,
    cross-border map, fixed TTLs and rights/deletion runbook.
 2. Approve a header-capable Admin delivery path.
 3. Apply and test the migration in staging. **Done manually; migration-history
-   reconciliation remains open.**
-4. Deploy both Edge Functions in staging with handler-side Auth verification
-   and `ADMIN_API_ENABLED=false`. **Done and negative checks passed.**
+   reconciliation remains open. V5, ACL, k-suppression and the transactional
+   data-quality hold passed.**
+4. Deploy both Admin Edge Functions and the updated public Inquiry handler in
+   staging with handler-side Auth verification and
+   `ADMIN_API_ENABLED=false`. **Done. Wrong/missing Origin returns 403; the
+   exact temporary verification Origin returns 503 while disabled. The public
+   Inquiry handler was exercised, then returned to
+   `INQUIRY_ACCEPTING_SUBMISSIONS=false`.**
 5. Create the named administrator account and verify TOTP. **Invitation sent;
    password and TOTP are still pending.**
-6. Configure the exact origin and UUID allow-list. **Local exact origin and the
-   pending user's UUID are configured.**
+6. Configure the exact origin and UUID allow-list. **A non-routable temporary
+   verification Origin is configured in Staging and the pending user's UUID
+   remains allowlisted. Replace it only after the owner completes password and
+   TOTP setup; do not point live visitors at Staging.**
 7. Set `ADMIN_API_ENABLED=true` in staging. **Not done; keep false until the
    owner completes password/TOTP and the remaining gates pass.**
 8. Pass every authentication, response-contract, suppression, deletion and
    no-PII test below, including the Admin access-ledger write and 30-day prune.
-9. Repeat the reviewed migration/function process in production while the
-   production kill switch remains false.
+9. In production, either repeat the reviewed migration/function process or,
+   when the public attribution rollout already applied the same checksum,
+   verify the existing objects and deploy only the reviewed Admin function
+   build. Keep the production kill switch false.
 10. Configure the four public repository variables and publish the static
     route.
 11. Verify production response headers and authentication while the Admin API
@@ -281,7 +337,9 @@ load. Capture the actual production response headers as acceptance evidence.
 - page bundle contains no secret/service-role key, monitor secret,
   administrator UUID or enquiry data;
 - response contains no ID, public reference, contact, country, budget,
-  free text, UTM, IP, User-Agent, query or referrer;
+  free text, UTM, entry path, IP, User-Agent, query or referrer; only the
+  fixed `sourceGuide` slug and a count of at least five may appear in the
+  auxiliary attribution list;
 - all eight metric compatibility sets distinguish `Unknown` from
   `Not applicable`;
 - a compatibility denominator below five is not displayed exactly;
@@ -298,6 +356,25 @@ load. Capture the actual production response headers as acceptance evidence.
 - logout and 15 minutes without administrator activity clear the tab session
   and all displayed responses.
 
+## Maintaining the guide-source allow-list
+
+The privacy-preserving source list is intentionally duplicated at three
+enforcement layers:
+
+- the database aggregate RPC in a versioned migration;
+- `supabase/functions/_shared/admin-contracts.ts`;
+- `lib/adminClient.ts`.
+
+Adding a guide to the editorial registry does not automatically add it to
+Admin attribution. A future guide requires a new reviewed SQL migration plus
+matching Edge/client allow-lists and tests at all three layers. Until then its
+source may be retained on a saved `2026-07-25.1` enquiry but must not appear in
+the aggregate response.
+
+The 90-day view begins with saved enquiries using form version
+`2026-07-25.1`; older `2026-07-21.1` enquiries are not retroactively counted.
+The label must remain “提交时携带的文章入口（辅助归因）”, not “文章带来的咨询”. It is a browser-supplied, allowlisted auxiliary signal and can still be affected by repeated, test, or abusive submissions, so it must not be used alone for a business decision.
+
 ## Known residual: differences between two refreshes
 
 The server suppresses sparse values and an additional complement within each
@@ -311,7 +388,8 @@ For V1:
 
 - the page has no automatic polling and disables refresh while either request
   is in flight;
-- there is one named, MFA-protected, UUID-allowlisted administrator;
+- production activation permits only one named administrator after MFA
+  protection and the server UUID allow-list have both been verified;
 - all aggregates remain restricted data, even when every visible bucket is
   above five;
 - the administrator must not align before/after changes with notification

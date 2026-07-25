@@ -459,11 +459,41 @@ test("published privacy copy reflects the production data path", async () => {
   assert.match(copy, /within 30 days/);
   assert.match(copy, /30 天内/);
   assert.match(copy, /30일 이내/);
-  assert.equal(copy.match(/utm_source/g)?.length ?? 0, 0);
-  assert.match(copy, /current form version does not copy UTM/i);
-  assert.match(copy, /fixed code records only which language-specific/);
-  assert.match(copy, /固定代码记录是哪个语言版本/);
-  assert.match(copy, /고정 번호는 어느 언어/);
+  assert.match(copy, /saves limited source context with a submitted enquiry/i);
+  assert.match(copy, /first public Homeground page visited/i);
+  assert.match(
+    copy,
+    /guide identifier carried by the most recent planner-entry URL/i,
+  );
+  assert.match(
+    copy,
+    /standard UTM source, medium, campaign and content labels/i,
+  );
+  assert.match(copy, /Source statistics are displayed only in aggregate/i);
+  assert.match(copy, /最先访问且属于固定清单的 Homeground 公开页面规范标签/);
+  assert.match(copy, /不在清单内的路径统一归入一个“其他页面”标签/);
+  assert.match(
+    copy,
+    /最近一次规划入口网址所携带且属于固定白名单的 Homeground 站内指南标识/,
+  );
+  assert.match(copy, /标准 UTM 来源、媒介、活动和内容标签/);
+  assert.match(copy, /来源统计只以汇总方式展示/);
+  assert.match(copy, /처음 방문한 Homeground 공개 페이지가 고정 목록에 있을 경우 그 표준 경로 표지/);
+  assert.match(copy, /목록에 없는 모든 경로는 하나의 일반적인 ‘기타 페이지’ 표지/);
+  assert.match(
+    copy,
+    /가장 최근 플래너 진입 URL에 포함된 고정 허용 목록의 Homeground 내부 가이드 식별자/,
+  );
+  assert.match(copy, /표준 UTM 소스·매체·캠페인·콘텐츠 표지/);
+  assert.match(copy, /유입 통계는 집계로만 표시/);
+  assert.match(copy, /does not save a referrer, full URL or query string/i);
+  assert.match(copy, /不保存引荐网址、完整网址或查询字符串/);
+  assert.match(copy, /리퍼러, 전체 URL이나 쿼리 문자열/);
+  assert.match(copy, /removed after the backend definitively confirms/i);
+  assert.match(copy, /后端明确确认咨询保存成功后/);
+  assert.match(copy, /백엔드가 문의 저장 성공을 확정하면/);
+  assert.doesNotMatch(copy, /does not copy UTM/i);
+  assert.doesNotMatch(copy, /does not attach URL campaign labels/i);
   assert.match(copy, /either an email address or a WhatsApp number/);
   assert.match(copy, /邮箱或 WhatsApp 号码中的一种/);
   assert.match(copy, /이메일 주소 또는 WhatsApp 번호 중 하나/);
@@ -484,7 +514,11 @@ test("published privacy copy reflects the production data path", async () => {
   assert.doesNotMatch(copy, /WhatsApp 직접 연결/);
   assert.match(
     versions,
-    /currentPrivacyNoticeVersion = "2026-07-21\.1"/,
+    /submitSurfacePrivacyNoticeVersion = "2026-07-21\.1"/,
+  );
+  assert.match(
+    versions,
+    /currentPrivacyNoticeVersion = "2026-07-25\.1"/,
   );
   assert.doesNotMatch(defaultPage, /index:\s*false|follow:\s*false/);
   assert.doesNotMatch(localizedPage, /index:\s*false|follow:\s*false/);
@@ -564,11 +598,11 @@ test("environment template covers the public form and server functions", async (
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=2026-07-21\.1$/m,
+    /^ALLOWED_FORM_VERSIONS=2026-07-25\.1$/m,
   );
   assert.match(
     example,
-    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-21\.1$/m,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-25\.1$/m,
   );
   assert.doesNotMatch(
     example,

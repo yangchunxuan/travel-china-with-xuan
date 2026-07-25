@@ -136,7 +136,11 @@ test("hub has a visible trip-brief CTA and stays usable from 320px to wide scree
   const css = await source("components/GuidesHubPage.module.css");
 
   assert.match(hub, /href=\{getGuidesHubPlannerHref\(locale\)\}/);
-  assert.match(copy, /utm_campaign: "trip-conversation"/);
+  assert.match(copy, /\?source_guide=guides-hub#route-finder/);
+  assert.doesNotMatch(
+    copy,
+    /[?&]utm_(?:source|medium|campaign|content)=/,
+  );
   assert.match(copy, /action: "Start my free trip brief"/);
   assert.match(copy, /action: "免费提交旅行简报"/);
   assert.match(copy, /action: "무료 여행 브리프 시작하기"/);

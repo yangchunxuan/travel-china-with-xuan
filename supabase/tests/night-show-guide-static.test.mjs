@@ -60,7 +60,7 @@ test("night-show CTA carries Zhangjiajie context into a human trip-brief reply",
 
   assert.match(
     guide,
-    /\?planner=destinations&destinations=zhangjiajie#route-finder/,
+    /\?source_guide=\$\{guideId\}&planner=destinations&destinations=zhangjiajie#route-finder/,
   );
   assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
   assert.match(english, /Start my free trip brief/);

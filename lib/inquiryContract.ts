@@ -47,9 +47,15 @@ import {
   legacyPrivacyNoticeVersion,
   previousDestinationInquiryFormVersion,
   previousPrivacyNoticeVersion,
+  submitSurfaceDestinationInquiryFormVersion,
+  submitSurfacePrivacyNoticeVersion,
   supportedDestinationInquiryFormVersions,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./inquiryVersions.ts";
+import {
+  allowedInquiryEntryPathSet,
+  // @ts-ignore Source-TypeScript runtimes require the explicit extension.
+} from "./inquiryEntryPaths.ts";
 
 export {
   budgetDestinationInquiryFormVersion,
@@ -64,6 +70,8 @@ export {
   legacyPrivacyNoticeVersion,
   previousDestinationInquiryFormVersion,
   previousPrivacyNoticeVersion,
+  submitSurfaceDestinationInquiryFormVersion,
+  submitSurfacePrivacyNoticeVersion,
   currentRouteRuleVersion,
   destinationIds,
   destinationPaceIds,
@@ -132,6 +140,28 @@ export interface NormalizedInquiryAttribution {
   utmSource: string | null;
   utmMedium: string | null;
   utmCampaign: string | null;
+  /**
+   * Present on the current destination form. Optional here so replaying an
+   * older form preserves its exact normalized object and semantic hash.
+   */
+  entryPath?: string;
+  sourceGuide?: string | null;
+  utmContent?: string | null;
+  /**
+   * Google Ads click identifier, kept so a won trip can be reported back to
+   * Google as an offline conversion. It is an opaque token the ad platform
+   * appends on landing; it is never typed by a traveller, so it is bounded to
+   * an opaque-token character set rather than treated as free text.
+   */
+  gclid?: string | null;
+  /** Meta (Facebook/Instagram) click identifier. Same contract as `gclid`. */
+  fbclid?: string | null;
+  /**
+   * Epoch milliseconds at which the click id above was observed. Meta reports
+   * a conversion as `fb.1.<click time>.<fbclid>` and judges it against the
+   * click's own timestamp, so the submission time is not a substitute.
+   */
+  adClickAt?: number | null;
 }
 
 export interface NormalizedRouteInquiryPayload {
@@ -214,6 +244,19 @@ export type JsonValue =
 const uuidV4Pattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const e164Pattern = /^\+[1-9][0-9]{7,14}$/;
+const sourceGuidePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
+/**
+ * Ad platforms append their click ids themselves and they are always opaque
+ * URL-safe tokens. Matching that shape exactly — rather than accepting bounded
+ * text — means a crafted `?gclid=` or `?fbclid=` cannot smuggle a name, an
+ * email or a note into stored attribution. The bound covers Meta's `fbclid`,
+ * which runs far longer than Google's `gclid`.
+ */
+const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
+/** 2020-01-01. No click on this site predates the site itself. */
+const adClickEpochFloorMs = Date.UTC(2020, 0, 1);
+/** Absorbs a mildly wrong device clock without accepting a fabricated future. */
+const adClickFutureToleranceMs = 24 * 60 * 60 * 1000;
 const disallowedControlCharacters =
   /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069\ud800-\udfff]/iu;
 const emailLocalPartPattern =
@@ -357,7 +400,10 @@ export function semanticInquiryPayload(
   if (value.schemaVersion === destinationInquirySchemaVersion) {
     const includesBudget =
       value.formVersion === currentDestinationInquiryFormVersion ||
+      value.formVersion === submitSurfaceDestinationInquiryFormVersion ||
       value.formVersion === budgetDestinationInquiryFormVersion;
+    const includesEntryAttribution =
+      value.formVersion === currentDestinationInquiryFormVersion;
     return {
       schemaVersion: value.schemaVersion,
       formVersion: value.formVersion,
@@ -387,12 +433,25 @@ export function semanticInquiryPayload(
         : {}),
       note: value.note,
       privacyNoticeVersion: value.privacyNoticeVersion,
-      attribution: {
-        landingPath: value.attribution.landingPath,
-        utmSource: value.attribution.utmSource,
-        utmMedium: value.attribution.utmMedium,
-        utmCampaign: value.attribution.utmCampaign,
-      },
+      attribution: includesEntryAttribution
+        ? {
+            landingPath: value.attribution.landingPath,
+            entryPath: value.attribution.entryPath ?? "",
+            sourceGuide: value.attribution.sourceGuide ?? null,
+            utmSource: value.attribution.utmSource,
+            utmMedium: value.attribution.utmMedium,
+            utmCampaign: value.attribution.utmCampaign,
+            utmContent: value.attribution.utmContent ?? null,
+            gclid: value.attribution.gclid ?? null,
+            fbclid: value.attribution.fbclid ?? null,
+            adClickAt: value.attribution.adClickAt ?? null,
+          }
+        : {
+            landingPath: value.attribution.landingPath,
+            utmSource: value.attribution.utmSource,
+            utmMedium: value.attribution.utmMedium,
+            utmCampaign: value.attribution.utmCampaign,
+          },
       experiment: null,
     };
   }
@@ -502,6 +561,8 @@ function validateAndNormalizeDestinationInquiry(
   const supportedVersionPair =
     (input.formVersion === currentDestinationInquiryFormVersion &&
       input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+    (input.formVersion === submitSurfaceDestinationInquiryFormVersion &&
+      input.privacyNoticeVersion === submitSurfacePrivacyNoticeVersion) ||
     (input.formVersion === budgetDestinationInquiryFormVersion &&
       input.privacyNoticeVersion === budgetPrivacyNoticeVersion) ||
     (input.formVersion === previousDestinationInquiryFormVersion &&
@@ -766,6 +827,8 @@ function validateAndNormalizeDestinationInquiry(
     const supportedConsentPair =
       (input.formVersion === currentDestinationInquiryFormVersion &&
         input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+      (input.formVersion === submitSurfaceDestinationInquiryFormVersion &&
+        input.privacyNoticeVersion === submitSurfacePrivacyNoticeVersion) ||
       (input.formVersion === budgetDestinationInquiryFormVersion &&
         input.privacyNoticeVersion === budgetPrivacyNoticeVersion) ||
       (input.formVersion === previousDestinationInquiryFormVersion &&
@@ -819,6 +882,7 @@ function validateAndNormalizeDestinationInquiry(
   if (
     input.roughBudgetPerPerson !== undefined &&
     input.formVersion !== currentDestinationInquiryFormVersion &&
+    input.formVersion !== submitSurfaceDestinationInquiryFormVersion &&
     input.formVersion !== budgetDestinationInquiryFormVersion
   ) {
     fieldErrors.roughBudgetPerPerson = "unsupported";
@@ -865,11 +929,27 @@ function validateAndNormalizeDestinationInquiry(
   if (!isPlainObject(attribution)) {
     fieldErrors.attribution = "required";
   } else {
-    const usesFixedSubmitSurface =
+    const usesEntryAttribution =
       input.formVersion === currentDestinationInquiryFormVersion;
+    const usesFixedSubmitSurface =
+      usesEntryAttribution ||
+      input.formVersion === submitSurfaceDestinationInquiryFormVersion;
     hasOnlyKeys(
       attribution,
-      usesFixedSubmitSurface
+      usesEntryAttribution
+        ? [
+            "landingPath",
+            "entryPath",
+            "sourceGuide",
+            "utmSource",
+            "utmMedium",
+            "utmCampaign",
+            "utmContent",
+            "gclid",
+            "fbclid",
+            "adClickAt",
+          ]
+        : usesFixedSubmitSurface
         ? ["landingPath"]
         : ["landingPath", "utmSource", "utmMedium", "utmCampaign"],
       "attribution",
@@ -900,7 +980,28 @@ function validateAndNormalizeDestinationInquiry(
       fieldErrors["attribution.landingPath"] = "invalid";
     }
 
-    const normalizeUtm = (key: "utmSource" | "utmMedium" | "utmCampaign") => {
+    const entryPath =
+      typeof attribution.entryPath === "string"
+        ? normalizeText(attribution.entryPath).trim()
+        : "";
+    if (
+      usesEntryAttribution &&
+      (entryPath.length === 0 ||
+        entryPath.length > 200 ||
+        !allowedInquiryEntryPathSet.has(entryPath) ||
+        !entryPath.startsWith("/") ||
+        entryPath.startsWith("//") ||
+        entryPath.includes("://") ||
+        entryPath.includes("?") ||
+        entryPath.includes("#") ||
+        disallowedControlCharacters.test(entryPath))
+    ) {
+      fieldErrors["attribution.entryPath"] = "invalid";
+    }
+
+    const normalizeUtm = (
+      key: "utmSource" | "utmMedium" | "utmCampaign" | "utmContent",
+    ) => {
       const raw = attribution[key];
       if (raw === undefined || raw === null || raw === "") return null;
       if (typeof raw !== "string") return null;
@@ -914,14 +1015,65 @@ function validateAndNormalizeDestinationInquiry(
       return normalized || null;
     };
 
-    normalizedAttribution = {
-      landingPath,
-      utmSource: usesFixedSubmitSurface ? null : normalizeUtm("utmSource"),
-      utmMedium: usesFixedSubmitSurface ? null : normalizeUtm("utmMedium"),
-      utmCampaign: usesFixedSubmitSurface
-        ? null
-        : normalizeUtm("utmCampaign"),
+    const rawSourceGuide = attribution.sourceGuide;
+    const normalizedSourceGuide =
+      typeof rawSourceGuide === "string"
+        ? normalizeText(rawSourceGuide).trim()
+        : "";
+    const sourceGuide =
+      normalizedSourceGuide.length <= 100 &&
+      sourceGuidePattern.test(normalizedSourceGuide)
+        ? normalizedSourceGuide
+        : null;
+
+    const normalizeAdClickId = (key: "gclid" | "fbclid") => {
+      const raw = attribution[key];
+      const normalized =
+        typeof raw === "string" ? normalizeText(raw).trim() : "";
+      return adClickIdPattern.test(normalized) ? normalized : null;
     };
+
+    // A click time only means anything attached to a click id, and only if it
+    // is a real instant — a forged one would be reported to an ad platform as
+    // though the click had been observed then.
+    const rawAdClickAt = attribution.adClickAt;
+    const hasAdClickId = Boolean(
+      normalizeAdClickId("gclid") || normalizeAdClickId("fbclid"),
+    );
+    const normalizedAdClickAt =
+      hasAdClickId &&
+      typeof rawAdClickAt === "number" &&
+      Number.isInteger(rawAdClickAt) &&
+      rawAdClickAt >= adClickEpochFloorMs &&
+      rawAdClickAt <= Date.now() + adClickFutureToleranceMs
+        ? rawAdClickAt
+        : null;
+
+    normalizedAttribution = usesEntryAttribution
+      ? {
+          landingPath,
+          entryPath,
+          sourceGuide,
+          utmSource: normalizeUtm("utmSource"),
+          utmMedium: normalizeUtm("utmMedium"),
+          utmCampaign: normalizeUtm("utmCampaign"),
+          utmContent: normalizeUtm("utmContent"),
+          gclid: normalizeAdClickId("gclid"),
+          fbclid: normalizeAdClickId("fbclid"),
+          adClickAt: normalizedAdClickAt,
+        }
+      : {
+          landingPath,
+          utmSource: usesFixedSubmitSurface
+            ? null
+            : normalizeUtm("utmSource"),
+          utmMedium: usesFixedSubmitSurface
+            ? null
+            : normalizeUtm("utmMedium"),
+          utmCampaign: usesFixedSubmitSurface
+            ? null
+            : normalizeUtm("utmCampaign"),
+        };
   }
 
   const antiAbuse = input.antiAbuse;

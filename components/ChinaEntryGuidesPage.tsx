@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getGuidesByPillar } from "../lib/guideRegistry";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ChinaEntryGuidesPage.module.css";
@@ -9,7 +10,7 @@ const SITE_URL = "https://homegroundchina.com";
 const PAGE_PATH = "/guides/china-entry-requirements/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const plannerHref =
-  "/?utm_source=china-entry-guides&utm_medium=owned&utm_campaign=trip-conversation&utm_content=entry-hub-cta&planner=destinations#route-finder";
+  "/?source_guide=china-entry-guides&planner=destinations#route-finder";
 
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   day: "numeric",
@@ -311,10 +312,14 @@ export function ChinaEntryGuidesPage() {
                 have. A Homeground planner will help determine the right
                 planning scope before any paid work begins.
               </p>
-              <a href={plannerHref}>
+              <GuideCtaLink
+                guideId="china-entry-guides"
+                href={plannerHref}
+                locale="en"
+              >
                 Start my free trip brief
                 <ArrowRight aria-hidden="true" size={18} />
-              </a>
+              </GuideCtaLink>
             </div>
           </div>
         </section>

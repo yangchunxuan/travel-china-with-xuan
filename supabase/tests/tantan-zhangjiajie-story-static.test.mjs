@@ -67,7 +67,11 @@ test("Tantan story images are responsive, privacy edited and contextually linked
   assert.match(page, /tantan-hero-720\.avif/);
   assert.match(page, /tantan-hero-1200\.webp/);
   assert.match(page, /tantan-with-guests-\$\{kind\}-1200/);
-  assert.match(page, /utm_campaign=trip-conversation/);
+  assert.match(page, /source_guide=\$\{guideId\}#route-finder/);
+  assert.doesNotMatch(
+    page,
+    /[?&]utm_(?:source|medium|campaign|content)=/,
+  );
   assert.doesNotMatch(page, /planner=destinations|service=/);
   assert.match(copy, /guest faces are blurred for privacy/);
   assert.match(

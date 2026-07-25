@@ -59,8 +59,8 @@ test("visa-free page uses Chinese official sources and preserves the policy boun
   assert.match(article, /does not cover work, long-term study, news[\s\S]*reporting/);
   assert.match(article, /VISA_FREE_ENTRY_SOURCES\.map/);
   assert.match(article, /styles\.mobileComparison/);
-  assert.match(article, /utm_source=visa-free-entry/);
-  assert.match(article, /utm_campaign=article-to-route-finder/);
+  assert.match(article, /source_guide=visa-free-entry/);
+  assert.doesNotMatch(article, /utm_(?:source|medium|campaign|content)=/);
 });
 
 test("entry hub replaces the legacy URL in sitemap and English footer", async () => {

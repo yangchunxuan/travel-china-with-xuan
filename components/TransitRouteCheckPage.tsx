@@ -109,7 +109,7 @@ export function TransitRouteCheckPage({
     "do-us-citizens-need-visa-china-2026",
     locale,
   );
-  const plannerHref = `${copy.homePath}?utm_source=transit-route-check&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (

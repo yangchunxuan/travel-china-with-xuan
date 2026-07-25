@@ -89,6 +89,12 @@ function destinationPayload() {
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
       landingPath: "/",
+      entryPath: "/guides/zhangjiajie-itinerary/",
+      sourceGuide: "zhangjiajie-itinerary",
+      utmSource: null,
+      utmMedium: null,
+      utmCampaign: null,
+      utmContent: null,
     },
     experiment: null,
     antiAbuse: {

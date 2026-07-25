@@ -194,7 +194,7 @@ export function KevinPreparationStoryPage({
     locale,
   );
   const studioHref = `${locale === "en" ? "" : `/${locale}`}/studio/#team-kevin`;
-  const plannerHref = `${copy.homePath}?utm_source=kevin-field-note&utm_medium=owned&utm_campaign=pre-departure-preparation&planner=destinations#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}&planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale);
   const preflightIcons = [TicketCheck, Clock, Route, MessageSquareText];
   const contents = copy.contents.filter(

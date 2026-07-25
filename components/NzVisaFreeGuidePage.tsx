@@ -17,7 +17,7 @@ import styles from "./NzVisaFreeGuidePage.module.css";
 const guide = getGuideEntry("china-visa-free-new-zealand-citizens-2026", "en");
 const checkedDate = "24 July 2026";
 const plannerHref =
-  "/?utm_source=china-visa-free-new-zealand-citizens-2026&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta&planner=destinations#route-finder";
+  "/?source_guide=china-visa-free-new-zealand-citizens-2026&planner=destinations#route-finder";
 
 function createStructuredData() {
   const organizationId = "https://homegroundchina.com/#organization";
@@ -123,7 +123,8 @@ export function NzVisaFreeGuidePage() {
 
       <HomegroundHeader
         locale="en"
-        pageContext="guides"
+        pageContext="guide"
+        guideId="china-visa-free-new-zealand-citizens-2026"
         showLanguageNav={false}
       />
 

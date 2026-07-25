@@ -772,6 +772,60 @@
   color: var(--admin-jade);
 }
 
+.guideInquiryList {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 22rem), 1fr)
+  );
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guideInquiryList li {
+  display: grid;
+  min-inline-size: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.65rem 1rem;
+  border: 1px solid var(--admin-line);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  background: #f7f9f8;
+}
+
+.guideInquiryList code {
+  min-inline-size: 0;
+  color: var(--admin-navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.guideInquiryList li > span {
+  color: var(--admin-muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.guideInquiryList strong {
+  color: var(--admin-navy);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.guideInquiryEmpty {
+  margin: 1rem 0 0;
+  border: 1px dashed var(--admin-line-strong);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #f7f9f8;
+  color: var(--admin-muted);
+  font-size: 0.84rem;
+}
+
 .statGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
@@ -1060,9 +1114,14 @@
   .toolbar,
   .sectionHeading,
   .coveragePanel,
+  .subsectionHeading,
   .metricHeading {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .subsectionHeading .baselineBadge {
+    align-self: flex-start;
   }
 
   .refreshButton {
@@ -1084,6 +1143,14 @@
 
   .sampleBadge {
     align-self: flex-start;
+  }
+
+  .guideInquiryList li {
+    grid-template-columns: 1fr;
+  }
+
+  .guideInquiryList li > span {
+    white-space: normal;
   }
 }
 
@@ -1139,7 +1206,9 @@
   .section,
   .metricCard,
   .healthCheck,
-  .subsection {
+  .subsection,
+  .guideInquiryList li,
+  .guideInquiryEmpty {
     background: Canvas;
     color: CanvasText;
   }

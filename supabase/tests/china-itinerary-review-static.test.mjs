@@ -29,7 +29,11 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
   assert.match(copy, /no payment or file upload is needed here/);
   assert.match(copy, /Homeground will follow up personally/);
   assert.match(page, /const conversationHref/);
-  assert.match(page, /utm_campaign=trip-conversation/);
+  assert.match(
+    page,
+    /const conversationHref = `\$\{homeCopy\.path\}\?planner=destinations#route-finder`/,
+  );
+  assert.doesNotMatch(page, /[?&]utm_(?:source|medium|campaign|content)=/);
   assert.match(copy, /Start a free trip brief/);
   assert.match(copy, /免费提交旅行简报/);
   assert.match(copy, /무료 여행 브리프 시작하기/);

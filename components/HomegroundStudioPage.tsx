@@ -53,9 +53,9 @@ export function HomegroundStudioPage({
   const homeCopy = getHomegroundCopy(locale);
   const copy = getHomegroundStudioCopy(locale);
   const motionRootId = `homeground-studio-${locale}`;
-  const plannerHref = `${homeCopy.path}?utm_source=studio&utm_medium=owned&utm_campaign=team-page&planner=destinations#route-finder`;
+  const plannerHref = `${homeCopy.path}?planner=destinations#route-finder`;
   const planningServicesHref =
-    "/china-itinerary-review/?utm_source=studio&utm_medium=owned&utm_campaign=planning-services&utm_content=final-cta#choose-service";
+    "/china-itinerary-review/#choose-service";
   const isEnglish = locale === "en";
   const organizationSchema = {
     "@context": "https://schema.org",

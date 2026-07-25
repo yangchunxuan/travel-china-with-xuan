@@ -20,6 +20,10 @@ import {
   type GuideId,
 } from "../lib/guideRegistry";
 import {
+  captureGuideSource,
+  trackEvent,
+} from "../lib/analytics";
+import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
@@ -158,6 +162,8 @@ export function HomegroundHeader({
   const plannerHref =
     pageContext === "home"
       ? plannerTarget
+      : pageContext === "guide"
+        ? `${copy.path}?source_guide=${guideId}&planner=destinations#route-finder`
       : `${copy.path}?planner=destinations#route-finder`;
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesHref = planningServicesCopy.path;
@@ -331,57 +337,64 @@ export function HomegroundHeader({
         </nav>
 
         <div className={styles.headerActions}>
-          <nav
-            className={styles.languageNav}
-            aria-label={copy.navigation.languageLabel}
-            hidden={!showLanguageNav}
-            style={showLanguageNav ? undefined : { display: "none" }}
-          >
-            {homegroundLocales.map((targetLocale) => {
-              const target = getHomegroundCopy(targetLocale);
-              const languageHref =
-                pageContext === "guide"
-                  ? getGuideEntry(
-                      guideId,
-                      targetLocale,
-                    ).canonicalPath
-                  : pageContext === "guides"
-                    ? `${target.path}guides/`
-                  : pageContext === "services"
-                    ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
-                  : pageContext === "studio"
-                    ? `${target.path}studio/`
-                  : plannerStatus === "result" && !languageQuery
-                  ? `${target.path}?planner=result${languageHash}`
-                  : `${target.path}${languageQuery}${languageHash}`;
-              return (
-                <a
-                  aria-current={
-                    targetLocale === locale
-                      ? pageContext === "home"
-                        ? "page"
-                        : "true"
-                      : undefined
-                  }
-                  href={languageHref}
-                  hrefLang={target.htmlLang}
-                  key={targetLocale}
-                  lang={target.htmlLang}
-                  onClick={(event) =>
-                    handleLanguageChange(event, targetLocale)
-                  }
-                >
-                  {target.languageShort}
-                </a>
-              );
-            })}
-          </nav>
+          {showLanguageNav ? (
+            <nav
+              className={styles.languageNav}
+              aria-label={copy.navigation.languageLabel}
+            >
+              {homegroundLocales.map((targetLocale) => {
+                const target = getHomegroundCopy(targetLocale);
+                const languageHref =
+                  pageContext === "guide"
+                    ? getGuideEntry(
+                        guideId,
+                        targetLocale,
+                      ).canonicalPath
+                    : pageContext === "guides"
+                      ? `${target.path}guides/`
+                    : pageContext === "services"
+                      ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
+                    : pageContext === "studio"
+                      ? `${target.path}studio/`
+                    : plannerStatus === "result" && !languageQuery
+                    ? `${target.path}?planner=result${languageHash}`
+                    : `${target.path}${languageQuery}${languageHash}`;
+                return (
+                  <a
+                    aria-current={
+                      targetLocale === locale
+                        ? pageContext === "home"
+                          ? "page"
+                          : "true"
+                        : undefined
+                    }
+                    href={languageHref}
+                    hrefLang={target.htmlLang}
+                    key={targetLocale}
+                    lang={target.htmlLang}
+                    onClick={(event) =>
+                      handleLanguageChange(event, targetLocale)
+                    }
+                  >
+                    {target.languageShort}
+                  </a>
+                );
+              })}
+            </nav>
+          ) : null}
           <a
             className={styles.headerCta}
             href={plannerHref}
             onClick={(event) => {
               if (pageContext === "home") {
                 handleHomegroundHashClick(event, plannerTarget);
+              } else if (pageContext === "guide") {
+                captureGuideSource(guideId);
+                trackEvent("guide_cta_clicked", {
+                  guide_id: guideId,
+                  page_language: locale,
+                  cta_position: "header",
+                });
               }
             }}
           >
@@ -464,52 +477,52 @@ export function HomegroundHeader({
             </a>
           </>
         )}
-        <div
-          className={styles.mobileLanguageNav}
-          role="group"
-          aria-label={copy.navigation.languageLabel}
-          hidden={!showLanguageNav}
-          style={showLanguageNav ? undefined : { display: "none" }}
-        >
-          {homegroundLocales.map((targetLocale) => {
-            const target = getHomegroundCopy(targetLocale);
-            const languageHref =
-              pageContext === "guide"
-                ? getGuideEntry(
-                    guideId,
-                    targetLocale,
-                  ).canonicalPath
-                : pageContext === "guides"
-                  ? `${target.path}guides/`
-                : pageContext === "services"
-                  ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
-                : pageContext === "studio"
-                  ? `${target.path}studio/`
-                : plannerStatus === "result" && !languageQuery
-                ? `${target.path}?planner=result${languageHash}`
-                : `${target.path}${languageQuery}${languageHash}`;
-            return (
-              <a
-                aria-current={
-                  targetLocale === locale
-                    ? pageContext === "home"
-                      ? "page"
-                      : "true"
-                    : undefined
-                }
-                href={languageHref}
-                hrefLang={target.htmlLang}
-                key={targetLocale}
-                lang={target.htmlLang}
-                onClick={(event) =>
-                  handleLanguageChange(event, targetLocale)
-                }
-              >
-                {target.languageShort}
-              </a>
-            );
-          })}
-        </div>
+        {showLanguageNav ? (
+          <div
+            className={styles.mobileLanguageNav}
+            role="group"
+            aria-label={copy.navigation.languageLabel}
+          >
+            {homegroundLocales.map((targetLocale) => {
+              const target = getHomegroundCopy(targetLocale);
+              const languageHref =
+                pageContext === "guide"
+                  ? getGuideEntry(
+                      guideId,
+                      targetLocale,
+                    ).canonicalPath
+                  : pageContext === "guides"
+                    ? `${target.path}guides/`
+                  : pageContext === "services"
+                    ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
+                  : pageContext === "studio"
+                    ? `${target.path}studio/`
+                  : plannerStatus === "result" && !languageQuery
+                  ? `${target.path}?planner=result${languageHash}`
+                  : `${target.path}${languageQuery}${languageHash}`;
+              return (
+                <a
+                  aria-current={
+                    targetLocale === locale
+                      ? pageContext === "home"
+                        ? "page"
+                        : "true"
+                      : undefined
+                  }
+                  href={languageHref}
+                  hrefLang={target.htmlLang}
+                  key={targetLocale}
+                  lang={target.htmlLang}
+                  onClick={(event) =>
+                    handleLanguageChange(event, targetLocale)
+                  }
+                >
+                  {target.languageShort}
+                </a>
+              );
+            })}
+          </div>
+        ) : null}
         <a
           className={styles.mobileCta}
           href={plannerHref}
@@ -517,6 +530,13 @@ export function HomegroundHeader({
             close();
             if (pageContext === "home") {
               handleHomegroundHashClick(event, plannerTarget);
+            } else if (pageContext === "guide") {
+              captureGuideSource(guideId);
+              trackEvent("guide_cta_clicked", {
+                guide_id: guideId,
+                page_language: locale,
+                cta_position: "header",
+              });
             }
           }}
         >

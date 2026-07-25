@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import test from "node:test";
 import {
   budgetDestinationInquiryFormVersion,
@@ -18,6 +19,8 @@ import {
   previousDestinationInquiryFormVersion,
   previousPrivacyNoticeVersion,
   semanticInquiryPayload,
+  submitSurfaceDestinationInquiryFormVersion,
+  submitSurfacePrivacyNoticeVersion,
   travelPartyIds,
   travelStyleIds,
   tripNightsIds,
@@ -35,10 +38,17 @@ const validationConfig = {
     legacyPrivacyNoticeVersion,
     previousPrivacyNoticeVersion,
     budgetPrivacyNoticeVersion,
+    submitSurfacePrivacyNoticeVersion,
     currentPrivacyNoticeVersion,
   ],
   whatsappEnabled: false,
 };
+
+function semanticHash(value) {
+  return createHash("sha256")
+    .update(canonicalizeJson(semanticInquiryPayload(value)))
+    .digest("hex");
+}
 
 function validPayload() {
   const answers = {
@@ -115,6 +125,12 @@ function validDestinationPayload() {
     privacyNoticeVersion: currentPrivacyNoticeVersion,
     attribution: {
       landingPath: inquirySubmitSurfaceByLocale.en,
+      entryPath: "/guides/is-your-china-itinerary-too-rushed/",
+      sourceGuide: "is-your-china-itinerary-too-rushed",
+      utmSource: null,
+      utmMedium: null,
+      utmCampaign: null,
+      utmContent: null,
     },
     experiment: null,
     antiAbuse: {
@@ -208,12 +224,23 @@ test("rejects control characters while dropping invalid attribution", () => {
   assert.equal(result.fieldErrors["attribution.utmCampaign"], undefined);
 });
 
-test("current destination inquiries reject URL campaign labels", () => {
+test("the fixed-submit-surface form rejects fields it never supported", () => {
   const payload = validDestinationPayload();
-  payload.attribution.utmSource = "youtube\u202ehidden";
-  payload.attribution.utmMedium = { unexpected: true };
-  payload.attribution.utmCampaign = "x".repeat(101);
-  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  payload.formVersion = submitSurfaceDestinationInquiryFormVersion;
+  payload.privacyNoticeVersion = submitSurfacePrivacyNoticeVersion;
+  payload.attribution = {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+    utmSource: "youtube\u202ehidden",
+    utmMedium: { unexpected: true },
+    utmCampaign: "x".repeat(101),
+  };
+  const result = validateAndNormalizeInquiry(payload, {
+    ...validationConfig,
+    allowedFormVersions: [
+      ...validationConfig.allowedFormVersions,
+      submitSurfaceDestinationInquiryFormVersion,
+    ],
+  });
   assert.equal(result.ok, false);
   if (result.ok) return;
   assert.equal(result.fieldErrors["attribution.utmSource"], "unknown");
@@ -233,9 +260,15 @@ test("current destination inquiries accept only the locale submit surface", () =
     if (!result.ok) continue;
     assert.deepEqual(result.value.attribution, {
       landingPath,
+      entryPath: "/guides/is-your-china-itinerary-too-rushed/",
+      sourceGuide: "is-your-china-itinerary-too-rushed",
       utmSource: null,
       utmMedium: null,
       utmCampaign: null,
+      utmContent: null,
+      gclid: null,
+      fbclid: null,
+      adClickAt: null,
     });
   }
 
@@ -250,6 +283,83 @@ test("current destination inquiries accept only the locale submit surface", () =
     assert.equal(
       forgedResult.fieldErrors["attribution.landingPath"],
       "invalid",
+    );
+  }
+});
+
+test("current destination attribution keeps bounded external labels and drops an invalid guide ID", () => {
+  const payload = validDestinationPayload();
+  payload.attribution = {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+    entryPath: "/guides/china-visa-free-canadian-citizens-2026/",
+    sourceGuide: "traveller@example.com",
+    utmSource: "Google",
+    utmMedium: "organic",
+    utmCampaign: "加拿大免签",
+    utmContent: "search-result",
+    gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
+  };
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.deepEqual(result.value.attribution, {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+    entryPath: "/guides/china-visa-free-canadian-citizens-2026/",
+    sourceGuide: null,
+    utmSource: "Google",
+    utmMedium: "organic",
+    utmCampaign: "加拿大免签",
+    utmContent: "search-result",
+    gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    adClickAt: null,
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
+  });
+});
+
+test("a forged click id carrying traveller text is dropped, not stored", () => {
+  for (const key of ["gclid", "fbclid"]) {
+    for (const clickId of [
+      "traveller@example.com",
+      "note about Alice",
+      "+44 7700 900000",
+      `${"x".repeat(513)}`,
+    ]) {
+      const payload = validDestinationPayload();
+      payload.attribution[key] = clickId;
+      const result = validateAndNormalizeInquiry(payload, validationConfig);
+      assert.equal(result.ok, true, `${key}: ${clickId}`);
+      if (!result.ok) continue;
+      assert.equal(
+        result.value.attribution[key],
+        null,
+        `${key}: ${clickId}`,
+      );
+    }
+  }
+});
+
+test("current destination attribution requires a bounded first public entry path", () => {
+  for (const entryPath of [
+    "",
+    "guides/zhangjiajie/",
+    "//external.example/path",
+    "https://external.example/path",
+    "/guides/zhangjiajie/?email=traveller@example.com",
+    "/guides/zhangjiajie/#private-note",
+    "/traveller@example.com",
+    "/guides/not-a-real-public-guide/",
+    `/${"x".repeat(200)}`,
+  ]) {
+    const payload = validDestinationPayload();
+    payload.attribution.entryPath = entryPath;
+    const result = validateAndNormalizeInquiry(payload, validationConfig);
+    assert.equal(result.ok, false, entryPath);
+    if (result.ok) continue;
+    assert.equal(
+      result.fieldErrors["attribution.entryPath"],
+      "invalid",
+      entryPath,
     );
   }
 });
@@ -528,6 +638,12 @@ test("current destination budget is an independent optional one-line field", () 
 });
 
 test("destination form and privacy versions stay paired without changing old semantic hashes", () => {
+  const legacyAttribution = {
+    landingPath: "/?utm_source=youtube",
+    utmSource: "youtube",
+    utmMedium: "video",
+    utmCampaign: "wish-list",
+  };
   const versionConfig = {
     ...validationConfig,
     allowedFormVersions: [
@@ -535,15 +651,59 @@ test("destination form and privacy versions stay paired without changing old sem
       legacyDestinationInquiryFormVersion,
       previousDestinationInquiryFormVersion,
       budgetDestinationInquiryFormVersion,
+      submitSurfaceDestinationInquiryFormVersion,
       currentDestinationInquiryFormVersion,
     ],
   };
+
+  const submitSurface = validDestinationPayload();
+  submitSurface.formVersion = submitSurfaceDestinationInquiryFormVersion;
+  submitSurface.privacyNoticeVersion = submitSurfacePrivacyNoticeVersion;
+  submitSurface.attribution = {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+  };
+  const submitSurfaceResult = validateAndNormalizeInquiry(
+    submitSurface,
+    versionConfig,
+  );
+  assert.equal(submitSurfaceResult.ok, true);
+  if (!submitSurfaceResult.ok) return;
+  const submitSurfaceSemantic = semanticInquiryPayload(
+    submitSurfaceResult.value,
+  );
+  assert.equal(
+    Object.hasOwn(submitSurfaceSemantic, "roughBudgetPerPerson"),
+    true,
+  );
+  assert.deepEqual(submitSurfaceSemantic.attribution, {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+    utmSource: null,
+    utmMedium: null,
+    utmCampaign: null,
+  });
+  assert.equal(
+    semanticHash(submitSurfaceResult.value),
+    "3aaf823945ca85d54e11e197708818f39961b046f682f2deee3b8afae2d0c907",
+  );
+
+  const budget = validDestinationPayload();
+  budget.formVersion = budgetDestinationInquiryFormVersion;
+  budget.privacyNoticeVersion = budgetPrivacyNoticeVersion;
+  budget.attribution = structuredClone(legacyAttribution);
+  const budgetResult = validateAndNormalizeInquiry(budget, versionConfig);
+  assert.equal(budgetResult.ok, true);
+  if (!budgetResult.ok) return;
+  assert.equal(
+    semanticHash(budgetResult.value),
+    "cf0dad4fd3f9d08af9b58302e6b7467bf8298a604a309d32bdc982c40f75073d",
+  );
 
   const previous = validDestinationPayload();
   previous.formVersion = previousDestinationInquiryFormVersion;
   previous.privacyNoticeVersion = previousPrivacyNoticeVersion;
   delete previous.roughBudgetPerPerson;
   previous.departureCountry = "Canada";
+  previous.attribution = structuredClone(legacyAttribution);
   const previousResult = validateAndNormalizeInquiry(
     previous,
     versionConfig,
@@ -559,12 +719,17 @@ test("destination form and privacy versions stay paired without changing old sem
     Object.hasOwn(previousSemantic, "roughBudgetPerPerson"),
     false,
   );
+  assert.equal(
+    semanticHash(previousResult.value),
+    "d547aa3006993ccd87c68f65e63aca7748e48b3579c6c5fef311688a3920f1ef",
+  );
 
   const legacy = validDestinationPayload();
   legacy.formVersion = legacyDestinationInquiryFormVersion;
   legacy.privacyNoticeVersion = legacyPrivacyNoticeVersion;
   delete legacy.departureCountry;
   delete legacy.roughBudgetPerPerson;
+  legacy.attribution = structuredClone(legacyAttribution);
   const legacyResult = validateAndNormalizeInquiry(
     legacy,
     versionConfig,
@@ -576,6 +741,10 @@ test("destination form and privacy versions stay paired without changing old sem
   assert.equal(
     Object.hasOwn(legacySemantic, "roughBudgetPerPerson"),
     false,
+  );
+  assert.equal(
+    semanticHash(legacyResult.value),
+    "4e7469beac5fffffe0b52bbffd32ba700a25f54e1aad1d4d848ac47d60837e27",
   );
 
   const changedOldPayload = structuredClone(previous);
@@ -595,6 +764,14 @@ test("destination form and privacy versions stay paired without changing old sem
   for (const [formVersion, privacyNoticeVersion] of [
     [
       currentDestinationInquiryFormVersion,
+      submitSurfacePrivacyNoticeVersion,
+    ],
+    [
+      submitSurfaceDestinationInquiryFormVersion,
+      currentPrivacyNoticeVersion,
+    ],
+    [
+      currentDestinationInquiryFormVersion,
       previousPrivacyNoticeVersion,
     ],
     [
@@ -605,8 +782,13 @@ test("destination form and privacy versions stay paired without changing old sem
     const mismatched = validDestinationPayload();
     mismatched.formVersion = formVersion;
     mismatched.privacyNoticeVersion = privacyNoticeVersion;
-    if (formVersion !== currentDestinationInquiryFormVersion) {
+    if (formVersion === submitSurfaceDestinationInquiryFormVersion) {
+      mismatched.attribution = {
+        landingPath: inquirySubmitSurfaceByLocale.en,
+      };
+    } else if (formVersion !== currentDestinationInquiryFormVersion) {
       delete mismatched.roughBudgetPerPerson;
+      mismatched.attribution = structuredClone(legacyAttribution);
     }
     const mismatchedResult = validateAndNormalizeInquiry(
       mismatched,
@@ -618,6 +800,59 @@ test("destination form and privacy versions stay paired without changing old sem
     assert.equal(
       mismatchedResult.fieldErrors.privacyNoticeVersion,
       "unsupported",
+    );
+  }
+});
+
+test("the current destination semantic hash includes every limited source field", () => {
+  const payload = validDestinationPayload();
+  payload.attribution = {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+    entryPath: "/guides/is-your-china-itinerary-too-rushed/",
+    sourceGuide: "is-your-china-itinerary-too-rushed",
+    utmSource: "newsletter",
+    utmMedium: "email",
+    utmCampaign: "july-guides",
+    utmContent: "footer-planner-link",
+    gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
+    adClickAt: Date.UTC(2026, 6, 20),
+  };
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+
+  const semantic = semanticInquiryPayload(result.value);
+  assert.deepEqual(semantic.attribution, payload.attribution);
+  const canonical = canonicalizeJson(semantic);
+  assert.equal(
+    semanticHash(result.value),
+    "d2e9b3315a12c25f37a6984d509673ed179339a30246f93169bf1c4829088012",
+  );
+
+  for (const [field, value] of [
+    ["entryPath", "/guides/zhangjiajie-itinerary/"],
+    ["sourceGuide", "zhangjiajie-itinerary"],
+    ["utmSource", "search"],
+    ["utmMedium", "organic"],
+    ["utmCampaign", "visa-free"],
+    ["utmContent", "header-planner-link"],
+    ["gclid", "EAIaIQobChMI_DifferentPaidClick"],
+    ["fbclid", "IwAR_DifferentMetaClick"],
+    ["adClickAt", Date.UTC(2026, 6, 21)],
+  ]) {
+    const changed = structuredClone(payload);
+    changed.attribution[field] = value;
+    const changedResult = validateAndNormalizeInquiry(
+      changed,
+      validationConfig,
+    );
+    assert.equal(changedResult.ok, true, field);
+    if (!changedResult.ok) continue;
+    assert.notEqual(
+      canonicalizeJson(semanticInquiryPayload(changedResult.value)),
+      canonical,
+      field,
     );
   }
 });
@@ -652,6 +887,12 @@ test("previous destination form keeps its matching WhatsApp consent pair", () =>
   payload.formVersion = previousDestinationInquiryFormVersion;
   delete payload.roughBudgetPerPerson;
   payload.privacyNoticeVersion = previousPrivacyNoticeVersion;
+  payload.attribution = {
+    landingPath: "/?utm_source=youtube",
+    utmSource: "youtube",
+    utmMedium: "video",
+    utmCampaign: "wish-list",
+  };
   payload.contact = {
     channel: "whatsapp",
     phoneRaw: "+44 7700 900123",

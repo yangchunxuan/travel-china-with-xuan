@@ -1,11 +1,37 @@
 type JsonRecord = Record<string, unknown>;
 
 const insightContractVersion = "homeground-admin-insights.v1";
+const insightResponseContractVersion = "homeground-admin-insights.v2";
+const guideInquiryContractVersion =
+  "homeground-admin-guide-inquiries.v1";
 const healthContractVersion = "homeground-admin-health.v1";
 const controlledHoldMessage =
   "Do not use this window for content or product decisions.";
 const insightNotice =
   "Saved submissions, not unique people, customers, or market share.";
+const minimumVisibleGuideCount = 5;
+
+const guideSourceSlugs = [
+  "beijing-zhangjiajie-shanghai-10-days",
+  "beijing-zhangjiajie-shanghai-transport",
+  "best-zhangjiajie-night-show",
+  "china-240-hour-visa-free-transit-route-check",
+  "china-entry-guides",
+  "china-entry-requirements",
+  "china-visa-free-canadian-citizens-2026",
+  "china-visa-free-new-zealand-citizens-2026",
+  "china-visa-free-uk-citizens-2026",
+  "do-singaporeans-need-visa-china",
+  "do-us-citizens-need-visa-china-2026",
+  "guides-hub",
+  "is-your-china-itinerary-too-rushed",
+  "kevin-before-the-hotel-pickup",
+  "visa-free-entry",
+  "zhangjiajie-glass-bridge-vs-skywalk",
+  "zhangjiajie-itinerary",
+  "zhangjiajie-older-travellers",
+] as const;
+const guideSourceSlugSet = new Set<string>(guideSourceSlugs);
 
 const destinationIds = [
   "beijing-great-wall",
@@ -43,6 +69,12 @@ const schema2CompatibilitySets = [
     schemaVersion: "2",
     entryPath: "destination_timing",
     formVersion: "2026-07-21.1",
+    ruleVersion: "2026-07-19.1",
+  },
+  {
+    schemaVersion: "2",
+    entryPath: "destination_timing",
+    formVersion: "2026-07-25.1",
     ruleVersion: "2026-07-19.1",
   },
 ] as const;
@@ -182,10 +214,36 @@ function isRecord(value: unknown): value is JsonRecord {
   );
 }
 
+function hasExactKeys(
+  value: JsonRecord,
+  expectedKeys: readonly string[],
+): boolean {
+  const actualKeys = Object.keys(value);
+  return (
+    actualKeys.length === expectedKeys.length &&
+    expectedKeys.every((key) =>
+      Object.prototype.hasOwnProperty.call(value, key)
+    )
+  );
+}
+
 function rpcPayload(data: unknown): JsonRecord | null {
   if (!Array.isArray(data) || data.length !== 1) return null;
   const row = data[0];
   if (!isRecord(row) || !isRecord(row.payload)) return null;
+  return row.payload;
+}
+
+function strictRpcPayload(data: unknown): JsonRecord | null {
+  if (!Array.isArray(data) || data.length !== 1) return null;
+  const row = data[0];
+  if (
+    !isRecord(row) ||
+    !hasExactKeys(row, ["payload"]) ||
+    !isRecord(row.payload)
+  ) {
+    return null;
+  }
   return row.payload;
 }
 
@@ -539,6 +597,163 @@ export function sanitizeAdminInsightsRpc(data: unknown): JsonRecord | null {
   };
 }
 
+export function sanitizeAdminGuideInquiryCountsRpc(
+  data: unknown,
+): JsonRecord | null {
+  const payload = strictRpcPayload(data);
+  if (
+    !payload ||
+    !hasExactKeys(payload, [
+      "contractVersion",
+      "generatedAt",
+      "timezone",
+      "window",
+      "minimumVisibleCount",
+      "dataQualityHold",
+      "guides",
+      "notice",
+    ]) ||
+    payload.contractVersion !== guideInquiryContractVersion ||
+    payload.timezone !== "Asia/Shanghai" ||
+    payload.minimumVisibleCount !== minimumVisibleGuideCount ||
+    payload.notice !== insightNotice ||
+    !isRecord(payload.window) ||
+    !hasExactKeys(payload.window, ["days", "startsAt", "endsAt"]) ||
+    payload.window.days !== 90 ||
+    !isRecord(payload.dataQualityHold) ||
+    !hasExactKeys(payload.dataQualityHold, ["active", "message"]) ||
+    typeof payload.dataQualityHold.active !== "boolean" ||
+    !Array.isArray(payload.guides) ||
+    payload.guides.length > guideSourceSlugs.length
+  ) {
+    return null;
+  }
+
+  const generatedAt = isoTimestamp(payload.generatedAt);
+  const startsAt = isoTimestamp(payload.window.startsAt);
+  const endsAt = isoTimestamp(payload.window.endsAt);
+  const holdActive = payload.dataQualityHold.active;
+  if (
+    !generatedAt ||
+    !startsAt ||
+    !endsAt ||
+    Date.parse(endsAt) !== Date.parse(generatedAt) ||
+    Date.parse(endsAt) - Date.parse(startsAt) !==
+      90 * 24 * 60 * 60 * 1_000 ||
+    (
+      holdActive
+        ? payload.dataQualityHold.message !== controlledHoldMessage
+        : payload.dataQualityHold.message !== null
+    )
+  ) {
+    return null;
+  }
+
+  const guides: JsonRecord[] = [];
+  const seenSlugs = new Set<string>();
+  let previousCount: number | null = null;
+  let previousSlug: string | null = null;
+  for (const rawGuide of payload.guides) {
+    if (
+      !isRecord(rawGuide) ||
+      !hasExactKeys(rawGuide, ["sourceGuide", "inquiryCount"]) ||
+      typeof rawGuide.sourceGuide !== "string" ||
+      !guideSourceSlugSet.has(rawGuide.sourceGuide) ||
+      seenSlugs.has(rawGuide.sourceGuide)
+    ) {
+      return null;
+    }
+    const inquiryCount = nonNegativeInteger(rawGuide.inquiryCount);
+    if (
+      inquiryCount === null ||
+      inquiryCount < minimumVisibleGuideCount ||
+      inquiryCount > 1_000_000 ||
+      (
+        previousCount !== null &&
+        (
+          inquiryCount > previousCount ||
+          (
+            inquiryCount === previousCount &&
+            previousSlug !== null &&
+            rawGuide.sourceGuide <= previousSlug
+          )
+        )
+      )
+    ) {
+      return null;
+    }
+    seenSlugs.add(rawGuide.sourceGuide);
+    previousCount = inquiryCount;
+    previousSlug = rawGuide.sourceGuide;
+    guides.push({
+      sourceGuide: rawGuide.sourceGuide,
+      inquiryCount,
+    });
+  }
+
+  return {
+    contractVersion: guideInquiryContractVersion,
+    generatedAt,
+    timezone: "Asia/Shanghai",
+    window: {
+      days: 90,
+      startsAt,
+      endsAt,
+    },
+    minimumVisibleCount: minimumVisibleGuideCount,
+    dataQualityHold: {
+      active: holdActive,
+      message: holdActive ? controlledHoldMessage : null,
+    },
+    guides,
+    notice: insightNotice,
+  };
+}
+
+export function buildAdminInsightsResponse(
+  insights: JsonRecord,
+  guideInquiries: JsonRecord,
+): JsonRecord | null {
+  if (
+    insights.contractVersion !== insightContractVersion ||
+    guideInquiries.contractVersion !== guideInquiryContractVersion ||
+    !isRecord(insights.window) ||
+    !isRecord(insights.retainedCounts) ||
+    !isRecord(insights.dataQualityHold) ||
+    typeof insights.dataQualityHold.active !== "boolean" ||
+    !Array.isArray(insights.metrics) ||
+    insights.notice !== insightNotice ||
+    !isRecord(guideInquiries.dataQualityHold) ||
+    typeof guideInquiries.dataQualityHold.active !== "boolean" ||
+    guideInquiries.minimumVisibleCount !== minimumVisibleGuideCount ||
+    !Array.isArray(guideInquiries.guides) ||
+    guideInquiries.notice !== insightNotice
+  ) {
+    return null;
+  }
+
+  const holdActive =
+    insights.dataQualityHold.active ||
+    guideInquiries.dataQualityHold.active;
+  return {
+    contractVersion: insightResponseContractVersion,
+    generatedAt: insights.generatedAt,
+    timezone: insights.timezone,
+    window: insights.window,
+    retainedCounts: insights.retainedCounts,
+    dataQualityHold: {
+      active: holdActive,
+      message: holdActive ? controlledHoldMessage : null,
+    },
+    metrics: insights.metrics,
+    guideInquiries: {
+      minimumVisibleCount: minimumVisibleGuideCount,
+      guides: holdActive ? [] : guideInquiries.guides,
+    },
+    notice: insightNotice,
+  };
+}
+
 function parseOperationalCheck(value: unknown): OperationalCheck | null {
   if (!isRecord(value)) return null;
   if (
@@ -693,6 +908,17 @@ export function parseAdminHealthRpc(data: unknown): ParsedAdminHealth | null {
     "schema_contract_mismatch",
     "confirmed_data_corruption",
   ];
+  const currentFormVersion = payload.versions.currentForm;
+  const currentPrivacyVersion = payload.versions.currentPrivacy;
+  const supportedHealthVersionPair =
+    (
+      currentFormVersion === "2026-07-21.1" &&
+      currentPrivacyVersion === "2026-07-21.1"
+    ) ||
+    (
+      currentFormVersion === "2026-07-25.1" &&
+      currentPrivacyVersion === "2026-07-25.1"
+    );
   if (
     !backupRestore ||
     !isolatedCanary ||
@@ -702,8 +928,7 @@ export function parseAdminHealthRpc(data: unknown): ParsedAdminHealth | null {
       typeof value !== "string" ||
       !allowedIncidentTypes.includes(value)
     ) ||
-    payload.versions.currentForm !== "2026-07-21.1" ||
-    payload.versions.currentPrivacy !== "2026-07-21.1" ||
+    !supportedHealthVersionPair ||
     payload.versions.destinationRule !== "2026-07-19.1" ||
     payload.versions.legacyRouteRule !== "2026-07-17.1"
   ) {

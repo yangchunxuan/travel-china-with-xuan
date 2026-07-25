@@ -127,7 +127,7 @@ export function ChinaItineraryTooRushedPage({
 }) {
   const copy = getItineraryRushGuideCopy(locale);
   const homeCopy = getHomegroundCopy(locale);
-  const conversationHref = `${homeCopy.path}?utm_source=china-itinerary-too-rushed&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-brief&planner=destinations#route-finder`;
+  const conversationHref = `${homeCopy.path}?source_guide=is-your-china-itinerary-too-rushed&planner=destinations#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (
