@@ -83,7 +83,10 @@ test("guide answers full-day counting and park-order intent without inventing at
   assert.match(guide, /"@type": "Person"/);
   assert.match(guide, /author: \{ "@id": "https:\/\/homegroundchina\.com\/#organization" \}/);
   assert.match(guide, /contributor: \{ "@id": "https:\/\/homegroundchina\.com\/#xuan" \}/);
-  assert.match(guide, /\?planner=destinations#route-finder/);
+  assert.match(
+    guide,
+    /\?source_guide=zhangjiajie-itinerary&planner=destinations#route-finder/,
+  );
   assert.match(header, /\?planner=destinations#route-finder/);
   assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
   assert.doesNotMatch(header, /utm_(?:source|medium|campaign)/);

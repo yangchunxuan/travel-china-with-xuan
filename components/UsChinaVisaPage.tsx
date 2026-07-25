@@ -116,7 +116,7 @@ export function UsChinaVisaPage({
   const copy = getUsChinaVisaCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const relatedGuide = getGuideEntry("is-your-china-itinerary-too-rushed", locale);
-  const plannerHref = `${copy.homePath}?utm_source=us-visa-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}#route-finder`;
   const structuredData = createStructuredData(locale);
   const sections = [copy.sectionOne, copy.sectionTwo, copy.sectionThree];
 

@@ -1,23 +1,23 @@
 # Homeground Inquiry backend deployment
 
-Status: the production Supabase functions, private schema, Resend notification
-path and 24-hour rate-limit cleanup are deployed for the `2026-07-20.1`
-contact release. The optional-budget `2026-07-20.2` release must follow the
-additive migration and overlapping rollout below before its static frontend is
-published.
+Status: production currently accepts the pre-attribution `2026-07-21.1`
+form/privacy pair. The next release is `2026-07-25.1`, which adds bounded
+first-party enquiry attribution through a new V5 persistence RPC. Re-check
+the live Edge secret values before rollout; this document is not evidence
+that production has already changed.
 
 Current production configuration:
 
 - Supabase project region: Seoul (`ap-northeast-2`).
 - Resend notification region: Tokyo (`ap-northeast-1`).
 - Monitored notification inbox: `yangchunxuan1@gmail.com`.
-- Target frontend Privacy Notice version: `2026-07-20.2`.
-- Transition form allow-list:
-  `ALLOWED_FORM_VERSIONS=2026-07-18.1,2026-07-19.1,2026-07-20.1,2026-07-20.2`.
-- Transition Privacy Notice allow-list:
-  `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-19.1,2026-07-20.1,2026-07-20.2`.
-  Keep the old versions accepted while the new static build and any in-flight
-  retry are being verified.
+- Target frontend Privacy Notice version: `2026-07-25.1`.
+- Safe steady state:
+  `ALLOWED_FORM_VERSIONS=2026-07-25.1` and
+  `ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-25.1`.
+- Controlled rollout overlap:
+  `2026-07-21.1,2026-07-25.1` for both allow-lists. Record one owner and an
+  end time, then remove `2026-07-21.1` after the static cache/retry window.
 - WhatsApp intake uses the same saved-enquiry path as Email and is controlled
   by independent frontend and server switches.
 - A traveller may optionally submit a rough per-person budget for the China
@@ -27,7 +27,11 @@ Current production configuration:
   workflow. A Gmail notification containing the optional budget may therefore
   be copied into that project; SaleSmartly access and retention must follow the
   controls below.
-- Non-essential analytics and AI chat remain disabled.
+- Google Analytics and AI chat remain disabled. `SiteAttribution` is separate:
+  it keeps only the first public path, first external UTM labels and last
+  clicked guide-planner entrance in the current tab's `sessionStorage`, then
+  sends those bounded values to Homeground's Supabase only when the traveller
+  submits an enquiry.
 
 The main website remains a GitHub Pages-compatible static export. Inquiry data
 is handled by separate Supabase Edge Functions and private Postgres tables.
@@ -62,6 +66,11 @@ monitoring.
   rough-budget storage plus `create_homeground_destination_inquiry_v3` and
   `claim_homeground_notification_jobs_v3`, while keeping both older destination
   RPC generations available during static-page rollout.
+- `supabase/migrations/202607250001_homeground_guide_attribution.sql`:
+  `create_homeground_destination_inquiry_v5_attribution`, the
+  `2026-07-25.1` compatibility entry, and a fixed-window, allowlisted,
+  k-suppressed guide aggregate RPC. Existing V4 persistence remains unchanged
+  for `2026-07-21.1` retries.
 - `.github/workflows/inquiry-health.yml`: independent 15-minute health check;
   an unhealthy outbox makes the workflow fail without using Resend.
 - `lib/inquiryContract.ts`: runtime-neutral input validation,
@@ -232,6 +241,108 @@ and that Meta/WhatsApp handles the later conversation. The notice and the
 studio's processor register must remain accurate for the active SaleSmartly
 connection before the budget form is published.
 
+The attribution values stay in the private enquiry row and the restricted
+aggregate read model. They are not added to the outbox claim, Resend message,
+Gmail notification or SaleSmartly conversation. Staff should use the Admin
+aggregate, not expect source labels in an individual notification.
+
+## `2026-07-25.1` first-party attribution rollout
+
+Do not deploy the new static form before the V5 RPC exists in the same
+environment.
+
+This sequence approves only V5 persistence and the public form/privacy
+release. The Admin API stays disabled throughout. Authenticated Admin
+acceptance (password, TOTP/aal2, UUID authorization, audit-ledger write and
+prune, and production security headers) is a separate activation gate in
+`docs/admin-insights-deployment.md`; it is not evidence required to begin
+collecting bounded attribution while no Admin business-data endpoint can
+return data.
+
+1. Run a read-only Staging preflight: the public 07-21 Admin Health RPC, V4,
+   and `admin_metric_compatibility` must exist; the private renamed health
+   implementation must not yet exist. Its manual migration history is not
+   reconciled, so do not run an automatic `db push`.
+2. Deploy the `admin-health` function with its bounded dual-version parser.
+   It accepts only matching `07-21/07-21` or `07-25/07-25` database pairs.
+3. Apply only `202607250001_homeground_guide_attribution.sql` in the independent
+   Staging project.
+4. Prove in Staging that V5 persists only the bounded attribution object,
+   replay remains idempotent, query/hash-bearing entry paths are rejected, the
+   outbox remains atomic, and the guide aggregate returns only fixed slugs
+   with counts of at least five.
+5. Deploy the Staging `admin-insights` and `v1-inquiries` functions. With the
+   Admin kill switch still off, re-run wrong/missing/exact-Origin checks and
+   prove the exact Origin receives 503 without an Auth or database read. Prove
+   the response allow-list locally and prove k-suppression and the
+   data-quality hold against Staging SQL. MFA/UUID and authorized-read checks
+   remain mandatory before Admin activation, not before this public-attribution
+   release.
+6. Show the exact migration and Staging runtime evidence to the owner. Obtain
+   explicit approval for the V5/public-form scope before any production
+   database change. This approval does not enable or approve the Admin API.
+7. In production, deploy the same dual-version `admin-health` parser before
+   changing the database. Apply the migration, then temporarily set both
+   allow-lists to `2026-07-21.1,2026-07-25.1` with a named owner and end time.
+   `admin-health` showing `attention` during this deliberate overlap is
+   expected.
+8. Deploy `admin-insights` and `v1-inquiries`; verify the V5
+   route before publishing the static site.
+9. Publish English, Chinese and Korean form/privacy version `2026-07-25.1`.
+   Intercept one browser request and verify the exact payload contains only
+   `landingPath`, `entryPath`, `sourceGuide`, `utmSource`, `utmMedium`,
+   `utmCampaign` and `utmContent` within the existing attribution object.
+10. Submit marked QA requests for first-touch external UTM, last-guide-CTA
+   replacement, no-guide and retry cases. Confirm persistence/outbox/Gmail
+   still work, while attribution itself does not enter Gmail or SaleSmartly.
+11. After the static cache and in-flight retry window, remove
+   `2026-07-21.1` from both allow-lists and confirm `admin-health` returns to
+   current-only.
+
+The guide aggregate starts with `2026-07-25.1`; it does not retroactively count
+older enquiries. Adding a source to the UI later requires matching allow-list
+updates in a new SQL migration, the Edge contract and the browser client.
+
+### Staging evidence recorded on 2026-07-25
+
+Production was not changed. The exact reviewed migration was
+`202607250001_homeground_guide_attribution.sql`, SHA-256
+`505a7f6a454bd960e112104784c9f2300e967dabe516ae2c14b0be28e1c06b22`.
+In the independent Staging project:
+
+- the preflight found the 07-21 public Health RPC, V4 and compatibility table,
+  and confirmed the private renamed Health implementation did not yet exist;
+- the dual-version Health parser was deployed before the migration, after
+  which Health reported the coordinated `2026-07-25.1` pair;
+- a V5 request returned 201, an identical idempotency replay returned 200 with
+  the same public reference and `duplicate: true`, and exactly one Inquiry and
+  one pending outbox row existed;
+- an `entryPath` containing query/hash characters returned 422 with
+  `persistenceState: not_persisted`, and no matching Inquiry row existed;
+- five marked QA submissions produced one visible
+  `zhangjiajie-itinerary` bucket with count 5, no total or suppressed count,
+  and no individual or contact field;
+- a future timestamp introduced only inside an uncommitted transaction made
+  `dataQualityHold.active=true` and `guides=[]`; connection rollback restored
+  the original five-row result and `active=false`;
+- `anon` and ordinary `authenticated` cannot execute V5 or the guide aggregate
+  RPC, while `service_role` can;
+- wrong or missing Admin Origin returned 403, and the exact non-routable
+  verification Origin returned 503 while the Admin kill switch remained off;
+- the Staging public Inquiry test window was closed again and a final request
+  returned 503 `intake_paused` with `persistenceState: not_persisted`.
+
+Authenticated Admin acceptance remains pending because the owner has not
+completed the Staging password and TOTP setup. Do not reinterpret the local
+MFA/UUID tests or the disabled-state Edge checks as authenticated Staging
+evidence. This blocks Admin activation, but not a separately approved V5
+public-attribution release in which both Admin endpoints stay disabled.
+
+## Historical reference: `2026-07-20.2` budget rollout
+
+The following sequence records the completed budget migration. It is not the
+runbook for the current attribution release.
+
 Form and Privacy Notice versions must overlap during deployment so an already
 open static page does not start receiving `unsupported_form_version`,
 `unsupported_privacy_notice` or `whatsapp_disabled` while the new page is
@@ -314,7 +425,7 @@ allowed browser origins:
   http://localhost:3001
   http://127.0.0.1:3001
 privacy notice version:
-  2026-07-20.2
+  2026-07-25.1
 saved-phone API WhatsApp:
   disabled
 public frontend WhatsApp choice:
@@ -470,6 +581,13 @@ aggregate query and response actions are in `docs/studio-inquiry-runbook.md`.
 - The rough budget is rendered only in the escaped Gmail body. It is not put
   into the subject, Reply-To, WhatsApp URL, monitor response or application
   logs.
+- First-party attribution stores no referrer, full URL, query string, click
+  ID, browsing history, contact value or free text. The bounded values stay in
+  the private enquiry row and do not enter the outbox claim or notification.
+- The Admin source view exposes only an allowlisted guide slug with a
+  90-day count of at least five. It returns no total, suppressed count or
+  individual row and is auxiliary last-CTA attribution, not a unique-person
+  or sales-conversion measure.
 - SaleSmartly operators use individual accounts and least privilege; the Gmail
   password is not an integration credential and is never shared.
 
@@ -534,6 +652,13 @@ Before enabling the public form:
     members, two-factor authentication where supported, no shared Gmail main
     password, no unexpected OAuth access or forwarding rule, and a Homeground
     project retention setting of no more than 12 months.
+17. Enter the form from an external UTM link, click two different guide planner
+    CTAs, and intercept the submitted request. Confirm the first entry/UTM and
+    last guide CTA survive, no internal link overwrites external UTM, and no
+    referrer, full URL, query, click ID or browsing history is sent.
+18. Confirm malformed `entryPath` values containing `?` or `#` are rejected at
+    the public contract, Edge rebuild and V5 SQL boundary. Verify the Admin
+    response rejects unknown guide slugs, counts below five and extra fields.
 
 ## Rollback
 
@@ -546,6 +671,13 @@ routine rollback step: changing it during the browser retry window can turn
 the same retry key into a second Inquiry. Treat that secret as a controlled
 data migration with an explicit retry-window plan. Never delete saved
 Inquiries as a rollback shortcut.
+
+If the attribution release must be rolled back before the cache/retry window
+ends, republish the `2026-07-21.1` frontend and keep V5, its additive private
+row data and both paired versions available for already-open
+`2026-07-25.1` pages. Disable the auxiliary Admin display if its contract is
+suspect; do not delete enquiries or rewrite attribution history. Remove the
+new version only after its retry window closes and the rollback is verified.
 
 If the budget release must be rolled back, republish the `2026-07-20.1`
 frontend but leave the nullable budget column, v3 RPC, v3 claim worker and

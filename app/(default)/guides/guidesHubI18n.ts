@@ -263,12 +263,5 @@ export function getGuidesHubLanguageUrls() {
 
 export function getGuidesHubPlannerHref(locale: HomegroundLocale) {
   const home = getHomegroundCopy(locale);
-  const campaign = new URLSearchParams({
-    utm_source: "guides-hub",
-    utm_medium: "owned",
-    utm_campaign: "trip-conversation",
-    utm_content: "hub-cta",
-  });
-
-  return `${home.path}?${campaign.toString()}#route-finder`;
+  return `${home.path}?source_guide=guides-hub#route-finder`;
 }

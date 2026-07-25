@@ -73,6 +73,7 @@ function suppressedMetric(id, bucketIds) {
     "2026-07-20.1",
     "2026-07-20.2",
     "2026-07-21.1",
+    "2026-07-25.1",
   ].map((formVersion) => ({
     schemaVersion: "2",
     entryPath: "destination_timing",
@@ -115,7 +116,7 @@ function suppressedMetric(id, bucketIds) {
 
 function validInsights() {
   return {
-    contractVersion: "homeground-admin-insights.v1",
+    contractVersion: "homeground-admin-insights.v2",
     generatedAt: "2026-07-21T08:00:00.000Z",
     timezone: "Asia/Shanghai",
     window: {
@@ -133,6 +134,21 @@ function validInsights() {
     metrics: Object.entries(metricBuckets).map(([id, buckets]) =>
       suppressedMetric(id, buckets),
     ),
+    guideInquiries: {
+      minimumVisibleCount: 5,
+      guides: [
+        {
+          sourceGuide: "china-visa-free-canadian-citizens-2026",
+          inquiryCount: 7,
+        },
+        {
+          sourceGuide: "guides-hub",
+          inquiryCount: 5,
+        },
+      ],
+    },
+    notice:
+      "Saved submissions, not unique people, customers, or market share.",
   };
 }
 
@@ -327,8 +343,53 @@ test("insights parser requires all fixed metrics and suppressed buckets", () => 
   assert.throws(() => parseAdminInsights(incorrectPercentage));
 
   const wrongContract = structuredClone(valid);
-  wrongContract.contractVersion = "homeground-admin-insights.v2";
+  wrongContract.contractVersion = "homeground-admin-insights.v1";
   assert.throws(() => parseAdminInsights(wrongContract));
+});
+
+test("guide inquiry parser rejects unknown, sparse, leaked, and unapproved data", () => {
+  const valid = validInsights();
+  const parsed = parseAdminInsights(valid);
+  assert.equal(parsed.guideInquiries.guides.length, 2);
+  assert.equal(parsed.guideInquiries.minimumVisibleCount, 5);
+
+  const unknownRootField = structuredClone(valid);
+  unknownRootField.debug = true;
+  assert.throws(() => parseAdminInsights(unknownRootField));
+
+  const unknownGuideField = structuredClone(valid);
+  unknownGuideField.guideInquiries.guides[0].internalLabel = "private";
+  assert.throws(() => parseAdminInsights(unknownGuideField));
+
+  const sparseCount = structuredClone(valid);
+  sparseCount.guideInquiries.guides[1].inquiryCount = 4;
+  assert.throws(() => parseAdminInsights(sparseCount));
+
+  const leakedContact = structuredClone(valid);
+  leakedContact.guideInquiries.guides[0].contactEmail =
+    "traveller@example.com";
+  assert.throws(() => parseAdminInsights(leakedContact));
+
+  const unknownSlug = structuredClone(valid);
+  unknownSlug.guideInquiries.guides[0].sourceGuide = "private-campaign";
+  assert.throws(() => parseAdminInsights(unknownSlug));
+
+  const duplicateSlug = structuredClone(valid);
+  duplicateSlug.guideInquiries.guides[1].sourceGuide =
+    duplicateSlug.guideInquiries.guides[0].sourceGuide;
+  assert.throws(() => parseAdminInsights(duplicateSlug));
+
+  const heldLeak = structuredClone(valid);
+  heldLeak.dataQualityHold = {
+    active: true,
+    message:
+      "Do not use this window for content or product decisions.",
+  };
+  assert.throws(() => parseAdminInsights(heldLeak));
+
+  const held = structuredClone(heldLeak);
+  held.guideInquiries.guides = [];
+  assert.equal(parseAdminInsights(held).dataQualityHold.active, true);
 });
 
 test("health parser requires the fixed check set and consistent verdict", () => {

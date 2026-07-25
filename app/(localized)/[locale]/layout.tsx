@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { SiteAttribution } from "../../../components/SiteAttribution";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import type { HomegroundLocale } from "../../../lib/homegroundI18n";
 import "../../globals.css";
@@ -76,6 +77,7 @@ export default async function LocalizedRootLayout({
         )}
       </head>
       <body>{children}</body>
+      <SiteAttribution />
       <SiteAnalytics />
     </html>
   );

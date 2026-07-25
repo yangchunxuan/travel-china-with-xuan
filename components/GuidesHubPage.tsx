@@ -12,6 +12,7 @@ import {
   getGuidesHubCopy,
   getGuidesHubPlannerHref,
 } from "../app/(default)/guides/guidesHubI18n";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -353,13 +354,15 @@ export function GuidesHubPage({
               <h2 id="guides-cta-title">{copy.cta.title}</h2>
               <div>
                 <p>{copy.cta.body}</p>
-                <a
+                <GuideCtaLink
                   className={styles.ctaAction}
+                  guideId="guides-hub"
                   href={getGuidesHubPlannerHref(locale)}
+                  locale={locale}
                 >
                   {copy.cta.action}
                   <span aria-hidden="true">→</span>
-                </a>
+                </GuideCtaLink>
               </div>
             </div>
           </div>

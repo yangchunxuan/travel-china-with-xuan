@@ -56,7 +56,14 @@ test("article keeps two paid service paths and sends the free path to a human tr
   assert.match(copy, /Review My Route — US\$69/);
   assert.match(article, /href=\{`\$\{copy\.servicePath\}#build-my-route`\}/);
   assert.match(copy, /Build My Route — US\$129/);
-  assert.match(article, /utm_campaign=trip-conversation/);
+  assert.match(
+    article,
+    /source_guide=is-your-china-itinerary-too-rushed&planner=destinations/,
+  );
+  assert.doesNotMatch(
+    article,
+    /[?&]utm_(?:source|medium|campaign|content)=/,
+  );
   assert.match(copy, /Start a free trip brief/);
   assert.match(copy, /Homeground follows up personally/);
   assert.doesNotMatch(

@@ -1,0 +1,77 @@
+/**
+ * Canonical public routes that may be retained as an enquiry's first entry.
+ *
+ * This is intentionally an exact, finite list rather than a general pathname
+ * validator. A visitor can reach an arbitrary 404 URL containing personal
+ * information, so every unknown path is reduced to the non-identifying
+ * `/other/` bucket in the browser and rejected if a forged value reaches the
+ * public API.
+ */
+export const allowedInquiryEntryPaths = [
+  "/",
+  "/business-information/",
+  "/china-itinerary-review/",
+  "/guides/",
+  "/guides/beijing-zhangjiajie-shanghai-10-days/",
+  "/guides/beijing-zhangjiajie-shanghai-transport/",
+  "/guides/best-zhangjiajie-night-show/",
+  "/guides/china-240-hour-visa-free-transit-route-check/",
+  "/guides/china-entry-requirements/",
+  "/guides/china-visa-free-canadian-citizens-2026/",
+  "/guides/china-visa-free-new-zealand-citizens-2026/",
+  "/guides/china-visa-free-uk-citizens-2026/",
+  "/guides/do-singaporeans-need-visa-china/",
+  "/guides/do-us-citizens-need-visa-china-2026/",
+  "/guides/is-your-china-itinerary-too-rushed/",
+  "/guides/kevin-before-the-hotel-pickup/",
+  "/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+  "/guides/zhangjiajie-itinerary/",
+  "/guides/zhangjiajie-older-travellers/",
+  "/privacy/",
+  "/refund-delivery/",
+  "/studio/",
+  "/terms/",
+  "/zh/",
+  "/zh/business-information/",
+  "/zh/china-itinerary-review/",
+  "/zh/guides/",
+  "/zh/guides/beijing-zhangjiajie-shanghai-10-days/",
+  "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
+  "/zh/guides/best-zhangjiajie-night-show/",
+  "/zh/guides/china-240-hour-visa-free-transit-route-check/",
+  "/zh/guides/do-singaporeans-need-visa-china/",
+  "/zh/guides/do-us-citizens-need-visa-china-2026/",
+  "/zh/guides/is-your-china-itinerary-too-rushed/",
+  "/zh/guides/kevin-before-the-hotel-pickup/",
+  "/zh/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+  "/zh/guides/zhangjiajie-itinerary/",
+  "/zh/guides/zhangjiajie-older-travellers/",
+  "/zh/privacy/",
+  "/zh/refund-delivery/",
+  "/zh/studio/",
+  "/zh/terms/",
+  "/ko/",
+  "/ko/business-information/",
+  "/ko/china-itinerary-review/",
+  "/ko/guides/",
+  "/ko/guides/beijing-zhangjiajie-shanghai-10-days/",
+  "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
+  "/ko/guides/best-zhangjiajie-night-show/",
+  "/ko/guides/china-240-hour-visa-free-transit-route-check/",
+  "/ko/guides/do-singaporeans-need-visa-china/",
+  "/ko/guides/do-us-citizens-need-visa-china-2026/",
+  "/ko/guides/is-your-china-itinerary-too-rushed/",
+  "/ko/guides/kevin-before-the-hotel-pickup/",
+  "/ko/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+  "/ko/guides/zhangjiajie-itinerary/",
+  "/ko/guides/zhangjiajie-older-travellers/",
+  "/ko/privacy/",
+  "/ko/refund-delivery/",
+  "/ko/studio/",
+  "/ko/terms/",
+  "/other/",
+] as const;
+
+export const allowedInquiryEntryPathSet: ReadonlySet<string> = new Set(
+  allowedInquiryEntryPaths,
+);

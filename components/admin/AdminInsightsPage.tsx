@@ -1279,6 +1279,54 @@ function MetricCard({
   );
 }
 
+function GuideInquirySection({
+  guideInquiries,
+}: {
+  guideInquiries: AdminInsightsResponse["guideInquiries"];
+}) {
+  return (
+    <section
+      className={styles.subsection}
+      aria-labelledby="guide-inquiry-title"
+    >
+      <div className={styles.subsectionHeading}>
+        <div>
+          <h3 id="guide-inquiry-title">
+            提交时携带的文章入口（辅助归因）
+          </h3>
+          <p>
+            按咨询提交时携带的文章入口标识汇总过去 90
+            天已保存咨询；只显示达到至少 5 条的固定文章来源。
+          </p>
+        </div>
+        <span className={styles.baselineBadge}>
+          展示门槛 ≥ {guideInquiries.minimumVisibleCount}
+        </span>
+      </div>
+      {guideInquiries.guides.length === 0 ? (
+        <p className={styles.guideInquiryEmpty}>
+          尚无文章达到 5 条展示门槛。
+        </p>
+      ) : (
+        <ul className={styles.guideInquiryList}>
+          {guideInquiries.guides.map((guide) => (
+            <li key={guide.sourceGuide}>
+              <code>{guide.sourceGuide}</code>
+              <span>
+                <strong>{numberFormatter.format(guide.inquiryCount)}</strong>
+                {" 条已保存咨询"}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className={styles.smallNote}>
+        这是浏览器提供的辅助内容入口信号，可能受重复、测试或异常提交影响，不代表首次来源、独立访客或成交归因，也不应单独用于业务决策。未达到门槛的来源不会出现在响应或页面中；这里没有总数、被抑制数量或单条询盘。
+      </p>
+    </section>
+  );
+}
+
 function SummarySection({
   state,
   healthHoldActive,
@@ -1388,29 +1436,36 @@ function SummarySection({
             <div className={styles.holdBanner} role="alert">
               <TriangleAlert size={22} aria-hidden="true" />
               <div>
-                <strong>DATA QUALITY HOLD — 选择分布暂不显示</strong>
+                <strong>
+                  DATA QUALITY HOLD — 选择分布与文章归因暂不显示
+                </strong>
                 <p>
                   当前窗口存在数据质量事件。为避免错误决策，请先处理事件，再恢复查看选择分布。
                 </p>
               </div>
             </div>
           ) : (
-            <div className={styles.metricsGrid}>
-              {insights.metrics.length > 0 ? (
-                insights.metrics.map((metric) => (
-                  <MetricCard
-                    key={metric.id}
-                    metric={metric}
-                    startsAt={insights.window.startsAt}
-                    endsAt={insights.window.endsAt}
-                  />
-                ))
-              ) : (
-                <div className={styles.emptyState}>
-                  当前没有达到展示条件的兼容汇总。继续积累已保存询盘，不要用空白推断网站故障。
-                </div>
-              )}
-            </div>
+            <>
+              <GuideInquirySection
+                guideInquiries={insights.guideInquiries}
+              />
+              <div className={styles.metricsGrid}>
+                {insights.metrics.length > 0 ? (
+                  insights.metrics.map((metric) => (
+                    <MetricCard
+                      key={metric.id}
+                      metric={metric}
+                      startsAt={insights.window.startsAt}
+                      endsAt={insights.window.endsAt}
+                    />
+                  ))
+                ) : (
+                  <div className={styles.emptyState}>
+                    当前没有达到展示条件的兼容汇总。继续积累已保存询盘，不要用空白推断网站故障。
+                  </div>
+                )}
+              </div>
+            </>
           )}
         </>
       ) : null}

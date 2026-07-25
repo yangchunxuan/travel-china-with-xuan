@@ -19,7 +19,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("destination intake keeps schema 2 and supports four form generations", async () => {
+test("destination intake keeps schema 2 and supports five form generations", async () => {
   const versions = await source(versionsPath);
   assert.match(versions, /inquirySchemaVersion = 1 as const/);
   assert.match(
@@ -41,7 +41,11 @@ test("destination intake keeps schema 2 and supports four form generations", asy
   );
   assert.match(
     versions,
-    /currentDestinationInquiryFormVersion = "2026-07-21\.1"/,
+    /submitSurfaceDestinationInquiryFormVersion = "2026-07-21\.1"/,
+  );
+  assert.match(
+    versions,
+    /currentDestinationInquiryFormVersion = "2026-07-25\.1"/,
   );
   assert.match(
     versions,
@@ -57,7 +61,11 @@ test("destination intake keeps schema 2 and supports four form generations", asy
   );
   assert.match(
     versions,
-    /currentPrivacyNoticeVersion = "2026-07-21\.1"/,
+    /submitSurfacePrivacyNoticeVersion = "2026-07-21\.1"/,
+  );
+  assert.match(
+    versions,
+    /currentPrivacyNoticeVersion = "2026-07-25\.1"/,
   );
 });
 
@@ -185,12 +193,14 @@ test("budget intake adds a nullable field and versioned create and claim RPCs", 
   assert.doesNotMatch(migration, /grant execute[\s\S]*\bto anon\b/);
 });
 
-test("Edge function routes all four destination form generations explicitly", async () => {
+test("Edge function routes all five destination form generations explicitly", async () => {
   const edge = await source(publicFunctionPath);
   assert.match(edge, /legacyDestinationInquiryFormVersion/);
   assert.match(edge, /previousDestinationInquiryFormVersion/);
   assert.match(edge, /currentDestinationInquiryFormVersion/);
+  assert.match(edge, /submitSurfaceDestinationInquiryFormVersion/);
   assert.match(edge, /budgetDestinationInquiryFormVersion/);
+  assert.match(edge, /create_homeground_destination_inquiry_v5_attribution/);
   assert.match(edge, /create_homeground_destination_inquiry_v4/);
   assert.match(edge, /create_homeground_destination_inquiry_v3/);
   assert.match(edge, /create_homeground_destination_inquiry_v2/);
@@ -264,10 +274,10 @@ test("development mock retains transition fixtures while steady-state env allows
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=.*2026-07-21\.1.*$/m,
+    /^ALLOWED_FORM_VERSIONS=.*2026-07-25\.1.*$/m,
   );
   assert.match(
     example,
-    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=.*2026-07-21\.1.*$/m,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=.*2026-07-25\.1.*$/m,
   );
 });

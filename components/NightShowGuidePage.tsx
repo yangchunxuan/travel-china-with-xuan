@@ -198,7 +198,7 @@ export function NightShowGuidePage({
     "beijing-zhangjiajie-shanghai-10-days",
     locale,
   );
-  const plannerHref = `${copy.homePath}?planner=destinations&destinations=zhangjiajie#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}&planner=destinations&destinations=zhangjiajie#route-finder`;
   const structuredData = createStructuredData(locale, copy);
   const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
 

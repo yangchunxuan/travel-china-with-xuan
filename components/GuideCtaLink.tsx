@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { trackEvent } from "../lib/analytics";
+import { captureGuideSource, trackEvent } from "../lib/analytics";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
 /**
@@ -37,11 +37,16 @@ export function GuideCtaLink({
   className?: string;
   children: ReactNode;
 }) {
+  const destination = new URL(href, "https://homegroundchina.com");
+  destination.searchParams.set("source_guide", guideId);
+  const attributedHref = `${destination.pathname}${destination.search}${destination.hash}`;
+
   return (
     <Link
       className={className}
-      href={href}
+      href={attributedHref}
       onClick={() => {
+        captureGuideSource(guideId);
         trackEvent("guide_cta_clicked", {
           guide_id: guideId,
           page_language: locale,

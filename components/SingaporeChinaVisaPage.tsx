@@ -104,7 +104,7 @@ export function SingaporeChinaVisaPage({
 }) {
   const copy = getSingaporeChinaVisaCopy(locale);
   const guide = getGuideEntry(guideId, locale);
-  const plannerHref = `${copy.homePath}?utm_source=singapore-visa-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (

@@ -136,7 +136,7 @@ export function TantanZhangjiajieStoryPage({
   const guide = getGuideEntry(guideId, locale);
   const routeGuide = getGuideEntry("zhangjiajie-itinerary", locale);
   const studioHref = `${locale === "en" ? "" : `/${locale}`}/studio/#team-tantan`;
-  const plannerHref = `${copy.homePath}?utm_source=tantan-field-note&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (

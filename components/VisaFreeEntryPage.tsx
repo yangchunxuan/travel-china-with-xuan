@@ -18,12 +18,13 @@ import {
   VISA_FREE_ENTRY_TITLE,
   VISA_FREE_ENTRY_URL,
 } from "../lib/visaFreeEntry";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./VisaFreeEntryPage.module.css";
 
 const plannerHref =
-  "/?utm_source=visa-free-entry&utm_medium=organic-content&utm_campaign=article-to-route-finder&planner=destinations#route-finder";
+  "/?source_guide=visa-free-entry&planner=destinations#route-finder";
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   day: "numeric",
   month: "long",
@@ -382,10 +383,14 @@ export function VisaFreeEntryPage() {
                     transport and practical details with you.
                   </p>
                 </div>
-                <Link href={plannerHref}>
+                <GuideCtaLink
+                  guideId="visa-free-entry"
+                  href={plannerHref}
+                  locale="en"
+                >
                   Start my trip brief
                   <ArrowRight aria-hidden="true" size={18} />
-                </Link>
+                </GuideCtaLink>
               </section>
 
               <section id="sources" className={styles.sources}>

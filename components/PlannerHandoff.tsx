@@ -36,7 +36,11 @@ import {
   type BookingResponsibilityId,
   type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
-import { trackEnquirySubmitted } from "../lib/analytics";
+import {
+  clearEntryAttribution,
+  readEntryAttribution,
+  trackEnquirySubmitted,
+} from "../lib/analytics";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
 
@@ -824,23 +828,18 @@ export function PlannerHandoff({
   };
 
   const buildPayload = () => {
-    const search = new URLSearchParams(window.location.search);
-    const attribution: Record<string, string> = {
+    const entryAttribution = readEntryAttribution();
+    const attribution = {
       landingPath: window.location.pathname,
+      entryPath:
+        entryAttribution.entry_path ?? window.location.pathname,
+      sourceGuide: entryAttribution.source_guide ?? null,
+      utmSource: entryAttribution.utm_source ?? null,
+      utmMedium: entryAttribution.utm_medium ?? null,
+      utmCampaign: entryAttribution.utm_campaign ?? null,
+      utmContent: entryAttribution.utm_content ?? null,
+      gclid: entryAttribution.gclid ?? null,
     };
-    const attributionFields = [
-      ["utm_source", "utmSource"],
-      ["utm_medium", "utmMedium"],
-      ["utm_campaign", "utmCampaign"],
-    ] as const;
-    if (!serviceInterest) {
-      for (const [queryKey, payloadKey] of attributionFields) {
-        const value = stripUnsupportedControlCharacters(
-          search.get(queryKey) ?? "",
-        ).trim();
-        if (value) attribution[payloadKey] = value.slice(0, 100);
-      }
-    }
 
     return {
       schemaVersion: destinationInquirySchemaVersion,
@@ -983,6 +982,7 @@ export function PlannerHandoff({
             reply_channel: snapshot.replyChannel,
             service_interest: serviceInterest?.id ?? "conversation",
           });
+          clearEntryAttribution();
           setSubmittedChannel(snapshot.replyChannel);
           setSubmittedContact(snapshot.replyContact);
           setErrors({});

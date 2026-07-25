@@ -60,11 +60,11 @@ function productionConfigurationCheck(checkedAt: string): HealthCheck {
     "ALLOWED_PRIVACY_NOTICE_VERSIONS",
   );
   const currentVersionsPresent =
-    forms.includes("2026-07-21.1") &&
-    privacyVersions.includes("2026-07-21.1");
+    forms.includes("2026-07-25.1") &&
+    privacyVersions.includes("2026-07-25.1");
   const transitionalVersionsEnabled =
-    forms.some((version) => version !== "2026-07-21.1") ||
-    privacyVersions.some((version) => version !== "2026-07-21.1");
+    forms.some((version) => version !== "2026-07-25.1") ||
+    privacyVersions.some((version) => version !== "2026-07-25.1");
 
   if (
     (accepting !== "true" && accepting !== "false") ||

@@ -1,8 +1,33 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 export const adminInsightsContractVersion =
-  "homeground-admin-insights.v1" as const;
+  "homeground-admin-insights.v2" as const;
 export const adminHealthContractVersion = "homeground-admin-health.v1" as const;
+export const adminInsightsNotice =
+  "Saved submissions, not unique people, customers, or market share." as const;
+
+export const adminGuideSourceSlugs = [
+  "beijing-zhangjiajie-shanghai-10-days",
+  "beijing-zhangjiajie-shanghai-transport",
+  "best-zhangjiajie-night-show",
+  "china-240-hour-visa-free-transit-route-check",
+  "china-entry-guides",
+  "china-entry-requirements",
+  "china-visa-free-canadian-citizens-2026",
+  "china-visa-free-new-zealand-citizens-2026",
+  "china-visa-free-uk-citizens-2026",
+  "do-singaporeans-need-visa-china",
+  "do-us-citizens-need-visa-china-2026",
+  "guides-hub",
+  "is-your-china-itinerary-too-rushed",
+  "kevin-before-the-hotel-pickup",
+  "visa-free-entry",
+  "zhangjiajie-glass-bridge-vs-skywalk",
+  "zhangjiajie-itinerary",
+  "zhangjiajie-older-travellers",
+] as const;
+export type AdminGuideSourceSlug =
+  (typeof adminGuideSourceSlugs)[number];
 
 export type AdminHealthStatus =
   | "ok"
@@ -76,7 +101,7 @@ export interface AdminMetric {
 }
 
 export interface AdminInsightsResponse {
-  contractVersion: string;
+  contractVersion: typeof adminInsightsContractVersion;
   generatedAt: string;
   timezone: "Asia/Shanghai";
   window: {
@@ -95,6 +120,14 @@ export interface AdminInsightsResponse {
     message: string | null;
   };
   metrics: AdminMetric[];
+  guideInquiries: {
+    minimumVisibleCount: 5;
+    guides: {
+      sourceGuide: AdminGuideSourceSlug;
+      inquiryCount: number;
+    }[];
+  };
+  notice: typeof adminInsightsNotice;
 }
 
 export interface AdminHealthCheck {
@@ -186,6 +219,7 @@ const knownMetricIds = new Set([
   "reply_channel_choice",
   "form_locale",
 ]);
+const knownGuideSourceSlugs = new Set<string>(adminGuideSourceSlugs);
 
 const knownHealthCheckIds = [
   "admin_api_reachable",
@@ -281,6 +315,12 @@ const schema2CompatibilitySets = [
     formVersion: "2026-07-21.1",
     ruleVersion: "2026-07-19.1",
   },
+  {
+    schemaVersion: "2",
+    entryPath: "destination_timing",
+    formVersion: "2026-07-25.1",
+    ruleVersion: "2026-07-19.1",
+  },
 ] as const satisfies readonly AdminMetricCompatibilitySet[];
 
 const bothSchemaCompatibilitySets = [
@@ -358,6 +398,25 @@ function objectAt(
     );
   }
   return value;
+}
+
+function assertExactKeys(
+  value: Record<string, unknown>,
+  expectedKeys: readonly string[],
+  path: string,
+): void {
+  const actualKeys = Object.keys(value);
+  if (
+    actualKeys.length !== expectedKeys.length ||
+    expectedKeys.some((key) =>
+      !Object.prototype.hasOwnProperty.call(value, key)
+    )
+  ) {
+    throw new AdminApiError(
+      "contract",
+      `${path} contains fields outside the approved contract.`,
+    );
+  }
 }
 
 function arrayAt(value: unknown, path: string): unknown[] {
@@ -516,6 +575,7 @@ function parseDataQualityHold(
   path: string,
 ): AdminInsightsResponse["dataQualityHold"] {
   const record = objectAt(value, path);
+  assertExactKeys(record, ["active", "message"], path);
   const active = booleanAt(record.active, `${path}.active`);
   const message = stringAt(record.message, `${path}.message`, {
     nullable: true,
@@ -541,11 +601,112 @@ export function parseAdminInsights(
 ): AdminInsightsResponse {
   assertNoForbiddenResponseFields(value);
   const root = objectAt(value, "response");
+  assertExactKeys(root, [
+    "contractVersion",
+    "generatedAt",
+    "timezone",
+    "window",
+    "retainedCounts",
+    "dataQualityHold",
+    "metrics",
+    "guideInquiries",
+    "notice",
+  ], "response");
   const window = objectAt(root.window, "response.window");
+  assertExactKeys(window, [
+    "days",
+    "startsAt",
+    "endsAt",
+    "collectingBaseline",
+  ], "response.window");
   const retained = objectAt(
     root.retainedCounts,
     "response.retainedCounts",
   );
+  assertExactKeys(retained, [
+    "today",
+    "past7Days",
+    "past30Days",
+  ], "response.retainedCounts");
+  const dataQualityHold = parseDataQualityHold(
+    root.dataQualityHold,
+    "response.dataQualityHold",
+  );
+  const guideInquiries = objectAt(
+    root.guideInquiries,
+    "response.guideInquiries",
+  );
+  assertExactKeys(guideInquiries, [
+    "minimumVisibleCount",
+    "guides",
+  ], "response.guideInquiries");
+  const minimumVisibleCount = countAt(
+    guideInquiries.minimumVisibleCount,
+    "response.guideInquiries.minimumVisibleCount",
+  );
+  if (minimumVisibleCount !== 5) {
+    throw new AdminApiError(
+      "contract",
+      "The guide inquiry threshold is not the approved k=5 boundary.",
+    );
+  }
+  const rawGuides = arrayAt(
+    guideInquiries.guides,
+    "response.guideInquiries.guides",
+  );
+  if (
+    rawGuides.length > adminGuideSourceSlugs.length ||
+    (dataQualityHold.active && rawGuides.length > 0)
+  ) {
+    throw new AdminApiError(
+      "contract",
+      "Guide inquiry counts are not hidden at the approved boundary.",
+    );
+  }
+  const seenGuideSlugs = new Set<string>();
+  let previousGuideCount: number | null = null;
+  let previousGuideSlug: string | null = null;
+  const guides = rawGuides.map((rawGuide, index) => {
+    const path = `response.guideInquiries.guides[${index}]`;
+    const guide = objectAt(rawGuide, path);
+    assertExactKeys(guide, ["sourceGuide", "inquiryCount"], path);
+    const sourceGuide = stringAt(guide.sourceGuide, `${path}.sourceGuide`, {
+      maxLength: 100,
+    });
+    const inquiryCount = countAt(
+      guide.inquiryCount,
+      `${path}.inquiryCount`,
+    );
+    if (
+      sourceGuide === null ||
+      !knownGuideSourceSlugs.has(sourceGuide) ||
+      seenGuideSlugs.has(sourceGuide) ||
+      inquiryCount < minimumVisibleCount ||
+      (
+        previousGuideCount !== null &&
+        (
+          inquiryCount > previousGuideCount ||
+          (
+            inquiryCount === previousGuideCount &&
+            previousGuideSlug !== null &&
+            sourceGuide <= previousGuideSlug
+          )
+        )
+      )
+    ) {
+      throw new AdminApiError(
+        "contract",
+        `${path} violates the fixed guide allowlist or k=5 boundary.`,
+      );
+    }
+    seenGuideSlugs.add(sourceGuide);
+    previousGuideCount = inquiryCount;
+    previousGuideSlug = sourceGuide;
+    return {
+      sourceGuide: sourceGuide as AdminGuideSourceSlug,
+      inquiryCount,
+    };
+  });
   const days = countAt(window.days, "response.window.days");
   if (days !== 90) {
     throw new AdminApiError(
@@ -764,9 +925,11 @@ export function parseAdminInsights(
   const endsAt = isoDateAt(window.endsAt, "response.window.endsAt");
   if (
     contractVersion !== adminInsightsContractVersion ||
+    root.notice !== adminInsightsNotice ||
     generatedAt === null ||
     startsAt === null ||
-    endsAt === null
+    endsAt === null ||
+    Date.parse(startsAt) >= Date.parse(endsAt)
   ) {
     throw new AdminApiError("contract", "The insight response is incomplete.");
   }
@@ -803,11 +966,13 @@ export function parseAdminInsights(
         "response.retainedCounts.past30Days",
       ),
     },
-    dataQualityHold: parseDataQualityHold(
-      root.dataQualityHold,
-      "response.dataQualityHold",
-    ),
+    dataQualityHold,
     metrics,
+    guideInquiries: {
+      minimumVisibleCount: 5,
+      guides,
+    },
+    notice: adminInsightsNotice,
   };
 }
 

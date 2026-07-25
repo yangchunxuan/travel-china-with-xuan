@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
+  buildAdminInsightsResponse,
   parseAdminHealthRpc,
+  sanitizeAdminGuideInquiryCountsRpc,
   sanitizeAdminInsightsRpc,
 } from "../functions/_shared/admin-contracts.ts";
 
@@ -25,6 +27,8 @@ const healthFunctionPath =
 const inquiryFunctionPath =
   "supabase/functions/v1-inquiries/index.ts";
 const configPath = "supabase/config.toml";
+const adminPagePath = "components/admin/AdminInsightsPage.tsx";
+const adminPageCssPath = "components/admin/AdminInsightsPage.module.css";
 
 async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -65,6 +69,12 @@ const schema2CompatibilitySets = [
     schemaVersion: "2",
     entryPath: "destination_timing",
     formVersion: "2026-07-21.1",
+    ruleVersion: "2026-07-19.1",
+  },
+  {
+    schemaVersion: "2",
+    entryPath: "destination_timing",
+    formVersion: "2026-07-25.1",
     ruleVersion: "2026-07-19.1",
   },
 ];
@@ -192,6 +202,35 @@ function validInsightsRpc() {
   }];
 }
 
+function validGuideInquiryRpc() {
+  return [{
+    payload: {
+      contractVersion: "homeground-admin-guide-inquiries.v1",
+      generatedAt: "2026-07-21T08:00:00.000Z",
+      timezone: "Asia/Shanghai",
+      window: {
+        days: 90,
+        startsAt: "2026-04-22T08:00:00.000Z",
+        endsAt: "2026-07-21T08:00:00.000Z",
+      },
+      minimumVisibleCount: 5,
+      dataQualityHold: { active: false, message: null },
+      guides: [
+        {
+          sourceGuide: "china-visa-free-canadian-citizens-2026",
+          inquiryCount: 7,
+        },
+        {
+          sourceGuide: "guides-hub",
+          inquiryCount: 5,
+        },
+      ],
+      notice:
+        "Saved submissions, not unique people, customers, or market share.",
+    },
+  }];
+}
+
 function validHealthRpc() {
   return [{
     payload: {
@@ -246,8 +285,8 @@ function validHealthRpc() {
         message: null,
       },
       versions: {
-        currentForm: "2026-07-21.1",
-        currentPrivacy: "2026-07-21.1",
+        currentForm: "2026-07-25.1",
+        currentPrivacy: "2026-07-25.1",
         destinationRule: "2026-07-19.1",
         legacyRouteRule: "2026-07-17.1",
       },
@@ -507,12 +546,26 @@ test("Admin authorization is exact-Origin, MFA, UUID-allowlist, and Auth-user ve
   );
 });
 
-test("Admin Edge functions expose only two fixed read RPCs", async () => {
+test("Admin Edge functions keep two endpoints and only three fixed read RPCs", async () => {
   const insights = await source(insightsFunctionPath);
   const health = await source(healthFunctionPath);
   const contracts = await source(adminContractsPath);
   assert.match(insights, /"get_homeground_admin_insights"/);
+  assert.match(
+    insights,
+    /"get_homeground_admin_guide_inquiry_counts"/,
+  );
   assert.match(health, /"get_homeground_admin_health"/);
+  assert.match(insights, /await Promise\.all\(\[/);
+  assert.match(insights, /authorizeAdminRequest\(request\)/);
+  assert.match(
+    insights,
+    /recordAdminAccess\(\s*authorization\.admin\.userId,\s*"admin-insights"/,
+  );
+  assert.equal(
+    (insights.match(/Deno\.serve\(/g) ?? []).length,
+    1,
+  );
   assert.doesNotMatch(
     `${insights}\n${health}`,
     /create_|update_|delete_|list_|detail_|search_|export_/,
@@ -521,6 +574,103 @@ test("Admin Edge functions expose only two fixed read RPCs", async () => {
     `${insights}\n${health}\n${contracts}`,
     /console\.(?:log|info|warn|error)/,
   );
+});
+
+test("guide inquiry sanitizer rejects unknown, sparse, leaked, and unapproved fields", () => {
+  const raw = validGuideInquiryRpc();
+  const sanitized = sanitizeAdminGuideInquiryCountsRpc(raw);
+  assert.ok(sanitized);
+  assert.deepEqual(sanitized.guides, [
+    {
+      sourceGuide: "china-visa-free-canadian-citizens-2026",
+      inquiryCount: 7,
+    },
+    {
+      sourceGuide: "guides-hub",
+      inquiryCount: 5,
+    },
+  ]);
+
+  const unknownPayloadField = structuredClone(raw);
+  unknownPayloadField[0].payload.debug = true;
+  assert.equal(
+    sanitizeAdminGuideInquiryCountsRpc(unknownPayloadField),
+    null,
+  );
+
+  const unknownGuideField = structuredClone(raw);
+  unknownGuideField[0].payload.guides[0].internalLabel = "private";
+  assert.equal(
+    sanitizeAdminGuideInquiryCountsRpc(unknownGuideField),
+    null,
+  );
+
+  const sparseCount = structuredClone(raw);
+  sparseCount[0].payload.guides[1].inquiryCount = 4;
+  assert.equal(sanitizeAdminGuideInquiryCountsRpc(sparseCount), null);
+
+  const leakedContact = structuredClone(raw);
+  leakedContact[0].payload.guides[0].contactEmail =
+    "traveller@example.com";
+  assert.equal(sanitizeAdminGuideInquiryCountsRpc(leakedContact), null);
+
+  const unknownSlug = structuredClone(raw);
+  unknownSlug[0].payload.guides[0].sourceGuide = "private-campaign";
+  assert.equal(sanitizeAdminGuideInquiryCountsRpc(unknownSlug), null);
+
+  const duplicateSlug = structuredClone(raw);
+  duplicateSlug[0].payload.guides[1].sourceGuide =
+    duplicateSlug[0].payload.guides[0].sourceGuide;
+  assert.equal(sanitizeAdminGuideInquiryCountsRpc(duplicateSlug), null);
+});
+
+test("combined v2 response withholds guide counts whenever either read model is on hold", () => {
+  const insights = sanitizeAdminInsightsRpc(validInsightsRpc());
+  const guides = sanitizeAdminGuideInquiryCountsRpc(
+    validGuideInquiryRpc(),
+  );
+  assert.ok(insights);
+  assert.ok(guides);
+
+  const response = buildAdminInsightsResponse(insights, guides);
+  assert.ok(response);
+  assert.equal(response.contractVersion, "homeground-admin-insights.v2");
+  assert.equal(response.guideInquiries.guides.length, 2);
+  assert.equal("customerRecords" in response, false);
+
+  const heldRaw = validGuideInquiryRpc();
+  heldRaw[0].payload.dataQualityHold = {
+    active: true,
+    message:
+      "Do not use this window for content or product decisions.",
+  };
+  const heldGuides = sanitizeAdminGuideInquiryCountsRpc(heldRaw);
+  assert.ok(heldGuides);
+  const heldResponse = buildAdminInsightsResponse(
+    insights,
+    heldGuides,
+  );
+  assert.ok(heldResponse);
+  assert.equal(heldResponse.dataQualityHold.active, true);
+  assert.deepEqual(heldResponse.guideInquiries.guides, []);
+});
+
+test("Admin insights UI shows a k=5 empty state and hides guide attribution on hold", async () => {
+  const [page, css] = await Promise.all([
+    source(adminPagePath),
+    source(adminPageCssPath),
+  ]);
+  assert.match(page, /尚无文章达到 5 条展示门槛。/);
+  assert.match(page, /提交时携带的文章入口（辅助归因）/);
+  assert.doesNotMatch(page, /文章带来的咨询/);
+  assert.match(page, /不应单独用于业务决策/);
+  assert.match(
+    page,
+    /\{holdActive \? \([\s\S]*?\) : \(\s*<>\s*<GuideInquirySection/,
+  );
+  assert.match(page, /insights\.guideInquiries/);
+  assert.match(css, /\.guideInquiryList/);
+  assert.match(css, /minmax\(min\(100%, 22rem\), 1fr\)/);
 });
 
 test("insight sanitizer rebuilds the allowlisted contract and rejects suppression leaks", () => {
@@ -709,4 +859,15 @@ test("health parser ignores non-contract data and preserves provider-accepted se
   assert.equal(sanitized.cleanup.status, "never_run");
   assert.equal(sanitized.cleanup.expiredAdminAccessLogCount, 0);
   assert.equal(sanitized.dataQualityHold.active, false);
+});
+
+test("health parser accepts both bounded rollout pairs and rejects mixed versions", () => {
+  const previousPair = structuredClone(validHealthRpc());
+  previousPair[0].payload.versions.currentForm = "2026-07-21.1";
+  previousPair[0].payload.versions.currentPrivacy = "2026-07-21.1";
+  assert.ok(parseAdminHealthRpc(previousPair));
+
+  const mixedPair = structuredClone(validHealthRpc());
+  mixedPair[0].payload.versions.currentForm = "2026-07-21.1";
+  assert.equal(parseAdminHealthRpc(mixedPair), null);
 });

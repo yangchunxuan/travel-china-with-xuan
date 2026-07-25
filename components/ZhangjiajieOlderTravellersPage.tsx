@@ -142,7 +142,7 @@ export function ZhangjiajieOlderTravellersPage({
   const copy = getZhangjiajieOlderTravellersCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const routeGuide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const plannerHref = `${copy.homePath}?utm_source=older-travellers-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
+  const plannerHref = `${copy.homePath}?source_guide=${guideId}#route-finder`;
   const structuredData = createStructuredData(locale);
 
   return (

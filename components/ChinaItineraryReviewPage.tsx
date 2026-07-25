@@ -204,11 +204,10 @@ export function ChinaItineraryReviewPage({
 }) {
   const homeCopy = getHomegroundCopy(locale);
   const copy = getChinaItineraryReviewCopy(locale);
-  const plannerBase = `${homeCopy.path}?utm_source=china-itinerary-review&utm_medium=owned`;
-  const reviewHref = `${plannerBase}&utm_campaign=route-planning&utm_content=review&service=itinerary-review&planner=destinations#route-finder`;
-  const buildHref = `${plannerBase}&utm_campaign=route-planning&utm_content=build&service=route-build&planner=destinations#route-finder`;
-  const conversationHref = `${plannerBase}&utm_campaign=trip-conversation&utm_content=service-page-brief&planner=destinations#route-finder`;
-  const fullSupportHref = `${plannerBase}&utm_campaign=full-trip-support&utm_content=custom-scope&service=full-trip-support&planner=destinations#route-finder`;
+  const reviewHref = `${homeCopy.path}?service=itinerary-review&planner=destinations#route-finder`;
+  const buildHref = `${homeCopy.path}?service=route-build&planner=destinations#route-finder`;
+  const conversationHref = `${homeCopy.path}?planner=destinations#route-finder`;
+  const fullSupportHref = `${homeCopy.path}?service=full-trip-support&planner=destinations#route-finder`;
   const rushGuideHref = `${homeCopy.path}guides/is-your-china-itinerary-too-rushed/`;
   const studioHref = `${homeCopy.path}studio/`;
   const structuredData = createStructuredData(locale, copy);

@@ -5,6 +5,8 @@ import {
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/admin-auth.ts";
 import {
+  buildAdminInsightsResponse,
+  sanitizeAdminGuideInquiryCountsRpc,
   sanitizeAdminInsightsRpc,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/admin-contracts.ts";
@@ -45,12 +47,16 @@ async function handleRequest(request: Request): Promise<Response> {
     return response;
   };
 
-  let rpcResult;
+  let insightsRpcResult;
+  let guideInquiriesRpcResult;
   try {
-    rpcResult = await callSupabaseRpc<unknown>(
-      "get_homeground_admin_insights",
-      {},
-    );
+    [insightsRpcResult, guideInquiriesRpcResult] = await Promise.all([
+      callSupabaseRpc<unknown>("get_homeground_admin_insights", {}),
+      callSupabaseRpc<unknown>(
+        "get_homeground_admin_guide_inquiry_counts",
+        {},
+      ),
+    ]);
   } catch {
     return finish(
       "summary_unavailable",
@@ -62,7 +68,7 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
-  if (!rpcResult.ok) {
+  if (!insightsRpcResult.ok || !guideInquiriesRpcResult.ok) {
     return finish(
       "summary_unavailable",
       adminUnavailableResponse(
@@ -73,7 +79,14 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
-  const response = sanitizeAdminInsightsRpc(rpcResult.data);
+  const insights = sanitizeAdminInsightsRpc(insightsRpcResult.data);
+  const guideInquiries = sanitizeAdminGuideInquiryCountsRpc(
+    guideInquiriesRpcResult.data,
+  );
+  const response =
+    insights && guideInquiries
+      ? buildAdminInsightsResponse(insights, guideInquiries)
+      : null;
   if (!response) {
     return finish(
       "contract_rejected",

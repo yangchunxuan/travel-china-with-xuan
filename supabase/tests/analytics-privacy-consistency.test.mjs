@@ -6,9 +6,11 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-function analyticsEnabled(siteAnalytics) {
-  const match = siteAnalytics.match(/const ANALYTICS_ENABLED = (true|false);/);
-  assert.ok(match, "SiteAnalytics must declare an explicit ANALYTICS_ENABLED flag");
+function analyticsEnabled(analytics) {
+  const match = analytics.match(
+    /export const ANALYTICS_ENABLED: boolean = (true|false);/,
+  );
+  assert.ok(match, "analytics must declare one explicit ANALYTICS_ENABLED flag");
   return match[1] === "true";
 }
 
@@ -20,7 +22,13 @@ function analyticsEnabled(siteAnalytics) {
  */
 test("analytics stays off while the privacy notice denies collection", async () => {
   const siteAnalytics = await source("components/SiteAnalytics.tsx");
+  const analytics = await source("lib/analytics.ts");
   const privacy = await source("lib/homegroundPrivacyI18n.ts");
+  assert.match(
+    siteAnalytics,
+    /import \{[\s\S]*ANALYTICS_ENABLED,[\s\S]*\} from "\.\.\/lib\/analytics"/,
+    "script loading and event dispatch must share the same analytics switch",
+  );
 
   // The exact sentences that must be rewritten before collection may resume.
   const denials = [
@@ -31,7 +39,7 @@ test("analytics stays off while the privacy notice denies collection", async () 
 
   const stillDenies = denials.filter((pattern) => pattern.test(privacy));
 
-  if (analyticsEnabled(siteAnalytics)) {
+  if (analyticsEnabled(analytics)) {
     assert.equal(
       stillDenies.length,
       0,
@@ -50,7 +58,8 @@ test("analytics stays off while the privacy notice denies collection", async () 
 
 test("no analytics script reaches the built pages while collection is off", async () => {
   const siteAnalytics = await source("components/SiteAnalytics.tsx");
-  if (analyticsEnabled(siteAnalytics)) return;
+  const analytics = await source("lib/analytics.ts");
+  if (analyticsEnabled(analytics)) return;
 
   // Guards the specific regression that started this: the component rendering
   // its scripts regardless of the flag.
@@ -59,10 +68,35 @@ test("no analytics script reaches the built pages while collection is off", asyn
     /if \(!ANALYTICS_ENABLED\) return null;/,
     "SiteAnalytics must return null before rendering any tag when disabled",
   );
-  assert.match(
+  assert.doesNotMatch(
     siteAnalytics,
-    /if \(!ANALYTICS_ENABLED\) return;/,
-    "SiteAnalytics must not capture attribution when disabled",
+    /captureEntryAttribution|sessionStorage/,
+    "first-party attribution must stay independent of the disabled analytics component",
+  );
+  assert.match(
+    analytics,
+    /if \(!ANALYTICS_ENABLED \|\| typeof window === "undefined"\) return;/,
+    "trackEvent must stop before mutating browser state while analytics is disabled",
+  );
+  assert.match(
+    analytics,
+    /if \(typeof analyticsWindow\.gtag !== "function"\) return;/,
+    "a missing GA runtime must be a no-op",
+  );
+  assert.doesNotMatch(
+    analytics,
+    /dataLayer\.push\(\{ event:/,
+    "disabled analytics must not accumulate unread behavioural events",
+  );
+});
+
+test("first-party attribution remains local while analytics is off", async () => {
+  const siteAttribution = await source("components/SiteAttribution.tsx");
+
+  assert.match(siteAttribution, /captureEntryAttribution\(\)/);
+  assert.doesNotMatch(
+    siteAttribution,
+    /next\/script|googletagmanager|google-analytics|trackEvent/,
   );
 });
 
@@ -70,7 +104,7 @@ test("no analytics script reaches the built pages while collection is off", asyn
  * The July 18 regression was a layout move that dropped the component with no
  * test failing. This makes that specific mistake loud.
  */
-test("both public layouts mount SiteAnalytics", async () => {
+test("both public layouts mount analytics and first-party attribution", async () => {
   for (const layout of [
     "app/(default)/layout.tsx",
     "app/(localized)/[locale]/layout.tsx",
@@ -81,14 +115,19 @@ test("both public layouts mount SiteAnalytics", async () => {
       /<SiteAnalytics \/>/,
       `${layout} must mount SiteAnalytics so analytics cannot be silently dropped by a refactor`,
     );
+    assert.match(
+      contents,
+      /<SiteAttribution \/>/,
+      `${layout} must preserve first-party enquiry attribution while analytics is disabled`,
+    );
   }
 });
 
-test("the admin console never mounts analytics", async () => {
+test("the admin console never mounts analytics or public attribution", async () => {
   const adminLayout = await source("app/(admin)/layout.tsx");
   assert.doesNotMatch(
     adminLayout,
-    /SiteAnalytics/,
+    /SiteAnalytics|SiteAttribution/,
     "Owner console traffic must stay out of the reporting",
   );
 });

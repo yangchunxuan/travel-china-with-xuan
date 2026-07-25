@@ -63,7 +63,9 @@ Content:
 
 Scope note: **US$69 and US$129 cover the standard scope: up to 10 travel days, 4 overnight bases and one shared route for 1–4 travellers. Full-trip support is quoted separately.**
 
-The cards link to information, not directly to the enquiry. Homepage links may carry owned-channel UTM parameters, but must not carry a `service` selection.
+The cards link to information, not directly to the enquiry. Ordinary
+Homeground links do not add UTM parameters and must not carry a `service`
+selection.
 
 ## 5. Planning Services page
 
@@ -125,7 +127,12 @@ Chinese and Korean Studio pages retain their current localized free-tool CTA unt
 
 ## 9. Analytics and query integrity
 
-- Owned cross-page links may use: `utm_source=homepage|studio|china-itinerary-review`, `utm_medium=owned`, `utm_campaign=planning-services`, plus a stable `utm_content` value.
+- UTM fields are reserved for external entry links such as Facebook, YouTube,
+  search campaigns and approved partner links. Ordinary Homeground
+  cross-page links must not overwrite that first-touch campaign context.
+- Editorial guide links into the planner use one allowlisted
+  `source_guide` value. The planner stores the last allowlisted guide
+  identifier carried by a planner-entry URL before submission.
 - Information links must never set `service`.
 - Enquiry links continue using the strict allowlist in `lib/routeServiceInterest.ts`.
 - An invalid or absent service value must remain `null` and must not enter the enquiry note.
