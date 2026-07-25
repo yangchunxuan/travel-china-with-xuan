@@ -156,6 +156,12 @@ export interface NormalizedInquiryAttribution {
   gclid?: string | null;
   /** Meta (Facebook/Instagram) click identifier. Same contract as `gclid`. */
   fbclid?: string | null;
+  /**
+   * Epoch milliseconds at which the click id above was observed. Meta reports
+   * a conversion as `fb.1.<click time>.<fbclid>` and judges it against the
+   * click's own timestamp, so the submission time is not a substitute.
+   */
+  adClickAt?: number | null;
 }
 
 export interface NormalizedRouteInquiryPayload {
@@ -247,6 +253,10 @@ const sourceGuidePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
  * which runs far longer than Google's `gclid`.
  */
 const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
+/** 2020-01-01. No click on this site predates the site itself. */
+const adClickEpochFloorMs = Date.UTC(2020, 0, 1);
+/** Absorbs a mildly wrong device clock without accepting a fabricated future. */
+const adClickFutureToleranceMs = 24 * 60 * 60 * 1000;
 const disallowedControlCharacters =
   /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069\ud800-\udfff]/iu;
 const emailLocalPartPattern =
@@ -434,6 +444,7 @@ export function semanticInquiryPayload(
             utmContent: value.attribution.utmContent ?? null,
             gclid: value.attribution.gclid ?? null,
             fbclid: value.attribution.fbclid ?? null,
+            adClickAt: value.attribution.adClickAt ?? null,
           }
         : {
             landingPath: value.attribution.landingPath,
@@ -936,6 +947,7 @@ function validateAndNormalizeDestinationInquiry(
             "utmContent",
             "gclid",
             "fbclid",
+            "adClickAt",
           ]
         : usesFixedSubmitSurface
         ? ["landingPath"]
@@ -1021,6 +1033,22 @@ function validateAndNormalizeDestinationInquiry(
       return adClickIdPattern.test(normalized) ? normalized : null;
     };
 
+    // A click time only means anything attached to a click id, and only if it
+    // is a real instant — a forged one would be reported to an ad platform as
+    // though the click had been observed then.
+    const rawAdClickAt = attribution.adClickAt;
+    const hasAdClickId = Boolean(
+      normalizeAdClickId("gclid") || normalizeAdClickId("fbclid"),
+    );
+    const normalizedAdClickAt =
+      hasAdClickId &&
+      typeof rawAdClickAt === "number" &&
+      Number.isInteger(rawAdClickAt) &&
+      rawAdClickAt >= adClickEpochFloorMs &&
+      rawAdClickAt <= Date.now() + adClickFutureToleranceMs
+        ? rawAdClickAt
+        : null;
+
     normalizedAttribution = usesEntryAttribution
       ? {
           landingPath,
@@ -1032,6 +1060,7 @@ function validateAndNormalizeDestinationInquiry(
           utmContent: normalizeUtm("utmContent"),
           gclid: normalizeAdClickId("gclid"),
           fbclid: normalizeAdClickId("fbclid"),
+          adClickAt: normalizedAdClickAt,
         }
       : {
           landingPath,

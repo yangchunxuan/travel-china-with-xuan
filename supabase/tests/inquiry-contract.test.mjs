@@ -268,6 +268,7 @@ test("current destination inquiries accept only the locale submit surface", () =
       utmContent: null,
       gclid: null,
       fbclid: null,
+      adClickAt: null,
     });
   }
 
@@ -311,6 +312,7 @@ test("current destination attribution keeps bounded external labels and drops an
     utmCampaign: "加拿大免签",
     utmContent: "search-result",
     gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    adClickAt: null,
     fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
   });
 });
@@ -814,6 +816,7 @@ test("the current destination semantic hash includes every limited source field"
     utmContent: "footer-planner-link",
     gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
     fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
+    adClickAt: Date.UTC(2026, 6, 20),
   };
   const result = validateAndNormalizeInquiry(payload, validationConfig);
   assert.equal(result.ok, true);
@@ -824,7 +827,7 @@ test("the current destination semantic hash includes every limited source field"
   const canonical = canonicalizeJson(semantic);
   assert.equal(
     semanticHash(result.value),
-    "b254ed8f427735958e17396e3c9c94f595d5003220f3bebd81c8453076a88ad1",
+    "d2e9b3315a12c25f37a6984d509673ed179339a30246f93169bf1c4829088012",
   );
 
   for (const [field, value] of [
@@ -836,6 +839,7 @@ test("the current destination semantic hash includes every limited source field"
     ["utmContent", "header-planner-link"],
     ["gclid", "EAIaIQobChMI_DifferentPaidClick"],
     ["fbclid", "IwAR_DifferentMetaClick"],
+    ["adClickAt", Date.UTC(2026, 6, 21)],
   ]) {
     const changed = structuredClone(payload);
     changed.attribution[field] = value;

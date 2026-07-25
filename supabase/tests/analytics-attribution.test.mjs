@@ -159,12 +159,14 @@ test("a paid click id survives the session so the ad spend stays attributable", 
   browser.location.search = "?gclid=SecondClickShouldNotOverwrite";
   captureEntryAttribution();
 
-  assert.deepEqual(readEntryAttribution(), {
+  const { ad_click_at: clickTime, ...attribution } = readEntryAttribution();
+  assert.deepEqual(attribution, {
     entry_path: "/guides/china-visa-free-uk-citizens-2026/",
     gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
     utm_source: "google",
     utm_medium: "cpc",
   });
+  assert.equal(typeof clickTime, "number");
 });
 
 test("an ad click landing mid-session is still captured", () => {
@@ -187,10 +189,52 @@ test("a Meta click id is captured on the same terms as Google's", () => {
   browser.location.search = "?fbclid=SecondClickShouldNotOverwrite";
   captureEntryAttribution();
 
-  assert.deepEqual(readEntryAttribution(), {
+  const { ad_click_at: clickTime, ...attribution } = readEntryAttribution();
+  assert.deepEqual(attribution, {
     entry_path: "/guides/zhangjiajie-itinerary/",
     fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
   });
+  assert.equal(typeof clickTime, "number");
+});
+
+test("the click is timed when it happens, not when the enquiry is sent", () => {
+  const browser = installWindow("/", "?fbclid=IwAR_PaidClick");
+  const before = Date.now();
+  captureEntryAttribution();
+  const stamped = readEntryAttribution().ad_click_at;
+
+  assert.ok(stamped >= before && stamped <= Date.now());
+
+  // Browsing on does not re-date the click that was actually paid for.
+  browser.location.pathname = "/guides/zhangjiajie-itinerary/";
+  browser.location.search = "";
+  captureEntryAttribution();
+  assert.equal(readEntryAttribution().ad_click_at, stamped);
+});
+
+test("a click time without a click id, or a forged one, is discarded", () => {
+  const browser = installWindow("/");
+
+  for (const stored of [
+    { entry_path: "/", ad_click_at: Date.now() }, // no click id
+    { entry_path: "/", fbclid: "IwAR_ok", ad_click_at: 1 }, // pre-dates the site
+    {
+      entry_path: "/",
+      fbclid: "IwAR_ok",
+      ad_click_at: Date.now() + 90 * 24 * 60 * 60 * 1000, // fabricated future
+    },
+    { entry_path: "/", fbclid: "IwAR_ok", ad_click_at: "yesterday" },
+  ]) {
+    browser.sessionStorage.setItem(
+      attributionStorageKey,
+      JSON.stringify(stored),
+    );
+    assert.equal(
+      readEntryAttribution().ad_click_at,
+      undefined,
+      JSON.stringify(stored),
+    );
+  }
 });
 
 test("a long Meta click id is not truncated away", () => {

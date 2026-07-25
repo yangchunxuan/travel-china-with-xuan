@@ -68,6 +68,7 @@ const allowedNormalizedAttributionKeys = new Set([
   "utmContent",
   "gclid",
   "fbclid",
+  "adClickAt",
 ]);
 const optionalAttributionKeys = [
   "utmSource",
@@ -83,6 +84,9 @@ const optionalAttributionKeys = [
  */
 const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
 const adClickIdKeys = ["gclid", "fbclid"] as const;
+/** 2020-01-01 — no click on this site predates the site itself. */
+const adClickEpochFloorMs = Date.UTC(2020, 0, 1);
+const adClickFutureToleranceMs = 24 * 60 * 60 * 1000;
 
 type PersistedInquiryAttribution = {
   entryPath: string;
@@ -93,6 +97,7 @@ type PersistedInquiryAttribution = {
   utmContent?: string;
   gclid?: string;
   fbclid?: string;
+  adClickAt?: number;
 };
 
 interface CreateInquiryRpcResponse {
@@ -194,6 +199,22 @@ function persistedAttribution(
       return null;
     }
     result[key] = clickId;
+  }
+
+  // Only meaningful attached to a click id, and only as a real instant — this
+  // value is reported to an ad platform as the moment the click was observed.
+  const adClickAt = candidate.adClickAt;
+  if (adClickAt !== undefined && adClickAt !== null) {
+    if (
+      typeof adClickAt !== "number" ||
+      !Number.isInteger(adClickAt) ||
+      adClickAt < adClickEpochFloorMs ||
+      adClickAt > Date.now() + adClickFutureToleranceMs ||
+      (result.gclid === undefined && result.fbclid === undefined)
+    ) {
+      return null;
+    }
+    result.adClickAt = adClickAt;
   }
 
   return result;

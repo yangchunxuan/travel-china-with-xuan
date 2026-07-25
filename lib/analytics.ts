@@ -85,6 +85,18 @@ export interface EntryAttribution {
    * never stored is spend that can never be attributed.
    */
   fbclid?: string;
+  /**
+   * When the click id above was first seen, in epoch milliseconds.
+   *
+   * Meta does not accept a raw `fbclid`: its Conversions API wants
+   * `fb.1.<click time>.<fbclid>`, and the click time is when the click was
+   * observed — not when the enquiry was later submitted. A traveller can land
+   * from an ad and submit days afterwards, and dating the click to the
+   * submission can push it outside the attribution window the platform judges
+   * it against. The observation is only available in the moment, so it is
+   * recorded alongside the id rather than reconstructed later.
+   */
+  ad_click_at?: number;
 }
 
 const attributionKeys = [
@@ -103,6 +115,10 @@ const sourceGuidePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
  * the bound is generous enough for both rather than per-platform.
  */
 const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
+/** 2020-01-01. No click on this site predates the site itself. */
+const adClickEpochFloorMs = Date.UTC(2020, 0, 1);
+/** Absorbs a mildly wrong device clock without accepting a fabricated future. */
+const adClickFutureToleranceMs = 24 * 60 * 60 * 1000;
 const allowedSourceGuides = new Set([
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
@@ -162,6 +178,20 @@ function sanitizeAdClickId(value: unknown): string | undefined {
   return adClickIdPattern.test(normalized) ? normalized : undefined;
 }
 
+/**
+ * A click time is only meaningful if it is a real instant. A value from a
+ * corrupted session — or one a visitor edited by hand — must not travel to an
+ * ad platform as though it were observed, so anything outside a plausible
+ * window for this site is dropped rather than clamped.
+ */
+function sanitizeAdClickAt(value: unknown): number | undefined {
+  if (typeof value !== "number" || !Number.isFinite(value)) return undefined;
+  const millis = Math.floor(value);
+  if (millis < adClickEpochFloorMs) return undefined;
+  if (millis > Date.now() + adClickFutureToleranceMs) return undefined;
+  return millis;
+}
+
 function sanitizeSourceGuide(value: unknown): string | undefined {
   if (typeof value !== "string") return undefined;
   const normalized = value.normalize("NFC").trim().slice(0, 100);
@@ -181,11 +211,15 @@ function normalizeStoredAttribution(value: unknown): EntryAttribution {
   const sourceGuide = sanitizeSourceGuide(candidate.source_guide);
   const gclid = sanitizeAdClickId(candidate.gclid);
   const fbclid = sanitizeAdClickId(candidate.fbclid);
+  const adClickAt = sanitizeAdClickAt(candidate.ad_click_at);
 
   if (entryPath) attribution.entry_path = entryPath;
   if (sourceGuide) attribution.source_guide = sourceGuide;
   if (gclid) attribution.gclid = gclid;
   if (fbclid) attribution.fbclid = fbclid;
+  // The timestamp describes a click id, so it is meaningless without one and
+  // is dropped rather than kept as a stray field.
+  if (adClickAt && (gclid || fbclid)) attribution.ad_click_at = adClickAt;
 
   attributionKeys.forEach((key) => {
     const raw = candidate[key];
@@ -239,6 +273,7 @@ export function captureEntryAttribution() {
 
     // Deliberately outside the first-touch block above: an ad click can land
     // mid-session, and a paid click with no stored id is unattributable spend.
+    const hadClickId = Boolean(attribution.gclid || attribution.fbclid);
     if (!attribution.gclid) {
       const gclid = sanitizeAdClickId(params.get("gclid"));
       if (gclid) attribution.gclid = gclid;
@@ -246,6 +281,11 @@ export function captureEntryAttribution() {
     if (!attribution.fbclid) {
       const fbclid = sanitizeAdClickId(params.get("fbclid"));
       if (fbclid) attribution.fbclid = fbclid;
+    }
+    // Stamped only when this visit is what introduced a click id, so the time
+    // continues to describe the click that was actually paid for.
+    if (!hadClickId && (attribution.gclid || attribution.fbclid)) {
+      attribution.ad_click_at = Date.now();
     }
 
     writeStoredAttribution(attribution);
