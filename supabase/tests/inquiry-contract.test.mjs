@@ -267,6 +267,7 @@ test("current destination inquiries accept only the locale submit surface", () =
       utmCampaign: null,
       utmContent: null,
       gclid: null,
+      fbclid: null,
     });
   }
 
@@ -296,6 +297,7 @@ test("current destination attribution keeps bounded external labels and drops an
     utmCampaign: "加拿大免签",
     utmContent: "search-result",
     gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
   };
   const result = validateAndNormalizeInquiry(payload, validationConfig);
   assert.equal(result.ok, true);
@@ -309,22 +311,29 @@ test("current destination attribution keeps bounded external labels and drops an
     utmCampaign: "加拿大免签",
     utmContent: "search-result",
     gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
   });
 });
 
 test("a forged click id carrying traveller text is dropped, not stored", () => {
-  for (const gclid of [
-    "traveller@example.com",
-    "note about Alice",
-    "+44 7700 900000",
-    `${"x".repeat(201)}`,
-  ]) {
-    const payload = validDestinationPayload();
-    payload.attribution.gclid = gclid;
-    const result = validateAndNormalizeInquiry(payload, validationConfig);
-    assert.equal(result.ok, true, gclid);
-    if (!result.ok) continue;
-    assert.equal(result.value.attribution.gclid, null, gclid);
+  for (const key of ["gclid", "fbclid"]) {
+    for (const clickId of [
+      "traveller@example.com",
+      "note about Alice",
+      "+44 7700 900000",
+      `${"x".repeat(513)}`,
+    ]) {
+      const payload = validDestinationPayload();
+      payload.attribution[key] = clickId;
+      const result = validateAndNormalizeInquiry(payload, validationConfig);
+      assert.equal(result.ok, true, `${key}: ${clickId}`);
+      if (!result.ok) continue;
+      assert.equal(
+        result.value.attribution[key],
+        null,
+        `${key}: ${clickId}`,
+      );
+    }
   }
 });
 
@@ -804,6 +813,7 @@ test("the current destination semantic hash includes every limited source field"
     utmCampaign: "july-guides",
     utmContent: "footer-planner-link",
     gclid: "Cj0KCQjw_-_ABhC-ARIsAAWQ9ZR3lm2Q",
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
   };
   const result = validateAndNormalizeInquiry(payload, validationConfig);
   assert.equal(result.ok, true);
@@ -814,7 +824,7 @@ test("the current destination semantic hash includes every limited source field"
   const canonical = canonicalizeJson(semantic);
   assert.equal(
     semanticHash(result.value),
-    "ac31f302f241df76c28eab0a52fdad26e1c8ad7f965ba5f89ab33277f58e5e4a",
+    "b254ed8f427735958e17396e3c9c94f595d5003220f3bebd81c8453076a88ad1",
   );
 
   for (const [field, value] of [
@@ -825,6 +835,7 @@ test("the current destination semantic hash includes every limited source field"
     ["utmCampaign", "visa-free"],
     ["utmContent", "header-planner-link"],
     ["gclid", "EAIaIQobChMI_DifferentPaidClick"],
+    ["fbclid", "IwAR_DifferentMetaClick"],
   ]) {
     const changed = structuredClone(payload);
     changed.attribution[field] = value;

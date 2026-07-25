@@ -177,16 +177,46 @@ test("an ad click landing mid-session is still captured", () => {
   assert.equal(readEntryAttribution().gclid, "LateButPaidFor_123");
 });
 
+test("a Meta click id is captured on the same terms as Google's", () => {
+  const browser = installWindow(
+    "/guides/zhangjiajie-itinerary/",
+    "?fbclid=IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
+  );
+
+  captureEntryAttribution();
+  browser.location.search = "?fbclid=SecondClickShouldNotOverwrite";
+  captureEntryAttribution();
+
+  assert.deepEqual(readEntryAttribution(), {
+    entry_path: "/guides/zhangjiajie-itinerary/",
+    fbclid: "IwZXh0bgNhZW0BMAABHqK-3lm2Q_rTn0aZ",
+  });
+});
+
+test("a long Meta click id is not truncated away", () => {
+  const longFbclid = `IwAR${"aB9_-".repeat(60)}`; // 304 chars, over the old 200 cap
+  installWindow("/", `?fbclid=${longFbclid}`);
+
+  captureEntryAttribution();
+
+  assert.equal(readEntryAttribution().fbclid, longFbclid);
+});
+
 test("only an opaque click token is accepted, never traveller text", () => {
-  const browser = installWindow("/", "?gclid=alice%40example.com");
+  const browser = installWindow(
+    "/",
+    "?gclid=alice%40example.com&fbclid=call%20her%20at%20noon",
+  );
   captureEntryAttribution();
   assert.equal(readEntryAttribution().gclid, undefined);
+  assert.equal(readEntryAttribution().fbclid, undefined);
 
   browser.sessionStorage.setItem(
     attributionStorageKey,
     JSON.stringify({
       entry_path: "/",
       gclid: "note about Alice, +44 7700 900000",
+      fbclid: "alice@example.com",
     }),
   );
 

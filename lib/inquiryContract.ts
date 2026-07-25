@@ -154,6 +154,8 @@ export interface NormalizedInquiryAttribution {
    * an opaque-token character set rather than treated as free text.
    */
   gclid?: string | null;
+  /** Meta (Facebook/Instagram) click identifier. Same contract as `gclid`. */
+  fbclid?: string | null;
 }
 
 export interface NormalizedRouteInquiryPayload {
@@ -238,12 +240,13 @@ const uuidV4Pattern =
 const e164Pattern = /^\+[1-9][0-9]{7,14}$/;
 const sourceGuidePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 /**
- * Google appends the click id itself and it is always an opaque URL-safe
- * token. Matching that shape exactly — rather than accepting bounded text —
- * means a crafted `?gclid=` cannot smuggle a name, an email or a note into
- * stored attribution.
+ * Ad platforms append their click ids themselves and they are always opaque
+ * URL-safe tokens. Matching that shape exactly — rather than accepting bounded
+ * text — means a crafted `?gclid=` or `?fbclid=` cannot smuggle a name, an
+ * email or a note into stored attribution. The bound covers Meta's `fbclid`,
+ * which runs far longer than Google's `gclid`.
  */
-const adClickIdPattern = /^[A-Za-z0-9._-]{1,200}$/u;
+const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
 const disallowedControlCharacters =
   /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069\ud800-\udfff]/iu;
 const emailLocalPartPattern =
@@ -430,6 +433,7 @@ export function semanticInquiryPayload(
             utmCampaign: value.attribution.utmCampaign,
             utmContent: value.attribution.utmContent ?? null,
             gclid: value.attribution.gclid ?? null,
+            fbclid: value.attribution.fbclid ?? null,
           }
         : {
             landingPath: value.attribution.landingPath,
@@ -931,6 +935,7 @@ function validateAndNormalizeDestinationInquiry(
             "utmCampaign",
             "utmContent",
             "gclid",
+            "fbclid",
           ]
         : usesFixedSubmitSurface
         ? ["landingPath"]
@@ -1009,12 +1014,12 @@ function validateAndNormalizeDestinationInquiry(
         ? normalizedSourceGuide
         : null;
 
-    const rawGclid = attribution.gclid;
-    const normalizedGclid =
-      typeof rawGclid === "string" ? normalizeText(rawGclid).trim() : "";
-    const gclid = adClickIdPattern.test(normalizedGclid)
-      ? normalizedGclid
-      : null;
+    const normalizeAdClickId = (key: "gclid" | "fbclid") => {
+      const raw = attribution[key];
+      const normalized =
+        typeof raw === "string" ? normalizeText(raw).trim() : "";
+      return adClickIdPattern.test(normalized) ? normalized : null;
+    };
 
     normalizedAttribution = usesEntryAttribution
       ? {
@@ -1025,7 +1030,8 @@ function validateAndNormalizeDestinationInquiry(
           utmMedium: normalizeUtm("utmMedium"),
           utmCampaign: normalizeUtm("utmCampaign"),
           utmContent: normalizeUtm("utmContent"),
-          gclid,
+          gclid: normalizeAdClickId("gclid"),
+          fbclid: normalizeAdClickId("fbclid"),
         }
       : {
           landingPath,

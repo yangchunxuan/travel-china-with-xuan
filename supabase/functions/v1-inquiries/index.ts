@@ -67,6 +67,7 @@ const allowedNormalizedAttributionKeys = new Set([
   "utmCampaign",
   "utmContent",
   "gclid",
+  "fbclid",
 ]);
 const optionalAttributionKeys = [
   "utmSource",
@@ -77,9 +78,11 @@ const optionalAttributionKeys = [
 /**
  * Google's click id is an opaque URL-safe token it appends itself. Enforcing
  * that exact shape here, independently of the shared contract, keeps a crafted
- * `?gclid=` from smuggling traveller text past the public boundary.
+ * `?gclid=` or `?fbclid=` from smuggling traveller text past the public
+ * boundary. The bound covers Meta's much longer `fbclid`.
  */
-const adClickIdPattern = /^[A-Za-z0-9._-]{1,200}$/u;
+const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
+const adClickIdKeys = ["gclid", "fbclid"] as const;
 
 type PersistedInquiryAttribution = {
   entryPath: string;
@@ -89,6 +92,7 @@ type PersistedInquiryAttribution = {
   utmCampaign?: string;
   utmContent?: string;
   gclid?: string;
+  fbclid?: string;
 };
 
 interface CreateInquiryRpcResponse {
@@ -183,12 +187,13 @@ function persistedAttribution(
     result[key] = field;
   }
 
-  const gclid = candidate.gclid;
-  if (gclid !== undefined && gclid !== null) {
-    if (typeof gclid !== "string" || !adClickIdPattern.test(gclid)) {
+  for (const key of adClickIdKeys) {
+    const clickId = candidate[key];
+    if (clickId === undefined || clickId === null) continue;
+    if (typeof clickId !== "string" || !adClickIdPattern.test(clickId)) {
       return null;
     }
-    result.gclid = gclid;
+    result[key] = clickId;
   }
 
   return result;

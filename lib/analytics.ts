@@ -78,6 +78,13 @@ export interface EntryAttribution {
    * must not lose the click that paid for them.
    */
   gclid?: string;
+  /**
+   * Meta (Facebook/Instagram) click identifier, captured for the same reason
+   * as `gclid` and on the same terms. Meta's Conversions API reconciles a won
+   * trip against the ad click through this value, so a paid click whose id is
+   * never stored is spend that can never be attributed.
+   */
+  fbclid?: string;
 }
 
 const attributionKeys = [
@@ -90,8 +97,12 @@ const attributionKeys = [
 const disallowedAttributionControlCharacters =
   /[\u0000-\u001f\u007f\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/gu;
 const sourceGuidePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
-/** Google's own click id is always an opaque URL-safe token. */
-const adClickIdPattern = /^[A-Za-z0-9._-]{1,200}$/u;
+/**
+ * Ad-platform click ids are always opaque URL-safe tokens the platform
+ * appends itself. Meta's `fbclid` runs far longer than Google's `gclid`, so
+ * the bound is generous enough for both rather than per-platform.
+ */
+const adClickIdPattern = /^[A-Za-z0-9._-]{1,512}$/u;
 const allowedSourceGuides = new Set([
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
@@ -169,10 +180,12 @@ function normalizeStoredAttribution(value: unknown): EntryAttribution {
   );
   const sourceGuide = sanitizeSourceGuide(candidate.source_guide);
   const gclid = sanitizeAdClickId(candidate.gclid);
+  const fbclid = sanitizeAdClickId(candidate.fbclid);
 
   if (entryPath) attribution.entry_path = entryPath;
   if (sourceGuide) attribution.source_guide = sourceGuide;
   if (gclid) attribution.gclid = gclid;
+  if (fbclid) attribution.fbclid = fbclid;
 
   attributionKeys.forEach((key) => {
     const raw = candidate[key];
@@ -229,6 +242,10 @@ export function captureEntryAttribution() {
     if (!attribution.gclid) {
       const gclid = sanitizeAdClickId(params.get("gclid"));
       if (gclid) attribution.gclid = gclid;
+    }
+    if (!attribution.fbclid) {
+      const fbclid = sanitizeAdClickId(params.get("fbclid"));
+      if (fbclid) attribution.fbclid = fbclid;
     }
 
     writeStoredAttribution(attribution);

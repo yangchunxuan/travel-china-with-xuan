@@ -839,6 +839,7 @@ export function PlannerHandoff({
       utmCampaign: entryAttribution.utm_campaign ?? null,
       utmContent: entryAttribution.utm_content ?? null,
       gclid: entryAttribution.gclid ?? null,
+      fbclid: entryAttribution.fbclid ?? null,
     };
 
     return {
