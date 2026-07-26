@@ -5,7 +5,7 @@ const healthContractVersion = "homeground-admin-health.v1";
 const controlledHoldMessage =
   "Do not use this window for content or product decisions.";
 const insightNotice =
-  "Saved submissions, not unique people, customers, or market share.";
+  "Saved submissions excluding verified tests; not unique people, customers, or market share.";
 
 const destinationIds = [
   "beijing-great-wall",

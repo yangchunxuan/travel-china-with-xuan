@@ -1066,7 +1066,7 @@ function SystemHealthSection({
               <div>
                 <h3>近期仍保留的保存记录</h3>
                 <p>
-                  这些数字只是当前数据库计数，删除后可能回落；它们不能证明写入健康，也不代表不同真人。
+                  这是运行健康所需的原始写入量，包含已标记测试；删除后可能回落。它们不能证明写入健康，也不代表不同真人。
                 </p>
               </div>
               <Database size={22} aria-hidden="true" />
@@ -1228,8 +1228,8 @@ function MetricCard({
       ) : null}
       {metric.multiSelect ? (
         <p className={styles.smallNote}>
-          百分比含义：% of retained saved submissions selecting this
-          option（选择该选项的当前保留提交记录占比）。这是多选题，合计可以超过
+          百分比含义：% of retained non-test saved submissions selecting
+          this option（选择该选项的当前保留、且未标记为测试的提交记录占比）。这是多选题，合计可以超过
           100%，不是市场份额。
         </p>
       ) : null}
@@ -1313,9 +1313,9 @@ function SummarySection({
       <div className={styles.scopeNotice}>
         <BarChart3 size={22} aria-hidden="true" />
         <p>
-          <strong>Saved submissions, not unique people, customers, or market share.</strong>
+          <strong>Saved submissions excluding verified tests; not unique people, customers, or market share.</strong>
           <br />
-          下面是当前仍保留的已保存提交记录，不是不同访客、真实客户、成交或市场需求。
+          下面只汇总当前仍保留且未标记为测试的保存记录；它们仍不等于不同访客、真实客户、成交或市场需求。
           <br />
           这些汇总仍按受限数据处理；不要连续刷新，也不要把数字变化与通知时间对齐来推断单条询盘。
         </p>

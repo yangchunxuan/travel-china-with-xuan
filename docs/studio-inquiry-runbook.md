@@ -119,6 +119,11 @@ that need a reply.
    `created_last_24_hours` with the pilot traffic thresholds below. The query
    returns counts only—never Inquiry IDs, contact details or notes.
 
+   These are raw operational intake counts and include verified QA records.
+   For business reporting, use only the private non-test reporting source or
+   the aggregate classification summary described in
+   `inquiry-deployment.md`; never subtract an informal test count by hand.
+
 3. In WhatsApp Business, check unread conversations and the `Follow up` label.
    Cross-check any unhandled WhatsApp Gmail notification before closing it.
 

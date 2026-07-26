@@ -559,3 +559,46 @@ server-only `WHATSAPP_ENABLED=false`, then set repository variable
 Pages deployment. Keep the Email API, database and outbox running. Remove the
 Facebook Page WhatsApp action button until the same external-account receipt
 test passes again.
+
+## Verified test-submission classification
+
+Production QA submissions stay in the original Inquiry and outbox tables for
+their normal retention period. They are not deleted or edited. Migration
+`202607260001_homeground_test_markers.sql` creates a private marker table and
+the canonical `homeground_private.non_test_inquiries` reporting view.
+
+Apply the generic marker migration independently. Do **not** use a blind
+`supabase db push` when an environment has earlier unapplied migrations.
+`202607260002_homeground_admin_exclude_test_inquiries.sql` patches the optional
+Admin insight function and deliberately fails if the Admin read model is not
+already installed. Do not mark it applied or run it on production before the
+Admin deployment.
+Operational intake, notification, failure and retention health continues to
+count every physical row, including QA.
+
+Known production tests are marked only with the separately reviewed,
+repeat-safe maintenance transaction:
+
+```text
+supabase/maintenance/20260726_mark_known_test_inquiries.sql
+```
+
+That transaction must fail unless all 11 verified public references exist and
+the final marker batch matches exactly. Never substitute matching by contact
+value, note text, locale or time range.
+
+Verify aggregate truth without returning contact data or notes:
+
+```sql
+select *
+from public.get_homeground_inquiry_classification_summary();
+```
+
+The expected post-maintenance result on 26 July 2026 is 11 total saved
+submissions, 11 verified tests and 0 non-test saved submissions. “Non-test”
+still does not mean a unique person, qualified lead, customer or sale.
+
+Rollback uses
+`supabase/maintenance/20260726_unmark_known_test_inquiries.sql`; it removes
+only the fixed marker batch after another exact-reference check. It never
+deletes inquiries, outbox rows or email evidence.
