@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -49,8 +50,8 @@ test("the intake canary fails loudly on the exact outage it exists for", async (
 
   assert.match(
     workflow,
-    /unsupported_form_version/,
-    "the rejection code that ran for two and a half days must be asserted by name",
+    /error_code\}" != "validation_failed"/,
+    "anything except the one safe validation response must fail",
   );
   assert.match(
     workflow,
@@ -59,8 +60,8 @@ test("the intake canary fails loudly on the exact outage it exists for", async (
   );
   assert.match(
     workflow,
-    /ALLOWED_FORM_VERSIONS[\s\S]{0,200}ALLOWED_PRIVACY_NOTICE_VERSIONS/,
-    "the error must name both allow-lists, because the versions are paired",
+    /form\/privacy[\s\S]{0,100}allow-lists/,
+    "the error must direct the operator to both version allow-lists",
   );
 
   // Every branch that concludes something is wrong has to end the run.
@@ -73,24 +74,73 @@ test("the intake canary fails loudly on the exact outage it exists for", async (
 
 test("the intake canary cannot store an inquiry", async () => {
   const workflow = await source(canaryWorkflowPath);
+  const bodyStart = workflow.indexOf('body="$(');
+  const bodyEnd = workflow.indexOf(
+    'response_file="${workdir}/response-${locale}.json"',
+    bodyStart,
+  );
+  const bodyBuilder = workflow.slice(bodyStart, bodyEnd);
+  assert.ok(bodyStart >= 0 && bodyEnd > bodyStart);
 
-  // The probe omits journey, contact, attribution and antiAbuse, so a healthy
+  // The probe omits journey, contact and antiAbuse, so a healthy
   // endpoint rejects it before persistence. If that ever stops being true the
   // check would be writing a row into production every fifteen minutes.
   assert.match(
     workflow,
-    /schemaVersion: 2,\s*\n\s*formVersion: \$v,\s*\n\s*privacyNoticeVersion: \$v,\s*\n\s*locale: "en"/,
+    /schemaVersion: 2,[\s\S]*formVersion: \$v,[\s\S]*privacyNoticeVersion: \$v,[\s\S]*entryPath: "destination_timing"/,
     "the probe payload must stay deliberately incomplete",
   );
   assert.doesNotMatch(
-    workflow,
-    /"journey"|"contact"|"antiAbuse"|contact_email/,
+    bodyBuilder,
+    /\b(?:journey|contact|antiAbuse)\s*:|contact_email/,
     "the probe must never carry the fields that would make it persistable",
   );
   assert.match(
     workflow,
-    /if \[\[ -z "\$\{error_code\}" \]\]; then[\s\S]{0,400}exit 1/,
+    /fieldErrors\.journey == "required"[\s\S]*fieldErrors\.contact == "required"[\s\S]*fieldErrors\.antiAbuse == "required"/,
     "an accepted probe means it may have stored a row, and must fail the run",
+  );
+});
+
+test("the intake canary covers cached UTM payloads on every locale", async () => {
+  const workflow = await source(canaryWorkflowPath);
+
+  assert.match(workflow, /"en:\/" "zh:\/zh\/" "ko:\/ko\/"/);
+  assert.match(workflow, /utmSource: "canary"/);
+  assert.match(workflow, /utmMedium: "scheduled_probe"/);
+  assert.match(workflow, /utmCampaign: "utm-contract"/);
+  assert.match(
+    workflow,
+    /startswith\("attribution\."\)/,
+    "a UTM contract error must fail even when the endpoint returns validation_failed",
+  );
+  assert.match(workflow, /persistence_state\}" != "not_persisted"/);
+});
+
+test("the intake canary jq filter returns contract field names", async () => {
+  const workflow = await source(canaryWorkflowPath);
+  const filterMatch = workflow.match(
+    /contract_errors="\$\(\s*jq -r '([\s\S]*?)'\s*"\$\{response_file\}"/,
+  );
+  assert.ok(filterMatch, "the contract-error jq filter must be extractable");
+
+  const result = spawnSync("jq", ["-r", filterMatch[1]], {
+    encoding: "utf8",
+    input: JSON.stringify({
+      error: {
+        fieldErrors: {
+          journey: "required",
+          formVersion: "unsupported",
+          "attribution.utmSource": "unknown",
+        },
+      },
+    }),
+  });
+
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(
+    result.stdout.trim(),
+    "attribution.utmSource,formVersion",
   );
 });
 

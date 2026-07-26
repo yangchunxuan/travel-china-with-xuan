@@ -104,59 +104,100 @@ jobs:
 
           echo "Live site publishes ${version}"
 
-          # Deliberately incomplete. Required fields are missing, so a healthy
-          # endpoint always answers 422 and never stores a row; the version is
-          # reported separately from the missing fields, which is what we read.
-          body="$(
-            jq -nc --arg v "${version}" '{
-              schemaVersion: 2,
-              formVersion: $v,
-              privacyNoticeVersion: $v,
-              locale: "en"
-            }'
-          )"
+          # Probe all three public submit surfaces with the campaign fields that
+          # older cached pages may still send. Required journey, contact and
+          # anti-abuse fields stay absent, so the probe cannot be persisted.
+          for locale_and_path in "en:/" "zh:/zh/" "ko:/ko/"; do
+            locale="${locale_and_path%%:*}"
+            landing_path="${locale_and_path#*:}"
+            body="$(
+              jq -nc \
+                --arg v "${version}" \
+                --arg locale "${locale}" \
+                --arg landingPath "${landing_path}" \
+                '{
+                  schemaVersion: 2,
+                  formVersion: $v,
+                  privacyNoticeVersion: $v,
+                  entryPath: "destination_timing",
+                  locale: $locale,
+                  attribution: {
+                    landingPath: $landingPath,
+                    utmSource: "canary",
+                    utmMedium: "scheduled_probe",
+                    utmCampaign: "utm-contract"
+                  },
+                  experiment: null
+                }'
+            )"
 
-          response_file="${workdir}/response.json"
-          http_status="$(
-            curl \
-              --silent --show-error \
-              --connect-timeout 10 --max-time 30 \
-              --retry 2 --retry-all-errors \
-              --output "${response_file}" \
-              --write-out "%{http_code}" \
-              --request POST \
-              --header "Origin: ${SITE_ORIGIN}" \
-              --header "Content-Type: application/json" \
-              --header "idempotency-key: $(cat /proc/sys/kernel/random/uuid)" \
-              --data "${body}" \
-              "${endpoint}"
-          )"
+            response_file="${workdir}/response-${locale}.json"
+            http_status="$(
+              curl \
+                --silent --show-error \
+                --connect-timeout 10 --max-time 30 \
+                --retry 2 --retry-all-errors \
+                --output "${response_file}" \
+                --write-out "%{http_code}" \
+                --request POST \
+                --header "Origin: ${SITE_ORIGIN}" \
+                --header "Content-Type: application/json" \
+                --header "idempotency-key: $(cat /proc/sys/kernel/random/uuid)" \
+                --data "${body}" \
+                "${endpoint}"
+            )"
 
-          echo "Endpoint answered HTTP ${http_status}"
+            error_code="$(jq -r '.error.code // ""' "${response_file}")"
+            persistence_state="$(
+              jq -r '.error.persistenceState // ""' "${response_file}"
+            )"
+            contract_errors="$(
+              jq -r '
+                [
+                  (.error.fieldErrors // {} | keys[]) as $field
+                  | select(
+                      $field == "formVersion"
+                      or $field == "privacyNoticeVersion"
+                      or $field == "entryPath"
+                      or $field == "locale"
+                      or $field == "attribution"
+                      or ($field | startswith("attribution."))
+                    )
+                  | $field
+                ] | join(",")
+              ' "${response_file}"
+            )"
 
-          error_code="$(jq -r '.error.code // ""' "${response_file}")"
+            echo "${locale}: HTTP ${http_status}; ${error_code}; ${persistence_state}"
 
-          if [[ "${error_code}" == "unsupported_form_version" ]]; then
-            echo "::error::Intake is DOWN. The live site publishes ${version}, \
-          which the endpoint rejects as unsupported. Every enquiry is being \
-          refused. Add ${version} to ALLOWED_FORM_VERSIONS and \
-          ALLOWED_PRIVACY_NOTICE_VERSIONS, and deploy the matching v1-inquiries \
-          revision. See docs/inquiry-deployment.md."
-            exit 1
-          fi
+            if [[ "${http_status}" != "422" ||
+                  "${error_code}" != "validation_failed" ||
+                  "${persistence_state}" != "not_persisted" ]]; then
+              echo "::error::Intake is DOWN for ${locale}. Expected a safe \
+          422 validation_failed/not_persisted response, but received HTTP \
+          ${http_status}, ${error_code:-no error code}, \
+          ${persistence_state:-no persistence state}. Check the form/privacy \
+          allow-lists, Origin policy and Edge Function health."
+              exit 1
+            fi
 
-          if [[ -z "${error_code}" ]]; then
-            echo "::error::The probe was not rejected. It omits required fields, \
-          so an accepted probe means validation changed and this check may have \
-          stored a row. Inspect the newest inquiry before trusting this result."
-            exit 1
-          fi
+            if [[ -n "${contract_errors}" ]]; then
+              echo "::error::Intake rejects fields sent by a live or cached \
+          ${locale} form: ${contract_errors}. Campaign-labelled visitors may \
+          be unable to submit even though the version itself is accepted."
+              exit 1
+            fi
 
-          # 5xx means the function itself is unhealthy, which is also an outage.
-          if [[ "${http_status}" =~ ^5 ]]; then
-            echo "::error::The inquiry endpoint returned HTTP ${http_status}. \
-          Intake is unavailable regardless of the form version."
-            exit 1
-          fi
+            if ! jq -e '
+              .error.fieldErrors.journey == "required"
+              and .error.fieldErrors.contact == "required"
+              and .error.fieldErrors.antiAbuse == "required"
+            ' "${response_file}" >/dev/null; then
+              echo "::error::The deliberately incomplete ${locale} probe was \
+          not rejected for every persistence-critical field. Stop before this \
+          monitor can create production enquiries."
+              exit 1
+            fi
+          done
 
-          echo "Intake healthy: ${version} accepted; probe rejected as ${error_code}."
+          echo "Intake healthy: ${version} accepts the live UTM contract on en, zh and ko."

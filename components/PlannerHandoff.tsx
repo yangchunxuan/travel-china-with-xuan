@@ -24,6 +24,7 @@ import {
   currentDestinationInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
+  inquirySubmitSurfaceByLocale,
 } from "../lib/inquiryVersions";
 import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
 import {
@@ -824,24 +825,6 @@ export function PlannerHandoff({
   };
 
   const buildPayload = () => {
-    const search = new URLSearchParams(window.location.search);
-    const attribution: Record<string, string> = {
-      landingPath: window.location.pathname,
-    };
-    const attributionFields = [
-      ["utm_source", "utmSource"],
-      ["utm_medium", "utmMedium"],
-      ["utm_campaign", "utmCampaign"],
-    ] as const;
-    if (!serviceInterest) {
-      for (const [queryKey, payloadKey] of attributionFields) {
-        const value = stripUnsupportedControlCharacters(
-          search.get(queryKey) ?? "",
-        ).trim();
-        if (value) attribution[payloadKey] = value.slice(0, 100);
-      }
-    }
-
     return {
       schemaVersion: destinationInquirySchemaVersion,
       formVersion: currentDestinationInquiryFormVersion,
@@ -868,7 +851,9 @@ export function PlannerHandoff({
         roughBudgetPerPerson.trim() || null,
       note: inquiryNote,
       privacyNoticeVersion: currentPrivacyNoticeVersion,
-      attribution,
+      attribution: {
+        landingPath: inquirySubmitSurfaceByLocale[locale],
+      },
       experiment: null,
       antiAbuse: {
         companyWebsite,

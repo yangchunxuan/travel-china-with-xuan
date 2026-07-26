@@ -869,9 +869,7 @@ function validateAndNormalizeDestinationInquiry(
       input.formVersion === currentDestinationInquiryFormVersion;
     hasOnlyKeys(
       attribution,
-      usesFixedSubmitSurface
-        ? ["landingPath"]
-        : ["landingPath", "utmSource", "utmMedium", "utmCampaign"],
+      ["landingPath", "utmSource", "utmMedium", "utmCampaign"],
       "attribution",
       fieldErrors,
     );

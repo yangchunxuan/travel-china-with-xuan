@@ -496,6 +496,26 @@ test("published privacy copy reflects the production data path", async () => {
   assert.doesNotMatch(copy, /공개 전|미연결|발신자 미인증|설정 대기/);
 });
 
+test("the current planner payload never copies URL campaign labels", async () => {
+  const planner = await source(plannerHandoffPath);
+  const payloadStart = planner.indexOf("const buildPayload");
+  const payloadEnd = planner.indexOf(
+    "const applyServerValidation",
+    payloadStart,
+  );
+  const payloadBuilder = planner.slice(payloadStart, payloadEnd);
+
+  assert.ok(payloadStart >= 0 && payloadEnd > payloadStart);
+  assert.doesNotMatch(
+    payloadBuilder,
+    /URLSearchParams|utm_source|utm_medium|utm_campaign|utmSource|utmMedium|utmCampaign/,
+  );
+  assert.match(
+    payloadBuilder,
+    /landingPath:\s*inquirySubmitSurfaceByLocale\[locale\]/,
+  );
+});
+
 test("backend sources contain no hardcoded personal contact or secret", async () => {
   const combined = (
     await Promise.all([

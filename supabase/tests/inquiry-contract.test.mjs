@@ -208,17 +208,29 @@ test("rejects control characters while dropping invalid attribution", () => {
   assert.equal(result.fieldErrors["attribution.utmCampaign"], undefined);
 });
 
-test("current destination inquiries reject URL campaign labels", () => {
+test("current destination inquiries tolerate but discard URL campaign labels", () => {
   const payload = validDestinationPayload();
-  payload.attribution.utmSource = "youtube\u202ehidden";
-  payload.attribution.utmMedium = { unexpected: true };
-  payload.attribution.utmCampaign = "x".repeat(101);
+  payload.attribution.utmSource = "facebook";
+  payload.attribution.utmMedium = "paid_social";
+  payload.attribution.utmCampaign = "uk-seniors";
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.deepEqual(result.value.attribution, {
+    landingPath: inquirySubmitSurfaceByLocale.en,
+    utmSource: null,
+    utmMedium: null,
+    utmCampaign: null,
+  });
+});
+
+test("current destination inquiries still reject unknown attribution fields", () => {
+  const payload = validDestinationPayload();
+  payload.attribution.trackingId = "not-part-of-the-contract";
   const result = validateAndNormalizeInquiry(payload, validationConfig);
   assert.equal(result.ok, false);
   if (result.ok) return;
-  assert.equal(result.fieldErrors["attribution.utmSource"], "unknown");
-  assert.equal(result.fieldErrors["attribution.utmMedium"], "unknown");
-  assert.equal(result.fieldErrors["attribution.utmCampaign"], "unknown");
+  assert.equal(result.fieldErrors["attribution.trackingId"], "unknown");
 });
 
 test("current destination inquiries accept only the locale submit surface", () => {
