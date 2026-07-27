@@ -201,8 +201,8 @@ test("notification worker gives the monitored inbox a complete human handoff", a
     /Budget note: traveller context only, not a Homeground quote/,
   );
   assert.match(code, /escapeHtml\(roughBudgetPerPerson\)/);
-  const subjectStart = code.indexOf("const subject =");
-  const textStart = code.indexOf("const text =", subjectStart);
+  const subjectStart = code.indexOf("let subject:");
+  const textStart = code.indexOf("let text:", subjectStart);
   assert.ok(subjectStart >= 0);
   assert.ok(textStart > subjectStart);
   assert.doesNotMatch(
@@ -541,6 +541,7 @@ test("environment template covers the public form and server functions", async (
   const example = await source(envExamplePath);
   for (const variable of [
     "NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED",
+    "NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED",
     "NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL",
     "NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL",
     "NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY",
@@ -549,6 +550,10 @@ test("environment template covers the public form and server functions", async (
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH",
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO",
     "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED",
+    "NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED",
+    "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER",
+    "NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL",
+    "NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL",
     "SUPABASE_URL",
     "SUPABASE_SECRET_KEYS",
     "SUPABASE_SERVICE_ROLE_KEY",
@@ -577,6 +582,10 @@ test("environment template covers the public form and server functions", async (
     example,
     /^NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED=false$/m,
   );
+  assert.match(
+    example,
+    /^NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED=false$/m,
+  );
   assert.match(example, /^NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY=false$/m);
   assert.match(
     example,
@@ -584,11 +593,11 @@ test("environment template covers the public form and server functions", async (
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=2026-07-21\.1$/m,
+    /^ALLOWED_FORM_VERSIONS=2026-07-21\.1,2026-07-26\.1$/m,
   );
   assert.match(
     example,
-    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-21\.1$/m,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-21\.1,2026-07-26\.1$/m,
   );
   assert.doesNotMatch(
     example,
@@ -602,6 +611,7 @@ test("GitHub Pages build receives only explicit public Inquiry variables", async
   const workflow = await source(deployWorkflowPath);
   for (const variable of [
     "NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED",
+    "NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED",
     "NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL",
     "NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL",
     "NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY",
@@ -612,6 +622,10 @@ test("GitHub Pages build receives only explicit public Inquiry variables", async
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH",
     "NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO",
     "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED",
+    "NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED",
+    "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER",
+    "NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL",
+    "NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL",
   ]) {
     assert.match(
       workflow,

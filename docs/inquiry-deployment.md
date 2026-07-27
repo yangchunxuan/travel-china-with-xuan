@@ -90,13 +90,22 @@ Settings → Secrets and variables → Actions → Variables. They are public
 build-time configuration, never Edge Function secrets.
 
 Keep `NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED`,
+`NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED`,
 `NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY` and
 `NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED` `false` until their matching
-acceptance checks are complete. The Email form remains disabled when any
-required URL, notice, monitored inbox or localized reply commitment is absent.
+acceptance checks are complete. The homepage email-only form additionally
+requires its dedicated flag so an already-live general Inquiry backend cannot
+accidentally expose the new schema before its migration and functions are
+deployed. While that flag is false, the homepage uses the monitored `mailto`
+fallback instead of displaying a broken form.
 `NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL` must reach the same monitored inbox as
 `BRAND_NOTIFICATION_EMAIL`; this keeps the API notification and
 `[Homeground][Fallback]` mailto path in one Email queue.
+
+Enable `NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED` only after deploying the
+homepage-email migration and updated Edge Functions, allowing form and Privacy
+Notice version `2026-07-26.1`, and completing a production saved-reference and
+monitored-inbox receipt test.
 
 Set this WhatsApp intake repository variable only after the saved-enquiry and
 staff reply test passes:

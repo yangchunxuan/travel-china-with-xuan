@@ -54,7 +54,6 @@ export interface HomegroundCopy {
   hero: {
     eyebrow: string;
     title: string;
-    lead: string;
     trustLabel: string;
     trust: readonly string[];
     socialImageAlt: string;
@@ -188,6 +187,7 @@ export interface HomegroundCopy {
   footer: {
     studioLabel: string;
     privacy: string;
+    facebook: string;
     copyright: (year: number) => string;
   };
   schemaDescription: string;
@@ -309,10 +309,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "English",
     languageShort: "EN",
     metadata: {
-      title: "Plan a China trip around your real wishlist",
+      title: "Independent China trip planning with a real planner",
       description:
-        "Choose every place you want, compare the wishlist with your nights in China, then carry the same brief into a human planning conversation.",
-      openGraphTitle: "Homeground China — Check your China trip wishlist",
+        "Contact a Homeground China trip planner by WhatsApp or email. Choose the help you need, with scope and price confirmed before paid work.",
+      openGraphTitle: "Homeground China — Talk to a China trip planner",
     },
     skipLink: "Skip to main content",
     brandTagline: "Independent China trip planning",
@@ -331,7 +331,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "Open navigation",
       closeMenu: "Close navigation",
       plannerCta: {
-        new: "Start my trip brief",
+        new: "Talk to a China trip planner",
         inProgress: "Continue my trip brief",
         result: "Send my trip brief to Homeground",
         disabled: "Contact Homeground",
@@ -343,10 +343,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "One brief · A human next step",
+      eyebrow: "Direct contact · A human next step",
       title: "Tell us the China trip you want. We’ll work out the right way to help.",
-      lead:
-        "Share the basics once. A Homeground planner will review what you need, recommend the appropriate next step, and confirm the scope and price before any paid work begins.",
       trustLabel: "What happens next",
       trust: [
         "Free to enquire",
@@ -357,10 +355,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "The Forbidden City Corner Tower in Beijing reflected in its moat",
     },
     proof: {
-      eyebrow: "What personal planning changes",
-      title: "A realistic route needs more than a list of cities.",
+      eyebrow: "You choose how much help you need",
+      title: "Hand us the whole trip—or only the hardest parts.",
       intro:
-        "The first result only checks destination stay time. Human planning then tests transport, entry and exit cities, dates and the details that make the trip work.",
+        "Homeground can plan a private China trip from the beginning. Or keep the flights, hotels and independent time you have already chosen, and ask us to step in where professional judgment or local coordination matters. We consider the travellers, interests, accommodation, transport, reservations and daily pace together, then confirm the scope and fee before paid work begins.",
       imageAlt:
         "Small wooden boats crossing a misty lake in Hangzhou, with layered green hills behind",
       imageBadge: "Illustrative planning extract · Hangzhou",
@@ -369,51 +367,51 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       cardTag: "Example format, not a fixed package",
       extract: [
         {
-          term: "Move",
+          term: "Already fixed",
           detail:
             "Shanghai → Hangzhou, allowing for station access, luggage and the real transfer to the hotel.",
         },
         {
-          term: "Base",
+          term: "Still deciding",
           detail:
             "A base chosen around West Lake access, Lingyin travel time and the next departure.",
         },
         {
-          term: "Energy",
+          term: "Homeground can help",
           detail:
             "The arrival day stays light instead of forcing West Lake and Lingyin into one rushed block.",
         },
         {
-          term: "Still to confirm",
+          term: "Before work starts",
           detail:
             "Train time, arrival station, hotel location, luggage plan and weather.",
         },
       ],
-      pointLabel: "The point:",
+      pointLabel: "The principle",
       point:
-        "the timing check finds the tension without deleting your wishes. A planner resolves the actual route with you.",
-      handledLabel: "What the studio works through",
-      handledTitle: "The decisions behind the route",
+        "Keep the arrangements that already work. Preserve the independent time you want. Give Homeground the parts that need professional planning or coordination.",
+      handledLabel: "What travellers want to understand",
+      handledTitle: "It is still your trip. You do not have to do all of it alone.",
       handled: [
         {
-          title: "Transport logic",
+          title: "A trip that fits your group",
           detail:
-            "Flights, trains, transfer time and a realistic arrival day.",
+            "Companions, interests, walking tolerance and free time shape the plan—not only a list of city names.",
         },
         {
-          title: "Where to base yourself",
+          title: "Choose your level of help",
           detail:
-            "Neighbourhood, room needs and the walking each location creates.",
+            "Use a route review or route build, or extend the work to full-trip planning and selected local coordination.",
         },
         {
-          title: "Days that fit together",
+          title: "One joined-up trip",
           detail:
-            "Tickets, guide time, opening patterns and room to recover.",
+            "Experiences, accommodation, transport, reservations and daily pace are considered together.",
         },
         {
-          title: "A written scope",
+          title: "Clear before you pay",
           detail:
-            "What is planned, who delivers it and what remains outside the arrangement.",
+            "Scope, fee and responsibilities are agreed first; live prices and availability remain clearly marked.",
         },
       ],
     },
@@ -429,54 +427,69 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     studio: {
-      eyebrow: "The studio",
-      title: "One lead planner sees the whole journey. One team makes every detail work.",
+      eyebrow: "What happens after you contact us",
+      title: "Know the scope and fee before you pay.",
       intro:
-        "From the first conversation, your lead planner listens to how you want to experience China, then brings the cities, transport and pace into one coherent journey. You have one person who knows the trip from beginning to end, backed by a team bringing first-hand experience into the same plan.",
-      cta: "Meet the Homeground studio",
+        "You do not need to choose a package before you write. Start with what is already fixed. A planner reviews the same trip, recommends the appropriate level of help and explains the boundaries before you decide.",
+      cta: "Talk to a China trip planner",
       roles: [
         {
-          title: "We start by listening",
+          title: "Start with what you know",
           detail:
-            "Who you are travelling with, what matters most and how you want each day to feel become the starting point—not an afterthought.",
+            "Dates, booked flights, travelling party, priorities and a rough route are enough to begin. Missing details can be resolved in the conversation.",
         },
         {
-          title: "One person knows the whole journey",
+          title: "We put the next step in writing",
           detail:
-            "From the first conversation to the finished plan, your lead planner keeps the cities, transport, pace and priorities connected.",
+            "You see the recommended service, proposed outputs, fee, open questions and who would handle each planning or booking task.",
         },
         {
-          title: "Real experience shapes the details",
+          title: "You decide before work starts",
           detail:
-            "The team brings relevant planning and on-the-ground experience into the same itinerary, so it works beyond the page.",
+            "Nothing moves into paid planning until the scope is agreed. Details that depend on live availability stay marked as unconfirmed until checked.",
         },
       ],
     },
     faq: {
-      eyebrow: "What to know next",
-      title: "The questions that change the decision.",
-      intro: "The first check finds the useful conflict; a person handles the decisions.",
+      eyebrow: "Frequently asked questions",
+      title: "A few things you may want to know.",
+      intro: "",
       items: [
         {
-          question: "Is this a group tour?",
+          question: "Is this a fixed group tour?",
           answer:
-            "No fixed group package is required. We plan for solo travellers, couples, families, friends and private groups, then shape the route around that party.",
+            "No. You do not have to join a fixed group. Homeground can plan for solo travellers, couples, families, friends or a private group travelling together.",
         },
         {
-          question: "What happens after I request a planner review?",
+          question: "Can I get in touch if I only have a rough idea?",
           answer:
-            "A planner receives the same wishlist, nights, party, pace and priorities you entered. We then check dates, arrival and departure points, transport, walking needs and non-negotiables before detailed planning or a quote.",
+            "Yes. Start with your dates, party size and any cities already decided. We can work through what is still open in the conversation.",
         },
         {
-          question: "Who actually delivers the trip?",
+          question: "What if flights, hotels or part of the trip are already booked?",
           answer:
-            "Homeground shapes the journey, then checks suitable local delivery after the real details are clear. Before anything is confirmed, the service scope and delivery partner should be clear in writing.",
+            "You do not need to start over. We work around confirmed arrangements and point out possible timing conflicts, demanding transfers or missing pieces.",
+        },
+        {
+          question: "Can Homeground help with only one part of the trip?",
+          answer:
+            "Yes. You can ask us to look at the whole trip or only the part that is hardest to arrange, such as the city combination, transport connections, where to stay or one specific stretch of the journey.",
+        },
+        {
+          question: "What happens after I contact you?",
+          answer:
+            "A planner first understands the problem you need to solve. If continuing together makes sense, we confirm the service, scope and price before any paid work begins.",
+        },
+        {
+          question: "Who handles bookings and on-the-ground delivery?",
+          answer:
+            "That depends on the service you choose. Before work starts, we explain in writing what Homeground handles, which services are provided by local partners and what you would still book yourself.",
         },
         {
           question:
-            "Can you plan for children, parents or limited mobility?",
+            "Can you plan around children, parents or limited mobility?",
           answer:
-            "Yes. Walking distance, stairs, early starts, room setup, food needs and recovery time are planning inputs—not small notes added at the end.",
+            "Yes. Tell us early about walking, stairs, early starts, room setup, food requirements or rest needs. These conditions directly shape the route and each day’s schedule.",
         },
         {
           question: "What if flights or a few cities are already booked?",
@@ -488,10 +501,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     finalCta: {
       resultLabel: "Your trip brief is ready for a human review",
       inProgressLabel: "Your answers are saved as you go",
-      newLabel: "Your first trip brief is four answers away",
+      newLabel: "Next step",
       resultTitle: "Ready to turn this wishlist into a workable China trip?",
       inProgressTitle: "Finish the remaining questions to prepare your trip brief.",
-      newTitle: "Start with what you actually want from China.",
+      newTitle: "Want to talk about your China trip with Homeground?",
     },
     handoff: {
       eyebrow: "Human planning",
@@ -546,7 +559,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `Support reference: ${publicReference}`,
       successReplyContact: (channel, maskedContact, replySla) =>
         `${channel} · ${maskedContact}. We’ll reply${replySla ? ` within ${replySla}` : ""}.`,
-      backToRoute: "Back to my timing check",
+      backToRoute: "Back to my trip brief",
       previousRequestNotice: (publicReference) =>
         `Your earlier request ${publicReference} was sent with the previous route. These changes have not been sent.`,
       routeEditingNotice:
@@ -563,9 +576,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       rateLimited: (retryAfter) =>
         `Too many requests have been sent. Try again after ${retryAfter}.`,
       routeMismatch:
-        "This timing result has been updated. Review it, then send your request again.",
+        "The trip details in this brief have changed. Review them, then send your request again.",
       unsupportedRuleVersion:
-        "This timing result uses an older rule version. Refresh it, review the update and send again.",
+        "This trip brief uses an older planning-rule version. Refresh it, review the updated details and send again.",
       idempotencyConflict:
         "This request changed while it was being sent. Review the details and submit it again.",
       retry: "Try again",
@@ -592,11 +605,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     footer: {
       studioLabel: "China trip studio",
       privacy: "Privacy",
+      facebook: "Facebook",
       copyright: (year) =>
         `© ${year} Homeground China. Tailored journeys, planned with context.`,
     },
     schemaDescription:
-      "A registered China trip-planning studio offering fixed-scope written route services and custom full-trip planning and ground support.",
+      "A registered China trip-planning studio where travellers can contact a real planner by WhatsApp or email, choose fixed-scope written route services or custom full-trip support, and confirm scope before paid work begins.",
     finder: {
       hiddenTitle: "Find a sensible starting route",
       introEyebrow: "Start with you, not a map",
@@ -820,10 +834,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "简体中文",
     languageShort: "中文",
     metadata: {
-      title: "从真实愿望开始规划中国旅行",
+      title: "中国私人旅行规划｜联系真人规划师",
       description:
-        "保留所有想去的地方，对照在中国的住宿晚数找出时间冲突，再把同一份需求直接交给人工旅行规划师。",
-      openGraphTitle: "Homeground China｜检查你的中国旅行愿望清单",
+        "通过 WhatsApp 或邮箱联系 Homeground 中国旅行规划师。按需要选择帮助方式，付费工作开始前先确认范围和价格。",
+      openGraphTitle: "Homeground China｜联系中国旅行规划师",
     },
     skipLink: "跳到主要内容",
     brandTagline: "独立中国旅行规划",
@@ -842,7 +856,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "打开导航",
       closeMenu: "关闭导航",
       plannerCta: {
-        new: "开始填写旅行需求",
+        new: "联系旅行规划师",
         inProgress: "继续填写旅行信息",
         result: "提交旅行需求",
         disabled: "联系 Homeground",
@@ -854,10 +868,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "一份旅行简报 · 由真人继续",
+      eyebrow: "直接联系 · 由真人继续",
       title: "先说说你想要怎样的中国旅行。我们会判断接下来该怎样帮你。",
-      lead:
-        "基本信息只需填写一次。Homeground 规划师会先理解你的需求、建议合适的下一步，并在任何付费工作开始前确认范围和价格。",
       trustLabel: "接下来会发生什么",
       trust: [
         "提交需求免费",
@@ -867,10 +879,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       socialImageAlt: "北京故宫角楼倒映在护城河中",
     },
     proof: {
-      eyebrow: "旅行规划师会补上什么",
-      title: "可执行的路线，不只是几个城市的排列。",
+      eyebrow: "你决定需要多少帮助",
+      title: "整趟旅行交给我们，或只让我们处理最难的部分。",
       intro:
-        "初步结果只比较目的地停留时间；旅行规划师再核对交通、进出城市、日期和真正影响落地的细节。",
+        "你可以让 Homeground 从头规划一趟私人中国旅行，也可以保留已经订好的航班、酒店和想自己探索的时间，只把需要专业判断或本地协调的部分交给我们。下方杭州示例展示的，是规划师如何把住宿、交通、预约和每天的节奏放在一起判断。",
       imageAlt: "杭州薄雾中的湖面上，两艘木船驶过远处层叠的青山",
       imageBadge: "规划示例节选 · 杭州",
       cardLabel: "得到路线之后，我们会补上什么",
@@ -878,45 +890,45 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       cardTag: "仅展示规划方式，并非固定产品",
       extract: [
         {
-          term: "转场",
+          term: "已经确定",
           detail:
             "上海 → 杭州，不只计算车程，也预留进出车站、行李和到酒店的时间。",
         },
         {
-          term: "落脚点",
+          term: "还需要决定",
           detail:
             "结合西湖步行便利度、前往灵隐的时间和下一程出发方式选择住宿区域。",
         },
         {
-          term: "体力",
+          term: "Homeground 可以协助",
           detail: "抵达日保持轻松，不把西湖和灵隐寺硬塞进一段匆忙行程。",
         },
         {
-          term: "仍需确认",
+          term: "开始前说清",
           detail: "车次、抵达车站、酒店位置、行李安排和当日天气。",
         },
       ],
-      pointLabel: "重点在于：",
+      pointLabel: "我们的原则",
       point:
-        "时间检查负责发现冲突，但不替你删掉愿望；人工规划师再与你一起解决真正的路线。",
-      handledLabel: "工作室会逐项梳理",
-      handledTitle: "藏在路线背后的决定",
+        "已有安排不必推倒重来；需要自由的日子可以保留，需要专业判断或协调的部分再交给 Homeground。",
+      handledLabel: "客户真正想看清",
+      handledTitle: "这趟旅行仍然属于你，但不必全部由你完成。",
       handled: [
         {
-          title: "交通逻辑",
-          detail: "航班、高铁、转场耗时，以及抵达当天能承受的安排。",
+          title: "旅行是否真正适合我们",
+          detail: "同行者、兴趣、体力和自由时间会改变安排，而不只是更换几个目的地名称。",
         },
         {
-          title: "住在哪里",
-          detail: "住宿区域、房型需求，以及不同位置带来的步行负担。",
+          title: "需要多少帮助由我们决定",
+          detail: "可以只审核或建立路线，也可以选择完整规划、部分具体安排和在地协调。",
         },
         {
-          title: "每天如何衔接",
-          detail: "门票、向导时间、开放规律和恢复体力的空间。",
+          title: "所有安排放在一起考虑",
+          detail: "体验、住宿、交通、预约和每日节奏不能分别合理，合在一起却让人疲惫。",
         },
         {
-          title: "书面服务范围",
-          detail: "谁负责规划、谁落地执行，以及哪些内容不在安排之内。",
+          title: "付费前没有模糊地带",
+          detail: "先确认服务范围、费用和双方责任；实时价格与余位不会被写成已经确定。",
         },
       ],
     },
@@ -932,68 +944,78 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     studio: {
-      eyebrow: "工作室",
-      title: "一位主规划师了解你的全程，一支团队让每个细节落地。",
+      eyebrow: "联系之后会发生什么",
+      title: "范围和费用，先确认再付费。",
       intro:
-        "从第一次沟通开始，主规划师会先听懂你想怎样看中国，再把城市、交通和停留节奏连成一段完整旅程。你始终只需要和一位了解全程的人沟通；在背后，团队会把各自在当地接待中积累的经验带进同一份方案。",
-      cta: "认识 Homeground 工作室团队",
+        "联系 Homeground 前不需要先猜该买哪一种服务。从已经确定的内容开始，规划师会查看同一份旅行信息，建议合适的帮助方式，并在你决定前说明边界。",
+      cta: "联系旅行规划师",
       roles: [
         {
-          title: "先听懂你想怎样看中国",
+          title: "先从你已经知道的内容开始",
           detail:
-            "和谁同行、最期待什么、每天想走多快，都会成为路线的起点，而不是最后补上的备注。",
+            "日期、已订航班、同行人、优先项和大致路线足够开始；其余细节可在沟通中补充。",
         },
         {
-          title: "一位主规划师了解全程",
+          title: "先给出书面的下一步",
           detail:
-            "从第一次沟通到方案落定，始终有人掌握城市、交通、节奏和你的优先级。",
+            "书面说明会列出建议的服务、交付内容、费用、待确认事项，以及各项工作的负责人。",
         },
         {
-          title: "一支团队让细节落地",
+          title: "由你决定是否开始",
           detail:
-            "团队把相关的规划与当地接待经验带进同一份方案，让路线不只停留在页面上。",
+            "双方确认范围后才开始付费工作；依赖实时余位的细节，在实际核对前会继续标为未确认。",
         },
       ],
     },
     faq: {
-      eyebrow: "接下来需要知道的",
-      title: "真正影响决定的几个问题。",
-      intro: "第一步先找出有价值的冲突，真正的取舍交给人与人沟通。",
+      eyebrow: "常见问题",
+      title: "你可能还想知道",
+      intro: "",
       items: [
         {
-          question: "这是跟团游吗？",
+          question: "这是固定跟团游吗？",
           answer:
-            "不要求参加固定团。无论独自出行、情侣、家庭、朋友还是私人小团，我们都会围绕实际同行者来设计路线。",
+            "不是。你不需要参加固定团。Homeground 可以为个人、情侣、家庭、朋友或自组小团提供规划。",
         },
         {
-          question: "请旅行规划师进一步调整后会发生什么？",
+          question: "我只有一个大概想法，也可以联系吗？",
           answer:
-            "旅行规划师会收到你填写的完整愿望清单、晚数、同行者、节奏和优先项，再核对日期、进出城市、交通、步行需求和不能妥协的事项。深入沟通后，才会进入详细规划和报价。",
+            "可以。先告诉我们人数、时间和已经确定的城市即可。还没想清楚的部分，可以在后续聊天中一起梳理。",
         },
         {
-          question: "最终是谁来落地执行？",
+          question: "我已经订好了机票、酒店或部分行程，怎么办？",
           answer:
-            "Homeground 负责设计行程，并在条件明确后人工核对合适的当地服务。确认之前，服务范围和实际执行方都会以书面方式说明。",
+            "不需要重新开始。我们会围绕已经确定的安排继续规划，并指出可能存在的时间冲突、转场负担或遗漏事项。",
         },
         {
-          question: "可以为孩子、父母或行动不便的人规划吗？",
+          question: "Homeground 可以只帮我处理一部分吗？",
           answer:
-            "可以。步行距离、台阶、早起、房型、饮食需求和休息时间，都会从一开始进入规划，而不是最后随手加上的备注。",
+            "可以。你可以把整趟旅行交给我们，也可以只讨论最难安排的部分，例如城市组合、交通衔接、住宿区域或某一段具体行程。",
         },
         {
-          question: "如果机票或部分城市已经订好了怎么办？",
+          question: "联系之后会发生什么？",
           answer:
-            "保留。在旅行简报或后续沟通中告诉我们已经确定的机场、日期和必去地点，规划师会据此继续安排。",
+            "规划师会先了解你现在最需要解决的问题。如果适合继续合作，我们会在任何付费工作开始前说明服务内容、范围和价格。",
+        },
+        {
+          question: "谁负责实际预订和执行？",
+          answer:
+            "这取决于你选择的服务。开始前，我们会书面说明 Homeground 负责什么、哪些服务由当地合作方提供，以及哪些项目仍需你自行预订。",
+        },
+        {
+          question: "可以考虑孩子、父母或行动不便者的需求吗？",
+          answer:
+            "可以。请尽早告诉我们步行、台阶、早起、房型、饮食或休息方面的限制，这些条件会直接影响路线和每日安排。",
         },
       ],
     },
     finalCta: {
       resultLabel: "你的旅行需求已准备好进入人工复核",
       inProgressLabel: "你的选择会随进度保留",
-      newLabel: "回答四个问题，先准备一份旅行简报",
+      newLabel: "下一步",
       resultTitle: "准备把这份愿望清单变成真正可执行的旅行吗？",
       inProgressTitle: "完成剩余问题，准备你的旅行简报。",
-      newTitle: "先从你真正想去的地方开始。",
+      newTitle: "想和 Homeground 聊聊你的中国旅行？",
     },
     handoff: {
       eyebrow: "人工旅行规划",
@@ -1042,7 +1064,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `查询参考号：${publicReference}`,
       successReplyContact: (channel, maskedContact, replySla) =>
         `${channel} · ${maskedContact}。我们会${replySla ? `在${replySla}内` : ""}回复。`,
-      backToRoute: "返回时间检查",
+      backToRoute: "返回旅行简报",
       previousRequestNotice: (publicReference) =>
         `之前的咨询 ${publicReference} 使用的是上一版路线；当前修改尚未发送。`,
       routeEditingNotice:
@@ -1058,9 +1080,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       rateLimited: (retryAfter) =>
         `短时间内发送次数过多，请在 ${retryAfter} 后再试。`,
       routeMismatch:
-        "时间判断已经更新。请先查看最新结果，再重新发送咨询。",
+        "旅行简报中的信息已经变化。请先查看最新内容，再重新发送咨询。",
       unsupportedRuleVersion:
-        "这份时间判断使用了旧版规则。请刷新并查看更新结果，再重新发送。",
+        "这份旅行简报使用了旧版规划规则。请刷新并查看更新内容，再重新发送。",
       idempotencyConflict:
         "发送过程中咨询内容发生了变化。请检查后重新提交。",
       retry: "重试",
@@ -1086,11 +1108,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     footer: {
       studioLabel: "中国旅行规划工作室",
       privacy: "隐私说明",
+      facebook: "Facebook 主页",
       copyright: (year) =>
         `© ${year} Homeground China。每一段旅程，都从真实需求出发。`,
     },
     schemaDescription:
-      "一家已登记的中国旅行规划工作室，提供固定范围的书面路线服务，以及按实际行程定制的全程规划与落地支持。",
+      "一家已登记的中国旅行规划工作室，可通过 WhatsApp 或邮箱直接联系真人规划师，选择固定范围的书面路线服务或定制全程支持，并在付费工作开始前确认范围。",
     finder: {
       hiddenTitle: "找到一条合理的初步路线",
       introEyebrow: "先看你需要什么，而不是先看地图",
@@ -1294,10 +1317,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "한국어",
     languageShort: "한국어",
     metadata: {
-      title: "진짜 희망 목록에서 시작하는 중국 여행",
+      title: "중국 개별 여행 설계｜사람 플래너와 상담하기",
       description:
-        "가고 싶은 곳을 모두 남기고 중국 체류 숙박일수와 비교한 뒤, 같은 여행 요청서를 사람 플래너에게 전달하세요.",
-      openGraphTitle: "Homeground China | 중국 여행 희망 목록 확인",
+        "WhatsApp 또는 이메일로 Homeground 중국 여행 플래너에게 문의하세요. 필요한 도움을 고르고 유료 작업 전에 범위와 가격을 확인합니다.",
+      openGraphTitle: "Homeground China | 중국 여행 플래너와 상담하기",
     },
     skipLink: "본문으로 바로가기",
     brandTagline: "독립 중국 여행 플래닝",
@@ -1316,7 +1339,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       plannerCta: {
-        new: "여행 요청서 시작하기",
+        new: "중국 여행 플래너와 상담하기",
         inProgress: "여행 정보 계속 입력하기",
         result: "Homeground에 여행 요청 보내기",
         disabled: "Homeground에 문의하기",
@@ -1328,10 +1351,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "하나의 여행 브리프 · 사람 플래너의 다음 단계",
+      eyebrow: "바로 문의 · 사람 플래너의 다음 단계",
       title: "원하는 중국 여행을 들려주세요. 어떤 도움이 필요한지 함께 판단합니다.",
-      lead:
-        "기본 여행 정보는 한 번만 알려 주세요. Homeground 플래너가 요청을 검토하고 적절한 다음 단계를 제안한 뒤, 유료 작업 전에 범위와 가격을 확인합니다.",
       trustLabel: "다음 단계",
       trust: [
         "문의 제출 무료",
@@ -1341,10 +1362,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       socialImageAlt: "해자에 비친 베이징 자금성 각루",
     },
     proof: {
-      eyebrow: "개인 맞춤 설계가 바꾸는 것",
-      title: "실행 가능한 동선은 도시 이름 목록만으로 완성되지 않습니다.",
+      eyebrow: "도움의 범위는 여행자가 정합니다",
+      title: "여행 전체를 맡기거나, 가장 어려운 부분만 맡기세요.",
       intro:
-        "첫 결과는 목적지 체류 시간만 비교합니다. 이후 사람 플래너가 교통, 입출국 도시, 날짜와 실제 여행을 좌우하는 조건을 확인합니다.",
+        "Homeground에 처음부터 중국 맞춤 여행 전체를 맡길 수 있습니다. 이미 예약한 항공편과 숙소, 직접 여행하고 싶은 시간은 그대로 두고 전문적인 판단이나 현지 조율이 필요한 부분만 도움을 받아도 됩니다. 아래 항저우 예시는 숙소, 교통, 예약과 하루의 속도를 함께 판단하는 방식을 보여 줍니다.",
       imageAlt: "안개 낀 항저우 호수 위를 지나는 나룻배와 겹겹이 이어진 푸른 산",
       imageBadge: "여행 설계 예시 · 항저우",
       cardLabel: "동선 초안이 나온 뒤 더해지는 것",
@@ -1352,48 +1373,48 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       cardTag: "고정 패키지가 아닌 설계 방식 예시",
       extract: [
         {
-          term: "이동",
+          term: "이미 확정한 것",
           detail:
             "상하이 → 항저우, 열차 시간뿐 아니라 역 이동, 수하물과 호텔까지의 실제 환승 시간을 포함합니다.",
         },
         {
-          term: "숙소 위치",
+          term: "아직 결정할 것",
           detail:
             "서호 접근성, 링인사 이동 시간과 다음 출발 동선을 함께 보고 숙소 위치를 고릅니다.",
         },
         {
-          term: "체력",
+          term: "Homeground의 도움",
           detail:
             "도착일은 가볍게 두고 서호와 링인사를 서둘러 한 번에 넣지 않습니다.",
         },
         {
-          term: "추가 확인",
+          term: "시작 전에 확인",
           detail:
             "열차 시간, 도착역, 호텔 위치, 수하물 계획과 당일 날씨입니다.",
         },
       ],
-      pointLabel: "핵심은:",
+      pointLabel: "기본 원칙",
       point:
-        "시간 확인은 희망 장소를 지우지 않고 충돌을 찾습니다. 실제 동선은 플래너와 함께 해결합니다.",
-      handledLabel: "스튜디오가 함께 검토하는 것",
-      handledTitle: "여행 동선 뒤에 있는 실제 결정들",
+        "이미 잘 준비한 내용은 유지하고 원하는 자유 시간도 남겨 둡니다. 전문적인 설계나 조율이 필요한 부분만 Homeground에 맡길 수 있습니다.",
+      handledLabel: "여행자가 정말 알고 싶은 것",
+      handledTitle: "여전히 나의 여행이지만, 모든 일을 혼자 할 필요는 없습니다.",
       handled: [
         {
-          title: "교통의 흐름",
-          detail: "항공, 열차, 이동 시간과 무리 없는 도착일 계획.",
+          title: "우리 일행에게 맞는 여행인가",
+          detail: "일행, 관심사, 체력과 자유 시간이 계획을 바꿉니다. 도시 이름만 바꾸는 것이 아닙니다.",
         },
         {
-          title: "어디에 머물지",
-          detail: "숙소 지역, 객실 조건과 위치에 따라 달라지는 도보량.",
+          title: "도움의 범위는 직접 선택",
+          detail: "동선 검토나 설계만 받을 수도 있고, 여행 전체 설계와 일부 현지 조율까지 확장할 수도 있습니다.",
         },
         {
-          title: "이어지는 하루",
-          detail: "입장권, 가이드 시간, 운영 일정과 회복할 여유.",
+          title: "하나로 연결된 여행",
+          detail: "경험, 숙소, 교통, 예약과 하루의 속도를 따로 보지 않고 함께 판단합니다.",
         },
         {
-          title: "문서로 확인하는 범위",
+          title: "결제 전에 분명하게",
           detail:
-            "무엇을 설계하고 누가 실행하며 어떤 항목이 포함되지 않는지.",
+            "범위, 비용과 책임을 먼저 합의하고 실시간 가격과 잔여석은 확인 전까지 구분해 둡니다.",
         },
       ],
     },
@@ -1409,69 +1430,79 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     studio: {
-      eyebrow: "스튜디오",
-      title: "한 명의 전담 플래너가 여정 전체를 이해하고, 한 팀이 모든 디테일을 완성합니다.",
+      eyebrow: "연락한 다음에는",
+      title: "문제와 범위, 비용을 확인한 뒤 결제 여부를 결정하세요.",
       intro:
-        "첫 상담부터 전담 플래너가 어떤 방식으로 중국을 경험하고 싶은지 듣고, 도시와 교통, 여행 속도를 하나의 자연스러운 여정으로 연결합니다. 여행자는 전체 일정을 이해하는 한 명의 플래너를 중심으로 편하게 소통하고, 그 뒤에서는 팀의 현장 경험이 같은 계획에 더해집니다.",
-      cta: "Homeground 스튜디오 팀 만나기",
+        "연락하기 전에 어떤 서비스를 골라야 할지 먼저 결정할 필요는 없습니다. 이미 정해진 내용부터 보내 주세요. 플래너가 같은 여행 정보를 검토하고 적절한 도움의 범위와 경계를 설명한 뒤, 계속할지는 여행자가 결정합니다.",
+      cta: "중국 여행 플래너와 상담하기",
       roles: [
         {
-          title: "먼저 여행자를 이해합니다",
+          title: "알고 있는 내용부터 시작합니다",
           detail:
-            "누구와 함께하는지, 무엇이 가장 중요한지, 하루를 어떤 속도로 보내고 싶은지가 계획의 출발점이 됩니다.",
+            "날짜, 예약한 항공편, 일행, 우선순위와 대략적인 동선이면 시작하기에 충분합니다. 빠진 내용은 대화에서 확인할 수 있습니다.",
         },
         {
-          title: "한 명이 여정 전체를 압니다",
+          title: "다음 단계를 문서로 확인합니다",
           detail:
-            "첫 상담부터 계획이 완성될 때까지, 전담 플래너가 도시, 교통, 여행 속도와 우선순위를 하나로 연결합니다.",
+            "추천 서비스, 예정된 결과물, 비용, 남은 질문과 각 설계 또는 예약 업무의 담당자를 확인할 수 있습니다.",
         },
         {
-          title: "현장 경험이 디테일을 완성합니다",
+          title: "시작 여부는 여행자가 결정합니다",
           detail:
-            "팀의 관련 여행 설계와 현지 응대 경험을 같은 일정에 더해, 화면 밖 실제 여행에서도 자연스럽게 이어지도록 합니다.",
+            "양측이 범위에 동의한 뒤에만 유료 작업을 시작합니다. 실시간 잔여석에 따라 달라지는 정보는 확인 전까지 미확정으로 남깁니다.",
         },
       ],
     },
     faq: {
-      eyebrow: "다음으로 알아둘 것",
-      title: "결정을 바꾸는 중요한 질문들.",
-      intro: "첫 확인은 중요한 충돌을 찾고, 실제 선택은 사람과의 대화에서 해결합니다.",
+      eyebrow: "자주 묻는 질문",
+      title: "연락하기 전에 궁금할 수 있는 내용",
+      intro: "",
       items: [
         {
-          question: "단체 패키지여행인가요?",
+          question: "정해진 단체 패키지여행인가요?",
           answer:
-            "정해진 단체 패키지에 참여할 필요는 없습니다. 혼자, 커플, 가족, 친구, 소규모 단독 그룹 등 실제 일행에 맞춰 여행 동선을 설계합니다.",
+            "아니요. 정해진 단체 패키지에 참여할 필요가 없습니다. Homeground는 혼자, 커플, 가족, 친구 또는 단독 소그룹 여행을 계획할 수 있습니다.",
         },
         {
-          question: "플래너 검토를 요청하면 다음에는 무엇을 하나요?",
+          question: "아직 대략적인 생각만 있어도 문의할 수 있나요?",
           answer:
-            "플래너는 입력한 전체 희망 목록, 숙박일수, 일행, 속도와 우선순위를 그대로 받습니다. 날짜, 입출국 도시, 교통, 도보 조건과 꼭 지켜야 할 사항을 확인한 뒤 자세한 설계와 견적을 논의합니다.",
+            "네. 인원, 일정과 이미 정한 도시부터 알려 주세요. 아직 결정하지 못한 내용은 이후 대화에서 함께 정리할 수 있습니다.",
         },
         {
-          question: "실제 여행 서비스는 누가 운영하나요?",
+          question: "항공권, 호텔이나 일부 일정을 이미 예약했다면요?",
           answer:
-            "Homeground가 여행을 설계한 뒤 실제 조건이 분명해지면 적합한 현지 서비스를 확인합니다. 확정 전 서비스 범위와 실제 운영 주체를 문서로 분명히 안내합니다.",
+            "처음부터 다시 시작할 필요는 없습니다. 확정된 일정을 기준으로 계속 계획하면서 시간 충돌, 부담스러운 이동이나 빠진 부분을 알려 드립니다.",
+        },
+        {
+          question: "Homeground에 여행의 한 부분만 맡길 수도 있나요?",
+          answer:
+            "네. 여행 전체를 맡기거나 도시 조합, 교통 연결, 숙박 지역 또는 특정 구간처럼 가장 어려운 부분만 의논할 수 있습니다.",
+        },
+        {
+          question: "문의한 다음에는 어떻게 진행되나요?",
+          answer:
+            "플래너가 먼저 지금 해결해야 할 문제를 파악합니다. 함께 진행하는 것이 적합하다면 유료 작업을 시작하기 전에 서비스 내용, 범위와 비용을 안내합니다.",
+        },
+        {
+          question: "예약과 현지 서비스는 누가 담당하나요?",
+          answer:
+            "선택한 서비스에 따라 달라집니다. 시작 전에 Homeground가 담당하는 일, 현지 협력사가 제공하는 서비스와 여행자가 직접 예약할 항목을 문서로 안내합니다.",
         },
         {
           question:
-            "아이, 부모님 또는 이동이 불편한 일행도 설계할 수 있나요?",
+            "아이, 부모님 또는 이동이 불편한 일행도 고려할 수 있나요?",
           answer:
-            "네. 도보 거리, 계단, 이른 출발, 객실 구성, 식사 조건과 회복 시간은 마지막에 덧붙이는 메모가 아니라 처음부터 반영하는 설계 조건입니다.",
-        },
-        {
-          question: "항공권이나 일부 도시를 이미 예약했다면요?",
-          answer:
-            "그대로 두세요. 여행 브리프나 후속 상담에서 확정된 공항, 날짜와 꼭 가고 싶은 장소를 알려 주시면 플래너가 반영합니다.",
+            "네. 도보, 계단, 이른 출발, 객실 구성, 식사나 휴식에 필요한 조건을 미리 알려 주세요. 이러한 조건은 동선과 하루 일정을 직접 바꿉니다.",
         },
       ],
     },
     finalCta: {
       resultLabel: "여행 요청서가 사람의 검토를 받을 준비가 되었습니다",
       inProgressLabel: "답변은 진행하는 동안 저장됩니다",
-      newLabel: "네 가지 답변으로 첫 여행 브리프를 준비합니다",
+      newLabel: "다음 단계",
       resultTitle: "이 희망 목록을 실행 가능한 중국 여행으로 만들까요?",
       inProgressTitle: "남은 질문에 답하고 여행 브리프를 준비하세요.",
-      newTitle: "중국에서 정말 가고 싶은 곳부터 시작하세요.",
+      newTitle: "Homeground와 중국 여행 이야기를 나눠 볼까요?",
     },
     handoff: {
       eyebrow: "1:1 여행 플래닝",
@@ -1525,7 +1556,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         `문의 확인 번호: ${publicReference}`,
       successReplyContact: (channel, maskedContact, replySla) =>
         `${channel} · ${maskedContact}. ${replySla ? `${replySla} 이내에 ` : ""}답변드리겠습니다.`,
-      backToRoute: "시간 확인으로 돌아가기",
+      backToRoute: "여행 브리프로 돌아가기",
       previousRequestNotice: (publicReference) =>
         `이전 문의 ${publicReference}는 이전 여행 동선으로 전송되었습니다. 현재 변경 사항은 아직 전송되지 않았습니다.`,
       routeEditingNotice:
@@ -1542,9 +1573,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       rateLimited: (retryAfter) =>
         `짧은 시간에 너무 많은 문의가 전송되었습니다. ${retryAfter} 후 다시 시도해 주세요.`,
       routeMismatch:
-        "시간 판단이 업데이트되었습니다. 새 결과를 확인한 뒤 문의를 다시 보내 주세요.",
+        "여행 브리프의 정보가 변경되었습니다. 최신 내용을 확인한 뒤 문의를 다시 보내 주세요.",
       unsupportedRuleVersion:
-        "이 시간 판단은 이전 규칙으로 만들어졌습니다. 새로 고침 후 업데이트된 결과를 확인하고 다시 보내 주세요.",
+        "이 여행 브리프는 이전 플래닝 규칙으로 만들어졌습니다. 새로 고침 후 업데이트된 내용을 확인하고 다시 보내 주세요.",
       idempotencyConflict:
         "전송 중 문의 내용이 변경되었습니다. 내용을 확인한 뒤 다시 제출해 주세요.",
       retry: "다시 시도",
@@ -1570,11 +1601,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     footer: {
       studioLabel: "중국 여행 플래닝 스튜디오",
       privacy: "개인정보 처리 안내",
+      facebook: "Facebook 페이지",
       copyright: (year) =>
         `© ${year} Homeground China. 실제 조건을 바탕으로 설계하는 맞춤 여행.`,
     },
     schemaDescription:
-      "범위가 명확한 서면 여행 동선 서비스와 맞춤 전체 여행 설계 및 현지 지원을 제공하는 중국 등록 여행 플래닝 스튜디오.",
+      "WhatsApp 또는 이메일로 실제 플래너와 상담하고, 범위가 명확한 서면 여행 동선 서비스나 맞춤 전체 여행 지원을 선택한 뒤 유료 작업 범위를 먼저 확인하는 중국 등록 여행 플래닝 스튜디오.",
     finder: {
       hiddenTitle: "현실적인 여행 동선 찾기",
       introEyebrow: "지도보다 사람부터",

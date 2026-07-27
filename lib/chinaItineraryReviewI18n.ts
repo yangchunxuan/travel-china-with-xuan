@@ -17,8 +17,8 @@ export interface ChinaItineraryReviewCopy {
     lead: string;
     pricesAriaLabel: string;
     prices: readonly { price: string; label: string }[];
-    choose: string;
-    conversationCta: string;
+    consultation: string;
+    compareServices: string;
     boundary: string;
   };
   reviewBoard: {
@@ -164,17 +164,17 @@ const en: ChinaItineraryReviewCopy = {
     eyebrow: "China itinerary review & route planning",
     title: "Get the route right before you book the rest.",
     lead:
-      "Already have a day-by-day plan? We can review it. Starting with dates, priorities and a wishlist? We can build the route structure. Need planning, arrangements and ground support for the whole trip? Start with the same trip brief.",
+      "Not sure whether you need a route review, a new route or full-trip support? Talk to a planner by WhatsApp or leave your email. If you already know what you need, the three paid services remain available below.",
     pricesAriaLabel: "Route planning prices",
     prices: [
       { price: "US$69", label: "route review" },
       { price: "US$129", label: "route build" },
       { price: "Custom quote", label: "full-trip support" },
     ],
-    choose: "Choose my planning path",
-    conversationCta: "Start a free trip brief",
+    consultation: "Talk to a China trip planner",
+    compareServices: "Compare the three services",
     boundary:
-      "The US$69 and US$129 options are clearly scoped written route services. Full-trip planning and ground support is shaped around the actual journey and quoted separately. Start with the trip brief; no payment or file upload is needed here.",
+      "Contacting a planner is an enquiry, not a finished route or planning deliverable. We confirm the suitable service, scope, price or quote and delivery timing before sending payment instructions. Paid work begins after payment is confirmed.",
   },
   reviewBoard: {
     title: "Illustrative review excerpt",
@@ -231,7 +231,7 @@ const en: ChinaItineraryReviewCopy = {
         "This reviews an existing route. It does not build several new options, make reservations or provide ongoing chat support.",
       button: "Request a route review",
       note:
-        "Complete the trip brief first. Add an outline or shareable link if useful; we ask for the full route after confirming the request fits.",
+        "Choose this service and leave one working contact. A planner confirms the standard scope and delivery timing before sending payment instructions; the full working route is requested when needed.",
     },
     build: {
       startingPoint: "I have dates and priorities, but no usable route",
@@ -252,7 +252,7 @@ const en: ChinaItineraryReviewCopy = {
         "This builds the trip structure. It does not include an hour-by-hour schedule, live fare searches, reservations or support during travel.",
       button: "Request a route build",
       note:
-        "Complete the trip brief first. Add an outline or shareable link if useful; complete working files are requested only after we confirm fit.",
+        "Choose this service and leave one working contact. A planner confirms the standard scope and delivery timing before sending payment instructions; complete working material is requested when needed.",
     },
     fullChoice: {
       startingPoint:
@@ -323,15 +323,15 @@ const en: ChinaItineraryReviewCopy = {
   },
   process: {
     label: "How it works",
-    title: "Start with one trip brief.",
+    title: "Contact a planner or choose a service directly.",
     intro:
-      "The selected service stays attached to your trip brief, so Homeground can prepare a useful first reply without asking you to repeat the same details.",
+      "If you are unsure what fits, use WhatsApp or leave your email. If you already know what you need, choose a published service and share only the details required for that work.",
     items: [
-      { title: "Complete the trip brief", detail: "Share destinations, trip length, party and preferred pace once." },
-      { title: "Add context if useful", detail: "Paste a concise route outline, important constraints or a shareable route link. Do not submit passport details, payment information, QR codes or unredacted booking references." },
-      { title: "Send the scope enquiry", detail: "The Review, Build or Full Support choice is saved with the same trip brief. No online payment is taken." },
-      { title: "Homeground checks the fit", detail: "If the request appears suitable, we follow up for essential missing information and can request the complete working itinerary through an appropriate channel." },
-      { title: "Agree the next step directly", detail: "Any later working scope, commercial terms and delivery arrangements are confirmed outside this website enquiry flow." },
+      { title: "Contact us or choose a service", detail: "A general enquiry needs only WhatsApp or one working email. A route review or route build asks for the trip details needed to check the scope. Do not submit passport details, payment information, QR codes or unredacted booking references." },
+      { title: "A planner reviews the request", detail: "Homeground confirms which service fits, what information is still needed and whether the published standard scope applies." },
+      { title: "Scope, price and delivery timing are confirmed", detail: "We reply with the suitable service, the fixed price or custom quote, the written scope and the expected delivery date." },
+      { title: "Payment instructions are sent", detail: "After you agree to proceed, we send the available payment method and any final material request. This website does not take payment." },
+      { title: "Paid work begins", detail: "The route review, route build or agreed full-trip work starts after payment is confirmed and the necessary trip material is complete." },
     ],
   },
   example: {
@@ -381,31 +381,32 @@ const en: ChinaItineraryReviewCopy = {
       "the quote, payment recipient and what remains outside the arrangement.",
     ],
     button: "Ask about full trip support",
-    note: "Start with the same trip brief. Homeground will follow up personally.",
+    note: "Use the full-trip button or contact a planner. We confirm the custom scope, quote and delivery timing before sending payment instructions.",
   },
   faq: {
     label: "Practical questions",
-    title: "Before you send the trip brief",
+    title: "Before you choose a service",
     items: [
+      { question: "What if I am not sure which service fits?", answer: "Talk to a China trip planner by WhatsApp or leave your email. You do not need to classify the request yourself: the planner recommends the suitable service and next step before any payment." },
       { question: "What is the difference between Review My Route and Build My Route?", answer: "Review My Route starts with a usable day-by-day itinerary and tests what works, what is tight and what should change. Build My Route starts with dates, priorities and ideas, then creates the city order, night allocation and route structure." },
       { question: "Is the price per person?", answer: "No. The displayed price covers one shared route for 1–4 travellers within the standard scope." },
-      { question: "What counts as an overnight base?", answer: "An overnight base is a place where you check into accommodation and sleep. Changing hotels within the same city can also add work, so include every planned hotel move in your brief." },
-      { question: "What if my trip is longer than 10 days or includes more than four bases?", answer: "Send the brief first. We will either quote the additional scope, suggest a smaller decision to solve first or recommend full trip planning. You will not be charged automatically." },
+      { question: "What counts as an overnight base?", answer: "An overnight base is a place where you check into accommodation and sleep. Changing hotels within the same city can also add work, so include every planned hotel move in the trip details." },
+      { question: "What if my trip is longer than 10 days or includes more than four bases?", answer: "Contact a planner or choose the closest service. We will either quote the additional scope, suggest a smaller decision to solve first or recommend full trip planning. You will not be charged automatically." },
       { question: "Do I need confirmed trains, flights or hotels?", answer: "No. Candidate times and hotel areas are useful, but they do not need to be booked. Open details are labelled as assumptions rather than presented as confirmed facts." },
       { question: "Can you work around bookings I have already made?", answer: "Yes. Tell us which dates, transport, hotels and timed visits are fixed or difficult to change. The route will be assessed around those real constraints." },
       { question: "Does Build My Route include a complete sightseeing itinerary?", answer: "It provides the route structure, day-level focus, transfer logic, hotel-area logic and booking priorities. It does not include a detailed hour-by-hour schedule or a large list of specific hotels, restaurants and activities." },
       { question: "Can you plan for children, parents or limited mobility?", answer: "Yes. Tell us about walking tolerance, stairs, early starts, room needs and what a comfortable day means for your group. These are route inputs, not notes added at the end." },
-      { question: "When will I receive the route?", answer: "We confirm the delivery date after checking your brief and before asking you to pay. If you have a decision deadline, include it in the request." },
-      { question: "Does this page take payment?", answer: "No. This page records a planning enquiry and the selected service. Any later working scope, commercial terms and delivery arrangements are confirmed directly after we check the request." },
-      { question: "How do I send my itinerary for review?", answer: "Start with the trip brief and add a concise route outline or shareable link if useful. After confirming that the standard scope fits, we can request the full working itinerary by reply. Do not send passport or ID images, payment details, QR codes or unredacted booking references." },
-      { question: "Can you also help with the full trip afterwards?", answer: "Yes. Send the same trip brief and tell us what you want handled. Homeground will discuss the wider planning, booking and ground-support scope with you, then confirm the proposal, quote and start conditions before payment." },
+      { question: "When will I receive the route?", answer: "We confirm the delivery date after checking the necessary trip details and before asking you to pay. If you have a decision deadline, include it in the request." },
+      { question: "Does this page take payment?", answer: "No. You can contact a planner or request a specific service here. We confirm the suitable service, scope, price or quote and delivery timing first. If you agree, we send payment instructions; work begins after payment is confirmed." },
+      { question: "How do I send my itinerary for review?", answer: "Choose Review My Route and add a concise route outline or shareable link if useful. After confirming that the standard scope fits, we can request the full working itinerary by reply. Do not send passport or ID images, payment details, QR codes or unredacted booking references." },
+      { question: "Can Homeground book and coordinate the trip afterwards?", answer: "Potentially, depending on the route, dates and services required. Full trip planning and ground support have a separate written scope and custom quote." },
     ],
   },
   finalCta: {
     label: "Start from where your trip is now",
     title: "Have a route? Test it. Have a wishlist? Give it shape.",
     body:
-      "The fixed prices apply to the standard scopes shown above. Send the trip brief now; Homeground will review it personally and confirm the scope, delivery timing and payment details directly.",
+      "The published prices apply only to the standard scopes above. If you are unsure, contact a planner. If you choose a service directly, we still confirm the scope, price or quote and delivery timing before sending payment instructions.",
     review: "Request a route review — US$69",
     build: "Request a route build — US$129",
     support: "Or ask about full trip support",
@@ -439,16 +440,16 @@ const zh: ChinaItineraryReviewCopy = {
   hero: {
     eyebrow: "中国旅行路线审核与规划",
     title: "先把路线理顺，再继续预订。",
-    lead: "已经有逐日行程？我们可以审核。只有日期、重点和愿望清单？我们可以搭建路线结构。如果还需要整趟旅行的规划、预订与落地支持，也可以从同一份旅行简报开始。",
+    lead: "不确定需要路线审核、重新规划，还是全程支持？可以通过 WhatsApp 联系规划师，或只留下一个邮箱。如果你已经知道自己需要什么，下方仍可直接选择三项付费服务。",
     pricesAriaLabel: "路线规划价格",
     prices: [
       { price: "US$69", label: "路线审核" },
       { price: "US$129", label: "路线规划" },
       { price: "单独报价", label: "全程规划与落地支持" },
     ],
-    choose: "选择适合我的服务",
-    conversationCta: "免费提交旅行简报",
-    boundary: "69 美元与 129 美元是范围清楚的书面路线服务；整趟旅行的规划与落地支持会根据实际需求单独确认范围和报价。先提交旅行简报，不需要在这里付款或上传文件。",
+    consultation: "联系旅行规划师",
+    compareServices: "比较三项付费服务",
+    boundary: "联系规划师只是发起咨询，不包含已经完成的路线或规划成果。我们会先确认适合的服务、范围、固定价格或报价与交付时间，再发送付款方式；确认付款后才开始付费工作。",
   },
   reviewBoard: {
     title: "路线审核示意",
@@ -483,7 +484,7 @@ const zh: ChinaItineraryReviewCopy = {
       ],
       boundary: "此服务审核一条已有路线，不会另外设计多套新方案，也不包含代订或持续聊天支持。",
       button: "申请路线审核",
-      note: "先填写旅行简报。你可以补充路线摘要或可访问的分享链接；确认需求符合标准范围后，我们再向你索取完整路线。",
+      note: "选择这项服务并留下一个有效联系方式。规划师确认标准范围与交付时间后发送付款方式；需要时再向你索取完整工作路线。",
     },
     build: {
       startingPoint: "我有日期和重点，但还没有可用路线",
@@ -501,7 +502,7 @@ const zh: ChinaItineraryReviewCopy = {
       ],
       boundary: "此服务搭建旅行结构，不包含逐小时日程、实时票价搜索、代为预订或旅途中的支持。",
       button: "申请路线规划",
-      note: "先填写旅行简报。你可以补充路线摘要或可访问的分享链接；完整工作文件只会在确认适合后再索取。",
+      note: "选择这项服务并留下一个有效联系方式。规划师确认标准范围与交付时间后发送付款方式；需要时再向你索取完整工作资料。",
     },
     fullChoice: {
       startingPoint: "我还需要旅游预订或当地履约安排。",
@@ -546,14 +547,14 @@ const zh: ChinaItineraryReviewCopy = {
   },
   process: {
     label: "服务流程",
-    title: "从同一份旅行简报开始。",
-    intro: "你选择的服务会随旅行简报一起提交，Homeground 可以据此准备更有用的首次回复，不需要你重复讲述同一份需求。",
+    title: "联系规划师，或直接选择一项服务。",
+    intro: "如果还不确定需要什么，可以通过 WhatsApp 联系或只留下邮箱；如果已经知道，就直接选择公开服务，只补充完成该项工作真正需要的信息。",
     items: [
-      { title: "填写旅行简报", detail: "一次填写目的地、旅行天数、同行者与偏好节奏。" },
-      { title: "需要时补充背景", detail: "可粘贴简短路线、重要限制或可访问的分享链接。请勿提交护照或证件信息、付款信息、二维码或未遮盖的预订编号。" },
-      { title: "发送服务范围咨询", detail: "路线审核、路线规划或全程支持的选择会与同一份旅行简报一并保存。这里不会收取在线付款。" },
-      { title: "Homeground 判断是否适合", detail: "如果需求看起来适合，我们会追问必要的缺失信息，并通过合适的渠道索取完整工作路线。" },
-      { title: "直接确认下一步", detail: "后续工作范围、商业条款与交付安排会在本网站咨询流程之外直接确认。" },
+      { title: "联系或选择服务", detail: "普通咨询只需 WhatsApp 或一个有效邮箱；路线审核或规划只会询问判断范围所需的旅行信息。请勿提交护照或证件信息、付款信息、二维码或未遮盖的预订编号。" },
+      { title: "规划师查看需求", detail: "Homeground 会判断哪项服务更适合、还缺哪些必要信息，以及需求是否适用页面上的标准范围。" },
+      { title: "确认范围、价格与交付时间", detail: "我们会回复合适的服务、固定价格或单独报价、书面范围及预计交付日期。" },
+      { title: "发送付款方式", detail: "你同意继续后，我们会发送可用的付款方式，并按需索取最终工作资料。本网站不直接收款。" },
+      { title: "付款后开始工作", detail: "确认收到付款且必要旅行资料齐全后，我们才开始路线审核、路线规划或约定的全程旅行工作。" },
     ],
   },
   example: {
@@ -591,12 +592,13 @@ const zh: ChinaItineraryReviewCopy = {
     ],
     items: ["路线、预订与落地支持的重点；", "包含哪些规划或旅行服务；", "确认后的服务如何继续推进；", "报价、收款方与不在约定范围内的内容。"],
     button: "咨询全程旅行支持",
-    note: "继续使用同一份旅行简报，Homeground 会亲自联系你。",
+    note: "可直接选择全程支持，或先联系旅行规划师。我们会先确认定制范围、报价与交付时间，再发送付款方式。",
   },
   faq: {
     label: "常见实际问题",
-    title: "发送旅行信息前",
+    title: "选择服务前",
     items: [
+      { question: "如果我不确定哪项服务适合怎么办？", answer: "可以通过 WhatsApp 联系旅行规划师，或只留下一个邮箱。你不需要自己完成分类；规划师会在付款前建议适合的服务与下一步。" },
       { question: "“审核我的路线”和“为我规划路线”有什么区别？", answer: "路线审核从一份可用的逐日行程开始，检查哪些部分可行、哪里偏紧、哪里需要调整。路线规划从日期、重点和想法开始，建立城市顺序、住宿晚数与整体结构。" },
       { question: "价格是按人计算吗？", answer: "不是。标准范围内，页面价格覆盖 1–4 位同行者共用的一条路线。" },
       { question: "什么算一个过夜住宿地？", answer: "指你办理入住并过夜的地点。同一城市内换酒店也会增加成本，因此请在旅行信息中列出每次计划中的酒店搬迁。" },
@@ -606,15 +608,15 @@ const zh: ChinaItineraryReviewCopy = {
       { question: "路线规划包含完整景点行程吗？", answer: "它包含路线结构、每日重点、转场逻辑、住宿区域逻辑和预订优先级，不包含详细的逐小时时间表，也不提供大量具体酒店、餐厅与活动清单。" },
       { question: "可以为儿童、父母或行动不便者规划吗？", answer: "可以。请说明步行耐受度、台阶、早起、房间需求，以及对同行者而言怎样才算舒适的一天。这些是路线输入，不是最后才补上的备注。" },
       { question: "什么时候能收到路线？", answer: "我们会在检查旅行信息后、请你付款前确认交付日期。如果你有决定期限，请写在咨询中。" },
-      { question: "这个页面会收款吗？", answer: "不会。本页只记录规划咨询和你选择的服务。我们检查需求后，再直接确认后续工作范围、商业条款和交付安排。" },
-      { question: "怎样发送路线供审核？", answer: "先填写旅行简报，并按需添加路线摘要或可访问的分享链接。确认符合标准范围后，我们会回复并索取完整工作路线。请勿发送护照或证件图片、付款信息、二维码或未遮盖的预订编号。" },
-      { question: "之后也可以协助整趟旅行吗？", answer: "可以。继续提交同一份旅行简报，并告诉我们希望由我们协助的部分。Homeground 会与你沟通更完整的规划、预订与落地支持范围，并在付款前确认方案、报价与开始条件。" },
+      { question: "这个页面会收款吗？", answer: "不会。你可以先联系规划师，或直接申请一项具体服务。我们会先确认服务、范围、固定价格或报价与交付时间；你同意后再发送付款方式，确认付款后开始工作。" },
+      { question: "怎样发送路线供审核？", answer: "选择“审核我的路线”，并按需添加路线摘要或可访问的分享链接。确认符合标准范围后，我们会回复并索取完整工作路线。请勿发送护照或证件图片、付款信息、二维码或未遮盖的预订编号。" },
+      { question: "之后 Homeground 可以代订并协调行程吗？", answer: "有可能，取决于路线、日期和所需服务。全程规划与落地支持会另行确认书面范围与定制报价。" },
     ],
   },
   finalCta: {
     label: "从你的旅行现状开始",
     title: "已有路线，就先检验。只有愿望清单，就把它变成结构。",
-    body: "固定价格适用于上方列出的标准范围。现在提交旅行简报，Homeground 会人工审核，并直接与你确认服务范围、交付时间和付款信息。",
+    body: "公开价格只适用于上方标准范围。如果还不确定，可以先联系规划师；如果直接选择服务，我们仍会先确认范围、固定价格或报价与交付时间，再发送付款方式。",
     review: "申请路线审核 — US$69",
     build: "申请路线规划 — US$129",
     support: "或咨询全程旅行支持",
@@ -648,16 +650,16 @@ const ko: ChinaItineraryReviewCopy = {
   hero: {
     eyebrow: "중국 여행 일정 검토 및 동선 설계",
     title: "예약을 더 하기 전에 동선부터 제대로 잡으세요.",
-    lead: "이미 일별 일정이 있나요? 현실성을 검토해 드립니다. 날짜, 우선순위와 위시리스트만 있나요? 여행 동선의 구조를 설계해 드립니다. 전체 여행의 플래닝, 예약 준비와 현지 지원도 같은 여행 브리프에서 시작할 수 있습니다.",
+    lead: "일정 검토, 새 동선 설계, 전체 여행 지원 중 무엇이 필요한지 확실하지 않나요? WhatsApp으로 플래너에게 문의하거나 이메일을 남겨 주세요. 이미 필요한 서비스를 안다면 아래의 세 가지 유료 서비스를 바로 선택할 수 있습니다.",
     pricesAriaLabel: "일정 설계 서비스 가격",
     prices: [
       { price: "US$69", label: "일정 검토" },
       { price: "US$129", label: "동선 설계" },
       { price: "맞춤 견적", label: "전체 여행 지원" },
     ],
-    choose: "내게 맞는 서비스 선택하기",
-    conversationCta: "무료 여행 브리프 시작하기",
-    boundary: "US$69와 US$129는 범위가 명확한 서면 일정 서비스입니다. 전체 여행 플래닝과 현지 지원은 실제 필요에 맞춰 별도 범위와 견적을 안내합니다. 먼저 브리프를 제출하면 되며 이 페이지에서 결제하거나 파일을 올릴 필요는 없습니다.",
+    consultation: "중국 여행 플래너와 상담하기",
+    compareServices: "세 가지 유료 서비스 비교",
+    boundary: "플래너에게 문의하는 단계에는 완성된 동선이나 유료 결과물이 포함되지 않습니다. 알맞은 서비스, 범위, 고정 가격 또는 견적과 납품 일정을 확인한 뒤 결제 방법을 안내합니다. 결제가 확인된 후 유료 작업을 시작합니다.",
   },
   reviewBoard: {
     title: "일정 검토 예시",
@@ -692,7 +694,7 @@ const ko: ChinaItineraryReviewCopy = {
       ],
       boundary: "기존 일정 한 개를 검토하는 서비스입니다. 여러 새 대안을 만들거나 예약을 대신하거나 지속적인 채팅 상담을 제공하지 않습니다.",
       button: "일정 검토 요청하기",
-      note: "먼저 여행 브리프를 작성하세요. 필요하면 일정 요약이나 공유 링크를 추가할 수 있으며, 표준 범위에 맞는지 확인한 뒤 전체 일정을 요청합니다.",
+      note: "이 서비스를 선택하고 연락 가능한 정보 하나를 남겨 주세요. 플래너가 표준 범위와 납품 일정을 확인한 뒤 결제 방법을 안내하며, 필요할 때 전체 작업 일정을 요청합니다.",
     },
     build: {
       startingPoint: "날짜와 우선순위는 있지만 사용할 수 있는 동선이 없어요",
@@ -710,7 +712,7 @@ const ko: ChinaItineraryReviewCopy = {
       ],
       boundary: "여행의 구조를 설계하는 서비스입니다. 시간대별 상세 일정, 실시간 요금 검색, 예약 대행이나 여행 중 지원은 포함하지 않습니다.",
       button: "동선 설계 요청하기",
-      note: "먼저 여행 브리프를 작성하세요. 필요하면 일정 요약이나 공유 링크를 추가할 수 있으며, 전체 작업 파일은 적합성을 확인한 뒤에만 요청합니다.",
+      note: "이 서비스를 선택하고 연락 가능한 정보 하나를 남겨 주세요. 플래너가 표준 범위와 납품 일정을 확인한 뒤 결제 방법을 안내하며, 필요할 때 전체 작업 자료를 요청합니다.",
     },
     fullChoice: {
       startingPoint: "여행 예약 또는 현지 이행도 필요해요.",
@@ -755,14 +757,14 @@ const ko: ChinaItineraryReviewCopy = {
   },
   process: {
     label: "이용 절차",
-    title: "하나의 여행 브리프로 시작합니다.",
-    intro: "선택한 서비스가 여행 브리프와 함께 전달되므로 같은 내용을 반복하지 않아도 Homeground가 더 유용한 첫 답변을 준비할 수 있습니다.",
+    title: "플래너에게 문의하거나 서비스를 바로 선택하세요.",
+    intro: "어떤 도움이 필요한지 모르겠다면 WhatsApp으로 문의하거나 이메일을 남기세요. 이미 알고 있다면 공개된 서비스를 선택하고 해당 작업에 필요한 정보만 알려 주면 됩니다.",
     items: [
-      { title: "여행 브리프 작성", detail: "목적지, 여행 기간, 일행과 선호 속도를 한 번만 알려 주세요." },
-      { title: "필요하면 배경 정보 추가", detail: "간단한 일정 요약, 중요한 제약 또는 공유 링크를 붙여 넣을 수 있습니다. 여권·신분증 정보, 결제 정보, QR 코드 또는 가리지 않은 예약 번호는 제출하지 마세요." },
-      { title: "서비스 범위 상담 전송", detail: "일정 검토, 동선 설계 또는 전체 지원 선택이 같은 여행 브리프와 함께 저장됩니다. 온라인 결제는 받지 않습니다." },
-      { title: "Homeground가 적합성 확인", detail: "요청이 적합해 보이면 꼭 필요한 누락 정보를 확인하고 알맞은 채널을 통해 전체 작업 일정을 요청할 수 있습니다." },
-      { title: "다음 단계 직접 합의", detail: "이후 작업 범위, 상업 조건과 납품 방식은 웹사이트 상담 절차 밖에서 직접 확인합니다." },
+      { title: "문의하거나 서비스 선택", detail: "일반 문의는 WhatsApp 또는 이메일 하나면 충분합니다. 일정 검토나 동선 설계는 범위를 판단하는 데 필요한 여행 정보만 확인합니다. 여권·신분증 정보, 결제 정보, QR 코드 또는 가리지 않은 예약 번호는 제출하지 마세요." },
+      { title: "플래너가 요청 검토", detail: "Homeground가 어떤 서비스가 알맞은지, 어떤 필수 정보가 더 필요한지, 공개된 표준 범위가 적용되는지 확인합니다." },
+      { title: "범위, 가격과 납품 일정 확인", detail: "알맞은 서비스, 고정 가격 또는 맞춤 견적, 서면 작업 범위와 예상 납품일을 안내합니다." },
+      { title: "결제 방법 안내", detail: "진행에 동의하면 이용 가능한 결제 방법과 필요한 최종 자료를 안내합니다. 이 웹사이트에서는 직접 결제하지 않습니다." },
+      { title: "결제 후 작업 시작", detail: "결제가 확인되고 필요한 여행 자료가 준비된 뒤 일정 검토, 동선 설계 또는 합의한 전체 여행 작업을 시작합니다." },
     ],
   },
   example: {
@@ -800,12 +802,13 @@ const ko: ChinaItineraryReviewCopy = {
     ],
     items: ["동선, 예약 준비와 현지 지원의 우선순위;", "포함되는 플래닝 또는 여행 서비스;", "확정된 서비스를 진행하는 방식;", "견적, 결제 수취인과 범위 밖의 항목."],
     button: "전체 여행 지원 문의하기",
-    note: "같은 여행 브리프에서 시작하면 Homeground가 직접 연락드립니다.",
+    note: "전체 여행 지원을 바로 선택하거나 플래너에게 먼저 문의하세요. 맞춤 범위, 견적과 납품 일정을 확인한 뒤 결제 방법을 안내합니다.",
   },
   faq: {
     label: "실용적인 질문",
-    title: "여행 정보를 보내기 전에",
+    title: "서비스를 선택하기 전에",
     items: [
+      { question: "어떤 서비스가 맞는지 모르겠다면 어떻게 하나요?", answer: "WhatsApp으로 중국 여행 플래너에게 문의하거나 이메일을 남겨 주세요. 서비스를 직접 분류할 필요가 없으며, 플래너가 결제 전에 알맞은 서비스와 다음 단계를 안내합니다." },
       { question: "‘내 일정 검토’와 ‘내 동선 설계’는 무엇이 다른가요?", answer: "일정 검토는 사용할 수 있는 일별 일정에서 시작해 가능한 부분, 빠듯한 부분과 바꿔야 할 부분을 확인합니다. 동선 설계는 날짜, 우선순위와 아이디어에서 시작해 도시 순서, 숙박일 배분과 여행 구조를 만듭니다." },
       { question: "가격은 1인 기준인가요?", answer: "아닙니다. 표시 가격은 표준 범위 안에서 1–4명이 함께 이용하는 한 개의 동선에 적용됩니다." },
       { question: "숙박 거점은 무엇을 뜻하나요?", answer: "체크인하고 잠을 자는 장소를 뜻합니다. 같은 도시 안에서 호텔을 바꾸는 일도 부담을 더하므로 예정된 모든 숙소 이동을 여행 정보에 적어 주세요." },
@@ -815,15 +818,15 @@ const ko: ChinaItineraryReviewCopy = {
       { question: "동선 설계에 전체 관광 일정이 포함되나요?", answer: "동선 구조, 일별 초점, 이동 논리, 숙박 지역 논리와 예약 우선순위를 제공합니다. 시간대별 상세 일정이나 대량의 특정 호텔, 식당 및 활동 목록은 포함하지 않습니다." },
       { question: "아이, 부모님 또는 이동이 불편한 사람을 위한 설계도 가능한가요?", answer: "네. 도보 가능 거리, 계단, 이른 출발, 객실 요구와 일행에게 편안한 하루의 의미를 알려 주세요. 마지막에 붙이는 메모가 아니라 동선의 입력 조건으로 반영합니다." },
       { question: "일정은 언제 받을 수 있나요?", answer: "여행 정보를 확인한 뒤, 결제를 요청하기 전에 납품일을 확정합니다. 결정해야 하는 기한이 있다면 요청에 적어 주세요." },
-      { question: "이 페이지에서 결제하나요?", answer: "아닙니다. 이 페이지는 설계 상담과 선택한 서비스를 기록합니다. 요청을 확인한 뒤 작업 범위, 상업 조건과 납품 방식을 직접 확정합니다." },
-      { question: "검토할 일정을 어떻게 보내나요?", answer: "먼저 여행 브리프를 작성하고 필요하면 일정 요약이나 공유 링크를 추가하세요. 표준 범위에 맞는지 확인한 뒤 답장을 통해 전체 작업 일정을 요청할 수 있습니다. 여권·신분증 이미지, 결제 정보, QR 코드 또는 가리지 않은 예약 번호는 보내지 마세요." },
-      { question: "나중에 전체 여행도 함께 도와줄 수 있나요?", answer: "네. 같은 여행 브리프에 도움이 필요한 부분을 적어 주세요. Homeground가 더 넓은 플래닝, 예약 준비와 현지 지원 범위를 함께 논의하고 결제 전에 제안, 견적과 시작 조건을 확인합니다." },
+      { question: "이 페이지에서 결제하나요?", answer: "아닙니다. 플래너에게 먼저 문의하거나 특정 서비스를 요청할 수 있습니다. 서비스, 범위, 고정 가격 또는 견적과 납품 일정을 확인한 뒤 결제 방법을 안내하며, 결제가 확인된 후 작업을 시작합니다." },
+      { question: "검토할 일정을 어떻게 보내나요?", answer: "‘내 일정 검토’를 선택하고 필요하면 간단한 일정 요약이나 공유 링크를 추가하세요. 표준 범위에 맞는지 확인한 뒤 답장을 통해 전체 작업 일정을 요청할 수 있습니다. 여권·신분증 이미지, 결제 정보, QR 코드 또는 가리지 않은 예약 번호는 보내지 마세요." },
+      { question: "나중에 Homeground가 예약과 여행 조율도 할 수 있나요?", answer: "동선, 날짜와 필요한 서비스에 따라 가능할 수 있습니다. 전체 여행 설계 및 현지 지원은 별도의 서면 범위와 맞춤 견적으로 진행합니다." },
     ],
   },
   finalCta: {
     label: "지금 준비된 단계에서 시작하세요",
     title: "일정이 있다면 검토하고, 위시리스트만 있다면 구조를 만드세요.",
-    body: "고정 가격은 위에 제시한 표준 범위에 적용됩니다. 지금 여행 브리프를 보내면 Homeground가 직접 검토하고 서비스 범위, 제공 일정과 결제 정보를 안내합니다.",
+    body: "공개 가격은 위의 표준 범위에만 적용됩니다. 아직 확실하지 않다면 플래너에게 문의하세요. 서비스를 직접 선택해도 범위, 고정 가격 또는 견적과 납품 일정을 먼저 확인한 뒤 결제 방법을 안내합니다.",
     review: "일정 검토 요청 — US$69",
     build: "동선 설계 요청 — US$129",
     support: "또는 전체 여행 지원 문의",

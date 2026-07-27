@@ -83,10 +83,13 @@ test("guide answers full-day counting and park-order intent without inventing at
   assert.match(guide, /"@type": "Person"/);
   assert.match(guide, /author: \{ "@id": "https:\/\/homegroundchina\.com\/#organization" \}/);
   assert.match(guide, /contributor: \{ "@id": "https:\/\/homegroundchina\.com\/#xuan" \}/);
-  assert.match(guide, /\?planner=destinations#route-finder/);
-  assert.match(header, /\?planner=destinations#route-finder/);
-  assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
-  assert.doesNotMatch(header, /utm_(?:source|medium|campaign)/);
+  assert.match(guide, /utm_content=planner-contact#planner-contact/);
+  assert.doesNotMatch(guide, /planner=destinations|free-brief|service=/);
+  assert.match(header, /`\$\{copy\.path\}#planner-contact`/);
+  assert.doesNotMatch(header, /planner=destinations|free-brief/);
+  assert.match(copy, /action: "Talk to a China trip planner"/);
+  assert.match(copy, /action: "联系旅行规划师"/);
+  assert.match(copy, /action: "중국 여행 플래너와 상담하기"/);
 });
 
 test("guide metadata, sitemap and visible dates share one source", async () => {

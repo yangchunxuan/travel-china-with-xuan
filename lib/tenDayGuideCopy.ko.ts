@@ -11,7 +11,7 @@ export const tenDayGuideKorean: TenDayGuideCopy = {
     planning: "여행 설계 방식",
     studio: "스튜디오",
     questions: "자주 묻는 질문",
-    cta: "내 여행 동선 확인하기",
+    cta: "중국 여행 플래너와 상담하기",
   },
   breadcrumb: {
     label: "현재 위치",
@@ -236,7 +236,7 @@ export const tenDayGuideKorean: TenDayGuideCopy = {
     directionTitle: "베이징부터 갈까요, 상하이부터 갈까요?",
     directionBody:
       "두 방향 모두 가능합니다. 국제선 도착·출발 시간과 해당 방향의 국내 교통편을 비교하세요. 왕복 방향의 시간표가 똑같지는 않습니다.",
-    plannerLink: "열차와 항공편의 실제 이동시간 비교 요청하기",
+    plannerLink: "중국 여행 플래너와 상담하기",
   },
   fit: {
     label: "누구에게 맞는 일정인가",
@@ -345,12 +345,13 @@ export const tenDayGuideKorean: TenDayGuideCopy = {
     ],
   },
   cta: {
-    label: "실제 여행 조건 확인",
+    label: "다음 단계",
     title: "‘10일’이라는 숫자보다 여행 동선부터 확인하세요.",
     intro:
-      "먼저 희망 도시와 중국에서 머무는 박수를 보내 주세요. Homeground 플래너가 첫 답변에서 정확한 도착·출발 시간, 일행 조건과 꼭 가고 싶은 곳을 확인한 뒤, 견적 전에 온전히 관광할 수 있는 날과 시간 충돌을 다시 계산합니다.",
-    button: "내 여행 동선 확인하기",
-    note: "정해진 패키지를 바로 권하지 않습니다. 모든 도시를 억지로 유지할 필요도 없습니다.",
+      "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 이후 플래너와 도시, 숙박일수, 도착·출발 시간, 일행과 꼭 가고 싶은 곳을 확인할 수 있습니다.",
+    button: "중국 여행 플래너와 상담하기",
+    note:
+      "플래너는 US$69 일정 검토, US$129 동선 설계 또는 전체 여행 지원을 안내할 수 있습니다. 유료 작업은 범위, 가격 또는 견적, 납기와 결제가 확인된 뒤에만 시작됩니다.",
   },
   source: {
     summary: "작성 기준과 출처 범위",
@@ -369,7 +370,7 @@ export const tenDayGuideKorean: TenDayGuideCopy = {
     navigationLabel: "하단 메뉴",
     zhangjiajieGuide: "장자제 일정 가이드",
     privacy: "개인정보 처리 안내",
-    cta: "내 여행 동선 확인하기",
+    cta: "중국 여행 플래너와 상담하기",
     copyright: (year) =>
       `© ${year} Homeground China. 실제 조건을 바탕으로 설계하는 맞춤 여행.`,
   },

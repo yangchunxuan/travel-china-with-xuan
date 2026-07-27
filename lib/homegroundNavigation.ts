@@ -2,6 +2,7 @@ import type { MouseEvent as ReactMouseEvent } from "react";
 
 export type HomegroundHashTarget =
   | "#main-content"
+  | "#planner-contact"
   | "#route-finder"
   | "#planner-handoff"
   | "#planning-proof"
@@ -36,6 +37,7 @@ export function handleHomegroundHashClick(
 
   const focusTargetId: Record<HomegroundHashTarget, string> = {
     "#main-content": "main-content",
+    "#planner-contact": "planning-intent-title",
     "#route-finder": "route-finder-title",
     "#planner-handoff": "planner-handoff-title",
     "#planning-proof": "planning-proof-title",

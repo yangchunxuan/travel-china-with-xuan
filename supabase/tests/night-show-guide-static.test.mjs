@@ -51,28 +51,64 @@ test("night-show copy answers the itinerary decision without a fixed timetable",
   assert.doesNotMatch(english, /(?:Show Time|Ticket Price):|CNY\s*\d/i);
 });
 
-test("night-show CTA carries Zhangjiajie context into a human trip-brief reply", async () => {
+test("night-show CTA opens direct planner contact without the old destination form", async () => {
   const guide = await source("components/NightShowGuidePage.tsx");
-  const english = await source("lib/nightShowGuideCopy.en.ts");
-  const chinese = await source("lib/nightShowGuideCopy.zh.ts");
-  const korean = await source("lib/nightShowGuideCopy.ko.ts");
-  const copy = `${english}\n${chinese}\n${korean}`;
+  const [english, chinese, korean] = await Promise.all([
+    source("lib/nightShowGuideCopy.en.ts"),
+    source("lib/nightShowGuideCopy.zh.ts"),
+    source("lib/nightShowGuideCopy.ko.ts"),
+  ]);
 
   assert.match(
     guide,
-    /\?planner=destinations&destinations=zhangjiajie#route-finder/,
+    /\$\{copy\.homePath\}#planner-contact/,
   );
-  assert.doesNotMatch(guide, /utm_(?:source|medium|campaign)/);
-  assert.match(english, /Start my free trip brief/);
-  assert.match(english, /A Homeground planner will (?:continue|reply)/);
-  assert.match(chinese, /免费提交旅行简报/);
-  assert.match(chinese, /Homeground 规划师会亲自/);
-  assert.match(korean, /무료 여행 브리프 시작하기/);
-  assert.match(korean, /Homeground 플래너가 직접/);
   assert.doesNotMatch(
-    copy,
-    /Route Finder|路线工具|One contact is requested only|只有在你选择继续|상담을 계속하기로 선택할 때만/,
+    guide,
+    /utm_|planner=destinations|free-brief|service=/,
   );
+  assert.match(english, /ctaAction: "Talk to a China trip planner"/);
+  assert.match(chinese, /ctaAction: "联系旅行规划师"/);
+  assert.match(korean, /ctaAction: "중국 여행 플래너와 상담하기"/);
+  assert.match(english, /Use WhatsApp or leave your email/);
+  assert.match(chinese, /通过 WhatsApp 直接聊，或只留下一个邮箱/);
+  assert.match(korean, /WhatsApp으로 바로 문의하거나 이메일을 남기면/);
+  for (const [copy, stalePhrases] of [
+    [
+      english,
+      [
+        /free trip brief/i,
+        /free trip consultation/i,
+        /Route Finder checks destination time first/i,
+        /human follow-up/i,
+        /One contact is requested only if you choose to continue/i,
+      ],
+    ],
+    [
+      chinese,
+      [
+        /免费旅行简报/,
+        /免费旅行咨询/,
+        /路线工具会先检查目的地所需时间/,
+        /之后的人工沟通中确认/,
+        /只有在你选择继续与人工规划师沟通时/,
+      ],
+    ],
+    [
+      korean,
+      [
+        /무료 여행 브리프/,
+        /무료 여행 상담/,
+        /Route Finder는 먼저 목적지에 쓸 시간을 확인합니다/i,
+        /담당자의 후속 답변에서 확인합니다/,
+        /상담을 계속하기로 선택할 때만 연락처/,
+      ],
+    ],
+  ]) {
+    for (const stalePhrase of stalePhrases) {
+      assert.doesNotMatch(copy, stalePhrase);
+    }
+  }
 });
 
 test("night-show metadata, locales and sitemap share the guide registry", async () => {

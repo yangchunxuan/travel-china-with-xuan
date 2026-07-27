@@ -59,12 +59,22 @@ function productionConfigurationCheck(checkedAt: string): HealthCheck {
   const privacyVersions = commaSeparatedEnv(
     "ALLOWED_PRIVACY_NOTICE_VERSIONS",
   );
+  const currentForms = new Set([
+    "2026-07-21.1",
+    "2026-07-26.1",
+  ]);
+  const currentPrivacyVersions = new Set([
+    "2026-07-21.1",
+    "2026-07-26.1",
+  ]);
   const currentVersionsPresent =
-    forms.includes("2026-07-21.1") &&
-    privacyVersions.includes("2026-07-21.1");
+    [...currentForms].every((version) => forms.includes(version)) &&
+    [...currentPrivacyVersions].every((version) =>
+      privacyVersions.includes(version)
+    );
   const transitionalVersionsEnabled =
-    forms.some((version) => version !== "2026-07-21.1") ||
-    privacyVersions.some((version) => version !== "2026-07-21.1");
+    forms.some((version) => !currentForms.has(version)) ||
+    privacyVersions.some((version) => !currentPrivacyVersions.has(version));
 
   if (
     (accepting !== "true" && accepting !== "false") ||
@@ -98,7 +108,7 @@ function productionConfigurationCheck(checkedAt: string): HealthCheck {
       authority: "Server-side Edge Function configuration snapshot",
       checkedAt,
       summary:
-        "A legacy form or privacy version remains enabled for a short " +
+        "A transitional form or privacy version remains enabled for a short " +
         "cutover overlap. Remove it from the allowlist after the overlap.",
     };
   }
@@ -109,7 +119,7 @@ function productionConfigurationCheck(checkedAt: string): HealthCheck {
     authority: "Server-side Edge Function configuration snapshot",
     checkedAt,
     summary: accepting === "true"
-      ? "Configured to accept the current supported form version."
+      ? "Configured to accept the current trip-brief and homepage email forms."
       : "Intake is deliberately paused by the server-side kill switch.",
   };
 }

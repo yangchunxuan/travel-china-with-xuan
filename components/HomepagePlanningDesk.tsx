@@ -2,17 +2,11 @@
 
 import {
   ArrowRight,
-  Check,
   FileCheck2,
   Handshake,
   MapPinned,
   MessageCircleMore,
 } from "lucide-react";
-import {
-  useEffect,
-  useState,
-  type FormEvent,
-} from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
   getHomepagePlanningDeskCopy,
@@ -21,6 +15,7 @@ import {
   type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
 import styles from "./HomegroundHomePage.module.css";
+import { HomepageQuickContact } from "./HomepageQuickContact";
 
 const intentIcons = {
   conversation: MessageCircleMore,
@@ -101,44 +96,9 @@ export function HomepagePlanningIntentSelector({
   onCancel?: () => void;
 }) {
   const copy = getHomepagePlanningDeskCopy(locale);
-  const [draft, setDraft] = useState<HomepageStarterIntentId | "">(
-    starterValue && starterValue !== "open-text" ? starterValue : "",
-  );
-  const [error, setError] = useState("");
   const paidOptions = copy.options.filter(
     (option) => option.kind === "paid",
   );
-
-  useEffect(() => {
-    setDraft(
-      starterValue && starterValue !== "open-text" ? starterValue : "",
-    );
-    setError("");
-  }, [starterValue, value]);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const hasNote = starterNote.trim().length > 0;
-    if (!draft && !hasNote) {
-      setError(copy.requiredError);
-      return;
-    }
-
-    const selectedPrompt = draft
-      ? copy.starterPrompts.find((prompt) => prompt.id === draft)
-      : null;
-    if (draft && !selectedPrompt) {
-      setError(copy.requiredError);
-      return;
-    }
-
-    setError("");
-    if (selectedPrompt) {
-      onContinue(selectedPrompt.planningIntent, selectedPrompt.id);
-      return;
-    }
-    onContinue("conversation", "open-text");
-  };
 
   return (
     <div className={styles.intentView} data-planning-view="intent">
@@ -147,101 +107,13 @@ export function HomepagePlanningIntentSelector({
         <h2 id="planning-intent-title" tabIndex={-1}>
           {copy.title}
         </h2>
-        <p>{copy.intro}</p>
       </header>
 
-      <form
-        className={styles.intentForm}
-        data-has-selection={draft ? "true" : undefined}
-        onSubmit={handleSubmit}
-        noValidate
-      >
-        <fieldset
-          className={styles.intentFieldset}
-          aria-describedby={error ? "planning-intent-error" : undefined}
-        >
-          <legend className={styles.srOnly}>{copy.title}</legend>
-          <div className={styles.intentStarterGrid}>
-            {copy.starterPrompts.map((prompt) => {
-              const selected = draft === prompt.id;
-              return (
-                <label
-                  className={styles.intentStarterOption}
-                  data-selected={selected ? "true" : undefined}
-                  key={prompt.id}
-                >
-                  <input
-                    type="radio"
-                    name="homeground-planning-start"
-                    value={prompt.id}
-                    checked={selected}
-                    onChange={() => {
-                      setDraft(prompt.id);
-                      setError("");
-                    }}
-                  />
-                  <span className={styles.intentRadio} aria-hidden="true">
-                    {selected && <Check size={13} strokeWidth={3} />}
-                  </span>
-                  <span>{prompt.label}</span>
-                </label>
-              );
-            })}
-          </div>
-        </fieldset>
-
-        <div className={styles.intentNoteField}>
-          <label htmlFor="planning-intent-note">
-            {copy.noteLabel}{" "}
-            <span className={styles.intentNoteOptional}>
-              {copy.noteOptionalTag}
-            </span>
-          </label>
-          <textarea
-            id="planning-intent-note"
-            name="starterNote"
-            dir="auto"
-            rows={3}
-            maxLength={maximumStarterNoteLength}
-            value={starterNote}
-            aria-describedby="planning-intent-note-hint"
-            onChange={(event) => {
-              onStarterNoteChange?.(
-                sanitizeStarterNote(event.target.value),
-              );
-              setError("");
-            }}
-          />
-          <small id="planning-intent-note-hint">{copy.noteHint}</small>
-        </div>
-
-        <p
-          id="planning-intent-error"
-          className={styles.intentError}
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          {error}
-        </p>
-
-        <div className={styles.intentActions}>
-          {onCancel && (
-            <button
-              className={styles.intentSecondaryButton}
-              type="button"
-              onClick={onCancel}
-            >
-              {copy.keepCurrent}
-            </button>
-          )}
-          <button className={styles.intentContinueButton} type="submit">
-            {copy.continue}
-            <ArrowRight aria-hidden="true" size={18} />
-          </button>
-        </div>
-      </form>
-
-      <p className={styles.intentBoundary}>{copy.boundary}</p>
+      <HomepageQuickContact
+        locale={locale}
+        copy={copy}
+        onCancel={onCancel}
+      />
 
       <section
         className={styles.intentServiceShortcuts}
@@ -271,7 +143,6 @@ export function HomepagePlanningIntentSelector({
             );
           })}
         </div>
-        <p className={styles.intentSharedScope}>{copy.fixedPriceScope}</p>
       </section>
     </div>
   );

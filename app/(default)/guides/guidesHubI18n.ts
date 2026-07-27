@@ -107,8 +107,8 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       eyebrow: "Planning beyond the article",
       title: "Bring us the trip you are considering.",
       body:
-        "Share your dates, priorities and whatever route you have. A Homeground planner will confirm the right next step, scope, timing and price before paid work begins.",
-      action: "Start my free trip brief",
+        "Use WhatsApp or leave your email. A Homeground planner can discuss your dates, priorities and current route, then confirm scope and price before paid work begins.",
+      action: "Talk to a China trip planner",
     },
   },
   zh: {
@@ -170,8 +170,8 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       eyebrow: "需要文章以外的规划",
       title: "把你正在考虑的旅行交给我们看看。",
       body:
-        "提交日期、重点和目前已有的路线。Homeground 规划师会先确认适合的下一步、服务范围、交付时间和价格，再开始任何付费工作。",
-      action: "免费提交旅行简报",
+        "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会结合日期、重点和已有路线，先确认适合的下一步、服务范围和价格。",
+      action: "联系旅行规划师",
     },
   },
   ko: {
@@ -233,8 +233,8 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       eyebrow: "가이드 다음 단계",
       title: "지금 고민 중인 여행을 보여 주세요.",
       body:
-        "날짜, 우선순위와 현재 동선을 보내 주세요. 유료 작업 전에 Homeground 플래너가 적합한 다음 단계, 범위, 납기와 가격을 먼저 확인합니다.",
-      action: "무료 여행 브리프 시작하기",
+        "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. Homeground 플래너가 날짜, 우선순위와 현재 동선을 함께 살펴보고 유료 작업 전에 범위와 가격을 확인합니다.",
+      action: "중국 여행 플래너와 상담하기",
     },
   },
 };
@@ -270,5 +270,5 @@ export function getGuidesHubPlannerHref(locale: HomegroundLocale) {
     utm_content: "hub-cta",
   });
 
-  return `${home.path}?${campaign.toString()}#route-finder`;
+  return `${home.path}?${campaign.toString()}#planner-contact`;
 }

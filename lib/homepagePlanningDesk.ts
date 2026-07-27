@@ -99,12 +99,40 @@ export interface PaidBriefReadyCopy {
 export interface HomepagePlanningDeskCopy {
   eyebrow: string;
   title: string;
-  intro: string;
   starterPrompts: readonly HomepageStarterIntentOption[];
   openStarterLabel: string;
   noteLabel: string;
   noteOptionalTag: string;
   noteHint: string;
+  contactStart: {
+    whatsappEyebrow: string;
+    whatsappTitle: string;
+    whatsappAction: string;
+    whatsappOpensExternally: string;
+    whatsappUnavailable: string;
+    messengerLead: string;
+    messengerAction: string;
+    messengerOpensExternally: string;
+    emailEyebrow: string;
+    emailTitle: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    emailAction: string;
+    emailSubmitting: string;
+    emailUse: string;
+    privacyLead: string;
+    privacyAction: string;
+    emailInvalid: string;
+    emailSuccessTitle: string;
+    emailSuccessBody: string;
+    referenceLabel: string;
+    retryAction: string;
+    failed: string;
+    uncertain: string;
+    emailUnavailable: string;
+    fallbackEmailAction: string;
+    fallbackEmailSubject: string;
+  };
   serviceShortcutLabel: string;
   serviceShortcutIntro: string;
   options: readonly HomepagePlanningIntentOption[];
@@ -114,7 +142,6 @@ export interface HomepagePlanningDeskCopy {
   selectedLabel: string;
   change: string;
   boundary: string;
-  fixedPriceScope: string;
   changeWarning: string;
   selectedAnnouncement: (label: string) => string;
   bookingResponsibility: BookingResponsibilityCopy;
@@ -148,10 +175,8 @@ export function routeNeedsScopeConfirmation(
 }
 
 const en: HomepagePlanningDeskCopy = {
-  eyebrow: "Start a trip conversation",
-  title: "What would you like help with?",
-  intro:
-    "Choose a starting point. It helps us ask the right questions without locking you into a service.",
+  eyebrow: "Talk to a China trip planner",
+  title: "Start with the easiest way to reach us.",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -179,6 +204,43 @@ const en: HomepagePlanningDeskCopy = {
   noteOptionalTag: "Optional",
   noteHint:
     "Dates, travellers, places you’re considering, or what you’d like Homeground to handle. No passport or payment details, please.",
+  contactStart: {
+    whatsappEyebrow: "Direct chat",
+    whatsappTitle: "Talk on WhatsApp",
+    whatsappAction: "Open WhatsApp",
+    whatsappOpensExternally:
+      "Opens WhatsApp in a new tab or app. Nothing is submitted to this website.",
+    whatsappUnavailable:
+      "Direct WhatsApp is temporarily unavailable.",
+    messengerLead: "Prefer Facebook?",
+    messengerAction: "Message us on Messenger",
+    messengerOpensExternally:
+      "Opens Messenger in a new tab or app. Nothing is submitted to this website.",
+    emailEyebrow: "One field",
+    emailTitle: "Leave your email",
+    emailLabel: "Your email address",
+    emailPlaceholder: "you@example.com",
+    emailAction: "Ask Homeground to email me",
+    emailSubmitting: "Saving your email…",
+    emailUse:
+      "Used only to reply to this enquiry. No marketing signup.",
+    privacyLead: "How we handle this:",
+    privacyAction: "Privacy notice",
+    emailInvalid: "Enter a complete email address.",
+    emailSuccessTitle: "Your email has been saved.",
+    emailSuccessBody:
+      "A Homeground planner can now reply. No itinerary details were collected here.",
+    referenceLabel: "Reference",
+    retryAction: "Check and try again",
+    failed:
+      "Your email was not saved. Please try again, or use WhatsApp.",
+    uncertain:
+      "We could not confirm whether your email was saved. Retry with the same email to check safely.",
+    emailUnavailable:
+      "The email form is temporarily unavailable.",
+    fallbackEmailAction: "Open your email app instead",
+    fallbackEmailSubject: "China trip enquiry",
+  },
   serviceShortcutLabel: "Already know what you need?",
   serviceShortcutIntro:
     "Start directly with a published service. You can still change the path before payment.",
@@ -187,7 +249,7 @@ const en: HomepagePlanningDeskCopy = {
       id: "conversation",
       kind: "conversation",
       statement: "I want to explain the trip before choosing a service.",
-      label: "Free trip consultation",
+      label: "Trip conversation",
       priceLabel: "Free to enquire",
       summary:
         "A Homeground planner reviews the brief and confirms the appropriate next step.",
@@ -221,9 +283,8 @@ const en: HomepagePlanningDeskCopy = {
       label: "Full Trip Planning & Ground Support",
       priceLabel: "Custom quote",
       summary:
-        "We help shape the whole journey, including the planning, selected arrangements and local support you want handled.",
-      scope:
-        "Trip-specific scope · proposal and quote confirmed with you before payment",
+        "A written scope built around the planning and delivery you want Homeground to handle.",
+      scope: "Scope and quote depend on the actual trip.",
     },
   ],
   continue: "Start my trip brief",
@@ -233,8 +294,7 @@ const en: HomepagePlanningDeskCopy = {
   selectedLabel: "Your starting point",
   change: "Change",
   boundary:
-    "Start with one free trip brief. We use it to recommend the right path, then confirm the service scope, quote and next step before any payment.",
-  fixedPriceScope: `Fixed-price scope for Review My Route and Build My Route · ${standardScopeEn}`,
+    "Free to enquire. We use this first brief to confirm the right scope; detailed personalised route work begins after the agreed payment is confirmed. No payment is taken here.",
   changeWarning:
     "Changing the service will clear the service-specific route note you entered. Your shared trip answers and contact details will stay. Continue?",
   selectedAnnouncement: (label) =>
@@ -344,10 +404,10 @@ const en: HomepagePlanningDeskCopy = {
   },
   paidBriefs: {
     "itinerary-review": {
-      kicker: "Route review brief ready",
-      title: "We have the basics for your route review.",
-      body:
-        "This is the request brief for a human review, not the finished US$69 review.",
+        kicker: "Route review brief ready",
+        title: "We have the basics for your route review.",
+        body:
+          "This is the request brief for the US$69 human review, not the finished review itself.",
       noPayment: "No payment has been taken.",
       scopeLabel: "US$69 per trip · standard scope",
       scope: standardScopeEn,
@@ -370,10 +430,10 @@ const en: HomepagePlanningDeskCopy = {
       successBackLabel: "Back to my trip brief",
     },
     "route-build": {
-      kicker: "Route-build brief ready",
-      title: "We have the basics for the route you want built.",
-      body:
-        "This is the request brief for the US$129 human route-build service, not a finished route.",
+        kicker: "Route-build brief ready",
+        title: "We have the basics for the route you want built.",
+        body:
+          "This is the request brief for the US$129 human route-build service, not the finished route itself.",
       noPayment: "No payment has been taken.",
       scopeLabel: "US$129 per trip · standard scope",
       scope: standardScopeEn,
@@ -426,10 +486,8 @@ const en: HomepagePlanningDeskCopy = {
 };
 
 const zh: HomepagePlanningDeskCopy = {
-  eyebrow: "开始说说你的旅行",
-  title: "你希望 Homeground 帮你处理什么？",
-  intro:
-    "先选择一个最接近的起点。这会帮助我们提出合适的问题，但不会把你锁定在某项服务里。",
+  eyebrow: "联系中国旅行规划师",
+  title: "选择最方便的方式，先和我们聊聊。",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -457,6 +515,39 @@ const zh: HomepagePlanningDeskCopy = {
   noteOptionalTag: "选填",
   noteHint:
     "可以写日期、同行者、考虑中的地方，或希望 Homeground 负责的部分。请不要填写护照或付款信息。",
+  contactStart: {
+    whatsappEyebrow: "直接聊天",
+    whatsappTitle: "通过 WhatsApp 直接聊",
+    whatsappAction: "打开 WhatsApp",
+    whatsappOpensExternally:
+      "将在新标签页或应用中打开 WhatsApp；不会向本网站提交任何内容。",
+    whatsappUnavailable: "WhatsApp 直接联系暂时不可用。",
+    messengerLead: "更常用 Facebook？",
+    messengerAction: "通过 Messenger 联系",
+    messengerOpensExternally:
+      "将在新标签页或应用中打开 Messenger；不会向本网站提交任何内容。",
+    emailEyebrow: "只填一项",
+    emailTitle: "留下你的邮箱",
+    emailLabel: "你的邮箱",
+    emailPlaceholder: "you@example.com",
+    emailAction: "请 Homeground 邮件联系我",
+    emailSubmitting: "正在保存邮箱……",
+    emailUse: "只用于回复本次咨询，不会自动订阅营销邮件。",
+    privacyLead: "信息如何处理：",
+    privacyAction: "隐私说明",
+    emailInvalid: "请输入完整有效的邮箱地址。",
+    emailSuccessTitle: "邮箱已保存。",
+    emailSuccessBody:
+      "Homeground 规划师现在可以回复你。本页没有收集任何行程详情。",
+    referenceLabel: "查询编号",
+    retryAction: "检查并重试",
+    failed: "邮箱没有保存成功。请重试，或改用 WhatsApp。",
+    uncertain:
+      "目前无法确认邮箱是否已保存。使用同一个邮箱重试，可以安全核对结果。",
+    emailUnavailable: "邮箱表单暂时不可用。",
+    fallbackEmailAction: "改用邮件应用发送",
+    fallbackEmailSubject: "中国旅行咨询",
+  },
   serviceShortcutLabel: "已经知道自己需要什么？",
   serviceShortcutIntro:
     "可以直接从公开服务开始；付款前仍可根据实际需求调整路径。",
@@ -465,7 +556,7 @@ const zh: HomepagePlanningDeskCopy = {
       id: "conversation",
       kind: "conversation",
       statement: "我想先说明旅行需求，再决定服务。",
-      label: "免费旅行咨询",
+      label: "旅行需求沟通",
       priceLabel: "提交需求免费",
       summary: "Homeground 规划师会查看简报，并确认适合的下一步。",
       scope: "本页不会收款。",
@@ -491,12 +582,11 @@ const zh: HomepagePlanningDeskCopy = {
     {
       id: "full-trip-support",
       kind: "paid",
-      statement: "我希望有人协助整趟旅行，包括部分具体安排或在地协调。",
-      label: "全程规划与落地支持",
-      priceLabel: "单独报价",
-      summary: "我们会与你梳理整趟旅行，包括希望有人负责的规划、具体安排和在地支持。",
-      scope:
-        "按行程确认范围 · 付款前与你确认方案与报价",
+        statement: "我希望有人协助整趟旅行，包括部分具体安排或在地协调。",
+        label: "全程规划与落地支持",
+        priceLabel: "单独报价",
+       summary: "根据你希望 Homeground 承担的规划和执行内容，先确认书面范围。",
+       scope: "服务范围和报价取决于实际行程。",
     },
   ],
   continue: "开始填写旅行简报",
@@ -505,8 +595,7 @@ const zh: HomepagePlanningDeskCopy = {
   selectedLabel: "你的起点",
   change: "更换",
   boundary:
-    "免费提交一份旅行简报。我们会据此推荐适合的路径，并在付款前与你确认服务范围、报价与下一步。",
-  fixedPriceScope: `路线审核与路线规划的固定价格标准范围 · ${standardScopeZh}`,
+    "提交需求不收费。我们会用这份简报确认适合的范围；详细个性化路线在双方约定的款项确认后开始制作。本页不会收款。",
   changeWarning:
     "更换服务会清空你填写的服务专属路线说明；共用的旅行答案和联系方式会保留。是否继续？",
   selectedAnnouncement: (label) => `已选择${label}，现在可以继续填写旅行简报。`,
@@ -614,10 +703,10 @@ const zh: HomepagePlanningDeskCopy = {
   },
   paidBriefs: {
     "itinerary-review": {
-      kicker: "路线审核简报已准备好",
-      title: "我们已经了解路线审核所需的基本信息。",
-      body:
-        "这是交给真人的服务申请，不是已经完成的 US$69 路线审核。",
+        kicker: "路线审核简报已准备好",
+        title: "我们已经了解路线审核所需的基本信息。",
+        body:
+          "这是 US$69 真人路线审核的服务申请，不是已经完成的审核成果。",
       noPayment: "目前没有收取任何款项。",
       scopeLabel: "US$69／趟 · 标准范围",
       scope: standardScopeZh,
@@ -640,10 +729,10 @@ const zh: HomepagePlanningDeskCopy = {
       successBackLabel: "返回我的旅行简报",
     },
     "route-build": {
-      kicker: "路线规划简报已准备好",
-      title: "我们已经了解你希望建立的路线基础。",
-      body:
-        "这是 US$129 真人路线规划服务的申请，不是已经完成的路线。",
+        kicker: "路线规划简报已准备好",
+        title: "我们已经了解你希望建立的路线基础。",
+        body:
+          "这是 US$129 真人路线规划服务的申请，不是已经完成的路线成果。",
       noPayment: "目前没有收取任何款项。",
       scopeLabel: "US$129／趟 · 标准范围",
       scope: standardScopeZh,
@@ -696,10 +785,8 @@ const zh: HomepagePlanningDeskCopy = {
 };
 
 const ko: HomepagePlanningDeskCopy = {
-  eyebrow: "여행 이야기 시작하기",
-  title: "Homeground가 어떤 부분을 도와드리면 좋을까요?",
-  intro:
-    "가장 가까운 출발점을 골라 주세요. 알맞은 질문을 드리기 위한 선택이며, 특정 서비스로 확정되는 것은 아닙니다.",
+  eyebrow: "중국 여행 플래너와 상담하기",
+  title: "가장 편한 방법으로 먼저 이야기해 보세요.",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -727,6 +814,43 @@ const ko: HomepagePlanningDeskCopy = {
   noteOptionalTag: "선택",
   noteHint:
     "날짜, 여행자, 생각 중인 장소 또는 Homeground가 맡았으면 하는 부분을 적어 주세요. 여권이나 결제 정보는 입력하지 마세요.",
+  contactStart: {
+    whatsappEyebrow: "바로 대화",
+    whatsappTitle: "WhatsApp으로 바로 상담하기",
+    whatsappAction: "WhatsApp 열기",
+    whatsappOpensExternally:
+      "새 탭이나 앱에서 WhatsApp으로 이동하며 이 웹사이트에는 아무 내용도 제출되지 않습니다.",
+    whatsappUnavailable:
+      "WhatsApp 바로 연결을 잠시 사용할 수 없습니다.",
+    messengerLead: "Facebook이 더 편한가요?",
+    messengerAction: "Messenger로 메시지 보내기",
+    messengerOpensExternally:
+      "새 탭이나 앱에서 Messenger로 이동하며 이 웹사이트에는 아무 내용도 제출되지 않습니다.",
+    emailEyebrow: "한 항목만 입력",
+    emailTitle: "이메일 남기기",
+    emailLabel: "이메일 주소",
+    emailPlaceholder: "you@example.com",
+    emailAction: "Homeground의 이메일 답장 받기",
+    emailSubmitting: "이메일 저장 중…",
+    emailUse:
+      "이번 문의에 답장할 때만 사용하며 마케팅 구독으로 처리하지 않습니다.",
+    privacyLead: "정보 처리 방법:",
+    privacyAction: "개인정보 안내",
+    emailInvalid: "완전한 이메일 주소를 입력해 주세요.",
+    emailSuccessTitle: "이메일이 저장되었습니다.",
+    emailSuccessBody:
+      "이제 Homeground 플래너가 답장할 수 있습니다. 이곳에서는 일정 세부 정보를 수집하지 않았습니다.",
+    referenceLabel: "문의 번호",
+    retryAction: "확인 후 다시 시도",
+    failed:
+      "이메일이 저장되지 않았습니다. 다시 시도하거나 WhatsApp을 이용해 주세요.",
+    uncertain:
+      "이메일 저장 여부를 확인하지 못했습니다. 같은 이메일로 다시 시도하면 안전하게 확인할 수 있습니다.",
+    emailUnavailable:
+      "이메일 양식을 잠시 사용할 수 없습니다.",
+    fallbackEmailAction: "이메일 앱으로 직접 보내기",
+    fallbackEmailSubject: "중국 여행 문의",
+  },
   serviceShortcutLabel: "필요한 서비스를 이미 알고 있나요?",
   serviceShortcutIntro:
     "공개된 서비스에서 바로 시작할 수 있으며, 결제 전 실제 필요에 따라 경로를 바꿀 수 있습니다.",
@@ -735,7 +859,7 @@ const ko: HomepagePlanningDeskCopy = {
       id: "conversation",
       kind: "conversation",
       statement: "서비스를 고르기 전에 여행 요청부터 설명하고 싶어요.",
-      label: "무료 여행 상담",
+      label: "여행 요청 상담",
       priceLabel: "문의 제출 무료",
       summary:
         "Homeground 플래너가 브리프를 검토하고 적절한 다음 단계를 안내합니다.",
@@ -761,14 +885,12 @@ const ko: HomepagePlanningDeskCopy = {
     },
     {
       id: "full-trip-support",
-      kind: "paid",
-      statement: "일정뿐 아니라 일부 예약 준비나 현지 조율까지 도움받고 싶어요.",
-      label: "전체 여행 설계 및 현지 지원",
-      priceLabel: "문의부터 시작",
-      summary:
-        "전체 여행의 동선, 예약 준비와 현지 지원 범위를 함께 정합니다.",
-      scope:
-        "브리프를 검토한 뒤 맞춤 범위, 견적과 다음 단계를 안내합니다.",
+        kind: "paid",
+        statement: "일정뿐 아니라 일부 예약 준비나 현지 조율까지 도움받고 싶어요.",
+        label: "전체 여행 설계 및 현지 지원",
+       priceLabel: "맞춤 견적",
+       summary: "Homeground가 맡을 플래닝과 실행 범위를 실제 여행에 맞춰 서면으로 정합니다.",
+       scope: "서비스 범위와 견적은 실제 여행에 따라 달라집니다.",
     },
   ],
   continue: "여행 브리프 시작하기",
@@ -778,8 +900,7 @@ const ko: HomepagePlanningDeskCopy = {
   selectedLabel: "여행의 출발점",
   change: "변경",
   boundary:
-    "무료 여행 브리프 하나로 시작하세요. 알맞은 경로를 추천하고 결제 전에 서비스 범위, 견적과 다음 단계를 확인합니다.",
-  fixedPriceScope: `일정 검토와 동선 설계의 정가 적용 범위 · ${standardScopeKo}`,
+    "문의 제출은 무료입니다. 이 브리프로 적절한 범위를 먼저 확인하며, 상세 맞춤 일정 작업은 합의된 결제가 확인된 뒤 시작합니다. 이 페이지에서는 결제가 진행되지 않습니다.",
   changeWarning:
     "서비스를 바꾸면 서비스별 일정 메모가 삭제됩니다. 공통 여행 답변과 연락처는 유지됩니다. 계속할까요?",
   selectedAnnouncement: (label) => `${label}을 선택했습니다. 여행 브리프를 계속 작성할 수 있습니다.`,
@@ -887,10 +1008,10 @@ const ko: HomepagePlanningDeskCopy = {
   },
   paidBriefs: {
     "itinerary-review": {
-      kicker: "일정 검토 브리프 준비 완료",
-      title: "일정 검토에 필요한 기본 정보를 확인했습니다.",
-      body:
-        "이것은 사람 플래너에게 보내는 서비스 요청서이며, 완료된 US$69 일정 검토가 아닙니다.",
+        kicker: "일정 검토 브리프 준비 완료",
+        title: "일정 검토에 필요한 기본 정보를 확인했습니다.",
+        body:
+          "US$69 사람 플래너 일정 검토를 요청하는 브리프이며, 아직 완성된 검토 결과는 아닙니다.",
       noPayment: "아직 결제된 금액은 없습니다.",
       scopeLabel: "여행 1건당 US$69 · 표준 범위",
       scope: standardScopeKo,
@@ -913,10 +1034,10 @@ const ko: HomepagePlanningDeskCopy = {
       successBackLabel: "여행 브리프로 돌아가기",
     },
     "route-build": {
-      kicker: "동선 설계 브리프 준비 완료",
-      title: "원하시는 여행 동선의 기본 정보를 확인했습니다.",
-      body:
-        "이것은 US$129 사람 플래너 동선 설계 서비스 요청서이며, 완성된 동선이 아닙니다.",
+        kicker: "동선 설계 브리프 준비 완료",
+        title: "원하시는 여행 동선의 기본 정보를 확인했습니다.",
+        body:
+          "US$129 사람 플래너 동선 설계 서비스를 요청하는 브리프이며, 아직 완성된 동선 결과는 아닙니다.",
       noPayment: "아직 결제된 금액은 없습니다.",
       scopeLabel: "여행 1건당 US$129 · 표준 범위",
       scope: standardScopeKo,

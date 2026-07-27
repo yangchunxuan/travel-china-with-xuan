@@ -38,9 +38,12 @@ import {
   budgetDestinationInquiryFormVersion,
   budgetPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
+  currentHomepageEmailFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
+  homepageEmailInquirySchemaVersion,
+  homepageEmailPrivacyNoticeVersion,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -55,9 +58,12 @@ export {
   budgetDestinationInquiryFormVersion,
   budgetPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
+  currentHomepageEmailFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
+  homepageEmailInquirySchemaVersion,
+  homepageEmailPrivacyNoticeVersion,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -176,9 +182,24 @@ export interface NormalizedDestinationInquiryPayload {
   experiment: null;
 }
 
+export interface NormalizedHomepageEmailInquiryPayload {
+  schemaVersion: typeof homepageEmailInquirySchemaVersion;
+  formVersion: typeof currentHomepageEmailFormVersion;
+  entryPath: "homepage_email";
+  locale: InquiryLocale;
+  contact: {
+    channel: "email";
+    email: string;
+  };
+  privacyNoticeVersion: typeof homepageEmailPrivacyNoticeVersion;
+  attribution: NormalizedInquiryAttribution;
+  experiment: null;
+}
+
 export type NormalizedInquiryPayload =
   | NormalizedRouteInquiryPayload
-  | NormalizedDestinationInquiryPayload;
+  | NormalizedDestinationInquiryPayload
+  | NormalizedHomepageEmailInquiryPayload;
 
 export interface InquiryValidationConfig {
   allowedFormVersions: readonly string[];
@@ -354,6 +375,24 @@ export function semanticInquiryPayload(
       ? { channel: "email", email: value.contact.email }
       : { channel: "whatsapp", phoneE164: value.contact.phoneE164 };
 
+  if (value.schemaVersion === homepageEmailInquirySchemaVersion) {
+    return {
+      schemaVersion: value.schemaVersion,
+      formVersion: value.formVersion,
+      entryPath: value.entryPath,
+      locale: value.locale,
+      contact,
+      privacyNoticeVersion: value.privacyNoticeVersion,
+      attribution: {
+        landingPath: value.attribution.landingPath,
+        utmSource: null,
+        utmMedium: null,
+        utmCampaign: null,
+      },
+      experiment: null,
+    };
+  }
+
   if (value.schemaVersion === destinationInquirySchemaVersion) {
     const includesBudget =
       value.formVersion === currentDestinationInquiryFormVersion ||
@@ -446,6 +485,149 @@ function classicStartTimingSnapshot(
     knownDestinationsStatus: null,
     status: "manual_only",
     routeFeasibility: "unverified",
+  };
+}
+
+function validateAndNormalizeHomepageEmailInquiry(
+  input: Record<string, unknown>,
+  config: InquiryValidationConfig,
+): InquiryValidationResult {
+  const fieldErrors: Record<string, string> = {};
+  hasOnlyKeys(
+    input,
+    [
+      "schemaVersion",
+      "formVersion",
+      "entryPath",
+      "locale",
+      "contact",
+      "privacyNoticeVersion",
+      "attribution",
+      "experiment",
+      "antiAbuse",
+    ],
+    "",
+    fieldErrors,
+  );
+
+  if (input.schemaVersion !== homepageEmailInquirySchemaVersion) {
+    fieldErrors.schemaVersion = "unsupported";
+  }
+  if (
+    input.formVersion !== currentHomepageEmailFormVersion ||
+    !config.allowedFormVersions.includes(currentHomepageEmailFormVersion)
+  ) {
+    fieldErrors.formVersion = "unsupported";
+  }
+  if (input.entryPath !== "homepage_email") {
+    fieldErrors.entryPath = "invalid";
+  }
+  if (!isOneOf(input.locale, inquiryLocales)) {
+    fieldErrors.locale = "invalid";
+  }
+  if (
+    input.privacyNoticeVersion !== homepageEmailPrivacyNoticeVersion ||
+    !config.allowedPrivacyNoticeVersions.includes(
+      homepageEmailPrivacyNoticeVersion,
+    )
+  ) {
+    fieldErrors.privacyNoticeVersion = "unsupported";
+  }
+  if (input.experiment !== null) {
+    fieldErrors.experiment = "must_be_null";
+  }
+
+  let email = "";
+  const contact = input.contact;
+  if (!isPlainObject(contact)) {
+    fieldErrors.contact = "required";
+  } else {
+    hasOnlyKeys(contact, ["channel", "email"], "contact", fieldErrors);
+    if (contact.channel !== "email") {
+      fieldErrors["contact.channel"] = "invalid";
+    }
+    if (typeof contact.email !== "string") {
+      fieldErrors["contact.email"] = "required";
+    } else {
+      const normalizedEmail = normalizeEmail(contact.email);
+      if (normalizedEmail === null) {
+        fieldErrors["contact.email"] = "invalid";
+      } else {
+        email = normalizedEmail;
+      }
+    }
+  }
+
+  let normalizedAttribution: NormalizedInquiryAttribution | null = null;
+  const attribution = input.attribution;
+  if (!isPlainObject(attribution)) {
+    fieldErrors.attribution = "required";
+  } else {
+    hasOnlyKeys(
+      attribution,
+      ["landingPath"],
+      "attribution",
+      fieldErrors,
+    );
+    const expectedSubmitSurface = isOneOf(input.locale, inquiryLocales)
+      ? inquirySubmitSurfaceByLocale[input.locale]
+      : null;
+    if (
+      typeof attribution.landingPath !== "string" ||
+      expectedSubmitSurface === null ||
+      attribution.landingPath !== expectedSubmitSurface
+    ) {
+      fieldErrors["attribution.landingPath"] = "invalid";
+    } else {
+      normalizedAttribution = {
+        landingPath: attribution.landingPath,
+        utmSource: null,
+        utmMedium: null,
+        utmCampaign: null,
+      };
+    }
+  }
+
+  const antiAbuse = input.antiAbuse;
+  if (!isPlainObject(antiAbuse)) {
+    fieldErrors.antiAbuse = "required";
+  } else {
+    hasOnlyKeys(antiAbuse, ["companyWebsite"], "antiAbuse", fieldErrors);
+    if (
+      typeof antiAbuse.companyWebsite !== "string" ||
+      antiAbuse.companyWebsite.trim() !== ""
+    ) {
+      fieldErrors.request = "invalid";
+    }
+  }
+
+  if (
+    Object.keys(fieldErrors).length > 0 ||
+    !isOneOf(input.locale, inquiryLocales) ||
+    !email ||
+    !normalizedAttribution
+  ) {
+    let code: InquiryValidationCode = "validation_failed";
+    if (fieldErrors.formVersion === "unsupported") {
+      code = "unsupported_form_version";
+    } else if (fieldErrors.privacyNoticeVersion === "unsupported") {
+      code = "unsupported_privacy_notice";
+    }
+    return { ok: false, code, fieldErrors };
+  }
+
+  return {
+    ok: true,
+    value: {
+      schemaVersion: homepageEmailInquirySchemaVersion,
+      formVersion: currentHomepageEmailFormVersion,
+      entryPath: "homepage_email",
+      locale: input.locale,
+      contact: { channel: "email", email },
+      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      attribution: normalizedAttribution,
+      experiment: null,
+    },
   };
 }
 
@@ -1048,6 +1230,9 @@ export function validateAndNormalizeInquiry(
       code: "validation_failed",
       fieldErrors: { request: "invalid" },
     };
+  }
+  if (input.schemaVersion === homepageEmailInquirySchemaVersion) {
+    return validateAndNormalizeHomepageEmailInquiry(input, config);
   }
   if (input.schemaVersion === destinationInquirySchemaVersion) {
     return validateAndNormalizeDestinationInquiry(input, config);

@@ -57,9 +57,9 @@ test("legal copy leads with registered trust and keeps each paid scope explicit"
   assert.match(legal, /유료 서면 컨설팅 진행 절차/);
   assert.doesNotMatch(legal, /travel agency licence|旅行社业务经营许可|여행사 업무 허가/);
 
-  assert.match(service, /clearly scoped written route services/);
-  assert.match(service, /范围清楚的书面路线服务/);
-  assert.match(service, /범위가 명확한 서면 일정 서비스/);
+  assert.match(service, /Choose Review or Build for a written route service/);
+  assert.match(service, /已有路线可选“路线审核”/);
+  assert.match(service, /기존 일정이 있다면 검토를/);
   assert.match(service, /Bring the whole journey to Homeground/);
   assert.match(service, /把整趟旅行交给 Homeground/);
   assert.match(service, /전체 여행을 Homeground에 알려 주세요/);

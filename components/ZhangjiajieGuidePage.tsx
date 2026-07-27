@@ -319,7 +319,7 @@ export function ZhangjiajieGuidePage({
     locale,
   );
   const fieldNoteCopy = fieldNoteRelatedCopy[locale];
-  const plannerHref = `${copy.homePath}?planner=destinations#route-finder`;
+  const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
   return (

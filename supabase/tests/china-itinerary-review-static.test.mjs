@@ -22,17 +22,31 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
   assert.match(copy, /Up to 10 travel days/);
   assert.match(copy, /up to 4 overnight bases/);
   assert.match(copy, /one shared route for 1–4 travellers/);
-  assert.match(page, /service=itinerary-review/);
-  assert.match(page, /service=route-build/);
-  assert.match(page, /service=full-trip-support/);
-  assert.match(copy, /No online payment is taken/);
-  assert.match(copy, /no payment or file upload is needed here/);
-  assert.match(copy, /Homeground will follow up personally/);
-  assert.match(page, /const conversationHref/);
-  assert.match(page, /utm_campaign=trip-conversation/);
-  assert.match(copy, /Start a free trip brief/);
-  assert.match(copy, /免费提交旅行简报/);
-  assert.match(copy, /무료 여행 브리프 시작하기/);
+  assert.match(page, /const reviewHref = plannerContactHref/);
+  assert.match(page, /const buildHref = plannerContactHref/);
+  assert.match(page, /const fullSupportHref = plannerContactHref/);
+  const genericContactLine = page
+    .split("\n")
+    .find((line) => line.includes("const plannerContactHref"));
+  assert.ok(genericContactLine, "the generic planner contact href must exist");
+  assert.match(genericContactLine, /#planner-contact/);
+  assert.doesNotMatch(
+    genericContactLine,
+    /planner=destinations|free-brief|service=/,
+  );
+  assert.doesNotMatch(
+    page,
+    /planner=destinations|#route-finder|service=(?:itinerary-review|route-build|full-trip-support)/,
+  );
+  assert.match(copy, /consultation: "Talk to a China trip planner"/);
+  assert.match(copy, /consultation: "联系旅行规划师"/);
+  assert.match(copy, /consultation: "중국 여행 플래너와 상담하기"/);
+  assert.match(copy, /This website does not take payment/);
+  assert.match(
+    copy,
+    /Do not submit passport details, payment information, QR codes or unredacted booking references/,
+  );
+  assert.match(copy, /work starts after payment is confirmed/);
   assert.doesNotMatch(
     commercialSurface,
     /freeFinderHref|free-route-finder|Try the free Route Finder|先试用免费路线检查工具|무료 Route Finder/,
@@ -60,8 +74,8 @@ test("Chinese and Korean service pages are complete localized products", async (
   assert.match(copy, /为我规划路线/);
   assert.match(copy, /내 일정 검토/);
   assert.match(copy, /내 동선 설계/);
-  assert.match(copy, /这里不会收取在线付款/);
-  assert.match(copy, /온라인 결제는 받지 않습니다/);
+  assert.match(copy, /本网站不直接收款/);
+  assert.match(copy, /이 웹사이트에서는 직접 결제하지 않습니다/);
   assert.match(component, /locale\?: HomegroundLocale/);
   assert.match(component, /getChinaItineraryReviewCopy\(locale\)/);
   assert.match(component, /data-homeground-locale=\{locale\}/);

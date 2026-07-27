@@ -186,33 +186,45 @@ test("transport article uses its own responsive, localized travel-day photos", a
   );
 });
 
-test("transport CTA carries its three-city context into the planner", async () => {
+test("transport CTA opens direct planner contact without starting the old destination form", async () => {
   const guide = await source("components/TransportGuidePage.tsx");
   const copy = await source(
     "lib/beijingZhangjiajieShanghaiTransportI18n.ts",
   );
-  const planner = await source("components/RouteFinder.tsx");
 
   assert.match(
     guide,
-    /destinations=beijing-great-wall%2Czhangjiajie%2Cshanghai/,
+    /utm_content=planner-contact#planner-contact/,
   );
-  assert.match(
-    planner,
-    /function destinationsFromUrl\(\): DestinationId\[\] \| null/,
-  );
-  assert.match(planner, /const linkedDestinationIds = destinationsFromUrl\(\)/);
-  assert.match(
-    planner,
-    /applyLinkedDestinations\(storedDraft, linkedDestinationIds\)/,
-  );
-  assert.match(copy, /Start my free trip brief/);
-  assert.match(copy, /Homeground 规划师会亲自继续与你沟通/);
-  assert.match(copy, /Homeground 플래너가 직접 상담을 이어가고/);
-  assert.doesNotMatch(
-    copy,
-    /free Route Finder|无需先填写联系方式|연락처를 입력하기 전에/,
-  );
+  assert.doesNotMatch(guide, /planner=destinations|free-brief|service=/);
+  assert.match(guide, /<GuideCtaLink/);
+  assert.match(guide, /const GUIDE_ID = "beijing-zhangjiajie-shanghai-transport"/);
+  assert.match(guide, /guideId=\{GUIDE_ID\}/);
+  assert.match(copy, /action: "Talk to a China trip planner"/);
+  assert.match(copy, /action: "联系旅行规划师"/);
+  assert.match(copy, /action: "중국 여행 플래너와 상담하기"/);
+  assert.match(copy, /Use WhatsApp or leave your email/);
+  assert.match(copy, /可以通过 WhatsApp 直接聊，或只留下一个邮箱/);
+  assert.match(copy, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);
+  for (const stalePhrase of [
+    /Start the free route check/iu,
+    /free Route Finder/iu,
+    /free trip brief/iu,
+    /free trip consultation/iu,
+    /before sharing contact details/iu,
+    /开始免费路线检查/u,
+    /免费旅行简报/u,
+    /免费旅行咨询/u,
+    /使用免费的 Route Finder/iu,
+    /无需先填写联系方式即可看到时间判断/u,
+    /무료 동선 확인 시작하기/u,
+    /무료 Route Finder/iu,
+    /무료 여행 브리프/u,
+    /무료 여행 상담/u,
+    /연락처를 입력하기 전에 시간 판단 결과를 볼 수 있습니다/u,
+  ]) {
+    assert.doesNotMatch(copy, stalePhrase);
+  }
 });
 
 test("existing Zhangjiajie guide links back to the new transport decision page", async () => {

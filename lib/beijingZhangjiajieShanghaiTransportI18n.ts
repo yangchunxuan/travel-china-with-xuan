@@ -591,11 +591,11 @@ const english: TransportGuideCopy = {
     ],
   },
   finalCta: {
-    sectionLabel: "Continue with a planner",
-    title: "Turn these three cities into one workable trip brief.",
+    sectionLabel: "Next step",
+    title: "Do these three cities fit your available nights?",
     body:
-      "Share the cities, total nights, travel party and preferred pace once. The trip brief is free to submit, and a Homeground planner will continue the conversation with the right next step.",
-    action: "Start my free trip brief",
+      "Use WhatsApp or leave your email. A planner can discuss the cities, total nights and preferred pace with you, then explain the suitable next step before any paid work begins.",
+    action: "Talk to a China trip planner",
   },
   structuredData: {
     homeName: "Homeground China",
@@ -1009,11 +1009,11 @@ const chinese: TransportGuideCopy = {
     ],
   },
   finalCta: {
-    sectionLabel: "继续与规划师沟通",
-    title: "把这三座城市放进同一份可执行的旅行简报。",
+    sectionLabel: "下一步",
+    title: "你的旅行晚数能放下这三座城市吗？",
     body:
-      "一次填写城市、总晚数、同行者和偏好节奏。旅行简报可以免费提交，Homeground 规划师会亲自继续与你沟通，并确认适合的下一步。",
-    action: "免费提交旅行简报",
+      "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会结合目的地、总晚数和旅行节奏说明适合怎样继续；任何付费工作开始前都会先确认范围和价格。",
+    action: "联系旅行规划师",
   },
   structuredData: {
     homeName: "Homeground China",
@@ -1421,11 +1421,11 @@ const korean: TransportGuideCopy = {
     ],
   },
   finalCta: {
-    sectionLabel: "플래너와 계속 상담하기",
-    title: "세 도시를 하나의 실행 가능한 여행 브리프에 담아 보세요.",
+    sectionLabel: "다음 단계",
+    title: "여행 숙박일수에 이 세 도시가 들어갈까요?",
     body:
-      "도시, 총 숙박일수, 일행과 선호하는 여행 속도를 한 번만 알려 주세요. 여행 브리프는 무료로 제출할 수 있으며 Homeground 플래너가 직접 상담을 이어가고 알맞은 다음 단계를 안내합니다.",
-    action: "무료 여행 브리프 시작하기",
+      "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 목적지, 총 숙박일수와 여행 속도를 함께 살펴보고 적합한 다음 단계를 안내합니다. 유료 작업 전에는 범위와 가격을 먼저 확인합니다.",
+    action: "중국 여행 플래너와 상담하기",
   },
   structuredData: {
     homeName: "Homeground China",

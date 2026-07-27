@@ -11,7 +11,7 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     planning: "How planning works",
     studio: "About Homeground",
     questions: "Questions",
-    cta: "Check my route",
+    cta: "Talk to a China trip planner",
   },
   breadcrumb: {
     label: "Breadcrumb",
@@ -226,7 +226,7 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     directionTitle: "Beijing first or Shanghai first?",
     directionBody:
       "Either direction can work. Compare the international flight times and the useful domestic service in the correct direction; schedules are not perfectly symmetrical.",
-    plannerLink: "Ask Homeground to compare the real train and flight time",
+    plannerLink: "Talk to a China trip planner",
   },
   fit: {
     label: "An honest fit test",
@@ -340,12 +340,13 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     ],
   },
   cta: {
-    label: "Check the trip you actually have",
+    label: "Next step",
     title: "Start with your route—not just the number “10.”",
     intro:
-      "Start with the cities and number of nights. In the first reply, a Homeground planner will ask for your exact arrival and departure times, group profile and must-see list, then recount the full sightseeing days and timing conflicts before a quote is prepared.",
-    button: "Start my route check",
-    note: "No instant package. No obligation to keep every city.",
+      "Use WhatsApp or leave your email. A planner can then discuss your cities, nights, arrival and departure times, group and must-see list with you.",
+    button: "Talk to a China trip planner",
+    note:
+      "The planner may recommend the US$69 route review, US$129 route build or Full Trip support. Paid work starts only after scope, price or quote, delivery timing and payment are confirmed.",
   },
   source: {
     summary: "Editorial method and source boundary",
@@ -364,7 +365,7 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     navigationLabel: "Footer navigation",
     zhangjiajieGuide: "Zhangjiajie guide",
     privacy: "Privacy",
-    cta: "Check my route",
+    cta: "Talk to a China trip planner",
     copyright: (year) => `© ${year} Homeground China. Private China trip planning.`,
   },
 };

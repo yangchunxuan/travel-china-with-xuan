@@ -260,10 +260,10 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       "A less distinctive show can be the better choice because it fits the correct base and protects the next day. Sometimes the best calculation ends with no ticket.",
     ctaTitle: "Does an evening show still fit your route?",
     ctaBody:
-      "Share Zhangjiajie, your China nights, group and preferred pace in one free trip brief. A Homeground planner will continue the conversation and ask for the exact date, hotel base and next-morning plan before recommending a show.",
-    ctaAction: "Start my free trip brief",
+      "Tell us what is already fixed about Zhangjiajie. Use WhatsApp or leave your email; the date, hotel base and next-morning plan can be discussed with a planner.",
+    ctaAction: "Talk to a China trip planner",
     ctaNote:
-      "The same brief carries your route context into a human reply.",
+      "Live sessions, seats and transfers are confirmed for your dates. Paid work begins only after scope, price or quote, delivery timing and payment are confirmed.",
   },
   checklist: {
     sectionLabel: "What changes by date",
@@ -370,9 +370,10 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     sectionLabel: "A route answer, not a ticket ranking",
     title: "Check the evening only after the Zhangjiajie route works.",
     body:
-      "Send one free trip brief with your destination time and group. A Homeground planner will reply personally, then confirm the hotel base, daytime plan, next-morning timing and live show details that affect the decision.",
-    action: "Start my free trip brief",
-    note: "One brief starts the conversation; no payment is taken here.",
+      "Use WhatsApp or leave your email. A planner can look at how the evening fits your hotel base, daytime plan and next morning.",
+    action: "Talk to a China trip planner",
+    note:
+      "The US$69 review, US$129 route build and Full Trip support remain separate paid services. Work starts only after scope, price or quote, delivery timing and payment are confirmed.",
   },
   structuredData: {
     homeName: "Homeground China",

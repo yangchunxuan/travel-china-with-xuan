@@ -98,6 +98,7 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
     assert.equal(isHomepagePlanningIntentId(id), true);
   }
   assert.equal(isHomepagePlanningIntentId(null), false);
+  assert.equal(isHomepagePlanningIntentId("explore"), false);
   assert.equal(isHomepagePlanningIntentId("unknown"), false);
   assert.deepEqual(homepageStarterIntentIds, [
     "arrange-trip",
@@ -162,20 +163,23 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
   );
   assert.doesNotMatch(surface, /service=explore/u);
   assert.doesNotMatch(surface, /service=conversation/u);
+  assert.doesNotMatch(surface, /HomepagePlanningUpgrade/u);
+  assert.doesNotMatch(planningModel, /id:\s*["']explore["']/u);
 });
 
-test("English, Chinese and Korean expose one free human conversation and three paid shortcuts", async () => {
+test("English, Chinese and Korean expose the same quick contacts and three paid shortcuts", async () => {
   const localizedCopySource = await source("lib/homepagePlanningDesk.ts");
   const locales = [
     {
       locale: "en",
       patterns: [
         /Tell us the China trip you want/u,
-        /What would you like help with\?/u,
-        /Plan and help arrange the trip/u,
-        /Build a route I’ll book myself/u,
-        /Review a route I already have/u,
-        /I’m not sure yet/u,
+        /Start with the easiest way to reach us\./u,
+        /Talk on WhatsApp/u,
+        /Open WhatsApp/u,
+        /Message us on Messenger/u,
+        /Leave your email/u,
+        /Your email has been saved\./u,
         /Already know what you need\?/u,
         /Review My Route/u,
         /Build My Route/u,
@@ -188,11 +192,12 @@ test("English, Chinese and Korean expose one free human conversation and three p
       locale: "zh",
       patterns: [
         /先说说你想要怎样的中国旅行/u,
-        /你希望 Homeground 帮你处理什么？/u,
-        /帮我规划并协调整趟旅行/u,
-        /为我搭建路线，预订由我自己完成/u,
-        /审核我已经准备好的路线/u,
-        /我还不确定/u,
+        /选择最方便的方式，先和我们聊聊。/u,
+        /通过 WhatsApp 直接聊/u,
+        /打开 WhatsApp/u,
+        /通过 Messenger 联系/u,
+        /留下你的邮箱/u,
+        /邮箱已保存。/u,
         /已经知道自己需要什么？/u,
         /审核我的路线/u,
         /为我规划路线/u,
@@ -205,11 +210,12 @@ test("English, Chinese and Korean expose one free human conversation and three p
       locale: "ko",
       patterns: [
         /원하는 중국 여행을 들려주세요/u,
-        /Homeground가 어떤 부분을 도와드리면 좋을까요\?/u,
-        /여행 전체 설계와 일부 예약·현지 조율이 필요해요/u,
-        /예약은 직접 하고, 여행 동선만 설계받고 싶어요/u,
-        /이미 준비한 일정을 검토받고 싶어요/u,
-        /아직 잘 모르겠어요/u,
+        /가장 편한 방법으로 먼저 이야기해 보세요\./u,
+        /WhatsApp으로 바로 상담하기/u,
+        /WhatsApp 열기/u,
+        /Messenger로 메시지 보내기/u,
+        /이메일 남기기/u,
+        /이메일이 저장되었습니다\./u,
         /필요한 서비스를 이미 알고 있나요\?/u,
         /내 일정 검토/u,
         /내 동선 설계/u,
@@ -235,18 +241,11 @@ test("English, Chinese and Korean expose one free human conversation and three p
     }
     assert.match(localizedCopy, /US\$69/u);
     assert.match(localizedCopy, /US\$129/u);
-    assert.equal(planningDeskCopy.starterPrompts.length, 4);
     assert.ok(
-      planningDeskCopy.starterPrompts.every(
-        (prompt) => prompt.planningIntent === "conversation",
-      ),
-      `${locale} starter prompts must stay neutral until a planner reviews the brief`,
-    );
-    assert.ok(
-      planningDeskCopy.noteLabel.length > 0 &&
-        planningDeskCopy.noteHint.length > 0 &&
-        planningDeskCopy.openStarterLabel.length > 0,
-      `${locale} must offer the optional own-words note as a second start lane`,
+      planningDeskCopy.contactStart.emailUse.length > 0 &&
+        planningDeskCopy.contactStart.whatsappOpensExternally.length > 0 &&
+        planningDeskCopy.contactStart.privacyAction.length > 0,
+      `${locale} quick contacts must explain email use, outbound messaging and privacy`,
     );
     assert.equal(
       planningDeskCopy.bookingResponsibility.options.length,
@@ -270,10 +269,24 @@ test("English, Chinese and Korean expose one free human conversation and three p
       1,
       `${locale} must expose one free conversation path`,
     );
-    assert.equal(
-      planningDeskCopy.options.filter((option) => option.kind === "paid").length,
-      3,
-      `${locale} must retain three paid paths`,
+    assert.match(
+      JSON.stringify(planningDeskCopy.conversationBrief),
+      locale === "en"
+        ? /planner[\s\S]*brief|brief[\s\S]*planner/iu
+        : locale === "zh"
+          ? /规划师[\s\S]*简报|简报[\s\S]*规划师/u
+          : /플래너[\s\S]*브리프|브리프[\s\S]*플래너/u,
+      `${locale} free brief must be read by a human planner`,
+    );
+    assert.deepEqual(
+      planningDeskCopy.options
+        .filter((option) => option.kind === "paid")
+        .map((option) => option.id),
+      [
+        "itinerary-review",
+        "route-build",
+        "full-trip-support",
+      ],
     );
     assert.equal(
       planningDeskCopy.questionContexts["full-trip-support"].introBody,
@@ -285,19 +298,39 @@ test("English, Chinese and Korean expose one free human conversation and three p
     localizedCopySource,
     /Record<\s*HomegroundLocale,[\s\S]{0,200}HomepagePlanningDeskCopy/u,
   );
+  for (const stalePhrase of [
+    /id:\s*["']explore["']/u,
+    /Free route timing check/iu,
+    /automated starting point/iu,
+    /No human review is included/iu,
+    /免费路线(?:查找器|检查)/u,
+    /自动生成的起点/u,
+    /不包含人工审核/u,
+    /무료 Route Finder/iu,
+    /자동으로 만든 출발점/u,
+    /사람이 직접 검토하는 서비스는 포함되지 않습니다/u,
+  ]) {
+    assert.doesNotMatch(localizedCopySource, stalePhrase);
+  }
 });
 
-test("the first planning view keeps a neutral starter and compact paid shortcuts", async () => {
-  const [home, planningDesk, styles] = await Promise.all([
+test("the first planning view keeps quick contacts and the same three paid shortcuts", async () => {
+  const [home, planningDesk, quickContact, styles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
+    source("components/HomepageQuickContact.tsx"),
     source("components/HomegroundHomePage.module.css"),
   ]);
 
   assert.doesNotMatch(home, /beijing-hero/u);
   assert.doesNotMatch(home, /heroPicture|photoCaption/u);
   assert.match(home, /className=\{styles\.heroFacts\}/u);
-  assert.match(planningDesk, /copy\.starterPrompts\.map/u);
+  assert.match(planningDesk, /<HomepageQuickContact/u);
+  assert.match(quickContact, /defaultWhatsAppNumber = "8613174215999"/u);
+  assert.match(
+    quickContact,
+    /defaultMessengerUrl = "https:\/\/m\.me\/61591910731724"/u,
+  );
   assert.match(
     planningDesk,
     /copy\.options\.filter\([\s\S]{0,100}option\.kind === ["']paid["']/u,
@@ -306,11 +339,11 @@ test("the first planning view keeps a neutral starter and compact paid shortcuts
   assert.doesNotMatch(planningDesk, /className=\{styles\.intentFreeTool\}/u);
   assert.match(
     planningDesk,
-    /onContinue\(selectedPrompt\.planningIntent, selectedPrompt\.id\)/u,
+    /onClick=\{\(\) => onContinue\(option\.id\)\}/u,
   );
   assert.match(
     styles,
-    /\.intentStarterGrid\s*\{[\s\S]{0,180}grid-template-columns:\s*repeat\(2,/u,
+    /\.quickContactGrid\s*\{[\s\S]{0,180}grid-template-columns:\s*repeat\(2,/u,
   );
 });
 
@@ -329,7 +362,8 @@ test("the planning-desk motion stays purposeful, responsive and reduced-motion s
     /heroRouteMotif|heroRouteGhost|heroRouteInk|heroRouteStops/u,
     "the rejected decorative route line must not return",
   );
-  assert.match(planningDesk, /data-has-selection=\{draft \? "true" : undefined\}/u);
+  assert.match(planningDesk, /<HomepageQuickContact/u);
+  assert.match(styles, /\.quickContactSpinner\s*\{[\s\S]{0,120}animation:/u);
   assert.match(finder, /data-planning-view=/u);
   assert.match(finder, /currentQuestionHelp\s*&&/u);
   assert.equal(
@@ -363,7 +397,7 @@ test("the planning-desk motion stays purposeful, responsive and reduced-motion s
   assert.match(finderStyles, /@media \(prefers-reduced-motion: reduce\)/u);
 });
 
-test("every conversation and paid brief ends at the human handoff", async () => {
+test("conversation and all three paid paths end at the same human handoff", async () => {
   const [
     home,
     finder,
@@ -412,7 +446,14 @@ test("every conversation and paid brief ends at the human handoff", async () => 
   );
   assert.equal(home.match(/<RouteFinder\b/gu)?.length, 1);
   assert.equal(finder.match(/<form\b/gu)?.length, 1);
-  assert.doesNotMatch(home, /HomepagePlanningUpgrade/u);
+  assert.doesNotMatch(surface, /HomepagePlanningUpgrade/u);
+  assert.doesNotMatch(surface, /planningIntent\s*===\s*["']explore["']/u);
+  assert.equal(
+    home.match(/<PlannerHandoff\b/gu)?.length,
+    1,
+    "every valid intent must share one mounted human handoff",
+  );
+  assert.match(home, /hidden=\{!planningIntent\}[\s\S]{0,250}<PlannerHandoff\b/u);
   assert.match(
     home,
     /<PlannerHandoff\b[\s\S]{0,300}serviceInterest=\{handoffServiceInterest\}[\s\S]{0,300}planningIntent === ["']conversation["'][\s\S]{0,120}\? planningStarterIntent/u,
@@ -589,19 +630,19 @@ test("the planning desk has 320px reflow and minimum touch-target safeguards", a
   assert.match(styles, /min-height:\s*(?:44px|2\.75rem)/u);
   assert.match(
     styles,
-    /\.intentStarterOption\s*\{[\s\S]{0,700}min-inline-size:\s*0/u,
+    /\.quickContactCard\s*\{[\s\S]{0,300}min-inline-size:\s*0/u,
   );
   assert.match(
     styles,
-    /@media\s*\(max-width:\s*820px\)\s*\{[\s\S]{0,300}\.intentStarterGrid\s*\{[\s\S]{0,250}grid-template-columns:\s*minmax\(0,\s*1fr\)/u,
+    /@media\s*\(max-width:\s*820px\)\s*\{[\s\S]{0,300}\.quickContactGrid\s*\{[\s\S]{0,120}grid-template-columns:\s*minmax\(0,\s*1fr\)/u,
   );
   assert.match(
     styles,
-    /\.intentSecondaryButton,[\s\S]{0,200}\.selectedIntent button\s*\{[\s\S]{0,350}min-block-size:\s*2\.75rem/u,
+    /\.quickContactPrimaryLink,[\s\S]{0,120}\.quickContactEmailRow button\s*\{[\s\S]{0,300}min-block-size:\s*2\.75rem/u,
   );
   assert.match(
     styles,
-    /\.intentSummary,[\s\S]{0,100}\.intentScope\s*\{[\s\S]{0,100}overflow-wrap:\s*anywhere/u,
+    /\.quickContactCard\s*\{[\s\S]{0,300}overflow-wrap:\s*anywhere/u,
   );
   assert.doesNotMatch(
     components,
@@ -620,14 +661,15 @@ test("one selected service stays authoritative across planner history and clean 
   );
   assert.match(
     home,
-    /nextIntent === ["']conversation["'][\s\S]{0,220}sessionStorage\.setItem/u,
+    /if \(nextIntent === ["']conversation["']\)[\s\S]{0,180}sessionStorage\.setItem/u,
   );
   assert.match(home, /else \{[\s\S]{0,120}sessionStorage\.removeItem\(planningIntentStorageKey\)/u);
-  assert.match(
+  assert.doesNotMatch(
     home,
-    /storedIntent === ["']explore["'] \? ["']conversation["'] : storedIntent[\s\S]{0,220}restoredIntent === ["']conversation["']/u,
-    "a legacy explore session must migrate into the human conversation",
+    /searchParams\.(?:get|has|set)\(\s*["']planner["']/u,
+    "the retired planner query must not be restored",
   );
+  assert.doesNotMatch(home, /storedIntent === ["']explore["']/u);
   assert.match(
     home,
     /setPlanningStarterIntent\(\s*canRestoreNonServiceFlow\s*&&[\s\S]{0,180}isHomepageStarterIntentId\(storedStarterIntent\)/u,
@@ -635,7 +677,7 @@ test("one selected service stays authoritative across planner history and clean 
   );
 });
 
-test("one mounted human handoff preserves shared contact drafts across service changes", async () => {
+test("shared contact drafts survive service switches while service-only notes remain scoped", async () => {
   const [home, finder, handoff] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/RouteFinder.tsx"),
@@ -648,6 +690,7 @@ test("one mounted human handoff preserves shared contact drafts across service c
     1,
     "one mounted handoff must preserve shared contact fields across every path",
   );
+  assert.match(home, /hidden=\{!planningIntent\}[\s\S]{0,250}<PlannerHandoff/u);
   assert.doesNotMatch(home, /planningIntent === ["']explore["']/u);
   assert.match(home, /serviceInterest=\{handoffServiceInterest\}/u);
   assert.match(home, /serviceContextRevision/u);
@@ -666,55 +709,69 @@ test("one mounted human handoff preserves shared contact drafts across service c
   );
 });
 
-test("the open note lane starts the conversation without leaking or persisting the note", async () => {
-  const [planningDesk, home, finder, handoff] = await Promise.all([
+test("homepage quick contact is email-only on site and uses direct outbound messaging links", async () => {
+  const [planningDesk, quickContact] = await Promise.all([
     source("components/HomepagePlanningDesk.tsx"),
-    source("components/HomegroundHomePage.tsx"),
-    source("components/RouteFinder.tsx"),
-    source("components/PlannerHandoff.tsx"),
+    source("components/HomepageQuickContact.tsx"),
   ]);
 
-  assert.match(planningDesk, /id="planning-intent-note"/u);
-  assert.match(planningDesk, /<label htmlFor="planning-intent-note">/u);
-  assert.match(planningDesk, /maxLength=\{maximumStarterNoteLength\}/u);
-  assert.match(planningDesk, /sanitizeStarterNote\(/u);
+  assert.match(planningDesk, /<HomepageQuickContact/u);
+  assert.doesNotMatch(planningDesk, /id="planning-intent-note"/u);
   assert.match(
-    planningDesk,
-    /const hasNote = starterNote\.trim\(\)\.length > 0;\s*if \(!draft && !hasNote\) \{\s*setError\(copy\.requiredError\)/u,
-    "an empty prompt and empty note must produce a visible text error",
+    quickContact,
+    /`https:\/\/wa\.me\/\$\{whatsappNumber\}\?text=\$\{encodeURIComponent\(/u,
   );
   assert.match(
-    planningDesk,
-    /onContinue\("conversation", "open-text"\)/u,
-    "a note alone must start the neutral conversation path",
+    quickContact,
+    /defaultMessengerUrl = "https:\/\/m\.me\/61591910731724"/u,
   );
-  assert.doesNotMatch(
-    home,
-    /sessionStorage\.setItem\([^)]*[Nn]ote/u,
-    "the free-text starter note must not be persisted to sessionStorage",
+  assert.equal(
+    quickContact.match(/target="_blank"/gu)?.length,
+    2,
+    "WhatsApp and Messenger must be outbound links, not in-site submissions",
   );
-  assert.doesNotMatch(
-    home,
-    /planning_starter_note|starterNote:\s*planningStarterNote[\s\S]{0,200}dataLayer/u,
-    "the free-text starter note must never reach analytics",
+  assert.equal(
+    quickContact.match(/rel="noopener noreferrer"/gu)?.length,
+    2,
   );
   assert.match(
-    home,
-    /starterNote=\{\s*planningIntent === ["']conversation["']\s*\?\s*planningStarterNote\s*:\s*null\s*\}/u,
-    "the note travels only with the conversation enquiry",
-  );
-  assert.match(finder, /planningStarterNote = ""/u);
-  assert.match(finder, /onStarterNoteChange=\{onPlanningStarterNoteChange\}/u);
-  assert.match(
-    handoff,
-    /!serviceInterest && starterNote\?\.trim\(\)[\s\S]{0,120}Traveller note:/u,
-    "the note is delivered inside the enquiry note at submit time only",
+    quickContact,
+    /const buildPayload = \(\) => \(\{[\s\S]{0,500}entryPath: "homepage_email"[\s\S]{0,500}contact:\s*\{\s*channel: "email",\s*email: email\.trim\(\)/u,
   );
   assert.match(
-    finder,
-    /planningStarterIntent === ["']open-text["']\s*\?\s*planningCopy\.openStarterLabel/u,
-    "the own-words start must have a readable starting-point label",
+    quickContact,
+    /attribution:\s*\{\s*landingPath: inquirySubmitSurfaceByLocale\[locale\],\s*\}/u,
   );
+  const payloadBuilder = quickContact.slice(
+    quickContact.indexOf("const buildPayload"),
+    quickContact.indexOf("const dispatch"),
+  );
+  for (const forbidden of [
+    /\bjourney\b/u,
+    /\bname\b/u,
+    /\bphone(?:Raw|E164)?\b/u,
+    /\bnote\b/u,
+    /\butm(?:Source|Medium|Campaign)\b/u,
+    /\bdepartureCountry\b/u,
+    /\broughBudgetPerPerson\b/u,
+  ]) {
+    assert.doesNotMatch(payloadBuilder, forbidden);
+  }
+  assert.match(
+    quickContact,
+    /if \(response\.ok\) \{[\s\S]{0,300}success\?\.state === "submitted"[\s\S]{0,180}typeof success\.publicReference === "string"[\s\S]{0,220}setStatus\("success"\)/u,
+    "the email card must announce success only after the API confirms a saved submission with a reference",
+  );
+  assert.match(
+    quickContact,
+    /snapshotRef\.current[\s\S]{0,220}snapshot\.body !== body[\s\S]{0,220}idempotencyKey: createUuid\(\)/u,
+  );
+  assert.match(
+    quickContact,
+    /showRetry && snapshotRef\.current[\s\S]{0,300}const snapshot = snapshotRef\.current;[\s\S]{0,120}if \(snapshot\) void dispatch\(snapshot\)/u,
+    "uncertain retries must reuse the same body and idempotency key",
+  );
+  assert.doesNotMatch(quickContact, /sessionStorage|localStorage|dataLayer/u);
 });
 
 test("booking responsibility is a required, accessible signal on every human path", async () => {
@@ -828,17 +885,25 @@ test("the worst-case composed enquiry note still fits the server contract", asyn
   }
 });
 
-test("conversation is the only free path and the obsolete explore upgrade is absent", async () => {
-  const [planningDesk, copy, home] = await Promise.all([
+test("quick contacts replace the neutral starter while paid service routing stays unchanged", async () => {
+  const [planningDesk, quickContact] = await Promise.all([
     source("components/HomepagePlanningDesk.tsx"),
-    source("lib/homepagePlanningDesk.ts"),
-    source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageQuickContact.tsx"),
   ]);
-
-  assert.match(planningDesk, /onContinue\(["']conversation["'], ["']open-text["']\)/u);
-  assert.doesNotMatch(planningDesk, /HomepagePlanningUpgrade|planningUpgrade/u);
-  assert.doesNotMatch(copy, /id:\s*["']explore["']|kind:\s*["']free["']/u);
-  assert.match(home, /storedIntent === ["']explore["'] \? ["']conversation["']/u);
+  assert.match(
+    planningDesk,
+    /<HomepageQuickContact[\s\S]{0,120}locale=\{locale\}[\s\S]{0,120}copy=\{copy\}/u,
+  );
+  assert.match(
+    planningDesk,
+    /const paidOptions = copy\.options\.filter\([\s\S]{0,100}option\.kind === ["']paid["']/u,
+  );
+  assert.match(planningDesk, /onClick=\{\(\) => onContinue\(option\.id\)\}/u);
+  assert.match(quickContact, /type="email"/u);
+  assert.match(quickContact, /autoComplete="email"/u);
+  assert.doesNotMatch(planningDesk, /planningUpgradeConversation/u);
+  assert.doesNotMatch(planningDesk, /copy\.freeUpgrade/u);
+  assert.doesNotMatch(planningDesk, /HomepagePlanningUpgrade/u);
 });
 
 test("standard scope, payment boundary and out-of-scope pricing remain explicit", async () => {
@@ -854,7 +919,11 @@ test("standard scope, payment boundary and out-of-scope pricing remain explicit"
   assert.match(copy, /routeNeedsScopeConfirmation/u);
   assert.match(finder, /data-standard-scope-status/u);
   assert.match(finder, /outsideStandardScope\.scopeLabel/u);
-  assert.doesNotMatch(home, /freeResultLabel|freeResultTitle/u);
+  assert.match(copy, /conversationBrief:\s*\{/u);
+  assert.match(copy, /No payment has been taken\./u);
+  assert.equal(home.match(/<PlannerHandoff\b/gu)?.length, 1);
+  assert.doesNotMatch(home, /freeResult(?:Label|Title)/u);
+  assert.doesNotMatch(home, /HomepagePlanningUpgrade/u);
 });
 
 test("the homepage planning example keeps its Hangzhou image and three-language copy aligned", async () => {

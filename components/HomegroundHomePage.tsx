@@ -17,6 +17,7 @@ import {
 import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomeFeaturedGuides } from "../lib/guideRegistry";
+import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   getRouteServiceInterest,
@@ -150,10 +151,11 @@ export function HomegroundHomePage({
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const plannerTarget =
-    plannerStatus === "result" &&
-    routeMatch
+    plannerStatus === "result" && routeMatch
       ? "#planner-handoff"
-      : "#route-finder";
+      : plannerStatus === "in-progress"
+        ? "#route-finder"
+        : "#planner-contact";
   const plannerCta = resolvePlannerCta(
     copy,
     plannerStatus,
@@ -164,6 +166,7 @@ export function HomegroundHomePage({
     plannerStatus,
     handoffStatus,
   );
+  const facebookPageUrl = getHomegroundFacebookPageUrl();
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -186,6 +189,7 @@ export function HomegroundHomePage({
       addressRegion: "Hunan",
       addressCountry: "CN",
     },
+    ...(facebookPageUrl ? { sameAs: [facebookPageUrl] } : {}),
   };
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
@@ -302,13 +306,11 @@ export function HomegroundHomePage({
         const storedStarterIntent = window.sessionStorage.getItem(
           planningStarterIntentStorageKey,
         );
-        const restoredIntent =
-          storedIntent === "explore" ? "conversation" : storedIntent;
         const canRestoreNonServiceFlow =
-          url.searchParams.has("planner") &&
-          restoredIntent === "conversation";
+          window.location.hash === "#planner-contact" &&
+          storedIntent === "conversation";
         planningIntentRef.current = canRestoreNonServiceFlow
-          ? restoredIntent
+          ? storedIntent
           : null;
         setPlanningIntent(planningIntentRef.current);
         setPlanningStarterIntent(
@@ -317,12 +319,6 @@ export function HomegroundHomePage({
             ? storedStarterIntent
             : null,
         );
-        if (canRestoreNonServiceFlow && storedIntent === "explore") {
-          window.sessionStorage.setItem(
-            planningIntentStorageKey,
-            "conversation",
-          );
-        }
         if (!canRestoreNonServiceFlow) {
           window.sessionStorage.removeItem(planningIntentStorageKey);
           window.sessionStorage.removeItem(
@@ -419,6 +415,7 @@ export function HomegroundHomePage({
 
   useEffect(() => {
     const allowedHashes = new Set([
+      "#planner-contact",
       "#route-finder",
       "#planner-handoff",
       "#planning-proof",
@@ -480,7 +477,6 @@ export function HomegroundHomePage({
               <h1 id="home-hero-title">{copy.hero.title}</h1>
               {plannerStatus !== "result" && (
                 <>
-                  <p className={styles.heroLead}>{copy.hero.lead}</p>
                   <div className={styles.heroFacts}>
                     <p className={styles.heroFactsLabel}>
                       {copy.hero.trustLabel}
@@ -518,31 +514,33 @@ export function HomegroundHomePage({
                 contactDraftDirty={handoffDirty}
                 handoff={
                   routeMatch ? (
-                    <PlannerHandoff
-                      embedded
-                      locale={locale}
-                      match={routeMatch}
-                      journey={routeJourney ?? undefined}
-                      serviceInterest={handoffServiceInterest}
-                      starterIntent={
-                        planningIntent === "conversation"
-                          ? planningStarterIntent
-                          : null
-                      }
-                      starterNote={
-                        planningIntent === "conversation"
-                          ? planningStarterNote
-                          : null
-                      }
-                      serviceContextRevision={serviceContextRevision}
-                      routeState={
-                        plannerStatus === "result"
-                          ? "current"
-                          : "editing"
-                      }
-                      onDirtyChange={setHandoffDirty}
-                      onStatusChange={setHandoffStatus}
-                    />
+                    <div hidden={!planningIntent}>
+                      <PlannerHandoff
+                        embedded
+                        locale={locale}
+                        match={routeMatch}
+                        journey={routeJourney ?? undefined}
+                        serviceInterest={handoffServiceInterest}
+                        starterIntent={
+                          planningIntent === "conversation"
+                            ? planningStarterIntent
+                            : null
+                        }
+                        starterNote={
+                          planningIntent === "conversation"
+                            ? planningStarterNote
+                            : null
+                        }
+                        serviceContextRevision={serviceContextRevision}
+                        routeState={
+                          plannerStatus === "result"
+                            ? "current"
+                            : "editing"
+                        }
+                        onDirtyChange={setHandoffDirty}
+                        onStatusChange={setHandoffStatus}
+                      />
+                    </div>
                   ) : undefined
                 }
                 onRouteCleared={handleRouteCleared}
@@ -591,6 +589,10 @@ export function HomegroundHomePage({
                 ))}
               </dl>
 
+              <div className={styles.planningPoint}>
+                <strong>{copy.proof.pointLabel}</strong>
+                <p>{copy.proof.point}</p>
+              </div>
             </article>
 
             <aside className={styles.handledCard} aria-labelledby="handled-title">
@@ -699,7 +701,10 @@ export function HomegroundHomePage({
             ))}
           </ol>
 
-          <a className={styles.studioLink} href={`${copy.path}studio/`}>
+          <a
+            className={styles.studioLink}
+            href={`${copy.path}#planner-contact`}
+          >
             {copy.studio.cta}
             <ArrowRight aria-hidden="true" size={17} />
           </a>
@@ -712,7 +717,7 @@ export function HomegroundHomePage({
             <h2 id="faq-title" tabIndex={-1}>
               {copy.faq.title}
             </h2>
-            <p>{copy.faq.intro}</p>
+            {copy.faq.intro && <p>{copy.faq.intro}</p>}
           </div>
           <div className={styles.faqList}>
             {copy.faq.items.map((item) => (

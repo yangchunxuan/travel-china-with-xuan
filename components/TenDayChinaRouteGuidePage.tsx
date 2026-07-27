@@ -207,7 +207,7 @@ export function TenDayChinaRouteGuidePage({
   const guideHubHref = `${homeHref}guides/`;
   const planningServicesHref = getChinaItineraryReviewCopy(locale).path;
   const sectionLabels = navigationSections[locale];
-  const plannerHref = `${homeHref}?utm_source=${guideId}&utm_medium=owned&utm_campaign=route-guide&planner=destinations&destinations=beijing-great-wall%2Czhangjiajie%2Cshanghai#route-finder`;
+  const plannerHref = `${homeHref}?utm_source=${guideId}&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const zhangjiajieGuideHref = `${localePrefix}/guides/zhangjiajie-itinerary/#quick-answer`;
   const nightShowGuideHref = getGuideEntry(
     "best-zhangjiajie-night-show",

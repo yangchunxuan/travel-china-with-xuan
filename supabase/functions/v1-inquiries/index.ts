@@ -3,6 +3,7 @@ import {
   canonicalizeJson,
   currentDestinationInquiryFormVersion,
   destinationInquirySchemaVersion,
+  homepageEmailInquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
   previousDestinationInquiryFormVersion,
   semanticInquiryPayload,
@@ -390,6 +391,26 @@ async function handleRequest(request: Request): Promise<Response> {
 
   let persistenceResult;
   try {
+    if (payload.schemaVersion === homepageEmailInquirySchemaVersion) {
+      persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
+        "create_homeground_homepage_email_v1",
+        {
+          p_schema_version: payload.schemaVersion,
+          p_form_version: payload.formVersion,
+          p_locale: payload.locale,
+          p_contact_email: payload.contact.email,
+          p_privacy_notice_version: payload.privacyNoticeVersion,
+          p_landing_path: payload.attribution.landingPath,
+          p_attribution: {},
+          p_idempotency_key_hash: idempotencyKeyHash,
+          p_payload_hash: payloadHash,
+          p_rate_limit_subject_hash: rateLimitSubjectHash,
+          p_short_rate_limit: shortRateLimit,
+          p_daily_rate_limit: dailyRateLimit,
+          p_first_response_due_at: firstResponseDueAt,
+        },
+      );
+    } else {
     const isCurrentDestinationInquiry =
       payload.schemaVersion === destinationInquirySchemaVersion &&
       payload.formVersion === currentDestinationInquiryFormVersion;
@@ -457,6 +478,7 @@ async function handleRequest(request: Request): Promise<Response> {
         p_first_response_due_at: firstResponseDueAt,
       },
     );
+    }
   } catch {
     return errorResponse(
       503,

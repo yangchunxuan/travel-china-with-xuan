@@ -47,6 +47,7 @@ interface HomegroundHeaderProps {
 }
 
 const allowedHeaderHashes = new Set([
+  "#planner-contact",
   "#route-finder",
   "#planner-handoff",
   "#planning-proof",
@@ -153,12 +154,14 @@ export function HomegroundHeader({
   const plannerTarget = (
     plannerStatus === "result"
       ? "#planner-handoff"
-      : "#route-finder"
+      : plannerStatus === "in-progress"
+        ? "#route-finder"
+        : "#planner-contact"
   ) satisfies HomegroundHashTarget;
   const plannerHref =
     pageContext === "home"
       ? plannerTarget
-      : `${copy.path}?planner=destinations#route-finder`;
+      : `${copy.path}#planner-contact`;
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesHref = planningServicesCopy.path;
   const guideHubHref = `${copy.path}guides/`;

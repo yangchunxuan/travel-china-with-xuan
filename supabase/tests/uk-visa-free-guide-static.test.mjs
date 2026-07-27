@@ -69,8 +69,10 @@ test("guide route, article schema, CTA and responsive visual assets are wired", 
   assert.match(page, /China entry guides/);
   assert.match(page, /\/guides\/china-entry-requirements\//);
   assert.match(page, /citation: UK_VISA_GUIDE_SOURCES\.map/);
-  assert.match(page, /Start my China trip brief/);
+  assert.match(page, /Talk to a China trip planner/);
+  assert.match(page, /utm_content=planner-contact#planner-contact/);
   assert.match(page, /utm_campaign=trip-conversation/);
+  assert.doesNotMatch(page, /planner=destinations|free-brief|service=/);
   assert.match(page, /showLanguageNav=\{false\}/);
   assert.match(styles, /@media \(max-width: 36rem\)/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);

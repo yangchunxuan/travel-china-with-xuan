@@ -1,4 +1,11 @@
-# Homeground V1 Inquiry Handoff — Product & Technical Spec
+# Homeground V1 Inquiry Handoff — Historical Product & Technical Spec
+
+> **Superseded as a product-narrative baseline on 24 July 2026.** This file is
+> retained for the original enquiry backend and data-contract history. Do not
+> reuse its “route result before contact” positioning in public copy. The
+> current commercial journey is defined in
+> `docs/paid-service-pathways-spec.md`: a shared trip brief is reviewed by a
+> human planner, who recommends or confirms the service before payment.
 
 Version: 2026-07-18.2
 Status: Pilot implemented and production launch configuration verified

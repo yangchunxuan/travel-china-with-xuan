@@ -120,7 +120,7 @@ export const homegroundPrivacyCopy: Record<
         "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
         "Homeground-controlled website enquiry records are deleted no later than 12 months after they are saved. If a client relationship or legal duty requires a record, only the necessary record is retained separately under that system’s rules; it does not extend the website copy. Later email or WhatsApp conversations follow their own service and business-record rules.",
         "Hashed identifiers are used for 24-hour rate-limit windows and are scheduled for deletion after 24 hours, normally at the next one-minute cleanup run.",
-        "The website saves either an email address or a WhatsApp number for this enquiry. Non-essential browser-behaviour analytics and AI chat remain disabled.",
+        "The full trip-brief form saves either an email address or a WhatsApp number. The homepage quick-email option saves only the email entered there; opening the homepage WhatsApp or Messenger link does not submit anything to Homeground’s website. Non-essential browser-behaviour analytics and AI chat remain disabled.",
       ],
     },
     hero: {
@@ -129,13 +129,15 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "24 July 2026",
+      reviewedValue: "26 July 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
       paragraphs: [
         "After the traveller first interacts with the trip brief, the form may keep selected structured answers in this browser’s session storage so progress can be restored. It never stores the free-text “other place”, route note, contact details, optional departure country or rough budget there. This browser copy is cleared after 30 minutes without planner activity, on restart and after a successful enquiry.",
         "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional planning-service choice, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
+        "The homepage quick-email option sends only the entered email address, page language, fixed language-specific submit-surface code and the limited technical record needed for reliable submission and rate limiting. It does not collect an itinerary, traveller profile, date, destination, budget or free-text message, and it shows success only after Supabase confirms the save.",
+        "The homepage WhatsApp and Messenger options are direct outbound links. Opening either link does not save the visitor’s phone number or message on Homeground’s website and is not treated as a submitted enquiry. If the visitor then sends a message, WhatsApp or Facebook and Meta process that conversation under their own terms and infrastructure.",
         "The current form version does not copy UTM labels, click identifiers or other URL campaign labels into the request. A fixed code records only which language-specific Homeground form accepted the submission; it is not a first-touch or traffic-source claim.",
         "Authorised staff may view restricted counts of saved structured trip choices to improve the route planner and travel information. These summaries exclude contact details, free text, individual enquiry records, source attribution and later email or WhatsApp activity.",
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
@@ -170,7 +172,7 @@ export const homegroundPrivacyCopy: Record<
           stage:
             "Submitted enquiry, Gmail notification and connected team inbox",
           purpose:
-            "The traveller submits either an email address or a WhatsApp number. It is used to reply to this enquiry and is not consent for unrelated marketing.",
+            "The full trip-brief form accepts either an email address or a WhatsApp number. The homepage quick-email option accepts only an email address. These details are used to reply to the active request and are not consent for unrelated marketing; the direct homepage WhatsApp and Messenger links do not save a contact detail on Homeground’s website.",
         },
         {
           name: "Optional departure country or region",
@@ -225,10 +227,10 @@ export const homegroundPrivacyCopy: Record<
             "Sends the saved enquiry to Gmail with the traveller address in Reply-To.",
         },
         {
-          label: "WhatsApp",
-          value: "Saved number and later conversation",
+          label: "WhatsApp and Messenger",
+          value: "Direct homepage links; optional saved-number trip brief",
           detail:
-            "If the traveller selects WhatsApp, the number is saved with the enquiry so authorised staff can start the requested conversation. WhatsApp and Meta may process that later conversation under their own terms and infrastructure.",
+            "The homepage links open WhatsApp or Messenger without saving the visitor’s number or message on Homeground’s website. The fuller trip-brief form separately allows a traveller to submit a WhatsApp number so authorised staff can start the requested conversation. WhatsApp, Facebook and Meta may process later messages under their own terms and infrastructure.",
         },
         {
           label: "Shared team inbox",
@@ -342,7 +344,7 @@ export const homegroundPrivacyCopy: Record<
         "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
         "Homeground 控制的网站咨询记录会在保存满 12 个月时删除。如果客户关系或法律义务确实要求保留记录，只把必要记录另行放在相应记录体系并按其规则保留；网站副本不会因此保存更久。之后的邮件或 WhatsApp 对话适用各自服务与业务记录规则。",
         "经过密钥哈希的标识只用于 24 小时限流窗口；超过 24 小时后，通常会在下一次每分钟清理任务运行时删除。",
-        "网站会为本次咨询保存邮箱或 WhatsApp 号码中的一种；非必要的浏览器行为统计和 AI 聊天仍处于关闭状态。",
+        "完整旅行简报表单会保存邮箱或 WhatsApp 号码中的一种；首页快速留邮箱只保存所填邮箱。打开首页 WhatsApp 或 Messenger 直达链接，不会向 Homeground 网站提交信息。非必要的浏览器行为统计和 AI 聊天仍处于关闭状态。",
       ],
     },
     hero: {
@@ -351,13 +353,15 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 7 月 24 日",
+      reviewedValue: "2026 年 7 月 26 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
       paragraphs: [
         "访客首次操作旅行简报后，表单可能把选定的结构化答案保存在当前浏览器会话中，以便恢复进度；“其他地点”自由文本、路线说明、联系方式、选填出发国家或地区和大致预算永远不会存入这里。连续 30 分钟没有操作、重新开始或咨询保存成功后，这份浏览器副本会被清除。",
         "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家、地区或每人大致预算。只有保存成功后，网页才会显示已保存。",
+        "首页“只留邮箱”只发送所填邮箱、页面语言、固定的语言版提交页面代码，以及可靠提交和限流所需的有限技术记录；不会收集路线、同行者资料、日期、目的地、预算或自由文本。只有 Supabase 确认保存后，页面才会显示成功。",
+        "首页 WhatsApp 与 Messenger 是直接跳转到外部服务的链接。打开链接不会在 Homeground 网站保存访客电话号码或消息，也不会被记作已提交咨询；访客随后主动发送消息时，该对话由 WhatsApp 或 Facebook 与 Meta 依据其自身条款和基础设施处理。",
         "当前表单版本不会把 UTM、广告标识或其他网址活动标签复制到请求中。系统只用一个固定代码记录是哪个语言版本的 Homeground 表单接收了提交；它不代表首次来源或流量来源。",
         "获授权的工作人员可查看已保存结构化旅行选择的受限计数，用于改进旅行简报流程和旅行信息。这些统计不包含联系方式、自由文本、单条咨询、来源判断或后续邮件与 WhatsApp 活动。",
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
@@ -383,7 +387,7 @@ export const homegroundPrivacyCopy: Record<
           name: "所选回复联系方式",
           stage: "已提交咨询、Gmail 通知与已连接的团队收件箱",
           purpose:
-            "访客提交邮箱或 WhatsApp 号码中的一种，只用于回复本次咨询，不代表同意接收无关营销。",
+            "完整旅行简报表单接受邮箱或 WhatsApp 号码中的一种；首页快速联系只接受邮箱。联系方式只用于回复当前请求，不代表同意接收无关营销；首页 WhatsApp 与 Messenger 直达链接不会在 Homeground 网站保存联系方式。",
         },
         {
           name: "选填的出发国家或地区",
@@ -433,10 +437,10 @@ export const homegroundPrivacyCopy: Record<
           detail: "把已保存咨询送入 Gmail，并将访客邮箱写入 Reply-To。",
         },
         {
-          label: "WhatsApp",
-          value: "保存号码与后续对话",
+          label: "WhatsApp 与 Messenger",
+          value: "首页直接跳转；完整简报可选保存 WhatsApp 号码",
           detail:
-            "访客选择 WhatsApp 时，号码会随咨询保存，以便获授权的工作人员发起访客所请求的对话。WhatsApp 与 Meta 可能依据其自身条款和基础设施处理后续对话。",
+            "首页链接会直接打开 WhatsApp 或 Messenger，不会在 Homeground 网站保存访客号码或消息。完整旅行简报表单另行允许访客提交 WhatsApp 号码，以便获授权的工作人员发起所请求的对话。WhatsApp、Facebook 与 Meta 可能依据其自身条款和基础设施处理后续消息。",
         },
         {
           label: "团队共享收件箱",
@@ -551,7 +555,7 @@ export const homegroundPrivacyCopy: Record<
         "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
         "Homeground가 관리하는 웹사이트 문의 기록은 저장 후 12개월 안에 삭제합니다. 고객 관계나 법적 의무 때문에 기록이 필요한 경우에는 필요한 기록만 별도 보관 기준에 따라 보관하며 웹사이트 사본을 더 오래 두지 않습니다. 이후 이메일 또는 WhatsApp 대화에는 각 서비스와 업무 기록 기준이 적용됩니다.",
         "비밀 키로 해시한 식별자는 24시간 속도 제한 창에만 사용하며 24시간이 지나면 일반적으로 다음 1분 주기 정리 작업에서 삭제합니다.",
-        "웹사이트는 이번 문의에 이메일 주소 또는 WhatsApp 번호 중 하나를 저장합니다. 필수적이지 않은 브라우저 행동 분석과 AI 채팅은 계속 사용하지 않습니다.",
+        "전체 여행 브리프 양식은 이메일 주소 또는 WhatsApp 번호 중 하나를 저장합니다. 홈페이지의 간단 이메일 옵션은 입력한 이메일만 저장하며, 홈페이지 WhatsApp 또는 Messenger 링크를 여는 것만으로는 Homeground 웹사이트에 정보가 제출되지 않습니다. 필수적이지 않은 브라우저 행동 분석과 AI 채팅은 계속 사용하지 않습니다.",
       ],
     },
     hero: {
@@ -560,13 +564,15 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 7월 24일",
+      reviewedValue: "2026년 7월 26일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
       paragraphs: [
         "여행자가 여행 브리프를 처음 조작한 뒤 양식은 진행 상태를 복원하기 위해 선택한 구조화 답변을 현재 브라우저 세션에 보관할 수 있습니다. ‘그 밖의 장소’ 자유 입력 문구, 동선 메모, 연락처, 선택 입력한 출발 국가 또는 지역과 대략적인 예산은 여기에 저장하지 않습니다. 30분 동안 조작하지 않거나 다시 시작하거나 문의 저장에 성공하면 이 브라우저 사본을 삭제합니다.",
         "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
+        "홈페이지의 간단 이메일 옵션은 입력한 이메일 주소, 페이지 언어, 고정된 언어별 제출 화면 번호와 안정적인 제출 및 속도 제한에 필요한 최소한의 기술 기록만 전송합니다. 동선, 여행자 정보, 날짜, 목적지, 예산 또는 자유 입력 문구는 수집하지 않으며 Supabase가 저장을 확인한 뒤에만 성공을 표시합니다.",
+        "홈페이지의 WhatsApp 및 Messenger 옵션은 외부 서비스로 바로 이동하는 링크입니다. 링크를 여는 것만으로는 Homeground 웹사이트가 방문자의 전화번호나 메시지를 저장하지 않으며 제출된 문의로 처리하지 않습니다. 이후 방문자가 메시지를 보내면 WhatsApp 또는 Facebook과 Meta가 자체 약관과 인프라에 따라 대화를 처리합니다.",
         "현재 양식 버전은 UTM, 광고 식별자 또는 다른 URL 캠페인 표지를 문의에 복사하지 않습니다. 고정 번호는 어느 언어의 Homeground 양식이 제출을 접수했는지만 기록하며 최초 접점이나 유입 출처를 의미하지 않습니다.",
         "권한 있는 담당자는 여행 브리프 흐름과 여행 정보를 개선하기 위해 저장된 구조화 여행 선택의 제한된 집계를 볼 수 있습니다. 이 요약에는 연락처, 자유 입력 문구, 개별 문의, 유입 출처 또는 이후 이메일·WhatsApp 활동이 포함되지 않습니다.",
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
@@ -594,7 +600,7 @@ export const homegroundPrivacyCopy: Record<
           stage:
             "제출된 문의, Gmail 알림 및 연결된 팀 받은편지함",
           purpose:
-            "여행자는 이메일 주소 또는 WhatsApp 번호 중 하나를 제출합니다. 이 문의에 답하는 데만 사용하며 관련 없는 마케팅 동의로 보지 않습니다.",
+            "전체 여행 브리프 양식은 이메일 주소 또는 WhatsApp 번호 중 하나를 받으며 홈페이지의 간단 연락 옵션은 이메일만 받습니다. 연락처는 현재 요청에 답하는 데만 사용하고 관련 없는 마케팅 동의로 보지 않습니다. 홈페이지의 WhatsApp 및 Messenger 바로가기 링크는 Homeground 웹사이트에 연락처를 저장하지 않습니다.",
         },
         {
           name: "선택 입력한 출발 국가 또는 지역",
@@ -648,10 +654,10 @@ export const homegroundPrivacyCopy: Record<
             "저장된 문의를 Gmail로 보내고 Reply-To에 여행자 이메일을 넣습니다.",
         },
         {
-          label: "WhatsApp",
-          value: "번호 저장 및 이후 대화",
+          label: "WhatsApp 및 Messenger",
+          value: "홈페이지 바로가기; 전체 브리프의 선택적 WhatsApp 번호 저장",
           detail:
-            "여행자가 WhatsApp을 선택하면 권한이 있는 담당자가 요청된 대화를 시작할 수 있도록 번호를 문의와 함께 저장합니다. WhatsApp과 Meta는 자체 약관과 인프라에 따라 이후 대화를 처리할 수 있습니다.",
+            "홈페이지 링크는 방문자의 번호나 메시지를 Homeground 웹사이트에 저장하지 않고 WhatsApp 또는 Messenger로 바로 이동합니다. 전체 여행 브리프 양식에서는 별도로 WhatsApp 번호를 제출할 수 있어 권한 있는 담당자가 요청된 대화를 시작할 수 있습니다. WhatsApp, Facebook 및 Meta는 자체 약관과 인프라에 따라 이후 메시지를 처리할 수 있습니다.",
         },
         {
           label: "공유 팀 받은편지함",

@@ -191,6 +191,10 @@ test("planner CTAs preserve the result while moving to the human handoff", async
   );
   assert.match(
     navigation,
+    /"#planner-contact": "planning-intent-title"/,
+  );
+  assert.match(
+    navigation,
     /getElementById\(focusTargetId\[target\]\)[\s\S]*focus\(\{ preventScroll: true \}\)/,
   );
   assert.doesNotMatch(navigation, /window\.location\.hash\s*=/);

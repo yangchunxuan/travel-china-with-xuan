@@ -204,11 +204,10 @@ export function ChinaItineraryReviewPage({
 }) {
   const homeCopy = getHomegroundCopy(locale);
   const copy = getChinaItineraryReviewCopy(locale);
-  const plannerBase = `${homeCopy.path}?utm_source=china-itinerary-review&utm_medium=owned`;
-  const reviewHref = `${plannerBase}&utm_campaign=route-planning&utm_content=review&service=itinerary-review&planner=destinations#route-finder`;
-  const buildHref = `${plannerBase}&utm_campaign=route-planning&utm_content=build&service=route-build&planner=destinations#route-finder`;
-  const conversationHref = `${plannerBase}&utm_campaign=trip-conversation&utm_content=service-page-brief&planner=destinations#route-finder`;
-  const fullSupportHref = `${plannerBase}&utm_campaign=full-trip-support&utm_content=custom-scope&service=full-trip-support&planner=destinations#route-finder`;
+  const plannerContactHref = `${homeCopy.path}#planner-contact`;
+  const reviewHref = plannerContactHref;
+  const buildHref = plannerContactHref;
+  const fullSupportHref = plannerContactHref;
   const rushGuideHref = `${homeCopy.path}guides/is-your-china-itinerary-too-rushed/`;
   const studioHref = `${homeCopy.path}studio/`;
   const structuredData = createStructuredData(locale, copy);
@@ -248,12 +247,12 @@ export function ChinaItineraryReviewPage({
                     ))}
                   </div>
                   <div className={styles.heroActions}>
-                    <a className={styles.primaryButton} href="#choose-service">
-                      {copy.hero.choose}
+                    <a className={styles.primaryButton} href={plannerContactHref}>
+                      {copy.hero.consultation}
                       <ArrowRight aria-hidden="true" size={18} />
                     </a>
-                    <a className={styles.secondaryButton} href={conversationHref}>
-                      {copy.hero.conversationCta}
+                    <a className={styles.secondaryButton} href="#choose-service">
+                      {copy.hero.compareServices}
                     </a>
                   </div>
                   <p className={styles.heroBoundary}>{copy.hero.boundary}</p>

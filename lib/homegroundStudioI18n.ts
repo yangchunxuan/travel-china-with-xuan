@@ -205,13 +205,13 @@ export const homegroundStudioCopy: Record<
           detail: "The team brings relevant planning and on-the-ground experience into the same itinerary, so it works beyond the page.",
         },
       ],
-    },
-    cta: {
-      label: "Start a trip conversation",
-      title: "Tell us what you want this trip to become.",
-      body:
-        "Share the destinations, dates, travellers and support you have in mind. Submit one reply contact and a Homeground planner will continue with you.",
-      button: "Start a free trip consultation",
+      },
+      cta: {
+       label: "Next step",
+       title: "Tell us the places you do not want to miss.",
+       body:
+         "Use WhatsApp or leave your email. A planner can ask what is still open and explain the suitable next step; paid work begins only after scope and price are confirmed.",
+       button: "Talk to a China trip planner",
     },
     homeLink: "Meet the people behind the plan",
   },
@@ -323,13 +323,13 @@ export const homegroundStudioCopy: Record<
           detail: "团队把相关的规划与当地接待经验带进同一份方案，让路线不只停留在页面上。",
         },
       ],
-    },
-    cta: {
-      label: "开始旅行沟通",
-      title: "告诉我们，你希望这趟旅行变成什么样。",
-      body:
-        "填写考虑中的目的地、日期、同行者和希望获得的支持，提交一种回复联系方式后，Homeground 规划师会亲自继续与你沟通。",
-      button: "开始免费旅行咨询",
+      },
+      cta: {
+       label: "下一步",
+       title: "先告诉我们，你不想错过哪些地方。",
+       body:
+         "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会继续确认必要信息并说明适合怎样继续；任何付费工作开始前都会先确认范围和价格。",
+       button: "联系旅行规划师",
     },
     homeLink: "认识参与规划与落地的人",
   },
@@ -441,13 +441,13 @@ export const homegroundStudioCopy: Record<
           detail: "팀의 관련 여행 설계와 현지 응대 경험을 같은 일정에 더해, 화면 밖 실제 여행에서도 자연스럽게 이어지도록 합니다.",
         },
       ],
-    },
-    cta: {
-      label: "여행 상담 시작하기",
-      title: "원하는 중국 여행의 모습을 알려 주세요.",
-      body:
-        "생각 중인 목적지, 날짜, 여행자와 필요한 지원을 알려 주세요. 답변받을 연락처 하나를 제출하면 Homeground 플래너가 직접 상담을 이어갑니다.",
-      button: "무료 여행 상담 시작하기",
+      },
+      cta: {
+       label: "다음 단계",
+       title: "놓치고 싶지 않은 장소를 먼저 알려 주세요.",
+       body:
+         "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 필요한 내용을 이어서 확인하고 알맞은 다음 단계를 안내합니다. 유료 작업 전에는 범위와 가격을 먼저 확인합니다.",
+       button: "중국 여행 플래너와 상담하기",
     },
     homeLink: "여행을 설계하고 실행하는 팀 만나기",
   },

@@ -208,7 +208,7 @@ const english: ZhangjiajieGuideCopy = {
     fullDayExampleLabel: "Concrete example",
     fullDayExample:
       "Arrive Monday evening and tour Tuesday plus Wednesday: that is 2 full days. Two nights work only with a safe Wednesday-evening departure; three nights is more comfortable. Apply the same rule to 3 or 4 full sightseeing days. A Day 4 transfer to Fenghuang is a four-day regional route, not four full Zhangjiajie sightseeing days.",
-    action: "Check these days against my China route",
+    action: "Talk to a China trip planner",
     decisions: [
       {
         days: "2 days",
@@ -602,8 +602,8 @@ const english: ZhangjiajieGuideCopy = {
     sectionLabel: "Your whole China route",
     title: "Check Zhangjiajie against your whole China wishlist.",
     body:
-      "Choose your China stops, total nights, party and pace. A person then checks Zhangjiajie arrival and departure timing, hotel changes and live ticket conflicts.",
-    action: "Check my trip timing",
+      "Use WhatsApp or leave your email. A planner can discuss your China stops, total nights, party and pace, then explain which level of help fits before any paid work begins.",
+    action: "Talk to a China trip planner",
   },
   structuredData: {
     homeName: "Home",
@@ -648,7 +648,7 @@ const chinese: ZhangjiajieGuideCopy = {
     fullDayExampleLabel: "具体例子",
     fullDayExample:
       "周一晚抵达，周二和周三游览，才算 2 个完整游览日。只有周三晚能安全离开时，2 晚才成立；更舒适是住 3 晚。3 或 4 个完整游览日也按同一规则计算。若第 4 天前往凤凰，那是四日区域路线，不是四个完整的张家界游览日。",
-    action: "把这些天数放进我的中国路线检查",
+    action: "联系旅行规划师",
     decisions: [
       {
         days: "2 天",
@@ -1020,8 +1020,8 @@ const chinese: ZhangjiajieGuideCopy = {
     sectionLabel: "你的整条中国路线",
     title: "把张家界放回整条中国旅行里检查。",
     body:
-      "选择想去的城市、总晚数、同行人和旅行节奏。之后由人工核对张家界抵离时间、换酒店安排和实时门票冲突。",
-    action: "检查我的旅行时间",
+      "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会结合想去的城市、总晚数、同行人和旅行节奏，说明适合怎样继续；任何付费工作开始前都会先确认范围和价格。",
+    action: "联系旅行规划师",
   },
   structuredData: {
     homeName: "首页",
@@ -1061,7 +1061,7 @@ const korean: ZhangjiajieGuideCopy = {
     fullDayExampleLabel: "구체적인 예",
     fullDayExample:
       "월요일 저녁 도착 후 화요일과 수요일에 관광하면 온전한 2일입니다. 수요일 저녁 안전하게 출발할 수 있을 때만 2박이 가능하고, 3박이 더 편합니다. 온전한 3일이나 4일도 같은 방식으로 계산하세요. 4일 차에 펑황으로 이동하면 4일 지역 일정이지 장자제에서 온전히 관광하는 4일은 아닙니다.",
-    action: "이 일수를 내 중국 전체 일정과 확인하기",
+    action: "중국 여행 플래너와 상담하기",
     decisions: [
       {
         days: "2일",
@@ -1426,8 +1426,8 @@ const korean: ZhangjiajieGuideCopy = {
     sectionLabel: "중국 전체 일정",
     title: "장자제를 중국 전체 희망 일정과 함께 확인하세요.",
     body:
-      "가고 싶은 도시, 총 숙박일, 동행 유형과 여행 속도를 선택하세요. 이후 담당자가 장자제 도착·출발 시간, 숙소 변경과 최신 입장권 충돌을 확인합니다.",
-    action: "내 여행 시간 확인하기",
+      "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 희망 도시, 총 숙박일, 일행과 여행 속도를 함께 살펴보고 적합한 도움의 범위를 안내합니다. 유료 작업 전에는 범위와 가격을 먼저 확인합니다.",
+    action: "중국 여행 플래너와 상담하기",
   },
   structuredData: {
     homeName: "홈",

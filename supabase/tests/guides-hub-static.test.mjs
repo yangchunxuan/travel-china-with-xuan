@@ -130,16 +130,18 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   );
 });
 
-test("hub has a visible trip-brief CTA and stays usable from 320px to wide screens", async () => {
+test("hub has direct planner contact and stays usable from 320px to wide screens", async () => {
   const hub = await source("components/GuidesHubPage.tsx");
   const copy = await source("app/(default)/guides/guidesHubI18n.ts");
   const css = await source("components/GuidesHubPage.module.css");
 
   assert.match(hub, /href=\{getGuidesHubPlannerHref\(locale\)\}/);
   assert.match(copy, /utm_campaign: "trip-conversation"/);
-  assert.match(copy, /action: "Start my free trip brief"/);
-  assert.match(copy, /action: "免费提交旅行简报"/);
-  assert.match(copy, /action: "무료 여행 브리프 시작하기"/);
+  assert.match(copy, /#planner-contact/);
+  assert.match(copy, /action: "Talk to a China trip planner"/);
+  assert.match(copy, /action: "联系旅行规划师"/);
+  assert.match(copy, /action: "중국 여행 플래너와 상담하기"/);
+  assert.doesNotMatch(copy, /planner=destinations|free-brief/);
   assert.match(css, /@media \(max-width: 22rem\)/);
   assert.match(
     css,

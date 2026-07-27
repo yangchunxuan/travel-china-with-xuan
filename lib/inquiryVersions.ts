@@ -9,6 +9,9 @@ export const legacyDestinationInquiryFormVersion = "2026-07-19.1";
 export const previousDestinationInquiryFormVersion = "2026-07-20.1";
 export const budgetDestinationInquiryFormVersion = "2026-07-20.2";
 export const currentDestinationInquiryFormVersion = "2026-07-21.1";
+export const homepageEmailInquirySchemaVersion = 3 as const;
+export const currentHomepageEmailFormVersion = "2026-07-26.1";
+export const homepageEmailPrivacyNoticeVersion = "2026-07-26.1";
 export const supportedDestinationInquiryFormVersions = [
   legacyDestinationInquiryFormVersion,
   previousDestinationInquiryFormVersion,

@@ -17,7 +17,7 @@ import styles from "./UkVisaFreeGuidePage.module.css";
 const guide = getGuideEntry("china-visa-free-uk-citizens-2026", "en");
 const checkedDate = "24 July 2026";
 const plannerHref =
-  "/?utm_source=china-visa-free-uk-citizens-2026&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta&planner=destinations#route-finder";
+  "/?utm_source=china-visa-free-uk-citizens-2026&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact";
 
 function createStructuredData() {
   const organizationId = "https://homegroundchina.com/#organization";
@@ -482,20 +482,20 @@ export function UkVisaFreeGuidePage() {
                 </div>
                 <div>
                   <p>
-                    Tell us the cities, dates and pace you have in mind. A
-                    Homeground planner can then discuss the right level of route
-                    and ground support with you.
+                    Use WhatsApp or leave your email. A Homeground planner can
+                    then discuss your cities, dates, pace and the right level of
+                    trip support with you.
                   </p>
                   <GuideCtaLink
                     guideId="china-visa-free-uk-citizens-2026"
                     href={plannerHref}
                     locale="en"
                   >
-                    Start my China trip brief
+                    Talk to a China trip planner
                     <ArrowRight aria-hidden="true" size={18} />
                   </GuideCtaLink>
                   <small>
-                    The trip brief is free. It does not provide a visa
+                    This trip-planning enquiry does not provide a visa
                     eligibility decision.
                   </small>
                 </div>

@@ -127,7 +127,7 @@ export function ChinaItineraryTooRushedPage({
 }) {
   const copy = getItineraryRushGuideCopy(locale);
   const homeCopy = getHomegroundCopy(locale);
-  const conversationHref = `${homeCopy.path}?utm_source=china-itinerary-too-rushed&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-brief&planner=destinations#route-finder`;
+  const plannerHref = `${homeCopy.path}?utm_source=china-itinerary-too-rushed&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale);
 
   return (
@@ -418,6 +418,18 @@ export function ChinaItineraryTooRushedPage({
               </div>
               <div className={styles.servicePaths}>
                 <div>
+                  <p>{copy.services.consultationIntro}</p>
+                  <GuideCtaLink
+                    guideId="is-your-china-itinerary-too-rushed"
+                    href={plannerHref}
+                    locale={locale}
+                  >
+                    {copy.services.consultationCta}
+                    <ArrowRight aria-hidden="true" size={18} />
+                  </GuideCtaLink>
+                  <small>{copy.services.consultationNote}</small>
+                </div>
+                <div>
                   <p>{copy.services.reviewIntro}</p>
                   <Link href={`${copy.servicePath}#review-my-route`}>
                     {copy.services.reviewCta}
@@ -432,16 +444,11 @@ export function ChinaItineraryTooRushedPage({
                   </Link>
                 </div>
                 <div>
-                  <p>{copy.services.conversationIntro}</p>
-                  <GuideCtaLink
-                    guideId="is-your-china-itinerary-too-rushed"
-                    href={conversationHref}
-                    locale={locale}
-                  >
-                    {copy.services.conversationCta}
+                  <p>{copy.services.fullTripIntro}</p>
+                  <Link href={`${copy.servicePath}#full-trip-support`}>
+                    {copy.services.fullTripCta}
                     <ArrowRight aria-hidden="true" size={18} />
-                  </GuideCtaLink>
-                  <small>{copy.services.conversationNote}</small>
+                  </Link>
                 </div>
               </div>
             </section>

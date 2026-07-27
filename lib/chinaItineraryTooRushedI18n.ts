@@ -109,9 +109,11 @@ export interface ItineraryRushGuideCopy {
     reviewCta: string;
     buildIntro: string;
     buildCta: string;
-    conversationIntro: string;
-    conversationCta: string;
-    conversationNote: string;
+    fullTripIntro: string;
+    fullTripCta: string;
+    consultationIntro: string;
+    consultationCta: string;
+    consultationNote: string;
   };
   faq: {
     label: string;
@@ -371,19 +373,22 @@ const en: ItineraryRushGuideCopy = {
       "Do several early starts follow a late arrival or high-walking day?",
       "Would one delay remove the only meaningful activity in a city?",
     ],
-    nextLabel: "Choose by what you already have",
-    nextTitle: "Your next step should match the state of your route.",
+    nextLabel: "Not sure what the trip needs?",
+    nextTitle: "Talk it through with a planner before choosing a service.",
   },
   services: {
     reviewIntro: "I have a usable day-by-day draft.",
     reviewCta: "Review My Route — US$69",
     buildIntro: "I have dates and priorities, but no workable route yet.",
     buildCta: "Build My Route — US$129",
-    conversationIntro:
-      "I want to explain the whole trip before choosing a service.",
-    conversationCta: "Start a free trip brief",
-    conversationNote:
-      "Leave one reply contact when you submit; Homeground follows up personally.",
+    fullTripIntro:
+      "I want planning carried into selected arrangements or local coordination.",
+    fullTripCta: "Ask about Full Trip support",
+    consultationIntro:
+      "Use WhatsApp or leave your email. A Homeground planner can help you decide whether the US$69 review, US$129 route build or a custom Full Trip scope fits.",
+    consultationCta: "Talk to a China trip planner",
+    consultationNote:
+      "We confirm the service, scope, price or quote and delivery timing before sending payment instructions. Paid work begins after payment is confirmed.",
   },
   faq: {
     label: "Common planning questions",
@@ -408,6 +413,11 @@ const en: ItineraryRushGuideCopy = {
         question: "Should I remove a city from my China trip?",
         answer:
           "Remove a city only when doing so returns something you actually value: a full sightseeing day, one less hotel move, protection around a fixed booking or a usable recovery window.",
+      },
+      {
+        question: "What if I am not sure which planning service I need?",
+        answer:
+          "Talk to a China trip planner by WhatsApp or leave your email. You do not need to choose the service yourself: the planner can recommend a route review, route build or Full Trip support. No paid work starts until scope, price or quote, delivery timing and payment are confirmed.",
       },
     ],
   },
@@ -622,18 +632,21 @@ const zh: ItineraryRushGuideCopy = {
       "晚到或高步行量之后，是否连续安排了好几个早起日？",
       "一次延误是否会让你失去某座城市唯一有意义的活动？",
     ],
-    nextLabel: "按你现在已有的内容选择",
-    nextTitle: "下一步应该与你的路线完成程度相匹配。",
+    nextLabel: "还不确定这趟旅行需要什么？",
+    nextTitle: "先和规划师聊一聊，再决定需要哪一种帮助。",
   },
   services: {
     reviewIntro: "我已经有一份可以阅读的逐日行程。",
     reviewCta: "审核我的路线 — 69 美元",
     buildIntro: "我有日期和优先事项，但还没有一条可执行的路线。",
     buildCta: "帮我规划路线 — 129 美元",
-    conversationIntro: "我想先说明整趟旅行需求，再决定适合的服务。",
-    conversationCta: "免费提交旅行简报",
-    conversationNote:
-      "提交时留下一个回复联系方式，Homeground 会亲自联系你。",
+    fullTripIntro: "我希望规划继续延伸到部分预订安排或当地协调。",
+    fullTripCta: "咨询全程旅行支持",
+    consultationIntro:
+      "可以通过 WhatsApp 直接聊，或只留下一个邮箱。Homeground 真人规划师会帮助你判断更适合 69 美元路线审核、129 美元路线规划，还是定制全程旅行支持。",
+    consultationCta: "联系旅行规划师",
+    consultationNote:
+      "我们会先确认服务、范围、固定价格或报价与交付时间，再发送付款方式；确认付款后才开始付费工作。",
   },
   faq: {
     label: "常见规划问题",
@@ -658,6 +671,11 @@ const zh: ItineraryRushGuideCopy = {
         question: "我应该从中国旅行中删掉一座城市吗？",
         answer:
           "只有当删掉一座城市能换回你真正重视的东西时再删：一个完整游览日、少一次换酒店、保护一项固定预约，或留出可用的恢复时间。",
+      },
+      {
+        question: "如果我还不确定需要哪一种规划服务怎么办？",
+        answer:
+          "可以通过 WhatsApp 联系旅行规划师，或只留下一个邮箱。你不需要自己先选服务；规划师会说明更适合路线审核、路线规划还是全程旅行支持。在范围、价格或报价、交付时间和付款确认前，不会开始任何付费工作。",
       },
     ],
   },
@@ -872,19 +890,21 @@ const ko: ItineraryRushGuideCopy = {
       "늦은 도착이나 많이 걷는 날 뒤에 이른 출발이 여러 번 이어지나요?",
       "한 번의 지연으로 한 도시의 유일한 핵심 활동을 잃게 되나요?",
     ],
-    nextLabel: "현재 가진 자료에 맞춰 선택하세요",
-    nextTitle: "다음 단계는 일정의 현재 완성도와 맞아야 합니다.",
+    nextLabel: "이 여행에 어떤 도움이 필요한지 모르겠나요?",
+    nextTitle: "플래너와 먼저 이야기한 뒤 필요한 서비스를 정하세요.",
   },
   services: {
     reviewIntro: "이미 활용 가능한 일자별 일정 초안이 있습니다.",
     reviewCta: "내 일정 검토 — US$69",
     buildIntro: "날짜와 우선순위는 있지만 실행 가능한 일정은 아직 없습니다.",
     buildCta: "내 일정 설계 — US$129",
-    conversationIntro:
-      "서비스를 고르기 전에 전체 여행 요청부터 설명하고 싶습니다.",
-    conversationCta: "무료 여행 브리프 시작하기",
-    conversationNote:
-      "제출할 때 답변받을 연락처 하나를 남기면 Homeground가 직접 연락드립니다.",
+    fullTripIntro: "일부 예약 준비나 현지 조율까지 이어지는 여행 설계를 원합니다.",
+    fullTripCta: "전체 여행 지원 문의하기",
+    consultationIntro:
+      "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. Homeground 플래너가 US$69 일정 검토, US$129 동선 설계 또는 맞춤형 전체 여행 지원 중 어떤 도움이 맞는지 함께 판단합니다.",
+    consultationCta: "중국 여행 플래너와 상담하기",
+    consultationNote:
+      "서비스, 범위, 고정 가격 또는 견적과 납기를 먼저 확인한 뒤 결제 방법을 안내합니다. 결제가 확인된 후 유료 작업을 시작합니다.",
   },
   faq: {
     label: "자주 묻는 일정 질문",
@@ -909,6 +929,11 @@ const ko: ItineraryRushGuideCopy = {
         question: "중국 여행에서 도시 하나를 빼야 할까요?",
         answer:
           "온전한 관광일, 한 번 줄어든 숙소 변경, 고정 예약 보호, 실제로 쉴 수 있는 시간처럼 내가 중요하게 생각하는 것을 되찾을 때만 도시를 빼세요.",
+      },
+      {
+        question: "어떤 여행 설계 서비스가 필요한지 아직 모르겠다면 어떻게 하나요?",
+        answer:
+          "WhatsApp으로 중국 여행 플래너에게 문의하거나 이메일을 남겨 주세요. 서비스를 먼저 고를 필요는 없습니다. 플래너가 일정 검토, 동선 설계 또는 전체 여행 지원 중 알맞은 다음 단계를 안내합니다. 범위, 가격 또는 견적, 납기와 결제가 확인되기 전에는 유료 작업을 시작하지 않습니다.",
       },
     ],
   },

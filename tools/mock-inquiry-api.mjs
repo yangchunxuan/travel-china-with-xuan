@@ -16,6 +16,8 @@ import {
 import {
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  currentHomepageEmailFormVersion,
+  homepageEmailPrivacyNoticeVersion,
   supportedDestinationInquiryFormVersions,
 } from "../lib/inquiryVersions.ts";
 
@@ -32,7 +34,7 @@ const allowedOrigins = new Set(
 );
 const privacyNoticeVersions = (
   process.env.MOCK_ALLOWED_PRIVACY_NOTICE_VERSIONS ||
-  currentPrivacyNoticeVersion
+  `${currentPrivacyNoticeVersion},${homepageEmailPrivacyNoticeVersion}`
 )
   .split(",")
   .map((value) => value.trim())
@@ -250,6 +252,7 @@ const server = createServer(async (request, response) => {
   const validation = validateAndNormalizeInquiry(rawPayload, {
     allowedFormVersions: [
       currentInquiryFormVersion,
+      currentHomepageEmailFormVersion,
       ...supportedDestinationInquiryFormVersions,
     ],
     allowedPrivacyNoticeVersions: privacyNoticeVersions,

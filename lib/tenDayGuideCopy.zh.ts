@@ -11,7 +11,7 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
     planning: "我们如何规划",
     studio: "关于 Homeground",
     questions: "常见问题",
-    cta: "检查我的路线",
+    cta: "联系旅行规划师",
   },
   breadcrumb: {
     label: "面包屑导航",
@@ -247,7 +247,7 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
     directionTitle: "先北京还是先上海？",
     directionBody:
       "两个方向都可能成立。需要比较国际航班时刻，以及对应方向真正可用的国内班次；两个方向的班次并不完全对称。",
-    plannerLink: "请 Homeground 比较实际的火车与航班时间",
+    plannerLink: "联系旅行规划师",
   },
   fit: {
     label: "这条路线是否适合你",
@@ -362,12 +362,13 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
     ],
   },
   cta: {
-    label: "检查你实际拥有的行程时间",
+    label: "下一步",
     title: "先告诉我们想去的城市和住宿晚数。",
     intro:
-      "提交后，Homeground 规划师会在第一次回复中继续确认实际抵达和离开时间、同行者情况及必去项，再计算完整游览日、指出时间冲突，并列出仍需按日期核对的事项。",
-    button: "检查我的路线",
-    note: "不会即时生成固定套餐，也不必勉强保留每座城市。",
+      "可以通过 WhatsApp 直接聊，或只留下一个邮箱。之后再和规划师确认城市、晚数、抵离时间、同行者和必去项。",
+    button: "联系旅行规划师",
+    note:
+      "规划师可能建议 69 美元路线审核、129 美元路线规划或全程旅行支持。任何付费工作都只会在范围、价格或报价、交付时间和付款确认后开始。",
   },
   source: {
     summary: "本文如何形成，以及资料边界",
@@ -386,7 +387,7 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
     navigationLabel: "页脚导航",
     zhangjiajieGuide: "张家界指南",
     privacy: "隐私说明",
-    cta: "检查我的路线",
+    cta: "联系旅行规划师",
     copyright: (year) => `© ${year} Homeground China。中国独立旅行规划。`,
   },
 };

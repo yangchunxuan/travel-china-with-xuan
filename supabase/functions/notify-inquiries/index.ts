@@ -487,90 +487,146 @@ async function sendThroughResend(
   const channel =
     job.reply_channel === "email" ? "Email" : "WhatsApp";
   const contact = contactDetails(job);
-  const departureCountry = job.departure_country
-    ? validatedShortString(
-        job.departure_country,
-        "departure_country",
-      )
-    : "(Not provided)";
-  const roughBudgetPerPerson = job.rough_budget_per_person
-    ? validatedShortString(
-        job.rough_budget_per_person,
-        "rough_budget_per_person",
-        100,
-      )
-    : "(Not provided)";
-  const route = routeSummary(job);
-  const answers = routeAnswers(job);
-  const briefLabel =
-    job.route_id === "destination-timing" ? "Planning brief" : "Route";
-  const answerSectionLabel =
-    job.route_id === "destination-timing"
-      ? "Traveller answers"
-      : "Route answers";
-  const note = job.note?.trim() || "(No note provided)";
-  const subject =
-    `[Homeground][New] ${job.public_reference} · ${locale} · ${channel}`;
-  const text = [
-    "A new Homeground inquiry is ready for a human reply.",
-    "",
-    `Reference: ${job.public_reference}`,
-    `Language: ${locale}`,
-    `${briefLabel}: ${route}`,
-    `${answerSectionLabel}:`,
-    ...answers.map(({ label, value }) => `${label}: ${value}`),
-    `Reply channel: ${channel}`,
-    `Traveller contact: ${contact.display}`,
-    `Departure country/region: ${departureCountry}`,
-    `Traveller-stated rough budget per person (international flights excluded): ${roughBudgetPerPerson}`,
-    "Budget note: traveller context only, not a Homeground quote.",
-    "Traveller note:",
-    note,
-    "Safety: traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.",
-    "",
-    `Received: ${job.inquiry_created_at}`,
-    `First response due: ${job.first_response_due_at}`,
-    "",
-    job.reply_channel === "email"
-      ? "Reply directly to this message; Reply-To is already set to the traveller."
-      : `Continue in the studio WhatsApp account: ${contact.whatsappUrl}`,
-    job.reply_channel === "email"
-      ? "The Gmail thread and its Sent message are the handling record."
-      : "The studio WhatsApp conversation is the handling record.",
-  ].join("\n");
-  const html = `
-    <p>A new Homeground inquiry is ready for a human reply.</p>
-    <dl>
-      <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
-      <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
-      <dt>${escapeHtml(briefLabel)}</dt><dd>${escapeHtml(route)}</dd>
-      ${answers
-        .map(
-          ({ label, value }) =>
-            `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`,
-        )
-        .join("")}
-      <dt>Reply channel</dt><dd>${escapeHtml(channel)}</dd>
-      <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
-      <dt>Departure country/region</dt><dd>${escapeHtml(departureCountry)}</dd>
-      <dt>Traveller-stated rough budget per person (international flights excluded)</dt><dd>${escapeHtml(roughBudgetPerPerson)}</dd>
-      <dt>Traveller note</dt><dd style="white-space:pre-wrap">${escapeHtml(note)}</dd>
-      <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
-      <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
-    </dl>
-    ${
-      job.reply_channel === "email"
-        ? "<p>Reply directly to this message; Reply-To is already set to the traveller.</p>"
-        : `<p><a href="${escapeHtml(contact.whatsappUrl ?? "")}">Continue in the studio WhatsApp account</a>.</p>`
+  let subject: string;
+  let text: string;
+  let html: string;
+
+  if (job.route_id === "homepage-email") {
+    const homepageAnswerKeys = Object.keys(job.answers);
+    const homepageSnapshotKeys = Object.keys(job.route_snapshot);
+    if (
+      job.reply_channel !== "email" ||
+      job.contact_phone_e164 !== null ||
+      job.departure_country !== null ||
+      job.rough_budget_per_person !== null ||
+      job.note !== null ||
+      homepageAnswerKeys.length !== 1 ||
+      homepageAnswerKeys[0] !== "informationStatus" ||
+      job.answers.informationStatus !== "not_provided" ||
+      homepageSnapshotKeys.length !== 3 ||
+      !homepageSnapshotKeys.includes("kind") ||
+      !homepageSnapshotKeys.includes("informationStatus") ||
+      !homepageSnapshotKeys.includes("ruleVersion") ||
+      job.route_snapshot.kind !== "homepage-email" ||
+      job.route_snapshot.informationStatus !== "not_provided" ||
+      job.route_snapshot.ruleVersion !== "2026-07-26.1"
+    ) {
+      throw new Error("invalid_job:homepage_email_shape");
     }
-    <p><strong>Budget note:</strong> traveller context only, not a Homeground quote.</p>
-    <p><strong>Safety:</strong> traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.</p>
-    <p>${
+    subject =
+      `[Homeground][Homepage email] ${job.public_reference} · ${locale}`;
+    text = [
+      "A visitor left an email address on the Homeground homepage and asked for a human reply.",
+      "No itinerary, traveller, date, destination, budget or free-text details were collected.",
+      "",
+      `Reference: ${job.public_reference}`,
+      `Language: ${locale}`,
+      `Traveller contact: ${contact.display}`,
+      `Received: ${job.inquiry_created_at}`,
+      `First response due: ${job.first_response_due_at}`,
+      "",
+      "Reply directly to this message; Reply-To is already set to the traveller.",
+      "The Gmail thread and its Sent message are the handling record.",
+    ].join("\n");
+    html = `
+      <p>A visitor left an email address on the Homeground homepage and asked for a human reply.</p>
+      <p><strong>No itinerary details were collected.</strong></p>
+      <dl>
+        <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
+        <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
+        <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
+        <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
+        <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
+      </dl>
+      <p>Reply directly to this message; Reply-To is already set to the traveller.</p>
+      <p>The Gmail thread and its Sent message are the handling record.</p>
+    `.trim();
+  } else {
+    const departureCountry = job.departure_country
+      ? validatedShortString(
+          job.departure_country,
+          "departure_country",
+        )
+      : "(Not provided)";
+    const roughBudgetPerPerson = job.rough_budget_per_person
+      ? validatedShortString(
+          job.rough_budget_per_person,
+          "rough_budget_per_person",
+          100,
+        )
+      : "(Not provided)";
+    const route = routeSummary(job);
+    const answers = routeAnswers(job);
+    const briefLabel =
+      job.route_id === "destination-timing" ? "Planning brief" : "Route";
+    const answerSectionLabel =
+      job.route_id === "destination-timing"
+        ? "Traveller answers"
+        : "Route answers";
+    const note = job.note?.trim() || "(No note provided)";
+    subject =
+      `[Homeground][New] ${job.public_reference} · ${locale} · ${channel}`;
+    text = [
+      "A new Homeground inquiry is ready for a human reply.",
+      "",
+      `Reference: ${job.public_reference}`,
+      `Language: ${locale}`,
+      `${briefLabel}: ${route}`,
+      `${answerSectionLabel}:`,
+      ...answers.map(({ label, value }) => `${label}: ${value}`),
+      `Reply channel: ${channel}`,
+      `Traveller contact: ${contact.display}`,
+      `Departure country/region: ${departureCountry}`,
+      `Traveller-stated rough budget per person (international flights excluded): ${roughBudgetPerPerson}`,
+      "Budget note: traveller context only, not a Homeground quote.",
+      "Traveller note:",
+      note,
+      "Safety: traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.",
+      "",
+      `Received: ${job.inquiry_created_at}`,
+      `First response due: ${job.first_response_due_at}`,
+      "",
+      job.reply_channel === "email"
+        ? "Reply directly to this message; Reply-To is already set to the traveller."
+        : `Continue in the studio WhatsApp account: ${contact.whatsappUrl}`,
       job.reply_channel === "email"
         ? "The Gmail thread and its Sent message are the handling record."
-        : "The studio WhatsApp conversation is the handling record."
-    }</p>
-  `.trim();
+        : "The studio WhatsApp conversation is the handling record.",
+    ].join("\n");
+    html = `
+      <p>A new Homeground inquiry is ready for a human reply.</p>
+      <dl>
+        <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
+        <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
+        <dt>${escapeHtml(briefLabel)}</dt><dd>${escapeHtml(route)}</dd>
+        ${answers
+          .map(
+            ({ label, value }) =>
+              `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`,
+          )
+          .join("")}
+        <dt>Reply channel</dt><dd>${escapeHtml(channel)}</dd>
+        <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
+        <dt>Departure country/region</dt><dd>${escapeHtml(departureCountry)}</dd>
+        <dt>Traveller-stated rough budget per person (international flights excluded)</dt><dd>${escapeHtml(roughBudgetPerPerson)}</dd>
+        <dt>Traveller note</dt><dd style="white-space:pre-wrap">${escapeHtml(note)}</dd>
+        <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
+        <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
+      </dl>
+      ${
+        job.reply_channel === "email"
+          ? "<p>Reply directly to this message; Reply-To is already set to the traveller.</p>"
+          : `<p><a href="${escapeHtml(contact.whatsappUrl ?? "")}">Continue in the studio WhatsApp account</a>.</p>`
+      }
+      <p><strong>Budget note:</strong> traveller context only, not a Homeground quote.</p>
+      <p><strong>Safety:</strong> traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.</p>
+      <p>${
+        job.reply_channel === "email"
+          ? "The Gmail thread and its Sent message are the handling record."
+          : "The studio WhatsApp conversation is the handling record."
+      }</p>
+    `.trim();
+  }
 
   let response: Response;
   const timeoutController = new AbortController();

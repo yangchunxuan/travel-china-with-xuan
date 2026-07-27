@@ -185,10 +185,10 @@ export const destinationPlannerCopy: Record<
   DestinationPlannerCopy
 > = {
   en: {
-    introEyebrow: "Start with your wishlist",
-    introTitle: "Prepare the basics for a China trip conversation",
+    introEyebrow: "Prepare one shared trip brief",
+    introTitle: "Start with the trip you have in mind",
     introBody:
-      "Choose every place that genuinely interests you. We keep the whole wishlist and carry the same brief to a Homeground planner.",
+      "Share the places, nights, group and pace once. A Homeground planner will read the same brief and recommend the right next step.",
     progress: (current, total) => `Question ${current} of ${total}`,
     stepLabels: {
       destinations: "Wishlist",
@@ -198,8 +198,8 @@ export const destinationPlannerCopy: Record<
     },
     mobileTrust: [
       "No budget needed",
-      "One contact to submit",
-      "Every place stays",
+      "Contact comes after the trip basics",
+      "Reviewed by a real planner",
     ],
     selectedCount: (count) =>
       `${count} ${count === 1 ? "place" : "places"} selected`,
@@ -248,7 +248,7 @@ export const destinationPlannerCopy: Record<
         eyebrow: "Name the travel depth",
         title: "How would you like the trip to feel?",
         help:
-          "This check compares destination stay time only. A planner confirms transport later.",
+          "This helps the planner judge whether the route should stay compact or protect more breathing room.",
         legend: "Preferred pace",
         error: "Choose Essentials, Classic or Unhurried.",
       },
@@ -316,7 +316,7 @@ export const destinationPlannerCopy: Record<
     discardContactConfirm:
       "Changing the planner answers will clear the contact details you entered. Continue?",
     result: {
-      kicker: "Your first timing check",
+      kicker: "Trip brief snapshot",
       titles: {
         needs_prioritization: "Your wishlist and time are in conflict",
         tighter_than_selected_pace: "Your places need a faster pace",
@@ -333,11 +333,11 @@ export const destinationPlannerCopy: Record<
         withinRange: (pace) =>
           `The destination stay time falls within the ${pace} reference range.`,
         roomToShape: (open) =>
-          `${open} nights remain unassigned after this pace reference. We have not added another place automatically.`,
+          `${open} nights remain unassigned after this pace reference. We have left them open instead of assuming another place.`,
         partialManual: (other) =>
           `We checked the known destinations. “${other}” remains in your brief and needs a planner to confirm its location and connections.`,
         otherOnly: (other) =>
-          `“${other}” stays exactly as you wrote it. An automatic time claim here would be guesswork, so a planner needs to check it.`,
+          `“${other}” stays exactly as you wrote it. Claiming a timing range here would be guesswork, so a planner needs to check it.`,
         classicStart:
           "You asked us to keep the city choice open. Your nights, group and pace are ready for a planner to use as the starting brief.",
       },
@@ -371,10 +371,10 @@ export const destinationPlannerCopy: Record<
         pace: "Pace",
       },
       classicStartValue: "City choice open",
-      contactEyebrow: "Continue with a person",
-      contactTitle: "Want a planner to check the real route?",
+      contactEyebrow: "Send the brief for a human reply",
+      contactTitle: "Ready for a planner to review what this trip needs?",
       contactBody:
-        "Your full wishlist, nights, pace, priorities and unresolved questions will carry into the contact method you choose.",
+        "Your places, nights, pace, priorities and unresolved questions stay together in the brief you submit.",
     },
     partyLabels: {
       solo: "Solo",
@@ -395,10 +395,10 @@ export const destinationPlannerCopy: Record<
     },
   },
   zh: {
-    introEyebrow: "先从愿望清单开始",
-    introTitle: "先准备一份中国旅行沟通简报",
+    introEyebrow: "先准备一份共用旅行简报",
+    introTitle: "从你心里已有的旅行想法开始",
     introBody:
-      "把真正感兴趣的地方都选上。我们会保留完整愿望，并把同一份简报交给 Homeground 规划师。",
+      "地点、晚数、同行者和节奏只需填写一次。Homeground 规划师会查看同一份简报，并建议适合的下一步。",
     progress: (current, total) => `第 ${current} 题，共 ${total} 题`,
     stepLabels: {
       destinations: "愿望清单",
@@ -408,8 +408,8 @@ export const destinationPlannerCopy: Record<
     },
     mobileTrust: [
       "无需先填预算",
-      "提交时留一种联系方式",
-      "每个地点都会保留",
+      "先填写旅行基本信息，再留下联系方式",
+      "由真人规划师查看",
     ],
     selectedCount: (count) => `已选择 ${count} 个地点`,
     questions: {
@@ -449,7 +449,7 @@ export const destinationPlannerCopy: Record<
       pace: {
         eyebrow: "选择旅行深度",
         title: "你希望这次旅行是什么节奏？",
-        help: "这里只比较目的地停留时间；交通会由规划师后续核对。",
+        help: "这能帮助规划师判断路线应保持紧凑，还是需要留出更多缓冲。",
         legend: "理想节奏",
         error: "请选择核心速览、经典适中或从容慢行。",
       },
@@ -510,12 +510,12 @@ export const destinationPlannerCopy: Record<
     ],
     back: "返回",
     continue: "继续",
-    showCheck: "准备旅行简报",
+    showCheck: "准备我的旅行简报",
     restart: "重新开始",
     editAnswers: "修改答案",
     discardContactConfirm: "修改规划答案会清空已经填写的联系方式。是否继续？",
     result: {
-      kicker: "你的初步时间检查",
+      kicker: "旅行简报摘要",
       titles: {
         needs_prioritization: "愿望清单与现有时间存在冲突",
         tighter_than_selected_pace: "这些地方需要更快的旅行节奏",
@@ -531,11 +531,11 @@ export const destinationPlannerCopy: Record<
           `${available}晚达到核心参考量，但低于${pace}大约${minimum}晚的起点。`,
         withinRange: (pace) => `目的地停留时间处于${pace}参考范围内。`,
         roomToShape: (open) =>
-          `按照当前节奏参考，还剩${open}晚未分配。我们没有自动添加无关目的地。`,
+          `按照当前节奏参考，还剩${open}晚未分配。这些晚数会留给规划师继续安排，不会凭空补入其他目的地。`,
         partialManual: (other) =>
           `已计算标准目的地；“${other}”仍完整保留在需求中，需要规划师核实位置和交通。`,
         otherOnly: (other) =>
-          `“${other}”会按原文保留。此时自动给出时间结论只会是猜测，因此需要规划师核实。`,
+          `“${other}”会按原文保留。此时直接给出时间结论只会是猜测，因此需要规划师核实。`,
         classicStart:
           "你选择暂不决定城市。晚数、同行者和节奏已经整理好，可以作为规划师推荐路线的起点。",
       },
@@ -565,10 +565,10 @@ export const destinationPlannerCopy: Record<
         pace: "节奏",
       },
       classicStartValue: "暂不决定城市",
-      contactEyebrow: "接下来由人工继续",
-      contactTitle: "需要规划师核实真正的路线吗？",
+      contactEyebrow: "提交后由真人回复",
+      contactTitle: "准备让规划师判断这趟旅行需要什么吗？",
       contactBody:
-        "完整愿望、晚数、节奏、优先级和待确认事项会自动带入你选择的联系方式。",
+        "地点、晚数、节奏、优先级和待确认事项会一起保留在你提交的旅行简报里。",
     },
     partyLabels: {
       solo: "独自旅行",
@@ -589,10 +589,10 @@ export const destinationPlannerCopy: Record<
     },
   },
   ko: {
-    introEyebrow: "여행 희망 목록부터",
-    introTitle: "중국 여행 상담 브리프를 준비하세요",
+    introEyebrow: "하나의 여행 브리프 준비하기",
+    introTitle: "지금 생각하고 있는 여행부터 알려 주세요",
     introBody:
-      "진심으로 가고 싶은 곳을 모두 선택하세요. 희망 목록을 그대로 보존해 같은 브리프를 Homeground 플래너에게 전달합니다.",
+      "장소, 숙박일수, 일행과 속도를 한 번만 알려 주세요. Homeground 플래너가 같은 브리프를 읽고 알맞은 다음 단계를 안내합니다.",
     progress: (current, total) => `${total}개 중 ${current}번째 질문`,
     stepLabels: {
       destinations: "위시리스트",
@@ -602,8 +602,8 @@ export const destinationPlannerCopy: Record<
     },
     mobileTrust: [
       "예산 입력 불필요",
-      "제출 시 연락처 1개",
-      "선택지는 모두 유지",
+      "여행 기본 정보 뒤에 연락처 입력",
+      "사람 플래너가 직접 검토",
     ],
     selectedCount: (count) => `${count}곳 선택`,
     questions: {
@@ -643,7 +643,7 @@ export const destinationPlannerCopy: Record<
       pace: {
         eyebrow: "여행의 깊이 선택",
         title: "이번 여행이 어떤 속도로 느껴지길 원하나요?",
-        help: "여기서는 목적지 체류 시간만 비교하고 교통은 플래너가 나중에 확인합니다.",
+        help: "플래너가 압축된 동선을 유지할지, 여유를 더 확보할지 판단하는 데 도움이 됩니다.",
         legend: "선호 여행 속도",
         error: "핵심, 클래식 또는 여유로운 속도를 선택해 주세요.",
       },
@@ -710,7 +710,7 @@ export const destinationPlannerCopy: Record<
     discardContactConfirm:
       "플래너 답변을 변경하면 입력한 연락처 정보가 지워집니다. 계속할까요?",
     result: {
-      kicker: "첫 시간 점검",
+      kicker: "여행 브리프 요약",
       titles: {
         needs_prioritization: "희망 목록과 가능한 시간이 충돌합니다",
         tighter_than_selected_pace: "선택한 장소에는 더 빠른 속도가 필요합니다",
@@ -727,11 +727,11 @@ export const destinationPlannerCopy: Record<
         withinRange: (pace) =>
           `목적지 체류 시간이 ${pace} 참고 범위 안에 있습니다.`,
         roomToShape: (open) =>
-          `현재 속도 기준 뒤에 ${open}박이 배정되지 않은 채 남습니다. 관련 없는 장소를 자동으로 추가하지 않았습니다.`,
+          `현재 속도 기준 뒤에 ${open}박이 배정되지 않은 채 남습니다. 이 시간은 플래너가 이어서 조정하도록 열어 둡니다.`,
         partialManual: (other) =>
           `알려진 목적지는 계산했습니다. ‘${other}’도 그대로 보존되며 위치와 연결을 플래너가 확인해야 합니다.`,
         otherOnly: (other) =>
-          `‘${other}’를 적은 그대로 보존합니다. 여기서 자동 시간 결론을 내리면 추측이 되므로 플래너 확인이 필요합니다.`,
+          `‘${other}’를 적은 그대로 보존합니다. 여기서 체류 시간 결론을 내리면 추측이 되므로 플래너 확인이 필요합니다.`,
         classicStart:
           "도시 선택을 열어 두셨습니다. 숙박일수, 일행과 속도가 플래너 추천의 출발 정보로 준비되었습니다.",
       },
@@ -764,10 +764,10 @@ export const destinationPlannerCopy: Record<
         pace: "속도",
       },
       classicStartValue: "도시 선택 열어 두기",
-      contactEyebrow: "다음은 사람이 이어 갑니다",
-      contactTitle: "플래너가 실제 동선을 확인해 드릴까요?",
+      contactEyebrow: "제출 후 사람 플래너가 답변합니다",
+      contactTitle: "이 여행에 필요한 도움을 플래너가 검토할까요?",
       contactBody:
-        "전체 희망 목록, 숙박일수, 속도, 우선순위와 미확인 사항이 선택한 연락 방법에 자동으로 담깁니다.",
+        "장소, 숙박일수, 속도, 우선순위와 미확인 사항이 제출하는 여행 브리프에 함께 담깁니다.",
     },
     partyLabels: {
       solo: "혼자",

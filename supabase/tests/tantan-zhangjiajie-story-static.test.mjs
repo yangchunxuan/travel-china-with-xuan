@@ -21,6 +21,12 @@ test("Tantan field note is one server-readable, seven-check article", async () =
   assert.match(copy, /Glass Bridge Is Not the Glass Skywalk/);
   assert.match(copy, /玻璃桥不是玻璃栈道/);
   assert.match(copy, /유리다리와 유리잔도는 다릅니다/);
+  assert.match(copy, /Use WhatsApp or leave your email/);
+  assert.match(copy, /可以通过 WhatsApp 直接聊，或只留下一个邮箱/);
+  assert.match(copy, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);
+  assert.match(copy, /before any paid work begins/i);
+  assert.match(copy, /任何付费工作开始前/);
+  assert.match(copy, /유료 작업 전에는/);
   assert.doesNotMatch(copy, /licensed guide|持证导游|자격.*가이드/i);
 });
 
@@ -68,7 +74,11 @@ test("Tantan story images are responsive, privacy edited and contextually linked
   assert.match(page, /tantan-hero-1200\.webp/);
   assert.match(page, /tantan-with-guests-\$\{kind\}-1200/);
   assert.match(page, /utm_campaign=trip-conversation/);
+  assert.match(page, /utm_content=planner-contact#planner-contact/);
   assert.doesNotMatch(page, /planner=destinations|service=/);
+  assert.match(copy, /ctaAction: "Talk to a China trip planner"/);
+  assert.match(copy, /ctaAction: "联系旅行规划师"/);
+  assert.match(copy, /ctaAction: "중국 여행 플래너와 상담하기"/);
   assert.match(copy, /guest faces are blurred for privacy/);
   assert.match(
     studio,

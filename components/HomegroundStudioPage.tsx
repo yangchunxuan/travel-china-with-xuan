@@ -53,9 +53,8 @@ export function HomegroundStudioPage({
   const homeCopy = getHomegroundCopy(locale);
   const copy = getHomegroundStudioCopy(locale);
   const motionRootId = `homeground-studio-${locale}`;
-  const plannerHref = `${homeCopy.path}?utm_source=studio&utm_medium=owned&utm_campaign=team-page&planner=destinations#route-finder`;
-  const planningServicesHref =
-    "/china-itinerary-review/?utm_source=studio&utm_medium=owned&utm_campaign=planning-services&utm_content=final-cta#choose-service";
+  const plannerHref = `${homeCopy.path}#planner-contact`;
+  const planningServicesHref = "/china-itinerary-review/#choose-service";
   const isEnglish = locale === "en";
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -206,31 +205,25 @@ export function HomegroundStudioPage({
 
         <section className={styles.ctaSection} aria-labelledby="studio-cta-title">
           <p className={styles.eyebrow} data-studio-reveal>
-            {isEnglish ? "Choose the level of help" : copy.cta.label}
+            {copy.cta.label}
           </p>
           <div className={styles.ctaGrid} data-studio-reveal>
             <h2 id="studio-cta-title">
-              {isEnglish
-                ? "Start with the part of the trip you want us to solve."
-                : copy.cta.title}
+              {copy.cta.title}
             </h2>
             <div>
-              <p>
-                {isEnglish
-                  ? "Have a usable route? We can review it. Have dates and priorities but no route? We can build the structure. Need help with the whole journey as well? Start with the same trip brief and we will shape the wider planning, arrangements and ground-support scope with you."
-                  : copy.cta.body}
-              </p>
+              <p>{copy.cta.body}</p>
               {isEnglish ? (
                 <div className={styles.ctaActions}>
                   <a
                     className={styles.ctaPrimary}
-                    href={planningServicesHref}
+                    href={plannerHref}
                   >
-                    Compare planning services
+                    Talk to a China trip planner
                     <ArrowRight aria-hidden="true" size={18} />
                   </a>
-                  <a className={styles.ctaSecondary} href={plannerHref}>
-                    Start a free trip consultation
+                  <a className={styles.ctaSecondary} href={planningServicesHref}>
+                    Compare planning services
                   </a>
                 </div>
               ) : (

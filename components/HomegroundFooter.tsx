@@ -14,6 +14,7 @@ import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
+import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
 import type { HomegroundPageContext } from "./HomegroundHeader";
 import styles from "./HomegroundHomePage.module.css";
 
@@ -82,6 +83,7 @@ export function HomegroundFooter({
   const guideHubPath = `${copy.path}guides/`;
   const sectionLabels = footerSections[locale];
   const studioPath = `${copy.path}studio/`;
+  const facebookPageUrl = getHomegroundFacebookPageUrl();
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
   const handleSectionClick = (
@@ -153,6 +155,9 @@ export function HomegroundFooter({
           <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
             {legalCopy.related.contact}
           </a>
+          {facebookPageUrl && (
+            <a href={facebookPageUrl}>{copy.footer.facebook}</a>
+          )}
         </nav>
       </div>
       <p className={styles.footerNote}>

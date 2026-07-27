@@ -6,11 +6,14 @@ import {
   canonicalizeJson,
   computeCanonicalRouteSnapshot,
   currentDestinationInquiryFormVersion,
+  currentHomepageEmailFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   currentRouteRuleVersion,
   destinationInquirySchemaVersion,
   destinationTimingRuleVersion,
+  homepageEmailInquirySchemaVersion,
+  homepageEmailPrivacyNoticeVersion,
   inquirySchemaVersion,
   inquirySubmitSurfaceByLocale,
   legacyDestinationInquiryFormVersion,
@@ -29,6 +32,7 @@ const validationConfig = {
   allowedFormVersions: [
     currentInquiryFormVersion,
     currentDestinationInquiryFormVersion,
+    currentHomepageEmailFormVersion,
   ],
   allowedPrivacyNoticeVersions: [
     "test-privacy-v1",
@@ -36,6 +40,7 @@ const validationConfig = {
     previousPrivacyNoticeVersion,
     budgetPrivacyNoticeVersion,
     currentPrivacyNoticeVersion,
+    homepageEmailPrivacyNoticeVersion,
   ],
   whatsappEnabled: false,
 };
@@ -122,6 +127,163 @@ function validDestinationPayload() {
     },
   };
 }
+
+function validHomepageEmailPayload(locale = "en") {
+  return {
+    schemaVersion: homepageEmailInquirySchemaVersion,
+    formVersion: currentHomepageEmailFormVersion,
+    entryPath: "homepage_email",
+    locale,
+    contact: {
+      channel: "email",
+      email: "Traveller@Example.COM",
+    },
+    privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    attribution: {
+      landingPath: inquirySubmitSurfaceByLocale[locale],
+    },
+    experiment: null,
+    antiAbuse: {
+      companyWebsite: "",
+    },
+  };
+}
+
+test("homepage email normalizes one email and no inferred traveller data", () => {
+  for (const locale of ["en", "zh", "ko"]) {
+    const result = validateAndNormalizeInquiry(
+      validHomepageEmailPayload(locale),
+      validationConfig,
+    );
+    assert.equal(result.ok, true, locale);
+    if (!result.ok) continue;
+
+    assert.deepEqual(result.value, {
+      schemaVersion: homepageEmailInquirySchemaVersion,
+      formVersion: currentHomepageEmailFormVersion,
+      entryPath: "homepage_email",
+      locale,
+      contact: {
+        channel: "email",
+        email: "Traveller@example.com",
+      },
+      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      attribution: {
+        landingPath: inquirySubmitSurfaceByLocale[locale],
+        utmSource: null,
+        utmMedium: null,
+        utmCampaign: null,
+      },
+      experiment: null,
+    });
+
+    const semantic = semanticInquiryPayload(result.value);
+    assert.deepEqual(Object.keys(semantic).sort(), [
+      "attribution",
+      "contact",
+      "entryPath",
+      "experiment",
+      "formVersion",
+      "locale",
+      "privacyNoticeVersion",
+      "schemaVersion",
+    ]);
+    const canonical = canonicalizeJson(semantic);
+    for (const forbidden of [
+      "journey",
+      "routeSnapshot",
+      "name",
+      "phone",
+      "note",
+      "departureCountry",
+      "roughBudgetPerPerson",
+      "companyWebsite",
+      "antiAbuse",
+    ]) {
+      assert.equal(canonical.includes(forbidden), false, forbidden);
+    }
+  }
+});
+
+test("homepage email rejects itinerary, identity, phone, note and UTM fields", () => {
+  const payload = validHomepageEmailPayload();
+  payload.journey = { routeId: "invented" };
+  payload.name = "Traveller";
+  payload.phone = "+44 7700 900123";
+  payload.note = "Ten days in China";
+  payload.departureCountry = "United Kingdom";
+  payload.roughBudgetPerPerson = "USD 3,000";
+  payload.contact.name = "Traveller";
+  payload.contact.phoneRaw = "+44 7700 900123";
+  payload.attribution.utmSource = "facebook";
+  payload.attribution.utmMedium = "social";
+  payload.attribution.utmCampaign = "homepage";
+
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, false);
+  if (result.ok) return;
+  for (const field of [
+    "journey",
+    "name",
+    "phone",
+    "note",
+    "departureCountry",
+    "roughBudgetPerPerson",
+    "contact.name",
+    "contact.phoneRaw",
+    "attribution.utmSource",
+    "attribution.utmMedium",
+    "attribution.utmCampaign",
+  ]) {
+    assert.equal(result.fieldErrors[field], "unknown", field);
+  }
+});
+
+test("homepage email requires its exact locale surface, version pair and empty honeypot", () => {
+  const wrongSurface = validHomepageEmailPayload("zh");
+  wrongSurface.attribution.landingPath = "/";
+  const wrongSurfaceResult = validateAndNormalizeInquiry(
+    wrongSurface,
+    validationConfig,
+  );
+  assert.equal(wrongSurfaceResult.ok, false);
+  if (!wrongSurfaceResult.ok) {
+    assert.equal(
+      wrongSurfaceResult.fieldErrors["attribution.landingPath"],
+      "invalid",
+    );
+  }
+
+  const wrongForm = validHomepageEmailPayload();
+  wrongForm.formVersion = currentDestinationInquiryFormVersion;
+  const wrongFormResult = validateAndNormalizeInquiry(
+    wrongForm,
+    validationConfig,
+  );
+  assert.equal(wrongFormResult.ok, false);
+  if (!wrongFormResult.ok) {
+    assert.equal(wrongFormResult.code, "unsupported_form_version");
+  }
+
+  const wrongPrivacy = validHomepageEmailPayload();
+  wrongPrivacy.privacyNoticeVersion = currentPrivacyNoticeVersion;
+  const wrongPrivacyResult = validateAndNormalizeInquiry(
+    wrongPrivacy,
+    validationConfig,
+  );
+  assert.equal(wrongPrivacyResult.ok, false);
+  if (!wrongPrivacyResult.ok) {
+    assert.equal(wrongPrivacyResult.code, "unsupported_privacy_notice");
+  }
+
+  const bot = validHomepageEmailPayload();
+  bot.antiAbuse.companyWebsite = "https://spam.example";
+  const botResult = validateAndNormalizeInquiry(bot, validationConfig);
+  assert.equal(botResult.ok, false);
+  if (!botResult.ok) {
+    assert.equal(botResult.fieldErrors.request, "invalid");
+  }
+});
 
 test("normalizes a valid email Inquiry and recomputes its route", () => {
   const result = validateAndNormalizeInquiry(

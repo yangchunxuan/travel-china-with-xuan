@@ -1,4 +1,12 @@
-# Homeground English Homepage — Product Spec
+# Homeground English Homepage — Historical Product Spec
+
+> **Superseded on 24 July 2026.** This file records the original automatic
+> route-result concept and must not be used as the current product or copy
+> baseline. The live baseline is
+> `docs/paid-service-pathways-spec.md`: one free trip brief read by a human
+> planner, with US$69 Review, US$129 Build and custom Full Trip support as
+> direct paid paths. The four structured questions remain as intake, not as a
+> standalone free automatic product.
 
 Version: 2026-07-17.1
 Primary market: English-speaking, long-haul travellers planning China

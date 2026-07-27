@@ -196,7 +196,7 @@ export function TransportGuidePage({
   const copy = getTransportGuideCopy(locale);
   const guide = getGuideEntry(GUIDE_ID, locale);
   const zhangjiajieGuide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const plannerHref = `${copy.homePath}?utm_source=beijing-zhangjiajie-shanghai-transport&utm_medium=owned&utm_campaign=route-guide&planner=destinations&destinations=beijing-great-wall%2Czhangjiajie%2Cshanghai#route-finder`;
+  const plannerHref = `${copy.homePath}?utm_source=beijing-zhangjiajie-shanghai-transport&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
   return (
