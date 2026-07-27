@@ -9,9 +9,12 @@ async function source(path) {
 }
 
 test("homepage email has a dedicated private persistence path with no traveller facts", async () => {
-  const [migration, endpoint] = await Promise.all([
+  const [migration, rpcFixMigration, endpoint] = await Promise.all([
     source(
       "supabase/migrations/202607270001_homeground_homepage_email.sql",
+    ),
+    source(
+      "supabase/migrations/202607270002_homeground_homepage_email_rpc_fix.sql",
     ),
     source("supabase/functions/v1-inquiries/index.ts"),
   ]);
@@ -23,8 +26,35 @@ test("homepage email has a dedicated private persistence path with no traveller 
   );
   assert.match(
     migration,
-    /result := public\.create_homeground_inquiry\(/u,
+    /result := public\.create_homeground_inquiry\(\s*1::smallint,/u,
     "email-only contact must inherit the existing atomic inquiry, rate-limit, idempotency and outbox transaction",
+  );
+  assert.match(
+    rpcFixMigration,
+    /result := public\.create_homeground_inquiry\(\s*1::smallint,/u,
+    "the production repair migration must preserve the strict smallint RPC signature",
+  );
+  assert.doesNotMatch(
+    rpcFixMigration,
+    /result := public\.create_homeground_inquiry\(\s*1,/u,
+    "an uncast integer literal cannot resolve create_homeground_inquiry(smallint, ...)",
+  );
+  assert.match(
+    rpcFixMigration,
+    /create or replace function public\.create_homeground_homepage_email_v1\(/u,
+  );
+  assert.match(rpcFixMigration, /security definer/u);
+  assert.match(
+    rpcFixMigration,
+    /set search_path = pg_catalog, public, extensions, homeground_private/u,
+  );
+  assert.match(
+    rpcFixMigration,
+    /revoke all on function public\.create_homeground_homepage_email_v1\([\s\S]+from public, anon, authenticated;/u,
+  );
+  assert.match(
+    rpcFixMigration,
+    /grant execute on function public\.create_homeground_homepage_email_v1\([\s\S]+to service_role;/u,
   );
   assert.match(
     migration,

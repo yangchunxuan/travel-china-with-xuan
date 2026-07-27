@@ -1,21 +1,8 @@
 begin;
 
--- This migration follows the 26 July test-marker migrations already in main.
--- The homepage quick-contact form deliberately accepts an email address only.
--- It reuses the existing private inquiry, retention, rate-limit and outbox
--- infrastructure without pretending that the visitor supplied itinerary data.
-alter table homeground_private.inquiries
-  drop constraint if exists inquiries_entry_path_check;
-
-alter table homeground_private.inquiries
-  add constraint inquiries_entry_path_check check (
-    entry_path in (
-      'generated_route',
-      'destination_timing',
-      'homepage_email'
-    )
-  );
-
+-- The wrapper's first argument to create_homeground_inquiry must resolve to
+-- smallint. An uncast integer literal cannot resolve the strict RPC signature
+-- at runtime, even though the wrapper itself can be created successfully.
 create or replace function public.create_homeground_homepage_email_v1(
   p_schema_version smallint,
   p_form_version text,
@@ -121,27 +108,6 @@ begin
 end;
 $$;
 
--- The contact-only form has no route, timing, party or pace facts. It is
--- compatible only with the two aggregate fields it actually supplies.
-insert into homeground_private.admin_metric_compatibility (
-  metric_id,
-  schema_version,
-  entry_path,
-  form_version,
-  rule_version
-)
-select
-  metric.metric_id,
-  3,
-  'homepage_email',
-  '2026-07-26.1',
-  '2026-07-26.1'
-from unnest(array[
-  'reply_channel_choice',
-  'form_locale'
-]) as metric(metric_id)
-on conflict do nothing;
-
 comment on function public.create_homeground_homepage_email_v1(
   smallint,
   text,
@@ -190,5 +156,7 @@ grant execute on function public.create_homeground_homepage_email_v1(
   integer,
   timestamptz
 ) to service_role;
+
+notify pgrst, 'reload schema';
 
 commit;

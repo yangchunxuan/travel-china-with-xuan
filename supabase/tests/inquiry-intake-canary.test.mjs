@@ -17,12 +17,11 @@ async function source(path) {
  * and none were. These tests describe the check that closes that gap, so a
  * later edit cannot quietly remove the part that makes it a canary.
  */
-test("the intake canary reads the version from the live site, not the repo", async () => {
+test("the intake canary verifies both public contracts from the live site", async () => {
   const workflow = await source(canaryWorkflowPath);
 
   // Reading lib/inquiryVersions.ts would only prove the repo agrees with
-  // itself. The failure being caught is a disagreement between what is
-  // deployed to the site and what is deployed to the Edge Function.
+  // itself. Each expected version has to be present in the deployed bundle.
   assert.doesNotMatch(
     workflow,
     /inquiryVersions|currentDestinationInquiryFormVersion/,
@@ -35,8 +34,18 @@ test("the intake canary reads the version from the live site, not the repo", asy
   );
   assert.match(
     workflow,
+    /destination_version="2026-07-21\.1"/,
+    "the destination contract must be probed independently",
+  );
+  assert.match(
+    workflow,
+    /homepage_email_version="2026-07-26\.1"/,
+    "the homepage email contract must be probed independently",
+  );
+  assert.doesNotMatch(
+    workflow,
     /sort -V \| tail -1/,
-    "older supported versions ship alongside the current one; the highest is the submitted one",
+    "the highest version cannot identify which schema it belongs to",
   );
   assert.match(
     workflow,
@@ -72,33 +81,38 @@ test("the intake canary fails loudly on the exact outage it exists for", async (
   );
 });
 
-test("the intake canary cannot store an inquiry", async () => {
+test("neither intake canary probe can store an inquiry", async () => {
   const workflow = await source(canaryWorkflowPath);
-  const bodyStart = workflow.indexOf('body="$(');
-  const bodyEnd = workflow.indexOf(
-    'response_file="${workdir}/response-${locale}.json"',
-    bodyStart,
-  );
-  const bodyBuilder = workflow.slice(bodyStart, bodyEnd);
-  assert.ok(bodyStart >= 0 && bodyEnd > bodyStart);
 
-  // The probe omits journey, contact and antiAbuse, so a healthy
-  // endpoint rejects it before persistence. If that ever stops being true the
-  // check would be writing a row into production every fifteen minutes.
+  // Both probes omit contact and antiAbuse; the destination probe also omits
+  // journey. If that changes the scheduled check could create production rows.
   assert.match(
     workflow,
-    /schemaVersion: 2,[\s\S]*formVersion: \$v,[\s\S]*privacyNoticeVersion: \$v,[\s\S]*entryPath: "destination_timing"/,
-    "the probe payload must stay deliberately incomplete",
+    /schemaVersion: 2,[\s\S]*entryPath: "destination_timing"/,
+    "the destination probe must stay deliberately incomplete",
   );
+  assert.match(
+    workflow,
+    /schemaVersion: 3,[\s\S]*entryPath: "homepage_email"/,
+    "the homepage email probe must stay deliberately incomplete",
+  );
+  const bodies = [...workflow.matchAll(/body="\$\(([\s\S]*?)\n\s*\)"/g)]
+    .map((match) => match[1])
+    .join("\n");
   assert.doesNotMatch(
-    bodyBuilder,
+    bodies,
     /\b(?:journey|contact|antiAbuse)\s*:|contact_email/,
-    "the probe must never carry the fields that would make it persistable",
+    "the probes must never carry fields that could make them persistable",
   );
   assert.match(
     workflow,
     /fieldErrors\.journey == "required"[\s\S]*fieldErrors\.contact == "required"[\s\S]*fieldErrors\.antiAbuse == "required"/,
-    "an accepted probe means it may have stored a row, and must fail the run",
+    "the destination probe must require every persistence-critical field",
+  );
+  assert.match(
+    workflow,
+    /fieldErrors\.contact == "required"[\s\S]*fieldErrors\.antiAbuse == "required"[\s\S]*fieldErrors\.journey \/\/ null\) == null/,
+    "the homepage email probe must require contact and anti-abuse but no journey",
   );
 });
 
@@ -106,6 +120,7 @@ test("the intake canary covers cached UTM payloads on every locale", async () =>
   const workflow = await source(canaryWorkflowPath);
 
   assert.match(workflow, /"en:\/" "zh:\/zh\/" "ko:\/ko\/"/);
+  assert.match(workflow, /"destination" "homepage-email"/);
   assert.match(workflow, /utmSource: "canary"/);
   assert.match(workflow, /utmMedium: "scheduled_probe"/);
   assert.match(workflow, /utmCampaign: "utm-contract"/);

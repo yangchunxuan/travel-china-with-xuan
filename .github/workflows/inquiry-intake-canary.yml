@@ -72,26 +72,36 @@ jobs:
             fi
           done
 
-          # Older supported versions ship alongside the current one; the highest
-          # is the one the form submits.
-          version="$(
-            grep -oE '20[0-9]{2}-[0-1][0-9]-[0-3][0-9]\.[0-9]+' "${bundle}" \
-              | sort -V | tail -1 || true
-          )"
+          # Two independent public contracts now ship in the same bundle. Never
+          # infer one contract from the numerically highest version: the
+          # destination form is schema 2 while the homepage email form is
+          # schema 3.
+          destination_version="2026-07-21.1"
+          homepage_email_version="2026-07-26.1"
           endpoint="$(
             grep -oE 'https://[a-z0-9]+\.supabase\.co/functions/v1/v1-inquiries' \
               "${bundle}" | head -1 || true
           )"
 
-          if [[ -z "${version}" ]]; then
+          missing_versions=()
+          for expected_version in \
+            "${destination_version}" \
+            "${homepage_email_version}"; do
+            if ! grep -Fq "${expected_version}" "${bundle}"; then
+              missing_versions+=("${expected_version}")
+            fi
+          done
+
+          if [[ "${#missing_versions[@]}" -gt 0 ]]; then
             if [[ "${fetched}" -eq 0 ]]; then
               echo "::error::Could not download any of the site's JavaScript \
           (${SITE_ORIGIN}). The site itself may be unreachable; intake was not \
           tested."
             else
-              echo "::error::Downloaded the site but found no form version in \
-          it. Either the build changed shape or the site is not publishing one; \
-          check before assuming intake is healthy."
+              echo "::error::Downloaded the site but did not find every current \
+          public form version: ${missing_versions[*]}. Either the build changed \
+          shape or a submit surface is missing; check before assuming intake is \
+          healthy."
             fi
             exit 1
           fi
@@ -102,102 +112,142 @@ jobs:
             exit 1
           fi
 
-          echo "Live site publishes ${version}"
+          echo "Live site publishes destination ${destination_version} and \
+          homepage email ${homepage_email_version}"
 
-          # Probe all three public submit surfaces with the campaign fields that
-          # older cached pages may still send. Required journey, contact and
-          # anti-abuse fields stay absent, so the probe cannot be persisted.
-          for locale_and_path in "en:/" "zh:/zh/" "ko:/ko/"; do
-            locale="${locale_and_path%%:*}"
-            landing_path="${locale_and_path#*:}"
-            body="$(
-              jq -nc \
-                --arg v "${version}" \
-                --arg locale "${locale}" \
-                --arg landingPath "${landing_path}" \
-                '{
-                  schemaVersion: 2,
-                  formVersion: $v,
-                  privacyNoticeVersion: $v,
-                  entryPath: "destination_timing",
-                  locale: $locale,
-                  attribution: {
-                    landingPath: $landingPath,
-                    utmSource: "canary",
-                    utmMedium: "scheduled_probe",
-                    utmCampaign: "utm-contract"
-                  },
-                  experiment: null
-                }'
-            )"
+          # Both probes intentionally omit every persistence-critical contact
+          # field. The destination probe also omits journey. A healthy endpoint
+          # must reject both before any row or outbox job can be created.
+          for surface in "destination" "homepage-email"; do
+            for locale_and_path in "en:/" "zh:/zh/" "ko:/ko/"; do
+              locale="${locale_and_path%%:*}"
+              landing_path="${locale_and_path#*:}"
 
-            response_file="${workdir}/response-${locale}.json"
-            http_status="$(
-              curl \
-                --silent --show-error \
-                --connect-timeout 10 --max-time 30 \
-                --retry 2 --retry-all-errors \
-                --output "${response_file}" \
-                --write-out "%{http_code}" \
-                --request POST \
-                --header "Origin: ${SITE_ORIGIN}" \
-                --header "Content-Type: application/json" \
-                --header "idempotency-key: $(cat /proc/sys/kernel/random/uuid)" \
-                --data "${body}" \
-                "${endpoint}"
-            )"
+              if [[ "${surface}" == "destination" ]]; then
+                body="$(
+                  jq -nc \
+                    --arg v "${destination_version}" \
+                    --arg locale "${locale}" \
+                    --arg landingPath "${landing_path}" \
+                    '{
+                      schemaVersion: 2,
+                      formVersion: $v,
+                      privacyNoticeVersion: $v,
+                      entryPath: "destination_timing",
+                      locale: $locale,
+                      attribution: {
+                        landingPath: $landingPath,
+                        utmSource: "canary",
+                        utmMedium: "scheduled_probe",
+                        utmCampaign: "utm-contract"
+                      },
+                      experiment: null
+                    }'
+                )"
+              else
+                body="$(
+                  jq -nc \
+                    --arg v "${homepage_email_version}" \
+                    --arg locale "${locale}" \
+                    --arg landingPath "${landing_path}" \
+                    '{
+                      schemaVersion: 3,
+                      formVersion: $v,
+                      privacyNoticeVersion: $v,
+                      entryPath: "homepage_email",
+                      locale: $locale,
+                      attribution: {
+                        landingPath: $landingPath
+                      },
+                      experiment: null
+                    }'
+                )"
+              fi
 
-            error_code="$(jq -r '.error.code // ""' "${response_file}")"
-            persistence_state="$(
-              jq -r '.error.persistenceState // ""' "${response_file}"
-            )"
-            contract_errors="$(
-              jq -r '
-                [
-                  (.error.fieldErrors // {} | keys[]) as $field
-                  | select(
-                      $field == "formVersion"
-                      or $field == "privacyNoticeVersion"
-                      or $field == "entryPath"
-                      or $field == "locale"
-                      or $field == "attribution"
-                      or ($field | startswith("attribution."))
-                    )
-                  | $field
-                ] | join(",")
-              ' "${response_file}"
-            )"
+              response_file="${workdir}/response-${surface}-${locale}.json"
+              http_status="$(
+                curl \
+                  --silent --show-error \
+                  --connect-timeout 10 --max-time 30 \
+                  --retry 2 --retry-all-errors \
+                  --output "${response_file}" \
+                  --write-out "%{http_code}" \
+                  --request POST \
+                  --header "Origin: ${SITE_ORIGIN}" \
+                  --header "Content-Type: application/json" \
+                  --header "idempotency-key: $(cat /proc/sys/kernel/random/uuid)" \
+                  --data "${body}" \
+                  "${endpoint}"
+              )"
 
-            echo "${locale}: HTTP ${http_status}; ${error_code}; ${persistence_state}"
+              error_code="$(jq -r '.error.code // ""' "${response_file}")"
+              persistence_state="$(
+                jq -r '.error.persistenceState // ""' "${response_file}"
+              )"
+              contract_errors="$(
+                jq -r '
+                  [
+                    (.error.fieldErrors // {} | keys[]) as $field
+                    | select(
+                        $field == "formVersion"
+                        or $field == "privacyNoticeVersion"
+                        or $field == "entryPath"
+                        or $field == "locale"
+                        or $field == "attribution"
+                        or ($field | startswith("attribution."))
+                      )
+                    | $field
+                  ] | join(",")
+                ' "${response_file}"
+              )"
 
-            if [[ "${http_status}" != "422" ||
-                  "${error_code}" != "validation_failed" ||
-                  "${persistence_state}" != "not_persisted" ]]; then
-              echo "::error::Intake is DOWN for ${locale}. Expected a safe \
-          422 validation_failed/not_persisted response, but received HTTP \
-          ${http_status}, ${error_code:-no error code}, \
+              echo "${surface}/${locale}: HTTP ${http_status}; ${error_code}; \
+          ${persistence_state}"
+
+              if [[ "${http_status}" != "422" ||
+                    "${error_code}" != "validation_failed" ||
+                    "${persistence_state}" != "not_persisted" ]]; then
+                echo "::error::Intake is DOWN for ${surface}/${locale}. Expected \
+          a safe 422 validation_failed/not_persisted response, but received \
+          HTTP ${http_status}, ${error_code:-no error code}, \
           ${persistence_state:-no persistence state}. Check the form/privacy \
           allow-lists, Origin policy and Edge Function health."
-              exit 1
-            fi
+                exit 1
+              fi
 
-            if [[ -n "${contract_errors}" ]]; then
-              echo "::error::Intake rejects fields sent by a live or cached \
-          ${locale} form: ${contract_errors}. Campaign-labelled visitors may \
-          be unable to submit even though the version itself is accepted."
-              exit 1
-            fi
+              if [[ -n "${contract_errors}" ]]; then
+                echo "::error::Intake rejects fields sent by the live or cached \
+          ${surface}/${locale} form: ${contract_errors}. Visitors may be unable \
+          to submit even though the endpoint still responds."
+                exit 1
+              fi
 
-            if ! jq -e '
-              .error.fieldErrors.journey == "required"
-              and .error.fieldErrors.contact == "required"
-              and .error.fieldErrors.antiAbuse == "required"
-            ' "${response_file}" >/dev/null; then
-              echo "::error::The deliberately incomplete ${locale} probe was \
-          not rejected for every persistence-critical field. Stop before this \
-          monitor can create production enquiries."
-              exit 1
-            fi
+              if [[ "${surface}" == "destination" ]]; then
+                required_fields_ok="$(
+                  jq -r '
+                    .error.fieldErrors.journey == "required"
+                    and .error.fieldErrors.contact == "required"
+                    and .error.fieldErrors.antiAbuse == "required"
+                  ' "${response_file}"
+                )"
+              else
+                required_fields_ok="$(
+                  jq -r '
+                    .error.fieldErrors.contact == "required"
+                    and .error.fieldErrors.antiAbuse == "required"
+                    and (.error.fieldErrors.journey // null) == null
+                  ' "${response_file}"
+                )"
+              fi
+
+              if [[ "${required_fields_ok}" != "true" ]]; then
+                echo "::error::The deliberately incomplete ${surface}/${locale} \
+          probe was not rejected for the expected persistence-critical fields. \
+          Stop before this monitor can create production enquiries."
+                exit 1
+              fi
+            done
           done
 
-          echo "Intake healthy: ${version} accepts the live UTM contract on en, zh and ko."
+          echo "Intake healthy: destination and homepage email contracts are \
+          accepted on en, zh and ko without persisting either probe."
