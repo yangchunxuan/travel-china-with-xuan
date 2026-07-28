@@ -294,6 +294,16 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
       `${locale} must not restore the removed full-trip intro paragraph`,
     );
   }
+  assert.equal(
+    getHomepagePlanningDeskCopy("zh").contactNoPayment,
+    "",
+    "the Chinese hero omits the redundant no-payment footer",
+  );
+  assert.match(
+    await source("components/HomepageQuickContact.tsx"),
+    /variant === ["']hero["'] && copy\.contactNoPayment/u,
+    "the hero footer should disappear when its localized copy is intentionally empty",
+  );
   assert.match(
     localizedCopySource,
     /Record<\s*HomegroundLocale,[\s\S]{0,200}HomepagePlanningDeskCopy/u,

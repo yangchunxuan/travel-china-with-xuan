@@ -573,7 +573,7 @@ export function HomepageQuickContact({
         </button>
       )}
 
-      {variant === "hero" && (
+      {variant === "hero" && copy.contactNoPayment && (
         <div className={styles.quickContactBoundary}>
           <CheckCircle2 aria-hidden="true" size={18} />
           <p>{copy.contactNoPayment}</p>

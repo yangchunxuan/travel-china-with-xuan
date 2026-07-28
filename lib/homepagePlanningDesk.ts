@@ -489,7 +489,7 @@ const zh: HomepagePlanningDeskCopy = {
   eyebrow: "联系中国旅行规划师",
   title: "选择最方便的方式，先和我们聊聊。",
   contactPanelLabel: "WhatsApp、Messenger 或邮箱",
-  contactNoPayment: "开始沟通无需付款。",
+  contactNoPayment: "",
   starterPrompts: [
     {
       id: "arrange-trip",
