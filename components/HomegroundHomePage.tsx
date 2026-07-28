@@ -471,31 +471,9 @@ export function HomegroundHomePage({
         >
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              {plannerStatus !== "result" && (
-                <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
-              )}
               <h1 id="home-hero-title">{copy.hero.title}</h1>
               {plannerStatus !== "result" && (
-                <>
-                  <div className={styles.heroFacts}>
-                    <p className={styles.heroFactsLabel}>
-                      {copy.hero.trustLabel}
-                    </p>
-                    <ol
-                      className={styles.heroTrust}
-                      aria-label={copy.hero.trustLabel}
-                    >
-                      {copy.hero.trust.map((item, index) => (
-                        <li key={item}>
-                          <span aria-hidden="true">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </>
+                <p className={styles.heroLead}>{copy.hero.intro}</p>
               )}
             </div>
 

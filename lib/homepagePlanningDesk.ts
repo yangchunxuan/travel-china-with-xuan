@@ -99,6 +99,8 @@ export interface PaidBriefReadyCopy {
 export interface HomepagePlanningDeskCopy {
   eyebrow: string;
   title: string;
+  contactPanelLabel: string;
+  contactNoPayment: string;
   starterPrompts: readonly HomepageStarterIntentOption[];
   openStarterLabel: string;
   noteLabel: string;
@@ -130,8 +132,6 @@ export interface HomepagePlanningDeskCopy {
     failed: string;
     uncertain: string;
     emailUnavailable: string;
-    fallbackEmailAction: string;
-    fallbackEmailSubject: string;
   };
   serviceShortcutLabel: string;
   serviceShortcutIntro: string;
@@ -177,6 +177,8 @@ export function routeNeedsScopeConfirmation(
 const en: HomepagePlanningDeskCopy = {
   eyebrow: "Talk to a China trip planner",
   title: "Start with the easiest way to reach us.",
+  contactPanelLabel: "WhatsApp, Messenger or email",
+  contactNoPayment: "No payment to start.",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -238,8 +240,6 @@ const en: HomepagePlanningDeskCopy = {
       "We could not confirm whether your email was saved. Retry with the same email to check safely.",
     emailUnavailable:
       "The email form is temporarily unavailable.",
-    fallbackEmailAction: "Open your email app instead",
-    fallbackEmailSubject: "China trip enquiry",
   },
   serviceShortcutLabel: "Already know what you need?",
   serviceShortcutIntro:
@@ -488,6 +488,8 @@ const en: HomepagePlanningDeskCopy = {
 const zh: HomepagePlanningDeskCopy = {
   eyebrow: "联系中国旅行规划师",
   title: "选择最方便的方式，先和我们聊聊。",
+  contactPanelLabel: "WhatsApp、Messenger 或邮箱",
+  contactNoPayment: "开始沟通无需付款。",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -545,8 +547,6 @@ const zh: HomepagePlanningDeskCopy = {
     uncertain:
       "目前无法确认邮箱是否已保存。使用同一个邮箱重试，可以安全核对结果。",
     emailUnavailable: "邮箱表单暂时不可用。",
-    fallbackEmailAction: "改用邮件应用发送",
-    fallbackEmailSubject: "中国旅行咨询",
   },
   serviceShortcutLabel: "已经知道自己需要什么？",
   serviceShortcutIntro:
@@ -787,6 +787,8 @@ const zh: HomepagePlanningDeskCopy = {
 const ko: HomepagePlanningDeskCopy = {
   eyebrow: "중국 여행 플래너와 상담하기",
   title: "가장 편한 방법으로 먼저 이야기해 보세요.",
+  contactPanelLabel: "WhatsApp, Messenger 또는 이메일",
+  contactNoPayment: "시작할 때 결제할 필요가 없습니다.",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -848,8 +850,6 @@ const ko: HomepagePlanningDeskCopy = {
       "이메일 저장 여부를 확인하지 못했습니다. 같은 이메일로 다시 시도하면 안전하게 확인할 수 있습니다.",
     emailUnavailable:
       "이메일 양식을 잠시 사용할 수 없습니다.",
-    fallbackEmailAction: "이메일 앱으로 직접 보내기",
-    fallbackEmailSubject: "중국 여행 문의",
   },
   serviceShortcutLabel: "필요한 서비스를 이미 알고 있나요?",
   serviceShortcutIntro:

@@ -83,6 +83,7 @@ export function HomepagePlanningIntentSelector({
   onStarterNoteChange,
   onContinue,
   onCancel,
+  contactOnly = false,
 }: {
   locale: HomegroundLocale;
   value: HomepagePlanningIntentId | null;
@@ -94,6 +95,7 @@ export function HomepagePlanningIntentSelector({
     starterIntent?: HomepageStarterIntentId,
   ) => void;
   onCancel?: () => void;
+  contactOnly?: boolean;
 }) {
   const copy = getHomepagePlanningDeskCopy(locale);
   const paidOptions = copy.options.filter(
@@ -101,11 +103,15 @@ export function HomepagePlanningIntentSelector({
   );
 
   return (
-    <div className={styles.intentView} data-planning-view="intent">
+    <div
+      className={`${styles.intentView} ${
+        contactOnly ? styles.intentViewContactOnly : ""
+      }`}
+      data-planning-view="intent"
+    >
       <header className={styles.intentHeader}>
-        <p className={styles.intentEyebrow}>{copy.eyebrow}</p>
         <h2 id="planning-intent-title" tabIndex={-1}>
-          {copy.title}
+          {contactOnly ? copy.contactPanelLabel : copy.title}
         </h2>
       </header>
 
@@ -113,37 +119,40 @@ export function HomepagePlanningIntentSelector({
         locale={locale}
         copy={copy}
         onCancel={onCancel}
+        variant={contactOnly ? "hero" : "default"}
       />
 
-      <section
-        className={styles.intentServiceShortcuts}
-        aria-labelledby="planning-service-shortcuts-title"
-      >
-        <div className={styles.intentServiceShortcutsHeader}>
-          <h3 id="planning-service-shortcuts-title">
-            {copy.serviceShortcutLabel}
-          </h3>
-          <p>{copy.serviceShortcutIntro}</p>
-        </div>
-        <div className={styles.intentServiceShortcutList}>
-          {paidOptions.map((option) => {
-            const Icon = intentIcons[option.id];
-            return (
-              <button
-                type="button"
-                className={styles.intentServiceShortcut}
-                onClick={() => onContinue(option.id)}
-                key={option.id}
-              >
-                <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
-                <span>{option.label}</span>
-                <strong>{option.priceLabel}</strong>
-                <ArrowRight aria-hidden="true" size={17} />
-              </button>
-            );
-          })}
-        </div>
-      </section>
+      {!contactOnly && (
+        <section
+          className={styles.intentServiceShortcuts}
+          aria-labelledby="planning-service-shortcuts-title"
+        >
+          <div className={styles.intentServiceShortcutsHeader}>
+            <h3 id="planning-service-shortcuts-title">
+              {copy.serviceShortcutLabel}
+            </h3>
+            <p>{copy.serviceShortcutIntro}</p>
+          </div>
+          <div className={styles.intentServiceShortcutList}>
+            {paidOptions.map((option) => {
+              const Icon = intentIcons[option.id];
+              return (
+                <button
+                  type="button"
+                  className={styles.intentServiceShortcut}
+                  onClick={() => onContinue(option.id)}
+                  key={option.id}
+                >
+                  <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
+                  <span>{option.label}</span>
+                  <strong>{option.priceLabel}</strong>
+                  <ArrowRight aria-hidden="true" size={17} />
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

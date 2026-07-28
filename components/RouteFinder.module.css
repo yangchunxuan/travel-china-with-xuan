@@ -25,6 +25,13 @@
   background: var(--rf-surface);
 }
 
+.heroVariant[data-planning-view="intent"] {
+  background: #fff;
+  border-color: rgb(20 20 19 / 14%);
+  border-radius: 2rem;
+  box-shadow: 0 1.5rem 4rem rgb(63 47 34 / 10%);
+}
+
 .finder form {
   padding: 0;
 }
