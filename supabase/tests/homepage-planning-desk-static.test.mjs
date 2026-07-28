@@ -191,7 +191,7 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "zh",
       patterns: [
-        /先说说你想要怎样的中国旅行/u,
+        /说说你想要的中国旅行/u,
         /选择最方便的方式，先和我们聊聊。/u,
         /通过 WhatsApp 直接聊/u,
         /打开 WhatsApp/u,
@@ -314,7 +314,7 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
   }
 });
 
-test("the first planning view keeps quick contacts and the same three paid shortcuts", async () => {
+test("the first planning view is contact-only while paid shortcuts stay available in the planner", async () => {
   const [home, planningDesk, quickContact, styles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
@@ -324,8 +324,14 @@ test("the first planning view keeps quick contacts and the same three paid short
 
   assert.doesNotMatch(home, /beijing-hero/u);
   assert.doesNotMatch(home, /heroPicture|photoCaption/u);
-  assert.match(home, /className=\{styles\.heroFacts\}/u);
+  assert.doesNotMatch(home, /className=\{styles\.heroFacts\}/u);
+  assert.match(home, /className=\{styles\.heroLead\}/u);
   assert.match(planningDesk, /<HomepageQuickContact/u);
+  assert.match(planningDesk, /contactOnly\s*\?/u);
+  assert.match(
+    planningDesk,
+    /variant=\{contactOnly\s*\?\s*["']hero["']\s*:\s*["']default["']\}/u,
+  );
   assert.match(quickContact, /defaultWhatsAppNumber = "8613174215999"/u);
   assert.match(
     quickContact,
@@ -344,6 +350,10 @@ test("the first planning view keeps quick contacts and the same three paid short
   assert.match(
     styles,
     /\.quickContactGrid\s*\{[\s\S]{0,180}grid-template-columns:\s*repeat\(2,/u,
+  );
+  assert.match(
+    styles,
+    /\.quickContactHero\s+\.quickContactGrid\s*\{[\s\S]{0,180}grid-template-columns:\s*minmax\(0,\s*1fr\)/u,
   );
 });
 
@@ -733,6 +743,11 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
   assert.equal(
     quickContact.match(/rel="noopener noreferrer"/gu)?.length,
     2,
+  );
+  assert.doesNotMatch(
+    quickContact,
+    /mailto:|fallbackEmail/u,
+    "homepage email must remain an on-site form in every Hero state",
   );
   assert.match(
     quickContact,

@@ -139,10 +139,12 @@ export function HomepageQuickContact({
   locale,
   copy,
   onCancel,
+  variant = "default",
 }: {
   locale: HomegroundLocale;
   copy: HomepagePlanningDeskCopy;
   onCancel?: () => void;
+  variant?: "default" | "hero";
 }) {
   const contactCopy = copy.contactStart;
   const emailId = useId();
@@ -186,14 +188,6 @@ export function HomepageQuickContact({
     process.env.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL?.trim() ||
       defaultMessengerUrl,
   );
-  const brandEmail =
-    process.env.NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL?.trim() || "";
-  const fallbackEmailUrl = isValidEmail(brandEmail)
-    ? `mailto:${brandEmail}?subject=${encodeURIComponent(
-        contactCopy.fallbackEmailSubject,
-      )}`
-    : "";
-
   useEffect(() => {
     if (status !== "success") return;
     const frame = window.requestAnimationFrame(() => {
@@ -357,7 +351,12 @@ export function HomepageQuickContact({
         : error;
 
   return (
-    <div id="planner-contact" className={styles.quickContact}>
+    <div
+      id="planner-contact"
+      className={`${styles.quickContact} ${
+        variant === "hero" ? styles.quickContactHero : ""
+      }`}
+    >
       <div className={styles.quickContactGrid}>
         <article
           className={`${styles.quickContactCard} ${styles.quickContactWhatsapp}`}
@@ -365,9 +364,11 @@ export function HomepageQuickContact({
           <div className={styles.quickContactIcon} aria-hidden="true">
             <MessageCircle size={22} strokeWidth={1.8} />
           </div>
-          <p className={styles.quickContactEyebrow}>
-            {contactCopy.whatsappEyebrow}
-          </p>
+          {variant === "default" && (
+            <p className={styles.quickContactEyebrow}>
+              {contactCopy.whatsappEyebrow}
+            </p>
+          )}
           <h3>{contactCopy.whatsappTitle}</h3>
           {whatsappUrl ? (
             <a
@@ -387,7 +388,11 @@ export function HomepageQuickContact({
           )}
           {whatsappUrl && (
             <small
-              className={styles.quickContactExternalNote}
+              className={
+                variant === "hero"
+                  ? styles.quickContactSrOnly
+                  : styles.quickContactExternalNote
+              }
               id={whatsappExternalNoteId}
             >
               {contactCopy.whatsappOpensExternally}
@@ -395,7 +400,9 @@ export function HomepageQuickContact({
           )}
           {messengerUrl && (
             <p className={styles.quickContactMessenger}>
-              <span>{contactCopy.messengerLead}</span>{" "}
+              {variant === "default" && (
+                <span>{contactCopy.messengerLead}</span>
+              )}{" "}
               <a
                 href={messengerUrl}
                 target="_blank"
@@ -421,33 +428,17 @@ export function HomepageQuickContact({
           <div className={styles.quickContactIcon} aria-hidden="true">
             <Mail size={22} strokeWidth={1.8} />
           </div>
-          <p className={styles.quickContactEyebrow}>
-            {contactCopy.emailEyebrow}
-          </p>
+          {variant === "default" && (
+            <p className={styles.quickContactEyebrow}>
+              {contactCopy.emailEyebrow}
+            </p>
+          )}
           <h3>{contactCopy.emailTitle}</h3>
 
           {!emailIntakeReady ? (
-            fallbackEmailUrl ? (
-              <>
-                <a
-                  className={styles.quickContactPrimaryLink}
-                  href={fallbackEmailUrl}
-                >
-                  {contactCopy.fallbackEmailAction}
-                  <ArrowUpRight aria-hidden="true" size={18} />
-                </a>
-                <small className={styles.quickContactEmailUse}>
-                  {contactCopy.emailUse} {contactCopy.privacyLead}{" "}
-                  <a href={privacyPath(locale)}>
-                    {contactCopy.privacyAction}
-                  </a>
-                </small>
-              </>
-            ) : (
-              <p className={styles.quickContactUnavailable}>
-                {contactCopy.emailUnavailable}
-              </p>
-            )
+            <p className={styles.quickContactUnavailable}>
+              {contactCopy.emailUnavailable}
+            </p>
           ) : status === "success" ? (
             <div
               className={styles.quickContactSuccess}
@@ -580,6 +571,13 @@ export function HomepageQuickContact({
         >
           {copy.keepCurrent}
         </button>
+      )}
+
+      {variant === "hero" && (
+        <div className={styles.quickContactBoundary}>
+          <CheckCircle2 aria-hidden="true" size={18} />
+          <p>{copy.contactNoPayment}</p>
+        </div>
       )}
     </div>
   );

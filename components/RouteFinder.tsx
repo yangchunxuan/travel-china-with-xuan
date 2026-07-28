@@ -1186,6 +1186,7 @@ export function RouteFinder({
           onStarterNoteChange={onPlanningStarterNoteChange}
           onContinue={handlePlanningIntentSelection}
           onCancel={planningIntent ? handleCloseIntentPicker : undefined}
+          contactOnly={variant === "hero" && !planningIntent}
         />
       ) : view === "questions" ? (
         <form
