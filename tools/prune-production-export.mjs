@@ -85,10 +85,13 @@ for (const requiredPage of [
   "guides/china-entry-requirements/index.html",
   "guides/china-visa-free-uk-citizens-2026/index.html",
   "guides/china-240-hour-visa-free-transit-route-check/index.html",
+  "guides/zhangjiajie-from-malaysia/index.html",
   "zh/guides/is-your-china-itinerary-too-rushed/index.html",
   "zh/guides/china-240-hour-visa-free-transit-route-check/index.html",
+  "zh/guides/zhangjiajie-from-malaysia/index.html",
   "ko/guides/is-your-china-itinerary-too-rushed/index.html",
   "ko/guides/china-240-hour-visa-free-transit-route-check/index.html",
+  "ko/guides/zhangjiajie-from-malaysia/index.html",
 ]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);
@@ -108,6 +111,14 @@ for (const requiredAsset of [
   "images/guides/china-itinerary-reality/airport-waiting-soft-focus-480.webp",
   "images/guides/china-itinerary-reality/airport-waiting-soft-focus-768.webp",
   "images/guides/china-itinerary-reality/airport-waiting-soft-focus-1200.webp",
+  "images/guides/zhangjiajie-from-malaysia/misty-pillars-480.avif",
+  "images/guides/zhangjiajie-from-malaysia/misty-pillars-768.webp",
+  "images/guides/zhangjiajie-from-malaysia/misty-pillars-1200.jpg",
+  "images/guides/zhangjiajie-from-malaysia/park-entrance-480.avif",
+  "images/guides/zhangjiajie-from-malaysia/park-entrance-768.webp",
+  "images/guides/zhangjiajie-from-malaysia/park-entrance-1200.jpg",
+  "images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-card-1200.webp",
+  "images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-og-1200.jpg",
 ]) {
   const requiredPath = path.join(outputRoot, requiredAsset);
   const requiredStat = await lstat(requiredPath);

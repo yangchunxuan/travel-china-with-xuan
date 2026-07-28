@@ -202,3 +202,24 @@ Current website derivatives:
 - `public/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-hero-*`
 - `public/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-card-*`
 - `public/images/guides/china-visa-free-new-zealand-citizens-2026/timeline-og-*`
+
+For the Malaysia-to-Zhangjiajie private-trip guide, the project owner supplied
+`IMG_5010.jpg` and `IMG_5011.jpg` on July 27, 2026 and approved them for the
+Homeground website. Neither source had previously been selected for another
+Homeground page. `IMG_5010.jpg` shows visitors looking toward misty Zhangjiajie
+pillars; `IMG_5011.jpg` shows the real visitor flow at an entrance to
+Zhangjiajie National Forest Park. The people remain part of the documentary
+scale of both wide scenes and are not presented as Homeground clients.
+
+Current website derivatives:
+
+- `public/images/guides/zhangjiajie-from-malaysia/misty-pillars-*`
+- `public/images/guides/zhangjiajie-from-malaysia/park-entrance-*`
+- `public/images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-card-1200.webp`
+- `public/images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-og-1200.jpg`
+
+The responsive JPG, WebP and AVIF files and the card/open-graph crops were
+exported without the originals' EXIF, GPS or device metadata. The photographs
+support the guide's discussion of visibility, visitor flow and the difference
+between a route on paper and a real park day; they are not evidence of live
+crowd levels on a future travel date.

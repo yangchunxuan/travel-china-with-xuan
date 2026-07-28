@@ -13,6 +13,7 @@ const articleComponents = [
   "components/TransportGuidePage.tsx",
   "components/ChinaItineraryTooRushedPage.tsx",
   "components/TantanZhangjiajieStoryPage.tsx",
+  "components/ZhangjiajieFromMalaysiaPage.tsx",
 ];
 
 test("global navigation separates editorial guides from paid planning", async () => {
@@ -66,7 +67,7 @@ test("sitemap publishes all three localized guide hubs with hreflang", async () 
   );
 });
 
-test("all six article types expose the same visible and JSON-LD hierarchy", async () => {
+test("all seven article types expose the same visible and JSON-LD hierarchy", async () => {
   for (const path of articleComponents) {
     const article = await source(path);
 

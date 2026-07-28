@@ -99,6 +99,30 @@ const fieldNoteRelatedCopy: Record<
   },
 };
 
+const malaysiaRelatedCopy: Record<
+  HomegroundLocale,
+  { label: string; title: string; body: string }
+> = {
+  en: {
+    label: "Starting in Malaysia?",
+    title: "Connect the flight and Changsha transfer before counting park days.",
+    body:
+      "See how the Kuala Lumpur flight, first sleep, railway station and hotel base change the usable Zhangjiajie days.",
+  },
+  zh: {
+    label: "从马来西亚出发？",
+    title: "计算公园游览日之前，先接好航班与长沙转场。",
+    body:
+      "先看吉隆坡航班、第一晚、火车站和住宿基地，会怎样改变真正可用的张家界游览日。",
+  },
+  ko: {
+    label: "말레이시아에서 출발하시나요?",
+    title: "공원 일수를 세기 전에 항공편과 창사 환승부터 연결하세요.",
+    body:
+      "쿠알라룸푸르 항공편, 첫 숙박, 기차역과 숙박 거점이 실제 장자제 관광일을 어떻게 바꾸는지 확인해 보세요.",
+  },
+};
+
 function Timeline({
   stops,
   headingLevel = 3,
@@ -319,6 +343,11 @@ export function ZhangjiajieGuidePage({
     locale,
   );
   const fieldNoteCopy = fieldNoteRelatedCopy[locale];
+  const malaysiaGuide = getGuideEntry(
+    "zhangjiajie-from-malaysia",
+    locale,
+  );
+  const malaysiaCopy = malaysiaRelatedCopy[locale];
   const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -466,6 +495,18 @@ export function ZhangjiajieGuidePage({
             </section>
 
             <div className={styles.relatedGuideStack}>
+              <aside className={styles.nightShowRelated} aria-labelledby="malaysia-related-title">
+                <div>
+                  <p>{malaysiaCopy.label}</p>
+                  <h2 id="malaysia-related-title">{malaysiaCopy.title}</h2>
+                  <span>{malaysiaCopy.body}</span>
+                </div>
+                <Link href={malaysiaGuide.canonicalPath}>
+                  {malaysiaGuide.featuredLinkLabel}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </aside>
+
               <aside className={styles.nightShowRelated} aria-labelledby="field-note-related-title">
                 <div>
                   <p>{fieldNoteCopy.label}</p>

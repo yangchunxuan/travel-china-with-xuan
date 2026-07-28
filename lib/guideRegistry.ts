@@ -7,6 +7,7 @@ const SITE_URL = "https://homegroundchina.com";
 
 export const guideIds = [
   "zhangjiajie-itinerary",
+  "zhangjiajie-from-malaysia",
   "zhangjiajie-glass-bridge-vs-skywalk",
   "kevin-before-the-hotel-pickup",
   "zhangjiajie-older-travellers",
@@ -55,6 +56,7 @@ export type GuidePillar =
 
 export type GuideAudienceMarket =
   | "global"
+  | "malaysia"
   | "uk"
   | "us"
   | "canada"
@@ -153,6 +155,70 @@ export const guideRegistry = [
         heroAlt: "안개 사이로 솟아오른 장자제 국가삼림공원의 사암 봉우리.",
         navTitle: "장자제 일정 가이드",
         featuredLinkLabel: "장자제에서 2~4일 동안 가능한 일정 보기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "zhangjiajie-from-malaysia",
+    type: "planning",
+    featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["malaysia"],
+    format: "planning-guide",
+    topics: ["transport", "trip-planning", "on-the-ground", "pace"],
+    destinations: ["zhangjiajie"],
+    cardImagePath:
+      "/images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-card-1200.webp",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-07-28",
+    dateModified: "2026-07-28",
+    sourceReviewedDate: "2026-07-28",
+    locales: {
+      en: {
+        path: "/guides/zhangjiajie-from-malaysia/",
+        title: "Zhangjiajie From Malaysia: Private Trip Guide (2026)",
+        headline:
+          "Zhangjiajie From Malaysia: Choose the Gateway, Hotel Base and Support",
+        description:
+          "Compare flight gateways, complete sightseeing days, hotel bases, tickets, payment setup and private-trip support for Zhangjiajie from Malaysia.",
+        heroAlt:
+          "Visitors look toward misty sandstone pillars rising above the forest in Zhangjiajie.",
+        navTitle: "Zhangjiajie from Malaysia",
+        featuredLinkLabel:
+          "Choose the gateway and hotel base for Zhangjiajie from Malaysia",
+        openGraphLocale: "en_MY",
+      },
+      zh: {
+        path: "/zh/guides/zhangjiajie-from-malaysia/",
+        title: "马来西亚到张家界自由行：航班、住宿与私人协助",
+        headline: "从马来西亚去张家界：先选入境点、住宿区域与协助方式",
+        description:
+          "比较马来西亚到张家界的航班门户、完整游览日、武陵源与市区住宿、门票、支付准备，以及自由行需要多少当地协助。",
+        heroAlt: "游客在张家界仰望从森林和云雾间升起的砂岩峰林。",
+        navTitle: "马来西亚出发张家界指南",
+        featuredLinkLabel: "选对马来西亚到张家界的航班门户与住宿基地",
+        openGraphLocale: "zh_MY",
+      },
+      ko: {
+        path: "/ko/guides/zhangjiajie-from-malaysia/",
+        title: "말레이시아 출발 장자제 여행: 항공·숙소·현지 지원",
+        headline:
+          "말레이시아에서 장자제까지: 관문·숙박 거점·지원 범위 고르기",
+        description:
+          "말레이시아 출발 장자제 여행의 항공 관문, 온전한 관광일, 우링위안·시내 숙소, 입장권, 결제 준비와 현지 지원 범위를 비교합니다.",
+        heroAlt:
+          "여행자들이 장자제의 숲과 안개 사이로 솟은 사암 봉우리를 바라보는 모습.",
+        navTitle: "말레이시아 출발 장자제 가이드",
+        featuredLinkLabel:
+          "말레이시아 출발 장자제의 관문과 숙박 거점 선택하기",
         openGraphLocale: "ko_KR",
       },
     },
