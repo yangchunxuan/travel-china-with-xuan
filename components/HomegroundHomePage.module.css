@@ -2,6 +2,7 @@
 .skipLink,
 .siteHeader,
 .hero,
+.travelGuidesSection,
 .proofSection,
 .studioSection,
 .faqSection,
@@ -40,6 +41,7 @@
 
 .localeRoot[data-homeground-locale="zh"] .heroCopy h1,
 .localeRoot[data-homeground-locale="zh"] .sectionIntro h2,
+.localeRoot[data-homeground-locale="zh"] .travelGuidesIntro h2,
 .localeRoot[data-homeground-locale="zh"] .studioIntro h2,
 .localeRoot[data-homeground-locale="zh"] .faqIntro h2,
 .localeRoot[data-homeground-locale="zh"] .finalCta h2 {
@@ -56,6 +58,7 @@
 }
 
 .localeRoot[data-homeground-locale="zh"] .sectionIntro h2,
+.localeRoot[data-homeground-locale="zh"] .travelGuidesIntro h2,
 .localeRoot[data-homeground-locale="zh"] .studioIntro h2,
 .localeRoot[data-homeground-locale="zh"] .faqIntro h2,
 .localeRoot[data-homeground-locale="zh"] .finalCta h2 {
@@ -65,6 +68,7 @@
 
 .localeRoot[data-homeground-locale="ko"] .heroCopy h1,
 .localeRoot[data-homeground-locale="ko"] .sectionIntro h2,
+.localeRoot[data-homeground-locale="ko"] .travelGuidesIntro h2,
 .localeRoot[data-homeground-locale="ko"] .studioIntro h2,
 .localeRoot[data-homeground-locale="ko"] .faqIntro h2,
 .localeRoot[data-homeground-locale="ko"] .finalCta h2 {
@@ -83,6 +87,7 @@
 }
 
 .localeRoot[data-homeground-locale="ko"] .sectionIntro h2,
+.localeRoot[data-homeground-locale="ko"] .travelGuidesIntro h2,
 .localeRoot[data-homeground-locale="ko"] .studioIntro h2,
 .localeRoot[data-homeground-locale="ko"] .faqIntro h2,
 .localeRoot[data-homeground-locale="ko"] .finalCta h2 {
@@ -183,6 +188,7 @@
   transform: translateY(0);
 }
 
+.travelGuidesSection,
 .proofSection,
 .servicePathways,
 .studioSection,
@@ -1686,11 +1692,16 @@
   opacity: 0.55;
 }
 
+.travelGuidesSection,
 .proofSection,
 .faqSection {
   background: var(--hg-color-canvas);
   color: var(--hg-color-ink);
   padding: clamp(4.5rem, 8vw, 7rem) max(1rem, calc((100vw - 1260px) / 2));
+}
+
+.travelGuidesSection {
+  border-block-end: 1px solid #d9dbd5;
 }
 
 .sectionIntro,
@@ -1851,11 +1862,8 @@
 }
 
 .travelGuides {
-  border-top: 1px solid #d9dbd5;
   display: grid;
   gap: clamp(1.35rem, 2.6vw, 2rem);
-  margin-block-start: 2rem;
-  padding-block-start: 2rem;
 }
 
 .travelGuidesHeader {
@@ -1875,7 +1883,7 @@
   margin: 0;
 }
 
-.travelGuidesIntro h3 {
+.travelGuidesIntro h2 {
   color: var(--hg-color-ink);
   font-family: var(--hg-editorial);
   font-size: clamp(1.75rem, 3vw, 2.65rem);
@@ -2829,6 +2837,7 @@
     padding: 0.72rem 1rem;
   }
 
+  .travelGuidesSection,
   .proofSection,
   .servicePathways,
   .studioSection,
@@ -2984,6 +2993,7 @@
   }
 
   .heroGrid,
+  .travelGuidesSection,
   .proofSection,
   .servicePathways,
   .studioSection,

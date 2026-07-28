@@ -70,6 +70,30 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
   assert.match(homepage, /src=\{guide\.cardImagePath\}/);
   assert.match(homepage, /alt=\{guide\.cardImageAlt\}/);
   assert.match(homepage, /data-guide-id=\{guide\.id\}/);
+  const guidesSectionIndex = homepage.indexOf(
+    "className={styles.travelGuidesSection}",
+  );
+  const proofSectionIndex = homepage.indexOf(
+    "className={styles.proofSection}",
+  );
+  assert.ok(
+    guidesSectionIndex >= 0 && guidesSectionIndex < proofSectionIndex,
+    "the complete travel-guides section must appear before the planning-proof section",
+  );
+  assert.ok(
+    homepage.indexOf("featuredGuides.map", guidesSectionIndex) <
+      proofSectionIndex,
+    "the guide cards must move with the travel-guides heading",
+  );
+  assert.ok(
+    homepage.indexOf("className={styles.proofBoard}", proofSectionIndex) >
+      proofSectionIndex,
+    "the route example and handled-needs card must stay with the proof heading",
+  );
+  assert.match(
+    homepage,
+    /<h2 id="travel-guides-title">\{copy\.guides\.title\}<\/h2>/,
+  );
   assert.match(
     homepageCss,
     /\[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"\][\s\S]*?aspect-ratio: 1;/,

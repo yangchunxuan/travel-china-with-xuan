@@ -537,6 +537,75 @@ export function HomegroundHomePage({
           </div>
         </section>
 
+        <section
+          className={styles.travelGuidesSection}
+          aria-labelledby="travel-guides-title"
+        >
+          <nav
+            className={styles.travelGuides}
+            aria-labelledby="travel-guides-title"
+          >
+            <div className={styles.travelGuidesHeader}>
+              <div className={styles.travelGuidesIntro}>
+                <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
+                <h2 id="travel-guides-title">{copy.guides.title}</h2>
+              </div>
+              <a className={styles.travelGuidesIndexLink} href={guidesIndexPath}>
+                {copy.guides.viewAllLabel}
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+            </div>
+            <div className={styles.travelGuideGrid}>
+              {featuredGuides.map((guide, index) => {
+                const typeLabel =
+                  guide.type === "field-note"
+                    ? copy.guides.typeLabels.fieldNote
+                    : copy.guides.typeLabels[guide.type];
+
+                return (
+                  <a
+                    className={`${styles.travelGuideCard} ${
+                      index === 0
+                        ? styles.travelGuideLead
+                        : styles.travelGuideCompact
+                    }`}
+                    data-guide-id={guide.id}
+                    href={guide.canonicalPath}
+                    key={guide.id}
+                  >
+                    <span className={styles.travelGuideImage}>
+                      <img
+                        src={guide.cardImagePath}
+                        alt={guide.cardImageAlt}
+                        width={guide.cardImageWidth}
+                        height={guide.cardImageHeight}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span className={styles.travelGuideContent}>
+                      <span className={styles.travelGuideMeta}>
+                        <span>{typeLabel}</span>
+                        <time dateTime={guide.dateModified}>
+                          {copy.guides.updatedLabel}{" "}
+                          {formatGuideDate(guide.dateModified, locale)}
+                        </time>
+                      </span>
+                      <strong className={styles.travelGuideTitle}>
+                        {guide.headline}
+                      </strong>
+                      <span className={styles.travelGuideCta}>
+                        {guide.featuredLinkLabel}
+                        <ArrowRight aria-hidden="true" size={17} />
+                      </span>
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </nav>
+        </section>
+
         <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
           <div className={styles.sectionIntro}>
             <p className={styles.eyebrowDark}>{copy.proof.eyebrow}</p>
@@ -601,69 +670,6 @@ export function HomegroundHomePage({
             </aside>
           </div>
 
-          <nav
-            className={styles.travelGuides}
-            aria-labelledby="travel-guides-title"
-          >
-            <div className={styles.travelGuidesHeader}>
-              <div className={styles.travelGuidesIntro}>
-                <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
-                <h3 id="travel-guides-title">{copy.guides.title}</h3>
-              </div>
-              <a className={styles.travelGuidesIndexLink} href={guidesIndexPath}>
-                {copy.guides.viewAllLabel}
-                <ArrowRight aria-hidden="true" size={18} />
-              </a>
-            </div>
-            <div className={styles.travelGuideGrid}>
-              {featuredGuides.map((guide, index) => {
-                const typeLabel =
-                  guide.type === "field-note"
-                    ? copy.guides.typeLabels.fieldNote
-                    : copy.guides.typeLabels[guide.type];
-
-                return (
-                  <a
-                    className={`${styles.travelGuideCard} ${
-                      index === 0
-                        ? styles.travelGuideLead
-                        : styles.travelGuideCompact
-                    }`}
-                    data-guide-id={guide.id}
-                    href={guide.canonicalPath}
-                    key={guide.id}
-                  >
-                    <span className={styles.travelGuideImage}>
-                      <img
-                        src={guide.cardImagePath}
-                        alt={guide.cardImageAlt}
-                        width={guide.cardImageWidth}
-                        height={guide.cardImageHeight}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </span>
-                    <span className={styles.travelGuideContent}>
-                      <span className={styles.travelGuideMeta}>
-                        <span>{typeLabel}</span>
-                        <time dateTime={guide.dateModified}>
-                          {copy.guides.updatedLabel}{" "}
-                          {formatGuideDate(guide.dateModified, locale)}
-                        </time>
-                      </span>
-                      <strong className={styles.travelGuideTitle}>
-                        {guide.headline}
-                      </strong>
-                      <span className={styles.travelGuideCta}>
-                        {guide.featuredLinkLabel}
-                        <ArrowRight aria-hidden="true" size={17} />
-                      </span>
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          </nav>
         </section>
 
         <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">
