@@ -812,8 +812,8 @@ export const guideRegistry = [
     imageWidth: 1200,
     imageHeight: 675,
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
-    sourceReviewedDate: "2026-07-24",
+    dateModified: "2026-07-28",
+    sourceReviewedDate: "2026-07-28",
     locales: {
       en: {
         path: "/guides/do-singaporeans-need-visa-china/",
@@ -829,27 +829,27 @@ export const guideRegistry = [
       },
       zh: {
         path: "/zh/guides/do-singaporeans-need-visa-china/",
-        title: "You Don't Need a China Visa. Here's the Harder Question.",
-        headline: "You Don't Need a China Visa. Here's the Harder Question.",
+        title: "新加坡护照去中国免签 30 天：接下来怎样规划？",
+        headline: "去中国不需要签证。更难的问题在这里。",
         description:
-          "A Singapore passport enters China visa-free for 30 days. The visa is settled in a paragraph; the real question is what to do with the time.",
+          "新加坡普通护照可免签进入中国大陆 30 天。本文核对入境规则、入境卡填写方式，以及怎样把这段时间排成真正可执行的中国路线。",
         heroAlt:
-          "Sandstone pillars layered into a deep green valley in Zhangjiajie National Forest Park.",
-        navTitle: "Singapore passport China visa",
-        featuredLinkLabel: "The visa is easy — the 30 days are the question",
-        openGraphLocale: "en_SG",
+          "张家界国家森林公园内，层层砂岩石柱耸立于深绿色山谷之中。",
+        navTitle: "新加坡护照赴华免签指南",
+        featuredLinkLabel: "免签 30 天之后，路线怎样安排",
+        openGraphLocale: "zh_CN",
       },
       ko: {
         path: "/ko/guides/do-singaporeans-need-visa-china/",
-        title: "You Don't Need a China Visa. Here's the Harder Question.",
-        headline: "You Don't Need a China Visa. Here's the Harder Question.",
+        title: "싱가포르 여권 중국 30일 무비자: 여행은 어떻게 짤까요?",
+        headline: "중국 비자는 필요 없습니다. 더 어려운 질문은 따로 있습니다.",
         description:
-          "A Singapore passport enters China visa-free for 30 days. The visa is settled in a paragraph; the real question is what to do with the time.",
+          "싱가포르 일반 여권은 중국 본토에 30일까지 무비자로 입국할 수 있습니다. 입국 규정과 입국카드 작성 방법, 실제 가능한 중국 동선을 함께 확인하세요.",
         heroAlt:
-          "Sandstone pillars layered into a deep green valley in Zhangjiajie National Forest Park.",
-        navTitle: "Singapore passport China visa",
-        featuredLinkLabel: "The visa is easy — the 30 days are the question",
-        openGraphLocale: "en_US",
+          "장자제 국가삼림공원의 짙푸른 계곡 위로 겹겹이 솟은 사암 기둥.",
+        navTitle: "싱가포르 여권 중국 무비자 가이드",
+        featuredLinkLabel: "30일 무비자 이후의 여행 동선 짜기",
+        openGraphLocale: "ko_KR",
       },
     },
   },

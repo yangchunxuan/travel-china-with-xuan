@@ -5,6 +5,7 @@
     "dev": "next dev",
     "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
     "check:font-coverage": "node tools/check-font-coverage.mjs",
+    "check:indexable-export": "node tools/check-indexable-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
     "prebuild": "npm run check:font-coverage",

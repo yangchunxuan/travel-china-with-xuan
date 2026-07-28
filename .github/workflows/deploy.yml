@@ -58,6 +58,8 @@ jobs:
           NEXT_PUBLIC_HOMEGROUND_ADMIN_HEALTH_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_ADMIN_HEALTH_URL }}
       - name: Check ten-day guide export
         run: npm run check:ten-day-guide-export
+      - name: Check priority indexable exports
+        run: npm run check:indexable-export
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: out

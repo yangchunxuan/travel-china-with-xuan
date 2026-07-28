@@ -34,6 +34,7 @@ const explicitSources = [
   "lib/tantanZhangjiajieStoryI18n.ts",
   "lib/usChinaVisaI18n.ts",
   "lib/transitRouteCheckI18n.ts",
+  "lib/singaporeChinaVisaI18n.ts",
   "lib/kevinPreparationStoryI18n.ts",
   "lib/zhangjiajieOlderTravellersI18n.ts",
   "lib/destinationPlannerI18n.ts",
