@@ -54,6 +54,7 @@ export interface HomegroundCopy {
   hero: {
     eyebrow: string;
     title: string;
+    titleLines?: readonly string[];
     intro: string;
     trustLabel: string;
     trust: readonly string[];
@@ -345,8 +346,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     hero: {
       eyebrow: "Direct contact · A human next step",
-      title: "Tell us the China trip you want.",
-      intro: "Share your dates, cities and travel style.",
+      title: "How do you want to travel in China?",
+      intro: "Share your dates, cities, and travel style.",
       trustLabel: "What happens next",
       trust: [
         "Free to enquire",
@@ -871,8 +872,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     hero: {
       eyebrow: "直接联系 · 由真人继续",
-      title: "说说你想要的中国旅行。",
-      intro: "告诉我们日期、城市和旅行偏好。",
+      title: "你想要怎样的中国旅行？",
+      titleLines: ["你想要怎样的", "中国旅行？"],
+      intro: "从日期、城市和旅行偏好说起。",
       trustLabel: "接下来会发生什么",
       trust: [
         "提交需求免费",
@@ -1355,8 +1357,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     },
     hero: {
       eyebrow: "바로 문의 · 사람 플래너의 다음 단계",
-      title: "원하는 중국 여행을 들려주세요.",
-      intro: "날짜, 도시와 여행 스타일을 알려 주세요.",
+      title: "어떤 중국 여행을 원하시나요?",
+      intro: "날짜, 도시, 여행 스타일을 알려 주세요.",
       trustLabel: "다음 단계",
       trust: [
         "문의 제출 무료",

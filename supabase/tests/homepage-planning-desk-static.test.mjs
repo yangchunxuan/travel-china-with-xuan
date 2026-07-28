@@ -173,7 +173,7 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "en",
       patterns: [
-        /Tell us the China trip you want/u,
+        /How do you want to travel in China/u,
         /Start with the easiest way to reach us\./u,
         /Talk on WhatsApp/u,
         /Open WhatsApp/u,
@@ -191,7 +191,7 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "zh",
       patterns: [
-        /说说你想要的中国旅行/u,
+        /你想要怎样的中国旅行/u,
         /选择最方便的方式，先和我们聊聊。/u,
         /通过 WhatsApp 直接聊/u,
         /打开 WhatsApp/u,
@@ -209,7 +209,7 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "ko",
       patterns: [
-        /원하는 중국 여행을 들려주세요/u,
+        /어떤 중국 여행을 원하시나요/u,
         /가장 편한 방법으로 먼저 이야기해 보세요\./u,
         /WhatsApp으로 바로 상담하기/u,
         /WhatsApp 열기/u,

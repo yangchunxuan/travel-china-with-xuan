@@ -471,7 +471,15 @@ export function HomegroundHomePage({
         >
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <h1 id="home-hero-title">{copy.hero.title}</h1>
+              <h1 id="home-hero-title">
+                {copy.hero.titleLines
+                  ? copy.hero.titleLines.map((line) => (
+                      <span className={styles.heroTitleLine} key={line}>
+                        {line}
+                      </span>
+                    ))
+                  : copy.hero.title}
+              </h1>
               {plannerStatus !== "result" && (
                 <p className={styles.heroLead}>{copy.hero.intro}</p>
               )}
