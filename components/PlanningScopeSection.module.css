@@ -1,0 +1,543 @@
+/*
+ * Section three: the scope of help.
+ *
+ * Three objects, top to bottom — the choice, one worked example, the
+ * commercial boundary.
+ *
+ * There are no rules on the paper. Structure comes from space, parallel
+ * alignment and type size; the only hard edge is the dark panel itself.
+ *
+ * Colour is assigned by role, and each colour appears in exactly one context:
+ *
+ *   Black organises the argument. The headline, the two option names, the
+ *   promise line and the panel are what a reader navigates by, so they carry
+ *   the weight. Black is also this site's colour of commitment (header CTA,
+ *   studio section).
+ *
+ *   Rust speaks. The small caps labels are Homeground's voice and use the
+ *   same #913b28 as every other section's eyebrow, so this block reads as
+ *   part of the same publication rather than a different template.
+ *
+ *   Inside the dark panel nothing is coloured at all — the homepage's own
+ *   dark section (.studioSection .eyebrow) sets its labels in on-dark-muted,
+ *   and the panel's job is to be quiet and factual.
+ *
+ * No new colours are introduced; every value is an existing homepage token.
+ */
+
+.scope {
+  --scope-editorial: var(--hg-font-editorial);
+  --scope-display: var(--hg-font-editorial);
+  /* The shared small-caps label ink; literal, as elsewhere on the homepage. */
+  --scope-voice: #913b28;
+  background: var(--hg-color-canvas);
+  color: var(--hg-color-ink);
+  padding-block: clamp(3.75rem, 6.6vw, 5.75rem);
+  padding-inline: max(1rem, calc((100% - 1260px) / 2));
+  scroll-margin-top: 5.75rem;
+}
+
+/*
+ * The locale font stacks live on html[lang]; only the role mapping differs per
+ * language, mirroring the homepage module so the section drops in unchanged.
+ */
+.scope[data-homeground-locale="zh"] {
+  --scope-editorial: var(--serif);
+  --scope-display: var(--serif);
+  font-family: var(--sans);
+  line-break: strict;
+  /*
+   * keep-all stops Chinese lines breaking mid-word (部/分); break-word is the
+   * safety valve so a long run still wraps instead of overflowing at 320px.
+   */
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  /*
+   * Proper Chinese typesetting: trim the built-in side bearing on full-width
+   * punctuation so 、and ，stop punching holes in a line, and let the browser
+   * insert the quarter-em between Han characters and Latin or numerals. Both
+   * are ignored where unsupported, so nothing regresses.
+   */
+  text-autospace: normal;
+  text-spacing-trim: trim-start;
+}
+
+.scope[data-homeground-locale="ko"] {
+  --scope-editorial: var(--serif);
+  --scope-display: var(--sans);
+  font-family: var(--sans);
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+/* Head ------------------------------------------------------------------ */
+
+.head {
+  max-width: 47rem;
+}
+
+.eyebrow,
+.panelEyebrow,
+.beforePayLabel {
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.16em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.beforePayLabel,
+.exampleFigure figcaption {
+  color: var(--scope-voice);
+}
+
+.head h2 {
+  font-family: var(--scope-editorial);
+  font-size: clamp(2.45rem, 5vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0.7rem 0 0;
+  text-wrap: balance;
+}
+
+.titleLine {
+  display: block;
+}
+
+/* Matches the heading focus ring used elsewhere on the homepage. */
+.head h2:focus-visible {
+  border-radius: 0.2rem;
+  outline: 3px solid var(--hg-color-focus);
+  outline-offset: 4px;
+}
+
+/* The choice ------------------------------------------------------------ */
+
+/*
+ * No rules anywhere: the two options are held together by parallel structure —
+ * same label size, same measure, one shared top edge — and separated from the
+ * head and from the example by space alone.
+ */
+.choice {
+  column-gap: clamp(2.5rem, 6vw, 5.5rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-block-start: clamp(1.9rem, 3.6vw, 2.75rem);
+  row-gap: clamp(2rem, 4vw, 2.75rem);
+}
+
+.choiceLabel {
+  font-family: var(--scope-display);
+  font-size: clamp(1.55rem, 2.8vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0 0 0.7rem;
+  text-wrap: balance;
+}
+
+.choiceDetail {
+  color: var(--hg-color-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 26rem;
+  text-wrap: pretty;
+}
+
+.choiceNoteRow {
+  grid-column: 1 / -1;
+}
+
+/*
+ * Ink, not grey: without a rule to set it apart this line would blur into the
+ * two grey descriptions above it, and it carries the reassurance the whole
+ * choice depends on.
+ */
+.choiceNote {
+  color: var(--hg-color-ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 52rem;
+  text-wrap: pretty;
+}
+
+/* Authored clause breaks -------------------------------------------------- */
+
+/*
+ * One clause per line. A clause too long for the measure wraps with a hanging
+ * indent, so a run-over reads as a continuation rather than as a new clause.
+ */
+.clause {
+  display: block;
+  padding-inline-start: 1em;
+  text-indent: -1em;
+}
+
+.choiceDetail,
+.choiceNote {
+  max-width: none;
+}
+
+.choiceDetail {
+  line-height: 1.62;
+}
+
+.scope[data-homeground-locale="zh"] .choiceDetail,
+.scope[data-homeground-locale="ko"] .choiceDetail {
+  line-height: 1.75;
+}
+
+/*
+ * Chinese display type reads as more considered with a little tracking; Latin
+ * and Korean do not want it at this size.
+ */
+.scope[data-homeground-locale="zh"] .choiceLabel {
+  letter-spacing: 0.05em;
+}
+
+/*
+ * The second option drops down the page, so the block reads as a diagonal
+ * rather than a two-column table, and the closing line returns to the left
+ * margin to land it.
+ */
+.scope .choice {
+  row-gap: 0;
+}
+
+.choiceColumn:nth-child(2) {
+  margin-block-start: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+.scope .choiceNoteRow {
+  margin-block-start: clamp(1.75rem, 3.6vw, 2.75rem);
+}
+
+/* The worked example ---------------------------------------------------- */
+
+/*
+ * One spacing step for every major break — head, choice, example, boundary —
+ * and a smaller one inside the choice. With no rules, this rhythm is what
+ * tells a reader where one block ends.
+ */
+.example {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  margin-block-start: clamp(1.9rem, 3.6vw, 2.75rem);
+}
+
+/*
+ * The caption is a slug line above the picture, not a label under it: the
+ * figure then takes the same top padding as the dark panel, so both micro
+ * labels start on one line and the picture and the panel end on another.
+ */
+.exampleFigure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0;
+  min-width: 0;
+  padding-block-start: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/*
+ * 16:9 rather than the photograph's native 3:2. At 3:2 the picture was taller
+ * than the panel beside it and dragged the whole row down; at 16:9 the panel's
+ * own content sets the height, and flex-grow still lets the picture stretch to
+ * meet it when the panel is the taller of the two.
+ */
+.exampleFigure img {
+  aspect-ratio: 16 / 9;
+  border-radius: 1.35rem;
+  display: block;
+  flex: 1;
+  min-height: 14rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.exampleFigure figcaption {
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.examplePanel {
+  background: var(--hg-color-charcoal);
+  border-radius: 1.35rem;
+  color: var(--hg-color-on-dark);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(1.35rem, 2.6vw, 2rem);
+}
+
+.panelEyebrow {
+  color: var(--hg-color-on-dark-muted);
+}
+
+.panelTitle {
+  font-family: var(--scope-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.05rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0.65rem 0 0;
+  text-wrap: balance;
+}
+
+/* Space, not separators — the panel follows the same no-rules logic. */
+.panelRows {
+  display: grid;
+  margin: 1.35rem 0 0;
+  row-gap: 1.1rem;
+}
+
+.panelRows dt {
+  color: var(--hg-color-on-dark);
+  font-size: 0.68rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.panelRows dd {
+  color: var(--hg-color-on-dark-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0.4rem 0 0;
+}
+
+.panelNote {
+  color: var(--hg-color-on-dark-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  margin: auto 0 0;
+  padding-block-start: 1.25rem;
+}
+
+/* The boundary ---------------------------------------------------------- */
+
+/*
+ * Label above the sentence it labels, like the section eyebrow, the picture
+ * slug and the panel eyebrow. Once the rule went, the old side-by-side layout
+ * left an unexplained gutter between the label and the text.
+ */
+.beforePay {
+  display: grid;
+  gap: 0.55rem;
+  margin-block-start: clamp(1.9rem, 3.6vw, 2.75rem);
+}
+
+.beforePayBody {
+  color: var(--hg-color-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 46rem;
+  text-wrap: pretty;
+}
+
+/* Locale typography ------------------------------------------------------ */
+
+.scope[data-homeground-locale="zh"] .eyebrow,
+.scope[data-homeground-locale="zh"] .panelEyebrow,
+.scope[data-homeground-locale="zh"] .beforePayLabel,
+.scope[data-homeground-locale="zh"] .exampleFigure figcaption,
+.scope[data-homeground-locale="zh"] .panelRows dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.scope[data-homeground-locale="ko"] .eyebrow,
+.scope[data-homeground-locale="ko"] .panelEyebrow,
+.scope[data-homeground-locale="ko"] .beforePayLabel,
+.scope[data-homeground-locale="ko"] .exampleFigure figcaption,
+.scope[data-homeground-locale="ko"] .panelRows dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/*
+ * Chinese and Korean set more characters per line than Georgia does, so both
+ * headlines run a step smaller to keep each authored line on one row.
+ */
+.scope[data-homeground-locale="zh"] .head h2 {
+  font-size: clamp(2rem, 4.3vw, 3.55rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.24;
+  word-break: keep-all;
+}
+
+.scope[data-homeground-locale="ko"] .head h2 {
+  font-size: clamp(1.9rem, 4.05vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  line-height: 1.3;
+}
+
+.scope[data-homeground-locale="zh"] .choiceLabel,
+.scope[data-homeground-locale="zh"] .panelTitle {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.24;
+}
+
+.scope[data-homeground-locale="ko"] .choiceLabel,
+.scope[data-homeground-locale="ko"] .panelTitle {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/*
+ * Chinese and Korean run shorter per line, so the lead and detail columns get
+ * narrower measures instead of the English ~34rem line.
+ */
+.scope[data-homeground-locale="zh"] .choiceDetail,
+.scope[data-homeground-locale="ko"] .choiceDetail {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  max-width: 24rem;
+}
+
+.scope[data-homeground-locale="zh"] .choiceNote,
+.scope[data-homeground-locale="ko"] .choiceNote {
+  line-height: 1.85;
+  max-width: 44rem;
+}
+
+.scope[data-homeground-locale="zh"] .panelRows dd,
+.scope[data-homeground-locale="ko"] .panelRows dd {
+  line-height: 1.8;
+}
+
+.scope[data-homeground-locale="zh"] .beforePayBody,
+.scope[data-homeground-locale="ko"] .beforePayBody {
+  line-height: 1.85;
+  max-width: 40rem;
+}
+
+/* Responsive ------------------------------------------------------------- */
+
+/*
+ * The picture and the dark panel stay side by side down to small laptops; both
+ * the choice and the example stack together at 860 so the section never has
+ * one half stacked and the other not.
+ */
+@media (max-width: 860px) {
+  .example {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Stacked, there is no panel to align the slug line with. */
+  .exampleFigure {
+    padding-block-start: 0;
+  }
+
+  .exampleFigure img {
+    aspect-ratio: 16 / 8;
+    flex: none;
+    height: auto;
+    min-height: 0;
+  }
+
+  .scope .choice {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: clamp(1.75rem, 4vw, 2.25rem);
+  }
+
+  /* The diagonal drop does not survive a single column. */
+  .choiceColumn:nth-child(2) {
+    margin-block-start: 0;
+  }
+
+  /* Stacked, the note needs more air than the gap between the two options. */
+  .scope .choiceNoteRow {
+    margin-block-start: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .choiceDetail,
+  .choiceNote,
+  .beforePayBody {
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 680px) {
+  /*
+   * The authored breaks are a wide-screen decision. On a phone the headline
+   * reflows naturally instead of turning two authored lines into four rows.
+   */
+  .titleLine {
+    display: inline;
+  }
+
+  .head h2 {
+    font-size: clamp(2.05rem, 8.5vw, 2.45rem);
+  }
+
+  .scope[data-homeground-locale="zh"] .head h2 {
+    font-size: clamp(1.85rem, 7.6vw, 2.2rem);
+  }
+
+  .scope[data-homeground-locale="ko"] .head h2 {
+    font-size: clamp(1.9rem, 7.8vw, 2.3rem);
+  }
+
+  .choiceLabel {
+    font-size: clamp(1.4rem, 6.2vw, 1.75rem);
+  }
+
+  .exampleFigure img {
+    aspect-ratio: 16 / 10;
+    border-radius: 1rem;
+  }
+
+  .examplePanel {
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .examplePanel {
+    padding: 1.25rem;
+  }
+
+  /*
+   * A step down so the first Chinese clause still fits the narrowed panel.
+   * Without it the line breaks mid-clause and pushes 、or ，to the start of
+   * the next line, which Chinese typesetting does not allow.
+   */
+  .panelTitle {
+    font-size: clamp(1.3rem, 6.5vw, 1.5rem);
+  }
+
+  .panelRows dd {
+    font-size: 0.9rem;
+  }
+}
+
+/* High contrast ---------------------------------------------------------- */
+
+@media (forced-colors: active) {
+  .examplePanel {
+    border: 1px solid CanvasText;
+  }
+}

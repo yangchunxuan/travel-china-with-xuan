@@ -1,0 +1,142 @@
+/* Review harness chrome. Deliberately plain so it never reads as the design. */
+
+.lab {
+  background: var(--hg-color-canvas);
+  color: var(--hg-color-ink);
+  min-height: 100vh;
+  padding-block-end: 5rem;
+}
+
+.labHeader {
+  border-block-end: 1px solid var(--hg-color-line);
+  margin: 0 auto;
+  max-width: 1260px;
+  padding: 2.5rem 1rem 1.75rem;
+}
+
+.labKicker {
+  font-size: 0.7rem;
+  font-weight: 780;
+  letter-spacing: 0.16em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.labTitle {
+  font-family: var(--hg-font-editorial);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 0;
+}
+
+.labConcept {
+  color: var(--hg-color-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.9rem 0 0;
+  max-width: 46rem;
+}
+
+.labConcept strong {
+  color: var(--hg-color-ink);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin: 0 auto;
+  max-width: 1260px;
+  padding: 1.25rem 1rem 0;
+}
+
+.controlGroup {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.controlLabel {
+  color: var(--hg-color-muted);
+  font-size: 0.68rem;
+  font-weight: 780;
+  letter-spacing: 0.14em;
+  margin-inline-end: 0.35rem;
+  text-transform: uppercase;
+}
+
+.controlButton {
+  background: transparent;
+  border: 1px solid var(--hg-color-line);
+  border-radius: 999px;
+  color: var(--hg-color-ink);
+  cursor: pointer;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.85rem;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.controlButton:hover {
+  border-color: var(--hg-color-ink);
+}
+
+.controlButton:focus-visible {
+  outline: 2px solid var(--hg-color-ink);
+  outline-offset: 2px;
+}
+
+.controlButton[aria-pressed="true"] {
+  background: var(--hg-color-ink);
+  border-color: var(--hg-color-ink);
+  color: var(--hg-color-on-dark);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  margin: 0 auto;
+  max-width: 1260px;
+  padding: 1rem 1rem 0;
+}
+
+.links a {
+  color: var(--hg-color-ink);
+  font-size: 0.85rem;
+  text-underline-offset: 0.25em;
+}
+
+.links a:focus-visible {
+  outline: 2px solid var(--hg-color-ink);
+  outline-offset: 2px;
+}
+
+.stage {
+  margin-block-start: 2rem;
+}
+
+.frameWrapper {
+  margin: 0 auto;
+  max-width: 1260px;
+  padding-inline: 1rem;
+}
+
+.frameScaler {
+  border: 1px solid var(--hg-color-line);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.frame {
+  border: 0;
+  display: block;
+  transform-origin: top left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .controlButton {
+    transition: none;
+  }
+}

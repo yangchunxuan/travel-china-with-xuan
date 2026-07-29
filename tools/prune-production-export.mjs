@@ -1,4 +1,4 @@
-import { lstat, readFile, readdir, rm } from "node:fs/promises";
+import { lstat, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const projectRoot = process.cwd();
@@ -13,6 +13,7 @@ const labExportRoots = [
   "journey-lab-v2",
   "journey-lab-v3",
   "motion-lab",
+  "planning-scope-lab",
   "waterway-lab",
 ];
 
@@ -62,6 +63,70 @@ if (remainingLabRoots.length > 0) {
   throw new Error(
     `Experimental exports remain: ${remainingLabRoots.join(", ")}`,
   );
+}
+
+/*
+ * Removing the lab HTML leaves its client chunks and its entries in
+ * _ssgManifest.js behind. Nothing links to them, but they are still uploaded
+ * and they still name unpublished routes, so the boundary clears them too.
+ */
+const labRouteGroupChunks = path.resolve(
+  outputRoot,
+  "_next/static/chunks/app/(lab)",
+);
+
+if (!labRouteGroupChunks.startsWith(`${outputRoot}${path.sep}`)) {
+  throw new Error(
+    `Refusing to prune path outside export root: ${labRouteGroupChunks}`,
+  );
+}
+
+await rm(labRouteGroupChunks, { recursive: true, force: true });
+
+const staticRoot = path.join(outputRoot, "_next", "static");
+const buildDirectories = await readdir(staticRoot, { withFileTypes: true });
+let prunedManifestEntries = 0;
+
+for (const buildDirectory of buildDirectories) {
+  if (!buildDirectory.isDirectory()) continue;
+
+  const manifestPath = path.join(
+    staticRoot,
+    buildDirectory.name,
+    "_ssgManifest.js",
+  );
+
+  let manifest;
+  try {
+    manifest = await readFile(manifestPath, "utf8");
+  } catch {
+    continue;
+  }
+
+  // Route names are escaped as / inside the manifest's Set literal.
+  // Non-greedy to the first "])": route names contain "]" (e.g. /[locale]).
+  const pruned = manifest.replace(
+    /new Set\(\[(.*?)\]\)/,
+    (_whole, body) => {
+      const kept = (body ? body.split(",") : []).filter((entry) => {
+        const route = entry
+          .trim()
+          .replace(/^"|"$/g, "")
+          .replace(/\\u002F/g, "/");
+        const isLabRoute = labExportRoots.includes(route.split("/")[1]);
+
+        if (isLabRoute) prunedManifestEntries += 1;
+
+        return !isLabRoute;
+      });
+
+      return `new Set([${kept.join(",")}])`;
+    },
+  );
+
+  if (pruned !== manifest) {
+    await writeFile(manifestPath, pruned, "utf8");
+  }
 }
 
 for (const requiredPage of [
@@ -129,5 +194,5 @@ for (const requiredAsset of [
 }
 
 console.log(
-  `✓ Production export excludes ${labExportRoots.length} experimental roots and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
+  `✓ Production export excludes ${labExportRoots.length} experimental roots (${prunedManifestEntries} lab route entries and the (lab) chunk group removed) and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
 );

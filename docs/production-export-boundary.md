@@ -84,4 +84,21 @@ The protected export roots are:
 - `journey-lab-v2`
 - `journey-lab-v3`
 - `motion-lab`
+- `planning-scope-lab`
 - `waterway-lab`
+
+`planning-scope-lab` held the review of the section-three redesign. That review
+closed on 2026-07-29 and the redesign now ships on the homepage itself, so the
+lab's three routes are disabled as `page.lab.tsx`. Rename any of them back to
+`page.tsx` and run `npm run dev` to compare against the previous section again:
+
+- `app/(lab)/planning-scope-lab/page.lab.tsx` — the width and language harness
+- `app/(lab)/planning-scope-lab/section/[locale]/page.lab.tsx` — the section alone
+- `app/(lab)/planning-scope-lab/full/[locale]/page.lab.tsx` — the whole homepage
+  with the **previous** section three, for before/after comparison
+
+Because an enabled route also emits client chunks and route names, the pruning
+step additionally removes `out/_next/static/chunks/app/(lab)/` and drops every
+lab route from each `_ssgManifest.js`. A production export therefore contains no
+lab HTML, no lab JavaScript and no lab route names even if a lab is left
+enabled by mistake.

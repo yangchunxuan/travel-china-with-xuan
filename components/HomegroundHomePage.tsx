@@ -44,7 +44,20 @@ import {
   type PlannerStatus,
   type RouteJourney,
 } from "./RouteFinder";
+import { PlanningScopeSection } from "./PlanningScopeSection";
 import styles from "./HomegroundHomePage.module.css";
+
+/**
+ * Which build of section three to render.
+ *
+ * "scope-v2" is the redesign and is now the default, so the homepage shows it
+ * in place while it is being reviewed. "current" is the previous section, kept
+ * so /planning-scope-lab/full/ can still show the before state side by side.
+ *
+ * Nothing is published by this: deploy.yml only runs on a push to main, and
+ * this work is on a branch. Reverting is one word.
+ */
+export type PlanningSectionVariant = "current" | "scope-v2";
 
 const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 
@@ -126,8 +139,10 @@ function resolveFinalCta(
 
 export function HomegroundHomePage({
   locale = "en",
+  planningSection = "scope-v2",
 }: {
   locale?: HomegroundLocale;
+  planningSection?: PlanningSectionVariant;
 }) {
   const [plannerStatus, setPlannerStatus] = useState<PlannerStatus>("new");
   const [routeMatch, setRouteMatch] = useState<DestinationPlan | null>(
@@ -606,6 +621,9 @@ export function HomegroundHomePage({
           </nav>
         </section>
 
+        {planningSection === "scope-v2" ? (
+          <PlanningScopeSection locale={locale} />
+        ) : (
         <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
           <div className={styles.sectionIntro}>
             <p className={styles.eyebrowDark}>{copy.proof.eyebrow}</p>
@@ -671,6 +689,7 @@ export function HomegroundHomePage({
           </div>
 
         </section>
+        )}
 
         <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">
           <div className={styles.studioIntro}>
