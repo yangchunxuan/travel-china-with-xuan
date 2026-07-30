@@ -26,6 +26,7 @@ import {
 import { routeServiceIds } from "../lib/routeServiceInterest";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
+import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import styles from "./HomegroundHomePage.module.css";
 
 export type HomegroundPageContext =
@@ -271,9 +272,7 @@ export function HomegroundHeader({
           href={copy.path}
           aria-label={copy.navigation.homeLabel}
         >
-          <span className={styles.brandMark} aria-hidden="true">
-            <span />
-          </span>
+          <HomegroundBrandMark className={styles.brandMark} />
           <span>
             <strong lang="en">Homeground</strong>
             <small>{copy.brandTagline}</small>

@@ -93,32 +93,9 @@
 
 .brandMark {
   block-size: 2.2rem;
-  border: 1px solid var(--legal-accent);
-  border-radius: 50% 50% 44% 56%;
-  display: grid;
+  display: block;
   flex: none;
   inline-size: 2.2rem;
-  place-items: center;
-  transform: rotate(-8deg);
-}
-
-.brandMark span {
-  background: var(--legal-accent);
-  block-size: 0.92rem;
-  border-radius: 999px 999px 0 0;
-  inline-size: 1.08rem;
-  position: relative;
-}
-
-.brandMark span::after {
-  background: var(--legal-paper);
-  block-size: 0.5rem;
-  border-radius: 999px 999px 0 0;
-  content: "";
-  inline-size: 0.64rem;
-  inset-block-end: 0;
-  inset-inline-start: 0.22rem;
-  position: absolute;
 }
 
 .headerActions {

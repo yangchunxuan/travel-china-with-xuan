@@ -11,6 +11,7 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
 import styles from "./HomegroundLegalPage.module.css";
 
@@ -77,9 +78,7 @@ export function HomegroundLegalPage({
             href={copy.homePath}
             aria-label={copy.navigation.homeLabel}
           >
-            <span className={styles.brandMark} aria-hidden="true">
-              <span />
-            </span>
+            <HomegroundBrandMark className={styles.brandMark} />
             <span>
               <strong lang="en">Homeground</strong>
               <small>{copy.navigation.pageLabel}</small>

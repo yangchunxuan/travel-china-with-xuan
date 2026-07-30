@@ -368,13 +368,14 @@ test("the first planning view is contact-only while paid shortcuts stay availabl
 });
 
 test("the planning-desk motion stays purposeful, responsive and reduced-motion safe", async () => {
-  const [home, planningDesk, finder, styles, finderStyles] =
+  const [home, planningDesk, finder, styles, finderStyles, brandMark] =
     await Promise.all([
       source("components/HomegroundHomePage.tsx"),
       source("components/HomepagePlanningDesk.tsx"),
       source("components/RouteFinder.tsx"),
       source("components/HomegroundHomePage.module.css"),
       source("components/RouteFinder.module.css"),
+      source("components/HomegroundBrandMark.tsx"),
     ]);
 
   assert.doesNotMatch(
@@ -399,8 +400,11 @@ test("the planning-desk motion stays purposeful, responsive and reduced-motion s
   assert.match(reducedMotionBlock, /animation:\s*none/u);
   assert.match(styles, /@media \(hover: hover\) and \(pointer: fine\)/u);
   assert.match(styles, /animation:\s*brandMarkIn\b/u);
-  assert.match(styles, /animation:\s*brandDoorIn\b/u);
   assert.match(styles, /animation:\s*brandTextIn\b/u);
+  assert.match(brandMark, /data-homeground-brand-mark="paired-path"/u);
+  assert.equal(brandMark.match(/<rect\b/gu)?.length, 2);
+  assert.match(brandMark, /fill="#a84731"/u);
+  assert.match(brandMark, /fill="#d19e8f"/u);
   assert.match(styles, /\.brand:hover\s+\.brandMark/u);
   assert.match(styles, /\.brand:focus-visible\s+\.brandMark/u);
   assert.match(reducedMotionBlock, /\.brandMark/u);

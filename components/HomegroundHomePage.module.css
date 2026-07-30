@@ -234,8 +234,7 @@
 .brand > span:last-child,
 .brand strong,
 .brand small,
-.brandMark,
-.brandMark span {
+.brandMark {
   transform-origin: center;
 }
 
@@ -256,37 +255,15 @@
 }
 
 .brandMark {
-  border: 1px solid #a74731;
-  border-radius: 50% 50% 44% 56%;
-  display: grid;
+  display: block;
+  flex: none;
   height: 2.25rem;
-  place-items: center;
-  transform: rotate(-8deg);
   transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
   width: 2.25rem;
 }
 
-.brandMark span {
-  background: #a74731;
-  border-radius: 999px 999px 0 0;
-  height: 0.95rem;
-  position: relative;
-  width: 1.1rem;
-}
-
-.brandMark span::after {
-  background: var(--hg-color-surface);
-  border-radius: 999px 999px 0 0;
-  bottom: 0;
-  content: "";
-  height: 0.52rem;
-  left: 0.22rem;
-  position: absolute;
-  width: 0.66rem;
-}
-
 .brand:focus-visible .brandMark {
-  transform: rotate(-4deg) scale(1.035);
+  transform: scale(1.035);
 }
 
 .desktopNav {
@@ -1557,7 +1534,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .brand:hover .brandMark {
-    transform: rotate(-4deg) scale(1.035);
+    transform: scale(1.035);
   }
 
   .intentOption:hover {
@@ -2983,10 +2960,6 @@
     width: 1.8rem;
   }
 
-  .brandMark span {
-    transform: scale(0.82);
-  }
-
   .menuButton {
     height: 2.75rem;
     width: 2.75rem;
@@ -3045,7 +3018,6 @@
   .brand strong,
   .brand small,
   .brandMark,
-  .brandMark span,
   .faqList summary span,
   .travelGuideCard,
   .travelGuidesIndexLink,
@@ -3074,10 +3046,6 @@
 @media (prefers-reduced-motion: no-preference) {
   .brandMark {
     animation: brandMarkIn 560ms cubic-bezier(0.16, 1, 0.3, 1) 80ms backwards;
-  }
-
-  .brandMark span {
-    animation: brandDoorIn 440ms cubic-bezier(0.16, 1, 0.3, 1) 180ms backwards;
   }
 
   .brand strong,
@@ -3152,26 +3120,12 @@
 @keyframes brandMarkIn {
   from {
     opacity: 0;
-    transform: rotate(-15deg) scale(0.78);
+    transform: scale(0.78);
   }
 
   to {
     opacity: 1;
-    transform: rotate(-8deg) scale(1);
-  }
-}
-
-@keyframes brandDoorIn {
-  from {
-    opacity: 0;
-    scale: 0.82;
-    translate: 0 3px;
-  }
-
-  to {
-    opacity: 1;
-    scale: 1;
-    translate: 0 0;
+    transform: scale(1);
   }
 }
 

@@ -287,22 +287,10 @@ svg {
 }
 
 .brandmark {
-  position: relative;
-  display: grid;
+  display: block;
+  flex: none;
   width: 30px;
   height: 30px;
-  place-items: center;
-  border-radius: 50% 50% 50% 8px;
-  background: var(--navy);
-  transform: rotate(-45deg);
-}
-
-.brandmark span {
-  width: 10px;
-  height: 10px;
-  border: 3px solid var(--white);
-  border-radius: 50%;
-  background: var(--red);
 }
 
 .brandcopy {

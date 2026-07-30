@@ -77,21 +77,10 @@
 }
 
 .brandMark {
-  background: var(--green);
-  border-radius: 50% 50% 50% 0.4rem;
-  display: grid;
+  display: block;
+  flex: none;
   height: 2rem;
-  place-items: center;
-  transform: rotate(-45deg);
   width: 2rem;
-}
-
-.brandMark span {
-  background: var(--rust);
-  border: 0.18rem solid #fff;
-  border-radius: 50%;
-  height: 0.72rem;
-  width: 0.72rem;
 }
 
 .brandCopy {

@@ -4,6 +4,7 @@ import {
   homegroundPrivacyLocales,
   type HomegroundPrivacyLocale,
 } from "../lib/homegroundPrivacyI18n";
+import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
 import styles from "./HomegroundPrivacyPage.module.css";
 
@@ -31,9 +32,7 @@ export function HomegroundPrivacyPage({
             href={copy.homePath}
             aria-label={copy.navigation.homeLabel}
           >
-            <span className={styles.brandMark} aria-hidden="true">
-              <span />
-            </span>
+            <HomegroundBrandMark className={styles.brandMark} />
             <span>
               <strong lang="en">Homeground</strong>
               <small>{copy.navigation.privacyLabel}</small>

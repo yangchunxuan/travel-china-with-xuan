@@ -30,6 +30,7 @@ import {
   type AdminInviteUpdateMarker,
   validateAdminInvitePassword,
 } from "../../lib/adminInvite";
+import { HomegroundBrandMark } from "../HomegroundBrandMark";
 import styles from "./AdminInsightsPage.module.css";
 
 type InviteStage =
@@ -116,9 +117,7 @@ function AdminBrandHeader() {
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.brand} aria-label="Homeground China">
-          <span className={styles.brandMark} aria-hidden="true">
-            <span />
-          </span>
+          <HomegroundBrandMark className={styles.brandMark} />
           <span className={styles.brandCopy}>
             <strong>Homeground</strong>
             <small>Private admin setup</small>

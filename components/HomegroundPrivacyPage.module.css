@@ -93,33 +93,10 @@
 }
 
 .brandMark {
-  border: 1px solid #a74731;
-  border-radius: 50% 50% 44% 56%;
-  display: grid;
+  display: block;
   flex: none;
   block-size: 2.2rem;
   inline-size: 2.2rem;
-  place-items: center;
-  transform: rotate(-8deg);
-}
-
-.brandMark span {
-  background: #a74731;
-  border-radius: 999px 999px 0 0;
-  block-size: 0.92rem;
-  inline-size: 1.08rem;
-  position: relative;
-}
-
-.brandMark span::after {
-  background: #faf9f5;
-  border-radius: 999px 999px 0 0;
-  block-size: 0.5rem;
-  content: "";
-  inline-size: 0.64rem;
-  inset-block-end: 0;
-  inset-inline-start: 0.22rem;
-  position: absolute;
 }
 
 .headerActions {

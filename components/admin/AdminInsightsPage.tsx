@@ -29,6 +29,7 @@ import {
   useState,
 } from "react";
 import type { Session, SupabaseClient } from "@supabase/supabase-js";
+import { HomegroundBrandMark } from "../HomegroundBrandMark";
 import {
   AdminApiError,
   type AdminConfig,
@@ -362,9 +363,7 @@ function BrandHeader({
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.brand} aria-label="Homeground China">
-          <span className={styles.brandMark} aria-hidden="true">
-            <span />
-          </span>
+          <HomegroundBrandMark className={styles.brandMark} />
           <span className={styles.brandCopy}>
             <strong>Homeground</strong>
             <small>Private admin</small>

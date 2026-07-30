@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Mail, Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 import { langLabels, langPrefix, type Dict, type Lang } from "../lib/i18n";
+import { HomegroundBrandMark } from "./HomegroundBrandMark";
 
 /** Opens the on-site Tawk chat; falls back to email if the widget is unavailable. */
 export function openSiteChat() {
@@ -15,9 +16,7 @@ export function openSiteChat() {
 export function Brand() {
   return (
     <span className="brandrow">
-      <span className="brandmark" aria-hidden="true">
-        <span />
-      </span>
+      <HomegroundBrandMark className="brandmark" />
       <span className="brandcopy">
         <strong>Homeground</strong>
         <small>China</small>

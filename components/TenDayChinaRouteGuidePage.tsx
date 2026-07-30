@@ -21,6 +21,7 @@ import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
 
 const guideId = "beijing-zhangjiajie-shanghai-10-days" as const;
@@ -185,9 +186,7 @@ function Brand({
 }) {
   return (
     <Link className={styles.brand} href={homeHref} aria-label={copy.brandAriaLabel}>
-      <span className={styles.brandMark} aria-hidden="true">
-        <span />
-      </span>
+      <HomegroundBrandMark className={styles.brandMark} />
       <span className={styles.brandCopy}>
         <strong>Homeground</strong>
         <small>{copy.brandTagline}</small>

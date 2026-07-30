@@ -96,23 +96,10 @@
 }
 
 .brandMark {
-  position: relative;
-  display: grid;
+  display: block;
   inline-size: 1.9rem;
   block-size: 1.9rem;
   flex: none;
-  place-items: center;
-  border-radius: 50% 50% 50% 0.5rem;
-  background: var(--admin-navy);
-  transform: rotate(-45deg);
-}
-
-.brandMark span {
-  inline-size: 0.68rem;
-  block-size: 0.68rem;
-  border: 0.18rem solid #ffffff;
-  border-radius: 50%;
-  background: #d3232a;
 }
 
 .brandCopy {
