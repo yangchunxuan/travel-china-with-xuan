@@ -12,6 +12,15 @@
   overflow: clip;
 }
 
+.pageRoot[data-homeground-locale="ko"] {
+  --hg-font-editorial: var(--serif);
+}
+
+.pageRoot[data-homeground-locale="ko"] :is(h1, h2, h3, h4) {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
 .pageRoot main {
   scroll-margin-top: 6rem;
 }

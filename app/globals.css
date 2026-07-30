@@ -82,6 +82,13 @@ html[lang="ko"] {
   --sans: "Homeground Pretendard", Pretendard, -apple-system,
     BlinkMacSystemFont, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic",
     system-ui, sans-serif;
+  --hg-font-editorial: var(--serif);
+  /*
+   * MaruBuri is intentionally self-hosted at Regular only. Keep synthetic
+   * italics available for occasional annotations, but never manufacture bold
+   * Hangul when a component accidentally requests a heavier editorial weight.
+   */
+  font-synthesis: style;
 }
 
 * {

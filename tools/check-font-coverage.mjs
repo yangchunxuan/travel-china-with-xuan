@@ -1,82 +1,50 @@
-import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { dirname, extname, join, resolve } from "node:path";
+import { dirname, extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as fontkit from "fontkit";
+import {
+  collectLocaleFontSourceFiles,
+  collectProductionExportFontFiles,
+  readCollectedFiles,
+} from "./locale-font-file-collection.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const argumentsSet = new Set(process.argv.slice(2));
+const supportedArguments = new Set(["--production-export"]);
+const unsupportedArguments = [...argumentsSet].filter(
+  (argument) => !supportedArguments.has(argument),
+);
 
-const explicitSources = [
-  "components/HomegroundHeader.tsx",
-  "components/HomegroundHomePage.tsx",
-  "components/HomegroundLegalPage.tsx",
-  "components/HomegroundPrivacyPage.tsx",
-  "components/PlanningScopeSection.tsx",
-  "components/PlannerHandoff.tsx",
-  "components/RouteFinder.tsx",
-  "components/ZhangjiajieGuidePage.tsx",
-  "components/TenDayChinaRouteGuidePage.tsx",
-  "components/TantanZhangjiajieStoryPage.tsx",
-  "components/KevinPreparationStoryPage.tsx",
-  "components/ZhangjiajieFromMalaysiaPage.tsx",
-  "lib/homegroundI18n.ts",
-  "lib/homegroundPlanningScopeI18n.ts",
-  "lib/homegroundBusiness.ts",
-  "lib/homegroundLegalI18n.ts",
-  "lib/homegroundStudioI18n.ts",
-  "lib/homegroundPrivacyI18n.ts",
-  "lib/guideRegistry.ts",
-  "lib/zhangjiajieGuideI18n.ts",
-  "lib/nightShowGuideCopy.zh.ts",
-  "lib/nightShowGuideCopy.ko.ts",
-  "lib/tenDayGuideCopy.zh.ts",
-  "lib/tenDayGuideCopy.ko.ts",
-  "lib/beijingZhangjiajieShanghaiTransportI18n.ts",
-  "lib/chinaItineraryTooRushedI18n.ts",
-  "lib/chinaItineraryReviewI18n.ts",
-  "lib/routeServiceInterest.ts",
-  "lib/tantanZhangjiajieStoryI18n.ts",
-  "lib/usChinaVisaI18n.ts",
-  "lib/transitRouteCheckI18n.ts",
-  "lib/singaporeChinaVisaI18n.ts",
-  "lib/kevinPreparationStoryI18n.ts",
-  "lib/zhangjiajieOlderTravellersI18n.ts",
-  "lib/zhangjiajieFromMalaysiaGuideCopy.zh.ts",
-  "lib/zhangjiajieFromMalaysiaGuideCopy.ko.ts",
-  "lib/destinationPlannerI18n.ts",
-  "lib/routeFinder.ts",
-];
-
-const sourceDirectories = ["app/(default)", "app/(localized)"];
-
-function collectTypeScriptFiles(directory) {
-  const absoluteDirectory = resolve(projectRoot, directory);
-
-  if (!existsSync(absoluteDirectory)) {
-    return [];
-  }
-
-  return readdirSync(absoluteDirectory, { withFileTypes: true }).flatMap(
-    (entry) => {
-      const entryPath = join(absoluteDirectory, entry.name);
-
-      if (entry.isDirectory()) {
-        return collectTypeScriptFiles(entryPath);
-      }
-
-      return [".ts", ".tsx"].includes(extname(entry.name)) ? [entryPath] : [];
-    },
+if (unsupportedArguments.length > 0) {
+  throw new Error(
+    `Unsupported argument${
+      unsupportedArguments.length === 1 ? "" : "s"
+    }: ${unsupportedArguments.join(", ")}`,
   );
 }
 
-const sourceFiles = [
-  ...explicitSources.map((source) => resolve(projectRoot, source)),
-  ...sourceDirectories.flatMap(collectTypeScriptFiles),
-];
+const checksProductionExport = argumentsSet.has("--production-export");
+const collectedFiles = checksProductionExport
+  ? collectProductionExportFontFiles(projectRoot)
+  : collectLocaleFontSourceFiles(projectRoot);
+const sourceText = readCollectedFiles(collectedFiles);
+const fontDirectory = checksProductionExport ? "out/fonts" : "public/fonts";
+const corpusLabel = checksProductionExport
+  ? "production HTML/client JavaScript"
+  : "app, components and lib source";
 
-const sourceText = sourceFiles
-  .filter(existsSync)
-  .map((source) => readFileSync(source, "utf8"))
-  .join("\n");
+if (checksProductionExport) {
+  const htmlCount = collectedFiles.filter(
+    (filePath) => extname(filePath) === ".html",
+  ).length;
+  const javascriptCount = collectedFiles.filter(
+    (filePath) => extname(filePath) === ".js",
+  ).length;
+  console.log(
+    `Checking ${htmlCount} exported HTML file(s) and ${javascriptCount} client JavaScript file(s).`,
+  );
+} else {
+  console.log(`Checking ${collectedFiles.length} locale font source file(s).`);
+}
 
 function charactersMatching(pattern) {
   return [...new Set(sourceText.match(pattern) ?? [])].sort(
@@ -90,22 +58,23 @@ const koreanCharacters = charactersMatching(/\p{Script=Hangul}/gu);
 const checks = [
   {
     characters: chineseCharacters,
-    fontPath: "public/fonts/homeground-serif-sc.woff2",
+    fontPath: `${fontDirectory}/homeground-serif-sc.woff2`,
     label: "Chinese editorial font",
   },
   {
     characters: koreanCharacters,
-    fontPath: "public/fonts/homeground-pretendard-ko.woff2",
+    fontPath: `${fontDirectory}/homeground-pretendard-ko.woff2`,
     label: "Korean interface font",
   },
   {
     characters: koreanCharacters,
-    fontPath: "public/fonts/homeground-maruburi-ko.woff2",
+    fontPath: `${fontDirectory}/homeground-maruburi-ko.woff2`,
     label: "Korean editorial font",
   },
 ];
 
 let failed = false;
+const maximumReportedGlyphs = 80;
 
 for (const check of checks) {
   const absoluteFontPath = resolve(projectRoot, check.fontPath);
@@ -117,6 +86,7 @@ for (const check of checks) {
   if (missing.length > 0) {
     failed = true;
     const details = missing
+      .slice(0, maximumReportedGlyphs)
       .map(
         (character) =>
           `${character} (U+${character
@@ -126,13 +96,17 @@ for (const check of checks) {
             .padStart(4, "0")})`,
       )
       .join(", ");
+    const omitted =
+      missing.length > maximumReportedGlyphs
+        ? `, … ${missing.length - maximumReportedGlyphs} more`
+        : "";
 
     console.error(
-      `✗ ${check.label} is missing ${missing.length} required glyph(s): ${details}`,
+      `✗ ${check.label} is missing ${missing.length} required glyph(s) from ${corpusLabel}: ${details}${omitted}`,
     );
   } else {
     console.log(
-      `✓ ${check.label} covers all ${check.characters.length} required characters.`,
+      `✓ ${check.label} covers all ${check.characters.length} required characters from ${corpusLabel}.`,
     );
   }
 }

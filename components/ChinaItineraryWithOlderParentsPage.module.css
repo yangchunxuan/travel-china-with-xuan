@@ -124,6 +124,24 @@
   word-break: keep-all;
 }
 
+.pageRoot[data-homeground-locale="ko"] :is(
+  .hero h1,
+  .sectionIntro h2,
+  .sectionHeading h2,
+  .ability h2,
+  .support h2,
+  .mistakes h2,
+  .cta h2,
+  .related h2,
+  .sources h2,
+  .variantCard h3,
+  .frictionCard h3
+) {
+  font-weight: 400;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
 .heroLead {
   font-size: clamp(1.07rem, 1.6vw, 1.28rem);
   line-height: 1.62;

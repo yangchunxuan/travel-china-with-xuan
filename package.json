@@ -5,13 +5,14 @@
     "dev": "next dev",
     "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
     "check:font-coverage": "node tools/check-font-coverage.mjs",
+    "check:font-coverage:export": "node tools/check-font-coverage.mjs --production-export",
     "check:planning-scope-lines": "node --experimental-strip-types --no-warnings tools/check-planning-scope-lines.mjs",
     "check:indexable-export": "node tools/check-indexable-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
     "prebuild": "npm run check:font-coverage && npm run check:planning-scope-lines",
     "build": "next build",
-    "postbuild": "node tools/prune-production-export.mjs",
+    "postbuild": "node tools/prune-production-export.mjs && npm run check:font-coverage:export",
     "start": "next start"
   },
   "dependencies": {

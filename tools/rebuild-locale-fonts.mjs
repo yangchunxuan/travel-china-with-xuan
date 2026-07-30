@@ -1,7 +1,10 @@
 import { spawnSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { dirname, extname, join, resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  collectLocaleFontSourceFiles,
+  readCollectedFiles,
+} from "./locale-font-file-collection.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const argumentsByName = Object.fromEntries(
@@ -24,66 +27,8 @@ for (const name of requiredArguments) {
   }
 }
 
-const explicitSources = [
-  "components/HomegroundHeader.tsx",
-  "components/HomegroundHomePage.tsx",
-  "components/HomegroundLegalPage.tsx",
-  "components/HomegroundPrivacyPage.tsx",
-  "components/PlannerHandoff.tsx",
-  "components/RouteFinder.tsx",
-  "components/ZhangjiajieGuidePage.tsx",
-  "components/TenDayChinaRouteGuidePage.tsx",
-  "components/TantanZhangjiajieStoryPage.tsx",
-  "components/KevinPreparationStoryPage.tsx",
-  "components/ZhangjiajieFromMalaysiaPage.tsx",
-  "lib/homegroundI18n.ts",
-  "lib/homegroundBusiness.ts",
-  "lib/homegroundLegalI18n.ts",
-  "lib/homegroundStudioI18n.ts",
-  "lib/homegroundPrivacyI18n.ts",
-  "lib/destinationPlannerI18n.ts",
-  "lib/routeFinder.ts",
-  "lib/guideRegistry.ts",
-  "lib/zhangjiajieGuideI18n.ts",
-  "lib/nightShowGuideCopy.zh.ts",
-  "lib/nightShowGuideCopy.ko.ts",
-  "lib/tenDayGuideCopy.zh.ts",
-  "lib/tenDayGuideCopy.ko.ts",
-  "lib/beijingZhangjiajieShanghaiTransportI18n.ts",
-  "lib/chinaItineraryTooRushedI18n.ts",
-  "lib/chinaItineraryReviewI18n.ts",
-  "lib/routeServiceInterest.ts",
-  "lib/tantanZhangjiajieStoryI18n.ts",
-  "lib/usChinaVisaI18n.ts",
-  "lib/transitRouteCheckI18n.ts",
-  "lib/singaporeChinaVisaI18n.ts",
-  "lib/kevinPreparationStoryI18n.ts",
-  "lib/zhangjiajieOlderTravellersI18n.ts",
-  "lib/zhangjiajieFromMalaysiaGuideCopy.zh.ts",
-  "lib/zhangjiajieFromMalaysiaGuideCopy.ko.ts",
-];
-const sourceDirectories = ["app/(default)", "app/(localized)"];
-
-function collectTypeScriptFiles(directory) {
-  const absoluteDirectory = resolve(projectRoot, directory);
-  if (!existsSync(absoluteDirectory)) return [];
-
-  return readdirSync(absoluteDirectory, { withFileTypes: true }).flatMap(
-    (entry) => {
-      const entryPath = join(absoluteDirectory, entry.name);
-      if (entry.isDirectory()) return collectTypeScriptFiles(entryPath);
-      return [".ts", ".tsx"].includes(extname(entry.name)) ? [entryPath] : [];
-    },
-  );
-}
-
-const sourceText = [
-  ...explicitSources.map((source) => resolve(projectRoot, source)),
-  ...sourceDirectories.flatMap(collectTypeScriptFiles),
-]
-  .filter(existsSync)
-  .map((source) => readFileSync(source, "utf8"))
-  .join("\n");
+const sourceFiles = collectLocaleFontSourceFiles(projectRoot);
+const sourceText = readCollectedFiles(sourceFiles);
 
 const commonCharacters = Array.from(
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 " +

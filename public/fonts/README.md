@@ -1,8 +1,8 @@
 # Homeground locale font subsets
 
 These WOFF2 files contain only the characters currently used by Homeground's
-localized homepage and route finder. They are self-hosted so the English page
-does not request CJK fonts and the Chinese and Korean pages do not depend on a
+localized pages and guides. They are self-hosted so the English page does not
+request CJK fonts and the Chinese and Korean pages do not depend on a
 third-party font CDN at runtime.
 
 - `homeground-serif-sc.woff2` — Noto Serif SC, weight 500, sourced from the
@@ -20,9 +20,11 @@ third-party font CDN at runtime.
 When localized copy gains new Chinese or Korean characters, regenerate the
 subsets from the upstream fonts before publishing. `npm run
 check:font-coverage` reads the actual WOFF2 files and verifies every Han and
-Hangul character used by the Homeground pages; it also runs automatically
-before every production build, so missing glyphs cannot silently ship with a
-system-font fallback.
+Hangul character found recursively under `app`, `components`, and `lib`. It
+runs automatically before every production build. After the final export is
+pruned, `check:font-coverage:export` verifies the actual HTML and client
+JavaScript against the copied production fonts, so missing glyphs cannot
+silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
@@ -34,6 +36,8 @@ The current subsets were regenerated from these exact upstream artifacts:
 Use `fonttools varLib.instancer` for the fixed Noto Serif SC instance and
 `pyftsubset --flavor=woff2` for all three outputs. The required Han and Hangul
 sets must be collected from the same source list used by
-`tools/check-font-coverage.mjs`; retain basic Latin, punctuation and navigation
-symbols as well. Always run `npm run check:font-coverage` after replacing the
-files.
+`tools/check-font-coverage.mjs`; both commands share
+`tools/locale-font-file-collection.mjs` as their source collector. Retain basic
+Latin, punctuation and navigation symbols as well. Always run
+`npm run check:font-coverage` after replacing the files and
+`npm run check:font-coverage:export` after generating `out`.
