@@ -29,6 +29,12 @@ const languageUrls = {
     ko: `${siteUrl}/ko/guides/do-singaporeans-need-visa-china/`,
     "x-default": `${siteUrl}/guides/do-singaporeans-need-visa-china/`,
   },
+  olderParents: {
+    en: `${siteUrl}/guides/china-itinerary-with-older-parents/`,
+    "zh-Hans": `${siteUrl}/zh/guides/china-itinerary-with-older-parents/`,
+    ko: `${siteUrl}/ko/guides/china-itinerary-with-older-parents/`,
+    "x-default": `${siteUrl}/guides/china-itinerary-with-older-parents/`,
+  },
 };
 
 const checks = [
@@ -105,6 +111,32 @@ const checks = [
       "중국 비자는 필요 없습니다. 더 어려운 질문은 따로 있습니다.",
     mustNotContain:
       "You Don&#x27;t Need a China Visa. Here&#x27;s the Harder Question.",
+  },
+  {
+    route: "guides/china-itinerary-with-older-parents/",
+    canonical: languageUrls.olderParents.en,
+    htmlLang: "en",
+    alternates: languageUrls.olderParents,
+    linkedFrom: "guides/index.html",
+    mustContain:
+      "Taking Your Parents to China? Build the Route Around Energy, Not Just Cities",
+  },
+  {
+    route: "zh/guides/china-itinerary-with-older-parents/",
+    canonical: languageUrls.olderParents["zh-Hans"],
+    htmlLang: "zh-Hans",
+    alternates: languageUrls.olderParents,
+    linkedFrom: "zh/guides/index.html",
+    mustContain: "带父母来中国，不要只按城市数量排路线",
+  },
+  {
+    route: "ko/guides/china-itinerary-with-older-parents/",
+    canonical: languageUrls.olderParents.ko,
+    htmlLang: "ko",
+    alternates: languageUrls.olderParents,
+    linkedFrom: "ko/guides/index.html",
+    mustContain:
+      "부모님과 중국을 여행한다면 도시 수보다 체력을 기준으로 일정을 짜세요",
   },
 ];
 

@@ -100,6 +100,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     destinationLabels: {
       china: "China",
       beijing: "Beijing",
+      xian: "Xi’an",
       zhangjiajie: "Zhangjiajie",
       shanghai: "Shanghai",
     },
@@ -163,6 +164,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     destinationLabels: {
       china: "中国",
       beijing: "北京",
+      xian: "西安",
       zhangjiajie: "张家界",
       shanghai: "上海",
     },
@@ -226,6 +228,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     destinationLabels: {
       china: "중국",
       beijing: "베이징",
+      xian: "시안",
       zhangjiajie: "장자제(장가계)",
       shanghai: "상하이",
     },

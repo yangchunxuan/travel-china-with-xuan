@@ -223,3 +223,18 @@ exported without the originals' EXIF, GPS or device metadata. The photographs
 support the guide's discussion of visibility, visitor flow and the difference
 between a route on paper and a real park day; they are not evidence of live
 crowd levels on a future travel date.
+
+For the China-with-older-parents itinerary guide, the social preview is an
+original generated editorial illustration created on July 31, 2026. It uses a
+paper map, three hotel-base markers, luggage and a calendar to represent route
+comparison. It contains no people, customer information, third-party logo,
+venue claim or documentary scene, and it is not presented as evidence of a
+real trip.
+
+Current website derivative:
+
+- `public/images/guides/china-itinerary-with-older-parents/route-comparison-og-1200.jpg`
+
+The final 1200 × 630 JPEG was resized from the generated source and contains no
+EXIF or location metadata. The route and accessibility facts in the article
+come from the separately listed official sources, not from this illustration.

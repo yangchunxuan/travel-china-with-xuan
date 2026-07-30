@@ -15,6 +15,7 @@ export const guideIds = [
   "beijing-zhangjiajie-shanghai-10-days",
   "beijing-zhangjiajie-shanghai-transport",
   "is-your-china-itinerary-too-rushed",
+  "china-itinerary-with-older-parents",
   "do-us-citizens-need-visa-china-2026",
   "china-visa-free-uk-citizens-2026",
   "china-visa-free-canadian-citizens-2026",
@@ -45,6 +46,7 @@ export type GuideTopic =
 export type GuideDestination =
   | "china"
   | "beijing"
+  | "xian"
   | "zhangjiajie"
   | "shanghai";
 
@@ -629,6 +631,67 @@ export const guideRegistry = [
           "흐린 날 공항 터미널 창 너머로 보이는 계류장의 항공기.",
         navTitle: "중국 일정 속도 가이드",
         featuredLinkLabel: "중국 일정이 너무 빠듯한지 확인하기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "china-itinerary-with-older-parents",
+    type: "planning",
+    featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
+    format: "planning-guide",
+    topics: ["pace", "itinerary-design", "trip-planning", "transport"],
+    destinations: ["beijing", "xian", "zhangjiajie", "shanghai"],
+    heroImagePath:
+      "/images/guides/china-itinerary-with-older-parents/route-comparison-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-itinerary-with-older-parents/route-comparison-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
+    sourceReviewedDate: "2026-07-31",
+    locales: {
+      en: {
+        path: "/guides/china-itinerary-with-older-parents/",
+        title:
+          "China With Older Parents: A Realistic 12–14 Day Itinerary",
+        headline:
+          "Taking Your Parents to China? Build the Route Around Energy, Not Just Cities",
+        description:
+          "Planning China with older parents? Compare realistic 12- and 14-day routes, with hotel changes, walking, transfer days and recovery time built in.",
+        heroAlt:
+          "A cut-paper illustration of a China map with three route markers, luggage and a calendar.",
+        navTitle: "China with older parents",
+        featuredLinkLabel:
+          "Compare realistic 12- and 14-day routes with older parents",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/china-itinerary-with-older-parents/",
+        title: "带父母游中国：现实可行的 12–14 天行程",
+        headline: "带父母来中国旅行？围绕体力，而不只是城市来设计路线",
+        description:
+          "带年长父母规划中国旅行？比较现实可行的 12 天与 14 天路线，把换酒店、步行、转场日和恢复时间一起算进去。",
+        heroAlt: "纸艺风格的中国地图、三个路线标记、行李箱和日历插图。",
+        navTitle: "带父母游中国",
+        featuredLinkLabel: "比较带父母旅行的 12 天与 14 天现实路线",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/china-itinerary-with-older-parents/",
+        title: "부모님과 중국 여행: 현실적인 12~14일 일정",
+        headline:
+          "부모님과 중국을 여행하나요? 도시 수보다 체력에 맞춰 일정을 짜세요",
+        description:
+          "부모님과 중국 여행을 준비한다면 12일·14일 현실 일정을 비교해 보세요. 숙소 이동, 걷기, 도시 간 이동일과 회복 시간까지 함께 계산합니다.",
+        heroAlt:
+          "중국 지도와 세 개의 경로 표식, 여행 가방, 달력을 표현한 종이 공예 일러스트.",
+        navTitle: "부모님과 중국 여행",
+        featuredLinkLabel:
+          "부모님과 함께하는 현실적인 12일·14일 일정 비교하기",
         openGraphLocale: "ko_KR",
       },
     },
