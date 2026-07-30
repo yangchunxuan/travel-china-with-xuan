@@ -317,7 +317,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openGraphTitle: "Homeground China — Talk to a China trip planner",
     },
     skipLink: "Skip to main content",
-    brandTagline: "Independent China trip planning",
+    brandTagline: "China, your way. We’ve got your back.",
     navigation: {
       primaryLabel: "Primary navigation",
       mobileLabel: "Mobile navigation",
