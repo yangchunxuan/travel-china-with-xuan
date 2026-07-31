@@ -12,6 +12,8 @@ const operationsMigrationPath =
   "supabase/migrations/202607210002_homeground_retention_operations.sql";
 const readModelMigrationPath =
   "supabase/migrations/202607210003_homeground_admin_read_models.sql";
+const trafficReadModelMigrationPath =
+  "supabase/migrations/202607310002_homeground_admin_traffic_read_model.sql";
 const adminAuthPath =
   "supabase/functions/_shared/admin-auth.ts";
 const adminContractsPath =
@@ -22,6 +24,10 @@ const insightsFunctionPath =
   "supabase/functions/admin-insights/index.ts";
 const healthFunctionPath =
   "supabase/functions/admin-health/index.ts";
+const trafficFunctionPath =
+  "supabase/functions/admin-traffic/index.ts";
+const trafficContractsPath =
+  "supabase/functions/_shared/admin-traffic-contracts.ts";
 const inquiryFunctionPath =
   "supabase/functions/v1-inquiries/index.ts";
 const configPath = "supabase/config.toml";
@@ -76,6 +82,16 @@ const bothCompatibilitySets = [
     ruleVersion: "2026-07-17.1",
   },
   ...schema2CompatibilitySets,
+];
+
+const contactCompatibilitySets = [
+  ...bothCompatibilitySets,
+  {
+    schemaVersion: "3",
+    entryPath: "homepage_email",
+    formVersion: "2026-07-26.1",
+    ruleVersion: "2026-07-26.1",
+  },
 ];
 
 function suppressedMetric(
@@ -176,13 +192,13 @@ function validInsightsRpc() {
           "reply_channel_choice",
           false,
           ["email", "whatsapp"],
-          bothCompatibilitySets,
+          contactCompatibilitySets,
         ),
         suppressedMetric(
           "form_locale",
           false,
           ["en", "zh", "ko"],
-          bothCompatibilitySets,
+          contactCompatibilitySets,
         ),
       ],
       customerRecords: [{
@@ -282,19 +298,29 @@ test("current V4 persistence fixes submit surfaces and stores no attribution", a
   assert.doesNotMatch(sql, /grant execute[\s\S]*\bto anon\b/);
 });
 
-test("public intake dispatches four destination generations and omits internal ID", async () => {
+test("public intake uses atomic traffic RPCs while the database dispatches four destination generations", async () => {
   const code = await source(inquiryFunctionPath);
+  const atomicMigration = await source(
+    "supabase/migrations/202607310003_homeground_atomic_inquiry_attribution.sql",
+  );
   for (const token of [
     "budgetDestinationInquiryFormVersion",
     "currentDestinationInquiryFormVersion",
     "previousDestinationInquiryFormVersion",
     "legacyDestinationInquiryFormVersion",
+    "create_homeground_destination_inquiry_with_traffic_v1",
+    "create_homeground_inquiry_with_traffic_v1",
+    "create_homeground_homepage_email_with_traffic_v1",
+  ]) {
+    assert.match(code, new RegExp(token));
+  }
+  for (const token of [
     "create_homeground_destination_inquiry_v4",
     "create_homeground_destination_inquiry_v3",
     "create_homeground_destination_inquiry_v2",
     "create_homeground_destination_inquiry",
   ]) {
-    assert.match(code, new RegExp(token));
+    assert.match(atomicMigration, new RegExp(token));
   }
   const publicSuccess = code.slice(
     code.lastIndexOf("return jsonResponse("),
@@ -407,15 +433,21 @@ test("aggregate RPC uses an explicit compatibility registry and server suppressi
 
 test("Admin access outcomes use a fixed 30-day body-free audit ledger", async () => {
   const sql = await source(readModelMigrationPath);
+  const trafficSql = await source(trafficReadModelMigrationPath);
   const audit = await source(adminAuditPath);
   const insights = await source(insightsFunctionPath);
   const health = await source(healthFunctionPath);
+  const traffic = await source(trafficFunctionPath);
 
   assert.match(sql, /homeground_private\.admin_access_log/);
   assert.match(sql, /admin_user_id uuid not null/);
   assert.match(
     sql,
     /endpoint in \('admin-insights', 'admin-health'\)/,
+  );
+  assert.match(
+    trafficSql,
+    /endpoint in \('admin-insights', 'admin-health', 'admin-traffic'\)/,
   );
   assert.match(
     sql,
@@ -443,7 +475,7 @@ test("Admin access outcomes use a fixed 30-day body-free audit ledger", async ()
   );
   assert.match(audit, /Promise<boolean>/);
   assert.match(audit, /return auditResult\.ok/);
-  for (const code of [insights, health]) {
+  for (const code of [insights, health, traffic]) {
     for (const result of [
       '"success"',
       '"summary_unavailable"',
@@ -458,7 +490,7 @@ test("Admin access outcomes use a fixed 30-day body-free audit ledger", async ()
     );
   }
   assert.doesNotMatch(
-    `${sql}\n${audit}`,
+    `${sql}\n${trafficSql}\n${audit}`,
     /request_body|response_body|contact_email|contact_phone|user_agent|ip_address/,
   );
 });
@@ -505,20 +537,27 @@ test("Admin authorization is exact-Origin, MFA, UUID-allowlist, and Auth-user ve
     config,
     /\[functions\.admin-health\][\s\S]*verify_jwt = true/,
   );
+  assert.match(
+    config,
+    /\[functions\.admin-traffic\][\s\S]*verify_jwt = true/,
+  );
 });
 
-test("Admin Edge functions expose only two fixed read RPCs", async () => {
+test("Admin Edge functions expose only three fixed read RPCs", async () => {
   const insights = await source(insightsFunctionPath);
   const health = await source(healthFunctionPath);
+  const traffic = await source(trafficFunctionPath);
   const contracts = await source(adminContractsPath);
+  const trafficContracts = await source(trafficContractsPath);
   assert.match(insights, /"get_homeground_admin_insights"/);
   assert.match(health, /"get_homeground_admin_health"/);
+  assert.match(traffic, /"get_homeground_admin_traffic"/);
   assert.doesNotMatch(
-    `${insights}\n${health}`,
+    `${insights}\n${health}\n${traffic}`,
     /create_|update_|delete_|list_|detail_|search_|export_/,
   );
   assert.doesNotMatch(
-    `${insights}\n${health}\n${contracts}`,
+    `${insights}\n${health}\n${traffic}\n${contracts}\n${trafficContracts}`,
     /console\.(?:log|info|warn|error)/,
   );
 });

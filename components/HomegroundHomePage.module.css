@@ -2551,7 +2551,8 @@
   justify-content: flex-end;
 }
 
-.footerLegal nav a {
+.footerLegal nav a,
+.footerPrivacyButton {
   align-items: center;
   color: var(--hg-color-on-dark-muted);
   display: inline-flex;
@@ -2560,8 +2561,17 @@
   text-decoration: none;
 }
 
+.footerPrivacyButton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
 .footerTop a:hover,
-.footerLegal a:hover {
+.footerLegal a:hover,
+.footerPrivacyButton:hover {
   color: var(--hg-color-on-dark);
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AnalyticsConsent } from "../../components/AnalyticsConsent";
 import { SiteAnalytics } from "../../components/SiteAnalytics";
 import "../globals.css";
 
@@ -26,8 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body>{children}</body>
-      <SiteAnalytics />
+      <body>
+        {children}
+        <AnalyticsConsent locale="en" />
+        <SiteAnalytics locale="en" />
+      </body>
     </html>
   );
 }

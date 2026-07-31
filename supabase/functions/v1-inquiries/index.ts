@@ -38,6 +38,13 @@ interface CreateInquiryRpcResponse {
     | "replay"
     | "idempotency_conflict"
     | "rate_limited";
+  attributionOutcome?:
+    | "not_requested"
+    | "pending"
+    | "attributed"
+    | "expired"
+    | "conflict"
+    | "internal_error";
   inquiryId?: string;
   publicReference?: string;
   receivedAt?: string;
@@ -45,6 +52,39 @@ interface CreateInquiryRpcResponse {
 }
 
 type PersistenceState = "not_persisted" | "unknown";
+
+interface InquiryTransportEnvelope {
+  payloadForValidation: unknown;
+  trafficSessionToken: string | null;
+}
+
+function inquiryTransportEnvelope(
+  input: unknown,
+): InquiryTransportEnvelope {
+  if (
+    typeof input !== "object" ||
+    input === null ||
+    Array.isArray(input) ||
+    !Object.prototype.hasOwnProperty.call(input, "trafficSessionToken")
+  ) {
+    return { payloadForValidation: input, trafficSessionToken: null };
+  }
+
+  const payload = input as Record<string, unknown>;
+  const token = payload.trafficSessionToken;
+  const payloadForValidation = { ...payload };
+  delete payloadForValidation.trafficSessionToken;
+
+  // Attribution is auxiliary. A missing, stale or malformed browser token
+  // must never prevent a real inquiry from reaching the planner.
+  return {
+    payloadForValidation,
+    trafficSessionToken:
+      typeof token === "string" && uuidV4Pattern.test(token)
+        ? token.toLowerCase()
+        : null,
+  };
+}
 
 function parseAllowedOrigins(): Set<string> {
   const configured = commaSeparatedEnv("ALLOWED_ORIGINS");
@@ -296,6 +336,7 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
+  const transportEnvelope = inquiryTransportEnvelope(rawPayload);
   let formVersions: string[];
   let privacyVersions: string[];
   let whatsappEnabled: boolean;
@@ -317,11 +358,14 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
-  const validation = validateAndNormalizeInquiry(rawPayload, {
-    allowedFormVersions: formVersions,
-    allowedPrivacyNoticeVersions: privacyVersions,
-    whatsappEnabled,
-  });
+  const validation = validateAndNormalizeInquiry(
+    transportEnvelope.payloadForValidation,
+    {
+      allowedFormVersions: formVersions,
+      allowedPrivacyNoticeVersions: privacyVersions,
+      whatsappEnabled,
+    },
+  );
   if (validation.ok === false) {
     const status =
       validation.code === "route_mismatch" ||
@@ -346,6 +390,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let shortRateLimit: number;
   let dailyRateLimit: number;
   let firstResponseDueAt: string;
+  let trafficSessionHash: string | null = null;
 
   try {
     const semanticPayload = canonicalizeJson(
@@ -389,11 +434,24 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
+  if (transportEnvelope.trafficSessionToken) {
+    try {
+      trafficSessionHash = await hmacSha256Hex(
+        requiredEnv("TRAFFIC_SESSION_HASH_SECRET"),
+        transportEnvelope.trafficSessionToken,
+      );
+    } catch {
+      // Attribution is auxiliary. Missing analytics configuration cannot
+      // prevent a genuine inquiry from reaching the planner.
+      trafficSessionHash = null;
+    }
+  }
+
   let persistenceResult;
   try {
     if (payload.schemaVersion === homepageEmailInquirySchemaVersion) {
       persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
-        "create_homeground_homepage_email_v1",
+        "create_homeground_homepage_email_with_traffic_v1",
         {
           p_schema_version: payload.schemaVersion,
           p_form_version: payload.formVersion,
@@ -408,76 +466,81 @@ async function handleRequest(request: Request): Promise<Response> {
           p_short_rate_limit: shortRateLimit,
           p_daily_rate_limit: dailyRateLimit,
           p_first_response_due_at: firstResponseDueAt,
+          p_traffic_session_hash: trafficSessionHash,
         },
       );
     } else {
-    const isCurrentDestinationInquiry =
-      payload.schemaVersion === destinationInquirySchemaVersion &&
-      payload.formVersion === currentDestinationInquiryFormVersion;
-    const isPreviousDestinationInquiry =
-      payload.schemaVersion === destinationInquirySchemaVersion &&
-      payload.formVersion === previousDestinationInquiryFormVersion;
-    const isBudgetDestinationInquiry =
-      payload.schemaVersion === destinationInquirySchemaVersion &&
-      payload.formVersion === budgetDestinationInquiryFormVersion;
-    const isLegacyDestinationInquiry =
-      payload.schemaVersion === destinationInquirySchemaVersion &&
-      payload.formVersion === legacyDestinationInquiryFormVersion;
-    persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
-      isCurrentDestinationInquiry
-        ? "create_homeground_destination_inquiry_v4"
-        : isBudgetDestinationInquiry
-        ? "create_homeground_destination_inquiry_v3"
-        : isPreviousDestinationInquiry
-          ? "create_homeground_destination_inquiry_v2"
-          : isLegacyDestinationInquiry
-          ? "create_homeground_destination_inquiry"
-          : "create_homeground_inquiry",
-      {
-        p_schema_version: payload.schemaVersion,
-        p_form_version: payload.formVersion,
-        p_locale: payload.locale,
-        p_journey_id: payload.journey.journeyId,
-        p_journey_revision: payload.journey.revision,
-        p_route_id: payload.journey.routeId,
-        p_rule_version: payload.routeSnapshot.ruleVersion,
-        p_answers: payload.journey.answers,
-        p_route_snapshot: payload.routeSnapshot,
-        p_contact_channel: payload.contact.channel,
-        p_contact_email:
-          payload.contact.channel === "email" ? payload.contact.email : null,
-        p_contact_phone_e164:
-          payload.contact.channel === "whatsapp"
-            ? payload.contact.phoneE164
-            : null,
-        ...(
-          isCurrentDestinationInquiry ||
-            isBudgetDestinationInquiry ||
-            isPreviousDestinationInquiry
-          ? { p_departure_country: payload.departureCountry }
-          : {}),
-        ...(isCurrentDestinationInquiry || isBudgetDestinationInquiry
-          ? {
-              p_rough_budget_per_person:
-                payload.roughBudgetPerPerson,
-            }
-          : {}),
-        p_note: payload.note,
-        p_privacy_notice_version: payload.privacyNoticeVersion,
-        p_landing_path: payload.attribution.landingPath,
-        p_attribution: {
-          utmSource: payload.attribution.utmSource,
-          utmMedium: payload.attribution.utmMedium,
-          utmCampaign: payload.attribution.utmCampaign,
+      const isCurrentDestinationInquiry =
+        payload.schemaVersion === destinationInquirySchemaVersion &&
+        payload.formVersion === currentDestinationInquiryFormVersion;
+      const isPreviousDestinationInquiry =
+        payload.schemaVersion === destinationInquirySchemaVersion &&
+        payload.formVersion === previousDestinationInquiryFormVersion;
+      const isBudgetDestinationInquiry =
+        payload.schemaVersion === destinationInquirySchemaVersion &&
+        payload.formVersion === budgetDestinationInquiryFormVersion;
+      const isLegacyDestinationInquiry =
+        payload.schemaVersion === destinationInquirySchemaVersion &&
+        payload.formVersion === legacyDestinationInquiryFormVersion;
+      const isDestinationInquiry =
+        isCurrentDestinationInquiry ||
+        isPreviousDestinationInquiry ||
+        isBudgetDestinationInquiry ||
+        isLegacyDestinationInquiry;
+
+      persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
+        isDestinationInquiry
+          ? "create_homeground_destination_inquiry_with_traffic_v1"
+          : "create_homeground_inquiry_with_traffic_v1",
+        {
+          p_schema_version: payload.schemaVersion,
+          p_form_version: payload.formVersion,
+          p_locale: payload.locale,
+          p_journey_id: payload.journey.journeyId,
+          p_journey_revision: payload.journey.revision,
+          p_route_id: payload.journey.routeId,
+          p_rule_version: payload.routeSnapshot.ruleVersion,
+          p_answers: payload.journey.answers,
+          p_route_snapshot: payload.routeSnapshot,
+          p_contact_channel: payload.contact.channel,
+          p_contact_email:
+            payload.contact.channel === "email" ? payload.contact.email : null,
+          p_contact_phone_e164:
+            payload.contact.channel === "whatsapp"
+              ? payload.contact.phoneE164
+              : null,
+          ...(isDestinationInquiry
+            ? {
+                p_departure_country:
+                  isCurrentDestinationInquiry ||
+                    isBudgetDestinationInquiry ||
+                    isPreviousDestinationInquiry
+                    ? payload.departureCountry
+                    : null,
+                p_rough_budget_per_person:
+                  isCurrentDestinationInquiry ||
+                    isBudgetDestinationInquiry
+                    ? payload.roughBudgetPerPerson
+                    : null,
+              }
+            : {}),
+          p_note: payload.note,
+          p_privacy_notice_version: payload.privacyNoticeVersion,
+          p_landing_path: payload.attribution.landingPath,
+          p_attribution: {
+            utmSource: payload.attribution.utmSource,
+            utmMedium: payload.attribution.utmMedium,
+            utmCampaign: payload.attribution.utmCampaign,
+          },
+          p_idempotency_key_hash: idempotencyKeyHash,
+          p_payload_hash: payloadHash,
+          p_rate_limit_subject_hash: rateLimitSubjectHash,
+          p_short_rate_limit: shortRateLimit,
+          p_daily_rate_limit: dailyRateLimit,
+          p_first_response_due_at: firstResponseDueAt,
+          p_traffic_session_hash: trafficSessionHash,
         },
-        p_idempotency_key_hash: idempotencyKeyHash,
-        p_payload_hash: payloadHash,
-        p_rate_limit_subject_hash: rateLimitSubjectHash,
-        p_short_rate_limit: shortRateLimit,
-        p_daily_rate_limit: dailyRateLimit,
-        p_first_response_due_at: firstResponseDueAt,
-      },
-    );
+      );
     }
   } catch {
     return errorResponse(

@@ -5,6 +5,11 @@ project_id = "homeground-local"
 # schema, idempotency, and rate-limit checks. It never trusts a browser JWT.
 verify_jwt = false
 
+[functions.v1-traffic-events]
+# Public first-party events use a separate default-off kill switch and enforce
+# exact Origin, a bounded contract, HMAC session hashes and server-side limits.
+verify_jwt = false
+
 [functions.notify-inquiries]
 # Scheduled invocations authenticate with the server-only
 # NOTIFICATION_WORKER_SECRET header. This function is not browser-facing.
@@ -25,4 +30,10 @@ verify_jwt = true
 # Defense in depth matches admin-insights: gateway JWT verification plus
 # server-side Auth /user, claims, MFA, allowlist, Origin, and kill-switch
 # checks before the restricted health RPC is called.
+verify_jwt = true
+
+[functions.admin-traffic]
+# Uses the same gateway JWT, Auth /user, aal2, fixed UUID allowlist, exact
+# Origin, kill switch, strict response contract and body-free access audit as
+# the other private Admin endpoints.
 verify_jwt = true

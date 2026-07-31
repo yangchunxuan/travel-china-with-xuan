@@ -3,6 +3,8 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 export const adminInsightsContractVersion =
   "homeground-admin-insights.v1" as const;
 export const adminHealthContractVersion = "homeground-admin-health.v1" as const;
+export const adminTrafficContractVersion =
+  "homeground-admin-traffic.v1" as const;
 
 export type AdminHealthStatus =
   | "ok"
@@ -34,6 +36,7 @@ export interface AdminConfig {
   publishableKey: string;
   insightsUrl: string;
   healthUrl: string;
+  trafficUrl: string;
 }
 
 export interface AdminConfigResult {
@@ -133,6 +136,76 @@ export interface AdminHealthResponse {
   };
 }
 
+export interface AdminTrafficCount {
+  count: number | null;
+  suppressed: boolean;
+}
+
+export type AdminTrafficBucketType =
+  | "value"
+  | "unknown"
+  | "suppressed";
+
+export interface AdminTrafficLabelBucket {
+  bucketType: AdminTrafficBucketType;
+  label: string | null;
+}
+
+export interface AdminTrafficDimensionBucket extends AdminTrafficCount {
+  bucketType: AdminTrafficBucketType;
+  label: string | null;
+}
+
+export interface AdminTrafficSession {
+  sessionLabel: string;
+  startedAt: string;
+  lastSeenAt: string;
+  locale: "en" | "zh" | "ko";
+  source: AdminTrafficLabelBucket;
+  campaign: AdminTrafficLabelBucket;
+  entryPage: AdminTrafficLabelBucket;
+}
+
+export interface AdminTrafficResponse {
+  contractVersion: typeof adminTrafficContractVersion;
+  generatedAt: string;
+  timezone: "Asia/Shanghai";
+  window: {
+    days: 30;
+    startsAt: string;
+    endsAt: string;
+  };
+  totals: {
+    sessions: AdminTrafficCount;
+    pageViews: AdminTrafficCount;
+    contactClickAttempts: AdminTrafficCount;
+    emailFormStarts: AdminTrafficCount;
+    attributedEnquiries: AdminTrafficCount;
+    unknownSourceSessions: AdminTrafficCount;
+  };
+  dimensions: {
+    sources: AdminTrafficDimensionBucket[];
+    campaigns: AdminTrafficDimensionBucket[];
+    pages: AdminTrafficDimensionBucket[];
+  };
+  recentSessions: AdminTrafficSession[];
+  limits: {
+    minimumVisibleCount: 5;
+    maximumRecentSessions: 12;
+    recentSessionsMinimumEligibleCount: 5;
+    perSessionEventsIncluded: false;
+    timeResolution: "day";
+    linkedInquirySessionsExcluded: true;
+    sessionLabelScope: "current_30_day_window";
+  };
+  notice: {
+    scope:
+      "Consented anonymous sessions; not people, customers, or market share.";
+    clickMeaning:
+      "A contact-channel click does not prove that a message was sent.";
+  };
+}
+
 export class AdminApiError extends Error {
   readonly kind:
     | "unauthorized"
@@ -170,9 +243,13 @@ const forbiddenResponseKeys = new Set(
     "utmsource",
     "utmmedium",
     "utmcampaign",
+    "utmcontent",
     "referrer",
     "useragent",
     "ip",
+    "sessionhash",
+    "eventid",
+    "payloadhash",
   ].map((key) => key.toLowerCase()),
 );
 
@@ -293,6 +370,16 @@ const bothSchemaCompatibilitySets = [
   ...schema2CompatibilitySets,
 ] as const satisfies readonly AdminMetricCompatibilitySet[];
 
+const contactSchemaCompatibilitySets = [
+  ...bothSchemaCompatibilitySets,
+  {
+    schemaVersion: "3",
+    entryPath: "homepage_email",
+    formVersion: "2026-07-26.1",
+    ruleVersion: "2026-07-26.1",
+  },
+] as const satisfies readonly AdminMetricCompatibilitySet[];
+
 const knownCompatibilitySetsByMetric: Record<
   string,
   readonly AdminMetricCompatibilitySet[]
@@ -303,9 +390,19 @@ const knownCompatibilitySetsByMetric: Record<
   pace: schema2CompatibilitySets,
   stay_time_reference_match: schema2CompatibilitySets,
   must_see_selections: schema2CompatibilitySets,
-  reply_channel_choice: bothSchemaCompatibilitySets,
-  form_locale: bothSchemaCompatibilitySets,
+  reply_channel_choice: contactSchemaCompatibilitySets,
+  form_locale: contactSchemaCompatibilitySets,
 };
+
+const trafficLocales = new Set(["en", "zh", "ko"]);
+const controlledTrafficLabelPattern =
+  /^[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?$/;
+const controlledTrafficPathPattern = /^\/[A-Za-z0-9/_-]*$/;
+const trafficSessionLabelPattern = /^HG-[A-F0-9]{8}$/;
+const trafficScopeNotice =
+  "Consented anonymous sessions; not people, customers, or market share.";
+const trafficClickNotice =
+  "A contact-channel click does not prove that a message was sent.";
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return (
@@ -313,6 +410,30 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
     value !== null &&
     !Array.isArray(value)
   );
+}
+
+function hasExactKeys(
+  value: Record<string, unknown>,
+  expectedKeys: readonly string[],
+): boolean {
+  const keys = Object.keys(value);
+  return (
+    keys.length === expectedKeys.length &&
+    expectedKeys.every((key) => Object.hasOwn(value, key))
+  );
+}
+
+function assertExactKeys(
+  value: Record<string, unknown>,
+  expectedKeys: readonly string[],
+  path: string,
+): void {
+  if (!hasExactKeys(value, expectedKeys)) {
+    throw new AdminApiError(
+      "contract",
+      `${path} does not match the approved contract fields.`,
+    );
+  }
 }
 
 function normalizedKey(value: string): string {
@@ -811,6 +932,529 @@ export function parseAdminInsights(
   };
 }
 
+function trafficCountAt(
+  value: unknown,
+  path: string,
+): AdminTrafficCount {
+  const record = objectAt(value, path);
+  assertExactKeys(record, ["count", "suppressed"], path);
+  const suppressed = booleanAt(record.suppressed, `${path}.suppressed`);
+  const count = nullableCountAt(record.count, `${path}.count`);
+  if (
+    (suppressed && count !== null) ||
+    (!suppressed && count === null) ||
+    (!suppressed && count !== 0 && count < 5)
+  ) {
+    throw new AdminApiError(
+      "contract",
+      `${path} violates the traffic suppression boundary.`,
+    );
+  }
+  return { count, suppressed };
+}
+
+function controlledTrafficValueAt(
+  value: unknown,
+  path: string,
+  kind: "source" | "campaign" | "page",
+): string {
+  const label = stringAt(value, path, {
+    maxLength: kind === "source" ? 64 : kind === "campaign" ? 96 : 180,
+  });
+  if (label === null) {
+    throw new AdminApiError(
+      "contract",
+      `${path} is not an approved traffic label.`,
+    );
+  }
+  if (kind === "page") {
+    if (
+      (!controlledTrafficPathPattern.test(label) ||
+        label.includes("//") ||
+        label.includes(".."))
+    ) {
+      throw new AdminApiError(
+        "contract",
+        `${path} is not an approved page label.`,
+      );
+    }
+    return label;
+  }
+  if (
+    !controlledTrafficLabelPattern.test(label)
+  ) {
+    throw new AdminApiError(
+      "contract",
+      `${path} is not an approved attribution label.`,
+    );
+  }
+  return label;
+}
+
+function trafficDimensionAt(
+  value: unknown,
+  path: string,
+  kind: "source" | "campaign" | "page",
+): AdminTrafficDimensionBucket[] {
+  const values = arrayAt(value, path);
+  if (values.length > 30) {
+    throw new AdminApiError(
+      "contract",
+      `${path} exceeds the approved traffic dimension limit.`,
+    );
+  }
+  const seen = new Set<string>();
+  return values.map((value, index) => {
+    const bucketPath = `${path}[${index}]`;
+    const bucket = objectAt(value, bucketPath);
+    assertExactKeys(
+      bucket,
+      ["bucketType", "label", "count", "suppressed"],
+      bucketPath,
+    );
+    const bucketType = stringAt(
+      bucket.bucketType,
+      `${bucketPath}.bucketType`,
+      { maxLength: 10 },
+    ) as AdminTrafficBucketType | null;
+    if (
+      bucketType === null ||
+      !["value", "unknown", "suppressed"].includes(bucketType) ||
+      (kind === "page" && bucketType === "unknown")
+    ) {
+      throw new AdminApiError(
+        "contract",
+        `${bucketPath}.bucketType is not approved.`,
+      );
+    }
+    const label =
+      bucketType === "value"
+        ? controlledTrafficValueAt(
+            bucket.label,
+            `${bucketPath}.label`,
+            kind,
+          )
+        : bucket.label === null
+          ? null
+          : (() => {
+              throw new AdminApiError(
+                "contract",
+                `${bucketPath}.label must be null for a synthetic bucket.`,
+              );
+            })();
+    const uniqueKey =
+      bucketType === "value" ? `value:${label}` : bucketType;
+    if (seen.has(uniqueKey)) {
+      throw new AdminApiError(
+        "contract",
+        `${bucketPath} duplicates a traffic bucket.`,
+      );
+    }
+    seen.add(uniqueKey);
+    const parsedCount = trafficCountAt(
+      {
+        count: bucket.count,
+        suppressed: bucket.suppressed,
+      },
+      bucketPath,
+    );
+    if (
+      (bucketType === "value" && parsedCount.suppressed) ||
+      (bucketType === "suppressed" && !parsedCount.suppressed)
+    ) {
+      throw new AdminApiError(
+        "contract",
+        `${bucketPath} exposes an unapproved low-volume label.`,
+      );
+    }
+    return { bucketType, label, ...parsedCount };
+  });
+}
+
+function dayDateAt(value: unknown, path: string): string {
+  const result = isoDateAt(value, path);
+  if (result === null) {
+    throw new AdminApiError(
+      "contract",
+      `${path} is not an approved day timestamp.`,
+    );
+  }
+  const date = new Date(result);
+  if (
+    date.getUTCHours() !== 0 ||
+    date.getUTCMinutes() !== 0 ||
+    date.getUTCSeconds() !== 0 ||
+    date.getUTCMilliseconds() !== 0
+  ) {
+    throw new AdminApiError(
+      "contract",
+      `${path} is more precise than the approved day resolution.`,
+    );
+  }
+  return result;
+}
+
+function trafficSessionBucketAt(
+  value: unknown,
+  path: string,
+  kind: "source" | "campaign" | "page",
+): AdminTrafficLabelBucket {
+  const bucket = objectAt(value, path);
+  assertExactKeys(bucket, ["bucketType", "label"], path);
+  const bucketType = stringAt(
+    bucket.bucketType,
+    `${path}.bucketType`,
+    { maxLength: 10 },
+  ) as AdminTrafficBucketType | null;
+  if (
+    bucketType === null ||
+    !["value", "unknown", "suppressed"].includes(bucketType) ||
+    (kind === "page" && bucketType === "unknown")
+  ) {
+    throw new AdminApiError(
+      "contract",
+      `${path}.bucketType is not approved.`,
+    );
+  }
+  if (bucketType !== "value") {
+    if (bucket.label !== null) {
+      throw new AdminApiError(
+        "contract",
+        `${path}.label must be null for a synthetic bucket.`,
+      );
+    }
+    return { bucketType, label: null };
+  }
+  return {
+    bucketType,
+    label: controlledTrafficValueAt(
+      bucket.label,
+      `${path}.label`,
+      kind,
+    ),
+  };
+}
+
+export function parseAdminTraffic(
+  value: unknown,
+): AdminTrafficResponse {
+  assertNoForbiddenResponseFields(value);
+  const root = objectAt(value, "response");
+  assertExactKeys(
+    root,
+    [
+      "contractVersion",
+      "generatedAt",
+      "timezone",
+      "window",
+      "totals",
+      "dimensions",
+      "recentSessions",
+      "limits",
+      "notice",
+    ],
+    "response",
+  );
+  if (
+    root.contractVersion !== adminTrafficContractVersion ||
+    root.timezone !== "Asia/Shanghai"
+  ) {
+    throw new AdminApiError(
+      "contract",
+      "The traffic response does not use the approved contract.",
+    );
+  }
+
+  const generatedAt = isoDateAt(
+    root.generatedAt,
+    "response.generatedAt",
+  );
+  const window = objectAt(root.window, "response.window");
+  assertExactKeys(
+    window,
+    ["days", "startsAt", "endsAt"],
+    "response.window",
+  );
+  if (countAt(window.days, "response.window.days") !== 30) {
+    throw new AdminApiError(
+      "contract",
+      "The traffic response is not the approved rolling 30 days.",
+    );
+  }
+  const startsAt = isoDateAt(
+    window.startsAt,
+    "response.window.startsAt",
+  );
+  const endsAt = isoDateAt(window.endsAt, "response.window.endsAt");
+  if (
+    generatedAt === null ||
+    startsAt === null ||
+    endsAt === null ||
+    Date.parse(startsAt) > Date.parse(endsAt) ||
+    Math.abs(Date.parse(generatedAt) - Date.parse(endsAt)) > 1_000
+  ) {
+    throw new AdminApiError(
+      "contract",
+      "The traffic response window is inconsistent.",
+    );
+  }
+
+  const totals = objectAt(root.totals, "response.totals");
+  assertExactKeys(
+    totals,
+    [
+      "sessions",
+      "pageViews",
+      "contactClickAttempts",
+      "emailFormStarts",
+      "attributedEnquiries",
+      "unknownSourceSessions",
+    ],
+    "response.totals",
+  );
+  const parsedTotals = {
+    sessions: trafficCountAt(
+      totals.sessions,
+      "response.totals.sessions",
+    ),
+    pageViews: trafficCountAt(
+      totals.pageViews,
+      "response.totals.pageViews",
+    ),
+    contactClickAttempts: trafficCountAt(
+      totals.contactClickAttempts,
+      "response.totals.contactClickAttempts",
+    ),
+    emailFormStarts: trafficCountAt(
+      totals.emailFormStarts,
+      "response.totals.emailFormStarts",
+    ),
+    attributedEnquiries: trafficCountAt(
+      totals.attributedEnquiries,
+      "response.totals.attributedEnquiries",
+    ),
+    unknownSourceSessions: trafficCountAt(
+      totals.unknownSourceSessions,
+      "response.totals.unknownSourceSessions",
+    ),
+  };
+
+  const dimensions = objectAt(
+    root.dimensions,
+    "response.dimensions",
+  );
+  assertExactKeys(
+    dimensions,
+    ["sources", "campaigns", "pages"],
+    "response.dimensions",
+  );
+  const sources = trafficDimensionAt(
+    dimensions.sources,
+    "response.dimensions.sources",
+    "source",
+  );
+  const campaigns = trafficDimensionAt(
+    dimensions.campaigns,
+    "response.dimensions.campaigns",
+    "campaign",
+  );
+  const pages = trafficDimensionAt(
+    dimensions.pages,
+    "response.dimensions.pages",
+    "page",
+  );
+  const visibleSources = new Set(
+    sources
+      .filter(
+        (bucket) =>
+          bucket.bucketType === "value" && !bucket.suppressed,
+      )
+      .map((bucket) => bucket.label),
+  );
+  const visibleCampaigns = new Set(
+    campaigns
+      .filter(
+        (bucket) =>
+          bucket.bucketType === "value" && !bucket.suppressed,
+      )
+      .map((bucket) => bucket.label),
+  );
+
+  const rawSessions = arrayAt(
+    root.recentSessions,
+    "response.recentSessions",
+  );
+  if (rawSessions.length > 12) {
+    throw new AdminApiError(
+      "contract",
+      "The traffic response exceeds the recent-session limit.",
+    );
+  }
+  const seenSessionLabels = new Set<string>();
+  let previousLastSeen = Infinity;
+  const recentSessions = rawSessions.map<AdminTrafficSession>(
+    (value, index) => {
+      const sessionPath = `response.recentSessions[${index}]`;
+      const session = objectAt(value, sessionPath);
+      assertExactKeys(
+        session,
+        [
+          "sessionLabel",
+          "startedAt",
+          "lastSeenAt",
+          "locale",
+          "source",
+          "campaign",
+          "entryPage",
+        ],
+        sessionPath,
+      );
+      const sessionLabel = stringAt(
+        session.sessionLabel,
+        `${sessionPath}.sessionLabel`,
+        { maxLength: 11 },
+      );
+      const startedAt = dayDateAt(
+        session.startedAt,
+        `${sessionPath}.startedAt`,
+      );
+      const lastSeenAt = dayDateAt(
+        session.lastSeenAt,
+        `${sessionPath}.lastSeenAt`,
+      );
+      const locale = stringAt(
+        session.locale,
+        `${sessionPath}.locale`,
+        { maxLength: 2 },
+      );
+      const source = trafficSessionBucketAt(
+        session.source,
+        `${sessionPath}.source`,
+        "source",
+      );
+      const campaign = trafficSessionBucketAt(
+        session.campaign,
+        `${sessionPath}.campaign`,
+        "campaign",
+      );
+      const entryPage = trafficSessionBucketAt(
+        session.entryPage,
+        `${sessionPath}.entryPage`,
+        "page",
+      );
+      if (
+        sessionLabel === null ||
+        !trafficSessionLabelPattern.test(sessionLabel) ||
+        seenSessionLabels.has(sessionLabel) ||
+        locale === null ||
+        !trafficLocales.has(locale) ||
+        Date.parse(startedAt) > Date.parse(lastSeenAt) ||
+        Date.parse(lastSeenAt) > previousLastSeen ||
+        (source.bucketType === "value" &&
+          !visibleSources.has(source.label)) ||
+        (campaign.bucketType === "value" &&
+          !visibleCampaigns.has(campaign.label))
+      ) {
+        throw new AdminApiError(
+          "contract",
+          `${sessionPath} violates the anonymous-session boundary.`,
+        );
+      }
+      seenSessionLabels.add(sessionLabel);
+      previousLastSeen = Date.parse(lastSeenAt);
+      return {
+        sessionLabel,
+        startedAt,
+        lastSeenAt,
+        locale: locale as AdminTrafficSession["locale"],
+        source,
+        campaign,
+        entryPage,
+      };
+    },
+  );
+  if (
+    (
+      parsedTotals.sessions.suppressed ||
+      parsedTotals.sessions.count === 0
+    ) &&
+    recentSessions.length > 0
+  ) {
+    throw new AdminApiError(
+      "contract",
+      "Recent sessions must stay empty below the minimum visible window count.",
+    );
+  }
+
+  const limits = objectAt(root.limits, "response.limits");
+  assertExactKeys(
+    limits,
+    [
+      "minimumVisibleCount",
+      "maximumRecentSessions",
+      "recentSessionsMinimumEligibleCount",
+      "perSessionEventsIncluded",
+      "timeResolution",
+      "linkedInquirySessionsExcluded",
+      "sessionLabelScope",
+    ],
+    "response.limits",
+  );
+  if (
+    limits.minimumVisibleCount !== 5 ||
+    limits.maximumRecentSessions !== 12 ||
+    limits.recentSessionsMinimumEligibleCount !== 5 ||
+    limits.perSessionEventsIncluded !== false ||
+    limits.timeResolution !== "day" ||
+    limits.linkedInquirySessionsExcluded !== true ||
+    limits.sessionLabelScope !== "current_30_day_window"
+  ) {
+    throw new AdminApiError(
+      "contract",
+      "The traffic response limits are not approved.",
+    );
+  }
+
+  const notice = objectAt(root.notice, "response.notice");
+  assertExactKeys(
+    notice,
+    ["scope", "clickMeaning"],
+    "response.notice",
+  );
+  if (
+    notice.scope !== trafficScopeNotice ||
+    notice.clickMeaning !== trafficClickNotice
+  ) {
+    throw new AdminApiError(
+      "contract",
+      "The traffic response notice is not approved.",
+    );
+  }
+
+  return {
+    contractVersion: adminTrafficContractVersion,
+    generatedAt,
+    timezone: "Asia/Shanghai",
+    window: { days: 30, startsAt, endsAt },
+    totals: parsedTotals,
+    dimensions: { sources, campaigns, pages },
+    recentSessions,
+    limits: {
+      minimumVisibleCount: 5,
+      maximumRecentSessions: 12,
+      recentSessionsMinimumEligibleCount: 5,
+      perSessionEventsIncluded: false,
+      timeResolution: "day",
+      linkedInquirySessionsExcluded: true,
+      sessionLabelScope: "current_30_day_window",
+    },
+    notice: {
+      scope: trafficScopeNotice,
+      clickMeaning: trafficClickNotice,
+    },
+  };
+}
+
 export function parseAdminHealth(value: unknown): AdminHealthResponse {
   assertNoForbiddenResponseFields(value);
   const root = objectAt(value, "response");
@@ -1101,6 +1745,10 @@ export function validateAdminConfigValues(
     return { config: null, missing: [], invalid };
   }
 
+  const trafficEndpoint = new URL(insightsUrl);
+  trafficEndpoint.pathname = "/functions/v1/admin-traffic";
+  const trafficUrl = trafficEndpoint.toString();
+
   return {
     config: {
       supabaseUrl,
@@ -1108,6 +1756,7 @@ export function validateAdminConfigValues(
         values.NEXT_PUBLIC_HOMEGROUND_ADMIN_SUPABASE_PUBLISHABLE_KEY,
       insightsUrl,
       healthUrl,
+      trafficUrl,
     },
     missing: [],
     invalid: [],
@@ -1263,5 +1912,17 @@ export function fetchAdminHealth(
     accessToken,
     config.publishableKey,
     parseAdminHealth,
+  );
+}
+
+export function fetchAdminTraffic(
+  config: AdminConfig,
+  accessToken: string,
+): Promise<AdminTrafficResponse> {
+  return fetchAdminJson(
+    config.trafficUrl,
+    accessToken,
+    config.publishableKey,
+    parseAdminTraffic,
   );
 }

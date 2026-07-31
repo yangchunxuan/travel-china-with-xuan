@@ -186,16 +186,37 @@ test("budget intake adds a nullable field and versioned create and claim RPCs", 
 });
 
 test("Edge function routes all four destination form generations explicitly", async () => {
-  const edge = await source(publicFunctionPath);
+  const [edge, atomicAttributionMigration] = await Promise.all([
+    source(publicFunctionPath),
+    source(
+      "supabase/migrations/202607310003_homeground_atomic_inquiry_attribution.sql",
+    ),
+  ]);
   assert.match(edge, /legacyDestinationInquiryFormVersion/);
   assert.match(edge, /previousDestinationInquiryFormVersion/);
   assert.match(edge, /currentDestinationInquiryFormVersion/);
   assert.match(edge, /budgetDestinationInquiryFormVersion/);
-  assert.match(edge, /create_homeground_destination_inquiry_v4/);
-  assert.match(edge, /create_homeground_destination_inquiry_v3/);
-  assert.match(edge, /create_homeground_destination_inquiry_v2/);
-  assert.match(edge, /create_homeground_destination_inquiry/);
-  assert.match(edge, /create_homeground_inquiry/);
+  assert.match(
+    edge,
+    /create_homeground_destination_inquiry_with_traffic_v1/,
+  );
+  assert.match(edge, /create_homeground_inquiry_with_traffic_v1/);
+  assert.match(
+    atomicAttributionMigration,
+    /when '2026-07-21\.1'[\s\S]{0,160}create_homeground_destination_inquiry_v4/u,
+  );
+  assert.match(
+    atomicAttributionMigration,
+    /when '2026-07-20\.2'[\s\S]{0,160}create_homeground_destination_inquiry_v3/u,
+  );
+  assert.match(
+    atomicAttributionMigration,
+    /when '2026-07-20\.1'[\s\S]{0,160}create_homeground_destination_inquiry_v2/u,
+  );
+  assert.match(
+    atomicAttributionMigration,
+    /when '2026-07-19\.1'[\s\S]{0,160}create_homeground_destination_inquiry\(/u,
+  );
   assert.match(
     edge,
     /payload\.schemaVersion === destinationInquirySchemaVersion/,
@@ -204,7 +225,7 @@ test("Edge function routes all four destination form generations explicitly", as
   assert.match(edge, /p_route_snapshot: payload\.routeSnapshot/);
   assert.match(
     edge,
-    /p_rough_budget_per_person:\s*payload\.roughBudgetPerPerson/,
+    /p_rough_budget_per_person:[\s\S]{0,180}payload\.roughBudgetPerPerson/,
   );
   assert.match(
     edge,

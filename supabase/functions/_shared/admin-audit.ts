@@ -3,7 +3,10 @@ import {
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "./runtime.ts";
 
-export type AdminAuditEndpoint = "admin-insights" | "admin-health";
+export type AdminAuditEndpoint =
+  | "admin-insights"
+  | "admin-health"
+  | "admin-traffic";
 export type AdminAuditResult =
   | "success"
   | "summary_unavailable"

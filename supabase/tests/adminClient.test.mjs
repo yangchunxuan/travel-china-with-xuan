@@ -92,6 +92,16 @@ function suppressedMetric(id, bucketIds) {
           ruleVersion: "2026-07-17.1",
         },
         ...schema2CompatibilitySets,
+        ...(["reply_channel_choice", "form_locale"].includes(id)
+          ? [
+              {
+                schemaVersion: "3",
+                entryPath: "homepage_email",
+                formVersion: "2026-07-26.1",
+                ruleVersion: "2026-07-26.1",
+              },
+            ]
+          : []),
       ]
     : schema2CompatibilitySets;
   return {

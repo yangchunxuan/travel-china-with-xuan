@@ -39,9 +39,14 @@ import {
   type AdminInsightsResponse,
   type AdminMetric,
   type AdminMetricOption,
+  type AdminTrafficCount,
+  type AdminTrafficDimensionBucket,
+  type AdminTrafficLabelBucket,
+  type AdminTrafficResponse,
   createAdminAuthClient,
   fetchAdminHealth,
   fetchAdminInsights,
+  fetchAdminTraffic,
   getAdminConfig,
 } from "../../lib/adminClient";
 import { selectUnverifiedTotpFactors } from "../../lib/adminMfa";
@@ -298,6 +303,28 @@ function formatDuration(seconds: number | null): string {
   const hours = Math.floor(minutes / 60);
   if (hours < 24) return `${numberFormatter.format(hours)} 小时`;
   return `${numberFormatter.format(Math.floor(hours / 24))} 天`;
+}
+
+function trafficCountCopy(value: AdminTrafficCount): string {
+  if (value.suppressed || value.count === null) return "少于 5（已隐藏）";
+  return numberFormatter.format(value.count);
+}
+
+function trafficLabelCopy(
+  value: AdminTrafficLabelBucket,
+  kind: "source" | "campaign" | "page",
+): string {
+  if (value.bucketType === "unknown") {
+    return "Unknown（没有可用标签）";
+  }
+  if (value.bucketType === "suppressed") {
+    return kind === "page"
+      ? "低量页面（已合并）"
+      : kind === "campaign"
+        ? "低量活动（已合并）"
+        : "低量来源（已合并）";
+  }
+  return value.label ?? "标签不可用";
 }
 
 function authErrorMessage(error: unknown): string {
@@ -1278,6 +1305,237 @@ function MetricCard({
   );
 }
 
+function TrafficDimensionCard({
+  title,
+  description,
+  kind,
+  buckets,
+}: {
+  title: string;
+  description: string;
+  kind: "source" | "campaign" | "page";
+  buckets: AdminTrafficDimensionBucket[];
+}) {
+  return (
+    <article className={styles.trafficDimensionCard}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      {buckets.length > 0 ? (
+        <ul className={styles.trafficDimensionList}>
+          {buckets.map((bucket) => (
+            <li key={`${bucket.bucketType}:${bucket.label ?? ""}`}>
+              <span>{trafficLabelCopy(bucket, kind)}</span>
+              <strong>{trafficCountCopy(bucket)}</strong>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className={styles.trafficEmpty}>当前窗口还没有可显示的数据。</div>
+      )}
+    </article>
+  );
+}
+
+function TrafficSection({
+  state,
+}: {
+  state: RequestState<AdminTrafficResponse>;
+}) {
+  const traffic = state.data;
+  return (
+    <section
+      id="consented-anonymous-traffic"
+      className={styles.section}
+      aria-labelledby="traffic-title"
+      aria-busy={state.loading}
+    >
+      <div className={styles.sectionHeading}>
+        <div>
+          <span className={styles.eyebrow}>已同意的匿名会话</span>
+          <h2 id="traffic-title">网站行为 · 过去 30 天</h2>
+        </div>
+        {traffic ? (
+          <div className={styles.checkedAt}>
+            北京时间生成于{" "}
+            <time dateTime={traffic.generatedAt}>
+              {formatDate(traffic.generatedAt)}
+            </time>
+          </div>
+        ) : null}
+      </div>
+
+      <div className={styles.scopeNotice}>
+        <Activity size={22} aria-hidden="true" />
+        <p>
+          <strong>
+            这里显示会话，不是“某个人”的身份，也不是不同客户或市场份额。
+          </strong>
+          <br />
+          不显示 Email、电话、IP、浏览器信息、会话哈希、询盘编号或原始
+          UTM。会话标签由服务器二次派生，只供当前 30 天窗口区分，不能跨窗口或与其他数据源拼接。
+          <br />
+          <strong>
+            点击联系按钮只表示打开了联系入口，不代表消息已经发出。
+          </strong>
+        </p>
+      </div>
+
+      {state.loading && !traffic ? (
+        <LoadingPanel message="正在读取 30 天网站行为……" />
+      ) : null}
+      {state.error ? (
+        <div className={styles.dangerBanner} role="alert">
+          <XCircle size={22} aria-hidden="true" />
+          <div>
+            <strong>网站行为当前不可读</strong>
+            <p>{state.error}</p>
+          </div>
+        </div>
+      ) : null}
+
+      {traffic ? (
+        <>
+          <div className={styles.coveragePanel}>
+            <div>
+              <span>实际覆盖日期</span>
+              <strong>
+                <time dateTime={traffic.window.startsAt}>
+                  {formatDate(traffic.window.startsAt, true)}
+                </time>
+                {" — "}
+                <time dateTime={traffic.window.endsAt}>
+                  {formatDate(traffic.window.endsAt, true)}
+                </time>
+              </strong>
+            </div>
+            <span className={styles.baselineBadge}>
+              小于 5 的动态分组不显示精确值
+            </span>
+          </div>
+
+          <div className={styles.subsection}>
+            <div className={styles.subsectionHeading}>
+              <div>
+                <h3>30 天行为总量</h3>
+                <p>
+                  会话不等于不同的人；同一人换浏览器、设备或清除本地数据后可能形成新会话。
+                </p>
+              </div>
+              <BarChart3 size={22} aria-hidden="true" />
+            </div>
+            <dl className={styles.statGrid}>
+              {[
+                ["匿名会话", traffic.totals.sessions],
+                ["页面浏览", traffic.totals.pageViews],
+                ["联系入口点击尝试", traffic.totals.contactClickAttempts],
+                ["开始填写 Email", traffic.totals.emailFormStarts],
+                ["已关联询盘", traffic.totals.attributedEnquiries],
+                ["Unknown 来源会话", traffic.totals.unknownSourceSessions],
+              ].map(([label, value]) => (
+                <div className={styles.statItem} key={label as string}>
+                  <dt>{label as string}</dt>
+                  <dd>{trafficCountCopy(value as AdminTrafficCount)}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className={styles.smallNote}>
+              “已关联询盘”只表示询盘在同一浏览器匿名会话中完成了技术关联，不证明首次获客来源，也不能据此计算平台转化率。Unknown
+              始终保留，不猜测、不分摊。
+            </p>
+          </div>
+
+          <div className={styles.trafficDimensions}>
+            <TrafficDimensionCard
+              title="来源"
+              description="只显示标准化来源标签；Unknown 会原样保留，不猜测、不分摊。"
+              kind="source"
+              buckets={traffic.dimensions.sources}
+            />
+            <TrafficDimensionCard
+              title="活动"
+              description="用于区分你主动设置的活动标签；低量活动合并显示。"
+              kind="campaign"
+              buckets={traffic.dimensions.campaigns}
+            />
+            <TrafficDimensionCard
+              title="页面"
+              description="页面浏览次数；低量路径不会单独显示。"
+              kind="page"
+              buckets={traffic.dimensions.pages}
+            />
+          </div>
+
+          <div className={styles.subsection}>
+            <div className={styles.subsectionHeading}>
+              <div>
+                <h3>最近的匿名会话摘要</h3>
+                <p>
+                  仅在 30 天窗口至少有 5 个符合展示边界、且未关联询盘的匿名会话时显示，最多 12
+                  条；日期只精确到天，不展示逐会话点击或事件时间线。
+                </p>
+              </div>
+              <Clock3 size={22} aria-hidden="true" />
+            </div>
+            {traffic.recentSessions.length > 0 ? (
+              <div className={styles.trafficSessions}>
+                {traffic.recentSessions.map((session) => (
+                  <article
+                    className={styles.trafficSessionCard}
+                    key={session.sessionLabel}
+                  >
+                    <div className={styles.trafficSessionHeading}>
+                      <h4>匿名会话 {session.sessionLabel}</h4>
+                      <span>{session.locale.toUpperCase()}</span>
+                    </div>
+                    <dl className={styles.trafficSessionMeta}>
+                      <div>
+                        <dt>首次 / 最近</dt>
+                        <dd>
+                          <time dateTime={session.startedAt}>
+                            {formatDate(session.startedAt, true)}
+                          </time>
+                          {" / "}
+                          <time dateTime={session.lastSeenAt}>
+                            {formatDate(session.lastSeenAt, true)}
+                          </time>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>来源 / 活动</dt>
+                        <dd>
+                          {trafficLabelCopy(session.source, "source")}
+                          {" / "}
+                          {trafficLabelCopy(
+                            session.campaign,
+                            "campaign",
+                          )}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>进入页面</dt>
+                        <dd>
+                          {trafficLabelCopy(
+                            session.entryPage,
+                            "page",
+                          )}
+                        </dd>
+                      </div>
+                    </dl>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className={styles.emptyState}>
+                当前没有符合匿名时间线边界的会话。不要把空白推断为网站没有访问。
+              </div>
+            )}
+          </div>
+        </>
+      ) : null}
+    </section>
+  );
+}
+
 function SummarySection({
   state,
   healthHoldActive,
@@ -1420,11 +1678,13 @@ function SummarySection({
 function Dashboard({
   healthState,
   insightsState,
+  trafficState,
   onRefresh,
   accessDenied,
 }: {
   healthState: RequestState<AdminHealthResponse>;
   insightsState: RequestState<AdminInsightsResponse>;
+  trafficState: RequestState<AdminTrafficResponse>;
   onRefresh: () => void;
   accessDenied: boolean;
 }) {
@@ -1440,12 +1700,14 @@ function Dashboard({
       </section>
     );
   }
-  const refreshing = healthState.loading || insightsState.loading;
+  const refreshing =
+    healthState.loading || insightsState.loading || trafficState.loading;
   return (
     <>
       <div className={styles.toolbar}>
         <p>
-          页面每次只读取两个只读地址：系统健康与 90 天汇总。不会读取单条询盘。
+          页面每次只读取三个固定只读地址：系统健康、30 天匿名网站行为与
+          90 天保存记录汇总。不会读取单条询盘。
         </p>
         <button
           className={styles.refreshButton}
@@ -1458,13 +1720,14 @@ function Dashboard({
             size={18}
             aria-hidden="true"
           />
-          刷新两项数据
+          刷新三项数据
         </button>
       </div>
       <div className={styles.liveStatus} role="status" aria-live="polite">
         {refreshing ? "正在刷新私有后台数据……" : ""}
       </div>
       <SystemHealthSection state={healthState} />
+      <TrafficSection state={trafficState} />
       <SummarySection
         state={insightsState}
         healthHoldActive={Boolean(healthState.data?.dataQualityHold.active)}
@@ -1489,12 +1752,15 @@ export function AdminInsightsPage() {
     useState<RequestState<AdminHealthResponse>>(initialRequestState);
   const [insightsState, setInsightsState] =
     useState<RequestState<AdminInsightsResponse>>(initialRequestState);
+  const [trafficState, setTrafficState] =
+    useState<RequestState<AdminTrafficResponse>>(initialRequestState);
 
   const invalidateDashboard = useCallback((clearUser = true) => {
     requestEpochRef.current += 1;
     if (clearUser) activeUserIdRef.current = null;
     setHealthState(initialRequestState);
     setInsightsState(initialRequestState);
+    setTrafficState(initialRequestState);
     setAccessDenied(false);
   }, []);
 
@@ -1642,11 +1908,18 @@ export function AdminInsightsPage() {
       error: null,
       loading: true,
     });
+    setTrafficState({
+      data: null,
+      error: null,
+      loading: true,
+    });
 
-    const [healthResult, insightsResult] = await Promise.allSettled([
-      fetchAdminHealth(config, currentSession.access_token),
-      fetchAdminInsights(config, currentSession.access_token),
-    ]);
+    const [healthResult, insightsResult, trafficResult] =
+      await Promise.allSettled([
+        fetchAdminHealth(config, currentSession.access_token),
+        fetchAdminInsights(config, currentSession.access_token),
+        fetchAdminTraffic(config, currentSession.access_token),
+      ]);
     if (
       !canCommitAdminResponse(
         requestEpoch,
@@ -1660,6 +1933,7 @@ export function AdminInsightsPage() {
     const errors = [
       healthResult.status === "rejected" ? healthResult.reason : null,
       insightsResult.status === "rejected" ? insightsResult.reason : null,
+      trafficResult.status === "rejected" ? trafficResult.reason : null,
     ].filter(Boolean);
     if (
       errors.some(
@@ -1694,6 +1968,15 @@ export function AdminInsightsPage() {
         : {
             data: null,
             error: apiErrorMessage(insightsResult.reason),
+            loading: false,
+          },
+    );
+    setTrafficState(
+      trafficResult.status === "fulfilled"
+        ? { data: trafficResult.value, error: null, loading: false }
+        : {
+            data: null,
+            error: apiErrorMessage(trafficResult.reason),
             loading: false,
           },
     );
@@ -1931,6 +2214,7 @@ export function AdminInsightsPage() {
           <Dashboard
             healthState={healthState}
             insightsState={insightsState}
+            trafficState={trafficState}
             accessDenied={accessDenied}
             onRefresh={() => void loadData()}
           />
@@ -1938,7 +2222,7 @@ export function AdminInsightsPage() {
       </main>
       <footer className={styles.footer}>
         <p>
-          私有汇总页 · 不含客户名单、联系方式、自由文本、导出、筛选或平台归因
+          私有汇总页 · 不含客户名单、联系方式、自由文本、原始标识符、导出或跨窗口追踪
         </p>
       </footer>
     </div>

@@ -459,11 +459,60 @@ test("published privacy copy reflects the production data path", async () => {
   assert.match(copy, /within 30 days/);
   assert.match(copy, /30 天内/);
   assert.match(copy, /30일 이내/);
-  assert.equal(copy.match(/utm_source/g)?.length ?? 0, 0);
-  assert.match(copy, /current form version does not copy UTM/i);
-  assert.match(copy, /fixed code records only which language-specific/);
-  assert.match(copy, /固定代码记录是哪个语言版本/);
-  assert.match(copy, /고정 번호는 어느 언어/);
+  assert.match(
+    copy,
+    /limited first-touch source[\s\S]{0,320}Homeground-signed UTM source, medium, campaign and content codes/i,
+  );
+  assert.match(
+    copy,
+    /Homeground 签名的 UTM 来源、媒介、活动和内容代码[\s\S]{0,100}有限的首次来源/,
+  );
+  assert.match(
+    copy,
+    /Homeground가 서명한 UTM 소스·매체·캠페인·콘텐츠 코드/,
+  );
+  assert.match(
+    copy,
+    /Unsigned, altered or unrecognised UTM values remain Unknown/i,
+  );
+  assert.match(
+    copy,
+    /未签名、被修改或无法识别的 UTM 一律保留为“未知”/,
+  );
+  assert.match(
+    copy,
+    /서명이 없거나 변경되었거나 인식되지 않는 UTM 값은 ‘알 수 없음’/,
+  );
+  assert.match(
+    copy,
+    /does not store a full referrer URL, raw IP address, user-agent string, click identifier, contact detail or free-text answer/i,
+  );
+  assert.match(
+    copy,
+    /不保存完整来源网址、原始 IP、User-Agent、广告点击标识、联系方式或旅行自由文本/,
+  );
+  assert.match(
+    copy,
+    /전체 리퍼러 URL, 원본 IP, User-Agent, 광고 클릭 식별자, 연락처 또는 자유 입력 여행 답변을 저장하지 않/,
+  );
+  assert.match(
+    copy,
+    /A click means only that an option was opened; it does not prove that a message was sent or a booking was made/i,
+  );
+  assert.match(
+    copy,
+    /点击只说明相应入口被打开，不证明消息已经发出，也不代表已经预订/,
+  );
+  assert.match(
+    copy,
+    /클릭은 해당 옵션을 열었다는 뜻일 뿐 메시지 전송이나 예약 완료를 증명하지 않/,
+  );
+  assert.match(
+    copy,
+    /submit-surface code is not treated as a traffic source/i,
+  );
+  assert.match(copy, /提交页面代码不会被当作流量来源/);
+  assert.match(copy, /제출 화면 번호는 유입 출처로 취급하지 않/);
   assert.match(copy, /either an email address or a WhatsApp number/);
   assert.match(copy, /邮箱或 WhatsApp 号码中的一种/);
   assert.match(copy, /이메일 주소 또는 WhatsApp 번호 중 하나/);

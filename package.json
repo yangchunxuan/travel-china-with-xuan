@@ -9,6 +9,7 @@
     "check:planning-scope-lines": "node --experimental-strip-types --no-warnings tools/check-planning-scope-lines.mjs",
     "check:indexable-export": "node tools/check-indexable-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
+    "sign:traffic-link": "node tools/sign-traffic-link.mjs",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
     "prebuild": "npm run check:font-coverage && npm run check:planning-scope-lines",
     "build": "next build",

@@ -9,6 +9,8 @@ import {
   getHomegroundLegalCopy,
   getHomegroundLegalPath,
 } from "../lib/homegroundLegalI18n";
+import { openAnalyticsConsentPreferences } from "../lib/analyticsConsent";
+import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
 import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import {
   handleHomegroundHashClick,
@@ -82,6 +84,7 @@ export function HomegroundFooter({
   const planningServicesPath = planningServicesCopy.path;
   const guideHubPath = `${copy.path}guides/`;
   const sectionLabels = footerSections[locale];
+  const consentCopy = getAnalyticsConsentCopy(locale);
   const studioPath = `${copy.path}studio/`;
   const facebookPageUrl = getHomegroundFacebookPageUrl();
   const sectionHref = (hash: HomegroundHashTarget) =>
@@ -151,6 +154,13 @@ export function HomegroundFooter({
           <a href={businessPath}>{legalCopy.related.business}</a>
           <a href={termsPath}>{legalCopy.related.terms}</a>
           <a href={privacyPath}>{legalCopy.related.privacy}</a>
+          <button
+            className={styles.footerPrivacyButton}
+            type="button"
+            onClick={openAnalyticsConsentPreferences}
+          >
+            {consentCopy.manage}
+          </button>
           <a href={refundPath}>{legalCopy.related.refund}</a>
           <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
             {legalCopy.related.contact}

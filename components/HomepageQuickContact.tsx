@@ -16,6 +16,11 @@ import {
   type FormEvent,
 } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  getTrafficSessionToken,
+  trackEnquirySubmitted,
+  trackEvent,
+} from "../lib/analytics";
 import { trustedMessengerUrl } from "../lib/homegroundSocial";
 import {
   currentHomepageEmailFormVersion,
@@ -155,6 +160,9 @@ export function HomepageQuickContact({
   const snapshotRef = useRef<SubmissionSnapshot | null>(null);
   const successRef = useRef<HTMLDivElement | null>(null);
   const dispatchingRef = useRef(false);
+  const contactOptionsViewedRef = useRef(false);
+  const emailStartedRef = useRef(false);
+  const successfulSubmissionTrackedRef = useRef(false);
   const [email, setEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<EmailStatus>("idle");
@@ -196,7 +204,17 @@ export function HomepageQuickContact({
     return () => window.cancelAnimationFrame(frame);
   }, [status]);
 
+  useEffect(() => {
+    if (contactOptionsViewedRef.current) return;
+    contactOptionsViewedRef.current = true;
+    trackEvent("contact_options_viewed", {
+      page_language: locale,
+      contact_variant: variant,
+    });
+  }, [locale, variant]);
+
   const buildPayload = () => ({
+    trafficSessionToken: getTrafficSessionToken() ?? null,
     schemaVersion: homepageEmailInquirySchemaVersion,
     formVersion: currentHomepageEmailFormVersion,
     entryPath: "homepage_email",
@@ -256,6 +274,15 @@ export function HomepageQuickContact({
           setStatus("success");
           setError("");
           setShowRetry(false);
+          if (!successfulSubmissionTrackedRef.current) {
+            successfulSubmissionTrackedRef.current = true;
+            trackEnquirySubmitted({
+              page_language: locale,
+              reply_channel: "email",
+              submission_surface: "homepage_email",
+              form_version: currentHomepageEmailFormVersion,
+            });
+          }
           return;
         }
         setStatus("uncertain");
@@ -310,6 +337,11 @@ export function HomepageQuickContact({
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    trackEvent("contact_option_clicked", {
+      channel: "email",
+      contact_variant: variant,
+      page_language: locale,
+    });
     if (!emailIntakeReady) {
       setStatus("disabled");
       setError(contactCopy.emailUnavailable);
@@ -377,6 +409,13 @@ export function HomepageQuickContact({
               target="_blank"
               rel="noopener noreferrer"
               aria-describedby={whatsappExternalNoteId}
+              onClick={() => {
+                trackEvent("contact_option_clicked", {
+                  channel: "whatsapp",
+                  contact_variant: variant,
+                  page_language: locale,
+                });
+              }}
             >
               {contactCopy.whatsappAction}
               <ArrowUpRight aria-hidden="true" size={18} />
@@ -408,6 +447,13 @@ export function HomepageQuickContact({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-describedby={messengerExternalNoteId}
+                onClick={() => {
+                  trackEvent("contact_option_clicked", {
+                    channel: "messenger",
+                    contact_variant: variant,
+                    page_language: locale,
+                  });
+                }}
               >
                 <MessagesSquare aria-hidden="true" size={15} />
                 {contactCopy.messengerAction}
@@ -480,6 +526,15 @@ export function HomepageQuickContact({
                     emailValidationError ? errorId : undefined
                   }
                   disabled={status === "submitting"}
+                  onFocus={() => {
+                    if (emailStartedRef.current) return;
+                    emailStartedRef.current = true;
+                    trackEvent("quick_email_started", {
+                      submission_surface: "homepage_email",
+                      contact_variant: variant,
+                      page_language: locale,
+                    });
+                  }}
                   onChange={(event) => {
                     setEmail(event.target.value);
                     snapshotRef.current = null;

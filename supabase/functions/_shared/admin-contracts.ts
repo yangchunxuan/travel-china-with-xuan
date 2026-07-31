@@ -57,6 +57,16 @@ const bothSchemaCompatibilitySets = [
   ...schema2CompatibilitySets,
 ] as const;
 
+const contactSchemaCompatibilitySets = [
+  ...bothSchemaCompatibilitySets,
+  {
+    schemaVersion: "3",
+    entryPath: "homepage_email",
+    formVersion: "2026-07-26.1",
+    ruleVersion: "2026-07-26.1",
+  },
+] as const;
+
 const metricContracts = {
   destination_selections: {
     label: "Destination selections",
@@ -112,13 +122,13 @@ const metricContracts = {
     label: "Reply-channel choice",
     multiSelect: false,
     bucketIds: ["email", "whatsapp"],
-    compatibilitySets: bothSchemaCompatibilitySets,
+    compatibilitySets: contactSchemaCompatibilitySets,
   },
   form_locale: {
     label: "Form locale",
     multiSelect: false,
     bucketIds: ["en", "zh", "ko"],
-    compatibilitySets: bothSchemaCompatibilitySets,
+    compatibilitySets: contactSchemaCompatibilitySets,
   },
 } as const;
 

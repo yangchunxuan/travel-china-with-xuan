@@ -81,7 +81,7 @@ test("homepage email has a dedicated private persistence path with no traveller 
   const homepageBranch = endpoint.slice(branchStart, branchEnd);
   assert.match(
     homepageBranch,
-    /"create_homeground_homepage_email_v1"/u,
+    /"create_homeground_homepage_email_with_traffic_v1"/u,
   );
   assert.match(
     homepageBranch,

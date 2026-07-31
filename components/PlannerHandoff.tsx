@@ -37,7 +37,11 @@ import {
   type BookingResponsibilityId,
   type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
-import { trackEnquirySubmitted } from "../lib/analytics";
+import {
+  getTrafficSessionToken,
+  trackEnquirySubmitted,
+  trackEvent,
+} from "../lib/analytics";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
 
@@ -409,10 +413,21 @@ export function PlannerHandoff({
   const localJourneyRevisionRef = useRef(1);
   const routeIdentityRef = useRef("");
   const dispatchingRef = useRef(false);
+  const contactOptionsViewedRef = useRef(false);
+  const trackedSubmissionReferencesRef = useRef(new Set<string>());
   const previousServiceIdRef = useRef(serviceInterest?.id ?? null);
   const previousServiceContextRevisionRef = useRef(
     serviceContextRevision,
   );
+
+  useEffect(() => {
+    if (!configurationReady || contactOptionsViewedRef.current) return;
+    contactOptionsViewedRef.current = true;
+    trackEvent("contact_options_viewed", {
+      page_language: locale,
+      submission_surface: "full_trip_brief",
+    });
+  }, [configurationReady, locale]);
 
   const idPrefix = useId();
   const responsibilityGroupId = `${idPrefix}-booking-responsibility`;
@@ -748,6 +763,11 @@ export function PlannerHandoff({
     }
 
     setContactMethod(method);
+    trackEvent("contact_option_clicked", {
+      channel: method,
+      page_language: locale,
+      submission_surface: "full_trip_brief",
+    });
     setErrors((current) => {
       const next = { ...current };
       delete next.contact;
@@ -826,6 +846,7 @@ export function PlannerHandoff({
 
   const buildPayload = () => {
     return {
+      trafficSessionToken: getTrafficSessionToken() ?? null,
       schemaVersion: destinationInquirySchemaVersion,
       formVersion: currentDestinationInquiryFormVersion,
       entryPath: "destination_timing",
@@ -960,14 +981,23 @@ export function PlannerHandoff({
           success.publicReference.trim().length > 0
         ) {
           const nextPublicReference = success.publicReference.trim();
-          // The one event that maps to revenue: an enquiry actually reached the
-          // backend. Carries the entry attribution so it can be traced back to
-          // the guide the visitor arrived from.
-          trackEnquirySubmitted({
-            page_language: locale,
-            reply_channel: snapshot.replyChannel,
-            service_interest: serviceInterest?.id ?? "conversation",
-          });
+          if (
+            !trackedSubmissionReferencesRef.current.has(
+              nextPublicReference,
+            )
+          ) {
+            trackedSubmissionReferencesRef.current.add(
+              nextPublicReference,
+            );
+            trackEnquirySubmitted({
+              page_language: locale,
+              reply_channel: snapshot.replyChannel,
+              service_interest:
+                serviceInterest?.id ?? "conversation",
+              submission_surface: "full_trip_brief",
+              form_version: currentDestinationInquiryFormVersion,
+            });
+          }
           setSubmittedChannel(snapshot.replyChannel);
           setSubmittedContact(snapshot.replyContact);
           setErrors({});

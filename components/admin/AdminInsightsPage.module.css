@@ -843,6 +843,138 @@
   margin-block-start: 1rem;
 }
 
+.trafficDimensions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin-block-start: 1rem;
+}
+
+.trafficDimensionCard,
+.trafficSessionCard {
+  min-inline-size: 0;
+  border: 1px solid var(--admin-line);
+  border-radius: 0.65rem;
+  background: #ffffff;
+}
+
+.trafficDimensionCard {
+  padding: 1rem;
+}
+
+.trafficDimensionCard h3,
+.trafficSessionHeading h4 {
+  margin: 0;
+  color: var(--admin-navy);
+}
+
+.trafficDimensionCard h3 {
+  font-size: 1rem;
+}
+
+.trafficDimensionCard > p {
+  margin: 0.35rem 0 0;
+  color: var(--admin-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.trafficDimensionList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trafficDimensionList {
+  display: grid;
+  gap: 0.55rem;
+  margin-block-start: 0.85rem;
+}
+
+.trafficDimensionList li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-block-start: 1px solid var(--admin-line);
+  padding-block-start: 0.55rem;
+  font-size: 0.8rem;
+}
+
+.trafficDimensionList span {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.trafficDimensionList strong {
+  flex: none;
+  color: var(--admin-navy);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.trafficSessions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  gap: 1rem;
+  margin-block-start: 1rem;
+}
+
+.trafficSessionCard {
+  padding: 1rem;
+}
+
+.trafficSessionHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.trafficSessionHeading h4 {
+  font-size: 0.95rem;
+}
+
+.trafficSessionHeading > span {
+  border: 1px solid var(--admin-line-strong);
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
+  color: var(--admin-muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.trafficSessionMeta {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.8rem 0 0;
+}
+
+.trafficSessionMeta div {
+  min-inline-size: 0;
+}
+
+.trafficSessionMeta dt {
+  color: var(--admin-muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.trafficSessionMeta dd {
+  margin: 0.15rem 0 0;
+  color: var(--admin-ink);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.trafficEmpty {
+  margin-block-start: 0.8rem;
+  color: var(--admin-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
 .metricCard {
   min-inline-size: 0;
   border: 1px solid var(--admin-line);

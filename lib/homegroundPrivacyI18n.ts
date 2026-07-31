@@ -120,7 +120,7 @@ export const homegroundPrivacyCopy: Record<
         "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
         "Homeground-controlled website enquiry records are deleted no later than 12 months after they are saved. If a client relationship or legal duty requires a record, only the necessary record is retained separately under that system’s rules; it does not extend the website copy. Later email or WhatsApp conversations follow their own service and business-record rules.",
         "Hashed identifiers are used for 24-hour rate-limit windows and are scheduled for deletion after 24 hours, normally at the next one-minute cleanup run.",
-        "The full trip-brief form saves either an email address or a WhatsApp number. The homepage quick-email option saves only the email entered there; opening the homepage WhatsApp or Messenger link does not submit anything to Homeground’s website. Non-essential browser-behaviour analytics and AI chat remain disabled.",
+        "The full trip-brief form saves either an email address or a WhatsApp number. The homepage quick-email option saves only the email entered there. Optional analytics and marketing measurement remain off unless the visitor grants the relevant choice; AI chat remains disabled.",
       ],
     },
     hero: {
@@ -129,7 +129,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "26 July 2026",
+      reviewedValue: "31 July 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -138,8 +138,10 @@ export const homegroundPrivacyCopy: Record<
         "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional planning-service choice, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
         "The homepage quick-email option sends only the entered email address, page language, fixed language-specific submit-surface code and the limited technical record needed for reliable submission and rate limiting. It does not collect an itinerary, traveller profile, date, destination, budget or free-text message, and it shows success only after Supabase confirms the save.",
         "The homepage WhatsApp and Messenger options are direct outbound links. Opening either link does not save the visitor’s phone number or message on Homeground’s website and is not treated as a submitted enquiry. If the visitor then sends a message, WhatsApp or Facebook and Meta process that conversation under their own terms and infrastructure.",
-        "The current form version does not copy UTM labels, click identifiers or other URL campaign labels into the request. A fixed code records only which language-specific Homeground form accepted the submission; it is not a first-touch or traffic-source claim.",
-        "Authorised staff may view restricted counts of saved structured trip choices to improve the route planner and travel information. These summaries exclude contact details, free text, individual enquiry records, source attribution and later email or WhatsApp activity.",
+        "If the visitor allows analytics, Homeground creates a temporary anonymous browser-session token. The event service first issues a short-lived signed credential; bare or expired event requests are rejected. A limited first-touch source is recorded only when the landing link contains Homeground-signed UTM source, medium, campaign and content codes. Unsigned, altered or unrecognised UTM values remain Unknown. The website-event record does not store a full referrer URL, raw IP address, user-agent string, click identifier, contact detail or free-text answer.",
+        "With analytics permission, Homeground may record page views and a small set of fixed actions such as opening the contact area, starting the quick-email field, or clicking Email, WhatsApp or Messenger. A click means only that an option was opened; it does not prove that a message was sent or a booking was made.",
+        "When the same browser later submits an enquiry, the saved first-touch labels may be attached to that enquiry so Homeground can understand which page or post led to it. The enquiry still succeeds when no session or source is available, and an unknown source is never guessed.",
+        "Authorised staff may view restricted aggregate counts and, only after the 30-day window contains at least five eligible anonymous sessions that are not linked to enquiries, a day-level recent-session summary without per-session click or event timelines. Contact details, trip answers and message text are kept out of analytics and are not sent to Google Analytics or Meta Pixel.",
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
         "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
@@ -151,7 +153,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "Purpose and fields",
       title: "Only what is needed for the active request",
       intro:
-        "A traveller can prepare the structured trip answers in the browser before submitting. The following information groups are used only when the traveller deliberately sends the enquiry.",
+        "A traveller can prepare structured trip answers before submitting. Enquiry fields are sent only when the traveller deliberately submits; the separate website-measurement fields below are used only after the relevant optional permission.",
       items: [
         {
           name: "Trip brief",
@@ -193,6 +195,13 @@ export const homegroundPrivacyCopy: Record<
           stage: "Enquiry service",
           purpose:
             "A public reference, time, form version, brief revision, fixed language-specific submit-surface code and limited anti-abuse data support reliable submission and duplicate prevention. The submit-surface code is not treated as a traffic source.",
+        },
+        {
+          name: "Optional anonymous website measurement",
+          stage:
+            "Browser, Homeground first-party event service and optional Google Analytics or Meta Pixel",
+          purpose:
+            "After permission, a temporary session token, short-lived signed event credential, page path, language, Homeground-signed first-touch campaign codes and fixed event/action codes help Homeground understand useful pages and contact attempts. Unsigned campaign labels stay Unknown. The event service excludes names, email addresses, phone numbers, trip answers, messages, raw IP addresses, user-agent strings and full referrer URLs.",
         },
       ],
     },
@@ -239,10 +248,11 @@ export const homegroundPrivacyCopy: Record<
             "Synchronises selected Gmail folders and WhatsApp conversations so authorised studio members can handle the enquiry together. SaleSmartly and its service providers may process this information under their own terms and infrastructure.",
         },
         {
-          label: "Browser-behaviour analytics and AI chat",
-          value: "Disabled",
+          label: "Website measurement",
+          value:
+            "Supabase first-party events · Google Analytics · Meta Pixel (optional)",
           detail:
-            "The current site does not collect planner or page-behaviour events and does not use third-party marketing tracking or an AI chat widget. The current form version does not attach URL campaign labels to an enquiry. Restricted summaries use only structured choices from successfully saved enquiries.",
+            "None of these optional destinations receives a website event before the visitor grants the relevant choice. Analytics permission enables limited first-party events and Google Analytics; marketing permission separately enables Meta Pixel. Homeground does not send contact details, trip answers or message text to those tools. AI chat is not used.",
         },
       ],
     },
@@ -281,7 +291,13 @@ export const homegroundPrivacyCopy: Record<
           label: "Rate-limit retention",
           value: "24-hour window · scheduled deletion after expiry",
           detail:
-            "The service stores a secret-keyed hash rather than a raw IP address. A one-minute recurring task removes buckets after they pass 24 hours, so deletion normally occurs on the next cleanup run.",
+            "Newly accepted events—not HTTP requests—are counted against separate browser-session, client-IP and whole-site limits. The service stores secret-keyed hashes rather than raw IP or browser tokens. A one-minute recurring task removes buckets after they pass 24 hours, so deletion normally occurs on the next cleanup run.",
+        },
+        {
+          label: "Anonymous website-event retention",
+          value: "Raw events and anonymous sessions · 30-day rolling window",
+          detail:
+            "The browser token is stored only in session storage after analytics permission. The server stores only a secret-keyed session hash. Raw events, anonymous sessions and reversible session links expire at the 30-day point and are removed by an hourly cleanup, normally within the following hour. A first-touch source snapshot attached to a submitted enquiry follows that enquiry’s retention period.",
         },
         {
           label: "Access, correction and deletion",
@@ -297,12 +313,14 @@ export const homegroundPrivacyCopy: Record<
       paragraphs: [
         "Trip-brief answers remain in the browser until the traveller deliberately submits the form with one reply contact. Leaving or restarting before submission sends no enquiry to Homeground.",
         "Enquiry processing is separate from marketing consent. Homeground will not use the submitted contact for unrelated marketing without separate permission.",
+        "The visitor can allow or reject analytics and marketing measurement independently and can reopen Privacy choices from the footer. Rejecting optional measurement does not block the planner or enquiry form. Revoking a choice stops future events and clears the related Homeground browser choice where technically possible.",
       ],
       items: [
         "Do not submit the enquiry form.",
         "Ask what personal information is held and request access, correction or deletion after reasonable identity verification.",
         "Restart or leave the trip brief before submission.",
         "Choose either email or WhatsApp for the human reply, and leave the optional departure country or rough budget blank.",
+        "Use necessary functions only, allow analytics without marketing, or later change both optional choices.",
       ],
     },
     contact: {
@@ -316,7 +334,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
-      "This notice covers Homeground’s current trip brief and enquiry service with email or WhatsApp reply. It does not provide marketing consent or enable AI chat or non-essential browser-behaviour analytics.",
+      "This notice covers Homeground’s trip brief, enquiry service and optional consent-based website measurement. Submitting an enquiry does not provide unrelated marketing consent, and AI chat is not enabled.",
   },
   zh: {
     htmlLang: "zh-Hans",
@@ -344,7 +362,7 @@ export const homegroundPrivacyCopy: Record<
         "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
         "Homeground 控制的网站咨询记录会在保存满 12 个月时删除。如果客户关系或法律义务确实要求保留记录，只把必要记录另行放在相应记录体系并按其规则保留；网站副本不会因此保存更久。之后的邮件或 WhatsApp 对话适用各自服务与业务记录规则。",
         "经过密钥哈希的标识只用于 24 小时限流窗口；超过 24 小时后，通常会在下一次每分钟清理任务运行时删除。",
-        "完整旅行简报表单会保存邮箱或 WhatsApp 号码中的一种；首页快速留邮箱只保存所填邮箱。打开首页 WhatsApp 或 Messenger 直达链接，不会向 Homeground 网站提交信息。非必要的浏览器行为统计和 AI 聊天仍处于关闭状态。",
+        "完整旅行简报表单会保存邮箱或 WhatsApp 号码中的一种；首页快速留邮箱只保存所填邮箱。访客未主动允许相应选项时，可选分析统计与营销衡量保持关闭；AI 聊天仍未启用。",
       ],
     },
     hero: {
@@ -353,7 +371,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 7 月 26 日",
+      reviewedValue: "2026 年 7 月 31 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -362,8 +380,10 @@ export const homegroundPrivacyCopy: Record<
         "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家、地区或每人大致预算。只有保存成功后，网页才会显示已保存。",
         "首页“只留邮箱”只发送所填邮箱、页面语言、固定的语言版提交页面代码，以及可靠提交和限流所需的有限技术记录；不会收集路线、同行者资料、日期、目的地、预算或自由文本。只有 Supabase 确认保存后，页面才会显示成功。",
         "首页 WhatsApp 与 Messenger 是直接跳转到外部服务的链接。打开链接不会在 Homeground 网站保存访客电话号码或消息，也不会被记作已提交咨询；访客随后主动发送消息时，该对话由 WhatsApp 或 Facebook 与 Meta 依据其自身条款和基础设施处理。",
-        "当前表单版本不会把 UTM、广告标识或其他网址活动标签复制到请求中。系统只用一个固定代码记录是哪个语言版本的 Homeground 表单接收了提交；它不代表首次来源或流量来源。",
-        "获授权的工作人员可查看已保存结构化旅行选择的受限计数，用于改进旅行简报流程和旅行信息。这些统计不包含联系方式、自由文本、单条咨询、来源判断或后续邮件与 WhatsApp 活动。",
+        "访客允许分析统计后，Homeground 会创建临时匿名浏览器会话令牌；事件服务会先签发短时有效的签名凭据，没有凭据或凭据过期的事件请求会被拒绝。只有进入链接带有 Homeground 签名的 UTM 来源、媒介、活动和内容代码时，才会记录有限的首次来源；未签名、被修改或无法识别的 UTM 一律保留为“未知”。网站事件记录不保存完整来源网址、原始 IP、User-Agent、广告点击标识、联系方式或旅行自由文本。",
+        "获得分析许可后，Homeground 可记录页面浏览及少量固定动作，例如打开联系区域、开始填写快速邮箱、点击 Email、WhatsApp 或 Messenger。点击只说明相应入口被打开，不证明消息已经发出，也不代表已经预订。",
+        "同一浏览器随后提交咨询时，已保存的首次来源标签可附在该咨询上，以判断哪一页或哪条外部内容带来咨询。没有会话或来源时，咨询仍会正常保存；未知来源不会被猜测或分摊。",
+        "获授权的工作人员可查看受限汇总计数；只有当 30 天窗口至少包含 5 个符合展示边界且未关联询盘的匿名会话时，后台才会显示精确到天、且不含逐会话点击或事件时间线的近期会话摘要。联系方式、旅行答案与消息内容不会进入分析事件，也不会发送给 Google Analytics 或 Meta Pixel。",
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
         "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
@@ -375,7 +395,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "目的和字段",
       title: "只收集当前咨询需要的信息",
       intro:
-        "访客可以先在浏览器中准备结构化旅行答案。只有主动提交咨询时，以下几类信息才会发送给 Homeground。",
+        "访客可以先在浏览器中准备结构化旅行答案。咨询字段只在主动提交时发送；下列网站衡量字段仅在访客允许相应可选功能后使用。",
       items: [
         {
           name: "旅行需求",
@@ -406,6 +426,13 @@ export const homegroundPrivacyCopy: Record<
           stage: "咨询服务",
           purpose:
             "公开咨询编号、时间、表单版本、需求修订、固定的语言版提交页面代码和有限的防滥用信息，用于可靠提交与避免重复；提交页面代码不会被当作流量来源。",
+        },
+        {
+          name: "可选的匿名网站衡量",
+          stage:
+            "浏览器、Homeground 第一方事件服务，以及可选的 Google Analytics 或 Meta Pixel",
+          purpose:
+            "获得许可后，临时会话令牌、短时签名事件凭据、页面路径、语言、由 Homeground 签名的首次活动代码和固定事件代码，可帮助判断哪些页面和联系入口有用；未签名的活动标签保持为“未知”。事件服务不保存姓名、邮箱、电话、旅行答案、消息、原始 IP、User-Agent 或完整来源网址。",
         },
       ],
     },
@@ -449,10 +476,11 @@ export const homegroundPrivacyCopy: Record<
             "同步选定的 Gmail 文件夹和 WhatsApp 对话，让获授权的工作室成员共同处理咨询。SaleSmartly 及其服务商可能依据自身条款和基础设施处理这些信息。",
         },
         {
-          label: "浏览器行为统计与 AI 聊天",
-          value: "关闭",
+          label: "网站衡量",
+          value:
+            "Supabase 第一方事件 · Google Analytics · Meta Pixel（均为可选）",
           detail:
-            "当前网站不收集旅行简报或页面行为事件，不使用第三方营销追踪或 AI 聊天组件；当前表单版本也不会把网址活动标签加入咨询。受限统计只使用已经成功保存的咨询中的结构化选择。",
+            "访客允许相应选项前，任何可选平台都不会收到网站事件。分析许可启用有限的第一方事件和 Google Analytics；营销许可另行启用 Meta Pixel。联系方式、旅行答案与消息不会发送给这些工具。网站不使用 AI 聊天。",
         },
       ],
     },
@@ -491,7 +519,13 @@ export const homegroundPrivacyCopy: Record<
           label: "限流数据保留",
           value: "24 小时限流窗口 · 过期后定时删除",
           detail:
-            "系统不保存原始 IP，只保存使用秘密密钥生成的哈希。每分钟运行的任务会删除超过 24 小时的限流桶，通常在下一次清理时完成。",
+            "系统按新接受的事件数（不是 HTTP 请求数）同时执行浏览器会话、客户端 IP 和全站限流；不保存原始 IP 或浏览器令牌，只保存使用秘密密钥生成的哈希。每分钟运行的任务会删除超过 24 小时的限流桶，通常在下一次清理时完成。",
+        },
+        {
+          label: "匿名网站事件保留",
+          value: "原始事件与匿名会话 · 30 天滚动窗口",
+          detail:
+            "浏览器令牌只会在访客允许分析后保存在会话存储中；服务器只保存使用秘密密钥生成的会话哈希。原始事件、匿名会话和可还原的会话关联会在满 30 天时过期，并由每小时清理任务删除，通常在随后一小时内完成。随已提交咨询保存的首次来源快照适用该咨询的保留期。",
         },
         {
           label: "查询、更正与删除",
@@ -507,12 +541,14 @@ export const homegroundPrivacyCopy: Record<
       paragraphs: [
         "旅行简报答案会留在浏览器中，直到访客主动填写一种回复联系方式并提交。提交前离开或重新开始，不会向 Homeground 发送咨询。",
         "处理当前咨询与营销许可相互独立。未经单独同意，Homeground 不会把提交的联系方式用于无关营销。",
+        "访客可以分别允许或拒绝分析统计和营销衡量，并可随时从页脚重新打开“隐私选择”。拒绝可选衡量不会阻止使用规划器或提交咨询；撤回后会停止未来事件，并在技术允许范围内清理相关浏览器数据。",
       ],
       items: [
         "选择不提交咨询表单。",
         "在合理核验身份后，查询已保存的信息并申请访问、更正或删除。",
         "提交前重新开始或离开旅行简报。",
         "选择邮箱或 WhatsApp 接收人工回复，并可不填写出发国家、地区或大致预算。",
+        "只使用必要功能、只允许分析而不允许营销，或稍后修改两个可选设置。",
       ],
     },
     contact: {
@@ -526,7 +562,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
-      "本说明适用于 Homeground 当前的旅行简报，以及通过邮箱或 WhatsApp 回复的咨询服务；不构成营销许可，也不启用 AI 聊天或非必要的浏览器行为统计。",
+      "本说明适用于 Homeground 的旅行简报、咨询服务和基于选择的可选网站衡量。提交咨询不代表同意无关营销，网站也未启用 AI 聊天。",
   },
   ko: {
     htmlLang: "ko",
@@ -555,7 +591,7 @@ export const homegroundPrivacyCopy: Record<
         "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
         "Homeground가 관리하는 웹사이트 문의 기록은 저장 후 12개월 안에 삭제합니다. 고객 관계나 법적 의무 때문에 기록이 필요한 경우에는 필요한 기록만 별도 보관 기준에 따라 보관하며 웹사이트 사본을 더 오래 두지 않습니다. 이후 이메일 또는 WhatsApp 대화에는 각 서비스와 업무 기록 기준이 적용됩니다.",
         "비밀 키로 해시한 식별자는 24시간 속도 제한 창에만 사용하며 24시간이 지나면 일반적으로 다음 1분 주기 정리 작업에서 삭제합니다.",
-        "전체 여행 브리프 양식은 이메일 주소 또는 WhatsApp 번호 중 하나를 저장합니다. 홈페이지의 간단 이메일 옵션은 입력한 이메일만 저장하며, 홈페이지 WhatsApp 또는 Messenger 링크를 여는 것만으로는 Homeground 웹사이트에 정보가 제출되지 않습니다. 필수적이지 않은 브라우저 행동 분석과 AI 채팅은 계속 사용하지 않습니다.",
+        "전체 여행 브리프 양식은 이메일 주소 또는 WhatsApp 번호 중 하나를 저장하고 홈페이지의 간단 이메일 옵션은 입력한 이메일만 저장합니다. 방문자가 해당 선택을 허용하지 않으면 선택적 분석 및 마케팅 측정은 꺼진 상태로 유지되며 AI 채팅은 사용하지 않습니다.",
       ],
     },
     hero: {
@@ -564,7 +600,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 7월 26일",
+      reviewedValue: "2026년 7월 31일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -573,8 +609,10 @@ export const homegroundPrivacyCopy: Record<
         "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
         "홈페이지의 간단 이메일 옵션은 입력한 이메일 주소, 페이지 언어, 고정된 언어별 제출 화면 번호와 안정적인 제출 및 속도 제한에 필요한 최소한의 기술 기록만 전송합니다. 동선, 여행자 정보, 날짜, 목적지, 예산 또는 자유 입력 문구는 수집하지 않으며 Supabase가 저장을 확인한 뒤에만 성공을 표시합니다.",
         "홈페이지의 WhatsApp 및 Messenger 옵션은 외부 서비스로 바로 이동하는 링크입니다. 링크를 여는 것만으로는 Homeground 웹사이트가 방문자의 전화번호나 메시지를 저장하지 않으며 제출된 문의로 처리하지 않습니다. 이후 방문자가 메시지를 보내면 WhatsApp 또는 Facebook과 Meta가 자체 약관과 인프라에 따라 대화를 처리합니다.",
-        "현재 양식 버전은 UTM, 광고 식별자 또는 다른 URL 캠페인 표지를 문의에 복사하지 않습니다. 고정 번호는 어느 언어의 Homeground 양식이 제출을 접수했는지만 기록하며 최초 접점이나 유입 출처를 의미하지 않습니다.",
-        "권한 있는 담당자는 여행 브리프 흐름과 여행 정보를 개선하기 위해 저장된 구조화 여행 선택의 제한된 집계를 볼 수 있습니다. 이 요약에는 연락처, 자유 입력 문구, 개별 문의, 유입 출처 또는 이후 이메일·WhatsApp 활동이 포함되지 않습니다.",
+        "방문자가 분석을 허용하면 Homeground는 임시 익명 브라우저 세션 토큰을 만듭니다. 이벤트 서비스는 먼저 짧은 유효기간의 서명된 자격 증명을 발급하며 자격 증명이 없거나 만료된 이벤트 요청은 거부합니다. 첫 유입 링크에 Homeground가 서명한 UTM 소스·매체·캠페인·콘텐츠 코드가 있을 때만 제한된 유입 정보를 기록하고, 서명이 없거나 변경되었거나 인식되지 않는 UTM 값은 ‘알 수 없음’으로 둡니다. 웹사이트 이벤트에는 전체 리퍼러 URL, 원본 IP, User-Agent, 광고 클릭 식별자, 연락처 또는 자유 입력 여행 답변을 저장하지 않습니다.",
+        "분석 허용 후에는 페이지 조회와 연락 영역 열기, 간단 이메일 입력 시작, Email·WhatsApp·Messenger 클릭처럼 고정된 소수의 동작을 기록할 수 있습니다. 클릭은 해당 옵션을 열었다는 뜻일 뿐 메시지 전송이나 예약 완료를 증명하지 않습니다.",
+        "같은 브라우저에서 나중에 문의를 제출하면 저장된 첫 유입 표지를 문의에 연결해 어떤 페이지나 외부 게시물이 문의로 이어졌는지 확인할 수 있습니다. 세션이나 유입 정보가 없어도 문의는 정상 저장되며 알 수 없는 유입은 추정하거나 배분하지 않습니다.",
+        "권한 있는 담당자는 제한된 집계 수치를 볼 수 있습니다. 최근 30일 창에 표시 기준을 충족하고 문의와 연결되지 않은 익명 세션이 5개 이상 있을 때만 날짜 단위의 최근 세션 요약이 표시되며 세션별 클릭 또는 이벤트 타임라인은 포함하지 않습니다. 연락처, 여행 답변 및 메시지 내용은 분석 이벤트에 포함하지 않고 Google Analytics 또는 Meta Pixel로 보내지 않습니다.",
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
         "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
@@ -586,7 +624,7 @@ export const homegroundPrivacyCopy: Record<
       eyebrow: "목적과 항목",
       title: "현재 문의에 필요한 정보만",
       intro:
-        "구조화된 여행 답변은 제출 전에 브라우저에서 먼저 준비할 수 있습니다. 여행자가 문의를 직접 보낸 경우에만 다음 정보가 Homeground에 전달됩니다.",
+        "구조화된 여행 답변은 제출 전에 브라우저에서 준비할 수 있습니다. 문의 항목은 직접 제출할 때만 전송되며 아래 웹사이트 측정 항목은 해당 선택 기능을 허용한 뒤에만 사용합니다.",
       items: [
         {
           name: "여행 요청서",
@@ -621,6 +659,13 @@ export const homegroundPrivacyCopy: Record<
           stage: "문의 서비스",
           purpose:
             "공개 문의 번호, 시간, 양식 버전, 요청서 수정 정보, 고정된 언어별 제출 화면 번호와 제한된 악용 방지 데이터로 안정적인 제출과 중복 방지를 지원합니다. 제출 화면 번호는 유입 출처로 취급하지 않습니다.",
+        },
+        {
+          name: "선택적 익명 웹사이트 측정",
+          stage:
+            "브라우저, Homeground 퍼스트파티 이벤트 서비스 및 선택적 Google Analytics 또는 Meta Pixel",
+          purpose:
+            "허용 후 임시 세션 토큰, 짧은 유효기간의 서명된 이벤트 자격 증명, 페이지 경로, 언어, Homeground가 서명한 첫 캠페인 코드와 고정 이벤트 코드는 유용한 페이지와 연락 시도를 이해하는 데 사용됩니다. 서명되지 않은 캠페인 표지는 ‘알 수 없음’으로 둡니다. 이벤트 서비스는 이름, 이메일, 전화번호, 여행 답변, 메시지, 원본 IP, User-Agent 또는 전체 리퍼러 URL을 저장하지 않습니다.",
         },
       ],
     },
@@ -666,10 +711,11 @@ export const homegroundPrivacyCopy: Record<
             "선택한 Gmail 폴더와 WhatsApp 대화를 동기화하여 권한 있는 스튜디오 구성원이 함께 문의를 처리할 수 있게 합니다. SaleSmartly와 그 서비스 제공업체는 자체 약관과 인프라에 따라 이 정보를 처리할 수 있습니다.",
         },
         {
-          label: "브라우저 행동 분석 및 AI 채팅",
-          value: "사용 안 함",
+          label: "웹사이트 측정",
+          value:
+            "Supabase 퍼스트파티 이벤트 · Google Analytics · Meta Pixel(선택)",
           detail:
-            "현재 사이트는 여행 브리프 또는 페이지 행동 기록을 수집하지 않고 제3자 마케팅 추적이나 AI 채팅 위젯을 사용하지 않습니다. 현재 양식 버전은 URL 캠페인 표지를 문의에 넣지 않습니다. 제한된 요약은 저장에 성공한 문의의 구조화 선택만 사용합니다.",
+            "방문자가 해당 선택을 허용하기 전에는 어떤 선택적 서비스에도 웹사이트 이벤트를 보내지 않습니다. 분석 허용은 제한된 퍼스트파티 이벤트와 Google Analytics를, 마케팅 허용은 별도로 Meta Pixel을 사용합니다. 연락처, 여행 답변 및 메시지는 이 도구들로 보내지 않으며 AI 채팅도 사용하지 않습니다.",
         },
       ],
     },
@@ -708,7 +754,13 @@ export const homegroundPrivacyCopy: Record<
           label: "속도 제한 정보 보관",
           value: "24시간 제한 창 · 만료 후 예약 삭제",
           detail:
-            "원본 IP 주소는 저장하지 않고 비밀 키로 생성한 해시만 저장합니다. 1분마다 실행되는 작업이 24시간이 지난 버킷을 삭제하므로 일반적으로 다음 정리 때 삭제됩니다.",
+            "새로 수락된 이벤트 수(HTTP 요청 수가 아님)를 기준으로 브라우저 세션, 클라이언트 IP 및 사이트 전체 제한을 동시에 적용합니다. 원본 IP나 브라우저 토큰은 저장하지 않고 비밀 키로 생성한 해시만 저장합니다. 1분마다 실행되는 작업이 24시간이 지난 버킷을 삭제하므로 일반적으로 다음 정리 때 삭제됩니다.",
+        },
+        {
+          label: "익명 웹사이트 이벤트 보관",
+          value: "원본 이벤트와 익명 세션 · 30일 이동식 보관 기간",
+          detail:
+            "브라우저 토큰은 분석을 허용한 뒤 세션 저장소에만 보관하며 서버에는 비밀 키로 만든 세션 해시만 저장합니다. 원본 이벤트, 익명 세션 및 되돌릴 수 있는 세션 연결은 30일 시점에 만료되며 매시간 실행되는 정리 작업으로 일반적으로 그다음 한 시간 안에 삭제됩니다. 제출된 문의에 붙은 첫 유입 스냅샷은 문의 보관 기간을 따릅니다.",
         },
         {
           label: "열람·수정·삭제",
@@ -724,12 +776,14 @@ export const homegroundPrivacyCopy: Record<
       paragraphs: [
         "여행 브리프 답변은 여행자가 한 가지 답변 연락처를 입력하고 직접 제출할 때까지 브라우저에만 남습니다. 제출 전에 나가거나 다시 시작하면 Homeground에 문의가 전송되지 않습니다.",
         "현재 문의 처리와 마케팅 동의는 별개입니다. 별도 동의 없이 제출한 연락처를 관련 없는 마케팅에 사용하지 않습니다.",
+        "방문자는 분석과 마케팅 측정을 각각 허용하거나 거부할 수 있으며 바닥글의 개인정보 선택에서 언제든 다시 변경할 수 있습니다. 선택적 측정을 거부해도 플래너와 문의 양식을 사용할 수 있고, 동의를 철회하면 이후 이벤트를 중단하고 기술적으로 가능한 관련 브라우저 데이터를 정리합니다.",
       ],
       items: [
         "문의 양식을 제출하지 않을 수 있습니다.",
         "합리적인 본인 확인 후 보관 정보의 열람, 수정 또는 삭제를 요청할 수 있습니다.",
         "제출 전에 여행 브리프를 다시 시작하거나 페이지를 나갈 수 있습니다.",
         "이메일 또는 WhatsApp으로 사람의 답장을 받도록 선택하고 출발 국가, 지역 또는 대략적인 예산은 비워 둘 수 있습니다.",
+        "필수 기능만 사용하거나 마케팅 없이 분석만 허용하거나 나중에 두 선택을 변경할 수 있습니다.",
       ],
     },
     contact: {
@@ -743,7 +797,7 @@ export const homegroundPrivacyCopy: Record<
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
-      "이 안내는 Homeground의 현재 여행 브리프와 이메일 또는 WhatsApp 답변 문의 서비스에 적용됩니다. 마케팅 동의가 아니며 AI 채팅이나 필수적이지 않은 브라우저 행동 분석을 사용하지 않습니다.",
+      "이 안내는 Homeground 여행 브리프, 문의 서비스 및 선택 동의 기반 웹사이트 측정에 적용됩니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅은 사용하지 않습니다.",
   },
 };
 

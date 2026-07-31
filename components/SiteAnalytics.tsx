@@ -1,55 +1,127 @@
 "use client";
 
-import Script from "next/script";
-import { useEffect } from "react";
-import { GA_MEASUREMENT_ID, captureEntryAttribution } from "../lib/analytics";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import {
+  ANALYTICS_ENABLED,
+  GA_MEASUREMENT_ID,
+  META_PIXEL_ID,
+  captureEntryAttribution,
+  clearAnalyticsSessionState,
+  disableGoogleAnalytics,
+  disableMetaPixel,
+  initializeGoogleAnalytics,
+  initializeMetaPixel,
+  removeAttributionParametersFromAddressBar,
+  trackPageView,
+} from "../lib/analytics";
+import {
+  analyticsConsentChangedEventName,
+  readAnalyticsConsent,
+  type AnalyticsConsentPreferences,
+} from "../lib/analyticsConsent";
+import type { HomegroundLocale } from "../lib/homegroundI18n";
 
-/**
- * HOLD — analytics collection is switched off pending a consent decision.
- *
- * The published privacy notice states, in all three languages, that the site
- * "does not collect planner or page-behaviour events and does not use
- * third-party marketing tracking". That statement was true while the GA script
- * was missing. Loading GA again made the site contradict its own notice for
- * every visitor, so collection is disabled until one of two things happens:
- *
- *   a) a consent mechanism lands (Google Consent Mode, default denied, with a
- *      visible choice), and the notice is rewritten to match; or
- *   b) the owner decides to rewrite the notice and accept unconditional
- *      collection where that is lawful for the audience.
- *
- * Everything else stays wired: lib/analytics only reaches the network when
- * `gtag` exists, and with this off it does not, so no event leaves the browser.
- * Flipping this to true is the only step needed to resume — but it must not be
- * flipped before the notice and the behaviour agree.
- *
- * See supabase/tests/analytics-privacy-consistency.test.mjs, which fails if
- * this is enabled while the notice still denies collection.
- */
-const ANALYTICS_ENABLED = false;
+const googleScriptId = "homeground-ga4-script";
+const metaScriptId = "homeground-meta-pixel-script";
 
-export function SiteAnalytics() {
+function loadExternalScript(id: string, source: string) {
+  if (document.getElementById(id)) return;
+  const script = document.createElement("script");
+  script.id = id;
+  script.async = true;
+  script.src = source;
+  document.head.appendChild(script);
+}
+
+function removeExternalScript(id: string) {
+  document.getElementById(id)?.remove();
+}
+
+export function SiteAnalytics({
+  locale,
+}: {
+  locale: HomegroundLocale;
+}) {
+  const pathname = usePathname();
+  const [preferences, setPreferences] = useState<
+    AnalyticsConsentPreferences | null | undefined
+  >(undefined);
+  const lastTrackedPathRef = useRef("");
+
   useEffect(() => {
-    if (!ANALYTICS_ENABLED) return;
-    captureEntryAttribution();
+    const refreshPreferences = () => {
+      setPreferences(readAnalyticsConsent());
+    };
+    refreshPreferences();
+    window.addEventListener(
+      analyticsConsentChangedEventName,
+      refreshPreferences,
+    );
+    return () => {
+      window.removeEventListener(
+        analyticsConsentChangedEventName,
+        refreshPreferences,
+      );
+    };
   }, []);
 
-  if (!ANALYTICS_ENABLED) return null;
+  useEffect(() => {
+    if (!ANALYTICS_ENABLED || preferences === undefined) return;
 
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
-        `}
-      </Script>
-    </>
-  );
+    if (preferences?.analytics) {
+      captureEntryAttribution();
+      removeAttributionParametersFromAddressBar();
+      if (initializeGoogleAnalytics()) {
+        loadExternalScript(
+          googleScriptId,
+          `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
+            GA_MEASUREMENT_ID,
+          )}`,
+        );
+      }
+    } else {
+      disableGoogleAnalytics();
+      clearAnalyticsSessionState();
+      removeExternalScript(googleScriptId);
+    }
+
+    if (preferences?.marketing) {
+      // Meta reads the current page URL. Remove campaign query values before
+      // its script loads even when the visitor allowed marketing but not
+      // Homeground's first-party analytics.
+      removeAttributionParametersFromAddressBar();
+      if (initializeMetaPixel()) {
+        loadExternalScript(
+          metaScriptId,
+          "https://connect.facebook.net/en_US/fbevents.js",
+        );
+      }
+    } else {
+      disableMetaPixel();
+      removeExternalScript(metaScriptId);
+    }
+  }, [preferences?.analytics, preferences?.marketing, preferences]);
+
+  useEffect(() => {
+    const measurementAllowed = Boolean(
+      preferences?.analytics || preferences?.marketing,
+    );
+    if (!ANALYTICS_ENABLED || !measurementAllowed || !pathname) {
+      if (!measurementAllowed) lastTrackedPathRef.current = "";
+      return;
+    }
+
+    const pageKey = `${locale}:${pathname}`;
+    if (lastTrackedPathRef.current === pageKey) return;
+    lastTrackedPathRef.current = pageKey;
+    trackPageView({ path: pathname, locale });
+  }, [
+    locale,
+    pathname,
+    preferences?.analytics,
+    preferences?.marketing,
+  ]);
+
+  return null;
 }

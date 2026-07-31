@@ -1,0 +1,274 @@
+.banner {
+  align-items: end;
+  background: var(--hg-color-card);
+  border: 1px solid var(--hg-color-line);
+  border-radius: 1rem;
+  bottom: 1rem;
+  box-shadow: 0 1rem 3rem rgb(20 20 19 / 18%);
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  inset-inline: max(1rem, calc((100vw - 72rem) / 2));
+  padding: 1.25rem;
+  position: fixed;
+  z-index: 1200;
+}
+
+.bannerCopy {
+  max-inline-size: 50rem;
+}
+
+.banner h2,
+.dialog h2 {
+  color: var(--hg-color-ink);
+  font-family: var(--hg-font-editorial);
+  font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.banner p,
+.dialog p,
+.choiceBody {
+  color: var(--hg-color-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.banner p {
+  margin: 0.45rem 0 0.35rem;
+}
+
+.banner a,
+.dialog a {
+  color: var(--hg-color-dark-rust);
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-underline-offset: 0.2rem;
+}
+
+.bannerActions,
+.dialogActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.textButton,
+.closeButton {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 720;
+  justify-content: center;
+  min-block-size: 2.75rem;
+  padding: 0.7rem 1rem;
+}
+
+.primaryButton {
+  background: var(--hg-color-ink);
+  border: 1px solid var(--hg-color-ink);
+  color: var(--hg-color-on-dark);
+}
+
+.secondaryButton {
+  background: transparent;
+  border: 1px solid var(--hg-color-line);
+  color: var(--hg-color-ink);
+}
+
+.textButton,
+.closeButton {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--hg-color-dark-rust);
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  background: var(--hg-color-dark-rust);
+  border-color: var(--hg-color-dark-rust);
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  border-color: var(--hg-color-ink);
+}
+
+.textButton:hover,
+.textButton:focus-visible,
+.closeButton:hover,
+.closeButton:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.backdrop {
+  align-items: center;
+  background: rgb(20 20 19 / 58%);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 1rem;
+  position: fixed;
+  z-index: 1300;
+}
+
+.dialog {
+  background: var(--hg-color-card);
+  border-radius: 1.15rem;
+  box-shadow: 0 1.5rem 4rem rgb(20 20 19 / 28%);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  max-block-size: calc(100dvh - 2rem);
+  max-inline-size: 46rem;
+  overflow: hidden;
+  padding: clamp(1.15rem, 3vw, 1.75rem);
+  width: 100%;
+}
+
+.dialogHeader {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.dialogHeader p {
+  margin: 0.55rem 0 0;
+  max-inline-size: 60ch;
+}
+
+.closeButton {
+  min-inline-size: 2.75rem;
+  padding-inline: 0.65rem;
+}
+
+.choiceList {
+  border-block: 1px solid var(--hg-color-line);
+  display: block;
+  margin-block: 1.35rem;
+  min-block-size: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-inline-end: 1rem;
+  scrollbar-gutter: stable;
+}
+
+.choice {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-block-size: 5.5rem;
+  padding-block: 1rem;
+}
+
+.choice + .choice {
+  border-block-start: 1px solid var(--hg-color-line);
+}
+
+.choice strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.choice p {
+  margin: 0.25rem 0 0;
+}
+
+.choiceBody {
+  display: block;
+  margin-block-start: 0.25rem;
+}
+
+.alwaysOn,
+.switchControl {
+  color: var(--hg-color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.alwaysOn {
+  background: var(--hg-color-soft);
+  border-radius: 999px;
+  padding: 0.42rem 0.7rem;
+}
+
+.switchControl {
+  align-items: center;
+  display: flex;
+  gap: 0.65rem;
+}
+
+.switchControl input {
+  accent-color: var(--hg-color-dark-rust);
+  block-size: 1.45rem;
+  inline-size: 1.45rem;
+  margin: 0;
+}
+
+.dialogActions {
+  justify-content: space-between;
+}
+
+@media (max-width: 48rem) {
+  .banner {
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bannerActions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .textButton {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 32rem) {
+  .banner {
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    bottom: 0;
+    inset-inline: 0;
+  }
+
+  .bannerActions,
+  .choice {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .closeButton {
+    align-self: start;
+    min-inline-size: auto;
+    padding-inline: 0.7rem;
+  }
+
+  .switchControl {
+    justify-content: space-between;
+  }
+
+  .dialogActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .dialogActions .primaryButton {
+    inline-size: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner,
+  .dialog {
+    scroll-behavior: auto;
+  }
+}
