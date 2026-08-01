@@ -843,7 +843,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openGraphTitle: "Homeground China｜联系中国旅行规划师",
     },
     skipLink: "跳到主要内容",
-    brandTagline: "独立中国旅行规划",
+    brandTagline: "按你的方式，游中国。一路有我们。",
     navigation: {
       primaryLabel: "主导航",
       mobileLabel: "移动端导航",
@@ -1328,7 +1328,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       openGraphTitle: "Homeground China | 중국 여행 플래너와 상담하기",
     },
     skipLink: "본문으로 바로가기",
-    brandTagline: "독립 중국 여행 플래닝",
+    brandTagline: "중국, 나만의 방식으로. 든든하게 함께합니다.",
     navigation: {
       primaryLabel: "주요 메뉴",
       mobileLabel: "모바일 메뉴",

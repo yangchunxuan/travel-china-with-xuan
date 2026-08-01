@@ -3,7 +3,7 @@ import type { TenDayGuideCopy } from "./tenDayGuideCopy.types";
 export const tenDayGuideKorean: TenDayGuideCopy = {
   htmlLang: "ko",
   brandAriaLabel: "Homeground China 홈",
-  brandTagline: "독립 중국 여행 플래닝",
+  brandTagline: "중국, 나만의 방식으로. 든든하게 함께합니다.",
   skipLink: "가이드 본문으로 바로가기",
   navigation: {
     primaryLabel: "주요 메뉴",

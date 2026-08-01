@@ -3,7 +3,7 @@ import type { TenDayGuideCopy } from "./tenDayGuideCopy.types";
 export const tenDayGuideChinese: TenDayGuideCopy = {
   htmlLang: "zh-Hans",
   brandAriaLabel: "Homeground China 首页",
-  brandTagline: "独立中国旅行规划",
+  brandTagline: "按你的方式，游中国。一路有我们。",
   skipLink: "跳到指南正文",
   navigation: {
     primaryLabel: "主导航",
