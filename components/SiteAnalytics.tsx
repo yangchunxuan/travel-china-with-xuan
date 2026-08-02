@@ -47,7 +47,10 @@ export function SiteAnalytics({
   const [preferences, setPreferences] = useState<
     AnalyticsConsentPreferences | null | undefined
   >(undefined);
-  const lastTrackedPathRef = useRef("");
+  const lastTrackedPathRef = useRef({
+    analytics: "",
+    marketing: "",
+  });
 
   useEffect(() => {
     const refreshPreferences = () => {
@@ -104,18 +107,41 @@ export function SiteAnalytics({
   }, [preferences?.analytics, preferences?.marketing, preferences]);
 
   useEffect(() => {
-    const measurementAllowed = Boolean(
-      preferences?.analytics || preferences?.marketing,
-    );
-    if (!ANALYTICS_ENABLED || !measurementAllowed || !pathname) {
-      if (!measurementAllowed) lastTrackedPathRef.current = "";
+    const analyticsAllowed = preferences?.analytics === true;
+    const marketingAllowed = preferences?.marketing === true;
+    if (!analyticsAllowed) {
+      lastTrackedPathRef.current.analytics = "";
+    }
+    if (!marketingAllowed) {
+      lastTrackedPathRef.current.marketing = "";
+    }
+
+    if (
+      !ANALYTICS_ENABLED ||
+      (!analyticsAllowed && !marketingAllowed) ||
+      !pathname
+    ) {
       return;
     }
 
     const pageKey = `${locale}:${pathname}`;
-    if (lastTrackedPathRef.current === pageKey) return;
-    lastTrackedPathRef.current = pageKey;
-    trackPageView({ path: pathname, locale });
+    const destinations = {
+      analytics:
+        analyticsAllowed &&
+        lastTrackedPathRef.current.analytics !== pageKey,
+      marketing:
+        marketingAllowed &&
+        lastTrackedPathRef.current.marketing !== pageKey,
+    };
+    if (!destinations.analytics && !destinations.marketing) return;
+
+    if (destinations.analytics) {
+      lastTrackedPathRef.current.analytics = pageKey;
+    }
+    if (destinations.marketing) {
+      lastTrackedPathRef.current.marketing = pageKey;
+    }
+    trackPageView({ path: pathname, locale, destinations });
   }, [
     locale,
     pathname,
