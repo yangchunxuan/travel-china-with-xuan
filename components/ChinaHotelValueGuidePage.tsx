@@ -164,16 +164,20 @@ export function ChinaHotelValueGuidePage({
         <header className={styles.hero}>
           <div className={styles.heroCopy}>
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb.guides}>
+              {/* Separators lead the item they belong to, so a wrap can never
+                  strand a slash at the end of a line. */}
               <ol>
                 <li>
                   <Link href={copy.homePath}>{copy.breadcrumb.home}</Link>
                 </li>
-                <li aria-hidden="true">/</li>
                 <li>
+                  <span aria-hidden="true">/</span>
                   <Link href={copy.guidesPath}>{copy.breadcrumb.guides}</Link>
                 </li>
-                <li aria-hidden="true">/</li>
-                <li aria-current="page">{copy.breadcrumb.current}</li>
+                <li aria-current="page">
+                  <span aria-hidden="true">/</span>
+                  {copy.breadcrumb.current}
+                </li>
               </ol>
             </nav>
 
@@ -391,8 +395,12 @@ export function ChinaHotelValueGuidePage({
                 {copy.stayTypes.rows.map((row) => (
                   <tr key={row.type}>
                     <th scope="row">{row.type}</th>
-                    <td>{row.why}</td>
-                    <td>{row.watch}</td>
+                    {/* data-label drives the stacked mobile layout, where the
+                        column headers are not visible above each value. */}
+                    <td data-label={copy.stayTypes.columns.why}>{row.why}</td>
+                    <td data-label={copy.stayTypes.columns.watch}>
+                      {row.watch}
+                    </td>
                   </tr>
                 ))}
               </tbody>

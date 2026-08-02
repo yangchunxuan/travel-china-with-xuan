@@ -854,7 +854,7 @@ const ko: ChinaHotelValueCopy = {
         sourceIndex: 0,
       },
       {
-        value: "371.7 → 360.2위안",
+        value: "371.7 → 360.2 위안",
         caption:
           "문화여유부 별등급 호텔 표본의 평균 객실 요금, 2024년에서 2025년으로 약 3.1% 하락.",
         sourceIndex: 1,
