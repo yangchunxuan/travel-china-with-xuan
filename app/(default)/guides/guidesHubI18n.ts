@@ -96,6 +96,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       evenings: "Evenings",
       "trip-planning": "Trip planning",
       "on-the-ground": "On the ground",
+      accommodation: "Accommodation",
     },
     destinationLabels: {
       china: "China",
@@ -160,6 +161,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       evenings: "夜间安排",
       "trip-planning": "旅行规划",
       "on-the-ground": "一线经验",
+      accommodation: "住宿选择",
     },
     destinationLabels: {
       china: "中国",
@@ -224,6 +226,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       evenings: "저녁 일정",
       "trip-planning": "여행 계획",
       "on-the-ground": "현장 경험",
+      accommodation: "숙소 선택",
     },
     destinationLabels: {
       china: "중국",

@@ -22,6 +22,7 @@ export const guideIds = [
   "china-visa-free-new-zealand-citizens-2026",
   "china-240-hour-visa-free-transit-route-check",
   "do-singaporeans-need-visa-china",
+  "why-are-hotels-in-china-so-cheap",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -41,7 +42,8 @@ export type GuideTopic =
   | "attractions"
   | "evenings"
   | "trip-planning"
-  | "on-the-ground";
+  | "on-the-ground"
+  | "accommodation";
 
 export type GuideDestination =
   | "china"
@@ -978,6 +980,68 @@ export const guideRegistry = [
           "장자제 국가삼림공원의 짙푸른 계곡 위로 겹겹이 솟은 사암 기둥.",
         navTitle: "싱가포르 여권 중국 무비자 가이드",
         featuredLinkLabel: "30일 무비자 이후의 여행 동선 짜기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "why-are-hotels-in-china-so-cheap",
+    type: "planning",
+    featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
+    format: "decision-guide",
+    topics: ["accommodation", "trip-planning"],
+    destinations: ["china", "zhangjiajie"],
+    cardImagePath:
+      "/images/guides/china-hotel-value/stay-street-evening-card-1200.jpg",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/china-hotel-value/stay-street-evening-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-hotel-value/stay-street-evening-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-08-02",
+    dateModified: "2026-08-02",
+    sourceReviewedDate: "2026-08-02",
+    locales: {
+      en: {
+        path: "/guides/why-are-hotels-in-china-so-cheap/",
+        title: "Why Are Hotels in China So Cheap? Find a Stay That Fits",
+        headline:
+          "Why Are Hotels in China So Cheap—and Which Deals Are Actually Good?",
+        description:
+          "Cheap hotels and guesthouses are easy to find in China. Homeground helps travellers compare location, current value, recent feedback and passport check-in.",
+        heroAlt:
+          "A lantern-lit accommodation and dining street in Zhangjiajie filling with people at dusk.",
+        navTitle: "China accommodation value guide",
+        featuredLinkLabel: "See which cheap stays are actually worth booking",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/why-are-hotels-in-china-so-cheap/",
+        title: "中国的酒店为什么这么便宜？怎么挑到真正合适的住处",
+        headline: "中国的酒店为什么这么便宜？哪些便宜是真的划算",
+        description:
+          "在中国找到便宜的酒店和民宿并不难，难的是判断位置、近期房况、外国护照入住和真正可比的价格。Homeground 帮你把长名单收成几个能用的选择。",
+        heroAlt: "傍晚亮灯的张家界住宿餐饮街区，行人渐多。",
+        navTitle: "中国住宿性价比指南",
+        featuredLinkLabel: "看看哪些便宜的住处真的值得订",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/why-are-hotels-in-china-so-cheap/",
+        title: "중국 호텔은 왜 이렇게 쌀까? 나에게 맞는 숙소 고르기",
+        headline:
+          "중국 호텔은 왜 이렇게 쌀까—그리고 어떤 저가가 진짜 좋은 선택일까",
+        description:
+          "중국에서 싼 호텔과 민박을 찾기는 쉽습니다. 어려운 건 위치, 최근 후기, 외국 여권 체크인, 그리고 진짜 비교 가능한 가격입니다. Homeground가 후보를 좁혀 드립니다.",
+        heroAlt:
+          "해질 무렵 불이 켜진 장자제의 숙소·식당 거리에 사람들이 모여 있다.",
+        navTitle: "중국 숙소 가성비 가이드",
+        featuredLinkLabel: "어떤 저가 숙소가 실제로 예약할 만한지 보기",
         openGraphLocale: "ko_KR",
       },
     },
