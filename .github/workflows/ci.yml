@@ -1,0 +1,79 @@
+name: PR quality checks
+
+# Runs the same quality gates as the deploy workflow, but before a merge
+# rather than after one. It never publishes: no Pages artifact is uploaded, no
+# deployment is created, and no production endpoint is called.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Deliberately NOT the "pages" group used by deploy.yml. That group runs with
+# cancel-in-progress, so sharing it would let a pull request cancel a
+# production deployment that is already running. Each pull request gets its own
+# group instead, so a new push only supersedes the older run for that same
+# pull request.
+concurrency:
+  group: pr-quality-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Test inquiry contract
+        run: npm run test:inquiry
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: Audit production dependencies
+        run: npm audit --omit=dev
+      - name: Build static site
+        run: npm run build
+        env:
+          # Mirrors deploy.yml exactly. Public, build-time values only. Unset or
+          # incomplete values keep the Inquiry handoff fail-closed; never put
+          # server secrets here.
+          NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED }}
+          NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED }}
+          NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL }}
+          NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_BRAND_EMAIL }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_EN: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_EN }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_ZH: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_ZH }}
+          NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_KO: ${{ vars.NEXT_PUBLIC_HOMEGROUND_PRIVACY_NOTICE_URL_KO }}
+          NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_EN }}
+          NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_ZH }}
+          NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO: ${{ vars.NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_KO }}
+          NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED }}
+          NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED }}
+          NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER }}
+          NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL }}
+          NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL }}
+          # Consent-gated analytics. Missing IDs/endpoints keep each destination
+          # off independently; no visitor event is sent before consent.
+          NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED || 'true' }}
+          NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID || 'G-DPGR2SVC0G' }}
+          NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID: ${{ vars.NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID || '1049980710767613' }}
+          NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL || 'https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-traffic-events' }}
+          # Public project identifiers and a publishable key only. Admin
+          # authorization remains server-side (JWT + MFA + UUID allow-list).
+          NEXT_PUBLIC_HOMEGROUND_ADMIN_SUPABASE_URL: https://xbymvlxethfzqcgyoieb.supabase.co
+          NEXT_PUBLIC_HOMEGROUND_ADMIN_SUPABASE_PUBLISHABLE_KEY: sb_publishable_0xCb0Oh_WNZHpeqx7t2P_A_h2iFFOGx
+          NEXT_PUBLIC_HOMEGROUND_ADMIN_INSIGHTS_URL: https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/admin-insights
+          NEXT_PUBLIC_HOMEGROUND_ADMIN_HEALTH_URL: https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/admin-health
+          NEXT_PUBLIC_HOMEGROUND_ADMIN_TRAFFIC_URL: https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/admin-traffic
+      - name: Check ten-day guide export
+        run: npm run check:ten-day-guide-export
+      - name: Check priority indexable exports
+        run: npm run check:indexable-export
