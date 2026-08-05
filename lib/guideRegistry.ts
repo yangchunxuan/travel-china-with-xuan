@@ -21,6 +21,7 @@ export const guideIds = [
   "do-singaporeans-need-visa-china",
   "why-are-hotels-in-china-so-cheap",
   "do-you-need-a-tour-guide-in-china",
+  "how-much-does-a-china-trip-cost",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -1076,6 +1077,65 @@ export const guideRegistry = [
         heroAlt: "중국 허난 용문석굴 암벽에 조각된 역사적인 불교 석상.",
         navTitle: "중국 여행 가이드 선택 안내",
         featuredLinkLabel: "중국 일정 중 실제로 지원이 필요한 날 고르기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
+  {
+    id: "how-much-does-a-china-trip-cost",
+    type: "planning",
+    featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
+    format: "decision-guide",
+    topics: ["trip-planning", "accommodation"],
+    destinations: ["china", "beijing", "xian", "shanghai", "zhangjiajie"],
+    cardImagePath:
+      "/images/guides/china-hotel-value/stay-street-evening-card-1200.jpg",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/china-hotel-value/stay-street-evening-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-hotel-value/stay-street-evening-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-08-05",
+    dateModified: "2026-08-05",
+    sourceReviewedDate: "2026-08-05",
+    locales: {
+      en: {
+        path: "/guides/how-much-does-a-china-trip-cost/",
+        title: "How Much Does a Trip to China Cost? Real 2026 Prices",
+        headline: "How Much Does a Trip to China Cost?",
+        description:
+          "What a 6–10 day, 2–3 city China trip actually costs, using published prices from booking platforms and tour operators, plus official ticket and hotel figures.",
+        heroAlt:
+          "A lantern-lit street of guesthouses and restaurants in Zhangjiajie at dusk.",
+        navTitle: "China trip cost guide",
+        featuredLinkLabel: "See what a multi-city China trip actually costs",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/how-much-does-a-china-trip-cost/",
+        title: "去中国旅行大概多少钱？2026 年真实价格对照",
+        headline: "去中国旅行大概多少钱？",
+        description:
+          "6–10 天、2–3 个城市的中国行程实际要花多少：用预订平台和旅行社的公开报价，加上官方票价与酒店统计。",
+        heroAlt: "傍晚亮灯的张家界住宿餐饮街区。",
+        navTitle: "中国行程费用指南",
+        featuredLinkLabel: "看看一趟多城市中国行程到底多少钱",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/how-much-does-a-china-trip-cost/",
+        title: "중국 여행 비용은 얼마나 들까? 2026년 실제 가격 비교",
+        headline: "중국 여행 비용은 얼마나 들까?",
+        description:
+          "6~10일, 2~3개 도시 중국 여행에 실제로 드는 비용을 예약 플랫폼과 여행사의 공개 가격, 공식 입장권과 호텔 통계로 정리했습니다.",
+        heroAlt: "해질 무렵 불이 켜진 장자제의 숙소·식당 거리.",
+        navTitle: "중국 여행 비용 가이드",
+        featuredLinkLabel: "다도시 중국 여행의 실제 비용 보기",
         openGraphLocale: "ko_KR",
       },
     },
