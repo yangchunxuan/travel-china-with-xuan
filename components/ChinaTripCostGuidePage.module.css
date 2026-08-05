@@ -1,0 +1,820 @@
+.pageRoot {
+  --page-ink: var(--hg-color-ink);
+  --page-muted: var(--hg-color-muted);
+  --page-paper: var(--hg-color-canvas);
+  --page-card: var(--hg-color-card);
+  --page-line: var(--hg-color-line);
+  --page-rust: var(--hg-color-rust);
+  --page-rust-dark: var(--hg-color-dark-rust);
+  --page-soft: var(--hg-color-soft);
+  /* Locale-aware display face: --serif is redefined per html[lang]. */
+  --page-display: var(--serif);
+  --measure: 40rem;
+  background: var(--page-paper);
+  color: var(--page-ink);
+  min-width: 0;
+  overflow: clip;
+}
+
+.pageRoot:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.pageRoot main {
+  scroll-margin-top: 6rem;
+}
+
+.skipLink {
+  background: var(--page-card);
+  border: 2px solid var(--page-rust);
+  color: var(--page-ink);
+  inset-block-start: 0.75rem;
+  inset-inline-start: 1rem;
+  padding: 0.7rem 1rem;
+  position: fixed;
+  transform: translateY(-170%);
+  transition: transform 140ms ease;
+  z-index: 1000;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+/* ------------------------------ Hero ------------------------------ */
+
+.hero {
+  align-items: center;
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.85fr);
+  margin-inline: auto;
+  max-width: 1440px;
+  padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1rem, 4vw, 4.5rem)
+    clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.breadcrumb ol {
+  align-items: center;
+  color: var(--page-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.75rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: var(--page-ink);
+  white-space: normal;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--page-rust-dark);
+  text-decoration: underline;
+}
+
+.eyebrow {
+  align-items: baseline;
+  color: var(--page-rust-dark);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 600;
+  gap: 0.75rem;
+  letter-spacing: 0.09em;
+  margin: 0 0 1.1rem;
+  text-transform: uppercase;
+}
+
+.eyebrowMuted {
+  color: var(--page-muted);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.heroTitle {
+  font-family: var(--page-display);
+  font-size: clamp(2.05rem, 4.4vw, 3.35rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.13;
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.9rem);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.heroLead {
+  color: var(--page-ink);
+  font-size: clamp(1rem, 1.15vw, 1.09rem);
+  line-height: 1.66;
+  margin: 0 0 1.05rem;
+  max-width: var(--measure);
+}
+
+.heroLead:last-child {
+  margin-bottom: 0;
+}
+
+.heroFigure {
+  margin: 0;
+  min-width: 0;
+}
+
+.heroFigure img {
+  block-size: auto;
+  border-radius: 2px;
+  display: block;
+  inline-size: 100%;
+}
+
+.heroFigure figcaption {
+  border-inline-start: 2px solid var(--page-line);
+  color: var(--page-muted);
+  font-size: 0.83rem;
+  line-height: 1.55;
+  margin-block-start: 0.85rem;
+  padding-inline-start: 0.85rem;
+}
+
+/* ---------------------------- Sections ---------------------------- */
+
+.section {
+  margin-inline: auto;
+  max-width: 1440px;
+  padding: clamp(2.75rem, 5.5vw, 4.5rem) clamp(1rem, 4vw, 4.5rem);
+}
+
+.sectionShaded {
+  background: var(--page-soft);
+  box-shadow: 0 0 0 100vmax var(--page-soft);
+  clip-path: inset(0 -100vmax);
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose p {
+  color: var(--page-ink);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.05rem;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-family: var(--page-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.05rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.24;
+  margin: 0 0 1.1rem;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+
+.sectionIntro {
+  color: var(--page-ink);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin: 0 0 1.05rem;
+}
+
+.caveat,
+.closing {
+  color: var(--page-muted) !important;
+  font-size: 0.93rem !important;
+  line-height: 1.65;
+}
+
+/* --------------------------- Price bands -------------------------- */
+
+.bandStrip {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  list-style: none;
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 clamp(1.5rem, 2.5vw, 2rem);
+  padding: 0;
+}
+
+.bandCard {
+  background: var(--page-card);
+  border: 1px solid var(--page-line);
+  border-block-start: 3px solid var(--page-rust);
+  border-radius: 2px;
+  padding: clamp(1.3rem, 2.2vw, 1.75rem);
+}
+
+.bandRange {
+  color: var(--page-ink);
+  font-family: var(--page-display);
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem;
+}
+
+.bandLabel {
+  color: var(--page-rust-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.bandDetail {
+  color: var(--page-muted);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ------------------------------ CTAs ------------------------------ */
+
+.ctaCard {
+  align-items: center;
+  background: var(--page-card);
+  border: 1px solid var(--page-line);
+  border-inline-start: 3px solid var(--page-rust);
+  border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  justify-content: space-between;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.ctaCardCopy {
+  flex: 1 1 26rem;
+  min-width: 0;
+}
+
+.ctaLabel {
+  color: var(--page-rust-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.ctaTitle {
+  font-family: var(--page-display);
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.7rem;
+  max-width: 30ch;
+}
+
+.ctaDetail {
+  color: var(--page-muted);
+  font-size: 0.96rem;
+  line-height: 1.62;
+  margin: 0;
+  max-width: 48ch;
+}
+
+.ctaPrimary {
+  align-items: center;
+  background: var(--page-rust);
+  border: 1px solid var(--page-rust);
+  border-radius: 2px;
+  color: var(--hg-color-on-dark);
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.97rem;
+  font-weight: 600;
+  gap: 0.55rem;
+  padding: 0.85rem 1.45rem;
+  text-decoration: none;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.ctaPrimary:hover,
+.ctaPrimary:focus-visible {
+  background: var(--page-rust-dark);
+  border-color: var(--page-rust-dark);
+}
+
+/* ----------------------------- Tables ----------------------------- */
+
+.tableWrap {
+  margin-block-start: clamp(1.75rem, 3vw, 2.5rem);
+  overflow-x: auto;
+}
+
+.tierTable,
+.groundTable {
+  border-collapse: collapse;
+  inline-size: 100%;
+}
+
+.tierTable {
+  min-inline-size: 52rem;
+}
+
+.groundTable {
+  max-inline-size: 46rem;
+  min-inline-size: 30rem;
+}
+
+.tierTable th,
+.tierTable td,
+.groundTable th,
+.groundTable td {
+  border-block-end: 1px solid var(--page-line);
+  font-size: 0.93rem;
+  line-height: 1.55;
+  padding: 0.9rem 1.1rem 0.9rem 0;
+  text-align: start;
+  vertical-align: top;
+}
+
+.tierTable thead th,
+.groundTable thead th {
+  border-block-end: 1.5px solid var(--page-ink);
+  color: var(--page-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  padding-block-end: 0.7rem;
+  text-transform: uppercase;
+}
+
+.tierTable tbody th,
+.groundTable tbody th {
+  color: var(--page-ink);
+  font-weight: 600;
+}
+
+.tierTable tbody th {
+  inline-size: 18%;
+}
+
+.tierTable tbody td,
+.groundTable tbody td {
+  color: var(--page-muted);
+}
+
+.priceCell {
+  color: var(--page-ink) !important;
+  font-family: var(--page-display);
+  font-size: 1.02rem !important;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --------------------------- Factor list -------------------------- */
+
+.factorList {
+  display: grid;
+  gap: clamp(1.25rem, 2.2vw, 1.75rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 clamp(1.5rem, 2.5vw, 2rem);
+  padding: 0;
+}
+
+.factorItem {
+  align-items: start;
+  border-block-start: 2px solid var(--page-rust);
+  display: flex;
+  gap: 0.95rem;
+  padding-block-start: 1.05rem;
+}
+
+.factorNumber {
+  color: var(--page-rust);
+  font-family: var(--page-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.factorTitle {
+  font-family: var(--page-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 0.5rem;
+}
+
+.factorDetail {
+  color: var(--page-muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* --------------------------- Split cards -------------------------- */
+
+.splitCards {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.splitCard {
+  background: var(--page-card);
+  border: 1px solid var(--page-line);
+  border-radius: 2px;
+  padding: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+.splitCardTitle {
+  font-family: var(--page-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 0.9rem;
+}
+
+.splitCard ul {
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.splitCard li {
+  color: var(--page-ink);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  padding-inline-start: 1.1rem;
+  position: relative;
+}
+
+.splitCard li::before {
+  background: var(--page-rust);
+  block-size: 5px;
+  border-radius: 50%;
+  content: "";
+  inline-size: 5px;
+  inset-block-start: 0.6em;
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+/* --------------------------- Quote block -------------------------- */
+
+.quoteBlock {
+  border-inline-start: 3px solid var(--page-rust);
+  max-width: 52rem;
+  padding-inline-start: clamp(1.1rem, 2.2vw, 1.75rem);
+}
+
+.quoteBlock p {
+  color: var(--page-ink);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.05rem;
+}
+
+.quoteListLabel {
+  font-weight: 600;
+}
+
+.quoteList {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 1.3rem;
+  padding: 0;
+}
+
+.quoteList li {
+  color: var(--page-ink);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  padding-inline-start: 1.1rem;
+  position: relative;
+}
+
+.quoteList li::before {
+  background: var(--page-rust);
+  block-size: 5px;
+  border-radius: 50%;
+  content: "";
+  inline-size: 5px;
+  inset-block-start: 0.6em;
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+.noPromise {
+  color: var(--page-muted) !important;
+  font-size: 0.93rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* ------------------------------ FAQ ------------------------------- */
+
+.faqList {
+  display: grid;
+  margin: clamp(1.5rem, 2.5vw, 2rem) 0 0;
+  max-width: 52rem;
+}
+
+.faqItem {
+  border-block-start: 1px solid var(--page-line);
+  padding-block: 1.35rem;
+}
+
+.faqItem:last-child {
+  border-block-end: 1px solid var(--page-line);
+}
+
+.faqItem dt {
+  font-family: var(--page-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 0.55rem;
+}
+
+.faqItem dd {
+  color: var(--page-muted);
+  font-size: 0.97rem;
+  line-height: 1.66;
+  margin: 0;
+}
+
+/* --------------------------- Final CTA ---------------------------- */
+
+.finalCta {
+  background: var(--page-card);
+  border: 1px solid var(--page-line);
+  border-block-start: 3px solid var(--page-rust);
+  border-radius: 2px;
+  max-width: 52rem;
+  padding: clamp(1.8rem, 3.5vw, 3rem);
+}
+
+.finalCtaTitle {
+  font-family: var(--page-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 0.9rem;
+}
+
+.finalCtaIntro {
+  color: var(--page-ink);
+  font-size: 1rem;
+  line-height: 1.66;
+  margin: 0 0 1.3rem;
+}
+
+.finalCtaLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.7rem;
+  text-transform: uppercase;
+}
+
+.finalCtaList {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0 0 1.3rem;
+  padding: 0;
+}
+
+.finalCtaList li {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  padding-inline-start: 1.1rem;
+  position: relative;
+}
+
+.finalCtaList li::before {
+  background: var(--page-rust);
+  block-size: 5px;
+  border-radius: 50%;
+  content: "";
+  inline-size: 5px;
+  inset-block-start: 0.6em;
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+.finalCtaDetail {
+  color: var(--page-muted);
+  font-size: 0.96rem;
+  line-height: 1.66;
+  margin: 0 0 1.6rem;
+}
+
+/* ----------------------------- Sources ---------------------------- */
+
+.sourcesSection {
+  border-block-start: 1px solid var(--page-line);
+  padding-block-start: clamp(2rem, 3.5vw, 3rem);
+}
+
+.sourcesTitle {
+  color: var(--page-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.sourceList {
+  color: var(--page-muted);
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0 1.2rem;
+  max-width: 52rem;
+  padding-inline-start: 1.2rem;
+}
+
+.sourceList li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.sourceList a {
+  align-items: center;
+  color: var(--page-rust-dark);
+  display: inline-flex;
+  gap: 0.3rem;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.sourceList a:hover,
+.sourceList a:focus-visible {
+  text-decoration: underline;
+}
+
+.sourceNote {
+  color: var(--page-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 52rem;
+}
+
+/* ---------------- CJK label tracking corrections ------------------ */
+
+.pageRoot:lang(zh-CN) .eyebrow,
+.pageRoot:lang(zh-Hans) .eyebrow,
+.pageRoot:lang(ko) .eyebrow,
+.pageRoot:lang(zh-CN) .ctaLabel,
+.pageRoot:lang(zh-Hans) .ctaLabel,
+.pageRoot:lang(ko) .ctaLabel,
+.pageRoot:lang(zh-CN) .bandLabel,
+.pageRoot:lang(zh-Hans) .bandLabel,
+.pageRoot:lang(ko) .bandLabel,
+.pageRoot:lang(zh-CN) .finalCtaLabel,
+.pageRoot:lang(zh-Hans) .finalCtaLabel,
+.pageRoot:lang(ko) .finalCtaLabel {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* --------------------------- Responsive --------------------------- */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroFigure {
+    order: 1;
+  }
+
+  .factorList,
+  .splitCards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .ctaCard {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ctaCardCopy {
+    flex: 0 0 auto;
+  }
+
+  .ctaPrimary {
+    font-size: 0.9rem;
+    gap: 0.45rem;
+    inline-size: 100%;
+    justify-content: center;
+    padding-inline: 1rem;
+    text-align: center;
+  }
+
+  /* Stack both tables so no column is parked off-screen. */
+  .tableWrap {
+    overflow-x: visible;
+  }
+
+  .tierTable,
+  .groundTable {
+    min-inline-size: 0;
+  }
+
+  .tierTable thead,
+  .groundTable thead {
+    block-size: 1px;
+    clip-path: inset(50%);
+    inline-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .tierTable tr,
+  .groundTable tr {
+    border-block-end: 1px solid var(--page-line);
+    display: block;
+    padding-block: 1rem;
+  }
+
+  .tierTable tr:last-child,
+  .groundTable tr:last-child {
+    border-block-end: none;
+  }
+
+  .tierTable tbody th,
+  .tierTable tbody td,
+  .groundTable tbody th,
+  .groundTable tbody td {
+    border-block-end: none;
+    display: block;
+    inline-size: auto;
+    padding: 0;
+  }
+
+  .tierTable tbody th,
+  .groundTable tbody th {
+    font-size: 1.02rem;
+    margin-block-end: 0.6rem;
+  }
+
+  .tierTable tbody td,
+  .groundTable tbody td {
+    margin-block-start: 0.55rem;
+  }
+
+  .tierTable tbody td::before,
+  .groundTable tbody td::before {
+    color: var(--page-muted);
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    margin-block-end: 0.2rem;
+    text-transform: uppercase;
+  }
+
+  .priceCell {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skipLink,
+  .ctaPrimary {
+    transition: none;
+  }
+}
