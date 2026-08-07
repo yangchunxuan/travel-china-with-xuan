@@ -119,6 +119,32 @@ test("measurement scripts are injected only after a stored choice", async () => 
   );
 });
 
+test("page views are deduplicated independently for analytics and marketing", async () => {
+  const analytics = await source("lib/analytics.ts");
+  const siteAnalytics = await source("components/SiteAnalytics.tsx");
+
+  assert.match(
+    siteAnalytics,
+    /lastTrackedPathRef = useRef\(\{\s*analytics: "",\s*marketing: "",\s*\}\)/u,
+    "GA and Meta must not share one page-view deduplication key",
+  );
+  assert.match(
+    siteAnalytics,
+    /trackPageView\(\{ path: pathname, locale, destinations \}\)/u,
+    "The page-view call must state which newly allowed destinations need the event",
+  );
+  assert.match(
+    analytics,
+    /destinations\.analytics && hasAnalyticsConsent\(\)/u,
+    "An explicit analytics destination may never bypass analytics consent",
+  );
+  assert.match(
+    analytics,
+    /destinations\.marketing && hasMarketingConsent\(\)/u,
+    "An explicit marketing destination may never bypass marketing consent",
+  );
+});
+
 test("both public layouts mount consent and localized analytics", async () => {
   for (const [layout, localePattern] of [
     ["app/(default)/layout.tsx", /<SiteAnalytics locale="en" \/>/],

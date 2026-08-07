@@ -83,6 +83,10 @@ type FirstPartyEventType =
   | "contact_channel_clicked"
   | "email_form_started";
 type ContactActionCode = "email" | "whatsapp" | "messenger";
+type MeasurementDestinations = {
+  analytics: boolean;
+  marketing: boolean;
+};
 
 type Gtag = (...args: unknown[]) => void;
 type MetaPixel = ((...args: unknown[]) => void) & {
@@ -828,14 +832,17 @@ function dispatchMetaEvent(
   }
 }
 
-export function trackEvent(
+function trackEventForDestinations(
   name: HomegroundEventName,
-  parameters: EventParameters = {},
+  parameters: EventParameters,
+  destinations: MeasurementDestinations,
 ) {
   if (!ANALYTICS_ENABLED || typeof window === "undefined") return;
 
-  const analyticsAllowed = hasAnalyticsConsent();
-  const marketingAllowed = hasMarketingConsent();
+  const analyticsAllowed =
+    destinations.analytics && hasAnalyticsConsent();
+  const marketingAllowed =
+    destinations.marketing && hasMarketingConsent();
   if (!analyticsAllowed && !marketingAllowed) return;
 
   const sanitized = sanitizeEventParameters(parameters);
@@ -850,17 +857,33 @@ export function trackEvent(
   if (marketingAllowed) dispatchMetaEvent(name, sanitized);
 }
 
+export function trackEvent(
+  name: HomegroundEventName,
+  parameters: EventParameters = {},
+) {
+  trackEventForDestinations(name, parameters, {
+    analytics: true,
+    marketing: true,
+  });
+}
+
 export function trackPageView({
   path,
   locale,
+  destinations = { analytics: true, marketing: true },
 }: {
   path: string;
   locale: HomegroundLocale;
+  destinations?: MeasurementDestinations;
 }) {
-  trackEvent("page_view", {
-    page_path: sanitizePagePath(path),
-    page_language: locale,
-  });
+  trackEventForDestinations(
+    "page_view",
+    {
+      page_path: sanitizePagePath(path),
+      page_language: locale,
+    },
+    destinations,
+  );
 }
 
 export function trackEnquirySubmitted(
