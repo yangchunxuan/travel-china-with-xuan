@@ -176,7 +176,7 @@ test("the intake canary distinguishes a broken site from broken intake", async (
 test("the intake canary runs on a schedule and needs no credentials", async () => {
   const workflow = await source(canaryWorkflowPath);
 
-  assert.match(workflow, /cron: "\*\/15 \* \* \* \*"/);
+  assert.match(workflow, /cron: "7,22,37,52 \* \* \* \*"/);
   assert.match(workflow, /workflow_dispatch:/, "it must be runnable by hand after a deploy");
   assert.match(workflow, /permissions:\s*\n\s*contents: read/);
 
