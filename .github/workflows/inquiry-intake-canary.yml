@@ -14,7 +14,8 @@ name: Inquiry intake canary
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    # Keep a 15-minute cadence, but avoid GitHub Actions' busiest clock marks.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:
