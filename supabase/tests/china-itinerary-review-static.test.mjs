@@ -108,9 +108,7 @@ test("localized metadata, canonical paths, hreflang and structured data agree", 
   assert.match(localizedRoute, /locale === "zh" \? "zh_CN" : "ko_KR"/);
   assert.match(copy, /"zh-Hans": zh\.path/);
   assert.match(copy, /"x-default": en\.path/);
-  assert.match(sitemap, /itineraryReviewLanguages/);
-  assert.match(sitemap, /\/zh\/china-itinerary-review\//);
-  assert.match(sitemap, /\/ko\/china-itinerary-review\//);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
 test("localized service intent reaches the existing enquiry mechanism", async () => {

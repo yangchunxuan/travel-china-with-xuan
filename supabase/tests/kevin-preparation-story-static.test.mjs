@@ -60,7 +60,7 @@ test("Kevin field note uses localized registry routes and Kevin metadata", async
   assert.match(page, /authors: \["Kevin"\]/);
   assert.match(localizedPage, /authors: \["Kevin"\]/);
   assert.match(page, /max-image-preview": "large"/);
-  assert.match(sitemap, /guideIds\.flatMap/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
 test("Kevin story images exist and Studio links Kevin through the member-story map", async () => {

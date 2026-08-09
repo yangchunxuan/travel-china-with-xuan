@@ -61,7 +61,7 @@ test("Tantan field note uses its own localized registry routes and metadata", as
   assert.match(copy, /updatedDate: "2026년 7월 23일"/);
   assert.match(page, /authors: \["Tantan"\]/);
   assert.match(page, /max-image-preview": "large"/);
-  assert.match(sitemap, /guideIds\.flatMap/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
 test("Tantan story images are responsive, privacy edited and contextually linked", async () => {

@@ -267,8 +267,9 @@ test("language changes preserve a completed planner result", async () => {
     header.match(
       /plannerStatus === "result"[\s\S]{0,100}\?planner=result\$\{languageHash\}/g,
     )?.length,
-    2,
+    1,
   );
+  assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 2);
 });
 
 test("the sticky header is opaque over mobile hero text", async () => {

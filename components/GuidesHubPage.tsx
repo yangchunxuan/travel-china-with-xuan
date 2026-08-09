@@ -12,6 +12,11 @@ import {
   getGuidesHubCopy,
   getGuidesHubPlannerHref,
 } from "../app/(default)/guides/guidesHubI18n";
+import {
+  getSearchPlatformCopy,
+  getSearchSectionPath,
+  searchSectionIds,
+} from "../lib/searchPlatformI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -170,6 +175,7 @@ export function GuidesHubPage({
 }) {
   const home = getHomegroundCopy(locale);
   const copy = getGuidesHubCopy(locale);
+  const searchCopy = getSearchPlatformCopy(locale);
   const guides = getAllGuides(locale);
   const entryGuides = getGuidesByPillar("entry-rules", locale);
   const planningGuides = guides.filter(
@@ -236,24 +242,16 @@ export function GuidesHubPage({
 
         <nav
           className={styles.collectionNav}
-          aria-label={copy.libraryNav.label}
+          aria-label={searchCopy.browseLabel}
         >
-          <a href="#guides-catalog-title">
-            <span>01</span>
-            {copy.libraryNav.planning}
-            <strong>{planningGuides.length}</strong>
-          </a>
-          <a
-            href={
-              locale === "en"
-                ? "/guides/china-entry-requirements/"
-                : "#entry-guides-title"
-            }
-          >
-            <span>02</span>
-            {copy.libraryNav.entry}
-            <strong>{entryGuides.length}</strong>
-          </a>
+          <div>
+            {searchSectionIds.map((section) => (
+              <Link href={getSearchSectionPath(section, locale)} key={section}>
+                <span>{searchCopy.sections[section].shortLabel}</span>
+                <small>{searchCopy.sections[section].eyebrow}</small>
+              </Link>
+            ))}
+          </div>
         </nav>
 
         <section

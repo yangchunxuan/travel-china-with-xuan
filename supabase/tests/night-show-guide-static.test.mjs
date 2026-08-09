@@ -129,7 +129,7 @@ test("night-show metadata, locales and sitemap share the guide registry", async 
   assert.match(registry, /path: "\/zh\/guides\/best-zhangjiajie-night-show\/"/);
   assert.match(registry, /path: "\/ko\/guides\/best-zhangjiajie-night-show\/"/);
   assert.match(registry, /datePublished: "2026-07-22"/);
-  assert.match(sitemap, /guideIds\.flatMap/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
   assert.match(page, /index: true/);
   assert.match(page, /follow: true/);
 });

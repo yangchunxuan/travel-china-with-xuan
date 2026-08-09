@@ -87,10 +87,8 @@ test("registry-driven sitemap will publish all three older-parents URLs", async 
     registry,
     /export const guideIds = \[[\s\S]*?"china-itinerary-with-older-parents"/,
   );
-  assert.match(sitemap, /const guideEntries = guideIds\.flatMap/);
-  assert.match(sitemap, /getGuideLanguageUrls\(guideId\)/);
-  assert.match(sitemap, /getGuideAvailableLocales\(guideId\)/);
-  assert.match(sitemap, /\.\.\.guideEntries/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
+  assert.match(sitemap, /absoluteManifestAlternates/);
   assert.doesNotMatch(
     sitemap,
     /url: `\$\{base\}\/guides\/china-itinerary-with-older-parents\//,

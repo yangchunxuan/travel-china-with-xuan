@@ -57,7 +57,7 @@ test("English-only guide publishes truthful locale metadata and sitemap entries"
   assert.match(registry, /\.filter\(\(entry\) => Boolean\(entry\.locales\[locale\]\)\)/);
   assert.match(route, /languages: getGuideLanguagePaths\(guide\.id\)/);
   assert.doesNotMatch(route, /alternateLocale/);
-  assert.match(sitemap, /getGuideAvailableLocales\(guideId\)\.map/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
 test("guide route, article schema, CTA and responsive visual assets are wired", async () => {

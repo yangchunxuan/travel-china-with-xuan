@@ -143,7 +143,7 @@ test("metadata, sitemap and contextual links expose the English article", async 
   assert.doesNotMatch(article, /\bF\d+\b/);
   assert.match(
     sitemap,
-    /const guideEntries = guideIds\.flatMap/,
+    /getIndexableManifestEntries\(searchPlatformManifest\)/,
   );
   assert.match(
     service,

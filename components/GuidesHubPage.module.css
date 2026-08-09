@@ -115,25 +115,30 @@
 
 .collectionNav {
   border-block-end: 1px solid var(--guides-line);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.collectionNav > div {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding-inline: max(1rem, calc((100vw - 1380px) / 2));
+  grid-template-columns: repeat(9, minmax(8.2rem, 1fr));
+  margin-inline: auto;
+  max-width: 1380px;
+  min-width: 76rem;
 }
 
 .collectionNav a {
-  align-items: center;
+  border-inline-end: 1px solid var(--guides-line);
   color: var(--guides-ink);
-  display: grid;
-  font-size: clamp(0.9rem, 1.25vw, 1.05rem);
-  font-weight: 750;
-  gap: 1rem;
-  grid-template-columns: auto 1fr auto;
-  min-height: 5.25rem;
-  padding: 1rem clamp(1rem, 2.5vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 5.7rem;
+  padding: 1rem 1.15rem;
   text-decoration: none;
 }
 
-.collectionNav a + a {
+.collectionNav a:first-child {
   border-inline-start: 1px solid var(--guides-line);
 }
 
@@ -142,12 +147,16 @@
   background: var(--guides-soft);
 }
 
-.collectionNav span,
-.collectionNav strong {
-  color: var(--guides-rust);
-  font-size: 0.7rem;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.08em;
+.collectionNav span {
+  font-size: 0.82rem;
+  font-weight: 760;
+}
+
+.collectionNav small {
+  color: var(--guides-muted);
+  font-size: 0.61rem;
+  line-height: 1.35;
+  margin-block-start: 0.35rem;
 }
 
 .catalog {
@@ -539,6 +548,27 @@
 }
 
 @media (max-width: 48rem) {
+  .collectionNav {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0,
+      #000 calc(100% - 2.75rem),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      #000 0,
+      #000 calc(100% - 2.75rem),
+      transparent 100%
+    );
+    scroll-padding-inline: 1rem;
+    scroll-snap-type: x proximity;
+  }
+
+  .collectionNav a {
+    scroll-snap-align: start;
+  }
+
   .heroTopline {
     align-items: flex-start;
     flex-direction: column;
@@ -591,16 +621,6 @@
   .guideSlot[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
     .guideImage {
     aspect-ratio: 1;
-  }
-
-  .collectionNav {
-    grid-template-columns: 1fr;
-    padding-inline: 1rem;
-  }
-
-  .collectionNav a + a {
-    border-block-start: 1px solid var(--guides-line);
-    border-inline-start: 0;
   }
 
   .entryGuideSlot,
