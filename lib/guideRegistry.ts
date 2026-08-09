@@ -1,7 +1,4 @@
-import {
-  homegroundLocales,
-  type HomegroundLocale,
-} from "./homegroundI18n";
+import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -23,6 +20,7 @@ export const guideIds = [
   "china-240-hour-visa-free-transit-route-check",
   "do-singaporeans-need-visa-china",
   "why-are-hotels-in-china-so-cheap",
+  "do-you-need-a-tour-guide-in-china",
 ] as const;
 
 export type GuideId = (typeof guideIds)[number];
@@ -46,26 +44,13 @@ export type GuideTopic =
   | "accommodation";
 
 export type GuideDestination =
-  | "china"
-  | "beijing"
-  | "xian"
-  | "zhangjiajie"
-  | "shanghai";
+  "china" | "beijing" | "xian" | "zhangjiajie" | "shanghai";
 
 export type GuidePillar =
-  | "routes-and-pace"
-  | "transport"
-  | "entry-rules"
-  | "field-notes";
+  "routes-and-pace" | "transport" | "entry-rules" | "field-notes";
 
 export type GuideAudienceMarket =
-  | "global"
-  | "malaysia"
-  | "uk"
-  | "us"
-  | "canada"
-  | "singapore"
-  | "new-zealand";
+  "global" | "malaysia" | "uk" | "us" | "canada" | "singapore" | "new-zealand";
 
 export interface GuideLocaleEntry {
   path: string;
@@ -214,15 +199,13 @@ export const guideRegistry = [
       ko: {
         path: "/ko/guides/zhangjiajie-from-malaysia/",
         title: "말레이시아 출발 장자제 여행: 항공·숙소·현지 지원",
-        headline:
-          "말레이시아에서 장자제까지: 관문·숙박 거점·지원 범위 고르기",
+        headline: "말레이시아에서 장자제까지: 관문·숙박 거점·지원 범위 고르기",
         description:
           "말레이시아 출발 장자제 여행의 항공 관문, 온전한 관광일, 우링위안·시내 숙소, 입장권, 결제 준비와 현지 지원 범위를 비교합니다.",
         heroAlt:
           "여행자들이 장자제의 숲과 안개 사이로 솟은 사암 봉우리를 바라보는 모습.",
         navTitle: "말레이시아 출발 장자제 가이드",
-        featuredLinkLabel:
-          "말레이시아 출발 장자제의 관문과 숙박 거점 선택하기",
+        featuredLinkLabel: "말레이시아 출발 장자제의 관문과 숙박 거점 선택하기",
         openGraphLocale: "ko_KR",
       },
     },
@@ -237,12 +220,10 @@ export const guideRegistry = [
     topics: ["attractions", "trip-planning", "on-the-ground"],
     destinations: ["zhangjiajie"],
     homeFeaturedRank: 3,
-    cardImagePath:
-      "/images/guides/tantan-zhangjiajie/tantan-hero-1200.jpg",
+    cardImagePath: "/images/guides/tantan-zhangjiajie/tantan-hero-1200.jpg",
     cardImageWidth: 1200,
     cardImageHeight: 1500,
-    heroImagePath:
-      "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
+    heroImagePath: "/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/tantan-zhangjiajie/tantan-hero-og-1200.jpg",
     imageWidth: 1200,
@@ -267,8 +248,7 @@ export const guideRegistry = [
       zh: {
         path: "/zh/guides/zhangjiajie-glass-bridge-vs-skywalk/",
         title: "张家界玻璃桥和玻璃栈道有什么区别？Tantan 核对的 7 个细节",
-        headline:
-          "玻璃桥不是玻璃栈道：Tantan 在张家界替客人核对的 7 个细节",
+        headline: "玻璃桥不是玻璃栈道：Tantan 在张家界替客人核对的 7 个细节",
         description:
           "从玻璃桥与玻璃栈道、真实游览时间，到酒店位置和门票包含项：看看 Tantan 在张家界行程付款前会替客人核对的 7 个细节。",
         heroAlt: "Tantan 在竹棚下体验用木杵舂制食物。",
@@ -299,8 +279,7 @@ export const guideRegistry = [
     format: "field-note",
     topics: ["trip-planning", "on-the-ground"],
     destinations: ["china", "zhangjiajie"],
-    heroImagePath:
-      "/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
+    heroImagePath: "/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
     heroImageUrl:
       "https://homegroundchina.com/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",
     imageWidth: 1200,
@@ -317,8 +296,7 @@ export const guideRegistry = [
           "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
         description:
           "Kevin explains what happens before a guided day begins—from reservations and pickup details to traveller needs, backup routes and the next handoff.",
-        heroAlt:
-          "Kevin standing beside the coast in warm evening light.",
+        heroAlt: "Kevin standing beside the coast in warm evening light.",
         navTitle: "Kevin’s pre-departure field note",
         featuredLinkLabel: "See how Kevin prepares before meeting a guest",
         openGraphLocale: "en_US",
@@ -398,7 +376,8 @@ export const guideRegistry = [
           "부모님과 함께 가는 장자제: 산은 태워 주지만, 물어볼 사람은 있어야 합니다",
         description:
           "장자제는 대부분 타고 오릅니다. 연세 있는 분의 하루를 정하는 것은 일정표가 아니라 산에 있는 사람들입니다 — 톈먼산 케이블카 변경, 유리다리 규정, 시간표 없는 셔틀버스.",
-        heroAlt: "파란 하늘 아래 장자제 사암 절벽을 따라 솟아오른 바이룽 엘리베이터.",
+        heroAlt:
+          "파란 하늘 아래 장자제 사암 절벽을 따라 솟아오른 바이룽 엘리베이터.",
         navTitle: "부모님과 함께 가는 장자제",
         featuredLinkLabel: "느린 속도로도 가능한 것 보기",
         openGraphLocale: "ko_KR",
@@ -453,7 +432,8 @@ export const guideRegistry = [
         headline: "어떤 장자제 야간 공연이 내 일정에 맞을까요?",
         description:
           "숙소 위치, 날씨, 영어 지원, 다음 날 일정으로 천문호선·매력상서·장자제 천고정을 비교하고, 세 공연을 모두 건너뛰는 편이 나은 경우도 확인하세요.",
-        heroAlt: "야외 협곡 무대, 민속 공연 소품, 실내 극장을 비교하는 편집 일러스트.",
+        heroAlt:
+          "야외 협곡 무대, 민속 공연 소품, 실내 극장을 비교하는 편집 일러스트.",
         navTitle: "장자제 야간 공연 가이드",
         featuredLinkLabel: "세 공연을 저녁 전체 일정과 함께 비교하기",
         openGraphLocale: "ko_KR",
@@ -629,8 +609,7 @@ export const guideRegistry = [
         description:
           "도시 이동, 출발지부터 도착지까지의 전체 이동, 숙소 변경, 고정 예약과 회복 시간을 기준으로 중국 여행 일정이 너무 빠듯한지 확인해 보세요.",
         heroAlt: "이동일을 표현하기 위해 부드럽게 처리한 기차역 승강장 이미지.",
-        cardImageAlt:
-          "흐린 날 공항 터미널 창 너머로 보이는 계류장의 항공기.",
+        cardImageAlt: "흐린 날 공항 터미널 창 너머로 보이는 계류장의 항공기.",
         navTitle: "중국 일정 속도 가이드",
         featuredLinkLabel: "중국 일정이 너무 빠듯한지 확인하기",
         openGraphLocale: "ko_KR",
@@ -658,8 +637,7 @@ export const guideRegistry = [
     locales: {
       en: {
         path: "/guides/china-itinerary-with-older-parents/",
-        title:
-          "China With Older Parents: A Realistic 12–14 Day Itinerary",
+        title: "China With Older Parents: A Realistic 12–14 Day Itinerary",
         headline:
           "Taking Your Parents to China? Build the Route Around Energy, Not Just Cities",
         description:
@@ -692,8 +670,7 @@ export const guideRegistry = [
         heroAlt:
           "중국 지도와 세 개의 경로 표식, 여행 가방, 달력을 표현한 종이 공예 일러스트.",
         navTitle: "부모님과 중국 여행",
-        featuredLinkLabel:
-          "부모님과 함께하는 현실적인 12일·14일 일정 비교하기",
+        featuredLinkLabel: "부모님과 함께하는 현실적인 12일·14일 일정 비교하기",
         openGraphLocale: "ko_KR",
       },
     },
@@ -746,8 +723,7 @@ export const guideRegistry = [
         headline: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
         description:
           "미국 여권의 일반적인 중국 본토 여행에는 대체로 L 비자가 필요합니다. 240시간 무비자 환승, 하이난 30일 지역 무비자와 일반 왕복 일정을 비교합니다.",
-        heroAlt:
-          "상하이 푸둥 국제공항 도착층, 머리 위로 안내 표지판이 보인다.",
+        heroAlt: "상하이 푸둥 국제공항 도착층, 머리 위로 안내 표지판이 보인다.",
         navTitle: "미국 비자·환승 가이드",
         featuredLinkLabel: "내 경로가 어느 입국 경로인지 확인하기",
         openGraphLocale: "ko_KR",
@@ -787,8 +763,7 @@ export const guideRegistry = [
         heroAlt:
           "The Great Wall crossing a mountain ridge near Beijing in spring.",
         navTitle: "UK passport China entry guide",
-        featuredLinkLabel:
-          "Check whether your UK passport and trip qualify",
+        featuredLinkLabel: "Check whether your UK passport and trip qualify",
         openGraphLocale: "en_GB",
       },
     },
@@ -908,7 +883,8 @@ export const guideRegistry = [
         headline: "中国 240 小时过境免签:你的路线符合条件吗？",
         description:
           "只有一条规则决定:离开中国后飞往的地方,必须和你飞进来之前的不同。对照真实航线例子、口岸范围与次日起算规则核一遍。",
-        heroAlt: "过境规则示意图:国家或地区 A,中国大陆,另一个不同的国家或地区 C。",
+        heroAlt:
+          "过境规则示意图:国家或地区 A,中国大陆,另一个不同的国家或地区 C。",
         navTitle: "240 小时过境路线判断",
         featuredLinkLabel: "看看你的路线符不符合",
         openGraphLocale: "zh_CN",
@@ -964,8 +940,7 @@ export const guideRegistry = [
         headline: "去中国不需要签证。更难的问题在这里。",
         description:
           "新加坡普通护照可免签进入中国大陆 30 天。本文核对入境规则、入境卡填写方式，以及怎样把这段时间排成真正可执行的中国路线。",
-        heroAlt:
-          "张家界国家森林公园内，层层砂岩石柱耸立于深绿色山谷之中。",
+        heroAlt: "张家界国家森林公园内，层层砂岩石柱耸立于深绿色山谷之中。",
         navTitle: "新加坡护照赴华免签指南",
         featuredLinkLabel: "免签 30 天之后，路线怎样安排",
         openGraphLocale: "zh_CN",
@@ -1046,12 +1021,68 @@ export const guideRegistry = [
       },
     },
   },
+  {
+    id: "do-you-need-a-tour-guide-in-china",
+    type: "planning",
+    featured: false,
+    pillar: "routes-and-pace",
+    audienceMarkets: ["global"],
+    format: "decision-guide",
+    topics: ["trip-planning", "on-the-ground"],
+    destinations: ["china"],
+    cardImagePath:
+      "/images/guides/china-tour-guide-decision/longmen-caves-card-1200.webp",
+    cardImageWidth: 1200,
+    cardImageHeight: 750,
+    heroImagePath:
+      "/images/guides/china-tour-guide-decision/longmen-caves-og-1200.jpg",
+    heroImageUrl:
+      "https://homegroundchina.com/images/guides/china-tour-guide-decision/longmen-caves-og-1200.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    datePublished: "2026-08-09",
+    dateModified: "2026-08-09",
+    sourceReviewedDate: "2026-08-09",
+    locales: {
+      en: {
+        path: "/guides/do-you-need-a-tour-guide-in-china/",
+        title: "Do You Need a Tour Guide in China? When It’s Worth It",
+        headline: "Do You Need a Tour Guide in China—or Better Trip Support?",
+        description:
+          "You do not need a guide every day in China. See when a private guide, driver or full-trip planning support is worth it for a first visit.",
+        heroAlt:
+          "Historic Buddhist sculptures carved into the rock at the Longmen Grottoes in Luoyang.",
+        navTitle: "China tour guide decision guide",
+        featuredLinkLabel: "Decide which days in China actually need support",
+        openGraphLocale: "en_US",
+      },
+      zh: {
+        path: "/zh/guides/do-you-need-a-tour-guide-in-china/",
+        title: "去中国旅行需要导游吗？什么时候值得请",
+        headline: "去中国旅行需要导游，还是需要更合适的旅行协助？",
+        description:
+          "去中国旅行不一定每天都需要导游。分清私人导游、司机、单项协助与全程规划，判断哪些天值得花钱请人帮忙。",
+        heroAlt: "洛阳龙门景区岩壁上的古代宗教造像。",
+        navTitle: "中国旅行导游选择指南",
+        featuredLinkLabel: "判断中国行程中哪些天真正需要协助",
+        openGraphLocale: "zh_CN",
+      },
+      ko: {
+        path: "/ko/guides/do-you-need-a-tour-guide-in-china/",
+        title: "중국 여행에 가이드가 필요할까? 언제 가치 있을까",
+        headline: "중국 여행에 가이드가 필요할까, 더 알맞은 지원이 필요할까?",
+        description:
+          "중국에서 매일 가이드가 필요한 것은 아닙니다. 전용 가이드, 차량, 현지 지원과 전체 일정 설계가 각각 언제 가치 있는지 비교해 보세요.",
+        heroAlt: "중국 허난 용문석굴 암벽에 조각된 역사적인 불교 석상.",
+        navTitle: "중국 여행 가이드 선택 안내",
+        featuredLinkLabel: "중국 일정 중 실제로 지원이 필요한 날 고르기",
+        openGraphLocale: "ko_KR",
+      },
+    },
+  },
 ] as const satisfies readonly GuideEntry[];
 
-export function getGuideEntry(
-  id: GuideId,
-  locale: HomegroundLocale = "en",
-) {
+export function getGuideEntry(id: GuideId, locale: HomegroundLocale = "en") {
   const guide: GuideEntry | undefined = guideRegistry.find(
     (entry) => entry.id === id,
   );
@@ -1085,16 +1116,11 @@ export function getGuideEntry(
   };
 }
 
-export function getFeaturedGuides(
-  locale: HomegroundLocale = "en",
-  limit = 3,
-) {
+export function getFeaturedGuides(locale: HomegroundLocale = "en", limit = 3) {
   return getHomeFeaturedGuides(locale).slice(0, Math.max(0, limit));
 }
 
-export function getHomeFeaturedGuides(
-  locale: HomegroundLocale = "en",
-) {
+export function getHomeFeaturedGuides(locale: HomegroundLocale = "en") {
   return guideRegistry
     .filter((entry) => "homeFeaturedRank" in entry)
     .sort((a, b) => a.homeFeaturedRank - b.homeFeaturedRank)

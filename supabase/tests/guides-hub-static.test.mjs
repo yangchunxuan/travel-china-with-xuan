@@ -6,19 +6,16 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("guides hub is registry-driven and exposes all seventeen current guides", async () => {
+test("guides hub is registry-driven and exposes all eighteen current guides", async () => {
   const hub = await source("components/GuidesHubPage.tsx");
   const registry = await source("lib/guideRegistry.ts");
 
-  assert.equal((registry.match(/\n    id: "/g) ?? []).length, 17);
+  assert.equal((registry.match(/\n    id: "/g) ?? []).length, 18);
   assert.match(hub, /const guides = getAllGuides\(locale\)/);
   assert.match(hub, /planningGuides\.map\(\(guide, index\) =>/);
   assert.match(hub, /entryGuides\.map\(\(guide, index\) =>/);
   assert.match(hub, /getGuidesByPillar\("entry-rules", locale\)/);
-  assert.doesNotMatch(
-    hub,
-    /getGuideEntry\("(?:zhangjiajie|beijing|is-your)/,
-  );
+  assert.doesNotMatch(hub, /getGuideEntry\("(?:zhangjiajie|beijing|is-your)/);
   assert.match(registry, /format: "itinerary"/);
   assert.match(registry, /pillar: "entry-rules"/);
   assert.match(registry, /audienceMarkets: \["uk"\]/);
@@ -32,7 +29,10 @@ test("guides hub is registry-driven and exposes all seventeen current guides", a
     /id: "china-240-hour-visa-free-transit-route-check"[\s\S]*?pillar: "entry-rules"[\s\S]*?audienceMarkets: \["global"\]/,
   );
   assert.match(registry, /topics: \["itinerary-design"/);
-  assert.match(registry, /destinations: \["beijing", "zhangjiajie", "shanghai"\]/);
+  assert.match(
+    registry,
+    /destinations: \["beijing", "zhangjiajie", "shanghai"\]/,
+  );
 });
 
 test("homepage guide selection is explicit, ranked and stable", async () => {
@@ -73,9 +73,7 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
   const guidesSectionIndex = homepage.indexOf(
     "className={styles.travelGuidesSection}",
   );
-  const proofSectionIndex = homepage.indexOf(
-    "className={styles.proofSection}",
-  );
+  const proofSectionIndex = homepage.indexOf("className={styles.proofSection}");
   assert.ok(
     guidesSectionIndex >= 0 && guidesSectionIndex < proofSectionIndex,
     "the complete travel-guides section must appear before the planning-proof section",
@@ -147,10 +145,7 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /planningGuides\.length % 2 === 1/);
   assert.match(hub, /className=\{styles\.entryAction\}/);
   assert.match(hub, /href="\/guides\/china-entry-requirements\/"/);
-  assert.match(
-    css,
-    /\.entryGuideSlot\s*\{[\s\S]*?grid-column: span 4;/,
-  );
+  assert.match(css, /\.entryGuideSlot\s*\{[\s\S]*?grid-column: span 4;/);
   assert.match(css, /\.guideSlotHalf\s*\{[\s\S]*?grid-column: span 6;/);
   assert.match(
     css,
@@ -171,15 +166,9 @@ test("hub has direct planner contact and stays usable from 320px to wide screens
   assert.match(copy, /action: "중국 여행 플래너와 상담하기"/);
   assert.doesNotMatch(copy, /planner=destinations|free-brief/);
   assert.match(css, /@media \(max-width: 22rem\)/);
-  assert.match(
-    css,
-    /\.guideSlotWide \{[\s\S]*?grid-column: span 12;/,
-  );
+  assert.match(css, /\.guideSlotWide \{[\s\S]*?grid-column: span 12;/);
   assert.doesNotMatch(css, /\.heroInner,\s*\.catalog,\s*\.ctaInner/);
-  assert.match(
-    css,
-    /\.catalog \{[\s\S]*?calc\(\(100vw - 1380px\) \/ 2\)/,
-  );
+  assert.match(css, /\.catalog \{[\s\S]*?calc\(\(100vw - 1380px\) \/ 2\)/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(css, /:focus-visible/);
 });
