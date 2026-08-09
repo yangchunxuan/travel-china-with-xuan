@@ -395,10 +395,10 @@ const en: TourGuideDecisionCopy = {
     title: "Plan the rest of the decision",
     items: [
       {
-        title: "How Much Does a Trip to China Cost?",
+        title: "Beijing–Zhangjiajie–Shanghai: Train or Flight?",
         description:
-          "Compare cost structures before deciding how much support to buy.",
-        href: "/guides/how-much-does-a-china-trip-cost/",
+          "Compare the real door-to-door time before fixing the route around transport.",
+        href: "/guides/beijing-zhangjiajie-shanghai-transport/",
       },
       {
         title: "Is Your China Itinerary Too Rushed?",
@@ -754,10 +754,10 @@ const zh: TourGuideDecisionCopy = {
     title: "继续完成你的旅行决策",
     items: [
       {
-        title: "去中国旅行到底要花多少钱？",
+        title: "北京—张家界—上海：坐高铁还是飞机？",
         description:
-          "比较自由行、私人安排和团队产品的成本结构，再决定购买多少支持。",
-        href: "/zh/guides/how-much-does-a-china-trip-cost/",
+          "先比较两段交通的真实门到门时间，再决定路线应该怎样衔接。",
+        href: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
       },
       {
         title: "你的中国行程是不是太赶了？",
@@ -1125,10 +1125,10 @@ const ko: TourGuideDecisionCopy = {
     title: "다음 선택도 함께 확인하세요",
     items: [
       {
-        title: "중국 여행 비용은 얼마나 들까요?",
+        title: "베이징–장자제–상하이: 기차와 비행기 중 무엇이 나을까?",
         description:
-          "자유여행, 프라이빗 진행, 단체 상품의 비용 구조를 비교한 뒤 필요한 지원 범위를 정하세요.",
-        href: "/ko/guides/how-much-does-a-china-trip-cost/",
+          "두 구간의 실제 출발지부터 목적지까지 걸리는 시간을 비교한 뒤 이동을 중심으로 일정을 정하세요.",
+        href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
       },
       {
         title: "내 중국 일정은 너무 빠를까요?",
