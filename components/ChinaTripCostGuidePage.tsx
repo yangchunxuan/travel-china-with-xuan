@@ -173,7 +173,6 @@ export function ChinaTripCostGuidePage({
                 width={hero.width}
               />
             </picture>
-            <figcaption>{copy.hero.imageCaption}</figcaption>
           </figure>
         </header>
 
@@ -211,7 +210,7 @@ export function ChinaTripCostGuidePage({
           </div>
         </section>
 
-        {/* ---------------- Three ways to buy ---------------- */}
+        {/* ---------------- Published reference comparison ---------------- */}
         <section className={styles.section}>
           <div className={styles.prose}>
             <h2 className={styles.sectionTitle}>{copy.tiers.title}</h2>
@@ -288,32 +287,6 @@ export function ChinaTripCostGuidePage({
           <div className={styles.prose}>
             <h2 className={styles.sectionTitle}>{copy.ground.title}</h2>
             <p className={styles.sectionIntro}>{copy.ground.intro}</p>
-          </div>
-
-          <div className={styles.tableWrap}>
-            <table className={styles.groundTable}>
-              <thead>
-                <tr>
-                  <th scope="col">{copy.ground.columns.item}</th>
-                  <th scope="col">{copy.ground.columns.price}</th>
-                  <th scope="col">{copy.ground.columns.note}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {copy.ground.rows.map((row) => (
-                  <tr key={row.item}>
-                    <th scope="row">{row.item}</th>
-                    <td
-                      className={styles.priceCell}
-                      data-label={copy.ground.columns.price}
-                    >
-                      {row.price}
-                    </td>
-                    <td data-label={copy.ground.columns.note}>{row.note}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
 
           <div className={styles.prose}>

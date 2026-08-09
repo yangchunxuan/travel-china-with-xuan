@@ -1101,15 +1101,15 @@ export const guideRegistry = [
     imageWidth: 1200,
     imageHeight: 630,
     datePublished: "2026-08-05",
-    dateModified: "2026-08-05",
-    sourceReviewedDate: "2026-08-05",
+    dateModified: "2026-08-09",
+    sourceReviewedDate: "2026-08-09",
     locales: {
       en: {
         path: "/guides/how-much-does-a-china-trip-cost/",
-        title: "How Much Does a Trip to China Cost? Real 2026 Prices",
+        title: "How Much Does a Trip to China Cost? 2026 Budget Guide",
         headline: "How Much Does a Trip to China Cost?",
         description:
-          "What a 6–10 day, 2–3 city China trip actually costs, using published prices from booking platforms and tour operators, plus official ticket and hotel figures.",
+          "Compare three current China-trip prices in their original currencies, understand what each includes and see what a complete private-trip quote should show.",
         heroAlt:
           "A lantern-lit street of guesthouses and restaurants in Zhangjiajie at dusk.",
         navTitle: "China trip cost guide",
@@ -1118,10 +1118,10 @@ export const guideRegistry = [
       },
       zh: {
         path: "/zh/guides/how-much-does-a-china-trip-cost/",
-        title: "去中国旅行大概多少钱？2026 年真实价格对照",
+        title: "去中国旅行大概多少钱？2026 预算与报价指南",
         headline: "去中国旅行大概多少钱？",
         description:
-          "6–10 天、2–3 个城市的中国行程实际要花多少：用预订平台和旅行社的公开报价，加上官方票价与酒店统计。",
+          "对照三份当前公开的中国旅行原币价格，弄清每份包含什么，并看懂一份完整的私人行程报价应该写清什么。",
         heroAlt: "傍晚亮灯的张家界住宿餐饮街区。",
         navTitle: "中国行程费用指南",
         featuredLinkLabel: "看看一趟多城市中国行程到底多少钱",
@@ -1129,10 +1129,10 @@ export const guideRegistry = [
       },
       ko: {
         path: "/ko/guides/how-much-does-a-china-trip-cost/",
-        title: "중국 여행 비용은 얼마나 들까? 2026년 실제 가격 비교",
+        title: "중국 여행 비용은 얼마나 들까? 2026년 예산 가이드",
         headline: "중국 여행 비용은 얼마나 들까?",
         description:
-          "6~10일, 2~3개 도시 중국 여행에 실제로 드는 비용을 예약 플랫폼과 여행사의 공개 가격, 공식 입장권과 호텔 통계로 정리했습니다.",
+          "현재 공개된 중국 여행 가격 세 개를 게시 통화로 비교하고, 포함 항목과 완전한 프라이빗 여행 견적에 필요한 내용을 확인합니다.",
         heroAlt: "해질 무렵 불이 켜진 장자제의 숙소·식당 거리.",
         navTitle: "중국 여행 비용 가이드",
         featuredLinkLabel: "다도시 중국 여행의 실제 비용 보기",

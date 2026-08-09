@@ -149,15 +149,6 @@
   inline-size: 100%;
 }
 
-.heroFigure figcaption {
-  border-inline-start: 2px solid var(--page-line);
-  color: var(--page-muted);
-  font-size: 0.83rem;
-  line-height: 1.55;
-  margin-block-start: 0.85rem;
-  padding-inline-start: 0.85rem;
-}
-
 /* ---------------------------- Sections ---------------------------- */
 
 .section {
@@ -404,7 +395,7 @@
 }
 
 .factorItem {
-  align-items: start;
+  align-items: flex-start;
   border-block-start: 2px solid var(--page-rust);
   display: flex;
   gap: 0.95rem;
