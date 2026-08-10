@@ -84,10 +84,12 @@ test("legacy pages enter the manifest through adapters without changing GuideId"
 });
 
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {
-  const [sitemap, header, aliases] = await Promise.all([
+  const [sitemap, header, aliases, hubPage, adapter] = await Promise.all([
     source("app/sitemap.ts"),
     source("components/HomegroundHeader.tsx"),
     source("lib/searchPlatformAliases.ts"),
+    source("components/SearchPlatformHubPage.tsx"),
+    source("lib/searchPlatformContentAdapter.ts"),
   ]);
 
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
@@ -95,6 +97,13 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.match(header, /languagePaths\?: Partial<Record<HomegroundLocale, string>>/);
   assert.match(aliases, /mode: "canonical-shell"/);
   assert.match(aliases, /china-visa-free-uk-canada/);
+  assert.match(adapter, /parentContentId: "system-guides"/);
+  assert.match(adapter, /const dateModified = sectionGuides\.reduce/);
+  assert.match(hubPage, /pageContext="guides"/);
+  assert.match(hubPage, /position: 3/);
+  assert.match(hubPage, /loading="lazy"/);
+  assert.match(hubPage, /fetchPriority="auto"/);
+  assert.doesNotMatch(hubPage, /loading=\{index === 0 \? "eager"/);
 });
 
 test("new structured content uses a finite semantic page-family renderer", async () => {

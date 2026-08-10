@@ -222,9 +222,18 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
 
 export function buildSearchHubContentNodes(): ContentNode[] {
   return searchSectionIds.map((section) => {
-    const hasPublishedChildren = Object.values(
-      legacyGuideClassifications,
-    ).some((classification) => classification.section === section);
+    const sectionGuides = guideRegistry.filter(
+      (guide) => legacyGuideClassifications[guide.id].section === section,
+    );
+    const hasPublishedChildren = sectionGuides.length > 0;
+    const hubEditorialDate = "2026-08-09";
+    const dateModified = sectionGuides.reduce(
+      (latest, guide) =>
+        guide.dateModified.localeCompare(latest, "en") > 0
+          ? guide.dateModified
+          : latest,
+      hubEditorialDate,
+    );
     const locales = Object.fromEntries(
       (["en", "zh", "ko"] as const).map((locale) => {
         const copy = getSearchPlatformCopy(locale).sections[section];
@@ -255,7 +264,7 @@ export function buildSearchHubContentNodes(): ContentNode[] {
       primaryIntent: hubIntent[section],
       entityIds: ["country-china"],
       relationIds: [],
-      parentContentId: null,
+      parentContentId: "system-guides",
       status: hasPublishedChildren ? "published" : "review",
       indexability: hasPublishedChildren
         ? { index: true, follow: true }
@@ -271,9 +280,9 @@ export function buildSearchHubContentNodes(): ContentNode[] {
       schemaTypes: ["CollectionPage", "ItemList"],
       legacyAliases: [],
       dates: {
-        datePublished: hasPublishedChildren ? "2026-08-09" : null,
-        dateModified: "2026-08-09",
-        lastReviewed: "2026-08-09",
+        datePublished: hasPublishedChildren ? hubEditorialDate : null,
+        dateModified,
+        lastReviewed: hubEditorialDate,
       },
       updatePolicy: {
         volatility: "low",

@@ -54,10 +54,13 @@ function guideGridClass(index: number, total: number) {
 
 function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
   const home = getHomegroundCopy(locale);
+  const copy = getSearchPlatformCopy(locale);
   const entry = getSearchHubEntry(section, locale);
   const guides = getSearchHubGuides(section, locale).slice(0, 8);
   const canonicalUrl = `${SITE_URL}${entry.canonicalPath}`;
   const homeUrl = `${SITE_URL}${home.path}`;
+  const guidesPath = `${home.path}guides/`;
+  const guidesUrl = `${SITE_URL}${guidesPath}`;
   const itemListId = `${canonicalUrl}#published-guides`;
 
   return {
@@ -92,6 +95,12 @@ function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
           {
             "@type": "ListItem",
             position: 2,
+            name: copy.guidesLabel,
+            item: guidesUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: entry.h1,
             item: canonicalUrl,
           },
@@ -140,7 +149,7 @@ export function SearchPlatformHubPage({
       <HomegroundHeader
         languagePaths={languagePaths}
         locale={locale}
-        pageContext="content"
+        pageContext="guides"
       />
 
       <main id="hub-main" tabIndex={-1}>
@@ -206,9 +215,9 @@ export function SearchPlatformHubPage({
                         <img
                           alt={guide.cardImageAlt}
                           decoding="async"
-                          fetchPriority={index === 0 ? "high" : "auto"}
+                          fetchPriority="auto"
                           height={guide.cardImageHeight}
-                          loading={index === 0 ? "eager" : "lazy"}
+                          loading="lazy"
                           src={guide.cardImagePath}
                           width={guide.cardImageWidth}
                         />
@@ -297,7 +306,7 @@ export function SearchPlatformHubPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="content" />
+      <HomegroundFooter locale={locale} pageContext="guides" />
       <script
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
