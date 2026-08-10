@@ -1,0 +1,64 @@
+{
+  "id": "how-to-read-a-suzhou-garden",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "cultural-explainer",
+  "topics": [
+    "suzhou-classical-gardens",
+    "chinese-garden-design",
+    "jiangnan-culture",
+    "borrowed-scenery",
+    "architecture",
+    "world-heritage"
+  ],
+  "destinations": ["suzhou", "jiangsu", "china"],
+  "heroImagePath": "/images/guides/how-to-read-a-suzhou-garden/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/how-to-read-a-suzhou-garden/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/how-to-read-a-suzhou-garden/",
+      "title": "How to Read a Suzhou Garden: Rocks, Water and Borrowed Scenery",
+      "headline": "A Suzhou Garden Is Not Meant to Be Seen All at Once",
+      "description": "Learn how paths, windows, rocks, water, names and borrowed scenery turn a compact Suzhou garden into a sequence of landscapes—and how to choose one to visit.",
+      "heroAlt": "A real Suzhou classical garden view framed by a covered corridor, with limestone rocks, water and a pavilion beyond.",
+      "navTitle": "How to read a Suzhou garden",
+      "featuredLinkLabel": "Learn to read a Suzhou garden",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Suzhou", "Garden design", "Cultural heritage"]
+    },
+    "zh": {
+      "path": "/zh/guides/how-to-read-a-suzhou-garden/",
+      "title": "怎么看懂苏州园林：山石、水面、框景与借景",
+      "headline": "苏州园林不是用一眼看完的",
+      "description": "读懂苏州园林怎样用路径、门窗、山石、水面、题名与借景，把有限空间展开成连续山水；并据此选择最适合自己的一座。",
+      "heroAlt": "真实苏州古典园林中，游廊开口框住山石、水面与远处亭子的景象。",
+      "navTitle": "怎么看懂苏州园林",
+      "featuredLinkLabel": "学会看懂一座苏州园林",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["苏州", "园林艺术", "文化遗产"]
+    },
+    "ko": {
+      "path": "/ko/guides/how-to-read-a-suzhou-garden/",
+      "title": "쑤저우 정원 읽는 법: 돌·물·창과 차경",
+      "headline": "쑤저우 정원은 한눈에 보는 곳이 아니다",
+      "description": "길, 문과 창, 돌, 물, 현판과 차경이 작은 쑤저우 정원을 연속된 산수로 만드는 방식을 이해하고 나에게 맞는 정원 한 곳을 고릅니다.",
+      "heroAlt": "실제 쑤저우 고전원림의 회랑 개구부 너머로 석가산과 물, 정자가 함께 보이는 장면.",
+      "navTitle": "쑤저우 정원 읽는 법",
+      "featuredLinkLabel": "쑤저우 정원 읽는 법 배우기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["쑤저우", "정원 예술", "문화유산"]
+    }
+  }
+}
