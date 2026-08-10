@@ -1,15 +1,13 @@
 # Image plan — china-high-speed-train-first-time-guide
 
-Status: **ASSETS NEEDED**. No image has been selected or added on Windows.
+Status: **HERO SELECTED AND ADDED**.
 
-## Required hero
+## Selected hero
 
-- **Subject:** a real, recognisably mainland China high-speed railway concourse with passengers moving toward departures; bilingual wayfinding or a train-number board may be visible, but passport details and faces must not be readable.
-- **Composition:** wide editorial frame with a clear walking path and enough quiet space for responsive crops. Avoid a glamour shot that hides the practical station environment.
-- **Asset:** `/public/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp` (the expected metadata path; currently missing).
+- **Source:** owner's organised local Facebook photo library, `杭州优选素材/08_钱江新城与现代杭州/杭州动车站人流等待出行.jpg`.
+- **Asset:** `/public/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp`.
 - **Ratio / size:** 8:5, 1600 × 1000 px.
-- **Suggested alt:** “Passengers walking through a modern mainland China high-speed railway station concourse.” Localise in metadata as drafted.
-- **Rights:** real Homeground-owned or explicitly licensed photography only. Do not use a Taiwan High Speed Rail image or an AI-generated station scene.
+- **Description:** a real, busy railway-station concourse in Hangzhou. Metadata does not identify a specific station or claim that every passenger is taking a high-speed train.
 
 ## Useful body photos, if licensed originals exist
 

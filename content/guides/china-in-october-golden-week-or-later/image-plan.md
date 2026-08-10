@@ -1,17 +1,14 @@
 # Image handoff
 
-**Status: COPY READY — ASSETS NEEDED**
+**Status: HERO SELECTED AND ADDED**
 
 Do not generate AI travel photography for this article. Use owned or properly licensed real photographs from the Mac asset library, and record the exact location, date and rights status before publishing.
 
-## Hero — required
+## Hero — selected
 
-- Purpose: communicate that timing changes the experience of the same China trip. Prefer a wide real photograph with visible visitor flow at a Chinese city or scenic-area entrance, without sensationalising the crowd.
-- Avoid making Zhangjiajie the visual centre of the article. A Beijing urban/heritage scene or another nationally legible city scene is preferable.
-- If the photograph is not verified as having been taken during Golden Week, do not call it a Golden Week crowd in the caption or alt text.
-- Crop: 1600 × 1000, with clean space for the editorial layout and no embedded text.
-- Required path: `public/images/guides/china-in-october-golden-week-or-later/hero-1600.webp`.
-- Metadata alt is deliberately date-neutral; revise it if the selected image needs a more exact factual description.
+- Source: owner's organised local Facebook photo library, `上海优选素材/04_上海街巷与人文/外滩观景平台的游客_01.jpg`.
+- Output: `public/images/guides/china-in-october-golden-week-or-later/hero-1600.webp`, 1600 × 1000.
+- The photograph shows the Bund viewing platform at sunset. It is deliberately not described as a Golden Week crowd or as October weather.
 
 ## Crowding photo — useful after “What actually changes during Golden Week”
 
@@ -38,4 +35,4 @@ This comparison article would benefit from one designed editorial graphic. It sh
 - Keep weather wording regional; never write “later October = perfect weather.”
 - Suggested delivery path: `public/images/guides/china-in-october-golden-week-or-later/golden-week-vs-later-1600.webp`.
 
-The two supporting photographs and infographic are editorial enhancements. The missing Hero is the current validation/build blocker.
+The two supporting photographs and infographic remain optional editorial enhancements. The required Hero is now present.

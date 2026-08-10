@@ -1,7 +1,15 @@
-# Image plan
+# Selected image plan
 
-1. Hero: A real, street-level Beijing accommodation base near Wangfujing or Qianmen, with pedestrians, a recognisable streetscape and enough context to show the relationship between hotels and the city. Landscape 16:10. The image should communicate urban scale and a practical first-trip base, not hotel luxury.
-2. Body 1: Place after the northern-hutong section. Use a real hutong hotel or courtyard entrance photographed from the lane, showing paving, lane width, steps and whether a vehicle can reach the door.
-3. Body 2: Place after “Three map traps that can change the answer.” Use a real Qianmen or central-Beijing scene showing travellers with luggage between a vehicle drop-off point and a pedestrian hotel approach. It should make the hidden last mile visible.
-4. Images that must be real photographs: The hero; every destination streetscape; all hotel or courtyard entrances; travellers or guests; railway, subway, vehicle-access and nightlife scenes. Do not use AI to imitate Beijing, a hotel, a guest experience or transport infrastructure.
-5. Infographic recommendation: No separate infographic is necessary; the accessible HTML comparison and station table already carry the decision logic. If one is later added, make a human-designed, fact-checked decision tree only—never an AI-generated route map, fare table or travel-time graphic.
+All three images come from the owner's organised local Facebook photo library and depict real Beijing scenes. None is presented as a specific hotel or as proof of a guest experience.
+
+1. Hero → `hero-1600.webp`
+   - Source: `北京优选素材/04_北京胡同与人文/前门老街_01.jpg`
+   - Use: a street-level Qianmen scene with people, shops and practical city context.
+2. Northern-hutong figure → `hutong-hotel-arrival-1440.webp`
+   - Source: `北京优选素材/04_北京胡同与人文/方家胡同院门_01.jpg`
+   - Use: the visible steps and threshold illustrate why courtyard access must be checked property by property. Do not call this entrance a hotel.
+3. Qianmen figure → `qianmen-pedestrian-last-mile-1440.webp`
+   - Source: `北京优选素材/04_北京胡同与人文/前门大街_01.jpg`
+   - Use: the pedestrian avenue illustrates that the exact property and vehicle access point still matter. Do not claim that the people shown are hotel guests or carrying luggage.
+
+No separate infographic is necessary; the accessible HTML comparison and station table carry the decision logic.

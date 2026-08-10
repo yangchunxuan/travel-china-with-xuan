@@ -46,7 +46,12 @@ const body: StructuredPageBody = {
     {
       id: "ticket-windows",
       type: "paragraph",
-      text: "Most tickets normally enter public sale 15 days before departure, and each station or train can have its own release time. A 2026 pilot for more than 200 eligible Beijing–Shanghai high-speed and conventional services lets passengers submit reservation requests in the Railway 12306 app 17–60 days ahead; the system processes them 16–20 days before departure. That pilot is not a nationwide 60-day sales window, and an advance request is not a confirmed ticket until it is fulfilled and paid.",
+      text: "Most domestic tickets use a 15-day advance-sale period that includes the departure date. In calendar terms, a ticket for 15 August normally opens on 1 August, at the release time for the departure station; check that station’s current time in 12306 because it can change.",
+    },
+    {
+      id: "beijing-shanghai-reservation-pilot",
+      type: "paragraph",
+      text: "A 2026 pilot covers more than 200 eligible trains on the Beijing–Shanghai High-Speed Railway and the Beijing–Shanghai Railway. As of 10 August 2026, it is still in transition: from 20 July through 29 August, requests are limited to journeys on or after 15 September. From 30 August, passengers can submit requests in the Railway 12306 app 17–60 days before departure, and the system attempts fulfilment 16–20 days before departure. A fulfilled request is not a confirmed ticket until it is paid by 23:00 that day; an unpaid order is cancelled. This is a limited pilot, not a nationwide 60-day sales window, and submitting a request never guarantees fulfilment.",
     },
     {
       id: "booking-channels",
@@ -162,7 +167,7 @@ const body: StructuredPageBody = {
       type: "list",
       items: [
         "A ticket can normally be changed once, subject to seats being available. The route, timing and ticket status determine which changes the system permits.",
-        "Refund fees are time-based. Under the rules reviewed on 10 August 2026, the standard scale is no fee at least 8 days before departure, then 5%, 10% or 20% as departure gets closer; special and changed tickets can have additional conditions.",
+        "Refund fees are time-based. Under the rules reviewed on 10 August 2026, the standard scale for ordinary advance-sale tickets is no fee 8 days or more before departure, then 5%, 10% or 20% as departure gets closer. The Beijing–Shanghai reservation pilot is an explicit exception: once a reservation is fulfilled and paid, a refund requested 8–20 days before departure costs 5%; less than 8 days before departure, the existing advance-sale rules apply. Changed and other special tickets can have additional conditions.",
         "Online, cash, printed reimbursement-receipt and third-party bookings may follow different handling paths even when the underlying railway rule is the same.",
         "If the railway changes or cancels the service, follow the official notice; railway-responsibility arrangements are different from a voluntary change.",
       ],
@@ -306,6 +311,24 @@ const body: StructuredPageBody = {
           reviewedAt: "2026-08-10",
         },
         {
+          label: "Official 15-day ticket advance-sale period, including the departure date",
+          url: "https://www.12306.cn/mormhweb/zxdt/202205/t20220531_37508.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Official station ticket-release-time lookup",
+          url: "https://www.12306.cn/index/view/infos/sale_time.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Current ticket refund and change instructions",
+          url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/orderWarmTips.html?hiddenNav=true&tabIndex=6",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-10",
+        },
+        {
           label: "Current child ticket rules",
           url: "https://kyfw.12306.cn/otn/gonggao/children.html",
           publisher: "China Railway 12306",
@@ -313,7 +336,7 @@ const body: StructuredPageBody = {
         },
         {
           label: "Catalogue of items prohibited or restricted for railway passengers",
-          url: "https://www.nra.gov.cn/xxgk/gkml/ztjg/gfzd/gfxw/202205/P020220527503609187824.pdf",
+          url: "https://www.nra.gov.cn/xxgk/gkml/ztjg/gfzd/gfxw/202205/t20220527_326566.shtml",
           publisher: "National Railway Administration and Ministry of Public Security",
           reviewedAt: "2026-08-10",
         },
@@ -327,6 +350,12 @@ const body: StructuredPageBody = {
           label: "Official clarification of typical high-speed train seat layouts",
           url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202507/t20250721_4153521.html",
           publisher: "Beijing International Web Portal; source: China Railway",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Railway passenger rules on priority and necessary human assistance",
+          url: "https://xxgk.mot.gov.cn/jigou/fgs/202211/t20221117_3710710.html",
+          publisher: "Ministry of Transport of the People’s Republic of China",
           reviewedAt: "2026-08-10",
         },
       ],

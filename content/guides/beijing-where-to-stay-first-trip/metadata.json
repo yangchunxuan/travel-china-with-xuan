@@ -25,11 +25,33 @@
       "title": "Where to Stay in Beijing on a First Trip: 4 Areas Compared",
       "headline": "Where to Stay in Beijing for a First Trip: Wangfujing, Qianmen, Sanlitun or the Northern Hutongs?",
       "description": "Choose Wangfujing, Qianmen, Sanlitun or Beijing's northern hutongs by itinerary, arrival station, evening plans, luggage and walking tolerance.",
-      "heroAlt": "Travellers walking along a central Beijing street near a subway entrance and hotels.",
+      "heroAlt": "People walking past shops on a historic street in Beijing's Qianmen area.",
       "navTitle": "Where to stay in Beijing",
       "featuredLinkLabel": "Compare four Beijing stay areas",
       "openGraphLocale": "en_US",
       "cardTags": ["Beijing", "Where to stay", "First trip"]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-where-to-stay-first-trip/",
+      "title": "第一次去北京住哪里？王府井、前门、三里屯与北城胡同对比",
+      "headline": "第一次去北京住哪里：王府井、前门、三里屯还是北城胡同？",
+      "description": "从行程、抵达车站、夜间安排、行李和步行负担出发，对比王府井、前门、三里屯与北城胡同，选出更适合第一次北京之旅的住宿区域。",
+      "heroAlt": "人们从北京前门一条历史街道两旁的商铺前走过。",
+      "navTitle": "第一次去北京住哪里",
+      "featuredLinkLabel": "比较北京四个住宿区域",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京旅行", "住宿区域", "第一次来京"]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-where-to-stay-first-trip/",
+      "title": "베이징 첫 여행 숙소 위치: 왕푸징·첸먼·싼리툰·북부 후퉁 비교",
+      "headline": "베이징 첫 여행, 어디에 묵을까? 왕푸징·첸먼·싼리툰·북부 후퉁 비교",
+      "description": "일정, 도착 기차역, 저녁 계획, 수하물과 보행 부담을 기준으로 왕푸징, 첸먼, 싼리툰과 베이징 북부 후퉁의 숙박 장단점을 비교합니다.",
+      "heroAlt": "사람들이 베이징 첸먼 지역의 유서 깊은 거리에서 상점 앞을 지나고 있다.",
+      "navTitle": "베이징 첫 여행 숙소 위치",
+      "featuredLinkLabel": "베이징 숙박 지역 네 곳 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징 여행", "숙박 지역", "첫 여행"]
     }
   }
 }

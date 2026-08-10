@@ -33,13 +33,17 @@ Primary source: State Council holiday notice, `https://www.gov.cn/zhengce/zhengc
 
 ### Current operator rules checked on 2026-08-10
 
-- China Railway's current advance-sale period is 15 days including the travel day; station release times differ.
+- For most trains, China Railway's standard advance-sale period is 15 days including the travel day; station release times differ.
+- Since July 20, 2026, more than 200 trains on the Beijing–Shanghai High-Speed Railway and Beijing–Shanghai Railway have been included in a ticket-reservation pilot. Covered trains shown in the 12306 app accept requests 17–60 days before departure, and the system attempts fulfillment 16–20 days before departure.
+- A pilot reservation request is not a confirmed ticket. A fulfilled request must be paid by 23:00 on the fulfillment day or it is cancelled automatically. During the July 20–August 29 transition, the service accepts requests for travel on September 15 and later; from August 30, the regular 17–60-day request range applies.
 - A 12306 waitlist request is not a confirmed ticket.
 - Foreign-passport users should complete identity verification before the sales window and carry the original booking document.
 - The Palace Museum normally opens tickets at 20:00 seven days before a visit and sells no same-day tickets.
 - Badaling currently lists both real-name advance booking and on-site sales.
 - The Emperor Qinshihuang's Mausoleum Site Museum requires real-name advance reservations, including for foreign visitors.
 - Shanghai Museum rules currently differ by building, space and exhibition.
+
+Pilot source: China Railway notice republished by the Beijing Municipal Government, `https://english.beijing.gov.cn/travellinginbeijing/transportation/railway/202607/t20260720_4772390.html`.
 
 These are not permanent rules. Recheck official National Day notices and live booking pages when each window approaches.
 

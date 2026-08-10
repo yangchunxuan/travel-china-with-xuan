@@ -30,7 +30,7 @@ const sourceText = readCollectedFiles(collectedFiles);
 const fontDirectory = checksProductionExport ? "out/fonts" : "public/fonts";
 const corpusLabel = checksProductionExport
   ? "production HTML/client JavaScript"
-  : "app, components and lib source";
+  : "app, components, lib and content source";
 
 if (checksProductionExport) {
   const htmlCount = collectedFiles.filter(

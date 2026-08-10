@@ -7,7 +7,7 @@ const body: StructuredPageBody = {
       id: "answer-first",
       type: "lead",
       text:
-        "The short answer is no: do not arrive with only one payment method. As checked on 10 August 2026, the least fragile setup for a foreign visitor is one mobile wallet that has actually linked and been tested (Alipay or Weixin Pay), one physical international card, and a small amount of RMB cash. For a family, make that setup available on two adults' phones.",
+        "The short answer is no: do not arrive with only one payment method. As checked on 10 August 2026, the least fragile setup for a foreign visitor is one mobile wallet with an eligible international card successfully linked and, where possible, tested (Alipay or Weixin Pay), one physical international card, and a small amount of RMB cash. For a family, two adults should each have an independent payment route.",
     },
     {
       id: "three-rails",
@@ -60,11 +60,11 @@ const body: StructuredPageBody = {
       type: "list",
       ordered: true,
       items: [
-        "Install the official Alipay and/or Weixin app while you can still receive your usual SMS codes. You do not have to depend on both, but testing both gives you a better second route.",
+        "Install the official Alipay and/or WeChat apps while you can still receive your usual SMS codes. You do not have to depend on both, but testing both gives you a better second route.",
         "Register with your international mobile number and complete the passport or identity prompts when the app asks for them. Keep the number active until the trip ends.",
         "Link an eligible international card. If possible, prepare a second card from another issuer or network rather than two cards that can fail for the same reason.",
         "Check with the issuing bank that overseas purchases, online or e-commerce payments and ATM withdrawals are allowed. Confirm how it handles one-time passwords and fraud alerts.",
-        "Complete a real low-value test after binding the card, or at least confirm that the payment page can select it. A card that merely appears in the wallet is not yet a working travel plan.",
+        "If you have access to a legitimate supported merchant payment, complete a real low-value test after binding the card. Otherwise, finish the verification prompts and confirm that the card appears as available; a card that merely appears in the wallet is still not a guarantee that every payment will pass.",
         "Arrange data that works in China, a charger or power bank, a physical card and a small amount of RMB cash. Keep the backup card and cash somewhere different from the phone.",
       ],
     },
@@ -100,9 +100,9 @@ const body: StructuredPageBody = {
         {
           heading: "Weixin Pay",
           body:
-            "Create or use a Weixin account, open Weixin Pay when prompted, add the international card and complete any identity check. Tencent and official government guidance describe passport-based setup for inbound visitors, but eligible card types and service scenes remain subject to the live payment page.",
+            "Create or use a WeChat account, open Weixin Pay when prompted, add the international card and complete any identity check. Tencent and official government guidance describe passport-based setup for inbound visitors, but eligible card types and payment scenarios remain subject to the live payment page.",
           items: [
-            "Keep access to the phone number used for Weixin account recovery and OTPs.",
+            "Keep access to the phone number used for WeChat account recovery and OTPs.",
             "Do not assume that merchant payment unlocks transfers, red packets or every mini-program.",
             "The 15 January 2026 Tenpay notice confirms the baseline international-card fee rule described below.",
           ],
@@ -278,13 +278,13 @@ const body: StructuredPageBody = {
         ],
         [
           "International-card fee",
-          "Weixin Pay's 15 January 2026 notice says transactions of RMB 200 or less, including RMB 200, are fee-free; above RMB 200, the fee is 3% of the transaction amount. The government visitor guide describes the same structure for Alipay and Weixin Pay.",
-          "The 3% is not just 3% of the excess above RMB 200. Check the live Alipay payment page because product route, promotion and the card issuer can change the final cost.",
+          "Tenpay's 15 January 2026 notice says Weixin Pay transactions of RMB 200 or less, including RMB 200, are fee-free; above RMB 200, the fee is 3% of the full transaction amount. A 2024 Ministry of Commerce guide described the same structure for Alipay and Weixin Pay, but its Alipay evidence is older.",
+          "For Weixin Pay, the 2026 Tenpay notice is the current cited rule. For Alipay, check the live payment page before confirming because its fee, promotion, payment route and your card issuer can change the final cost.",
         ],
         [
           "Temporary Weixin Pay promotion",
-          "A 2026 Tencent announcement describes a first-time international-card binding benefit: up to 90 consecutive days with the 3% fee waived for transactions of RMB 1,000 per day or less.",
-          "Treat this as a time-limited, eligibility-dependent promotion—not the baseline rule. Confirm that the offer appears in your account before relying on it.",
+          "Tencent says users who first bind an international card by 31 December 2026 and then complete their first purchase may receive 90 consecutive calendar days in which the 3% fee is waived on eligible daily spending up to an aggregate RMB 1,000.",
+          "The 90 days start with the first purchase, and the RMB 1,000 is a daily aggregate promotion limit—not a per-transaction allowance. Confirm eligibility and the offer in your account before relying on it.",
         ],
         [
           "ATM cash withdrawal",
@@ -422,7 +422,7 @@ const body: StructuredPageBody = {
         },
         {
           label: "Alipay+ — Pay in the Chinese mainland: international cards, wallet scenes and current help",
-          url: "https://www.alipayplus.com/cn/pay-in-the-chinese-mainland/",
+          url: "https://www.alipayplus.com/pay-in-the-chinese-mainland/",
           publisher: "Ant International / Alipay+",
           reviewedAt: "2026-08-10",
         },

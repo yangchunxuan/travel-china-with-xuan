@@ -1,10 +1,10 @@
 # Image plan — how-to-pay-in-china-as-a-tourist
 
-Status: COPY READY — ASSETS NEEDED
+Status: HERO ADDED — CENTRAL FONT SUBSET UPDATE MAY STILL BE NEEDED
 
 ## 1. Hero
 
-Use one real, licensed documentary photograph of a traveller paying at a real Chinese hotel, restaurant, airport service desk or other ordinary counter. The frame should show the practical choice—phone, physical card and/or a small amount of RMB—without inventing a merchant, payment result or tourist scene. Avoid identifiable payment details, exposed card numbers, readable QR codes and unconsented faces. Target output: 1600 × 1000 WebP, with provenance and model-release notes if people are identifiable.
+An original Homeground editorial illustration has been created at `public/images/guides/how-to-pay-in-china-as-a-tourist/hero-1600.webp` (1600 × 1000). It shows a generic phone, physical card and cash as a layered backup system. It contains no real payment-provider logos, QR code, card number, merchant, traveller or claimed transaction. Localized hero alt text explicitly identifies it as an illustration.
 
 ## 2. Phone or cashier photo
 
@@ -22,4 +22,4 @@ Alipay, Alipay+, Weixin Pay, Visa, Mastercard, UnionPay and other marks belong t
 
 The Alipay/Weixin Pay/card/cash comparison, minimum viable setup, 2026 fee-and-limit table, family backup plan and payment-failure recovery flow should remain HTML tables, callouts and short flow cards. They are dynamic and should not be frozen into hard-to-update graphics.
 
-No image files have been added because the employee-three workspace has no approved Homeground payment-photo library.
+No documentary payment photo has been fabricated. The article uses the clearly described editorial illustration until a properly cleared real photograph becomes available.

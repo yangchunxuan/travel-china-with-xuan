@@ -20,8 +20,9 @@ third-party font CDN at runtime.
 When localized copy gains new Chinese or Korean characters, regenerate the
 subsets from the upstream fonts before publishing. `npm run
 check:font-coverage` reads the actual WOFF2 files and verifies every Han and
-Hangul character found recursively under `app`, `components`, and `lib`. It
-runs automatically before every production build. After the final export is
+Hangul character found recursively under `app`, `components`, `lib`, and the
+independently authored `content` sources. It runs automatically before every
+production build. After the final export is
 pruned, `check:font-coverage:export` verifies the actual HTML and client
 JavaScript against the copied production fonts, so missing glyphs cannot
 silently ship with a system-font fallback.

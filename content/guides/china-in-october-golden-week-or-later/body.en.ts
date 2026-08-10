@@ -82,7 +82,7 @@ const body = {
       caption: "Golden Week and mid-to-late October: the practical differences",
       columns: ["Trip element", "October 1–7", "Mid-to-late October"],
       rows: [
-        ["Intercity trains", "The fixed sales window becomes a hard planning deadline. Preferred direct trains or departure times may be unavailable.", "The same rules apply, but there is usually more room to compare times and recover from a missed first choice."],
+        ["Intercity trains", "For most trains, the standard sales window becomes a hard planning deadline. Covered Beijing–Shanghai trains may accept earlier requests under a 2026 pilot, but preferred direct trains or departure times may still be unavailable.", "The same rules apply, but there is usually more room to compare times and recover from a missed first choice."],
         ["Domestic flights", "Convenient departure times and lower fare classes may narrow. There is no single national Golden Week release time.", "Choice can improve, but a later date does not automatically mean a cheaper fare; route, weekday and local events still matter."],
         ["Hotels", "Popular locations, connected rooms and family room types become less forgiving. Cancellation terms matter as much as the nightly rate.", "Choice and flexibility are often better, but weekends, conventions and local events can still tighten one city."],
         ["Headline attractions", "A dated or timed reservation may decide the day. Each venue has its own window, ID rules and holiday notices.", "Required reservations do not disappear; they are simply less likely to collide with a nationwide holiday peak."],
@@ -107,23 +107,30 @@ const body = {
       id: "rail-tickets",
       type: "heading",
       level: 3,
-      text: "Train tickets: prepare before the 15-day window opens",
+      text: "Train tickets: prepare before the standard 15-day window opens",
     },
     {
       id: "rail-rule",
       type: "paragraph",
-      text: "At the time of writing, China Railway's advance-sale window is 15 days including the travel date. Tickets do not all appear at midnight: the on-sale time is tied to the departure station and can be adjusted. Foreign-passport users can buy through 12306, but identity verification and passenger details should be completed before the sales window opens. Travel with the same original document used for booking.",
+      text: "For most trains, China Railway's standard advance-sale window is 15 days including the travel date. Tickets do not all appear at midnight: the on-sale time is tied to the departure station and can be adjusted. Foreign-passport users can buy through 12306, but identity verification and passenger details should be completed before the sales window opens. Travel with the same original document used for booking.",
     },
     {
       id: "rail-sale-dates",
       type: "table",
-      caption: "Calculated 2026 rail sale dates under the current 15-day rule; confirm the station-specific release time in 12306",
+      caption: "Calculated 2026 public sale dates under the standard 15-day rule; confirm the station-specific release time in 12306",
       columns: ["Travel date", "Enters the current sales window", "What to do"],
       rows: [
         ["Thursday, October 1", "Thursday, September 17", "Have passenger verification, preferred train and alternatives ready before the station's release time."],
         ["Wednesday, October 7", "Wednesday, September 23", "Treat the return-side journey as a separate booking deadline."],
         ["Thursday, October 8", "Thursday, September 24", "Do not assume the first post-holiday day will have unlimited choice."],
       ],
+    },
+    {
+      id: "rail-reservation-pilot",
+      type: "callout",
+      tone: "neutral",
+      title: "Some Beijing–Shanghai trains can accept requests earlier in 2026",
+      body: "The standard 15-day advance-sale period remains the default for most trains. Since July 20, 2026, however, more than 200 trains on the Beijing–Shanghai High-Speed Railway and Beijing–Shanghai Railway have joined a ticket-reservation pilot. For covered trains shown in the 12306 app, passengers can submit requests 17–60 days before departure; the system attempts fulfillment 16–20 days before departure. A request is not a confirmed ticket. If 12306 notifies you that it has been fulfilled, payment is due by 23:00 that day or the order is cancelled automatically. Check the app for the covered trains and current terms.",
     },
     {
       id: "rail-fallback",
@@ -372,6 +379,7 @@ const body = {
       items: [
         { label: "2026 public holiday schedule", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "General Office of the State Council", reviewedAt: "2026-08-10" },
         { label: "Rail ticket 15-day advance-sale notice", url: "https://www.12306.cn/mormhweb/zxdt/202205/t20220531_37508.html", publisher: "China Railway 12306", reviewedAt: "2026-08-10" },
+        { label: "2026 Beijing–Shanghai advance-reservation pilot", url: "https://english.beijing.gov.cn/travellinginbeijing/transportation/railway/202607/t20260720_4772390.html", publisher: "China Railway via Beijing Municipal Government", reviewedAt: "2026-08-10" },
         { label: "Station-specific ticket release times", url: "https://www.12306.cn/index/view/infos/sale_time.html", publisher: "China Railway 12306", reviewedAt: "2026-08-10" },
         { label: "Official waitlist rules", url: "https://kyfw.12306.cn/otn/gonggao/alternate.html", publisher: "China Railway 12306", reviewedAt: "2026-08-10" },
         { label: "Rail passenger rules and identity documents", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html", publisher: "China Railway 12306", reviewedAt: "2026-08-10" },
