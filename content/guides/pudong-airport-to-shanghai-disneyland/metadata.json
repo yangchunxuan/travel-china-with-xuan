@@ -1,0 +1,57 @@
+{
+  "id": "pudong-airport-to-shanghai-disneyland",
+  "type": "planning",
+  "pillar": "transport-last-mile-transfers",
+  "audienceMarkets": ["global"],
+  "format": "last-mile-decision-guide",
+  "topics": ["transport", "airport-transfers", "family-travel"],
+  "destinations": ["shanghai"],
+  "heroImagePath": "/images/guides/pudong-airport-to-shanghai-disneyland/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/pudong-airport-to-shanghai-disneyland/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "transport",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/pudong-airport-to-shanghai-disneyland/",
+      "title": "Pudong Airport to Shanghai Disneyland: Airport Link or Taxi?",
+      "headline": "Pudong Airport to Shanghai Disneyland: Airport Link or Taxi With Kids and Luggage?",
+      "description": "Choose the practical PVG-to-Shanghai-Disney route for your arrival time, hotel, children and luggage—and avoid the two-station name trap.",
+      "heroAlt": "A real Shanghai Suburban Railway Airport Link train and station sign at Shanghai International Resort Station.",
+      "navTitle": "Pudong Airport to Shanghai Disneyland",
+      "featuredLinkLabel": "Choose a Pudong Airport to Disney transfer",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shanghai", "Airport transfer", "Disneyland"]
+    },
+    "zh": {
+      "path": "/zh/guides/pudong-airport-to-shanghai-disneyland/",
+      "title": "浦东机场去上海迪士尼：机场联络线还是打车？",
+      "headline": "浦东机场到上海迪士尼：带孩子和行李时，机场联络线还是打车更合适？",
+      "description": "按抵达时间、住宿地点、孩子和行李选择浦东机场到上海迪士尼的实际路线，并避开两个相似站名的误区。",
+      "heroAlt": "上海国际旅游度假区站内的真实市域机场联络线列车与站名标识。",
+      "navTitle": "浦东机场到上海迪士尼",
+      "featuredLinkLabel": "选择浦东机场到迪士尼的接驳方式",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["上海", "机场接驳", "迪士尼"]
+    },
+    "ko": {
+      "path": "/ko/guides/pudong-airport-to-shanghai-disneyland/",
+      "title": "푸둥공항에서 상하이 디즈니랜드: 공항철도 vs 택시",
+      "headline": "푸둥공항에서 상하이 디즈니랜드까지: 아이와 짐이 있다면 공항철도와 택시 중 무엇이 나을까?",
+      "description": "도착 시각, 숙소, 아이와 수하물을 기준으로 PVG에서 상하이 디즈니까지 갈 방법을 고르고 비슷한 역 이름도 구분하세요.",
+      "heroAlt": "상하이 국제관광리조트역의 실제 공항연락선 열차와 역명 표지.",
+      "navTitle": "푸둥공항에서 상하이 디즈니",
+      "featuredLinkLabel": "푸둥공항발 디즈니 이동편 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["상하이", "공항 이동", "디즈니랜드"]
+    }
+  }
+}
