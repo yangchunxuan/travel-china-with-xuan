@@ -33,12 +33,20 @@ test("search platform keeps the explicit nine-section taxonomy and thin routes",
 });
 
 test("legacy pages enter the manifest through adapters without changing GuideId", async () => {
-  const [registry, adapter, manifest, systemAdapter, baselineSource] = await Promise.all([
+  const [
+    registry,
+    adapter,
+    manifest,
+    systemAdapter,
+    baselineSource,
+    phase0BaselineSource,
+  ] = await Promise.all([
     source("lib/guideRegistry.ts"),
     source("lib/searchPlatformContentAdapter.ts"),
     source("lib/searchPlatformManifest.ts"),
     source("lib/legacySystemContentAdapter.ts"),
     source("content/legacy-indexable-path-baseline.json"),
+    source("content/phase0-indexable-path-baseline.json"),
   ]);
 
   const guideIdBlock = registry.match(/export const guideIds = \[([\s\S]*?)\] as const/);
@@ -52,6 +60,27 @@ test("legacy pages enter the manifest through adapters without changing GuideId"
   assert.match(systemAdapter, /id: "entry-requirements"/);
   assert.equal(JSON.parse(baselineSource).length, 76);
   assert.match(manifest, /JSON\.stringify\(actualLegacyPaths\)/);
+
+  const phase0Baseline = JSON.parse(phase0BaselineSource);
+  assert.equal(
+    phase0Baseline.sourceCommit,
+    "4e18043a3dd69d0050034bdd92ade40246bc6fc9",
+  );
+  assert.equal(phase0Baseline.entryCount, 103);
+  assert.equal(phase0Baseline.entries.length, 103);
+  assert.equal(phase0Baseline.indexablePathCount, 94);
+  assert.equal(
+    phase0Baseline.entries.filter(
+      (entry) => entry.status === "published" && entry.indexability.index,
+    ).length,
+    94,
+  );
+  assert.equal(
+    phase0Baseline.entries.filter((entry) => !entry.indexability.index).length,
+    9,
+  );
+  assert.match(manifest, /PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT/);
+  assert.match(manifest, /JSON\.stringify\(actualPhase0Entries\)/);
 });
 
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {

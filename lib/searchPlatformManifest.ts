@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import coreEntityRecords from "../content/entities/core-places.json" with { type: "json" };
 import legacyIndexablePathBaseline from "../content/legacy-indexable-path-baseline.json" with { type: "json" };
+import phase0IndexablePathBaseline from "../content/phase0-indexable-path-baseline.json" with { type: "json" };
 import {
   buildContentManifest,
   getIndexableManifestEntries,
@@ -74,6 +75,83 @@ if (JSON.stringify(actualLegacyPaths) !== JSON.stringify(expectedLegacyPaths)) {
   const unexpected = actualLegacyPaths.filter((path) => !expected.has(path));
   throw new Error(
     `Legacy URL parity failed. Missing: ${missing.join(", ") || "none"}. Unexpected: ${unexpected.join(", ") || "none"}.`,
+  );
+}
+
+/**
+ * Phase 1 migration guard.
+ *
+ * This snapshot was reviewed from the formal Phase 0 implementation commit.
+ * It deliberately records the nine preview-only hub routes as noindex as well
+ * as the 94 indexable routes, so later work cannot silently publish, deindex,
+ * move, or remove a Phase 0 system page, guide, or hub.
+ */
+export const PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT =
+  "4e18043a3dd69d0050034bdd92ade40246bc6fc9";
+export const PHASE0_MANIFEST_ENTRY_BASELINE = 103;
+export const PHASE0_INDEXABLE_PATH_BASELINE = 94;
+
+function phase0EntryKind(contentId: string) {
+  if (contentId.startsWith("system-")) return "system";
+  if (contentId.startsWith("guide-")) return "guide";
+  if (contentId.startsWith("hub-")) return "hub";
+  return null;
+}
+
+const actualPhase0Entries = searchPlatformManifest.entries
+  .flatMap((entry) => {
+    const kind = phase0EntryKind(entry.contentId);
+    if (!kind) return [];
+
+    return [
+      {
+        contentId: entry.contentId,
+        kind,
+        locale: entry.locale,
+        path: entry.path,
+        status: entry.status,
+        indexability: {
+          index: entry.indexability.index,
+          follow: entry.indexability.follow,
+          ...(entry.indexability.blockReason
+            ? { blockReason: entry.indexability.blockReason }
+            : {}),
+        },
+      },
+    ];
+  })
+  .sort(
+    (left, right) =>
+      left.path.localeCompare(right.path, "en") ||
+      left.contentId.localeCompare(right.contentId, "en") ||
+      left.locale.localeCompare(right.locale, "en"),
+  );
+
+const actualPhase0IndexablePathCount = actualPhase0Entries.filter(
+  (entry) => entry.status === "published" && entry.indexability.index,
+).length;
+
+if (
+  phase0IndexablePathBaseline.sourceCommit !==
+  PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT
+) {
+  throw new Error(
+    `Phase 0 baseline source commit mismatch: expected ${PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT}, received ${phase0IndexablePathBaseline.sourceCommit}.`,
+  );
+}
+
+if (
+  phase0IndexablePathBaseline.entryCount !==
+    PHASE0_MANIFEST_ENTRY_BASELINE ||
+  phase0IndexablePathBaseline.indexablePathCount !==
+    PHASE0_INDEXABLE_PATH_BASELINE ||
+  actualPhase0Entries.length !== PHASE0_MANIFEST_ENTRY_BASELINE ||
+  actualPhase0IndexablePathCount !== PHASE0_INDEXABLE_PATH_BASELINE ||
+  JSON.stringify(actualPhase0Entries) !==
+    JSON.stringify(phase0IndexablePathBaseline.entries)
+) {
+  throw new Error(
+    `Phase 0 search-platform parity failed: expected ${PHASE0_MANIFEST_ENTRY_BASELINE} tracked entries and ${PHASE0_INDEXABLE_PATH_BASELINE} indexable paths; received ${actualPhase0Entries.length} tracked entries and ${actualPhase0IndexablePathCount} indexable paths. Review an explicit migration before changing the Phase 0 baseline.`,
   );
 }
 
