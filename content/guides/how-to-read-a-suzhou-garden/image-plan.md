@@ -27,3 +27,11 @@ UNESCO, Suzhou garden authorities, museums and photographers may each impose dif
 The six-element garden grammar, framed-view versus borrowed-scenery comparison, four-garden choice table, seven-stop walking exercise and evidence-level table should remain accessible HTML. These concepts will need editorial correction and should not be frozen into infographics. The article does not need decorative diagrams simply to increase image count.
 
 No image assets are included in this branch.
+
+## Integration asset audit — 2026-08-11
+
+- Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`.
+- Provenance register checked: `docs/homeground-photo-provenance.md`.
+- Selected assets: none. The library has no Suzhou collection and no file whose exact garden and viewpoint can be verified. Garden photographs from Beijing, Hangzhou, Luoyang or another city were rejected.
+- Still required: `hero-1600.webp` under `public/images/guides/how-to-read-a-suzhou-garden/`, with the exact Suzhou garden, viewpoint, creator, capture date and commercial-use permission recorded.
+- Alt status: all three `heroAlt` values describe the planned composition only. They must be reconciled with the selected real photograph before publication.

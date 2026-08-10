@@ -304,6 +304,28 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Keep planning the visit",
+      items: [
+        {
+          label: "Explore China by destination",
+          href: "/explore/",
+          description: "Place Suzhou within a wider route without treating every city as the same kind of stop.",
+        },
+        {
+          label: "Check whether your China itinerary is too rushed",
+          href: "/guides/is-your-china-itinerary-too-rushed/",
+          description: "Protect enough time to read one garden slowly instead of collecting several hurried entries.",
+        },
+        {
+          label: "Decide whether you need a tour guide in China",
+          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          description: "Use human interpretation where it adds context, not as a default for every stop.",
+        },
+      ],
+    },
+    {
       id: "sources",
       type: "sources",
       title: "Official, museum and academic sources checked on 10 August 2026",

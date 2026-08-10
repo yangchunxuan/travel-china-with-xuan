@@ -294,22 +294,22 @@ const body = {
       items: [
         {
           label: "检查整个中国行程是否过于赶",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
+          href: "/zh/guides/is-your-china-itinerary-too-rushed/",
           description: "把机场、酒店、行李和乐园之间的每次交接都计入真实交通时间。",
         },
         {
           label: "规划与年长父母同行的中国行程",
-          href: "/guides/china-itinerary-with-older-parents/",
+          href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "按步行承受能力和恢复时间设计接驳。",
         },
         {
           label: "核对240小时过境免签路线",
-          href: "/guides/china-240-hour-visa-free-transit-route-check/",
+          href: "/zh/guides/china-240-hour-visa-free-transit-route-check/",
           description: "机场交通与能否入境中国是两个不同的判断。",
         },
         {
           label: "判断哪些环节真正需要人工帮助",
-          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "只在困难的交接环节使用本地支持，不必为所有环节增加服务。",
         },
       ],

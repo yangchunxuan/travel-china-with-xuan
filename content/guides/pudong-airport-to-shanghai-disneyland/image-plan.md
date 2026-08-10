@@ -5,3 +5,11 @@
 3. Body 2: Place in the luggage section. Use a licensed real photograph of either the West Public Transportation Hub wayfinding or the official luggage-storage exterior opposite the West Gate of Wishing Star Park. It should help a family understand where a car or suitcase handoff happens.
 4. Images that must be real photographs: The airport, Airport Link train and station, Pudong Bus 50, taxis or ride-hailing vehicles, Disney transport hubs, hotels, guests, children, luggage and every piece of wayfinding. Use only Homeground-owned, operator-authorised or properly licensed material. Do not generate AI airport, station, park or traveller scenes.
 5. Infographic recommendation: A single human-designed, source-checked schematic could be useful: PVG → Airport Link → Shanghai International Resort Station Exit 3 → Pudong Bus 50 → Disney Resort Metro Station → park/hotel transfer. It must be labelled “not to scale,” dated, and kept separate from live fares and timetables. Do not ask an image model to invent a map, price or timetable.
+
+## Integration asset audit — 2026-08-11
+
+- Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`, including `上海优选素材/06_交通与旅程` and `上海优选素材/07_待修与备选`.
+- Provenance register checked: `docs/homeground-photo-provenance.md`.
+- Selected assets: none. The Shanghai files show general city roads, riverfronts and Lujiazui; none can be verified as PVG, the Airport Link, Shanghai International Resort Station, Pudong Bus 50, the West Public Transportation Hub or the official luggage store. In addition, `上海优选素材/上海素材整理记录.json` records `commercialRightsConfirmed: false`.
+- Still required: `hero-1600.webp`, `airport-link-exit-3-bus-50-1440.webp` and `west-transport-hub-luggage-1440.webp` under `public/images/guides/pudong-airport-to-shanghai-disneyland/`.
+- Alt and caption status: the current strings describe the intended subjects, not a confirmed file. Final wording must be checked against the exact licensed photographs before publication.

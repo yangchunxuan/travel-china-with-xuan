@@ -304,6 +304,28 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "internal-links",
+      type: "internal-links",
+      title: "继续规划这次参观",
+      items: [
+        {
+          label: "按目的地探索中国",
+          href: "/zh/explore/",
+          description: "把苏州放进更大的路线，同时保留每座城市不同的旅行节奏。",
+        },
+        {
+          label: "检查中国行程是否排得太赶",
+          href: "/zh/guides/is-your-china-itinerary-too-rushed/",
+          description: "给一座园林留出慢慢阅读的时间，而不是匆忙刷完好几座。",
+        },
+        {
+          label: "判断中国旅行是否需要导游",
+          href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
+          description: "只在背景讲解真正增加理解的地方安排真人协助。",
+        },
+      ],
+    },
+    {
       id: "sources",
       type: "sources",
       title: "2026 年 8 月 10 日核对的官方、博物馆与学术来源",

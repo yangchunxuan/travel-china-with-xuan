@@ -355,6 +355,28 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Keep planning Guangzhou and your wider China trip",
+      items: [
+        {
+          label: "Confirm whether your Baiyun Airport flight uses T2 or T3",
+          href: "/guides/guangzhou-baiyun-airport-t2-t3/",
+          description: "Check the flight's terminal before choosing the correct metro, intercity rail or shuttle route.",
+        },
+        {
+          label: "Check whether your China itinerary is too rushed",
+          href: "/guides/is-your-china-itinerary-too-rushed/",
+          description: "Leave usable time for morning tea, transport and adjustments instead of filling every gap.",
+        },
+        {
+          label: "Decide whether you need a tour guide in China",
+          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          description: "Put human help where cultural context or on-the-ground coordination matters most.",
+        },
+      ],
+    },
+    {
       id: "official-sources",
       type: "sources",
       title: "Official and academic sources checked on 10 August 2026",

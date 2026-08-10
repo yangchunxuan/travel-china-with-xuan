@@ -55,3 +55,11 @@ Use only real, licensable destination photography with reliable location provena
 - Keep the provenance of Dayan, Shuhe and Baisha images separate; the three places are not interchangeable.
 - Do not use AI to manufacture a real destination scene or to add/remove crowds in documentary photographs.
 - No image asset is currently present. Guide generation and the site build are therefore not expected to pass until the hero file is supplied.
+
+## Integration asset audit — 2026-08-11
+
+- Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`.
+- Provenance register checked: `docs/homeground-photo-provenance.md`.
+- Selected assets: none. The library has no Lijiang collection and no photograph whose location can be verified separately as Dayan or Shuhe. Dali, Fenghuang and other old-town photographs were rejected.
+- Still required: `hero-1600.webp` under `public/images/guides/lijiang-old-town-or-shuhe-where-to-stay/`, with Dayan/Shuhe identity, creator, capture date and commercial-use permission recorded.
+- Alt status: the three current `heroAlt` values intentionally say “Dayan or Shuhe”; they are not specific enough for a final assigned photograph and must be rewritten once the exact place is known.

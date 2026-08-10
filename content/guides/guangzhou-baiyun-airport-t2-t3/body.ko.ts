@@ -465,22 +465,22 @@ const body = {
       items: [
         {
           label: "경유 노선이 실제로 허용되는지 확인하기",
-          href: "/guides/china-240-hour-visa-free-transit-route-check/",
+          href: "/ko/guides/china-240-hour-visa-free-transit-route-check/",
           description: "공항 교통편과 중국 입국 허가는 서로 다른 문제입니다.",
         },
         {
           label: "전체 중국 일정이 지나치게 빠듯한지 점검하기",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
+          href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "터미널·역·호텔 사이의 이동도 여행일 일정에 포함하세요.",
         },
         {
           label: "부모님과 함께하는 중국 여행 계획하기",
-          href: "/guides/china-itinerary-with-older-parents/",
+          href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "도보, 엘리베이터, 짐, 회복 시간을 기준으로 일정을 짭니다.",
         },
         {
           label: "어느 구간에서 사람의 도움이 필요한지 판단하기",
-          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "모든 단계에 도움을 붙이기보다 필요한 곳에만 현지 지원을 활용하세요.",
         },
       ],

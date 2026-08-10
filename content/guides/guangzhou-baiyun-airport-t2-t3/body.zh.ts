@@ -465,22 +465,22 @@ const body = {
       items: [
         {
           label: "核对过境路线是否真的符合规定",
-          href: "/guides/china-240-hour-visa-free-transit-route-check/",
+          href: "/zh/guides/china-240-hour-visa-free-transit-route-check/",
           description: "机场交通是否可行，与旅客是否获准入境中国是两个问题。",
         },
         {
           label: "判断整段中国行程是否安排得太赶",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
+          href: "/zh/guides/is-your-china-itinerary-too-rushed/",
           description: "航站楼、车站与酒店之间的交接，也应计入旅行日。",
         },
         {
           label: "规划与父母同行的中国行程",
-          href: "/guides/china-itinerary-with-older-parents/",
+          href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "把步行、电梯、行李和恢复时间放进路线设计。",
         },
         {
           label: "判断哪些环节值得使用人工协助",
-          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "只在真正需要的节点加入本地支持，不必覆盖每一步。",
         },
       ],

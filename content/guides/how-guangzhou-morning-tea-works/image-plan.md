@@ -27,3 +27,11 @@ Restaurant names, menus, interiors and logos may carry separate permissions. Do 
 The term comparison, historical timeline, 2026 regulation summary, dish-and-allergen table, etiquette evidence levels and first-visit flow should remain HTML tables, callouts and lists. They need editorial updates and should not be frozen into infographic images.
 
 No image assets are included in this branch.
+
+## Integration asset audit — 2026-08-11
+
+- Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`.
+- Provenance register checked: `docs/homeground-photo-provenance.md`.
+- Selected assets: none. The library has no Guangzhou collection and no documented photograph of a functioning Guangzhou teahouse. Tea or restaurant photographs from Chengdu, Hangzhou or another city were rejected because they cannot represent Guangzhou morning tea.
+- Still required: `hero-1600.webp` under `public/images/guides/how-guangzhou-morning-tea-works/`, with venue, capture date, creator and commercial-use permission recorded.
+- Alt status: all three `heroAlt` values remain subject descriptions rather than verified descriptions of an assigned file. They must be checked against the final photograph before publication.

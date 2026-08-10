@@ -294,22 +294,22 @@ const body = {
       items: [
         {
           label: "전체 중국 일정이 너무 빠듯한지 확인하기",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
+          href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "공항, 호텔, 수하물과 파크 사이의 모든 환승을 실제 이동 시간으로 계산합니다.",
         },
         {
           label: "부모님과 함께하는 중국 여행 계획하기",
-          href: "/guides/china-itinerary-with-older-parents/",
+          href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "걸을 수 있는 거리와 회복 시간을 기준으로 이동편을 짭니다.",
         },
         {
           label: "240시간 무비자 경유 동선 확인하기",
-          href: "/guides/china-240-hour-visa-free-transit-route-check/",
+          href: "/ko/guides/china-240-hour-visa-free-transit-route-check/",
           description: "공항 교통편과 중국 입국 허용 여부는 별개의 판단입니다.",
         },
         {
           label: "사람의 도움이 실제로 필요한 구간 정하기",
-          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "모든 일정에 가이드를 붙이기보다 어려운 환승 구간에 현지 도움을 활용합니다.",
         },
       ],
