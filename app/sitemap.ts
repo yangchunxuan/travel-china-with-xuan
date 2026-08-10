@@ -1,202 +1,45 @@
 import type { MetadataRoute } from "next";
+import { getIndexableManifestEntries } from "../lib/content-system/manifest";
+import type { ContentManifestEntry } from "../lib/content-system/types";
 import {
-  getGuideAvailableLocales,
-  getGuideEntry,
-  getGuideLanguageUrls,
-  guideIds,
-} from "../lib/guideRegistry";
-import {
-  getHomegroundLegalLanguagePaths,
-  getHomegroundLegalPath,
-  homegroundLegalPageIds,
-} from "../lib/homegroundLegalI18n";
+  absoluteManifestAlternates,
+  searchPlatformManifest,
+} from "../lib/searchPlatformManifest";
 
 export const dynamic = "force-static";
 
 const base = "https://homegroundchina.com";
-const homepageLanguages = {
-  en: `${base}/`,
-  ko: `${base}/ko/`,
-  "zh-Hans": `${base}/zh/`,
-  "x-default": `${base}/`,
-};
-const privacyLanguages = {
-  en: `${base}/privacy/`,
-  ko: `${base}/ko/privacy/`,
-  "zh-Hans": `${base}/zh/privacy/`,
-  "x-default": `${base}/privacy/`,
-};
-const studioLanguages = {
-  en: `${base}/studio/`,
-  ko: `${base}/ko/studio/`,
-  "zh-Hans": `${base}/zh/studio/`,
-  "x-default": `${base}/studio/`,
-};
-const guideHubLanguages = {
-  en: `${base}/guides/`,
-  ko: `${base}/ko/guides/`,
-  "zh-Hans": `${base}/zh/guides/`,
-  "x-default": `${base}/guides/`,
-};
-const itineraryReviewLanguages = {
-  en: `${base}/china-itinerary-review/`,
-  ko: `${base}/ko/china-itinerary-review/`,
-  "zh-Hans": `${base}/zh/china-itinerary-review/`,
-  "x-default": `${base}/china-itinerary-review/`,
-};
-const guideEntries = guideIds.flatMap((guideId) => {
-  const languages = getGuideLanguageUrls(guideId);
 
-  return getGuideAvailableLocales(guideId).map((locale) => {
-    const guide = getGuideEntry(guideId, locale);
+function sitemapPriority(entry: ContentManifestEntry) {
+  if (entry.contentId === "system-home") return entry.locale === "en" ? 1 : 0.8;
+  if (entry.contentId === "system-guides") return entry.locale === "en" ? 0.8 : 0.75;
+  if (entry.contentId === "system-entry-requirements") return 0.8;
+  if (entry.contentId.startsWith("hub-")) return entry.locale === "en" ? 0.75 : 0.7;
+  if (entry.contentId.startsWith("guide-")) return entry.locale === "en" ? 0.7 : 0.65;
+  if (entry.contentId === "system-studio") return entry.locale === "en" ? 0.7 : 0.65;
+  if (entry.contentId === "system-itinerary-review") return entry.locale === "en" ? 0.65 : 0.6;
+  return 0.3;
+}
 
-    return {
-      url: guide.canonicalUrl,
-      lastModified: guide.dateModified,
-      changeFrequency: "monthly" as const,
-      priority: locale === "en" ? 0.7 : 0.65,
-      alternates: { languages },
-    };
-  });
-});
-const legalEntries = homegroundLegalPageIds.flatMap((pageId) => {
-  const relativeLanguages = getHomegroundLegalLanguagePaths(pageId);
-  const languages = Object.fromEntries(
-    Object.entries(relativeLanguages).map(([language, path]) => [
-      language,
-      `${base}${path}`,
-    ]),
-  );
-
-  return (["en", "zh", "ko"] as const).map((locale) => ({
-    url: `${base}${getHomegroundLegalPath(pageId, locale)}`,
-    lastModified: "2026-07-24",
-    changeFrequency: "monthly" as const,
-    priority: 0.3,
-    alternates: { languages },
-  }));
-});
+function changeFrequency(entry: ContentManifestEntry) {
+  if (
+    entry.contentId === "system-home" ||
+    entry.contentId === "system-guides" ||
+    entry.contentId === "system-entry-requirements" ||
+    entry.contentId.startsWith("hub-")
+  ) {
+    return "weekly" as const;
+  }
+  return "monthly" as const;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${base}/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "weekly",
-      priority: 1,
-      alternates: { languages: homepageLanguages },
-    },
-    {
-      url: `${base}/ko/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "weekly",
-      priority: 0.8,
-      alternates: { languages: homepageLanguages },
-    },
-    {
-      url: `${base}/zh/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "weekly",
-      priority: 0.8,
-      alternates: { languages: homepageLanguages },
-    },
-    {
-      url: `${base}/studio/`,
-      lastModified: "2026-07-22",
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: { languages: studioLanguages },
-    },
-    {
-      url: `${base}/zh/studio/`,
-      lastModified: "2026-07-22",
-      changeFrequency: "monthly",
-      priority: 0.65,
-      alternates: { languages: studioLanguages },
-    },
-    {
-      url: `${base}/ko/studio/`,
-      lastModified: "2026-07-22",
-      changeFrequency: "monthly",
-      priority: 0.65,
-      alternates: { languages: studioLanguages },
-    },
-    {
-      url: `${base}/guides/`,
-      lastModified: "2026-08-09",
-      changeFrequency: "weekly",
-      priority: 0.8,
-      alternates: { languages: guideHubLanguages },
-    },
-    {
-      url: `${base}/zh/guides/`,
-      lastModified: "2026-08-09",
-      changeFrequency: "weekly",
-      priority: 0.75,
-      alternates: { languages: guideHubLanguages },
-    },
-    {
-      url: `${base}/ko/guides/`,
-      lastModified: "2026-08-09",
-      changeFrequency: "weekly",
-      priority: 0.75,
-      alternates: { languages: guideHubLanguages },
-    },
-    {
-      url: `${base}/china-itinerary-review/`,
-      lastModified: "2026-07-22",
-      changeFrequency: "monthly",
-      priority: 0.65,
-      alternates: { languages: itineraryReviewLanguages },
-    },
-    {
-      url: `${base}/guides/china-entry-requirements/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "weekly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          en: `${base}/guides/china-entry-requirements/`,
-          "x-default": `${base}/guides/china-entry-requirements/`,
-        },
-      },
-    },
-    {
-      url: `${base}/zh/china-itinerary-review/`,
-      lastModified: "2026-07-22",
-      changeFrequency: "monthly",
-      priority: 0.6,
-      alternates: { languages: itineraryReviewLanguages },
-    },
-    {
-      url: `${base}/ko/china-itinerary-review/`,
-      lastModified: "2026-07-22",
-      changeFrequency: "monthly",
-      priority: 0.6,
-      alternates: { languages: itineraryReviewLanguages },
-    },
-    ...guideEntries,
-    ...legalEntries,
-    {
-      url: `${base}/privacy/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "monthly",
-      priority: 0.3,
-      alternates: { languages: privacyLanguages },
-    },
-    {
-      url: `${base}/ko/privacy/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "monthly",
-      priority: 0.3,
-      alternates: { languages: privacyLanguages },
-    },
-    {
-      url: `${base}/zh/privacy/`,
-      lastModified: "2026-07-24",
-      changeFrequency: "monthly",
-      priority: 0.3,
-      alternates: { languages: privacyLanguages },
-    },
-  ];
+  return getIndexableManifestEntries(searchPlatformManifest).map((entry) => ({
+    url: `${base}${entry.canonicalPath}`,
+    lastModified:
+      entry.dates.dateModified ?? entry.dates.datePublished ?? entry.dates.lastReviewed,
+    changeFrequency: changeFrequency(entry),
+    priority: sitemapPriority(entry),
+    alternates: { languages: absoluteManifestAlternates(entry) },
+  }));
 }

@@ -79,7 +79,7 @@ test("legal routes have canonical language alternates and appear in the sitemap 
   assert.match(defaultBusiness, /alternates/);
   assert.match(localizedTerms, /localizedLocale/);
   assert.match(localizedTerms, /getHomegroundLegalLanguagePaths/);
-  assert.match(sitemap, /homegroundLegalPageIds\.flatMap/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 
   for (const output of [
     "business-information/index.html",

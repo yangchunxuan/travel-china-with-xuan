@@ -107,9 +107,8 @@ test("guide metadata, sitemap and visible dates share one source", async () => {
   assert.match(page, /getGuideLanguagePaths\("zhangjiajie-itinerary"\)/);
   assert.match(localizedPage, /getGuideEntry\("zhangjiajie-itinerary", locale\)/);
   assert.match(localizedPage, /getGuideLanguagePaths\("zhangjiajie-itinerary"\)/);
-  assert.match(sitemap, /guideIds\.flatMap/);
-  assert.match(sitemap, /getGuideLanguageUrls\(guideId\)/);
-  assert.match(sitemap, /getGuideEntry\(guideId, locale\)/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
+  assert.match(sitemap, /absoluteManifestAlternates/);
   assert.match(guide, /guide\.datePublished/);
   assert.match(guide, /guide\.dateModified/);
   assert.match(registry, /datePublished: "2026-07-20"/);
@@ -159,7 +158,7 @@ test("guide locales have independent URLs, copy and language metadata", async ()
   assert.match(copy, /온전히 관광할 수 있는 날짜로 계산하세요/);
   assert.match(registry, /张家界玩 2、3 或 4 天/);
   assert.match(registry, /장자제 2일, 3일, 4일/);
-  assert.match(sitemap, /\.\.\.guideEntries/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
 test("guide images have responsive sources and explicit fallback dimensions", async () => {

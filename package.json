@@ -8,12 +8,15 @@
     "check:font-coverage:export": "node tools/check-font-coverage.mjs --production-export",
     "check:planning-scope-lines": "node --experimental-strip-types --no-warnings tools/check-planning-scope-lines.mjs",
     "check:indexable-export": "node tools/check-indexable-export.mjs",
+    "check:search-platform-export": "node tools/check-search-platform-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
+    "content:generate": "node tools/generate-content-manifest.mjs",
+    "content:check": "node tools/generate-content-manifest.mjs --check",
     "sign:traffic-link": "node tools/sign-traffic-link.mjs",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
-    "prebuild": "npm run check:font-coverage && npm run check:planning-scope-lines",
+    "prebuild": "npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines",
     "build": "next build",
-    "postbuild": "node tools/prune-production-export.mjs && npm run check:font-coverage:export",
+    "postbuild": "node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export",
     "start": "next start"
   },
   "dependencies": {

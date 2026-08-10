@@ -100,7 +100,7 @@ test("transport guide metadata and locale paths come from the guide registry", a
     registry,
     /path: "\/ko\/guides\/beijing-zhangjiajie-shanghai-transport\/"/,
   );
-  assert.match(sitemap, /guideIds\.flatMap/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
 test("transport article uses its own responsive, localized travel-day photos", async () => {

@@ -1,0 +1,101 @@
+[
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "country-china",
+      "entityType": "country",
+      "names": {
+        "en": { "name": "China" },
+        "zh-Hans": { "name": "中国" },
+        "ko": { "name": "중국" }
+      },
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-09",
+        "updatedAt": "2026-08-09"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-beijing",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Beijing" },
+        "zh-Hans": { "name": "北京" },
+        "ko": { "name": "베이징" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-09",
+        "updatedAt": "2026-08-09"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-xian",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Xi'an", "aliases": ["Xian"] },
+        "zh-Hans": { "name": "西安" },
+        "ko": { "name": "시안" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-09",
+        "updatedAt": "2026-08-09"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-zhangjiajie",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Zhangjiajie" },
+        "zh-Hans": { "name": "张家界" },
+        "ko": { "name": "장자제", "aliases": ["장가계"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-09",
+        "updatedAt": "2026-08-09"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-shanghai",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Shanghai" },
+        "zh-Hans": { "name": "上海" },
+        "ko": { "name": "상하이" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-09",
+        "updatedAt": "2026-08-09"
+      }
+    }
+  }
+]

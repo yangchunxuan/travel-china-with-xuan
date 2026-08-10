@@ -41,8 +41,9 @@ test("global navigation separates editorial guides from paid planning", async ()
   assert.equal(
     header.match(/pageContext === "guides"[\s\S]{0,90}`\$\{target\.path\}guides\/`/g)
       ?.length,
-    2,
+    1,
   );
+  assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 2);
   assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
   assert.doesNotMatch(footer, /guideId|getGuideEntry/);
@@ -55,17 +56,16 @@ test("global navigation separates editorial guides from paid planning", async ()
   assert.match(css, /:focus-visible/);
 });
 
-test("sitemap publishes all three localized guide hubs with hreflang", async () => {
-  const sitemap = await source("app/sitemap.ts");
+test("sitemap publishes manifest-backed localized guide hubs with hreflang", async () => {
+  const [sitemap, adapter] = await Promise.all([
+    source("app/sitemap.ts"),
+    source("lib/legacySystemContentAdapter.ts"),
+  ]);
 
-  assert.match(sitemap, /const guideHubLanguages = \{/);
-  assert.match(sitemap, /en: `\$\{base\}\/guides\/`/);
-  assert.match(sitemap, /ko: `\$\{base\}\/ko\/guides\/`/);
-  assert.match(sitemap, /"zh-Hans": `\$\{base\}\/zh\/guides\/`/);
-  assert.equal(
-    sitemap.match(/alternates: \{ languages: guideHubLanguages \}/g)?.length,
-    3,
-  );
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
+  assert.match(sitemap, /absoluteManifestAlternates/);
+  assert.match(adapter, /id: "guides"/);
+  assert.match(adapter, /getGuidesHubCopy\(locale\)/);
 });
 
 test("all eight article types expose the same visible and JSON-LD hierarchy", async () => {

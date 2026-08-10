@@ -1,0 +1,1151 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceCommit": "4e18043a3dd69d0050034bdd92ade40246bc6fc9",
+  "scope": "phase0-system-guide-hub-canonical-paths-and-indexability",
+  "entryCount": 103,
+  "indexablePathCount": 94,
+  "entries": [
+    {
+      "contentId": "system-home",
+      "kind": "system",
+      "locale": "en",
+      "path": "/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-business-information",
+      "kind": "system",
+      "locale": "en",
+      "path": "/business-information/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-itinerary-review",
+      "kind": "system",
+      "locale": "en",
+      "path": "/china-itinerary-review/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-culture",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/culture/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-essentials",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/essentials/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-explore",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/explore/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-guides",
+      "kind": "system",
+      "locale": "en",
+      "path": "/guides/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-beijing-zhangjiajie-shanghai-10-days",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/beijing-zhangjiajie-shanghai-10-days/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-beijing-zhangjiajie-shanghai-transport",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/beijing-zhangjiajie-shanghai-transport/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-best-zhangjiajie-night-show",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/best-zhangjiajie-night-show/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-240-hour-visa-free-transit-route-check",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/china-240-hour-visa-free-transit-route-check/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-entry-requirements",
+      "kind": "system",
+      "locale": "en",
+      "path": "/guides/china-entry-requirements/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-itinerary-with-older-parents",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/china-itinerary-with-older-parents/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-visa-free-canadian-citizens-2026",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/china-visa-free-canadian-citizens-2026/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-visa-free-new-zealand-citizens-2026",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/china-visa-free-new-zealand-citizens-2026/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-visa-free-uk-citizens-2026",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/china-visa-free-uk-citizens-2026/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-singaporeans-need-visa-china",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/do-singaporeans-need-visa-china/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-us-citizens-need-visa-china-2026",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/do-us-citizens-need-visa-china-2026/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-you-need-a-tour-guide-in-china",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/do-you-need-a-tour-guide-in-china/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-how-much-does-a-china-trip-cost",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/how-much-does-a-china-trip-cost/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-is-your-china-itinerary-too-rushed",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/is-your-china-itinerary-too-rushed/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-kevin-before-the-hotel-pickup",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/kevin-before-the-hotel-pickup/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-why-are-hotels-in-china-so-cheap",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/why-are-hotels-in-china-so-cheap/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-from-malaysia",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/zhangjiajie-from-malaysia/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-glass-bridge-vs-skywalk",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-itinerary",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/zhangjiajie-itinerary/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-older-travellers",
+      "kind": "guide",
+      "locale": "en",
+      "path": "/guides/zhangjiajie-older-travellers/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-home",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-business-information",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/business-information/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-itinerary-review",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/china-itinerary-review/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-culture",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/culture/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-essentials",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/essentials/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-explore",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/explore/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-guides",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/guides/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-beijing-zhangjiajie-shanghai-10-days",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/beijing-zhangjiajie-shanghai-10-days/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-beijing-zhangjiajie-shanghai-transport",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-best-zhangjiajie-night-show",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/best-zhangjiajie-night-show/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-240-hour-visa-free-transit-route-check",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/china-240-hour-visa-free-transit-route-check/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-itinerary-with-older-parents",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/china-itinerary-with-older-parents/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-singaporeans-need-visa-china",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/do-singaporeans-need-visa-china/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-us-citizens-need-visa-china-2026",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/do-us-citizens-need-visa-china-2026/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-you-need-a-tour-guide-in-china",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/do-you-need-a-tour-guide-in-china/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-how-much-does-a-china-trip-cost",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/how-much-does-a-china-trip-cost/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-is-your-china-itinerary-too-rushed",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/is-your-china-itinerary-too-rushed/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-kevin-before-the-hotel-pickup",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/kevin-before-the-hotel-pickup/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-why-are-hotels-in-china-so-cheap",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/why-are-hotels-in-china-so-cheap/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-from-malaysia",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/zhangjiajie-from-malaysia/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-glass-bridge-vs-skywalk",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-itinerary",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/zhangjiajie-itinerary/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-older-travellers",
+      "kind": "guide",
+      "locale": "ko",
+      "path": "/ko/guides/zhangjiajie-older-travellers/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-plan",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/plan/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-privacy",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/privacy/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-refund-delivery",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/refund-delivery/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-services",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/services/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-stay",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/stay/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-studio",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/studio/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-terms",
+      "kind": "system",
+      "locale": "ko",
+      "path": "/ko/terms/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-tools",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/tools/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-transport",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/transport/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-when-to-go",
+      "kind": "hub",
+      "locale": "ko",
+      "path": "/ko/when-to-go/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-plan",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/plan/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-privacy",
+      "kind": "system",
+      "locale": "en",
+      "path": "/privacy/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-refund-delivery",
+      "kind": "system",
+      "locale": "en",
+      "path": "/refund-delivery/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-services",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/services/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-stay",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/stay/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-studio",
+      "kind": "system",
+      "locale": "en",
+      "path": "/studio/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-terms",
+      "kind": "system",
+      "locale": "en",
+      "path": "/terms/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-tools",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/tools/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-transport",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/transport/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-when-to-go",
+      "kind": "hub",
+      "locale": "en",
+      "path": "/when-to-go/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "system-home",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-business-information",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/business-information/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-itinerary-review",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/china-itinerary-review/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-culture",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/culture/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-essentials",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/essentials/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-explore",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/explore/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-guides",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/guides/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-beijing-zhangjiajie-shanghai-10-days",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/beijing-zhangjiajie-shanghai-10-days/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-beijing-zhangjiajie-shanghai-transport",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-best-zhangjiajie-night-show",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/best-zhangjiajie-night-show/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-240-hour-visa-free-transit-route-check",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/china-240-hour-visa-free-transit-route-check/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-china-itinerary-with-older-parents",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/china-itinerary-with-older-parents/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-singaporeans-need-visa-china",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/do-singaporeans-need-visa-china/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-us-citizens-need-visa-china-2026",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/do-us-citizens-need-visa-china-2026/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-do-you-need-a-tour-guide-in-china",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/do-you-need-a-tour-guide-in-china/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-how-much-does-a-china-trip-cost",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/how-much-does-a-china-trip-cost/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-is-your-china-itinerary-too-rushed",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/is-your-china-itinerary-too-rushed/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-kevin-before-the-hotel-pickup",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/kevin-before-the-hotel-pickup/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-why-are-hotels-in-china-so-cheap",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/why-are-hotels-in-china-so-cheap/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-from-malaysia",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/zhangjiajie-from-malaysia/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-glass-bridge-vs-skywalk",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-itinerary",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/zhangjiajie-itinerary/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "guide-zhangjiajie-older-travellers",
+      "kind": "guide",
+      "locale": "zh",
+      "path": "/zh/guides/zhangjiajie-older-travellers/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-plan",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/plan/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-privacy",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/privacy/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-refund-delivery",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/refund-delivery/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-services",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/services/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-stay",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/stay/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-studio",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/studio/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "system-terms",
+      "kind": "system",
+      "locale": "zh",
+      "path": "/zh/terms/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-tools",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/tools/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    },
+    {
+      "contentId": "hub-transport",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/transport/",
+      "status": "published",
+      "indexability": {
+        "index": true,
+        "follow": true
+      }
+    },
+    {
+      "contentId": "hub-when-to-go",
+      "kind": "hub",
+      "locale": "zh",
+      "path": "/zh/when-to-go/",
+      "status": "review",
+      "indexability": {
+        "index": false,
+        "follow": true,
+        "blockReason": "No reviewed child content in this section yet."
+      }
+    }
+  ]
+}

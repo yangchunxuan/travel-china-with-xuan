@@ -45,6 +45,11 @@ interface HomegroundHeaderProps {
   pageContext?: HomegroundPageContext;
   guideId?: GuideId;
   showLanguageNav?: boolean;
+  /**
+   * Actual published equivalents for content that is not backed by GuideId.
+   * Missing locales are omitted instead of linking to an unrelated homepage.
+   */
+  languagePaths?: Partial<Record<HomegroundLocale, string>>;
 }
 
 const allowedHeaderHashes = new Set([
@@ -141,6 +146,7 @@ export function HomegroundHeader({
   pageContext = "home",
   guideId = "zhangjiajie-itinerary",
   showLanguageNav = true,
+  languagePaths,
 }: HomegroundHeaderProps) {
   const [open, setOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
@@ -170,6 +176,27 @@ export function HomegroundHeader({
   const studioHref = `${copy.path}studio/`;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
+  const availableLanguageLocales = homegroundLocales.filter(
+    (targetLocale) => !languagePaths || Boolean(languagePaths[targetLocale]),
+  );
+  const languageHrefFor = (targetLocale: HomegroundLocale) => {
+    if (languagePaths?.[targetLocale]) {
+      return languagePaths[targetLocale];
+    }
+
+    const target = getHomegroundCopy(targetLocale);
+    return pageContext === "guide"
+      ? getGuideEntry(guideId, targetLocale).canonicalPath
+      : pageContext === "guides"
+        ? `${target.path}guides/`
+        : pageContext === "services"
+          ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
+          : pageContext === "studio"
+            ? `${target.path}studio/`
+            : plannerStatus === "result" && !languageQuery
+              ? `${target.path}?planner=result${languageHash}`
+              : `${target.path}${languageQuery}${languageHash}`;
+  };
 
   useEffect(() => {
     const syncLocation = () => {
@@ -339,23 +366,9 @@ export function HomegroundHeader({
             hidden={!showLanguageNav}
             style={showLanguageNav ? undefined : { display: "none" }}
           >
-            {homegroundLocales.map((targetLocale) => {
+            {availableLanguageLocales.map((targetLocale) => {
               const target = getHomegroundCopy(targetLocale);
-              const languageHref =
-                pageContext === "guide"
-                  ? getGuideEntry(
-                      guideId,
-                      targetLocale,
-                    ).canonicalPath
-                  : pageContext === "guides"
-                    ? `${target.path}guides/`
-                  : pageContext === "services"
-                    ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
-                  : pageContext === "studio"
-                    ? `${target.path}studio/`
-                  : plannerStatus === "result" && !languageQuery
-                  ? `${target.path}?planner=result${languageHash}`
-                  : `${target.path}${languageQuery}${languageHash}`;
+              const languageHref = languageHrefFor(targetLocale);
               return (
                 <a
                   aria-current={
@@ -473,23 +486,9 @@ export function HomegroundHeader({
           hidden={!showLanguageNav}
           style={showLanguageNav ? undefined : { display: "none" }}
         >
-          {homegroundLocales.map((targetLocale) => {
+          {availableLanguageLocales.map((targetLocale) => {
             const target = getHomegroundCopy(targetLocale);
-            const languageHref =
-              pageContext === "guide"
-                ? getGuideEntry(
-                    guideId,
-                    targetLocale,
-                  ).canonicalPath
-                : pageContext === "guides"
-                  ? `${target.path}guides/`
-                : pageContext === "services"
-                  ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
-                : pageContext === "studio"
-                  ? `${target.path}studio/`
-                : plannerStatus === "result" && !languageQuery
-                ? `${target.path}?planner=result${languageHash}`
-                : `${target.path}${languageQuery}${languageHash}`;
+            const languageHref = languageHrefFor(targetLocale);
             return (
               <a
                 aria-current={
