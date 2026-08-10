@@ -1,0 +1,57 @@
+{
+  "id": "china-high-speed-train-first-time-guide",
+  "type": "planning",
+  "pillar": "transport",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["transport", "rail", "trip-planning"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "transport",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-high-speed-train-first-time-guide/",
+      "title": "China High-Speed Train Guide: Tickets, Stations & Boarding",
+      "headline": "China High-Speed Trains for First-Time Visitors: Tickets, Stations, Luggage and Boarding",
+      "description": "Book the right China high-speed train, enter passport details correctly, choose a seat and follow the station, luggage, security and boarding process.",
+      "heroAlt": "Passengers walking through a modern mainland China high-speed railway station concourse.",
+      "navTitle": "China high-speed train first-trip guide",
+      "featuredLinkLabel": "Take your first China high-speed train with confidence",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China transport", "High-speed rail"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-high-speed-train-first-time-guide/",
+      "title": "第一次坐中国高铁：买票、进站与行李指南",
+      "headline": "第一次坐中国高铁：买票、进站、行李与乘车完整指南",
+      "description": "从核对车站、护照购票和选择席别，到进站安检、行李限制、检票上车与行程变化，一次弄清第一次坐中国高铁的完整流程。",
+      "heroAlt": "旅客走在中国大陆现代化高铁站的候车大厅内。",
+      "navTitle": "第一次坐中国高铁指南",
+      "featuredLinkLabel": "安心完成第一次中国高铁旅行",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国交通", "高铁"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-high-speed-train-first-time-guide/",
+      "title": "중국 고속철도 첫 이용: 예매·역·수하물·탑승 가이드",
+      "headline": "중국 고속철도 첫 이용 가이드: 예매·역·수하물·탑승",
+      "description": "정확한 역과 여권 정보 확인부터 좌석 선택, 역 진입, 보안검색, 수하물 제한, 개찰과 일정 변경까지 중국 고속철도 첫 이용 과정을 정리했습니다.",
+      "heroAlt": "중국 본토의 현대적인 고속철도역 대합실을 걷는 승객들.",
+      "navTitle": "중국 고속철도 첫 이용 가이드",
+      "featuredLinkLabel": "중국 고속철도 첫 여정을 차분히 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 교통", "고속철도"]
+    }
+  }
+}
