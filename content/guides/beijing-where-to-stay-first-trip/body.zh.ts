@@ -447,22 +447,22 @@ const body = {
       items: [
         {
           label: "为什么中国酒店这么便宜？",
-          href: "/guides/why-are-hotels-in-china-so-cheap/",
+          href: "/zh/guides/why-are-hotels-in-china-so-cheap/",
           description: "选定区域后，再比较具体分店、近期客房实况、护照入住流程和真实价值。",
         },
         {
           label: "带年长父母游中国",
-          href: "/guides/china-itinerary-with-older-parents/",
+          href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "重新审视北京的步行量、酒店出入、行李和整条路线的节奏。",
         },
         {
           label: "你的中国行程是否太赶？",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
+          href: "/zh/guides/is-your-china-itinerary-too-rushed/",
           description: "在增加目的地之前，计算换酒店次数、门到门接驳以及缓冲和休整时间。",
         },
         {
           label: "北京—张家界—上海交通",
-          href: "/guides/beijing-zhangjiajie-shanghai-transport/",
+          href: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "让正确的北京车站或机场与下一家酒店的抵达方式匹配。",
         },
       ],

@@ -447,22 +447,22 @@ const body = {
       items: [
         {
           label: "중국 호텔은 왜 이렇게 저렴할까요?",
-          href: "/guides/why-are-hotels-in-china-so-cheap/",
+          href: "/ko/guides/why-are-hotels-in-china-so-cheap/",
           description: "지역을 고른 뒤 정확한 호텔 지점, 최근 객실 정보, 여권 체크인과 실제 가치를 비교하세요.",
         },
         {
           label: "부모님과 함께하는 중국 여행",
-          href: "/guides/china-itinerary-with-older-parents/",
+          href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "베이징의 도보 이동, 호텔 접근성, 수하물과 전체 여정의 속도를 검토하세요.",
         },
         {
           label: "중국 여행 일정이 너무 빠듯한가요?",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
+          href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "목적지를 더 추가하기 전에 호텔 이동, 문 앞에서 문 앞까지의 교통과 회복 시간을 계산하세요.",
         },
         {
           label: "베이징–장자제–상하이 교통",
-          href: "/guides/beijing-zhangjiajie-shanghai-transport/",
+          href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "정확한 베이징역이나 공항을 다음 호텔 도착 동선과 맞추세요.",
         },
       ],

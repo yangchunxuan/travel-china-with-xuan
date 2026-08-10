@@ -283,7 +283,7 @@ const body: StructuredPageBody = {
         ],
         [
           "Temporary Weixin Pay promotion",
-          "Tencent says users who first bind an international card by 31 December 2026 and then complete their first purchase may receive 90 consecutive calendar days in which the 3% fee is waived on eligible daily spending up to an aggregate RMB 1,000.",
+          "Tencent says eligible first-time international-card users may receive 90 consecutive calendar days from their first purchase in which the 3% fee is waived on qualifying daily spending up to an aggregate RMB 1,000.",
           "The 90 days start with the first purchase, and the RMB 1,000 is a daily aggregate promotion limit—not a per-transaction allowance. Confirm eligibility and the offer in your account before relying on it.",
         ],
         [
