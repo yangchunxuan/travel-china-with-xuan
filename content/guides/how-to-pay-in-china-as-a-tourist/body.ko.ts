@@ -160,7 +160,7 @@ const body: StructuredPageBody = {
       id: "direct-card",
       type: "heading",
       level: 2,
-      text: "국제 카드를 직접 사용하는 편이 좋은 장면",
+      text: "국제 카드를 직접 쓰는 편이 나은 경우",
     },
     {
       id: "direct-card-explanation",
@@ -451,7 +451,7 @@ const body: StructuredPageBody = {
           reviewedAt: "2026-08-10",
         },
         {
-          label: "UnionPay International: Explore Mainland China Your Way — 카드 수납과 ATM 참고",
+          label: "UnionPay International: Explore Mainland China Your Way — 해외 카드 결제와 ATM 안내",
           url: "https://www.unionpayintl.com/dynamic/ExploreMainlandChinaYourWay/en?currentPath=globalCard%2Fen",
           publisher: "UnionPay International",
           reviewedAt: "2026-08-10",

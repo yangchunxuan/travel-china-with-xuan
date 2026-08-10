@@ -254,7 +254,9 @@ or watermark:
   showing hotel guests or luggage.
 - `public/images/guides/china-in-october-golden-week-or-later/hero-1600.webp`
   from `上海优选素材/04_上海街巷与人文/外滩观景平台的游客_01.jpg`. It is not
-  labelled as a Golden Week crowd or as evidence of October weather.
+  labelled as a Golden Week crowd or as evidence of October weather. The
+  capture date is unknown; the local file creation timestamp is not treated as
+  a confirmed shooting date.
 - `public/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp`
   from `杭州优选素材/08_钱江新城与现代杭州/杭州动车站人流等待出行.jpg`.
   It is described as a Hangzhou railway-station concourse without naming a

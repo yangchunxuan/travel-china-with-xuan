@@ -8,6 +8,9 @@ Do not generate AI travel photography for this article. Use owned or properly li
 
 - Source: owner's organised local Facebook photo library, `上海优选素材/04_上海街巷与人文/外滩观景平台的游客_01.jpg`.
 - Output: `public/images/guides/china-in-october-golden-week-or-later/hero-1600.webp`, 1600 × 1000.
+- Location: the Bund viewing platform, Shanghai.
+- Capture date: unknown. The local file creation timestamp is not treated as a confirmed shooting date.
+- Rights status: the project owner authorised use from the organised library on the Homeground website. No independent third-party copyright record is asserted; do not reuse it outside this website without confirming the original photographer or licence.
 - The photograph shows the Bund viewing platform at sunset. It is deliberately not described as a Golden Week crowd or as October weather.
 
 ## Crowding photo — useful after “What actually changes during Golden Week”

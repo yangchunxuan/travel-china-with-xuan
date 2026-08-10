@@ -183,7 +183,7 @@ const body = {
       columns: ["관광지", "현재 공식 규정", "일정에 미치는 영향"],
       rows: [
         ["베이징 고궁박물원(자금성)", "당일 표를 판매하지 않습니다. 통상 방문 7일 전 20시에 판매가 열리고 여권 예약을 지원합니다.", "현행 규정대로라면 10월 1일 표는 9월 24일 20시에 열리는 계산입니다. 2026년 국경절 특별 공지가 이미 발표됐다는 뜻은 아닙니다."],
-        ["베이징 팔달령 장성", "공식 사이트는 실명 사전 예매와 현장 구매를 모두 안내합니다.", "자금성의 당일 판매 금지 규정을 팔달령에, 팔달령 규정을 다른 장성 구간에 그대로 적용하지 마세요."],
+        ["베이징 바다링 만리장성", "공식 사이트는 실명 사전 예매와 현장 구매를 모두 안내합니다.", "자금성의 당일 판매 금지 규정을 바다링에, 바다링 규정을 다른 만리장성 구간에 그대로 적용하지 마세요."],
         ["시안 진시황제릉박물원", "외국인과 무료 입장 대상자를 포함한 모든 관람객에게 공식 채널을 통한 사전 실명 예약을 안내합니다.", "당일 지참할 여권 정보로 예약하고, 대형 연휴 운영 공지를 다시 확인합니다."],
         ["상하이박물관", "동관은 현재 일반 개인 관람객의 예약 없는 입장을 시범 운영하지만 지정 공간은 여전히 예약해야 합니다. 인민광장관은 2026년 7월 9일부터 2027년 11월 14일까지 열리는 특별전 기간에 모든 관람객이 입장권을 구매해야 합니다.", "같은 기관 안에서도 규정이 여러 개일 수 있습니다. ‘박물관은 모두 예약’이라는 일반론 대신 정확한 건물과 전시를 확인하세요."],
       ],
@@ -389,7 +389,7 @@ const body = {
         { label: "공식 대기 구매 규정", url: "https://kyfw.12306.cn/otn/gonggao/alternate.html", publisher: "중국철도 12306", reviewedAt: "2026-08-10" },
         { label: "철도 여객 및 실명 증명서 규정", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html", publisher: "중국철도 12306", reviewedAt: "2026-08-10" },
         { label: "고궁박물원 관람·예매 규정", url: "https://www.dpm.org.cn/singles_detail/259831.html", publisher: "고궁박물원", reviewedAt: "2026-08-10" },
-        { label: "팔달령 장성 공식 예매 안내", url: "https://www.badaling.cn/website/pc/index.html", publisher: "팔달령 장성 관광지", reviewedAt: "2026-08-10" },
+        { label: "바다링 만리장성 공식 예매 안내", url: "https://www.badaling.cn/website/pc/index.html", publisher: "바다링 만리장성 관광지", reviewedAt: "2026-08-10" },
         { label: "진시황제릉박물원 관람 안내", url: "https://www.bmy.com.cn/guide/", publisher: "진시황제릉박물원", reviewedAt: "2026-08-10" },
         { label: "상하이박물관 현재 관람 공지", url: "https://reservation.shanghaimuseum.net/", publisher: "상하이박물관", reviewedAt: "2026-08-10" },
         { label: "베이징 기후 특성", url: "https://www.cma.gov.cn/kppd/kppdqxsj/kppdtqqh/202111/t20211103_4159387.html", publisher: "중국기상국", reviewedAt: "2026-08-10" },
