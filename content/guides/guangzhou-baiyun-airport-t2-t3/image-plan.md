@@ -1,0 +1,7 @@
+# Image plan
+
+1. Hero: A licensed real photograph of Guangzhou Baiyun International Airport Terminal 3 with a clearly readable T3 identifier and ground-transport wayfinding. Landscape 16:10. The purpose is to establish that the airport now has an operational T3, not to present generic airport architecture.
+2. Body 1: Place after the station-name table. Use a licensed real photograph inside the T3 transport centre showing signs for Baiyun Airport East intercity station, the terminal route or the Gaozeng shuttle connection. The wording on the sign must be legible enough to support the article.
+3. Body 2: Place after the wrong-terminal section. Use a licensed real photograph of an official T2–T3 shuttle stop, bus or terminal-direction sign. It should show how a passenger with luggage identifies the recovery route without implying a guaranteed transfer time.
+4. Images that must be real photographs: All terminal exteriors and interiors, airport staff, passengers, baggage, aircraft, rail stations, shuttle buses, taxis, ride-hailing pickup areas and wayfinding. Use only Homeground-owned, airport-authorised or properly licensed images; do not generate AI airport or traveller scenes.
+5. Infographic recommendation: Do not add an image-model-generated map, timetable or airline chart. The accessible HTML decision table should carry the terminal-to-station logic. If the editor later wants a diagram, it must be a human-designed, source-checked schematic that is dated and easy to update.
