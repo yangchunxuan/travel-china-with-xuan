@@ -32,7 +32,7 @@ test("search platform keeps the explicit nine-section taxonomy and thin routes",
   }
 });
 
-test("legacy pages enter the manifest through adapters without changing GuideId", async () => {
+test("legacy pages stay protected while independent guides can be added", async () => {
   const [
     registry,
     adapter,
@@ -49,7 +49,7 @@ test("legacy pages enter the manifest through adapters without changing GuideId"
     source("content/phase0-indexable-path-baseline.json"),
   ]);
 
-  const guideIdBlock = registry.match(/export const guideIds = \[([\s\S]*?)\] as const/);
+  const guideIdBlock = registry.match(/export const legacyGuideIds = \[([\s\S]*?)\] as const/);
   assert.ok(guideIdBlock);
   const guideIds = [...guideIdBlock[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
   assert.equal(guideIds.length, 19);
@@ -59,7 +59,8 @@ test("legacy pages enter the manifest through adapters without changing GuideId"
   assert.match(manifest, /buildLegacySystemContentNodes/);
   assert.match(systemAdapter, /id: "entry-requirements"/);
   assert.equal(JSON.parse(baselineSource).length, 76);
-  assert.match(manifest, /JSON\.stringify\(actualLegacyPaths\)/);
+  assert.match(manifest, /missingLegacyPaths/);
+  assert.match(manifest, /Additive guide paths are allowed/);
 
   const phase0Baseline = JSON.parse(phase0BaselineSource);
   assert.equal(
@@ -80,7 +81,8 @@ test("legacy pages enter the manifest through adapters without changing GuideId"
     9,
   );
   assert.match(manifest, /PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT/);
-  assert.match(manifest, /JSON\.stringify\(actualPhase0Entries\)/);
+  assert.match(manifest, /changedPhase0Entries/);
+  assert.match(manifest, /New article entries are allowed/);
 });
 
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {

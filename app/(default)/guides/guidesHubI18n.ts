@@ -36,9 +36,9 @@ export interface GuidesHubCopy {
   };
   updatedLabel: string;
   readLabel: string;
-  formatLabels: Record<GuideFormat, string>;
-  topicLabels: Record<GuideTopic, string>;
-  destinationLabels: Record<GuideDestination, string>;
+  formatLabels: Partial<Record<GuideFormat, string>>;
+  topicLabels: Partial<Record<GuideTopic, string>>;
+  destinationLabels: Partial<Record<GuideDestination, string>>;
   cta: {
     eyebrow: string;
     title: string;

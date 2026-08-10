@@ -1,6 +1,7 @@
 import {
   guideRegistry,
   type GuideId,
+  type LegacyGuideId,
 } from "./guideRegistry";
 import type {
   ContentFamily,
@@ -124,7 +125,7 @@ export const legacyGuideClassifications = {
     family: "subproblem",
     primaryIntent: "plan",
   },
-} as const satisfies Record<GuideId, LegacyGuideClassification>;
+} as const satisfies Record<LegacyGuideId, LegacyGuideClassification>;
 
 const destinationEntityIds = {
   china: "country-china",
@@ -153,18 +154,26 @@ const hubIntent: Record<SearchSectionId, ContentIntent> = {
 };
 
 function guideEntities(
-  destinations: readonly (keyof typeof destinationEntityIds)[],
+  destinations: readonly string[],
 ) {
-  const ids = destinations.map(
-    (destination) => destinationEntityIds[destination],
-  );
+  const ids = destinations.flatMap((destination) => {
+    const id = destinationEntityIds[
+      destination as keyof typeof destinationEntityIds
+    ];
+    return id ? [id] : [];
+  });
 
   return ids.length > 0 ? ids : ["country-china"];
 }
 
+function guideClassification(guide: (typeof guideRegistry)[number]) {
+  if (guide.search) return guide.search;
+  return legacyGuideClassifications[guide.id as LegacyGuideId];
+}
+
 export function buildLegacyGuideContentNodes(): ContentNode[] {
   return guideRegistry.map((guide) => {
-    const classification = legacyGuideClassifications[guide.id];
+    const classification = guideClassification(guide);
     const locales = Object.fromEntries(
       Object.entries(guide.locales).map(([siteLocale, localized]) => {
         if (!localized) return [];
@@ -223,9 +232,14 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
 export function buildSearchHubContentNodes(): ContentNode[] {
   return searchSectionIds.map((section) => {
     const sectionGuides = guideRegistry.filter(
-      (guide) => legacyGuideClassifications[guide.id].section === section,
+      (guide) => guideClassification(guide).section === section,
     );
-    const hasPublishedChildren = sectionGuides.length > 0;
+    // ContentNode indexability is shared by its locale versions. Publish the
+    // collection only when every public language has at least one real child,
+    // so one English article cannot accidentally index empty zh/ko hubs.
+    const hasPublishedChildren = (["en", "zh", "ko"] as const).every(
+      (locale) => sectionGuides.some((guide) => Boolean(guide.locales[locale])),
+    );
     const hubEditorialDate = "2026-08-09";
     const dateModified = sectionGuides.reduce(
       (latest, guide) =>
@@ -297,5 +311,5 @@ export function legacyGuideIdFromBodyResource(bodyResource: string) {
   const prefix = "legacy-guide:";
   if (!bodyResource.startsWith(prefix)) return null;
   const id = bodyResource.slice(prefix.length);
-  return id in legacyGuideClassifications ? (id as GuideId) : null;
+  return guideRegistry.some((guide) => guide.id === id) ? (id as GuideId) : null;
 }

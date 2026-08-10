@@ -6,6 +6,8 @@
 **Scope:** Information architecture, controlled collections, topic inventory, coverage governance, and the first production workflow
 **Out of scope:** Automatic publishing, a general-purpose CMS, mass generation of destination/month combinations, and changes to the Homeground homepage
 
+> **Pilot implementation note (2026-08-10):** `docs/article-production-lite.md` is the active, deliberately smaller article-page workflow. It implements independent per-guide folders and deterministic temporary registry generation, but does not implement the proposed GitHub Issue lease, production-packet hash or full legacy migration. Those heavier controls remain future options only if real coordination failures justify them.
+
 ## 1. Executive decision
 
 Phase 1 keeps the nine existing sections as the stable first level of the Homeground China information platform:

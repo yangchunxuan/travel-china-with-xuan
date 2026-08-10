@@ -55,12 +55,6 @@ export const legacyIndexableManifestEntries = getIndexableManifestEntries(
     entry.contentId.startsWith("guide-") || entry.contentId.startsWith("system-"),
 );
 
-if (legacyIndexableManifestEntries.length !== LEGACY_INDEXABLE_URL_BASELINE) {
-  throw new Error(
-    `Legacy URL parity failed: expected ${LEGACY_INDEXABLE_URL_BASELINE} indexable entries, received ${legacyIndexableManifestEntries.length}.`,
-  );
-}
-
 const actualLegacyPaths = legacyIndexableManifestEntries
   .map((entry) => entry.path)
   .sort((left, right) => left.localeCompare(right, "en"));
@@ -68,13 +62,14 @@ const expectedLegacyPaths = [...legacyIndexablePathBaseline].sort((left, right) 
   left.localeCompare(right, "en"),
 );
 
-if (JSON.stringify(actualLegacyPaths) !== JSON.stringify(expectedLegacyPaths)) {
-  const expected = new Set(expectedLegacyPaths);
-  const actual = new Set(actualLegacyPaths);
-  const missing = expectedLegacyPaths.filter((path) => !actual.has(path));
-  const unexpected = actualLegacyPaths.filter((path) => !expected.has(path));
+const actualLegacyPathSet = new Set(actualLegacyPaths);
+const missingLegacyPaths = expectedLegacyPaths.filter(
+  (path) => !actualLegacyPathSet.has(path),
+);
+
+if (missingLegacyPaths.length > 0) {
   throw new Error(
-    `Legacy URL parity failed. Missing: ${missing.join(", ") || "none"}. Unexpected: ${unexpected.join(", ") || "none"}.`,
+    `Legacy URL parity failed. Missing protected path(s): ${missingLegacyPaths.join(", ")}. Additive guide paths are allowed; deleting or moving a protected path needs an explicit migration.`,
   );
 }
 
@@ -127,10 +122,6 @@ const actualPhase0Entries = searchPlatformManifest.entries
       left.locale.localeCompare(right.locale, "en"),
   );
 
-const actualPhase0IndexablePathCount = actualPhase0Entries.filter(
-  (entry) => entry.status === "published" && entry.indexability.index,
-).length;
-
 if (
   phase0IndexablePathBaseline.sourceCommit !==
   PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT
@@ -145,13 +136,30 @@ if (
     PHASE0_MANIFEST_ENTRY_BASELINE ||
   phase0IndexablePathBaseline.indexablePathCount !==
     PHASE0_INDEXABLE_PATH_BASELINE ||
-  actualPhase0Entries.length !== PHASE0_MANIFEST_ENTRY_BASELINE ||
-  actualPhase0IndexablePathCount !== PHASE0_INDEXABLE_PATH_BASELINE ||
-  JSON.stringify(actualPhase0Entries) !==
-    JSON.stringify(phase0IndexablePathBaseline.entries)
+  phase0IndexablePathBaseline.entries.length !== PHASE0_MANIFEST_ENTRY_BASELINE
 ) {
   throw new Error(
-    `Phase 0 search-platform parity failed: expected ${PHASE0_MANIFEST_ENTRY_BASELINE} tracked entries and ${PHASE0_INDEXABLE_PATH_BASELINE} indexable paths; received ${actualPhase0Entries.length} tracked entries and ${actualPhase0IndexablePathCount} indexable paths. Review an explicit migration before changing the Phase 0 baseline.`,
+    "The committed Phase 0 baseline file no longer matches its reviewed counts.",
+  );
+}
+
+const actualPhase0ByKey = new Map(
+  actualPhase0Entries.map((entry) => [`${entry.contentId}::${entry.locale}`, entry]),
+);
+const changedPhase0Entries = phase0IndexablePathBaseline.entries.flatMap(
+  (expected) => {
+    const actual = actualPhase0ByKey.get(
+      `${expected.contentId}::${expected.locale}`,
+    );
+    return !actual || JSON.stringify(actual) !== JSON.stringify(expected)
+      ? [expected.path]
+      : [];
+  },
+);
+
+if (changedPhase0Entries.length > 0) {
+  throw new Error(
+    `Phase 0 search-platform parity failed for protected path(s): ${changedPhase0Entries.join(", ")}. New article entries are allowed; changing a protected entry needs an explicit migration.`,
   );
 }
 

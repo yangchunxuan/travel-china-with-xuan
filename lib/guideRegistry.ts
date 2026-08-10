@@ -1,8 +1,17 @@
 import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n";
+import type {
+  ContentFamily,
+  ContentIntent,
+  ContentSection,
+} from "./content-system/types";
+import {
+  generatedGuideIds,
+  generatedGuideRegistry,
+} from "./generated/guideRegistry.generated";
 
 const SITE_URL = "https://homegroundchina.com";
 
-export const guideIds = [
+export const legacyGuideIds = [
   "zhangjiajie-itinerary",
   "zhangjiajie-from-malaysia",
   "zhangjiajie-glass-bridge-vs-skywalk",
@@ -24,34 +33,33 @@ export const guideIds = [
   "how-much-does-a-china-trip-cost",
 ] as const;
 
-export type GuideId = (typeof guideIds)[number];
+export type LegacyGuideId = (typeof legacyGuideIds)[number];
+export type GeneratedGuideId = (typeof generatedGuideIds)[number];
+export type GuideId = LegacyGuideId | GeneratedGuideId;
+export const guideIds = [
+  ...legacyGuideIds,
+  ...generatedGuideIds,
+] as const;
 
-export type GuideFormat =
-  | "itinerary"
-  | "route-analysis"
-  | "transport"
-  | "decision-guide"
-  | "field-note"
-  | "planning-guide";
+export type GuideFormat = string;
 
-export type GuideTopic =
-  | "itinerary-design"
-  | "pace"
-  | "transport"
-  | "attractions"
-  | "evenings"
-  | "trip-planning"
-  | "on-the-ground"
-  | "accommodation";
+export type GuideTopic = string;
 
-export type GuideDestination =
-  "china" | "beijing" | "xian" | "zhangjiajie" | "shanghai";
+export type GuideDestination = string;
 
-export type GuidePillar =
-  "routes-and-pace" | "transport" | "entry-rules" | "field-notes";
+export type GuidePillar = string;
 
-export type GuideAudienceMarket =
-  "global" | "malaysia" | "uk" | "us" | "canada" | "singapore" | "new-zealand";
+export type GuideAudienceMarket = string;
+
+export interface GuideSearchClassification {
+  section: ContentSection;
+  family: ContentFamily;
+  primaryIntent: ContentIntent;
+}
+
+export type GuideLayout =
+  | { mode: "template"; templateId: "editorial-v1" }
+  | { mode: "bespoke" };
 
 export interface GuideLocaleEntry {
   path: string;
@@ -63,13 +71,15 @@ export interface GuideLocaleEntry {
   navTitle: string;
   featuredLinkLabel: string;
   openGraphLocale: string;
+  /** Localized labels shown on the all-guides card for independent guides. */
+  cardTags?: readonly string[];
 }
 
 export interface GuideEntry {
   id: GuideId;
   /** Kept for compatibility with existing article and homepage consumers. */
   type: "route" | "planning" | "field-note";
-  featured: boolean;
+  featured?: boolean;
   pillar: GuidePillar;
   audienceMarkets: readonly GuideAudienceMarket[];
   format: GuideFormat;
@@ -90,9 +100,13 @@ export interface GuideEntry {
   dateModified: string;
   sourceReviewedDate: string;
   locales: Partial<Record<HomegroundLocale, GuideLocaleEntry>>;
+  /** Required in independent guide folders; legacy guides use the adapter map. */
+  search?: GuideSearchClassification;
+  /** Required in independent guide folders; legacy guides keep bespoke routes. */
+  layout?: GuideLayout;
 }
 
-export const guideRegistry = [
+export const legacyGuideRegistry = [
   {
     id: "zhangjiajie-itinerary",
     type: "route",
@@ -1141,6 +1155,29 @@ export const guideRegistry = [
     },
   },
 ] as const satisfies readonly GuideEntry[];
+
+const generatedGuides: readonly GuideEntry[] = generatedGuideRegistry;
+
+export const guideRegistry: readonly GuideEntry[] = [
+  ...legacyGuideRegistry,
+  ...generatedGuides,
+];
+
+const registeredIds = new Set<string>();
+const registeredPaths = new Set<string>();
+for (const guide of guideRegistry) {
+  if (registeredIds.has(guide.id)) {
+    throw new Error(`Duplicate guide id in registry: ${guide.id}.`);
+  }
+  registeredIds.add(guide.id);
+  for (const localized of Object.values(guide.locales)) {
+    if (!localized) continue;
+    if (registeredPaths.has(localized.path)) {
+      throw new Error(`Duplicate guide path in registry: ${localized.path}.`);
+    }
+    registeredPaths.add(localized.path);
+  }
+}
 
 export function getGuideEntry(id: GuideId, locale: HomegroundLocale = "en") {
   const guide: GuideEntry | undefined = guideRegistry.find(
