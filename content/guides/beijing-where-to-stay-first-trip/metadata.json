@@ -1,0 +1,35 @@
+{
+  "id": "beijing-where-to-stay-first-trip",
+  "type": "planning",
+  "pillar": "stay-city-areas",
+  "audienceMarkets": ["global"],
+  "format": "area-comparison",
+  "topics": ["accommodation", "trip-planning", "first-trip"],
+  "destinations": ["beijing"],
+  "heroImagePath": "/images/guides/beijing-where-to-stay-first-trip/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-where-to-stay-first-trip/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "stay",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-where-to-stay-first-trip/",
+      "title": "Where to Stay in Beijing on a First Trip: 4 Areas Compared",
+      "headline": "Where to Stay in Beijing for a First Trip: Wangfujing, Qianmen, Sanlitun or the Northern Hutongs?",
+      "description": "Choose Wangfujing, Qianmen, Sanlitun or Beijing's northern hutongs by itinerary, arrival station, evening plans, luggage and walking tolerance.",
+      "heroAlt": "Travellers walking along a central Beijing street near a subway entrance and hotels.",
+      "navTitle": "Where to stay in Beijing",
+      "featuredLinkLabel": "Compare four Beijing stay areas",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Where to stay", "First trip"]
+    }
+  }
+}
