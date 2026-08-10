@@ -1,0 +1,337 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body: StructuredPageBody = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "quick-answer-lead",
+      type: "lead",
+      text: "China’s high-speed rail is manageable on a first trip. The mistakes that cause the most trouble are usually booking the wrong station, entering passport details differently from the document, and underestimating the time and effort needed for security, walking and luggage—not the train ride itself.",
+    },
+    {
+      id: "quick-answer",
+      type: "callout",
+      title: "Quick answer",
+      tone: "decision",
+      body: "Confirm the exact stations, book with the passenger’s passport details, carry that same original passport, and leave a sensible station buffer. Your electronic booking and passport normally replace a paper boarding ticket, but a passport may need a staffed lane. The local order of entry checks can vary, so follow signs and staff rather than memorising one gate layout.",
+    },
+    {
+      id: "homeground-context",
+      type: "paragraph",
+      text: "Homeground can help place each city-to-city journey inside the whole trip: which station fits the hotels, whether a transfer day is becoming too long, and where a flight, driver or extra local support makes more sense. That is a different decision from simply buying one train ticket.",
+    },
+    {
+      id: "before-booking",
+      type: "heading",
+      level: 2,
+      text: "Before booking: settle the route, station and passport details",
+    },
+    {
+      id: "station-name-warning",
+      type: "callout",
+      title: "The city name is not enough",
+      tone: "warning",
+      body: "A city’s main station, South, West, East and North stations can be in completely different places. Check the full station name in Chinese and English, map the journey from your hotel to the departure entrance, and map the arrival station to the next hotel before paying.",
+    },
+    {
+      id: "passport-details",
+      type: "paragraph",
+      text: "China Railway uses real-name tickets. For a foreign passport, enter the name and passport number according to the current 12306 passport-entry instructions, check nationality and expiry details, and complete identity verification before relying on the booking. The current official guidance allows automatic verification, a passport-page upload for manual review, or verification at a station ticket window. Do this early: a pending or failed verification can block purchase.",
+    },
+    {
+      id: "passport-original",
+      type: "paragraph",
+      text: "Carry the same original, valid passport used for the ticket. A booking screenshot, itinerary sheet or reimbursement receipt is useful as a reference but is not the travel document used for entry and boarding. If a passport is renewed between booking and travel, resolve the document change with 12306 or a station before departure instead of assuming the new number will match.",
+    },
+    {
+      id: "ticket-windows",
+      type: "paragraph",
+      text: "Most tickets normally enter public sale 15 days before departure, and each station or train can have its own release time. A 2026 pilot for more than 200 eligible Beijing–Shanghai high-speed and conventional services lets passengers submit reservation requests in the Railway 12306 app 17–60 days ahead; the system processes them 16–20 days before departure. That pilot is not a nationwide 60-day sales window, and an advance request is not a confirmed ticket until it is fulfilled and paid.",
+    },
+    {
+      id: "booking-channels",
+      type: "heading",
+      level: 2,
+      text: "Where to buy: official channel, station window or a third party",
+    },
+    {
+      id: "booking-channel-table",
+      type: "table",
+      caption: "Booking channels for a foreign visitor",
+      columns: ["Channel", "Best for", "Important trade-off"],
+      rows: [
+        ["Railway 12306 website or app", "Travellers who want the official inventory, waitlist and direct change/refund tools", "Account and passport verification take preparation; use the genuine Railway 12306 platform"],
+        ["Railway-station ticket window", "Travellers who need in-person identity help or are already at the correct station", "Queues and language support vary; bring the original passport and do not leave a popular train until the last minute"],
+        ["Established third-party platform or ticket agency", "Travellers who value a familiar language, payment flow or support layer", "It may charge fees or submit only when railway sales open; China Railway says it does not handle problems caused by other websites"],
+      ],
+    },
+    {
+      id: "booking-confirmation",
+      type: "paragraph",
+      text: "Whichever channel you use, do not confuse a request, pre-order or waitlist with an issued ticket. Confirm the train number, travel date, full departure and arrival station names, seat class, carriage and seat, passenger name, passport number, and a successful payment or ticket status.",
+    },
+    {
+      id: "seat-class",
+      type: "heading",
+      level: 2,
+      text: "Second, first or business class?",
+    },
+    {
+      id: "seat-class-table",
+      type: "table",
+      caption: "Common seat classes on mainland China high-speed trains",
+      columns: ["Class", "Typical layout", "Choose it when"],
+      rows: [
+        ["Second class", "Usually 3+2 seats across", "Value matters most and an ordinary reserved seat is sufficient"],
+        ["First class", "Usually 2+2 seats across with more personal space", "A longer ride, larger body size or easier movement is worth the extra fare"],
+        ["Business class", "Usually 2+1 or 1+1 with much more space; service varies by train", "Privacy, rest or mobility is the priority and the fare fits the trip"],
+      ],
+    },
+    {
+      id: "seat-variation",
+      type: "paragraph",
+      text: "These are typical layouts, not promises for every trainset. Premium first, sleeper and other products appear only on some services. Compare the exact train and fare rather than assuming the most expensive class is necessary; second class is the standard practical choice for many visitors.",
+    },
+    {
+      id: "station-process",
+      type: "heading",
+      level: 2,
+      text: "From station arrival to your seat",
+    },
+    {
+      id: "station-flow",
+      type: "list",
+      ordered: true,
+      items: [
+        "Arrive at the exact station and find the railway departure entrance, not only a metro exit or taxi drop-off.",
+        "Security: put bags through the X-ray machine and pass the passenger screening required for station entry.",
+        "Identity and ticket verification: present the original passport used to book. Try the indicated passport-capable gate; use the staffed lane if the document is not read.",
+        "Waiting: match the train number and departure time to the main board, then find the assigned waiting area or gate. Platforms may be announced later.",
+        "Ticket gate: when checking opens, present the passport again at the automatic or staffed gate and follow the platform and carriage signs.",
+        "Board: stand near the carriage marker, let arriving passengers off, enter the correct carriage and place luggage without blocking the aisle or doors.",
+      ],
+    },
+    {
+      id: "flow-variation",
+      type: "paragraph",
+      text: "Some stations combine or reverse parts of the entrance, security and identity-check sequence. Automatic passport reading also differs by station and document. The reliable anchors are the original passport, train number, departure time, gate and staff instructions—not a screenshot of another station’s layout.",
+    },
+    {
+      id: "arrival-time",
+      type: "callout",
+      title: "How early should you arrive?",
+      tone: "decision",
+      body: "China Railway does not publish one universal ‘arrive X minutes early’ rule: ticket checks stop before departure according to station arrangements. As practical planning advice, many first-time visitors should allow about 45–60 minutes after reaching the correct terminal; use more for a huge unfamiliar station, holiday crowds, passport assistance, children, older travellers or bulky luggage. This is a buffer, not a national requirement.",
+    },
+    {
+      id: "on-platform",
+      type: "paragraph",
+      text: "Boarding can be brief at an intermediate stop. Keep the passport and confirmation accessible, watch the train number rather than only the destination, and move to the correct carriage marker before the train arrives. On board, use the carriage and seat printed in the booking; do not assume an apparently empty seat remains free for the whole route.",
+    },
+    {
+      id: "luggage-security",
+      type: "heading",
+      level: 2,
+      text: "Luggage and security: the written limit is not the whole problem",
+    },
+    {
+      id: "luggage-rule",
+      type: "paragraph",
+      text: "Current China Railway guidance sets free carry-on luggage at 20 kg for most passengers and 10 kg for children, with the sum of length, width and height of each item limited to 130 cm on EMU high-speed trains; a single item may not exceed 20 kg. Foldable wheelchairs used by disabled passengers are treated separately. Check the exact train and current rules if you are near a limit or need consignment or luggage-transfer service.",
+    },
+    {
+      id: "luggage-reality",
+      type: "paragraph",
+      text: "A bag can meet the formal limit and still be hard to manage. You usually lift and move it yourself through screening, long concourses, escalators or lifts, the platform gap and the carriage. Overhead racks suit smaller cases; larger storage areas are finite and differ by train. Keep medicines, passport, valuables and a small arrival kit with you, and never leave a suitcase in an aisle or doorway.",
+    },
+    {
+      id: "restricted-items",
+      type: "callout",
+      title: "Check toiletries and batteries before leaving the hotel",
+      tone: "warning",
+      body: "The current national catalog bans weapons, explosives, many flammable, toxic and corrosive substances and restricts everyday items. Examples reviewed on 10 August 2026 include clearly marked power banks or lithium batteries of no more than 100 Wh each; nail polish/remover up to 50 ml total; flammable perfume, spray or gel in non-pressurised containers up to 100 ml per container, one of each type; and self-pressurised products such as hairspray up to 150 ml each, one of each type and 600 ml total. Special periods can apply tighter controls. Check the latest official catalog rather than relying on an old packing blog.",
+    },
+    {
+      id: "changes",
+      type: "heading",
+      level: 2,
+      text: "Changes, refunds and a missed train",
+    },
+    {
+      id: "changes-principles",
+      type: "list",
+      items: [
+        "A ticket can normally be changed once, subject to seats being available. The route, timing and ticket status determine which changes the system permits.",
+        "Refund fees are time-based. Under the rules reviewed on 10 August 2026, the standard scale is no fee at least 8 days before departure, then 5%, 10% or 20% as departure gets closer; special and changed tickets can have additional conditions.",
+        "Online, cash, printed reimbursement-receipt and third-party bookings may follow different handling paths even when the underlying railway rule is the same.",
+        "If the railway changes or cancels the service, follow the official notice; railway-responsibility arrangements are different from a voluntary change.",
+      ],
+    },
+    {
+      id: "missed-train",
+      type: "callout",
+      title: "If the train has departed",
+      tone: "warning",
+      body: "Go immediately to a railway service or ticket-change window. A change to another service may still be possible under current rules if seats exist, but it is not automatic and later-date changes can carry a fee. Do not buy a second ticket until you understand the status of the first, and do not assume an endorsed ticket remains refundable after departure.",
+    },
+    {
+      id: "families-mobility",
+      type: "heading",
+      level: 2,
+      text: "With children, older parents or large bags",
+    },
+    {
+      id: "children",
+      type: "paragraph",
+      text: "Children’s railway tickets are age-based. On the travel date, a child aged 6 or older but under 14 needs a child discount ticket; a child aged 14 or over needs a full-price ticket. Each ticketed adult may declare one child under 6 to travel free without a separate seat; additional under-6 children or any child needing a seat require a child ticket. Declare the free child during booking and carry the original identity document used for the child’s travel record.",
+    },
+    {
+      id: "mobility-planning",
+      type: "paragraph",
+      text: "For older travellers or anyone with limited mobility, measure the transfer by walking, lifts, waiting and toilet access—not only train time. Official rules require priority and necessary human assistance for passengers who need help, and some large stations offer service counters or wheelchairs, but the facility and booking process vary. Check with 12306 or the specific station in advance and keep the group’s train details together.",
+    },
+    {
+      id: "group-luggage",
+      type: "paragraph",
+      text: "If one adult must manage two children and several large cases, a technically valid booking can still be a poor plan. Reduce bags, split lifting responsibility, avoid a very tight connection and arrange the final hotel transfer before arrival. First class may improve seat space, but it does not guarantee unlimited luggage storage or eliminate long walks through the station.",
+    },
+    {
+      id: "train-or-flight",
+      type: "heading",
+      level: 2,
+      text: "When high-speed rail wins—and when a flight may be better",
+    },
+    {
+      id: "mode-comparison",
+      type: "comparison",
+      title: "Compare the complete travel day",
+      columns: [
+        {
+          heading: "High-speed rail often fits",
+          items: [
+            "The rail stations are convenient for both hotels",
+            "A direct or simple train runs at a useful time",
+            "You value a city-centre arrival and keeping luggage with you",
+            "The train journey is short or medium enough to preserve the day",
+          ],
+        },
+        {
+          heading: "A flight or another option may fit",
+          items: [
+            "The rail journey is very long, indirect or badly timed",
+            "The airport is much closer to the actual start or finish",
+            "A nonstop flight avoids a difficult rail transfer",
+            "Mobility, luggage or a late arrival makes a private transfer more workable",
+          ],
+        },
+      ],
+    },
+    {
+      id: "door-to-door",
+      type: "paragraph",
+      text: "Compare hotel door to hotel door: local transfer, recommended buffer, security and waiting, scheduled journey, arrival exit, bag collection if flying, and the final transfer. High-speed rail is not always faster; a short flight is not automatically the shorter travel day either.",
+    },
+    {
+      id: "checklist",
+      type: "heading",
+      level: 2,
+      text: "Departure checklist",
+    },
+    {
+      id: "departure-checklist",
+      type: "list",
+      items: [
+        "Exact departure and arrival station names checked on a map",
+        "Confirmed ticket—not only a request, waitlist or unpaid order",
+        "Passenger name and passport number checked against the original document",
+        "Original passport packed where it is easy to reach",
+        "Train number, date, time, carriage, seat and gate or waiting-area information saved",
+        "Route and realistic travel time to the correct station entrance checked",
+        "Luggage manageable by the people travelling and within current limits",
+        "Power banks, sprays, liquids and other doubtful items checked against the current official catalog",
+        "Children’s tickets or free-child declarations and documents confirmed",
+        "Arrival transfer, hotel address and a fallback contact available offline",
+      ],
+    },
+    {
+      id: "related-guides",
+      type: "internal-links",
+      title: "Plan the journey around the train",
+      items: [
+        {
+          label: "Compare train and flight time on a three-city route",
+          href: "/guides/beijing-zhangjiajie-shanghai-transport/",
+          description: "See why scheduled travel time is only one part of a transfer day.",
+        },
+        {
+          label: "Check whether your China itinerary is too rushed",
+          href: "/guides/is-your-china-itinerary-too-rushed/",
+          description: "Test hotel changes, recovery time and door-to-door transfers together.",
+        },
+        {
+          label: "Decide when a guide or local support is useful",
+          href: "/guides/do-you-need-a-tour-guide-in-china/",
+          description: "Separate independent travel days from the points where help adds value.",
+        },
+      ],
+    },
+    {
+      id: "contact-homeground",
+      type: "callout",
+      title: "Need the rail legs to work as one trip?",
+      tone: "decision",
+      body: "Send Homeground your travel dates, number of travellers, planned cities and rough budget. We can help test the city order, station choices, transfer days and the level of on-the-ground support that makes sense—without pretending every journey needs the same answer.",
+    },
+    {
+      id: "official-sources",
+      type: "sources",
+      title: "Official sources and review date",
+      items: [
+        {
+          label: "China Railway 12306 English ticketing, change, refund, child and luggage FAQ",
+          url: "https://www.12306.cn/en/faq.html?item=2",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Guide to ticket purchase, identity verification and station entry for foreign travellers",
+          url: "https://www.enghunan.gov.cn/hneng/Services/Live/Transportation/RailwayStations/202505/t20250529_33680117.html",
+          publisher: "Hunan Provincial Government; source: Ministry of Commerce of the People’s Republic of China",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Foreign-passport name and number entry instructions",
+          url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/passportInstruction/passport-entry-instructions.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Current child ticket rules",
+          url: "https://kyfw.12306.cn/otn/gonggao/children.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Catalogue of items prohibited or restricted for railway passengers",
+          url: "https://www.nra.gov.cn/xxgk/gkml/ztjg/gfzd/gfxw/202205/P020220527503609187824.pdf",
+          publisher: "National Railway Administration and Ministry of Public Security",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "2026 Beijing–Shanghai advance ticket-reservation pilot",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/transportation/railway/202607/t20260720_4772390.html",
+          publisher: "Beijing International Web Portal; source: China Railway",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Official clarification of typical high-speed train seat layouts",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202507/t20250721_4153521.html",
+          publisher: "Beijing International Web Portal; source: China Railway",
+          reviewedAt: "2026-08-10",
+        },
+      ],
+    },
+  ],
+};
+
+export default body;
