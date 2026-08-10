@@ -1,0 +1,57 @@
+{
+  "id": "how-to-pay-in-china-as-a-tourist",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["payments", "mobile-payments", "trip-planning", "on-the-ground", "problem-recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/how-to-pay-in-china-as-a-tourist/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/how-to-pay-in-china-as-a-tourist/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/how-to-pay-in-china-as-a-tourist/",
+      "title": "How to Pay in China as a Tourist in 2026: Alipay, WeChat Pay, Cash and Cards",
+      "headline": "How to Pay in China as a Tourist in 2026: Alipay, WeChat Pay, Cash and Cards",
+      "description": "A practical 2026 China payment setup for foreign visitors: prepare Alipay or WeChat Pay, keep a physical card and RMB cash, and recover when a QR code, card or connection fails.",
+      "heroAlt": "A real payment desk in China with a traveller’s phone, physical bank card and small RMB notes ready as backup.",
+      "navTitle": "Paying in China as a tourist",
+      "featuredLinkLabel": "Build a payment setup with a real backup",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China", "Payments", "First trip"]
+    },
+    "zh": {
+      "path": "/zh/guides/how-to-pay-in-china-as-a-tourist/",
+      "title": "2026 外国游客在中国怎么付款：支付宝、微信支付、现金与银行卡",
+      "headline": "2026 外国游客在中国怎么付款：支付宝、微信支付、现金与银行卡",
+      "description": "给外国游客的 2026 中国支付准备指南：出发前设置支付宝或微信支付，同时保留实体银行卡、人民币现金与断网时的备用方案。",
+      "heroAlt": "中国真实收银台旁，旅客准备好手机、实体银行卡和少量人民币现金作为备用。",
+      "navTitle": "外国游客在中国付款",
+      "featuredLinkLabel": "准备一套有备用的中国支付方案",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国旅行", "支付准备", "第一次来华"]
+    },
+    "ko": {
+      "path": "/ko/guides/how-to-pay-in-china-as-a-tourist/",
+      "title": "2026 중국 여행 결제 가이드: 알리페이·위챗페이·현금·카드",
+      "headline": "2026 중국 여행 결제 가이드: 알리페이·위챗페이·현금·카드",
+      "description": "외국인 여행자를 위한 2026 중국 결제 준비 안내: 알리페이 또는 위챗페이를 준비하고 실물 카드와 현금을 백업으로 남겨 결제 실패에 대비하세요.",
+      "heroAlt": "중국의 실제 계산대에서 여행자가 휴대전화, 실물 은행 카드와 소액의 위안화를 결제용으로 준비하고 있다.",
+      "navTitle": "중국 여행 결제 준비",
+      "featuredLinkLabel": "백업이 있는 중국 결제 조합 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 여행", "결제 준비", "첫 여행"]
+    }
+  }
+}
