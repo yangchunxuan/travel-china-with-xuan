@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import type {
   PageBodyBlock,
   StructuredPageBody,
@@ -16,6 +18,20 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
       );
     case "paragraph":
       return <p>{block.text}</p>;
+    case "figure":
+      return (
+        <figure className={styles.figure} id={block.id}>
+          <Image
+            alt={block.alt}
+            height={block.height}
+            loading="lazy"
+            sizes="(max-width: 760px) 100vw, 760px"
+            src={block.src}
+            width={block.width}
+          />
+          {block.caption ? <figcaption>{block.caption}</figcaption> : null}
+        </figure>
+      );
     case "list": {
       const List = block.ordered ? "ol" : "ul";
       return (
@@ -35,24 +51,44 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
       );
     case "comparison":
       return (
-        <section className={styles.comparison} aria-labelledby={block.title ? block.id : undefined}>
+        <section
+          className={styles.comparison}
+          aria-labelledby={block.title ? block.id : undefined}
+        >
           {block.title ? <h2 id={block.id}>{block.title}</h2> : null}
           <div>
-            {block.columns.map((column) => (
-              <article key={column.heading}>
-                <h3>{column.heading}</h3>
-                {column.body ? <p>{column.body}</p> : null}
-                {column.items ? (
-                  <ul>
-                    {column.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                ) : null}
-              </article>
-            ))}
+            {block.columns.map((column) => {
+              const ColumnHeading = block.title ? "h3" : "h2";
+              return (
+                <article key={column.heading}>
+                  <ColumnHeading>{column.heading}</ColumnHeading>
+                  {column.body ? <p>{column.body}</p> : null}
+                  {column.items ? (
+                    <ul>
+                      {column.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
+              );
+            })}
           </div>
         </section>
+      );
+    case "internal-links":
+      return (
+        <nav className={styles.internalLinks} aria-labelledby={block.id}>
+          <h2 id={block.id}>{block.title}</h2>
+          <ul>
+            {block.items.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href}>{item.label}</Link>
+                {item.description ? <p>{item.description}</p> : null}
+              </li>
+            ))}
+          </ul>
+        </nav>
       );
     case "table":
       return (
@@ -109,8 +145,8 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
 /**
  * Shared semantic renderer for new structured leaf-page families.
  * Existing bespoke guides intentionally remain on their current components
- * during Phase 0; new families can adopt this renderer without widening the
- * legacy GuideId union.
+ * during Phase 0; independent guides can use it without editing a central
+ * route or article list.
  */
 export function PageFamilyRenderer({ body }: { body: StructuredPageBody }) {
   return (

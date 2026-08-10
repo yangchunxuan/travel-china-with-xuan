@@ -3,29 +3,22 @@ import path from "node:path";
 
 const outputRoot = path.join(process.cwd(), "out");
 const siteUrl = "https://homegroundchina.com";
-const publishedSections = [
+const allSections = [
   "explore",
   "plan",
   "transport",
+  "when-to-go",
   "stay",
   "essentials",
+  "culture",
+  "tools",
   "services",
 ];
-const previewOnlySections = ["when-to-go", "culture", "tools"];
-const allSections = [...publishedSections, ...previewOnlySections];
 const locales = [
   { runtime: "en", prefix: "", htmlLang: "en", hreflang: "en" },
   { runtime: "zh", prefix: "zh/", htmlLang: "zh-Hans", hreflang: "zh-Hans" },
   { runtime: "ko", prefix: "ko/", htmlLang: "ko", hreflang: "ko" },
 ];
-const representativeGuide = {
-  explore: "zhangjiajie-glass-bridge-vs-skywalk",
-  plan: "how-much-does-a-china-trip-cost",
-  transport: "beijing-zhangjiajie-shanghai-transport",
-  stay: "why-are-hotels-in-china-so-cheap",
-  essentials: "do-us-citizens-need-visa-china-2026",
-  services: "do-you-need-a-tour-guide-in-china",
-};
 
 function routeFor(section, locale) {
   return `${locale.prefix}${section}/`;
@@ -43,20 +36,26 @@ async function fileExists(filePath) {
   }
 }
 
+async function exportedTargetExists(pathname) {
+  const relative = decodeURIComponent(pathname).replace(/^\/+|\/+$/gu, "");
+  const target = path.resolve(outputRoot, relative);
+  if (target !== outputRoot && !target.startsWith(`${outputRoot}${path.sep}`)) {
+    return false;
+  }
+  return (await fileExists(target)) || (await fileExists(path.join(target, "index.html")));
+}
+
 function assertIncludes(source, needle, context) {
   if (!source.includes(needle)) {
     throw new Error(`${context}: missing ${needle}`);
   }
 }
 
-function assertExcludes(source, needle, context) {
-  if (source.includes(needle)) {
-    throw new Error(`${context}: unexpectedly contains ${needle}`);
-  }
-}
-
 const sitemapPath = path.join(outputRoot, "sitemap.xml");
 const sitemap = await readFile(sitemapPath, "utf8");
+const phase0Baseline = JSON.parse(
+  await readFile(path.join(process.cwd(), "content/phase0-indexable-path-baseline.json"), "utf8"),
+);
 const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
   (match) => match[1],
 );
@@ -70,8 +69,16 @@ if (duplicateSitemapLocs.length > 0) {
   );
 }
 
-if (sitemapLocs.length !== 94) {
-  throw new Error(`sitemap.xml must contain the 76 legacy URLs plus 18 published hubs; received ${sitemapLocs.length}.`);
+const protectedSitemapUrls = phase0Baseline.entries
+  .filter((entry) => entry.status === "published" && entry.indexability.index)
+  .map((entry) => `${siteUrl}${entry.path}`);
+const missingProtectedSitemapUrls = protectedSitemapUrls.filter(
+  (url) => !sitemapLocs.includes(url),
+);
+if (missingProtectedSitemapUrls.length > 0) {
+  throw new Error(
+    `sitemap.xml is missing protected Phase 0 URL(s): ${missingProtectedSitemapUrls.join(", ")}`,
+  );
 }
 
 for (const sitemapUrl of sitemapLocs) {
@@ -85,6 +92,24 @@ for (const sitemapUrl of sitemapLocs) {
   assertIncludes(html, `<link rel="canonical" href="${sitemapUrl}"/>`, url.pathname);
   if (/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/iu.test(html)) {
     throw new Error(`${url.pathname}: sitemap URL contains noindex`);
+  }
+
+  const localTargets = [
+    ...html.matchAll(/\b(?:href|src)="([^"]+)"/giu),
+  ].map((match) => match[1]);
+  for (const value of localTargets) {
+    let targetUrl;
+    try {
+      targetUrl = new URL(value, siteUrl);
+    } catch {
+      continue;
+    }
+    if (targetUrl.origin !== siteUrl) continue;
+    if (!(await exportedTargetExists(targetUrl.pathname))) {
+      throw new Error(
+        `${url.pathname}: internal href/src has no exported target: ${targetUrl.pathname}`,
+      );
+    }
   }
 }
 
@@ -117,21 +142,17 @@ for (const section of allSections) {
       context,
     );
 
-    if (publishedSections.includes(section)) {
-      if (/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i.test(html)) {
-        throw new Error(`${context}: published hub contains noindex`);
-      }
-      assertIncludes(sitemap, `<loc>${canonical}</loc>`, context);
-      assertIncludes(
-        html,
-        `href="/${locale.prefix}guides/${representativeGuide[section]}/"`,
-        `${context} representative guide link`,
+    const isIndexable = sitemap.includes(`<loc>${canonical}</loc>`);
+    const hasNoindex =
+      /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i.test(html);
+    if (isIndexable === hasNoindex) {
+      throw new Error(
+        `${context}: sitemap and robots status disagree (sitemap=${isIndexable}, noindex=${hasNoindex})`,
       );
-    } else {
-      if (!/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i.test(html)) {
-        throw new Error(`${context}: preview-only hub must remain noindex`);
-      }
-      assertExcludes(sitemap, `<loc>${canonical}</loc>`, context);
+    }
+    const itemCount = Number(html.match(/"numberOfItems":(\d+)/u)?.[1] ?? "0");
+    if (isIndexable && itemCount < 1) {
+      throw new Error(`${context}: indexable hub has no localized guide children`);
     }
   }
 }
@@ -149,5 +170,5 @@ for (const locale of locales) {
 }
 
 console.log(
-  `✓ ${allSections.length * locales.length} search-platform hubs export correctly; published hubs are indexable and preview-only hubs remain out of the sitemap.`,
+  `✓ ${allSections.length * locales.length} search-platform hubs match their generated robots/sitemap state, and every internal href/src on indexable pages resolves.`,
 );

@@ -21,6 +21,14 @@ const sourceOnlyAssetRoots = [
   "images/guides/zhangjiajie/restored",
 ];
 
+// Next 15 requires at least one generated param for an otherwise empty static
+// dynamic route. These exact soft-404 exports exist only until the first Lite
+// article is added, so remove them from the production artifact.
+const emptyGuideSentinelRoots = [
+  "guides/__no-template-guides__",
+  "zh/guides/__no-template-guides__",
+];
+
 const packageJson = JSON.parse(await readFile(packagePath, "utf8"));
 
 if (packageJson.name !== "travel-china-with-xuan") {
@@ -46,6 +54,16 @@ for (const relativeRoot of labExportRoots) {
 }
 
 for (const relativeRoot of sourceOnlyAssetRoots) {
+  const target = path.resolve(outputRoot, relativeRoot);
+
+  if (!target.startsWith(`${outputRoot}${path.sep}`)) {
+    throw new Error(`Refusing to prune path outside export root: ${target}`);
+  }
+
+  await rm(target, { recursive: true, force: true });
+}
+
+for (const relativeRoot of emptyGuideSentinelRoots) {
   const target = path.resolve(outputRoot, relativeRoot);
 
   if (!target.startsWith(`${outputRoot}${path.sep}`)) {
@@ -114,10 +132,13 @@ for (const buildDirectory of buildDirectories) {
           .replace(/^"|"$/g, "")
           .replace(/\\u002F/g, "/");
         const isLabRoute = labExportRoots.includes(route.split("/")[1]);
+        const isEmptyGuideSentinel = route.endsWith(
+          "/guides/__no-template-guides__",
+        );
 
-        if (isLabRoute) prunedManifestEntries += 1;
+        if (isLabRoute || isEmptyGuideSentinel) prunedManifestEntries += 1;
 
-        return !isLabRoute;
+        return !isLabRoute && !isEmptyGuideSentinel;
       });
 
       return `new Set([${kept.join(",")}])`;
@@ -194,5 +215,5 @@ for (const requiredAsset of [
 }
 
 console.log(
-  `✓ Production export excludes ${labExportRoots.length} experimental roots (${prunedManifestEntries} lab route entries and the (lab) chunk group removed) and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
+  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and the (lab) chunk group removed), and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
 );

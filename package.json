@@ -2,6 +2,11 @@
   "name": "travel-china-with-xuan",
   "private": true,
   "scripts": {
+    "guide:generate": "node tools/generate-guide-registry.mjs",
+    "guide:check": "node tools/generate-guide-registry.mjs --check",
+    "guide:check-parallel-merge": "node tools/check-parallel-guide-merge.mjs",
+    "postinstall": "npm run guide:generate",
+    "predev": "npm run guide:generate",
     "dev": "next dev",
     "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
     "check:font-coverage": "node tools/check-font-coverage.mjs",
@@ -13,8 +18,10 @@
     "content:generate": "node tools/generate-content-manifest.mjs",
     "content:check": "node tools/generate-content-manifest.mjs --check",
     "sign:traffic-link": "node tools/sign-traffic-link.mjs",
+    "pretest:inquiry": "npm run guide:generate",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
-    "prebuild": "npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines",
+    "typecheck": "npm run guide:generate && tsc --noEmit",
+    "prebuild": "npm run guide:generate && npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines",
     "build": "next build",
     "postbuild": "node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export",
     "start": "next start"

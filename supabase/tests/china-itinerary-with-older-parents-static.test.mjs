@@ -85,7 +85,7 @@ test("registry-driven sitemap will publish all three older-parents URLs", async 
 
   assert.match(
     registry,
-    /export const guideIds = \[[\s\S]*?"china-itinerary-with-older-parents"/,
+    /export const legacyGuideIds = \[[\s\S]*?"china-itinerary-with-older-parents"/,
   );
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
   assert.match(sitemap, /absoluteManifestAlternates/);

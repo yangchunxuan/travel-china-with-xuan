@@ -18,3 +18,5 @@ __pycache__/
 DESIGN-BRIEF-*.md
 .art-lab/
 /tools/models/*.onnx
+/lib/generated/guideRegistry.generated.ts
+/lib/generated/guideBodies.generated.ts

@@ -28,6 +28,13 @@ test("structured page family body accepts supported semantic blocks", () => {
   assert.equal(assertStructuredPageBody(validBody).blocks.length, 4);
 });
 
+test("structured page family body rejects an empty article", () => {
+  assert.throws(
+    () => assertStructuredPageBody({ schemaVersion: "1.0.0", blocks: [] }),
+    /at least one block/,
+  );
+});
+
 test("structured page family body rejects duplicate ids", () => {
   assert.throws(
     () =>

@@ -56,7 +56,7 @@ function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
   const home = getHomegroundCopy(locale);
   const copy = getSearchPlatformCopy(locale);
   const entry = getSearchHubEntry(section, locale);
-  const guides = getSearchHubGuides(section, locale).slice(0, 8);
+  const guides = getSearchHubGuides(section, locale);
   const canonicalUrl = `${SITE_URL}${entry.canonicalPath}`;
   const homeUrl = `${SITE_URL}${home.path}`;
   const guidesPath = `${home.path}guides/`;
@@ -133,7 +133,7 @@ export function SearchPlatformHubPage({
   const sectionCopy = copy.sections[section];
   const entry = getSearchHubEntry(section, locale);
   const guides = getSearchHubGuides(section, locale);
-  const visibleGuides = guides.slice(0, 8);
+  const visibleGuides = guides;
   const languagePaths = getSearchHubLanguagePaths(section);
   const schema = jsonLdForHub(section, locale);
 
@@ -255,11 +255,6 @@ export function SearchPlatformHubPage({
             </div>
           )}
 
-          {guides.length > visibleGuides.length ? (
-            <p className={styles.moreGuides}>
-              <Link href={`${home.path}guides/`}>{copy.guidesLabel} →</Link>
-            </p>
-          ) : null}
         </section>
 
         <section className={styles.platformMap} aria-labelledby="platform-map-title">

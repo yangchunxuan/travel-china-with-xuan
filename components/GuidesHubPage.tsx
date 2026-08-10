@@ -110,6 +110,21 @@ function GuideCard({
   labels: ReturnType<typeof getGuidesHubCopy>;
   slotClassName?: string;
 }) {
+  const sectionLabel = guide.search
+    ? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
+    : labels.formatLabels[guide.format] ?? guide.format.replaceAll("-", " ");
+  const cardTags =
+    guide.cardTags ??
+    [
+      ...guide.destinations.map(
+        (destination) =>
+          labels.destinationLabels[destination] ?? destination.replaceAll("-", " "),
+      ),
+      ...guide.topics.map(
+        (topic) => labels.topicLabels[topic] ?? topic.replaceAll("-", " "),
+      ),
+    ].slice(0, 3);
+
   return (
     <li
       className={`${styles.guideSlot} ${slotClassName ?? ""}`}
@@ -131,7 +146,7 @@ function GuideCard({
 
           <div className={styles.guideBody}>
             <div className={styles.guideMeta}>
-              <span>{labels.formatLabels[guide.format]}</span>
+              <span>{sectionLabel}</span>
               <span aria-hidden="true">·</span>
               <span>
                 {labels.updatedLabel}{" "}
@@ -145,14 +160,12 @@ function GuideCard({
             <p className={styles.guideDescription}>{guide.description}</p>
 
             <ul className={styles.guideTags}>
-              {guide.destinations.map((destination) => (
-                <li className={styles.destinationTag} key={destination}>
-                  {labels.destinationLabels[destination]}
-                </li>
-              ))}
-              {guide.topics.slice(0, 2).map((topic) => (
-                <li className={styles.topicTag} key={topic}>
-                  {labels.topicLabels[topic]}
+              {cardTags.map((tag, tagIndex) => (
+                <li
+                  className={tagIndex === 0 ? styles.destinationTag : styles.topicTag}
+                  key={tag}
+                >
+                  {tag}
                 </li>
               ))}
             </ul>

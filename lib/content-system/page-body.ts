@@ -17,6 +17,15 @@ export type PageBodyBlock =
     }
   | {
       readonly id: string;
+      readonly type: "figure";
+      readonly src: string;
+      readonly alt: string;
+      readonly width: number;
+      readonly height: number;
+      readonly caption?: string;
+    }
+  | {
+      readonly id: string;
       readonly type: "list";
       readonly ordered?: boolean;
       readonly items: readonly string[];
@@ -44,6 +53,16 @@ export type PageBodyBlock =
       readonly caption: string;
       readonly columns: readonly string[];
       readonly rows: readonly (readonly string[])[];
+    }
+  | {
+      readonly id: string;
+      readonly type: "internal-links";
+      readonly title: string;
+      readonly items: readonly {
+        readonly label: string;
+        readonly href: string;
+        readonly description?: string;
+      }[];
     }
   | {
       readonly id: string;
@@ -92,6 +111,10 @@ function validHttpUrl(value: unknown): value is string {
   }
 }
 
+function validInternalPath(value: unknown): value is string {
+  return nonEmpty(value) && value.startsWith("/") && !value.startsWith("//");
+}
+
 function validIsoDate(value: unknown): value is string | undefined {
   if (value === undefined) return true;
   if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/u.test(value)) return false;
@@ -104,9 +127,12 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
     !isRecord(value) ||
     !hasOnlyKeys(value, ["schemaVersion", "blocks"]) ||
     value.schemaVersion !== "1.0.0" ||
-    !Array.isArray(value.blocks)
+    !Array.isArray(value.blocks) ||
+    value.blocks.length === 0
   ) {
-    throw new Error("Structured page body must use schemaVersion 1.0.0 and a blocks array.");
+    throw new Error(
+      "Structured page body must use schemaVersion 1.0.0 and contain at least one block.",
+    );
   }
 
   const seenIds = new Set<string>();
@@ -123,10 +149,12 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
       lead: ["id", "type", "text"],
       heading: ["id", "type", "level", "text"],
       paragraph: ["id", "type", "text"],
+      figure: ["id", "type", "src", "alt", "width", "height", "caption"],
       list: ["id", "type", "ordered", "items"],
       callout: ["id", "type", "title", "body", "tone"],
       comparison: ["id", "type", "title", "columns"],
       table: ["id", "type", "caption", "columns", "rows"],
+      "internal-links": ["id", "type", "title", "items"],
       sources: ["id", "type", "title", "items"],
     };
     const allowedKeys = allowedBlockKeys[candidate.type];
@@ -138,6 +166,19 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
       case "lead":
       case "paragraph":
         if (!nonEmpty(candidate.text)) throw new Error(`${candidate.id} needs text.`);
+        break;
+      case "figure":
+        if (
+          !validInternalPath(candidate.src) ||
+          !nonEmpty(candidate.alt) ||
+          !Number.isInteger(candidate.width) ||
+          (candidate.width as number) <= 0 ||
+          !Number.isInteger(candidate.height) ||
+          (candidate.height as number) <= 0 ||
+          !optionalNonEmpty(candidate.caption)
+        ) {
+          throw new Error(`${candidate.id} needs a local image path, alt text and positive dimensions.`);
+        }
         break;
       case "heading":
         if (!nonEmpty(candidate.text) || (candidate.level !== 2 && candidate.level !== 3)) {
@@ -211,6 +252,23 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
         }
         break;
       }
+      case "internal-links":
+        if (
+          !nonEmpty(candidate.title) ||
+          !Array.isArray(candidate.items) ||
+          candidate.items.length === 0 ||
+          !candidate.items.every(
+            (item) =>
+              isRecord(item) &&
+              hasOnlyKeys(item, ["label", "href", "description"]) &&
+              nonEmpty(item.label) &&
+              validInternalPath(item.href) &&
+              optionalNonEmpty(item.description),
+          )
+        ) {
+          throw new Error(`${candidate.id} needs at least one valid internal link.`);
+        }
+        break;
       case "sources":
         if (
           !nonEmpty(candidate.title) ||

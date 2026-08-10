@@ -52,6 +52,24 @@
   margin-block-start: 0.65rem;
 }
 
+.figure {
+  margin: 3.5rem auto;
+  max-width: 60rem;
+}
+
+.figure img {
+  block-size: auto;
+  display: block;
+  inline-size: 100%;
+}
+
+.figure figcaption {
+  color: var(--hg-color-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-block-start: 0.65rem;
+}
+
 .callout {
   background: var(--hg-color-soft);
   border-inline-start: 4px solid var(--hg-color-rust);
@@ -97,6 +115,7 @@
   padding: clamp(1.4rem, 3vw, 2.5rem);
 }
 
+.comparison article h2,
 .comparison article h3 {
   margin: 0;
 }
@@ -147,6 +166,44 @@
 
 .tableScroll tbody th {
   font-weight: 720;
+}
+
+.internalLinks {
+  border-block: 1px solid var(--hg-color-line);
+  margin: 5rem auto 0;
+  max-width: 60rem;
+  padding-block: 2.25rem;
+}
+
+.internalLinks > h2 {
+  margin-block-start: 0;
+}
+
+.internalLinks ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.internalLinks li {
+  background: var(--hg-color-soft);
+  padding: 1.2rem;
+}
+
+.internalLinks a {
+  color: var(--hg-color-ink);
+  font-weight: 760;
+  text-underline-offset: 0.2em;
+}
+
+.internalLinks p {
+  color: var(--hg-color-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
 }
 
 .sources {
