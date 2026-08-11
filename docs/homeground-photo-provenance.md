@@ -532,3 +532,46 @@ No AI-generated documentary travel photograph is included.
 All derivatives omit source EXIF, GPS and device metadata. Image credits and
 licence names appear inside the default-collapsed Sources disclosure in
 English, Chinese and Korean.
+
+## Employee 3–4 release — shared meal and public-holiday calendar (August 11, 2026)
+
+### First shared meal in China
+
+- The organised local `Facebook图片素材` library was checked first. Its unused
+  food photographs showed morning tea, hotpot, single dishes or interiors rather
+  than an ordinary shared-meal table, so none was relabelled for this guide.
+- Hero source: `Chinese meal.jpg`; ZiCheng Xu; own work; photographed August
+  12, 2005 according to the source EXIF and uploaded November 27, 2005; shared
+  meal in Suzhou; CC BY-SA 2.5. Source and licence records:
+  <https://commons.wikimedia.org/wiki/File:Chinese_meal.jpg> and
+  <https://creativecommons.org/licenses/by-sa/2.5/>.
+- Derivative:
+  `public/images/guides/first-shared-meal-in-china/hero-1600.webp`. The
+  1600 × 1200 original was centre-cropped to 1600 × 1000 and converted to WebP
+  without copying source EXIF, GPS or device metadata. No face is visible in the
+  published crop. The derivative is distributed under CC BY-SA 2.5. SHA-256:
+  `db9ad5c8ff8ae4689987b2e2068c85fa6a55011d0020348c21b2cff654a5381e`.
+- The English, Chinese and Korean alt text identifies Suzhou because that city
+  is recorded on the source page; it does not infer a restaurant name, dining
+  relationship, tea service or a nationwide custom. The credit and licence are
+  included in each locale's default-collapsed Sources disclosure.
+
+### China public holidays travel calendar
+
+- Hero asset:
+  `public/images/guides/china-public-holidays-travel-calendar/hero-1600.webp`,
+  an original Homeground editorial infographic rendered by
+  `content/guides/china-public-holidays-travel-calendar/render-hero.mjs` from
+  the reviewed `holiday-calendar.json` record. The record cites General Office
+  of the State Council notice 国办发明电〔2025〕7号 and the Ministry of Transport's
+  separate 2026 Spring Festival transport-period notice.
+- The 1600 × 1000 WebP marks the seven official holiday spans as large dated
+  rows and the six weekend workdays in outlined, corner-marked badges. The
+  February 2–March 13 transport period is a dashed band explicitly labelled as
+  not a public holiday. The source footer states the authority and review date.
+  SHA-256:
+  `9b6d9bd9077a5091e34db03e5bf5984db96507a79ea2fc22ac07da6c5f511049`.
+- No AI image or documentary crowd photograph is used. The local library did
+  not provide an unused image with both a named location and a capture date
+  inside an official 2026 holiday period, so an undated crowd scene was not
+  presented as holiday evidence.
