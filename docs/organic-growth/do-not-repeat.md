@@ -19,6 +19,7 @@
 11. 城市介绍必须拥有独立的旅客决策、路线或知识网络角色；不得以通用城市百科、换标题或拼接景点列表占位。
 12. 历史、文学、后世纪念、地方口述/传说与现代旅游包装必须分别标注；不得把传说写成史实，也不得按每个朝代、人物或传说批量建薄页。
 13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
+14. 所有准备新建并让 Google 收录的 SEO 页面原则上必须先经过 Search Map；员工 7 只有提案权。中央批准后才创建正式 GitHub Issue，之后才能交给员工 1–6 执行。
 
 ## 本轮六项执行身份：禁止换 slug、branch 或 artifact 类型后重复计数
 
@@ -29,11 +30,20 @@
 - `stay-20260811-01` ↔ 员工 5 foreign-hotel worktree：仍是同一 booking/registration/refusal owner。
 - `essentials-20260811-01` ↔ `china-esim-vs-local-sim.md`：即使从独立 repo 迁入 canonical worktree、补 metadata 或扩展 locale，也仍是同一 eSIM/local SIM/local-number 选择树。
 
-截至 13:23，员工 1、2、3、5 的 `which-beijing-railway-station`、`forbidden-city-for-foreign-visitors`、`first-shared-meal-in-china`、`foreigners-china-hotel` 已分别在 `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6` 形成并推送 durable drafts；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交标记 `SPEC REVIEW READY` 的内部规格；员工 6 的 `china-esim-vs-local-sim.md` 位于独立 unborn repo 的本地分支 `article/worker-6-china-esim-vs-local-sim`，仍未跟踪、未暂存、未提交、未推送且无 remote。上述状态只强化锁题，不新增候选或第七篇；durable draft、本地稿与规格 handoff 均不构成公开实现授权。
+| 票据 | candidateStatus | centralDecision | executionStatus | publicationStatus | 锁题证据 |
+|---|---|---|---|---|---|
+| `transport-20260811-01` | selected | approved | release-completed | published | PR #24；`which-beijing-railway-station` 三语 live |
+| `destination-20260811-01` | selected | approved | release-completed | published | PR #24；`forbidden-city-for-foreign-visitors` 三语 live |
+| `culture-20260811-01` | selected | pending-review | draft-submitted | not-published | durable draft `72dc3ea`；草稿不等于批准 |
+| `planning-20260811-01` | selected | pending-review | specification-submitted | not-published | `SPEC REVIEW READY` 规格 `1e131ff`；不得公开实现 |
+| `stay-20260811-01` | selected | pending-review | draft-submitted | not-published | durable draft `a5be2b6`；草稿不等于批准 |
+| `essentials-20260811-01` | selected | pending-review | local-undurable-draft | not-published | `durableArtifact: false`；独立本地 repo，无 remote/commit/push |
+
+六票均无正式 SEO GitHub Issue，`executionIssueUrl` 为 `null`；不补写或虚构 Issue。Ticket 1、2 的批准与发布证据为 [PR #24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24) 和 2026-08-11 17:03 的六个 live URL 验收。上述状态只强化锁题，不新增候选或第七篇。
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
-开工时这 14 个身份均未上线。至 `origin/main@f521ef7` 与 2026-08-11 13:23 线上复核，14/14 均已发布：四个 Batch A、五个 PR #22 Batch B，以及五个 PR #23 Batch C 身份。当前制作中为 0。状态改变不解除锁题，本表也不把同一身份、视觉整合分支或原始员工分支重复计数。
+开工时这 14 个身份均未上线。至最新 `origin/main@8769b2f` 与 2026-08-11 17:03 线上复核，14/14 仍已发布：四个 Batch A、五个 PR #22 Batch B，以及五个 PR #23 Batch C 身份。旧 14 稿制作中为 0。状态改变不解除锁题，本表也不把同一身份、视觉整合分支或原始员工分支重复计数。
 
 | Canonical owner | 已占用主题与近义问法 | 应合并内容 |
 |---|---|---|
@@ -64,11 +74,16 @@
 
 ### 行程与交通
 
+- `which-beijing-railway-station`：北京、北京西、北京南、北京北、清河、北京朝阳、北京丰台、北京通州八站是一个选择矩阵；不得一站一页。
 - `beijing-zhangjiajie-shanghai-10-days`：精确三城十天的行程可行性。
 - `beijing-zhangjiajie-shanghai-transport`：同走廊 train/flight 执行；不得按方式拆。
 - `is-your-china-itinerary-too-rushed`：全国通用 pace、城市数量、how-many-days 头部任务。
 - `china-itinerary-with-older-parents`：全国 12–14 天父母同行；张家界细节链接专页。
 - `how-much-does-a-china-trip-cost`：全国总成本；不得生成城市×天数×人数报价页。
+
+### 北京景点
+
+- `forbidden-city-for-foreign-visitors`：外籍游客预约、证件、午门入口、三小时路线、神武门离场和离场后衔接是一个连续任务；不得拆成 ticket、entrance、route、exit 四页。
 
 ### 入境
 
@@ -122,11 +137,11 @@
 - 全国假期与拥挤问题只允许一个年度 calendar/data owner；不得按城市×月份铺页。
 - 非政治旅行新闻只收可能改变旅行决策的 UNESCO/地质公园、铁路接入、场馆开放、预约/支付、关闭/重开；先更新 evergreen owner，不发热点票。
 
-## 六个池内批准项自身也不得被拆分
+## 六个已选中项自身也不得被拆分
 
-这些项目仍需中央批准；此处只锁定其潜在 canonical 边界。
+Ticket 1、2 已由中央批准并发布；Ticket 3–6 仍待中央审核。无论状态如何，锁定的 canonical 边界都不得通过换 slug、分支、语言或 artifact 类型规避。
 
-- `transport-20260811-01`：Beijing South/West/Chaoyang/Fengtai/Qinghe 是一个站点选择矩阵，不是一站一页。
+- `transport-20260811-01`：Beijing、Beijing West、Beijing South、Beijing North、Qinghe、Beijing Chaoyang、Beijing Fengtai、Beijing Tongzhou 是一个站点选择矩阵，不是一站一页。
 - `destination-20260811-01`：Forbidden City ticket/entrance/3-hour route/north exit 是一个连续执行任务。
 - `culture-20260811-01`：shared meal 的 ordering/seating/sharing/paying 是一餐的顺序，不拆礼仪页。
 - `planning-20260811-01`：route reality checker 不生成城市×日数×人群可索引结果页。
