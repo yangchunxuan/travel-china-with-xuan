@@ -212,13 +212,45 @@
   padding-block-start: 2rem;
 }
 
-.sources h2 {
+.sources summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
   font-family: var(--sans);
   font-size: 0.78rem;
   font-weight: 780;
+  gap: 0.55rem;
   letter-spacing: 0.1em;
-  margin: 0;
+  list-style: none;
   text-transform: uppercase;
+}
+
+.sources summary::-webkit-details-marker {
+  display: none;
+}
+
+.sources summary::after {
+  border: 1px solid var(--hg-color-line);
+  content: "+";
+  display: grid;
+  font-size: 1rem;
+  font-weight: 500;
+  inline-size: 1.8rem;
+  line-height: 1;
+  margin-inline-start: auto;
+  min-block-size: 1.8rem;
+  place-items: center;
+}
+
+.sources[open] summary::after {
+  content: "−";
+}
+
+.sourceCount {
+  color: var(--hg-color-muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0;
 }
 
 .sources ol {
