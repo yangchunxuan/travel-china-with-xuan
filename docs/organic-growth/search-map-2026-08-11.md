@@ -2,15 +2,15 @@
 
 状态：`SEARCH MAP READY — CENTRAL APPROVAL REQUIRED`
 
-本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。本轮没有写文章、创建公开页面、修改 registry/sitemap/indexability，也没有授权员工 1–6 开工。
+本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。员工 7 本次维护没有写文章、创建公开页面或修改 registry/sitemap/indexability；并发 worktree 只作为执行观察入账，不自行构成中央批准。
 
 ## 1. 口径与输入审计
 
 - 内容身份：英文、中文、韩文最多是同一内容身份的三个 locale，不按三篇计算。
-- 仓库基线：最新 `origin/main`，提交 `6df1f55232d361c2bb30d030b2c6b04084cbfde2`。
+- 仓库基线：最新 `origin/main`，提交 `073e019478bd81166eea2e4e48fc6f040167f393`。相对 `6df1f55` 的两次提交仅涉及 editorial UI 与中文语言导航，没有新增指南身份或改变 indexability。
 - 仓库规范：已完整读取 `docs/article-production-lite.md` 与 `docs/homeground-search-platform-phase-1-spec.md`。
 - 线上：2026-08-11 检查了 [sitemap](https://homegroundchina.com/sitemap.xml)、[guides 目录](https://homegroundchina.com/guides/) 与全部指南详情页的 HTTP、canonical、robots、hreflang。审计期间 sitemap 从 94 增至 106 个 URL，四个三语稿同步上线。
-- 远端：已检查全部 `origin/article/*` 与 `origin/codex/*`；修复分支只算相同稿件的新版本，不增加内容身份。
+- 远端：已检查全部 32 个 `origin/article/*` 与 `origin/codex/*` ref；修复分支只算相同稿件的新版本；current-round draft/spec ref 仍按既有六张票据计数，不增加内容身份。
 - 现有 Search Map：**不可用**。`origin/main` 没有既有 `docs/organic-growth` 主账本或等价的 canonical candidate ledger。
 - Search Console：**不可用**。没有已安装的 Search Console connector；可用浏览器会话未登录，只能到公开登录/about 页面。Clicks、impressions、queries、position 均未使用。
 - 关键词工具：**不可用**。没有已认证的关键词体量工具；搜索量与购买概率均未估算。
@@ -27,6 +27,7 @@
 | 当前制作中 | 10 | 审计期间 4 个身份转为 published/indexable；其余 10 个仍在远端分支 |
 | 本轮候选 | 18 | 六个内容池各 3 个 |
 | 池内批准 | 6 | 每池恰好 1 个；仍须 Mac 中央编辑批准 |
+| 本轮执行锁 | 6 | 票据集合冻结；4 个 durable draft、1 个 `SPEC REVIEW READY`、1 个尚无 branch/worktree；不追加第七篇 |
 | 合并/更新路由 | 9 | 8 个候选路由 + 1 个已合并 legacy shell；不创建第二 canonical URL |
 | 明确拒绝模式 | 12 | 包含近义页和排列组合页 |
 | 动态事实复核组 | 10 | 法规、机场、铁路、支付、门票等 |
@@ -38,6 +39,10 @@
 本轮启动时，`beijing-where-to-stay-first-trip`、`china-high-speed-train-first-time-guide`、`china-in-october-golden-week-or-later`、`how-to-pay-in-china-as-a-tourist` 均不在当时的 `origin/main`/live sitemap。08:18（Asia/Shanghai）复核时，`origin/main` 已推进到 `6df1f55`，四项的 en/zh/ko URL 均为 200、自 canonical、`index, follow` 且进入 sitemap。Search Map 因而把它们从制作中转为已发布，但仍保留在“本轮 14 个锁题身份”审计表中；没有任何一个被重新提名。
 
 08:52 最终远端复核时，`origin/codex/pending-visual-batch-b-20260810` 前进到 `e5325b7`，变更为五篇稿的授权摄影、图片元数据与正文图片引用；五个内容身份及 canonical 边界不变。08:55 再次读取线上 sitemap，仍为 106 / 67 / 64（全站 URL / guides 范围 / guide 详情）。
+
+11:30 维护复核时，`origin/main` 已前进到 `073e019`，但只含 UI 与语言导航修复；已发布仍为 24 个身份。远端文章与 codex 审计 ref 从 25 增至 32：Beijing-station、Forbidden City、shared-meal 与 foreign-hotel 已形成 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`，两条为非内容修复分支，Route Reality Checker 是内部规格提交 `1e131ff`；员工 6 尚无 worktree。六项全部对应既有票据，没有第七个主题。11:31 再查线上 sitemap 仍为 106 / 67 / 64，已观察到的 current-round content ID 命中为 0；员工 6 尚无 slug，不作猜测。
+
+重复风险提示：员工 1 的 Beijing-station durable draft 仍是同一锁定主题，但 metadata 写为 `primaryIntent: plan` / `family: comparison`，与 Search Map 的 `execute` / `combined-decision` 不一致；在中央接受、合并或发布前必须对齐，不能靠改字段把同一主题伪装成第二个 identity。
 
 ## 3. 已发布清单
 
@@ -90,6 +95,19 @@
 | 5 | `beijing-where-to-stay-first-trip` | **published during audit** | `origin/main@6df1f55` | 北京首次住宿四区比较；不拆四个 area 页面 |
 | 5 | `china-hotel-near-metro` | in production | `origin/article/worker-5-china-hotel-near-metro@1c02bef` | 全国酒店位置判断：行李、步行、家庭、无障碍 |
 | 6 | `how-to-pay-in-china-as-a-tourist` | **published during audit** | `origin/main@6df1f55` | Alipay、WeChat、现金、卡、失败恢复的完整栈 |
+
+### 4A. 本轮六张票据的执行锁（维护观察，不是开工授权）
+
+| 票据 | 当前观察状态 | 锁题与审查要求 |
+|---|---|---|
+| `transport-20260811-01` | `origin/article/worker-1-beijing-railway-stations@32504fc` 已提交并推送 durable draft | 仍是五站一个选择矩阵；不得按车站拆页。metadata intent/family 必须在中央接受前与主账本对齐 |
+| `destination-20260811-01` | `origin/article/worker-2-forbidden-city-foreign-visitors@949c06d` 已提交并推送 durable draft | 护照预约、午门入口、三小时路线、神武门离场是一个任务；不得拆票务/入口页 |
+| `culture-20260811-01` | `origin/article/worker-3-first-shared-meal@72dc3ea` 已提交并推送 `first-shared-meal-in-china` durable draft | ordering/seating/sharing/paying 不拆；广州早茶与 dim sum 仍归广州 owner |
+| `planning-20260811-01` | `origin/article/worker-4-route-reality-checker-spec@1e131ff` 已提交内部规格并标记 `SPEC REVIEW READY` | 员工 8 现在只可做技术可行性与测试审查；仍不得实现或创建公开工具 |
+| `stay-20260811-01` | `origin/article/worker-5-foreigners-china-hotel@a5be2b6` 已提交并推送 `foreigners-china-hotel` durable draft | metadata 与主账本一致；booking/registration/refusal recovery 仍是一个 owner，不得城市复制 |
+| `essentials-20260811-01` | 尚未观察到 branch/worktree | eSIM/local SIM/local number/both 保持一个供应商中立的选择树 |
+
+本轮票据集合冻结为以上六项，不增加第七个文章、页面或票据，也不因某票延迟或退回而自动递补第二名。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章。未提交 worktree、branch reservation 或 `SPEC REVIEW READY` 均不会自行把 `writerStartAuthorized` 改为 `true`；该 signal 只解除员工 8 的等待状态并开放限定审查。
 
 ## 5. 候选评分与决策
 
@@ -179,3 +197,5 @@
 - 机器账本分别保存 origin/main 的 7 个真实 entity ID/已发布 runtime assignments 与编辑提议。候选的 `primaryEntityId`/`secondaryEntityIds` 是未落地提案，不会自动创建 entity record。
 - `freshnessClass` 是 Search Map 对编辑复核风险的治理 override，不声称等于仓库当前 `updatePolicy`。
 - 六个池内批准项只进入中央审批队列。员工 1–6 当前均不得据此开始写作、建页或改站点。
+- 本轮 ticket set 硬冻结为六项；不得追加第七篇，也不得把 held/rejected/runner-up 自动递补进本轮。
+- Route Reality Checker 规格 owner 是员工 4；`SPEC REVIEW READY` 已在 `1e131ff` 观察到，员工 8 现在仅可审查技术可行性与测试。未经 Mac 中央编辑明确批准，员工 8 无实现、建页、公开、索引或发布权限。

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "snapshotDate": "2026-08-11",
-  "checkedAt": "2026-08-11T08:18:39+08:00",
+  "checkedAt": "2026-08-11T11:31:57+08:00",
   "finalStatus": "SEARCH MAP READY — CENTRAL APPROVAL REQUIRED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
@@ -19,12 +19,157 @@
     "maintenanceConvention": "A higher maintenanceCostAndRisk score means lower expected burden and better-controlled risk.",
     "demandConvention": "Qualitative traveler-task and SERP evidence only. Search Console and keyword-volume data are unavailable."
   },
+  "roundExecutionControl": {
+    "checkedAt": "2026-08-11T11:30:17+08:00",
+    "roundTicketIds": [
+      "transport-20260811-01",
+      "destination-20260811-01",
+      "culture-20260811-01",
+      "planning-20260811-01",
+      "stay-20260811-01",
+      "essentials-20260811-01"
+    ],
+    "roundTicketCount": 6,
+    "candidateIntakeStatus": "frozen-for-this-round",
+    "seventhArticleOrPageTicketAllowed": false,
+    "automaticBackfillAllowed": false,
+    "rule": "The current round is frozen to these six mapped tickets. Do not add a seventh article, page or ticket, and do not automatically replace a rejected or delayed ticket with a runner-up.",
+    "branchOrWorktreeObservationChangesApproval": false,
+    "coverageSemantics": "The ten records in coverage.inProduction are durable unpublished branch identities from the kickoff audit. Current-round durable drafts, uncommitted work, specifications and reservations are tracked here separately without double-counting them as kickoff production, new candidates or a seventh topic.",
+    "observedTicketStates": [
+      {
+        "candidateId": "transport-20260811-01",
+        "ownerPool": "employee-1-transport",
+        "proposedContentId": "which-beijing-railway-station",
+        "branch": "article/worker-1-beijing-railway-stations",
+        "remoteRef": "origin/article/worker-1-beijing-railway-stations",
+        "worktreePath": "C:/Users/User/Documents/homeground-worker-1-beijing-railway-stations",
+        "observedHead": "32504fcb7ce3c36007eda7b8e2da2822d47ff5c6",
+        "executionState": "durable-draft-committed-and-pushed",
+        "durableArticleCommitObserved": true,
+        "durableArticleCommit": "32504fcb7ce3c36007eda7b8e2da2822d47ff5c6",
+        "topicIdentityDelta": 0,
+        "canonicalLock": "One Beijing station-choice matrix covering South, West, Chaoyang, Fengtai and Qinghe; do not split by station.",
+        "metadataAlignment": {
+          "status": "review-required-before-central-acceptance-merge-or-publication",
+          "alignedFields": ["section", "primaryCollectionId", "topic boundary"],
+          "ledgerTargetIntent": "execute",
+          "observedDraftTargetIntent": "plan",
+          "ledgerPageFamily": "combined-decision",
+          "observedDraftPageFamily": "comparison",
+          "note": "The durable draft is the same locked topic, not a new identity, but its controlled intent/family must be reconciled with the approved Search Map before central acceptance, merge or publication."
+        }
+      },
+      {
+        "candidateId": "destination-20260811-01",
+        "ownerPool": "employee-2-destination",
+        "proposedContentId": "forbidden-city-for-foreign-visitors",
+        "branch": "article/worker-2-forbidden-city-foreign-visitors",
+        "remoteRef": "origin/article/worker-2-forbidden-city-foreign-visitors",
+        "worktreePath": "C:/Users/User/Documents/homeground-worker-2-forbidden-city-foreign-visitors",
+        "observedHead": "949c06d91d88ff15857b838cec7d34ba0b2fe3ee",
+        "executionState": "durable-draft-committed-and-pushed",
+        "durableArticleCommitObserved": true,
+        "durableArticleCommit": "949c06d91d88ff15857b838cec7d34ba0b2fe3ee",
+        "topicIdentityDelta": 0,
+        "canonicalLock": "Passport booking, Meridian Gate entry, a realistic three-hour route and the north-gate exit remain one foreign-visitor execution task.",
+        "metadataAlignment": {
+          "status": "aligned-with-ledger",
+          "alignedFields": ["section", "primaryCollectionId", "targetIntent", "pageFamily", "topic boundary"]
+        }
+      },
+      {
+        "candidateId": "culture-20260811-01",
+        "ownerPool": "employee-3-culture",
+        "proposedContentId": "first-shared-meal-in-china",
+        "branch": "article/worker-3-first-shared-meal",
+        "remoteRef": "origin/article/worker-3-first-shared-meal",
+        "worktreePath": "C:/Users/User/Documents/homeground-worker-3-first-shared-meal",
+        "observedHead": "72dc3ea971224d8b82661d1674dba2890424ae75",
+        "executionState": "durable-draft-committed-and-pushed",
+        "durableArticleCommitObserved": true,
+        "durableArticleCommit": "72dc3ea971224d8b82661d1674dba2890424ae75",
+        "topicIdentityDelta": 0,
+        "canonicalLock": "Ordering, seating, sharing and paying remain one first-shared-meal task; Guangzhou morning tea and dim sum stay with their existing Guangzhou owner.",
+        "metadataAlignment": {
+          "status": "aligned-with-ledger",
+          "alignedFields": ["section", "primaryCollectionId", "targetIntent", "pageFamily", "topic boundary"]
+        }
+      },
+      {
+        "candidateId": "planning-20260811-01",
+        "ownerPool": "employee-4-planning",
+        "proposedContentId": null,
+        "branch": "article/worker-4-route-reality-checker-spec",
+        "remoteRef": "origin/article/worker-4-route-reality-checker-spec",
+        "worktreePath": "C:/Users/User/Documents/homeground-worker-4-route-reality-spec",
+        "observedHead": "1e131ff990b88c3759fb3d102f23e55aa8bbd0b0",
+        "executionState": "spec-review-ready-committed-and-pushed",
+        "durableArticleCommitObserved": false,
+        "durableSpecificationCommit": "1e131ff990b88c3759fb3d102f23e55aa8bbd0b0",
+        "specificationPath": "docs/tools/china-route-reality-checker-spec.md",
+        "handoffSignalObserved": "SPEC REVIEW READY",
+        "topicIdentityDelta": 0,
+        "canonicalLock": "The checker is a non-indexable specification/review task at this stage and must not generate city-by-days-by-audience URLs."
+      },
+      {
+        "candidateId": "stay-20260811-01",
+        "ownerPool": "employee-5-stay",
+        "proposedContentId": "foreigners-china-hotel",
+        "branch": "article/worker-5-foreigners-china-hotel",
+        "remoteRef": "origin/article/worker-5-foreigners-china-hotel",
+        "worktreePath": "C:/Users/User/Documents/homeground-worker-5-foreigners-china-hotel",
+        "observedHead": "a5be2b6a03800000cd4622c42750bc0ddf0ee2f8",
+        "executionState": "durable-draft-committed-and-pushed",
+        "durableArticleCommitObserved": true,
+        "durableArticleCommit": "a5be2b6a03800000cd4622c42750bc0ddf0ee2f8",
+        "topicIdentityDelta": 0,
+        "canonicalLock": "Foreign-hotel booking, registration and refusal recovery remain one task; booking-app detail belongs inside this owner if it proceeds.",
+        "metadataAlignment": {
+          "status": "aligned-with-ledger",
+          "alignedFields": ["section", "primaryCollectionId", "targetIntent", "pageFamily", "topic boundary"]
+        }
+      },
+      {
+        "candidateId": "essentials-20260811-01",
+        "ownerPool": "employee-6-entry-practical",
+        "proposedContentId": null,
+        "branch": null,
+        "remoteRef": null,
+        "worktreePath": null,
+        "observedHead": null,
+        "executionState": "no-branch-or-worktree-observed",
+        "durableArticleCommitObserved": false,
+        "topicIdentityDelta": 0,
+        "canonicalLock": "eSIM, local SIM, local number and dual-SIM choice remain one provider-neutral decision tree."
+      }
+    ],
+    "routeRealityCheckerReviewGate": {
+      "specOwner": "employee-4-planning",
+      "handoffSignal": "SPEC REVIEW READY",
+      "employee8StateBeforeSignal": "wait",
+      "signalStatus": "observed",
+      "signalObservedAt": "2026-08-11T11:18:26+08:00",
+      "signalEvidence": "origin/article/worker-4-route-reality-checker-spec@1e131ff990b88c3759fb3d102f23e55aa8bbd0b0:docs/tools/china-route-reality-checker-spec.md",
+      "employee8CurrentState": "technical-feasibility-and-test-review-only",
+      "employee8ReviewScopeAfterSignal": ["technical-feasibility", "test-review"],
+      "employee8ImplementationAuthorized": false,
+      "employee8PageCreationAuthorized": false,
+      "publicToolCreationAuthorized": false,
+      "indexingAuthorized": false,
+      "publishingAuthorized": false,
+      "authorityToChange": "Explicit Mac central editor approval only.",
+      "specificationAndReviewCountAsAdditionalArticle": false
+    }
+  },
   "inputAudit": {
     "repository": {
       "path": "C:/Users/User/Documents/travel-china-with-xuan",
       "worktreePath": "C:/Users/User/Documents/homeground-seo-intelligence",
       "baseRef": "origin/main",
-      "baseCommit": "6df1f55232d361c2bb30d030b2c6b04084cbfde2",
+      "baseCommit": "073e019478bd81166eea2e4e48fc6f040167f393",
+      "previousBaseCommit": "6df1f55232d361c2bb30d030b2c6b04084cbfde2",
+      "baseDeltaAssessment": "origin/main added editorial UI typography/source-collapse and Chinese language-navigation fixes only; no guide identity, registry, sitemap or indexability change was found.",
       "branch": "ops/seo-intelligence-20260811",
       "status": "available"
     },
@@ -53,37 +198,45 @@
       "englishOnlyArticleIdentities": 3,
       "englishOnlySystemGuideIdentities": 1,
       "checkedAt": "2026-08-11T08:18:39+08:00",
-      "finalSitemapRecheckedAt": "2026-08-11T08:55:00+08:00",
+      "finalSitemapRecheckedAt": "2026-08-11T11:31:57+08:00",
+      "observedCurrentRoundContentIdUrlHits": 0,
       "method": "Live sitemap enumeration plus HTTP, canonical, robots and hreflang checks. The sitemap grew from 94 to 106 URLs during this audit when four trilingual guides went live."
     },
     "remoteBranches": {
       "status": "available",
-      "lastFetchedAt": "2026-08-11T08:52:21+08:00",
+      "lastFetchedAt": "2026-08-11T11:30:17+08:00",
       "scope": [
         "origin/article/*",
         "origin/codex/*"
       ],
-      "auditedRefCount": 25,
+      "auditedRefCount": 32,
       "auditedRefs": [
         "origin/article/beijing-where-to-stay-first-trip",
+        "origin/article/worker-1-beijing-railway-stations",
         "origin/article/worker-1-guangzhou-baiyun-airport-t2-t3",
         "origin/article/worker-1-pudong-airport-to-shanghai-disneyland",
+        "origin/article/worker-2-forbidden-city-foreign-visitors",
+        "origin/article/worker-3-first-shared-meal",
         "origin/article/worker-3-guangzhou-morning-tea",
         "origin/article/worker-3-how-to-read-suzhou-garden",
         "origin/article/worker-4-china-last-night-buffer",
         "origin/article/worker-4-china-night-train-decision",
         "origin/article/worker-4-china-open-jaw",
+        "origin/article/worker-4-route-reality-checker-spec",
+        "origin/article/worker-5-foreigners-china-hotel",
         "origin/article/worker-5-china-hotel-near-metro",
-        "origin/codex/pending-visual-batch-b-20260810",
         "origin/codex/classify-test-inquiries-20260726",
+        "origin/codex/editorial-ui-alignment-20260811",
         "origin/codex/fix-utm-intake-20260726",
         "origin/codex/homeground-article-02",
         "origin/codex/homeground-article-03",
         "origin/codex/homeground-article-04",
         "origin/codex/itinerary-rush-guide-release-20260722",
         "origin/codex/itinerary-trilingual-redesign-20260722",
+        "origin/codex/language-nav-zh-fix-20260811",
         "origin/codex/logo-home-reset-20260722",
         "origin/codex/new-brand-mark-20260730",
+        "origin/codex/pending-visual-batch-b-20260810",
         "origin/codex/phase0-search-platform-20260809",
         "origin/codex/restore-ga4-20260725",
         "origin/codex/ten-day-guide",
@@ -94,7 +247,7 @@
       "unpublishedAtKickoffCount": 14,
       "publishedDuringAuditCount": 4,
       "currentUnpublishedContentIdentityCount": 10,
-      "note": "All 14 kickoff drafts remain topic-locked. During the audit, origin/main advanced to 6df1f55 and the live sitemap added Beijing stay, national high-speed rail, October timing and tourist payments in three locales; those four are now published owners, leaving ten in production. The final fetch also found origin/codex/pending-visual-batch-b-20260810 advancing from c178414 to e5325b7 for licensed photography and image metadata; the five topic identities and their ownership boundaries did not change."
+      "note": "All 14 kickoff drafts remain topic-locked. During the initial audit, origin/main advanced to 6df1f55 and the live sitemap added Beijing stay, national high-speed rail, October timing and tourist payments in three locales; those four are now published owners, leaving ten durable kickoff branch identities in production. The maintenance audit found origin/main at 073e019 with UI-only changes. Remote audit scope grew from 25 to 32 refs: two non-content fix branches; four durable current-round article drafts at 32504fc, 949c06d, 72dc3ea and a5be2b6; and the Route Reality Checker specification at 1e131ff. The four drafts remain within the frozen six tickets; the specification is not an article or public tool. None changes query ownership or adds a seventh topic. Current-round activity is recorded separately in roundExecutionControl and is not mixed into the ten kickoff production records."
     },
     "existingSearchMap": {
       "status": "unavailable",
@@ -1423,6 +1576,10 @@
         "pageFamily": "tool",
         "taskMode": "calculate-and-plan",
         "artifactShape": "route-reality-checker",
+        "deliveryMode": "internal-specification-only",
+        "specOwner": "employee-4-planning",
+        "reviewGateRef": "roundExecutionControl.routeRealityCheckerReviewGate",
+        "publicToolCreationAuthorized": false,
         "status": "proposed-approved-pending-central",
         "ownerPool": "employee-4-planning",
         "priorityBreakdown": {
