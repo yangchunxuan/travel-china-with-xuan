@@ -1,6 +1,6 @@
 # Internal-link plan
 
-Status: `COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED`
+Status: `RELEASE REVIEW COMPLETE — THREE-LOCALE LINKS VERIFIED 2026-08-11`
 
 ## Outbound links included in all three locales
 

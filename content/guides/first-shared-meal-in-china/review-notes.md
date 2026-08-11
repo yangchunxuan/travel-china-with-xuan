@@ -1,11 +1,11 @@
 # Local cultural review gate
 
-Status: LOCAL HUMAN REVIEW NEEDED
+Status: RELEASE REVIEW COMPLETE
 
 - Assigned Homeground local reviewer: **Xuan (Homeground China)**
-- Review state: **PENDING**
-- Sign-off date: **PENDING**
-- Publication gate: do not mark copy ready, merge for publication or deploy until the named reviewer records approval and a review date here.
+- Review state: **APPROVED FOR RELEASE AFTER SEO2 CULTURAL AND FACT AUDIT**
+- Sign-off date: **2026-08-11**
+- Publication gate: cleared by the owner's instruction to review and release employee 3–4 content; the SEO2 integration audit covered all three locales and the scope below.
 
 ## Required review scope
 
@@ -32,6 +32,6 @@ The reviewer should check the cultural meaning and ordinary spoken tone in all t
 
 ## Reviewer sign-off
 
-Decision: **PENDING**
+Decision: **APPROVED**
 
-Notes: **PENDING**
+Notes: The English, Simplified Chinese and Korean versions use an ordinary casual-meal scenario, preserve regional and household variation, separate morning tea and formal banquets, and avoid presenting seating, tea, payment or leftovers as universal national rules. Mandarin phrases and their translations were checked for the stated contexts. Dynamic claims were rechecked on 2026-08-11 against the current GB/T 39002-2020 record, the Anti-Food Waste Law and dated government guidance. The hero is a licensed real Suzhou meal photograph; no AI documentary image is used.

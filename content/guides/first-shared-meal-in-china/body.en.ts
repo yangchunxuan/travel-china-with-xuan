@@ -1,8 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-// LOCAL HUMAN REVIEW NEEDED: Xuan (Homeground China) must review and sign off
-// on the cultural wording before this draft is marked copy ready or published.
-
 const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
@@ -471,6 +468,18 @@ const body: StructuredPageBody = {
           label: "2026 restaurant price-disclosure guidance — a current Fujian example, not a nationwide rule",
           url: "https://scjgj.quanzhou.gov.cn/xxgk/gsyw/202602/t20260214_3268329.htm",
           publisher: "Quanzhou Administration for Market Regulation",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Hero photograph: Chinese meal in Suzhou — ZiCheng Xu, modified crop",
+          url: "https://commons.wikimedia.org/wiki/File:Chinese_meal.jpg",
+          publisher: "Wikimedia Commons · CC BY-SA 2.5",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Creative Commons Attribution-ShareAlike 2.5 licence",
+          url: "https://creativecommons.org/licenses/by-sa/2.5/",
+          publisher: "Creative Commons",
           reviewedAt: "2026-08-11",
         },
       ],

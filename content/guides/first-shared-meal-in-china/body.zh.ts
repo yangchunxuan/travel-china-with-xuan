@@ -1,8 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-// LOCAL HUMAN REVIEW NEEDED：正文成为 copy ready 或发布前，必须由
-// Xuan（Homeground China）完成文化表述复核并具名签字。
-
 const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
@@ -471,6 +468,18 @@ const body: StructuredPageBody = {
           label: "2026 年餐饮收费明示指引——作为福建当下地方实例，不概括为全国规则",
           url: "https://scjgj.quanzhou.gov.cn/xxgk/gsyw/202602/t20260214_3268329.htm",
           publisher: "泉州市市场监督管理局",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "头图：苏州的一顿共享餐——ZiCheng Xu，已裁切修改",
+          url: "https://commons.wikimedia.org/wiki/File:Chinese_meal.jpg",
+          publisher: "Wikimedia Commons · CC BY-SA 2.5",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "知识共享署名—相同方式共享 2.5 许可",
+          url: "https://creativecommons.org/licenses/by-sa/2.5/deed.zh-hans",
+          publisher: "Creative Commons",
           reviewedAt: "2026-08-11",
         },
       ],

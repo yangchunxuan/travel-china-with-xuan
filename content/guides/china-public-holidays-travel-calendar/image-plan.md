@@ -1,11 +1,11 @@
 # Image and infographic plan
 
-Status: `COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED`
+Status: `RELEASE REVIEW COMPLETE — HERO RENDERED AND VERIFIED 2026-08-11`
 
 ## Hero — original calendar infographic (required)
 
 - Output: `/public/images/guides/china-public-holidays-travel-calendar/hero-1600.webp`
-- Canvas: 1600 × 1000, plus a 1200 × 630 social crop after editorial approval.
+- Canvas: 1600 × 1000. The current metadata and social cards use this approved source image; no separate 1200 × 630 derivative is required by the article system.
 - Format: original editorial information graphic, not a generated or generic tourist photograph.
 - Content: a 2026 annual calendar showing the seven official holiday spans and compensatory workdays as two visually distinct marks. Add a separate bracket for the February 2–March 13 Spring Festival transport season, clearly labelled “transport period, not public holiday.”
 - Status strip: include “2026 official” and “2027 not yet published / 尚未发布 / 아직 발표되지 않음.”
@@ -14,14 +14,11 @@ Status: `COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED`
 - Prohibited visual treatment: no heat map, crowd score, red-to-green intensity scale, predicted busy days, or tiny decorative calendar text that cannot be read.
 - Editorial QA: compare every highlighted date with `holiday-calendar.json`; verify Sunday/Saturday workday placement; ensure the 40-day transport period is not styled as leave.
 
-## Supporting documentary image — verified holiday scene (required before publication)
+Final asset: `public/images/guides/china-public-holidays-travel-calendar/hero-1600.webp`, rendered by the article-local `render-hero.mjs` directly from `holiday-calendar.json`. For responsive legibility, the final design uses seven large holiday rows rather than twelve miniature month grids. All seven holiday spans and all six compensatory workdays were checked against General Office of the State Council notice 国办发明电〔2025〕7号. The February 2–March 13 Spring Festival transport period is a separate dashed band labelled “not a public holiday.” Final SHA-256: `9b6d9bd9077a5091e34db03e5bf5984db96507a79ea2fc22ac07da6c5f511049`.
 
-- Preferred subject: a named China Railway station concourse or a named major attraction on a date within an official 2026 holiday period.
-- Evidence requirement: the original caption or agency record must state the exact location and capture date. The date must match `holiday-calendar.json` or the documented Spring Festival transport period.
-- Rights requirement: owned, commissioned, or licensed editorial use. Record creator, agency/source URL, licence terms, acquisition date, original filename, crops and expiry/territory limits.
-- Caption: describe only the verified location and date; do not claim the scene represents every holiday or all of China.
-- Alt text: describe visible people, signage and environment without estimating crowd size or emotion.
-- Rejection rule: do not use an undated station crowd, an unidentified attraction queue, stock imagery with unverifiable date/location, or AI-generated people as documentary evidence.
+## Supporting documentary image — not used
+
+The local library did not contain an unused scene whose exact location and capture date could be matched to an official 2026 holiday period. A generic crowd photograph would imply evidence the file does not contain, so the original calendar infographic is the sole article image. No AI-generated people or documentary scene is used.
 
 ## Optional comparison image
 

@@ -164,7 +164,14 @@ export function EditorialGuidePage({
       />
 
       <main>
-        <header className={styles.hero}>
+        <header
+          className={styles.hero}
+          data-hero-kind={
+            guide.id === "china-public-holidays-travel-calendar"
+              ? "information"
+              : undefined
+          }
+        >
           <div className={styles.heroCopy}>
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}>
               <ol>

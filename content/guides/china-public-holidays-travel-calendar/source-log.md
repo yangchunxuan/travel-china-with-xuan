@@ -1,6 +1,6 @@
 # Source log — China public holidays and travel crowds
 
-Status: `COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED`
+Status: `RELEASE REVIEW COMPLETE — OFFICIAL SOURCES RECHECKED 2026-08-11`
 
 Checked at: 2026-08-11 (Asia/Shanghai)
 

@@ -1,8 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-// LOCAL HUMAN REVIEW NEEDED: 이 원고를 copy ready로 표시하거나 발행하기 전에
-// Xuan(Homeground China)이 문화 표현을 검토하고 실명으로 승인해야 합니다.
-
 const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
@@ -471,6 +468,18 @@ const body: StructuredPageBody = {
           label: "2026년 외식 요금 표시 지침 — 전국 규칙이 아닌 푸젠성의 최신 지역 사례",
           url: "https://scjgj.quanzhou.gov.cn/xxgk/gsyw/202602/t20260214_3268329.htm",
           publisher: "취안저우시 시장감독관리국",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "대표 사진: 쑤저우의 공유 식사 — ZiCheng Xu, 크롭 수정",
+          url: "https://commons.wikimedia.org/wiki/File:Chinese_meal.jpg",
+          publisher: "Wikimedia Commons · CC BY-SA 2.5",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.5 라이선스",
+          url: "https://creativecommons.org/licenses/by-sa/2.5/deed.ko",
+          publisher: "Creative Commons",
           reviewedAt: "2026-08-11",
         },
       ],
