@@ -10,6 +10,8 @@
 
 - Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`.
 - Provenance register checked: `docs/homeground-photo-provenance.md`.
-- Selected assets: none. The library contains no Guangzhou collection and no photograph that can be verified as Baiyun Airport T2, T3, Baiyun Airport East station or the official T2–T3 shuttle. Other-city airport and transport photographs were rejected.
-- Still required: `hero-1600.webp`, `t3-baiyun-airport-east-wayfinding-1440.webp` and `t2-t3-shuttle-stop-1440.webp` under `public/images/guides/guangzhou-baiyun-airport-t2-t3/`.
-- Alt and caption status: the copy in `metadata.json` and the three body locales describes the planned subjects only. It must be checked and, if necessary, rewritten against the exact licensed photographs before publication.
+- Local-library result: no usable Guangzhou airport photograph. Other-city airport and transport photographs were rejected.
+- Hero selected from Wikimedia Commons: `Concourse, Baiyun Airport East Railway Station, PRDIR 20251221.jpg`, made by Tim Wu on 21 December 2025 and licensed CC BY-SA 4.0. The frame is inside the T3 transport centre and visibly identifies Terminal 3. Published derivative: `public/images/guides/guangzhou-baiyun-airport-t2-t3/hero-1600.webp`.
+- Body 1 selected from Wikimedia Commons: `Entry Faregates at Baiyun Airport East Railway Station 20251112.jpg`, made by Jacky Cheung on 12 November 2025 and licensed CC BY-SA 4.0. Published derivative: `public/images/guides/guangzhou-baiyun-airport-t2-t3/t3-baiyun-airport-east-wayfinding-1440.webp`.
+- Body 2 not used: no current, reusable photograph was verified as the official T2–T3 shuttle stop or direction. The optional figure block was removed from all locales so the guide has no broken or misleading asset reference.
+- Alt, caption and public source credits were reconciled with the selected files in all three locales. Cropping and WebP conversion are disclosed; the derivatives remain subject to the listed share-alike licence.

@@ -68,11 +68,11 @@ const body = {
     {
       id: "station-figure",
       type: "figure",
-      src: "/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-bus-50-1440.webp",
-      alt: "上海国际旅游度假区站3号口，或前往上海迪士尼换乘浦东50路公交站的真实导向标识。",
+      src: "/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-1440.webp",
+      alt: "上海国际旅游度假区站 3 号口，可见车站名称与出入口编号。",
       width: 1440,
       height: 960,
-      caption: "真正有用的照片应呈现换乘节点：3号口和正确的浦东50路车站，而不是浦东机场里一列普通的列车。",
+      caption: "图中是机场联络线 3 号口；浦东 50 路当前站位仍须临行核对。照片：Kmchang28／Wikimedia Commons，CC BY-SA 4.0；已裁切。",
     },
     {
       id: "airport-link-heading",
@@ -178,15 +178,6 @@ const body = {
       title: "酒店有接驳车，不等于有机场接送",
       tone: "neutral",
       body: "上海迪士尼公布了旗下酒店在度假区内的交通安排。度假区外酒店所谓的“迪士尼接驳车”，可能只按固定时间往返酒店与乐园，也可能限制大件行李。请以书面方式确认准确车站、运营时间、预约要求和行李容量；不要仅凭“接驳车”三个字就推断它提供机场服务。",
-    },
-    {
-      id: "luggage-figure",
-      type: "figure",
-      src: "/images/guides/pudong-airport-to-shanghai-disneyland/west-transport-hub-luggage-1440.webp",
-      alt: "上海迪士尼西公交枢纽，或星愿公园附近官方行李寄存处的真实导向标识。",
-      width: 1440,
-      height: 960,
-      caption: "从机场直接去乐园时，真正影响计划的地点往往是下车处或行李交接点，而不是景点入口。",
     },
     {
       id: "traveller-comparison",
@@ -317,7 +308,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "官方来源与核查记录",
+      title: "资料来源、图片署名与核查记录",
       items: [
         {
           label: "上海机场联络线车站、运营间隔、行李限制及2026年4月运营时间",
@@ -354,6 +345,18 @@ const body = {
           url: "https://www.shanghaidisneyresort.com/en/announcement/park-rules",
           publisher: "上海迪士尼度假区",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "主图：Kmchang28 摄上海国际旅游度假区站站台，CC BY-SA 4.0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:The_Platform_of_Shanghai_International_Resort_Station_in_Shanghai_2024.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "正文图：Kmchang28 摄上海国际旅游度假区站 3 号口，CC BY-SA 4.0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Exit_3_of_Shanghai_International_Resort_Station_in_Shanghai_2024.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

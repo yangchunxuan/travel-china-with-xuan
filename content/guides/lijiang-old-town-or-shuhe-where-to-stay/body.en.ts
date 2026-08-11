@@ -304,7 +304,7 @@ export default {
     {
       id: "official-sources",
       type: "sources",
-      title: "Official and first-party sources",
+      title: "Official, first-party and image sources",
       items: [
         {
           label: "Old Town of Lijiang: heritage components, position and significance",
@@ -377,6 +377,12 @@ export default {
           url: "https://mzzj.yn.gov.cn/html/2026/difangdongtai_0224/4062781.html",
           publisher: "Yunnan Ethnic and Religious Affairs Commission",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Hero image: a pedestrian street in Lijiang Old Town (Dayan) by ChiralJon, CC BY 2.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Lijiang_Old_Town.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

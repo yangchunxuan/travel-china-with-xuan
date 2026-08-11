@@ -10,6 +10,8 @@
 
 - Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`, including `上海优选素材/06_交通与旅程` and `上海优选素材/07_待修与备选`.
 - Provenance register checked: `docs/homeground-photo-provenance.md`.
-- Selected assets: none. The Shanghai files show general city roads, riverfronts and Lujiazui; none can be verified as PVG, the Airport Link, Shanghai International Resort Station, Pudong Bus 50, the West Public Transportation Hub or the official luggage store. In addition, `上海优选素材/上海素材整理记录.json` records `commercialRightsConfirmed: false`.
-- Still required: `hero-1600.webp`, `airport-link-exit-3-bus-50-1440.webp` and `west-transport-hub-luggage-1440.webp` under `public/images/guides/pudong-airport-to-shanghai-disneyland/`.
-- Alt and caption status: the current strings describe the intended subjects, not a confirmed file. Final wording must be checked against the exact licensed photographs before publication.
+- Local-library result: no usable Airport Link or Disney transfer photograph. The available Shanghai records do not confirm commercial rights, so those files were not used.
+- Hero selected from Wikimedia Commons: `The Platform of Shanghai International Resort Station in Shanghai 2024.jpg`, made by Kmchang28 on 28 December 2024 and licensed CC BY-SA 4.0. The station name and direction to Pudong Airport are visible. Published derivative: `public/images/guides/pudong-airport-to-shanghai-disneyland/hero-1600.webp`.
+- Body 1 selected from Wikimedia Commons: `Exit 3 of Shanghai International Resort Station in Shanghai 2024.jpg`, made by Kmchang28 on 28 December 2024 and licensed CC BY-SA 4.0. Published derivative: `public/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-1440.webp`. The caption now limits the evidence to Exit 3 and explicitly says the Bus 50 stop requires a live check.
+- Body 2 not used: no reusable photograph was verified as the West Public Transportation Hub or official luggage-storage exterior. The optional figure block was removed from all locales so the guide has no broken or misleading asset reference.
+- Alt, caption and public source credits were reconciled with the selected files in all three locales. Cropping and WebP conversion are disclosed; the derivatives remain subject to the listed share-alike licence.

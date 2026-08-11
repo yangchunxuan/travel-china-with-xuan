@@ -68,11 +68,11 @@ const body = {
     {
       id: "station-figure",
       type: "figure",
-      src: "/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-bus-50-1440.webp",
-      alt: "Real wayfinding at Shanghai International Resort Station Exit 3 or the Pudong Bus 50 stop for the Shanghai Disney transfer.",
+      src: "/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-1440.webp",
+      alt: "Exit 3 of Shanghai International Resort Station, with the station name and exit number visible.",
       width: 1440,
       height: 960,
-      caption: "The useful photograph is the handoff: Exit 3 and the correct Bus 50 stop—not a generic train at Pudong Airport.",
+      caption: "This is Airport Link Exit 3; the current Pudong Bus 50 stop still needs a live check. Photo: Kmchang28/Wikimedia Commons, CC BY-SA 4.0; cropped.",
     },
     {
       id: "airport-link-heading",
@@ -178,15 +178,6 @@ const body = {
       title: "Hotel shuttle does not automatically mean airport pickup",
       tone: "neutral",
       body: "Shanghai Disney publishes resort-area transport for its hotels. An off-site property's “Disney shuttle” may run only between that hotel and the park, at fixed times, and may limit large baggage. Ask for the exact stop, hours, reservation rule and luggage capacity in writing; do not infer airport service from the word shuttle.",
-    },
-    {
-      id: "luggage-figure",
-      type: "figure",
-      src: "/images/guides/pudong-airport-to-shanghai-disneyland/west-transport-hub-luggage-1440.webp",
-      alt: "Real wayfinding for Shanghai Disney West Public Transportation Hub or the official luggage-storage facility near Wishing Star Park.",
-      width: 1440,
-      height: 960,
-      caption: "For an airport-to-park day, the decisive place is often the car or luggage handoff—not the attraction entrance.",
     },
     {
       id: "traveller-comparison",
@@ -317,7 +308,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Official sources and review record",
+      title: "Sources, image credits and review record",
       items: [
         {
           label: "Shanghai Airport Link stations, service pattern, baggage limits and April 2026 hours",
@@ -354,6 +345,18 @@ const body = {
           url: "https://www.shanghaidisneyresort.com/en/announcement/park-rules",
           publisher: "Shanghai Disney Resort",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Hero image: Shanghai International Resort Station platform by Kmchang28, CC BY-SA 4.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:The_Platform_of_Shanghai_International_Resort_Station_in_Shanghai_2024.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Body image: Shanghai International Resort Station Exit 3 by Kmchang28, CC BY-SA 4.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Exit_3_of_Shanghai_International_Resort_Station_in_Shanghai_2024.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

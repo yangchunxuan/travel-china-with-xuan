@@ -68,11 +68,11 @@ const body = {
     {
       id: "station-figure",
       type: "figure",
-      src: "/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-bus-50-1440.webp",
-      alt: "상하이 디즈니 환승에 필요한 상하이 국제관광리조트역 3번 출구 또는 푸둥 50번 버스 정류장의 실제 길찾기 표지.",
+      src: "/images/guides/pudong-airport-to-shanghai-disneyland/airport-link-exit-3-1440.webp",
+      alt: "역명과 출구 번호가 보이는 상하이 국제관광리조트역 3번 출구.",
       width: 1440,
       height: 960,
-      caption: "필요한 사진은 푸둥공항의 평범한 열차가 아니라, 3번 출구와 정확한 50번 버스 정류장이 보이는 환승 지점이다.",
+      caption: "사진은 공항연락선 3번 출구이며, 푸둥 50번 버스의 현재 정류장은 출발 전에 다시 확인해야 합니다. 사진: Kmchang28/Wikimedia Commons, CC BY-SA 4.0, 크롭됨.",
     },
     {
       id: "airport-link-heading",
@@ -178,15 +178,6 @@ const body = {
       title: "호텔 셔틀이 곧 공항 픽업을 뜻하지는 않는다",
       tone: "neutral",
       body: "상하이 디즈니는 자체 호텔을 위한 리조트 내부 교통편을 안내한다. 외부 운영 숙소의 ‘디즈니 셔틀’은 정해진 시간에 호텔과 파크 사이만 오갈 수 있고, 대형 수하물에 제한을 둘 수도 있다. 정확한 정류장, 운행 시간, 예약 규정과 수하물 적재 가능 여부를 서면으로 확인한다. ‘셔틀’이라는 말만 보고 공항까지 운행한다고 판단하지 않는다.",
-    },
-    {
-      id: "luggage-figure",
-      type: "figure",
-      src: "/images/guides/pudong-airport-to-shanghai-disneyland/west-transport-hub-luggage-1440.webp",
-      alt: "상하이 디즈니 서부 대중교통 허브 또는 위싱 스타 파크 인근 공식 수하물 보관소의 실제 길찾기 표지.",
-      width: 1440,
-      height: 960,
-      caption: "공항에서 바로 파크로 가는 날에는 어트랙션 입구보다 차량 승하차 지점이나 수하물 인계 장소가 더 결정적일 때가 많다.",
     },
     {
       id: "traveller-comparison",
@@ -317,7 +308,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "공식 출처와 확인 기록",
+      title: "자료 출처, 이미지 크레딧과 확인 기록",
       items: [
         {
           label: "상하이 공항연락선 정차역, 운행 방식, 수하물 제한과 2026년 4월 운행 시간",
@@ -354,6 +345,18 @@ const body = {
           url: "https://www.shanghaidisneyresort.com/en/announcement/park-rules",
           publisher: "Shanghai Disney Resort",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "히어로 이미지: Kmchang28의 상하이 국제관광리조트역 승강장, CC BY-SA 4.0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:The_Platform_of_Shanghai_International_Resort_Station_in_Shanghai_2024.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "본문 이미지: Kmchang28의 상하이 국제관광리조트역 3번 출구, CC BY-SA 4.0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Exit_3_of_Shanghai_International_Resort_Station_in_Shanghai_2024.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

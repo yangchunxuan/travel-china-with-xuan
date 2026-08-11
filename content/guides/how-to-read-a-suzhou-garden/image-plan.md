@@ -1,6 +1,6 @@
 # Image plan — how-to-read-a-suzhou-garden
 
-Status: COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED
+Status: INTEGRATION REVIEW READY
 
 ## 1. Hero
 
@@ -26,12 +26,13 @@ UNESCO, Suzhou garden authorities, museums and photographers may each impose dif
 
 The six-element garden grammar, framed-view versus borrowed-scenery comparison, four-garden choice table, seven-stop walking exercise and evidence-level table should remain accessible HTML. These concepts will need editorial correction and should not be frozen into infographics. The article does not need decorative diagrams simply to increase image count.
 
-No image assets are included in this branch.
+The selected hero is a verified view inside the Lingering Garden; no generic garden or other-city substitute is used.
 
 ## Integration asset audit — 2026-08-11
 
 - Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`.
 - Provenance register checked: `docs/homeground-photo-provenance.md`.
-- Selected assets: none. The library has no Suzhou collection and no file whose exact garden and viewpoint can be verified. Garden photographs from Beijing, Hangzhou, Luoyang or another city were rejected.
-- Still required: `hero-1600.webp` under `public/images/guides/how-to-read-a-suzhou-garden/`, with the exact Suzhou garden, viewpoint, creator, capture date and commercial-use permission recorded.
-- Alt status: all three `heroAlt` values describe the planned composition only. They must be reconciled with the selected real photograph before publication.
+- Local-library result: no usable Suzhou photograph. Garden photographs from Beijing, Hangzhou, Luoyang and other cities were rejected.
+- Hero selected from Wikimedia Commons: `Lingering Garden, Suzhou.jpg`, made by kevinmcgill inside the Lingering Garden on 13 December 2011 and licensed CC BY-SA 2.0. The file page supplies the garden identity and coordinates.
+- Published derivative: `public/images/guides/how-to-read-a-suzhou-garden/hero-1600.webp`. It shows water and reflections, covered walkways, rockwork and traditional buildings; it does not claim a corridor-framed viewpoint that the selected frame does not contain.
+- Alt text and public source credit were reconciled with the exact garden in all three locales. Cropping and WebP conversion are disclosed; the derivative remains subject to the listed share-alike licence.

@@ -379,7 +379,7 @@ const body: StructuredPageBody = {
     {
       id: "official-sources",
       type: "sources",
-      title: "Official and academic sources checked on 10 August 2026",
+      title: "Official, academic and image sources checked in August 2026",
       items: [
         {
           label: "Guangzhou Morning Tea Inheritance and Protection Regulation — effective 1 May 2026",
@@ -428,6 +428,12 @@ const body: StructuredPageBody = {
           url: "https://www.discoverhongkong.com/eng/food-and-drink/must-try-street-food-in-hong-kong.html",
           publisher: "Hong Kong Tourism Board",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Hero image: a dim sum table at Pan Xi Restaurant by MeiOLA 2290 WMENSZ, CC0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_%E5%BB%A3%E5%B7%9E_Guangzhou_%E8%8D%94%E7%81%A3%E5%8D%80_Liwan_%E9%BE%8D%E6%B4%A5%E8%A5%BF%E8%B7%AF_Longjin_West_Road_shop_%E6%B3%AE%E6%BA%AA%E9%85%92%E5%AE%B6_Pan_Xi_Restaurant_%E9%BB%9E%E5%BF%83_dim_sum_June_2025_R12S_30.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

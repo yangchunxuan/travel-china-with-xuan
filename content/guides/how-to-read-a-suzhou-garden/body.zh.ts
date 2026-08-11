@@ -328,7 +328,7 @@ const body: StructuredPageBody = {
     {
       id: "sources",
       type: "sources",
-      title: "2026 年 8 月 10 日核对的官方、博物馆与学术来源",
+      title: "2026 年 8 月核对的官方、博物馆、学术与图片来源",
       items: [
         {
           label: "苏州古典园林：世界遗产说明、评定标准与保护概况",
@@ -389,6 +389,12 @@ const body: StructuredPageBody = {
           url: "https://doi.org/10.1080/13467581.2024.2358202",
           publisher: "Journal of Asian Architecture and Building Engineering",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "主图：kevinmcgill 摄苏州留园，CC BY-SA 2.0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Lingering_Garden,_Suzhou.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

@@ -138,10 +138,10 @@ const body = {
       id: "t3-wayfinding-figure",
       type: "figure",
       src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t3-baiyun-airport-east-wayfinding-1440.webp",
-      alt: "Wayfinding in Guangzhou Baiyun Airport Terminal 3 for Baiyun Airport East intercity station and ground transport.",
+      alt: "Entry gates and platform signs inside Baiyun Airport East intercity station at Guangzhou Baiyun Airport Terminal 3.",
       width: 1440,
       height: 960,
-      caption: "At T3, the useful sign is the one that names both the transport system and Baiyun Airport East—not a generic train symbol.",
+      caption: "Baiyun Airport East has intercity fare gates and platform signs inside the T3 transport centre. Photo: Jacky Cheung/Wikimedia Commons, CC BY-SA 4.0; cropped.",
     },
     {
       id: "t2-route-heading",
@@ -293,15 +293,6 @@ const body = {
       title: "Do not assume there is a passenger airside train between T2 and T3",
       tone: "warning",
       body: "The airport's public passenger information documents landside shuttle and intercity options; it does not promise a self-directed airside link for every itinerary. Unless the operating airline confirms a protected airside process for your exact flights, plan for immigration, baggage collection or re-check, a landside terminal change and security wherever those steps apply.",
-    },
-    {
-      id: "shuttle-figure",
-      type: "figure",
-      src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t2-t3-shuttle-stop-1440.webp",
-      alt: "Official Guangzhou Baiyun Airport sign or shuttle stop directing passengers between Terminals 2 and 3.",
-      width: 1440,
-      height: 960,
-      caption: "A useful transfer photograph must show the current official stop or direction—not merely a bus somewhere at the airport.",
     },
     {
       id: "connections-heading",
@@ -488,7 +479,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Official sources and review record",
+      title: "Sources, image credits and review record",
       items: [
         {
           label: "T1 airlines relocated to T3 and T1 rail stops suspended from May 7",
@@ -555,6 +546,18 @@ const body = {
           url: "https://www.gz.gov.cn/zwfw/zxfw/jtfw/content/post_10726817.html",
           publisher: "People's Government of Guangzhou Municipality",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Hero image: Baiyun Airport East concourse by Tim Wu, CC BY-SA 4.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Concourse,_Baiyun_Airport_East_Railway_Station,_PRDIR_20251221.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Body image: Baiyun Airport East entry gates by Jacky Cheung, CC BY-SA 4.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Entry_Faregates_at_Baiyun_Airport_East_Railway_Station_20251112.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

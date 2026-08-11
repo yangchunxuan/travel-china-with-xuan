@@ -138,10 +138,10 @@ const body = {
       id: "t3-wayfinding-figure",
       type: "figure",
       src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t3-baiyun-airport-east-wayfinding-1440.webp",
-      alt: "广州白云国际机场 T3 内通往城际白云机场东站及地面交通的导向标识。",
+      alt: "广州白云机场 T3 交通中心内，白云机场东城际站的进站闸机与站台标识。",
       width: 1440,
       height: 960,
-      caption: "在 T3，应寻找同时写明交通系统和“白云机场东”的标识，而不是只认一个笼统的火车图标。",
+      caption: "白云机场东城际站的进站闸机与站台标识位于 T3 交通中心内。照片：Jacky Cheung／Wikimedia Commons，CC BY-SA 4.0；已裁切。",
     },
     {
       id: "t2-route-heading",
@@ -293,15 +293,6 @@ const body = {
       title: "不要假设 T2 与 T3 之间有人人都能自行乘坐的安检后旅客区域列车",
       tone: "warning",
       body: "机场公开旅客信息明确介绍的是安检前公共区域接驳巴士和城际交通，并未承诺每一种行程都能自行在安检后旅客区域直接换楼。除非实际承运航司确认你的具体航班有受保护的空侧流程，否则应按适用情形预留入境检查、提取或重新托运行李、安检前公共区域换楼及再次安检等步骤。",
-    },
-    {
-      id: "shuttle-figure",
-      type: "figure",
-      src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t2-t3-shuttle-stop-1440.webp",
-      alt: "广州白云国际机场内指引旅客往返 T2 与 T3 的官方标识或接驳巴士站。",
-      width: 1440,
-      height: 960,
-      caption: "有效的换楼照片应清楚拍到当前官方站位或方向指引，而不只是机场里随意一辆巴士。",
     },
     {
       id: "connections-heading",
@@ -488,7 +479,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "官方来源与核查记录",
+      title: "资料来源、图片署名与核查记录",
       items: [
         {
           label: "T1 航司转场 T3，以及 5 月 7 日起 T1 相关铁路车站暂停停靠",
@@ -555,6 +546,18 @@ const body = {
           url: "https://jtj.gz.gov.cn/xwdt/tpxw/content/post_10462631.html",
           publisher: "广州市交通运输局",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "主图：Tim Wu 摄白云机场东站站厅，CC BY-SA 4.0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Concourse,_Baiyun_Airport_East_Railway_Station,_PRDIR_20251221.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "正文图：Jacky Cheung 摄白云机场东站进站闸机，CC BY-SA 4.0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Entry_Faregates_at_Baiyun_Airport_East_Railway_Station_20251112.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

@@ -1,6 +1,6 @@
 # Image plan
 
-**COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
+**INTEGRATION REVIEW READY**
 
 Use only real, licensable destination photography with reliable location provenance. Do not generate or simulate Lijiang photography with AI.
 
@@ -54,12 +54,13 @@ Use only real, licensable destination photography with reliable location provena
 - Record creator, source or archive reference, licence, permitted channels, capture date if known and exact location confirmation.
 - Keep the provenance of Dayan, Shuhe and Baisha images separate; the three places are not interchangeable.
 - Do not use AI to manufacture a real destination scene or to add/remove crowds in documentary photographs.
-- No image asset is currently present. Guide generation and the site build are therefore not expected to pass until the hero file is supplied.
+- The selected asset is the single-place alternative: a verified Dayan/Lijiang Old Town street image, explicitly described as Dayan rather than as both towns.
 
 ## Integration asset audit — 2026-08-11
 
 - Library checked: `/Users/yangchunxuan/Desktop/Facebook图片素材`.
 - Provenance register checked: `docs/homeground-photo-provenance.md`.
-- Selected assets: none. The library has no Lijiang collection and no photograph whose location can be verified separately as Dayan or Shuhe. Dali, Fenghuang and other old-town photographs were rejected.
-- Still required: `hero-1600.webp` under `public/images/guides/lijiang-old-town-or-shuhe-where-to-stay/`, with Dayan/Shuhe identity, creator, capture date and commercial-use permission recorded.
-- Alt status: the three current `heroAlt` values intentionally say “Dayan or Shuhe”; they are not specific enough for a final assigned photograph and must be rewritten once the exact place is known.
+- Local-library result: no usable Lijiang photograph. Dali, Fenghuang and other old-town photographs were rejected.
+- Hero selected from Wikimedia Commons: `Lijiang Old Town.jpg`, made by ChiralJon and licensed CC BY 2.0. The file description identifies a pedestrian street in Lijiang Old Town and the Commons category places it in the Old Town of Lijiang (Dayan) component.
+- Published derivative: `public/images/guides/lijiang-old-town-or-shuhe-where-to-stay/hero-1600.webp`. The single Dayan image is not presented as Shuhe or as a composite comparison.
+- Alt text and public source credit were rewritten in all three locales to say Dayan. Cropping and WebP conversion are disclosed.

@@ -304,7 +304,7 @@ export default {
     {
       id: "official-sources",
       type: "sources",
-      title: "핵심 공식·1차 자료",
+      title: "핵심 공식·1차·이미지 자료",
       items: [
         {
           label: "리장고성의 세계유산 구성, 위치와 가치",
@@ -377,6 +377,12 @@ export default {
           url: "https://mzzj.yn.gov.cn/html/2026/difangdongtai_0224/4062781.html",
           publisher: "윈난성 민족종교사무위원회",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "히어로 이미지: ChiralJon의 리장고성(다옌) 보행자 거리, CC BY 2.0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Lijiang_Old_Town.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

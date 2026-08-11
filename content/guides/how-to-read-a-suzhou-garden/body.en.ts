@@ -328,7 +328,7 @@ const body: StructuredPageBody = {
     {
       id: "sources",
       type: "sources",
-      title: "Official, museum and academic sources checked on 10 August 2026",
+      title: "Official, museum, academic and image sources checked in August 2026",
       items: [
         {
           label: "Classical Gardens of Suzhou — World Heritage property, criteria and conservation summary",
@@ -389,6 +389,12 @@ const body: StructuredPageBody = {
           url: "https://doi.org/10.1080/13467581.2024.2358202",
           publisher: "Journal of Asian Architecture and Building Engineering",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Hero image: Lingering Garden by kevinmcgill, CC BY-SA 2.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Lingering_Garden,_Suzhou.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

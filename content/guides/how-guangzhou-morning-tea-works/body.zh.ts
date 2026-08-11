@@ -379,7 +379,7 @@ const body: StructuredPageBody = {
     {
       id: "official-sources",
       type: "sources",
-      title: "2026 年 8 月 10 日核对的官方与学术资料",
+      title: "2026 年 8 月核对的官方、学术与图片资料",
       items: [
         {
           label: "《广州早茶传承保护规定》——2026 年 5 月 1 日起施行",
@@ -428,6 +428,12 @@ const body: StructuredPageBody = {
           url: "https://www.discoverhongkong.com/eng/food-and-drink/must-try-street-food-in-hong-kong.html",
           publisher: "香港旅游发展局",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "主图：MeiOLA 2290 WMENSZ 摄广州泮溪酒家点心桌，CC0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_%E5%BB%A3%E5%B7%9E_Guangzhou_%E8%8D%94%E7%81%A3%E5%8D%80_Liwan_%E9%BE%8D%E6%B4%A5%E8%A5%BF%E8%B7%AF_Longjin_West_Road_shop_%E6%B3%AE%E6%BA%AA%E9%85%92%E5%AE%B6_Pan_Xi_Restaurant_%E9%BB%9E%E5%BF%83_dim_sum_June_2025_R12S_30.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

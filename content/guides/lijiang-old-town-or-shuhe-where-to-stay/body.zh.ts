@@ -304,7 +304,7 @@ export default {
     {
       id: "official-sources",
       type: "sources",
-      title: "核心官方及一手来源",
+      title: "核心官方、一手及图片来源",
       items: [
         {
           label: "丽江古城的遗产组成、位置与价值说明",
@@ -377,6 +377,12 @@ export default {
           url: "https://mzzj.yn.gov.cn/html/2026/difangdongtai_0224/4062781.html",
           publisher: "云南省民族宗教事务委员会",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "主图：ChiralJon 摄丽江古城（大研）步行街，CC BY 2.0；已裁切并转为 WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Lijiang_Old_Town.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

@@ -328,7 +328,7 @@ const body: StructuredPageBody = {
     {
       id: "sources",
       type: "sources",
-      title: "2026년 8월 10일 확인한 공식·박물관·학술 자료",
+      title: "2026년 8월 확인한 공식·박물관·학술·이미지 자료",
       items: [
         {
           label: "쑤저우 고전원림 — 세계유산 설명, 등재 기준과 보존 개요",
@@ -395,6 +395,12 @@ const body: StructuredPageBody = {
           url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002972417",
           publisher: "한국공간디자인학회논문집, 한국학술지인용색인",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "히어로 이미지: kevinmcgill의 쑤저우 유원, CC BY-SA 2.0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Lingering_Garden,_Suzhou.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

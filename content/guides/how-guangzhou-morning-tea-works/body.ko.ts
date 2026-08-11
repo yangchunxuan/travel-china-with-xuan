@@ -379,7 +379,7 @@ const body: StructuredPageBody = {
     {
       id: "official-sources",
       type: "sources",
-      title: "2026년 8월 10일 확인한 공식·학술 자료",
+      title: "2026년 8월 확인한 공식·학술·이미지 자료",
       items: [
         {
           label: "광저우 모닝티 전승·보호 규정 — 2026년 5월 1일 시행",
@@ -428,6 +428,12 @@ const body: StructuredPageBody = {
           url: "https://www.discoverhongkong.com/content/dam/hk-tb/market-site/kr/e-guidebooks/2023-hk-mini-guide-e-book-kr.pdf",
           publisher: "홍콩관광청",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "히어로 이미지: MeiOLA 2290 WMENSZ의 광저우 판시 레스토랑 딤섬 식탁, CC0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_%E5%BB%A3%E5%B7%9E_Guangzhou_%E8%8D%94%E7%81%A3%E5%8D%80_Liwan_%E9%BE%8D%E6%B4%A5%E8%A5%BF%E8%B7%AF_Longjin_West_Road_shop_%E6%B3%AE%E6%BA%AA%E9%85%92%E5%AE%B6_Pan_Xi_Restaurant_%E9%BB%9E%E5%BF%83_dim_sum_June_2025_R12S_30.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },

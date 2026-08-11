@@ -138,10 +138,10 @@ const body = {
       id: "t3-wayfinding-figure",
       type: "figure",
       src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t3-baiyun-airport-east-wayfinding-1440.webp",
-      alt: "광저우 바이윈 국제공항 제3터미널에서 도시 간 철도 바이윈공항동역과 지상 교통으로 안내하는 표지판",
+      alt: "광저우 바이윈공항 제3터미널 교통센터 안 바이윈공항동역의 도시 간 철도 개찰구와 승강장 표지",
       width: 1440,
       height: 960,
-      caption: "T3에서는 단순한 열차 아이콘이 아니라 교통수단과 바이윈공항동역을 함께 명시한 표지판을 따라야 합니다.",
+      caption: "바이윈공항동역의 도시 간 철도 개찰구와 승강장 표지는 T3 교통센터 안에 있습니다. 사진: Jacky Cheung/Wikimedia Commons, CC BY-SA 4.0, 크롭됨.",
     },
     {
       id: "t2-route-heading",
@@ -293,15 +293,6 @@ const body = {
       title: "T2와 T3 사이에 누구나 이용하는 보안검색 후 보안구역 여객 열차가 있다고 생각하지 마세요",
       tone: "warning",
       body: "공항이 공개한 여객 안내에는 보안검색 전 일반구역 셔틀과 도시 간 철도 방법이 설명돼 있지만, 모든 일정에서 여행자가 스스로 이용할 수 있는 보안검색 후 보안구역 연결편을 보장하지는 않습니다. 실제 운항 항공사가 해당 항공편에 대해 보호되는 보안검색 후 보안구역 환승 절차를 확인해 주지 않는 한, 필요한 경우 입국 심사, 수하물 수취 또는 재수속, 보안검색 전 일반구역에서의 터미널 이동과 보안검색을 거치는 것으로 계획하세요.",
-    },
-    {
-      id: "shuttle-figure",
-      type: "figure",
-      src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t2-t3-shuttle-stop-1440.webp",
-      alt: "광저우 바이윈 국제공항 제2터미널과 제3터미널 사이 이동을 안내하는 공식 표지판 또는 셔틀 정류장",
-      width: 1440,
-      height: 960,
-      caption: "환승 사진은 공항 어딘가의 버스가 아니라 현재 공식 정류장이나 이동 방향을 확인할 수 있어야 유용합니다.",
     },
     {
       id: "connections-heading",
@@ -488,7 +479,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "공식 출처와 검토 기록",
+      title: "자료 출처, 이미지 크레딧과 검토 기록",
       items: [
         {
           label: "T1 항공편의 T3 이전 및 5월 7일부터 T1 철도역 정차 중단",
@@ -555,6 +546,18 @@ const body = {
           url: "https://www.gz.gov.cn/zwfw/zxfw/jtfw/content/post_10726817.html",
           publisher: "광저우시 인민정부",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "히어로 이미지: Tim Wu의 바이윈공항동역 대합실, CC BY-SA 4.0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Concourse,_Baiyun_Airport_East_Railway_Station,_PRDIR_20251221.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "본문 이미지: Jacky Cheung의 바이윈공항동역 개찰구, CC BY-SA 4.0; 크롭 후 WebP로 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Entry_Faregates_at_Baiyun_Airport_East_Railway_Station_20251112.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
         },
       ],
     },
