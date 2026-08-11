@@ -303,9 +303,9 @@ const body = {
           description: "Measure transfer load and recovery time before protecting another sightseeing day.",
         },
         {
-          label: "Estimate the full cost of a China trip",
-          href: "/guides/how-much-does-a-china-trip-cost/",
-          description: "Put the rail-and-hotel decision inside the total trip budget.",
+          label: "Use the first-time high-speed rail guide",
+          href: "/guides/china-high-speed-train-first-time-guide/",
+          description: "Keep tickets, stations, luggage and boarding mechanics separate from this overnight-versus-daytime decision.",
         },
         {
           label: "Plan China with older parents",

@@ -303,9 +303,9 @@ const body = {
           description: "관광일 하루를 더 지키기 전에 이동 부담과 회복시간을 계산하세요.",
         },
         {
-          label: "중국 여행 전체 비용 계산하기",
-          href: "/ko/guides/how-much-does-a-china-trip-cost/",
-          description: "철도와 호텔 선택을 전체 여행 예산 안에서 판단하세요.",
+          label: "처음 타는 중국 고속철도 이용법 확인하기",
+          href: "/ko/guides/china-high-speed-train-first-time-guide/",
+          description: "표 예매, 역 선택, 수하물과 탑승 절차는 이 글의 야간 침대열차·주간 고속철도 선택과 나누어 확인하세요.",
         },
         {
           label: "부모님과 함께하는 중국 여행 계획하기",

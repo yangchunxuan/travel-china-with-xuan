@@ -303,9 +303,9 @@ const body = {
           description: "为了多保住一个观光日之前，先计算转场负担和恢复时间。",
         },
         {
-          label: "估算一次中国旅行的完整预算",
-          href: "/zh/guides/how-much-does-a-china-trip-cost/",
-          description: "把高铁与酒店的选择放回整趟旅行预算里。",
+          label: "第一次坐高铁，查看购票与进站指南",
+          href: "/zh/guides/china-high-speed-train-first-time-guide/",
+          description: "把购票、车站、行李和上车流程，与本文的夜间卧铺或白天高铁选择分开处理。",
         },
         {
           label: "规划与年长父母同行的中国旅行",

@@ -41,4 +41,4 @@ Do not commission a route map that readers could mistake for a recommended itine
 - Rights basis: owner-supplied Homeground local library; the task owner authorised use from this library for this integration batch. This records project-entry permission, not independent proof of the original photographer's copyright.
 - Processing: centre crop and resize only; no generative or AI editing. Final SHA-256: `157a13724b59cf099d8bb211fa98dab88e9d280b7a9ea8aca039ae7b0fc57adf`.
 - Caption if surfaced: EN “Exterior of Kunming Changshui International Airport.” ZH “昆明长水国际机场航站楼外观。” KO “쿤밍 창수이 국제공항 외관.”
-- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.
+- Release date: `2026-08-11`, matching the final fact recheck and intended first-live date for this release PR.

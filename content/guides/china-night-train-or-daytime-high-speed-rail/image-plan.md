@@ -42,4 +42,4 @@ Do not publish a route map or a list of “best sleeper routes”; services chan
 - Processing: centre crop and resize only; no generative or AI editing. The derivative is identified as cropped and remains under CC BY-SA 3.0. Final SHA-256: `2c06c774875648d0a3b5b09faf5792c1c19f83d9c64e7efb77a6947ee9919987`.
 - Caption if surfaced: EN “Upper and lower berths inside a China Railway CRH2 sleeper carriage.” ZH “中国铁路 CRH2 卧铺车厢内的上下铺。” KO “중국철도 CRH2 침대차의 위아래 침대.”
 - Attribution and the direct licence link are included in each locale's default-collapsed Sources block.
-- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.
+- Release date: `2026-08-11`, matching the final fact recheck and intended first-live date for this release PR.

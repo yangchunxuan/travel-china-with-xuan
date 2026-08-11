@@ -51,4 +51,4 @@ Add figure blocks only after each file, licence, caption, station/entrance ident
 - Processing: centre crop and resize only; no generative or AI editing. The derivative is identified as cropped and remains under CC BY-SA 4.0. Final SHA-256: `4d86dab994f7db2f22fb35c8fe14763ee9981ac38845130dfe169f8136653855`.
 - Caption if surfaced: EN “Street-level entrance 1 of Shanghai Railway Station metro station, with stairs and escalators.” ZH “上海地铁上海火车站站1号地面出入口，可见台阶与扶梯。” KO “계단과 에스컬레이터가 보이는 상하이 지하철 상하이기차역 1번 지상 출입구.”
 - Attribution and the direct licence link are included in each locale's default-collapsed Sources block.
-- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.
+- Release date: `2026-08-11`, matching the final fact recheck and intended first-live date for this release PR.

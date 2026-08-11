@@ -44,4 +44,4 @@ No tourism photograph should be generated with AI. Use only real, licensable mat
 - Rights basis: owner-supplied Homeground local library; the task owner authorised use from this library for this integration batch. This records project-entry permission, not independent proof of the original photographer's copyright.
 - Processing: centre crop and resize only; no generative or AI editing. Final SHA-256: `39be1a2b404ae82addbbeb29cbcbd708613e4cbaf3dffa6a20db3386b9398e2c`.
 - Caption if surfaced: EN “Golden giant-panda sculpture in the landscaped grounds of Chengdu Panda Base.” ZH “成都熊猫基地园林中的金色大熊猫雕塑。” KO “청두 판다기지 정원에 있는 황금색 자이언트판다 조형물.”
-- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.
+- Release date: `2026-08-11`, matching the final fact recheck and intended first-live date for this release PR.
