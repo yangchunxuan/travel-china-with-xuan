@@ -1,0 +1,60 @@
+{
+  "id": "chengdu-panda-base-or-dujiangyan-panda-valley",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "comparison-guide",
+  "topics": ["giant-pandas", "attraction-comparison", "visitor-planning"],
+  "destinations": ["chengdu", "dujiangyan", "sichuan"],
+  "heroImagePath": "/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "explore",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
+      "title": "Chengdu Panda Base or Panda Valley? Which to Visit",
+      "headline": "Chengdu Panda Base or Dujiangyan Panda Valley: Which Should You Visit?",
+      "description": "Compare location, transport, tickets, visitor facilities and research focus before choosing Chengdu Panda Base or Dujiangyan Panda Valley.",
+      "heroAlt": "Golden giant-panda sculpture in the landscaped grounds of Chengdu Panda Base",
+      "navTitle": "Chengdu Panda Base vs Panda Valley",
+      "featuredLinkLabel": "Compare the two panda venues",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chengdu", "Giant pandas", "Attraction comparison"]
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
+      "title": "成都熊猫基地还是都江堰熊猫谷？第一次去怎么选",
+      "headline": "成都熊猫基地还是都江堰熊猫谷：第一次去该怎么选？",
+      "description": "比较成都熊猫基地与都江堰熊猫谷在地点、交通、门票、游客设施和研究定位上的差异，帮你选出更适合自己行程的一处。",
+      "heroAlt": "成都熊猫基地园林中的金色大熊猫雕塑",
+      "navTitle": "成都熊猫基地与熊猫谷",
+      "featuredLinkLabel": "比较成都熊猫基地与熊猫谷",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["成都", "大熊猫", "景点比较"]
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
+      "title": "청두 판다기지 vs 두장옌 판다밸리, 어디로 갈까?",
+      "headline": "청두 판다기지 vs 두장옌 판다밸리: 어디로 가야 할까?",
+      "description": "위치, 교통, 입장권, 편의시설과 연구 기능을 비교해 청두 판다기지와 두장옌 판다밸리 중 일정에 맞는 곳을 고를 수 있도록 돕습니다.",
+      "heroAlt": "청두 판다기지 정원에 있는 황금색 자이언트판다 조형물",
+      "navTitle": "청두 판다기지와 판다밸리",
+      "featuredLinkLabel": "두 판다 시설 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["청두", "자이언트판다", "관광지 비교"]
+    }
+  }
+}
