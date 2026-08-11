@@ -1,8 +1,9 @@
 # Research and source log
 
-**COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
+**INTEGRATION REVIEW READY — publication date and central registration remain with the total integrator**
 
 Research and first-party source review completed on 2026-08-10.
+Integration recheck: **2026-08-11** — Official pages cited in the article were reopened and rechecked; body source dates were updated. Deferred candidates below were not promoted.
 
 ## Repository collision audit
 

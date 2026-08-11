@@ -1,6 +1,6 @@
 # Image plan
 
-Status: **COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
+Status: **ASSET SELECTED — INTEGRATION REVIEW READY**
 
 All photographs must be real, licensed for Homeground's intended use, and traceable to a source record. Do not use AI-generated airport or traveller scenes. Do not show a readable passport, boarding pass, booking reference, phone number or identifiable child's face.
 
@@ -32,3 +32,13 @@ Do not commission a route map that readers could mistake for a recommended itine
 - Confirm the depicted airport, terminal and transport mode before captioning it.
 - Check mobile crops at 320 px and desktop crops before approval.
 - Strip embedded location data and other unnecessary metadata from final exports.
+
+## Integration-review selection — 2026-08-11
+
+- Final file: `public/images/guides/china-open-jaw-flights-route-planning/hero-1600.webp` (1600 × 1000, metadata-stripped WebP).
+- Original: `/Users/yangchunxuan/Desktop/Facebook图片素材/昆明优选素材/07_博物馆剧院与现代地标/昆明长水机场.jpg`.
+- Verified depiction: the exterior of Kunming Changshui International Airport. It is used as one example of a mainland Chinese air gateway, not as a recommended open-jaw route or a claim about a specific terminal.
+- Rights basis: owner-supplied Homeground local library; the task owner authorised use from this library for this integration batch. This records project-entry permission, not independent proof of the original photographer's copyright.
+- Processing: centre crop and resize only; no generative or AI editing. Final SHA-256: `157a13724b59cf099d8bb211fa98dab88e9d280b7a9ea8aca039ae7b0fc57adf`.
+- Caption if surfaced: EN “Exterior of Kunming Changshui International Airport.” ZH “昆明长水国际机场航站楼外观。” KO “쿤밍 창수이 국제공항 외관.”
+- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.

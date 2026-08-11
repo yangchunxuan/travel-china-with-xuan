@@ -1,6 +1,6 @@
 # Image plan
 
-**COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
+**ASSET SELECTED — INTEGRATION REVIEW READY**
 
 No tourism photograph should be generated with AI. Use only real, licensable material with reliable venue provenance.
 
@@ -34,4 +34,14 @@ No tourism photograph should be generated with AI. Use only real, licensable mat
 - Record creator, source URL or archive reference, licence, usage scope, capture date if known and venue confirmation.
 - Remove visible visitor faces unless release or editorial-use rights are clear.
 - Do not use images that promise a specific cub, feeding session, close viewing distance or crowd level.
-- No asset is currently present, so guide generation and the site build are not expected to pass yet.
+- The selected hero is present. Any optional supporting image remains deferred and the body does not depend on one.
+
+## Integration-review selection — 2026-08-11
+
+- Final file: `public/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp` (1600 × 1000, metadata-stripped WebP).
+- Original: `/Users/yangchunxuan/Desktop/Facebook图片素材/成都优选素材/01_熊猫基地与熊猫元素/成都大熊猫繁育基地.jpg`.
+- Verified depiction: a golden giant-panda sculpture in the landscaped grounds of Chengdu Panda Base. It does not depict Panda Valley, a live panda, current crowd conditions or a promised viewing experience.
+- Rights basis: owner-supplied Homeground local library; the task owner authorised use from this library for this integration batch. This records project-entry permission, not independent proof of the original photographer's copyright.
+- Processing: centre crop and resize only; no generative or AI editing. Final SHA-256: `39be1a2b404ae82addbbeb29cbcbd708613e4cbaf3dffa6a20db3386b9398e2c`.
+- Caption if surfaced: EN “Golden giant-panda sculpture in the landscaped grounds of Chengdu Panda Base.” ZH “成都熊猫基地园林中的金色大熊猫雕塑。” KO “청두 판다기지 정원에 있는 황금색 자이언트판다 조형물.”
+- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.

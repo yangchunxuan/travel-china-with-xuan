@@ -274,3 +274,73 @@ It was drawn as abstract vector artwork in the Homeground canvas, ink and rust
 palette and then exported to WebP. It contains a generic phone, card and cash;
 no real payment-provider logo, QR code, card number, merchant, traveller or
 transaction is depicted. It must remain identified as an illustration.
+
+## August 11, 2026 pending visual batch C
+
+For this five-guide integration batch, the project owner explicitly instructed
+the integrator to prefer the organised local `Facebook图片素材` library and
+authorised selecting suitable real photographs from it for Homeground. Three
+previously unassigned local files were selected. Two subject-specific gaps were
+filled with real Wikimedia Commons photographs carrying explicit commercial
+reuse licences. No AI-generated or generatively edited documentary photograph
+is included.
+
+Local-library selections:
+
+- `public/images/guides/china-last-night-before-international-flight/hero-1600.webp`
+  derives from
+  `/Users/yangchunxuan/Desktop/Facebook图片素材/重庆优选素材/05_重庆桥梁与城市交通/重庆江北国际机场_航站楼_01.jpg`.
+  The source depicts the passenger terminal at Chongqing Jiangbei International
+  Airport. The derivative is used only to illustrate airport-departure
+  logistics; it does not identify a terminal, recommend an airline or claim a
+  live crowd condition. SHA-256:
+  `0aa2811ad8a1db5fa391de8ce0fdae987b0aa401f6757322c6b3e001ae7363e6`.
+- `public/images/guides/china-open-jaw-flights-route-planning/hero-1600.webp`
+  derives from
+  `/Users/yangchunxuan/Desktop/Facebook图片素材/昆明优选素材/07_博物馆剧院与现代地标/昆明长水机场.jpg`.
+  The source depicts Kunming Changshui International Airport and is presented
+  as one example of a mainland Chinese air gateway, not a recommended route.
+  SHA-256:
+  `157a13724b59cf099d8bb211fa98dab88e9d280b7a9ea8aca039ae7b0fc57adf`.
+- `public/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp`
+  derives from
+  `/Users/yangchunxuan/Desktop/Facebook图片素材/成都优选素材/01_熊猫基地与熊猫元素/成都大熊猫繁育基地.jpg`.
+  The source depicts a golden panda sculpture in the landscaped grounds of
+  Chengdu Panda Base. It is not captioned as Panda Valley, a live animal, a
+  viewing promise or evidence of current crowd levels. SHA-256:
+  `39be1a2b404ae82addbbeb29cbcbd708613e4cbaf3dffa6a20db3386b9398e2c`.
+
+These three local-library records establish how the files entered this project
+and the owner's permission for Homeground use in this batch. They do not
+independently establish the original photographer's copyright or a separate
+third-party licence. Retain the photographer or licence record before using
+them in paid advertising, resale, print or partner distribution.
+
+Licensed online selections:
+
+- `public/images/guides/china-night-train-or-daytime-high-speed-rail/hero-1600.webp`
+  derives from Wikimedia Commons file
+  [`CRH2 sleeping car interior.jpg`](https://commons.wikimedia.org/wiki/File:CRH2_sleeping_car_interior.jpg),
+  photographed by 野田オリックス on May 3, 2010. The original is the
+  photographer's own work and is licensed under
+  [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The
+  derivative was centre-cropped and resized, is marked as modified in the
+  trilingual source credit, and remains available under CC BY-SA 3.0.
+  SHA-256:
+  `2c06c774875648d0a3b5b09faf5792c1c19f83d9c64e7efb77a6947ee9919987`.
+- `public/images/guides/china-hotel-near-metro/hero-1600.webp` derives from
+  Wikimedia Commons file
+  [`Exit 1 of Metro Shanghai Railway Station in Shanghai.jpg`](https://commons.wikimedia.org/wiki/File:Exit_1_of_Metro_Shanghai_Railway_Station_in_Shanghai.jpg),
+  photographed by Kmchang28 on June 25, 2024. The original is the
+  photographer's own work and is licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The
+  derivative was centre-cropped and resized, is marked as modified in the
+  trilingual source credit, and remains available under CC BY-SA 4.0.
+  SHA-256:
+  `4d86dab994f7db2f22fb35c8fe14763ee9981ac38845130dfe169f8136653855`.
+
+All five final files are 1600 × 1000 WebP derivatives produced by conventional
+pixel cropping and resizing. The exports omit the originals' EXIF, GPS and
+device metadata. The two online image credits and direct licence links
+appear inside each article's default-collapsed Sources disclosure in English,
+Chinese and Korean.

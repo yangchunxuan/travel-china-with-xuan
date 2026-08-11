@@ -1,6 +1,7 @@
 # Research and source log
 
 Checked: **2026-08-10**
+Integration recheck: **2026-08-11** — Official pages cited in the article were reopened and rechecked; body source dates were updated. Deferred candidates below were not promoted.
 Base revision: `origin/main` at `cd41fdf4be524f4bc4b4d8b29fea317a9c344a9e`
 Article pool: `stay-location-trip-fit`
 

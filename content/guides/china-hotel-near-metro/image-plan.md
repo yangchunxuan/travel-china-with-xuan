@@ -1,6 +1,6 @@
 # Image plan
 
-Status: **COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
+Status: **ASSET SELECTED — INTEGRATION REVIEW READY**
 
 Use only real, licensed documentary photographs with a traceable owner, source and permission record. Do not generate or submit an AI hotel, AI streetscape, simulated hotel room or invented traveller scene. The article must remain accurate without the optional images.
 
@@ -42,3 +42,13 @@ Add figure blocks only after each file, licence, caption, station/entrance ident
 - Test 320 px, card and desktop crops; the metro entrance and last-mile context must survive each crop.
 - Remove unnecessary embedded location and device metadata from final exports while retaining the editorial rights record.
 - Do not publish a recognizable guest, staff member or child without the necessary release.
+
+## Integration-review selection — 2026-08-11
+
+- Final file: `public/images/guides/china-hotel-near-metro/hero-1600.webp` (1600 × 1000, metadata-stripped WebP).
+- Original: [Exit 1 of Metro Shanghai Railway Station in Shanghai.jpg](https://commons.wikimedia.org/wiki/File:Exit_1_of_Metro_Shanghai_Railway_Station_in_Shanghai.jpg), photographed by Kmchang28 on 2024-06-25 and published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- Verified depiction: street-level entrance 1 of Shanghai Railway Station metro station, serving lines 1, 3 and 4. The visible stairs and escalator directly support the article's entrance-level decision; the frame does not show or imply a particular hotel.
+- Processing: centre crop and resize only; no generative or AI editing. The derivative is identified as cropped and remains under CC BY-SA 4.0. Final SHA-256: `4d86dab994f7db2f22fb35c8fe14763ee9981ac38845130dfe169f8136653855`.
+- Caption if surfaced: EN “Street-level entrance 1 of Shanghai Railway Station metro station, with stairs and escalators.” ZH “上海地铁上海火车站站1号地面出入口，可见台阶与扶梯。” KO “계단과 에스컬레이터가 보이는 상하이 지하철 상하이기차역 1번 지상 출입구.”
+- Attribution and the direct licence link are included in each locale's default-collapsed Sources block.
+- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.

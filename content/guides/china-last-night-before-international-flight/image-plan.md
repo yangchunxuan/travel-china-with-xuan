@@ -1,6 +1,6 @@
 # Image plan
 
-Status: **COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
+Status: **ASSET SELECTED — INTEGRATION REVIEW READY**
 
 Use only real, licensed photographs with a traceable source and permission record. Do not generate airports, travellers, trains or flight-information displays with AI. Do not show a readable passport, boarding pass, baggage tag, QR code, booking reference or phone screen. Obtain appropriate releases for any clearly identifiable traveller, especially a child.
 
@@ -33,3 +33,13 @@ Do not publish a sample route or a city-by-city final-day timetable. If editoria
 - Recheck any operational detail visible in a caption immediately before publication.
 - Check 320 px and desktop crops; the decision should remain legible without reading a screen.
 - Strip unnecessary embedded location and device metadata from final exports.
+
+## Integration-review selection — 2026-08-11
+
+- Final file: `public/images/guides/china-last-night-before-international-flight/hero-1600.webp` (1600 × 1000, metadata-stripped WebP).
+- Original: `/Users/yangchunxuan/Desktop/Facebook图片素材/重庆优选素材/05_重庆桥梁与城市交通/重庆江北国际机场_航站楼_01.jpg`.
+- Verified depiction: the passenger terminal at Chongqing Jiangbei International Airport, with ordinary travellers and luggage. It is not captioned as a particular terminal, flight, live crowd condition or airline endorsement.
+- Rights basis: owner-supplied Homeground local library; the task owner authorised use from this library for this integration batch. This records project-entry permission, not independent proof of the original photographer's copyright.
+- Processing: centre crop and resize only; no generative or AI editing. Final SHA-256: `0aa2811ad8a1db5fa391de8ce0fdae987b0aa401f6757322c6b3e001ae7363e6`.
+- Caption if surfaced: EN “Travellers with luggage inside Chongqing Jiangbei International Airport.” ZH “携带行李的旅客在重庆江北国际机场航站楼内。” KO “충칭 장베이 국제공항 터미널에서 수하물을 든 여행객들.”
+- Publication-date handoff: `2026-08-12` is a future launch-date placeholder only. The total integrator must replace it with the actual first-live date before release.
