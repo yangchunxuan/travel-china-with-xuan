@@ -6,21 +6,21 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "北京南站、北京西站、北京朝阳站、北京丰台站和清河站是五座彼此独立的铁路客站，分布在北京不同方向。车票已经出票后，完整站名就是必须执行的乘车指令，不是可自行替换的建议；尚未购票时，则应先把车站、酒店和整段市内接驳放在一起比较。",
+      text: "北京站、北京西站、北京南站、北京北站、清河站、北京朝阳站、北京丰台站和北京通州站，是分布在城市不同方向的8座主要铁路客站。车票出票后，必须前往票面写明的那座车站；购票前，则应把车站、酒店和完整的门到门路线放在一起比较。",
     },
     {
       id: "quick-answer",
       type: "callout",
       title: "先看结论",
       tone: "decision",
-      body: "去天津及京沪方向，通常先比较北京南站；郑州、武汉、长沙、广州、香港及不少西部线路，常见北京西站；东北方向通常先看北京朝阳站；北京丰台站承担另一组西南与西向列车；去八达岭、张家口及不少西北线路则常见清河站。这只是辨别是否合理的方向规律，不是购票规则。付款或离开酒店前，必须以实时行程中的中文站名、车次和日期为准。",
+      body: "北京站常见部分东向、东北向列车；去天津及京沪方向通常先比较北京南站；西站与丰台站分担许多南向、西向和西南向列车；北京北站与清河站是主要的西北向组合；朝阳站常见东北向列车；通州站则有一组新的东向城际列车。这只是判断是否合理的方向规律，不是购票规则。付款或离开酒店前，必须以实时行程中的中文站名、车次和日期为准。",
     },
     {
       id: "scope-callout",
       type: "callout",
       title: "这是一篇车站决策指南，不再重复全国高铁流程",
       tone: "neutral",
-      body: "购票渠道、铁路12306账户、护照核验、席别、铁路行李限制、安检、进站和检票上车，已经收录在Homeground的第一次坐中国高铁指南。本页只处理北京五站：票面站名、线路方向、酒店地理位置、市内接驳摩擦、早晚班、携带行李和走错站后的恢复办法。",
+      body: "购票渠道、铁路12306账户、护照核验、席别、铁路行李限制、安检、进站和检票上车，已经收录在Homeground的第一次坐中国高铁指南。本页只比较北京8座主要车站：票面站名、线路方向、酒店位置、早晚班、携带行李和走错站后如何处理。",
     },
     {
       id: "ticket-heading",
@@ -34,7 +34,7 @@ const body = {
       ordered: true,
       items: [
         "从已出票的行程中复制完整出发站或到达站，不要自行简写成“北京”。",
-        "优先核对中文站名：北京南站、北京西站、北京朝阳站、北京丰台站或清河站。英文界面可能把北京南站写成Beijing South或Beijingnan，把北京西站写成Beijing West或Beijingxi。",
+        "优先核对中文站名：北京站、北京西站、北京南站、北京北站、清河站、北京朝阳站、北京丰台站或北京通州站。英文界面可能把北京南站写成Beijing South或Beijingnan，把北京西站写成Beijing West或Beijingxi。",
         "同时核对车次和日期。较早搜索时保存的截图，不能证明最终出票车站没有变化。",
         "在地图中选择铁路客站，不要误选同名或近似名称的地铁站、行政区或笼统的城市定位。",
         "准备出发时，应在车票显示检票口或车站发布适用进站路线后，再保存具体进站口或落客点。",
@@ -45,20 +45,26 @@ const body = {
       type: "callout",
       title: "最容易漏看“北京”二字的是清河站",
       tone: "warning",
-      body: "票面写的是Qinghe / 清河站，不是“北京清河站”，但它仍是北京的重要铁路客站。反过来，北京站、北京北站和北京通州站是另外三座车站，并非这五站的别名。如果车票显示其中之一，就应停止套用本页矩阵，直接按那个完整站名规划路线。",
+      body: "票面写的是Qinghe / 清河站，不是“北京清河站”，但它仍是北京8座主要铁路客站之一。矩阵中的8个站名都对应不同车站，任何两座都不能相互替代。",
     },
     {
       id: "matrix-heading",
       type: "heading",
       level: 2,
-      text: "北京五站决策矩阵",
+      text: "北京8站决策矩阵",
     },
     {
       id: "station-matrix",
       type: "table",
-      caption: "方向只用于初步筛选，最终以实时车票为准",
+      caption: "方向只用于初步筛选8座车站，最终以实时车票为准",
       columns: ["票面与地图名称", "常见铁路方向", "市内位置与酒店匹配", "直达地铁与实际摩擦"],
       rows: [
+        [
+          "北京站 / Beijing Railway Station",
+          "东向和东北向：常见开往河北东部、辽宁，以及部分南京、上海方向列车",
+          "位于老城东缘；从前门、王府井和东城中心出发往往最顺",
+          "地铁2号线直达；站区道路交通和从正确出口步行至车站仍需留时间",
+        ],
         [
           "北京南站 / Beijing South（也可能显示Beijingnan）",
           "东南方向：天津、山东、南京、苏州、杭州和上海是常见线路",
@@ -70,6 +76,12 @@ const body = {
           "南向和西向：常见郑州、武汉、长沙、广州、香港、西安等长途线路",
           "位于中心游览区西南侧；西单、金融街、军事博物馆或能方便接入7号线、9号线的酒店相对有利",
           "7号线和9号线；南北广场、多个上车区及二层候车空间，使选对方向格外重要",
+        ],
+        [
+          "北京北站 / Beijing North（也可能显示Beijingbei）",
+          "西北方向：常见八达岭和张家口，部分列车继续开往更远的西北方向",
+          "紧邻西直门；北东城、西城北部，以及容易接入2号线、4号线或13号线的酒店更匹配",
+          "利用西直门的2号线、4号线和13号线换乘，进站时跟随铁路客站标识，不要只设置笼统的西直门定位",
         ],
         [
           "北京朝阳站 / Beijing Chaoyang",
@@ -89,21 +101,27 @@ const body = {
           "位于海淀西北、上地附近；北京北部、西北部酒店，以及13号线、昌平线沿线更匹配",
           "13号线和昌平线与车站一体接驳；从中心、南部或东部酒店出发，会把较短铁路行程变成长距离首段交通",
         ],
+        [
+          "北京通州站 / Beijing Tongzhou",
+          "东向城际：初期常见唐山、秦皇岛和天津北辰方向",
+          "位于通州；住在通州或环球度假区一侧时最匹配，不默认适合中心或西部酒店",
+          "地铁6号线与枢纽一体接驳；从历史城区出发时，跨城进站可能比城际铁路本身更耗时",
+        ],
       ],
     },
     {
       id: "matrix-note",
       type: "paragraph",
-      text: "北京官方枢纽规划按大方向划分：南站面向东南，西站与丰台站承担西南方向，朝阳站承担东向与东北方向，清河站与北京北站承担西北方向。铁路运行图会调整、增加或拆分车次，同一个目的地也可能由多个北京车站发车。不要用背下来的城市名单替代出行当天的车站核对。",
+      text: "北京官方8站网络按大方向分工：南站面向东南；西站与丰台站承担西南方向；朝阳站承担东向与东北方向；北站与清河站承担西北方向；北京站承担部分东向列车；通州站则服务一组新的东向城际列车。铁路运行图会调整，同一个目的地也可能由多个北京车站发车。不要用背下来的城市名单替代出行当天的车站核对。",
     },
     {
       id: "station-figure",
       type: "figure",
       src: "/images/guides/which-beijing-railway-station/chaoyang-line-3-b1-1440.webp",
-      alt: "北京朝阳站内地铁3号线与铁路地下一层进站口之间的真实双语导向标识。",
+      alt: "北京朝阳站综合交通枢纽内的地铁入口。",
       width: 1440,
       height: 960,
-      caption: "地铁3号线解决了北京朝阳站过去没有地铁直达的问题，但只有酒店能够方便接入3号线时，旅客才能完整享受这项优势。",
+      caption: "北京朝阳站综合交通枢纽将铁路客站与地铁连在一起。照片：N509FZ／Wikimedia Commons，CC BY-SA 4.0；已裁切。",
     },
     {
       id: "south-west-comparison",
@@ -262,7 +280,7 @@ const body = {
     {
       id: "luggage-copy",
       type: "paragraph",
-      text: "本页不重复全国铁路行李规定。北京五站真正要判断的是：每位同行者能否把所有行李带过酒店步行、地铁安检、站台、换乘、火车站进站口和候车厅。北京西站的南北布局、丰台站的多层空间，以及官方公布的部分车站叫车上车距离，可能比多坐一站地铁更重要。",
+      text: "本页不重复全国铁路行李规定。比较北京8站时，真正要判断的是：每位同行者能否把所有行李带过酒店步行、地铁安检、换乘、火车站进站口和候车厅。少一次换乘、找到明确的进站口，往往比地图上少几分钟更重要。",
     },
     {
       id: "luggage-comparison",
@@ -352,10 +370,10 @@ const body = {
       id: "recovery-figure",
       type: "figure",
       src: "/images/guides/which-beijing-railway-station/fengtai-qinghe-transfer-1440.webp",
-      alt: "北京丰台站或清河站内显示铁路、地铁、出租车和网约车方向的真实导向标识。",
+      alt: "北京丰台站中央大厅。",
       width: 1440,
       height: 960,
-      caption: "恢复路线要先看清标识上的交通系统、车站和楼层，而不是跟着最近的火车图标走。",
+      caption: "在北京丰台站这样的大型枢纽，改变路线前先核对车站名、大厅和当日标识。照片：N509FZ／Wikimedia Commons，CC BY-SA 4.0；已裁切。",
     },
     {
       id: "verify-heading",
@@ -383,7 +401,7 @@ const body = {
       type: "callout",
       title: "动态车站信息核查于2026年8月11日",
       tone: "neutral",
-      body: "截至本次核查，北京南站接驳地铁4号线、14号线；北京西站接驳7号线、9号线；北京朝阳站接驳3号线；北京丰台站接驳10号线、16号线；清河站接驳13号线、昌平线。朝阳站的3号线直达交通枢纽已经运营。丰台站新启用的地下快捷进站厅只适用于符合条件的普速旅客，并非所有高铁车次。铁路停站安排、地铁运营时间、进站口、检票口、道路管制及出租车和网约车区域仍需按出行日期核对。",
+      body: "截至本次核查，北京站接驳地铁2号线；南站接驳4号线、14号线；西站接驳7号线、9号线；北站可通过西直门换乘2号线、4号线和13号线；朝阳站接驳3号线；丰台站接驳10号线、16号线；清河站接驳13号线、昌平线；通州站接驳6号线。铁路停站安排、地铁运营时间、进站口、检票口和道路管制仍需按出行日期核对。",
     },
     {
       id: "help-callout",
@@ -422,12 +440,18 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "官方来源与核查记录",
+      title: "官方来源与图片授权",
       items: [
         {
           label: "北京铁路枢纽方向分工与八站网络",
           url: "https://www.beijing.gov.cn/ywdt/gzdt/202512/t20251227_4368256.html",
           publisher: "北京市人民政府；来源：北京日报",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "北京通州站开通、接驳地铁6号线及初期城际列车方向",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
+          publisher: "北京国际门户网站",
           reviewedAt: "2026-08-11",
         },
         {
@@ -443,7 +467,7 @@ const body = {
           reviewedAt: "2026-08-11",
         },
         {
-          label: "地铁3号线接入北京朝阳站及北京七大铁路客站地铁接驳",
+          label: "地铁3号线接入北京朝阳站及2024年发布的铁路客站地铁接驳",
           url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html",
           publisher: "北京国际门户网站",
           reviewedAt: "2026-08-11",
@@ -470,6 +494,36 @@ const body = {
           label: "中国铁路12306实时车次查询",
           url: "https://www.12306.cn/en/index.html",
           publisher: "中国铁路12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "按日期调整地铁运营时间的节假日公告示例",
+          url: "https://english.beijing.gov.cn/latest/news/202602/t20260224_4537348.html",
+          publisher: "北京国际门户网站",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "铁路12306重点旅客预约服务说明",
+          url: "https://kyfw.12306.cn/otn/view/icentre_qxyyInfo.html",
+          publisher: "中国铁路12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "首图：Beijing Chaoyang Railway Station (20251220131259)，摄影 N509FZ，CC BY-SA 4.0",
+          url: "https://commons.wikimedia.org/wiki/File:Beijing_Chaoyang_Railway_Station_(20251220131259).jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "正文图：Entrance of Metro Chaoyang Railway Station (20241215172322)，摄影 N509FZ，CC BY-SA 4.0",
+          url: "https://commons.wikimedia.org/wiki/File:Entrance_of_Metro_Chaoyang_Railway_Station_(20241215172322).jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "正文图：Central lobby of Beijing Fengtai Railway Station (20220620140021)，摄影 N509FZ，CC BY-SA 4.0",
+          url: "https://commons.wikimedia.org/wiki/File:Central_lobby_of_Beijing_Fengtai_Railway_Station_(20220620140021).jpg",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-11",
         },
       ],

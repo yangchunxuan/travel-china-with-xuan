@@ -434,3 +434,52 @@ pixel cropping and resizing. The exports omit the originals' EXIF, GPS and
 device metadata. The two online image credits and direct licence links
 appear inside each article's default-collapsed Sources disclosure in English,
 Chinese and Korean.
+
+## Employee 1–2 release — Beijing railway stations and the Palace Museum (August 11, 2026)
+
+### Which Beijing railway station guide
+
+The organised local library was checked first, but it did not contain three
+unused photographs that could verify the exact Beijing railway-station scenes
+required by this guide. No AI-generated documentary travel image was used.
+
+- Hero source: `Beijing Chaoyang Railway Station (20251220131259).jpg`;
+  N509FZ; own work; photographed December 20, 2025; Beijing Chaoyang Railway
+  Station; CC BY-SA 4.0. Source and licence record:
+  <https://commons.wikimedia.org/wiki/File:Beijing_Chaoyang_Railway_Station_(20251220131259).jpg>.
+- Body source: `Entrance of Metro Chaoyang Railway Station
+  (20241215172322).jpg`; N509FZ; own work; photographed December 15, 2024;
+  metro entrance inside the Beijing Chaoyang transport hub; CC BY-SA 4.0.
+  Source and licence record:
+  <https://commons.wikimedia.org/wiki/File:Entrance_of_Metro_Chaoyang_Railway_Station_(20241215172322).jpg>.
+- Body source: `Central lobby of Beijing Fengtai Railway Station
+  (20220620140021).jpg`; N509FZ; own work; photographed June 20, 2022;
+  central lobby of Beijing Fengtai Railway Station; CC BY-SA 4.0. Source and
+  licence record:
+  <https://commons.wikimedia.org/wiki/File:Central_lobby_of_Beijing_Fengtai_Railway_Station_(20220620140021).jpg>.
+- Derivatives:
+  `public/images/guides/which-beijing-railway-station/hero-1600.webp`,
+  `public/images/guides/which-beijing-railway-station/chaoyang-line-3-b1-1440.webp`
+  and
+  `public/images/guides/which-beijing-railway-station/fengtai-qinghe-transfer-1440.webp`.
+  The files were cropped or resized and converted to WebP without source EXIF,
+  GPS or device metadata. The derivatives are distributed under CC BY-SA 4.0.
+  The second image is described as a metro entrance in the hub rather than as
+  proof of a particular railway floor; the third is described as Fengtai's
+  central lobby rather than as taxi or ride-hailing signage.
+
+### Forbidden City guide for foreign visitors
+
+- Hero derivative:
+  `public/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp`,
+  created from the owner-authorised local-library source
+  `北京优选素材/01_北京古都地标/故宫宫殿_01.jpg`.
+  The photograph shows the Hall of Supreme Harmony and its courtyard with
+  visitors. It is not described as the Meridian Gate, the visitor entrance or
+  a group of foreign travellers. The derivative was cropped, resized and
+  converted to WebP without source EXIF, GPS or device metadata.
+
+The project owner's August 10 authorisation covers Homeground use of the local
+`Facebook图片素材` library. As elsewhere in this register, that permission is
+project-entry provenance and not an independent assertion about third-party
+copyright ownership outside the Homeground website.

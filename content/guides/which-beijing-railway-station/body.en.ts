@@ -6,21 +6,21 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "Beijing South, West, Chaoyang, Fengtai and Qinghe are separate railway stations in different parts of a very large city. The full station name on the issued ticket is an instruction, not a suggestion. Before buying, compare the train's station with the hotel and whole city transfer; after buying, route to that exact station.",
+      text: "Beijing Railway Station, West, South, North, Qinghe, Chaoyang, Fengtai and Tongzhou are eight separate railway terminals in different parts of a very large city. Once a ticket is issued, its full station name is the station you must use. Before booking, compare that station with the hotel and the complete door-to-door transfer; after booking, route to the exact name on the ticket.",
     },
     {
       id: "quick-answer",
       type: "callout",
       title: "The short answer",
       tone: "decision",
-      body: "Beijing South is the usual first comparison for Tianjin and the Shanghai corridor; Beijing West for many Zhengzhou, Wuhan, Changsha, Guangzhou, Hong Kong and western routes; Beijing Chaoyang for the northeast; Beijing Fengtai for a different set of southwest and westbound services; and Qinghe for Badaling, Zhangjiakou and many northwest services. These are patterns, not booking rules. Match the exact Chinese station name, train number and date in the live itinerary before paying or leaving the hotel.",
+      body: "Beijing Railway Station commonly serves eastern and northeastern routes; South is the usual first comparison for Tianjin and the Shanghai corridor; West and Fengtai divide many southern, western and southwestern services; North and Qinghe are the main northwest pair; Chaoyang serves many northeast services; and Tongzhou serves a newer group of eastbound intercity trains. These are orientation patterns, not booking rules. Match the exact Chinese station name, train number and date in the live itinerary before paying or leaving the hotel.",
     },
     {
       id: "scope-callout",
       type: "callout",
       title: "This is a station decision guide, not another high-speed-rail manual",
       tone: "neutral",
-      body: "Ticket purchase, Railway 12306 accounts, passport verification, seat classes, railway baggage limits, security, station entry and boarding are covered in Homeground's first-time China high-speed-train guide. This page stays with five Beijing terminals: ticket names, route direction, hotel geography, city-transfer friction, early or late trains, suitcases and wrong-station recovery.",
+      body: "Ticket purchase, Railway 12306 accounts, passport verification, seat classes, railway baggage limits, security, station entry and boarding are covered in Homeground's first-time China high-speed-train guide. This page compares Beijing's eight major terminals: ticket names, route direction, hotel geography, early or late trains, luggage and what to do after a station mistake.",
     },
     {
       id: "ticket-heading",
@@ -34,7 +34,7 @@ const body = {
       ordered: true,
       items: [
         "Copy the complete departure or arrival station from the issued itinerary. Do not shorten it to “Beijing.”",
-        "Match the Chinese station name: 北京南站, 北京西站, 北京朝阳站, 北京丰台站 or 清河站. English renderings can vary between “Beijing South” and “Beijingnan,” or “Beijing West” and “Beijingxi.”",
+        "Match the Chinese station name: 北京站, 北京西站, 北京南站, 北京北站, 清河站, 北京朝阳站, 北京丰台站 or 北京通州站. English renderings can vary between “Beijing South” and “Beijingnan,” or “Beijing West” and “Beijingxi.”",
         "Check the train number and date at the same time. A screenshot from an earlier search is not proof of the issued station.",
         "Open the railway station—not a similarly named subway stop, district or generic city pin—in the map app.",
         "For departure, save the current entrance or drop-off point only after the ticket shows a check-in gate or the station publishes a suitable access route.",
@@ -45,20 +45,26 @@ const body = {
       type: "callout",
       title: "Qinghe is the name most easily overlooked",
       tone: "warning",
-      body: "The railway ticket says Qinghe / 清河站, not “Beijing Qinghe.” It is still a major Beijing terminal. Conversely, Beijing Railway Station / 北京站, Beijing North / 北京北站 and Beijing Tongzhou / 北京通州站 are other stations, not alternative names for any of the five in this matrix. If the ticket shows one of those, stop and route to that exact station instead of forcing it into this guide.",
+      body: "The railway ticket says Qinghe / 清河站, not “Beijing Qinghe.” It is still one of Beijing's eight major terminals. None of the eight names in the matrix is a substitute for another: Beijing / 北京站, Beijing North / 北京北站 and Beijing Tongzhou / 北京通州站 are all distinct stations.",
     },
     {
       id: "matrix-heading",
       type: "heading",
       level: 2,
-      text: "The five-station decision matrix",
+      text: "The eight-station decision matrix",
     },
     {
       id: "station-matrix",
       type: "table",
-      caption: "Use direction to shortlist; use the live ticket to decide",
+      caption: "Use direction to shortlist all eight terminals; use the live ticket to decide",
       columns: ["Ticket and map name", "Typical rail corridor", "City position and hotel fit", "Direct subway and practical friction"],
       rows: [
+        [
+          "Beijing Railway Station / 北京站",
+          "East and northeast: eastern Hebei, Liaoning and some services toward Nanjing or Shanghai are common patterns",
+          "On the eastern edge of the old city; often the simplest rail terminal from Qianmen, Wangfujing and central Dongcheng",
+          "Line 2 connects directly; road traffic around the station and the walk from the correct exit still need time",
+        ],
         [
           "Beijing South / 北京南站 (also rendered Beijingnan)",
           "Southeast: Tianjin, Shandong, Nanjing, Suzhou, Hangzhou and Shanghai are common patterns",
@@ -72,9 +78,15 @@ const body = {
           "Lines 7 and 9; north and south squares, multiple pickup zones and a large upper waiting level make the correct side important",
         ],
         [
+          "Beijing North / 北京北站 (also rendered Beijingbei)",
+          "Northwest: Badaling and Zhangjiakou are common, with some services continuing farther northwest",
+          "Beside Xizhimen; often better aligned with northern Dongcheng, Xicheng and hotels that reach Lines 2, 4 or 13 simply",
+          "Use Xizhimen's Lines 2, 4 and 13 connections, then follow the railway-station signs rather than a generic Xizhimen pin",
+        ],
+        [
           "Beijing Chaoyang / 北京朝阳站",
           "Northeast: Chengde, Shenyang, Dalian, Changchun, Changbaishan and Harbin are common",
-          "East-northeast Beijing; strongest of the five for Sanlitun or a hotel with easy access to Workers' Stadium and Line 3",
+          "East-northeast Beijing; usually the best station match for Sanlitun or a hotel with easy access to Workers' Stadium and Line 3",
           "Line 3 now connects directly to the B1 railway entrance; central-west and southern hotels can still face a long cross-city approach",
         ],
         [
@@ -89,27 +101,42 @@ const body = {
           "Northwestern Haidian near Shangdi; best aligned with north or northwest hotels, Line 13 or the Changping Line",
           "Line 13 and Changping Line are integrated; a central, southern or eastern hotel can turn a short rail journey into a long first-mile transfer",
         ],
+        [
+          "Beijing Tongzhou / 北京通州站",
+          "Eastbound intercity: Tangshan, Qinhuangdao and Tianjin Beichen are among the initial common patterns",
+          "Farther east in Tongzhou; best aligned with Tongzhou or the Universal Resort side of Beijing rather than a central or western hotel",
+          "Line 6 is integrated with the hub; from the historic centre, the cross-city approach can outweigh a short intercity timetable",
+        ],
       ],
     },
     {
       id: "matrix-note",
       type: "paragraph",
-      text: "Beijing's official hub plan describes broad corridors: South for the southeast, West and Fengtai for the southwest, Chaoyang for the east and northeast, and Qinghe with Beijing North for the northwest. Railway operating plans can move, add or split trains, and several destinations appear at more than one Beijing terminal. Never replace a live station check with a memorised destination list.",
+      text: "Beijing's official eight-station network assigns broad corridor roles: South for the southeast; West and Fengtai for the southwest; Chaoyang for the east and northeast; North and Qinghe for the northwest; Beijing Railway Station for several eastern services; and Tongzhou for a newer set of eastbound intercity trains. Railway operating plans can move, add or split trains, and several destinations appear at more than one terminal. Never replace a live station check with a memorised destination list.",
     },
     {
       id: "station-figure",
       type: "figure",
       src: "/images/guides/which-beijing-railway-station/chaoyang-line-3-b1-1440.webp",
-      alt: "Real bilingual wayfinding between Beijing Subway Line 3 and the B1 railway entrance at Beijing Chaoyang Railway Station.",
+      alt: "Subway entrance inside the integrated transport hub at Beijing Chaoyang Railway Station.",
       width: 1440,
       height: 960,
-      caption: "Line 3 solved the old no-subway problem at Beijing Chaoyang—but only travellers whose hotel route reaches Line 3 simply receive the full benefit.",
+      caption: "Beijing Chaoyang's integrated transport hub connects the railway station with the subway. Photo: N509FZ/Wikimedia Commons, CC BY-SA 4.0; cropped.",
     },
     {
       id: "south-west-comparison",
       type: "comparison",
-      title: "South and West are central enough to look interchangeable—but they are not",
+      title: "Beijing Station, South and West serve different sides of the centre",
       columns: [
+        {
+          heading: "Beijing Railway Station",
+          body: "The east-central terminal that can be the cleanest match for Qianmen, Wangfujing and several eastbound services.",
+          items: [
+            "Line 2 connects the station with Qianmen, Jianguomen and other central interchanges",
+            "Do not confuse Beijing Railway Station with the city's generic railway label",
+            "A central hotel can make this station easier than an outer hub even when the rail timetable is similar",
+          ],
+        },
         {
           heading: "Beijing South",
           body: "The station most first-time visitors associate with the Beijing–Shanghai and Beijing–Tianjin corridors.",
@@ -135,14 +162,23 @@ const body = {
     {
       id: "outer-hubs-comparison",
       type: "comparison",
-      title: "Chaoyang, Fengtai and Qinghe make hotel geography more important",
+      title: "The five outer hubs make hotel geography more important",
       columns: [
+        {
+          heading: "Beijing North",
+          body: "The Xizhimen-side northwest terminal used by some Badaling and Zhangjiakou services.",
+          items: [
+            "Lines 2, 4 and 13 meet at Xizhimen",
+            "The complete railway station name matters because Xizhimen is also a large subway interchange",
+            "Check the actual train: similar northwest destinations may also use Qinghe",
+          ],
+        },
         {
           heading: "Beijing Chaoyang",
           body: "The northeast high-speed gateway and the clearest match for a Sanlitun or east-side stay when Line 3 works.",
           items: [
-            "Line 3 reaches the transport hub and B1 entrance",
-            "Road drop-off uses the North or South Entrance; those platforms are drop-off only",
+            "Line 3 reaches the integrated transport hub",
+            "Use current station signs and the live itinerary to choose the railway entrance",
             "Do not confuse Chaoyang Railway Station with the huge Chaoyang District or Chaoyangmen",
           ],
         },
@@ -164,6 +200,15 @@ const body = {
             "A Great Wall plan must still use the exact train and station shown for that date",
           ],
         },
+        {
+          heading: "Beijing Tongzhou",
+          body: "The newer east-side intercity hub, best aligned with Tongzhou rather than the historic centre by default.",
+          items: [
+            "Line 6 is integrated with the station",
+            "Initial intercity patterns include Tangshan, Qinhuangdao and Tianjin Beichen",
+            "A central or western hotel can turn the approach into the longest part of the journey",
+          ],
+        },
       ],
     },
     {
@@ -180,12 +225,12 @@ const body = {
       rows: [
         [
           "Qianmen or the southern Central Axis",
-          "South via Line 4/14 connections; West via Line 7 from Zhushikou can also be practical",
+          "Beijing Railway Station via Line 2, South via Line 4/14 connections, or West via Line 7 from Zhushikou can be practical",
           "The exact hotel may be far from the useful metro entrance; hutong-edge roads and pedestrian areas complicate a car pickup",
         ],
         [
           "Wangfujing or central Dongcheng",
-          "No universal winner; South and West often need one planned transfer, while Chaoyang depends on access to Line 3",
+          "Beijing Railway Station is often the first comparison; South and West usually need a planned transfer, while Chaoyang depends on access to Line 3",
           "A short-looking map distance can hide two metro lines, security at metro entrances and the station's internal walk",
         ],
         [
@@ -195,13 +240,18 @@ const body = {
         ],
         [
           "Northern hutongs",
-          "Chaoyang can work through Line 3; Qinghe may become reasonable from a genuinely northern starting point",
+          "Beijing North can fit Xizhimen-side routes; Chaoyang can work through Line 3; Qinghe may become reasonable from a genuinely northern starting point",
           "“North Beijing” is too broad: verify the walk to the first useful line and whether luggage can reach the pickup street",
         ],
         [
           "Haidian, Xizhimen or Shangdi",
-          "Qinghe often deserves the first comparison; West may suit a western metro connection",
+          "Qinghe and Beijing North deserve the first comparison; West may suit a western metro connection",
           "South, Chaoyang and Fengtai cross different sides of the city, so the train's scheduled advantage may disappear door to door",
+        ],
+        [
+          "Tongzhou or the Universal Resort side of Beijing",
+          "Beijing Tongzhou is the natural first comparison when the live ticket uses it",
+          "From Qianmen, Wangfujing, Sanlitun or western Beijing, the cross-city approach can be substantial; do not choose a hotel there solely for one departure",
         ],
       ],
     },
@@ -262,12 +312,12 @@ const body = {
     {
       id: "luggage-copy",
       type: "paragraph",
-      text: "This article does not repeat national railway baggage rules. The Beijing-specific question is whether everyone can move every case through the hotel walk, metro security, platforms, transfers, railway entrance and waiting hall. Beijing West's north–south layout, Fengtai's multiple levels and the road pickup walks published for several stations can matter more than one extra metro stop.",
+      text: "This article does not repeat national railway baggage rules. The Beijing-specific question is whether everyone can move every case through the walk from the hotel, metro security, transfers, the railway entrance and the waiting hall. A route with fewer transfers and a clearly identified entrance can be easier than one that looks a few minutes shorter on the map.",
     },
     {
       id: "luggage-comparison",
       type: "comparison",
-      title: "Let the hardest handoff decide the city transfer",
+      title: "Let the hardest part of the journey decide the city transfer",
       columns: [
         {
           heading: "Metro can win",
@@ -288,7 +338,7 @@ const body = {
         {
           heading: "Assistance needs advance work",
           items: [
-            "Request railway assistance through the responsible operator when needed",
+            "Request special-passenger assistance through Railway 12306 or the station when needed",
             "Ask the hotel where a vehicle can actually stop, especially on a pedestrian or hutong street",
             "Keep the Chinese station and entrance name available for the driver and staff",
           ],
@@ -352,10 +402,10 @@ const body = {
       id: "recovery-figure",
       type: "figure",
       src: "/images/guides/which-beijing-railway-station/fengtai-qinghe-transfer-1440.webp",
-      alt: "Real railway, subway, taxi and ride-hailing wayfinding inside Beijing Fengtai or Qinghe Railway Station.",
+      alt: "Central hall inside Beijing Fengtai Railway Station.",
       width: 1440,
       height: 960,
-      caption: "Recovery begins by reading the transport system, station and level on the sign—not by following the nearest train icon.",
+      caption: "At a large station such as Beijing Fengtai, confirm the station name, hall and current signs before changing course. Photo: N509FZ/Wikimedia Commons, CC BY-SA 4.0; cropped.",
     },
     {
       id: "verify-heading",
@@ -383,7 +433,7 @@ const body = {
       type: "callout",
       title: "Dynamic station facts reviewed August 11, 2026",
       tone: "neutral",
-      body: "At this review, Beijing South used Lines 4 and 14; Beijing West Lines 7 and 9; Beijing Chaoyang Line 3; Beijing Fengtai Lines 10 and 16; and Qinghe Line 13 and the Changping Line. Line 3's direct Chaoyang hub connection was operating. Fengtai's new underground express entrance applied to qualifying conventional-speed passengers, not every high-speed departure. Railway stopping patterns, metro hours, entrances, gates, road controls and taxi or ride-hailing zones remain travel-date checks.",
+      body: "At this review, Beijing Railway Station used Line 2; South Lines 4 and 14; West Lines 7 and 9; North the Xizhimen interchange for Lines 2, 4 and 13; Chaoyang Line 3; Fengtai Lines 10 and 16; Qinghe Line 13 and the Changping Line; and Tongzhou Line 6. Railway stopping patterns, metro hours, entrances, gates and road controls remain travel-date checks.",
     },
     {
       id: "help-callout",
@@ -422,12 +472,18 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Official sources and review record",
+      title: "Official sources and image credits",
       items: [
         {
           label: "Beijing railway-hub corridor roles and eight-station network",
           url: "https://www.beijing.gov.cn/ywdt/gzdt/202512/t20251227_4368256.html",
           publisher: "People's Government of Beijing Municipality; source: Beijing Daily",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Beijing Tongzhou Railway Station opening, Line 6 integration and initial intercity services",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
+          publisher: "Beijing International Web Portal",
           reviewedAt: "2026-08-11",
         },
         {
@@ -443,7 +499,7 @@ const body = {
           reviewedAt: "2026-08-11",
         },
         {
-          label: "Line 3 connection to Beijing Chaoyang and subway access to the seven major stations",
+          label: "Line 3 connection to Beijing Chaoyang and subway access published in 2024",
           url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html",
           publisher: "Beijing International Web Portal",
           reviewedAt: "2026-08-11",
@@ -470,6 +526,36 @@ const body = {
           label: "China Railway 12306 live train search",
           url: "https://www.12306.cn/en/index.html",
           publisher: "China Railway 12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Example of date-specific holiday metro service adjustments",
+          url: "https://english.beijing.gov.cn/latest/news/202602/t20260224_4537348.html",
+          publisher: "Beijing International Web Portal",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Railway 12306 special-passenger service reservation guidance",
+          url: "https://kyfw.12306.cn/otn/view/icentre_qxyyInfo.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Hero image: Beijing Chaoyang Railway Station (20251220131259), N509FZ, CC BY-SA 4.0",
+          url: "https://commons.wikimedia.org/wiki/File:Beijing_Chaoyang_Railway_Station_(20251220131259).jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Body image: Entrance of Metro Chaoyang Railway Station (20241215172322), N509FZ, CC BY-SA 4.0",
+          url: "https://commons.wikimedia.org/wiki/File:Entrance_of_Metro_Chaoyang_Railway_Station_(20241215172322).jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Body image: Central lobby of Beijing Fengtai Railway Station (20220620140021), N509FZ, CC BY-SA 4.0",
+          url: "https://commons.wikimedia.org/wiki/File:Central_lobby_of_Beijing_Fengtai_Railway_Station_(20220620140021).jpg",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-11",
         },
       ],

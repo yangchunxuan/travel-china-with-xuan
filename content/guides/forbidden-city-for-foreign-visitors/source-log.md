@@ -1,7 +1,5 @@
 # Research and source log
 
-**COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED**
-
 Research and official-source review completed on 2026-08-11.
 
 ## Scope
@@ -33,32 +31,35 @@ The result set contains three recurring problems this article must correct:
 1. Some current pages still send every visitor through Tiananmen Square even though the Palace Museum's own rule provides East and West Tongzihe approaches when the visitor is only going to the museum.
 2. Search results and traveller reports still claim that foreign passport holders can rely on same-day on-site tickets. The standing Palace Museum rule reviewed on 2026-08-11 says that it does not sell same-day tickets.
 3. Many route pages finish at “the north gate” without converting that exit into an actual bus, pickup, luggage-collection or next-sight decision.
+4. Some three-hour routes postpone every side section until after the Inner Court. The viable branch depends on the chosen gallery or palace cluster, so the route now places an east-side gallery after the Hall of Preserving Harmony or a palace cluster around the Gate of Heavenly Purity.
 
 ## Official and first-party evidence
 
-| Source | What it supports | Editorial boundary |
+| Source | What it supports | Use boundary |
 | --- | --- | --- |
-| [Palace Museum ticketing portal](https://ticket.dpm.org.cn/) | No same-day tickets; release at 20:00 seven days before the visit; accepted non-mainland identity documents; original document; morning and afternoon inspection periods; Meridian Gate entrance; north/east exits; no authorised third-party ticket agents | Dynamic ticketing rules must be checked in the writing week, immediately before publication and before travel |
-| [Palace Museum English ticket instructions](https://intl.dpm.org.cn/ticket_details.html) | Passport booking; official English website context; currently published email process for international visitors; Monday closure; original document at the Meridian Gate | Sending an email is not confirmation; the page and process can change |
+| [Palace Museum official multilingual ticketing portal](https://bookingticket.dpm.org.cn/) | The first booking path for an international visitor using a passport | A visitor still needs a completed booking record; opening or submitting the form is not confirmation |
+| [Palace Museum page identifying the multilingual portal](https://intl.dpm.org.cn/news/detail/98706.html) | The Palace Museum explicitly directs visitors to `bookingticket.dpm.org.cn` for real-name reservations | The 2025 notice verifies that the portal is official; live inventory and the current transaction flow remain dynamic |
+| [Palace Museum ticketing and identity-document rules](https://www.dpm.org.cn/subject_booking/) | No same-day tickets; release at 20:00 seven days before the visit; accepted non-mainland identity documents; original document; morning and afternoon inspection periods; Meridian Gate entrance; north/east exits; no authorised third-party ticket agents | Recheck the live rules when booking and before travel |
 | [Palace Museum visit page](https://www.dpm.org.cn/Visit.html) | Seasonal hours; Monday rule; current notices; official two-hour, half-day and one-day trail categories; gates; bus stops; no dedicated car park | The three-hour route in the article is Homeground's bridge between official route lengths, not an official Palace Museum route |
 | [Palace Museum visitor rules](https://www.dpm.org.cn/singles_detail/259831.html) | Tiananmen-area approach distinction; one-way entrance and exits; security; seasonal luggage storage and free transfer; service locations | Access routes and service hours remain operational facts that need a fresh check |
 | [Palace Museum prohibited-items catalogue](https://www.dpm.org.cn/singles_detail/259832.html) | Suitcases and specified wheeled loading devices prohibited; storage may be available for qualifying items | Do not imply that every bag will be accepted or that luggage service is simpler than hotel storage |
 | [Beijing 12345 foreign-passport booking answer](https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html) | Foreign visitors may use the official Palace Museum English site with a passport; original document and manual inspection at the Meridian Gate; English hotline context | A 2025 service answer supplements, but does not override, the live Palace Museum portal |
-| [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels for the square | It is used only to keep the square's system distinct from Palace Museum ticketing |
+| [Tiananmen Square trial reservation measures](https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html) | A valid Palace Museum reservation was explicitly accepted for entry to the square without a second square reservation; a square reservation cannot replace Palace Museum admission | This is an official 2021 trial rule, not a permanent guarantee; current controls must be checked separately |
+| [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels for the square | Current channels do not by themselves confirm whether the earlier exemption applies on a specific visit date |
 
 ## Fact boundaries used in the copy
 
 - Official standing facts: advance real-name booking, accepted identity documents, original document, ticket periods, Monday closure, seasonal hours, the Meridian Gate entrance, the Gate of Divine Prowess and East Prosperity Gate exits, published visitor-trail categories, luggage rules and listed transport stops.
-- Dated operational facts: the official English website and email path, Tiananmen-area approach rules, bus listings, luggage-service hours and temporary opening or closure notices.
-- Homeground planning judgment: start the three-hour clock after inspection; protect the central route; add only one side focus; use the north exit by default for this article; prepare a precise onward transport point before entry.
-- Not claimed: guaranteed ticket inventory, guaranteed same-day entry for foreign visitors, a fixed security wait, a fixed walking time, every hall being open, an adjacent north-gate subway station, a taxi always stopping at the gate or one Palace booking automatically replacing a Tiananmen Square reservation.
+- Dated operational facts: the multilingual portal, Tiananmen-area approach and exemption rules, bus listings, luggage-service hours and temporary opening or closure notices.
+- Homeground planning judgment: start the three-hour clock after inspection; protect the central route; add only one side focus at its actual branch point; use the north exit by default for this article; prepare a precise onward transport point before entry.
+- Not claimed: guaranteed ticket inventory, guaranteed same-day entry for foreign visitors, a fixed security wait, a fixed walking time, every hall being open, an adjacent north-gate subway station, a taxi always stopping at the gate or a permanent Tiananmen Square exemption.
 
-## Publication gate
+## Dynamic-fact check
 
-Before this copy is published, the editor must reopen the live Palace Museum ticketing portal, English booking page, Visit page and latest notices. Update `sourceReviewedDate`, `dateModified` and the three source-block review dates if the review happens on a later date. If any accepted document, ticket-release time, inspection period, closure rule, entrance or exit changes, revise all three languages together.
+Before a traveller relies on the guide, reopen the multilingual ticketing portal, ticketing rules, Visit page, latest notices and the current Tiananmen Square instructions. If any accepted document, ticket-release time, inspection period, closure rule, entrance, exit or square-access rule changes, revise all three languages together and update the review dates.
 
-## Handoff
+## Content notes
 
-- English is the source draft; Chinese and Korean preserve the same block IDs and types while using natural local phrasing.
+- English, Chinese and Korean preserve the same block IDs and types while using natural local phrasing.
 - The article folder is self-contained. No homepage, registry, category page, route, template, baseline file or other article was edited.
 - No AI destination photograph was created.
