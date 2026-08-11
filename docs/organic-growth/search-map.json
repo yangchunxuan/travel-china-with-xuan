@@ -1,0 +1,2327 @@
+{
+  "schemaVersion": "1.0.0",
+  "snapshotDate": "2026-08-11",
+  "checkedAt": "2026-08-11T08:18:39+08:00",
+  "finalStatus": "SEARCH MAP READY — CENTRAL APPROVAL REQUIRED",
+  "identityPolicy": {
+    "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
+    "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
+    "publicationRule": "A pool-approved candidate is only a recommendation to the Mac central editor. It does not authorize drafting, publishing or indexation."
+  },
+  "scoringModel": {
+    "maximum": 100,
+    "userTaskAndDemandEvidence": 25,
+    "realCoverageGap": 20,
+    "sourceAvailability": 15,
+    "homegroundInformationGain": 15,
+    "internalLinkKnowledgeNetworkValue": 15,
+    "maintenanceCostAndRisk": 10,
+    "maintenanceConvention": "A higher maintenanceCostAndRisk score means lower expected burden and better-controlled risk.",
+    "demandConvention": "Qualitative traveler-task and SERP evidence only. Search Console and keyword-volume data are unavailable."
+  },
+  "inputAudit": {
+    "repository": {
+      "path": "C:/Users/User/Documents/travel-china-with-xuan",
+      "worktreePath": "C:/Users/User/Documents/homeground-seo-intelligence",
+      "baseRef": "origin/main",
+      "baseCommit": "6df1f55232d361c2bb30d030b2c6b04084cbfde2",
+      "branch": "ops/seo-intelligence-20260811",
+      "status": "available"
+    },
+    "requiredDocs": [
+      {
+        "path": "docs/article-production-lite.md",
+        "status": "read"
+      },
+      {
+        "path": "docs/homeground-search-platform-phase-1-spec.md",
+        "status": "read"
+      }
+    ],
+    "liveSite": {
+      "status": "available",
+      "sitemapUrl": "https://homegroundchina.com/sitemap.xml",
+      "guidesHubUrl": "https://homegroundchina.com/guides/",
+      "sitemapUrlCount": 106,
+      "guideScopeUrlCount": 67,
+      "guideDetailUrlCount": 64,
+      "guideDirectoryUrlCount": 3,
+      "publishedGuideContentIdentities": 24,
+      "publishedArticleIdentities": 23,
+      "systemGuideIdentities": 1,
+      "trilingualArticleIdentities": 20,
+      "englishOnlyArticleIdentities": 3,
+      "englishOnlySystemGuideIdentities": 1,
+      "checkedAt": "2026-08-11T08:18:39+08:00",
+      "finalSitemapRecheckedAt": "2026-08-11T08:55:00+08:00",
+      "method": "Live sitemap enumeration plus HTTP, canonical, robots and hreflang checks. The sitemap grew from 94 to 106 URLs during this audit when four trilingual guides went live."
+    },
+    "remoteBranches": {
+      "status": "available",
+      "lastFetchedAt": "2026-08-11T08:52:21+08:00",
+      "scope": [
+        "origin/article/*",
+        "origin/codex/*"
+      ],
+      "auditedRefCount": 25,
+      "auditedRefs": [
+        "origin/article/beijing-where-to-stay-first-trip",
+        "origin/article/worker-1-guangzhou-baiyun-airport-t2-t3",
+        "origin/article/worker-1-pudong-airport-to-shanghai-disneyland",
+        "origin/article/worker-3-guangzhou-morning-tea",
+        "origin/article/worker-3-how-to-read-suzhou-garden",
+        "origin/article/worker-4-china-last-night-buffer",
+        "origin/article/worker-4-china-night-train-decision",
+        "origin/article/worker-4-china-open-jaw",
+        "origin/article/worker-5-china-hotel-near-metro",
+        "origin/codex/pending-visual-batch-b-20260810",
+        "origin/codex/classify-test-inquiries-20260726",
+        "origin/codex/fix-utm-intake-20260726",
+        "origin/codex/homeground-article-02",
+        "origin/codex/homeground-article-03",
+        "origin/codex/homeground-article-04",
+        "origin/codex/itinerary-rush-guide-release-20260722",
+        "origin/codex/itinerary-trilingual-redesign-20260722",
+        "origin/codex/logo-home-reset-20260722",
+        "origin/codex/new-brand-mark-20260730",
+        "origin/codex/phase0-search-platform-20260809",
+        "origin/codex/restore-ga4-20260725",
+        "origin/codex/ten-day-guide",
+        "origin/codex/transport-guide-release-20260722",
+        "origin/codex/worker-2-lijiang-dayan-vs-shuhe",
+        "origin/codex/worker-2-panda-base-vs-panda-valley"
+      ],
+      "unpublishedAtKickoffCount": 14,
+      "publishedDuringAuditCount": 4,
+      "currentUnpublishedContentIdentityCount": 10,
+      "note": "All 14 kickoff drafts remain topic-locked. During the audit, origin/main advanced to 6df1f55 and the live sitemap added Beijing stay, national high-speed rail, October timing and tourist payments in three locales; those four are now published owners, leaving ten in production. The final fetch also found origin/codex/pending-visual-batch-b-20260810 advancing from c178414 to e5325b7 for licensed photography and image metadata; the five topic identities and their ownership boundaries did not change."
+    },
+    "existingSearchMap": {
+      "status": "unavailable",
+      "reason": "No prior docs/organic-growth Search Map or equivalent canonical candidate ledger exists on origin/main."
+    },
+    "searchConsole": {
+      "status": "unavailable",
+      "reason": "No Search Console connector is installed and the available in-app browser session is not authenticated; the public Search Console page redirected to sign-in/about.",
+      "queries": null,
+      "clicks": null,
+      "impressions": null,
+      "positions": null
+    },
+    "keywordTool": {
+      "status": "unavailable",
+      "reason": "No authenticated keyword-volume tool is installed for this task.",
+      "searchVolume": null,
+      "purchaseProbability": null,
+      "warning": "Google autocomplete and result counts were not treated as search volume."
+    },
+    "serpAndTravelerQuestions": {
+      "status": "available-limited",
+      "method": "Current web-result samples, official-source discovery and recent traveler-question threads. This is qualitative task evidence, not volume or rank-tracking data.",
+      "checkedAt": "2026-08-11"
+    }
+  },
+  "taxonomy": {
+    "state": "phase-1-provisional-not-public-by-default",
+    "collectionIds": [
+      "explore-regions-provinces",
+      "explore-cities-neighborhoods",
+      "explore-attractions-nature-heritage",
+      "plan-trip-length-city-order",
+      "plan-traveller-theme-itineraries",
+      "plan-budget-pace-decisions",
+      "transport-airports-rail-hubs",
+      "transport-city-pair-routes",
+      "transport-last-mile-transfers",
+      "timing-months-seasons",
+      "timing-holidays-crowds",
+      "timing-events-natural-calendar",
+      "stay-city-areas",
+      "stay-hotel-types-scenic-bases",
+      "stay-access-foreign-guests",
+      "essentials-entry-transit",
+      "essentials-payments-connectivity",
+      "essentials-booking-registration-recovery",
+      "culture-history-people-ideas",
+      "culture-regional-food",
+      "culture-festivals-arts-contemporary",
+      "tools-route-time",
+      "tools-area-option-selectors",
+      "tools-maps-calculators-reference",
+      "services-guides-experiences",
+      "services-transfers-hotels-bookings",
+      "services-route-whole-trip"
+    ],
+    "controlledVocabulary": {
+      "targetIntent": ["understand", "compare", "plan", "execute", "in-trip", "purchase"],
+      "pageFamily": ["entity", "subproblem", "relationship", "comparison", "time", "task", "combined-decision", "tool", "service"]
+    },
+    "entityAssignments": {
+      "repositoryRegistryPath": "content/entities/core-places.json",
+      "repositoryEntityIds": ["country-china", "city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai", "city-chengdu", "city-guilin"],
+      "publishedRepositoryEntityIds": {
+        "zhangjiajie-itinerary": ["city-zhangjiajie"],
+        "zhangjiajie-from-malaysia": ["city-zhangjiajie"],
+        "zhangjiajie-glass-bridge-vs-skywalk": ["city-zhangjiajie"],
+        "kevin-before-the-hotel-pickup": ["country-china", "city-zhangjiajie"],
+        "zhangjiajie-older-travellers": ["city-zhangjiajie"],
+        "best-zhangjiajie-night-show": ["city-zhangjiajie"],
+        "beijing-zhangjiajie-shanghai-10-days": ["city-beijing", "city-zhangjiajie", "city-shanghai"],
+        "beijing-zhangjiajie-shanghai-transport": ["city-beijing", "city-zhangjiajie", "city-shanghai"],
+        "is-your-china-itinerary-too-rushed": ["country-china"],
+        "china-itinerary-with-older-parents": ["city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai"],
+        "do-us-citizens-need-visa-china-2026": ["country-china"],
+        "china-visa-free-uk-citizens-2026": ["country-china"],
+        "china-visa-free-canadian-citizens-2026": ["country-china"],
+        "china-visa-free-new-zealand-citizens-2026": ["country-china"],
+        "china-240-hour-visa-free-transit-route-check": ["country-china"],
+        "do-singaporeans-need-visa-china": ["country-china"],
+        "why-are-hotels-in-china-so-cheap": ["country-china", "city-zhangjiajie"],
+        "do-you-need-a-tour-guide-in-china": ["country-china"],
+        "how-much-does-a-china-trip-cost": ["country-china", "city-beijing", "city-xian", "city-shanghai", "city-zhangjiajie"],
+        "beijing-where-to-stay-first-trip": ["city-beijing"],
+        "china-high-speed-train-first-time-guide": ["country-china"],
+        "china-in-october-golden-week-or-later": ["country-china", "city-beijing", "city-shanghai", "city-xian", "city-chengdu", "city-guilin", "city-zhangjiajie"],
+        "how-to-pay-in-china-as-a-tourist": ["country-china"],
+        "system-entry-requirements": ["country-china"]
+      },
+      "fieldSemantics": {
+        "coverage.published.primaryEntityId": "Editorial overlay proposal only. Exact origin/main runtime assignments are in publishedRepositoryEntityIds above; this field is not a repository reference until resolved and validated.",
+        "coverage.inProduction.primaryEntityId": "Editorial overlay proposal only; source branches do not yet have a validated runtime content node on origin/main.",
+        "coverage.candidates.primaryEntityId": "Required candidate proposal field; may name an unresolved entity and does not authorize creation of an entity record."
+      }
+    },
+    "freshnessSemantics": "freshnessClass is a Search Map governance override for editorial re-review risk. It does not claim to reproduce origin/main updatePolicy.",
+    "note": "Assignments below are Search Map ownership assignments. They do not create public collection/entity URLs, runtime entity records or change indexability."
+  },
+  "coverage": {
+    "published": [
+      {
+        "id": "zhangjiajie-itinerary",
+        "title": "Zhangjiajie Itinerary: What Fits in 2, 3 or 4 Days",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/zhangjiajie-itinerary/",
+        "section": "plan",
+        "primaryCollectionId": "plan-trip-length-city-order",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "city-zhangjiajie",
+        "secondaryEntityIds": [],
+        "queryCluster": ["zhangjiajie itinerary", "zhangjiajie 2 days", "zhangjiajie 3 days", "zhangjiajie 4 days"],
+        "cannibalizationOwner": "zhangjiajie-itinerary",
+        "freshnessClass": "low-quarterly",
+        "lastReviewedAt": "2026-07-21",
+        "status": "published-indexable"
+      },
+      {
+        "id": "zhangjiajie-from-malaysia",
+        "title": "Zhangjiajie From Malaysia: Private Trip Guide (2026)",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/zhangjiajie-from-malaysia/",
+        "section": "plan",
+        "primaryCollectionId": "plan-traveller-theme-itineraries",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "city-zhangjiajie",
+        "secondaryEntityIds": ["market-malaysia"],
+        "queryCluster": ["zhangjiajie from malaysia", "malaysia to zhangjiajie trip"],
+        "cannibalizationOwner": "zhangjiajie-from-malaysia",
+        "freshnessClass": "high-on-source-change",
+        "lastReviewedAt": "2026-07-28",
+        "status": "published-indexable"
+      },
+      {
+        "id": "zhangjiajie-glass-bridge-vs-skywalk",
+        "title": "Zhangjiajie Glass Bridge vs Skywalk: Tantan’s 7 Checks",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/zhangjiajie-glass-bridge-vs-skywalk/",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "compare",
+        "pageFamily": "comparison",
+        "primaryEntityId": "city-zhangjiajie",
+        "secondaryEntityIds": ["attraction-zhangjiajie-glass-bridge", "attraction-tianmen-skywalk"],
+        "queryCluster": ["zhangjiajie glass bridge vs skywalk", "glass bridge or tianmen skywalk"],
+        "cannibalizationOwner": "zhangjiajie-glass-bridge-vs-skywalk",
+        "freshnessClass": "medium-quarterly",
+        "lastReviewedAt": "2026-07-22",
+        "status": "published-indexable"
+      },
+      {
+        "id": "kevin-before-the-hotel-pickup",
+        "title": "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/kevin-before-the-hotel-pickup/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-booking-registration-recovery",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["city-zhangjiajie"],
+        "queryCluster": ["what happens before a china private tour pickup", "guide preparation before hotel pickup"],
+        "cannibalizationOwner": "kevin-before-the-hotel-pickup",
+        "freshnessClass": "low-quarterly",
+        "lastReviewedAt": "2026-07-23",
+        "status": "published-indexable"
+      },
+      {
+        "id": "zhangjiajie-older-travellers",
+        "title": "Zhangjiajie with Older Travellers: What Still Works",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/zhangjiajie-older-travellers/",
+        "section": "plan",
+        "primaryCollectionId": "plan-traveller-theme-itineraries",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "city-zhangjiajie",
+        "secondaryEntityIds": ["audience-older-travellers"],
+        "queryCluster": ["zhangjiajie older travellers", "zhangjiajie seniors accessibility pace"],
+        "cannibalizationOwner": "zhangjiajie-older-travellers",
+        "freshnessClass": "medium-quarterly",
+        "lastReviewedAt": "2026-07-23",
+        "status": "published-indexable"
+      },
+      {
+        "id": "best-zhangjiajie-night-show",
+        "title": "Best Zhangjiajie Night Show? Compare 3 Major Shows",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/best-zhangjiajie-night-show/",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "compare",
+        "pageFamily": "comparison",
+        "primaryEntityId": "city-zhangjiajie",
+        "secondaryEntityIds": ["entity-zhangjiajie-night-shows"],
+        "queryCluster": ["best zhangjiajie night show", "zhangjiajie shows compared"],
+        "cannibalizationOwner": "best-zhangjiajie-night-show",
+        "freshnessClass": "high-on-source-change",
+        "lastReviewedAt": "2026-07-22",
+        "status": "published-indexable"
+      },
+      {
+        "id": "beijing-zhangjiajie-shanghai-10-days",
+        "title": "Beijing–Zhangjiajie–Shanghai in 10 Days: Is It Realistic?",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/beijing-zhangjiajie-shanghai-10-days/",
+        "section": "plan",
+        "primaryCollectionId": "plan-trip-length-city-order",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["city-beijing", "city-zhangjiajie", "city-shanghai"],
+        "queryCluster": ["beijing zhangjiajie shanghai 10 days", "10 day china itinerary beijing zhangjiajie shanghai"],
+        "cannibalizationOwner": "beijing-zhangjiajie-shanghai-10-days",
+        "freshnessClass": "medium-quarterly",
+        "lastReviewedAt": "2026-07-21",
+        "status": "published-indexable"
+      },
+      {
+        "id": "beijing-zhangjiajie-shanghai-transport",
+        "title": "Beijing–Zhangjiajie–Shanghai: Train or Flight?",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/beijing-zhangjiajie-shanghai-transport/",
+        "section": "transport",
+        "primaryCollectionId": "transport-city-pair-routes",
+        "targetIntent": "execute",
+        "pageFamily": "relationship",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["city-beijing", "city-zhangjiajie", "city-shanghai"],
+        "queryCluster": ["beijing zhangjiajie shanghai train or flight", "transport between beijing zhangjiajie shanghai"],
+        "cannibalizationOwner": "beijing-zhangjiajie-shanghai-transport",
+        "freshnessClass": "high-on-source-change",
+        "lastReviewedAt": "2026-07-22",
+        "status": "published-indexable"
+      },
+      {
+        "id": "is-your-china-itinerary-too-rushed",
+        "title": "China Itinerary Too Rushed? A Practical Check",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/is-your-china-itinerary-too-rushed/",
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "pageFamily": "comparison",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": ["china itinerary too rushed", "how many cities in china trip", "china itinerary pace"],
+        "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
+        "freshnessClass": "low-quarterly",
+        "lastReviewedAt": "2026-07-22",
+        "status": "published-indexable"
+      },
+      {
+        "id": "china-itinerary-with-older-parents",
+        "title": "China With Older Parents: A Realistic 12–14 Day Itinerary",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/china-itinerary-with-older-parents/",
+        "section": "plan",
+        "primaryCollectionId": "plan-traveller-theme-itineraries",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["audience-older-parents", "city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai"],
+        "queryCluster": ["china itinerary with older parents", "china 12 14 days seniors"],
+        "cannibalizationOwner": "china-itinerary-with-older-parents",
+        "freshnessClass": "medium-quarterly",
+        "lastReviewedAt": "2026-07-31",
+        "status": "published-indexable"
+      },
+      {
+        "id": "do-us-citizens-need-visa-china-2026",
+        "title": "Do US Citizens Need a Visa for China in 2026?",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/do-us-citizens-need-visa-china-2026/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["passport-united-states"],
+        "queryCluster": ["do us citizens need visa for china 2026", "china visa us passport"],
+        "cannibalizationOwner": "do-us-citizens-need-visa-china-2026",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-24",
+        "status": "published-indexable"
+      },
+      {
+        "id": "china-visa-free-uk-citizens-2026",
+        "title": "China Visa-Free for UK Citizens 2026: 30-Day Rules",
+        "kind": "article",
+        "locales": ["en"],
+        "canonicalPath": "/guides/china-visa-free-uk-citizens-2026/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["passport-united-kingdom"],
+        "queryCluster": ["do uk citizens need visa for china 2026", "china visa british passport"],
+        "cannibalizationOwner": "china-visa-free-uk-citizens-2026",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-24",
+        "status": "published-indexable"
+      },
+      {
+        "id": "china-visa-free-canadian-citizens-2026",
+        "title": "China Visa-Free for Canadian Citizens 2026: 30-Day Rules",
+        "kind": "article",
+        "locales": ["en"],
+        "canonicalPath": "/guides/china-visa-free-canadian-citizens-2026/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["passport-canada"],
+        "queryCluster": ["do canadian citizens need visa for china 2026", "china visa canadian passport"],
+        "cannibalizationOwner": "china-visa-free-canadian-citizens-2026",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-24",
+        "status": "published-indexable"
+      },
+      {
+        "id": "china-visa-free-new-zealand-citizens-2026",
+        "title": "China Visa-Free for New Zealand Citizens 2026: 30-Day Rules",
+        "kind": "article",
+        "locales": ["en"],
+        "canonicalPath": "/guides/china-visa-free-new-zealand-citizens-2026/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["passport-new-zealand"],
+        "queryCluster": ["do new zealand citizens need visa for china 2026", "china visa new zealand passport"],
+        "cannibalizationOwner": "china-visa-free-new-zealand-citizens-2026",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-24",
+        "status": "published-indexable"
+      },
+      {
+        "id": "china-240-hour-visa-free-transit-route-check",
+        "title": "China 240-Hour Visa-Free Transit: Does Your Route Qualify?",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/china-240-hour-visa-free-transit-route-check/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["policy-240-hour-transit"],
+        "queryCluster": ["china 240 hour visa free transit", "240 hour transit route rules", "third country transit china"],
+        "cannibalizationOwner": "china-240-hour-visa-free-transit-route-check",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-24",
+        "status": "published-indexable"
+      },
+      {
+        "id": "do-singaporeans-need-visa-china",
+        "title": "You Don't Need a China Visa. Here's the Harder Question.",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/do-singaporeans-need-visa-china/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["passport-singapore"],
+        "queryCluster": ["singapore china visa free 30 days", "singapore passport china entry"],
+        "cannibalizationOwner": "do-singaporeans-need-visa-china",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-28",
+        "status": "published-indexable"
+      },
+      {
+        "id": "why-are-hotels-in-china-so-cheap",
+        "title": "Why Are Hotels in China So Cheap? Find a Stay That Fits",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/why-are-hotels-in-china-so-cheap/",
+        "section": "stay",
+        "primaryCollectionId": "stay-hotel-types-scenic-bases",
+        "targetIntent": "plan",
+        "pageFamily": "subproblem",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["city-zhangjiajie"],
+        "queryCluster": ["why are hotels in china cheap", "china hotel value", "choosing china hotel type"],
+        "cannibalizationOwner": "why-are-hotels-in-china-so-cheap",
+        "freshnessClass": "high-on-source-change",
+        "lastReviewedAt": "2026-08-02",
+        "status": "published-indexable"
+      },
+      {
+        "id": "do-you-need-a-tour-guide-in-china",
+        "title": "Do You Need a Tour Guide in China? When It’s Worth It",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/do-you-need-a-tour-guide-in-china/",
+        "section": "services",
+        "primaryCollectionId": "services-guides-experiences",
+        "targetIntent": "compare",
+        "pageFamily": "comparison",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["service-private-guide"],
+        "queryCluster": ["do i need a tour guide in china", "china private guide worth it"],
+        "cannibalizationOwner": "do-you-need-a-tour-guide-in-china",
+        "freshnessClass": "medium-quarterly",
+        "lastReviewedAt": "2026-08-09",
+        "status": "published-indexable"
+      },
+      {
+        "id": "how-much-does-a-china-trip-cost",
+        "title": "How Much Does a Trip to China Cost? 2026 Budget Guide",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/how-much-does-a-china-trip-cost/",
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "pageFamily": "subproblem",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["city-beijing", "city-xian", "city-shanghai", "city-zhangjiajie"],
+        "queryCluster": ["how much does a trip to china cost", "china trip budget 2026", "china travel cost"],
+        "cannibalizationOwner": "how-much-does-a-china-trip-cost",
+        "freshnessClass": "high-on-source-change",
+        "lastReviewedAt": "2026-08-09",
+        "status": "published-indexable"
+      },
+      {
+        "id": "beijing-where-to-stay-first-trip",
+        "title": "Where to Stay in Beijing on a First Trip: 4 Areas Compared",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/beijing-where-to-stay-first-trip/",
+        "section": "stay",
+        "primaryCollectionId": "stay-city-areas",
+        "targetIntent": "plan",
+        "pageFamily": "comparison",
+        "primaryEntityId": "city-beijing",
+        "secondaryEntityIds": ["area-wangfujing", "area-qianmen", "area-sanlitun", "area-gulou"],
+        "queryCluster": ["where to stay in beijing first trip", "best area to stay beijing", "beijing hotel neighborhoods"],
+        "cannibalizationOwner": "beijing-where-to-stay-first-trip",
+        "freshnessClass": "medium-quarterly",
+        "lastReviewedAt": "2026-08-10",
+        "status": "published-indexable",
+        "stateTransition": "in-production-at-2026-08-11-kickoff; published-during-audit",
+        "liveVerifiedAt": "2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "china-high-speed-train-first-time-guide",
+        "title": "China High-Speed Train Guide: Tickets, Stations & Boarding",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/china-high-speed-train-first-time-guide/",
+        "section": "transport",
+        "primaryCollectionId": "transport-airports-rail-hubs",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "transport-network-china-high-speed-rail",
+        "secondaryEntityIds": ["country-china", "platform-12306"],
+        "queryCluster": ["china high speed train first time", "china train tickets", "china train station boarding", "china train luggage", "china train seat class"],
+        "cannibalizationOwner": "china-high-speed-train-first-time-guide",
+        "freshnessClass": "high-on-source-change",
+        "lastReviewedAt": "2026-08-10",
+        "status": "published-indexable",
+        "stateTransition": "in-production-at-2026-08-11-kickoff; published-during-audit",
+        "liveVerifiedAt": "2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "china-in-october-golden-week-or-later",
+        "title": "China in October: Golden Week or Later? (2026)",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/china-in-october-golden-week-or-later/",
+        "section": "when-to-go",
+        "primaryCollectionId": "timing-holidays-crowds",
+        "targetIntent": "plan",
+        "pageFamily": "comparison",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["event-china-national-day-golden-week", "month-october"],
+        "queryCluster": ["china in october", "china golden week or later", "october china crowds weather booking"],
+        "cannibalizationOwner": "china-in-october-golden-week-or-later",
+        "freshnessClass": "critical-annual-and-on-source-change",
+        "lastReviewedAt": "2026-08-10",
+        "status": "published-indexable",
+        "stateTransition": "in-production-at-2026-08-11-kickoff; published-during-audit",
+        "liveVerifiedAt": "2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "how-to-pay-in-china-as-a-tourist",
+        "title": "How to Pay in China in 2026: Alipay, WeChat, Cash & Cards",
+        "kind": "article",
+        "locales": ["en", "zh", "ko"],
+        "canonicalPath": "/guides/how-to-pay-in-china-as-a-tourist/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-payments-connectivity",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["payment-alipay", "payment-wechat-pay", "payment-cash", "payment-bank-card"],
+        "queryCluster": ["how to pay in china as tourist", "alipay vs wechat pay tourist", "cash cards mobile payment china", "china payment failure recovery"],
+        "cannibalizationOwner": "how-to-pay-in-china-as-a-tourist",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-08-10",
+        "status": "published-indexable",
+        "stateTransition": "in-production-at-2026-08-11-kickoff; published-during-audit",
+        "liveVerifiedAt": "2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "system-entry-requirements",
+        "title": "China Entry Guides: Visa-Free Rules by Passport & Route",
+        "kind": "system-collection",
+        "locales": ["en"],
+        "canonicalPath": "/guides/china-entry-requirements/",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-entry-transit",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "taskMode": "navigate-and-execute",
+        "artifactShape": "system-collection",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["policy-china-entry"],
+        "queryCluster": ["china entry requirements", "china visa requirements by passport", "china transit eligibility"],
+        "cannibalizationOwner": "system-entry-requirements",
+        "freshnessClass": "critical-on-source-change",
+        "lastReviewedAt": "2026-07-28",
+        "status": "published-indexable-metadata-discrepancy"
+      }
+    ],
+    "hubsAndDirectories": [
+      {
+        "id": "system-guides",
+        "paths": ["/guides/", "/zh/guides/", "/ko/guides/"],
+        "status": "published-indexable",
+        "role": "guide-directory"
+      },
+      {
+        "id": "hub-explore",
+        "paths": ["/explore/", "/zh/explore/", "/ko/explore/"],
+        "status": "published-indexable",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-plan",
+        "paths": ["/plan/", "/zh/plan/", "/ko/plan/"],
+        "status": "published-indexable",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-transport",
+        "paths": ["/transport/", "/zh/transport/", "/ko/transport/"],
+        "status": "published-indexable",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-stay",
+        "paths": ["/stay/", "/zh/stay/", "/ko/stay/"],
+        "status": "published-indexable",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-essentials",
+        "paths": ["/essentials/", "/zh/essentials/", "/ko/essentials/"],
+        "status": "published-indexable",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-services",
+        "paths": ["/services/", "/zh/services/", "/ko/services/"],
+        "status": "published-indexable",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-when-to-go",
+        "paths": ["/when-to-go/", "/zh/when-to-go/", "/ko/when-to-go/"],
+        "status": "review-noindex",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-culture",
+        "paths": ["/culture/", "/zh/culture/", "/ko/culture/"],
+        "status": "review-noindex",
+        "role": "section-hub"
+      },
+      {
+        "id": "hub-tools",
+        "paths": ["/tools/", "/zh/tools/", "/ko/tools/"],
+        "status": "review-noindex",
+        "role": "section-hub"
+      }
+    ],
+    "nonEditorialSystemPages": {
+      "identityCount": 7,
+      "scope": "The seven remaining system identities after system-guides and system-entry-requirements are counted elsewhere: home, studio, itinerary-review, privacy, business, terms and refund. They are excluded from topic ownership."
+    },
+    "inProduction": [
+      {
+        "id": "guangzhou-baiyun-airport-t2-t3",
+        "title": "Guangzhou Baiyun Airport T2 or T3? 2026 Guide",
+        "sourceBranch": "origin/codex/pending-visual-batch-b-20260810",
+        "sourceCommit": "e5325b7388ff1b8f52b75712e41f38797a84274e",
+        "originalBranch": "origin/article/worker-1-guangzhou-baiyun-airport-t2-t3",
+        "locales": ["en", "zh", "ko"],
+        "section": "transport",
+        "primaryCollectionId": "transport-airports-rail-hubs",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "airport-guangzhou-baiyun",
+        "secondaryEntityIds": ["terminal-can-t2", "terminal-can-t3", "city-guangzhou"],
+        "queryCluster": ["guangzhou airport t2 or t3", "baiyun terminal 2 terminal 3", "wrong terminal guangzhou airport"],
+        "cannibalizationOwner": "guangzhou-baiyun-airport-t2-t3",
+        "freshnessClass": "critical-before-launch-and-on-source-change",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "pudong-airport-to-shanghai-disneyland",
+        "title": "Pudong Airport to Shanghai Disneyland: Airport Link or Taxi?",
+        "sourceBranch": "origin/codex/pending-visual-batch-b-20260810",
+        "sourceCommit": "e5325b7388ff1b8f52b75712e41f38797a84274e",
+        "originalBranch": "origin/article/worker-1-pudong-airport-to-shanghai-disneyland",
+        "locales": ["en", "zh", "ko"],
+        "section": "transport",
+        "primaryCollectionId": "transport-last-mile-transfers",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "airport-shanghai-pudong",
+        "secondaryEntityIds": ["attraction-shanghai-disney-resort", "city-shanghai"],
+        "queryCluster": ["pudong airport to shanghai disneyland", "airport link or taxi to shanghai disney", "pvg disney transfer with luggage"],
+        "cannibalizationOwner": "pudong-airport-to-shanghai-disneyland",
+        "freshnessClass": "high-before-launch-and-on-source-change",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "lijiang-old-town-or-shuhe-where-to-stay",
+        "title": "Dayan Old Town or Shuhe: Where to Stay in Lijiang",
+        "sourceBranch": "origin/codex/pending-visual-batch-b-20260810",
+        "sourceCommit": "e5325b7388ff1b8f52b75712e41f38797a84274e",
+        "originalBranch": "origin/codex/worker-2-lijiang-dayan-vs-shuhe",
+        "locales": ["en", "zh", "ko"],
+        "section": "explore",
+        "primaryCollectionId": "explore-cities-neighborhoods",
+        "targetIntent": "compare",
+        "pageFamily": "comparison",
+        "primaryEntityId": "city-lijiang",
+        "secondaryEntityIds": ["neighborhood-dayan-old-town", "neighborhood-shuhe-old-town"],
+        "queryCluster": ["dayan or shuhe", "where to stay in lijiang", "lijiang old town vs shuhe"],
+        "cannibalizationOwner": "lijiang-old-town-or-shuhe-where-to-stay",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "title": "Chengdu Panda Base or Panda Valley? Which to Visit",
+        "sourceBranch": "origin/codex/worker-2-panda-base-vs-panda-valley",
+        "sourceCommit": "ce893ed109d584ad07afade819c21e67b1c79cb8",
+        "locales": ["en", "zh", "ko"],
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "compare",
+        "pageFamily": "comparison",
+        "primaryEntityId": "city-chengdu",
+        "secondaryEntityIds": ["attraction-chengdu-panda-base", "attraction-dujiangyan-panda-valley"],
+        "queryCluster": ["chengdu panda base or panda valley", "best panda base chengdu", "dujiangyan panda valley vs chengdu research base"],
+        "cannibalizationOwner": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "freshnessClass": "high-before-launch-and-on-source-change",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "how-guangzhou-morning-tea-works",
+        "title": "Guangzhou Morning Tea: How Yum Cha, Dim Sum and Teahouse Etiquette Work",
+        "sourceBranch": "origin/codex/pending-visual-batch-b-20260810",
+        "sourceCommit": "e5325b7388ff1b8f52b75712e41f38797a84274e",
+        "originalBranch": "origin/article/worker-3-guangzhou-morning-tea",
+        "locales": ["en", "zh", "ko"],
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "practice-guangzhou-morning-tea",
+        "secondaryEntityIds": ["city-guangzhou", "food-dim-sum", "practice-yum-cha"],
+        "queryCluster": ["guangzhou morning tea", "how yum cha works", "dim sum etiquette", "how to order dim sum in guangzhou"],
+        "cannibalizationOwner": "how-guangzhou-morning-tea-works",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "how-to-read-a-suzhou-garden",
+        "title": "How to Read a Suzhou Garden: Rocks, Water and Borrowed Scenery",
+        "sourceBranch": "origin/codex/pending-visual-batch-b-20260810",
+        "sourceCommit": "e5325b7388ff1b8f52b75712e41f38797a84274e",
+        "originalBranch": "origin/article/worker-3-how-to-read-suzhou-garden",
+        "locales": ["en", "zh", "ko"],
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "entity-suzhou-classical-gardens",
+        "secondaryEntityIds": ["city-suzhou", "concept-borrowed-scenery"],
+        "queryCluster": ["how to understand suzhou gardens", "suzhou garden design", "which suzhou garden", "rocks water borrowed scenery"],
+        "cannibalizationOwner": "how-to-read-a-suzhou-garden",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "china-last-night-before-international-flight",
+        "title": "Should Your Last Night in China Be in Your Departure City?",
+        "sourceBranch": "origin/article/worker-4-china-last-night-buffer",
+        "sourceCommit": "0aaab9aa10e52cdac3db2ab621980267672722c2",
+        "locales": ["en", "zh", "ko"],
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["task-international-departure"],
+        "queryCluster": ["last night in departure city china", "same day train to international flight china", "airport hotel last night china", "departure buffer china"],
+        "cannibalizationOwner": "china-last-night-before-international-flight",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "china-night-train-or-daytime-high-speed-rail",
+        "title": "China Night Train or Daytime High-Speed Rail?",
+        "sourceBranch": "origin/article/worker-4-china-night-train-decision",
+        "sourceCommit": "819b37b47d52ec0eaf69bbe6d8b2467736acd294",
+        "locales": ["en", "zh", "ko"],
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "pageFamily": "comparison",
+        "primaryEntityId": "transport-network-china-rail",
+        "secondaryEntityIds": ["service-night-train", "service-high-speed-rail"],
+        "queryCluster": ["china night train or high speed rail", "overnight train vs daytime train china", "hard sleeper soft sleeper hotel saving"],
+        "cannibalizationOwner": "china-night-train-or-daytime-high-speed-rail",
+        "freshnessClass": "high-before-launch-and-on-source-change",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "china-open-jaw-flights-route-planning",
+        "title": "China Open-Jaw Flights: Arrive in One City, Leave From Another?",
+        "sourceBranch": "origin/article/worker-4-china-open-jaw",
+        "sourceCommit": "94b40d3c308bbf1d81655e2b64bf8086519104c2",
+        "locales": ["en", "zh", "ko"],
+        "section": "plan",
+        "primaryCollectionId": "plan-trip-length-city-order",
+        "targetIntent": "plan",
+        "pageFamily": "combined-decision",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["concept-open-jaw-flight"],
+        "queryCluster": ["china open jaw flights", "arrive one china city leave another", "china multi city flight route"],
+        "cannibalizationOwner": "china-open-jaw-flights-route-planning",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      },
+      {
+        "id": "china-hotel-near-metro",
+        "title": "How Close Should Your Hotel Be to the Metro in China?",
+        "sourceBranch": "origin/article/worker-5-china-hotel-near-metro",
+        "sourceCommit": "1c02bef1f2d0037847914f61df51ba68960cf2d1",
+        "locales": ["en", "zh", "ko"],
+        "section": "stay",
+        "primaryCollectionId": "stay-city-areas",
+        "targetIntent": "compare",
+        "pageFamily": "comparison",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["transport-mode-metro", "entity-hotel-location"],
+        "queryCluster": ["hotel near metro china", "how close should hotel be to subway china", "china hotel location luggage accessibility"],
+        "cannibalizationOwner": "china-hotel-near-metro",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "sourceReviewedAt": "2026-08-10",
+        "status": "in-production-unpublished"
+      }
+    ],
+    "roundLockedTopicsAtKickoff": [
+      {
+        "id": "china-high-speed-train-first-time-guide",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "published-indexable",
+        "transitionEvidence": "origin/main 6df1f55 plus live en/zh/ko URLs and sitemap verification at 2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "guangzhou-baiyun-airport-t2-t3",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "pudong-airport-to-shanghai-disneyland",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "lijiang-old-town-or-shuhe-where-to-stay",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "how-guangzhou-morning-tea-works",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "how-to-read-a-suzhou-garden",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "china-last-night-before-international-flight",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "china-night-train-or-daytime-high-speed-rail",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "china-open-jaw-flights-route-planning",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "china-in-october-golden-week-or-later",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "published-indexable",
+        "transitionEvidence": "origin/main 6df1f55 plus live en/zh/ko URLs and sitemap verification at 2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "beijing-where-to-stay-first-trip",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "published-indexable",
+        "transitionEvidence": "origin/main 6df1f55 plus live en/zh/ko URLs and sitemap verification at 2026-08-11T08:18:39+08:00"
+      },
+      {
+        "id": "china-hotel-near-metro",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "in-production-unpublished"
+      },
+      {
+        "id": "how-to-pay-in-china-as-a-tourist",
+        "kickoffState": "in-production-unpublished",
+        "currentState": "published-indexable",
+        "transitionEvidence": "origin/main 6df1f55 plus live en/zh/ko URLs and sitemap verification at 2026-08-11T08:18:39+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": "transport-20260811-01",
+        "workingTitle": "Which Beijing Railway Station? South, West, Chaoyang, Fengtai and Qinghe Explained",
+        "action": "new-page",
+        "section": "transport",
+        "primaryCollectionId": "transport-airports-rail-hubs",
+        "targetIntent": "execute",
+        "queryCluster": ["which beijing railway station", "beijing south vs west station", "beijing chaoyang station", "beijing fengtai station", "beijing qinghe station", "wrong beijing train station"],
+        "primaryEntityId": "city-beijing",
+        "secondaryEntityIds": ["station-beijing-south", "station-beijing-west", "station-beijing-chaoyang", "station-beijing-fengtai", "station-qinghe"],
+        "pageFamily": "combined-decision",
+        "taskMode": "choose-and-execute",
+        "artifactShape": "decision-guide",
+        "status": "proposed-approved-pending-central",
+        "ownerPool": "employee-1-transport",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 22,
+          "realCoverageGap": 15,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 13,
+          "internalLinkKnowledgeNetworkValue": 14,
+          "maintenanceCostAndRisk": 9,
+          "total": 88
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers ask which station their route uses and report confusion around Chaoyang and the correct Beijing departure station.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1nc61ib", "https://www.reddit.com/r/beijing/comments/1e3n28h"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate",
+          "observation": "Sampled results include station reference guides, but the useful gap is one traveler decision matrix tied to ticket labels, route direction, city access, luggage and wrong-station recovery—not five station pages.",
+          "sampleUrls": ["https://wanderinchina.com/destinations/beijing/transport/train-stations/", "https://chinafortravelers.com/guides/beijing-west-railway-station/"],
+          "limitation": "Qualitative SERP sample only; no rank or volume feed."
+        },
+        "homegroundInformationGain": "A single field-oriented matrix can connect the station printed on a ticket to route fit, transfer friction, hotel geography and recovery steps, then hand off the national booking/boarding workflow to the high-speed-rail owner.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": ["https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202412/t20241217_3967615.html", "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html", "https://english.beijing.gov.cn/latest/news/202412/t20241225_3973421.html"],
+          "missing": "Central editor should require a same-week check of station access and current train assignment examples before drafting."
+        },
+        "cannibalizationOwner": "transport-20260811-01",
+        "freshnessClass": "high-on-timetable-or-access-change",
+        "checkedAt": "2026-08-11",
+        "decision": "pool-approved-pending-central",
+        "parentHub": "hub-transport",
+        "suggestedInternalLinks": ["china-high-speed-train-first-time-guide", "beijing-zhangjiajie-shanghai-transport", "beijing-where-to-stay-first-trip", "beijing-zhangjiajie-shanghai-10-days", "china-last-night-before-international-flight"]
+      },
+      {
+        "candidateId": "transport-20260811-02",
+        "workingTitle": "How Early Should You Arrive for a China High-Speed Train?",
+        "action": "update-existing",
+        "section": "transport",
+        "primaryCollectionId": "transport-airports-rail-hubs",
+        "targetIntent": "execute",
+        "queryCluster": ["how early for china high speed train", "china train station arrival time", "china train boarding buffer"],
+        "primaryEntityId": "transport-network-china-high-speed-rail",
+        "secondaryEntityIds": ["task-station-arrival", "task-train-boarding"],
+        "pageFamily": "task",
+        "taskMode": "execute",
+        "artifactShape": "faq-module",
+        "status": "update-owner-only",
+        "ownerPool": "employee-1-transport",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 23,
+          "realCoverageGap": 10,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 8,
+          "internalLinkKnowledgeNetworkValue": 14,
+          "maintenanceCostAndRisk": 9,
+          "total": 79
+        },
+        "demandEvidence": {
+          "qualitative": "Recent first-time rail questions explicitly ask about station flow and arrival buffer.",
+          "urls": ["https://www.reddit.com/r/travelchina/comments/1vioe0w/what_should_i_know_before_taking_the_highspeed/", "https://www.reddit.com/r/chinatravel/comments/1tto8t7/common_mistakes_i_keep_seeing_in_china_travel/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-as-a-separate-page",
+          "observation": "Generic high-speed-rail guides already answer the buffer question. Homeground’s now-published national guide already owns station entry, security and boarding.",
+          "sampleUrls": ["https://gochinafreely.com/essentials/china-high-speed-rail-guide", "https://hallochina.com/china-high-speed-train-guide/"],
+          "limitation": "No Search Console query data."
+        },
+        "homegroundInformationGain": "A compact scenario table inside the national rail guide can add luggage, children, large stations and holiday conditions without creating a competing URL.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": ["https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202412/t20241217_3967615.html"],
+          "missing": "Verify any operator-specific cutoffs in the draft source pack."
+        },
+        "cannibalizationOwner": "china-high-speed-train-first-time-guide",
+        "freshnessClass": "high-on-operator-process-change",
+        "checkedAt": "2026-08-11",
+        "decision": "update-existing-owner-do-not-create",
+        "parentHub": "hub-transport",
+        "suggestedInternalLinks": ["china-high-speed-train-first-time-guide", "transport-20260811-01"]
+      },
+      {
+        "candidateId": "transport-20260811-03",
+        "workingTitle": "Can I Safely Connect From an International Flight to a China Train?",
+        "action": "tool",
+        "section": "tools",
+        "primaryCollectionId": "tools-route-time",
+        "targetIntent": "execute",
+        "queryCluster": ["international flight to china train connection", "airport to high speed train buffer china", "can i catch train after landing china"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["task-air-to-rail-connection", "transport-network-china-high-speed-rail"],
+        "pageFamily": "tool",
+        "taskMode": "calculate-and-decide",
+        "artifactShape": "buffer-checker",
+        "status": "held-source-model-required",
+        "ownerPool": "employee-1-transport",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 18,
+          "realCoverageGap": 17,
+          "sourceAvailability": 10,
+          "homegroundInformationGain": 14,
+          "internalLinkKnowledgeNetworkValue": 14,
+          "maintenanceCostAndRisk": 5,
+          "total": 78
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers ask for airport-to-station connection time and whether same-day transfers are feasible.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1nqrcvh", "https://www.reddit.com/r/travelchina/comments/1r7zjjz/china_itinerary_check_in_may/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate-tool-gap",
+          "observation": "Results are mostly prose guides or city-specific transfer pages. A conservative input-based checker could be more useful, but only if inputs and safety assumptions are maintained.",
+          "sampleUrls": ["https://www.trip.com/ask/travel-question/pudong-airport-to-hongqiao-airport.html", "https://www.wanderinchina.com/destinations/shanghai/transport/airport/"],
+          "limitation": "No query volume and no comprehensive airport/station transfer dataset."
+        },
+        "homegroundInformationGain": "Homeground could expose the hidden chain—immigration, bags, terminal exit, cross-city transfer, station security and missed-train tolerance—rather than returning one universal buffer.",
+        "sourceReadiness": {
+          "status": "medium-low",
+          "primarySources": [],
+          "missing": "Needs a versioned airport/station dataset, explicit conservative assumptions, fail-safe output and named maintenance owner before build approval."
+        },
+        "cannibalizationOwner": "transport-20260811-03",
+        "freshnessClass": "critical-continuous-data",
+        "checkedAt": "2026-08-11",
+        "decision": "hold-no-build-until-data-owner",
+        "parentHub": "hub-tools",
+        "suggestedInternalLinks": ["china-high-speed-train-first-time-guide", "china-last-night-before-international-flight", "pudong-airport-to-shanghai-disneyland", "guangzhou-baiyun-airport-t2-t3"]
+      },
+      {
+        "candidateId": "destination-20260811-01",
+        "workingTitle": "Forbidden City for Foreign Visitors: Correct Entrance, a 3-Hour Route and the North-Gate Exit",
+        "action": "new-page",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "execute",
+        "queryCluster": ["forbidden city foreign visitors", "forbidden city correct entrance", "forbidden city 3 hour route", "forbidden city north gate exit", "forbidden city tickets passport"],
+        "primaryEntityId": "attraction-forbidden-city",
+        "secondaryEntityIds": ["city-beijing", "gate-meridian-gate", "gate-divine-prowess-gate"],
+        "pageFamily": "task",
+        "taskMode": "execute",
+        "artifactShape": "task-guide",
+        "status": "proposed-approved-pending-central",
+        "ownerPool": "employee-2-destination",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 23,
+          "realCoverageGap": 13,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 14,
+          "internalLinkKnowledgeNetworkValue": 14,
+          "maintenanceCostAndRisk": 6,
+          "total": 85
+        },
+        "demandEvidence": {
+          "qualitative": "Recent travelers ask whether foreigners can buy tickets, where to enter and which linked reservation is required.",
+          "urls": ["https://www.reddit.com/r/travelchina/comments/1vasamb/forbidden_city_tickets_at_the_gate_where_to_find/", "https://www.reddit.com/r/travelchina/comments/1tbyiqn/forbidden_city_tiananmen_square_ticketsentrance/", "https://www.reddit.com/r/travelchina/comments/1v1hs6o/can_foreigners_still_get_forbidden_city_tickets/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate",
+          "observation": "Comprehensive Forbidden City guides exist. The defensible gap is a tightly bounded foreign-visitor execution path that joins reservation, south-to-north flow, realistic three-hour choices and post-exit transport.",
+          "sampleUrls": ["https://www.travelchinaguide.com/attraction/beijing/forbidden-city/", "https://chinafootprints.com/beijing/beijing-forbidden-city"],
+          "limitation": "Competitive result set is strong; publication needs genuinely current operational verification."
+        },
+        "homegroundInformationGain": "Homeground can turn disconnected rules into a door-to-door decision sequence and tie the north-gate exit to the traveler’s next stop and hotel area rather than repeat palace history.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": ["https://www.dpm.org.cn/Visit.html?isappinstalled=0", "https://english.visitbeijing.com.cn/article/4KD1c04OUDA", "https://english.beijing.gov.cn/travellinginbeijing/citytours/202006/t20200607_1918914.html"],
+          "missing": "Same-week official booking, closure and entrance check is mandatory."
+        },
+        "cannibalizationOwner": "destination-20260811-01",
+        "freshnessClass": "critical-on-booking-or-access-change",
+        "checkedAt": "2026-08-11",
+        "decision": "pool-approved-pending-central",
+        "parentHub": "hub-explore",
+        "suggestedInternalLinks": ["beijing-where-to-stay-first-trip", "transport-20260811-01", "china-itinerary-with-older-parents", "is-your-china-itinerary-too-rushed"]
+      },
+      {
+        "candidateId": "destination-20260811-02",
+        "workingTitle": "Mutianyu or Badaling Great Wall: Which Fits Your First Beijing Trip?",
+        "action": "reject",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "compare",
+        "queryCluster": ["mutianyu vs badaling", "which great wall section first trip", "best great wall section beijing"],
+        "primaryEntityId": "entity-great-wall-china",
+        "secondaryEntityIds": ["attraction-mutianyu-great-wall", "attraction-badaling-great-wall", "city-beijing"],
+        "pageFamily": "comparison",
+        "taskMode": "compare",
+        "artifactShape": "comparison",
+        "status": "rejected-as-standalone",
+        "ownerPool": "employee-2-destination",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 23,
+          "realCoverageGap": 7,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 11,
+          "internalLinkKnowledgeNetworkValue": 13,
+          "maintenanceCostAndRisk": 7,
+          "total": 76
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers repeatedly ask which Great Wall section fits a first trip.",
+          "urls": ["https://www.reddit.com/r/travelchina/comments/1m5k923/overwhelmed_by_great_wall_info_is_this_mutianyu/", "https://www.reddit.com/r/traveltochinamainland/comments/1uzf4ju/mutianyu_jinshanling_or_badaling_choosing_the/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low",
+          "observation": "The exact comparison is already heavily served by near-identical guides. No Homeground field dataset or differentiated access test was found in the repository.",
+          "sampleUrls": ["https://ruqintravel.com/great-wall-of-china-travel-guide/mutianyu-great-wall-vs-badaling-great-wall/", "https://greatwalltravelguide.com/badaling-vs-mutianyu-great-wall-which-should-you-choose/"],
+          "limitation": "No Search Console data; qualitative saturation judgment only."
+        },
+        "homegroundInformationGain": "Potential gain exists only if Homeground first collects owned transfer, mobility and crowd-friction observations; generic comparison would add little.",
+        "sourceReadiness": {
+          "status": "high-for-facts-low-for-differentiation",
+          "primarySources": ["https://en.mutianyugreatwall.com/article/4DlCYuBZ75h", "https://en.mutianyugreatwall.com/article/4DlBQNxqZum"],
+          "missing": "Owned field evidence and a unique traveler decision model."
+        },
+        "cannibalizationOwner": "none-rejected",
+        "freshnessClass": "high-on-access-or-ticket-change",
+        "checkedAt": "2026-08-11",
+        "decision": "reject-new-page-until-owned-evidence",
+        "parentHub": "hub-explore",
+        "suggestedInternalLinks": ["beijing-where-to-stay-first-trip", "china-itinerary-with-older-parents"]
+      },
+      {
+        "candidateId": "destination-20260811-03",
+        "workingTitle": "Chengdu Panda Base: Best Gate, Arrival Time and Half-Day Route",
+        "action": "merge",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "compare",
+        "queryCluster": ["chengdu panda base best time", "chengdu panda base gate", "chengdu panda base route", "panda base half day"],
+        "primaryEntityId": "attraction-chengdu-panda-base",
+        "secondaryEntityIds": ["city-chengdu", "attraction-dujiangyan-panda-valley"],
+        "pageFamily": "comparison",
+        "taskMode": "execute",
+        "artifactShape": "task-module",
+        "status": "merge-required",
+        "ownerPool": "employee-2-destination",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 20,
+          "realCoverageGap": 8,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 5,
+          "internalLinkKnowledgeNetworkValue": 12,
+          "maintenanceCostAndRisk": 6,
+          "total": 66
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers ask for arrival time and venue choice; both are part of the same visit decision.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1v8u93b/chengdu_research_base_of_giant_panda_breeding/", "https://www.reddit.com/r/travelchina/comments/1ref9tq/chengdu_or_dujiangyan_which_panda_base_is_the_best/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-as-a-second-page",
+          "observation": "Exact half-day route guides already exist, and the in-production comparison already needs practical gate/time detail to support its choice.",
+          "sampleUrls": ["https://chinatravelbook.com/guides/chengdu-panda-base-half-day-plan-2026-route-transport", "https://tripchina.me/chengdu-panda-base-guide/"],
+          "limitation": "No rank or volume data."
+        },
+        "homegroundInformationGain": "The information is useful as a route-and-arrival module inside the comparison; it is not a distinct enough task for another canonical page.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": [],
+          "missing": "Writer must refresh official opening, gate and reservation details immediately before the parent draft is approved."
+        },
+        "cannibalizationOwner": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "freshnessClass": "critical-before-launch-and-on-source-change",
+        "checkedAt": "2026-08-11",
+        "decision": "merge-into-owner-do-not-create",
+        "parentHub": "hub-explore",
+        "suggestedInternalLinks": ["chengdu-panda-base-or-dujiangyan-panda-valley"]
+      },
+      {
+        "candidateId": "culture-20260811-01",
+        "workingTitle": "Your First Shared Meal in China: Ordering, Seating, Sharing and Paying",
+        "action": "new-page",
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "execute",
+        "queryCluster": ["how shared meals work in china", "chinese restaurant etiquette first time", "ordering sharing paying meal china", "chinese dinner seating etiquette"],
+        "primaryEntityId": "practice-chinese-shared-meal",
+        "secondaryEntityIds": ["country-china", "practice-family-style-dining"],
+        "pageFamily": "task",
+        "taskMode": "understand-and-execute",
+        "artifactShape": "task-explainer",
+        "status": "proposed-approved-pending-central",
+        "ownerPool": "employee-3-culture",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 18,
+          "realCoverageGap": 14,
+          "sourceAvailability": 11,
+          "homegroundInformationGain": 15,
+          "internalLinkKnowledgeNetworkValue": 13,
+          "maintenanceCostAndRisk": 9,
+          "total": 80
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers ask what practical restaurant behavior is expected and how to avoid awkward mistakes at shared dinners.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1twc8by/firsttime_china_travelers_what_practical_things/", "https://www.reddit.com/r/travelchina/comments/1rqknqi/dining_cheat_sheet_to_chinese_dinners_for/", "https://www.reddit.com/r/travelchina/comments/1tbtkle/what_can_i_learn_about_chinese_etiquette_to/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate",
+          "observation": "Many results are abstract etiquette lists or banquet rules. The gap is a calm first-meal sequence for ordinary travelers, with context-sensitive behavior rather than rigid universal claims.",
+          "sampleUrls": ["https://mychinacompass.com/dining-etiquette-in-china/", "https://chinavisitguide.com/blog/banquet-etiquette-deeper"],
+          "limitation": "No volume data; cultural claims need regional and situational caveats."
+        },
+        "homegroundInformationGain": "Homeground can explain the traveler’s actual sequence—choosing dishes, tea, seating cues, shared plates, paying and gracefully following the host—using local context and avoiding stereotype-heavy listicles.",
+        "sourceReadiness": {
+          "status": "medium",
+          "primarySources": ["https://www.travelchina.org.cn/en/article/ZZhlUxxOkUhb"],
+          "missing": "Requires named Homeground field reviewer plus at least one credible cultural source; avoid presenting regional habits as national rules."
+        },
+        "cannibalizationOwner": "culture-20260811-01",
+        "freshnessClass": "low-annual-cultural-review",
+        "checkedAt": "2026-08-11",
+        "decision": "pool-approved-pending-central",
+        "parentHub": "hub-culture",
+        "suggestedInternalLinks": ["how-guangzhou-morning-tea-works", "do-you-need-a-tour-guide-in-china", "kevin-before-the-hotel-pickup"]
+      },
+      {
+        "candidateId": "culture-20260811-02",
+        "workingTitle": "How Do Chinese Tea Houses Work for a First-Time Visitor?",
+        "action": "update-existing",
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "understand",
+        "queryCluster": ["how do tea houses work in china", "what to do in chinese tea house", "china tea house first time"],
+        "primaryEntityId": "practice-chinese-teahouse",
+        "secondaryEntityIds": ["country-china", "practice-tea-service"],
+        "pageFamily": "entity",
+        "taskMode": "understand-and-execute",
+        "artifactShape": "faq-module",
+        "status": "held-hub-module",
+        "ownerPool": "employee-3-culture",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 17,
+          "realCoverageGap": 13,
+          "sourceAvailability": 11,
+          "homegroundInformationGain": 11,
+          "internalLinkKnowledgeNetworkValue": 11,
+          "maintenanceCostAndRisk": 9,
+          "total": 72
+        },
+        "demandEvidence": {
+          "qualitative": "A recent traveler question asks exactly what happens in a tea house and what the visitor should do.",
+          "urls": ["https://www.reddit.com/r/travelchina/comments/1tcwvgt/how_do_tea_houses_work_what_happens_what_do_i_do/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate-but-scope-unclear",
+          "observation": "The task is real, but a national page risks collapsing very different commercial, regional and ceremonial formats. Start as a bounded FAQ/module and observe demand.",
+          "sampleUrls": [],
+          "limitation": "Single visible traveler-question signal and no Search Console data."
+        },
+        "homegroundInformationGain": "A format-selector could explain casual refills, paid tastings, ceremonies and sales contexts, but only after regional examples are verified.",
+        "sourceReadiness": {
+          "status": "medium",
+          "primarySources": [],
+          "missing": "Needs regional scope, local reviewers and a parent content owner."
+        },
+        "cannibalizationOwner": "hub-culture",
+        "freshnessClass": "low-annual-cultural-review",
+        "checkedAt": "2026-08-11",
+        "decision": "hold-as-faq-module-not-standalone",
+        "parentHub": "hub-culture",
+        "suggestedInternalLinks": ["how-guangzhou-morning-tea-works", "culture-20260811-01"]
+      },
+      {
+        "candidateId": "culture-20260811-03",
+        "workingTitle": "Guangzhou Dim Sum Etiquette: How to Order, Share and Pay",
+        "action": "merge",
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "understand",
+        "queryCluster": ["guangzhou dim sum etiquette", "how to order dim sum guangzhou", "yum cha ordering sharing paying"],
+        "primaryEntityId": "practice-guangzhou-morning-tea",
+        "secondaryEntityIds": ["city-guangzhou", "food-dim-sum", "practice-yum-cha"],
+        "pageFamily": "entity",
+        "taskMode": "understand-and-execute",
+        "artifactShape": "task-module",
+        "status": "merge-required",
+        "ownerPool": "employee-3-culture",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 20,
+          "realCoverageGap": 9,
+          "sourceAvailability": 13,
+          "homegroundInformationGain": 4,
+          "internalLinkKnowledgeNetworkValue": 10,
+          "maintenanceCostAndRisk": 9,
+          "total": 65
+        },
+        "demandEvidence": {
+          "qualitative": "The practical task is visible, but it is already the core execution layer of the Guangzhou morning-tea draft.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1twc8by/firsttime_china_travelers_what_practical_things/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-as-a-separate-page",
+          "observation": "Existing guides combine yum cha, dim sum and etiquette, and the in-production Homeground identity explicitly owns all three.",
+          "sampleUrls": ["https://gochinafreely.com/food-and-drink/cantonese-dim-sum-yum-cha-guide"],
+          "limitation": "No volume data."
+        },
+        "homegroundInformationGain": "Useful ordering and payment detail belongs inside the existing Guangzhou morning-tea identity; splitting it would create synonym cannibalization.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": [],
+          "missing": "Parent draft should preserve local reviewer verification."
+        },
+        "cannibalizationOwner": "how-guangzhou-morning-tea-works",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "checkedAt": "2026-08-11",
+        "decision": "merge-into-owner-do-not-create",
+        "parentHub": "hub-culture",
+        "suggestedInternalLinks": ["how-guangzhou-morning-tea-works", "culture-20260811-01"]
+      },
+      {
+        "candidateId": "planning-20260811-01",
+        "workingTitle": "China Route Reality Checker: Turn Nights Into Sightseeing Days",
+        "action": "tool",
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "queryCluster": ["is my china itinerary too rushed", "china route pace calculator", "how many sightseeing days china", "china itinerary travel time checker"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["concept-itinerary-pace", "concept-transfer-tax"],
+        "pageFamily": "tool",
+        "taskMode": "calculate-and-plan",
+        "artifactShape": "route-reality-checker",
+        "status": "proposed-approved-pending-central",
+        "ownerPool": "employee-4-planning",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 24,
+          "realCoverageGap": 16,
+          "sourceAvailability": 12,
+          "homegroundInformationGain": 15,
+          "internalLinkKnowledgeNetworkValue": 15,
+          "maintenanceCostAndRisk": 8,
+          "total": 90
+        },
+        "demandEvidence": {
+          "qualitative": "Recent travelers repeatedly request itinerary sanity checks, especially for 14–15 day first trips and multi-city transfer load.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1shhgek/1st_time_in_china_opinion_on_trip_schedule/", "https://www.reddit.com/r/chinatravel/comments/1siib85/15day_firsttime_china_itinerary_check_looking_for/", "https://www.reddit.com/r/chinatravel/comments/1vgj4hb/first_trip_to_china_as_a_couple_14_days/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "high-for-transparent-calculation",
+          "observation": "Results include prose day-count guides and opaque AI itinerary generators. A transparent nights-to-usable-days calculation can complement—not replace—the existing rushed-itinerary article.",
+          "sampleUrls": ["https://everonia.com/travel-guides/how-many-days-in-china", "https://www.tochinatravel.com/", "https://www.travelerlocal.ai/guide/china-first-time-itinerary"],
+          "limitation": "No demand-volume data; this recommendation is based on repeated task evidence and an existing canonical owner."
+        },
+        "homegroundInformationGain": "Homeground can make transfer tax explicit: arrival/departure fragments, station and airport access, hotel moves, recovery buffer and traveler pace. Outputs should link to owned route, transport and stay decisions.",
+        "sourceReadiness": {
+          "status": "medium-high",
+          "primarySources": [],
+          "missing": "Central editor must approve the scoring model and test scenarios; no live schedule promise should be made."
+        },
+        "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
+        "freshnessClass": "medium-model-review-quarterly",
+        "checkedAt": "2026-08-11",
+        "decision": "pool-approved-pending-central",
+        "parentHub": "hub-plan",
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning", "china-last-night-before-international-flight", "china-night-train-or-daytime-high-speed-rail"]
+      },
+      {
+        "candidateId": "planning-20260811-02",
+        "workingTitle": "How Many Days in China: 7 vs 10 vs 14 Days",
+        "action": "update-existing",
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "queryCluster": ["how many days in china", "china 7 vs 10 vs 14 days", "how long first china trip"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["duration-7-days", "duration-10-days", "duration-14-days"],
+        "pageFamily": "comparison",
+        "taskMode": "plan",
+        "artifactShape": "decision-module",
+        "status": "update-owner-only",
+        "ownerPool": "employee-4-planning",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 24,
+          "realCoverageGap": 8,
+          "sourceAvailability": 14,
+          "homegroundInformationGain": 7,
+          "internalLinkKnowledgeNetworkValue": 14,
+          "maintenanceCostAndRisk": 9,
+          "total": 76
+        },
+        "demandEvidence": {
+          "qualitative": "First-time travelers ask where to start and whether their 10–15 day route is realistic.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1vecgxe/where_do_i_start_on_my_first_trip_to_china/", "https://www.reddit.com/r/travelchina/comments/1udrtz7/first_trip_to_china_itinerary_recommendations/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-as-a-new-page",
+          "observation": "The head task is well served and overlaps Homeground’s rushed-itinerary owner plus its exact 10-day route and 12–14 day older-parent route.",
+          "sampleUrls": ["https://everonia.com/travel-guides/how-many-days-in-china", "https://windhorsetour.com/china-travel-tips/how-many-days-to-spend-in-china"],
+          "limitation": "No Search Console data to justify a new canonical."
+        },
+        "homegroundInformationGain": "Add a compact days-to-cities decision table to the rushed-itinerary owner and route-specific links rather than publish another generic duration page.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": [],
+          "missing": "Requires editorial model alignment with the approved route checker."
+        },
+        "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
+        "freshnessClass": "low-quarterly",
+        "checkedAt": "2026-08-11",
+        "decision": "update-existing-owner-do-not-create",
+        "parentHub": "hub-plan",
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "planning-20260811-01"]
+      },
+      {
+        "candidateId": "planning-20260811-03",
+        "workingTitle": "First China Trip Routes by Pace",
+        "action": "collection",
+        "section": "plan",
+        "primaryCollectionId": "plan-trip-length-city-order",
+        "targetIntent": "plan",
+        "queryCluster": ["first china trip routes", "china itinerary by pace", "china route options first time"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["concept-itinerary-pace", "audience-first-time-visitor"],
+        "pageFamily": "entity",
+        "taskMode": "navigate-and-plan",
+        "artifactShape": "collection",
+        "status": "held-provisional-noindex",
+        "ownerPool": "employee-4-planning",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 22,
+          "realCoverageGap": 11,
+          "sourceAvailability": 12,
+          "homegroundInformationGain": 10,
+          "internalLinkKnowledgeNetworkValue": 15,
+          "maintenanceCostAndRisk": 8,
+          "total": 78
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers need a navigation layer across route and pace choices, but the site currently has too few distinct route identities for a strong public collection.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1vecgxe/where_do_i_start_on_my_first_trip_to_china/", "https://www.reddit.com/r/chinatravel/comments/1vgj4hb/first_trip_to_china_as_a_couple_14_days/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "navigation-gap-not-publication-proof",
+          "observation": "A collection would improve knowledge architecture, but Phase 1 explicitly requires evidence and coverage gates before public/indexed collection creation.",
+          "sampleUrls": [],
+          "limitation": "No Search Console data and insufficient owner-page depth for an indexable collection."
+        },
+        "homegroundInformationGain": "The eventual collection can organize route owners by pace and traveler constraints, not generate city-by-day permutations.",
+        "sourceReadiness": {
+          "status": "medium",
+          "primarySources": [],
+          "missing": "Needs collection eligibility gate, enough approved owner pages and central taxonomy approval."
+        },
+        "cannibalizationOwner": "hub-plan",
+        "freshnessClass": "low-quarterly-architecture-review",
+        "checkedAt": "2026-08-11",
+        "decision": "hold-no-public-collection",
+        "parentHub": "hub-plan",
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning", "planning-20260811-01"]
+      },
+      {
+        "candidateId": "stay-20260811-01",
+        "workingTitle": "Can Foreigners Stay in Any Hotel in China? Booking, Registration and Refusal Recovery",
+        "action": "new-page",
+        "section": "stay",
+        "primaryCollectionId": "stay-access-foreign-guests",
+        "targetIntent": "execute",
+        "queryCluster": ["can foreigners stay in any hotel in china", "china hotel accepts foreigners", "hotel refused foreigner china", "china hotel registration passport", "booking hotel china foreign guest"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["task-hotel-check-in-registration", "task-hotel-refusal-recovery", "audience-foreign-visitor"],
+        "pageFamily": "task",
+        "taskMode": "choose-and-recover",
+        "artifactShape": "task-recovery-guide",
+        "status": "proposed-approved-pending-central",
+        "ownerPool": "employee-5-stay",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 23,
+          "realCoverageGap": 14,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 15,
+          "internalLinkKnowledgeNetworkValue": 15,
+          "maintenanceCostAndRisk": 6,
+          "total": 88
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers ask how to know whether a hotel accepts foreign guests and report real check-in refusals despite bookings.",
+          "urls": ["https://www.reddit.com/r/travelchina/comments/1mlmvoe/how_do_i_know_that_booked_hotels_takes_foreigners/", "https://www.reddit.com/r/China/comments/1u8wjkc/refused_a_hotel_because_im_foreign/", "https://www.reddit.com/r/traveltochinamainland/comments/1tlw8n7/booking_china_hotels_on_tripcom_are_the_listings/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate",
+          "observation": "Third-party guides explain the policy, but a strong task page can separate the legal rule from platform labels and provide a calm, current refusal-recovery sequence.",
+          "sampleUrls": ["https://chinatravelmadeeasy.com/guides/hotels-foreigners-china/", "https://gochinafreely.com/essentials/checking-into-chinese-hotels-policies-registration", "https://aboutchina.info/how-to-book-hotels-in-china-as-a-foreigner-best-apps-tips-2026-guide/"],
+          "limitation": "No Search Console or keyword-volume data."
+        },
+        "homegroundInformationGain": "Homeground can connect booking checks, passport registration, what to show the desk, escalation wording, platform support and backup lodging—without repeating generic hotel-selection advice.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": ["https://www.gov.cn/hudong/202405/content_6952770.htm?show_loading=0&webview_progress_bar=1", "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html", "https://en.nia.gov.cn/n147423/n147478/n147715/c158241/content.html", "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240529/6ff842313deb45e1b14cf5fd2a01d065.html"],
+          "missing": "Legal/policy language and recovery contacts must be checked immediately before approval."
+        },
+        "cannibalizationOwner": "stay-20260811-01",
+        "freshnessClass": "critical-on-policy-or-platform-change",
+        "checkedAt": "2026-08-11",
+        "decision": "pool-approved-pending-central",
+        "parentHub": "hub-stay",
+        "suggestedInternalLinks": ["why-are-hotels-in-china-so-cheap", "beijing-where-to-stay-first-trip", "china-hotel-near-metro", "china-last-night-before-international-flight"]
+      },
+      {
+        "candidateId": "stay-20260811-02",
+        "workingTitle": "Airport Hotel or City Hotel for Your Last Night in China?",
+        "action": "merge",
+        "section": "plan",
+        "primaryCollectionId": "plan-budget-pace-decisions",
+        "targetIntent": "plan",
+        "queryCluster": ["airport hotel or city hotel china last night", "where to stay before china international flight", "last night hotel near airport china"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["task-international-departure", "entity-airport-hotel"],
+        "pageFamily": "combined-decision",
+        "taskMode": "compare",
+        "artifactShape": "decision-module",
+        "status": "merge-required",
+        "ownerPool": "employee-5-stay",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 17,
+          "realCoverageGap": 7,
+          "sourceAvailability": 12,
+          "homegroundInformationGain": 5,
+          "internalLinkKnowledgeNetworkValue": 13,
+          "maintenanceCostAndRisk": 8,
+          "total": 62
+        },
+        "demandEvidence": {
+          "qualitative": "The lodging decision is a subproblem of the already drafted departure-city and same-day connection decision.",
+          "urls": ["https://www.reddit.com/r/travelchina/comments/1r7zjjz/china_itinerary_check_in_may/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-as-a-separate-page",
+          "observation": "Homeground’s in-production last-night guide explicitly owns departure buffer and airport-hotel synonyms.",
+          "sampleUrls": [],
+          "limitation": "No Search Console data."
+        },
+        "homegroundInformationGain": "Add a decision table to the last-night owner; a separate stay URL would split one continuous departure task.",
+        "sourceReadiness": {
+          "status": "medium-high",
+          "primarySources": [],
+          "missing": "Parent draft should use airport-specific examples only as examples, not spawn child pages."
+        },
+        "cannibalizationOwner": "china-last-night-before-international-flight",
+        "freshnessClass": "medium-before-launch-quarterly",
+        "checkedAt": "2026-08-11",
+        "decision": "merge-into-owner-do-not-create",
+        "parentHub": "hub-plan",
+        "suggestedInternalLinks": ["china-last-night-before-international-flight", "china-hotel-near-metro"]
+      },
+      {
+        "candidateId": "stay-20260811-03",
+        "workingTitle": "Best Hotel Booking Apps in China for Foreign Travelers",
+        "action": "update-existing",
+        "section": "stay",
+        "primaryCollectionId": "stay-access-foreign-guests",
+        "targetIntent": "execute",
+        "queryCluster": ["best hotel booking app china foreigners", "trip.com hotels accept foreigners", "book china hotel foreign guest"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["task-hotel-booking", "audience-foreign-visitor"],
+        "pageFamily": "task",
+        "taskMode": "choose-and-execute",
+        "artifactShape": "comparison-module",
+        "status": "update-owner-only",
+        "ownerPool": "employee-5-stay",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 20,
+          "realCoverageGap": 10,
+          "sourceAvailability": 9,
+          "homegroundInformationGain": 7,
+          "internalLinkKnowledgeNetworkValue": 13,
+          "maintenanceCostAndRisk": 5,
+          "total": 64
+        },
+        "demandEvidence": {
+          "qualitative": "Travelers question whether booking-platform listings guarantee foreign-guest acceptance.",
+          "urls": ["https://www.reddit.com/r/traveltochinamainland/comments/1tlw8n7/booking_china_hotels_on_tripcom_are_the_listings/", "https://www.reddit.com/r/travelchina/comments/1mlmvoe/how_do_i_know_that_booked_hotels_takes_foreigners/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-to-moderate",
+          "observation": "Comparison pages are easy to make but volatile and affiliate-heavy. The user’s real task is booking confidence and refusal recovery, owned by stay-20260811-01 if centrally approved.",
+          "sampleUrls": ["https://aboutchina.info/how-to-book-hotels-in-china-as-a-foreigner-best-apps-tips-2026-guide/"],
+          "limitation": "No platform account data, conversion data or keyword volume."
+        },
+        "homegroundInformationGain": "A non-ranked platform checklist can live inside the foreign-hotel task owner and the existing hotel-value guide; a standalone ‘best apps’ page would age quickly.",
+        "sourceReadiness": {
+          "status": "medium-low",
+          "primarySources": [],
+          "missing": "Needs current platform-policy checks and a clear no-affiliate-bias standard."
+        },
+        "cannibalizationOwner": "stay-20260811-01",
+        "freshnessClass": "critical-on-platform-change",
+        "checkedAt": "2026-08-11",
+        "decision": "update-approved-owner-if-created-otherwise-hold",
+        "parentHub": "hub-stay",
+        "suggestedInternalLinks": ["stay-20260811-01", "why-are-hotels-in-china-so-cheap", "beijing-where-to-stay-first-trip"]
+      },
+      {
+        "candidateId": "essentials-20260811-01",
+        "workingTitle": "China eSIM or Local SIM? Choose Data, a Local Number or Both",
+        "action": "new-page",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-payments-connectivity",
+        "targetIntent": "compare",
+        "queryCluster": ["china esim vs local sim", "do i need china phone number", "esim and chinese sim together", "china tourist data local number"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["connectivity-esim", "connectivity-local-sim", "task-local-phone-number"],
+        "pageFamily": "comparison",
+        "taskMode": "choose-and-execute",
+        "artifactShape": "decision-guide",
+        "status": "proposed-approved-pending-central",
+        "ownerPool": "employee-6-entry-practical",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 24,
+          "realCoverageGap": 15,
+          "sourceAvailability": 13,
+          "homegroundInformationGain": 15,
+          "internalLinkKnowledgeNetworkValue": 15,
+          "maintenanceCostAndRisk": 6,
+          "total": 88
+        },
+        "demandEvidence": {
+          "qualitative": "Recent traveler questions explicitly compare eSIM and physical SIM, and ask whether both are needed for data plus a Chinese number.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1ryxvws/esim_vs_physical_sim_in_china_are_there/", "https://www.reddit.com/r/chinatravel/comments/1vg5hdq/esim_and_chinese_physical_sim_at_the_same_time/", "https://www.reddit.com/r/chinatravel/comments/1tgeijb/esim_vs_sim_card/", "https://www.reddit.com/r/chinatravel/comments/1unj0rr/is_it_possible_to_get_both_an_esim_and_a_china/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "moderate",
+          "observation": "Many results sell eSIMs. The defensible gap is a vendor-neutral task decision around data routing, local-number needs, device support, app verification and fallback—not a provider ranking.",
+          "sampleUrls": [],
+          "limitation": "No keyword volume, affiliate conversion data or exhaustive carrier plan feed."
+        },
+        "homegroundInformationGain": "Homeground can map connectivity choices to real downstream tasks: payments, ride-hailing, hotel contact, ticket accounts, SMS and recovery, with a two-SIM decision tree.",
+        "sourceReadiness": {
+          "status": "medium-high",
+          "primarySources": ["https://www.10086.cn/support/service/foreign/"],
+          "missing": "Requires device/roaming caveats, current carrier verification and no universal claim about blocked services."
+        },
+        "cannibalizationOwner": "essentials-20260811-01",
+        "freshnessClass": "critical-on-carrier-device-or-platform-change",
+        "checkedAt": "2026-08-11",
+        "decision": "pool-approved-pending-central",
+        "parentHub": "hub-essentials",
+        "suggestedInternalLinks": ["how-to-pay-in-china-as-a-tourist", "stay-20260811-01", "system-entry-requirements", "china-high-speed-train-first-time-guide"]
+      },
+      {
+        "candidateId": "essentials-20260811-02",
+        "workingTitle": "China Entry Eligibility Checker by Passport, Purpose and Route",
+        "action": "tool",
+        "section": "tools",
+        "primaryCollectionId": "tools-maps-calculators-reference",
+        "targetIntent": "execute",
+        "queryCluster": ["do i need visa for china", "china visa free eligibility checker", "china transit eligibility by route", "china entry rules passport purpose route"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["policy-china-entry", "policy-240-hour-transit"],
+        "pageFamily": "tool",
+        "taskMode": "check-and-execute",
+        "artifactShape": "eligibility-checker",
+        "status": "held-legal-data-owner-required",
+        "ownerPool": "employee-6-entry-practical",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 25,
+          "realCoverageGap": 12,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 12,
+          "internalLinkKnowledgeNetworkValue": 15,
+          "maintenanceCostAndRisk": 3,
+          "total": 82
+        },
+        "demandEvidence": {
+          "qualitative": "The existing entry cluster demonstrates a high-consequence passport/purpose/route task, but no Search Console data is available to quantify demand.",
+          "urls": ["https://homegroundchina.com/guides/china-entry-requirements/", "https://homegroundchina.com/guides/china-240-hour-visa-free-transit-route-check/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "useful-structure-high-risk",
+          "observation": "A structured checker can reduce navigation burden across the six existing entry owners, but any stale or overconfident output has legal and travel consequences.",
+          "sampleUrls": [],
+          "limitation": "No complete machine-readable official eligibility dataset and no approved legal monitoring SLA."
+        },
+        "homegroundInformationGain": "A checker could route users to the correct canonical owner and show which fact controls the answer, while preserving official-source links and uncertainty.",
+        "sourceReadiness": {
+          "status": "high-for-sources-not-for-operations",
+          "primarySources": ["https://en.nia.gov.cn/n147418/n147463/index.html", "https://www.nia.gov.cn/n794014/n1050181/n1050484/c1731205/content.html", "https://us.china-embassy.gov.cn/eng/lsfw/zj/notice/202412/t20241224_11516392.htm"],
+          "missing": "Named legal data owner, change monitoring, versioned rules, test cases, disclaimer and fail-closed behavior."
+        },
+        "cannibalizationOwner": "system-entry-requirements",
+        "freshnessClass": "critical-continuous-legal-monitoring",
+        "checkedAt": "2026-08-11",
+        "decision": "hold-no-build-until-legal-data-owner",
+        "parentHub": "hub-tools",
+        "suggestedInternalLinks": ["system-entry-requirements", "do-us-citizens-need-visa-china-2026", "china-visa-free-uk-citizens-2026", "china-visa-free-canadian-citizens-2026", "china-visa-free-new-zealand-citizens-2026", "china-240-hour-visa-free-transit-route-check", "do-singaporeans-need-visa-china"]
+      },
+      {
+        "candidateId": "essentials-20260811-03",
+        "workingTitle": "Alipay or WeChat Pay for Tourists: Which Should You Set Up?",
+        "action": "merge",
+        "section": "essentials",
+        "primaryCollectionId": "essentials-payments-connectivity",
+        "targetIntent": "execute",
+        "queryCluster": ["alipay vs wechat pay tourists", "which payment app china traveler", "alipay or wechat china"],
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": ["payment-alipay", "payment-wechat-pay"],
+        "pageFamily": "task",
+        "taskMode": "choose-and-execute",
+        "artifactShape": "comparison-module",
+        "status": "merge-required",
+        "ownerPool": "employee-6-entry-practical",
+        "priorityBreakdown": {
+          "userTaskAndDemandEvidence": 25,
+          "realCoverageGap": 9,
+          "sourceAvailability": 15,
+          "homegroundInformationGain": 4,
+          "internalLinkKnowledgeNetworkValue": 14,
+          "maintenanceCostAndRisk": 5,
+          "total": 72
+        },
+        "demandEvidence": {
+          "qualitative": "Recent traveler questions repeatedly ask which payment app is best and what backup is needed.",
+          "urls": ["https://www.reddit.com/r/chinatravel/comments/1v8qwgw/traveling_to_china_and_payment_methods/", "https://www.reddit.com/r/travelchina/comments/1qwgjuc/wechat_or_alipaywhat_many_travelers_often_get/", "https://www.reddit.com/r/travelchina/comments/1vi7k49/what_is_the_best_approach_when_it_comes_to/"],
+          "searchConsole": "unavailable",
+          "keywordVolume": "unavailable"
+        },
+        "serpGap": {
+          "assessment": "low-as-a-separate-page",
+          "observation": "The exact comparison is served by current guides and is explicitly owned by Homeground’s now-published complete payment-stack guide.",
+          "sampleUrls": ["https://chinatravelradar.com/en/pay/alipay-vs-wechat-pay/", "https://gochinafreely.com/essentials/alipay-vs-wechat-pay-china-tourists"],
+          "limitation": "No query-volume data."
+        },
+        "homegroundInformationGain": "The useful answer is not one winner; it is setup order, redundancy, cash/card fallback and failure recovery, all already within the parent draft’s scope.",
+        "sourceReadiness": {
+          "status": "high",
+          "primarySources": ["https://www.pbc.gov.cn/en/3688253/3689006/5300530/2024032216572428952.pdf", "https://www.pbc.gov.cn/en/3688229/3688353/3688356/5188141/2025080817502580217/2024070415211316142.pdf"],
+          "missing": "Refresh platform behavior and foreign-card support immediately before launch."
+        },
+        "cannibalizationOwner": "how-to-pay-in-china-as-a-tourist",
+        "freshnessClass": "critical-before-launch-and-on-platform-change",
+        "checkedAt": "2026-08-11",
+        "decision": "merge-into-owner-do-not-create",
+        "parentHub": "hub-essentials",
+        "suggestedInternalLinks": ["how-to-pay-in-china-as-a-tourist", "essentials-20260811-01"]
+      }
+    ]
+  },
+  "queues": {
+    "mergeAndUpdate": [
+      {
+        "sourcePath": "/china-visa-free-uk-canada/",
+        "action": "merge",
+        "canonicalOwner": "system-entry-requirements",
+        "status": "already-merged-canonical-shell",
+        "include": ["legacy inbound links only"],
+        "reason": "The live legacy path is noindex/follow, absent from the sitemap and canonicalized to /guides/china-entry-requirements/. Do not restore it as an identity."
+      },
+      {
+        "sourceCandidateId": "transport-20260811-02",
+        "action": "update-existing",
+        "canonicalOwner": "china-high-speed-train-first-time-guide",
+        "include": ["arrival buffer", "station security time", "large-station walking", "luggage and family scenarios"],
+        "reason": "The published national rail guide already owns tickets, stations and boarding."
+      },
+      {
+        "sourceCandidateId": "destination-20260811-03",
+        "action": "merge",
+        "canonicalOwner": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "include": ["best arrival time", "which gate", "half-day route", "crowd and heat caveats"],
+        "reason": "Operational detail is required to make the existing venue comparison actionable."
+      },
+      {
+        "sourceCandidateId": "culture-20260811-02",
+        "action": "update-existing",
+        "canonicalOwner": "hub-culture",
+        "include": ["tea-house format selector FAQ"],
+        "reason": "Hold as a bounded hub/FAQ module until regional scope and repeated demand justify a canonical page."
+      },
+      {
+        "sourceCandidateId": "culture-20260811-03",
+        "action": "merge",
+        "canonicalOwner": "how-guangzhou-morning-tea-works",
+        "include": ["ordering", "sharing", "tea cues", "paying", "etiquette"],
+        "reason": "Yum cha, dim sum and Guangzhou morning-tea etiquette are one content identity."
+      },
+      {
+        "sourceCandidateId": "planning-20260811-02",
+        "action": "update-existing",
+        "canonicalOwner": "is-your-china-itinerary-too-rushed",
+        "include": ["7 vs 10 vs 14 day decision table", "city-count guardrails", "links to exact route owners"],
+        "reason": "The generic trip-length task is already owned by the itinerary-pace page."
+      },
+      {
+        "sourceCandidateId": "stay-20260811-02",
+        "action": "merge",
+        "canonicalOwner": "china-last-night-before-international-flight",
+        "include": ["airport hotel vs city hotel decision table"],
+        "reason": "Hotel location is a subdecision within the departure-buffer task."
+      },
+      {
+        "sourceCandidateId": "stay-20260811-03",
+        "action": "update-existing",
+        "canonicalOwner": "stay-20260811-01",
+        "include": ["platform checklist", "foreign-guest acceptance verification", "support escalation"],
+        "reason": "The real task is booking confidence and refusal recovery, not a volatile standalone app ranking. If stay-20260811-01 is not centrally approved, hold this module rather than attach it to a different owner."
+      },
+      {
+        "sourceCandidateId": "essentials-20260811-03",
+        "action": "merge",
+        "canonicalOwner": "how-to-pay-in-china-as-a-tourist",
+        "include": ["Alipay vs WeChat setup order", "redundancy", "cash and card fallback", "failure recovery"],
+        "reason": "The published payment guide already owns the complete payment stack."
+      }
+    ],
+    "rejected": [
+      {
+        "id": "destination-20260811-02",
+        "pattern": "Mutianyu vs Badaling as a generic comparison",
+        "reason": "Exact SERP saturation and no owned field-evidence advantage. Reconsider only with a verified Homeground transfer/mobility/crowd dataset."
+      },
+      {
+        "id": "reject-nationality-template-expansion",
+        "pattern": "One visa page per additional nationality",
+        "reason": "Do not scale the UK/Canada/New Zealand pattern without distinct legal task evidence, official sources and a monitoring owner. Route to system-entry-requirements."
+      },
+      {
+        "id": "reject-city-transit-hours",
+        "pattern": "240-hour visa-free transit pages by city or airport",
+        "reason": "The route rule—not city wording—is the task owner. Merge examples into china-240-hour-visa-free-transit-route-check."
+      },
+      {
+        "id": "reject-city-month-audience-matrix",
+        "pattern": "city × month × audience pages",
+        "reason": "Permutation does not establish a new task. Use timing owners and destination sections."
+      },
+      {
+        "id": "reject-city-days-party-matrix",
+        "pattern": "city × trip length × group type pages",
+        "reason": "Use the route/pace owner and only create a page when the decision changes materially."
+      },
+      {
+        "id": "reject-zhangjiajie-duration-splits",
+        "pattern": "Separate Zhangjiajie 2-day, 3-day and 4-day pages",
+        "reason": "All duration variants belong to zhangjiajie-itinerary."
+      },
+      {
+        "id": "reject-zhangjiajie-show-splits",
+        "pattern": "One thin page per Zhangjiajie night show",
+        "reason": "The visitor task is to compare three shows; best-zhangjiajie-night-show owns it."
+      },
+      {
+        "id": "reject-corridor-mode-splits",
+        "pattern": "Separate train and flight pages for the Beijing–Zhangjiajie–Shanghai corridor",
+        "reason": "beijing-zhangjiajie-shanghai-transport owns the relationship and mode decision."
+      },
+      {
+        "id": "reject-generic-tour-guide-variants",
+        "pattern": "Tour guide worth-it pages by city or traveler type",
+        "reason": "do-you-need-a-tour-guide-in-china owns the service decision; Kevin’s guide owns operational preparation."
+      },
+      {
+        "id": "reject-hotel-price-permutations",
+        "pattern": "city × hotel star × month price pages",
+        "reason": "Volatile, low-information permutations belong in the national hotel-value and trip-cost owners."
+      },
+      {
+        "id": "reject-morning-tea-synonyms",
+        "pattern": "Separate yum cha, dim sum and Guangzhou morning-tea etiquette pages",
+        "reason": "They are one in-production content identity."
+      },
+      {
+        "id": "reject-october-city-sprawl",
+        "pattern": "One October or Golden Week page per city",
+        "reason": "china-in-october-golden-week-or-later owns the national timing decision; city examples are sections."
+      }
+    ],
+    "pendingUpdates": [
+      {
+        "owner": "system-entry-requirements",
+        "priority": "P0",
+        "change": "Resolve metadata-source discrepancy: the sitemap/warehouse node reports 2026-07-24 while live JSON-LD reports dateModified 2026-07-28 and no datePublished.",
+        "authorization": "central scheduling required; no page change made in this task"
+      },
+      {
+        "owner": "china-high-speed-train-first-time-guide",
+        "priority": "P1-live-update",
+        "change": "Fold transport-20260811-02 arrival-buffer scenarios into the published owner; do not create a new URL.",
+        "authorization": "central approval required"
+      },
+      {
+        "owner": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "priority": "P1-before-launch",
+        "change": "Fold destination-20260811-03 gate, timing and half-day route detail into the existing draft.",
+        "authorization": "central approval required"
+      },
+      {
+        "owner": "how-guangzhou-morning-tea-works",
+        "priority": "P1-before-launch",
+        "change": "Ensure ordering, sharing, paying and etiquette cover culture-20260811-03; do not split synonyms.",
+        "authorization": "central approval required"
+      },
+      {
+        "owner": "china-last-night-before-international-flight",
+        "priority": "P1-before-launch",
+        "change": "Add airport-hotel versus city-hotel logic from stay-20260811-02.",
+        "authorization": "central approval required"
+      },
+      {
+        "owner": "how-to-pay-in-china-as-a-tourist",
+        "priority": "P0-live-update",
+        "change": "Refresh the published owner’s platform behavior and absorb essentials-20260811-03; retain cash/card/failure fallback.",
+        "authorization": "central approval required"
+      },
+      {
+        "owner": "is-your-china-itinerary-too-rushed",
+        "priority": "P2",
+        "change": "If the route checker is centrally approved, add the 7/10/14-day decision module and link to it; do not create a generic duration page.",
+        "authorization": "central approval required"
+      },
+      {
+        "owner": "why-are-hotels-in-china-so-cheap",
+        "priority": "P2",
+        "change": "Keep hotel-value claims current. Do not absorb stay-20260811-03; that module remains held unless stay-20260811-01 is centrally approved.",
+        "authorization": "central approval required"
+      }
+    ],
+    "dynamicFactReview": [
+      {
+        "id": "dynamic-entry-cluster",
+        "owners": ["system-entry-requirements", "do-us-citizens-need-visa-china-2026", "china-visa-free-uk-citizens-2026", "china-visa-free-canadian-citizens-2026", "china-visa-free-new-zealand-citizens-2026", "china-240-hour-visa-free-transit-route-check", "do-singaporeans-need-visa-china"],
+        "priority": "P0-critical",
+        "facts": ["eligibility", "allowed purpose", "stay length", "port and region scope", "third-country route logic", "passport and onward-ticket evidence"],
+        "trigger": "official NIA, embassy or State Council source change; mandatory before any release",
+        "lastKnownReviewRange": "2026-07-24 to 2026-07-28",
+        "status": "review-due-now"
+      },
+      {
+        "id": "dynamic-production-airports",
+        "owners": ["guangzhou-baiyun-airport-t2-t3", "pudong-airport-to-shanghai-disneyland"],
+        "priority": "P0-before-launch",
+        "facts": ["terminal assignments", "closed terminal claims", "airport-link service", "metro/intercity access", "taxi and late-arrival fallback"],
+        "trigger": "airport or transport-operator change and immediately before launch",
+        "lastKnownReviewRange": "2026-08-10",
+        "status": "locked-in-production-review-before-launch"
+      },
+      {
+        "id": "dynamic-rail",
+        "owners": ["china-high-speed-train-first-time-guide", "china-night-train-or-daytime-high-speed-rail"],
+        "priority": "P0-live-and-before-launch",
+        "facts": ["booking windows", "passport process", "luggage rules", "boarding cutoffs", "train products and timetables"],
+        "trigger": "China Railway/12306 process change; immediately for the live HSR owner and before launch for the night-train draft",
+        "lastKnownReviewRange": "2026-08-10",
+        "status": "split-state-hsr-live-night-train-in-production"
+      },
+      {
+        "id": "dynamic-live-october",
+        "owners": ["china-in-october-golden-week-or-later"],
+        "priority": "P0-live-annual",
+        "facts": ["holiday dates", "ticket release timing", "attraction closures", "crowd and weather framing"],
+        "trigger": "annual calendar publication or material holiday/closure change",
+        "lastKnownReviewRange": "2026-08-10",
+        "status": "published-monitor"
+      },
+      {
+        "id": "dynamic-live-payments-connectivity",
+        "owners": ["how-to-pay-in-china-as-a-tourist", "essentials-20260811-01"],
+        "priority": "P0-live-and-if-candidate-approved",
+        "facts": ["foreign-card support", "identity verification", "transaction limits", "cash/card fallback", "carrier plans", "device and SIM behavior"],
+        "trigger": "platform, regulator, carrier or device-policy change; same-week check for any update or approved connectivity draft",
+        "lastKnownReviewRange": "2026-08-10 for the now-live payment owner; connectivity candidate checked 2026-08-11",
+        "status": "published-owner-monitor-plus-candidate-gate"
+      },
+      {
+        "id": "dynamic-production-panda",
+        "owners": ["chengdu-panda-base-or-dujiangyan-panda-valley"],
+        "priority": "P1-before-launch",
+        "facts": ["opening and reservation", "entrances", "animal visibility timing", "transport access"],
+        "trigger": "venue notice or immediately before launch",
+        "lastKnownReviewRange": "2026-08-10",
+        "status": "locked-in-production-review-before-launch"
+      },
+      {
+        "id": "dynamic-live-cost-and-stay",
+        "owners": ["how-much-does-a-china-trip-cost", "why-are-hotels-in-china-so-cheap"],
+        "priority": "P1-high",
+        "facts": ["price examples", "exchange-rate framing", "hotel platform and value claims"],
+        "trigger": "material price/platform change or quarterly review",
+        "lastKnownReviewRange": "2026-08-02 to 2026-08-09",
+        "status": "monitor"
+      },
+      {
+        "id": "dynamic-live-zhangjiajie-products",
+        "owners": ["best-zhangjiajie-night-show", "zhangjiajie-from-malaysia", "beijing-zhangjiajie-shanghai-transport"],
+        "priority": "P1-high",
+        "facts": ["show schedules and availability", "flight/rail access", "transport timetable examples"],
+        "trigger": "operator or timetable change",
+        "lastKnownReviewRange": "2026-07-22 to 2026-07-28",
+        "status": "review-due"
+      },
+      {
+        "id": "dynamic-approved-forbidden-city",
+        "owners": ["destination-20260811-01"],
+        "priority": "P0-if-centrally-approved",
+        "facts": ["reservation", "foreign-passport handling", "entrance/exit", "closure calendar", "linked Tiananmen requirements"],
+        "trigger": "same-week official check before drafting and again before launch",
+        "lastKnownReviewRange": "candidate checked 2026-08-11",
+        "status": "no-work-until-central-approval"
+      },
+      {
+        "id": "dynamic-approved-foreign-hotels",
+        "owners": ["stay-20260811-01"],
+        "priority": "P0-if-centrally-approved",
+        "facts": ["legal accommodation rule", "temporary accommodation registration", "platform labels", "refusal recovery and contact path"],
+        "trigger": "same-week official check before drafting and on policy/platform change",
+        "lastKnownReviewRange": "candidate checked 2026-08-11",
+        "status": "no-work-until-central-approval"
+      }
+    ]
+  },
+  "queryTaskOwnership": [
+    {
+      "cluster": "Zhangjiajie trip length and 2/3/4-day itineraries",
+      "canonicalOwner": "zhangjiajie-itinerary",
+      "doNotSplit": ["2 days", "3 days", "4 days", "first trip duration variants"]
+    },
+    {
+      "cluster": "Malaysia-to-Zhangjiajie planning",
+      "canonicalOwner": "zhangjiajie-from-malaysia",
+      "doNotSplit": ["Kuala Lumpur variant", "Penang variant", "duration variants"]
+    },
+    {
+      "cluster": "Zhangjiajie glass bridge versus skywalk",
+      "canonicalOwner": "zhangjiajie-glass-bridge-vs-skywalk",
+      "doNotSplit": ["one attraction page per side of the comparison"]
+    },
+    {
+      "cluster": "Zhangjiajie night-show choice",
+      "canonicalOwner": "best-zhangjiajie-night-show",
+      "doNotSplit": ["one thin show page per performance"]
+    },
+    {
+      "cluster": "China with older parents",
+      "canonicalOwner": "china-itinerary-with-older-parents",
+      "specializedOwner": "zhangjiajie-older-travellers",
+      "boundary": "National route and pace versus Zhangjiajie-specific mobility and attraction fit."
+    },
+    {
+      "cluster": "Beijing–Zhangjiajie–Shanghai route",
+      "canonicalOwner": "beijing-zhangjiajie-shanghai-10-days",
+      "transportOwner": "beijing-zhangjiajie-shanghai-transport",
+      "boundary": "Itinerary feasibility versus corridor mode execution."
+    },
+    {
+      "cluster": "China itinerary pace and generic duration",
+      "canonicalOwner": "is-your-china-itinerary-too-rushed",
+      "toolOwnerIfApproved": "planning-20260811-01",
+      "boundary": "Editorial diagnosis remains canonical; tool calculates transfer tax and routes back to the article."
+    },
+    {
+      "cluster": "China total trip cost",
+      "canonicalOwner": "how-much-does-a-china-trip-cost",
+      "doNotSplit": ["city × days × party-size price pages", "month-specific cost pages"]
+    },
+    {
+      "cluster": "China hotel value and hotel type fit",
+      "canonicalOwner": "why-are-hotels-in-china-so-cheap",
+      "locationOwner": "china-hotel-near-metro",
+      "boundary": "Value/price explanation versus hotel-location decision rubric."
+    },
+    {
+      "cluster": "Beijing first-trip hotel area",
+      "canonicalOwner": "beijing-where-to-stay-first-trip",
+      "doNotSplit": ["one page per compared Beijing area"]
+    },
+    {
+      "cluster": "Hotels accepting foreign guests and refusal recovery",
+      "canonicalOwnerIfApproved": "stay-20260811-01",
+      "supportingOwners": ["why-are-hotels-in-china-so-cheap", "china-hotel-near-metro"]
+    },
+    {
+      "cluster": "Need for a tour guide in China",
+      "canonicalOwner": "do-you-need-a-tour-guide-in-china",
+      "processOwner": "kevin-before-the-hotel-pickup",
+      "boundary": "Service choice versus behind-the-scenes execution."
+    },
+    {
+      "cluster": "China entry by passport, purpose and route",
+      "canonicalOwner": "system-entry-requirements",
+      "specializedOwners": ["do-us-citizens-need-visa-china-2026", "china-visa-free-uk-citizens-2026", "china-visa-free-canadian-citizens-2026", "china-visa-free-new-zealand-citizens-2026", "china-240-hour-visa-free-transit-route-check", "do-singaporeans-need-visa-china"],
+      "boundary": "System collection routes the task; specialized legal owners answer only their passport or transit rule."
+    },
+    {
+      "cluster": "China high-speed rail booking, station flow, luggage and boarding",
+      "canonicalOwner": "china-high-speed-train-first-time-guide",
+      "stationChoiceOwnerIfApproved": "transport-20260811-01",
+      "boundary": "National process versus Beijing station-choice entity task."
+    },
+    {
+      "cluster": "Guangzhou Baiyun terminal choice",
+      "canonicalOwner": "guangzhou-baiyun-airport-t2-t3",
+      "doNotSplit": ["one page per terminal", "wrong-terminal recovery page"]
+    },
+    {
+      "cluster": "Pudong Airport to Shanghai Disneyland",
+      "canonicalOwner": "pudong-airport-to-shanghai-disneyland",
+      "doNotSplit": ["Airport Link-only page", "taxi-only page", "family/luggage variant pages"]
+    },
+    {
+      "cluster": "Lijiang Dayan versus Shuhe stay choice",
+      "canonicalOwner": "lijiang-old-town-or-shuhe-where-to-stay",
+      "doNotSplit": ["one page per old town"]
+    },
+    {
+      "cluster": "Chengdu Panda Base versus Dujiangyan Panda Valley",
+      "canonicalOwner": "chengdu-panda-base-or-dujiangyan-panda-valley",
+      "doNotSplit": ["best-time page", "gate page", "half-day route page"]
+    },
+    {
+      "cluster": "Guangzhou morning tea, yum cha and dim sum etiquette",
+      "canonicalOwner": "how-guangzhou-morning-tea-works",
+      "doNotSplit": ["yum cha explainer", "dim sum etiquette", "ordering module"]
+    },
+    {
+      "cluster": "Suzhou garden meaning and which garden to visit",
+      "canonicalOwner": "how-to-read-a-suzhou-garden",
+      "doNotSplit": ["best Suzhou garden comparison without a distinct task"]
+    },
+    {
+      "cluster": "Last night before an international flight",
+      "canonicalOwner": "china-last-night-before-international-flight",
+      "doNotSplit": ["airport hotel buffer", "departure-city buffer", "same-day rail connection"]
+    },
+    {
+      "cluster": "Night train versus daytime high-speed rail",
+      "canonicalOwner": "china-night-train-or-daytime-high-speed-rail",
+      "doNotSplit": ["hard versus soft sleeper as separate page", "hotel-saving angle as separate page"]
+    },
+    {
+      "cluster": "China open-jaw flight route planning",
+      "canonicalOwner": "china-open-jaw-flights-route-planning",
+      "doNotSplit": ["arrive-city variants", "depart-city variants"]
+    },
+    {
+      "cluster": "China in October and Golden Week timing",
+      "canonicalOwner": "china-in-october-golden-week-or-later",
+      "doNotSplit": ["one city × October page", "one audience × Golden Week page"]
+    },
+    {
+      "cluster": "Tourist payments in China",
+      "canonicalOwner": "how-to-pay-in-china-as-a-tourist",
+      "doNotSplit": ["Alipay versus WeChat", "cash-only", "card-only", "payment failure pages"]
+    },
+    {
+      "cluster": "China eSIM versus local SIM and local-number need",
+      "canonicalOwnerIfApproved": "essentials-20260811-01",
+      "doNotSplit": ["one page per provider", "data-only and local-number-only synonyms"]
+    },
+    {
+      "cluster": "Forbidden City foreign-visitor execution",
+      "canonicalOwnerIfApproved": "destination-20260811-01",
+      "doNotSplit": ["ticket page", "entrance page", "3-hour route page", "north-gate exit page"]
+    },
+    {
+      "cluster": "First shared meal in China",
+      "canonicalOwnerIfApproved": "culture-20260811-01",
+      "doNotSplit": ["ordering etiquette", "seating etiquette", "sharing dishes", "paying etiquette"]
+    }
+  ],
+  "poolDecisions": [
+    {
+      "ownerPool": "employee-1-transport",
+      "approvedCandidateId": "transport-20260811-01",
+      "approvedCount": 1,
+      "status": "pool-approved-pending-central",
+      "centralApprovalRequired": true,
+      "writerStartAuthorized": false
+    },
+    {
+      "ownerPool": "employee-2-destination",
+      "approvedCandidateId": "destination-20260811-01",
+      "approvedCount": 1,
+      "status": "pool-approved-pending-central",
+      "centralApprovalRequired": true,
+      "writerStartAuthorized": false
+    },
+    {
+      "ownerPool": "employee-3-culture",
+      "approvedCandidateId": "culture-20260811-01",
+      "approvedCount": 1,
+      "status": "pool-approved-pending-central",
+      "centralApprovalRequired": true,
+      "writerStartAuthorized": false
+    },
+    {
+      "ownerPool": "employee-4-planning",
+      "approvedCandidateId": "planning-20260811-01",
+      "approvedCount": 1,
+      "status": "pool-approved-pending-central",
+      "centralApprovalRequired": true,
+      "writerStartAuthorized": false
+    },
+    {
+      "ownerPool": "employee-5-stay",
+      "approvedCandidateId": "stay-20260811-01",
+      "approvedCount": 1,
+      "status": "pool-approved-pending-central",
+      "centralApprovalRequired": true,
+      "writerStartAuthorized": false
+    },
+    {
+      "ownerPool": "employee-6-entry-practical",
+      "approvedCandidateId": "essentials-20260811-01",
+      "approvedCount": 1,
+      "status": "pool-approved-pending-central",
+      "centralApprovalRequired": true,
+      "writerStartAuthorized": false
+    }
+  ]
+}
