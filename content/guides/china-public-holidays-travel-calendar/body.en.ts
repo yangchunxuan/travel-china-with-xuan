@@ -1,0 +1,295 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "lead-answer",
+      type: "lead",
+      text: "China's public-holiday calendar changes by year, and the days off are only the first layer of travel planning. Use the official dates below to find exposed intercity moves, timed attractions and hotel changes; then check each operator's live rules. The 2026 schedule is official. The 2027 schedule has not yet been published.",
+    },
+    {
+      id: "status-summary",
+      type: "comparison",
+      title: "Calendar status checked August 11, 2026",
+      columns: [
+        {
+          heading: "2026 — official",
+          body: "The State Council notice lists seven holiday periods and six compensatory workdays. The complete dates appear below.",
+        },
+        {
+          heading: "2027 — not yet published",
+          body: "No dates on this page are guessed from lunar dates, previous years or travel-platform forecasts. This page will update after the official notice appears.",
+        },
+      ],
+    },
+    {
+      id: "calendar-heading",
+      type: "heading",
+      level: 2,
+      text: "Official China public holidays in 2026",
+    },
+    {
+      id: "calendar-intro",
+      type: "paragraph",
+      text: "These are the nationwide arrangements in General Office of the State Council notice 国办发明电〔2025〕7号. A compensatory workday is a Saturday or Sunday designated as a working day; it is not an extra holiday.",
+    },
+    {
+      id: "official-calendar",
+      type: "table",
+      caption: "Official 2026 holiday periods and compensatory workdays",
+      columns: ["Holiday", "Official days off", "Length", "Compensatory workday(s)"],
+      rows: [
+        ["New Year's Day", "January 1–3", "3 days", "Sunday, January 4"],
+        ["Spring Festival", "February 15–23", "9 days", "Saturday, February 14; Saturday, February 28"],
+        ["Qingming Festival", "April 4–6", "3 days", "None listed"],
+        ["Labour Day", "May 1–5", "5 days", "Saturday, May 9"],
+        ["Dragon Boat Festival", "June 19–21", "3 days", "None listed"],
+        ["Mid-Autumn Festival", "September 25–27", "3 days", "None listed"],
+        ["National Day", "October 1–7", "7 days", "Sunday, September 20; Saturday, October 10"],
+      ],
+    },
+    {
+      id: "official-not-operator",
+      type: "callout",
+      tone: "warning",
+      title: "Official holiday does not mean universal opening hours",
+      body: "The State Council calendar tells you the nationwide days off and compensatory workdays. It does not promise that a museum opens, a restaurant closes, a hotel has rooms or a particular train has seats. Those are separate operator decisions.",
+    },
+    {
+      id: "different-effects-heading",
+      type: "heading",
+      level: 2,
+      text: "The holidays do not affect travel in the same way",
+    },
+    {
+      id: "holiday-effects",
+      type: "table",
+      caption: "What makes each holiday a different planning problem",
+      columns: ["Holiday", "Documented or structural difference", "What to examine in your route"],
+      rows: [
+        ["New Year's Day", "A short three-day break with one following Sunday converted to a workday.", "Check short leisure trips and the January 4 workday; do not treat it as a miniature Spring Festival."],
+        ["Spring Festival", "The nine-day public holiday sits inside a separate 40-day official transport season.", "Family-reunion flows, long-distance seats, business closures and recovery time on arrival."],
+        ["Qingming Festival", "A three-day period combining memorial travel and leisure travel; official transport reporting highlights routes near cemeteries and scenic areas.", "Short-distance roads, local transit and the exact attraction or memorial-area notice."],
+        ["Labour Day", "Five concentrated leisure days; the Ministry of Transport prepares across road, rail and civil aviation.", "Intercity alternatives, cancellable rooms and timed-entry capacity."],
+        ["Dragon Boat Festival", "A three-day break without a listed compensatory workday in 2026.", "Weekend-like regional trips, event-specific access and whether one tight transfer is necessary."],
+        ["Mid-Autumn Festival", "A three-day family and leisure break, separated from National Day in 2026.", "The exact September weekend and any local event rather than October assumptions."],
+        ["National Day", "Seven official days off plus two compensatory workdays, supporting nationwide leisure travel.", "Whether to keep one base, move intercity later, and protect booking-dependent days."],
+      ],
+    },
+    {
+      id: "no-ranking",
+      type: "callout",
+      tone: "neutral",
+      title: "This is not a crowd ranking",
+      body: "A national calendar cannot responsibly assign one crowd score to every city, route and hour. Trip design depends on the holiday, direction of travel, exact operator, weekend, local event and your tolerance for failed connections.",
+    },
+    {
+      id: "spring-heading",
+      type: "heading",
+      level: 2,
+      text: "Spring Festival: nine days off, but a 40-day transport season",
+    },
+    {
+      id: "spring-detail",
+      type: "paragraph",
+      text: "The Ministry of Transport set the 2026 Spring Festival travel season from February 2 to March 13. That period is much longer than the February 15–23 public holiday because family-reunion journeys spread around the official break. It is evidence to widen the transport check, not a claim that every route is equally busy for 40 days.",
+    },
+    {
+      id: "spring-checks",
+      type: "list",
+      items: [
+        "Check the direction and date of every long-distance train or flight, not only whether it falls inside February 15–23.",
+        "Confirm small-business, restaurant and tour operating dates directly; family-run businesses may make their own Spring Festival arrangements.",
+        "Do not place a non-refundable attraction immediately after an uncertain long-distance arrival.",
+        "Keep recovery time after an overnight flight or a major family-travel transfer.",
+      ],
+    },
+    {
+      id: "labour-national-heading",
+      type: "heading",
+      level: 2,
+      text: "Labour Day and National Day: protect the route, not a predicted price",
+    },
+    {
+      id: "labour-national-detail",
+      type: "paragraph",
+      text: "Five days at Labour Day and seven at National Day make long leisure trips structurally easier, so a multi-city visitor should expect fewer comfortable alternatives on popular dates. That does not support a universal hotel markup or a promise that the day after a holiday will be quiet. Location, route, room type, cancellation rule and local events still matter.",
+    },
+    {
+      id: "october-owner",
+      type: "callout",
+      tone: "decision",
+      title: "Planning an October trip? Continue to the October decision guide",
+      body: "This page owns the annual nationwide calendar. The separate October guide compares the National Day holiday with mid-to-late October, including route shape and regional weather. It does not replace this annual source of official dates.",
+    },
+    {
+      id: "system-effects-heading",
+      type: "heading",
+      level: 2,
+      text: "How holidays affect the four systems you book",
+    },
+    {
+      id: "system-effects",
+      type: "table",
+      caption: "Planning implications by booking system",
+      columns: ["System", "What the holiday calendar tells you", "What it cannot tell you", "Required check"],
+      rows: [
+        ["Intercity transport", "Which dates deserve earlier contingency planning and fewer dependent transfers.", "Live seats, fares, flight punctuality or the pressure on one direction.", "Official 12306 or airline inventory and current station/airport guidance."],
+        ["Attractions", "When holiday-specific notices and timed-entry pressure are more likely to matter.", "Whether one venue opens, closes, extends hours or changes entry gates.", "The named venue's official booking channel and current holiday notice."],
+        ["Hotels", "When flexibility and location deserve more weight in the booking decision.", "A nationwide price increase, room availability or the suitability of one room type.", "The exact property, branch, room configuration and cancellation terms."],
+        ["Businesses and tours", "When normal weekday assumptions may fail, especially around Spring Festival.", "A universal national opening schedule for private businesses.", "Direct confirmation from the operator close to travel."],
+      ],
+    },
+    {
+      id: "rail-heading",
+      type: "heading",
+      level: 3,
+      text: "Rail: the current sales window is not a seat guarantee",
+    },
+    {
+      id: "rail-detail",
+      type: "paragraph",
+      text: "China Railway's current standing rule uses a 15-day advance-sale period, including the travel date, and says the railway may adjust it with an announcement. Count from the actual journey date, confirm the release details in official 12306, and prepare acceptable alternatives. This page does not read live inventory.",
+    },
+    {
+      id: "attraction-heading",
+      type: "heading",
+      level: 3,
+      text: "Attractions: national days off and venue hours are different data",
+    },
+    {
+      id: "attraction-detail",
+      type: "paragraph",
+      text: "The Palace Museum illustrates the boundary. Its 2026 Spring Festival notice closed the museum on February 16 but listed opening arrangements for other holiday dates; its Labour Day notice opened May 1–5 with stated hours. One venue issued two date-specific rules. Never copy that rule to another museum or another year.",
+    },
+    {
+      id: "comp-workdays-heading",
+      type: "heading",
+      level: 2,
+      text: "Do not miss the compensatory workdays",
+    },
+    {
+      id: "comp-workdays-detail",
+      type: "paragraph",
+      text: "China's annual notice can move an ordinary weekend day into the working week. In 2026 those dates are January 4, February 14, February 28, May 9, September 20 and October 10. A Sunday workday may affect commuters, offices and local routines, but it does not automatically impose the same opening pattern on every attraction or private business.",
+    },
+    {
+      id: "route-method-heading",
+      type: "heading",
+      level: 2,
+      text: "Turn the calendar into a route decision",
+    },
+    {
+      id: "route-method",
+      type: "list",
+      ordered: true,
+      items: [
+        "Match every China arrival, intercity move and international departure against the official holiday and compensatory-workday dates.",
+        "For a Spring Festival trip, also match long-distance transport against the separately announced Spring Festival travel season.",
+        "Mark bookings that can break the next booking: exact trains, flights, one-night hotels and fixed-entry attractions.",
+        "Remove or delay a city change when the route has no workable alternative; one base is easier to recover than a chain of one-night stays.",
+        "Check official transport inventory, venue notices and hotel terms in their real booking windows.",
+        "Recheck the final international-departure buffer instead of relying on a same-day long domestic connection.",
+      ],
+    },
+    {
+      id: "route-pattern",
+      type: "comparison",
+      title: "Two route shapes on the same holiday dates",
+      columns: [
+        {
+          heading: "More resilient",
+          items: [
+            "One hotel base through the concentrated holiday period.",
+            "One booking-dependent anchor per day with nearby alternatives.",
+            "Cancellable room and two acceptable intercity departures.",
+            "The final night in the international departure city.",
+          ],
+        },
+        {
+          heading: "More exposed",
+          items: [
+            "A new city or hotel every one or two nights.",
+            "A fixed attraction immediately after a long transfer.",
+            "One exact seat, room type and connection with no fallback.",
+            "A same-day long-distance arrival before an international flight.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "future-heading",
+      type: "heading",
+      level: 2,
+      text: "What if your travel year is not published yet?",
+    },
+    {
+      id: "future-boundary",
+      type: "callout",
+      tone: "warning",
+      title: "2027: not yet published",
+      body: "As of August 11, 2026, the official 2027 public-holiday and compensatory-workday schedule has not yet been published. Keep the annual calendar as an unresolved planning dependency. Do not convert festival dates or last year's workdays into a booking promise.",
+    },
+    {
+      id: "update-mechanism",
+      type: "paragraph",
+      text: "This evergreen page keeps the same URL. After the General Office of the State Council publishes a new annual notice, the structured calendar, all three languages and the infographic must be updated together. Transport and attraction facts are then added only from dated official notices, with their check date and scope preserved.",
+    },
+    {
+      id: "help-cta",
+      type: "callout",
+      tone: "decision",
+      title: "Need a human check on fixed dates?",
+      body: "Leave your travel dates, number of travellers and approximate budget, plus the cities you are considering. A planner can help identify the holiday-sensitive transfers and buffers without pretending that future inventory is guaranteed.",
+    },
+    {
+      id: "more-planning",
+      type: "internal-links",
+      title: "Continue planning",
+      items: [
+        {
+          label: "Compare National Day with later October",
+          href: "/guides/china-in-october-golden-week-or-later/",
+          description: "Use the October guide for route shape, weather and the timing choice inside that month.",
+        },
+        {
+          label: "Take high-speed rail in China for the first time",
+          href: "/guides/china-high-speed-train-first-time-guide/",
+          description: "Understand passport, ticket and station steps after identifying a holiday-sensitive rail leg.",
+        },
+        {
+          label: "Check whether your itinerary is too rushed",
+          href: "/guides/is-your-china-itinerary-too-rushed/",
+          description: "Reduce the dependent city changes that make holiday disruption harder to absorb.",
+        },
+        {
+          label: "Choose the safest last night before an international flight",
+          href: "/guides/china-last-night-before-international-flight/",
+          description: "Protect the departure from a long same-day domestic connection.",
+        },
+        {
+          label: "Understand what changes the cost of a China trip",
+          href: "/guides/how-much-does-a-china-trip-cost/",
+          description: "Compare location, flexibility and booking terms instead of relying on a universal holiday markup.",
+        },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "Official sources reviewed",
+      items: [
+        { label: "2026 public-holiday schedule", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "General Office of the State Council", reviewedAt: "2026-08-11" },
+        { label: "2026 Spring Festival transport plan", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
+        { label: "2026 Qingming transport review", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
+        { label: "2026 Labour Day transport briefing", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
+        { label: "Current railway ticket rules", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "China Railway 12306", reviewedAt: "2026-08-11" },
+        { label: "Palace Museum 2026 Spring Festival notice", url: "https://www.dpm.org.cn/announce_detail/378505.html", publisher: "Palace Museum", reviewedAt: "2026-08-11" },
+        { label: "Palace Museum 2026 Labour Day notice", url: "https://www.dpm.org.cn/announce_detail/378865.html", publisher: "Palace Museum", reviewedAt: "2026-08-11" },
+      ],
+    },
+  ],
+} satisfies StructuredPageBody;
+
+export default body;
