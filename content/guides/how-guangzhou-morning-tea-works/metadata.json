@@ -1,0 +1,64 @@
+{
+  "id": "how-guangzhou-morning-tea-works",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "cultural-explainer",
+  "topics": [
+    "guangzhou-morning-tea",
+    "cantonese-food",
+    "dim-sum",
+    "tea-culture",
+    "food-etiquette",
+    "intangible-cultural-heritage"
+  ],
+  "destinations": ["guangzhou", "guangdong", "china"],
+  "heroImagePath": "/images/guides/how-guangzhou-morning-tea-works/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/how-guangzhou-morning-tea-works/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/how-guangzhou-morning-tea-works/",
+      "title": "Guangzhou Morning Tea: How Yum Cha, Dim Sum and Teahouse Etiquette Work",
+      "headline": "Guangzhou Morning Tea Is More Than Breakfast",
+      "description": "Understand what yum cha means in Guangzhou, how tea fees and dim sum ordering work, which customs are documented, and which origin stories are only legends.",
+      "heroAlt": "A table at Pan Xi Restaurant in Guangzhou with teapots, teacups, dim sum steamers and shared dishes.",
+      "navTitle": "How Guangzhou morning tea works",
+      "featuredLinkLabel": "Understand a Guangzhou yum cha table",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guangzhou", "Food culture", "Yum cha"]
+    },
+    "zh": {
+      "path": "/zh/guides/how-guangzhou-morning-tea-works/",
+      "title": "广州早茶怎么吃：饮茶、广式点心与茶楼礼俗",
+      "headline": "广州早茶不只是早餐",
+      "description": "读懂广州饮早茶：茶位费和点心怎样点，哪些礼俗有记录，哪些起源故事只是传说，以及第一次去茶楼应该注意什么。",
+      "heroAlt": "广州泮溪酒家的一张茶点桌，摆着茶壶、茶杯、点心蒸笼与共享菜品。",
+      "navTitle": "读懂广州早茶",
+      "featuredLinkLabel": "看懂一张广州早茶桌",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["广州", "地方饮食", "饮茶"]
+    },
+    "ko": {
+      "path": "/ko/guides/how-guangzhou-morning-tea-works/",
+      "title": "광저우 모닝티 가이드: 얌차·딤섬·찻집 예절",
+      "headline": "광저우 모닝티는 아침식사 그 이상이다",
+      "description": "광저우 얌차의 뜻, 차 자리 요금과 딤섬 주문 방식, 기록으로 확인되는 관습과 전설로 남은 기원 이야기, 첫 방문 요령을 설명합니다.",
+      "heroAlt": "광저우 판시 레스토랑의 식탁에 찻주전자, 찻잔, 딤섬 찜통과 함께 나눠 먹는 요리가 놓여 있다.",
+      "navTitle": "광저우 모닝티 이해하기",
+      "featuredLinkLabel": "광저우 얌차 식탁 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["광저우", "음식 문화", "얌차"]
+    }
+  }
+}
