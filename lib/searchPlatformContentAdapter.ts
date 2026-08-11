@@ -133,6 +133,8 @@ const destinationEntityIds = {
   xian: "city-xian",
   zhangjiajie: "city-zhangjiajie",
   shanghai: "city-shanghai",
+  chengdu: "city-chengdu",
+  guilin: "city-guilin",
 } as const;
 
 const localeKeys = {
@@ -152,6 +154,21 @@ const hubIntent: Record<SearchSectionId, ContentIntent> = {
   tools: "execute",
   services: "purchase",
 };
+
+/**
+ * Phase 0 editorial approvals are explicit and stable. A newly added guide can
+ * populate a review hub, but it must never make that hub indexable by itself.
+ * Any change to this list is an editorial/indexation decision and should be
+ * reviewed together with the Phase 0 baseline.
+ */
+const approvedSearchHubIds = new Set<SearchSectionId>([
+  "explore",
+  "plan",
+  "transport",
+  "stay",
+  "essentials",
+  "services",
+]);
 
 function guideEntities(
   destinations: readonly string[],
@@ -234,12 +251,7 @@ export function buildSearchHubContentNodes(): ContentNode[] {
     const sectionGuides = guideRegistry.filter(
       (guide) => guideClassification(guide).section === section,
     );
-    // ContentNode indexability is shared by its locale versions. Publish the
-    // collection only when every public language has at least one real child,
-    // so one English article cannot accidentally index empty zh/ko hubs.
-    const hasPublishedChildren = (["en", "zh", "ko"] as const).every(
-      (locale) => sectionGuides.some((guide) => Boolean(guide.locales[locale])),
-    );
+    const approvedForIndex = approvedSearchHubIds.has(section);
     const hubEditorialDate = "2026-08-09";
     const dateModified = sectionGuides.reduce(
       (latest, guide) =>
@@ -279,12 +291,15 @@ export function buildSearchHubContentNodes(): ContentNode[] {
       entityIds: ["country-china"],
       relationIds: [],
       parentContentId: "system-guides",
-      status: hasPublishedChildren ? "published" : "review",
-      indexability: hasPublishedChildren
+      status: approvedForIndex ? "published" : "review",
+      indexability: approvedForIndex
         ? { index: true, follow: true }
         : {
             index: false,
             follow: true,
+            // Preserve the reviewed Phase 0 manifest contract verbatim. The
+            // explicit approval set above prevents newly added children from
+            // changing this protected indexability state on their own.
             blockReason: "No reviewed child content in this section yet.",
           },
       locales,
@@ -294,7 +309,7 @@ export function buildSearchHubContentNodes(): ContentNode[] {
       schemaTypes: ["CollectionPage", "ItemList"],
       legacyAliases: [],
       dates: {
-        datePublished: hasPublishedChildren ? hubEditorialDate : null,
+        datePublished: approvedForIndex ? hubEditorialDate : null,
         dateModified,
         lastReviewed: hubEditorialDate,
       },

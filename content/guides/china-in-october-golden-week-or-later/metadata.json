@@ -1,0 +1,75 @@
+{
+  "id": "china-in-october-golden-week-or-later",
+  "type": "planning",
+  "pillar": "timing-holidays-crowds",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": [
+    "october-travel",
+    "national-day-holiday",
+    "holiday-crowds",
+    "transport-booking",
+    "weather",
+    "route-planning"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "shanghai",
+    "xian",
+    "chengdu",
+    "guilin",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/china-in-october-golden-week-or-later/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-in-october-golden-week-or-later/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "when-to-go",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-in-october-golden-week-or-later/",
+      "title": "China in October: Golden Week or Later? (2026)",
+      "headline": "China in October: Golden Week or Later in the Month?",
+      "description": "Compare China's 2026 Golden Week with mid-to-late October: official dates, transport, hotels, attraction bookings, weather and route choices.",
+      "heroAlt": "Visitors walking across the Bund viewing platform in Shanghai at sunset.",
+      "navTitle": "China in October",
+      "featuredLinkLabel": "Compare Golden Week with later October",
+      "openGraphLocale": "en_US",
+      "cardTags": ["October in China", "Golden Week", "Trip planning"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-in-october-golden-week-or-later/",
+      "title": "2026年十月去中国：国庆黄金周还是月中以后？",
+      "headline": "十月去中国：国庆黄金周还是月中以后？",
+      "description": "对比2026年国庆黄金周与十月中下旬：官方日期、交通与酒店、景点预约、地区天气差异，以及日期不能改时的路线设计。",
+      "heroAlt": "夕阳下，游客走在上海外滩观景平台上。",
+      "navTitle": "十月去中国",
+      "featuredLinkLabel": "比较黄金周与十月中下旬",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["十月旅行", "国庆黄金周", "行程规划"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-in-october-golden-week-or-later/",
+      "title": "2026년 10월 중국 여행: 국경절 연휴 vs 중순 이후",
+      "headline": "10월 중국 여행: 국경절 연휴와 중순 이후, 언제가 나을까?",
+      "description": "2026년 중국 국경절 연휴와 10월 중·하순을 공식 일정, 교통, 숙소, 관광지 예약, 지역별 날씨와 동선 설계로 비교합니다.",
+      "heroAlt": "해 질 무렵 상하이 와이탄 전망대를 걷는 방문객들.",
+      "navTitle": "10월 중국 여행",
+      "featuredLinkLabel": "국경절 연휴와 중순 이후 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["10월 중국", "국경절 연휴", "여행 계획"]
+    }
+  }
+}

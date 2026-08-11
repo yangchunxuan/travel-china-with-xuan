@@ -238,3 +238,39 @@ Current website derivative:
 The final 1200 × 630 JPEG was resized from the generated source and contains no
 EXIF or location metadata. The route and accessibility facts in the article
 come from the separately listed official sources, not from this illustration.
+
+For the August 10, 2026 four-guide editorial batch, the project owner explicitly
+authorised selection from the organised local `Facebook图片素材` library. The
+following metadata-stripped WebP derivatives were created with no embedded text
+or watermark:
+
+- `public/images/guides/beijing-where-to-stay-first-trip/hero-1600.webp` from
+  `北京优选素材/04_北京胡同与人文/前门老街_01.jpg`.
+- `public/images/guides/beijing-where-to-stay-first-trip/hutong-hotel-arrival-1440.webp`
+  from `北京优选素材/04_北京胡同与人文/方家胡同院门_01.jpg`. It is described only
+  as a courtyard entrance, not as a hotel.
+- `public/images/guides/beijing-where-to-stay-first-trip/qianmen-pedestrian-last-mile-1440.webp`
+  from `北京优选素材/04_北京胡同与人文/前门大街_01.jpg`. It is not presented as
+  showing hotel guests or luggage.
+- `public/images/guides/china-in-october-golden-week-or-later/hero-1600.webp`
+  from `上海优选素材/04_上海街巷与人文/外滩观景平台的游客_01.jpg`. It is not
+  labelled as a Golden Week crowd or as evidence of October weather. The
+  capture date is unknown; the local file creation timestamp is not treated as
+  a confirmed shooting date.
+- `public/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp`
+  from `杭州优选素材/08_钱江新城与现代杭州/杭州动车站人流等待出行.jpg`.
+  It is described as a Hangzhou railway-station concourse without naming a
+  specific station or assigning a train type to every passenger.
+
+These library filenames and the owner's permission establish project-entry
+provenance, not independent third-party copyright ownership. Retain the original
+photographer or license record before using them outside the Homeground website.
+
+The payment guide uses an original Homeground editorial illustration:
+
+- `public/images/guides/how-to-pay-in-china-as-a-tourist/hero-1600.webp`
+
+It was drawn as abstract vector artwork in the Homeground canvas, ink and rust
+palette and then exported to WebP. It contains a generic phone, card and cash;
+no real payment-provider logo, QR code, card number, merchant, traveller or
+transaction is depicted. It must remain identified as an illustration.

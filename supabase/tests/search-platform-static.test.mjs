@@ -101,6 +101,9 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.match(aliases, /china-visa-free-uk-canada/);
   assert.match(adapter, /parentContentId: "system-guides"/);
   assert.match(adapter, /const dateModified = sectionGuides\.reduce/);
+  assert.match(adapter, /const approvedSearchHubIds = new Set<SearchSectionId>/);
+  assert.match(adapter, /approvedSearchHubIds\.has\(section\)/);
+  assert.doesNotMatch(adapter, /hasPublishedChildren \? "published"/);
   assert.match(hubPage, /pageContext="guides"/);
   assert.match(hubPage, /position: 3/);
   assert.match(hubPage, /loading="lazy"/);

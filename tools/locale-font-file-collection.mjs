@@ -1,8 +1,12 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { extname, resolve } from "node:path";
 
-const localeFontSourceDirectories = ["app", "components", "lib"];
-const localeFontSourceExtensions = new Set([".ts", ".tsx"]);
+// Include independently authored guide sources as well as runtime code. The
+// guide registry imports bodies from content/guides without copying their text
+// into lib/generated, so scanning only app/components/lib can pass locally and
+// still leave production HTML with missing CJK glyphs.
+const localeFontSourceDirectories = ["app", "components", "lib", "content"];
+const localeFontSourceExtensions = new Set([".ts", ".tsx", ".json"]);
 const productionExportExtensions = new Set([".html", ".js"]);
 
 function comparePaths(left, right) {

@@ -97,5 +97,45 @@
         "updatedAt": "2026-08-09"
       }
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-chengdu",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Chengdu" },
+        "zh-Hans": { "name": "成都" },
+        "ko": { "name": "청두" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-10",
+        "updatedAt": "2026-08-10"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-guilin",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Guilin" },
+        "zh-Hans": { "name": "桂林" },
+        "ko": { "name": "구이린" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-10",
+        "updatedAt": "2026-08-10"
+      }
+    }
   }
 ]

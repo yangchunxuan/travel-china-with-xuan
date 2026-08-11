@@ -1,0 +1,552 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "lead-decision",
+      type: "lead",
+      text: "There is no single best area for a first stay in Beijing. The useful question is which base makes your fixed sightseeing days, arrival station and real evenings easier for the people travelling with you.",
+    },
+    {
+      id: "search-gap",
+      type: "paragraph",
+      text: "An area label or hotel list cannot answer the three questions that most often change this choice: where the Palace Museum day actually starts and finishes, which Beijing railway terminal is printed on the ticket, and how much walking the group can repeat after sightseeing. A station entrance, the last walk with luggage and the route home after dinner can all reverse the obvious answer.",
+    },
+    {
+      id: "answer-first",
+      type: "callout",
+      title: "The short answer",
+      tone: "decision",
+      body: "Wangfujing is the most balanced all-round default for a short, classic first visit. Qianmen is strongest when the southern Central Axis, Temple of Heaven or Beijing Railway Station shape the trip. Sanlitun earns the stay when modern dining and late evenings are part of several days, or when Beijing Chaoyang Railway Station matters. A northern hutong base suits travellers who value old-city atmosphere and can verify the exact lane, stairs, vehicle access and walk to the subway.",
+    },
+    {
+      id: "choice-grid",
+      type: "comparison",
+      title: "What each area improves",
+      columns: [
+        {
+          heading: "Wangfujing",
+          body: "The balanced first-trip base.",
+          items: [
+            "Useful Lines 1 and 8 access",
+            "Strong for a compact imperial-core itinerary",
+            "Broad choice of full-service hotels",
+            "Less compelling if most nights end in Sanlitun",
+          ],
+        },
+        {
+          heading: "Qianmen",
+          body: "The southern old-city base.",
+          items: [
+            "Lines 2 and 8",
+            "Good for Tiananmen, Temple of Heaven and Beijing Railway Station",
+            "Historic streets after the day crowds thin",
+            "Pedestrian lanes can add a suitcase last mile",
+          ],
+        },
+        {
+          heading: "Sanlitun",
+          body: "The evening-led modern base.",
+          items: [
+            "Restaurants, bars, shopping and contemporary Beijing",
+            "Line 3 access near Workers' Stadium",
+            "Direct rail link to Beijing Chaoyang Railway Station",
+            "More travel to the imperial and southern sights",
+          ],
+        },
+        {
+          heading: "Northern hutongs",
+          body: "The atmosphere-first base.",
+          items: [
+            "Here, this means the Shichahai–Nanluoguxiang–Drum Tower area",
+            "Good for old-city walks and the north end of a Palace day",
+            "Line 8 can be very useful",
+            "Exact address and building access matter more than the label",
+          ],
+        },
+      ],
+    },
+    {
+      id: "hutong-definition",
+      type: "paragraph",
+      text: "In this comparison, “the hutongs” does not mean every traditional lane in Beijing. It means a northern old-city stay around Shichahai, Nanluoguxiang and the Drum and Bell Towers. Qianmen and Dashilan also contain hutongs, while Beixinqiao and Dongsi have different airport and subway connections. If a booking page only says “hutong hotel,” locate the actual door before treating it as one of these four choices.",
+    },
+    {
+      id: "decision-matrix",
+      type: "table",
+      caption: "Start with the trip you are actually taking",
+      columns: ["Your trip", "First area to check", "Why", "The deciding check"],
+      rows: [
+        [
+          "Three or four classic sightseeing days; first time in China",
+          "Wangfujing",
+          "It gives the most balanced central base without making one specialist day control the whole stay.",
+          "Use the hotel's exact entrance and nearest useful Line 1 or 8 station—not the district name alone.",
+        ],
+        [
+          "Tiananmen and Temple of Heaven are priorities; arrival at Beijing Railway Station",
+          "Qianmen",
+          "Lines 2 and 8 support the southern Central Axis and the railway-station connection.",
+          "Check the real walk through pedestrian streets or lanes with bags.",
+        ],
+        [
+          "Several late dinners, bars or modern-city evenings; arrival at Beijing Chaoyang",
+          "Sanlitun",
+          "The hotel is closer to where the night ends, and Line 3 directly serves Beijing Chaoyang Railway Station.",
+          "Make sure the property is genuinely close to Workers' Stadium or another useful station.",
+        ],
+        [
+          "Old-city mornings and evenings matter more than full-service convenience",
+          "Northern hutongs",
+          "The setting becomes part of the stay, with Shichahai, the towers and neighbourhood walks nearby.",
+          "Confirm car access, stairs, sound insulation, room layout and the exact station route.",
+        ],
+        [
+          "Older parents, young children, limited walking or heavy luggage",
+          "Wangfujing or Qianmen, then judge the property",
+          "A well-run hotel with a simple curb-to-room route can matter more than a small difference on the map.",
+          "Test vehicle drop-off, lift access, crossings and the route to the station entrance you will use.",
+        ],
+        [
+          "Arrival after normal public-transport hours",
+          "The simplest staffed arrival",
+          "Late check-in and a direct vehicle drop-off become the first-night decision.",
+          "Get written confirmation of reception hours, no-show handling and the Chinese address before flying.",
+        ],
+      ],
+    },
+    {
+      id: "one-evening-rule",
+      type: "callout",
+      title: "Do not let one evening choose four nights",
+      tone: "neutral",
+      body: "One dinner in Sanlitun does not require a Sanlitun hotel, and one hutong walk does not require a courtyard room. Give the base to the pattern that repeats: early starts, late returns, a particular station or a traveller who needs a simpler last mile.",
+    },
+    {
+      id: "area-behaviour",
+      type: "heading",
+      level: 2,
+      text: "How the four areas behave in a real itinerary",
+    },
+    {
+      id: "wangfujing",
+      type: "heading",
+      level: 3,
+      text: "Wangfujing: the balanced first-trip default",
+    },
+    {
+      id: "wangfujing-copy-one",
+      type: "paragraph",
+      text: "Wangfujing works because it does not ask one part of the trip to dominate. Lines 1 and 8 give useful east–west and north–south links, the imperial core is close, and a first-time visitor can choose from conventional hotels with staffed receptions, lifts and straightforward services. It is often the easiest answer for a short Beijing stop or a first arrival in China when nobody has a strong evening preference.",
+    },
+    {
+      id: "wangfujing-copy-two",
+      type: "paragraph",
+      text: "The weak version of this choice is a hotel sold as “Wangfujing” that sits far from the station or behind a pedestrian-only approach. The shopping street itself is long, and being east of the Forbidden City is not the same as standing at its entrance. Check the hotel door, not only the map pin for Wangfujing Street.",
+    },
+    {
+      id: "qianmen",
+      type: "heading",
+      level: 3,
+      text: "Qianmen: best when the southern Central Axis shapes the trip",
+    },
+    {
+      id: "qianmen-copy-one",
+      type: "paragraph",
+      text: "Qianmen combines Lines 2 and 8 with an old-city setting south of Tiananmen Square. It is a logical base for a visitor who wants Qianmen and Dashilan in the evening, plans an early Temple of Heaven visit, or arrives at Beijing Railway Station. It also gives a direct Line 2 route toward Xizhimen and Beijing North, which can matter for a Badaling rail plan.",
+    },
+    {
+      id: "qianmen-copy-two",
+      type: "paragraph",
+      text: "Its trade-off is accumulated walking. The square, security routes, the approach to the Palace Museum and the long visit north through the complex are not one short stroll. Qianmen Street and the surrounding lanes can also put the hotel entrance beyond the taxi drop-off. This can be a rewarding base for capable walkers but a poor choice if the room is deep inside a lane and the party arrives tired with large cases.",
+    },
+    {
+      id: "sanlitun",
+      type: "heading",
+      level: 3,
+      text: "Sanlitun: choose it for repeated evenings, not vague convenience",
+    },
+    {
+      id: "sanlitun-copy-one",
+      type: "paragraph",
+      text: "Sanlitun gives the stay a different centre of gravity: modern restaurants, bars, shopping and an easier return after a late night. Since Line 3 opened, Workers' Stadium Station has improved the area's rail access, and the same line runs to Beijing Chaoyang Railway Station. That makes Sanlitun the clearest of the four choices for travellers using that station.",
+    },
+    {
+      id: "sanlitun-copy-two",
+      type: "paragraph",
+      text: "It is still east of most first-trip heritage sights. Temple of Heaven and the southern stations generally need more transfers or a longer road journey than a central Line 8 base. Sanlitun is also not a one-seat Capital Airport Express base: the airport train uses Beixinqiao, Dongzhimen and Sanyuanqiao. Choose Sanlitun because you will use Sanlitun, not because “east” sounds close to the airport.",
+    },
+    {
+      id: "northern-hutongs",
+      type: "heading",
+      level: 3,
+      text: "Northern hutongs: let the exact courtyard earn the inconvenience",
+    },
+    {
+      id: "hutong-copy-one",
+      type: "paragraph",
+      text: "A stay around Shichahai, Nanluoguxiang or the Drum and Bell Towers can give Beijing mornings and evenings that a commercial district cannot. Line 8 connects this northern old-city cluster with Wangfujing, Qianmen and Tianqiao, while the north end of a Palace Museum visit, Jingshan and Shichahai can fit naturally into the area.",
+    },
+    {
+      id: "hutong-copy-two",
+      type: "paragraph",
+      text: "But “courtyard” is an architectural promise, not an accessibility standard. A room may sit down a narrow lane, behind steps, in a building without a lift or farther from a station than the listing implies. Room size, bathroom layout, sound insulation and vehicle access vary property by property. This option works best when atmosphere is a real priority and the exact arrival route has been checked with the same care as the room.",
+    },
+    {
+      id: "hutong-arrival-photo",
+      type: "figure",
+      src: "/images/guides/beijing-where-to-stay-first-trip/hutong-hotel-arrival-1440.webp",
+      alt: "A stepped courtyard entrance in Beijing's Fangjia Hutong.",
+      width: 1440,
+      height: 960,
+      caption: "Steps and thresholds are why a courtyard stay should be checked property by property, not chosen from the word “hutong” alone.",
+    },
+    {
+      id: "map-traps",
+      type: "heading",
+      level: 2,
+      text: "Three map traps that can change the answer",
+    },
+    {
+      id: "forbidden-city-route",
+      type: "heading",
+      level: 3,
+      text: "1. The Forbidden City is a route, not a nearby pin",
+    },
+    {
+      id: "forbidden-copy-one",
+      type: "paragraph",
+      text: "The Palace Museum's visitor entrance is Wumen, the Meridian Gate, on the south side. Shenwumen in the north and Donghuamen in the east are exits. That makes a normal visit a south-to-north or south-to-east movement through a complex that is almost a kilometre long. A northern hutong hotel may be convenient after the visit but still awkward for the morning entrance; Qianmen helps at the start but not necessarily at the end.",
+    },
+    {
+      id: "forbidden-copy-two",
+      type: "paragraph",
+      text: "Wangfujing looks immediately beside the Palace on a map, yet the museum's own directions describe an 800-metre walk from Wangfujing to Donghuamen—and Donghuamen is not the entrance. Add the route to Wumen, security arrangements and the walking inside before calling any hotel “walkable to the Forbidden City.”",
+    },
+    {
+      id: "palace-luggage",
+      type: "callout",
+      title: "Do not make this a casual luggage day",
+      tone: "warning",
+      body: "Suitcases are prohibited inside the Palace Museum. Its visitor service can receive large bags near the south approach and transfer them for collection outside a designated exit, but the simpler plan is usually to leave luggage with the hotel and avoid placing a Palace visit between two hotel check-ins.",
+    },
+    {
+      id: "temple-of-heaven-route",
+      type: "heading",
+      level: 3,
+      text: "2. Temple of Heaven convenience depends on the gate",
+    },
+    {
+      id: "temple-copy",
+      type: "paragraph",
+      text: "The official access points include Tiantandongmen Station on Line 5 for the east gate and Tianqiao Station on Line 8 for the west side. From Qianmen station, the Line 8 ride is the shortest of these four options; Wangfujing station and the northern hutong cluster's Line 8 stations also offer a direct ride. But the park covers 273 hectares and its main sights form a long internal route. A nearby station does not remove the walking, so choose the entry and exit gates before judging the hotel journey for parents or children.",
+    },
+    {
+      id: "great-wall-route",
+      type: "heading",
+      level: 3,
+      text: "3. “The Great Wall departure point” is not one place",
+    },
+    {
+      id: "great-wall-copy",
+      type: "paragraph",
+      text: "A public trip to Mutianyu can begin through Dongzhimen. Badaling high-speed options commonly use Beijing North or Qinghe, while suburban services follow a separate timetable; confirm the actual departure station and train in the live China Railway 12306 timetable for your date. A private car starts at the hotel, and a coach uses its own meeting point. Choose the Wall section and transport method first, then test the hotel-to-departure journey. Do not move the whole stay to Qianmen or Sanlitun because one tour listing currently shows a pickup there.",
+    },
+    {
+      id: "central-last-mile-photo",
+      type: "figure",
+      src: "/images/guides/beijing-where-to-stay-first-trip/qianmen-pedestrian-last-mile-1440.webp",
+      alt: "The broad pedestrian avenue of Qianmen Street in central Beijing.",
+      width: 1440,
+      height: 960,
+      caption: "Qianmen can feel central and walkable, but the final approach still depends on the exact property and vehicle access point.",
+    },
+    {
+      id: "arrival-station",
+      type: "heading",
+      level: 2,
+      text: "Match the area to the station printed on your ticket",
+    },
+    {
+      id: "station-intro",
+      type: "paragraph",
+      text: "Beijing's seven major railway terminals are in different parts of the city. Search the complete station name from the ticket. With two large cases or a slower walker, a taxi or ride-hailing transfer can be easier than a theoretically short metro route with security, corridors and a transfer.",
+    },
+    {
+      id: "station-matrix",
+      type: "table",
+      caption: "How Beijing's seven major railway terminals change the four-area choice",
+      columns: ["Arrival terminal", "Official subway link", "Area implication"],
+      rows: [
+        [
+          "Beijing Railway Station",
+          "Line 2",
+          "Qianmen has the clearest direct connection. Wangfujing can still work well when the hotel and road transfer are simple.",
+        ],
+        [
+          "Beijing South",
+          "Lines 4 and 14",
+          "A Qianmen property with a simple route to Qianmen station is usually the strongest of the four; Line 8 bases can connect to Line 14 at Yongdingmenwai. Sanlitun is less direct.",
+        ],
+        [
+          "Beijing West",
+          "Lines 7 and 9",
+          "Line 8 bases can connect to Line 7 at Zhushikou. None of the four wins automatically when luggage or a late arrival makes the transfer unattractive.",
+        ],
+        [
+          "Beijing Chaoyang",
+          "Line 3",
+          "A Sanlitun property with a practical connection to Workers' Stadium is the clearest direct-ride option. This is the station that most changes the usual first-trip recommendation.",
+        ],
+        [
+          "Beijing North",
+          "Lines 2, 4 and 13",
+          "Qianmen has a direct Line 2 ride to Xizhimen. A northern Line 8 base can connect to Line 2 at Gulou Dajie, which may suit a Badaling departure.",
+        ],
+        [
+          "Qinghe",
+          "Line 13 and the Changping Line",
+          "None of the four is a one-seat answer. A northern Line 8 base may reduce cross-city travel, but check the live route and baggage effort.",
+        ],
+        [
+          "Beijing Fengtai",
+          "Lines 10 and 16",
+          "None of the four has a simple direct ride. Compare the exact metro transfer with a road transfer, especially after a late train.",
+        ],
+      ],
+    },
+    {
+      id: "late-arrival",
+      type: "heading",
+      level: 3,
+      text: "For a late-night arrival, choose the first night as an operation",
+    },
+    {
+      id: "late-arrival-copy",
+      type: "paragraph",
+      text: "Airport trains and most subway services do not operate all night, while airport-bus routes and late services change. Check the official option for the travel date. If the scheduled arrival is late, the best area may simply be the hotel that confirms a staffed reception, confirms it will hold the room for a late arrival, answers the phone and allows a car to stop at the actual entrance. Move the neighbourhood debate to the second criterion, especially with children, parents or several suitcases.",
+    },
+    {
+      id: "traveller-differences",
+      type: "heading",
+      level: 2,
+      text: "Let the people travelling break the tie",
+    },
+    {
+      id: "traveller-grid",
+      type: "comparison",
+      title: "The same map produces four different stays",
+      columns: [
+        {
+          heading: "First time in China",
+          items: [
+            "Prioritise a staffed reception and a clear arrival",
+            "Keep the Chinese hotel name and address available offline",
+            "Wangfujing is usually the least specialised default",
+          ],
+        },
+        {
+          heading: "Family with children",
+          items: [
+            "Prioritise an easy breakfast, room layout and the evening return",
+            "Check whether a taxi can reach the entrance",
+            "Choose the base that shortens the most tiring repeated journey",
+          ],
+        },
+        {
+          heading: "Parents or slower walkers",
+          items: [
+            "Test curb-to-room and room-to-attraction routes",
+            "Ask about lifts, steps, crossings and places to rest",
+            "A conventional hotel can beat a more atmospheric lane",
+          ],
+        },
+        {
+          heading: "Night-led trip",
+          items: [
+            "Count how many evenings really end in Sanlitun",
+            "Plan the return after normal subway hours",
+            "Stay east only when the evening benefit repeats",
+          ],
+        },
+      ],
+    },
+    {
+      id: "walking-budget",
+      type: "heading",
+      level: 3,
+      text: "Use a walking budget, not a “central” label",
+    },
+    {
+      id: "walking-budget-copy",
+      type: "paragraph",
+      text: "Beijing sightseeing already includes large sites, security approaches and station corridors. The final hotel walk is repeated when everyone is most tired. For a parent, a child or a traveller managing pain, choose a simple route to one useful station and reliable vehicle access over a theoretically central property that adds steps and lane walking every day.",
+    },
+    {
+      id: "booking-checks",
+      type: "heading",
+      level: 2,
+      text: "What to verify before you pay",
+    },
+    {
+      id: "foreign-checkin-copy",
+      type: "paragraph",
+      text: "Chinese policy does not require travellers to search for a hotel with a special “foreign guest licence.” Hotels register foreign guests at check-in when they present valid passports or other accepted international travel documents. Official policy also says local authorities and booking platforms should not use qualification requirements to block accommodation operators, and platforms or operators should not illegally advertise that they refuse foreign guests. The practical task is still to confirm that the exact property and the staff on duty can complete your check-in at the time you will arrive.",
+    },
+    {
+      id: "property-checklist",
+      type: "list",
+      items: [
+        "Save the exact property name, map pin, Chinese address and front-desk phone number—not only the chain or area name.",
+        "Every traveller should carry their original valid passport or other accepted international travel document; for an unfamiliar or self-check-in property, confirm in writing how staffed check-in will work at the arrival time.",
+        "For a late arrival, get the reception hours, arrival note and no-show policy in writing.",
+        "Ask whether a taxi or ride-hailing car can stop at the actual entrance; if not, get the legal drop-off point and walking instructions.",
+        "Check lifts, stairs and the full curb-to-room route, especially for a courtyard property or an older traveller.",
+        "Walk the route on a map to the specific subway entrance you will use, including major crossings and an available street lift where needed.",
+        "Confirm luggage storage before check-in or after check-out if a fixed sightseeing booking sits on the same day.",
+        "Check the intended payment method and deposit rather than assuming every international card will work at the desk.",
+      ],
+    },
+    {
+      id: "non-hotel-warning",
+      type: "callout",
+      title: "Hotel and non-hotel stays are not the same check-in",
+      tone: "warning",
+      body: "A hotel registers its foreign guests. A private home or other non-hotel stay in Beijing follows the separate accommodation-registration process within 24 hours. First establish whether the listing is a hotel or a non-hotel stay, then follow the matching process. If the host cannot explain it, do not assume a normal hotel check-in.",
+    },
+    {
+      id: "five-minute-decision",
+      type: "heading",
+      level: 2,
+      text: "Make the decision in five questions",
+    },
+    {
+      id: "decision-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "Which exact station or airport delivers you, and at what hour?",
+        "Where do your two most tiring sightseeing days start and finish?",
+        "Where will at least two evenings actually end?",
+        "What can the least mobile traveller comfortably repeat with luggage or after a full day?",
+        "Does the exact hotel door preserve the area's advantage—or cancel it with a long final walk?",
+      ],
+    },
+    {
+      id: "one-base",
+      type: "callout",
+      title: "For most first trips, keep one Beijing base",
+      tone: "decision",
+      body: "Moving from a hutong room to Sanlitun during a three-to-five-night stay usually adds check-out, luggage storage and another arrival without solving enough. Pick the area that wins the repeated journeys, then visit the other neighbourhoods. Split the stay only when a late airport night or a genuinely different second half earns the move.",
+    },
+    {
+      id: "related-guides",
+      type: "internal-links",
+      title: "Continue planning the parts that affect the stay",
+      items: [
+        {
+          label: "Why are hotels in China so cheap?",
+          href: "/guides/why-are-hotels-in-china-so-cheap/",
+          description: "Compare exact branches, recent room evidence, passport check-in and real value after choosing the area.",
+        },
+        {
+          label: "China with older parents",
+          href: "/guides/china-itinerary-with-older-parents/",
+          description: "Review Beijing walking, hotel access, luggage and the pace of the whole route.",
+        },
+        {
+          label: "Is your China itinerary too rushed?",
+          href: "/guides/is-your-china-itinerary-too-rushed/",
+          description: "Count hotel moves, door-to-door transfers and recovery time before adding more stops.",
+        },
+        {
+          label: "Beijing–Zhangjiajie–Shanghai transport",
+          href: "/guides/beijing-zhangjiajie-shanghai-transport/",
+          description: "Match the correct Beijing station or airport to the next hotel arrival.",
+        },
+      ],
+    },
+    {
+      id: "official-sources",
+      type: "sources",
+      title: "Official sources reviewed",
+      items: [
+        {
+          label: "Palace Museum visitor guide: entrance, exits and transport",
+          url: "https://www.dpm.org.cn/Visit.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Palace Museum prohibited-items rules",
+          url: "https://www.dpm.org.cn/singles_detail/259832.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Beijing Subway Line 8 and the Central Axis",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/hotroutes/202407/t20240730_3762898.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Beijing Subway Line 3 opening and Sanlitun access",
+          url: "https://english.beijing.gov.cn/latest/news/202412/t20241215_3965666.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Qianmen and Dashilan commercial district",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/commercialareas/202603/t20260324_4564399.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Temple of Heaven visitor guide and subway gates",
+          url: "https://english.beijing.gov.cn/specials/parktours/guidevisitors/templeofheaven/",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Beijing's main railway stations and subway connections",
+          url: "https://english.beijing.gov.cn/latest/news/202412/t20241225_3973421.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Beijing Chaoyang Railway Station transfer guide",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202412/t20241217_3967615.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Current public transport to Mutianyu Great Wall",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "China Railway 12306 live train search",
+          url: "https://www.12306.cn/en/index.html",
+          publisher: "China Railway",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Beijing accommodation registration for foreign nationals",
+          url: "https://english.beijing.gov.cn/livinginbeijing/applicationfordocuments/202107/t20210719_2439278.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Measures facilitating accommodation for foreign travellers",
+          url: "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html",
+          publisher: "The State Council of the People's Republic of China",
+          reviewedAt: "2026-08-10",
+        },
+      ],
+    },
+  ],
+} as const satisfies StructuredPageBody;
+
+export default body;
