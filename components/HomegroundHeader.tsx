@@ -37,6 +37,8 @@ export type HomegroundPageContext =
   | "services"
   | "content";
 
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans";
+
 interface HomegroundHeaderProps {
   locale?: HomegroundLocale;
   plannerStatus?: PlannerStatus;
@@ -49,7 +51,7 @@ interface HomegroundHeaderProps {
    * Actual published equivalents for content that is not backed by GuideId.
    * Missing locales are omitted instead of linking to an unrelated homepage.
    */
-  languagePaths?: Partial<Record<HomegroundLocale, string>>;
+  languagePaths?: Partial<Record<HomegroundLanguagePathKey, string>>;
 }
 
 const allowedHeaderHashes = new Set([
@@ -176,12 +178,17 @@ export function HomegroundHeader({
   const studioHref = `${copy.path}studio/`;
   const languageHash =
     activeHash || (plannerStatus === "new" ? "" : plannerTarget);
+  const overriddenLanguagePathFor = (targetLocale: HomegroundLocale) =>
+    languagePaths?.[targetLocale] ??
+    (targetLocale === "zh" ? languagePaths?.["zh-Hans"] : undefined);
   const availableLanguageLocales = homegroundLocales.filter(
-    (targetLocale) => !languagePaths || Boolean(languagePaths[targetLocale]),
+    (targetLocale) =>
+      !languagePaths || Boolean(overriddenLanguagePathFor(targetLocale)),
   );
   const languageHrefFor = (targetLocale: HomegroundLocale) => {
-    if (languagePaths?.[targetLocale]) {
-      return languagePaths[targetLocale];
+    const overriddenPath = overriddenLanguagePathFor(targetLocale);
+    if (overriddenPath) {
+      return overriddenPath;
     }
 
     const target = getHomegroundCopy(targetLocale);

@@ -96,7 +96,10 @@ test("sitemap, language navigation and compatibility aliases consume platform da
 
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
   assert.match(sitemap, /absoluteManifestAlternates/);
-  assert.match(header, /languagePaths\?: Partial<Record<HomegroundLocale, string>>/);
+  assert.match(header, /HomegroundLanguagePathKey = HomegroundLocale \| "zh-Hans"/);
+  assert.match(header, /languagePaths\?: Partial<Record<HomegroundLanguagePathKey, string>>/);
+  assert.match(header, /targetLocale === "zh" \? languagePaths\?\.\["zh-Hans"\]/);
+  assert.match(header, /Boolean\(overriddenLanguagePathFor\(targetLocale\)\)/);
   assert.match(aliases, /mode: "canonical-shell"/);
   assert.match(aliases, /china-visa-free-uk-canada/);
   assert.match(adapter, /parentContentId: "system-guides"/);
