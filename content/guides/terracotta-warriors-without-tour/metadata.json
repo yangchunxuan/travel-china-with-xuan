@@ -1,0 +1,60 @@
+{
+  "id": "terracotta-warriors-without-tour",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["terracotta-warriors", "passport-booking", "xian-transport", "museum-route"],
+  "destinations": ["xian", "lintong", "terracotta-warriors", "lishan-garden"],
+  "heroImagePath": "/images/guides/terracotta-warriors-without-tour/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/terracotta-warriors-without-tour/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/terracotta-warriors-without-tour/",
+      "title": "Terracotta Warriors Without a Tour: Tickets and Transport",
+      "headline": "How to Visit the Terracotta Warriors Without a Tour",
+      "description": "Book with a foreign passport, travel from Xi'an, choose a route through all three pits and Lishan Garden, then return independently.",
+      "heroAlt": "Visitors viewing the correctly identified Terracotta Warriors Pit 1 in Xi'an",
+      "navTitle": "Terracotta Warriors without a tour",
+      "featuredLinkLabel": "Plan an independent Terracotta Warriors day",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Xi'an", "Terracotta Warriors", "Independent visit"]
+    },
+    "zh": {
+      "path": "/zh/guides/terracotta-warriors-without-tour/",
+      "title": "兵马俑自由行：外国护照购票、交通与丽山园",
+      "headline": "不跟团，如何从西安自助游兵马俑与丽山园",
+      "description": "用外国护照完成官方实名预约，从西安抵达，按自己的重点参观三个俑坑和丽山园，再独立返回市区。",
+      "heroAlt": "游客在西安秦始皇兵马俑一号坑参观",
+      "navTitle": "兵马俑自由行",
+      "featuredLinkLabel": "规划兵马俑自助参观日",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["西安", "兵马俑", "自由行"]
+    },
+    "ko": {
+      "path": "/ko/guides/terracotta-warriors-without-tour/",
+      "title": "가이드 없이 병마용 가기: 여권 예매·교통·리산위안",
+      "headline": "투어 없이 시안에서 병마용과 리산위안을 다녀오는 법",
+      "description": "외국 여권으로 공식 실명 예매를 하고 시안에서 이동해 세 개 갱과 리산위안을 본 뒤 스스로 돌아오는 전 과정을 정리했습니다.",
+      "heroAlt": "시안 진시황릉 병마용 1호갱을 관람하는 방문객들",
+      "navTitle": "병마용 자유 관람",
+      "featuredLinkLabel": "병마용 자유 관람일 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["시안", "병마용", "자유 관람"]
+    }
+  }
+}
