@@ -1,0 +1,57 @@
+{
+  "id": "which-beijing-railway-station",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "station-decision-matrix",
+  "topics": ["transport", "railways", "railway-stations"],
+  "destinations": ["beijing"],
+  "heroImagePath": "/images/guides/which-beijing-railway-station/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/which-beijing-railway-station/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/which-beijing-railway-station/",
+      "title": "Which Beijing Railway Station? 5 Stations Compared",
+      "headline": "Which Beijing Railway Station? South, West, Chaoyang, Fengtai and Qinghe Explained",
+      "description": "Match a Beijing train ticket to the correct station, route direction, hotel area and city transfer—and recover if you go to the wrong station.",
+      "heroAlt": "Travellers beneath a clearly readable railway-station name sign at a major Beijing train terminal.",
+      "navTitle": "Which Beijing railway station?",
+      "featuredLinkLabel": "Compare five Beijing railway stations",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Railway stations", "Getting around"]
+    },
+    "zh": {
+      "path": "/zh/guides/which-beijing-railway-station/",
+      "title": "北京哪个火车站？南站、西站、朝阳站、丰台站与清河站对比",
+      "headline": "北京坐火车该去哪个站？南站、西站、朝阳站、丰台站和清河站说明",
+      "description": "按票面站名、线路方向、酒店位置和市内接驳判断北京五座火车站，并了解走错站后的处理办法。",
+      "heroAlt": "旅客位于北京一座大型铁路客站清晰可见的站名标识下方。",
+      "navTitle": "北京五座火车站怎么选",
+      "featuredLinkLabel": "对比北京五座铁路车站",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京交通", "火车站", "市内接驳"]
+    },
+    "ko": {
+      "path": "/ko/guides/which-beijing-railway-station/",
+      "title": "베이징 기차역 어디로? 남역·서역·차오양·펑타이·칭허 비교",
+      "headline": "베이징 기차역 어디로 가야 할까? 남역·서역·차오양역·펑타이역·칭허역 설명",
+      "description": "승차권 역명, 노선 방향, 호텔 위치와 시내 이동을 기준으로 베이징의 다섯 기차역을 구분하고 잘못 갔을 때의 대처법을 확인하세요.",
+      "heroAlt": "베이징의 대형 철도역에서 선명한 역명 표지 아래에 서 있는 여행객들.",
+      "navTitle": "베이징 기차역 다섯 곳 비교",
+      "featuredLinkLabel": "베이징 기차역 다섯 곳 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징 교통", "기차역", "시내 이동"]
+    }
+  }
+}
