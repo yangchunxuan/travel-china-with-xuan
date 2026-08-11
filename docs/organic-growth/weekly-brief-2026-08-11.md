@@ -4,6 +4,10 @@
 
 以下六张票据是 Search Map 的池内唯一推荐，不是开工命令。Mac 中央编辑逐张批准前，员工 1–6 不得写正文、建页、改 registry/sitemap/indexability 或发布。若中央编辑不批准，票据回到候选状态，不自动递补第二名。
 
+本轮硬上限：票据集合冻结为以下六项，不增加第七个文章、页面或票据，也不自动递补。Route Reality Checker 的内部规格和员工 8 审查不计作新增文章。
+
+维护观察不是授权记录：11:30 检查到员工 1、2、3、5 的既有票据已形成并推送 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交内部规格；员工 6 尚无 worktree。它们没有改变本 brief 的 `writerStartAuthorized: false`；中央编辑若已在别处批准，必须把可审计的批准记录同步回 Search Map。
+
 数据限制：Search Console **不可用**；关键词体量工具 **不可用**。评分依据是线上/仓库真实覆盖、当前定性 SERP 样本、近期旅客问题、官方来源可用性与 Homeground 信息增量；没有搜索量、购买概率或流量预测。
 
 状态变化：本轮开工时锁定的 14 个未上线身份中，Beijing stay、national HSR、October 与 tourist payments 在审计期间进入最新 `origin/main` 并完成三语上线。它们现在是 published canonical owners；其余 10 个仍制作中。六张新票据的边界已按最终线上状态重算。
@@ -128,7 +132,9 @@
 - 不输出城市×天数×人群的独立 URL，不生成可索引排列组合。
 - 本票先交工具逻辑/测试规格；未获中央产品批准前不得建公开工具。
 
-中央批准后才可执行的数据与规则：
+审查门禁：规格 owner 是员工 4。精确 handoff signal `SPEC REVIEW READY` 已在 `1e131ff` 的规格中观察到，因此员工 8 现在只可审查技术可行性与测试，不实现、不建页、不公开、不索引、不发布。只有 Mac 中央编辑的明确批准可以改变 `publicToolCreationAuthorized: false`。
+
+员工 4 规格应定义、仅供审查的数据与规则（不构成公开实现授权）：
 
 - 输入：总夜数、抵达时段、离境时段、跨城段、机场/车站换乘、换酒店、旅客节奏。
 - 输出：完整游览日、碎片日、transfer tax、建议缓冲、过载提示、对应 owner 链接。
@@ -212,5 +218,7 @@
 3. 三个 locale 仍是一项工作身份；
 4. 不创建未过 Phase 1 gate 的 collection/Hub/indexable URL；
 5. tool 票据先批准逻辑与维护责任，再批准公开实现。
+6. 本轮不增加第七篇；退回、延迟或拒绝的票据不触发自动递补。
+7. Route Reality Checker 的 `SPEC REVIEW READY` 只启动员工 8 的技术可行性与测试审查，不授权公开工具。
 
 在中央编辑留下明确批准记录前，六张票据全部保持 `writerStartAuthorized: false`。

@@ -13,6 +13,19 @@
 5. FAQ、旧文新增章节、tool、collection 或 Hub 能更好解决任务时，不得默认选择 `new-page`。
 6. 任何新 nationality entry 页必须同时满足：不同法律任务、官方一手来源、真实需求证据、明确监控 owner；不得模板复制。
 7. Search Console 和关键词工具在 2026-08-11 **不可用**。不得用自动补全、结果数或主观感觉补写搜索量、购买概率、点击或流量。
+8. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
+9. Route Reality Checker 的内部规格与员工 8 技术/测试审查不算新增文章；`SPEC REVIEW READY` 不是实现、建页、公开、索引或发布授权。
+
+## 本轮六项执行身份：禁止换 slug、branch 或 artifact 类型后重复计数
+
+- `transport-20260811-01` ↔ `which-beijing-railway-station`：同一 Beijing station-choice 身份。
+- `destination-20260811-01` ↔ `forbidden-city-for-foreign-visitors`：同一 foreign-visitor Forbidden City 执行身份。
+- `culture-20260811-01` ↔ `first-shared-meal-in-china`：同一首次共享用餐身份。
+- `planning-20260811-01` ↔ Route Reality Checker 内部规格：仍是同一 tool 候选，不是文章身份。
+- `stay-20260811-01` ↔ 员工 5 foreign-hotel worktree：仍是同一 booking/registration/refusal owner。
+- `essentials-20260811-01`：即使后续创建 branch/worktree，也仍是同一 eSIM/local SIM/local-number 选择树。
+
+截至 11:30，员工 1、2、3、5 的 `which-beijing-railway-station`、`forbidden-city-for-foreign-visitors`、`first-shared-meal-in-china`、`foreigners-china-hotel` 已分别在 `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6` 形成并推送 durable drafts；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交标记 `SPEC REVIEW READY` 的内部规格；员工 6 尚无 worktree。上述状态只强化锁题，不新增候选或第七篇；durable draft 与规格 handoff 均不构成公开实现授权。
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
@@ -111,6 +124,6 @@
 4. Homeground 是否有可验证、其他结果没有的信息增量？
 5. 动态事实是否有一手来源、负责人、复核频率和失效处理？
 6. Hub、collection、tool、FAQ 或 data page 是否比文章更适合？
-7. 是否已经在 live sitemap、最新 `origin/main`、任一 `origin/article/*` 或 `origin/codex/*` 中发布/制作？若是，禁止再选。
+7. 是否已经在 live sitemap、最新 `origin/main`、任一 `origin/article/*`、`origin/codex/*` 或同仓 worktree 中发布、制作或 reservation？若是，禁止再选。
 
 任一答案不清楚时，题目回到 Search Map 候选池，不得先写后判。
