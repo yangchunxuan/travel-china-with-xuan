@@ -1,0 +1,64 @@
+{
+  "id": "first-shared-meal-in-china",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "cultural-explainer",
+  "topics": [
+    "shared-meals",
+    "restaurant-ordering",
+    "dining-etiquette",
+    "food-sharing",
+    "bill-paying",
+    "everyday-china"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/first-shared-meal-in-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/first-shared-meal-in-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/first-shared-meal-in-china/",
+      "title": "Your First Shared Meal in China: Ordering, Seating, Sharing and Paying",
+      "headline": "Follow the Meal, Not a List of National Rules",
+      "description": "Walk through an ordinary shared restaurant meal in China, from taking a seat and ordering dishes to using tea, sharing food, paying and leaving politely.",
+      "heroAlt": "A real casual restaurant table in China with several shared dishes, individual bowls, chopsticks and tea.",
+      "navTitle": "Your first shared meal in China",
+      "featuredLinkLabel": "Follow a shared meal from seat to bill",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China", "Food culture", "First meal"]
+    },
+    "zh": {
+      "path": "/zh/guides/first-shared-meal-in-china/",
+      "title": "第一次在中国吃共享餐：落座、点菜、分食与买单",
+      "headline": "按一顿饭的流程理解，而不是背全国礼仪",
+      "description": "按时间顺序看懂一顿普通中式共享餐：怎样落座和点菜，茶水与共享菜怎么处理，谁来买单，以及如何礼貌收尾。",
+      "heroAlt": "中国普通餐厅的一张真实共享餐桌，摆有数道共享菜、个人碗筷和茶水。",
+      "navTitle": "第一次吃中式共享餐",
+      "featuredLinkLabel": "从落座到买单看懂一顿共享餐",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国", "饮食文化", "第一次聚餐"]
+    },
+    "ko": {
+      "path": "/ko/guides/first-shared-meal-in-china/",
+      "title": "중국에서 처음 함께 먹는 식사: 자리·주문·나눠 먹기·계산",
+      "headline": "전국 공통 예절 대신 한 끼의 흐름을 따라가자",
+      "description": "중국의 평범한 식당에서 자리를 정하고 음식을 주문한 뒤 차와 요리를 나눠 먹고 계산하고 인사하는 과정을 시간순으로 설명합니다.",
+      "heroAlt": "중국의 평범한 식당에 여러 공유 요리와 개인용 그릇, 젓가락, 차가 놓인 실제 식탁.",
+      "navTitle": "중국에서 처음 함께 먹는 식사",
+      "featuredLinkLabel": "자리부터 계산까지 한 끼 따라가기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국", "음식 문화", "첫 식사"]
+    }
+  }
+}
