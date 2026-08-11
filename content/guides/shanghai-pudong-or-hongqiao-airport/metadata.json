@@ -1,0 +1,57 @@
+{
+  "id": "shanghai-pudong-or-hongqiao-airport",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "airport-decision-matrix",
+  "topics": ["transport", "airports", "airport-choice", "door-to-door-travel", "rail-connections"],
+  "destinations": ["shanghai"],
+  "heroImagePath": "/images/guides/shanghai-pudong-or-hongqiao-airport/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-pudong-or-hongqiao-airport/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-pudong-or-hongqiao-airport/",
+      "title": "Shanghai Pudong or Hongqiao Airport? Whole-Trip Comparison",
+      "headline": "Shanghai Pudong or Hongqiao Airport? Compare the Whole Trip",
+      "description": "Choose between Shanghai Pudong and Hongqiao airports by the flight, hotel, Hongqiao rail hub, Disney, operating hours and complete door-to-door journey.",
+      "heroAlt": "A Shanghai Airport Link train running on elevated tracks between Pudong and Hongqiao airports.",
+      "navTitle": "Pudong or Hongqiao airport?",
+      "featuredLinkLabel": "Compare Shanghai's two airports",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shanghai", "Airport choice", "Getting around"]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-pudong-or-hongqiao-airport/",
+      "title": "上海选浦东机场还是虹桥机场？完整行程对比",
+      "headline": "浦东还是虹桥？上海机场怎么选",
+      "description": "从航班、酒店、虹桥铁路枢纽、迪士尼、运营时间和完整门到门行程，判断上海浦东机场与虹桥机场哪个更适合。",
+      "heroAlt": "往返浦东机场与虹桥机场的上海机场联络线列车行驶在高架轨道上。",
+      "navTitle": "上海浦东还是虹桥机场",
+      "featuredLinkLabel": "比较上海两座机场",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["上海", "机场选择", "市内交通"]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-pudong-or-hongqiao-airport/",
+      "title": "상하이 푸둥공항 vs 훙차오공항: 전체 일정 비교",
+      "headline": "상하이 푸둥공항과 훙차오공항, 전체 여정으로 고르기",
+      "description": "항공편, 숙소, 훙차오 철도 허브, 디즈니, 운행 시간과 전체 문 앞 이동을 기준으로 푸둥공항과 훙차오공항을 비교하세요.",
+      "heroAlt": "푸둥공항과 훙차오공항을 잇는 상하이 공항연락선 열차가 고가 선로를 달리는 모습.",
+      "navTitle": "상하이 푸둥공항 vs 훙차오공항",
+      "featuredLinkLabel": "상하이 두 공항 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["상하이", "공항 선택", "도시 이동"]
+    }
+  }
+}
