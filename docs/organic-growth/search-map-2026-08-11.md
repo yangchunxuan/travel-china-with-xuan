@@ -27,7 +27,7 @@
 | 当前制作中 | 10 | 审计期间 4 个身份转为 published/indexable；其余 10 个仍在远端分支 |
 | 本轮候选 | 18 | 六个内容池各 3 个 |
 | 池内批准 | 6 | 每池恰好 1 个；仍须 Mac 中央编辑批准 |
-| 本轮执行锁 | 6 | 票据集合冻结；4 个 durable draft、1 个 `SPEC REVIEW READY`、1 个尚无 branch/worktree；不追加第七篇 |
+| 本轮执行锁 | 6 | 票据集合冻结；4 个 canonical-repo durable draft、1 个 `SPEC REVIEW READY`、1 个独立 unborn repo 的本地英文稿；不追加第七篇 |
 | 合并/更新路由 | 9 | 8 个候选路由 + 1 个已合并 legacy shell；不创建第二 canonical URL |
 | 明确拒绝模式 | 12 | 包含近义页和排列组合页 |
 | 动态事实复核组 | 10 | 法规、机场、铁路、支付、门票等 |
@@ -40,9 +40,11 @@
 
 08:52 最终远端复核时，`origin/codex/pending-visual-batch-b-20260810` 前进到 `e5325b7`，变更为五篇稿的授权摄影、图片元数据与正文图片引用；五个内容身份及 canonical 边界不变。08:55 再次读取线上 sitemap，仍为 106 / 67 / 64（全站 URL / guides 范围 / guide 详情）。
 
-11:30 维护复核时，`origin/main` 已前进到 `073e019`，但只含 UI 与语言导航修复；已发布仍为 24 个身份。远端文章与 codex 审计 ref 从 25 增至 32：Beijing-station、Forbidden City、shared-meal 与 foreign-hotel 已形成 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`，两条为非内容修复分支，Route Reality Checker 是内部规格提交 `1e131ff`；员工 6 尚无 worktree。六项全部对应既有票据，没有第七个主题。11:31 再查线上 sitemap 仍为 106 / 67 / 64，已观察到的 current-round content ID 命中为 0；员工 6 尚无 slug，不作猜测。
+11:46 维护复核时，`origin/main` 仍为 `073e019`，已发布仍为 24 个身份，远端文章与 codex 审计 ref 为 33。新增的 `origin/codex/pending-visual-batch-c-20260811@bc17333` 只整合五个既有制作中身份的授权摄影与内容修订；逐项比对后，section、intent、page family 与 canonical 边界均未变化，内容身份增量为 0。Beijing-station、Forbidden City、shared-meal 与 foreign-hotel 是 canonical repo 的 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；Route Reality Checker 是内部规格 `1e131ff`。员工 6 的 `china-esim-vs-local-sim.md` 已在 `C:/Users/User/Documents/宝格丽的agent` 观察到，但该目录是独立 unborn repo，不是 Homeground worktree；文件未跟踪、未暂存、未提交、未推送且没有 remote。六项全部对应既有票据，没有第七个主题。11:46 再查线上 sitemap 仍为 106 / 67 / 64，五个已观察 current-round content ID 命中为 0。
 
 重复风险提示：员工 1 的 Beijing-station durable draft 仍是同一锁定主题，但 metadata 写为 `primaryIntent: plan` / `family: comparison`，与 Search Map 的 `execute` / `combined-decision` 不一致；在中央接受、合并或发布前必须对齐，不能靠改字段把同一主题伪装成第二个 identity。
+
+交付风险提示：员工 6 的英文稿题目与四路径边界、供应商中立和 payment-guide handoff 均与主账本一致，但 9 个链接全是外部来源，内部链接为 0。进入中央验收前，需在 canonical repo 中建立 durable artifact/metadata，并补 payment、entry collection、HSR 与 foreign-hotel owner 的真实内部链接；不得借迁移或补链接改变 topic identity。
 
 ## 3. 已发布清单
 
@@ -85,15 +87,15 @@
 | 1 | `guangzhou-baiyun-airport-t2-t3` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | T2/T3、关闭航站楼、地铁/城际、走错航站楼 |
 | 1 | `pudong-airport-to-shanghai-disneyland` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | PVG 到迪士尼；Airport Link/taxi、儿童、行李、晚到 |
 | 2 | `lijiang-old-town-or-shuhe-where-to-stay` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | 丽江住宿 + 大研/束河选择 |
-| 2 | `chengdu-panda-base-or-dujiangyan-panda-valley` | in production | `origin/codex/worker-2-panda-base-vs-panda-valley@ce893ed` | 场馆选择；时间、入口、半日路线并入同页 |
+| 2 | `chengdu-panda-base-or-dujiangyan-panda-valley` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 场馆选择；时间、入口、半日路线并入同页 |
 | 3 | `how-guangzhou-morning-tea-works` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | 早茶/yum cha/dim sum/点单/礼仪/历史是一个身份 |
 | 3 | `how-to-read-a-suzhou-garden` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | 园林构成、借景与四园比较；“最好/选哪座园林”先并入 |
-| 4 | `china-last-night-before-international-flight` | in production | `origin/article/worker-4-china-last-night-buffer@0aaab9a` | 最后一晚、起飞前缓冲、同日转乘、机场酒店同义任务 |
-| 4 | `china-night-train-or-daytime-high-speed-rail` | in production | `origin/article/worker-4-china-night-train-decision@819b37b` | 夜车/日间高铁、硬卧/软卧、节省酒店同一决策 |
-| 4 | `china-open-jaw-flights-route-planning` | in production | `origin/article/worker-4-china-open-jaw@94b40d3` | 一城进、另一城出及线路设计；不拆城市组合 |
+| 4 | `china-last-night-before-international-flight` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 最后一晚、起飞前缓冲、同日转乘、机场酒店同义任务 |
+| 4 | `china-night-train-or-daytime-high-speed-rail` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 夜车/日间高铁、硬卧/软卧、节省酒店同一决策 |
+| 4 | `china-open-jaw-flights-route-planning` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 一城进、另一城出及线路设计；不拆城市组合 |
 | 4 | `china-in-october-golden-week-or-later` | **published during audit** | `origin/main@6df1f55` | 全国十月/黄金周决策；不做城市×十月 |
 | 5 | `beijing-where-to-stay-first-trip` | **published during audit** | `origin/main@6df1f55` | 北京首次住宿四区比较；不拆四个 area 页面 |
-| 5 | `china-hotel-near-metro` | in production | `origin/article/worker-5-china-hotel-near-metro@1c02bef` | 全国酒店位置判断：行李、步行、家庭、无障碍 |
+| 5 | `china-hotel-near-metro` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 全国酒店位置判断：行李、步行、家庭、无障碍 |
 | 6 | `how-to-pay-in-china-as-a-tourist` | **published during audit** | `origin/main@6df1f55` | Alipay、WeChat、现金、卡、失败恢复的完整栈 |
 
 ### 4A. 本轮六张票据的执行锁（维护观察，不是开工授权）
@@ -105,9 +107,9 @@
 | `culture-20260811-01` | `origin/article/worker-3-first-shared-meal@72dc3ea` 已提交并推送 `first-shared-meal-in-china` durable draft | ordering/seating/sharing/paying 不拆；广州早茶与 dim sum 仍归广州 owner |
 | `planning-20260811-01` | `origin/article/worker-4-route-reality-checker-spec@1e131ff` 已提交内部规格并标记 `SPEC REVIEW READY` | 员工 8 现在只可做技术可行性与测试审查；仍不得实现或创建公开工具 |
 | `stay-20260811-01` | `origin/article/worker-5-foreigners-china-hotel@a5be2b6` 已提交并推送 `foreigners-china-hotel` durable draft | metadata 与主账本一致；booking/registration/refusal recovery 仍是一个 owner，不得城市复制 |
-| `essentials-20260811-01` | 尚未观察到 branch/worktree | eSIM/local SIM/local number/both 保持一个供应商中立的选择树 |
+| `essentials-20260811-01` | 独立 unborn repo 的 `articles/china-esim-vs-local-sim.md` 本地英文稿已观察；未跟踪/未暂存/未提交/未推送，无 remote | 边界对齐且不算第七篇；转入 canonical repo、补 metadata/locale plan 与内部链接后才可成为 durable draft |
 
-本轮票据集合冻结为以上六项，不增加第七个文章、页面或票据，也不因某票延迟或退回而自动递补第二名。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章。未提交 worktree、branch reservation 或 `SPEC REVIEW READY` 均不会自行把 `writerStartAuthorized` 改为 `true`；该 signal 只解除员工 8 的等待状态并开放限定审查。
+本轮票据集合冻结为以上六项，不增加第七个文章、页面或票据，也不因某票延迟或退回而自动递补第二名。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章。独立 repo 本地稿、未提交 worktree、branch reservation 或 `SPEC REVIEW READY` 均不会自行把 `writerStartAuthorized` 改为 `true`；该 signal 只解除员工 8 的等待状态并开放限定审查。
 
 ## 5. 候选评分与决策
 

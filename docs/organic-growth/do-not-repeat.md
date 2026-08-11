@@ -23,9 +23,9 @@
 - `culture-20260811-01` ↔ `first-shared-meal-in-china`：同一首次共享用餐身份。
 - `planning-20260811-01` ↔ Route Reality Checker 内部规格：仍是同一 tool 候选，不是文章身份。
 - `stay-20260811-01` ↔ 员工 5 foreign-hotel worktree：仍是同一 booking/registration/refusal owner。
-- `essentials-20260811-01`：即使后续创建 branch/worktree，也仍是同一 eSIM/local SIM/local-number 选择树。
+- `essentials-20260811-01` ↔ `china-esim-vs-local-sim.md`：即使从独立 repo 迁入 canonical worktree、补 metadata 或扩展 locale，也仍是同一 eSIM/local SIM/local-number 选择树。
 
-截至 11:30，员工 1、2、3、5 的 `which-beijing-railway-station`、`forbidden-city-for-foreign-visitors`、`first-shared-meal-in-china`、`foreigners-china-hotel` 已分别在 `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6` 形成并推送 durable drafts；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交标记 `SPEC REVIEW READY` 的内部规格；员工 6 尚无 worktree。上述状态只强化锁题，不新增候选或第七篇；durable draft 与规格 handoff 均不构成公开实现授权。
+截至 11:46，员工 1、2、3、5 的 `which-beijing-railway-station`、`forbidden-city-for-foreign-visitors`、`first-shared-meal-in-china`、`foreigners-china-hotel` 已分别在 `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6` 形成并推送 durable drafts；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交标记 `SPEC REVIEW READY` 的内部规格；员工 6 的 `china-esim-vs-local-sim.md` 是独立 unborn repo 中未跟踪、未暂存、未提交、未推送且无 remote 的本地英文稿。上述状态只强化锁题，不新增候选或第七篇；durable draft、本地稿与规格 handoff 均不构成公开实现授权。
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
