@@ -483,3 +483,52 @@ The project owner's August 10 authorisation covers Homeground use of the local
 `Facebook图片素材` library. As elsewhere in this register, that permission is
 project-entry provenance and not an independent assertion about third-party
 copyright ownership outside the Homeground website.
+
+## Employee 1–2 release — Shanghai airport choice and Terracotta Warriors (August 11, 2026)
+
+The organised local asset library was checked first. It had no unused,
+site-verifiable Shanghai airport image. Its suitable Terracotta Warriors Pit 1
+photographs did not have a repository-level commercial licence record, so this
+release uses only external documentary photographs with explicit reuse terms.
+No AI-generated documentary travel photograph is included.
+
+### Shanghai Pudong or Hongqiao Airport
+
+- `public/images/guides/shanghai-pudong-or-hongqiao-airport/hero-1600.webp`
+  derives from Wikimedia Commons file
+  [`Train of Airport Link Line.jpg`](https://commons.wikimedia.org/wiki/File:Train_of_Airport_Link_Line.jpg),
+  created by Greencarp and released under
+  [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). The derivative
+  was centre-cropped, resized to 1600 × 1000 and converted to WebP. Source
+  SHA-256: `de62a23c63c0500e670f5864ba376b3e1f5b23d4fceb2619a07cbdab7e8b2a21`;
+  final SHA-256: `5b287f7d79b44791b8432ea9a95948b6249b528036f4942bfae2cc8eb0516f15`.
+- `public/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-diagram-1440.webp`
+  is an original Homeground orientation diagram generated from the seven
+  stations in the official Shanghai Metro-derived guide. It is labelled not to
+  scale and does not encode a fare, journey time or live timetable. Final
+  SHA-256: `bba6b11687dddda3dd9ffc1d2b666dfecaa8fb6dc33701ff3ea0e11051bc3dbe`.
+- `public/images/guides/shanghai-pudong-or-hongqiao-airport/hongqiao-t2-railway-wayfinding-1440.webp`
+  derives from Wikimedia Commons file
+  [`Shanghai Hongqiao Railway Station channel to Hongqiao Airport T2.jpg`](https://commons.wikimedia.org/wiki/File:Shanghai_Hongqiao_Railway_Station_channel_to_Hongqiao_Airport_T2.jpg),
+  created by Shwangtianyuan and licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The
+  derivative was cropped/resized to 1440 × 960 WebP and remains under CC BY-SA
+  4.0. Source SHA-256:
+  `e1d51453db5a07cd11cc92a908c018a9e4c0212b7fbd2827ba2bfd06aacfbbaa`;
+  final SHA-256: `2cfbb57b34bbaae3505c2762b77fe6c9b9434bc6b64aaf5116832d882ef60ade`.
+
+### Terracotta Warriors without a tour
+
+- `public/images/guides/terracotta-warriors-without-tour/hero-1600.webp`
+  derives from Wikimedia Commons file
+  [`Terracotta Army Pit 1.JPG`](https://commons.wikimedia.org/wiki/File:Terracotta_Army_Pit_1.JPG),
+  photographed by BrokenSphere on October 25, 2007 and licensed under
+  [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The
+  derivative was centre-cropped, resized to 1600 × 1000 and converted to WebP;
+  it remains under CC BY-SA 3.0. Source SHA-256:
+  `3c41a6f68f1e040322883b43699d4fc34c15c3c9a217b89b5587ae585bbbb4f8`;
+  final SHA-256: `4784c304c361ac98eeed9a1f048274f40949c156ccf0edebed80fa017d5496ca`.
+
+All derivatives omit source EXIF, GPS and device metadata. Image credits and
+licence names appear inside the default-collapsed Sources disclosure in
+English, Chinese and Korean.

@@ -87,3 +87,9 @@ Immediately before publication, reopen the museum visitor guide, live booking li
 - English is the source draft; Chinese and Korean preserve the same block IDs and types while using natural local phrasing.
 - The article folder is self-contained. No homepage, shared registry, category page, route, template, baseline file or other article was edited.
 - No documentary-looking AI destination image was created.
+
+## Released visual evidence
+
+- Hero: BrokenSphere, `Terracotta Army Pit 1.JPG`, photographed 25 October 2007, CC BY-SA 3.0.
+- The derivative is centre-cropped, resized to 1600 × 1000 and converted to WebP with metadata removed; it remains under CC BY-SA 3.0.
+- The original page, source and final hashes, processing and path are recorded in `image-plan.md`; the credit appears in all three public Sources disclosures.

@@ -138,11 +138,11 @@ const body = {
     {
       id: "airport-link-figure",
       type: "figure",
-      src: "/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-wayfinding-1440.webp",
-      alt: "푸둥공항 제1·제2터미널과 훙차오공항 제2터미널 방향을 표시한 실제 공항연락선 안내판.",
+      src: "/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-diagram-1440.webp",
+      alt: "훙차오공항 제2터미널부터 푸둥공항 제1·제2터미널까지 공항연락선 7개 역을 표시한 Homeground 위치 안내도.",
       width: 1440,
-      height: 960,
-      caption: "공항연락선은 두 공항을 잇지만 공개된 승차 시간에는 터미널 출구, 대기, 입국, 수하물과 다음 체크인이 포함되지 않는다.",
+      height: 720,
+      caption: "위치 안내용 도식이며 실제 축척과 다릅니다. 공항연락선은 7개 역을 잇지만 공개된 승차 시간에는 터미널 출구, 대기, 입국, 수하물과 다음 체크인이 포함되지 않습니다.",
     },
     {
       id: "hotel-heading",
@@ -230,7 +230,7 @@ const body = {
         {
           heading: "PVG ↔ 상하이 훙차오역",
           items: [
-            "공항연락선이 훙차오 T2 방향의 가장 빠른 예정 철도 축을 제공한다",
+            "공항연락선이 훙차오 T2 방향으로 직통 정기 철도 연결을 제공한다",
             "공개된 공항 간 승차 시간은 착륙부터 철도 승강장까지의 시간이 아니다",
             "정확한 상하이 철도역을 확인한다. 모든 열차가 훙차오역을 쓰지는 않는다",
           ],
@@ -253,7 +253,7 @@ const body = {
     {
       id: "disney-copy",
       type: "paragraph",
-      text: "상하이 디즈니 리조트는 푸둥 동부에 있어 리조트에서 시작하거나 끝나는 일정은 보통 PVG를 먼저 비교한다. 공항연락선의 상하이 국제관광리조트역도 PVG와 SHA 사이에 있다. 하지만 이 역은 넓은 리조트 지역을 위한 역이며 파크, 디즈니 호텔 또는 외부 호텔까지 다음 연결이 필요하다. SHA 항공편이 뚜렷하게 더 좋다면 전체 여정은 여전히 SHA가 나을 수 있다.",
+      text: "상하이 디즈니 리조트는 푸둥 동부에 있어 리조트에서 시작하거나 끝나는 일정은 보통 PVG를 먼저 비교합니다. 공항연락선의 상하이 국제관광리조트역도 PVG와 SHA 사이에 있습니다. 하지만 이 역이 곧 파크 입구는 아닙니다. 도착한 뒤 리조트의 최신 안내에 따라 파크나 해당 호텔로 계속 이동하세요. SHA 항공편이 뚜렷하게 더 좋다면 전체 여정은 여전히 SHA가 나을 수 있습니다.",
     },
     {
       id: "disney-callout",
@@ -461,10 +461,10 @@ const body = {
       id: "recovery-figure",
       type: "figure",
       src: "/images/guides/shanghai-pudong-or-hongqiao-airport/hongqiao-t2-railway-wayfinding-1440.webp",
-      alt: "훙차오 교통 허브 안에서 상하이 훙차오역과 훙차오공항 제2터미널을 구분하는 실제 안내 표지.",
+      alt: "상하이 훙차오역에서 훙차오공항 제2터미널 방향으로 이어지는 안내 통로.",
       width: 1440,
       height: 960,
-      caption: "훙차오 허브에서는 ‘훙차오’라는 말만 보지 말고 표지의 교통수단과 터미널을 따라간다.",
+      caption: "이 통로는 상하이 훙차오역에서 공항 제2터미널 방향으로 이어집니다. 훙차오 허브에서는 ‘훙차오’라는 말만 보지 말고 교통수단과 터미널을 확인하세요. 사진: Shwangtianyuan, CC BY-SA 4.0; 크롭됨.",
     },
     {
       id: "verify-heading",
@@ -590,6 +590,18 @@ const body = {
           label: "중국철도 실시간 열차 검색",
           url: "https://www.12306.cn/en/left-ticket.html?linktypeid=dc",
           publisher: "중국철도 12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "대표 이미지: 상하이 공항연락선 열차(크롭됨)",
+          url: "https://commons.wikimedia.org/wiki/File:Train_of_Airport_Link_Line.jpg",
+          publisher: "Greencarp, Wikimedia Commons; CC0 1.0",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "사진: 상하이 훙차오역에서 공항 제2터미널로 가는 통로(크롭됨)",
+          url: "https://commons.wikimedia.org/wiki/File:Shanghai_Hongqiao_Railway_Station_channel_to_Hongqiao_Airport_T2.jpg",
+          publisher: "Shwangtianyuan, Wikimedia Commons; CC BY-SA 4.0",
           reviewedAt: "2026-08-11",
         },
       ],

@@ -138,11 +138,11 @@ const body = {
     {
       id: "airport-link-figure",
       type: "figure",
-      src: "/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-wayfinding-1440.webp",
-      alt: "Real Airport Link wayfinding showing the directions to Pudong Airport T1 and T2 and Hongqiao Airport Terminal 2.",
+      src: "/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-diagram-1440.webp",
+      alt: "Homeground orientation diagram showing the seven Airport Link stations between Hongqiao Terminal 2 and Pudong Terminals 1 and 2.",
       width: 1440,
-      height: 960,
-      caption: "The Airport Link connects the two airports, but its scheduled rail ride excludes terminal exit, waiting, immigration, baggage and the next check-in.",
+      height: 720,
+      caption: "Orientation diagram, not to scale. The Airport Link connects seven stations; its scheduled rail ride excludes terminal exit, waiting, immigration, baggage and the next check-in.",
     },
     {
       id: "hotel-heading",
@@ -230,7 +230,7 @@ const body = {
         {
           heading: "PVG ↔ railway",
           items: [
-            "Airport Link provides the fastest scheduled rail spine toward Hongqiao T2",
+            "Airport Link provides a direct scheduled rail connection toward Hongqiao T2",
             "The published airport-to-airport train ride is not a flight-to-platform connection time",
             "Check the exact Shanghai railway station: not every train uses Shanghai Hongqiao",
           ],
@@ -253,7 +253,7 @@ const body = {
     {
       id: "disney-copy",
       type: "paragraph",
-      text: "PVG is usually the first airport to compare for a Shanghai Disney Resort start or finish because both sit in eastern Pudong. The Airport Link also places Shanghai International Resort Station between PVG and SHA. But that station serves the wider resort area and still needs another connection to the park, a Disney hotel or an off-site property. A clearly better SHA flight can remain the better whole-trip choice.",
+      text: "PVG is usually the first airport to compare for a Shanghai Disney Resort start or finish because both sit in eastern Pudong. The Airport Link also places Shanghai International Resort Station between PVG and SHA. But that station is not the park entrance: after arriving, follow the resort's latest directions to the park or the specific hotel. A clearly better SHA flight can remain the better whole-trip choice.",
     },
     {
       id: "disney-callout",
@@ -461,10 +461,10 @@ const body = {
       id: "recovery-figure",
       type: "figure",
       src: "/images/guides/shanghai-pudong-or-hongqiao-airport/hongqiao-t2-railway-wayfinding-1440.webp",
-      alt: "Real signs distinguishing Shanghai Hongqiao Railway Station from Hongqiao Airport Terminal 2 inside the transport hub.",
+      alt: "The signed passage from Shanghai Hongqiao Railway Station toward Hongqiao Airport Terminal 2.",
       width: 1440,
       height: 960,
-      caption: "Inside the Hongqiao hub, follow the transport system and terminal on the sign—not the word Hongqiao alone.",
+      caption: "This passage leads from Shanghai Hongqiao Railway Station toward Airport Terminal 2. Follow the transport system and terminal—not the word Hongqiao alone. Photo: Shwangtianyuan, CC BY-SA 4.0; cropped.",
     },
     {
       id: "verify-heading",
@@ -590,6 +590,18 @@ const body = {
           label: "China Railway live train query",
           url: "https://www.12306.cn/en/left-ticket.html?linktypeid=dc",
           publisher: "China Railway 12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Hero photograph: Shanghai Airport Link train (cropped)",
+          url: "https://commons.wikimedia.org/wiki/File:Train_of_Airport_Link_Line.jpg",
+          publisher: "Greencarp via Wikimedia Commons; CC0 1.0",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Photograph: Hongqiao Railway Station passage toward Airport Terminal 2 (cropped)",
+          url: "https://commons.wikimedia.org/wiki/File:Shanghai_Hongqiao_Railway_Station_channel_to_Hongqiao_Airport_T2.jpg",
+          publisher: "Shwangtianyuan via Wikimedia Commons; CC BY-SA 4.0",
           reviewedAt: "2026-08-11",
         },
       ],

@@ -116,7 +116,7 @@ export default {
     {
       id: "public-transport-route",
       type: "paragraph",
-      text: "The museum's current transport page directs travellers from Xi'an North Railway Station or Xi'an Railway Station onto the metro network, then Line 1 to Fangzhicheng, Line 9 to Huaqingchi, and a final transfer to Lintong Tourist Bus 613 or Bus 602 for the Terracotta Warriors area. From a central Xi'an hotel, join the same Line 1–Line 9 sequence at the most practical station. Check the live exit and bus stop before leaving the metro because road works and stop positions are operational facts.",
+      text: "The museum's current transport page directs travellers from Xi'an North Railway Station or Xi'an Railway Station onto the metro network, then Line 1 to Fangzhicheng, Line 9 to Huaqingchi, and a final transfer to Lintong Tourist Bus 613 or Bus 602 for the Terracotta Warriors area. From a central Xi'an hotel, use this Line 1–Line 9 sequence only when the practical route can join Line 1 without creating a worse transfer. Check the live exit and bus stop before leaving the metro because road works and stop positions are operational facts.",
     },
     {
       id: "transport-options",
@@ -469,6 +469,12 @@ export default {
           label: "2026 May Day temporary hours and capacity expansion",
           url: "https://www.bmy.com.cn/news/news/3278.html",
           publisher: "Emperor Qinshihuang's Mausoleum Site Museum",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "Hero photograph: Terracotta Army Pit 1 (cropped)",
+          url: "https://commons.wikimedia.org/wiki/File:Terracotta_Army_Pit_1.JPG",
+          publisher: "BrokenSphere via Wikimedia Commons; CC BY-SA 3.0",
           reviewedAt: "2026-08-11",
         },
       ],

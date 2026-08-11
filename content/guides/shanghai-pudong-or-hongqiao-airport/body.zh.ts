@@ -138,11 +138,11 @@ const body = {
     {
       id: "airport-link-figure",
       type: "figure",
-      src: "/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-wayfinding-1440.webp",
-      alt: "真实的机场联络线导向牌，分别标出浦东机场1号2号航站楼和虹桥机场2号航站楼方向。",
+      src: "/images/guides/shanghai-pudong-or-hongqiao-airport/airport-link-pvg-sha-diagram-1440.webp",
+      alt: "Homeground 绘制的机场联络线方位示意图，展示虹桥2号航站楼至浦东1号、2号航站楼之间的七座车站。",
       width: 1440,
-      height: 960,
-      caption: "机场联络线连接两座机场，但公布的乘车时间不包含出航站楼、等车、入境、取行李和下一次值机。",
+      height: 720,
+      caption: "方位示意图，不按比例绘制。机场联络线连接七座车站；公布的乘车时间不包含出航站楼、等车、入境、取行李和下一次值机。",
     },
     {
       id: "hotel-heading",
@@ -230,7 +230,7 @@ const body = {
         {
           heading: "PVG ↔ 上海虹桥站",
           items: [
-            "机场联络线提供前往虹桥T2方向最快的计划轨道骨架",
+            "机场联络线提供前往虹桥T2方向的直达计划铁路连接",
             "公布的机场到机场车程不是飞机落地到铁路站台的总时间",
             "确认真实铁路站名，并非所有上海列车都从虹桥站出发",
           ],
@@ -253,7 +253,7 @@ const body = {
     {
       id: "disney-copy",
       type: "paragraph",
-      text: "上海迪士尼度假区位于浦东东部，因此以度假区作为行程起点或终点时，通常先比较PVG。机场联络线也把上海国际旅游度假区站设在PVG与SHA之间。但该站服务的是更大的度假区范围，到乐园、迪士尼酒店或园外酒店仍有下一段接驳。如果SHA航班明显更好，完整行程仍可能选择SHA。",
+      text: "上海迪士尼度假区位于浦东东部，因此以度假区作为行程起点或终点时，通常先比较PVG。机场联络线也把上海国际旅游度假区站设在PVG与SHA之间。但该站不是乐园入口：抵达后，应按度假区最新指引继续前往乐园或具体酒店。如果SHA航班明显更好，完整行程仍可能选择SHA。",
     },
     {
       id: "disney-callout",
@@ -461,10 +461,10 @@ const body = {
       id: "recovery-figure",
       type: "figure",
       src: "/images/guides/shanghai-pudong-or-hongqiao-airport/hongqiao-t2-railway-wayfinding-1440.webp",
-      alt: "虹桥综合交通枢纽内，真实导向牌分别标出上海虹桥站和虹桥机场2号航站楼。",
+      alt: "从上海虹桥站通往虹桥机场2号航站楼的有标识通道。",
       width: 1440,
       height: 960,
-      caption: "在虹桥枢纽内，按导向牌上的交通系统和航站楼前进，不要只认“虹桥”两个字。",
+      caption: "这条通道从上海虹桥站通往机场2号航站楼。在虹桥枢纽内，应按交通系统和航站楼前进，不要只认“虹桥”两个字。照片：Shwangtianyuan，CC BY-SA 4.0；已裁剪。",
     },
     {
       id: "verify-heading",
@@ -590,6 +590,18 @@ const body = {
           label: "中国铁路实时车次查询",
           url: "https://www.12306.cn/en/left-ticket.html?linktypeid=dc",
           publisher: "中国铁路12306",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "首图：上海机场联络线列车（已裁剪）",
+          url: "https://commons.wikimedia.org/wiki/File:Train_of_Airport_Link_Line.jpg",
+          publisher: "Greencarp，经 Wikimedia Commons；CC0 1.0",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "照片：上海虹桥站通往机场2号航站楼的通道（已裁剪）",
+          url: "https://commons.wikimedia.org/wiki/File:Shanghai_Hongqiao_Railway_Station_channel_to_Hongqiao_Airport_T2.jpg",
+          publisher: "Shwangtianyuan，经 Wikimedia Commons；CC BY-SA 4.0",
           reviewedAt: "2026-08-11",
         },
       ],

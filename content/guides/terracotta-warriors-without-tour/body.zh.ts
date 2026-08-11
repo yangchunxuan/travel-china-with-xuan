@@ -116,7 +116,7 @@ export default {
     {
       id: "public-transport-route",
       type: "paragraph",
-      text: "博物院现行交通页给出的西安北站和西安火车站路线，都会进入地铁网络：乘 1 号线到纺织城，换乘 9 号线到华清池，再换临潼游 613 或 602 路前往兵马俑区域。住在西安市中心的游客，可从最方便的车站接入同一套 1 号线—9 号线组合。地铁出口、公交站位和道路施工都可能变化，出站前应再次查看当天实时信息。",
+      text: "博物院现行交通页给出的西安北站和西安火车站路线，都会进入地铁网络：乘 1 号线到纺织城，换乘 9 号线到华清池，再换临潼游 613 或 602 路前往兵马俑区域。住在西安市中心时，只有在实际路线能方便接入 1 号线、且不会制造更麻烦换乘的情况下，才沿用这套 1 号线—9 号线组合。地铁出口、公交站位和道路施工都可能变化，出站前应再次查看当天实时信息。",
     },
     {
       id: "transport-options",
@@ -469,6 +469,12 @@ export default {
           label: "2026 年五一临时开放时间与扩容措施",
           url: "https://www.bmy.com.cn/news/news/3278.html",
           publisher: "秦始皇帝陵博物院",
+          reviewedAt: "2026-08-11",
+        },
+        {
+          label: "首图：兵马俑一号坑（已裁剪）",
+          url: "https://commons.wikimedia.org/wiki/File:Terracotta_Army_Pit_1.JPG",
+          publisher: "BrokenSphere，经 Wikimedia Commons；CC BY-SA 3.0",
           reviewedAt: "2026-08-11",
         },
       ],

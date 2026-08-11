@@ -83,3 +83,10 @@ Discovery-only examples:
    `https://english.shanghai.gov.cn/en-ImmigrationCustoms/20251022/2d236278d33f4fbfbd178a9343fb1902.html`
 9. China Railway 12306 — live railway query
    `https://www.12306.cn/en/left-ticket.html?linktypeid=dc`
+
+## Released visual evidence
+
+- Hero: Greencarp, `Train of Airport Link Line.jpg`, CC0 1.0, cropped and resized to 1600 × 1000 WebP.
+- Airport Link schematic: original Homeground orientation diagram, generated from the official seven-station list, expressly marked not to scale.
+- Hongqiao passage: Shwangtianyuan, `Shanghai Hongqiao Railway Station channel to Hongqiao Airport T2.jpg`, CC BY-SA 4.0, cropped and resized to 1440 × 960 WebP.
+- Exact source pages, hashes, processing and final paths are recorded in `image-plan.md`; the two external photo credits appear in all three public Sources disclosures.
