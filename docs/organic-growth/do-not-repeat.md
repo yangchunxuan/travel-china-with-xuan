@@ -12,9 +12,13 @@
 4. `primaryCollectionId` 是内部 provisional taxonomy；它存在不等于可以创建公开或可索引 collection URL。
 5. FAQ、旧文新增章节、tool、collection 或 Hub 能更好解决任务时，不得默认选择 `new-page`。
 6. 任何新 nationality entry 页必须同时满足：不同法律任务、官方一手来源、真实需求证据、明确监控 owner；不得模板复制。
-7. Search Console 和关键词工具在 2026-08-11 **不可用**。不得用自动补全、结果数或主观感觉补写搜索量、购买概率、点击或流量。
-8. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
-9. Route Reality Checker 的内部规格与员工 8 技术/测试审查不算新增文章；`SPEC REVIEW READY` 不是实现、建页、公开、索引或发布授权。
+7. Search Console 在 2026-08-11 **可用但样本很小**：2026-07-09 至 2026-08-09 共 11 clicks、804 impressions、CTR 1.4%、average position 18.7；94 个可见 query 行只有 153 impressions 且 0 clicks，11 次点击无法归到可见 query。它只用于基线、CTR、排名与后续蚕食验证，不作为全市场选题发现器。
+8. 关键词体量、CPC、难度与购买概率工具 **不可用**。Google Trends 只表示同一图表内的相对方向；自动补全、结果数、论坛重复提问和主观感觉都不等于搜索量。
+9. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
+10. Route Reality Checker 的内部规格与员工 8 技术/测试审查不算新增文章；`SPEC REVIEW READY` 不是实现、建页、公开、索引或发布授权。
+11. 城市介绍必须拥有独立的旅客决策、路线或知识网络角色；不得以通用城市百科、换标题或拼接景点列表占位。
+12. 历史、文学、后世纪念、地方口述/传说与现代旅游包装必须分别标注；不得把传说写成史实，也不得按每个朝代、人物或传说批量建薄页。
+13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
 
 ## 本轮六项执行身份：禁止换 slug、branch 或 artifact 类型后重复计数
 
@@ -25,11 +29,11 @@
 - `stay-20260811-01` ↔ 员工 5 foreign-hotel worktree：仍是同一 booking/registration/refusal owner。
 - `essentials-20260811-01` ↔ `china-esim-vs-local-sim.md`：即使从独立 repo 迁入 canonical worktree、补 metadata 或扩展 locale，也仍是同一 eSIM/local SIM/local-number 选择树。
 
-截至 11:46，员工 1、2、3、5 的 `which-beijing-railway-station`、`forbidden-city-for-foreign-visitors`、`first-shared-meal-in-china`、`foreigners-china-hotel` 已分别在 `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6` 形成并推送 durable drafts；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交标记 `SPEC REVIEW READY` 的内部规格；员工 6 的 `china-esim-vs-local-sim.md` 是独立 unborn repo 中未跟踪、未暂存、未提交、未推送且无 remote 的本地英文稿。上述状态只强化锁题，不新增候选或第七篇；durable draft、本地稿与规格 handoff 均不构成公开实现授权。
+截至 13:23，员工 1、2、3、5 的 `which-beijing-railway-station`、`forbidden-city-for-foreign-visitors`、`first-shared-meal-in-china`、`foreigners-china-hotel` 已分别在 `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6` 形成并推送 durable drafts；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交标记 `SPEC REVIEW READY` 的内部规格；员工 6 的 `china-esim-vs-local-sim.md` 位于独立 unborn repo 的本地分支 `article/worker-6-china-esim-vs-local-sim`，仍未跟踪、未暂存、未提交、未推送且无 remote。上述状态只强化锁题，不新增候选或第七篇；durable draft、本地稿与规格 handoff 均不构成公开实现授权。
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
-开工时这 14 个身份均未上线。审计期间，`china-high-speed-train-first-time-guide`、`china-in-october-golden-week-or-later`、`beijing-where-to-stay-first-trip`、`how-to-pay-in-china-as-a-tourist` 已进入最新 `origin/main` 并完成三语上线；其余 10 个仍制作中。状态改变不解除锁题，本表也不把同一身份重复计数。
+开工时这 14 个身份均未上线。至 `origin/main@f521ef7` 与 2026-08-11 13:23 线上复核，14/14 均已发布：四个 Batch A、五个 PR #22 Batch B，以及五个 PR #23 Batch C 身份。当前制作中为 0。状态改变不解除锁题，本表也不把同一身份、视觉整合分支或原始员工分支重复计数。
 
 | Canonical owner | 已占用主题与近义问法 | 应合并内容 |
 |---|---|---|
@@ -48,7 +52,7 @@
 | `china-hotel-near-metro` | hotel near metro China、how close to subway、luggage/family/accessibility rubric | 城市版同一距离判断、家庭版/老人版拆页 |
 | `how-to-pay-in-china-as-a-tourist` | how to pay、Alipay、WeChat、cash、cards、failure recovery | Alipay vs WeChat、单一支付方式、支付失败页 |
 
-## 已发布 canonical owners：不可撞题
+## 其余已发布 canonical owners：不可撞题
 
 ### 张家界
 
@@ -103,6 +107,21 @@
 - `planning-20260811-03` First China Trip Routes collection：**hold/noindex**。未满足 Phase 1 coverage/eligibility gate，不得创建公开 collection。
 - `essentials-20260811-02` entry eligibility checker：**hold**。没有法律数据 owner、监控 SLA、规则版本、测试与 fail-closed，不得建。
 
+## 未来研究占位：不是本轮候选或票据
+
+以下方向只保留为 `research-watch`。它们不产生 `candidateId`、票据、branch reservation 或写手指令，本轮仍严格只有六票，不增加或递补第七票。
+
+- 第一次访华路线现实性归 Route Reality Checker 与 `is-your-china-itinerary-too-rushed`；不再建 7/10/14/21 天或城市组合页。
+- 数字生存栈优先更新已发布 payment、高铁与本轮 eSIM owners；不得另写一篇泛“中国必备 App”汇总抢占所有任务。
+- Amap→中文地址→Didi 只研究实测 workflow/tool 或地址卡；没有地点数据和失败恢复时，不建普通 App 指南。
+- 素食、清真与严重过敏应由一个全国饮食限制 owner 加双语卡承接；必须区分偏好、宗教限制与危及生命的过敏，不按城市复制。
+- 景点预约优先做维护型矩阵，字段包括预约窗口、外籍证件、官方渠道、语言、支付与现场备选；不得把同一预约模板复制到每个景点。
+- 成都–重庆–张家界与上海–苏州–杭州–水乡只研究区域 Hub/selector；不做每个城市对、日数或人群组合。
+- 老人、轮椅、推车与婴幼儿可达性并入既有 older-parents owners 和结构化字段；不生成城市×人群页面。
+- 朝代、古都、佛教与经典文学优先由解释型 collection 承接；大同、泉州、平遥、景德镇、洛阳只处于 city-Hub 研究序列，尚无可声称的搜索量证据。
+- 全国假期与拥挤问题只允许一个年度 calendar/data owner；不得按城市×月份铺页。
+- 非政治旅行新闻只收可能改变旅行决策的 UNESCO/地质公园、铁路接入、场馆开放、预约/支付、关闭/重开；先更新 evergreen owner，不发热点票。
+
 ## 六个池内批准项自身也不得被拆分
 
 这些项目仍需中央批准；此处只锁定其潜在 canonical 边界。
@@ -119,11 +138,14 @@
 任何员工提交新题前必须回答：
 
 1. 是否与上表 owner 解决同一个最终任务？若是，默认 `update-existing` 或 `merge`。
-2. 差异是否只来自语言、年份、城市修饰、人群修饰、天数或同义词？若是，拒绝新页。
+2. 差异是否只来自语言、年份、把城市/景点/人群/天数替换进同一模板，或同义词？若是，拒绝新页；真正不同的实体仍须证明不同用户任务、信息增量和 canonical owner。
 3. 真实 SERP 缺口是否来自内容能力，而不是标题没完全匹配？
 4. Homeground 是否有可验证、其他结果没有的信息增量？
 5. 动态事实是否有一手来源、负责人、复核频率和失效处理？
 6. Hub、collection、tool、FAQ 或 data page 是否比文章更适合？
 7. 是否已经在 live sitemap、最新 `origin/main`、任一 `origin/article/*`、`origin/codex/*` 或同仓 worktree 中发布、制作或 reservation？若是，禁止再选。
+8. 若是历史或传说，是否清楚标明史实、文学/口述、后世纪念与现代包装，并有可核验来源？否则拒绝或暂缓。
+9. 若是新闻，是否属于非政治旅行操作变化，且无法由既有 evergreen owner 更新解决？否则拒绝新页。
+10. 是否只是外部 `research-watch`，尚未经过六维评分与中央批准？若是，不得交给写手。
 
 任一答案不清楚时，题目回到 Search Map 候选池，不得先写后判。

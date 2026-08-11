@@ -6,11 +6,11 @@
 
 本轮硬上限：票据集合冻结为以下六项，不增加第七个文章、页面或票据，也不自动递补。Route Reality Checker 的内部规格和员工 8 审查不计作新增文章。
 
-维护观察不是授权记录：11:46 检查到员工 1、2、3、5 的既有票据已形成并推送 canonical-repo durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交内部规格；员工 6 提供了独立 unborn repo 中未跟踪、未暂存、未提交、未推送且无 remote 的英文稿 `china-esim-vs-local-sim.md`。这些状态没有改变本 brief 的 `writerStartAuthorized: false`；中央编辑若已在别处批准，必须把可审计的批准记录同步回 Search Map。
+维护观察不是授权记录：13:23 检查到员工 1、2、3、5 的既有票据已形成并推送 canonical-repo durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交内部规格；员工 6 的英文稿 `china-esim-vs-local-sim.md` 位于独立 unborn repo 的本地分支 `article/worker-6-china-esim-vs-local-sim`，仍未跟踪、未暂存、未提交、未推送且无 remote。这些状态没有改变本 brief 的 `writerStartAuthorized: false`；中央编辑若已在别处批准，必须把可审计的批准记录同步回 Search Map。
 
-数据限制：Search Console **不可用**；关键词体量工具 **不可用**。评分依据是线上/仓库真实覆盖、当前定性 SERP 样本、近期旅客问题、官方来源可用性与 Homeground 信息增量；没有搜索量、购买概率或流量预测。
+数据限制：Search Console UI 与导出 **可用但样本很小**。2026-07-09 至 2026-08-09 共 11 clicks、804 impressions、CTR 1.4%、average position 18.7；94 个可见 query 行只有 153 impressions、0 clicks，11 clicks 无法归到可见 query。它只用于基线、CTR、排名与后续蚕食监测，不作为全市场选题发现器。关键词搜索量、CPC、难度与购买概率工具 **不可用**；Google Trends 只表示同一图表内的相对方向，不是搜索量。
 
-状态变化：本轮开工时锁定的 14 个未上线身份中，Beijing stay、national HSR、October 与 tourist payments 在审计期间进入最新 `origin/main` 并完成三语上线。它们现在是 published canonical owners；其余 10 个仍制作中。六张新票据的边界已按最终线上状态重算。
+状态变化：`origin/main@f521ef7315e31ba608929486462ed5becc6588b9` 已包含 PR #22 与 PR #23。线上 sitemap 共 136 URL，guide scope 97、guide detail 94；34 个 guide identity = 33 篇文章 + 1 个系统 collection，其中 30 篇文章三语、3 篇文章仅英文、1 个系统 guide 仅英文。本轮开工时锁定的 14 个未上线身份现已 **14/14 全部发布**，当前制作中为 0；PR #23 新上线 panda venue、last-night buffer、night train vs HSR、open-jaw 与 hotel-near-metro。状态变化不解除锁题，六张本轮票据的边界不变。
 
 ## Ticket 1 — 员工 1 / 交通
 
@@ -76,7 +76,7 @@
 
 交付验收：给出从预约到北门离场的单一执行流；路线取舍按旅客可用时间和体力解释；离场后链接 `transport-20260811-01`（如获批）、`beijing-where-to-stay-first-trip`、`china-itinerary-with-older-parents`。
 
-禁止重复：Mutianyu vs Badaling 本轮拒绝；Panda Base gate/time/route 必须并入制作中熊猫比较稿。
+禁止重复：Mutianyu vs Badaling 本轮拒绝；Panda Base gate/time/route 必须并入已发布熊猫比较 owner。
 
 ## Ticket 3 — 员工 3 / 文化
 
@@ -176,7 +176,7 @@
 
 交付验收：预订前检查→入住材料→前台沟通→平台升级→替代住宿→登记收尾的恢复流程；链接 hotel value、Beijing areas、metro rubric、last-night owners。
 
-禁止重复：Airport hotel vs city hotel 并入 last-night 稿；不得按城市复制 foreign-friendly hotel 页面。
+禁止重复：Airport hotel vs city hotel 并入已发布 last-night owner；不得按城市复制 foreign-friendly hotel 页面。
 
 ## Ticket 6 — 员工 6 / 入境与实用
 
@@ -210,6 +210,21 @@
 交付验收：以“只要数据 / 还要本地号码 / 两者都要 / 手机不兼容”四条路径给出选择与失败备选；链接 payment、foreign-hotel（如获批）、entry collection、HSR owners。当前英文稿四路径与来源边界通过，但 9 个链接均为外部来源、内部链接为 0；进入中央验收前必须迁入 canonical repo、补 metadata/locale plan 与上述真实内链。
 
 禁止重复：Alipay vs WeChat 必须并入支付稿；Entry Eligibility Checker 暂缓，未有法律数据 owner、监控 SLA、版本规则和 fail-closed 测试前不得建。
+
+## 外部市场观察：不发票
+
+以下仅为 `research-watch`，`ticketIssued: false`、`writerStartAuthorized: false`；不改变本轮六张冻结票据，也不自动递补。
+
+| 观察面 | 更合适的未来形态 | 锁题边界 |
+|---|---|---|
+| 第一次访华与数字生存 | 既有 owner 更新 + route tool | 路线现实性归员工 4 规格与 rushed-itinerary；payment、HSR、eSIM 分别保留 owner，不写泛“中国必备 App”或日数排列页。 |
+| Amap、饮食限制、景点预约 | 地址卡/tool、指南+双语卡、维护型矩阵 | 只有实测地址/失败恢复才做 Amap；素食、清真、严重过敏分栏但全国一个 owner；景点预约不得每处复制同一模板。 |
+| 城市与区域 | city-Hub / regional Hub / selector | 可研究大同、泉州、平遥、景德镇、洛阳，以及成都–重庆–张家界、上海–苏州–杭州–水乡网络；只有明确路线、取舍、到达或现场任务才值得存在，不写通用城市百科，不做城市×月份×人群组合，也不声称已证实高搜索量。 |
+| 景点与可达性 | 旧文模块、城市 Hub、结构化数据 | 故宫仍是本轮唯一新增景点任务；老人、轮椅、推车与婴幼儿字段优先并入既有 owner，不按景点或人群批量建页。 |
+| 地点型历史与传说 | 解释型 collection / 既有地点页章节 | 必须区分可证史实、文学设定、地方传说、后世纪念与现代旅游包装；传说不得写成事实，也不按朝代、人物或传说批量建薄页。 |
+| 假期与非政治旅行新闻 | calendar/data owner；`update-existing` 与 freshness queue 优先 | 新闻只跟踪 UNESCO/地质公园、铁路接入、场馆开放、预约/支付变化、关闭与重开；先更新 evergreen owner。政治、意识形态、地缘评论、八卦和纯流量热点全部拒绝，本轮不发新闻票。 |
+
+这些观察项的搜索量、CPC、难度与购买概率均不可用；只有在补齐 SERP 缺口、来源、Homeground 信息增量和维护责任后，才可进入下一轮正式评分。
 
 ## 中央编辑审批清单
 
