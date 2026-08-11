@@ -271,12 +271,12 @@ const body = {
     {
       id: "station-intro",
       type: "paragraph",
-      text: "Beijing's seven major railway terminals are in different parts of the city. Search the complete station name from the ticket. With two large cases or a slower walker, a taxi or ride-hailing transfer can be easier than a theoretically short metro route with security, corridors and a transfer.",
+      text: "Beijing's eight major railway terminals are in different parts of the city. Search the complete station name from the ticket. With two large cases or a slower walker, a taxi or ride-hailing transfer can be easier than a metro route that looks short on the map but includes security, long corridors and a transfer.",
     },
     {
       id: "station-matrix",
       type: "table",
-      caption: "How Beijing's seven major railway terminals change the four-area choice",
+      caption: "How Beijing's eight major railway terminals change the four-area choice",
       columns: ["Arrival terminal", "Official subway link", "Area implication"],
       rows: [
         [
@@ -313,6 +313,11 @@ const body = {
           "Beijing Fengtai",
           "Lines 10 and 16",
           "None of the four has a simple direct ride. Compare the exact metro transfer with a road transfer, especially after a late train.",
+        ],
+        [
+          "Beijing Tongzhou",
+          "Line 6",
+          "Best aligned with Tongzhou or the Universal Resort side of the city. From the four central-area choices, compare the complete cross-city journey before treating it as a convenient station.",
         ],
       ],
     },
@@ -513,6 +518,12 @@ const body = {
           url: "https://english.beijing.gov.cn/latest/news/202412/t20241225_3973421.html",
           publisher: "People's Government of Beijing Municipality",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Beijing Tongzhou Railway Station and Line 6 integration",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
+          publisher: "People's Government of Beijing Municipality",
+          reviewedAt: "2026-08-11",
         },
         {
           label: "Beijing Chaoyang Railway Station transfer guide",

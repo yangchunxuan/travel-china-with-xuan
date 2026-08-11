@@ -1,0 +1,60 @@
+{
+  "id": "forbidden-city-for-foreign-visitors",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["forbidden-city", "ticket-booking", "museum-route", "beijing-transport"],
+  "destinations": ["beijing", "forbidden-city", "palace-museum"],
+  "heroImagePath": "/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/forbidden-city-for-foreign-visitors/",
+      "title": "How to Visit the Forbidden City: Tickets and a 3-Hour Route",
+      "headline": "How Foreign Visitors Can Book and Visit the Forbidden City in Three Hours",
+      "description": "Use the official multilingual portal, enter at the Meridian Gate, follow a realistic three-hour route and plan the journey from the north exit.",
+      "heroAlt": "Hall of Supreme Harmony and its courtyard in the Forbidden City with visitors in view",
+      "navTitle": "Forbidden City for foreign visitors",
+      "featuredLinkLabel": "Plan a Forbidden City visit",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Forbidden City", "3-hour route"]
+    },
+    "zh": {
+      "path": "/zh/guides/forbidden-city-for-foreign-visitors/",
+      "title": "外国游客故宫参观指南：预约、入口与三小时路线",
+      "headline": "外国游客如何预约并在三小时内游览故宫",
+      "description": "通过故宫多语种订票网站预约，从午门入院，按三小时路线取舍重点，并提前安排神武门离院后的交通。",
+      "heroAlt": "故宫太和殿与院落，画面中可见游客",
+      "navTitle": "外国游客故宫指南",
+      "featuredLinkLabel": "规划故宫三小时参观",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京", "故宫", "三小时路线"]
+    },
+    "ko": {
+      "path": "/ko/guides/forbidden-city-for-foreign-visitors/",
+      "title": "외국인 자금성 관람 가이드: 예약과 3시간 동선",
+      "headline": "외국인 방문객을 위한 자금성 예약·입장·3시간 관람 동선",
+      "description": "공식 다국어 예매 사이트에서 예약하고 오문으로 입장해 3시간 핵심 동선을 따른 뒤 신무문 이후 이동까지 준비합니다.",
+      "heroAlt": "관람객이 보이는 자금성 태화전과 뜰",
+      "navTitle": "외국인 자금성 방문 가이드",
+      "featuredLinkLabel": "자금성 3시간 방문 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징", "자금성", "3시간 동선"]
+    }
+  }
+}

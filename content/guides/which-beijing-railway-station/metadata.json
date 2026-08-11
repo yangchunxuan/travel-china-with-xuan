@@ -1,0 +1,57 @@
+{
+  "id": "which-beijing-railway-station",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "station-decision-matrix",
+  "topics": ["transport", "railways", "railway-stations"],
+  "destinations": ["beijing"],
+  "heroImagePath": "/images/guides/which-beijing-railway-station/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/which-beijing-railway-station/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/which-beijing-railway-station/",
+      "title": "Which Beijing Railway Station? All 8 Compared",
+      "headline": "Which Beijing Railway Station? All 8 Major Terminals Explained",
+      "description": "Compare Beijing’s eight major railway stations by ticket name, route direction, hotel location and door-to-door city transfer.",
+      "heroAlt": "Exterior of Beijing Chaoyang Railway Station with the station’s Chinese name clearly visible.",
+      "navTitle": "Which Beijing railway station?",
+      "featuredLinkLabel": "Compare eight Beijing railway stations",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Railway stations", "Getting around"]
+    },
+    "zh": {
+      "path": "/zh/guides/which-beijing-railway-station/",
+      "title": "北京哪个火车站？8座主要车站对比",
+      "headline": "北京坐火车该去哪个站？8座主要铁路客站说明",
+      "description": "按票面站名、线路方向、酒店位置和门到门接驳，对比北京8座主要铁路客站。",
+      "heroAlt": "北京朝阳站外立面，建筑上的中文站名清晰可见。",
+      "navTitle": "北京8座火车站怎么选",
+      "featuredLinkLabel": "对比北京8座主要车站",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京交通", "火车站", "市内接驳"]
+    },
+    "ko": {
+      "path": "/ko/guides/which-beijing-railway-station/",
+      "title": "베이징 기차역 어디로? 8개 주요 역 비교",
+      "headline": "베이징 기차역 어디로 가야 할까요? 8개 주요 터미널 설명",
+      "description": "승차권 역명, 노선 방향, 호텔 위치와 문 앞까지의 이동을 기준으로 베이징 8개 주요 철도역을 비교하세요.",
+      "heroAlt": "중국어 역명이 선명하게 보이는 베이징 차오양역 외관.",
+      "navTitle": "베이징 주요 기차역 8곳 비교",
+      "featuredLinkLabel": "베이징 주요 기차역 8곳 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징 교통", "기차역", "시내 이동"]
+    }
+  }
+}
