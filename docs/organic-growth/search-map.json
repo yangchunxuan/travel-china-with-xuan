@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "snapshotDate": "2026-08-11",
-  "checkedAt": "2026-08-11T11:31:57+08:00",
+  "checkedAt": "2026-08-11T11:46:49+08:00",
   "finalStatus": "SEARCH MAP READY — CENTRAL APPROVAL REQUIRED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
@@ -20,7 +20,7 @@
     "demandConvention": "Qualitative traveler-task and SERP evidence only. Search Console and keyword-volume data are unavailable."
   },
   "roundExecutionControl": {
-    "checkedAt": "2026-08-11T11:30:17+08:00",
+    "checkedAt": "2026-08-11T11:46:49+08:00",
     "roundTicketIds": [
       "transport-20260811-01",
       "destination-20260811-01",
@@ -133,15 +133,37 @@
       {
         "candidateId": "essentials-20260811-01",
         "ownerPool": "employee-6-entry-practical",
-        "proposedContentId": null,
-        "branch": null,
+        "proposedContentId": "china-esim-vs-local-sim",
+        "branch": "article/worker-6-china-esim-vs-local-sim",
         "remoteRef": null,
         "worktreePath": null,
+        "localArtifactPath": "C:/Users/User/Documents/宝格丽的agent/articles/china-esim-vs-local-sim.md",
+        "localRepositoryPath": "C:/Users/User/Documents/宝格丽的agent",
+        "canonicalRepositoryRelationship": "independent-unborn-repository-not-canonical-worktree",
         "observedHead": null,
-        "executionState": "no-branch-or-worktree-observed",
+        "executionState": "local-untracked-draft-observed-not-durable",
         "durableArticleCommitObserved": false,
+        "staged": false,
+        "committed": false,
+        "pushed": false,
+        "remoteConfigured": false,
+        "artifactLanguage": "en",
+        "authorReportedDraftComplete": true,
+        "artifactBytes": 12234,
+        "artifactSha256": "C71BB38EB4A91FBDB82E3385632836F1A57890D486D0CAE420E88C523C33AB73",
+        "externalLinkCount": 9,
+        "internalLinkCount": 0,
         "topicIdentityDelta": 0,
-        "canonicalLock": "eSIM, local SIM, local number and dual-SIM choice remain one provider-neutral decision tree."
+        "canonicalLock": "eSIM, local SIM, local number and dual-SIM choice remain one provider-neutral decision tree.",
+        "metadataAlignment": {
+          "status": "topic-boundary-aligned-internal-link-handoff-pending",
+          "alignedFields": ["workingTitle", "four-path decision tree", "provider neutrality", "payment-guide handoff", "failure recovery", "source readiness"],
+          "requiredBeforeCentralAcceptance": [
+            "Move or recreate the artifact inside a canonical travel-china-with-xuan worktree and durable branch.",
+            "Add real internal links to how-to-pay-in-china-as-a-tourist, system-entry-requirements, china-high-speed-train-first-time-guide and the approved foreign-hotel owner where contextually useful.",
+            "Create and validate canonical repository metadata and locale plan without changing the locked topic boundary."
+          ]
+        }
       }
     ],
     "routeRealityCheckerReviewGate": {
@@ -198,18 +220,19 @@
       "englishOnlyArticleIdentities": 3,
       "englishOnlySystemGuideIdentities": 1,
       "checkedAt": "2026-08-11T08:18:39+08:00",
-      "finalSitemapRecheckedAt": "2026-08-11T11:31:57+08:00",
+      "finalSitemapRecheckedAt": "2026-08-11T11:46:49+08:00",
+      "observedCurrentRoundContentIdCount": 5,
       "observedCurrentRoundContentIdUrlHits": 0,
       "method": "Live sitemap enumeration plus HTTP, canonical, robots and hreflang checks. The sitemap grew from 94 to 106 URLs during this audit when four trilingual guides went live."
     },
     "remoteBranches": {
       "status": "available",
-      "lastFetchedAt": "2026-08-11T11:30:17+08:00",
+      "lastFetchedAt": "2026-08-11T11:46:49+08:00",
       "scope": [
         "origin/article/*",
         "origin/codex/*"
       ],
-      "auditedRefCount": 32,
+      "auditedRefCount": 33,
       "auditedRefs": [
         "origin/article/beijing-where-to-stay-first-trip",
         "origin/article/worker-1-beijing-railway-stations",
@@ -237,6 +260,7 @@
         "origin/codex/logo-home-reset-20260722",
         "origin/codex/new-brand-mark-20260730",
         "origin/codex/pending-visual-batch-b-20260810",
+        "origin/codex/pending-visual-batch-c-20260811",
         "origin/codex/phase0-search-platform-20260809",
         "origin/codex/restore-ga4-20260725",
         "origin/codex/ten-day-guide",
@@ -247,7 +271,7 @@
       "unpublishedAtKickoffCount": 14,
       "publishedDuringAuditCount": 4,
       "currentUnpublishedContentIdentityCount": 10,
-      "note": "All 14 kickoff drafts remain topic-locked. During the initial audit, origin/main advanced to 6df1f55 and the live sitemap added Beijing stay, national high-speed rail, October timing and tourist payments in three locales; those four are now published owners, leaving ten durable kickoff branch identities in production. The maintenance audit found origin/main at 073e019 with UI-only changes. Remote audit scope grew from 25 to 32 refs: two non-content fix branches; four durable current-round article drafts at 32504fc, 949c06d, 72dc3ea and a5be2b6; and the Route Reality Checker specification at 1e131ff. The four drafts remain within the frozen six tickets; the specification is not an article or public tool. None changes query ownership or adds a seventh topic. Current-round activity is recorded separately in roundExecutionControl and is not mixed into the ten kickoff production records."
+      "note": "All 14 kickoff drafts remain topic-locked. During the initial audit, origin/main advanced to 6df1f55 and the live sitemap added Beijing stay, national high-speed rail, October timing and tourist payments in three locales; those four are now published owners, leaving ten durable kickoff branch identities in production. The maintenance audit found origin/main at 073e019 with UI-only changes. Remote audit scope grew from 25 to 33 refs: two non-content fix branches; four durable current-round article drafts at 32504fc, 949c06d, 72dc3ea and a5be2b6; the Route Reality Checker specification at 1e131ff; and pending visual batch C at bc17333. Batch C consolidates photography and content revisions for five existing kickoff identities without changing their section, intent, page family or canonical boundary. Employee 6 supplied a boundary-aligned English eSIM/local-SIM artifact in a separate unborn repository, but it is untracked, unstaged, uncommitted, unpushed and absent from all remote refs. All activity remains within the frozen six tickets. None changes query ownership or adds a seventh topic, and current-round activity is not mixed into the ten kickoff production records."
     },
     "existingSearchMap": {
       "status": "unavailable",
@@ -919,8 +943,9 @@
       {
         "id": "chengdu-panda-base-or-dujiangyan-panda-valley",
         "title": "Chengdu Panda Base or Panda Valley? Which to Visit",
-        "sourceBranch": "origin/codex/worker-2-panda-base-vs-panda-valley",
-        "sourceCommit": "ce893ed109d584ad07afade819c21e67b1c79cb8",
+        "sourceBranch": "origin/codex/pending-visual-batch-c-20260811",
+        "sourceCommit": "bc1733327e3122e5fa16f82b351596054d96de13",
+        "originalBranch": "origin/codex/worker-2-panda-base-vs-panda-valley",
         "locales": ["en", "zh", "ko"],
         "section": "explore",
         "primaryCollectionId": "explore-attractions-nature-heritage",
@@ -931,7 +956,7 @@
         "queryCluster": ["chengdu panda base or panda valley", "best panda base chengdu", "dujiangyan panda valley vs chengdu research base"],
         "cannibalizationOwner": "chengdu-panda-base-or-dujiangyan-panda-valley",
         "freshnessClass": "high-before-launch-and-on-source-change",
-        "sourceReviewedAt": "2026-08-10",
+        "sourceReviewedAt": "2026-08-11",
         "status": "in-production-unpublished"
       },
       {
@@ -975,8 +1000,9 @@
       {
         "id": "china-last-night-before-international-flight",
         "title": "Should Your Last Night in China Be in Your Departure City?",
-        "sourceBranch": "origin/article/worker-4-china-last-night-buffer",
-        "sourceCommit": "0aaab9aa10e52cdac3db2ab621980267672722c2",
+        "sourceBranch": "origin/codex/pending-visual-batch-c-20260811",
+        "sourceCommit": "bc1733327e3122e5fa16f82b351596054d96de13",
+        "originalBranch": "origin/article/worker-4-china-last-night-buffer",
         "locales": ["en", "zh", "ko"],
         "section": "plan",
         "primaryCollectionId": "plan-budget-pace-decisions",
@@ -987,14 +1013,15 @@
         "queryCluster": ["last night in departure city china", "same day train to international flight china", "airport hotel last night china", "departure buffer china"],
         "cannibalizationOwner": "china-last-night-before-international-flight",
         "freshnessClass": "medium-before-launch-quarterly",
-        "sourceReviewedAt": "2026-08-10",
+        "sourceReviewedAt": "2026-08-11",
         "status": "in-production-unpublished"
       },
       {
         "id": "china-night-train-or-daytime-high-speed-rail",
         "title": "China Night Train or Daytime High-Speed Rail?",
-        "sourceBranch": "origin/article/worker-4-china-night-train-decision",
-        "sourceCommit": "819b37b47d52ec0eaf69bbe6d8b2467736acd294",
+        "sourceBranch": "origin/codex/pending-visual-batch-c-20260811",
+        "sourceCommit": "bc1733327e3122e5fa16f82b351596054d96de13",
+        "originalBranch": "origin/article/worker-4-china-night-train-decision",
         "locales": ["en", "zh", "ko"],
         "section": "plan",
         "primaryCollectionId": "plan-budget-pace-decisions",
@@ -1005,14 +1032,15 @@
         "queryCluster": ["china night train or high speed rail", "overnight train vs daytime train china", "hard sleeper soft sleeper hotel saving"],
         "cannibalizationOwner": "china-night-train-or-daytime-high-speed-rail",
         "freshnessClass": "high-before-launch-and-on-source-change",
-        "sourceReviewedAt": "2026-08-10",
+        "sourceReviewedAt": "2026-08-11",
         "status": "in-production-unpublished"
       },
       {
         "id": "china-open-jaw-flights-route-planning",
         "title": "China Open-Jaw Flights: Arrive in One City, Leave From Another?",
-        "sourceBranch": "origin/article/worker-4-china-open-jaw",
-        "sourceCommit": "94b40d3c308bbf1d81655e2b64bf8086519104c2",
+        "sourceBranch": "origin/codex/pending-visual-batch-c-20260811",
+        "sourceCommit": "bc1733327e3122e5fa16f82b351596054d96de13",
+        "originalBranch": "origin/article/worker-4-china-open-jaw",
         "locales": ["en", "zh", "ko"],
         "section": "plan",
         "primaryCollectionId": "plan-trip-length-city-order",
@@ -1023,14 +1051,15 @@
         "queryCluster": ["china open jaw flights", "arrive one china city leave another", "china multi city flight route"],
         "cannibalizationOwner": "china-open-jaw-flights-route-planning",
         "freshnessClass": "medium-before-launch-quarterly",
-        "sourceReviewedAt": "2026-08-10",
+        "sourceReviewedAt": "2026-08-11",
         "status": "in-production-unpublished"
       },
       {
         "id": "china-hotel-near-metro",
         "title": "How Close Should Your Hotel Be to the Metro in China?",
-        "sourceBranch": "origin/article/worker-5-china-hotel-near-metro",
-        "sourceCommit": "1c02bef1f2d0037847914f61df51ba68960cf2d1",
+        "sourceBranch": "origin/codex/pending-visual-batch-c-20260811",
+        "sourceCommit": "bc1733327e3122e5fa16f82b351596054d96de13",
+        "originalBranch": "origin/article/worker-5-china-hotel-near-metro",
         "locales": ["en", "zh", "ko"],
         "section": "stay",
         "primaryCollectionId": "stay-city-areas",
@@ -1041,7 +1070,7 @@
         "queryCluster": ["hotel near metro china", "how close should hotel be to subway china", "china hotel location luggage accessibility"],
         "cannibalizationOwner": "china-hotel-near-metro",
         "freshnessClass": "medium-before-launch-quarterly",
-        "sourceReviewedAt": "2026-08-10",
+        "sourceReviewedAt": "2026-08-11",
         "status": "in-production-unpublished"
       }
     ],

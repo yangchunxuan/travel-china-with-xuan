@@ -6,7 +6,7 @@
 
 本轮硬上限：票据集合冻结为以下六项，不增加第七个文章、页面或票据，也不自动递补。Route Reality Checker 的内部规格和员工 8 审查不计作新增文章。
 
-维护观察不是授权记录：11:30 检查到员工 1、2、3、5 的既有票据已形成并推送 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交内部规格；员工 6 尚无 worktree。它们没有改变本 brief 的 `writerStartAuthorized: false`；中央编辑若已在别处批准，必须把可审计的批准记录同步回 Search Map。
+维护观察不是授权记录：11:46 检查到员工 1、2、3、5 的既有票据已形成并推送 canonical-repo durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；员工 4 已在 `origin/article/worker-4-route-reality-checker-spec@1e131ff` 提交内部规格；员工 6 提供了独立 unborn repo 中未跟踪、未暂存、未提交、未推送且无 remote 的英文稿 `china-esim-vs-local-sim.md`。这些状态没有改变本 brief 的 `writerStartAuthorized: false`；中央编辑若已在别处批准，必须把可审计的批准记录同步回 Search Map。
 
 数据限制：Search Console **不可用**；关键词体量工具 **不可用**。评分依据是线上/仓库真实覆盖、当前定性 SERP 样本、近期旅客问题、官方来源可用性与 Homeground 信息增量；没有搜索量、购买概率或流量预测。
 
@@ -191,6 +191,8 @@
 - `primaryEntityId`: `country-china`
 - 分数：**88/100**（24/15/13/15/15/6）
 - 状态：`pool-approved-pending-central`
+- `executionObservation`: `local-untracked-draft-observed-not-durable`
+- 本地 artifact：`C:/Users/User/Documents/宝格丽的agent/articles/china-esim-vs-local-sim.md`；独立 unborn repo，未跟踪、未暂存、未提交、未推送且无 remote
 
 用户任务：旅客依据手机兼容、移动数据、是否需要中国号码/SMS、支付/叫车/酒店联系与备份需求，在 eSIM、当地 SIM 或双卡之间做决定。
 
@@ -205,7 +207,7 @@
 - [China Mobile service guide for foreign visitors](https://www.10086.cn/support/service/foreign/)
 - 当前设备 eSIM/双卡能力、主要运营商实名与套餐规则、漫游与本地号码差异均需上线前复核。
 
-交付验收：以“只要数据 / 还要本地号码 / 两者都要 / 手机不兼容”四条路径给出选择与失败备选；链接 payment、foreign-hotel（如获批）、entry collection、HSR owners。
+交付验收：以“只要数据 / 还要本地号码 / 两者都要 / 手机不兼容”四条路径给出选择与失败备选；链接 payment、foreign-hotel（如获批）、entry collection、HSR owners。当前英文稿四路径与来源边界通过，但 9 个链接均为外部来源、内部链接为 0；进入中央验收前必须迁入 canonical repo、补 metadata/locale plan 与上述真实内链。
 
 禁止重复：Alipay vs WeChat 必须并入支付稿；Entry Eligibility Checker 暂缓，未有法律数据 owner、监控 SLA、版本规则和 fail-closed 测试前不得建。
 
