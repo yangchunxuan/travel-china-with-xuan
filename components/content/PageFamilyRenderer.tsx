@@ -124,8 +124,11 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
       );
     case "sources":
       return (
-        <section className={styles.sources} aria-labelledby={block.id}>
-          <h2 id={block.id}>{block.title}</h2>
+        <details className={styles.sources}>
+          <summary id={block.id}>
+            <span>{block.title}</span>
+            <span className={styles.sourceCount}>({block.items.length})</span>
+          </summary>
           <ol>
             {block.items.map((source) => (
               <li key={source.url}>
@@ -137,7 +140,7 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
               </li>
             ))}
           </ol>
-        </section>
+        </details>
       );
   }
 }

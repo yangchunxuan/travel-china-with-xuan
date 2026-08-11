@@ -112,14 +112,20 @@ test("sitemap, language navigation and compatibility aliases consume platform da
 });
 
 test("new structured content uses a finite semantic page-family renderer", async () => {
-  const [renderer, bodySchema] = await Promise.all([
+  const [renderer, bodySchema, rendererStyles, guideStyles] = await Promise.all([
     source("components/content/PageFamilyRenderer.tsx"),
     source("lib/content-system/page-body.ts"),
+    source("components/content/PageFamilyRenderer.module.css"),
+    source("components/content/EditorialGuidePage.module.css"),
   ]);
 
   assert.match(renderer, /case "comparison"/);
   assert.match(renderer, /<caption>/);
   assert.match(renderer, /scope="col"/);
   assert.match(renderer, /case "sources"/);
+  assert.match(renderer, /<details className=\{styles\.sources\}>/);
+  assert.doesNotMatch(renderer, /<details[^>]*\sopen(?:=|\s|>)/);
+  assert.match(rendererStyles, /\.sources\[open\] summary::after/);
+  assert.match(guideStyles, /--hg-editorial: var\(--serif\)/);
   assert.match(bodySchema, /assertStructuredPageBody/);
 });
