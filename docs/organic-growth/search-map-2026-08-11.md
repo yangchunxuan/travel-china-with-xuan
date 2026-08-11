@@ -7,40 +7,45 @@
 ## 1. 口径与输入审计
 
 - 内容身份：英文、中文、韩文最多是同一内容身份的三个 locale，不按三篇计算。
-- 仓库基线：最新 `origin/main`，提交 `073e019478bd81166eea2e4e48fc6f040167f393`。相对 `6df1f55` 的两次提交仅涉及 editorial UI 与中文语言导航，没有新增指南身份或改变 indexability。
+- 仓库基线：最新 `origin/main`，提交 `f521ef7315e31ba608929486462ed5becc6588b9`，即 PR #23 的合并提交；PR #22 与 Batch C 均已包含。SEO 分支将在提交前更新到该基线。
 - 仓库规范：已完整读取 `docs/article-production-lite.md` 与 `docs/homeground-search-platform-phase-1-spec.md`。
-- 线上：2026-08-11 检查了 [sitemap](https://homegroundchina.com/sitemap.xml)、[guides 目录](https://homegroundchina.com/guides/) 与全部指南详情页的 HTTP、canonical、robots、hreflang。审计期间 sitemap 从 94 增至 106 个 URL，四个三语稿同步上线。
-- 远端：已检查全部 32 个 `origin/article/*` 与 `origin/codex/*` ref；修复分支只算相同稿件的新版本；current-round draft/spec ref 仍按既有六张票据计数，不增加内容身份。
+- 线上：2026-08-11 13:23（Asia/Shanghai）复核了 [sitemap](https://homegroundchina.com/sitemap.xml)、[guides 目录](https://homegroundchina.com/guides/) 与 Batch C 15 个 locale URL。15/15 均为 200、自 canonical、`index, follow`，并有对应的 en、zh-Hans、ko、x-default hreflang；技术可索引不等于 Google 已实际收录。
+- 远端：已检查全部 34 个 `origin/article/*` 与 `origin/codex/*` ref，包括新增的 `origin/codex/batch-c-five-guide-release-20260811`；修复或视觉整合分支只算相同稿件的新版本；current-round draft/spec 仍按既有六张票据计数。
 - 现有 Search Map：**不可用**。`origin/main` 没有既有 `docs/organic-growth` 主账本或等价的 canonical candidate ledger。
-- Search Console：**不可用**。没有已安装的 Search Console connector；可用浏览器会话未登录，只能到公开登录/about 页面。Clicks、impressions、queries、position 均未使用。
-- 关键词工具：**不可用**。没有已认证的关键词体量工具；搜索量与购买概率均未估算。
-- 当前 SERP 与真实问题：可用但只作定性证据。没有把 Google 自动补全、结果数量或 Reddit 帖子数当搜索量。
+- Search Console：**可用（浏览器导出）**。`sc-domain:homegroundchina.com` 在 2026-07-09 至 2026-08-09 有 11 clicks、804 impressions、CTR 1.4%、average position 18.7。94 个可见 query 行只有 153 impressions、0 clicks；11 个 clicks 无法归因到可见 query。该样本只作基线、CTR/排名和蚕食验证，不承担市场发现。
+- 关键词工具：**不可用**。没有已认证的 Keyword Planner、Semrush 等体量工具；搜索量、CPC、关键词难度、购买概率与流量预测均未估算。
+- Google Trends：**可用但仅为相对趋势**。使用全球、过去五年、Travel 类别、Google 网页搜索；不同图不能横比，0 可能只是低于显示阈值，不能当月搜索量。
+- 当前 SERP 与真实问题：可用但只作定性任务证据。没有把 Google 自动补全、结果数量、论坛帖数或 Trends 指数当搜索量。
+- 内容疆域：允许规划、城市、景点、地点型历史/传说与非政治旅行新闻；新闻必须影响去哪、何时去、怎么去或值不值得，优先更新常青 owner。政治、意识形态和地缘评论为硬拒绝。
 
 ## 2. 总览
 
 | 状态 | 内容身份数 | 说明 |
 |---|---:|---|
-| 已发布指南身份 | 24 | 23 篇文章 + 1 个 entry requirements 系统 collection；共 64 个详情 URL |
+| 已发布指南身份 | 34 | 33 篇文章 + 1 个 entry requirements 系统 collection；共 94 个详情 URL |
 | Guides 目录 | 1 | `/guides/` 的 en/zh/ko 三个 locale URL |
 | Section Hub | 9 | 6 个 published/indexable；when-to-go、culture、tools 为 review/noindex |
 | 本轮开工时锁定稿 | 14 | 14 个身份全部已纳入且仍禁止重选 |
-| 当前制作中 | 10 | 审计期间 4 个身份转为 published/indexable；其余 10 个仍在远端分支 |
+| 当前制作中 | 0 | PR #23 已将 Batch C 五个身份全部转为 published/indexable |
 | 本轮候选 | 18 | 六个内容池各 3 个 |
 | 池内批准 | 6 | 每池恰好 1 个；仍须 Mac 中央编辑批准 |
 | 本轮执行锁 | 6 | 票据集合冻结；4 个 canonical-repo durable draft、1 个 `SPEC REVIEW READY`、1 个独立 unborn repo 的本地英文稿；不追加第七篇 |
+| 外部市场观察簇 | 12 | 只进入下一轮研究池，不是 candidateId、票据或开工授权 |
 | 合并/更新路由 | 9 | 8 个候选路由 + 1 个已合并 legacy shell；不创建第二 canonical URL |
 | 明确拒绝模式 | 12 | 包含近义页和排列组合页 |
-| 动态事实复核组 | 10 | 法规、机场、铁路、支付、门票等 |
+| 动态事实复核组 | 12 | 法规、机场、铁路、支付、门票、非政治旅行新闻等 |
 
-最终线上 sitemap 共 106 个 URL；指南范围为 64 个详情 URL + 3 个 guides 目录 locale URL。本次主题盘点聚焦指南、目录与 section hubs。除已单列的 `system-guides` 与 `system-entry-requirements` 外，另有 7 个运营/法律/转化系统身份，不作为搜索编辑选题身份。
+最终线上 sitemap 共 136 个 URL；指南范围为 94 个详情 URL + 3 个 guides 目录 locale URL。本次主题盘点聚焦指南、目录与 section hubs。除已单列的 `system-guides` 与 `system-entry-requirements` 外，另有 7 个运营/法律/转化系统身份，不作为搜索编辑选题身份。
 
 ### 审计期间状态变化
 
-本轮启动时，`beijing-where-to-stay-first-trip`、`china-high-speed-train-first-time-guide`、`china-in-october-golden-week-or-later`、`how-to-pay-in-china-as-a-tourist` 均不在当时的 `origin/main`/live sitemap。08:18（Asia/Shanghai）复核时，`origin/main` 已推进到 `6df1f55`，四项的 en/zh/ko URL 均为 200、自 canonical、`index, follow` 且进入 sitemap。Search Map 因而把它们从制作中转为已发布，但仍保留在“本轮 14 个锁题身份”审计表中；没有任何一个被重新提名。
+本轮启动时 14 个未上线身份全部进入锁题账本。08:18 复核时，Beijing stay、national HSR、October timing 与 tourist payments 四项已随 `origin/main@6df1f55` 三语上线。
 
-08:52 最终远端复核时，`origin/codex/pending-visual-batch-b-20260810` 前进到 `e5325b7`，变更为五篇稿的授权摄影、图片元数据与正文图片引用；五个内容身份及 canonical 边界不变。08:55 再次读取线上 sitemap，仍为 106 / 67 / 64（全站 URL / guides 范围 / guide 详情）。
+12:33，PR #22 合并为 `origin/main@60bc288`；12:50 线上核验确认 Guangzhou airport、Pudong→Disney、Lijiang Dayan vs Shuhe、Guangzhou morning tea 与 Suzhou garden interpretation 五项三语上线。
 
-11:46 维护复核时，`origin/main` 仍为 `073e019`，已发布仍为 24 个身份，远端文章与 codex 审计 ref 为 33。新增的 `origin/codex/pending-visual-batch-c-20260811@bc17333` 只整合五个既有制作中身份的授权摄影与内容修订；逐项比对后，section、intent、page family 与 canonical 边界均未变化，内容身份增量为 0。Beijing-station、Forbidden City、shared-meal 与 foreign-hotel 是 canonical repo 的 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；Route Reality Checker 是内部规格 `1e131ff`。员工 6 的 `china-esim-vs-local-sim.md` 已在 `C:/Users/User/Documents/宝格丽的agent` 观察到，但该目录是独立 unborn repo，不是 Homeground worktree；文件未跟踪、未暂存、未提交、未推送且没有 remote。六项全部对应既有票据，没有第七个主题。11:46 再查线上 sitemap 仍为 106 / 67 / 64，五个已观察 current-round content ID 命中为 0。
+13:03，PR #23 合并为 `origin/main@f521ef7`；13:23 线上核验确认 panda venue、last-night buffer、night train vs HSR、open-jaw 与 hotel-near-metro 的 15 个 locale URL 全部上线。至此 14 个开工锁题 **14/14 均已发布**，当前制作中为 0。状态迁移不会解除锁题，也不会把 Batch C 的整合分支或原始员工分支重复计数。
+
+本轮新票据仍冻结为六项：Beijing-station、Forbidden City、shared-meal 与 foreign-hotel 是 durable drafts `32504fc` / `949c06d` / `72dc3ea` / `a5be2b6`；Route Reality Checker 是 `SPEC REVIEW READY` 规格 `1e131ff`；员工 6 的英文稿位于独立 unborn repo 的 `article/worker-6-china-esim-vs-local-sim` 本地分支，仍未跟踪、未暂存、未提交、未推送且无 remote。外部热词研究没有增加第七个主题。
 
 重复风险提示：员工 1 的 Beijing-station durable draft 仍是同一锁定主题，但 metadata 写为 `primaryIntent: plan` / `family: comparison`，与 Search Map 的 `execute` / `combined-decision` 不一致；在中央接受、合并或发布前必须对齐，不能靠改字段把同一主题伪装成第二个 identity。
 
@@ -73,29 +78,39 @@
 | `china-high-speed-train-first-time-guide` | [China High-Speed Train Guide](https://homegroundchina.com/guides/china-high-speed-train-first-time-guide/) | en/zh/ko | transport / `transport-airports-rail-hubs` | 全国票务、车站流程、行李、席别与乘车；arrival buffer 也归本页 | high / source change |
 | `china-in-october-golden-week-or-later` | [China in October: Golden Week or Later?](https://homegroundchina.com/guides/china-in-october-golden-week-or-later/) | en/zh/ko | when-to-go / `timing-holidays-crowds` | 全国十月/黄金周决策；不做城市×十月 | critical / annual + source change |
 | `how-to-pay-in-china-as-a-tourist` | [How to Pay in China in 2026](https://homegroundchina.com/guides/how-to-pay-in-china-as-a-tourist/) | en/zh/ko | essentials / `essentials-payments-connectivity` | Alipay、WeChat、现金、卡与失败恢复完整栈 | critical / source change |
+| `guangzhou-baiyun-airport-t2-t3` | [Guangzhou Baiyun Airport T2 or T3?](https://homegroundchina.com/guides/guangzhou-baiyun-airport-t2-t3/) | en/zh/ko | transport / `transport-airports-rail-hubs` | T2/T3、关闭航站楼、地铁/城际与走错航站楼恢复 | critical / source change |
+| `pudong-airport-to-shanghai-disneyland` | [Pudong Airport to Shanghai Disneyland](https://homegroundchina.com/guides/pudong-airport-to-shanghai-disneyland/) | en/zh/ko | transport / `transport-last-mile-transfers` | Airport Link/taxi、儿童、行李、晚到是一个接驳任务 | high / source change |
+| `lijiang-old-town-or-shuhe-where-to-stay` | [Dayan Old Town or Shuhe](https://homegroundchina.com/guides/lijiang-old-town-or-shuhe-where-to-stay/) | en/zh/ko | explore / `explore-cities-neighborhoods` | 丽江住哪里与大研/束河选择同属一个 owner | medium / quarterly |
+| `how-guangzhou-morning-tea-works` | [How Guangzhou Morning Tea Works](https://homegroundchina.com/guides/how-guangzhou-morning-tea-works/) | en/zh/ko | culture / `culture-regional-food` | yum cha、dim sum、点单、礼仪与历史同页 | medium / quarterly |
+| `how-to-read-a-suzhou-garden` | [How to Read a Suzhou Garden](https://homegroundchina.com/guides/how-to-read-a-suzhou-garden/) | en/zh/ko | culture / `culture-festivals-arts-contemporary` | 园林构成、借景与选择解释同一 owner | medium / quarterly |
+| `chengdu-panda-base-or-dujiangyan-panda-valley` | [Chengdu Panda Base or Panda Valley?](https://homegroundchina.com/guides/chengdu-panda-base-or-dujiangyan-panda-valley/) | en/zh/ko | explore / `explore-attractions-nature-heritage` | 两处熊猫场馆的选择；入口、时间和半日路线并入 owner | high / source change |
+| `china-last-night-before-international-flight` | [Should Your Last Night Be in Your Departure City?](https://homegroundchina.com/guides/china-last-night-before-international-flight/) | en/zh/ko | plan / `plan-budget-pace-decisions` | 离境前夜、同日转乘、机场/市区住宿属于一个缓冲决策 | medium / quarterly |
+| `china-night-train-or-daytime-high-speed-rail` | [China Night Train or Daytime High-Speed Rail?](https://homegroundchina.com/guides/china-night-train-or-daytime-high-speed-rail/) | en/zh/ko | plan / `plan-budget-pace-decisions` | 夜间卧铺与白天高铁的方式选择；高铁执行流程归 HSR owner | high / source change |
+| `china-open-jaw-flights-route-planning` | [China Open-Jaw Flights](https://homegroundchina.com/guides/china-open-jaw-flights-route-planning/) | en/zh/ko | plan / `plan-trip-length-city-order` | 一城进、另一城出与回头路成本；不拆进出城市组合 | medium / quarterly |
+| `china-hotel-near-metro` | [How Close Should Your Hotel Be to the Metro?](https://homegroundchina.com/guides/china-hotel-near-metro/) | en/zh/ko | stay / `stay-city-areas` | 全国酒店地铁位置判断；不按城市或人群复制 | medium / quarterly |
 | `system-entry-requirements` | [China Entry Guides: Visa-Free Rules by Passport & Route](https://homegroundchina.com/guides/china-entry-requirements/) | en | essentials / `essentials-entry-transit` | 六个法律 owner 的系统路由 collection | critical / source change |
 
 补充：旧路径 `/china-visa-free-uk-canada/` 是 noindex/follow canonical shell，canonical 指向 `system-entry-requirements`；不得复活成第二个入口页。
 
-## 4. 本轮 14 个锁题身份：4 个审计期间上线，10 个仍制作中
+## 4. 本轮 14 个锁题身份：14 个均已上线，制作中为 0
 
 分支 metadata 的 `datePublished` 本身不算上线证据；最终状态以最新 `origin/main` 与 live sitemap 为准。下表完整保留开工时的 14 个未上线身份，确保没有任何一个被再次选题。
 
 | Pool | Canonical owner | 当前状态 | 当前权威版本 | 已锁定任务；禁止另起近义页 |
 |---:|---|---|---|---|
 | 1 | `china-high-speed-train-first-time-guide` | **published during audit** | `origin/main@6df1f55` | 全国首次乘高铁：票、12306、车站流程、席别、行李、乘车；arrival buffer 也并入 |
-| 1 | `guangzhou-baiyun-airport-t2-t3` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | T2/T3、关闭航站楼、地铁/城际、走错航站楼 |
-| 1 | `pudong-airport-to-shanghai-disneyland` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | PVG 到迪士尼；Airport Link/taxi、儿童、行李、晚到 |
-| 2 | `lijiang-old-town-or-shuhe-where-to-stay` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | 丽江住宿 + 大研/束河选择 |
-| 2 | `chengdu-panda-base-or-dujiangyan-panda-valley` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 场馆选择；时间、入口、半日路线并入同页 |
-| 3 | `how-guangzhou-morning-tea-works` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | 早茶/yum cha/dim sum/点单/礼仪/历史是一个身份 |
-| 3 | `how-to-read-a-suzhou-garden` | in production | `origin/codex/pending-visual-batch-b-20260810@e5325b7` | 园林构成、借景与四园比较；“最好/选哪座园林”先并入 |
-| 4 | `china-last-night-before-international-flight` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 最后一晚、起飞前缓冲、同日转乘、机场酒店同义任务 |
-| 4 | `china-night-train-or-daytime-high-speed-rail` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 夜车/日间高铁、硬卧/软卧、节省酒店同一决策 |
-| 4 | `china-open-jaw-flights-route-planning` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 一城进、另一城出及线路设计；不拆城市组合 |
+| 1 | `guangzhou-baiyun-airport-t2-t3` | **published via PR #22** | `origin/main@60bc288` | T2/T3、关闭航站楼、地铁/城际、走错航站楼 |
+| 1 | `pudong-airport-to-shanghai-disneyland` | **published via PR #22** | `origin/main@60bc288` | PVG 到迪士尼；Airport Link/taxi、儿童、行李、晚到 |
+| 2 | `lijiang-old-town-or-shuhe-where-to-stay` | **published via PR #22** | `origin/main@60bc288` | 丽江住宿 + 大研/束河选择 |
+| 2 | `chengdu-panda-base-or-dujiangyan-panda-valley` | **published via PR #23** | `origin/main@f521ef7` | 场馆选择；时间、入口、半日路线并入同页 |
+| 3 | `how-guangzhou-morning-tea-works` | **published via PR #22** | `origin/main@60bc288` | 早茶/yum cha/dim sum/点单/礼仪/历史是一个身份 |
+| 3 | `how-to-read-a-suzhou-garden` | **published via PR #22** | `origin/main@60bc288` | 园林构成、借景与四园比较；“最好/选哪座园林”并入 |
+| 4 | `china-last-night-before-international-flight` | **published via PR #23** | `origin/main@f521ef7` | 最后一晚、起飞前缓冲、同日转乘、机场酒店同义任务 |
+| 4 | `china-night-train-or-daytime-high-speed-rail` | **published via PR #23** | `origin/main@f521ef7` | 夜车/日间高铁、硬卧/软卧、节省酒店同一决策 |
+| 4 | `china-open-jaw-flights-route-planning` | **published via PR #23** | `origin/main@f521ef7` | 一城进、另一城出及线路设计；不拆城市组合 |
 | 4 | `china-in-october-golden-week-or-later` | **published during audit** | `origin/main@6df1f55` | 全国十月/黄金周决策；不做城市×十月 |
 | 5 | `beijing-where-to-stay-first-trip` | **published during audit** | `origin/main@6df1f55` | 北京首次住宿四区比较；不拆四个 area 页面 |
-| 5 | `china-hotel-near-metro` | in production | `origin/codex/pending-visual-batch-c-20260811@bc17333` | 全国酒店位置判断：行李、步行、家庭、无障碍 |
+| 5 | `china-hotel-near-metro` | **published via PR #23** | `origin/main@f521ef7` | 全国酒店位置判断：行李、步行、家庭、无障碍 |
 | 6 | `how-to-pay-in-china-as-a-tourist` | **published during audit** | `origin/main@6df1f55` | Alipay、WeChat、现金、卡、失败恢复的完整栈 |
 
 ### 4A. 本轮六张票据的执行锁（维护观察，不是开工授权）
@@ -107,9 +122,42 @@
 | `culture-20260811-01` | `origin/article/worker-3-first-shared-meal@72dc3ea` 已提交并推送 `first-shared-meal-in-china` durable draft | ordering/seating/sharing/paying 不拆；广州早茶与 dim sum 仍归广州 owner |
 | `planning-20260811-01` | `origin/article/worker-4-route-reality-checker-spec@1e131ff` 已提交内部规格并标记 `SPEC REVIEW READY` | 员工 8 现在只可做技术可行性与测试审查；仍不得实现或创建公开工具 |
 | `stay-20260811-01` | `origin/article/worker-5-foreigners-china-hotel@a5be2b6` 已提交并推送 `foreigners-china-hotel` durable draft | metadata 与主账本一致；booking/registration/refusal recovery 仍是一个 owner，不得城市复制 |
-| `essentials-20260811-01` | 独立 unborn repo 的 `articles/china-esim-vs-local-sim.md` 本地英文稿已观察；未跟踪/未暂存/未提交/未推送，无 remote | 边界对齐且不算第七篇；转入 canonical repo、补 metadata/locale plan 与内部链接后才可成为 durable draft |
+| `essentials-20260811-01` | 独立 unborn repo 的本地分支 `article/worker-6-china-esim-vs-local-sim` 与英文稿已观察；仍未跟踪/未暂存/未提交/未推送，无 remote | 边界对齐且不算第七篇；转入 canonical repo、补 metadata/locale plan 与内部链接后才可成为 durable draft |
 
 本轮票据集合冻结为以上六项，不增加第七个文章、页面或票据，也不因某票延迟或退回而自动递补第二名。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章。独立 repo 本地稿、未提交 worktree、branch reservation 或 `SPEC REVIEW READY` 均不会自行把 `writerStartAuthorized` 改为 `true`；该 signal 只解除员工 8 的等待状态并开放限定审查。
+
+## 4B. 外部中国需求与未来占位方向
+
+现有 GSC 的 804 impressions 太小，适合验证已发布 owner 是否开始获得排名、CTR 是否异常、同一 query 是否出现多个页面，不适合决定整个市场下一步。选题发现因此以外部需求为主，GSC 作为后验验证层保留。
+
+市场盘子正在扩大：[国家统计局](https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html)记录 2025 年 1.545 亿入境访问（+17.1%），其中外国人 3517 万（+30.6%）、免签入境外国人 3008 万（+49.5%）；“访问”不是独立游客，且总入境口径包含港澳台。[国家移民管理局](https://www.nia.gov.cn/n741440/n741567/c1789835/content.html)记录 2026 上半年外国人入境 2291.4 万（+20.4%），其中免签 1781.5 万，占 77.7%。[2026–2030 旅游规划](https://english.www.gov.cn/policies/latestreleases/202607/08/content_WS6a4dc693c6d00ca5f9a0c10b.html)把签证、支付、交通、通信、住宿和多语服务列为持续改进对象。
+
+Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜索。下表是同一图内的年度周指数均值，只证明相对方向，不是搜索量：
+
+| 同图词群 | 2024 → 2026 YTD | 解释 |
+|---|---|---|
+| [核心需求](https://trends.google.com/trends/explore?date=today%205-y&cat=67&q=China%20travel,China%20visa,China%20tour,China%20itinerary,China%20trip) | China travel 16.2→36.7；visa 11.4→19.6；tour 8.7→17.0；itinerary 1.2→3.8；trip 4.9→13.8 | 第一次访华与路线需求整体抬升 |
+| [实用任务](https://trends.google.com/trends/explore?date=today%205-y&cat=67&q=China%20visa%20free,China%20eSIM,China%20payment,China%20high%20speed%20train,China%20VPN) | visa free 10.8→30.8；eSIM 2.4→37.3；payment 0.8→46.3；HSR 13.8→29.8；VPN 3.4→34.3 | 方向强，但窄词低基数、`China payment` 有歧义，必须再用官方来源和真实问题核验 |
+| [目的地](https://trends.google.com/trends/explore?date=today%205-y&cat=67&q=Beijing%20travel,Shanghai%20travel,Chongqing%20travel,Zhangjiajie%20travel,Chengdu%20travel) | Beijing 15.5→45.6；Shanghai 24.7→71.6；Chongqing 0.6→6.3；Zhangjiajie 0.5→2.3；Chengdu 0.3→8.2 | 支持做更深目的地研究；后三项从极低基数起步，不能宣称绝对市场大小 |
+
+未来占位采用四层网络：全国第一次访华/实用入口 → 城市与区域 Hub → 景点决策与现场解释 → 地点型历史/传说。非政治旅行新闻只作为更新管道，不单独追热点。
+
+| 研究观察簇 | 更合适形态 | 当前结论与重复边界 |
+|---|---|---|
+| 第一次访华路线现实性 | tool + Hub | 已由 Route Reality Checker 与 rushed-itinerary owner 承接；不加新票，不做 7/10/14/21 天页 |
+| 支付、eSIM/SIM、VPN、Apps、12306 数字生存栈 | collection + update-existing | 大部分已有 owner；禁止再写一篇通用 China apps 清单 |
+| Amap→中文地址→Didi 工作流 | tool / 可下载地址卡 | 三个近期真实问题支持；SERP 已有 App 指南，必须有实测地址数据和失败恢复才进入下一轮评分 |
+| 素食、清真与严重过敏 | new-page + 双语卡 tool | 真实问题重复且覆盖较薄；偏好、宗教限制、危及生命的过敏必须分栏，不能承诺零交叉污染 |
+| 全国景点预约矩阵 | maintained data tool | 一张含预约窗口、护照支持、官方渠道、语言、支付与现场备选的日期化矩阵；不得每景点一页 |
+| 成都–重庆–张家界增长链 | regional Hub | 研究城市取舍与顺序，不做所有城市对、日数排列；既有熊猫和张家界 owner 保持边界 |
+| 上海–苏州–杭州–水乡选择 | comparison Hub / selector | SERP 拥挤；只有真实换乘税与体验重复度信息足够时才值得存在 |
+| 老人、轮椅与婴幼儿可达性 | update-existing + 数据模块 | 并入 older-parents 与 Zhangjiajie older-travellers；禁止城市×老人/婴儿页 |
+| 朝代、古都、佛教与经典文学旅行 | collection | 需求规模不可用；先做史实地点/文学设定/后世纪念/旅游包装四分法，不按朝代或传说批量建页 |
+| Datong、Quanzhou、Pingyao、Jingdezhen、Luoyang | city-Hub 研究序列 | 仅有相关查询和文化旅游方向信号，精确长尾 Trends 数据不足；不得称为已证实高量热词 |
+| 全国假期与拥挤日历 | tool / data page | 一个年度 owner；Golden Week、春节、暑期与季节关闭不做城市×月份组合 |
+| 非政治旅行新闻 | update evergreen owner first | 只收 UNESCO/地质公园、铁路接入、场馆开放、预约支付变化、关闭/重开；政治、意识形态、地缘与八卦拒绝 |
+
+以上 12 项均为 `research-watch`，不是正式候选、candidateId 或员工任务。本轮正式候选仍为下列 18 项，正式批准仍只有六项。
 
 ## 5. 候选评分与决策
 
@@ -132,7 +180,7 @@
 | 4 规划 | `planning-20260811-02` | How Many Days: 7 vs 10 vs 14 | update-existing | 24/8/14/7/14/9 = 76 | 更新 rushed-itinerary owner |
 | 4 规划 | `planning-20260811-03` | First China Trip Routes by Pace | collection | 22/11/12/10/15/8 = 78 | 暂缓；Phase 1 gate 未满足，不公开/索引 |
 | 5 住宿 | `stay-20260811-01` | Can Foreigners Stay in Any Hotel? | new-page | 23/14/15/15/15/6 = **88** | **池内批准；待中央批准** |
-| 5 住宿 | `stay-20260811-02` | Airport Hotel or City Hotel Last Night? | merge | 17/7/12/5/13/8 = 62 | 并入 last-night 稿 |
+| 5 住宿 | `stay-20260811-02` | Airport Hotel or City Hotel Last Night? | merge | 17/7/12/5/13/8 = 62 | 并入已发布 last-night owner |
 | 5 住宿 | `stay-20260811-03` | Best Hotel Booking Apps | update-existing | 20/10/9/7/13/5 = 64 | 做 owner 内模块，不做易过时榜单 |
 | 6 入境/实用 | `essentials-20260811-01` | China eSIM or Local SIM? | new-page | 24/15/13/15/15/6 = **88** | **池内批准；待中央批准** |
 | 6 入境/实用 | `essentials-20260811-02` | China Entry Eligibility Checker | tool | 25/12/15/12/15/3 = 82 | 暂缓；法律数据 owner/SLA 未建立 |
@@ -172,7 +220,9 @@
 ### 待更新优先级
 
 - **P0** `system-entry-requirements`：warehouse/sitemap 节点日期为 2026-07-24，live JSON-LD `dateModified` 为 2026-07-28 且缺 `datePublished`。需要中央排期修正数据源一致性；本轮未改页面。
-- **P0/P1 动态复核**：已上线的支付、高铁、十月 owner 立即进入变更监控；机场、熊猫等剩余稿上线前复核并吸收对应合并模块。
+- **P0/P1 动态复核**：已上线的支付、高铁、夜车、十月、两篇机场与熊猫 owner 全部进入按来源变化监控；后续缺口只更新 canonical owner，不另建同义页。
+- **P0/P1 中央验收前**：foreign-hotel 核验 2026 非酒店住所网上登记；HSR owner 核验 12306 护照验证、候补与邮件失败恢复；不得另建新闻或故障排查页。
+- **P2 结构化更新**：older-parents 与 Zhangjiajie older-travellers 增加坡度、台阶、休息点、缆车、轮椅与推车字段，不生成城市×人群页。
 - **P2**：只有 route checker 被中央批准后，才更新 rushed-itinerary 的 7/10/14 日表格与工具链接。
 
 ## 7. 动态事实复核队列
@@ -180,15 +230,17 @@
 | 优先级 | Owner/组 | 必查事实 | 触发条件 |
 |---|---|---|---|
 | P0 critical | entry collection + US/UK/CA/NZ/240h/SG 六 owner | 资格、目的、停留期、口岸/区域、第三国路线、材料 | NIA/使馆/国务院变化；任何发布前 |
-| P0 | Guangzhou airport + PVG→Disney drafts | 航站楼、关闭状态、Airport Link、地铁/城际、晚到备选 | 机场/运营方变化；上线前 |
-| P0 | live HSR + night-train draft | 售票、护照、行李、进站、车次产品 | 12306/国铁变化；live owner 立即更新、draft 上线前复核 |
+| P0 | live Guangzhou airport + PVG→Disney owners | 航站楼、关闭状态、Airport Link、地铁/城际、晚到备选 | 机场/运营方变化；立即复核重大变更 |
+| P0 | live HSR + night-train owners | 售票、护照、行李、进站、车次产品 | 12306/国铁变化；受影响 owner 立即复核 |
 | P0 | live October owner | 节假日日期、放票、关闭、拥挤/天气表述 | 年度日历或重大假期/关闭变化 |
 | P0 | live payment owner + eSIM candidate | 外卡、实名、限额、备用支付；运营商、设备、号码用途 | 监管/平台/运营商/设备变化 |
 | P1 | panda draft | 预约、开放、入口、交通与观看时段 | 场馆公告；上线前 |
 | P1 | cost + hotel value | 价格示例、币种、平台、价值判断 | 季度或明显价格变化 |
 | P1 | night show + Malaysia access + 3-city transport | 演出、航班/铁路、时刻示例 | 运营/时刻变化 |
-| P0 if approved | Forbidden City candidate | 预约、护照、入口/出口、闭馆、天安门关联 | 写作同周 + 上线前 |
-| P0 if approved | foreign-hotel candidate | 法规、登记、平台标签、拒绝恢复 | 写作同周 + 政策/平台变化 |
+| P0 before central acceptance | Forbidden City durable draft | 预约、护照、入口/出口、闭馆、天安门关联 | 中央验收同周 + 上线前 |
+| P0 before central acceptance | foreign-hotel durable draft | 法规、酒店/非酒店住所登记、平台标签、拒绝恢复 | 中央验收同周 + 政策/平台变化 |
+| P1 research | attraction-booking matrix | 预约窗口、护照支持、官方渠道、语言、支付、现场备选 | 官方公告或可靠实测；只研究、不发票 |
+| ongoing | 非政治旅行新闻 intake | UNESCO/地质公园、铁路接入、场馆开放、预约支付、关闭/重开 | 先路由到常青 owner；政治/意识形态/地缘拒绝 |
 
 ## 8. 架构约束
 
@@ -198,6 +250,8 @@
 - `targetIntent` 与 `pageFamily` 使用仓库受控词表；更细的候选形态放在 `taskMode` 与 `artifactShape`，避免机器字段混义。
 - 机器账本分别保存 origin/main 的 7 个真实 entity ID/已发布 runtime assignments 与编辑提议。候选的 `primaryEntityId`/`secondaryEntityIds` 是未落地提案，不会自动创建 entity record。
 - `freshnessClass` 是 Search Map 对编辑复核风险的治理 override，不声称等于仓库当前 `updatePolicy`。
-- 六个池内批准项只进入中央审批队列。员工 1–6 当前均不得据此开始写作、建页或改站点。
+- 六个池内批准项仍处于中央验收/审批治理下；已观察到的 draft、规格或本地稿不构成追加工作、建页、索引或发布授权。
 - 本轮 ticket set 硬冻结为六项；不得追加第七篇，也不得把 held/rejected/runner-up 自动递补进本轮。
+- 城市、景点、历史与传说可以进入未来研究池，但必须有地点/旅客任务、可验证来源或 Homeground 信息增量；传说与史实必须分栏。
+- 旅行新闻不得绕过 Search Map。优先更新现有城市、景点、交通或实用 owner；政治、意识形态、地缘与泛流量新闻拒绝。
 - Route Reality Checker 规格 owner 是员工 4；`SPEC REVIEW READY` 已在 `1e131ff` 观察到，员工 8 现在仅可审查技术可行性与测试。未经 Mac 中央编辑明确批准，员工 8 无实现、建页、公开、索引或发布权限。
