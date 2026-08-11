@@ -1,0 +1,57 @@
+{
+  "id": "china-last-night-before-international-flight",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["trip-planning", "departure-buffer", "airports", "rail", "budget", "pace"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-last-night-before-international-flight/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-last-night-before-international-flight/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "sourceReviewedDate": "2026-08-10",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-last-night-before-international-flight/",
+      "title": "Should Your Last Night in China Be in Your Departure City?",
+      "headline": "Should You Return to Your China Departure City the Day Before Your Flight?",
+      "description": "Decide whether to position for an international flight the night before or travel from another Chinese city on departure day by checking ticket protection, airports, cutoffs, fallbacks and real cost.",
+      "heroAlt": "International travellers with luggage checking a departure board at an airport in mainland China",
+      "navTitle": "China departure-night buffer",
+      "featuredLinkLabel": "Plan the last night before your flight",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China", "Departure day", "Trip pace"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-last-night-before-international-flight/",
+      "title": "中国行程最后一晚要住在国际航班出发城市吗？",
+      "headline": "国际航班前一天，要不要先回到中国境内的出发城市？",
+      "description": "从联程保障、机场位置、值机截止、后备交通和真实成本，判断应提前一晚到达国际航班出发城市，还是可以当天从中国另一座城市前往。",
+      "heroAlt": "携带行李的国际旅客在中国大陆机场查看航班出发信息",
+      "navTitle": "国际航班前一晚怎么安排",
+      "featuredLinkLabel": "判断是否需要提前回到出发城市",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国旅行", "离境日", "行程节奏"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-last-night-before-international-flight/",
+      "title": "중국 여행 마지막 밤, 국제선 출발 도시에 머물러야 할까?",
+      "headline": "중국 출국 전날, 국제선 출발 도시로 미리 돌아가야 할까?",
+      "description": "연결 보호, 실제 공항, 체크인 마감, 대체 교통편과 총비용을 기준으로 전날 이동과 출국 당일 이동 중 어느 쪽이 맞는지 판단해 보세요.",
+      "heroAlt": "중국 본토 공항에서 수하물과 함께 출발 안내판을 확인하는 국제 여행객",
+      "navTitle": "중국 출국 전날 버퍼",
+      "featuredLinkLabel": "출국 전날 이동 여부 판단하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 여행", "출국일", "여행 속도"]
+    }
+  }
+}
