@@ -1,0 +1,60 @@
+{
+  "id": "forbidden-city-for-foreign-visitors",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["forbidden-city", "ticket-booking", "museum-route", "beijing-transport"],
+  "destinations": ["beijing", "forbidden-city", "palace-museum"],
+  "heroImagePath": "/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "sourceReviewedDate": "2026-08-11",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/forbidden-city-for-foreign-visitors/",
+      "title": "Forbidden City for Foreign Visitors: Entrance & 3-Hour Route",
+      "headline": "Forbidden City for Foreign Visitors: Correct Entrance, a 3-Hour Route and the North-Gate Exit",
+      "description": "Book the Forbidden City with a passport, reach the Meridian Gate, follow a realistic three-hour route and plan transport after the north-gate exit.",
+      "heroAlt": "Foreign visitors approaching the Meridian Gate entrance of the Forbidden City in Beijing",
+      "navTitle": "Forbidden City for foreign visitors",
+      "featuredLinkLabel": "Plan a Forbidden City visit",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Forbidden City", "3-hour route"]
+    },
+    "zh": {
+      "path": "/zh/guides/forbidden-city-for-foreign-visitors/",
+      "title": "外国游客游故宫：预约、午门入口与三小时路线",
+      "headline": "外国游客如何游故宫：正确入口、三小时路线与神武门离场",
+      "description": "用护照预约故宫，从午门正确入院，按三小时路线取舍重点，并提前安排神武门离场后的交通。",
+      "heroAlt": "外国游客从北京故宫午门入口步行进场",
+      "navTitle": "外国游客故宫指南",
+      "featuredLinkLabel": "规划故宫三小时参观",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京", "故宫", "三小时路线"]
+    },
+    "ko": {
+      "path": "/ko/guides/forbidden-city-for-foreign-visitors/",
+      "title": "외국인을 위한 자금성: 예약·우먼 입구·3시간 동선",
+      "headline": "외국인을 위한 자금성 방문법: 정확한 입구, 3시간 동선과 북문 출구",
+      "description": "여권으로 자금성을 예약하고 우먼으로 입장해 3시간 핵심 동선을 따른 뒤 선우먼 출구의 교통까지 준비합니다.",
+      "heroAlt": "베이징 자금성 우먼 입구로 걸어가는 외국인 방문객",
+      "navTitle": "외국인 자금성 방문 가이드",
+      "featuredLinkLabel": "자금성 3시간 방문 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징", "자금성", "3시간 동선"]
+    }
+  }
+}
