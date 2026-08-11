@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "1.0.0",
+  "ownerId": "china-public-holidays-travel-calendar",
+  "canonicalPath": "/guides/china-public-holidays-travel-calendar/",
+  "checkedAt": "2026-08-11",
+  "definitions": {
+    "holidayPeriod": "The nationwide days off stated in the General Office of the State Council notice.",
+    "compensatoryWorkday": "A Saturday or Sunday designated as a working day by that notice.",
+    "documentedPressurePeriod": "A separately announced transport period; it is not an extension of the public holiday."
+  },
+  "updatePolicy": {
+    "authority": "General Office of the State Council of the People's Republic of China",
+    "futureYearRule": "not_published_until_official_notice",
+    "noForecast": true,
+    "updateTrigger": "Publish a new year only after the State Council schedule is available; then verify transport and venue notices as they are issued.",
+    "reviewCadence": "annual-and-on-source-change"
+  },
+  "years": [
+    {
+      "year": 2026,
+      "status": "official",
+      "noticeNumber": "国办发明电〔2025〕7号",
+      "publishedAt": "2025-11-04",
+      "sourceId": "state-council-2026-holidays",
+      "sourceUrl": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm",
+      "compensatoryWorkdays": [
+        { "date": "2026-01-04", "relatedHolidayId": "new-year" },
+        { "date": "2026-02-14", "relatedHolidayId": "spring-festival" },
+        { "date": "2026-02-28", "relatedHolidayId": "spring-festival" },
+        { "date": "2026-05-09", "relatedHolidayId": "labour-day" },
+        { "date": "2026-09-20", "relatedHolidayId": "national-day" },
+        { "date": "2026-10-10", "relatedHolidayId": "national-day" }
+      ],
+      "holidays": [
+        {
+          "id": "new-year",
+          "names": { "en": "New Year's Day", "zh": "元旦", "ko": "신정" },
+          "startDate": "2026-01-01",
+          "endDate": "2026-01-03",
+          "dayCount": 3,
+          "compensatoryWorkdays": ["2026-01-04"]
+        },
+        {
+          "id": "spring-festival",
+          "names": { "en": "Spring Festival", "zh": "春节", "ko": "춘절" },
+          "startDate": "2026-02-15",
+          "endDate": "2026-02-23",
+          "dayCount": 9,
+          "compensatoryWorkdays": ["2026-02-14", "2026-02-28"]
+        },
+        {
+          "id": "qingming-festival",
+          "names": { "en": "Qingming Festival", "zh": "清明节", "ko": "청명절" },
+          "startDate": "2026-04-04",
+          "endDate": "2026-04-06",
+          "dayCount": 3,
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "labour-day",
+          "names": { "en": "Labour Day", "zh": "劳动节", "ko": "노동절" },
+          "startDate": "2026-05-01",
+          "endDate": "2026-05-05",
+          "dayCount": 5,
+          "compensatoryWorkdays": ["2026-05-09"]
+        },
+        {
+          "id": "dragon-boat-festival",
+          "names": { "en": "Dragon Boat Festival", "zh": "端午节", "ko": "단오절" },
+          "startDate": "2026-06-19",
+          "endDate": "2026-06-21",
+          "dayCount": 3,
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "mid-autumn-festival",
+          "names": { "en": "Mid-Autumn Festival", "zh": "中秋节", "ko": "중추절" },
+          "startDate": "2026-09-25",
+          "endDate": "2026-09-27",
+          "dayCount": 3,
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "national-day",
+          "names": { "en": "National Day", "zh": "国庆节", "ko": "국경절" },
+          "startDate": "2026-10-01",
+          "endDate": "2026-10-07",
+          "dayCount": 7,
+          "compensatoryWorkdays": ["2026-09-20", "2026-10-10"]
+        }
+      ],
+      "documentedPressurePeriods": [
+        {
+          "id": "spring-festival-travel-season",
+          "names": { "en": "Spring Festival travel season", "zh": "春运", "ko": "춘윈" },
+          "startDate": "2026-02-02",
+          "endDate": "2026-03-13",
+          "dayCount": 40,
+          "status": "official",
+          "sourceId": "mot-2026-spring-festival-plan",
+          "sourceUrl": "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html",
+          "boundary": "Transport pressure period only; not a 40-day public holiday."
+        }
+      ]
+    },
+    {
+      "year": 2027,
+      "status": "not_published",
+      "labels": {
+        "en": "Not yet published",
+        "zh": "尚未发布",
+        "ko": "아직 발표되지 않음"
+      },
+      "checkedAt": "2026-08-11",
+      "sourceId": null,
+      "sourceUrl": null,
+      "holidays": [],
+      "compensatoryWorkdays": [],
+      "boundary": "No dates are inferred from lunar calendars, previous years or travel-platform forecasts."
+    }
+  ]
+}
