@@ -1,0 +1,11 @@
+{
+  "id": "guilin-yangshuo-transport-route", "type": "planning", "pillar": "transport-city-pair-routes", "audienceMarkets": ["global"], "format": "multi-mode-endpoint-decision",
+  "topics": ["transport", "rail", "road", "river"], "destinations": ["guilin", "yangshuo"],
+  "heroImagePath": "/images/guides/guilin-yangshuo-transport-route/hero-1600.webp", "heroImageUrl": "https://homegroundchina.com/images/guides/guilin-yangshuo-transport-route/hero-1600.webp", "imageWidth": 1600, "imageHeight": 1000,
+  "datePublished": "2026-08-12", "dateModified": "2026-08-12", "sourceReviewedDate": "2026-08-12", "search": { "section": "transport", "family": "comparison", "primaryIntent": "plan" }, "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/guilin-yangshuo-transport-route/", "title": "Guilin to Yangshuo: Train, Road or River?", "headline": "Guilin to Yangshuo: Choose by Your Real Endpoints", "description": "Compare rail, road transfer and river travel between Guilin and Yangshuo by station, airport, hotel, luggage, direction and return plan.", "heroAlt": "The exterior and forecourt of Yangshuo Railway Station.", "navTitle": "Guilin to Yangshuo", "featuredLinkLabel": "Compare Guilin to Yangshuo", "openGraphLocale": "en_US", "cardTags": ["Guilin", "Yangshuo", "Transport"] },
+    "zh": { "path": "/zh/guides/guilin-yangshuo-transport-route/", "title": "桂林到阳朔：火车、公路还是游船", "headline": "桂林到阳朔：按真实起点和终点选择", "description": "按车站、机场、酒店、行李、方向和回程，比较桂林与阳朔之间的火车、公路接驳和水路体验。", "heroAlt": "阳朔站站房与站前区域。", "navTitle": "桂林到阳朔", "featuredLinkLabel": "比较桂林到阳朔", "openGraphLocale": "zh_CN", "cardTags": ["桂林", "阳朔", "交通"] },
+    "ko": { "path": "/ko/guides/guilin-yangshuo-transport-route/", "title": "구이린에서 양숴까지: 열차, 도로, 유람선", "headline": "구이린에서 양숴까지: 실제 출발지와 목적지로 선택", "description": "역, 공항, 호텔, 짐, 방향과 귀환 계획을 기준으로 열차, 도로 환승과 강 이동을 비교합니다.", "heroAlt": "양숴역 건물과 역 앞 공간.", "navTitle": "구이린-양숴", "featuredLinkLabel": "구이린-양숴 비교", "openGraphLocale": "ko_KR", "cardTags": ["구이린", "양숴", "교통"] }
+  }
+}
