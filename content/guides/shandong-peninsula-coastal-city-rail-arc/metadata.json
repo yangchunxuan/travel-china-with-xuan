@@ -1,0 +1,23 @@
+{
+  "id": "shandong-peninsula-coastal-city-rail-arc",
+  "type": "planning",
+  "pillar": "explore-regions-provinces",
+  "audienceMarkets": ["global"],
+  "format": "city-role-rail-selector",
+  "topics": ["shandong-peninsula", "qingdao", "yantai", "weihai", "rail-route"],
+  "destinations": ["shandong", "qingdao", "yantai", "weihai"],
+  "heroImagePath": "/images/guides/shandong-peninsula-coastal-city-rail-arc/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shandong-peninsula-coastal-city-rail-arc/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "combined-decision", "primaryIntent": "plan"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/shandong-peninsula-coastal-city-rail-arc/", "title": "Qingdao, Yantai and Weihai by Train: Which Cities to Keep", "headline": "Shandong Peninsula Coast: Build a Rail Arc Through Qingdao, Yantai and Weihai", "description": "Give Qingdao, Yantai and Weihai different jobs, connect exact stations by rail and remove a city when it repeats the same coastal experience.", "heroAlt": "A location-verified Shandong Peninsula railway station with travellers beginning a coastal city journey", "navTitle": "Shandong coastal rail arc", "featuredLinkLabel": "Build a Shandong Peninsula rail arc", "openGraphLocale": "en_US", "cardTags": ["Shandong", "Qingdao", "Coastal rail"]},
+    "zh": {"path": "/zh/guides/shandong-peninsula-coastal-city-rail-arc/", "title": "青岛烟台威海怎么连：山东半岛铁路弧线与删城判断", "headline": "山东半岛海岸：用铁路串起青岛、烟台与威海", "description": "先给青岛、烟台、威海分配不同任务，再核对准确车站；若海滨体验重复，就有依据地删掉一城。", "heroAlt": "经地点核实的山东半岛铁路车站与开始海岸城市旅行的乘客", "navTitle": "山东半岛海岸铁路弧线", "featuredLinkLabel": "规划山东半岛铁路弧线", "openGraphLocale": "zh_CN", "cardTags": ["山东", "青岛", "海岸铁路"]},
+    "ko": {"path": "/ko/guides/shandong-peninsula-coastal-city-rail-arc/", "title": "칭다오·옌타이·웨이하이 기차 여행: 남길 도시 고르기", "headline": "산둥반도 해안을 칭다오·옌타이·웨이하이 철도 호로 연결하세요", "description": "세 도시에 서로 다른 역할을 주고 정확한 역을 철도로 연결한 뒤 해안 경험이 반복되면 한 도시를 뺍니다.", "heroAlt": "산둥반도의 위치가 확인된 철도역에서 해안 도시 여행을 시작하는 승객들", "navTitle": "산둥반도 해안 철도 호", "featuredLinkLabel": "산둥반도 철도 호 계획", "openGraphLocale": "ko_KR", "cardTags": ["산둥", "칭다오", "해안 철도"]}
+  }
+}
