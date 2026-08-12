@@ -1,0 +1,82 @@
+{
+  "id": "china-power-plugs-voltage-and-adapters",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "packing-guide",
+  "topics": [
+    "power-plugs",
+    "voltage",
+    "adapter",
+    "charger",
+    "electricity"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-power-plugs-voltage-and-adapters/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-power-plugs-voltage-and-adapters/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-power-plugs-voltage-and-adapters/",
+      "title": "China Power Plugs, 220V and Travel Adapters",
+      "headline": "China Power Plugs and Voltage: Do You Need an Adapter or Converter?",
+      "description": "Separate plug shape from voltage: China uses 220V/50Hz, while sockets commonly accept Type A, C or I-style plugs.",
+      "heroAlt": "Editorial illustration of three plug shapes, a 220-volt label and a universal travel adapter.",
+      "navTitle": "China plugs and voltage",
+      "featuredLinkLabel": "Pack the right power adapter",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Electricity",
+        "Packing"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-power-plugs-voltage-and-adapters/",
+      "title": "中国插头、电压与旅行转换插头指南",
+      "headline": "中国电源插头和 220V 电压：需要转换插头还是变压器？",
+      "description": "区分插头形状与电压：中国为 220V/50Hz，常见插座可见 A、C、I 型。",
+      "heroAlt": "三种插头形状、220 伏标签和旅行转换插头的编辑插画。",
+      "navTitle": "中国插头与电压",
+      "featuredLinkLabel": "带对电源转换设备",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "用电",
+        "打包"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-power-plugs-voltage-and-adapters/",
+      "title": "중국 플러그·220V·여행용 어댑터",
+      "headline": "중국 전원 플러그와 전압: 어댑터 또는 변압기가 필요한가요?",
+      "description": "플러그 모양과 전압을 구분하세요. 중국은 220V/50Hz이며 A·C·I형 소켓이 흔합니다.",
+      "heroAlt": "세 플러그 모양, 220볼트 표시와 여행용 어댑터의 편집 일러스트.",
+      "navTitle": "중국 플러그와 전압",
+      "featuredLinkLabel": "맞는 전원 어댑터 준비",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "전기",
+        "짐싸기"
+      ]
+    }
+  }
+}
