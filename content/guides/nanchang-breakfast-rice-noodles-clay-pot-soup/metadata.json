@@ -1,0 +1,53 @@
+{
+  "id": "nanchang-breakfast-rice-noodles-clay-pot-soup",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "menu-decoder-meal-workflow",
+  "topics": ["nanchang-breakfast", "banfen", "waguan-soup", "jiangxi-food", "ordering"],
+  "destinations": ["nanchang", "jiangxi"],
+  "heroImagePath": "/images/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "execute"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/",
+      "title": "Nanchang Breakfast: Mixed Rice Noodles and Crock Soup",
+      "headline": "Pair Banfen with the Right Waguan Soup—and Recover When It Sells Out",
+      "description": "Decode Nanchang mixed rice noodles and earthenware-crock soup, control chilli and portion size, use practical ordering phrases, and switch soups when stock runs out.",
+      "heroAlt": "A verified Nanchang breakfast order of mixed rice noodles beside an identified earthenware-crock soup.",
+      "navTitle": "Order Nanchang breakfast",
+      "featuredLinkLabel": "Pair Nanchang banfen and crock soup",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Nanchang", "Breakfast", "Rice Noodles"]
+    },
+    "zh": {
+      "path": "/zh/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/",
+      "title": "南昌早餐怎么点：拌粉配哪种瓦罐汤",
+      "headline": "看懂菜单、控制辣度，并在汤卖完后及时替换",
+      "description": "区分南昌拌粉、炒粉与汤粉，按口味和份量搭配瓦罐汤，使用现场点单语言，并处理辣度不合或汤品售罄。",
+      "heroAlt": "一份菜名经过核实的南昌拌粉与瓦罐汤早餐组合。",
+      "navTitle": "点一顿南昌早餐",
+      "featuredLinkLabel": "搭配南昌拌粉和瓦罐汤",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["南昌", "早餐", "米粉"]
+    },
+    "ko": {
+      "path": "/ko/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/",
+      "title": "난창 아침 주문법: 비빔 쌀국수와 와관탕",
+      "headline": "반펀에 맞는 탕을 고르고 매진·매운맛에 대처하기",
+      "description": "난창 반펀, 볶음 쌀국수, 국물 쌀국수를 구별하고 양과 매운맛에 맞춰 와관탕을 고르며 매진 시 대체하는 주문법입니다.",
+      "heroAlt": "메뉴 이름을 확인한 난창식 비빔 쌀국수와 와관탕 아침 한 상.",
+      "navTitle": "난창 아침 주문하기",
+      "featuredLinkLabel": "난창 반펀과 와관탕 맞추기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["난창", "아침", "쌀국수"]
+    }
+  }
+}
