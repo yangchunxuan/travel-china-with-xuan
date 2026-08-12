@@ -1,0 +1,83 @@
+{
+  "id": "wuhan-breakfast-hot-dry-noodles-doupi-route",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "food-field-guide",
+  "topics": [
+    "wuhan-breakfast",
+    "guozao",
+    "hot-dry-noodles",
+    "doupi",
+    "mianwo"
+  ],
+  "destinations": [
+    "wuhan",
+    "hubei"
+  ],
+  "heroImagePath": "/images/guides/wuhan-breakfast-hot-dry-noodles-doupi-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wuhan-breakfast-hot-dry-noodles-doupi-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/wuhan-breakfast-hot-dry-noodles-doupi-route/",
+      "title": "Wuhan Breakfast: Build a Guozao Meal from Hot-Dry Noodles, Doupi and Mianwo",
+      "headline": "Order a Wuhan Breakfast Without Turning It into a Food Checklist",
+      "description": "Use hot-dry noodles, three-fresh doupi and mianwo to build a practical Wuhan breakfast, with portion, timing and ordering recovery for a real morning.",
+      "heroAlt": "A bowl of hot-dry noodles, one of Wuhan's best-known breakfast foods.",
+      "navTitle": "Build a Wuhan breakfast",
+      "featuredLinkLabel": "Build a Wuhan breakfast",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Wuhan",
+        "Breakfast",
+        "Hot-dry noodles"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/wuhan-breakfast-hot-dry-noodles-doupi-route/",
+      "title": "武汉过早怎么吃：热干面、三鲜豆皮与面窝的组合",
+      "headline": "别把武汉早餐吃成打卡清单",
+      "description": "用热干面、三鲜豆皮和面窝组合一顿实际可吃完的武汉早餐，并处理分量、时段和点单失败。",
+      "heroAlt": "一碗热干面，武汉最有代表性的早餐之一。",
+      "navTitle": "组合一顿武汉过早",
+      "featuredLinkLabel": "组合一顿武汉过早",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "武汉",
+        "过早",
+        "热干面"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/wuhan-breakfast-hot-dry-noodles-doupi-route/",
+      "title": "우한 아침 ‘궈짜오’: 러간몐·싼셴더우피·몐워 조합",
+      "headline": "우한 아침을 음식 체크리스트로 만들지 않는 법",
+      "description": "러간몐, 싼셴더우피, 몐워를 실제로 먹을 수 있는 한 끼로 구성하고 양, 영업 시간, 주문 실패에 대비합니다.",
+      "heroAlt": "우한을 대표하는 아침 음식 중 하나인 러간몐 한 그릇.",
+      "navTitle": "우한 아침 조합하기",
+      "featuredLinkLabel": "우한 아침 조합하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "우한",
+        "아침",
+        "러간몐"
+      ]
+    }
+  }
+}
