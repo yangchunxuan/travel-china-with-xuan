@@ -17,6 +17,14 @@
 - Homeground judgment: sequencing, meal construction and recovery advice are editorial planning tools, not historical facts.
 - Dynamic facts: opening hours, live performances, ticketing, workshop contents, menus, prices and exhibition status must be rechecked for the visit date. No unstable price or timetable is frozen into the copy.
 
+## Future inbound-link owners
+
+- future Qin administration overview
+- future Hunan archaeology route
+- future Chinese writing-materials explainer
+
+Central editors should add these links only when the named owner is published; no placeholder or circular link is added in this branch.
+
 ## Image provenance
 
 - Source: [Liye Qin Slips, containing a delivery record](https://commons.wikimedia.org/wiki/File:Liye_Qing_Slips,_containing_%22A_set_of_envelopes_were_delivered_from_Dongting_Commandery_to_Qianling_county%22.jpg)
@@ -25,4 +33,3 @@
 - Downloaded and visually checked: 2026-08-12.
 - Derivative: centre-cropped/resized to 1600 × 1000 WebP; EXIF removed; no generative alteration.
 - Evidence limit: A photographed museum display of Liye Qin slips. The Commons filename says 'Qing' but its category and description identify Qin slips; article wording follows institutional sources.
-

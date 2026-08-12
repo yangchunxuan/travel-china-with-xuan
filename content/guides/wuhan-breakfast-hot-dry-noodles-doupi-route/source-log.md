@@ -17,6 +17,14 @@
 - Homeground judgment: sequencing, meal construction and recovery advice are editorial planning tools, not historical facts.
 - Dynamic facts: opening hours, live performances, ticketing, workshop contents, menus, prices and exhibition status must be rechecked for the visit date. No unstable price or timetable is frozen into the copy.
 
+## Future inbound-link owners
+
+- future Wuhan first-trip food guide
+- future Hubei cuisine overview
+- future Chinese breakfast-cities collection
+
+Central editors should add these links only when the named owner is published; no placeholder or circular link is added in this branch.
+
 ## Image provenance
 
 - Source: [Hot Dry Noodles](https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg)
@@ -25,4 +33,3 @@
 - Downloaded and visually checked: 2026-08-12.
 - Derivative: centre-cropped/resized to 1600 × 1000 WebP; EXIF removed; no generative alteration.
 - Evidence limit: A real bowl of hot-dry noodles. The image identifies the dish but does not prove a Wuhan venue, current recipe or serving style at every shop.
-

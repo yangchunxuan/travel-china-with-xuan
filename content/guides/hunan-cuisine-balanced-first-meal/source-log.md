@@ -17,6 +17,14 @@
 - Homeground judgment: sequencing, meal construction and recovery advice are editorial planning tools, not historical facts.
 - Dynamic facts: opening hours, live performances, ticketing, workshop contents, menus, prices and exhibition status must be rechecked for the visit date. No unstable price or timetable is frozen into the copy.
 
+## Future inbound-link owners
+
+- future Changsha first-trip guide
+- future Hunan cuisine overview
+- future regional shared-meal collection
+
+Central editors should add these links only when the named owner is published; no placeholder or circular link is added in this branch.
+
 ## Image provenance
 
 - Source: [Hunan cuisine, Fried Tofu, Home Style](https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg)
@@ -25,4 +33,3 @@
 - Downloaded and visually checked: 2026-08-12.
 - Derivative: centre-cropped/resized to 1600 × 1000 WebP; EXIF removed; no generative alteration.
 - Evidence limit: A specifically labelled Hunan home-style tofu dish. It illustrates one dish and visible chilies, not a complete meal or a universal Hunan recipe.
-

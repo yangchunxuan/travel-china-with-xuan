@@ -17,6 +17,14 @@
 - Homeground judgment: sequencing, meal construction and recovery advice are editorial planning tools, not historical facts.
 - Dynamic facts: opening hours, live performances, ticketing, workshop contents, menus, prices and exhibition status must be rechecked for the visit date. No unstable price or timetable is frozen into the copy.
 
+## Future inbound-link owners
+
+- future Chinese printing-history hub
+- future China Printing Museum guide
+- future Chinese book-history explainer
+
+Central editors should add these links only when the named owner is published; no placeholder or circular link is added in this branch.
+
 ## Image provenance
 
 - Source: [Beijing printing museum.wooden movable types](https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg)
@@ -25,4 +33,3 @@
 - Downloaded and visually checked: 2026-08-12.
 - Derivative: centre-cropped/resized to 1600 × 1000 WebP; EXIF removed; no generative alteration.
 - Evidence limit: A documented display of wooden movable type in the China Printing Museum. It supports the material and sorting discussion, not a claim about the exact age of every displayed block.
-

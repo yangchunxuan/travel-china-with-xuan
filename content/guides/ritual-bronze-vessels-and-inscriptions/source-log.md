@@ -17,6 +17,14 @@
 - Homeground judgment: sequencing, meal construction and recovery advice are editorial planning tools, not historical facts.
 - Dynamic facts: opening hours, live performances, ticketing, workshop contents, menus, prices and exhibition status must be rechecked for the visit date. No unstable price or timetable is frozen into the copy.
 
+## Future inbound-link owners
+
+- future Chinese ritual-bronze overview
+- future Shanghai Museum first-visit guide
+- future Zhou inscriptions explainer
+
+Central editors should add these links only when the named owner is published; no placeholder or circular link is added in this branch.
+
 ## Image provenance
 
 - Source: [Early Western Zhou Bronze Gui (47409866492)](https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg)
@@ -25,4 +33,3 @@
 - Downloaded and visually checked: 2026-08-12.
 - Derivative: centre-cropped/resized to 1600 × 1000 WebP; EXIF removed; no generative alteration.
 - Evidence limit: A specifically identified inscribed gui in the Shaanxi History Museum. The photo supports form and display context; inscription content follows museum scholarship, not visual guesswork.
-
