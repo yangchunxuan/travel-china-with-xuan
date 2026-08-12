@@ -1,0 +1,82 @@
+{
+  "id": "china-esim-vs-local-sim",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "esim",
+    "local-sim",
+    "mobile-data",
+    "china-phone-number",
+    "dual-sim"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-esim-vs-local-sim/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-esim-vs-local-sim/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-esim-vs-local-sim/",
+      "title": "China eSIM or Local SIM? Data, Number or Both",
+      "headline": "China eSIM or Local SIM? Choose Data, a Local Number or Both",
+      "description": "Use four practical paths to choose a travel eSIM, a China local SIM, dual SIM, or a compatible spare phone—and keep a failure backup.",
+      "heroAlt": "Editorial illustration of two SIM cards, a phone and four branching connection paths.",
+      "navTitle": "China eSIM or local SIM",
+      "featuredLinkLabel": "Choose your China phone setup",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Connectivity",
+        "SIM"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-esim-vs-local-sim/",
+      "title": "中国旅行选 eSIM 还是本地 SIM？按需求决定",
+      "headline": "中国旅行选 eSIM 还是本地 SIM：只要流量、需要号码、两者都要怎么选",
+      "description": "按四条路径选择旅行 eSIM、中国本地 SIM、双卡或备用设备，并提前准备失败备选。",
+      "heroAlt": "手机、两张 SIM 卡和四条联网选择路径的编辑插画。",
+      "navTitle": "中国 eSIM 或本地 SIM",
+      "featuredLinkLabel": "选择适合你的中国通信方案",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "上网",
+        "SIM 卡"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-esim-vs-local-sim/",
+      "title": "중국 eSIM vs 현지 SIM: 데이터·번호·듀얼 SIM 선택법",
+      "headline": "중국 eSIM 또는 현지 SIM? 데이터, 중국 번호, 둘 다 필요한 경우의 선택법",
+      "description": "데이터 전용, 중국 번호, 듀얼 SIM, 비호환 휴대폰의 네 경로로 통신 수단과 실패 대비책을 고릅니다.",
+      "heroAlt": "휴대전화와 두 SIM 카드에서 네 연결 경로가 갈라지는 편집 일러스트.",
+      "navTitle": "중국 eSIM 또는 현지 SIM",
+      "featuredLinkLabel": "중국 통신 구성을 선택하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "연결",
+        "SIM"
+      ]
+    }
+  }
+}
