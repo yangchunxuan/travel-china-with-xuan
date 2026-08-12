@@ -1,0 +1,82 @@
+{
+  "id": "china-public-wifi-passport-login",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "connectivity-recovery-guide",
+  "topics": [
+    "public-wifi",
+    "passport-login",
+    "airport-wifi",
+    "connectivity",
+    "privacy"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-public-wifi-passport-login/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-public-wifi-passport-login/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-public-wifi-passport-login/",
+      "title": "China Public Wi-Fi Without a Local Number: Passport Login",
+      "headline": "Using Public Wi-Fi in China: Passport Login, SMS and Failure Backups",
+      "description": "Some airports offer passport-based Wi-Fi, while other venues require SMS or a kiosk. Use a venue-specific login and keep an independent data backup.",
+      "heroAlt": "Editorial illustration of a Wi-Fi portal, passport scanner kiosk and mobile data backup.",
+      "navTitle": "China public Wi-Fi login",
+      "featuredLinkLabel": "Connect to public Wi-Fi safely",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Wi-Fi",
+        "Connectivity"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-public-wifi-passport-login/",
+      "title": "中国公共 Wi-Fi：护照登录、短信与失败备选",
+      "headline": "在中国使用公共 Wi-Fi：没有本地号码也能用护照登录吗？",
+      "description": "部分机场提供护照登录，其他场所可能需要短信或机器取码；按场所操作并保留独立流量。",
+      "heroAlt": "Wi-Fi 门户、护照扫描终端和移动数据备选的编辑插画。",
+      "navTitle": "中国公共 Wi-Fi 登录",
+      "featuredLinkLabel": "安全连接公共 Wi-Fi",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "Wi-Fi",
+        "上网"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-public-wifi-passport-login/",
+      "title": "중국 공공 Wi-Fi: 여권 로그인과 실패 대비",
+      "headline": "중국 공공 Wi-Fi 사용: 여권 로그인, SMS와 대체 연결",
+      "description": "일부 공항은 여권 로그인을 제공하고 다른 장소는 SMS나 키오스크를 씁니다. 장소별 절차와 독립 데이터 백업을 준비하세요.",
+      "heroAlt": "Wi-Fi 포털, 여권 스캔 키오스크와 모바일 데이터 백업의 편집 일러스트.",
+      "navTitle": "중국 공공 Wi-Fi 로그인",
+      "featuredLinkLabel": "공공 Wi-Fi 안전 연결",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "Wi-Fi",
+        "연결"
+      ]
+    }
+  }
+}

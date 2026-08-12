@@ -1,0 +1,81 @@
+{
+  "id": "china-itinerary-with-young-children",
+  "type": "planning",
+  "pillar": "traveller-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "family-travel",
+    "young-children",
+    "trip-pace",
+    "rail-tickets"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-itinerary-with-young-children/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-itinerary-with-young-children/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "task",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-itinerary-with-young-children/",
+      "title": "Planning a China Itinerary With Young Children",
+      "headline": "China With Young Children: Plan Around the Hardest Hour",
+      "description": "Design a China route for young children by sleep, food, toilets, carrying load, hotel stability and current child-ticket rules.",
+      "heroAlt": "Original editorial illustration of an adult and young child planning a China trip.",
+      "navTitle": "China with young children",
+      "featuredLinkLabel": "Plan a child-compatible route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Family travel",
+        "Young children",
+        "Trip pace"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-itinerary-with-young-children/",
+      "title": "带低龄儿童去中国，行程应该怎么排？",
+      "headline": "带低龄儿童游中国：围绕最难熬的一小时规划",
+      "description": "从睡眠、饮食、如厕、照顾孩子的负担、酒店稳定性和儿童票规则设计中国亲子路线。",
+      "heroAlt": "表现成人与低龄儿童共同规划中国旅行的原创编辑插图。",
+      "navTitle": "低龄儿童中国行程",
+      "featuredLinkLabel": "规划适合孩子的路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "亲子旅行",
+        "低龄儿童",
+        "旅行节奏"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-itinerary-with-young-children/",
+      "title": "어린아이와 중국 여행 일정을 짜는 법",
+      "headline": "어린아이와 중국 여행: 가장 힘든 한 시간을 기준으로",
+      "description": "수면, 식사, 화장실, 안아야 하는 부담, 숙소 안정성과 아동 승차권 규정으로 가족 동선을 설계합니다.",
+      "heroAlt": "성인과 어린아이가 중국 여행을 계획하는 모습을 표현한 오리지널 편집 일러스트.",
+      "navTitle": "어린아이와 중국 여행",
+      "featuredLinkLabel": "아이에게 맞는 동선 계획",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "가족 여행",
+        "어린아이",
+        "여행 속도"
+      ]
+    }
+  }
+}

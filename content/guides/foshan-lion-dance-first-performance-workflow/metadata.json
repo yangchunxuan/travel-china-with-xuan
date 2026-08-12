@@ -1,0 +1,82 @@
+{
+  "id": "foshan-lion-dance-first-performance-workflow",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "cultural-visit-guide",
+  "topics": [
+    "foshan",
+    "lion-dance",
+    "guangdong-lion",
+    "performance"
+  ],
+  "destinations": [
+    "foshan",
+    "guangdong"
+  ],
+  "heroImagePath": "/images/guides/foshan-lion-dance-first-performance-workflow/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/foshan-lion-dance-first-performance-workflow/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/foshan-lion-dance-first-performance-workflow/",
+      "title": "Foshan Lion Dance: Verify a Performance and Read the High-Pole Routine",
+      "headline": "Plan the Show First, Then Read the Lion's Movement",
+      "description": "Verify a real Foshan lion-dance performance, distinguish southern lion conventions from a fixed national script, and understand what a high-pole routine is asking performers to do.",
+      "heroAlt": "A high-pole lion-dance performance at the Wong Fei-hong Lion Dance and Martial Arts School in Foshan.",
+      "navTitle": "Plan a Foshan lion-dance visit",
+      "featuredLinkLabel": "Plan a Foshan lion-dance visit",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Foshan",
+        "Lion dance",
+        "Performance"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/foshan-lion-dance-first-performance-workflow/",
+      "title": "佛山醒狮初看指南：核对演出，再看桩阵套路",
+      "headline": "先确认有演出，再读醒狮动作",
+      "description": "核对佛山真实演出安排，理解南狮并非全国统一剧本，并看懂高桩套路对双人配合与落点判断的要求。",
+      "heroAlt": "佛山黄飞鸿狮艺武术馆的高桩醒狮表演。",
+      "navTitle": "安排一次佛山醒狮观看",
+      "featuredLinkLabel": "安排一次佛山醒狮观看",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "佛山",
+        "醒狮",
+        "演出"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/foshan-lion-dance-first-performance-workflow/",
+      "title": "포산 사자춤 첫 관람: 공연 확인과 고주 루틴 읽기",
+      "headline": "공연부터 확인하고 사자의 움직임을 읽기",
+      "description": "포산의 실제 공연 일정을 확인하고 남방 사자춤을 전국 공통 각본으로 보지 않으며 고주 공연의 2인 협업과 착지 판단을 이해합니다.",
+      "heroAlt": "포산 황페이훙 사자춤·무술 학교의 고주 사자춤 공연.",
+      "navTitle": "포산 사자춤 관람 준비",
+      "featuredLinkLabel": "포산 사자춤 관람 준비",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "포산",
+        "사자춤",
+        "공연"
+      ]
+    }
+  }
+}

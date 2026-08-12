@@ -1,0 +1,83 @@
+{
+  "id": "ritual-bronze-vessels-and-inscriptions",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "museum-field-guide",
+  "topics": [
+    "ritual-bronzes",
+    "inscriptions",
+    "museum-reading",
+    "zhou-dynasty"
+  ],
+  "destinations": [
+    "china",
+    "xian",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/guides/ritual-bronze-vessels-and-inscriptions/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/ritual-bronze-vessels-and-inscriptions/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/ritual-bronze-vessels-and-inscriptions/",
+      "title": "Ritual Bronze Vessels: Decode Form, Function and Inscription in a Museum",
+      "headline": "A Four-Pass Method for Reading Chinese Ritual Bronzes",
+      "description": "Identify a bronze vessel's form, likely use, decoration and inscription without pretending every motif or ancient text has one simple meaning.",
+      "heroAlt": "Early Western Zhou bronze gui with an inscription, displayed at the Shaanxi History Museum.",
+      "navTitle": "Read ritual bronzes in a museum",
+      "featuredLinkLabel": "Read ritual bronzes in a museum",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Bronze vessels",
+        "Museums",
+        "Inscriptions"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/ritual-bronze-vessels-and-inscriptions/",
+      "title": "青铜礼器怎么看：器形、用途、纹饰与铭文",
+      "headline": "在博物馆读青铜礼器的四步方法",
+      "description": "依次观察器形、可能用途、纹饰和铭文，不把每一种纹样或古文字强行解释成单一含义。",
+      "heroAlt": "陕西历史博物馆展出的西周早期有铭青铜簋。",
+      "navTitle": "在博物馆看懂青铜礼器",
+      "featuredLinkLabel": "在博物馆看懂青铜礼器",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "青铜器",
+        "博物馆",
+        "铭文"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/ritual-bronze-vessels-and-inscriptions/",
+      "title": "중국 청동 예기 읽기: 형태·용도·문양·명문",
+      "headline": "박물관에서 청동 예기를 읽는 네 단계",
+      "description": "기형, 추정 용도, 문양, 명문을 차례로 살피며 모든 무늬와 고문자를 하나의 뜻으로 단정하지 않습니다.",
+      "heroAlt": "산시역사박물관에 전시된 명문이 있는 서주 초기 청동 궤.",
+      "navTitle": "청동 예기 읽기",
+      "featuredLinkLabel": "청동 예기 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "청동기",
+        "박물관",
+        "명문"
+      ]
+    }
+  }
+}

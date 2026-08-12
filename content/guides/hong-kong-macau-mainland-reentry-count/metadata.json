@@ -1,0 +1,82 @@
+{
+  "id": "hong-kong-macau-mainland-reentry-count",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "border-decision-guide",
+  "topics": [
+    "hong-kong",
+    "macau",
+    "mainland-china",
+    "visa-entry",
+    "border-crossing"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/hong-kong-macau-mainland-reentry-count/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/hong-kong-macau-mainland-reentry-count/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "relationship",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/hong-kong-macau-mainland-reentry-count/",
+      "title": "Do Hong Kong and Macao Use a China Visa Entry?",
+      "headline": "Hong Kong, Macao and Mainland China: How Re-entry Counts Work",
+      "description": "Map every mainland border crossing before booking: leaving for Hong Kong or Macao ends that mainland stay, and returning is a new mainland entry.",
+      "heroAlt": "Editorial illustration of three map zones connected by border arrows and passport stamps.",
+      "navTitle": "Hong Kong–Macao re-entry count",
+      "featuredLinkLabel": "Count mainland entries correctly",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Hong Kong",
+        "Visa"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/hong-kong-macau-mainland-reentry-count/",
+      "title": "香港、澳门会占用中国签证入境次数吗？",
+      "headline": "香港、澳门与中国大陆往返：如何计算大陆入境次数",
+      "description": "预订前画出每次大陆边检：从大陆去港澳是离境，返回大陆是一次新的入境。",
+      "heroAlt": "三个区域由边境箭头和护照印章连接的编辑插画。",
+      "navTitle": "港澳往返入境次数",
+      "featuredLinkLabel": "正确计算大陆入境次数",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国大陆",
+        "香港澳门",
+        "签证"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/hong-kong-macau-mainland-reentry-count/",
+      "title": "홍콩·마카오 방문은 중국 비자 입국 횟수를 쓰나요?",
+      "headline": "홍콩·마카오와 중국 본토 재입국 횟수 계산법",
+      "description": "모든 본토 국경 통과를 예약 전에 표시하세요. 본토에서 홍콩·마카오로 나가면 체류가 끝나고 귀환은 새 입국입니다.",
+      "heroAlt": "세 지역이 국경 화살표와 여권 도장으로 연결된 편집 일러스트.",
+      "navTitle": "홍콩·마카오 재입국 횟수",
+      "featuredLinkLabel": "본토 입국 횟수 계산하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 본토",
+        "홍콩·마카오",
+        "비자"
+      ]
+    }
+  }
+}

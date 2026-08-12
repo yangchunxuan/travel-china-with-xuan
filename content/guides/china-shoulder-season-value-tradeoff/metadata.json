@@ -1,0 +1,82 @@
+{
+  "id": "china-shoulder-season-value-tradeoff",
+  "type": "planning",
+  "pillar": "timing-holidays-crowds",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "shoulder-season",
+    "value",
+    "trip-timing",
+    "closures",
+    "daylight"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-shoulder-season-value-tradeoff/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-shoulder-season-value-tradeoff/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "when-to-go",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-shoulder-season-value-tradeoff/",
+      "title": "China Shoulder Season: Is the Lower Price Worth the Tradeoff?",
+      "headline": "China Shoulder-Season Value: Price the Experience You May Lose",
+      "description": "Judge China shoulder-season value by regional climate, daylight, operating limits, holidays and the experience protected by the saving.",
+      "heroAlt": "Original editorial illustration balancing cost and seasonal operating tradeoffs for China travel.",
+      "navTitle": "China shoulder-season value",
+      "featuredLinkLabel": "Test the timing tradeoff",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shoulder season",
+        "Travel value",
+        "Trip timing"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-shoulder-season-value-tradeoff/",
+      "title": "中国平季旅行值不值？低价背后的取舍",
+      "headline": "中国平季价值：先算清低价可能牺牲的体验",
+      "description": "从区域气候、日照、运营限制、官方假期与核心体验判断中国平季价格是否值得。",
+      "heroAlt": "平衡中国旅行成本与季节运营取舍的原创编辑插图。",
+      "navTitle": "中国平季价值",
+      "featuredLinkLabel": "检验时间与价格取舍",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "平季",
+        "旅行价值",
+        "出行时间"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-shoulder-season-value-tradeoff/",
+      "title": "중국 숄더 시즌, 낮은 가격이 가치 있을까?",
+      "headline": "중국 숄더 시즌의 가치: 놓칠 경험까지 함께 계산하기",
+      "description": "지역 기후, 일조, 운영 제한, 공휴일과 핵심 경험으로 중국 숄더 시즌의 가치를 판단합니다.",
+      "heroAlt": "중국 여행 비용과 계절 운영의 균형을 표현한 오리지널 편집 일러스트.",
+      "navTitle": "중국 숄더 시즌 가치",
+      "featuredLinkLabel": "시기와 가치의 교환 검사",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "숄더 시즌",
+        "여행 가치",
+        "여행 시기"
+      ]
+    }
+  }
+}

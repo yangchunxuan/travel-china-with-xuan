@@ -1,0 +1,82 @@
+{
+  "id": "nanhai-one-shipwreck-cargo-and-conservation",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "museum-field-guide",
+  "topics": [
+    "nanhai-one",
+    "shipwreck",
+    "maritime-silk-road",
+    "conservation"
+  ],
+  "destinations": [
+    "yangjiang",
+    "guangdong"
+  ],
+  "heroImagePath": "/images/guides/nanhai-one-shipwreck-cargo-and-conservation/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/nanhai-one-shipwreck-cargo-and-conservation/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/nanhai-one-shipwreck-cargo-and-conservation/",
+      "title": "Nanhai No. 1: Read a Song Shipwreck Through Cargo and Conservation",
+      "headline": "A Shipwreck Is a Site, a Cargo and a Conservation Project",
+      "description": "Understand Nanhai No. 1 through its discovery, whole-caisson salvage, cargo evidence and continuing conservation instead of treating it as a treasure count.",
+      "heroAlt": "Guangdong Maritime Silk Road Museum, built around the conservation of Nanhai No. 1.",
+      "navTitle": "Understand Nanhai No. 1",
+      "featuredLinkLabel": "Understand Nanhai No. 1",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Nanhai No. 1",
+        "Shipwreck",
+        "Conservation"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/nanhai-one-shipwreck-cargo-and-conservation/",
+      "title": "南海Ⅰ号怎么看：从货物、沉船与保护工程读宋代海路",
+      "headline": "沉船既是遗址，也是货物组合和持续保护项目",
+      "description": "从发现、整体打捞、货物证据与持续保护理解南海Ⅰ号，而不是把它简化为一个“宝物数量”。",
+      "heroAlt": "围绕南海Ⅰ号保护建设的广东海上丝绸之路博物馆。",
+      "navTitle": "理解南海Ⅰ号",
+      "featuredLinkLabel": "理解南海Ⅰ号",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "南海Ⅰ号",
+        "沉船",
+        "文物保护"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/nanhai-one-shipwreck-cargo-and-conservation/",
+      "title": "난하이 1호 읽기: 화물·난파선·보존으로 본 송대 해로",
+      "headline": "난파선은 유적이자 화물군이며 진행 중인 보존 사업입니다",
+      "description": "발견, 일괄 인양, 화물 증거, 지속적인 보존을 함께 보며 난하이 1호를 단순한 ‘보물 개수’로 축소하지 않습니다.",
+      "heroAlt": "난하이 1호 보존을 중심으로 세워진 광둥 해상 실크로드 박물관.",
+      "navTitle": "난하이 1호 이해하기",
+      "featuredLinkLabel": "난하이 1호 이해하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "난하이 1호",
+        "난파선",
+        "보존"
+      ]
+    }
+  }
+}
