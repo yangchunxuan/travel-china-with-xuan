@@ -1,0 +1,81 @@
+{
+  "id": "china-rail-only-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "rail-only",
+    "route-design",
+    "last-mile",
+    "trip-pace"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-rail-only-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-rail-only-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-rail-only-route/",
+      "title": "Can You Plan a Rail-Only China Trip?",
+      "headline": "China by Rail Only: Test the Spine and the Last Mile",
+      "description": "Decide whether a rail-only China route works by station access, daytime loss, hotel moves and unavoidable last-mile transport.",
+      "heroAlt": "Original editorial illustration of a China rail spine with last-mile branches.",
+      "navTitle": "Rail-only China route",
+      "featuredLinkLabel": "Test a rail-only route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China rail",
+        "Route design",
+        "Last mile"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-rail-only-route/",
+      "title": "中国旅行可以全程只坐铁路吗？",
+      "headline": "只靠铁路游中国：检验主轴与最后一公里",
+      "description": "从车站接驳、白天损失、换酒店与无法避免的最后一公里判断纯铁路路线是否成立。",
+      "heroAlt": "表现中国铁路主轴与最后一公里分支的原创编辑插图。",
+      "navTitle": "中国纯铁路路线",
+      "featuredLinkLabel": "检验纯铁路路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国铁路",
+        "路线设计",
+        "最后一公里"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-rail-only-route/",
+      "title": "중국을 철도만으로 여행할 수 있을까?",
+      "headline": "중국 철도 여행: 중심축과 마지막 구간을 검사하기",
+      "description": "역 접근, 낮 시간 손실, 숙소 이동과 마지막 도로 구간으로 철도 전용 동선이 맞는지 판단합니다.",
+      "heroAlt": "중국 철도 중심축과 마지막 이동 분기를 표현한 오리지널 편집 일러스트.",
+      "navTitle": "중국 철도 전용 동선",
+      "featuredLinkLabel": "철도 중심 동선 검사",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 철도",
+        "동선 설계",
+        "마지막 구간"
+      ]
+    }
+  }
+}
