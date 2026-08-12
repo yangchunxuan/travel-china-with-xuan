@@ -1,0 +1,57 @@
+{
+  "id": "foreigners-china-hotel",
+  "type": "planning",
+  "pillar": "stay-access-foreign-guests",
+  "audienceMarkets": ["global"],
+  "format": "problem-recovery-guide",
+  "topics": ["accommodation", "booking", "registration", "problem-recovery", "foreign-travellers"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/foreigners-china-hotel/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/foreigners-china-hotel/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "stay",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/foreigners-china-hotel/",
+      "title": "Can Foreigners Stay at Any Hotel in China? Booking, Registration and Refusal Recovery",
+      "headline": "Can Foreigners Stay at Any Hotel in China? Booking, Registration and Refusal Recovery",
+      "description": "Understand China’s hotel rule, separate booking-platform labels from law, complete passport registration and recover if a confirmed hotel refuses check-in.",
+      "heroAlt": "A real staffed hotel reception and entrance area in mainland China, with no guest documents or screens visible.",
+      "navTitle": "Foreign-passport hotel check-in",
+      "featuredLinkLabel": "Prepare for hotel check-in and refusal recovery",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China hotels", "Foreign passports", "Problem recovery"]
+    },
+    "zh": {
+      "path": "/zh/guides/foreigners-china-hotel/",
+      "title": "外国人可以入住中国任何酒店吗？预订、住宿登记与被拒后的处理",
+      "headline": "外国人可以入住中国任何酒店吗？预订、住宿登记与被拒后的处理",
+      "description": "分清中国酒店接待规则、预订平台标签和前台实际执行，了解外国护照住宿登记，并在确认订单被拒时完成沟通、改订与留证。",
+      "heroAlt": "中国大陆一家真实酒店的前台与入口区域，现场有工作人员，但不显示住客证件或系统屏幕。",
+      "navTitle": "外国护照酒店入住",
+      "featuredLinkLabel": "准备酒店入住与被拒后的恢复步骤",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国酒店", "外国护照", "问题处理"]
+    },
+    "ko": {
+      "path": "/ko/guides/foreigners-china-hotel/",
+      "title": "외국인은 중국의 어느 호텔에나 묵을 수 있나요? 예약·숙박 등록·거절 대처",
+      "headline": "외국인은 중국의 어느 호텔에나 묵을 수 있나요? 예약, 숙박 등록과 체크인 거절 대처",
+      "description": "중국의 호텔 규정과 예약 플랫폼 표시, 프런트의 실제 처리를 구분하고 외국 여권 숙박 등록과 체크인 거절 시 재예약·기록 보존 순서를 확인하세요.",
+      "heroAlt": "중국 본토의 실제 호텔 프런트와 입구에 직원이 있으며 투숙객 증명서나 시스템 화면은 보이지 않는 모습.",
+      "navTitle": "외국 여권 호텔 체크인",
+      "featuredLinkLabel": "호텔 체크인과 거절 대처 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 호텔", "외국 여권", "문제 대처"]
+    }
+  }
+}
