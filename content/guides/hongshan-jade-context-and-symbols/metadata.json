@@ -1,0 +1,83 @@
+{
+  "id": "hongshan-jade-context-and-symbols",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "museum-field-guide",
+  "topics": [
+    "hongshan-culture",
+    "jade",
+    "archaeology",
+    "museum-reading"
+  ],
+  "destinations": [
+    "liaoning",
+    "inner-mongolia",
+    "beijing"
+  ],
+  "heroImagePath": "/images/guides/hongshan-jade-context-and-symbols/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/hongshan-jade-context-and-symbols/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/hongshan-jade-context-and-symbols/",
+      "title": "Hongshan Jade: Read Shape, Burial Context and Social Meaning Together",
+      "headline": "How to Read Hongshan Jade Without Turning Shape into Certainty",
+      "description": "Use museum labels, excavation context and comparison to understand Hongshan jade while keeping modern symbolism and archaeological evidence separate.",
+      "heroAlt": "Hongshan jade dragon displayed in the National Museum of China.",
+      "navTitle": "Read Hongshan jade in context",
+      "featuredLinkLabel": "Read Hongshan jade in context",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hongshan",
+        "Jade",
+        "Archaeology"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/hongshan-jade-context-and-symbols/",
+      "title": "红山玉器怎么看：形制、墓葬语境与社会意义",
+      "headline": "不要只凭形状给红山玉器下结论",
+      "description": "把博物馆标签、出土语境和同类比较放在一起理解红山玉器，并区分考古证据与后世象征解释。",
+      "heroAlt": "中国国家博物馆展出的红山文化玉龙。",
+      "navTitle": "读懂红山玉器",
+      "featuredLinkLabel": "读懂红山玉器",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "红山文化",
+        "玉器",
+        "考古"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/hongshan-jade-context-and-symbols/",
+      "title": "훙산 옥기 읽기: 형태·매장 맥락·사회적 의미",
+      "headline": "형태만 보고 훙산 옥기의 의미를 단정하지 않는 법",
+      "description": "박물관 표기, 출토 맥락, 비교 자료를 함께 읽고 고고학적 근거와 후대의 상징 해석을 구분합니다.",
+      "heroAlt": "중국국가박물관에 전시된 훙산문화 옥룡.",
+      "navTitle": "훙산 옥기 읽기",
+      "featuredLinkLabel": "훙산 옥기 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "훙산문화",
+        "옥기",
+        "고고학"
+      ]
+    }
+  }
+}
