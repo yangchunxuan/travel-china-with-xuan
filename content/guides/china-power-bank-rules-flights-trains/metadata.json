@@ -1,0 +1,82 @@
+{
+  "id": "china-power-bank-rules-flights-trains",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "transport-rules-guide",
+  "topics": [
+    "power-bank",
+    "flight",
+    "train",
+    "ccc-mark",
+    "watt-hours"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-power-bank-rules-flights-trains/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-power-bank-rules-flights-trains/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "comparison",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-power-bank-rules-flights-trains/",
+      "title": "China Power Bank Rules for Flights and Trains",
+      "headline": "Power Banks in China: Different Rules for Domestic Flights and Trains",
+      "description": "Check visible Wh and CCC markings, keep batteries in carry-on for flights, and separate airline rules from the railway's 100Wh limit.",
+      "heroAlt": "Editorial illustration comparing a marked power bank beside an airplane and a high-speed train.",
+      "navTitle": "China power bank rules",
+      "featuredLinkLabel": "Check a power bank before travel",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Power bank",
+        "Transport"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-power-bank-rules-flights-trains/",
+      "title": "中国乘飞机和火车携带充电宝规则",
+      "headline": "中国充电宝规则：国内航班与铁路要求不同",
+      "description": "检查清晰的 Wh 与 CCC 标志，乘机随身携带，并区分航空限制与铁路 100Wh 上限。",
+      "heroAlt": "有清晰标识的充电宝与飞机、高铁并列对比的编辑插画。",
+      "navTitle": "中国充电宝规则",
+      "featuredLinkLabel": "出行前检查充电宝",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "充电宝",
+        "交通"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-power-bank-rules-flights-trains/",
+      "title": "중국 항공편·열차 보조배터리 규정",
+      "headline": "중국 보조배터리 규정: 국내선 항공과 철도는 다릅니다",
+      "description": "Wh와 CCC 표시를 확인하고 항공편은 기내에 휴대하며 철도 100Wh 규정과 구분하세요.",
+      "heroAlt": "표시가 선명한 보조배터리와 항공기·고속열차를 비교한 편집 일러스트.",
+      "navTitle": "중국 보조배터리 규정",
+      "featuredLinkLabel": "여행 전 보조배터리 점검",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "보조배터리",
+        "교통"
+      ]
+    }
+  }
+}
