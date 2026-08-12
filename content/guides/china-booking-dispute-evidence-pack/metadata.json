@@ -1,0 +1,82 @@
+{
+  "id": "china-booking-dispute-evidence-pack",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "dispute-recovery-guide",
+  "topics": [
+    "booking-dispute",
+    "evidence-pack",
+    "consumer-complaint",
+    "payment-dispute",
+    "travel-recovery"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-booking-dispute-evidence-pack/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-booking-dispute-evidence-pack/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-booking-dispute-evidence-pack/",
+      "title": "China Booking Disputes: Build an Evidence Pack",
+      "headline": "China Travel Booking Dispute: Build an Evidence Pack Before You Escalate",
+      "description": "Freeze the order record, build a dated evidence timeline and escalate through the booking and payment channels without exposing private data.",
+      "heroAlt": "Editorial diagram of an order record, timeline and two protected escalation paths.",
+      "navTitle": "Booking dispute evidence pack",
+      "featuredLinkLabel": "Build a booking dispute file",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Bookings",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-booking-dispute-evidence-pack/",
+      "title": "中国旅行预订争议：先整理证据包",
+      "headline": "中国旅行订单有争议？升级处理前先把证据包做好",
+      "description": "固定订单与条款，建立带时间的事实线，再分别通过预订和支付渠道处理，同时避免泄露护照、卡片与行程隐私。",
+      "heroAlt": "订单记录、时间线与两条受保护升级路径组成的编辑示意图。",
+      "navTitle": "预订争议证据包",
+      "featuredLinkLabel": "整理预订争议证据",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "预订",
+        "故障恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-booking-dispute-evidence-pack/",
+      "title": "중국 여행 예약 분쟁 증거 자료 만들기",
+      "headline": "중국 여행 예약 분쟁: 문제를 제기하기 전에 증거 자료부터 정리하세요",
+      "description": "주문과 약관을 보존하고 시간순 사실 기록을 만든 뒤, 개인정보를 노출하지 않고 예약·결제 채널로 단계적으로 해결하세요.",
+      "heroAlt": "주문 기록과 시간선, 두 개의 보호된 이의 제기 경로를 보여 주는 편집 도식.",
+      "navTitle": "예약 분쟁 증거 자료",
+      "featuredLinkLabel": "예약 분쟁 자료 정리하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "예약",
+        "문제 해결"
+      ]
+    }
+  }
+}
