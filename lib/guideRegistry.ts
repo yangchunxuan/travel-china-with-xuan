@@ -1105,17 +1105,17 @@ export const legacyGuideRegistry = [
     topics: ["trip-planning", "accommodation"],
     destinations: ["china", "beijing", "xian", "shanghai", "zhangjiajie"],
     cardImagePath:
-      "/images/guides/china-hotel-value/stay-street-evening-card-1200.jpg",
+      "/images/guides/china-trip-cost/beijing-cbd-city-mobility-1200.jpg",
     cardImageWidth: 1200,
     cardImageHeight: 750,
     heroImagePath:
-      "/images/guides/china-hotel-value/stay-street-evening-og-1200.jpg",
+      "/images/guides/china-trip-cost/beijing-cbd-city-mobility-og-1200.jpg",
     heroImageUrl:
-      "https://homegroundchina.com/images/guides/china-hotel-value/stay-street-evening-og-1200.jpg",
+      "https://homegroundchina.com/images/guides/china-trip-cost/beijing-cbd-city-mobility-og-1200.jpg",
     imageWidth: 1200,
     imageHeight: 630,
     datePublished: "2026-08-05",
-    dateModified: "2026-08-09",
+    dateModified: "2026-08-12",
     sourceReviewedDate: "2026-08-09",
     locales: {
       en: {
@@ -1124,8 +1124,7 @@ export const legacyGuideRegistry = [
         headline: "How Much Does a Trip to China Cost?",
         description:
           "Compare three current China-trip prices in their original currencies, understand what each includes and see what a complete private-trip quote should show.",
-        heroAlt:
-          "A lantern-lit street of guesthouses and restaurants in Zhangjiajie at dusk.",
+        heroAlt: "Beijing's CBD skyline and elevated roads at dusk.",
         navTitle: "China trip cost guide",
         featuredLinkLabel: "See what a multi-city China trip actually costs",
         openGraphLocale: "en_US",
@@ -1136,7 +1135,7 @@ export const legacyGuideRegistry = [
         headline: "去中国旅行大概多少钱？",
         description:
           "对照三份当前公开的中国旅行原币价格，弄清每份包含什么，并看懂一份完整的私人行程报价应该写清什么。",
-        heroAlt: "傍晚亮灯的张家界住宿餐饮街区。",
+        heroAlt: "暮色中的北京 CBD 天际线与城市立交。",
         navTitle: "中国行程费用指南",
         featuredLinkLabel: "看看一趟多城市中国行程到底多少钱",
         openGraphLocale: "zh_CN",
@@ -1147,7 +1146,7 @@ export const legacyGuideRegistry = [
         headline: "중국 여행 비용은 얼마나 들까?",
         description:
           "현재 공개된 중국 여행 가격 세 개를 게시 통화로 비교하고, 포함 항목과 완전한 프라이빗 여행 견적에 필요한 내용을 확인합니다.",
-        heroAlt: "해질 무렵 불이 켜진 장자제의 숙소·식당 거리.",
+        heroAlt: "해 질 무렵의 베이징 CBD 스카이라인과 고가도로.",
         navTitle: "중국 여행 비용 가이드",
         featuredLinkLabel: "다도시 중국 여행의 실제 비용 보기",
         openGraphLocale: "ko_KR",

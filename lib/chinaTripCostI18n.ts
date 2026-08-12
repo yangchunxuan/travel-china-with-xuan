@@ -155,7 +155,7 @@ const en: ChinaTripCostCopy = {
     openGraphLocale: "en_US",
     inLanguage: "en",
     heroAlt:
-      "A lantern-lit street of guesthouses and restaurants in Zhangjiajie at dusk.",
+      "Beijing's CBD skyline and elevated roads at dusk.",
     about: ["China trip cost", "China private tour price", "China travel budget"],
   },
 
@@ -170,8 +170,7 @@ const en: ChinaTripCostCopy = {
       "There is no honest single price for a China trip. Among the live listings we checked, an 8-day private land tour starts at US$1,462.71 per person, a 6-day private short stay starts at A$2,470, and a 10-day escorted tour with flights from selected Australian cities starts at A$5,130.",
       "Those are different products, not a cheapest-to-most-expensive ranking. Your useful number depends on the month, group size, route, hotel standard and what the price must include. Homeground can turn those details into a realistic range before you commit to a finished itinerary.",
     ],
-    imageAlt:
-      "A lantern-lit street of guesthouses and restaurants in Zhangjiajie at dusk.",
+    imageAlt: "Beijing's CBD skyline and elevated roads at dusk.",
   },
 
   earlyCta: {
@@ -421,7 +420,7 @@ const zh: ChinaTripCostCopy = {
       "2026 年中国多城市旅行预算指南：把地面费用与国际机票分开，对照公开参考价格，并解释私人行程报价为什么会不同。",
     openGraphLocale: "zh_CN",
     inLanguage: "zh-CN",
-    heroAlt: "傍晚亮灯的张家界住宿餐饮街区。",
+    heroAlt: "暮色中的北京 CBD 天际线与城市立交。",
     about: ["中国旅行费用", "中国私人定制游价格", "中国旅行预算"],
   },
 
@@ -436,7 +435,7 @@ const zh: ChinaTripCostCopy = {
       "中国旅行没有一个适用于所有人的固定价格。我们核对到的在售案例里，8 天私人地面行程每人 1,462.71 美元起，6 天私人短途行程每人 2,470 澳元起；另一份从澳大利亚指定城市出发、含国际机票的 10 天随团产品则是每人 5,130 澳元起。",
       "这三项不是从低价到高价的排名，而是三种不同产品。对你真正有用的数字，要看月份、人数、路线、酒店标准和总价里必须包含什么。把这些发给 Homeground，我们可以先帮你缩小现实预算，不要求你已经写好完整行程。",
     ],
-    imageAlt: "傍晚亮灯的张家界住宿餐饮街区。",
+    imageAlt: "暮色中的北京 CBD 天际线与城市立交。",
   },
 
   earlyCta: {
@@ -679,7 +678,7 @@ const ko: ChinaTripCostCopy = {
       "2026년 중국 다도시 여행 예산 가이드. 현지 비용과 국제선을 분리하고 공개 참고 가격과 프라이빗 여행 견적이 달라지는 이유를 설명합니다.",
     openGraphLocale: "ko_KR",
     inLanguage: "ko",
-    heroAlt: "해질 무렵 불이 켜진 장자제의 숙소·식당 거리.",
+    heroAlt: "해 질 무렵의 베이징 CBD 스카이라인과 고가도로.",
     about: ["중국 여행 비용", "중국 프라이빗 투어 가격", "중국 여행 예산"],
   },
 
@@ -694,7 +693,7 @@ const ko: ChinaTripCostCopy = {
       "중국 여행에는 모두에게 적용되는 하나의 고정 가격이 없습니다. 현재 확인한 상품 중 8일 프라이빗 현지 여행은 1인 US$1,462.71부터, 6일 프라이빗 단기 여행은 1인 A$2,470부터였습니다. 호주 일부 도시에서 출발하는 국제선 포함 10일 단체 여행은 1인 A$5,130부터였습니다.",
       "세 상품은 저가부터 고가까지의 순위가 아니라 서로 다른 상품입니다. 내 여행에 필요한 금액은 여행 시기, 인원, 동선, 숙소 기준과 총액에 무엇을 넣는지에 따라 달라집니다. 이 정보를 Homeground에 보내면 완성된 일정표 없이도 현실적인 범위를 먼저 알려 드릴 수 있습니다.",
     ],
-    imageAlt: "해질 무렵 불이 켜진 장자제의 숙소·식당 거리.",
+    imageAlt: "해 질 무렵의 베이징 CBD 스카이라인과 고가도로.",
   },
 
   earlyCta: {
@@ -930,7 +929,7 @@ export function getChinaTripCostCopy(
 
 export const CHINA_TRIP_COST_IMAGES = {
   hero: {
-    basePath: "/images/guides/china-hotel-value/stay-street-evening",
+    basePath: "/images/guides/china-trip-cost/beijing-cbd-city-mobility",
     width: 1200,
     height: 750,
   },

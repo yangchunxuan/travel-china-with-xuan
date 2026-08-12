@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -151,6 +152,48 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
     css,
     /\.guideGrid\[data-odd-count="true"\] \.guideSlot:last-child\s*\{[\s\S]*?grid-column: span 12;/,
   );
+});
+
+test("each guide identity owns a distinct card and social cover", async () => {
+  const registrySources = [
+    await source("lib/guideRegistry.ts"),
+    await source("lib/generated/guideRegistry.generated.ts"),
+  ].join("\n");
+
+  for (const field of ["cardImagePath", "heroImagePath"]) {
+    const paths = [
+      ...registrySources.matchAll(
+        new RegExp(`${field}:\\s*\"([^\"]+)\"`, "g"),
+      ),
+    ].map((match) => match[1]);
+    const duplicatePaths = paths.filter(
+      (path, index) => paths.indexOf(path) !== index,
+    );
+
+    assert.deepEqual(
+      [...new Set(duplicatePaths)],
+      [],
+      `${field} must not be shared by different guide identities`,
+    );
+
+    const imageHashes = await Promise.all(
+      paths.map(async (path) => {
+        const bytes = await readFile(
+          new URL(`../../public${path}`, import.meta.url),
+        );
+        return createHash("sha256").update(bytes).digest("hex");
+      }),
+    );
+    const duplicateHashes = imageHashes.filter(
+      (hash, index) => imageHashes.indexOf(hash) !== index,
+    );
+
+    assert.deepEqual(
+      [...new Set(duplicateHashes)],
+      [],
+      `${field} files must not be byte-identical across guide identities`,
+    );
+  }
 });
 
 test("hub has direct planner contact and stays usable from 320px to wide screens", async () => {
