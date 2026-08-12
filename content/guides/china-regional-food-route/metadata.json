@@ -1,0 +1,82 @@
+{
+  "id": "china-regional-food-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "regional-food",
+    "food-route",
+    "route-planning",
+    "dietary-restrictions",
+    "restaurant-fallbacks"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-regional-food-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-regional-food-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-regional-food-route/",
+      "title": "How to Plan a Regional Food Route in China",
+      "headline": "Build a Regional Food Route, Not a Fragile Restaurant List",
+      "description": "Plan a coherent China food route by regional roles, transport links, meal formats, dietary limits and fallbacks instead of chasing a list of famous restaurants.",
+      "heroAlt": "Original editorial illustration linking regional meal formats along a China travel route.",
+      "navTitle": "Plan a regional food route",
+      "featuredLinkLabel": "Build a resilient regional food route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Food route",
+        "Regional China",
+        "Trip planning"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-regional-food-route/",
+      "title": "如何规划中国地域美食路线",
+      "headline": "规划地域美食路线，而不是追逐易失效的餐厅清单",
+      "description": "用地域角色、交通链、餐型、饮食限制和替代方案规划中国美食路线，不靠一张随时会失效的网红餐厅榜单。",
+      "heroAlt": "原创编辑插画，以不同餐型节点串联中国地域美食路线。",
+      "navTitle": "规划地域美食路线",
+      "featuredLinkLabel": "建立不依赖单一餐厅的美食路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "美食路线",
+        "地域饮食",
+        "旅行规划"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-regional-food-route/",
+      "title": "중국 지역 음식 루트 계획법",
+      "headline": "금방 낡는 맛집 목록 대신 지역 음식 루트를 설계하세요",
+      "description": "유명 식당 목록을 좇지 않고 지역 역할, 교통 연결, 식사 형태, 식이 제한과 대안을 기준으로 중국 음식 여행 루트를 짜는 방법입니다.",
+      "heroAlt": "중국 여행 동선 위에 지역별 식사 형태를 연결한 오리지널 편집 일러스트.",
+      "navTitle": "지역 음식 루트 계획",
+      "featuredLinkLabel": "한 식당에 의존하지 않는 음식 루트 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "음식 여행",
+        "중국 지역",
+        "여행 계획"
+      ]
+    }
+  }
+}

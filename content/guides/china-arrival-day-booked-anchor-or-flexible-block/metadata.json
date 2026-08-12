@@ -1,0 +1,57 @@
+{
+  "id": "china-arrival-day-booked-anchor-or-flexible-block",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["arrival-day", "timed-reservations", "travel-pace", "failure-recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-arrival-day-booked-anchor-or-flexible-block/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-arrival-day-booked-anchor-or-flexible-block/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-arrival-day-booked-anchor-or-flexible-block/",
+      "title": "China Arrival Day: Book a Timed Visit or Stay Flexible?",
+      "headline": "Your First Day in China: Book a Timed Anchor or Keep It Flexible?",
+      "description": "Decide whether a China arrival day can safely hold a timed reservation by testing immigration, bags, transfers, hotel logistics and missed-entry rules.",
+      "heroAlt": "Editorial arrival-chain diagram showing a timed booking after immigration, baggage, transport and hotel steps.",
+      "navTitle": "Arrival-day timed booking",
+      "featuredLinkLabel": "Protect the first day",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Arrival day", "Timed booking", "Travel pace"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-arrival-day-booked-anchor-or-flexible-block/",
+      "title": "抵达中国第一天：预约定时项目还是保持弹性？",
+      "headline": "抵达中国的第一天：该订一个定时锚点，还是留作弹性时段？",
+      "description": "从入境、行李、进城、酒店衔接和迟到规则判断，中国抵达日能否安全承载稀缺定时预约。",
+      "heroAlt": "原创抵达链信息图，定时预约之前依次连接入境、行李、交通和酒店环节。",
+      "navTitle": "抵达日定时预约",
+      "featuredLinkLabel": "保护抵达第一天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["抵达日", "定时预约", "旅行节奏"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-arrival-day-booked-anchor-or-flexible-block/",
+      "title": "중국 도착일, 시간 지정 예약을 잡을까 비워 둘까?",
+      "headline": "중국 여행 첫날: 시간 지정 일정을 예약할까, 유연하게 둘까?",
+      "description": "입국 심사, 수하물, 시내 이동, 호텔 동선과 지각 규정을 확인해 도착일에 희소 예약을 넣어도 되는지 판단합니다.",
+      "heroAlt": "입국 심사, 수하물, 교통, 호텔 뒤에 시간 지정 예약을 배치한 도착 동선 편집 인포그래픽.",
+      "navTitle": "도착일 시간 지정 예약",
+      "featuredLinkLabel": "첫날 일정 보호하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["도착일", "시간 지정 예약", "여행 속도"]
+    }
+  }
+}
