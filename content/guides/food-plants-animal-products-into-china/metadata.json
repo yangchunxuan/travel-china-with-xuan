@@ -1,0 +1,82 @@
+{
+  "id": "food-plants-animal-products-into-china",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "packing-checklist",
+  "topics": [
+    "food",
+    "plants",
+    "animal-products",
+    "quarantine",
+    "customs"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/food-plants-animal-products-into-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/food-plants-animal-products-into-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/food-plants-animal-products-into-china/",
+      "title": "Can You Bring Food, Plants or Animal Products into China?",
+      "headline": "Food, Plants and Animal Products into China: A Packing Check",
+      "description": "Screen meat, dairy, eggs, fresh produce, seeds, plants, soil and animal products before packing—and declare uncertainty.",
+      "heroAlt": "Editorial illustration of a suitcase screening tray with fruit, leaf, meat and quarantine symbols.",
+      "navTitle": "Food and plants into China",
+      "featuredLinkLabel": "Check food and plant baggage",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Customs",
+        "Food"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/food-plants-animal-products-into-china/",
+      "title": "食品、植物和动物产品能带入中国吗？",
+      "headline": "食品、植物与动物产品入境中国：打包前检查",
+      "description": "打包前检查肉类、乳蛋、新鲜果蔬、种子、植物、土壤和动物产品；不确定时主动申报。",
+      "heroAlt": "行李安检托盘中有水果、叶片、肉类和检疫符号的编辑插画。",
+      "navTitle": "食品植物入境检查",
+      "featuredLinkLabel": "检查食品与植物行李",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "海关",
+        "食品"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/food-plants-animal-products-into-china/",
+      "title": "식품·식물·동물 제품을 중국에 가져갈 수 있나요?",
+      "headline": "중국 반입 식품·식물·동물 제품: 포장 전 점검",
+      "description": "육류, 유제품, 달걀, 신선 농산물, 씨앗, 식물, 토양과 동물 제품을 포장 전에 확인하고 불확실하면 신고하세요.",
+      "heroAlt": "과일, 잎, 육류와 검역 기호가 있는 수하물 검사대 편집 일러스트.",
+      "navTitle": "식품·식물 중국 반입",
+      "featuredLinkLabel": "식품과 식물 수하물 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "세관",
+        "식품"
+      ]
+    }
+  }
+}
