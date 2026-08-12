@@ -1,0 +1,53 @@
+{
+  "id": "international-chain-or-local-hotel-china",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "property-verification-decision",
+  "topics": ["stay", "international hotel chain", "local hotel", "property verification"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/international-chain-or-local-hotel-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/international-chain-or-local-hotel-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "stay", "family": "comparison", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/international-chain-or-local-hotel-china/",
+      "title": "International Chain or Local Hotel in China? Verify the Property, Not the Label",
+      "headline": "Choose the Property That Can Prove Your Stay Will Work",
+      "description": "Compare an international chain and a local hotel in China through room facts, passport handling, payment, location and a documented recovery route.",
+      "heroAlt": "The reception approach and Chinese branch-name sign at a real hotel in China, photographed without guests or personal information.",
+      "navTitle": "International or local hotel",
+      "featuredLinkLabel": "Compare international and local hotels",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China hotels", "Property checks", "Booking"]
+    },
+    "zh": {
+      "path": "/zh/guides/international-chain-or-local-hotel-china/",
+      "title": "在中国住国际连锁还是本地酒店？核验具体物业，不要只看品牌",
+      "headline": "选择能证明这次入住可以顺利执行的具体酒店",
+      "description": "从房型、外籍住客登记、付款、实际位置和故障恢复比较中国的国际连锁与本地酒店。",
+      "heroAlt": "中国一家真实酒店的前台入口与中文分店标识，画面中没有住客或个人信息。",
+      "navTitle": "国际连锁或本地酒店",
+      "featuredLinkLabel": "比较国际连锁与本地酒店",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国酒店", "物业核验", "预订"]
+    },
+    "ko": {
+      "path": "/ko/guides/international-chain-or-local-hotel-china/",
+      "title": "중국에서는 글로벌 체인과 현지 호텔 중 어디가 나을까? 간판보다 지점을 확인하세요",
+      "headline": "이번 숙박이 실제로 가능한지 증명할 수 있는 지점을 고르세요",
+      "description": "객실, 외국인 숙박 등록, 결제, 실제 위치, 문제 해결 절차로 중국의 글로벌 체인과 현지 호텔을 비교합니다.",
+      "heroAlt": "투숙객이나 개인정보 없이 촬영한 중국의 실제 호텔 프런트 진입부와 중국어 지점 표지.",
+      "navTitle": "글로벌 체인과 현지 호텔",
+      "featuredLinkLabel": "글로벌 체인·현지 호텔 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 호텔", "지점 확인", "예약"]
+    }
+  }
+}
