@@ -1,0 +1,53 @@
+{
+  "id": "guiyang-airport-and-rail-hubs",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "four-hub-identity-recovery",
+  "topics": ["transport", "airport", "railway-station", "metro", "rural-onward"],
+  "destinations": ["guiyang", "guizhou"],
+  "heroImagePath": "/images/guides/guiyang-airport-and-rail-hubs/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guiyang-airport-and-rail-hubs/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "transport", "family": "comparison", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/guiyang-airport-and-rail-hubs/",
+      "title": "Guiyang Airport, North, East or Central Station?",
+      "headline": "Guiyang Airport, North, East or Central Station?",
+      "description": "Identify Longdongbao Airport and rail station, Guiyang North, Guiyang East and central Guiyang Station by ticket, hotel, rural onward route and recovery.",
+      "heroAlt": "Real authorised passenger wayfinding at a clearly identified Guiyang airport or railway hub.",
+      "navTitle": "Which Guiyang hub?",
+      "featuredLinkLabel": "Match the Guiyang ticket to the right hub",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guiyang", "Airport", "Rail hubs"]
+    },
+    "zh": {
+      "path": "/zh/guides/guiyang-airport-and-rail-hubs/",
+      "title": "贵阳机场、贵阳北、贵阳东还是贵阳站？",
+      "headline": "贵阳四大枢纽怎么认：机场、北站、东站与贵阳站",
+      "description": "按票面站名、酒店位置和后续贵州乡村线路，识别龙洞堡机场/铁路站、贵阳北、贵阳东和贵阳站，并准备走错枢纽的恢复办法。",
+      "heroAlt": "带有准确站名的贵阳机场或铁路枢纽旅客导向真实授权照片。",
+      "navTitle": "贵阳应该用哪个枢纽",
+      "featuredLinkLabel": "把贵阳票面与正确枢纽对应起来",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["贵阳", "机场", "铁路枢纽"]
+    },
+    "ko": {
+      "path": "/ko/guides/guiyang-airport-and-rail-hubs/",
+      "title": "구이양공항, 구이양북역·동역·중앙역 중 어디?",
+      "headline": "구이양 네 교통 거점: 공항, 북역, 동역, 구이양역 구분하기",
+      "description": "표의 역명, 호텔 위치, 구이저우 농촌 후속 이동을 기준으로 룽둥바오공항·철도역, 구이양북역·동역·구이양역을 구분하고 잘못 갔을 때 복구합니다.",
+      "heroAlt": "정확한 명칭이 보이는 구이양 공항 또는 철도 거점의 실제 허가된 승객 안내 사진.",
+      "navTitle": "구이양 교통 거점 선택",
+      "featuredLinkLabel": "구이양 표를 정확한 거점에 맞추기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["구이양", "공항", "철도 거점"]
+    }
+  }
+}

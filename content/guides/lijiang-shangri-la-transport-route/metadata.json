@@ -1,0 +1,53 @@
+{
+  "id": "lijiang-shangri-la-transport-route",
+  "type": "planning",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["global"],
+  "format": "rail-altitude-arrival-envelope",
+  "topics": ["transport", "rail", "road", "altitude", "arrival-pacing"],
+  "destinations": ["lijiang", "shangri-la", "yunnan"],
+  "heroImagePath": "/images/guides/lijiang-shangri-la-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/lijiang-shangri-la-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/lijiang-shangri-la-transport-route/",
+      "title": "Lijiang and Shangri-La: Rail, Altitude and Station-to-Base Transfer",
+      "headline": "Lijiang and Shangri-La: Rail, Altitude and Station-to-Base Transfer",
+      "description": "Choose rail or road from Lijiang to Shangri-La, connect the station to the correct base, pace the first night and keep an altitude/weather downgrade.",
+      "heroAlt": "Real authorised arrival scene at Lijiang or Shangri-La railway station with identifiable signage.",
+      "navTitle": "Lijiang to Shangri-La transport",
+      "featuredLinkLabel": "Plan the rail, base and first night",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Lijiang", "Shangri-La", "Altitude"]
+    },
+    "zh": {
+      "path": "/zh/guides/lijiang-shangri-la-transport-route/",
+      "title": "丽江到香格里拉：铁路、公路、海拔与住宿接驳",
+      "headline": "丽江到香格里拉：交通选择、车站到住宿点与第一晚节奏",
+      "description": "比较丽江到香格里拉的铁路和公路链路，把车站接驳、第一晚高原节奏、天气变化和无法继续原计划时的降级方案一起安排。",
+      "heroAlt": "带有准确站名标识的丽江站或香格里拉站真实授权到达场景。",
+      "navTitle": "丽江到香格里拉交通",
+      "featuredLinkLabel": "安排铁路、住宿基地与第一晚",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["丽江", "香格里拉", "高原"]
+    },
+    "ko": {
+      "path": "/ko/guides/lijiang-shangri-la-transport-route/",
+      "title": "리장–샹그릴라: 철도·도로, 고도와 역에서 숙소까지",
+      "headline": "리장에서 샹그릴라까지: 교통, 숙박 거점, 첫날 밤의 속도",
+      "description": "리장–샹그릴라 철도와 도로를 비교하고 역에서 숙소까지의 이동, 고지대 첫날 밤, 날씨와 일정 축소안을 함께 준비합니다.",
+      "heroAlt": "정확한 역명이 보이는 리장역 또는 샹그릴라역의 실제 허가된 도착 장면.",
+      "navTitle": "리장–샹그릴라 교통",
+      "featuredLinkLabel": "철도·숙박 거점·첫날 밤 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["리장", "샹그릴라", "고지대"]
+    }
+  }
+}

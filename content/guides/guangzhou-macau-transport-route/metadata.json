@@ -1,0 +1,53 @@
+{
+  "id": "guangzhou-macau-transport-route",
+  "type": "planning",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["global"],
+  "format": "border-chain-baggage-decision",
+  "topics": ["transport", "rail", "border", "baggage", "macau"],
+  "destinations": ["guangzhou", "zhuhai", "hengqin", "macau"],
+  "heroImagePath": "/images/guides/guangzhou-macau-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guangzhou-macau-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "transport", "family": "comparison", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/guangzhou-macau-transport-route/",
+      "title": "Guangzhou and Macau: Rail, Zhuhai Border and Baggage",
+      "headline": "Guangzhou and Macau: Rail, Zhuhai Border and Baggage",
+      "description": "Choose Guangzhou South to Zhuhai/Gongbei or Hengqin by your Guangzhou start, Macau hotel, luggage, border hours and recovery margin.",
+      "heroAlt": "Real authorised passenger wayfinding at Zhuhai Station, Gongbei or Hengqin Port.",
+      "navTitle": "Guangzhou to Macau border chains",
+      "featuredLinkLabel": "Compare Zhuhai and Hengqin for Macau",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guangzhou", "Macau", "Border transfer"]
+    },
+    "zh": {
+      "path": "/zh/guides/guangzhou-macau-transport-route/",
+      "title": "广州到澳门：珠海站、横琴站、口岸与行李怎么选",
+      "headline": "广州到澳门：按出发地、澳门落点和行李选择珠海或横琴",
+      "description": "比较广州南到珠海站/拱北和横琴站/横琴口岸的完整门到门链路，并把口岸时间、行李节点和晚到恢复一起算进去。",
+      "heroAlt": "珠海站、拱北或横琴口岸旅客导向标识的真实授权照片。",
+      "navTitle": "广州到澳门口岸链路",
+      "featuredLinkLabel": "比较经珠海和经横琴去澳门",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["广州", "澳门", "口岸接驳"]
+    },
+    "ko": {
+      "path": "/ko/guides/guangzhou-macau-transport-route/",
+      "title": "광저우–마카오: 주하이역·헝친역, 국경과 짐 비교",
+      "headline": "광저우에서 마카오까지: 출발지·호텔·짐에 맞는 주하이 또는 헝친 경로",
+      "description": "광저우남역에서 주하이역·궁베이 또는 헝친역·헝친통상구로 가는 전체 동선을 국경 운영, 짐, 늦은 도착 복구까지 함께 비교합니다.",
+      "heroAlt": "주하이역, 궁베이 또는 헝친통상구의 실제 허가된 승객 안내 표지 사진.",
+      "navTitle": "광저우–마카오 국경 동선",
+      "featuredLinkLabel": "주하이와 헝친 경로 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["광저우", "마카오", "국경 환승"]
+    }
+  }
+}
