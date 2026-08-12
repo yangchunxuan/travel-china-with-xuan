@@ -1,0 +1,53 @@
+{
+  "id": "qiaopi-letters-remittances-and-migration",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "archive-reading-field-guide",
+  "topics": ["qiaopi", "yinxin", "overseas-chinese", "migration-history", "remittances", "archives"],
+  "destinations": ["shantou", "chaozhou", "jiangmen", "guangdong", "fujian"],
+  "heroImagePath": "/images/guides/qiaopi-letters-remittances-and-migration/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/qiaopi-letters-remittances-and-migration/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/qiaopi-letters-remittances-and-migration/",
+      "title": "Qiaopi Letters: Migration, Family News and Money Across the Sea",
+      "headline": "Read the Letter, the Money and the Delivery Marks Together",
+      "description": "Decode a Qiaopi or Yinxin as family correspondence, remittance evidence and a delivery record without over-reading one private document.",
+      "heroAlt": "The exterior of the Shantou Qiaopi Museum, housed in a former banking building.",
+      "navTitle": "Read a Qiaopi letter",
+      "featuredLinkLabel": "Trace one Qiaopi across the sea",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Qiaopi", "Migration", "Archives"]
+    },
+    "zh": {
+      "path": "/zh/guides/qiaopi-letters-remittances-and-migration/",
+      "title": "侨批怎么看：一封银信里的移民、家事、汇款与递送",
+      "headline": "把家书、钱款和递送痕迹放在一起读",
+      "description": "按字段拆解侨批与银信，理解家书、汇款凭证和递送网络如何叠在同一组档案里，同时守住隐私与转录边界。",
+      "heroAlt": "设于旧银行建筑中的汕头侨批文物馆外观。",
+      "navTitle": "读懂一份侨批",
+      "featuredLinkLabel": "追踪一份侨批的跨海路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["侨批", "移民史", "档案"]
+    },
+    "ko": {
+      "path": "/ko/guides/qiaopi-letters-remittances-and-migration/",
+      "title": "차오피 편지 읽기: 이주·가족 소식·송금이 바다를 건넌 방식",
+      "headline": "편지, 돈, 배달 흔적을 한 문서로 함께 읽기",
+      "description": "차오피와 인신의 필드를 해독해 가족 편지, 송금 증빙, 전달망이 어떻게 겹치는지 살피고 사적 기록의 전사·공개 한계를 지킵니다.",
+      "heroAlt": "옛 은행 건물에 자리한 산터우 차오피문물관의 외관.",
+      "navTitle": "차오피 한 장 읽기",
+      "featuredLinkLabel": "차오피의 바닷길 추적하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["차오피", "이주사", "기록유산"]
+    }
+  }
+}
