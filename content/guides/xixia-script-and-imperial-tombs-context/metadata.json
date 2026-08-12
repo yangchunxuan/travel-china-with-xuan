@@ -1,0 +1,53 @@
+{
+  "id": "xixia-script-and-imperial-tombs-context",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "archaeological-evidence-field-guide",
+  "topics": ["xixia", "tangut-script", "imperial-tombs", "archaeology", "world-heritage"],
+  "destinations": ["yinchuan", "ningxia"],
+  "heroImagePath": "/images/guides/xixia-script-and-imperial-tombs-context/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xixia-script-and-imperial-tombs-context/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/xixia-script-and-imperial-tombs-context/",
+      "title": "Xixia Script and Imperial Tombs: Reading Fragmentary Evidence",
+      "headline": "Reconstruct Xixia Through Script, Objects and Landscape",
+      "description": "Read the Xixia Imperial Tombs through a three-part evidence method, with clear confidence labels for inscriptions, finds, tomb plans and disputed identifications.",
+      "heroAlt": "Earthen mausoleum remains of the Xixia Imperial Tombs beneath the Helan Mountains near Yinchuan.",
+      "navTitle": "Read the Xixia tombs",
+      "featuredLinkLabel": "Build the Xixia evidence triangle",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Xixia", "Archaeology", "Ningxia"]
+    },
+    "zh": {
+      "path": "/zh/guides/xixia-script-and-imperial-tombs-context/",
+      "title": "西夏文字与陵墓：如何阅读残缺证据",
+      "headline": "把文字、器物与陵区景观组成证据三角",
+      "description": "用三层证据读懂西夏陵，区分铭文、出土物、陵区规划能够确认的内容，以及墓主人和建筑用途等仍属推断的问题。",
+      "heroAlt": "银川附近贺兰山下的西夏陵夯土陵塔遗存。",
+      "navTitle": "读懂西夏陵",
+      "featuredLinkLabel": "建立西夏证据三角",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["西夏", "考古", "宁夏"]
+    },
+    "ko": {
+      "path": "/ko/guides/xixia-script-and-imperial-tombs-context/",
+      "title": "서하 문자와 황릉: 파편적 증거를 읽는 법",
+      "headline": "문자·유물·경관으로 서하 문명을 재구성하기",
+      "description": "서하 황릉의 명문, 출토품, 능역 배치를 세 갈래 증거로 읽고 피장자·건물 용도처럼 추정에 머무는 내용을 구분합니다.",
+      "heroAlt": "인촨 인근 허란산 아래에 남은 서하 황릉의 다져 쌓은 흙 구조물.",
+      "navTitle": "서하 황릉 읽기",
+      "featuredLinkLabel": "서하의 증거 삼각형 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["서하", "고고학", "닝샤"]
+    }
+  }
+}
