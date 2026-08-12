@@ -1,0 +1,53 @@
+{
+  "id": "inner-mongolia-long-song-first-performance",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "performance-selection-listening-guide",
+  "topics": ["urtiin-duu", "mongolian-long-song", "morin-khuur", "inner-mongolia", "performing-arts"],
+  "destinations": ["hohhot", "ordos", "inner-mongolia"],
+  "heroImagePath": "/images/guides/inner-mongolia-long-song-first-performance/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/inner-mongolia-long-song-first-performance/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "choose"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/inner-mongolia-long-song-first-performance/",
+      "title": "Inner Mongolia Long Song: Choose a Credible First Performance",
+      "headline": "Hear Urtiin Duu Without Mistaking Every Grassland Show for Long Song",
+      "description": "Verify a first Inner Mongolia long-song performance, distinguish Urtiin Duu from short song, Khoomei and mixed shows, and follow a practical listening timeline.",
+      "heroAlt": "An identified Urtiin Duu singer performing at a documented cultural venue in Inner Mongolia.",
+      "navTitle": "Choose a long-song performance",
+      "featuredLinkLabel": "Verify your first Urtiin Duu programme",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Urtiin Duu", "Music", "Inner Mongolia"]
+    },
+    "zh": {
+      "path": "/zh/guides/inner-mongolia-long-song-first-performance/",
+      "title": "内蒙古长调初体验：如何选择可信演出",
+      "headline": "别把每一场草原秀都当成长调",
+      "description": "按主办方、节目单、表演者和曲目信息核验长调演出，区分长调、短调、呼麦与综合舞台秀，并按时间线学习聆听。",
+      "heroAlt": "一位身份与节目可核验的长调歌者在内蒙古文化场馆演出。",
+      "navTitle": "选择长调演出",
+      "featuredLinkLabel": "核验第一场长调节目",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["长调", "音乐", "内蒙古"]
+    },
+    "ko": {
+      "path": "/ko/guides/inner-mongolia-long-song-first-performance/",
+      "title": "내몽골 장가 첫 공연: 믿을 만한 우르틴 두 고르기",
+      "headline": "모든 초원 쇼를 장가로 오해하지 않는 법",
+      "description": "주최자·프로그램·연주자·곡명으로 내몽골 우르틴 두 공연을 확인하고 단가, 후미, 종합 무대와 구별하며 듣는 순서를 익힙니다.",
+      "heroAlt": "내몽골의 확인된 문화 공연장에서 우르틴 두를 부르는 신원이 명시된 가수.",
+      "navTitle": "우르틴 두 공연 고르기",
+      "featuredLinkLabel": "첫 우르틴 두 프로그램 확인하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["우르틴 두", "음악", "내몽골"]
+    }
+  }
+}
