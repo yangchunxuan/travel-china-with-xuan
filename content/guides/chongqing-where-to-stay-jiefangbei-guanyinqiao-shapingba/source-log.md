@@ -34,3 +34,7 @@ Searches reviewed: `where to stay Chongqing Jiefangbei Guanyinqiao Shapingba`, `
 - `sha256`: `da8e27306fd069fe95aabbd2561d8d7b32ec447de78213715a8c576be974aede`
 
 The photograph illustrates the real district, not current crowding, traffic or hotel quality.
+
+## Depth review — 2026-08-12
+
+Expanded the three-base decision around repeated itineraries, vertical last-mile access, exact arrival hubs, evening return, mobility and recovery. It remains an area-choice page; metro methodology and hotel rankings remain outside the canonical. Added the current NIA registration source; no fixed journey time or station-exit claim is made.

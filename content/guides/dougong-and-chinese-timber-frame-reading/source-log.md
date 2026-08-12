@@ -1,8 +1,14 @@
 # Source log — dougong-and-chinese-timber-frame-reading
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: field-reading Chinese timber frames through dougong; no structural diagnosis, authentication service or general architecture history added.
+- UNESCO craftsmanship evidence now supports the complete columns–beams–brackets–purlins chain; the Liao Tentative List entry is used only as a documented Yingxian case and is explicitly distinguished from World Heritage inscription.
+- Added position-based observation, a ten-minute site workflow, evidence tiers, restoration uncertainty, earthquake-claim limits, suitability guidance and a defensible field checklist in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

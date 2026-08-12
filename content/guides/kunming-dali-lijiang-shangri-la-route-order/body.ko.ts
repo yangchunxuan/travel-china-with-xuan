@@ -1,162 +1,76 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "기본적으로는 쿤밍–다리–리장–샹그릴라 또는 완전한 역방향이 합리적입니다. 왕복을 줄이는 구조일 뿐 네 곳이 모두 필요하다는 뜻은 아닙니다. 쿤밍은 관문에 그칠 수 있고, 샹그릴라는 더 높은 고도에서의 회복을 고려해야 하므로 숙박 수를 베껴 해결할 수 없습니다."
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "각 도시에 역할을 주세요",
-      "columns": [
-        {
-          "heading": "쿤밍",
-          "body": "항공 관문이 될 수 있으며 독립적인 목적이 없다면 오래 머물 필요가 없습니다."
-        },
-        {
-          "heading": "다리와 리장",
-          "body": "서로 다른 거점이지만 원하는 경험이 겹치는지 먼저 확인합니다."
-        },
-        {
-          "heading": "샹그릴라",
-          "body": "공짜로 붙는 네 번째 도시가 아니라 의도적인 고지대 연장입니다."
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "철도는 연결을 개선하지만 체력을 늘려 주지 않습니다"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "공식 리장–샹그릴라 철도 개통으로 남북 연결은 쉬워졌습니다. 하지만 역 접근, 숙소 이동, 날씨와 높은 고도에서의 개인 반응은 남습니다. 이동 가능성과 편안함은 별개입니다."
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "관문에 따른 방향",
-      "columns": [
-        "형태",
-        "적합한 경우",
-        "주요 위험"
-      ],
-      "rows": [
-        [
-          "쿤밍에서 북쪽",
-          "쿤밍으로 입국하고 북쪽에서 출발하거나 계속 이동합니다.",
-          "노선에 있다는 이유로 모든 곳을 넣습니다."
-        ],
-        [
-          "샹그릴라에서 남쪽",
-          "먼저 샹그릴라에 도착해 점차 내려옵니다.",
-          "첫날 부담이 큰데 회복 여유가 없습니다."
-        ],
-        [
-          "쿤밍 왕복",
-          "동일 도시 항공권이 훨씬 낫고 시간이 충분합니다.",
-          "같은 축을 두 번 이동합니다."
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "동선만으로 건강을 보장하지 마세요",
-      "body": "고도에 대한 반응은 사람마다 다릅니다. 이 글은 속도 판단만 제공하며 의료 판단을 대신하지 않습니다. 건강 우려가 있다면 전문 조언을 받고 첫 고지대 날을 유연하게 두세요."
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "다섯 단계로 정하기"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "실제 도착·출발 공항을 먼저 고정합니다.",
-        "각 도시에 대체할 수 없는 이유 하나를 적습니다.",
-        "다리와 리장이 원하는 경험을 중복하는지 봅니다.",
-        "회복 여유와 출구가 있을 때만 샹그릴라를 넣습니다.",
-        "모든 곳을 줄이기보다 가장 약한 도시를 통째로 제외합니다."
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "단순한 삭제는 도시 하나를 제외하는 것"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "도시 목록을 지키려고 네 번의 급한 체크인을 만들지 마세요. 쿤밍이 관문뿐이면 통과하고, 샹그릴라가 유명한 이름뿐이면 여유 있는 다음 여행으로 미루세요."
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "개인 일정을 완성해 주는 글이 아닙니다",
-      "body": "숙박 수나 관광지 일정은 제공하지 않습니다. 실시간 교통, 계절, 건강, 짐과 항공편에 따라 답이 달라집니다."
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "이 동선을 사람에게 검토받고 싶나요?",
-      "body": "날짜, 인원, 대략적인 예산과 입출국 공항을 남기면 약한 연결을 찾아드릴 수 있습니다."
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "다음 계획",
-      "items": [
-        {
-          "label": "리장 고성과 수허 중 선택",
-          "href": "/ko/guides/lijiang-old-town-or-shuhe-where-to-stay/",
-          "description": "리장의 역할을 정한 뒤 숙소 지역을 고르세요."
-        },
-        {
-          "label": "중국 철도 이용 준비",
-          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
-          "description": "동선 설계와 승차 절차를 분리해 확인하세요."
-        },
-        {
-          "label": "일정이 과도한지 점검",
-          "href": "/ko/guides/is-your-china-itinerary-too-rushed/",
-          "description": "이동과 회복 시간을 제외한 실제 관광일을 계산하세요."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "리장–샹그릴라 철도 개통",
-          "url": "https://www.nra.gov.cn/xwzx/tpsp/tpxx/202312/t20231229_344290.shtml",
-          "publisher": "National Railway Administration",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "윈난 교통망 자료",
-          "url": "https://jtyst.yn.gov.cn/html/2025/xingyexinwen_0218/3133736.html",
-          "publisher": "Yunnan Department of Transport",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "윈난 동선의 깔끔한 기본은 쿤밍→다리→리장→샹그릴라의 한 방향 통로이며 항공편과 여행자 상태가 맞으면 반대도 가능합니다. 이 순서는 지리적 역주행을 줄일 뿐 네 도시 모두가 한 여행에 들어가야 한다는 뜻은 아닙니다. 모든 지역에 다른 역할을 주고 고지대 연장을 따로 검사하며, 일정이 넘치면 모든 곳을 짧은 체크인으로 만들기 전에 도시 하나를 통째로 빼세요." },
+  { id: "quick-choice", type: "comparison", title: "동선 모양 선택", columns: [
+    { heading: "북쪽 방향 통로", body: "쿤밍이 도착 관문이고 북쪽에서 떠나거나 되돌아가지 않고 계속 갈 수 있을 때 유용합니다." },
+    { heading: "남쪽 방향 통로", body: "샹그릴라로 먼저 들어가는 것이 실용적이고 첫 고지대 구간에 충분한 여유를 줄 수 있을 때 유용합니다." },
+    { heading: "짧은 세 지역 동선", body: "양끝에 같은 관문이 필요하거나 한 지역에 대체 불가 목적이 없을 때 대체로 강합니다." }
+  ] },
+  { id: "official-heading", type: "heading", level: 2, text: "철도는 연속성을 바꾸지만 사람의 회복을 대신하지 않습니다" },
+  { id: "official", type: "paragraph", text: "국가철도국은 리장–샹그릴라 철도가 2023년 11월 개통해 두 지역을 직접 연결하고 쿤밍–다리–리장–샹그릴라의 연속 통로를 만들었다고 기록합니다. 윈난성 교통 당국은 노선이 해발 약 2,400m의 리장역에서 약 3,274m의 샹그릴라역까지 올라간다고 설명합니다. 이는 통로 연결을 쉽게 하지만 개인의 고도 반응을 예측하거나 현재 시간표를 보장하지 않습니다." },
+  { id: "roles-heading", type: "heading", level: 2, text: "숙박 일수 전에 모든 지역에 역할을 주세요" },
+  { id: "roles", type: "table", caption: "고유한 기여가 있을 때만 유지하세요", columns: ["지역", "가능한 역할", "뺄 이유"], rows: [
+    ["쿤밍", "항공·철도 관문과 자체 도시·근교 우선순위", "강제된 공항 이름일 뿐이며 서두른 숙박 없이 연결 가능"],
+    ["다리", "호수, 마을과 주변 우선순위의 느린 거점", "계획 경험이 리장과 겹치고 삭제 후에도 남을 고유 활동 없음"],
+    ["리장", "구시가지 숙박 선택, 지역 거점과 북부 통로 연결", "환승만 위해 남고 실제 우선순위는 다른 곳에 있음"],
+    ["샹그릴라", "의도적인 고지대 풍경·문화 연장", "회복, 맞는 활동이나 확실한 다음 이동 경로 없이 유명한 네 번째 이름일 뿐"]
+  ] },
+  { id: "direction-heading", type: "heading", level: 2, text: "방향은 관문과 회복 결정입니다" },
+  { id: "direction", type: "table", caption: "이름 순서가 아니라 전체 동선을 비교하세요", columns: ["방향", "가능한 강점", "계획 비용"], rows: [
+    ["쿤밍→북쪽", "단순한 관문 시작과 통로를 따른 점진적 이동", "앞에 있다는 이유로 모든 곳을 추가"],
+    ["샹그릴라→남쪽", "북쪽 시작 뒤 내려가는 동선", "일행 상태를 모른 채 가장 높은 구간을 먼저 경험"],
+    ["쿤밍 귀환", "같은 도시 국제선이 훨씬 좋을 수 있음", "통로 일부를 반복하며 이를 정당화할 시간 필요"],
+    ["오픈조 양끝", "같은 길 귀환을 없앨 수 있음", "항공권, 짐과 신뢰성을 완전한 바구니로 비교해야 함"]
+  ] },
+  { id: "altitude-heading", type: "heading", level: 2, text: "의료 약속 없이 고지대 연장 계획" },
+  { id: "altitude", type: "list", ordered: false, items: [
+    "샹그릴라 첫날을 유연하게 두고 도착 직후 대체 불가 활동을 붙이지 마세요.",
+    "한 여행자의 과거 반응으로 다른 사람의 경험을 예측하지 마세요.",
+    "북부 환불 불가 예약 전 저지대 대안과 확실한 다음 이동 경로를 파악하세요.",
+    "건강 우려가 있으면 적절한 전문가 조언을 받으세요. 동선 순서는 의료 허가가 아닙니다.",
+    "추위, 날씨와 교통 이상은 고도와 별개이며 현재 공식 확인이 필요합니다."
+  ] },
+  { id: "workflow-heading", type: "heading", level: 2, text: "여덟 단계로 통로 만들기" },
+  { id: "workflow", type: "list", ordered: true, items: [
+    "같은 관문으로 돌아가는 비용까지 포함해 실제 도착·출국 공항을 확정하세요.",
+    "네 지역에 각각 대체 불가 목적을 적고 유명하거나 가깝다는 이유뿐인 곳은 빼세요.",
+    "둘 다 막연한 구시가지 숙박으로 보지 말고 실제 활동으로 다리와 리장을 비교하세요.",
+    "샹그릴라를 별도 연장으로 검사하세요. 회복, 날씨, 짐과 다음 이동 경로가 모두 현실적이어야 합니다.",
+    "관문과 일행 준비에 따라 북쪽, 남쪽 또는 짧은 동선을 고르세요.",
+    "모든 철도·도로의 전체 문간 이동 시간을 계산하고 이동일 저녁을 유연하게 두세요.",
+    "구조 통과 뒤에 현재 12306, 항공 조건과 해당 관광지 공지를 확인하세요.",
+    "동선이 넘치면 네 곳 모두 줄이지 말고 가장 약한 지역을 빼세요."
+  ] },
+  { id: "example-heading", type: "heading", level: 2, text: "계획 예시: 쿤밍을 관문으로만 사용" },
+  { id: "example", type: "callout", tone: "neutral", title: "숙박 배정이 아닌 예시입니다", body: "여행자가 쿤밍으로 도착하지만 쿤밍 우선순위는 없고 다리·리장에는 다른 활동이 있으며 샹그릴라가 핵심 풍경 연장이라고 해 보세요. 현재 교통으로 여유 있게 연결된다면 쿤밍을 서두른 1박 관광지가 아니라 관문으로 둘 수 있습니다. 국제선 도착이 늦거나 회복이 필요하면 완전한 도시 일정이 없어도 쿤밍 1박에는 실용적 역할이 생깁니다." },
+  { id: "failure-heading", type: "heading", level: 2, text: "흔한 실패와 복구" },
+  { id: "failure", type: "table", caption: "네 이름을 강제하지 말고 통로를 고치세요", columns: ["실패", "즉시 대응", "다음 설계 변경"], rows: [
+    ["늦은 도착으로 첫 지역 목적 상실", "그 밤을 회복에 쓰고 선택 관광 삭제", "도착 저녁을 완전한 지역 날짜로 세지 않음"],
+    ["다리·리장 계획 중복", "더 강한 현지 우선순위만 유지", "거점 하나를 빼거나 서로 다른 역할 부여"],
+    ["일행이 북부 구간을 잘 견디지 못함", "활동을 더하지 않고 적절한 현지·의료 지침 따름", "저지대 대안을 쓰고 동선 축소"],
+    ["날씨·교통으로 북부 이동편 중단", "숙소와 다음 확인된 교통편 보호", "국제선 전에 회복 1박 유지"],
+    ["쿤밍 귀환이 마지막 하루를 소비", "항공편 우선, 앞의 가장 약한 지역 삭제", "예약 전 오픈조 관문 비교"]
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "어느 지역을 먼저 뺄까요?" },
+  { id: "switch-rule", type: "paragraph", text: "가장 작거나 덜 유명한 도시가 아니라 고유 목적이 없는 지역을 빼세요. 쿤밍은 환승만 할 수 있고, 다리나 리장은 계획 경험이 겹치면 하나를 뺄 수 있으며, 샹그릴라는 고지대 연장에 여유나 확실한 다음 이동 경로가 없으면 빼야 합니다. 네 곳 모두 대체 불가 기여가 있고 복구 공간이 있을 때만 유지하세요." },
+  { id: "booking-checklist", type: "list", ordered: false, items: [
+    "도시 숙박 전에 도착·출국 관문을 확정했습니다.",
+    "모든 지역에 대체 불가 목적이 있습니다.",
+    "다리와 리장을 실제 활동으로 구분했습니다.",
+    "샹그릴라에 유연한 첫날, 저지대 대안과 다음 이동 경로가 있습니다.",
+    "여행 직전에 현재 교통·날씨 정보를 재확인합니다."
+  ] },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "현재 철도와 조건을 확인하세요", body: "철도 연결은 확립됐지만 시간표, 표, 날씨와 지역 운영은 변합니다. 12306에서 날짜를 검색하고 이름 있는 기관을 확인하세요. 이 글은 의료 조언이 아니며 개인의 고도 반응을 약속하지 않습니다." },
+  { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 쿤밍, 다리, 리장, 샹그릴라 순서와 삭제 논리만 다룹니다. 숙박 일수, 관광지 지정, 리장 숙박 지역 선택, 실시간 교통 또는 전문 건강 조언을 대신하지 않습니다." },
+  { id: "help-cta", type: "callout", tone: "decision", title: "윈난 통로를 확인할까요?", body: "관문, 날짜, 우선순위, 짐과 공유할 수 있는 건강 관련 제약을 알려 주세요. 계획자는 약한 연결을 검사할 수 있지만 의료 허가를 제공할 수 없습니다." },
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "리장 구시가지와 수허 비교", href: "/ko/guides/lijiang-old-town-or-shuhe-where-to-stay/", description: "리장의 역할을 정한 뒤 숙소를 고르세요." },
+    { label: "중국 철도 준비", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "여객 절차를 동선 설계와 별도로 확인하세요." },
+    { label: "동선이 너무 빡빡한지 검사", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "이동과 회복 뒤 쓸 수 있는 날을 세세요." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "리장–샹그릴라 철도 개통", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "중국 국가철도국", reviewedAt: "2026-08-12" },
+    { label: "윈난성 교통 당국 리장–샹그릴라 철도 개요", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;

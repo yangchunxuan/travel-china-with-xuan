@@ -1,141 +1,78 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "항공과 철도 규정은 서로 바꿔 쓸 수 없습니다. 2025년 6월 28일부터 중국 국내선에는 표시가 불명확하거나 CCC 표시가 없거나 리콜 모델인 보조배터리가 금지됐습니다. 항공은 기내 휴대와 Wh 한도도 적용합니다. 철도는 표시가 선명하고 100Wh 이하인 제품을 허용합니다."
-    },
-    {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "항공과 철도 비교",
-      "columns": [
-        "상황",
-        "경로",
-        "행동"
-      ],
-      "rows": [
-        [
-          "중국 국내선",
-          "기내 휴대만; 용량과 CCC 표시 명확",
-          "100Wh 이하는 보통 승인 불필요, 100–160Wh는 항공사 승인 및 최대 2개."
-        ],
-        [
-          "중국 출발 국제선",
-          "리튬배터리 규정 + 항공사·공항 점검",
-          "2025 국내선 CCC 공지가 정확한 구간에 적용되는지 확인."
-        ],
-        [
-          "고속·일반열차",
-          "표시 명확, 정격 에너지 100Wh 이하",
-          "단자 보호와 양호한 상태 유지."
-        ],
-        [
-          "불명확·손상·리콜 제품",
-          "휴대하지 않기",
-          "읽을 수 없는 라벨은 설명으로 대체 불가."
-        ]
-      ]
-    },
-    {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "mAh만 말고 Wh를 보세요"
-    },
-    {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "Wh가 인쇄돼 있으면 그 값을 사용합니다. 전압과 Ah만 있으면 Wh = V × Ah이며 10,000mAh는 10Ah지만 정격 전압이 필요합니다.",
-        "항공편에서는 보조배터리를 위탁하지 말고 기내 수하물에 넣습니다. 단락을 막고 CAAC 지침에 따라 비행 중 사용하지 않습니다.",
-        "CE·FCC 표시는 중국 CCC 표시와 다릅니다. 라벨을 임의로 만들거나 붙이지 마세요.",
-        "항공사, 보안과 리콜 공지는 일반 기준보다 엄격할 수 있으며 최종 판단은 현장 운영 규정에 따릅니다."
-      ]
-    },
-    {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "포장 점검"
-    },
-    {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "밝은 곳에서 양면을 촬영하고 브랜드·모델·Wh·표시가 읽히는지 확인합니다.",
-        "제조사와 규제기관에서 해당 모델 리콜을 검색합니다.",
-        "중국 국내선은 진짜 CCC 표시를 확인하고 없거나 흐리면 다른 제품을 씁니다.",
-        "기내 수하물에 넣고 단자를 보호하며 우발 작동을 막습니다.",
-        "열차만 이용하면 정격 에너지가 100Wh 이하이며 선명히 인쇄됐는지 확인합니다."
-      ]
-    },
-    {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "보안검색에서 거부되면",
-      "body": "온라인 요약으로 다투거나 위탁수하물에 숨기지 마세요. 공식 포기, 체크인 구역 반환 등 허용 절차를 묻고 스마트 액세서리의 개인정보를 보호하며 가능한 경우 영수증을 받으세요.",
-      "tone": "warning"
-    },
-    {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "적용 범위와 최신 규정",
-      "body": "100Wh와 160Wh는 일반 CAAC 항공 기준이고 2025 CCC 공지는 중국 국내선에 관한 것입니다. 국제 구간, 연결편, 항공사와 리콜은 여행 주에 확인해야 합니다. 철도는 최신 목록과 실제 기기 상태를 적용합니다.",
-      "tone": "neutral"
-    },
-    {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "계속 계획하기",
-      "items": [
-        {
-          "label": "중국 플러그·전압·어댑터",
-          "href": "/ko/guides/china-power-plugs-voltage-and-adapters/",
-          "description": "허용된 기기를 어떻게 충전할지 확인하세요."
-        },
-        {
-          "label": "첫 중국 고속철도",
-          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
-          "description": "역 보안검색과 탑승을 준비하세요."
-        },
-        {
-          "label": "국제선 전 마지막 밤",
-          "href": "/ko/guides/china-last-night-before-international-flight/",
-          "description": "재포장 전 라벨을 확인하세요."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "CAAC notice on CCC-marked power banks (2025)",
-          "url": "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "CAAC lithium battery and power bank limits",
-          "url": "https://www.caac.gov.cn/big5/www.caac.gov.cn/XXGK/XXGK/TZTG/201511/t20151105_11173.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Railway passenger prohibited and restricted items catalogue",
-          "url": "https://www.gov.cn/zhengce/zhengceku/2022-05/31/content_5693212.htm",
-          "publisher": "National Railway Administration / Ministry of Public Security",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-};
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "중국 여행에 항공편과 열차가 모두 있으면 보조배터리를 두 번 확인해야 합니다. 항공과 철도의 규정은 서로 다릅니다. 중국 국내선에서는 보조배터리를 기내에 휴대해야 하고 정격 에너지를 확인할 수 있어야 하며, 2025년 6월 28일부터 선명한 CCC 표시가 있고 리콜 모델·배치가 아니어야 합니다. 철도에서는 표시가 선명하고 정격 에너지가 100Wh 이하여야 합니다. 열차 보안검색을 통과했다고 공항에서도 통과하는 것은 아닙니다." },
+  { id: "answer", type: "callout", title: "전체 여정에 맞는 안전한 기본 선택", tone: "decision", body: "손상되지 않고 표시가 선명한 100Wh 이하 보조배터리 하나를 준비하고, 중국 국내선이 있다면 선명한 CCC 표시도 확인하세요. 쉽게 꺼낼 수 있는 기내 수하물에 넣어 우발 작동과 단락을 막고, 정확한 모델을 최신 리콜 정보와 대조하세요. 두 교통수단을 함께 고려한 실용적인 기준일 뿐, 항공사·공항·직원이 손상 또는 리콜 제품을 받아 준다는 보장은 아닙니다." },
+  { id: "mode-heading", type: "heading", level: 2, text: "항공과 철도는 서로 다른 질문을 확인합니다" },
+  { id: "mode-table", type: "table", caption: "2026년 8월 12일 검토한 핵심 규정", columns: ["확인", "중국 국내선", "중국 철도"], rows: [
+    ["포장 위치", "기내 수하물 또는 몸에 휴대하며 위탁수하물은 금지", "보호해 보안검색 때 제시할 수 있게 보관"],
+    ["정격 에너지", "100Wh 이하는 항공사 승인 불필요, 100Wh 초과 160Wh 이하는 항공사 승인 후 1인 최대 2개, 160Wh 초과 금지", "표시가 선명하고 100Wh 이하여야 함"],
+    ["에너지 표시", "Wh가 표시되거나 기기에 적힌 다른 매개변수로 계산 가능해야 함", "정격 에너지 표시가 선명해야 함"],
+    ["CCC", "2025년 6월 28일부터 CCC가 없거나 불명확하거나 리콜 모델·배치인 제품은 국내선 금지", "인용한 국가 철도 목록의 기준은 선명한 표시와 100Wh이며 항공 CCC 규정을 철도 주장으로 바꾸지 않음"],
+    ["이동 중 사용", "비행 중 기기 충전에 사용하지 않고 스위치가 있으면 계속 끔", "차내 안전 안내를 따르고 발열·팽창·파손·이상 냄새가 있으면 사용 중지"],
+    ["운영사 추가 조건", "항공사와 노선별 위험물 조건이 더 엄격할 수 있음", "보안·철도 직원이 현행 규정을 적용하며 현장 검사를 요구할 수 있음"]
+  ] },
+  { id: "domestic-heading", type: "heading", level: 2, text: "2025년 CCC 제한은 중국 국내선 규정입니다" },
+  { id: "domestic-copy", type: "paragraph", text: "중국민용항공국은 2025년 6월 28일부터 CCC 표시가 없거나 불명확하거나 리콜 모델·배치에 해당하는 보조배터리를 국내선에 휴대할 수 없다고 발표했습니다. CCC는 중국 강제성제품인증 표시이며 CE, FCC, 항공기 아이콘이나 재활용 기호와 다릅니다. 오래된 제품에 CCC를 그리거나 책임 없는 판매자의 스티커를 붙이지 마세요. 보안검색에는 제품 본래의 표시가 필요하고 리콜 대상도 아니어야 합니다." },
+  { id: "itinerary-boundary", type: "callout", title: "국제선 표에도 중국 국내 구간이 있을 수 있습니다", tone: "warning", body: "모든 항공권 구간을 읽으세요. 베이징–청두 뒤 청두–싱가포르로 가는 한 장의 국제 여정에서도 베이징–청두는 중국 국내선입니다. 별도로 산 국내선 연결편도 국내선 검사를 적용받습니다. 국제 구간은 운항 항공사와 출발 공항을 확인하세요. 항공사와 관할 규정이 기본 항공 제한에 조건을 더할 수 있습니다." },
+  { id: "label-heading", type: "heading", level: 2, text: "출발 전에 제품 본체 표시를 읽으세요" },
+  { id: "label-table", type: "table", caption: "확인 가능한 보조배터리 정보", columns: ["본체에서 찾을 것", "중요한 이유", "위험 신호"], rows: [
+    ["Wh 정격 에너지", "교통수단 한도와 바로 비교 가능", "없음, 마모, 가림 또는 서로 모순"],
+    ["정격 전압과 용량", "둘 다 표시되면 CAAC 방식으로 Wh 계산 가능", "전압이나 Wh 없이 홍보용 용량만 표시"],
+    ["제조사, 모델과 배치/일련번호", "리콜 확인과 정확한 제품 식별에 필요", "책임 제조사나 모델이 없는 일반 제품"],
+    ["CCC 표시", "2025년 중국 국내선 제한에 필요", "없음, 임의 부착, 식별 불가 또는 다른 기호와 혼동"],
+    ["케이스와 포트", "배터리 상태와 단자 보호 가능 여부 확인", "팽창, 균열, 누액, 그을림, 느슨함 또는 이상 발열"]
+  ] },
+  { id: "math-heading", type: "heading", level: 2, text: "정확한 전압으로만 mAh를 Wh로 바꾸세요" },
+  { id: "math-copy", type: "paragraph", text: "공식 항공 계산식은 Wh = V × Ah이며 Ah = mAh ÷ 1,000입니다. 본체에 20,000mAh와 정격 3.7V가 표시되면 74Wh, 30,000mAh와 3.7V이면 111Wh입니다. 후자는 철도의 100Wh 한도를 넘고 항공에서는 항공사 승인 구간에 들어갑니다. 이는 계산 예시이지 승인 증서가 아닙니다. USB 출력 전압은 셀 정격 전압과 다를 수 있고, 계산으로 CCC 누락·불명확한 표시·리콜·손상을 해결할 수 없습니다." },
+  { id: "math-warning", type: "callout", title: "상자에서 가장 큰 숫자로 계산하지 마세요", tone: "warning", body: "광고는 mAh를 크게 쓰고 Wh와 정격 전압은 본체의 작은 글씨로 적을 수 있습니다. 보안검색은 온라인 상품 화면이 아니라 실물을 봅니다. 본체에서 필요한 매개변수를 읽을 수 없다면 포장으로 논쟁하지 말고 여행 전에 교체하세요." },
+  { id: "recall-heading", type: "heading", level: 2, text: "CCC 표시가 있어도 리콜은 무효가 되지 않습니다" },
+  { id: "recall-list", type: "list", ordered: true, items: [
+    "본체의 제조사, 전체 모델과 배치 또는 일련번호를 기록합니다.",
+    "출발 직전에 제조사 공식 리콜 공지와 중국 시장감독 기관의 공식 리콜 정보를 확인합니다.",
+    "정확한 모델과 해당 배치를 대조하세요. 비슷한 브랜드명이나 용량만으로는 부족합니다.",
+    "리콜 제품이면 사용을 중단하고 제조사의 공식 반품·처리 절차를 따르며 공항 직원에게 판단을 미루지 마세요.",
+    "구매 후 여행까지 오래 지났다면 나중에 리콜이 나왔을 수 있으므로 다시 확인합니다."
+  ] },
+  { id: "packing-heading", type: "heading", level: 2, text: "가장 엄격한 구간에 맞춰 포장하세요" },
+  { id: "packing-list", type: "list", ordered: true, items: [
+    "국제 항공권 안의 국내 구간과 별도 연결편을 포함해 모든 항공·철도 구간을 순서대로 적습니다.",
+    "전체 여정에서 가장 엄격한 한도를 씁니다. 항공사가 120Wh를 승인해도 철도 구간의 100Wh 이하 조건을 충족하지 못합니다.",
+    "기록용으로 표시와 일련번호를 촬영하되 실물 표시는 가리지 마세요.",
+    "눌리지 않고 쉽게 꺼낼 수 있는 기내 수하물에 넣어 노출 단자와 버튼 오작동을 막습니다.",
+    "탑승구에서 위탁될 가능성이 있는 가방에 넣지 말고 가방을 넘기기 전에 꺼냅니다.",
+    "정상 케이블을 준비하고 탑승 전에 기기를 충전해 비행 중 보조배터리에 의존하지 않습니다."
+  ] },
+  { id: "security-heading", type: "heading", level: 2, text: "공항 또는 역 보안검색에서" },
+  { id: "security-copy", type: "paragraph", text: "제품을 쉽게 제시하고 직원이 표시와 상태를 검사하도록 하세요. 100Wh 초과 제품에 항공사 승인이 필요할 때 예약 대행사의 채팅 메시지가 운항 항공사 승인이라고 볼 수는 없습니다. 출발 전에 항공사 절차를 완료하고 확인서를 보관하세요. 거부된 뒤 다른 제품을 숨기거나 동행자에게 넘기거나 표시를 바꾸지 마세요." },
+  { id: "failure-heading", type: "heading", level: 2, text: "보안검색에서 거부됐을 때 출발을 지키는 법" },
+  { id: "failure-table", type: "table", caption: "거부 이유별 대응", columns: ["이유", "즉시 할 일", "가정하지 말 것"], rows: [
+    ["국내선 CCC 없음 또는 불명확", "지시에 따르고 공항의 공식 포기·보관 방법이 있는지 질문", "영수증, 온라인 페이지나 임의 스티커가 실물 표시를 해결"],
+    ["정격 에너지 없음 또는 계산 불가", "본체의 원래 매개변수만 제시하고 부족하면 여행에서 제외", "직원이 개인 추정을 받아야 함"],
+    ["적용 Wh 한도 초과", "항공 규정이 허용하고 사전 항공사 승인이 있을 때만 이용하며 철도는 여전히 100Wh 이하", "검색대에서 반드시 즉시 승인되거나 교통수단 간 승인이 공유됨"],
+    ["리콜 또는 손상", "사용을 중단하고 공식 처리 지침을 따름", "위탁·일반 우편·다른 여행객에게 전달이 안전한 대안"],
+    ["기내 가방이 위탁될 예정", "가방을 넘기기 전에 보조배터리를 꺼내 기내에 휴대", "탑승구 위탁 표가 위탁 금지 규정을 바꿈"]
+  ] },
+  { id: "storage-warning", type: "callout", title: "공항 보관을 일정의 전제로 삼지 마세요", tone: "warning", body: "CAAC는 공항이 여건에 따라 자진 폐기 또는 임시 보관 장소를 마련하도록 했지만 제공 여부, 조건, 시간, 비용과 회수 절차는 공항마다 다릅니다. 특정 공항 서비스에 직접 확인하세요. 출발이 임박하면 비공식 택배를 찾거나 낯선 사람에게 맡기는 것보다 항공편을 지키는 일이 중요합니다." },
+  { id: "onboard-heading", type: "heading", level: 2, text: "이동 중에도 손상을 살피세요" },
+  { id: "onboard-list", type: "list", items: [
+    "비행 중 보조배터리로 기기를 충전하지 말고 스위치가 있으면 계속 꺼 둡니다.",
+    "부풀거나 갈라지거나 새거나 젖었거나 비정상적으로 뜨겁거나 화학 냄새가 나는 제품은 사용하지 마세요.",
+    "기내·차내에서 열, 연기나 냄새가 나면 만지기를 멈추고 승무원 또는 철도 직원에게 즉시 알리며 가방이나 옷으로 덮지 마세요.",
+    "호텔 침대나 부드러운 재질 아래에서 무인 충전하지 말고 정상 케이블과 안정된 표면을 사용합니다.",
+    "강한 충격 뒤에는 LED가 켜져도 다음 구간 전에 외관을 확인합니다."
+  ] },
+  { id: "scope", type: "callout", title: "이 글의 범위와 최신 규정", tone: "neutral", body: "이 글은 일반 여행객용 보조배터리를 다루며 이동 보조기기, 노트북 내장 배터리, 전문 배터리팩, 화물 운송 또는 폐기 법률은 다루지 않습니다. 아래 CAAC 공지와 국가 철도 목록은 2026년 8월 12일 검토했습니다. 출발 전에 운항 항공사, 출발 공항, 철도 공지와 정확한 모델을 다시 확인하세요. 운영 결정은 현장 직원이 하며 Homeground는 사진으로 제품을 인증하지 않습니다." },
+  { id: "links", type: "internal-links", title: "기기와 교통 점검을 계속하세요", items: [
+    { label: "중국 전원 플러그·전압·어댑터", href: "/ko/guides/china-power-plugs-voltage-and-adapters/", description: "배터리 운송 규정과 충전 전압·플러그 모양을 분리해 확인하세요." },
+    { label: "중국 국내선 운임 묶음과 수하물", href: "/ko/guides/china-domestic-flight-fare-bundle-baggage/", description: "공항 전에 운임과 실제 운항사를 점검하세요." },
+    { label: "중국 철도 전용 여정 계획", href: "/ko/guides/china-rail-only-route/", description: "모든 장거리 이동을 항공편 없이 할 수 있는지 검토하세요." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "CCC 표시와 리콜 보조배터리에 관한 CAAC 공지(2025)", url: "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },
+    { label: "항공 여행객 보조배터리 규정과 정격 에너지 계산", url: "https://www.caac.gov.cn/big5/www.caac.gov.cn/XXGK/XXGK/TZTG/201511/t20151105_11173.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },
+    { label: "철도 여행객 반입·위탁 금지 및 제한 물품 목록", url: "https://www.gov.cn/zhengce/zhengceku/2022-05/31/content_5693212.htm", publisher: "중국 국가철로국 / 공안부", reviewedAt: "2026-08-12" }
+  ] }
+] } as const satisfies StructuredPageBody;
 
 export default body;

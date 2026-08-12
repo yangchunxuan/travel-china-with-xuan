@@ -1,122 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "후난 요리는 매운맛으로 소개되지만 첫 공동 식사는 생고추, 신맛과 절임, 훈연, 찜, 채소가 대비될 때 더 좋습니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "고추 열 가지보다 대비 주문",
-      "body": "3~4명이면 대표 단백질 하나, 찜·조림 하나, 채소·두부 하나와 밥으로 시작하고 모두 원할 때 훈연·신맛 요리를 더합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "고추 열 가지보다 대비 주문",
-      "columns": [
-        "자리",
-        "방향",
-        "균형 질문"
-      ],
-      "rows": [
-        [
-          "생고추 매움",
-          "고추 고기·생선",
-          "한 요리만 주된 매움을 맡을까?"
-        ],
-        [
-          "신맛·절임",
-          "절임 고추·채소",
-          "짠맛도 강한가?"
-        ],
-        [
-          "훈연·절임육",
-          "훈연 고기",
-          "가벼운 요리와 조합"
-        ],
-        [
-          "완충",
-          "계란찜·두부·채소",
-          "고추를 줄일 수 있나?"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "매운맛을 못 먹는 사람을 분명히 말합니다.",
-        "微辣·少放辣椒·完全不辣를 쓰되 주방 차이를 예상합니다.",
-        "알레르기는 별도로 말하며 안 매움이 알레르기 대응은 아닙니다.",
-        "첫 주문에 밥과 채소를 넣습니다.",
-        "모두 맛본 뒤 추가합니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "모든 후난 음식이 같은 맵기는 아닙니다",
-      "body": "지역, 가정, 식당, 조리자마다 다릅니다. 덜 맵게는 무고추·기름 접촉 없음·알레르기 분리를 보장하지 않습니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "날짜, 인원, 제한을 보내면 현지 담당자가 한 장소를 전국 규칙으로 만들지 않고 실용 계획을 확인합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "여행 이어가기",
-      "items": [
-        {
-          "label": "중국의 첫 공동 식사",
-          "href": "/ko/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "중국 여행 결제",
-          "href": "/ko/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "일정이 너무 바쁜가",
-          "href": "/ko/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "공식 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Hunan cuisine traditions",
-          "url": "https://hunan.gov.cn/topic/ccjhl/djz/202107/t20210716_19935053.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hunan delicacies and methods",
-          "url": "https://whhlyt.hunan.gov.cn/whhlyt/english/Culture/Delicacies/202403/t20240315_33249620.html",
-          "publisher": "Hunan Provincial Department of Culture and Tourism",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hunan home-style fried tofu by Huangdan2060, CC BY 3.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"첫 후난 식사는 고추를 얼마나 견디는지 시험하는 자리가 아니라 맛의 대비를 이해하는 자리여야 합니다. 후난 요리는 생고추와 절인 고추, 새콤한 재료, 훈연·염장 식품뿐 아니라 찜·볶음·조림과 채소 요리도 포함합니다. 무리 없이 나눠 먹을 수 있는 한 상을 구성하고 주문 전에 식이 제한을 알리며 각 요리를 좋은 상태에서 맛볼 여유를 남기세요."},
+{"id":"answer","type":"callout","title":"두 명이면 세 가지 요리와 밥부터 시작하세요","body":"대표적인 고기·생선·두부 요리 하나, 확실히 가벼운 채소 하나, 대비가 되는 찜·국물·신맛 요리 하나를 고르고 흰밥과 무알코올 음료를 더하세요. 세네 명이면 간식보다 단백질이나 지역 특선 하나를 추가합니다. 고추가 핵심인 모든 요리를 억지로 무고추로 바꾸기보다 원래 덜 매운 요리를 추천받으세요.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"후난 요리는 한 가지 맵기나 창사 메뉴 하나가 아닙니다"},
+{"id":"scope","type":"paragraph","text":"후난 정부 자료는 후난 요리가 매운맛만이 아니며 지역과 계절에 따라 다양한 재료와 조리법을 쓴다고 소개합니다. 실제 메뉴는 도시·계절·가격대·조리사에 따라 달라집니다. 창사의 식당, 샹시의 한 끼와 후난 가정식이 같은 요리를 낼 필요는 없습니다. 이 글은 무리 없이 나눠 먹는 첫 한 상을 만드는 안내이지 샹차이 전체 목록이 아니며 같은 이름이 한 레시피를 보장한다고 주장하지 않습니다."},
+{"id":"flavour-heading","type":"heading","level":2,"text":"맛·조리법·식감에 대비를 만드세요"},
+{"id":"flavour","type":"table","caption":"균형 잡힌 첫 식탁의 역할","columns":["역할","기여","찾을 예","질문"],"rows":[["생고추·다진 고추 요리","선명한 매운맛과 향","풋고추나 붉은 고추를 쓴 대표 요리","“많이 매운가요? 고추를 줄일 수 있나요?”"],["신맛·절임","산미와 식욕","절인 채소나 신맛이 표시된 요리","“신맛은 발효·식초 중 무엇에서 오나요?”"],["훈연·염장 재료","짙은 감칠맛","적합하면 훈연 돼지고기나 절임 식재료 소량","“짜고 양이 많은 공유 요리인가요?”"],["찜·조림","수분과 느린 맛","현재 메뉴의 생선·두부·달걀 찜이나 조림","“소스 전체에 고추가 들어 있나요?”"],["녹색 채소","신선함과 식감","간단히 조리한 제철 잎채소","“고추를 적게 또는 없이 조리할 수 있나요?”"],["밥·국·음료","속도 조절과 완충","흰밥, 맑은 국이나 무가당 음료","“몇 명이 먹는 양인가요?”"]]},
+{"id":"groups-heading","type":"heading","level":2,"text":"인원수로 주문량을 통제하세요"},
+{"id":"groups","type":"table","caption":"실용적인 첫 주문","columns":["인원","먼저 주문","기다렸다 추가"],"rows":[["혼자","밥과 먹는 메인 하나, 소량 가능하면 채소나 국","튀김 간식과 두 번째 큰 메인"],["두 명","메인·채소·대비 요리 각 하나와 밥","실제 양을 보기 전 네 번째 요리"],["세네 명","단백질·특선 두 개, 채소 하나, 대비 요리 하나와 밥","요리가 나오기 전 여러 냉채"],["다섯 명 이상","인원·예산·제한을 말하고 혼합 식탁 추천 요청","중복 고기와 같은 고추 맛 여러 개"]]},
+{"id":"order-heading","type":"heading","level":2,"text":"일곱 단계 주문법"},
+{"id":"workflow","type":"list","ordered":true,"items":["인원, 어린이 여부와 대략적인 식사량을 알리세요.","취향보다 알레르기, 채식과 절대 먹지 못하는 재료를 먼저 말하세요.","첫 후난 식사라고 밝히고 식당 대표 요리를 물으세요.","조리법이 다른 요리를 고르고 첫 주문에는 맵기 미상의 강한 요리를 하나만 넣으세요.","소·보통·대 중 어떤 양인지, 밥은 1인분씩 주문하는지 확인하세요.","단백질 중복, 모두 튀긴 식감, 모든 요리에 고추가 들어가는지 점검하세요.","첫 요리를 맛본 뒤 추가하고 사진만 보고 두 번째 주문을 가득 넣지 마세요."]},
+{"id":"language-heading","type":"heading","level":2,"text":"보여 주기 좋은 중국어와 현실적인 한계"},
+{"id":"language","type":"table","caption":"메뉴를 가리키며 보여 주세요","columns":["필요","중국어","뜻과 한계"],"rows":[["맵기 질문","这个菜很辣吗？","이 요리가 많이 매운가요? 답은 주관적입니다."],["고추 줄이기","可以少放辣椒吗？","고추를 줄일 수 있나요? 미리 만든 소스는 어려울 수 있습니다."],["고추 빼기","这个可以不放辣椒吗？","불가능하면 원래 순한 대안을 요청하세요."],["알레르기","我对___过敏，连少量也不能吃。","소량도 안 되는 알레르기입니다. 교차 접촉 없음은 보장하지 않습니다."],["양 질문","这个菜大概几个人吃？","대략 몇 명이 먹는 양인가요?"],["흰밥","请给我们___碗米饭。","흰밥 ___그릇 주세요."]]},
+{"id":"heat-heading","type":"heading","level":2,"text":"‘덜 맵게’는 ‘안전하게’와 다릅니다"},
+{"id":"heat","type":"paragraph","text":"매운맛은 주관적이며 고추가 잘게 섞이거나 기름에 배거나 이미 소스·절임 재료에 들어 있을 수 있습니다. 보이는 고추를 빼도 캡사이신은 남습니다. 매운맛을 못 먹으면 전체 주문에 한 번 요청하기보다 원래 순한 요리를 골라 각각 확인하세요. 알레르기라면 서면 카드를 쓰고 소스·육수·공용 웍·도구·교차 접촉을 물어야 하며 직원이 확답하지 못하면 다른 식당을 택하세요."},
+{"id":"diet-heading","type":"heading","level":2,"text":"식이 제한은 재료 단위로 물으세요"},
+{"id":"diet","type":"list","items":["채식: 채소나 두부에도 라드, 육수, 다진 고기, 굴소스와 건새우가 있는지 확인하세요.","돼지고기 제외: 훈연·절임 돼지고기나 돼지 육수가 고기처럼 보이지 않는 요리에도 있을 수 있습니다.","땅콩·참깨 알레르기: 주재료뿐 아니라 고명, 페이스트, 기름과 공용 조리를 물으세요.","글루텐 관련 필요: 간장 등 조미료에 밀이 있을 수 있고 일반 주방은 교차 접촉을 막지 못할 수 있습니다.","저염: 훈연·절임·피클·진한 소스 요리는 소스를 줄여도 짤 수 있습니다."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"첫 후난 식사가 실패하는 이유"},
+{"id":"mistakes","type":"list","items":["식당의 맵기를 알기 전에 붉은 대표 요리 세 개를 주문하기","무거운 고기만 고르고 채소·국·흰밥을 빼기","번역 앱의 ‘안 매움’을 소스와 기름에도 고추가 없다는 뜻으로 읽기","모든 후난 식사를 창사 음식이라 하고 식당마다 같은 레시피라고 생각하기","사진만 보고 양, 뼈, 내장이나 절임 재료를 묻지 않기","우유·술·단 음료를 의료 해결책으로 보기: 이상하면 먹기를 멈추고 알레르기 증상에는 적절한 처치를 받으세요."]},
+{"id":"fit-heading","type":"heading","level":2,"text":"첫 식사 목적에 맞는 식당 유형"},
+{"id":"fit","type":"comparison","title":"실제 필요에 따라 선택","columns":[{"heading":"지역 공동 식당","items":["그룹에 적합","요리 대비가 풍부","양과 맵기 소통 필요"]},{"heading":"쇼핑몰·안정된 식당","items":["메뉴와 좌석이 비교적 쉬움","어린이와 다양한 맵기 허용도에 유용","재료와 교차 접촉은 여전히 확인"]},{"heading":"단일 메뉴 전문점","items":["혼자 여행에 적합","간단한 주문과 작은 실패 비용","요리 전체가 아닌 한 단면임을 인정"]}]},
+{"id":"warning","type":"callout","title":"취향 문구는 알레르기 안전 보장이 아닙니다","body":"‘고추 없이’, ‘채식’이나 번역 메뉴 표기는 의도일 뿐 의료적으로 통제된 주방을 뜻하지 않을 수 있습니다. 심한 알레르기는 재료와 교차 접촉 위험을 명확히 전달하고 처방약을 휴대하며 답이 불확실하면 떠나세요.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"좋은 첫 식탁의 점검표"},
+{"id":"checklist","type":"list","items":["서로 다른 조리법 최소 두 가지","맵기 미상의 강한 요리 최대 하나","채소나 다른 가벼운 요리 하나","밥이나 중성적인 주식","식이 제한을 요리별로 확인","인원에 맞는 양","모든 사람이 같은 맵기 허용도를 가진다고 가정하지 않기"]},
+{"id":"help","type":"callout","title":"Homeground","body":"도시, 인원, 예산, 매운맛 허용도와 타협할 수 없는 식이 제한을 알려 주세요. 현지 플래너가 알맞은 식당 유형과 중국어 주문 메모를 준비하되 실제 레시피, 양과 알레르기 통제는 당일 식당 확인 사항으로 남깁니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"식사를 전체 여행에 연결하기","items":[{"label":"중국에서 첫 공동 식사 주문하기","href":"/ko/guides/first-shared-meal-in-china/","description":"후난 풍미 계획 전에 일반 주문량과 식탁 서비스 논리를 익힙니다."},{"label":"외국인 여행자의 중국 결제법","href":"/ko/guides/how-to-pay-in-china-as-a-tourist/","description":"작은 지역 식당을 고르기 전에 결제 대안을 준비합니다."},{"label":"중국 일정이 너무 바쁜지 점검하기","href":"/ko/guides/is-your-china-itinerary-too-rushed/","description":"예약 사이에 식사를 끼워 넣지 말고 공동 식사 시간을 확보합니다."}]},
+{"id":"sources","type":"sources","title":"공식 자료와 이미지 출처","items":[{"label":"후난 요리의 정수","url":"https://hunan.gov.cn/topic/ccjhl/djz/202107/t20210716_19935053.html","publisher":"후난성 인민정부","reviewedAt":"2026-08-12"},{"label":"후난 음식과 조리 전통","url":"https://whhlyt.hunan.gov.cn/whhlyt/english/Culture/Delicacies/202403/t20240315_33249620.html","publisher":"후난성 문화여유청","reviewedAt":"2026-08-12"},{"label":"대표 이미지: Huangdan2060 촬영 후난 가정식 두부, CC BY 3.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

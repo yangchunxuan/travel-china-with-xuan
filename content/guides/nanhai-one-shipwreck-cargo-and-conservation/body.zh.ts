@@ -1,122 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "南海Ⅰ号既是沉船遗址，也是货物与船上生活的组合，还是持续进行的保护项目。只数“宝物”会遮住真正有历史价值的关系。"
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "读关系，不读一个数字",
-      "body": "把发现与整体打捞，和船体位置、货物组合、个人物品、保护过程连接起来；任何总数都要注明日期。",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "读关系，不读一个数字",
-      "columns": [
-        "层次",
-        "问题",
-        "不能推断"
-      ],
-      "rows": [
-        [
-          "船体",
-          "哪些结构与空间关系留存？",
-          "一艘完整静止的船"
-        ],
-        [
-          "货物",
-          "陶瓷、金属与物资怎样共存？",
-          "所有物品目的地相同"
-        ],
-        [
-          "人员",
-          "有哪些生活与工作物品？",
-          "无证据识别具体人物"
-        ],
-        [
-          "保护",
-          "当前展示、处理或监测什么？",
-          "状态永远不变"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "读当前展览通知。",
-        "找到船体与保护空间。",
-        "按位置比较货物。",
-        "区分贸易品、设备与个人物品。",
-        "核对任何总数的发布日期。"
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "保护是动态过程",
-      "body": "发掘、脱盐、加固、研究与展陈会继续变化。2019年的馆藏数字是历史记录，不是自动更新的当前总数。",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "发来日期与地点，本地真人可核对当前开放、展陈或节目，不承诺未核实条件。",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "广州早茶怎么运作",
-          "href": "/zh/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "自由行参观兵马俑",
-          "href": "/zh/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "中国旅行需要导游吗",
-          "href": "/zh/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "机构来源与图片署名",
-      "items": [
-        {
-          "label": "Nanhai No. 1 Maritime Silk Road Museum",
-          "url": "https://www.yangjiang.gov.cn/yjsywb/tourism/nanhaino1maritimesilkroadmuseum/",
-          "publisher": "Yangjiang Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Nanhai No. 1 exhibition and research",
-          "url": "https://www.gdmuseum.com/cn/col48/15353",
-          "publisher": "Guangdong Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Maritime Silk Road Museum by WKDx417, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"南海Ⅰ号同时是一艘南宋沉船、一组保留了彼此关系与周边语境的考古遗存、数量庞大的货物与船上生活遗物，也是一项持续多年的保护工程。只报“宝物数量”会拆散真正有历史价值的关系。应把船体、沉积物、货物、船上人员、发掘与保护连在一起读。"},
+{"id":"answer","type":"callout","title":"让一类器物经过五层语境","body":"选择一种有清楚标签的货物，追问产地、在船舱的位置、旁边有什么、考古人员怎样提取，以及现在需要什么保护。再拿它和一项船体构造及另一类货物比较。这样，漂亮器物才会变成装载、交换与船上生活的证据，同时不虚构确切目的地或每个人的身份。","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"边界：沉船不是一只船形宝箱"},
+{"id":"scope","type":"paragraph","text":"阳江市官方博物馆介绍把南海Ⅰ号认定为南宋木质商船，并说明广东海上丝绸之路博物馆负责保护、展示与研究。2007年，沉船和周边材料通过整体打捞方式进入可控博物馆环境。本文解释怎样阅读考古与保护过程，不把旧的文物数量估计写成永久事实，不仅凭货物断定唯一航线，也不保证某个保护阶段今天仍能看到。"},
+{"id":"timeline-heading","type":"heading","level":2,"text":"把调查、打捞、发掘和保护分开"},
+{"id":"timeline","type":"table","caption":"四种不同过程","columns":["阶段","核心问题","产生的证据","不能简化成"],"rows":[["水下调查","海床上及周边有什么？","位置、调查记录和取样","完整清单"],["整体打捞","怎样把沉船与周围语境一起移动？","保留船体、沉积与内含物关系的整体","普通吊起一艘船"],["受控发掘","怎样记录地层、位置和组合？","记录表、图纸、照片、样品与器物","只把宝物拿出来"],["文物保护","怎样稳定饱水木材和不同材质？","状态记录、处理方案与长期监测","一次清洗"],["阐释与展示","怎样向观众说明不断更新的发现？","标签、复原、模型和研究更新","永不改变的最终故事"]]},
+{"id":"cargo-heading","type":"heading","level":2,"text":"把货物当作组合来读"},
+{"id":"cargo","type":"table","caption":"让货物成为证据的问题","columns":["证据","要问什么","可能说明","限制"],"rows":[["生产来源","当前研究认为在哪里制造？","供应区域与商业联系","产地不等于装货港或目的地"],["数量与重复","是否成组或成套装载？","规模、标准化或目标市场","发掘中数量会更新"],["船内位置","位于哪个舱区或地层？","装载顺序与储存方式","沉没过程可能移动器物"],["共存货物","旁边或容器内发现了什么？","捆扎、容器与混合货载","相邻不一定属于同一货主"],["磨损与残留","是新品、旧物、修补品，还是装有内容物？","商品、设备或船上生活用品的区别","残留物需要实验室鉴定"]]},
+{"id":"people-heading","type":"heading","level":2,"text":"寻找船上生活，但不要编造人物传记"},
+{"id":"people","type":"paragraph","text":"个人用品、食物残留、工具、炊具、钱币或修补痕迹，能让注意力从外销瓷转向操纵和居住在船上的人。但一件物品不会自动证明某个姓名、职业或族群。应看博物馆把它归为货物、船用设备还是个人用品，以及什么语境支持这个分类。除非有铭文或直接证据，具体人物故事只能明确标为假设。"},
+{"id":"workflow-heading","type":"heading","level":2,"text":"博物馆观看流程"},
+{"id":"workflow","type":"list","ordered":true,"items":["进入货物展厅前，先看遗址位置、海床语境与打捞方式。","找到船体朝向，以及显示舱区、地层或发掘单位的图。","各选一组瓷器、一类非瓷货物和一件与船上生活相关的物品。","逐项记录来源、位置、共出物，以及现场注明的保护状态。","只在指定区域观察保护工作；一个安静时刻不代表项目停滞。","比较原件、复原品和数字影像，并明确标记三者。","最后写下组合能说明什么贸易问题，又不能确定哪条航线问题。"]},
+{"id":"conservation-heading","type":"heading","level":2,"text":"为什么保护仍是故事的一部分"},
+{"id":"conservation","type":"paragraph","text":"饱水考古木材长期处于与普通干木材完全不同的环境。发掘会改变温度、氧气、水分、盐分与生物条件，陶瓷、金属和有机物又需要不同处理。保护进度缓慢，是因为必须记录状态、试验方法并避免骤变。支撑架、受控湿度、限制光照或暂不展出的区域，说明保护正在发生，而不是博物馆没有“修完”沉船。"},
+{"id":"evidence-heading","type":"heading","level":2,"text":"分清三层证据"},
+{"id":"evidence","type":"comparison","title":"知道多少取决于证据层次","columns":[{"heading":"观察与记录","items":["器物位置与发掘单位","船体构件与材质","可见状态与现场标签"]},{"heading":"研究解释","items":["生产中心归属","货物组织方式","可能年代与商业背景"]},{"heading":"仍不确定或会修订","items":["准确预定目的地","船上每个人的身份","发掘和编目完成前的最终总数"]}]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"这些做法会压扁沉船证据"},
+{"id":"mistakes","type":"list","items":["重复一个夸张总数，却不说发布年份或它是否只是估计。","把所有出水物都叫“宝物”，忽略工具、残片、样品与船体。","把瓷器生产地直接连成沉船完整航线。","假设所有货物都运往同一海外市场，或相邻器物都属于同一商人。","把复原图或艺术想象当作发掘照片。","因为保护还在进行就抱怨“不完整”，而持续处理正是博物馆记录的内容。"]},
+{"id":"visit-heading","type":"heading","level":2,"text":"判断这趟专程参观是否适合路线"},
+{"id":"visit","type":"comparison","title":"把博物馆当作明确目的地","columns":[{"heading":"非常适合","items":["关心海洋考古或宋代贸易","能给博物馆留几小时","阳江或海陵岛本就在路线中"]},{"heading":"可以考虑","items":["主要看瓷器，但愿意阅读发掘语境","团队能承受大型专题馆","已经核实当前交通与开放信息"]},{"heading":"不太适合","items":["期待一艘可登船的完整复原船","当天只能匆忙往返","只想拍一张固定“宝物数量”打卡照"]}]},
+{"id":"warning","type":"callout","title":"可见的保护状态会变化","body":"随着研究和保护推进，发掘区域、处理阶段、原件展出和观众视线都可能变化。出行前查看博物馆或地方政府的当前官方通知；描述你在具体日期看到的状态，不要把它写成永久情况。","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"带走一套沉船论证，而不是一个数字"},
+{"id":"checklist","type":"list","items":["整体打捞如何保存语境","一项船体特征及其可能意义","一组有产地与位置证据的货物","一件与船上生活相关的物品或痕迹","一个保护难题和博物馆应对","一个仍未解决的航线或身份问题"]},
+{"id":"help","type":"callout","title":"Homeground","body":"告诉我们出发地、交通方式，以及你更关心沉船、瓷器、宋代贸易还是保护。当地规划人员可以核查当前开放，留出合理观展时间，并把博物馆接入阳江行程，而不会把专题机构变成匆忙拍照点。","tone":"decision"},
+{"id":"links","type":"internal-links","title":"继续读物质证据","items":[{"label":"青铜礼器与铭文怎么看","href":"/zh/guides/ritual-bronze-vessels-and-inscriptions/","description":"在博物馆器物中同时使用形制、语境和文字。"},{"label":"从里耶秦简读地方行政","href":"/zh/guides/liye-qin-slips-local-government-records/","description":"把行政档案与沉船考古组合进行比较。"},{"label":"你的中国行程是不是太赶","href":"/zh/guides/is-your-china-itinerary-too-rushed/","description":"检查专题博物馆绕行是否有足够时间才值得。"}]},
+{"id":"sources","type":"sources","title":"机构来源与图片署名","items":[{"label":"南海Ⅰ号与广东海上丝绸之路博物馆","url":"https://www.yangjiang.gov.cn/yjsywb/tourism/nanhaino1maritimesilkroadmuseum/","publisher":"阳江市人民政府","reviewedAt":"2026-08-12"},{"label":"南海Ⅰ号展览与研究","url":"https://www.gdmuseum.com/cn/col48/15353","publisher":"广东省博物馆","reviewedAt":"2026-08-12"},{"label":"题图：WKDx417 拍摄的广东海上丝绸之路博物馆，CC BY-SA 4.0；已裁切","url":"https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

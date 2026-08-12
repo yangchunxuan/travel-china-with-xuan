@@ -9,6 +9,7 @@
 
 ## Official sources
 
+- Ministry of Agriculture and Rural Affairs / General Administration of Customs: [Announcement No. 470 and download links for the current prohibited quarantine-items list](https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm) — reviewed 2026-08-12; official HTML publication, scope and dynamic-adjustment statement
 - General Administration of Customs: [Customs FAQ: prohibited animals, plants and products](https://online.customs.gov.cn/ociswebserver/pages/jcjybcx/question.html) — reviewed 2026-08-12
 - Ministry of Agriculture and Rural Affairs / General Administration of Customs: [List of animals, plants and products prohibited from being carried or mailed into China](https://www.moa.gov.cn/nybgb/2022/202202/202204/P020220401365957599038.pdf) — reviewed 2026-08-12
 - General Administration of Customs: [Customs Announcement No. 43 of 2025](https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html) — reviewed 2026-08-12

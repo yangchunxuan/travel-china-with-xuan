@@ -1,36 +1,27 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "在重庆，“离景点近”常常不够准确。平面地图上相邻的两家酒店，可能隔着坡道、楼梯、电梯或不同街面层级。住宿应减少每天反复发生的移动，而不是追求最长的景点清单。" },
-  { id: "answer", type: "callout", title: "先给结论", tone: "decision", body: "第一次来、停留短且重点在重庆中心半岛半岛密集景点与夜景，可优先解放碑；更想住在现代商业中心、重视餐饮购物与夜间活动，可比较观音桥；西站或西侧景点确实占据行程时，沙坪坝才更合理，不能只因为看起来“远离游客”就选。" },
-  { id: "matrix-heading", type: "heading", level: 2, text: "三个区域分别改变什么" },
-  { id: "matrix", type: "table", caption: "比较每日链路，而非区域名气", columns: ["住宿区", "更适合", "主要牺牲", "预订前核对"], rows: [
-    ["解放碑／重庆中心半岛核心", "首次短停、Hongyadong—朝天门—半岛夜间活动", "人流、道路拥堵与容易误判的立体步行", "酒店入口层级、可用地铁出口与车辆下客点"],
-    ["观音桥", "餐饮、购物与现代商业区夜生活", "前往重庆中心半岛经典景点通常仍需跨区", "酒店在整个商圈的准确一侧"],
-    ["沙坪坝", "重庆西站逻辑、磁器口或西侧行程", "重庆中心半岛夜游后的返回更长", "准确车站与轨道连接，不把整个行政区当成一个点"]
-  ]},
-  { id: "terrain", type: "callout", title: "地图600米不一定是轻松步行600米", tone: "warning", body: "在重庆核心区，除了距离还要看高差。向住宿方索取中文入口名、车辆下客点，以及他们建议携带行李使用的地铁出口。一个地铁图标无法说明楼梯、坡道和最终入口。" },
-  { id: "fit-heading", type: "heading", level: 2, text: "按每天会重复的路程选择" },
-  { id: "fit", type: "comparison", title: "三种常见行程", columns: [
-    { heading: "首次停留两三晚", items: ["倾向解放碑", "把夜间步行留在酒店附近", "用人流换取更少的晚间换乘"] },
-    { heading: "重视餐饮与城市生活", items: ["比较观音桥", "确认具体街区", "为重庆中心半岛游览日计算交通"] },
-    { heading: "西侧抵达或游览", items: ["用准确车站检验沙坪坝", "把磁器口与西侧景点集中安排", "不要每天都在重庆中心半岛晚归"] }
-  ]},
-  { id: "luggage-heading", type: "heading", level: 2, text: "行李与晚到会改变答案" },
-  { id: "luggage", type: "paragraph", text: "带儿童、老人或大件行李时，已确认的车辆入口往往比看似中心的定位更重要。保存酒店中文名与地址，告知抵达方式，并询问车辆能否停在前台同一层。深夜抵达时，应先保护最后一段交接，而不是强求最理想的观光区域。" },
-  { id: "facts", type: "callout", title: "动态信息核验于2026年8月12日", tone: "neutral", body: "重庆市政府英文信息仍以重庆中心半岛Kuixing Tower周边说明城市多层地形，将磁器口列于沙坪坝，并将解放碑列为活跃夜间区域。这些是地理事实；上面的住宿取舍属于Homeground编辑判断。出发前仍须用官方渠道和住宿方核对实时轨道运营、出口、道路进入与施工。" },
-  { id: "checklist", type: "list", ordered: true, items: ["标出所有固定抵达与离开地点。", "找出每天最常重复的两段路。", "检查高差与酒店准确入口。", "模拟一次真实的夜间返回。", "在免费取消截止前确认车辆进入与住宿登记。"] },
-  { id: "help", type: "callout", title: "需要判断酒店位置？", tone: "decision", body: "提供日期、人数、抵达点、计划景点与大致预算，Homeground可以比较区域，并标出仍须向住宿方确认的位置细节。" },
-  { id: "links", type: "internal-links", title: "继续规划", items: [
-    { label: "商业公寓酒店还是住宅短租", href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/", description: "为了空间下单前，先核对运营模式。" },
-    { label: "上海第一次住宿区域", href: "/zh/guides/shanghai-where-to-stay-first-trip/", description: "把重复路程方法用于上海。" },
-    { label: "酒店“靠近地铁”应如何判断", href: "/zh/guides/china-hotel-near-metro/", description: "检验最后一段步行，而不是标签。" }
-  ]},
-  { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
-    { label: "重庆重庆中心半岛立体地形官方介绍", url: "https://english.cq.gov.cn/latestnews/Editor/202606/t20260608_15735957.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-12" },
-    { label: "沙坪坝磁器口官方访客信息", url: "https://english.cq.gov.cn/latestnews/activities/202606/t20260608_15735764.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-12" },
-    { label: "含解放碑的2026年官方夜间活动介绍", url: "https://english.cq.gov.cn/latestnews/activities/202607/t20260714_15821893.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-12" },
-    { label: "首图：Baycrest拍摄解放碑夜景，CC BY-SA 2.5，已裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:Jiefangbei_night.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
-    { label: "首图衍生文件许可证：CC BY-SA 2.5", url: "https://creativecommons.org/licenses/by-sa/2.5/", publisher: "Creative Commons", reviewedAt: "2026-08-12" }
-  ]}
+  { id: "lead", type: "lead", text: "在重庆，酒店在平面地图上很近，走到街上却可能很难。解放碑、观音桥和沙坪坝不是三个可以互换的中心区；它们会把夜间活动、抵达交接和反复跨城，放在这座陡峭立体城市的不同位置。" },
+  { id: "answer", type: "callout", title: "先给结论", tone: "decision", body: "首次短停以渝中景点、两江夜晚和密集游客核心为主，选解放碑；多个夜晚或办事地点在两江以北，现代商业基地比出门就是老城更重要，选观音桥；磁器口等西侧日程重复、西侧铁路抵达真正控制行程，或愿意用更长的渝中通勤换本地生活基地，选沙坪坝。" },
+  { id: "boundary", type: "paragraph", text: "本文只在三个基地中选择，不做酒店排名、不承诺某区最便宜，也不写成重庆交通大全。每一区里，具体楼栋、大堂所在高度和地铁出口都可能推翻区域结论。选区后，再使用全国“靠近地铁”标准核对酒店。" },
+  { id: "matrix", type: "table", caption: "三个基地完成不同任务", columns: ["基地", "最适合", "主要代价", "物业级核验"], rows: [["解放碑", "首次渝中核心、中心夜游与两江景点", "人流、夜间噪音，部分地址车辆难进", "大堂高度、下客点、坡度与地铁入口"], ["观音桥", "反复在北侧用餐、商务或夜间活动", "去老城和南／西侧会增加过江", "大商业区的具体位置和末班返程"], ["沙坪坝", "磁器口、西侧日程、部分西侧抵达", "渝中夜游后返回更长", "准确车站／枢纽、换乘次数和晚到路线"]] },
+  { id: "trip-fit", type: "table", caption: "让重复的那一天选择酒店", columns: ["行程模式", "先测试", "原因"], rows: [["两三晚首次到访，多个渝中地标", "解放碑", "减少每天回游客核心的移动"], ["多次在观音桥及北侧聚餐或开会", "观音桥", "夜晚结束后不再额外过江"], ["磁器口加高校／西侧日程超过一天", "沙坪坝", "不把一天西侧安排变成多次跨城"], ["只去一次磁器口，其余都在中心", "解放碑", "一次西行不应决定每晚住宿"], ["老人、婴儿车或大行李", "能证明下客到房间最容易的物业", "地形可能大于区域优势"]] },
+  { id: "vertical", type: "heading", level: 2, text: "先看高度，再看距离" },
+  { id: "vertical-copy", type: "paragraph", text: "重庆市官方访客资料用魁星楼说明渝中立体地形：看似地面的地方，可能比另一条街高出许多楼层。很短的直线可能藏着楼梯、陡路、天桥、楼内电梯或会随大楼关闭的通道。应询问酒店大堂开向哪条街、哪一层，不要只导航到建筑名称。" },
+  { id: "last-mile", type: "list", items: ["分别索要车辆入口和步行大堂的地图点位，两者可能不同。", "确认从真正有用的地铁出口是否全程无台阶，深夜是否仍开放。", "路线若经过商场、写字楼或公共电梯，问清关门后怎么办。", "轮椅、婴儿车或大行李要核验下客、坡道、电梯、门和房间全链条。", "保存中文楼名、塔楼和大堂层；英文酒店名未必能把司机带到正确一侧。"] },
+  { id: "jiefangbei", type: "heading", level: 2, text: "解放碑：中心城市就是行程时最合适" },
+  { id: "jiefangbei-copy", type: "paragraph", text: "解放碑位于渝中核心，官方资料把它与魁星楼、十八梯等立体城市景观联系起来。多个中心景点和两江夜晚反复出现时，它通常最省事。风险是为了高层景观订到地面入口困难的楼，或客房正对深夜步行区。应确认车辆进入、大堂高度、早晚餐条件和安静侧房间。" },
+  { id: "guanyinqiao", type: "heading", level: 2, text: "观音桥：为反复出现的北侧日程而住" },
+  { id: "guanyinqiao-copy", type: "paragraph", text: "行程多次在观音桥结束，例如餐饮、现代商业、商务地址或亲友都在两江以北，观音桥才有价值。不能只因为全市地图上看着居中就选。列出最常重复的观光日、最晚夜归和离开日，比较完整路线。写着“观音桥”的酒店若在大商圈另一端，最后步行仍可能很长。" },
+  { id: "shapingba", type: "heading", level: 2, text: "沙坪坝：西侧基地，不是万能低价替代" },
+  { id: "shapingba-copy", type: "paragraph", text: "重庆官方资料确认磁器口古镇位于沙坪坝区。磁器口或其他西侧安排重复，或者准确抵达枢纽与酒店刚好匹配，住沙坪坝才合理；若短行程每晚都回渝中，则不够有力。必须按票面搜索完整车站名称，“重庆站”这种模糊说法不能用于选区。" },
+  { id: "arrival", type: "heading", level: 2, text: "让准确抵达方式决定第一晚" },
+  { id: "arrival-copy", type: "paragraph", text: "使用完整机场／铁路站名、计划到达、现实出站时间和行李，实时比较最终两家酒店的门到门路线，再向物业索要车辆入口。晚到时，有人值守且道路简单的酒店可能胜过理论最佳区域。不要把不确定晚间换乘、陡坡和自助入住压在同一晚。" },
+  { id: "evening", type: "callout", title: "重复夜晚要计分，一次例外不要计分", tone: "decision", body: "三晚都在观音桥吃饭可以支持住观音桥，一晚不可以；两个渝中两江夜晚支持解放碑，一次磁器口上午不自动支持沙坪坝。把酒店给重复模式，例外当天再移动。" },
+  { id: "verify", type: "table", caption: "发给最后两家酒店的问题", columns: ["问题", "为何在重庆重要"], rows: [["大堂开向哪条路、哪一层？", "一栋楼能在不同高度连接多条街"], ["带行李车辆停哪里？", "中心步行地址可能无法到门"], ["哪个地铁出口可用？", "最近点位可能要爬楼或大绕行"], ["路线是否穿过其他建筑？", "室内捷径会关门"], ["哪些房间避开街道／夜生活噪音？", "夜间基地可能牺牲睡眠"], ["所报时段前台能否处理护照？", "晚到需要实际值班能力"]] },
+  { id: "failure", type: "table", caption: "基地失效时如何补救", columns: ["问题", "立即处理", "改变方案"], rows: [["找错大堂或楼层", "电话联系并用中文入口点位", "不要拖行李走立体路线，改道路接驳"], ["室内捷径关闭", "回到有人值守街面走公共路线", "换有独立入口的物业"], ["客房太吵", "要求已证明安静侧的房间", "只有重复夜晚不再成立才换区"], ["晚到变得更晚", "更新时段并再次确认值班", "无人接待则订简单抵达酒店"], ["跨城通勤占满时间", "按城市一侧重排日程", "白天搬一次可能优于天天往返"]] },
+  { id: "registration", type: "paragraph", text: "旅馆为外国住客登记，非旅馆住宿则在24小时内走单独登记流程。请问具体物业如何运营、所报时段谁在值班；选择哪个区都不能跳过这一步。" },
+  { id: "dynamic", type: "paragraph", text: "重庆市目的地资料与全国住宿登记政策复核于2026年8月12日。它们支持地理差异和立体地形提醒，不证明固定车程或酒店品质。请按旅行日期重查实时路线、地铁出口与物业进入。" },
+  { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "如何判断靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "检验地铁出口和立体最后步行。" }, { label: "民宿、homestay还是酒店", href: "/zh/guides/minsu-homestay-or-hotel-china/", description: "核对小型物业真实运营。" }, { label: "一个基地还是多个住宿点", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断反复跨城是否值得换住宿区。" }] },
+  { id: "sources", type: "sources", title: "官方来源与图片署名", items: [{ label: "渝中立体城市与解放碑官方介绍", url: "https://english.cq.gov.cn/latestnews/Editor/202606/t20260608_15735957.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-12" }, { label: "确认磁器口位于沙坪坝的官方资料", url: "https://english.cq.gov.cn/latestnews/activities/202606/t20260608_15735764.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-12" }, { label: "旅馆以外住宿登记网上办理政策解读", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-12" }, { label: "首图：Baycrest拍摄解放碑夜景，CC BY-SA 2.5，已裁切转换", url: "https://commons.wikimedia.org/wiki/File:Jiefangbei_night.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" }] }
 ] } as const satisfies StructuredPageBody;
 export default body;

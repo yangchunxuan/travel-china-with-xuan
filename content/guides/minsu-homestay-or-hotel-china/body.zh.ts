@@ -1,92 +1,28 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  schemaVersion: "1.0.0",
-  blocks: [
-    {
-      id: "lead",
-      type: "lead",
-      text: "“民宿”常被译为homestay，但房源可能是主人参与的乡村住宿、小型专业物业，也可能只是平台分类。这个词本身不承诺共餐、当地互动、许可、住宿登记或酒店式服务。",
-    },
-    {
-      id: "answer",
-      type: "callout",
-      title: "先给结论",
-      tone: "decision",
-      body: "最重视稳定前台、行李、晚到和问题处理，选酒店；住宿场景、主人沟通和在地设计本身就是目的，且运营方已确认登记、进入与支持，才选民宿。不要因为英文homestay就推断会与家庭同住。",
-    },
-    {
-      id: "layers",
-      type: "table",
-      caption: "越过标签看真实需求",
-      columns: ["问题", "偏酒店需求", "偏民宿适配"],
-      rows: [
-        ["抵达", "24小时或明确前台", "可接受预约房东交接"],
-        ["位置", "枢纽与车辆进入重要", "乡村、古镇或景区环境是目的"],
-        ["服务", "日常前台与标准化处理", "接受物业特定的有限服务"],
-        ["证明", "确认运营方与登记", "分别确认运营方、进入和登记"],
-      ],
-    },
-    {
-      id: "verify",
-      type: "callout",
-      title: "官方等级不等于每个平台标签",
-      tone: "warning",
-      body: "中国有旅游民宿国家标准和A/B级评定，但平台上自称“民宿”不代表已经官方评定。询问运营主体、声称的类别或等级、护照登记、值守时间、冷暖设备与行李进入。",
-    },
-    {
-      id: "facts",
-      type: "callout",
-      title: "政策信息核验于2026年8月12日",
-      tone: "neutral",
-      body: "国家市场监管总局标准平台列有GB/T 41648-2022《旅游民宿基本要求与等级划分》，文化和旅游部发布官方等级公告；住宿登记义务仍按实际住宿模式适用。这些官方体系不能验证每个互联网标签。",
-    },
-    {
-      id: "links",
-      type: "internal-links",
-      title: "继续规划",
-      items: [
-        {
-          label: "北京四合院酒店还是现代酒店",
-          href: "/zh/guides/beijing-courtyard-hotel-or-modern-hotel/",
-          description: "不浪漫化标签地检验历史住宿。",
-        },
-        {
-          label: "黄山住宿基地",
-          href: "/zh/guides/huangshan-summit-or-gateway-base/",
-          description: "先选择环境，再选择物业类型。",
-        },
-        {
-          label: "商业公寓酒店或短租",
-          href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/",
-          description: "分开平台展示与真实运营。",
-        },
-      ],
-    },
-    {
-      id: "sources",
-      type: "sources",
-      title: "官方来源",
-      items: [
-        {
-          label: "GB/T 41648-2022旅游民宿标准记录",
-          url: "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=2E96A4B6C7B13B97FC67FD71736EAF01",
-          publisher: "国家市场监督管理总局",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "当前A/B级旅游民宿官方公告",
-          url: "https://zwgk.mct.gov.cn/zfxxgkml/scgl/202601/t20260126_964398.html",
-          publisher: "文化和旅游部",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "境外人员住宿登记官方解读",
-          url: "https://s.nia.gov.cn/mps/zcjd/202601/t20260750_1012.html",
-          publisher: "国家移民管理局",
-          reviewedAt: "2026-08-12",
-        },
-      ],
-    },
-  ],
-} as const satisfies StructuredPageBody;
+
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "在中国，“民宿、homestay、客栈、guesthouse、精品酒店”适合用来搜索，却不是可靠的服务规格。Homestay可能是专业团队经营、房东并不住在现场的一组客房；小酒店也可能很有人情味。应选择真实运营方式，不要只看英文翻译。" },
+  { id: "answer", type: "callout", title: "先给结论", tone: "decision", body: "看重有人值守的抵达、稳定房型、电梯、早餐或快速解决问题，选常规酒店。只有具体环境或小体量住宿确实改善行程，且经营者能确认护照登记、下客到客房路线、卫浴、冷暖设备和抵达支持时，才选民宿。两种都不要只因为“地道”而预订。" },
+  { id: "boundary", type: "paragraph", text: "本文解释住宿标签和适用人群，不判断私人住宅短租的运营风险，不做房源排名，也不代替城市住宿区域指南。先选对位置，再用本文标准核验具体物业。" },
+  { id: "labels", type: "table", caption: "常见标签能说明什么、不能说明什么", columns: ["标签", "可以合理推断", "仍未证明"], rows: [["酒店／Hotel", "按旅馆方式提供住宿", "房间一致、外语服务、电梯或24小时前台"], ["民宿／Minsu", "小型旅游住宿身份或营销标签", "与家庭同住、官方等级、护照处理或一定在乡村"], ["Homestay", "平台使用的英文翻译", "房东在场、一起用餐或文化交流"], ["客栈／Inn／Guesthouse", "往往体量较小或位于古镇景区", "独立卫浴、车辆进入、隔音或值守"], ["精品酒店", "设计和市场定位", "独立质量标准或固定服务等级"]] },
+  { id: "standard", type: "heading", level: 2, text: "官方等级必须逐家对应，不能从名称推断" },
+  { id: "standard-copy", type: "paragraph", text: "现行国家标准GB/T 41648-2022名为《旅游民宿基本要求与等级划分》，自2023年2月1日起实施。文化和旅游部会发布具名的全国甲级、乙级旅游民宿名单。房源自称“高端、五星、精品”并不等于获得官方等级。若等级会影响决策，应按物业中文全称和所在地，在官方公布名单中逐项匹配。" },
+  { id: "fit", type: "table", caption: "按行程中不能妥协的条件选择", columns: ["旅客或行程", "先看", "只有满足什么才选民宿"], rows: [["首次抵华或晚班航班", "酒店", "具名联系人确认延误抵达与护照流程"], ["老人、轮椅、婴儿车或大行李", "全程无障碍已核实的酒店", "下客到房间、电梯和卫浴都已确认"], ["古镇、村落或景区门户", "两者都可", "环境能省交通，行李交接也可行"], ["睡眠浅", "看具体房间证据，不看标签", "能回答分配房间朝向和安静规则"], ["家庭需要相邻房", "酒店", "民宿确认实际房间、分隔和儿童安全"], ["希望与房东交流", "问清后再选民宿", "房东确实在现场并说明提供何种互动"]] },
+  { id: "room", type: "heading", level: 2, text: "核对分配房间，不要只看院落图库" },
+  { id: "room-list", type: "list", items: ["询问照片是预订房型、示例房还是只有公共空间。", "确认外窗、独立卫浴、坐便／蹲便、热水方式，以及旅行日期的供暖或制冷。", "问清楼层、台阶数量、电梯路线和带行李从下客点到房间的距离。", "核对是否临街、靠前台、早餐区、院子、楼梯、电梯机房或正在施工的邻楼。", "带孩子要看开放栏杆、低窗、水池、阁楼梯，以及所谓加床是真床还是地铺。", "行动不便时应问门宽、淋浴和电梯全程；只说“无障碍”或“一楼”仍不够。"] },
+  { id: "service", type: "heading", level: 2, text: "体量小，会同时改变服务与补救能力" },
+  { id: "service-copy", type: "paragraph", text: "优秀民宿可能因为规模小而更细致，也可能由同一个人同时负责前台、早餐、交通和维修。要问这个人不在、门锁失灵或房间没有热水时谁接手；确认值守时段、夜间电话、打扫频率、寄存规则和是否有替换房间。预订前聊得热情，不等于发生故障时有流程。" },
+  { id: "registration", type: "heading", level: 2, text: "付款前先确认是旅馆登记还是非旅馆登记" },
+  { id: "registration-copy", type: "paragraph", text: "按国家移民管理局说明，外国人住旅馆由旅馆办理住宿登记；住旅馆以外住所，则由本人或留宿人在入住后24小时内登记。国家移民管理局线上渠道目前先在河北、辽宁、浙江、湖北、广西、重庆、四川试点，其他地区应确认当前本地渠道。试点地区首次线上登记通常仍需熟悉地址的留宿人协助。“民宿”二字不能告诉你走哪条流程，必须直接问经营者。" },
+  { id: "arrival", type: "callout", title: "晚到必须对应一个明确联系人", tone: "warning", body: "给住宿发送真正到达物业的时间段，不是航班计划落地时间；书面索要中文地址、下客点、最后步行、电话和未按时到店规则。如果进门依赖一个22点后不再回消息的房东，第一晚住有人值守的酒店，第二天早餐后再搬。" },
+  { id: "scenic", type: "heading", level: 2, text: "景区位置可能省下一天，也可能让每次移动更难" },
+  { id: "scenic-copy", type: "paragraph", text: "古巷、山门或村落旁的民宿能带来安静早晨，也可能免去每日往返；代价可能是步行街、石板路、接驳车时段和车辆不能进入的最后一公里。问清大件行李放哪里、谁能合规搬运、下雨怎么办，以及最后一晚是否应搬回铁路或机场附近。房间氛围和位置交通要分开打分。" },
+  { id: "verify", type: "table", caption: "把八个答案留在书面记录中", columns: ["问题", "可用回答应包括"], rows: [["这是什么运营性质？", "旅馆或非旅馆，以及具名经营者"], ["护照怎么处理？", "对应登记流程，而不是一句“没问题”"], ["谁给我们入住？", "人员或岗位、值守时间和晚到备用方案"], ["哪一间房？", "房型、楼层、窗、卫浴和床型"], ["如何进入？", "中文地址、下客点、台阶和电梯"], ["是否安静？", "房间暴露面和现时施工，不只说“区域安静”"], ["包含哪些服务？", "打扫、布草、早餐、寄存和维修"], ["失败怎么办？", "备用联系人、替换房或退款／申诉路径"]] },
+  { id: "failure", type: "heading", level: 2, text: "补救问题，不要赔掉整段行程" },
+  { id: "failure-copy", type: "paragraph", text: "入口、房间或登记方式与书面承诺明显不符时，搬入前先留证。明确要求一次按订单提供房间或可用替代方案，并给出处理截止时间。解决门禁时，让孩子、老人和行李留在有人值守的公共场所。没有负责人、房间不安全、卫浴或床型不可用，或者经营者要求隐瞒住宿时，转住常规酒店。" },
+  { id: "switch", type: "callout", title: "何时改变方案", tone: "decision", body: "民宿无法证明具体房间、合规入住、行李路线和夜间支持时，抵达夜、离开夜或整个行程都换成酒店。只有这些基础已经清楚，而且民宿环境真的改变旅行体验，而不只是图片看起来更“当地”，民宿才值得选。" },
+  { id: "dynamic", type: "paragraph", text: "国家民宿标准、2025年度官方等级公告及住宿登记政策复核于2026年8月13日。等级和单个物业经营都会变化，请按中文全称核验当前情况。Homeground不会从预订平台徽章推定官方等级。" },
+  { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "商业公寓酒店还是住宅短租", href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/", description: "房源是公寓时，先区分运营模式。" }, { label: "北京住四合院酒店还是现代酒店", href: "/zh/guides/beijing-courtyard-hotel-or-modern-hotel/", description: "把物业核验用于传统建筑住宿。" }, { label: "如何判断酒店靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "核验完整的最后步行。" }] },
+  { id: "sources", type: "sources", title: "官方来源", items: [{ label: "GB/T 41648-2022旅游民宿国家标准记录", url: "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=2E96A4B6C7B13B97FC67FD71736EAF01", publisher: "国家市场监督管理总局", reviewedAt: "2026-08-13" }, { label: "2025年度全国甲级、乙级旅游民宿公告", url: "https://zwgk.mct.gov.cn/zfxxgkml/scgl/202601/t20260126_964398.html", publisher: "文化和旅游部", reviewedAt: "2026-08-13" }, { label: "旅馆以外住宿登记网上办理政策解读", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" }] }
+] } as const satisfies StructuredPageBody;
 export default body;

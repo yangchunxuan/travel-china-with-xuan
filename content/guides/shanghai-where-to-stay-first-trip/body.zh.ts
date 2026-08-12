@@ -1,13 +1,27 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body={schemaVersion:"1.0.0",blocks:[
-{id:"lead",type:"lead",text:"上海的著名地名覆盖范围很大，不等于酒店入口。第一次来，应该让最重要的两个游览日和夜间活动更顺，而不是只追求一个热门名称。"},
-{id:"answer",type:"callout",title:"先给结论",tone:"decision",body:"行程混合、重视整体轨道连接，优先比较人民广场；外滩夜景与南京东路夜间步行是核心，且能接受人流和到实用地铁口的一段步行，可住外滩／南京东路；更重视林荫街道、饮品店和社区散步，可选原法租界片区。"},
-{id:"matrix",type:"table",caption:"三种首次住宿逻辑",columns:["区域","更适合","取舍","核对"],rows:[["人民广场","混合景点与轨道连接","繁忙，门外氛围未必细腻","广场哪一侧与准确出口"],["外滩／南京东路东段","天际线、滨江与中心夜游","周末人流；滨江定位未必靠实用出口","地铁步行与车辆进入"],["原法租界片区","街区生活、饮品店与慢早晨","去部分经典景点和枢纽更远","用准确车站判断，不看大区标签"]]},
-{id:"split",type:"callout",title:"不要把原法租界当成一个点",tone:"warning",body:"它跨越多个街区和车站服务范围。不同边缘的酒店会形成完全不同的日程，必须用准确地址对照第一站与最后一站。"},
-{id:"fit",type:"comparison",title:"按旅程匹配",columns:[{heading:"48小时经典路线",items:["人民广场或南京东路", "保留一个可步行滨江夜晚","接受较繁忙住宿区"]},{heading:"餐饮与社区节奏",items:["选择原法租界片区","单独安排外滩","确认晚归方式"]},{heading:"家庭或大件行李",items:["优先电梯与车辆入口","减少大型车站穿行","确认房间与入口细节"]}]},
-{id:"facts",type:"callout",title:"动态信息核验于2026年8月12日",tone:"neutral",body:"上海市政府资料将人民广场列为重要交通位置，并说明轨道交通1、2、8号线；官方也曾在繁忙周末对南京东路东段和外滩周边采取客流措施。这些事实支持取舍，区域建议属于Homeground编辑判断。具体日期仍须核对轨道、封闭和道路进入。"},
-{id:"check",type:"list",ordered:true,items:["定位酒店入口而非区域名。","模拟一次白天与一次晚归。","核对正确出口与电梯路线。","比较抵达日的行李交接。","免费取消前确认物业细节。"]},
-{id:"help",type:"callout",title:"需要比较两个地址？",tone:"decision",body:"提供日期、人数、抵达机场或车站、重点景点和大致预算，Homeground可以比较真实定位与需复核的取舍。"},
-{id:"links",type:"internal-links",title:"继续规划",items:[{label:"服务式公寓还是酒店",href:"/zh/guides/serviced-apartment-or-hotel-china/",description:"为长住选择合适运营模式。"},{label:"重庆住宿区域",href:"/zh/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/",description:"看看地形如何改变同类决策。"},{label:"如何判断靠近地铁",href:"/zh/guides/china-hotel-near-metro/",description:"检验最后一段步行。"}]},
-{id:"sources",type:"sources",title:"官方来源与图片署名",items:[{label:"人民广场及中心区周末交通信息",url:"https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240910/db6a0546907e44409a328e389d2ef969.html",publisher:"上海市人民政府",reviewedAt:"2026-08-12"},{label:"中心区域与轨道1、2、8号线官方资料",url:"https://english.shanghai.gov.cn/en-TaxRefundandDutyFree/20251111/07617954a5814e939172eba7136936ae.html",publisher:"上海市人民政府",reviewedAt:"2026-08-12"},{label:"首图：EditQ拍摄南京东路夜景，CC BY-SA 4.0，已裁切转换",url:"https://commons.wikimedia.org/wiki/File:East_Nanjing_Road_at_night,_Shanghai.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"},{label:"CC BY-SA 4.0许可证",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-12"}]}
-]} as const satisfies StructuredPageBody; export default body;
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "人民广场、外滩／南京东路和通常所说的原法租界，都适合第一次住上海，但优化的是不同日子。真正选择不是“中心还是有情调”，而是让酒店简化交通、把一处地标放在门外，还是把普通早晚本身变成住宿价值。" },
+  { id: "answer", type: "callout", title: "先给结论", tone: "decision", body: "首次混合观光、希望最均衡交通基地，选人民广场；外滩天际线和南京东路的早晚活动反复出现，且能接受人流和可能不便的步行最后一程，选外滩／南京东路；林荫街、咖啡馆和社区夜晚比住在外滩旁更重要，选原法租界范围内的准确地址，但必须先核对真实车站和抵达路线。" },
+  { id: "boundary", type: "paragraph", text: "本文比较三个宽泛基地，不做酒店排名，也不把“原法租界”当成一个单一区域。这个旅行标签覆盖许多街道和多个地铁站；常熟路附近与新天地或交通大学附近的住宿表现不同。所有标签最终都要缩小到具体大堂。" },
+  { id: "matrix", type: "table", caption: "三个好基地，获得三种不同优势", columns: ["基地", "改善什么", "牺牲什么", "核验"], rows: [["人民广场", "1、2、8号线的均衡连接与中心灵活性", "门外氛围不如江边或街巷鲜明", "正确出口、过街和大堂步行"], ["外滩／南京东路", "反复天际线、步行街和中心夜晚", "繁忙时人流、噪音和道路／步行管控", "车辆下客、行李路线与安静侧客房"], ["原法租界范围", "街区散步、咖啡馆和慢节奏早晚", "宽泛标签可能隐藏额外换乘", "准确可用车站、夜间路线和机场／铁路接驳"]] },
+  { id: "trip-fit", type: "table", caption: "把酒店给重复出现的模式", columns: ["行程模式", "先测试", "决定核验"], rows: [["三四晚、第一次、经典景点混合", "人民广场", "真的靠近可用1／2／8号线入口"], ["外滩日出／日落和南京东路出现在多天", "外滩／南京东路", "房间和入口通过人流与噪音检查"], ["餐饮、设计、咖啡和街区散步是核心", "原法租界内准确地址", "具体街道、车站也匹配其他固定日程"], ["老人、婴儿车或多件行李", "下客到房间最简单的物业", "不要让区域标签压过无障碍"], ["晚到或早出", "保护这段交通的酒店", "实际运营时段和有人值守抵达"]] },
+  { id: "peoples-square", type: "heading", level: 2, text: "人民广场：均衡交通答案" },
+  { id: "peoples-square-copy", type: "paragraph", text: "上海市政府访客资料列出人民广场站1、2、8号线，官方地铁报道也显示它是全网最繁忙车站之一。这种组合适合第一次旅行，但大站会增加站内步行，“人民广场”区域也不只一个出口。询问酒店对应哪个出口、该出口是否适合全组，以及还需过几条道路。" },
+  { id: "bund", type: "heading", level: 2, text: "外滩和南京东路：先选择体验，再管理人流" },
+  { id: "bund-copy", type: "paragraph", text: "只有会在清晨、夜间或多次使用江边和南京东路，这个基地才真正值钱。上海官方报道显示南京东路站在周末可能承受很大客流，节假日通知也可能改变车站运营。这不代表区域不适合住，而是大堂入口、道路接送和返回路线必须与景观同样认真核对。" },
+  { id: "bund-warning", type: "callout", title: "“外滩景观”和“步行到外滩”是两个产品", tone: "warning", body: "房间可能看得到天际线，却隔着主干道或位于数个街区之外；另一家没有景观，街面路线反而直接。先决定目标是房内景观还是反复步行进入，再从准确入口核验。不要在想象里为两项同时付款。" },
+  { id: "ffc", type: "heading", level: 2, text: "原法租界：把宽泛标签变成准确地址" },
+  { id: "ffc-copy", type: "paragraph", text: "它提供另一种上海节奏：住宅街、咖啡馆、小店，以及不依赖抵达江边的夜晚。但预订平台使用这个标签很宽。标出真的会去的三处地点，再选靠近有用车站的酒店，不要选标签的几何中心。核对夜间照明、步道、车辆下客，以及观光返回后想要的街区生活是否仍在附近。" },
+  { id: "arrival", type: "heading", level: 2, text: "让具名机场或火车站影响首尾夜" },
+  { id: "arrival-copy", type: "paragraph", text: "使用完整航站楼或铁路站名，以及真正离开枢纽的时刻。人民广场对部分旅程有直达线路，但大行李、长站内通道和运营时段可能让道路接驳更简单；外滩酒店可能增加步行最后一程，街巷酒店可能多一次换乘。比较完整枢纽到大堂，不比较区域名气。" },
+  { id: "last-mile", type: "list", items: ["索要大堂点位和中文道路入口，不只保存酒店名。", "确认可用地铁出口，以及全程是否无台阶。", "询问步行街、人流隔离或楼栋是否改变出租车停点。", "确认商场或室内路线会不会在返回前关门。", "大行李即使地铁直达，也保留道路接驳备用。"] },
+  { id: "evenings", type: "heading", level: 2, text: "选择普通夜晚在哪里结束" },
+  { id: "evenings-copy", type: "paragraph", text: "一次外滩夜晚不需要在外滩旁住四晚，一次咖啡馆早晨也不值得搬去西侧。写下每晚最可能的终点。大多数夜晚在中心观光后结束，人民广场或外滩组团更省事；夜晚本身就是社区用餐和散步，街巷基地才真正发挥作用。用重复行为，不用最上镜的一小时决定。" },
+  { id: "room", type: "table", caption: "各基地物业核验", columns: ["基地", "询问", "隐藏失败"], rows: [["人民广场", "准确出口、电梯路线和客房朝向", "写着靠近车站却要走很长地下／过街"], ["外滩／南京东路", "安静侧、人流时入口与下客点", "景观房承受严重交通或夜生活噪音"], ["原法租界", "准确车站、电梯、街巷进入和当前施工", "地址漂亮但行李与每日交通困难"], ["任何区域", "实际抵达时有人处理护照", "位置很好却无人有权让全组入住"]] },
+  { id: "failure", type: "table", caption: "上海比预期更繁忙时如何补救", columns: ["问题", "立即动作", "更好方案"], rows: [["出口／运营变化", "按运营方官方通知改走有人值守出口", "道路接驳到大堂"], ["人流阻断常规接送", "只移动到物业约定的合规会合点", "预先选离步行管控清楚的停点"], ["房间太吵", "要求已核实的安静侧房间", "连续睡眠受损则一晚后搬"], ["街巷带行李困难", "使用道路入口或行李支持", "首尾夜留在易进入基地"], ["区域导致每日额外换乘", "按城市一侧重排观光", "剩余多天可白天搬一次"]] },
+  { id: "registration", type: "paragraph", text: "旅馆为外国住客办理登记。请具体物业确认实际抵达时段的值班与护照处理；住在知名区域不等于晚到一定轻松。" },
+  { id: "dynamic", type: "paragraph", text: "上海市地铁与访客资料复核于2026年8月12日。节假日或活动会改变客流管控、车站运营和物业进入。抵达前重查上海地铁官方渠道和酒店；本文不假设任何固定关闭或客流。" },
+  { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "如何判断靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "核对准确出口和大堂步行。" }, { label: "上海选浦东机场还是虹桥机场", href: "/zh/guides/shanghai-pudong-or-hongqiao-airport/", description: "让酒店匹配正确机场接驳。" }, { label: "国际航班前中国最后一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "保护离境夜，又不浪费整天。" }] },
+  { id: "sources", type: "sources", title: "官方来源与图片署名", items: [{ label: "上海地铁客流官方报道", url: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240910/db6a0546907e44409a328e389d2ef969.html", publisher: "上海市人民政府", reviewedAt: "2026-08-12" }, { label: "人民广场1、2、8号线官方参考", url: "https://english.shanghai.gov.cn/en-MuseumsGalleries/20240527/3937ac13043a44f39c2a27506a3d7539.html", publisher: "上海市人民政府", reviewedAt: "2026-08-12" }, { label: "活动期间车站调整官方示例", url: "https://english.shanghai.gov.cn/en-LatestNews/20251231/1b54690a4747486caee0b9d845156187.html", publisher: "上海市人民政府", reviewedAt: "2026-08-12" }, { label: "首图：EditQ拍摄南京东路夜景，CC BY-SA 4.0，已裁切转换", url: "https://commons.wikimedia.org/wiki/File:East_Nanjing_Road_at_night,_Shanghai.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" }] }
+] } as const satisfies StructuredPageBody;
+export default body;

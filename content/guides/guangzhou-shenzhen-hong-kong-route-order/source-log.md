@@ -1,6 +1,6 @@
-# Source log — Guangzhou–Shenzhen–Hong Kong Route Order: Build Around the Border
+# Source log — Guangzhou–Shenzhen–Hong Kong Route Order
 
-Status: `COPY READY — CENTRAL REVIEW REQUIRED`
+Status: `DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED`
 
 Checked at: 2026-08-12 (Asia/Shanghai)
 
@@ -8,37 +8,34 @@ Canonical owner: `/guides/guangzhou-shenzhen-hong-kong-route-order/`
 
 ## Editorial boundary
 
-This page owns the three-city order and the decision to give Shenzhen an overnight. The Guangzhou–Hong Kong and Shenzhen–Hong Kong guides own mode, station and checkpoint execution.
+This page owns the three-city order and whether Shenzhen merits an overnight. The Guangzhou–Hong Kong and Shenzhen–Hong Kong guides own exact mode, station and control-point execution. Immigration authorities own entry eligibility.
 
-## Sources
+## Official sources
 
-### MTR High Speed Rail
+### MTR High Speed Rail — Cross-boundary trip planning
 
-- Source: Cross-boundary high-speed rail trip planner
 - URL: https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html
 - Checked: 2026-08-12
-- Facts used: West Kowloon cross-boundary rail is an official trip-planning option.
-- Boundary: No live seat or journey-time promise is used.
-- Update trigger: Route, station or passenger-process change.
+- Facts used: Hong Kong West Kowloon is an official cross-boundary rail planning option.
+- Boundary: No current journey time, ticket availability or universal best mode is copied.
+- Update trigger: Service, passenger-process or station change.
 
-### Hong Kong Security Bureau
+### Hong Kong Security Bureau — Land control points
 
-- Source: Control-point information
 - URL: https://www.sb.gov.hk/eng/special/bound/control.html
 - Checked: 2026-08-12
-- Facts used: Different control points have their own transport links and operating information.
-- Boundary: This is not an immigration-eligibility guide.
-- Update trigger: Control-point or operating-rule update.
+- Facts used: Hong Kong has multiple railway and road land control points, each with its own operating and transport information.
+- Boundary: The source is not used to decide a traveller's visa or entry eligibility.
+- Update trigger: Control-point, operating or border-process change.
 
-## Planning judgments
+## Editorial judgments
 
-- Route direction should follow the international gateways and avoid repeating a cross-boundary leg.
-- A Shenzhen night earns its place only when the city has a real anchor, not merely because it lies between Guangzhou and Hong Kong.
-- A border move consumes usable time even when the train itself is fast.
+- International gateways should set a one-way direction that avoids repeating a cross-boundary leg.
+- Shenzhen earns a hotel only through a protected local priority, not geographical position.
+- Choose the control point from both hotel doors, baggage and onward plan.
+- Keep the final cross-boundary move away from a fragile same-day international departure.
 
 ## Explicit exclusions
 
-- No live fare, seat, timetable, opening-hour or inventory claim.
-- No complete personalised day-by-day itinerary.
-- No city × day-count × traveller-type index variants.
-- Recheck named operators and official rules near booking.
+- No visa, immigration-eligibility, live timetable, fare or operating-hour claim.
+- No prescribed night allocation or guaranteed crossing time.

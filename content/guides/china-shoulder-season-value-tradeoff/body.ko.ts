@@ -1,162 +1,75 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "중국 전역에 공통으로 적용되는 고정된 숄더 시즌은 없습니다. 낮은 총비용으로도 여행의 핵심 경험을 살릴 수 있을 때만 좋은 선택입니다. 같은 날짜에도 산악 지역, 정원 도시와 열대 해안은 서로 다른 날씨와 운영 전환기에 있을 수 있습니다."
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "가치의 세 면",
-      "columns": [
-        {
-          "heading": "절약",
-          "body": "할인 숙소 하나가 아니라 전체 동선 총액을 봅니다."
-        },
-        {
-          "heading": "경험",
-          "body": "반드시 지킬 야외 접근, 시야 또는 행사를 정합니다."
-        },
-        {
-          "heading": "유연성",
-          "body": "폐쇄나 나쁜 날씨의 대안을 실제로 받아들일지 봅니다."
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "지역 차이가 전국 명칭을 무너뜨립니다"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "중국기상국은 위도, 계절풍과 지형에 따른 큰 지역 차이를 설명합니다. 공식 공휴일은 별도의 수요 층입니다. 한 지역의 계절 전환기가 전국적인 집중 여행 기간과 겹칠 수 있습니다."
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "숄더 시즌이 가치 있는 조건",
-      "columns": [
-        "조건",
-        "좋은 가치",
-        "잘못된 절약"
-      ],
-      "rows": [
-        [
-          "핵심 활동 운영",
-          "절약으로 위치나 유연성을 개선.",
-          "여행의 주된 이유를 잃음."
-        ],
-        [
-          "날씨 대안 존재",
-          "실내외 우선순위를 교환 가능.",
-          "모든 핵심이 한 날씨에 의존."
-        ],
-        [
-          "공휴일 검사 통과",
-          "낮은 수요 가능성이 유지.",
-          "전국 또는 지역 행사가 이 명칭을 무효화."
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "한산함을 약속하지 마세요",
-      "body": "수요는 도시, 요일, 행사와 장소에 따라 다릅니다. 공식 날짜와 현재 예약 조건을 쓰고 혼잡 지수를 만들지 마세요."
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "숄더 시즌 후보 점검"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "여행이 반드시 제공할 경험 하나를 정합니다.",
-        "공식 계절 운영과 접근 규칙을 봅니다.",
-        "지역 기후와 일조를 검사합니다.",
-        "발표된 공휴일을 겹치되 미래는 추측하지 않습니다.",
-        "총 절약과 대체·취소 비용을 비교합니다."
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "더 내거나 동선을 바꿀 때"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "핵심 경험의 대안이 없으면 날짜를 옮기세요. 다른 지역이 같은 목적을 더 적은 운영 제한으로 제공하면 동선을 바꾸세요. 두 희생이 중요하지 않을 때만 절약을 유지합니다."
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "전국 공통 숄더 시즌은 없습니다",
-      "body": "실시간 가격, 혼잡 예측, 도시×월 페이지를 제공하지 않습니다. 날짜와 운영처를 다시 확인해야 합니다."
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "가치 교환을 검토받고 싶나요?",
-      "body": "날짜, 인원, 예산, 후보 지역과 절대 포기하지 않을 경험을 남겨 주세요."
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "다음 계획",
-      "items": [
-        {
-          "label": "기후 지역으로 동선 검사",
-          "href": "/ko/guides/china-climate-regions-for-trip-timing/",
-          "description": "한 기간이 가장 까다로운 장소에 맞는지 확인하세요."
-        },
-        {
-          "label": "공식 공휴일 확인",
-          "href": "/ko/guides/china-public-holidays-travel-calendar/",
-          "description": "비수기라는 이름도 전국 공휴일에 바뀔 수 있습니다."
-        },
-        {
-          "label": "시기 선택을 전체 예산에 반영",
-          "href": "/ko/guides/how-much-does-a-china-trip-cost/",
-          "description": "교통, 숙소와 유연성을 함께 비교하세요."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "중국 기후 개요",
-          "url": "https://www.cma.gov.cn/2011xzt/2012zhuant/20120302/2012030205/201203020501/201103/t20110314_3096052.html",
-          "publisher": "China Meteorological Administration",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "중국 공휴일 일정",
-          "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm",
-          "publisher": "State Council / Homeground source record",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "중국의 숄더 시즌은 전국 공통 할인 기간이 아닙니다. 핵심 활동이 여전히 가능하고, 공휴일 이동 압력이 감당 가능하며, 일조와 교통이 맞고, 실제 유연 예약 바구니가 성수기 대안보다 단순히 싸기만 한 것이 아니라 더 나을 때만 가치가 있습니다. 막연한 봄·가을 이름이 아니라 구체적 날짜와 지역을 비교하세요." },
+  { id: "quick-choice", type: "comparison", title: "무엇을 교환하고 있나요?", columns: [
+    { heading: "성수기 조건", body: "계절 풍경이나 활동이 여행의 중심 이유라면 더 지불하거나 수요 압력을 받아들이세요." },
+    { heading: "숄더 균형", body: "적당한 불확실성을 감당하고 유연 예약이 이점을 보호할 때 선택하세요." },
+    { heading: "깊은 비수기", body: "운영 시간, 교통, 날씨 내성과 짧거나 조용한 날의 가치를 확인한 뒤 선택하세요." }
+  ] },
+  { id: "official-heading", type: "heading", level: 2, text: "가격보다 먼저 확인할 두 가지 공식 정보" },
+  { id: "official", type: "paragraph", text: "중국기상국은 중국 기후가 위도, 해륙 위치, 계절풍과 지형에 따라 달라진다고 설명하므로 하나의 숄더 시즌 이름으로 모든 동선을 표현할 수 없습니다. 국무원은 매년 공식 공휴일 일정을 발표하며 2026년 자료에는 주요 공휴일과 조정 근무일이 나옵니다. 조용해 보이는 주가 집중 이동 기간과 맞닿을 수 있으므로 그해 달력을 확인하세요." },
+  { id: "value-heading", type: "heading", level: 2, text: "이번 여행의 가치를 정의하세요" },
+  { id: "value", type: "table", caption: "여행이 여전히 목적을 달성할 때만 낮은 가격이 유용합니다", columns: ["변수", "질문", "수집할 증거"], rows: [
+    ["핵심 경험", "활동이 운영되고 여전히 갈 가치가 있나요?", "해당 관광지·운영기관 공지"],
+    ["기후 노출", "비, 더위, 추위, 바람, 가시거리가 목적을 없애나요?", "공식 기후 배경, 여행 직전 현재 예보"],
+    ["공휴일 압력", "날짜가 대규모 이동 기간과 겹치거나 인접하나요?", "당해 국무원 공휴일 달력과 운영기관 공지"],
+    ["일조·속도", "야외 일정을 서두르지 않고 끝낼 수 있나요?", "정확한 날짜의 일출·일몰과 운영시간"],
+    ["교통", "쓸 만한 서비스가 현실적인 시간에 있나요?", "현재 12306, 운항사 또는 현지 운영기관 검색"],
+    ["예약 바구니", "유연성, 짐과 악천후 대안을 넣은 총액은요?", "표시 가격이 아닌 같은 조건의 결제 정보"]
+  ] },
+  { id: "route-screen-heading", type: "heading", level: 2, text: "모든 지역을 따로 검사하세요" },
+  { id: "route-screen", type: "list", ordered: true, items: [
+    "모든 지역에 대체 불가능한 이유 하나를 적으세요. 이유가 모호하면 날짜를 지배하게 하지 마세요.",
+    "각 지역을 날씨 결정형, 운영 시기 결정형 또는 대체로 수용형으로 나누세요.",
+    "가장 까다로운 지역에서 신뢰할 수 있는 기후·운영 정보로 성수기와 인접 후보 기간 두 개를 찾으세요.",
+    "다른 지역이 각 후보 기간에 감당 가능한지 확인하세요. 다지역 동선은 서로 다른 숄더 기간을 가질 수 있습니다.",
+    "현재 공식 공휴일 달력과 신뢰할 수 있는 1차 출처가 있는 지역 대형 행사를 겹쳐 보세요.",
+    "남은 날짜의 완전한 예약 바구니를 취소 조건과 대체일 비용까지 비교하세요.",
+    "근거 없는 할인 폭이 아니라 보호되는 경험이 가장 좋은 날짜를 고르세요."
+  ] },
+  { id: "examples-heading", type: "heading", level: 2, text: "정직한 숄더 시즌 결과 세 가지" },
+  { id: "examples", type: "table", caption: "결정을 설명하는 예시이며 실시간 가격·날씨 주장이 아닙니다", columns: ["여행 목적", "가능한 결과", "이유"], rows: [
+    ["박물관·동네·음식 동선", "숄더 기간이 강할 수 있음", "실내 깊이와 유연한 날이 더 많은 날씨 변화를 흡수"],
+    ["가시거리 의존 산악 여행", "성수기 또는 유연한 숄더 날짜", "가시거리 부족이 중심 경험을 없애면 절약 가치가 작아짐"],
+    ["고원 연장을 포함한 다지역 동선", "동선을 나누거나 날짜 변경", "전국 공통 이름이 상충하는 기후·회복 요구를 숨길 수 있음"]
+  ] },
+  { id: "booking-heading", type: "heading", level: 2, text: "되돌리기 어려운 순서대로 예약하세요" },
+  { id: "booking", type: "list", ordered: true, items: [
+    "여권, 휴가 날짜와 공식 공휴일 달력을 확인하세요.",
+    "핵심 계절 경험과 동선 가능성을 확인하되 장기 경향을 예보로 해석하지 마세요.",
+    "내부 숙소를 잠그기 전에 관문과 환불·변경 가능한 장거리 교통을 비교하세요.",
+    "조건을 이해한 희소 핵심 활동을 예약하고 주변 숙박은 유연하게 구성하세요.",
+    "날씨 민감일은 옮길 수 있게 하고 가능하면 환불 불가 보조 활동 예약을 늦추세요.",
+    "여행 직전에 공식 예보, 운영 공지와 현재 교통 검색으로 가정을 교체하세요."
+  ] },
+  { id: "failure-heading", type: "heading", level: 2, text: "가짜 절약과 복구" },
+  { id: "failure", type: "table", caption: "싸도 가치가 나쁠 수 있습니다", columns: ["가짜 절약", "숨은 비용", "복구"], rows: [
+    ["유용한 교통에서 먼 최저가 숙소", "매일 택시·지하철 시간이 차액을 소모", "문간 숙소 가치 비교"],
+    ["변덕스러운 날씨에 환불 불가 요금", "휴장·저시정 날을 옮길 수 없음", "유연성 가격을 넣고 핵심 날짜를 이동 가능하게"],
+    ["큰 공휴일 바로 옆의 조용한 날짜", "교통 압력이 공식 휴일 전후로 이어질 수 있음", "운영기관 공지 확인과 여유 추가"],
+    ["비수기에 계절성 지역 유지", "줄어든 경험에 교통·숙박비를 지불", "활동 교체 또는 지역 삭제"],
+    ["짐·엄격한 변경 조건이 있는 저가 항공", "완전한 바구니가 표면 절약을 초과", "같은 조건의 운임 상품 비교"]
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "성수기에 지불할 때와 조용한 때를 고를 때" },
+  { id: "switch-rule", type: "paragraph", text: "계절 활동 하나가 여행의 핵심 이유이고 실패하면 여행이 낭비처럼 느껴질 때 성수기를 고르세요. 대안이 있고 일행이 불확실성을 견디며 유연 예약이 최악의 경우 손실을 제한할 때 숄더 날짜를 고르세요. 가능한 날짜가 핵심 경험을 깨뜨리면 지역을 바꾸세요. 어떤 할인도 여행자의 목적을 달성하지 못하는 동선을 고치지 못합니다." },
+  { id: "booking-checklist", type: "list", ordered: false, items: [
+    "핵심 경험과 그것을 실패시키는 조건이 명확합니다.",
+    "모든 지역을 한 계절 이름으로 묶지 않고 따로 검사했습니다.",
+    "현재 공식 공휴일 달력을 후보 날짜에 겹쳤습니다.",
+    "운영 시간과 교통을 이름 있는 1차 출처로 확인했습니다.",
+    "가격 비교에 유연성, 짐, 위치와 대체 비용을 넣었습니다."
+  ] },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "연도와 동선을 다시 확인하세요", body: "공휴일, 운영 일정, 운임과 예보는 변합니다. 이 글은 할인, 혼잡도나 날씨를 약속하지 않습니다. 예약 전에 당해 공식 달력과 각 운영기관을 재확인하세요." },
+  { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 성수기, 숄더 시즌과 깊은 비수기 사이의 가치 교환만 다룹니다. 기후 지역 가이드는 다지역 날씨 검사, 공휴일 달력은 특정 연도 날짜, 목적지 가이드는 지역 계절 경험을 담당합니다." },
+  { id: "help-cta", type: "callout", tone: "decision", title: "두 날짜 범위를 비교할까요?", body: "후보 날짜, 지역, 핵심 경험과 유연·환불 불가 예약 선택을 알려 주세요. 좋은 비교는 어떤 가치를 보호하고 어떤 위험을 받아들이는지 보여 줍니다." },
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "기후 지역으로 동선 검사", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "한 날짜 범위가 가장 까다로운 지역을 지키는지 확인하세요." },
+    { label: "중국 공식 공휴일 확인", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "전국 공휴일이 비수기 이름을 뒤집을 수 있습니다." },
+    { label: "시기를 전체 예산 안에 배치", href: "/ko/guides/how-much-does-a-china-trip-cost/", description: "교통, 숙소와 유연성을 함께 비교하세요." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "중국 기후의 주요 특징", url: "https://www.cma.gov.cn/2011xzt/2012zhuant/20120302/2012030205/201203020501/201103/t20110314_3096052.html", publisher: "중국기상국", reviewedAt: "2026-08-12" },
+    { label: "2026년 중국 공식 공휴일", url: "https://english.www.gov.cn/policies/featured/202511/04/content_WS6909c915c6d00ca5f9a074f7.html", publisher: "중화인민공화국 국무원", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;

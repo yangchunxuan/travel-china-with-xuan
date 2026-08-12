@@ -1,122 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "活字出现后没有简单淘汰雕版。真正有用的比较是流程：刻制或选字、排版、校改、印刷、保存与重印。"
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "比较任务，不选赢家",
-      "body": "雕版能保存稳定版面反复印刷；活字可以重组文字，却需要庞大有序的字库和细致排版。",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "比较任务，不选赢家",
-      "columns": [
-        "决策",
-        "雕版",
-        "活字"
-      ],
-      "rows": [
-        [
-          "准备",
-          "整页雕刻",
-          "选字并排版"
-        ],
-        [
-          "校改",
-          "挖补或重刻",
-          "换字并重排"
-        ],
-        [
-          "保存",
-          "存整页版片",
-          "分类保存活字"
-        ],
-        [
-          "重印",
-          "复用同一版面",
-          "拆版后需重排"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "找到实物版片或字盘。",
-        "确认原件、复制品或演示品。",
-        "追踪从文字到印张的流程。",
-        "询问服务哪类书或记录。",
-        "不要写成单线替代史。"
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "活态实践不等于全部历史",
-      "body": "UNESCO 瑞安木活字项目记录的是今天仍传承的宗谱印刷实践，不能证明历史上所有作坊工具和流程相同。",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "发来日期与地点，本地真人可核对当前开放、展陈或节目，不承诺未核实条件。",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "广州早茶怎么运作",
-          "href": "/zh/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "自由行参观兵马俑",
-          "href": "/zh/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "中国旅行需要导游吗",
-          "href": "/zh/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "机构来源与图片署名",
-      "items": [
-        {
-          "label": "Wooden movable type printing of China",
-          "url": "https://ich.unesco.org/en/usl/wooden-movable-type-printing-of-china-00322",
-          "publisher": "UNESCO Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "China Printing Museum introduction",
-          "url": "https://english.visitbeijing.com.cn/article/47OMvX0dE0F",
-          "publisher": "Beijing Municipal Culture and Tourism Bureau",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: wooden movable types by Popolon, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"活字出现后，并没有简单淘汰中国的雕版印刷。有效比较应从具体生产任务开始：准备文本，刻版或拣字，组成版面，校样改错，印出副本，保存设备，再决定是否重印同一页。文本、文字系统、印数、劳动组织与机构条件不同，选择也会改变。"},
+{"id":"answer","type":"callout","title":"比较完整流程，不要评选一个赢家","body":"雕版把整页固定下来，能保存后再次开印；活字可重组单字，却需要庞大且可检索的字库、准确排版和印后还字。文本修改时，活字可能减少重新刻版；页面稳定并反复重印时，雕版可能减少重复排版。两种优势都不会自动适用于每本书或每间作坊。","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"边界：两种原理，多种材料与历史环境"},
+{"id":"scope","type":"paragraph","text":"“雕版”和“活字”描述的是原理，不是两台千年不变的机器。版、字、墨、纸、版式、工人和储存方式会随时代与地点变化，活字也有多种材质。本文比较中国印刷博物馆中可见的凸版流程和有记录的活态实践，不提供一条“发明后立刻替代”的时间线，不声称所有印页都能靠肉眼辨别，也不拿一种文明的技术给另一种文明排高低。"},
+{"id":"workflow-heading","type":"heading","level":2,"text":"用同一组步骤比较两种方法"},
+{"id":"workflow","type":"table","caption":"从文稿到复用的生产流程","columns":["阶段","雕版路线","活字路线","在展厅要问"],"rows":[["文本准备","整页书写或转写后供雕刻","准备底本与排版所需字种","谁定稿并决定版式？"],["制版或制字","把文字、图像或整页版面刻成凸纹","制作并维护单个字","是原件、复制品还是演示件？"],["排版","刻好的整页已固定行文与图文关系","拣字、排序并固定成版","怎样找到字并固定位置？"],["校样改错","挖改、补嵌或重新刻版","换错字并重排一行","展览有没有改版实例？"],["刷印","施墨后覆纸印刷或拓印","在排好的活字版上施墨刷印","怎样控制套准与墨量？"],["储存复用","整页版占空间，但保存版式","拆版还字后可复用，除非整版保存，否则页面消失","重印旧页还是重排新页更常见？"]]},
+{"id":"decision-heading","type":"heading","level":2,"text":"真正的选择取决于出版任务"},
+{"id":"decision","type":"table","caption":"改变选择的因素","columns":["因素","可能有利雕版","可能有利活字","为什么没有绝对规则"],"rows":[["稳定页面长期重印","存版可直接复印，不必重排","整版不拆也可再印","储存、损坏和修订仍有成本"],["文本频繁修订","大改可能需要重刻","可替换、重排单字","排版与校对仍耗费劳动"],["生僻字多","整页只刻所需字符","需要大字库并处理罕见字","可新制字，但检索管理扩大"],["文字与插图结合","同一版面可同时刻图文","可能结合不同工艺或构件","作坊技能与设计决定"],["小批量或专业文本","若已有版，成本可能很低","已有字库和熟练排字工时可能有利","本地现有资源比抽象临界点重要"],["家族或寺院等分布式工作","版能保存经过认可的固定页面","可携字库适应变化的地方记录","机构和传承方式影响选择"]]},
+{"id":"characters-heading","type":"heading","level":2,"text":"汉字改变字库难题，不会让活字变得“不可能”"},
+{"id":"characters","type":"paragraph","text":"字符数量大，会让拣字、分类和储存成为重要运营成本，却不能证明活字不可行；泥、木、金属活字的长期实践已经说明这一点。应问字架怎样编目、常用字与生僻字怎样备字、异体字怎样处理、谁熟悉字盘。正确比较是现实组织成本与收益，而不是“字母天然成功、汉字天然失败”的神话。"},
+{"id":"proof-heading","type":"heading","level":2,"text":"校改是抽象优势真正遇到劳动的地方"},
+{"id":"proof","type":"paragraph","text":"无论雕版还是活字都要校样。雕版小错可能挖改补嵌，大改则可能重刻；活字可更换错字，但插入会影响间距，每个版面仍需校对。展厅里应寻找校样、补版、更换字或编辑标记。只看完成后的印张，会漏掉真正决定质量的劳动。"},
+{"id":"museum-heading","type":"heading","level":2,"text":"怎样读印刷博物馆展陈"},
+{"id":"museum","type":"list","ordered":true,"items":["判断印刷面是整页雕版、单个活字、排好的活字版还是后期复制品。","核对材质、年代、来源，以及原件、复制品或互动教具身份。","找一块反刻印版和方向正确的印张，比较缺损处。","追踪写样、刻字或拣字、排版、施墨、刷印、晾纸、装订和储存由谁完成。","一定看字盘或版库，因为检索本身就是技术。","比较纯文字页、图文页和有改版或重印的作品。","先记清出版任务，再判断哪种方式更有利。"]},
+{"id":"living-heading","type":"heading","level":2,"text":"瑞安木活字是活态实践，不是冻结的中世纪作坊"},
+{"id":"living","type":"paragraph","text":"联合国教科文组织的急需保护名录项目记录了浙江瑞安以木活字编印宗谱的实践：描字与刻字、排版和刷印，随后裁纸和装订，拆版后的字可以还字复用。它通过家族传承并服务于特定社会需求，证明完整流程仍在延续；但不能把今天的实践原封不动投射到每个历史作坊，也不能忽略资料明确提到的女性与其他劳动者。"},
+{"id":"evidence-heading","type":"heading","level":2,"text":"分清原物、复原与演示"},
+{"id":"evidence","type":"comparison","title":"三种都有效，但证据性质不同","columns":[{"heading":"历史原物","items":["有明确年代的材质与使用痕迹","来源与保护史","可能残缺或脆弱，不能操作"]},{"heading":"复制或复原","items":["显示被遮挡的关系","可试验一条推定流程","包含现代解释选择"]},{"heading":"活态演示","items":["呈现身体技能与协作","可能保留社群传承","是当下实践，不是所有过去印刷的原样窗口"]}]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"阻碍理解的常见神话"},
+{"id":"mistakes","type":"list","items":["说活字出现后马上替代雕版。","说汉字让活字毫无用处。","只比刻制速度，不算排版、校对、储存与复用。","因为技艺传统，就把现代体验版叫古代文物。","用瑞安一种宗谱流程概括中国活字印刷全部历史。","解释方法选择时忽略插图、版式、机构与读者需求。"]},
+{"id":"fit-heading","type":"heading","level":2,"text":"按你的兴趣选择博物馆任务"},
+{"id":"fit","type":"comparison","title":"三种有效参观方式","columns":[{"heading":"技术优先","items":["追踪工具与流程","比较印刷面和印张","关注检字与改错"]},{"heading":"书籍史优先","items":["追踪一本书从底稿到装订","比较版本与版式","问谁委托、谁阅读"]},{"heading":"活态遗产优先","items":["关注技能角色与传承","核实当前是否有演示","不把传承人当作古人复制品"]}]},
+{"id":"warning","type":"callout","title":"旧参观资料不能证明当前安排","body":"中国印刷博物馆介绍可用于理解馆藏范围，但开放时间、票务、演示和入场方式会变化。出发前应通过博物馆或当前官方地方渠道确认；旧旅游页面不是实时预约保证。","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"一份完整的方法比较笔记"},
+{"id":"checklist","type":"list","items":["出版任务与预期复用","原物、复制品或演示身份","准备与排版步骤","怎样发现并改正错误","刷印与装订分工","储存和检索负担","为何这个作坊选择这种方法，并把结论限定在证据范围内"]},
+{"id":"help","type":"callout","title":"Homeground","body":"告诉我们你更关心技术、古籍、宗谱还是动手体验。当地规划人员可核查当前展厅与演示，把时间留给相关流程，而不会依据过期页面承诺活动。","tone":"decision"},
+{"id":"links","type":"internal-links","title":"继续读工艺与证据","items":[{"label":"选择周城白族扎染作坊","href":"/zh/guides/zhoucheng-bai-tie-dye-workshop-choice/","description":"把原物、演示和游客体验的区分应用到另一项手工艺。"},{"label":"从里耶秦简读地方行政","href":"/zh/guides/liye-qin-slips-local-government-records/","description":"把印刷复制与更早的行政书写材料进行比较。"},{"label":"中国旅行需要导游吗","href":"/zh/guides/do-you-need-a-tour-guide-in-china/","description":"判断技术型博物馆何时值得专业讲解。"}]},
+{"id":"sources","type":"sources","title":"机构来源与图片署名","items":[{"label":"中国木活字印刷术","url":"https://ich.unesco.org/en/usl/wooden-movable-type-printing-of-china-00322","publisher":"联合国教科文组织非物质文化遗产","reviewedAt":"2026-08-12"},{"label":"中国印刷博物馆介绍","url":"https://english.visitbeijing.com.cn/article/47OMvX0dE0F","publisher":"北京市文化和旅游局","reviewedAt":"2026-08-12"},{"label":"题图：Popolon 拍摄的木活字展陈，CC BY-SA 4.0；已裁切","url":"https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

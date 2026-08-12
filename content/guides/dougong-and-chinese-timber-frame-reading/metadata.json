@@ -21,7 +21,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-12",
-  "dateModified": "2026-08-12",
+  "dateModified": "2026-08-13",
   "sourceReviewedDate": "2026-08-12",
   "search": {
     "section": "culture",
@@ -35,9 +35,9 @@
   "locales": {
     "en": {
       "path": "/guides/dougong-and-chinese-timber-frame-reading/",
-      "title": "Dougong and Timber Frames: Read How a Chinese Wooden Building Stands",
+      "title": "Dougong and Timber Frames: How Chinese Wooden Buildings Stand",
       "headline": "Look Past the Roof: Read the Structural Chain",
-      "description": "Trace columns, beams, bracket sets and roof load in a Chinese timber building, while separating structural evidence from decorative appearance and earthquake-proof myths.",
+      "description": "Trace the load path from columns and beams through bracket sets to the roof, separating structural evidence from decoration and earthquake-proof myths.",
       "heroAlt": "Corner bracket sets on the wooden Pagoda of Fogong Temple in Yingxian.",
       "navTitle": "Read a Chinese timber frame",
       "featuredLinkLabel": "Read a Chinese timber frame",

@@ -1,122 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "활자는 등장하자마자 목판을 쓸모없게 만들지 않았습니다. 판각·선자, 조판, 교정, 인쇄, 보관, 재인쇄의 작업 흐름을 비교해야 합니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "승자보다 작업 비교",
-      "body": "목판은 안정된 한 페이지를 반복 인쇄하고 활자는 문자를 재조합하지만 큰 활자고와 정교한 조판이 필요합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "승자보다 작업 비교",
-      "columns": [
-        "결정",
-        "목판",
-        "활자"
-      ],
-      "rows": [
-        [
-          "준비",
-          "한 면 판각",
-          "글자 선별·조판"
-        ],
-        [
-          "교정",
-          "파내거나 재각",
-          "활자 교체·재조판"
-        ],
-        [
-          "보관",
-          "면 단위 판 보관",
-          "활자 분류 보관"
-        ],
-        [
-          "재인쇄",
-          "같은 판 재사용",
-          "해판 후 재조판"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "실물 판목이나 활자함을 찾습니다.",
-        "원품·복제품·시연품을 구분합니다.",
-        "텍스트에서 인쇄물까지 순서를 봅니다.",
-        "어떤 책과 기록을 위한 것인지 묻습니다.",
-        "단순 대체 연표를 만들지 않습니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "살아 있는 전승과 전체 역사는 다릅니다",
-      "body": "UNESCO의 루이안 목활자는 현재의 족보 인쇄 전승이며 역사상 모든 작업장의 도구와 순서를 증명하지 않습니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "날짜와 장소를 보내면 현지 담당자가 현재 운영·전시·프로그램을 확인합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "여행 이어가기",
-      "items": [
-        {
-          "label": "광저우 아침 차 이해",
-          "href": "/ko/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "병마용 자유 관람",
-          "href": "/ko/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "중국 여행에 가이드가 필요할까",
-          "href": "/ko/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "기관 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Wooden movable type printing of China",
-          "url": "https://ich.unesco.org/en/usl/wooden-movable-type-printing-of-china-00322",
-          "publisher": "UNESCO Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "China Printing Museum introduction",
-          "url": "https://english.visitbeijing.com.cn/article/47OMvX0dE0F",
-          "publisher": "Beijing Municipal Culture and Tourism Bureau",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: wooden movable types by Popolon, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"중국에서 활자가 등장하자 목판이 곧 사라진 것은 아닙니다. 유용한 비교는 구체적인 제작 업무에서 시작합니다. 원고를 준비하고 판을 새기거나 활자를 고르며, 판면을 구성하고 교정해 인쇄한 뒤 장비를 보관하고 같은 면을 다시 찍을지 결정합니다. 글·문자·인쇄 부수·노동 조직·기관에 따라 판단이 달라졌습니다."},
+{"id":"answer","type":"callout","title":"승자를 고르지 말고 전체 작업을 비교하세요","body":"목판은 완성 페이지를 고정해 보관 후 재인쇄할 수 있습니다. 활자는 개별 글자를 재조합하지만 체계적으로 찾을 수 있는 대규모 활자고, 정확한 조판, 인쇄 뒤 판을 풀고 활자를 되돌리는 해판·환자 작업이 필요합니다. 글이 바뀌면 활자가 재판각을 줄일 수 있고 안정된 페이지를 반복 인쇄하면 목판이 재조판을 줄일 수 있습니다. 어느 장점도 모든 책과 공방에 자동 적용되지 않습니다.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"범위: 두 원리, 다양한 재료와 역사 환경"},
+{"id":"scope","type":"paragraph","text":"목판과 활자는 변하지 않는 두 기계가 아니라 원리를 가리킵니다. 판·활자·먹·종이·판면·노동·보관은 시대와 장소에 따라 달랐고 활자 재료도 여러 가지였습니다. 이 글은 중국 인쇄박물관에서 볼 수 있는 볼록판 인쇄 공정과 기록된 오늘날의 전승을 비교합니다. 발명 후 곧 대체됐다는 단선 연표, 모든 인쇄면을 육안으로 식별할 수 있다는 주장이나 문명 간 기술 순위를 만들지 않습니다."},
+{"id":"workflow-heading","type":"heading","level":2,"text":"같은 단계로 두 방식을 비교하세요"},
+{"id":"workflow","type":"table","caption":"원고에서 재사용까지","columns":["단계","목판","활자","전시 질문"],"rows":[["글 준비","전체 면을 쓰거나 옮겨 새길 준비","저본과 필요한 글자를 준비","누가 원고와 판면을 확정했나?"],["판·활자 제작","글·그림·통합 면을 양각으로 새김","개별 글자를 만들고 유지","원본·복제품·시연품 중 무엇인가?"],["조판","새긴 면에 행과 그림 관계가 고정","활자를 골라 배열하고 고정","어떻게 글자를 찾아 고정했나?"],["교정","파내기·메우기·재판각","틀린 활자 교체와 행 재배열","수정 사례가 있는가?"],["인쇄","먹칠 후 종이를 대고 인쇄","조판면에 먹칠해 인쇄","정렬과 먹 양을 어떻게 통제했나?"],["보관·재사용","면 전체가 공간을 차지하지만 판면 보존","해판·환자 후 재사용, 조판면은 사라짐","재인쇄와 새 조판 중 무엇이 유리했나?"]]},
+{"id":"decision-heading","type":"heading","level":2,"text":"실제 선택은 출판물에 달려 있습니다"},
+{"id":"decision","type":"table","caption":"균형을 바꾸는 요소","columns":["요소","목판에 유리할 수 있음","활자에 유리할 수 있음","절대 규칙이 아닌 이유"],"rows":[["안정된 면의 장기 재인쇄","보관 판을 재조판 없이 사용","조판면을 유지하면 재인쇄 가능","보관·손상·개정 비용 존재"],["잦은 수정","큰 수정은 재판각 가능","개별 활자 교체와 재배열","조판·교정 비용 존재"],["희귀 글자 다수","그 면에 필요한 글자만 새김","큰 글자고와 희귀자 관리 필요","새 활자 제작은 가능하나 분류 확대"],["글과 그림","한 판에 함께 새길 수 있음","다른 공정과 요소 결합 가능","공방 기술과 디자인이 결정"],["소량·전문 인쇄","기존 판이 있으면 경제적","활자고와 숙련 조판자가 있으면 유리","현지 자산이 추상 손익분기보다 중요"],["가문·사찰 등 분산 작업","승인된 면을 보존","이동 가능한 활자로 변동 기록 대응","기관과 전승 방식이 선택에 영향"]]},
+{"id":"characters-heading","type":"heading","level":2,"text":"한자는 재고 문제를 바꾸지만 활자를 불가능하게 하지 않습니다"},
+{"id":"characters","type":"paragraph","text":"글자 수가 많으면 선별·분류·보관이 큰 운영 과제가 됩니다. 그렇다고 활자가 불가능한 것은 아니며 도자기·목재·금속 활자의 긴 역사가 이를 보여 줍니다. 색인 방식, 상용자와 희귀자 수량, 이체자 관리, 활자함 숙련자를 물으세요. 올바른 비교는 실제 조직 비용과 이익이지 알파벳은 성공하고 한자는 실패한다는 신화가 아닙니다."},
+{"id":"proof-heading","type":"heading","level":2,"text":"교정에서 추상적 장점이 실제 노동을 만납니다"},
+{"id":"proof","type":"paragraph","text":"목판과 활자 모두 교정이 필요합니다. 목판의 작은 오류는 파내고 메울 수 있지만 큰 수정은 재판각이 필요할 수 있습니다. 활자는 틀린 글자를 바꿀 수 있어도 삽입이 간격을 흔들고 모든 면을 확인해야 합니다. 교정쇄, 메움, 교체 활자나 편집 표시를 찾으세요. 완성 인쇄물만 보면 품질을 결정한 노동이 가려집니다."},
+{"id":"museum-heading","type":"heading","level":2,"text":"인쇄박물관 전시 읽는 법"},
+{"id":"museum","type":"list","ordered":true,"items":["전체 목판, 개별 활자, 조판면, 후대 복제품 중 인쇄면을 식별하세요.","재료·연대·출처와 원본·복제품·체험 교구 여부를 확인하세요.","좌우가 뒤집힌 인쇄면과 바른 인쇄물을 찾아 결손 부위를 비교하세요.","필사, 판각·문선, 조판, 먹칠, 인쇄, 건조, 제본, 보관 역할을 따라가세요.","검색도 기술이므로 활자함이나 판목 보관소를 보세요.","글 중심 면, 삽화 면, 수정·재인쇄본을 비교하세요.","유리한 방식을 판단하기 전에 출판 업무를 기록하세요."]},
+{"id":"living-heading","type":"heading","level":2,"text":"루이안 목활자는 얼어붙은 중세 공방이 아닌 살아 있는 전승입니다"},
+{"id":"living","type":"paragraph","text":"유네스코 긴급보호목록은 저장성 루이안에서 족보 편찬·인쇄에 쓰는 목활자를 기록합니다. 글자를 그리고 새겨 조판·인쇄한 뒤 종이를 재단하고 제본하며 해판 후 활자를 재사용합니다. 가족 전승과 특정 사회 목적을 가진 완전한 공정이 이어진다는 증거이지만 모든 역사 공방에 그대로 투영하거나 자료가 언급한 여성과 다른 노동자의 기여를 지우면 안 됩니다."},
+{"id":"evidence-heading","type":"heading","level":2,"text":"원본·복원·시연을 구분하세요"},
+{"id":"evidence","type":"comparison","title":"모두 유효하지만 다른 증거","columns":[{"heading":"역사 유물","items":["문서화된 시대의 재료와 흔적","출처와 보존 이력","불완전하거나 조작 불가할 수 있음"]},{"heading":"복제품·복원","items":["숨은 관계를 보여 줌","가설 공정 시험 가능","현대 해석 선택 포함"]},{"heading":"오늘날의 시연","items":["몸의 기술과 협업 제시","공동체 전승 보존 가능","현재의 실천이지 모든 시대를 그대로 보여 주는 창은 아님"]}]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"이해를 막는 흔한 신화"},
+{"id":"mistakes","type":"list","items":["활자가 즉시 목판을 대체했다는 말","한자가 활자를 쓸모없게 했다는 말","판각 속도만 비교하고 조판·교정·보관·재사용을 무시하기","전통 기술이라는 이유로 현대 체험판을 고대 유물이라 부르기","루이안 족보 공정 하나를 중국 활자사 전체로 보기","선택 이유에서 삽화·판면·기관·독자 수요를 빼기"]},
+{"id":"fit-heading","type":"heading","level":2,"text":"관심에 맞는 박물관 과제를 선택하세요"},
+{"id":"fit","type":"comparison","title":"세 가지 유용한 관람 방식","columns":[{"heading":"기술 우선","items":["도구와 공정 추적","인쇄면과 인쇄물 비교","검색과 교정에 시간 배분"]},{"heading":"책 역사 우선","items":["한 제목을 원고에서 제본까지 추적","판본과 판면 비교","위탁자와 독자 질문"]},{"heading":"살아 있는 유산 우선","items":["숙련 역할과 전승 집중","현재 시연 여부 확인","전승자를 과거의 복제품으로 보지 않기"]}]},
+{"id":"warning","type":"callout","title":"오래된 방문 정보는 현재 운영 증거가 아닙니다","body":"중국인쇄박물관 소개는 소장 범위를 이해하는 데 유용하지만 운영 시간, 입장권, 시연과 입장 방식은 달라질 수 있습니다. 출발 전에 박물관이나 최신 공식 지방 채널에서 확인하세요. 오래된 관광 페이지는 실시간 예약 보장이 아닙니다.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"완전한 비교 메모"},
+{"id":"checklist","type":"list","items":["출판 업무와 예상 재사용","원본·복제품·시연 상태","준비와 조판 단계","오류 발견과 수정 방식","인쇄·제본 역할","보관·검색 부담","이 공방이 이 방식을 쓴 이유를 범위에 맞게 결론 내기"]},
+{"id":"help","type":"callout","title":"Homeground","body":"기술, 고서, 족보, 체험 중 관심사를 알려 주세요. 현지 플래너가 현재 전시실과 시연을 확인하고 관련 공정에 시간을 배분하며 오래된 안내를 근거로 활동을 약속하지 않습니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"공예와 증거 계속 읽기","items":[{"label":"저우청 바이족 홀치기염색 공방 고르기","href":"/ko/guides/zhoucheng-bai-tie-dye-workshop-choice/","description":"원본·시연·관광객 체험 구분을 다른 공예에 적용합니다."},{"label":"리예 진간으로 지방 행정 읽기","href":"/ko/guides/liye-qin-slips-local-government-records/","description":"인쇄 복제와 더 이른 행정 기록 재료를 비교합니다."},{"label":"중국 여행에 가이드가 필요할까요?","href":"/ko/guides/do-you-need-a-tour-guide-in-china/","description":"기술 박물관에 전문 해설이 유용한지 판단합니다."}]},
+{"id":"sources","type":"sources","title":"기관 자료와 이미지 출처","items":[{"label":"중국 목활자 인쇄술","url":"https://ich.unesco.org/en/usl/wooden-movable-type-printing-of-china-00322","publisher":"유네스코 무형문화유산","reviewedAt":"2026-08-12"},{"label":"중국인쇄박물관 소개","url":"https://english.visitbeijing.com.cn/article/47OMvX0dE0F","publisher":"베이징시 문화여유국","reviewedAt":"2026-08-12"},{"label":"대표 이미지: Popolon 촬영 목활자 전시, CC BY-SA 4.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

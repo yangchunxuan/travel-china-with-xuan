@@ -2,121 +2,30 @@ import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = {
   "schemaVersion": "1.0.0",
   "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "두공은 많은 중국 목조건축에서 기둥과 지붕 사이에 층층이 짜인 공포입니다. 전체 골조의 한 부분이지 장식 로고나 모든 옛 건물을 완전 내진으로 만드는 장치가 아닙니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "하중의 길을 따라가기",
-      "body": "멀리서 기둥 격자를 찾고 보, 두공, 도리, 지붕으로 시선을 올립니다. 가까이에서 이음을 보되 채색 부재가 같은 하중을 받는다고 보지 않습니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "하중의 길을 따라가기",
-      "columns": [
-        "부재",
-        "질문",
-        "단정 금지"
-      ],
-      "rows": [
-        [
-          "기단·기둥",
-          "칸 격자가 어디서 시작하나?",
-          "벽이 전체 하중을 받음"
-        ],
-        [
-          "보·인방",
-          "무엇이 기둥을 잇나?",
-          "모든 보가 원재임"
-        ],
-        [
-          "두공",
-          "어떻게 돌출·전달하나?",
-          "시대가 달라도 기능이 같음"
-        ],
-        [
-          "도리·서까래",
-          "지붕을 무엇이 받치나?",
-          "두공만 지탱함"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "건립·수리 안내를 읽습니다.",
-        "전체 입면을 찍습니다.",
-        "모서리 하나를 위로 추적합니다.",
-        "중앙과 모서리를 비교합니다.",
-        "원재·수리·복원을 묻습니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "내진성에는 경계가 필요합니다",
-      "body": "유연한 맞춤 목구조가 회복력에 기여할 수 있지만 특정 건물의 현재 안전이나 두공만의 효과를 증명하지 않습니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "방문 장소를 Homeground에 보내면 현지 담당자가 현재 전시와 보이는 증거를 연결합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "건축유산 계속 읽기",
-      "items": [
-        {
-          "label": "쑤저우 정원 읽기",
-          "href": "/ko/guides/how-to-read-a-suzhou-garden/"
-        },
-        {
-          "label": "병마용 자유 관람",
-          "href": "/ko/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "중국 여행에 가이드가 필요할까",
-          "href": "/ko/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "기관 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Chinese timber-framed architectural craftsmanship",
-          "url": "https://ich.unesco.org/en/RL/chinese-traditional-architectural-craftsmanship-for-timber-framed-structures-00223?RL=00223",
-          "publisher": "UNESCO Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Wooden Structures of Liao Dynasty tentative-list entry",
-          "url": "https://whc.unesco.org/en/tentativelists/5803/",
-          "publisher": "UNESCO World Heritage Centre",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Fogong temple corner dougong by Gisling, CC BY 3.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Fogong_temple_corner_dougong.JPG",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
+    {"id":"lead","type":"lead","text":"두공은 중국의 여러 목조건축에서 중요한 접합부에 쓰이는 층층의 공포 부재입니다. 기둥·보·지붕을 받치는 부재를 연결하지만, 목구조 전체를 두공 하나로 설명할 수는 없습니다. 두공이 보인다고 해서 건물이 오래되었거나 수리되지 않았거나 완전한 내진 성능을 갖췄다는 뜻도 아닙니다. 가장 유용한 관찰법은 하나의 하중 경로를 끝까지 따라간 뒤, 이 건물에 실제로 남은 증거를 확인하는 것입니다."},
+    {"id":"answer","type":"callout","title":"짧은 답: 바닥에서 지붕까지 구조를 읽으세요","body":"기단과 기둥 배열을 찾고, 기둥에서 보와 공포층으로 올라간 다음 도리·서까래·지붕까지 이어 보세요. 지붕 방향이 바뀌는 모서리와 가운데 칸을 비교하고, 마지막에 조각과 단청을 가까이 봅니다. 이렇게 하면 구조적 위치와 장식을 구분하고, 눈에 띄는 공포 한 세트로 건물 전체를 판단하는 실수를 피할 수 있습니다.","tone":"decision"},
+    {"id":"scope-heading","type":"heading","level":2,"text":"두공이 무엇이며, 이 글이 판단하지 않는 것"},
+    {"id":"scope","type":"paragraph","text":"유네스코의 중국 전통 목구조 건축 기술 설명은 기둥, 보, 도리, 인방과 공포를 장부맞춤 등으로 연결되는 구성 요소로 제시합니다. 두공은 이 더 큰 기술 체계의 일부입니다. 형태와 간격, 구조적 역할은 시대·건물 위계·지역·수리 이력에 따라 달라집니다. 사찰 전각, 궁궐 문, 목탑과 현대식 전통풍 정자를 하나의 영구적인 공식으로 읽을 수 없는 이유입니다. 이 글은 관찰법을 설명하며 연대 감정, 구조 안전 진단이나 보존 보고서를 대신하지 않습니다."},
+    {"id":"frame-heading","type":"heading","level":2,"text":"먼저 건물의 구조 문법을 찾으세요"},
+    {"id":"frame","type":"table","caption":"기단에서 지붕까지 읽는 순서","columns":["구역","볼 것","답할 수 있는 질문","증명하지 못하는 것"],"rows":[["기단과 기둥 배열","기둥 줄, 칸 너비, 모서리 위치","주요 골조가 어디서 시작되고 공간이 어떻게 나뉘는가","모든 벽이 비내력벽이라는 주장"],["보와 연결 부재","기둥을 가로지르거나 잇는 부재","칸들이 수평으로 어떻게 연결되는가","보이는 모든 목재가 원래 부재라는 주장"],["공포층","기둥이나 보 위의 받침·첨차·돌출 부재","접합부에서 하중이 어떻게 전달·분산·돌출되는가","단청한 모든 부재가 같은 하중을 받는다는 주장"],["도리와 서까래","지붕을 지지하는 긴 부재와 그 위 경사","공포 위에서 지붕 하중이 어떻게 이어지는가","두공만으로 지붕 전체를 지탱한다는 주장"],["내부 충전과 외피","문, 창, 살창, 기둥 사이 벽","사용 공간이 어떻게 둘러싸이는가","모든 외피가 구조와 무관하다는 주장"],["지붕과 처마","처마 돌출, 귀솟음, 기와 하중, 배수","모서리와 가운데 칸의 구성이 왜 다른가","과장된 지붕 곡선만으로 정확한 연대를 알 수 있다는 주장"]]},
+    {"id":"position-heading","type":"heading","level":2,"text":"기둥 위, 기둥 사이, 모서리의 공포는 위치부터 다릅니다"},
+    {"id":"position","type":"paragraph","text":"크기만 비교하지 말고 먼저 위치를 기록하세요. 기둥 바로 위인지, 기둥 사이 보 위인지, 부재가 방향을 바꾸는 모서리인지 봅니다. 모서리는 두 방향의 처마를 함께 처리하므로 더 빽빽해 보일 수 있습니다. 눈에 보이는 돌출 단계를 세는 것은 묘사에 도움이 되지만, 전문 분류에는 시대별 용어와 가려진 접합 관계가 필요합니다. 전시된 단면도나 수리 도면, 축소 모형이 정면만 보고 추정하는 것보다 믿을 만합니다."},
+    {"id":"field-heading","type":"heading","level":2,"text":"현장에서 10분 동안 보는 방법"},
+    {"id":"workflow","type":"list","ordered":true,"items":["건립 시기, 주요 수리, 재건 여부와 관람 제한을 안내판에서 먼저 확인하세요.","기단·기둥·칸·처마선을 한 장에 담을 만큼 뒤로 물러나 전체 입면을 기록하세요.","가운데 칸 하나를 골라 기단에서 기둥, 공포, 지붕까지 수직 경로를 따라가며 부재 연결을 적으세요.","모서리에서 같은 작업을 반복하고 방향, 돌출, 밀도의 차이를 확인하세요.","가까이에서 접합 형상과 덧칠, 조각, 교체 부재를 구분하세요.","처마에 가려진 관계를 보여 주는 단면도, 모형이나 뒤쪽 노출면을 찾으세요.","원형, 수리, 교체, 재건, 가림, 설명 없음으로 불확실성을 명시하세요."]},
+    {"id":"evidence-heading","type":"heading","level":2,"text":"관찰, 기관 설명, 해석을 분리하세요"},
+    {"id":"evidence","type":"comparison","title":"세 단계의 확실성","columns":[{"heading":"눈으로 확인한 사실","items":["공포가 기둥 바로 위에 있다","모서리에 교차 부재가 더 많다","부위마다 단청 색이나 보존 상태가 다르다"]},{"heading":"기관이 제시한 증거","items":["안내판이 건립 또는 수리 시기를 밝힌다","보존 전시가 교체 부재를 표시한다","실측도가 부재 이름과 관계를 보여 준다"]},{"heading":"해석이 필요한 질문","items":["특정 형식을 선택한 이유","위계와 의례가 설계에 미친 영향","과거 지진 때 한 접합부가 기여한 정도"]}]},
+    {"id":"case-heading","type":"heading","level":2,"text":"잉셴 목탑은 사례이지 전국 공통 모형이 아닙니다"},
+    {"id":"case","type":"paragraph","text":"1056년에 완성된 잉셴 포궁사 석가탑은 중국이 제출한 요대 목조건축 세계유산 잠정목록의 구성 요소입니다. 제출 문서는 팔각형 평면, 여러 층, 내외 골조와 다양한 공포 유형을 설명하므로 층과 모서리를 비교하기 좋은 사례입니다. 그러나 모든 중국 목조건축이 이 체계를 복제했다는 뜻은 아니며, 잠정목록 등재는 세계유산 등재와 다릅니다. 해당 페이지는 당사국이 제출한 근거 있는 가치 주장으로, 현장은 하나의 예외적인 건축물로 읽어야 합니다."},
+    {"id":"myths-heading","type":"heading","level":2,"text":"자주 생기는 네 가지 오해"},
+    {"id":"myths","type":"list","items":["‘못을 하나도 쓰지 않았다’만으로는 설명이 부족합니다. 전통 맞춤은 핵심이지만 실제 건물에는 금속 고정구, 후대 보강과 수리 부재가 있을 수 있습니다.","단수가 많다고 자동으로 더 오래되거나 강하거나 높은 위계인 것은 아닙니다. 연대, 건물 유형과 지역 증거가 필요합니다.","화려한 단청이 구조적 중요성을 뜻하지 않습니다. 장식은 내력·비내력 표면에 모두 적용될 수 있고 후대에 다시 칠했을 수도 있습니다.","지진을 견뎠다는 사실의 원인을 두공 하나로 돌릴 수 없습니다. 전체 형상, 맞춤, 재료 상태, 기초, 유지관리, 기존 손상과 지진 특성이 모두 관련됩니다."]},
+    {"id":"warning","type":"callout","title":"문화유산 해설을 안전 판정으로 바꾸지 마세요","body":"유네스코는 더 넓은 목구조 기술의 유연성과 내진 특성을 설명합니다. 이는 체계를 이해하는 근거이지 개별 건물의 현재 안전을 인증하는 말이 아닙니다. 닿을 수 있어 보여도 부재에 기대거나 올라가거나 시험하지 말고 통제선을 지키세요.","tone":"warning"},
+    {"id":"fit-heading","type":"heading","level":2,"text":"이 방법이 잘 맞는 장소"},
+    {"id":"fit","type":"paragraph","text":"여러 구조 구역이 보이거나 모형이 있는 역사적 전각, 탑, 문 또는 건축박물관에서 유용합니다. 콘크리트 구조를 전통풍 외관으로 감춘 현대 건물, 설명 없이 크게 재건된 전시물, 지붕선만 보이는 장소에서는 효과가 떨어집니다. 그때는 기관이 명시한 내용에 집중하고 외관만으로 숨은 구조를 역추적하지 마세요."},
+    {"id":"checklist-heading","type":"heading","level":2,"text":"현장을 떠날 때 남길 다섯 가지 기록"},
+    {"id":"checklist","type":"list","items":["관찰한 건물·부재와 정확한 위치","현장에 표시된 건립 단계와 수리 이력","기둥에서 공포를 거쳐 지붕으로 이어지는 한 경로","가운데 칸과 모서리의 한 가지 차이","현재 보이는 증거로 답할 수 없는 질문 하나"]},
+    {"id":"help","type":"callout","title":"Homeground","body":"여정에 넣을 건물과 알고 싶은 내용을 알려 주세요. 현지 플래너가 최신 개방 여부를 확인하고 단면 모형이나 설명이 좋은 장소를 우선 골라, 모든 처마가 같은 증거를 준다고 과장하지 않으면서도 관찰 가치가 높은 목구조 한 곳을 일정에 배치할 수 있습니다.","tone":"decision"},
+    {"id":"links","type":"internal-links","title":"건축유산을 더 깊이 읽기","items":[{"label":"쑤저우 정원 읽는 법","href":"/ko/guides/how-to-read-a-suzhou-garden/","description":"정자를 세는 대신 동선, 액자 경관과 차경으로 정원을 읽습니다."},{"label":"병마용 자유여행 가이드","href":"/ko/guides/terracotta-warriors-without-tour/","description":"대형 고고학 유적의 해설과 이동 계획을 분리해 준비합니다."},{"label":"중국 여행에 가이드가 필요할까요?","href":"/ko/guides/do-you-need-a-tour-guide-in-china/","description":"전문 해설의 가치가 큰 곳과 자유 관람이 좋은 곳을 판단합니다."}]},
+    {"id":"sources","type":"sources","title":"기관 자료와 이미지 출처","items":[{"label":"중국 전통 목구조 건축 기술","url":"https://ich.unesco.org/en/RL/chinese-traditional-architectural-craftsmanship-for-timber-framed-structures-00223?RL=00223","publisher":"유네스코 무형문화유산","reviewedAt":"2026-08-12"},{"label":"요대 목조건축 세계유산 잠정목록 페이지","url":"https://whc.unesco.org/en/tentativelists/5803/","publisher":"유네스코 세계유산센터","reviewedAt":"2026-08-12"},{"label":"대표 이미지: Gisling 촬영 포궁사 목탑 모서리 두공, CC BY 3.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Fogong_temple_corner_dougong.JPG","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
   ]
 } as const satisfies StructuredPageBody;
 export default body;
-

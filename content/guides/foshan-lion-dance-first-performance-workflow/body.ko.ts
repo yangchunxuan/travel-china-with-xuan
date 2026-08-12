@@ -1,122 +1,28 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "포산의 유명 장소에 간다고 공연이 보장되지는 않습니다. 프로그램은 바뀌고 야외 공연은 조건에 좌우되며 고주는 여러 형식 중 하나입니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "도시를 건너가기 전에 확인",
-      "body": "공식 채널에서 장소, 날짜, 회차, 입장, 날씨 대책을 확인합니다. 예전 영상은 과거 공연의 증거일 뿐입니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "도시를 건너가기 전에 확인",
-      "columns": [
-        "확인",
-        "이유",
-        "대안"
-      ],
-      "rows": [
-        [
-          "장소",
-          "조묘·기념관·훈련장은 다름",
-          "공식 안내소 문의"
-        ],
-        [
-          "형식",
-          "지상·행진·고주는 공간이 다름",
-          "변경 수용"
-        ],
-        [
-          "날씨",
-          "비와 바람이 장비에 영향",
-          "박물관 대안"
-        ],
-        [
-          "시야",
-          "앞줄이 전체를 가릴 수 있음",
-          "연기자와 악대를 함께 보기"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "머리와 뒤 연기자를 찾습니다.",
-        "눈·입·머리 움직임을 봅니다.",
-        "북·징 신호와 멈춤·착지를 연결합니다.",
-        "고주에서 거리와 체중 이동을 봅니다.",
-        "안전선 밖에 머뭅니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "고주는 관람객 체험이 아닙니다",
-      "body": "높이, 간격, 안전은 훈련팀의 영역이며 이 글은 관람법입니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "날짜와 장소를 보내면 현지 담당자가 현재 운영·전시·프로그램을 확인합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "여행 이어가기",
-      "items": [
-        {
-          "label": "광저우 아침 차 이해",
-          "href": "/ko/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "병마용 자유 관람",
-          "href": "/ko/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "중국 여행에 가이드가 필요할까",
-          "href": "/ko/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "기관 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Lion dance (Guangdong awakening lion)",
-          "url": "https://www.ihchina.cn/project_details/12870",
-          "publisher": "China Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Foshan Ancestral Temple Museum",
-          "url": "https://www.fszumiao.cn/",
-          "publisher": "Foshan Ancestral Temple Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Foshan lion-dance show by Lukwo RuoShuma Simonz, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_FS_%E4%BD%9B%E5%B1%B1_Foshan_%E5%8D%97%E6%B5%B7%E5%8D%80_Nanhai_%E8%A5%BF%E6%A8%B5%E5%B1%B1_Xiqiao_Mountain_%E9%BB%83%E9%A3%9B%E9%B4%BB%E7%8D%85%E8%97%9D%E6%AD%A6%E8%A1%93%E9%A4%A8_Wong_Fei-hong_Lion_Dance_%26_Martial_Arts_School_%E6%93%8D%E5%A0%B4_playground_square_red_%E8%A1%A8%E6%BC%94_show_time_June_2023_Px3_26.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"포산은 광둥식 사자춤인 싱스(醒獅) 전통과 깊이 연결되지만 유명한 주소나 오래된 영상이 방문일 공연을 보장하지는 않습니다. 첫 관람은 두 가지 일로 나누면 좋습니다. 이동 전에 실제 공연을 확인하고, 현장에서는 높은 말뚝을 쓰는 고주(高樁) 점프만 기다리지 말고 머리·꼬리·악사·동선을 하나의 협업으로 봅니다."},
+{"id":"answer","type":"callout","title":"다섯 가지를 확인하고 세 관계를 보세요","body":"출발 전에 장소, 날짜, 회차, 입장 방식, 취소·기상 규정을 장소의 최신 공식 채널에서 확인하세요. 공연에서는 머리와 꼬리 연기자를 함께 따라가고, 움직임을 북·징·심벌즈 신호와 맞춰 보며, 장애물을 탐색·결정·회복의 연속으로 읽습니다. 고주는 어려운 형식 중 하나일 뿐 포산 사자춤의 정의가 아닙니다.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"이 글에서 말하는 ‘포산 사자춤’의 범위"},
+{"id":"scope","type":"paragraph","text":"중국 국가급 무형문화유산 자료는 광둥 싱스를 남사자 계열로 분류하고 포산을 신청 지역으로 적습니다. 무술·무용·음악이 결합된 활동으로 명절과 경축 행사에서 자주 연행된다고 설명합니다. 이는 지역적 연결의 근거이지 모든 공연이 따르는 단일 각본은 아닙니다. 팀과 행사, 장소에 따라 지상 연기, 행진, 벤치, 매화말뚝 등 형식이 달라지고 프로그램이 조정될 수 있습니다. 이 글은 공개 공연 관람을 위한 것이며 훈련 학교 선택이나 곡예 체험을 다루지 않습니다."},
+{"id":"verify-heading","type":"heading","level":2,"text":"도시를 가로지르기 전에 확인할 것"},
+{"id":"verify","type":"table","caption":"공연 확인표","columns":["항목","찾을 근거","중요한 이유","대안"],"rows":[["정확한 장소","공식 주소와 입구명","박물관·기념관·훈련장이 비슷한 이름을 쓸 수 있음","공식 안내 데스크에 문의하거나 중국어 명칭 제시"],["날짜와 회차","방문일이 적힌 공지","정기 일정도 행사나 정비로 변경 가능","박물관 관람안 유지"],["입장","입장권 포함, 별도 예약, 정원 제한 여부","공간 입장이 좌석을 보장하지 않음","확인 후에만 일찍 도착"],["형식","지상·행진·무대·고주","공연 시간과 시야가 달라짐","확정된 형식을 존중하고 고주를 요구하지 않기"],["날씨 규정","취소 또는 장소 변경 안내","바람과 젖은 기구는 야외 공연에 영향","실내 문화 장소로 전환"],["최종 업데이트","게시일과 현재 연락처","검색 요약과 영상은 빨리 낡음","출발 당일 오전 재확인"]]},
+{"id":"sources-heading","type":"heading","level":2,"text":"어떤 일정 정보가 믿을 만한가"},
+{"id":"sources-order","type":"list","ordered":true,"items":["장소 공식 홈페이지, 인증 계정이나 현장 게시판의 날짜가 있는 공지를 우선하세요.","공지 내용이 모호하면 장소에 직접 묻고 서면 답변이나 통화 시각을 저장하세요.","공식 예매처도 장소와 회차가 정확히 일치할 때만 사용하세요.","지도 영업정보, 여행기와 짧은 영상은 탐색 단서일 뿐 확인 근거가 아닙니다.","두 최신 공식 채널이 충돌하면 공연을 확정하지 말고 장소에 재문의하거나 대안을 택하세요."]},
+{"id":"read-heading","type":"heading","level":2,"text":"모든 관습을 몰라도 공연 흐름을 읽는 법"},
+{"id":"read","type":"table","caption":"공연을 층별로 보기","columns":["층","볼 것","드러나는 것"],"rows":[["사자 몸","두 사람이 하나의 척추·무게·방향을 유지하는 방식","의상 아래 숨은 협업"],["머리 표정","눈·귀·입·기울기·멈춤","고정 번역 없이도 읽히는 관심과 성격"],["발놀림","시험 발걸음, 웅크림, 회전, 착지","화려한 동작 전의 무술 훈련과 준비"],["음악","북 구절 변화와 징·심벌즈의 강세","배경음이 아닌 타이밍·긴장·전환 신호"],["동선과 기구","접근·점검·실행·후퇴","문제를 만들고 해결하는 방식"],["관객 경계","통제선, 직원 지시와 공연 공간","관람과 안전 통제의 경계"]]},
+{"id":"poles-heading","type":"heading","level":2,"text":"고주 공연은 높이가 아니라 판단의 연속입니다"},
+{"id":"poles","type":"paragraph","text":"말뚝을 쓰는 공연에서도 높이만 보지 마세요. 사자가 간격을 살피고 두 연기자가 정렬하며, 도약 전 몸을 압축하고 하나의 몸처럼 착지한 뒤 다음 동작 전에 균형을 회복하는 과정을 봅니다. 멈춤은 주저나 실패가 아니라 성격 표현과 위험 관리일 수 있습니다. 착지면과 악사가 함께 보이는 위치가 좋으며, 말뚝 꼭대기가 가려지는 맨 앞줄보다 옆이나 조금 높은 곳이 낫습니다. 영상으로 높이를 추정하거나 따라 하지 마세요."},
+{"id":"symbols-heading","type":"heading","level":2,"text":"이야기는 읽되 보편적 해석을 만들지 마세요"},
+{"id":"symbols","type":"paragraph","text":"무형유산 자료는 남권을 선보이는 ‘카이좡’ 뒤 사자가 등장하고 축제 공연과 차이칭이 이어진다고 설명합니다. 개별 공연은 탐색, 시험, 놀이, 도전이나 보상을 표현할 수 있지만 소품과 의미는 달라집니다. 먼저 접근·후퇴·조작·드러남처럼 실제 동작을 기록한 뒤 프로그램이나 공식 해설로 현지 명칭을 확인하세요. 출처 없는 도표로 모든 색과 몸짓에 전국 공통 의미를 붙이지 마세요."},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"첫 관람에서 자주 실패하는 지점"},
+{"id":"mistakes","type":"list","items":["몇 년 전 시간표를 믿고 갔다가 공연이 없는 경우","입장권에 공연이나 지정석이 자동 포함된다고 생각하는 경우","중국의 모든 사자춤을 포산식이라고 부르거나 남사자와 북사자를 섞는 경우","머리만 보느라 꼬리 연기자의 발과 악사의 신호를 놓치는 경우","통로를 막고 플래시를 쓰거나 아이·셀카봉을 통제선 너머로 내미는 경우","고주가 취소됐다는 이유로 완성도 높은 지상 연기를 열등하게 보는 경우"]},
+{"id":"fit-heading","type":"heading","level":2,"text":"목적에 맞게 관람을 선택하세요"},
+{"id":"fit","type":"comparison","title":"공연 우선인가, 문화 맥락 우선인가?","columns":[{"heading":"공연 우선","items":["당일 공식 회차 확인 완료","여유 있게 도착 가능","큰 타악기 소리·인파·입석 시야 수용 가능"]},{"heading":"문화 관람 우선","items":["현재 회차를 확인할 수 없음","날씨나 이동성이 기구 구역에 부적합","볼거리보다 의상·무술·지역사가 더 중요"]},{"heading":"일정의 축으로 삼지 않기","items":["불확실한 한 회차에 환승이 달려 있음","어린이나 동행자가 큰 타악기 소리를 힘들어함","보장 좌석이나 접근성이 필요하지만 미확인"]}]},
+{"id":"warning","type":"callout","title":"기구는 훈련받은 팀만 사용합니다","body":"고주, 벤치와 점프에는 전문 훈련, 장비 점검과 통제 공간이 필요합니다. 통제선 밖에 머물고 직원 지시를 따르며 사진을 위해 동작 반복을 요구하지 마세요. 안전상 프로그램이 바뀌면 현장 판단을 존중하세요.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"출발 전에 저장할 체크리스트"},
+{"id":"checklist","type":"list","items":["장소의 중국어 이름, 정확한 입구와 공식 연락처","날짜가 있는 회차 확인과 입장권 포함 범위","날씨나 취소 시 대안","연기자·기구·악사가 함께 보이는 위치","큰 타악기에 민감한 사람을 위한 청력 보호","지연이 하루를 망치지 않도록 다음 이동까지 여유"]},
+{"id":"help","type":"callout","title":"Homeground","body":"날짜, 숙소 지역, 공연·박물관 맥락·무술사 중 무엇이 중요한지 알려 주세요. 현지 플래너가 최신 공식 공지를 확인하고 현실적인 포산 동선에 연결하며, 확인되지 않은 고주 공연을 약속하지 않고도 프로그램 변경에 대비한 가치 있는 대안을 마련할 수 있습니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"광둥 문화 체험 계속 계획하기","items":[{"label":"광저우 아침 차 이용법","href":"/ko/guides/how-guangzhou-morning-tea-works/","description":"체크리스트가 아니라 실제 서비스 흐름으로 또 다른 광둥 문화를 경험합니다."},{"label":"중국에서 첫 공동 식사 주문하기","href":"/ko/guides/first-shared-meal-in-china/","description":"공연 뒤 양을 과하게 시키지 않고 균형 잡힌 식탁을 만듭니다."},{"label":"중국 여행에 가이드가 필요할까요?","href":"/ko/guides/do-you-need-a-tour-guide-in-china/","description":"현장 확인과 문화 해설이 현지 도움의 가치를 만드는지 판단합니다."}]},
+{"id":"sources","type":"sources","title":"기관 자료와 이미지 출처","items":[{"label":"사자춤(광둥 싱스)","url":"https://www.ihchina.cn/project_details/12870","publisher":"중국 무형문화유산망","reviewedAt":"2026-08-12"},{"label":"포산 조묘박물관","url":"https://www.fszumiao.cn/","publisher":"포산 조묘박물관","reviewedAt":"2026-08-12"},{"label":"대표 이미지: Lukwo RuoShuma Simonz 촬영 포산 사자춤, CC BY-SA 4.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_FS_%E4%BD%9B%E5%B1%B1_Foshan_%E5%8D%97%E6%B5%B7%E5%8D%80_Nanhai_%E8%A5%BF%E6%A8%B5%E5%B1%B1_Xiqiao_Mountain_%E9%BB%83%E9%A3%9B%E9%B4%BB%E7%8D%85%E8%97%9D%E6%AD%A6%E8%A1%93%E9%A4%A8_Wong_Fei-hong_Lion_Dance_%26_Martial_Arts_School_%E6%93%8D%E5%A0%B4_playground_square_red_%E8%A1%A8%E6%BC%94_show_time_June_2023_Px3_26.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

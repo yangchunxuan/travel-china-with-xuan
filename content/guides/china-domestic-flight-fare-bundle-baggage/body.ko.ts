@@ -1,162 +1,72 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "검색 화면의 최저 국내선 운임이 실제로 가장 싼 표는 아닐 수 있습니다. 중국 민항 당국은 상품마다 환불, 변경, 수하물 조건이 다르므로 확인하라고 안내합니다. 여행자 수, 짐, 좌석, 최종 결제액과 도착 이후 연동된 예약의 변경 비용까지 같은 기준으로 비교하세요."
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "같은 기준으로 비교하기",
-      "columns": [
-        {
-          "heading": "필수",
-          "body": "일행이 실제로 가져갈 위탁·기내 수하물."
-        },
-        {
-          "heading": "위험",
-          "body": "현실적인 결정 시점의 환불·변경 조건."
-        },
-        {
-          "heading": "의존성",
-          "body": "정시 도착에 달린 숙소, 열차, 입장권 가치."
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "상품 조건도 가격입니다"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "중국 여객 서비스 규정은 항공사가 변경, 환불, 수하물 운송 조건을 공개하도록 합니다. 모든 항공사와 운임에 같은 무료 허용량을 정하지는 않습니다. 항공사 전체 요약보다 특정 상품과 날짜에 표시된 조건을 기록하세요."
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "공정한 운임 비교",
-      "columns": [
-        "항목",
-        "기록할 것",
-        "가정하지 말 것"
-      ],
-      "rows": [
-        [
-          "기본 운임과 세금",
-          "같은 통화의 최종 결제액.",
-          "검색 카드 숫자가 최종가."
-        ],
-        [
-          "수하물과 좌석",
-          "해당 승객의 상품에 포함된 것.",
-          "모든 일반석 허용량이 같음."
-        ],
-        [
-          "변경·환불",
-          "관련 시간대의 수수료와 운임 차액.",
-          "유연 상품은 변경이 무료."
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "캡처 화면은 빨리 낡습니다",
-      "body": "개인 결정용으로 날짜와 함께 보관할 수 있지만 영구 공개 운임표로 만들지 마세요. 상품과 조건은 바뀝니다."
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "결제 전 비교"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "검색 결과가 아니라 정확한 상품 조건을 확인합니다.",
-        "모든 여행자의 짐, 좌석, 결제비를 더합니다.",
-        "가능한 변경 시점의 규정을 읽습니다.",
-        "도착에 의존하는 예약 가치를 더합니다.",
-        "표시 최저가가 아닌 위험 조정 총비용을 고릅니다."
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "안전하게 절약할 곳"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "비싼 다음 일정을 위험에 놓는 경직된 운임보다 선택 좌석이나 불필요한 짐을 먼저 줄이세요. 도착 뒤 고정 예약이 없다면 유연성 가치는 낮을 수 있습니다."
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "실시간 운임표가 아닙니다",
-      "body": "현재 가격, 항공사 순위, 수하물 허용량을 약속하지 않습니다. 결제 단계의 조건을 다시 확인하세요."
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "운임 비교를 검토받고 싶나요?",
-      "body": "날짜, 인원, 예산, 수하물과 개인정보를 제거한 상품 조건을 남겨 주세요."
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "다음 계획",
-      "items": [
-        {
-          "label": "별도 발권 위험 확인",
-          "href": "/ko/guides/china-separate-flight-tickets-self-transfer-risk/",
-          "description": "저렴한 묶음도 다음 여정을 위험에 둘 수 있습니다."
-        },
-        {
-          "label": "중국 여행 비용 이해",
-          "href": "/ko/guides/how-much-does-a-china-trip-cost/",
-          "description": "항공 선택을 전체 예산 안에서 보세요."
-        },
-        {
-          "label": "동선을 바꾸는 항공편 비교",
-          "href": "/ko/guides/china-open-jaw-flights-route-planning/",
-          "description": "더 비싼 표가 큰 왕복 비용을 없앨 수 있습니다."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "항공권 구매 안내",
-          "url": "https://app.caac.gov.cn/INDEX/HLFW/HKLXCS/",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "항공 발권 서비스 개선 통지",
-          "url": "https://www.caac.gov.cn/XXGK/XXGK/ZFGW/201807/t20180717_189399.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "중국 국내선 검색 화면에서 가장 싼 가격이 실제로 쓸 수 있는 가장 저렴한 항공권은 아닙니다. 같은 승객을 기준으로 최종 결제액, 위탁·기내 수하물, 꼭 필요한 좌석, 변경·환불 조건, 늦게 도착해 다음 예약을 놓칠 때의 손실을 함께 비교하세요. 결제 화면에서 이 다섯 가지가 확인된 뒤에만 구매하는 편이 안전합니다." },
+  { id: "quick-choice", type: "comparison", title: "어떤 운임이 이번 여행에 맞을까요?", columns: [
+    { heading: "최소 구성 운임", body: "모두 짐이 적고 날짜가 확정됐으며 도착 뒤 비싼 고정 예약이 없을 때 합리적입니다." },
+    { heading: "수하물 포함 운임", body: "여러 명이 위탁 수하물을 쓰고 추가 요금이 표시 가격의 이점을 없앨 때 비교가 단순해집니다." },
+    { heading: "유연한 운임", body: "국제선 출국, 지정 열차, 행사 또는 환불 불가 숙박을 지켜야 할 때 가치를 따져 볼 만합니다." }
+  ] },
+  { id: "official-rules-heading", type: "heading", level: 2, text: "왜 정확한 상품 조건을 봐야 하나요?" },
+  { id: "official-rules", type: "paragraph", text: "중국 민용항공국의 여객 서비스 규정은 판매자가 여러 항공편의 연결 여부, 적용 운임과 항공권 사용 조건, 수하물 크기·무게·무료 허용량 등을 고지하도록 합니다. 그러나 모든 항공사와 운임에 적용되는 하나의 수하물 허용량이나 변경 수수료를 정하지는 않습니다. 따라서 실제 비교 기준은 현재 운송약관과 결제 화면의 해당 운임 규칙입니다." },
+  { id: "basket-heading", type: "heading", level: 2, text: "같은 비교 바구니 만들기" },
+  { id: "basket", type: "table", caption: "모든 선택지에서 같은 항목을 기록하세요", columns: ["항목", "기록할 내용", "흔한 오류"], rows: [
+    ["항공권 총액", "한 통화로 본 운임, 세금, 피할 수 없는 결제 비용", "검색 카드 가격과 다른 상품의 결제액 비교"],
+    ["위탁 수하물", "승객별·방향별 개수, 무게, 크기와 가격", "추가 수하물 하나가 일행 전체나 왕복을 포함한다고 가정"],
+    ["기내 수하물", "해당 운임의 개수, 크기와 무게 제한", "기내와 위탁 수하물 허용량을 혼동"],
+    ["좌석 필요", "보호자와 아이 동석처럼 실제 문제를 해결하는 좌석만", "가치를 따지지 않고 모든 부가 서비스를 추가"],
+    ["변경·환불", "수수료, 운임 차액, 시간 구간, 노쇼 처리와 신청 채널", "‘변경 가능’을 ‘무료 변경’으로 이해"],
+    ["도착 후 의존 일정", "다음 고정 예약의 대체 비용 또는 잃는 가치", "표시 운임이 비슷하다는 이유로 도착 위험을 무시"]
+  ] },
+  { id: "checkout-heading", type: "heading", level: 2, text: "결제 전 일곱 단계 점검" },
+  { id: "checkout", type: "list", ordered: true, items: [
+    "모든 승객과 왕복 방향을 입력한 뒤 비교하세요. 편도 유인 가격은 전체 비용이 아닙니다.",
+    "공항, 터미널, 실제 운항사와 날짜를 확인하세요. 비슷한 도시·공항 이름은 서로 바꿀 수 없습니다.",
+    "구매할 상품의 운임 조건을 열고 실제로 문제가 될 수 있는 시간 구간의 자발적 변경·환불 계산법을 기록하세요.",
+    "실제로 가져갈 짐을 추가하고 기내와 위탁 수하물을 모두 확인하세요. 운임 상품 이름만으로 허용량을 추정하지 마세요.",
+    "필요한 좌석과 서비스만 추가하세요. 중요한 서비스라면 요청 상태가 아니라 확정됐는지 확인하세요.",
+    "여러 항공편이 함께 표시되면 판매자가 연결편으로 명확히 고지하는지 확인하세요. 아니라면 결제 전에 셀프 환승 위험을 별도로 평가하세요.",
+    "구매 후 확인서, 항공권 번호와 날짜가 표시된 적용 조건을 보관하세요. 검색 화면 캡처는 계약 내용을 증명하지 못합니다."
+  ] },
+  { id: "example-heading", type: "heading", level: 2, text: "계획 예시: 저가 운임 뒤 지정 열차" },
+  { id: "example", type: "callout", tone: "neutral", title: "가상의 가격이 아니라 결과를 비교하세요", body: "운임 A는 위탁 수하물이 빠지고 자발적 변경 제약이 크며, 운임 B는 수하물을 포함하고 조건이 더 실용적이라고 가정해 보세요. 도착 뒤 일정이 바꿀 수 있는 호텔 저녁뿐이라면 추가 항목을 넣어도 A가 유리할 수 있습니다. 그러나 지정 열차를 이어 타고 그 열차를 놓치면 첫 숙박까지 잃는다면 B의 유연성에는 실제 가치가 있습니다. 반드시 본인 날짜에 표시되는 가격과 규칙으로 계산하세요." },
+  { id: "risk-heading", type: "heading", level: 2, text: "더 많은 보호가 필요한 경우" },
+  { id: "risk", type: "list", ordered: false, items: [
+    "국제선 출국 전 마지막 중국 국내선입니다.",
+    "같은 날 별도 발권 항공편이나 지정 열차를 이어 탑니다.",
+    "환불 불가 행사, 허가, 크루즈 또는 시간 지정 관광지가 도착에 달려 있습니다.",
+    "여권, 비자, 업무 일정 또는 건강 관련 결정이 확정되지 않아 날짜가 바뀔 수 있습니다.",
+    "위탁 수하물이 많거나 어린이·이동 제약이 있어 막판 재예약이 더 어렵습니다."
+  ] },
+  { id: "disruption-heading", type: "heading", level: 2, text: "항공편이 변경되거나 취소됐을 때" },
+  { id: "disruption", type: "list", ordered: true, items: [
+    "운항사 알림을 읽고 항공사나 공항에서 상태를 확인하세요. 출처 불명의 전달 화면만 보고 처리하지 마세요.",
+    "자발적 변경인지 비자발적 변경인지 구분하세요. 민항 규정은 둘을 나누며 가능한 조치도 다를 수 있습니다.",
+    "대체편을 수락하기 전에 도착 공항, 터미널과 모든 후속 예약을 다시 확인하세요.",
+    "주문에 안내된 채널로 판매자 또는 운항사에 연락하고 주문 번호와 서면 알림을 보관하세요.",
+    "새 도착 시간이 별도 계약인 열차·숙소·항공편을 깨뜨리면 해당 업체에도 연락하세요. 한 운항사의 조치가 다른 계약을 자동 변경하지 않습니다.",
+    "책임 업체나 보험사에 처리를 요청하려면 영수증과 기록을 보관하세요. 약관 확인 전 보상을 당연하게 여기지 마세요."
+  ] },
+  { id: "failure-table", type: "table", caption: "결제를 멈춰야 할 신호", columns: ["신호", "중요한 이유", "더 나은 행동"], rows: [
+    ["수하물 규칙이 일반 도움말에만 있음", "정확한 운임은 다를 수 있음", "상품에 연결된 규칙을 열거나 결제 전에 문의"],
+    ["두 항공편이 함께 보이지만 연결편 확인이 없음", "앞편 이상에도 뒷표는 그대로일 수 있음", "셀프 환승 검사를 하고 보호되는 연결편과 비교"],
+    ["공항 코드나 터미널이 계획과 다름", "지상 이동이 절약액을 없앨 수 있음", "문에서 문까지 다시 계산"],
+    ["변경 가능이지만 비용이 불명확", "운임 차액이나 시간대 수수료가 남을 수 있음", "실제 계산식을 확인하거나 더 명확한 상품 선택"],
+    ["도착 직후 비싼 고정 일정", "최저 운임이 단일 실패 지점이 됨", "후속 예약을 옮기거나 전날 이동하거나 적절한 보호 구매"]
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "다른 선택을 해야 할 때" },
+  { id: "switch-rule", type: "paragraph", text: "모든 항목을 더해도 최소 구성 운임이 낮고 일정이 변경을 흡수할 수 있다면 그것을 고르세요. 부가 비용이 차이를 줄이거나 운항 이상 시 손실이 훨씬 크다면 포함 서비스나 유연성이 높은 운임이 낫습니다. 어느 운임도 안전한 도착 계획을 만들지 못하면 상품 이름에서 확실성을 사려 하지 말고 이동일이나 교통 구조를 바꾸세요." },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "운임 상품은 바뀝니다", body: "결제 시점에 정확한 운항사, 판매자, 항공편과 날짜를 다시 확인하세요. 수하물 제한, 수수료, 변경·환불 규칙과 부가 서비스 가격은 달라질 수 있어 이 글은 영구적인 항공사 비교표를 만들지 않습니다." },
+  { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 중국 국내선 운임 묶음 비교만 다룹니다. 항공사 순위, 실시간 운임, 수하물 허용량 보장, 공항별 이동 또는 셀프 환승 위험 설명을 대신하지 않습니다." },
+  { id: "help-cta", type: "callout", tone: "decision", title: "두 운임 바구니를 비교할까요?", body: "개인정보를 지운 결제 조건, 여행일, 승객 수, 실제 수하물과 다음 고정 예약을 보내 주세요. 이름, 여권 번호, 항공권 번호나 결제 정보는 보내지 마세요." },
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "별도 항공권 셀프 환승 위험 확인", href: "/ko/guides/china-separate-flight-tickets-self-transfer-risk/", description: "저렴한 운임도 다음 여정을 위험에 노출할 수 있습니다." },
+    { label: "중국 여행 전체 비용 이해", href: "/ko/guides/how-much-does-a-china-trip-cost/", description: "항공편 결정을 전체 예산 안에서 보세요." },
+    { label: "오픈조 항공편의 동선 가치 비교", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "더 비싼 항공권이 큰 되돌아가기를 없앨 수 있습니다." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "공공항공운송 여객서비스 관리규정", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },
+    { label: "민항 여행 항공권 안내", url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },
+    { label: "2026년 7월 1일 시행 중화인민공화국 민용항공법", url: "https://www.caac.gov.cn/XXGK/XXGK/FLFG/202512/t20251227_229597.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;

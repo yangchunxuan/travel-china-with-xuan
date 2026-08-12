@@ -7,6 +7,13 @@
 - Fact boundary: live rules are attributed to the exact authority, device, carrier, venue, transport mode or document process covered by the cited source. No universal promise is inferred.
 - Internal-link boundary: payment setup stays in the published payment guide; this article links to it rather than duplicating setup instructions.
 
+## Depth review — 2026-08-12
+
+- Rebuilt the guide around capability selection rather than the product label: data, mainland number, ordinary voice/SMS, home-number continuity, hotspot and device compatibility.
+- Added exact-device auditing, purchase questions, separate travel-eSIM and mainland-SIM setup flows, dual-line charge controls, capability-by-capability testing and symptom-based recovery.
+- Kept the distinction between a worldwide-provider travel eSIM and a mainland-carrier eSIM explicit. Apple's current mainland-carrier limitation is not generalised to Android or to travel data products.
+- App and website reachability remains provider- and route-specific. The guide makes no circumvention promise and recommends checking live product terms.
+
 ## Official sources
 
 - Ministry of Industry and Information Technology: [MIIT real-name registration rules (2026 republication)](https://sdca.miit.gov.cn/zwgk/fgbz/art/2026/art_9b270ddb59cc4643b0a9c6811c4e750d.html) — reviewed 2026-08-12

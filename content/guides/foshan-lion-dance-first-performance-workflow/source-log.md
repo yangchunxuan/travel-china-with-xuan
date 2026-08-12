@@ -1,8 +1,14 @@
 # Source log — foshan-lion-dance-first-performance-workflow
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: verifying and reading a first public Foshan awakening-lion performance; no training, stunt instruction or guaranteed schedule added.
+- The national ICH record supports the southern-lion, martial-arts, dance and music context. Venue schedules remain dynamic and require same-date official confirmation.
+- Added a source hierarchy, performance verification table, head–tail–music reading method, bounded caiqing interpretation, high-pole decision sequence, accessibility/sensory fit and cancellation recovery in corresponding EN/ZH/KO blocks.
 
 ## Core institutional sources
 

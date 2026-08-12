@@ -1,162 +1,76 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "두 운임의 합이 작다고 셀프 환승이 싼 것은 아닙니다. 중국 민항 당국은 비연결 구간이 별도로 발권되고 각 조건을 따른다고 안내합니다. 첫 항공편이 바뀌었을 때 잃을 수 있는 다음 항공권, 숙소, 입장권과 국제선 출국 일정을 절약액과 비교하세요."
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "세 층을 계산하세요",
-      "columns": [
-        {
-          "heading": "현금 절약",
-          "body": "수하물과 좌석을 포함한 최종 결제액을 씁니다."
-        },
-        {
-          "heading": "실패 노출",
-          "body": "두 번째 항공편에 달린 환불 불가 가치를 더합니다."
-        },
-        {
-          "heading": "회복 시간",
-          "body": "더 늦은 항공편이나 1박 대안이 있는지 봅니다."
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "보호의 틈은 명확합니다"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "민항 당국은 별도 발권된 비연결 항공편이 보통 둘 이상의 운송계약을 만들며 한 구간의 변경이 다른 구간을 자동으로 바꾸지 않는다고 설명합니다. 각 항공사의 조건을 따르므로 보수적으로 계획해야 하지만 전국 공통 안전 시간을 만들 수는 없습니다."
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "절약이 실제인 경우",
-      "columns": [
-        "상황",
-        "기본 판단",
-        "이유"
-      ],
-      "rows": [
-        [
-          "같은 공항, 기내 짐, 다음 날 유연",
-          "가능할 수 있음.",
-          "실패 단계와 노출 가치가 작습니다."
-        ],
-        [
-          "위탁 수하물 또는 터미널 불확실",
-          "넓은 여유 필요.",
-          "수하물 수령과 재수속이 추가됩니다."
-        ],
-        [
-          "공항 변경 또는 국제선 출국",
-          "1박 또는 보호 항공권 우선.",
-          "회복이 어렵고 손실이 큽니다."
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "항공사의 최소 연결 시간을 그대로 적용하지 마세요",
-      "body": "그 시간은 보호된 연결과 특정 터미널 절차에만 적용될 수 있으며 별도 발권의 안전을 증명하지 않습니다."
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "셀프 환승 검사"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "두 구간이 하나의 항공권인지 확인합니다.",
-        "수하물, 입국, 터미널, 공항 변경을 표시합니다.",
-        "두 번째 편을 놓치면 잃는 예약을 합칩니다.",
-        "계획편이 아닌 마지막 회복편을 찾습니다.",
-        "손실 상한이 절약보다 크면 1박합니다."
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "먼저 뺄 것"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "국제선 출국 여유보다 셀프 환승을 먼저 빼세요. 작은 절약 때문에 전체 여행을 보호 없는 도착에 걸지 마세요."
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "공통 안전 시간은 없습니다",
-      "body": "공항, 짐, 여권, 터미널, 항공사와 날짜에 따라 다르며 실시간 항공편이나 법률 조언을 제공하지 않습니다."
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "위험 노출을 검토받고 싶나요?",
-      "body": "날짜, 인원, 예산, 공항, 수하물과 개인정보를 가린 발권 화면을 남겨 주세요."
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "다음 계획",
-      "items": [
-        {
-          "label": "국제선 출국 전 마지막 밤 보호",
-          "href": "/ko/guides/china-last-night-before-international-flight/",
-          "description": "셀프 환승이 마지막 단일 실패 지점이 되지 않게 하세요."
-        },
-        {
-          "label": "상하이의 정확한 공항 확인",
-          "href": "/ko/guides/shanghai-pudong-or-hongqiao-airport/",
-          "description": "공항 변경은 일반 환승이 아닙니다."
-        },
-        {
-          "label": "중국 국내선 운임 묶음 비교",
-          "href": "/ko/guides/china-domestic-flight-fare-bundle-baggage/",
-          "description": "수하물과 변경 조건을 넣은 뒤 가격을 비교하세요."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "항공권 구매 안내",
-          "url": "https://app.caac.gov.cn/INDEX/HLFW/HKLXCS/",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "공공 항공 여객 서비스 규정",
-          "url": "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "판매자와 운항사가 보호되는 연결 여정이라고 명확히 확인하지 않는 한 별도 발권 항공편은 독립된 두 여행으로 보세요. 첫 항공편이 바뀌어도 두 번째 표는 그대로 남아 쓸 수 없게 될 수 있습니다. 계약 사이의 빈틈을 일반적인 최소 환승 시간으로 메우지 마세요. 같은 날 의존을 없애거나 실제 복구 가능한 여유를 만들거나 연결을 보호하는 여정을 구매하세요." },
+  { id: "quick-choice", type: "comparison", title: "연결 구조 선택", columns: [
+    { heading: "보호되는 연결 여정", body: "다음 항공편을 놓치면 국제선 출국, 행사 또는 비싼 환불 불가 예약이 위험할 때 우선하세요." },
+    { heading: "별도 항공권+1박", body: "첫 도시에서 보낼 가치가 있고 다음 날 항공편에 복구 시간이 충분할 때 대체로 방어 가능합니다." },
+    { heading: "당일 셀프 환승", body: "짐, 수속, 공항 지리, 마지막 대안과 실패 비용을 모두 검사한 뒤에만 사용하세요." }
+  ] },
+  { id: "official-heading", type: "heading", level: 2, text: "‘함께 판매’는 하나의 계약을 증명하지 않습니다" },
+  { id: "official", type: "paragraph", text: "중국민용항공국 안내는 같은 항공권 번호에 있는 두 편 이상의 항공편을 연결 여정으로 설명하고, 여러 항공편을 예약할 때 판매자가 연결편 여부를 알려야 한다고 합니다. 비연결 항공편은 일반적으로 별도 계약으로 독립 발권되며 한 편의 문제가 다른 표를 자동 변경하지 않고 각 표는 해당 운항사 조건을 따릅니다. 결제 전에 서면으로 구조를 확인하세요. 하나의 결제 화면이나 대행사 주문 번호만으로는 충분하지 않습니다." },
+  { id: "contract-check-heading", type: "heading", level: 2, text: "무엇을 사는지 확인하세요" },
+  { id: "contract-check", type: "list", ordered: true, items: [
+    "판매자에게 단순 결합 검색이나 셀프 환승 상품이 아니라 실제 연결 여정인지 물으세요.",
+    "항공권 번호와 실제 운항사를 확인하고 서면 상품 설명과 변경·환불 조건을 저장하세요.",
+    "위탁 수하물이 최종 목적지까지 연결되는지 물으세요. 동맹, 공동 브랜드나 공항 구조로 추정하지 마세요.",
+    "첫편 지연·취소로 다음편을 놓치면 판매자나 운항사가 무엇을 하는지 물으세요.",
+    "답이 조건부이거나 불명확하면 별도 계약으로 가격을 계산하고 짐을 찾아 다시 부쳐야 한다고 가정하세요."
+  ] },
+  { id: "risk-map-heading", type: "heading", level: 2, text: "셀프 환승 전체를 지도처럼 펼치세요" },
+  { id: "risk-map", type: "table", caption: "환승은 하나의 시간 차이가 아니라 여러 관문입니다", columns: ["단계", "확인할 것", "실패 결과"], rows: [
+    ["첫편 도착", "도착 공항·터미널과 실제 지연 위험", "터미널에 들어가기도 전에 환승 시간이 줄어듦"],
+    ["입국 절차", "여정과 여행 서류상 출입국·세관·보안 절차가 적용되는지", "줄이나 여행 서류 문제로 연결 중단"],
+    ["수하물", "연결 위탁 여부, 아니라면 찾기와 재위탁 마감", "다음 보안 구역이나 수하물 마감에 도달하지 못함"],
+    ["지상 이동", "같은 터미널, 터미널 변경, 공항 변경과 현실적 교통", "교통 체증이나 잘못된 터미널이 여유를 소모"],
+    ["두 번째 체크인", "운항사의 현재 체크인·수하물·게이트 요구", "유효한 표도 마감 뒤에는 쓸 수 없음"],
+    ["복구", "마지막 후속편, 숙소, 입국 자격과 지원 채널", "실패가 비계획 숙박 또는 이후 여정 손실로 이어짐"]
+  ] },
+  { id: "buffer-heading", type: "heading", level: 2, text: "보편 숫자가 아니라 결과로 여유를 만드세요" },
+  { id: "buffer", type: "list", ordered: false, items: [
+    "항공기에서 내리기, 수속, 짐, 이동, 체크인, 보안과 게이트 접근 등 모든 필수 시간을 먼저 넣으세요.",
+    "현재 공항·운항사 정보를 사용해 노선과 계절에 맞는 운영 불확실성을 더하세요.",
+    "다음 가능한 항공편이 드물다면 복구 시간을 더하세요. 명목상 간격이 길어도 대안이 없으면 약합니다.",
+    "위탁 짐, 공항 변경, 어린이, 이동 지원 또는 직원 처리가 필요한 여행 서류가 있으면 보호를 늘리세요.",
+    "실패가 최종 국제선 출국을 위협하면 몇 분을 논쟁하지 말고 첫편을 전날로 옮기세요."
+  ] },
+  { id: "example-heading", type: "heading", level: 2, text: "계획 예시: 한 도시의 두 공항" },
+  { id: "example", type: "callout", tone: "neutral", title: "안전 환승을 약속하지 않는 예시입니다", body: "대행사 주문 하나에 국내선 도착과 국제선 출국이 결합됐지만 항공권 번호가 다르고 같은 도시의 다른 공항을 쓴다고 해 보세요. 화면의 간격은 환승 시간이 아닙니다. 도착, 짐, 지상 이동, 새 체크인, 보안과 두 번째 운항사의 마감을 흡수해야 합니다. 국제선을 놓쳤을 때 손실이 크다면 더 빠듯한 택시 계획보다 출국 공항 근처 1박 또는 보호되는 여정이 대체로 더 견고합니다." },
+  { id: "failure-heading", type: "heading", level: 2, text: "첫 항공편에 문제가 생기면" },
+  { id: "failure", type: "list", ordered: true, items: [
+    "첫 운항사에서 상태를 확인하고 해당 표 조건상 자발적·비자발적 변경인지 구분하세요.",
+    "두 번째 체크인 마감 전에 운항사나 판매자에게 연락해 별도 발권임을 설명하고 유료 또는 재량 선택을 물으세요. 자동 보호를 주장하지 마세요.",
+    "마지막 당일 대안과 1박 후 다음 날 출발을 비교하세요. 원래 순서를 무조건 지키기보다 가치가 가장 큰 다음 약속을 보호하세요.",
+    "대행사가 특정 셀프 환승 보장을 홍보했다면 행동 전에 정확한 자격, 통지와 증빙 요건을 읽으세요.",
+    "판매자, 보험사 또는 책임 업체에 신청할 수 있도록 운항사 메시지, 영수증과 원래 상품 설명을 저장하세요. 보장 여부는 각 약관이 정합니다."
+  ] },
+  { id: "red-flags-heading", type: "heading", level: 2, text: "계획을 바꿔야 할 위험 신호" },
+  { id: "red-flags", type: "table", caption: "낮은 운임이 취약한 연결을 숨기지 않게 하세요", columns: ["신호", "중요한 이유", "더 나은 선택"], rows: [
+    ["판매자가 연결편 여부를 명확히 답하지 못함", "문제 발생 시 책임이 불확실", "확인된 보호를 구매하거나 별도표로 취급"],
+    ["터미널 또는 공항 변경", "지상 이동이 두 계약 밖의 실패 체계를 추가", "1박 또는 같은 공항 사용"],
+    ["위탁 짐과 빠듯한 당일 간격", "짐 찾기와 재위탁에 단단한 마감이 생김", "연결 위탁되는 보호 여정 또는 훨씬 넓은 계획"],
+    ["당일 마지막 후속편", "지연 뒤 같은 날 복구 없음", "더 이른 후속편 또는 1박"],
+    ["다음이 국제선 출국", "국내선 한 번의 이상이 가장 비싼 표를 잃게 함", "전날 출국 도시에 도착"]
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "별도 항공권이 여전히 합리적인 때" },
+  { id: "switch-rule", type: "paragraph", text: "가격이나 동선 이점이 실제이고 여행자가 계약을 이해하며 1박 또는 여러 복구 선택이 있을 때 별도표는 합리적일 수 있습니다. 실패를 감당하기 어렵고 짐이나 공항 이동이 있거나 모든 절차를 자신 있게 완료하기 어렵다면 보호되는 여정을 선택하세요. 이 결정은 용기가 아니라 복구 가능성의 문제입니다." },
+  { id: "booking-checklist", type: "list", ordered: false, items: [
+    "판매자가 연결·비연결 상태를 서면으로 확인했습니다.",
+    "항공권 번호, 공항, 터미널, 실제 운항사와 수하물 처리를 알고 있습니다.",
+    "모든 수속과 운항사 마감이 보수적인 환승 계획 안에 들어갑니다.",
+    "마지막 가능한 대안과 예상 비용을 파악했습니다.",
+    "최종 국제선 출국이 취약한 당일 셀프 환승에 의존하지 않습니다."
+  ] },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "모든 운영기관을 다시 확인하세요", body: "항공사 조건, 터미널 배정, 공항 절차와 판매자 보장은 바뀝니다. 여행 직전에 정확한 표와 날짜를 확인하세요. 이 글은 보편적인 안전 환승 시간이나 법률 의견을 제공하지 않습니다." },
+  { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 별도 발권 항공편의 계약·복구 위험만 다룹니다. 공항별 가이드는 지상 이동, 운임 묶음 가이드는 수하물·유연성 가격, 마지막 밤 가이드는 국제선 전날 이동을 담당합니다." },
+  { id: "help-cta", type: "callout", tone: "decision", title: "셀프 환승을 스트레스 테스트할까요?", body: "개인정보를 지운 항공편 날짜, 공항, 터미널, 발권 구조, 짐과 이후 약속을 보내 주세요. 이름, 여권 번호, 항공권 번호나 결제 자료는 보내지 마세요." },
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "출국 전 마지막 밤 보호", href: "/ko/guides/china-last-night-before-international-flight/", description: "셀프 환승을 마지막 단일 실패 지점으로 만들지 마세요." },
+    { label: "정확한 상하이 공항 확인", href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/", description: "공항 이동은 연결이 아닙니다." },
+    { label: "국내선 운임 묶음 비교", href: "/ko/guides/china-domestic-flight-fare-bundle-baggage/", description: "저렴하다고 판단하기 전에 짐과 변경 조건을 계산하세요." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "연결·비연결 항공편에 대한 민항 안내", url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217590.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },
+    { label: "공공항공운송 여객서비스 관리규정", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;

@@ -1,122 +1,31 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "青铜礼器不只是装饰华丽的容器。器形、耳足、纹饰、铸造和铭文可能指向饮食、礼仪、家族记忆与事件，但必须有标签和研究支持。"
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "按四遍来读",
-      "body": "先认器形，再判断可能任务，然后观察纹饰布局，最后读机构铭文释文。目测相似不能代替来源和古文字研究。",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "按四遍来读",
-      "columns": [
-        "层次",
-        "问题",
-        "边界"
-      ],
-      "rows": [
-        [
-          "器形",
-          "鼎、簋、爵、尊还是其他器类？",
-          "具体年代和使用仍会不同"
-        ],
-        [
-          "功能",
-          "盛食、液体、加热还是陈设？",
-          "礼仪和随葬用途可能重叠"
-        ],
-        [
-          "纹饰",
-          "兽面、动物和扉棱在哪里？",
-          "现代名称不是古人的解释"
-        ],
-        [
-          "铭文",
-          "铸在哪里，释文说什么？",
-          "短族徽与长篇记录是不同证据"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "读完标签和年代范围。",
-        "允许时换角度观察。",
-        "先找口、耳、足，再看纹饰。",
-        "把拓片与释文对照。",
-        "比较另一类器形。"
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "漂亮表面不等于可靠来源",
-      "body": "拍卖说明与未核验帖子不能证明出土语境、真伪或铭文释读。",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "把计划参观地点发给 Homeground。本地真人可连接当前展陈与可见证据，不制造确定性。",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "继续文化遗产阅读",
-      "items": [
-        {
-          "label": "读懂一座苏州园林",
-          "href": "/zh/guides/how-to-read-a-suzhou-garden/"
-        },
-        {
-          "label": "自由行参观兵马俑",
-          "href": "/zh/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "中国旅行需要导游吗",
-          "href": "/zh/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "机构来源与图片署名",
-      "items": [
-        {
-          "label": "Ancient Chinese bronzes",
-          "url": "https://www.shanghaimuseum.cn/mu/frontend/pg/article/id/RI00004046",
-          "publisher": "Shanghai Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Bronze civilization exhibition",
-          "url": "https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202112/t20211230_253354.html",
-          "publisher": "National Museum of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Early Western Zhou Bronze Gui by Gary Todd, CC0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"中国古代青铜礼器不只是一只华丽容器。器形、耳足、盖、铸造、纹饰、考古语境与铭文，会把它连接到饮食、仪式、等级、族氏记忆与历史事件。但联系有多可靠，取决于博物馆标签和研究证据，因此要分层阅读，不要一眼就给纹样配象征。"},
+{"id":"answer","type":"callout","title":"做四轮观察：身份、器形、语境、铭文","body":"先抄博物馆器名、时代、来源和编号；再判断器类与外形特征；随后看墓葬、窖藏或收藏史，并比较共出器物；最后定位铭文，使用机构释文与翻译。器形只能提示功能类别，语境和文字才能缩小历史结论。","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"边界：“青铜礼器”是一个类别，不是一套永恒制度"},
+{"id":"scope","type":"paragraph","text":"上海博物馆把青铜礼器说明为用于祭祀、礼物交换或宴飨的器物，并指出它们与等级和权力有关。但从早期青铜时代到商周及更晚时期，器形组合与铭文习惯不断变化，地方差异也很大。本文聚焦中国古代青铜容器展陈，不声称每件青铜器都是礼器、同一器形永远只有一种用途，也不把后世仿古器等同于有明确出土语境的商周器物。"},
+{"id":"forms-heading","type":"heading","level":2,"text":"先掌握器类，再记几十个名称"},
+{"id":"forms","type":"table","caption":"常见博物馆器类的第一张地图","columns":["器类","可能看到","外形线索","第一个问题"],"rows":[["食器","鼎、簋及相关容器","三足或四足容器；碗形器身、耳或圈足","博物馆说明它承担哪种食物用途？"],["酒器","爵、尊、卣、壶等","流、长器身、盖、提梁或复杂轮廓","用于温、盛、斟还是饮？"],["水器","盘、匜、鉴等","宽盘或倾倒器，有时成组","展陈是否说明盥洗或用水礼仪？"],["乐器","钟、铙等","悬挂结构与成组调音","是否作为有秩序的乐器组合出土？"],["兵器与车马器","戈、剑、车马构件","刃、銎和连接件","它是否适合叫礼器，还是另一青铜类别？"]]},
+{"id":"passes-heading","type":"heading","level":2,"text":"围绕一件器物做四轮深读"},
+{"id":"passes","type":"list","ordered":true,"items":["身份：记录机构器名、朝代或考古分期、年代范围、尺寸、出土地点和藏品编号。","器形：画出口、颈、腹、耳、足与盖，想想怎样放置、提携或配套。","语境：确认是否来自墓葬、窖藏或遗址，共出什么，展柜组合是原始组合还是策展组合。","表面与制作：依据标签区分铸造浮雕、刻划、镶嵌、锈蚀和后世修补，不自行猜测。","铭文：找位置、长度和方向，把可见文字与机构拓片、释文和翻译对应。","结论：分别写一句由器形、语境和铭文支持的话，不让任何一层回答它无法回答的问题。"]},
+{"id":"casting-heading","type":"heading","level":2,"text":"表面能提示铸造，但保存状态会干扰判断"},
+{"id":"casting","type":"paragraph","text":"中国古代青铜器以铸造制成，展厅可能介绍块范、分铸附件、镶嵌与更晚技术。重复纹样、范线或连接痕迹只能提示你去查标签，锈蚀、清理、修补和复杂工艺会让肉眼诊断不可靠。铜锈是材质与经历的结果，不是一张鉴定颜色表；看似平整的博物馆器物也可能包含加固与旧修，应以文档为准。"},
+{"id":"decoration-heading","type":"heading","level":2,"text":"先描述纹饰，再讨论含义"},
+{"id":"decoration","type":"table","caption":"有纪律的纹饰笔记","columns":["步骤","记录","避免"],"rows":[["位置","纹样在带饰、耳、足、盖或通体","不说位置就讨论纹样"],["构成","对称、重复、浮雕、地纹与扉棱","把每条曲线都认作动物"],["机构命名","博物馆使用的兽面、龙、鸟或几何名称","把现代器物学名称当作古代原词"],["比较","一件年代与来源可靠的相关器","使用没有来源的网络图片"],["解释","有来源支持的仪式或政治阅读","声称一个全国通用的“秘密含义”"]]},
+{"id":"inscription-heading","type":"heading","level":2,"text":"铭文既是文字，也是器物的一部分"},
+{"id":"inscription","type":"paragraph","text":"铭文可能在器内、盖下或其他不易看见处，短则涉及族氏或祖先，长则记录事件。上海博物馆说明早期铭文常识别族氏和祖先，周代出现更多较长事件记录。先用机构拓片或增强图定位字形，再分清隶定或释文、今文字形、翻译与历史解释。标点和分段是现代编辑工具，并没有铸在古文中。"},
+{"id":"inscription-evidence","type":"comparison","title":"铭文能支持什么","columns":[{"heading":"文字证据","items":["专家释读的姓名与亲属词","有记载的赏赐、册命或事件","作器与纪念语言"]},{"heading":"语境证据","items":["器物出土地点","组合中的其他器物","考古与比较得出的年代"]},{"heading":"不能自动推断","items":["铭文人名就是铸造者","每句都是中性历史记录","一件器物代表所有等级和地区"]}]},
+{"id":"sets-heading","type":"heading","level":2,"text":"成组器物有时比明星单品更重要"},
+{"id":"sets","type":"paragraph","text":"单件鼎簋很抢眼，但有明确出土关系的组合，能通过重复、配对和尺寸差异呈现饮食礼仪与社会秩序。国家博物馆把鼎与簋列为重要食器，并讨论周代礼制中的列鼎配簋。只有当展览年代和语境吻合时，才能应用这些规则；晚期仿古器、地方组合或没有出土语境的收藏品，不一定符合教科书方案。"},
+{"id":"museum-heading","type":"heading","level":2,"text":"60分钟展厅路线"},
+{"id":"museum","type":"list","items":["先看年代分期，别把所有变化压成“古代中国”。","各选一件食器、一件酒器或水器、一件有铭文器。","每件先花五分钟不读象征，画轮廓与耳足。","找一组可靠出土组合，比较数量、尺寸和位置。","用拓片或数字放大读一段铭文，抄下藏品编号。","最后看地方或较晚时期展柜，检验什么发生了变化。"]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"六种自信但证据薄弱的读法"},
+{"id":"mistakes","type":"list","items":["看到三足青铜器就叫鼎，不核对标签和轮廓。","用现代器名证明一种固定古代用途。","把饕餮等现代学术术语当作古人留下的解释。","以为绿锈自动证明真、老或未经处理。","把来历不明的精美器物当作比出土残片更强的历史证据。","引用铭文翻译，却不写博物馆、编号或研究来源。"]},
+{"id":"warning","type":"callout","title":"视觉自信之前，先看来源","body":"博物馆标签应在已知时区分考古出土、旧藏、征集与后世仿作。外观不能替代来源。不要用本文方法鉴定或购买文物；所有权链、出境法规与专业检测，需要另做专业尽调。","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"一件青铜器的完整笔记"},
+{"id":"checklist","type":"list","items":["博物馆与藏品编号","时代、年代范围与来源","器类与外形轮廓","出土组合或收藏语境","先描述后解释的纹饰","铭文位置、机构释文与翻译","一个有证据的结论与一个明确疑问"]},
+{"id":"help","type":"callout","title":"Homeground","body":"告诉我们博物馆，以及你更关心铸造、礼制、铭文还是早期中国史。当地规划人员可核查当前展厅开放，为一条聚焦器物路线留足时间；只有文字难度和馆藏深度确实值得时，才安排专题讲解。","tone":"decision"},
+{"id":"links","type":"internal-links","title":"继续用证据读遗产","items":[{"label":"从语境理解红山玉器","href":"/zh/guides/hongshan-jade-context-and-symbols/","description":"比较形制与出土语境怎样支持史前解释。"},{"label":"从里耶秦简读地方行政","href":"/zh/guides/liye-qin-slips-local-government-records/","description":"从一件古代文字器物进入一批行政档案。"},{"label":"兵马俑自由行指南","href":"/zh/guides/terracotta-warriors-without-tour/","description":"在大型考古遗址应用证据优先的观看方法。"}]},
+{"id":"sources","type":"sources","title":"机构来源与图片署名","items":[{"label":"中国古代青铜馆","url":"https://www.shanghaimuseum.cn/mu/frontend/pg/article/id/RI00004046","publisher":"上海博物馆","reviewedAt":"2026-08-12"},{"label":"中国古代青铜器展","url":"https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202112/t20211230_253354.html","publisher":"中国国家博物馆","reviewedAt":"2026-08-12"},{"label":"题图：Gary Todd 拍摄的西周早期青铜簋，CC0；已裁切","url":"https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

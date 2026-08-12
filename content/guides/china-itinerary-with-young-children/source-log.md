@@ -1,6 +1,6 @@
-# Source log — China With Young Children: Plan Around the Hardest Hour
+# Source log — China With Young Children: Route Pacing and Transfers
 
-Status: `COPY READY — CENTRAL REVIEW REQUIRED`
+Status: `DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED`
 
 Checked at: 2026-08-12 (Asia/Shanghai)
 
@@ -8,28 +8,27 @@ Canonical owner: `/guides/china-itinerary-with-young-children/`
 
 ## Editorial boundary
 
-This page owns route pacing for families with young children. It does not give medical advice, promise stroller access, or duplicate general rail procedure.
+This page owns family route pacing, transfer workload and recovery design. It does not provide paediatric advice, guarantee accessibility, list attraction age rules or duplicate the first-time rail procedure.
 
-## Sources
+## Official source
 
-### China Railway 12306
+### China Railway 12306 — Child-ticket rules
 
-- Source: Railway child-ticket rules
 - URL: https://kyfw.12306.cn/otn/gonggao/children.html
 - Checked: 2026-08-12
-- Facts used: Current age-based child ticket and seat rules.
-- Boundary: Rules can change and do not describe stroller access.
-- Update trigger: 12306 child-passenger rule change.
+- Facts used: Children aged 6 to under 14 use child discount tickets; each ticketed adult may carry one child under 6 free without a separate seat; age is calculated on travel date; a free child must be declared with the applicable identity document; a separate seat requires the applicable ticket.
+- Boundary: These are railway rules only and do not establish airline or attraction eligibility.
+- Update trigger: Railway child-ticket or identity-document rule change.
 
-## Planning judgments
+## Editorial judgments
 
-- A child's sleep, food, toilet and carrying needs are route inputs, not minor packing details.
-- One stable base can outperform an extra famous city.
-- The correct child rail product must be checked against the current 12306 rules and the seat the family needs.
+- Route design should use the observed child's sleep, food and movement needs, not a generic age template.
+- Count adult hands, luggage and the possibility of carrying a sleeping child at every transfer.
+- One major anchor per day and recovery after each intercity move make the route more recoverable.
+- Eligibility to travel free is separate from whether a dedicated seat is workable for the family.
 
 ## Explicit exclusions
 
-- No live fare, seat, timetable, opening-hour or inventory claim.
-- No complete personalised day-by-day itinerary.
-- No city × day-count × traveller-type index variants.
-- Recheck named operators and official rules near booking.
+- No medical, medication-import or accessibility guarantee.
+- No nationwide stroller-access promise.
+- No personalised day-by-day itinerary.

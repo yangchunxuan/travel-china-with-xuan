@@ -1,10 +1,80 @@
 {
-  "id":"shanghai-where-to-stay-first-trip","type":"planning","pillar":"stay-city-areas","audienceMarkets":["global"],"format":"first-trip-area-decision","topics":["stay","area choice","first trip"],"destinations":["shanghai"],
-  "heroImagePath":"/images/guides/shanghai-where-to-stay-first-trip/hero-1600.webp","heroImageUrl":"https://homegroundchina.com/images/guides/shanghai-where-to-stay-first-trip/hero-1600.webp","imageWidth":1600,"imageHeight":1000,
-  "datePublished":"2026-08-12","dateModified":"2026-08-12","sourceReviewedDate":"2026-08-12","search":{"section":"stay","family":"comparison","primaryIntent":"plan"},"layout":{"mode":"template","templateId":"editorial-v1"},
-  "locales":{
-    "en":{"path":"/guides/shanghai-where-to-stay-first-trip/","title":"Where to Stay in Shanghai for a First Trip: Bund, People’s Square or French Concession?","headline":"Choose a First Shanghai Base by the Days You Will Actually Walk","description":"Compare the Bund, People’s Square and the former French Concession by walking, metro reach, evenings, luggage and crowd trade-offs.","heroAlt":"East Nanjing Road illuminated at night in central Shanghai.","navTitle":"Shanghai first-trip areas","featuredLinkLabel":"Choose a Shanghai base","openGraphLocale":"en_US","cardTags":["Shanghai","First trip","Area choice"]},
-    "zh":{"path":"/zh/guides/shanghai-where-to-stay-first-trip/","title":"第一次去上海住哪里：外滩、人民广场还是原法租界？","headline":"按真正会步行的日程选择上海首站住宿","description":"从步行、轨道覆盖、夜间活动、行李和人流取舍比较外滩、人民广场与原法租界片区。","heroAlt":"夜间亮灯的上海南京东路。","navTitle":"上海首次住宿区","featuredLinkLabel":"选择上海住宿区","openGraphLocale":"zh_CN","cardTags":["上海","第一次", "区域选择"]},
-    "ko":{"path":"/ko/guides/shanghai-where-to-stay-first-trip/","title":"상하이 첫 여행 숙소: 와이탄, 인민광장, 옛 프랑스 조계지?","headline":"실제로 걸을 하루를 기준으로 고르는 상하이 첫 숙소","description":"도보, 지하철 접근, 저녁, 짐과 인파를 기준으로 와이탄·인민광장·옛 프랑스 조계지 일대를 비교합니다.","heroAlt":"밤에 불을 밝힌 상하이 난징둥루.","navTitle":"상하이 첫 숙소 지역","featuredLinkLabel":"상하이 숙소 고르기","openGraphLocale":"ko_KR","cardTags":["상하이","첫 여행","지역 선택"]}
+  "id": "shanghai-where-to-stay-first-trip",
+  "type": "planning",
+  "pillar": "stay-city-areas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "first-trip-area-decision",
+  "topics": [
+    "stay",
+    "area choice",
+    "first trip"
+  ],
+  "destinations": [
+    "shanghai"
+  ],
+  "heroImagePath": "/images/guides/shanghai-where-to-stay-first-trip/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-where-to-stay-first-trip/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "stay",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-where-to-stay-first-trip/",
+      "title": "Where to Stay in Shanghai: Bund, People’s Square or French Concession?",
+      "headline": "Choose a First Shanghai Base by the Days You Will Actually Walk",
+      "description": "Compare the Bund, People’s Square and the former French Concession by walking, metro reach, evenings, luggage and crowd trade-offs.",
+      "heroAlt": "East Nanjing Road illuminated at night in central Shanghai.",
+      "navTitle": "Shanghai first-trip areas",
+      "featuredLinkLabel": "Choose a Shanghai base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanghai",
+        "First trip",
+        "Area choice"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-where-to-stay-first-trip/",
+      "title": "第一次去上海住哪里：外滩、人民广场还是原法租界？",
+      "headline": "按真正会步行的日程选择上海首站住宿",
+      "description": "从步行、轨道覆盖、夜间活动、行李和人流取舍比较外滩、人民广场与原法租界片区。",
+      "heroAlt": "夜间亮灯的上海南京东路。",
+      "navTitle": "上海首次住宿区",
+      "featuredLinkLabel": "选择上海住宿区",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "上海",
+        "第一次",
+        "区域选择"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-where-to-stay-first-trip/",
+      "title": "상하이 첫 여행 숙소: 와이탄, 인민광장, 옛 프랑스 조계지?",
+      "headline": "실제로 걸을 하루를 기준으로 고르는 상하이 첫 숙소",
+      "description": "도보, 지하철 접근, 저녁, 짐과 인파를 기준으로 와이탄·인민광장·옛 프랑스 조계지 일대를 비교합니다.",
+      "heroAlt": "밤에 불을 밝힌 상하이 난징둥루.",
+      "navTitle": "상하이 첫 숙소 지역",
+      "featuredLinkLabel": "상하이 숙소 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "상하이",
+        "첫 여행",
+        "지역 선택"
+      ]
+    }
   }
 }

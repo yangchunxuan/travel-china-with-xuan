@@ -1,122 +1,28 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "리예 진간은 제국을 현 단위에서 보이게 합니다. 문서가 이동하고 곡물을 계산하며 관리가 보고합니다. 일상 기록이라 강력하지만 한 기록군이 진의 모든 지역과 시기를 대표하지 않습니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "제국보다 기록군 먼저",
-      "body": "첸링현 문서의 유형, 발신자, 수신자, 행위를 확인한 뒤 행정 관행을 판단하고 더 큰 제도로 확장합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "제국보다 기록군 먼저",
-      "columns": [
-        "단서",
-        "행위",
-        "한계"
-      ],
-      "rows": [
-        [
-          "발송 표시",
-          "도착 추적",
-          "한 경로가 전체망은 아님"
-        ],
-        [
-          "장부",
-          "곡물·물자 계산",
-          "수치가 일부일 수 있음"
-        ],
-        [
-          "관직·지명",
-          "기관 관계",
-          "명칭은 변함"
-        ],
-        [
-          "수정",
-          "실무 문서",
-          "한 서리가 전부는 아님"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "유물명과 번호를 적습니다.",
-        "기관 전사를 씁니다.",
-        "날짜·장소·관청·동사를 찾습니다.",
-        "좁은 행위만 말합니다.",
-        "‘이 시기 이 장소’를 붙입니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "파일명이 학술 식별은 아닙니다",
-      "body": "대표 이미지 파일명은 ‘Qing’이라 쓰지만 분류와 전시는 리예 진간으로 확인하며 본문은 기관 식별을 따릅니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "날짜와 장소를 보내면 현지 담당자가 현재 운영·전시·프로그램을 확인합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "여행 이어가기",
-      "items": [
-        {
-          "label": "광저우 아침 차 이해",
-          "href": "/ko/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "병마용 자유 관람",
-          "href": "/ko/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "중국 여행에 가이드가 필요할까",
-          "href": "/ko/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "기관 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Story of a Small Town: Qin bamboo slips from Liye",
-          "url": "https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202104/t20210429_249982.html",
-          "publisher": "National Museum of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Liye Qin Slips Museum context",
-          "url": "https://www.enghunan.gov.cn/hneng/Services/Live/Community/LMEH/202510/t20251030_33836965.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Liye Qin Slips by Ddayzzz, CC BY 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Liye_Qing_Slips,_containing_%22A_set_of_envelopes_were_delivered_from_Dongting_Commandery_to_Qianling_county%22.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"리예 진간은 현 행정 문서를 통해 제국을 보이게 합니다. 소식이 이동하고 곡물이 계산되며 노동과 사람이 등록되고 관리가 서로 보고합니다. 강점은 일상 행정의 세부에 있지 진 사회 전체의 목소리를 모두 제공하는 데 있지 않습니다. 문서 한 점과 업무 한 단계에서 바깥으로 읽은 뒤 국가 전체를 조심스럽게 논해야 합니다."},
+{"id":"answer","type":"callout","title":"문서에서 시작해 행정 처리 과정을 재구성한 뒤 신중하게 확대하세요","body":"각 죽간의 발굴 맥락, 기관 명칭, 제시된 날짜, 발신자·수신자·행위와 취급 흔적을 확인하세요. 발행·복사·발송·수령·회계·보관 중 어느 흐름에 있는지 놓습니다. 여러 관련 기록이 반복 패턴을 보일 때만 현(縣) 행정이나 제국 표준화를 논하세요. 유명한 한 점은 사례이지 진 제도 전체가 아닙니다.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"리예에서 무엇이 발견됐으며 이 글의 범위는 무엇인가"},
+{"id":"scope","type":"paragraph","text":"중국국가박물관은 2002년 리예에서 20만 자가 넘는 3만8천여 점의 진대 죽간이 출토됐다고 설명합니다. 첸링현과 관련된 기록에는 행정과 일상생활의 여러 주제가 담깁니다. 전승 문헌의 빈틈을 채우는 이례적으로 큰 지방 기록군이지만 모든 현·사회 집단·기원전 221~206년 전체의 무작위 표본은 아닙니다. 이 글은 박물관 기록 전시를 읽는 법이며 전체 번역 말뭉치를 제공하지 않습니다."},
+{"id":"material-heading","type":"heading","level":2,"text":"죽간은 번역문 한 줄이 아니라 물질 문서입니다"},
+{"id":"material","type":"table","caption":"번역 전에 유물을 읽으세요","columns":["특징","볼 것","제기하는 질문","한계"],"rows":[["형태와 크기","좁은 죽간, 넓은 목독, 부러진 가장자리","목록·서신·표찰에 맞춘 형식인가","크기만으로 문서 유형을 확정할 수 없음"],["기록 면","한 면 또는 여러 면의 글씨","공간을 어떻게 쓰고 읽었는가","전시 고정 장치가 한 면을 가릴 수 있음"],["묶음 흔적","홈, 구멍, 함께 놓인 죽간","여러 점으로 된 문서였는가","원래 순서는 재구성이 필요할 수 있음"],["교정·표시","기관이 설명한 덧쓰기, 표시, 봉인이나 배서","기록을 어떻게 확인하고 취급했는가","희미한 흔적을 임의로 판독하면 안 됨"],["손상·보존","변색, 균열, 결손과 지지대","무엇이 남고 무엇이 복원됐는가","깔끔한 전사문은 실물 결손을 감출 수 있음"]]},
+{"id":"record-heading","type":"heading","level":2,"text":"번역문을 행정 업무 흐름으로 바꾸기"},
+{"id":"record","type":"list","ordered":true,"items":["확대 전사문보다 유물명과 출토 맥락을 먼저 읽으세요.","박물관이 제시한 날짜, 장소, 관청이나 관직을 찾으세요.","보내기·받기·계수·검증·보고·보관·이관 중 기록 행위를 찾으세요.","문서를 쓰거나 전달한 사람과 문서에 기록된 사람을 구분하세요.","다음 단계를 보여 주는 답신, 영수, 사본이나 장부를 찾으세요.","행위를 조직한 규칙과 여러 문서의 반복 여부를 물으세요.","이 문서·이 기록군·첸링현·비교 연구가 지지하는 넓은 진 관행 중 알맞은 규모로 결론을 쓰세요."]},
+{"id":"themes-heading","type":"heading","level":2,"text":"기록군에 들어가는 네 가지 질문"},
+{"id":"themes","type":"table","caption":"전부 읽으려 하지 말고 질문을 고르세요","columns":["질문","찾을 기록","패턴이 보여 줄 수 있는 것","주장하면 안 되는 것"],"rows":[["소식은 어떻게 이동했나","발송·수령·경로·기한 기록","소통과 책임의 연쇄","모든 전달이 빠르고 안정적이었다"],["자원은 어떻게 셌나","곡물·물품·노동·회계 기록","분류·수량·확인 관행","남은 합계가 지역 경제 전체다"],["관청은 어떻게 연결됐나","발신·수신·참조 관청","상하·수평 행정 연결","도표가 비공식 권력까지 모두 담는다"],["규정은 일상과 어떻게 만났나","사건·등록·정기 보고","표준 절차가 지역민과 만나는 지점","관문서가 모든 사람의 시각을 보존한다"]]},
+{"id":"scale-heading","type":"heading","level":2,"text":"지방 증거에서 제국까지 단계적으로 이동하세요"},
+{"id":"scale","type":"comparison","title":"네 가지 진술 규모","columns":[{"heading":"유물 한 점","items":["이 죽간이 기록한 것","빠진 글자","박물관의 판독"]},{"heading":"기록군","items":["반복 형식과 행위","날짜·관청별 군집","보존·발굴 편향"]},{"heading":"첸링현","items":["지방 행정 관행","상급 관청과 연결","변경 현의 특수 조건"]},{"heading":"진 국가","items":["다른 유적과 연구가 지지할 때만 확대","표준화를 명령이 아닌 실행으로 보기","지역 차이와 실행 격차 인정"]}]},
+{"id":"numbers-heading","type":"heading","level":2,"text":"큰 숫자는 발견 규모이지 자동적인 완전성이 아닙니다"},
+{"id":"numbers","type":"paragraph","text":"3만8천여 점이라는 수는 발견 규모를 보여 주지만 전시 선택은 극히 일부입니다. 일부는 파편이고 여러 점이 한 문서일 수 있으며, 우물에 들어간 자료는 고대의 처분·보관과 후대의 보존·발굴에 모두 영향을 받았습니다. 죽간 수를 사건·사람·날짜 수와 같게 보거나 전시 케이스를 통계적 대표 표본으로 보면 안 됩니다."},
+{"id":"museum-heading","type":"heading","level":2,"text":"45~90분 집중 관람법"},
+{"id":"museum","type":"list","items":["유적 지도와 우물 등 발굴 맥락부터 보세요.","통신 기록, 회계, 등록 또는 사법·행정 기록을 하나씩 고르세요.","각 유물 번호와 박물관 번역·요약을 적으세요.","확대 영상으로 글씨와 전사를 연결하되 결손 문자를 읽는 척하지 마세요.","마지막에 연표나 행정도에서 선택한 세 문서와 맞는지 검증하세요.","출발 전에 공식 최신 공지를 확인하세요. 운영 시간과 원본 전시 여부는 바뀔 수 있습니다."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"흔한 해석 실패"},
+{"id":"mistakes","type":"list","items":["‘서류’라는 현대 비유를 종이로 오해하기: 행정 기록이라는 뜻이지 재료가 종이라는 뜻이 아닙니다.","현대 문장부호와 번역이 고대 죽간에 그대로 있었다고 보기","기록된 모든 사람이 작성자이거나 기록에 동의했다고 보기","공식 분류가 한 사람의 전체 정체성이라고 보기","구구단이나 배달 기록 한 점으로 전체 기록군을 요약하기","세밀한 행정을 완전한 복종, 균일한 역량이나 완전한 사회사와 동일시하기"]},
+{"id":"warning","type":"callout","title":"파일명은 학술 식별이 아닙니다","body":"허가된 대표 이미지의 영문 파일명에는 ‘Qing’이 있지만 설명과 분류는 리예 진간으로 식별합니다. 사용자 파일명보다 박물관 표기, 도록과 발굴 연구를 따르세요. 소셜 캡션과 재게시 이미지에도 같은 원칙이 적용됩니다.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"근거 있는 업무 흐름 하나를 완성하세요"},
+{"id":"checklist","type":"list","items":["유물 번호와 출토 맥락","기관 연대와 문서 유형","발신자·수신자·기록 행위","발송·검증·복사·보관의 증거","다른 기록이 뒷받침하는 패턴 하나","문서에 보존되지 않은 사람이나 시각 하나"]},
+{"id":"help","type":"callout","title":"Homeground","body":"진 역사, 서사 재료, 지방 행정이나 리예 유적 중 우선순위를 알려 주세요. 현지 플래너가 현재 전시와 이동 시간을 확인하고 이해하려는 기록 유형 중심으로 동선을 만들며 모든 유명 죽간이 전시 중이라고 약속하지 않습니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"제목보다 증거를 계속 읽기","items":[{"label":"병마용 자유여행 가이드","href":"/ko/guides/terracotta-warriors-without-tour/","description":"진의 제왕 사업과 일상 행정을 보여 주는 지방 기록을 비교합니다."},{"label":"청동 예기와 명문 읽기","href":"/ko/guides/ritual-bronze-vessels-and-inscriptions/","description":"물질 형태와 고대 문자가 서로 다른 주장을 지지하는 법을 봅니다."},{"label":"중국 여행에 가이드가 필요할까요?","href":"/ko/guides/do-you-need-a-tour-guide-in-china/","description":"문자 중심 박물관에 전문 해설을 준비할 가치가 있는지 판단합니다."}]},
+{"id":"sources","type":"sources","title":"기관 자료와 이미지 출처","items":[{"label":"작은 도시 이야기: 리예 진간 문화전","url":"https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202104/t20210429_249982.html","publisher":"중국국가박물관","reviewedAt":"2026-08-12"},{"label":"리예 고성(진간)박물관","url":"https://www.enghunan.gov.cn/hneng/Services/Live/Community/LMEH/202510/t20251030_33836965.html","publisher":"후난성 인민정부","reviewedAt":"2026-08-12"},{"label":"대표 이미지: Ddayzzz 촬영 리예 진간 배송 기록, CC BY 4.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Liye_Qing_Slips,_containing_%22A_set_of_envelopes_were_delivered_from_Dongting_Commandery_to_Qianling_county%22.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

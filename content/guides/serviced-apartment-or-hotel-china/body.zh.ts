@@ -1,92 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  schemaVersion: "1.0.0",
-  blocks: [
-    {
-      id: "lead",
-      type: "lead",
-      text: "长住的关键不是面积，而是物业能否支持日常生活，并提供清楚的运营方、合同和问题处理流程。",
-    },
-    {
-      id: "answer",
-      type: "callout",
-      title: "先给结论",
-      tone: "decision",
-      body: "已核实的做饭、洗衣、工作空间、独立生活空间和隐私比每日酒店服务重要，可选服务式公寓；更重视有人值守、日常支持、短期灵活性和行李处理，选酒店。即使中段住公寓，首末夜也可能更适合酒店。",
-    },
-    {
-      id: "matrix",
-      type: "table",
-      caption: "核实服务而非名称",
-      columns: ["需求", "问公寓", "问酒店"],
-      rows: [
-        ["厨房", "准确电器、餐具、通风", "是否有真正小厨房房型"],
-        ["清洁", "频率、床品、耗材", "包含频率与长住更换"],
-        ["合同", "押金、水电、退款、开票主体", "房价条款、续住、提前离开"],
-        ["支持", "前台时间、门锁、维修", "24小时支持范围与升级"],
-      ],
-    },
-    {
-      id: "verify",
-      type: "callout",
-      title: "“服务式”只是商业描述",
-      tone: "warning",
-      body: "它不能证明酒店式值守或登记。询问运营企业、护照登记、访客规则、押金收款方、水电、清洁、厨房清单与书面取消条款，并保存订单和对话。",
-    },
-    {
-      id: "facts",
-      type: "callout",
-      title: "政策信息核验于2026年8月12日",
-      tone: "neutral",
-      body: "移民管理官方资料按真实住宿模式分配登记责任：酒店为住客登记，非酒店住宿按属地流程办理。平台标题不能决定类别，地方流程和物业执行可能不同，应在取消截止前分别确认。",
-    },
-    {
-      id: "links",
-      type: "internal-links",
-      title: "继续规划",
-      items: [
-        {
-          label: "商业公寓酒店还是住宅短租",
-          href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/",
-          description: "识别底层运营模式。",
-        },
-        {
-          label: "上海首次住宿区域",
-          href: "/zh/guides/shanghai-where-to-stay-first-trip/",
-          description: "把长住放在重复路程附近。",
-        },
-        {
-          label: "如何判断靠近地铁",
-          href: "/zh/guides/china-hotel-near-metro/",
-          description: "核对每天最后一段步行。",
-        },
-      ],
-    },
-    {
-      id: "sources",
-      type: "sources",
-      title: "官方来源",
-      items: [
-        {
-          label: "住宿登记官方政策解读",
-          url: "https://s.nia.gov.cn/mps/zcjd/202601/t20260750_1012.html",
-          publisher: "国家移民管理局",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "网上登记试点英文政府公告",
-          url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html",
-          publisher: "中国政府网",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "国家企业信用信息公示系统",
-          url: "https://www.gsxt.gov.cn/",
-          publisher: "国家市场监督管理总局",
-          reviewedAt: "2026-08-12",
-        },
-      ],
-    },
-  ],
-} as const satisfies StructuredPageBody;
+
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "在中国长住，真正的选择不是“更多空间”对“更多服务”，而是希望物业替你承担哪些日常事务、哪些愿意自己处理。厨房、洗衣机或长住价，只有在普通工作日也真的好用，而且房间、清洁、合同和故障支持都说得清时才有价值。" },
+  { id: "answer", type: "callout", title: "先给结论", tone: "decision", body: "短住、频繁换城市、需要稳定每日服务，或抵达不能出错，选酒店。住得足够久，确实会用厨房、洗衣和起居空间，而且经营者确认清洁、水电、押金、访客、护照登记与夜间支持，选商业运营的服务式公寓。第一晚脆弱、后续几周适合公寓生活时，可以分段入住。" },
+  { id: "boundary", type: "paragraph", text: "本文假设两种选择都是商业住宿。私人经营的住宅短租存在不同门禁与登记风险，应看公寓酒店和住宅短租的专门比较。“服务式公寓”并不在全国自动对应固定服务等级，因此下列每项优势都要落实到具体单元。" },
+  { id: "matrix", type: "table", caption: "比较两种物业替你减少了哪些事务", columns: ["需求", "酒店通常更强", "服务式公寓核实后可能胜出"], rows: [["抵达", "前台、行李和换房流程", "在实际抵达时有人值守或有书面入住流程"], ["睡眠与房间恢复", "规律打扫和布草", "频率够用且更重视私密"], ["吃饭", "早餐与周边餐饮支持", "厨房真的能完成计划中的餐食"], ["洗衣", "付费酒店洗衣", "房内或便利公用洗衣加晾晒"], ["工作与家庭空间", "房间稳定但分隔有限", "真餐桌、真房门和可用起居空间"], ["故障", "值班经理与替换房库存", "具名支持、维修时限和替代单元"]] },
+  { id: "duration", type: "heading", level: 2, text: "让住宿时长影响选择，但不要设死板天数" },
+  { id: "duration-copy", type: "paragraph", text: "两晚通常不值得学习公寓电器再采购厨房用品；住一周或数周，早餐、洗衣、独立工作区或儿童睡眠区才可能持续省事。但时长不是唯一标准：连续会议的14晚商务差旅仍可能适合酒店；带婴儿或饮食受限的家庭住5晚，也可能更需要公寓。只计算你真的会使用的生活流程。" },
+  { id: "fit", type: "table", caption: "从日常最难安排的人开始", columns: ["情境", "先测试", "决定证据"], rows: [["独自商务、每天去办公室", "工作地址附近酒店或服务式公寓", "书桌、安静、发票、早餐和夜间支持"], ["婴儿或早睡儿童家庭", "服务式公寓", "真卧室门、婴儿床政策、洗衣与安全厨房"], ["老人或行动不便", "能证明全程无障碍的一方", "下客、电梯、淋浴、座椅和近距离餐食"], ["过敏或固定饮食", "服务式公寓", "可用厨具、冰箱和采购条件"], ["每三四晚换城市", "酒店", "减少拆行李、学电器和押金管理"], ["长途飞行后首次抵达", "24小时有人值守的酒店或公寓", "关键是不会失败的入住，不是房型"]] },
+  { id: "kitchen", type: "heading", level: 2, text: "厨房图标不等于能做饭" },
+  { id: "kitchen-table", type: "table", caption: "按你准备做的那顿饭核验", columns: ["项目", "具体询问", "为何影响价值"], rows: [["加热", "电磁炉、微波炉、烤箱，还是没有烹饪热源", "水槽和水壶做不出晚餐"], ["用具", "锅、刀、案板、盘碗和餐具", "重新买一套会吃掉优势"], ["冷藏", "冰箱大小和冷冻格", "药品、婴儿食物或特殊饮食需要"], ["通风与规则", "抽风、烟感灵敏度和禁止的烹饪方式", "高温或强气味烹饪可能不允许"], ["采购", "真正方便的商店与能送到正确楼栋的外卖", "远离食材的厨房价值有限"]] },
+  { id: "laundry", type: "heading", level: 2, text: "洗衣便利＝洗衣机、晾干方式和时间" },
+  { id: "laundry-copy", type: "paragraph", text: "确认机器在分配单元内、楼层共用，还是付费送洗；询问洗涤剂、操作说明、洗涤时长、烘干机、晾衣架和合规晾晒位置。洗烘一体机处理小批衣物也可能很慢。家庭应在干净衣物用完前安排第一次洗衣，不要拖到早班交通前一晚。" },
+  { id: "service", type: "heading", level: 2, text: "把“服务式”具体写下来" },
+  { id: "service-list", type: "list", items: ["打扫频率，以及周末和法定节假日是否不同。", "床单毛巾多久更换，如何额外索取。", "垃圾、餐具和饮用水／洗浴用品是否处理或补充。", "员工进房前如何通知，如何使用请勿打扰。", "维修联系人、响应时限，以及什么情况可换单元。", "若早餐影响选择，确认地点和实际供应日期。"] },
+  { id: "contract", type: "heading", level: 2, text: "费用和长住规则要像房间一样仔细核对" },
+  { id: "contract-table", type: "table", caption: "住得越久，越多条款需要确认", columns: ["条款", "付款前确认", "避免的意外"], rows: [["押金", "金额、支付、扣款和退回时间", "离境后很久仍未退款"], ["水电网络", "电、水、供暖、网络是否有用量上限", "低房价另收高额使用费"], ["取消或提前离店", "哪些晚数变为不可退", "工作变化却仍收全程"], ["访客", "访客登记与最大入住人数", "家人或同事无法合规进入／留宿"], ["发票", "开票主体、金额和公司信息", "平台收据不符合报销要求"], ["续住", "价格与能否留在同一房间", "续住必须搬到别的单元"]] },
+  { id: "registration", type: "heading", level: 2, text: "确认旅馆式登记，不要只看楼下有前台" },
+  { id: "registration-copy", type: "paragraph", text: "按国家移民管理局规定，旅馆为外国住客登记；旅馆以外住宿在24小时内另行办理。国家移民管理局线上渠道目前先在河北、辽宁、浙江、湖北、广西、重庆、四川试点，其他地区应确认当前本地渠道。公寓楼大堂里有一张服务台，并不能证明走哪种模式。应询问运营主体是否把订单作为旅馆住宿处理，以及谁为每一本护照完成登记。" },
+  { id: "arrival", type: "heading", level: 2, text: "保护抵达日和离开日" },
+  { id: "arrival-copy", type: "paragraph", text: "问清车辆停哪里、进入哪栋楼哪个大堂、实际抵达时是否有人值守，以及房间未好时如何寄存行李。离店前确认查房、交钥匙和退押金流程，再安排早班火车或飞机。若必须当面查房，提前预约，不要等司机已经在楼下才发现。" },
+  { id: "children-access", type: "callout", title: "空间更大，不一定更轻松", tone: "warning", body: "带孩子或行动不便者，要看阳台锁、低窗、室内台阶、松动地毯、淋浴入口，以及每个睡眠区是否有安全温控。有电梯、早餐和即时帮助的小酒店房，可能比另一栋楼里的大公寓更好用。" },
+  { id: "failure", type: "table", caption: "需要之前先决定如何补救", columns: ["问题", "要求经营者做什么", "何时换住宿"], rows: [["洗衣或厨房坏了", "在明确时限内维修或提供同等设施", "该设施是刚需且没有可用替代"], ["漏打扫", "重排并先补新布草和用品", "反复失误让长住无法维持"], ["噪音无法工作或睡眠", "实地检查并换到已证明安静的单元", "只提供未核实的口头保证"], ["网络故障", "给维修时点与工作备份", "联网是刚需却没有任何备用"], ["押金条款变化", "按书面订单执行", "未提供记录就要求额外付款才开门"]] },
+  { id: "switch", type: "callout", title: "一种实用的分段住法", tone: "decision", body: "晚班国际航班后先住一晚常规酒店，白天看清路线和单元后再搬。若早班航班可能被查房、楼栋门禁或车辆接驳耽误，离开前反向操作。一次有意安排的搬家，可能比坚持全程住同一家更能降风险。" },
+  { id: "dynamic", type: "paragraph", text: "全国住宿登记政策和企业信息渠道复核于2026年8月13日。物业服务、费用和单个经营者状态会变化，必须以订单书面条款再次确认。本文不认证任何品牌或楼宇。" },
+  { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "商业公寓酒店还是住宅短租", href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/", description: "先确认公寓是否为商业住宿。" }, { label: "如何判断酒店靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "从实际大堂测试反复通勤。" }, { label: "民宿、homestay还是酒店", href: "/zh/guides/minsu-homestay-or-hotel-china/", description: "理解另一组住宿标签。" }] },
+  { id: "sources", type: "sources", title: "官方来源", items: [{ label: "旅馆以外住宿登记网上办理政策解读", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" }, { label: "非旅馆住宿登记英文政策解读", url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html", publisher: "中国政府网", reviewedAt: "2026-08-13" }, { label: "国家企业信用信息公示系统", url: "https://www.gsxt.gov.cn/", publisher: "国家市场监督管理总局", reviewedAt: "2026-08-13" }] }
+] } as const satisfies StructuredPageBody;
 export default body;

@@ -1,156 +1,77 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "철도가 실제로 가치 있는 장소를 잇는 중심축일 때만 철도 전용 여행이 성립합니다. 구호에 맞추려고 모든 목적지를 억지로 넣지 마세요. 숙소 문에서 다음 숙소 문까지 검사해야 합니다. 역이 있어도 긴 도로 이동이 남을 수 있고, 동선 끝의 항공편 하나가 온전한 하루를 살릴 수 있습니다."
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "세 가지 검사",
-      "columns": [
-        {
-          "heading": "중심축",
-          "body": "다음 핵심 장소가 앞으로 이어지는 철도 회랑에 있습니다."
-        },
-        {
-          "heading": "낮 시간",
-          "body": "전체 이동 블록이 지키려던 관광 시간을 먹지 않습니다."
-        },
-        {
-          "heading": "마지막 구간",
-          "body": "역 접근과 도로 이동이 일행과 짐에 적합합니다."
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "공식 좌석은 날짜별로 확인해야 합니다"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "12306은 현재 열차와 규정을 확인하는 공식 서비스입니다. 노선도는 인프라만 증명하며 특정 날짜의 편한 출발, 좌석, 역 조합을 보장하지 않습니다. 개념 동선을 만든 뒤 실제 판매 기간에 각 구간을 검증하세요."
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "철도 원칙 유지 또는 예외",
-      "columns": [
-        "상황",
-        "결정",
-        "이유"
-      ],
-      "rows": [
-        [
-          "한 회랑의 주요 도시",
-          "철도를 중심축으로 유지.",
-          "도심 도착과 적은 공항 절차가 유리할 수 있습니다."
-        ],
-        [
-          "철도 관문 뒤 외곽 명소",
-          "도로 마지막 구간 허용.",
-          "철도는 명소 입구까지 가지 않습니다."
-        ],
-        [
-          "긴 대륙 횡단",
-          "항공편 하나 비교.",
-          "순수성 때문에 온전한 하루를 잃을 수 있습니다."
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "철도 전용은 환승 없음이 아닙니다",
-      "body": "역은 숙소와 멀 수 있고 한 도시에 여러 역이 있으며 명소까지 버스나 차가 필요할 수 있습니다. 모두 계산하세요."
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "철도 동선 설계"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "지킬 이유가 있는 장소만 적습니다.",
-        "관문 사이에 한 방향 철도 축을 그립니다.",
-        "숙소와 역 사이 시간을 더합니다.",
-        "도로만 가능한 구간과 일행 제한을 표시합니다.",
-        "온전한 시간을 살리는 곳에서는 철도 원칙에 예외를 둡니다."
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "먼저 뺄 것"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "약한 목적 하나를 위해 긴 왕복이 필요한 가지를 제외합니다. 멀리 있는 점을 지키려고 핵심 도시를 모두 압축하지 마세요."
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "실시간 열차 일정은 아닙니다",
-      "body": "열차 선택, 좌석 보장, 도시별 일정을 제공하지 않습니다. 날짜와 12306 확인이 필요합니다."
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "철도 중심축을 검토받고 싶나요?",
-      "body": "날짜, 인원, 대략적인 예산과 후보 도시를 남겨 주세요."
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "다음 계획",
-      "items": [
-        {
-          "label": "중국 고속철도 첫 이용",
-          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
-          "description": "동선이 철도 검사를 통과한 뒤 승차 절차를 확인하세요."
-        },
-        {
-          "label": "야간열차와 주간 고속철도 비교",
-          "href": "/ko/guides/china-night-train-or-daytime-high-speed-rail/",
-          "description": "수면과 관광일 중 무엇을 지킬지 정하세요."
-        },
-        {
-          "label": "동선 양끝 항공편 검토",
-          "href": "/ko/guides/china-open-jaw-flights-route-planning/",
-          "description": "오픈조 관문은 철도 축의 왕복을 줄일 수 있습니다."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "중국 철도 공식 여객 서비스",
-          "url": "https://www.12306.cn/en/index.html",
-          "publisher": "China Railway 12306",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "도시가 연속된 통로를 만들고, 모든 구간에 실용적인 역 대 역 선택이 있으며, 가장 긴 이동이 여행의 핵심 경험을 삼키지 않을 때 중국 철도 전용 동선이 작동합니다. 가장 약한 연결을 보기 전에 ‘국내선 비행 없음’을 규칙으로 만들지 마세요. 가장자리에서 항공편 한 번을 쓰면 여행을 공항 연속으로 만들지 않고도 중앙의 일관된 철도 축을 지킬 수 있습니다." },
+  { id: "quick-choice", type: "comparison", title: "교통 구조 선택", columns: [
+    { heading: "철도만", body: "촘촘한 통로, 중심부 역, 감당 가능한 짐과 최대 범위보다 연속성을 중시하는 여행자에게 좋습니다." },
+    { heading: "철도 축+항공 1회", body: "먼 끝점 하나가 과도한 철도 이동일을 만들지만 중앙 순서는 강할 때 좋습니다." },
+    { heading: "항공 더 사용", body: "먼 지역 묶음 사이를 뛰어넘고 철도일이 반복해서 핵심 경험을 대체할 때 고려하세요." }
+  ] },
+  { id: "official-heading", type: "heading", level: 2, text: "슬로건이 아니라 12306으로 동선을 검사하세요" },
+  { id: "official", type: "paragraph", text: "중국철도 12306은 현재 역 조합, 열차와 여객 규칙을 확인하는 공식 창구입니다. 현행 규정은 연계 승차권을 같은 역 또는 같은 도시의 여객역에서 이어 탈 수 있도록 구간별 구매한 여러 표로 정의하지만, 그 정의가 모든 연결의 편안함을 보장하지는 않습니다. 정확한 날짜와 역을 검색하고 도시 접근, 보안, 승차, 환승과 도착 시간을 더하세요." },
+  { id: "weak-link-heading", type: "heading", level: 2, text: "가장 약한 철도 연결부터 찾으세요" },
+  { id: "weak-link", type: "table", caption: "철도 동선은 평균이 아니라 최악 구간에서 실패합니다", columns: ["검사", "철도 친화 결과", "경고 결과"], rows: [
+    ["기하", "도시가 전진 통로를 형성", "한 곳 때문에 긴 왕복 또는 대각선 이동"],
+    ["역 접근", "실제 역에서 숙소와 다음 활동이 실용적", "빠른 열차가 양쪽 모두 먼 터미널 사용"],
+    ["구간 부담", "전체 문간 이동이 이동일에 자연스럽게 들어감", "희소한 관광일 대부분을 제거"],
+    ["짐", "일행이 통제력을 잃지 않고 승차·보관·이동 가능", "모든 환승이 에스컬레이터, 빠듯한 시간 또는 손보다 많은 짐에 의존"],
+    ["복구", "뒤 열차나 유연한 저녁이 있음", "한 구간을 놓치면 고정 예약 연쇄가 무너짐"],
+    ["야간 이동", "수면 품질과 도착 동선을 감당 가능", "종이로는 숙박비를 아끼지만 다음 날을 망침"]
+  ] },
+  { id: "workflow-heading", type: "heading", level: 2, text: "신뢰할 수 있는 철도 축 만들기" },
+  { id: "workflow", type: "list", ordered: true, items: [
+    "국제선 도착·출국 관문을 먼저 놓으세요. 오픈조 항공편이 되돌아가기를 없앤다면 철도 전용 약속 때문에 같은 도시로 돌아가지 마세요.",
+    "후보 도시를 지리 순서로 놓고 가장 길거나 덜 직접적인 구간을 표시해 쉬운 구간보다 먼저 검사하세요.",
+    "예정 날짜의 정확한 역을 12306에서 검색하고 출발·도착 및 환승이 같은 도시 내 역 이동인지 기록하세요.",
+    "체크아웃, 현지 교통, 역 여유, 철도, 도착 교통과 체크인 공백을 합쳐 각 열차의 전체 문간 이동 시간을 계산하세요.",
+    "도착 저녁을 보호하고 예정 열차 도착 바로 뒤에 대체 불가 시간 지정 활동을 붙이지 마세요.",
+    "하루 여러 열차라면 현재 공식 서비스가 연결 가능하다고 보여 주는 선택을 쓰고 일행에 맞는 개인 여유를 더하세요.",
+    "가장 약한 구간을 비행 또는 끝점 삭제와 비교하세요. 전체 대안보다 연속성이 나을 때만 철도 전용을 유지하세요.",
+    "예약 뒤 모든 승객의 정확한 신분증 정보를 보관하고 출발 전 운영 공지를 재확인하세요."
+  ] },
+  { id: "day-night-heading", type: "heading", level: 2, text: "주간 열차와 침대열차는 별도 결정입니다" },
+  { id: "day-night", type: "table", caption: "숙박 한 번 절약만 평가하지 마세요", columns: ["선택", "가능한 이익", "검사할 비용"], rows: [
+    ["주간 고속철", "예측 가능한 좌석 이동과 쉬운 도착 적응", "낮 시간을 쓰고 숙박이 하나 더 필요할 수 있음"],
+    ["야간 침대열차", "원래 잘 시간에 이동", "침대 유형, 실제 수면, 늦은 승차, 이른 도착과 체크인 전 짐"],
+    ["중간 분할", "고된 한 구간을 관리 가능한 두 이동으로 전환", "거점이 늘며 중간 도시는 잠만 자는 곳이 아닌 실제 경험이 필요"]
+  ] },
+  { id: "example-heading", type: "heading", level: 2, text: "계획 예시: 먼 끝점 하나" },
+  { id: "example", type: "callout", tone: "neutral", title: "시간표가 아닌 구조 예시입니다", body: "네 도시가 깔끔한 철도 통로를 이루지만 다섯 번째는 먼 우회와 같은 선로 귀환이 필요하다고 해 보세요. ‘철도만’이라는 이름 때문에 다섯 번째를 유지하면 여행자 시간보다 라벨을 앞세우게 됩니다. 그 끝점으로 들어가거나 나오는 항공편 또는 삭제를 비교하세요. 어느 쪽도 네 도시 철도 축을 지키면서 가장 약한 연결을 없앨 수 있습니다." },
+  { id: "disruption-heading", type: "heading", level: 2, text: "철도 구간에 문제가 생기면" },
+  { id: "disruption", type: "list", ordered: true, items: [
+    "12306이나 역 직원에게 운행 상태를 확인하고 승차권과 예약에 사용한 신분증을 준비하세요.",
+    "다음 고정 출발을 먼저 보호하세요. 선택 관광이 마지막 가능한 연결과 경쟁해서는 안 됩니다.",
+    "같은 날 가능하다면 공식 후속 선택을 고르고 숙소에 늦은 도착을 알리세요.",
+    "연쇄가 더 이상 안 되면 중단하세요. 현재 방을 유지하거나 1박을 마련하고 확인된 다음 날 운행부터 다시 만드세요.",
+    "현재 12306 규정에 따라 변경·환불하세요. 다른 교통 계약이나 오래된 블로그에서 구제책을 추정하지 마세요."
+  ] },
+  { id: "failure-heading", type: "heading", level: 2, text: "철도 전용 규칙이 여행을 해치는 신호" },
+  { id: "failure", type: "list", ordered: false, items: [
+    "두 번 이상의 철도 이동일이 각각 쓸 수 있는 관광일 대부분을 없앱니다.",
+    "하나의 국제 관문을 지키려고 같은 통로를 반복해 되돌아갑니다.",
+    "같은 도시의 역 변경을 같은 역 승강장 환승처럼 취급합니다.",
+    "일행이 침대열차에서 잘 수 없다는 걸 알면서도 동선이 야간열차에 의존합니다.",
+    "모든 연결 뒤에 고정 숙소·관광지·다음 표가 있고 회복 여유가 없습니다."
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "항공편을 넣거나 도시를 뺄 때" },
+  { id: "switch-rule", type: "paragraph", text: "항공편 한 번이 지리적으로 고립된 끝점, 반복 통로 또는 일행이 편안하게 감당 못 하는 장거리 철도 구간을 없애면 사용하세요. 철도나 항공 모두 그 도시를 정당화할 현지 시간을 만들지 못하면 도시를 빼세요. 문간 전체 연쇄가 일관될 때 철도만 유지하세요. 열차가 항상 낫기 때문이 아니라 이 구체적 동선이 축으로 작동하기 때문입니다." },
+  { id: "booking-checklist", type: "list", ordered: false, items: [
+    "모든 구간에 정확한 역 이름과 현재 12306 검색 결과가 있습니다.",
+    "같은 도시 내 역 변경과 현지 이동이 일정에 보입니다.",
+    "가장 긴 구간을 항공편 및 도시 삭제와 비교했습니다.",
+    "이동일에 도착 직후 대체 불가 활동이 없습니다.",
+    "일행이 짐과 선택한 주간·야간 이동 패턴을 감당할 수 있습니다."
+  ] },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "시간표와 규칙은 변합니다", body: "이 글은 실시간 열차, 소요 시간, 재고나 연결을 보장하지 않습니다. 12306에서 정확한 날짜, 역과 여객 규칙을 확인하고 출발 전에 공지를 재확인하세요." },
+  { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 도시 간 여행을 철도 축으로 만들지 여부만 다룹니다. 첫 고속철 가이드는 역 절차, 야간열차 가이드는 침대열차와 주간열차 비교, 도시 순서 글은 이름이 정해진 동선을 담당합니다." },
+  { id: "help-cta", type: "callout", tone: "decision", title: "가장 약한 연결을 찾을까요?", body: "도시, 날짜, 도착·출국 관문, 짐과 고정 행사를 알려 주세요. 좋은 검토는 쉬운 구간을 최적화하기 전에 문간 이동 시간이 가장 긴 구간을 검사합니다." },
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "처음 중국 고속철 타기", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "동선이 철도 검사에 합격한 뒤 이용하세요." },
+    { label: "야간열차와 주간 고속철 비교", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "수면 품질이나 관광일을 의도적으로 지키세요." },
+    { label: "동선 양끝에만 항공편 사용", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "오픈조 관문이 되돌아가기 없이 철도 축을 지킬 수 있습니다." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "중국철도 여객 서비스", url: "https://www.12306.cn/en/index.html", publisher: "중국철도 12306", reviewedAt: "2026-08-12" },
+    { label: "2026년 6월 1일 시행 철도여객운송규정", url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/transportationRules.html", publisher: "중국철도 12306", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;

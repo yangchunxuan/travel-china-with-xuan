@@ -9,10 +9,11 @@
 
 ## Official sources
 
-- Beijing Municipal Government: [Beijing airports connectivity guide](https://english.beijing.gov.cn/latest/specials/essentialtipsfornewarrivals/getconnected/202408/t20240830_3785643.html) — reviewed 2026-08-12
+- Beijing Municipal Government: [Beijing airports connectivity guide](https://english.beijing.gov.cn/latest/specials/essentialtipsfornewarrivals/getconnected/202408/t20240830_3785643.html) — reviewed 2026-08-12; supports the Capital Airport SMS/dispenser workflow and printed-account limits, but its older Daxing SSID is not used where the newer Daxing notice differs
 - Beijing Municipal Government: [Beijing Capital Airport Wi-Fi](https://english.beijing.gov.cn/specials/beijingservice/pek/wifi/) — reviewed 2026-08-12
-- Beijing Municipal Government: [Daxing Airport passport Wi-Fi service](https://english.beijing.gov.cn/latest/news/202512/t20251205_4322494.html) — reviewed 2026-08-12
+- Beijing Municipal Government: [Daxing Airport passport Wi-Fi service](https://english.beijing.gov.cn/latest/news/202512/t20251205_4322494.html) — reviewed 2026-08-12; current article basis for `BDIA-FREE-WIFI`, passport-photo-page verification and the listed alternative authentication routes
 - Shanghai Municipal Government: [Pudong Airport passport Wi-Fi update](https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260424/88cde5e96ef242daa534102069450a03.html) — reviewed 2026-08-12
+- US Federal Trade Commission: [Are Public Wi-Fi Networks Safe?](https://consumer.ftc.gov/articles/are-public-wifi-networks-safe-what-you-need-know) — reviewed 2026-08-12; primary consumer-protection guidance for HTTPS, account security and scam-site limits
 
 ## Image provenance
 

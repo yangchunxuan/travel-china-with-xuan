@@ -1,36 +1,27 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "충칭에서는 ‘명소와 가깝다’는 말만으로 부족합니다. 평면 지도에서 가까운 두 호텔도 경사로, 계단, 엘리베이터, 서로 다른 도로 층으로 갈릴 수 있습니다. 명소 수가 아니라 매일 반복할 이동을 줄이는 곳을 고르세요." },
-  { id: "answer", type: "callout", title: "빠른 선택", tone: "decision", body: "첫 방문이 짧고 위중 반도의 밀집 명소와 야경이 중심이면 제팡베이가 편합니다. 현대적인 상업 중심지의 식사·쇼핑·저녁 시간을 중시하면 관인차오를 비교하세요. 서역이나 서쪽 일정이 실제로 중요할 때만 사핑바가 강해집니다. 단순히 관광객이 적어 보인다는 이유만으로 고를 곳은 아닙니다." },
-  { id: "matrix-heading", type: "heading", level: 2, text: "세 거점이 하루를 바꾸는 방식" },
-  { id: "matrix", type: "table", caption: "지역 평판보다 매일의 이동 사슬을 비교하세요", columns: ["거점", "잘 맞는 여행", "감수할 점", "예약 전 확인"], rows: [
-    ["제팡베이·위중 중심", "첫 방문, 짧은 체류, 훙야둥·차오톈먼·반도 야간 일정", "인파, 교통 체증, 착각하기 쉬운 입체 보행", "호텔 입구 층, 실제 쓸 역 출구, 차량 하차 지점"],
-    ["관인차오", "음식·쇼핑·현대 상권의 저녁", "위중의 대표 명소까지 이동 필요", "넓은 상권 중 호텔이 정확히 어느 쪽인지"],
-    ["사핑바", "충칭서역, 츠치커우, 서쪽 일정", "위중에서 늦게 돌아올 때 긴 이동", "정확한 역과 철도 연결; 구 전체를 한 지점처럼 보지 않기"]
-  ]},
-  { id: "terrain", type: "callout", title: "지도상 600m가 쉬운 600m는 아닙니다", tone: "warning", body: "중심부에서는 거리와 함께 높이 차를 보세요. 숙소에 중국어 입구명, 차량 하차 지점, 짐이 있을 때 권하는 지하철 출구를 물어보는 것이 좋습니다. 지하철 아이콘 하나로 계단·경사·건물 입구를 알 수는 없습니다." },
-  { id: "fit-heading", type: "heading", level: 2, text: "반복할 여정으로 고르기" },
-  { id: "fit", type: "comparison", title: "대표적인 세 일정", columns: [
-    { heading: "2~3박 첫 여행", items: ["제팡베이에 무게", "저녁 산책을 숙소 주변에", "인파를 감수하고 야간 환승 감소"] },
-    { heading: "음식과 도시 생활", items: ["관인차오 비교", "정확한 블록 확인", "위중 관광일 이동시간 반영"] },
-    { heading: "서쪽 도착·관광", items: ["실제 역으로 사핑바 적합성 확인", "츠치커우와 서쪽 일정 묶기", "매일 위중에서 늦게 귀가하지 않기"] }
-  ]},
-  { id: "luggage-heading", type: "heading", level: 2, text: "짐과 늦은 도착이 답을 바꿉니다" },
-  { id: "luggage", type: "paragraph", text: "아이·고령자·큰 여행가방이 있다면 확인된 차량 입구가 겉보기 중심 위치보다 중요할 수 있습니다. 호텔 중국어 이름과 주소를 저장하고 도착 수단을 알린 뒤, 차량이 프런트와 같은 층에 설 수 있는지 물으세요. 늦은 밤에는 완벽한 관광 위치보다 마지막 인계를 단순하게 만드는 편이 낫습니다." },
-  { id: "facts", type: "callout", title: "변동 정보 확인일: 2026년 8월 12일", tone: "neutral", body: "충칭시 공식 영문 자료는 위중의 쿠이싱러우 일대를 다층 지형 사례로 소개하고, 츠치커우를 사핑바에 두며, 제팡베이를 활발한 야간 지역으로 안내합니다. 이는 지리적 사실이고 위 선택은 Homeground의 편집 판단입니다. 실제 날짜의 지하철 운행, 출구, 차량 진입과 공사는 공식 채널과 숙소에 다시 확인하세요." },
-  { id: "checklist", type: "list", ordered: true, items: ["고정된 도착·출발 지점을 모두 표시합니다.", "가장 자주 반복할 두 이동을 셉니다.", "높이 차와 정확한 입구를 확인합니다.", "현실적인 야간 귀가 한 번을 점검합니다.", "무료 취소 기한 전에 차량 접근과 숙박 등록을 확인합니다."] },
-  { id: "help", type: "callout", title: "위치 판단이 필요하신가요?", tone: "decision", body: "날짜, 인원, 도착지, 예정 명소와 대략적인 예산을 보내면 Homeground가 지역을 비교하고 숙소에 다시 물어볼 위치 조건을 정리해 드릴 수 있습니다." },
-  { id: "links", type: "internal-links", title: "계속 계획하기", items: [
-    { label: "상업형 아파트호텔과 주거용 단기 임대", href: "/ko/guides/commercial-aparthotel-or-residential-rental-china/", description: "넓은 방을 고르기 전 운영 형태를 확인하세요." },
-    { label: "상하이 첫 여행 숙소 지역", href: "/ko/guides/shanghai-where-to-stay-first-trip/", description: "같은 반복 이동 기준을 상하이에 적용합니다." },
-    { label: "중국 호텔의 ‘지하철 근처’ 판단법", href: "/ko/guides/china-hotel-near-metro/", description: "표시가 아니라 마지막 도보를 점검하세요." }
-  ]},
-  { id: "sources", type: "sources", title: "공식 출처와 이미지 크레디트", items: [
-    { label: "충칭 위중의 다층 지형 공식 소개", url: "https://english.cq.gov.cn/latestnews/Editor/202606/t20260608_15735957.html", publisher: "충칭시 인민정부", reviewedAt: "2026-08-12" },
-    { label: "사핑바 츠치커우 공식 방문 정보", url: "https://english.cq.gov.cn/latestnews/activities/202606/t20260608_15735764.html", publisher: "충칭시 인민정부", reviewedAt: "2026-08-12" },
-    { label: "제팡베이를 포함한 2026년 공식 야간 활동 안내", url: "https://english.cq.gov.cn/latestnews/activities/202607/t20260714_15821893.html", publisher: "충칭시 인민정부", reviewedAt: "2026-08-12" },
-    { label: "대표 이미지: Baycrest의 제팡베이 야경, CC BY-SA 2.5, 크롭·WebP 변환", url: "https://commons.wikimedia.org/wiki/File:Jiefangbei_night.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
-    { label: "대표 이미지 2차 저작물 라이선스: CC BY-SA 2.5", url: "https://creativecommons.org/licenses/by-sa/2.5/", publisher: "Creative Commons", reviewedAt: "2026-08-12" }
-  ]}
+  { id: "lead", type: "lead", text: "충칭에서는 평면 지도상 가까운 호텔도 거리에서는 접근하기 어려울 수 있습니다. 제팡베이·관인차오·사핑바는 서로 바꿔 쓸 수 있는 세 중심지가 아닙니다. 저녁, 도착 인계, 반복되는 도시 횡단을 가파르고 입체적인 도시의 서로 다른 쪽에 둡니다." },
+  { id: "answer", type: "callout", title: "빠른 결론", tone: "decision", body: "짧은 첫 여행이 위중 핵심 명소와 강변 저녁에 집중되면 제팡베이, 여러 밤이나 업무가 강 북쪽에 있고 현대 상업 거점이 구도심 도보보다 중요하면 관인차오를 고르세요. 츠치커우 등 서부 일정이 반복되거나 서부 철도 도착이 여행을 지배하거나 위중까지 긴 이동을 감수하고 현지 거점을 원하면 사핑바가 맞습니다." },
+  { id: "boundary", type: "paragraph", text: "이 글은 세 거점만 고릅니다. 호텔 순위, 최저가 지역, 충칭 교통 전체는 다루지 않습니다. 어느 지역이든 실제 동·로비 높이·역 출구가 결론을 바꿀 수 있습니다. 지역을 정한 뒤 전국 ‘지하철 근처’ 기준으로 호텔을 확인하세요." },
+  { id: "matrix", type: "table", caption: "서로 다른 역할의 세 거점", columns: ["거점", "가장 잘 맞음", "주요 비용", "숙소 확인"], rows: [["제팡베이", "첫 위중 핵심, 중앙 야간 산책, 강변 명소", "인파·야간 소음·일부 주소의 차량 접근", "로비 높이·하차·경사·역 입구"], ["관인차오", "반복되는 북부 식사·업무·저녁", "구도심과 남／서부 일정에 강 횡단", "큰 상업권 안의 실제 위치와 늦은 귀가"], ["사핑바", "츠치커우·서부 일정·일부 서부 도착", "위중 강변 밤에서 긴 귀가", "정확한 역／허브·환승 수·늦은 도착"]] },
+  { id: "trip-fit", type: "table", caption: "반복되는 하루가 호텔을 고르게 하세요", columns: ["일정 패턴", "먼저 볼 거점", "이유"], rows: [["2~3박 첫 여행, 여러 위중 명소", "제팡베이", "관광 핵심으로 반복 귀환 감소"], ["관인차오·북부에서 여러 번 식사·회의", "관인차오", "저녁 끝에 다시 강을 건너지 않음"], ["츠치커우와 대학／서부 일정이 하루 이상", "사핑바", "한 번의 서부 방문을 반복 횡단으로 만들지 않음"], ["츠치커우 한 번, 나머지는 중심", "제팡베이", "한 번의 서부 일정이 모든 밤을 정하지 않음"], ["부모님·유모차·큰 짐", "차량부터 객실까지 가장 쉬운 숙소", "지형이 지역 장점보다 중요할 수 있음"]] },
+  { id: "vertical", type: "heading", level: 2, text: "거리보다 높이를 먼저 읽으세요" },
+  { id: "vertical-copy", type: "paragraph", text: "충칭시 방문 자료는 거리처럼 보이는 곳이 다른 거리보다 수십 층 위일 수 있는 쿠이싱러우로 위중의 입체 구조를 설명합니다. 짧은 직선 안에 계단·급경사·육교·건물 엘리베이터·건물과 함께 닫히는 통로가 숨어 있습니다. 호텔 로비가 어느 거리와 몇 층으로 열리는지 물으세요. 건물 이름만 찾아가면 안 됩니다." },
+  { id: "last-mile", type: "list", items: ["차량 입구와 보행자 로비가 다르면 각각 지도 핀을 받으세요.", "유용한 역 출구에서 무단차인지, 늦은 시간에도 열리는지 확인하세요.", "쇼핑몰·오피스·공공 엘리베이터를 지나면 폐쇄 후 대안을 물으세요.", "휠체어·유모차·큰 짐은 하차·경사로·엘리베이터·문·객실 전체를 확인하세요.", "중국어 건물·동·로비 층을 저장하세요. 영어 호텔명은 기사를 다른 쪽으로 보낼 수 있습니다."] },
+  { id: "jiefangbei", type: "heading", level: 2, text: "제팡베이: 중앙 도시가 일정일 때" },
+  { id: "jiefangbei-copy", type: "paragraph", text: "제팡베이는 위중 중심이며 공식 자료가 쿠이싱러우·스바티의 입체 경관과 함께 소개합니다. 중앙 명소와 강변 저녁이 반복되면 세 곳 중 가장 편합니다. 전망 좋은 타워의 지상 입구가 어렵거나 객실이 늦은 보행 구역을 향할 수 있습니다. 차량 접근, 로비 높이, 식사, 조용한 쪽 객실을 확인하세요." },
+  { id: "guanyinqiao", type: "heading", level: 2, text: "관인차오: 북부 일정이 반복될 때" },
+  { id: "guanyinqiao-copy", type: "paragraph", text: "식당·현대 상업·업무 주소·지인이 강 북쪽에 있어 여행이 여러 번 관인차오에서 끝날 때 가치가 있습니다. 도시 전체 지도에서 중앙처럼 보인다는 이유만으로 고르지 마세요. 반복할 관광일, 가장 늦은 밤, 출발일의 전체 경로를 비교하세요. 넓은 상업권 반대편 호텔은 마지막 도보가 길 수 있습니다." },
+  { id: "shapingba", type: "heading", level: 2, text: "사핑바: 서부 거점이지 만능 저가 대안이 아닙니다" },
+  { id: "shapingba-copy", type: "paragraph", text: "충칭 공식 자료는 츠치커우 고진을 사핑바구에 둡니다. 츠치커우나 다른 서부 일정이 반복되거나 정확한 도착 허브와 호텔이 맞으면 합리적입니다. 매일 밤 위중으로 돌아가는 짧은 일정에는 약합니다. 표의 철도역 전체 이름을 검색하세요. ‘충칭역’처럼 모호한 말로 지역을 정하면 안 됩니다." },
+  { id: "arrival", type: "heading", level: 2, text: "첫날은 정확한 도착지가 정하게 하세요" },
+  { id: "arrival-copy", type: "paragraph", text: "공항／철도 터미널 전체 이름, 예정 도착, 현실적인 출구 시각, 짐으로 최종 두 호텔까지 실시간 문전 경로를 비교하고 실제 차량 입구를 물으세요. 늦은 밤에는 도로 접근이 단순하고 직원이 있는 호텔이 이론상 최적 지역보다 낫습니다. 불확실한 환승·급경사·셀프 체크인을 한 번에 겹치지 마세요." },
+  { id: "evening", type: "callout", title: "반복되는 저녁만 점수에 넣으세요", tone: "decision", body: "관인차오 저녁이 세 번이면 그곳에 묵을 이유가 되지만 한 번이면 아닙니다. 위중 강변 저녁이 두 번이면 제팡베이가 유리하고 츠치커우 아침 한 번만으로 사핑바를 고르지 않습니다. 반복 패턴에 숙소를 주고 예외 날에 이동하세요." },
+  { id: "verify", type: "table", caption: "최종 두 호텔에 보낼 질문", columns: ["질문", "충칭에서 중요한 이유"], rows: [["로비는 어느 도로·몇 층인가요?", "한 건물이 다른 높이의 여러 거리와 만남"], ["짐 든 차량은 어디에 서나요?", "중앙 보행 주소는 문전 하차가 어려울 수 있음"], ["어느 역 출구를 쓸 수 있나요?", "가까운 핀이 계단이나 큰 수직 우회일 수 있음"], ["다른 건물을 지나나요?", "실내 지름길이 닫힘"], ["도로·야간 소음을 피하는 객실은?", "야간 거점이 수면을 해칠 수 있음"], ["도착 시각에 여권 처리가 가능한가요?", "늦은 도착은 실제 직원 능력이 필요"]] },
+  { id: "failure", type: "table", caption: "거점이 실패했을 때 복구", columns: ["문제", "즉시 대응", "계획 변경"], rows: [["잘못된 로비·층", "전화하고 중국어 입구 핀 사용", "짐을 끌고 입체 길을 가지 말고 도로 이동"], ["실내 지름길 폐쇄", "직원 있는 거리로 돌아가 공공 경로", "독립 입구 숙소 선택"], ["객실 소음", "확인된 조용한 쪽 객실 요청", "반복 저녁이 사라질 때만 지역 이동"], ["도착이 더 늦어짐", "시간 갱신 후 직원 재확인", "입실 담당이 없으면 단순 도착 호텔"], ["도시 횡단이 지배", "도시 쪽별로 일정을 묶음", "낮에 한 번 이동이 매일 왕복보다 나을 수 있음"]] },
+  { id: "registration", type: "paragraph", text: "호텔은 외국인 투숙객을 등록하고 비호텔 숙소는 24시간 이내 별도 등록을 합니다. 실제 숙소 운영 형태와 도착 시각의 당직을 확인하세요. 어느 지역을 골라도 필요한 절차입니다." },
+  { id: "dynamic", type: "paragraph", text: "충칭시 목적지 자료와 전국 숙박 등록 안내는 2026년 8월 12일에 재확인했습니다. 지리 차이와 입체 지형 경고를 뒷받침하지만 고정 이동 시간이나 호텔 품질을 보장하지 않습니다. 여행 날짜의 경로·역 출구·숙소 접근을 다시 보세요." },
+  { id: "links", type: "internal-links", title: "계속 계획하기", items: [{ label: "‘지하철 근처’ 판단법", href: "/ko/guides/china-hotel-near-metro/", description: "역 출구와 입체적인 마지막 도보를 시험하세요." }, { label: "민수·홈스테이·호텔", href: "/ko/guides/minsu-homestay-or-hotel-china/", description: "소규모 숙소 운영을 확인하세요." }, { label: "한 거점 또는 여러 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "반복 도시 횡단이 숙소 이동을 정당화하는지 판단하세요." }] },
+  { id: "sources", type: "sources", title: "공식 출처와 이미지 크레디트", items: [{ label: "위중 입체 도시와 제팡베이 공식 소개", url: "https://english.cq.gov.cn/latestnews/Editor/202606/t20260608_15735957.html", publisher: "충칭시 인민정부", reviewedAt: "2026-08-12" }, { label: "츠치커우가 사핑바에 있음을 보여 주는 공식 자료", url: "https://english.cq.gov.cn/latestnews/activities/202606/t20260608_15735764.html", publisher: "충칭시 인민정부", reviewedAt: "2026-08-12" }, { label: "호텔 외 숙박 온라인 등록 정책 해설", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "국가이민관리국", reviewedAt: "2026-08-12" }, { label: "대표 이미지: Baycrest의 제팡베이 야경, CC BY-SA 2.5, 크롭·변환", url: "https://commons.wikimedia.org/wiki/File:Jiefangbei_night.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" }] }
 ] } as const satisfies StructuredPageBody;
 export default body;

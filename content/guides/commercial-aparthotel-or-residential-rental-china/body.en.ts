@@ -1,105 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "lead",
-      type: "lead",
-      text: "An apartment icon does not tell you who operates the property, who checks passports, whether there is a staffed desk or who helps when access fails. Compare the actual operating setup, not the platform category.",
-    },
-    {
-      id: "answer",
-      type: "callout",
-      title: "The short decision",
-      tone: "decision",
-      body: "Prefer a commercial aparthotel when you need a staffed arrival, predictable guest registration, luggage help, invoices or support after a delayed arrival. Consider a residential rental when privacy and household space matter more and the host has clearly confirmed lawful operation, building access, foreign-guest registration, support and cancellation in writing.",
-    },
-    {
-      id: "layers",
-      type: "table",
-      caption: "Keep three layers separate",
-      columns: ["Layer", "What it can establish", "What it cannot"],
-      rows: [
-        [
-          "Official rule",
-          "Hotels register hotel guests; people staying outside hotels have a separate local registration duty",
-          "That a particular listing will execute correctly",
-        ],
-        [
-          "Platform display",
-          "Room features, seller text and a booking record",
-          "Legal status, registration capability or guaranteed access",
-        ],
-        [
-          "Property execution",
-          "Actual desk, keys, operator, registration and support",
-          "A nationwide rule based on one stay",
-        ],
-      ],
-    },
-    {
-      id: "verify",
-      type: "callout",
-      title: "Send one written verification message",
-      tone: "warning",
-      body: "Ask for the operating business name, exact staffed check-in location and hours, whether it will complete the required accommodation registration using your passport, how late arrival and key failure are handled, and which entity receives the deposit. Save the answer and listing. A platform label is evidence of what was advertised, not proof of legality.",
-    },
-    {
-      id: "facts",
-      type: "callout",
-      title: "Policy facts checked August 12, 2026",
-      tone: "neutral",
-      body: "National Immigration Administration guidance distinguishes hotel accommodation—where the hotel registers foreign guests—from accommodation outside hotels, where the foreign guest or host must complete registration with the local public-security authority within 24 hours. A March 2026 online-registration pilot applies in specified regions, not automatically nationwide. Local procedures and property execution can differ; use official local channels.",
-    },
-    {
-      id: "links",
-      type: "internal-links",
-      title: "Continue planning",
-      items: [
-        {
-          label: "Serviced apartment or hotel?",
-          href: "/guides/serviced-apartment-or-hotel-china/",
-          description: "Compare service and contract fit for a longer stay.",
-        },
-        {
-          label: "Shenzhen stay areas",
-          href: "/guides/shenzhen-where-to-stay-futian-luohu-nanshan/",
-          description: "Put the operating choice in the right district.",
-        },
-        {
-          label: "Check everyday hotel access",
-          href: "/guides/china-hotel-near-metro/",
-          description:
-            "Test the final walk after choosing the operating model.",
-        },
-      ],
-    },
-    {
-      id: "sources",
-      type: "sources",
-      title: "Official sources",
-      items: [
-        {
-          label:
-            "Official interpretation of foreigner accommodation registration and 2026 online pilot",
-          url: "https://s.nia.gov.cn/mps/zcjd/202601/t20260750_1012.html",
-          publisher: "National Immigration Administration",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "English government notice on the online registration service",
-          url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html",
-          publisher: "State Council of the PRC",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "National Enterprise Credit Information Publicity System",
-          url: "https://www.gsxt.gov.cn/",
-          publisher: "State Administration for Market Regulation",
-          reviewedAt: "2026-08-12",
-        },
-      ],
-    },
-  ],
+    { id: "lead", type: "lead", text: "A commercial aparthotel and a residential short-term rental may show the same sofa, kitchen and skyline in an app. They are not the same stay. The useful distinction is who operates the address, who can admit you, and what happens when passport registration, the building door or a midnight plumbing problem needs a responsible person." },
+    { id: "answer", type: "callout", title: "The short decision", tone: "decision", body: "For a first visit, a late arrival or any trip with little recovery time, start with a commercially operated aparthotel that confirms a staffed check-in, passport handling and the exact unit. Consider a residential rental only when the host can document the operating arrangement, building access and non-hotel accommodation-registration process in writing. Extra space is not worth an arrival that depends on an unreachable individual." },
+    { id: "boundary", type: "paragraph", text: "This guide decides between operating models. It does not rank booking platforms or argue that every apartment-style room is risky. A hotel can offer a kitchen; an aparthotel can operate like a hotel; and a residential building can contain both lawful commercial accommodation and private homes. Read the named operator and check-in method rather than inferring the model from furniture or the word ‘apartment’." },
+    { id: "matrix", type: "table", caption: "Compare the operating chain before the floor plan", columns: ["Decision point", "Commercial aparthotel", "Residential rental"], rows: [["Arrival", "Reception or documented staff process", "Host, agent, lockbox or building handoff"], ["Passport registration", "Hotel-style operator should register guests", "Non-hotel procedure falls to the guest or host"], ["Building access", "Usually part of the accommodation operation", "May depend on residential security or resident-only systems"], ["Problem ownership", "Duty staff or formal service channel", "One host or platform escalation"], ["Space and routines", "Kitchen/laundry vary by room category", "Often more domestic space, but every facility must be verified"], ["Receipts and deposits", "Usually a defined business process", "Terms can sit across host, platform and building"]] },
+    { id: "best-fit", type: "heading", level: 2, text: "Who should favour each model" },
+    { id: "best-fit-table", type: "table", caption: "Match the stay to the least flexible part of the trip", columns: ["Trip situation", "Safer starting point", "Why"], rows: [["First night in China or arrival after 21:00", "Commercial aparthotel", "A staffed, written late-arrival process reduces dependence on one person"], ["Family with children, older parents or several cases", "Commercial aparthotel unless the rental proves the full curb-to-room route", "Lift, vehicle access and replacement-room support matter more than nominal space"], ["Long stay with a local contact and flexible arrival", "Either", "A verified host and clear registration process can make a residential unit workable"], ["Need a legal invoice or employer documentation", "Commercial aparthotel", "Confirm the issuing entity and invoice details before payment"], ["Need a particular kitchen or washer", "Either, after unit-level confirmation", "The label does not prove appliances, cookware or drying arrangements"]] },
+    { id: "identity", type: "heading", level: 2, text: "Identify the operator, not just the listing" },
+    { id: "identity-copy", type: "paragraph", text: "Ask for the Chinese legal name of the operating entity, the full address and the name shown on the building or reception desk. The National Enterprise Credit Information Publicity System can confirm that an enterprise exists, but a search result alone does not prove that a specific unit is authorised for short stays or that staff can complete your arrival. Use it as one piece of evidence, then ask who signs the accommodation contract and who is on duty." },
+    { id: "identity-questions", type: "list", items: ["Is the booking for a hotel/aparthotel room or for a private residence?", "Who will meet us if the building guard or smart lock does not admit us?", "Will the same operator take payment, issue any requested invoice and handle the deposit?", "Is the photographed unit the unit we receive, or only an example of the room type?", "Can the operator confirm the Chinese address and entrance for a taxi driver?"] },
+    { id: "registration", type: "heading", level: 2, text: "Passport registration follows the stay type" },
+    { id: "registration-copy", type: "paragraph", text: "National Immigration Administration guidance separates hotel stays from accommodation outside hotels. A hotel registers foreign guests and submits the information to local public-security authorities. At a private home or another non-hotel address, the foreign guest or the person providing the accommodation must complete registration within 24 hours. Since March 20, 2026, the NIA online route has been piloted in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan; elsewhere, confirm the current local route with the accommodation provider or public-security authority. In the pilot regions, first-time online registration normally needs the provider's help with the address details." },
+    { id: "registration-warning", type: "callout", title: "Do not accept ‘foreigners cannot stay here’ as the whole explanation", tone: "warning", body: "Ask the operator to state whether the address is a hotel or a non-hotel residence and which registration route applies. Do not ask a residential host to pretend the unit is a hotel, and do not assume an online form fixes an unauthorised or inaccessible stay. If the host cannot explain the address, their role and the registration process before payment, choose another property." },
+    { id: "arrival", type: "heading", level: 2, text: "Run the arrival as a real sequence" },
+    { id: "arrival-steps", type: "list", ordered: true, items: ["Save the Chinese property name, full address, building number and a reachable phone contact offline.", "Confirm the latest check-in time and what protects the booking if a flight or train is delayed.", "Ask where a taxi stops and whether the entrance involves a compound gate, stairs, a long indoor corridor or a separate tower.", "Get the exact process for every adult passport and for children travelling on their own documents.", "Do not mark yourself arrived in the app until you have entered the unit and checked that it matches the booked essentials."] },
+    { id: "unit-check", type: "heading", level: 2, text: "Verify the unit-level promises" },
+    { id: "unit-table", type: "table", caption: "Turn attractive amenities into testable questions", columns: ["Listing promise", "Ask before booking", "Fallback"], rows: [["Kitchen", "Induction or gas, cookware, tableware and any use restrictions", "Choose a room without a kitchen premium if you cannot cook"], ["Washer", "Inside the unit or shared; detergent; dryer or drying rack", "Locate a staffed laundry or hotel service"], ["Two bedrooms", "Real doors, windows, beds and air-conditioning in each room", "Book two conventional rooms when privacy is essential"], ["Lift", "Step-free from curb and lobby to the assigned floor", "Request a lower floor or different property"], ["Quiet residential building", "Construction, neighbours, road exposure and quiet-hour rules", "Keep a cancellable first night"], ["Weekly cleaning", "Exact frequency, linens, rubbish and notice before entry", "Budget for self-service routines"]] },
+    { id: "building", type: "paragraph", text: "Residential security is not a hotel reception. Some compounds use resident credentials, face recognition, app-linked doors or guards who cannot improvise for an overseas visitor. Never propose bypassing building controls. Ask the host for the lawful guest-entry route and a staffed recovery method. If access relies on borrowing a resident's identity, following someone through a gate or concealing the short stay, do not book." },
+    { id: "failure", type: "heading", level: 2, text: "Plan the first-hour recovery" },
+    { id: "failure-table", type: "table", caption: "What to do when the handoff fails", columns: ["Failure", "Immediate action", "When to leave"], rows: [["Host does not answer", "Use the written backup contact and platform support while remaining in a public staffed place", "No responsible person or lawful entry plan by your stated arrival deadline"], ["Guard refuses entry", "Do not argue or tailgate; ask the operator to resolve access directly", "Operator asks you to misrepresent the stay"], ["Unit materially differs", "Photograph the assigned unit and list the booked essentials that are missing", "Unsafe, uninhabitable or no workable sleeping arrangement"], ["Registration cannot be explained", "Ask whether the address is hotel or non-hotel and use the matching official route", "Host refuses to provide accurate address or accommodation-provider details"], ["No lift or luggage route", "Request lawful porter help or a different accessible unit", "The least mobile traveller cannot safely reach the room"]] },
+    { id: "switch", type: "callout", title: "When the residential rental is the wrong bargain", tone: "decision", body: "Switch to a commercial property when the host cannot name the operating entity, confirm lawful guest access, assist with first-time non-hotel registration, provide a delayed-arrival fallback or stand behind the exact unit. A larger living room does not compensate for losing the first night, separating the group or negotiating at a residential gate." },
+    { id: "dynamic", type: "paragraph", text: "Official registration guidance and enterprise-search channels were reviewed on August 13, 2026. Local execution, building controls and the status of an individual operator can change. Recheck the property shortly before arrival; this page does not certify any listing, building or booking platform." },
+    { id: "links", type: "internal-links", title: "Continue planning", items: [{ label: "Serviced apartment or hotel for a longer stay", href: "/guides/serviced-apartment-or-hotel-china/", description: "Compare daily routines after choosing a commercially operated stay." }, { label: "What minsu, homestay and hotel labels mean", href: "/guides/minsu-homestay-or-hotel-china/", description: "Decode listing labels without treating them as guarantees." }, { label: "Test whether a hotel is really near the metro", href: "/guides/china-hotel-near-metro/", description: "Audit the lobby, station entrance and last mile." }] },
+    { id: "sources", type: "sources", title: "Official sources", items: [{ label: "Online registration for foreigners staying outside hotels", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" }, { label: "English policy interpretation of non-hotel registration", url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html", publisher: "State Council of the People's Republic of China", reviewedAt: "2026-08-13" }, { label: "National Enterprise Credit Information Publicity System", url: "https://www.gsxt.gov.cn/", publisher: "State Administration for Market Regulation", reviewedAt: "2026-08-13" }] }
+  ]
 } as const satisfies StructuredPageBody;
+
 export default body;

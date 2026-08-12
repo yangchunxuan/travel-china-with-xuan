@@ -1,122 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "Hunan food is often introduced through heat, but a first shared meal works better when fresh chili, sour or pickled notes, smoked ingredients, steamed dishes and vegetables are allowed to contrast."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Order contrast, not ten chilies",
-      "body": "For three or four diners, start with one signature protein, one steamed or braised dish, one vegetable or tofu dish and rice. Add a smoked or sour item only if the group wants the stronger regional profile.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Order contrast, not ten chilies",
-      "columns": [
-        "Slot",
-        "Example direction",
-        "Balance question"
-      ],
-      "rows": [
-        [
-          "Fresh heat",
-          "Chili-led meat or fish",
-          "Can one dish carry the main heat?"
-        ],
-        [
-          "Sour/preserved",
-          "Pickled chili or vegetable",
-          "Is it also salty?"
-        ],
-        [
-          "Smoked/cured",
-          "Smoked meat",
-          "Pair with a lighter dish"
-        ],
-        [
-          "Relief",
-          "Steamed egg, tofu or greens",
-          "Confirm less chili clearly"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Tell staff who cannot eat chili, not just who prefers mild.",
-        "Use 微辣, 少放辣椒 or 完全不辣, but expect kitchens to vary.",
-        "State allergies separately; ‘not spicy’ is not an allergy protocol.",
-        "Order rice and vegetables with the first round.",
-        "Add only after the table has tasted everything."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "Not all Hunan dishes are equally hot",
-      "body": "Regions, families, restaurants and cooks vary. A request for less chili may change a dish and cannot guarantee zero chili, oil contact or allergen separation.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Share the date, group and constraints. A local human can help verify a practical food or craft plan without turning one venue into a national rule.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "Your first shared meal",
-          "href": "/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "How to pay in China",
-          "href": "/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "Is your itinerary too rushed?",
-          "href": "/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official sources and image credit",
-      "items": [
-        {
-          "label": "Hunan cuisine traditions",
-          "url": "https://hunan.gov.cn/topic/ccjhl/djz/202107/t20210716_19935053.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hunan delicacies and methods",
-          "url": "https://whhlyt.hunan.gov.cn/whhlyt/english/Culture/Delicacies/202403/t20240315_33249620.html",
-          "publisher": "Hunan Provincial Department of Culture and Tourism",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hunan home-style fried tofu by Huangdan2060, CC BY 3.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"A first Hunan meal should show contrast, not test how much chili you can endure. The cuisine includes fresh and preserved chilies, sour and pickled ingredients, smoked or cured foods, steaming, stir-frying, braising and vegetable dishes. Build one coherent shared table, state dietary limits before ordering and leave room to taste each dish while it is at its best."},
+{"id":"answer","type":"callout","title":"For two people, start with three dishes plus rice","body":"Choose one signature protein or tofu dish, one clearly lighter vegetable, and one contrasting steamed, soupy or sour item; add plain rice and a non-alcoholic drink. For three or four people, add one more protein or local specialty before adding snacks. Ask which dishes are naturally less hot rather than requesting every chili-heavy dish to be remade without its core seasoning.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"Hunan cuisine is not one heat level or one Changsha menu"},
+{"id":"scope","type":"paragraph","text":"Hunan government sources present the cuisine as broader than heat alone and document regional and seasonal dishes using varied ingredients and methods. Restaurant menus still differ by city, season, price level and chef. A Changsha restaurant, a Xiangxi meal and a home-style Hunan kitchen do not need to offer the same dishes. This guide builds a manageable first shared meal; it is not a definitive catalogue of Xiang cuisine and does not claim that a dish name guarantees one recipe."},
+{"id":"flavour-heading","type":"heading","level":2,"text":"Build contrast across flavour, method and texture"},
+{"id":"flavour","type":"table","caption":"Roles on a balanced first table","columns":["Role","What it contributes","Examples to look for","Question to ask"],"rows":[["Fresh or chopped chili dish","Bright heat and aroma","A house specialty using fresh green or red chili","“Is this one very hot, and can chili be reduced?”"],["Sour or pickled note","Acidity and appetite","Pickled vegetables or a dish described as sour-spicy","“Is the sourness from pickling, vinegar or both?”"],["Smoked or cured ingredient","Dense savoury flavour","Smoked pork or preserved ingredient when suitable","“Is this a small salty dish to share?”"],["Steamed or braised dish","Moisture and slower flavour","Steamed fish, tofu, egg or a braise on the current menu","“Does the sauce contain chili throughout?”"],["Green vegetable","Freshness and texture","Seasonal leafy greens prepared simply","“Can this be cooked with little or no chili?”"],["Rice, soup or drink","Pacing and recovery","Plain rice, a light soup or unsweetened drink","“What is the portion size?”"]]},
+{"id":"groups-heading","type":"heading","level":2,"text":"Use group size to control the order"},
+{"id":"groups","type":"table","caption":"A practical starting order","columns":["Group","Start with","Wait before adding"],"rows":[["Solo","One rice-friendly main plus a vegetable or soup if small portions exist","Fried snacks and a second heavy main"],["Two people","One main, one vegetable, one contrast dish, rice","A fourth dish until portion sizes are visible"],["Three to four","Two proteins or specialties, one vegetable, one contrast dish, rice","Extra cold dishes until the table arrives"],["Five or more","Ask the server to size a mixed table and name your budget and limits","Duplicate meats and several dishes with the same chili profile"]]},
+{"id":"order-heading","type":"heading","level":2,"text":"A seven-step ordering workflow"},
+{"id":"workflow","type":"list","ordered":true,"items":["Tell the server the number of diners, any children and a rough appetite level.","State allergies, vegetarian needs and ingredients you cannot eat before discussing preferences.","Ask for the restaurant's representative dishes and point out that this is your first Hunan meal.","Choose dishes with different cooking methods and no more than one unknown high-heat dish at first.","Confirm whether portions are small, regular or large and whether rice is ordered per person.","Review the order for duplicate proteins, all-fried textures or chili in every dish.","Taste the first dishes before adding; do not order a full second round on photographs alone."]},
+{"id":"language-heading","type":"heading","level":2,"text":"Useful Chinese, with realistic limits"},
+{"id":"language","type":"table","caption":"Show these phrases while pointing to the dish","columns":["Need","Chinese","Meaning and limit"],"rows":[["Ask about heat","这个菜很辣吗？","Is this dish very spicy? The answer is still subjective."],["Request less chili","可以少放辣椒吗？","Can you use less chili? It may not suit a pre-made sauce."],["Request no chili","这个可以不放辣椒吗？","Can this be made without chili? Ask for a naturally mild alternative if not."],["State an allergy","我对___过敏，连少量也不能吃。","I am allergic to __; I cannot eat even a small amount. This does not guarantee no cross-contact."],["Ask portion","这个菜大概几个人吃？","About how many people does this serve?"],["Ask for plain rice","请给我们___碗米饭。","Please give us ___ bowls of rice."]]},
+{"id":"heat-heading","type":"heading","level":2,"text":"“Less spicy” is not the same as “safe”"},
+{"id":"heat","type":"paragraph","text":"Heat is subjective, and chili may be chopped into the dish, infused into oil or already present in a prepared sauce or pickled ingredient. Removing visible pieces may not remove capsaicin. If you cannot tolerate heat, select naturally mild dishes and confirm each one instead of relying on a general request. If the issue is an allergy rather than preference, use a written allergy card and ask about sauces, stock, shared woks, utensils and cross-contact; choose another restaurant if staff cannot confirm."},
+{"id":"diet-heading","type":"heading","level":2,"text":"Dietary boundaries need ingredient-level questions"},
+{"id":"diet","type":"list","items":["Vegetarian: ask about lard, meat stock, minced meat, oyster sauce and dried shrimp even in vegetables or tofu.","Pork-free: cured or smoked pork and pork stock may appear outside obvious meat dishes.","Peanut or sesame allergy: ask about garnish, paste, cooking oil and shared preparation, not just the dish title.","Gluten-related needs: soy sauce and other seasonings may contain wheat; ordinary kitchens may not prevent cross-contact.","Low sodium: smoked, cured, pickled and sauce-heavy dishes may remain salty even when less sauce is requested."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Why first Hunan meals go wrong"},
+{"id":"mistakes","type":"list","items":["Ordering three red-looking signature dishes before learning the restaurant's heat level.","Choosing several dense meat dishes and no vegetable, soup or plain rice.","Assuming “not spicy” on a translated app means no chili in sauce or oil.","Treating every Hunan meal as Changsha food and every Hunan dish as identical across restaurants.","Ordering by photo without asking portion size, bones, offal or cured ingredients.","Using milk, alcohol or a sugary drink as a medical solution; stop eating if you feel unwell and seek appropriate care for allergic symptoms."]},
+{"id":"fit-heading","type":"heading","level":2,"text":"Choose the right style of first meal"},
+{"id":"fit","type":"comparison","title":"Restaurant choice by your real need","columns":[{"heading":"Local shared restaurant","items":["Best for a group","Broad dish contrast","Requires portion and spice communication"]},{"heading":"Mall or established restaurant","items":["Often easier menus and seating","Useful for children or mixed tolerance","Still verify ingredients and cross-contact"]},{"heading":"Single-dish shop","items":["Good for solo travellers","Simple order and smaller commitment","Narrow view of the cuisine; do not call it a complete survey"]}]},
+{"id":"warning","type":"callout","title":"Do not use a preference phrase as an allergy guarantee","body":"“No chili,” “vegetarian” or a translated menu label may describe intent, not a medically controlled kitchen. For a severe allergy, communicate the ingredient and cross-contact risk clearly, carry prescribed medication and leave if the answer is uncertain.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"A good first table should pass this check"},
+{"id":"checklist","type":"list","items":["At least two different cooking methods","Only one dish with unknown high heat","One vegetable or other lighter dish","Rice or another neutral staple","Dietary restrictions confirmed dish by dish","Portions matched to the group","No assumption that every diner shares the same tolerance"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Share the city, group size, budget, spice tolerance and non-negotiable dietary limits. A local planner can suggest the right restaurant style and prepare a Chinese ordering note while keeping recipes, portions and allergen controls subject to the restaurant's current confirmation.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Plan the meal around the rest of the trip","items":[{"label":"Your first shared meal in China","href":"/guides/first-shared-meal-in-china/","description":"Learn the general order, portion and table-service logic before applying the Hunan flavour plan."},{"label":"How to pay in China as a tourist","href":"/guides/how-to-pay-in-china-as-a-tourist/","description":"Prepare payment fallback before choosing a small local restaurant."},{"label":"Is your China itinerary too rushed?","href":"/guides/is-your-china-itinerary-too-rushed/","description":"Leave enough time for a shared meal instead of squeezing it between fixed tickets."}]},
+{"id":"sources","type":"sources","title":"Official sources and image credit","items":[{"label":"The Essence of Hunan Cuisine","url":"https://hunan.gov.cn/topic/ccjhl/djz/202107/t20210716_19935053.html","publisher":"Hunan Provincial Government","reviewedAt":"2026-08-12"},{"label":"Hunan delicacies and cooking traditions","url":"https://whhlyt.hunan.gov.cn/whhlyt/english/Culture/Delicacies/202403/t20240315_33249620.html","publisher":"Hunan Provincial Department of Culture and Tourism","reviewedAt":"2026-08-12"},{"label":"Hero: Hunan home-style fried tofu by Huangdan2060, CC BY 3.0; cropped","url":"https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

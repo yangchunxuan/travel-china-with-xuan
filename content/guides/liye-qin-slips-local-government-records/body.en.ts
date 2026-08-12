@@ -1,122 +1,28 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "The Liye Qin slips make empire visible at county level: documents move, grain is counted and officials report. Their routine nature is their strength, but one archive cannot represent every Qin place or year."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Read the archive before the empire",
-      "body": "Identify document type, sender, recipient and action in Qianling County, then ask what practice it reveals before scaling up.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Read the archive before the empire",
-      "columns": [
-        "Clue",
-        "Action",
-        "Limit"
-      ],
-      "rows": [
-        [
-          "Dispatch marks",
-          "Track delivery",
-          "One route is not the whole network"
-        ],
-        [
-          "Accounts",
-          "Count grain or goods",
-          "Figures may be partial"
-        ],
-        [
-          "Titles and places",
-          "Show institutional relations",
-          "Titles change"
-        ],
-        [
-          "Corrections",
-          "Show working paperwork",
-          "One clerk is not every clerk"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Copy the museum object name and number.",
-        "Use the institutional transcription.",
-        "Find date, place, office and verb.",
-        "State the narrow action.",
-        "Add: at this place and time."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "The filename is not the scholarship",
-      "body": "The hero filename says “Qing”, but Commons categorization and the display identify Liye Qin slips. The article follows institutional identification.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Send the date and place. A local human can check current access, displays or programmes without promising unverified conditions.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "How Guangzhou morning tea works",
-          "href": "/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "Visit the Terracotta Army independently",
-          "href": "/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "Do you need a guide in China?",
-          "href": "/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Institutional sources and image credit",
-      "items": [
-        {
-          "label": "Story of a Small Town: Qin bamboo slips from Liye",
-          "url": "https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202104/t20210429_249982.html",
-          "publisher": "National Museum of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Liye Qin Slips Museum context",
-          "url": "https://www.enghunan.gov.cn/hneng/Services/Live/Community/LMEH/202510/t20251030_33836965.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Liye Qin Slips by Ddayzzz, CC BY 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Liye_Qing_Slips,_containing_%22A_set_of_envelopes_were_delivered_from_Dongting_Commandery_to_Qianling_county%22.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"The Liye Qin slips make an empire visible through county paperwork: messages move, grain is counted, labour and people are registered, and officials report to one another. Their power lies in ordinary administrative detail, not in offering a complete voice of Qin society. Read the archive from one document and one workflow outward before using it to describe an entire state."},
+{"id":"answer","type":"callout","title":"Start with the document, reconstruct the transaction, then scale up carefully","body":"For each slip, identify its archaeological context, institutional title, date if supplied, sender, recipient, action and marks of handling. Place it in a workflow—issue, copy, dispatch, receipt, accounting or filing. Only after several related records show a pattern should you discuss county administration or imperial standardisation; one famous slip is an example, not the whole Qin system.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"What was found at Liye, and what this guide covers"},
+{"id":"scope","type":"paragraph","text":"The National Museum of China reports that more than 38,000 Qin bamboo slips, carrying over 200,000 written characters, were unearthed at Liye in 2002. The records are associated with Qianling County and cover subjects including administration and daily life. This is an unusually large local archive that fills gaps left by transmitted Qin histories. It is not a random sample of every county, every social group or the full 221–206 BCE dynasty. This guide teaches how to read a museum display of records; it does not provide a complete translation corpus."},
+{"id":"material-heading","type":"heading","level":2,"text":"A slip is a material document, not just a line of translated text"},
+{"id":"material","type":"table","caption":"Read the object before the translation","columns":["Feature","Look for","Question it raises","Limit"],"rows":[["Shape and size","Narrow strip, wider board, broken edge","Was the format suited to a list, message or label?","Size alone does not determine document type"],["Writing faces","Text on one or more surfaces","How was space used and read?","Display mounting may hide a side"],["Binding or string traces","Notches, holes or grouped strips","Was it part of a multi-slip document?","Original order may require reconstruction"],["Corrections and marks","Overwriting, ticks, seals or endorsements if labelled","How was the record checked or handled?","Do not identify faint marks without scholarship"],["Damage and conservation","Darkening, cracks, gaps and supports","What survives and what was reconstructed?","A clean transcription may conceal physical loss"]]},
+{"id":"record-heading","type":"heading","level":2,"text":"Turn a translation into an administrative workflow"},
+{"id":"record","type":"list","ordered":true,"items":["Read the object title and excavation context before the enlarged transcription.","Find any date, place, office or personal title supplied by the museum.","Identify the requested or recorded action: send, receive, count, verify, report, store or transfer.","Separate the person who wrote or transmitted the record from the people described in it.","Look for a matching reply, receipt, duplicate or account that shows the next step.","Ask what rule appears to structure the action and whether several documents repeat it.","Write the conclusion at the correct scale: this document, this archive, this county, or a wider Qin practice supported by comparison."]},
+{"id":"themes-heading","type":"heading","level":2,"text":"Four useful entry points into the archive"},
+{"id":"themes","type":"table","caption":"Choose a question rather than trying to read everything","columns":["Question","Records to seek","What the pattern may reveal","Do not claim"],"rows":[["How did messages move?","Dispatch, receipt, route or deadline records","A chain of communication and accountability","That every journey was fast or reliable"],["How were resources counted?","Grain, objects, labour or account records","Categories, quantities and checking routines","That surviving totals equal the whole local economy"],["How did offices relate?","Sender, recipient and copied-office information","Vertical and horizontal administrative links","That the chart captures all informal power"],["How did rules meet daily life?","Cases, registrations and routine reports","Where standard procedures touched local people","That official records preserve every person's perspective"]]},
+{"id":"scale-heading","type":"heading","level":2,"text":"Move from local evidence to empire in stages"},
+{"id":"scale","type":"comparison","title":"Four scales of statement","columns":[{"heading":"The object","items":["What this strip records","What text is missing","How the museum reads it"]},{"heading":"The archive","items":["Repeated formats and actions","Clusters by date or office","Survival and excavation biases"]},{"heading":"Qianling County","items":["Local administrative routines","Links to higher offices","Conditions specific to this frontier county"]},{"heading":"The Qin state","items":["Wider systems only when supported by other sites and scholarship","Standardisation as practice, not merely decree","Regional variation and implementation gaps"]}]},
+{"id":"numbers-heading","type":"heading","level":2,"text":"Large numbers describe discovery, not automatic completeness"},
+{"id":"numbers","type":"paragraph","text":"The headline count of more than 38,000 slips communicates the scale of the find, while the museum's exhibition selection represents only a small fraction. Some strips are fragmentary, several may belong to one document, and what entered the well reflects ancient disposal or storage as well as later preservation and excavation. Do not equate number of slips with number of cases, people or days, and do not assume the museum case is a statistically representative sample."},
+{"id":"museum-heading","type":"heading","level":2,"text":"A focused museum visit in 45–90 minutes"},
+{"id":"museum","type":"list","items":["Begin with the site map and the well or excavation context.","Choose one communication record, one account and one registration or legal-administrative record.","For each, copy the object number and the museum's translation or summary.","Use a magnified image to connect visible writing with the transcription without pretending to read missing characters.","End at the timeline or administrative diagram and test it against the three documents you selected.","Check the museum's current official notice before travel; opening hours and which original slips are displayed can change."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Common interpretive failures"},
+{"id":"mistakes","type":"list","items":["Calling bamboo slips ‘paperwork’ literally; it is a modern analogy for administrative records, not a claim that they were paper.","Treating a modern punctuation and translation as if it appeared on the ancient strip.","Assuming every named person authored the text or consented to being recorded.","Turning an official category into a complete description of a person's identity.","Using the multiplication table or one delivery record as a summary of the whole archive.","Equating detailed administration with perfect compliance, uniform capacity or a complete social history."]},
+{"id":"warning","type":"callout","title":"A filename is not a scholarly identification","body":"The licensed hero file contains “Qing” in its English filename, while its description and category identify the Liye material as Qin slips. Follow the museum's object label, catalogue and excavation scholarship, not a user-uploaded filename. Apply the same rule to social captions and reposted images.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"Leave with one defensible reconstruction"},
+{"id":"checklist","type":"list","items":["Object number and excavation context","Institutional date and document type","Sender, recipient and recorded action","Evidence of dispatch, checking, copying or filing","One archive-level pattern supported by another record","One population or perspective the document does not preserve"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Tell Homeground whether your priority is Qin history, writing materials, local administration or the Liye site itself. A local planner can check current displays and travel time, then build a focused museum route around the kinds of records you actually want to understand instead of promising that every famous slip is on view.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue reading evidence, not headlines","items":[{"label":"Visit the Terracotta Army independently","href":"/guides/terracotta-warriors-without-tour/","description":"Compare a Qin imperial project with the local records that show routine administration."},{"label":"Read ritual bronze vessels and inscriptions","href":"/guides/ritual-bronze-vessels-and-inscriptions/","description":"Learn how material form and ancient writing support different kinds of claims."},{"label":"Do you need a guide in China?","href":"/guides/do-you-need-a-tour-guide-in-china/","description":"Decide whether specialist interpretation is worth arranging for a text-heavy museum."}]},
+{"id":"sources","type":"sources","title":"Institutional sources and image credit","items":[{"label":"Story of a Small Town: Qin bamboo slips from Liye","url":"https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202104/t20210429_249982.html","publisher":"National Museum of China","reviewedAt":"2026-08-12"},{"label":"Liye Ancient Town (Qin Slips) Museum","url":"https://www.enghunan.gov.cn/hneng/Services/Live/Community/LMEH/202510/t20251030_33836965.html","publisher":"Hunan Provincial Government","reviewedAt":"2026-08-12"},{"label":"Hero: Liye Qin slips delivery record by Ddayzzz, CC BY 4.0; cropped","url":"https://commons.wikimedia.org/wiki/File:Liye_Qing_Slips,_containing_%22A_set_of_envelopes_were_delivered_from_Dongting_Commandery_to_Qianling_county%22.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

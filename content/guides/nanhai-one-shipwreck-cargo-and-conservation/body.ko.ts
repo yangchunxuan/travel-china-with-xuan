@@ -1,122 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "난하이 1호는 난파선 유적이자 화물·선상생활의 조합이며 계속되는 보존 사업입니다. ‘보물 개수’는 역사 증거의 관계를 가립니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "숫자보다 관계 읽기",
-      "body": "발견과 일괄 인양을 선체 위치, 화물군, 개인 물품, 보존 과정과 연결하고 모든 총계에 날짜를 붙입니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "숫자보다 관계 읽기",
-      "columns": [
-        "층위",
-        "질문",
-        "추론 금지"
-      ],
-      "rows": [
-        [
-          "선체",
-          "어떤 구조·공간 관계가 남았나?",
-          "완전한 배가 멈춰 있음"
-        ],
-        [
-          "화물",
-          "도자·금속·물자가 어떻게 함께 있나?",
-          "목적지가 모두 같음"
-        ],
-        [
-          "사람",
-          "생활·작업 물품은 무엇인가?",
-          "근거 없이 신원 확인"
-        ],
-        [
-          "보존",
-          "지금 무엇을 처리·관찰하나?",
-          "상태가 영구 고정"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "현재 전시 공지를 읽습니다.",
-        "선체와 보존 공간을 찾습니다.",
-        "화물을 위치로 비교합니다.",
-        "교역품·장비·개인품을 구분합니다.",
-        "총계의 발표일을 확인합니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "보존은 동적입니다",
-      "body": "발굴, 탈염, 안정화, 연구, 전시는 변합니다. 2019년 수치는 역사 기록이지 현재 총계가 아닙니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "날짜와 장소를 보내면 현지 담당자가 현재 운영·전시·프로그램을 확인합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "여행 이어가기",
-      "items": [
-        {
-          "label": "광저우 아침 차 이해",
-          "href": "/ko/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "병마용 자유 관람",
-          "href": "/ko/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "중국 여행에 가이드가 필요할까",
-          "href": "/ko/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "기관 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Nanhai No. 1 Maritime Silk Road Museum",
-          "url": "https://www.yangjiang.gov.cn/yjsywb/tourism/nanhaino1maritimesilkroadmuseum/",
-          "publisher": "Yangjiang Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Nanhai No. 1 exhibition and research",
-          "url": "https://www.gdmuseum.com/cn/col48/15353",
-          "publisher": "Guangdong Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Maritime Silk Road Museum by WKDx417, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"난하이 1호는 남송대 난파선이자 주변 맥락과 함께 보존된 고고학적 유물군, 방대한 화물과 선상 생활 자료, 장기 보존 사업입니다. ‘보물 개수’만 세면 역사적 가치를 만드는 관계가 사라집니다. 선체·퇴적물·화물·승선자·발굴·보존을 연결된 증거로 읽어야 합니다."},
+{"id":"answer","type":"callout","title":"한 유물을 다섯 맥락으로 따라가세요","body":"표기가 있는 화물 하나를 골라 생산지, 선체 안 위치, 함께 있던 물건, 발굴 방식과 현재 필요한 보존을 물으세요. 선체 구조 하나와 다른 화물 범주를 비교합니다. 이렇게 해야 아름다운 유물이 적재·교환·선상 생활의 증거가 되며 최종 목적지나 모든 승선자의 정체를 지어내지 않게 됩니다.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"범위: 난파선은 배 모양 보물상자가 아닙니다"},
+{"id":"scope","type":"paragraph","text":"양장시 공식 소개는 난하이 1호를 남송대 목조 상선으로, 광둥 해상실크로드박물관을 보존·전시·연구 기관으로 설명합니다. 2007년 난파선과 주변 물질은 전체 인양 방식으로 통제된 박물관 환경에 옮겨졌습니다. 이 글은 고고학과 보존 과정을 읽는 법이며 오래된 유물 수 추정치를 고정하거나 화물만으로 정확한 한 항로를 주장하거나 오늘 특정 보존 단계가 보인다고 약속하지 않습니다."},
+{"id":"timeline-heading","type":"heading","level":2,"text":"조사·인양·발굴·보존을 구분하세요"},
+{"id":"timeline","type":"table","caption":"서로 다른 다섯 과정","columns":["단계","핵심 질문","생기는 증거","축소하면 안 되는 것"],"rows":[["수중 조사","해저와 주변에 무엇이 있는가","위치, 조사 기록과 표본","완전한 목록"],["전체 인양","난파선과 주변 맥락을 함께 어떻게 옮기는가","선체·퇴적·내용물 관계가 남은 블록","일반적인 배 끌어올리기"],["통제 발굴","층위·위치·연관을 어떻게 기록하는가","기록지, 도면, 사진, 표본과 유물","보물을 꺼내는 일"],["보존","수침목과 여러 재료를 어떻게 안정화하는가","상태 기록, 처리 선택과 장기 관찰","한 번의 세척"],["해석·전시","변화하는 발견을 관람객에게 어떻게 설명하는가","표기, 복원, 모형과 연구 갱신","영원히 바뀌지 않는 최종 이야기"]]},
+{"id":"cargo-heading","type":"heading","level":2,"text":"화물을 하나의 유물군으로 읽으세요"},
+{"id":"cargo","type":"table","caption":"화물을 증거로 바꾸는 질문","columns":["증거","질문","가능한 통찰","한계"],"rows":[["생산지","현재 연구는 어디에서 만들었다고 보는가","공급 지역과 상업 연결","생산지는 적재항이나 목적지가 아님"],["수량·반복","형태가 묶음이나 세트로 적재됐는가","규모, 표준화나 목표 시장","발굴 중 수량은 바뀔 수 있음"],["선체 안 위치","어느 구획이나 층에서 나왔는가","적재 순서와 보관 관행","침몰 중 이동했을 수 있음"],["동반 화물","옆이나 안에서 무엇이 나왔는가","묶음, 용기와 혼합 화물","인접했다고 한 소유자의 물건은 아님"],["마모·잔류물","새것·사용품·수리품·내용물 중 무엇인가","상품과 장비·생활품의 구분","잔류물 판정에는 실험실 근거 필요"]]},
+{"id":"people-heading","type":"heading","level":2,"text":"인물 전기를 지어내지 말고 선상 생활을 찾으세요"},
+{"id":"people","type":"paragraph","text":"개인용품, 음식물 흔적, 도구, 조리기구, 동전이나 수리 흔적은 수출 도자기에서 배를 운용하고 생활한 사람으로 시선을 옮깁니다. 그러나 물건 하나가 특정 소유자의 이름·직업·민족을 증명하지 않습니다. 박물관이 화물·선박 장비·개인 소지품 중 무엇으로 분류하고 어떤 맥락이 이를 지지하는지 보세요. 명문 등 직접 증거가 없으면 개인 이야기는 가설로 남겨야 합니다."},
+{"id":"workflow-heading","type":"heading","level":2,"text":"박물관 관람 흐름"},
+{"id":"workflow","type":"list","ordered":true,"items":["화물 전시 전에 유적 지도, 해저 맥락과 인양 설명부터 보세요.","선체 방향과 구획·층·발굴 단위를 보여 주는 도면을 찾으세요.","도자기 한 그룹, 비도자 화물 하나, 선상 생활 관련 물건 하나를 고르세요.","각각의 출처, 위치, 동반 유물과 제시된 보존 상태를 기록하세요.","지정 구역에서 보존 공간을 보고 조용한 순간을 사업 정체로 해석하지 마세요.","원본·복원품·디지털 시각화를 비교하고 무엇인지 표시하세요.","유물군이 상업에 관해 지지하는 것과 항로에 관해 확정할 수 없는 것을 적으세요."]},
+{"id":"conservation-heading","type":"heading","level":2,"text":"보존이 여전히 이야기의 일부인 이유"},
+{"id":"conservation","type":"paragraph","text":"물에 잠겨 있던 고고학적 목재는 일반 건조 목재와 매우 다른 포화 환경에서 살아남았습니다. 발굴은 온도·산소·수분·염분·생물 조건을 바꾸며 도자기·금속·유기물은 서로 다른 처리가 필요합니다. 보존가는 상태를 기록하고 방법을 시험하며 급격한 변화를 피해야 하므로 처리에는 시간이 걸립니다. 지지대, 습도 조절, 낮은 조명이나 비공개 구역은 ‘완성 실패’가 아니라 관리의 증거입니다."},
+{"id":"evidence-heading","type":"heading","level":2,"text":"세 가지 증거 층을 분리하세요"},
+{"id":"evidence","type":"comparison","title":"아는 것은 증거 층에 달려 있습니다","columns":[{"heading":"관찰·기록","items":["유물 위치와 발굴 단위","선체 요소와 재료","보이는 상태와 표기"]},{"heading":"연구 해석","items":["생산 중심지 추정","화물 조직","가능한 연대와 상업 맥락"]},{"heading":"불확실·수정 가능","items":["정확한 목적지","모든 승선자의 정체","발굴·목록화 완료 전 최종 수량"]}]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"난파선 증거를 납작하게 만드는 오류"},
+{"id":"mistakes","type":"list","items":["발표 연도와 추정 여부 없이 극적인 유물 총수 반복하기","회수품을 모두 보물이라 하며 도구·파편·표본·선체 무시하기","도자기 생산지를 배의 전체 항로로 직접 연결하기","모든 물건이 한 해외 시장으로 갔거나 인접품이 한 상인의 소유라고 보기","복원도나 상상화를 발굴 사진으로 보기","지속적 처리를 기록하는 박물관에 보존이 ‘미완성’이라고 불평하기"]},
+{"id":"visit-heading","type":"heading","level":2,"text":"일정에 맞는 목적지인지 판단하세요"},
+{"id":"visit","type":"comparison","title":"박물관을 의도적인 목적지로 선택","columns":[{"heading":"잘 맞음","items":["해양고고학이나 송대 무역 관심","몇 시간 집중 관람 가능","양장·하이링다오가 이미 동선에 있음"]},{"heading":"고려 가능","items":["주로 도자기를 보지만 발굴 맥락도 읽을 의향","대형 전문 박물관을 감당할 그룹","현재 교통·운영 정보 확인 완료"]},{"heading":"잘 맞지 않음","items":["탑승 가능한 완전 복원선을 기대","당일 빠듯한 왕복 우회","고정 ‘보물 개수’ 사진만 원함"]}]},
+{"id":"warning","type":"callout","title":"보이는 보존 상태는 바뀔 수 있습니다","body":"연구와 보존에 따라 발굴 구역, 처리 단계, 원본 전시와 시야가 달라질 수 있습니다. 출발 전에 박물관이나 지방정부 최신 공지를 확인하고 방문일에 본 상태로 설명하세요. 영구 상태처럼 쓰면 안 됩니다.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"숫자가 아니라 난파선 논증을 가져가세요"},
+{"id":"checklist","type":"list","items":["전체 인양이 맥락을 보존한 방식","선체 특징 하나와 그 의미","생산지·위치 증거가 있는 화물 한 그룹","선상 생활과 연결된 물건이나 흔적","보존 문제 하나와 박물관 대응","열린 항로 또는 정체 질문 하나"]},
+{"id":"help","type":"callout","title":"Homeground","body":"출발지, 교통수단, 선박·도자기·송대 무역·보존 중 우선순위를 알려 주세요. 현지 플래너가 현재 접근을 확인하고 현실적인 관람 시간을 확보해 전문 박물관을 급한 사진 명소로 만들지 않고 양장 일정에 연결할 수 있습니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"물질 증거 계속 읽기","items":[{"label":"청동 예기와 명문 읽기","href":"/ko/guides/ritual-bronze-vessels-and-inscriptions/","description":"박물관 유물에서 형태·맥락·문자를 함께 사용합니다."},{"label":"리예 진간으로 지방 행정 읽기","href":"/ko/guides/liye-qin-slips-local-government-records/","description":"행정 기록군과 난파선 유물군을 비교합니다."},{"label":"중국 일정이 너무 바쁜지 점검하기","href":"/ko/guides/is-your-china-itinerary-too-rushed/","description":"전문 박물관 우회에 충분한 시간이 있는지 봅니다."}]},
+{"id":"sources","type":"sources","title":"기관 자료와 이미지 출처","items":[{"label":"난하이 1호와 광둥 해상실크로드박물관","url":"https://www.yangjiang.gov.cn/yjsywb/tourism/nanhaino1maritimesilkroadmuseum/","publisher":"양장시 인민정부","reviewedAt":"2026-08-12"},{"label":"난하이 1호 전시와 연구","url":"https://www.gdmuseum.com/cn/col48/15353","publisher":"광둥성박물관","reviewedAt":"2026-08-12"},{"label":"대표 이미지: WKDx417 촬영 광둥 해상실크로드박물관, CC BY-SA 4.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

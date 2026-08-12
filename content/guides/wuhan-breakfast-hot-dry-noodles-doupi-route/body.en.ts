@@ -1,122 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "Guozao is Wuhan's everyday idea of getting through breakfast, not a requirement to eat every famous snack at once. Build one main, one shared side and a drink, then stop."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Choose a breakfast shape",
-      "body": "Hot-dry noodles are a concentrated sesame-paste noodle bowl; three-fresh doupi adds crisp bean-and-egg skin over sticky rice filling; mianwo is a fried rice-and-soy ring. For two people, begin with one main each and share only one extra.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Choose a breakfast shape",
-      "columns": [
-        "Item",
-        "Role",
-        "Ask"
-      ],
-      "rows": [
-        [
-          "Hot-dry noodles",
-          "Main bowl",
-          "Mix immediately; check chili"
-        ],
-        [
-          "Three-fresh doupi",
-          "Dense shared square",
-          "Order a small portion if offered"
-        ],
-        [
-          "Mianwo",
-          "Fried contrast",
-          "Buy one fresh piece"
-        ],
-        [
-          "Drink or light soup",
-          "Relief",
-          "Confirm sweetened or unsweetened"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Go in the morning; individual shops may sell out.",
-        "Point to the dish and quantity, not only a photo.",
-        "Say whether chili is acceptable.",
-        "Share before ordering seconds.",
-        "Carry another payment method and save the shop name."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "No universal breakfast cutoff",
-      "body": "Opening and sell-out times vary by shop and day. A current map listing is a lead, not proof that a stall is open.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Share the date, group and constraints. A local human can help verify a practical food or craft plan without turning one venue into a national rule.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "Your first shared meal",
-          "href": "/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "How to pay in China",
-          "href": "/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "Is your itinerary too rushed?",
-          "href": "/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official sources and image credit",
-      "items": [
-        {
-          "label": "Wuhan breakfast culture",
-          "url": "https://english.wuhan.gov.cn/H_1/NWP/202601/t20260128_2719906.shtml",
-          "publisher": "Wuhan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Wuhan food introduction",
-          "url": "https://english.wuhan.gov.cn/H_1/NWP/202309/t20230921_2268292.shtml",
-          "publisher": "Wuhan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hot Dry Noodles by ZhengZhou, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"Guozao—Wuhan's everyday expression for eating breakfast—is a routine, not a challenge to finish every famous snack in one morning. Hot-dry noodles, three-fresh doupi and mianwo differ sharply in density and texture. Choose one primary dish, share one contrast and add a drink or light soup; then decide whether anyone still wants more."},
+{"id":"answer","type":"callout","title":"For two people, use a 2 + 1 rule","body":"Order one main per person—often a small or regular bowl of hot-dry noodles or a portion of doupi—then share one mianwo or the other main as a tasting portion. Mix hot-dry noodles immediately, eat fried items while fresh and stop before ordering the next snack. This leaves enough appetite to compare rather than turning breakfast into three full meals.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"The boundary: a practical breakfast, not a definitive food ranking"},
+{"id":"scope","type":"paragraph","text":"Wuhan government sources identify hot-dry noodles with sesame paste, doupi with glutinous rice and minced meat, and mianwo among characteristic Wuhan breakfast foods. Recipes, fillings, toppings, serving sizes and shop rhythms still vary. This guide explains how to build and order one manageable morning meal; it does not declare one shop ‘most authentic,’ freeze current opening hours or treat a tourist food street as the only place locals eat."},
+{"id":"dishes-heading","type":"heading","level":2,"text":"Know what each item does on the table"},
+{"id":"dishes","type":"table","caption":"Three dishes, three different commitments","columns":["Item","Typical structure","Texture and weight","First-timer move"],"rows":[["热干面 ré gān miàn","Wheat noodles coated with sesame paste and seasonings; toppings vary","Dense, nutty and fast-drying","Order one bowl as a main and mix from the bottom immediately"],["三鲜豆皮 sānxiān dòupí","A pan-cooked skin over seasoned glutinous rice and savoury filling","Crisp top, sticky rice and substantial filling","Share a cut portion first; ask what the filling contains"],["面窝 miànwō","A fried rice-and-soy batter ring; recipe varies","Crisp edge, softer centre and oily when cold","Buy one freshly fried piece to share"],["Drink or soup","Soy drink, rice wine drink or light soup depending on the shop","Adds moisture but may be sweet","Ask whether it is sweetened and order one before multiples"]]},
+{"id":"choose-heading","type":"heading","level":2,"text":"Choose a breakfast shape before choosing a street"},
+{"id":"choose","type":"comparison","title":"Match the order to the traveller","columns":[{"heading":"First taste for two","items":["Two small mains","One shared contrast","One drink or soup before adding more"]},{"heading":"Solo breakfast","items":["One main","One single fried item only if still hungry","Save doupi or another main for a second morning"]},{"heading":"Family or four adults","items":["Mix noodle and doupi orders","Share two contrasting snacks","Confirm fillings and spice before ordering multiples"]}]},
+{"id":"where-heading","type":"heading","level":2,"text":"Famous streets are options, not authenticity certificates"},
+{"id":"where","type":"paragraph","text":"Official city introductions list places such as Hubu Alley, Liangdao Street and other food areas, but each serves a different route and visitor flow. A celebrated snack district can be convenient for comparison and signage; a neighbourhood shop near your hotel can be better for a normal working-morning rhythm. Choose by current operation, queue, hygiene, seating needs and the rest of the day—not by the idea that one street owns Wuhan breakfast."},
+{"id":"timing-heading","type":"heading","level":2,"text":"Morning timing is a shop-level fact"},
+{"id":"timing","type":"paragraph","text":"Breakfast businesses may open early, sell out an item, pause service or operate beyond a conventional breakfast window. Map hours, old blog posts and videos are leads, not proof. Check a current shop notice or call when a specific stop matters, and keep a nearby alternative that sells the same category. Arrive hungry but not with a timed museum or train departure immediately afterward."},
+{"id":"order-heading","type":"heading","level":2,"text":"A real counter-order workflow"},
+{"id":"workflow","type":"list","ordered":true,"items":["Photograph or save the shop's Chinese name and branch before leaving the hotel.","Join the correct queue and look for whether payment happens before or after collection.","Point to the exact dish, state quantity and confirm small or regular portion if offered.","Ask about chili, coriander and the filling before the bowl or doupi is assembled.","Pay with your prepared method and keep a fallback; do not hold up the line while setting up an app.","Collect every component, find the designated eating area and mix hot-dry noodles at once.","Finish the first order, return trays if expected and only then decide whether to add another item."]},
+{"id":"phrases-heading","type":"heading","level":2,"text":"Chinese phrases for the counter"},
+{"id":"phrases","type":"table","caption":"Show the phrase and point to the item","columns":["Need","Chinese","Meaning"],"rows":[["One portion","这个要一份。","One portion of this."],["Two bowls","热干面要两碗。","Two bowls of hot-dry noodles."],["Less chili","少放辣椒，可以吗？","Can you use less chili?"],["No coriander","不要香菜。","No coriander."],["Ask filling","豆皮里面有什么？","What is inside the doupi?"],["Ask sweetness","这个是甜的吗？","Is this sweet?"],["Eat here or take away","在这里吃。/ 打包。","Eat here / take away."]]},
+{"id":"diet-heading","type":"heading","level":2,"text":"Ingredient names do not settle dietary needs"},
+{"id":"diet","type":"list","items":["Hot-dry noodles normally contain wheat and sesame paste; sauces and toppings need separate checking.","Three-fresh doupi commonly contains meat and may include egg in the skin; “three-fresh” is not a vegetarian label.","Mianwo uses rice and soy in the basic description, but wheat, seasoning and shared fryer cross-contact must be confirmed for a strict diet.","Soy and sesame are common allergens in this breakfast set; tell staff clearly rather than relying on visual inspection.","For severe allergy or coeliac-level needs, a fast shared counter may be unable to control cross-contact; choose a venue that can answer before ordering."]},
+{"id":"quality-heading","type":"heading","level":2,"text":"Judge the serving, not a mythology of one original recipe"},
+{"id":"quality","type":"paragraph","text":"For hot-dry noodles, look for noodles that remain separate enough to mix and an even coating once stirred. For doupi, contrast between the cooked top and rice filling is more informative than a perfectly square photograph. For mianwo, freshness matters because fried texture changes quickly. These are practical eating cues, not authenticity tests; recipe variation and personal preference remain legitimate."},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Common breakfast failures and recovery"},
+{"id":"mistakes","type":"table","caption":"Fix the morning without forcing it","columns":["Failure","Why it happens","Recovery"],"rows":[["Noodles clump","The bowl sat unmixed","Mix thoroughly; add only offered seasoning, not random water"],["Everything feels heavy","Three mains were ordered at once","Stop, share remaining food and save another dish for tomorrow"],["Too spicy","Chili was mixed before asking","Order a plain drink or mild item; do not assume visible removal solves it"],["Desired item sold out","One shop's production ended","Use the saved alternative or choose another breakfast category"],["No seat","Counter is designed for fast turnover or takeaway","Use the designated standing area or pack it; do not block the queue"],["Wrong branch","A map result led elsewhere","Show the saved Chinese branch name and re-evaluate travel time"]]},
+{"id":"warning","type":"callout","title":"No universal breakfast cutoff or guaranteed branch","body":"Opening, sell-out, menus and payment flow vary by shop and day. Verify a specific shop when it anchors the route and keep one nearby substitute. This article deliberately avoids promising a time, price or branch inventory.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"A breakfast plan you can actually finish"},
+{"id":"checklist","type":"list","items":["One confirmed primary shop and one nearby fallback","One main per person, not three","One shared contrast item","Chili, coriander, filling and allergens checked","Payment ready before reaching the counter","No hard timed booking immediately after breakfast","A second morning reserved for what you skip"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Share the hotel area, group size, departure time and dietary limits. A local planner can choose a realistic breakfast zone, check current shop information and build a short tasting route that fits the morning instead of sending you across Wuhan for one unverified stall.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue the practical food plan","items":[{"label":"Your first shared meal in China","href":"/guides/first-shared-meal-in-china/","description":"Use the same portion discipline for lunch or dinner."},{"label":"How to pay in China as a tourist","href":"/guides/how-to-pay-in-china-as-a-tourist/","description":"Prepare a fast payment workflow before a busy breakfast counter."},{"label":"Hunan cuisine beyond heat","href":"/guides/hunan-cuisine-balanced-first-meal/","description":"Build a different regional meal around contrast rather than endurance."}]},
+{"id":"sources","type":"sources","title":"Official sources and image credit","items":[{"label":"Wuhan breakfast culture","url":"https://english.wuhan.gov.cn/H_1/NWP/202601/t20260128_2719906.shtml","publisher":"Wuhan Municipal Government","reviewedAt":"2026-08-12"},{"label":"Wuhan food and breakfast introduction","url":"https://english.wuhan.gov.cn/H_1/NWP/202309/t20230921_2268292.shtml","publisher":"Wuhan Municipal Government","reviewedAt":"2026-08-12"},{"label":"Hero: Hot Dry Noodles by ZhengZhou, CC BY-SA 4.0; cropped","url":"https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

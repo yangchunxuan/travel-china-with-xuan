@@ -1,122 +1,34 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "周城扎染体验的价值在于你实际完成了什么，而不只是得到一块上镜的蓝布。先问每一步由谁完成、使用什么染料、何时能取件。"
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "选过程，不只选花样",
-      "body": "有意义的流程包括设计、缝扎或捆扎防染、浸染、接触空气氧化、清洗和拆线。短体验可能预制或省略步骤，只要事先说明即可。",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "选过程，不只选花样",
-      "columns": [
-        "核对",
-        "该问什么",
-        "原因"
-      ],
-      "rows": [
-        [
-          "参与",
-          "哪些步骤由我自己做？",
-          "区分演示与制作"
-        ],
-        [
-          "染料",
-          "天然靛蓝、合成染料还是混用？",
-          "不能仅凭蓝色推断材料"
-        ],
-        [
-          "次数",
-          "能完成几次浸染与氧化？",
-          "色深与流程相关"
-        ],
-        [
-          "取件",
-          "今天能否洗净晾干？",
-          "保护后续行程"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "付款前确认时长与取件。",
-        "选择能完成的布料大小。",
-        "染前拍下扎结状态。",
-        "遵守手套与染缸规则。",
-        "询问成品洗护方法。"
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "传统不等于统一配方",
-      "body": "白族扎染是有记录的非遗实践，但作坊、染料、纹样与游客流程会变化；不能只凭装修判断“正宗”。",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "发来日期、人数与限制，本地真人可核对实际饮食或手作方案，不把单一场馆写成全国规则。",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "在中国吃第一顿共享餐",
-          "href": "/zh/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "外国游客在中国怎么付款",
-          "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "你的行程是否太赶",
-          "href": "/zh/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "官方来源与图片署名",
-      "items": [
-        {
-          "label": "Bai tie-dye technique",
-          "url": "https://www.ihchina.cn/project_details/14304.html",
-          "publisher": "China Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Bai tie-dye context",
-          "url": "https://www.ynich.cn/item/91.html",
-          "publisher": "Yunnan Intangible Cultural Heritage Protection Centre",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero still: China News Service Zhoucheng tie-dye video, CC BY 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:2020%E5%B9%B45%E6%9C%885%E6%97%A5_%E6%9C%80%E7%88%B1%E5%A4%A7%E7%90%86%E7%9A%84%E9%82%A3%E2%80%9C%E4%B8%80%E6%8A%B9%E8%93%9D%E2%80%9D_%E6%9D%A5%E7%9C%8B%E7%99%BD%E6%97%8F%E6%89%8E%E6%9F%93%E5%A6%82%E4%BD%95%E5%88%B6%E6%88%90.webm",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"值得参加的周城扎染作坊，要看它解释了什么流程、游客实际完成哪些步骤，而不是只看一个上镜的蓝色染缸或立刻拿走的纪念品。预订前应问：谁设计和绞扎，使用什么染料，能完成几次浸染和氧化，谁负责漂洗拆线，以及布料什么时候适合带走。"},
+{"id":"answer","type":"callout","title":"优先选择流程透明和真实参与，不迷信装饰性宣传","body":"合格体验会说清布料尺寸、染料体系、预制步骤、游客步骤、干燥或取件方案、总价与安全规则。短体验只要明确说明图案已描好或染色循环只做演示，依然可以诚实且有价值。应拒绝的是隐瞒替代和虚假承诺，而不是所有现代调整。","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"本文所说的“周城白族扎染”是什么"},
+{"id":"scope","type":"paragraph","text":"国家级非物质文化遗产项目把白族扎染列为大理地区至今保留的传统纺织染色技艺，其中包括周城，并记录画刷图案、绞扎、浸泡、染布、晾晒、拆线和整理等步骤。云南非遗保护机构把周城描述为白族文化集中、扎染手艺突出的地区。本文帮助游客挑选流程透明的动手体验，不给具体商家排名，不为每件商品认证“全手工”，也不把整个白族文化缩成一项手艺。"},
+{"id":"process-heading","type":"heading","level":2,"text":"先理解完整工序，再评价你的体验"},
+{"id":"process","type":"table","caption":"从白布到显花","columns":["阶段","发生什么","游客可能做什么","要问什么"],"rows":[["设计与描样","规划或把纹样转到布上","选模板、自己画或使用描好图案","图案是预描、临摹还是我自己设计？"],["折叠、撮绉与缝扎","压紧或缝合局部形成防染","折、扎、缝或收紧部分区域","体验时长适合哪些绞扎方法？"],["准备与浸泡","处理布料和染液","在指导下观察或参与","布或染缸有哪些已提前准备？"],["浸染与接触空气","扎好的布入染液再接触空气，可多次循环","在监督下浸、提和氧化","会完成几次循环，为什么？"],["漂洗与拆线","洗去浮色并小心拆除绳线","时间和安全允许时漂洗、显花","由谁拆线，什么时候拆？"],["干燥与整理","晾干，可能再碾平或整理","稍后取件或按要求包装","今天能干吗？怎样携带和第一次清洗？"]]},
+{"id":"dye-heading","type":"heading","level":2,"text":"只看蓝色不能判断染料"},
+{"id":"dye","type":"paragraph","text":"国家非遗资料把植物蓝靛列为主要传统染料，但周城的机构调查也记录了化学染料的历史使用和作坊实践变化。植物靛、合成染料或混合工艺都能产生蓝色。应直接询问材料名称，让作坊解释当天染缸，不要通过气味、装饰或颜色自行推断。流程透明，比没有依据地宣称某一种配方才“唯一正宗”更适合作为游客标准。"},
+{"id":"choose-heading","type":"heading","level":2,"text":"让体验形式匹配你真正想得到的结果"},
+{"id":"choose","type":"table","caption":"体验形式与诚实预期","columns":["形式","适合","常见妥协","最低限度说明"],"rows":[["短时入门","家庭、紧凑路线和第一次接触","预描图案、有限绞扎、少量染色循环","哪些是演示或预制"],["半日动手","想理解防染与多次浸染者","图案尺寸必须可控","染料、循环、干燥和取件"],["更长或专题课程","纺织学习者和原创设计","需更多计划，可能延后取件","难度、工具、语言和整理责任"],["纯演示","行动、时间或接触染料受限者","没有个人成品","演示者身份与展示的真实工序范围"],["零售参观","不参加课程但想向制作者购买","生产可能由多人或多个地点完成","材料、制作过程与是否手工"]]},
+{"id":"questions-heading","type":"heading","level":2,"text":"付款前发出的十个问题"},
+{"id":"questions","type":"list","ordered":true,"items":["准确地址和作坊中文名称是什么？","完整体验含漂洗和包装一共多长？","哪些步骤由我完成，哪些已预制？","包含什么纤维和多大布料？","当天使用植物靛、合成染料还是混合体系？","这件作品会完成几次浸染和接触空气？","是否有团队能听懂的语言指导？","是否提供手套、围裙和安全放置物品处？","布料当天能带走，还是要稍后取件或寄送？","总价包含什么，取消后怎样处理？"]},
+{"id":"quality-heading","type":"heading","level":2,"text":"评价学习过程，不要求图案完全可预测"},
+{"id":"quality","type":"paragraph","text":"绞扎张力、折叠、纤维、染缸状态和循环次数都会影响结果，渐变色晕与细微差异可能呈现工艺，而非失败。高质量游客体验应解释这些变量、示范安全技法，并让你比较扎结前后。只要体验确实让制作者做选择，就不应保证成品和样品一模一样。"},
+{"id":"arrival-heading","type":"heading","level":2,"text":"从到场到离开的执行流程"},
+{"id":"workflow","type":"list","ordered":true,"items":["出发前一天再次确认地址、开始时间、时长和取件方案。","穿能承受飞溅的衣服和包脚鞋，摘下松动饰品并收好包。","染色前拍下白布和完全扎好的状态，记录防染逻辑。","遵守染缸、湿滑地面、工具和接触染料规则；儿童必须直接看护。","数清每次浸染与接触空气，并记下哪些步骤由老师完成。","拆线前问从哪里下剪，避免剪坏布料。","离开前取得书面的第一次清洗、掉色、干燥和包装说明。"]},
+{"id":"care-heading","type":"heading","level":2,"text":"第一次清洗是预订决定的一部分"},
+{"id":"care","type":"paragraph","text":"看似完成的布料仍可能潮湿或释放浮色。不同纤维和染料体系要求不同，应遵从作坊的漂洗、晾干和初洗说明。潮湿布料应与浅色衣服和证件分开放，按作坊建议透气或包装；没有指导时不要长期密封湿布。当天马上继续旅行，应选小件或安排延后取件。"},
+{"id":"evidence-heading","type":"heading","level":2,"text":"传统、演示和旅游体验相关，但不是同一件事"},
+{"id":"evidence","type":"comparison","title":"准确描述你的经历","columns":[{"heading":"遗产实践","items":["社群知识与传承","完整生产和社会语境","随时代变化也是历史一部分"]},{"heading":"作坊演示","items":["实践者展示部分步骤","可能用样品和预制材料","只要说明边界就有价值"]},{"heading":"游客活动","items":["因时间、安全和新手需求调整","仍能教授真实原理","一件短时纪念品不等于整个传统"]}]},
+{"id":"ethics-heading","type":"heading","level":2,"text":"尊重作坊，也给环境问题留下真实空间"},
+{"id":"ethics","type":"list","items":["拍摄制作者、家庭空间、工艺笔记或其他游客前先征得同意。","没有邀请不要进入工作区，也不要触摸染缸、工具和晾晒布料。","为教学和材料合理付费，不把课程当作免费推销演示来砍价。","询问废水和废染料怎样处理，但不要仅凭“天然”或“合成”推断环保表现。","发帖时标注作坊与实践者，说明自己完成哪些步骤，不宣称已经掌握白族扎染。"]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"常见预订失败与修复"},
+{"id":"mistakes","type":"table","caption":"同时保护手艺体验和后续行程","columns":["失败","警告信号","处理"],"rows":[["只有拍照","不回答游客参与步骤","明确选择演示，或找有书面流程的体验"],["布料无法带走","没有干燥或取件回答","选小件、延后取件或只看演示"],["染料说法模糊","只说“纯天然”，不说材料与当天工艺","追问染料；无法确认就不要转述宣传"],["项目过大","短时课程做大图案","缩小尺寸或使用指导模板"],["语言不通","无法理解安全与清洗说明","安排翻译或不要操作染缸"],["费用意外","基础价不含布、整理或寄送","付款前确认总价包含内容"]]},
+{"id":"warning","type":"callout","title":"当前作坊信息必须再次确认","body":"场次、老师、染料体系、包含步骤、价格和取件安排，都是具体作坊的动态事实，必须按日期直接确认。非遗名录记录的是一项实践，不能保证某个游客商家采用一种流程或当天营业。","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"透明体验应通过这份检查"},
+{"id":"checklist","type":"list","items":["准确地址和老师已确认","染料与纤维已说清","游客步骤与预制步骤分开","布料尺寸符合时长","安全和语言支持已理解","干燥、取件与初洗方案明确","总价与取消规则确认","已询问拍摄许可"]},
+{"id":"help","type":"callout","title":"Homeground","body":"告诉我们日期、团队年龄、可用时间、语言和后续行程。当地规划人员可以比较体验形式，核实实际包含内容，并选择符合路线的布料与取件方案，而不会宣传未经确认的“正宗植物靛”体验。","tone":"decision"},
+{"id":"links","type":"internal-links","title":"继续规划工艺体验与大理时间","items":[{"label":"雕版还是活字","href":"/zh/guides/woodblock-and-movable-type-printing-decisions/","description":"看另一项传统工艺怎样随任务、工具与劳动改变。"},{"label":"你的中国行程是不是太赶","href":"/zh/guides/is-your-china-itinerary-too-rushed/","description":"给体验和干燥方案留出真正可用的时间。"},{"label":"外国游客如何在中国付款","href":"/zh/guides/how-to-pay-in-china-as-a-tourist/","description":"预订小作坊前准备付款与凭据。"}]},
+{"id":"sources","type":"sources","title":"官方来源与图片署名","items":[{"label":"白族扎染技艺","url":"https://www.ihchina.cn/project_details/14304.html","publisher":"中国非物质文化遗产网","reviewedAt":"2026-08-12"},{"label":"周城白族传统文化保护区","url":"https://www.ynich.cn/item/91.html","publisher":"云南非物质文化遗产保护网","reviewedAt":"2026-08-12"},{"label":"题图：中新社周城扎染视频截图，CC BY 4.0；已裁切","url":"https://commons.wikimedia.org/wiki/File:2020%E5%B9%B45%E6%9C%885%E6%97%A5_%E6%9C%80%E7%88%B1%E5%A4%A7%E7%90%86%E7%9A%84%E9%82%A3%E2%80%9C%E4%B8%80%E6%8A%B9%E8%93%9D%E2%80%9D_%E6%9D%A5%E7%9C%8B%E7%99%BD%E6%97%8F%E6%89%8E%E6%9F%93%E5%A6%82%E4%BD%95%E5%88%B6%E6%88%90.webm","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

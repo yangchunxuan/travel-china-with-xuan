@@ -1,8 +1,14 @@
 # Source log — ritual-bronze-vessels-and-inscriptions
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: museum reading of ritual-vessel form, function and inscription; no antiquities authentication, buying advice or universal motif decoder added.
+- Shanghai Museum and National Museum evidence now supports vessel families, chronological change, ritual context and inscription development without turning institutional interpretation into one timeless system.
+- Added a four-pass method, manufacture and patina limits, inscription evidence layers, excavated-set reasoning, gallery route, provenance warning and object-note checklist in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

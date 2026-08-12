@@ -1,153 +1,249 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
+  schemaVersion: "1.0.0",
+  blocks: [
     {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "휴대전화가 해야 할 일부터 정하세요. 여행 eSIM은 데이터만 필요할 때 간단할 수 있고, 중국 본토 SIM은 본토 번호를 제공합니다. 듀얼 SIM은 기존 번호를 유지하면서 한 회선을 더할 수 있습니다. 기기 지원, 개통 절차와 네트워크 동작은 제품별로 다르므로 결제 전 최신 조건을 확인해야 합니다."
+      id: "answer-first",
+      type: "lead",
+      text:
+        "휴대전화가 실제로 해야 할 일을 먼저 정한 뒤 연결 방식을 선택하세요. 글로벌 사업자의 여행 eSIM은 대개 가장 간편한 데이터 전용 선택이고, 중국 본토 통신사의 SIM은 보통 +86 현지 번호를 제공하며 여권 실명 등록이 필요합니다. 기존 통신사 로밍은 원래 번호를 유지하지만 비용이 더 들 수 있습니다. 정확한 기기 모델, 판매 지역과 통신사 잠금이 허용하면 듀얼 SIM으로 두 방식을 조합할 수 있습니다. ‘eSIM’이라는 이름만 보고 구매하지 마세요. 데이터, 음성, SMS, 번호, 활성화와 네트워크 라우팅은 각각 별도의 상품 조건입니다.",
     },
     {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "네 가지 필요 중 하나에서 시작하세요",
-      "columns": [
-        "상황",
-        "경로",
-        "행동"
+      id: "short-decision",
+      type: "callout",
+      title: "대부분의 단기 여행에서 시작할 선택",
+      body:
+        "지도, 메신저와 앱 데이터만 필요하면 여행 eSIM과 기존 통신사 로밍부터 비교하세요. +86 번호나 일반 현지 SMS가 실제로 필요하면 본토 통신사 직영 영업점을 이용하세요. 가능하면 은행·계정 인증용 기존 번호를 유지하되 그 회선의 비싼 데이터 로밍은 꺼 두세요.",
+      tone: "decision",
+    },
+    {
+      id: "needs-heading",
+      type: "heading",
+      level: 2,
+      text: "상품 이름이 아니라 필요한 기능에서 시작하세요",
+    },
+    {
+      id: "needs-table",
+      type: "table",
+      caption: "필요한 기능에 따른 첫 선택",
+      columns: ["필요한 것", "먼저 비교할 방식", "결제 전에 확인할 것"],
+      rows: [
+        ["지도·메신저·웹 데이터", "여행 eSIM 또는 기존 통신사 로밍", "데이터 양, 유효기간 시작 조건, 핫스폿 정책과 지원 네트워크"],
+        ["중국 본토 +86 번호", "본토 통신사 SIM", "여권 등록, 음성·SMS, 요금제 만료, 충전과 해지"],
+        ["은행·계정 인증용 기존 번호", "기존 회선과 별도 데이터 회선을 함께 유지", "SMS 수신·로밍 요금, 동시 회선 제한, 기본 통화·SMS 설정"],
+        ["일반 현지 통화 또는 SMS", "본토 통신사 SIM 또는 해당 기능을 명시한 상품", "데이터 용량만으로 번호·음성·SMS를 추정하지 않기"],
+        ["노트북이나 일행과 인터넷 공유", "핫스폿을 명시적으로 허용한 요금제 또는 포켓 Wi-Fi", "핫스폿 용량, 속도 정책, 배터리와 연결 기기 수"],
+        ["잠금 또는 비호환 휴대전화", "기존 통신사 로밍, 잠금 해제된 호환 예비폰 또는 포켓 Wi-Fi", "모델과 잠금 상태를 확인하기 전 프로필이나 SIM을 사지 않기"],
       ],
-      "rows": [
-        [
-          "데이터만 필요",
-          "여행 eSIM 또는 자국 통신사 로밍",
-          "출국 전 설치하고 구매 QR을 오프라인 저장."
-        ],
-        [
-          "중국 본토 번호 필요",
-          "통신사 영업점의 현지 SIM",
-          "여권 원본과 실명 등록 필요."
-        ],
-        [
-          "둘 다 필요",
-          "기존 회선 + 데이터 eSIM 또는 현지 SIM",
-          "정확한 모델·지역판·동시 활성 회선 수 확인."
-        ],
-        [
-          "휴대전화가 비호환 또는 잠금",
-          "언락 예비폰, 포켓 Wi-Fi 또는 로밍",
-          "잠금과 주파수 지원을 확인한 뒤 구매."
-        ]
-      ]
     },
     {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "각 선택지가 실제로 주는 것"
+      id: "device-heading",
+      type: "heading",
+      level: 2,
+      text: "상품을 찾기 전에 정확한 기기를 점검하세요",
     },
     {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "여행 eSIM은 데이터 전용인 경우가 많아 +86 본토 번호, 일반 통화 또는 SMS를 제공하지 않을 수 있습니다. eSIM이라는 이름만으로 기능을 추정하지 마세요.",
-        "본토 통신사 SIM은 보통 현지 번호를 주며 실명 등록이 필요합니다. 베이징시 안내는 여권 원본을 들고 차이나모바일·차이나유니콤·차이나텔레콤 영업점을 방문하라고 설명합니다.",
-        "현지 번호는 본토 SMS를 요구하는 시설·배송·계정에서 유용할 수 있지만 모든 여행자 업무에 필수는 아닙니다. 공식 결제 안내는 주요 결제 앱에 외국 또는 중국 번호를 등록할 수 있다고 설명합니다.",
-        "듀얼 SIM 표시는 아무 두 회선이나 동시에 쓸 수 있다는 뜻이 아닙니다. 정확한 모델 번호와 판매 지역판, 통신사 잠금 여부를 확인하세요."
-      ]
+      id: "device-table",
+      type: "table",
+      caption: "계획을 막을 수 있는 다섯 가지 기기 정보",
+      columns: ["확인 항목", "확인 위치", "중요한 이유"],
+      rows: [
+        ["정확한 모델 번호와 판매 지역", "기기 설정과 제조사 지원 페이지", "같은 상품명도 SIM 트레이, eSIM 지원 또는 주파수 대역이 다를 수 있습니다."],
+        ["통신사 잠금", "기기 설정 또는 기존 통신사", "하드웨어가 지원해도 잠긴 기기는 다른 사업자의 eSIM이나 물리 SIM을 거부할 수 있습니다."],
+        ["eSIM 지원", "EID/eSIM 메뉴와 해당 모델의 제조사 문서", "메뉴가 없으면 지역 모델, 통신사 정책 또는 기기 관리가 원인일 수 있으며 단순 설정 오류가 아닐 수 있습니다."],
+        ["두 회선의 동시 작동 방식", "제조사의 활성 회선 설명", "‘듀얼 SIM’은 저장 가능한 프로필, 한 회선 활성, 듀얼 대기 등 서로 다른 조합을 뜻할 수 있습니다."],
+        ["주파수 대역과 네트워크 지원", "제조사 사양과 선택한 사업자 조건 대조", "프로필 설치가 성공해도 커버리지나 네트워크 세대가 제한될 수 있습니다."],
+      ],
     },
     {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "한 회선에만 의존하지 않는 설정"
+      id: "esim-boundary",
+      type: "callout",
+      title: "여행 eSIM과 중국 본토 통신사 eSIM은 다른 상품입니다",
+      body:
+        "휴대전화가 본토 통신사 발급 eSIM을 활성화하지 못해도 글로벌 사업자는 중국 본토용 여행 데이터 eSIM을 판매할 수 있습니다. Apple은 현재 특정 중국 본토 판매 iPhone 모델에 대해서만 본토 통신사 eSIM을 안내하며, 중국 본토 밖에서 산 iPhone에는 본토 통신사 프로필을 설치할 수 없다고 설명합니다. 이 내용은 모든 여행 eSIM, Android 모델이나 미래 기기에 일반화할 수 없습니다.",
+      tone: "warning",
     },
     {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "출국 전 마케팅 이름이 아닌 모델 번호로 eSIM, 물리 SIM, 동시 활성 회선과 통신사 잠금을 확인합니다.",
-        "여행 eSIM은 안정적인 Wi-Fi에서 설치하되 활성화 시점은 공급자 지침을 따릅니다. QR, 주문번호, 지원 경로를 오프라인 저장합니다.",
-        "현지 SIM은 공식 통신사 영업점에서 여권 원본으로 개통하고 번호, 만료, 충전과 해지 조건을 적어 달라고 합니다.",
-        "은행이나 계정 코드를 받는 기존 번호는 유지하되, 통신사 조건에 따라 비싼 데이터 로밍은 끕니다.",
-        "데이터·통화·SMS를 각각 테스트합니다. 웹 접속이 된다고 음성, +86 번호 또는 인증문자가 보장되지는 않습니다."
-      ]
+      id: "options-heading",
+      type: "heading",
+      level: 2,
+      text: "각 연결 방식에서 포기하는 것",
     },
     {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "첫 계획이 실패하면",
-      "body": "eSIM 메뉴가 없으면 정확한 기기 모델, 판매 지역과 잠금 상태를 다시 확인한 뒤 물리 SIM, 로밍, 포켓 Wi-Fi 또는 호환 예비폰으로 바꾸세요. 현지 SIM 개통 실패는 공식 영업점에서 여권 입력을 확인합니다. 데이터는 되지만 특정 앱이 안 되면 앱 또는 라우팅 문제로 따로 진단해야 하며 모든 eSIM이나 현지 SIM의 공통 결과로 일반화하지 마세요.",
-      "tone": "warning"
+      id: "options-comparison",
+      type: "comparison",
+      title: "모든 장점을 가진 선택은 없습니다",
+      columns: [
+        { heading: "여행 eSIM", items: ["출발 전에 구매하고 설치할 수 있음", "데이터 전용이 많아 +86 번호·음성·SMS가 없을 수 있음", "활성화·라우팅·핫스폿·앱 동작은 상품별", "지원이 온라인인 경우가 많으므로 주문과 QR 코드를 오프라인 보관"] },
+        { heading: "본토 통신사 SIM", items: ["보통 현지 번호와 일반 통신 서비스를 제공", "원본 여권으로 실명 등록 필요", "직영 영업점에서 개통 문제를 대면 해결 가능", "물리 카드, 만료, 충전과 해지를 관리해야 함"] },
+        { heading: "기존 통신사 로밍", items: ["익숙한 번호와 SIM 신원을 유지", "아주 짧은 여행에는 가장 단순할 수 있음", "가격·공정사용 한도·제휴망은 통신사별", "로밍 패스가 일반 현지 통화나 +86 번호를 자동 포함하지 않음"] },
+      ],
     },
     {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "적용 범위와 최신 규정",
-      "body": "2026년 8월 12일 검토 기준, 중국 본토 통신사 eSIM은 기기와 통신사별입니다. Apple은 특정 본토판 iPhone만 본토 통신사 eSIM 대상으로 안내하며 해외 구매 iPhone에는 해당 프로필을 설치할 수 없다고 설명합니다. 이는 여행 eSIM이나 모든 Android 기기의 보편 규칙이 아닙니다. 정확한 모델과 상품의 공식 페이지를 확인하세요.",
-      "tone": "neutral"
+      id: "number-heading",
+      type: "heading",
+      level: 2,
+      text: "중국 본토 번호가 정말 필요할까요?",
     },
     {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "계속 계획하기",
-      "items": [
-        {
-          "label": "중국 결제 준비",
-          "href": "/ko/guides/how-to-pay-in-china-as-a-tourist/",
-          "description": "전화번호 등록과 결제 수단은 별도 결정입니다."
-        },
-        {
-          "label": "입국 요건 확인",
-          "href": "/guides/china-entry-requirements/",
-          "description": "여권과 도착 서류를 준비하세요."
-        },
-        {
-          "label": "첫 중국 고속철도",
-          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
-          "description": "역에 가기 전 필요한 도구를 확인하세요."
-        }
-      ]
+      id: "number-copy",
+      type: "paragraph",
+      text:
+        "배달, 시설, 계정 또는 연락 상대가 본토 음성이나 SMS를 요구할 때 현지 번호가 유용합니다. 그러나 모든 여행 업무의 필수 조건은 아닙니다. 공식 모바일 결제 안내는 주요 결제 앱이 해외 또는 중국 전화번호를 받을 수 있다고 설명하지만 개별 은행, 가맹점과 인증 흐름은 다를 수 있습니다. 영업점 방문을 일정에 넣기 전에 어떤 업무가 번호를 요구하는지 한 문장으로 적어 보세요. 여행 eSIM과 기존 해외 번호면 충분할 수 있고, 반대로 데이터가 된다고 현지 SMS도 되는 것은 아닙니다.",
     },
     {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "MIIT real-name registration rules (2026 republication)",
-          "url": "https://sdca.miit.gov.cn/zwgk/fgbz/art/2026/art_9b270ddb59cc4643b0a9c6811c4e750d.html",
-          "publisher": "Ministry of Industry and Information Technology",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Purchasing SIM cards in Beijing",
-          "url": "https://english.beijing.gov.cn/quickguideservices/purchasingsimcards/",
-          "publisher": "Beijing Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Using eSIM while traveling in China mainland",
-          "url": "https://support.apple.com/en-us/118227",
-          "publisher": "Apple Support",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "China mainland carrier eSIM on iPhone",
-          "url": "https://support.apple.com/en-mide/123879",
-          "publisher": "Apple Support",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Foreign and Chinese phone numbers for mobile payment registration",
-          "url": "https://nsd.mofcom.gov.cn/tzyts/art/2024/art_a08888d0b9da42f083b00223edaf1de7.html",
-          "publisher": "Ministry of Commerce",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
+      id: "purchase-heading",
+      type: "heading",
+      level: 2,
+      text: "어떤 요금제든 구매 전에 답할 질문",
+    },
+    {
+      id: "purchase-list",
+      type: "list",
+      items: [
+        "유효기간은 구매, 설치, 첫 네트워크 연결 또는 수동 활성화 중 언제 시작합니까?",
+        "데이터는 총량, 일일 용량, 아니면 고속 한도 이후 속도가 낮아지는 이른바 무제한입니까?",
+        "번호, 수신·발신 통화, SMS, 핫스폿과 이동 경로의 모든 지역을 포함합니까?",
+        "어떤 현지 망을 이용하며 자동 연결이 실패하면 수동으로 망을 선택할 수 있습니까?",
+        "프로필 삭제나 휴대전화 초기화 뒤 재설치할 수 있습니까? QR 코드가 한 번만 유효한 상품이 많습니다.",
+        "기기 비호환, 프로필 설치 완료 또는 일정 변경 때 각각 어떤 환불 규정이 적용됩니까?",
+        "문제 회선 없이 이용할 수 있는 지원 채널은 무엇이며 어떤 증거를 요구합니까?",
+        "사업자는 트래픽을 어떻게 라우팅하고 앱·웹사이트 접근에 대해 무엇을 명시합니까? 홍보자의 포괄적인 약속만 믿지 마세요.",
+      ],
+    },
+    {
+      id: "travel-setup-heading",
+      type: "heading",
+      level: 2,
+      text: "QR 코드까지 휴대전화 안에 가두지 말고 설치하세요",
+    },
+    {
+      id: "travel-setup",
+      type: "list",
+      ordered: true,
+      items: [
+        "출발 전 안정적인 Wi-Fi에서 주문 번호, 약관, 지원 링크, QR 코드와 수동 활성화 정보를 다른 기기 또는 인쇄물에 저장합니다.",
+        "설치가 유효기간을 시작하지 않는다고 사업자가 설명한 경우에만 미리 설치합니다. 회선 이름을 ‘중국 데이터’처럼 명확히 하고 첫 활성화 실패 때 삭제하지 마세요.",
+        "기존 번호로 통화나 SMS를 받아야 하면 원래 회선을 유지하되, 통신사 상품이 보장하지 않는 한 그 회선의 데이터 로밍을 끕니다.",
+        "여행 회선을 셀룰러 데이터로 선택합니다. 여행 eSIM 사업자가 지시한 경우에만 그 회선의 데이터 로밍을 켜세요. 제휴망 로밍이 필요한 상품이 많습니다.",
+        "도착 후 망 등록을 기다리고 APN 또는 수동 망 선택 지침을 그대로 따릅니다. 공항 Wi-Fi와 지원 지점을 떠나기 전에 웹사이트, 지도와 메시지를 각각 시험하세요.",
+      ],
+    },
+    {
+      id: "local-setup-heading",
+      type: "heading",
+      level: 2,
+      text: "책임 주체가 분명한 본토 통신사에서 SIM을 구매하세요",
+    },
+    {
+      id: "local-setup",
+      type: "list",
+      ordered: true,
+      items: [
+        "외국 여권을 처리한다고 확인한 중국이동·중국연통·중국전신 직영 영업점을 이용합니다. 베이징 공식 안내에는 공항 서비스 카운터도 있지만 위치와 운영시간을 다시 확인해야 합니다.",
+        "원본 여권을 가져갑니다. 개통에는 실명 등록이 필요하며 복사본만으로 신원 확인이 끝나지 않을 수 있습니다.",
+        "직원에게 번호, 요금제 이름, 데이터·음성·SMS, 청구 주기, 만료, 충전, 고객센터와 해지 필요 여부를 적어 달라고 요청합니다.",
+        "카운터에 있는 동안 SIM을 넣고 활성화합니다. 필요한 기능이라면 데이터, 발신 통화, SMS 수신과 핫스폿을 각각 시험하세요.",
+        "SIM 카드 틀과 업무 증서를 보관합니다. 중국을 떠나거나 번호를 버리기 전에 자동 갱신, 잔액과 정식 해지 필요 여부를 확인하세요.",
+      ],
+    },
+    {
+      id: "dual-warning",
+      type: "callout",
+      title: "듀얼 SIM은 모르는 사이 로밍 요금을 만들 수 있습니다",
+      body:
+        "두 회선에 이름을 붙인 뒤 셀룰러 데이터, 데이터 전환, 기본 음성, 기본 SMS의 네 설정을 확인하세요. 자동 데이터 전환이 비싼 기존 회선으로 트래픽을 옮길 수 있으면 끄세요. 해외 SMS 수신 요금을 기존 통신사에 확인하고, 통화를 받거나 다시 거는 행위에는 다른 요금이 적용될 수 있음을 기억하세요. 설정을 바꾸기 전 작동 상태를 캡처해 두세요.",
+      tone: "warning",
+    },
+    {
+      id: "testing-heading",
+      type: "heading",
+      level: 2,
+      text: "브라우저 하나가 열린다고 모든 기능이 되는 것은 아닙니다",
+    },
+    {
+      id: "testing-table",
+      type: "table",
+      caption: "구매한 기능을 각각 시험하세요",
+      columns: ["시험", "증명하는 것", "증명하지 못하는 것"],
+      rows: [
+        ["Wi-Fi를 끄고 새 웹사이트 열기", "셀룰러 데이터가 흐름", "지도·결제·핫스폿·음성·SMS가 모두 작동"],
+        ["지도를 불러와 길 안내 시작", "위치 데이터와 해당 지도 서비스가 갱신됨", "모든 해외 앱이 같은 경로로 접근 가능"],
+        ["필요한 앱에서 메시지 송수신", "그 계정과 데이터 경로가 현재 작동", "일반 SMS나 본토 번호가 존재"],
+        ["선택한 번호로 SMS 수신", "그 회선이 해당 메시지를 받음", "모든 은행과 플랫폼이 인증번호를 보냄"],
+        ["일반 전화 발신", "음성 서비스가 포함되고 활성화됨", "국제전화도 같은 가격으로 포함"],
+        ["기기 한 대를 핫스폿에 연결", "해당 시험에서 테더링이 작동", "속도·기기 수·사용량 제한이 없음"],
+      ],
+    },
+    {
+      id: "failure-heading",
+      type: "heading",
+      level: 2,
+      text: "실패한 층을 찾아 복구하세요",
+    },
+    {
+      id: "failure-table",
+      type: "table",
+      caption: "문제 진단표",
+      columns: ["증상", "먼저 확인할 것", "대안"],
+      rows: [
+        ["eSIM 메뉴가 없거나 설치 거부", "정확한 모델·지역·소프트웨어·통신사 잠금과 QR 사용 여부", "프로필을 반복 삭제하지 말고 로밍, 호환 물리 SIM, 예비폰 또는 포켓 Wi-Fi를 이용합니다."],
+        ["설치됐지만 망이 없음", "데이터 회선, 사업자가 요구한 로밍, APN, 자동/수동 망 선택과 활성화 시점", "Wi-Fi로 스크린샷과 주문 번호를 보내 지원에 문의합니다."],
+        ["데이터는 되지만 +86 번호나 SMS가 없음", "구매 상품이 데이터 전용이라고 명시했는지", "앱 메시지를 쓰고 일반 SMS가 실제로 필요하면 현지 통신사 회선을 구합니다."],
+        ["현지 SIM 등록 실패", "여권 입력, 지원 문서와 해당 지점의 외국인 고객 처리 여부", "직영 영업점에 해결을 요청하고 비공식 판매자가 신원 정보를 임의로 만들게 하지 마세요."],
+        ["다른 데이터는 되는데 앱 하나만 실패", "앱 계정, 권한, 서비스 상태와 사업자 라우팅", "앱 공식 지원 또는 다른 합법적 서비스를 이용하며 회선 전체 실패로 단정하지 않습니다."],
+        ["기존 회선에서 예상 밖 요금 발생", "데이터 전환, 백그라운드 데이터, 로밍과 음성·SMS 요금", "원치 않는 로밍을 끄고 기존 통신사에 문의하며 다른 방식으로 복구 코드 접근을 유지합니다."],
+      ],
+    },
+    {
+      id: "security-heading",
+      type: "heading",
+      level: 2,
+      text: "휴대전화 하나를 유일한 실패 지점으로 만들지 마세요",
+    },
+    {
+      id: "security-list",
+      type: "list",
+      items: [
+        "eSIM 주문, 여권 사본과 중요 연락처를 여행용 휴대전화 밖에도 보호된 계정 및 오프라인 형태로 저장합니다.",
+        "주요 이메일, Apple 또는 Google 계정, 은행과 암호관리자의 복구 코드는 분실한 휴대전화가 함께 가져갈 수 없는 곳에 둡니다.",
+        "SIM 설정 변경 전 중요한 계정이 어떤 번호를 쓰는지 기록하고 여행 뒤 만료될 임시 번호로 모두 바꾸지 마세요.",
+        "화면 잠금과 기기 찾기를 켜고 휴대전화나 SIM 분실 때 통신사와 결제 사업자에 연락하는 법을 알아 둡니다.",
+        "공항 Wi-Fi 안내, 하루 로밍권, 동행자 핫스폿 또는 오프라인 주소 중 하나를 도착 대안으로 준비해 활성화 실패가 첫 이동까지 막지 않게 하세요.",
+      ],
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "이 글의 범위와 최신 정보",
+      body:
+        "기기 지원, 본토 통신사 eSIM, 요금제 기능, 네트워크 라우팅, 가격과 영업점 처리는 바뀔 수 있습니다. 아래 공식·제조사 페이지는 2026년 8월 12일 검토했습니다. 구매 전에 정확한 모델의 제조사 페이지와 상품의 실시간 조건을 다시 확인하세요. 이 글은 특정 상품이 모든 앱이나 웹사이트에 연결된다고 보장하지 않으며 법률이나 네트워크 정책 우회 방법을 안내하지 않고, 한 iPhone 규칙을 Android 규칙으로 취급하지 않습니다.",
+      tone: "neutral",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "휴대전화 준비를 계속하세요",
+      items: [
+        { label: "중국 여행용 모바일 결제 설정", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "전화번호와 작동하는 결제수단은 관련 있지만 별도의 과제입니다." },
+        { label: "현지 번호 없이 공공 Wi-Fi 사용하기", href: "/ko/guides/china-public-wifi-passport-login/", description: "모든 Wi-Fi가 같다고 가정하지 말고 장소별 도착 대안을 준비하세요." },
+        { label: "중국에서 휴대전화를 잃었을 때 디지털 복구", href: "/ko/guides/lost-phone-in-china-digital-recovery/", description: "번호, 계정, 결제와 예약을 올바른 순서로 보호하세요." },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "검토한 공식·제조사 자료",
+      items: [
+        { label: "전화 사용자 실명 등록 규정(2026년 재게시)", url: "https://sdca.miit.gov.cn/zwgk/fgbz/art/2026/art_9b270ddb59cc4643b0a9c6811c4e750d.html", publisher: "중국 공업정보화부", reviewedAt: "2026-08-12" },
+        { label: "베이징 SIM 카드 구매 안내", url: "https://english.beijing.gov.cn/quickguideservices/purchasingsimcards/", publisher: "베이징시 인민정부", reviewedAt: "2026-08-12" },
+        { label: "iPhone 해외여행 eSIM 사용 안내", url: "https://support.apple.com/en-us/118227", publisher: "Apple 지원", reviewedAt: "2026-08-12" },
+        { label: "iPhone에서 중국 본토 통신사 eSIM 활성화", url: "https://support.apple.com/en-mide/123879", publisher: "Apple 지원", reviewedAt: "2026-08-12" },
+        { label: "해외 및 중국 전화번호의 모바일 결제 등록 안내", url: "https://nsd.mofcom.gov.cn/tzyts/art/2024/art_a08888d0b9da42f083b00223edaf1de7.html", publisher: "중국 상무부", reviewedAt: "2026-08-12" },
+      ],
+    },
+  ],
 };
 
 export default body;

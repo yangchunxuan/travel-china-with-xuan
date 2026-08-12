@@ -7,6 +7,13 @@
 - Fact boundary: live rules are attributed to the exact authority, device, carrier, venue, transport mode or document process covered by the cited source. No universal promise is inferred.
 - Internal-link boundary: the plug-and-voltage guide owns adapters and device voltage. This article owns only portable-battery checks across flights and trains.
 
+## Depth review — 2026-08-12
+
+- Separated the domestic-flight, general aviation and national railway rules instead of presenting one interchangeable limit.
+- Added physical-label auditing, the official Wh calculation, exact-model recall checking, through-itinerary screening, packing and onboard safety.
+- Clarified that the 2025 CCC restriction is a China domestic-flight rule and that an international itinerary can contain a domestic coupon. The article does not relabel CCC as a railway requirement.
+- Added refusal recovery without promising airport storage, checkpoint approval or transferability of airline approval to rail.
+
 ## Official sources
 
 - Civil Aviation Administration of China: [CAAC notice on CCC-marked power banks (2025)](https://www.caac.gov.cn/English/News/202507/t20250709_227894.html) — reviewed 2026-08-12

@@ -1,122 +1,31 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "청동 예기는 화려한 그릇에 그치지 않습니다. 형태, 손잡이, 다리, 문양, 주조, 명문은 의례와 계보 기억을 가리킬 수 있지만 라벨과 연구가 뒷받침해야 합니다."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "네 번에 나누어 읽기",
-      "body": "기형, 추정 기능, 문양 배치, 기관의 명문 번역 순서로 봅니다. 닮은 모양은 출처와 고문자 연구를 대신하지 못합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "네 번에 나누어 읽기",
-      "columns": [
-        "단계",
-        "질문",
-        "한계"
-      ],
-      "rows": [
-        [
-          "형태",
-          "정·궤·작·준 중 무엇인가?",
-          "개별 연대와 쓰임은 다름"
-        ],
-        [
-          "기능",
-          "음식·액체·가열·진설 중 무엇인가?",
-          "의례·부장 용도가 겹칠 수 있음"
-        ],
-        [
-          "문양",
-          "수면·동물·돌출부가 어디 있나?",
-          "현대 명칭은 고대 설명이 아님"
-        ],
-        [
-          "명문",
-          "어디에 있고 번역은 무엇인가?",
-          "씨족표지와 긴 기록은 다른 증거"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "라벨과 연대를 끝까지 읽습니다.",
-        "허용되면 여러 각도에서 봅니다.",
-        "문양보다 입구·손잡이·다리를 먼저 찾습니다.",
-        "탁본과 번역을 대조합니다.",
-        "다른 기형 한 점과 비교합니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "아름다운 표면은 출처가 아닙니다",
-      "body": "경매 설명과 검증되지 않은 게시물은 출토 맥락, 진위, 명문 판독을 입증하지 못합니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "방문 장소를 Homeground에 보내면 현지 담당자가 현재 전시와 보이는 증거를 연결합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "문화유산 계속 읽기",
-      "items": [
-        {
-          "label": "쑤저우 정원 읽기",
-          "href": "/ko/guides/how-to-read-a-suzhou-garden/"
-        },
-        {
-          "label": "병마용 자유 관람",
-          "href": "/ko/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "중국 여행에 가이드가 필요할까",
-          "href": "/ko/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "기관 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Ancient Chinese bronzes",
-          "url": "https://www.shanghaimuseum.cn/mu/frontend/pg/article/id/RI00004046",
-          "publisher": "Shanghai Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Bronze civilization exhibition",
-          "url": "https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202112/t20211230_253354.html",
-          "publisher": "National Museum of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Early Western Zhou Bronze Gui by Gary Todd, CC0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"중국 청동 예기는 화려한 용기 이상입니다. 형태, 손잡이, 다리, 뚜껑, 주조, 장식, 고고학 맥락과 명문은 음식·술·의례·위계·가계 기억·사건과 연결될 수 있습니다. 연결의 강도는 박물관 표기와 연구 근거에 달려 있으므로 첫눈에 상징을 붙이지 말고 층별로 읽어야 합니다."},
+{"id":"answer","type":"callout","title":"식별·형태·맥락·명문의 네 단계로 보세요","body":"먼저 박물관 명칭, 시대, 출처와 번호를 적습니다. 다음으로 기종과 물리적 특징을 보고 발굴된 무덤·매납 유구·소장 이력과 동반 유물을 읽습니다. 마지막으로 명문의 위치를 찾고 기관의 전사와 번역을 사용합니다. 형태는 기능 범주를 제안하며 맥락과 문자가 역사적 주장을 좁혀 줍니다.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"범위: ‘청동 예기’는 범주이지 영원한 한 제도가 아닙니다"},
+{"id":"scope","type":"paragraph","text":"상하이박물관은 청동기를 신과 조상에 바치는 제물, 교환 선물, 연회 용기로 설명하고 위계·권력과의 관계를 말합니다. 그러나 초기 청동기시대부터 상·주와 후대까지 형태, 조합과 명문 관행은 변했고 지역 차이도 큽니다. 이 글은 고대 중국 용기 전시에 초점을 두며 모든 청동기가 예기였거나 한 형태가 항상 한 용도였거나 후대의 옛 청동기 모방품이 발굴된 상주 청동기와 같은 기능을 했다고 주장하지 않습니다."},
+{"id":"forms-heading","type":"heading","level":2,"text":"수십 개 이름보다 기종군을 먼저 익히세요"},
+{"id":"forms","type":"table","caption":"박물관에서 보는 주요 범주","columns":["기종군","볼 수 있는 형태","시각적 단서","첫 질문"],"rows":[["음식 용기","정(鼎)·궤(簋)와 관련 용기","세·네 다리 솥, 손잡이나 굽이 있는 그릇","박물관은 어떤 음식 용도를 제시하는가?"],["술 용기","작(爵)·준(尊)·유(卣)·호(壺) 등","주구, 긴 몸, 뚜껑, 손잡이나 복잡한 윤곽","데우기·담기·따르기 중 무엇인가?"],["물 용기","반(盤)·이(匜)·감(鑑) 등","넓은 대야나 따르는 그릇, 때로는 쌍","씻기나 물 의례를 설명하는가?"],["악기","종(鐘)·뇨(鐃) 등","매다는 요소와 조율된 세트","정돈된 합주 세트로 출토됐는가?"],["무기·부속","과(戈)·검(劍)·전차·마구 부속","날, 소켓과 연결부","예기인가 다른 청동 범주인가?"]]},
+{"id":"passes-heading","type":"heading","level":2,"text":"한 유물을 네 단계로 깊이 읽기"},
+{"id":"passes","type":"list","ordered":true,"items":["식별: 기관 명칭, 왕조나 고고학 시기, 연대 범위, 치수, 출토지와 번호를 기록하세요.","형태: 입·목·몸·손잡이·다리·뚜껑을 그리고 세우고 들고 짝지은 방식을 생각하세요.","맥락: 무덤·매납 유구·유적 출토인지, 무엇과 나왔고 현재 묶음이 원래 조합인지 확인하세요.","표면·제작: 표기 근거로 주조 부조, 음각, 상감, 부식과 후대 수리를 구분하세요.","명문: 위치, 길이, 방향을 찾고 가시 문자와 기관 탁본·전사·번역을 비교하세요.","주장: 형태·맥락·명문이 각각 지지하는 문장을 쓰고 한 층이 답할 수 없는 질문은 넘기지 마세요."]},
+{"id":"casting-heading","type":"heading","level":2,"text":"표면은 제작 단서지만 상태가 판단을 어렵게 합니다"},
+{"id":"casting","type":"paragraph","text":"고대 중국 청동기는 주조됐으며 전시는 분할 주형, 별도 부속 주조, 상감이나 후대 기술을 설명할 수 있습니다. 반복 무늬, 선이나 접합은 표기를 확인할 단서일 뿐 부식·세척·수리와 복잡한 주조 때문에 육안 진단은 불확실합니다. 녹청은 재료와 역사의 결과이지 진위 색상표가 아닙니다. 매끈한 전시품도 안정화나 과거 수리를 포함할 수 있으므로 문서를 보세요."},
+{"id":"decoration-heading","type":"heading","level":2,"text":"문양을 해석하기 전에 묘사하세요"},
+{"id":"decoration","type":"table","caption":"근거 있는 문양 메모","columns":["단계","기록","피할 것"],"rows":[["위치","띠·손잡이·다리·뚜껑·몸 전체","위치를 말하지 않고 문양 논하기"],["구조","대칭, 반복, 부조, 바탕무늬와 돌출선","모든 곡선을 동물로 만들기"],["기관 명칭","박물관이 쓴 동물얼굴·용·새·기하 용어","현대 명칭을 고대 단어로 보기"],["비교","연대와 출처가 확실한 관련 유물","출처 없는 인터넷 이미지 사용"],["해석","자료가 뒷받침하는 의례·정치 독해","보편적인 ‘비밀 의미’ 주장"]]},
+{"id":"inscription-heading","type":"heading","level":2,"text":"명문은 문자이자 유물의 일부입니다"},
+{"id":"inscription","type":"paragraph","text":"명문은 그릇 안, 뚜껑 아래 등 보기 어려운 곳에 있고 짧은 가문·조상 표시부터 긴 사건 기록까지 다양합니다. 상하이박물관은 초기 명문이 가문과 조상을 식별하는 경우가 많고 주대에 긴 사건 기록이 중요해졌다고 설명합니다. 기관 탁본이나 강화 영상으로 글자를 찾고 전사, 현대 글자 변환, 번역과 역사 해석을 구분하세요. 문장부호와 문단은 현대 편집 도구이지 고대 글에 주조된 것이 아닙니다."},
+{"id":"inscription-evidence","type":"comparison","title":"명문이 지지할 수 있는 것","columns":[{"heading":"문자 증거","items":["전문가가 읽은 이름·친족어","기록된 하사·임명·사건","제작·봉헌·기념 언어"]},{"heading":"맥락 증거","items":["유물 출토지","조합의 다른 유물","고고학과 비교로 얻은 연대"]},{"heading":"자동 추론 금지","items":["이름난 사람이 직접 주조했다","모든 문장이 중립적 연대기다","한 유물이 모든 위계·지역을 대표한다"]}]},
+{"id":"sets-heading","type":"heading","level":2,"text":"걸작 한 점보다 세트가 더 중요할 수 있습니다"},
+{"id":"sets","type":"paragraph","text":"정이나 궤 한 점은 눈에 띄지만 발굴 조합의 반복, 짝과 크기 차이는 음식 의례와 사회질서를 보여 줄 수 있습니다. 중국국가박물관은 정·궤를 중요한 음식 용기로 설명하고 주대 의례의 위계 조합을 논합니다. 전시 연대와 맥락이 맞을 때만 이 규칙을 적용하세요. 후대 모방품, 지역 조합이나 출토 맥락 없는 소장품은 교과서 체계에 맞지 않을 수 있습니다."},
+{"id":"museum-heading","type":"heading","level":2,"text":"60분 전시 동선"},
+{"id":"museum","type":"list","items":["연대 패널부터 보고 변화를 모두 ‘고대 중국’으로 뭉개지 마세요.","음식 용기, 술·물 용기, 명문 유물을 하나씩 고르세요.","각각 5분 동안 상징 설명 없이 윤곽과 손잡이·다리를 그리세요.","확실한 발굴 조합 하나를 찾아 크기·수량·위치를 비교하세요.","탁본이나 디지털 확대에서 명문 하나를 보고 번호를 적으세요.","지역 또는 후대 전시로 마쳐 중심 서사에서 무엇이 변했는지 확인하세요."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"자신감은 크지만 약한 해석 여섯 가지"},
+{"id":"mistakes","type":"list","items":["세 다리 청동기를 표기와 윤곽 확인 없이 모두 정이라 부르기","현대 기종명이 고대의 고정 용도를 증명한다고 보기","도철 같은 현대 학술어를 고대에 남은 해설로 보기","초록 녹청이 진품·오래됨·무처리를 자동 증명한다고 보기","출처 불명 아름다운 유물을 발굴 파편보다 강한 역사 증거로 보기","박물관·번호·연구 출처 없이 명문 번역 인용하기"]},
+{"id":"warning","type":"callout","title":"시각적 확신보다 출처가 먼저입니다","body":"박물관 표기는 알려진 범위에서 발굴 맥락, 옛 소장품, 입수와 후대 모방품을 구분해야 합니다. 외관은 출처를 대신하지 않습니다. 이 방법으로 골동품을 감정·구매하지 마세요. 소유 이력, 반출법과 전문 검사는 별도의 전문가 검토가 필요합니다.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"청동기 한 점의 완전한 메모"},
+{"id":"checklist","type":"list","items":["박물관과 번호","시대·연대 범위·출처","기종과 물리적 윤곽","발굴 조합 또는 소장 맥락","해석 전에 묘사한 문양","명문 위치, 기관 전사와 번역","근거 있는 결론 하나와 명시한 불확실성 하나"]},
+{"id":"help","type":"callout","title":"Homeground","body":"박물관과 주조·의례·명문·초기 중국사 중 관심사를 알려 주세요. 현지 플래너가 현재 전시실 접근을 확인하고 집중 관람 시간을 확보하며 문자 난도와 소장품 깊이가 정당할 때만 전문 해설을 배치합니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"증거 중심 문화유산 계속 읽기","items":[{"label":"맥락으로 훙산 옥기 읽기","href":"/ko/guides/hongshan-jade-context-and-symbols/","description":"형태와 출토 맥락이 선사 해석을 지지하는 방식을 비교합니다."},{"label":"리예 진간으로 지방 행정 읽기","href":"/ko/guides/liye-qin-slips-local-government-records/","description":"고대 문자 유물에서 행정 기록군으로 이동합니다."},{"label":"병마용 자유여행 가이드","href":"/ko/guides/terracotta-warriors-without-tour/","description":"대형 고고학 유적에 증거 우선 관람법을 적용합니다."}]},
+{"id":"sources","type":"sources","title":"기관 자료와 이미지 출처","items":[{"label":"중국 고대 청동기 상설관","url":"https://www.shanghaimuseum.cn/mu/frontend/pg/article/id/RI00004046","publisher":"상하이박물관","reviewedAt":"2026-08-12"},{"label":"중국 고대 청동기전","url":"https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202112/t20211230_253354.html","publisher":"중국국가박물관","reviewedAt":"2026-08-12"},{"label":"대표 이미지: Gary Todd 촬영 서주 초기 청동 궤, CC0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-
