@@ -1,0 +1,53 @@
+{
+  "id": "national-museum-of-china-booking-and-route",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["national-museum-of-china", "beijing-museums", "passport-booking", "museum-route"],
+  "destinations": ["beijing", "national-museum-of-china", "tiananmen-square"],
+  "heroImagePath": "/images/guides/national-museum-of-china-booking-and-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/national-museum-of-china-booking-and-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/national-museum-of-china-booking-and-route/",
+      "title": "National Museum of China: Booking and a Focused Route",
+      "headline": "How to Visit the National Museum of China Without Losing the Day",
+      "description": "Reserve with the correct document, enter through the North Gate and build a focused two-to-four-hour route through China's enormous national museum.",
+      "heroAlt": "The west facade of the National Museum of China facing Tiananmen Square in Beijing",
+      "navTitle": "National Museum booking and route",
+      "featuredLinkLabel": "Plan a focused National Museum visit",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "National Museum", "Booking"]
+    },
+    "zh": {
+      "path": "/zh/guides/national-museum-of-china-booking-and-route/",
+      "title": "中国国家博物馆怎么预约：入口与精简参观路线",
+      "headline": "国博很大，但一天不必全交给它",
+      "description": "用正确证件预约，从北门按时核验入馆，并按两到四小时的时间预算选择中国国家博物馆重点展览。",
+      "heroAlt": "北京天安门广场东侧的中国国家博物馆西立面",
+      "navTitle": "国博预约与路线",
+      "featuredLinkLabel": "规划一次重点明确的国博参观",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京", "中国国家博物馆", "预约"]
+    },
+    "ko": {
+      "path": "/ko/guides/national-museum-of-china-booking-and-route/",
+      "title": "중국 국가박물관 예약과 핵심 관람 동선",
+      "headline": "중국 국가박물관에서 하루를 잃지 않는 관람법",
+      "description": "올바른 신분증으로 예약하고 북문으로 입장한 뒤, 2~4시간 안에 핵심 전시를 골라 보는 실용 안내입니다.",
+      "heroAlt": "베이징 톈안먼광장을 마주 보는 중국 국가박물관 서쪽 정면",
+      "navTitle": "중국 국가박물관 예약과 동선",
+      "featuredLinkLabel": "중국 국가박물관 핵심 관람 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징", "중국 국가박물관", "예약"]
+    }
+  }
+}

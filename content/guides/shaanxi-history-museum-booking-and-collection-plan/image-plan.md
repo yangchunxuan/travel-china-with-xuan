@@ -1,0 +1,5 @@
+# Image plan — shaanxi-history-museum-booking-and-collection-plan
+
+Hero: exact Shaanxi History Museum Main Building architecture in Xi'an, file `Shaanxi History Museum architecture.JPG`, photographed by Danielinblue on 2012-07-22, CC BY-SA 3.0. Source: https://commons.wikimedia.org/wiki/File:Shaanxi_History_Museum_architecture.JPG. Crop to 1600 × 1000 WebP and strip metadata. The architecture must be labelled as the Main Building; do not substitute the Qin-Han Gallery. Keep the collection-time comparison as HTML. Future object images require exact object identity and compatible museum or photographer permission; never generate documentary-looking artefacts.
+
+Production record (verified 2026-08-12): source SHA-256 `CE456831C626712E9FCC2245DB22DE13CE0B5F283CDA9BC1EEECD97FAE0ACFC3`; output SHA-256 `8D53EC98D6E5A27D76DAF73B22F3FDA234C7AA85FFBBBCB50A839F2180F1E5F3`; output 1600 × 1000 WebP, 113,588 bytes. The rendered crop was visually checked for subject accuracy and obvious compression defects.
