@@ -1,0 +1,81 @@
+{
+  "id": "china-domestic-flight-fare-bundle-baggage",
+  "type": "planning",
+  "pillar": "budget-and-tradeoffs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "domestic-flights",
+    "fare-bundles",
+    "baggage",
+    "change-rules"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-domestic-flight-fare-bundle-baggage/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-domestic-flight-fare-bundle-baggage/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "budget",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-domestic-flight-fare-bundle-baggage/",
+      "title": "China Domestic Flight Fares: Compare the Bundle, Not the Label",
+      "headline": "China Domestic Flight Fare Bundles: Add Baggage and Flexibility",
+      "description": "Compare Chinese domestic flight products by final price, baggage, seats, change rules and the bookings that depend on arrival.",
+      "heroAlt": "Original editorial illustration of domestic flight fare bundles with different inclusions.",
+      "navTitle": "China flight fare bundles",
+      "featuredLinkLabel": "Compare the usable flight price",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Domestic flights",
+        "Fare bundles",
+        "Baggage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-domestic-flight-fare-bundle-baggage/",
+      "title": "中国国内机票怎么比价？看套餐，不只看票面价",
+      "headline": "中国国内机票套餐：把行李与灵活性算进去",
+      "description": "按最终价格、行李、选座、退改条件和后续预订比较中国国内机票产品。",
+      "heroAlt": "表现不同包含项目的中国国内机票套餐的原创编辑插图。",
+      "navTitle": "中国国内机票套餐",
+      "featuredLinkLabel": "比较真正可用的机票价格",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "国内航班",
+        "机票套餐",
+        "行李"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-domestic-flight-fare-bundle-baggage/",
+      "title": "중국 국내선 운임 비교: 이름보다 포함 항목",
+      "headline": "중국 국내선 운임 묶음: 수하물과 유연성 더하기",
+      "description": "최종 가격, 수하물, 좌석, 변경 조건과 도착에 달린 예약으로 중국 국내선 상품을 비교합니다.",
+      "heroAlt": "포함 항목이 다른 중국 국내선 운임 묶음을 표현한 오리지널 편집 일러스트.",
+      "navTitle": "중국 국내선 운임 묶음",
+      "featuredLinkLabel": "실제 이용 가격 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 국내선",
+        "운임 묶음",
+        "수하물"
+      ]
+    }
+  }
+}
