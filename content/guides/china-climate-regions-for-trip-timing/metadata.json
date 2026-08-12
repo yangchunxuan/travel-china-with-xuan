@@ -1,0 +1,81 @@
+{
+  "id": "china-climate-regions-for-trip-timing",
+  "type": "planning",
+  "pillar": "timing-holidays-crowds",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "climate-regions",
+    "trip-timing",
+    "weather",
+    "route-design"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-climate-regions-for-trip-timing/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-climate-regions-for-trip-timing/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "when-to-go",
+    "family": "time",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-climate-regions-for-trip-timing/",
+      "title": "China Climate Regions: How to Time a Multi-Region Trip",
+      "headline": "Do Not Choose a China Travel Month From One National Average",
+      "description": "Time a multi-region China route by climate zones, elevation, monsoon exposure and the hardest weather constraint—not one national average.",
+      "heroAlt": "Original editorial illustration contrasting sun, rain and mountain climate regions in China.",
+      "navTitle": "China climate regions",
+      "featuredLinkLabel": "Screen a route by climate",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China climate",
+        "Trip timing",
+        "Weather"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-climate-regions-for-trip-timing/",
+      "title": "中国气候分区：跨区域旅行怎么选时间？",
+      "headline": "不要用一个全国平均值决定中国旅行月份",
+      "description": "按气候区、海拔、季风影响与最难妥协的天气条件，为跨区域中国路线选择时间。",
+      "heroAlt": "对比阳光、降水与山地气候区的原创编辑插图。",
+      "navTitle": "中国气候分区",
+      "featuredLinkLabel": "按气候筛选路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国气候",
+        "出行时间",
+        "天气"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-climate-regions-for-trip-timing/",
+      "title": "중국 기후 지역: 여러 지역 여행 시기 정하기",
+      "headline": "하나의 전국 평균으로 중국 여행 달을 고르지 마세요",
+      "description": "기후 지역, 고도, 몬순과 가장 민감한 날씨 조건으로 중국 다지역 여행 시기를 정합니다.",
+      "heroAlt": "햇빛, 비와 산악 기후 지역을 대비한 오리지널 편집 일러스트.",
+      "navTitle": "중국 기후 지역",
+      "featuredLinkLabel": "기후로 동선 검사",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 기후",
+        "여행 시기",
+        "날씨"
+      ]
+    }
+  }
+}
