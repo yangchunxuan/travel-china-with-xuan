@@ -1,0 +1,83 @@
+{
+  "id": "woodblock-and-movable-type-printing-decisions",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "cultural-comparison",
+  "topics": [
+    "woodblock-printing",
+    "movable-type",
+    "printing-history",
+    "museum-reading"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "ruian"
+  ],
+  "heroImagePath": "/images/guides/woodblock-and-movable-type-printing-decisions/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/woodblock-and-movable-type-printing-decisions/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "comparison",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/woodblock-and-movable-type-printing-decisions/",
+      "title": "Woodblock or Movable Type? Read China's Printing History Through the Workflow",
+      "headline": "Why Movable Type Did Not Simply Replace Woodblocks",
+      "description": "Compare carving, composition, correction, storage and reprinting to understand why woodblock and movable type served different jobs in China.",
+      "heroAlt": "Wooden movable type displayed at the China Printing Museum in Beijing.",
+      "navTitle": "Compare Chinese printing workflows",
+      "featuredLinkLabel": "Compare Chinese printing workflows",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Printing",
+        "Woodblocks",
+        "Movable type"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/woodblock-and-movable-type-printing-decisions/",
+      "title": "雕版还是活字：从工作流程读中国印刷史",
+      "headline": "为什么活字没有简单取代雕版",
+      "description": "比较刻制、排版、校改、保存与重印流程，理解雕版和活字为何长期服务于不同任务。",
+      "heroAlt": "北京中国印刷博物馆展出的木活字。",
+      "navTitle": "比较中国印刷流程",
+      "featuredLinkLabel": "比较中国印刷流程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "印刷史",
+        "雕版",
+        "活字"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/woodblock-and-movable-type-printing-decisions/",
+      "title": "목판인가 활자인가: 작업 과정으로 읽는 중국 인쇄사",
+      "headline": "활자가 목판을 단순히 대체하지 않은 이유",
+      "description": "판각, 조판, 교정, 보관, 재인쇄 과정을 비교해 목판과 활자가 오랫동안 서로 다른 작업에 쓰인 이유를 이해합니다.",
+      "heroAlt": "베이징 중국인쇄박물관의 목활자 전시.",
+      "navTitle": "중국 인쇄 방식 비교",
+      "featuredLinkLabel": "중국 인쇄 방식 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "인쇄사",
+        "목판",
+        "활자"
+      ]
+    }
+  }
+}
