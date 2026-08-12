@@ -1,0 +1,82 @@
+{
+  "id": "dougong-and-chinese-timber-frame-reading",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "architectural-field-guide",
+  "topics": [
+    "dougong",
+    "timber-frames",
+    "architecture",
+    "heritage-reading"
+  ],
+  "destinations": [
+    "china",
+    "yingxian"
+  ],
+  "heroImagePath": "/images/guides/dougong-and-chinese-timber-frame-reading/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dougong-and-chinese-timber-frame-reading/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dougong-and-chinese-timber-frame-reading/",
+      "title": "Dougong and Timber Frames: Read How a Chinese Wooden Building Stands",
+      "headline": "Look Past the Roof: Read the Structural Chain",
+      "description": "Trace columns, beams, bracket sets and roof load in a Chinese timber building, while separating structural evidence from decorative appearance and earthquake-proof myths.",
+      "heroAlt": "Corner bracket sets on the wooden Pagoda of Fogong Temple in Yingxian.",
+      "navTitle": "Read a Chinese timber frame",
+      "featuredLinkLabel": "Read a Chinese timber frame",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Dougong",
+        "Architecture",
+        "Timber frames"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/dougong-and-chinese-timber-frame-reading/",
+      "title": "斗拱与木构架怎么看：读懂中国木建筑如何站立",
+      "headline": "越过屋顶造型，追踪受力链",
+      "description": "沿柱、梁、斗拱和屋架追踪木构建筑的受力关系，并区分结构证据、装饰外观与“绝对抗震”等神话。",
+      "heroAlt": "应县佛宫寺木塔转角处的斗拱铺作。",
+      "navTitle": "读懂中国木构架",
+      "featuredLinkLabel": "读懂中国木构架",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "斗拱",
+        "中国建筑",
+        "木构架"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/dougong-and-chinese-timber-frame-reading/",
+      "title": "두공과 중국 목구조 읽기: 건물이 서 있는 원리",
+      "headline": "지붕 너머 기둥부터 하중의 흐름을 읽기",
+      "description": "기둥, 보, 공포, 지붕으로 이어지는 목구조의 하중 흐름을 살피고 구조적 근거와 장식, ‘완전 내진’ 신화를 구분합니다.",
+      "heroAlt": "잉셴 포궁사 목탑 모서리의 두공 짜임.",
+      "navTitle": "중국 목구조 읽기",
+      "featuredLinkLabel": "중국 목구조 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "두공",
+        "중국 건축",
+        "목구조"
+      ]
+    }
+  }
+}

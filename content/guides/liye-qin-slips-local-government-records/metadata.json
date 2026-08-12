@@ -1,0 +1,82 @@
+{
+  "id": "liye-qin-slips-local-government-records",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "museum-field-guide",
+  "topics": [
+    "liye-qin-slips",
+    "qin-dynasty",
+    "documents",
+    "local-government"
+  ],
+  "destinations": [
+    "liye",
+    "hunan"
+  ],
+  "heroImagePath": "/images/guides/liye-qin-slips-local-government-records/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/liye-qin-slips-local-government-records/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/liye-qin-slips-local-government-records/",
+      "title": "Liye Qin Slips: Reconstruct an Empire from One County's Paperwork",
+      "headline": "Read the Qin Empire Through Routine Local Records",
+      "description": "Use the Liye Qin slips to see mail, accounts and county administration at work, while keeping one excavated archive distinct from the whole Qin empire.",
+      "heroAlt": "Liye Qin slips recording delivery from Dongting Commandery to Qianling County.",
+      "navTitle": "Read the Liye Qin slips",
+      "featuredLinkLabel": "Read the Liye Qin slips",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Liye",
+        "Qin dynasty",
+        "Bamboo slips"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/liye-qin-slips-local-government-records/",
+      "title": "里耶秦简怎么看：从一县文书重建帝国运作",
+      "headline": "从日常地方档案观察秦代行政",
+      "description": "通过里耶秦简中的邮传、账目和县级行政理解制度如何运行，同时不把一处出土档案等同于整个秦帝国。",
+      "heroAlt": "记录洞庭郡向迁陵县传递文书的里耶秦简。",
+      "navTitle": "读懂里耶秦简",
+      "featuredLinkLabel": "读懂里耶秦简",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "里耶",
+        "秦代",
+        "简牍"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/liye-qin-slips-local-government-records/",
+      "title": "리예 진간 읽기: 한 현의 행정 문서로 본 제국",
+      "headline": "일상 지방 기록에서 진 제국의 운영을 읽기",
+      "description": "리예 진간의 우편, 장부, 현 행정 기록을 통해 제도를 살피되 한 유적의 문서군을 진 제국 전체와 동일시하지 않습니다.",
+      "heroAlt": "둥팅군에서 첸링현으로 문서를 전달한 기록이 담긴 리예 진간.",
+      "navTitle": "리예 진간 읽기",
+      "featuredLinkLabel": "리예 진간 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "리예",
+        "진나라",
+        "죽간"
+      ]
+    }
+  }
+}

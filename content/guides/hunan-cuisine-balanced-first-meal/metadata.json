@@ -1,0 +1,83 @@
+{
+  "id": "hunan-cuisine-balanced-first-meal",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "food-choice-guide",
+  "topics": [
+    "hunan-cuisine",
+    "shared-meal",
+    "chili",
+    "smoked-food",
+    "ordering"
+  ],
+  "destinations": [
+    "hunan",
+    "changsha"
+  ],
+  "heroImagePath": "/images/guides/hunan-cuisine-balanced-first-meal/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/hunan-cuisine-balanced-first-meal/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/hunan-cuisine-balanced-first-meal/",
+      "title": "Hunan Cuisine Beyond Heat: Build a Balanced First Shared Meal",
+      "headline": "Order Contrast, Not Ten Versions of Chili",
+      "description": "Build a first Hunan meal across fresh, sour, smoked, steamed and vegetable dishes, while asking clearly about heat and dietary limits.",
+      "heroAlt": "Home-style Hunan fried tofu with fresh green and red chilies.",
+      "navTitle": "Build a balanced Hunan meal",
+      "featuredLinkLabel": "Build a balanced Hunan meal",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hunan cuisine",
+        "Shared meal",
+        "Ordering"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/hunan-cuisine-balanced-first-meal/",
+      "title": "湘菜不只有辣：第一次共享餐怎么搭配",
+      "headline": "点出层次，而不是十种辣椒",
+      "description": "从鲜辣、酸香、烟熏、蒸菜与蔬菜中搭配第一顿湘菜，并清楚说明辣度和饮食限制。",
+      "heroAlt": "加入青红鲜椒的家常湘味煎豆腐。",
+      "navTitle": "搭配一顿湘菜",
+      "featuredLinkLabel": "搭配一顿湘菜",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "湘菜",
+        "共享餐",
+        "点菜"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/hunan-cuisine-balanced-first-meal/",
+      "title": "매운맛 너머의 후난 요리: 균형 잡힌 첫 공동 식사",
+      "headline": "고추 열 가지보다 대비를 주문하기",
+      "description": "생고추, 신맛, 훈연, 찜, 채소 요리를 조합하고 매운 정도와 식이 제한을 분명히 전달합니다.",
+      "heroAlt": "풋고추와 붉은 고추를 넣은 후난식 가정식 두부 요리.",
+      "navTitle": "균형 잡힌 후난 식사",
+      "featuredLinkLabel": "균형 잡힌 후난 식사",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "후난 요리",
+        "공동 식사",
+        "주문"
+      ]
+    }
+  }
+}
