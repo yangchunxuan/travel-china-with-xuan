@@ -1,0 +1,23 @@
+{
+  "id": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+  "type": "planning",
+  "pillar": "stay-city-areas",
+  "audienceMarkets": ["global"],
+  "format": "three-area-stay-decision",
+  "topics": ["stay", "area choice", "urban terrain"],
+  "destinations": ["chongqing"],
+  "heroImagePath": "/images/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": { "section": "stay", "family": "comparison", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", "title": "Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba?", "headline": "Choose a Chongqing Base by Terrain, Arrival and Evenings", "description": "Compare Jiefangbei, Guanyinqiao and Shapingba by vertical walking, transport handoffs, late evenings, day trips and luggage—not hotel rankings.", "heroAlt": "Jiefangbei pedestrian streets and towers illuminated at night in Chongqing.", "navTitle": "Chongqing: three bases", "featuredLinkLabel": "Compare Chongqing stay areas", "openGraphLocale": "en_US", "cardTags": ["Chongqing", "Where to stay", "Area choice"] },
+    "zh": { "path": "/zh/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", "title": "重庆住哪里：解放碑、观音桥还是沙坪坝？", "headline": "按地形、抵达方式与夜间安排选择重庆住宿区", "description": "从立体步行、交通交接、夜间返回、近郊行程和行李出发，比较解放碑、观音桥与沙坪坝，而不是罗列酒店。", "heroAlt": "夜间亮灯的重庆解放碑步行街与高楼。", "navTitle": "重庆三个住宿区", "featuredLinkLabel": "比较重庆住宿区", "openGraphLocale": "zh_CN", "cardTags": ["重庆", "住哪里", "区域选择"] },
+    "ko": { "path": "/ko/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", "title": "충칭 숙소 위치: 제팡베이, 관인차오, 사핑바 중 어디?", "headline": "지형·도착 동선·저녁 일정으로 고르는 충칭 숙소", "description": "호텔 순위가 아니라 입체적인 보행, 환승, 야간 귀가, 근교 일정과 짐을 기준으로 제팡베이·관인차오·사핑바를 비교합니다.", "heroAlt": "밤에 불을 밝힌 충칭 제팡베이 보행 거리와 고층 건물.", "navTitle": "충칭 숙소 3곳", "featuredLinkLabel": "충칭 숙소 지역 비교", "openGraphLocale": "ko_KR", "cardTags": ["충칭", "숙소 위치", "지역 비교"] }
+  }
+}
