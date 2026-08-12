@@ -1,0 +1,82 @@
+{
+  "id": "china-passport-validity-and-blank-pages",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "document-check-guide",
+  "topics": [
+    "passport-validity",
+    "blank-visa-pages",
+    "china-visa",
+    "visa-free-entry",
+    "boarding-documents"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-passport-validity-and-blank-pages/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-passport-validity-and-blank-pages/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-passport-validity-and-blank-pages/",
+      "title": "China Passport Validity and Blank Pages: Pre-Trip Check",
+      "headline": "Passport Validity and Blank Pages for a China Trip: What to Check Before You Apply or Fly",
+      "description": "Separate visa, visa-free, transit and airline rules, inspect your passport, and confirm borderline cases with the authority that owns each decision.",
+      "heroAlt": "Editorial decision diagram linking a passport expiry date and blank pages to visa, flight and border checks.",
+      "navTitle": "Passport validity for China",
+      "featuredLinkLabel": "Check your passport before China",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Passport",
+        "Entry"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-passport-validity-and-blank-pages/",
+      "title": "中国旅行护照有效期与空白页：行前检查",
+      "headline": "去中国前怎样检查护照有效期和空白页：申请与登机分开判断",
+      "description": "区分签证、免签、过境和航司规则，检查证件状态，并向真正负责各项决定的官方渠道确认临界情况。",
+      "heroAlt": "护照到期日和空白页分别连接签证、航班与边检查验的编辑决策图。",
+      "navTitle": "中国旅行护照有效期",
+      "featuredLinkLabel": "出发前检查护照",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "护照",
+        "入境"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-passport-validity-and-blank-pages/",
+      "title": "중국 여행 여권 유효기간과 빈 페이지 점검",
+      "headline": "중국 여행 전 여권 유효기간과 빈 페이지 확인: 신청과 탑승을 나눠 판단하기",
+      "description": "비자·무비자·환승·항공사 기준을 구분해 여권을 점검하고 경계 사례는 해당 결정을 맡은 공식 기관에 확인하세요.",
+      "heroAlt": "여권 만료일과 빈 페이지가 비자·항공편·국경 심사로 이어지는 편집용 의사결정 도표.",
+      "navTitle": "중국 여행 여권 유효기간",
+      "featuredLinkLabel": "중국 출발 전 여권 점검",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "여권",
+        "입국"
+      ]
+    }
+  }
+}
