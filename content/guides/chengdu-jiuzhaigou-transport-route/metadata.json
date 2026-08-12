@@ -1,0 +1,12 @@
+{
+  "id": "chengdu-jiuzhaigou-transport-route", "type": "planning", "pillar": "transport-city-pair-routes", "audienceMarkets": ["global"], "format": "rail-last-mile-decision",
+  "topics": ["transport", "rail", "mountain-transfer", "last-mile"], "destinations": ["chengdu", "jiuzhaigou"],
+  "heroImagePath": "/images/guides/chengdu-jiuzhaigou-transport-route/hero-1600.webp", "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-jiuzhaigou-transport-route/hero-1600.webp", "imageWidth": 1600, "imageHeight": 1000,
+  "datePublished": "2026-08-12", "dateModified": "2026-08-12", "sourceReviewedDate": "2026-08-12",
+  "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "plan" }, "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/chengdu-jiuzhaigou-transport-route/", "title": "Chengdu to Jiuzhaigou: Train, Transfer, Flight or Road?", "headline": "Chengdu to Jiuzhaigou: The Train Does Not End at the Valley", "description": "Choose a Chengdu–Jiuzhaigou route by the exact rail station, valley transfer, flight chain, altitude, luggage, return and disruption recovery.", "heroAlt": "Turquoise lakes and forest in Jiuzhaigou Valley.", "navTitle": "Chengdu to Jiuzhaigou", "featuredLinkLabel": "Plan Chengdu to Jiuzhaigou", "openGraphLocale": "en_US", "cardTags": ["Chengdu", "Jiuzhaigou", "Transport"] },
+    "zh": { "path": "/zh/guides/chengdu-jiuzhaigou-transport-route/", "title": "成都到九寨沟：火车、接驳、航班还是公路", "headline": "成都到九寨沟：火车并不直接到景区", "description": "按准确车站、景区接驳、航班链、海拔、行李、回程与中断恢复，选择成都到九寨沟路线。", "heroAlt": "九寨沟的蓝绿色湖水与森林。", "navTitle": "成都到九寨沟", "featuredLinkLabel": "规划成都到九寨沟", "openGraphLocale": "zh_CN", "cardTags": ["成都", "九寨沟", "交通"] },
+    "ko": { "path": "/ko/guides/chengdu-jiuzhaigou-transport-route/", "title": "청두에서 주자이거우까지: 열차, 환승, 항공, 도로", "headline": "청두에서 주자이거우까지: 열차는 계곡에서 끝나지 않는다", "description": "정확한 역, 관광지 환승, 항공 연결, 고도, 짐, 귀환과 운행 중단 대안을 기준으로 노선을 고릅니다.", "heroAlt": "주자이거우 계곡의 푸른 호수와 숲.", "navTitle": "청두-주자이거우", "featuredLinkLabel": "청두-주자이거우 계획", "openGraphLocale": "ko_KR", "cardTags": ["청두", "주자이거우", "교통"] }
+  }
+}
