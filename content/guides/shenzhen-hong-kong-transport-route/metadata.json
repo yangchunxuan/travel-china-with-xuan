@@ -21,7 +21,7 @@
       "title": "Shenzhen to Hong Kong: Which Border or Train?",
       "headline": "Shenzhen and Hong Kong: Choose the Right Border or Rail Crossing",
       "description": "Compare high-speed rail, Lo Wu, Lok Ma Chau, Shenzhen Bay and road crossings by your real endpoints, luggage, hour and border steps.",
-      "heroAlt": "The Lok Ma Chau Spur Line border crossing between Shenzhen and Hong Kong.",
+      "heroAlt": "The west exterior and entrance area of Hong Kong West Kowloon Station.",
       "navTitle": "Shenzhen–Hong Kong crossings",
       "featuredLinkLabel": "Choose a Shenzhen–Hong Kong crossing",
       "openGraphLocale": "en_US",
@@ -31,8 +31,8 @@
       "path": "/zh/guides/shenzhen-hong-kong-transport-route/",
       "title": "深圳到香港怎么走？口岸与高铁选择",
       "headline": "深圳与香港之间：根据完整行程选择口岸或高铁",
-      "description": "按两端真实地点、行李、过关时间和接驳，比较高铁、Luohu、福田、深圳湾及公路口岸。",
-      "heroAlt": "连接深圳与香港的落马洲支线口岸。",
+      "description": "按两端真实地点、行李、过关时间和接驳，比较高铁、罗湖、福田、深圳湾及公路口岸。",
+      "heroAlt": "香港西九龙站西翼外观与入口区域。",
       "navTitle": "深港口岸选择",
       "featuredLinkLabel": "选择适合的深港口岸",
       "openGraphLocale": "zh_CN",
@@ -40,14 +40,14 @@
     },
     "ko": {
       "path": "/ko/guides/shenzhen-hong-kong-transport-route/",
-      "title": "선전–홍콩 이동: 국경검문소와 고속철도 선택",
-      "headline": "선전과 홍콩 사이, 어느 국경검문소나 열차를 고를까?",
-      "description": "실제 출발지와 목적지, 짐, 통과 시간과 환승을 기준으로 고속철도와 주요 육로 검문소를 비교합니다.",
-      "heroAlt": "선전과 홍콩을 잇는 록마차우 지선 국경검문소.",
-      "navTitle": "선전–홍콩 국경 이동",
+      "title": "선전–홍콩 이동: 출입경 지점과 고속철도 선택",
+      "headline": "선전과 홍콩 사이, 어느 출입경 지점이나 열차를 고를까?",
+      "description": "실제 출발지와 목적지, 짐, 통과 시간과 환승을 기준으로 고속철도와 주요 육로 출입경 지점을 비교합니다.",
+      "heroAlt": "홍콩서구룡역 서쪽 외관과 출입구 구역.",
+      "navTitle": "선전–홍콩 출입경 이동",
       "featuredLinkLabel": "선전–홍콩 이동 경로 고르기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["선전", "홍콩", "국경 이동"]
+      "cardTags": ["선전", "홍콩", "출입경 이동"]
     }
   }
 }

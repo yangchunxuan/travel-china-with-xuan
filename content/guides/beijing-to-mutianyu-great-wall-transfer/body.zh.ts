@@ -41,6 +41,7 @@ const body = {
       { label: "慕田峪游客与公交信息", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },
       { label: "2026年慕田峪夜游通知", url: "https://english.beijing.gov.cn/latest/news/202606/t20260630_4738683.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },
       { label: "首图：Lloyd Tudor拍摄慕田峪，CC BY-SA 4.0，已裁切", url: "https://commons.wikimedia.org/wiki/File:The_Mutianyu_section_of_the_Great_Wall_of_China.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "首图衍生文件许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
     ]},
   ],
 } as const satisfies StructuredPageBody;

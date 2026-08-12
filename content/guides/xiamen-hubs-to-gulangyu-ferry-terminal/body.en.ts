@@ -36,7 +36,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Official visitor ferry purchase and routes", url: "https://xmferry.com/wybm/wshlk/xchgpp/index.htm", publisher: "Xiamen Ferry Co.", reviewedAt: "2026-08-12" },
     { label: "Official terminal and route guide", url: "https://www.xmferry.com/xwzx/zxgg/25004.htm", publisher: "Xiamen Ferry Co.", reviewedAt: "2026-08-12" },
     { label: "Official anti-resale warning", url: "https://www.xmferry.com/xwzx/zxgg/22943.htm", publisher: "Xiamen Ferry Co.", reviewedAt: "2026-08-12" },
-    { label: "Hero: Cruise Center bus area by HualinXMN, CC BY 4.0; cropped", url: "https://commons.wikimedia.org/wiki/File:Cruise_Center_Bus_Station(Xiamen)._20190203.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "Hero: Cruise Center bus area by HualinXMN, CC BY 4.0; cropped and converted to WebP", url: "https://commons.wikimedia.org/wiki/File:Cruise_Center_Bus_Station(Xiamen)._20190203.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "Hero derivative licence: CC BY 4.0", url: "https://creativecommons.org/licenses/by/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;
 export default body;

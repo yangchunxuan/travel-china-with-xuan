@@ -575,3 +575,28 @@ English, Chinese and Korean.
   not provide an unused image with both a named location and a capture date
   inside an official 2026 holiday period, so an undated crowd scene was not
   presented as holiday evidence.
+
+## Employee 1 transport batch (August 12, 2026)
+
+The ten hero derivatives below were visually checked against their source
+pages. Alt text describes only the visible scene; none of the photographs is
+evidence of current schedules, border procedures or operating conditions.
+
+| Guide | Source / author | Licence | Captured / exact location | Published derivative |
+| --- | --- | --- | --- | --- |
+| Shenzhen–Hong Kong | [Hong Kong West Kowloon Station exterior (West)](https://commons.wikimedia.org/wiki/File:Hong_Kong_West_Kowloon_Station_exterior%EF%BC%88West%EF%BC%892021_08_part2.jpg), Qwer132477 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2021-08-11; west exterior and entrance area of Hong Kong West Kowloon Station | 4:3 to 16:10, 1600 × 1000 WebP; SHA-256 `ad8c37e2589802de1cb02069a332993b1dfe86a5cb12704b450fd5049feded62` |
+| Guangzhou–Hong Kong | [Guangzhou South railway station (85213)](https://commons.wikimedia.org/wiki/File:Guangzhou_South_railway_station_(85213).jpg), Rc1959 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2025-12-25; interior waiting hall, Guangzhou South Railway Station | 4:3 to 16:10, 1600 × 1000 WebP; SHA-256 `3af2db7d49c3550efb52d84f699aa037ceb98171c86e403b178186959e7861f0` |
+| Beijing–Mutianyu | [The Mutianyu section of the Great Wall of China](https://commons.wikimedia.org/wiki/File:The_Mutianyu_section_of_the_Great_Wall_of_China.jpg), Lloyd Tudor | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2024-02-19; Mutianyu Great Wall, Huairou, Beijing | 3:2 to 16:10, 1600 × 1000 WebP; SHA-256 `d010e2403207a01478b9bcea95b27bea40a4634b15287f7458f095158b8f2af7` |
+| Beijing–Badaling | [Exterior of Badaling Great Wall Railway Station](https://commons.wikimedia.org/wiki/File:Exterior_of_Badaling_Great_Wall_Railway_Station_(20220109161541).jpg), N509FZ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2022-01-09; Badaling Great Wall Railway Station, Beijing | 3:2 to 16:10, 1600 × 1000 WebP; SHA-256 `83b63033446076d1b2a1d6081e35f9d24868ca242fd226315155d8bae44f24e4` |
+| Chengdu–Jiuzhaigou | [Jiuzhaigou Valley — Five Flower Lake](https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg), Chensiyuan | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2011; Five Flower Lake, Jiuzhaigou Valley | 3:2 to 16:10, 1600 × 1000 WebP; SHA-256 `30a1d69ee853a9e08037e55d0e7b5a1355d9869ab5b6733830bf4d8cd206f5d1` |
+| Guilin–Yangshuo | [Yangshuo Railway Station 202102](https://commons.wikimedia.org/wiki/File:Yangshuo_Railway_Station_202102.jpg), Rat2 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2021-02-07; Yangshuo Railway Station, Guangxi | 4:3 to 16:10, 1600 × 1000 WebP; SHA-256 `8472617aceed5b8d3c5aec75b657970ddf2f7c912f1d7102001f83866ff3847c` |
+| Hong Kong–Macau | [HZMB at Sha Lo Wan](https://commons.wikimedia.org/wiki/File:Hong_Kong-Zhuhai-Macau_Bridge_at_Sha_Lo_Wan_(20180918131126).jpg), N509FZ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2018-09-18; Hong Kong–Zhuhai–Macao Bridge at Sha Lo Wan | 3:2 to 16:10, 1600 × 1000 WebP; SHA-256 `1ee017c1d838008584e4763fee7e406b7e0dc4b81decfa5cea003a2972e39867` |
+| Xiamen–Gulangyu | [Cruise Center Bus Station (Xiamen)](https://commons.wikimedia.org/wiki/File:Cruise_Center_Bus_Station(Xiamen)._20190203.jpg), HualinXMN | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 2019-02-03; International Cruise Center bus area, Xiamen | 4:3 to 16:10, 1600 × 1000 WebP; SHA-256 `ffedc7cf979241572953d75c1460c7d3904d017eb7d0f0aeeec6ca3522563c33` |
+| Beijing South–airports | [North square of Beijing South Railway Station](https://commons.wikimedia.org/wiki/File:North_square_of_Beijing_South_Railway_Station_(20180722170459).jpg), N509FZ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2018-07-22; north square, Beijing South Railway Station | 3:2 to 16:10, 1600 × 1000 WebP; SHA-256 `5eac9b5cf82f7ee112b5c887d01dae9d18330dddff0c6031fd498a81bbd07435` |
+| Shanghai–Hangzhou | [Hangzhou East railway station interior](https://commons.wikimedia.org/wiki/File:Hangzhou_East_railway_station_interior.jpg), Staeiou | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2018-12-22; Hangzhou East Railway Station | 4:3 to 16:10, 1600 × 1000 WebP; SHA-256 `10b0c5fa9fdb38ae5ead3adbb0c0310cc85b72777466bbe08f25980dd07c16ca` |
+
+Each derivative was centre-cropped, resized to exactly 1600 × 1000 and
+converted to WebP without retaining source EXIF, GPS or device metadata. The
+edited file remains under the source licence; each locale links both the
+original file page and the direct licence in its default-collapsed Sources
+disclosure.

@@ -4,11 +4,11 @@ const body = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "decision-lead", type: "lead", text: "广州和香港距离不远，高铁看起来像唯一答案。真正要比较的是：广州住处是否适合票面出发站，完成乘车和过关后，香港西九龙是否适合最终地址。" },
-    { id: "quick-answer", type: "callout", title: "先比较，不先下结论", tone: "decision", body: "广州南与香港西九龙都顺路时，先查直达高铁；同时按出发日期查询离住处更合适的广州车站有没有直达车。只有已确认的跨境巴士上下车点能明显减少接驳时，才把公路方案放入决赛。" },
+    { id: "quick-answer", type: "callout", title: "先比较，不先下结论", tone: "decision", body: "广州南与香港西九龙都顺路时，先查直达高铁；另按准确日期单独查询广州东。12306当前跨境产品同时列有广州南和广州东，但并非每个站点组合每天都有余票。只有已确认的跨境巴士上下车点能明显减少接驳时，才把公路方案放入比较。" },
     { id: "matrix-heading", type: "heading", level: 2, text: "选择能接上两扇门的完整链路" },
     { id: "decision-matrix", type: "table", caption: "车上时间短，不代表旅行日短", columns: ["方案", "较合适的情形", "容易漏算的摩擦", "购票前核对"], rows: [
       ["广州南出发的高铁", "番禺、广州南部、接续铁路，或香港终点适合西九龙", "到大站、安检、出入境和香港最后一段", "具体车次、出发站和到达时间"],
-      ["其他广州车站的直达列车", "当天确有直达车，并能省下一次跨城接驳", "班次较少或时间不合适", "票面写明该站与香港西九龙"],
+      ["广州东出发的直达列车", "当天确有直达车，并能省下一次跨城接驳", "余票或时间与日期不匹配", "当天具体车次与票面完整站名"],
       ["跨境巴士", "有日期明确、持牌且上下车点实用的服务", "道路拥堵、口岸、行李和运营商站点", "运营商、口岸、两端站点与退改规则"],
       ["先到深圳再过关", "直达票不可用，或深圳本来就是行程一站", "第二张票、换站或换口岸及更多失败点", "整条链仍优于等下一班直达"],
     ]},
@@ -42,9 +42,11 @@ const body = {
     ]},
     { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
       { label: "高铁行程规划方法", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "港铁公司", reviewedAt: "2026-08-12" },
+      { label: "12306跨境产品车站清单", url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/newTicketRule/newTicketRule-GuangShenGangThirtyDay.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" },
       { label: "口岸名称与类型", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "香港保安局", reviewedAt: "2026-08-12" },
       { label: "持牌跨境巴士查询", url: "https://www.td.gov.hk/en/transport_in_hong_kong/land_based_cross_boundary_transport/enquiries/index.html", publisher: "香港运输署", reviewedAt: "2026-08-12" },
-      { label: "首图：Rc1959拍摄广州南站，CC BY-SA 4.0，已裁切", url: "https://commons.wikimedia.org/wiki/File:Guangzhou_South_railway_station_(85213).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "首图：Rc1959拍摄广州南站候车大厅，CC BY-SA 4.0，已裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:Guangzhou_South_railway_station_(85213).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "首图衍生文件许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
     ]},
   ],
 } as const satisfies StructuredPageBody;

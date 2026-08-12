@@ -57,7 +57,8 @@ const body = {
       { label: "Boundary control and crossing identities", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "Hong Kong Security Bureau", reviewedAt: "2026-08-12" },
       { label: "Land-based cross-boundary transport", url: "https://www.td.gov.hk/en/transport_in_hong_kong/land_based_cross_boundary_transport/index_t.html", publisher: "Hong Kong Transport Department", reviewedAt: "2026-08-12" },
       { label: "High Speed Rail journey-planner workflow", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR Corporation", reviewedAt: "2026-08-12" },
-      { label: "Hero: Lok Ma Chau Spur Line by Baycrest, CC BY-SA 2.5; cropped", url: "https://commons.wikimedia.org/wiki/File:Lok_Ma_Chau_Spur_Line_02.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "Hero: Hong Kong West Kowloon Station west exterior by Qwer132477, CC BY-SA 4.0; cropped and converted to WebP", url: "https://commons.wikimedia.org/wiki/File:Hong_Kong_West_Kowloon_Station_exterior%EF%BC%88West%EF%BC%892021_08_part2.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "Hero derivative licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
     ]},
   ],
 } as const satisfies StructuredPageBody;

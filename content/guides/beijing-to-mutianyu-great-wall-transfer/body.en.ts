@@ -47,6 +47,7 @@ const body = {
       { label: "Mutianyu visitor and public-transport information", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
       { label: "2026 Mutianyu night-tour notice", url: "https://english.beijing.gov.cn/latest/news/202606/t20260630_4738683.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
       { label: "Hero: Mutianyu by Lloyd Tudor, CC BY-SA 4.0; cropped", url: "https://commons.wikimedia.org/wiki/File:The_Mutianyu_section_of_the_Great_Wall_of_China.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "Hero derivative licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
     ]},
   ],
 } as const satisfies StructuredPageBody;

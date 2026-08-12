@@ -2,7 +2,7 @@
 
 Status: **READY — LICENSED REAL HERO INCLUDED**
 
-1. Hero: Real exterior photograph of Guangzhou South Railway Station; 16:10; makes the departure station a physical part of the decision.
+1. Hero: Real interior waiting-hall photograph of Guangzhou South Railway Station; 16:10; makes the departure station a physical part of the decision.
 2. Body 1: Optional current licensed West Kowloon arrival-hall wayfinding image beside the last-mile section.
 3. Body 2: Optional Homeground field photo of luggage transfer between Guangzhou metro and a named station entrance.
 4. Must be real: all stations, coaches, border halls, signs, luggage and travellers.

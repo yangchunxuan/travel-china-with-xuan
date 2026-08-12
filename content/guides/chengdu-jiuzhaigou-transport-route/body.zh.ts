@@ -1,13 +1,13 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
   { id: "lead", type: "lead", text: "成都出发的火车能减少大量公路时间，却不会把旅客直接送到九寨沟景区。真正的产品是火车、明确的站到景区接驳，以及当天仍能运行的回程。" },
-  { id: "answer", type: "callout", title: "把接驳和回程当作路线的一部分", tone: "decision", body: "先查黄龙九寨站的火车，再找官方或名称明确的后续接驳。只有当天有可确认的景区连接时，才把Songpan站当作备选。若航班或全程车辆更符合人数、天气缓冲与成都两端位置，再纳入比较。" },
+  { id: "answer", type: "callout", title: "把接驳和回程当作路线的一部分", tone: "decision", body: "先查黄龙九寨站的火车，再通过“九旅悦行”预订对应日期的后续接驳。只有同一官方渠道显示匹配班车时，才把松潘站当作备选。航班或全程公路只有在实时航班与落地后的明确接驳同时存在、且整条链更适合同行人时才进入比较。" },
   { id: "matrix-heading", type: "heading", level: 2, text: "交通方式其实是一条链" },
   { id: "matrix", type: "table", caption: "缺少九寨沟最后一段，任何方案都不完整", columns: ["链路", "较合适", "隐藏摩擦", "核对"], rows: [
     ["成都火车→黄龙九寨→景区", "同日火车和车站接驳能衔接", "正确成都车站、山路末段和定时接驳", "车次、车站、合规接驳、下车点与回程"],
-    ["成都火车→Songpan→景区", "有合适余票与已确认后续服务", "不同车站和公路接驳，不能自动替换", "准确上车点与是否送到住宿"],
-    ["航班→机场接驳", "航班与机场两端确实缩短全程", "机场交通、天气、行李与剩余公路段", "机场、航班、接机与中断条款"],
-    ["全程公路车辆", "多人重视一次上车并能接受公路日", "山区公路、司机休息与天气", "合规车辆、司机、停车、安全带与取消"],
+    ["成都火车→松潘→景区", "买火车票前已在“九旅悦行”查到同日接驳", "不同车站和公路接驳，不能自动替换", "实时上车点、下车点与是否送到住宿"],
+    ["航班→机场接驳", "实时航班与明确落地接驳确实缩短全程", "机场交通、天气、行李与约88公里剩余公路段", "日期、实际成都机场、航班、接机与中断条款"],
+    ["班线大巴或预订车辆", "官方渠道有合适直达票，或多人重视一次上车", "山区公路、准确终点、司机休息与天气", "官方车票或合规车辆、九寨沟准确终点、停车与取消"],
   ]},
   { id: "warning", type: "callout", title: "黄龙九寨是火车站，不是景区门口", tone: "warning", body: "保存三个定位：火车站、九寨沟住宿和将使用的景区入口。到达其中一个地点的接驳票，不一定能到另外两个。" },
   { id: "steps-heading", type: "heading", level: 2, text: "按这个顺序建立预订" },
@@ -24,7 +24,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["山路中断", "依照交通、文旅与运营方通知，不坐未经确认的路边车辆"],
     ["回程余票消失", "先保护住宿和下一班航班，再建立新链路"],
   ]},
-  { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月12日", tone: "neutral", body: "四川官方来源说明黄龙九寨站至九寨沟的客运接驳，并在后续信息中涉及黄龙九寨与Songpan的运力安排。火车余票、接驳发车、道路、航班与景区进入均按日期变化；本文不承诺时刻或票价。" },
+  { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月12日", tone: "neutral", body: "九寨沟管理局2026年7月公告要求通过“九旅悦行”提前购买黄龙九寨站接驳，并说明班车按动车到站衔接，约2小时到景区门口。松潘站只有在同一渠道查到当日匹配接驳时才成立。官方到达页显示九黄机场距沟口仍约88公里，落地后还需公路接驳；川航当前时刻表只列出每周部分日期的成都—九寨沟航班，不能当作每日服务，具体日期与成都机场须在实时购票页确认。" },
   { id: "help", type: "callout", title: "需要核对铁路与公路交接？", tone: "decision", body: "提供日期、成都酒店、九寨沟酒店、人数、行李和固定航班。Homeground可标出交接点与保守缓冲，实时运营仍以承运方为准。" },
   { id: "links", type: "internal-links", title: "继续规划", items: [
     { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选定准确站点后再使用。" },
@@ -33,10 +33,13 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为每一段准备付款恢复。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
-    { label: "黄龙九寨站接驳安排", url: "https://wlt.sc.gov.cn/scwlt/hydt/2024/8/30/5008ba73ea8b45b6bf1d9fedf998f465.shtml", publisher: "四川省文化和旅游厅", reviewedAt: "2026-08-12" },
-    { label: "黄龙九寨与Songpan运力更新", url: "https://gzw.sc.gov.cn/scsgzw/CU230505/2025/10/23/f65a8a3aaf9948b9908811db46f92f8b.shtml", publisher: "四川省国资委", reviewedAt: "2026-08-12" },
+    { label: "2026年7月黄龙九寨站接驳公告", url: "https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },
+    { label: "2026年黄龙九寨、松潘与成都大巴购票渠道", url: "https://www.jiuzhai.com/news/notice/10929-2026-02-12-11-07-31", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },
+    { label: "九黄机场与公路接驳官方到达指引", url: "https://www.jiuzhai.com/intelligent-service/arrival-mode", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },
+    { label: "成都—九寨沟当前航班时刻表", url: "https://flights.sichuanair.com/flight-schedule/1.html", publisher: "四川航空", reviewedAt: "2026-08-12" },
     { label: "铁路官方售票渠道", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" },
-    { label: "首图：Chensiyuan拍摄九寨沟，CC BY-SA 4.0，已裁切", url: "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "首图：Chensiyuan拍摄九寨沟，CC BY-SA 4.0，已裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "首图衍生文件许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;
 export default body;

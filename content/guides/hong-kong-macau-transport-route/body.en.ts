@@ -36,6 +36,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Cross-boundary ferry service data", url: "https://crossboundaryferryservices.mardep.gov.hk/en/", publisher: "Hong Kong Marine Department", reviewedAt: "2026-08-12" },
     { label: "HZMB public transport", url: "https://www.hzmb.gov.hk/en/transport.html", publisher: "HZMB Hong Kong Project Management Office", reviewedAt: "2026-08-12" },
     { label: "Hero: HZMB by N509FZ, CC BY-SA 4.0; cropped", url: "https://commons.wikimedia.org/wiki/File:Hong_Kong-Zhuhai-Macau_Bridge_at_Sha_Lo_Wan_(20180918131126).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "Hero derivative licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;
 export default body;

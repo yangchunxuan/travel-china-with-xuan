@@ -37,6 +37,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Bus 877 visitor guidance", url: "https://english.beijing.gov.cn/latest/news/202407/t20240728_3760871.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
     { label: "2026 Capital Airport direct service", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202602/t20260211_4507827.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
     { label: "Hero: Badaling station by N509FZ, CC BY-SA 4.0; cropped", url: "https://commons.wikimedia.org/wiki/File:Exterior_of_Badaling_Great_Wall_Railway_Station_(20220109161541).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "Hero derivative licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;
 export default body;

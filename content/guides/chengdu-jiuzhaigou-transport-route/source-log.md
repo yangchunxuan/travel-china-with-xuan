@@ -12,15 +12,17 @@ Searches reviewed: `Chengdu to Jiuzhaigou train`, `Huanglongjiuzhai station to J
 
 ## Dynamic facts used
 
-- Sichuan official information documents passenger transfers from Huanglongjiuzhai railway station toward Jiuzhaigou. Scope: existence and role of the last-mile transfer, not permanent times. `checked_at: 2026-08-12`.
-- A later Sichuan state-asset update describes capacity development involving Huanglongjiuzhai and Songpan. Scope: both remain distinct station choices, not interchangeable promises. `checked_at: 2026-08-12`.
-- Rail inventory, coach departures, roads, flights and attraction access are date-specific. No fixed duration, fare or frequency is published. `checked_at: 2026-08-12`.
+- Jiuzhaigou's July 2026 notice directs travellers to book Huanglongjiuzhai Station transfers in advance through Jiulü Yuexing; the notice says connections are arranged around train arrivals and take about two hours to the scenic-area entrance. Scope: current booking method and approximate official transfer description, not a permanent timetable. `checked_at: 2026-08-12`.
+- Songpan is a conditional dated alternative: the official 2026 travel notice directs travellers to Jiulü Yuexing for actual Songpan/Huanglongjiuzhai services. Scope: booking channel, not promised inventory. `checked_at: 2026-08-12`.
+- The official arrival guide places Jiuhuang Airport about 88 kilometres from the valley entrance. Sichuan Airlines' current timetable lists Chengdu–Jiuzhaigou on selected weekdays; actual date and Chengdu airport must be verified in the live booking flow. `checked_at: 2026-08-12`.
 
 ## Official sources
 
-1. Sichuan Department of Culture and Tourism — Huanglongjiuzhai transfer: https://wlt.sc.gov.cn/scwlt/hydt/2024/8/30/5008ba73ea8b45b6bf1d9fedf998f465.shtml
-2. Sichuan SASAC — station and transfer capacity update: https://gzw.sc.gov.cn/scsgzw/CU230505/2025/10/23/f65a8a3aaf9948b9908811db46f92f8b.shtml
-3. China Railway 12306: https://www.12306.cn/en/index.html
+1. Jiuzhaigou Valley administration — July 2026 Huanglongjiuzhai transfer notice: https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49
+2. Jiuzhaigou Valley administration — 2026 Huanglongjiuzhai, Songpan and Chengdu coach channels: https://www.jiuzhai.com/news/notice/10929-2026-02-12-11-07-31
+3. Jiuzhaigou Valley administration — official arrival guide: https://www.jiuzhai.com/intelligent-service/arrival-mode
+4. Sichuan Airlines — current flight timetable: https://flights.sichuanair.com/flight-schedule/1.html
+5. China Railway 12306: https://www.12306.cn/en/index.html
 
 ## Image rights record
 

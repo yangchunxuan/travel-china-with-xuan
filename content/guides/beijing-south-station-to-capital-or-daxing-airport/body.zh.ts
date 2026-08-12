@@ -37,6 +37,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "2026年7月机场巴士更新", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202607/t20260727_4792045.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },
     { label: "七座火车站与两座机场接入轨道", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },
     { label: "首图：N509FZ拍摄北京南站，CC BY-SA 4.0，已裁切", url: "https://commons.wikimedia.org/wiki/File:North_square_of_Beijing_South_Railway_Station_(20180722170459).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "首图衍生文件许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;
 export default body;

@@ -37,6 +37,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "877路游客指引", url: "https://english.beijing.gov.cn/latest/news/202407/t20240728_3760871.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },
     { label: "2026首都机场直达服务", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202602/t20260211_4507827.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },
     { label: "首图：N509FZ拍摄八达岭站，CC BY-SA 4.0，已裁切", url: "https://commons.wikimedia.org/wiki/File:Exterior_of_Badaling_Great_Wall_Railway_Station_(20220109161541).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "首图衍生文件许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;
 export default body;

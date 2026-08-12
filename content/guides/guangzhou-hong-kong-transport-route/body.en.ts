@@ -4,11 +4,11 @@ const body = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "decision-lead", type: "lead", text: "Guangzhou and Hong Kong are close enough for a fast train to look obvious. The real decision is whether your Guangzhou door fits the departure station and your Hong Kong door fits West Kowloon after the rail and border procedures are counted." },
-    { id: "quick-answer", type: "callout", title: "The default is a comparison, not a verdict", tone: "decision", body: "Check a direct high-speed train first when Guangzhou South and Hong Kong West Kowloon fit the itinerary. Also search any direct service from the Guangzhou station closest to you on the exact date. Compare a licensed cross-boundary coach only when its confirmed pickup and drop-off remove enough transfers to offset road and border uncertainty." },
+    { id: "quick-answer", type: "callout", title: "The default is a comparison, not a verdict", tone: "decision", body: "Check a direct high-speed train first when Guangzhou South and Hong Kong West Kowloon fit the itinerary. Search Guangzhou East separately on the exact date; 12306 currently recognises both Guangzhou South and Guangzhou East in cross-boundary products, but not every station pair has inventory on every date. Compare a licensed cross-boundary coach only when its confirmed pickup and drop-off remove enough transfers to offset road and border uncertainty." },
     { id: "matrix-heading", type: "heading", level: 2, text: "Choose the chain that connects the right doors" },
     { id: "decision-matrix", type: "table", caption: "A short scheduled ride can still create a long travel day", columns: ["Option", "Strongest fit", "Hidden friction", "Verify before buying"], rows: [
       ["High-speed rail from Guangzhou South", "Panyu, south Guangzhou, a through rail connection, or a Hong Kong endpoint convenient to West Kowloon", "Reaching a very large station, security, exit/entry processing and the Hong Kong last mile", "The exact train, departure station and arrival time"],
-      ["Direct rail from another Guangzhou station", "A current direct train exists and saves a long cross-city transfer", "Lower frequency or a timetable that does not match your date", "The ticket names that station and Hong Kong West Kowloon"],
+      ["Direct rail from Guangzhou East", "A current direct train exists and saves a long cross-city transfer", "Different inventory or a timetable that does not match your date", "The exact dated train and the full ticketed station name"],
       ["Cross-boundary coach", "A dated, licensed service has useful hotel or district endpoints", "Traffic, an intermediate control point, baggage handling and operator-specific stops", "Operator, control point, both stops and change/refund rules"],
       ["Guangzhou to Shenzhen, then cross", "Direct inventory fails or Shenzhen is genuinely part of the itinerary", "A second ticket, a station or border transfer and more recovery points", "That the complete chain still beats waiting for a direct option"],
     ]},
@@ -55,9 +55,11 @@ const body = {
     ]},
     { id: "sources", type: "sources", title: "Official sources and image credit", items: [
       { label: "High Speed Rail trip-planner workflow", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR Corporation", reviewedAt: "2026-08-12" },
+      { label: "12306 cross-boundary product station list", url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/newTicketRule/newTicketRule-GuangShenGangThirtyDay.html", publisher: "China Railway 12306", reviewedAt: "2026-08-12" },
       { label: "Boundary-control identities", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "Hong Kong Security Bureau", reviewedAt: "2026-08-12" },
       { label: "Licensed cross-boundary coach enquiries", url: "https://www.td.gov.hk/en/transport_in_hong_kong/land_based_cross_boundary_transport/enquiries/index.html", publisher: "Hong Kong Transport Department", reviewedAt: "2026-08-12" },
-      { label: "Hero: Guangzhou South by Rc1959, CC BY-SA 4.0; cropped", url: "https://commons.wikimedia.org/wiki/File:Guangzhou_South_railway_station_(85213).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "Hero: Guangzhou South waiting hall by Rc1959, CC BY-SA 4.0; cropped and converted to WebP", url: "https://commons.wikimedia.org/wiki/File:Guangzhou_South_railway_station_(85213).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "Hero derivative licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
     ]},
   ],
 } as const satisfies StructuredPageBody;

@@ -12,15 +12,18 @@ Searches reviewed: `Guilin to Yangshuo train`, `Yangshuo railway station to town
 
 ## Dynamic facts used
 
-- Guangxi policy treats Guilin airport, rail, road and scenic-area nodes as a network requiring last-mile connection. Scope: planning structure, not a promised route. `checked_at: 2026-08-12`.
-- China Railway inventory and station calls vary by date. `checked_at: 2026-08-12`.
-- Coaches, cruise sailings, piers, fares, baggage handling and weather/river operations require operator confirmation. No permanent time or price is stated. `checked_at: 2026-08-12`.
+- Official Li River guidance describes the essence cruise as a one-way journey of about 60 kilometres and four hours: three-star boats use Mopanshan Passenger Port, four-star boats use Zhujiang Passenger Port, and both disembark at Yangshuo Longtoushan Pier. `checked_at: 2026-08-12`.
+- The official site uses advance sales, keeps only limited same-day inventory, states that the one-way cruise has no luggage-storage service and posts water-level closures and resumptions. `checked_at: 2026-08-12`.
+- China Railway inventory and station calls vary by date. Current official transport information still names Yangshuo as a rail direction; Yangshuo Station is in Xingping. No current official passenger timetable was found for the station-to-town road leg. `checked_at: 2026-08-12`.
 
 ## Official sources
 
-1. Guangxi Development and Reform Commission — Guilin transport and last-mile policy: https://fgw.gxzf.gov.cn/zfxxgkzl/wjzx/tzgg/t2196037.shtml
-2. Guangxi Department of Transport — rail-operation notice illustrating dated changes: https://jtt.gxzf.gov.cn/xwdt/tpxw/t8700434.shtml
-3. China Railway 12306: https://www.12306.cn/en/index.html
+1. Guilin Li River Scenic Area — official English transport guidance: https://en.liriver.com.cn/page/article/lyfw.jtcx
+2. Guilin Li River Scenic Area — official operating notices: https://www.liriver.com.cn/mobile/article/zxlj.tzgg
+3. Guilin Li River Scenic Area — official identity, one-way and luggage notice: https://www.liriver.com.cn/page/article/zxlj.jqdt/126
+4. Guangxi Department of Transport — current rail-service information: https://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t27417062.shtml
+5. China Railway 12306: https://www.12306.cn/en/index.html
+6. Guilin Municipal Commission for Discipline Inspection — Yangshuo Station in Xingping: https://m.qlgl.gov.cn/article-3-43849-1.html
 
 ## Image rights record
 

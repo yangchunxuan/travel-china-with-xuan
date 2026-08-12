@@ -27,11 +27,11 @@ Google results reviewed for `Shenzhen Hong Kong border crossing`, `Futian to Hon
 ## Image rights record
 
 - `asset`: `public/images/guides/shenzhen-hong-kong-transport-route/hero-1600.webp`
-- `source`: https://commons.wikimedia.org/wiki/File:Lok_Ma_Chau_Spur_Line_02.jpg
-- `author`: Baycrest
-- `licence`: CC BY-SA 2.5 — https://creativecommons.org/licenses/by-sa/2.5
-- `location`: Lok Ma Chau Spur Line / Futian land boundary crossing
-- `source capture date`: January 2005
+- `source`: https://commons.wikimedia.org/wiki/File:Hong_Kong_West_Kowloon_Station_exterior%EF%BC%88West%EF%BC%892021_08_part2.jpg
+- `author`: Qwer132477
+- `licence`: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- `location`: west exterior and entrance area of Hong Kong West Kowloon Station, Kowloon, Hong Kong
+- `source capture date`: 2021-08-11
 - `crop`: centre crop from 4:3 to 16:10; resized to 1600 × 1000 and converted to WebP
 
-The photograph documents the named crossing, not current service hours or passenger procedure.
+The photograph establishes the Hong Kong high-speed-rail endpoint. It does not represent every Shenzhen–Hong Kong crossing, current service hours or passenger procedure. The cropped WebP derivative remains under CC BY-SA 4.0.

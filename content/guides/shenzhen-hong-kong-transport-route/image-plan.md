@@ -2,7 +2,7 @@
 
 Status: **READY — LICENSED REAL HERO INCLUDED**
 
-1. Hero: Real photograph of the Lok Ma Chau Spur Line boundary crossing; 16:10; establishes that a named control point is a physical endpoint, not a generic line on a map.
+1. Hero: Real photograph of the west exterior and entrance area of Hong Kong West Kowloon Station; 16:10; establishes the high-speed-rail endpoint without pretending to represent every border crossing.
 2. Body 1: No additional documentary image required. If editorial adds one, use a current licensed West Kowloon station wayfinding photo beside the rail comparison.
 3. Body 2: No additional documentary image required. A future field photo may show the Shenzhen-side metro interchange at one named crossing.
 4. Must be real: every port, station, immigration hall, bus, traveller and sign.
