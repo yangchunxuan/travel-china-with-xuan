@@ -10,7 +10,7 @@ Status: **ORIGINAL EDITORIAL HERO COMPLETE — CENTRAL REVIEW REQUIRED**
 - Treatment: original Homeground editorial illustration created for this article. It is a diagram, not a photograph or documentary evidence.
 - Editorial purpose: Shows four connected Yangtze Delta nodes and a fork between a chain and a base.
 - Licence: original project asset; no third-party photograph, person, logo or map tile is used.
-- SHA-256: `6a7e71c9ffb588f2801cb51f103e32ce5c3331cb5f836383600b23b170067897`
+- SHA-256: `108a592a51530af62f1d7b4156bea74fcdc8f5a1dfc42b51d429fe4059b443de`
 
 ## QA
 

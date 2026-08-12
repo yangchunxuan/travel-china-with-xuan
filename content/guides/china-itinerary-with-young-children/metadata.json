@@ -24,7 +24,7 @@
   "sourceReviewedDate": "2026-08-12",
   "search": {
     "section": "plan",
-    "family": "traveller",
+    "family": "task",
     "primaryIntent": "plan"
   },
   "layout": {
@@ -51,7 +51,7 @@
       "path": "/zh/guides/china-itinerary-with-young-children/",
       "title": "带低龄儿童去中国，行程应该怎么排？",
       "headline": "带低龄儿童游中国：围绕最难熬的一小时规划",
-      "description": "从睡眠、饮食、如厕、抱娃负担、酒店稳定性和儿童票规则设计中国亲子路线。",
+      "description": "从睡眠、饮食、如厕、照顾孩子的负担、酒店稳定性和儿童票规则设计中国亲子路线。",
       "heroAlt": "表现成人与低龄儿童共同规划中国旅行的原创编辑插图。",
       "navTitle": "低龄儿童中国行程",
       "featuredLinkLabel": "规划适合孩子的路线",

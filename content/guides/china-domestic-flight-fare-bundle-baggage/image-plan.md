@@ -10,7 +10,7 @@ Status: **ORIGINAL EDITORIAL HERO COMPLETE — CENTRAL REVIEW REQUIRED**
 - Treatment: original Homeground editorial illustration created for this article. It is a diagram, not a photograph or documentary evidence.
 - Editorial purpose: Shows one flight branching into differently weighted product bundles without airline branding or prices.
 - Licence: original project asset; no third-party photograph, person, logo or map tile is used.
-- SHA-256: `4406dbc276b837455cc2c37b1575f160dbab49b7eaf846bd485d18bea72be88e`
+- SHA-256: `d79d5c11a3cb1820f854ca25b687afc21abde1d90e4318ca4525cf81d4a97993`
 
 ## QA
 

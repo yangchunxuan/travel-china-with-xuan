@@ -10,7 +10,7 @@ Status: **ORIGINAL EDITORIAL HERO COMPLETE — CENTRAL REVIEW REQUIRED**
 - Treatment: original Homeground editorial illustration created for this article. It is a diagram, not a photograph or documentary evidence.
 - Editorial purpose: Uses balanced seasonal shapes to show a value tradeoff, not a promise of empty attractions.
 - Licence: original project asset; no third-party photograph, person, logo or map tile is used.
-- SHA-256: `903dc56c40dc3f40dcac454a227956c177abb77a8af4f7cf158482f7d6c06c11`
+- SHA-256: `19664a5ea00754ab9394ce70ebe70464d377da7115f57f5310a3126ef9f8fc1e`
 
 ## QA
 

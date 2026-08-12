@@ -25,7 +25,7 @@
   "sourceReviewedDate": "2026-08-12",
   "search": {
     "section": "when-to-go",
-    "family": "budget",
+    "family": "comparison",
     "primaryIntent": "plan"
   },
   "layout": {
@@ -65,15 +65,15 @@
     },
     "ko": {
       "path": "/ko/guides/china-shoulder-season-value-tradeoff/",
-      "title": "중국 숄더 시즌, 낮은 가격이 가치 있을까?",
-      "headline": "중국 숄더 시즌 가치: 잃을 경험까지 가격에 넣기",
-      "description": "지역 기후, 일조, 운영 제한, 공휴일과 핵심 경험으로 중국 숄더 시즌의 가치를 판단합니다.",
+      "title": "중국 비성수기 전후, 낮은 가격이 가치 있을까?",
+      "headline": "중국 비성수기 전후의 가치: 잃을 경험까지 가격에 넣기",
+      "description": "지역 기후, 일조, 운영 제한, 공휴일과 핵심 경험으로 중국 비성수기 전후의 가치를 판단합니다.",
       "heroAlt": "중국 여행 비용과 계절 운영의 균형을 표현한 오리지널 편집 일러스트.",
-      "navTitle": "중국 숄더 시즌 가치",
+      "navTitle": "중국 비성수기 전후 가치",
       "featuredLinkLabel": "시기와 가치의 교환 검사",
       "openGraphLocale": "ko_KR",
       "cardTags": [
-        "숄더 시즌",
+        "비성수기 전후",
         "여행 가치",
         "여행 시기"
       ]

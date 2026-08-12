@@ -10,7 +10,7 @@ Status: **ORIGINAL EDITORIAL HERO COMPLETE — CENTRAL REVIEW REQUIRED**
 - Treatment: original Homeground editorial illustration created for this article. It is a diagram, not a photograph or documentary evidence.
 - Editorial purpose: Shows a four-node route rising toward a higher final stop without assigning days.
 - Licence: original project asset; no third-party photograph, person, logo or map tile is used.
-- SHA-256: `6e1c79673d04d608591409c9dc833fd096cc422bf889a4377227348f331c7221`
+- SHA-256: `bd7c96f503595d0b048b72923f63ac3ebf4aa6458cb59c3c75bf5b7113e53025`
 
 ## QA
 
