@@ -1,0 +1,298 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "lead-answer",
+      type: "lead",
+      text: "The clean order is Beijing → Xi'an → Chengdu, or the exact reverse. Choose the direction from the international gateways, then give nights to protected sightseeing days. An arrival, departure or intercity move earns 1 usable half-day only after the full hotel-to-hotel chain passes the tests below.",
+    },
+    {
+      id: "direction-comparison",
+      type: "comparison",
+      title: "The two strong directions and the weak default",
+      columns: [
+        {
+          heading: "Beijing → Xi'an → Chengdu",
+          body: "Strong with arrival in Beijing and departure from Chengdu. Xi'an stays in the middle and the route moves forward.",
+        },
+        {
+          heading: "Chengdu → Xi'an → Beijing",
+          body: "Equally coherent when flights work better in reverse, ending at Beijing's international gateway without a return south.",
+        },
+        {
+          heading: "Start in Xi'an, visit both ends",
+          body: "Usually repeats a long segment unless an outer city is the departure gateway. Use it only when a better flight or fixed event justifies the backtrack.",
+        },
+      ],
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      tone: "neutral",
+      title: "What this page decides",
+      body: "This page owns direction, gateway and usable-day logic. It excludes complete itineraries, live schedules, inventory, fares and universal night allocations.",
+    },
+    {
+      id: "gateway-heading",
+      type: "heading",
+      level: 2,
+      text: "Start with three gateway scenarios",
+    },
+    {
+      id: "gateway-scenarios",
+      type: "table",
+      caption: "Route direction follows the real international tickets",
+      columns: ["Gateway scenario", "Route consequence", "Night-planning consequence"],
+      rows: [
+        ["Arrive Beijing, leave Chengdu", "Use Beijing → Xi'an → Chengdu unless a dated transport check fails.", "Do not reserve a return-to-Beijing night; protect the Chengdu departure instead."],
+        ["Arrive Chengdu, leave Beijing", "Reverse the chain to Chengdu → Xi'an → Beijing.", "Place the final international-flight buffer in Beijing, not in the middle of the trip."],
+        ["Fly in and out of the same city", "Add a real return sector after the three-city chain, or remove an outer city.", "The return and final buffer consume time; do not hide them inside the last city's sightseeing allocation."],
+      ],
+    },
+    {
+      id: "network-heading",
+      type: "heading",
+      level: 2,
+      text: "The rail corridor is established, but the station field is dynamic",
+    },
+    {
+      id: "network-facts",
+      type: "paragraph",
+      text: "Official railway sources confirm the Beijing–Xi'an connection and the Xi'an–Chengdu high-speed railway, opened throughout in 2017. This supports the linear shape, not an old timetable. Xi'an East began operation on 2026-06-30, while Beijing and Chengdu have multiple terminals. Search the date in 12306 and copy the station on the selected service.",
+    },
+    {
+      id: "station-ledger",
+      type: "table",
+      caption: "A city name is not a terminal name",
+      columns: ["City", "Fields to record", "Mistake to prevent"],
+      rows: [
+        ["Beijing", "Airport, terminal, railway station and hotel district", "Treating Beijing West, Capital and Daxing as interchangeable"],
+        ["Xi'an", "Xi'an North, Xi'an East or another station; airport terminal; hotel", "Copying a North Station transfer when the dated train uses elsewhere"],
+        ["Chengdu", "Station; Tianfu or Shuangliu airport; terminal and hotel", "Building departure around the wrong airport"],
+      ],
+    },
+    {
+      id: "half-day-heading",
+      type: "heading",
+      level: 2,
+      text: "Audit the trip in usable half-days",
+    },
+    {
+      id: "half-day-rule",
+      type: "callout",
+      tone: "decision",
+      title: "Use a 0–1–2 ledger",
+      body: "A protected day equals 2 usable half-days. Arrivals, departures and intercity moves start at 0. Award 1 only if a stable morning or afternoon survives the full transfer; never award 2 to a hotel-change day.",
+    },
+    {
+      id: "half-day-table",
+      type: "table",
+      caption: "Conservative credits before any must-see booking",
+      columns: ["Calendar block", "Baseline credit", "When it may earn 1 usable half-day"],
+      rows: [
+        ["International arrival day", "0", "Early arrival, completed entry and baggage, confirmed luggage solution, and a flexible activity near the hotel"],
+        ["Beijing–Xi'an or Xi'an–Chengdu move", "0", "The exact train, both station approaches, checkout, luggage and arrival leave one unbroken local block"],
+        ["International departure day", "0", "A late departure leaves a protected local block after baggage and airport-transfer margins are fixed"],
+        ["Full day in one base", "2", "No hotel move, intercity deadline or long airport transfer cuts the day"],
+      ],
+    },
+    {
+      id: "half-day-tests",
+      type: "list",
+      ordered: true,
+      items: [
+        "Write the hotel-door departure time, not only the train or flight time.",
+        "Add checkout, luggage handling, city traffic, station or airport processing, and boarding.",
+        "Add the arrival terminal, local transfer, luggage storage or check-in, and orientation time.",
+        "Check that the candidate activity is open, replaceable and reachable from the actual arrival point.",
+        "Remove the half-day if a delay would sacrifice a scarce timed ticket or the next confirmed departure.",
+      ],
+    },
+    {
+      id: "allocation-heading",
+      type: "heading",
+      level: 2,
+      text: "Assign nights from protected priorities, not equal shares",
+    },
+    {
+      id: "city-role-matrix",
+      type: "table",
+      caption: "What can justify more protected time",
+      columns: ["City", "Protected-day signals", "Compression warning"],
+      rows: [
+        ["Beijing", "Several geographically separate priorities, a Great Wall day, or a scarce timed museum entry", "Do not attach a major Beijing visit to international arrival or the Xi'an train"],
+        ["Xi'an", "The Terracotta Army plus distinct city priorities, rather than a station stop alone", "The museum is outside the central hotel area and uses real access time; protect it from both rail moves"],
+        ["Chengdu", "An early wildlife visit, food or neighbourhood priorities, or an onward regional plan", "Do not assume a late rail arrival supports an early fixed start without recovery"],
+      ],
+    },
+    {
+      id: "allocation-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "Fix the international airports and the last safe city before the outbound flight.",
+        "Mark every attraction with a date, closure day or timed-entry dependency.",
+        "Give each non-substitutable priority a protected full day or a genuinely usable half-day.",
+        "Insert the two intercity moves at 0 half-days, then upgrade only after live services are known.",
+        "Add recovery for children, slower walkers, heavy luggage, jet lag or consecutive early starts.",
+        "If the ledger is negative, change a gateway, remove the weakest city, or accept fewer priorities; do not borrow time from transfers.",
+      ],
+    },
+    {
+      id: "scenario-heading",
+      type: "heading",
+      level: 2,
+      text: "Two travellers can use the same map and need different routes",
+    },
+    {
+      id: "traveller-scenario-one",
+      type: "callout",
+      tone: "neutral",
+      title: "Scenario 1: 9 nights, open-jaw pair",
+      body: "2 travellers arrive in Beijing and leave Chengdu after 9 nights. In 10 calendar days, arrival, departure and 2 moves start at 0, leaving 6 full sightseeing-day equivalents. The line is sound, but those 6 days need priorities: a 10-day label is not 10 sightseeing days.",
+    },
+    {
+      id: "traveller-scenario-two",
+      type: "callout",
+      tone: "warning",
+      title: "Scenario 2: 8 nights, family, Beijing round trip",
+      body: "A family with a child flies in and out of Beijing over 8 nights. 9 days contain arrival, departure, 2 forward moves and a Chengdu–Beijing return, leaving 4 full sightseeing-day equivalents. Even 1 earned half-day does not cure the exposure. A Chengdu exit, fewer cities or more nights changes the answer.",
+    },
+    {
+      id: "switch-heading",
+      type: "heading",
+      level: 2,
+      text: "Conditions that change the answer",
+    },
+    {
+      id: "switch-conditions",
+      type: "comparison",
+      title: "Keep, reverse or shorten the chain",
+      columns: [
+        {
+          heading: "Keep the linear chain",
+          items: [
+            "Different arrival and departure gateways remove the backtrack.",
+            "Each city retains at least one protected, distinct priority.",
+            "The half-day ledger remains non-negative without timed visits on move days.",
+          ],
+        },
+        {
+          heading: "Reverse it",
+          items: [
+            "The workable international flights are stronger into Chengdu and out of Beijing.",
+            "A dated closure or fixed event makes the reverse sequence materially safer.",
+            "The exact transport still preserves Xi'an as the middle stop.",
+          ],
+        },
+        {
+          heading: "Shorten or add time",
+          items: [
+            "A same-city round trip adds a third domestic transfer and final buffer.",
+            "One city has no priority that survives the cut test.",
+            "Mobility, family pace or repeated early starts require recovery the ledger does not contain.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "failure-heading",
+      type: "heading",
+      level: 2,
+      text: "Failure recovery: protect the chain before the checklist",
+    },
+    {
+      id: "failure-table",
+      type: "table",
+      caption: "What to do when a route assumption fails",
+      columns: ["Failure", "Immediate recovery", "Route repair"],
+      rows: [
+        ["Arrival delay removes the first block", "Drop the flexible activity and go to the hotel", "Keep the first protected visit on a later full day"],
+        ["Train uses a different station", "Recalculate the hotel-to-station transfer before boarding", "Remove the move-day activity and update every saved transfer instruction"],
+        ["Flight is at the other city airport", "Protect the flight and use the official ground-transport information", "Move to the departure city or airport area earlier if the margin is weak"],
+        ["Timed attraction is unavailable", "Use a replaceable local module", "Do not reverse the whole trip unless the attraction is a true trip priority"],
+        ["Energy is lower than planned", "Keep the night's hotel and cancel the optional outing", "Return one half-day to the next base or remove the weakest stop"],
+      ],
+    },
+    {
+      id: "booking-heading",
+      type: "heading",
+      level: 2,
+      text: "Book in dependency order",
+    },
+    {
+      id: "booking-order",
+      type: "list",
+      ordered: true,
+      items: [
+        "Confirm entry and exit eligibility, international airports and the ticket's change conditions.",
+        "Check official closure and reservation rules for the trip-defining Beijing, Xi'an and Chengdu visits.",
+        "Search current 12306 services and any domestic flight option using exact dates and exact terminals.",
+        "Choose hotels only after the stations, airports and protected days are visible.",
+        "Keep move-day activities replaceable until the operational fields have been rechecked.",
+      ],
+    },
+    {
+      id: "final-check",
+      type: "table",
+      caption: "Final verification fields",
+      columns: ["When", "Verify", "Official place"],
+      rows: [
+        ["Before international purchase", "Arrival and departure airport, ticket structure and entry conditions", "Airline and relevant immigration authority"],
+        ["When rail becomes bookable", "Date, train, exact station pair, passenger details and ticket conditions", "China Railway 12306"],
+        ["After every booking", "Airport or station, terminal, baggage, hotel address and cancellation terms", "Carrier, 12306, airport and hotel"],
+        ["Shortly before each move", "Operating notice, departure point, opening or reservation rule, weather and local transfer", "Named operator, venue and local authority"],
+      ],
+    },
+    {
+      id: "dynamic-boundary",
+      type: "callout",
+      tone: "warning",
+      title: "Do not copy the operational details from this article",
+      body: "Train patterns, stations, flights, terminals and attraction rules change. The stable elements are the one-way chain and half-day method. Verify dated fields through 12306, the airline or airport, and the venue.",
+    },
+    {
+      id: "editorial-judgment",
+      type: "callout",
+      tone: "neutral",
+      title: "Homeground editorial judgment",
+      body: "Starting transfers at 0 is Homeground's conservative rule, not an operator promise. It protects scarce visits; an earned half-day can still hold a flexible neighbourhood, meal or rest.",
+    },
+    {
+      id: "help-cta",
+      type: "callout",
+      tone: "decision",
+      title: "Need a human check?",
+      body: "Leave your dates, number of travellers and rough budget, plus the actual arrival and departure airports. Homeground can help identify the weak transfer and the condition that would change the route order.",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Continue planning",
+      items: [
+        { label: "Browse the China planning guides", href: "/plan/", description: "Return to the planning collection and choose the next decision." },
+        { label: "Choose open-jaw flights", href: "/guides/china-open-jaw-flights-route-planning/", description: "Compare different entry and exit cities with the cost of returning to one gateway." },
+        { label: "Prepare for a first high-speed train", href: "/guides/china-high-speed-train-first-time-guide/", description: "Handle passenger records and station procedure after the route is fixed." },
+        { label: "Check whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test the complete trip for hotel moves, fixed visits and recovery." },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "Official sources reviewed",
+      items: [
+        { label: "China Railway ticket and station search", url: "https://www.12306.cn/en/index.html", publisher: "China Railway 12306", reviewedAt: "2026-08-13" },
+        { label: "Xi'an–Chengdu high-speed railway opening", url: "https://www.nra.gov.cn/tlfc/yxfc/202204/t20220405_293365.shtml", publisher: "National Railway Administration", reviewedAt: "2026-08-13" },
+        { label: "Xi'an East railway station begins operation", url: "https://en.xa.gov.cn/MediaCenter/News/2072253459180654594.html", publisher: "Xi'an Municipal Government", reviewedAt: "2026-08-13" },
+        { label: "Public air passenger service regulation", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "Civil Aviation Administration of China", reviewedAt: "2026-08-13" },
+        { label: "Beijing eight-station, two-airport transport network", url: "https://www.beijing.gov.cn/ywdt/yaowen/202511/t20251121_4290581.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-13" },
+        { label: "Palace Museum visit and opening information", url: "https://www.dpm.org.cn/Visit.html", publisher: "Palace Museum", reviewedAt: "2026-08-13" },
+        { label: "Terracotta Army reservation and visit guide", url: "https://www.bmy.com.cn/guide/", publisher: "Emperor Qinshihuang's Mausoleum Site Museum", reviewedAt: "2026-08-13" },
+      ],
+    },
+  ],
+} satisfies StructuredPageBody;
+
+export default body;
