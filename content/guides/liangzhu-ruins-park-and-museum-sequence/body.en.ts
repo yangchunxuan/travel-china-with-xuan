@@ -1,0 +1,35 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
+{id:"answer-first",type:"lead",text:"For most first-time visitors, see Liangzhu Museum before Liangzhu Archaeological Ruins Park. The museum gives you jade forms, social hierarchy, rice agriculture, water management and a model of the city; the park then asks you to recognise platforms, waterways, reconstructed markers and protected ground in an open landscape. They are separate venues with separate admission and closure risks. Also, neither venue equals the whole UNESCO property, which has four component areas spread across a much larger heritage landscape."},
+{id:"scope-heading",type:"heading",level:2,text:"First understand what ‘Liangzhu’ names"},
+{id:"scope",type:"table",caption:"Liangzhu Museum and ruins-park roles",columns:["Place","What it does","What it is not"],rows:[
+["Liangzhu Museum","Displays excavated objects and interprets Liangzhu society, belief, craft and urban development.","It is not itself the entire archaeological city or World Heritage property."],
+["Archaeological Ruins Park","Presents part of the City Site area through landscape, protected remains, interpretation and internal visitor movement.","It is not a conventional ruin of standing stone walls; much of the archaeology is earthen, buried, conserved or interpreted."],
+["UNESCO property","A serial property with City Site, Yaoshan, high-dam and low-dam/causeway areas.","It is not one ticketed park with every component reachable on a casual loop."],
+]},
+{id:"sequence-heading",type:"heading",level:2,text:"Why museum first usually works"},
+{id:"sequence",type:"list",items:["Use the museum model to understand inner city, outer city, palace area, cemeteries and water system before seeing broad fields.","Choose three object families: jade cong and bi, tools or rice-related evidence, and one burial group that shows social differentiation.","At the park, stop asking ‘where are the buildings?’ and ask how raised earth, waterways, orientation and protected zones show a planned centre.","Connect each park stop to one museum idea rather than trying to retain every site name.","If weather or time forces a choice, the museum usually gives a more legible introduction; choose the park first only when open landscape and archaeology-in-place are your main interest."]},
+{id:"reverse",type:"callout",title:"Park first is valid for a different traveller",body:"An archaeologist, landscape specialist, repeat visitor or photographer may prefer morning conditions in the park and use the museum afterward to test observations. This page recommends museum first for comprehension, not as an official or universal order.",tone:"decision"},
+{id:"booking-heading",type:"heading",level:2,text:"Treat the museum and park as two bookings"},
+{id:"booking",type:"list",items:["Start from the official Liangzhu heritage website and the ‘Liangzhu Ancient City’ official WeChat service it identifies.","Confirm each venue's visit date, time period, identity-document fields and order record; never assume one QR code covers both.","Use the passport option shown in the live interface or ask the official service line when a foreign document field is unclear. Do not enter a fabricated Chinese ID number.","Read the latest dated closure notice. The official site carried a July 2026 closure/park notice, showing that weather and operations can override standing hours.","Recheck internal shuttle or electric-cart arrangements at the park. A vehicle can reduce distance, but stops, capacity and operations are dynamic."]},
+{id:"day-heading",type:"heading",level:2,text:"A workable Hangzhou day"},
+{id:"day",type:"comparison",columns:[
+{heading:"Focused half day",body:"Choose the museum plus one carefully selected park section only if tickets, transfer and weather align. Do not describe this as ‘seeing all Liangzhu’."},
+{heading:"Full day",body:"Museum in the morning, lunch and road transfer, then the City Site park with a fixed exit time. This is the strongest first-visit format."},
+{heading:"Heritage specialist day",body:"Add Yaoshan or a water-system display only after confirming separate opening and transport. The serial World Heritage geography cannot be improvised from one park map."}
+]},
+{id:"weather",type:"callout",title:"Open archaeology is weather-sensitive",body:"Heat, heavy rain, typhoon precautions and wet ground can change the park more than the museum. Carry sun/rain protection, preserve water and a rest margin, and use a museum-only fallback. A closure is a heritage-protection and safety decision, not a reason to trespass or substitute an unverified field location.",tone:"warning"},
+{id:"final-check",type:"list",items:["Two venue confirmations are saved separately.","The latest official notice shows both are open.","The transfer between museum and park is timed, not guessed from map distance.","The group knows whether internal transport is operating and what still requires walking.","One museum-only and one park-shortening fallback are ready."]},
+{id:"internal-links",type:"internal-links",title:"Connect Liangzhu to the route",items:[
+{label:"Shanghai to Hangzhou station combinations",href:"/guides/shanghai-hangzhou-transport-route/",description:"Choose the rail station chain before adding a suburban archaeological day."},
+{label:"How to read a Suzhou garden",href:"/guides/how-to-read-a-suzhou-garden/",description:"Keep a designed Jiangnan garden and a protected prehistoric landscape as different cultural tasks."},
+{label:"China high-speed trains for first-time visitors",href:"/guides/china-high-speed-train-first-time-guide/",description:"Use the correct passport record when Hangzhou is reached by rail."}
+]},
+{id:"consultation",type:"callout",title:"Need Liangzhu fitted around Hangzhou or Shanghai?",body:"A Homeground travel consultant can check the two bookings, suburban transfers, weather fallback and onward rail. Share the visit date, starting hotel, walking limits and whether archaeology or the museum collection matters more.",tone:"neutral"},
+{id:"sources",type:"sources",title:"Official, heritage and image sources reviewed",items:[
+{label:"Official Liangzhu heritage site and current notices",url:"https://www.lzsite.cn/",publisher:"Hangzhou Liangzhu Archaeological Site Administrative District Management Committee",reviewedAt:"2026-08-12"},
+{label:"World Heritage property, four component areas and value",url:"https://whc.unesco.org/en/list/1592/",publisher:"UNESCO World Heritage Centre",reviewedAt:"2026-08-12"},
+{label:"Official Hangzhou visitor guide with museum and park venue details",url:"https://wgly.hangzhou.gov.cn/attach/538/2307051510367229.pdf",publisher:"Hangzhou Municipal Bureau of Culture, Radio, TV and Tourism",reviewedAt:"2026-08-12"},
+{label:"Hero: Liangzhu Museum courtyard by Siyuwj, CC BY-SA 4.0; cropped and converted to WebP",url:"https://commons.wikimedia.org/wiki/File:Courtyard_of_Liangzhu_Museum,_2016-06-18.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}
+]}
+]};export default body;
