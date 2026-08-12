@@ -1,0 +1,53 @@
+{
+  "id": "guangzhou-hong-kong-transport-route",
+  "type": "planning",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["global"],
+  "format": "door-to-door-route-decision",
+  "topics": ["transport", "cross-border", "high-speed-rail", "stations"],
+  "destinations": ["guangzhou", "hong-kong"],
+  "heroImagePath": "/images/guides/guangzhou-hong-kong-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guangzhou-hong-kong-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": { "section": "transport", "family": "comparison", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/guangzhou-hong-kong-transport-route/",
+      "title": "Guangzhou to Hong Kong: Compare the Whole Trip",
+      "headline": "Guangzhou to Hong Kong: Choose by Station, Border and Final Address",
+      "description": "Compare high-speed rail and cross-boundary road travel from Guangzhou to Hong Kong by real endpoints, station access, border steps and late-arrival risk.",
+      "heroAlt": "The exterior of Guangzhou South Railway Station.",
+      "navTitle": "Guangzhou to Hong Kong",
+      "featuredLinkLabel": "Compare Guangzhou to Hong Kong routes",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guangzhou", "Hong Kong", "Transport"]
+    },
+    "zh": {
+      "path": "/zh/guides/guangzhou-hong-kong-transport-route/",
+      "title": "广州到香港怎么走：比较完整门到门行程",
+      "headline": "广州到香港：按车站、口岸和最终地址选路线",
+      "description": "按真实起点、车站接驳、过关步骤和晚到风险，比较广州到香港的高铁与跨境公路方案。",
+      "heroAlt": "广州南站站房外观。",
+      "navTitle": "广州到香港交通",
+      "featuredLinkLabel": "比较广州到香港路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["广州", "香港", "交通"]
+    },
+    "ko": {
+      "path": "/ko/guides/guangzhou-hong-kong-transport-route/",
+      "title": "광저우에서 홍콩까지: 문 앞 이동으로 비교하기",
+      "headline": "광저우에서 홍콩까지: 역, 국경, 최종 주소로 고르기",
+      "description": "실제 출발지, 역 접근, 출입경 절차와 늦은 도착 위험을 포함해 고속철도와 도로 이동을 비교합니다.",
+      "heroAlt": "광저우남역 건물 외부 모습.",
+      "navTitle": "광저우-홍콩 이동",
+      "featuredLinkLabel": "광저우-홍콩 이동 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["광저우", "홍콩", "교통"]
+    }
+  }
+}
