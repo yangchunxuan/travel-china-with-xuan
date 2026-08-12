@@ -1,0 +1,82 @@
+{
+  "id": "lost-phone-in-china-digital-recovery",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "recovery-guide",
+  "topics": [
+    "lost-phone",
+    "account-security",
+    "find-my-device",
+    "payment-recovery",
+    "travel-emergency"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/lost-phone-in-china-digital-recovery/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/lost-phone-in-china-digital-recovery/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/lost-phone-in-china-digital-recovery/",
+      "title": "Lost Phone in China: Secure Accounts and Keep Traveling",
+      "headline": "Lost Your Phone in China? A Digital Recovery Order That Protects the Trip",
+      "description": "Locate or lock first, preserve account recovery, block the line, secure payments, rebuild bookings and erase only after weighing the tradeoff.",
+      "heroAlt": "Editorial illustration of a missing phone, location pin, security lock and recovery checklist.",
+      "navTitle": "Lost phone recovery",
+      "featuredLinkLabel": "Recover after losing a phone",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Emergency",
+        "Phone"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/lost-phone-in-china-digital-recovery/",
+      "title": "在中国丢失手机：账号安全与行程恢复",
+      "headline": "在中国丢失手机怎么办：按顺序保护账号、付款与行程",
+      "description": "先定位或锁定，再保住账号恢复和号码、保护付款、重建订单；权衡后再远程抹除。",
+      "heroAlt": "丢失的手机、定位图钉、安全锁和恢复清单的编辑插画。",
+      "navTitle": "手机丢失恢复",
+      "featuredLinkLabel": "手机丢失后恢复行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "应急",
+        "手机"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/lost-phone-in-china-digital-recovery/",
+      "title": "중국에서 휴대전화 분실: 계정·여행 복구",
+      "headline": "중국에서 휴대전화를 잃었을 때: 계정과 결제를 지키는 순서",
+      "description": "먼저 위치 확인·잠금, 번호와 계정 보호, 결제 차단, 예약 복구를 하고 삭제는 장단점을 따진 뒤 결정하세요.",
+      "heroAlt": "분실 휴대전화, 위치 핀, 보안 자물쇠와 복구 목록의 편집 일러스트.",
+      "navTitle": "휴대전화 분실 복구",
+      "featuredLinkLabel": "휴대전화 분실 후 여행 복구",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "긴급",
+        "휴대전화"
+      ]
+    }
+  }
+}
