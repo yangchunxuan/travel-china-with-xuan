@@ -10,9 +10,9 @@
   "heroImageUrl": "https://homegroundchina.com/images/guides/national-museum-of-china-booking-and-route/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
-  "datePublished": "2026-08-12",
-  "dateModified": "2026-08-12",
-  "sourceReviewedDate": "2026-08-12",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
   "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },
   "locales": {
@@ -40,14 +40,14 @@
     },
     "ko": {
       "path": "/ko/guides/national-museum-of-china-booking-and-route/",
-      "title": "중국국가박물관 예약과 핵심 관람 동선",
-      "headline": "중국국가박물관에서 하루를 잃지 않는 관람법",
-      "description": "올바른 신분증으로 예약하고 북문으로 입장한 뒤, 2~4시간 안에 핵심 전시를 골라 보는 실행형 안내입니다.",
-      "heroAlt": "베이징 톈안먼광장을 마주 보는 중국국가박물관 서쪽 정면",
-      "navTitle": "중국국가박물관 예약과 동선",
-      "featuredLinkLabel": "중국국가박물관 핵심 관람 계획하기",
+      "title": "중국 국가박물관 예약과 핵심 관람 동선",
+      "headline": "중국 국가박물관에서 하루를 잃지 않는 관람법",
+      "description": "올바른 신분증으로 예약하고 북문으로 입장한 뒤, 2~4시간 안에 핵심 전시를 골라 보는 실용 안내입니다.",
+      "heroAlt": "베이징 톈안먼광장을 마주 보는 중국 국가박물관 서쪽 정면",
+      "navTitle": "중국 국가박물관 예약과 동선",
+      "featuredLinkLabel": "중국 국가박물관 핵심 관람 계획하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["베이징", "중국국가박물관", "예약"]
+      "cardTags": ["베이징", "중국 국가박물관", "예약"]
     }
   }
 }

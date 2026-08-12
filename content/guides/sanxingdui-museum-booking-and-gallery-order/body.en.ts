@@ -3,7 +3,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"answer-first",type:"lead",text:"Sanxingdui is independently visitable, but it is not a casual Chengdu museum stop. Secure a real-name ticket through a channel linked by Sanxingdui Museum, enter every traveller with the exact passport used for booking, then protect enough time in Guanghan to see the exhibition in sequence. Start with site, chronology and excavation; move through life and belief; reach the monumental bronzes after you understand where they came from. The famous masks are stronger as evidence, not just as isolated photo trophies."},
  {id:"booking-heading",type:"heading",level:2,text:"Book from the museum, not from a look-alike"},
  {id:"booking",type:"table",caption:"Sanxingdui booking decisions",columns:["Question","Reliable answer","Boundary"],rows:[
-  ["Can a foreign passport be used?","China's official inbound-tourism reporting records that the museum provides an inbound-visitor pool and English booking/payment pages using valid passports and other accepted travel documents.","The live interface, accepted payment and inventory must still be tested for the actual date."],
+  ["Can a foreign passport be used?","Inbound-visitor service information published by Guanghan Municipal Government says the museum provides an inbound-visitor pool and English booking/payment pages using valid passports and other accepted travel documents.","The live interface, accepted payment and inventory must still be tested for the actual date."],
   ["Where should booking begin?","The Sanxingdui Museum website, official WeChat account or official mini-program. The museum and Guanghan government warn against unofficial channels.","A search result that uses the museum name is not proof of authorisation."],
   ["What must be carried?","The original valid identity document matching the real-name booking.","A screenshot alone does not replace the booked passport."],
   ["When are tickets released?","Release windows and extended summer or holiday hours are dynamic and announced on official platforms.","This guide does not preserve an old five-day or 20:00 rule as permanent."],
@@ -36,7 +36,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"sources",type:"sources",title:"Official and image sources reviewed",items:[
   {label:"Sanxingdui Museum official website and current notices",url:"https://www.sxd.cn/index.asp",publisher:"Sanxingdui Museum",reviewedAt:"2026-08-12"},
   {label:"New Museum opening, official booking channels and real-name entry",url:"https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",publisher:"Guanghan Municipal Government",reviewedAt:"2026-08-12"},
-  {label:"Official inbound-visitor passport booking and English payment service report",url:"https://www.xinhuanet.com/travel/20250618/ff95f575b0484d7fa6b8fd563b0ec17b/c.html",publisher:"Xinhua News Agency",reviewedAt:"2026-08-12"},
-  {label:"Hero: SanXingDui Museum by Jason Zou, public domain; cropped and converted to WebP",url:"https://commons.wikimedia.org/wiki/File:SanXingDui_Museum.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}
+  {label:"Inbound-visitor passport booking, ticket pool and English payment service information",url:"https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",publisher:"Guanghan Municipal Government",reviewedAt:"2026-08-12"},
+  {label:"Hero: Sanxingdui New Museum by STW932, CC BY-SA 4.0; cropped and converted to WebP",url:"https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"},
+  {label:"Hero image licence: CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-12"}
  ]}
 ]};export default body;

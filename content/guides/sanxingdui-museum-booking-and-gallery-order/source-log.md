@@ -12,7 +12,7 @@ Checked current results and questions for foreign-passport tickets, the official
 
 - The museum website is the primary live notice and booking origin.
 - Guanghan government's New Museum notice supports official channels, real-name entry and the current venue, but its trial-period hours and prices are not carried forward as permanent 2026 facts.
-- Xinhua's inbound-tourism report records passport/other inbound-document booking, an inbound ticket pool and English payment pages.
+- Guanghan Municipal Government's inbound-visitor service information records passport/other inbound-document booking, an inbound ticket pool and English payment pages.
 - Exact release time, inventory, hours, extended service, transport departures and open galleries are dynamic and must be rechecked. The gallery order and three-hour allowance are editorial planning judgments.
 
 ## Pre-publication trigger

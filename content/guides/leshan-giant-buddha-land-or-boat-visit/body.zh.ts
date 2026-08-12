@@ -19,7 +19,7 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {heading:"成都出发短日程",body:"只选一种。两种加车站转移非常脆弱，尤其游船不保证立即发班。"}
 ]},
 {id:"return",type:"callout",title:"增加第二种方式前，先保住返程",body:"先确定最后地面交通点、到乐山站的道路时间和铁路缓冲。游船营业结束时间不等于保证当时发船或立即下船。返程列车重要时，要设定停止等待时间并准备出租车或官方地面交通替代。",tone:"neutral"},
-{id:"final-check",type:"list",items:["订单明确写游山、白天游江或两者。","已打开当期佛脚平台和游船公告。","保存准确入口、码头和下船点。","每个人接受台阶或登船要求。","不靠游船也能留缓冲到达车站。"]},
+{id:"final-check",type:"list",items:["订单明确写游山、白天游江或两者。","已核对最新官方公告中的佛脚平台开放状态与白天游江运营状态。","保存准确入口、码头和下船点。","每个人接受台阶或登船要求。","不靠游船也能留缓冲到达车站。"]},
 {id:"internal-links",type:"internal-links",title:"把乐山接入四川路线",items:[
 {label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"把乐山返程与车站证件流程分开准备。"},
 {label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"判断讲解是否在交通之外增加价值。"},
@@ -28,6 +28,7 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"consultation",type:"callout",title:"需要按出行日核对选择？",body:"Homeground 真人旅行顾问可以检查最新运营、行动限制、成都连接和停止等待点。请提供日期、团队节奏、偏好视角与返程车次。",tone:"neutral"},
 {id:"sources",type:"sources",title:"已核验的官方与图片来源",items:[
 {label:"景区管委会确认的官方信息门户",url:"http://www.lsdf517.com/web/list/97",publisher:"乐山大佛景区",reviewedAt:"2026-08-12"},
+{label:"链接游山、白天游江与横渡项目的乐山官方参观指南",url:"https://www.leshan.gov.cn/lsswszf/jgjj/92337818/687756313100357.html",publisher:"乐山市人民政府",reviewedAt:"2026-08-12"},
 {label:"季节性游山游江官方国际访客资料",url:"https://www.hi-leshan.com/index.php?a=index&aid=660&c=View&m=home",publisher:"乐山国际网站",reviewedAt:"2026-08-12"},
 {label:"码头与横渡项目可暂停的政府公告",url:"https://www.leshan.gov.cn/lsswszf/bmdt/92337815/3e865b0e7eee473a94ee6972e.html",publisher:"乐山大佛景区管委会",reviewedAt:"2026-08-12"},
 {label:"首图：Suicasmo拍摄的乐山大佛，CC0；经裁切并转为WebP",url:"https://commons.wikimedia.org/wiki/File:Leshan_Giant_Buddha_20260514-5.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}

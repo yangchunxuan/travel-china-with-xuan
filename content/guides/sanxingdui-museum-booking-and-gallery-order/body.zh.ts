@@ -3,7 +3,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"answer-first",type:"lead",text:"三星堆可以自助参观，但不能把它当成成都城区随时可进的小博物馆。先通过三星堆博物馆链接的官方渠道实名购票，为每位旅客准确填写当天携带的护照；再给广汉馆内留出连续时间。参观顺序应先看遗址、年代和考古发掘，再看生活与信仰，最后到大型青铜器。面具不是孤立的拍照奖杯，而是考古证据的一部分。"},
  {id:"booking-heading",type:"heading",level:2,text:"从博物馆官方渠道开始，而不是从相似名称开始"},
  {id:"booking",type:"table",caption:"三星堆预约决策",columns:["问题","可靠答案","边界"],rows:[
-  ["外国护照能否预约？","官方入境旅游报道记录，博物馆为入境游客提供专门票池与中英文购票支付页面，支持有效护照等证件。","实际日期仍要测试当期页面、支付方式与库存。"],
+  ["外国护照能否预约？","广汉市人民政府发布的入境游客服务信息显示，博物馆为入境游客提供专门票池与中英文购票支付页面，支持有效护照等证件。","实际日期仍要测试当期页面、支付方式与库存。"],
   ["从哪里购票？","三星堆博物馆官网、官方微信公众号或官方小程序。博物馆与广汉市政府均提醒使用官方渠道。","搜索结果带有“三星堆”不等于获得官方授权。"],
   ["当天带什么？","带与实名订单完全一致的有效证件原件。","截图不能代替预约所用护照。"],
   ["什么时候放票？","放票窗口、暑期延时和节假日安排均由官方平台动态公告。","本文不把旧的“提前五天、20点放票”保存成永久规则。"],
@@ -30,7 +30,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"sources",type:"sources",title:"已核验的官方与图片来源",items:[
   {label:"三星堆博物馆官网与最新公告",url:"https://www.sxd.cn/index.asp",publisher:"三星堆博物馆",reviewedAt:"2026-08-12"},
   {label:"新馆开放、官方购票渠道与实名核验",url:"https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",publisher:"广汉市人民政府",reviewedAt:"2026-08-12"},
-  {label:"入境游客护照预约与英文支付服务官方报道",url:"https://www.xinhuanet.com/travel/20250618/ff95f575b0484d7fa6b8fd563b0ec17b/c.html",publisher:"新华社",reviewedAt:"2026-08-12"},
-  {label:"首图：Jason Zou拍摄的三星堆博物馆，公有领域；经裁切并转为WebP",url:"https://commons.wikimedia.org/wiki/File:SanXingDui_Museum.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}
+  {label:"入境游客护照预约、专门票池与英文支付服务信息",url:"https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",publisher:"广汉市人民政府",reviewedAt:"2026-08-12"},
+  {label:"首图：STW932拍摄的三星堆博物馆新馆，CC BY-SA 4.0；经裁切并转为WebP",url:"https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"},
+  {label:"首图许可：CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-12"}
  ]}
 ]};export default body;
