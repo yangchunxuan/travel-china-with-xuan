@@ -1,0 +1,23 @@
+{
+  "id": "yuanyang-rice-terraces-viewpoint-and-village-route",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "viewpoint-village-selector",
+  "topics": ["yuanyang-rice-terraces", "world-heritage", "viewpoints", "living-landscape", "weather-recovery"],
+  "destinations": ["yunnan", "honghe", "yuanyang", "duoyishu", "bada", "laohuzui", "azheke"],
+  "heroImagePath": "/images/guides/yuanyang-rice-terraces-viewpoint-and-village-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yuanyang-rice-terraces-viewpoint-and-village-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "comparison", "primaryIntent": "execute"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", "title": "Yuanyang Rice Terraces: Viewpoints, Villages and Fog Plan", "headline": "Yuanyang Rice Terraces: Choose Viewpoints Without Losing the Living Landscape", "description": "Choose among Duoyishu, Bada and Laohuzui, pair one viewpoint with a respectful village visit, and recover when cloud hides the terraces.", "heroAlt": "A location-verified public viewpoint over Yuanyang Hani rice terraces, with villages and cultivated fields visible", "navTitle": "Yuanyang viewpoint and village route", "featuredLinkLabel": "Choose a Yuanyang terrace route", "openGraphLocale": "en_US", "cardTags": ["Yuanyang", "Rice terraces", "Living heritage"]},
+    "zh": {"path": "/zh/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", "title": "元阳梯田观景台与村寨怎么选：多依树、坝达、老虎嘴", "headline": "元阳梯田：少选观景点，别丢掉活着的农业景观", "description": "在多依树、坝达与老虎嘴之间选择，把一个观景台与尊重居民的村寨访问配对，并准备云雾遮挡后的恢复方案。", "heroAlt": "从经地点核实的公众观景台俯瞰元阳哈尼梯田、村寨与耕作田地", "navTitle": "元阳观景台与村寨路线", "featuredLinkLabel": "选择元阳梯田路线", "openGraphLocale": "zh_CN", "cardTags": ["元阳", "哈尼梯田", "活态遗产"]},
+    "ko": {"path": "/ko/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", "title": "위안양 다랑논 전망대와 마을: 둬이수·바다·라오후쭈이", "headline": "전망대를 줄이고 살아 있는 위안양 다랑논을 만나세요", "description": "둬이수·바다·라오후쭈이 중 고르고 전망대 하나를 주민을 존중하는 마을 방문과 묶은 뒤 구름 대안까지 준비합니다.", "heroAlt": "위치가 확인된 공개 전망대에서 본 위안양 하니 다랑논과 마을, 경작지", "navTitle": "위안양 전망대·마을 동선", "featuredLinkLabel": "위안양 다랑논 동선 고르기", "openGraphLocale": "ko_KR", "cardTags": ["위안양", "다랑논", "생활유산"]}
+  }
+}
