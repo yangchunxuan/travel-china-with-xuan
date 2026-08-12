@@ -1,0 +1,81 @@
+{
+  "id": "china-hub-and-spoke-or-multi-base-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "hub-and-spoke",
+    "multi-base",
+    "hotel-changes",
+    "route-pace"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-hub-and-spoke-or-multi-base-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-hub-and-spoke-or-multi-base-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-hub-and-spoke-or-multi-base-route/",
+      "title": "China Route Planning: One Hub or Multiple Bases?",
+      "headline": "China Hub-and-Spoke vs Multi-Base Routes: Count the Returns",
+      "description": "Choose one China travel base, several bases or a hybrid by repeated station trips, hotel friction, luggage and forward route geometry.",
+      "heroAlt": "Original editorial illustration comparing a central travel hub with a multi-base route.",
+      "navTitle": "Hub or multi-base route",
+      "featuredLinkLabel": "Choose the route architecture",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Route planning",
+        "Travel base",
+        "Hotel changes"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-hub-and-spoke-or-multi-base-route/",
+      "title": "中国路线规划：一个基地还是多个住宿点？",
+      "headline": "中心基地还是多基地串联：先数清重复往返",
+      "description": "从重复进站、换酒店摩擦、行李和向前路线几何，选择一个基地、多个基地或混合结构。",
+      "heroAlt": "比较中心基地放射与多基地串联的原创编辑插图。",
+      "navTitle": "单基地或多基地",
+      "featuredLinkLabel": "选择路线结构",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "路线规划",
+        "旅行基地",
+        "换酒店"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-hub-and-spoke-or-multi-base-route/",
+      "title": "중국 여행, 한 거점인가 여러 거점인가?",
+      "headline": "중국 거점형 vs 다거점 동선: 반복 이동을 세기",
+      "description": "역 왕복, 숙소 이동, 짐과 전진형 지리를 기준으로 한 거점, 여러 거점 또는 혼합형을 고릅니다.",
+      "heroAlt": "중앙 거점과 다거점 연결 동선을 비교한 오리지널 편집 일러스트.",
+      "navTitle": "한 거점 또는 여러 거점",
+      "featuredLinkLabel": "동선 구조 선택",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "동선 계획",
+        "여행 거점",
+        "숙소 이동"
+      ]
+    }
+  }
+}
