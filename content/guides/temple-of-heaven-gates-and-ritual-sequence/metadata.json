@@ -1,0 +1,23 @@
+{
+  "id": "temple-of-heaven-gates-and-ritual-sequence",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["temple-of-heaven", "beijing-parks", "ritual-axis", "gate-route"],
+  "destinations": ["beijing", "temple-of-heaven"],
+  "heroImagePath": "/images/guides/temple-of-heaven-gates-and-ritual-sequence/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/temple-of-heaven-gates-and-ritual-sequence/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/temple-of-heaven-gates-and-ritual-sequence/", "title": "Temple of Heaven: Best Gate and South-to-North Route", "headline": "Walk the Temple of Heaven as a Ritual Sequence", "description": "Choose the correct ticket and gate, then connect the Circular Mound, Echo Wall and Hall of Prayer in a coherent south-to-north or metro-friendly route.", "heroAlt": "Hall of Prayer for Good Harvests at the Temple of Heaven in Beijing", "navTitle": "Temple of Heaven gate and route", "featuredLinkLabel": "Plan a Temple of Heaven route", "openGraphLocale": "en_US", "cardTags": ["Beijing", "Temple of Heaven", "Walking route"] },
+    "zh": { "path": "/zh/guides/temple-of-heaven-gates-and-ritual-sequence/", "title": "天坛从哪个门进：南北仪式轴线与地铁友好路线", "headline": "按祭天空间的顺序走天坛", "description": "选对门票和入口，把圜丘、回音壁与祈年殿串成一条南进北出的仪式轴线，或一条更适合地铁抵达的路线。", "heroAlt": "北京天坛公园祈年殿", "navTitle": "天坛入口与路线", "featuredLinkLabel": "规划一条天坛参观路线", "openGraphLocale": "zh_CN", "cardTags": ["北京", "天坛", "步行路线"] },
+    "ko": { "path": "/ko/guides/temple-of-heaven-gates-and-ritual-sequence/", "title": "천단 어느 문으로 갈까: 남북 의례축 관람 동선", "headline": "천단을 제례 공간의 순서로 걸어 보세요", "description": "입장권과 입구를 정한 뒤 원구단·회음벽·기년전을 남쪽에서 북쪽으로 연결하거나 지하철 이용에 편한 동선으로 관람합니다.", "heroAlt": "베이징 천단공원의 기년전", "navTitle": "천단 입구와 동선", "featuredLinkLabel": "천단 관람 동선 계획하기", "openGraphLocale": "ko_KR", "cardTags": ["베이징", "천단", "도보 동선"] }
+  }
+}
