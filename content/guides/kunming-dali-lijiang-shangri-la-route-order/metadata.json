@@ -1,0 +1,84 @@
+{
+  "id": "kunming-dali-lijiang-shangri-la-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "yunnan",
+    "route-order",
+    "altitude",
+    "trip-pace"
+  ],
+  "destinations": [
+    "kunming",
+    "dali",
+    "lijiang",
+    "shangri-la"
+  ],
+  "heroImagePath": "/images/guides/kunming-dali-lijiang-shangri-la-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/kunming-dali-lijiang-shangri-la-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/kunming-dali-lijiang-shangri-la-route-order/",
+      "title": "Kunming, Dali, Lijiang and Shangri-La: Best Route Order",
+      "headline": "Yunnan Route Order: Kunming, Dali, Lijiang and Shangri-La",
+      "description": "Choose a Yunnan route direction and know which stop to cut, using gateways, rail continuity, elevation and recovery time.",
+      "heroAlt": "Original editorial illustration of a four-stop Yunnan route rising toward Shangri-La.",
+      "navTitle": "Yunnan route order",
+      "featuredLinkLabel": "Order the four Yunnan stops",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Yunnan",
+        "Route order",
+        "Trip pace"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/kunming-dali-lijiang-shangri-la-route-order/",
+      "title": "昆明、大理、丽江、香格里拉怎么排顺序？",
+      "headline": "云南路线顺序：昆明、大理、丽江与香格里拉",
+      "description": "根据进出门户、铁路连续性、海拔变化和恢复时间选择云南路线方向，并判断该删哪一站。",
+      "heroAlt": "表现云南四站路线逐步通往香格里拉的原创编辑插图。",
+      "navTitle": "云南路线顺序",
+      "featuredLinkLabel": "安排云南四站顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "云南",
+        "路线顺序",
+        "旅行节奏"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/kunming-dali-lijiang-shangri-la-route-order/",
+      "title": "쿤밍·다리·리장·샹그릴라, 어떤 순서가 좋을까?",
+      "headline": "윈난 여행 순서: 쿤밍, 다리, 리장, 샹그릴라",
+      "description": "관문, 철도 연결, 고도 변화와 회복 시간을 기준으로 윈난 동선을 정하고 뺄 도시를 판단합니다.",
+      "heroAlt": "샹그릴라 방향으로 올라가는 윈난 네 구간의 오리지널 편집 일러스트.",
+      "navTitle": "윈난 동선 순서",
+      "featuredLinkLabel": "윈난 네 구간 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "윈난",
+        "여행 순서",
+        "여행 속도"
+      ]
+    }
+  }
+}

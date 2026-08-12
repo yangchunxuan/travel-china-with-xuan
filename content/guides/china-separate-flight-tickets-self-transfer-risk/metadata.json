@@ -1,0 +1,81 @@
+{
+  "id": "china-separate-flight-tickets-self-transfer-risk",
+  "type": "planning",
+  "pillar": "budget-and-tradeoffs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "separate-tickets",
+    "self-transfer",
+    "flight-risk",
+    "buffer"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-separate-flight-tickets-self-transfer-risk/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-separate-flight-tickets-self-transfer-risk/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-separate-flight-tickets-self-transfer-risk/",
+      "title": "Separate Flight Tickets in China: Is a Self-Transfer Worth It?",
+      "headline": "China Self-Transfers: Price the Gap Between Separate Tickets",
+      "description": "Compare separate China flight tickets by missed-connection exposure, baggage, airport changes and the buffer your trip can afford.",
+      "heroAlt": "Original editorial illustration showing two separate flight tickets divided by a transfer gap.",
+      "navTitle": "China self-transfer risk",
+      "featuredLinkLabel": "Price a separate-ticket risk",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Separate tickets",
+        "Self-transfer",
+        "Flight buffer"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-separate-flight-tickets-self-transfer-risk/",
+      "title": "中国境内分开买机票，自助转机值得吗？",
+      "headline": "中国自助转机：算清两张独立机票之间的风险",
+      "description": "从误机损失、行李、跨机场和可承受缓冲比较中国境内分开出票是否真的划算。",
+      "heroAlt": "表现两张独立机票及其转机缺口的原创编辑插图。",
+      "navTitle": "中国自助转机风险",
+      "featuredLinkLabel": "计算分开出票风险",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "分开出票",
+        "自助转机",
+        "航班缓冲"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-separate-flight-tickets-self-transfer-risk/",
+      "title": "중국에서 항공권을 따로 사는 셀프 환승, 괜찮을까?",
+      "headline": "중국 셀프 환승: 두 개의 별도 항공권 사이 위험 계산",
+      "description": "놓친 연결의 손실, 수하물, 공항 변경과 필요한 여유로 별도 항공권의 가치를 비교합니다.",
+      "heroAlt": "두 개의 별도 항공권과 환승 간극을 보여 주는 오리지널 편집 일러스트.",
+      "navTitle": "중국 셀프 환승 위험",
+      "featuredLinkLabel": "별도 발권 위험 계산",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "별도 항공권",
+        "셀프 환승",
+        "항공 여유"
+      ]
+    }
+  }
+}

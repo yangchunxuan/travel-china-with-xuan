@@ -1,0 +1,84 @@
+{
+  "id": "guangzhou-shenzhen-hong-kong-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "route-order",
+    "guangzhou",
+    "shenzhen",
+    "hong-kong",
+    "border-crossing"
+  ],
+  "destinations": [
+    "guangzhou",
+    "shenzhen",
+    "hong-kong"
+  ],
+  "heroImagePath": "/images/guides/guangzhou-shenzhen-hong-kong-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guangzhou-shenzhen-hong-kong-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/guangzhou-shenzhen-hong-kong-route-order/",
+      "title": "Guangzhou, Shenzhen and Hong Kong: Which Route Order Works?",
+      "headline": "Guangzhou–Shenzhen–Hong Kong Route Order: Build Around the Border",
+      "description": "Choose the order of Guangzhou, Shenzhen and Hong Kong by gateways, border crossings and real city priorities—not a copied night split.",
+      "heroAlt": "Original editorial illustration of a three-stop route chain for Guangzhou, Shenzhen and Hong Kong.",
+      "navTitle": "GZ–SZ–HK route order",
+      "featuredLinkLabel": "Choose the three-city order",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "South China",
+        "Route order",
+        "Border crossing"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/guangzhou-shenzhen-hong-kong-route-order/",
+      "title": "广州、深圳、香港怎么排顺序？先看口岸与进出城市",
+      "headline": "广州—深圳—香港路线顺序：先围绕过境安排",
+      "description": "从进出城市、过境方式和真正想看的内容判断广州、深圳、香港顺序，而不是照抄住宿天数。",
+      "heroAlt": "表现广州、深圳、香港三站路线关系的原创编辑插图。",
+      "navTitle": "广深港路线顺序",
+      "featuredLinkLabel": "判断三城顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "华南",
+        "路线顺序",
+        "跨境交通"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/guangzhou-shenzhen-hong-kong-route-order/",
+      "title": "광저우·선전·홍콩, 어떤 순서로 가야 할까?",
+      "headline": "광저우–선전–홍콩 동선: 국경 이동부터 설계하기",
+      "description": "숙박 일수를 베끼지 말고 입출국 관문, 국경 이동, 실제 우선순위로 세 도시의 순서를 정하세요.",
+      "heroAlt": "광저우, 선전, 홍콩의 세 구간을 표현한 오리지널 편집 일러스트.",
+      "navTitle": "광저우–선전–홍콩 순서",
+      "featuredLinkLabel": "세 도시 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 남부",
+        "도시 순서",
+        "국경 이동"
+      ]
+    }
+  }
+}
