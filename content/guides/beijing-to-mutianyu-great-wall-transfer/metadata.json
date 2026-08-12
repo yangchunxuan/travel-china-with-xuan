@@ -1,0 +1,53 @@
+{
+  "id": "beijing-to-mutianyu-great-wall-transfer",
+  "type": "planning",
+  "pillar": "transport-last-mile-transfers",
+  "audienceMarkets": ["global"],
+  "format": "attraction-transfer-decision",
+  "topics": ["transport", "great-wall", "day-trip", "last-mile"],
+  "destinations": ["beijing", "mutianyu"],
+  "heroImagePath": "/images/guides/beijing-to-mutianyu-great-wall-transfer/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-to-mutianyu-great-wall-transfer/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-to-mutianyu-great-wall-transfer/",
+      "title": "Beijing to Mutianyu: Transfer Options That Actually Connect",
+      "headline": "Beijing to Mutianyu Great Wall: Plan the Outbound and the Return",
+      "description": "Choose public transport, a dated direct bus or a private transfer to Mutianyu by Beijing start point, group, luggage, return cutoff and recovery options.",
+      "heroAlt": "The restored Mutianyu section of the Great Wall near Beijing.",
+      "navTitle": "Beijing to Mutianyu",
+      "featuredLinkLabel": "Plan a Mutianyu transfer",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Mutianyu", "Transfer"]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-to-mutianyu-great-wall-transfer/",
+      "title": "北京到慕田峪怎么走：能接得上的交通方案",
+      "headline": "北京到慕田峪长城：去程和回程一起规划",
+      "description": "按北京出发点、同行人、行李、回程截止和恢复方案，选择公交、当日确认的直达车或包车。",
+      "heroAlt": "北京近郊修复后的慕田峪长城。",
+      "navTitle": "北京到慕田峪",
+      "featuredLinkLabel": "规划慕田峪接驳",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京", "慕田峪", "接驳"]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-to-mutianyu-great-wall-transfer/",
+      "title": "베이징에서 무톈위까지: 실제로 이어지는 이동",
+      "headline": "베이징에서 무톈위 만리장성까지: 왕복을 함께 계획하기",
+      "description": "베이징 출발지, 동행, 짐, 귀환 시한과 대안을 기준으로 대중교통, 확인된 직행버스, 전용차를 고릅니다.",
+      "heroAlt": "베이징 근교에 복원된 무톈위 만리장성.",
+      "navTitle": "베이징-무톈위",
+      "featuredLinkLabel": "무톈위 이동 계획",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징", "무톈위", "이동"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "xiamen-hubs-to-gulangyu-ferry-terminal", "type": "planning", "pillar": "transport-last-mile-transfers", "audienceMarkets": ["global"], "format": "hub-ferry-handoff", "topics": ["transport", "ferry", "airport", "rail"], "destinations": ["xiamen", "gulangyu"],
+  "heroImagePath": "/images/guides/xiamen-hubs-to-gulangyu-ferry-terminal/hero-1600.webp", "heroImageUrl": "https://homegroundchina.com/images/guides/xiamen-hubs-to-gulangyu-ferry-terminal/hero-1600.webp", "imageWidth": 1600, "imageHeight": 1000,
+  "datePublished": "2026-08-12", "dateModified": "2026-08-12", "sourceReviewedDate": "2026-08-12", "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "plan" }, "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", "title": "Xiamen Airport or Train Station to Gulangyu Ferry", "headline": "Xiamen Hubs to Gulangyu: Match the Ticket, Terminal and Island Pier", "description": "Connect Xiamen airport, Xiamen Station or Xiamen North to the correct visitor ferry by ticketed terminal, island pier, luggage and recovery.", "heroAlt": "The bus area beside Xiamen International Cruise Center.", "navTitle": "Xiamen hubs to Gulangyu", "featuredLinkLabel": "Find the right Gulangyu ferry", "openGraphLocale": "en_US", "cardTags": ["Xiamen", "Gulangyu", "Ferry"] },
+    "zh": { "path": "/zh/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", "title": "厦门机场或火车站到鼓浪屿轮渡", "headline": "厦门枢纽到鼓浪屿：匹配船票、码头与岛上终点", "description": "按票面码头、岛上终点、行李和备选方案，把厦门机场、厦门站或厦门北站接到正确游客航线。", "heroAlt": "厦门国际邮轮中心旁的公交区域。", "navTitle": "厦门枢纽到鼓浪屿", "featuredLinkLabel": "找到正确鼓浪屿码头", "openGraphLocale": "zh_CN", "cardTags": ["厦门", "鼓浪屿", "轮渡"] },
+    "ko": { "path": "/ko/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", "title": "샤먼 공항·기차역에서 구랑위 페리 타기", "headline": "샤먼 교통 지점에서 구랑위까지: 표와 터미널 맞추기", "description": "표의 터미널, 섬 도착지, 짐과 지연 대안을 기준으로 샤먼 공항·샤먼역·샤먼북역을 올바른 관광객 페리와 연결합니다.", "heroAlt": "샤먼 국제 크루즈센터 옆 버스 구역.", "navTitle": "샤먼에서 구랑위 페리", "featuredLinkLabel": "올바른 구랑위 페리 찾기", "openGraphLocale": "ko_KR", "cardTags": ["샤먼", "구랑위", "페리"] }
+  }
+}

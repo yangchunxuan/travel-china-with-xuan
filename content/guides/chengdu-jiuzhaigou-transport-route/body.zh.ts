@@ -1,0 +1,45 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "成都出发的火车能减少大量公路时间，却不会把旅客直接送到九寨沟景区。真正的产品是火车、明确的站到景区接驳，以及当天仍能运行的回程。" },
+  { id: "answer", type: "callout", title: "把接驳和回程当作路线的一部分", tone: "decision", body: "先查黄龙九寨站的火车，再通过“九旅悦行”预订对应日期的后续接驳。只有同一官方渠道显示匹配班车时，才把松潘站当作备选。航班或全程公路只有在实时航班与落地后的明确接驳同时存在、且整条链更适合同行人时才进入比较。" },
+  { id: "matrix-heading", type: "heading", level: 2, text: "交通方式其实是一条链" },
+  { id: "matrix", type: "table", caption: "缺少九寨沟最后一段，任何方案都不完整", columns: ["链路", "较合适", "隐藏摩擦", "核对"], rows: [
+    ["成都火车→黄龙九寨→景区", "同日火车和车站接驳能衔接", "正确成都车站、山路末段和定时接驳", "车次、车站、合规接驳、下车点与回程"],
+    ["成都火车→松潘→景区", "买火车票前已在“九旅悦行”查到同日接驳", "不同车站和公路接驳，不能自动替换", "实时上车点、下车点与是否送到住宿"],
+    ["航班→机场接驳", "实时航班与明确落地接驳确实缩短全程", "机场交通、天气、行李与约88公里剩余公路段", "日期、实际成都机场、航班、接机与中断条款"],
+    ["班线大巴或预订车辆", "官方渠道有合适直达票，或多人重视一次上车", "山区公路、准确终点、司机休息与天气", "官方车票或合规车辆、九寨沟准确终点、停车与取消"],
+  ]},
+  { id: "warning", type: "callout", title: "黄龙九寨是火车站，不是景区门口", tone: "warning", body: "保存三个定位：火车站、九寨沟住宿和将使用的景区入口。到达其中一个地点的接驳票，不一定能到另外两个。" },
+  { id: "steps-heading", type: "heading", level: 2, text: "按这个顺序建立预订" },
+  { id: "steps", type: "list", ordered: true, items: ["先选九寨沟住宿与到店截止。", "找日期明确且下车点精确的车站或机场接驳。", "选择留有安全换乘时间的火车或航班。", "确认去程前先反向建立回程。", "加入山区天气与服务中断恢复。"] },
+  { id: "groups", type: "comparison", title: "什么会改变答案", columns: [
+    { heading: "轻装独立", items: ["火车加巴士可以清楚", "保存中文上车细节", "带食物和电量"] },
+    { heading: "家庭或父母", items: ["减少路边换乘", "为海拔与休息留空间，不做医疗判断", "确认酒店接待时间"] },
+    { heading: "寒冷季节或固定航班", items: ["增加中断缓冲", "避免分开的无保护票", "保留成都或当地过夜备选"] },
+  ]},
+  { id: "recovery-heading", type: "heading", level: 2, text: "一段失败时" },
+  { id: "recovery", type: "table", caption: "先保护下一个安全地点", columns: ["失败", "恢复"], rows: [
+    ["火车晚点影响接驳", "到站前联系指定接驳方并要求书面规则"],
+    ["到了错误车站", "停下，读取票面站名并从当前位置查官方余票"],
+    ["山路中断", "依照交通、文旅与运营方通知，不坐未经确认的路边车辆"],
+    ["回程余票消失", "先保护住宿和下一班航班，再建立新链路"],
+  ]},
+  { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月12日", tone: "neutral", body: "九寨沟管理局2026年7月公告要求通过“九旅悦行”提前购买黄龙九寨站接驳，并说明班车按动车到站衔接，约2小时到景区门口。松潘站只有在同一渠道查到当日匹配接驳时才成立。官方到达页显示九黄机场距沟口仍约88公里，落地后还需公路接驳；川航当前时刻表只列出每周部分日期的成都—九寨沟航班，不能当作每日服务，具体日期与成都机场须在实时购票页确认。" },
+  { id: "help", type: "callout", title: "需要核对铁路与公路交接？", tone: "decision", body: "提供日期、成都酒店、九寨沟酒店、人数、行李和固定航班。Homeground可标出交接点与保守缓冲，实时运营仍以承运方为准。" },
+  { id: "links", type: "internal-links", title: "继续规划", items: [
+    { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选定准确站点后再使用。" },
+    { label: "夜车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "比较时间表形状，不只看时长。" },
+    { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "给山区接驳真实缓冲。" },
+    { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为每一段准备付款恢复。" },
+  ]},
+  { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
+    { label: "2026年7月黄龙九寨站接驳公告", url: "https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },
+    { label: "2026年黄龙九寨、松潘与成都大巴购票渠道", url: "https://www.jiuzhai.com/news/notice/10929-2026-02-12-11-07-31", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },
+    { label: "九黄机场与公路接驳官方到达指引", url: "https://www.jiuzhai.com/intelligent-service/arrival-mode", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },
+    { label: "成都—九寨沟当前航班时刻表", url: "https://flights.sichuanair.com/flight-schedule/1.html", publisher: "四川航空", reviewedAt: "2026-08-12" },
+    { label: "铁路官方售票渠道", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" },
+    { label: "首图：Chensiyuan拍摄九寨沟，CC BY-SA 4.0，已裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "首图衍生文件许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
+  ]},
+] } as const satisfies StructuredPageBody;
+export default body;
