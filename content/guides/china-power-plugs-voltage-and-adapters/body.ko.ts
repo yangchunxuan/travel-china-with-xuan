@@ -1,141 +1,74 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "중국 전원은 220V, 50Hz입니다. 플러그 어댑터는 모양만 바꾸고 전압은 바꾸지 않습니다. INPUT 100–240V, 50/60Hz라고 적힌 현대 휴대전화·노트북 충전기는 보통 모양 어댑터만 필요합니다. 110–120V 전용 제품은 실제 변압기가 필요하거나 가져가지 않는 편이 안전합니다."
-    },
-    {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "어댑터인가 변압기인가",
-      "columns": [
-        "상황",
-        "경로",
-        "행동"
-      ],
-      "rows": [
-        [
-          "INPUT 100–240V, 50/60Hz",
-          "플러그 어댑터만",
-          "단단히 연결되는지 확인 후 사용."
-        ],
-        [
-          "110V 또는 120V만 표시",
-          "변압기 또는 다른 기기",
-          "220V에 직접 연결 금지."
-        ],
-        [
-          "220–240V 표시",
-          "대체로 전압 호환",
-          "모양 어댑터는 필요할 수 있음."
-        ],
-        [
-          "전기 라벨을 읽을 수 없음",
-          "추측 금지",
-          "제조사 사양 확인 또는 교체."
-        ]
-      ]
-    },
-    {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "소켓 모양의 현실"
-    },
-    {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "상하이 공식 안내는 A·C·I형을 설명합니다. 호텔·열차·공항의 실제 콘센트는 다르고 느슨한 멀티 소켓은 무거운 충전기를 잡지 못할 수 있습니다.",
-        "신뢰할 제조사의 정격이 충분한 접지 어댑터와 여러 기기가 쓸 멀티포트 USB 충전기를 준비하세요.",
-        "2핀 어댑터는 3핀 기기에 접지를 만들어주지 않습니다. 고전력·접지 장비는 올바른 정격과 접지 솔루션이 필요합니다.",
-        "헤어드라이어, 고데기, 주전자와 발열도구가 흔한 함정입니다. 단일 전압이고 작은 여행 변압기 용량을 넘는 경우가 많습니다."
-      ]
-    },
-    {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "60초 충전기 라벨 점검"
-    },
-    {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "USB 포트의 OUTPUT이 아니라 충전기·기기의 INPUT을 찾습니다.",
-        "전압 범위에 220V, 주파수에 50Hz가 포함되는지 확인합니다.",
-        "어댑터의 최대 전압·전류·와트가 기기 요구보다 높은지 봅니다.",
-        "어댑터는 기내 수하물에 넣고 느슨하게 여러 개를 겹치지 않습니다.",
-        "도착 후 콘센트를 점검하고 불꽃·헐거움·과열·냄새가 나면 중단합니다."
-      ]
-    },
-    {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "플러그는 맞는데 충전이 안 되면",
-      "body": "분리한 뒤 원래 충전기를 호텔의 정상 콘센트에서 시험하고, 저전력 범용전압 기기로 어댑터를 따로 확인하세요. 핀을 억지로 누르지 말고 호텔에 문의합니다. 들어맞는다고 전압·접지·전기 상태가 맞는 것은 아닙니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "적용 범위와 최신 규정",
-      "body": "소켓은 건물과 콘센트마다 다릅니다. 공식 자료는 220V/50Hz와 흔한 플러그를 설명하지만 특정 객실의 소켓은 보장하지 않습니다. 고전력·의료·전문 장비는 제조사와 숙소에 미리 확인하세요.",
-      "tone": "neutral"
-    },
-    {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "계속 계획하기",
-      "items": [
-        {
-          "label": "보조배터리 운송 규정",
-          "href": "/ko/guides/china-power-bank-rules-flights-trains/",
-          "description": "예비 배터리가 이동 가능한지 확인하세요."
-        },
-        {
-          "label": "중국 eSIM 또는 현지 SIM",
-          "href": "/ko/guides/china-esim-vs-local-sim/",
-          "description": "휴대전화를 충전하고 연결하세요."
-        },
-        {
-          "label": "국제선 전 마지막 밤",
-          "href": "/ko/guides/china-last-night-before-international-flight/",
-          "description": "필수 충전기를 기내 수하물에 넣으세요."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "검토한 공식 출처",
-      "items": [
-        {
-          "label": "Electricity in China",
-          "url": "https://www.caac.gov.cn/ZTZL/RDZT/YTHYWZ/CHRY/SHZN/Electricity/index.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Beijing pre-departure travel tips",
-          "url": "https://english.beijing.gov.cn/travellinginbeijing/quickguideontravelservices/traveltips/202108/t20210811_2466837.html",
-          "publisher": "Beijing Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Shanghai electricity FAQ",
-          "url": "https://english.shanghai.gov.cn/en-FAQs-StudyinShanghai/20250924/e961a223e45a4adca7969b3f7691132b.html",
-          "publisher": "Shanghai Municipal Government",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-};
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "중국 본토의 전기는 220V, 50Hz입니다. 휴대전화·태블릿·카메라·노트북 충전기는 대부분 입력 표시에 100–240V, 50/60Hz라고 적혀 있어 중국 전압을 그대로 받을 수 있습니다. 이 경우 핀이 맞지 않을 때 플러그 모양만 바꾸면 됩니다. 반면 110V 또는 120V 전용 기기는 플러그 어댑터로 전압이 낮아지지 않으므로 알맞은 변압기가 필요하며, 고출력 기기라면 현지 전압용 제품을 쓰는 편이 더 안전할 수 있습니다." },
+  { id: "answer", type: "callout", title: "30초 판단법", tone: "decision", body: "각 충전기에서 INPUT을 확인하세요. 범위에 220V와 50Hz가 포함되면 플러그 모양만 해결하면 됩니다. 220V가 포함되지 않으면 직접 연결하지 마세요. 표시를 읽을 수 없다면 추측하지 말고 제조사에서 정확한 모델 사양을 확인하거나 가져오지 않는 것이 안전합니다." },
+  { id: "two-questions-heading", type: "heading", level: 2, text: "플러그 어댑터와 변압기는 서로 다른 문제를 해결합니다" },
+  { id: "two-questions-table", type: "table", caption: "출발 국가가 아니라 기기 표시를 기준으로 선택하세요", columns: ["표시 내용", "의미", "준비할 것"], rows: [
+    ["INPUT 100–240V, 50/60Hz", "중국의 전압과 주파수를 받을 수 있음", "핀이 맞지 않으면 플러그 어댑터, 변압기는 불필요"],
+    ["INPUT 220–240V, 50Hz", "중국 본토 전원과 전기적으로 호환됨", "필요할 때 플러그 모양만 변환"],
+    ["INPUT 110V 또는 120V만 표시", "220V에 직접 연결할 수 없음", "정격이 맞는 변압기 또는 다른 기기"],
+    ["기기에 220/240V 수동 스위치가 있음", "이중 전압일 수 있으나 직접 설정해야 함", "전원을 뽑은 상태에서 맞게 설정한 뒤 적합한 어댑터 사용"],
+    ["표시가 없거나 손상되어 모호함", "호환 여부를 확인할 수 없음", "제조사 확인 또는 기기 교체"]
+  ] },
+  { id: "socket-heading", type: "heading", level: 2, text: "A·C·I형이 흔하지만 특정 호텔 소켓에 기대지는 마세요" },
+  { id: "socket-copy", type: "paragraph", text: "상하이시 안내는 A·C·I형 플러그를 열거하고, 중국민용항공국 방문자 안내는 평행한 두 개의 납작 핀과 비스듬한 세 핀 소켓을 설명합니다. 실제 호텔과 교통시설에는 멀티 소켓, USB 소켓 또는 서로 다른 조합이 설치될 수 있습니다. 북미·일본식 A형이 물리적으로 들어가도 전압 호환을 뜻하지 않습니다. 유럽식 C형 충전기는 비교적 간단하지만 무거운 플러그가 낡은 멀티 소켓에서 빠질 수 있습니다. 호주·뉴질랜드식 I형도 모양이 비슷할 뿐, 접지가 필요한 기기는 접촉과 정격까지 맞아야 합니다." },
+  { id: "socket-warning", type: "callout", title: "멀티 소켓이 모든 조합의 안전을 보장하지는 않습니다", tone: "warning", body: "어댑터가 빠지거나 금속 핀이 드러나고, 불꽃·지직거림·탄 냄새·비정상적인 열이 생기면 즉시 사용을 멈추세요. 다른 소켓으로 옮기고 숙소에 점검을 요청하세요. 핀을 구부리거나 종이를 끼우거나 헐거운 어댑터를 여러 개 겹치면 안 됩니다." },
+  { id: "label-heading", type: "heading", level: 2, text: "INPUT과 OUTPUT을 혼동하지 않고 충전기 표시 읽기" },
+  { id: "label-list", type: "list", ordered: true, items: [
+    "전원을 뽑고 어댑터 본체, 충전 거치대 또는 기기 명판에서 INPUT을 찾으세요. OUTPUT은 충전기가 휴대전화나 노트북에 보내는 값이므로 충전기가 220V를 받을 수 있다는 증거가 아닙니다.",
+    "범위 전체를 읽으세요. 100–240V의 대시는 그 사이 값을 받을 수 있다는 뜻이고, 120V만 적힌 표시는 전혀 다릅니다.",
+    "주파수도 확인하세요. 50/60Hz는 중국의 50Hz를 포함합니다. 모터·타이머·주파수 의존 제어가 있는 장비는 전압이 맞아도 제조사 확인이 필요합니다.",
+    "기기의 와트나 암페어와 연결하는 모든 어댑터·변압기·연장선의 최대 정격을 확인하세요. 가장 낮은 정격이 전체 한계입니다.",
+    "겹친 사각형 표시는 이중 절연을 뜻할 뿐입니다. 접지가 필요한 세 핀 기기를 두 핀 어댑터로 바꾼다고 접지 필요성이 사라지지 않습니다."
+  ] },
+  { id: "device-heading", type: "heading", level: 2, text: "기기 종류에 따라 위험이 달라집니다" },
+  { id: "device-table", type: "table", caption: "기기별 실용적인 선택", columns: ["기기", "일반적인 준비", "추가 확인"], rows: [
+    ["휴대전화·태블릿·카메라·노트북 충전기", "현대 제품은 대부분 광범위 입력이지만 인쇄 표시를 직접 확인", "정품 또는 신뢰할 만한 충전기를 쓰고 멀티포트 제품의 통풍 공간 확보"],
+    ["USB-C 멀티포트 충전기", "호환 제품 하나로 어댑터 겹침을 줄일 수 있음", "총출력이 동시에 연결할 기기를 감당하는지 확인"],
+    ["헤어드라이어·고데기·컬링 아이언·전기주전자", "검증된 이중 전압 제품이나 호텔·현지 기기 우선", "발열 기기는 출력이 커서 소형 여행용 변압기가 맞지 않는 경우가 많음"],
+    ["전기면도기·전동칫솔", "본체뿐 아니라 충전 거치대도 확인", "면도기 전용으로 표시된 욕실 소켓에는 용도·출력 제한이 있을 수 있음"],
+    ["CPAP·의료·전문 장비", "제조사의 서면 입력 사양과 숙소 확인 확보", "예비 어댑터와 정전 대응을 준비하고 접지를 임의 변경하지 않기"]
+  ] },
+  { id: "converter-heading", type: "heading", level: 2, text: "변압기가 정말 필요하다면 전압 외에도 맞춰야 합니다" },
+  { id: "converter-copy", type: "paragraph", text: "변압기는 약 220V를 입력받아 기기가 요구하는 전압을 출력해야 합니다. 연속 출력 정격은 기기의 실제 소비전력보다 높아야 하고, 시작할 때 더 큰 전류를 쓰는 장비라면 여유도 필요합니다. 일부 여행용 컨버터는 특정 발열 기기의 단시간 사용만 전제로 하며, 변압기형 제품은 무거운 편입니다. 어느 방식도 50Hz를 자동으로 60Hz로 바꾸지는 않습니다. 플러그 그림만 보고 사지 말고 정확한 기기와 사용 방식이 양쪽 제조사 설명에 맞는지 확인하세요." },
+  { id: "converter-decision", type: "callout", title: "한 번의 여행이라면 기기를 바꾸는 편이 더 간단할 수 있습니다", tone: "decision", body: "호환되지 않는 물건이 고출력 헤어 기기나 주전자 하나뿐이라면 호텔 비품이나 현지 전압용 제품을 사용하면 변압·출력·과열 문제를 한꺼번에 피할 수 있습니다. 대체할 수 없는 장비이고 제조사가 조합을 확인한 경우에만 변압기를 준비하세요." },
+  { id: "room-heading", type: "heading", level: 2, text: "객실에는 안정적인 충전 지점 하나를 만드세요" },
+  { id: "room-list", type: "list", items: [
+    "출처를 알 수 없는 작은 변환 플러그 여러 개보다 정격이 충분한 신뢰할 만한 어댑터 하나를 가져가세요. 기기가 많다면 동시 충전을 감당하는 광범위 입력 USB 충전기를 사용하세요.",
+    "어댑터와 충전기는 단단하고 덮이지 않은 곳에 두고 침구·커튼·물에서 멀리하세요.",
+    "여행용 어댑터, 멀티탭, 변압기를 여러 단계로 연결하지 마세요. 연결부가 늘수록 흔들림·열·정격 초과 위험도 커집니다.",
+    "연장선을 가져간다면 최소 220V와 필요한 전류를 지원하는지 확인하고, 접지가 필요하면 전체 연결에서 접지가 이어져야 합니다.",
+    "어댑터와 충전 케이블 하나는 기내 반입 가방에 넣으세요. 위탁 수하물이 늦어져도 휴대전화, 인증 코드, 교통 예약을 쓸 수 있어야 합니다."
+  ] },
+  { id: "failure-heading", type: "heading", level: 2, text: "도착 후 충전되지 않을 때" },
+  { id: "failure-table", type: "table", caption: "기기를 지키면서 원인을 분리하세요", columns: ["증상", "안전한 다음 행동", "하지 말아야 할 일"], rows: [
+    ["아무 반응이 없음", "연결을 끊고 숙소 직원이나 정상 작동이 확인된 저출력 광범위 입력 충전기로 소켓을 확인한 뒤 어댑터를 따로 시험", "핀을 억지로 넣거나 의심스러운 소켓을 반복해서 켜기"],
+    ["어댑터나 충전기가 비정상적으로 뜨거움", "즉시 뽑아 불이 붙지 않는 표면에서 식히기", "덮은 채 계속 쓰거나 밤새 충전하거나 고열을 정상으로 여기기"],
+    ["플러그가 헐거움", "다른 소켓이나 정확히 맞는 어댑터 사용", "테이프·가구·물건으로 눌러 고정하기"],
+    ["차단기가 내려감", "연결 전체를 분리하고 숙소에 도움 요청", "반복해서 올리거나 같은 고출력 기기를 다시 연결하기"],
+    ["충전이 매우 느림", "입력 호환을 확인한 뒤 충전기 출력, 케이블, 포트별 출력 배분 점검", "USB 출력 문제를 전압 변환 문제로 오해하기"]
+  ] },
+  { id: "pack-heading", type: "heading", level: 2, text: "출발 전 최종 점검" },
+  { id: "pack-list", type: "list", ordered: true, items: [
+    "각 기기의 입력 표시를 촬영하고 정확한 모델 사양을 오프라인에 저장하세요.",
+    "광범위 입력 충전기와 단일 전압 기기를 구분하세요.",
+    "플러그가 맞고 필요한 접지를 유지하며 부하보다 정격이 높은 어댑터를 선택하세요.",
+    "전원이 꼭 필요한 장비라면 첫 숙소에 소켓이나 의료기기 지원을 미리 확인하세요.",
+    "예비 케이블 하나를 준비하고 핵심 충전 장비는 책임 있는 동행끼리 나누되 위탁 수하물에는 넣지 마세요.",
+    "변압기를 쓰기 전 설명을 다시 읽고 손상이나 과열이 보이면 즉시 중단하세요."
+  ] },
+  { id: "scope", type: "callout", title: "범위와 변동 사실의 경계", tone: "neutral", body: "아래 공식 페이지는 2026년 8월 12일 검토 기준으로 중국 본토의 220V/50Hz 전원과 흔한 플러그 형식을 뒷받침합니다. 특정 객실 소켓·어댑터·기기를 인증하지는 않습니다. 이 글은 일반 여행 전자기기를 다루며 건물 배선, 고정 설치 장비 또는 의료기기 위험 평가를 대신하지 않습니다. 기기와 어댑터 사양은 제조사가, 현장 설비는 숙소가 관리합니다." },
+  { id: "links", type: "internal-links", title: "기기 준비를 마무리하세요", items: [
+    { label: "항공·열차 보조배터리 규정", href: "/ko/guides/china-power-bank-rules-flights-trains/", description: "배터리 운송 규정과 플러그·전압 문제를 분리해서 확인하세요." },
+    { label: "중국 eSIM 또는 현지 SIM", href: "/ko/guides/china-esim-vs-local-sim/", description: "도착하자마자 쓸 수 있는 휴대전화 연결 계획을 만드세요." },
+    { label: "국제선 출발 전 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "핵심 충전기와 어댑터를 기내 반입 가방에 다시 넣으세요." }
+  ] },
+  { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
+    { label: "중국 전기 안내", url: "https://www.caac.gov.cn/ZTZL/RDZT/YTHYWZ/CHRY/SHZN/Electricity/index.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },
+    { label: "베이징 출발 전 여행 안내", url: "https://english.beijing.gov.cn/travellinginbeijing/quickguideontravelservices/traveltips/202108/t20210811_2466837.html", publisher: "베이징시 인민정부", reviewedAt: "2026-08-12" },
+    { label: "A·C·I형 플러그를 안내하는 상하이 준비 자료", url: "https://english.shanghai.gov.cn/en-FAQs-StudyinShanghai/20250924/e961a223e45a4adca7969b3f7691132b.html", publisher: "상하이시 인민정부", reviewedAt: "2026-08-12" }
+  ] }
+] } as const satisfies StructuredPageBody;
 
 export default body;

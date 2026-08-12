@@ -1,141 +1,78 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "飞机和火车不是一套可以互换的规则。自 2025 年 6 月 28 日起，境内航班禁止携带没有清晰标识、没有 CCC 认证标志或属于召回型号的充电宝；航空同时执行随身携带和额定能量限制。铁路规则要求标志清晰且额定能量不超过 100Wh。"
-    },
-    {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "飞机与火车对照",
-      "columns": [
-        "情况",
-        "选择",
-        "行动"
-      ],
-      "rows": [
-        [
-          "中国境内航班",
-          "仅随身；容量清晰且有 CCC 标志",
-          "不超过 100Wh 通常无需批准；100–160Wh 需航司批准且最多两块。"
-        ],
-        [
-          "从中国出发的国际航班",
-          "锂电池规则加航司、机场检查",
-          "确认 2025 年境内航班 CCC 通知是否适用于准确航段。"
-        ],
-        [
-          "高铁或普通列车",
-          "标志清晰，额定能量不超过 100Wh",
-          "保护电极，设备保持完好。"
-        ],
-        [
-          "标识不清、损坏或已召回",
-          "不要携带",
-          "更换设备；无法靠解释代替可读标签。"
-        ]
-      ]
-    },
-    {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "看 Wh，不只看 mAh"
-    },
-    {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "优先使用标签上的瓦时数。只有电压和安时时可用 Wh = V × Ah；10,000mAh 是 10Ah，但仍需准确额定电压。",
-        "乘机时充电宝放在手提行李，不可托运；防止短路，按民航局指引飞行中不得使用。",
-        "CE、FCC 等标志不等于中国 CCC 标志，不要自行制作或补贴标签。",
-        "航司、安检和召回公告可严于一般阈值，最终运输决定由现场按实时规则作出。"
-      ]
-    },
-    {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "打包检查"
-    },
-    {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "在光线充足处拍摄充电宝两面，确认品牌、型号、Wh 和标志可读。",
-        "查询制造商与监管机构的型号召回信息。",
-        "乘中国境内航班时确认真实 CCC 标志；没有或看不清就换设备。",
-        "放入随身行李，保护电极并避免误启动。",
-        "只乘火车时确认额定能量不超过 100Wh 且标注清晰。"
-      ]
-    },
-    {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "安检不允许携带时",
-      "body": "不要用网上摘要争执，也不要偷偷放入托运行李。询问是否有官方放弃、返回值机区或其他合规处理方式；智能配件注意个人数据，有凭证时索取凭证，只按安检正式流程继续。",
-      "tone": "warning"
-    },
-    {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "适用边界与实时规则",
-      "body": "100Wh 与 160Wh 是民航一般阈值；2025 年 CCC 通知明确针对中国境内航班。国际航段、联程、航司和召回必须在旅行当周核查。铁路工作人员按实时目录和实际设备状态执行。",
-      "tone": "neutral"
-    },
-    {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "电源插头、电压与转换器",
-          "href": "/zh/guides/china-power-plugs-voltage-and-adapters/",
-          "description": "确认如何为合规设备充电。"
-        },
-        {
-          "label": "第一次坐中国高铁",
-          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
-          "description": "准备车站安检和上车。"
-        },
-        {
-          "label": "国际航班前最后一晚",
-          "href": "/zh/guides/china-last-night-before-international-flight/",
-          "description": "重新打包前做标签检查。"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "已复核的官方来源",
-      "items": [
-        {
-          "label": "CAAC notice on CCC-marked power banks (2025)",
-          "url": "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "CAAC lithium battery and power bank limits",
-          "url": "https://www.caac.gov.cn/big5/www.caac.gov.cn/XXGK/XXGK/TZTG/201511/t20151105_11173.html",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Railway passenger prohibited and restricted items catalogue",
-          "url": "https://www.gov.cn/zhengce/zhengceku/2022-05/31/content_5693212.htm",
-          "publisher": "National Railway Administration / Ministry of Public Security",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-};
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "中国行程同时有飞机和火车时，充电宝要检查两遍，因为民航与铁路规则并不相同。乘坐中国境内航班，充电宝必须随身或放在手提行李中，额定能量必须可以识别；自 2025 年 6 月 28 日起，还必须有清晰 CCC 标志，并且不能属于被召回型号或批次。乘火车携带的充电宝应有清晰标志，额定能量不得超过 100Wh。能通过火车安检，不代表能通过机场安检。" },
+  { id: "answer", type: "callout", title: "兼顾全程的稳妥选择", tone: "decision", body: "携带一只外观完好、标志清晰、额定能量不超过 100Wh 的充电宝；行程包含中国境内航班时还要有清晰 CCC 标志。放在容易取出的手提行李内，防止误启动和短路，并按准确型号查询最新召回信息。这是兼顾两种交通的实用方案，但不能保证航空公司、机场或安检会接受损坏或召回产品。" },
+  { id: "mode-heading", type: "heading", level: 2, text: "飞机与火车检查的是两套规则" },
+  { id: "mode-table", type: "table", caption: "截至 2026 年 8 月 12 日复核的核心规则", columns: ["检查项", "中国境内航班", "中国铁路旅程"], rows: [
+    ["放在哪里", "随身或手提行李，严禁托运", "妥善保护并便于安检查验"],
+    ["额定能量", "不超过 100Wh 无需航空公司批准；超过 100Wh 但不超过 160Wh 须经航空公司批准且每人最多两只；超过 160Wh 禁止", "标志清晰且额定能量不得超过 100Wh"],
+    ["能量标志", "须直接标明，或能用机身标注的其他参数计算", "额定能量标志必须清晰"],
+    ["CCC 要求", "自 2025 年 6 月 28 日起，境内航班禁止无 CCC、CCC 不清晰或属于召回型号/批次的产品", "本文引用的铁路目录规定是清晰标志和 100Wh；不要把民航 CCC 规则直接说成铁路规则"],
+    ["途中使用", "飞行过程中不得用充电宝给设备充电；有开关的充电宝应全程关闭", "遵从列车安全指示；发热、鼓包、破损或有异味时立即停用"],
+    ["运营方附加条件", "航空公司和具体航线的危险品条件可能更严格", "安检与铁路人员执行现行铁路规定，也可能要求现场查验"]
+  ] },
+  { id: "domestic-heading", type: "heading", level: 2, text: "2025 年 CCC 限制明确针对境内航班" },
+  { id: "domestic-copy", type: "paragraph", text: "中国民航局公告规定，自 2025 年 6 月 28 日起，境内航班旅客不得携带没有 CCC 标志、CCC 标志不清晰或属于召回型号与批次的充电宝。CCC 是中国强制性产品认证标志，CE、FCC、航空图标或回收标志都不是同一个标志。不要给旧产品手绘 CCC，也不要使用来路不明卖家提供的贴纸；安检查的是产品原有标志，同时还要确认它不在召回范围。" },
+  { id: "itinerary-boundary", type: "callout", title: "国际机票中也可能包含中国境内航段", tone: "warning", body: "逐段阅读机票。例如北京—成都再接成都—新加坡，即使开在一张国际联程票内，北京—成都仍是境内航班。另买的境内定位航班同样要检查 CCC。国际航段还应核对实际承运航空公司和出发机场，因为航空公司及当地规则可能在基础限制上增加要求。" },
+  { id: "label-heading", type: "heading", level: 2, text: "出门前直接读充电宝机身标志" },
+  { id: "label-table", type: "table", caption: "一份可核验的充电宝身份信息", columns: ["在机身上找", "为什么重要", "危险信号"], rows: [
+    ["Wh 额定能量", "安检可直接与交通方式限值比较", "缺失、磨掉、被覆盖或互相矛盾"],
+    ["标称电压和容量", "两项均有标注时可按民航局公式换算 Wh", "只有营销容量，没有电压或额定能量"],
+    ["制造商、型号及批次/序列信息", "用于查询召回并准确识别产品", "没有可追责制造商或型号的通用产品"],
+    ["CCC 标志", "中国境内航班 2025 年新限制要求", "没有、后贴、无法辨认或与其他图标混淆"],
+    ["外壳与接口", "判断电池是否完好、端子能否被保护", "鼓包、裂缝、渗漏、焦痕、松动、异常发热"]
+  ] },
+  { id: "math-heading", type: "heading", level: 2, text: "只能用正确的电压把 mAh 换算成 Wh" },
+  { id: "math-copy", type: "paragraph", text: "民航局给出的公式是 Wh = V × Ah，且 Ah = mAh ÷ 1,000。机身若标注 20,000mAh、标称电压 3.7V，计算结果为 74Wh；30,000mAh、3.7V 则是 111Wh，超过铁路 100Wh 上限，并进入民航需要航空公司批准的区间。这只是算术例子，不是安检合格证。USB 输出电压不一定等于电芯标称电压；计算也不能弥补 CCC 缺失、标签不清、产品召回或外壳损坏。" },
+  { id: "math-warning", type: "callout", title: "不要用包装盒上最大的数字计算", tone: "warning", body: "营销页面常把 mAh 放得很大，而额定能量和标称电压印在机身小字里。安检查实物，不以网店截图为准。如果充电宝本身看不清必要参数，旅行前就换掉，不要在现场拿包装争论。" },
+  { id: "recall-heading", type: "heading", level: 2, text: "有 CCC 也不能抵消产品召回" },
+  { id: "recall-list", type: "list", ordered: true, items: [
+    "记录机身完整制造商、型号和批次或序列信息。",
+    "临出发前查询制造商正式召回公告及中国市场监管部门的官方召回信息。",
+    "匹配准确型号和受影响批次；品牌或容量相似并不够。",
+    "确认被召回后应停止使用，按制造商官方退换或处置流程办理，不要带到机场让安检替你判断。",
+    "购买与旅行间隔很久时再次查询，因为召回可能后来才发布。"
+  ] },
+  { id: "packing-heading", type: "heading", level: 2, text: "按全程最严格的一段打包" },
+  { id: "packing-list", type: "list", ordered: true, items: [
+    "按顺序列出每段飞机和火车，包括国际票中的境内航段和另买的定位航班。",
+    "使用全程最严格限值。即使航空公司批准 120Wh，只要有铁路段，它仍不符合铁路不超过 100Wh 的要求。",
+    "拍下标签和序列信息留档，但不要遮住实物标志。",
+    "把充电宝放在不会受挤压、容易取出的手提行李中，保护裸露端子并防止按钮误触。",
+    "不要放进可能在登机口被托运的包；交出任何手提包前先取出充电宝。",
+    "携带完好线缆并在登机前给设备充好电，不让计划依赖飞行中使用充电宝。"
+  ] },
+  { id: "security-heading", type: "heading", level: 2, text: "通过机场或车站安检时" },
+  { id: "security-copy", type: "paragraph", text: "让充电宝容易取出，允许工作人员查看标志和外观。超过 100Wh 的产品如被要求出示航空公司批准，订票代理的一条聊天消息不一定等于实际承运航空公司批准，应在出发前完成承运人的正式流程并保存凭证。被拒绝后不要隐瞒第二只、转交同伴或改动标签。" },
+  { id: "failure-heading", type: "heading", level: 2, text: "安检拒绝充电宝时怎样避免误车误机" },
+  { id: "failure-table", type: "table", caption: "按拒绝原因处理", columns: ["原因", "立即行动", "不要误以为"], rows: [
+    ["境内航班无 CCC 或标志不清", "接受现场指示，询问机场是否有官方放弃或暂存渠道", "收据、网店页面或自行贴标可以修复实物标志"],
+    ["额定能量缺失或无法换算", "只展示机身原有参数；信息不足就停止携带", "工作人员必须接受你自己的估算"],
+    ["超过相应 Wh 限制", "只有民航规则允许且事先获得航空公司批准时才使用批准；铁路仍须不超过 100Wh", "现场一定能临时批准，或一种交通批准可用于另一种"],
+    ["召回或损坏", "停止使用并按官方指示处置", "托运、随意邮寄或交给其他旅客是安全替代"],
+    ["手提行李将被托运", "交包前取出充电宝并留在客舱", "登机口行李牌会改变禁止托运规则"]
+  ] },
+  { id: "storage-warning", type: "callout", title: "不要把机场暂存当成行程保障", tone: "warning", body: "民航局要求机场酌情设置旅客自弃或暂存区域，但具体机场是否提供、适用条件、时间、费用和领取流程都不同。应直接向指定机场核实。临近起飞时，保住航班比寻找非官方快递或把产品交给陌生人重要。" },
+  { id: "onboard-heading", type: "heading", level: 2, text: "途中继续观察电池状态" },
+  { id: "onboard-list", type: "list", items: [
+    "飞行过程中不得使用充电宝给设备充电；有开关时应全程关闭。",
+    "鼓包、开裂、渗漏、进水、异常发热或有化学异味的产品一律不要使用。",
+    "机上出现发热、烟雾或异味时，立即停止处理并通知机组或列车工作人员，不要塞进包里或用衣物覆盖。",
+    "不要在酒店床上或软物覆盖下无人看管充电，应使用完好线缆和稳定表面。",
+    "重摔后即使指示灯还能亮，下一段出发前也要检查外壳。"
+  ] },
+  { id: "scope", type: "callout", title: "本文边界与实时规则", tone: "neutral", body: "本文只讨论普通旅客充电宝，不覆盖行动辅助设备、安装在电脑内的电池、专业电池组、货运或废弃处理法律。下方民航公告与铁路目录复核于 2026 年 8 月 12 日。临出发前仍要核对实际承运航空公司、出发机场、铁路公告和准确型号；现场由工作人员作运行决定，Homeground 不会凭照片认证产品。" },
+  { id: "links", type: "internal-links", title: "继续完成设备与交通检查", items: [
+    { label: "中国插头、电压和转换器", href: "/zh/guides/china-power-plugs-voltage-and-adapters/", description: "把电池运输规则与充电电压、插头形状分开。" },
+    { label: "中国境内航班票价组合和行李", href: "/zh/guides/china-domestic-flight-fare-bundle-baggage/", description: "到机场前核查票价与实际承运人。" },
+    { label: "中国全程铁路路线规划", href: "/zh/guides/china-rail-only-route/", description: "检验所有长距离转移是否适合不用飞机。" }
+  ] },
+  { id: "sources", type: "sources", title: "已复核的官方来源", items: [
+    { label: "民航局关于 CCC 标志和召回充电宝的公告（2025）", url: "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html", publisher: "中国民用航空局", reviewedAt: "2026-08-12" },
+    { label: "民航旅客携带充电宝规定及额定能量换算", url: "https://www.caac.gov.cn/big5/www.caac.gov.cn/XXGK/XXGK/TZTG/201511/t20151105_11173.html", publisher: "中国民用航空局", reviewedAt: "2026-08-12" },
+    { label: "铁路旅客禁止、限制携带和托运物品目录", url: "https://www.gov.cn/zhengce/zhengceku/2022-05/31/content_5693212.htm", publisher: "国家铁路局／公安部", reviewedAt: "2026-08-12" }
+  ] }
+] } as const satisfies StructuredPageBody;
 
 export default body;

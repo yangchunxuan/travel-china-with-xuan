@@ -1,8 +1,14 @@
 # Source log — nanhai-one-shipwreck-cargo-and-conservation
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: reading Nanhai No. 1 through assemblage and conservation; no fixed treasure count, single-route claim or current-treatment promise added.
+- Yangjiang government and Guangdong Museum sources support the Southern Song merchant ship, whole-unit salvage, museum research and conservation framing.
+- Added separate investigation/salvage/excavation/conservation stages, cargo-context reasoning, life-aboard limits, evidence tiers, museum workflow, trip-fit decision and dynamic-conservation warning in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

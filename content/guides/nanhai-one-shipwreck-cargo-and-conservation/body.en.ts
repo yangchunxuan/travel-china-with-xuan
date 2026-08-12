@@ -1,122 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "Nanhai No. 1 is a shipwreck site, an assemblage of cargo and life aboard, and a continuing conservation project. A treasure count hides the relationships that make it historical evidence."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Read relationships, not a number",
-      "body": "Connect discovery and whole-caisson salvage with hull position, cargo groups, personal objects and conservation. Date any published count.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Read relationships, not a number",
-      "columns": [
-        "Layer",
-        "Ask",
-        "Do not infer"
-      ],
-      "rows": [
-        [
-          "Ship",
-          "What hull and spatial evidence survives?",
-          "A complete ship frozen in time"
-        ],
-        [
-          "Cargo",
-          "Which ceramics, metals and goods occur together?",
-          "Every object had the same destination"
-        ],
-        [
-          "People",
-          "What personal and working objects remain?",
-          "Names or identities without evidence"
-        ],
-        [
-          "Conservation",
-          "What is exposed, treated or monitored now?",
-          "Condition is permanent"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Read the museum's current exhibition notice.",
-        "Locate the ship and conservation space.",
-        "Compare cargo by position, not beauty.",
-        "Separate trade goods from equipment and personal items.",
-        "Check the date attached to any total."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "Conservation is dynamic",
-      "body": "Excavation, desalination, stabilization, research and display decisions evolve. A 2019 collection figure is historical, not an automatic current total.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Send the date and place. A local human can check current access, displays or programmes without promising unverified conditions.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "How Guangzhou morning tea works",
-          "href": "/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "Visit the Terracotta Army independently",
-          "href": "/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "Do you need a guide in China?",
-          "href": "/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Institutional sources and image credit",
-      "items": [
-        {
-          "label": "Nanhai No. 1 Maritime Silk Road Museum",
-          "url": "https://www.yangjiang.gov.cn/yjsywb/tourism/nanhaino1maritimesilkroadmuseum/",
-          "publisher": "Yangjiang Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Nanhai No. 1 exhibition and research",
-          "url": "https://www.gdmuseum.com/cn/col48/15353",
-          "publisher": "Guangdong Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Maritime Silk Road Museum by WKDx417, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"Nanhai No. 1 is simultaneously a Southern Song shipwreck, an archaeological assemblage preserved with its surrounding context, a vast group of cargo and belongings, and a long conservation project. A treasure count strips away the relationships that make the site useful. Read the vessel, sediment, cargo, people aboard, excavation and conservation as connected evidence."},
+{"id":"answer","type":"callout","title":"Follow one object through five contexts","body":"Choose one labelled cargo type and ask where it was produced, where it lay in the hull, what travelled beside it, how archaeologists recovered it and what treatment it needs now. Then compare it with hull construction and another cargo category. This turns a beautiful object into evidence about loading, exchange and life aboard without pretending that the final destination or every person on the voyage is known.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"The boundary: a shipwreck is not a ship-shaped treasure chest"},
+{"id":"scope","type":"paragraph","text":"Yangjiang's official museum introduction identifies Nanhai No. 1 as a wooden merchant ship of the Southern Song and describes the Guangdong Maritime Silk Road Museum as the institution preserving, displaying and researching it. The wreck and surrounding material were raised in 2007 through a whole-unit salvage approach and moved into a controlled museum environment. This guide explains how to read that archaeological and conservation process; it does not freeze old estimates of object totals, claim one exact route from cargo alone or promise that a particular conservation stage is visible today."},
+{"id":"timeline-heading","type":"heading","level":2,"text":"Keep discovery, salvage, excavation and conservation separate"},
+{"id":"timeline","type":"table","caption":"Four different processes","columns":["Stage","Core question","Evidence produced","Do not collapse it into"],"rows":[["Underwater investigation","What lies on and around the seabed?","Location, survey records and sampling","A complete inventory"],["Whole-unit salvage","How can the wreck and surrounding context be moved together?","A preserved block of hull, sediment and contents","An ordinary ship lift"],["Controlled excavation","How are layers, positions and associations recorded?","Context sheets, plans, photographs, samples and finds","Simply removing treasures"],["Conservation","How can waterlogged wood and varied materials be stabilised?","Condition records, treatment choices and long-term monitoring","A one-time cleaning"],["Interpretation and display","How are changing findings explained to visitors?","Labels, reconstructions, models and research updates","A final story that can never change"]]},
+{"id":"cargo-heading","type":"heading","level":2,"text":"Read cargo as an assemblage"},
+{"id":"cargo","type":"table","caption":"Questions that turn cargo into evidence","columns":["Evidence","Ask","Possible insight","Limit"],"rows":[["Production origin","Where does current scholarship attribute manufacture?","Supply regions and commercial connections","Origin does not equal loading port or destination"],["Quantity and repetition","Are forms packed in groups or sets?","Scale, standardisation or intended market","Published counts can change during excavation"],["Location in hull","Which compartment or layer contained it?","Loading order and storage practice","Movement during sinking may disturb position"],["Associated goods","What was found beside or inside it?","Bundling, containers and mixed cargo","Proximity is not always one owner's property"],["Wear and residue","Was it new, used, repaired or carrying content?","Commodity versus equipment or life aboard","Residue identification requires laboratory evidence"]]},
+{"id":"people-heading","type":"heading","level":2,"text":"Look for life aboard without inventing biographies"},
+{"id":"people","type":"paragraph","text":"Personal items, food remains, tools, cookware, coins or repair evidence can shift attention from export ceramics to the people who operated and inhabited the vessel. But an object does not automatically identify a named owner, occupation or ethnicity. Ask whether the museum labels it as cargo, shipboard equipment or a personal belonging and what context supports that category. Keep individual stories hypothetical unless an inscription or other direct evidence exists."},
+{"id":"workflow-heading","type":"heading","level":2,"text":"A museum viewing workflow"},
+{"id":"workflow","type":"list","ordered":true,"items":["Begin with the site map, seabed context and salvage explanation before entering the cargo displays.","Find the hull orientation and any plan showing compartments, layers or excavation units.","Choose one ceramic group, one non-ceramic cargo or material and one object linked to life aboard.","For each, record provenance, position, associated finds and current conservation status if given.","Observe the conservation workspace from designated areas without treating an inactive moment as a stalled project.","Compare an original object, reconstruction and digital visualisation; note which is which.","End by writing what the assemblage supports about commerce and what it cannot establish about the route."]},
+{"id":"conservation-heading","type":"heading","level":2,"text":"Why conservation remains part of the story"},
+{"id":"conservation","type":"paragraph","text":"Waterlogged archaeological wood survives in a saturated environment very different from ordinary dry timber. Excavation changes temperature, oxygen, moisture, salt and biological conditions; ceramics, metals and organic materials require different responses. Treatment can be slow because conservators must document condition, test methods and avoid rapid change. Visible supports, controlled humidity, limited lighting or sections not on view are evidence of care, not signs that the museum has failed to ‘finish’ the ship."},
+{"id":"evidence-heading","type":"heading","level":2,"text":"Separate three evidence layers"},
+{"id":"evidence","type":"comparison","title":"What you know depends on the layer","columns":[{"heading":"Observed and recorded","items":["Object position and excavation unit","Hull element and material","Visible condition and label"]},{"heading":"Research interpretation","items":["Production centre attribution","Cargo organisation","Probable date and commercial context"]},{"heading":"Still uncertain or revisable","items":["Exact intended destination","Identity of every person aboard","Final totals before excavation and cataloguing are complete"]}]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Common ways to flatten the wreck's evidence"},
+{"id":"mistakes","type":"list","items":["Repeating a dramatic object total without its publication date or whether it is an estimate.","Calling all recovered objects ‘treasure’ and ignoring tools, fragments, samples and hull structure.","Mapping a ceramic production origin directly onto the ship's full sailing route.","Assuming every object left China for one foreign market or every nearby object belonged to one merchant.","Treating a reconstruction or artist's image as an excavation photograph.","Complaining that conservation is incomplete when ongoing treatment is precisely what the museum documents."]},
+{"id":"visit-heading","type":"heading","level":2,"text":"Decide whether the trip fits your route"},
+{"id":"visit","type":"comparison","title":"Make the museum a deliberate destination","columns":[{"heading":"Strong fit","items":["You care about maritime archaeology or Song trade","You can give the museum several focused hours","Yangjiang or Hailing Island already fits the route"]},{"heading":"Possible fit","items":["You mainly want ceramics but will read the excavation context","Your group can handle a large specialist museum","You have checked current transport and opening information"]},{"heading":"Weak fit","items":["You expect a fully reconstructed ship you can board","The day requires a rushed out-and-back detour","You only want a fixed ‘treasure count’ photo stop"]}]},
+{"id":"warning","type":"callout","title":"The visible conservation state can change","body":"Excavation zones, treatment stages, displayed originals and visitor sightlines can change as research and conservation continue. Check the museum or local authority's current official notice before travel, and describe what you saw on your date rather than presenting it as a permanent condition.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"Leave with a shipwreck argument, not a number"},
+{"id":"checklist","type":"list","items":["How the whole-unit salvage preserved context","One hull feature and what it suggests","One cargo group with production and position evidence","One object or trace connected to life aboard","One conservation problem and the museum's response","One route or identity question that remains open"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Share your base, transport mode and whether the priority is the ship, ceramics, Song trade or conservation. A local planner can check current access, allow realistic museum time and connect the visit to Yangjiang without turning a specialist institution into a rushed photo stop.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue reading material evidence","items":[{"label":"Read ritual bronze vessels and inscriptions","href":"/guides/ritual-bronze-vessels-and-inscriptions/","description":"Use form, context and text together when reading museum objects."},{"label":"Read Liye Qin slips as local records","href":"/guides/liye-qin-slips-local-government-records/","description":"Compare an administrative archive with an archaeological ship assemblage."},{"label":"Is your China itinerary too rushed?","href":"/guides/is-your-china-itinerary-too-rushed/","description":"Check whether a specialist museum detour has enough time to be worthwhile."}]},
+{"id":"sources","type":"sources","title":"Institutional sources and image credit","items":[{"label":"Nanhai No. 1 and Guangdong Maritime Silk Road Museum","url":"https://www.yangjiang.gov.cn/yjsywb/tourism/nanhaino1maritimesilkroadmuseum/","publisher":"Yangjiang Municipal Government","reviewedAt":"2026-08-12"},{"label":"Nanhai No. 1 exhibition and research","url":"https://www.gdmuseum.com/cn/col48/15353","publisher":"Guangdong Museum","reviewedAt":"2026-08-12"},{"label":"Hero: Guangdong Maritime Silk Road Museum by WKDx417, CC BY-SA 4.0; cropped","url":"https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

@@ -1,122 +1,28 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "A famous Foshan venue does not guarantee a show. Programmes change, outdoor performances depend on conditions, and high poles are only one form."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Verify before crossing the city",
-      "body": "Confirm venue, date, session, admission and weather policy on an official channel. Old videos prove a past show, not today's schedule.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Verify before crossing the city",
-      "columns": [
-        "Check",
-        "Why",
-        "Recovery"
-      ],
-      "rows": [
-        [
-          "Venue",
-          "Zumiao, memorial halls and schools differ",
-          "Ask the official desk"
-        ],
-        [
-          "Format",
-          "Ground, parade and poles need different space",
-          "Accept a changed programme"
-        ],
-        [
-          "Weather",
-          "Wet or windy conditions affect apparatus",
-          "Keep a museum alternative"
-        ],
-        [
-          "Viewpoint",
-          "Front rows may hide the pole line",
-          "See performers and musicians"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Find the head and rear performers under one costume.",
-        "Watch eye, mouth and head movements.",
-        "Match drum, gong and cymbal cues to pauses and landings.",
-        "On poles, watch distance testing and weight transfer.",
-        "Stay outside barriers."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "High poles are not a visitor activity",
-      "body": "Pole height, spacing and safety belong to trained teams. This guide explains viewing, not imitation.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Send the date and place. A local human can check current access, displays or programmes without promising unverified conditions.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "How Guangzhou morning tea works",
-          "href": "/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "Visit the Terracotta Army independently",
-          "href": "/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "Do you need a guide in China?",
-          "href": "/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Institutional sources and image credit",
-      "items": [
-        {
-          "label": "Lion dance (Guangdong awakening lion)",
-          "url": "https://www.ihchina.cn/project_details/12870",
-          "publisher": "China Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Foshan Ancestral Temple Museum",
-          "url": "https://www.fszumiao.cn/",
-          "publisher": "Foshan Ancestral Temple Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Foshan lion-dance show by Lukwo RuoShuma Simonz, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_FS_%E4%BD%9B%E5%B1%B1_Foshan_%E5%8D%97%E6%B5%B7%E5%8D%80_Nanhai_%E8%A5%BF%E6%A8%B5%E5%B1%B1_Xiqiao_Mountain_%E9%BB%83%E9%A3%9B%E9%B4%BB%E7%8D%85%E8%97%9D%E6%AD%A6%E8%A1%93%E9%A4%A8_Wong_Fei-hong_Lion_Dance_%26_Martial_Arts_School_%E6%93%8D%E5%A0%B4_playground_square_red_%E8%A1%A8%E6%BC%94_show_time_June_2023_Px3_26.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"Foshan is closely associated with Guangdong awakening-lion traditions, but a famous address or an old video does not guarantee a performance on your date. A first visit works best as two tasks: verify a real session before travelling, then watch the lion, musicians and route as one coordinated performance rather than waiting only for a high-pole leap."},
+{"id":"answer","type":"callout","title":"Verify five details, then watch three relationships","body":"Before leaving, confirm the exact venue, calendar date, session time, admission arrangement and cancellation or weather policy through the venue's current official channel. At the show, follow the head and tail performers together, match their movement to drum-gong-cymbal cues, and read each obstacle as a sequence of testing, commitment and recovery. High poles are one demanding format, not the definition of Foshan lion dance.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"What “Foshan lion dance” means here"},
+{"id":"scope","type":"paragraph","text":"China's national intangible-cultural-heritage record identifies Guangdong awakening lion as a southern-lion form and names Foshan as the nominating area. It describes an activity combining martial arts, dance and music, often performed for festivals and celebrations. That supports a regional and cultural connection, not one compulsory script. Teams, occasions and venues may use ground routines, parades, benches, plum-blossom poles or other apparatus, and may shorten or adapt a programme. This guide is for observing a scheduled public performance, not for selecting a training school or attempting acrobatics."},
+{"id":"verify-heading","type":"heading","level":2,"text":"Do not cross the city until these checks are complete"},
+{"id":"verify","type":"table","caption":"Performance verification checklist","columns":["Check","Evidence to seek","Why it matters","Fallback"],"rows":[["Exact venue","Official address and entrance name","A museum, memorial hall and training base may have similar branding","Call the official desk or show the Chinese venue name"],["Date and session","A dated notice for your day","A recurring schedule can change for events or maintenance","Keep a museum-only plan"],["Admission","Whether the show is included, separately booked or capacity-limited","Site entry does not always secure a seat","Arrive early only after confirmation"],["Format","Ground, parade, stage or high poles","Sightlines and duration differ","Value the confirmed format rather than demanding poles"],["Weather policy","Official cancellation or relocation guidance","Wind and wet apparatus can affect outdoor routines","Choose an indoor heritage stop"],["Last update","Publication date and current contact","Search snippets and short videos age quickly","Reconfirm on the morning of travel"]]},
+{"id":"sources-heading","type":"heading","level":2,"text":"Which schedule evidence deserves trust"},
+{"id":"sources-order","type":"list","ordered":true,"items":["Use a dated notice on the venue's official website, verified account or on-site board.","If the notice is unclear, ask the venue directly and save the written reply or call time.","Use an official ticket platform only after matching its venue and session details.","Treat map listings, travel blogs and social videos as discovery leads, not confirmation.","If two current official channels conflict, do not promise the show; ask the venue or keep the fallback."]},
+{"id":"read-heading","type":"heading","level":2,"text":"How to read a routine without knowing every convention"},
+{"id":"read","type":"table","caption":"Watch the performance in layers","columns":["Layer","Look or listen for","What it reveals"],"rows":[["Lion body","How two performers maintain one spine, weight and direction","Coordination hidden by the costume"],["Head expression","Eyes, ears, mouth, tilt and pauses","Attention, curiosity and character without needing a fixed translation"],["Footwork","Testing steps, crouches, turns and landings","Martial training and preparation before spectacle"],["Music","Changes in drum phrase with gong and cymbal accents","Timing, tension and transitions rather than background noise"],["Route or apparatus","Approach, inspection, commitment and retreat","How the team constructs a problem and resolves it"],["Audience boundary","Barriers, staff instructions and performance space","Where viewing ends and safety control begins"]]},
+{"id":"poles-heading","type":"heading","level":2,"text":"A high-pole sequence is a chain of decisions"},
+{"id":"poles","type":"paragraph","text":"When poles are used, do not judge the routine only by height. Watch the lion inspect the gap, align both performers, compress before take-off, land as a single body and stabilize before the next move. A pause can be part of character and risk control, not hesitation or failure. Your sightline should include the landing surfaces and musicians; a front-row position that hides the pole tops may be worse than a slightly raised or side-on view. Never infer pole dimensions from a video or imitate the movement."},
+{"id":"symbols-heading","type":"heading","level":2,"text":"Recognize a story without inventing a translation"},
+{"id":"symbols","type":"paragraph","text":"The heritage record describes the lion entering after an opening martial-arts sequence and notes festive performances and caiqing, often translated as “plucking the greens.” A particular show may stage searching, testing, play, challenge or reward, but meanings and props vary. Describe what actually happens first—approach, retreat, manipulation, reveal—then use the programme or an official interpreter for local names. Do not assign a universal meaning to every colour, gesture or prop from an unsourced chart."},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"What commonly goes wrong on a first visit"},
+{"id":"mistakes","type":"list","items":["Planning around a years-old timetable and discovering there is no show.","Assuming the admission ticket automatically includes a performance or reserved seat.","Calling every Chinese lion dance “Foshan style” or treating northern and southern forms as interchangeable.","Watching only the head and missing the tail performer's footwork and the musicians' cues.","Blocking aisles, using flash, lifting children over barriers or extending a selfie stick into the performance zone.","Treating a changed ground routine as inferior simply because the advertised high poles are unavailable."]},
+{"id":"fit-heading","type":"heading","level":2,"text":"Choose the visit for the right reason"},
+{"id":"fit","type":"comparison","title":"Performance-first or heritage-first?","columns":[{"heading":"Choose performance-first","items":["A current official session is confirmed","Your group can arrive with buffer","Noise, crowds and standing sightlines are manageable"]},{"heading":"Choose heritage-first","items":["No current session can be verified","Weather or mobility makes the apparatus area unsuitable","You want costume, martial-arts and local-history context more than spectacle"]},{"heading":"Do not make it the anchor","items":["Your connection depends on one uncertain session","A child or traveller is distressed by percussion","You need guaranteed seating or accessibility that the venue has not confirmed"]}]},
+{"id":"warning","type":"callout","title":"The apparatus belongs to trained teams","body":"High poles, benches and jumps require specialist training, equipment checks and controlled space. Stay outside barriers, follow staff instructions and never encourage performers to repeat a movement for a photograph. If the programme changes, accept the safety decision.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"Save this before you go"},
+{"id":"checklist","type":"list","items":["Chinese venue name, exact entrance and official contact","Dated session confirmation and what admission covers","Weather or cancellation fallback","A viewing position that shows performers, apparatus and musicians","Hearing protection for anyone sensitive to loud percussion","Enough onward-travel buffer so a delay does not break the day"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Send the date, hotel area and whether performance, museum context or martial-arts history matters most. A local planner can check current official notices, pair the visit with a realistic Foshan route and keep a useful alternative if the programme changes—without promising an unverified high-pole show.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue planning Guangdong","items":[{"label":"How Guangzhou morning tea works","href":"/guides/how-guangzhou-morning-tea-works/","description":"Plan another Cantonese cultural experience around real service flow rather than a checklist."},{"label":"Your first shared meal in China","href":"/guides/first-shared-meal-in-china/","description":"Order a balanced table and avoid portion mistakes after the performance."},{"label":"Do you need a guide in China?","href":"/guides/do-you-need-a-tour-guide-in-china/","description":"Decide whether interpretation and live verification justify local help."}]},
+{"id":"sources","type":"sources","title":"Institutional sources and image credit","items":[{"label":"Lion dance (Guangdong awakening lion)","url":"https://www.ihchina.cn/project_details/12870","publisher":"China Intangible Cultural Heritage","reviewedAt":"2026-08-12"},{"label":"Foshan Ancestral Temple Museum","url":"https://www.fszumiao.cn/","publisher":"Foshan Ancestral Temple Museum","reviewedAt":"2026-08-12"},{"label":"Hero: Foshan lion-dance show by Lukwo RuoShuma Simonz, CC BY-SA 4.0; cropped","url":"https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_FS_%E4%BD%9B%E5%B1%B1_Foshan_%E5%8D%97%E6%B5%B7%E5%8D%80_Nanhai_%E8%A5%BF%E6%A8%B5%E5%B1%B1_Xiqiao_Mountain_%E9%BB%83%E9%A3%9B%E9%B4%BB%E7%8D%85%E8%97%9D%E6%AD%A6%E8%A1%93%E9%A4%A8_Wong_Fei-hong_Lion_Dance_%26_Martial_Arts_School_%E6%93%8D%E5%A0%B4_playground_square_red_%E8%A1%A8%E6%BC%94_show_time_June_2023_Px3_26.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

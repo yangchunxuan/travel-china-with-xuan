@@ -1,122 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "湘菜常从“辣”开始介绍，但第一顿共享餐更需要鲜椒、酸腌、烟熏、蒸菜和蔬菜形成对比。"
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "点层次，不点十种辣椒",
-      "body": "三至四人先点一道代表性荤菜、一道蒸或焖菜、一道蔬菜或豆腐和米饭；全桌愿意再加烟熏或酸味。",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "点层次，不点十种辣椒",
-      "columns": [
-        "位置",
-        "方向",
-        "平衡问题"
-      ],
-      "rows": [
-        [
-          "鲜辣",
-          "鲜椒肉或鱼",
-          "能否只让一道菜承担主辣？"
-        ],
-        [
-          "酸腌",
-          "泡椒或腌菜",
-          "是否同时很咸？"
-        ],
-        [
-          "烟熏腊味",
-          "腊肉类",
-          "搭配清淡菜"
-        ],
-        [
-          "缓冲",
-          "蒸蛋、豆腐或青菜",
-          "明确少辣"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "告诉服务员谁不能吃辣，而不只说偏好。",
-        "使用“微辣”“少放辣椒”“完全不辣”，但接受厨房差异。",
-        "过敏必须单独说明；不辣不是过敏控制。",
-        "第一轮就点米饭和蔬菜。",
-        "全桌尝过后再加单。"
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "湘菜并非每道同样辣",
-      "body": "地区、家庭、餐厅与厨师都会不同。少辣可能改变菜品，也不能保证零辣、无辣油接触或过敏原隔离。",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "发来日期、人数与限制，本地真人可核对实际饮食或手作方案，不把单一场馆写成全国规则。",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "在中国吃第一顿共享餐",
-          "href": "/zh/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "外国游客在中国怎么付款",
-          "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "你的行程是否太赶",
-          "href": "/zh/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "官方来源与图片署名",
-      "items": [
-        {
-          "label": "Hunan cuisine traditions",
-          "url": "https://hunan.gov.cn/topic/ccjhl/djz/202107/t20210716_19935053.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hunan delicacies and methods",
-          "url": "https://whhlyt.hunan.gov.cn/whhlyt/english/Culture/Delicacies/202403/t20240315_33249620.html",
-          "publisher": "Hunan Provincial Department of Culture and Tourism",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hunan home-style fried tofu by Huangdan2060, CC BY 3.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"第一次吃湘菜，目标应该是认识风味对比，而不是测试自己能承受多少辣椒。湘菜会用到鲜椒、腌椒、酸味食材、烟熏腊味，也有蒸、炒、煨与蔬菜菜品。搭一桌完整但吃得完的共享餐，点菜前说清饮食限制，让每道菜在最佳状态下被认真尝到。"},
+{"id":"answer","type":"callout","title":"两个人先点三菜加米饭","body":"选一道代表性的肉、鱼或豆腐主菜，一道明确清爽的蔬菜，再加一道蒸菜、汤菜或酸味菜形成对比，配米饭和无酒精饮料。三至四人先增加一道蛋白质或地方特色，而不是先加小吃。与其要求所有以辣椒为核心的菜完全去辣，不如请服务员推荐本来就较温和的菜。","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"湘菜不是一个辣度，也不等于一张长沙菜单"},
+{"id":"scope","type":"paragraph","text":"湖南政府资料明确把湘菜介绍为不只有辣，并记录不同地区和季节以多种食材、技法制作的菜品。现实菜单仍会因城市、季节、价位和厨师而变化；长沙餐厅、湘西一餐与湖南家常厨房没有义务提供同一套菜。本文解决的是第一顿共享餐怎么搭，不是湘菜百科，也不把同一个菜名当作固定配方。"},
+{"id":"flavour-heading","type":"heading","level":2,"text":"从味型、技法和口感建立对比"},
+{"id":"flavour","type":"table","caption":"一桌均衡湘菜的角色","columns":["角色","带来什么","可以寻找的菜","怎么问"],"rows":[["鲜椒或剁椒菜","鲜明辣味和香气","使用青红鲜椒的本店特色","“这道很辣吗？可以少放辣椒吗？”"],["酸味或腌渍菜","酸度和开胃感","酸菜、腌菜或标明酸辣的菜","“酸味主要来自腌制还是醋？”"],["烟熏或腊味","浓厚咸香","适合时尝少量腊肉或烟熏食材","“这道比较咸吗，分量适合分享吗？”"],["蒸菜或煨菜","水分和较缓的味道","当前菜单上的蒸鱼、豆腐、蛋或煨菜","“酱汁里面本身有辣椒吗？”"],["时蔬","清新和口感","简单做法的当季绿叶菜","“这道能少辣或不放辣椒吗？”"],["米饭、汤或饮料","控制节奏和缓冲","白米饭、清汤或无糖饮料","“这份大概几个人吃？”"]]},
+{"id":"groups-heading","type":"heading","level":2,"text":"按人数控制点单"},
+{"id":"groups","type":"table","caption":"实际可执行的起始分量","columns":["人数","先这样点","先别急着加"],"rows":[["一人","一道下饭主菜；若有小份，再加蔬菜或汤","油炸小吃和第二道大主菜"],["两人","一主菜、一蔬菜、一对比菜和米饭","看到真实分量前的第四道菜"],["三至四人","两道蛋白质或特色菜、一蔬菜、一对比菜和米饭","上菜前追加多道凉菜"],["五人以上","告诉服务员预算与限制，请其按人数搭配","重复肉类和多道同一辣味菜"]]},
+{"id":"order-heading","type":"heading","level":2,"text":"七步点菜流程"},
+{"id":"workflow","type":"list","ordered":true,"items":["先告诉服务员人数、是否有儿童以及大致食量。","把过敏、素食和绝对不能吃的食材放在口味偏好之前说明。","请推荐本店代表菜，并说明这是你们第一次吃湘菜。","选择不同烹饪方法，第一轮最多保留一道辣度未知的重辣菜。","确认每道是小份、例份还是大份，米饭是否按碗单点。","复查有没有重复蛋白质、全是油炸口感或每道都放辣椒。","第一批菜上桌尝过再加，不要只看照片直接点满第二轮。"]},
+{"id":"language-heading","type":"heading","level":2,"text":"可以直接出示的中文，以及它们的边界"},
+{"id":"language","type":"table","caption":"指着菜名出示这些句子","columns":["需求","中文","含义与限制"],"rows":[["问辣度","这个菜很辣吗？","辣度回答仍是主观判断。"],["要求少辣","可以少放辣椒吗？","预制酱料或腌料可能无法调整。"],["要求不辣","这个可以不放辣椒吗？","不能改时请推荐本来就温和的菜。"],["说明过敏","我对___过敏，连少量也不能吃。","这句话不自动保证不会交叉接触。"],["问分量","这个菜大概几个人吃？","根据回答控制菜数。"],["点米饭","请给我们___碗米饭。","按实际人数与食量填写。"]]},
+{"id":"heat-heading","type":"heading","level":2,"text":"“少辣”不等于“安全”"},
+{"id":"heat","type":"paragraph","text":"辣度非常主观，辣椒可能切碎入菜、融入油里，也可能已经在酱料或腌菜中。挑掉可见辣椒不能去除辣味。完全不能吃辣时，应逐道选择本来温和的菜，而不是只说一次“都少辣”。如果问题是过敏而非口味，要使用书面过敏卡，询问酱料、高汤、共用炒锅、工具和交叉接触；员工无法确认时，应换一家餐厅。"},
+{"id":"diet-heading","type":"heading","level":2,"text":"饮食限制要问到具体食材"},
+{"id":"diet","type":"list","items":["素食：即使蔬菜或豆腐，也要问猪油、肉汤、肉末、蚝油和虾米。","不吃猪肉：腊肉、烟熏猪肉或猪骨汤可能出现在非肉菜名中。","花生或芝麻过敏：不仅问主料，也问撒料、酱、用油和共用制作。","麸质相关需求：酱油等调味料可能含小麦，普通厨房也可能无法避免交叉接触。","低盐：烟熏、腌制、泡菜和重酱汁菜即使要求少汁，仍可能偏咸。"]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"第一顿湘菜为什么容易失败"},
+{"id":"mistakes","type":"list","items":["还不知道本店辣度，就先点三道红彤彤的招牌菜。","全选浓重肉菜，没有蔬菜、汤或白米饭。","把翻译软件里的“不辣”理解成酱汁和油也完全没有辣椒。","把每顿湖南菜都叫长沙菜，并假设同名菜到处相同。","只看照片，不问分量、骨头、内脏或腊味食材。","把牛奶、酒或甜饮料当医疗方案；明显不适应停止进食，过敏症状需及时按医疗方案处理。"]},
+{"id":"fit-heading","type":"heading","level":2,"text":"选择适合你的第一餐场景"},
+{"id":"fit","type":"comparison","title":"按真实需求选餐厅","columns":[{"heading":"地方共享餐厅","items":["适合多人","菜品对比丰富","需要沟通分量与辣度"]},{"heading":"商场或成熟连锁餐厅","items":["菜单和座位通常更容易处理","适合儿童或辣度差异大的团队","仍要核实配料与交叉接触"]},{"heading":"单品小店","items":["适合一人","点单简单、试错成本较低","只代表湘菜的一小部分，不能当完整体验"]}]},
+{"id":"warning","type":"callout","title":"口味要求不能替代过敏安全确认","body":"“不辣”“素食”或翻译菜单标签可能只表达制作意图，不代表医疗级控制。严重过敏者应明确食材和交叉接触风险，携带处方药物；回答不确定时直接离开。","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"一桌合格的第一餐应通过这些检查"},
+{"id":"checklist","type":"list","items":["至少两种不同烹饪方法","辣度未知的重辣菜最多一道","至少一道蔬菜或其他清爽菜","米饭或其他中性主食","饮食限制逐道确认","分量符合人数","不假设所有人辣度承受力相同"]},
+{"id":"help","type":"callout","title":"Homeground","body":"告诉我们城市、人数、预算、吃辣程度和不可妥协的饮食限制。当地规划人员可以建议合适的餐厅类型并准备中文点单说明，同时把具体配方、分量和过敏控制交给餐厅当天确认。","tone":"decision"},
+{"id":"links","type":"internal-links","title":"把这顿饭接进整段旅程","items":[{"label":"在中国第一次吃共享餐","href":"/zh/guides/first-shared-meal-in-china/","description":"先理解通用点菜、分量和桌餐服务逻辑，再套用湘菜风味方案。"},{"label":"外国游客如何在中国付款","href":"/zh/guides/how-to-pay-in-china-as-a-tourist/","description":"选择地方小店前准备好付款备选。"},{"label":"你的中国行程是不是太赶","href":"/zh/guides/is-your-china-itinerary-too-rushed/","description":"给共享餐留出时间，不要硬塞在两张定时票之间。"}]},
+{"id":"sources","type":"sources","title":"官方来源与图片署名","items":[{"label":"湘菜的韵味","url":"https://hunan.gov.cn/topic/ccjhl/djz/202107/t20210716_19935053.html","publisher":"湖南省人民政府","reviewedAt":"2026-08-12"},{"label":"湖南美食与烹饪传统","url":"https://whhlyt.hunan.gov.cn/whhlyt/english/Culture/Delicacies/202403/t20240315_33249620.html","publisher":"湖南省文化和旅游厅","reviewedAt":"2026-08-12"},{"label":"题图：Huangdan2060 拍摄的湖南家常煎豆腐，CC BY 3.0；已裁切","url":"https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

@@ -1,142 +1,75 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
-const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "不要把“密封”“熟制”“真空包装”或“自用”当作自动许可。中国对动植物及其产品实施检疫管理。肉类、许多乳蛋产品、新鲜果蔬、种子、植物和土壤属于禁止或受控范围；例外和许可必须逐项核对。"
-    },
-    {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "打包筛查",
-      "columns": [
-        "情况",
-        "选择",
-        "行动"
-      ],
-      "rows": [
-        [
-          "肉类或肉制品",
-          "通常不要携带",
-          "官方清单覆盖生熟肉类及脏器。"
-        ],
-        [
-          "奶、乳制品或蛋类",
-          "核对准确类别",
-          "多种产品被列入；婴幼儿或特殊用途例外很窄且有条件。"
-        ],
-        [
-          "新鲜果蔬、种子、植物或土壤",
-          "除非明确获准，否则不带",
-          "礼物和少量也有植物检疫风险。"
-        ],
-        [
-          "常温密封零食",
-          "仍要查看配料",
-          "密封袋也可能含肉、乳、蛋、种子等受控成分。"
-        ]
-      ]
-    },
-    {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "看配料，不只看包装正面"
-    },
-    {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "肉干、香肠、肉松、汤料和夹心点心仍可能属于肉制品。",
-        "奶酪、奶粉、发酵乳制品和含蛋食品并非一条统一规则，应按实时清单和明确例外判断。",
-        "从贵宾室、酒店或上一国家拿的新鲜水果，到边境时仍是新鲜水果。",
-        "种子、球茎、插枝、活植物、培养介质和土壤即使是纪念品也涉及检疫。",
-        "宠物入境是独立的正式流程，不能从普通行李清单推断。"
-      ]
-    },
-    {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "出发前就决定是否放弃携带"
-    },
-    {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "拍下不确定物品的配料和产地标签。",
-        "按准确成分与产品形态查询官方禁止清单和海关指南。",
-        "旅行前取得所需检疫证书或许可；到机场再解释不能替代事先批准。",
-        "可携物品保留原始标签包装并放在便于取出的位置。",
-        "对受控或不确定物品申报并遵从海关指示；如需放弃，使用正式处置流程。"
-      ]
-    },
-    {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "如果是礼物或有纪念意义",
-      "body": "情感或价格不会改变检疫属性。向赠送者索取完整配料和准确产品名称，出发前联系海关；证明不足时，只能选择合法专业寄运或不携带。",
-      "tone": "warning"
-    },
-    {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "适用边界与实时规则",
-      "body": "疫情与原产地限制可能快速变化。本文是筛查方法，不是最终放行清单。旅行当周应核对海关实时清单、原产地公告和许可要求。",
-      "tone": "neutral"
-    },
-    {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "中国海关红绿通道",
-          "href": "/zh/guides/china-customs-red-green-channels/",
-          "description": "受控或不确定行李应申报。"
-        },
-        {
-          "label": "中国入境要求",
-          "href": "/guides/china-entry-requirements/",
-          "description": "区分检疫与边检。"
-        },
-        {
-          "label": "充电宝运输规则",
-          "href": "/zh/guides/china-power-bank-rules-flights-trains/",
-          "description": "完成其余随身行李检查。"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "已复核的官方来源",
-      "items": [
-        {
-          "label": "Customs FAQ: prohibited animals, plants and products",
-          "url": "https://online.customs.gov.cn/ociswebserver/pages/jcjybcx/question.html",
-          "publisher": "General Administration of Customs",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "List of animals, plants and products prohibited from being carried or mailed into China",
-          "url": "https://www.moa.gov.cn/nybgb/2022/202202/202204/P020220401365957599038.pdf",
-          "publisher": "Ministry of Agriculture and Rural Affairs / General Administration of Customs",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Customs Announcement No. 43 of 2025",
-          "url": "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html",
-          "publisher": "General Administration of Customs",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-};
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "“密封”“熟制”“真空包装”“送人的礼物”或“个人自用”，都不能证明食品可以带进中国。现行动植物检疫名录禁止的类别很广，包括生熟肉类及其制品、动物源性乳及乳制品、蛋及蛋制品、新鲜水果蔬菜、种子和繁殖材料，以及土壤。装箱前要逐项核对真实配料和产品形态；属于禁止进境物的，申报也不会使它变成允许进境物。" },
+  { id: "answer", type: "callout", title: "最稳妥的打包原则", tone: "decision", body: "新鲜果蔬、肉、乳制品、蛋、种子、活体植物和土壤原则上不要带；只有确认适用某项明确例外，并在出发前办完所需审批和证书，才按该流程准备。加工零食要看完整配料表，不能只看正面名称。无法辨明内容或不能证明例外条件，就不要装箱。" },
+  { id: "screen-heading", type: "heading", level: 2, text: "每件拿不准的物品都做一次筛查" },
+  { id: "screen-table", type: "table", caption: "商品名称只是判断起点", columns: ["里面有什么", "默认旅行决定", "为什么要注意"], rows: [
+    ["生或熟的肉、内脏或肉馅", "不带", "官方名录同时覆盖生熟肉类及其制品"],
+    ["动物源性牛奶、奶油、黄油、奶酪、酸奶或炼乳", "除非明确符合列明例外，否则不带", "乳及乳制品属于名录类别"],
+    ["蛋、咸蛋、皮蛋、蛋液、蛋壳或蛋黄酱", "除非明确符合列明例外，否则不带", "名录明确列出蛋及蛋源产品"],
+    ["新鲜水果、蔬菜或鲜切花", "不要装箱", "属于明确列出的植物检疫类别"],
+    ["种子、种苗、插条、球根或其他繁殖材料", "没有所需前置手续就不带", "再小的纪念品也可能繁殖或携带有害生物"],
+    ["土壤或有机栽培介质", "不要装箱", "土壤及相关检疫物受到明确管控"],
+    ["商业包装的植物性零食", "逐项查配料和现行规则", "包装本身不能排除动物成分或原产地专项限制"]
+  ] },
+  { id: "ingredients-heading", type: "heading", level: 2, text: "看配料表，不要只听纪念品故事" },
+  { id: "ingredients-list", type: "list", items: [
+    "肉干、香肠、肉酱、肉松、高汤、浓汤块、肉汁粉和有肉馅的点心，即使熟制或常温保存，仍属于肉类制品。",
+    "月饼、包点、饼干和方便食品可能在宽泛商品名下含肉、蛋黄、蛋黄酱、奶粉或奶酪。",
+    "巧克力、营养粉、咖啡混合饮料和糖果可能含动物源乳成分；含量少不能自行推定为例外。",
+    "从飞机、休息室、邮轮、酒店早餐或上一国家拿到的新鲜水果，过境时仍是新鲜水果；抵达前吃完或按工作人员指示留下。",
+    "干花、首饰里的种子、草药混合物、未深加工谷物和天然材质工艺品，都要核对准确材料；“装饰用途”不会消除检疫风险。",
+    "看不懂标签就不能当作安全物品。决定前要可靠翻译配料、原产地和产品形态。"
+  ] },
+  { id: "official-list-heading", type: "heading", level: 2, text: "官方名录既有细分，也有严格限定的例外" },
+  { id: "official-list-table", type: "table", caption: "农业农村部、海关总署第 470 号公告中的例子", columns: ["名录类别", "重要细节", "对行前准备的含义"], rows: [
+    ["水生动物产品", "名录排除干制、熟制、发酵后制成的食用酱汁类产品", "这不等于所有海鲜零食都例外，必须确认准确形态"],
+    ["燕窝", "经商业无菌处理的罐头装燕窝不在该项禁止范围内", "散装、干制或非正规包装燕窝不能套用这一例外"],
+    ["动物源皮张、骨角和贝壳等", "部分已经加工、且不带血污肌肉脂肪的工艺品被排除", "看起来干净仍不够，要能说明材质和处理状态"],
+    ["犬、猫", "活动物类别的脚注另设犬猫路径并附带条件", "宠物入境是正式专项流程，不是普通行李许可"],
+    ["经审批的检疫物", "注释规定，取得主管部门审批许可并有输出国家或地区官方检疫证书的，可不受该名录限制", "审批和证书必须出发前办妥，机场口头解释不能替代"]
+  ] },
+  { id: "exception-heading", type: "heading", level: 2, text: "例外必须与物品和文件逐项吻合" },
+  { id: "exception-copy", type: "paragraph", text: "适用例外要按清单核对，不能只看“很像”。要匹配科学名称或商业身份、配料、处理方式、包装、原产国家或地区、数量、旅客携带渠道和所需文件。某一物种、批次或进口路径的许可，不能自动覆盖个人行李中的相似纪念品。需要审批和输出方官方检疫证书时，应在出发前通过主管流程同时取得，并携带原件或海关规定的文件形式。" },
+  { id: "exception-warning", type: "callout", title: "申报不等于许可", tone: "warning", body: "2025 年行李物品申报规则要求，入境人员携带动植物、动植物产品和其他检疫物时如实申报并接受验核。对需申报或拿不准的物品，走红色通道是正确处理方式，但海关仍可依据规则作出不准进境、处理、退回或销毁等决定。不要抱着“诚实申报就一定放行”的想法携带禁止进境物。" },
+  { id: "before-heading", type: "heading", level: 2, text: "出发前这样检查，避免在机场争执" },
+  { id: "before-list", type: "list", ordered: true, items: [
+    "所有食品、植物、天然材质礼物和动物源物品，先集中审查，再放入托运或随身行李。",
+    "拍摄商品全貌、完整配料、原产地标签和生产商信息。没有标签的礼盒要拆开，并向送礼者问清每种馅料。",
+    "用现行第 470 号公告名录核对准确类别，并检查针对原产国家、地区或产品的更新海关风险通告。",
+    "若依赖例外，保存准确条文，出发前办齐审批和检疫文件；零售商聊天记录不是政府许可。",
+    "仍无法确定的物品直接拿掉，不要拆分到不同箱子或同行人的行李里。",
+    "看起来符合条件的物品保留原包装和标签，放在便于查验的位置；证书和物品放在一起，不要分散在另一件托运行李中。"
+  ] },
+  { id: "arrival-heading", type: "heading", level: 2, text: "在机上和抵达口岸怎么处理" },
+  { id: "arrival-table", type: "table", caption: "走绿色通道前解决不确定性", columns: ["时点", "该做什么", "不要做什么"], rows: [
+    ["落地前", "吃完机上水果；其他不确定食品只按承运人指定回收方式处理", "先塞进口袋，想着入境后再处理"],
+    ["选择通道前", "重新检查随身和托运行李，包括别人替你打包的礼物", "认为托运行李适用另一套检疫规则"],
+    ["物品受管控或拿不准", "填写所需纸质或电子申报并走红色通道", "因为数量少就走绿色通道"],
+    ["海关要求查验", "如实提交物品、标签、许可和证书", "拆开海关封识或隐瞒一部分产品"],
+    ["不准进境", "按官方退回、处理或销毁指示办理，并保留提供的记录", "转交其他旅客或擅自带离监管区域"]
+  ] },
+  { id: "special-heading", type: "heading", level: 2, text: "以下物品需要其他专项流程" },
+  { id: "special-list", type: "list", items: [
+    "婴幼儿配方食品、医学营养品和特殊膳食食品可能有严格限定条件，必须核对准确现行条款和数量；医学需要不会自动产生未写明的豁免。",
+    "药品和传统药材可能含动物、植物、濒危物种或管制药物成分。检疫只是其中一层，还可能适用药品和野生动物规则。",
+    "宠物犬猫有专门入境程序，涉及动物健康文件等条件，不能用本文的食品与纪念品筛查代替宠物行程准备。",
+    "第 470 号公告也覆盖邮件、快件和跨境电商直购；把禁止物品寄过去并不是规避办法。",
+    "商业样品、销售库存和较大数量不应按普通个人行李理解，需要走适当进口路径。"
+  ] },
+  { id: "failure", type: "callout", title: "打包后才发现可疑物品", tone: "warning", body: "出发前先移出行李，再通过海关官方渠道提供准确商品名、配料、原产地和拟入境路线询问。已经抵达时，不要丢进厕所或普通垃圾桶，也不要让其他旅客代带；应主动申报并服从海关指示。若保险或寄件人需要证明，保留扣留、退回或销毁记录。" },
+  { id: "scope", type: "callout", title: "范围与动态规则边界", tone: "neutral", body: "本文是旅客打包与申报筛查，不是准予进境证明。第 470 号公告明确名录会根据风险评估动态调整，疫情或原产地专项管控也会变化。临行前重新核对现行名录和相关海关通告。是否查验、如何处置和能否放行由海关决定；Homeground 不能根据照片或商品标签判定准入。" },
+  { id: "links", type: "internal-links", title: "继续完成入境检查", items: [
+    { label: "中国海关红绿通道", href: "/zh/guides/china-customs-red-green-channels/", description: "检查完所有行李后选择正确入境通道。" },
+    { label: "中国入境要求（英文专题页）", href: "/guides/china-entry-requirements/", description: "把移民证件与海关、检疫问题分开处理。" },
+    { label: "充电宝乘机与乘火车规则", href: "/zh/guides/china-power-bank-rules-flights-trains/", description: "完成另一个容易卡住的行李检查。" }
+  ] },
+  { id: "sources", type: "sources", title: "已复核的官方来源", items: [
+    { label: "第 470 号公告及禁止携带、寄递进境检疫物名录", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "农业农村部、海关总署", reviewedAt: "2026-08-12" },
+    { label: "农业农村部公报中的禁止进境物名录", url: "https://www.moa.gov.cn/nybgb/2022/202202/202204/P020220401365957599038.pdf", publisher: "农业农村部、海关总署", reviewedAt: "2026-08-12" },
+    { label: "海关总署 2025 年第 43 号行李物品申报公告", url: "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html", publisher: "海关总署", reviewedAt: "2026-08-12" }
+  ] }
+] } as const satisfies StructuredPageBody;
 
 export default body;

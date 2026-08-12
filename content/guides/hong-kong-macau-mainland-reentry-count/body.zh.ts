@@ -1,141 +1,314 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
+  schemaVersion: "1.0.0",
+  blocks: [
     {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "在中国大陆出入境管理上，香港和澳门是不同的出入境管辖区。从大陆前往香港或澳门，就是离开大陆；从港澳返回大陆，是一次新的大陆入境。能否返回取决于护照、签证剩余次数、免签政策和准确路线，与支线停留多久无关。"
+      id: "answer-first",
+      type: "lead",
+      text: "在中国大陆出入境管理上，从大陆前往香港或澳门，就结束了当次大陆停留；再次通过大陆边检返回，就是一次新的大陆入境，即使只是当天往返也一样。先按实际经过的管辖区计算每次过关，再为每次进入大陆确认有效的入境依据。香港和澳门还各有自己的入境规定。",
     },
     {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "计算过关次数，不是酒店晚数",
-      "columns": [
-        "情况",
-        "选择",
-        "行动"
+      id: "jurisdiction-heading",
+      type: "heading",
+      level: 2,
+      text: "把大陆、香港和澳门视为三套入境检查",
+    },
+    {
+      id: "jurisdiction-explainer",
+      type: "paragraph",
+      text: "三地都属于中国，但并不共用一套访客入境记录。经过大陆与香港或澳门之间的边界时，需要办理大陆的出入境边检及相应特别行政区的入境手续。中国大陆签证本身不能让你进入香港或澳门，获准进入港澳也不等于可以进入大陆。",
+    },
+    {
+      id: "crossing-map",
+      type: "table",
+      caption: "不同直达路线如何影响大陆入境次数",
+      columns: ["实际移动", "大陆次数", "需要核对什么"],
+      rows: [
+        ["大陆 → 香港", "一次大陆离境", "你的护照或旅行证件能否进入香港"],
+        ["香港 → 大陆", "一次新的大陆入境", "未使用且未过期的大陆入境依据"],
+        ["大陆 → 澳门 → 大陆", "一次离境加一次新入境", "澳门准入及再次进入大陆的许可"],
+        ["香港 → 澳门直达船或港珠澳大桥穿梭巴士", "不进入大陆", "香港离境和澳门入境分别适用的要求"],
+        ["香港 → 深圳 → 珠海 → 澳门", "一次大陆入境和一次大陆离境", "中间陆路段必须具备大陆入境许可"],
+        ["全程不办理大陆入境的国际空侧转机", "通常不算大陆入境", "确认机场和联程允许留在国际中转区"],
       ],
-      "rows": [
-        [
-          "大陆 → 香港",
-          "一次大陆离境",
-          "当前大陆停留在边检处结束。"
-        ],
-        [
-          "香港 → 大陆",
-          "一次新的大陆入境",
-          "必须具备该次入境的有效依据。"
-        ],
-        [
-          "大陆 → 澳门 → 大陆",
-          "离境加一次新入境",
-          "即使当天往返也经过两次边检。"
-        ],
-        [
-          "香港 → 澳门",
-          "不构成大陆入境",
-          "分别适用香港与澳门的入境规则。"
-        ]
-      ]
     },
     {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "买票前先画路线"
+      id: "route-line-heading",
+      type: "heading",
+      level: 2,
+      text: "按管辖区画路线，不按住宿晚数计算",
     },
     {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "按管辖区写顺序，例如“上海 → 香港 → 深圳”包含两段不同的大陆停留。",
-        "单次大陆签证通常在首次进入大陆时使用。随后去港澳，即使签证有效期尚未到，也不会自动恢复为可再次使用。",
-        "两次或多次签证返回时仍须在有效期内并有未使用次数；每次停留期限与签证有效期是不同字段。",
-        "免签和过境免签有自己的国籍、口岸、联程客票与区域条件，不能在未核对实时政策时当作备用入境次数。"
-      ]
+      id: "route-line-explainer",
+      type: "paragraph",
+      text: "依次写下每个地点，并在出入境管辖发生变化处画一条竖线。“上海 → 香港 → 深圳”包含两段大陆停留：第一段在前往香港时结束，第二段在深圳边检获准入境后开始。在香港住几晚、乘什么交通工具，以及两个大陆城市是否属于同一次旅行，都不会把这两段停留合并。",
     },
     {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "更稳妥的订票测试"
+      id: "route-examples",
+      type: "table",
+      caption: "常见路线如何计算",
+      columns: ["行程", "需要说明依据的大陆入境", "规划结果"],
+      rows: [
+        ["出发地 → 北京 → 香港 → 回国", "一次", "到香港后不再进入大陆"],
+        ["出发地 → 北京 → 香港 → 上海 → 回国", "两次", "仅凭单次签证不能覆盖两段大陆停留"],
+        ["出发地 → 香港 → 深圳 → 澳门 → 回国", "一次", "香港、大陆和澳门要分别核对准入"],
+        ["出发地 → 上海 → 澳门 → 珠海 → 香港 → 回国", "两次", "澳门前往珠海会开始第二段大陆停留"],
+        ["香港 → 澳门直达 → 香港", "零次", "路线始终不经过大陆边检，就不会进入大陆"],
+      ],
     },
     {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "在一条线上标出每次大陆入境和离境。",
-        "为每次抵达大陆写明法律依据：未使用的签证次数、适用的免签，或符合条件的过境政策。",
-        "分别到香港和澳门入境事务部门官网核对其准入。",
-        "确认承运人和口岸接受你的证件与路线；船、铁路和陆路口岸的值机步骤可能不同。",
-        "准备联程票和住宿证明，但理解这些只是支持材料，不保证获准入境。"
-      ]
+      id: "entry-basis-heading",
+      type: "heading",
+      level: 2,
+      text: "为每次抵达大陆匹配一项有效入境依据",
     },
     {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "行程中才发现次数不足",
-      "body": "不要抱着“短途离境会重置”的想法去碰运气。联系国家移民管理局服务渠道、最近的大陆出入境管理部门和承运人，在仍处于合法停留期间调整路线；如需个案意见，应联系具备资质的移民专业人士或本国使领馆。",
-      "tone": "warning"
+      id: "entry-basis-table",
+      type: "table",
+      caption: "常见证件和政策能覆盖什么",
+      columns: ["入境依据", "如何计算", "出发前的关键核对"],
+      rows: [
+        ["单次中国大陆签证", "进入大陆时使用这一次许可", "离开大陆后，已用次数不会重新变为可用"],
+        ["两次中国大陆签证", "签证有效期内最多进入大陆两次", "确认第二次尚未使用，并在最晚入境日期前完成"],
+        ["多次中国大陆签证", "在签证注明的有效期和条件内多次入境", "仍要核对有效期、护照信息及每次停留期限"],
+        ["有效的外国人居留证件", "可能允许多次进出大陆而无需另办签证", "确认返回时证件及与其关联的护照信息仍然有效"],
+        ["免签入境", "每次抵达都要按当次情况判断资格", "每次计划入境都重新核对护照、目的、停留期限和现行政策"],
+        ["过境免签", "是一项有条件的过境准入，不是备用旅游入境次数", "国籍、口岸、允许区域及前往第三国或地区的确认行程都必须符合要求"],
+      ],
     },
     {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "适用边界与实时规则",
-      "body": "本文只解释边境次数，不判断个人资格。国籍、普通签证、单方面免签和过境免签政策会变化。应在旅行当周按准确护照、日期、口岸和后续行程重新查询官方规则。",
-      "tone": "neutral"
+      id: "visa-fields-heading",
+      type: "heading",
+      level: 2,
+      text: "不要混淆入境次数、入境有效期和停留期限",
     },
     {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
+      id: "visa-fields-explainer",
+      type: "paragraph",
+      text: "签证的入境次数决定它能支持多少次大陆入境；入境有效期决定未使用次数可在什么时候使用；停留期限则限制每次入境后的停留时间。因此，即使签证上印的到期日尚未来临，也可能因为次数已用完而失效；反过来，即使看起来还有未使用次数，入境有效期结束后也不能再用。",
+    },
+    {
+      id: "single-entry-warning",
+      type: "callout",
+      title: "支线旅行不会暂停单次签证的停留",
+      body: "如果你持单次签证进入大陆，随后通过大陆离境边检前往香港或澳门，这段大陆停留已经结束。上一段尚未用完的停留天数不是返程许可，已使用的入境次数也不会在返回时恢复。",
+      tone: "warning",
+    },
+    {
+      id: "separate-admission-heading",
+      type: "heading",
+      level: 2,
+      text: "分别核对香港和澳门的准入",
+    },
+    {
+      id: "separate-admission-explainer",
+      type: "paragraph",
+      text: "香港是否要求访客签证或进入许可，取决于国籍和旅行证件种类。澳门也有自己的护照有效期、签证或逗留许可、续程票和入境规定。大陆签证、大陆免签政策或联程票都不能替代港澳的检查。购买不可退交通票前，应按准确护照查询香港入境事务处和澳门特别行政区政府的现行页面。",
+    },
+    {
+      id: "sar-checklist",
+      type: "list",
+      items: [
+        "核对准确的护照或旅行证件，而不只是居住国家或地区。",
+        "确认到访目的和允许停留时间，包括是否要求预先登记或办理签证。",
+        "核对护照有效期、续程或返程证明，以及相关部门要求的资金证明。",
+        "如果行程同时包括香港和澳门，要为第二个特别行政区再做一次完整检查。",
+        "满足公开条件并不排除入境人员作出最终准入决定。",
+      ],
+    },
+    {
+      id: "transit-heading",
+      type: "heading",
+      level: 2,
+      text: "只有真正符合条件的路线才能使用过境免签",
+    },
+    {
+      id: "transit-explainer",
+      type: "paragraph",
+      text: "中国的过境政策要求经大陆前往第三国或地区，并对护照、口岸、客票和允许活动区域设置实时条件。在合格行程中，香港或澳门可以作为后续地区，但这不代表所有“大陆—港澳—大陆”往返都属于过境。例如“香港 → 大陆 → 香港”并没有显示前往另一个第三国或地区的后续行程。",
+    },
+    {
+      id: "transit-checklist",
+      type: "list",
+      items: [
+        "按票面写清出发地、大陆入境口岸、大陆离境口岸和后续国家或地区。",
+        "确认护照国籍以及两个大陆口岸都在现行政策范围内。",
+        "确认所有大陆段都不超出政策允许的区域和时限。",
+        "准备包含所需座位与出发信息的确认续程交通；未核实时不要假定分开出票一定会被接受。",
+        "路线特殊或证件无法清楚呈现完整过境链时，向实际承运人和相关边检机关确认。",
+      ],
+    },
+    {
+      id: "booking-workflow-heading",
+      type: "heading",
+      level: 2,
+      text: "付款前完成六步核对",
+    },
+    {
+      id: "booking-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "画出完整路线，包括每段实际使用的陆路、铁路、船运和机场转机。",
+        "标记每次大陆入境与离境，不要合并两段不同的大陆停留。",
+        "为每次抵达大陆写明准确的法律依据及其实时条件。",
+        "用同一本护照分别检查香港和澳门的准入。",
+        "核对承运人、口岸和换乘方式，尤其注意是否必须办理入境及重新托运行李。",
+        "全部成立后再买固定行程票，并保存用来作决定的官方政策页面和确认记录。",
+      ],
+    },
+    {
+      id: "document-pack-heading",
+      type: "heading",
+      level: 2,
+      text: "随身准备一份路线证明包",
+    },
+    {
+      id: "document-pack",
+      type: "list",
+      items: [
+        "护照原件，以及所依赖的有效大陆签证、居留证件或其他入境文件。",
+        "能显示日期、口岸和下一国家或地区的确认续程票。",
+        "每个管辖区的住宿资料及相关承运人联系方式。",
+        "有关官方政策页面的离线副本，以及官方服务渠道提供的任何书面答复。",
+        "一行式行程表，让自己以及需要核验的承运人能看清管辖区顺序。",
+      ],
+    },
+    {
+      id: "common-errors-heading",
+      type: "heading",
+      level: 2,
+      text: "常见的次数计算错误",
+    },
+    {
+      id: "common-errors",
+      type: "list",
+      items: [
+        "把一次旅行当作一次入境，却忽略其中包含两段分开的大陆停留。",
+        "只看签证到期日，没有确认允许的入境次数是否已经用完。",
+        "认为当天往返香港或澳门不构成大陆离境。",
+        "把多次签证理解为无限制使用，没有核对有效期、关联护照和每次停留期限。",
+        "地图上画的是香港—澳门直达，实际却订了经深圳或珠海的大陆陆路换乘。",
+        "把任何短暂进入大陆都称为过境，却没有满足前往第三国或地区的路线条件。",
+        "只检查大陆许可，临出发才发现香港或澳门要求单独的预先准入。",
+      ],
+    },
+    {
+      id: "recovery-heading",
+      type: "heading",
+      level: 2,
+      text: "发现路线需要一项自己没有的入境许可时",
+    },
+    {
+      id: "recovery-explainer",
+      type: "paragraph",
+      text: "先改路线，不要先去碰边境。如果你仍在大陆合法停留，风险较低的方案可能是把香港或澳门移到最后，并从当地直接离境回国，或取消支线。如果已经在港澳，不要假定可以很快在当地办出大陆签证；先确认合法停留期限，联系负责的中国签证机关，并考虑直接从所在特别行政区离境，而不是尝试进入大陆。",
+    },
+    {
+      id: "recovery-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "停止新增不可退款预订，并保留当前合法准入和允许停留期限的证明。",
+        "大陆政策问题可拨打中国移民管理服务平台 12367，或联系相关大陆出入境管理机关。",
+        "关于继续在港澳停留或调整当地行程的问题，分别联系香港入境事务处或澳门治安警察局出入境部门。",
+        "询问实际运营的航司、铁路或船公司，哪些改道方案真正可以出票和承运。",
+        "如需新办大陆签证或护照个案意见，使用负责的中国使领馆或签证服务渠道，并为拒签和办理时间留出余地。",
+        "选择一个即使期望中的新许可没有签发也能保持合法的备用路线。",
+      ],
+    },
+    {
+      id: "border-warning",
+      type: "callout",
+      title: "不要用“先出去试试能否回来”检验资格",
+      body: "尝试过关不是没有后果的资格查询。承运人可能拒绝承运，边检机关也拥有最终准入决定权。应在仍有合法备用路线时，通过负责机关解决不明确之处。",
+      tone: "warning",
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "适用范围与实时规则边界",
+      body: "本文说明如何计算管辖区，以及哪些问题必须获得官方答案；不判断特定国籍、免签政策、居留身份或口岸的个案资格。临行前应按准确护照、证件、日期、口岸和续程路线再次核对现行官方规则。",
+      tone: "neutral",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "继续规划",
+      items: [
         {
-          "label": "中国入境要求",
-          "href": "/guides/china-entry-requirements/",
-          "description": "为每次大陆抵达核对入境依据。"
+          label: "深圳—香港交通",
+          href: "/zh/guides/shenzhen-hong-kong-transport-route/",
+          description: "确认大陆和香港入境资格后再选择口岸。",
         },
         {
-          "label": "深圳—香港交通",
-          "href": "/zh/guides/shenzhen-hong-kong-transport-route/",
-          "description": "资格确认后再选择口岸。"
+          label: "香港—澳门交通",
+          href: "/zh/guides/hong-kong-macau-transport-route/",
+          description: "比较不会进入大陆的直达路线。",
         },
         {
-          "label": "香港—澳门交通",
-          "href": "/zh/guides/hong-kong-macau-transport-route/",
-          "description": "单独规划非大陆段。"
-        }
-      ]
+          label: "中国各类预订中的护照姓名",
+          href: "/zh/guides/passport-name-across-china-bookings/",
+          description: "让每一段都使用同一套旅行证件身份。",
+        },
+        {
+          label: "在中国丢失护照后的恢复步骤",
+          href: "/zh/guides/lost-passport-in-china-exit-recovery/",
+          description: "证件在途中发生变化时保护离境计划。",
+        },
+      ],
     },
     {
-      "id": "sources",
-      "type": "sources",
-      "title": "已复核的官方来源",
-      "items": [
+      id: "sources",
+      type: "sources",
+      title: "已复核的官方来源",
+      items: [
         {
-          "label": "《中华人民共和国出境入境管理法》官方英文全文",
-          "url": "https://www.nia.gov.cn/n741440/n741547/c757592/content.html",
-          "publisher": "国家移民管理局",
-          "reviewedAt": "2026-08-12"
+          label: "来华签证术语、入境次数与居留证件说明",
+          url: "https://cs.mfa.gov.cn/wgrlh/lhqz/",
+          publisher: "中华人民共和国外交部领事司",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "Chinese visa FAQ explaining Hong Kong and Macao entries",
-          "url": "https://sk.china-embassy.gov.cn/slo/consularaffairs/VISA/202005/P020210712030405067319.pdf",
-          "publisher": "Embassy of China in Slovakia",
-          "reviewedAt": "2026-08-12"
+          label: "《中华人民共和国出境入境管理法》",
+          url: "https://en.nia.gov.cn/n147418/n147458/c155978/content.html",
+          publisher: "国家移民管理局",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "Border inspection for travel between mainland and Hong Kong/Macao",
-          "url": "https://en.nia.gov.cn/n147413/c177654/content.html",
-          "publisher": "National Immigration Administration",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
+          label: "240 小时过境免签政策解读",
+          url: "https://en.nia.gov.cn/n147418/n147463/c183412/content.html",
+          publisher: "国家移民管理局",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "中国移民管理服务平台 12367",
+          url: "https://en.nia.gov.cn/n147413/c194788/content.html",
+          publisher: "国家移民管理局",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "香港旅游签证和进入许可规例",
+          url: "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+          publisher: "香港入境事务处",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "澳门非居民出入境检查规定",
+          url: "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+          publisher: "澳门特别行政区政府",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "港澳及香港—珠海大桥穿梭巴士路线",
+          url: "https://www.hzmb.gov.hk/en/cross-boundary.html",
+          publisher: "港珠澳大桥香港口岸",
+          reviewedAt: "2026-08-13",
+        },
+      ],
+    },
+  ],
 };
 
 export default body;

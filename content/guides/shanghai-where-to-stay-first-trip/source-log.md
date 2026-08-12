@@ -22,3 +22,7 @@ Shanghai government information identifies People’s Square as a major central 
 - `sha256`: `efab568cbbd2a1195b2497b364f997b090620ea351a962568055be020dae52c6`
 
 The image identifies a real central street, not current crowd levels or hotel quality.
+
+## Depth review — 2026-08-12
+
+Expanded the three-base decision around repeated trip patterns, exact Former French Concession addresses, named arrival hubs, crowds, night returns, luggage and recovery. Replaced generic evidence with official references for People's Square lines, network passenger flow and an event-period station-change example. No permanent closure or crowd level is claimed.

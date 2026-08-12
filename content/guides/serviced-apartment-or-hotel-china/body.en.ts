@@ -1,108 +1,30 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  schemaVersion: "1.0.0",
-  blocks: [
-    {
-      id: "lead",
-      type: "lead",
-      text: "For a longer stay, floor area is not the whole decision. The useful question is whether the property supports your daily routine and gives you a clear operator, contract and process for resolving problems.",
-    },
-    {
-      id: "answer",
-      type: "callout",
-      title: "The short decision",
-      tone: "decision",
-      body: "Choose a serviced apartment when verified cooking, laundry, work space and private living space outweigh daily hotel service. Choose a hotel when a staffed desk, daily support, flexible short booking and luggage handling matter more. For the first or last night, the hotel may still be better even if the middle is an apartment.",
-    },
-    {
-      id: "matrix",
-      type: "table",
-      caption: "Verify the service, not the name",
-      columns: ["Need", "Ask the apartment", "Ask the hotel"],
-      rows: [
-        [
-          "Kitchen",
-          "Exact appliances, utensils and ventilation",
-          "Whether any kitchenette room exists",
-        ],
-        [
-          "Cleaning",
-          "Frequency, linen and consumables",
-          "Included schedule and long-stay changes",
-        ],
-        [
-          "Contract",
-          "Deposit, utilities, refund and invoice entity",
-          "Rate terms, extensions and early departure",
-        ],
-        [
-          "Support",
-          "Desk hours, lockout and maintenance",
-          "24-hour scope and escalation",
-        ],
-      ],
-    },
-    {
-      id: "verify",
-      type: "callout",
-      title: "‘Serviced’ is a commercial description",
-      tone: "warning",
-      body: "It does not prove hotel-style staffing or registration. Ask for the operating business, passport registration process, visitor rules, deposit recipient, utilities, cleaning, kitchen inventory and written cancellation terms. Keep the booking and conversation.",
-    },
-    {
-      id: "facts",
-      type: "callout",
-      title: "Policy facts checked August 12, 2026",
-      tone: "neutral",
-      body: "Official immigration guidance assigns registration according to the actual accommodation model: hotels register guests; accommodation outside hotels follows the local non-hotel process. The platform title does not decide the category. Local procedure and property execution may differ, so confirm both before the cancellation deadline.",
-    },
-    {
-      id: "links",
-      type: "internal-links",
-      title: "Continue planning",
-      items: [
-        {
-          label: "Commercial aparthotel or rental?",
-          href: "/guides/commercial-aparthotel-or-residential-rental-china/",
-          description: "Identify the underlying operation.",
-        },
-        {
-          label: "Shanghai first-trip areas",
-          href: "/guides/shanghai-where-to-stay-first-trip/",
-          description: "Place the longer stay near repeated journeys.",
-        },
-        {
-          label: "What ‘near the metro’ should mean",
-          href: "/guides/china-hotel-near-metro/",
-          description: "Check the everyday final walk.",
-        },
-      ],
-    },
-    {
-      id: "sources",
-      type: "sources",
-      title: "Official sources",
-      items: [
-        {
-          label: "Official accommodation-registration interpretation",
-          url: "https://s.nia.gov.cn/mps/zcjd/202601/t20260750_1012.html",
-          publisher: "National Immigration Administration",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "English government notice on online registration pilot",
-          url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html",
-          publisher: "State Council of the PRC",
-          reviewedAt: "2026-08-12",
-        },
-        {
-          label: "National Enterprise Credit Information Publicity System",
-          url: "https://www.gsxt.gov.cn/",
-          publisher: "State Administration for Market Regulation",
-          reviewedAt: "2026-08-12",
-        },
-      ],
-    },
-  ],
-} as const satisfies StructuredPageBody;
+
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "For a longer China stay, the choice is not ‘more space versus more service’. It is which daily tasks you want the property to absorb and which you are willing to manage yourself. A kitchen, washer or weekly rate has value only when the exact room, cleaning plan, contract and support still work on an ordinary Tuesday and when something breaks." },
+  { id: "answer", type: "callout", title: "The short decision", tone: "decision", body: "Choose a hotel for a short stay, frequent city changes, dependable daily servicing or an arrival that must be simple. Choose a commercially operated serviced apartment when the stay is long enough to use a real kitchen, laundry and living space, and the operator confirms cleaning, utilities, deposits, guests, passport registration and after-hours help. Split the stay when the first night is fragile but the following weeks benefit from apartment routines." },
+  { id: "boundary", type: "paragraph", text: "This comparison assumes both options are commercial accommodation. A privately managed residential rental has a different access and registration risk and belongs in the separate aparthotel-versus-rental guide. ‘Serviced apartment’ is not a nationwide promise of a fixed service level, so every benefit below needs unit-level confirmation." },
+  { id: "matrix", type: "table", caption: "Compare the work each property removes", columns: ["Need", "Hotel usually starts stronger", "Serviced apartment can win when verified"], rows: [["Arrival", "Reception, luggage and replacement-room process", "Staffed or documented check-in at your actual time"], ["Sleep and room reset", "Regular housekeeping and linen routines", "Frequency is enough and you prefer privacy"], ["Meals", "Breakfast and nearby food support", "Kitchen genuinely supports the meals you will make"], ["Laundry", "Paid hotel service", "Private or convenient shared washer plus drying"], ["Work and family space", "Predictable room but limited separation", "Real table, doors and usable living space"], ["Failures", "Duty manager and room inventory", "Named support, maintenance deadline and alternative unit"]] },
+  { id: "duration", type: "heading", level: 2, text: "Let duration change the answer—but not by a rigid night count" },
+  { id: "duration-copy", type: "paragraph", text: "Two nights rarely justify learning an apartment's appliances and stocking a kitchen. Over one or several weeks, breakfast, laundry and separate work or child-sleep space can remove repeated friction. Duration alone is not enough: a fourteen-night business trip with daily meetings may still suit a hotel, while a five-night family stay with a baby and food constraints may gain more from an apartment. Count the routines you will actually use." },
+  { id: "fit", type: "table", caption: "Start with the traveller who has the hardest routine", columns: ["Situation", "First option to test", "Deciding evidence"], rows: [["Solo work trip with daily office schedule", "Hotel or serviced apartment near the work address", "Desk, quiet, invoice, breakfast and late support"], ["Family with a baby or early bedtime", "Serviced apartment", "Real bedroom door, cot policy, washer and safe kitchen"], ["Older parents or limited mobility", "Whichever proves the complete step-free route", "Curb, lift, shower, seating and short food access"], ["Food allergy or dietary routine", "Serviced apartment", "Usable cooking equipment, fridge and grocery access"], ["Moving cities every three or four nights", "Hotel", "Less unpacking, appliance learning and deposit administration"], ["First arrival after a long flight", "Hotel or serviced apartment with 24-hour staffed arrival", "Not the room type—the failure-proof check-in"]] },
+  { id: "kitchen", type: "heading", level: 2, text: "A kitchen icon is not a working kitchen" },
+  { id: "kitchen-table", type: "table", caption: "Verify the meal you intend to make", columns: ["Check", "Ask specifically", "Why it changes value"], rows: [["Heat", "Induction hob, microwave, oven or no cooking heat", "A sink and kettle do not make dinner possible"], ["Equipment", "Pan, pot, knife, board, plates and cutlery", "Buying a full set can erase the advantage"], ["Cold storage", "Fridge size and freezer compartment", "Important for medicine, baby food or dietary needs"], ["Ventilation and rules", "Extraction, smoke alarm sensitivity and prohibited cooking", "Strong-smell or high-heat cooking may not be allowed"], ["Groceries", "Practical shop and delivery access to the correct tower", "A kitchen far from food is less useful"]] },
+  { id: "laundry", type: "heading", level: 2, text: "Laundry is washer plus drying plus time" },
+  { id: "laundry-copy", type: "paragraph", text: "Confirm whether the machine is inside the assigned unit, shared by a floor or provided as a paid service. Ask about detergent, instructions, cycle length, dryer, drying rack and a legal place to hang clothes. A washer-dryer combination may handle small loads slowly. Families should plan the first laundry before the clean-clothes buffer disappears, not on the night before an early departure." },
+  { id: "service", type: "heading", level: 2, text: "Write down what ‘serviced’ means" },
+  { id: "service-list", type: "list", items: ["Housekeeping frequency and whether weekends or public holidays differ.", "How often sheets and towels are changed, and how to request extras.", "Rubbish removal, dishwashing and replenishment of water or toiletries.", "Notice before staff entry and a do-not-disturb process.", "Maintenance contact, response window and what qualifies for a replacement unit.", "Breakfast venue and dates, if breakfast influences the comparison."] },
+  { id: "contract", type: "heading", level: 2, text: "Check the money and stay rules as carefully as the room" },
+  { id: "contract-table", type: "table", caption: "Longer stays create more terms to verify", columns: ["Term", "Confirm before payment", "Common surprise to prevent"], rows: [["Deposit", "Amount, payment method, deductions and return timing", "Refund delayed after international departure"], ["Utilities", "Included limits for electricity, water, heating and internet", "A low headline rate with separate usage charges"], ["Cancellation or early departure", "Which nights become non-refundable", "Work plans change but the whole stay remains charged"], ["Guests", "Visitor registration and maximum occupancy", "Family or colleague cannot lawfully enter or stay"], ["Invoice", "Issuing entity, amount and required company details", "Platform receipt is not the document an employer needs"], ["Extension", "Rate and room continuity", "Extension requires a move to another unit"]] },
+  { id: "registration", type: "heading", level: 2, text: "Confirm hotel-style registration, not just a front desk" },
+  { id: "registration-copy", type: "paragraph", text: "Hotels register foreign guests under National Immigration Administration rules. Accommodation outside hotels follows the separate registration requirement within 24 hours. The NIA online route is currently a pilot in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan; elsewhere, confirm the current local route. A desk in an apartment lobby does not by itself prove which model applies. Ask whether the operating entity treats the booking as hotel accommodation and who completes the registration for every passport." },
+  { id: "arrival", type: "heading", level: 2, text: "Protect the arrival and departure days" },
+  { id: "arrival-copy", type: "paragraph", text: "Ask where a car can stop, which tower and lobby to use, whether reception is staffed at the actual arrival hour and how bags are stored before the unit is ready. At departure, confirm inspection, key return and deposit process before committing to an early train or flight. If an in-person inspection is required, schedule it rather than discovering it while the car waits." },
+  { id: "children-access", type: "callout", title: "More space is not automatically easier", tone: "warning", body: "For children or limited mobility, inspect balcony locks, low windows, internal steps, loose rugs, shower entry and whether every sleeping area has safe climate control. A compact hotel room with a lift, breakfast and immediate help can be easier than a large apartment in another tower." },
+  { id: "failure", type: "table", caption: "Decide the recovery before you need it", columns: ["Problem", "Ask the operator to do", "Switch when"], rows: [["Washer or kitchen fails", "Repair by a stated time or provide equivalent access", "The facility was essential and no usable alternative exists"], ["Cleaning is missed", "Reschedule and provide fresh essentials", "Repeated failure makes the longer stay unmanageable"], ["Noise makes work or sleep impossible", "Inspect and move to a proven quieter unit", "Only an unverified promise is offered"], ["Internet fails", "Provide repair timing and a work fallback", "Connectivity is mission-critical and no backup exists"], ["Deposit terms change", "Apply the written booking terms", "Operator demands an undocumented payment before access"]] },
+  { id: "switch", type: "callout", title: "A practical split stay", tone: "decision", body: "Use a conventional hotel for the first night after a late international arrival, then move once during daylight after viewing the route and unit. Reverse the pattern before a very early flight if deposit inspection, tower access or road pickup could delay departure. One deliberate move can reduce more risk than insisting on one property." },
+  { id: "dynamic", type: "paragraph", text: "National accommodation-registration guidance and the enterprise-information channel were reviewed on August 13, 2026. Property services, fees and individual operator status can change and must be confirmed in the booking terms. This guide does not certify a brand or building." },
+  { id: "links", type: "internal-links", title: "Continue planning", items: [{ label: "Commercial aparthotel or residential rental", href: "/guides/commercial-aparthotel-or-residential-rental-china/", description: "First establish whether the apartment is commercial accommodation." }, { label: "What ‘near the metro’ should mean", href: "/guides/china-hotel-near-metro/", description: "Test repeated commuting from the exact lobby." }, { label: "Minsu, homestay or hotel", href: "/guides/minsu-homestay-or-hotel-china/", description: "Decode another set of lodging labels." }] },
+  { id: "sources", type: "sources", title: "Official sources", items: [{ label: "Online registration for foreigners staying outside hotels", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" }, { label: "English policy interpretation of non-hotel registration", url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html", publisher: "State Council of the People's Republic of China", reviewedAt: "2026-08-13" }, { label: "National Enterprise Credit Information Publicity System", url: "https://www.gsxt.gov.cn/", publisher: "State Administration for Market Regulation", reviewedAt: "2026-08-13" }] }
+] } as const satisfies StructuredPageBody;
 export default body;

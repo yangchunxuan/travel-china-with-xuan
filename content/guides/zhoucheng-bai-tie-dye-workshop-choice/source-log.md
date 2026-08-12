@@ -1,8 +1,14 @@
 # Source log — zhoucheng-bai-tie-dye-workshop-choice
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: choosing a transparent visitor workshop in Zhoucheng; no business ranking, universal authenticity certificate or full Bai-culture overview added.
+- National and Yunnan ICH sources support the process, local context and both traditional plant-indigo and changing workshop practice. Current commercial claims require direct confirmation.
+- Added full-process stages, dye-disclosure boundary, format comparison, pre-payment questions, arrival-to-care workflow, heritage/demonstration/activity distinctions, environmental ethics and booking recovery in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

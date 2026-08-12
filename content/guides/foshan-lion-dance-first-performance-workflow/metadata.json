@@ -21,7 +21,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-12",
-  "dateModified": "2026-08-12",
+  "dateModified": "2026-08-13",
   "sourceReviewedDate": "2026-08-12",
   "search": {
     "section": "culture",
@@ -35,9 +35,9 @@
   "locales": {
     "en": {
       "path": "/guides/foshan-lion-dance-first-performance-workflow/",
-      "title": "Foshan Lion Dance: Verify a Performance and Read the High-Pole Routine",
+      "title": "Foshan Lion Dance: How to Read a High-Pole Performance",
       "headline": "Plan the Show First, Then Read the Lion's Movement",
-      "description": "Verify a real Foshan lion-dance performance, distinguish southern lion conventions from a fixed national script, and understand what a high-pole routine is asking performers to do.",
+      "description": "Verify a real Foshan performance, recognize southern-lion conventions and understand the teamwork and landing decisions behind a high-pole routine.",
       "heroAlt": "A high-pole lion-dance performance at the Wong Fei-hong Lion Dance and Martial Arts School in Foshan.",
       "navTitle": "Plan a Foshan lion-dance visit",
       "featuredLinkLabel": "Plan a Foshan lion-dance visit",
@@ -65,10 +65,10 @@
     },
     "ko": {
       "path": "/ko/guides/foshan-lion-dance-first-performance-workflow/",
-      "title": "포산 사자춤 첫 관람: 공연 확인과 고주 루틴 읽기",
+      "title": "포산 사자춤 첫 관람: 공연 확인과 높은 말뚝 공연 읽기",
       "headline": "공연부터 확인하고 사자의 움직임을 읽기",
-      "description": "포산의 실제 공연 일정을 확인하고 남방 사자춤을 전국 공통 각본으로 보지 않으며 고주 공연의 2인 협업과 착지 판단을 이해합니다.",
-      "heroAlt": "포산 황페이훙 사자춤·무술 학교의 고주 사자춤 공연.",
+      "description": "포산의 실제 공연 일정을 확인하고 남방 사자춤을 전국 공통 각본으로 보지 않으며 높은 말뚝 공연의 2인 협업과 착지 판단을 이해합니다.",
+      "heroAlt": "포산 황페이훙 사자춤·무술 학교의 높은 말뚝 사자춤 공연.",
       "navTitle": "포산 사자춤 관람 준비",
       "featuredLinkLabel": "포산 사자춤 관람 준비",
       "openGraphLocale": "ko_KR",

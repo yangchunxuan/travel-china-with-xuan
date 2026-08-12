@@ -1,122 +1,34 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "A useful Zhoucheng workshop is defined by the process you actually complete, not only by a photogenic blue pattern. Ask who does each step, what dye is used and when the cloth is ready."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Choose the process",
-      "body": "A meaningful sequence includes designing, stitching or binding resist areas, dyeing, exposure to air, rinsing and opening the ties. Short sessions may pre-prepare or skip stages; that is acceptable when disclosed.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Choose the process",
-      "columns": [
-        "Check",
-        "Good question",
-        "Why"
-      ],
-      "rows": [
-        [
-          "Participation",
-          "Which steps do I do myself?",
-          "Separates demonstration from making"
-        ],
-        [
-          "Dye",
-          "Natural indigo, synthetic dye or a mix?",
-          "Do not infer material from blue colour"
-        ],
-        [
-          "Cycles",
-          "How many dips and oxidations fit?",
-          "Depth changes with process"
-        ],
-        [
-          "Collection",
-          "Can it be rinsed and dried today?",
-          "Protects the onward schedule"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Confirm duration and final pickup before paying.",
-        "Choose a cloth size you can finish.",
-        "Photograph the bound state before dyeing.",
-        "Follow gloves and vat rules.",
-        "Ask how to wash the finished cloth."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "Tradition does not guarantee one recipe",
-      "body": "Bai tie-dye is a documented heritage practice, but workshops, dyestuffs, motifs and visitor formats vary. Do not rank authenticity from décor alone.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Share the date, group and constraints. A local human can help verify a practical food or craft plan without turning one venue into a national rule.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "Your first shared meal",
-          "href": "/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "How to pay in China",
-          "href": "/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "Is your itinerary too rushed?",
-          "href": "/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official sources and image credit",
-      "items": [
-        {
-          "label": "Bai tie-dye technique",
-          "url": "https://www.ihchina.cn/project_details/14304.html",
-          "publisher": "China Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Bai tie-dye context",
-          "url": "https://www.ynich.cn/item/91.html",
-          "publisher": "Yunnan Intangible Cultural Heritage Protection Centre",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero still: China News Service Zhoucheng tie-dye video, CC BY 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:2020%E5%B9%B45%E6%9C%885%E6%97%A5_%E6%9C%80%E7%88%B1%E5%A4%A7%E7%90%86%E7%9A%84%E9%82%A3%E2%80%9C%E4%B8%80%E6%8A%B9%E8%93%9D%E2%80%9D_%E6%9D%A5%E7%9C%8B%E7%99%BD%E6%97%8F%E6%89%8E%E6%9F%93%E5%A6%82%E4%BD%95%E5%88%B6%E6%88%90.webm",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"A worthwhile Zhoucheng tie-dye workshop is defined by the process it explains and the steps you actually complete—not by a photogenic indigo vat or an instant blue souvenir. Before booking, ask who designs and binds the resist, what dye is used, how many dye-and-air cycles fit, who rinses and opens the ties, and when the cloth can safely travel."},
+{"id":"answer","type":"callout","title":"Choose disclosure and participation over decorative claims","body":"A good session states the cloth size, dye system, steps prepared in advance, steps done by the visitor, drying or pickup plan, total price and safety rules. A short workshop can still be honest and useful when it clearly says that patterns are pre-marked or dye cycles are demonstrated. Reject only hidden substitution and false promises—not every modern adaptation.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"What “Bai tie-dye in Zhoucheng” means here"},
+{"id":"scope","type":"paragraph","text":"China's national intangible-cultural-heritage record identifies Bai tie-dye as a traditional textile-dyeing technique retained in Dali, including Zhoucheng, and describes pattern marking, binding, soaking, dyeing, drying, opening and finishing steps. Yunnan's heritage authority describes Zhoucheng as a Bai cultural area where tie-dye is a prominent traditional craft. This guide helps a visitor select a transparent hands-on session; it does not rank individual businesses, certify every product as handmade or reduce all Bai culture to one craft."},
+{"id":"process-heading","type":"heading","level":2,"text":"Understand the full process before judging your session"},
+{"id":"process","type":"table","caption":"From white cloth to finished pattern","columns":["Stage","What happens","What a visitor may do","Question to ask"],"rows":[["Design and marking","A motif is planned or transferred to cloth","Choose a template, draw or work from a marked pattern","Is the pattern pre-marked, traced or designed by me?"],["Folding, gathering and stitching","Areas are compressed or sewn to resist dye","Fold, bind, stitch or tighten selected areas","Which resist techniques fit the session time?"],["Preparation and soaking","Cloth and dye system are prepared","Observe or help under instruction","Has the cloth or vat been prepared in advance?"],["Dyeing and air exposure","Bound cloth is immersed and exposed; cycles may repeat","Dip, lift and open to air with supervision","How many cycles will we complete, and why?"],["Rinsing and opening","Excess dye is rinsed and ties removed carefully","Rinse and reveal if time and safety allow","Who opens the stitching, and when?"],["Drying and finishing","Cloth dries and may be pressed or finished","Collect later or pack according to instructions","Will it be dry today, and how should it be carried and washed?"]]},
+{"id":"dye-heading","type":"heading","level":2,"text":"Blue colour alone does not identify the dye"},
+{"id":"dye","type":"paragraph","text":"The national heritage record describes plant indigo as a principal traditional dye, while institutional documentation of Zhoucheng also records historical use of synthetic dyes and changing workshop practice. Natural indigo, synthetic dye or a mixed process can each produce blue. Ask for the material by name and let the workshop explain its current vat; do not infer it from smell, décor or colour. Transparency is a better visitor standard than an unsupported claim that one recipe is the only authentic one."},
+{"id":"choose-heading","type":"heading","level":2,"text":"Match the workshop format to the outcome you want"},
+{"id":"choose","type":"table","caption":"Workshop formats and honest expectations","columns":["Format","Useful for","Likely compromise","Minimum disclosure"],"rows":[["Short introduction","Families, tight routes and a first craft taste","Pre-marked cloth, limited binding and few dye cycles","Exactly which stages are demonstration or pre-prepared"],["Half-day hands-on","Visitors who want to understand resist and repeated dyeing","Pattern size must remain manageable","Dye, cycle count, drying and pickup plan"],["Longer or specialist session","Textile learners and original design","More planning and possibly delayed collection","Skill level, tools, language support and finishing responsibility"],["Demonstration only","Mobility, time or dye-contact constraints","No personal finished object","Who the demonstrator is and what part of the real workflow is shown"],["Retail visit","Buying from makers without a class","Production may involve several people or sites","Material, making process and whether the piece is handmade"]]},
+{"id":"questions-heading","type":"heading","level":2,"text":"Ten questions to send before paying"},
+{"id":"questions","type":"list","ordered":true,"items":["What exact address and workshop name should I use in Chinese?","How long is the complete session, including rinsing and packing?","Which steps will I perform myself, and which are already prepared?","What fibre and cloth size are included?","What dye is used today: plant indigo, synthetic dye or a mixed system?","How many dye-and-air cycles will this piece receive?","Is instruction available in a language my group understands?","Are gloves, aprons and safe storage for belongings provided?","Will the cloth be dry enough to take away, or does it require later pickup or delivery?","What is included in the total price, and what happens if the session is cancelled?"]},
+{"id":"quality-heading","type":"heading","level":2,"text":"Evaluate learning, not a perfectly predictable pattern"},
+{"id":"quality","type":"paragraph","text":"Resist dyeing produces variation: stitch tension, folds, fibre, vat condition and repeated cycles influence the result. Uneven halos and small differences can reveal the process rather than failure. A high-quality visitor session should explain those variables, show safe technique and let you compare bound and opened cloth. It should not guarantee an exact copy of a sample when the session genuinely leaves choices to the maker."},
+{"id":"arrival-heading","type":"heading","level":2,"text":"Arrival-to-departure workflow"},
+{"id":"workflow","type":"list","ordered":true,"items":["Reconfirm the address, start time, duration and take-away plan on the day before travel.","Wear clothes and closed shoes that can tolerate splashes; remove loose jewellery and secure bags.","Photograph the blank and fully bound cloth so the resist logic is visible before dyeing.","Follow the instructor's rules around vats, wet floors, tools and dye contact; supervise children directly.","Count each immersion and air-exposure cycle and note any stage the instructor completes.","Before opening ties, ask where to cut so the cloth is not damaged.","Get written first-wash, colour-transfer, drying and packing instructions before leaving."]},
+{"id":"care-heading","type":"heading","level":2,"text":"The first wash is part of the booking decision"},
+{"id":"care","type":"paragraph","text":"A finished-looking cloth may still hold moisture or release excess colour. Follow the workshop's instructions for rinsing, drying and first washing because fibre and dye systems vary. Pack damp fabric separately in a breathable or workshop-recommended arrangement, do not place it directly against light clothing or documents, and never seal wet cloth for a long trip without guidance. If onward travel is immediate, choose a smaller piece or arrange later collection."},
+{"id":"evidence-heading","type":"heading","level":2,"text":"Tradition, demonstration and tourism are related but not identical"},
+{"id":"evidence","type":"comparison","title":"Describe the experience accurately","columns":[{"heading":"Heritage practice","items":["Community knowledge and transmission","Full production and social context","Changes over time are part of its history"]},{"heading":"Workshop demonstration","items":["Selected steps shown by a practitioner","May use samples and prepared materials","Useful when its boundaries are stated"]},{"heading":"Visitor activity","items":["Adapted for time, safety and beginners","Can teach genuine principles","Does not make a short souvenir the whole tradition"]}]},
+{"id":"ethics-heading","type":"heading","level":2,"text":"A respectful workshop leaves room for makers and environment"},
+{"id":"ethics","type":"list","items":["Ask permission before photographing people, homes, production notes or other visitors.","Do not enter work areas or touch vats, tools and drying cloth without invitation.","Pay for teaching and materials rather than bargaining as if instruction were a free sales demonstration.","Ask how wastewater and spent dye are handled, but do not infer environmental performance from ‘natural’ or ‘synthetic’ labels alone.","Credit the workshop and practitioner when posting; describe the steps you did rather than claiming you mastered Bai tie-dye."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Common booking failures and recovery"},
+{"id":"mistakes","type":"table","caption":"Protect the craft experience and the rest of the trip","columns":["Failure","Warning sign","Recovery"],"rows":[["Only a photo stop","No answer about participant steps","Book a demonstration knowingly or choose a session with a written workflow"],["Cloth cannot travel","No drying or pickup answer","Choose a small piece, later collection or demonstration-only visit"],["Dye claim is vague","“All natural” without naming material or current process","Ask for the dye and accept uncertainty rather than repeating the claim"],["Session too ambitious","Large design in a short booking","Reduce size or use a guided template"],["Language gap","Safety and wash instructions are not understood","Arrange translation or do not handle the vat"],["Unexpected cost","Base price excludes cloth, finishing or delivery","Confirm total inclusions before paying"]]},
+{"id":"warning","type":"callout","title":"Current workshop details must be reconfirmed","body":"Schedules, instructors, dye systems, included steps, prices and collection arrangements are workshop-level dynamic facts. Confirm them directly for your date. Heritage listing documents the practice; it does not guarantee that a specific visitor business follows one process or is open.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"A transparent workshop should pass this check"},
+{"id":"checklist","type":"list","items":["Exact address and instructor confirmed","Dye and fibre named","Visitor and pre-prepared steps separated","Cloth size fits the available time","Safety and language support understood","Drying, pickup and first-wash plan clear","Total price and cancellation rule confirmed","Photography permission asked"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Share the date, group ages, available time, language and onward journey. A local planner can compare workshop formats, confirm what is actually included and choose a cloth and pickup plan that fit the route—without advertising an unverified ‘authentic indigo’ experience.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue planning craft and Dali time","items":[{"label":"Woodblock or movable type?","href":"/guides/woodblock-and-movable-type-printing-decisions/","description":"See how another traditional process changes when the task, tools and labour change."},{"label":"Is your China itinerary too rushed?","href":"/guides/is-your-china-itinerary-too-rushed/","description":"Make sure the workshop and drying plan have real time in the day."},{"label":"How to pay in China as a tourist","href":"/guides/how-to-pay-in-china-as-a-tourist/","description":"Prepare payment and a receipt workflow before booking a small workshop."}]},
+{"id":"sources","type":"sources","title":"Official sources and image credit","items":[{"label":"Bai tie-dye technique","url":"https://www.ihchina.cn/project_details/14304.html","publisher":"China Intangible Cultural Heritage","reviewedAt":"2026-08-12"},{"label":"Zhoucheng Bai traditional cultural protection area","url":"https://www.ynich.cn/item/91.html","publisher":"Yunnan Intangible Cultural Heritage Protection Centre","reviewedAt":"2026-08-12"},{"label":"Hero still: China News Service Zhoucheng tie-dye video, CC BY 4.0; cropped","url":"https://commons.wikimedia.org/wiki/File:2020%E5%B9%B45%E6%9C%885%E6%97%A5_%E6%9C%80%E7%88%B1%E5%A4%A7%E7%90%86%E7%9A%84%E9%82%A3%E2%80%9C%E4%B8%80%E6%8A%B9%E8%93%9D%E2%80%9D_%E6%9D%A5%E7%9C%8B%E7%99%BD%E6%97%8F%E6%89%8E%E6%9F%93%E5%A6%82%E4%BD%95%E5%88%B6%E6%88%90.webm","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

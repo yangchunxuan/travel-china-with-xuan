@@ -1,153 +1,258 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
+  schemaVersion: "1.0.0",
+  blocks: [
     {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "先看手机必须完成什么任务：旅行 eSIM 往往适合只要流量的人；中国大陆本地 SIM 可提供本地手机号码；双卡则能保留原号码并增加一条线路。设备、运营商办理和网络表现都取决于具体产品，付款前应核对实时说明。"
+      id: "answer-first",
+      type: "lead",
+      text:
+        "先确定手机必须完成什么任务，再选择连接方式。国际服务商提供的旅行 eSIM 往往是最省事的纯流量方案；中国内地运营商 SIM 卡通常提供 +86 内地号码，并要求持护照实名登记；原运营商国际漫游可以保留原号码，但费用可能更高。手机准确型号、销售地区和运营商锁允许时，双卡可以组合其中两种。不要只看到“eSIM”就付款：流量、语音、短信、号码、激活方式和网络路由都是互相独立的产品信息。",
     },
     {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "从四种需求出发",
-      "columns": [
-        "情况",
-        "选择",
-        "行动"
+      id: "short-decision",
+      type: "callout",
+      title: "多数短期旅行的起点",
+      body:
+        "如果只需要地图、即时通信和应用流量，先比较旅行 eSIM 与原运营商漫游。确实需要 +86 号码或普通本地短信时，再去内地运营商自营营业厅办理。可以的话保留原号码接收银行和账号验证码，但关闭该线路昂贵的数据漫游。",
+      tone: "decision",
+    },
+    {
+      id: "needs-heading",
+      type: "heading",
+      level: 2,
+      text: "从任务出发，不从产品名称出发",
+    },
+    {
+      id: "needs-table",
+      type: "table",
+      caption: "按真正需要的功能选择起点",
+      columns: ["需要", "优先比较", "付款前必须确认"],
+      rows: [
+        ["地图、聊天与浏览流量", "旅行 eSIM 或原运营商漫游", "流量额度、有效期起算、热点规则和可用网络"],
+        ["中国内地 +86 手机号", "内地运营商 SIM 卡", "护照实名、语音短信、套餐到期、充值及销户方式"],
+        ["保留原号码接收银行或账号验证码", "原线路与另一条数据线路同时保留", "收短信和漫游费用、双卡限制、默认语音短信设置"],
+        ["普通本地电话或短信", "内地运营商 SIM，或明确包含这些功能的产品", "不能从流量额度推断带号码、语音或短信"],
+        ["给电脑或同行人共享网络", "明确允许个人热点的套餐，或随身 Wi-Fi", "热点额度、限速、续航和连接设备数"],
+        ["手机锁网或不兼容", "原运营商漫游、兼容的解锁备用机或随身 Wi-Fi", "确认型号和锁定状态前不要买卡或配置文件"],
       ],
-      "rows": [
-        [
-          "只要流量",
-          "旅行 eSIM 或原运营商漫游",
-          "出发前购买并安装，离线保存二维码。"
-        ],
-        [
-          "需要中国大陆号码",
-          "到运营商营业厅办理本地 SIM",
-          "携带护照原件并完成实名登记。"
-        ],
-        [
-          "流量和本地号码都要",
-          "双卡：原号码加数据 eSIM 或本地 SIM",
-          "核对准确机型、销售地区版本和同时启用线路数量。"
-        ],
-        [
-          "手机不兼容或有网络锁",
-          "无锁备用手机、随身 Wi-Fi 或漫游",
-          "确认解锁与频段支持后再购买。"
-        ]
-      ]
     },
     {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "每种方案真正提供什么"
+      id: "device-heading",
+      type: "heading",
+      level: 2,
+      text: "买套餐前先审计准确手机型号",
     },
     {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "旅行 eSIM 常见的是纯流量产品，未必提供 +86 大陆号码、普通通话或短信。不要只凭“eSIM”三个字推断功能。",
-        "大陆运营商 SIM 通常提供本地号码并需要实名登记。北京市政府指南建议外国旅客携护照原件到中国移动、中国联通或中国电信营业厅办理。",
-        "本地号码在场馆、配送或账号需要大陆短信时可能有用，但并非所有游客任务都必须使用。官方支付指南说明主要移动支付应用可以用外国或中国手机号码注册。",
-        "标注双卡不等于任意两条线路都能同时工作。应按准确型号和地区版本查 Apple、Google 或 Samsung 的说明，并确认手机没有运营商锁。"
-      ]
+      id: "device-table",
+      type: "table",
+      caption: "五项会让方案直接失效的设备信息",
+      columns: ["检查项", "到哪里查", "为什么重要"],
+      rows: [
+        ["准确型号与销售地区", "手机设置及制造商支持页面", "同一营销名称的手机可能使用不同卡槽、eSIM 能力或频段。"],
+        ["运营商锁", "设备设置或原运营商", "硬件即使支持，锁网手机仍可能拒绝其他服务商的实体卡或 eSIM。"],
+        ["eSIM 支持", "EID/eSIM 菜单及制造商对该型号的记录", "没有菜单可能源于地区版本、运营商政策或设备管理，不一定是设置错误。"],
+        ["双线路工作方式", "制造商关于同时启用线路的说明", "“双卡”可能表示可存多个配置、单线启用、双卡双待或其他组合。"],
+        ["频段与网络制式", "把制造商规格与所选服务商要求对照", "配置文件可以安装成功，但覆盖范围或网络制式仍可能受限。"],
+      ],
     },
     {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "避免把所有希望放在一条线路上"
+      id: "esim-boundary",
+      type: "callout",
+      title: "旅行 eSIM 不等于中国内地运营商 eSIM",
+      body:
+        "即使手机不能开通内地运营商发行的 eSIM，国际服务商仍可能向它出售用于中国内地的旅行数据 eSIM。Apple 目前只为特定中国内地销售的 iPhone 型号说明内地运营商 eSIM，并注明在中国内地以外购买的 iPhone 不能安装内地运营商配置。这个结论不能外推到所有旅行 eSIM、Android 手机或未来机型。",
+      tone: "warning",
     },
     {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "出发前按型号编号核对 eSIM、实体卡、双卡同时启用能力和网络锁状态。",
-        "选择旅行 eSIM 时，在稳定 Wi-Fi 下安装；是否提前启用以供应商说明为准。把二维码、订单号和客服方式离线保存。",
-        "选择本地 SIM 时，到运营商正规营业厅并携护照原件；请工作人员写下号码、套餐到期日、充值和注销方式。",
-        "如果原号码用于接收银行或账号验证码，尽量保留它；按原运营商规则关闭高额数据漫游但保留必要短信。",
-        "分别测试数据、通话和短信。网页能打开，不代表一定有语音、+86 号码或能收到所有验证码。"
-      ]
+      id: "options-heading",
+      type: "heading",
+      level: 2,
+      text: "每种连接方案都放弃了什么",
     },
     {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "首选方案失败时",
-      "body": "找不到 eSIM 菜单：重新核对准确机型版本与网络锁，然后改用实体本地 SIM、漫游、随身 Wi-Fi 或兼容备用机。本地 SIM 激活失败：请营业厅核查护照录入，不要让非官方经销商随意变通。流量可用但某个应用不可用：先当作应用或路由问题排查，不能据此断言所有 eSIM 或本地 SIM 都一样。",
-      "tone": "warning"
-    },
-    {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "适用边界与实时规则",
-      "body": "截至 2026 年 8 月 12 日，大陆运营商 eSIM 仍取决于设备和运营商。Apple 当前只为特定大陆版 iPhone 机型说明大陆运营商 eSIM，并称境外购买的 iPhone 不能安装大陆运营商配置；这不等于对旅行 eSIM 或所有 Android 手机的统一结论。请始终查看准确设备与产品的官方页面。",
-      "tone": "neutral"
-    },
-    {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
+      id: "options-comparison",
+      type: "comparison",
+      title: "不存在同时拥有所有优势的选项",
+      columns: [
         {
-          "label": "准备在华支付",
-          "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/",
-          "description": "手机号码注册与支付方案是两个独立决定。"
+          heading: "旅行 eSIM",
+          items: ["通常可在出发前购买和安装", "常见产品只有流量，不一定有 +86 号码、语音或短信", "激活、路由、热点和应用表现取决于具体产品", "客服通常在线，应离线保存订单和二维码"],
         },
         {
-          "label": "核对入境要求",
-          "href": "/guides/china-entry-requirements/",
-          "description": "准备好护照与抵达材料。"
+          heading: "内地运营商 SIM",
+          items: ["通常提供本地号码和普通运营商服务", "必须持原护照实名登记", "自营营业厅可当面处理开户问题", "需要管理实体卡、套餐到期、充值与销户"],
         },
         {
-          "label": "第一次坐中国高铁",
-          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
-          "description": "提前确认进站前必须可用的工具。"
-        }
-      ]
+          heading: "原运营商漫游",
+          items: ["保留熟悉的号码，不改变 SIM 身份", "极短行程可能最简单", "价格、公平使用政策和合作网络由运营商决定", "漫游包不自动包含本地普通通话或 +86 号码"],
+        },
+      ],
     },
     {
-      "id": "sources",
-      "type": "sources",
-      "title": "已复核的官方来源",
-      "items": [
-        {
-          "label": "MIIT real-name registration rules (2026 republication)",
-          "url": "https://sdca.miit.gov.cn/zwgk/fgbz/art/2026/art_9b270ddb59cc4643b0a9c6811c4e750d.html",
-          "publisher": "Ministry of Industry and Information Technology",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Purchasing SIM cards in Beijing",
-          "url": "https://english.beijing.gov.cn/quickguideservices/purchasingsimcards/",
-          "publisher": "Beijing Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Using eSIM while traveling in China mainland",
-          "url": "https://support.apple.com/en-us/118227",
-          "publisher": "Apple Support",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "China mainland carrier eSIM on iPhone",
-          "url": "https://support.apple.com/en-mide/123879",
-          "publisher": "Apple Support",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Foreign and Chinese phone numbers for mobile payment registration",
-          "url": "https://nsd.mofcom.gov.cn/tzyts/art/2024/art_a08888d0b9da42f083b00223edaf1de7.html",
-          "publisher": "Ministry of Commerce",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
+      id: "number-heading",
+      type: "heading",
+      level: 2,
+      text: "你真的需要中国内地号码吗？",
+    },
+    {
+      id: "number-copy",
+      type: "paragraph",
+      text:
+        "快递、场馆、账号或联系人明确要求中国内地语音或短信时，本地号码会有帮助，但它不是所有旅行任务的前提。官方移动支付指引说明，主要支付应用可以用境外或中国手机号注册，不过具体银行、商户和验证流程仍可能不同。先写清楚究竟是哪项任务必须用本地号，再决定是否占用行程去营业厅。旅行 eSIM 加原来的境外号码可能已经足够；反过来，能上网也不能证明能收本地短信。",
+    },
+    {
+      id: "purchase-heading",
+      type: "heading",
+      level: 2,
+      text: "购买任何套餐前都要问清的问题",
+    },
+    {
+      id: "purchase-list",
+      type: "list",
+      items: [
+        "有效期从购买、安装、第一次连网还是手动激活开始？",
+        "流量是总量、每日额度，还是达到高速阈值后降速的所谓不限量？",
+        "是否包含号码、呼入呼出、短信、个人热点，以及路线中所有目的地区域？",
+        "可以使用哪些本地网络，自动连网失败时能否手动选择？",
+        "删除配置或重置手机后能否重新安装？许多二维码只能使用一次。",
+        "设备不兼容、配置已经安装或行程改变时，退款条件分别是什么？",
+        "哪条客服渠道不依赖这条故障线路，客服需要哪些证据？",
+        "服务商怎样路由流量，对应用和网站可访问性作了什么明确说明？不要相信推广者的一句话保证。",
+      ],
+    },
+    {
+      id: "travel-setup-heading",
+      type: "heading",
+      level: 2,
+      text: "安装旅行 eSIM 时别把二维码也锁在手机里",
+    },
+    {
+      id: "travel-setup",
+      type: "list",
+      ordered: true,
+      items: [
+        "出发前在可靠 Wi-Fi 下，把订单号、套餐条件、客服链接、二维码和手动激活信息保存到另一台设备或打印出来。",
+        "只有在服务商确认安装不会提前开始有效期时才安装。给线路起清楚的名称，例如“中国流量”；第一次激活失败时不要随意删除。",
+        "需要原号码接电话或短信时保留原线路，但除非原运营商套餐明确覆盖，否则关闭该线路的数据漫游。",
+        "把旅行线路设为蜂窝数据线路。只有服务商明确要求时才为这条线路开启数据漫游；许多旅行 eSIM 需要通过合作网络漫游。",
+        "落地后等待网络注册，再严格按服务商说明设置 APN 或手动选网。离开机场 Wi-Fi 和服务点前，分别测试网页、地图和消息。",
+      ],
+    },
+    {
+      id: "local-setup-heading",
+      type: "heading",
+      level: 2,
+      text: "通过可追责的内地运营商办理 SIM 卡",
+    },
+    {
+      id: "local-setup",
+      type: "list",
+      ordered: true,
+      items: [
+        "选择中国移动、中国联通或中国电信确认可办理外国护照的自营营业厅。北京官方指南也列出机场服务柜台，但地点和营业时间仍需实时核对。",
+        "携带原护照。开户需要实名登记，只有复印件通常不能完成身份核验。",
+        "请工作人员写下号码、套餐名称、流量/语音/短信内容、计费周期、到期日、充值方式、客服电话和是否需要销户。",
+        "仍在柜台时插卡激活。若这些功能重要，应分别测试数据、拨出电话、接收短信和个人热点。",
+        "保留卡托和业务凭证。离开中国或弃用号码前，询问套餐是否续费、是否留有余额、是否需要正式销户。",
+      ],
+    },
+    {
+      id: "dual-warning",
+      type: "callout",
+      title: "双卡设置可能悄悄产生漫游费",
+      body:
+        "先给两条线路命名，再检查蜂窝数据、数据切换、默认语音和默认短信四项设置。如果自动数据切换可能把流量转到昂贵的原线路，就把它关闭。向原运营商确认境外收短信是否收费，并注意接听或回拨电话可能使用另一套资费。每次改动前后都保存可用设置截图。",
+      tone: "warning",
+    },
+    {
+      id: "testing-heading",
+      type: "heading",
+      level: 2,
+      text: "能打开浏览器不等于所有功能正常",
+    },
+    {
+      id: "testing-table",
+      type: "table",
+      caption: "逐项测试你付费购买的能力",
+      columns: ["测试", "能够证明", "不能证明"],
+      rows: [
+        ["关闭 Wi-Fi 后打开一个新网页", "蜂窝数据正在传输", "地图、支付、热点、语音和短信都能用"],
+        ["加载地图并开始导航", "定位数据与该地图服务能更新", "所有境外应用都可通过同一路由访问"],
+        ["在所需应用中收发消息", "该账号和数据路由此刻可用", "拥有普通短信或中国内地号码"],
+        ["让所选号码接收一条短信", "这条线路可以收到这一条消息", "所有银行和平台都会向它发送验证码"],
+        ["拨打一通普通电话", "语音服务已包含并启用", "国际电话也按同样资费包含"],
+        ["让一台设备连接个人热点", "此次测试中热点可用", "不存在限速、设备数或用量限制"],
+      ],
+    },
+    {
+      id: "failure-heading",
+      type: "heading",
+      level: 2,
+      text: "按出错层级排查，不要反复重装",
+    },
+    {
+      id: "failure-table",
+      type: "table",
+      caption: "故障判断表",
+      columns: ["现象", "先检查", "备用方案"],
+      rows: [
+        ["没有 eSIM 菜单或拒绝安装", "准确型号、地区版本、系统版本、运营商锁及二维码是否用过", "不要不断删除配置；改用漫游、兼容实体卡、备用机或随身 Wi-Fi。"],
+        ["已安装但没有网络", "数据线路、服务商要求的数据漫游、APN、自动/手动选网和激活时间", "用 Wi-Fi 联系客服，附上截图和订单号。"],
+        ["能上网但没有 +86 号码或短信", "购买的产品是否明确为纯流量", "使用应用消息；确实需要普通短信时办理本地运营商线路。"],
+        ["内地 SIM 实名失败", "护照信息录入、支持的证件类型及该网点是否办理外国客户", "请自营营业厅解决，不要让不明经销商编造身份资料。"],
+        ["只有一个应用不能用", "应用账号、权限、服务状态和服务商路由", "找应用官方客服或使用其他合法服务；不能据此认定整条线路失效。"],
+        ["原线路产生意外费用", "数据切换、后台流量、漫游及语音短信资费", "关闭不需要的漫游并联系原运营商，同时用其他方式保留账号恢复能力。"],
+      ],
+    },
+    {
+      id: "security-heading",
+      type: "heading",
+      level: 2,
+      text: "不要让一部手机成为唯一故障点",
+    },
+    {
+      id: "security-list",
+      type: "list",
+      items: [
+        "把 eSIM 订单、护照副本和重要联系人存到旅行手机以外，并做好受保护的账号备份和离线备份。",
+        "主要邮箱、Apple 或 Google 账号、银行和密码管理器的恢复码，应放在丢失手机带不走的地方。",
+        "更改 SIM 设置前记录每个关键账号使用哪个号码，不要把所有账号都改绑到旅行后会失效的临时号。",
+        "开启锁屏和设备查找服务，提前知道手机或 SIM 丢失后怎样联系运营商与支付服务。",
+        "保留一种抵达备用方式：机场 Wi-Fi 说明、一日漫游包、同行人热点或离线地址，避免激活失败连第一段接送都无法完成。",
+      ],
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "本文边界与实时规则",
+      body:
+        "设备支持、内地运营商 eSIM、套餐功能、流量路由、价格及营业厅办理情况都可能改变。下方官方和制造商页面复核于 2026 年 8 月 12 日；付款前应重新查看准确型号与实时条款。本文不保证某个套餐可以访问所有应用或网站，不提供绕过法律或网络政策的方法，也不会把某条 iPhone 规则套用到 Android。",
+      tone: "neutral",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "继续完成手机端准备",
+      items: [
+        { label: "设置中国旅行移动支付", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "手机号和可用支付方式彼此有关，但不是同一项任务。" },
+        { label: "没有本地号码时怎样使用公共 Wi-Fi", href: "/zh/guides/china-public-wifi-passport-login/", description: "准备具体场所的抵达备用方案，不要假设所有 Wi-Fi 相同。" },
+        { label: "在中国丢失手机后的数字恢复", href: "/zh/guides/lost-phone-in-china-digital-recovery/", description: "按正确顺序保护号码、账号、支付和旅行预订。" },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "已复核的官方与制造商来源",
+      items: [
+        { label: "电话用户实名登记规定（2026 年转载）", url: "https://sdca.miit.gov.cn/zwgk/fgbz/art/2026/art_9b270ddb59cc4643b0a9c6811c4e750d.html", publisher: "工业和信息化部", reviewedAt: "2026-08-12" },
+        { label: "在北京购买 SIM 卡指南", url: "https://english.beijing.gov.cn/quickguideservices/purchasingsimcards/", publisher: "北京市人民政府", reviewedAt: "2026-08-12" },
+        { label: "iPhone 国际旅行 eSIM 使用说明", url: "https://support.apple.com/en-us/118227", publisher: "Apple 支持", reviewedAt: "2026-08-12" },
+        { label: "在 iPhone 上开通中国内地运营商 eSIM", url: "https://support.apple.com/en-mide/123879", publisher: "Apple 支持", reviewedAt: "2026-08-12" },
+        { label: "境外及中国手机号注册移动支付说明", url: "https://nsd.mofcom.gov.cn/tzyts/art/2024/art_a08888d0b9da42f083b00223edaf1de7.html", publisher: "商务部", reviewedAt: "2026-08-12" },
+      ],
+    },
+  ],
 };
 
 export default body;

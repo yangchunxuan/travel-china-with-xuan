@@ -1,8 +1,14 @@
 # Source log — wuhan-breakfast-hot-dry-noodles-doupi-route
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: building one practical Wuhan breakfast from hot-dry noodles, doupi and mianwo; no shop ranking or fixed route inventory added.
+- Wuhan government sources support the dish identities and city breakfast context. Opening, sell-out, portions, recipes, allergens and payment flow remain shop-level facts.
+- Added the 2+1 portion rule, dish-role comparison, counter workflow and Chinese phrases, district-choice boundary, ingredient risks, quality cues and failure recovery in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

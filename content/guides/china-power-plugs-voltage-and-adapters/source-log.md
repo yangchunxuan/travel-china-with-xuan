@@ -7,6 +7,13 @@
 - Fact boundary: live rules are attributed to the exact authority, device, carrier, venue, transport mode or document process covered by the cited source. No universal promise is inferred.
 - Internal-link boundary: the power-bank guide owns portable-battery transport rules and the eSIM guide owns phone connectivity. This article owns plug shape, voltage and adapter choice.
 
+## Depth review — 2026-08-13
+
+- Rebuilt the guide around the traveller's actual decision: read the input label first, then choose a plug adapter, voltage converter or neither.
+- Added a device-by-device audit, hotel-room contingencies, grounding and high-wattage appliance boundaries, arrival testing and symptom-based recovery.
+- Kept national mains information separate from the socket actually available in a specific room; the article does not promise that one outlet pattern will appear everywhere.
+- Preserved the boundary with portable-battery transport rules and phone-connectivity setup instead of duplicating those guides.
+
 ## Official sources
 
 - Civil Aviation Administration of China: [Electricity in China](https://www.caac.gov.cn/ZTZL/RDZT/YTHYWZ/CHRY/SHZN/Electricity/index.html) — reviewed 2026-08-12

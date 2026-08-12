@@ -1,122 +1,31 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "A ritual bronze is not just an ornate container. Form, handles, feet, decoration, casting and inscription can point to service, ceremony, lineage memory and events—but only when labels and scholarship support the link."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Use four passes",
-      "body": "Name the form, infer its likely task, map decoration, then read the institution's inscription translation. Visual resemblance cannot replace provenance or palaeography.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Use four passes",
-      "columns": [
-        "Pass",
-        "Question",
-        "Limit"
-      ],
-      "rows": [
-        [
-          "Form",
-          "Ding, gui, jue, zun or another family?",
-          "Individual date and use still vary"
-        ],
-        [
-          "Function",
-          "Food, liquid, heating or presentation?",
-          "Ritual and burial use may overlap"
-        ],
-        [
-          "Decoration",
-          "Where are masks, animals and flanges?",
-          "Modern motif names are not ancient explanations"
-        ],
-        [
-          "Inscription",
-          "Where is it and what is translated?",
-          "Clan marks and long records are different evidence"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Read the full label and date range.",
-        "Walk around if permitted.",
-        "Find openings, handles and feet before decoration.",
-        "Compare the rubbing with the translation.",
-        "Contrast one different vessel form."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "A beautiful surface is not provenance",
-      "body": "Auction captions and unverified posts cannot establish excavation context, authenticity or inscription reading.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Share the places you plan to visit. A local human can connect current displays and visible evidence without inventing certainty.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Read more heritage",
-      "items": [
-        {
-          "label": "Read a Suzhou garden",
-          "href": "/guides/how-to-read-a-suzhou-garden/"
-        },
-        {
-          "label": "Visit the Terracotta Army independently",
-          "href": "/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "Do you need a guide in China?",
-          "href": "/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Institutional sources and image credit",
-      "items": [
-        {
-          "label": "Ancient Chinese bronzes",
-          "url": "https://www.shanghaimuseum.cn/mu/frontend/pg/article/id/RI00004046",
-          "publisher": "Shanghai Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Bronze civilization exhibition",
-          "url": "https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202112/t20211230_253354.html",
-          "publisher": "National Museum of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Early Western Zhou Bronze Gui by Gary Todd, CC0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"A Chinese ritual bronze is more than an ornate container. Shape, handles, feet, lid, casting, decoration, archaeological context and inscription can connect it to food or drink service, ceremony, rank, lineage memory and recorded events. The connection is only as strong as the museum label and scholarship behind it, so read in layers rather than assigning a symbol at first glance."},
+{"id":"answer","type":"callout","title":"Use four passes: identity, form, context, inscription","body":"First copy the museum's object name, period, provenance and number. Next identify vessel family and physical features. Then read the excavated tomb, hoard or collection history and compare associated vessels. Finally locate the inscription and use the museum's transcription and translation. Form suggests a functional category; context and text can narrow the historical claim.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"The boundary: “ritual bronze” is a category, not one timeless system"},
+{"id":"scope","type":"paragraph","text":"Shanghai Museum describes bronzes as vessels used in ceremonial offerings, exchange and banquets and notes their relationship to rank and power. Forms, assemblages and inscription habits changed from the early Bronze Age through Shang, Zhou and later periods, with major regional variation. This guide focuses on ancient Chinese vessel displays and does not claim that every bronze object was ritual, that one form always had one use, or that later antiquarian copies functioned like excavated Shang or Zhou pieces."},
+{"id":"forms-heading","type":"heading","level":2,"text":"Learn families before memorising dozens of names"},
+{"id":"forms","type":"table","caption":"A first map of common museum categories","columns":["Family","Forms you may see","Visual clues","First question"],"rows":[["Food vessels","Ding, gui and related containers","Tripod or four-legged cauldron; bowl-like body, handles or foot","What food role does the museum identify?"],["Wine vessels","Jue, zun, you, hu and related forms","Spouts, tall bodies, lids, handles or complex profiles","Was it for heating, serving, holding or pouring?"],["Water vessels","Pan, yi, jian and related forms","Wide basin or pouring vessel, sometimes paired","Does the display explain a washing or water ritual?"],["Musical instruments","Zhong, nao and bells","Suspension elements and tuned sets","Was it found as part of an ordered ensemble?"],["Weapons and fittings","Ge, swords, chariot or harness components","Functional edges, sockets and fittings","Is ‘ritual’ appropriate, or is this another bronze category?"]]},
+{"id":"passes-heading","type":"heading","level":2,"text":"Four passes around one object"},
+{"id":"passes","type":"list","ordered":true,"items":["Identity: record the institutional title, dynasty or archaeological period, date range, dimensions, findspot and collection number.","Form: sketch mouth, neck, body, handles, feet and lid; note how the vessel would stand, be carried or paired.","Context: ask whether it was excavated from a tomb, hoard or site, what stood beside it and whether the grouping is original or curatorial.","Surface and manufacture: separate cast relief, incised lines, inlay, corrosion and later repair using the label rather than guessing.","Inscription: find its location, length and orientation, then compare the visible text with the institutional rubbing, transcription and translation.","Claim: write one sentence supported by form, one by context and one by inscription; do not let any layer answer questions it cannot."]},
+{"id":"casting-heading","type":"heading","level":2,"text":"Surface detail can reveal manufacture—but condition complicates it"},
+{"id":"casting","type":"paragraph","text":"Ancient Chinese bronzes were cast, and museum galleries may explain piece-mould, separately cast attachments, inlay or later techniques. Look for repeated motifs, seams or joins only as prompts to consult the label; corrosion, cleaning, repair and casting complexity can make visual diagnosis unreliable. Patina is the product of material and history, not a simple authenticity colour chart. A smooth museum display also may include stabilisation and old restoration that deserve documentation."},
+{"id":"decoration-heading","type":"heading","level":2,"text":"Describe motifs before naming their meaning"},
+{"id":"decoration","type":"table","caption":"A disciplined decoration note","columns":["Step","Record","Avoid"],"rows":[["Placement","Band, handle, foot, lid or entire body","Discussing a motif without saying where it appears"],["Structure","Symmetry, repetition, relief, ground pattern and flanges","Turning every curve into an animal"],["Institutional name","Animal-mask, dragon, bird or geometric term used by the museum","Assuming the modern label is an ancient word"],["Comparison","A securely dated related vessel","Using an internet image with no provenance"],["Interpretation","A source-backed ceremonial or political reading","Claiming one universal ‘secret meaning’"]]},
+{"id":"inscription-heading","type":"heading","level":2,"text":"An inscription must be read as both text and object"},
+{"id":"inscription","type":"paragraph","text":"Inscriptions may sit inside a vessel, under a lid or on another hard-to-see surface, and range from a short clan or ancestor reference to longer records. Shanghai Museum notes that early inscriptions often identify families and ancestors and that longer event records become important in Zhou bronzes. Use the institution's rubbing or enhanced image to locate characters, then distinguish transcription, modern-script conversion, translation and historical interpretation. Punctuation and paragraphing are editorial tools, not features cast into the ancient text."},
+{"id":"inscription-evidence","type":"comparison","title":"What an inscription can support","columns":[{"heading":"Textual evidence","items":["Names and kin terms read by specialists","Recorded gift, appointment or event","Dedication and commemoration language"]},{"heading":"Contextual evidence","items":["Where the vessel was excavated","Other vessels and objects in the assemblage","Date inferred from archaeology and comparison"]},{"heading":"Do not infer automatically","items":["That the named person physically cast it","That every line is a neutral chronicle","That one vessel represents all ranks or regions"]}]},
+{"id":"sets-heading","type":"heading","level":2,"text":"Sets can matter more than masterpieces"},
+{"id":"sets","type":"paragraph","text":"A single ding or gui is visually memorable, but an excavated ensemble may show repetition, pairing and differences in size that relate to serving practice and social order. The National Museum describes ding and gui as important food-vessel categories and discusses ranked combinations in Zhou ritual systems. Apply those rules only where the exhibition dates and context justify them; a later copy, regional assemblage or isolated collection piece may not fit a textbook scheme."},
+{"id":"museum-heading","type":"heading","level":2,"text":"A 60-minute gallery route"},
+{"id":"museum","type":"list","items":["Start at the chronology panel so form changes are not flattened into ‘ancient China.’","Choose one food vessel, one wine or water vessel and one inscribed object.","Spend five minutes on each without reading symbolism first; sketch the profile and handles.","Find one securely excavated ensemble and compare sizes, numbers and placement.","Use a rubbing or digital enlargement for one inscription and copy the catalogue number.","Finish with a regional or later-period case to test what changed rather than treating the central sequence as universal."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Six mistakes that produce confident but weak readings"},
+{"id":"mistakes","type":"list","items":["Calling any three-legged bronze a ding without checking the label and profile.","Using a modern vessel name as proof of one fixed ancient use.","Reading taotie or another modern scholarly term as a surviving ancient explanation.","Assuming green patina means authentic, old or untouched.","Treating a beautiful unprovenanced object as stronger historical evidence than an excavated fragment.","Quoting an inscription translation without the museum, object number or scholarly source."]},
+{"id":"warning","type":"callout","title":"Provenance comes before visual confidence","body":"A museum label should distinguish excavated context, old collection, acquisition and later copy where known. Appearance cannot replace provenance. Do not use this field method to authenticate or buy antiquities; ownership history, export law and specialist examination require separate professional due diligence.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"A complete note for one bronze"},
+{"id":"checklist","type":"list","items":["Museum and object number","Period, date range and provenance","Vessel family and physical profile","Excavated assemblage or collection context","Decoration described before interpreted","Inscription location, institutional transcription and translation","One supported conclusion and one explicit uncertainty"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Share the museum and whether your interest is casting, ritual, inscription or early Chinese history. A local planner can check current gallery access and arrange enough time for a focused object route, while a specialist guide can be reserved only where the text or collection depth justifies it.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Read more evidence-led heritage","items":[{"label":"Read Hongshan jade in context","href":"/guides/hongshan-jade-context-and-symbols/","description":"Compare how form and excavation context support prehistoric interpretation."},{"label":"Read Liye Qin slips as local records","href":"/guides/liye-qin-slips-local-government-records/","description":"Move from an ancient text object into an administrative archive."},{"label":"Visit the Terracotta Army independently","href":"/guides/terracotta-warriors-without-tour/","description":"Apply evidence-first viewing at a large archaeological site."}]},
+{"id":"sources","type":"sources","title":"Institutional sources and image credit","items":[{"label":"Ancient Chinese Bronze Gallery","url":"https://www.shanghaimuseum.cn/mu/frontend/pg/article/id/RI00004046","publisher":"Shanghai Museum","reviewedAt":"2026-08-12"},{"label":"Exhibition of Chinese Ancient Bronzeware","url":"https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202112/t20211230_253354.html","publisher":"National Museum of China","reviewedAt":"2026-08-12"},{"label":"Hero: Early Western Zhou Bronze Gui by Gary Todd, CC0; cropped","url":"https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

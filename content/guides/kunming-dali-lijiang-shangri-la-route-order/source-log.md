@@ -1,6 +1,6 @@
-# Source log — Yunnan Route Order: Kunming, Dali, Lijiang and Shangri-La
+# Source log — Kunming, Dali, Lijiang and Shangri-La Route Order
 
-Status: `COPY READY — CENTRAL REVIEW REQUIRED`
+Status: `DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED`
 
 Checked at: 2026-08-12 (Asia/Shanghai)
 
@@ -8,37 +8,34 @@ Canonical owner: `/guides/kunming-dali-lijiang-shangri-la-route-order/`
 
 ## Editorial boundary
 
-This page owns the order and cut logic for Kunming, Dali, Lijiang and Shangri-La. It does not assign nights, prescribe attractions or replace live rail and road checks.
+This page owns order and cut logic for the four-city Yunnan corridor. It does not allocate nights, prescribe attractions, choose Lijiang accommodation areas, publish live transport or provide medical advice.
 
-## Sources
+## Official sources
 
-### National Railway Administration
+### National Railway Administration — Lijiang–Shangri-La railway opening
 
-- Source: Lijiang–Shangri-La railway opening
-- URL: https://www.nra.gov.cn/xwzx/tpsp/tpxx/202312/t20231229_344290.shtml
+- URL: https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml
 - Checked: 2026-08-12
-- Facts used: The railway connects Lijiang and Shangri-La and changes the feasible route chain.
-- Boundary: No live timetable or seat claim.
-- Update trigger: Rail service or station change.
+- Facts used: The railway opened in November 2023 and created a direct Lijiang–Shangri-La link and continuous corridor through Kunming, Dali and Lijiang.
+- Boundary: Opening information is not a current timetable or ticket source.
+- Update trigger: Major service or network change.
 
-### Yunnan Department of Transport
+### Yunnan Department of Transport — Railway overview
 
-- Source: Yunnan transport network update
-- URL: https://jtyst.yn.gov.cn/html/2025/xingyexinwen_0218/3133736.html
+- URL: https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html
 - Checked: 2026-08-12
-- Facts used: Official network context supports treating the four places as a corridor with different gateway roles.
-- Boundary: Network completion does not guarantee a convenient departure on one date.
-- Update trigger: Major network update.
+- Facts used: Official route context and stated station elevations of about 2,400 metres at Lijiang and 3,274 metres at Shangri-La.
+- Boundary: Elevation facts do not predict individual health response.
+- Update trigger: Official correction or network change.
 
-## Planning judgments
+## Editorial judgments
 
-- A gradual northbound or southbound chain is easier to reason about than repeated returns to Kunming.
-- Shangri-La should not be treated as an interchangeable add-on because higher elevation and long onward moves change the recovery margin.
-- Kunming can be a gateway rather than a mandatory sightseeing stop.
+- Northbound and southbound corridors should be chosen from gateways and recovery capacity.
+- Dali and Lijiang must have distinct activity roles; fame alone cannot justify both.
+- Shangri-La requires a flexible first day, lower-elevation fallback and credible exit plan.
+- Cut a whole weak stop before compressing all four.
 
 ## Explicit exclusions
 
-- No live fare, seat, timetable, opening-hour or inventory claim.
-- No complete personalised day-by-day itinerary.
-- No city × day-count × traveller-type index variants.
-- Recheck named operators and official rules near booking.
+- No medical clearance, altitude-response prediction, live timetable, fare or inventory.
+- No universal night allocation or personalised itinerary.

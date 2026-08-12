@@ -1,141 +1,314 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
+  schemaVersion: "1.0.0",
+  blocks: [
     {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "For mainland immigration purposes, Hong Kong and Macao are separate border jurisdictions. Leaving mainland China for either place is an exit from the mainland; returning is a new mainland entry. Whether that return is allowed depends on your passport, visa entries, visa-free policy and the exact route—not on how short the side trip is."
+      id: "answer-first",
+      type: "lead",
+      text: "For mainland immigration purposes, a trip from mainland China to Hong Kong or Macao ends that mainland stay. Coming back through mainland border inspection is a new mainland entry, even after a same-day visit. Count every actual jurisdiction crossing, then prove a valid entry basis for each mainland arrival. Hong Kong and Macao apply their own admission rules as well.",
     },
     {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "Count crossings, not hotel nights",
-      "columns": [
-        "Situation",
-        "Route",
-        "Action"
+      id: "jurisdiction-heading",
+      type: "heading",
+      level: 2,
+      text: "Treat the mainland, Hong Kong and Macao as three admission checks",
+    },
+    {
+      id: "jurisdiction-explainer",
+      type: "paragraph",
+      text: "They are all parts of China, but they do not share one visitor-admission record. At a mainland–Hong Kong or mainland–Macao boundary, you complete mainland exit or entry inspection and the relevant SAR's clearance. A Chinese mainland visa does not itself admit you to Hong Kong or Macao, and permission to visit either SAR does not give you a mainland entry.",
+    },
+    {
+      id: "crossing-map",
+      type: "table",
+      caption: "What each direct crossing does to the mainland count",
+      columns: ["Actual movement", "Mainland count", "What must be checked"],
+      rows: [
+        ["Mainland → Hong Kong", "One mainland exit", "Hong Kong admission for your passport or travel document"],
+        ["Hong Kong → Mainland", "One new mainland entry", "An unused, unexpired mainland entry basis"],
+        ["Mainland → Macao → Mainland", "One exit plus one new entry", "Macao admission and permission to re-enter the mainland"],
+        ["Hong Kong → Macao by direct ferry or bridge shuttle", "No mainland entry", "Separate Hong Kong departure and Macao arrival requirements"],
+        ["Hong Kong → Shenzhen → Zhuhai → Macao", "One mainland entry and one mainland exit", "Mainland permission is needed for the overland middle section"],
+        ["International airside connection without mainland immigration", "Normally no mainland entry", "Confirm that the airport and itinerary allow you to remain in the transit area"],
       ],
-      "rows": [
-        [
-          "Mainland → Hong Kong",
-          "One mainland exit",
-          "The current mainland stay ends at border inspection."
-        ],
-        [
-          "Hong Kong → Mainland",
-          "One new mainland entry",
-          "You need valid permission for that entry."
-        ],
-        [
-          "Mainland → Macao → Mainland",
-          "Exit plus a new entry",
-          "A same-day turn still crosses two immigration controls."
-        ],
-        [
-          "Hong Kong → Macao",
-          "No mainland entry",
-          "Hong Kong and Macao apply their own admission rules."
-        ]
-      ]
     },
     {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "Draw your route before buying tickets"
+      id: "route-line-heading",
+      type: "heading",
+      level: 2,
+      text: "Draw the route by jurisdictions, not by hotel nights",
     },
     {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "Write each jurisdiction in order: for example, Shanghai → Hong Kong → Shenzhen contains two separate mainland stays.",
-        "A single-entry mainland visa is normally consumed when you first enter the mainland. If you then leave for Hong Kong or Macao, it does not become reusable merely because it remains within its printed validity dates.",
-        "A double- or multiple-entry visa must still be valid on the return date and have an unused entry. Duration of each stay and visa validity are different fields.",
-        "Visa-free and transit-without-visa schemes have their own nationality, port, onward-ticket and region rules. Do not treat them as spare entries without checking the live policy."
-      ]
+      id: "route-line-explainer",
+      type: "paragraph",
+      text: "Write every place in order and place a vertical mark whenever immigration control changes. Shanghai → Hong Kong → Shenzhen contains two mainland stays: the first ends on departure for Hong Kong, and the second begins at Shenzhen border inspection. The number of nights in Hong Kong, the transport mode and whether both mainland cities are on one holiday do not combine those stays.",
     },
     {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "A safer booking test"
+      id: "route-examples",
+      type: "table",
+      caption: "Worked route sketches",
+      columns: ["Itinerary", "Mainland arrivals to justify", "Planning consequence"],
+      rows: [
+        ["Home → Beijing → Hong Kong → Home", "One", "No mainland re-entry after Hong Kong"],
+        ["Home → Beijing → Hong Kong → Shanghai → Home", "Two", "A single-entry visa alone does not cover both mainland stays"],
+        ["Home → Hong Kong → Shenzhen → Macao → Home", "One", "Check Hong Kong, mainland and Macao admission separately"],
+        ["Home → Shanghai → Macao → Zhuhai → Hong Kong → Home", "Two", "Macao → Zhuhai starts the second mainland stay"],
+        ["Hong Kong → Macao direct → Hong Kong", "Zero", "This does not enter the mainland if the route stays outside mainland immigration"],
+      ],
     },
     {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Mark every mainland entry and exit on one line.",
-        "For each mainland arrival, write the legal basis: unused visa entry, applicable visa-free entry, or a specifically eligible transit policy.",
-        "Check Hong Kong and Macao admission separately on their official immigration sites.",
-        "Confirm that every carrier and border port accepts your documents and route; a ferry, train and land crossing can have different check-in steps.",
-        "Keep onward tickets and hotel evidence available, but understand that documents support an application—they do not guarantee admission."
-      ]
+      id: "entry-basis-heading",
+      type: "heading",
+      level: 2,
+      text: "Match every mainland arrival to one valid entry basis",
     },
     {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "If you discover the entry problem mid-trip",
-      "body": "Do not travel to the border hoping a short visit will reset permission. Contact the National Immigration Administration service channel, the nearest mainland exit-entry authority and your airline or operator. Change the route while you remain lawfully admitted; if professional advice is needed, use a qualified immigration adviser or your embassy.",
-      "tone": "warning"
+      id: "entry-basis-table",
+      type: "table",
+      caption: "What common documents and policies do—and do not—cover",
+      columns: ["Entry basis", "How to count it", "Critical check before travel"],
+      rows: [
+        ["Single-entry mainland visa", "The permitted entry is used when you enter the mainland", "After a mainland exit, the same used entry does not become available again"],
+        ["Double-entry mainland visa", "Up to two mainland entries while the visa remains valid", "Confirm that the second entry is unused and occurs before the enter-before deadline"],
+        ["Multiple-entry mainland visa", "Repeated entries within the printed validity and conditions", "Validity, passport details and permitted duration of each stay still matter"],
+        ["Valid foreigner's residence permit", "May provide multiple mainland entries without a separate visa", "Verify that the permit and linked passport details remain valid for the return"],
+        ["Visa-free entry", "Eligibility is assessed for the particular arrival", "Recheck passport, purpose, stay limit and current policy for every planned entry"],
+        ["Transit without a visa", "A conditional transit admission, not a spare tourist entry", "Nationality, port, permitted area and confirmed onward route to a third country or region must all qualify"],
+      ],
     },
     {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "Scope and live-rule boundary",
-      "body": "This guide explains border counting, not individual eligibility. Nationality, ordinary visas, unilateral visa-free arrangements and transit-without-visa rules change. Recheck official rules for the exact passport, dates, ports and onward itinerary in the same week you travel.",
-      "tone": "neutral"
+      id: "visa-fields-heading",
+      type: "heading",
+      level: 2,
+      text: "Do not confuse entries, validity and duration of stay",
     },
     {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
+      id: "visa-fields-explainer",
+      type: "paragraph",
+      text: "A visa's number of entries says how many mainland admissions it can support. Its entry validity says when an unused entry may be used. Its duration of stay limits the stay after each admission. A visa can therefore be unusable because its entries are exhausted even though the printed expiry date is in the future, or because its validity has ended even though an entry appears unused.",
+    },
+    {
+      id: "single-entry-warning",
+      type: "callout",
+      title: "A side trip does not pause a single-entry stay",
+      body: "If you entered the mainland on a single-entry visa and then clear mainland exit inspection for Hong Kong or Macao, that mainland stay has ended. Remaining days from the earlier stay are not a return ticket, and the used entry does not revive when you come back.",
+      tone: "warning",
+    },
+    {
+      id: "separate-admission-heading",
+      type: "heading",
+      level: 2,
+      text: "Check Hong Kong and Macao admission separately",
+    },
+    {
+      id: "separate-admission-explainer",
+      type: "paragraph",
+      text: "Hong Kong's visitor visa or entry-permit requirement depends on nationality and travel-document type. Macao likewise has its own passport-validity, visa or authorization, onward-ticket and admission rules. A mainland visa, a mainland visa-free policy or a through ticket does not replace either SAR's check. Consult the Hong Kong Immigration Department and Macao SAR Government pages for the exact passport before committing to non-refundable transport.",
+    },
+    {
+      id: "sar-checklist",
+      type: "list",
+      items: [
+        "Check the exact passport or travel document—not just country of residence.",
+        "Confirm the purpose and permitted length of the SAR visit, including any pre-arrival registration or visa requirement.",
+        "Check passport validity, onward or return evidence and any proof of funds required by the relevant authority.",
+        "Repeat the check for the second SAR if the itinerary includes both Hong Kong and Macao.",
+        "Remember that meeting published conditions does not remove the immigration officer's admission decision.",
+      ],
+    },
+    {
+      id: "transit-heading",
+      type: "heading",
+      level: 2,
+      text: "Use transit-without-visa only when the route is genuinely eligible",
+    },
+    {
+      id: "transit-explainer",
+      type: "paragraph",
+      text: "China's transit policies require movement through the mainland to a third country or region and impose live conditions on passports, ports, tickets and permitted travel areas. Hong Kong or Macao can be an onward region in a qualifying itinerary, but that does not make every mainland–SAR return trip a transit. For example, Hong Kong → mainland → Hong Kong does not show onward travel to a different country or region.",
+    },
+    {
+      id: "transit-checklist",
+      type: "list",
+      items: [
+        "Write origin, mainland entry port, mainland exit port and onward country or region exactly as ticketed.",
+        "Check that the passport nationality and both mainland ports are covered by the current policy.",
+        "Confirm that all mainland movements remain inside the policy's permitted area and time limit.",
+        "Use confirmed onward transport with the required seat and departure details; do not assume separate tickets will be accepted without checking.",
+        "Ask the operating carrier and the relevant border-inspection authority when the route is unusual or the documents do not present a clear through journey.",
+      ],
+    },
+    {
+      id: "booking-workflow-heading",
+      type: "heading",
+      level: 2,
+      text: "Run this six-step check before paying",
+    },
+    {
+      id: "booking-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "Draw the full route, including every actual land, rail, ferry and airport transfer.",
+        "Mark each mainland entry and exit; do not merge separate mainland stays.",
+        "For every mainland arrival, write the exact legal basis and its live conditions.",
+        "Check Hong Kong and Macao admission independently for the same passport.",
+        "Verify the carrier, border port and connection method, especially if a transfer may require immigration and baggage re-check.",
+        "Only then buy the fixed tickets; save the official policy pages and confirmations used for the decision.",
+      ],
+    },
+    {
+      id: "document-pack-heading",
+      type: "heading",
+      level: 2,
+      text: "Carry a route evidence pack",
+    },
+    {
+      id: "document-pack",
+      type: "list",
+      items: [
+        "The original passport and any valid mainland visa, residence permit or other entry document relied upon.",
+        "Confirmed onward tickets showing dates, ports and the next country or region.",
+        "Accommodation details for each jurisdiction and contact details for the operators involved.",
+        "Offline copies of the relevant official policy pages and any written answer from an official support channel.",
+        "A simple one-line itinerary that makes the sequence of jurisdictions visible to you and, if asked, to the carrier.",
+      ],
+    },
+    {
+      id: "common-errors-heading",
+      type: "heading",
+      level: 2,
+      text: "Common route-counting mistakes",
+    },
+    {
+      id: "common-errors",
+      type: "list",
+      items: [
+        "Counting one holiday as one entry even though it contains two separate mainland stays.",
+        "Reading the visa expiry date but not checking whether the permitted entries have already been used.",
+        "Assuming a same-day Hong Kong or Macao visit does not count as a mainland exit.",
+        "Treating a multiple-entry visa as unlimited without checking its validity, linked passport and stay duration.",
+        "Using a direct Hong Kong–Macao route on the map while actually booking an overland transfer through Shenzhen or Zhuhai.",
+        "Calling any short mainland visit a transit even when origin and onward destination do not meet the third-country-or-region rule.",
+        "Checking only mainland permission and discovering too late that Hong Kong or Macao requires separate advance authorization.",
+      ],
+    },
+    {
+      id: "recovery-heading",
+      type: "heading",
+      level: 2,
+      text: "If you discover that the route needs an entry you do not have",
+    },
+    {
+      id: "recovery-explainer",
+      type: "paragraph",
+      text: "Fix the route before approaching the border. If you are still lawfully in the mainland, the lowest-risk option may be to move Hong Kong or Macao to the end and depart internationally from there, or remove the side trip. If you are already in an SAR, do not assume a visa can be issued there quickly; check lawful stay time, contact the relevant Chinese visa authority and consider departing from that SAR instead of attempting mainland re-entry.",
+    },
+    {
+      id: "recovery-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "Stop further non-refundable bookings and keep proof of your current lawful admission and permitted stay.",
+        "Call the China Immigration Service Hotline 12367 or the relevant mainland exit-entry authority for mainland policy questions.",
+        "Contact Hong Kong Immigration or Macao immigration for questions about remaining or changing plans in that SAR.",
+        "Ask the operating airline, railway or ferry company which reroute it can actually ticket and board.",
+        "For a new mainland visa or passport-specific advice, use the responsible Chinese embassy, consulate or visa service channel; allow for refusal and processing time.",
+        "Choose a route that remains lawful even if the hoped-for new permission is not issued.",
+      ],
+    },
+    {
+      id: "border-warning",
+      type: "callout",
+      title: "Do not cross out to test whether you can come back",
+      body: "A border attempt is not a harmless eligibility check. Carriers may refuse boarding and border authorities make the admission decision. Resolve unclear eligibility through the responsible authorities while you still have a lawful fallback route.",
+      tone: "warning",
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "Scope and live-rule boundary",
+      body: "This guide explains how to count jurisdictions and identify the questions that require an official answer. It does not determine eligibility for a particular nationality, visa-free policy, residence status or port. Recheck the exact passport, documents, dates, ports and onward itinerary against current official rules shortly before travel.",
+      tone: "neutral",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Continue planning",
+      items: [
         {
-          "label": "China entry requirements",
-          "href": "/guides/china-entry-requirements/",
-          "description": "Check the entry basis for each mainland arrival."
+          label: "Shenzhen–Hong Kong transport",
+          href: "/guides/shenzhen-hong-kong-transport-route/",
+          description: "Choose the crossing only after mainland and Hong Kong eligibility is clear.",
         },
         {
-          "label": "Shenzhen–Hong Kong transport",
-          "href": "/guides/shenzhen-hong-kong-transport-route/",
-          "description": "Choose a crossing after eligibility is clear."
+          label: "Hong Kong–Macao transport",
+          href: "/guides/hong-kong-macau-transport-route/",
+          description: "Compare direct routes that do not enter the mainland.",
         },
         {
-          "label": "Hong Kong–Macao transport",
-          "href": "/guides/hong-kong-macau-transport-route/",
-          "description": "Plan the non-mainland leg separately."
-        }
-      ]
+          label: "Passport names across China bookings",
+          href: "/guides/passport-name-across-china-bookings/",
+          description: "Keep the same travel-document identity across every leg.",
+        },
+        {
+          label: "Lost passport recovery in China",
+          href: "/guides/lost-passport-in-china-exit-recovery/",
+          description: "Protect the exit plan if the document changes mid-trip.",
+        },
+      ],
     },
     {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official sources reviewed",
-      "items": [
+      id: "sources",
+      type: "sources",
+      title: "Official sources reviewed",
+      items: [
         {
-          "label": "Exit and Entry Administration Law (official English text)",
-          "url": "https://www.nia.gov.cn/n741440/n741547/c757592/content.html",
-          "publisher": "National Immigration Administration",
-          "reviewedAt": "2026-08-12"
+          label: "China visa terms, entries and residence-permit guidance",
+          url: "https://cs.mfa.gov.cn/wgrlh/lhqz/",
+          publisher: "Department of Consular Affairs, Ministry of Foreign Affairs of China",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "Chinese visa FAQ explaining Hong Kong and Macao entries",
-          "url": "https://sk.china-embassy.gov.cn/slo/consularaffairs/VISA/202005/P020210712030405067319.pdf",
-          "publisher": "Embassy of China in Slovakia",
-          "reviewedAt": "2026-08-12"
+          label: "Exit and Entry Administration Law of the People's Republic of China",
+          url: "https://en.nia.gov.cn/n147418/n147458/c155978/content.html",
+          publisher: "National Immigration Administration",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "Border inspection for travel between mainland and Hong Kong/Macao",
-          "url": "https://en.nia.gov.cn/n147413/c177654/content.html",
-          "publisher": "National Immigration Administration",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
+          label: "China's 240-hour visa-free transit policy interpretation",
+          url: "https://en.nia.gov.cn/n147418/n147463/c183412/content.html",
+          publisher: "National Immigration Administration",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "China Immigration Service Hotline 12367",
+          url: "https://en.nia.gov.cn/n147413/c194788/content.html",
+          publisher: "National Immigration Administration",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "Hong Kong visit visa and entry-permit requirements",
+          url: "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+          publisher: "Hong Kong Immigration Department",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "Immigration clearance of non-residents of Macao",
+          url: "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+          publisher: "Macao SAR Government",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "Hong Kong–Macao and Hong Kong–Zhuhai bridge shuttle routes",
+          url: "https://www.hzmb.gov.hk/en/cross-boundary.html",
+          publisher: "Hong Kong–Zhuhai–Macao Bridge Hong Kong Port",
+          reviewedAt: "2026-08-13",
+        },
+      ],
+    },
+  ],
 };
 
 export default body;

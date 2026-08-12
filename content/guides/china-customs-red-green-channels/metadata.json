@@ -21,8 +21,8 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-12",
-  "dateModified": "2026-08-12",
-  "sourceReviewedDate": "2026-08-12",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "essentials",
     "family": "task",
@@ -35,9 +35,9 @@
   "locales": {
     "en": {
       "path": "/guides/china-customs-red-green-channels/",
-      "title": "China Customs Red or Green Channel: How to Choose",
+      "title": "China Customs Red or Green Channel: What to Declare",
       "headline": "China Customs Red and Green Channels: Declare or Walk Through?",
-      "description": "Use a declare-first test for restricted goods, animal or plant products, currency, commercial items and anything uncertain.",
+      "description": "Choose China Customs' red or green channel, identify declaration categories, prepare documents and recover if you notice an item after entering green.",
       "heroAlt": "Editorial illustration of airport luggage splitting toward red and green customs lanes.",
       "navTitle": "China customs channels",
       "featuredLinkLabel": "Choose the right customs channel",
@@ -50,9 +50,9 @@
     },
     "zh": {
       "path": "/zh/guides/china-customs-red-green-channels/",
-      "title": "中国海关红色或绿色通道怎么选？",
+      "title": "中国海关红绿通道怎么选：哪些物品要申报",
       "headline": "中国海关红绿通道：哪些情况要申报",
-      "description": "用“有疑问就申报”的方法检查限制物品、动植物产品、货币、商业物品和超量行李。",
+      "description": "读懂中国海关红绿通道，逐项检查申报类别、准备证明材料，并了解走进绿色通道后发现遗漏应怎样处理。",
       "heroAlt": "机场行李分别走向红色和绿色海关通道的编辑插画。",
       "navTitle": "中国海关红绿通道",
       "featuredLinkLabel": "选择正确的海关通道",
@@ -65,9 +65,9 @@
     },
     "ko": {
       "path": "/ko/guides/china-customs-red-green-channels/",
-      "title": "중국 세관 적색·녹색 통로 선택법",
+      "title": "중국 세관 적색·녹색 통로: 신고 물품과 선택법",
       "headline": "중국 세관 적색·녹색 통로: 신고해야 할 때",
-      "description": "제한품, 동식물 제품, 통화, 상업용 물품과 불확실한 짐은 신고 우선 기준으로 확인합니다.",
+      "description": "중국 세관 적색·녹색 통로의 신고 범주, 준비 서류, 공항 절차와 녹색 통로 진입 후 누락을 발견했을 때의 대처를 설명합니다.",
       "heroAlt": "공항 수하물이 적색과 녹색 세관 통로로 갈라지는 편집 일러스트.",
       "navTitle": "중국 세관 통로",
       "featuredLinkLabel": "올바른 세관 통로 선택",

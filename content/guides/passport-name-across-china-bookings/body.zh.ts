@@ -1,147 +1,377 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
+  schemaVersion: "1.0.0",
+  blocks: [
     {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "以旅行当天实际携带的护照为唯一身份底稿。航班和实名制铁路票必须与所用有效证件匹配；酒店和应用可能用不同字段显示，但这不表示可以自创昵称或换用另一证件。先从护照建立一条原始记录，再保存平台格式变化的证据。"
+      id: "answer-first",
+      type: "lead",
+      text: "所有实名预订都应以旅行时实际携带的有效护照为底稿，但每个平台要遵循自己的字段说明。航司、中国铁路 12306、酒店和景区显示的姓名未必完全一样；必须保持一致的是实际旅客、证件类型、证件号码和姓名来源。如果系统强制使用一项不明确的缩写、截断或姓名顺序，应暂停并向负责方确认，不要自行猜测。",
     },
     {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "同一身份，不同表单",
-      "columns": [
-        "情况",
-        "选择",
-        "行动"
+      id: "source-record-heading",
+      type: "heading",
+      level: 2,
+      text: "建立一份仅供自己使用的护照身份底稿",
+    },
+    {
+      id: "source-record-explainer",
+      type: "paragraph",
+      text: "打开任何预订表单前，先把护照资料页的身份字段抄到一份私密记录中。这是用来逐项比对的底稿，不是自行创建的新拼写标准。如果某项预订使用的是另一种官方认可证件，例如外国人永久居留身份证，要为那份证件单独建立记录，不能假定值机或验票时可以直接换成护照。",
+    },
+    {
+      id: "source-record-fields",
+      type: "list",
+      items: [
+        "证件种类及签发国家或机关。",
+        "资料页上实际出现的每个姓名标签，例如 Full Name、Surname、Given Names、First Name、Middle Name 或 Last Name。",
+        "视读区中拉丁字母姓名的准确拼写、顺序、空格和标点。",
+        "护照号码、国籍、出生日期、需要时填写的性别及有效期。",
+        "单独记录机读区（MRZ）的姓名形式，但仅在官方平台明确要求参考时使用。",
       ],
-      "rows": [
-        [
-          "机票",
-          "姓名与有效证件必须匹配",
-          "按航司护照姓名说明填写，出票后立即核对。"
-        ],
-        [
-          "铁路 12306",
-          "准确填写证件类型、姓名和号码",
-          "乘车携带订票所用护照原件。"
-        ],
-        [
-          "酒店",
-          "使用护照身份，显示异常时通知酒店",
-          "保留确认单并携护照入住。"
-        ],
-        [
-          "应用字段太短或拆分方式不同",
-          "按平台官方格式指引",
-          "截图保存，未经客服确认不要自创缩写。"
-        ]
-      ]
     },
     {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "建立护照身份底稿"
+      id: "channel-map-heading",
+      type: "heading",
+      level: 2,
+      text: "把护照信息映射到每一种预订渠道",
     },
     {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "从资料页抄录姓、名、护照号、国籍、出生日期和有效期。机读区可帮助判断标点与顺序，但具体字段仍以预订方说明为准。",
-        "连字符、空格、撇号和多个名字出票后可能显示不同。外观变化不一定是错误，但只有服务商能确认是否接受。",
-        "不要把旧护照号码与新护照姓名混用，也不要用居留证订一段后假定另一段可直接换成护照。",
-        "中国境内系统可能将拉丁字母转为大写或去掉空格；保留确认页面，结果有歧义时联系官方客服。"
-      ]
+      id: "channel-map",
+      type: "table",
+      caption: "同一名旅客会遇到不同的字段规则",
+      columns: ["预订项目", "身份核验依据", "不要想当然"],
+      rows: [
+        ["航班", "航司的姓名字段及购票时使用的有效证件", "12306 的姓名顺序一定适用于航司"],
+        ["中国铁路 12306", "12306 外国护照录入规则及购票所用有效证件原件", "把机票上的 LAST/FIRST 显示直接复制到铁路单一姓名字段"],
+        ["酒店", "办理住宿登记时出示的有效护照或其他认可证件", "预订昵称足以完成法定入住登记"],
+        ["景区", "该场馆现行的实名预订和入场说明", "所有博物馆都接受相同姓名格式或证件"],
+        ["第三方预订代理", "最终核验方仍是实际航司、酒店或场馆", "代理表单接受就保证能登机、入住或入场"],
+      ],
     },
     {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "先更正，不要先取消"
+      id: "name-structures-heading",
+      type: "heading",
+      level: 2,
+      text: "先看护照标签，再决定姓名顺序",
     },
     {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "用旅行日仍有效的护照录入身份。",
-        "付款前逐字符比较姓名、证件类型和号码。",
-        "出票后立即查看正式票证或订单，不只看曾填写的表单。",
-        "有不一致时先联系航司、12306、代理或酒店官方渠道，询问更正、重开还是重新预订。",
-        "携护照原件及任何已获接受的格式或证件更新书面确认。"
-      ]
+      id: "name-structures",
+      type: "table",
+      caption: "12306 目前对外国护照姓名的录入说明",
+      columns: ["护照版式", "12306 录入方法", "何时必须升级确认"],
+      rows: [
+        ["只有一个 Full Name 字段", "填写 Full Name 的完整内容", "另一服务商强制要求分开填写姓和名"],
+        ["Surname 和 Given Names", "按 Surname、一个空格、Given Names 的顺序填写", "护照标签或姓名组成不明确"],
+        ["First Name、Middle Name 和 Last Name", "按护照标签所列的 First–Middle–Last 顺序以空格分隔", "另一个平台要求姓在前时，应遵守该平台规则而不是套用 12306"],
+        ["只有一个姓名，没有单独的姓", "按 12306 规则使用护照的 Full Name", "航司或景区强制要求姓和名两个字段都有内容"],
+        ["护照同时显示多种文字的姓名", "12306 要求仅录入拉丁字母 A–Z 或 a–z", "视读区缺少拉丁姓名，或与机读区明显不一致"],
+      ],
     },
     {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "订票后更换护照",
-      "body": "分别联系每个服务商，航司、铁路和酒店没有共享更新流程。依法保留新旧护照资料与换发证明，但不要假定同时携带旧护照就自动解决问题；由服务商说明更正或重开方式。",
-      "tone": "warning"
+      id: "mrz-heading",
+      type: "heading",
+      level: 2,
+      text: "按平台指示参考机读区，不要把它当成通用替代姓名",
     },
     {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "适用边界与实时规则",
-      "body": "本文不能判断某个缩写或缺少字符是否一定被接受。航司、中国铁路、酒店和边检按各自系统进行实名核验。旅行前使用官方客服，不要依赖论坛对姓名格式的保证。",
-      "tone": "neutral"
+      id: "mrz-explainer",
+      type: "paragraph",
+      text: "机读区是护照资料页底部的两行或三行编码。12306 对外国护照核验的说明是以视读区为主、机读区为辅，并要求姓名含连字符、撇号或逗号等分隔符时参考机读码，把机读码中的分隔符转换为空格。不要把尖括号本身录入，也不要用 12306 的规则取代航司自己的说明。",
     },
     {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
+      id: "format-heading",
+      type: "heading",
+      level: 2,
+      text: "有意识地处理空格、标点和超长姓名",
+    },
+    {
+      id: "format-table",
+      type: "table",
+      caption: "逐项处理姓名格式问题",
+      columns: ["问题", "稳妥做法", "不安全的捷径"],
+      rows: [
+        ["姓名组之间的空格", "遵循平台书面规则；12306 要求各组之间使用一个空格", "因为旧订单显示时合并过，就删除全部空格"],
+        ["连字符、撇号或逗号", "按服务商说明操作；12306 要求这类分隔符参考机读区", "未经确认就自行删改字母或创造另一种拼写"],
+        ["重音符号或非拉丁文字", "遵守平台支持字符规则；12306 外国护照姓名使用拉丁字母", "根据读音自行发明转写"],
+        ["姓名非常长", "12306 目前允许录满 64 个字符并不补录超出部分；保存证据，身份有歧义时升级处理", "没有官方规则就自行决定删掉哪些中间名"],
+        ["出票后显示合并或调换顺序", "比对所有字母和后台证件信息，不确定时询问服务商", "把所有外观差异都判定为安全，或一律判定为无效"],
+      ],
+    },
+    {
+      id: "flight-heading",
+      type: "heading",
+      level: 2,
+      text: "机票表单以实际承运人的规则为准",
+    },
+    {
+      id: "flight-explainer",
+      type: "paragraph",
+      text: "中国民航规定要求旅客在值机时出示与购票时一致的有效身份证件，出票后的书面信息也必须包含旅客姓名。但姓、名、中间名和支持字符如何录入，仍由航司规定。代码共享航班要同时查看销售航司和实际承运人，并在出票后立即核对正式客票或行程信息，不要只相信自己提交过的表单。",
+    },
+    {
+      id: "flight-checklist",
+      type: "list",
+      items: [
+        "只有旅行时确实要出示护照，才把证件类型选为护照。",
+        "填写前先看航司对 surname/family name 和 given/first name 的示例。",
+        "把出票后的旅客姓名、证件类型和证件号码与护照底稿逐项比较。",
+        "代码共享航班要确认机场现场由哪一家航司核验证件。",
+        "发现错误时先联系出票方和实际承运人，不要急着另买一张或取消原票。",
+      ],
+    },
+    {
+      id: "flight-remedy",
+      type: "callout",
+      title: "不要先假定改姓名一定免费",
+      body: "现行全国性旅客服务规定要求旅客使用与购票时一致的有效身份证件办理乘机手续，但并未为所有姓名错误规定统一的更正方式或收费标准。应由出票方和实际承运人针对这张客票确认处理路径。先问清是更正、重开、退票还是重新购买，并取得费用和截止时间，再操作。",
+      tone: "warning",
+    },
+    {
+      id: "rail-heading",
+      type: "heading",
+      level: 2,
+      text: "使用 12306 时严格遵守其外国护照规则",
+    },
+    {
+      id: "rail-explainer",
+      type: "paragraph",
+      text: "中国铁路实行实名制购票。外籍旅客可以使用系统支持的有效护照，按要求完成身份核验，并在进站、出站和乘车时出示购票所用的有效证件原件。铁路姓名字段的依据是 12306 官方外国护照录入说明，而不是机票或酒店确认单。",
+    },
+    {
+      id: "rail-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "选择准确的护照证件类型，并正确抄录号码和有效期。",
+        "根据护照实际标签版式及上文 12306 规则填写姓名。",
+        "账号提示时完成自动核验、上传证件照片核验或车站现场核验。",
+        "付款前把乘车人记录与护照底稿逐字符比较。",
+        "购票后保存订单详情，并携带该张票所用的有效护照原件。",
+      ],
+    },
+    {
+      id: "rail-correction",
+      type: "callout",
+      title: "12306 不会把错误的乘车人姓名当作普通改签处理",
+      body: "12306 现行购票问答明确，购票后不能更改乘车人姓名。乘车人身份信息填写错误时，官方给出的处理方式是退票后重新购买，并按规定收取退票费。操作前先核对当前余票和官方流程；改日期或车次不能修复身份错误。",
+      tone: "warning",
+    },
+    {
+      id: "hotel-heading",
+      type: "heading",
+      level: 2,
+      text: "区分酒店预订姓名和法定入住身份",
+    },
+    {
+      id: "hotel-explainer",
+      type: "paragraph",
+      text: "预订姓名的作用是让酒店找到并保留房间。办理入住时，外籍住客需要出示有效护照、外国人永久居留身份证或其他认可证件，由酒店完成住宿登记。如果付款人、预订人和实际住客不是同一人，应通过预订渠道添加住客的护照姓名，并在到店前取得酒店确认。",
+    },
+    {
+      id: "hotel-checklist",
+      type: "list",
+      items: [
+        "预订渠道允许时，把每一名实际入住者都加入订单。",
+        "如果订单显示的姓名被缩短、调换顺序或登记在另一名旅客名下，提前告知酒店。",
+        "每名住客都要携带有效证件原件；护照截图不是入住证件。",
+        "不要把线上付款成功理解为酒店一定能够登记该住客的证件。",
+        "保存酒店的书面答复和预订确认，尤其是深夜抵达时。",
+      ],
+    },
+    {
+      id: "attraction-heading",
+      type: "heading",
+      level: 2,
+      text: "预订每个景区时都从该场馆的规则重新开始",
+    },
+    {
+      id: "attraction-explainer",
+      type: "paragraph",
+      text: "实名景区票务并不是全国统一表单。以故宫博物院为例，国际游客需要提供完整姓名和护照号码，入场时还要携带预订所用的有效证件原件。其他博物馆或景区可能支持不同证件和字段版式。每个场馆都应查看现行官方票务页面，不能未经核对就粘贴机票或 12306 上被缩短的显示姓名。",
+    },
+    {
+      id: "cross-system-workflow-heading",
+      type: "heading",
+      level: 2,
+      text: "所有预订都采用“先核实、后更正”的流程",
+    },
+    {
+      id: "cross-system-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "建立护照身份底稿，确定每项预订实际要使用哪份实体证件。",
+        "打开该航司、12306、酒店或景区的官方字段说明。",
+        "录入信息后，如果表单强制使用特殊格式，在付款前保存带日期的截图。",
+        "购买完成后立即核对正式客票、乘车人记录或确认单。",
+        "把差异分类为显示格式变化或底层身份不一致；无法证明属于哪一类时就升级确认。",
+        "保存服务商书面答复，并在旅行日携带有效证件原件。",
+      ],
+    },
+    {
+      id: "mismatch-heading",
+      type: "heading",
+      level: 2,
+      text: "判断哪些差异必须处理",
+    },
+    {
+      id: "mismatch-table",
+      type: "table",
+      caption: "出票或生成确认单后的差异分流",
+      columns: ["看到的情况", "可能类别", "下一步"],
+      rows: [
+        ["字母完全相同，只是空格消失或姓名组在显示时合并", "可能只是显示格式", "比较后台证件信息，规则不明确时向服务商确认"],
+        ["少了、多了或替换了一个字母", "可能是身份不一致", "出发前联系出票方，不要自行篡改确认单"],
+        ["姓和名填入了错误的必填字段", "可能是身份不一致", "询问负责航司或平台是否必须重开"],
+        ["证件类型或护照号码错误", "底层证件不一致", "使用服务商官方的更正、退票或重新预订流程"],
+        ["姓名按平台明文规定的长度上限被截断", "平台特定格式", "保留规则和输入证据；结果无法唯一识别本人时升级处理"],
+        ["使用了证件上没有的昵称、婚后姓名或代理自创转写", "底层姓名不一致", "停止操作并取得服务商认可的更正方案"],
+      ],
+    },
+    {
+      id: "renewal-heading",
+      type: "heading",
+      level: 2,
+      text: "订票后换发护照或法定姓名发生变化",
+    },
+    {
+      id: "renewal-explainer",
+      type: "paragraph",
+      text: "新护照号码不会自动更新到既有订单中，法定更名证明也不会自行改写客票。依法保留新旧证件信息和变更证明，再分别联系每个服务商。航司、中国铁路、酒店和景区之间没有共享的更正数据库，也没有统一处理规则。",
+    },
+    {
+      id: "renewal-actions",
+      type: "list",
+      items: [
+        "航班：询问出票方和实际承运人能否更新证件号码，以及姓名差异是否需要更正或重开。",
+        "12306：如果旧护照已不能作为旅行时的有效原件，出发前联系 12306；不要假定新护照可以直接读取旧号码购买的车票。",
+        "酒店：更新住客记录，并确认酒店前台会用新的有效证件办理住宿登记。",
+        "景区：使用该场馆针对入场证件的修改、取消或重新预订流程。",
+        "出入境身份：如果签证或居留证件与旧护照关联，应另行向负责的移民管理机关咨询；修正订单并不能修复入境许可。",
+      ],
+    },
+    {
+      id: "no-guess-heading",
+      type: "heading",
+      level: 2,
+      text: "官方规则没有回答的情况一律升级确认",
+    },
+    {
+      id: "no-guess-list",
+      type: "list",
+      items: [
+        "只有一个姓名，却被航司强制拆进两个必填字段。",
+        "姓或名标签为空、不明确，或与机读区不一致。",
+        "姓名超过平台上限，截断后的结果可能对应不止一个人。",
+        "表单拒绝重音符号、标点或非拉丁姓名，却没有提供官方转换规则。",
+        "实名票出票后换发、丢失或损坏护照。",
+        "代理与实际承运人、酒店或场馆给出不同答案。",
+      ],
+    },
+    {
+      id: "privacy-warning",
+      type: "callout",
+      title: "求助时也要保护护照资料",
+      body: "只使用经过验证的官网、应用、电话号码和酒店消息渠道。仅提交确实要求的字段或图片，在负责方允许时遮盖无关信息，并保存工单编号。不要因为某个未经验证的社交账号声称能快速更正，就向其发送护照扫描件。",
+      tone: "neutral",
+    },
+    {
+      id: "day-of-travel-heading",
+      type: "heading",
+      level: 2,
+      text: "旅行当天仍有不一致时",
+    },
+    {
+      id: "day-of-travel-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "提前抵达，携带有效护照原件、订单和任何书面客服决定。",
+        "前往实际承运人柜台、有人值守的 12306 窗口、酒店前台或场馆官方服务台，而不是非官方转售方。",
+        "准确说明差异，不要改动证件，也不要出示他人的身份。",
+        "取消前先询问获授权的补救方式及费用；铁路身份错误应预期官方退票重购规则及余票变化。",
+        "如果服务商无法确认接受，应选择合法重开或重新预订，不要在闸口依赖口头猜测。",
+      ],
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "适用范围与服务商边界",
+      body: "本文提供一套可重复执行的身份核对流程，并不批准某一种具体拼写。只有负责的航司、中国铁路、酒店、景区或移民管理机关能决定某条记录是否可接受。平台字段和更正政策会变化，因此付款前应查询出票方，证件变化后还要再次复核。",
+      tone: "warning",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "继续规划",
+      items: [
         {
-          "label": "第一次坐中国高铁",
-          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
-          "description": "在车站使用同一本护照。"
+          label: "第一次乘坐中国高铁",
+          href: "/zh/guides/china-high-speed-train-first-time-guide/",
+          description: "从购票到进站都使用同一本有效护照。",
         },
         {
-          "label": "护照丢失恢复",
-          "href": "/zh/guides/lost-passport-in-china-exit-recovery/",
-          "description": "补发证件后修复订单。"
+          label: "在中国丢失护照后的恢复步骤",
+          href: "/zh/guides/lost-passport-in-china-exit-recovery/",
+          description: "按正确顺序重建证件和订单。",
         },
         {
-          "label": "中国入境要求",
-          "href": "/guides/china-entry-requirements/",
-          "description": "让旅行证件与入境许可匹配。"
-        }
-      ]
+          label: "在中国选择地铁附近的酒店",
+          href: "/zh/guides/china-hotel-near-metro/",
+          description: "订房前确认能否为外宾办理入住。",
+        },
+        {
+          label: "外国游客故宫参观指南",
+          href: "/zh/guides/forbidden-city-for-foreign-visitors/",
+          description: "把场馆实名票规则应用到重要景点。",
+        },
+      ],
     },
     {
-      "id": "sources",
-      "type": "sources",
-      "title": "已复核的官方来源",
-      "items": [
+      id: "sources",
+      type: "sources",
+      title: "已复核的官方来源",
+      items: [
         {
-          "label": "China guide for business expatriates (real-name rail travel)",
-          "url": "https://english.www.gov.cn/2025special/bizexpatsinchina2025",
-          "publisher": "State Council of China",
-          "reviewedAt": "2026-08-12"
+          label: "外国护照姓名及号码录入规则说明",
+          url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/passportInstruction/passport-entry-instructions.html",
+          publisher: "中国铁路 12306",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "12306 real-name ticket information",
-          "url": "https://kyfw.12306.cn/mormhweb/zxdt/201401/t20140117_1318.html",
-          "publisher": "China Railway 12306",
-          "reviewedAt": "2026-08-12"
+          label: "12306 关于乘车人姓名和证件错误的购票问答",
+          url: "https://kyfw.12306.cn/otn/gonggao/buyTicket.html",
+          publisher: "中国铁路 12306",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "12306 real-name ticket FAQ",
-          "url": "https://kyfw.12306.cn/otn/gonggao/realNameTicket.html",
-          "publisher": "China Railway 12306",
-          "reviewedAt": "2026-08-12"
+          label: "12306 英文版实名购票与证件原件说明",
+          url: "https://www.12306.cn/en/faq.html?item=2",
+          publisher: "中国铁路 12306",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "CAAC air travel ID and ticket guidance",
-          "url": "https://www.caac.gov.cn/big5/www.caac.gov.cn/INDEX/HLFW/HKLXCS/",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
+          label: "《公共航空运输旅客服务管理规定》",
+          url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html",
+          publisher: "中国民用航空局",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "外籍旅客使用铁路、航空和酒店的官方指南",
+          url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025",
+          publisher: "中华人民共和国国务院",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "故宫博物院实名预约与证件原件说明",
+          url: "https://intl.dpm.org.cn/ticket_details.html",
+          publisher: "故宫博物院",
+          reviewedAt: "2026-08-13",
+        },
+      ],
+    },
+  ],
 };
 
 export default body;

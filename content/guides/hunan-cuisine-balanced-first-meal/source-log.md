@@ -1,8 +1,14 @@
 # Source log — hunan-cuisine-balanced-first-meal
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: building one balanced first Hunan shared meal; no restaurant ranking, fixed recipe catalogue or medical nutrition claim added.
+- Hunan government sources support regional variety and cooking traditions. Dish composition, portion, allergen controls and heat remain restaurant-level facts.
+- Added group-size orders, flavour/method contrast, counter-language with limits, ingredient-level dietary checks, allergy versus preference boundaries, failure recovery and a table-quality checklist in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

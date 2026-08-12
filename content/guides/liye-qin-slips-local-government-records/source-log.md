@@ -1,8 +1,14 @@
 # Source log — liye-qin-slips-local-government-records
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: reconstructing county administration from the Liye Qin archive; no complete corpus, Qin social history or palaeographic self-decoding added.
+- National Museum and Hunan government sources support the scale of the 2002 find, Qianling administrative context and museum framing. Current display and opening details remain dynamic.
+- Added material-document reading, transaction reconstruction, four analytical scales, archive-survival bias, focused gallery route, translation limits and a defensible workflow checklist in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

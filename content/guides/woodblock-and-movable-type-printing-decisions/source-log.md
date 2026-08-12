@@ -1,8 +1,14 @@
 # Source log — woodblock-and-movable-type-printing-decisions
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: comparing woodblock and movable type through production decisions; no linear replacement history or civilisation ranking added.
+- UNESCO evidence supports the current Rui'an wooden-type genealogy workflow and safeguarding status; it is explicitly bounded as one living practice, not every historical workshop.
+- Added stage-by-stage cost comparison, character-inventory and proofing decisions, original/replica/demonstration evidence, museum route, task-fit modes and dynamic-visitor-information warning in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

@@ -1,162 +1,76 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "For most one-way trips, the cleanest order follows the map: Guangzhou–Shenzhen–Hong Kong, or the reverse. But that does not automatically justify sleeping in Shenzhen. Start with your international gateways and the one Shenzhen experience you would protect; then test whether a hotel change and border move buy enough usable time."
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "Three questions decide the route",
-      "columns": [
-        {
-          "heading": "Gateway",
-          "body": "Enter at one end and leave at the other when fares and entry documents work."
-        },
-        {
-          "heading": "Shenzhen purpose",
-          "body": "Keep an overnight only for a named priority that cannot sensibly fit around the crossing."
-        },
-        {
-          "heading": "Border day",
-          "body": "Treat immigration, station access and luggage handling as a transfer block, not a full sightseeing day."
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "The border changes the value of a short distance"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "Official sources show several control points and a cross-boundary high-speed rail system. That choice affects where you surface in Hong Kong or Shenzhen, how much local travel remains, and which documents must be ready. The route decision therefore begins with endpoints, not a claim that one train is always fastest."
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "When each route shape is defensible",
-      "columns": [
-        "Route shape",
-        "Works when",
-        "Weakens when"
-      ],
-      "rows": [
-        [
-          "Guangzhou → Shenzhen → Hong Kong",
-          "Arrival is nearer Guangzhou and departure is from Hong Kong.",
-          "You must return to a mainland airport."
-        ],
-        [
-          "Hong Kong → Shenzhen → Guangzhou",
-          "The trip starts in Hong Kong and continues north or west.",
-          "A fixed Hong Kong departure forces a long return."
-        ],
-        [
-          "Guangzhou ↔ Hong Kong with Shenzhen as a day visit",
-          "Shenzhen has one compact priority and luggage can stay put.",
-          "The chosen checkpoint creates excessive local travel."
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "Do not count a border move as a normal city hop",
-      "body": "Live operating hours, eligibility and train inventory can change. Check the named checkpoint or West Kowloon process and leave recovery time before a fixed booking."
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "Make the decision without copying an itinerary"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Write down the exact arrival and departure airport or rail gateway.",
-        "Name the one Guangzhou, Shenzhen and Hong Kong priority that would survive cuts.",
-        "Choose the crossing that fits both hotels, not only the shortest rail segment.",
-        "Count every hotel move and border process as lost usable time.",
-        "Drop the Shenzhen overnight if it exists only to make the city list longer."
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "The first thing to cut"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "Cut a one-night Shenzhen stop with no protected anchor. A direct Guangzhou–Hong Kong move plus a deliberate day visit is usually easier to recover than three hotels used as geographical punctuation."
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "What this guide does not give you",
-      "body": "It does not assign nights, check visas, or choose a live train. Those depend on dates, passports, hotels and the activities you value."
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "Want a human route check?",
-      "body": "Leave your dates, number of travellers, approximate budget and arrival/departure gateways. A planner can flag the border-sensitive parts without promising live inventory."
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "Compare Guangzhou–Hong Kong transport",
-          "href": "/guides/guangzhou-hong-kong-transport-route/",
-          "description": "Choose stations and mode after the route order is fixed."
-        },
-        {
-          "label": "Choose a Shenzhen–Hong Kong crossing",
-          "href": "/guides/shenzhen-hong-kong-transport-route/",
-          "description": "Match the checkpoint to your hotels and onward plan."
-        },
-        {
-          "label": "Test an open-jaw flight",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
-          "description": "See whether different arrival and departure cities remove backtracking."
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official sources reviewed",
-      "items": [
-        {
-          "label": "Cross-boundary high-speed rail trip planner",
-          "url": "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html",
-          "publisher": "MTR High Speed Rail",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Control-point information",
-          "url": "https://www.sb.gov.hk/eng/special/bound/control.html",
-          "publisher": "Hong Kong Security Bureau",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "For most first trips, arrange Guangzhou, Shenzhen and Hong Kong as a one-way chain that follows the international gateways: Guangzhou → Shenzhen → Hong Kong, or the reverse. Do not give Shenzhen an overnight merely because it sits between the other two. It earns a base only when you have a specific Shenzhen priority that justifies another hotel and border-sensitive move." },
+  { id: "quick-choice", type: "comparison", title: "Choose the route shape", columns: [
+    { heading: "Three bases", body: "Use when each city has at least one full local priority and both border-side hotels support the chosen crossing." },
+    { heading: "Guangzhou + Hong Kong", body: "Use when Shenzhen has no protected anchor; pass through or make a focused visit rather than adding a hotel." },
+    { heading: "Shenzhen + Hong Kong", body: "Use when Guangzhou is not central to the trip and Shenzhen priorities are geographically coherent." }
+  ] },
+  { id: "official-heading", type: "heading", level: 2, text: "The border is a process, not a line on the rail map" },
+  { id: "official", type: "paragraph", text: "Hong Kong Security Bureau lists multiple land control points, including railway and road-based crossings, each with its own transport and operating information. MTR High Speed Rail provides official cross-boundary planning for Hong Kong West Kowloon. These sources establish options, not one universally best crossing. Your passport, immigration eligibility, hotels, baggage and onward plan determine the useful one; verify current official requirements before travel." },
+  { id: "gateway-heading", type: "heading", level: 2, text: "Let the real gateways set the direction" },
+  { id: "gateway", type: "table", caption: "Start with arrival and departure, then fit the cities", columns: ["Gateway pattern", "Likely order", "Question that can reverse it"], rows: [
+    ["Arrive Guangzhou area; depart Hong Kong", "Guangzhou → Shenzhen → Hong Kong", "Does Shenzhen have enough value for a night?"],
+    ["Arrive Hong Kong; depart Guangzhou area", "Hong Kong → Shenzhen → Guangzhou", "Which crossing works from the Hong Kong hotel?"],
+    ["Both long-haul flights use Hong Kong", "Hong Kong at one or both ends; avoid unnecessary repeated crossing", "Would one Mainland block plus final Hong Kong night reduce risk?"],
+    ["Both flights use a Mainland gateway", "Keep Hong Kong as a deliberate extension, not a transit assumption", "Are entry and re-entry permissions confirmed for this passport?" ]
+  ] },
+  { id: "shenzhen-test-heading", type: "heading", level: 2, text: "The Shenzhen overnight test" },
+  { id: "shenzhen-test", type: "list", ordered: false, items: [
+    "Name the Shenzhen experience that would survive cuts. “It is on the way” is not an experience.",
+    "Check whether that priority lies near the chosen hotel and the next crossing. A famous district far from both can create two extra local transfers.",
+    "Ask whether a focused stop without changing hotels can deliver the same value, with luggage storage confirmed in advance.",
+    "Count the checkout, luggage, border process and new check-in. A night must create enough usable local time to repay them.",
+    "If the Shenzhen night forces a second border crossing or weakens the final international departure, remove it first."
+  ] },
+  { id: "crossing-heading", type: "heading", level: 2, text: "Choose the crossing from both hotel doors" },
+  { id: "crossing", type: "table", caption: "Mode and route execution belong after city order", columns: ["Factor", "What to compare", "Do not assume"], rows: [
+    ["Hong Kong side", "Hotel to West Kowloon or the relevant control point", "Every Hong Kong district is equally close"],
+    ["Mainland side", "Arrival point to the Shenzhen or Guangzhou hotel", "The geographically nearest border is quickest door to door"],
+    ["Documents", "Current eligibility, required original documents and ticket details", "Past entry means current eligibility"],
+    ["Baggage", "Stairs, walking, security and who carries each piece", "Fast rail removes handling"],
+    ["Operating information", "Current official opening, train and service notices", "Old hours or a blog screenshot remain valid"]
+  ] },
+  { id: "workflow-heading", type: "heading", level: 2, text: "Build the route in seven decisions" },
+  { id: "workflow", type: "list", ordered: true, items: [
+    "Fix the international arrival and departure airports before assigning nights.",
+    "Confirm each traveller's Mainland China and Hong Kong entry requirements from the responsible authorities; do not rely on route logic for eligibility.",
+    "Give Guangzhou, Shenzhen and Hong Kong one non-substitutable purpose each, then remove any city with no protected purpose.",
+    "Choose a one-way order that avoids repeating the same cross-boundary leg.",
+    "Select the crossing by both hotel locations, baggage and the day's onward plan—not rail minutes alone.",
+    "Keep the border move free of an immediate, irreplaceable timed activity and retain a late-arrival hotel plan.",
+    "Only then search current tickets and operating notices through the named official sources."
+  ] },
+  { id: "example-heading", type: "heading", level: 2, text: "Planning example: Shenzhen without a hotel" },
+  { id: "example", type: "callout", tone: "neutral", title: "An example, not a prescribed itinerary", body: "A traveller has strong food and heritage priorities in Guangzhou and several full days of Hong Kong priorities, but only one Shenzhen architecture stop. A separate Shenzhen hotel adds two check-ins and moves the luggage through another stage. If current transport and storage make a focused visit workable, keeping Guangzhou and Hong Kong as the two bases may deliver the Shenzhen priority with less friction. If the Shenzhen activity needs an evening or a second district, the overnight can earn its place." },
+  { id: "failure-heading", type: "heading", level: 2, text: "Border-day failures and recovery" },
+  { id: "failure", type: "table", caption: "Protect the onward plan", columns: ["Failure", "Immediate response", "Design lesson"], rows: [
+    ["Wrong control point for the hotel", "Recalculate using current official transport; do not race an unrealistic route", "Choose from both doors before booking"],
+    ["Train or crossing delay", "Notify the hotel and release optional evening plans", "No timed highlight immediately after the border"],
+    ["Document problem", "Follow official immigration or carrier instructions; do not improvise eligibility advice", "Verify every traveller before non-refundable booking"],
+    ["Shenzhen night creates only a few usable hours", "Keep the strongest activity and drop the rest", "Remove the overnight on the next revision"],
+    ["Final Hong Kong departure becomes fragile", "Move to Hong Kong earlier and protect the flight", "Keep the final cross-boundary move away from the flight day"]
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "When to choose the shorter route" },
+  { id: "switch-rule", type: "paragraph", text: "Use all three bases only when each has a durable purpose and the border day remains recoverable. Drop Shenzhen as an overnight when it exists mainly to complete the city list. Drop Guangzhou when its priorities are weak relative to the extra Mainland movement. Drop Hong Kong only when it is not an intended destination or gateway—never because the map makes border formalities look invisible." },
+  { id: "booking-checklist", type: "list", ordered: false, items: [
+    "Entry and re-entry eligibility is confirmed for every passport.",
+    "The direction follows actual flight gateways and avoids repeated crossing.",
+    "Shenzhen has a named priority that justifies its hotel, or no hotel is added.",
+    "The chosen control point works from both hotels with the real baggage.",
+    "Current operating information is rechecked and the border day has recovery space."
+  ] },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "Border information changes", body: "Control-point hours, transport, ticketing and immigration requirements are dynamic. Check Hong Kong and Mainland authorities plus the named operator close to travel. This route guide does not determine visa or entry eligibility." },
+  { id: "scope", type: "callout", tone: "neutral", title: "What this guide covers", body: "This guide covers the three-city order and whether Shenzhen deserves an overnight. Use the Guangzhou–Hong Kong and Shenzhen–Hong Kong guides for exact modes, stations and control-point procedures." },
+  { id: "help-cta", type: "callout", tone: "decision", title: "Want the border-sensitive route checked?", body: "Send flight gateways, passport nationalities, hotel areas, baggage and one priority per city. Do not send passport numbers or document images." },
+  { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
+    { label: "Compare Guangzhou–Hong Kong transport", href: "/guides/guangzhou-hong-kong-transport-route/", description: "Choose stations and mode after the route order is fixed." },
+    { label: "Choose a Shenzhen–Hong Kong crossing", href: "/guides/shenzhen-hong-kong-transport-route/", description: "Match the control point to your hotels and onward plan." },
+    { label: "Test an open-jaw flight", href: "/guides/china-open-jaw-flights-route-planning/", description: "See whether different arrival and departure cities remove backtracking." }
+  ] },
+  { id: "sources", type: "sources", title: "Official sources reviewed", items: [
+    { label: "Cross-boundary high-speed rail trip planning", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR High Speed Rail", reviewedAt: "2026-08-12" },
+    { label: "Hong Kong land control-point information", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "Hong Kong Security Bureau", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;

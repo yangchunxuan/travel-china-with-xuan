@@ -1,147 +1,377 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
+  schemaVersion: "1.0.0",
+  blocks: [
     {
-      "id": "answer-first",
-      "type": "lead",
-      "text": "Use the identity shown on the passport you will physically travel with. Flights and real-name rail tickets must match the valid document used for travel; hotels and apps may format fields differently, but that is not permission to invent a nickname or switch documents. Build one source record from the passport, then preserve evidence of any platform formatting."
+      id: "answer-first",
+      type: "lead",
+      text: "Build every real-name booking from the valid passport you will physically carry, but follow each provider's own field instructions. The correct display is not always identical across an airline, China Railway 12306, a hotel and an attraction. What must stay consistent is the underlying person, document type, document number and name source. If a system forces an unclear abbreviation, truncation or name order, stop and ask the responsible provider instead of guessing.",
     },
     {
-      "id": "decision-map",
-      "type": "table",
-      "caption": "One identity, different forms",
-      "columns": [
-        "Situation",
-        "Route",
-        "Action"
+      id: "source-record-heading",
+      type: "heading",
+      level: 2,
+      text: "Create one private passport source record",
+    },
+    {
+      id: "source-record-explainer",
+      type: "paragraph",
+      text: "Before opening any booking form, copy the identity fields from the passport information page into a private note. This is your comparison record, not a new spelling standard. If a booking uses another officially accepted document, such as a foreign permanent resident ID, create a separate record for that document and do not assume the passport can replace it at check-in.",
+    },
+    {
+      id: "source-record-fields",
+      type: "list",
+      items: [
+        "Document type and issuing country or authority.",
+        "Every name label printed on the information page: Full Name, Surname, Given Names, First Name, Middle Name or Last Name, as applicable.",
+        "The exact Latin-script spelling, sequence, spaces and punctuation shown in the visual inspection zone.",
+        "Passport number, nationality, date of birth, sex when required and expiry date.",
+        "A note of the machine-readable zone (MRZ) form for use only when an official platform tells you to consult it.",
       ],
-      "rows": [
-        [
-          "Airline ticket",
-          "Name and valid ID must match",
-          "Follow the carrier's passport-name instructions and review confirmation immediately."
-        ],
-        [
-          "China Railway 12306",
-          "Use document type, name and number accurately",
-          "Travel with the original passport used for the booking."
-        ],
-        [
-          "Hotel booking",
-          "Use passport identity; notify property of display quirks",
-          "Keep confirmation and original passport for check-in."
-        ],
-        [
-          "App has short or split fields",
-          "Use the platform's official format guidance",
-          "Screenshot the entry and do not invent abbreviations without support."
-        ]
-      ]
     },
     {
-      "id": "detail-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "Create a passport source record"
+      id: "channel-map-heading",
+      type: "heading",
+      level: 2,
+      text: "Map the passport to each booking channel",
     },
     {
-      "id": "detail-list",
-      "type": "list",
-      "items": [
-        "Copy the surname, given names, passport number, nationality, date of birth and expiry from the photo page. The machine-readable zone can help resolve punctuation and ordering, but the booking provider's own instructions control its fields.",
-        "Hyphens, spaces, apostrophes and multiple given names may display differently after ticketing. A cosmetic display change is not automatically an error, but only the provider can confirm acceptance.",
-        "Do not mix an old passport number with a new passport name, or use a residence card for one booking and assume the passport will substitute later.",
-        "Chinese domestic systems may use uppercase Latin letters or remove spaces. Preserve the confirmation and ask support when the resulting identity is ambiguous."
-      ]
+      id: "channel-map",
+      type: "table",
+      caption: "The same traveler can meet different field rules",
+      columns: ["Booking", "Authoritative identity check", "Do not assume"],
+      rows: [
+        ["Flight", "The carrier's name fields and the valid ID used to buy the ticket", "A 12306 name order is automatically correct for the airline"],
+        ["China Railway 12306", "12306's foreign-passport entry rules and the original valid ID used for purchase", "An airline's LAST/FIRST display should be copied into one railway field"],
+        ["Hotel", "The valid passport or other accepted document presented for accommodation registration", "A reservation nickname is enough for the legal check-in record"],
+        ["Attraction", "The venue's current real-name booking and admission instructions", "Every museum accepts the same name format or document"],
+        ["Third-party booking agent", "The actual carrier, property or venue remains the final operational checker", "The agent's accepted form guarantees boarding, check-in or admission"],
+      ],
     },
     {
-      "id": "steps-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "A correction-first workflow"
+      id: "name-structures-heading",
+      type: "heading",
+      level: 2,
+      text: "Read the labels before deciding the name order",
     },
     {
-      "id": "steps",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Enter identity from the passport that will be valid on travel day.",
-        "Before paying, compare every character, document type and number.",
-        "Immediately after ticketing, inspect the issued ticket or order—not only the form you typed.",
-        "For a mismatch, contact the airline, 12306, agent or hotel through its official channel before cancelling. Ask whether correction, reissue or a new booking is required.",
-        "Carry the original passport and written confirmation of any accepted formatting or document update."
-      ]
+      id: "name-structures",
+      type: "table",
+      caption: "How 12306 currently instructs foreign-passport users",
+      columns: ["Passport layout", "12306 entry approach", "When to escalate"],
+      rows: [
+        ["One Full Name field", "Enter the Full Name content", "The other provider insists on separate surname and given-name fields"],
+        ["Surname and Given Names", "Enter Surname, one space, then Given Names", "The printed labels or name components are unclear"],
+        ["First Name, Middle Name and Last Name", "Enter those fields in their printed First–Middle–Last order with spaces", "Another platform asks for family name first; follow that platform, not 12306"],
+        ["A single name with no separate surname", "Use the passport's Full Name under the 12306 rule", "An airline or attraction makes both family-name and given-name fields mandatory"],
+        ["Names in more than one script", "12306 says to enter only the Latin letters A–Z or a–z", "The Latin form is missing or differs across the visual and machine-readable zones"],
+      ],
     },
     {
-      "id": "failure-backup",
-      "type": "callout",
-      "title": "If the passport is renewed after booking",
-      "body": "Contact each provider separately. Airlines, railway and hotels do not share one update process. Keep both old and new passport details and evidence of renewal where lawful, but do not assume carrying the old passport automatically fixes the record. Let the provider specify correction or reissue.",
-      "tone": "warning"
+      id: "mrz-heading",
+      type: "heading",
+      level: 2,
+      text: "Use the MRZ as instructed, not as a universal replacement name",
     },
     {
-      "id": "scope-boundary",
-      "type": "callout",
-      "title": "Scope and live-rule boundary",
-      "body": "This guide cannot decide whether a particular abbreviation or missing character will be accepted. Real-name checks are made by carriers, China Railway, hotels and border authorities under their own systems. Use their official support before travel; never rely on a third-party forum's formatting promise.",
-      "tone": "neutral"
+      id: "mrz-explainer",
+      type: "paragraph",
+      text: "The machine-readable zone is the two or three coded lines at the bottom of a passport information page. For foreign-passport verification, 12306 says the visual inspection zone is primary and the MRZ is auxiliary. Its guidance uses the MRZ to resolve separators such as hyphens, apostrophes and commas, with MRZ separators converted to spaces. Do not type angle brackets literally, and do not replace an airline's instructions with the 12306 rule.",
     },
     {
-      "id": "internal-links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
+      id: "format-heading",
+      type: "heading",
+      level: 2,
+      text: "Handle spaces, punctuation and long names deliberately",
+    },
+    {
+      id: "format-table",
+      type: "table",
+      caption: "Formatting issue by issue",
+      columns: ["Issue", "Safe action", "Unsafe shortcut"],
+      rows: [
+        ["Spaces between name groups", "Use the platform's written rule; 12306 requires one space between groups", "Delete every space because a previous ticket displayed none"],
+        ["Hyphen, apostrophe or comma", "Use the provider's guidance; 12306 directs users to the MRZ for these separators", "Invent an unconfirmed spelling that removes or changes letters"],
+        ["Accents or non-Latin characters", "Follow the provider's supported-character rule; 12306 accepts Latin letters for foreign-passport names", "Create your own transliteration from pronunciation"],
+        ["Very long name", "12306 currently allows entry up to 64 characters and omits the excess; preserve evidence and escalate if identity is ambiguous", "Choose which middle names to delete without an official rule"],
+        ["Merged or reordered display after issue", "Compare all letters and the stored document details, then ask the provider when uncertain", "Treat every cosmetic display change as safe—or as definitely invalid"],
+      ],
+    },
+    {
+      id: "flight-heading",
+      type: "heading",
+      level: 2,
+      text: "For flights, the operating carrier's rule controls the form",
+    },
+    {
+      id: "flight-explainer",
+      type: "paragraph",
+      text: "Chinese civil-aviation rules require check-in with a valid identity document consistent with the one used to buy the ticket, and the issued confirmation must show the passenger name. Airlines still define how surname, given names, middle names and supported characters are entered. Check both the marketing carrier and operating carrier on a codeshare, and review the issued ticket or itinerary immediately rather than trusting only the form you submitted.",
+    },
+    {
+      id: "flight-checklist",
+      type: "list",
+      items: [
+        "Select passport as the document type only if that is the document you will present.",
+        "Read the airline's examples for surname or family name and given or first name before entering either field.",
+        "Compare the issued passenger name, document type and document number with the passport source record.",
+        "For a codeshare, confirm which carrier will check the document at the airport.",
+        "If anything is wrong, contact the ticket issuer and operating airline before making a second booking or cancelling the first.",
+      ],
+    },
+    {
+      id: "flight-remedy",
+      type: "callout",
+      title: "Do not assume a name correction will be free",
+      body: "The valid national passenger-service rules require the traveler to check in with an identity document consistent with the one used to buy the ticket, but they do not give every name error one universal correction or fee rule. The ticket issuer and operating carrier must identify the remedy for the exact record. Ask whether it requires a correction, reissue, refund or new booking—and obtain the price and deadline before acting.",
+      tone: "warning",
+    },
+    {
+      id: "rail-heading",
+      type: "heading",
+      level: 2,
+      text: "For 12306, follow its foreign-passport rule exactly",
+    },
+    {
+      id: "rail-explainer",
+      type: "paragraph",
+      text: "China Railway uses real-name ticketing. Foreign travelers can use valid passports supported by the system, must complete the required identity verification and must show the valid original ID used to purchase the ticket when entering, leaving and boarding. The official foreign-passport instruction page—not an airline ticket or hotel confirmation—is the source for the railway name field.",
+    },
+    {
+      id: "rail-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "Choose the correct passport document type and copy its number and expiry accurately.",
+        "Enter the name according to the exact label pattern and 12306 rules above.",
+        "Complete automatic, photo-upload or station verification when the account prompts for it.",
+        "Before payment, compare the passenger record with the passport source record character by character.",
+        "After purchase, retain the order details and carry the original valid passport used for that ticket.",
+      ],
+    },
+    {
+      id: "rail-correction",
+      type: "callout",
+      title: "12306 does not treat a wrong passenger name as a normal ticket change",
+      body: "12306's current purchase FAQ says the passenger name cannot be changed after purchase. If the passenger identity information is wrong, its stated route is to refund and buy again, with the applicable refund fee. Check current seat availability and the official process before acting; changing the date or train does not repair a wrong identity.",
+      tone: "warning",
+    },
+    {
+      id: "hotel-heading",
+      type: "heading",
+      level: 2,
+      text: "Separate the hotel reservation name from the legal check-in identity",
+    },
+    {
+      id: "hotel-explainer",
+      type: "paragraph",
+      text: "A reservation name helps the property find and hold the room. At check-in, foreign guests must present a valid passport, foreign permanent resident ID or another accepted document so the hotel can complete accommodation registration. If the person who paid, the reservation holder and the actual guest are different, add the guest's passport name through the booking channel and obtain the property's confirmation before arrival.",
+    },
+    {
+      id: "hotel-checklist",
+      type: "list",
+      items: [
+        "Put every staying guest on the reservation when the booking channel allows it.",
+        "Tell the property in advance if the displayed booking name is shortened, reordered or held under another traveler.",
+        "Carry the original valid document for each guest; a screenshot of the passport is not the check-in document.",
+        "Do not assume a successful online payment proves that the property can register the guest's document.",
+        "Keep the property's written answer with the booking confirmation, especially for a late arrival.",
+      ],
+    },
+    {
+      id: "attraction-heading",
+      type: "heading",
+      level: 2,
+      text: "For attractions, start over with the venue's own rule",
+    },
+    {
+      id: "attraction-explainer",
+      type: "paragraph",
+      text: "Real-name attraction systems are not one national form. The Palace Museum, for example, asks international visitors for full name and passport number and requires the original valid ID used for the booking at admission. Another museum or scenic area may support different documents or field layouts. Read the current official ticket page for each venue and do not paste a shortened airline or 12306 display without checking.",
+    },
+    {
+      id: "cross-system-workflow-heading",
+      type: "heading",
+      level: 2,
+      text: "Use a correction-first workflow across all bookings",
+    },
+    {
+      id: "cross-system-workflow",
+      type: "list",
+      ordered: true,
+      items: [
+        "Create the passport source record and decide which physical document each booking will use.",
+        "Open the official field instructions for that specific airline, 12306, property or attraction.",
+        "Enter the data, then take a dated screenshot before payment when the form imposes unusual formatting.",
+        "Inspect the issued ticket, passenger record or confirmation immediately after purchase.",
+        "Classify any difference as either display formatting or an underlying identity mismatch; if you cannot prove which, escalate it.",
+        "Keep the provider's written answer and carry the original valid document on the travel day.",
+      ],
+    },
+    {
+      id: "mismatch-heading",
+      type: "heading",
+      level: 2,
+      text: "Know which differences require action",
+    },
+    {
+      id: "mismatch-table",
+      type: "table",
+      caption: "Triage after a ticket or confirmation is issued",
+      columns: ["What you see", "Likely category", "Next step"],
+      rows: [
+        ["Same letters, but spaces removed or name groups visually joined", "Possibly display formatting", "Compare stored document details and ask the provider if its rule is not explicit"],
+        ["A letter missing, added or replaced", "Possible identity mismatch", "Contact the issuer before travel; do not self-correct the confirmation"],
+        ["Surname and given name put into the wrong required fields", "Possible identity mismatch", "Ask the responsible carrier or platform whether reissue is required"],
+        ["Wrong document type or passport number", "Underlying document mismatch", "Use the provider's official correction, refund or rebooking process"],
+        ["Name truncated under a documented platform limit", "Platform-specific formatting", "Keep the rule and input evidence; escalate if the resulting identity is not unambiguous"],
+        ["Nickname, married name or agent-created transliteration not on the travel document", "Underlying name mismatch", "Stop and obtain a provider-approved correction path"],
+      ],
+    },
+    {
+      id: "renewal-heading",
+      type: "heading",
+      level: 2,
+      text: "If the passport is renewed or the legal name changes",
+    },
+    {
+      id: "renewal-explainer",
+      type: "paragraph",
+      text: "A new passport number does not update existing bookings automatically, and official evidence of a name change does not itself rewrite a ticket. Keep the old and new document details and lawful evidence of the change, then contact every provider separately. Airlines, China Railway, hotels and attractions do not share one correction database or one rule.",
+    },
+    {
+      id: "renewal-actions",
+      type: "list",
+      items: [
+        "Flight: ask the ticket issuer and operating carrier whether the document number can be updated and whether any name difference requires correction or reissue.",
+        "12306: if the old passport is no longer a valid original document for travel, ask 12306 before departure; do not assume the new passport will open a ticket bought on the old number.",
+        "Hotel: update the guest record and confirm that the property will register the new valid document at reception.",
+        "Attraction: use the venue's modification, cancellation or new-booking procedure for the document tied to admission.",
+        "Immigration status: if a visa or residence document is linked to the old passport, obtain separate advice from the responsible immigration authority; a booking correction does not repair entry permission.",
+      ],
+    },
+    {
+      id: "no-guess-heading",
+      type: "heading",
+      level: 2,
+      text: "Escalate anything the official rule does not answer",
+    },
+    {
+      id: "no-guess-list",
+      type: "list",
+      items: [
+        "A mononym forced into two mandatory airline fields.",
+        "A surname or given-name label that is blank, unclear or inconsistent with the MRZ.",
+        "A name longer than the platform limit where the remaining string could identify more than one person.",
+        "An accent, punctuation mark or non-Latin name that the form rejects without offering an official conversion rule.",
+        "A renewed, lost or damaged passport after a real-name ticket has been issued.",
+        "Different answers from an agent and the operating carrier, hotel or venue.",
+      ],
+    },
+    {
+      id: "privacy-warning",
+      type: "callout",
+      title: "Protect the passport while asking for help",
+      body: "Use verified official websites, apps, telephone numbers and property messaging channels. Share only the fields or images genuinely required, redact unrelated information when the authority permits it and retain the case number. Do not send a passport scan to an unverified social account merely because it promises a quick correction.",
+      tone: "neutral",
+    },
+    {
+      id: "day-of-travel-heading",
+      type: "heading",
+      level: 2,
+      text: "If the mismatch remains on the travel day",
+    },
+    {
+      id: "day-of-travel-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "Arrive early with the original valid passport, booking record and any written support decision.",
+        "Go to the operating airline desk, staffed 12306 window, hotel reception or official venue service desk—not an unofficial reseller.",
+        "Explain the exact difference without altering a document or presenting someone else's identity.",
+        "Ask for the authorized remedy and its cost before cancelling; for rail identity errors, expect the official refund-and-rebook rule and possible seat changes.",
+        "If the provider cannot confirm acceptance, choose a lawful reissue or new booking rather than relying on a verbal guess at the gate.",
+      ],
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "Scope and provider boundary",
+      body: "This guide gives a repeatable identity workflow, not approval for a particular spelling. Only the responsible carrier, China Railway, hotel, attraction or immigration authority can decide whether a specific record is acceptable. Live platform fields and correction policies can change, so recheck the issuing provider before payment and again after any document change.",
+      tone: "warning",
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Continue planning",
+      items: [
         {
-          "label": "First high-speed train",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
-          "description": "Use the same passport at the station."
+          label: "First-time China high-speed rail guide",
+          href: "/guides/china-high-speed-train-first-time-guide/",
+          description: "Carry the same valid passport through ticketing and station checks.",
         },
         {
-          "label": "Lost passport recovery",
-          "href": "/guides/lost-passport-in-china-exit-recovery/",
-          "description": "Repair bookings after a document replacement."
+          label: "Lost passport recovery in China",
+          href: "/guides/lost-passport-in-china-exit-recovery/",
+          description: "Rebuild documents and bookings in the right order.",
         },
         {
-          "label": "China entry requirements",
-          "href": "/guides/china-entry-requirements/",
-          "description": "Match the travel document to entry permission."
-        }
-      ]
+          label: "Choosing a China hotel near the metro",
+          href: "/guides/china-hotel-near-metro/",
+          description: "Confirm foreign-guest check-in before choosing the room.",
+        },
+        {
+          label: "Forbidden City guide for foreign visitors",
+          href: "/guides/forbidden-city-for-foreign-visitors/",
+          description: "Apply the venue's real-name ticket instructions to a major attraction.",
+        },
+      ],
     },
     {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official sources reviewed",
-      "items": [
+      id: "sources",
+      type: "sources",
+      title: "Official sources reviewed",
+      items: [
         {
-          "label": "China guide for business expatriates (real-name rail travel)",
-          "url": "https://english.www.gov.cn/2025special/bizexpatsinchina2025",
-          "publisher": "State Council of China",
-          "reviewedAt": "2026-08-12"
+          label: "Foreign-passport name and number entry instructions",
+          url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/passportInstruction/passport-entry-instructions.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "12306 real-name ticket information",
-          "url": "https://kyfw.12306.cn/mormhweb/zxdt/201401/t20140117_1318.html",
-          "publisher": "China Railway 12306",
-          "reviewedAt": "2026-08-12"
+          label: "12306 purchase FAQ on passenger-name and ID errors",
+          url: "https://kyfw.12306.cn/otn/gonggao/buyTicket.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "12306 real-name ticket FAQ",
-          "url": "https://kyfw.12306.cn/otn/gonggao/realNameTicket.html",
-          "publisher": "China Railway 12306",
-          "reviewedAt": "2026-08-12"
+          label: "12306 English real-name ticket and original-ID guidance",
+          url: "https://www.12306.cn/en/faq.html?item=2",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-13",
         },
         {
-          "label": "CAAC air travel ID and ticket guidance",
-          "url": "https://www.caac.gov.cn/big5/www.caac.gov.cn/INDEX/HLFW/HKLXCS/",
-          "publisher": "Civil Aviation Administration of China",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
+          label: "Provisions on public air transport passenger services",
+          url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html",
+          publisher: "Civil Aviation Administration of China",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "Official guide to rail, air and hotel use by foreign travelers",
+          url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025",
+          publisher: "State Council of China",
+          reviewedAt: "2026-08-13",
+        },
+        {
+          label: "Palace Museum booking and original-ID instructions",
+          url: "https://intl.dpm.org.cn/ticket_details.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-13",
+        },
+      ],
+    },
+  ],
 };
 
 export default body;

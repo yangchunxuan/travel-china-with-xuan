@@ -21,7 +21,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-12",
-  "dateModified": "2026-08-12",
+  "dateModified": "2026-08-13",
   "sourceReviewedDate": "2026-08-12",
   "search": {
     "section": "essentials",
@@ -35,9 +35,9 @@
   "locales": {
     "en": {
       "path": "/guides/china-esim-vs-local-sim/",
-      "title": "China eSIM or Local SIM? Data, Number or Both",
+      "title": "China eSIM vs Local SIM: Data, Phone Number and Setup",
       "headline": "China eSIM or Local SIM? Choose Data, a Local Number or Both",
-      "description": "Use four practical paths to choose a travel eSIM, a China local SIM, dual SIM, or a compatible spare phone—and keep a failure backup.",
+      "description": "Compare a China travel eSIM, local SIM and roaming by data, +86 number, SMS and device support, then install, test and keep a working fallback.",
       "heroAlt": "Editorial illustration of two SIM cards, a phone and four branching connection paths.",
       "navTitle": "China eSIM or local SIM",
       "featuredLinkLabel": "Choose your China phone setup",
@@ -50,9 +50,9 @@
     },
     "zh": {
       "path": "/zh/guides/china-esim-vs-local-sim/",
-      "title": "中国旅行选 eSIM 还是本地 SIM？按需求决定",
+      "title": "中国旅行 eSIM 还是本地 SIM：号码、流量与设置",
       "headline": "中国旅行选 eSIM 还是本地 SIM：只要流量、需要号码、两者都要怎么选",
-      "description": "按四条路径选择旅行 eSIM、中国本地 SIM、双卡或备用设备，并提前准备失败备选。",
+      "description": "比较中国旅行 eSIM、本地 SIM 与漫游的流量、+86 号码、短信和设备要求，并完成安装、测试及故障备用方案。",
       "heroAlt": "手机、两张 SIM 卡和四条联网选择路径的编辑插画。",
       "navTitle": "中国 eSIM 或本地 SIM",
       "featuredLinkLabel": "选择适合你的中国通信方案",
@@ -65,9 +65,9 @@
     },
     "ko": {
       "path": "/ko/guides/china-esim-vs-local-sim/",
-      "title": "중국 eSIM vs 현지 SIM: 데이터·번호·듀얼 SIM 선택법",
+      "title": "중국 eSIM vs 현지 SIM: 데이터·번호·설정 가이드",
       "headline": "중국 eSIM 또는 현지 SIM? 데이터, 중국 번호, 둘 다 필요한 경우의 선택법",
-      "description": "데이터 전용, 중국 번호, 듀얼 SIM, 비호환 휴대폰의 네 경로로 통신 수단과 실패 대비책을 고릅니다.",
+      "description": "중국 여행 eSIM, 현지 SIM과 로밍의 데이터, +86 번호, SMS와 기기 조건을 비교하고 설치·시험·실패 대비까지 준비합니다.",
       "heroAlt": "휴대전화와 두 SIM 카드에서 네 연결 경로가 갈라지는 편집 일러스트.",
       "navTitle": "중국 eSIM 또는 현지 SIM",
       "featuredLinkLabel": "중국 통신 구성을 선택하기",

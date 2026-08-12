@@ -1,6 +1,6 @@
-# Source log — China Self-Transfers: Price the Gap Between Separate Tickets
+# Source log — Separate Flight Tickets and Self-Transfer Risk in China
 
-Status: `COPY READY — CENTRAL REVIEW REQUIRED`
+Status: `DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED`
 
 Checked at: 2026-08-12 (Asia/Shanghai)
 
@@ -8,37 +8,33 @@ Canonical owner: `/guides/china-separate-flight-tickets-self-transfer-risk/`
 
 ## Editorial boundary
 
-This page owns the risk decision for separate flight tickets and self-transfers. It does not give airline-specific compensation advice or live minimum-connection times.
+This page owns contract and recovery risk for separately ticketed flights. Airport guides own ground transfers; the fare-bundle page owns baggage and flexibility pricing; the last-night guide owns positioning before international departure.
 
-## Sources
+## Official sources
 
-### Civil Aviation Administration of China
+### CAAC — Through and non-through flight guidance
 
-- Source: Air-travel ticket guidance
-- URL: https://app.caac.gov.cn/INDEX/HLFW/HKLXCS/
+- URL: https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217590.html
 - Checked: 2026-08-12
-- Facts used: CAAC explicitly explains that non-interline segments are independently ticketed and follow separate conditions.
-- Boundary: It does not calculate a safe buffer for one airport.
-- Update trigger: CAAC passenger guidance change.
+- Facts used: Flights on the same ticket number form a through itinerary in the guidance; sellers should identify through status; non-through flights are usually independently issued under separate contracts and one disruption does not automatically change the other ticket.
+- Boundary: The article does not give a legal opinion or imply that an agency order number proves protection.
+- Update trigger: CAAC ticketing guidance change.
 
-### Civil Aviation Administration of China
+### CAAC — Public air passenger service rules
 
-- Source: Public air passenger service rules
 - URL: https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html
 - Checked: 2026-08-12
-- Facts used: Carriers publish their own ticket change, refund, baggage and irregular-operation conditions.
-- Boundary: Carrier conditions must still be checked.
-- Update trigger: Regulation change.
+- Facts used: Sellers must disclose whether simultaneous multi-flight bookings are through flights and publish applicable transport conditions.
+- Boundary: No remedy is promised for a particular passenger or ticket.
+- Update trigger: Regulatory amendment.
 
-## Planning judgments
+## Editorial judgments
 
-- A lower fare should be compared with the exposed value of the onward ticket, hotel and fixed bookings.
-- Separate bookings require a conservative assumption that the onward carrier may treat a missed flight under its own ticket conditions.
-- The safest buffer may be an overnight, especially before an international departure.
+- A self-transfer is a chain of arrival, formalities, baggage, ground movement, check-in, security and gate deadlines.
+- The buffer must be designed from consequences and recovery options; no universal safe connection time is published.
+- An overnight or protected itinerary is stronger when the final international departure is at risk.
 
 ## Explicit exclusions
 
-- No live fare, seat, timetable, opening-hour or inventory claim.
-- No complete personalised day-by-day itinerary.
-- No city × day-count × traveller-type index variants.
-- Recheck named operators and official rules near booking.
+- No universal minimum connection time, legal opinion or insurance-coverage promise.
+- No live terminal, timetable, fare or ticket-condition claim.

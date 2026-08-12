@@ -1,128 +1,28 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "A Hongshan jade object is easiest to misunderstand when its silhouette is treated as a complete explanation. Shape matters, but excavation place, burial position, associated objects and the museum's degree of certainty matter more."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Read from evidence outward",
-      "body": "Begin with the label and provenance, then describe material and form, then ask what the archaeological context supports. Leave modern names such as “pig-dragon” and broad symbolism until the end.",
-      "tone": "decision"
-    },
-    {
-      "id": "passes-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "Four passes around one object"
-    },
-    {
-      "id": "passes",
-      "type": "table",
-      "caption": "Four passes around one object",
-      "columns": [
-        "Pass",
-        "Look for",
-        "What it supports"
-      ],
-      "rows": [
-        [
-          "Identity",
-          "Museum name, date range, findspot, collection number",
-          "Which object and attribution the institution presents"
-        ],
-        [
-          "Form",
-          "Opening, curve, suspension hole, edge and polish",
-          "How the object was made to be seen or suspended"
-        ],
-        [
-          "Context",
-          "Tomb, body position and associated finds",
-          "A bounded claim about deposition and social difference"
-        ],
-        [
-          "Comparison",
-          "Similar securely excavated pieces",
-          "A pattern, not one fixed meaning"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Record the complete label before zooming in.",
-        "Mark whether it was excavated, acquired, donated or lacks a findspot.",
-        "Describe only what is visible before reading interpretation.",
-        "Compare objects from different contexts.",
-        "Keep unanswered questions."
-      ]
-    },
-    {
-      "id": "status",
-      "type": "callout",
-      "title": "Tentative List is not inscription",
-      "body": "The UNESCO page is China's 2013 World Heritage Tentative List submission. It is not a World Heritage inscription, and its value argument remains the submitting State Party's case.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Tell Homeground which museum and archaeological interests matter. A local human can build a route around current labelled objects without inventing certainty.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue reading China carefully",
-      "items": [
-        {
-          "label": "Read a Suzhou garden",
-          "href": "/guides/how-to-read-a-suzhou-garden/"
-        },
-        {
-          "label": "Visit the Terracotta Army independently",
-          "href": "/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "Do you need a guide in China?",
-          "href": "/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Institutional sources and image credit",
-      "items": [
-        {
-          "label": "Sites of Hongshan Culture tentative-list entry",
-          "url": "https://whc.unesco.org/en/tentativelists/5804/",
-          "publisher": "UNESCO World Heritage Centre",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hongshan culture exhibition",
-          "url": "https://en.chnmuseum.cn/exhibition/exhibition_series/temporary_exhibitions/selected_historical_artifacts_exhibitions/202010/t20201016_247873.html",
-          "publisher": "National Museum of China",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hongshan Jade Dragon 2 by Gary Todd, CC0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hongshan_Jade_Dragon_2.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"Hongshan jade is often introduced through memorable silhouettes—a curled “dragon,” a bird, a tortoise or a human figure. Shape is the easiest evidence to see and the easiest to overread. To understand an object, move from its museum identity and excavation history to material, manufacture, burial position and associated finds before discussing names or symbolic meaning."},
+{"id":"answer","type":"callout","title":"Read from the label outward, not from a symbol inward","body":"Record the institution's object name, date range, findspot and accession or excavation status. Describe the visible form without interpretation, identify how it may have been suspended or placed, and then ask what the archaeological context supports. Modern labels such as “pig-dragon” are useful visual names; they are not surviving Hongshan explanations of meaning.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"The boundary: one object, one context, several levels of certainty"},
+{"id":"scope","type":"paragraph","text":"The Sites of Hongshan Culture on China's UNESCO Tentative List include Niuheliang, Hongshanhou and Weijiawopu in present-day Liaoning and Inner Mongolia. The submission distinguishes ceremonial and burial remains at Niuheliang from settlement evidence at the other sites. That regional archaeological framework is stronger than a free-floating claim about all prehistoric Chinese jade. This guide helps museum visitors evaluate a labelled Hongshan object; it does not authenticate market pieces, price antiquities or decode a single universal religion."},
+{"id":"context-heading","type":"heading","level":2,"text":"Why excavation context changes the answer"},
+{"id":"context","type":"table","caption":"Evidence that should travel with a jade object","columns":["Evidence","Question","What a positive answer supports","Limit"],"rows":[["Secure findspot","Was it excavated from a documented site and feature?","A relationship to a particular archaeological context","Not a complete biography before burial"],["Burial position","Where was it relative to the body or structure?","A bounded inference about display or deposition","Not the object's name in Hongshan speech"],["Associated objects","What else was in the same grave or feature?","Patterning in assemblage and social difference","Not one fixed meaning for every similar form"],["Stratigraphy and dating","How was the context dated?","A defensible chronological range","Not necessarily the exact production year"],["Collection history","Was it excavated, donated, purchased or transferred?","How much provenance the museum can document","A museum accession alone does not create an excavation context"]]},
+{"id":"passes-heading","type":"heading","level":2,"text":"Five passes around one display case"},
+{"id":"passes","type":"list","ordered":true,"items":["Photograph or transcribe the complete label, including qualifiers such as ‘attributed to,’ ‘excavated at’ or ‘collection.’","Describe the outline, opening, edge, surface, thickness and visible perforations before using an animal name.","Look for wear, polish and suspension holes, but do not infer use without the museum's context or a secure comparison.","Read the case grouping: objects from one tomb, one site, one period or merely one visual theme are different kinds of comparison.","End by writing two columns—what the evidence establishes and what remains an interpretation."]},
+{"id":"form-heading","type":"heading","level":2,"text":"Form is a question generator, not a dictionary"},
+{"id":"form","type":"paragraph","text":"A curved body, notched snout, paired perforations or polished edge can guide close looking. They may also help scholars compare manufacturing choices and how an object was worn or deposited. But resemblance is not an inscription. “Dragon,” “pig-dragon” and other modern object names group visible features for discussion; they do not preserve the maker's own word or prove that every similar piece carried the same belief. State the visual comparison and the institutional label separately."},
+{"id":"social-heading","type":"heading","level":2,"text":"What burial patterns can—and cannot—say about society"},
+{"id":"social","type":"paragraph","text":"China's Tentative List submission describes Niuheliang as a late Hongshan burial and ceremonial centre with ranked graves, and notes that many graves contained jade without other grave goods. This distribution is evidence used to discuss social differentiation and specialised ceremonial deposition. The inference depends on the pattern across excavated features, not the beauty of one object. It cannot reveal an individual's thoughts, establish a later imperial title or make every jade owner a ruler or shaman."},
+{"id":"evidence-heading","type":"heading","level":2,"text":"Use an evidence ladder for every claim"},
+{"id":"evidence","type":"comparison","title":"From strongest to most speculative","columns":[{"heading":"Directly documented","items":["Museum catalogue identity","Excavated site and feature","Recorded dimensions and material description"]},{"heading":"Archaeological interpretation","items":["Possible suspension from placement and perforations","Social differentiation from burial patterns","Ceremonial significance from site and assemblage"]},{"heading":"Keep explicitly tentative","items":["Exact animal identity","Personal ownership history","One universal symbolic message"]}]},
+{"id":"museum-heading","type":"heading","level":2,"text":"A practical museum route"},
+{"id":"museum","type":"list","items":["Begin with securely excavated objects even if they look less dramatic.","Compare at least two contexts rather than two similar silhouettes.","Use maps and tomb diagrams before enlarging a close-up photograph.","Check whether a temporary exhibition page describes a past display; do not assume every featured object remains on view.","If the English label is shorter, photograph the Chinese label and catalogue number for later verification."]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Common mistakes to avoid"},
+{"id":"mistakes","type":"list","items":["Calling the Hongshan sites UNESCO World Heritage; they are on China's Tentative List, not the inscribed List.","Using colour to authenticate jade; colour can reflect material variation, alteration, burial environment, lighting or treatment.","Treating a famous type name as proof of an excavated provenance.","Reading a temporary exhibition page as a current gallery inventory.","Claiming that one grave, motif or region explains all Neolithic jade in China.","Buying an object because a seller repeats museum vocabulary; legal provenance and authenticity require specialist due diligence."]},
+{"id":"status","type":"callout","title":"Tentative List is not World Heritage inscription","body":"China submitted the Sites of Hongshan Culture to the UNESCO Tentative List in 2013. The page publishes the State Party's description and proposed value; it does not mean the World Heritage Committee has inscribed the property or endorsed every interpretation in the submission.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"A defensible note for one object"},
+{"id":"checklist","type":"list","items":["Museum, gallery and object number","Institutional name and date range","Excavated findspot or clearly stated absence of one","Visible form and manufacture without symbolism","Burial position and associated objects, if documented","One supported interpretation and one unresolved question"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Tell Homeground which museum, archaeological site or jade question matters to you. A local planner can check current displays and build a route around objects with useful labels, maps and excavation context rather than promising a famous piece that may be on loan or off view.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue reading archaeological evidence","items":[{"label":"Visit the Terracotta Army independently","href":"/guides/terracotta-warriors-without-tour/","description":"Plan a major archaeological visit and keep site evidence distinct from popular myths."},{"label":"Read ritual bronze vessels and inscriptions","href":"/guides/ritual-bronze-vessels-and-inscriptions/","description":"Apply a similar evidence ladder to form, function and ancient text."},{"label":"Read Liye Qin slips as local records","href":"/guides/liye-qin-slips-local-government-records/","description":"See how context turns ordinary documents into evidence for an empire."}]},
+{"id":"sources","type":"sources","title":"Institutional sources and image credit","items":[{"label":"Sites of Hongshan Culture tentative-list entry","url":"https://whc.unesco.org/en/tentativelists/5804/","publisher":"UNESCO World Heritage Centre","reviewedAt":"2026-08-12"},{"label":"Jades from Hongshan exhibition","url":"https://en.chnmuseum.cn/exhibition/exhibition_series/temporary_exhibitions/selected_historical_artifacts_exhibitions/202010/t20201016_247873.html","publisher":"National Museum of China","reviewedAt":"2026-08-12"},{"label":"Hero: Hongshan Jade Dragon by Gary Todd, CC0; cropped","url":"https://commons.wikimedia.org/wiki/File:Hongshan_Jade_Dragon_2.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

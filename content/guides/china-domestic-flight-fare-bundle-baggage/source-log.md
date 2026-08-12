@@ -1,6 +1,6 @@
-# Source log — China Domestic Flight Fare Bundles: Add Baggage and Flexibility
+# Source log — China Domestic Flight Fare Bundles: Baggage and Flexibility
 
-Status: `COPY READY — CENTRAL REVIEW REQUIRED`
+Status: `DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED`
 
 Checked at: 2026-08-12 (Asia/Shanghai)
 
@@ -8,37 +8,41 @@ Canonical owner: `/guides/china-domestic-flight-fare-bundle-baggage/`
 
 ## Editorial boundary
 
-This page owns total-cost comparison of domestic flight products. It does not publish fare tables, airline rankings or a baggage allowance that may vary by product.
+This page owns like-for-like comparison of China domestic-flight products. It does not rank airlines, quote live fares, promise an allowance or own separate-ticket connection risk.
 
-## Sources
+## Official sources
 
-### Civil Aviation Administration of China
+### CAAC — Public air passenger service rules
 
-- Source: Air-travel ticket guidance
-- URL: https://app.caac.gov.cn/INDEX/HLFW/HKLXCS/
+- URL: https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html
 - Checked: 2026-08-12
-- Facts used: Different ticket products can have different refund, change and baggage terms; optional services must be read before purchase.
-- Boundary: No universal baggage allowance is inferred.
-- Update trigger: CAAC guidance change.
+- Facts used: Sellers must disclose fare and ticket conditions, whether multiple booked flights are through flights, and applicable baggage information; carrier transport conditions govern product details.
+- Boundary: The regulation does not establish one universal baggage allowance or fee.
+- Update trigger: Regulatory amendment or replacement.
 
-### Civil Aviation Administration of China
+### CAAC — Air-travel ticket guidance
 
-- Source: Notice on airline ticket services
-- URL: https://www.caac.gov.cn/XXGK/XXGK/ZFGW/201807/t20180717_189399.html
+- URL: https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/
 - Checked: 2026-08-12
-- Facts used: Airlines must disclose fare types and change/refund conditions.
-- Boundary: The notice is not a live fare source.
-- Update trigger: Regulatory change.
+- Facts used: Voluntary and involuntary changes/refunds are different categories and exact fare conditions matter.
+- Boundary: General guidance is not a live fare or product source.
+- Update trigger: CAAC guidance update.
 
-## Planning judgments
+### Civil Aviation Law effective 1 July 2026
 
-- Compare the final usable bundle, not the first displayed fare.
-- Baggage, change and refund conditions can outweigh a small headline saving.
-- The value of flexibility rises when later bookings depend on the flight.
+- URL: https://www.caac.gov.cn/XXGK/XXGK/FLFG/202512/t20251227_229597.html
+- Checked: 2026-08-12
+- Facts used: Published transport conditions are part of the passenger contract and cover ticket changes, refunds, baggage and irregular operations.
+- Boundary: No individual legal outcome is promised.
+- Update trigger: Statutory amendment or official interpretation.
+
+## Editorial judgments
+
+- Compare a complete passenger basket: payment total, real baggage, necessary seats, refund/change conditions and arrival dependency.
+- Flexibility has greater value when later fixed bookings depend on arrival.
+- A search screenshot is not evidence of the final contracted product; retain the confirmation and applicable terms.
 
 ## Explicit exclusions
 
-- No live fare, seat, timetable, opening-hour or inventory claim.
-- No complete personalised day-by-day itinerary.
-- No city × day-count × traveller-type index variants.
-- Recheck named operators and official rules near booking.
+- No live price, airline ranking, allowance or fee table.
+- No legal opinion, reimbursement promise or insurer-coverage claim.

@@ -1,122 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "“过早”是武汉人处理早餐的日常方式，不是一次吃遍所有名小吃的任务。选一个主食、一个共享小食和一杯饮品，够吃就停。"
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "先选早餐结构",
-      "body": "热干面是浓郁芝麻酱拌面；三鲜豆皮是豆蛋皮包糯米馅；面窝是米豆浆油炸圈。两人先各点一份主食，只共享一种加餐。",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "先选早餐结构",
-      "columns": [
-        "食物",
-        "角色",
-        "怎么问"
-      ],
-      "rows": [
-        [
-          "热干面",
-          "主食碗",
-          "趁热拌匀，确认辣椒"
-        ],
-        [
-          "三鲜豆皮",
-          "扎实共享小份",
-          "有小份就先点小份"
-        ],
-        [
-          "面窝",
-          "油炸口感对比",
-          "先买一个新鲜的"
-        ],
-        [
-          "饮品或清汤",
-          "缓冲",
-          "确认是否加糖"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "尽量早上去，单店可能售罄。",
-        "指菜名和数量，不只给照片。",
-        "明确能否吃辣。",
-        "先共享，再决定加单。",
-        "保留店名并准备第二支付方式。"
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "没有全国统一的收摊时间",
-      "body": "开门与售罄时间随门店和日期变化；地图营业状态只是线索。",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "发来日期、人数与限制，本地真人可核对实际饮食或手作方案，不把单一场馆写成全国规则。",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "在中国吃第一顿共享餐",
-          "href": "/zh/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "外国游客在中国怎么付款",
-          "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "你的行程是否太赶",
-          "href": "/zh/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "官方来源与图片署名",
-      "items": [
-        {
-          "label": "Wuhan breakfast culture",
-          "url": "https://english.wuhan.gov.cn/H_1/NWP/202601/t20260128_2719906.shtml",
-          "publisher": "Wuhan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Wuhan food introduction",
-          "url": "https://english.wuhan.gov.cn/H_1/NWP/202309/t20230921_2268292.shtml",
-          "publisher": "Wuhan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hot Dry Noodles by ZhengZhou, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"武汉人说“过早”，指的是完成日常早餐，不是一个早上吃完所有名小吃的挑战。热干面、三鲜豆皮和面窝在分量与口感上差别很大。选一个主角，分享一个对比，再配饮料或清汤；吃完之后再决定是否还需要追加。"},
+{"id":"answer","type":"callout","title":"两个人采用“2+1”规则","body":"每人先点一份主食，通常是小碗或普通碗热干面，或一份豆皮；再分享一个面窝，或把另一种主食当小份试吃。热干面拿到后马上拌，油炸食物趁新鲜吃，吃完再点下一样。这样才能比较味道，而不是把早餐变成三顿正餐。","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"边界：解决一顿真实早餐，不给美食排名"},
+{"id":"scope","type":"paragraph","text":"武汉市政府资料把芝麻酱热干面、含糯米和肉馅的豆皮、面窝列为武汉特色早餐。现实中的配方、馅料、浇头、分量和店铺节奏都会变化。本文解决的是怎样组合并点完一顿可承受的早餐，不评“最正宗”店铺，不冻结营业时间，也不把一条旅游美食街当成本地人唯一吃早餐的地方。"},
+{"id":"dishes-heading","type":"heading","level":2,"text":"先知道三样食物在桌上的作用"},
+{"id":"dishes","type":"table","caption":"三样早餐，三种不同负担","columns":["食物","常见构成","口感与饱足","第一次怎么点"],"rows":[["热干面","碱水面拌芝麻酱与调味，配料会变化","浓香、紧实，放久容易干","当作主食点一碗，拿到后从碗底立即拌匀"],["三鲜豆皮","煎制表皮包着调味糯米和咸香馅料","外层煎香，内里糯软，分量扎实","先分享一份切块，并问清馅料"],["面窝","米和黄豆浆调成面糊后油炸成环，配方会变","边缘脆、中间软，放冷后油感明显","先买一个刚出锅的分享"],["饮料或汤","不同店有豆浆、米酒饮品或清汤","补充水分，但可能加糖","先问甜不甜，别一开始点很多杯"]]},
+{"id":"choose-heading","type":"heading","level":2,"text":"先选早餐结构，再选街道"},
+{"id":"choose","type":"comparison","title":"按同行者搭配","columns":[{"heading":"两人第一次尝","items":["两份小主食","一个共享对比食物","先点一份饮料或汤，吃完再加"]},{"heading":"一人过早","items":["一份主食","还有胃口才加一个油炸单品","豆皮或另一主食留到第二天"]},{"heading":"家庭或四名成人","items":["混合热干面与豆皮","分享两种小吃","大量点单前先确认馅料和辣度"]}]},
+{"id":"where-heading","type":"heading","level":2,"text":"名街是选项，不是“正宗证书”"},
+{"id":"where","type":"paragraph","text":"武汉官方介绍会列出户部巷、粮道街等美食区域，但它们服务于不同路线和客流。知名小吃街便于一次比较和看清招牌；酒店附近的社区店，更适合观察普通工作日上午的节奏。应按当天营业、排队、卫生、座位需求和后续行程选择，而不是相信某一条街拥有武汉早餐。"},
+{"id":"timing-heading","type":"heading","level":2,"text":"早餐时段是每家店自己的动态事实"},
+{"id":"timing","type":"paragraph","text":"早餐店可能很早开门，也可能某样卖完、暂停或营业到传统早餐时段以后。地图时间、旧游记和视频只能提供线索。某家店很重要时，应查看当前通知或联系店家，并保存一家卖同类食物的附近备选。空腹去可以，但不要让一张定时博物馆门票或火车票紧跟在早餐后面。"},
+{"id":"order-heading","type":"heading","level":2,"text":"真实档口点单流程"},
+{"id":"workflow","type":"list","ordered":true,"items":["离开酒店前保存店名和分店名的中文截图。","排对队伍，观察是先付款还是取餐后付款。","指着具体食物说数量；有大小份时确认小份或普通份。","在制作前询问辣椒、香菜和馅料。","提前准备好付款方式和备选，不要到窗口才设置应用。","取齐所有配料，到指定区域就餐，热干面立刻拌匀。","吃完第一轮，按现场习惯归还餐具，再决定要不要加。"]},
+{"id":"phrases-heading","type":"heading","level":2,"text":"档口可以直接使用的中文"},
+{"id":"phrases","type":"table","caption":"指着食物说这些句子","columns":["需求","中文","用途"],"rows":[["一份","这个要一份。","点一份眼前的食物。"],["两碗","热干面要两碗。","点两碗热干面。"],["少辣","少放辣椒，可以吗？","询问是否可以减少辣椒。"],["不要香菜","不要香菜。","制作前说明。"],["问馅料","豆皮里面有什么？","确认豆皮馅料。"],["问甜味","这个是甜的吗？","确认饮料是否加糖。"],["堂食或打包","在这里吃。/ 打包。","说明用餐方式。"]]},
+{"id":"diet-heading","type":"heading","level":2,"text":"食物名称不能解决饮食限制"},
+{"id":"diet","type":"list","items":["热干面通常含小麦与芝麻酱，酱汁和配料仍需另问。","三鲜豆皮常有肉馅，表皮也可能含蛋；“三鲜”不是素食标签。","面窝基本介绍中有米和黄豆，但严格饮食者仍要确认小麦、调味与共用油锅。","这组早餐常见大豆和芝麻过敏原，必须明确告诉工作人员，不能只靠目测。","严重过敏或乳糜泻级需求下，快节奏共用档口可能无法控制交叉接触，应选能在点单前说明的场所。"]},
+{"id":"quality-heading","type":"heading","level":2,"text":"判断这一份的状态，不要寻找唯一原始配方"},
+{"id":"quality","type":"paragraph","text":"热干面应在及时搅拌后仍能把面条分开，让酱料均匀包裹；豆皮更值得看煎香表层与糯米馅的对比，而不是是否切成完美方块；面窝的油炸口感随时间迅速变化，新鲜度很重要。这些只是实用食用判断，不是“正宗检测”；配方差异和个人偏好都可以成立。"},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"常见失败与补救"},
+{"id":"mistakes","type":"table","caption":"别硬撑，及时修复早餐","columns":["失败","原因","补救"],"rows":[["面条结团","放置太久没拌","彻底拌开，只加店家提供的调料，不随意倒水"],["全都太撑","一次点了三份主食","停止追加，分享剩余食物，另一种留到次日"],["太辣","询问前辣椒已拌入","点原味饮料或温和食物，不以为挑掉可见辣椒就解决"],["想吃的卖完","该店一批生产结束","去已保存的备选，或改吃另一种早餐"],["没有座位","档口以快吃或外带为主","使用指定站食区或打包，不堵队伍"],["去了错误分店","地图结果把人带去别处","出示已保存的中文分店名，重新评估交通时间"]]},
+{"id":"warning","type":"callout","title":"没有全武汉统一的早餐截止时间或固定分店库存","body":"营业、售罄、菜单与付款流程会随店铺和日期变化。某家店是路线锚点时要核实，并保存附近替代。本文刻意不承诺时间、价格和分店现货。","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"一份真正吃得完的早餐计划"},
+{"id":"checklist","type":"list","items":["一家已确认主店和一家附近备选","每人一份主食，不是三份","一个共享对比小吃","辣椒、香菜、馅料和过敏原已问","到窗口前准备好付款","早餐后没有紧贴的定时预约","把没吃的留给第二个早晨"]},
+{"id":"help","type":"callout","title":"Homeground","body":"告诉我们酒店区域、人数、出发时间和饮食限制。当地规划人员可选择合理的早餐区域，核查当前店铺信息，并设计一条适合上午的短路线，而不是让你横跨武汉去找一个未经确认的摊位。","tone":"decision"},
+{"id":"links","type":"internal-links","title":"继续执行实际餐饮计划","items":[{"label":"在中国第一次吃共享餐","href":"/zh/guides/first-shared-meal-in-china/","description":"午餐或晚餐也使用同样的分量纪律。"},{"label":"外国游客如何在中国付款","href":"/zh/guides/how-to-pay-in-china-as-a-tourist/","description":"进入忙碌早餐档口前准备快速付款。"},{"label":"湘菜不只有辣","href":"/zh/guides/hunan-cuisine-balanced-first-meal/","description":"用对比而不是硬撑，搭配另一种地方餐。"}]},
+{"id":"sources","type":"sources","title":"官方来源与图片署名","items":[{"label":"武汉早餐文化","url":"https://english.wuhan.gov.cn/H_1/NWP/202601/t20260128_2719906.shtml","publisher":"武汉市人民政府","reviewedAt":"2026-08-12"},{"label":"武汉美食与早餐介绍","url":"https://english.wuhan.gov.cn/H_1/NWP/202309/t20230921_2268292.shtml","publisher":"武汉市人民政府","reviewedAt":"2026-08-12"},{"label":"题图：ZhengZhou 拍摄的热干面，CC BY-SA 4.0；已裁切","url":"https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

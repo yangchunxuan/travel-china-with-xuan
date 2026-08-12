@@ -1,122 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "‘궈짜오’는 우한의 일상적인 아침 방식이지 유명 간식을 한 번에 전부 먹는 과제가 아닙니다. 주식 하나, 나눌 곁들임 하나, 음료로 시작하세요."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "아침의 구조부터 고르기",
-      "body": "러간몐은 참깨장 비빔면, 싼셴더우피는 콩·달걀 피와 찹쌀 소, 몐워는 쌀·콩 반죽 튀김입니다. 두 명이면 주식 하나씩과 추가 한 가지만 나눕니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "아침의 구조부터 고르기",
-      "columns": [
-        "음식",
-        "역할",
-        "질문"
-      ],
-      "rows": [
-        [
-          "러간몐",
-          "주식 면",
-          "바로 비비고 고추 확인"
-        ],
-        [
-          "싼셴더우피",
-          "묵직한 공유 음식",
-          "가능하면 소량"
-        ],
-        [
-          "몐워",
-          "튀긴 대비",
-          "갓 튀긴 것 하나"
-        ],
-        [
-          "음료·맑은 국",
-          "완충",
-          "당 첨가 확인"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "아침에 가되 매진을 예상합니다.",
-        "사진보다 음식명과 수량을 가리킵니다.",
-        "고추 가능 여부를 말합니다.",
-        "나눠 먹고 추가 주문합니다.",
-        "가게명을 저장하고 결제 대안을 둡니다."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "공통 마감 시간은 없습니다",
-      "body": "영업과 매진 시간은 가게와 날짜마다 다르며 지도 표시는 단서일 뿐입니다.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "날짜, 인원, 제한을 보내면 현지 담당자가 한 장소를 전국 규칙으로 만들지 않고 실용 계획을 확인합니다.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "여행 이어가기",
-      "items": [
-        {
-          "label": "중국의 첫 공동 식사",
-          "href": "/ko/guides/first-shared-meal-in-china/"
-        },
-        {
-          "label": "중국 여행 결제",
-          "href": "/ko/guides/how-to-pay-in-china-as-a-tourist/"
-        },
-        {
-          "label": "일정이 너무 바쁜가",
-          "href": "/ko/guides/is-your-china-itinerary-too-rushed/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "공식 자료와 이미지 크레디트",
-      "items": [
-        {
-          "label": "Wuhan breakfast culture",
-          "url": "https://english.wuhan.gov.cn/H_1/NWP/202601/t20260128_2719906.shtml",
-          "publisher": "Wuhan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Wuhan food introduction",
-          "url": "https://english.wuhan.gov.cn/H_1/NWP/202309/t20230921_2268292.shtml",
-          "publisher": "Wuhan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Hot Dry Noodles by ZhengZhou, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"‘궈짜오’는 우한에서 아침을 먹는 일상 자체를 가리키는 말이지 유명 간식을 한 번에 모두 먹는 도전이 아닙니다. 러간몐, 싼셴더우피와 몐워는 포만감과 식감이 크게 다릅니다. 메인 하나를 고르고 대비되는 하나를 나눠 먹은 뒤 음료나 가벼운 국물을 더하세요. 그다음 정말 배가 남았는지 판단합니다."},
+{"id":"answer","type":"callout","title":"두 명이면 2+1 규칙을 쓰세요","body":"한 사람당 메인 하나를 주문하세요. 작은 또는 보통 러간몐 한 그릇이나 더우피 한 접시가 일반적입니다. 그리고 몐워 하나나 다른 메인을 시식 분량으로 나눕니다. 러간몐은 즉시 비비고 튀김은 갓 나왔을 때 먹으며 다음 간식 주문을 미룹니다. 그래야 세 끼를 한 번에 먹지 않고 비교할 수 있습니다.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"범위: 실제 아침 해결법이지 맛집 순위가 아닙니다"},
+{"id":"scope","type":"paragraph","text":"우한시 정부 자료는 참깨 페이스트를 쓴 러간몐, 찹쌀과 다진 고기를 넣는 더우피, 몐워를 대표 아침 음식으로 소개합니다. 레시피, 속, 토핑, 양과 영업 방식은 달라집니다. 이 글은 무리 없이 먹을 수 있는 한 끼를 구성하고 주문하는 방법이며 ‘가장 정통’ 가게를 정하거나 운영 시간을 고정하거나 관광 음식거리를 현지인의 유일한 아침 장소로 만들지 않습니다."},
+{"id":"dishes-heading","type":"heading","level":2,"text":"각 음식의 역할을 먼저 아세요"},
+{"id":"dishes","type":"table","caption":"세 음식, 서로 다른 포만감","columns":["음식","일반 구조","식감과 무게","첫 주문"],"rows":[["热干面 러간몐","밀가루 면에 참깨 페이스트와 양념, 토핑은 가게마다 다름","진하고 고소하며 시간이 지나면 마름","메인으로 한 그릇 주문해 바닥부터 즉시 비비기"],["三鲜豆皮 싼셴더우피","부쳐 낸 얇은 피 아래 양념 찹쌀과 짭짤한 속","윗면은 바삭, 안은 찰지고 든든함","자른 한 접시를 나누고 속 재료 질문"],["面窝 몐워","쌀·콩 반죽을 고리 모양으로 튀김, 배합은 다름","가장자리 바삭, 가운데 부드럽고 식으면 기름짐","갓 튀긴 하나를 나눠 먹기"],["음료·국물","가게에 따라 두유, 쌀 발효 음료, 가벼운 국","수분을 더하지만 달 수 있음","단맛을 묻고 여러 잔 전 하나 주문"]]},
+{"id":"choose-heading","type":"heading","level":2,"text":"거리를 고르기 전에 식사 형태를 고르세요"},
+{"id":"choose","type":"comparison","title":"여행자에 맞춘 주문","columns":[{"heading":"두 명 첫 시식","items":["작은 메인 두 개","대비되는 음식 하나를 나눠 먹기","추가 전 음료·국 하나"]},{"heading":"혼자 아침","items":["메인 하나","배가 남으면 튀김 하나","더우피나 다른 메인은 다음 날"]},{"heading":"가족·성인 네 명","items":["면과 더우피 혼합","간식 두 개 공유","여러 개 주문 전 속과 맵기 확인"]}]},
+{"id":"where-heading","type":"heading","level":2,"text":"유명 거리는 선택지이지 정통 인증서가 아닙니다"},
+{"id":"where","type":"paragraph","text":"공식 도시 소개는 후부샹, 량다오제 등 음식 지역을 열거하지만 각각 다른 동선과 방문객 흐름을 가집니다. 유명 간식 거리는 비교와 표지판이 편하고 숙소 근처 동네 가게는 평일 아침 리듬을 보기 좋을 수 있습니다. 한 거리가 우한 아침을 소유한다는 생각 대신 현재 영업, 줄, 위생, 좌석 필요와 하루 동선으로 고르세요."},
+{"id":"timing-heading","type":"heading","level":2,"text":"아침 판매 시간은 가게마다 다릅니다"},
+{"id":"timing","type":"paragraph","text":"아주 일찍 열거나 메뉴가 매진되거나 쉬었다가 전통적 아침 시간 이후에도 운영할 수 있습니다. 지도 시간, 오래된 글과 영상은 단서이지 증거가 아닙니다. 특정 가게가 중요하면 최신 공지나 연락으로 확인하고 같은 종류를 파는 가까운 대안을 저장하세요. 배고픈 상태로 가되 바로 뒤에 예약 시간이 정해진 박물관이나 열차를 붙이지 마세요."},
+{"id":"order-heading","type":"heading","level":2,"text":"실제 카운터 주문 흐름"},
+{"id":"workflow","type":"list","ordered":true,"items":["숙소를 나서기 전에 가게와 지점 중국어 이름을 저장하세요.","맞는 줄에 서고 선결제인지 수령 후 결제인지 보세요.","정확한 음식을 가리키고 수량, 소·보통 크기를 확인하세요.","조리 전에 고추, 고수와 속 재료를 물으세요.","준비된 결제법과 대안을 쓰고 창구에서 앱을 설정하지 마세요.","구성품을 모두 받아 지정 구역에서 먹고 러간몐은 즉시 비비세요.","첫 주문을 다 먹고 관행에 따라 식기를 반납한 뒤 추가하세요."]},
+{"id":"phrases-heading","type":"heading","level":2,"text":"카운터에서 쓸 중국어"},
+{"id":"phrases","type":"table","caption":"음식을 가리키며 보여 주세요","columns":["필요","중국어","뜻"],"rows":[["한 접시","这个要一份。","이것 한 개 주세요."],["두 그릇","热干面要两碗。","러간몐 두 그릇 주세요."],["덜 맵게","少放辣椒，可以吗？","고추를 줄일 수 있나요?"],["고수 제외","不要香菜。","고수를 빼 주세요."],["속 질문","豆皮里面有什么？","더우피 안에 무엇이 있나요?"],["단맛 질문","这个是甜的吗？","이것은 단가요?"],["매장·포장","在这里吃。/ 打包。","여기서 먹기 / 포장."]]},
+{"id":"diet-heading","type":"heading","level":2,"text":"음식 이름만으로 식이 제한을 해결할 수 없습니다"},
+{"id":"diet","type":"list","items":["러간몐은 보통 밀과 참깨 페이스트를 포함하며 소스와 토핑은 별도 확인이 필요합니다.","싼셴더우피는 고기가 흔하고 피에 달걀이 있을 수 있습니다. ‘싼셴’은 채식 표시가 아닙니다.","몐워의 기본 설명은 쌀과 콩이지만 엄격한 식단은 밀, 양념과 공용 튀김기 교차 접촉을 확인해야 합니다.","이 조합에는 콩과 참깨 알레르겐이 흔하므로 눈으로 판단하지 말고 명확히 알리세요.","심한 알레르기나 셀리악 수준 요구는 빠른 공용 카운터가 통제하지 못할 수 있으므로 주문 전 답할 수 있는 곳을 택하세요."]},
+{"id":"quality-heading","type":"heading","level":2,"text":"하나의 원조 레시피보다 받은 음식 상태를 보세요"},
+{"id":"quality","type":"paragraph","text":"러간몐은 빨리 비빈 뒤 면이 어느 정도 분리되고 소스가 고르게 묻는지 봅니다. 더우피는 완벽한 사각형 사진보다 익힌 윗면과 찹쌀 속의 대비가 중요합니다. 몐워는 튀김 식감이 빨리 변하므로 신선도가 중요합니다. 이는 실용적 식사 단서이지 정통성 시험이 아니며 레시피 차이와 개인 취향은 타당합니다."},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"흔한 실패와 회복"},
+{"id":"mistakes","type":"table","caption":"억지로 먹지 말고 아침을 회복하세요","columns":["실패","이유","대처"],"rows":[["면이 뭉침","두고 비비지 않음","충분히 비비고 가게가 제공한 양념만 추가"],["모두 너무 무거움","메인 세 개 동시 주문","추가를 멈추고 나눠 먹으며 다른 메뉴는 다음 날"],["너무 매움","묻기 전에 고추가 섞임","순한 음료·음식을 고르고 보이는 고추 제거로 해결된다고 보지 않기"],["원하는 메뉴 매진","한 가게 생산 종료","저장한 대안이나 다른 아침 종류 선택"],["좌석 없음","빠른 회전·포장 중심","지정 입식 구역이나 포장 이용, 줄 막지 않기"],["다른 지점 도착","지도 결과 오류","중국어 지점명을 보여 주고 이동 시간 재평가"]]},
+{"id":"warning","type":"callout","title":"우한 전체의 통일된 마감 시간이나 지점 재고는 없습니다","body":"운영, 매진, 메뉴와 결제 흐름은 가게와 날짜마다 다릅니다. 특정 가게가 동선의 축이면 확인하고 가까운 대안을 저장하세요. 이 글은 시간·가격·지점 재고를 약속하지 않습니다.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"실제로 끝낼 수 있는 아침 계획"},
+{"id":"checklist","type":"list","items":["확인한 주 가게 하나와 가까운 대안 하나","한 사람당 메인 하나","공유 대비 간식 하나","고추·고수·속·알레르겐 확인","창구 전에 결제 준비","바로 뒤 시간 지정 예약 없음","건너뛴 음식은 둘째 아침에"]},
+{"id":"help","type":"callout","title":"Homeground","body":"숙소 지역, 인원, 출발 시각과 식이 제한을 알려 주세요. 현지 플래너가 현실적인 아침 구역과 현재 가게 정보를 확인해 우한을 가로질러 미확인 노점을 찾지 않아도 되는 짧은 시식 동선을 만들 수 있습니다.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"실용적인 식사 계획 계속하기","items":[{"label":"중국에서 첫 공동 식사 주문하기","href":"/ko/guides/first-shared-meal-in-china/","description":"점심과 저녁에도 같은 양 조절 원칙을 씁니다."},{"label":"외국인 여행자의 중국 결제법","href":"/ko/guides/how-to-pay-in-china-as-a-tourist/","description":"바쁜 아침 카운터 전에 빠른 결제를 준비합니다."},{"label":"매운맛 너머의 후난 요리","href":"/ko/guides/hunan-cuisine-balanced-first-meal/","description":"인내가 아닌 대비로 다른 지역 식사를 구성합니다."}]},
+{"id":"sources","type":"sources","title":"공식 자료와 이미지 출처","items":[{"label":"우한 아침 문화","url":"https://english.wuhan.gov.cn/H_1/NWP/202601/t20260128_2719906.shtml","publisher":"우한시 인민정부","reviewedAt":"2026-08-12"},{"label":"우한 음식과 아침 소개","url":"https://english.wuhan.gov.cn/H_1/NWP/202309/t20230921_2268292.shtml","publisher":"우한시 인민정부","reviewedAt":"2026-08-12"},{"label":"대표 이미지: ZhengZhou 촬영 러간몐, CC BY-SA 4.0, 크롭","url":"https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

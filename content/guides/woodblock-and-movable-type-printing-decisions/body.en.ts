@@ -1,122 +1,32 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "Movable type did not simply arrive and make woodblocks obsolete. The useful comparison is the workflow: carving or selecting, composing, correcting, printing, storing and reprinting."
-    },
-    {
-      "id": "answer",
-      "type": "callout",
-      "title": "Compare the job, not a winner",
-      "body": "Blocks can preserve a stable page for repeated impressions; type can recombine characters but requires a large, organized inventory and careful composition.",
-      "tone": "decision"
-    },
-    {
-      "id": "matrix",
-      "type": "table",
-      "caption": "Compare the job, not a winner",
-      "columns": [
-        "Decision",
-        "Woodblock",
-        "Movable type"
-      ],
-      "rows": [
-        [
-          "Prepare",
-          "Carve the page",
-          "Select and compose characters"
-        ],
-        [
-          "Correct",
-          "Alter or recut the block",
-          "Replace type and reset lines"
-        ],
-        [
-          "Store",
-          "Keep page blocks",
-          "Sort and retain type"
-        ],
-        [
-          "Reprint",
-          "Reuse the same page",
-          "Recompose if dismantled"
-        ]
-      ]
-    },
-    {
-      "id": "workflow",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "Find the physical block or type case.",
-        "Identify whether the display is original, replica or demonstration.",
-        "Follow the sequence from text to impression.",
-        "Ask what kind of book or record it served.",
-        "Do not write a simple replacement timeline."
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "title": "Living practice and history differ",
-      "body": "UNESCO's Rui'an wooden movable-type entry documents a living lineage-genealogy practice. It does not prove every historical workshop used the same tools or sequence.",
-      "tone": "warning"
-    },
-    {
-      "id": "help",
-      "type": "callout",
-      "title": "Homeground",
-      "body": "Send the date and place. A local human can check current access, displays or programmes without promising unverified conditions.",
-      "tone": "decision"
-    },
-    {
-      "id": "links",
-      "type": "internal-links",
-      "title": "Continue planning",
-      "items": [
-        {
-          "label": "How Guangzhou morning tea works",
-          "href": "/guides/how-guangzhou-morning-tea-works/"
-        },
-        {
-          "label": "Visit the Terracotta Army independently",
-          "href": "/guides/terracotta-warriors-without-tour/"
-        },
-        {
-          "label": "Do you need a guide in China?",
-          "href": "/guides/do-you-need-a-tour-guide-in-china/"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "Institutional sources and image credit",
-      "items": [
-        {
-          "label": "Wooden movable type printing of China",
-          "url": "https://ich.unesco.org/en/usl/wooden-movable-type-printing-of-china-00322",
-          "publisher": "UNESCO Intangible Cultural Heritage",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "China Printing Museum introduction",
-          "url": "https://english.visitbeijing.com.cn/article/47OMvX0dE0F",
-          "publisher": "Beijing Municipal Culture and Tourism Bureau",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: wooden movable types by Popolon, CC BY-SA 4.0; cropped",
-          "url": "https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} as const satisfies StructuredPageBody;
+const body = {"schemaVersion":"1.0.0","blocks":[
+{"id":"lead","type":"lead","text":"Movable type did not arrive in China and simply make woodblocks obsolete. A useful comparison starts with the production job: prepare a text, carve or select characters, compose a page, proof and correct it, print copies, store the equipment and decide whether the same page will be reprinted. Different texts, scripts, print runs, labour systems and institutions changed that decision."},
+{"id":"answer","type":"callout","title":"Compare total workflow, not a winner","body":"A woodblock fixes a complete page that can be stored and printed again; movable type recombines individual characters but requires a large, searchable inventory, accurate composition and redistribution after printing. Type can reduce recarving when text changes, while blocks can reduce repeated composition for a stable page. Neither advantage applies automatically to every book or workshop.","tone":"decision"},
+{"id":"scope-heading","type":"heading","level":2,"text":"The boundary: two methods, many materials and historical settings"},
+{"id":"scope","type":"paragraph","text":"“Woodblock” and “movable type” describe principles, not two unchanged machines. Blocks, type, ink, paper, page layout, labour and storage varied across periods and places; movable type could be made from different materials. This guide compares relief-print workflows visible in Chinese printing museums and documented living practice. It does not offer a single invention-to-replacement timeline, claim that every printed page can be identified by eye, or rank one civilisation's technology against another."},
+{"id":"workflow-heading","type":"heading","level":2,"text":"Follow the same stages for both methods"},
+{"id":"workflow","type":"table","caption":"Production from manuscript to reuse","columns":["Stage","Woodblock route","Movable-type route","Question for the display"],"rows":[["Text preparation","Final page is written or transferred for carving","Copy and character needs are prepared for composition","Who finalised the text and page layout?"],["Image or character making","A page, illustration or combined design is carved in relief","Individual characters are made and maintained","Is the object original, replica or demonstration?"],["Composition","The carved page already fixes line and image relationships","Types are selected, ordered and locked into a page","How were characters found and held in place?"],["Proof and correction","Errors may be cut out, patched or require recarving","Wrong types can be replaced and lines reset","Does the exhibit show a corrected example?"],["Printing","Block is inked and paper impressed or rubbed","Composed type-page is inked and printed","What controls alignment and ink coverage?"],["Storage and reuse","Complete page blocks occupy space but preserve layout","Characters can be redistributed and reused; the page is lost unless kept composed","Was repeat printing or new composition more likely?"]]},
+{"id":"decision-heading","type":"heading","level":2,"text":"The real choice depends on the publication"},
+{"id":"decision","type":"table","caption":"Factors that change the balance","columns":["Factor","May favour blocks","May favour type","Why no absolute rule"],"rows":[["Stable page reprinted over time","Stored block returns to press without recomposition","Kept type-page could also be reused","Storage, damage and revision still matter"],["Text revised frequently","Large changes may require recutting","Individual types can be replaced and rearranged","Composition and proofing carry costs"],["Many unique characters","Page carving handles exactly the required set","Large inventory and rare characters are demanding","New types can be made, but sorting expands"],["Text plus illustration","Words and image can share one carved surface","Separate processes or elements may be combined","Workshop technique and design decide"],["Short or specialised run","Existing blocks can be economical","Available type and skilled compositors may help","Local assets matter more than an abstract break-even point"],["Distributed family or temple work","Blocks preserve an approved page","Portable type can support changing local records","Institutions and transmission shape the choice"]]},
+{"id":"characters-heading","type":"heading","level":2,"text":"Chinese characters change the inventory problem—not the possibility of type"},
+{"id":"characters","type":"paragraph","text":"A writing system with many characters makes selection, sorting and storage a substantial operational task. It does not make movable type impossible, as long histories of ceramic, wooden and metal type demonstrate. Ask how the type was indexed, how common and rare characters were stocked, how variants were managed and who knew the cases. The correct comparison is between real organisational costs and benefits, not the myth that an alphabet automatically succeeds while Chinese characters automatically fail."},
+{"id":"proof-heading","type":"heading","level":2,"text":"Correction is where abstract advantages meet real labour"},
+{"id":"proof","type":"paragraph","text":"A page must be proofed whether it comes from a block or type. With a block, a small error might be removed and patched, while a major change may require recarving. With type, a wrong character can be replaced, but insertion may disturb spacing and every composed page still needs checking. Look for proof sheets, patches, replacement characters or editorial marks. A display of finished impressions alone hides the labour that determines quality."},
+{"id":"museum-heading","type":"heading","level":2,"text":"How to read a printing museum display"},
+{"id":"museum","type":"list","ordered":true,"items":["Identify the printing surface: full page block, individual type, composed type-page or later reproduction.","Check material, date, provenance and whether the object is original, replica or hands-on teaching equipment.","Find a reversed printing surface and its correctly oriented impression; compare missing or damaged areas.","Trace who writes, carves or selects, composes, inks, prints, dries, binds and stores.","Look for the type case or block store, because retrieval is part of the technology.","Compare a text-heavy page, an illustrated page and a revised or reprinted work.","Record the specific publication task before deciding which method was advantageous."]},
+{"id":"living-heading","type":"heading","level":2,"text":"Rui'an wooden type is a living practice, not a frozen medieval workshop"},
+{"id":"living","type":"paragraph","text":"UNESCO's safeguarding entry documents wooden movable-type printing in Rui'an, Zhejiang, used in compiling and printing clan genealogies. It describes drawing and engraving characters, composing and printing, then paper cutting and binding, with reusable characters redistributed after the page is dismantled. The practice survives through family transmission and a specific social purpose. It is evidence that a complete workflow continues; it should not be projected unchanged onto every historical workshop or used to erase the contributions of women and other workers named in the process."},
+{"id":"evidence-heading","type":"heading","level":2,"text":"Separate an original, a replica and a demonstration"},
+{"id":"evidence","type":"comparison","title":"Three legitimate but different evidence types","columns":[{"heading":"Historical object","items":["Material and marks from a documented period","Provenance and conservation history","May be incomplete or too fragile to operate"]},{"heading":"Replica or reconstruction","items":["Makes concealed relationships visible","Can test a proposed sequence","Embodies modern interpretive choices"]},{"heading":"Living demonstration","items":["Shows embodied skill and coordination","May preserve community transmission","Is a present practice, not an untouched window into all past printing"]}]},
+{"id":"mistakes-heading","type":"heading","level":2,"text":"Common myths that block understanding"},
+{"id":"mistakes","type":"list","items":["Saying movable type immediately replaced woodblock printing.","Claiming Chinese characters made movable type useless.","Comparing only carving speed and ignoring composition, proofing, storage and reuse.","Calling a modern hands-on block an ancient artefact because the technique is traditional.","Using one Rui'an genealogy workflow as the universal history of Chinese movable type.","Ignoring illustrations, page layout, institutions and reader demand when explaining method choice."]},
+{"id":"fit-heading","type":"heading","level":2,"text":"Choose the museum task that matches your interest"},
+{"id":"fit","type":"comparison","title":"Three useful visit modes","columns":[{"heading":"Technology first","items":["Follow tools and workflow","Compare printing surfaces and impressions","Spend time on sorting and correction"]},{"heading":"Book history first","items":["Follow one title from text to bound copy","Compare editions and page layout","Ask who commissioned and read it"]},{"heading":"Living heritage first","items":["Focus on skilled roles and transmission","Check whether a demonstration is current","Avoid treating performers as replicas of the past"]}]},
+{"id":"warning","type":"callout","title":"Do not use old visitor details as current proof","body":"The China Printing Museum introduction is useful for collection scope, but hours, tickets, demonstrations and access can change. Confirm those details through the museum or current official local channel before travel; an old tourism page is not a live booking guarantee.","tone":"warning"},
+{"id":"checklist-heading","type":"heading","level":2,"text":"A complete comparison note"},
+{"id":"checklist","type":"list","items":["The publication task and intended reuse","Original, replica or demonstration status","Preparation and composition steps","How errors were found and corrected","Printing and binding roles","Storage and retrieval burden","Why this workshop used this method, stated as a bounded conclusion"]},
+{"id":"help","type":"callout","title":"Homeground","body":"Share whether you care most about technology, rare books, family genealogy or a hands-on experience. A local planner can check current galleries and demonstrations and allocate time to the relevant workflow, without promising an activity based on an outdated listing.","tone":"decision"},
+{"id":"links","type":"internal-links","title":"Continue reading craft and evidence","items":[{"label":"Choose a Zhoucheng Bai tie-dye workshop","href":"/guides/zhoucheng-bai-tie-dye-workshop-choice/","description":"Apply the same original-replica-demonstration discipline to a visitor craft session."},{"label":"Read Liye Qin slips as local records","href":"/guides/liye-qin-slips-local-government-records/","description":"Compare printed reproduction with an earlier administrative writing material."},{"label":"Do you need a guide in China?","href":"/guides/do-you-need-a-tour-guide-in-china/","description":"Decide when a technical museum benefits from specialist interpretation."}]},
+{"id":"sources","type":"sources","title":"Institutional sources and image credit","items":[{"label":"Wooden movable-type printing of China","url":"https://ich.unesco.org/en/usl/wooden-movable-type-printing-of-china-00322","publisher":"UNESCO Intangible Cultural Heritage","reviewedAt":"2026-08-12"},{"label":"China Printing Museum introduction","url":"https://english.visitbeijing.com.cn/article/47OMvX0dE0F","publisher":"Beijing Municipal Culture and Tourism Bureau","reviewedAt":"2026-08-12"},{"label":"Hero: wooden movable types by Popolon, CC BY-SA 4.0; cropped","url":"https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-12"}]}
+]} as const satisfies StructuredPageBody;
 export default body;
-

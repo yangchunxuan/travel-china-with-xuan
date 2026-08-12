@@ -1,8 +1,14 @@
 # Source log — hongshan-jade-context-and-symbols
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
+- Editorial status: THREE-LOCALE DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
+
+## 2026-08-12 depth review
+
+- Canonical boundary retained: reading labelled Hongshan jade through form and archaeological context; no market authentication, valuation or universal-symbol dictionary added.
+- The UNESCO Tentative List submission is treated as the State Party's case, not an inscription or independent endorsement. National Museum material supports the museum and exhibition context.
+- Added provenance levels, burial-position and assemblage reasoning, an evidence ladder, social-differentiation limits, current-display caution, buying-risk boundary and object-note checklist in matching EN/ZH/KO blocks.
 
 ## Core institutional sources
 

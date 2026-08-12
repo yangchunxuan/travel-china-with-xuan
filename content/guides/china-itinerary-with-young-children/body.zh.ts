@@ -1,156 +1,68 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-
-const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead-answer",
-      "type": "lead",
-      "text": "适合孩子的中国路线，不是把成人行程的晚餐提前。要围绕最难熬的一小时设计：抵达后的午睡、大车站内的长距离步行、突然要上厕所，或带着睡着的孩子完成最后一段换乘。少换基地和保留恢复时间，通常比多加一座名城更重要。"
-    },
-    {
-      "id": "decision-frame",
-      "type": "comparison",
-      "title": "先保护三个家庭系统",
-      "columns": [
-        {
-          "heading": "睡眠",
-          "body": "抵达日与换城日不要安排不可替代的固定项目。"
-        },
-        {
-          "heading": "移动",
-          "body": "计算楼梯、车站规模、收折推车和由谁拿行李。"
-        },
-        {
-          "heading": "吃饭与如厕",
-          "body": "在酒店附近和长队之前安排可预期的选择。"
-        }
-      ]
-    },
-    {
-      "id": "evidence-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "儿童票只是其中一层"
-    },
-    {
-      "id": "evidence",
-      "type": "paragraph",
-      "text": "12306公布按年龄划分的儿童票规则，包括何时可不单独占座免费乘车、何时应购买儿童优惠票。规则允许，不等于座位安排舒适；应核对最新条款、证件信息，并判断家庭是否需要独立座位。"
-    },
-    {
-      "id": "decision-table",
-      "type": "table",
-      "caption": "家庭限制对应什么路线调整",
-      "columns": [
-        "限制",
-        "路线回应",
-        "错误捷径"
-      ],
-      "rows": [
-        [
-          "依赖午睡",
-          "每天一个主要重点，附近时间保持可选。",
-          "抵达后立刻安排固定预约。"
-        ],
-        [
-          "推车与行李",
-          "减少换酒店；必要时用真正解决障碍的门到门交通。",
-          "假设所有通道都无障碍。"
-        ],
-        [
-          "两个孩子或一名成人",
-          "减少同时要管理的行李、牵手和车票。",
-          "因为车程短就加一座城市。"
-        ]
-      ]
-    },
-    {
-      "id": "warning",
-      "type": "callout",
-      "tone": "warning",
-      "title": "无障碍条件必须逐点核实",
-      "body": "车站、入口、景区和临时施工的条件都不同。应确认具体地点并准备不依赖推车的备用方案，不能承诺全国都方便推车。"
-    },
-    {
-      "id": "method-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "搭建亲子路线"
-    },
-    {
-      "id": "method",
-      "type": "list",
-      "ordered": true,
-      "items": [
-        "写下孩子不可妥协的睡眠与吃饭时间。",
-        "每次换乘都计算成人、行李、推车和空着的手。",
-        "按每天的摩擦成本选酒店，不只看景点距离。",
-        "每次大移动后留一个弹性恢复时段。",
-        "超载时先删一个基地，不要压缩每一天。"
-      ]
-    },
-    {
-      "id": "cut-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "先删移动，不删休息"
-    },
-    {
-      "id": "cut-rule",
-      "type": "paragraph",
-      "text": "如果路线过载，先删掉那座只为一项活动却要换酒店的城市。不要为了保护城市清单，牺牲午睡、吃饭和离境前缓冲。"
-    },
-    {
-      "id": "scope",
-      "type": "callout",
-      "tone": "neutral",
-      "title": "没有通用年龄模板",
-      "body": "同龄孩子的旅行状态也不同。本文需要结合你家孩子的作息、行动能力和最新票务规则，不输出照抄的亲子行程。"
-    },
-    {
-      "id": "help-cta",
-      "type": "callout",
-      "tone": "decision",
-      "title": "需要人工检查亲子路线？",
-      "body": "留下日期、人数与年龄、大致预算和考虑中的城市。"
-    },
-    {
-      "id": "more-planning",
-      "type": "internal-links",
-      "title": "继续规划",
-      "items": [
-        {
-          "label": "准备第一次乘中国高铁",
-          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
-          "description": "路线确定后再处理证件、车票与车站流程。"
-        },
-        {
-          "label": "选择真正方便交通的酒店",
-          "href": "/zh/guides/china-hotel-near-metro/",
-          "description": "减少每天步行与换乘，而不只看地图距离。"
-        },
-        {
-          "label": "检查真正可用的游览日",
-          "href": "/zh/guides/is-your-china-itinerary-too-rushed/",
-          "description": "如实扣除抵达、交通与恢复时间。"
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "type": "sources",
-      "title": "已核对的官方来源",
-      "items": [
-        {
-          "label": "铁路儿童票规则",
-          "url": "https://kyfw.12306.cn/otn/gonggao/children.html",
-          "publisher": "China Railway 12306",
-          "reviewedAt": "2026-08-12"
-        }
-      ]
-    }
-  ]
-} satisfies StructuredPageBody;
-
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead-answer", type: "lead", text: "适合幼儿的中国路线，不是把成人行程的晚饭提前。应围绕最难的一小时来设计：睡眠不足后的抵达、大车站里的长距离步行、临时如厕，或一人抱着熟睡儿童、另一人处理全部行李和证件。减少基地、每天保护一个核心项目，并在每次转场后留出恢复时间，通常能换来更多真正可用的家庭时间。" },
+  { id: "quick-choice", type: "comparison", title: "按你真实的家庭选择路线形状", columns: [
+    { heading: "一两个稳定基地", body: "午睡、熟悉食物、大量行李或成人双手不足，让换酒店代价很大时更合适。" },
+    { heading: "缓慢前移路线", body: "每次移动都能明显改善后续几天，且转场日没有必去定时项目时可行。" },
+    { heading: "成人节奏路线", body: "只有孩子在日常生活中已经能承受类似强度时才考虑，不要期待度假后突然改变。" }
+  ] },
+  { id: "official-heading", type: "heading", level: 2, text: "购票资格和舒适度是两个决定" },
+  { id: "official", type: "paragraph", text: "12306当前说明：年满6周岁且未满14周岁的儿童应购买儿童优惠票；每位持票成人可免费携带一名未满6周岁且不单独占座的儿童，年龄按乘车日期计算。免费乘车儿童也要用有效身份证件提前申明；如需要单独座位，则应购买适用车票。购票前必须重新核对。即使符合免费条件，单独座位仍可能是更可用的家庭选择。" },
+  { id: "systems-heading", type: "heading", level: 2, text: "保护四个家庭系统" },
+  { id: "systems", type: "table", caption: "把家庭需要转成路线决定", columns: ["系统", "路线回应", "脆弱的捷径"], rows: [
+    ["睡眠", "抵达和转场日不放不可替代项目，尽量保留平时睡眠窗口", "以为婴儿车或车辆一定能保证午睡"],
+    ["移动", "计算楼梯、步行、折叠婴儿车、行李及谁还有空手", "因为列车快就把换乘称为轻松"],
+    ["食物与如厕", "排队前和酒店附近准备可预期选择，并携带适龄备用食物", "等孩子已经饿了再开始寻找"],
+    ["规则", "每项交通预订使用准确护照信息和当前儿童票规则", "以为航空、铁路和景区年龄规则相同"]
+  ] },
+  { id: "route-workflow-heading", type: "heading", level: 2, text: "用八个决定搭家庭路线" },
+  { id: "route-workflow", type: "list", ordered: true, items: [
+    "写下孩子平时的睡眠、吃饭、如厕规律，以及睡不好一晚后的真实状态。按眼前这个孩子规划，不按理想年龄模板。",
+    "统计成人、儿童、行李箱、婴儿车、随身包和空手数量。若一名成人要抱睡着的孩子，必须重新分配其他所有物品。",
+    "抵达酒店应按真实机场或车站的低摩擦程度，以及附近是否有实用食物选择，而不是只按景观距离选择。",
+    "每天只保护一个核心项目，附近安排可选项目，删除时不会形成跨城失败。",
+    "每次城际移动后留出恢复时间，不把定时核心项目接在计划抵达时间后。",
+    "无障碍设施重要时，向具体运营方核对准确入口、电梯或协助服务，并保留抱行或替代交通方案。",
+    "按家庭座位关系选择车票，付款前再核对每位旅客的证件信息。",
+    "路线过满时先删除整个基地，不要靠压缩睡眠、用餐和转场余量保住所有城市。"
+  ] },
+  { id: "transfer-heading", type: "heading", level: 2, text: "在纸上演练一次转场" },
+  { id: "transfer", type: "table", caption: "每个阶段都问清楚谁做什么", columns: ["阶段", "问题", "更安全的设计"], rows: [
+    ["离开酒店", "早餐后能否准时？谁检查房间、谁看孩子？", "前一晚完成大部分打包，只留一个必需品小包"],
+    ["车站或机场", "全组能否一起通过证件核验、安检和厕所？", "预留时间；条件允许时一人管证件、一人管孩子"],
+    ["车上", "孩子是否有已订座位、食物、保暖层和熟悉的安静活动？", "关键用品放在随身包，不放托运行李"],
+    ["抵达", "孩子睡着、婴儿车要折叠或房间未准备好怎么办？", "预先选择最简单的备用接驳并确认行李寄存"]
+  ] },
+  { id: "example-heading", type: "heading", level: 2, text: "规划示例：为了“短”火车多换一家酒店" },
+  { id: "example", type: "callout", tone: "neutral", title: "这是方法示例，不是固定行程", body: "一家人看到铁路运行时间很短，就为了一个著名景点增加一座城市。真实转场却包含退房、大车站、两个行李箱、一辆婴儿车，以及尚未能入住的房间。如果新城市只有这一个项目，失去的可用时间可能多于得到的时间。从稳定基地集中访问，或直接删除这一站，都可能在不增加完整转场日的情况下保护核心体验。" },
+  { id: "failure-heading", type: "heading", level: 2, text: "常见失败与恢复" },
+  { id: "failure", type: "table", caption: "让路线具备恢复能力", columns: ["失败", "立即处理", "下次结构调整"], rows: [
+    ["孩子睡过定时项目", "若事先约定，可由一名成人单独参加；否则放弃项目", "不要把不可替代项目放在平时午睡或抵达窗口"],
+    ["婴儿车路线被阻断", "使用抱行或工作人员协助方案，不强行走不安全路径", "下次确认准确入口并减少行李"],
+    ["长队前孩子拒绝吃东西", "先使用熟悉备用食物并暂停", "把可预期食物放在核心项目之前"],
+    ["交通延误吃掉晚上", "先去酒店，保持晚餐简单", "转场日不安排头部项目"],
+    ["一位成人不舒服", "取消可选移动，留在酒店附近", "减少基地并保留弹性预订"]
+  ] },
+  { id: "switch-heading", type: "heading", level: 2, text: "什么时候应选更慢方案" },
+  { id: "switch-rule", type: "paragraph", text: "行李多于成人空手、孩子依赖午睡、婴儿车通行不确定，或全组无法承受睡眠不足时，应减少基地。若移动不频繁，门到门交通确实解决障碍，并且每个新基地支持多个家庭重点，前移路线仍可行。如果保留一站的唯一理由是“火车很短”，就删除它。" },
+  { id: "packing-heading", type: "heading", level: 2, text: "随手可拿的一只异常包" },
+  { id: "packing", type: "list", ordered: false, items: [
+    "每位旅客的旅行证件原件与预订信息。",
+    "一套儿童替换衣物、天气层和适合孩子需要的用品。",
+    "在交通与安检规则允许时携带水和熟悉食物。",
+    "离线保存的中文酒店地址，以及不依赖单一手机的联系方式。",
+    "带原包装的必要药物及适当医疗建议；本文不提供医疗或入境携药指导。"
+  ] },
+  { id: "dynamic-boundary", type: "callout", tone: "warning", title: "重新核对规则和具体设施", body: "儿童票、景区年龄规则、车站设施和临时通行路线都可能变化。临近出行时向每个具体运营方和地点核实。不能因为一个车站顺利，就推断全国都适合婴儿车。" },
+  { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责家庭路线节奏和转场设计，不提供儿科建议、不保证无障碍、不汇总景区年龄规则，也不重复高铁新手操作流程。" },
+  { id: "help-cta", type: "callout", tone: "decision", title: "需要家庭路线压力测试？", body: "请提供日期、儿童年龄与作息、成人数量、行李、婴儿车需要和候选基地。有效审核应找出最难的一小时和第一个安全删减项。" },
+  { id: "more-planning", type: "internal-links", title: "继续规划", items: [
+    { label: "准备第一次乘坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "路线确定后，再处理护照、车票和车站流程。" },
+    { label: "选择靠近真正有用交通的酒店", href: "/zh/guides/china-hotel-near-metro/", description: "减少每天步行与换乘，而不只是地图距离。" },
+    { label: "检查可用观光天数", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "如实计算抵达、转场和恢复时间。" }
+  ] },
+  { id: "sources", type: "sources", title: "已复核的官方来源", items: [
+    { label: "铁路儿童票规则", url: "https://kyfw.12306.cn/otn/gonggao/children.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" }
+  ] }
+]} satisfies StructuredPageBody;
 export default body;
