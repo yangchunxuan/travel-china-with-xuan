@@ -1,0 +1,23 @@
+{
+  "id": "summer-palace-gates-route-and-boat-plan",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["summer-palace", "beijing-parks", "entrance-gates", "boat-route"],
+  "destinations": ["beijing", "summer-palace", "kunming-lake"],
+  "heroImagePath": "/images/guides/summer-palace-gates-route-and-boat-plan/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/summer-palace-gates-route-and-boat-plan/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "sourceReviewedDate": "2026-08-12",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/summer-palace-gates-route-and-boat-plan/", "title": "Summer Palace: Best Gate, Walking Route and Boat Plan", "headline": "Choose Your Summer Palace Gate Before You Choose the Sights", "description": "Match the East, North or New Palace Gate to your priorities, understand base versus combined tickets and build a route that still works if boats stop.", "heroAlt": "Kunming Lake, Nanhu Island and the Seventeen-Arch Bridge viewed from Longevity Hill in Beijing's Summer Palace", "navTitle": "Summer Palace gates and route", "featuredLinkLabel": "Choose a Summer Palace gate and route", "openGraphLocale": "en_US", "cardTags": ["Beijing", "Summer Palace", "Route"] },
+    "zh": { "path": "/zh/guides/summer-palace-gates-route-and-boat-plan/", "title": "颐和园从哪个门进：步行路线、联票与游船安排", "headline": "去颐和园，先选入口，再选景点", "description": "按东宫门、北宫门或新建宫门选择实际路线，分清门票与联票，并准备一条即使游船停航也能完成的步行方案。", "heroAlt": "从万寿山俯瞰颐和园昆明湖、南湖岛与十七孔桥", "navTitle": "颐和园入口与路线", "featuredLinkLabel": "选择颐和园入口和路线", "openGraphLocale": "zh_CN", "cardTags": ["北京", "颐和园", "路线"] },
+    "ko": { "path": "/ko/guides/summer-palace-gates-route-and-boat-plan/", "title": "이화원 어느 문으로 갈까: 도보 동선과 유람선 계획", "headline": "이화원은 명소보다 입구를 먼저 고르세요", "description": "동궁문·북궁문·신건궁문을 우선순위에 맞추고, 기본표와 통합표를 구분하며, 배가 멈춰도 실행 가능한 동선을 만듭니다.", "heroAlt": "이화원 만수산에서 내려다본 쿤밍호와 난후섬, 십칠공교", "navTitle": "이화원 입구와 동선", "featuredLinkLabel": "이화원 입구와 동선 선택하기", "openGraphLocale": "ko_KR", "cardTags": ["베이징", "이화원", "동선"] }
+  }
+}
