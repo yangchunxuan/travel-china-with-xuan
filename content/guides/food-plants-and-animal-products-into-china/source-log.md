@@ -1,11 +1,11 @@
-# Source log — food-plants-animal-products-into-china
+# Source log — food-plants-and-animal-products-into-china
 
 - Status: READY
 - Topic ID: hg-topic-0636
 - Canonical owner: employee 6 / this batch
 - Reviewed: 2026-08-12
 - Fact boundary: live rules are attributed to the exact authority, device, carrier, venue, transport mode or document process covered by the cited source. No universal promise is inferred.
-- Internal-link boundary: payment setup stays in the published payment guide; this article links to it rather than duplicating setup instructions.
+- Internal-link boundary: the red/green-channel guide owns the arrival-channel choice. This article owns the pre-packing screen for food, plants, soil and animal products.
 
 ## Official sources
 

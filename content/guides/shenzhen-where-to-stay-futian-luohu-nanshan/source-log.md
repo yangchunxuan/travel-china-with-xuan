@@ -18,6 +18,6 @@ Official current metro and municipal destination pages were reviewed 2026-08-12.
 - `source`: Wikimedia Commons file `SZ 深圳市 Shenzhen 福田區 Futian 市民中心 Civic Center...SS2.jpg`
 - `author`: RBWS 20 EGUOF; `date`: 2019-10-10; `licence`: CC BY-SA 4.0
 - `transformation`: centre crop, 1600 × 1000, lower gradient, WebP, metadata removed
-- `sha256`: `67a075f9edc9509eb7142fb0816259c06f2032f07c1b2bc251cdb558980a7271`
+- `sha256`: `f91485c8cbc7dd2bbc23596f997349aad575f50d077be45582be95ddf120890a`
 
 The photograph identifies Futian's real streetscape, not current construction, traffic or hotel conditions.

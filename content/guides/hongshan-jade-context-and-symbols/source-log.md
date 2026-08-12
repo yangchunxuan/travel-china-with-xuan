@@ -1,7 +1,7 @@
 # Source log — hongshan-jade-context-and-symbols
 
 - Research review date: 2026-08-12 (Asia/Shanghai).
-- Editorial status: COPY DRAFT — EDITORIAL REVIEW AND ASSETS NEEDED.
+- Editorial status: COPY AND LICENSED HERO READY — CENTRAL REVIEW REQUIRED.
 - Scope: evidence-led cultural field guide; it distinguishes documented facts, institutional interpretation, scholarly caution, local variation and Homeground planning judgment.
 
 ## Core institutional sources

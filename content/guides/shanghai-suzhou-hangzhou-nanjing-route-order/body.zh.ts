@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "规划上海—杭州交通",
-          "href": "/guides/shanghai-hangzhou-transport-route/",
+          "href": "/zh/guides/shanghai-hangzhou-transport-route/",
           "description": "城市顺序确定后再选车站。"
         },
         {
           "label": "理解苏州园林的游览方式",
-          "href": "/guides/how-to-read-a-suzhou-garden/",
+          "href": "/zh/guides/how-to-read-a-suzhou-garden/",
           "description": "先明确苏州体验，再决定是否住宿。"
         },
         {
           "label": "选择浦东还是虹桥机场",
-          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "href": "/zh/guides/shanghai-pudong-or-hongqiao-airport/",
           "description": "实际机场可能改变最佳方向。"
         }
       ]

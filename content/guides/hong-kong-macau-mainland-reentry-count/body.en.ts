@@ -116,9 +116,9 @@ const body: StructuredPageBody = {
       "title": "Official sources reviewed",
       "items": [
         {
-          "label": "Exit and Entry Administration Law (bilingual PDF)",
-          "url": "https://fgw.sh.gov.cn/cmsres/59/59f5d2526744beaaa10ec0316a16586/8ac6aae3143b2aea1d9a69bdd52edd3e.pdf",
-          "publisher": "Shanghai Municipal Government / National law",
+          "label": "Exit and Entry Administration Law (official English text)",
+          "url": "https://www.nia.gov.cn/n741440/n741547/c757592/content.html",
+          "publisher": "National Immigration Administration",
           "reviewedAt": "2026-08-12"
         },
         {

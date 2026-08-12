@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead-answer",
       "type": "lead",
-      "text": "두 운임의 합이 작다고 셀프 환승이 싼 것은 아닙니다. 중국 민항 당국은 비연결 구간이 별도로 발권되고 각 조건을 따른다고 안내합니다. 첫 항공편이 바뀔 때 잃을 수 있는 다음 표, 숙소, 입장권과 국제선 출국을 절약액과 비교하세요."
+      "text": "두 운임의 합이 작다고 셀프 환승이 싼 것은 아닙니다. 중국 민항 당국은 비연결 구간이 별도로 발권되고 각 조건을 따른다고 안내합니다. 첫 항공편이 바뀌었을 때 잃을 수 있는 다음 항공권, 숙소, 입장권과 국제선 출국 일정을 절약액과 비교하세요."
     },
     {
       "id": "decision-frame",
@@ -69,7 +69,7 @@ const body = {
       "id": "warning",
       "type": "callout",
       "tone": "warning",
-      "title": "항공사의 최소 연결시간을 빌리지 마세요",
+      "title": "항공사의 최소 연결 시간을 그대로 적용하지 마세요",
       "body": "그 시간은 보호된 연결과 특정 터미널 절차에만 적용될 수 있으며 별도 발권의 안전을 증명하지 않습니다."
     },
     {
@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "국제선 출국 전 마지막 밤 보호",
-          "href": "/guides/china-last-night-before-international-flight/",
+          "href": "/ko/guides/china-last-night-before-international-flight/",
           "description": "셀프 환승이 마지막 단일 실패 지점이 되지 않게 하세요."
         },
         {
           "label": "상하이의 정확한 공항 확인",
-          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "href": "/ko/guides/shanghai-pudong-or-hongqiao-airport/",
           "description": "공항 변경은 일반 환승이 아닙니다."
         },
         {
           "label": "중국 국내선 운임 묶음 비교",
-          "href": "/guides/china-domestic-flight-fare-bundle-baggage/",
+          "href": "/ko/guides/china-domestic-flight-fare-bundle-baggage/",
           "description": "수하물과 변경 조건을 넣은 뒤 가격을 비교하세요."
         }
       ]

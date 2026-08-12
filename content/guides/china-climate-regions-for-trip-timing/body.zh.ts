@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "判断十月具体出行时间",
-          "href": "/guides/china-in-october-golden-week-or-later/",
+          "href": "/zh/guides/china-in-october-golden-week-or-later/",
           "description": "用专页比较国庆与十月中下旬的区域天气。"
         },
         {
           "label": "核对官方公众假期",
-          "href": "/guides/china-public-holidays-travel-calendar/",
+          "href": "/zh/guides/china-public-holidays-travel-calendar/",
           "description": "气候合适不代表避开假期压力。"
         },
         {
           "label": "比较平季价值",
-          "href": "/guides/china-shoulder-season-value-tradeoff/",
+          "href": "/zh/guides/china-shoulder-season-value-tradeoff/",
           "description": "通过气候筛选后，再加入价格、日照与营业限制。"
         }
       ]

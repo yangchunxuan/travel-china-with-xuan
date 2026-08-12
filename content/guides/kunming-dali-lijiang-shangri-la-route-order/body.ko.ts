@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "리장 고성과 수허 중 선택",
-          "href": "/guides/lijiang-old-town-or-shuhe-where-to-stay/",
+          "href": "/ko/guides/lijiang-old-town-or-shuhe-where-to-stay/",
           "description": "리장의 역할을 정한 뒤 숙소 지역을 고르세요."
         },
         {
           "label": "중국 철도 이용 준비",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "동선 설계와 승차 절차를 분리해 확인하세요."
         },
         {
           "label": "일정이 과도한지 점검",
-          "href": "/guides/is-your-china-itinerary-too-rushed/",
+          "href": "/ko/guides/is-your-china-itinerary-too-rushed/",
           "description": "이동과 회복 시간을 제외한 실제 관광일을 계산하세요."
         }
       ]

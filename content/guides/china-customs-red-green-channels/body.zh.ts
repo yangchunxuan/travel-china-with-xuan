@@ -95,7 +95,7 @@ const body: StructuredPageBody = {
       "items": [
         {
           "label": "食品、植物和动物产品入境",
-          "href": "/zh/guides/food-plants-animal-products-into-china/",
+          "href": "/zh/guides/food-plants-and-animal-products-into-china/",
           "description": "打包前完成检疫检查。"
         },
         {

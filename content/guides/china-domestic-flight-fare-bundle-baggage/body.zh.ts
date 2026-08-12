@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "检查分开出票风险",
-          "href": "/guides/china-separate-flight-tickets-self-transfer-risk/",
+          "href": "/zh/guides/china-separate-flight-tickets-self-transfer-risk/",
           "description": "便宜套餐仍可能让后续行程失去保障。"
         },
         {
           "label": "理解中国旅行成本",
-          "href": "/guides/how-much-does-a-china-trip-cost/",
+          "href": "/zh/guides/how-much-does-a-china-trip-cost/",
           "description": "把机票选择放回整体预算。"
         },
         {
           "label": "比较影响路线结构的航班",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/zh/guides/china-open-jaw-flights-route-planning/",
           "description": "更高票价有时能消除昂贵折返。"
         }
       ]

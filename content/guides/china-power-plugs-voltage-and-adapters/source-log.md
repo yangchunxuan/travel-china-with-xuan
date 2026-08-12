@@ -5,7 +5,7 @@
 - Canonical owner: employee 6 / this batch
 - Reviewed: 2026-08-12
 - Fact boundary: live rules are attributed to the exact authority, device, carrier, venue, transport mode or document process covered by the cited source. No universal promise is inferred.
-- Internal-link boundary: payment setup stays in the published payment guide; this article links to it rather than duplicating setup instructions.
+- Internal-link boundary: the power-bank guide owns portable-battery transport rules and the eSIM guide owns phone connectivity. This article owns plug shape, voltage and adapter choice.
 
 ## Official sources
 

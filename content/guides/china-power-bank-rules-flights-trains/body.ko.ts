@@ -129,7 +129,7 @@ const body: StructuredPageBody = {
         },
         {
           "label": "Railway passenger prohibited and restricted items catalogue",
-          "url": "https://big5.www.gov.cn/gate/big5/www.gov.cn/zhengce/zhengceku/2022-05/31/content_5693212.htm",
+          "url": "https://www.gov.cn/zhengce/zhengceku/2022-05/31/content_5693212.htm",
           "publisher": "National Railway Administration / Ministry of Public Security",
           "reviewedAt": "2026-08-12"
         }

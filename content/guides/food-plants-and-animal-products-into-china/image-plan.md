@@ -1,7 +1,7 @@
-# Image plan — food-plants-animal-products-into-china
+# Image plan — food-plants-and-animal-products-into-china
 
 - Status: READY — ORIGINAL EDITORIAL ILLUSTRATION
-- Asset: /images/guides/food-plants-animal-products-into-china/hero-1600.webp
+- Asset: /images/guides/food-plants-and-animal-products-into-china/hero-1600.webp
 - Dimensions: 1600 × 1000
 - Rights: original Homeground artwork, created 2026-08-12; no external source or license required
 - Editorial use: abstract decision/recovery symbol only; non-documentary

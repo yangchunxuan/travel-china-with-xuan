@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "选择丽江古城还是束河",
-          "href": "/guides/lijiang-old-town-or-shuhe-where-to-stay/",
+          "href": "/zh/guides/lijiang-old-town-or-shuhe-where-to-stay/",
           "description": "先确定丽江的作用，再选住宿片区。"
         },
         {
           "label": "准备第一次乘中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "路线确定后再核对乘车流程。"
         },
         {
           "label": "检查路线是否太赶",
-          "href": "/guides/is-your-china-itinerary-too-rushed/",
+          "href": "/zh/guides/is-your-china-itinerary-too-rushed/",
           "description": "扣除交通与恢复时间后再看可用天数。"
         }
       ]

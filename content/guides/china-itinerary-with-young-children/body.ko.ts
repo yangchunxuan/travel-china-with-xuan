@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "중국 고속철도 첫 이용 준비",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "동선 뒤에 여권, 표, 역 절차를 확인하세요."
         },
         {
           "label": "실제로 편한 교통 숙소 고르기",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/ko/guides/china-hotel-near-metro/",
           "description": "지도 거리보다 매일의 도보와 환승을 줄이세요."
         },
         {
           "label": "실제 관광일 점검",
-          "href": "/guides/is-your-china-itinerary-too-rushed/",
+          "href": "/ko/guides/is-your-china-itinerary-too-rushed/",
           "description": "도착, 이동, 회복 시간을 솔직히 빼세요."
         }
       ]

@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead-answer",
       "type": "lead",
-      "text": "중국 전체에 고정된 비성수기 전후 두 달은 없습니다. 낮은 총비용으로도 여행의 핵심 경험을 살 수 있을 때만 좋은 거래입니다. 같은 날짜에 산악 지역, 정원 도시와 열대 해안은 서로 다른 날씨와 운영 전환기에 있을 수 있습니다."
+      "text": "중국 전역에 공통으로 적용되는 고정된 숄더 시즌은 없습니다. 낮은 총비용으로도 여행의 핵심 경험을 살릴 수 있을 때만 좋은 선택입니다. 같은 날짜에도 산악 지역, 정원 도시와 열대 해안은 서로 다른 날씨와 운영 전환기에 있을 수 있습니다."
     },
     {
       "id": "decision-frame",
@@ -41,7 +41,7 @@ const body = {
     {
       "id": "decision-table",
       "type": "table",
-      "caption": "비성수기 전후가 가치 있는 조건",
+      "caption": "숄더 시즌이 가치 있는 조건",
       "columns": [
         "조건",
         "좋은 가치",
@@ -76,7 +76,7 @@ const body = {
       "id": "method-heading",
       "type": "heading",
       "level": 2,
-      "text": "비성수기 전후 제안 검사"
+      "text": "숄더 시즌 후보 점검"
     },
     {
       "id": "method",
@@ -105,7 +105,7 @@ const body = {
       "id": "scope",
       "type": "callout",
       "tone": "neutral",
-      "title": "전국 공통 비성수기 전후 기간은 없습니다",
+      "title": "전국 공통 숄더 시즌은 없습니다",
       "body": "실시간 가격, 혼잡 예측, 도시×월 페이지를 제공하지 않습니다. 날짜와 운영처를 다시 확인해야 합니다."
     },
     {
@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "기후 지역으로 동선 검사",
-          "href": "/guides/china-climate-regions-for-trip-timing/",
+          "href": "/ko/guides/china-climate-regions-for-trip-timing/",
           "description": "한 기간이 가장 까다로운 장소에 맞는지 확인하세요."
         },
         {
           "label": "공식 공휴일 확인",
-          "href": "/guides/china-public-holidays-travel-calendar/",
+          "href": "/ko/guides/china-public-holidays-travel-calendar/",
           "description": "비수기라는 이름도 전국 공휴일에 바뀔 수 있습니다."
         },
         {
           "label": "시기 선택을 전체 예산에 반영",
-          "href": "/guides/how-much-does-a-china-trip-cost/",
+          "href": "/ko/guides/how-much-does-a-china-trip-cost/",
           "description": "교통, 숙소와 유연성을 함께 비교하세요."
         }
       ]

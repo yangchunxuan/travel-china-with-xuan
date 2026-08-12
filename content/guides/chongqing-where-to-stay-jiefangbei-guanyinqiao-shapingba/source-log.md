@@ -31,6 +31,6 @@ Searches reviewed: `where to stay Chongqing Jiefangbei Guanyinqiao Shapingba`, `
 - `location`: Jiefangbei, Chongqing
 - `source date`: 2016
 - `transformation`: centre crop to 16:10, resized to 1600 × 1000, dark lower gradient, converted to WebP, metadata removed
-- `sha256`: `97028a2ad7ef135dd0c33f5aed6d0d3320e35089c1fc6b30ec75a524215cec10`
+- `sha256`: `da8e27306fd069fe95aabbd2561d8d7b32ec447de78213715a8c576be974aede`
 
 The photograph illustrates the real district, not current crowding, traffic or hotel quality.

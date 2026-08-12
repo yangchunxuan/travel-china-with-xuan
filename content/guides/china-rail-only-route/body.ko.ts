@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "중국 고속철도 첫 이용",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "동선이 철도 검사를 통과한 뒤 승차 절차를 확인하세요."
         },
         {
           "label": "야간열차와 주간 고속철도 비교",
-          "href": "/guides/china-night-train-or-daytime-high-speed-rail/",
+          "href": "/ko/guides/china-night-train-or-daytime-high-speed-rail/",
           "description": "수면과 관광일 중 무엇을 지킬지 정하세요."
         },
         {
           "label": "동선 양끝 항공편 검토",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/ko/guides/china-open-jaw-flights-route-planning/",
           "description": "오픈조 관문은 철도 축의 왕복을 줄일 수 있습니다."
         }
       ]

@@ -6,12 +6,12 @@ const body = {
     {
       "id": "lead-answer",
       "type": "lead",
-      "text": "검색 화면의 최저 국내선 운임이 실제로 가장 싼 표는 아닐 수 있습니다. 중국 민항 당국은 상품마다 환불, 변경, 수하물 조건이 다르므로 확인하라고 안내합니다. 모든 선택을 같은 바구니로 비교하세요. 여행자, 짐, 좌석, 최종 결제액과 도착에 달린 예약의 변경 비용입니다."
+      "text": "검색 화면의 최저 국내선 운임이 실제로 가장 싼 표는 아닐 수 있습니다. 중국 민항 당국은 상품마다 환불, 변경, 수하물 조건이 다르므로 확인하라고 안내합니다. 여행자 수, 짐, 좌석, 최종 결제액과 도착 이후 연동된 예약의 변경 비용까지 같은 기준으로 비교하세요."
     },
     {
       "id": "decision-frame",
       "type": "comparison",
-      "title": "같은 비교 바구니",
+      "title": "같은 기준으로 비교하기",
       "columns": [
         {
           "heading": "필수",
@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "별도 발권 위험 확인",
-          "href": "/guides/china-separate-flight-tickets-self-transfer-risk/",
+          "href": "/ko/guides/china-separate-flight-tickets-self-transfer-risk/",
           "description": "저렴한 묶음도 다음 여정을 위험에 둘 수 있습니다."
         },
         {
           "label": "중국 여행 비용 이해",
-          "href": "/guides/how-much-does-a-china-trip-cost/",
+          "href": "/ko/guides/how-much-does-a-china-trip-cost/",
           "description": "항공 선택을 전체 예산 안에서 보세요."
         },
         {
           "label": "동선을 바꾸는 항공편 비교",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/ko/guides/china-open-jaw-flights-route-planning/",
           "description": "더 비싼 표가 큰 왕복 비용을 없앨 수 있습니다."
         }
       ]

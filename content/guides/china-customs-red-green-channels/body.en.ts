@@ -95,7 +95,7 @@ const body: StructuredPageBody = {
       "items": [
         {
           "label": "Food and animal products into China",
-          "href": "/guides/food-plants-animal-products-into-china/",
+          "href": "/guides/food-plants-and-animal-products-into-china/",
           "description": "Run the quarantine check before packing."
         },
         {

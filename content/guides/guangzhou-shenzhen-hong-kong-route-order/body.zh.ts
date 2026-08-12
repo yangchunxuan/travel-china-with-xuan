@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "比较广州—香港交通",
-          "href": "/guides/guangzhou-hong-kong-transport-route/",
+          "href": "/zh/guides/guangzhou-hong-kong-transport-route/",
           "description": "先定城市顺序，再选车站与交通方式。"
         },
         {
           "label": "选择深圳—香港过境方式",
-          "href": "/guides/shenzhen-hong-kong-transport-route/",
+          "href": "/zh/guides/shenzhen-hong-kong-transport-route/",
           "description": "按酒店位置和后续安排选择口岸。"
         },
         {
           "label": "判断是否使用开口航班",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/zh/guides/china-open-jaw-flights-route-planning/",
           "description": "判断异地进出能否减少回头路。"
         }
       ]

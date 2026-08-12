@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "10월 시기 결정",
-          "href": "/guides/china-in-october-golden-week-or-later/",
+          "href": "/ko/guides/china-in-october-golden-week-or-later/",
           "description": "국경절과 10월 중하순의 지역 날씨를 비교하세요."
         },
         {
           "label": "공식 공휴일 달력 확인",
-          "href": "/guides/china-public-holidays-travel-calendar/",
+          "href": "/ko/guides/china-public-holidays-travel-calendar/",
           "description": "기후가 좋아도 공휴일 영향은 남습니다."
         },
         {
-          "label": "비성수기 전후 가치 비교",
-          "href": "/guides/china-shoulder-season-value-tradeoff/",
+          "label": "숄더 시즌 가치 비교",
+          "href": "/ko/guides/china-shoulder-season-value-tradeoff/",
           "description": "기후 검사 뒤 가격, 일조, 운영 제한을 더하세요."
         }
       ]

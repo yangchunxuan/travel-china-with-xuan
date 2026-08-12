@@ -5,7 +5,7 @@
 - Canonical owner: employee 6 / this batch
 - Reviewed: 2026-08-12
 - Fact boundary: live rules are attributed to the exact authority, device, carrier, venue, transport mode or document process covered by the cited source. No universal promise is inferred.
-- Internal-link boundary: payment setup stays in the published payment guide; this article links to it rather than duplicating setup instructions.
+- Internal-link boundary: transport and lodging guides retain their booking workflows. This article owns one passport-name identity across flights, rail, hotels and attractions.
 
 ## Official sources
 

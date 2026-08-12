@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "检查路线是否太赶",
-          "href": "/guides/is-your-china-itinerary-too-rushed/",
+          "href": "/zh/guides/is-your-china-itinerary-too-rushed/",
           "description": "用真实可用日检验最终结构。"
         },
         {
           "label": "选择真正方便交通的酒店",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/zh/guides/china-hotel-near-metro/",
           "description": "基地每天出发方便，结构才成立。"
         },
         {
           "label": "判断是否异地进出",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/zh/guides/china-open-jaw-flights-route-planning/",
           "description": "异地进出可把反复往返改为向前串联。"
         }
       ]

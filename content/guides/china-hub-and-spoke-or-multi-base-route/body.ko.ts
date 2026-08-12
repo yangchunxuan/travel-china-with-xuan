@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "일정 과부하 확인",
-          "href": "/guides/is-your-china-itinerary-too-rushed/",
+          "href": "/ko/guides/is-your-china-itinerary-too-rushed/",
           "description": "실제 관광일로 최종 구조를 검사하세요."
         },
         {
           "label": "교통이 실제로 편한 숙소",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/ko/guides/china-hotel-near-metro/",
           "description": "매일 출발이 쉬워야 거점이 작동합니다."
         },
         {
           "label": "다른 입출국 도시 검토",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/ko/guides/china-open-jaw-flights-route-planning/",
           "description": "오픈조 관문은 왕복을 전진형 동선으로 바꿀 수 있습니다."
         }
       ]

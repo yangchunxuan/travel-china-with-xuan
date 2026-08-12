@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "광저우–홍콩 교통 비교",
-          "href": "/guides/guangzhou-hong-kong-transport-route/",
+          "href": "/ko/guides/guangzhou-hong-kong-transport-route/",
           "description": "도시 순서를 정한 뒤 역과 교통수단을 고르세요."
         },
         {
           "label": "선전–홍콩 이동 방식 선택",
-          "href": "/guides/shenzhen-hong-kong-transport-route/",
+          "href": "/ko/guides/shenzhen-hong-kong-transport-route/",
           "description": "숙소와 다음 일정에 맞는 경로를 선택하세요."
         },
         {
           "label": "오픈조 항공권 검토",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/ko/guides/china-open-jaw-flights-route-planning/",
           "description": "다른 도시로 입출국하면 되돌아가는 이동을 줄일 수 있는지 확인하세요."
         }
       ]

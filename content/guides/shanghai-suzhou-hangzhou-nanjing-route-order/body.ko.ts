@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "상하이–항저우 교통 계획",
-          "href": "/guides/shanghai-hangzhou-transport-route/",
+          "href": "/ko/guides/shanghai-hangzhou-transport-route/",
           "description": "도시 순서 뒤에 역을 고르세요."
         },
         {
           "label": "쑤저우 정원 관람법",
-          "href": "/guides/how-to-read-a-suzhou-garden/",
+          "href": "/ko/guides/how-to-read-a-suzhou-garden/",
           "description": "숙박을 추가하기 전에 쑤저우의 목적을 정하세요."
         },
         {
           "label": "푸둥·훙차오 공항 선택",
-          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "href": "/ko/guides/shanghai-pudong-or-hongqiao-airport/",
           "description": "공항에 따라 최적 방향이 바뀔 수 있습니다."
         }
       ]

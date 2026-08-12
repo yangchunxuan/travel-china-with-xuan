@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "第一次乘坐中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "路线通过铁路检验后，再处理乘车流程。"
         },
         {
           "label": "比较夜车与白天高铁",
-          "href": "/guides/china-night-train-or-daytime-high-speed-rail/",
+          "href": "/zh/guides/china-night-train-or-daytime-high-speed-rail/",
           "description": "有意识地保护睡眠或白天游览时间。"
         },
         {
           "label": "判断是否只在路线两端飞行",
-          "href": "/guides/china-open-jaw-flights-route-planning/",
+          "href": "/zh/guides/china-open-jaw-flights-route-planning/",
           "description": "异地进出可让铁路主轴不必折返。"
         }
       ]

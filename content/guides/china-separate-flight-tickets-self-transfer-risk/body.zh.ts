@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "保护国际离境前最后一晚",
-          "href": "/guides/china-last-night-before-international-flight/",
+          "href": "/zh/guides/china-last-night-before-international-flight/",
           "description": "不要让自助转机成为离境前唯一故障点。"
         },
         {
           "label": "核对上海具体机场",
-          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "href": "/zh/guides/shanghai-pudong-or-hongqiao-airport/",
           "description": "跨机场不是普通转机。"
         },
         {
           "label": "比较国内机票套餐",
-          "href": "/guides/china-domestic-flight-fare-bundle-baggage/",
+          "href": "/zh/guides/china-domestic-flight-fare-bundle-baggage/",
           "description": "先计入行李与改签条件，再判断是否便宜。"
         }
       ]

@@ -639,3 +639,94 @@ local `Facebook图片素材` library. As with the other local-library entries, t
 record establishes project-entry provenance and use permission; it is not an
 independent claim about third-party authorship or licensing outside the
 Homeground website.
+
+## Employee 3–6 guide batches (August 12, 2026)
+
+Central review checked the forty hero derivatives below at 1600 × 1000. Their
+SHA-256 values are mutually unique and do not duplicate another guide hero in
+the repository. The organised local `Facebook图片素材` library was not used by
+these source branches: the documentary images came from traceable Wikimedia
+Commons records, while the remaining assets are explicitly non-documentary
+Homeground diagrams or illustrations. No AI-generated image is presented as a
+real destination, hotel, street, transport scene, traveller or artefact.
+
+### Employee 3: culture, history and food
+
+| Guide | Original source, creator and rights | Published derivative and final SHA-256 |
+| --- | --- | --- |
+| `dougong-and-chinese-timber-frame-reading` | [Fogong temple corner dougong](https://commons.wikimedia.org/wiki/File:Fogong_temple_corner_dougong.JPG), Gisling, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/); Fogong Temple Pagoda, Yingxian | `public/images/guides/dougong-and-chinese-timber-frame-reading/hero-1600.webp`; `6d665ae230cbf43343b2626a6f410480735f413bb8823eb2951de34d345ae540` |
+| `foshan-lion-dance-first-performance-workflow` | [Wong Fei-hong Lion Dance and Martial Arts School show](https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_FS_%E4%BD%9B%E5%B1%B1_Foshan_%E5%8D%97%E6%B5%B7%E5%8D%80_Nanhai_%E8%A5%BF%E6%A8%B5%E5%B1%B1_Xiqiao_Mountain_%E9%BB%83%E9%A3%9B%E9%B4%BB%E7%8D%85%E8%97%9D%E6%AD%A6%E8%A1%93%E9%A4%A8_Wong_Fei-hong_Lion_Dance_%26_Martial_Arts_School_%E6%93%8D%E5%A0%B4_playground_square_red_%E8%A1%A8%E6%BC%94_show_time_June_2023_Px3_26.jpg), Lukwo RuoShuma Simonz, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); Foshan, June 2023 | `public/images/guides/foshan-lion-dance-first-performance-workflow/hero-1600.webp`; `561ac46df64cbebd81417c26299d1ec669cbdc5b3a91857869340d5beaa68601` |
+| `hongshan-jade-context-and-symbols` | [Hongshan Jade Dragon 2](https://commons.wikimedia.org/wiki/File:Hongshan_Jade_Dragon_2.jpg), Gary Todd, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/); museum display | `public/images/guides/hongshan-jade-context-and-symbols/hero-1600.webp`; `ad1e5f14e5f25083ba0634eb9f80a02696a7ed746e758aaa3262f9465f96ab63` |
+| `hunan-cuisine-balanced-first-meal` | [Hunan cuisine, Fried Tofu, Home Style](https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_Fried_Tofu,_Home_Style.jpg), Huangdan2060, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/); one documented Hunan dish, not a complete meal | `public/images/guides/hunan-cuisine-balanced-first-meal/hero-1600.webp`; `ed633220bbd9a58f11353327eba56165a1cdc6b03eabf2dbd73bda20d7865956` |
+| `liye-qin-slips-local-government-records` | [Liye Qin Slips delivery record](https://commons.wikimedia.org/wiki/File:Liye_Qing_Slips,_containing_%22A_set_of_envelopes_were_delivered_from_Dongting_Commandery_to_Qianling_county%22.jpg), Ddayzzz, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); museum display | `public/images/guides/liye-qin-slips-local-government-records/hero-1600.webp`; `5aea179263fe71d338e9d5a853a34b36f26311bf27e57f67477d31584f6cd93f` |
+| `nanhai-one-shipwreck-cargo-and-conservation` | [Maritime Silk Road Museum of Guangdong](https://commons.wikimedia.org/wiki/File:Maritime_Silk_Road_Museum_of_Guangdong.jpg), WKDx417, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); Hailing Island museum exterior | `public/images/guides/nanhai-one-shipwreck-cargo-and-conservation/hero-1600.webp`; `efdb8e1a446ddbc52534072b4117f2424b92e1581b60b1df845b38f0e3ab2206` |
+| `ritual-bronze-vessels-and-inscriptions` | [Early Western Zhou Bronze Gui](https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_(47409866492).jpg), Gary Todd, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/); Shaanxi History Museum display | `public/images/guides/ritual-bronze-vessels-and-inscriptions/hero-1600.webp`; `485fc6fcd0d67b7f35ec3797ddd57e5c65ff1e8a52df17859c2e498c7eb9471d` |
+| `woodblock-and-movable-type-printing-decisions` | [China Printing Museum wooden movable type](https://commons.wikimedia.org/wiki/File:Beijing_printing_museum.wooden_movable_types.jpg), Popolon, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); Beijing museum display | `public/images/guides/woodblock-and-movable-type-printing-decisions/hero-1600.webp`; `bcc6976a881fd7ffd87163347691f975df8cf03fdd7629f2d699ae202ce9f1e5` |
+| `wuhan-breakfast-hot-dry-noodles-doupi-route` | [Hot Dry Noodles](https://commons.wikimedia.org/wiki/File:Hot_Dry_Noodles.jpg), ZhengZhou, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); dish identification only, no venue claim | `public/images/guides/wuhan-breakfast-hot-dry-noodles-doupi-route/hero-1600.webp`; `61adeaef4f4ad8b8dccd4c30b7ebaf859968d18aa0922d2bb642f06cd8299329` |
+| `zhoucheng-bai-tie-dye-workshop-choice` | [China News Service documentary video filmed in Zhoucheng](https://commons.wikimedia.org/wiki/File:2020%E5%B9%B45%E6%9C%885%E6%97%A5_%E6%9C%80%E7%88%B1%E5%A4%A7%E7%90%86%E7%9A%84%E9%82%A3%E2%80%9C%E4%B8%80%E6%8A%B9%E8%93%9D%E2%80%9D_%E6%9D%A5%E7%9C%8B%E7%99%BD%E6%97%8F%E6%89%8E%E6%9F%93%E5%A6%82%E4%BD%95%E5%88%B6%E6%88%90.webm), China News Service, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); credited still frame | `public/images/guides/zhoucheng-bai-tie-dye-workshop-choice/hero-1600.webp`; `a36fa60d833e25de998f2471485f3edb20e7179bcd79b8afc7359c730188329e` |
+
+Each employee 3 derivative was centre-cropped or resized and conventionally
+converted to WebP without generative scene alteration. The source logs state
+the evidence limit of each image; none proves a current schedule, recipe,
+exhibition state, workshop availability or universal cultural meaning.
+
+### Employee 4: route and timing decisions
+
+All ten assets are original Homeground vector illustrations with their
+editable originals retained beside the article as `hero-source.svg`. They use
+abstract nodes, routes or decision symbols and contain no map tiles, timetables,
+prices, logos or documentary location claims.
+
+| Guide | Original path | Published derivative and final SHA-256 |
+| --- | --- | --- |
+| `china-climate-regions-for-trip-timing` | `content/guides/china-climate-regions-for-trip-timing/hero-source.svg` | `public/images/guides/china-climate-regions-for-trip-timing/hero-1600.webp`; `09a33c7837cfc512a82c458d9a428bf481ca8a7f71957a01ea2b3db6ce20b63f` |
+| `china-domestic-flight-fare-bundle-baggage` | `content/guides/china-domestic-flight-fare-bundle-baggage/hero-source.svg` | `public/images/guides/china-domestic-flight-fare-bundle-baggage/hero-1600.webp`; `d79d5c11a3cb1820f854ca25b687afc21abde1d90e4318ca4525cf81d4a97993` |
+| `china-hub-and-spoke-or-multi-base-route` | `content/guides/china-hub-and-spoke-or-multi-base-route/hero-source.svg` | `public/images/guides/china-hub-and-spoke-or-multi-base-route/hero-1600.webp`; `7ab490bff00582e823b2f800549b042f3906884bd7f8c6f8487ca7d6054b2a35` |
+| `china-itinerary-with-young-children` | `content/guides/china-itinerary-with-young-children/hero-source.svg` | `public/images/guides/china-itinerary-with-young-children/hero-1600.webp`; `7589b6c28e9ef35b86f36f0e9af29873f6dd5f3ffb71d15004ed58b51479762d` |
+| `china-rail-only-route` | `content/guides/china-rail-only-route/hero-source.svg` | `public/images/guides/china-rail-only-route/hero-1600.webp`; `579e9b687b8624c3f47465d02ec6e206a860c7f1f08ba1164578034e6f3c6a31` |
+| `china-separate-flight-tickets-self-transfer-risk` | `content/guides/china-separate-flight-tickets-self-transfer-risk/hero-source.svg` | `public/images/guides/china-separate-flight-tickets-self-transfer-risk/hero-1600.webp`; `9c8f53722131dde23f23c788669c5619e979985dfae873e32a54f71c8c68cd95` |
+| `china-shoulder-season-value-tradeoff` | `content/guides/china-shoulder-season-value-tradeoff/hero-source.svg` | `public/images/guides/china-shoulder-season-value-tradeoff/hero-1600.webp`; `19664a5ea00754ab9394ce70ebe70464d377da7115f57f5310a3126ef9f8fc1e` |
+| `guangzhou-shenzhen-hong-kong-route-order` | `content/guides/guangzhou-shenzhen-hong-kong-route-order/hero-source.svg` | `public/images/guides/guangzhou-shenzhen-hong-kong-route-order/hero-1600.webp`; `9fd394dc7dc47d02e0f010141cdb612f39c9baa4c8095d5d8609a8918a11b312` |
+| `kunming-dali-lijiang-shangri-la-route-order` | `content/guides/kunming-dali-lijiang-shangri-la-route-order/hero-source.svg` | `public/images/guides/kunming-dali-lijiang-shangri-la-route-order/hero-1600.webp`; `bd7c96f503595d0b048b72923f63ac3ebf4aa6458cb59c3c75bf5b7113e53025` |
+| `shanghai-suzhou-hangzhou-nanjing-route-order` | `content/guides/shanghai-suzhou-hangzhou-nanjing-route-order/hero-source.svg` | `public/images/guides/shanghai-suzhou-hangzhou-nanjing-route-order/hero-1600.webp`; `108a592a51530af62f1d7b4156bea74fcdc8f5a1dfc42b51d429fe4059b443de` |
+
+### Employee 5: lodging decisions
+
+| Guide | Original source, creator and rights | Published derivative and final SHA-256 |
+| --- | --- | --- |
+| `beijing-courtyard-hotel-or-modern-hotel` | Original Homeground non-documentary comparison diagram; no external source or property likeness | `public/images/guides/beijing-courtyard-hotel-or-modern-hotel/hero-1600.webp`; `a526014fc2e828a9dd70d3bf2cb75f3602fa91e8dc22586514cba52f2abca2dc` |
+| `chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba` | [Jiefangbei night](https://commons.wikimedia.org/wiki/File:Jiefangbei_night.jpg), Baycrest, [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/); Jiefangbei, Chongqing, 2016 | `public/images/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/hero-1600.webp`; `da8e27306fd069fe95aabbd2561d8d7b32ec447de78213715a8c576be974aede` |
+| `commercial-aparthotel-or-residential-rental-china` | Original Homeground non-documentary comparison diagram; no external source or property likeness | `public/images/guides/commercial-aparthotel-or-residential-rental-china/hero-1600.webp`; `58c50e41cd472249c7531368ed112c0627bcf4e22cf47780129d5feeefa9d3ce` |
+| `huangshan-summit-or-gateway-base` | [Huangshan sunrise](https://commons.wikimedia.org/wiki/File:Huangshan_sunrise.jpg), Politizer, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/); Guangming Peak, 2006 | `public/images/guides/huangshan-summit-or-gateway-base/hero-1600.webp`; `3396530372c72dbf8f552784fbc300d975159ce3c6e87632dcc5797695d73729` |
+| `minsu-homestay-or-hotel-china` | Original Homeground non-documentary comparison diagram; no external source or property likeness | `public/images/guides/minsu-homestay-or-hotel-china/hero-1600.webp`; `22dcd763b88f7daedf9aea1aa52b1636b0be43d1d3c89928c74100ef89562962` |
+| `serviced-apartment-or-hotel-china` | Original Homeground non-documentary comparison diagram; no external source or property likeness | `public/images/guides/serviced-apartment-or-hotel-china/hero-1600.webp`; `61e1e30d7d2bec3a01125612c2716527c79444f8d8c14d65e12f28204bbfdda2` |
+| `shanghai-where-to-stay-first-trip` | [East Nanjing Road at night](https://commons.wikimedia.org/wiki/File:East_Nanjing_Road_at_night,_Shanghai.jpg), EditQ, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); Shanghai, 2022-11-06 | `public/images/guides/shanghai-where-to-stay-first-trip/hero-1600.webp`; `efab568cbbd2a1195b2497b364f997b090620ea351a962568055be020dae52c6` |
+| `shenzhen-where-to-stay-futian-luohu-nanshan` | [Futian Civic Center and Shennan Road](https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3%E5%B8%82_Shenzhen_%E7%A6%8F%E7%94%B0%E5%8D%80_Futian_%E5%B8%82%E6%B0%91%E4%B8%AD%E5%BF%83_Civic_Center_Shennan_Road_outdoor_square_October_2019_SS2.jpg), RBWS 20 EGUOF, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); Futian, Shenzhen, 2019-10-10 | `public/images/guides/shenzhen-where-to-stay-futian-luohu-nanshan/hero-1600.webp`; `f91485c8cbc7dd2bbc23596f997349aad575f50d077be45582be95ddf120890a` |
+| `xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan` | [Xiamen ferry](https://commons.wikimedia.org/wiki/File:Xiamen_ferry.jpg), Mx. Granger, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/); Neicuo'ao terminal, Gulangyu, 2024-03-21 | `public/images/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/hero-1600.webp`; `68938705e916d196d7ef7f51f1adf0e613555e5d622985d3991250d601c6eb16` |
+| `xian-where-to-stay-city-wall-or-dayanta` | [Bell Tower of Xi'an at night](https://commons.wikimedia.org/wiki/File:Bell_Tower_of_Xi%27an_at_night.jpg), TarnishedPath, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); Xi'an Bell Tower | `public/images/guides/xian-where-to-stay-city-wall-or-dayanta/hero-1600.webp`; `8eb86079a9a883cbda3dfc610e14c2288da32a9d91861dafdce81e652f5f2295` |
+
+The six photographs identify only their documented place or scene. They do not
+prove current crowding, access, transport, hotel quality, room condition or
+weather. The four diagrams are lodging decision aids, not depictions of real
+properties.
+
+### Employee 6: entry and practical recovery
+
+These ten WebP files are original Homeground non-documentary illustrations.
+No external photograph, logo, real passport, QR code, identifiable person or
+specific venue is depicted. The source branches did not retain separate vector
+masters, so the listed WebP is both the retained project artwork and the
+published derivative.
+
+| Guide | Retained original/published path | Final SHA-256 |
+| --- | --- | --- |
+| `china-customs-red-green-channels` | `public/images/guides/china-customs-red-green-channels/hero-1600.webp` | `4e2ba9b287c642ebcab431534d26d06720a3c5c1f633a504da5c92ee1b7015c1` |
+| `china-esim-vs-local-sim` | `public/images/guides/china-esim-vs-local-sim/hero-1600.webp` | `da9d8b54902bdfa6d30b7363db16c3481f1b19cd9316f869647a02261a2bce55` |
+| `china-power-bank-rules-flights-trains` | `public/images/guides/china-power-bank-rules-flights-trains/hero-1600.webp` | `d1e700fd232a2fd6041dba4310c95afd73436413c91dd23434267767e547a00c` |
+| `china-power-plugs-voltage-and-adapters` | `public/images/guides/china-power-plugs-voltage-and-adapters/hero-1600.webp` | `f446c4f8bb00112861e5ff1d103f5364ecc2d9c2c65903543ca96014bf889a1d` |
+| `china-public-wifi-passport-login` | `public/images/guides/china-public-wifi-passport-login/hero-1600.webp` | `3d0ac7d7590fa75a74591c02e190a4b69b3843f915274e27662f439223cb7de2` |
+| `food-plants-and-animal-products-into-china` | `public/images/guides/food-plants-and-animal-products-into-china/hero-1600.webp` | `34d9c4e6d49b2515dd13d46ca809a73858685321210d4910adf441bc398dda1d` |
+| `hong-kong-macau-mainland-reentry-count` | `public/images/guides/hong-kong-macau-mainland-reentry-count/hero-1600.webp` | `2342e8389c8534fda4b043a60dd4850b38fbc7e4ee5ced814b20440adfd96b56` |
+| `lost-passport-in-china-exit-recovery` | `public/images/guides/lost-passport-in-china-exit-recovery/hero-1600.webp` | `c521d2371eb5bee1647cc5ca81943251034bb196c87053d0a8ccf7b9fa0eee44` |
+| `lost-phone-in-china-digital-recovery` | `public/images/guides/lost-phone-in-china-digital-recovery/hero-1600.webp` | `8ee97ac77e9bb6808a5d5e6c20982c59f8f2e8a80d5bea5e47257ceeb2fd439e` |
+| `passport-name-across-china-bookings` | `public/images/guides/passport-name-across-china-bookings/hero-1600.webp` | `4caff903fd83885f0e97c6dcaae13a890ec996f37231ae2d0b934a493b5c5bfc` |

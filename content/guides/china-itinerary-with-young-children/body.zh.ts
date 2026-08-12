@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "准备第一次乘中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "路线确定后再处理证件、车票与车站流程。"
         },
         {
           "label": "选择真正方便交通的酒店",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/zh/guides/china-hotel-near-metro/",
           "description": "减少每天步行与换乘，而不只看地图距离。"
         },
         {
           "label": "检查真正可用的游览日",
-          "href": "/guides/is-your-china-itinerary-too-rushed/",
+          "href": "/zh/guides/is-your-china-itinerary-too-rushed/",
           "description": "如实扣除抵达、交通与恢复时间。"
         }
       ]

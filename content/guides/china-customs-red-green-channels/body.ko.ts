@@ -95,7 +95,7 @@ const body: StructuredPageBody = {
       "items": [
         {
           "label": "식품·식물·동물 제품 반입",
-          "href": "/ko/guides/food-plants-animal-products-into-china/",
+          "href": "/ko/guides/food-plants-and-animal-products-into-china/",
           "description": "짐을 싸기 전 검역을 확인하세요."
         },
         {

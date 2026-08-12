@@ -122,17 +122,17 @@ const body = {
       "items": [
         {
           "label": "按气候分区筛选路线",
-          "href": "/guides/china-climate-regions-for-trip-timing/",
+          "href": "/zh/guides/china-climate-regions-for-trip-timing/",
           "description": "判断一个时间窗能否保护最难的一站。"
         },
         {
           "label": "核对官方公众假期",
-          "href": "/guides/china-public-holidays-travel-calendar/",
+          "href": "/zh/guides/china-public-holidays-travel-calendar/",
           "description": "所谓淡季可能被全国性假期完全改变。"
         },
         {
           "label": "把时间选择放回整体预算",
-          "href": "/guides/how-much-does-a-china-trip-cost/",
+          "href": "/zh/guides/how-much-does-a-china-trip-cost/",
           "description": "把交通、酒店与灵活性一起比较。"
         }
       ]

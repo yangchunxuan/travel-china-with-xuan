@@ -1,2 +1,108 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body={schemaVersion:"1.0.0",blocks:[{id:"lead",type:"lead",text:"For a longer stay, floor area is not the decision. The useful question is whether the property supports your daily routine and gives you a clear operator, contract and recovery path."},{id:"answer",type:"callout",title:"The short decision",tone:"decision",body:"Choose a serviced apartment when verified cooking, laundry, work space and weekly-life privacy outweigh daily hotel service. Choose a hotel when a staffed desk, daily support, flexible short booking and luggage handling matter more. For the first or last night, the hotel may still be better even if the middle is an apartment."},{id:"matrix",type:"table",caption:"Verify the service, not the name",columns:["Need","Ask the apartment","Ask the hotel"],rows:[["Kitchen","Exact appliances, utensils and ventilation","Whether any kitchenette room exists"],["Cleaning","Frequency, linen and consumables","Included schedule and long-stay changes"],["Contract","Deposit, utilities, refund and invoice entity","Rate terms, extensions and early departure"],["Support","Desk hours, lockout and maintenance","24-hour scope and escalation"]]},{id:"verify",type:"callout",title:"‘Serviced’ is a commercial description",tone:"warning",body:"It does not prove hotel-style staffing or registration. Ask for the operating business, passport registration process, visitor rules, deposit recipient, utilities, cleaning, kitchen inventory and written cancellation terms. Keep the booking and conversation."},{id:"facts",type:"callout",title:"Policy facts checked August 12, 2026",tone:"neutral",body:"Official immigration guidance assigns registration according to the actual accommodation model: hotels register guests; accommodation outside hotels follows the local non-hotel process. The platform title does not decide the category. Local procedure and property execution may differ, so confirm both before the cancellation deadline."},{id:"links",type:"internal-links",title:"Continue planning",items:[{label:"Commercial aparthotel or rental?",href:"/guides/commercial-aparthotel-or-residential-rental-china/",description:"Identify the underlying operation."},{label:"Shanghai first-trip areas",href:"/guides/shanghai-where-to-stay-first-trip/",description:"Place the longer stay near repeated journeys."},{label:"What ‘near the metro’ should mean",href:"/guides/china-hotel-near-metro/",description:"Check the everyday final walk."}]},{id:"sources",type:"sources",title:"Official sources",items:[{label:"Official accommodation-registration interpretation",url:"https://s.nia.gov.cn/mps/zcjd/202601/t20260750_1012.html",publisher:"National Immigration Administration",reviewedAt:"2026-08-12"},{label:"English government notice on online registration pilot",url:"https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html",publisher:"State Council of the PRC",reviewedAt:"2026-08-12"},{label:"National Enterprise Credit Information Publicity System",url:"https://www.gsxt.gov.cn/",publisher:"State Administration for Market Regulation",reviewedAt:"2026-08-12"}]}]} as const satisfies StructuredPageBody; export default body;
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "lead",
+      type: "lead",
+      text: "For a longer stay, floor area is not the whole decision. The useful question is whether the property supports your daily routine and gives you a clear operator, contract and process for resolving problems.",
+    },
+    {
+      id: "answer",
+      type: "callout",
+      title: "The short decision",
+      tone: "decision",
+      body: "Choose a serviced apartment when verified cooking, laundry, work space and private living space outweigh daily hotel service. Choose a hotel when a staffed desk, daily support, flexible short booking and luggage handling matter more. For the first or last night, the hotel may still be better even if the middle is an apartment.",
+    },
+    {
+      id: "matrix",
+      type: "table",
+      caption: "Verify the service, not the name",
+      columns: ["Need", "Ask the apartment", "Ask the hotel"],
+      rows: [
+        [
+          "Kitchen",
+          "Exact appliances, utensils and ventilation",
+          "Whether any kitchenette room exists",
+        ],
+        [
+          "Cleaning",
+          "Frequency, linen and consumables",
+          "Included schedule and long-stay changes",
+        ],
+        [
+          "Contract",
+          "Deposit, utilities, refund and invoice entity",
+          "Rate terms, extensions and early departure",
+        ],
+        [
+          "Support",
+          "Desk hours, lockout and maintenance",
+          "24-hour scope and escalation",
+        ],
+      ],
+    },
+    {
+      id: "verify",
+      type: "callout",
+      title: "‘Serviced’ is a commercial description",
+      tone: "warning",
+      body: "It does not prove hotel-style staffing or registration. Ask for the operating business, passport registration process, visitor rules, deposit recipient, utilities, cleaning, kitchen inventory and written cancellation terms. Keep the booking and conversation.",
+    },
+    {
+      id: "facts",
+      type: "callout",
+      title: "Policy facts checked August 12, 2026",
+      tone: "neutral",
+      body: "Official immigration guidance assigns registration according to the actual accommodation model: hotels register guests; accommodation outside hotels follows the local non-hotel process. The platform title does not decide the category. Local procedure and property execution may differ, so confirm both before the cancellation deadline.",
+    },
+    {
+      id: "links",
+      type: "internal-links",
+      title: "Continue planning",
+      items: [
+        {
+          label: "Commercial aparthotel or rental?",
+          href: "/guides/commercial-aparthotel-or-residential-rental-china/",
+          description: "Identify the underlying operation.",
+        },
+        {
+          label: "Shanghai first-trip areas",
+          href: "/guides/shanghai-where-to-stay-first-trip/",
+          description: "Place the longer stay near repeated journeys.",
+        },
+        {
+          label: "What ‘near the metro’ should mean",
+          href: "/guides/china-hotel-near-metro/",
+          description: "Check the everyday final walk.",
+        },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "Official sources",
+      items: [
+        {
+          label: "Official accommodation-registration interpretation",
+          url: "https://s.nia.gov.cn/mps/zcjd/202601/t20260750_1012.html",
+          publisher: "National Immigration Administration",
+          reviewedAt: "2026-08-12",
+        },
+        {
+          label: "English government notice on online registration pilot",
+          url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html",
+          publisher: "State Council of the PRC",
+          reviewedAt: "2026-08-12",
+        },
+        {
+          label: "National Enterprise Credit Information Publicity System",
+          url: "https://www.gsxt.gov.cn/",
+          publisher: "State Administration for Market Regulation",
+          reviewedAt: "2026-08-12",
+        },
+      ],
+    },
+  ],
+} as const satisfies StructuredPageBody;
+export default body;

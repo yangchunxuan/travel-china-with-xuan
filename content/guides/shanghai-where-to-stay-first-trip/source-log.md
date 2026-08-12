@@ -19,6 +19,6 @@ Shanghai government information identifies People’s Square as a major central 
 - `source`: https://commons.wikimedia.org/wiki/File:East_Nanjing_Road_at_night,_Shanghai.jpg
 - `author`: EditQ; `date`: 2022-11-06; `licence`: CC BY-SA 4.0
 - `transformation`: centre crop, 1600 × 1000, lower gradient, WebP, metadata removed
-- `sha256`: `835b5434c5927fdcd518a457637f3df22afe010012a5070484052108a66bc6f6`
+- `sha256`: `efab568cbbd2a1195b2497b364f997b090620ea351a962568055be020dae52c6`
 
 The image identifies a real central street, not current crowd levels or hotel quality.
