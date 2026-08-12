@@ -600,3 +600,42 @@ converted to WebP without retaining source EXIF, GPS or device metadata. The
 edited file remains under the source licence; each locale links both the
 original file page and the direct licence in its default-collapsed Sources
 disclosure.
+
+## China trip cost guide cover replacement (August 12, 2026)
+
+The guide `how-much-does-a-china-trip-cost` previously reused the same
+Zhangjiajie accommodation-street image as `why-are-hotels-in-china-so-cheap`.
+That made two distinct search intents look like one article in the guide grid.
+The hotel-value article keeps the accommodation image; the trip-cost guide now
+uses a separate city-and-mobility image.
+
+- Source: owner-authorised local library file
+  `北京优选素材/05_北京现代地标与城市/北京CBD与城市道路_01.jpg`.
+- Library record: original filename `北京风光建筑 (5).jpg`; topic
+  `北京CBD与城市道路`; source SHA-256
+  `7d51ca9aba8c9f06672cd67420d448c76902bd2aa8f59c1fc7353ed71bd075b9`.
+- Observable scene: Beijing CBD buildings, elevated roads and vehicle light
+  trails at dusk. It is used to express the combination of city stays and
+  transport in a whole-trip budget, not as evidence of a current fare, hotel
+  price, traffic condition or exact itinerary.
+- Derivatives:
+  `public/images/guides/china-trip-cost/beijing-cbd-city-mobility-480.webp`,
+  `-768.webp`, `-1200.webp`, `-1200.jpg` and `-og-1200.jpg`. They were
+  centre-cropped or resized, converted without source EXIF, GPS or device
+  metadata, and are not shared with another guide identity.
+- Final SHA-256 values: 480 WebP
+  `fa2476d0b2febfdcde1c7c54260af3f59cf4e2df811dd9547382ed23aaf04735`;
+  768 WebP
+  `b69ec5e8c747e1b0ee556c3d5ca016865e6017e5820dc1a2124be60ccf73e00a`;
+  1200 WebP
+  `afbd75a998a2ff94fc2354a4b34f1caf69b8861db3d0b17c2824f55405967a70`;
+  1200 JPG
+  `1b999037335f212967e8659e74e5daa3eac802333c4359fdba95bfef1966cc53`;
+  OG JPG
+  `7bc33626eb5fe90fead139a01a0bb7bb22660bc1cc602236e6f0cc5954eda75b`.
+
+The owner's August 10 authorisation covers Homeground use of the organised
+local `Facebook图片素材` library. As with the other local-library entries, this
+record establishes project-entry provenance and use permission; it is not an
+independent claim about third-party authorship or licensing outside the
+Homeground website.
