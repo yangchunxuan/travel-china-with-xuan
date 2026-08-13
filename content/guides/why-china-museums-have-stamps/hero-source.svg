@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#102a43"/>
+  <circle cx="1325" cy="120" r="245" fill="#f4b860" opacity=".16"/>
+  <circle cx="190" cy="850" r="310" fill="#55c2b8" opacity=".11"/>
+  <g transform="rotate(-5 780 520)">
+    <rect x="260" y="180" width="1050" height="690" rx="38" fill="#f7e9cf" stroke="#e9f2f2" stroke-width="20"/>
+    <path d="M785 195v660" stroke="#c9b99d" stroke-width="12"/>
+    <path d="M330 285h385M330 365h385M330 445h385M330 525h385M330 605h385M330 685h385M855 285h385M855 365h385M855 445h385M855 525h385M855 605h385M855 685h385" stroke="#d9cbb4" stroke-width="8" opacity=".75"/>
+  </g>
+
+  <g fill="none" stroke="#c76847" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M380 555q135-135 270-20t250-20 300 10" stroke-dasharray="20 26"/>
+  </g>
+  <g fill="#f7e9cf" stroke="#c76847" stroke-width="17">
+    <circle cx="390" cy="555" r="22"/>
+    <circle cx="640" cy="540" r="22"/>
+    <circle cx="900" cy="515" r="22"/>
+    <circle cx="1195" cy="525" r="22"/>
+  </g>
+
+  <g transform="translate(395 300)" fill="none" stroke="#c76847" stroke-width="17" stroke-linejoin="round">
+    <path d="M0 125h155M25 125V50h105v75M50 50V18h55v32"/>
+  </g>
+  <g transform="translate(835 625)" fill="none" stroke="#c76847" stroke-width="17" stroke-linejoin="round">
+    <path d="M0 90h175L145 15H30zM42 48h90"/>
+  </g>
+  <g transform="translate(1065 300)" fill="none" stroke="#c76847" stroke-width="17" stroke-linecap="round">
+    <path d="M85 5v135M25 140h120M45 60q40-55 80 0"/>
+  </g>
+
+  <g transform="translate(660 75)" stroke="#102a43" stroke-width="16" stroke-linejoin="round">
+    <path d="M100 0h210l38 265H62z" fill="#c76847"/>
+    <rect x="90" y="255" width="230" height="130" rx="20" fill="#f4b860"/>
+    <path d="M130 0v-45h150V0" fill="none" stroke="#f7e9cf"/>
+    <path d="M135 320h140" stroke="#102a43"/>
+  </g>
+  <g transform="translate(1120 705)" fill="#d69c82" stroke="#102a43" stroke-width="14" stroke-linejoin="round">
+    <path d="M40 170Q5 70 65 0l95 55 85 120-65 80z"/>
+    <path d="M155 58l85-55 110 120-105 55z"/>
+  </g>
+</svg>
