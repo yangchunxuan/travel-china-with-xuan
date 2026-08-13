@@ -1,0 +1,67 @@
+{
+  "id": "china-24-solar-terms-weather-food-daily-life",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "traveller-interpretation-guide",
+  "topics": [
+    "twenty-four-solar-terms",
+    "seasonal-culture",
+    "phenology",
+    "agricultural-calendar",
+    "regional-food",
+    "local-customs"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-24-solar-terms-weather-food-daily-life/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-24-solar-terms-weather-food-daily-life/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-24-solar-terms-weather-food-daily-life/",
+      "title": "China's 24 Solar Terms: Read Food, Weather and Daily Life",
+      "headline": "China's Twenty-Four Solar Terms: A Traveller's Guide to Food, Weather and Daily Life",
+      "description": "Learn what China's 24 solar terms mark, why their names are not weather forecasts, and how to interpret seasonal food and local practices while travelling.",
+      "heroAlt": "Original circular calendar showing China's twenty-four solar terms, four seasonal arcs and a reminder to check local weather.",
+      "navTitle": "Read China's 24 solar terms",
+      "featuredLinkLabel": "Interpret solar terms while travelling",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Solar terms", "Seasonal culture", "Travel interpretation"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-24-solar-terms-weather-food-daily-life/",
+      "title": "中国二十四节气：读懂食物、天气与日常生活",
+      "headline": "中国的二十四节气：旅行中怎么看食物、天气与日常生活",
+      "description": "解释二十四节气标记什么、为什么节气名不是天气预报，以及旅行中如何理解当季食物与地方节气活动。",
+      "heroAlt": "原创圆形历法图，呈现二十四节气、四季弧线，并提醒旅客另查当地天气。",
+      "navTitle": "读懂二十四节气",
+      "featuredLinkLabel": "在旅行中理解二十四节气",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["二十四节气", "时令文化", "旅行观察"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-24-solar-terms-weather-food-daily-life/",
+      "title": "중국의 24절기: 음식·날씨·일상을 읽는 법",
+      "headline": "중국의 24절기: 여행 중 음식과 날씨, 일상을 이해하는 법",
+      "description": "24절기가 무엇을 표시하는지, 절기명이 왜 일기예보가 아닌지, 여행 중 제철 음식과 지역 관습을 어떻게 해석할지 설명합니다.",
+      "heroAlt": "중국의 24절기와 사계절 호를 보여 주고 현지 날씨를 따로 확인하라고 안내하는 독창적 원형 달력.",
+      "navTitle": "중국의 24절기 읽기",
+      "featuredLinkLabel": "여행 중 24절기 이해하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["24절기", "계절 문화", "여행 관찰"]
+    }
+  }
+}
