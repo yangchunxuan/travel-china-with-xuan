@@ -167,12 +167,12 @@ const body: StructuredPageBody = {
     {
       id: "zhouqiao-figure",
       type: "figure",
-      src: "/images/guides/kaifeng-song-dynasty-urban-landscape/zhouqiao-site-exterior-1280.webp",
-      alt: "2021년 카이펑 저우차오 고고학 구역 주변의 도로변 가림막과 보호 구조물.",
-      width: 1280,
-      height: 853,
+      src: "/images/guides/kaifeng-song-dynasty-urban-landscape/zhouqiao-excavation-1400.webp",
+      alt: "보호 지붕 아래 드러난 카이펑 저우차오의 석조·전축 교량 유구, 운하 벽과 퇴적층.",
+      width: 1400,
+      height: 1050,
       caption:
-        "이 2021년 사진은 고고학 구역의 외부를 보여 줄 뿐, 노출된 교량 유구도 현재 일반 공개를 증명하는 자료도 아닙니다. 이곳을 중심으로 일정을 짜기 전에 최신 관람 방식을 확인하세요. Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "노출된 교량 구조, 운하 벽과 퇴적층은 고고학 증거입니다. 눈에 보이는 다리는 송대 기초 위에 세운 명 초기 구조로, 사라진 북송 원래 다리가 아닙니다. 그림 속 훙차오의 위치나 공원 다리의 정확성도 입증하지 못합니다. 2025년 사진 역시 현재 공개를 보장하지 않습니다. 사진: Yumeto / Wikimedia Commons, CC BY-SA 4.0. WebP 변환본도 CC BY-SA 4.0으로 배포합니다.",
     },
     {
       id: "zhouqiao-dynamic",

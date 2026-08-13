@@ -3,8 +3,8 @@
 - Canonical ID: `kaifeng-song-dynasty-urban-landscape`
 - Topic owner: `hg-topic-0084`
 - Prepared: 2026-08-13
-- Facts reviewed: 2026-08-13
-- Status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
+- Facts reviewed: 2026-08-13; Zhouqiao image identity, licence and evidence boundary rechecked 2026-08-14
+- Status: `CORRECTION READY — CENTRAL RE-REVIEW REQUIRED`
 
 ## Canonical and overlap check
 
@@ -50,6 +50,7 @@ Excluded tasks:
 | S10 | [Kaifeng Museum official-channel statement](https://www.kaifeng.gov.cn/kfsrmzfwz/whty/pc/content/content_1873557496836997120.html) | Kaifeng Municipal Government / museum statement | Official reservation-channel principle and anti-scalper warning | Current foreign-document procedure or a guaranteed gallery |
 | S11 | [Palace Museum image application page](https://digicol.dpm.org.cn/page/applyimage) and [website terms](https://www.dpm.org.cn/bottom/privacy/254.html) | Palace Museum / rights policy | Decision not to reproduce the scroll without an explicit image licence | No inference about the underlying work's public-domain status outside the museum image service |
 | S12 | [Henan government naming record, 2023](https://english.henan.gov.cn/2023/11-07/2843859.html) and [2026 record](https://english.henan.gov.cn/2026/06-25/3369141.html) | Henan Provincial Government / English destination naming | `Millennium City Park` and `Qingming Riverside Landscape Garden` refer to Qingming Shanghe Garden | Separate attractions or separate ticket products |
+| S13 | [20250531 Zhou Qiao](https://commons.wikimedia.org/wiki/File:20250531_Zhou_Qiao.jpg) | Yumeto / Wikimedia Commons image record | Exact subject, date, coordinates, author, original resolution and CC BY-SA 4.0 publication rights for the exposed Zhouqiao photograph | The age of each visible structure, the lost Song bridge's appearance, the painted Hongqiao's location or current visitor access; those boundaries come from S4 and the dynamic-fact audit |
 
 ## Dynamic-fact summary
 
@@ -68,20 +69,18 @@ Equivalent `/zh/` and `/ko/` routes are used in the localized bodies. No unpubli
 
 - Recheck all dynamic operator and protection-unit facts immediately before publication and again close to travel.
 - The park relief photograph is identified only as a modern relief; its material is not asserted because the image record and current operator description use different wording.
-- The Zhouqiao image shows the 2021 exterior enclosure and protection structure, not visible remains and not current access.
+- The corrected Zhouqiao image shows exposed bridge fabric, canal walls and layered deposits under the protective roof. S4 identifies the visible main bridge as early Ming on Song foundations; neither the image nor its 2025 date proves current public access.
 - The article has no Palace Museum scroll image, performance screenshot, identifiable-person close-up or AI destination image.
 - Kaifeng Museum is a recovery option only; the article does not promise a particular gallery or object will be open.
 
 ## Validation record
 
-Final checks were run in the article worktree on 2026-08-13 after the last trilingual edits:
+Correction checks were run in the article worktree on 2026-08-14 after the replacement archaeological image and final captions:
 
-- Trilingual structural parity — **passed**: 51 blocks per locale; exact ID/type order; 10 H2; matching heading levels, figure paths/dimensions, table shapes, list lengths, comparison shapes, source URL/review-date sequence and localized internal-link counts. A numeric-literal audit also passed after normalizing natural language-specific notation.
-- Visible copy count — EN **2,428 article words** excluding the source and internal-link blocks; ZH **4,170 Han characters** on the same basis; KO **1,968 space-delimited tokens** on the same basis. Counts are mechanical and intended for parity review, not linguistic equivalence by raw ratio.
+- Trilingual structural parity — **passed**: 51 blocks per locale; exact ID/type order; 10 H2; matching heading levels, figure paths/dimensions, table shapes, list lengths, comparison shapes, source URL/review-date sequence and localized internal-link counts.
+- Visible copy count — EN **2,450 article words** excluding the source and internal-link blocks; ZH **4,213 Han characters** on the same basis; KO **1,987 space-delimited tokens** on the same basis. Counts are mechanical and intended for parity review, not linguistic equivalence by raw ratio.
 - `npm run guide:generate` — **passed**: 128 independent guide folders verified; only ignored temporary guide-registry outputs generated.
 - `npm run typecheck` — **passed**, including a fresh guide generation.
-- `npm run build` — **run but not passed**. It exited at the shared `content:check` prebuild gate because `content/generated/content-manifest.json` is stale after adding this independent guide. The task forbids changing the shared manifest, Registry or sitemap, so the file was not regenerated or committed.
-- `node_modules/.bin/next build` — **passed** after bypassing only that prohibited shared-manifest precheck: compilation and type validation succeeded, 496 static pages generated, export completed, and EN/ZH/KO Kaifeng outputs exist.
-- `git diff --check` — **passed**.
-
-This record does not claim the required full repository build passed. Central should regenerate and review the shared content manifest during integration.
+- `npm run build` — **passed** after the tracked content manifest and three tracked locale-font subsets were regenerated temporarily for verification. The repository's official `tools/rebuild-locale-fonts.mjs` process used the exact upstream families named in `public/fonts/README.md`: Google Fonts Noto Serif SC, Pretendard Variable 1.3.9 and NAVER MaruBuri Regular. Compilation, 496-page static generation, export font coverage and internal href/src checks all passed.
+- The temporary `content/generated/content-manifest.json` and all three `public/fonts/homeground-*.woff2` files were restored byte-for-byte to this branch's HEAD and are not part of the correction.
+- `git diff --check` and the complete prospective branch comparison `git diff --check origin/main` — **passed** with return code 0.
