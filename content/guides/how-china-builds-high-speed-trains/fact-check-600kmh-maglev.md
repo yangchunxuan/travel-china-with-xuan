@@ -3,7 +3,7 @@
 - Status: FACT CHECK COMPLETE — NO BOOKING GUIDE
 - Checked: 2026-08-13
 - Canonical owner: `how-china-builds-high-speed-trains`
-- Conclusion: official sources establish research systems and prototypes, not a commercial 600 km/h passenger route, timetable, operator ticket product or bookable inventory.
+- Conclusion: the official sources and passenger channels reviewed identified research systems and prototypes, but no commercial 600 km/h passenger route, timetable, named operator ticket product or bookable inventory as of the checked date.
 
 ## What the headlines refer to
 
@@ -15,8 +15,9 @@
 
 - [National Science and Technology Innovation Center](https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html): test/demonstration site studies and an explicit engineering-test → demonstration → promotion → commercialisation sequence.
 - [CRRC](https://crrcgc.cc/crrcgc/2024-09/24/article_2024092413441231508.html): Qingdao system roll-out, simulations and tests.
-- [Guangzhou Science and Technology Bureau](https://kjj.gz.gov.cn/xwlb/yw/content/post_10876547.html): displayed superconducting prototype and short indoor/factory testing.
+- [Guangzhou Science and Technology Bureau](https://kjj.gz.gov.cn/xwlb/yw/content/post_10876547.html): a displayed model and reported short indoor/factory testing of the underlying programme.
 - [Wuhan Transport Bureau](https://jtj.wuhan.gov.cn/jtzx/zwdt/202507/t20250714_2619883.shtml): commercial application remains future work.
+- [Shanghai Municipal Government](https://english.shanghai.gov.cn/en-Transportation/20240102/44f499a17b324b25996f2d58fcbf5f23.html): current commercial airport maglev information, used to distinguish the operating Shanghai line from 600 km/h research programmes.
 
 ## Publication rule
 
