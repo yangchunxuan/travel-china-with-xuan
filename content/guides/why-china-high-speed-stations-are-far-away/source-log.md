@@ -6,7 +6,7 @@
 
 ## Evidence
 
-- NDRC guidance establishes the need to coordinate station-area land and fast local connections.
+- NDRC guidance says new stations should be in central urban areas or near built-up areas where possible, rejects blind station-led city building and requires coordinated land use and fast local connections.
 - Independent studies cross-check multi-actor location decisions, distance effects and reuse-versus-new-build trade-offs.
 - The article avoids claiming that every high-speed station is remote or every new district succeeds.
 - Current local transit and ticket rules are dynamic and must be rechecked for the exact station/date.
@@ -19,4 +19,4 @@
 - [Station distance study](https://ces.xmu.edu.cn/CN/abstract/abstract802.shtml)
 - [Existing/new station trade-off study](https://www.ort.shu.edu.cn/CN/10.15960/j.cnki.issn.1007-6093.2023.02.005)
 
-- EN/ZH/KO preserve six forces, exact suffix rule, two scenarios, five change conditions and recovery.
+- EN/ZH/KO preserve six planning forces, the full-name rule, two traveller scenarios, the door-to-door comparison card, end-to-end accessibility boundary and recovery.
