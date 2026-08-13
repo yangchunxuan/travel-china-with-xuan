@@ -1,0 +1,53 @@
+{
+  "id": "yingge-dance-beyond-the-viral-clips",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "performance-field-guide",
+  "topics": ["yingge-dance", "chaoshan", "intangible-cultural-heritage", "festival-performance", "guangdong"],
+  "destinations": ["shantou", "chaoyang", "puning", "shanwei", "guangdong"],
+  "heroImagePath": "/images/guides/yingge-dance-beyond-the-viral-clips/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yingge-dance-beyond-the-viral-clips/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/yingge-dance-beyond-the-viral-clips/",
+      "title": "Yingge Dance Beyond Viral Clips: Read a Real Performance",
+      "headline": "See Formation, Rhythm and Local Style—not Just Painted Faces",
+      "description": "Verify a real eastern Guangdong Yingge performance, distinguish Chaoyang, Puning and Jiazi records, and follow formation, rhythm and procession without inventing one national rule.",
+      "heroAlt": "Two Yingge performers hold paired sticks during a 2011 New Year procession in Dahao, Shantou.",
+      "navTitle": "Read a Yingge performance",
+      "featuredLinkLabel": "Go beyond the viral Yingge clip",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Yingge", "Eastern Guangdong", "Performance"]
+    },
+    "zh": {
+      "path": "/zh/guides/yingge-dance-beyond-the-viral-clips/",
+      "title": "英歌舞不只是一段爆款视频：如何看懂真实表演",
+      "headline": "看阵形、节奏与地方风格，而不只看脸谱",
+      "description": "核验粤东英歌舞真实演出，区分潮阳、普宁与甲子项目记录，并按阵形、节奏和巡游过程观看，不编造全国统一规则。",
+      "heroAlt": "2011 年汕头达濠达埠正月初一巡游中，两名英歌表演者手持双短棒行进。",
+      "navTitle": "看懂一场英歌舞",
+      "featuredLinkLabel": "走出英歌爆款短视频",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["英歌舞", "粤东", "表演"]
+    },
+    "ko": {
+      "path": "/ko/guides/yingge-dance-beyond-the-viral-clips/",
+      "title": "바이럴 영상 너머의 잉거무: 실제 공연 읽는 법",
+      "headline": "얼굴 분장만 보지 말고 대형·리듬·지역 양식을 읽기",
+      "description": "광둥성 동부의 잉거무 공연을 직접 자료로 확인하고 차오양·푸닝·자쯔 기록을 구별하며 대형, 리듬, 행렬을 지역 차이와 함께 관찰합니다.",
+      "heroAlt": "2011년 산터우 다하오 다부의 음력 정월 초하루 행렬에서 두 잉거무 공연자가 쌍봉을 들고 이동하는 모습.",
+      "navTitle": "잉거무 공연 읽기",
+      "featuredLinkLabel": "바이럴 잉거무 영상 너머 보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["잉거무", "광둥성 동부", "공연"]
+    }
+  }
+}
