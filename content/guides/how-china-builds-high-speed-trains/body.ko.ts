@@ -17,11 +17,14 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "traveller-scenarios", type: "comparison", title: "여행자의 두 질문에 답하기", columns: [
     {heading: "“새 모델은 왜 오래 걸리나요?”", body: "차체 완성은 하나의 이정표일 뿐입니다. 시스템 통합, 결함 수정, 반복 시험, 문서와 규제 인수가 여객 운행 전에 남아 있습니다."}, {heading: "“시속 600km 보도가 다음 열차인가요?”", body: "아닙니다. 시제품 출고나 시험 결과는 표를 파는 서비스가 아닙니다. 연구 속도를 여행 약속으로 바꾸지 말고 실제 운영사와 시간표를 확인해야 합니다."}
   ]},
+  {id: "maglev-fact-check", type: "callout", title: "중국 시속 600km 자기부상열차를 예약할 수 있나? 없다.", body: "2026년 8월 13일 확인한 공식 자료는 연구, 시제품, 시험선과 공학 시범을 설명할 뿐 일반 승객용 시속 600km 시간표가 아니며 해당 노선이나 승차권 재고도 없습니다. 보도는 서로 다른 차량을 가리킬 수 있습니다. CRRC 쓰팡의 상전도 시스템은 2021년 칭다오에서 출고됐고 이후 전시에는 초전도 전기역학 방식 시제품도 등장했습니다. 둘 다 표를 파는 상하이 공항 자기부상열차가 아닙니다. 운영사, 상업 노선과 공식 판매 채널이 모두 생기기 전에는 예약 방법을 만들면 안 됩니다.", tone: "warning"},
   {id: "limits", type: "callout", title: "사실 범위", body: "이 글은 제작과 검증을 설명하며 승객 안내, 공장 견학 약속, 모든 중국 열차가 같은 공정을 쓴다는 주장이 아닙니다. 공장 출입, 공급사, 시험 계획과 인수 상태는 프로젝트별로 다릅니다. 자료 확인일은 2026년 8월 13일입니다.", tone: "warning"},
   {id: "internal-links", type: "internal-links", title: "공학에서 실제 여행으로", items: [
     {label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "승차권, 역, 탑승 절차는 승객용 가이드에서 확인하세요."}, {label: "야간열차와 주간 고속철도 비교", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "차량 기술보다 여행일의 손실을 비교합니다."}, {label: "고속철도역이 구도심에서 먼 이유", href: "/ko/guides/why-china-high-speed-stations-are-far-away/", description: "역 위치를 정하는 계획 논리를 이해합니다."}
   ]},
   {id: "sources", type: "sources", title: "1차 및 기술 자료", items: [
+    {label: "시속 600km 자기부상 공학·시범 단계", url: "https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html", publisher: "중국 국가과학기술혁신센터", reviewedAt: "2026-08-13"},
+    {label: "시속 600km 자기부상 시스템 출고", url: "https://crrcgc.cc/crrcgc/2024-09/24/article_2024092413441231508.html", publisher: "CRRC", reviewedAt: "2026-08-13"},
     {label: "고속열차 제작 기지와 역량", url: "https://www.crrcgc.cc/sfgf/36_2205/36_2206/index.html", publisher: "CRRC", reviewedAt: "2026-08-13"}, {label: "고속열차 완성차 시험 규격", url: "https://www.nra.gov.cn/xxgk/gkml/ztjg/gfzd/gfxw/202204/t20220405_289315.shtml", publisher: "중국 국가철도국", reviewedAt: "2026-08-13"}, {label: "국가철도시험센터 시설", url: "https://www.rails.cn/channel.php?channelid=202&page=1", publisher: "중국철도과학연구원", reviewedAt: "2026-08-13"}, {label: "알루미늄 합금 차체 용접 변형 연구", url: "https://umt1998.tongji.edu.cn/article/doi/10.16037/j.1007-869x.2025.02.030", publisher: "Urban Mass Transit", reviewedAt: "2026-08-13"}, {label: "고속열차 알루미늄 용접부 잔류응력 연구", url: "https://xnjdxb.swjtu.edu.cn/en/article/doi/10.3969/j.issn.0258-2724.2012.04.013", publisher: "Journal of Southwest Jiaotong University", reviewedAt: "2026-08-13"}
   ]}
 ]};

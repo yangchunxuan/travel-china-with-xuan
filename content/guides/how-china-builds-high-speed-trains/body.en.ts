@@ -27,6 +27,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {heading: "“Why does a new model take so long?”", body: "Manufacturing a shell is only one milestone. Integration, fault finding, repeated tests, documentation and regulatory acceptance remain before passenger service."},
     {heading: "“Does a 600 km/h report describe my next train?”", body: "No. A prototype roll-out or test result is not a ticketed service. Check the actual railway operator and timetable rather than converting a research speed into a travel promise."}
   ]},
+  {id: "maglev-fact-check", type: "callout", title: "Can you book China's 600 km/h maglev? No.", body: "Official material checked on 13 August 2026 describes research, prototypes, test lines and engineering demonstrations—not a public 600 km/h passenger timetable. No corresponding route or ticket inventory exists. Reports may refer to different vehicles: CRRC Sifang's normal-conducting system rolled off in Qingdao in 2021, while later exhibitions also showed a superconducting electrodynamic prototype. Neither is the ticketed Shanghai airport maglev. Do not publish booking steps until an operator, commercial route and official ticket channel all exist.", tone: "warning"},
   {id: "limits", type: "callout", title: "Fact boundary", body: "This is a manufacturing and validation explainer, not a rider guide, factory-tour promise or claim that every Chinese train uses the same process. Plant access, supplier details, test plans and acceptance states are project-specific. Source review: 13 August 2026.", tone: "warning"},
   {id: "internal-links", type: "internal-links", title: "Move from engineering to an actual journey", items: [
     {label: "China high-speed rail: first-trip guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Use the published passenger guide for tickets, stations and boarding."},
@@ -34,6 +35,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "Why high-speed stations can be far from the old city", href: "/guides/why-china-high-speed-stations-are-far-away/", description: "Understand the planning behind the station location."}
   ]},
   {id: "sources", type: "sources", title: "Primary and technical sources", items: [
+    {label: "600 km/h maglev engineering and demonstration sequence", url: "https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html", publisher: "National Science and Technology Innovation Center", reviewedAt: "2026-08-13"},
+    {label: "600 km/h maglev system roll-out", url: "https://crrcgc.cc/crrcgc/2024-09/24/article_2024092413441231508.html", publisher: "CRRC", reviewedAt: "2026-08-13"},
     {label: "High-speed train manufacturing base and capabilities", url: "https://www.crrcgc.cc/sfgf/36_2205/36_2206/index.html", publisher: "CRRC", reviewedAt: "2026-08-13"},
     {label: "Whole-train test specification", url: "https://www.nra.gov.cn/xxgk/gkml/ztjg/gfzd/gfxw/202204/t20220405_289315.shtml", publisher: "National Railway Administration", reviewedAt: "2026-08-13"},
     {label: "National Railway Test Center facilities", url: "https://www.rails.cn/channel.php?channelid=202&page=1", publisher: "China Academy of Railway Sciences", reviewedAt: "2026-08-13"},

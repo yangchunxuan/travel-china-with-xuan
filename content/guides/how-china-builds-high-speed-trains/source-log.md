@@ -11,6 +11,16 @@
 - The National Railway Administration provides the whole-train testing standard record; the national test centre provides facility facts.
 - The copy avoids claiming one process for every platform and separates a prototype speed from commercial service.
 
+## B30 fact-check — 600 km/h maglev booking claim
+
+- Action: merge into this manufacturing owner; no booking page created.
+- Finding checked 2026-08-13: no official commercial operator, public 600 km/h route, timetable or ticket inventory was found.
+- [National Science and Technology Innovation Center](https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html) describes test-line work and an engineering-test → demonstration → promotion → commercialisation sequence.
+- [CRRC](https://crrcgc.cc/crrcgc/2024-09/24/article_2024092413441231508.html) describes the 2021 Qingdao roll-out; roll-out is not passenger operation.
+- [Guangzhou Science and Technology Bureau](https://kjj.gz.gov.cn/xwlb/yw/content/post_10876547.html) reports a displayed superconducting electrodynamic prototype and factory test context.
+- [Wuhan Transport Bureau](https://jtj.wuhan.gov.cn/jtzx/zwdt/202507/t20250714_2619883.shtml) treats commercial operation as future work.
+- Central recommendation: retain the trilingual correction here or in an existing transport FAQ; do not index a “how to book” page.
+
 ## Sources reviewed
 
 - [CRRC manufacturing base](https://www.crrcgc.cc/sfgf/36_2205/36_2206/index.html)
