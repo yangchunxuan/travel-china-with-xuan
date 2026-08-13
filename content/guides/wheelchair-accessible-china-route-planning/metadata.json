@@ -1,0 +1,81 @@
+{
+  "id": "wheelchair-accessible-china-route-planning",
+  "type": "planning",
+  "pillar": "traveller-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "wheelchair-accessibility",
+    "accessible-travel",
+    "route-planning",
+    "special-assistance"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/wheelchair-accessible-china-route-planning/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wheelchair-accessible-china-route-planning/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "plan",
+    "family": "task",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/wheelchair-accessible-china-route-planning/",
+      "title": "Planning a Wheelchair-Accessible China Route",
+      "headline": "Verify the Whole Access Chain, Not One Ramp",
+      "description": "Plan a wheelchair-accessible China route by verifying transport, transfers, hotels, toilets, venues and a workable fallback at every link.",
+      "heroAlt": "The ramp beside stairs at Beijing Subway Beiyuan Station Exit A, showing one access node rather than an accessible route guarantee.",
+      "navTitle": "Wheelchair-accessible China route",
+      "featuredLinkLabel": "Verify an accessible route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Accessible travel",
+        "Wheelchair route",
+        "Trip planning"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/wheelchair-accessible-china-route-planning/",
+      "title": "中国轮椅无障碍路线怎么规划？",
+      "headline": "核验整条无障碍链，而不是只看一个坡道",
+      "description": "逐段核验交通、换乘、酒店、厕所、景点与备用方案，规划适合具体轮椅使用者的中国路线。",
+      "heroAlt": "北京地铁北苑站 A 口楼梯旁的坡道，仅展示一个无障碍节点，不代表整条路线可达。",
+      "navTitle": "中国轮椅无障碍路线",
+      "featuredLinkLabel": "核验无障碍路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "无障碍旅行",
+        "轮椅路线",
+        "行程规划"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/wheelchair-accessible-china-route-planning/",
+      "title": "휠체어로 중국 여행 동선을 계획하는 법",
+      "headline": "경사로 하나가 아니라 접근 사슬 전체를 확인하세요",
+      "description": "교통, 환승, 호텔, 화장실, 관광지와 대안을 구간별로 확인해 개인에게 맞는 중국 휠체어 여행 동선을 설계합니다.",
+      "heroAlt": "베이징 지하철 베이위안역 A출구 계단 옆 경사로로, 전체 동선 보장이 아닌 한 접근성 지점만 보여 준다.",
+      "navTitle": "중국 휠체어 여행 동선",
+      "featuredLinkLabel": "접근 가능한 동선 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "무장애 여행",
+        "휠체어 동선",
+        "여행 계획"
+      ]
+    }
+  }
+}

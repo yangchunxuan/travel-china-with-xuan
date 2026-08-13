@@ -1,0 +1,82 @@
+{
+  "id": "china-atm-cash-not-dispensed",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "payment-recovery-guide",
+  "topics": [
+    "atm",
+    "cash-withdrawal",
+    "card-dispute",
+    "payment-recovery",
+    "evidence-pack"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-atm-cash-not-dispensed/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-atm-cash-not-dispensed/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-atm-cash-not-dispensed/",
+      "title": "China ATM Debited Your Card but Gave No Cash",
+      "headline": "China ATM Debited Your Card but Dispensed No Cash: What to Do Next",
+      "description": "Stop repeat withdrawals, preserve ATM evidence, open cases with the ATM bank and your card issuer, and use safer payment fallbacks while you wait.",
+      "heroAlt": "Editorial diagram of an ATM beside a no-cash symbol and a three-step recovery path.",
+      "navTitle": "ATM gave no cash",
+      "featuredLinkLabel": "Recover an ATM cash failure",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "ATM",
+        "Payment recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-atm-cash-not-dispensed/",
+      "title": "中国 ATM 扣款却未出钞：现场与争议处理",
+      "headline": "在中国 ATM 扣款但没有出钞怎么办",
+      "description": "停止重复取款，保存 ATM 证据，分别向 ATM 所属行和发卡行立案，并在等待期间使用安全的付款备选。",
+      "heroAlt": "ATM、未出钞符号与三步处理路径组成的编辑示意图。",
+      "navTitle": "ATM 扣款未出钞",
+      "featuredLinkLabel": "处理 ATM 未出钞",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "ATM",
+        "支付恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-atm-cash-not-dispensed/",
+      "title": "중국 ATM에서 출금됐지만 현금이 안 나온 경우",
+      "headline": "중국 ATM에서 계좌 출금 기록은 생겼지만 현금이 나오지 않았을 때",
+      "description": "재출금을 멈추고 ATM 증거를 보존한 뒤 ATM 운영 은행과 카드 발급사에 각각 접수하고 대체 결제를 이용하세요.",
+      "heroAlt": "ATM, 현금 미지급 기호, 세 단계의 처리 경로를 보여 주는 편집용 도표.",
+      "navTitle": "ATM 현금 미지급",
+      "featuredLinkLabel": "ATM 현금 미지급 복구",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "ATM",
+        "결제 복구"
+      ]
+    }
+  }
+}

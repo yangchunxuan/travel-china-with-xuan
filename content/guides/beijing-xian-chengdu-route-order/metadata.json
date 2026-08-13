@@ -1,0 +1,85 @@
+{
+  "id": "beijing-xian-chengdu-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "beijing",
+    "xian",
+    "chengdu",
+    "route-order",
+    "transfer-days",
+    "open-jaw-flights"
+  ],
+  "destinations": [
+    "beijing",
+    "xian",
+    "chengdu"
+  ],
+  "heroImagePath": "/images/guides/beijing-xian-chengdu-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-xian-chengdu-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-xian-chengdu-route-order/",
+      "title": "Beijing, Xi'an and Chengdu: Choose the Route Order",
+      "headline": "Beijing, Xi'an and Chengdu: Choose the Route Order Without Losing Days to Transfers",
+      "description": "Choose the direction, gateways and night priorities for Beijing, Xi'an and Chengdu while counting transfer days honestly.",
+      "heroAlt": "Real photographs of Beijing, Xi'an and Chengdu arranged as a three-city route-planning triptych.",
+      "navTitle": "Beijing–Xi'an–Chengdu order",
+      "featuredLinkLabel": "Order Beijing, Xi'an and Chengdu",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Route order",
+        "Gateways",
+        "Transfer days"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-xian-chengdu-route-order/",
+      "title": "北京、西安、成都怎么排顺序：先定进出门户",
+      "headline": "北京、西安、成都路线顺序：别把转场日算成游览日",
+      "description": "用进出境门户、有效半天和转场成本决定北京、西安、成都的方向与过夜重点。",
+      "heroAlt": "北京、西安与成都三地实拍组成的路线规划三联画面。",
+      "navTitle": "北京—西安—成都顺序",
+      "featuredLinkLabel": "决定北京、西安、成都的顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "路线顺序",
+        "进出门户",
+        "转场日"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-xian-chengdu-route-order/",
+      "title": "베이징·시안·청두 여행 순서: 입출국 도시부터 정하기",
+      "headline": "베이징·시안·청두 순서: 이동일을 관광일로 착각하지 않는 법",
+      "description": "입출국 공항, 실제로 쓸 수 있는 반나절, 이동 부담으로 베이징·시안·청두의 방향과 숙박 우선순위를 정합니다.",
+      "heroAlt": "베이징·시안·청두의 실제 사진을 이어 만든 3도시 동선 계획 화면.",
+      "navTitle": "베이징–시안–청두 순서",
+      "featuredLinkLabel": "세 도시의 여행 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "여행 순서",
+        "입출국 도시",
+        "이동일"
+      ]
+    }
+  }
+}

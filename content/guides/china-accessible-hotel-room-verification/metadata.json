@@ -1,0 +1,53 @@
+{
+  "id": "china-accessible-hotel-room-verification",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "property-verification-workflow",
+  "topics": ["stay", "accessible hotel room", "mobility", "property verification"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-accessible-hotel-room-verification/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-accessible-hotel-room-verification/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "stay", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-accessible-hotel-room-verification/",
+      "title": "How to Verify an Actually Usable Accessible Hotel Room in China",
+      "headline": "Verify the Whole Route, Not the Accessible-Room Label",
+      "description": "Request measurements and recent photos for the street-to-room route, bed and bathroom, then prepare a backup when an accessible hotel room in China does not work.",
+      "heroAlt": "The entrance approach and doors at Ji Hotel Nanxieyu Street in Suzhou; the photograph alone does not verify room accessibility.",
+      "navTitle": "Verify an accessible room",
+      "featuredLinkLabel": "Verify an accessible hotel room",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China hotels", "Accessibility", "Room check"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-accessible-hotel-room-verification/",
+      "title": "如何核验中国酒店的无障碍客房是否真的可用",
+      "headline": "核验完整通路，不只看“无障碍房”标签",
+      "description": "索要从街道到客房、床边与浴室的尺寸和近期照片，并在中国酒店无障碍房不可用时准备备用房与备用酒店。",
+      "heroAlt": "苏州南斜峪街全季酒店的入口通道与门；单凭照片不能核实客房无障碍条件。",
+      "navTitle": "核验无障碍客房",
+      "featuredLinkLabel": "核验无障碍酒店客房",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国住宿", "无障碍", "客房核验"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-accessible-hotel-room-verification/",
+      "title": "중국 호텔의 장애인 객실이 실제로 사용 가능한지 확인하는 법",
+      "headline": "장애인 객실 표시보다 전체 이동 경로를 확인하세요",
+      "description": "도로에서 객실, 침대와 욕실까지의 치수와 최근 사진을 요청하고 중국 호텔의 장애인 객실이 맞지 않을 때를 대비합니다.",
+      "heroAlt": "쑤저우 난셰위제 지호텔의 진입부와 출입문으로, 사진만으로 객실 접근성을 확인할 수는 없다.",
+      "navTitle": "장애인 객실 확인",
+      "featuredLinkLabel": "장애인 호텔 객실 확인하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 숙소", "접근성", "객실 확인"]
+    }
+  }
+}

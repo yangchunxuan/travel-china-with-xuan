@@ -1,0 +1,53 @@
+{
+  "id": "jingxian-xuan-paper-museum-workshop-choice",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "process-place-decision-guide",
+  "topics": ["xuan-paper", "jingxian", "intangible-cultural-heritage", "craft-demonstration", "workshop"],
+  "destinations": ["jingxian", "xuancheng", "anhui"],
+  "heroImagePath": "/images/guides/jingxian-xuan-paper-museum-workshop-choice/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jingxian-xuan-paper-museum-workshop-choice/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "execute"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/jingxian-xuan-paper-museum-workshop-choice/",
+      "title": "Xuan Paper in Jingxian: Museum, Demonstration or Workshop?",
+      "headline": "Choose What You Want to See, Not Just a ‘Paper-Making Experience’",
+      "description": "Compare Jingxian’s Xuan paper museum, live production area and hands-on workshop by the processes each can honestly show or let you try.",
+      "heroAlt": "Jingxian Railway Station in Anhui, an arrival gateway to Jing County rather than a Xuan-paper workshop.",
+      "navTitle": "Choose a Jingxian Xuan paper visit",
+      "featuredLinkLabel": "Compare Xuan paper visit formats",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Jingxian", "Xuan paper", "Craft visit"]
+    },
+    "zh": {
+      "path": "/zh/guides/jingxian-xuan-paper-museum-workshop-choice/",
+      "title": "泾县宣纸参观怎么选：博物馆、生产演示还是体验课",
+      "headline": "先选想看懂的工序，不只看“造纸体验”四个字",
+      "description": "按实际能看见或参与的工序，比较泾县宣纸博物馆、生产区域与短时体验，并说明真实性边界。",
+      "heroAlt": "安徽泾县站的真实站台，为前往泾县的抵达节点，并非宣纸作坊。",
+      "navTitle": "选择泾县宣纸参观方式",
+      "featuredLinkLabel": "比较宣纸参观方式",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["泾县", "宣纸", "非遗体验"]
+    },
+    "ko": {
+      "path": "/ko/guides/jingxian-xuan-paper-museum-workshop-choice/",
+      "title": "징현 선지 여행: 박물관·제작 시연·체험 수업 고르기",
+      "headline": "‘종이 만들기 체험’이라는 이름보다 실제 공정 고르기",
+      "description": "징현의 선지 박물관, 실제 생산 구역, 짧은 체험 수업을 직접 볼 수 있거나 해 볼 수 있는 공정 기준으로 비교합니다.",
+      "heroAlt": "안후이 징현역의 실제 승강장으로, 선지 공방이 아니라 징현으로 가는 도착 거점을 보여 준다.",
+      "navTitle": "징현 선지 방문 방식 고르기",
+      "featuredLinkLabel": "선지 방문 방식 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["징현", "선지", "공예 체험"]
+    }
+  }
+}

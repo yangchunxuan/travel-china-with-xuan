@@ -1,0 +1,53 @@
+{
+  "id": "china-hotel-emergency-exit-fire-safety-check",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "hotel-safety-check-workflow",
+  "topics": ["stay", "hotel fire safety", "emergency exit", "failure recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-hotel-emergency-exit-fire-safety-check/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-hotel-emergency-exit-fire-safety-check/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "stay", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-hotel-emergency-exit-fire-safety-check/",
+      "title": "A Traveller's Hotel Emergency-Exit and Fire-Safety Check in China",
+      "headline": "Run a Five-Minute Exit Check From the Room You Actually Receive",
+      "description": "Read and walk the hotel evacuation route, prepare for smoke, night-time and limited mobility, and change room or property when the route is unusable.",
+      "heroAlt": "An empty corridor and illuminated exit sign at MUSTEL Hotel Knowledge City in Guangzhou, photographed in June 2025.",
+      "navTitle": "Hotel exit safety check",
+      "featuredLinkLabel": "Run a hotel exit safety check",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China hotels", "Fire safety", "Emergency exit"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-hotel-emergency-exit-fire-safety-check/",
+      "title": "中国酒店紧急出口与消防安全：旅客入住检查",
+      "headline": "从实际分配的客房出发，完成五分钟疏散检查",
+      "description": "读懂并实走酒店疏散路线，为烟雾、夜间和行动受限情境准备；路线不可用时换房或换店。",
+      "heroAlt": "2025 年 6 月拍摄的广州知识城 MUSTEL 酒店空走廊与亮起的安全出口标志。",
+      "navTitle": "酒店出口安全检查",
+      "featuredLinkLabel": "完成酒店出口安全检查",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国住宿", "消防安全", "紧急出口"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-hotel-emergency-exit-fire-safety-check/",
+      "title": "중국 호텔 비상구·화재 안전을 위한 투숙객 점검",
+      "headline": "실제로 배정받은 객실에서 5분 대피 점검을 하세요",
+      "description": "호텔 대피 경로를 읽고 직접 걸어 본 뒤 연기, 야간과 이동 제한 상황에 대비하고 경로가 쓸 수 없으면 객실이나 숙소를 바꿉니다.",
+      "heroAlt": "2025년 6월 촬영한 광저우 지식성 MUSTEL 호텔의 빈 복도와 점등된 비상구 표지.",
+      "navTitle": "호텔 비상구 점검",
+      "featuredLinkLabel": "호텔 비상구 안전 점검하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 숙소", "화재 안전", "비상구"]
+    }
+  }
+}
