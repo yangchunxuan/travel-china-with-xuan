@@ -1,0 +1,132 @@
+# Image plan — Shilin Stone Forest and Ashima
+
+Prepared: **2026-08-13**  
+Policy: real, accurately located, publishable photography only. No AI documentary image, film still, substitute minority group, unidentified karst site or unlicensed recognizable-person close-up.
+
+The committed asset set uses Creative Commons files and records every derivative. The body deliberately distinguishes a geopark **designation sign** from a geology **formation-process panel**, and a script graphic or textile detail from a museum or intangible-heritage exhibition. Those distinctions must remain in alt text and captions.
+
+## 1. Hero — Ashima Rock within the Minor Stone Forest
+
+- Local derivative: `public/images/guides/shilin-ashima-landscape-story/hero-1600.webp`
+- Exact subject: Ashima Rock, Minor Stone Forest, Shilin, Yunnan.
+- Necessary elements: the recognizable upper silhouette, neighboring pinnacles and enough base/vegetation to show this is a natural formation in a landscape.
+- Forbidden elements: implying a carved statue; calling this a marked viewpoint; removing neighboring rock to make a fake freestanding monument; inserting or removing people; generative fill.
+- Crop: 1600 × 1000 landscape. Keep the complete human-like outline and contextual pinnacles; crop only outer sky/vegetation.
+- Source file: https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/4/4e/Ashima_rock_2.jpg
+- Creator: LHOON. Flickr licence was verified by Commons.
+- Licence: CC BY-SA 2.0, https://creativecommons.org/licenses/by-sa/2.0/
+- Attribution: `Photo: LHOON / Wikimedia Commons, CC BY-SA 2.0; cropped, resized and converted to WebP.`
+- Rights status: cleared for reuse with attribution and share-alike notice; final original-resolution check must exclude a recognizable-person issue.
+- Alt EN: `Ashima Rock seen from a favorable viewing angle in the Minor Stone Forest at Shilin, Yunnan.`
+- Alt ZH: `从有利观看角度看到的云南石林小石林阿诗玛石。`
+- Alt KO: `윈난 스린 소석림에서 보기 좋은 각도로 바라본 아시마 바위.`
+- Caption EN: `From this favorable angle the natural pillar suggests Ashima; neighboring rock keeps its geological setting visible.`
+- Caption ZH: `这个有利角度让天然石柱呈现“阿诗玛”的轮廓，周围岩体则保留了它的地质环境。`
+- Caption KO: `보기 좋은 각도에서는 자연 석주가 아시마를 닮아 보이지만, 주변 바위가 지질 경관이라는 맥락을 보여 준다.`
+
+## 2. Geology context — a wider Shilin Stone Forest view
+
+- Local derivative: `major-stone-forest-karst-1400.webp`
+- Exact subject: Shilin Stone Forest. The file record and title establish Shilin but do not prove a Major/Minor sub-area, so the caption uses only “Shilin Stone Forest.”
+- Necessary elements: several pinnacles, visible spacing, vegetation and public-route context. No claim that the image records Ashima Rock.
+- Forbidden elements: labelling it Major, Minor, Naigu or a World Heritage component without image-specific proof; using it as a close geology-panel substitute.
+- Crop: 1400 × 1050, preserving the actual wide composition and public-path scale.
+- Source file: https://commons.wikimedia.org/wiki/File:20260222_Stone_Forest,_Shilin_01.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/f/fd/20260222_Stone_Forest%2C_Shilin_01.jpg
+- Creator: Ngguls; own work, 2026-02-22.
+- Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+- Attribution: `Photo: Ngguls / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP.`
+- Rights status: cleared; final frame checked for incidental recognizable people before publication.
+- Alt EN: `Dense limestone pinnacles and public paths in the Stone Forest at Shilin.`
+- Alt ZH: `云南石林景区内密集的石灰岩石柱与公共游路。`
+- Alt KO: `윈난 스린의 촘촘한 석회암 석주와 공개 관람로.`
+- Caption rule: discuss repeated joints, grooves and gaps only; do not use the image as proof of a legend.
+
+## 3. Geology-related sign — designation, not process explanation
+
+- Local derivative: `geopark-designation-sign-1400.webp`
+- Exact subject: the national-geopark / national-scenic-area designation monuments at Shilin Stone Forest.
+- Necessary elements: full sign face, legible designation wording and enough surroundings to show a real onsite sign.
+- Forbidden elements: cropping to isolated official emblems; captioning it as a limestone-dissolution explanation board; upgrading its wording into a UNESCO World Heritage boundary claim.
+- Crop: 1400 × 1053, keep complete panel.
+- Source file: https://commons.wikimedia.org/wiki/File:20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/3/3a/20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg
+- Creator: Ngguls; own work, 2026-02-22.
+- Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+- Attribution: `Photo: Ngguls / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP.`
+- Rights status: cleared.
+- Alt EN: `A national geopark and national scenic-area designation sign at Shilin Stone Forest.`
+- Alt ZH: `石林景区内的国家地质公园与国家级风景名胜区标识牌。`
+- Alt KO: `스린 석림에 설치된 국가지질공원·국가급 풍경명승구 지정 표지판.`
+- Caption rule: explicitly state that it identifies designations and is not a formation-process panel.
+
+## 4. Language layer — the name Ashima in Sani Yi script
+
+- Local derivative: `ashima-sani-script-1400.webp`
+- Exact subject: “Ashima” written in Sani Yi script; a graphic, not a photograph of a manuscript or exhibition.
+- Necessary elements: complete characters and original proportions.
+- Forbidden elements: calling it an ancient manuscript, a film title card or the only historical spelling; adding decorative “ethnic” motifs.
+- Crop: fit within a 1400 × 438 canvas without redrawing the characters.
+- Source file: https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%AF%97%E7%8E%9B%E5%BD%9D%E6%96%87.png
+- Creator: 瑞丽江的河水; own work.
+- Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+- Attribution: `Graphic: 瑞丽江的河水 / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP.`
+- Rights status: cleared, subject to final verification of the Commons file record.
+- Alt EN: `The name Ashima written in Sani Yi script.`
+- Alt ZH: `用撒尼彝文书写的“阿诗玛”。`
+- Alt KO: `싸니 이문자로 쓴 ‘아시마’라는 이름.`
+
+## 5. Second rock view — test the angle rather than duplicate the Hero
+
+- Local derivative: `ashima-rock-portrait-1200.webp`
+- Exact subject: Ashima Rock at Shilin, photographed from a different, portrait-oriented public view.
+- Necessary elements: named formation and surrounding pinnacles.
+- Forbidden elements: describing the position as currently marked; using the image as a historical portrait; over-cropping the setting.
+- Crop: 803 × 1200 portrait, full composition retained without cropping.
+- Source file: https://commons.wikimedia.org/wiki/File:Ashima_tourist_attraction.JPG
+- Creator: Cs california; own work, 2008-08-30.
+- Licence: CC BY 3.0, https://creativecommons.org/licenses/by/3.0/
+- Attribution: `Photo: Cs california / Wikimedia Commons, CC BY 3.0; cropped, resized and converted to WebP.`
+- Rights status: cleared, pending original-resolution check for incidental people.
+- Alt EN: `Ashima Rock and surrounding pinnacles seen from a favorable public viewing angle in the Minor Stone Forest.`
+- Alt ZH: `从有利的公共观看角度看到的小石林阿诗玛石及周围岩柱。`
+- Alt KO: `소석림의 공개 관람로에서 보기 좋은 각도로 본 아시마 바위와 주변 석주.`
+
+## 6. Material-culture context — documented Shilin Sani embroidery
+
+- Local derivative: `shilin-sani-embroidery-1400.webp`
+- Exact subject: one Sani embroidery textile photographed in Shilin County at coordinates recorded on Commons as 24.749439, 103.268112.
+- Necessary elements: textile surface, stitches, color and object edges; no person appears in the selected file.
+- Forbidden elements: claiming it is an Ashima costume, a museum exhibit, ancient, ceremonial, handmade by a named maker or representative of every Sani maker without supporting evidence.
+- Crop: 1400 × 1053, retain the textile edges and context while avoiding a misleading isolated motif.
+- Source file: https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E6%9E%97%E6%92%92%E5%B0%BC%E5%88%BA%E7%BB%A3.jpg
+- Creator: 瑞丽江的河水; own work, 2018-07-04.
+- Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+- Attribution: `Photo: 瑞丽江的河水 / Wikimedia Commons, CC BY-SA 4.0; cropped, resized and converted to WebP.`
+- Rights status: cleared; selected original and derivative contain no recognizable person.
+- Alt EN: `A close view of a Sani embroidery textile photographed in Shilin County.`
+- Alt ZH: `在石林县拍摄的一件撒尼刺绣织物细节。`
+- Alt KO: `스린현에서 촬영한 싸니 자수 직물의 세부 모습.`
+
+## Unfilled central-library opportunities
+
+Two stronger explanatory photographs remain desirable but are **not** silently substituted:
+
+1. A current onsite geology panel that actually explains bedding, joints, uplift or dissolution. The cleared designation sign above does not fill that scientific-panel role.
+2. A current, accurately identified Geopark Museum or intangible-heritage exhibition about Ashima, with written publication permission. The script graphic and textile detail document language/material culture but do not prove a museum is open.
+
+Rejected candidate: Wikimedia Commons files titled `Ashima and Ahei (48623620218).jpg` and `阿詩瑪與阿黑 Ashma and Ahei 20191223162741.jpg` depict natural limestone formations, not a sculpture or exhibition. They were visually checked and excluded rather than relabelled.
+
+The Yunnan Intangible Cultural Heritage Protection Centre published accurate photographs of an “Ashima Ethnic Culture Inheritance Room” in 2012 at https://www.ynich.cn/news/new/1204.html, but its site states All Rights Reserved. Those images are excluded until written permission covers editorial publication, trilingual reuse, cropping and long-term web display. The reported venue must not be relabelled as UNESCO's Geopark Museum hall.
+
+## Derivative checksums
+
+| Local file | SHA256 |
+|---|---|
+| `hero-1600.webp` | `5639a30d74407ec5433c1d9f4328ed680f61d69b08551c5f36d8366c358d38cd` |
+| `major-stone-forest-karst-1400.webp` | `3e49714114bf6da2f32beb314718b15b00c84333cfc276f75c70893eedffa70d` |
+| `geopark-designation-sign-1400.webp` | `2b1a5717172b2c3a4bc87ae9fc02493dbd313cf76706952eb8b272d4d1f49bec` |
+| `ashima-sani-script-1400.webp` | `c1cebe2421c77f2dbd7f8ddbc158e9abd067e572f7c08fa3cb139ea62af64d18` |
+| `ashima-rock-portrait-1200.webp` | `67e4e741f5d1043f801ed150f12fccd9027f15abc78d9c2bafe626443c6d2dc8` |
+| `shilin-sani-embroidery-1400.webp` | `36f4568758fcb16e92ab430d4c527d2cc6f19b60cc526e7806d9289847b15b60` |
