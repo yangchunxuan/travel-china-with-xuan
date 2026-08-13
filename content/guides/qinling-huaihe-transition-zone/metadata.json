@@ -1,7 +1,7 @@
 {
   "id": "qinling-huaihe-transition-zone",
   "type": "planning",
-  "pillar": "culture-history-people-ideas",
+  "pillar": "explore-regions-provinces",
   "audienceMarkets": ["global"],
   "format": "landscape-transect-field-guide",
   "topics": [
@@ -21,7 +21,7 @@
   "dateModified": "2026-08-13",
   "sourceReviewedDate": "2026-08-13",
   "search": {
-    "section": "culture",
+    "section": "explore",
     "family": "task",
     "primaryIntent": "understand"
   },

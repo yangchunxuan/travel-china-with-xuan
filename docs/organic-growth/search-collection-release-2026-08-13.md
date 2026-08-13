@@ -2,7 +2,7 @@
 
 ## Decision
 
-Homeground now uses one reviewed hierarchy for all 146 guide identities:
+Homeground now uses one reviewed hierarchy for all 163 guide identities:
 
 `Guides → one of 9 sections → one of 27 collections → article`
 
@@ -23,10 +23,10 @@ visual symmetry.
   to preserve the information architecture, but remains outside search.
 - Tools do not become indexable merely because an article mentions a tool.
 
-At release, 18 collections meet the three-guide publication threshold. Nine
-remain `noindex,follow`: three timing collections with 0–2 guides, one stay
-collection with one guide, all three tool collections, and two service
-collections plus the one-guide service collection.
+At release, 17 collections have both the three-guide minimum and an explicit
+editorial indexation approval. Ten remain `noindex,follow`: all three timing
+collections, one stay collection, all three tool collections, and all three
+service collections. Reaching three guides never changes that state by itself.
 
 ## Section migration
 
@@ -36,13 +36,13 @@ sections. Their indexation change is recorded in
 both the reviewed starting state and target state. This avoids silently
 changing protected search pages.
 
-- `culture` now has 25 reviewed guides across three populated collections.
+- `culture` now has 36 reviewed guides across three populated collections.
 - `when-to-go` now has four reviewed guides and a monthly refresh policy.
 - `tools` remains review-only because it has no public tool product.
 
 ## Editorial identity
 
-All 146 article identities now show Evan as the visible author and fact
+All 163 article identities now show Evan as the visible author and fact
 reviewer. The same identity is used in Article structured data:
 
 - Person ID: `https://homegroundchina.com/studio/evan/#person`
