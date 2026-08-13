@@ -1,0 +1,53 @@
+{
+  "id": "lunar-new-year-customs-for-visitors",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "festival-mobility-and-boundaries-guide",
+  "topics": ["spring-festival", "lunar-new-year", "chunyun", "family-customs", "visitor-etiquette"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/lunar-new-year-customs-for-visitors/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/lunar-new-year-customs-for-visitors/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/lunar-new-year-customs-for-visitors/",
+      "title": "Spring Festival in China: Chunyun, Family Customs and Visitor Boundaries",
+      "headline": "Spring Festival Is More Than “Chinese New Year”",
+      "description": "Understand how Chunyun mobility, family reunion and public Spring Festival events overlap—and where visitors should verify, wait for an invitation or step back.",
+      "heroAlt": "Travellers in a named Chinese railway station during the Spring Festival travel period, shown as a public transport scene rather than a private family ritual.",
+      "navTitle": "Spring Festival for visitors",
+      "featuredLinkLabel": "Understand Chunyun and family boundaries",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Spring Festival", "Chunyun", "Visitor etiquette"]
+    },
+    "zh": {
+      "path": "/zh/guides/lunar-new-year-customs-for-visitors/",
+      "title": "春节、春运与家庭习俗：外国访客的边界指南",
+      "headline": "春节不只是“中国新年”：全国性春运返乡潮如何运转",
+      "description": "理解春运、家庭团聚与公共节庆如何交叠，分清哪些信息要当年核验、哪些家庭习俗需要明确邀请，以及何时应当退后一步。",
+      "heroAlt": "春节运输期间一座具名中国火车站内的旅客，以公共交通场景呈现，不代替私人家庭仪式。",
+      "navTitle": "外国访客理解春节",
+      "featuredLinkLabel": "理解春运与家庭边界",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["春节", "春运", "访客礼仪"]
+    },
+    "ko": {
+      "path": "/ko/guides/lunar-new-year-customs-for-visitors/",
+      "title": "중국 춘절 이해하기: 춘윈, 가족 관습과 여행자의 경계",
+      "headline": "춘절은 단순한 ‘중국 설날’이 아닙니다",
+      "description": "춘윈 이동, 가족 재회와 공개 춘절 행사가 어떻게 겹치는지 이해하고, 당해 확인할 정보와 초대를 기다려야 할 가족 관습을 구분합니다.",
+      "heroAlt": "춘절 특별수송 기간의 이름이 명시된 중국 기차역 여행객으로, 사적인 가족 의례가 아닌 공공 교통 장면이다.",
+      "navTitle": "여행자를 위한 춘절",
+      "featuredLinkLabel": "춘윈과 가족의 경계 이해하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["춘절", "춘윈", "여행 예절"]
+    }
+  }
+}
