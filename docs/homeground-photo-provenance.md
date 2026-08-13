@@ -859,6 +859,33 @@ Yingge crop remains available under CC BY-SA 3.0, with its share-alike
 obligation preserved. Exact crop and attribution notes are also recorded in
 each guide's `image-plan.md` and default-collapsed Sources section.
 
+## Employee 3 production-material hero completion (August 13, 2026)
+
+The first three heroes below are real photographs; the fourth is a catalogued
+nineteenth-century woodblock print. All were conventionally resized and
+converted to WebP without retained source metadata. No subject or scene element
+was generated, added, removed or altered, so this set contains **0 / 4
+AI-generated or AI-assisted covers**. The tea image comes from the
+owner-organised local photo library; the Nanjing and Sichuan-opera photographs
+retain their Wikimedia attribution and licence duties; the Met object is public
+domain / CC0. External credits must also appear in each
+guide's default-collapsed Sources section when its canonical page is
+materialised.
+
+| Guide | Original source, creator and rights | Captured / exact visible scene | Source SHA-256 | Published derivative and final SHA-256 | Use and evidence boundary |
+| --- | --- | --- | --- | --- | --- |
+| `tea-landscape-regions-of-china` | Homeground local file `/Users/yangchunxuan/Desktop/Facebook图片素材/杭州优选素材/04_龙井梅家坞与茶文化/梅家坞茶园1.jpg`; owner-organised library authorised for Homeground website use on 2026-08-10; photographer and capture date not separately recorded | Library-labelled Meijiawu tea garden, Hangzhou; rows of tea shrubs, footpath, slopes and broad tree canopy | `726245fb58cd36fefc8fe16ec078fe993fea31bc60753e11822a7fa511519486` | `public/images/guides/tea-landscape-regions-of-china/hero-1600.webp`; `850cc08ba0c9269eee658fd7db34f46e14494a3d02ecef28f224d83802eb0561` | Centred crop from 7507 × 5007 to 7504 × 4690. One library-labelled Meijiawu landscape context only; not proof of tea variety, legal origin, harvest timing, production method, or Jingmai, Wuyi and Anhua conditions. |
+| `chinese-city-walls-gates-and-urban-order` | [Nanjing City Wall south section](https://commons.wikimedia.org/wiki/File:2024Apr_-_Nanjing_City_Wall_--_south_section_-_img_01.jpg), Chainwit., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 2024-04-27; south section of Nanjing City Wall at the recorded camera position 32.012919 N, 118.776117 E, above a current road and pedestrian route | `fb27839c923dd7925bbad9d293933a3e02f38d47a84cfafa5227e68b9bc3e838` | `public/images/guides/chinese-city-walls-gates-and-urban-order/hero-1600.webp`; `0bd68019ac4c3050402f31867b3dce770394a14cd20c0315faf5912b66524237` | 3200 × 2000 crop chosen to preserve the wall–road relationship while excluding the readable foreground licence plate. Identifies the photographed south section only; it does not visually date bricks, identify a repair interface or establish the proportion of surviving historic fabric. |
+| `sichuan-opera-face-changing-with-context` | [Sichuan opera Chengdu](https://commons.wikimedia.org/wiki/File:Sichuan_opera_Chengdu.jpg), Xiquinho Silva, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), licence confirmed by FlickreviewR 2 on 2020-03-18 | 2018-05-26; a Sichuan-opera performance in Chengdu at the recorded camera position 30.662265 N, 104.077885 E, with multiple costumed performers and a decorated stage | `2cc11271bde113cbd8089a31edd89e559852da0027ce468ae0cd77f66566d529` | `public/images/guides/sichuan-opera-face-changing-with-context/hero-1600.webp`; `b8821d1dbf1e162c6603391e12237c2f8589cb81cc4093893d3b08d3349be316` | Centred crop from 3000 × 1666 to 2664 × 1665. Broad performance context only; the source does not name the venue, troupe, play, excerpt, performers or technique, so none may be inferred in alt text or captions. |
+| `wukong-nezha-games-animation-myth-guide` | [Yashima Gakutei, *The Monkey King Songokū, from the Chinese novel Journey to the West*](https://www.metmuseum.org/art/collection/search/54818), probably 1824, The Metropolitan Museum of Art, accession JP2047; public domain / [CC0](https://creativecommons.org/publicdomain/zero/1.0/) through Met Open Access; derivative source retrieved 2026-08-13 from the exact [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:%E5%AD%AB%E6%82%9F%E7%A9%BA-The_Monkey_King_Songok%C5%AB,_from_the_Chinese_novel_Journey_to_the_West_MET_DP135893.jpg) and its [preserved original JPEG bytes](https://upload.wikimedia.org/wikipedia/commons/0/04/%E5%AD%AB%E6%82%9F%E7%A9%BA-The_Monkey_King_Songok%C5%AB%2C_from_the_Chinese_novel_Journey_to_the_West_MET_DP135893.jpg) | Japan, Edo period; woodblock print (surimono), ink and colour on paper; the catalogue identifies Songokū, not Nezha | Commons source JPEG (3,292,692 bytes): `1b7b3e5a0ef88d7f1387a54e7175d70a1005673dbdf2af1c81f11679df2b01f1`. On 2026-08-13 the Met endpoint returned a different 3,292,362-byte JPEG, SHA `aa0c1a3c178311326f586f679ec11f6151f01ea24f5364348d9d3705ad374d40`; both are 3402 × 3807 and decode to identical RGB pixel SHA `211cde098966bc039e95d2468fbabe48d2436bc4aff05cc0965c8e3c620f52e1` | `public/images/guides/wukong-nezha-games-animation-myth-guide/hero-1600.webp`; `afcc79aa352fa197711e8d1278c63780bd65e65d9cfdc0c37ec122b4336a24fa` | Complete 3402 × 3807 artwork resized to 804 × 900 and centred at x=398, y=50 on a flat `#F2EADC` 1600 × 1000 canvas. One Japanese Edo-period reinterpretation only: not a single Chinese original, not Nezha and not any modern game, film or animation design. No artwork content was cropped, retouched, extended or generated. |
+
+The local-library permission record establishes Homeground project use but is
+not an independent third-party authorship claim. The two photographer-licensed
+Creative Commons derivatives must credit the named photographers, link the
+source and licence, and state that the published WebP files are cropped and
+resized derivatives. The Met work should retain its full catalogue credit and
+cross-cultural evidence boundary even though CC0 does not require attribution.
+
 ## Employee 2 media features (August 13, 2026)
 
 All five covers are real, location-identified photographs. They were conventionally cropped, resized and converted to WebP without EXIF, GPS or device metadata. No scene element was generated, added or composited, so this batch contains **0 / 5 AI-generated or AI-assisted covers**.

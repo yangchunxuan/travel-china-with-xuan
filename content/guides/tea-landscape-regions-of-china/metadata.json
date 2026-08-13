@@ -1,0 +1,53 @@
+{
+  "id": "tea-landscape-regions-of-china",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "regional-landscape-comparison",
+  "topics": ["tea", "cultural-landscape", "craft", "living-heritage"],
+  "destinations": ["china", "hangzhou", "fujian", "yunnan", "hunan"],
+  "heroImagePath": "/images/guides/tea-landscape-regions-of-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/tea-landscape-regions-of-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "compare"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/tea-landscape-regions-of-china/",
+      "title": "China's Tea Landscapes: Longjing, Wuyi, Jingmai and Anhua",
+      "headline": "Longjing, Wuyi, Jingmai and Anhua: Four Tea Landscapes",
+      "description": "Choose a Chinese tea region by the landscape, work and community relationships you can actually observe—not by a best-tea ranking.",
+      "heroAlt": "Tea rows, shade trees and a walking path in Meijiawu, Hangzhou",
+      "navTitle": "Compare four tea landscapes",
+      "featuredLinkLabel": "Choose a tea landscape",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Tea regions", "Cultural landscape", "Living craft"]
+    },
+    "zh": {
+      "path": "/zh/guides/tea-landscape-regions-of-china/",
+      "title": "中国茶乡景观：龙井、武夷、景迈与安化",
+      "headline": "龙井、武夷、景迈与安化：四种茶乡景观",
+      "description": "不按名茶排名，而是从现场能看见的景观、工序与社区关系，选择适合自己的中国茶产地。",
+      "heroAlt": "杭州梅家坞茶园的成排茶树、遮阴树木与步行小径",
+      "navTitle": "比较四种茶乡景观",
+      "featuredLinkLabel": "选择一处茶乡景观",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["茶产地", "文化景观", "活态技艺"]
+    },
+    "ko": {
+      "path": "/ko/guides/tea-landscape-regions-of-china/",
+      "title": "중국 차 산지 풍경: 룽징·우이·징마이·안화",
+      "headline": "룽징·우이·징마이·안화: 네 가지 차 산지 풍경",
+      "description": "최고의 차 순위가 아니라 현장에서 볼 수 있는 풍경, 작업과 공동체의 관계로 중국 차 산지를 고릅니다.",
+      "heroAlt": "항저우 메이자우 차밭의 차나무 줄과 그늘나무, 산책로",
+      "navTitle": "네 차 산지 풍경 비교하기",
+      "featuredLinkLabel": "차 산지 풍경 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["차 산지", "문화경관", "생활 기술"]
+    }
+  }
+}

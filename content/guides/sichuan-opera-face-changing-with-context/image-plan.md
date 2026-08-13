@@ -1,4 +1,4 @@
-# Image plan — A9 `sichuan-opera-face-changing-with-context`
+# Image plan — sichuan-opera-face-changing-with-context
 
 Status: **BROAD-CONTEXT HERO SELECTED AND PROCESSED — NAMED-PROGRAMME SUPPORTING ASSET STILL DESIRABLE.**
 
@@ -20,26 +20,8 @@ Status: **BROAD-CONTEXT HERO SELECTED AND PROCESSED — NAMED-PROGRAMME SUPPORTI
 - KO caption: “Xiquinho Silva가 2018년 5월 26일 청두에서 촬영한 천극 공연. 출처에는 공연장, 극단, 작품 장면, 공연자나 구체적 기법이 명시되지 않았다. CC BY 2.0 원본을 자르고 크기를 조정했다.”
 - Caption boundary: describe the broad performance context only. Do not infer character names, call the scene a named face-changing excerpt or promise that this exact programme is currently available.
 
-This is a release-safe broad-context fallback, not the fully identified excerpt originally preferred. A future supporting photograph may add a named programme, troupe and visible accompaniment after item-level rights clearance; publication must not manufacture those missing fields.
-
-## Supporting photographs
-
-| Object | Evidence value | Required verification |
-| --- | --- | --- |
-| Printed or digital programme beside the stage | Connects a visual scene to a named excerpt, troupe and date | Operator permission; legible date/title; no personal ticket data |
-| Percussion or small ensemble during the same production | Helps the reader listen beyond visual effects | Identify instruments only through performer/troupe records; musician and photographer permission |
-| Actor in a documented non-face-changing scene | Shows speech, singing, movement or role work | Exact excerpt and performer; production approval |
-| Face-changing moment, if licensed | Illustrates one special technique in context | Exact production, explicit publication permission and no frame-by-frame exposure of guarded mechanics |
-| Venue entrance/current notice | Supports wayfinding or final verification | Current capture date, venue permission where required; do not use it as proof of artistic quality |
+This is a release-safe broad-context fallback, not a fully identified excerpt. A future supporting photograph may add a named programme, troupe and accompaniment after item-level rights clearance.
 
 ## Rights and cultural safeguards
 
-- Official and operator webpages are sources, not automatic image licences.
-- Do not scrape trailers, ticket platforms, social posts or press photos.
-- No AI “Sichuan opera performer,” recreated mask-change sequence or generic Chinese-opera costume.
-- Do not photograph backstage, dressing, training or guarded technique without explicit consent.
-- Distinguish a documentary caption from evaluation: an image can identify a production but cannot prove that every act, tune system or tradition is represented.
-
-## Keep as HTML
-
-The format comparison, credibility checklist, performance timeline, evidence labels and failure-recovery flow must remain HTML. Casts, acts and visitor conditions change too often to embed in an infographic.
+Official and operator pages are sources, not automatic image licences. Do not scrape trailers, ticket platforms, press images or social posts; do not create AI performers or expose guarded backstage technique. The format comparison, credibility checklist and evidence labels remain accessible HTML.

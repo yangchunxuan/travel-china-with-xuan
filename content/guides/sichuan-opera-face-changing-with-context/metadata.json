@@ -1,0 +1,53 @@
+{
+  "id": "sichuan-opera-face-changing-with-context",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "first-audience-performance-guide",
+  "topics": ["sichuan-opera", "face-changing", "theatre", "performing-arts"],
+  "destinations": ["china", "sichuan", "chengdu", "chongqing"],
+  "heroImagePath": "/images/guides/sichuan-opera-face-changing-with-context/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/sichuan-opera-face-changing-with-context/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "execute"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/sichuan-opera-face-changing-with-context/",
+      "title": "Sichuan Opera for First-Time Viewers: Beyond Face-Changing",
+      "headline": "Sichuan Opera for a First Audience: Put Face-Changing in Context",
+      "description": "Choose and read a Sichuan opera performance by its troupe, excerpt, voice and stage context—not by a mask photograph alone.",
+      "heroAlt": "Actors performing Sichuan opera on a stage in Chengdu in May 2018",
+      "navTitle": "See Sichuan opera in context",
+      "featuredLinkLabel": "Choose a Sichuan opera performance",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Sichuan opera", "Face-changing", "First audience"]
+    },
+    "zh": {
+      "path": "/zh/guides/sichuan-opera-face-changing-with-context/",
+      "title": "第一次看川剧：别把变脸当成全部",
+      "headline": "第一次看川剧：把变脸放回舞台语境",
+      "description": "不要只看面具海报；按剧团、剧目、唱念、身段与舞台语境选择并读懂一场川剧。",
+      "heroAlt": "2018年5月成都一处舞台上的川剧演员与演出场景",
+      "navTitle": "在语境中理解川剧",
+      "featuredLinkLabel": "选择一场川剧演出",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["川剧", "变脸", "初次观演"]
+    },
+    "ko": {
+      "path": "/ko/guides/sichuan-opera-face-changing-with-context/",
+      "title": "처음 보는 천극: 변검이 전부는 아닙니다",
+      "headline": "처음 보는 천극: 변검을 무대 맥락에서 읽기",
+      "description": "가면 사진보다 극단, 작품, 노래와 대사, 몸짓과 무대 맥락을 확인해 천극 공연을 고르고 읽습니다.",
+      "heroAlt": "2018년 5월 청두의 무대에서 천극을 공연하는 배우들",
+      "navTitle": "맥락으로 천극 이해하기",
+      "featuredLinkLabel": "천극 공연 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["천극", "변검", "첫 관람"]
+    }
+  }
+}

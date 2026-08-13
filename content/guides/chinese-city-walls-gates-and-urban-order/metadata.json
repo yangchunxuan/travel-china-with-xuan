@@ -1,0 +1,66 @@
+{
+  "id": "chinese-city-walls-gates-and-urban-order",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "interpretive-guide",
+  "topics": [
+    "chinese-city-walls",
+    "urban-history",
+    "heritage-conservation",
+    "city-gates",
+    "archaeology"
+  ],
+  "destinations": ["china", "nanjing", "xian", "beijing", "datong"],
+  "heroImagePath": "/images/guides/chinese-city-walls-gates-and-urban-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chinese-city-walls-gates-and-urban-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chinese-city-walls-gates-and-urban-order/",
+      "title": "How to Read Chinese City Walls: Gates, Defense, Ritual and Urban Form",
+      "headline": "Read a Chinese City Wall in Material Layers",
+      "description": "Distinguish surviving fabric, conservation repair, reconstruction and archaeological traces, then read gates and streets as parts of an urban system.",
+      "heroAlt": "Nanjing City Wall's southern section beside a road and pedestrian path in April 2024",
+      "navTitle": "How to read Chinese city walls",
+      "featuredLinkLabel": "Read a Chinese city wall",
+      "openGraphLocale": "en_US",
+      "cardTags": ["City walls", "Urban history", "Conservation"]
+    },
+    "zh": {
+      "path": "/zh/guides/chinese-city-walls-gates-and-urban-order/",
+      "title": "如何读懂中国城墙：城门、防御、礼制与城市形态",
+      "headline": "按材料层次读懂中国城墙",
+      "description": "分清原存、保护性修缮、复建与考古遗存，再把城门和街道放回完整的城市系统中理解。",
+      "heroAlt": "2024年4月拍摄的南京城墙南段，墙体旁可见道路与步行道",
+      "navTitle": "如何读懂中国城墙",
+      "featuredLinkLabel": "读懂一段中国城墙",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["城墙", "城市史", "文物保护"]
+    },
+    "ko": {
+      "path": "/ko/guides/chinese-city-walls-gates-and-urban-order/",
+      "title": "중국 성곽 읽는 법: 성문·방어·의례와 도시 형태",
+      "headline": "재료의 층위로 중국 도시 성벽을 읽으세요",
+      "description": "현존 재료, 보존 수리, 재건과 고고학 흔적을 구분하고 성문과 도로를 하나의 도시 체계로 이해합니다.",
+      "heroAlt": "2024년 4월 촬영한 난징 성벽 남쪽 구간과 옆 도로·보행로",
+      "navTitle": "중국 도시 성벽 읽는 법",
+      "featuredLinkLabel": "중국 도시 성벽 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["도시 성벽", "도시사", "문화유산 보존"]
+    }
+  }
+}

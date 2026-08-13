@@ -1,0 +1,82 @@
+{
+  "id": "wukong-nezha-games-animation-myth-guide",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "adaptation-reading-guide",
+  "topics": [
+    "sun-wukong",
+    "nezha",
+    "myth-adaptation",
+    "games-and-animation",
+    "cultural-literacy"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/wukong-nezha-games-animation-myth-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wukong-nezha-games-animation-myth-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/wukong-nezha-games-animation-myth-guide/",
+      "title": "Wukong and Nezha: Myth in Games and Animation",
+      "headline": "Wukong and Nezha: Read the Adaptation Before the ‘Original’",
+      "description": "Separate named texts, religious practice, performance traditions and modern creative choices when meeting Wukong or Nezha in games, animation or travel.",
+      "heroAlt": "Yashima Gakutei’s probably 1824 Japanese woodblock print shows Songokū, the Monkey King, in red clothing against a dark ground with Japanese inscriptions.",
+      "navTitle": "Read Wukong and Nezha adaptations",
+      "featuredLinkLabel": "Read Wukong and Nezha across media",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Wukong",
+        "Nezha",
+        "Adaptation"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/wukong-nezha-games-animation-myth-guide/",
+      "title": "从悟空到哪吒：游戏与动画里的神话改编怎么看",
+      "headline": "悟空与哪吒：先读改编，再谈“原版”",
+      "description": "在游戏、动画与旅行场景中遇见悟空或哪吒时，区分具名文献、信仰实践、表演传统与现代创作选择。",
+      "heroAlt": "日本艺术家屋岛岳亭（Yashima Gakutei）约 1824 年的木版画中，身着红衣的孙悟空立在深色背景与日文题字之间。",
+      "navTitle": "读懂悟空与哪吒的改编",
+      "featuredLinkLabel": "读懂悟空与哪吒的改编",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "孙悟空",
+        "哪吒",
+        "神话改编"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/wukong-nezha-games-animation-myth-guide/",
+      "title": "손오공과 나타: 게임·애니메이션 속 신화 각색 읽기",
+      "headline": "손오공과 나타: ‘원전’보다 각색부터 읽기",
+      "description": "게임, 애니메이션과 여행 현장에서 손오공이나 나타를 만날 때 문헌, 신앙 실천, 공연 전통과 현대 창작 선택을 구분합니다.",
+      "heroAlt": "일본 작가 야시마 가쿠테이의 1824년경 목판화로, 붉은 옷을 입은 손오공이 어두운 배경과 일본어 글씨 사이에 서 있다.",
+      "navTitle": "손오공과 나타 각색 읽기",
+      "featuredLinkLabel": "손오공과 나타 각색 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "손오공",
+        "나타",
+        "신화 각색"
+      ]
+    }
+  }
+}
