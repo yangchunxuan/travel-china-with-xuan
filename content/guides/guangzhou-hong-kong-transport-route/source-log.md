@@ -8,7 +8,7 @@ Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 This page owns the Guangzhou–Hong Kong pre-purchase door-to-door route decision. It does not own national rail booking, immigration eligibility, a live timetable, a separate Guangzhou-station guide, or the Shenzhen–Hong Kong crossing decision.
 
-Searches reviewed: `Guangzhou to Hong Kong train`, `Guangzhou South or East to Hong Kong`, and `Guangzhou Hong Kong train or bus`. Results commonly foreground the shortest advertised train time but do not compare the Guangzhou first leg, West Kowloon last mile, boundary processing, late arrival and wrong-station recovery.
+Searches reviewed: `Guangzhou to Hong Kong train`, `Guangzhou South or East to Hong Kong`, and `Guangzhou Hong Kong train or bus`. Results commonly foreground the shortest advertised train time but do not compare the Guangzhou first leg, West Kowloon last mile, boundary processing, late arrival and what to do after reaching the wrong station.
 
 ## Dynamic facts used
 

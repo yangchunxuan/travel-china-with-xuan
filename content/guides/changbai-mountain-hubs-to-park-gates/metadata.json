@@ -1,0 +1,53 @@
+{
+  "id": "changbai-mountain-hubs-to-park-gates",
+  "type": "planning",
+  "pillar": "transport-last-mile-transfers",
+  "audienceMarkets": ["global"],
+  "format": "gate-first-hub-decision",
+  "topics": ["transport", "railway-station", "airport", "mountain-gate", "weather-recovery"],
+  "destinations": ["changbai-mountain", "jilin"],
+  "heroImagePath": "/images/guides/changbai-mountain-hubs-to-park-gates/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/changbai-mountain-hubs-to-park-gates/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/changbai-mountain-hubs-to-park-gates/",
+      "title": "Changbai Mountain: Match Your Hub to the Park Entrance",
+      "headline": "Changbai Mountain: Match Your Station or Airport to the Park Entrance",
+      "description": "Use a confirmed North or West Scenic Area booking to choose Changbaishan Station, Changbaishanxi Station or Changbaishan Airport and plan the road transfer.",
+      "heroAlt": "Exterior of Changbaishan Railway Station in Jilin, photographed in August 2022.",
+      "navTitle": "Changbai Mountain hubs and gates",
+      "featuredLinkLabel": "Match the hub to the correct slope",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Changbai Mountain", "Rail", "Park gates"]
+    },
+    "zh": {
+      "path": "/zh/guides/changbai-mountain-hubs-to-park-gates/",
+      "title": "长白山站、长白山西站还是机场？先按北坡或西坡选入口",
+      "headline": "去长白山北坡或西坡：先定入口，再选火车站与机场",
+      "description": "按已确认的北景区或西景区入口，选择长白山站、长白山西站或长白山机场，并为道路接驳、到错一侧和天气变化准备备选方案。",
+      "heroAlt": "2022年8月拍摄的吉林长白山站站房外观。",
+      "navTitle": "长白山枢纽与入口",
+      "featuredLinkLabel": "把到达枢纽与北坡或西坡入口对应起来",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["长白山", "铁路", "景区入口"]
+    },
+    "ko": {
+      "path": "/ko/guides/changbai-mountain-hubs-to-park-gates/",
+      "title": "창바이산역·창바이산시역·공항 중 북쪽과 서쪽 입구에 맞는 곳",
+      "headline": "창바이산 북쪽·서쪽 코스: 입구를 먼저 정하고 역과 공항을 고르세요",
+      "description": "예약한 북쪽 또는 서쪽 관광 구역을 기준으로 창바이산역, 창바이산시역, 창바이산공항을 고르고 도로 이동과 날씨 변화에 대비합니다.",
+      "heroAlt": "2022년 8월 촬영한 지린성 창바이산역 외관.",
+      "navTitle": "창바이산 교통 거점과 입구",
+      "featuredLinkLabel": "교통 거점을 북쪽·서쪽 입구에 맞추기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["창바이산", "철도", "공원 입구"]
+    }
+  }
+}

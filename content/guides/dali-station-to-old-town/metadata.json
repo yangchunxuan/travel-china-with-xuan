@@ -1,0 +1,53 @@
+{
+  "id": "dali-station-to-old-town",
+  "type": "planning",
+  "pillar": "transport-last-mile-transfers",
+  "audienceMarkets": ["global"],
+  "format": "station-to-gate-execution-card",
+  "topics": ["transport", "railway-station", "old-town-gate", "last-mile", "luggage"],
+  "destinations": ["dali", "yunnan"],
+  "heroImagePath": "/images/guides/dali-station-to-old-town/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dali-station-to-old-town/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "transport", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/dali-station-to-old-town/",
+      "title": "Dali Station to Old Town: Choose the Right Drop-off",
+      "headline": "Dali Station to Dali Old Town: Choose the Right Gate and Drop-off",
+      "description": "Match your hotel to South, Erhai, Cangshan or North Gate, save a Chinese destination card and avoid dragging luggage across Dali Old Town.",
+      "heroAlt": "The South Gate building of Dali Old Town in Yunnan, photographed in January 2023.",
+      "navTitle": "Dali Station to the correct Old Town gate",
+      "featuredLinkLabel": "Choose the right Dali Old Town drop-off",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Dali", "Old Town", "Last mile"]
+    },
+    "zh": {
+      "path": "/zh/guides/dali-station-to-old-town/",
+      "title": "大理站到大理古城：选对城门和最后一公里",
+      "headline": "从大理站到大理古城：先确认城门，再完成住宿接驳",
+      "description": "按住宿位置选择南门、洱海门、苍山门或北门下车点，保存中文目的地卡，避免下错地点后拖着行李横穿古城。",
+      "heroAlt": "2023年1月拍摄的云南大理古城南门建筑。",
+      "navTitle": "大理站到正确古城门",
+      "featuredLinkLabel": "选择正确的大理古城下车点",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["大理", "古城", "最后一公里"]
+    },
+    "ko": {
+      "path": "/ko/guides/dali-station-to-old-town/",
+      "title": "다리역에서 다리고성: 맞는 성문과 마지막 이동 선택",
+      "headline": "다리역에서 다리고성 숙소까지: 성문을 먼저 확인하세요",
+      "description": "숙소 위치에 맞는 남문·얼하이문·창산문·북문 하차 지점을 고르고 중국어 목적지 카드를 저장해, 짐을 끌고 고성을 가로지르는 일을 피하세요.",
+      "heroAlt": "2023년 1월 촬영한 윈난성 다리고성 남문 건물.",
+      "navTitle": "다리역에서 맞는 고성 성문까지",
+      "featuredLinkLabel": "다리고성의 정확한 하차 지점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["다리", "고성", "마지막 이동"]
+    }
+  }
+}

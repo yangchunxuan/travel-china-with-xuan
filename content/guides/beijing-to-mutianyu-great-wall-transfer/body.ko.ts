@@ -14,7 +14,7 @@ const body = {
     { id: "public-heading", type: "heading", level: 2, text: "공식 대중교통은 연결 과정이지 한 번의 약속이 아니다" },
     { id: "public-copy", type: "paragraph", text: "베이징 공식 관광 정보는 현재 둥즈먼에서 916 급행버스로 화이러우베이다제까지 간 뒤 무톈위 방향 H노선 버스로 갈아타는 방법을 안내한다. 노선, 정류장과 시간은 바뀔 수 있다. 중국어 정류장명을 저장하고 당일 귀환을 확인하며 화이러우에서 오래 기다릴 가능성을 둔다." },
     { id: "entrance-warning", type: "callout", title: "관광지 도착은 성벽 도착이 아니다", tone: "warning", body: "교통 하차 지점, 방문자 구역, 표 확인, 내부 셔틀이나 오르막 이동은 별도 단계다. 입장권과 케이블카는 이 교통 글의 범위가 아니다. 관광지 공식 정보로 확인한 뒤 남은 귀환 여유를 계산한다." },
-    { id: "clock-heading", type: "heading", level: 2, text: "하루 이동을 다섯 구간으로 나눈다" },
+    { id: "clock-heading", type: "heading", level: 2, text: "하루 이동을 다섯 구간으로 나눠 시간을 계산한다" },
     { id: "clock-list", type: "list", ordered: true, items: ["호텔에서 올바른 베이징 출발지까지.", "가는 차량과 모든 예정 환승.", "하차 지점에서 실제 성벽 접근 지점까지.", "성벽 관람, 하산과 일행 모으기.", "마지막 버스 한 대가 아닌 마지막 안전 귀환 전체."] },
     { id: "people-heading", type: "heading", level: 2, text: "이동 능력이 교통 답을 바꾼다" },
     { id: "people-comparison", type: "comparison", title: "동행에 맞는 연결 선택", columns: [
@@ -29,7 +29,7 @@ const body = {
       ["귀환편이 위험함", "관광지를 나와 다음 확인된 교통 확보", "대안 없이 마지막 버스를 기다리기"],
       ["심한 날씨나 폐쇄", "관광지와 베이징 공식 공지 확인", "교통표를 개장 증거로 보기"],
     ]},
-    { id: "fact-check", type: "callout", title: "동적 교통 정보 확인일: 2026년 8월 12일", tone: "neutral", body: "베이징 공식 관광 페이지는 현재 둥즈먼, 화이러우, 무톈위 대중교통 연결을 설명한다. 노선 번호, 정류장, 운영 시간, 관광버스 상품, 관광지 시간과 야간 관람 날짜는 바뀔 수 있으므로 출발 전에 다시 확인한다." },
+    { id: "fact-check", type: "callout", title: "동적 교통 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "베이징 공식 관광 페이지는 현재 둥즈먼, 화이러우, 무톈위 대중교통 연결을 설명한다. 노선 번호, 정류장, 운영 시간, 관광버스 상품, 관광지 시간과 야간 관람 날짜는 바뀔 수 있으므로 출발 전에 다시 확인한다." },
     { id: "help-callout", type: "callout", title: "베이징 하루 일정에 이동을 맞춰 볼까요?", tone: "decision", body: "날짜, 호텔, 인원, 이동 요구, 짐과 저녁의 고정 열차나 항공편을 보내 주세요. Homeground는 가능한 이동과 확인 지점을 찾을 수 있지만 실시간 도로나 개장을 보장하지 않습니다." },
     { id: "internal-links", type: "internal-links", title: "베이징 계획을 이어서", items: [
       { label: "첫 베이징 여행 숙소 지역", href: "/ko/guides/beijing-where-to-stay-first-trip/", description: "숙소 지역이 첫 이동과 귀환을 바꿉니다." },

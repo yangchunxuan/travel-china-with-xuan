@@ -1,16 +1,16 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
   { id: "lead", type: "lead", text: "上海到杭州的列车可以很多、很快，但错误车站组合仍会让全程很慢。票面要同时适合上海机场或酒店、正确上海车站、正确杭州车站与最终酒店。" },
-  { id: "answer", type: "callout", title: "搜索多个车站组合，再比较两扇门", tone: "decision", body: "从虹桥机场或上海西侧出发，通常先查上海虹桥；其他市区地址若有合适直达车，上海站或上海南站可能更好。杭州端应按准确日期查询杭州东、杭州站、杭州西以及票面出现的其他终点，再按最终地址比较，不能默认全城只有一个主站。" },
+  { id: "answer", type: "callout", title: "搜索多个车站组合，再比较两端地址", tone: "decision", body: "从虹桥机场或上海西侧出发，通常先查上海虹桥；其他市区地址若有合适直达车，上海站或上海南站可能更好。杭州端应按准确日期分别查询杭州东、杭州站、杭州南和杭州西，再只比较12306当天实际提供的站点组合。" },
   { id: "matrix-heading", type: "heading", level: 2, text: "路线是一对车站，不是两个城市名" },
-  { id: "matrix", type: "table", caption: "最短列车可能带来最长首尾接驳", columns: ["车站选择", "合适", "摩擦", "核对"], rows: [
+  { id: "matrix", type: "table", caption: "最短列车可能带来最长首尾接驳", columns: ["车站选择", "合适", "实际不便", "核对"], rows: [
     ["上海虹桥", "虹桥机场、上海西侧或较多高铁余票", "大型空铁枢纽，以及从部分区域前往较远", "票面写上海虹桥且入口正确"],
     ["上海站", "市中心/北部区域且当天有直达车", "余票模式不同，并容易把城市名当车站名", "完整站名、发车与地铁运营时段"],
     ["上海南站", "上海西南部且有匹配车次", "不能与虹桥或上海站混淆", "准确日期车次与变化后的设施"],
-    ["杭州东、杭州站或杭州西", "其中一站到酒店/景点最后一段更好且当天有合适车次", "大站出口、不同市内位置与按日期变化的余票", "完整到达站、出口、当前市内接驳与酒店路线"],
+    ["杭州东、杭州站、杭州南或杭州西", "其中一站到酒店/景点最后一段更好且当天有合适车次", "大站出口、不同市内位置与按日期变化的余票", "完整到达站、出口、当前市内接驳与酒店路线"],
   ]},
   { id: "warning", type: "callout", title: "搜索结果里的“上海”不等于核对车站", tone: "warning", body: "上海官方指引列出分布在全市的多个主要与小型客站，并明确提醒确认站名。叫车前从车票读取完整中英文车站名。" },
-  { id: "clock-heading", type: "heading", level: 2, text: "建立一只完整时钟" },
+  { id: "clock-heading", type: "heading", level: 2, text: "计算完整行程时间" },
   { id: "clock", type: "list", ordered: true, items: ["上海酒店或机场到正确车站入口。", "安检、步行与乘车提前量。", "已购列车，不是搜索摘要。", "杭州到达大厅到正确出口。", "地铁/出租到准确酒店，以及晚班备选。"] },
   { id: "groups", type: "comparison", title: "什么会改变胜出的组合", columns: [
     { heading: "衔接虹桥航班", items: ["虹桥火车站可减少首段", "仍保护行李与航站楼变化", "不安排很紧的空铁票"] },
@@ -24,8 +24,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["到了意外杭州车站", "离站前读取出口图并重算酒店路线"],
     ["错过末班地铁", "使用官方出租车队列并通知酒店，不跟随大厅人员"],
   ]},
-  { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月12日", tone: "neutral", body: "上海官方指引区分上海站、上海南、上海虹桥及其他车站，各自地铁接入不同。杭州当前铁路信息把杭州站、杭州东、杭州南和杭州西列为不同客站，并提醒在12306确认票面车站与车次。余票、票价与市内末班均按日期变化。" },
-  { id: "help", type: "callout", title: "需要按两家酒店核对车站组合？", tone: "decision", body: "提供日期、上海起点、杭州地址、人数、行李和固定航班或活动。Homeground可比较完整时钟与恢复方案，实时铁路余票仍以12306为准。" },
+  { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月13日", tone: "neutral", body: "上海官方指引区分上海站、上海南、上海虹桥及其他车站，各自地铁接入不同。杭州当前铁路信息把杭州站、杭州东、杭州南和杭州西列为不同客站，并提醒在12306确认票面车站与车次。余票、票价与市内末班均按日期变化。" },
+  { id: "help", type: "callout", title: "需要按两家酒店核对车站组合？", tone: "decision", body: "提供日期、上海起点、杭州地址、人数、行李和固定航班或活动。Homeground可比较完整行程与备选方案，实时铁路余票仍以12306为准。" },
   { id: "links", type: "internal-links", title: "继续规划", items: [
     { label: "上海浦东还是虹桥机场", href: "/zh/guides/shanghai-pudong-or-hongqiao-airport/", description: "依赖空铁衔接前先选机场。" },
     { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选好车站组合后准备票与乘车。" },

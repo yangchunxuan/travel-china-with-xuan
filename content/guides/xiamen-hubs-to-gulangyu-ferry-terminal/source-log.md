@@ -2,7 +2,7 @@
 
 Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 `topicId`: `hg-topic-0344`
-`checked_at`: **2026-08-12**
+`checked_at`: **2026-08-13**
 
 ## Canonical boundary and search gap
 
@@ -12,15 +12,16 @@ Searches reviewed: `Xiamen airport to Gulangyu ferry`, `Xiamen North to Gulangyu
 
 ## Dynamic facts used
 
-- Xiamen Ferry operates the official visitor purchase channel with route and terminal selection. `checked_at: 2026-08-12`.
-- Xiamen Ferry warns against unofficial resale; identity/ticket issues require official handling. `checked_at: 2026-08-12`.
-- Routes, terminals, sailings, check-in, identity requirements, fares, baggage and weather operations are date-specific. No permanent schedule is published. `checked_at: 2026-08-12`.
+- The current Xiamen Ferry FAQ says its website is not selling tickets and directs visitors to its official WeChat account `xmferry` or the Alipay service account “屿见厦门轮渡”. Foreign visitors can use a verified Alipay account and passport details; some documents require manual verification. `checked_at: 2026-08-13`.
+- Since 1 February 2026, the visitor-ferry sales window is 15 days including the sailing date; inventory for day 15 opens at 09:00. `checked_at: 2026-08-13`.
+- Check-in opens 20 minutes before departure and closes 10 minutes before departure. A dated outbound booking normally includes one free return within 20 days using an eligible current visitor route; the return is not a reserved sailing or permanent pier promise. `checked_at: 2026-08-13`.
+- The FAQ page contains older answers that still mention website sales. This page follows the newer answer at the top of the FAQ and tells readers to recheck the official channel rather than treating any purchase method or route as permanent. `checked_at: 2026-08-13`.
 
 ## Official sources
 
-1. Xiamen Ferry — visitor purchase and route channel: https://xmferry.com/wybm/wshlk/xchgpp/index.htm
-2. Xiamen Ferry — terminal/route guidance: https://www.xmferry.com/xwzx/zxgg/25004.htm
-3. Xiamen Ferry — anti-resale notice: https://www.xmferry.com/xwzx/zxgg/22943.htm
+1. Xiamen Ferry — current visitor online-purchase FAQ, passport handling and return validity: https://xmferry.com/wybm/wshlk/wlgpp/index.htm
+2. Xiamen Ferry — 2026 notice changing the advance-sales window to 15 days: https://www.xmferry.com/xwzx/zxgg/32338.htm
+3. Xiamen Ferry — current check-in and return FAQ: https://xmferry.com/wybm/wshlk/chch/index.htm
 
 ## Image rights record
 

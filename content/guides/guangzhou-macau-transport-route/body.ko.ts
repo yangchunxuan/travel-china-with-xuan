@@ -1,0 +1,75 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "국경 동선은 양쪽 끝을 함께 보고 고르세요. 주하이역과 궁베이통상구는 마카오반도 숙소나 날짜에 맞는 열차 선택지가 중요한 여행자에게 대체로 유리합니다. 헝친역과 헝친통상구는 코타이·타이파 숙소 또는 마카오 경전철 헝친선과 연결이 확인된 호텔에 더 자연스럽습니다. 다만 광저우 숙소가 광저우남역에서 멀거나 짐이 많고, 늦게 도착하거나 통상구 공사가 있으면 결론이 바뀔 수 있습니다." },
+  { id: "answer", type: "callout", title: "광저우남역에서 역까지가 아니라 문에서 문까지 비교하세요", tone: "decision", body: "전체를 여섯 구간으로 나눕니다. 광저우 주소→광저우남역→철도→통상구 접근→짐을 들고 출입국 심사→마카오 교통→정확한 호텔입니다. 여행일의 12306에서 珠海站과 横琴站을 모두 검색하고 전체 동선을 비교한 뒤 통상구 공식 실시간 상태를 계속 확인하세요." },
+  { id: "chain-heading", type: "heading", level: 2, text: "실용적인 두 출입경 경로" },
+  { id: "chain-matrix", type: "table", caption: "철도 시간이 비슷하면 마카오 도착 지점이 답을 가릅니다", columns: ["경로", "대체로 유리한 경우", "추가 단계", "가정하면 안 되는 것"], rows: [
+    ["광저우남→珠海站→拱北口岸→關閘", "마카오반도 북부·중심부 또는 날짜에 가장 잘 맞는 열차", "역 밖으로 나와 궁베이 이동, 양쪽 심사 후 마카오 교통 탑승", "관문이 모든 호텔과 가깝거나 밤새 열린다는 가정"],
+    ["광저우남→横琴站→横琴口岸→橫琴口岸澳門口岸區", "코타이·타이파 또는 확인된 헝친/경전철 연결 호텔", "복합 거점 내 이동, 출입국 후 경전철·버스·택시·호텔 픽업", "24시간 통상구이므로 열차·경전철·호텔 셔틀도 24시간이라는 가정"],
+    ["광저우 주소→허가된 도로 서비스→지정 통상구", "광저우남역까지 크게 우회해야 하는 그룹", "사업자 체크인, 짐 적재, 도로 정체와 동일한 출입국 절차", "직통 차량이 입국 자격과 국경 대기를 없애 준다는 가정"]
+  ]},
+  { id: "origin-heading", type: "heading", level: 2, text: "실제 광저우 출발 주소부터 계산하세요" },
+  { id: "origin", type: "comparison", title: "기차역까지 가는 시간이 선택을 지배할 수 있습니다", columns: [
+    { heading: "광저우남역 인근", items: ["철도가 단순한 기본안", "12306에서 두 도착역 비교", "역 진입과 짐 여유 확보"] },
+    { heading: "톈허·광저우 중심", items: ["광저우남역까지 지하철·택시 추가", "혼잡 시간과 역내 보행 시간을 반영", "조금 늦어도 여유 있는 직통편이 나을 수 있음"] },
+    { heading: "가족·큰 짐 여러 개", items: ["엘리베이터·도로 턱·대기 모두 계산", "차량 적재 공간 사전 확인", "불필요한 역·통상구 변경 제거"] }
+  ]},
+  { id: "baggage-heading", type: "heading", level: 2, text: "짐은 모든 경계를 여행자와 함께 통과합니다" },
+  { id: "baggage", type: "list", ordered: true, items: [
+    "광저우 호텔을 나설 때 여권, 입국 서류, 열차 기록을 가방 밑이 아니라 바로 꺼낼 곳에 둡니다.",
+    "광저우남역의 정확한 입구에서 내리고 보안 검색, 대기, 승차 중 일행이 흩어지지 않게 합니다.",
+    "주하이 또는 헝친 도착 후 중국어 통상구 이름을 확인하고 표지나 기사를 따릅니다. 열차표는 국경 통과 표가 아닙니다.",
+    "공식 서비스가 별도로 안내하지 않는 한 본인이 짐을 관리하며 중국 본토 출경과 마카오 입경 심사를 통과합니다.",
+    "입경 후 마카오 쪽 택시, 대중교통, 경전철, 지정 호텔 픽업을 확인한 다음 심사 구역을 벗어납니다.",
+    "호텔 셔틀이 비투숙객, 큰 가방, 늦은 도착을 받는지와 정확한 승차 구역을 확인하고 오래된 시간표로 추정하지 않습니다."
+  ]},
+  { id: "hours", type: "callout", title: "통상구 운영 시간과 이후 교통은 서로 다른 사실입니다", tone: "warning", body: "2026년 8월 13일 확인 당시 마카오 세관은 관문·궁베이 여객 통상구를 06:00–01:00, 헝친 마카오 통상구 구역을 24시간으로 안내했습니다. 여행자 자격, 중국 본토 쪽 운영과 임시 통제는 실시간 확인이 필요합니다. 2026년에는 헝친 여객 심사장도 단계별 공사 중이어서 당국이 실시간 혼잡 확인을 안내했습니다. 닫히기 직전 도착을 계획하지 마세요." },
+  { id: "scenarios-heading", type: "heading", level: 2, text: "현실적인 여행자 선택 세 가지" },
+  { id: "scenarios", type: "table", caption: "가장 짧은 철도 구간이 전체 여행의 최단 경로는 아닙니다", columns: ["상황", "실행 가능한 선택", "이유"], rows: [
+    ["광저우남역 근처의 두 사람이 세나두 광장 인근 숙박", "주하이역 열차와 궁베이·관문 동선부터 확인", "마카오반도 북쪽으로 들어가며 날짜에 맞는 열차가 전체를 줄일 수 있음"],
+    ["큰 짐을 가진 가족이 코타이 숙박", "날짜에 맞는 헝친 직통 열차와 헝친통상구·경전철 또는 확인된 호텔 픽업 비교", "입경 후 마카오를 가로지르는 이동을 줄일 수 있으나 이후 연결 확인이 전제"],
+    ["톈허 호텔에서 늦게 출발", "24시간 통상구를 자동 선택하지 말고 전체 여유가 가장 큰 동선 선택", "광저우남역 이동, 마지막 유효 열차, 마카오 교통이 통상구보다 먼저 끝날 수 있음"],
+    ["반복해서 짐을 들기 어려운 동행자", "양쪽 도시에서 적재 공간이 확인된 차량을 예약하고 턱과 환승이 적은 경로 선택", "지도상 가까운 역과 통상구는 수직 이동과 줄을 보여 주지 않음"]
+  ]},
+  { id: "eligibility-heading", type: "heading", level: 2, text: "모든 여행자가 양쪽 심사를 통과할 수 있는지 확인하세요" },
+  { id: "eligibility", type: "callout", title: "이 글은 개인의 출입국 자격을 판정하지 않습니다", tone: "neutral", body: "각 여권의 마카오 입경 근거와 이후 중국 본토 재입경 필요 여부를 최신 공식 규정으로 확인하세요. 중국 국가이민관리국은 여권과 비자·허가의 유효성 확인을 권고하고 12367 지원 전화를 운영합니다. 외국 여권 여행자는 주민 전용 자동심사대 설명을 그대로 적용하지 말고 유인 심사 시간을 확보해야 합니다." },
+  { id: "recovery-heading", type: "heading", level: 2, text: "선택한 경로를 더 이상 이용할 수 없을 때" },
+  { id: "recovery", type: "table", caption: "직원이 있고 확인하기 쉬운 마지막 지점에서 멈추세요", columns: ["문제", "대응", "하지 말 것"], rows: [
+    ["헝친행 적합한 열차가 없음", "12306에서 주하이행을 비교하고 궁베이와 마카오 쪽 교통을 다시 계산", "예전 홍보의 직통편이 지금도 있다고 가정"],
+    ["헝친 심사장 혼잡 또는 공사", "공식 실시간 통관 플랫폼을 확인하고 물·서류를 바로 꺼내며 호텔 픽업 마감 전에 연락", "대체 통상구 시간과 도로 이동을 확인하지 않고 중간에 변경"],
+    ["궁베이에 유효 시간 이후 도착", "역·통상구 공식 직원에게 현재 선택지를 묻고 주하이 숙박을 준비", "닫힌 심사를 우회한다는 확인되지 않은 중개인에게 비용 지급"],
+    ["마카오 입경 후 호텔 셔틀을 놓침", "표시된 마카오 택시·대중교통 구역 또는 운영 중이고 주소에 맞는 경전철 이용", "목적지와 요금 방식이 불명확한 호객 차량 이용"],
+    ["여권 또는 입경 문제", "출입경 직원 안내 구역에 머물고 공식 지원과 필요한 경우 12367 이용", "출입경 구역을 벗어나거나 연락 계획 없이 일행 분리"]
+  ]},
+  { id: "verify-heading", type: "heading", level: 2, text: "여행일 최종 확인" },
+  { id: "verify", type: "list", items: [
+    "12306에 선택한 열차, 정확한 도착역, 현재 예약 기록이 표시된다.",
+    "중국어 역명과 통상구 명칭을 오프라인 저장했다.",
+    "모든 여권과 마카오 입경·중국 본토 재입경 서류가 계획한 이동에 유효하다.",
+    "공식 통상구 페이지에서 현재 시간, 공사, 혼잡 공지를 확인했다.",
+    "마카오 호텔이 입경 후 정확한 이동과 늦은 도착 마감을 확인해 줬다.",
+    "짐 적재량과 무장애 요구를 추정하지 않고 확인했다.",
+    "마지막 연결을 놓치면 주하이 또는 광저우에서 묵을 수 있다."
+  ]},
+  { id: "help", type: "callout", title: "광저우 주소와 마카오 호텔을 함께 맞춰 볼까요?", tone: "decision", body: "날짜, 광저우 출발 구역, 마카오 호텔, 인원, 짐, 이동 제약을 Homeground에 보내 주세요. 환승 횟수와 필요한 여유 시간을 비교할 수 있습니다. 열차 좌석, 출입국 판정, 통상구 운영은 공식 기관이 결정합니다." },
+  { id: "links", type: "internal-links", title: "다음 계획", items: [
+    { label: "Homeground 교통·여행 가이드", href: "/ko/guides/", description: "상위 가이드 모음으로 돌아갑니다." },
+    { label: "광저우–홍콩 교통 선택", href: "/ko/guides/guangzhou-hong-kong-transport-route/", description: "홍콩 방향의 별도 국경 결정을 이 글과 분리합니다." },
+    { label: "홍콩–마카오 교통", href: "/ko/guides/hong-kong-macau-transport-route/", description: "실제 출발지가 홍콩이면 페리와 대교를 비교합니다." },
+    { label: "홍콩·마카오·중국 본토 재입경 횟수", href: "/ko/guides/hong-kong-macau-mainland-reentry-count/", description: "다중 국경 일정 전 별도의 재입경 문제를 해결합니다." },
+    { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "철도 탑승 절차는 이 글에서 따로 준비하세요." }
+  ]},
+  { id: "sources", type: "sources", title: "공식 출처", items: [
+    { label: "헝친통상구 최신 교통 안내", url: "https://www.hengqin.gov.cn/macao_zh_hans/ztjh/qyh/mlhq/content/post_3825001.html", publisher: "헝친 광둥–마카오 심화협력구", reviewedAt: "2026-08-13" },
+    { label: "2026년 7월 헝친 심사장 공사·실시간 통관 안내", url: "https://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3925145.html", publisher: "헝친 협력구", reviewedAt: "2026-08-13" },
+    { label: "마카오 여객 통상구 운영 시간", url: "https://www.customs.gov.mo/cn/notice_passengers_item4.html", publisher: "마카오 세관", reviewedAt: "2026-08-13" },
+    { label: "마카오 공식 입경·통상구 교통", url: "https://www.macaotourism.gov.mo/zh-hant/article/before-you-travel/travelling-to-macao", publisher: "마카오정부관광청", reviewedAt: "2026-08-13" },
+    { label: "여행 서류 확인과 12367 안내", url: "https://www.nia.gov.cn/n897453/c1782642/content.html", publisher: "중국 국가이민관리국", reviewedAt: "2026-08-13" },
+    { label: "철도 실시간 검색", url: "https://www.12306.cn/en/index.html", publisher: "중국철도 12306", reviewedAt: "2026-08-13" },
+    { label: "대표 사진: 헝친통상구 외관 — Charlie fong (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Hengqin_Port2021.jpg", publisher: "위키미디어 공용", reviewedAt: "2026-08-13" },
+    { label: "대표 사진 라이선스: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0", publisher: "Creative Commons", reviewedAt: "2026-08-13" }
+  ]}
+] } as const satisfies StructuredPageBody;
+
+export default body;

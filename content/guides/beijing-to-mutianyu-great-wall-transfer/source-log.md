@@ -6,13 +6,13 @@ Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 ## Canonical boundary and search gap
 
-This page owns transport between a Beijing start point and the Mutianyu visitor-arrival area, including the return and recovery. It does not own Great Wall history, ticket inventory, cable-car choice, a Mutianyu-versus-Badaling comparison, or generic private tours.
+This page covers transport between a Beijing start point and the Mutianyu visitor-arrival area, including the return and backup options. It does not cover Great Wall history, ticket inventory, cable-car choice, a Mutianyu-versus-Badaling comparison, or generic private tours.
 
 Searches reviewed: `Beijing to Mutianyu`, `Mutianyu bus 916`, and `Mutianyu direct bus`. Results often advertise one vehicle or quote a road time while omitting the Dongzhimen first leg, Huairou handoff, scenic-area internal movement, last safe return and mobility constraints.
 
 ## Dynamic facts used
 
-- Beijing's official visitor page currently describes Express Bus 916 from Dongzhimen to Huairou Beidajie, followed by H23/H3/H71 to Mutianyujingqu. Scope: current public-transport chain. `checked_at: 2026-08-12`.
+- Beijing's official visitor page currently describes Express Bus 916 from Dongzhimen to Huairou Beidajie, followed by H23/H3/H71 to Mutianyujingqu. Scope: current public-transport route. `checked_at: 2026-08-12`.
 - Route numbers, stop names and operating windows are dynamic; no permanent departure or return time is published here. `checked_at: 2026-08-12`.
 - Mutianyu night-tour dates and attraction operations are date-specific and do not follow from transport availability. `checked_at: 2026-08-12`.
 - Direct tourist-bus products and private-vehicle terms must be confirmed with the named operator for the travel date. `checked_at: 2026-08-12`.
