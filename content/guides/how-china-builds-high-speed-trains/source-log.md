@@ -14,11 +14,12 @@
 ## B30 fact-check — 600 km/h maglev booking claim
 
 - Action: merge into this manufacturing owner; no booking page created.
-- Finding checked 2026-08-13: no official commercial operator, public 600 km/h route, timetable or ticket inventory was found.
+- Finding checked 2026-08-13: the official sources and passenger channels reviewed identified no commercial operator, public 600 km/h route, timetable or ticket product. This is a dated evidence finding, not a claim that future service is impossible.
 - [National Science and Technology Innovation Center](https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html) describes test-line work and an engineering-test → demonstration → promotion → commercialisation sequence.
 - [CRRC](https://crrcgc.cc/crrcgc/2024-09/24/article_2024092413441231508.html) describes the 2021 Qingdao roll-out; roll-out is not passenger operation.
-- [Guangzhou Science and Technology Bureau](https://kjj.gz.gov.cn/xwlb/yw/content/post_10876547.html) reports a displayed superconducting electrodynamic prototype and factory test context.
+- [Guangzhou Science and Technology Bureau](https://kjj.gz.gov.cn/xwlb/yw/content/post_10876547.html) reports a displayed model and short indoor/factory testing of the underlying programme.
 - [Wuhan Transport Bureau](https://jtj.wuhan.gov.cn/jtzx/zwdt/202507/t20250714_2619883.shtml) treats commercial operation as future work.
+- [Shanghai Municipal Government](https://english.shanghai.gov.cn/en-Transportation/20240102/44f499a17b324b25996f2d58fcbf5f23.html) documents the current commercial airport maglev used for the distinction.
 - Central recommendation: retain the trilingual correction here or in an existing transport FAQ; do not index a “how to book” page.
 
 ## Sources reviewed
@@ -30,4 +31,4 @@
 
 ## Three-language review
 
-- EN/ZH/KO preserve identical blocks, six-stage chain, numerical test-track fact, evidence limits and links.
+- EN/ZH/KO preserve the six-stage chain, four-milestone test, dated maglev finding, evidence limits and links.
