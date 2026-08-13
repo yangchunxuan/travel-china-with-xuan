@@ -1,0 +1,53 @@
+{
+  "id": "guizhou-village-basketball-culture",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "festival-reading-and-visitor-recovery",
+  "topics": ["village-ba", "rural-basketball", "community-festival", "taipan", "guizhou"],
+  "destinations": ["guizhou", "qiandongnan", "taijiang", "taipan-village"],
+  "heroImagePath": "/images/guides/guizhou-village-basketball-culture/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guizhou-village-basketball-culture/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/guizhou-village-basketball-culture/",
+      "title": "Guizhou Village Basketball: Why One Game Can Become a Late-Night Festival",
+      "headline": "Read Taipan's Village BA as a Community Festival, Not a Novelty Show",
+      "description": "Understand how basketball, the Eating New Festival, village teams, music, markets and night-time spectatorship meet in Taipan—and how to visit without assuming a permanent schedule.",
+      "heroAlt": "AI-assisted editorial illustration of an overhead basketball court, abstract crowd dots and night-light shapes; not a documentary view of Taipan or a Village BA event",
+      "navTitle": "Why Guizhou Village BA lasts into the night",
+      "featuredLinkLabel": "Read Village BA as a community festival",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guizhou", "Village BA", "Community festival"]
+    },
+    "zh": {
+      "path": "/zh/guides/guizhou-village-basketball-culture/",
+      "title": "贵州“村BA”为何打到深夜：台盘篮球、节庆与社区生活",
+      "headline": "把台盘“村BA”看成社区节庆，而不只是一场球赛",
+      "description": "理解篮球、吃新节、村队、歌舞、集市与夜间观赛如何在台盘相遇，并在不把赛程当成常年承诺的前提下负责任地到访。",
+      "heroAlt": "AI 辅助编辑插画：俯视篮球场、抽象人群圆点与夜间灯光图形；并非台盘或“村BA”活动的纪实画面",
+      "navTitle": "贵州“村BA”为何打到深夜",
+      "featuredLinkLabel": "从社区节庆理解“村BA”",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["贵州", "村BA", "社区节庆"]
+    },
+    "ko": {
+      "path": "/ko/guides/guizhou-village-basketball-culture/",
+      "title": "구이저우 ‘촌BA’는 왜 밤까지 이어질까: 타이판 농구와 공동체 축제",
+      "headline": "타이판 촌BA를 이색 구경거리가 아닌 공동체 축제로 읽어 보세요",
+      "description": "농구·츠신제·마을 팀·공연·장터·야간 응원이 타이판에서 어떻게 만나는지, 상시 일정으로 오해하지 않고 방문하는 법을 설명합니다.",
+      "heroAlt": "농구장 평면과 추상적인 관중 점, 야간 조명 형태를 그린 AI 보조 편집 일러스트로, 타이판이나 촌BA 행사의 기록 장면이 아님",
+      "navTitle": "구이저우 촌BA가 밤까지 이어지는 이유",
+      "featuredLinkLabel": "촌BA를 공동체 축제로 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["구이저우", "촌BA", "공동체 축제"]
+    }
+  }
+}

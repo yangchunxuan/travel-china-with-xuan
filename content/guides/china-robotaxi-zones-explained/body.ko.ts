@@ -34,7 +34,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "나머지 이동은 확실한 수단으로 준비하기", items: [
     {label: "중국에서 전용 차량과 대중교통 고르기", href: "/ko/guides/china-private-transfer-or-public-transport/", description: "시범 서비스가 핵심 이동을 맡기 어려울 때 안정적인 대안을 고릅니다."},
     {label: "중국 지도 좌표와 실제 입구 확인", href: "/ko/guides/china-map-coordinate-offset-explained/", description: "지도 핀만 믿지 말고 정확한 승차 입구를 확인합니다."},
-    {label: "중국에서 휴대전화를 잃었을 때 복구", href: "/ko/guides/lost-phone-in-china-digital-recovery/", description: "교통과 결제 수단을 계속 사용할 수 있도록 대비합니다."}
+    {label: "중국에서 휴대전화를 잃었을 때 복구", href: "/ko/guides/lost-phone-in-china-digital-recovery/", description: "교통과 결제 수단을 계속 사용할 수 있도록 대비합니다."},
+    {label: "선전의 저고도 기반시설 읽기", href: "/ko/guides/shenzhen-low-altitude-city-infrastructure/", description: "범위가 정해진 도로 시범 구역과 드론 항로·지상 거점을 비교하되 어느 쪽도 보장된 여객 교통으로 보지 마세요."}
   ]},
   {id: "sources", type: "sources", title: "공식 및 독립 자료", items: [
     {label: "자율주행차 운송 서비스 안전 지침", url: "https://xxgk.mot.gov.cn/jigou/ysfws/202312/t20231205_3962490.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-13"},

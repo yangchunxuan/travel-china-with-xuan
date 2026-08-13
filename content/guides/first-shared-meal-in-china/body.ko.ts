@@ -400,6 +400,16 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "internal-links",
+      type: "internal-links",
+      title: "한 식탁에서 더 넓은 생활문화로",
+      items: [
+        { label: "방문객으로서 춘절 풍습 준비하기", href: "/ko/guides/lunar-new-year-customs-for-visitors/", description: "먼저 관찰하고 참여하는 태도를 가족 명절에도 적용하되 한 가정의 방식을 전국의 각본으로 보지 마세요." },
+        { label: "중국의 지역사회 식당 이해하기", href: "/ko/guides/china-community-canteens-explained/", description: "공유 식탁과 지역 공공서비스 모델을 비교하되 방문객의 이용 가능성이나 자격을 전제하지 마세요." },
+        { label: "전장의 살아 있는 식초 문화 읽기", href: "/ko/guides/zhenjiang-vinegar-living-fermentation/", description: "익숙한 조미료를 발효 기술과 도시 정체성으로 확장하되 건강 효과나 진위를 단정하지 마세요." },
+      ],
+    },
+    {
       id: "sources",
       type: "sources",
       title: "2026년 8월 11일 확인한 공식·학술 자료",

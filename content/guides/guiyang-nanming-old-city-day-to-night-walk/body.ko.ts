@@ -58,7 +58,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "중국 탐색", href: "/ko/explore/", description: "구이양의 도시 역할을 다음 목적지와 비교하세요."},
     {label: "한 거점 또는 여러 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "구이양이 거점인지 1박 환승인지 결정합니다."},
     {label: "중국 기후권과 여행 시기", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "다른 중국 지역의 날씨 기대를 구이양에 옮기지 마세요."},
-    {label: "부모님과 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "앉는 휴식과 차량 갈래를 전체 일정에 넣습니다."}
+    {label: "부모님과 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "앉는 휴식과 차량 갈래를 전체 일정에 넣습니다."},
+    {label: "타이판 방문 전에 구이저우 촌BA 이해하기", href: "/ko/guides/guizhou-village-basketball-culture/", description: "구이양 도심 산책과 별개의 행사 여행으로 보고 날짜·입장·귀가편을 확인하세요."}
   ]},
   {id: "consultation", type: "callout", title: "실제 도착시간에 맞춰야 하나요?", body: "Homeground 여행 상담가가 호텔과 날짜에 맞춰 빛의 순서, 보행량, 저녁 식사, 승차 지점을 조정할 수 있습니다. 도착시간, 일행의 이동 능력, 역사·사진·음식 중 우선순위를 알려 주세요.", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026년 8월 13일 검토한 공식 출처", items: [

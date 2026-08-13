@@ -62,7 +62,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "探索中国", href: "/zh/explore/", description: "把这段区域角色与下一目的地比较。"},
     {label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "按准确站名和护照乘车人记录购票。"},
     {label: "中国全程铁路路线", href: "/zh/guides/china-rail-only-route/", description: "测试整段旅行不坐国内航班是否仍成立。"},
-    {label: "单一基地还是多地换酒店", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "用时间与体力计算每次换酒店。"}
+    {label: "单一基地还是多地换酒店", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "用时间与体力计算每次换酒店。"},
+    {label: "用三条线索读懂青岛工业史", href: "/zh/guides/qingdao-brands-built-an-industrial-city/", description: "补充有边界的啤酒、家电与轨道交通背景，不把区域弧线变成三场工厂参观。"}
   ]},
   {id: "consultation", type: "callout", title: "需要从弧线中删掉一城？", body: "Homeground 真人旅行顾问可以按你的日期比较准确列车、车站、住宿片区和城市角色，找出价值最弱的一站，而不是把这条路线变成销售行程。", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026 年 8 月 13 日核验的官方来源", items: [

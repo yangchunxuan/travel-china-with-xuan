@@ -143,7 +143,8 @@ const body = {
         {"label": "Browse Homeground’s China guides", "href": "/guides/", "description": "Return to the complete guide collection."},
         {"label": "Sequence Liangzhu ruins park and museum", "href": "/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "Compare another museum–landscape evidence chain."},
         {"label": "Read ritual bronzes and inscriptions", "href": "/guides/ritual-bronze-vessels-and-inscriptions/", "description": "Practice linking text, object and archaeological context."},
-        {"label": "Choose a route through the Yungang Grottoes", "href": "/guides/yungang-grottoes-cave-order-and-museum/", "description": "Apply confidence and conservation boundaries at another major site."}
+        {"label": "Choose a route through the Yungang Grottoes", "href": "/guides/yungang-grottoes-cave-order-and-museum/", "description": "Apply confidence and conservation boundaries at another major site."},
+        {"label": "See what desert restoration travellers can actually observe", "href": "/guides/desert-restoration-travellers-can-see/", "description": "Carry evidence boundaries into a changing landscape without treating one green view as proof of total restoration."}
       ]
     },
     {

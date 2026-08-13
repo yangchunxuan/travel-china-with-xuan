@@ -34,7 +34,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "Keep the rest of the transfer practical", items: [
     {label: "Private transfer or public transport in China", href: "/guides/china-private-transfer-or-public-transport/", description: "Choose a dependable transfer when a pilot service cannot be the critical link."},
     {label: "China map pin and entrance checks", href: "/guides/china-map-coordinate-offset-explained/", description: "Confirm the correct pickup entrance rather than relying on a bare pin."},
-    {label: "Lost phone recovery in China", href: "/guides/lost-phone-in-china-digital-recovery/", description: "Protect access to transport and payment tools."}
+    {label: "Lost phone recovery in China", href: "/guides/lost-phone-in-china-digital-recovery/", description: "Protect access to transport and payment tools."},
+    {label: "Read Shenzhen's low-altitude infrastructure", href: "/guides/shenzhen-low-altitude-city-infrastructure/", description: "Compare a bounded road pilot with drone routes and ground nodes without treating either as guaranteed passenger transport."}
   ]},
   {id: "sources", type: "sources", title: "Official and independent sources", items: [
     {label: "Safety guide for autonomous-vehicle transport services", url: "https://xxgk.mot.gov.cn/jigou/ysfws/202312/t20231205_3962490.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-13"},

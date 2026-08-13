@@ -277,6 +277,7 @@ const body = {
         { label: "选择单一基地还是多基地串联", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "先确定路线结构，再安排这条三城顺序。" },
         { label: "第一次乘中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "路线确定后，再处理乘车人信息和车站流程。" },
         { label: "检查行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "用酒店移动、固定预约和恢复时间测试整段旅行。" },
+        { label: "读懂秦岭—淮河过渡带", href: "/zh/guides/qinling-huaihe-transition-zone/", description: "把南北过渡作为气候与文化背景，而不是让一条分界线替你决定三城路线。" },
       ],
     },
     {

@@ -277,6 +277,7 @@ const body = {
         { label: "Choose one hub or multiple bases", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide the route architecture before fixing this named three-city order." },
         { label: "Prepare for a first high-speed train", href: "/guides/china-high-speed-train-first-time-guide/", description: "Handle passenger records and station procedure after the route is fixed." },
         { label: "Check whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test the complete trip for hotel moves, fixed visits and recovery." },
+        { label: "Read the Qinling–Huaihe transition zone", href: "/guides/qinling-huaihe-transition-zone/", description: "Use the north–south transition as climate and cultural context, not as a line that decides the three-city route by itself." },
       ],
     },
     {

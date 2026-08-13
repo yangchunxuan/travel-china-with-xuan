@@ -1,0 +1,185 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "lead-answer",
+      type: "lead",
+      text: "中国不少博物馆里的集章受欢迎，是因为一个很小的实体动作可以同时完成几件事：留下到访记录，把文物图案变成可带走的视觉纪念，组织一条展厅路线，也给朋友之间提供可比较的收藏。博物馆和文创商店还会把印章用于教育活动、临时展览与文创零售。但全国没有统一的“博物馆盖章系统”。一枚章可能免费，也可能绑定付费本册、只在活动期间出现、由商店经营，或今天已经暂停。先核对场馆现状，再决定要不要专程收集。"
+    },
+    {"id": "layers-heading", "type": "heading", "level": 2, "text": "从三个层面看懂集章热"},
+    {
+      id: "layers",
+      type: "comparison",
+      title: "文化语汇、场馆机制与旅客行为有关联，但不是一回事",
+      columns: [
+        {"heading": "熟悉的视觉语汇", "body": "玺印、朱色印记与篆刻是中国物质史和艺术史中容易识别的内容。现代纪念章可以借用这种熟悉感，但不因此成为官方印章，也不能直接等同于一项从古代延续至今的习俗。"},
+        {"heading": "博物馆的机制", "body": "场馆可把建筑、藏品或展览图形做成印章，沿展线布点，也可放在服务台、文创店或自助机器中。"},
+        {"heading": "观众的实践", "body": "集章者选择纸张、寻找章点、排队、比较印迹并分享成品。它可以促使人仔细看展，也可能在“必须集齐”时反过来取代展览。"}
+      ]
+    },
+    {"id": "history-heading", "type": "heading", "level": 2, "text": "历史联系确实存在，但不必编造单一路径的起源故事"},
+    {
+      id: "history-body",
+      type: "paragraph",
+      text: "上海博物馆的玺印篆刻馆区分两条相互连接的历史：以凭信为主要功能的玺印，以及作为艺术形式的篆刻。这能解释为什么墨色印迹在文化上容易理解，也适合变成博物馆纸面视觉；却不能证明今天的集章活动直接源自古代仪式。当前做法也符合现代博物馆游戏化逻辑：一项2026年的跨案例研究把“护照+印章”描述为组织动线、注意力与动力的低技术工具，同时指出，同一种机制在不同博物馆和路线中的效果差异很大。"
+    },
+    {"id": "mechanisms-heading", "type": "heading", "level": 2, "text": "“这里有章”可能指六种不同安排"},
+    {
+      id: "mechanism-table",
+      type: "table",
+      caption: "先弄清运行机制，再加入队伍",
+      columns: ["机制", "要问什么", "常见失败"],
+      rows: [
+        ["免费纪念章", "能否使用自带纸张，当前章点在哪里？", "章点搬走、油墨干涸或设备暂停维护"],
+        ["付费本册或卡片", "购买指定文创是否才可使用印章？", "误以为门票已经包含本册"],
+        ["自助盖章机", "接受什么尺寸、方向或指定产品？", "纸张不适配或机器离线"],
+        ["展厅路线", "是否要按顺序完成，是否受停止入馆时间影响？", "最后一个章点位于单向参观路线之后"],
+        ["临展或限时活动", "准确日期与参与条件是什么？", "旧社交帖子还在，但印章已经撤走"],
+        ["文创店或合作柜台", "由谁运营，柜台是否比博物馆更早关门？", "展厅尚开放，盖章柜台却已结束营业"]
+      ]
+    },
+    {"id": "dated-heading", "type": "heading", "level": 2, "text": "有日期的案例，正好说明细节不能永久冻结"},
+    {
+      id: "dated-examples",
+      type: "table",
+      caption: "以下是已记录的历史案例，不是2026年8月可用服务清单",
+      columns: ["场馆与日期", "当时记录的机制", "说明什么"],
+      rows: [
+        ["北京艺术博物馆，2022年报道", "六联手绘明信片引导观众把印章图案与文物、建筑细节对应", "章点路线可以把注意力带回藏品"],
+        ["徐悲鸿纪念馆，2024年4月活动表", "计划上线12枚活动章，每月推出一枚，地点在二层活动区", "可用性可能按月份变化，也可能只属于活动"],
+        ["南京博物院，2022年度报告", "与展览关联的多款印章和多个章点，纳入“展览+文创”模式", "印章可能处在解释与零售之间"],
+        ["益阳市博物馆，2024年工作于2025年公开", "9台自助印章机售卖文创套盒，图案取自馆藏文物", "机器可能是零售终端，并非免费印台"],
+        ["济宁市博物馆，2024年9月通知", "文旅部门明确介绍了取材于馆藏与当地遗产的免费印章", "有些机构会清楚标明免费机制"]
+      ]
+    },
+    {
+      id: "dated-warning",
+      type: "callout",
+      tone: "warning",
+      title: "旧案例能证明机制存在，不能证明今天仍可用",
+      body: "以上案例分别来自过去的展览、工作报告和活动通知，用于说明不同做法。没有场馆的新通知，就不能把它们当作2026年的章点地图。"
+    },
+    {"id": "first-visit-heading", "type": "heading", "level": 2, "text": "第一次博物馆集章：九步完成"},
+    {
+      id: "first-visit-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "先完成门票、身份证件入馆与定时临展预约。盖章资格不能替代博物馆预约。",
+        "在博物馆当前官网或官方账号搜索“集章”“印章”“文创”“活动”。",
+        "到馆后问服务台：‘请问现在有集章活动吗？在哪里？需要购买盖章本吗？’",
+        "确认章点是免费、绑定购买、限时还是位于商店，并问清能否使用自己的本子。",
+        "使用专门的笔记本、明信片或场馆提供的卡片。不要在护照、居留证件、签证页、票券条码或其他旅行要用的文件上盖章。",
+        "开始集章前，先选两三件真正想看懂的文物或展厅。",
+        "到每个章点先看图案说明，再找到它所代表的文物、建筑或展览元素。",
+        "认真盖一次，合上印台或按机器提示操作，然后先让开位置再检查效果。",
+        "去最后一个章点前，核对闭馆时间、单向参观动线，以及离开展厅去商店后能否再次入内。"
+      ]
+    },
+    {
+      id: "paper-callout",
+      type: "callout",
+      tone: "neutral",
+      title: "只带一套轻便、可替换的纸张工具",
+      body: "一本小尺寸无涂层纸笔记本、一张练习纸，再加一张保护对页的干净纸就够了。湿印要等待干燥。不要拿墙面、标签、门票或场馆折页试印，除非场馆明确说该纸品就是供盖章使用。"
+    },
+    {"id": "scenarios-heading", "type": "heading", "level": 2, "text": "先决定自己要收集到什么程度"},
+    {
+      id: "scenario-one",
+      type: "callout",
+      tone: "decision",
+      title: "情境一：展览才是重点",
+      body: "第一次到访的旅客只有两小时。他们先选三件文物，只收与这三件文物相关的章，文创店队伍太长就跳过。最后留下的是一页有逻辑的参观记录，而不是一张没集齐的总清单。如果某枚章暂停，就把文物名称和日期写进预留位置。"
+    },
+    {
+      id: "scenario-two",
+      type: "callout",
+      tone: "decision",
+      title: "情境二：集齐路线本身就是参观内容",
+      body: "集章者提前核对场馆新通知，留出额外时间，确认是否必须购买本册，并把章点与单向展线对照。他们还设定退出规则：排队一旦威胁预约临展或回程交通，就停止收集。集齐是可选目标，正常入馆与安全离开不是。"
+    },
+    {"id": "etiquette-heading", "type": "heading", "level": 2, "text": "排队与展品礼仪"},
+    {
+      id: "etiquette-list",
+      type: "list",
+      ordered: false,
+      items: [
+        "排到前面之前就翻到正确页面，不要站在章点整理一本厚手账。",
+        "除非工作人员允许重复，一次认真盖好即可；不要自己加墨或拆动场馆设备。",
+        "背包、湿印和手肘都要离展柜与其他观众远一点。",
+        "不要为了拍摄多次试盖或拼叠图案而长期占用队伍。",
+        "印章暂停、搬动或收起时听从工作人员；社交平台地图不能覆盖现场规则。"
+      ]
+    },
+    {"id": "recovery-heading", "type": "heading", "level": 2, "text": "不追满每个印迹，也能从失败中恢复"},
+    {
+      id: "recovery-table",
+      type: "table",
+      caption: "缺一枚章，不必毁掉整次博物馆参观",
+      columns: ["问题", "当场处理", "保留记忆"],
+      rows: [
+        ["章点搬动或找不到", "只向服务台问一次，不去工作人员区域寻找", "在预留处写下展厅和文物名称"],
+        ["油墨干或印迹不完整", "不连续重压，也不加自己的墨", "把不完美的印迹保留为真实到访记录"],
+        ["机器或商店要求购买", "按产品价值决定，不按已经排队多久决定", "不值得买就跳过"],
+        ["章点比展厅更早关闭", "优先保证离馆、交通与正常参观", "写上日期和一条观察代替"],
+        ["排队开始取代看展", "暂停集章，回到下一件已选文物", "少几枚章，多留几条笔记"]
+      ]
+    },
+    {
+      id: "final-check",
+      type: "list",
+      ordered: false,
+      items: [
+        "入馆与身份证件规则已经独立核实，不与盖章资格混为一谈。",
+        "章点信息来自有日期的场馆或运营方当前渠道。",
+        "免费、付费、限时、商店经营与机器章点没有混写。",
+        "盖章本与所有旅行、身份证件完全分开。",
+        "离馆后至少会记住一件藏品，而不只是一页印章。"
+      ]
+    },
+    {
+      id: "dynamic-boundary",
+      type: "callout",
+      tone: "warning",
+      title: "动态事实复核于2026年8月13日",
+      body: "印章图案、位置、收费、本册、机器状态、展期、商店营业时间与参与规则变化很快，也不一定出现在英文页面。本文提供的是机制与核验方法，不是永久章点地图，也不承诺任何一家博物馆今天一定有章。"
+    },
+    {
+      id: "scope",
+      type: "callout",
+      tone: "neutral",
+      title: "本文不主张什么",
+      body: "本文不按印章给博物馆排名，不把集章说成古代仪式，不保证供应，也不让旅客改动官方证件。集章只是可选的观众实践，应当帮助理解馆藏，而不是取代馆藏。"
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "让馆藏决定博物馆路线",
+      items: [
+        {"label": "预约中国国家博物馆并安排重点路线", "href": "/zh/guides/national-museum-of-china-booking-and-route/", "description": "先保证入馆并选择核心藏品路线，再考虑可选活动。"},
+        {"label": "按馆藏规划陕西历史博物馆", "href": "/zh/guides/shaanxi-history-museum-booking-and-collection-plan/", "description": "用护照预约和展厅计划完成真正的参观任务。"},
+        {"label": "选择三星堆博物馆展厅顺序", "href": "/zh/guides/sanxingdui-museum-booking-and-gallery-order/", "description": "用展览而不是集齐任务支撑整天动线。"},
+        {"label": "连接良渚博物院与遗址公园", "href": "/zh/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "通过核实后的顺序把文物与考古地景相连。"}
+      ]
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "已复核的官方与独立来源",
+      items: [
+        {"label": "北京地区博物馆集章热报道", "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221101_2849254.html", "publisher": "北京日报／北京市人民政府", "reviewedAt": "2026-08-13"},
+        {"label": "2024年4月北京地区博物馆社教活动及徐悲鸿纪念馆印章", "url": "https://wwj.beijing.gov.cn/bjww/wwjzz/wwjapp/zzbsy/zxhd/436421368/index.html", "publisher": "北京市文物局", "reviewedAt": "2026-08-13"},
+        {"label": "南京博物院2022年度报告", "url": "https://www.njmuseum.com/files/nb/news/files/2023/02/13/89d976f1cd9fff8638ea34ef842df434.pdf", "publisher": "南京博物院", "reviewedAt": "2026-08-13"},
+        {"label": "济宁市博物馆集章通知", "url": "https://www.jining.gov.cn/art/2024/9/25/art_65757_2895180.html", "publisher": "济宁市文化和旅游局", "reviewedAt": "2026-08-13"},
+        {"label": "益阳市博物馆2024年工作及自助印章机", "url": "https://www.yiyang.gov.cn/wlgt/uploadfiles/202505/2025050610251159177.pdf", "publisher": "益阳市文化旅游广电体育局", "reviewedAt": "2026-08-13"},
+        {"label": "中国历代玺印篆刻馆", "url": "https://www.shanghaimuseum.net/mu/frontend/pg/m/article/id/RI00004032", "publisher": "上海博物馆", "reviewedAt": "2026-08-13"},
+        {"label": "Stamp-Based Gamification as Low-Tech Immersive Media in Museums", "url": "https://www.jimmux.com/index.php/imue/article/view/10", "publisher": "Immersive Media and User Experience", "reviewedAt": "2026-08-13"},
+        {"label": "青年群体博物馆‘集章’行为与记忆建构研究", "url": "https://pdf.hanspub.org/ass20241312_472398137.pdf", "publisher": "社会科学前沿", "reviewedAt": "2026-08-13"}
+      ]
+    }
+  ]
+} satisfies StructuredPageBody;
+
+export default body;

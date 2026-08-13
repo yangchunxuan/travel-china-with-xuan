@@ -1,0 +1,53 @@
+{
+  "id": "shanghai-24-hour-parks-reality-check",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "dynamic-access-verification-guide",
+  "topics": ["shanghai", "parks", "24-hour-opening", "night-access", "operating-hours"],
+  "destinations": ["shanghai"],
+  "heroImagePath": "/images/guides/shanghai-24-hour-parks-reality-check/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-24-hour-parks-reality-check/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-24-hour-parks-reality-check/",
+      "title": "Shanghai 24-Hour Parks: A Reality Check Before You Go",
+      "headline": "A Park Can Be Open All Night Without Being Fully Usable All Night",
+      "description": "Verify one Shanghai 24-hour park by exact zone, entrance, lighting, toilet, facility rules and return transport instead of trusting a dated list alone.",
+      "heroAlt": "Century Park at sunset with Shanghai's skyline silhouetted beyond the trees.",
+      "navTitle": "Verify a 24-hour Shanghai park",
+      "featuredLinkLabel": "Check whether a Shanghai park works at night",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shanghai", "24-hour parks", "Night access"]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-24-hour-parks-reality-check/",
+      "title": "上海24小时公园核验指南：去之前查清楚什么",
+      "headline": "公园可以全天开放，却不代表全天都真正好用",
+      "description": "不要只信一张旧名单；按具体区域、入口、照明、厕所、设施规则和返程交通，核验一座上海24小时公园在目标时段是否可用。",
+      "heroAlt": "世纪公园日落时分，上海天际线在树木远处形成剪影。",
+      "navTitle": "核验上海24小时公园",
+      "featuredLinkLabel": "判断上海公园夜间是否可用",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["上海", "24小时公园", "夜间开放"]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-24-hour-parks-reality-check/",
+      "title": "상하이 24시간 공원: 방문 전 현실 확인법",
+      "headline": "공원이 밤새 열려 있어도 밤새 온전히 이용할 수 있는 것은 아닙니다",
+      "description": "오래된 목록만 믿지 말고 정확한 구역, 입구, 조명, 화장실, 시설 규정과 귀가 교통으로 상하이 24시간 공원을 확인하세요.",
+      "heroAlt": "해 질 무렵 세기공원 너머로 상하이 스카이라인이 실루엣을 이루는 모습.",
+      "navTitle": "상하이 24시간 공원 확인",
+      "featuredLinkLabel": "상하이 공원의 야간 이용 가능성 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["상하이", "24시간 공원", "야간 이용"]
+    }
+  }
+}

@@ -277,6 +277,7 @@ const body = {
         { label: "한 거점 또는 여러 거점 선택하기", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "이 세 도시의 순서를 정하기 전에 여행 동선 구조부터 결정하세요." },
         { label: "중국 고속철도 첫 이용 준비", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "노선을 정한 뒤 승객 정보와 역 이용 절차를 준비하세요." },
         { label: "여행 일정이 너무 빠듯한지 확인", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "호텔 이동, 고정 방문, 회복 시간으로 전체 여행을 점검하세요." },
+        { label: "친링–화이허 전이지대 읽기", href: "/ko/guides/qinling-huaihe-transition-zone/", description: "남북 전이를 기후와 문화의 맥락으로 활용하되 경계선 하나가 세 도시 동선을 대신 결정하게 하지 마세요." },
       ],
     },
     {

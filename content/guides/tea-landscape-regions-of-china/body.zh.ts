@@ -123,6 +123,8 @@ const body = {
         { label: "规划一条中国地方饮食路线", href: "/zh/guides/china-regional-food-route/", description: "判断茶乡是否值得在整段旅程中占据更大的角色。" },
         { label: "理解广州早茶怎么运作", href: "/zh/guides/how-guangzhou-morning-tea-works/", description: "从茶叶生产景观转向城市里的饮茶与共享饮食方式。" },
         { label: "安排上海、苏州、杭州与南京的顺序", href: "/zh/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "把龙井参观放进现实的江南行程。" },
+        { label: "从天气与饮食读懂二十四节气", href: "/zh/guides/china-24-solar-terms-weather-food-daily-life/", description: "理解另一套季节知识，但不要把它当成全国固定天气表。" },
+        { label: "跟着云南咖啡从鲜果走到杯中", href: "/zh/guides/yunnan-coffee-from-cherry-to-cup/", description: "比较一种较新的作物与加工景观，同时保留茶与咖啡各自的历史。" },
       ],
     },
     {

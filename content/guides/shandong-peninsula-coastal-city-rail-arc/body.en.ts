@@ -62,7 +62,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "Explore China", href: "/explore/", description: "Compare this regional role with the next destination."},
     {label: "China high-speed trains for first-time visitors", href: "/guides/china-high-speed-train-first-time-guide/", description: "Book exact station names and passport records correctly."},
     {label: "China rail-only route planning", href: "/guides/china-rail-only-route/", description: "Test whether the whole itinerary still works without domestic flights."},
-    {label: "One hub or multiple bases?", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Price every hotel change in time and energy."}
+    {label: "One hub or multiple bases?", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Price every hotel change in time and energy."},
+    {label: "Read Qingdao's industrial history through three lenses", href: "/guides/qingdao-brands-built-an-industrial-city/", description: "Add bounded brewery, appliance and rail context without turning the regional arc into three factory visits."}
   ]},
   {id: "consultation", type: "callout", title: "Need one city removed from the arc?", body: "A Homeground travel consultant can compare exact trains, stations, hotel areas and city roles for your dates, then identify which stop adds the least value without turning the route into a sales itinerary.", tone: "neutral"},
   {id: "sources", type: "sources", title: "Official sources reviewed on 13 August 2026", items: [

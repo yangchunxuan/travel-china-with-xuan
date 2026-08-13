@@ -143,7 +143,8 @@ const body = {
         {"label": "浏览 Homeground 中国指南", "href": "/zh/guides/", "description": "返回完整指南集合。"},
         {"label": "安排良渚古城遗址公园与博物院顺序", "href": "/zh/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "比较另一组博物馆—遗址景观证据链。"},
         {"label": "读懂青铜礼器与铭文", "href": "/zh/guides/ritual-bronze-vessels-and-inscriptions/", "description": "练习把文字、器物和考古语境放在一起。"},
-        {"label": "选择云冈石窟洞窟与博物馆顺序", "href": "/zh/guides/yungang-grottoes-cave-order-and-museum/", "description": "在另一处大型遗产中应用证据和保护边界。"}
+        {"label": "选择云冈石窟洞窟与博物馆顺序", "href": "/zh/guides/yungang-grottoes-cave-order-and-museum/", "description": "在另一处大型遗产中应用证据和保护边界。"},
+        {"label": "看懂旅途中真正可见的荒漠治理", "href": "/zh/guides/desert-restoration-travellers-can-see/", "description": "把证据边界带到变化中的景观，不把一片绿色当成全面修复的证明。"}
       ]
     },
     {

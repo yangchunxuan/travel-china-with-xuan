@@ -1,0 +1,64 @@
+{
+  "id": "desert-restoration-travellers-can-see",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "landscape-reading-field-guide",
+  "topics": [
+    "desertification-control",
+    "straw-checkerboards",
+    "shelterbelts",
+    "photovoltaic-desert-control",
+    "dryland-restoration",
+    "responsible-access"
+  ],
+  "destinations": ["china", "ningxia", "inner-mongolia"],
+  "heroImagePath": "/images/guides/desert-restoration-travellers-can-see/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/desert-restoration-travellers-can-see/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/desert-restoration-travellers-can-see/",
+      "title": "China's Desert Restoration: What Travellers Can See",
+      "headline": "Straw Grids, Shelterbelts and Solar Fields Are Not the Same Intervention",
+      "description": "Learn what China's straw grids, shelterbelts and desert solar fields do, which conditions limit them, and how to observe without entering work zones.",
+      "heroAlt": "Landsat satellite view of dunes and photovoltaic fields in the Kubuqi Desert, Inner Mongolia",
+      "navTitle": "Read China's desert restoration",
+      "featuredLinkLabel": "Understand desert-control landscapes",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Drylands", "Desert control", "Landscape reading"]
+    },
+    "zh": {
+      "path": "/zh/guides/desert-restoration-travellers-can-see/",
+      "title": "读懂中国的荒漠治理：草方格、防护林与光伏场",
+      "headline": "草方格、防护林与光伏场，不是同一种治理",
+      "description": "分清草方格、防护林和荒漠光伏场的机制、适用条件与局限，并在不进入施工或运营区的前提下负责任地观察。",
+      "heroAlt": "内蒙古库布其沙漠沙丘与光伏场的Landsat卫星影像",
+      "navTitle": "读懂中国荒漠治理",
+      "featuredLinkLabel": "理解荒漠治理景观",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["干旱区", "防沙治沙", "景观解读"]
+    },
+    "ko": {
+      "path": "/ko/guides/desert-restoration-travellers-can-see/",
+      "title": "중국 사막화 대응 읽기: 짚 격자·방풍림·태양광 단지",
+      "headline": "짚 격자, 방풍림, 태양광 단지는 같은 해법이 아닙니다",
+      "description": "짚 격자, 방풍림, 사막 태양광 단지의 작동 원리와 한계를 구분하고 작업·운영 구역에 들어가지 않고 책임 있게 관찰하는 법을 안내합니다.",
+      "heroAlt": "네이멍구 쿠부치 사막의 모래언덕과 태양광 단지를 담은 Landsat 위성 영상",
+      "navTitle": "중국 사막화 대응 읽기",
+      "featuredLinkLabel": "사막화 대응 경관 이해하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["건조지", "사막화 대응", "경관 읽기"]
+    }
+  }
+}

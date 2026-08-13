@@ -291,7 +291,8 @@ const body = {
         { "label": "Verify an accessible hotel room", "href": "/guides/china-accessible-hotel-room-verification/", "description": "Check room measurements, assignment and fallback with the property." },
         { "label": "Choose a private transfer or public transport", "href": "/guides/china-private-transfer-or-public-transport/", "description": "Compare the exact vehicle and public-transport chains for one ground segment." },
         { "label": "Prepare for a first China high-speed train", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Understand the normal station sequence before adding assistance handoffs." },
-        { "label": "Reduce backtracking with open-jaw flights", "href": "/guides/china-open-jaw-flights-route-planning/", "description": "Remove repeat transfers when the accessible chain supports different gateways." }
+        { "label": "Reduce backtracking with open-jaw flights", "href": "/guides/china-open-jaw-flights-route-planning/", "description": "Remove repeat transfers when the accessible chain supports different gateways." },
+        { "label": "Audit China's 15-minute neighbourhoods", "href": "/guides/china-15-minute-neighbourhoods/", "description": "Test whether nearby daily services form a usable door-to-door chain instead of assuming proximity equals accessibility." }
       ]
     },
     {
