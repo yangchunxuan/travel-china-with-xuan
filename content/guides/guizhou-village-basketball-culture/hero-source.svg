@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#102a43"/>
+  <circle cx="1320" cy="120" r="250" fill="#f4b860" opacity=".15"/>
+  <circle cx="250" cy="850" r="300" fill="#55c2b8" opacity=".10"/>
+  <g fill="none" stroke="#f4b860" stroke-width="14" opacity=".7">
+    <path d="M190 225c90-95 190-95 280 0s190 95 280 0"/>
+    <path d="M850 215c70-70 140-70 210 0s140 70 210 0 140-70 210 0"/>
+  </g>
+  <rect x="360" y="250" width="880" height="520" rx="44" fill="#e9f2f2" stroke="#ffffff" stroke-width="22"/>
+  <rect x="405" y="295" width="790" height="430" rx="20" fill="#c76847"/>
+  <path d="M800 295v430" stroke="#f7e9cf" stroke-width="16"/>
+  <circle cx="800" cy="510" r="76" fill="none" stroke="#f7e9cf" stroke-width="16"/>
+  <path d="M405 400h130v220H405M1195 400h-130v220h130" fill="none" stroke="#f7e9cf" stroke-width="16"/>
+  <path d="M405 445h72v130h-72M1195 445h-72v130h72" fill="none" stroke="#f7e9cf" stroke-width="16"/>
+  <g fill="#f4b860">
+    <circle cx="680" cy="425" r="24"/><circle cx="715" cy="580" r="24"/><circle cx="885" cy="450" r="24"/><circle cx="920" cy="590" r="24"/>
+  </g>
+  <circle cx="805" cy="475" r="22" fill="#ffffff"/>
+  <g fill="#55c2b8">
+    <circle cx="300" cy="335" r="18"/><circle cx="300" cy="395" r="18"/><circle cx="300" cy="455" r="18"/><circle cx="300" cy="515" r="18"/><circle cx="300" cy="575" r="18"/><circle cx="300" cy="635" r="18"/>
+    <circle cx="1300" cy="335" r="18"/><circle cx="1300" cy="395" r="18"/><circle cx="1300" cy="455" r="18"/><circle cx="1300" cy="515" r="18"/><circle cx="1300" cy="575" r="18"/><circle cx="1300" cy="635" r="18"/>
+  </g>
+  <g fill="#ffffff" opacity=".82">
+    <circle cx="245" cy="365" r="13"/><circle cx="245" cy="425" r="13"/><circle cx="245" cy="485" r="13"/><circle cx="245" cy="545" r="13"/><circle cx="245" cy="605" r="13"/>
+    <circle cx="1355" cy="365" r="13"/><circle cx="1355" cy="425" r="13"/><circle cx="1355" cy="485" r="13"/><circle cx="1355" cy="545" r="13"/><circle cx="1355" cy="605" r="13"/>
+  </g>
+  <g fill="#f4b860" stroke="#102a43" stroke-width="10">
+    <path d="M220 760h150l-18 92H238z"/><path d="M1230 760h150l-18 92h-114z"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round">
+    <path d="M255 735v-45M295 735v-70M335 735v-35"/>
+    <path d="M1265 735v-35M1305 735v-70M1345 735v-45"/>
+  </g>
+  <path d="M515 870c175 55 395 55 570 0" fill="none" stroke="#55c2b8" stroke-width="20" stroke-linecap="round"/>
+  <g fill="#ffffff" opacity=".9"><circle cx="610" cy="865" r="16"/><circle cx="690" cy="885" r="16"/><circle cx="800" cy="894" r="16"/><circle cx="910" cy="885" r="16"/><circle cx="990" cy="865" r="16"/></g>
+</svg>
