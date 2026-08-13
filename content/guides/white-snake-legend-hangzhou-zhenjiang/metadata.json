@@ -1,0 +1,71 @@
+{
+  "id": "white-snake-legend-hangzhou-zhenjiang",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "two-city-comparison",
+  "topics": [
+    "white-snake-legend",
+    "literary-geography",
+    "folklore",
+    "archaeology",
+    "heritage-reconstruction"
+  ],
+  "destinations": [
+    "hangzhou",
+    "west-lake",
+    "zhenjiang",
+    "jinshan-temple"
+  ],
+  "heroImagePath": "/images/guides/white-snake-legend-hangzhou-zhenjiang/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/white-snake-legend-hangzhou-zhenjiang/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/white-snake-legend-hangzhou-zhenjiang/",
+      "title": "White Snake Legend: What Is Real in Hangzhou and Zhenjiang?",
+      "headline": "The White Snake Legend Is Not a Map",
+      "description": "Separate White Snake folklore from Broken Bridge, Leifeng archaeology, the modern pagoda and Jinshan Temple—and decide whether Hangzhou alone is enough.",
+      "heroAlt": "Broken Bridge at the eastern end of Bai Causeway beside West Lake in Hangzhou.",
+      "navTitle": "White Snake: Hangzhou or Zhenjiang",
+      "featuredLinkLabel": "Read the White Snake sites by evidence",
+      "openGraphLocale": "en_US",
+      "cardTags": ["White Snake", "Hangzhou", "Zhenjiang"]
+    },
+    "zh": {
+      "path": "/zh/guides/white-snake-legend-hangzhou-zhenjiang/",
+      "title": "《白蛇传》不是一张地图：断桥、雷峰塔与金山寺哪些是真的？",
+      "headline": "先分清传说、遗址与重建，再决定要不要增加镇江",
+      "description": "分清白蛇传说、断桥、雷峰塔考古遗存、现代雷峰塔与金山寺的证据层，并判断只去杭州是否足够、何时值得增加镇江。",
+      "heroAlt": "杭州西湖白堤东端的断桥。",
+      "navTitle": "白蛇传：杭州还是镇江",
+      "featuredLinkLabel": "按证据读懂白蛇传地点",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["白蛇传", "杭州", "镇江"]
+    },
+    "ko": {
+      "path": "/ko/guides/white-snake-legend-hangzhou-zhenjiang/",
+      "title": "백사전은 지도가 아니다: 단교·뇌봉탑·금산사에서 실제인 것은?",
+      "headline": "설화·유적·재건을 구분하고 전장까지 갈지 결정하기",
+      "description": "백사전 설화와 단교, 뇌봉탑 고고 유적, 현대 뇌봉탑, 금산사의 증거 층위를 나누고 항저우만으로 충분한지 판단합니다.",
+      "heroAlt": "항저우 서호 백제 동쪽 끝에 있는 단교.",
+      "navTitle": "백사전: 항저우와 전장",
+      "featuredLinkLabel": "증거로 백사전 장소 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["백사전", "항저우", "전장"]
+    }
+  }
+}
