@@ -10,6 +10,7 @@
 ## Evidence and dynamic boundary
 
 - National transport guidance establishes the designated-area and supervision vocabulary; it does not create a nationwide service map.
+- The 2021 national road-testing rules define road testing and demonstration application. Later passenger-operation labels differ locally, so the article does not present one nationwide stage ladder.
 - City sources are examples only. A plan, open test road and public passenger service are kept separate.
 - Recheck operator, public-access status, zone, hours, pickup points, safety staffing and emergency channel on the travel day.
 - Conservative fallback: use a confirmed conventional transfer when this would be a critical connection.
@@ -18,6 +19,7 @@
 
 - [Ministry of Transport safety guide](https://xxgk.mot.gov.cn/jigou/ysfws/202312/t20231205_3962490.html)
 - [Ministry of Transport policy interpretation](https://big5.mot.gov.cn/gate/big5/www.mot.gov.cn/gongkai/zcjd/202512/t20251226_4191175.html)
+- [MIIT, police and transport ministries — national road-testing and demonstration rules](https://www.miit.gov.cn/jgsj/zbys/qcgy/art/2021/art_a24398849c6a4dd290328ab5d1d8af0f.html)
 - [Shanghai 2026 update](https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260215/e00a579f253d4903a3bdaf6840babc9f.html)
 - [Beijing Yizhuang update](https://kfqgw.beijing.gov.cn/ywdt/dwkfgd/kfyz/202505/t20250521_4246493.html)
 - [Wuhan plan](https://www.wuhan.gov.cn/ztzl/25zt/ltwhfjzx/zcwj/202511/t20251125_2682890.shtml)
