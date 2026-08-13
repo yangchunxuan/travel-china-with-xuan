@@ -203,7 +203,7 @@ const body = {
     {
       id: "scenario-one",
       type: "paragraph",
-      text: "A first-time visitor already staying in Wuhan should normally keep Yellow Crane rather than add Yueyang or Nanchang for name recognition. Tower and bridge answer a complete question about modern rebuilding. For an architectural-conservation student, Yueyang's timber and component decisions may justify the different choice—but only if Yueyang already fits a workable route.",
+      text: "A first-time visitor already staying in Wuhan should normally keep Yellow Crane rather than add Yueyang or Nanchang for name recognition. Tower and bridge answer a complete question about modern rebuilding. For an architectural-conservation student, Yueyang's timber and component decisions may justify the different choice—but only if Yueyang already fits a workable route. Before committing, score the candidate on three separate questions: how much historic fabric you require, which text you genuinely want to read, and whether the city is already supported by the route.",
     },
     {
       id: "scenario-two",
@@ -232,7 +232,7 @@ const body = {
     {
       id: "pace-rule",
       type: "paragraph",
-      text: "Protect the sequence instead of racing every floor. An exterior circuit, one construction zone, one literary object and one outward view make a coherent half-day. If queues or mobility remove upper levels, stay with ground-level evidence. Do not wait for an unconfirmed artefact; move to material and landscape that remain visible.",
+      text: "Protect the sequence instead of racing every floor. An exterior circuit, one construction zone, one literary object and one outward view make a coherent half-day. If queues or mobility remove upper levels, stay with ground-level evidence. Do not wait for an unconfirmed artefact; move to material and landscape that remain visible. If a named exhibit is missing, compare the exterior profile with the dated building baseline, record the current label if photography is permitted, and leave the absent object out of the conclusion.",
     },
     {
       id: "mistakes-heading",
@@ -257,7 +257,7 @@ const body = {
       type: "callout",
       tone: "warning",
       title: "Five shortcuts to reject",
-      body: "Do not call all three 'thousand-year-old buildings.' Do not say Yellow Crane Tower was moved intact to its current site. Do not turn Yueyang's 'original site and form' language into uninterrupted survival since the third century. Do not treat the official 'twenty-ninth reconstruction' at Tengwang as an independently verified count on one footprint. And do not photograph a modern display without its label, then use it as proof of an ancient interior.",
+      body: "Do not call all three 'thousand-year-old buildings.' Do not say Yellow Crane Tower was moved intact to its current site. Do not turn Yueyang's 'original site and form' language into uninterrupted survival since the third century. Do not treat the official 'twenty-ninth reconstruction' at Tengwang as an independently verified count on one footprint. And do not photograph a modern display without its label, then use it as proof of an ancient interior. Write two dates in your notes—the literary work's date and the present building's date—before interpreting any shared name.",
     },
     {
       id: "failure-heading",
