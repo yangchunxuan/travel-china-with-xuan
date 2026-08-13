@@ -157,7 +157,9 @@ const body = {
         { label: "Connect Beijing South with Capital or Daxing Airport", href: "/guides/beijing-south-station-to-capital-or-daxing-airport/", description: "Use the named corridor guide for exact mode execution." },
         { label: "Test whether a hotel is really near the metro", href: "/guides/china-hotel-near-metro/", description: "Inspect the correct exit and last stretch." },
         { label: "Plan an accessible China route", href: "/guides/wheelchair-accessible-china-route-planning/", description: "Verify the complete station, vehicle, hotel and attraction chain for a wheelchair user." },
-        { label: "Protect the last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Do not ask a ground transfer to rescue a fragile departure chain." }
+        { label: "Protect the last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Do not ask a ground transfer to rescue a fragile departure chain." },
+        { label: "Protect the first day", href: "/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "Decide whether a China arrival day can reliably support a timed reservation by testing immigration, bags, transfers, hotel logistics and missed-entry rules." },
+        { label: "Understand China's robotaxi zones", href: "/guides/china-robotaxi-zones-explained/", description: "Understand robotaxi zones, pilot stages, vehicle supervision and why an open test road is not necessarily a public ride service." },
       ]
     },
     {

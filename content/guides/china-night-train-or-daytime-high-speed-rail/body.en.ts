@@ -312,6 +312,9 @@ const body = {
           href: "/guides/china-itinerary-with-older-parents/",
           description: "Adjust transport and recovery assumptions for a multigenerational party.",
         },
+        { label: "Understand China's public-welfare slow trains", href: "/guides/china-public-welfare-slow-trains/", description: "Understand why China's public-welfare slow trains still run, who uses them and how an ordinary traveller should approach the service respectfully." },
+        { label: "See how a high-speed train is built", href: "/guides/how-china-builds-high-speed-trains/", description: "Follow a representative aluminium-bodied train from carbody fabrication to systems integration, commissioning, laboratory and track tests." },
+        { label: "Build a Shandong Peninsula rail arc", href: "/guides/shandong-peninsula-coastal-city-rail-arc/", description: "Give Qingdao, Yantai and Weihai distinct roles, connect the right stations by rail and leave a city out when it repeats the same coastal experience." },
       ],
     },
     {

@@ -157,7 +157,9 @@ const body = {
         { label: "베이징남역과 서우두·다싱공항 연결하기", href: "/ko/guides/beijing-south-station-to-capital-or-daxing-airport/", description: "정확한 수단 실행은 지정 구간 가이드를 이용하세요." },
         { label: "호텔이 정말 지하철과 가까운지 확인하기", href: "/ko/guides/china-hotel-near-metro/", description: "정확한 출구와 마지막 구간을 점검합니다." },
         { label: "휠체어로 이용 가능한 중국 동선 계획하기", href: "/ko/guides/wheelchair-accessible-china-route-planning/", description: "휠체어 이용자를 위해 역, 차량, 호텔, 명소의 전체 사슬을 확인합니다." },
-        { label: "국제선 출발 전 마지막 밤 보호하기", href: "/ko/guides/china-last-night-before-international-flight/", description: "지상 이동으로 취약한 출국 사슬을 구하려 하지 마세요." }
+        { label: "국제선 출발 전 마지막 밤 보호하기", href: "/ko/guides/china-last-night-before-international-flight/", description: "지상 이동으로 취약한 출국 사슬을 구하려 하지 마세요." },
+        { label: "첫날 일정 보호하기", href: "/ko/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "입국 심사, 수하물, 시내 이동, 호텔 동선과 지각 규정을 확인해 도착일에 시간 지정 예약을 넣어도 되는지 판단합니다." },
+        { label: "중국 로보택시 운행 구역 알아보기", href: "/ko/guides/china-robotaxi-zones-explained/", description: "로보택시 운행 구역과 시범 단계, 차량 감독 방식을 이해하고 개방 시험도로와 일반 승객 서비스를 구분합니다." },
       ]
     },
     {

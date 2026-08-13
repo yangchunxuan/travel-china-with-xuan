@@ -52,6 +52,7 @@ const body = {
       { label: "Check whether the itinerary is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Treat border queues and station handoffs as real travel time." },
       { label: "Plan the last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Leave enough time between the border crossing and departure." },
       { label: "Prepare a backup way to pay in mainland China", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Prepare more than one way to pay for the mainland legs." },
+      { label: "Compare Shenzhen stay areas", href: "/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "Compare Futian, Luohu and Nanshan by arrival hub, Hong Kong crossing, business addresses, attractions, evenings and luggage." },
     ]},
     { id: "sources", type: "sources", title: "Official sources and image credit", items: [
       { label: "Boundary control and crossing identities", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "Hong Kong Security Bureau", reviewedAt: "2026-08-12" },

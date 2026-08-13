@@ -52,6 +52,7 @@ const body = {
       { label: "Choose a Shenzhen-Hong Kong crossing", href: "/guides/shenzhen-hong-kong-transport-route/", description: "Use this only if Shenzhen becomes a real transfer point." },
       { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Give borders and large stations their real time cost." },
       { label: "China's last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Protect the final departure from a cross-border delay." },
+      { label: "Compare Zhuhai and Hengqin for Macau", href: "/guides/guangzhou-macau-transport-route/", description: "Choose Guangzhou South to Zhuhai/Gongbei or Hengqin by your Guangzhou starting point, Macau hotel, luggage, border hours and required spare time." },
     ]},
     { id: "sources", type: "sources", title: "Official sources and image credit", items: [
       { label: "High Speed Rail trip-planner workflow", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR Corporation", reviewedAt: "2026-08-12" },

@@ -39,6 +39,7 @@ const body = {
       { label: "选择深圳到香港的口岸", href: "/zh/guides/shenzhen-hong-kong-transport-route/", description: "只有深圳成为真实中转点时才使用。" },
       { label: "你的中国行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "把口岸和大站的真实耗时放回行程。" },
       { label: "国际航班前最后一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "避免跨境延误伤及最终离境。" },
+      { label: "比较经珠海和经横琴去澳门", href: "/zh/guides/guangzhou-macau-transport-route/", description: "比较广州南到珠海站/拱北和横琴站/横琴口岸的完整门到门行程，并把口岸时间、行李和晚到后的住宿备选一起算进去。" },
     ]},
     { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
       { label: "高铁行程规划方法", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "港铁公司", reviewedAt: "2026-08-12" },

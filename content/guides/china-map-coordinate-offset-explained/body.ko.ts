@@ -292,6 +292,9 @@ const body: StructuredPageBody = {
           href: "/ko/guides/lost-phone-in-china-digital-recovery/",
           description: "기기, 번호, 계정, 예약을 올바른 순서로 보호하세요.",
         },
+        { label: "중국 로보택시 운행 구역 알아보기", href: "/ko/guides/china-robotaxi-zones-explained/", description: "로보택시 운행 구역과 시범 단계, 차량 감독 방식을 이해하고 개방 시험도로와 일반 승객 서비스를 구분합니다." },
+        { label: "충칭 입체 도시 이해하기", href: "/ko/guides/chongqing-upper-lower-city-orientation/", description: "충칭을 입체 도시로 읽고 짧아 보이는 길도 도로 높이, 역 출구, 건물 입구를 먼저 확인하세요." },
+        { label: "시장 너머의 이우 읽기", href: "/ko/guides/yiwu-market-to-factory-network/", description: "이우 상품 전시 뒤의 여러 역할을 이해하되 점포를 공장 증거로, 오래된 안내를 현재 정보로 보지 않습니다." },
       ],
     },
     {

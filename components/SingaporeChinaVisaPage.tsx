@@ -3,6 +3,11 @@ import { ArrowRight } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getSingaporeChinaVisaCopy } from "../lib/singaporeChinaVisaI18n";
+import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -34,6 +39,7 @@ function createStructuredData(locale: HomegroundLocale) {
         name: "Homeground China",
         url: "https://homegroundchina.com/",
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -51,7 +57,8 @@ function createStructuredData(locale: HomegroundLocale) {
           height: guide.imageHeight,
           caption: copy.heroCaption,
         },
-        author: { "@id": "https://homegroundchina.com/#organization" },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         about: copy.schemaAbout.map((name) => ({ "@type": "Thing", name })),
         citation: copy.sources.map((source) => ({
@@ -139,6 +146,11 @@ export function SingaporeChinaVisaPage({
             <h1>{copy.title}</h1>
             <p className={styles.directAnswer}>{copy.directAnswer}</p>
             <p className={styles.directAnswerTail}>{copy.directAnswerTail}</p>
+            <LegacyEditorialByline
+              guideId={guide.id}
+              locale={locale}
+              reviewedAt={guide.sourceReviewedDate}
+            />
 
             <figure className={styles.heroFigure}>
               <picture>

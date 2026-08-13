@@ -326,6 +326,8 @@ const body: StructuredPageBody = {
           href: "/guides/forbidden-city-for-foreign-visitors/",
           description: "Apply the venue's real-name ticket instructions to a major attraction.",
         },
+        { label: "Build a booking dispute file", href: "/guides/china-booking-dispute-evidence-pack/", description: "Freeze the order record, build a dated evidence timeline and escalate through the booking and payment channels without exposing private data." },
+        { label: "Check your passport before China", href: "/guides/china-passport-validity-and-blank-pages/", description: "Separate visa, visa-free, transit and airline rules, inspect your passport, and confirm borderline cases with the authority that owns each decision." },
       ],
     },
     {

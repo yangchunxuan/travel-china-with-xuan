@@ -170,7 +170,10 @@ const body = {
       items: [
         { label: "Make the October timing decision", href: "/guides/china-in-october-golden-week-or-later/", description: "Use the month-specific guide for National Day and regional weather." },
         { label: "Check the official holiday calendar", href: "/guides/china-public-holidays-travel-calendar/", description: "Climate suitability does not remove holiday pressure." },
-        { label: "Compare shoulder-season value", href: "/guides/china-shoulder-season-value-tradeoff/", description: "Add price, daylight and operating limits after the climate screen." }
+        { label: "Compare shoulder-season value", href: "/guides/china-shoulder-season-value-tradeoff/", description: "Add price, daylight and operating limits after the climate screen." },
+        { label: "Separate tiankeng from wild sinkholes", href: "/guides/china-tiankeng-sinkholes-explained/", description: "Learn what tiankeng means in geology, how public scenic sites differ from research locations, and what access evidence to check before visiting." },
+        { label: "Walk Nanming from day to night", href: "/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "Walk from the old-city lanes to Jiaxiu Pavilion, the Nanming River and Qingyun Market in an order that follows daylight, evening lights and meal energy." },
+        { label: "Separate Wenchang's space sites", href: "/guides/wenchang-commercial-space-city/", description: "Distinguish Wenchang's national launch site, commercial launch center and aerospace development—and verify any visitor arrangement afresh." },
       ]
     },
     {

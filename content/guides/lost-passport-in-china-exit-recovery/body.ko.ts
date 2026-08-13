@@ -246,7 +246,8 @@ const body: StructuredPageBody = {
           label: "중국 입국 요건(영문 허브)",
           href: "/guides/china-entry-requirements/",
           description: "긴급 절차의 바탕이 되는 일반 문서의 역할을 확인하세요. 현재 허브는 영문으로 제공됩니다."
-        }
+        },
+        { label: "중국 출발 전 여권 점검", href: "/ko/guides/china-passport-validity-and-blank-pages/", description: "비자·무비자·환승·항공사 기준을 구분해 여권을 점검하고 경계 사례는 해당 결정을 맡은 공식 기관에 확인하세요." },
       ]
     },
     {

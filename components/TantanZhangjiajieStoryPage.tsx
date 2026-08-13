@@ -2,8 +2,13 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
 import { getTantanZhangjiajieStoryCopy } from "../lib/tantanZhangjiajieStoryI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { TantanStoryContentsNav } from "./TantanStoryContentsNav";
@@ -48,6 +53,7 @@ function createStructuredData(locale: HomegroundLocale) {
         url: studioProfileUrl,
         worksFor: { "@id": "https://homegroundchina.com/#organization" },
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -65,8 +71,10 @@ function createStructuredData(locale: HomegroundLocale) {
           height: 630,
           caption: copy.heroCaption,
         },
-        author: { "@id": personId },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
+        mentions: { "@id": personId },
         about: copy.schemaAbout.map((name) => ({ "@type": "Thing", name })),
       },
       {
@@ -171,19 +179,16 @@ export function TantanZhangjiajieStoryPage({
                 <h1>{copy.title}</h1>
                 <p className={styles.dek}>{copy.dek}</p>
 
-                <div className={styles.byline}>
-                  <span className={styles.bylineMonogram} aria-hidden="true">T</span>
-                  <div>
-                    <p>{copy.authorLabel}</p>
-                    <strong>{copy.authorName}</strong>
-                    <span>{copy.authorRole}</span>
-                  </div>
-                </div>
+                <LegacyEditorialByline
+                  guideId={guide.id}
+                  locale={locale}
+                  reviewedAt={guide.sourceReviewedDate}
+                />
 
                 <dl className={styles.storyMeta}>
                   <div>
                     <dt>{copy.updatedLabel}</dt>
-                    <dd><time dateTime={guide.datePublished}>{copy.updatedDate}</time></dd>
+                    <dd><time dateTime={guide.dateModified}>{copy.updatedDate}</time></dd>
                   </div>
                   <div>
                     <dt aria-hidden="true">—</dt>

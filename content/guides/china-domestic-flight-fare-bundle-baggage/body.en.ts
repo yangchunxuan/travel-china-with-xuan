@@ -64,7 +64,8 @@ const body = {
     { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
       { label: "Check separate-ticket risk", href: "/guides/china-separate-flight-tickets-self-transfer-risk/", description: "A cheap bundle can still expose the onward trip." },
       { label: "Understand China trip costs", href: "/guides/how-much-does-a-china-trip-cost/", description: "Place the flight decision inside the whole budget." },
-      { label: "Compare route-shaping flights", href: "/guides/china-open-jaw-flights-route-planning/", description: "A higher fare may remove a costly return journey." }
+      { label: "Compare route-shaping flights", href: "/guides/china-open-jaw-flights-route-planning/", description: "A higher fare may remove a costly return journey." },
+      { label: "Separate Wenchang's space sites", href: "/guides/wenchang-commercial-space-city/", description: "Distinguish Wenchang's national launch site, commercial launch center and aerospace development—and verify any visitor arrangement afresh." },
     ] },
     { id: "sources", type: "sources", title: "Official sources reviewed", items: [
       { label: "Public air passenger service rules", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "Civil Aviation Administration of China", reviewedAt: "2026-08-12" },

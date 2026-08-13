@@ -254,6 +254,9 @@ const body = {
           href: "/zh/guides/is-your-china-itinerary-too-rushed/",
           description: "决定再加一站之前，把转场负担和恢复时间计算进去。",
         },
+        { label: "规划适合孩子的路线", href: "/zh/guides/china-itinerary-with-young-children/", description: "从睡眠、饮食、如厕、照顾孩子的负担、酒店稳定性和儿童票规则设计中国亲子路线。" },
+        { label: "比较桂林到阳朔", href: "/zh/guides/guilin-yangshuo-transport-route/", description: "按车站、机场、酒店、行李、方向和回程，比较桂林与阳朔之间的火车、公路接驳和水路体验。" },
+        { label: "选择上海住宿区", href: "/zh/guides/shanghai-where-to-stay-first-trip/", description: "从步行、轨道覆盖、夜间活动、行李和人流取舍比较外滩、人民广场与原法租界片区。" },
       ],
     },
     {

@@ -65,7 +65,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Screen the route by climate region", href: "/guides/china-climate-regions-for-trip-timing/", description: "Check whether one date window fits the hardest stop." },
     { label: "Check official public holidays", href: "/guides/china-public-holidays-travel-calendar/", description: "A low-season label can be overturned by a national holiday." },
-    { label: "Place timing inside the full budget", href: "/guides/how-much-does-a-china-trip-cost/", description: "Compare transport, hotels and flexibility together." }
+    { label: "Place timing inside the full budget", href: "/guides/how-much-does-a-china-trip-cost/", description: "Compare transport, hotels and flexibility together." },
+    { label: "Choose a Huangshan base", href: "/guides/huangshan-summit-or-gateway-base/", description: "Compare summit lodging, Tangkou, the hot-spring area and Huangshan city by sunrise, transfer gates, luggage, weather and onward rail." },
+    { label: "Choose a Yellow Sea wetland base", href: "/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "Separate Yancheng's dispersed wetland areas, choose Dongtai, Dafeng or the city as a practical base, and plan ethical birding with a no-sighting alternative." },
+    { label: "Choose a Yuanyang terrace route", href: "/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "Choose among Duoyishu, Bada and Laohuzui, pair one viewpoint with a respectful village visit, and keep a worthwhile alternative for cloudy weather." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Main characteristics of China's climate", url: "https://www.cma.gov.cn/2011xzt/2012zhuant/20120302/2012030205/201203020501/201103/t20110314_3096052.html", publisher: "China Meteorological Administration", reviewedAt: "2026-08-12" },

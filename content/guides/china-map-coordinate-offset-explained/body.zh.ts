@@ -292,6 +292,9 @@ const body: StructuredPageBody = {
           href: "/zh/guides/lost-phone-in-china-digital-recovery/",
           description: "按正确顺序保护设备、号码、账户与订单。",
         },
+        { label: "看懂中国无人驾驶出租车运营区", href: "/zh/guides/china-robotaxi-zones-explained/", description: "看懂无人驾驶出租车运营区、试点阶段和车辆监管，并分清开放测试道路与可供公众乘坐的服务。" },
+        { label: "理解重庆的立体城市", href: "/zh/guides/chongqing-upper-lower-city-orientation/", description: "把重庆当作三维城市来读：短距离步行前先核对道路高度、车站出口和建筑入口。" },
+        { label: "从市场之外理解义乌", href: "/zh/guides/yiwu-market-to-factory-network/", description: "理解义乌商品陈列背后的不同角色，不把商位当成工厂证明，也不把旧目录当成当前指引。" },
       ],
     },
     {

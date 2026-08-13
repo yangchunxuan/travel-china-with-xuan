@@ -63,7 +63,10 @@ const body = {
     { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
       { label: "10월 황금연휴와 그 이후 비교", href: "/ko/guides/china-in-october-golden-week-or-later/", description: "국경절과 지역 날씨를 함께 판단하세요." },
       { label: "중국 공식 공휴일 달력 확인", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "기후가 좋아도 연휴 혼잡은 남습니다." },
-      { label: "숄더 시즌의 가치와 대가 비교", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "기후 검토 뒤 가격, 일조 시간과 운영 제한을 더하세요." }
+      { label: "숄더 시즌의 가치와 대가 비교", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "기후 검토 뒤 가격, 일조 시간과 운영 제한을 더하세요." },
+      { label: "톈컹과 야생 싱크홀 구분하기", href: "/ko/guides/china-tiankeng-sinkholes-explained/", description: "지질학에서 톈컹이 무엇인지 이해하고 공개 관광지와 연구 발견지를 구분한 뒤 방문 전 최신 경로와 안전 정보를 확인합니다." },
+      { label: "낮부터 밤까지 난밍 걷기", href: "/ko/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "햇빛과 야경, 식사 리듬에 맞춰 구시가 골목에서 자슈러우·난밍강·칭윈시장까지 걷고 비와 피로 대안도 준비합니다." },
+      { label: "원창의 우주 공간 구분하기", href: "/ko/guides/wenchang-commercial-space-city/", description: "원창의 국가 발사장, 하이난 상업우주발사센터와 우주도시 개발을 구분하고 모든 방문 안내를 최신 공식 자료로 다시 확인합니다." },
     ] },
     { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
       { label: "중국 기후 유형", url: "https://www.cma.gov.cn/2011xzt/2017zt/20170720/2017072004/201707200101/202111/t20211103_4148108.html", publisher: "중국기상국", reviewedAt: "2026-08-12" },

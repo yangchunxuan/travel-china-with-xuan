@@ -279,6 +279,9 @@ export default {
           href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "比较自由行、局部协助和单日导览。",
         },
+        { label: "沿绿道读懂成都", href: "/zh/guides/chengdu-greenway-city-ring/", description: "选择一段长度合适的成都环城绿道，连接公共交通与社区，并提前安排途中退出点。" },
+        { label: "选择乐山大佛参观方式", href: "/zh/guides/leshan-giant-buddha-land-or-boat-visit/", description: "比较游山与游江的观看效果、独立票务和天气风险，并设计不依赖游船也能返回乐山或成都的路线。" },
+        { label: "规划三星堆博物馆参观", href: "/zh/guides/sanxingdui-museum-booking-and-gallery-order/", description: "通过官方入境游客渠道预约，从成都抵达广汉，并先建立考古背景，再看青铜神树、面具与大立人。" },
       ],
     },
     {

@@ -470,6 +470,7 @@ const body = {
           href: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "让正确的北京车站或机场与下一家酒店的抵达方式匹配。",
         },
+        { label: "选择颐和园入口和路线", href: "/zh/guides/summer-palace-gates-route-and-boat-plan/", description: "按东宫门、北宫门或新建宫门选择实际路线，分清门票与联票，并准备一条即使游船停航也能完成的步行方案。" },
       ],
     },
     {

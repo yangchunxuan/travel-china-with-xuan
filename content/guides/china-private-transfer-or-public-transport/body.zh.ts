@@ -157,7 +157,9 @@ const body = {
         { label: "连接北京南站与首都或大兴机场", href: "/zh/guides/beijing-south-station-to-capital-or-daxing-airport/", description: "具体路线执行交给这篇走廊指南。" },
         { label: "检验酒店是否真的靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "检查正确出口和最后一段。" },
         { label: "规划轮椅可行的中国路线", href: "/zh/guides/wheelchair-accessible-china-route-planning/", description: "为轮椅旅客核实完整的车站、车辆、酒店和景点链。" },
-        { label: "保护国际航班前一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "不要指望地面接驳拯救脆弱的离境链。" }
+        { label: "保护国际航班前一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "不要指望地面接驳拯救脆弱的离境链。" },
+        { label: "安排好抵达第一天", href: "/zh/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "从入境、行李、进城、酒店衔接和迟到规则判断，抵达日能否稳妥安排有入场时段的预约。" },
+        { label: "看懂中国无人驾驶出租车运营区", href: "/zh/guides/china-robotaxi-zones-explained/", description: "看懂无人驾驶出租车运营区、试点阶段和车辆监管，并分清开放测试道路与可供公众乘坐的服务。" },
       ]
     },
     {

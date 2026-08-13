@@ -31,6 +31,7 @@ const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
     { label: "Where to stay in Beijing", href: "/guides/beijing-where-to-stay-first-trip/", description: "Compare Line 5 and Line 8 access with the rest of your trip." },
     { label: "National Museum booking and route", href: "/guides/national-museum-of-china-booking-and-route/", description: "Use a separate booking and a focused indoor route for another major Beijing site." },
     { label: "China with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Account for the long park distances even when the central axis looks simple on a map." },
+    { label: "Read a Chinese city wall", href: "/guides/chinese-city-walls-gates-and-urban-order/", description: "Distinguish surviving fabric, conservation repair, reconstruction and archaeological traces, then read gates and streets as parts of an urban system." },
   ] },
   { id: "consultation", type: "callout", title: "Need the route fitted around another Beijing booking?", body: "A Homeground travel consultant can match the gate, direction and pace to your hotel and the day's other fixed time. Share the date, preferred start, mobility limits and whether the three core sights or the wider park matters more.", tone: "neutral" },
   { id: "sources", type: "sources", title: "Official and image sources reviewed", items: [

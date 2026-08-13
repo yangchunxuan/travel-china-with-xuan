@@ -245,6 +245,7 @@ const body = {
         { label: "How to pay in China as a tourist", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Prepare payment backups for deposits and replacement bookings." },
         { label: "How to judge a China hotel near the metro", href: "/guides/china-hotel-near-metro/", description: "Verify the usable door-to-platform route separately." },
         { label: "Why are hotels in China so cheap?", href: "/guides/why-are-hotels-in-china-so-cheap/", description: "Compare property type and value without confusing price with registration." },
+        { label: "Compare international and local hotels", href: "/guides/international-chain-or-local-hotel-china/", description: "Compare an international chain and a local hotel in China through room facts, passport handling, payment, location and a documented recovery route." },
       ],
     },
     {

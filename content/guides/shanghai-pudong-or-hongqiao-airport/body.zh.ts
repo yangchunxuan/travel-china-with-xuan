@@ -531,6 +531,7 @@ const body = {
           href: "/zh/guides/china-hotel-near-metro/",
           description: "用真正有用的出入口、最后步行、电梯和行李路线判断酒店区域。",
         },
+        { label: "选择上海住宿区", href: "/zh/guides/shanghai-where-to-stay-first-trip/", description: "从步行、轨道覆盖、夜间活动、行李和人流取舍比较外滩、人民广场与原法租界片区。" },
       ],
     },
     {

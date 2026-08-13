@@ -213,6 +213,7 @@ const body = {
         { label: "为什么中国酒店看起来这么便宜？", href: "/zh/guides/why-are-hotels-in-china-so-cheap/", description: "按同类价值比较，不要把品牌来源写成质量结论。" },
         { label: "酒店真的靠近地铁吗？", href: "/zh/guides/china-hotel-near-metro/", description: "核验真正有用的地铁出口和步行路线。" },
         { label: "外国游客在中国怎么付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为房费尾款和押金准备已测试的备用支付方式。" },
+        { label: "完成酒店出口安全检查", href: "/zh/guides/china-hotel-emergency-exit-fire-safety-check/", description: "读懂并实走酒店疏散路线，为烟雾、夜间和行动受限情境准备；路线不可用时换房或换店。" },
       ],
     },
     {

@@ -8,6 +8,11 @@ import {
 } from "../lib/chinaHotelValueI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ChinaHotelValueGuidePage.module.css";
@@ -15,6 +20,7 @@ import styles from "./ChinaHotelValueGuidePage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 
 function createStructuredData(
+  locale: HomegroundLocale,
   copy: ChinaHotelValueCopy,
   guide: ReturnType<typeof getGuideEntry>,
 ) {
@@ -30,6 +36,7 @@ function createStructuredData(
         name: "Homeground China",
         url: `${SITE_URL}/`,
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${canonicalUrl}#article`,
@@ -46,7 +53,8 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: copy.metadata.inLanguage,
-        author: { "@id": organizationId },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": organizationId },
         mainEntityOfPage: canonicalUrl,
         citation: copy.sources.map((source) => source.url),
@@ -143,7 +151,7 @@ export function ChinaHotelValueGuidePage({
 }) {
   const copy = getChinaHotelValueCopy(locale);
   const guide = getGuideEntry(chinaHotelValueGuideId, locale);
-  const structuredData = createStructuredData(copy, guide);
+  const structuredData = createStructuredData(locale, copy, guide);
   const hero = CHINA_HOTEL_VALUE_IMAGES.hero;
   const gateway = CHINA_HOTEL_VALUE_IMAGES.gateway;
 
@@ -183,10 +191,6 @@ export function ChinaHotelValueGuidePage({
 
             <p className={styles.eyebrow}>
               <span>{copy.hero.eyebrow}</span>
-              <span className={styles.eyebrowDot} aria-hidden="true" />
-              <span className={styles.eyebrowMuted}>
-                {copy.hero.reviewedLabel} {copy.hero.reviewedDate}
-              </span>
             </p>
 
             <h1 className={styles.heroTitle}>{copy.metadata.headline}</h1>
@@ -196,6 +200,11 @@ export function ChinaHotelValueGuidePage({
                 {paragraph}
               </p>
             ))}
+            <LegacyEditorialByline
+              guideId={guide.id}
+              locale={locale}
+              reviewedAt={guide.sourceReviewedDate}
+            />
           </div>
 
           <figure className={styles.heroFigure}>

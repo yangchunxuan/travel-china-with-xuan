@@ -17,6 +17,19 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "家庭或父母", items: ["减少路边换乘", "为海拔与休息留空间，不做医疗判断", "确认酒店接待时间"] },
     { heading: "寒冷季节或固定航班", items: ["增加中断缓冲", "避免分开的无保护票", "保留成都或当地过夜备选"] },
   ]},
+  { id: "handoff-heading", type: "heading", level: 2, text: "可执行交接要写清六个字段" },
+  { id: "handoff", type: "list", ordered: true, items: ["准确火车站或机场，不能只写“九寨沟”。", "当前有名称的接驳运营方和官方订单记录。", "离开车站或行李厅后能找到的上车点。", "接驳对应的车次或航班，以及晚到处理规则。", "准确山谷、景区或酒店下车点，而不是宽泛县名。", "在中国可用的联系方式，以及错过车辆后的备选。"] },
+  { id: "separate", type: "callout", title: "独立车票不会互相保护", tone: "warning", body: "除非卖家明确书面说明保护，铁路或航班订单与车站到景区接驳属于不同合同。围绕列车抵达安排的班线接人，不等于私人车辆无限期等候。阅读退改和未乘规则，把准确车次或航班交给运营方，并留出足够余量，避免小延误打乱山路段。" },
+  { id: "arrival-heading", type: "heading", level: 2, text: "不要把抵达日变成冲进景区的比赛" },
+  { id: "arrival-matrix", type: "table", caption: "用第一晚吸收交通风险", columns: ["抵达情况", "更可恢复的方案", "原因"], rows: [
+    ["早班铁路且接驳确认", "抵达住宿、吃饭，并为次日清早完整游览做准备", "两小时公路估算不是景区入园时间"],
+    ["下午列车", "保护酒店接待，不承诺当天大量游览", "车站交接和山路可能用完余下日照"],
+    ["晚班航班或冬季服务", "按失败路段保留机场、当地或成都住宿", "天气和独立票据可能取消当日山路连接"],
+    ["家庭或老人", "在次日完整游览前安排饮食、厕所和休息", "多种交通组成的长抵达日会改变全组可用体力"],
+  ]},
+  { id: "hotel", type: "paragraph", text: "确认接驳宣传终点究竟是景区入口、交通中心还是已订酒店。夜间或携带大件行李时，这些名称不能互换。把住宿的中文名、地址和电话发给运营方，询问是否真的送到酒店，并通知酒店预计抵达时间。若不送酒店，应在离开成都前安排最后一辆车。" },
+  { id: "return-heading", type: "heading", level: 2, text: "把返程当作独立交通链预订" },
+  { id: "return-plan", type: "list", ordered: true, items: ["从住宿或景区出口开始，不能从笼统的“九寨沟”开始。", "确认公路接驳上车点以及实际服务的火车站或机场。", "在任何独立铁路或机票前留山路中断余量。", "只有后一班交通和加住一晚都确实可用时，才把它们当备选。", "航班不可替代时，应更早向成都或出发机场移动，而不是使用最后可能衔接。"] },
   { id: "recovery-heading", type: "heading", level: 2, text: "一段交通出问题时" },
   { id: "recovery", type: "table", caption: "先保证能到下一个安全地点", columns: ["问题", "处理"], rows: [
     ["火车晚点影响接驳", "到站前联系指定接驳方并要求书面规则"],
@@ -31,6 +44,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "夜车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "比较时间表形状，不只看时长。" },
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "给山区接驳真实缓冲。" },
     { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为整段行程准备不止一种付款方式。" },
+    { label: "选择乐山大佛参观方式", href: "/zh/guides/leshan-giant-buddha-land-or-boat-visit/", description: "比较游山与游江的观看效果、独立票务和天气风险，并设计不依赖游船也能返回乐山或成都的路线。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
     { label: "2026年7月黄龙九寨站接驳公告", url: "https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49", publisher: "九寨沟风景名胜区管理局", reviewedAt: "2026-08-12" },

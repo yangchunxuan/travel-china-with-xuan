@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "保护国际离境前最后一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "不要让自转机成为最终单点故障。" },
     { label: "核对准确的上海机场", href: "/zh/guides/shanghai-pudong-or-hongqiao-airport/", description: "换机场不等于转机。" },
-    { label: "比较国内航班票价组合", href: "/zh/guides/china-domestic-flight-fare-bundle-baggage/", description: "先计入行李与退改条件，再判断机票是否便宜。" }
+    { label: "比较国内航班票价组合", href: "/zh/guides/china-domestic-flight-fare-bundle-baggage/", description: "先计入行李与退改条件，再判断机票是否便宜。" },
+    { label: "把贵阳票面与正确枢纽对应起来", href: "/zh/guides/guiyang-airport-and-rail-hubs/", description: "按准确票面站名、酒店位置和后续贵州行程，区分龙洞堡机场及铁路站、贵阳北、贵阳东和贵阳站，并避免走错枢纽。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "民航局关于联程与非联程航班的提示", url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217590.html", publisher: "中国民用航空局", reviewedAt: "2026-08-12" },

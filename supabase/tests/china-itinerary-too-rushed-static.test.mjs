@@ -96,7 +96,7 @@ test("article keeps paid services distinct and sends uncertain travellers to dir
   );
 });
 
-test("article has visible FAQs and only Article plus BreadcrumbList schema", async () => {
+test("article has visible FAQs, Evan attribution and bounded editorial schema", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
   const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
 
@@ -105,11 +105,14 @@ test("article has visible FAQs and only Article plus BreadcrumbList schema", asy
   assert.match(article, /<summary>\{item\.question\}<\/summary>/);
   assert.match(article, /"@type": "Article"/);
   assert.match(article, /"@type": "BreadcrumbList"/);
+  assert.match(article, /editorialPersonSchema\(locale\)/);
+  assert.match(article, /author: \{ "@id": EDITORIAL_PERSON_ID \}/);
+  assert.match(article, /reviewedBy: \{ "@id": EDITORIAL_PERSON_ID \}/);
   assert.doesNotMatch(article, /FAQPage/);
-  assert.match(copy, /Homeground Editorial Team/);
-  assert.match(article, /<Link href=\{copy\.studioPath\}>\{copy\.authorLabel\}<\/Link>/);
-  assert.match(article, /datePublished: "2026-07-22"/);
-  assert.match(article, /dateModified: "2026-07-22"/);
+  assert.match(article, /<LegacyEditorialByline/);
+  assert.match(article, /reviewedAt=\{guide\.sourceReviewedDate\}/);
+  assert.match(article, /datePublished: guide\.datePublished/);
+  assert.match(article, /dateModified: guide\.dateModified/);
 });
 
 test("metadata, sitemap and contextual links expose the English article", async () => {

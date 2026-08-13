@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile, stat } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 
@@ -83,6 +83,60 @@ test("legacy pages stay protected while independent guides can be added", async 
   assert.match(manifest, /PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT/);
   assert.match(manifest, /changedPhase0Entries/);
   assert.match(manifest, /New article entries are allowed/);
+});
+
+test("every independent guide resolves to a collection in its declared section", async () => {
+  const collectionModule = await import("../../lib/searchCollectionI18n.ts");
+  assert.equal(collectionModule.searchCollections.length, 27);
+
+  const guideRoot = path.join(projectRoot, "content/guides");
+  const guideDirectories = (await readdir(guideRoot, { withFileTypes: true }))
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+  assert.ok(guideDirectories.length > 0);
+
+  for (const directory of guideDirectories) {
+    const metadata = JSON.parse(
+      await readFile(path.join(guideRoot, directory, "metadata.json"), "utf8"),
+    );
+    const collectionId = collectionModule.getGuideCollectionId(metadata);
+    const collection = collectionModule.getSearchCollection(collectionId);
+    assert.equal(
+      collection.section,
+      metadata.search.section,
+      `${metadata.id}: ${metadata.search.section} != ${collectionId}/${collection.section}`,
+    );
+  }
+
+  const sample = JSON.parse(
+    await readFile(
+      path.join(guideRoot, guideDirectories[0], "metadata.json"),
+      "utf8",
+    ),
+  );
+  const originalCollection = collectionModule.getSearchCollection(
+    collectionModule.getGuideCollectionId(sample),
+  );
+  const wrongSection = sections.find(
+    (section) => section !== originalCollection.section,
+  );
+  assert.ok(wrongSection);
+  assert.throws(
+    () => collectionModule.getGuideCollectionId({
+      ...sample,
+      search: { ...sample.search, section: wrongSection },
+    }),
+    new RegExp(`${sample.id}.*${wrongSection}.*${originalCollection.id}.*${originalCollection.section}`),
+  );
+
+  assert.equal(
+    collectionModule.getGuideCollectionId({
+      id: "zhangjiajie-itinerary",
+      pillar: "routes-and-pace",
+    }),
+    "plan-trip-length-city-order",
+  );
 });
 
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {

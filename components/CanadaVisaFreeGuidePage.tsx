@@ -2,6 +2,10 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import {
   CANADA_PASSPORT_CASES,
   CANADA_VISA_AT_A_GLANCE,
   CANADA_VISA_FAQS,
@@ -10,6 +14,7 @@ import {
   CANADA_VISA_SCENARIOS,
 } from "../lib/canadaVisaFreeGuide";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./CanadaVisaFreeGuidePage.module.css";
@@ -31,6 +36,7 @@ function createStructuredData() {
         name: "Homeground China",
         url: "https://homegroundchina.com/",
       },
+      editorialPersonSchema("en"),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -47,9 +53,8 @@ function createStructuredData() {
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: "en-CA",
-        author: {
-          "@id": organizationId,
-        },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: {
           "@id": organizationId,
         },
@@ -158,6 +163,11 @@ export function CanadaVisaFreeGuidePage() {
                 itself has an end date. Use this guide to find the boundary
                 before you book.
               </p>
+              <LegacyEditorialByline
+                guideId={guide.id}
+                locale="en"
+                reviewedAt={guide.sourceReviewedDate}
+              />
               <div className={styles.heroActions}>
                 <a href="#quick-answer">Check the rule</a>
                 <a href="#passport-types">Check your passport</a>

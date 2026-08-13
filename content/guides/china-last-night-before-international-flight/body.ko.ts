@@ -337,6 +337,7 @@ const body = {
           href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "여러 세대가 함께 움직일 때 필요한 연결 여유를 조정하세요.",
         },
+        { label: "교통 거점을 북쪽·서쪽 입구에 맞추기", href: "/ko/guides/changbai-mountain-hubs-to-park-gates/", description: "예약한 북쪽 또는 서쪽 관광 구역을 기준으로 창바이산역, 창바이산시역, 창바이산공항을 고르고 도로 이동과 날씨 변화에 대비합니다." },
       ],
     },
     {

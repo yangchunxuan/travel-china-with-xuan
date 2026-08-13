@@ -18,6 +18,7 @@ import {
 } from "./homegroundLegalI18n";
 import { getHomegroundPrivacyCopy } from "./homegroundPrivacyI18n";
 import { getHomegroundStudioCopy } from "./homegroundStudioI18n";
+import { getEditorialAuthor } from "./editorialIdentity";
 
 const locales = ["en", "zh", "ko"] as const;
 const schemaLocale: Record<HomegroundLocale, SchemaLocale> = {
@@ -134,6 +135,20 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       ];
     }),
   );
+  const evan = Object.fromEntries(
+    locales.map((locale) => {
+      const author = getEditorialAuthor(locale);
+      return [
+        locale,
+        {
+          path: author.path,
+          title: author.copy.title,
+          description: author.copy.introduction,
+          h1: author.copy.h1,
+        },
+      ];
+    }),
+  );
   const guides = Object.fromEntries(
     locales.map((locale) => {
       const copy = getGuidesHubCopy(locale);
@@ -195,6 +210,15 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: studio,
       dateModified: "2026-07-22",
       schemaTypes: ["AboutPage"],
+    }),
+    systemNode({
+      id: "author-evan",
+      section: "services",
+      family: "entity",
+      primaryIntent: "understand",
+      definitions: evan,
+      dateModified: "2026-08-13",
+      schemaTypes: ["ProfilePage", "Person"],
     }),
     systemNode({
       id: "guides",

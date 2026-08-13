@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import coreEntityRecords from "../content/entities/core-places.json" with { type: "json" };
 import legacyIndexablePathBaseline from "../content/legacy-indexable-path-baseline.json" with { type: "json" };
 import phase0IndexablePathBaseline from "../content/phase0-indexable-path-baseline.json" with { type: "json" };
+import indexabilityMigrations from "../content/search-platform-indexability-migrations.json" with { type: "json" };
 import {
   buildContentManifest,
   getIndexableManifestEntries,
@@ -15,9 +16,14 @@ import type {
 } from "./content-system/types";
 import { getGuideEntry } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
+import {
+  getGuideCollectionId,
+  type SearchCollectionId,
+} from "./searchCollectionI18n";
 import { buildLegacySystemContentNodes } from "./legacySystemContentAdapter";
 import {
   buildLegacyGuideContentNodes,
+  buildSearchCollectionContentNodes,
   buildSearchHubContentNodes,
   legacyGuideIdFromBodyResource,
 } from "./searchPlatformContentAdapter";
@@ -44,6 +50,7 @@ export const searchPlatformManifest = buildContentManifest([
   ...(coreEntityRecords as ContentRecordEnvelope[]),
   ...buildLegacySystemContentNodes().map(contentNodeRecord),
   ...buildSearchHubContentNodes().map(contentNodeRecord),
+  ...buildSearchCollectionContentNodes().map(contentNodeRecord),
   ...buildLegacyGuideContentNodes().map(contentNodeRecord),
 ]);
 
@@ -146,11 +153,48 @@ if (
 const actualPhase0ByKey = new Map(
   actualPhase0Entries.map((entry) => [`${entry.contentId}::${entry.locale}`, entry]),
 );
+const phase0MigrationsByContentId = new Map(
+  indexabilityMigrations.migrations.map((migration) => [migration.contentId, migration]),
+);
+
+if (phase0MigrationsByContentId.size !== indexabilityMigrations.migrations.length) {
+  throw new Error("Duplicate contentId in search-platform indexability migrations.");
+}
+
+for (const migration of indexabilityMigrations.migrations) {
+  if (!phase0IndexablePathBaseline.entries.some((entry) => entry.contentId === migration.contentId)) {
+    throw new Error(
+      `Indexability migration references an unknown Phase 0 contentId: ${migration.contentId}.`,
+    );
+  }
+}
+
 const changedPhase0Entries = phase0IndexablePathBaseline.entries.flatMap(
   (expected) => {
     const actual = actualPhase0ByKey.get(
       `${expected.contentId}::${expected.locale}`,
     );
+    const migration = phase0MigrationsByContentId.get(expected.contentId);
+
+    if (migration) {
+      const migrationStartsAtBaseline =
+        expected.status === migration.from.status &&
+        expected.indexability.index === migration.from.index &&
+        expected.indexability.follow === migration.from.follow;
+      const migrationReachedReviewedTarget =
+        actual?.contentId === expected.contentId &&
+        actual.kind === expected.kind &&
+        actual.locale === expected.locale &&
+        actual.path === expected.path &&
+        actual.status === migration.to.status &&
+        actual.indexability.index === migration.to.index &&
+        actual.indexability.follow === migration.to.follow;
+
+      return migrationStartsAtBaseline && migrationReachedReviewedTarget
+        ? []
+        : [expected.path];
+    }
+
     return !actual || JSON.stringify(actual) !== JSON.stringify(expected)
       ? [expected.path]
       : [];
@@ -212,6 +256,116 @@ export function getSearchHubGuides(
     );
 }
 
+export function getSearchCollectionEntry(
+  collectionId: SearchCollectionId,
+  locale: HomegroundLocale,
+): ContentManifestEntry {
+  const entry = getManifestEntriesByNodeId(
+    searchPlatformManifest,
+    `collection-${collectionId}`,
+  ).find((candidate) => candidate.locale === locale);
+
+  if (!entry) {
+    throw new Error(`Missing search collection manifest entry: ${collectionId}/${locale}`);
+  }
+
+  return entry;
+}
+
+export function getSearchCollectionLanguagePaths(
+  collectionId: SearchCollectionId,
+) {
+  return Object.fromEntries(
+    getManifestEntriesByNodeId(
+      searchPlatformManifest,
+      `collection-${collectionId}`,
+    ).map((entry) => [entry.locale, entry.path]),
+  ) as Partial<Record<HomegroundLocale, string>>;
+}
+
+export function getSearchCollectionGuides(
+  collectionId: SearchCollectionId,
+  locale: HomegroundLocale,
+) {
+  return searchPlatformManifest.entries
+    .filter(
+      (entry) =>
+        entry.locale === locale &&
+        entry.status === "published" &&
+        entry.indexability.index &&
+        entry.contentId.startsWith("guide-") &&
+        entry.contentId !== `collection-${collectionId}`,
+    )
+    .flatMap((entry) => {
+      const guideId = legacyGuideIdFromBodyResource(entry.bodyResource);
+      if (!guideId) return [];
+      const guide = getGuideEntry(guideId, locale);
+      return getGuideCollectionId(guide) === collectionId
+        ? [{ manifest: entry, guide }]
+        : [];
+    })
+    .sort(
+      (left, right) =>
+        (right.manifest.dates.dateModified ?? "").localeCompare(
+          left.manifest.dates.dateModified ?? "",
+        ) || left.manifest.path.localeCompare(right.manifest.path),
+    );
+}
+
+export function getSearchCollectionMetadata(
+  collectionId: SearchCollectionId,
+  locale: HomegroundLocale,
+): Metadata {
+  const entry = getSearchCollectionEntry(collectionId, locale);
+  const leadGuide = getSearchCollectionGuides(collectionId, locale)[0]?.guide;
+  const alternateLocale = getManifestEntriesByNodeId(
+    searchPlatformManifest,
+    entry.contentId,
+  )
+    .filter((candidate) => candidate.locale !== locale)
+    .map((candidate) => candidate.openGraphLocale)
+    .filter((value): value is string => Boolean(value));
+  const socialImage = leadGuide
+    ? [{
+        url: leadGuide.heroImageUrl,
+        width: leadGuide.imageWidth,
+        height: leadGuide.imageHeight,
+        alt: leadGuide.heroAlt,
+      }]
+    : undefined;
+
+  return {
+    title: entry.title,
+    description: entry.description,
+    alternates: { canonical: entry.canonicalPath, languages: entry.alternates },
+    robots: {
+      index: entry.status === "published" && entry.indexability.index,
+      follow: entry.indexability.follow,
+      googleBot: {
+        index: entry.status === "published" && entry.indexability.index,
+        follow: entry.indexability.follow,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    openGraph: {
+      title: entry.h1,
+      description: entry.description,
+      type: "website",
+      locale: entry.openGraphLocale ?? undefined,
+      alternateLocale,
+      url: entry.canonicalPath,
+      images: socialImage,
+    },
+    twitter: {
+      card: socialImage ? "summary_large_image" : "summary",
+      title: entry.h1,
+      description: entry.description,
+      images: socialImage?.map((image) => image.url),
+    },
+  };
+}
+
 export function getIndexableSearchHubEntries() {
   return getIndexableManifestEntries(searchPlatformManifest).filter((entry) =>
     entry.contentId.startsWith("hub-"),
@@ -220,6 +374,7 @@ export function getIndexableSearchHubEntries() {
 
 export function getLegacyGuideManifestEntries() {
   return getIndexableManifestEntries(searchPlatformManifest).filter((entry) =>
+    entry.bodyResource.startsWith("guide:") ||
     entry.bodyResource.startsWith("legacy-guide:"),
   );
 }

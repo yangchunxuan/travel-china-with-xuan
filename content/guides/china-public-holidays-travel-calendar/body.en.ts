@@ -273,6 +273,8 @@ const body = {
           href: "/guides/how-much-does-a-china-trip-cost/",
           description: "Compare location, flexibility and booking terms instead of relying on a universal holiday markup.",
         },
+        { label: "Read Chengdu through its greenway", href: "/guides/chengdu-greenway-city-ring/", description: "Choose a manageable section of Chengdu's ring greenway, connect it to transit and neighbourhood life, and keep a practical exit plan." },
+        { label: "Visit Mogao Caves independently", href: "/guides/mogao-caves-independent-visit-workflow/", description: "Use the official foreign-passport channel, understand normal versus emergency visits, arrive at the correct first stop and protect the day against weather changes." },
       ],
     },
     {

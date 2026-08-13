@@ -279,6 +279,9 @@ export default {
           href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "자유여행, 필요한 부분만 받는 지원과 가이드 동행 일정을 비교합니다.",
         },
+        { label: "녹도로 청두 읽기", href: "/ko/guides/chengdu-greenway-city-ring/", description: "체력과 관심사에 맞는 청두 순환 녹도 구간을 고르고 대중교통 연결과 중간 출구까지 준비합니다." },
+        { label: "러산대불 관람 방식 고르기", href: "/ko/guides/leshan-giant-buddha-land-or-boat-visit/", description: "육로와 강 위에서 보는 풍경, 별도 입장권과 기상 변수를 비교하고, 유람선이 중단돼도 러산이나 청두로 돌아갈 수 있는 동선을 계획합니다." },
+        { label: "싼싱두이박물관 방문 계획하기", href: "/ko/guides/sanxingdui-museum-booking-and-gallery-order/", description: "공식 외국인 전용 예약 채널로 예약하고 청두에서 광한으로 이동한 뒤, 고고학적 맥락부터 청동 유물까지 순서대로 봅니다." },
       ],
     },
     {

@@ -1,7 +1,7 @@
 {
   "id": "how-to-visit-an-archaeological-site-museum",
   "type": "planning",
-  "pillar": "culture-history-people-ideas",
+  "pillar": "explore-attractions-nature-heritage",
   "audienceMarkets": ["global"],
   "format": "museum-field-guide",
   "topics": [
@@ -20,7 +20,7 @@
   "dateModified": "2026-08-13",
   "sourceReviewedDate": "2026-08-13",
   "search": {
-    "section": "culture",
+    "section": "explore",
     "family": "task",
     "primaryIntent": "understand"
   },

@@ -165,7 +165,8 @@ const body = {
         {"label": "浏览 Homeground 中国指南", "href": "/zh/guides/", "description": "返回完整指南集合。"},
         {"label": "选择第一场佛山醒狮表演", "href": "/zh/guides/foshan-lion-dance-first-performance-workflow/", "description": "使用另一套主办方与节目核验方法。"},
         {"label": "查看中国公共假期旅行日历", "href": "/zh/guides/china-public-holidays-travel-calendar/", "description": "预判节庆客流和排期变化。"},
-        {"label": "准备在中国购买门票的支付方式", "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/", "description": "购买当前演出时保留备用支付。"}
+        {"label": "准备在中国购买门票的支付方式", "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/", "description": "购买当前演出时保留备用支付。"},
+        { label: "选择一场川剧演出", href: "/zh/guides/sichuan-opera-face-changing-with-context/", description: "不要只看面具海报；按剧团、剧目、唱念、身段与舞台语境选择并读懂一场川剧。" },
       ]
     },
     {

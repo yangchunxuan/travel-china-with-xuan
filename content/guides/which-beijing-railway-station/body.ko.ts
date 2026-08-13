@@ -435,6 +435,7 @@ const body = {
           href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "역 접근과 잘못 갔을 때의 수습 시간도 실제 이동일에 포함하세요.",
         },
+        { label: "바다링 노선 고르기", href: "/ko/guides/beijing-to-badaling-great-wall-transfer/", description: "출발 지점, 도착 위치, 귀환과 대안을 기준으로 고속철도, S2 교외철도, 877번 버스와 공항 연결을 비교합니다." },
       ],
     },
     {

@@ -278,6 +278,9 @@ const body: StructuredPageBody = {
           href: "/guides/do-you-need-a-tour-guide-in-china/",
           description: "Separate independent travel days from the points where help adds value.",
         },
+        { label: "Match the hub to the correct slope", href: "/guides/changbai-mountain-hubs-to-park-gates/", description: "Use a confirmed North or West Scenic Area booking to choose Changbaishan Station, Changbaishanxi Station or Changbaishan Airport and plan the road transfer." },
+        { label: "Plan a child-compatible route", href: "/guides/china-itinerary-with-young-children/", description: "Design a China route for young children by sleep, food, toilets, carrying load, hotel stability and current child-ticket rules." },
+        { label: "Compare Guilin to Yangshuo", href: "/guides/guilin-yangshuo-transport-route/", description: "Compare rail, road transfer and river travel between Guilin and Yangshuo by station, airport, hotel, luggage, direction and return plan." },
       ],
     },
     {

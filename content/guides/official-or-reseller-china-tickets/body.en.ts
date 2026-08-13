@@ -238,6 +238,8 @@ const body: StructuredPageBody = {
         { label: "Book and route the National Museum of China", href: "/guides/national-museum-of-china-booking-and-route/", description: "Use the live official reservation process for this Beijing museum." },
         { label: "Visit the Forbidden City as a foreign visitor", href: "/guides/forbidden-city-for-foreign-visitors/", description: "Place the official ticket inside the entrance and route plan." },
         { label: "Keep passport names consistent", href: "/guides/passport-name-across-china-bookings/", description: "Prevent a real-name mismatch at confirmation or entry." },
+        { label: "Build a booking dispute file", href: "/guides/china-booking-dispute-evidence-pack/", description: "Freeze the order record, build a dated evidence timeline and escalate through the booking and payment channels without exposing private data." },
+        { label: "Visit Mogao Caves independently", href: "/guides/mogao-caves-independent-visit-workflow/", description: "Use the official foreign-passport channel, understand normal versus emergency visits, arrive at the correct first stop and protect the day against weather changes." },
       ],
     },
     {

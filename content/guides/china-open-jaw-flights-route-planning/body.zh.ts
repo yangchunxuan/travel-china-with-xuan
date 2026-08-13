@@ -286,6 +286,7 @@ const body = {
           href: "/zh/guides/china-240-hour-visa-free-transit-route-check/",
           description: "把第三国（地区）、适用口岸和允许区域条件，与路线是否方便分开判断。",
         },
+        { label: "安排好抵达第一天", href: "/zh/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "从入境、行李、进城、酒店衔接和迟到规则判断，抵达日能否稳妥安排有入场时段的预约。" },
       ],
     },
     {

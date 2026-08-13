@@ -80,9 +80,10 @@ test("guide answers full-day counting and park-order intent without inventing at
   assert.match(copy, /Conditional, not the default/);
   assert.match(copy, /local background: Xuan grew up in Zhangjiajie/);
   assert.match(sources, /zjjdaxiagu\.com\/guide\.html/);
-  assert.match(guide, /"@type": "Person"/);
-  assert.match(guide, /author: \{ "@id": "https:\/\/homegroundchina\.com\/#organization" \}/);
-  assert.match(guide, /contributor: \{ "@id": "https:\/\/homegroundchina\.com\/#xuan" \}/);
+  assert.match(guide, /editorialPersonSchema\(locale\)/);
+  assert.match(guide, /author: \{ "@id": EDITORIAL_PERSON_ID \}/);
+  assert.match(guide, /reviewedBy: \{ "@id": EDITORIAL_PERSON_ID \}/);
+  assert.match(guide, /<LegacyEditorialByline/);
   assert.match(guide, /utm_content=planner-contact#planner-contact/);
   assert.doesNotMatch(guide, /planner=destinations|free-brief|service=/);
   assert.match(header, /`\$\{copy\.path\}#planner-contact`/);

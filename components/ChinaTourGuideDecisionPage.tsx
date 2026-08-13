@@ -7,6 +7,11 @@ import {
 } from "../lib/tourGuideDecisionI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -15,6 +20,7 @@ import styles from "./ChinaTourGuideDecisionPage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 
 function createStructuredData(
+  locale: HomegroundLocale,
   copy: TourGuideDecisionCopy,
   guide: ReturnType<typeof getGuideEntry>,
 ) {
@@ -29,6 +35,7 @@ function createStructuredData(
         name: "Homeground China",
         url: `${SITE_URL}/`,
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -45,7 +52,8 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: copy.metadata.inLanguage,
-        author: { "@id": organizationId },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": organizationId },
         mainEntityOfPage: guide.canonicalUrl,
         citation: copy.sources.map((source) => source.url),
@@ -169,7 +177,7 @@ export function ChinaTourGuideDecisionPage({
 }) {
   const copy = getTourGuideDecisionCopy(locale);
   const guide = getGuideEntry(tourGuideDecisionGuideId, locale);
-  const structuredData = createStructuredData(copy, guide);
+  const structuredData = createStructuredData(locale, copy, guide);
   const ui = {
     en: {
       breadcrumb: "Breadcrumb",
@@ -269,9 +277,11 @@ export function ChinaTourGuideDecisionPage({
                   {paragraph}
                 </p>
               ))}
-              <p className={styles.reviewed}>
-                {copy.hero.reviewedLabel} {copy.hero.reviewedDate}
-              </p>
+              <LegacyEditorialByline
+                guideId={guide.id}
+                locale={locale}
+                reviewedAt={guide.sourceReviewedDate}
+              />
             </div>
 
             <figure className={styles.heroMedia}>

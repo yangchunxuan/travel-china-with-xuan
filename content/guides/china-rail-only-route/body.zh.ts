@@ -67,7 +67,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "第一次乘坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "路线通过铁路测试后，再使用本指南。" },
     { label: "比较夜车和白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "有意识地保护睡眠质量或一个观光日。" },
-    { label: "只在路线两端使用航班", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "开口程口岸可以在不折返的情况下保留铁路主轴。" }
+    { label: "只在路线两端使用航班", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "开口程口岸可以在不折返的情况下保留铁路主轴。" },
+    { label: "了解中国公益性慢火车", href: "/zh/guides/china-public-welfare-slow-trains/", description: "了解公益性慢火车为何仍在运行、日常乘客是谁，以及普通旅行者如何尊重地使用这项公共服务。" },
+    { label: "规划山东半岛铁路弧线", href: "/zh/guides/shandong-peninsula-coastal-city-rail-arc/", description: "先想清楚青岛、烟台、威海各自增加什么，再核对准确车站；若海滨体验重复，就有依据地少去一城。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "中国铁路旅客服务", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" },

@@ -44,6 +44,7 @@ const body: StructuredPageBody = {
       { label: "Forbidden City for foreign visitors", href: "/guides/forbidden-city-for-foreign-visitors/", description: "Keep the Palace Museum's ticket and entrance workflow separate from the National Museum booking." },
       { label: "China with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Balance a large indoor museum with realistic walking and recovery time." },
       { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Protect attention instead of stacking major Beijing sights into one exhausted day." },
+      { label: "Verify a China attraction ticket", href: "/guides/official-or-reseller-china-tickets/", description: "Identify the attraction’s ticket owner, compare reseller support and terms, and verify the booking state before trusting a China attraction ticket." },
     ] },
     { id: "consultation", type: "callout", title: "Need a Beijing day checked as one sequence?", body: "If the museum must sit beside another timed booking, an older traveller's pace or a same-day station transfer, a Homeground travel consultant can review the actual order and buffers. Bring the confirmed booking windows and hotel area; the useful answer depends on them.", tone: "neutral" },
     { id: "sources", type: "sources", title: "Official and image sources reviewed", items: [

@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "比较广州—香港交通", href: "/zh/guides/guangzhou-hong-kong-transport-route/", description: "路线顺序确定后再选择车站和方式。" },
     { label: "选择深圳—香港口岸", href: "/zh/guides/shenzhen-hong-kong-transport-route/", description: "按两侧酒店和后续安排匹配管制站。" },
-    { label: "测试开口程航班", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "查看不同抵离城市能否消除折返。" }
+    { label: "测试开口程航班", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "查看不同抵离城市能否消除折返。" },
+    { label: "比较深圳住宿区", href: "/zh/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "从抵达枢纽、香港过关、商务地址、景点、夜间活动和行李比较福田、罗湖与南山。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "跨境高速铁路行程规划", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "港铁高速铁路", reviewedAt: "2026-08-12" },

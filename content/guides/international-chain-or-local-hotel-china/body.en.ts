@@ -213,6 +213,7 @@ const body = {
         { label: "Why are hotels in China so cheap?", href: "/guides/why-are-hotels-in-china-so-cheap/", description: "Compare like-for-like value." },
         { label: "Is the hotel really near the metro?", href: "/guides/china-hotel-near-metro/", description: "Audit the exit and walking route." },
         { label: "How to pay in China as a tourist", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Prepare a payment backup." },
+        { label: "Run a hotel exit safety check", href: "/guides/china-hotel-emergency-exit-fire-safety-check/", description: "Read and walk the hotel evacuation route, prepare for smoke, night-time and limited mobility, and change room or property when the route is unusable." },
       ],
     },
     {

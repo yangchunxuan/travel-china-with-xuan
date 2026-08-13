@@ -12,6 +12,11 @@ import {
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
+  EDITORIAL_ORGANIZATION_ID,
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import {
   MALAYSIA_ZHANGJIAJIE_IMAGE_ROOT,
   MALAYSIA_ZHANGJIAJIE_SOURCES,
   malaysiaZhangjiajieGuideId,
@@ -21,6 +26,7 @@ import {
 } from "../lib/zhangjiajieFromMalaysiaGuide";
 import { getMalaysiaZhangjiajieGuideCopy } from "../lib/zhangjiajieFromMalaysiaGuideI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieFromMalaysiaPage.module.css";
@@ -53,8 +59,7 @@ function createStructuredData(
   copy: MalaysiaZhangjiajieGuideCopy,
 ) {
   const guide = getGuideEntry(malaysiaZhangjiajieGuideId, locale);
-  const organizationId = `${SITE_URL}/#organization`;
-  const authorId = `${SITE_URL}${copy.studioPath}#team-evan`;
+  const organizationId = EDITORIAL_ORGANIZATION_ID;
 
   return {
     "@context": "https://schema.org",
@@ -65,13 +70,7 @@ function createStructuredData(
         name: "Homeground China",
         url: `${SITE_URL}/`,
       },
-      {
-        "@type": "Person",
-        "@id": authorId,
-        name: "Evan",
-        url: `${SITE_URL}${copy.studioPath}`,
-        worksFor: { "@id": organizationId },
-      },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -89,7 +88,8 @@ function createStructuredData(
           height: guide.imageHeight,
           caption: copy.images.heroCaption,
         },
-        author: { "@id": authorId },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": organizationId },
         audience: {
           "@type": "Audience",
@@ -281,14 +281,12 @@ export function ZhangjiajieFromMalaysiaPage({
                 {copy.hero.anchor}
                 <ArrowRight aria-hidden="true" size={17} />
               </a>
+              <LegacyEditorialByline
+                guideId={guide.id}
+                locale={locale}
+                reviewedAt={guide.sourceReviewedDate}
+              />
               <p className={styles.reviewed}>
-                {copy.hero.byLabel}{" "}
-                <Link href={copy.studioPath}>{copy.hero.authorName}</Link>
-                {" · "}
-                {copy.hero.reviewedLabel}{" "}
-                <time dateTime={guide.sourceReviewedDate}>
-                  {copy.hero.reviewedDate}
-                </time>
                 <span>{copy.hero.localNote}</span>
               </p>
             </div>

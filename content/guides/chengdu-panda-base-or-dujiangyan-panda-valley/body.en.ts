@@ -279,6 +279,9 @@ export default {
           href: "/guides/do-you-need-a-tour-guide-in-china/",
           description: "Compare independent travel, targeted support and guided days.",
         },
+        { label: "Read Chengdu through its greenway", href: "/guides/chengdu-greenway-city-ring/", description: "Choose a manageable section of Chengdu's ring greenway, connect it to transit and neighbourhood life, and keep a practical exit plan." },
+        { label: "Choose a Leshan Giant Buddha visit", href: "/guides/leshan-giant-buddha-land-or-boat-visit/", description: "Compare the mountain route and river view, understand their separate tickets and weather risks, and plan the return to Leshan or Chengdu without relying on a boat." },
+        { label: "Plan a Sanxingdui museum visit", href: "/guides/sanxingdui-museum-booking-and-gallery-order/", description: "Use the official inbound-visitor booking channel, reach Guanghan from Chengdu and follow a gallery order that builds context before the famous bronzes." },
       ],
     },
     {

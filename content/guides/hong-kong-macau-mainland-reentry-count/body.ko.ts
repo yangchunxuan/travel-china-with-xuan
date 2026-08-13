@@ -257,6 +257,7 @@ const body: StructuredPageBody = {
           href: "/ko/guides/lost-passport-in-china-exit-recovery/",
           description: "여행 중 문서가 바뀌었을 때 출국 계획을 지키세요.",
         },
+        { label: "주하이와 헝친 경로 비교하기", href: "/ko/guides/guangzhou-macau-transport-route/", description: "광저우남역에서 주하이역·궁베이 또는 헝친역·헝친통상구로 가는 전체 동선을 출입경 운영, 짐, 늦은 도착 후 숙박 대안까지 비교합니다." },
       ],
     },
     {

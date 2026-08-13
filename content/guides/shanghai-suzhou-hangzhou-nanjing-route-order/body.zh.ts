@@ -66,7 +66,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "规划上海—杭州交通", href: "/zh/guides/shanghai-hangzhou-transport-route/", description: "城市顺序确定后再选车站。" },
     { label: "读懂一次苏州园林访问", href: "/zh/guides/how-to-read-a-suzhou-garden/", description: "增加酒店前先给苏州明确目的。" },
-    { label: "选择浦东还是虹桥", href: "/zh/guides/shanghai-pudong-or-hongqiao-airport/", description: "航班机场可能推翻最佳路线。" }
+    { label: "选择浦东还是虹桥", href: "/zh/guides/shanghai-pudong-or-hongqiao-airport/", description: "航班机场可能推翻最佳路线。" },
+    { label: "理解今天的大运河", href: "/zh/guides/grand-canal-everyday-urban-history/", description: "分清世界遗产、仍在运行的水道与今天的街区生活，再选择能看见三者关系的公共河段。" },
+    { label: "选择黄海湿地基地", href: "/zh/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "分清盐城黄海湿地的分散区域，按东台、大丰或盐城市区选择基地，并准备即使没见到鸟也成立的替代安排。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "上海铁路车站指南", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "上海市人民政府", reviewedAt: "2026-08-12" },

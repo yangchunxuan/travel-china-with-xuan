@@ -63,7 +63,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Check whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test the final architecture against usable days." },
     { label: "Choose a useful transport hotel", href: "/guides/china-hotel-near-metro/", description: "A hub works only if daily departures are easy." },
-    { label: "Test different entry and exit cities", href: "/guides/china-open-jaw-flights-route-planning/", description: "Open-jaw gateways can turn spokes into a forward chain." }
+    { label: "Test different entry and exit cities", href: "/guides/china-open-jaw-flights-route-planning/", description: "Open-jaw gateways can turn spokes into a forward chain." },
+    { label: "Choose the right Dali Old Town drop-off", href: "/guides/dali-station-to-old-town/", description: "Match your hotel to South, Erhai, Cangshan or North Gate, save a Chinese destination card and avoid dragging luggage across Dali Old Town." },
+    { label: "Walk Nanming from day to night", href: "/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "Walk from the old-city lanes to Jiaxiu Pavilion, the Nanming River and Qingyun Market in an order that follows daylight, evening lights and meal energy." },
+    { label: "Match each night to the next sight", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Place each Zhangjiajie night beside the next confirmed sight, arrival or departure, then decide whether one hotel move saves enough backtracking." },
   ] },
   { id: "sources", type: "sources", title: "Official source reviewed", items: [
     { label: "China Railway passenger service and live journey search", url: "https://www.12306.cn/en/index.html", publisher: "China Railway 12306", reviewedAt: "2026-08-12" }

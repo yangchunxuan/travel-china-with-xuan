@@ -1,0 +1,24 @@
+.byline {
+  align-items: baseline;
+  color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  font-weight: 650;
+  gap: 0.5rem;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
+  margin: 0.75rem 0 0;
+}
+
+.byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.byline a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

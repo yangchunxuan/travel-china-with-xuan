@@ -246,7 +246,8 @@ const body: StructuredPageBody = {
           label: "China entry requirements",
           href: "/guides/china-entry-requirements/",
           description: "Understand the ordinary document roles behind the emergency process."
-        }
+        },
+        { label: "Check your passport before China", href: "/guides/china-passport-validity-and-blank-pages/", description: "Separate visa, visa-free, transit and airline rules, inspect your passport, and confirm borderline cases with the authority that owns each decision." },
       ]
     },
     {

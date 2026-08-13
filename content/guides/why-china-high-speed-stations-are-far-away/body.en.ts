@@ -36,7 +36,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "Apply the mechanism to a real trip", items: [
     {label: "Which Beijing railway station?", href: "/guides/which-beijing-railway-station/", description: "Use the guide to Beijing's eight major railway terminals."},
     {label: "China high-speed rail first-trip guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Keep tickets, documents and boarding in the national guide."},
-    {label: "China private transfer or public transport", href: "/guides/china-private-transfer-or-public-transport/", description: "Choose the final mile by group and luggage."}
+    {label: "China private transfer or public transport", href: "/guides/china-private-transfer-or-public-transport/", description: "Choose the final mile by group and luggage."},
+    { label: "Match the Guiyang ticket to the right hub", href: "/guides/guiyang-airport-and-rail-hubs/", description: "Use the exact ticket, hotel and onward route to distinguish Longdongbao Airport and rail station, Guiyang North, Guiyang East and central Guiyang Station." },
+    { label: "See how a high-speed train is built", href: "/guides/how-china-builds-high-speed-trains/", description: "Follow a representative aluminium-bodied train from carbody fabrication to systems integration, commissioning, laboratory and track tests." },
   ]},
   {id: "sources", type: "sources", title: "Official and independent sources", items: [
     {label: "Guidance on planning around railway passenger stations", url: "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201805/t20180507_962719.html", publisher: "National Development and Reform Commission", reviewedAt: "2026-08-13"},

@@ -3,6 +3,10 @@ import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import {
   ZHANGJIAJIE_GUIDE_SOURCES,
 } from "../lib/zhangjiajieGuide";
 import {
@@ -11,6 +15,7 @@ import {
   type ZhangjiajieGuideCopy,
 } from "../lib/zhangjiajieGuideI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieGuidePage.module.css";
@@ -257,12 +262,7 @@ function createStructuredData(
         name: "Homeground China",
         url: "https://homegroundchina.com/",
       },
-      {
-        "@type": "Person",
-        "@id": "https://homegroundchina.com/#xuan",
-        name: "Xuan",
-        worksFor: { "@id": "https://homegroundchina.com/#organization" },
-      },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -279,8 +279,8 @@ function createStructuredData(
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
-        author: { "@id": "https://homegroundchina.com/#organization" },
-        contributor: { "@id": "https://homegroundchina.com/#xuan" },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         citation: ZHANGJIAJIE_GUIDE_SOURCES.map((source, index) => ({
           "@type": "WebPage",
@@ -406,8 +406,13 @@ export function ZhangjiajieGuidePage({
               <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
               <h1>{guide.headline}</h1>
               <p className={styles.heroLead}>{copy.hero.lead}</p>
+              <LegacyEditorialByline
+                guideId={guide.id}
+                locale={locale}
+                reviewedAt={guide.sourceReviewedDate}
+              />
               <p className={styles.reviewed}>
-                {copy.hero.preparedBy} · {copy.hero.publishedLabel}{" "}
+                {copy.hero.publishedLabel}{" "}
                 <time dateTime={guide.datePublished}>{copy.hero.publishedDate}</time>{" "}
                 · {copy.hero.updatedLabel}{" "}
                 <time dateTime={guide.dateModified}>{copy.hero.updatedDate}</time>{" "}

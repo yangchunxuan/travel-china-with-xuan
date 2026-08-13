@@ -7,14 +7,29 @@ import {
   type GuideEntry,
 } from "../../lib/guideRegistry";
 import {
+  getGuideCollectionId,
+  getSearchCollection,
+  getSearchCollectionPath,
+} from "../../lib/searchCollectionI18n";
+import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../../lib/homegroundI18n";
-import { getSearchPlatformCopy } from "../../lib/searchPlatformI18n";
+import {
+  getSearchPlatformCopy,
+  getSearchSectionPath,
+} from "../../lib/searchPlatformI18n";
 import type { StructuredPageBody } from "../../lib/content-system/page-body";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
+import { EditorialByline } from "../EditorialByline";
+import homeStyles from "../HomegroundHomePage.module.css";
+import {
+  EDITORIAL_ORGANIZATION_ID,
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../../lib/editorialIdentity";
 import styles from "./EditorialGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -69,8 +84,14 @@ function structuredData(
   );
   const homePath = getHomegroundCopy(locale).path;
   const guidesPath = `${homePath}guides/`;
+  const collectionId = getGuideCollectionId(guide);
+  const collection = getSearchCollection(collectionId);
+  const platformCopy = getSearchPlatformCopy(locale);
+  const sectionCopy = platformCopy.sections[collection.section];
+  const sectionPath = getSearchSectionPath(collection.section, locale);
+  const collectionPath = getSearchCollectionPath(collection, locale);
   const inLanguage = locale === "zh" ? "zh-Hans" : locale;
-  const organizationId = `${SITE_URL}/#organization`;
+  const organizationId = EDITORIAL_ORGANIZATION_ID;
 
   return {
     "@context": "https://schema.org",
@@ -81,6 +102,7 @@ function structuredData(
         name: "Homeground China",
         url: `${SITE_URL}/`,
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -96,7 +118,8 @@ function structuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage,
-        author: { "@id": organizationId },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": organizationId },
         mainEntityOfPage: guide.canonicalUrl,
         ...(sources.length > 0 ? { citation: sources } : {}),
@@ -119,6 +142,18 @@ function structuredData(
           {
             "@type": "ListItem",
             position: 3,
+            name: sectionCopy.navLabel,
+            item: `${SITE_URL}${sectionPath}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: collection.locales[locale].label,
+            item: `${SITE_URL}${collectionPath}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 5,
             name: guide.navTitle,
             item: guide.canonicalUrl,
           },
@@ -141,6 +176,12 @@ export function EditorialGuidePage({
   const copy = ui[locale];
   const homeCopy = getHomegroundCopy(locale);
   const guidesPath = `${homeCopy.path}guides/`;
+  const collectionId = getGuideCollectionId(guide);
+  const collection = getSearchCollection(collectionId);
+  const platformCopy = getSearchPlatformCopy(locale);
+  const sectionCopy = platformCopy.sections[collection.section];
+  const sectionPath = getSearchSectionPath(collection.section, locale);
+  const collectionPath = getSearchCollectionPath(collection, locale);
   const date = new Intl.DateTimeFormat(
     locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-US",
     { dateStyle: "long", timeZone: "UTC" },
@@ -151,7 +192,11 @@ export function EditorialGuidePage({
     : guide.format.replaceAll("-", " ");
 
   return (
-    <div className={styles.pageRoot} lang={homeCopy.htmlLang}>
+    <div
+      className={`${homeStyles.localeRoot} ${styles.pageRoot}`}
+      data-homeground-locale={locale}
+      lang={homeCopy.htmlLang}
+    >
       <a className={styles.skipLink} href="#editorial-guide-body">
         {copy.skip}
       </a>
@@ -177,6 +222,8 @@ export function EditorialGuidePage({
               <ol>
                 <li><Link href={homeCopy.path}>{copy.home}</Link></li>
                 <li><span aria-hidden="true">/</span><Link href={guidesPath}>{copy.guides}</Link></li>
+                <li><span aria-hidden="true">/</span><Link href={sectionPath}>{sectionCopy.navLabel}</Link></li>
+                <li><span aria-hidden="true">/</span><Link href={collectionPath}>{collection.locales[locale].label}</Link></li>
                 <li aria-current="page"><span aria-hidden="true">/</span>{guide.navTitle}</li>
               </ol>
             </nav>
@@ -186,6 +233,7 @@ export function EditorialGuidePage({
             </p>
             <h1>{guide.headline}</h1>
             <p className={styles.dek}>{guide.description}</p>
+            <EditorialByline locale={locale} reviewedAt={guide.sourceReviewedDate} />
           </div>
 
           <figure className={styles.heroFigure}>

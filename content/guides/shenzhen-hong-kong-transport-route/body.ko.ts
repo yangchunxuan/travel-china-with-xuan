@@ -40,6 +40,7 @@ const body = {
       { label: "일정이 너무 빠듯한지 확인", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "국경 대기와 역 이동도 여행 시간에 넣으세요." },
       { label: "국제선 전 마지막 밤 계획", href: "/ko/guides/china-last-night-before-international-flight/", description: "출국 직전에 불확실한 출입경 이동을 넣지 마세요." },
       { label: "중국 결제 실패 대안 준비", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "중국 본토 교통비를 낼 방법을 둘 이상 준비하세요." },
+      { label: "선전 숙소 지역 비교", href: "/ko/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "도착 허브, 홍콩 이동, 업무 주소, 관광, 저녁과 짐을 기준으로 푸톈·뤄후·난산을 비교합니다." },
     ]},
     { id: "sources", type: "sources", title: "공식 출처와 이미지 표시", items: [
       { label: "출입경 시설 체계와 명칭", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "홍콩 보안국", reviewedAt: "2026-08-12" },

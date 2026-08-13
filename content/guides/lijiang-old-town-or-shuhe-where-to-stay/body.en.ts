@@ -299,6 +299,7 @@ export default {
           href: "/guides/why-are-hotels-in-china-so-cheap/",
           description: "Understand what a low room rate may and may not include before comparing properties.",
         },
+        { label: "Plan the rail, base and first night", href: "/guides/lijiang-shangri-la-transport-route/", description: "Compare train and road travel from Lijiang to Shangri-La, arrange the station-to-hotel transfer and keep the first evening light after the rise in altitude." },
       ],
     },
     {

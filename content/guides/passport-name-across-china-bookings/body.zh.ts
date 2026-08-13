@@ -326,6 +326,8 @@ const body: StructuredPageBody = {
           href: "/zh/guides/forbidden-city-for-foreign-visitors/",
           description: "把场馆实名票规则应用到重要景点。",
         },
+        { label: "整理预订争议证据", href: "/zh/guides/china-booking-dispute-evidence-pack/", description: "固定订单与条款，建立带时间的事实线，再分别通过预订和支付渠道处理，同时避免泄露护照、卡片与行程隐私。" },
+        { label: "出发前检查护照", href: "/zh/guides/china-passport-validity-and-blank-pages/", description: "区分签证、免签、过境和航司规则，检查证件状态，并向真正负责各项决定的官方渠道确认临界情况。" },
       ],
     },
     {

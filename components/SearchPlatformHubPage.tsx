@@ -1,5 +1,9 @@
 import Link from "next/link";
 import {
+  getSearchCollectionPath,
+  searchCollections,
+} from "../lib/searchCollectionI18n";
+import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
@@ -134,6 +138,9 @@ export function SearchPlatformHubPage({
   const entry = getSearchHubEntry(section, locale);
   const guides = getSearchHubGuides(section, locale);
   const visibleGuides = guides;
+  const collections = searchCollections.filter(
+    (collection) => collection.section === section,
+  );
   const languagePaths = getSearchHubLanguagePaths(section);
   const schema = jsonLdForHub(section, locale);
 
@@ -189,6 +196,25 @@ export function SearchPlatformHubPage({
             })}
           </div>
         </nav>
+
+        <section className={styles.platformMap} aria-labelledby="hub-topics-title">
+          <div className={styles.platformMapIntro}>
+            <p className={styles.eyebrow}>{sectionCopy.eyebrow}</p>
+            <h2 id="hub-topics-title">{sectionCopy.scopeTitle}</h2>
+            <p>{sectionCopy.description}</p>
+          </div>
+          <ul>
+            {collections.map((collection) => (
+              <li key={collection.id}>
+                <Link href={getSearchCollectionPath(collection, locale)}>
+                  <span>{collection.locales[locale].label}</span>
+                  <small>{collection.locales[locale].description}</small>
+                  <b aria-hidden="true">↗</b>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section className={styles.collection} aria-labelledby="hub-collection-title">
           <div className={styles.collectionHeading}>
