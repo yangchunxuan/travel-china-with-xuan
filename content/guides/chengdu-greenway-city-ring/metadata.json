@@ -1,0 +1,23 @@
+{
+  "id": "chengdu-greenway-city-ring",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "urban-infrastructure-field-guide",
+  "topics": ["chengdu", "greenway", "cycling", "urban-life"],
+  "destinations": ["china", "sichuan", "chengdu"],
+  "heroImagePath": "/images/guides/chengdu-greenway-city-ring/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-greenway-city-ring/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "relationship", "primaryIntent": "plan"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/chengdu-greenway-city-ring/", "title": "Chengdu Greenway City Ring: Choose a Useful Segment", "headline": "Chengdu Greenway City Ring: Read Urban Life Without Turning It into a 100-Kilometre Challenge", "description": "Choose a manageable Chengdu city-ring greenway segment, connect it to metro and neighbourhood life, and plan exits for weather, fatigue and changing access.", "heroAlt": "Verified public segment of Chengdu's city-ring greenway used for everyday walking and cycling", "navTitle": "Choose a Chengdu greenway segment", "featuredLinkLabel": "Read Chengdu through its greenway", "openGraphLocale": "en_US", "cardTags": ["Chengdu", "Greenway", "Urban life"]},
+    "zh": {"path": "/zh/guides/chengdu-greenway-city-ring/", "title": "成都环城绿道：选一段真正有用的路线", "headline": "成都环城绿道：读城市生活，不把它变成百公里挑战", "description": "选择可控制的成都环城绿道段落，连接地铁与社区生活，并为天气、疲劳和临时通行变化准备退出方案。", "heroAlt": "供市民日常步行与骑行的成都环城绿道地点可核验公共段落", "navTitle": "选择成都绿道段落", "featuredLinkLabel": "沿绿道读懂成都", "openGraphLocale": "zh_CN", "cardTags": ["成都", "绿道", "城市生活"]},
+    "ko": {"path": "/ko/guides/chengdu-greenway-city-ring/", "title": "청두 순환 녹도: 쓸모 있는 구간 고르기", "headline": "청두 순환 녹도: 100km 도전이 아니라 도시 생활 읽기", "description": "감당 가능한 청두 순환 녹도 구간을 고르고 지하철·동네 생활과 연결하며 날씨, 피로와 통행 변화에 대비한 출구를 설계합니다.", "heroAlt": "주민이 일상 보행과 자전거에 이용하는 청두 순환 녹도의 확인된 공개 구간", "navTitle": "청두 녹도 구간 고르기", "featuredLinkLabel": "녹도로 청두 읽기", "openGraphLocale": "ko_KR", "cardTags": ["청두", "녹도", "도시생활"]}
+  }
+}
