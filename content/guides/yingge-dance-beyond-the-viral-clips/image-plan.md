@@ -1,37 +1,29 @@
 # Image plan — Yingge dance beyond the viral clips
 
-Status: **ASSETS NEEDED — performer/institution permission required; no image included.**
+Status: **SELECTED AND VERIFIED — real open-licence procession photograph; no AI generation or scene alteration.**
 
-## Hero requirement
+## Published hero
 
-- **Subject:** one named Yingge team during an exact, documented performance in eastern Guangdong. The frame should show several performers, paired sticks and enough formation/route context to avoid reducing the form to a painted-face portrait.
-- **Identity:** team name, locality/project tradition, event, organizer, municipality, venue or street segment, exact capture date and photographer.
-- **Rights:** written editorial web permission from the photographer plus organizer/team approval and performer/guardian releases where required. An official post, press article or social upload is not itself a reuse licence.
-- **Crop:** source at least 2400 px wide; 1600 × 1000 WebP. Keep paired bodies and formation spacing; no generative extension or face replacement.
-- **EN alt:** “Members of [team] perform Yingge with paired sticks in formation at [event] in [place] on [date].”
-- **ZH alt:** “【队伍】成员于【日期】在【地点】的【活动】中手持双短棒列阵表演英歌舞。”
-- **KO alt:** “［팀］ 단원들이 ［날짜］ ［장소］의 ［행사］에서 쌍봉을 들고 대형을 이루어 잉거무를 공연한다.”
+- **Subject:** two Yingge performers carrying paired sticks during the first-day-of-the-lunar-year procession in Dabu, Dahao, Shantou.
+- **Source page:** [2011达埠正月初一巡游](https://commons.wikimedia.org/wiki/File:2011%E8%BE%BE%E5%9F%A0%E6%AD%A3%E6%9C%88%E5%88%9D%E4%B8%80%E5%B7%A1%E6%B8%B8.jpg)
+- **Creator:** Ixioini.
+- **Date and place:** 2011-02-03; Dabu, Dahao, Shantou, Guangdong.
+- **Identity evidence:** the creator describes the scene as the Dahao/Dabu Spring Festival procession and `扣英歌`; Wikimedia Commons categories include Haojiang District, Parades in Shantou and Yingge Dance. No team or lineage is named, so none is invented.
+- **Licence:** [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The cropped and upscaled derivative remains under CC BY-SA 3.0, with creator, source and licence linked in the default-collapsed Sources section.
+- **Retrieved source:** 1160 × 868 JPEG, SHA-256 `a00383856715d124c2fe41ef16123e3560ea6ccc827116539d5f08782f15b260`.
+- **Published derivative:** `public/images/guides/yingge-dance-beyond-the-viral-clips/hero-1600.webp`, 1600 × 1000, SHA-256 `d22c3447a7f4cd62979dfe5f1299e487cab3409f3e234c6c2b71be3c8d66a32a`.
+- **Processing:** conventional crop, upscale and RGB WebP conversion only. No face, costume, stick, street or background element was added, removed, replaced or generated.
 
-Final alt must use the approved asset’s facts; do not identify a Water Margin character from face paint alone.
+## Final alt text
 
-## Supporting assets
+- **EN:** “Two Yingge performers hold paired sticks during a 2011 New Year procession in Dahao, Shantou.”
+- **ZH:** “2011 年汕头达濠达埠正月初一巡游中，两名英歌表演者手持双短棒行进。”
+- **KO:** “2011년 산터우 다하오 다부의 음력 정월 초하루 행렬에서 두 잉거무 공연자가 쌍봉을 들고 이동하는 모습.”
 
-| Object | Why it helps | Evidence and rights required |
-| --- | --- | --- |
-| Wide formation and route | Shows spacing, front/body/rear relationship and audience boundary | Same named event/team; route permission and current crowd-control context |
-| Hands, sticks and footwork | Makes rhythm visible without teaching choreography | Performer consent; caption only observed movement, not a universal technique |
-| Musicians or percussion context | Connects movement and sound | Identify instruments through team/organizer; musician and photographer permission |
-| Dated event board/programme | Verifies event, date and organizer | Reproduction permission; redact personal/ticket data; do not reuse as a future schedule |
-| Three local teams, if comparison is commissioned | Can illustrate real regional difference | Matched, separately licensed images with exact Chaoyang/Puning/Jiazi identities; never infer style from costume alone |
+## Evidence boundary
 
-## Exclusions
-
-- No scraped viral frame, Douyin/TikTok screenshot, press photo without licence or fan repost.
-- No generic “Chinese folk dance,” lion dance, staged costume portrait or AI documentary scene.
-- No photo of painted faces as proof of locality, role, age, story or authenticity.
-- China ICH record images are not cleared by citation; follow its explicit permission requirement.
-- Do not photograph minors, backstage preparation or community ritual without informed permission.
+The photograph supports the observed Yingge performers, paired sticks and Shantou procession context. It does not identify a troupe, Water Margin character, exact local lineage, fixed choreography or future event schedule. The frame is not used to generalize Chaoyang, Puning or Jiazi records.
 
 ## Keep as HTML
 
-Regional-record comparison, event-verification checklist, viewing sequence, evidence labels and failure recovery remain HTML. They are multilingual, accessible and likely to change; do not freeze them into an infographic.
+The regional-record comparison, event-verification checklist, viewing sequence, evidence labels and failure recovery remain accessible HTML. They are multilingual and dynamic and must not be frozen into an infographic.

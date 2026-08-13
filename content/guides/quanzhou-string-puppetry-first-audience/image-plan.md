@@ -1,38 +1,29 @@
 # Image plan — Quanzhou string puppetry first audience
 
-Status: **ASSETS NEEDED — institution, photographer and performer permission required; no image included.**
+Status: **SELECTED AND VERIFIED — real open-licence performance photograph; no AI generation or scene alteration.**
 
-## Hero requirement
+## Published hero
 
-- **Subject:** a named Quanzhou string-puppetry production in which an exact puppet is visibly performing and the relationship to the manipulator/control above can be understood. Keep enough stage context to show this is a live production, not a display case.
-- **Record:** work or excerpt, puppet/role as identified by the troupe, company, venue, performance date, manipulator/performer where supplied, photographer and original file.
-- **Rights:** written editorial web licence from the photographer and Quanzhou Marionette Heritage and Protection Center or relevant producer; performer permission and venue clearance where required. An official show page is evidence, not automatic image permission.
-- **Crop:** source at least 2400 px wide; 1600 × 1000 WebP. Keep hands/control, strings and puppet within the meaningful frame; no generative string repair, removal or extension.
-- **EN alt:** “In [work], a Quanzhou string puppet performs below the visible control of [named performer/troupe] at [venue] on [date].”
-- **ZH alt:** “在【剧目】中，一具泉州提线木偶在可见的操纵控制下表演，演出者或剧团为【名称】，地点为【场馆】，日期为【日期】。”
-- **KO alt:** “［작품］에서 취안저우 줄인형이 보이는 조종 장치 아래 공연하며, ［공연자/극단］·［공연장］·［날짜］가 확인된다.”
+- **Subject:** a Quanzhou Puppet Troupe performer controlling a string puppet during the 2014 Smithsonian Folklife Festival in Washington, DC.
+- **Source page:** [2014 smithsonian folklife festival DC (14415391987)](https://commons.wikimedia.org/wiki/File:2014_smithsonian_folklife_festival_DC_(14415391987).jpg)
+- **Creator:** S Pakhrin.
+- **Date and place:** 2014-07-06; Smithsonian Folklife Festival, Washington, DC, United States.
+- **Identity evidence:** Wikimedia Commons categorizes the file under `Quanzhou Puppet Troupe`; the public event context is visible in the frame. The exact work, puppet role and performer name are not supplied and are not inferred.
+- **Licence:** [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). Homeground's crop remains attributed to the creator and linked to the source and licence in the default-collapsed Sources section.
+- **Retrieved source:** Wikimedia 1920 × 1280 derivative, SHA-256 `5b8d6680fa57e7a45f0e62fac104a0177dda4e9d9fe6630e65cd165f90bd836b`.
+- **Published derivative:** `public/images/guides/quanzhou-string-puppetry-first-audience/hero-1600.webp`, 1600 × 1000, SHA-256 `64334ce2cef4da79c13b7a71fb40c9692203b9fae20cdb8f2de4df102980bb3f`.
+- **Processing:** conventional centre crop, resize and RGB WebP conversion only. No person, puppet, string, prop or stage element was added, removed, repaired or generated.
 
-Final alt and caption must follow the troupe’s identification. Do not infer character, wood species, age or number of strings from the photograph.
+## Final alt text
 
-## Supporting assets
+- **EN:** “A Quanzhou Puppet Troupe performer controls a string puppet at the 2014 Smithsonian Folklife Festival in Washington, DC.”
+- **ZH:** “2014 年华盛顿史密森民俗节上，泉州木偶剧团演员操纵一具提线木偶。”
+- **KO:** “2014년 미국 워싱턴 스미스소니언 민속축제에서 취안저우 인형극단 공연자가 줄인형을 조종하는 모습.”
 
-| Object | Explanatory value | Evidence and permission |
-| --- | --- | --- |
-| Wide stage and manipulation bridge | Shows vertical relationship and stage scale | Exact work/date; producer, performer and photographer approval |
-| Control and hand detail | Connects small hand changes to puppet movement | Demonstrator-approved public view; no claim that one control is universal |
-| Puppet body/costume close-up | Shows articulated body, carved/painted surface and textile work | Troupe catalogue identity; object owner and photographer permission |
-| Musicians/voice performers | Prevents the form being reduced to silent mechanics | Name roles only through programme evidence; likeness and publication permission |
-| Current programme board | Teaches verification | Capture date and venue; reproduction permission; never present it as a permanent schedule |
-| Post-show public demonstration | Helps link performance to safeguarding | Explicitly public session, named practitioner, participant consent; no staged “secret workshop” |
+## Evidence boundary
 
-## Exclusions
-
-- No screenshots from the centre, ticket platforms, videos or social accounts without a compatible licence.
-- No generic hand puppet, shadow puppet, toy marionette or museum case relabelled as Quanzhou string puppetry.
-- No AI documentary image, reconstructed backstage scene or invented historic workshop.
-- Do not use one still image to count strings or rank technical difficulty.
-- Do not reproduce full scripts, songs, programme notes or a complete filmed scene without rights.
+The image identifies the troupe context and the public Washington performance, not a visit to a theatre in Quanzhou. It does not identify the work, character, puppet age, material, maker or number of strings, and it does not prove any current programme, venue, ticket condition or performance quality.
 
 ## Keep as HTML
 
-The current-programme verification flow, four-part viewing timeline, string-count boundary, evidence labels and recovery table stay as accessible HTML. A static diagram would encourage a false universal mechanism and would age with schedules.
+The programme-verification flow, four-part viewing sequence, string-count boundary, evidence labels and recovery table remain accessible HTML. They must not be frozen into a static or falsely universal mechanism diagram.

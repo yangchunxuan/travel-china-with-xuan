@@ -837,3 +837,24 @@ clearly disclosed two-photo composite; the Beijing–Xi'an–Chengdu hero is a
 clearly disclosed three-photo triptych. No other scene elements were combined,
 removed or generated. Every final SHA-256 is unique within this batch and was
 checked against the repository's existing hero assets before release.
+
+## Employee 3 media-feature release (August 13, 2026)
+
+Both hero images below are real documentary photographs selected because the
+local Homeground photo library did not contain an accurate Quanzhou string-
+puppetry or eastern Guangdong Yingge image. This release uses **0 / 2 AI or
+AI-assisted covers**. The images identify only the recorded performance
+context; they do not prove a current programme, troupe roster, route, schedule
+or admission arrangement.
+
+| Guide | Original source, creator and direct licence | Captured / exact visible scene | Retrieved source SHA-256 | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- | --- | --- |
+| `quanzhou-string-puppetry-first-audience` | [Quanzhou Puppet Troupe at the 2014 Smithsonian Folklife Festival](https://commons.wikimedia.org/wiki/File:2014_smithsonian_folklife_festival_DC_(14415391987).jpg), S Pakhrin, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | 2014-07-06; a Quanzhou Puppet Troupe performer, control frame, strings and puppet during a public performance at the Smithsonian Folklife Festival in Washington, DC | `5b8d6680fa57e7a45f0e62fac104a0177dda4e9d9fe6630e65cd165f90bd836b` (retrieved 1920 × 1280 Wikimedia derivative) | `public/images/guides/quanzhou-string-puppetry-first-audience/hero-1600.webp`; `64334ce2cef4da79c13b7a71fb40c9692203b9fae20cdb8f2de4df102980bb3f` | Identifies the named troupe and visible string-control relationship, but the photograph was made in Washington, not Quanzhou. It does not identify the performer, work, puppet role, current programme or present venue access. |
+| `yingge-dance-beyond-the-viral-clips` | [2011 Dabu New Year procession](https://commons.wikimedia.org/wiki/File:2011%E8%BE%BE%E5%9F%A0%E6%AD%A3%E6%9C%88%E5%88%9D%E4%B8%80%E5%B7%A1%E6%B8%B8.jpg), Ixioini, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | 2011-02-03; two Yingge performers with paired sticks during the first-day-of-the-lunar-year procession in Dabu, Dahao, Shantou | `a00383856715d124c2fe41ef16123e3560ea6ccc827116539d5f08782f15b260` | `public/images/guides/yingge-dance-beyond-the-viral-clips/hero-1600.webp`; `d22c3447a7f4cd62979dfe5f1299e487cab3409f3e234c6c2b71be3c8d66a32a` | Identifies one documented Shantou procession only. It does not establish a team name, lineage, character, standard formation, current route or performance schedule. |
+
+The derivatives were made by conventional crop, resize and RGB WebP
+conversion only. No scene element was added, removed or generated. The
+Quanzhou CC BY image retains attribution and licence-link requirements. The
+Yingge crop remains available under CC BY-SA 3.0, with its share-alike
+obligation preserved. Exact crop and attribution notes are also recorded in
+each guide's `image-plan.md` and default-collapsed Sources section.
