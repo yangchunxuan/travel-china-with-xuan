@@ -1,7 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {schemaVersion:"1.0.0",blocks:[
-  {id:"lead",type:"lead",text:"중국의 극적인 카르스트 함몰지는 온라인에서 흔히 ‘하늘 구덩이’라는 뜻의 톈컹으로 묶인다. 지질학자는 여행 사진 설명보다 이 용어를 좁게 쓴다. 과학적으로 확인된 톈컹이 자동으로 공개 명소가 되는 것은 아니며, 관광 운영자가 이름에 톈컹을 썼다고 지질 분류가 증명되는 것도 아니다. 실용적인 여행 과제는 세 관문을 통과하는 것이다. 정확한 지형, 합법적 방문 지위, 현재 관리되는 출입이다."},
+  {id:"lead",type:"lead",text:"온라인에서는 중국의 거대한 카르스트 함몰지를 흔히 ‘하늘 구덩이’라는 뜻의 톈컹으로 묶지만, 지질학은 이 용어를 훨씬 엄격하게 쓴다. 과학적으로 확인된 톈컹이 곧 공개 명소가 되는 것은 아니며, 관광지 이름에 톈컹이 들어간다고 지질 분류가 증명되는 것도 아니다. 일정을 짜기 전에는 지형의 정체, 합법적인 방문 지위와 현재 관리되는 경로를 각각 확인해야 한다."},
   {id:"answer",type:"callout",title:"바로 내리는 결론",body:"정식 관광지 또는 현재 지방 당국·운영자가 합법적 공개 경로를 게시한 곳만 방문한다. 전망대, 계단과 표시 길을 벗어나지 않는다. 좌표, 드론 영상이나 탐사 글은 야생 함몰지로 내려갈 허가가 아니다. 과학적 명칭, 운영자, 입구와 현재 통행을 모두 확인할 수 없으면 목적지가 아니라 연구 맥락으로 남긴다.",tone:"decision"},
   {id:"definition-heading",type:"heading",level:2,text:"첫 관문: 지질학적으로 톈컹인가?"},
   {id:"definition",type:"paragraph",text:"중국 지질 자료와 국제 동굴과학은 보통 톈컹을 깊이와 체적이 매우 크고 측면이 가파른 카르스트 음지형으로 설명한다. 대체로 지하 배수와 이어지며 용식·붕괴 과정으로 형성된다. 발표된 분류는 단순히 장관인 구멍이 아니라 측정 가능한 형태를 쓴다. 정의와 기준도 연구와 함께 발전했으므로 이 글은 사진만 보고 이름 없는 함몰지를 톈컹으로 선언하지 않는다."},
@@ -19,10 +19,9 @@ const body = {schemaVersion:"1.0.0",blocks:[
     ["미확인 ‘야생 톈컹’","소셜 글, 지도명, 별칭·좌표만 있고 당국·운영 증거가 없다.","방문하거나 길을 게시하지 않는다.","‘비밀’, ‘무료’, ‘입장권 없음’ 또는 자력 하강 약속."]
   ]},
   {id:"examples-heading",type:"heading",level:2,text:"구덩이를 수집하지 말고 사례로 등급을 이해한다"},
-  {id:"examples",type:"comparison",title:"잘 알려진 두 공개 맥락",leftTitle:"충칭 펑제 샤오자이 톈컹",rightTitle:"광시 러예–펑산 카르스트",rows:[
-    {label:"중요성",left:"공식 지방·관광 계획과 공개 해설 맥락이 있는 주요 명명 톈컹.",right:"여러 거대 함몰지, 동굴과 보호지·지질공원 맥락을 가진 넓은 카르스트 지역."},
-    {label:"계획 교훈",left:"정확한 관광지 입구와 현재 운영 경로를 확인한다. 지형은 주변 모든 개발 사업과 같지 않다.",right:"모든 보도 톈컹이 연결된 공개 정류장이라고 생각하지 말고 정식 관광지·운영 경로를 고른다."},
-    {label:"추정 금지",left:"계획 의견수렴이 새 시설·경로 개장을 증명한다.",right:"‘톈컹군’을 좌표로 자유 횡단할 수 있다."}
+  {id:"examples",type:"comparison",title:"이름은 알려졌지만 방문 근거가 다른 두 곳",columns:[
+    {heading:"충칭 펑제 샤오자이 톈컹",items:["확인된 상태: 과학적으로 중요한 톈컹이며 공식 계획·해설 자료가 있지만, 이번 검토에서는 현재 운영 중인 공개 경로를 확인하지 못했다.","계획 원칙: 이름이 확인된 운영자가 최신 공개 경로를 안내하기 전에는 지질·계획 맥락으로만 둔다.","추정 금지: 계획 의견수렴이 새 관람 시설이나 경로의 개장을 증명한다."]},
+    {heading:"광시 러예 다스웨이 톈컹군 관광지",items:["확인된 상태: 정식 4A 관광지다. 정확한 입구, 개방 경로와 당일 운영 상태는 운영자에게 다시 확인해야 한다.","계획 원칙: 정식 관광지라는 점은 공개 방문 후보로 유리하지만 경로와 시간이 고정된다는 뜻은 아니다.","추정 금지: 4A 등급이 모든 톈컹, 계단이나 동굴 경로의 오늘 개방을 증명한다."]}
   ]},
   {id:"choose-heading",type:"heading",level:2,text:"다섯 질문 장소 필터"},
   {id:"choose",type:"list",items:["분류: 어느 지질조사, 동료평가 연구나 권위 있는 지질공원 해설이 지형을 확인하는가?","운영: 오늘 어느 명시된 공공기관·관광 운영자가 정확한 입구를 관리하는가?","경로: 홍보만이 아니라 현재 전망대, 계단, 길, 셔틀이나 인솔 경로를 게시하는가?","조건: 최신 공지는 날씨, 보수, 낙석, 침수, 산불이나 수용량 통제를 어떻게 설명하는가?","복구: 구름, 비, 폐쇄나 이동성 때문에 주 전망을 못 볼 때 유용한 지상·실내 대안이 있는가?"]},
@@ -34,17 +33,16 @@ const body = {schemaVersion:"1.0.0",blocks:[
     ["기술 탐사","로프, 동굴 구조와 과학·탐험 역량.","공식 승인, 자격 팀과 구조 계획.","개인 관광 범위 밖."]
   ]},
   {id:"scenarios-heading",type:"heading",level:2,text:"두 여행자는 다르게 골라야 한다"},
-  {id:"scenarios",type:"comparison",title:"명성이 아니라 장소를 맞춘다",leftTitle:"첫 방문 지질 관심자",rightTitle:"고령 부모와 동행하는 자녀",rows:[
-    {label:"우선",left:"명확한 해설과 규모·형태를 보여 주는 관리 전망점 하나.",right:"확인된 출입, 난간, 휴식, 화장실과 지상 복구 선택."},
-    {label:"계획",left:"정식 장소 하나에서 지도를 읽고 가장자리·지하 배수를 비교할 시간을 둔다.",right:"가장자리·방문자센터 층부터 쓰고 계단과 복귀 노력을 확인한 뒤 하강한다."},
-    {label:"거부",left:"희귀하다는 것만 가치인 외진 좌표.",right:"측정 가능한 출입 근거 없이 ‘쉽다’고만 쓴 경로."]
+  {id:"scenarios",type:"comparison",title:"명성이 아니라 장소를 맞춘다",columns:[
+    {heading:"첫 방문 지질 관심자",items:["우선: 명확한 해설과 규모·형태를 보여 주는 관리 전망점 하나.","계획: 정식 장소 하나에서 지도를 읽고 가장자리·지하 배수를 비교할 시간을 둔다.","거부: 희귀하다는 것만 가치인 외진 좌표."]},
+    {heading:"고령 부모와 동행하는 자녀",items:["우선: 확인된 출입, 난간, 휴식, 화장실과 지상 복구 선택.","계획: 가장자리·방문자센터 층부터 쓰고 계단과 복귀 노력을 확인한 뒤 하강한다.","거부: 측정 가능한 출입 근거 없이 ‘쉽다’고만 쓴 경로."]}
   ]},
   {id:"ecology-heading",type:"heading",level:2,text:"톈컹은 모험 세트가 아니라 서식지다"},
   {id:"ecology",type:"list",items:["깊은 함몰지는 독특한 습도, 빛과 온도 구배를 만들어 특수 식물군을 지지할 수 있으며 UNESCO 개요는 생태 연구 가치를 강조한다.","난간 뒤와 관리 길에 머물러 연약한 토양, 식생과 동굴 입구를 밟지 않는다.","물건을 던지거나 큰 소리로 메아리를 시험하고 야생동물에게 먹이를 주거나 돌·식물을 가져가지 않는다.","보호되지 않은 민감 장소에 정확한 지오태그를 붙이지 않는다. 노출은 교란을 늘리지만 구조·관리 능력을 만들지 않는다.","외진 곳으로 긴 이동 전 화장실을 쓰고 쓰레기를 모두 가져간다.","사진을 이유로 난간 위로 기대거나 규모를 위해 오르고 드론을 함몰지 안으로 보내지 않는다."]},
   {id:"weather-heading",type:"heading",level:2,text:"카르스트 날씨는 사진만 아니라 경로를 바꾼다"},
   {id:"weather",type:"paragraph",text:"비는 미끄럼, 유출, 낙석과 지하 홍수 위험을 키울 수 있고 안개는 긴 이동을 정당화한 규모 시야를 없앨 수 있으며 더위와 습도는 복귀 오르막을 어렵게 한다. 모든 장소의 예보가 아니라 조건부 위험이다. 운영자의 당일 공지와 지역 기상경보를 확인하고 취소 가능한 계획을 둔다. ‘개방’도 모든 샛길·하부 경로가 안전하다는 증거는 아니다."},
-  {id:"failure-heading",type:"heading",level:2,text:"실패 복구"},
-  {id:"failure",type:"table",caption:"출입 실패 때 지질 과제를 유지한다",columns:["실패","복구","유용한 결과"],rows:[
+  {id:"failure-heading",type:"heading",level:2,text:"통행이나 날씨가 달라졌을 때"},
+  {id:"failure",type:"table",caption:"경로를 강행하지 않고 지질 관찰을 이어 가는 법",columns:["변화","조정 방법","얻을 수 있는 것"],rows:[
     ["안개가 함몰지를 가림","방문자센터, 지질 단면, 모형과 가장자리 식생을 보고 교통 여유 안에서만 기다린다.","시야를 꾸며내지 않고 형성과 서식지를 이해한다."],
     ["비 뒤 하부 경로 폐쇄","명시적으로 열린 지상 경로에 머물거나 떠난다. 장벽 옆 발자국을 따라가지 않는다.","배수·붕괴 지형에 관리가 필요한 이유를 본다."],
     ["계단을 감당할 수 없음","확인된 가장자리·센터 층을 쓰거나 출입 근거가 문서화된 다른 정식 카르스트 장소를 고른다.","신체 무리 없이 지질 해설을 얻는다."],
@@ -59,10 +57,11 @@ const body = {schemaVersion:"1.0.0",blocks:[
     {label:"중국 휠체어 접근 경로 계획",href:"/ko/guides/wheelchair-accessible-china-route-planning/",description:"모호한 접근성 표시를 측정 가능한 경로 근거로 바꾼다."}
   ]},
   {id:"sources",type:"sources",title:"공식·독립 자료",items:[
+    {label:"대표 이미지 — 2009년 11월 샤오자이 톈컹 남쪽 가장자리에서 촬영. 역사 사진일 뿐 현재 승인된 경로의 증거는 아님",url:"https://commons.wikimedia.org/wiki/File:Xiaozhaitiankeng.jpg",publisher:"Brookqi — PD-self; 출처 표기일 뿐 Homeground에 대한 지지를 뜻하지 않음",reviewedAt:"2026-08-13"},
     {label:"톈컹 지질조사 보도",url:"https://www.cgs.gov.cn/ywdt/dwdt/202205/t20220513_834899.html",publisher:"중국지질조사국",reviewedAt:"2026-08-13"},
     {label:"톈컹 발견과 카르스트 맥락",url:"https://www.cgs.gov.cn/ywdt/dwdt/201612/t20161209_827370.html",publisher:"중국지질조사국",reviewedAt:"2026-08-13"},
     {label:"중국 톈컹 생태와 연구",url:"https://www.unesco.org/en/articles/chinas-heavenly-pits-dive-unknown",publisher:"UNESCO",reviewedAt:"2026-08-13"},
-    {label:"광시 정식 관광지 분류",url:"https://wlt.gxzf.gov.cn/zfxxgk/wjzl/btjzcwj/t19719409.shtml",publisher:"광시좡족자치구 문화관광청",reviewedAt:"2026-08-13"},
+    {label:"다스웨이 톈컹군 관광지의 정식 4A 등급",url:"https://wlt.gxzf.gov.cn/zfxxgk/wjzl/btjzcwj/t19719409.shtml",publisher:"광시좡족자치구 문화관광청",reviewedAt:"2026-08-13"},
     {label:"동굴과학 톈컹 용어",url:"https://bcra.org.uk/pub/candks.oldformat/v32_2.html",publisher:"British Cave Research Association",reviewedAt:"2026-08-13"}
   ]}
 ]} as const satisfies StructuredPageBody;

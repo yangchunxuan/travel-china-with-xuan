@@ -1,16 +1,22 @@
 # Image plan — wenchang-commercial-space-city
 
-No asset is included. Use only first-party or commercially licensed, location-verified documentary photography; no AI launch or documentary simulation.
+## Selected hero
+
+- Published asset: `public/images/guides/wenchang-commercial-space-city/hero-1600.webp`
+- Source: [Wenchang Space Launch Site 02](https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_02.jpg), Shujianyang, 10 June 2022, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- Verified scene: distant launch infrastructure photographed across the coast from a nearby beach in Wenchang.
+- Edit: cropped from 1800×2320 at `(0,500)` to 1800×1125, resized to 1600×1000 and converted to WebP with metadata removed. The derivative is published under CC BY-SA 4.0; no rocket, structure or coastline was generated or composited.
+- Evidence boundary: this 2022 coastal view is historical context. It does not establish a current designated viewing point, public access, launch schedule or foreign-traveller booking route.
 
 ## Hero
 
-- Exact place: a currently designated public viewing coast in Longlou/Wenchang, shot from the legal public side, with enough verified infrastructure or coastline to establish the location.
+- Exact place: a nearby Wenchang beach documented by the photographer; it is not presented as a current designated viewing area.
 - Must show: the relationship between coast, viewing space and distant launch infrastructure; ordinary-day imagery is acceptable.
 - Must not show: a restricted-pad image presented as tourist access, a different Chinese launch site, a news frame, a composited rocket, or private land without permission.
 - Crop: 16:9; preserve coastline and viewing distance rather than isolating a tower.
-- Alt EN: `Public coastal viewing area in Wenchang with launch infrastructure visible at a lawful distance`.
-- Alt ZH: `文昌公共海岸观赏区与合法距离外可见的发射设施`.
-- Alt KO: `원창 공개 해안 관람 구역과 합법적인 거리에서 보이는 발사 시설`.
+- Alt EN: `Wenchang launch infrastructure seen across the coast from a nearby beach in June 2022`.
+- Alt ZH: `2022年6月从附近海岸远望文昌发射设施`.
+- Alt KO: `2022년 6월 인근 해안에서 멀리 본 원창 발사 시설`.
 
 ## Supporting needs
 

@@ -1,10 +1,10 @@
 # A6 research pack — Beijing robot-industry visitor access
 
-**Candidate:** A6  
-**Action:** `research-only`  
-**Working title ZH:** 北京机器人产业区：现场看人形机器人热潮  
-**Working title EN:** Beijing's Robot Industry: Can Foreign Visitors See the Humanoid-Robot Boom in Person?  
-**Reviewed:** 2026-08-13  
+**Candidate:** A6
+**Action:** `research-only`
+**Working title ZH:** 北京机器人产业区：现场看人形机器人热潮
+**Working title EN:** Beijing's Robot Industry: Can Foreign Visitors See the Humanoid-Robot Boom in Person?
+**Reviewed:** 2026-08-13
 **Central recommendation:** Do not create an evergreen visitor guide yet. Retain this as a current-status research package and recheck the two public-facing E-Town products before any publication.
 
 ## Direct answer

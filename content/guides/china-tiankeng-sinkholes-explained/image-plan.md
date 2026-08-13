@@ -1,16 +1,22 @@
 # Image plan — china-tiankeng-sinkholes-explained
 
-No image asset is included. Use only exact-site, permission-clear photography from a formal public route. Never create an AI documentary landform.
+## Selected hero
+
+- Published asset: `public/images/guides/china-tiankeng-sinkholes-explained/hero-1600.webp`
+- Source: [Xiaozhai Tiankeng](https://commons.wikimedia.org/wiki/File:Xiaozhaitiankeng.jpg), Brookqi, November 2009; the creator released the photograph into the public domain on the Commons file page.
+- Verified scene: Xiaozhai Tiankeng in Fengjie, Chongqing, photographed from the southern rim.
+- Edit: cropped from 1500×1000 at `(0,31)` to 1500×938, modestly resized to 1600×1000 and converted to WebP with metadata removed. No scene element was generated or composited.
+- Evidence boundary: this historical landscape photograph identifies the landform only. It does not prove that the camera position is an authorised public platform or that a managed visitor route is open today.
 
 ## Hero
 
-- Exact site: a named, geologically documented tiankeng at a currently operated formal scenic site, photographed from an authorized public platform. Preferred candidates require central operator recheck: Xiaozhai Tiankeng or a named formal Leye–Fengshan site.
+- Exact site: Xiaozhai Tiankeng, used as geological and historical context rather than current visitor-access evidence.
 - Required elements: visible rim and depth relationship, plus railing/platform edge if it helps prove lawful access.
 - Avoid: generic sinkhole, mine, quarry, cave chamber, another country's cenote, expedition-only viewpoint, drone image without legal/rights record, or image of a wild site paired with directions.
 - Crop: 16:9 retaining both near rim and distant floor/sidewall for scale; no human placed at an unsafe edge.
-- Alt EN: `Named Chinese tiankeng seen from an authorized public platform at a formal scenic site`.
-- Alt ZH: `从正式景区授权公共平台观察一处有明确名称的中国天坑`.
-- Alt KO: `정식 관광지의 승인된 공개 전망대에서 본 이름이 확인된 중국 톈컹`.
+- Alt EN: `Xiaozhai Tiankeng in Fengjie, Chongqing, seen from its southern rim in November 2009`.
+- Alt ZH: `2009年11月从南缘看到的重庆奉节小寨天坑`.
+- Alt KO: `2009년 11월 남쪽 가장자리에서 본 충칭 펑제 샤오자이 톈컹`.
 
 ## Supporting needs
 

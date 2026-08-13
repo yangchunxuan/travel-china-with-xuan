@@ -1,7 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {schemaVersion:"1.0.0",blocks:[
-  {id:"lead",type:"lead",text:"大运河不是一条完整封存的古河，也不只是帝国工程史。漫长水系上，受保护的闸坝桥梁、仍在工作的现代航道、重新整治的滨水步道、住宅、店铺和居民每天走的近路并置存在。真正有用的旅行任务，是先判断眼前属于哪一层证据，再观察水如何继续影响流动与街区生活，而不是把每一段热闹河岸都说成未经改变的历史。"},
+  {id:"lead",type:"lead",text:"大运河不是一条封存起来的古河，也不只有帝国工程这一层历史。在漫长水系沿线，受保护的船闸与桥梁、仍在运行的航道、更新后的滨水空间、住宅和店铺同时存在。旅行时最值得做的，是先分清眼前属于遗产、运行系统还是当代街区，再观察水路如何继续影响城市生活；不要把每一段热闹河岸都当成未经改变的历史。"},
   {id:"answer",type:"callout",title:"同时读三条运河",body:"第一，确认有文献支持的遗产构件；第二，判断水道现在是否仍承担运输、排水或城市通行功能；第三，离开景观带一条街，看住宅入口、买菜、上学、维修、送货和晚间锻炼。好的观察能连接三层，差的观察只把仿古铺装当成历史延续。",tone:"decision"},
   {id:"layers-heading",type:"heading",level:2,text:"“大运河”这个名称包含三种不同证据"},
   {id:"layers",type:"table",caption:"先分层，再建立联系",columns:["层次","什么才算证据","可以说明什么","不能证明什么"],rows:[
@@ -48,6 +48,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
     {label:"比较雕版与活字印刷",href:"/zh/guides/woodblock-and-movable-type-printing-decisions/",description:"理解物质生产系统如何与城市交换发生关系。"}
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
+    {label:"头图——2023-11-22拍摄的拱宸桥、大运河水面与滨水公共空间；不能证明当前活动或通行状态",url:"https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg",publisher:"Windmemories — CC BY-SA 4.0；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},
+    {label:"头图许可——CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-13"},
     {label:"大运河世界遗产",url:"https://whc.unesco.org/en/list/1443/",publisher:"UNESCO 世界遗产中心",reviewedAt:"2026-08-13"},
     {label:"苏北运河现代货运走廊",url:"https://www.mot.gov.cn/xinwen/jiaotongyaowen/202601/t20260113_4197211.html",publisher:"中华人民共和国交通运输部",reviewedAt:"2026-08-13"},
     {label:"杭州市大运河核心监控区国土空间管控细则",url:"https://www.hangzhou.gov.cn/art/2023/2/6/art_1229063387_1829308.html",publisher:"杭州市人民政府",reviewedAt:"2026-08-13"},

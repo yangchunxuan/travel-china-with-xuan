@@ -3,7 +3,7 @@
 - Candidate: B06
 - Action: `new-page`
 - Reviewed: 2026-08-13
-- Status: COPY DRAFT — CENTRAL INTEGRATION REVIEW AND ASSETS NEEDED
+- Status: CENTRAL EDITED — RELEASE CANDIDATE
 
 ## Collision check
 
@@ -27,3 +27,10 @@ No exact page was found on `origin/main`, live Homeground, open PRs/issues or re
 - Never inferred: supplier quality, factory ownership, labour conditions, compliance or transaction safety.
 
 Recheck before publication: current district/category directory, public opening, service-point location and photography rules. The page is educational, not supplier due diligence, ranking, lead generation or legal/commercial advice.
+
+## Published hero record
+
+- [Tourist goods in Yiwu International Trade Mart](https://commons.wikimedia.org/wiki/File:Tourist_goods_in_Yiwu_International_Trade_Mart.jpg), iamdanw, 2014-08-01, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
+- Source SHA-256: `a45b9b6503bc79ba760a4f95df1decf9d59f153ad0c32e8224371d55e2ab61c6`.
+- Published derivative: `public/images/guides/yiwu-market-to-factory-network/hero-1600.webp`; SHA-256 `d407c2799ffb3b9495602e0b0f5a9ecffbc2ce122282ed5a1c815e45afc943bb`.
+- Conventional crop, resize and WebP conversion only; metadata removed. This 2014 display does not prove a current district, booth, seller, factory relationship or market layout.

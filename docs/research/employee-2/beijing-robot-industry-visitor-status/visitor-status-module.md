@@ -1,8 +1,8 @@
 # B28 merge module — Beijing robot visitor status
 
-**Candidate:** B28  
-**Action:** `merge` into A6  
-**Collision:** Exact intent collision with A6. No page, slug or metadata created.  
+**Candidate:** B28
+**Action:** `merge` into A6
+**Collision:** Exact intent collision with A6. No page, slug or metadata created.
 **Reviewed:** 2026-08-13
 
 This module is deliberately concise so central can insert it into a future Beijing technology feature after direct operator confirmation.

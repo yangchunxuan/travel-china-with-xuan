@@ -3,7 +3,7 @@
 - Candidate: B03
 - Action: `new-page`
 - Reviewed: 2026-08-13
-- Status: COPY DRAFT — CENTRAL INTEGRATION REVIEW AND ASSETS NEEDED
+- Status: CENTRAL EDITED — RELEASE CANDIDATE
 
 ## Collision check
 
@@ -23,3 +23,10 @@ No exact canonical, live article, open PR/issue or remote article-branch body wa
 Launch windows, viewing areas, traffic controls, public-venue opening, booking, passport handling and construction status are dynamic. Reviewed 2026-08-13 and must be checked from the responsible authority/operator at central integration and before publication. No price, fixed launch schedule or promised planned service is frozen in copy.
 
 Homeground judgement: the safest durable page teaches the entity map and a verification chain, then makes any launch a conditional event layer.
+
+## Published hero record
+
+- [Wenchang Space Launch Site 02](https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_02.jpg), Shujianyang, 2022-06-10, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- Source SHA-256: `4e927ec8902fd08ea3694985028c366e670b09c95141a10d169e768a07c9ffeb`.
+- Published derivative: `public/images/guides/wenchang-commercial-space-city/hero-1600.webp`; SHA-256 `97627c95d4640c4456bd3682cb83a8293a17fdefd203906931c54464b9d91e3f`; derivative published under CC BY-SA 4.0.
+- Conventional crop, resize and WebP conversion only; metadata removed. This 2022 coastal view is not proof of a current designated viewing point, public access, launch schedule or foreign-traveller booking route.

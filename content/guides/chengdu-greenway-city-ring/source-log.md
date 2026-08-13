@@ -3,7 +3,7 @@
 - Candidate: B08
 - Action: `new-page`
 - Reviewed: 2026-08-13
-- Status: COPY DRAFT — CENTRAL INTEGRATION REVIEW AND ASSETS NEEDED
+- Status: CENTRAL EDITED — RELEASE CANDIDATE
 
 ## Collision check
 
@@ -22,3 +22,10 @@ No exact canonical or live/branch article was found. Chengdu attraction and tran
 Entry points, detours, flood/maintenance closure, event controls, bike rental/return, surface condition, lighting and services are dynamic. Reviewed 2026-08-13; verify from the relevant park/greenway operator before central integration and publication.
 
 Homeground judgement: a short entry–midpoint–exit segment is more useful to most visitors than presenting the full ring as a must-complete attraction.
+
+## Published hero record
+
+- [Chengdu Greenway](https://commons.wikimedia.org/wiki/File:Chengdu_Greenway.jpg), MspreilsCN, 2022-03-12, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+- Source SHA-256: `839c49a35a030778e49ec66b6c5918757169b89268de997dcf53e4ff32fdc76e`.
+- Published derivative: `public/images/guides/chengdu-greenway-city-ring/hero-1600.webp`; SHA-256 `1566d52f6aa5f20db93a57c26ed445137d7ffd7bf8e6057746d2655e233a988e`.
+- Conventional crop, resize and WebP conversion only; EXIF/GPS/device metadata removed. The photograph does not prove current access, rentals, services or conditions around the full ring.

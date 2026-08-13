@@ -4,7 +4,7 @@
 - Action: `update-existing`
 - Canonical owner: `grand-canal-everyday-urban-history`
 - Reviewed: 2026-08-13
-- Status: COPY DRAFT — CENTRAL INTEGRATION REVIEW AND ASSETS NEEDED
+- Status: CENTRAL EDITED — RELEASE CANDIDATE
 
 ## Collision and ownership check
 
@@ -25,3 +25,10 @@ The canonical was present in the remote Search Map topic inventory, but no artic
 - Long-term pattern: canals influence crossings, street orientation, land use and exchange. This is analytical context, not a promise about any one street.
 - Homeground judgement: choose one section where heritage, working infrastructure and present-day urban life can be read together.
 - Recheck before publication: exact public access, construction/flood-control notices, museum/boat hours and whether any selected viewpoint is lawful. No fixed opening hours or ticket prices are frozen in copy.
+
+## Published hero record
+
+- [20231122 Gongchen Bridge 01](https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg), Windmemories, 2023-11-22, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- Source SHA-256: `9dd6afb63b01eda24194b4cd748546b689247caa1fae32622ba79ed957bb443d`.
+- Published derivative: `public/images/guides/grand-canal-everyday-urban-history/hero-1600.webp`; SHA-256 `c3f535099d3f24962f2960d4be1dd3707c7d369f48f6d628ab285288f2350fb4`; derivative published under CC BY-SA 4.0.
+- Conventional crop, resize and WebP conversion only; EXIF/GPS/device metadata removed. The image identifies Gongchen Bridge and the canal, not current events, access or navigation conditions.

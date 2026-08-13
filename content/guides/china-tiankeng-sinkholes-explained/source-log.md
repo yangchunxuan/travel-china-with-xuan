@@ -3,7 +3,7 @@
 - Candidate: B14
 - Action: `new-page`
 - Reviewed: 2026-08-13
-- Status: COPY DRAFT — CENTRAL INTEGRATION REVIEW AND ASSETS NEEDED
+- Status: CENTRAL EDITED — RELEASE CANDIDATE
 
 ## Collision check
 
@@ -23,3 +23,10 @@ No exact canonical, live article, open PR/issue or remote article body was found
 Exact hours, tickets, managed routes, stair/cave openings, shuttles, flood/rockfall/fire closures and accessibility are dynamic. Reviewed 2026-08-13. Current operator evidence was not available for every named tiankeng, so no price or fixed route is supplied and no wild site is recommended.
 
 Homeground judgement: a scientifically interesting landform becomes a visitor destination only after a separately verified legal and managed-access layer exists.
+
+## Published hero record
+
+- [Xiaozhai Tiankeng](https://commons.wikimedia.org/wiki/File:Xiaozhaitiankeng.jpg), Brookqi, November 2009, released into the public domain by the creator on the Commons file page.
+- Source SHA-256: `140c0c945803358ef603792eaa42e579e359df1f5b2415b5c626d2928b8b429c`.
+- Published derivative: `public/images/guides/china-tiankeng-sinkholes-explained/hero-1600.webp`; SHA-256 `a4915c8ba340a9fd50d6675e8765a750ccf4c21c28d17ad3926ccb8fcc0ab586`.
+- Conventional crop, modest resize and WebP conversion only; metadata removed. This historical southern-rim view does not prove current legal access, an authorised platform or an open visitor route.

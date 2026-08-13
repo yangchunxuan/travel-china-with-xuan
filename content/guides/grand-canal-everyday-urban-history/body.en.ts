@@ -48,6 +48,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
     {label:"Compare woodblock and movable-type printing",href:"/guides/woodblock-and-movable-type-printing-decisions/",description:"See how material systems shaped urban production and exchange."}
   ]},
   {id:"sources",type:"sources",title:"Official and independent sources",items:[
+    {label:"Hero image — Gongchen Bridge, Grand Canal water and riverside public space, photographed 2023-11-22; not evidence of current event or access conditions",url:"https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg",publisher:"Windmemories — CC BY-SA 4.0; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},
+    {label:"Hero image licence — CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-13"},
     {label:"The Grand Canal World Heritage property",url:"https://whc.unesco.org/en/list/1443/",publisher:"UNESCO World Heritage Centre",reviewedAt:"2026-08-13"},
     {label:"Northern Jiangsu canal as a modern freight corridor",url:"https://www.mot.gov.cn/xinwen/jiaotongyaowen/202601/t20260113_4197211.html",publisher:"Ministry of Transport of China",reviewedAt:"2026-08-13"},
     {label:"Hangzhou Grand Canal core-zone spatial controls",url:"https://www.hangzhou.gov.cn/art/2023/2/6/art_1229063387_1829308.html",publisher:"Hangzhou Municipal Government",reviewedAt:"2026-08-13"},

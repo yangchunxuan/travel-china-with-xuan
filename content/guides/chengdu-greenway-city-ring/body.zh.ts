@@ -1,12 +1,12 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {schemaVersion:"1.0.0",blocks:[
-  {id:"lead",type:"lead",text:"成都环城绿道很容易被误解成一条单一的景观骑行景点。更准确的读法是城市基础设施：一条长环线嵌在更大的天府绿道体系中，把生态空间、公园、道路、社区和交通接口连接起来。对多数游客，有用任务不是完成全环，而是选一段能看见成都如何处理增长、休闲与日常移动的路线，同时保留可靠出口。"},
-  {id:"answer",type:"callout",title:"直接答案",body:"计划 8–20 公里的一段，不要默认完成全环。用当前官方或运营地图确认准确入口、路面和出口；从公共交通附近开始；中途保留第二出口；在再次核验前，不依赖租车、餐饮、照明或全程无阻。步行者用更短的公园边缘—社区段也能读到同样多的城市信息。",tone:"decision"},
+  {id:"lead",type:"lead",text:"成都环城绿道很容易被看成一处需要“打卡完成”的骑行景点，其实它更接近城市基础设施：环线属于更大的天府绿道体系，连接生态空间、公园、道路、社区和交通。政府资料中的环城绿道约为100公里；2026年报道中的96公里是一次赛事线路，不是新的官方总长度，也不是固定游客路线。对大多数旅行者，选一段交通方便、观察重点明确的路线，比追求全环更有意义。"},
+  {id:"answer",type:"callout",title:"直接答案",body:"先确认入口、路面和出口，再从公共交通附近开始，并在中途保留第二个出口。Homeground把步行4–8公里、骑行8–20公里作为实用规划范围；它们不是官方路线分类、长度限制或安全保证。出发前仍要重新核对租车、餐饮、照明、维修与通行情况。",tone:"decision"},
   {id:"layers-heading",type:"heading",level:2,text:"先把环线与更大的绿道系统分开"},
   {id:"layers",type:"table",caption:"三个空间层级",columns:["层级","是什么","游客怎样使用","避免的错误"],rows:[
     ["天府绿道体系","具有生态、休闲和城市功能的广域都市与区域绿道网络。","理解不同廊道和公园怎样相互关联的背景。","以为每个“天府绿道”地图点都在环城绿道上。"],
-    ["环城绿道","官方资料称已建成的约百公里环线，经过多个区和公园景观。","选一段；训练充分的骑手可另做有支持的全环计划。","把长度当游客义务，或保证每一公里条件相同。"],
+    ["环城绿道","政府资料中的环城绿道约为100公里；2026年一项体育活动另采用96公里赛事线路。","选择一段；有经验的骑行者也应另行研究全环支持方案。","把基础设施长度或一次赛事线路当成固定游客路线。"],
     ["公园与社区连接段","把环线接入日常生活和交通的短路径、入口与地方道路。","通常是步行、饮食、休息和退出最实用的一层。","以为地图绿线一直是到地铁门口的独立自行车道。"]
   ]},
   {id:"mechanism-heading",type:"heading",level:2,text:"按想观察的问题选择段落"},
@@ -19,10 +19,9 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"map-heading",type:"heading",level:2,text:"做四点地图，不只画一条路线"},
   {id:"map",type:"list",items:["A 点：准确公共入口，包括它在道路、公园或桥的哪一侧。","B 点：预定中点和第一个安全决策点。","C 点：连接已确认后续交通的目标出口。","D 点：无需跨越围栏、快速路、工地或水道即可到达的提前撤出点。","保存中文名和离线截图；境外地图与中国本地坐标可能错位。","可参考高差、路面和过街说明，但人流、维修和积水属于实时条件。"]},
   {id:"mode-heading",type:"heading",level:2,text:"步行和骑行回答不同问题"},
-  {id:"mode",type:"comparison",title:"选择移动方式",leftTitle:"步行 4–8 公里",rightTitle:"骑行 8–20 公里",rows:[
-    {label:"更适合",left:"读入口、公共空间、种植、过街和社区转换。",right:"比较多种景观并理解环线尺度。"},
-    {label:"主要风险",left:"示意图上看起来近的出口，实际可能很远。",right:"车况、混合人群、炎热、机械问题和未经确认的还车点。"},
-    {label:"必备",left:"遮阴休息方案和连接道路的出口。",right:"确认车辆来源和归还规则、头盔、必要照明、饮水和两个出口。"}
+  {id:"mode",type:"comparison",title:"Homeground规划范围，并非官方分类",columns:[
+    {heading:"步行4–8公里",items:["更适合: 读入口、公共空间、种植、过街和社区转换。","主要风险: 示意图上看起来近的出口，实际可能很远。","必备: 遮阴休息方案和连接道路的出口。"]},
+    {heading:"骑行8–20公里",items:["更适合: 比较多种景观并理解环线尺度。","主要风险: 车况、混合人群、炎热、机械问题和未经确认的还车点。","必备: 确认车辆来源和归还规则、头盔、必要照明、饮水和两个出口。"]}
   ]},
   {id:"rhythm-heading",type:"heading",level:2,text:"半日城市基础设施路线"},
   {id:"rhythm",type:"list",items:["先查当天高温、降雨、空气和雷暴通知，严重天气时不把暴露骑行放在中午。","从已核验公共交通或道路接口进入，用十分钟看标识、快慢分隔与公园规则。","前三分之一观察绿道怎样跨越或避开道路，周边各区居民怎样进入。","中间三分之一只选一个生态或公园段，观察水体、遮阴、生境保护和维护边界。","到中点按体力、天气和出口状态决定，而不是按应用里是否画满全线决定。","最后三分之一经社区连接离开，在行人和儿童附近减速，并比较绿道活动与普通街道。","在保存的交通点结束，不穿封闭绿化或快速路边缘抄近道。"]},
@@ -36,8 +35,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   ]},
   {id:"rules-heading",type:"heading",level:2,text:"规则与共享空间礼仪"},
   {id:"rules",type:"list",items:["遵守当前标志和工作人员指挥；2023 年征求意见稿或旧赛事规则未必是今天的生效规则。","有分区就走相应一侧或车道，在混合空间降低速度。","不进入生境缓冲区、养护道路、农田或封闭工段。","降低外放声音，按当前地方规则管理儿童和宠物，垃圾桶满时把垃圾带走。","近距离拍摄可识别使用者前先询问；公众锻炼不是表演。","不假定赛事路线、临时绕行或网上 GPX 轨迹在普通日合法开放。"]},
-  {id:"failure-heading",type:"heading",level:2,text:"失败恢复"},
-  {id:"failure",type:"table",caption:"提前退出也不失去任务价值",columns:["变化","恢复动作","仍然有用的观察"],rows:[
+  {id:"failure-heading",type:"heading",level:2,text:"条件变化时怎样调整"},
+  {id:"failure",type:"table",caption:"不勉强完成里程，也能保留观察价值",columns:["变化","怎样调整","仍然能观察什么"],rows:[
     ["大雨、雷电或危险高温","从最近的已保存道路出口离开，把城市观察转到有遮蔽的社区或地铁空间。","绿道与日常交通连接是否有效。"],
     ["路段关闭或积水","只有有标识绕行可到达目标出口时才跟随，否则离开并改去另一短公园段。","维护与水管理本就是基础设施故事。"],
     ["无车可租或车辆不合适","步行较短的入口—社区段，或使用绿道外已确认的商业租赁。","不骑车也能读懂环线。"],
@@ -52,9 +51,11 @@ const body = {schemaVersion:"1.0.0",blocks:[
     {label:"查中国公共假期日历",href:"/zh/guides/china-public-holidays-travel-calendar/",description:"预判休闲压力，但不保证具体客流量。"}
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
+    {label:"头图——《Chengdu Greenway》，拍摄于2022-03-12；坐标支持其为成都环城／锦城绿道路段，但不能证明当前通行或服务",url:"https://commons.wikimedia.org/wiki/File:Chengdu_Greenway.jpg",publisher:"MspreilsCN — CC0；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},
+    {label:"头图许可——CC0 1.0 通用",url:"https://creativecommons.org/publicdomain/zero/1.0/",publisher:"Creative Commons",reviewedAt:"2026-08-13"},
     {label:"成都环城绿道贯通",url:"https://cds.sczwfw.gov.cn/art/2021/2/1/art_15395_140788.html",publisher:"成都市政府服务",reviewedAt:"2026-08-13"},
     {label:"天府绿道公共空间功能",url:"https://www.forestry.gov.cn/c/www/gggddt/656810.jhtml",publisher:"国家林业和草原局",reviewedAt:"2026-08-13"},
-    {label:"当前绿道体育使用报道",url:"https://www.sport.gov.cn/n20001280/n20001265/n20067706/c29545336/content.html",publisher:"国家体育总局",reviewedAt:"2026-08-13"},
+    {label:"2026年96公里赛事线路报道",url:"https://www.sport.gov.cn/n20001280/n20001265/n20067706/c29545336/content.html",publisher:"国家体育总局",reviewedAt:"2026-08-13"},
     {label:"成都绿道管理征求意见",url:"https://www.sc.gov.cn/10462/10464/10465/10595/2023/11/24/17545ce268bc418c9ec6219053899897.shtml",publisher:"四川省人民政府",reviewedAt:"2026-08-13"},
     {label:"绿道可达与使用研究",url:"https://www.mdpi.com/2071-1050/16/14/6185",publisher:"Sustainability",reviewedAt:"2026-08-13"}
   ]}
