@@ -182,10 +182,10 @@ const body = {
       id: "stepping-stones-figure",
       type: "figure",
       src: "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
-      alt: "游客从凤凰沱江跳岩上过河，后方是沿江建筑。",
+      alt: "游客从凤凰而非茶峒的沱江跳岩上过河，后方是沿江建筑。",
       width: 1126,
       height: 819,
-      caption: "沱江属于凤凰真实的城市环境，但一处适合拍照的过河点不是小说渡口的证据。"
+      caption: "这里是凤凰沱江，不是茶峒；一处适合拍照的过河点也不是小说渡口的证据。"
     },
     {
       id: "grave-figure",

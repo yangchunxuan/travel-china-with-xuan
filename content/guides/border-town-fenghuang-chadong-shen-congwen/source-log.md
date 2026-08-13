@@ -72,7 +72,7 @@ All three locale targets for both links exist in the release base. No reciprocal
 
 ## Image-source boundary
 
-All selected photographs are real-location files with an explicit Wikimedia Commons licence or public-domain dedication recorded in `image-plan.md`. Hunan government photographs were excluded because the site's copyright statement does not clear commercial reuse. Flickr photographs of Chadong marked “All rights reserved” were also excluded. No generic old-town photograph is used to prove Chadong, a literary setting, a building date or authenticity.
+All selected photographs are real Fenghuang-location files with an explicit Wikimedia Commons licence or public-domain dedication recorded in `image-plan.md`. The 2026-08-14 correction audit still found no Chadong photograph that met both location and commercial-rights requirements. Hunan government photographs were excluded because the site's copyright statement does not clear commercial reuse, and five inspected Flickr candidates were excluded as “All rights reserved.” No generic old-town or Fenghuang photograph is used to prove Chadong, a literary setting, a building date or authenticity. Central accepts this accurately labelled but asymmetric set for publication; acquiring a verified Chadong wharf or river view remains a documented visual enhancement rather than a licence to substitute another location.
 
 Central review confirmed that the body-level Sources block now exposes creator, source and licence information in EN, ZH and KO for all six derivatives. The hero and five body images are real photographs; AI use is `0 / 6`.
 

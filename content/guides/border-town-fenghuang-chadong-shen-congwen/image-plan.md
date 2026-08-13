@@ -1,6 +1,6 @@
 # Image plan — Border Town, Fenghuang and Chadong
 
-Status: **REAL ASSETS SELECTED — CHADONG PHOTOGRAPHY GAP RECORDED**
+Status: **REAL FENGHUANG ASSETS SELECTED — CHADONG PHOTOGRAPHY GAP DISCLOSED**
 
 Selected and processed: 2026-08-13; central visual/attribution recheck: 2026-08-14
 
@@ -66,9 +66,9 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Location identity:** Tuojiang crossing in Fenghuang Ancient Town
 - **Output:** `/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp`, 1126×819
 - **Edit:** WebP conversion at native dimensions; no upscaling
-- **EN alt:** `Visitors crossing stepping stones on the Tuojiang in Fenghuang with riverfront buildings behind them.`
-- **ZH alt:** `游客从凤凰沱江跳岩上过河，后方是沿江建筑。`
-- **KO alt:** `펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.`
+- **EN alt:** `Visitors crossing stepping stones on the Tuojiang in Fenghuang—not Chadong—with riverfront buildings behind them.`
+- **ZH alt:** `游客从凤凰而非茶峒的沱江跳岩上过河，后方是沿江建筑。`
+- **KO alt:** `차둥이 아닌 펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.`
 - **Caption function:** demonstrates why a picturesque real crossing must not be mistaken for the novella's ferry
 - **People/privacy:** distant public-place figures are incidental and not identified; do not crop to create recognisable portraits
 
@@ -87,7 +87,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 
 ## Chadong asset gap
 
-No location-verified, commercially reusable Chadong photograph was found in the checked open repositories on 2026-08-13. Exact Openverse searches returned no usable result; a Wikimedia Commons geosearch did not return a documentary ground photograph; candidate Flickr images were marked “All rights reserved.” Hunan government photographs were excluded because the site's [copyright statement](https://www.hunan.gov.cn/fzlm/wzsm/201506/t20150608_4831822.html) does not clear commercial reproduction.
+No location-verified, commercially reusable Chadong photograph was found in the checked open repositories on 2026-08-13 or in the repeated correction audit on 2026-08-14. Exact Openverse searches and Wikimedia Commons geosearches returned no qualifying documentary ground photograph; five inspected Flickr candidates were marked “All rights reserved.” Hunan government photographs were excluded because the site's [copyright statement](https://www.hunan.gov.cn/fzlm/wzsm/201506/t20150608_4831822.html) does not clear commercial reproduction. The published set is therefore intentionally asymmetric: every image is labelled as Fenghuang, and no Fenghuang frame is allowed to stand in for Chadong.
 
 Central asset acquisition should request or commission, with written rights:
 
@@ -97,7 +97,7 @@ Central asset acquisition should request or commission, with written rights:
 4. the 2026 entrance lettering and its provenance caption;
 5. the 1993 cliff lettering with a caption that identifies it as a later imitation.
 
-For each commissioned file, record photographer, capture date, exact location, consent for any recognisable person, commercial web licence and unedited original. Until then, the body deliberately uses no generic or wrong-location substitute.
+For each commissioned file, record photographer, capture date, exact location, consent for any recognisable person, commercial web licence and unedited original. Until then, the body deliberately uses no generic or wrong-location substitute. This gap is a future visual enhancement, not permission to mislabel another Xiangxi location.
 
 ## Brand, text and artwork limits
 
