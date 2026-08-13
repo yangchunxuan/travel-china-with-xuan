@@ -24,7 +24,7 @@ const body = {
     {
       id: "two-cities",
       type: "paragraph",
-      text: "이 전설은 처음부터 하나의 고정된 여행 경로로 만들어진 이야기가 아니기 때문입니다. 중국 국가급 무형문화유산 기록은 항저우와 전장의 백사전 사업을 각각 등록하고 두 곳을 모두 중요한 전승 지역으로 듭니다. 항저우 기록은 서호와 뇌봉탑을 강조하지만, 금산이 구체적인 이야기 장면과 연결된 과정은 후대 경관 서사 연구로 설명해야 하며 등록 사실만으로 입증할 수 없습니다. 자료를 합쳐 보면 여러 장소로 퍼진 전통이지, 유일한 발상지를 가리는 경쟁이 아닙니다. 이야기꾼과 극작가, 영상 작가는 각자의 판본에 맞춰 장소를 선택하고 재배열할 수 있었습니다. 그렇게 만들어진 지리는 문학적 기억입니다. 공동체가 이야기를 어디에 놓았는지는 보여 주지만, 바이쑤전(Bai Suzhen), 허선(许仙), 법해(法海)가 실제 그곳에서 살았다는 증거는 아닙니다.",
+      text: "이 전설은 처음부터 하나의 고정된 여행 경로로 만들어진 이야기가 아니기 때문입니다. 중국 국가급 무형문화유산 기록은 항저우와 전장의 백사전 사업을 각각 등록하고 두 곳을 모두 중요한 전승 지역으로 듭니다. 항저우 기록은 서호와 뇌봉탑을 강조하지만, 금산이 구체적인 이야기 장면과 연결된 과정은 후대 경관 서사 연구로 설명해야 하며 등록 사실만으로 입증할 수 없습니다. 자료를 합쳐 보면 여러 장소로 퍼진 전통이지, 유일한 발상지를 가리는 경쟁이 아닙니다. 이야기꾼과 극작가, 영상 작가는 각자의 판본에 맞춰 장소를 선택하고 재배열할 수 있었습니다. 그렇게 만들어진 지리는 문학적 기억입니다. 공동체가 이야기를 어디에 놓았는지는 보여 주지만, 백소정(白素贞), 허선(许仙), 법해(法海)가 실제 그곳에서 살았다는 증거는 아닙니다.",
     },
     {
       id: "layers",
@@ -47,7 +47,7 @@ const body = {
     {
       id: "versions",
       type: "paragraph",
-      text: "초기의 백사 이야기에 오늘날 많은 관객이 아는 사랑 이야기가 완성된 형태로 들어 있지는 않습니다. 국가 무형문화유산 개요는 Feng Menglong이 17세기에 쓴 백사 이야기를 비교적 온전한 초기 문학 판본의 중요한 단계로 설명합니다. 이후의 연극은 인물의 동기와 공감의 방향, 장소를 계속 바꾸었습니다. 청대 무대는 오늘날 핵심 장면처럼 여겨지는 금산 수몰과 충돌 뒤 단교에서의 만남을 크게 확장했습니다. 현대 영상 작품과 관광지는 여기서 다시 일부를 골랐습니다. ‘원래 사건은 어디서 일어났을까’가 아니라 ‘이 장면은 어느 판본에 들어 있을까’를 물어야 합니다.",
+      text: "초기의 백사 이야기에 오늘날 많은 관객이 아는 사랑 이야기가 완성된 형태로 들어 있지는 않습니다. 국가 무형문화유산 개요는 풍몽룡(冯梦龙)이 17세기에 쓴 백사 이야기를 비교적 온전한 초기 문학 판본의 중요한 단계로 설명합니다. 이후의 연극은 인물의 동기와 공감의 방향, 장소를 계속 바꾸었습니다. 청대 무대는 오늘날 핵심 장면처럼 여겨지는 금산 수몰과 충돌 뒤 단교에서의 만남을 크게 확장했습니다. 현대 영상 작품과 관광지는 여기서 다시 일부를 골랐습니다. ‘원래 사건은 어디서 일어났을까’가 아니라 ‘이 장면은 어느 판본에 들어 있을까’를 물어야 합니다.",
     },
     {
       id: "version-line",
@@ -136,7 +136,7 @@ const body = {
     {
       id: "jinshan",
       type: "paragraph",
-      text: "금산사는 정식 명칭이 장톈선사(Jiangtian Chan Temple)인 현역 불교 기관으로 먼저 읽어야 합니다. 사찰의 종교 활동과 예불객, 출입 제한 구역은 백사전 관광지로서의 역할보다 우선합니다. 산을 따라 오르는 구조에는 평면적인 이야기 지도에서 가려지는 실제 이동 부담도 있습니다. 2026년 소방 당국 보도는 현지 박물관 전시를 설명하며 1948년 화재로 옛 건물 300여 칸이 훼손됐다고 전합니다. 이 자료 묶음에 더 강한 기록 원문이 없으므로 이 숫자는 독립적으로 확인된 1차 사실이 아니라 해당 보도의 귀속을 밝혀 써야 합니다. 그래도 오늘날 건축군 전체를 변함없이 남은 고대 건축이라고 부르면 안 된다는 경고에는 충분합니다.",
+      text: "금산사는 정식 명칭이 장톈선사(江天禅寺)이며, 현재도 종교 활동이 이어지는 불교 사찰로 먼저 읽어야 합니다. 사찰의 종교 활동과 예불객, 출입 제한 구역은 백사전 관광지로서의 역할보다 우선합니다. 산을 따라 오르는 구조에는 평면적인 이야기 지도에서 가려지는 실제 이동 부담도 있습니다. 2026년 소방 당국 보도는 현지 박물관 전시를 설명하며 1948년 화재로 옛 건물 300여 칸이 훼손됐다고 전합니다. 이 자료 묶음에 더 강한 기록 원문이 없으므로 이 숫자는 독립적으로 확인된 1차 사실이 아니라 해당 보도의 귀속을 밝혀 써야 합니다. 그래도 오늘날 건축군 전체를 변함없이 남은 고대 건축이라고 부르면 안 된다는 경고에는 충분합니다.",
     },
     {
       id: "jinshan-entrance-figure",
@@ -165,7 +165,7 @@ const body = {
       id: "cave-warning",
       type: "callout",
       title: "법해동 관람을 약속하지 마세요",
-      body: "연구 자료는 배공동(Peigong Cave)과 법해동(法海洞)이 시기별로 다르게 불리고 제시된 명칭의 역사를 추적합니다. 이는 경관 이야기가 만들어진 증거이지 법해의 생애를 증명하는 자료가 아닙니다. 2026년 현재의 개방 여부, 표기 문구, 촬영 규칙을 확인하지 못했으므로 이 글은 입장을 약속하지 않습니다. 닫혀 있거나 정보가 불분명하면 공개된 사찰 건축, 츠서우탑, 합법적으로 접근할 수 있는 물과 언덕의 조망으로 대신하세요.",
+      body: "연구 자료는 배공동(裴公洞)과 법해동(法海洞)이 시기별로 다르게 불리고 제시된 명칭의 역사를 추적합니다. 이는 경관 이야기가 만들어진 증거이지 법해의 생애를 증명하는 자료가 아닙니다. 2026년 현재의 개방 여부, 표기 문구, 촬영 규칙을 확인하지 못했으므로 이 글은 입장을 약속하지 않습니다. 닫혀 있거나 정보가 불분명하면 공개된 사찰 건축, 츠서우탑, 합법적으로 접근할 수 있는 물과 언덕의 조망으로 대신하세요.",
       tone: "warning",
     },
     {
@@ -320,7 +320,7 @@ const body = {
       id: "help",
       type: "callout",
       title: "현재 상태를 사람이 확인해야 하나요?",
-      body: "개방, 예약, 동굴 접근, 철도 운행, 촬영 규칙은 2026년 8월 13일 기준 모두 변동 정보로 다뤘습니다. 날짜, 인원, 대략적인 예산을 남겨 주시면 현지 담당자가 환승일을 압축하지 않고 전장을 넣을 수 있는지 확인해 드립니다. 직접 확인하기 전에는 동굴 입장, 열차, 교체 전시물을 약속하지 않습니다.",
+      body: "개방, 예약, 동굴 접근, 철도 운행, 촬영 규칙은 2026년 8월 14일 기준 모두 변동 정보로 다뤘습니다. 날짜, 인원, 대략적인 예산을 남겨 주시면 현지 담당자가 환승일을 압축하지 않고 전장을 넣을 수 있는지 확인해 드립니다. 직접 확인하기 전에는 동굴 입장, 열차, 교체 전시물을 약속하지 않습니다.",
       tone: "decision",
     },
     {
@@ -356,13 +356,22 @@ const body = {
         {"label":"서호 문화경관 ICOMOS 평가서","url":"https://whc.unesco.org/document/152404","publisher":"ICOMOS／유네스코","reviewedAt":"2026-08-13"},
         {"label":"뇌봉탑 역사와 보호 유적","url":"https://wgly.hangzhou.gov.cn/art/2022/12/1/art_1229696389_58943150.html","publisher":"항저우시 문화방송관광국","reviewedAt":"2026-08-13"},
         {"label":"뇌봉탑 발굴 보고서 목록 기록","url":"https://buddhism.lib.ntu.edu.tw/DLMBS/en/search/search_detail.jsp?seq=554802","publisher":"국립대만대학교 불교학 문헌 데이터베이스／저장성 고고학 보고서","reviewedAt":"2026-08-13"},
-        {"label":"백사전 이야기 주제의 변화","url":"https://dflt.qdu.edu.cn/__local/A/39/DD/795E68F17B2300A5D3639ABEFD9_97A4FDA1_173BA8.pdf","publisher":"《동방논단》, 추이윈웨이·Sun Xubo","reviewedAt":"2026-08-13"},
+        {"label":"백사전 이야기 주제의 변화","url":"https://dflt.qdu.edu.cn/__local/A/39/DD/795E68F17B2300A5D3639ABEFD9_97A4FDA1_173BA8.pdf","publisher":"《동방논단》, 추이윈웨이·쑨쉬보","reviewedAt":"2026-08-13"},
         {"label":"법해동과 뇌봉탑의 경관 서사","url":"https://xbzs.ecnu.edu.cn/CN/html/201402014.htm","publisher":"화둥사범대학교 학보, 위훙옌","reviewedAt":"2026-08-13"},
         {"label":"전장 금산 장톈선사","url":"https://www.jsfj.net/syzs_zjjsjtcs","publisher":"장쑤성 불교협회","reviewedAt":"2026-08-13"},
         {"label":"1948년 금산사 화재를 언급한 전장 소방교육박물관 보도","url":"https://js.119.gov.cn/202606/jsxfww-menu-gzdt_c_30a20aac24664a56b642.html","publisher":"장쑤 소방구조","reviewedAt":"2026-08-13"},
         {"label":"금산사 역사 연구","url":"https://ccj.pku.edu.cn/article/info?id=286660025","publisher":"베이징대학교 학술지 플랫폼, 쉬스이","reviewedAt":"2026-08-13"},
-        {"label":"전장 구간의 역사적 물길 변화 연구","url":"https://www.geog.com.cn/EN/abstract/article/0375-5444/47762","publisher":"《지리학보》, Yang Xiao","reviewedAt":"2026-08-13"},
-        {"label":"중국철도 승차권과 시간표 확인","url":"https://www.12306.cn/en/index.html","publisher":"중국철도 12306","reviewedAt":"2026-08-13"}
+        {"label":"전장 구간의 역사적 물길 변화 연구","url":"https://www.geog.com.cn/EN/abstract/article/0375-5444/47762","publisher":"《지리학보》(저자명은 원문 참조)","reviewedAt":"2026-08-13"},
+        {"label":"중국철도 승차권과 시간표 확인","url":"https://www.12306.cn/en/index.html","publisher":"중국철도 12306","reviewedAt":"2026-08-13"},
+        {"label":"대표 사진: Suicasmo의 단교, CC0 1.0; 크롭·크기 조정 후 WebP로 변환","url":"https://commons.wikimedia.org/wiki/File:Broken_Bridge_(Hangzhou)_20250505.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"본문 사진: Suicasmo의 현대 뢰봉탑, CC0 1.0; 크롭·크기 조정 후 WebP로 변환","url":"https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_20250505.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"본문 사진: HoweyYuan의 뢰봉탑 고고 유적, CC BY-SA 4.0; 크롭·크기 조정 후 WebP로 변환","url":"https://commons.wikimedia.org/wiki/File:Site_of_Leifeng_Pagoda_20240729.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"역사 사진: 세키노 다다시가 1918년 촬영한 뢰봉탑, 퍼블릭 도메인; 비율 크기 조정·중립 캔버스 배치 후 WebP로 변환","url":"https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_in_Hangzhou,_1918.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"1918년 뢰봉탑 사진의 1939년 출처 권책 기록","url":"https://ndlsearch.ndl.go.jp/books/R100000039-I1902745","publisher":"일본 국립국회도서관","reviewedAt":"2026-08-14"},
+        {"label":"본문 사진: Yumeto의 진산 장톈선사 입구, CC BY-SA 4.0; 크롭·크기 조정 후 WebP로 변환","url":"https://commons.wikimedia.org/wiki/File:20240806_Jinshan_Si.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"본문 사진: Yumeto의 자수탑, CC BY-SA 4.0; 크롭·크기 조정 후 WebP로 변환","url":"https://commons.wikimedia.org/wiki/File:20240806_Cishou_Ta.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"단교와 현대 뢰봉탑 파생 이미지의 CC0 1.0 공개 선언","url":"https://creativecommons.org/publicdomain/zero/1.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"위 크롭 파생 이미지에 적용되는 CC BY-SA 4.0 라이선스","url":"https://creativecommons.org/licenses/by-sa/4.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"}
       ],
     },
   ],

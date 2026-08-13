@@ -31,6 +31,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국 고속철도 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "역 조합을 고른 뒤 표와 승차를 준비합니다." },
     { label: "야간열차 또는 주간 고속철도", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "더 먼 후속 이동의 일정 모양을 비교합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "큰 도시의 앞뒤 이동을 계산합니다." },
+    { label: "항저우와 전장의 『백사전』 장소 읽기", href: "/ko/guides/white-snake-legend-hangzhou-zhenjiang/", description: "역 조합을 해결한 뒤 설화를 위해 두 번째 도시를 더할 가치가 있는지 판단합니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
     { label: "상하이 기차역 안내", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "상하이시 정부", reviewedAt: "2026-08-12" },

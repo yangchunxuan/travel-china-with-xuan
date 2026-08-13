@@ -1,6 +1,6 @@
 # Dynamic facts — `luxun-shaoxing-literary-walk`
 
-Checked on `2026-08-13` (Asia/Shanghai). This file records operational facts that may expire independently of the literary and historical argument.
+Source pack checked on `2026-08-13`; central release review rechecked the official operator route-page boundary on `2026-08-14` (Asia/Shanghai). This file records operational facts that may expire independently of the literary and historical argument.
 
 | Item | Direct evidence located | Draft treatment | Required recheck and fallback |
 |---|---|---|---|
@@ -9,7 +9,7 @@ Checked on `2026-08-13` (Asia/Shanghai). This file records operational facts tha
 | Foreign-passport handling | No complete direct ordinary-date workflow was found for online booking, staffed counter and gate validation. | No claim that passport-only walk-in or a specific app path always works. | Direct operator confirmation required. Carry the physical passport and reserve time for a staffed-counter question; central should add a confirmed fallback if obtained. |
 | Admission / free scope | Government material records free museum opening historically, but the current scope of the whole visitor group was not directly confirmed. | Body avoids “everything is free.” | Confirm each controlled component and booking fee, if any, with current operator material. |
 | Current map and one-way circulation | Operator page contains route material dated 2017; 2025 works were phased. | Article gives an evidence order, not a fixed physical sequence. | Obtain the current map at arrival; follow staff routing while retaining layer labels in notes. |
-| Visit duration | Old operator material names 1/2/3-hour options; no timed 2026 local walk was obtained. | No guaranteed “2–3 hours.” | A named local reviewer should time the current route. Until then, describe a flexible half-day window without a fixed duration. |
+| Visit duration | Old operator material names 1/2/3-hour options; no timed 2026 local walk was obtained. | No guaranteed “2–3 hours.” | Treat the sequence as editorial rather than tested; use the current map and available time without publishing a fixed duration. |
 | Construction and closures | 2025 literary-district work was described as phased; no complete August 2026 closure list was located. | All room and street sequences include reordering/skip recovery. | Check operator notice and current map. Use museum chronology when a life-site room is closed; do not invent interior detail. |
 | Step-free access | 23 barrier removals were reported in 2024, but no complete entrance-to-exit step-free chain was found. | Body tells travellers to ask staff and prioritize an accessible core. | Obtain direct accessibility map or local audit. Do not equate removed viewing rails with wheelchair accessibility. |
 | “早” desk display | Provincial culture authority reported the attributed desk moved from storage into display in 2024. | “If displayed”; attribution remains institutional and conditional. | Verify current gallery and exact caption on the visit date. If absent, omit object observation. |

@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "在绍兴读鲁迅，最有用的问题不是“这些是不是都来自同一本书”。周家新台门有鲁迅出生、成长的生活关系，三味书屋是有据可查的求学现场；周家老台门主要帮助你理解周氏家族和当时的社会空间。百草园是真实地点，但鲁迅后来把它写进回忆性散文，并不是在园中即时完成的一份植物清单。孔乙己则是小说人物，今天的咸亨酒店主要属于作品的后世接受和游客消费空间。按“家族—求学—居住—记忆中的园子—纪念馆—小说与商业”的顺序读，时间可长可短。本文截至2026年8月13日没有找到足以证明所有旅客都能完成固定2—3小时动线的现行官方资料。"
+      text: "在绍兴读鲁迅，最有用的问题不是“这些是不是都来自同一本书”。周家新台门有鲁迅出生、成长的生活关系，三味书屋是有据可查的求学现场；周家老台门主要帮助你理解周氏家族和当时的社会空间。百草园是真实地点，但鲁迅后来把它写进回忆性散文，并不是在园中即时完成的一份植物清单。孔乙己则是小说人物，今天的咸亨酒店主要属于作品的后世接受和游客消费空间。按“家族—求学—居住—记忆中的园子—纪念馆—小说与商业”的顺序读，时间可长可短。截至2026年8月14日复核，仍没有足以证明所有旅客都能完成固定2—3小时动线的现行官方资料。"
     },
     {
       id: "direct-answer",
@@ -320,8 +320,8 @@ const body = {
     {
       id: "local-review",
       type: "callout",
-      title: "LOCAL HUMAN REVIEW NEEDED",
-      body: "发布前必须由一名具名的绍兴本地或鲁迅文化审读者，复核当前房间顺序、馆方物件归属措辞、中韩文专名，以及回忆散文、小说和场馆解释之间的边界。",
+      title: "本文没有替现场作出的保证",
+      body: "Homeground 中央编辑已于 2026 年 8 月 14 日完成三语结构、专名、来源边界和图片署名的桌面复核；这不是现场踏查，也不代表已取得具名绍兴本地或鲁迅研究者背书。文中的步行顺序只是编辑逻辑，实际开放范围、房间动线和物件归属应以当天地图、展签和工作人员指引为准。",
       tone: "neutral"
     },
     {
@@ -349,7 +349,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "核心资料核对日期：2026年8月13日",
+      title: "资料与图片署名复核至2026年8月14日",
       items: [
         {"label": "鲁迅故里组成及1953年建馆口径", "url": "https://www.ndrc.gov.cn/xwdt/ztzl/qghsly/202105/t20210524_1301639.html", "publisher": "国家发展和改革委员会", "reviewedAt": "2026-08-13"},
         {"label": "新台门与三味书屋的生活、求学关系", "url": "https://sxlz.sx.gov.cn/art/2022/2/14/art_1483623_58923289.html", "publisher": "绍兴官方地方史平台", "reviewedAt": "2026-08-13"},
@@ -361,7 +361,9 @@ const body = {
         {"label": "《朝花夕拾》的回忆写作属性", "url": "https://www.chinawriter.com.cn/n1/2022/0428/c419384-32410615.html", "publisher": "中国作家网／中国作家协会", "reviewedAt": "2026-08-13"},
         {"label": "《孔乙己》文本与发表背景", "url": "https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html", "publisher": "中国作家网／中国作家协会", "reviewedAt": "2026-08-13"},
         {"label": "咸亨酒店的当前旅游呈现", "url": "https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html", "publisher": "绍兴文化旅游主管部门", "reviewedAt": "2026-08-13"},
-        {"label": "2025年文学IP片区呈现", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1652992_59028173.html", "publisher": "浙江省文化广电和旅游厅", "reviewedAt": "2026-08-13"},
+        {"label": "2025年文学IP片区呈现", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html", "publisher": "浙江省文化广电和旅游厅", "reviewedAt": "2026-08-14"},
+        {"label": "官方一、二、三小时游线页；仅作有日期的方位参考，不作为今日时刻表", "url": "https://sxlxmuseum.com/gcyx.htm", "publisher": "绍兴鲁迅故里沈园景区", "reviewedAt": "2026-08-14"},
+        {"label": "2026年2月特定节假日开放调整与预约通知", "url": "https://www.thepaper.cn/newsDetail_forward_32587318", "publisher": "The Paper转载场馆通知", "reviewedAt": "2026-08-13"},
         {"label": "首图：Yumeto拍摄新台门小堂前；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Small_reception_room_of_the_former_residence_of_Lu_Xun.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "正文图：Gisling拍摄老台门入口；已裁切，CC BY 3.0", "url": "https://commons.wikimedia.org/wiki/File:Ancestral_home_of_Luxun.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "正文图：Yumeto拍摄三味书屋；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Sanwei_Shuwu.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},

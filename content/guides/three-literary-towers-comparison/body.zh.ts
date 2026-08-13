@@ -28,7 +28,7 @@ const body = {
       columns: ["地点", "今天矗立的建筑", "值得读的延续", "不能据此声称"],
       rows: [
         ["武汉黄鹤楼", "1985年在新址开放的钢筋混凝土重建建筑", "反复重建的楼名、城市视点，以及现代人对旧楼形制的诠释", "现楼就是三国建筑，或旧楼曾被完整搬到这里"],
-        ["岳阳楼，岳阳", "形制与位置可追溯至1880年的清代木构主楼，后来经过落架维修", "可以逐件观察的材料、形制与保护修缮延续", "每件构件都来自1880年，或此楼自三世纪起从未改变"],
+        ["湖南岳阳楼", "形制与位置可追溯至1880年的清代木构主楼，后来经过落架维修", "可以逐件观察的材料、形制与保护修缮延续", "每件构件都来自1880年，或此楼自三世纪起从未改变"],
         ["南昌滕王阁", "1989年落成的钢筋混凝土仿木建筑群", "现代设计如何把文字、图像和建筑研究转译为游客可进入的空间", "它就是王勃时代的唐阁，或是同一基址上未经变动的第二十九座建筑"],
       ],
     },
@@ -208,7 +208,7 @@ const body = {
     {
       id: "scenario-two",
       type: "paragraph",
-      text: "已经读过王勃、又会经过江西的旅客，即使知道滕王阁较新，也可能在那里获得最直接的对应。必须看老材料的人，应带着维修边界选择岳阳楼，或三座都不选。看遍三楼很少能让理解也增加三倍；在门到门成本、行李处理和有效半天未经核验前，本文不设计跨城行程。",
+      text: "已经读过王勃、又会经过江西的旅客，即使知道滕王阁较新，也可能在那里获得最直接的对应。必须看老材料的人，应带着维修边界选择岳阳楼，或三座都不选。看遍三座名楼，也很少能让理解增加三倍；在门到门成本、行李处理和有效半天未经核验前，本文不设计跨城行程。",
     },
     {
       id: "sequence-heading",
@@ -306,7 +306,7 @@ const body = {
       type: "callout",
       tone: "decision",
       title: "需要核对当前运营细节？",
-      body: "如果希望人工判断哪一座能嵌入行程、又不牺牲一个有效游览日，请留下日期、人数和大致预算。出入、票务、电梯、展陈与摄影信息在2026年8月13日均按动态事实处理，旅行前仍须再次核验。",
+      body: "如果希望人工判断哪一座能嵌入行程、又不牺牲一个有效游览日，请留下日期、人数和大致预算。出入、票务、电梯、展陈与摄影信息在2026年8月14日均按动态事实处理，旅行前仍须再次核验。",
     },
     {
       id: "links",
@@ -340,13 +340,23 @@ const body = {
         {"label":"黄鹤楼现代重建研究","url":"https://sjjb.cbpt.cnki.net/portal/journal/portal/client/paper/769f0bd2e3b912b72ad5fa0428cdc30a","publisher":"《世界建筑》／中国知网期刊平台","reviewedAt":"2026-08-13"},
         {"label":"黄鹤楼崔颢与李白文学接受研究","url":"https://xb.yrctu.edu.cn/article/doi/10.13681/j.cnki.cn41-1282/tv.2009.01.018","publisher":"黄河水利职业技术学院学报","reviewedAt":"2026-08-13"},
         {"label":"岳阳楼官方介绍","url":"https://www.yueyang.gov.cn/you/content_1630539.html","publisher":"岳阳市人民政府","reviewedAt":"2026-08-13"},
-        {"label":"岳阳楼历史事件与1880年迁移","url":"https://www.yysqw.gov.cn/43332/43334/43511/44276/content_1267358.html","publisher":"岳阳市地方志办公室","reviewedAt":"2026-08-13"},
+        {"label":"岳阳楼历史事件与1880年迁移","url":"https://www.yueyang.gov.cn/yysqw/43332/43334/43511/44276/content_1267358.html","publisher":"岳阳市地方志办公室","reviewedAt":"2026-08-14"},
         {"label":"岳阳楼保护维修与保留构件","url":"https://whhlyt.hunan.gov.cn/whhlyt/news/mtjj/202503/t20250326_33623203.html","publisher":"湖南省文化和旅游厅","reviewedAt":"2026-08-13"},
         {"label":"岳阳楼1983—1984年落架维修","url":"https://daj.yueyang.gov.cn/6658/6667/content_370327.html","publisher":"岳阳市档案馆","reviewedAt":"2026-08-13"},
         {"label":"岳阳楼重建与迁移记录","url":"https://dfz.hunan.gov.cn/dfz/dqsj/202211/t20221122_29134400.html","publisher":"湖南省地方志编纂院","reviewedAt":"2026-08-13"},
         {"label":"滕王阁历史与建筑概述","url":"https://www.nc.gov.cn/ncszf/rwfg/202505/caef4edf190a44099b002d0891a3d0f8.shtml","publisher":"南昌市人民政府","reviewedAt":"2026-08-13"},
         {"label":"滕王阁保护名录记录","url":"https://www.nc.gov.cn/attachment/upload/file/20250806/1754472189182067198.pdf","publisher":"南昌市人民政府","reviewedAt":"2026-08-13"},
-        {"label":"滕王阁总设计师陈星文访谈","url":"https://www.tsinghua.org.cn/info/1951/19465.htm","publisher":"清华校友总会（转载设计师访谈）","reviewedAt":"2026-08-13"}
+        {"label":"滕王阁总设计师陈星文访谈","url":"https://www.tsinghua.org.cn/info/1951/19465.htm","publisher":"清华校友总会（转载设计师访谈）","reviewedAt":"2026-08-13"},
+        {"label":"首图：Xiquinho Silva拍摄现代黄鹤楼，CC BY 2.0；已居中裁切、缩放、调整色调并转为WebP","url":"https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61426-Wuhan_(49150471556).jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"正文图：Yumeto从黄鹤楼拍摄武汉长江大桥，CC BY-SA 4.0；已裁切、缩放并转为WebP","url":"https://commons.wikimedia.org/wiki/File:20231125_Wuhan_Yangtze_River_Bridge_seen_from_the_Yellow_Crane_Tower.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"正文图：Huangdan2060从侧面拍摄岳阳楼，CC0 1.0；已裁切、缩放并转为WebP","url":"https://commons.wikimedia.org/wiki/File:Yueyang_Tower,_photographed_from_the_side.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"正文图：A J Butler拍摄岳阳楼天花，CC BY 3.0；已裁切、缩放并转为WebP","url":"https://commons.wikimedia.org/wiki/File:Ceiling_of_Yueyang_Tower_-_panoramio.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"正文图：沈澄心拍摄现代滕王阁外观，CC0 1.0；已缩放并转为WebP","url":"https://commons.wikimedia.org/wiki/File:Pavilion_of_Prince_Teng_20231017_32.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"正文图：沈澄心从滕王阁拍摄赣江景观，CC0 1.0；已裁切、缩放并转为WebP","url":"https://commons.wikimedia.org/wiki/File:Pavilion_of_Prince_Teng_20231017_08.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"黄鹤楼裁切衍生图适用的CC BY 2.0许可","url":"https://creativecommons.org/licenses/by/2.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"武汉桥景裁切衍生图适用的CC BY-SA 4.0许可","url":"https://creativecommons.org/licenses/by-sa/4.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"岳阳楼天花裁切衍生图适用的CC BY 3.0许可","url":"https://creativecommons.org/licenses/by/3.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"岳阳楼侧景与滕王阁衍生图的CC0 1.0贡献声明","url":"https://creativecommons.org/publicdomain/zero/1.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"}
       ],
     },
   ],

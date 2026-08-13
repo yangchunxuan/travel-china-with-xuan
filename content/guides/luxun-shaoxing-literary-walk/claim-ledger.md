@@ -1,6 +1,6 @@
 # Claim ledger — `luxun-shaoxing-literary-walk`
 
-All web claims were checked on `2026-08-13` (Asia/Shanghai). “Homeground synthesis” identifies an editorial decision, not an external factual source.
+All web claims were checked on `2026-08-13` (Asia/Shanghai). Central review corrected the literary-IP project's public URL and rechecked that source-to-claim match on `2026-08-14`; the claim boundary did not change. “Homeground synthesis” identifies an editorial decision, not an external factual source.
 
 | Claim | Layer | Source | Article wording supported | Cannot infer |
 |---|---|---|---|---|
@@ -21,7 +21,7 @@ All web claims were checked on `2026-08-13` (Asia/Shanghai). “Homeground synth
 | *Kong Yiji* is a short story first published in 1919. | literature | [China Writers Association](https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html) | Kong Yiji, the narrator and Lu Town tavern belong to fiction. | A historical resident, a census, or a literal modern address. |
 | Later writers have proposed possible inspirations for Kong Yiji. | literary interpretation | Later commentary retained in research only | The body says such proposals cannot collapse the fictional character into one verified person. | That any proposed individual “was” Kong Yiji. |
 | Current Shaoxing tourism material presents Xianheng through its Kong Yiji association. | tourism-presentation | [Shaoxing culture authority](https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html) | The current business and statue show literary reception. | Unchanged fictional/original interior, continuous material history, or a real Kong Yiji. |
-| A 2025 project created new literary-IP businesses and physical scenes in the district. | tourism-presentation / dynamic | [Zhejiang culture authority](https://ct.zj.gov.cn/art/2025/10/14/art_1652992_59028173.html) | Shops and scenes are dated modern interpretation. | Late-Qing authenticity or unchanged August 2026 business mix. |
+| A 2025 project created new literary-IP businesses and physical scenes in the district. | tourism-presentation / dynamic | [Zhejiang culture authority](https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html) | Shops and scenes are dated modern interpretation. | Late-Qing authenticity or unchanged August 2026 business mix. |
 | Operator route material names one-, two- and three-hour options, but entries are dated 2017. | dynamic / tourism-presentation | [Operator route page](https://sxlxmuseum.com/gcyx.htm) | Do not promise a precise 2–3-hour visit in 2026. | Current route, current dwell time, one-way control or accessibility. |
 | A February 2026 notice adjusted hours and referred to reservations for named holiday dates. | dynamic operations | [Operator notice carried by The Paper](https://www.thepaper.cn/newsDetail_forward_32587318) | Reservations existed for those dates; special changes occur. | Regular hours, ordinary passport flow, year-round booking or admission price. |
 | A life → memory → museum → fiction/reception order is the clearest first walk. | editorial-judgment | Homeground synthesis of the sources above | Transparent editorial route logic that survives physical reordering. | An official prescribed route or universal visitor preference. |

@@ -4,7 +4,7 @@
 
 Use real, location-identified Shaoxing photographs only. No AI documentary image, film/television still, modern book illustration, textbook scan, generic Jiangnan lane or unidentified “old study” may substitute for a named site. Every caption must help the reader distinguish life evidence, literary memory or modern interpretation; none may infer age from atmosphere.
 
-Seven derivatives are present: one hero plus six explanatory body images. All were visually inspected, cropped/resized and converted to WebP on `2026-08-13`. No generative fill, compositing, object removal or scene alteration was used.
+Seven derivatives are present: one hero plus six explanatory body images. All were visually inspected, cropped/resized and converted to WebP on `2026-08-13`; central review re-inspected the existing derivatives and their trilingual alt/caption pairs on `2026-08-14`. No generative fill, compositing, object removal or scene alteration was used, and central review changed no binary.
 
 ## Asset ledger
 
@@ -119,3 +119,5 @@ Seven derivatives are present: one hero plus six explanatory body images. All we
 ## Public attribution requirement
 
 The body `sources` block should retain image-source entries, or the final template must expose an equivalent public credit ledger. `image-plan.md` alone is an editorial record and should not be the only attribution path if it is not publicly rendered.
+
+Central release review confirmed that all three body files retain public creator/source/licence entries for all seven photographs. The set remains classified as real photographs with **AI use: 0 / 7**.

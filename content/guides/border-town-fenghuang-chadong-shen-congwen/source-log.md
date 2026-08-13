@@ -1,11 +1,12 @@
 # Source log — Border Town, Fenghuang and Chadong
 
-Status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
+Status: `CENTRAL RELEASE REVIEW COMPLETE — DYNAMIC ITEMS REMAIN TRAVEL-DAY CHECKS`
 
 - Candidate ID: `folk-city-20260813-01`
 - Page owner: literary-place comparison of Chadong and Fenghuang for readers of Shen Congwen's *Border Town*
 - Parent hub: `history-route-collection`
-- Source review date: 2026-08-13
+- Source pack assembled: 2026-08-13
+- Central release review: 2026-08-14 — trilingual parity and naturalness, canonical ownership, metadata dates, internal links, official-source boundaries, image alt/caption/attribution and AI-use classification checked. This was a desk review, not an onsite route test.
 - Canonical audit: latest `origin/main` and all 89 then-current `origin/*` refs checked on 2026-08-13; only `research/worker-3-folk-city-20260813` contained this candidate or owner
 - Research handling: the remote research pack was read with `git show`; it was not cherry-picked
 
@@ -16,6 +17,8 @@ This page owns the decision between Chadong as literary geography and Fenghuang 
 ## Search-result and reader-question check
 
 Searches checked on 2026-08-13 included English and Chinese combinations of `Border Town Fenghuang or Chadong`, `边城 原型 凤凰 茶峒`, `碧溪岨 读音`, `茶峒 古码头`, `翠翠居 复建`, `沈从文故居 文保` and current ferry/opening queries. Results frequently collapse four different claims: the novella's selected geography, Shen Congwen's birthplace, modern scenic branding and reconstructed character spaces. The article therefore answers the traveller's choice first and keeps those layers visible throughout.
+
+The 2026-08-14 central recheck found a 2025 Hunan Department of Culture and Tourism report confirming active scenic-area operation and one dated public performance at Biancheng Chadong. It does not establish a recurring programme, ferry timetable, fare, booking path or ordinary-day venue rules, so none were added to the article.
 
 ## Core evidence
 
@@ -65,9 +68,13 @@ The majority of the body serves place choice, onsite observation, visit order an
 - `/guides/zhangjiajie-city-or-wulingyuan-hotel-base/` — Zhangjiajie hotel-base owner; no duplication here
 - `/guides/hunan-cuisine-balanced-first-meal/` — regional food decision after the literary-place visit
 
+All three locale targets for both links exist in the release base. No reciprocal inbound edits are part of this guide-only release.
+
 ## Image-source boundary
 
 All selected photographs are real-location files with an explicit Wikimedia Commons licence or public-domain dedication recorded in `image-plan.md`. Hunan government photographs were excluded because the site's copyright statement does not clear commercial reuse. Flickr photographs of Chadong marked “All rights reserved” were also excluded. No generic old-town photograph is used to prove Chadong, a literary setting, a building date or authenticity.
+
+Central review confirmed that the body-level Sources block now exposes creator, source and licence information in EN, ZH and KO for all six derivatives. The hero and five body images are real photographs; AI use is `0 / 6`.
 
 ## Pre-submission self-assessment
 

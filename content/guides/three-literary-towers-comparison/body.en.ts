@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Below Yellow Crane Tower, Yueyang Tower or Tengwang Pavilion, the first surprise is that the famous writing is older than the building in front of you. Wuhan has a reinforced-concrete reconstruction opened on a new site in 1985. Yueyang keeps a Qing timber form and position established in 1880, with later dismantling conservation. Nanchang's present pavilion is a reinforced-concrete, faux-timber reconstruction completed in 1989. Choose by the continuity you want to examine, not by which looks oldest.",
+      text: "Standing below Yellow Crane Tower, Yueyang Tower or Tengwang Pavilion, the first surprise is that the famous writing is older than the building in front of you. Wuhan has a reinforced-concrete reconstruction opened on a new site in 1985. Yueyang Tower retains a Qing timber form and position established in 1880, with later dismantling conservation. Nanchang's present pavilion is a reinforced-concrete, faux-timber reconstruction completed in 1989. Choose by the continuity you want to examine, not by which looks oldest.",
     },
     {
       id: "direct-answer",
@@ -64,12 +64,12 @@ const body = {
     {
       id: "yellow-history",
       type: "paragraph",
-      text: "Wuhan's park authority starts the lineage in 223; the Central-South Architectural Design Institute project page prints 233. This review found no basis for treating 233 as a second established chronology, but retains the official-page conflict instead of silently harmonising it. The visitor-critical facts agree: towers were repeatedly lost and rebuilt; the Qing tower erected in 1868 burned in 1884; bridge works prevented rebuilding on the old footprint; and the new-site building opened in June 1985.",
+      text: "Wuhan's park authority starts the lineage in 223; the Central-South Architectural Design Institute project page prints 233. This review found no basis for treating 233 as a second established chronology, but retains the official-page conflict instead of silently harmonising it. The facts most relevant to visitors agree: towers were repeatedly lost and rebuilt; the Qing tower erected in 1868 burned in 1884; bridge works prevented rebuilding on the old footprint; and the new-site building opened in June 1985.",
     },
     {
       id: "yellow-material",
       type: "paragraph",
-      text: "The institute describes a 51.4-metre reinforced-concrete structure with five visible levels and nine internal floors. Its outward language draws on the Qing tower while expanding roof composition and visitor capacity. This is documented modern interpretation, not surviving Qing fabric. When a label says 'reappearance' or 'reconstruction,' find both the referenced period and the new construction date.",
+      text: "The institute describes a 51.4-metre reinforced-concrete structure with five visible levels and nine internal floors. Its exterior design draws on the Qing tower while expanding roof composition and visitor capacity. This is documented modern interpretation, not surviving Qing fabric. When a label says 'reappearance' or 'reconstruction,' find both the referenced period and the new construction date.",
     },
     {
       id: "yellow-onsite",
@@ -208,7 +208,7 @@ const body = {
     {
       id: "scenario-two",
       type: "paragraph",
-      text: "A reader of Wang Bo already crossing Jiangxi may find Tengwang the most direct encounter despite its newer building. Someone requiring old fabric should choose Yueyang with the repair caveat, or skip the trio. Visiting all three rarely triples understanding. Without checked door-to-door costs, luggage handling and usable half-days, this page does not build a cross-city itinerary.",
+      text: "A reader of Wang Bo already crossing Jiangxi may find Tengwang Pavilion the most direct encounter despite its newer building. Travellers whose priority is historic fabric should choose Yueyang Tower with the repair caveat, or skip the trio. Visiting all three rarely triples understanding. Without checked door-to-door costs, luggage handling and usable half-days, this page does not build a cross-city itinerary.",
     },
     {
       id: "sequence-heading",
@@ -306,7 +306,7 @@ const body = {
       type: "callout",
       tone: "decision",
       title: "Need the current operating details checked?",
-      body: "Send your dates, party size and approximate budget if you want a human to verify which one fits without sacrificing a usable sightseeing day. Current access, ticketing, lift, display and photography information was treated as dynamic on 13 August 2026 and should be checked again for the travel date.",
+      body: "Send your dates, party size and approximate budget if you want a human to verify which one fits without sacrificing a usable sightseeing day. Current access, ticketing, lift, display and photography information was treated as dynamic on 14 August 2026 and should be checked again for the travel date.",
     },
     {
       id: "links",
@@ -340,13 +340,23 @@ const body = {
         {"label":"Yellow Crane Tower modern reconstruction study","url":"https://sjjb.cbpt.cnki.net/portal/journal/portal/client/paper/769f0bd2e3b912b72ad5fa0428cdc30a","publisher":"World Architecture / CNKI journal platform","reviewedAt":"2026-08-13"},
         {"label":"Literary reception of Cui Hao and Li Bai at Yellow Crane Tower","url":"https://xb.yrctu.edu.cn/article/doi/10.13681/j.cnki.cn41-1282/tv.2009.01.018","publisher":"Yellow River Conservancy Technical Institute journal","reviewedAt":"2026-08-13"},
         {"label":"Yueyang Tower official introduction","url":"https://www.yueyang.gov.cn/you/content_1630539.html","publisher":"Yueyang Municipal People's Government","reviewedAt":"2026-08-13"},
-        {"label":"Yueyang Tower historical events and 1880 move","url":"https://www.yysqw.gov.cn/43332/43334/43511/44276/content_1267358.html","publisher":"Yueyang Local Chronicles Office","reviewedAt":"2026-08-13"},
+        {"label":"Yueyang Tower historical events and 1880 move","url":"https://www.yueyang.gov.cn/yysqw/43332/43334/43511/44276/content_1267358.html","publisher":"Yueyang Local Chronicles Office","reviewedAt":"2026-08-14"},
         {"label":"Yueyang Tower conservation and retained components","url":"https://whhlyt.hunan.gov.cn/whhlyt/news/mtjj/202503/t20250326_33623203.html","publisher":"Hunan Department of Culture and Tourism","reviewedAt":"2026-08-13"},
         {"label":"1983–84 Yueyang Tower dismantling conservation","url":"https://daj.yueyang.gov.cn/6658/6667/content_370327.html","publisher":"Yueyang Municipal Archives","reviewedAt":"2026-08-13"},
         {"label":"Yueyang Tower rebuilding and movement record","url":"https://dfz.hunan.gov.cn/dfz/dqsj/202211/t20221122_29134400.html","publisher":"Hunan Provincial Local Chronicles Office","reviewedAt":"2026-08-13"},
         {"label":"Tengwang Pavilion historical and architectural outline","url":"https://www.nc.gov.cn/ncszf/rwfg/202505/caef4edf190a44099b002d0891a3d0f8.shtml","publisher":"Nanchang Municipal People's Government","reviewedAt":"2026-08-13"},
         {"label":"Tengwang Pavilion protection-list record","url":"https://www.nc.gov.cn/attachment/upload/file/20250806/1754472189182067198.pdf","publisher":"Nanchang Municipal People's Government","reviewedAt":"2026-08-13"},
-        {"label":"Interview with Tengwang Pavilion chief designer Chen Xingwen","url":"https://www.tsinghua.org.cn/info/1951/19465.htm","publisher":"Tsinghua Alumni Association, republished designer interview","reviewedAt":"2026-08-13"}
+        {"label":"Interview with Tengwang Pavilion chief designer Chen Xingwen","url":"https://www.tsinghua.org.cn/info/1951/19465.htm","publisher":"Tsinghua Alumni Association, republished designer interview","reviewedAt":"2026-08-13"},
+        {"label":"Hero photograph: present Yellow Crane Tower by Xiquinho Silva, CC BY 2.0; centre-cropped, resized, tonally optimised and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61426-Wuhan_(49150471556).jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: Wuhan Yangtze River Bridge seen from Yellow Crane Tower by Yumeto, CC BY-SA 4.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:20231125_Wuhan_Yangtze_River_Bridge_seen_from_the_Yellow_Crane_Tower.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: side view of Yueyang Tower by Huangdan2060, CC0 1.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Yueyang_Tower,_photographed_from_the_side.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: Yueyang Tower ceiling by A J Butler, CC BY 3.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Ceiling_of_Yueyang_Tower_-_panoramio.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: present Tengwang Pavilion exterior by 沈澄心, CC0 1.0; resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Pavilion_of_Prince_Teng_20231017_32.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: Gan River view from Tengwang Pavilion by 沈澄心, CC0 1.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Pavilion_of_Prince_Teng_20231017_08.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"CC BY 2.0 licence for the cropped Yellow Crane Tower derivatives","url":"https://creativecommons.org/licenses/by/2.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"CC BY-SA 4.0 licence for the cropped Wuhan bridge-view derivative","url":"https://creativecommons.org/licenses/by-sa/4.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"CC BY 3.0 licence for the cropped Yueyang Tower ceiling derivative","url":"https://creativecommons.org/licenses/by/3.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"CC0 1.0 dedication for the Yueyang side and Tengwang Pavilion derivatives","url":"https://creativecommons.org/publicdomain/zero/1.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"}
       ],
     },
   ],

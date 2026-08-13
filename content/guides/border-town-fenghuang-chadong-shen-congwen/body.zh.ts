@@ -318,7 +318,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "核心资料核对于 2026 年 8 月 13 日",
+      title: "资料与图片署名复核至 2026 年 8 月 14 日",
       items: [
         {"label": "沈从文生平", "url": "https://sdaj.hunan.gov.cn/sdaj/wszt/xxsl/xxrw/200609/t20060928_1977903.html", "publisher": "湖南省档案馆", "reviewedAt": "2026-08-13"},
         {"label": "全国重点文物保护单位中的沈从文故居", "url": "https://wwj.hunan.gov.cn/wwj/c100314/201406/t20140613_10483053.html", "publisher": "湖南省文物局", "reviewedAt": "2026-08-13"},
@@ -329,7 +329,17 @@ const body = {
         {"label": "茶峒旅游呈现与复建翠翠居", "url": "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202410/t20241006_33468999.html", "publisher": "湖南省人民政府", "reviewedAt": "2026-08-13"},
         {"label": "2026 年入口题字与 1993 年崖壁题字来源", "url": "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202605/t20260502_33969228.html", "publisher": "湖南省人民政府", "reviewedAt": "2026-08-13"},
         {"label": "茶峒、边城地名沿革", "url": "https://mzt.hunan.gov.cn/mzt/sxdmx/202005/t20200513_12118025.html", "publisher": "湖南省民政厅", "reviewedAt": "2026-08-13"},
-        {"label": "“岨”字标准读音表", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "台湾教育主管部门语言文字资料", "reviewedAt": "2026-08-13"}
+        {"label": "2025 年景区运营与一次惠民演出的日期快照", "url": "https://whhlyt.hunan.gov.cn/whhlyt/cyfz/cyxm/202507/t20250711_33736998.html", "publisher": "湖南省文化和旅游厅", "reviewedAt": "2026-08-14"},
+        {"label": "“岨”字标准读音表", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "台湾教育主管部门语言文字资料", "reviewedAt": "2026-08-13"},
+        {"label": "首图：xiquinhosilva 拍摄凤凰虹桥；已裁切，CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "正文图：Kurgenera 拍摄沈从文故居入口；已缩放，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E6%B2%88%E4%BB%8E%E6%96%87%E6%95%85%E5%B1%85.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "正文图：xiquinhosilva 拍摄凤凰沱江屋顶；已缩放，CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_01.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "正文图：xiquinhosilva 拍摄江天广场入口；已缩放，CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_11.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "正文图：于回拍摄沱江跳岩；按原尺寸转制，CC BY-SA 2.0", "url": "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "正文图：Zhangmoon618 拍摄沈从文墓；已缩放，作者贡献至公有领域", "url": "https://commons.wikimedia.org/wiki/File:Shen_Congwen_Grave_in_Fenghuang_County.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY 4.0 许可", "url": "https://creativecommons.org/licenses/by/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY-SA 4.0 许可", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY-SA 2.0 许可", "url": "https://creativecommons.org/licenses/by-sa/2.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"}
       ]
     }
   ]

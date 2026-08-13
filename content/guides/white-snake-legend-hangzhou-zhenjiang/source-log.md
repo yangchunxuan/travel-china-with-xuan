@@ -1,6 +1,6 @@
 # Source log — White Snake legend in Hangzhou and Zhenjiang
 
-Status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
+Status: `CENTRAL CONTENT REVIEW COMPLETE — RELEASE BATCH QA REQUIRED`
 
 - Candidate: `folk-city-20260813-05`
 - Action: `new-page`
@@ -8,7 +8,7 @@ Status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
 - Editorial parent hub: `history-route-collection`
 - Public section hub: `/culture/`
 - Canonical owner: `white-snake-legend-hangzhou-zhenjiang`
-- Source review date: `2026-08-13` (Asia/Shanghai)
+- Source review date: `2026-08-14` (Asia/Shanghai; central release review)
 - User task: distinguish the evolving White Snake legend from Broken Bridge, Leifeng archaeology, the modern tower and Jinshan Temple, then decide whether Hangzhou alone is enough
 - Excludes: a West Lake walking/boat guide, Hangzhou transport, a frozen Hangzhou–Zhenjiang timetable, a full plot retelling, screen criticism and a unique-origin verdict
 
@@ -16,7 +16,8 @@ Status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
 
 ## Latest-main, PR and canonical audit
 
-- Worktree base: latest fetched `origin/main` at `5a926202df8ba03ea6f2f86a37819d50342a59e8`.
+- Original worker audit base: fetched `origin/main` at `5a926202df8ba03ea6f2f86a37819d50342a59e8`.
+- Central release audit base: `origin/main` at `98bd92a`; canonical ownership, paths and internal-link targets were rechecked on `2026-08-14`.
 - Reviewed 127 guide directories, 89 fetched remote refs and the open PR set on 2026-08-13.
 - PR #32 remains an unmerged topic-universe draft and contains no White Snake, Broken Bridge, Leifeng, Jinshan Temple or Zhenjiang owner.
 - Adjacent PR #32 candidates remain separate: `hangzhou-west-lake-shores-neighborhood-map` owns West Lake shore orientation; `west-lake-walk-boat-or-bike` owns walking, boat and cycling choices. This page supplies neither task.
@@ -117,3 +118,14 @@ Self-assessment: `94/100` — readability/narrative `19/20`; fact layers/sources
 2. Preserve the source file pages, author names, licence links and processing hashes recorded in `image-plan.md`.
 3. If a current official cave notice appears, it may update the dynamic table but must not become a separate canonical page.
 4. If stronger 1948 archival evidence appears, replace the attributed museum wording rather than silently removing its provenance.
+
+## Central release review — 2026-08-14
+
+- **Base and owner:** checked against `origin/main` at `98bd92a`; the exact canonical owner remains `white-snake-legend-hangzhou-zhenjiang`, with EN `/guides/white-snake-legend-hangzhou-zhenjiang/`, ZH `/zh/guides/white-snake-legend-hangzhou-zhenjiang/` and KO `/ko/guides/white-snake-legend-hangzhou-zhenjiang/`. No split Hangzhou, Zhenjiang, Leifeng or cave owner was created.
+- **Trilingual copy:** removed unintended English proper-name residue from Chinese, normalised Korean personal and site names, and smoothed English decision language without changing claim strength. Block IDs, ordering, evidence layers and source lists remain parallel.
+- **Source boundary:** the durable article still freezes no hours, prices, reservations, lift access, exhibition inventory, cave access, photography rule or rail service. Those fields require the newest official operator notice for the actual visit date; the article retains explicit fallbacks when that check fails.
+- **Dates:** `datePublished`, `dateModified` and `sourceReviewedDate` are `2026-08-14`, the actual central release-review day. Individual source-object `reviewedAt` values remain `2026-08-13`, the day those pages were checked; they were not falsely rewritten as fresh fetches.
+- **Links:** all three locale bodies retain the same three route-help links; their EN, ZH and KO targets resolve in the `98bd92a` tree. The editorial parent remains taxonomy only and is not exposed as a broken URL.
+- **Images and rights:** all body alt text and captions describe visible material rather than dramatized events. Six existing real-place/historical assets remain in use, with `0` AI-generated or AI-assisted documentary images. No binary, licence, hash or provenance record was changed; `image-plan.md` remains the authority.
+- **SEO:** `seo-brief.md` now records the one-page query owner, information gain, internal-link cluster and measurement plan. It is qualitative and makes no unsupported traffic-volume claim.
+- **Release disposition:** editorially ready for the next batch, subject only to normal batch QA and immediate pre-release recheck of dynamic operator facts.

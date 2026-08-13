@@ -177,7 +177,8 @@ const body = {
       "items": [
         {"label": "How to read a Suzhou garden", "href": "/guides/how-to-read-a-suzhou-garden/", "description": "Use sequence, framed views and borrowed scenery instead of treating a garden as a list of pavilions."},
         {"label": "Visit the Terracotta Army independently", "href": "/guides/terracotta-warriors-without-tour/", "description": "Plan a major archaeological site while keeping interpretation and logistics separate."},
-        {"label": "Do you need a guide in China?", "href": "/guides/do-you-need-a-tour-guide-in-china/", "description": "Decide where expert interpretation adds value and where independent travel works well."}
+        {"label": "Do you need a guide in China?", "href": "/guides/do-you-need-a-tour-guide-in-china/", "description": "Decide where expert interpretation adds value and where independent travel works well."},
+        {"label": "Compare Yellow Crane, Yueyang and Tengwang towers", "href": "/guides/three-literary-towers-comparison/", "description": "Apply the same material-evidence discipline when choosing among one timber tower and two modern reconstructions."}
       ]
     },
     {

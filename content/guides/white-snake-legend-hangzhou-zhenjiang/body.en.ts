@@ -6,13 +6,13 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Broken Bridge, Leifeng Pagoda and Jinshan Temple are real places, but none proves that the White Snake story happened as history. Broken Bridge is a maintained element of West Lake. Beneath the present Leifeng tower are remains of a late-Wuyue Buddhist pagoda; the visitor building is modern. Jinshan is a living Buddhist temple whose flood association belongs to the legend’s literary and theatrical growth. For most readers, Hangzhou supplies enough evidence in one focused half-day. Add Zhenjiang only if comparing how two cities made a changing story visible merits another stop.",
+      text: "Broken Bridge, Leifeng Pagoda and Jinshan Temple are real places, but none proves that the White Snake story happened as history. Broken Bridge is a maintained element of West Lake. Beneath the present Leifeng tower are remains of a Buddhist pagoda from the late Wuyue period; the visitor building is modern. Jinshan is a living Buddhist temple whose flood association belongs to the legend’s literary and theatrical growth. For most readers, Hangzhou supplies enough evidence in one focused half-day. Add Zhenjiang only if comparing how two cities made a changing story visible is worth an extra stop.",
     },
     {
       id: "answer",
       type: "callout",
       title: "The short decision",
-      body: "Choose Hangzhou for the clearest bridge–ruin–reconstruction sequence. Add Zhenjiang when Jinshan already fits your east-China route, you can give it a separate half-day, and a living temple plus a different layer of the legend matters more than the transfer. Do not add Zhenjiang merely to collect a second ‘White Snake location.’",
+      body: "Choose Hangzhou for the clearest bridge–ruin–reconstruction sequence. Add Zhenjiang when Jinshan already fits your eastern China route, you can give it a separate half-day, and seeing a living temple and a different layer of the legend is worth the transfer. Do not add Zhenjiang merely to collect a second ‘White Snake location.’",
       tone: "decision",
     },
     {
@@ -102,7 +102,7 @@ const body = {
     {
       id: "leifeng-ruins",
       type: "paragraph",
-      text: "If that interior floor is accessible, look for the old brick base and its modern protection boundary. This contrast beats searching for a legendary prison. Archaeology establishes construction, Buddhist use, collapse and deposits; it cannot identify Bai Suzhen. The underground chamber matters archaeologically, but this guide promises neither viewing nor entry. Objects may rotate, so confirm floor access and displays before planning around one relic.",
+      text: "If that interior floor is accessible, look for the old brick base and its modern protection boundary. This contrast is more useful than searching for a legendary prison. Archaeology establishes construction, Buddhist use, collapse and deposits; it cannot identify Bai Suzhen. The underground chamber matters archaeologically, but this guide promises neither viewing nor entry. Objects may rotate, so confirm floor access and displays before planning around one relic.",
     },
     {
       id: "leifeng-ruins-figure",
@@ -165,7 +165,7 @@ const body = {
       id: "cave-warning",
       type: "callout",
       title: "Do not promise Fahai Cave",
-      body: "Scholarship traces a naming history in which Peigong Cave and Fahai Cave were presented differently over time. That is evidence of landscape storytelling, not Fahai’s biography. Current 2026 access, wording and photography rules have not been confirmed, so this guide does not promise entry. If closed or unclear, use public temple fabric, Cishou Pagoda and a lawful water–hill viewpoint instead.",
+      body: "Scholarship traces a naming history in which Peigong Cave and Fahai Cave were presented differently over time. That is evidence of landscape storytelling, not Fahai’s biography. Access, wording and photography rules for 2026 have not been confirmed, so this guide does not promise entry. If closed or unclear, use public temple fabric, Cishou Pagoda and a lawful water–hill viewpoint instead.",
       tone: "warning",
     },
     {
@@ -320,7 +320,7 @@ const body = {
       id: "help",
       type: "callout",
       title: "Need a current human check?",
-      body: "Opening, reservations, cave access, rail service and photography rules were treated as dynamic on 13 August 2026. Send your dates, party size and approximate budget if you want a local human to check whether Zhenjiang fits without compressing a transfer day. No cave entry, train or rotating display will be promised before direct verification.",
+      body: "Opening, reservations, cave access, rail service and photography rules were treated as dynamic on 14 August 2026. Send your dates, party size and approximate budget if you want a local human to check whether Zhenjiang fits without compressing a transfer day. No cave entry, train or rotating display will be promised before direct verification.",
       tone: "decision",
     },
     {
@@ -362,7 +362,16 @@ const body = {
         {"label":"Zhenjiang fire-education museum report referencing the 1948 Jinshan fire","url":"https://js.119.gov.cn/202606/jsxfww-menu-gzdt_c_30a20aac24664a56b642.html","publisher":"Jiangsu Fire and Rescue","reviewedAt":"2026-08-13"},
         {"label":"Jinshan Temple history","url":"https://ccj.pku.edu.cn/article/info?id=286660025","publisher":"Peking University journal platform, Xu Shiyi","reviewedAt":"2026-08-13"},
         {"label":"Historical channel evolution of the Zhenjiang reach","url":"https://www.geog.com.cn/EN/abstract/article/0375-5444/47762","publisher":"Acta Geographica Sinica, Yang Xiao","reviewedAt":"2026-08-13"},
-        {"label":"China Railway ticket and schedule verification","url":"https://www.12306.cn/en/index.html","publisher":"China Railway 12306","reviewedAt":"2026-08-13"}
+        {"label":"China Railway ticket and schedule verification","url":"https://www.12306.cn/en/index.html","publisher":"China Railway 12306","reviewedAt":"2026-08-13"},
+        {"label":"Hero photograph: Broken Bridge by Suicasmo, CC0 1.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Broken_Bridge_(Hangzhou)_20250505.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: modern Leifeng Pagoda by Suicasmo, CC0 1.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_20250505.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: Leifeng Pagoda archaeological site by HoweyYuan, CC BY-SA 4.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Site_of_Leifeng_Pagoda_20240729.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Historical photograph: Leifeng Pagoda in 1918 by Sekino Tadashi, public domain; proportionally resized, placed on a neutral canvas and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_in_Hangzhou,_1918.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"1939 source-volume record for the 1918 Leifeng Pagoda photograph","url":"https://ndlsearch.ndl.go.jp/books/R100000039-I1902745","publisher":"National Diet Library of Japan","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: Jinshan Jiangtian Chan Temple entrance by Yumeto, CC BY-SA 4.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:20240806_Jinshan_Si.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"Body photograph: Cishou Pagoda by Yumeto, CC BY-SA 4.0; cropped, resized and converted to WebP","url":"https://commons.wikimedia.org/wiki/File:20240806_Cishou_Ta.jpg","publisher":"Wikimedia Commons","reviewedAt":"2026-08-14"},
+        {"label":"CC0 1.0 dedication for the Broken Bridge and modern Leifeng derivatives","url":"https://creativecommons.org/publicdomain/zero/1.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"},
+        {"label":"CC BY-SA 4.0 licence for the cropped image derivatives","url":"https://creativecommons.org/licenses/by-sa/4.0/","publisher":"Creative Commons","reviewedAt":"2026-08-14"}
       ],
     },
   ],

@@ -31,6 +31,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare tickets and boarding after the station pair is chosen." },
     { label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Compare schedule shape for longer onward travel." },
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count the large-city access legs." },
+    { label: "Read the White Snake sites in Hangzhou and Zhenjiang", href: "/guides/white-snake-legend-hangzhou-zhenjiang/", description: "After solving the station pair, decide whether the legend merits a second-city cultural stop." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
     { label: "Guide to Shanghai railway stations", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-12" },

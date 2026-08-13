@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "The most useful way to walk Lu Xun's Shaoxing is not to ask whether everything came from one book. Zhou Family New Taimen is tied to his birth and youth; Sanwei Study is a documented education site; Zhou Family Old Taimen explains the wider family and social setting. Baicao Garden is a real place later shaped into a retrospective essay, not a botanical inventory written on the spot. Kong Yiji, by contrast, is fictional, and the present Xianheng Hotel belongs chiefly to the story's reception and today's visitor economy. Follow the evidence in that order—family, school, home, remembered garden, museum, then fiction and commerce—and allow the duration to expand or contract. No current official route reviewed on 13 August 2026 supports a guaranteed two-to-three-hour circuit for every visitor."
+      text: "The most useful way to walk Lu Xun's Shaoxing is not to ask whether everything came from one book. Zhou Family New Taimen is tied to his birth and youth; Sanwei Study is a documented education site; Zhou Family Old Taimen explains the wider family and social setting. Baicao Garden is a real place later shaped into a retrospective essay, not a botanical inventory written on the spot. Kong Yiji, by contrast, is fictional, and the present Xianheng Hotel belongs chiefly to the story's reception and today's visitor economy. Follow the evidence in that order—family, school, home, remembered garden, museum, then fiction and commerce—and allow the duration to expand or contract. No current official route reviewed through 14 August 2026 supports a guaranteed two-to-three-hour circuit for every visitor."
     },
     {
       id: "direct-answer",
@@ -320,8 +320,8 @@ const body = {
     {
       id: "local-review",
       type: "callout",
-      title: "LOCAL HUMAN REVIEW NEEDED",
-      body: "Before publication, a named Shaoxing or Lu Xun cultural reviewer should verify the room sequence, the museum's current object-attribution wording, current Chinese/Korean place names and the distinction between memoir, fiction and site interpretation.",
+      title: "What this guide does not certify",
+      body: "Homeground's central desk review checked the three-language structure, names, source boundaries and image attribution on 14 August 2026. It was not an onsite inspection or an endorsement by a named Shaoxing or Lu Xun specialist. Treat the walking order as editorial logic, and let the current map, room labels and staff instructions govern what is open and how an object is attributed on the day.",
       tone: "neutral"
     },
     {
@@ -349,7 +349,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Core sources checked on 13 August 2026",
+      title: "Sources and image credits reviewed through 14 August 2026",
       items: [
         {"label": "Lu Xun Native Place site composition and 1953 museum founding", "url": "https://www.ndrc.gov.cn/xwdt/ztzl/qghsly/202105/t20210524_1301639.html", "publisher": "National Development and Reform Commission", "reviewedAt": "2026-08-13"},
         {"label": "Documented New Taimen and Sanwei Study relationships", "url": "https://sxlz.sx.gov.cn/art/2022/2/14/art_1483623_58923289.html", "publisher": "Shaoxing official local-history platform", "reviewedAt": "2026-08-13"},
@@ -361,7 +361,9 @@ const body = {
         {"label": "Dawn Blossoms Plucked at Dusk as crafted recollection", "url": "https://www.chinawriter.com.cn/n1/2022/0428/c419384-32410615.html", "publisher": "China Writers Association", "reviewedAt": "2026-08-13"},
         {"label": "Kong Yiji text and publication context", "url": "https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html", "publisher": "China Writers Association", "reviewedAt": "2026-08-13"},
         {"label": "Current Xianheng tourism presentation", "url": "https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html", "publisher": "Shaoxing Culture and Tourism authority", "reviewedAt": "2026-08-13"},
-        {"label": "2025 literary-IP district presentation", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1652992_59028173.html", "publisher": "Zhejiang Department of Culture, Radio, Television and Tourism", "reviewedAt": "2026-08-13"},
+        {"label": "2025 literary-IP district presentation", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html", "publisher": "Zhejiang Department of Culture, Radio, Television and Tourism", "reviewedAt": "2026-08-14"},
+        {"label": "Official one-, two- and three-hour route page; dated orientation, not a current timetable", "url": "https://sxlxmuseum.com/gcyx.htm", "publisher": "Shaoxing Lu Xun Native Place and Shen Garden Scenic Area", "reviewedAt": "2026-08-14"},
+        {"label": "February 2026 special-hours and reservation notice for named holiday dates", "url": "https://www.thepaper.cn/newsDetail_forward_32587318", "publisher": "The Paper, carrying the venue notice", "reviewedAt": "2026-08-13"},
         {"label": "Hero: New Taimen small reception room by Yumeto; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Small_reception_room_of_the_former_residence_of_Lu_Xun.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "Old Taimen entrance by Gisling; cropped, CC BY 3.0", "url": "https://commons.wikimedia.org/wiki/File:Ancestral_home_of_Luxun.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "Sanwei Study by Yumeto; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Sanwei_Shuwu.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},

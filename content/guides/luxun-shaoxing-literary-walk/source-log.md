@@ -4,16 +4,17 @@
 
 - Candidate: `folk-city-20260813-06`
 - Parent hub: `history-route-collection`
-- Prepared and checked: `2026-08-13` (Asia/Shanghai)
+- Prepared: `2026-08-13`; central release review completed `2026-08-14` (Asia/Shanghai)
 - Body status: EN / ZH / KO complete
-- Editorial status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
-- Required pre-publication status: `LOCAL HUMAN REVIEW NEEDED`
+- Editorial status: `CENTRAL RELEASE REVIEW COMPLETE — DYNAMIC ITEMS REMAIN TRAVEL-DAY CHECKS`
+- Review scope: central desk review of trilingual parity and naturalness, canonical ownership, metadata dates, internal links, official-source boundaries, and image alt/caption/attribution. This was not an onsite audit or a named local-specialist endorsement.
+- Public-source repair: central review on `2026-08-14` replaced source 11's mismatched Zhejiang Culture URL with the search-result-verified content match at `art_1673778_59028174.html`; the public EN / ZH / KO source objects and claim ledger were aligned without changing the claim boundary.
 
 The article uses four public-facing layers: `history`, `literature`, `tourism-presentation`, and `editorial-judgment`. The research ledger also retains `folklore / institutional-attribution` for the “早” desk story because an institution's attribution does not by itself establish complete object provenance.
 
 ## Core factual and literary sources
 
-All links below were reviewed on `2026-08-13`.
+The source set was assembled on `2026-08-13`; central review rechecked the direct-operator route-page boundary and the absence of a complete ordinary-day operational notice on `2026-08-14`.
 
 | # | Source | Authority / layer | Used for | Boundary or caveat |
 |---|---|---|---|---|
@@ -27,7 +28,7 @@ All links below were reviewed on `2026-08-13`.
 | 8 | [China Writers Association — study of *Dawn Blossoms Plucked at Dusk*](https://www.chinawriter.com.cn/n1/2022/0428/c419384-32410615.html) | Reputable literary scholarship / literature | The collection as retrospective, artistically shaped memory; 1926 writing context | Does not make all recollection fictional or materially verifiable |
 | 9 | [China Writers Association — *Kong Yiji*](https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html) | Authoritative literary text / literature | Short-story genre, 1919 publication, fictional character and Lu Town tavern | The story cannot certify a historical Kong Yiji or the current hotel's material history |
 | 10 | [Shaoxing culture authority — current Xianheng framing](https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html) | Local authority / tourism-presentation | How the present destination markets Xianheng and the Kong Yiji association | Marketing proves current presentation, not a continuous original interior or historical fictional character |
-| 11 | [Zhejiang culture authority — 2025 literary-IP district](https://ct.zj.gov.cn/art/2025/10/14/art_1652992_59028173.html) | Provincial culture authority / tourism-presentation | Newly created themed businesses and scenes; phased project context | Business mix, completion and access may have changed by August 2026 |
+| 11 | [Zhejiang culture authority — 2025 literary-IP district](https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html) | Provincial culture authority / tourism-presentation | Newly created themed businesses and scenes; phased project context | Business mix, completion and access may have changed by August 2026 |
 
 ## Dynamic and route sources
 
@@ -62,7 +63,7 @@ Attribution identifies creators and licences only; it does not imply creator end
 4. Current photography rules for every interior and rotating object.
 5. Current “早” desk label/provenance and rotation status.
 6. A direct current business/heritage chronology for Xianheng Hotel.
-7. A named Shaoxing or Lu Xun cultural reviewer for room sequence, attribution wording and EN/ZH/KO names.
+7. No named Shaoxing or Lu Xun cultural reviewer or onsite route tester was part of central review; therefore the article does not claim local endorsement, a tested physical sequence or current object-display certainty.
 
 These gaps are handled with narrower wording and recovery routes. They do not authorize central editors to convert old route pages or marketing claims into current facts without a new check.
 
@@ -72,8 +73,8 @@ These gaps are handled with narrower wording and recovery routes. They do not au
 - Fact layering and source reliability: `19/20`
 - Real travel utility: `19/20`
 - Place-specific information and original explanation: `15/15`
-- Trilingual naturalness and information parity: `14/15` — block parity is verified; named local review remains required
+- Trilingual naturalness and information parity: `15/15` — central review verified matching block IDs, information objects, locale-specific internal links and public source/image-credit parity
 - Image accuracy and rights: `9/10` — licences and locations are documented; central may replace the wide Baicao visitor view if its model-release policy is stricter
-- Total: **95/100**
+- Total: **96/100**
 
 Hard-stop audit: no memoir is called a novel or live diary; no fictional character is presented as a resident; no protected/restored building is called wholly untouched; no modern Xianheng scene is called an original fictional tavern; no AI documentary image, screen still, copied modern translation, invented firsthand observation or unverified fixed itinerary is present.

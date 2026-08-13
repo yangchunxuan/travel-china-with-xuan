@@ -318,7 +318,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Core sources checked on 13 August 2026",
+      title: "Sources and image credits reviewed through 14 August 2026",
       items: [
         {"label": "Shen Congwen biography", "url": "https://sdaj.hunan.gov.cn/sdaj/wszt/xxsl/xxrw/200609/t20060928_1977903.html", "publisher": "Hunan Provincial Archives", "reviewedAt": "2026-08-13"},
         {"label": "Shen Congwen Former Residence in Hunan's national protected-site list", "url": "https://wwj.hunan.gov.cn/wwj/c100314/201406/t20140613_10483053.html", "publisher": "Hunan Provincial Cultural Relics Bureau", "reviewedAt": "2026-08-13"},
@@ -329,7 +329,17 @@ const body = {
         {"label": "Chadong tourism presentation and reconstructed Cuicui residence", "url": "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202410/t20241006_33468999.html", "publisher": "Hunan Provincial People's Government", "reviewedAt": "2026-08-13"},
         {"label": "Provenance of the 2026 gate and 1993 cliff lettering", "url": "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202605/t20260502_33969228.html", "publisher": "Hunan Provincial People's Government", "reviewedAt": "2026-08-13"},
         {"label": "Chadong/Biancheng place-name history", "url": "https://mzt.hunan.gov.cn/mzt/sxdmx/202005/t20200513_12118025.html", "publisher": "Hunan Department of Civil Affairs", "reviewedAt": "2026-08-13"},
-        {"label": "Standard reading table for 岨", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "Ministry of Education, Taiwan", "reviewedAt": "2026-08-13"}
+        {"label": "Dated 2025 scenic-area operation and public-performance snapshot", "url": "https://whhlyt.hunan.gov.cn/whhlyt/cyfz/cyxm/202507/t20250711_33736998.html", "publisher": "Hunan Department of Culture and Tourism", "reviewedAt": "2026-08-14"},
+        {"label": "Standard reading table for 岨", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "Ministry of Education, Taiwan", "reviewedAt": "2026-08-13"},
+        {"label": "Hero: Hongqiao in Fenghuang by xiquinhosilva; cropped, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "Shen Congwen Former Residence entrance by Kurgenera; resized, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E6%B2%88%E4%BB%8E%E6%96%87%E6%95%85%E5%B1%85.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "Fenghuang Tuojiang rooftops by xiquinhosilva; resized, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_01.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "Jiangtian Plaza gateway by xiquinhosilva; resized, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_11.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "Tuojiang stepping stones by Yu Hui; converted at native size, CC BY-SA 2.0", "url": "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "Shen Congwen grave by Zhangmoon618; resized, public-domain dedication", "url": "https://commons.wikimedia.org/wiki/File:Shen_Congwen_Grave_in_Fenghuang_County.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY 4.0 licence", "url": "https://creativecommons.org/licenses/by/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY-SA 4.0 licence", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY-SA 2.0 licence", "url": "https://creativecommons.org/licenses/by-sa/2.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"}
       ]
     }
   ]

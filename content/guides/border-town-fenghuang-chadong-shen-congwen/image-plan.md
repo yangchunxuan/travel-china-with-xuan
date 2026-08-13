@@ -2,7 +2,7 @@
 
 Status: **REAL ASSETS SELECTED — CHADONG PHOTOGRAPHY GAP RECORDED**
 
-Reviewed: 2026-08-13
+Selected and processed: 2026-08-13; central visual/attribution recheck: 2026-08-14
 
 No AI-generated documentary image, film/television still, modern illustration or unidentified “ancient town” photograph is permitted. Every selected file represents the exact Fenghuang subject named in its caption. No selected photograph is used to prove the age of a building, the location of a fictional scene or the authenticity of a tourism reconstruction.
 
@@ -115,3 +115,7 @@ For each commissioned file, record photographer, capture date, exact location, c
 - failure-recovery and final recheck lists
 
 These relationships must remain accessible, translatable and easy to update; they should not become static infographics.
+
+## Central release review
+
+On 2026-08-14, central review visually inspected all six existing derivatives against their declared subject roles and checked the EN/ZH/KO alt/caption pairs. No binary was changed. The hero and five body images remain classified as real photographs with **AI use: 0 / 6**. Public creator/source/licence entries are now present in every locale's body Sources block; this internal plan is not the sole attribution route.

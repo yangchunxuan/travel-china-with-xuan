@@ -12,7 +12,7 @@ const body = {
       id: "direct-answer",
       type: "callout",
       title: "짧은 결론",
-      body: "한 곳만 가며 소설이 우선이면 차둥, 선충원의 삶이 우선이면 펑황을 고른다. 안내판과 강의 지리, 현대 복원 공간까지 비교할 시간과 집중력이 있다면 두 곳을 간다. 펑황을 간다는 이유만으로 그곳을 곧바로 『변성』의 원형이라고 전제해서는 안 된다.",
+      body: "한 곳만 가며 소설이 우선이면 차둥, 선충원의 삶이 우선이면 펑황을 고른다. 안내판과 강의 지리, 현대 복원 공간까지 비교할 시간과 여유가 있다면 두 곳을 간다. 펑황을 간다는 이유만으로 그곳을 곧바로 『변성』의 원형이라고 전제해서는 안 된다.",
       tone: "decision"
     },
     {
@@ -43,7 +43,7 @@ const body = {
     {
       id: "choice-caution",
       type: "paragraph",
-      text: "남은 시간만으로 결정하지 않는 편이 좋다. 차둥은 당일 나룻배나 공연이 없어도 텍스트, 지형, 안내판을 함께 볼 독자에게 충분한 의미가 있다. 펑황은 작가와 문화유산을 한곳에서 보기 쉽지만, 눈에 잘 띄는 관광 상업이 오래돼 보이는 모든 골목을 『변성』의 일부로 오해하게 만들 수 있다. 작품을 읽지 않았다면 추이추이(翠翠), 나룻배 가족, 변경 마을의 기본 관계를 먼저 알아두면 차둥이 더 잘 보인다. 그래도 줄거리가 현실 마을을 작품의 증거로 바꾸지는 않는다."
+      text: "남은 시간만으로 결정하지 않는 편이 좋다. 차둥은 당일 나룻배나 공연이 없어도 작품, 지형, 안내판을 함께 볼 독자에게 충분한 의미가 있다. 펑황은 작가와 문화유산을 한곳에서 보기 쉽지만, 눈에 잘 띄는 관광 상업이 오래돼 보이는 모든 골목을 『변성』의 일부로 오해하게 만들 수 있다. 작품을 읽지 않았다면 추이추이(翠翠), 나룻배 가족, 변경 마을의 기본 관계를 먼저 알아두면 차둥이 더 잘 보인다. 그래도 줄거리가 현실 마을을 작품의 증거로 바꾸지는 않는다."
     },
     {
       id: "chadong-heading",
@@ -54,7 +54,7 @@ const body = {
     {
       id: "chadong-literary-geography",
       type: "paragraph",
-      text: "작지만 결정적인 교정부터 해야 한다. 지서우대학교 학술지의 연구는 소설의 주요 사건이 단순히 차둥 읍내에서 일어나는 것이 아니라 비시쥐를 중심으로 조직된다고 설명한다. 논문은 비시쥐를 차둥강 상류 지류 곁의 바위산으로 서술한다. 차둥은 여전히 중요한 인근 마을이자 지리적 기준점이지만, 문학 공간은 작가가 선택하고 재구성한 결과다. 이 글은 논문의 영문 표기 Bixiju와 岨의 표준 독음 jū에 맞춰 碧溪岨를 Bìxījū, 비시쥐로 적는다. 여기서 비시쥐는 문학적 공간 명칭이며, 오늘날 공식 표지와 정확한 좌표가 보장된 관광지를 뜻하지 않는다."
+      text: "작지만 결정적인 교정부터 해야 한다. 지서우대학교 학술지의 연구는 소설의 주요 사건이 단순히 차둥 마을 안에서 일어나는 것이 아니라 비시쥐를 중심으로 조직된다고 설명한다. 논문은 비시쥐를 차둥강 상류 지류 곁의 바위산으로 서술한다. 차둥은 여전히 중요한 인근 마을이자 지리적 기준점이지만, 문학 공간은 작가가 선택하고 재구성한 결과다. 이 글은 논문의 영문 표기 Bixiju와 岨의 표준 독음 jū에 맞춰 碧溪岨를 Bìxījū, 비시쥐로 적는다. 여기서 비시쥐는 문학적 공간 명칭이며, 오늘날 공식 표지와 정확한 좌표가 보장된 관광지를 뜻하지 않는다."
     },
     {
       id: "fiction-transformation",
@@ -65,7 +65,7 @@ const body = {
       id: "rename-context",
       type: "callout",
       title: "지명 변경은 작품의 영향을 보여 주지만 원형을 입증하지 않는다",
-      body: "원래 차둥으로 불리던 행정 진은 2005년에 볜청진으로 이름을 바꿨다. 이는 현대의 공공 서사에서 마을과 소설의 연관성이 강해졌음을 보여 준다. 현재의 행정 경계, 거리와 관광 공간이 문학 공간과 완전히 일치한다는 증거는 아니다.",
+      body: "원래 차둥으로 불리던 행정 단위는 2005년에 볜청진으로 이름을 바꿨다. 이는 현대의 공공 서사에서 마을과 소설의 연관성이 강해졌음을 보여 준다. 현재의 행정 경계, 거리와 관광 공간이 문학 공간과 완전히 일치한다는 증거는 아니다.",
       tone: "neutral"
     },
     {
@@ -86,7 +86,7 @@ const body = {
       alt: "옛집 현판과 관람 안내가 보이는 펑황 선충원 옛집의 길가 출입구.",
       width: 1600,
       height: 1186,
-      caption: "출입구는 장소의 정체를 확인해 준다. 내부에서는 보호 표지와 방별 설명으로 역사 부재와 후대 전시·가구를 구분한다."
+      caption: "출입구는 장소의 정체를 확인해 준다. 내부에서는 보호 표지와 방별 설명으로 역사적 건축 부재와 후대 전시·가구를 구분한다."
     },
     {
       id: "fenghuang-rooftops-figure",
@@ -271,7 +271,7 @@ const body = {
         "차둥 나룻배가 운항하지 않으면 고정된 선착장, 양안, 건넘 방향을 비교한다. 무관한 유람선을 타고 문학 속 나루라고 부르지 않는다.",
         "주제 표지와 문화재 표지가 충돌하면 두 주장을 모두 기록하되, 역사적 상태는 문화재 또는 학술 출처를 우선해 판단한다.",
         "연대나 보존 표지가 없는 건물은 현재 마을에 있는 건물이라고만 부른다. 원형, 수리, 재건을 추측하지 않는다.",
-        "현재 개방, 표, 공연을 확인할 수 없다면 외부 공간 중심 동선을 유지하고 당일 직접 운영 주체에 확인한다."
+        "현재 개방, 입장권, 공연을 확인할 수 없다면 외부 공간 중심 동선을 유지하고 당일 직접 운영 주체에 확인한다."
       ]
     },
     {
@@ -318,7 +318,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "2026년 8월 13일 확인한 핵심 자료",
+      title: "출처·이미지 표기 최종 검토일: 2026년 8월 14일",
       items: [
         {"label": "선충원 생애", "url": "https://sdaj.hunan.gov.cn/sdaj/wszt/xxsl/xxrw/200609/t20060928_1977903.html", "publisher": "후난성 당안관", "reviewedAt": "2026-08-13"},
         {"label": "전국중점문물보호단위 목록의 선충원 옛집", "url": "https://wwj.hunan.gov.cn/wwj/c100314/201406/t20140613_10483053.html", "publisher": "후난성 문물국", "reviewedAt": "2026-08-13"},
@@ -329,7 +329,17 @@ const body = {
         {"label": "차둥 관광 연출과 재건한 추이추이 집", "url": "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202410/t20241006_33468999.html", "publisher": "후난성 인민정부", "reviewedAt": "2026-08-13"},
         {"label": "2026년 입구 글씨와 1993년 절벽 글씨의 내력", "url": "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202605/t20260502_33969228.html", "publisher": "후난성 인민정부", "reviewedAt": "2026-08-13"},
         {"label": "차둥·볜청 지명 연혁", "url": "https://mzt.hunan.gov.cn/mzt/sxdmx/202005/t20200513_12118025.html", "publisher": "후난성 민정청", "reviewedAt": "2026-08-13"},
-        {"label": "岨 표준 독음표", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "대만 교육부 언어 자료", "reviewedAt": "2026-08-13"}
+        {"label": "2025년 관광지 운영과 한 차례 공익 공연의 날짜별 기록", "url": "https://whhlyt.hunan.gov.cn/whhlyt/cyfz/cyxm/202507/t20250711_33736998.html", "publisher": "후난성 문화여유청", "reviewedAt": "2026-08-14"},
+        {"label": "岨 표준 독음표", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "대만 교육부 언어 자료", "reviewedAt": "2026-08-13"},
+        {"label": "대표 이미지: xiquinhosilva의 펑황 훙차오; 크롭, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: Kurgenera의 선충원 옛집 입구; 크기 조정, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E6%B2%88%E4%BB%8E%E6%96%87%E6%95%85%E5%B1%85.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: xiquinhosilva의 펑황 퉈장 지붕 풍경; 크기 조정, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_01.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: xiquinhosilva의 장톈광장 입구; 크기 조정, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_11.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: Yu Hui의 퉈장 징검다리; 원본 크기 변환, CC BY-SA 2.0", "url": "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: Zhangmoon618의 선충원 묘; 크기 조정, 퍼블릭 도메인 기증", "url": "https://commons.wikimedia.org/wiki/File:Shen_Congwen_Grave_in_Fenghuang_County.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY 4.0 라이선스", "url": "https://creativecommons.org/licenses/by/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY-SA 4.0 라이선스", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
+        {"label": "CC BY-SA 2.0 라이선스", "url": "https://creativecommons.org/licenses/by-sa/2.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"}
       ]
     }
   ]
