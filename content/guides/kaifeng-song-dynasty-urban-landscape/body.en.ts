@@ -167,12 +167,12 @@ const body: StructuredPageBody = {
     {
       id: "zhouqiao-figure",
       type: "figure",
-      src: "/images/guides/kaifeng-song-dynasty-urban-landscape/zhouqiao-site-exterior-1280.webp",
-      alt: "Street-side enclosure and protective structure around the Zhouqiao archaeological area in Kaifeng in 2021.",
-      width: 1280,
-      height: 853,
+      src: "/images/guides/kaifeng-song-dynasty-urban-landscape/zhouqiao-excavation-1400.webp",
+      alt: "Excavated Zhouqiao site in Kaifeng with exposed masonry bridge remains, canal walls and layered deposits under a protective roof.",
+      width: 1400,
+      height: 1050,
       caption:
-        "This 2021 photograph shows the archaeological area's exterior, not exposed bridge remains and not proof of current public access. Confirm the present viewing arrangement before building a visit around it. Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "Exposed bridge fabric, canal walls and deposits are archaeological evidence. The visible bridge is early Ming on Song foundations—not the lost Northern Song bridge—and proves neither the painted Hongqiao's location nor the park bridge's accuracy. The 2025 photo does not prove current access. Photo: Yumeto / Wikimedia Commons, CC BY-SA 4.0; resized to WebP; derivative CC BY-SA 4.0.",
     },
     {
       id: "zhouqiao-dynamic",

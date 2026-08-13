@@ -1,6 +1,6 @@
 # Claim ledger — Kaifeng Song-Dynasty Urban Landscape
 
-All claims were checked on **2026-08-13**. `Layer` uses the project's required distinctions: `history`, `literature/artwork`, `tourism-presentation`, `dynamic operation`, `rights`, or `Homeground judgment`.
+Article claims were checked on **2026-08-13**; the replacement Zhouqiao image identity, rights and caption boundary were checked on **2026-08-14**. `Layer` uses the project's required distinctions: `history`, `literature/artwork`, `tourism-presentation`, `dynamic operation`, `rights`, or `Homeground judgment`.
 
 | Claim | Layer | Source | CheckedAt | Publication rule |
 |---|---|---|---|---|
@@ -27,6 +27,7 @@ All claims were checked on **2026-08-13**. `Layer` uses the project's required d
 | Current adult price, passport process and ticket inclusions are not closed by accessible dated official evidence. | dynamic evidence gap | S8, S9 and official-sales audit | 2026-08-13 | Do not guess or repeat third-party/old values. |
 | Current Zhouqiao ordinary visitor access, booking, price and foreign-document procedure are not closed. | dynamic evidence gap | S4, S5 and government visitor-page audit | 2026-08-13 | Require direct pre-visit confirmation; never promise entry. |
 | The Palace Museum web image is not being used without explicit publication permission. | rights | S11 | 2026-08-13 | No scroll screenshot or detail in the article assets. |
+| The replacement photograph accurately depicts the exposed Zhouqiao archaeological area and is publishable as a CC BY-SA 4.0 derivative. | image identity / rights | S13, cross-checked with S4 | 2026-08-14 | Credit Yumeto, link the licence, state the WebP conversion, keep the derivative under CC BY-SA 4.0 and retain the caption's evidence limits. |
 | Park-first versus material-evidence-first sequencing is an editorial choice mechanism. | Homeground judgment | Evidence synthesis | 2026-08-13 | Present as a planning judgment, not an official recommendation. |
 
 ## Mandatory boundary sentence

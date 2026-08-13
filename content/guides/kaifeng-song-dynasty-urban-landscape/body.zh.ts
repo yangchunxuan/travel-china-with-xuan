@@ -167,12 +167,12 @@ const body: StructuredPageBody = {
     {
       id: "zhouqiao-figure",
       type: "figure",
-      src: "/images/guides/kaifeng-song-dynasty-urban-landscape/zhouqiao-site-exterior-1280.webp",
-      alt: "2021年开封州桥考古区域临街的围挡与保护结构。",
-      width: 1280,
-      height: 853,
+      src: "/images/guides/kaifeng-song-dynasty-urban-landscape/zhouqiao-excavation-1400.webp",
+      alt: "保护棚内露出的开封州桥砖石桥体、河壁和地层堆积。",
+      width: 1400,
+      height: 1050,
       caption:
-        "这张2021年的照片展示的是考古区域外部，不是裸露的桥梁遗存，也不能证明当前允许公众进入。不要在确认现行参观方式之前围绕它安排整段行程。Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "裸露的桥体、河壁与叠压地层属于考古证据。可见桥体是建在宋代基础上的明代早期结构，并非已经消失的北宋原桥；它既不能确定画中虹桥的位置，也不能为园内虹桥的准确性背书。2025年的照片同样不能证明当前开放。照片：Yumeto / Wikimedia Commons，CC BY-SA 4.0；缩放并转为WebP，衍生图继续采用CC BY-SA 4.0。",
     },
     {
       id: "zhouqiao-dynamic",
