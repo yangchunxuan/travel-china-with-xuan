@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "在绍兴读鲁迅，最有用的问题不是“这些是不是都来自同一本书”。周家新台门有鲁迅出生、成长的生活关系，三味书屋是有据可查的求学现场；周家老台门主要帮助你理解周氏家族和当时的社会空间。百草园是真实地点，但鲁迅后来把它写进回忆性散文，并不是在园中即时完成的一份植物清单。孔乙己则是小说人物，今天的咸亨酒店主要属于作品的后世接受和游客消费空间。按“家族—求学—居住—记忆中的园子—纪念馆—小说与商业”的顺序读，时间可长可短。本文截至2026年8月13日没有找到足以证明所有旅客都能完成固定2—3小时动线的现行官方资料。"
+      text: "在绍兴读鲁迅，最有用的问题不是“这些是不是都来自同一本书”。周家新台门有鲁迅出生、成长的生活关系，三味书屋是有据可查的求学现场；周家老台门主要帮助你理解周氏家族和当时的社会空间。百草园是真实地点，但鲁迅后来把它写进回忆性散文，并不是在园中即时完成的一份植物清单。孔乙己则是小说人物，今天的咸亨酒店主要属于作品的后世接受和游客消费空间。按“家族—求学—居住—记忆中的园子—纪念馆—小说与商业”的顺序读，时间可长可短。本文截至2026年8月14日没有找到足以证明所有旅客都能完成固定2—3小时动线的现行官方资料。"
     },
     {
       id: "direct-answer",
@@ -135,7 +135,7 @@ const body = {
     {
       id: "sanwei-caution",
       type: "paragraph",
-      text: "著名的“早”字书桌还要多核一步。浙江文旅部门2024年的报道说，与“早”字故事相联系的一张书桌由库房调入展区。这只能确认馆方在该日期的归属与展示说法，不能自动补齐完整流传史，也不保证它长期展出，更不能把任意刻痕都直接定为鲁迅手迹。若当天看得到，按当日展签的措辞记录；允许拍照时应拍完整说明。若物件轮换撤下，三味书屋仍是求学现场，不要拿另一张桌子代替，也不要把故事升级成物证定论。"
+      text: "著名的“早”字书桌还要多核一步。浙江文旅部门2024年的报道和纪念馆工作人员受访内容都说，馆方归属为原物的书桌曾因保护需要从三味书屋撤下、入库，后来在纪念馆展出；一篇2026年的报道却没有说清三味书屋现场所示书桌的原物或复制品身份。因此，当前物件、展签和位置仍要现场核对。若当天看得到，按当日展签的措辞记录；允许拍照时应拍完整说明。若归属原物已经轮换撤下，三味书屋仍是求学现场，不要拿另一张桌子代替，也不要把故事升级成物证定论。"
     },
     {
       id: "new-taimen-heading",
@@ -184,10 +184,10 @@ const body = {
       id: "baicao-figure",
       type: "figure",
       src: "/images/guides/luxun-shaoxing-literary-walk/baicao-garden-1600.webp",
-      alt: "绍兴鲁迅故居后方的百草园，可见身份石和今日种植区。",
+      alt: "绍兴鲁迅故里参观区内写有“百草园”的园门。",
       width: 1600,
       height: 1067,
-      caption: "百草园是真实地点，也是散文中的记忆空间；今天的植物和游览绿化不是鲁迅童年植物名录。"
+      caption: "门额确认这里是散文记忆所关联的真实百草园；它不能证明园门年代，也不是鲁迅童年视野的复原。"
     },
     {
       id: "baicao-method",
@@ -242,7 +242,7 @@ const body = {
     {
       id: "fiction-boundary",
       type: "paragraph",
-      text: "绍兴当前官方旅游材料会用《孔乙己》的关联介绍咸亨酒店；浙江文旅部门2025年的报道还记录了片区内新增的文学IP商店和场景建设。可以按它们自己的当代功能来观察：看看店铺是否标注建成时间和解释文字，作品语句与人物如何被转化为游客消费。但不要把今日室内写成小说酒楼原貌，不要把雕像称为真人肖像，也不要让一顿饭变成文学步行不可缺少的一站。酒店关闭或拥挤时，看外部或直接跳过，都不影响前面的生活现场与写作理解。"
+      text: "绍兴当前官方旅游材料会用《孔乙己》的关联介绍咸亨酒店；酒店自己的2025年沿革则说，企业在1981年恢复营业，后来扩建时保留“堂吃”部分，其余拆除重建。这只是运营方自述，不是独立的建筑保护调查，但已足以否定“整座晚清酒店原样留到今天”的说法。浙江文旅部门2025年的报道还记录了附近新增的文学IP商店和场景。观察它们的建成时间与解释文字即可，不要把今日室内写成小说酒楼原貌，也不要把雕像称为真人肖像。酒店关闭或拥挤时，看外部或直接跳过，都不影响前面的生活现场与写作理解。"
     },
     {
       id: "walk-heading",
@@ -315,7 +315,7 @@ const body = {
     {
       id: "dynamic-note",
       type: "paragraph",
-      text: "临行前应向直接运营方复核常规开放时间、免费与收费范围、预约和外国护照处理、施工关闭、单向流线、无障碍进入、展品轮换和室内摄影。研究期间能找到的2026年通知只涉及特定节假日调整，不能据此推出日常规则。若无法事先取得直接确认，保持弹性，带好护照证件，给人工窗口询问留时间，并把咸亨视为可选项。动态信息失效时，不能顺手把证据边界也抹掉。"
+      text: "临行前应向直接运营方复核常规开放时间、免费与收费范围、预约和外国护照处理、施工关闭、单向流线、无障碍进入、展品轮换和室内摄影。现能找到的2026年通知都只涉及特定节假日；其中一次临时合并两个入口，并建议由东向西参观，不能据此推出日常规则。8月14日复核时运营网站无法访问。应保持弹性，带实体护照，给人工窗口询问留时间，并把咸亨视为可选项。动态信息失效时，不能顺手把证据边界也抹掉。"
     },
     {
       id: "local-review",
@@ -349,7 +349,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "核心资料核对日期：2026年8月13日",
+      title: "核心与返修资料核对至2026年8月14日",
       items: [
         {"label": "鲁迅故里组成及1953年建馆口径", "url": "https://www.ndrc.gov.cn/xwdt/ztzl/qghsly/202105/t20210524_1301639.html", "publisher": "国家发展和改革委员会", "reviewedAt": "2026-08-13"},
         {"label": "新台门与三味书屋的生活、求学关系", "url": "https://sxlz.sx.gov.cn/art/2022/2/14/art_1483623_58923289.html", "publisher": "绍兴官方地方史平台", "reviewedAt": "2026-08-13"},
@@ -357,16 +357,19 @@ const body = {
         {"label": "新台门出售、改建与遗存部分", "url": "https://sxzx.sx.gov.cn/art/2011/7/13/art_1486822_17724937.html", "publisher": "绍兴市政协", "reviewedAt": "2026-08-13"},
         {"label": "2003年保护与建馆工程史", "url": "https://www.zjds.org.cn/sx/37464.jhtml", "publisher": "浙江省党史和文献研究机构", "reviewedAt": "2026-08-13"},
         {"label": "护栏调整与归属“早”字故事书桌的展示", "url": "https://ct.zj.gov.cn/art/2024/3/20/art_1652992_59019865.html", "publisher": "浙江省文化广电和旅游厅", "reviewedAt": "2026-08-13"},
+        {"label": "纪念馆工作人员说明“早”字书桌的保护与2024年展出", "url": "https://www.chinanews.com.cn/sh/2024/04-10/10196078.shtml", "publisher": "中国新闻网", "reviewedAt": "2026-08-14"},
         {"label": "《从百草园到三味书屋》文本", "url": "https://www.chinawriter.com.cn/news/2013/2013-02-06/153980.html", "publisher": "中国作家网／中国作家协会", "reviewedAt": "2026-08-13"},
         {"label": "《朝花夕拾》的回忆写作属性", "url": "https://www.chinawriter.com.cn/n1/2022/0428/c419384-32410615.html", "publisher": "中国作家网／中国作家协会", "reviewedAt": "2026-08-13"},
         {"label": "《孔乙己》文本与发表背景", "url": "https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html", "publisher": "中国作家网／中国作家协会", "reviewedAt": "2026-08-13"},
         {"label": "咸亨酒店的当前旅游呈现", "url": "https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html", "publisher": "绍兴文化旅游主管部门", "reviewedAt": "2026-08-13"},
+        {"label": "咸亨酒店运营方沿革：1981年恢复营业及后来的局部保留、其余重建", "url": "https://www.xianheng.com/index.php?a=show&c=index&catid=151&id=1&m=content", "publisher": "咸亨酒店", "reviewedAt": "2026-08-14"},
+        {"label": "2026年6月节假日入口与流线调整", "url": "https://news.10jqka.com.cn/20260619/c677587892.shtml", "publisher": "绍兴官方公众号通知的公开文字镜像", "reviewedAt": "2026-08-14"},
         {"label": "2025年文学IP片区呈现", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1652992_59028173.html", "publisher": "浙江省文化广电和旅游厅", "reviewedAt": "2026-08-13"},
         {"label": "首图：Yumeto拍摄新台门小堂前；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Small_reception_room_of_the_former_residence_of_Lu_Xun.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "正文图：Gisling拍摄老台门入口；已裁切，CC BY 3.0", "url": "https://commons.wikimedia.org/wiki/File:Ancestral_home_of_Luxun.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "正文图：Yumeto拍摄三味书屋；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Sanwei_Shuwu.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "正文图：猫猫的日记本拍摄新台门西轴建筑；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Former_Residence_of_Lu_Xun_in_Shaoxing_01_2018-09.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
-        {"label": "正文图：Yumeto拍摄百草园；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Baicao_Yuan.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
+        {"label": "正文图：Yiwen122拍摄百草园园门；无人物裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Baicao_garden.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "正文图：Huanokinhejo拍摄绍兴鲁迅纪念馆；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Lu_Xun_memorial,_Shaoxing.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "正文图：Amarespeco拍摄咸亨酒店；已裁切，CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%92%B8%E4%BA%A8%E9%85%92%E5%BA%972017.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "以上裁切衍生图适用的CC BY-SA 4.0许可", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-13"},

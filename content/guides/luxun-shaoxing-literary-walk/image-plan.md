@@ -4,7 +4,7 @@
 
 Use real, location-identified Shaoxing photographs only. No AI documentary image, film/television still, modern book illustration, textbook scan, generic Jiangnan lane or unidentified “old study” may substitute for a named site. Every caption must help the reader distinguish life evidence, literary memory or modern interpretation; none may infer age from atmosphere.
 
-Seven derivatives are present: one hero plus six explanatory body images. All were visually inspected, cropped/resized and converted to WebP on `2026-08-13`. No generative fill, compositing, object removal or scene alteration was used.
+Seven derivatives are present: one hero plus six explanatory body images. Six were processed on `2026-08-13`; the Baicao Garden image was replaced and rechecked on `2026-08-14`. All were visually inspected, cropped/resized and converted to WebP. No generative fill, compositing, object removal or scene alteration was used.
 
 ## Asset ledger
 
@@ -65,20 +65,20 @@ Seven derivatives are present: one hero plus six explanatory body images. All we
 - ZH alt: `绍兴周家新台门西轴的一处建筑，属于有鲁迅生活关系的故居组群。`
 - KO alt: `루쉰의 기록된 고거인 사오싱 저우자 신타이먼 서쪽 축의 건물.`
 
-### Body 4 — real garden, not a childhood planting inventory
+### Body 4 — location identity without visitor portraits
 
 - Local file: `baicao-garden-1600.webp`
-- Exact object / location: Baicao Garden behind Lu Xun Former Residence, Shaoxing
-- Source: [20250717 Baicao Yuan.jpg](https://commons.wikimedia.org/wiki/File:20250717_Baicao_Yuan.jpg)
-- Photographer / date: Yumeto, `2025-07-17`; coordinates on source page
+- Exact object / location: the entrance gateway carrying the `百草园` name at Baicao Garden, in the Zhou Family New Taimen visitor group, Shaoxing
+- Source: [Baicao garden.jpg](https://commons.wikimedia.org/wiki/File:Baicao_garden.jpg)
+- Photographer / date: Yiwen122, `2022-02-03`; Commons description identifies the photograph as taken at Baicao Garden and categorizes it under the Zhou Family New Taimen complex
 - Rights: CC BY-SA 4.0
-- Processing: cropped/resized to `1600 × 1067`, WebP
-- Chapter job: show the identified garden, contemporary planting and visitor circulation in one wide frame
-- People / consent: incidental visitors appear at distance in a public heritage site; this is not a portrait, no person is identified or labelled as a literary character, and the crop does not enlarge faces. Central may replace it with a commissioned people-free current view if its policy requires model releases
-- Claim limit: cannot prove that current plants, paths or lighting reproduce Lu Xun's childhood landscape
-- EN alt: `Baicao Garden behind Lu Xun's former residence in Shaoxing, with its identifying stone and cultivated beds.`
-- ZH alt: `绍兴鲁迅故居后方的百草园，可见身份石和今日种植区。`
-- KO alt: `장소 표지석과 현재 재배 구획이 보이는 사오싱 루쉰 고거 뒤 바이차오위안.`
+- Processing: source crop `(200, 0)–(1100, 600)` resized to `1600 × 1067`, WebP quality 88; the crop retains the name panel and gateway but excludes all visitors visible deeper in the original frame
+- Chapter job: establish location identity without turning ordinary visitors into part of the literary illustration
+- People / consent: no recognisable person remains in the derivative; the crop was selected specifically to remove the original frame's distant visitors without retouching or object removal
+- Claim limit: the name panel identifies the visitor location; it cannot date the gate, plants or current layout, nor reconstruct Lu Xun's childhood view
+- EN alt: `Gateway marked Baicao Garden within the Lu Xun former-residence visitor group in Shaoxing.`
+- ZH alt: `绍兴鲁迅故里参观区内写有“百草园”的园门。`
+- KO alt: `사오싱 루쉰 고거 관람 구역 안에서 ‘바이차오위안(百草園)’ 이름이 보이는 정원 문.`
 
 ### Body 5 — institution, not another childhood room
 
@@ -114,7 +114,7 @@ Seven derivatives are present: one hero plus six explanatory body images. All we
 - No current official site map is reproduced. Map copyright and 2026 version status were not cleared; the article tells the reader to consult the current on-site map.
 - No manuscript, first edition or museum object close-up is used. Object copyright, display rotation and photography permission require venue-level confirmation.
 - No modern translation page, film still, actor, staged child, “Kong Yiji” impersonator or AI-generated historic scene is used.
-- A future commissioned set should prioritize: current site map with reuse permission; a conservation label naming surviving/restored New Taimen fabric; a current “早” desk caption if displayed; a step-free-route sign; and a people-free Baicao wide view.
+- A future commissioned set should prioritize: current site map with reuse permission; a conservation label naming surviving/restored New Taimen fabric; a current “早” desk caption if displayed; a step-free-route sign; and, if broader garden context is editorially necessary, a people-free Baicao wide view with current capture date.
 
 ## Public attribution requirement
 
