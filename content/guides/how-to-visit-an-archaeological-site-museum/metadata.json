@@ -1,0 +1,63 @@
+{
+  "id": "how-to-visit-an-archaeological-site-museum",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "museum-field-guide",
+  "topics": [
+    "archaeological-site-museums",
+    "in-situ-remains",
+    "archaeological-evidence",
+    "conservation",
+    "museum-reading"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/how-to-visit-an-archaeological-site-museum/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/how-to-visit-an-archaeological-site-museum/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/how-to-visit-an-archaeological-site-museum/",
+      "title": "How to Visit an Archaeological Site Museum in China",
+      "headline": "Read the Site, Not Just the Objects",
+      "description": "Connect in-situ remains, findspots, excavated objects and conservation decisions with a practical evidence-reading workflow for China's site museums.",
+      "heroAlt": "Excavated remains preserved inside the Relics Hall of Jinsha Site Museum in Chengdu, shown as one named example of an archaeological site museum.",
+      "navTitle": "Read an archaeological site museum",
+      "featuredLinkLabel": "Learn to read an archaeological site museum",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Archaeology", "Museums", "Conservation"]
+    },
+    "zh": {
+      "path": "/zh/guides/how-to-visit-an-archaeological-site-museum/",
+      "title": "中国考古遗址博物馆怎么参观：从遗址读到文物",
+      "headline": "别只看展柜，也要读懂考古现场",
+      "description": "用一套证据阅读方法，把原址遗存、出土位置、文物与保护决定联系起来，即使现场回填或部分区域关闭也能看懂。",
+      "heroAlt": "成都金沙遗址博物馆遗迹馆内保存的发掘遗存，仅作为一座具名考古遗址博物馆的实例。",
+      "navTitle": "读懂考古遗址博物馆",
+      "featuredLinkLabel": "学习参观考古遗址博物馆",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["考古", "博物馆", "遗址保护"]
+    },
+    "ko": {
+      "path": "/ko/guides/how-to-visit-an-archaeological-site-museum/",
+      "title": "중국 고고유적박물관 관람법: 유적에서 유물까지 읽기",
+      "headline": "유물만 보지 말고 현장을 읽으세요",
+      "description": "원위치 보존 유구, 출토 위치, 유물과 보존 결정을 연결하는 관람법으로 복토되거나 일부 폐쇄된 유적도 이해합니다.",
+      "heroAlt": "청두 진사유적박물관 유적관 안에 보존된 발굴 유구로, 구체적으로 이름을 밝힌 한 사례만을 보여 준다.",
+      "navTitle": "고고유적박물관 읽기",
+      "featuredLinkLabel": "고고유적박물관 관람법 배우기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["고고학", "박물관", "유적 보존"]
+    }
+  }
+}
