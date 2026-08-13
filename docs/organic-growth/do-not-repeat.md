@@ -14,14 +14,14 @@
 6. 任何新 nationality entry 页必须同时满足：不同法律任务、官方一手来源、真实需求证据、明确监控 owner；不得模板复制。
 7. Search Console 在 2026-08-11 **可用但样本很小**：2026-07-09 至 2026-08-09 共 11 clicks、804 impressions、CTR 1.4%、average position 18.7；94 个可见 query 行只有 153 impressions 且 0 clicks，11 次点击无法归到可见 query。它只用于基线、CTR、排名与后续蚕食验证，不作为全市场选题发现器。
 8. 关键词体量、CPC、难度与购买概率工具 **不可用**。Google Trends 只表示同一图表内的相对方向；自动补全、结果数、论坛重复提问和主观感觉都不等于搜索量。
-9. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
+9. 历史 R1 ticket set 冻结为六项，不追加第七张 R1 票。R2 只有三个 writing Issue、一个 research-only Issue 与两个 canonical update 路由；其余 12 项 defer，不因延迟、退回或拒绝自动递补。
 10. Route Reality Checker 的内部规格与员工 8 技术/测试审查不算新增文章；`SPEC REVIEW READY` 不是实现、建页、公开、索引或发布授权。
 11. 城市介绍必须拥有独立的旅客决策、路线或知识网络角色；不得以通用城市百科、换标题或拼接景点列表占位。
 12. 历史、文学、后世纪念、地方口述/传说与现代旅游包装必须分别标注；不得把传说写成史实，也不得按每个朝代、人物或传说批量建薄页。
 13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
 14. 所有准备新建并让 Google 收录的 SEO 页面原则上必须先经过 Search Map；员工 7 只有提案权。中央批准后才创建正式 GitHub Issue，之后才能交给员工 1–6 执行。
 
-## 本轮六项执行身份：禁止换 slug、branch 或 artifact 类型后重复计数
+## 历史 R1 六项执行身份：禁止换 slug、branch 或 artifact 类型后重复计数
 
 - `transport-20260811-01` ↔ `which-beijing-railway-station`：同一 Beijing station-choice 身份。
 - `destination-20260811-01` ↔ `forbidden-city-for-foreign-visitors`：同一 foreign-visitor Forbidden City 执行身份。
@@ -39,7 +39,30 @@
 | `stay-20260811-01` | selected | pending-review | draft-submitted | not-published | durable draft `a5be2b6`；草稿不等于批准 |
 | `essentials-20260811-01` | selected | pending-review | local-undurable-draft | not-published | `durableArtifact: false`；独立本地 repo，无 remote/commit/push |
 
-六票均无正式 SEO GitHub Issue，`executionIssueUrl` 为 `null`；不补写或虚构 Issue。Ticket 1、2 的批准与发布证据为 [PR #24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24) 和 2026-08-11 17:03 的六个 live URL 验收。上述状态只强化锁题，不新增候选或第七篇。
+历史 R1 六票均无正式 SEO GitHub Issue，`executionIssueUrl` 为 `null`；不补写或虚构 Issue。Ticket 1、2 的批准与发布证据为 [PR #24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24) 和 2026-08-11 17:03 的六个 live URL 验收。R2 的 #26–#29 是独立的新流程工单，不能反向套给 R1。
+
+## R2 中央决定后的锁题边界
+
+### 正式 writing owners
+
+- `transport-20260811-r2-01` / [Issue #26](https://github.com/yangchunxuan/travel-china-with-xuan/issues/26)：Shanghai Pudong 与 Hongqiao 的机场选择、城市/铁路接驳、跨机场恢复是**一个全旅程身份**。不得拆 PVG 页、SHA 页、航站楼页、wrong-airport 页或家庭/行李变体。`pudong-airport-to-shanghai-disneyland` 继续独占 PVG→Disney，不得吸收或被吸收。
+- `destination-20260811-r2-01` / [Issue #27](https://github.com/yangchunxuan/travel-china-with-xuan/issues/27)：兵马俑官方预约、从西安到达、Pit 1/2/3 顺序、Lishan 衔接与返程恢复是**一个独立参观任务**。不得拆 ticket-only、transport-only、一坑一页、月份/国籍页；通用西安行程和秦史不归本页。
+- `planning-20260811-r2-02` / [Issue #28](https://github.com/yangchunxuan/travel-china-with-xuan/issues/28)：中国公共假期、调休和全国旅行压力由**一个年度 national owner**承担。不得生产城市×假期×年份、人群×假期或未公布未来日历预测页。`china-in-october-golden-week-or-later` 继续独占 Golden Week 与十月后半段的具体选择任务。
+
+三项虽获写作批准，但仍是 `not-published`；换标题、slug、语言或分支不能产生第二身份，也不能视为合并/发布授权。
+
+### Research-only：没有 public canonical owner
+
+`culture-20260811-r2-01` / [Issue #29](https://github.com/yangchunxuan/travel-china-with-xuan/issues/29) 只有研究资格。不得预占公开 slug、写文章正文、做 locale、按遗址拆页或把一次修缮公告变成 news page。至少三个不同修缮类型的中国官方案例与可验证图片计划完成后，仍须中央再次批准；否则继续保持 `approved-research-only / not-published`。
+
+### Update-existing：禁止另建 URL
+
+- `planning-20260811-r2-03` 只能并入 `is-your-china-itinerary-too-rushed` 的 day-trip-versus-overnight 决策模块；禁止城市、景点、天数和同义问法变体。
+- `stay-20260811-r2-03` 只能并入 `foreigners-china-hotel` 的 luggage-storage FAQ / recovery 模块；禁止独立 luggage-storage 页、城市版、酒店/平台/locker 榜单。parent `stay-20260811-01` 仍待中央内容审核，路由决定不能反向批准 parent。
+
+### R2 defer：保留候选，不得开工
+
+以下 12 个 ID 没有 Issue，也没有写作、研究、实施或发布授权：`transport-20260811-r2-02`、`transport-20260811-r2-03`、`destination-20260811-r2-02`、`destination-20260811-r2-03`、`culture-20260811-r2-02`、`culture-20260811-r2-03`、`planning-20260811-r2-01`、`stay-20260811-r2-01`、`stay-20260811-r2-02`、`essentials-20260811-r2-01`、`essentials-20260811-r2-02`、`essentials-20260811-r2-03`。`deferred` 不等于 `rejected`，但不得改名、换池或换 artifact 形态后绕过中央决定。
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
@@ -102,7 +125,7 @@
 - `do-you-need-a-tour-guide-in-china`：是否需要 guide/support 的服务选择。
 - `kevin-before-the-hotel-pickup`：导游在接客前如何准备；与服务选择分工而非重复。
 
-## 本轮候选的合并与更新指令
+## 历史 R1 候选的合并与更新指令
 
 | 不得新建的题目 | Action | Canonical owner | 处理方式 |
 |---|---|---|---|
@@ -124,7 +147,7 @@
 
 ## 未来研究占位：不是本轮候选或票据
 
-以下方向只保留为 `research-watch`。它们不产生 `candidateId`、票据、branch reservation 或写手指令，本轮仍严格只有六票，不增加或递补第七票。
+以下是历史 R1 快照中的 `research-watch`。它们当时不产生 `candidateId`、票据、branch reservation 或写手指令；R2 是否已形成候选及其当前状态必须以 Search Map 的 18 项中央决定为准，不能用这份旧观察绕过 defer 或 research-only 门禁。
 
 - 第一次访华路线现实性归 Route Reality Checker 与 `is-your-china-itinerary-too-rushed`；不再建 7/10/14/21 天或城市组合页。
 - 数字生存栈优先更新已发布 payment、高铁与本轮 eSIM owners；不得另写一篇泛“中国必备 App”汇总抢占所有任务。

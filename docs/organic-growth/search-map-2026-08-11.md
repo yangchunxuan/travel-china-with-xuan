@@ -1,16 +1,16 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-状态：`SEARCH MAP SYNC READY — CENTRAL REVIEW REQUIRED`
+状态：`CENTRAL DECISION RECORDED — THREE WRITING ISSUES AND ONE RESEARCH-ONLY ISSUE ACTIVE`
 
-本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。员工 7 本次只同步状态，没有研究下一批选题、增加第七张票、写文章、创建公开页面或修改 registry/sitemap/indexability。草稿、规格和本地文件只作为执行证据入账，不自行构成中央批准。
+本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。历史 R1 状态保持不变；中央编辑已完成 R2 的 18 个候选审核。员工 7 只依照明确决定创建了三个写作 Issue 和一个 research-only Issue，并登记两项 canonical update 路由；没有写文章、创建公开页面或修改 registry/sitemap/indexability，也没有给 defer 项建 Issue。
 
 ## 1. 口径与输入审计
 
 - 内容身份：英文、中文、韩文最多是同一内容身份的三个 locale，不按三篇计算。
-- 仓库基线：最新 `origin/main`，提交 `8769b2ffa4d2d719699bf98fb4bc215dc89bdda9`，即 PR #24 的合并提交；PR #22、PR #23 与 Batch C 均已包含。同步工作在独立 worktree `C:/Users/User/Documents/homeground-seo-intelligence-sync` 和分支 `ops/seo-intelligence-sync-20260811` 完成。
+- 仓库基线：最新 `origin/main`，提交 `2ec60e323514ea38f9dbc804e1ad716d473e89f2`，即 PR #25 的合并提交；它已包含 PR #24 与此前 Search Map 同步。R2 决定记录在独立 worktree `C:/Users/User/Documents/homeground-seo-central-decisions` 和分支 `codex/seo-search-map-central-decisions-20260811`，没有修改 main。
 - 仓库规范：已完整读取 `docs/article-production-lite.md` 与 `docs/homeground-search-platform-phase-1-spec.md`。
 - 线上：2026-08-11 17:03（Asia/Shanghai）复核了 [sitemap](https://homegroundchina.com/sitemap.xml)、[guides 目录](https://homegroundchina.com/guides/) 与 PR #24 的六个 locale URL。6/6 均为 200、自 canonical、`index, follow`，并有对应的 en、zh-Hans、ko、x-default hreflang；技术可索引不等于 Google 已实际收录。
-- 远端：已检查全部 34 个 `origin/article/*` 与 `origin/codex/*` ref，包括新增的 `origin/codex/batch-c-five-guide-release-20260811`；修复或视觉整合分支只算相同稿件的新版本；current-round draft/spec 仍按既有六张票据计数。
+- 远端：已检查全部 34 个 `origin/article/*` 与 `origin/codex/*` ref，包括新增的 `origin/codex/batch-c-five-guide-release-20260811`；修复或视觉整合分支只算相同稿件的新版本；历史 R1 draft/spec 仍按原六张票据计数，R2 决定另行登记。
 - 现有 Search Map：**可用（旧分支）**。来源为 `ops/seo-intelligence-20260811@a30caec2d53ba5e2cea21167d2ea541ce547b885`；本轮复制到 PR #24 基线后修订，没有修改旧分支。
 - Search Console：**可用（浏览器导出）**。`sc-domain:homegroundchina.com` 在 2026-07-09 至 2026-08-09 有 11 clicks、804 impressions、CTR 1.4%、average position 18.7。94 个可见 query 行只有 153 impressions、0 clicks；11 个 clicks 无法归因到可见 query。该样本只作基线、CTR/排名和蚕食验证，不承担市场发现。
 - 关键词工具：**不可用**。没有已认证的 Keyword Planner、Semrush 等体量工具；搜索量、CPC、关键词难度、购买概率与流量预测均未估算。
@@ -26,16 +26,62 @@
 | Guides 目录 | 1 | `/guides/` 的 en/zh/ko 三个 locale URL |
 | Section Hub | 9 | 6 个 published/indexable；when-to-go、culture、tools 为 review/noindex |
 | 本轮开工时锁定稿 | 14 | 14 个身份全部已纳入且仍禁止重选 |
-| 旧 14 稿的当前制作中 | 0 | PR #23 已将 Batch C 五个身份全部转为 published/indexable；本轮六票另按四层状态记录 |
-| 本轮候选 | 18 | 六个内容池各 3 个 |
-| 已选中票据 | 6 | 每池 1 个；Ticket 1、2 已由中央批准并发布，Ticket 3–6 仍待中央内容/产品审核 |
-| 本轮执行锁 | 6 | 2 个已发布、2 个 canonical-repo durable draft、1 个 `SPEC REVIEW READY` 内部规格、1 个独立 unborn repo 的本地英文稿；不追加第七篇 |
+| 旧 14 稿的当前制作中 | 0 | PR #23 已将 Batch C 五个身份全部转为 published/indexable；历史 R1 另按四层状态保留 |
+| R2 候选 | 18 | 六个内容池各 3 个；中央决定为 3 writing、1 research-only、2 update-existing、12 defer |
+| 当前文章制作中 | 6 | 3 个新 writing Issue + 3 个 carried unpublished inventory；research-only 不算文章身份 |
+| 正式执行 Issue | 4 | [#26](https://github.com/yangchunxuan/travel-china-with-xuan/issues/26)、[#27](https://github.com/yangchunxuan/travel-china-with-xuan/issues/27)、[#28](https://github.com/yangchunxuan/travel-china-with-xuan/issues/28) 为 writing；[#29](https://github.com/yangchunxuan/travel-china-with-xuan/issues/29) 仅研究 |
+| R2 产能 | 12 / 12 | 既有未发布库存 5 + 正式写作 6 + research-only 1；update-existing 与 defer 当前各计 0 |
 | 外部市场观察簇 | 12 | 只进入下一轮研究池，不是 candidateId、票据或开工授权 |
-| 合并/更新路由 | 9 | 8 个候选路由 + 1 个已合并 legacy shell；不创建第二 canonical URL |
+| 合并/更新路由 | 11 | 原 9 条 + R2 的 pace 模块与 hotel luggage FAQ；不创建第二 canonical URL |
 | 明确拒绝模式 | 12 | 包含近义页和排列组合页 |
-| 动态事实复核组 | 12 | 法规、机场、铁路、支付、门票、非政治旅行新闻等 |
+| 动态事实复核组 | 13 | 法规、机场、铁路、支付、门票、遗产研究与非政治旅行新闻等 |
 
 最终线上 sitemap 共 142 个 URL；指南范围为 100 个详情 URL + 3 个 guides 目录 locale URL。100 个详情 URL 合并 locale 后是 36 个指南身份：35 篇文章、99 个文章 locale URL，加 1 个英文系统 entry collection。本次主题盘点聚焦指南、目录与 section hubs。除已单列的 `system-guides` 与 `system-entry-requirements` 外，另有 7 个运营/法律/转化系统身份，不作为搜索编辑选题身份。
+
+### R2 中央决定：18 个候选全部有唯一状态
+
+`approved` 只授权在对应 Issue 边界内写作，不授权合并或发布；`approved-research-only` 不授权文章正文；`update-existing` 只确定 canonical owner，当前没有执行 Issue；`deferred` 不是拒绝，但没有开工权，也不得自动递补。
+
+| candidateId / working title | ownerPool | action / work type | candidateStatus | centralDecision | executionStatus | publicationStatus | 单位 | Issue / canonical route |
+|---|---|---|---|---|---|---|---:|---|
+| `transport-20260811-r2-01` — Shanghai Pudong or Hongqiao Airport? Compare the Whole Trip | 员工 1 / 交通 | new-page / writing | selected | approved | issue-created | not-published | 2 | [#26](https://github.com/yangchunxuan/travel-china-with-xuan/issues/26) |
+| `transport-20260811-r2-02` — China High-Speed Train or Domestic Flight? Compare Door-to-Door Time | 员工 1 / 交通 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `transport-20260811-r2-03` — How to Use the Metro in China | 员工 1 / 交通 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `destination-20260811-r2-01` — Terracotta Warriors Without a Tour | 员工 2 / 目的地 | new-page / writing | selected | approved | issue-created | not-published | 2 | [#27](https://github.com/yangchunxuan/travel-china-with-xuan/issues/27) |
+| `destination-20260811-r2-02` — Guilin or Yangshuo: Where Should You Base Your Karst Trip? | 员工 2 / 目的地 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `destination-20260811-r2-03` — Chengdu, Chongqing and Zhangjiajie: Which Order Works? | 员工 2 / 目的地 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `culture-20260811-r2-01` — Why Do Ancient Sites in China Look New? | 员工 3 / 文化 | new-page candidate / research-only disposition | selected-for-research | approved-research-only | research-issue-created | not-published | 1 | [#29](https://github.com/yangchunxuan/travel-china-with-xuan/issues/29)；正文禁写 |
+| `culture-20260811-r2-02` — Peking Opera for First-Time Visitors | 员工 3 / 文化 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `culture-20260811-r2-03` — How Chinese City Parks Come Alive | 员工 3 / 文化 | new-page / none | deferred | deferred | not-authorized | not-published | 1 | 无 Issue |
+| `planning-20260811-r2-01` — What to Book First for a China Trip | 员工 4 / 规划 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `planning-20260811-r2-02` — China Public Holidays and Travel Crowds | 员工 4 / 规划 | new-page / writing | selected | approved | issue-created | not-published | 2 | [#28](https://github.com/yangchunxuan/travel-china-with-xuan/issues/28) |
+| `planning-20260811-r2-03` — Day Trip or Overnight in China? | 员工 4 / 规划 | update-existing / canonical-routing-only | routed-to-existing | update-existing | not-authorized | not-a-separate-page | 1 | `is-your-china-itinerary-too-rushed` |
+| `stay-20260811-r2-01` — Can a Family of 3–5 Share One China Hotel Room? | 员工 5 / 住宿 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `stay-20260811-r2-02` — How to Get a Truly Non-Smoking Hotel Room in China | 员工 5 / 住宿 | new-page / none | deferred | deferred | not-authorized | not-published | 1 | 无 Issue |
+| `stay-20260811-r2-03` — Hotel Luggage Storage Before Check-in or After Check-out | 员工 5 / 住宿 | update-existing / canonical-routing-only | routed-to-existing | update-existing | not-authorized | not-a-separate-page | 1 | `foreigners-china-hotel` FAQ；parent 仍 pending-review |
+| `essentials-20260811-r2-01` — China Online Arrival Card for Foreigners | 员工 6 / 入境与实用 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `essentials-20260811-r2-02` — China Tourist Tax Refund | 员工 6 / 入境与实用 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+| `essentials-20260811-r2-03` — Bringing Prescription Medicine into China | 员工 6 / 入境与实用 | new-page / none | deferred | deferred | not-authorized | not-published | 2 | 无 Issue |
+
+### R2 产能账
+
+| 占用来源 | 单位 | 说明 |
+|---|---:|---|
+| 既有未发布库存 | 5 | `culture-20260811-01` 1；`stay-20260811-01` 2；`essentials-20260811-01` 2；三者中央状态仍是 pending-review |
+| 正式写作批准 | 6 | #26、#27、#28 各 2；只授权写作 |
+| research-only | 1 | #29；不得写正文、建公开页或做 locale |
+| update-existing | 0 | 两项仅完成 owner 路由，没有执行 Issue |
+| defer | 0 | 12 项全部不授权 |
+| **合计** | **12 / 12** | 剩余 0；不得以 defer 自动补位 |
+
+### Research-only 门禁与来源纠正
+
+`culture-20260811-r2-01` 的 Nara Document 来源已纠正为 UNESCO 的 [archive record](https://whc.unesco.org/archive/nara94.htm) 与 [official document record](https://whc.unesco.org/en/documents/116018)。Issue #29 必须先提交至少三个**不同修缮类型**的中国遗产官方案例，以及可核验地点、授权和来源的图片计划。完成研究只触发再次中央审核；在第二次批准前，文章正文、公开 slug、三语本地化、registry、sitemap 与 indexable 页面全部未授权。
+
+### 两项 canonical update 路由
+
+- `planning-20260811-r2-03` 只能成为 `is-your-china-itinerary-too-rushed` 内有边界的 day-trip-versus-overnight 决策模块；不得按城市、景点、天数或问法另建 URL。
+- `stay-20260811-r2-03` 只能成为 `foreigners-china-hotel` 的 luggage-storage FAQ / recovery 模块。其 parent `stay-20260811-01` 仍为 `pending-review / draft-submitted / not-published`；路由决定不等于批准 parent，也不授权实施。
 
 ### 审计期间状态变化
 
@@ -47,7 +93,7 @@
 
 14:11，PR #24 合并为 `origin/main@8769b2f`。17:03 线上核验确认 `which-beijing-railway-station` 与 `forbidden-city-for-foreign-visitors` 的六个 locale URL 全部上线。两页 `datePublished`、`dateModified` 与 `sourceReviewedDate` 均为 2026-08-11；release PR 为 [#24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24)。
 
-本轮票据仍冻结为六项，但状态已分层：Ticket 1、2 为 `selected / approved / release-completed / published`；shared-meal 与 foreign-hotel 为 `selected / pending-review / draft-submitted / not-published`；Route Reality Checker 为 `selected / pending-review / specification-submitted / not-published`；员工 6 为 `selected / pending-review / local-undurable-draft / not-published`。本轮不研究或递补新题。
+历史 R1 票据冻结为六项，状态继续分层：Ticket 1、2 为 `selected / approved / release-completed / published`；shared-meal 与 foreign-hotel 为 `selected / pending-review / draft-submitted / not-published`；Route Reality Checker 为 `selected / pending-review / specification-submitted / not-published`；员工 6 为 `selected / pending-review / local-undurable-draft / not-published`。R2 是独立审核轮次，不改写这些旧状态，也不是给 R1 追加第七票。
 
 重复风险提示：北京站点正式 owner 已扩展为北京、北京西、北京南、北京北、清河、北京朝阳、北京丰台、北京通州八站，并以 `primaryIntent: plan` / `family: comparison` 发布。旧的五站标题和 `execute / combined-decision` 提案边界已被正式页面取代；八站仍是一个 canonical identity，不能拆成八页。
 
@@ -117,7 +163,7 @@
 | 5 | `china-hotel-near-metro` | **published via PR #23** | `origin/main@f521ef7` | 全国酒店位置判断：行李、步行、家庭、无障碍 |
 | 6 | `how-to-pay-in-china-as-a-tourist` | **published during audit** | `origin/main@6df1f55` | Alipay、WeChat、现金、卡、失败恢复的完整栈 |
 
-### 4A. 本轮六张票据的分层状态与执行锁
+### 4A. 历史 R1 六张票据的分层状态与执行锁
 
 | 票据 | candidateStatus | centralDecision | executionStatus | publicationStatus | Issue / release / live |
 |---|---|---|---|---|---|
@@ -128,9 +174,9 @@
 | `stay-20260811-01` | selected | pending-review | draft-submitted | not-published | Issue：`null`；durable draft `origin/article/worker-5-foreigners-china-hotel@a5be2b6`；无 release PR / live URL |
 | `essentials-20260811-01` | selected | pending-review | local-undurable-draft | not-published | Issue：`null`；`durableArtifact: false`；独立本地 repo、未跟踪/暂存/提交/推送且无 remote |
 
-六票均未发现正式 SEO GitHub Issue，因此 `executionIssueUrl` 明确为 `null`，没有虚构或创建 Issue。Ticket 1、2 的中央批准证据是 PR #24 合并和线上中央验收；其执行发生在本工作流正式写入前，作为历史例外登记。Ticket 3–6 的草稿、规格或本地稿不等于中央批准。
+历史 R1 六票均没有正式 SEO GitHub Issue，因此它们的 `executionIssueUrl` 继续为 `null`，不补写或虚构历史 Issue。Ticket 1、2 的中央批准证据是 PR #24 合并和线上中央验收；其执行发生在本工作流正式写入前，作为历史例外登记。Ticket 3–6 的草稿、规格或本地稿不等于中央批准。R2 的四个新 Issue 已在上表单独登记，不能反向套用给 R1。
 
-本轮票据集合冻结为以上六项，不增加第七个文章、页面或票据，也不因 Ticket 1、2 已上线或其他票延迟、退回、拒绝而自动递补。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章；`SPEC REVIEW READY` 只开放员工 8 的技术可行性与测试审查，不开放实现、建页、索引或发布。
+历史 R1 集合冻结为以上六项，不增加第七个 R1 文章、页面或票据，也不因 Ticket 1、2 已上线或其他票延迟、退回、拒绝而自动递补。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章；`SPEC REVIEW READY` 只开放员工 8 的技术可行性与测试审查，不开放实现、建页、索引或发布。R2 的三个 writing Issue 与一个 research-only Issue来自新的明确中央决定。
 
 ## 4B. 外部中国需求与未来占位方向
 
@@ -163,9 +209,9 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 | 全国假期与拥挤日历 | tool / data page | 一个年度 owner；Golden Week、春节、暑期与季节关闭不做城市×月份组合 |
 | 非政治旅行新闻 | update evergreen owner first | 只收 UNESCO/地质公园、铁路接入、场馆开放、预约支付变化、关闭/重开；政治、意识形态、地缘与八卦拒绝 |
 
-以上 12 项均为既有 `research-watch`，本次没有继续研究、补证或升级为候选。它们不是 candidateId、票据或员工任务。本轮正式候选仍为下列 18 项，选中票据仍只有六项。
+以上 12 项是历史市场 `research-watch`，不能直接产生 candidateId、票据或员工任务，也不能覆盖 R2 的中央决定。R2 的 18 项正式候选已在第 2 节完整登记：3 项 writing、1 项 research-only、2 项 update-existing、12 项 defer。下方第 5 节保留的是历史 R1 的 18 项评分与六票结果。
 
-## 5. 候选评分与决策
+## 5. 历史 R1 候选评分与决策
 
 评分列顺序：用户任务与需求证据 / 真实覆盖缺口 / 来源可用性 / Homeground 信息增量 / 内链网络价值 / 维护成本与风险（高分代表更可控）。满分分别为 25/20/15/15/15/10。
 
@@ -192,7 +238,7 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 | 6 入境/实用 | `essentials-20260811-02` | China Entry Eligibility Checker | tool | 25/12/15/12/15/3 = 82 | 暂缓；法律数据 owner/SLA 未建立 |
 | 6 入境/实用 | `essentials-20260811-03` | Alipay or WeChat Pay? | merge | 25/9/15/4/14/5 = 72 | 并入支付稿 |
 
-### 六个已选中项的原始证据与当前状态
+### 历史 R1 六个已选中项的原始证据与当前状态
 
 1. `transport-20260811-01`：真实问题是“票面车站是哪一个、住处和线路应该对应哪个站”，不是再写全国高铁流程。正式页面已扩为八站矩阵并通过 PR #24 发布；全国高铁流程仍归 `china-high-speed-train-first-time-guide`。
 2. `destination-20260811-01`：近期问题集中在外籍游客预约、入口、单向南进北出和离场后衔接。正式页面已把四个子任务保留在同一 owner，并通过 PR #24 发布；运营事实继续按关键动态类监控。
@@ -213,6 +259,8 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 - 最后一晚机场酒店还是市区 → `china-last-night-before-international-flight`。
 - 酒店预订 App → 若新住宿候选获中央批准，则归 `stay-20260811-01`；否则 hold，不回退到酒店价值页。
 - Alipay vs WeChat → `how-to-pay-in-china-as-a-tourist`。
+- `planning-20260811-r2-03` → `is-your-china-itinerary-too-rushed` 的 day-trip-versus-overnight 模块；中央只确认 canonical 路由，没有新 URL 或执行 Issue。
+- `stay-20260811-r2-03` → `foreigners-china-hotel` 的 luggage-storage FAQ / recovery 模块；parent 仍 pending-review，当前不实施、不另建 URL。
 
 ### 明确拒绝
 
@@ -230,22 +278,24 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 - **P0/P1 中央验收前**：foreign-hotel 核验 2026 非酒店住所网上登记；HSR owner 核验 12306 护照验证、候补与邮件失败恢复；不得另建新闻或故障排查页。
 - **P2 结构化更新**：older-parents 与 Zhangjiajie older-travellers 增加坡度、台阶、休息点、缆车、轮椅与推车字段，不生成城市×人群页。
 - **P2**：只有 route checker 被中央批准后，才更新 rushed-itinerary 的 7/10/14 日表格与工具链接。
+- **R2 route only**：day-trip-versus-overnight 与 luggage-storage FAQ 已登记 owner，但没有执行 Issue；等待中央另行排期，不能视为新增页面。
 
 ## 7. 动态事实复核队列
 
 | 优先级 | Owner/组 | 必查事实 | 触发条件 |
 |---|---|---|---|
 | P0 critical | entry collection + US/UK/CA/NZ/240h/SG 六 owner | 资格、目的、停留期、口岸/区域、第三国路线、材料 | NIA/使馆/国务院变化；任何发布前 |
-| P0 | live Guangzhou airport + PVG→Disney owners | 航站楼、关闭状态、Airport Link、地铁/城际、晚到备选 | 机场/运营方变化；立即复核重大变更 |
+| P0 | live Guangzhou airport + PVG→Disney + `transport-20260811-r2-01` | 航站楼、关闭状态、Airport Link、地铁/城际、晚到备选 | 机场/运营方变化；立即复核重大变更，并在 #26 交付前复核 |
 | P0 | live HSR + night-train owners | 售票、护照、行李、进站、车次产品 | 12306/国铁变化；受影响 owner 立即复核 |
-| P0 | live October owner | 节假日日期、放票、关闭、拥挤/天气表述 | 年度日历或重大假期/关闭变化 |
+| P0 | live October owner + `planning-20260811-r2-02` | 官方假期日期、调休、放票、关闭、拥挤/天气表述 | 年度国务院日历或重大假期/关闭变化；#28 不得预测未公布日期 |
 | P0 | live payment owner + eSIM candidate | 外卡、实名、限额、备用支付；运营商、设备、号码用途 | 监管/平台/运营商/设备变化 |
 | P1 | live panda owner | 预约、开放、入口、交通与观看时段 | 场馆公告或运营变化 |
 | P1 | cost + hotel value | 价格示例、币种、平台、价值判断 | 季度或明显价格变化 |
 | P1 | night show + Malaysia access + 3-city transport | 演出、航班/铁路、时刻示例 | 运营/时刻变化 |
 | critical live monitor | `forbidden-city-for-foreign-visitors` | 预约、护照、入口/出口、闭馆、天安门关联 | 官方预约、准入、证件或闭馆规则变化 |
 | P0 before central acceptance | foreign-hotel durable draft | 法规、酒店/非酒店住所登记、平台标签、拒绝恢复 | 中央验收同周 + 政策/平台变化 |
-| P1 research | attraction-booking matrix | 预约窗口、护照支持、官方渠道、语言、支付、现场备选 | 官方公告或可靠实测；只研究、不发票 |
+| P1 | Forbidden City + `destination-20260811-r2-01` + attraction-booking matrix | 预约窗口、护照支持、官方渠道、语言、支付、现场备选 | 官方公告或可靠实测；#27 发布前复核，矩阵本身只研究 |
+| research-only | `culture-20260811-r2-01` | 官方 intervention 类型、真实性语境、游客可见影响、图片地点/授权/来源 | #29 收齐三类中国官方案例与图片计划；中央再次批准前禁写正文 |
 | ongoing | 非政治旅行新闻 intake | UNESCO/地质公园、铁路接入、场馆开放、预约支付、关闭/重开 | 先路由到常青 owner；政治/意识形态/地缘拒绝 |
 
 ## 8. 固定工作流与权限
@@ -257,8 +307,8 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 - 紧急动态更新和旧文修正可以由中央编辑直接发起，但员工 7 事后必须登记。
 - 员工 7 只有提案权，没有开工、合并或发布权。
 - 每轮不固定必须六张；数量由证据、写手产能和中央审核能力决定。没有合格选题时可以少于六张。
-- 当前没有正式 SEO GitHub Issue。本轮同步不虚构、不创建 Issue；Ticket 1、2 作为新流程写入前已完成发布的历史例外登记。
-- 本轮不得补充新票，也不得因为 Ticket 1、2 已上线而自动递补。
+- 历史 R1 没有正式 SEO GitHub Issue，不补写或虚构。R2 已按中央决定创建 writing Issues #26–#28 与 research-only Issue #29；两项 update-existing 和 12 项 defer 均没有 Issue。
+- R2 不得在当前中央决定之外补票；12 项 defer 不因任何工单延迟或退回自动递补。历史 R1 也不因 Ticket 1、2 已上线而追加第七票。
 
 ## 9. 架构约束
 
@@ -268,8 +318,8 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 - `targetIntent` 与 `pageFamily` 使用仓库受控词表；更细的候选形态放在 `taskMode` 与 `artifactShape`，避免机器字段混义。
 - 机器账本分别保存 origin/main 的 7 个真实 entity ID/已发布 runtime assignments 与编辑提议。候选的 `primaryEntityId`/`secondaryEntityIds` 是未落地提案，不会自动创建 entity record。
 - `freshnessClass` 是 Search Map 对编辑复核风险的治理 override，不声称等于仓库当前 `updatePolicy`。
-- 六个已选中项分别读取四层状态：Ticket 1、2 已批准并发布；Ticket 3–6 仍待中央审核。draft、规格或本地稿本身不构成批准、追加工作、建页、索引或发布授权。
-- 本轮 ticket set 硬冻结为六项；不得追加第七篇，也不得把 held/rejected/runner-up 自动递补进本轮。
+- 历史 R1 六项分别读取四层状态：Ticket 1、2 已批准并发布；Ticket 3–6 仍待中央审核。draft、规格或本地稿本身不构成批准、追加工作、建页、索引或发布授权。
+- 历史 R1 ticket set 硬冻结为六项，不得追加第七张 R1 票；R2 只执行中央明确批准的三项 writing 与一项 research-only，defer 不得自动递补。
 - 城市、景点、历史与传说可以进入未来研究池，但必须有地点/旅客任务、可验证来源或 Homeground 信息增量；传说与史实必须分栏。
 - 旅行新闻不得绕过 Search Map。优先更新现有城市、景点、交通或实用 owner；政治、意识形态、地缘与泛流量新闻拒绝。
 - Route Reality Checker 规格 owner 是员工 4；`SPEC REVIEW READY` 已在 `1e131ff` 观察到，员工 8 现在仅可审查技术可行性与测试。未经 Mac 中央编辑明确批准，员工 8 无实现、建页、公开、索引或发布权限。
