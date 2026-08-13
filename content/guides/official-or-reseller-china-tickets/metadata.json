@@ -1,0 +1,82 @@
+{
+  "id": "official-or-reseller-china-tickets",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "channel-verification-guide",
+  "topics": [
+    "attraction-tickets",
+    "official-booking",
+    "ticket-reseller",
+    "real-name-booking",
+    "refund-terms"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/official-or-reseller-china-tickets/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/official-or-reseller-china-tickets/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "essentials",
+    "family": "comparison",
+    "primaryIntent": "purchase"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/official-or-reseller-china-tickets/",
+      "title": "Official vs Reseller Tickets for China Attractions",
+      "headline": "China Attraction Tickets: Official Channel or Reseller?",
+      "description": "Identify the attraction’s ticket owner, compare reseller support and terms, and verify the booking state before trusting a China attraction ticket.",
+      "heroAlt": "Editorial diagram of an attraction building connected to a checked admission ticket.",
+      "navTitle": "Official or reseller tickets",
+      "featuredLinkLabel": "Verify a China attraction ticket",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Tickets",
+        "Booking"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/official-or-reseller-china-tickets/",
+      "title": "中国景点购票渠道核验：官方与经销商",
+      "headline": "中国景点门票：官方渠道还是经销商？",
+      "description": "先识别景点票务运营方，再比较经销商支持、库存状态、实名传递与退改条款，最后核验真正可入园的订单。",
+      "heroAlt": "景点建筑与带核验标记的入场票相连的编辑示意图。",
+      "navTitle": "官方或经销商门票",
+      "featuredLinkLabel": "核验中国景点门票",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "门票",
+        "预订"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/official-or-reseller-china-tickets/",
+      "title": "중국 관광지 입장권: 공식 채널과 재판매처",
+      "headline": "중국 관광지 입장권, 공식 채널과 재판매처 중 어디서 살까요?",
+      "description": "관광지의 실제 발권 주체를 찾고 재판매처의 지원·재고·실명 정보·환불 조건을 비교한 뒤 입장 가능한 예약인지 확인하세요.",
+      "heroAlt": "관광지 건물과 확인 표시가 있는 입장권을 연결한 편집 도식.",
+      "navTitle": "공식 채널과 재판매 입장권",
+      "featuredLinkLabel": "중국 관광지 입장권 확인하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "입장권",
+        "예약"
+      ]
+    }
+  }
+}

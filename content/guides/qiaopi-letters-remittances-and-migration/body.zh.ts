@@ -1,0 +1,26 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {"id":"lead","type":"lead","text":"侨批（qiáopī）在五邑也常称银信，最适合被看成一组关系：海外移民写给家人的消息、钱款或钱款凭证，以及把两者送回中国家庭的个人与机构留下的痕迹。列入《世界记忆名录》的档案包括书信、报告、账簿和汇款收据，并不是一种固定版式。先找姓名、地点、日期、币种和机构戳记，再读情感故事。一张纸可能帮你追出一条路线，但不能代表所有移民或所有家庭。"},
+    {"id":"direct-answer","type":"callout","title":"侨批为什么不只是普通家书？","body":"因为信息与汇款功能常被绑在一起。家书可能与汇款收据同寄，简短附言可能直接写在金融票据上，批局、银行、邮局和递送人员还会产生账簿、派送单与回执。因此，这组档案同时记录家事、钱款和信任网络。","tone":"decision"},
+    {"id":"anatomy-heading","type":"heading","level":2,"text":"一份侨批的字段解剖"},
+    {"id":"field-anatomy","type":"table","caption":"先看字段，再解释故事","columns":["字段或痕迹","可能确认什么","注意什么"],"rows":[["寄件人与起点","海外个人、商号、港口或聚居地","拼写和地名可能是旧称、方言写法，也可能由代理人代写"],["收件人与家乡地址","目标家庭和细到村落的目的地","亲属称谓不一定能唯一对应某个人"],["写信或经办日期","旅程中的一个时间点","信内日期、经办日、邮戳和送达日可能不同"],["金额与币种","汇款面额或经办人记账金额","不要擅自换算旧币，也不能默认收件人拿到票面全额"],["手续费、汇率或账目符号","可能是经办费、兑换或记账","离开栏标题的单独数字通常不能自证含义"],["批局、银行或邮局名称","递送链中的一个机构","出现其戳记不等于它承运了全程"],["邮戳、印章和流水号","经办顺序、控制或路线线索","有些可能是后来加盖的档案、展览或所有权标记"],["侨批员或派送记录","末端交付、领取或签收","没有保存下来不能证明未送达"],["家书内容","这次交流中的需要、消息、嘱托、感情或矛盾","私人声音是情境证据，不是全国性格"],["回批或回执","回应、确认或后续关联交易","必须靠目录号或机构证据对应，不能只凭外观配对"]]},
+    {"id":"three-flows-heading","type":"heading","level":2,"text":"把三条流动分开追"},
+    {"id":"three-flows","type":"comparison","title":"信、钱和路线回答不同问题","columns":[{"heading":"信息","body":"谁写给谁，写了什么消息或请求，使用了哪些亲属称谓，又有哪些事情没有写。"},{"heading":"钱款","body":"记录了多少金额与哪种币种，由谁经办，是否有费用、兑换或收讫信息。"},{"heading":"递送","body":"出现哪些海外与国内机构，有什么邮运痕迹，谁负责末端送达，是否保存回批。"}]},
+    {"id":"route-heading","type":"heading","level":2,"text":"用戳记建路线，不用浪漫想象画直线"},
+    {"id":"route-sequence","type":"list","ordered":true,"items":["先找海外寄件人和家乡收件人。UNESCO 提名档案记载侨批来自东南亚、美洲与大洋洲，但具体一件只能证明它实际写出或盖出的地点。","确认第一位经办者。不同年代与地区可能涉及私人银信机构、批局、邮局，后来也有正式金融机构。","把实体家书与金融记录分开。它们可能在一张纸上，也可能作为附件或相互关联的票据保存。","按日期给戳记排序。海运、空运与战时绕行会改变路线；图上的直线只是编辑示意，不是直航证据。","找国内转运和最后一程。地方分支、侨批员或水客可能把港口、城镇与村中家庭连起来。","找签收或回应。回批、签收单或后续侨批可以补上部分链条；档案不完整时，不能自行写出“顺利送达”。"]},
+    {"id":"evidence-heading","type":"heading","level":2,"text":"档案能证明什么，不能证明什么"},
+    {"id":"evidence-table","type":"table","caption":"在场馆阅读时守住证据边界","columns":["观察","支持的判断","不支持的跳跃"],"rows":[["2012 年提名材料称保存超过 16 万件","当时申报语境中的广东、福建馆藏规模很大且分散","这是 2026 年全世界完整、实时总数"],["同一家族多次出现","一段持续的文献关系可能保存下来","所有间隔、冲突和家庭成员都被记录"],["钱款看似定期寄送","这段有记录的关系中汇款重要","移民全部收入或家中全部收入都靠侨批"],["同一经办机构反复出现","它参与了多次有记录的交易","它一定是非正式、失信或唯一渠道"],["信中写到困难","写信人在当时情境中报告了困难","同一地区所有移民经历都一样"],["博物馆给出释文","持有机构提供了一种文字判读","每个疑难字、日期和地名都已定论"]]},
+    {"id":"privacy-callout","type":"callout","title":"公开展出的仍是私人家庭记录","body":"遵守持有机构的拍摄规则，只引用解释所需的最少文字，优先使用馆方释文，不公开完整住址或可能涉及在世后人的信息。认不清的字应标作存疑，不能让 OCR 自动补成通顺故事。档案利用、隐私与知识产权规则可能共同约束公开方式；一张照片的开放许可也不自动等于底层信件全文可以任意复用。","tone":"warning"},
+    {"id":"scenarios-heading","type":"heading","level":2,"text":"两种场馆使用方法"},
+    {"id":"traveller-scenarios","type":"comparison","title":"进馆前先选阅读深度","columns":[{"heading":"到汕头的一般旅客","body":"找一份标签清楚的侨批，用十分钟看寄件人、收件人、金额、经办机构和路线，再找一件账簿或派送记录对照。这比拍下一整墙但读不出链条更有用。"},{"heading":"做家族史或移民研究的人","body":"转录前先记机构、馆藏名称、目录号、文书日期和关联件。确认展品是原件、复制件还是数字影像；需要高清细读时，走档案馆正式利用程序。"}]},
+    {"id":"recovery-heading","type":"heading","level":2,"text":"文书无法给出完整故事时怎么恢复"},
+    {"id":"recovery-list","type":"list","items":["手写难辨时，在允许拍摄的前提下先记标签与目录号，不凭一个字形猜全文。","币种或金额冲突时，原样保留每处记录，先查明是哪一机构、哪一栏写的再计算。","两个旧地名相近时，查馆方历史地名表或目录；现代地图可能抹掉旧行政边界。","展厅路线图属于场馆解释，具体一件仍要回到它自己的戳记和日期。","看不到原件时，数字件或复制件仍可用于内容阅读，但要注明媒介，不能声称检视过纸张、墨迹或物理叠压。","参观前向持有机构核对当前展览、可接受的有效证件、开放公告和拍摄规则。汕头馆直接公告最后核对于 2026 年 8 月 13 日，当时规定凭有效证件免费入馆；当前规则仍可能调整。"]},
+    {"id":"links","type":"internal-links","title":"继续阅读档案与迁移证据","items":[{"label":"浏览 Homeground 中国指南","href":"/zh/guides/","description":"返回完整指南集合。"},{"label":"从里耶秦简读地方行政记录","href":"/zh/guides/liye-qin-slips-local-government-records/","description":"把家庭金融文书与行政档案对照。"},{"label":"从货物与保护读南海Ⅰ号","href":"/zh/guides/nanhai-one-shipwreck-cargo-and-conservation/","description":"用另一条证据链理解海上移动。"},{"label":"选择福建土楼集群","href":"/zh/guides/fujian-tulou-cluster-selection/","description":"把移民文献史与福建社区的建筑景观放在一起理解。"}]},
+    {"id":"sources","type":"sources","title":"2026 年 8 月 13 日核对的官方资料","items":[{"label":"侨批与银信：海外华侨书信与汇款档案","url":"https://www.unesco.org/en/memory-world/qiaopi-and-yinxin-correspondence-and-remittance-documents-overseas-chinese","publisher":"联合国教科文组织世界记忆项目","reviewedAt":"2026-08-13"},{"label":"2012 年正式提名表","url":"https://media.unesco.org/sites/default/files/webform/mow001/china_qiaopi_and_yinxin.pdf","publisher":"联合国教科文组织世界记忆项目","reviewedAt":"2026-08-13"},{"label":"侨批档案图鉴","url":"https://www.da.gd.gov.cn/portal_home/content/8105","publisher":"广东省档案馆","reviewedAt":"2026-08-13"},{"label":"《海邦剩馥——广东侨批档案》","url":"https://www.da.gd.gov.cn/portal_home/content/385","publisher":"广东省档案馆","reviewedAt":"2026-08-13"},{"label":"汕头市档案馆侨批分馆参观须知","url":"https://daj.shantou.gov.cn/daj/1500/202104/94d280030d3a49fc9f954c238534cc38.shtml","publisher":"汕头市档案馆","reviewedAt":"2026-08-13"},{"label":"2026 年新入藏 3969 件侨批相关档案","url":"https://daj.shantou.gov.cn/daj/0500/202604/9f1a0a37c33343be853288e5e32c26a9.shtml","publisher":"汕头市档案馆","reviewedAt":"2026-08-13"}, { label: "题图：汕头侨批文物馆，Lhzss8（CC BY 4.0）", url: "https://commons.wikimedia.org/wiki/File:Shantou_Qiaopi_Museum.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" }]}
+  ]
+} as const satisfies StructuredPageBody;
+
+export default body;
