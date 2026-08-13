@@ -1,0 +1,23 @@
+{
+  "id": "yiwu-market-to-factory-network",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "urban-economic-field-guide",
+  "topics": ["yiwu", "commodity-market", "manufacturing-network", "urban-economy"],
+  "destinations": ["china", "zhejiang", "yiwu", "jinhua"],
+  "heroImagePath": "/images/guides/yiwu-market-to-factory-network/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yiwu-market-to-factory-network/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "relationship", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/yiwu-market-to-factory-network/", "title": "Yiwu Market to Factory: How the Network Actually Works", "headline": "Yiwu Market to Factory: Read the Network Without Mistaking Every Booth for a Manufacturer", "description": "Use Yiwu's market districts to understand how products, trading firms, factories, logistics and services connect—without supplier rankings or false factory claims.", "heroAlt": "Documented public aisle in Yiwu International Trade Market showing product displays and booth-scale trade", "navTitle": "Read Yiwu's market-to-factory network", "featuredLinkLabel": "Understand the Yiwu network", "openGraphLocale": "en_US", "cardTags": ["Yiwu", "Commodity market", "Urban economy"]},
+    "zh": {"path": "/zh/guides/yiwu-market-to-factory-network/", "title": "从义乌市场到工厂：网络怎样真正运作", "headline": "从义乌市场到工厂：读懂网络，不把每个商位都当成厂家", "description": "从义乌市场理解产品、贸易公司、工厂、物流与服务如何连接，同时避免供应商排名和未经证实的厂家结论。", "heroAlt": "义乌国际商贸城地点可核验的公共通道与商位商品陈列", "navTitle": "读懂义乌市场到工厂的网络", "featuredLinkLabel": "理解义乌网络", "openGraphLocale": "zh_CN", "cardTags": ["义乌", "小商品市场", "城市经济"]},
+    "ko": {"path": "/ko/guides/yiwu-market-to-factory-network/", "title": "이우 시장에서 공장까지: 네트워크가 작동하는 방식", "headline": "이우 시장에서 공장까지: 모든 매장을 제조사로 오해하지 않는 법", "description": "이우 시장에서 상품·무역회사·공장·물류·서비스의 연결을 읽되 공급업체 순위나 확인되지 않은 제조사 주장을 피합니다.", "heroAlt": "상품 전시와 점포 단위 거래가 보이는 이우 국제상무성의 확인된 공개 통로", "navTitle": "이우 시장-공장 네트워크 읽기", "featuredLinkLabel": "이우 네트워크 이해하기", "openGraphLocale": "ko_KR", "cardTags": ["이우", "소상품시장", "도시경제"]}
+  }
+}
