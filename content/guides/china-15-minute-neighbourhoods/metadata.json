@@ -1,0 +1,63 @@
+{
+  "id": "china-15-minute-neighbourhoods",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "everyday-system-explainer",
+  "topics": [
+    "15-minute-neighbourhoods",
+    "community-life-circles",
+    "everyday-services",
+    "urban-planning",
+    "respectful-neighbourhood-visits"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-15-minute-neighbourhoods/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-15-minute-neighbourhoods/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-15-minute-neighbourhoods/",
+      "title": "How China's 15-Minute Neighbourhoods Actually Work",
+      "headline": "Read the Service Network, Not a 15-Minute Promise",
+      "description": "Understand China's 15-minute neighbourhood and community life-circle plans, then verify the real route, public access and local service gaps respectfully.",
+      "heroAlt": "A public street in a named Chinese community showing several everyday services connected by a walkable route.",
+      "navTitle": "China's 15-minute neighbourhoods",
+      "featuredLinkLabel": "Read a community service network",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Everyday China", "Neighbourhoods", "Urban life"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-15-minute-neighbourhoods/",
+      "title": "中国的“15分钟社区”究竟如何运作？",
+      "headline": "读懂服务网络，不把“15分钟”当承诺",
+      "description": "分清便民生活圈与社区生活圈的规划含义，并以尊重社区的方式核验实际路线、公共准入和服务缺口。",
+      "heroAlt": "中国一处具名社区的公共街道，沿可步行路线分布着多种日常服务设施。",
+      "navTitle": "读懂中国的15分钟社区",
+      "featuredLinkLabel": "看懂社区服务网络",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["日常中国", "社区生活", "城市观察"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-15-minute-neighbourhoods/",
+      "title": "중국의 15분 동네는 실제로 어떻게 작동할까",
+      "headline": "15분이라는 약속보다 생활 서비스망을 읽으세요",
+      "description": "중국의 15분 생활권과 지역사회 생활권 계획을 구분하고 실제 보행 동선, 공개 이용 여부와 서비스 격차를 존중하는 방식으로 확인합니다.",
+      "heroAlt": "중국의 이름이 확인된 한 지역사회 공공 거리에서 여러 생활 서비스가 보행 동선으로 이어진 모습.",
+      "navTitle": "중국의 15분 동네 이해하기",
+      "featuredLinkLabel": "지역 생활 서비스망 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국의 일상", "지역 생활", "도시 이해"]
+    }
+  }
+}
