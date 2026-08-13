@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "Central Shanghai hotel", items: ["Compare Shanghai Station inventory", "A longer train can save city travel", "Check the full station name"] },
     { heading: "Late Hangzhou arrival", items: ["Choose by hotel last mile", "Confirm last metro independently", "Keep legal taxi and hotel reception fallback"] },
   ]},
+  { id: "search-heading", type: "heading", level: 2, text: "Search station pairs in a controlled order" },
+  { id: "search-plan", type: "list", ordered: true, items: ["Pin the exact Shanghai start and Hangzhou finish, including airport terminal or hotel entrance.", "List only the Shanghai stations the group can reach with a defensible morning margin.", "Search 12306 for the actual date and one pair at a time; save train number, full station names and times.", "Add station access, security and the Hangzhou last mile to each usable result.", "Compare the total door-to-door time, number of handoffs and failure consequence before choosing the cheapest or fastest train."] },
+  { id: "ticket", type: "callout", title: "A search result is not reserved inventory", tone: "warning", body: "Complete the order through the official ticket channel and check every passport name and document number. A timetable, reseller screen or saved candidate does not hold a seat. If the preferred pair sells out, compare a different time or station pair before accepting a complicated transfer. Keep the confirmed order and identity document available for station entry." },
+  { id: "trip-heading", type: "heading", level: 2, text: "A day trip and an overnight trip need different station logic" },
+  { id: "trip-matrix", type: "table", caption: "Let the Hangzhou day choose the arrival", columns: ["Trip shape", "Station priority", "Hidden constraint"], rows: [
+    ["West Lake day trip", "A station with a clean first and final city leg", "The return must allow attraction-to-station traffic and entry margin"],
+    ["Hangzhou hotel stay", "The hotel address may outweigh the shortest train", "A late arrival needs reception and last-mile confirmation"],
+    ["Flight to rail after Pudong", "Protect immigration, baggage and the transfer to the Shanghai rail station", "Hongqiao rail is not inside Pudong Airport"],
+    ["Flight to rail after Hongqiao", "Hongqiao may reduce city crossing", "The airport terminal, rail concourse and independent ticket still require margin"],
+  ]},
+  { id: "return-heading", type: "heading", level: 2, text: "Design the return before buying a day-trip outbound" },
+  { id: "return-copy", type: "paragraph", text: "Choose a Hangzhou leave-the-attraction time, then add road or metro variability, the correct station entrance, security and boarding. Keep at least one later usable train only if it actually reaches a Shanghai station from which the group can still reach the hotel or airport. If that fallback disappears, the sensible recovery may be a Hangzhou night rather than racing between unfamiliar terminals." },
   { id: "recovery-heading", type: "heading", level: 2, text: "If you reach the wrong station" },
   { id: "recovery", type: "table", caption: "Stop before a cross-city race", columns: ["Problem", "Response"], rows: [
     ["Wrong Shanghai terminal", "Use official ticket change/inventory first; compare that with crossing the city"],
@@ -32,6 +44,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Compare schedule shape for longer onward travel." },
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count the large-city access legs." },
     { label: "Read the White Snake sites in Hangzhou and Zhenjiang", href: "/guides/white-snake-legend-hangzhou-zhenjiang/", description: "After solving the station pair, decide whether the legend merits a second-city cultural stop." },
+    { label: "Read Yiwu beyond the market", href: "/guides/yiwu-market-to-factory-network/", description: "Understand the roles behind Yiwu's product displays without treating a booth as proof of a factory or an old directory as current guidance." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
     { label: "Guide to Shanghai railway stations", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-12" },

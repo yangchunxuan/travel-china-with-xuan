@@ -299,6 +299,7 @@ export default {
           href: "/zh/guides/why-are-hotels-in-china-so-cheap/",
           description: "比较住宿前，先了解低房价可能包含什么、又可能不包含什么。",
         },
+        { label: "安排铁路、住宿基地与第一晚", href: "/zh/guides/lijiang-shangri-la-transport-route/", description: "比较丽江到香格里拉的铁路和公路交通，安排车站到住宿点的接驳，并为海拔上升后的第一晚留出休息时间。" },
       ],
     },
     {

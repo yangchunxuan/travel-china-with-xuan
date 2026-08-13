@@ -15,6 +15,7 @@ Searches reviewed: `Hong Kong to Macau ferry or bus`, `HZMB shuttle to Macau`, a
 - Hong Kong Marine Department lists the Hong Kong–Macao Ferry Terminal and participating operators, while directing travellers to operators for schedules. `checked_at: 2026-08-12`.
 - HZMB official guidance defines the shuttle as Hong Kong Port–Macao Port, requiring local transport on both sides. `checked_at: 2026-08-12`.
 - Ferry sailings, HZMB services, coach stops, fares, baggage, terminal hours and entry rules are date-specific. No permanent schedule or fare is published. `checked_at: 2026-08-12`.
+- Hong Kong Immigration Department and the Macao SAR Government publish separate visit-entry requirements by nationality and travel document. A transport ticket or a mainland China visa is therefore not used as evidence of eligibility for either jurisdiction. `checked_at: 2026-08-13`.
 
 ## Official sources
 
@@ -22,6 +23,8 @@ Searches reviewed: `Hong Kong to Macau ferry or bus`, `HZMB shuttle to Macau`, a
 2. Hong Kong Marine Department — cross-boundary ferry service data: https://crossboundaryferryservices.mardep.gov.hk/en/
 3. HZMB Hong Kong Project Management Office — public transport: https://www.hzmb.gov.hk/en/transport.html
 4. HZMB cross-boundary services: https://www.hzmb.gov.hk/en/cross-boundary.html
+5. Hong Kong Immigration Department — visit visa and entry-permit requirements: https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html
+6. Macao SAR Government — visa and prior-authorization requirements: https://www.gov.mo/en/services/ps-1474/ps-1474b/
 
 ## Image rights record
 

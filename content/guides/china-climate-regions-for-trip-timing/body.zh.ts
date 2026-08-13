@@ -63,7 +63,10 @@ const body = {
     { id: "more-planning", type: "internal-links", title: "继续规划", items: [
       { label: "判断十月是黄金周还是节后出行", href: "/zh/guides/china-in-october-golden-week-or-later/", description: "结合国庆假期和区域天气做月份级判断。" },
       { label: "查看中国法定节假日日历", href: "/zh/guides/china-public-holidays-travel-calendar/", description: "气候合适并不代表没有假期压力。" },
-      { label: "比较平季旅行的价值与代价", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "完成气候筛选后，再加入价格、日照和运营限制。" }
+      { label: "比较平季旅行的价值与代价", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "完成气候筛选后，再加入价格、日照和运营限制。" },
+      { label: "分清天坑与野外落水洞", href: "/zh/guides/china-tiankeng-sinkholes-explained/", description: "理解地质学中的天坑，分清正式公众景区与科研发现点，并在访问前核对当期路线和安全信息。" },
+      { label: "从白天走到夜晚游南明", href: "/zh/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "按日光、夜景与用餐节奏，从老城街巷走到甲秀楼、南明河和青云市集，并准备下雨与疲劳分支。" },
+      { label: "分清文昌航天空间", href: "/zh/guides/wenchang-commercial-space-city/", description: "分清文昌国家发射场、海南商业航天发射场与航天城开发，并对任何公众访问安排重新核实。" },
     ] },
     { id: "sources", type: "sources", title: "已复核的官方来源", items: [
       { label: "中国气候类型", url: "https://www.cma.gov.cn/2011xzt/2017zt/20170720/2017072004/201707200101/202111/t20211103_4148108.html", publisher: "中国气象局", reviewedAt: "2026-08-12" },

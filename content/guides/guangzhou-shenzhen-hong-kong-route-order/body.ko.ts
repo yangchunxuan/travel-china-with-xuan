@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "광저우–홍콩 교통 비교", href: "/ko/guides/guangzhou-hong-kong-transport-route/", description: "도시 순서 뒤 역과 수단을 고르세요." },
     { label: "선전–홍콩 출입경 지점 선택", href: "/ko/guides/shenzhen-hong-kong-transport-route/", description: "양쪽 숙소와 이후 계획에 맞추세요." },
-    { label: "오픈조 항공편 시험", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "서로 다른 도착·출국 도시가 되돌아가기를 없애는지 보세요." }
+    { label: "오픈조 항공편 시험", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "서로 다른 도착·출국 도시가 되돌아가기를 없애는지 보세요." },
+    { label: "선전 숙소 지역 비교", href: "/ko/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "도착 허브, 홍콩 이동, 업무 주소, 관광, 저녁과 짐을 기준으로 푸톈·뤄후·난산을 비교합니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "국경 간 고속철 여행 계획", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR 고속철", reviewedAt: "2026-08-12" },

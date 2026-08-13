@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "Island hotel", items: ["Ask which pier the hotel recommends", "Confirm luggage help separately", "Do not assume vehicles meet the ferry"] },
     { heading: "Family or large cases", items: ["Avoid the tightest connection", "Keep documents with each traveller", "Consider a mainland first night after a late arrival"] },
   ]},
+  { id: "order-heading", type: "heading", level: 2, text: "Audit the order before timing the road transfer" },
+  { id: "order-copy", type: "paragraph", text: "Open the completed order and read the sailing date, departure time, full mainland terminal, island arrival pier and traveller document. Do not plan from a search-results screenshot or an unfinished shopping cart. If the system sends a passport for manual verification, treat approval as unfinished until the official channel confirms it. Keep the same passport and the order record available at check-in, and put every traveller's document status in one group checklist." },
+  { id: "arrival-heading", type: "heading", level: 2, text: "Choose the sailing around the real arrival" },
+  { id: "arrival-matrix", type: "table", caption: "Connection margin begins before the ferry terminal", columns: ["Arrival pattern", "Safer planning choice", "Reason"], rows: [
+    ["Morning flight or train", "Use a later sailing with an explicit delay margin", "Baggage, platform exit and road traffic are outside the ferry schedule"],
+    ["Late-afternoon arrival", "Keep a mainland hotel fallback", "A missed sailing can leave no defensible same-day island connection"],
+    ["Separate island booking", "Confirm the hotel's late-arrival procedure and pier guidance", "The ferry operator does not manage the accommodation handoff"],
+    ["Same-day onward booking", "Avoid a tight island return before a train or flight", "Return eligibility is not a reserved departure and weather can alter operations"],
+  ]},
+  { id: "island", type: "callout", title: "A ferry pier is not an island hotel lobby", tone: "neutral", body: "Gulangyu's final leg is mainly a walking-and-luggage problem. Send the hotel the exact arrival pier, ask for its recommended walking approach and confirm whether any luggage help is actually provided. Save the address and telephone in Chinese. Stone lanes, steps, rain and crowds can turn a short distance into a difficult arrival; do not promise vehicle access or porter service unless the accommodation confirms it for that date." },
+  { id: "return-heading", type: "heading", level: 2, text: "Treat the return as a new operating check" },
+  { id: "return-plan", type: "list", ordered: true, items: ["Confirm that the current ticket and route qualify for the intended return; do not rely only on the general validity statement.", "Check the live return pier arrangement and any queue or sailing rule on the chosen day.", "Walk backward from the mainland train or flight and include island walking, ferry check-in, sailing, mainland exit and road transfer.", "Choose a latest acceptable island departure and an earlier bad-weather alternative.", "If the return no longer protects the onward booking, move to the mainland the previous evening rather than compressing every segment."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "Wrong terminal or missed sailing" },
   { id: "recovery", type: "table", caption: "Use the operator record, not street advice", columns: ["Problem", "Response"], rows: [
     ["Driver reaches a different pier", "Do not unload until the full ticketed terminal is matched"],
@@ -31,6 +43,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China's last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Protect the return from an island transfer." },
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Do not compress rail, road and ferry cutoffs." },
     { label: "How to pay in China", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Keep a backup way to pay for mainland transport." },
+    { label: "Choose an Xiamen base", href: "/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/", description: "Compare Zhongshan Road, an overnight on Gulangyu and Zengcuo’an by ferry, luggage, early and late hours, beach access and onward travel." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
     { label: "Official online-purchase FAQ: current channels, passports and return validity", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "Xiamen Ferry Co.", reviewedAt: "2026-08-13" },

@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "住岛上酒店", items: ["询问酒店建议哪个码头", "单独确认行李协助", "不要假设有车辆接船"] },
     { heading: "家庭或大箱子", items: ["避开最紧衔接", "每位旅客保管自己的证件", "晚到可先住厦门本岛"] },
   ]},
+  { id: "order-heading", type: "heading", level: 2, text: "计算公路接驳前先审订单" },
+  { id: "order-copy", type: "paragraph", text: "打开已经完成的订单，逐项读取航行日期、出发时间、大陆一侧完整码头、岛上抵达码头和旅客证件。不要根据搜索结果截图或未付款购物车做计划。如果系统把护照送去人工核验，在官方渠道确认前都应视为未完成。值船时携带同一本护照和订单记录，并把每位同行者的证件状态放进同一张清单。" },
+  { id: "arrival-heading", type: "heading", level: 2, text: "按真实抵达时间选择船班" },
+  { id: "arrival-matrix", type: "table", caption: "衔接缓冲从到达码头之前开始", columns: ["抵达模式", "更稳妥的选择", "原因"], rows: [
+    ["上午航班或火车", "选择更晚的船，并明确留出延误余量", "取行李、出站和道路拥堵都不在船期内"],
+    ["傍晚抵达", "保留厦门本岛住宿", "错过船班后可能已没有合理的当日上岛方案"],
+    ["岛上住宿为独立订单", "确认酒店晚到流程和建议抵达码头", "轮渡运营方不负责住宿交接"],
+    ["当天还有下一张订单", "不要把离岛回程压在火车或航班之前", "返程资格不是预留班次，天气也可能改变运营"],
+  ]},
+  { id: "island", type: "callout", title: "轮渡码头不是岛上酒店大堂", tone: "neutral", body: "鼓浪屿最后一段主要是步行与行李问题。把准确抵达码头发给酒店，询问建议步行路线，并确认是否真的提供行李协助。把中文地址和电话离线保存。石板巷、台阶、雨水和人流会让很短的距离变得困难；除非酒店按日期确认，否则不要承诺车辆或搬运行李服务。" },
+  { id: "return-heading", type: "heading", level: 2, text: "把返程当成一次新的运营核查" },
+  { id: "return-plan", type: "list", ordered: true, items: ["确认当前船票和航线符合计划返程条件，不只依赖通用有效期表述。", "核对所选日期的实时返程码头、排队或班次规则。", "从大陆的火车或航班倒推，加入岛上步行、值船、航行、出码头和公路接驳。", "设置最晚可接受的离岛时间和更早的恶劣天气备选。", "返程已经无法保护后续订单时，应提前一晚回厦门本岛，而不是继续压缩每一段。"] },
   { id: "recovery-heading", type: "heading", level: 2, text: "错码头或错过船" },
   { id: "recovery", type: "table", caption: "用运营方记录，不听街边建议", columns: ["问题", "应对"], rows: [
     ["司机到了另一个码头", "完整票面码头未匹配前不要取下行李"],
@@ -31,6 +43,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "国际航班前最后一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "保护从岛上返回的接驳。" },
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "不要压缩铁路、道路和船班截止。" },
     { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为内地交通保留付款备选。" },
+    { label: "选择厦门住宿基地", href: "/zh/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/", description: "从轮渡、行李、清晨与夜晚、海边活动和后续交通比较中山路、鼓浪屿过夜与曾厝垵。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
     { label: "官方网络购票FAQ：当前渠道、护照与返程有效期", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "厦门轮渡有限公司", reviewedAt: "2026-08-13" },

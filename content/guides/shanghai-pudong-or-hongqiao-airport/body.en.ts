@@ -531,6 +531,7 @@ const body = {
           href: "/guides/china-hotel-near-metro/",
           description: "Check the useful entrance, final walk, lifts and luggage route before using a hotel area to choose the airport.",
         },
+        { label: "Choose a Shanghai base", href: "/guides/shanghai-where-to-stay-first-trip/", description: "Compare the Bund, People’s Square and the former French Concession by walking, metro reach, evenings, luggage and crowd trade-offs." },
       ],
     },
     {

@@ -374,6 +374,7 @@ const body: StructuredPageBody = {
           href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "문화 설명이나 현장 조율이 가장 필요한 구간에 사람의 도움을 배치합니다.",
         },
+        { label: "차 산지 풍경 고르기", href: "/ko/guides/tea-landscape-regions-of-china/", description: "최고의 차 순위가 아니라 현장에서 볼 수 있는 풍경, 작업과 공동체의 관계로 중국 차 산지를 고릅니다." },
       ],
     },
     {

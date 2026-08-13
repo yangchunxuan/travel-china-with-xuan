@@ -401,6 +401,7 @@ const body: StructuredPageBody = {
           href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "교통 결제 방식은 실제 티켓과 역을 정한 뒤 한 번 더 확인하세요.",
         },
+        { label: "ATM 현금 미지급 복구", href: "/ko/guides/china-atm-cash-not-dispensed/", description: "재출금을 멈추고 ATM 증거를 보존한 뒤 ATM 운영 은행과 카드 발급사에 각각 접수하고 대체 결제를 이용하세요." },
       ],
     },
     {

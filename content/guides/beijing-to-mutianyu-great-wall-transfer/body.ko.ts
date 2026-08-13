@@ -22,6 +22,18 @@ const body = {
       { heading: "아이 또는 부모님", items: ["서서 기다리는 시간 줄이기", "환승 때 일행 유지", "화장실과 날씨 피할 곳 계획"] },
       { heading: "짐 또는 후속 열차", items: ["관광 이동에 여행 가방을 가져가지 않기", "출발 전 공식 보관소 확인", "같은 날 저녁의 빠듯한 연결 피하기"] },
     ]},
+    { id: "first-leg-heading", type: "heading", level: 2, text: "호텔에서 출발지까지가 수단을 결정할 수 있습니다" },
+    { id: "first-leg-copy", type: "paragraph", text: "실제 출발 시각에 호텔 입구를 경로에 넣습니다. 둥즈먼은 어떤 지역에서는 단순한 첫 구간이지만 다른 지역에서는 이른 아침 도시 횡단입니다. 직행 관광버스도 일행이 지정 픽업에 도착한 뒤에야 직행입니다. 전용차는 기사가 어느 호텔 문이나 합법 도로 지점에 설 수 있는지 확인하세요. 공시 이동 시간을 비교하기 전에 아침 식사, 엘리베이터, 지하철 운행, 아이와 걷기, 정확한 정류장 찾기를 더합니다." },
+    { id: "layers", type: "callout", title: "교통·관광지 입장·오르막 접근은 별도 구매층입니다", tone: "warning", body: "버스나 차량은 보통 도로 이동만 해결합니다. 관광지 입장, 내부 셔틀, 케이블카·리프트·도보 접근은 별도 규정과 대기가 있을 수 있습니다. 현재 관광지 주문을 읽고 오르는 방법과 내려오는 방법을 정한 뒤 픽업 시각을 고정하세요. 교통 판매 사진에 성벽이 나온다는 이유로 모든 표가 포함된다고 가정하지 않습니다." },
+    { id: "day-shape-heading", type: "heading", level: 2, text: "하루 형태에 교통을 맞추세요" },
+    { id: "day-shape", type: "table", caption: "같은 성벽 방문도 다른 귀로가 필요할 수 있습니다", columns: ["하루 형태", "더 방어 가능한 구조", "주요 실패"], rows: [
+      ["무톈위만 방문", "현재 귀로가 있고 일행이 유연하면 대중·직행 버스가 가능합니다", "계획 없이 긴 성벽 경로를 택해 귀로 여유를 씁니다"],
+      ["무톈위 뒤 도심 저녁", "더 이른 하산과 도시 마지막 구간을 남깁니다", "버스 도착을 식당 도착으로 봅니다"],
+      ["무톈위 뒤 저녁 열차", "통제된 차량을 택하거나 당일 연결을 제거합니다", "정체, 역 혼동, 보안이 여유를 없앱니다"],
+      ["아이·부모·겨울", "인계를 줄이고 쉼터와 화장실 시간을 지킵니다", "건강한 성인의 여름 최단 사례로 설계합니다"],
+    ]},
+    { id: "return-heading", type: "heading", level: 2, text: "완전한 귀로 지시를 적으세요" },
+    { id: "return-list", type: "list", ordered: true, items: ["일행이 하산을 끝내고 다시 모일 지점을 이름으로 정합니다.", "성벽 접근 지점에서 도로 픽업이나 대중교통 정류장까지 내부 이동을 더합니다.", "화이러우·베이징 연결은 번호만 보지 말고 목적지와 방향을 확인합니다.", "검증된 대안 하나가 남는 관광지 출발 시한을 설정합니다.", "대안이 사라지면 이론적 막차를 기다리지 말고 관람 연장을 멈추고 귀로를 확보합니다."] },
     { id: "late-heading", type: "heading", level: 2, text: "늦은 출발은 관람보다 선택지를 먼저 줄인다" },
     { id: "late-table", type: "table", caption: "문제가 생겼을 때의 판단", columns: ["문제", "첫 행동", "하지 말 것"], rows: [
       ["직행버스를 놓침", "공식 변경 규정과 현재 대중교통 확인", "이름 없는 차량을 권하는 호객을 따라가기"],
@@ -36,6 +48,7 @@ const body = {
       { label: "어느 베이징 기차역인가요?", href: "/ko/guides/which-beijing-railway-station/", description: "올바른 터미널로 후속 열차를 지킵니다." },
       { label: "외국인 여행자의 자금성", href: "/ko/guides/forbidden-city-for-foreign-visitors/", description: "또 다른 어려운 베이징 하루를 따로 준비합니다." },
       { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "어려운 두 날을 불안한 일정 하나에 넣지 않습니다." },
+      { label: "바다링 노선 고르기", href: "/ko/guides/beijing-to-badaling-great-wall-transfer/", description: "출발 지점, 도착 위치, 귀환과 대안을 기준으로 고속철도, S2 교외철도, 877번 버스와 공항 연결을 비교합니다." },
     ]},
     { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
       { label: "무톈위 방문과 대중교통 정보", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html", publisher: "베이징시 정부", reviewedAt: "2026-08-12" },

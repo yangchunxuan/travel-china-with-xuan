@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "住上海市中心", items: ["比较上海站余票", "稍长车程可能节省市内交通", "看完整站名"] },
     { heading: "很晚到杭州", items: ["按酒店最后一段选择", "单独核对末班地铁", "保留合法出租与酒店接待备选"] },
   ]},
+  { id: "search-heading", type: "heading", level: 2, text: "按可控顺序查询站对" },
+  { id: "search-plan", type: "list", ordered: true, items: ["固定准确的上海起点和杭州终点，包括机场航站楼或酒店入口。", "只列全组能在清晨留出合理余量到达的上海车站。", "按真实日期在12306逐一查询站对，保存车次、完整站名和时间。", "给每个可用结果加入进站、安检和杭州末端交通。", "在选择最便宜或最快列车前，比较门到门总时间、交接次数和失败后果。"] },
+  { id: "ticket", type: "callout", title: "查询结果不是已经锁定的座位", tone: "warning", body: "通过官方票务渠道完成订单，并核对每位旅客的护照姓名和证件号。时刻表、代售页面或保存的候选都不会占座。首选站对售罄时，应先比较其他时间或站对，再接受复杂换乘。进站时准备好已确认订单与身份文件。" },
+  { id: "trip-heading", type: "heading", level: 2, text: "一日游与住宿行程需要不同的车站逻辑" },
+  { id: "trip-matrix", type: "table", caption: "让杭州当天任务决定抵达站", columns: ["行程形态", "车站优先级", "隐藏限制"], rows: [
+    ["西湖一日游", "第一段和最后一段市内交通都顺的车站", "回程要计入景点到车站的交通和进站余量"],
+    ["住在杭州", "酒店地址可能比列车最短时间更重要", "晚到要确认接待和末端交通"],
+    ["浦东机场落地后换火车", "保护入境、行李和前往上海铁路站的时间", "虹桥火车站不在浦东机场内"],
+    ["虹桥机场落地后换火车", "虹桥可能减少跨城交通", "航站楼、铁路站厅和独立车票仍需缓冲"],
+  ]},
+  { id: "return-heading", type: "heading", level: 2, text: "购买一日游去程前先设计返程" },
+  { id: "return-copy", type: "paragraph", text: "先确定离开杭州景点的时间，再加入公路或地铁波动、正确车站入口、安检和登车。只有当后一班列车确实抵达一个仍能继续到上海酒店或机场的车站时，它才算有效备选。备选消失后，更合理的恢复方案可能是留宿杭州，而不是在陌生车站之间追赶。" },
   { id: "recovery-heading", type: "heading", level: 2, text: "到了错误车站" },
   { id: "recovery", type: "table", caption: "不要立刻穿城赶站", columns: ["问题", "应对"], rows: [
     ["错上海车站", "先用官方渠道查退改/余票，再与穿城时间比较"],
@@ -32,6 +44,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "夜车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "为更远后续交通比较时间表形状。" },
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "计算大城市首尾接驳。" },
     { label: "按证据读杭州与镇江的《白蛇传》地点", href: "/zh/guides/white-snake-legend-hangzhou-zhenjiang/", description: "解决车站组合后，再判断这则传说是否值得增加一个文化停留城市。" },
+    { label: "从市场之外理解义乌", href: "/zh/guides/yiwu-market-to-factory-network/", description: "理解义乌商品陈列背后的不同角色，不把商位当成工厂证明，也不把旧目录当成当前指引。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
     { label: "上海火车站指引", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "上海市政府", reviewedAt: "2026-08-12" },

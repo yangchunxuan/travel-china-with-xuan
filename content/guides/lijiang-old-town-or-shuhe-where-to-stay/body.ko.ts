@@ -299,6 +299,7 @@ export default {
           href: "/ko/guides/why-are-hotels-in-china-so-cheap/",
           description: "숙소를 비교하기 전에 낮은 객실 요금에 포함되거나 빠질 수 있는 항목을 이해하세요.",
         },
+        { label: "철도·숙박 거점·첫날 밤 계획하기", href: "/ko/guides/lijiang-shangri-la-transport-route/", description: "리장에서 샹그릴라까지 열차와 도로 이동을 비교하고 역에서 숙소까지의 이동과 고도가 높아진 첫날 밤의 휴식을 준비합니다." },
       ],
     },
     {

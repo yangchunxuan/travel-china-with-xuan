@@ -397,6 +397,7 @@ export default {
           href: "/zh/guides/how-much-does-a-china-trip-cost/",
           description: "比较公共交通、车辆、导游和更广泛行程协助分别会产生什么费用。",
         },
+        { label: "规划陕西历史博物馆", href: "/zh/guides/shaanxi-history-museum-booking-and-collection-plan/", description: "用外籍护照预约，分清小寨本馆与秦汉馆，并按 90 分钟或深度版本安排西安馆藏参观。" },
       ],
     },
     {

@@ -61,7 +61,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "별도 항공권 셀프 환승 위험 확인", href: "/ko/guides/china-separate-flight-tickets-self-transfer-risk/", description: "저렴한 운임도 다음 여정을 위험에 노출할 수 있습니다." },
     { label: "중국 여행 전체 비용 이해", href: "/ko/guides/how-much-does-a-china-trip-cost/", description: "항공편 결정을 전체 예산 안에서 보세요." },
-    { label: "오픈조 항공편의 동선 가치 비교", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "더 비싼 항공권이 큰 되돌아가기를 없앨 수 있습니다." }
+    { label: "오픈조 항공편의 동선 가치 비교", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "더 비싼 항공권이 큰 되돌아가기를 없앨 수 있습니다." },
+    { label: "원창의 우주 공간 구분하기", href: "/ko/guides/wenchang-commercial-space-city/", description: "원창의 국가 발사장, 하이난 상업우주발사센터와 우주도시 개발을 구분하고 모든 방문 안내를 최신 공식 자료로 다시 확인합니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "공공항공운송 여객서비스 관리규정", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },

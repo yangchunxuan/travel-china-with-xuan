@@ -66,7 +66,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Plan Shanghai–Hangzhou transport", href: "/guides/shanghai-hangzhou-transport-route/", description: "Choose stations after the city order." },
     { label: "Understand a Suzhou garden visit", href: "/guides/how-to-read-a-suzhou-garden/", description: "Give Suzhou a purpose before adding a hotel." },
-    { label: "Choose Pudong or Hongqiao", href: "/guides/shanghai-pudong-or-hongqiao-airport/", description: "The flight airport can reverse the best route." }
+    { label: "Choose Pudong or Hongqiao", href: "/guides/shanghai-pudong-or-hongqiao-airport/", description: "The flight airport can reverse the best route." },
+    { label: "Read the Grand Canal today", href: "/guides/grand-canal-everyday-urban-history/", description: "Separate protected heritage, working waterways and neighbourhood life, then choose a public section where their relationship is visible." },
+    { label: "Choose a Yellow Sea wetland base", href: "/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "Separate Yancheng's dispersed wetland areas, choose Dongtai, Dafeng or the city as a practical base, and plan ethical birding with a no-sighting alternative." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Guide to railway stations in Shanghai", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-12" },

@@ -17,6 +17,19 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "Family or parents", items: ["Reduce roadside handoffs", "Plan altitude and rest without diagnosing", "Confirm hotel reception time"] },
     { heading: "Winter or fixed flight", items: ["Add a larger disruption buffer", "Avoid separate unprotected tickets", "Keep a Chengdu or local night fallback"] },
   ]},
+  { id: "handoff-heading", type: "heading", level: 2, text: "A usable handoff has six written fields" },
+  { id: "handoff", type: "list", ordered: true, items: ["The exact railway station or airport, not simply ‘Jiuzhaigou’. ", "The current named transfer operator and official booking record.", "A pickup point that can be found after leaving the station or baggage hall.", "The train or flight the transfer is intended to meet and its late-arrival policy.", "The exact valley, scenic-area or hotel drop-off rather than a broad county name.", "A contact method that works in China plus the fallback if the vehicle is missed."] },
+  { id: "separate", type: "callout", title: "Separate tickets do not protect one another", tone: "warning", body: "A railway or airline booking and a station-to-valley transfer are different contracts unless the seller explicitly documents protection. A scheduled pickup arranged around train arrivals is not the same as a guaranteed private vehicle waiting indefinitely. Read the change and no-show terms, give the operator the correct train or flight, and keep enough margin that a small delay does not destroy the mountain-road leg." },
+  { id: "arrival-heading", type: "heading", level: 2, text: "Do not turn arrival day into a scenic-area race" },
+  { id: "arrival-matrix", type: "table", caption: "Use the first night to absorb transport risk", columns: ["Arrival", "More resilient plan", "Reason"], rows: [
+    ["Early confirmed rail and transfer", "Reach the accommodation, eat and prepare for an early full scenic day", "The two-hour road estimate is not attraction-entry time"],
+    ["Afternoon rail", "Protect hotel reception and avoid promising substantial valley sightseeing", "Station handoff and mountain road can consume the remaining daylight"],
+    ["Late flight or winter service", "Keep an airport, local or Chengdu fallback depending on the failed leg", "Weather and separate tickets can remove the same-day road connection"],
+    ["Family or older parents", "Schedule food, toilets and rest before a full next day", "A long multi-mode arrival changes the group's usable pace"],
+  ]},
+  { id: "hotel", type: "paragraph", text: "Confirm whether the transfer's advertised endpoint is the scenic-area entrance, a transport centre or the booked hotel. Those labels are not interchangeable after dark or with large luggage. Send the accommodation's Chinese name, address and phone number to the operator, ask whether the route provides hotel drop-off, and tell the hotel the expected arrival. If it does not, arrange the last vehicle before leaving Chengdu." },
+  { id: "return-heading", type: "heading", level: 2, text: "Reserve the return as a separate chain" },
+  { id: "return-plan", type: "list", ordered: true, items: ["Start from the accommodation or scenic exit, not from a generic Jiuzhaigou label.", "Confirm the road transfer's pickup and the train station or airport it actually serves.", "Leave margin for mountain-road disruption before any independent rail or air ticket.", "Keep a later transport option and an additional night only when both are genuinely available.", "If a flight is irreplaceable, move toward Chengdu or the departure airport earlier instead of using the final possible connection."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "If one leg fails" },
   { id: "recovery", type: "table", caption: "Confirm the next workable option", columns: ["Problem", "Next step"], rows: [
     ["Train delay threatens shuttle", "Contact the named transfer before arrival and ask for its written policy"],
@@ -31,6 +44,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Compare schedule shape, not only duration." },
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Give mountain transfers a real buffer." },
     { label: "How to pay in China", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Prepare more than one payment method for the journey." },
+    { label: "Choose a Leshan Giant Buddha visit", href: "/guides/leshan-giant-buddha-land-or-boat-visit/", description: "Compare the mountain route and river view, understand their separate tickets and weather risks, and plan the return to Leshan or Chengdu without relying on a boat." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
     { label: "July 2026 Huanglongjiuzhai rail-transfer notice", url: "https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49", publisher: "Jiuzhaigou Valley Scenic and Historic Interest Area", reviewedAt: "2026-08-12" },

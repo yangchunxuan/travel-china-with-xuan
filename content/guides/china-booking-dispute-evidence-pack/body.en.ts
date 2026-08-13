@@ -229,6 +229,7 @@ const body: StructuredPageBody = {
           href: "/guides/lost-phone-in-china-digital-recovery/",
           description: "Restore access to booking and payment evidence without exposing accounts.",
         },
+        { label: "Recover an ATM cash failure", href: "/guides/china-atm-cash-not-dispensed/", description: "Stop repeat withdrawals, preserve ATM evidence, open cases with the ATM bank and your card issuer, and use safer payment fallbacks while you wait." },
       ],
     },
     {

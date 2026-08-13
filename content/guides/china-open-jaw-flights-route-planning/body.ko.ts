@@ -286,6 +286,7 @@ const body = {
           href: "/ko/guides/china-240-hour-visa-free-transit-route-check/",
           description: "제3국·지역, 적용 출입국장, 허용 체류지역 조건을 동선 편의와 분리해 확인하세요.",
         },
+        { label: "첫날 일정 보호하기", href: "/ko/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "입국 심사, 수하물, 시내 이동, 호텔 동선과 지각 규정을 확인해 도착일에 시간 지정 예약을 넣어도 되는지 판단합니다." },
       ],
     },
     {

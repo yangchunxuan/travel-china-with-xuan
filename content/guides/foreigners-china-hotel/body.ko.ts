@@ -245,6 +245,7 @@ const body = {
         { label: "여행자를 위한 중국 결제 방법", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "보증금과 긴급 대체 예약을 위한 결제 수단을 준비합니다." },
         { label: "중국 호텔의 지하철 접근성을 판단하는 법", href: "/ko/guides/china-hotel-near-metro/", description: "호텔 문부터 승강장까지 실제 동선을 별도로 확인합니다." },
         { label: "중국 호텔은 왜 저렴한가요?", href: "/ko/guides/why-are-hotels-in-china-so-cheap/", description: "가격을 숙박 등록과 혼동하지 않고 숙소 형태와 가치를 비교합니다." },
+        { label: "글로벌 체인·현지 호텔 비교", href: "/ko/guides/international-chain-or-local-hotel-china/", description: "객실, 외국인 숙박 등록, 결제, 실제 위치, 문제 해결 절차로 중국의 글로벌 체인과 현지 호텔을 비교합니다." },
       ],
     },
     {

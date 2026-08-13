@@ -10,10 +10,15 @@ import {
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import {
   getChinaItineraryWithOlderParentsCopy,
   type ChinaItineraryWithOlderParentsCopy,
 } from "../lib/chinaItineraryWithOlderParentsI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ChinaItineraryWithOlderParentsPage.module.css";
@@ -44,6 +49,7 @@ function createStructuredData(locale: HomegroundLocale) {
         name: "Homeground China",
         url: `${siteUrl}/`,
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -55,7 +61,8 @@ function createStructuredData(locale: HomegroundLocale) {
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
-        author: { "@id": `${siteUrl}/#organization` },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": `${siteUrl}/#organization` },
         about: copy.schemaAbout.map((name) => ({ "@type": "Thing", name })),
       },
@@ -183,14 +190,11 @@ export function ChinaItineraryWithOlderParentsPage({
                   <h1>{copy.hero.title}</h1>
                   <p className={styles.heroLead}>{copy.hero.lead}</p>
                   <p className={styles.scopeNote}>{copy.hero.scopeNote}</p>
-                  <p className={styles.reviewed}>
-                    {copy.hero.preparedBy}
-                    {" · "}
-                    {copy.hero.reviewedLabel}{" "}
-                    <time dateTime="2026-07-31">
-                      {copy.hero.reviewedDate}
-                    </time>
-                  </p>
+                  <LegacyEditorialByline
+                    guideId={guide.id}
+                    locale={locale}
+                    reviewedAt={guide.sourceReviewedDate}
+                  />
                 </div>
 
                 <aside

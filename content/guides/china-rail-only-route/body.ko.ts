@@ -67,7 +67,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "처음 중국 고속철 타기", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "동선이 철도 검사에 합격한 뒤 이용하세요." },
     { label: "야간열차와 주간 고속철 비교", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "수면 품질이나 관광일을 의도적으로 지키세요." },
-    { label: "동선 양끝에만 항공편 사용", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "오픈조 관문이 되돌아가기 없이 철도 축을 지킬 수 있습니다." }
+    { label: "동선 양끝에만 항공편 사용", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "오픈조 관문이 되돌아가기 없이 철도 축을 지킬 수 있습니다." },
+    { label: "중국 공익성 완행열차 이해하기", href: "/ko/guides/china-public-welfare-slow-trains/", description: "중국 공익성 완행열차가 계속 운행되는 이유와 일상 승객, 여행자가 서비스를 존중하며 이용하는 방법을 알아봅니다." },
+    { label: "산둥반도 철도 호 계획", href: "/ko/guides/shandong-peninsula-coastal-city-rail-arc/", description: "세 도시가 더하는 서로 다른 경험을 정하고 정확한 역을 철도로 연결한 뒤 해안 경험이 반복되면 한 도시를 뺍니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "중국철도 여객 서비스", url: "https://www.12306.cn/en/index.html", publisher: "중국철도 12306", reviewedAt: "2026-08-12" },

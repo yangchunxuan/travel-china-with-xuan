@@ -273,6 +273,8 @@ const body = {
           href: "/zh/guides/how-much-does-a-china-trip-cost/",
           description: "比较位置、灵活性和预订条款，而不是套用全国统一假期涨幅。",
         },
+        { label: "沿绿道读懂成都", href: "/zh/guides/chengdu-greenway-city-ring/", description: "选择一段长度合适的成都环城绿道，连接公共交通与社区，并提前安排途中退出点。" },
+        { label: "自助参观莫高窟", href: "/zh/guides/mogao-caves-independent-visit-workflow/", description: "使用外籍护照官方入口，分清正常与应急参观，到对的起点报到，并为天气停开保留调整空间。" },
       ],
     },
     {

@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "links", type: "internal-links", title: "기기와 교통 점검을 계속하세요", items: [
     { label: "중국 전원 플러그·전압·어댑터", href: "/ko/guides/china-power-plugs-voltage-and-adapters/", description: "배터리 운송 규정과 충전 전압·플러그 모양을 분리해 확인하세요." },
     { label: "중국 국내선 운임 묶음과 수하물", href: "/ko/guides/china-domestic-flight-fare-bundle-baggage/", description: "공항 전에 운임과 실제 운항사를 점검하세요." },
-    { label: "중국 철도 전용 여정 계획", href: "/ko/guides/china-rail-only-route/", description: "모든 장거리 이동을 항공편 없이 할 수 있는지 검토하세요." }
+    { label: "중국 철도 전용 여정 계획", href: "/ko/guides/china-rail-only-route/", description: "모든 장거리 이동을 항공편 없이 할 수 있는지 검토하세요." },
+    { label: "12306 열차 음식 배달 이해하기", href: "/ko/guides/how-food-reaches-your-seat-on-china-train/", description: "12306 음식이 배송역에서 객차 좌석까지 전달되는 과정과 주문 마감, 좌석 정보, 안전한 대안을 알아봅니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "CCC 표시와 리콜 보조배터리에 관한 CAAC 공지(2025)", url: "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },

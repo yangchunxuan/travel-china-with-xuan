@@ -66,7 +66,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "리장 구시가지와 수허 비교", href: "/ko/guides/lijiang-old-town-or-shuhe-where-to-stay/", description: "리장의 역할을 정한 뒤 숙소를 고르세요." },
     { label: "중국 철도 준비", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "여객 절차를 동선 설계와 별도로 확인하세요." },
-    { label: "동선이 너무 빡빡한지 검사", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "이동과 회복 뒤 쓸 수 있는 날을 세세요." }
+    { label: "동선이 너무 빡빡한지 검사", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "이동과 회복 뒤 쓸 수 있는 날을 세세요." },
+    { label: "다리고성의 정확한 하차 지점 고르기", href: "/ko/guides/dali-station-to-old-town/", description: "숙소 위치에 맞는 남문·얼하이문·창산문·북문 하차 지점을 고르고 중국어 목적지 카드를 저장해, 짐을 끌고 고성을 가로지르는 일을 피하세요." },
+    { label: "철도·숙박 거점·첫날 밤 계획하기", href: "/ko/guides/lijiang-shangri-la-transport-route/", description: "리장에서 샹그릴라까지 열차와 도로 이동을 비교하고 역에서 숙소까지의 이동과 고도가 높아진 첫날 밤의 휴식을 준비합니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "리장–샹그릴라 철도 개통", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "중국 국가철도국", reviewedAt: "2026-08-12" },

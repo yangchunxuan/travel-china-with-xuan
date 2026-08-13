@@ -39,6 +39,7 @@ const body = {
       { label: "선전-홍콩 출입경 지점 선택", href: "/ko/guides/shenzhen-hong-kong-transport-route/", description: "선전이 실제 환승 지점일 때만 이어서 봅니다." },
       { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "국경과 큰 역의 실제 시간을 일정에 넣습니다." },
       { label: "국제선 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "국경 지연으로 최종 출국을 놓치지 않게 합니다." },
+      { label: "주하이와 헝친 경로 비교하기", href: "/ko/guides/guangzhou-macau-transport-route/", description: "광저우남역에서 주하이역·궁베이 또는 헝친역·헝친통상구로 가는 전체 동선을 출입경 운영, 짐, 늦은 도착 후 숙박 대안까지 비교합니다." },
     ]},
     { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
       { label: "고속철도 여정 검색 방식", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR", reviewedAt: "2026-08-12" },

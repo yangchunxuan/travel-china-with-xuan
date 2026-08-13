@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "Family or many bags", items: ["Count lifts and corridors", "A direct road vehicle may simplify", "Keep child-seat needs explicit"] },
     { heading: "Late arrival or international flight", items: ["Use a much larger buffer", "Know the live bus/rail cutoff", "A near-airport night can be the safer itinerary"] },
   ]},
+  { id: "station-heading", type: "heading", level: 2, text: "The transfer clock starts before the railway exit" },
+  { id: "station-copy", type: "paragraph", text: "A train arrival time is the time at the platform, not the moment a traveller enters a taxi or airport train. The group may still need to leave the carriage, collect bags, follow the correct exit, cross a large concourse and find a pickup or metro entrance. Keep everyone together until the mode is confirmed. If a driver is meeting you, exchange the train number, passenger name, live delay and an exact signed meeting point rather than the words ‘Beijing South’." },
+  { id: "risk-heading", type: "heading", level: 2, text: "Classify the connection before selecting a vehicle" },
+  { id: "risk-matrix", type: "table", caption: "Same transfer, different consequences", columns: ["Connection", "Planning position", "Required response"], rows: [
+    ["Domestic flight on one protected booking", "Airline rules determine protection; city transfer is still the traveller's responsibility", "Confirm the operating carrier, terminal and cutoff"],
+    ["Separate international ticket", "Highest consequence if the train or city transport fails", "Use a larger buffer or sleep near the airport"],
+    ["Late-night arrival", "Public-transport choices may narrow while road demand rises", "Verify the final usable service and legal taxi queue before boarding the train"],
+    ["Group with checked bags", "Platform exit, vehicle size and bag drop all take longer", "Do not calculate from the fastest solo, hand-luggage case"],
+  ]},
+  { id: "road", type: "callout", title: "A road vehicle removes transfers, not uncertainty", tone: "neutral", body: "Traffic, pickup-zone rules and finding the vehicle remain part of the trip. Put the airport code, terminal and flight number in writing, confirm that the vehicle can hold every passenger and suitcase, and use the regulated taxi queue or the legal ride-hailing pickup shown in the app. Ignore unsolicited drivers inside the station. If road conditions worsen, recalculate the airline cutoff rather than assuming a taxi must be faster." },
+  { id: "go-no-go-heading", type: "heading", level: 2, text: "Set a go/no-go point before the train reaches Beijing" },
+  { id: "go-no-go", type: "list", ordered: true, items: ["Record the airline's own check-in, bag-drop and boarding deadlines; do not replace them with a generic airport recommendation.", "Subtract a terminal-security margin, city-transfer margin and railway-exit margin from the earliest relevant cutoff.", "Choose a trigger—such as a specified train delay—at which the group contacts the airline and changes transport immediately.", "Keep the flight booking, passport, airport code, terminal and legal pickup instructions available offline.", "If the arithmetic has no defensible margin before travel, change the train or add an airport night rather than hoping every segment runs at its minimum."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "Wrong airport or failing connection" },
   { id: "recovery", type: "table", caption: "Make the flight deadline the priority", columns: ["Problem", "Response"], rows: [
     ["Train arrives late", "Recalculate against the airline cutoff and switch only to a verified faster route"],

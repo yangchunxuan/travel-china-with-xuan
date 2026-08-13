@@ -173,6 +173,7 @@ const body: StructuredPageBody = {
         { label: "중국 모바일 결제 준비", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "결제 설정과 개별 분쟁 해결은 분리해 진행하세요." },
         { label: "예약마다 여권 이름을 동일하게 입력하기", href: "/ko/guides/passport-name-across-china-bookings/", description: "실명 불일치가 이행 분쟁으로 이어지는 일을 예방합니다." },
         { label: "중국에서 휴대전화를 잃었을 때 복구 순서", href: "/ko/guides/lost-phone-in-china-digital-recovery/", description: "계정을 노출하지 않고 예약·결제 자료 접근을 복구합니다." },
+        { label: "ATM 현금 미지급 복구", href: "/ko/guides/china-atm-cash-not-dispensed/", description: "재출금을 멈추고 ATM 증거를 보존한 뒤 ATM 운영 은행과 카드 발급사에 각각 접수하고 대체 결제를 이용하세요." },
       ],
     },
     {

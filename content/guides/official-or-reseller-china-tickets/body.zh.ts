@@ -177,6 +177,8 @@ const body: StructuredPageBody = {
         { label: "中国国家博物馆预约与路线", href: "/zh/guides/national-museum-of-china-booking-and-route/", description: "按该馆实时官方流程完成预约。" },
         { label: "外国旅客参观故宫", href: "/zh/guides/forbidden-city-for-foreign-visitors/", description: "把官方门票与入口、参观路线一起安排。" },
         { label: "保持预订中的护照姓名一致", href: "/zh/guides/passport-name-across-china-bookings/", description: "避免确认或入场时出现实名不一致。" },
+        { label: "整理预订争议证据", href: "/zh/guides/china-booking-dispute-evidence-pack/", description: "固定订单与条款，建立带时间的事实线，再分别通过预订和支付渠道处理，同时避免泄露护照、卡片与行程隐私。" },
+        { label: "自助参观莫高窟", href: "/zh/guides/mogao-caves-independent-visit-workflow/", description: "使用外籍护照官方入口，分清正常与应急参观，到对的起点报到，并为天气停开保留调整空间。" },
       ],
     },
     {

@@ -65,7 +65,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "기후 지역으로 동선 검사", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "한 날짜 범위가 가장 까다로운 지역을 지키는지 확인하세요." },
     { label: "중국 공식 공휴일 확인", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "전국 공휴일이 비수기 이름을 뒤집을 수 있습니다." },
-    { label: "시기를 전체 예산 안에 배치", href: "/ko/guides/how-much-does-a-china-trip-cost/", description: "교통, 숙소와 유연성을 함께 비교하세요." }
+    { label: "시기를 전체 예산 안에 배치", href: "/ko/guides/how-much-does-a-china-trip-cost/", description: "교통, 숙소와 유연성을 함께 비교하세요." },
+    { label: "황산 숙소 고르기", href: "/ko/guides/huangshan-summit-or-gateway-base/", description: "일출, 환승 입구, 짐, 날씨와 다음 철도를 기준으로 정상·탕커우·온천 지구·황산 시내를 비교합니다." },
+    { label: "황해 습지 거점 고르기", href: "/ko/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "흩어진 옌청 습지 방문 구역을 구분하고 둥타이·다펑·옌청 도심 중 거점을 선택한 뒤 새를 못 볼 때의 대안까지 준비합니다." },
+    { label: "위안양 다랑논 동선 고르기", href: "/ko/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "둬이수·바다·라오후쭈이 중 고르고 전망대 하나를 주민을 존중하는 마을 방문과 묶은 뒤 흐린 날에도 의미 있는 대안을 준비합니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "중국 기후의 주요 특징", url: "https://www.cma.gov.cn/2011xzt/2012zhuant/20120302/2012030205/201203020501/201103/t20110314_3096052.html", publisher: "중국기상국", reviewedAt: "2026-08-12" },

@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "links", type: "internal-links", title: "Complete the device and transport check", items: [
     { label: "China power plugs, voltage and adapters", href: "/guides/china-power-plugs-voltage-and-adapters/", description: "Separate battery transport rules from charging voltage and plug shape." },
     { label: "China domestic flight fare bundles and baggage", href: "/guides/china-domestic-flight-fare-bundle-baggage/", description: "Audit the fare and operating carrier before the airport." },
-    { label: "China rail-only route planning", href: "/guides/china-rail-only-route/", description: "Test whether every long transfer works without a flight." }
+    { label: "China rail-only route planning", href: "/guides/china-rail-only-route/", description: "Test whether every long transfer works without a flight." },
+    { label: "Understand 12306 train meal delivery", href: "/guides/how-food-reaches-your-seat-on-china-train/", description: "Follow a 12306 meal from an eligible delivery station to your carriage and understand cutoffs, seat details and safe fallbacks." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "CAAC notice on CCC-marked power banks and recalled models (2025)", url: "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html", publisher: "Civil Aviation Administration of China", reviewedAt: "2026-08-12" },

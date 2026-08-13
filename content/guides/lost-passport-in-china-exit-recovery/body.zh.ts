@@ -246,7 +246,8 @@ const body: StructuredPageBody = {
           label: "中国入境要求（英文专题页）",
           href: "/guides/china-entry-requirements/",
           description: "了解应急流程背后各类普通证件的作用；该专题目前仅有英文版。"
-        }
+        },
+        { label: "出发前检查护照", href: "/zh/guides/china-passport-validity-and-blank-pages/", description: "区分签证、免签、过境和航司规则，检查证件状态，并向真正负责各项决定的官方渠道确认临界情况。" },
       ]
     },
     {

@@ -52,7 +52,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "探索中国", href: "/zh/explore/", description: "增加另一个偏远地区前，先回到目的地集合页。"},
     {label: "中国气候分区与旅行时间", href: "/zh/guides/china-climate-regions-for-trip-timing/", description: "不要把整个中国西部当成一个天气区。"},
     {label: "单一基地还是多地换酒店", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断偏远住宿是否值得一次换酒店。"},
-    {label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "把张掖铁路段与最后公路接驳分开规划。"}
+    {label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "把张掖铁路段与最后公路接驳分开规划。"},
+    { label: "分清天坑与野外落水洞", href: "/zh/guides/china-tiankeng-sinkholes-explained/", description: "理解地质学中的天坑，分清正式公众景区与科研发现点，并在访问前核对当期路线和安全信息。" },
   ]},
   {id: "consultation", type: "callout", title: "需要帮忙选择祁连山的哪一侧？", body: "Homeground 真人旅行顾问可以按你的日期确认具体门户、当时开放的公众场所、道路情况和关闭后的替代。请提供准确城镇、行动能力和别人承诺的活动；我们不会把尚未确认的保护地坐标改写成路线。", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026 年 8 月 13 日核验的官方来源", items: [

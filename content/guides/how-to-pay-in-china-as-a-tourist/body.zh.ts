@@ -401,6 +401,7 @@ const body: StructuredPageBody = {
           href: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "需要买票或进站时，再把交通支付方式单独核对一次。",
         },
+        { label: "处理 ATM 未出钞", href: "/zh/guides/china-atm-cash-not-dispensed/", description: "停止重复取款，保存 ATM 证据，分别向 ATM 所属行和发卡行立案，并在等待期间使用安全的付款备选。" },
       ],
     },
     {

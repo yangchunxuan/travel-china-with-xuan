@@ -374,6 +374,7 @@ const body: StructuredPageBody = {
           href: "/guides/do-you-need-a-tour-guide-in-china/",
           description: "Put human help where cultural context or on-the-ground coordination matters most.",
         },
+        { label: "Choose a tea landscape", href: "/guides/tea-landscape-regions-of-china/", description: "Choose a Chinese tea region by the landscape, work and community relationships you can actually observe—not by a best-tea ranking." },
       ],
     },
     {

@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "섬 호텔", items: ["호텔에 권장 도착 선착장 문의", "짐 운반 도움은 별도 확인", "차량이 페리 도착에 맞춰 기다린다고 가정하지 않기"] },
     { heading: "가족 또는 큰 가방", items: ["가장 빠듯한 연결 피하기", "각 여행자가 신분 서류 소지", "늦으면 샤먼섬 첫날 밤 고려"] },
   ]},
+  { id: "order-heading", type: "heading", level: 2, text: "도로 이동 시간을 정하기 전에 주문을 점검하세요" },
+  { id: "order-copy", type: "paragraph", text: "완료된 주문을 열어 운항일, 출발 시각, 본토의 전체 터미널명, 섬 도착 부두, 여행 서류를 읽습니다. 검색 결과 화면이나 결제하지 않은 장바구니로 계획하지 마세요. 여권이 수동 확인으로 넘어갔다면 공식 채널이 승인하기 전까지 미완료로 봅니다. 체크인 때 같은 여권과 주문 기록을 준비하고 모든 여행자의 서류 상태를 한 장의 일행 체크리스트에 넣습니다." },
+  { id: "arrival-heading", type: "heading", level: 2, text: "실제 도착을 기준으로 배편을 고르세요" },
+  { id: "arrival-matrix", type: "table", caption: "연결 여유는 페리 터미널 이전부터 시작됩니다", columns: ["도착 형태", "더 안전한 선택", "이유"], rows: [
+    ["오전 항공편이나 열차", "명시적인 지연 여유가 있는 더 늦은 배편", "수하물, 승강장 출구, 도로 정체는 페리 시간표 밖입니다"],
+    ["늦은 오후 도착", "샤먼 본토 호텔 대안 유지", "배를 놓치면 당일 섬 연결이 방어 불가능할 수 있습니다"],
+    ["별도 섬 숙소 예약", "호텔의 늦은 도착 절차와 추천 부두 확인", "페리 운영사는 숙소 인계를 관리하지 않습니다"],
+    ["같은 날 이후 예약", "열차나 항공편 직전의 빠듯한 섬 귀환을 피함", "귀환 자격은 예약된 출발편이 아니며 날씨가 운항을 바꿀 수 있습니다"],
+  ]},
+  { id: "island", type: "callout", title: "페리 부두는 섬 호텔 로비가 아닙니다", tone: "neutral", body: "구랑위의 마지막 구간은 주로 걷기와 짐 문제입니다. 정확한 도착 부두를 호텔에 보내고 추천 도보 접근과 실제 짐 도움 여부를 확인하세요. 중국어 주소와 전화번호를 저장합니다. 돌길, 계단, 비, 인파는 짧은 거리를 힘들게 만들 수 있으므로 숙소가 해당 날짜에 확인하지 않은 차량 접근이나 포터 서비스를 약속하지 않습니다." },
+  { id: "return-heading", type: "heading", level: 2, text: "돌아오는 길을 새로운 운항 점검으로 보세요" },
+  { id: "return-plan", type: "list", ordered: true, items: ["현재 표와 노선이 계획한 귀환 조건을 충족하는지 확인하고 일반 유효기간 문구에만 기대지 않습니다.", "선택일의 실시간 귀환 부두와 대기·운항 규칙을 확인합니다.", "본토 열차나 항공편에서 역산해 섬 보행, 체크인, 항해, 본토 출구, 도로 이동을 더합니다.", "가장 늦게 허용할 섬 출발 시각과 더 이른 악천후 대안을 정합니다.", "귀환이 이후 예약을 보호하지 못한다면 모든 구간을 압축하지 말고 전날 저녁 본토로 이동합니다."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "터미널이 틀리거나 배를 놓치면" },
   { id: "recovery", type: "table", caption: "거리 안내보다 운영사 기록을 사용", columns: ["문제", "대응"], rows: [
     ["기사가 다른 선착장에 도착", "표의 전체 터미널과 맞기 전 짐을 내리지 않기"],
@@ -31,6 +43,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "국제선 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "섬에서 돌아오는 교통 때문에 출국편이 위험해지지 않게 합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "철도, 도로와 페리 수속 마감을 지나치게 압축하지 않습니다." },
     { label: "중국 여행자 결제", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "중국 본토 교통의 결제 대안을 둡니다." },
+    { label: "샤먼 숙소 고르기", href: "/ko/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/", description: "페리, 짐, 이른·늦은 시간, 해변과 다음 이동을 기준으로 중산루·구랑위 숙박·쩡춰안을 비교합니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
     { label: "공식 온라인 구매 FAQ: 최신 채널, 여권, 귀환 유효기간", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "샤먼 페리", reviewedAt: "2026-08-13" },

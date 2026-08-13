@@ -292,6 +292,9 @@ const body: StructuredPageBody = {
           href: "/guides/lost-phone-in-china-digital-recovery/",
           description: "Protect the device, number, accounts and bookings in the right order.",
         },
+        { label: "Understand China's robotaxi zones", href: "/guides/china-robotaxi-zones-explained/", description: "Understand robotaxi zones, pilot stages, vehicle supervision and why an open test road is not necessarily a public ride service." },
+        { label: "Understand Chongqing's vertical city", href: "/guides/chongqing-upper-lower-city-orientation/", description: "Read Chongqing as a three-dimensional city: match street level, station exit and building entrance before trusting a short map distance." },
+        { label: "Read Yiwu beyond the market", href: "/guides/yiwu-market-to-factory-network/", description: "Understand the roles behind Yiwu's product displays without treating a booth as proof of a factory or an old directory as current guidance." },
       ],
     },
     {

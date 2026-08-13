@@ -401,6 +401,7 @@ const body: StructuredPageBody = {
           href: "/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "Use the route guide for the transport decisions that often require a separate payment check.",
         },
+        { label: "Recover an ATM cash failure", href: "/guides/china-atm-cash-not-dispensed/", description: "Stop repeat withdrawals, preserve ATM evidence, open cases with the ATM bank and your card issuer, and use safer payment fallbacks while you wait." },
       ],
     },
     {

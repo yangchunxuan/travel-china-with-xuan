@@ -66,7 +66,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Choose Lijiang Old Town or Shuhe", href: "/guides/lijiang-old-town-or-shuhe-where-to-stay/", description: "Place the hotel after deciding Lijiang's role." },
     { label: "Prepare for China rail", href: "/guides/china-high-speed-train-first-time-guide/", description: "Check the passenger process separately from route design." },
-    { label: "Test whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count usable days after transfers and recovery." }
+    { label: "Test whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count usable days after transfers and recovery." },
+    { label: "Choose the right Dali Old Town drop-off", href: "/guides/dali-station-to-old-town/", description: "Match your hotel to South, Erhai, Cangshan or North Gate, save a Chinese destination card and avoid dragging luggage across Dali Old Town." },
+    { label: "Plan the rail, base and first night", href: "/guides/lijiang-shangri-la-transport-route/", description: "Compare train and road travel from Lijiang to Shangri-La, arrange the station-to-hotel transfer and keep the first evening light after the rise in altitude." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Lijiang–Shangri-La railway opening", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "National Railway Administration", reviewedAt: "2026-08-12" },

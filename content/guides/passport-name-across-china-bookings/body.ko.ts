@@ -326,6 +326,8 @@ const body: StructuredPageBody = {
           href: "/ko/guides/forbidden-city-for-foreign-visitors/",
           description: "대표 관광지의 실명 예매 지침을 적용하세요.",
         },
+        { label: "예약 분쟁 자료 정리하기", href: "/ko/guides/china-booking-dispute-evidence-pack/", description: "주문과 약관을 보존하고 시간순 사실 기록을 만든 뒤, 개인정보를 노출하지 않고 예약·결제 채널로 단계적으로 해결하세요." },
+        { label: "중국 출발 전 여권 점검", href: "/ko/guides/china-passport-validity-and-blank-pages/", description: "비자·무비자·환승·항공사 기준을 구분해 여권을 점검하고 경계 사례는 해당 결정을 맡은 공식 기관에 확인하세요." },
       ],
     },
     {

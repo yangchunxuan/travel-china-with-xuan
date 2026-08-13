@@ -340,6 +340,8 @@ export default {
           href: "/guides/is-your-china-itinerary-too-rushed/",
           description: "Check whether the Palace day still leaves a realistic amount of energy for the rest of Beijing.",
         },
+        { label: "Verify a China attraction ticket", href: "/guides/official-or-reseller-china-tickets/", description: "Identify the attraction’s ticket owner, compare reseller support and terms, and verify the booking state before trusting a China attraction ticket." },
+        { label: "Choose a Summer Palace gate and route", href: "/guides/summer-palace-gates-route-and-boat-plan/", description: "Match the East, North or New Palace Gate to your priorities, understand base versus combined tickets and build a route that still works if boats stop." },
       ],
     },
     {

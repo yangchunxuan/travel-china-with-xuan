@@ -11,6 +11,12 @@ import type {
   SchemaLocale,
 } from "./content-system/types";
 import {
+  getGuideCollectionId,
+  getSearchCollectionPath,
+  searchCollections,
+  type SearchCollectionId,
+} from "./searchCollectionI18n";
+import {
   getSearchPlatformCopy,
   getSearchSectionPath,
   searchSectionIds,
@@ -165,10 +171,40 @@ const approvedSearchHubIds = new Set<SearchSectionId>([
   "explore",
   "plan",
   "transport",
+  "when-to-go",
   "stay",
   "essentials",
+  "culture",
   "services",
 ]);
+
+const COLLECTION_INDEX_THRESHOLD = 3;
+
+/**
+ * Secondary hubs require two independent gates: enough reviewed children and
+ * an explicit editorial approval here. Reaching the numeric threshold must
+ * never make a new URL indexable as an accidental side effect of publishing
+ * another guide.
+ */
+const approvedSearchCollectionIds = new Set<SearchCollectionId>([
+  "explore-regions-provinces",
+  "explore-cities-neighborhoods",
+  "explore-attractions-nature-heritage",
+  "plan-trip-length-city-order",
+  "plan-traveller-theme-itineraries",
+  "plan-budget-pace-decisions",
+  "transport-airports-rail-hubs",
+  "transport-city-pair-routes",
+  "transport-last-mile-transfers",
+  "stay-city-areas",
+  "stay-hotel-types-scenic-bases",
+  "essentials-entry-transit",
+  "essentials-payments-connectivity",
+  "essentials-booking-registration-recovery",
+  "culture-history-people-ideas",
+  "culture-regional-food",
+  "culture-festivals-arts-contemporary",
+] as const);
 
 function guideEntities(
   destinations: readonly string[],
@@ -203,7 +239,7 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
             title: localized.title,
             description: localized.description,
             h1: localized.headline,
-            bodyResource: `legacy-guide:${guide.id}`,
+            bodyResource: `guide:${guide.id}`,
             searchTerms: [],
             localizationStatus:
               siteLocale === "en" ? "source" : "localized",
@@ -221,7 +257,7 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
       primaryIntent: classification.primaryIntent,
       entityIds: guideEntities(guide.destinations),
       relationIds: [],
-      parentContentId: `hub-${classification.section}`,
+      parentContentId: `collection-${getGuideCollectionId(guide)}`,
       status: "published",
       indexability: { index: true, follow: true },
       locales,
@@ -240,6 +276,98 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
           guide.pillar === "entry-rules" ? "critical" : "low",
         refreshCadence:
           guide.pillar === "entry-rules" ? "on-source-change" : "quarterly",
+        owner: "homeground-editorial",
+      },
+    } satisfies ContentNode;
+  });
+}
+
+export function buildSearchCollectionContentNodes(): ContentNode[] {
+  return searchCollections.map((collection) => {
+    const collectionGuides = guideRegistry.filter(
+      (guide) => getGuideCollectionId(guide) === collection.id,
+    );
+    const hasEnoughReviewedGuides =
+      collectionGuides.length >= COLLECTION_INDEX_THRESHOLD;
+    const hasEditorialApproval = approvedSearchCollectionIds.has(collection.id);
+    if (hasEditorialApproval && !hasEnoughReviewedGuides) {
+      throw new Error(
+        `Search collection ${collection.id} is approved for indexation but has only ${collectionGuides.length} reviewed guide(s).`,
+      );
+    }
+    const approvedForIndex = hasEditorialApproval && hasEnoughReviewedGuides;
+    const editorialDate = "2026-08-13";
+    const dateModified = collectionGuides.reduce(
+      (latest, guide) =>
+        guide.dateModified.localeCompare(latest, "en") > 0
+          ? guide.dateModified
+          : latest,
+      editorialDate,
+    );
+    const locales = Object.fromEntries(
+      (["en", "zh", "ko"] as const).map((locale) => {
+        const copy = collection.locales[locale];
+        const schemaLocale = localeKeys[locale];
+
+        return [
+          schemaLocale,
+          {
+            path: getSearchCollectionPath(collection, locale),
+            title: copy.label,
+            description: copy.description,
+            h1: copy.title,
+            bodyResource: `search-collection:${collection.id}`,
+            searchTerms: [],
+            localizationStatus: locale === "en" ? "source" : "localized",
+            openGraphLocale:
+              locale === "en" ? "en_US" : locale === "zh" ? "zh_CN" : "ko_KR",
+            ctaId: "trip-brief",
+          },
+        ];
+      }),
+    ) as ContentNode["locales"];
+
+    return {
+      id: `collection-${collection.id}`,
+      family:
+        collection.section === "tools"
+          ? "tool"
+          : collection.section === "services"
+            ? "service"
+            : "entity",
+      section: collection.section,
+      primaryIntent: hubIntent[collection.section],
+      entityIds: ["country-china"],
+      relationIds: [],
+      parentContentId: `hub-${collection.section}`,
+      status: approvedForIndex ? "published" : "review",
+      indexability: approvedForIndex
+        ? { index: true, follow: true }
+        : {
+            index: false,
+            follow: true,
+            blockReason:
+              collectionGuides.length === 0
+                ? "No reviewed guide is assigned to this collection yet."
+                : hasEnoughReviewedGuides
+                  ? "The collection meets the content threshold but still awaits explicit editorial indexation approval."
+                  : `Only ${collectionGuides.length} reviewed guide${collectionGuides.length === 1 ? " is" : "s are"} assigned; three are required before indexation review.`,
+          },
+      locales,
+      factIds: [],
+      sourceIds: [],
+      mediaIds: [],
+      schemaTypes: ["CollectionPage", "ItemList"],
+      legacyAliases: [],
+      dates: {
+        datePublished: approvedForIndex ? editorialDate : null,
+        dateModified,
+        lastReviewed: editorialDate,
+      },
+      updatePolicy: {
+        volatility: collection.section === "when-to-go" ? "medium" : "low",
+        refreshCadence:
+          collection.section === "when-to-go" ? "monthly" : "on-source-change",
         owner: "homeground-editorial",
       },
     } satisfies ContentNode;
@@ -323,7 +451,7 @@ export function buildSearchHubContentNodes(): ContentNode[] {
 }
 
 export function legacyGuideIdFromBodyResource(bodyResource: string) {
-  const prefix = "legacy-guide:";
+  const prefix = bodyResource.startsWith("guide:") ? "guide:" : "legacy-guide:";
   if (!bodyResource.startsWith(prefix)) return null;
   const id = bodyResource.slice(prefix.length);
   return guideRegistry.some((guide) => guide.id === id) ? (id as GuideId) : null;

@@ -470,6 +470,7 @@ const body = {
           href: "/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "Match the correct Beijing station or airport to the next hotel arrival.",
         },
+        { label: "Choose a Summer Palace gate and route", href: "/guides/summer-palace-gates-route-and-boat-plan/", description: "Match the East, North or New Palace Gate to your priorities, understand base versus combined tickets and build a route that still works if boats stop." },
       ],
     },
     {

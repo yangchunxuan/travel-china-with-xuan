@@ -31,6 +31,7 @@ const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
     { label: "첫 베이징 여행 숙소 지역", href: "/ko/guides/beijing-where-to-stay-first-trip/", description: "5호선·8호선 접근을 다른 일정과 함께 비교합니다." },
     { label: "중국국가박물관 예약과 핵심 동선", href: "/ko/guides/national-museum-of-china-booking-and-route/", description: "또 다른 주요 명소는 별도 예약과 실내 동선으로 준비합니다." },
     { label: "부모님과 함께하는 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "지도상 단순한 중심축도 실제로는 긴 공원 도보입니다." },
+    { label: "중국 도시 성벽 읽기", href: "/ko/guides/chinese-city-walls-gates-and-urban-order/", description: "현존 재료, 보존 수리, 재건과 고고학 흔적을 구분하고 성문과 도로를 하나의 도시 체계로 이해합니다." },
   ] },
   { id: "consultation", type: "callout", title: "다른 베이징 예약과 이어야 하나요?", body: "Homeground 여행 상담가는 숙소와 다른 고정 시간에 맞춰 입구·방향·속도를 조정할 수 있습니다. 날짜, 시작 선호, 이동 제한, 세 핵심과 넓은 공원 중 무엇이 더 중요한지 알려 주세요.", tone: "neutral" },
   { id: "sources", type: "sources", title: "확인한 공식·이미지 출처", items: [

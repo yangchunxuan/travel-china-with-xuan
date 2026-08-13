@@ -67,7 +67,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Take high-speed rail for the first time", href: "/guides/china-high-speed-train-first-time-guide/", description: "Use this after the route passes the rail test." },
     { label: "Compare a night train with daytime rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Protect either sleep quality or a sightseeing day deliberately." },
-    { label: "Use flights only at the route ends", href: "/guides/china-open-jaw-flights-route-planning/", description: "An open-jaw gateway can preserve a rail spine without backtracking." }
+    { label: "Use flights only at the route ends", href: "/guides/china-open-jaw-flights-route-planning/", description: "An open-jaw gateway can preserve a rail spine without backtracking." },
+    { label: "Understand China's public-welfare slow trains", href: "/guides/china-public-welfare-slow-trains/", description: "Understand why China's public-welfare slow trains still run, who uses them and how an ordinary traveller should approach the service respectfully." },
+    { label: "Build a Shandong Peninsula rail arc", href: "/guides/shandong-peninsula-coastal-city-rail-arc/", description: "Give Qingdao, Yantai and Weihai distinct roles, connect the right stations by rail and leave a city out when it repeats the same coastal experience." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "China Railway passenger service", url: "https://www.12306.cn/en/index.html", publisher: "China Railway 12306", reviewedAt: "2026-08-12" },

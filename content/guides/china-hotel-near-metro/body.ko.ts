@@ -254,6 +254,9 @@ const body = {
           href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "도시를 하나 더 넣기 전에 환승의 피로와 회복 시간을 계산하세요.",
         },
+        { label: "아이에게 맞는 동선 계획", href: "/ko/guides/china-itinerary-with-young-children/", description: "수면, 식사, 화장실, 안아야 하는 부담, 숙소 안정성과 아동 승차권 규정으로 가족 동선을 설계합니다." },
+        { label: "구이린-양숴 비교", href: "/ko/guides/guilin-yangshuo-transport-route/", description: "역, 공항, 호텔, 짐, 방향과 귀환 계획을 기준으로 열차, 도로 환승과 강 이동을 비교합니다." },
+        { label: "상하이 숙소 고르기", href: "/ko/guides/shanghai-where-to-stay-first-trip/", description: "도보, 지하철 접근, 저녁, 짐과 인파를 기준으로 와이탄·인민광장·옛 프랑스 조계지 일대를 비교합니다." },
       ],
     },
     {

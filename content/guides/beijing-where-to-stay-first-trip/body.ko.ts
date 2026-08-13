@@ -470,6 +470,7 @@ const body = {
           href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "정확한 베이징역이나 공항을 다음 호텔 도착 동선과 맞추세요.",
         },
+        { label: "이화원 입구와 동선 선택하기", href: "/ko/guides/summer-palace-gates-route-and-boat-plan/", description: "동궁문·북궁문·신건궁문을 우선순위에 맞추고, 기본표와 통합표를 구분하며, 배가 멈춰도 실행 가능한 동선을 만듭니다." },
       ],
     },
     {

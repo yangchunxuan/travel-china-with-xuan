@@ -46,7 +46,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "이 원리를 실제 여행에 적용하기", items: [
     {label: "베이징의 어느 기차역을 이용할까", href: "/ko/guides/which-beijing-railway-station/", description: "베이징의 8개 주요 철도 터미널을 선택 기준에 따라 비교합니다."},
     {label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "승차권, 신분증과 탑승 절차는 전국 대표 가이드에서 확인합니다."},
-    {label: "중국에서 전용 차량과 대중교통 고르기", href: "/ko/guides/china-private-transfer-or-public-transport/", description: "인원과 짐을 기준으로 마지막 이동 수단을 고릅니다."}
+    {label: "중국에서 전용 차량과 대중교통 고르기", href: "/ko/guides/china-private-transfer-or-public-transport/", description: "인원과 짐을 기준으로 마지막 이동 수단을 고릅니다."},
+    { label: "구이양 표를 정확한 거점에 맞추기", href: "/ko/guides/guiyang-airport-and-rail-hubs/", description: "정확한 표의 역명, 호텔 위치, 구이저우 후속 일정을 기준으로 룽둥바오공항·철도역, 구이양북역·동역·구이양역을 구분하세요." },
+    { label: "고속열차가 만들어지는 과정 보기", href: "/ko/guides/how-china-builds-high-speed-trains/", description: "대표적인 알루미늄 차체 전동차를 예로 들어 차체 제작, 시스템 통합, 정적 시운전, 실험실·선로 시험을 살펴봅니다." },
   ]},
   {id: "sources", type: "sources", title: "공식 및 독립 자료", items: [
     {label: "철도 여객역 주변 계획 지침", url: "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201805/t20180507_962719.html", publisher: "중국 국가발전개혁위원회", reviewedAt: "2026-08-13"},

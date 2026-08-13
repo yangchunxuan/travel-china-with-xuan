@@ -1,5 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
+const body={schemaVersion:"1.0.0",blocks:[
 {id:"answer-first",type:"lead",text:"想看“五座土楼组合”的经典全景，并顺路去裕昌楼、塔下村，选田螺坑；想把和贵楼、怀远楼与古道村落放在更缓慢的步行日里，选云水谣；想在永定一个村里密集看不同楼型，选以振成楼为核心的洪坑；只想重点看承启楼，选更紧凑的高北；愿意付出更长山路时间换偏远谷地群落，选初溪。一天通常只留在一个地理组。"},
 {id:"whc",type:"callout",title:"“福建土楼”是系列世界遗产",body:"世界遗产包含永定、南靖、华安三地的六群四楼，共46座土楼。田螺坑著名的俯瞰形状只是一个组成部分，不代表所有土楼，更不是一座包含46楼的单一公园。",tone:"neutral"},
 {id:"compare-heading",type:"heading",level:2,text:"按当天要解决的任务选择"},
@@ -14,8 +14,27 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"transport-heading",type:"heading",level:2,text:"交通本身就是选题核心"},
 {id:"transport",type:"list",items:["先确定基地是厦门、南靖县、永定还是龙岩；相似名称掩盖了很长的山路距离。","坐铁路要保存准确车站名和车站后的道路接驳；南靖站不是田螺坑村。","包车或跟车时，把每个楼群、观景台、景交、用餐和最终下车点写清楚。","遇到“主要土楼全含”，必须要地图、车程和每村实际步行时间。","保住日照与最后返程；乡村道路或接驳变化，比院子里多待十分钟更关键。"]},
 {id:"tickets",type:"paragraph",text:"福建省官方价格文件把田螺坑、云水谣和河坑列为独立景区产品，并明确景区交通自愿选择、单独销售。票价与范围会变化，因此应以实时运营方页面为准；这份文件用于证明产品边界，不用于保证2026年价格永久不变。"},
+{id:"base-heading",type:"heading",level:2,text:"先选住宿基地，再选土楼群"},
+{id:"base-matrix",type:"table",caption:"同一村落从不同基地出发，会变成不同的一天",columns:["基地","能获得什么","应避免什么"],rows:[
+["厦门","城市住宿简单，私人或组织交通选择较多","不写山路时间，就把所有土楼都叫作轻松一日游"],
+["南靖县城或南靖景区附近","更早进入田螺坑、云水谣或河坑，在村里停留更久","以为这样也同时靠近永定楼群"],
+["永定或龙岩一侧","更适合洪坑、高北或初溪","为了增加数量又拼接很远的南靖楼群"],
+["抵达交通日","只有在公路链已经确认时安排附近且可恢复的一站","把晚点火车或航班接到偏远村落和固定返程"],
+]},
+{id:"route-heading",type:"heading",level:2,text:"设计连贯的一天，而不是打卡清单"},
+{id:"route-copy",type:"paragraph",text:"有价值的土楼日应有一个建筑问题，在同一地理组内留足时间，并理解这些建筑仍属于生活中的社区。第一次看整体形态时，田螺坑的观景台和联线路线，与洪坑集中呈现多种楼型回答的是不同问题。云水谣更强调村路与环境，初溪则适合愿意用更长车程换取山谷氛围的人。增加第二个县，常常只是增加隔着车窗的时间，而不是提高参观质量。"},
+{id:"interpretation",type:"callout",title:"只有具体讲解才值得请导游",body:"先问对方能否解释夯土结构、宗族组织、防火与用水、防御形态、后期修缮以及今天的社区生活。只负责指出拍照位置的导游，并没有填补这里真正的信息缺口。关于建筑年代、各种“之最”或居民习惯的说法，应对应准确建筑和可信遗产来源，而不是复述传闻。",tone:"decision"},
+{id:"conditions-heading",type:"heading",level:2,text:"行动能力、天气和隐私会改变参观"},
+{id:"conditions",type:"list",items:["观景台和老村巷道可能有坡、台阶、不平路面以及从下车点开始的长距离步行，应以行动最受限者评估。","雨水和炎热会改变山路速度、院落地面和远景观赏价值，应保留同一楼群内的短方案。","进入非公开楼梯或拍摄居民前先询问；购买门票也有边界。","使用小包，护照、饮水和雨具随身携带，不要留在可能停在别处的车辆里。","设置离村时间，保护日照、山路车程和下一家酒店的接待。"]},
+{id:"recovery-heading",type:"heading",level:2,text:"原定楼群无法正常参观时"},
+{id:"recovery",type:"table",caption:"在同一地理逻辑内恢复",columns:["故障","处理"],rows:[
+["景交车或道路延误","减少建筑数量，保护已经确认的返程"],
+["天气遮住观景台","把时间放在同一楼群内有遮蔽的建筑或村落讲解"],
+["上层限制进入","使用院落、外部结构和官方解说，不向居民施压"],
+["司机临时建议增加远处楼群","索要真实车程；会破坏日照或回程余量就拒绝"],
+]},
 {id:"final-check",type:"list",items:["订单写明准确县、楼群与建筑。","车程与村内时间分开。","景交车和门票逐项列出。","现场遵守上楼与拍照规定。","返程不依赖未核实的末班公交。"]},
-{id:"internal-links",type:"internal-links",title:"连接土楼这一天",items:[{label:"厦门枢纽到鼓浪屿码头",href:"/zh/guides/xiamen-hubs-to-gulangyu-ferry-terminal/",description:"把乡村土楼日与厦门轮渡流程分开。"},{label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"道路接驳前先核对车站全名和护照记录。"},{label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"判断讲解与乡村交通是否值得支持。"}]},
+{id:"internal-links",type:"internal-links",title:"连接土楼这一天",items:[{label:"厦门枢纽到鼓浪屿码头",href:"/zh/guides/xiamen-hubs-to-gulangyu-ferry-terminal/",description:"把乡村土楼日与厦门轮渡流程分开。"},{label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"道路接驳前先核对车站全名和护照记录。"},{label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"判断讲解与乡村交通是否值得支持。"}, { label: "选择元阳梯田路线", href: "/zh/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "在多依树、坝达与老虎嘴之间选择，把一个观景台与尊重居民的村寨访问配对，并为云雾天气准备仍值得去的替代安排。" }]},
 {id:"consultation",type:"callout",title:"需要把一个楼群匹配到真实路线？",body:"Homeground 真人旅行顾问可以按日期比较道路链、村落重点与返程。请提供基地、可用时长、行动限制，以及你更重视建筑、地景还是社区背景。",tone:"neutral"},
 {id:"sources",type:"sources",title:"已核验的官方、遗产与图片来源",items:[{label:"福建土楼世界遗产",url:"https://whc.unesco.org/en/list/1113/",publisher:"联合国教科文组织世界遗产中心",reviewedAt:"2026-08-12"},{label:"六群四楼官方福建遗产清单",url:"https://fgw.fujian.gov.cn/ztzl/fjys/fjys/202311/t20231109_6293087.htm",publisher:"福建省发展和改革委员会",reviewedAt:"2026-08-12"},{label:"南靖景区产品与景交价格边界",url:"https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/yzdgkdqtxx/202009/t20200914_5385798.htm",publisher:"福建省发展和改革委员会",reviewedAt:"2026-08-12"},{label:"首图：Windmemories拍摄的田螺坑，CC BY-SA 4.0；经裁切转换",url:"https://commons.wikimedia.org/wiki/File:20121101_Tianluokeng_Tulou_01.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}]}
-]};export default body;
+]} as const satisfies StructuredPageBody;export default body;
