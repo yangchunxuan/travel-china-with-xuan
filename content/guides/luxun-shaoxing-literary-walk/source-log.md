@@ -77,6 +77,6 @@ These gaps are handled with narrower wording and recovery routes. They do not au
 - Place-specific information and original explanation: `15/15`
 - Trilingual naturalness and information parity: `15/15` — central review verified matching block IDs, information objects, locale-specific internal links and public source/image-credit parity
 - Image accuracy and rights: `10/10` — licences and locations are documented, and the Baicao replacement contains no recognisable person
-- Total: **96/100**
+- Total: **97/100**
 
 Hard-stop audit: no memoir is called a novel or live diary; no fictional character is presented as a resident; no protected/restored building is called wholly untouched; no modern Xianheng scene is called an original fictional tavern; no AI documentary image, screen still, copied modern translation, invented firsthand observation or unverified fixed itinerary is present.
