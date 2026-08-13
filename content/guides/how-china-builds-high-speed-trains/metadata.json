@@ -1,0 +1,12 @@
+{
+  "id": "how-china-builds-high-speed-trains", "type": "planning", "pillar": "transport-airports-rail-hubs", "audienceMarkets": ["global"], "format": "explainer",
+  "topics": ["high-speed-rail", "train-manufacturing", "rail-testing", "china-industry"], "destinations": ["china"],
+  "heroImagePath": "/images/guides/how-china-builds-high-speed-trains/hero-1600.webp", "heroImageUrl": "https://homegroundchina.com/images/guides/how-china-builds-high-speed-trains/hero-1600.webp", "imageWidth": 1600, "imageHeight": 1000,
+  "datePublished": "2026-08-13", "dateModified": "2026-08-13", "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "transport", "family": "entity", "primaryIntent": "understand"}, "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/how-china-builds-high-speed-trains/", "title": "How China Builds and Tests High-Speed Trains", "headline": "How China Builds High-Speed Trains: From Aluminium Carbody to Test Track", "description": "Follow a Chinese high-speed train from aluminium profiles and welded carbody to systems integration, commissioning, laboratory and track tests.", "heroAlt": "A real high-speed train aluminium carbody inside its documented manufacturing plant.", "navTitle": "How China builds high-speed trains", "featuredLinkLabel": "See how a high-speed train is built", "openGraphLocale": "en_US", "cardTags": ["China", "High-speed rail", "Engineering"]},
+    "zh": {"path": "/zh/guides/how-china-builds-high-speed-trains/", "title": "中国如何制造和测试高速列车", "headline": "中国如何制造高速列车：从铝合金车体到试验轨道", "description": "从铝合金型材、车体焊接到系统集成、静态调试、实验室和线路试验，看懂高速列车制造链。", "heroAlt": "在有明确记录的制造工厂内拍摄的真实高速列车铝合金车体。", "navTitle": "中国高速列车制造流程", "featuredLinkLabel": "了解高速列车如何制造", "openGraphLocale": "zh_CN", "cardTags": ["中国", "高速铁路", "工程"]},
+    "ko": {"path": "/ko/guides/how-china-builds-high-speed-trains/", "title": "중국 고속열차 제작과 시험 과정", "headline": "중국은 고속열차를 어떻게 만들까: 알루미늄 차체부터 시험선까지", "description": "알루미늄 압출재와 차체 용접부터 시스템 통합, 정적 시운전, 실험실·선로 시험까지 고속열차 제작 과정을 살펴봅니다.", "heroAlt": "공식 제작 공장 안에서 촬영한 실제 고속열차 알루미늄 차체.", "navTitle": "중국 고속열차 제작 과정", "featuredLinkLabel": "고속열차가 만들어지는 과정 보기", "openGraphLocale": "ko_KR", "cardTags": ["중국", "고속철도", "공학"]}
+  }
+}
