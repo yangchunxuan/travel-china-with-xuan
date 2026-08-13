@@ -1,0 +1,53 @@
+{
+  "id": "quanzhou-string-puppetry-first-audience",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "first-audience-craft-guide",
+  "topics": ["quanzhou-string-puppetry", "marionette-theatre", "fujian", "intangible-cultural-heritage", "performing-arts"],
+  "destinations": ["quanzhou", "fujian"],
+  "heroImagePath": "/images/guides/quanzhou-string-puppetry-first-audience/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/quanzhou-string-puppetry-first-audience/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/quanzhou-string-puppetry-first-audience/",
+      "title": "Quanzhou String Puppetry: A First-Audience Guide",
+      "headline": "Watch the Hands, Strings, Puppet and Stage as One Performance",
+      "description": "Choose a credible Quanzhou string-puppetry programme, verify the current schedule, and follow manipulation, voice, music and stage action without reducing the craft to a string count.",
+      "heroAlt": "A named Quanzhou string-puppetry production showing a documented puppet in performance and the manipulator’s control relationship above it.",
+      "navTitle": "Watch Quanzhou string puppetry",
+      "featuredLinkLabel": "Prepare for a Quanzhou puppet performance",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Quanzhou", "Puppetry", "Performance"]
+    },
+    "zh": {
+      "path": "/zh/guides/quanzhou-string-puppetry-first-audience/",
+      "title": "泉州提线木偶戏初看指南：看手、线、偶与舞台",
+      "headline": "把操线、偶身、唱念与舞台行动看成同一场表演",
+      "description": "选择可信的泉州提线木偶戏节目，复核当期场次，并按操纵、唱念、音乐和舞台动作观看，不把技艺简化为线的数量。",
+      "heroAlt": "一场具名泉州提线木偶戏中，有记录可查的木偶正在表演，画面同时呈现上方操纵者与偶身的控制关系。",
+      "navTitle": "初看泉州提线木偶戏",
+      "featuredLinkLabel": "准备第一场泉州木偶戏",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["泉州", "提线木偶", "表演"]
+    },
+    "ko": {
+      "path": "/ko/guides/quanzhou-string-puppetry-first-audience/",
+      "title": "취안저우 줄인형극 첫 관람: 손·줄·인형·무대 읽기",
+      "headline": "조종, 인형의 몸, 소리와 무대 행동을 하나의 공연으로 보기",
+      "description": "신뢰할 수 있는 취안저우 줄인형극 프로그램과 최신 일정을 확인하고 줄 개수로만 재단하지 않으며 조종·목소리·음악·동작을 따라갑니다.",
+      "heroAlt": "작품명이 확인된 취안저우 줄인형극에서 기록된 인형이 공연하고 그 위 조종자와 인형의 제어 관계가 함께 보인다.",
+      "navTitle": "취안저우 줄인형극 보기",
+      "featuredLinkLabel": "첫 취안저우 인형극 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["취안저우", "줄인형극", "공연"]
+    }
+  }
+}
