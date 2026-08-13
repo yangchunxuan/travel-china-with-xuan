@@ -435,6 +435,7 @@ const body = {
           href: "/zh/guides/is-your-china-itinerary-too-rushed/",
           description: "把进站交通和错误恢复时间计入真正的交通日。",
         },
+        { label: "选择八达岭路线", href: "/zh/guides/beijing-to-badaling-great-wall-transfer/", description: "按出发枢纽、到达位置、回程和备选方案，比较高铁、S2市郊铁路、877路与当前机场线路。" },
       ],
     },
     {

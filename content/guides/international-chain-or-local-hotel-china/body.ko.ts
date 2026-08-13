@@ -213,6 +213,7 @@ const body = {
         { label: "중국 호텔은 왜 저렴해 보일까?", href: "/ko/guides/why-are-hotels-in-china-so-cheap/", description: "브랜드 국적을 품질 결론으로 바꾸지 말고 같은 조건의 가치를 비교하세요." },
         { label: "호텔은 정말 지하철역과 가까울까?", href: "/ko/guides/china-hotel-near-metro/", description: "실제로 쓸 출구와 보행 경로를 확인하세요." },
         { label: "중국 여행 결제 준비", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "객실 잔금과 보증금에 쓸 검증된 백업 결제 수단을 준비하세요." },
+        { label: "호텔 비상구 안전 점검하기", href: "/ko/guides/china-hotel-emergency-exit-fire-safety-check/", description: "호텔 대피 경로를 읽고 직접 걸어 본 뒤 연기, 야간과 이동 제한 상황에 대비하고 경로가 쓸 수 없으면 객실이나 숙소를 바꿉니다." },
       ],
     },
     {

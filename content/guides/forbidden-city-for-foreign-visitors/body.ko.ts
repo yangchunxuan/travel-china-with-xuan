@@ -340,6 +340,8 @@ export default {
           href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "자금성 방문 뒤에 베이징의 다른 일정을 소화할 체력이 남는지 점검하세요.",
         },
+        { label: "중국 관광지 입장권 확인하기", href: "/ko/guides/official-or-reseller-china-tickets/", description: "관광지의 실제 발권 주체를 찾고 재판매처의 지원·재고·실명 정보·환불 조건을 비교한 뒤 입장 가능한 예약인지 확인하세요." },
+        { label: "이화원 입구와 동선 선택하기", href: "/ko/guides/summer-palace-gates-route-and-boat-plan/", description: "동궁문·북궁문·신건궁문을 우선순위에 맞추고, 기본표와 통합표를 구분하며, 배가 멈춰도 실행 가능한 동선을 만듭니다." },
       ],
     },
     {

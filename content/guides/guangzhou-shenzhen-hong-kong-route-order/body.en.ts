@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Compare Guangzhou–Hong Kong transport", href: "/guides/guangzhou-hong-kong-transport-route/", description: "Choose stations and mode after the route order is fixed." },
     { label: "Choose a Shenzhen–Hong Kong crossing", href: "/guides/shenzhen-hong-kong-transport-route/", description: "Match the control point to your hotels and onward plan." },
-    { label: "Test an open-jaw flight", href: "/guides/china-open-jaw-flights-route-planning/", description: "See whether different arrival and departure cities remove backtracking." }
+    { label: "Test an open-jaw flight", href: "/guides/china-open-jaw-flights-route-planning/", description: "See whether different arrival and departure cities remove backtracking." },
+    { label: "Compare Shenzhen stay areas", href: "/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "Compare Futian, Luohu and Nanshan by arrival hub, Hong Kong crossing, business addresses, attractions, evenings and luggage." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Cross-boundary high-speed rail trip planning", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR High Speed Rail", reviewedAt: "2026-08-12" },

@@ -1,5 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
+const body={schemaVersion:"1.0.0",blocks:[
 {id:"answer-first",type:"lead",text:"다섯 토루의 대표 구도와 위·아래 전망, 위창러우·타샤촌 연결을 원하면 톈뤄컹을 고르세요. 허구이러우·화이위안러우와 옛길을 천천히 걷고 싶으면 윈수이야오, 융딩 한 마을에서 여러 유형을 보면 훙컹, 청치러우 중심의 짧은 방문이면 가오베이, 긴 산길을 감수하고 외딴 계곡 군락을 보면 추시가 맞습니다. 하루는 보통 한 지리 그룹에 머뭅니다."},
 {id:"whc",type:"callout",title:"‘푸젠 토루’는 여러 지역으로 이루어진 세계유산입니다",body:"융딩·난징·화안의 여섯 군락과 단독 건물 4채, 총 46채가 포함됩니다. 톈뤄컹의 유명한 항공 구도는 한 구성 요소이지 모든 토루의 정의나 46채가 있는 단일 공원이 아닙니다.",tone:"neutral"},
 {id:"compare-heading",type:"heading",level:2,text:"하루에 무엇을 보고 싶은지부터 정하세요"},
@@ -14,8 +14,27 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"transport-heading",type:"heading",level:2,text:"교통이 핵심 결정입니다"},
 {id:"transport",type:"list",items:["기지가 샤먼·난징현·융딩·룽옌 중 어디인지 먼저 정합니다.","철도역 전체 이름과 역 이후 도로 이동을 저장합니다. 난징현역은 톈뤄컹 마을이 아닙니다.","기사·투어버스에는 군락, 전망대, 셔틀, 식사, 최종 하차를 문서화합니다.","‘주요 토루 전부’에는 지도, 운전시간과 마을별 도보를 요구합니다.","해가 지기 전과 마지막 귀환을 보호합니다."]},
 {id:"tickets",type:"paragraph",text:"푸젠성 공식 가격 문서는 톈뤄컹·윈수이야오·허컹을 별도 관광 상품으로 나누고 내부 교통을 자율·별도 판매로 규정합니다. 현재 가격 보장은 아니므로 실시간 운영자 화면을 확인하세요."},
+{id:"base-heading",type:"heading",level:2,text:"군락보다 먼저 숙박 거점을 고르세요"},
+{id:"base-matrix",type:"table",caption:"같은 마을도 출발 거점에 따라 다른 하루가 됩니다",columns:["거점","가능한 것","피할 것"],rows:[
+["샤먼","도시 숙박이 단순하고 개인·단체 교통 선택이 넓습니다","산길 시간을 쓰지 않은 채 모든 토루를 쉬운 당일치기라고 부르기"],
+["난징현 또는 난징 관광지 숙박","톈뤄컹·윈수이야오·허컹에 일찍 들어가 마을 시간을 늘립니다","융딩 군락도 동시에 가깝다고 가정하기"],
+["융딩 또는 룽옌 쪽","훙컹·가오베이·추시에 더 적합합니다","개수를 늘리려고 먼 난징 군락을 덧붙이기"],
+["도착 교통일","도로 연결이 확인된 경우 가까운 회복 가능한 한 곳만 가능","지연된 열차나 항공편을 외딴 마을과 고정 귀로에 연결하기"],
+]},
+{id:"route-heading",type:"heading",level:2,text:"체크리스트가 아니라 일관된 하루를 만드세요"},
+{id:"route-copy",type:"paragraph",text:"좋은 토루 하루에는 하나의 건축 질문, 한 지리 군락 안에서의 충분한 시간, 건물이 현재도 생활 공동체의 일부라는 이해가 필요합니다. 첫 시각적 개요라면 톈뤄컹 전망대와 연결 경로는 여러 건물 유형이 모인 훙컹과 다른 질문에 답합니다. 윈수이야오는 마을길과 환경의 비중이 크고, 추시는 더 긴 도로를 조용한 계곡 분위기와 바꾸는 여행자에게 맞습니다. 다른 현을 하나 더 붙이면 방문의 질보다 차창 시간이 늘기 쉽습니다."},
+{id:"interpretation",type:"callout",title:"구체적인 해설일 때만 가이드 가치가 있습니다",body:"다진 흙 구조, 씨족 조직, 화재와 물 관리, 방어 형태, 후대 보수, 오늘날 공동체 생활을 설명할 수 있는지 물으세요. 사진 지점만 가리키는 가이드는 이곳의 핵심 정보 부족을 해결하지 못합니다. 건물 연대, 최고·최대 주장, 주민 관습은 전승을 반복하기보다 정확한 건물과 신뢰할 만한 유산 자료에 연결되어야 합니다.",tone:"decision"},
+{id:"conditions-heading",type:"heading",level:2,text:"이동성·날씨·사생활이 방문을 바꿉니다"},
+{id:"conditions",type:"list",items:["전망대와 옛 마을길에는 경사, 계단, 고르지 않은 포장, 차량 하차 뒤 긴 보행이 있을 수 있어 이동이 가장 제한된 사람을 기준으로 봅니다.","비와 더위는 산길 속도, 마당 바닥, 먼 전망의 가치를 바꾸므로 같은 군락의 짧은 대안을 둡니다.","비공개 계단에 들어가거나 주민을 촬영하기 전에 묻습니다. 유료 표에도 경계가 있습니다.","작은 가방을 쓰고 여권·물·우비는 다른 곳에서 기다릴 차량에 두지 말고 몸에 지닙니다.","일광, 산길 이동, 다음 호텔 체크인을 지키는 마을 출발 시각을 정합니다."]},
+{id:"recovery-heading",type:"heading",level:2,text:"계획한 군락을 이용하기 어려울 때"},
+{id:"recovery",type:"table",caption:"같은 지리 논리 안에서 복구하세요",columns:["실패","대응"],rows:[
+["셔틀이나 도로 지연","건물 수를 줄이고 확인된 귀로를 지킵니다"],
+["날씨로 전망이 사라짐","같은 군락의 지붕 있는 건물이나 마을 해설에 시간을 씁니다"],
+["상층 출입 제한","마당·외부 구조·공식 해설을 이용하고 주민에게 압박하지 않습니다"],
+["기사가 먼 군락 추가를 제안","실제 운전 시간을 요구하고 일광·귀로 여유를 깨면 거절합니다"],
+]},
 {id:"final-check",type:"list",items:["주문에 현·군락·건물이 정확합니다.","운전과 마을 시간을 분리했습니다.","셔틀과 입장료를 항목화했습니다.","위층·촬영 규정을 현장에서 따릅니다.","확인 안 된 막차에 귀환을 맡기지 않습니다."]},
-{id:"internal-links",type:"internal-links",title:"토루 하루 연결",items:[{label:"샤먼 교통허브-구랑위 부두",href:"/ko/guides/xiamen-hubs-to-gulangyu-ferry-terminal/",description:"시골 토루 날과 샤먼 페리 과정을 분리합니다."},{label:"중국 고속철 첫 이용",href:"/ko/guides/china-high-speed-train-first-time-guide/",description:"도로 이동 전 역 이름과 여권을 확인합니다."},{label:"중국 여행에 가이드가 필요한가",href:"/ko/guides/do-you-need-a-tour-guide-in-china/",description:"해설과 농촌 교통 지원의 가치를 판단합니다."}]},
+{id:"internal-links",type:"internal-links",title:"토루 하루 연결",items:[{label:"샤먼 교통허브-구랑위 부두",href:"/ko/guides/xiamen-hubs-to-gulangyu-ferry-terminal/",description:"시골 토루 날과 샤먼 페리 과정을 분리합니다."},{label:"중국 고속철 첫 이용",href:"/ko/guides/china-high-speed-train-first-time-guide/",description:"도로 이동 전 역 이름과 여권을 확인합니다."},{label:"중국 여행에 가이드가 필요한가",href:"/ko/guides/do-you-need-a-tour-guide-in-china/",description:"해설과 농촌 교통 지원의 가치를 판단합니다."}, { label: "위안양 다랑논 동선 고르기", href: "/ko/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "둬이수·바다·라오후쭈이 중 고르고 전망대 하나를 주민을 존중하는 마을 방문과 묶은 뒤 흐린 날에도 의미 있는 대안을 준비합니다." }]},
 {id:"consultation",type:"callout",title:"한 군락을 실제 동선에 맞춰야 하나요?",body:"Homeground 여행 상담가는 방문일의 실제 이동시간, 마을 우선순위와 귀환 동선을 비교할 수 있습니다. 출발지, 시간, 보행 제한, 건축·풍경·공동체 중 우선순위를 알려 주세요.",tone:"neutral"},
 {id:"sources",type:"sources",title:"확인한 공식·유산·이미지 출처",items:[{label:"푸젠 토루 세계유산",url:"https://whc.unesco.org/en/list/1113/",publisher:"UNESCO World Heritage Centre",reviewedAt:"2026-08-12"},{label:"여섯 군락·네 건물 공식 목록",url:"https://fgw.fujian.gov.cn/ztzl/fjys/fjys/202311/t20231109_6293087.htm",publisher:"Fujian Provincial Development and Reform Commission",reviewedAt:"2026-08-12"},{label:"난징 상품·셔틀 가격 경계",url:"https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/yzdgkdqtxx/202009/t20200914_5385798.htm",publisher:"Fujian Provincial Development and Reform Commission",reviewedAt:"2026-08-12"},{label:"대표 사진: Windmemories의 톈뤄컹, CC BY-SA 4.0, 크롭·변환",url:"https://commons.wikimedia.org/wiki/File:20121101_Tianluokeng_Tulou_01.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}]}
-]};export default body;
+]} as const satisfies StructuredPageBody;export default body;

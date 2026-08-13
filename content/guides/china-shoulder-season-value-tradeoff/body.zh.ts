@@ -65,7 +65,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "按气候分区筛选路线", href: "/zh/guides/china-climate-regions-for-trip-timing/", description: "检查一个日期窗口能否保护最难一站。" },
     { label: "核对中国法定节假日", href: "/zh/guides/china-public-holidays-travel-calendar/", description: "全国性假期可能推翻淡季标签。" },
-    { label: "把时间选择放回总预算", href: "/zh/guides/how-much-does-a-china-trip-cost/", description: "同时比较交通、酒店与灵活性。" }
+    { label: "把时间选择放回总预算", href: "/zh/guides/how-much-does-a-china-trip-cost/", description: "同时比较交通、酒店与灵活性。" },
+    { label: "选择黄山住宿基地", href: "/zh/guides/huangshan-summit-or-gateway-base/", description: "从日出、换乘入口、行李、天气和后续铁路比较山顶、汤口、温泉区与黄山市区。" },
+    { label: "选择黄海湿地基地", href: "/zh/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "分清盐城黄海湿地的分散区域，按东台、大丰或盐城市区选择基地，并准备即使没见到鸟也成立的替代安排。" },
+    { label: "选择元阳梯田路线", href: "/zh/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "在多依树、坝达与老虎嘴之间选择，把一个观景台与尊重居民的村寨访问配对，并为云雾天气准备仍值得去的替代安排。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "我国气候的主要特征", url: "https://www.cma.gov.cn/2011xzt/2012zhuant/20120302/2012030205/201203020501/201103/t20110314_3096052.html", publisher: "中国气象局", reviewedAt: "2026-08-12" },

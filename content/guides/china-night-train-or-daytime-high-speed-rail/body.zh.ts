@@ -312,6 +312,9 @@ const body = {
           href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "为多代同行调整交通与恢复时间的假设。",
         },
+        { label: "了解中国公益性慢火车", href: "/zh/guides/china-public-welfare-slow-trains/", description: "了解公益性慢火车为何仍在运行、日常乘客是谁，以及普通旅行者如何尊重地使用这项公共服务。" },
+        { label: "了解高速列车如何制造", href: "/zh/guides/how-china-builds-high-speed-trains/", description: "以代表性的铝合金车体动车组为例，从车体制造到系统集成、静态调试、实验室和线路试验，看懂制造链。" },
+        { label: "规划山东半岛铁路弧线", href: "/zh/guides/shandong-peninsula-coastal-city-rail-arc/", description: "先想清楚青岛、烟台、威海各自增加什么，再核对准确车站；若海滨体验重复，就有依据地少去一城。" },
       ],
     },
     {

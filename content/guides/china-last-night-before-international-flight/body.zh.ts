@@ -337,6 +337,7 @@ const body = {
           href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "按多代同行者的需要调整衔接余量。",
         },
+        { label: "把到达枢纽与北坡或西坡入口对应起来", href: "/zh/guides/changbai-mountain-hubs-to-park-gates/", description: "按已确认的北景区或西景区入口，选择长白山站、长白山西站或长白山机场，并为道路接驳、到错一侧和天气变化准备备选方案。" },
       ],
     },
     {

@@ -52,7 +52,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "중국 탐색", href: "/ko/explore/", description: "또 다른 외딴 지역을 더하기 전에 목적지 모음으로 돌아가세요."},
     {label: "중국 기후권과 여행 시기", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "중국 서부 전체를 하나의 날씨 구역으로 보지 마세요."},
     {label: "한 거점과 여러 거점 중 선택", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "외딴 숙박지가 호텔 이동을 감수할 가치가 있는지 판단합니다."},
-    {label: "중국 고속철 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "장예 철도 구간과 마지막 도로 이동을 분리해 계획합니다."}
+    {label: "중국 고속철 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "장예 철도 구간과 마지막 도로 이동을 분리해 계획합니다."},
+    { label: "톈컹과 야생 싱크홀 구분하기", href: "/ko/guides/china-tiankeng-sinkholes-explained/", description: "지질학에서 톈컹이 무엇인지 이해하고 공개 관광지와 연구 발견지를 구분한 뒤 방문 전 최신 경로와 안전 정보를 확인합니다." },
   ]},
   {id: "consultation", type: "callout", title: "치롄산 쪽 계획을 점검해야 하나요?", body: "Homeground 여행 상담가가 날짜에 맞춰 구체적 관문, 당시 개방된 공개 시설, 도로 상황, 폐쇄 대안을 확인할 수 있습니다. 정확한 마을, 이동 제약, 약속받은 활동을 알려 주세요. 확인되지 않은 보호구역 핀을 경로로 만들지는 않습니다.", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026년 8월 13일 검토한 공식 출처", items: [

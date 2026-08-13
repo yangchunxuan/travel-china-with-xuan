@@ -374,6 +374,7 @@ const body: StructuredPageBody = {
           href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "把真人协助放在最需要背景讲解或现场协调的环节。",
         },
+        { label: "选择一处茶乡景观", href: "/zh/guides/tea-landscape-regions-of-china/", description: "不按名茶排名，而是从现场能看见的景观、工序与社区关系，选择适合自己的中国茶产地。" },
       ],
     },
     {

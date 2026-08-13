@@ -14,6 +14,17 @@ const allSections = [
   "tools",
   "services",
 ];
+const collectionSlugsBySection = {
+  explore: ["regions-provinces", "cities-neighborhoods", "attractions-nature-heritage"],
+  plan: ["trip-length-city-order", "traveller-theme-itineraries", "budget-pace-decisions"],
+  transport: ["airports-rail-hubs", "city-pair-routes", "last-mile-transfers"],
+  "when-to-go": ["months-seasons", "holidays-crowds", "events-natural-calendar"],
+  stay: ["city-areas", "hotel-types-scenic-bases", "access-foreign-guests"],
+  essentials: ["entry-transit", "payments-connectivity", "booking-registration-recovery"],
+  culture: ["history-people-ideas", "regional-food", "festivals-arts-contemporary"],
+  tools: ["route-time", "area-option-selectors", "maps-calculators-reference"],
+  services: ["guides-experiences", "transfers-hotels-bookings", "route-whole-trip"],
+};
 const locales = [
   { runtime: "en", prefix: "", htmlLang: "en", hreflang: "en" },
   { runtime: "zh", prefix: "zh/", htmlLang: "zh-Hans", hreflang: "zh-Hans" },
@@ -26,6 +37,14 @@ function routeFor(section, locale) {
 
 function absoluteRoute(section, locale) {
   return `${siteUrl}/${routeFor(section, locale)}`;
+}
+
+function collectionRoute(section, slug, locale) {
+  return `${locale.prefix}${section}/${slug}/`;
+}
+
+function absoluteCollectionRoute(section, slug, locale) {
+  return `${siteUrl}/${collectionRoute(section, slug, locale)}`;
 }
 
 async function fileExists(filePath) {
@@ -94,6 +113,37 @@ for (const sitemapUrl of sitemapLocs) {
     throw new Error(`${url.pathname}: sitemap URL contains noindex`);
   }
 
+  const jsonLdBlocks = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gsu)]
+    .map((match) => match[1]);
+  const jsonLd = jsonLdBlocks.join("\n");
+  const topLevelArticleCount = jsonLdBlocks
+    .map((block) => JSON.parse(block))
+    .flatMap((document) => document["@graph"] ?? [document])
+    .filter((node) => node?.["@type"] === "Article")
+    .length;
+  if (topLevelArticleCount > 0) {
+    const localePrefix = url.pathname.startsWith("/zh/")
+      ? "/zh"
+      : url.pathname.startsWith("/ko/")
+        ? "/ko"
+        : "";
+    assertIncludes(
+      jsonLd,
+      '"author":{"@id":"https://homegroundchina.com/studio/evan/#person"}',
+      `${url.pathname} Article author`,
+    );
+    assertIncludes(
+      jsonLd,
+      '"reviewedBy":{"@id":"https://homegroundchina.com/studio/evan/#person"}',
+      `${url.pathname} Article reviewer`,
+    );
+    assertIncludes(
+      html,
+      `href="${localePrefix}/studio/evan/"`,
+      `${url.pathname} visible Evan byline`,
+    );
+  }
+
   const localTargets = [
     ...html.matchAll(/\b(?:href|src)="([^"]+)"/giu),
   ].map((match) => match[1]);
@@ -110,6 +160,74 @@ for (const sitemapUrl of sitemapLocs) {
         `${url.pathname}: internal href/src has no exported target: ${targetUrl.pathname}`,
       );
     }
+  }
+}
+
+for (const section of allSections) {
+  for (const slug of collectionSlugsBySection[section]) {
+    for (const locale of locales) {
+      const route = collectionRoute(section, slug, locale);
+      const filePath = path.join(outputRoot, route, "index.html");
+      const context = `/${route}`;
+      if (!(await fileExists(filePath))) {
+        throw new Error(`${context}: collection export is missing`);
+      }
+
+      const html = await readFile(filePath, "utf8");
+      const canonical = absoluteCollectionRoute(section, slug, locale);
+      assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+      assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+      assertIncludes(html, '"@type":"CollectionPage"', context);
+      assertIncludes(html, '"@type":"ItemList"', context);
+
+      for (const target of locales) {
+        assertIncludes(
+          html,
+          `<link rel="alternate" hrefLang="${target.hreflang}" href="${absoluteCollectionRoute(section, slug, target)}"/>`,
+          context,
+        );
+      }
+      assertIncludes(
+        html,
+        `<link rel="alternate" hrefLang="x-default" href="${absoluteCollectionRoute(section, slug, locales[0])}"/>`,
+        context,
+      );
+
+      const isIndexable = sitemap.includes(`<loc>${canonical}</loc>`);
+      const hasNoindex =
+        /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/iu.test(html);
+      if (isIndexable === hasNoindex) {
+        throw new Error(
+          `${context}: collection sitemap and robots status disagree (sitemap=${isIndexable}, noindex=${hasNoindex})`,
+        );
+      }
+
+      const itemCount = Number(html.match(/"numberOfItems":(\d+)/u)?.[1] ?? "0");
+      if (isIndexable && itemCount < 3) {
+        throw new Error(`${context}: indexable collection has only ${itemCount} guide(s)`);
+      }
+      // A sufficient child count is necessary but deliberately not sufficient:
+      // secondary hubs remain noindex until the editorial approval set admits
+      // them. The export guard therefore rejects thin indexed pages, but never
+      // infers approval from a count alone.
+    }
+  }
+}
+
+for (const locale of locales) {
+  const route = `${locale.prefix}studio/evan/`;
+  const filePath = path.join(outputRoot, route, "index.html");
+  const context = `/${route}`;
+  const canonical = `${siteUrl}/${route}`;
+  if (!(await fileExists(filePath))) {
+    throw new Error(`${context}: Evan profile export is missing`);
+  }
+  const html = await readFile(filePath, "utf8");
+  assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+  assertIncludes(html, '"@type":"ProfilePage"', context);
+  assertIncludes(html, '"@type":"Person"', context);
+  if (!sitemap.includes(`<loc>${canonical}</loc>`)) {
+    throw new Error(`${context}: Evan profile is missing from sitemap.xml`);
   }
 }
 
@@ -170,5 +288,5 @@ for (const locale of locales) {
 }
 
 console.log(
-  `✓ ${allSections.length * locales.length} search-platform hubs match their generated robots/sitemap state, and every internal href/src on indexable pages resolves.`,
+  `✓ ${allSections.length * locales.length} section hubs, ${allSections.length * 3 * locales.length} collection hubs and ${locales.length} Evan profiles match their export contract; every internal href/src on indexable pages resolves.`,
 );

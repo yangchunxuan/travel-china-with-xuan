@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "links", type: "internal-links", title: "继续完成设备与交通检查", items: [
     { label: "中国插头、电压和转换器", href: "/zh/guides/china-power-plugs-voltage-and-adapters/", description: "把电池运输规则与充电电压、插头形状分开。" },
     { label: "中国境内航班票价组合和行李", href: "/zh/guides/china-domestic-flight-fare-bundle-baggage/", description: "到机场前核查票价与实际承运人。" },
-    { label: "中国全程铁路路线规划", href: "/zh/guides/china-rail-only-route/", description: "检验所有长距离转移是否适合不用飞机。" }
+    { label: "中国全程铁路路线规划", href: "/zh/guides/china-rail-only-route/", description: "检验所有长距离转移是否适合不用飞机。" },
+    { label: "了解 12306 列车订餐配送", href: "/zh/guides/how-food-reaches-your-seat-on-china-train/", description: "看懂 12306 餐食从供餐站到车厢座位的接力流程、截止时间、座位信息和安全回退方案。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "民航局关于 CCC 标志和召回充电宝的公告（2025）", url: "https://www.caac.gov.cn/English/News/202507/t20250709_227894.html", publisher: "中国民用航空局", reviewedAt: "2026-08-12" },

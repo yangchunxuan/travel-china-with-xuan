@@ -40,6 +40,7 @@ const body = {
       { label: "检查行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "把口岸排队和车站交接算进真实行程。" },
       { label: "安排国际航班前最后一晚", href: "/zh/guides/china-last-night-before-international-flight/", description: "在过关行程和离境航班之间留出足够时间。" },
       { label: "准备中国境内备用支付方式", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为内地交通准备不止一种支付方式。" },
+      { label: "比较深圳住宿区", href: "/zh/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "从抵达枢纽、香港过关、商务地址、景点、夜间活动和行李比较福田、罗湖与南山。" },
     ]},
     { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
       { label: "口岸系统与名称", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "香港保安局", reviewedAt: "2026-08-12" },

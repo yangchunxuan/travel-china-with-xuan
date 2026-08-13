@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "상하이 중심 호텔", items: ["상하이역 좌석 비교", "긴 열차가 시내 이동을 줄일 수 있음", "전체 역명 확인"] },
     { heading: "늦은 항저우 도착", items: ["호텔까지의 마지막 구간으로 역 선택", "마지막 지하철 별도 확인", "공식 택시 승강장과 호텔 늦은 체크인 대안"] },
   ]},
+  { id: "search-heading", type: "heading", level: 2, text: "통제된 순서로 역 조합을 검색하세요" },
+  { id: "search-plan", type: "list", ordered: true, items: ["공항 터미널이나 호텔 입구를 포함해 정확한 상하이 출발지와 항저우 도착지를 찍습니다.", "일행이 아침에 방어 가능한 여유로 갈 수 있는 상하이역만 적습니다.", "실제 날짜를 12306에서 역 조합별로 검색하고 열차 번호, 전체 역명, 시각을 저장합니다.", "각 사용 가능한 결과에 역 접근, 보안, 항저우 마지막 이동을 더합니다.", "가장 싸거나 빠른 열차를 고르기 전에 전체 문앞 이동, 인계 횟수, 실패 결과를 비교합니다."] },
+  { id: "ticket", type: "callout", title: "검색 결과는 확보된 좌석이 아닙니다", tone: "warning", body: "공식 발권 채널에서 주문을 끝내고 모든 여권 이름과 문서 번호를 확인하세요. 시간표, 판매 대행 화면, 저장한 후보는 좌석을 잡아두지 않습니다. 선호 조합이 매진되면 복잡한 환승을 받아들이기 전에 다른 시간이나 역 조합을 비교합니다. 역에 들어갈 때 확정 주문과 신분 서류를 준비합니다." },
+  { id: "trip-heading", type: "heading", level: 2, text: "당일치기와 숙박 여행은 역 선택 논리가 다릅니다" },
+  { id: "trip-matrix", type: "table", caption: "항저우에서 할 일이 도착역을 고르게 하세요", columns: ["여행 형태", "역 우선순위", "숨은 제약"], rows: [
+    ["서호 당일치기", "첫 구간과 마지막 시내 이동이 모두 깔끔한 역", "귀로에는 명소에서 역까지 교통과 입장 여유가 필요합니다"],
+    ["항저우 숙박", "호텔 주소가 최단 열차보다 중요할 수 있습니다", "늦은 도착은 프런트와 마지막 이동 확인이 필요합니다"],
+    ["푸둥 도착 뒤 철도", "입경, 수하물, 상하이 철도역 이동을 보호합니다", "홍차오 철도역은 푸둥공항 안에 있지 않습니다"],
+    ["홍차오 도착 뒤 철도", "홍차오가 도시 횡단을 줄일 수 있습니다", "공항 터미널, 철도 대합실, 별도 표에도 여유가 필요합니다"],
+  ]},
+  { id: "return-heading", type: "heading", level: 2, text: "당일치기 왕로를 사기 전에 귀로를 설계하세요" },
+  { id: "return-copy", type: "paragraph", text: "항저우 명소를 떠날 시각을 정하고 도로·지하철 변동, 정확한 역 입구, 보안, 탑승을 더합니다. 더 늦은 열차가 실제로 상하이 호텔이나 공항까지 계속 갈 수 있는 역에 도착할 때만 유효한 대안입니다. 그 대안이 사라지면 낯선 터미널 사이를 달리는 것보다 항저우에서 1박하는 편이 합리적인 복구일 수 있습니다." },
   { id: "recovery-heading", type: "heading", level: 2, text: "잘못된 역에 갔다면" },
   { id: "recovery", type: "table", caption: "도시를 가로지르기 전에 멈춘다", columns: ["문제", "대응"], rows: [
     ["잘못된 상하이 터미널", "공식 표 변경/좌석부터 보고 도시 횡단과 비교"],
@@ -31,6 +43,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국 고속철도 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "역 조합을 고른 뒤 표와 승차를 준비합니다." },
     { label: "야간열차 또는 주간 고속철도", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "더 먼 후속 이동의 일정 모양을 비교합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "큰 도시의 앞뒤 이동을 계산합니다." },
+    { label: "시장 너머의 이우 읽기", href: "/ko/guides/yiwu-market-to-factory-network/", description: "이우 상품 전시 뒤의 여러 역할을 이해하되 점포를 공장 증거로, 오래된 안내를 현재 정보로 보지 않습니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
     { label: "상하이 기차역 안내", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "상하이시 정부", reviewedAt: "2026-08-12" },

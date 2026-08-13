@@ -397,6 +397,7 @@ export default {
           href: "/ko/guides/how-much-does-a-china-trip-cost/",
           description: "대중교통, 차량, 가이드와 더 넓은 일정 지원의 비용 역할을 비교하세요.",
         },
+        { label: "산시역사박물관 계획", href: "/ko/guides/shaanxi-history-museum-booking-and-collection-plan/", description: "외국 여권으로 예약하고 샤오자이 본관과 진한관을 구분한 뒤 90분 또는 심화 관람 동선을 선택합니다." },
       ],
     },
     {

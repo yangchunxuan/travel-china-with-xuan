@@ -17,6 +17,19 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "가족 또는 부모님", items: ["도로변 환승 줄이기", "고도와 휴식 여유, 의료 판단은 별도", "숙소 접수 시간 확인"] },
     { heading: "겨울 또는 고정 항공편", items: ["운행 중단에 대비한 넉넉한 여유", "연결이 보장되지 않는 분리 발권 피하기", "청두나 현지 숙박 대안"] },
   ]},
+  { id: "handoff-heading", type: "heading", level: 2, text: "사용 가능한 인계에는 여섯 항목이 필요합니다" },
+  { id: "handoff", type: "list", ordered: true, items: ["단순히 ‘주자이거우’가 아닌 정확한 철도역이나 공항.", "현재 이름이 있는 환승 운영사와 공식 예약 기록.", "역이나 수하물 홀을 나온 뒤 찾을 수 있는 픽업 지점.", "연결할 열차나 항공편과 늦은 도착 처리 규정.", "넓은 현 이름이 아닌 정확한 계곡·관광지·호텔 하차 지점.", "중국에서 작동하는 연락 방법과 차량을 놓쳤을 때의 대안."] },
+  { id: "separate", type: "callout", title: "별도 표는 서로를 보호하지 않습니다", tone: "warning", body: "판매자가 보호를 글로 명시하지 않으면 철도·항공 예약과 역에서 계곡까지 환승은 다른 계약입니다. 열차 도착에 맞춰 배치된 정기 픽업은 전용차가 무기한 기다리는 것과 다릅니다. 변경·미탑승 조건을 읽고 정확한 열차나 항공편을 운영사에 주며, 작은 지연이 산길 구간을 무너뜨리지 않을 여유를 둡니다." },
+  { id: "arrival-heading", type: "heading", level: 2, text: "도착일을 관광지 경주로 만들지 마세요" },
+  { id: "arrival-matrix", type: "table", caption: "첫날 밤으로 교통 위험을 흡수하세요", columns: ["도착", "더 회복 가능한 계획", "이유"], rows: [
+    ["이른 확정 철도와 환승", "숙소에 가서 식사하고 다음 날 이른 전체 관광을 준비합니다", "2시간 도로 예상은 관광지 입장 시각이 아닙니다"],
+    ["오후 철도", "호텔 프런트를 지키고 당일 큰 계곡 관람을 약속하지 않습니다", "역 인계와 산길이 남은 일광을 쓸 수 있습니다"],
+    ["늦은 항공이나 겨울 운항", "실패 구간에 따라 공항·현지·청두 숙박을 둡니다", "날씨와 별도 표가 당일 도로 연결을 없앨 수 있습니다"],
+    ["가족이나 부모", "다음 날 전체 일정 전에 식사·화장실·휴식을 배치합니다", "여러 수단의 긴 도착은 일행의 사용 가능한 체력을 바꿉니다"],
+  ]},
+  { id: "hotel", type: "paragraph", text: "환승의 광고 종점이 관광지 입구, 교통센터, 예약 호텔 중 어디인지 확인합니다. 어두운 시간이나 큰 짐이 있을 때 이 명칭들은 바꿔 쓸 수 없습니다. 숙소의 중국어 이름, 주소, 전화를 운영사에 보내고 호텔 하차 여부를 묻고 예상 도착을 숙소에 알립니다. 호텔까지 가지 않는다면 청두를 떠나기 전에 마지막 차량을 준비하세요." },
+  { id: "return-heading", type: "heading", level: 2, text: "귀로를 별도 연결로 예약하세요" },
+  { id: "return-plan", type: "list", ordered: true, items: ["일반적인 주자이거우가 아니라 숙소나 관광지 출구에서 시작합니다.", "도로 환승의 픽업과 실제로 서비스하는 철도역·공항을 확인합니다.", "별도 철도·항공권 앞에 산길 중단 여유를 둡니다.", "더 늦은 교통과 추가 1박이 모두 실제로 있을 때만 대안으로 봅니다.", "항공편을 대체할 수 없다면 마지막 가능한 연결 대신 더 일찍 청두나 출발 공항 쪽으로 이동합니다."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "한 구간이 실패하면" },
   { id: "recovery", type: "table", caption: "문제가 생기면 다음 안전한 지점부터 확보한다", columns: ["문제", "대응"], rows: [
     ["열차 지연으로 셔틀 위험", "도착 전 지정 환승사에 연락하고 서면 규정 확인"],
@@ -31,6 +44,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "야간열차 또는 주간 고속철도", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "시간보다 일정 모양을 비교합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "산악 환승에 실제 여유를 둡니다." },
     { label: "중국 여행자 결제", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "각 구간의 결제 대안을 준비합니다." },
+    { label: "러산대불 관람 방식 고르기", href: "/ko/guides/leshan-giant-buddha-land-or-boat-visit/", description: "육로와 강 위에서 보는 풍경, 별도 입장권과 기상 변수를 비교하고, 유람선이 중단돼도 러산이나 청두로 돌아갈 수 있는 동선을 계획합니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
     { label: "2026년 7월 황룽주자이역 환승 안내", url: "https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49", publisher: "주자이거우 풍경명승구", reviewedAt: "2026-08-12" },

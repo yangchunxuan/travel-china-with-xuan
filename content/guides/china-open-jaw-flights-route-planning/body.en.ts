@@ -286,6 +286,7 @@ const body = {
           href: "/guides/china-240-hour-visa-free-transit-route-check/",
           description: "Test the third-country, port and permitted-area conditions separately from route convenience.",
         },
+        { label: "Protect the first day", href: "/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "Decide whether a China arrival day can reliably support a timed reservation by testing immigration, bags, transfers, hotel logistics and missed-entry rules." },
       ],
     },
     {

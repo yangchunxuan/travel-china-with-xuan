@@ -28,6 +28,18 @@ const body = {
       { heading: "Children or parents", items: ["Reduce standing and uncertain waits", "Keep the group together at handoffs", "Plan toilets and weather shelter"] },
       { heading: "Luggage or onward train", items: ["Do not take cases through several sightseeing transfers", "Store luggage lawfully before departure", "Avoid a tight same-evening connection"] },
     ]},
+    { id: "first-leg-heading", type: "heading", level: 2, text: "The hotel-to-departure leg can decide the mode" },
+    { id: "first-leg-copy", type: "paragraph", text: "Put the hotel entrance into the route at the actual departure hour. Dongzhimen may be a simple first leg from one district and an early cross-city transfer from another. A direct tourist bus is only direct after the group reaches its named pickup. For a private vehicle, confirm which hotel door or legal roadside point the driver can use. Add breakfast, lifts, metro opening, walking with children and time to find the correct stop before comparing advertised journey times." },
+    { id: "layers", type: "callout", title: "Transport, scenic entry and uphill access are separate purchases", tone: "warning", body: "A bus or vehicle normally solves only the road journey. Scenic-area admission, any internal shuttle and the chosen cable-car, chairlift or walking access can have separate rules and queues. Read the current attraction order and decide the ascent and descent before fixing a pickup time. Never assume that a transport seller includes every ticket merely because its photo shows the wall." },
+    { id: "day-shape-heading", type: "heading", level: 2, text: "Match the day shape to the transport" },
+    { id: "day-shape", type: "table", caption: "The same wall visit can require a different return", columns: ["Day shape", "More defensible structure", "Main failure"], rows: [
+      ["Mutianyu only", "Public or direct bus can work when the return is current and the group is flexible", "Spending the return buffer on an unplanned long wall route"],
+      ["Mutianyu plus central Beijing dinner", "Use an earlier leave-the-wall time and keep the city last leg visible", "Treating the bus arrival as restaurant arrival"],
+      ["Mutianyu before an evening train", "Prefer a controlled vehicle or remove the same-day connection", "Traffic, station mismatch and security consume the margin"],
+      ["Children, parents or winter conditions", "Reduce handoffs and preserve shelter/toilet time", "Designing from the fastest able-bodied summer example"],
+    ]},
+    { id: "return-heading", type: "heading", level: 2, text: "Write a complete return instruction" },
+    { id: "return-list", type: "list", ordered: true, items: ["Name the point where the group must finish descending and regroup.", "Add the internal trip from wall access back to the road pickup or public stop.", "Confirm the destination and direction of every Huairou or Beijing connection, not only its route number.", "Set a leave-attraction deadline that still leaves one verified fallback.", "If the fallback disappears, stop extending the visit and secure the return rather than waiting for the theoretical last service."] },
     { id: "late-heading", type: "heading", level: 2, text: "A late start can remove options faster than it shortens the visit" },
     { id: "late-table", type: "table", caption: "What to do when plans change", columns: ["Problem", "First move", "Do not"], rows: [
       ["Missed direct bus", "Check its official change policy and the current public route", "Follow an unofficial caller offering an unnamed vehicle"],
@@ -42,6 +54,7 @@ const body = {
       { label: "Which Beijing railway station?", href: "/guides/which-beijing-railway-station/", description: "Protect an onward train by using the correct terminal." },
       { label: "Forbidden City for foreign visitors", href: "/guides/forbidden-city-for-foreign-visitors/", description: "Plan another logistically demanding Beijing day separately." },
       { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Avoid placing two hard days into one fragile schedule." },
+      { label: "Choose a Badaling route", href: "/guides/beijing-to-badaling-great-wall-transfer/", description: "Compare high-speed rail, S2 suburban rail, Bus 877 and current airport links to Badaling by departure hub, arrival point, return and backup plan." },
     ]},
     { id: "sources", type: "sources", title: "Official sources and image credit", items: [
       { label: "Mutianyu visitor and public-transport information", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },

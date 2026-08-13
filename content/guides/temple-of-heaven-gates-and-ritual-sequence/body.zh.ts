@@ -31,6 +31,7 @@ const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
     { label: "第一次去北京住哪里", href: "/zh/guides/beijing-where-to-stay-first-trip/", description: "把5号线、8号线和其他北京日程一起比较。" },
     { label: "国博预约与精简路线", href: "/zh/guides/national-museum-of-china-booking-and-route/", description: "另一处北京重头景点应使用独立预约和室内路线。" },
     { label: "带父母去中国旅行", href: "/zh/guides/china-itinerary-with-older-parents/", description: "地图上的直中轴仍包含很长的公园步行。" },
+    { label: "读懂一段中国城墙", href: "/zh/guides/chinese-city-walls-gates-and-urban-order/", description: "分清原存、保护性修缮、复建与考古遗存，再把城门和街道放回完整的城市系统中理解。" },
   ] },
   { id: "consultation", type: "callout", title: "需要与另一项北京预约衔接？", body: "Homeground 真人旅行顾问可以按酒店和当天其他固定时段匹配入口、方向与节奏。请提供日期、出发偏好、行动限制，以及你更重视三个核心景点还是大公园本身。", tone: "neutral" },
   { id: "sources", type: "sources", title: "已核验的官方与图片来源", items: [

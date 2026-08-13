@@ -13,6 +13,10 @@ import {
 } from "lucide-react";
 import { getGuideEntry, getGuideLanguagePaths } from "../lib/guideRegistry";
 import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import {
   localePath,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
@@ -21,6 +25,7 @@ import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
 
@@ -132,6 +137,7 @@ function createStructuredData(
         name: "Homeground China",
         url: "https://homegroundchina.com/",
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -143,7 +149,8 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         image: guide.heroImageUrl,
-        author: { "@id": "https://homegroundchina.com/#organization" },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         about: copy.hero.places.map((name) => ({ "@type": "Place", name })),
       },
@@ -201,6 +208,7 @@ export function TenDayChinaRouteGuidePage({
   locale?: HomegroundLocale;
 }) {
   const copy = getTenDayGuideCopy(locale);
+  const guide = getGuideEntry(guideId, locale);
   const homeHref = localePath(locale);
   const localePrefix = locale === "en" ? "" : `/${locale}`;
   const guideHubHref = `${homeHref}guides/`;
@@ -293,6 +301,11 @@ export function TenDayChinaRouteGuidePage({
                     <span>{copy.hero.accent}</span>
                   </h1>
                   <p className={styles.heroLead}>{copy.hero.lead}</p>
+                  <LegacyEditorialByline
+                    guideId={guide.id}
+                    locale={locale}
+                    reviewedAt={guide.sourceReviewedDate}
+                  />
 
                   <section className={styles.heroFact} aria-labelledby="answer-title">
                     <div className={styles.heroFactCopy}>

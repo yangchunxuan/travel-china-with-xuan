@@ -278,6 +278,9 @@ const body: StructuredPageBody = {
           href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "혼자 움직일 날과 도움의 가치가 큰 구간을 구분합니다.",
         },
+        { label: "교통 거점을 북쪽·서쪽 입구에 맞추기", href: "/ko/guides/changbai-mountain-hubs-to-park-gates/", description: "예약한 북쪽 또는 서쪽 관광 구역을 기준으로 창바이산역, 창바이산시역, 창바이산공항을 고르고 도로 이동과 날씨 변화에 대비합니다." },
+        { label: "아이에게 맞는 동선 계획", href: "/ko/guides/china-itinerary-with-young-children/", description: "수면, 식사, 화장실, 안아야 하는 부담, 숙소 안정성과 아동 승차권 규정으로 가족 동선을 설계합니다." },
+        { label: "구이린-양숴 비교", href: "/ko/guides/guilin-yangshuo-transport-route/", description: "역, 공항, 호텔, 짐, 방향과 귀환 계획을 기준으로 열차, 도로 환승과 강 이동을 비교합니다." },
       ],
     },
     {

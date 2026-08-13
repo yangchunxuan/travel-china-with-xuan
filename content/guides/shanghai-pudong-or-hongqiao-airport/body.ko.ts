@@ -531,6 +531,7 @@ const body = {
           href: "/ko/guides/china-hotel-near-metro/",
           description: "유용한 출입구, 마지막 도보, 엘리베이터와 짐 경로로 숙소 지역을 판단하세요.",
         },
+        { label: "상하이 숙소 고르기", href: "/ko/guides/shanghai-where-to-stay-first-trip/", description: "도보, 지하철 접근, 저녁, 짐과 인파를 기준으로 와이탄·인민광장·옛 프랑스 조계지 일대를 비교합니다." },
       ],
     },
     {

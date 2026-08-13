@@ -278,6 +278,9 @@ const body: StructuredPageBody = {
           href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "分清可以自己完成的旅行日，以及真正值得有人协助的环节。",
         },
+        { label: "把到达枢纽与北坡或西坡入口对应起来", href: "/zh/guides/changbai-mountain-hubs-to-park-gates/", description: "按已确认的北景区或西景区入口，选择长白山站、长白山西站或长白山机场，并为道路接驳、到错一侧和天气变化准备备选方案。" },
+        { label: "规划适合孩子的路线", href: "/zh/guides/china-itinerary-with-young-children/", description: "从睡眠、饮食、如厕、照顾孩子的负担、酒店稳定性和儿童票规则设计中国亲子路线。" },
+        { label: "比较桂林到阳朔", href: "/zh/guides/guilin-yangshuo-transport-route/", description: "按车站、机场、酒店、行李、方向和回程，比较桂林与阳朔之间的火车、公路接驳和水路体验。" },
       ],
     },
     {

@@ -177,6 +177,8 @@ const body: StructuredPageBody = {
         { label: "중국 국가박물관 예약과 동선", href: "/ko/guides/national-museum-of-china-booking-and-route/", description: "해당 박물관의 현재 공식 예약 절차를 이용합니다." },
         { label: "외국인 방문객의 자금성 관람", href: "/ko/guides/forbidden-city-for-foreign-visitors/", description: "공식 입장권을 입구와 관람 동선에 연결합니다." },
         { label: "예약마다 여권 이름 일치시키기", href: "/ko/guides/passport-name-across-china-bookings/", description: "확정 또는 입장 단계의 실명 불일치를 예방합니다." },
+        { label: "예약 분쟁 자료 정리하기", href: "/ko/guides/china-booking-dispute-evidence-pack/", description: "주문과 약관을 보존하고 시간순 사실 기록을 만든 뒤, 개인정보를 노출하지 않고 예약·결제 채널로 단계적으로 해결하세요." },
+        { label: "막고굴 자유 관람 계획", href: "/ko/guides/mogao-caves-independent-visit-workflow/", description: "외국 여권 소지자용 공식 예약 경로를 이용하고 일반·응급 관람을 구분한 뒤, 올바른 첫 장소에 도착해 날씨 변화에 대비하세요." },
       ],
     },
     {

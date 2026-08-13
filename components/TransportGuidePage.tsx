@@ -7,12 +7,17 @@ import {
 } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
+import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
 import { BEIJING_ZHANGJIAJIE_SHANGHAI_TRANSPORT_SOURCES } from "../lib/beijingZhangjiajieShanghaiTransport";
 import {
   getTransportGuideCopy,
   type TransportGuideCopy,
 } from "../lib/beijingZhangjiajieShanghaiTransportI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./TransportGuidePage.module.css";
@@ -126,6 +131,7 @@ function createStructuredData(
         name: "Homeground China",
         url: "https://homegroundchina.com/",
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -142,7 +148,8 @@ function createStructuredData(
           width: 1600,
           height: 692,
         },
-        author: { "@id": "https://homegroundchina.com/#organization" },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         citation: BEIJING_ZHANGJIAJIE_SHANGHAI_TRANSPORT_SOURCES.map(
           (source, index) => ({
@@ -263,11 +270,14 @@ export function TransportGuidePage({
                 </div>
               </div>
 
+              <LegacyEditorialByline
+                guideId={guide.id}
+                locale={locale}
+                reviewedAt={guide.sourceReviewedDate}
+              />
               <p className={styles.reviewed}>
-                {copy.hero.preparedBy} · {copy.hero.publishedLabel}{" "}
+                {copy.hero.publishedLabel}{" "}
                 <time dateTime={guide.datePublished}>{copy.hero.publishedDate}</time>{" "}
-                · {copy.hero.checkedLabel}{" "}
-                <time dateTime={guide.sourceReviewedDate}>{copy.hero.checkedDate}</time>{" "}
                 · {copy.hero.dynamicNote}
               </p>
             </div>

@@ -61,7 +61,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "检查独立机票自转机风险", href: "/zh/guides/china-separate-flight-tickets-self-transfer-risk/", description: "便宜的票价组合仍可能让后续行程承担风险。" },
     { label: "了解中国旅行整体费用", href: "/zh/guides/how-much-does-a-china-trip-cost/", description: "把航班决策放回完整预算。" },
-    { label: "比较开口程航班对路线的价值", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "更高的机票价格可能省掉一次昂贵折返。" }
+    { label: "比较开口程航班对路线的价值", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "更高的机票价格可能省掉一次昂贵折返。" },
+    { label: "分清文昌航天空间", href: "/zh/guides/wenchang-commercial-space-city/", description: "分清文昌国家发射场、海南商业航天发射场与航天城开发，并对任何公众访问安排重新核实。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "公共航空运输旅客服务管理规定", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "中国民用航空局", reviewedAt: "2026-08-12" },

@@ -213,6 +213,7 @@ const body: StructuredPageBody = {
         { label: "设置中国移动支付", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "支付设置与个案争议处理应分开完成。" },
         { label: "统一各类预订的护照姓名", href: "/zh/guides/passport-name-across-china-bookings/", description: "避免实名不一致发展成履约争议。" },
         { label: "在中国遗失手机后的恢复顺序", href: "/zh/guides/lost-phone-in-china-digital-recovery/", description: "在不暴露账户的前提下找回订单和支付资料。" },
+        { label: "处理 ATM 未出钞", href: "/zh/guides/china-atm-cash-not-dispensed/", description: "停止重复取款，保存 ATM 证据，分别向 ATM 所属行和发卡行立案，并在等待期间使用安全的付款备选。" },
       ],
     },
     {

@@ -257,6 +257,7 @@ const body: StructuredPageBody = {
           href: "/zh/guides/lost-passport-in-china-exit-recovery/",
           description: "证件在途中发生变化时保护离境计划。",
         },
+        { label: "比较经珠海和经横琴去澳门", href: "/zh/guides/guangzhou-macau-transport-route/", description: "比较广州南到珠海站/拱北和横琴站/横琴口岸的完整门到门行程，并把口岸时间、行李和晚到后的住宿备选一起算进去。" },
       ],
     },
     {

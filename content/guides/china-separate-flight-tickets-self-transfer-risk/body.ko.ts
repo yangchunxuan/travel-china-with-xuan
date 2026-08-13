@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "출국 전 마지막 밤 보호", href: "/ko/guides/china-last-night-before-international-flight/", description: "셀프 환승을 마지막 단일 실패 지점으로 만들지 마세요." },
     { label: "정확한 상하이 공항 확인", href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/", description: "공항 이동은 연결이 아닙니다." },
-    { label: "국내선 운임 묶음 비교", href: "/ko/guides/china-domestic-flight-fare-bundle-baggage/", description: "저렴하다고 판단하기 전에 짐과 변경 조건을 계산하세요." }
+    { label: "국내선 운임 묶음 비교", href: "/ko/guides/china-domestic-flight-fare-bundle-baggage/", description: "저렴하다고 판단하기 전에 짐과 변경 조건을 계산하세요." },
+    { label: "구이양 표를 정확한 거점에 맞추기", href: "/ko/guides/guiyang-airport-and-rail-hubs/", description: "정확한 표의 역명, 호텔 위치, 구이저우 후속 일정을 기준으로 룽둥바오공항·철도역, 구이양북역·동역·구이양역을 구분하세요." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "연결·비연결 항공편에 대한 민항 안내", url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217590.html", publisher: "중국민용항공국", reviewedAt: "2026-08-12" },

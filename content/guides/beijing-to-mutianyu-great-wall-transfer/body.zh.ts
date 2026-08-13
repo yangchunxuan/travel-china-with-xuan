@@ -22,6 +22,18 @@ const body = {
       { heading: "儿童或父母", items: ["减少站立和不确定等待", "换乘时全组同行", "计划洗手间与避雨处"] },
       { heading: "行李或后续火车", items: ["不要带箱子反复换乘去景区", "出发前合规寄存", "避免同晚安排过紧的衔接"] },
     ]},
+    { id: "first-leg-heading", type: "heading", level: 2, text: "酒店到出发点这一段可能直接决定交通方式" },
+    { id: "first-leg-copy", type: "paragraph", text: "按真实出发时段把酒店入口放进路线。东直门对一个城区可能是简单首段，对另一个城区却是清早横穿北京。直通旅游巴士也只有在全组抵达指定上车点以后才算直达。使用包车时，应确认司机能停在哪个酒店入口或合法路边点。比较宣传车程前，要加入早餐、电梯、地铁开行、带孩子步行和寻找正确站点的时间。" },
+    { id: "layers", type: "callout", title: "交通、景区门票和上山方式是不同购买层", tone: "warning", body: "巴士或车辆通常只解决公路段。景区门票、内部接驳以及缆车、索道或步行上山可能各有规则和排队。查看当下景区订单，先决定上山和下山方式，再确定接人时间。不能因为交通卖家的图片出现长城，就默认包含所有票。" },
+    { id: "day-shape-heading", type: "heading", level: 2, text: "让当天形态匹配交通方式" },
+    { id: "day-shape", type: "table", caption: "同一次长城游览可能需要不同返程", columns: ["当天形态", "更合理的结构", "主要故障"], rows: [
+      ["只去慕田峪", "回程仍有效且团队灵活时，公交或直通巴士可行", "临时走更长城墙路线，消耗回程缓冲"],
+      ["慕田峪后回市中心晚餐", "设置更早离开城墙的时间，并保留市内最后一段", "把巴士到站时间当成餐厅抵达时间"],
+      ["慕田峪后乘晚间火车", "优先可控车辆，或取消当天衔接", "拥堵、车站错误和安检吃掉余量"],
+      ["孩子、父母或冬季条件", "减少交接，保留遮蔽和厕所时间", "按健壮成人的夏季最快案例设计"],
+    ]},
+    { id: "return-heading", type: "heading", level: 2, text: "写出完整返程指令" },
+    { id: "return-list", type: "list", ordered: true, items: ["写明全组结束下山并重新集合的位置。", "加入从城墙入口系统返回公路上车点或公交站的内部交通。", "确认每一段怀柔或北京接驳的目的地和方向，不能只看线路号。", "设置仍能保留一个已核实备选的离开景区时限。", "备选消失后，应停止延长游览并锁定返程，而不是继续等待理论末班。"] },
     { id: "late-heading", type: "heading", level: 2, text: "晚出发会先减少选项，不只是缩短游览" },
     { id: "late-table", type: "table", caption: "计划变化时怎么处理", columns: ["问题", "第一步", "不要"], rows: [
       ["错过直通车", "查运营方官方退改与当前公交路线", "跟随不明司机乘坐未确认车辆"],
@@ -36,6 +48,7 @@ const body = {
       { label: "北京应该选哪个火车站", href: "/zh/guides/which-beijing-railway-station/", description: "用正确车站保护后续列车。" },
       { label: "外国游客去故宫", href: "/zh/guides/forbidden-city-for-foreign-visitors/", description: "把另一个交通和预约都较复杂的北京日单独规划。" },
       { label: "你的中国行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "不要把两个困难日塞入脆弱时间表。" },
+      { label: "选择八达岭路线", href: "/zh/guides/beijing-to-badaling-great-wall-transfer/", description: "按出发枢纽、到达位置、回程和备选方案，比较高铁、S2市郊铁路、877路与当前机场线路。" },
     ]},
     { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
       { label: "慕田峪游客与公交信息", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html", publisher: "北京市政府", reviewedAt: "2026-08-12" },

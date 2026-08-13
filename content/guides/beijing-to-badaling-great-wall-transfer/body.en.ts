@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "Family or parents", items: ["Reduce terminal uncertainty", "Plan steep walking and lifts", "Leave before the last return"] },
     { heading: "Airport or train connection", items: ["Use only a dated official link", "Allow enough time for baggage and check-in", "Avoid a risky same-day connection"] },
   ]},
+  { id: "booking-heading", type: "heading", level: 2, text: "Turn the route into a dated reservation workflow" },
+  { id: "booking-copy", type: "paragraph", text: "Search the travel date rather than copying a route from a blog. For rail, compare the exact Beijing departure station, Badaling Great Wall station, departure time, arrival time and return inventory before paying. For S2 or Bus 877, use the current operating notice and save the departure location in Chinese. Then map the hotel entrance to that departure point at the actual morning hour. An option that looks simple on paper can lose its advantage when the first metro, security queue or cross-city taxi is added." },
+  { id: "identity", type: "callout", title: "The booking document must match the traveller", tone: "warning", body: "When a rail product requires identity information, enter the passport details exactly as the system accepts them and carry that same document. Leave time for staffed assistance if the automated gate does not read it. A screenshot of another traveller's ticket, a translated station nickname or a payment receipt is not a substitute for the valid order and travel document." },
+  { id: "wall-heading", type: "heading", level: 2, text: "Arrival at Badaling is the start of another route decision" },
+  { id: "wall-matrix", type: "table", caption: "Design the scenic-area portion before choosing the return", columns: ["Question", "Decision to make", "Why it matters"], rows: [
+    ["Which entrance and wall section?", "Choose the intended walking direction and regrouping point", "Different arrivals and internal movement do not create the same first step"],
+    ["How much climbing?", "Match the route to the least mobile traveller and current lift access", "The transport day already includes terminal walking and queues"],
+    ["How will the group return?", "Save the path from the wall to the correct rail stop or bus queue", "A smooth outbound does not guarantee an obvious return"],
+    ["What is fixed after the visit?", "Set a leave-the-wall time based on the last safe option, not closing time", "Dinner, a train or a flight turns delay into a larger failure"],
+  ]},
+  { id: "day-heading", type: "heading", level: 2, text: "Use a stop-loss rule for the day" },
+  { id: "day-plan", type: "list", ordered: true, items: ["Decide the latest time at which waiting for the preferred outbound no longer makes sense.", "Keep one verified alternative from the current location rather than a list of theoretical routes.", "Set a scenic-area turnaround time that protects the return inventory.", "If the group separates, agree on a named meeting point and a departure deadline before climbing.", "Do not add another distant Beijing attraction unless the return has enough margin after real traffic and station access."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "Wrong hub or missed service" },
   { id: "recovery", type: "table", caption: "Choose a confirmed backup before moving farther", columns: ["Problem", "Action"], rows: [
     ["At the wrong Beijing rail station", "Check official ticket changes and route from your current station; do not race across the city on a guess"],

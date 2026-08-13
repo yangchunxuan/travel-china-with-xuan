@@ -245,6 +245,7 @@ const body = {
         { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为押金和临时换订准备付款备用方案。" },
         { label: "如何判断中国酒店是否真的靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "另行核验从酒店门口到站台的可用路线。" },
         { label: "中国酒店为什么这么便宜？", href: "/zh/guides/why-are-hotels-in-china-so-cheap/", description: "比较物业类型和价值，不把价格与住宿登记混为一谈。" },
+        { label: "比较国际连锁与本地酒店", href: "/zh/guides/international-chain-or-local-hotel-china/", description: "从房型、外籍住客登记、付款、实际位置和问题处理比较中国的国际连锁与本地酒店。" },
       ],
     },
     {

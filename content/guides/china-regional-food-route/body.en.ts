@@ -228,7 +228,10 @@ const body = {
         { "label": "Prepare for a first shared meal", "href": "/guides/first-shared-meal-in-china/", "description": "Understand ordering, sharing and paying once the route reaches the table." },
         { "label": "Understand Guangzhou morning tea", "href": "/guides/how-guangzhou-morning-tea-works/", "description": "Use the dedicated guide if that regional meal format earns a place." },
         { "label": "Choose a hub-and-spoke or multi-base route", "href": "/guides/china-hub-and-spoke-or-multi-base-route/", "description": "Set the trip's base structure before adding another food region." },
-        { "label": "Use China's high-speed rail for the first time", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Verify the operating steps after the regional direction is chosen." }
+        { "label": "Use China's high-speed rail for the first time", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Verify the operating steps after the regional direction is chosen." },
+        { label: "Understand 12306 train meal delivery", href: "/guides/how-food-reaches-your-seat-on-china-train/", description: "Follow a 12306 meal from an eligible delivery station to your carriage and understand cutoffs, seat details and safe fallbacks." },
+        { label: "Pair Nanchang banfen and crock soup", href: "/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "Decode Nanchang mixed rice noodles and earthenware-crock soup, control chilli and portion size, use practical ordering phrases, and switch soups when stock runs out." },
+        { label: "Choose a tea landscape", href: "/guides/tea-landscape-regions-of-china/", description: "Choose a Chinese tea region by the landscape, work and community relationships you can actually observe—not by a best-tea ranking." },
       ]
     },
     {

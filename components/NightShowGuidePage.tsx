@@ -11,6 +11,10 @@ import {
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import {
   getNightShowSource,
   NIGHT_SHOW_GUIDE_SOURCES,
   type NightShowSourceId,
@@ -18,6 +22,7 @@ import {
 import { getNightShowGuideCopy } from "../lib/nightShowGuideCopy";
 import type { NightShowGuideCopy } from "../lib/nightShowGuideCopy.types";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./NightShowGuidePage.module.css";
@@ -91,6 +96,7 @@ function createStructuredData(
         name: "Homeground China",
         url: "https://homegroundchina.com/",
       },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
@@ -108,7 +114,8 @@ function createStructuredData(
           height: 1024,
           caption: copy.hero.figureCaption,
         },
-        author: { "@id": "https://homegroundchina.com/#organization" },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": "https://homegroundchina.com/#organization" },
         about: {
           "@type": "Thing",
@@ -249,10 +256,11 @@ export function NightShowGuidePage({
                     <p>{copy.hero.quickBody}</p>
                   </section>
 
-                  <p className={styles.checkedLine}>
-                    <span>{copy.hero.checkedLabel}</span>
-                    <time dateTime={guide.sourceReviewedDate}>{copy.hero.checkedDate}</time>
-                  </p>
+                  <LegacyEditorialByline
+                    guideId={guide.id}
+                    locale={locale}
+                    reviewedAt={guide.sourceReviewedDate}
+                  />
                 </div>
 
                 <figure className={styles.heroFigure}>

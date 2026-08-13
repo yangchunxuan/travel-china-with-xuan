@@ -312,6 +312,9 @@ const body = {
           href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "다세대 일행에 맞게 교통과 회복시간 가정을 조정하세요.",
         },
+        { label: "중국 공익성 완행열차 이해하기", href: "/ko/guides/china-public-welfare-slow-trains/", description: "중국 공익성 완행열차가 계속 운행되는 이유와 일상 승객, 여행자가 서비스를 존중하며 이용하는 방법을 알아봅니다." },
+        { label: "고속열차가 만들어지는 과정 보기", href: "/ko/guides/how-china-builds-high-speed-trains/", description: "대표적인 알루미늄 차체 전동차를 예로 들어 차체 제작, 시스템 통합, 정적 시운전, 실험실·선로 시험을 살펴봅니다." },
+        { label: "산둥반도 철도 호 계획", href: "/ko/guides/shandong-peninsula-coastal-city-rail-arc/", description: "세 도시가 더하는 서로 다른 경험을 정하고 정확한 역을 철도로 연결한 뒤 해안 경험이 반복되면 한 도시를 뺍니다." },
       ],
     },
     {

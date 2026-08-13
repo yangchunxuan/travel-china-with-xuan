@@ -46,7 +46,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "把这个机制应用到真实行程", items: [
     {label: "北京应该选哪座火车站？", href: "/zh/guides/which-beijing-railway-station/", description: "查看北京八座主要铁路客站的选择指南。"},
     {label: "第一次乘中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "车票、证件与乘车流程请留在全国指南。"},
-    {label: "在中国选择包车接送还是公共交通", href: "/zh/guides/china-private-transfer-or-public-transport/", description: "根据人数和行李选择最后一公里。"}
+    {label: "在中国选择包车接送还是公共交通", href: "/zh/guides/china-private-transfer-or-public-transport/", description: "根据人数和行李选择最后一公里。"},
+    { label: "把贵阳票面与正确枢纽对应起来", href: "/zh/guides/guiyang-airport-and-rail-hubs/", description: "按准确票面站名、酒店位置和后续贵州行程，区分龙洞堡机场及铁路站、贵阳北、贵阳东和贵阳站，并避免走错枢纽。" },
+    { label: "了解高速列车如何制造", href: "/zh/guides/how-china-builds-high-speed-trains/", description: "以代表性的铝合金车体动车组为例，从车体制造到系统集成、静态调试、实验室和线路试验，看懂制造链。" },
   ]},
   {id: "sources", type: "sources", title: "官方与独立来源", items: [
     {label: "铁路客运站周边地区规划建设指导意见", url: "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201805/t20180507_962719.html", publisher: "国家发展和改革委员会", reviewedAt: "2026-08-13"},

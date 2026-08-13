@@ -63,7 +63,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "检查路线是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "用可用旅行日测试最终结构。" },
     { label: "选择真正有用的交通型酒店", href: "/zh/guides/china-hotel-near-metro/", description: "只有每天容易出发，基地才有价值。" },
-    { label: "测试不同入境和离境城市", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "开口程可能把折返支线变成前移路线。" }
+    { label: "测试不同入境和离境城市", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "开口程可能把折返支线变成前移路线。" },
+    { label: "选择正确的大理古城下车点", href: "/zh/guides/dali-station-to-old-town/", description: "按住宿位置选择南门、洱海门、苍山门或北门下车点，保存中文目的地卡，避免下错地点后拖着行李横穿古城。" },
+    { label: "从白天走到夜晚游南明", href: "/zh/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "按日光、夜景与用餐节奏，从老城街巷走到甲秀楼、南明河和青云市集，并准备下雨与疲劳分支。" },
+    { label: "按景点顺序安排每一晚", href: "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "把每一晚放到下一项已确定的景点、抵达或离开节点附近，再判断一次换酒店是否真正减少折返。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "中国铁路旅客服务与实时行程查询", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" }

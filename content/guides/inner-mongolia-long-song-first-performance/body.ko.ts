@@ -165,7 +165,8 @@ const body = {
         {"label": "Homeground 중국 가이드 둘러보기", "href": "/ko/guides/", "description": "전체 가이드 모음으로 돌아갑니다."},
         {"label": "첫 포산 사자춤 공연 고르기", "href": "/ko/guides/foshan-lion-dance-first-performance-workflow/", "description": "또 다른 주최자·프로그램 확인법을 적용합니다."},
         {"label": "중국 공휴일 여행 달력 확인하기", "href": "/ko/guides/china-public-holidays-travel-calendar/", "description": "축제 인파와 일정 변경을 예상합니다."},
-        {"label": "중국에서 공연표 결제 준비하기", "href": "/ko/guides/how-to-pay-in-china-as-a-tourist/", "description": "현재 공연을 살 때 예비 결제 수단을 둡니다."}
+        {"label": "중국에서 공연표 결제 준비하기", "href": "/ko/guides/how-to-pay-in-china-as-a-tourist/", "description": "현재 공연을 살 때 예비 결제 수단을 둡니다."},
+        { label: "천극 공연 고르기", href: "/ko/guides/sichuan-opera-face-changing-with-context/", description: "가면 사진보다 극단, 작품, 노래와 대사, 몸짓과 무대 맥락을 확인해 천극 공연을 고르고 읽습니다." },
       ]
     },
     {

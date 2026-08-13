@@ -467,6 +467,7 @@ const body = {
           href: "/guides/is-your-china-itinerary-too-rushed/",
           description: "Count station access and recovery time as part of the travel day.",
         },
+        { label: "Choose a Badaling route", href: "/guides/beijing-to-badaling-great-wall-transfer/", description: "Compare high-speed rail, S2 suburban rail, Bus 877 and current airport links to Badaling by departure hub, arrival point, return and backup plan." },
       ],
     },
     {

@@ -66,7 +66,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Protect the last night before departure", href: "/guides/china-last-night-before-international-flight/", description: "Avoid making the self-transfer the final single point of failure." },
     { label: "Check the exact Shanghai airport", href: "/guides/shanghai-pudong-or-hongqiao-airport/", description: "An airport change is not a connection." },
-    { label: "Compare flight fare bundles", href: "/guides/china-domestic-flight-fare-bundle-baggage/", description: "Price baggage and change conditions before declaring a ticket cheap." }
+    { label: "Compare flight fare bundles", href: "/guides/china-domestic-flight-fare-bundle-baggage/", description: "Price baggage and change conditions before declaring a ticket cheap." },
+    { label: "Match the Guiyang ticket to the right hub", href: "/guides/guiyang-airport-and-rail-hubs/", description: "Use the exact ticket, hotel and onward route to distinguish Longdongbao Airport and rail station, Guiyang North, Guiyang East and central Guiyang Station." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "CAAC guidance on through and non-through flights", url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217590.html", publisher: "Civil Aviation Administration of China", reviewedAt: "2026-08-12" },

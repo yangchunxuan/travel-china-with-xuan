@@ -174,6 +174,7 @@ export function HomegroundHeader({
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesHref = planningServicesCopy.path;
   const guideHubHref = `${copy.path}guides/`;
+  const guidesAreCurrent = pageContext === "guides" || pageContext === "guide";
   const sectionLabels = navigationSections[locale];
   const studioHref = `${copy.path}studio/`;
   const languageHash =
@@ -339,7 +340,7 @@ export function HomegroundHeader({
             <>
               <a
                 aria-current={
-                  pageContext === "guides" ? "page" : undefined
+                  guidesAreCurrent ? "page" : undefined
                 }
                 href={guideHubHref}
               >
@@ -458,7 +459,7 @@ export function HomegroundHeader({
           <>
             <a
               aria-current={
-                pageContext === "guides" ? "page" : undefined
+                guidesAreCurrent ? "page" : undefined
               }
               href={guideHubHref}
               onClick={close}

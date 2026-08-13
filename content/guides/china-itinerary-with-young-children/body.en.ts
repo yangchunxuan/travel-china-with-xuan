@@ -59,7 +59,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Prepare for a first high-speed train", href: "/guides/china-high-speed-train-first-time-guide/", description: "Handle passports, tickets and stations after choosing the route." },
     { label: "Choose a hotel near useful transport", href: "/guides/china-hotel-near-metro/", description: "Reduce daily walking and transfers, not just map distance." },
-    { label: "Check the usable sightseeing days", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count arrival, transfer and recovery time honestly." }
+    { label: "Check the usable sightseeing days", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count arrival, transfer and recovery time honestly." },
+    { label: "Match each night to the next sight", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Place each Zhangjiajie night beside the next confirmed sight, arrival or departure, then decide whether one hotel move saves enough backtracking." },
   ] },
   { id: "sources", type: "sources", title: "Official source reviewed", items: [
     { label: "Railway child-ticket rules", url: "https://kyfw.12306.cn/otn/gonggao/children.html", publisher: "China Railway 12306", reviewedAt: "2026-08-12" }

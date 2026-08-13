@@ -11,7 +11,14 @@ import {
   getItineraryRushGuideCopy,
   itineraryRushGuideId,
 } from "../lib/chinaItineraryTooRushedI18n";
+import { getGuideEntry } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  EDITORIAL_ORGANIZATION_ID,
+  EDITORIAL_PERSON_ID,
+  editorialPersonSchema,
+} from "../lib/editorialIdentity";
+import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -65,11 +72,19 @@ function TransferScene({
 
 function createStructuredData(locale: HomegroundLocale) {
   const copy = getItineraryRushGuideCopy(locale);
+  const guide = getGuideEntry(itineraryRushGuideId, locale);
   const pageUrl = `${siteUrl}${copy.pagePath}`;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Organization",
+        "@id": EDITORIAL_ORGANIZATION_ID,
+        name: "Homeground China",
+        url: `${siteUrl}/`,
+      },
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${pageUrl}#article`,
@@ -77,20 +92,13 @@ function createStructuredData(locale: HomegroundLocale) {
         headline: copy.metadata.headline,
         description: copy.metadata.schemaDescription,
         image: socialImageUrl,
-        datePublished: "2026-07-22",
-        dateModified: "2026-07-22",
+        datePublished: guide.datePublished,
+        dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: pageUrl,
-        author: {
-          "@type": "Organization",
-          name: copy.authorLabel,
-          url: `${siteUrl}${copy.studioPath}`,
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Homeground China",
-          url: `${siteUrl}/`,
-        },
+        author: { "@id": EDITORIAL_PERSON_ID },
+        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
       },
       {
         "@type": "BreadcrumbList",
@@ -126,6 +134,7 @@ export function ChinaItineraryTooRushedPage({
   locale?: HomegroundLocale;
 }) {
   const copy = getItineraryRushGuideCopy(locale);
+  const guide = getGuideEntry(itineraryRushGuideId, locale);
   const homeCopy = getHomegroundCopy(locale);
   const plannerHref = `${homeCopy.path}?utm_source=china-itinerary-too-rushed&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale);
@@ -177,11 +186,14 @@ export function ChinaItineraryTooRushedPage({
                   ))}
                 </div>
               </div>
+              <LegacyEditorialByline
+                guideId={guide.id}
+                locale={locale}
+                reviewedAt={guide.sourceReviewedDate}
+              />
               <p className={styles.reviewed}>
-                {copy.byLabel} <Link href={copy.studioPath}>{copy.authorLabel}</Link>
-                {" · "}
                 {copy.publishedLabel}{" "}
-                <time dateTime="2026-07-22">{copy.publishedDateLabel}</time>
+                <time dateTime={guide.datePublished}>{copy.publishedDateLabel}</time>
                 {" · "}
                 {copy.dynamicDetailsNote}
               </p>

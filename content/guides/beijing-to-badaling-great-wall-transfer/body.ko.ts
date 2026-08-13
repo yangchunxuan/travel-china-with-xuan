@@ -17,6 +17,18 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "가족 또는 부모님", items: ["터미널 불확실성 줄이기", "가파른 도보와 승강기 고려", "마지막 편 전에 출발"] },
     { heading: "공항 또는 열차 연결", items: ["날짜가 확인된 공식 교통만 사용", "짐과 수속 시간을 충분히 확보", "같은 날 빠듯한 연결 피하기"] },
   ]},
+  { id: "booking-heading", type: "heading", level: 2, text: "경로를 날짜별 예약 절차로 바꾸세요" },
+  { id: "booking-copy", type: "paragraph", text: "블로그의 오래된 경로를 복사하지 말고 실제 여행일을 검색합니다. 철도라면 결제 전에 정확한 베이징 출발역, 바다링창청역, 출발·도착 시각과 돌아오는 표를 함께 비교하세요. S2나 877번 버스는 현재 운행 공지를 사용하고 출발지의 중국어 이름을 저장합니다. 그런 다음 실제 아침 시간에 호텔 입구에서 그 출발지까지를 지도에 넣습니다. 종이 위에서 단순한 선택도 첫 지하철, 보안 대기, 도시를 가로지르는 택시를 더하면 장점이 사라질 수 있습니다." },
+  { id: "identity", type: "callout", title: "예약 서류와 여행자가 일치해야 합니다", tone: "warning", body: "철도 상품에 신원 정보가 필요하면 시스템이 허용하는 형식으로 여권 정보를 정확히 입력하고 같은 서류를 지참합니다. 자동 게이트가 읽지 못할 때를 대비해 직원 도움을 받을 시간을 남기세요. 다른 여행자의 승차권 화면, 번역된 역 별칭, 결제 영수증은 유효한 주문과 여행 서류를 대신하지 못합니다." },
+  { id: "wall-heading", type: "heading", level: 2, text: "바다링 도착은 또 하나의 경로 결정 시작입니다" },
+  { id: "wall-matrix", type: "table", caption: "돌아오는 편을 고르기 전에 관광 구간을 설계하세요", columns: ["질문", "결정", "중요한 이유"], rows: [
+    ["어느 입구와 성벽 구간인가?", "걷는 방향과 재집결 지점을 정합니다", "교통별 도착 지점과 내부 이동은 같은 시작점을 만들지 않습니다"],
+    ["얼마나 오를 것인가?", "이동이 가장 제한된 사람과 당일 이동 보조 시설에 맞춥니다", "교통일에는 이미 역 보행과 대기가 포함됩니다"],
+    ["일행이 어떻게 돌아오는가?", "성벽에서 정확한 철도역이나 버스 대기열로 가는 길을 저장합니다", "순조로운 왕로가 명확한 귀로를 보장하지 않습니다"],
+    ["관람 뒤 고정 일정은?", "폐장 시각이 아니라 마지막 안전한 귀로에 맞춰 하산 시각을 정합니다", "저녁, 열차, 항공편은 지연의 피해를 키웁니다"],
+  ]},
+  { id: "day-heading", type: "heading", level: 2, text: "하루 일정에 중단 기준을 두세요" },
+  { id: "day-plan", type: "list", ordered: true, items: ["선호하는 왕로를 언제까지 기다리고 포기할지 미리 정합니다.", "이론적인 여러 경로 대신 현재 위치에서 실행 가능한 검증된 대안 하나를 둡니다.", "귀로 표를 지키는 성벽 회차 시각을 설정합니다.", "일행이 나뉘면 오르기 전에 이름 있는 만남 장소와 출발 시한을 합의합니다.", "실제 교통과 역 접근 뒤에도 여유가 충분하지 않다면 다른 먼 베이징 명소를 붙이지 않습니다."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "출발지를 틀리거나 편을 놓쳤다면" },
   { id: "recovery", type: "table", caption: "더 이동하기 전에 경로를 다시 판단한다", columns: ["문제", "행동"], rows: [
     ["잘못된 베이징 기차역", "공식 변경과 현재 역의 노선을 확인하고 추측으로 도시를 가로지르지 않기"],
@@ -33,6 +45,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "긴 이동이 있는 하루에 충분한 여유를 둡니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
+    { label: "바다링 대중교통 노선 안내", url: "https://english.beijing.gov.cn/latest/news/202406/t20240624_3725018.html", publisher: "베이징시 정부", reviewedAt: "2026-08-12" },
     { label: "877번 버스 출발지 베이투청 이전", url: "https://www.bjbus.com/home/fun_news_detail.php?uNewsCode=00010196&uNewsType=1", publisher: "베이징 버스 운영사", reviewedAt: "2026-08-13" },
     { label: "S2 노선 난커우역 출발 안내", url: "https://jtw.beijing.gov.cn/sjtl/202111/t20211118_2540164.html", publisher: "베이징시 교통위원회", reviewedAt: "2026-08-13" },
     { label: "2026년 서우두공항 직행", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202602/t20260211_4507827.html", publisher: "베이징시 정부", reviewedAt: "2026-08-12" },

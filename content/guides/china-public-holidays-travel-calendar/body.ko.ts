@@ -273,6 +273,8 @@ const body = {
           href: "/ko/guides/how-much-does-a-china-trip-cost/",
           description: "전국 공통 연휴 인상률 대신 위치, 유연성과 예약 조건을 비교하세요.",
         },
+        { label: "녹도로 청두 읽기", href: "/ko/guides/chengdu-greenway-city-ring/", description: "체력과 관심사에 맞는 청두 순환 녹도 구간을 고르고 대중교통 연결과 중간 출구까지 준비합니다." },
+        { label: "막고굴 자유 관람 계획", href: "/ko/guides/mogao-caves-independent-visit-workflow/", description: "외국 여권 소지자용 공식 예약 경로를 이용하고 일반·응급 관람을 구분한 뒤, 올바른 첫 장소에 도착해 날씨 변화에 대비하세요." },
       ],
     },
     {

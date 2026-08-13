@@ -257,6 +257,7 @@ const body: StructuredPageBody = {
           href: "/guides/lost-passport-in-china-exit-recovery/",
           description: "Protect the exit plan if the document changes mid-trip.",
         },
+        { label: "Compare Zhuhai and Hengqin for Macau", href: "/guides/guangzhou-macau-transport-route/", description: "Choose Guangzhou South to Zhuhai/Gongbei or Hengqin by your Guangzhou starting point, Macau hotel, luggage, border hours and required spare time." },
       ],
     },
     {

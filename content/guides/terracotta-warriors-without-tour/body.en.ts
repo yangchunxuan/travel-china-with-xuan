@@ -397,6 +397,7 @@ export default {
           href: "/guides/how-much-does-a-china-trip-cost/",
           description: "Compare the cost roles of public transport, a car, a guide and broader trip support.",
         },
+        { label: "Plan Shaanxi History Museum", href: "/guides/shaanxi-history-museum-booking-and-collection-plan/", description: "Reserve with a foreign passport, avoid confusing the Main Building with the Qin-Han Gallery and choose a 90-minute or deeper collection route in Xi'an." },
       ],
     },
     {

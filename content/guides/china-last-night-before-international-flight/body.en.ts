@@ -337,6 +337,7 @@ const body = {
           href: "/guides/china-itinerary-with-older-parents/",
           description: "Adjust connection margins for a multigenerational party.",
         },
+        { label: "Match the hub to the correct slope", href: "/guides/changbai-mountain-hubs-to-park-gates/", description: "Use a confirmed North or West Scenic Area booking to choose Changbaishan Station, Changbaishanxi Station or Changbaishan Airport and plan the road transfer." },
       ],
     },
     {
