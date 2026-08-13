@@ -1,0 +1,23 @@
+{
+  "id": "wenchang-commercial-space-city",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "destination-boundary-guide",
+  "topics": ["wenchang", "commercial-space", "rocket-launch", "hainan"],
+  "destinations": ["china", "hainan", "wenchang", "longlou"],
+  "heroImagePath": "/images/guides/wenchang-commercial-space-city/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wenchang-commercial-space-city/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "destination", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/wenchang-commercial-space-city/", "title": "Wenchang Commercial Space City: What Visitors Can Actually See", "headline": "Wenchang Commercial Space City: Separate Launch Sites, Industry and Visitor Areas", "description": "Understand Wenchang's national and commercial launch sites, aerospace-industry zones, public viewing areas and planned projects before building a responsible visit.", "heroAlt": "Verified public coastal viewing area in Wenchang with space infrastructure visible at a lawful distance", "navTitle": "Understand Wenchang's space-city map", "featuredLinkLabel": "Separate Wenchang's space sites", "openGraphLocale": "en_US", "cardTags": ["Wenchang", "Commercial space", "Hainan"]},
+    "zh": {"path": "/zh/guides/wenchang-commercial-space-city/", "title": "文昌商业航天城：游客实际能看什么", "headline": "文昌商业航天城：分清发射场、产业空间与公众区域", "description": "先分清文昌的国家发射场、商业发射场、航天产业区、公众观赏区和规划项目，再设计一次边界清楚的航天主题访问。", "heroAlt": "在文昌经核验的公共海岸观赏区合法远眺航天设施", "navTitle": "读懂文昌航天城地图", "featuredLinkLabel": "分清文昌航天空间", "openGraphLocale": "zh_CN", "cardTags": ["文昌", "商业航天", "海南"]},
+    "ko": {"path": "/ko/guides/wenchang-commercial-space-city/", "title": "원창 상업우주도시: 여행자가 실제로 볼 수 있는 것", "headline": "원창 상업우주도시: 발사장·산업 공간·관람 구역 구분하기", "description": "국가 발사장과 상업 발사장, 우주산업 구역, 공개 관람 구역, 계획 단계 사업을 구분해 책임 있는 원창 방문을 설계합니다.", "heroAlt": "원창의 확인된 공개 해안 관람 구역에서 합법적인 거리로 보이는 우주 시설", "navTitle": "원창 우주도시 지도 이해하기", "featuredLinkLabel": "원창의 우주 공간 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["원창", "상업우주", "하이난"]}
+  }
+}
