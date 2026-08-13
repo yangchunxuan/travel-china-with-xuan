@@ -34,7 +34,7 @@ Traveller discussions were used only to identify recurring questions. They suppo
 ## Verified official facts
 
 1. The July 2024 seven-department circular says local departments and online platforms should not use qualification requirements as a threshold restricting accommodation operators from receiving overseas guests. It also says platforms and operators should not unlawfully publish non-acceptance information.
-2. The May 2024 China Government Network response says hotels must not refuse overseas guests on the ground that they lack “foreign-related qualifications.”
+2. A Xinjiang culture-and-tourism government mirror of a China Tourism News report records the May 2024 response from the Ministry of Public Security, Ministry of Commerce and National Immigration Administration: hotels must not refuse overseas guests on the ground that they lack “foreign-related qualifications.” This corroborates, but does not replace, the primary seven-department circular above.
 3. Article 39, as quoted and explained by the National Immigration Administration, distinguishes hotel from non-hotel stays: a hotel registers and submits a foreign guest’s hotel accommodation information; for a residence outside a hotel, the foreigner or host completes registration within 24 hours.
 4. On the review date, the NIA still described online non-hotel registration as a pilot beginning 2026-03-20 in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan. This is not a hotel check-in route and must be rechecked before use.
 5. The seven-department circular assigns accommodation-policy consultation and related feedback roles to 12367 and 12345. SAMR directs consumer complaints to the national 12315 platform or local 12315 hotline. State Council guidance distinguishes non-emergency 12345 matters from 110 police emergencies.
@@ -62,8 +62,8 @@ Traveller discussions were used only to identify recurring questions. They suppo
    `https://www.mofcom.gov.cn/zwgk/zcfb/art/2024/art_10ddb29858c24ece86b3f575bda1d9c4.html`
 2. State Council website — English summary of the 2024 accommodation measures
    `https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html`
-3. China Government Network — response on refusal for lack of “foreign-related qualifications”
-   `https://www.gov.cn/hudong/202405/content_6952770.htm`
+3. Xinjiang Department of Culture and Tourism — government-hosted report on the official response against refusal for lack of “foreign-related qualifications”
+   `https://wlt.xinjiang.gov.cn/wlt/xytx/202406/1ee6037434084d3ab23d68b7df174b4d.shtml`
 4. National Immigration Administration — 2026 Chinese interpretation of hotel and non-hotel accommodation registration
    `https://www.nia.gov.cn/n741440/n741577/c1771556/content.html`
 5. Beijing Municipal Government — local guide distinguishing hotel and non-hotel registration
@@ -81,3 +81,10 @@ Traveller discussions were used only to identify recurring questions. They suppo
 ## Asset status
 
 No hero binary is included. `image-plan.md` requires a real, authorized staffed hotel entrance or reception scene with no visible passport handoff, booking details, room number, guest screen or other personal data. No AI documentary image is permitted.
+
+## Central integration re-review — 2026-08-13
+
+- Reopened the full 2024 seven-department accommodation measures and the National Immigration Administration's 2026 explanation. The hotel must submit hotel-stay registration; the traveller/host duty within 24 hours applies to non-hotel accommodation.
+- Reconfirmed that the NIA online non-hotel pilot beginning 2026-03-20 covers only Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan. The article does not generalize it to hotel check-in or to all China.
+- Replaced a China Government Network URL that now returns 404 with an accessible Xinjiang culture-and-tourism government mirror of the same reported three-agency response. The primary seven-department circular remains the controlling source.
+- Reconfirmed that no hotel, platform, refund, rebooking or complaint outcome is guaranteed. EN/ZH/KO structure remained aligned; `sourceReviewedDate` remains 2026-08-13.

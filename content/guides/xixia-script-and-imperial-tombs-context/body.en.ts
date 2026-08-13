@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -12,7 +12,7 @@ const body = {
       id: "direct-answer",
       type: "callout",
       title: "Can fragmentary evidence reconstruct a civilization?",
-      body: "It can support a connected but incomplete account. Script establishes language, titles or institutional expression where a readable text survives; objects show materials, craft and ritual contexts; landscape shows how the royal cemetery was organized. None of the three automatically identifies every tomb occupant, restores every ceremony or reveals what all Xixia subjects believed.",
+      body: "It can support a connected but incomplete account. Script can preserve language, titles or institutional expression where readable text survives; objects show materials, craft and ritual contexts; landscape shows how the royal cemetery was organized. None of the three automatically identifies every tomb occupant, restores every ceremony or reveals what all Xixia subjects believed.",
       tone: "decision"
     },
     {
@@ -82,9 +82,9 @@ const body = {
       caption: "Official records and their limits",
       columns: ["Case", "What official evidence supports", "What remains bounded"],
       rows: [
-        ["Mausoleum No. 3", "Surface excavation in 2000–2001 clarified parts of its form and construction technique", "Architecture does not by itself settle every ritual performed there"],
+        ["Mausoleum No. 3", "Clearance and excavation of its above-ground architectural remains in 2000–2001 clarified parts of its form and construction technique", "Architecture does not by itself settle every ritual performed there"],
         ["Mausoleum No. 6", "Excavations took place in 1972–1975 and 2007–2008; inscription evidence has been used to infer an association with Li Deming", "The owner should be described as inferred or attributed, not presented as an undisputed identification"],
-        ["Northern architectural complex", "Excavation recorded a high-status group of structures, and bilingual Xixia–Chinese stele fragments were found in this area", "Its interpretation as an ancestral temple is a research proposal, not a surviving building nameplate"],
+        ["Northern architectural complex", "Excavation recorded a high-status group of structures, and both Xixia-script and Chinese stele fragments were found in this area", "Its interpretation as an ancestral temple is a research proposal, not a surviving building nameplate"],
         ["Gilded bronze ox", "The object came from subordinate tomb MIII-107 and demonstrates sophisticated metalworking and a specific burial context", "One elite object does not describe ordinary Xixia households or prove a single ethnic style"]
       ]
     },
@@ -154,8 +154,9 @@ const body = {
         {"label": "Xixia Imperial Tombs World Heritage property", "url": "https://whc.unesco.org/en/list/1736", "publisher": "UNESCO World Heritage Centre", "reviewedAt": "2026-08-13"},
         {"label": "Xixia Imperial Tombs nomination dossier", "url": "https://whc.unesco.org/en/documents/206074", "publisher": "UNESCO World Heritage Centre", "reviewedAt": "2026-08-13"},
         {"label": "Archaeological work at the Xixia Imperial Tombs", "url": "https://whhlyt.nx.gov.cn/xxfb/wlyw/202311/t20231113_4347356_zzb.html", "publisher": "Ningxia Department of Culture and Tourism", "reviewedAt": "2026-08-13"},
-        {"label": "Xixia archaeology and the northern architectural complex", "url": "https://www.nopss.gov.cn/n1/2026/0121/c461625-40649844.html", "publisher": "National Office for Philosophy and Social Sciences", "reviewedAt": "2026-08-13"},
-        {"label": "Xixia Imperial Tombs Museum visitor overview", "url": "https://www.yinchuan.gov.cn/sshc/lyjd/zdwbcs/202511/t20251125_5090985.html", "publisher": "Yinchuan People’s Government", "reviewedAt": "2026-08-13"}
+        {"label": "Xixia archaeology and inscribed stele fragments", "url": "https://www.nopss.gov.cn/n1/2026/0121/c461625-40649844.html", "publisher": "National Office for Philosophy and Social Sciences", "reviewedAt": "2026-08-13"},
+        {"label": "Xixia Imperial Tombs Museum visitor overview", "url": "https://www.yinchuan.gov.cn/sshc/lyjd/zdwbcs/202511/t20251125_5090985.html", "publisher": "Yinchuan People’s Government", "reviewedAt": "2026-08-13"},
+        { label: "Hero photograph: Xixia Imperial Tombs landscape, Thebrainchamber1 (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Western_Xia_mausoleums_3.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ]
     }
   ]

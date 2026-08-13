@@ -6,14 +6,14 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "Keep an international arrival day flexible by default. Add a scarce timed reservation only when every link—entry formalities, baggage, ground transport, hotel handling and venue admission—is known well enough, and when missing it would be acceptable. If one critical input is unknown, choose a replaceable block instead of pretending the scheduled landing or train arrival is sightseeing time."
+      text: "Keep an international arrival day flexible by default. Add a hard-to-replace timed reservation only when every link—entry formalities, baggage, ground transport, hotel handling and venue admission—is known well enough, and when missing it would be acceptable. If one critical input is unknown, choose a replaceable block instead of pretending the scheduled landing or train arrival is sightseeing time."
     },
     {
       id: "two-blocks",
       type: "comparison",
       title: "Know what you are placing on the first day",
       columns: [
-        { heading: "Timed anchor", body: "A scarce reservation with a named person, date or entry window, plus a late-arrival, cancellation or no-show consequence. It cannot simply slide two hours." },
+        { heading: "Timed booking", body: "A hard-to-replace reservation tied to a named person, date or entry window, with late-arrival, cancellation or no-show consequences. It cannot simply slide two hours." },
         { heading: "Flexible block", body: "A nearby meal, rest, neighbourhood walk or ordinary shop visit that can start late, shorten or disappear without damaging the trip." }
       ]
     },
@@ -40,7 +40,7 @@ const body = {
       title: "Assumptions are visible, not hidden",
       body: "This method assumes the traveller is legally eligible to enter, carries the booking document, and has no guaranteed processing time. It does not use a fabricated immigration allowance, punctuality rate or universal airport-to-city duration. Unknown arrival, bag, hotel or admission inputs are treated conservatively as a range that can consume the proposed visit."
     },
-    { id: "gate-heading", type: "heading", level: 2, text: "A timed anchor must pass all four admission gates" },
+    { id: "gate-heading", type: "heading", level: 2, text: "A timed booking must pass all four admission gates" },
     {
       id: "anchor-gates",
       type: "list",
@@ -59,12 +59,12 @@ const body = {
       caption: "Use confirmed values or conservative ranges; never write zero for an unknown",
       columns: ["Ledger field", "Record", "If unknown"],
       rows: [
-        ["Transport arrival", "Scheduled service plus live status", "Keep a delay range and do not anchor tightly"],
+        ["Transport arrival", "Scheduled service plus live status", "Keep a delay range and do not book a tight slot"],
         ["Entry and collection", "Required checks and whether bags are checked", "Treat the whole terminal-release block as variable"],
         ["City transfer", "Named mode, operating window, transfers and final walk", "Retain at least two viable modes"],
         ["Hotel handoff", "Reception, storage, room readiness and vehicle or walking entrance", "Go directly to a flexible nearby block"],
-        ["Venue handoff", "Security, ticket document, entry, latest scan and cancellation", "Do not reserve a scarce slot"],
-        ["Recovery capacity", "Alternative activity, meal and rest option", "The first day is not ready for an anchor"]
+        ["Venue handoff", "Security, ticket document, entry, latest scan and cancellation", "Do not reserve a hard-to-replace slot"],
+        ["Recovery capacity", "Alternative activity, meal and rest option", "The first day is not ready for a timed booking"]
       ]
     },
     { id: "branches-heading", type: "heading", level: 2, text: "Three arrival branches produce different answers" },
@@ -74,14 +74,14 @@ const body = {
       title: "Test the chain you actually have",
       columns: [
         { heading: "International flight", items: ["Includes entry formalities and usually a longer terminal-release chain", "Checked bags add a separate failure branch", "Default to flexibility even with an early scheduled arrival"] },
-        { heading: "Domestic flight", items: ["No frontier inspection, but gate, bag and ground transport remain variable", "A disrupted flight can change both arrival and driver-waiting terms", "A replaceable evening is normally safer than a scarce ticket"] },
-        { heading: "Domestic railway", items: ["The station, identification flow and exit still matter", "A carry-on-only passenger may remove the baggage branch", "A later anchor is conditional on live 12306 options, hotel storage and venue rules"] }
+        { heading: "Domestic flight", items: ["No frontier inspection, but gate, bag and ground transport remain variable", "A disrupted flight can change both arrival and driver-waiting terms", "A replaceable evening is normally more resilient than a hard-to-replace ticket"] },
+        { heading: "Domestic railway", items: ["The station, identification flow and exit still matter", "A carry-on-only passenger may remove the baggage branch", "A later timed visit is conditional on live 12306 options, hotel storage and venue rules"] }
       ]
     },
     {
       id: "venue-proof",
       type: "paragraph",
-      text: "Real venues show why the final gate matters. The Palace Museum publishes real-name, date and session rules; the National Museum of China states that visitors are checked against the reserved document and entry period, with cancellation and no-show conditions. These are examples of fragile anchors, not a claim that every museum uses the same rule. Re-read the named venue's notice immediately before booking and again on the day."
+      text: "Real venues show why the final gate matters. The Palace Museum publishes real-name, date and session rules; the National Museum of China states that visitors are checked against the reserved document and entry period, with cancellation and no-show conditions. These are examples of hard-to-replace bookings, not a claim that every museum uses the same rule. Re-read the named venue's notice immediately before booking and again on the day."
     },
     { id: "scenarios-heading", type: "heading", level: 2, text: "Two travellers, two defensible decisions" },
     {
@@ -90,7 +90,7 @@ const body = {
       caption: "The conclusion follows the chain, not enthusiasm",
       columns: ["Traveller", "Chain test", "Decision"],
       rows: [
-        ["Long-haul international arrival in the afternoon, checked bag, Palace Museum ticket proposed", "Flight, frontier inspection, baggage, transfer, hotel and museum security form one serial chain; the ticket cannot absorb an unknown delay", "Do not use the museum as the arrival-day anchor. Keep a nearby meal, walk or rest block and visit on a full local day"],
+        ["Long-haul international arrival in the afternoon, checked bag, Palace Museum ticket proposed", "Flight, frontier inspection, baggage, transfer, hotel and museum security form one serial chain; the ticket cannot absorb an unknown delay", "Do not make the museum the fixed arrival-day booking. Keep a nearby meal, walk or rest block and visit on a full local day"],
         ["Morning domestic high-speed rail, carry-on bag, station-adjacent hotel confirms storage, later museum period", "The bag branch is short and the hotel handoff is confirmed; the remaining risks are live train status, station exit and the venue's late-entry rule", "A timed visit can be considered only after same-day checks, with a cancellable or acceptable-loss ticket and a nearby fallback"]
       ]
     },
@@ -116,7 +116,7 @@ const body = {
       rows: [
         ["Flight delay is clear before departure", "Use the venue's official cancellation channel before its deadline", "Activate the flexible hotel-area module"],
         ["Checked bag does not arrive", "Request the carrier's baggage incident record and agree collection or delivery under the applicable terms", "Do not drag the unresolved bag case to a timed venue"],
-        ["Railway arrival is disrupted", "Use current 12306 rules and actual availability; a change is not guaranteed", "Cancel the anchor if no comfortable later chain exists"],
+        ["Railway arrival is disrupted", "Use current 12306 rules and actual availability; a change is not guaranteed", "Cancel the timed booking if no comfortable later chain exists"],
         ["Hotel cannot store bags", "Ask for a documented alternative or use a staffed storage option you have independently verified", "Drop the cross-city visit"],
         ["Venue closes or admission rule changes", "Save the official notice and follow its refund or rebooking process", "Use the preselected non-ticketed module"]
       ]
@@ -126,7 +126,7 @@ const body = {
       id: "switch-conditions",
       type: "comparison",
       columns: [
-        { heading: "Move toward an anchor", body: "A domestic arrival replaces an international one; bags become carry-on only; the hotel confirms immediate storage; the venue offers a substantially later period; or the booking is easy to cancel with low loss." },
+        { heading: "A timed booking becomes more workable", body: "A domestic arrival replaces an international one; bags become carry-on only; the hotel confirms immediate storage; the venue offers a substantially later period; or the booking is easy to cancel with low loss." },
         { heading: "Move toward flexibility", body: "The service changes terminal or station; checked or special baggage is added; arrival shifts later; ground transport nears its operating boundary; hotel storage is uncertain; or the venue tightens late-entry and no-show rules." }
       ]
     },
@@ -149,7 +149,7 @@ const body = {
       type: "callout",
       tone: "neutral",
       title: "This page owns one first-day decision",
-      body: "It decides whether an arrival day can carry a scarce timed anchor. The rushed-itinerary guide owns whole-trip pace and transfer-day overload; airport and station guides own exact routes; the last-night guide owns departure protection. This page does not calculate a complete itinerary or promise entry, transport or admission times."
+      body: "It decides whether an arrival day can carry a hard-to-replace timed booking. The rushed-itinerary guide owns whole-trip pace and transfer-day overload; airport and station guides own exact routes; the last-night guide owns departure protection. This page does not choose the ground-transfer mode, calculate a complete itinerary or promise entry, transport or admission times."
     },
     {
       id: "human-help",
@@ -166,6 +166,7 @@ const body = {
         { label: "Plan your China trip", href: "/plan/", description: "Return to the planning collection." },
         { label: "Check whether the whole itinerary is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count usable days and transfer load across the full trip." },
         { label: "Choose useful entry and exit cities", href: "/guides/china-open-jaw-flights-route-planning/", description: "Test gateway geometry before fixing the first night." },
+        { label: "Choose a private transfer or public transport", href: "/guides/china-private-transfer-or-public-transport/", description: "Compare the two ground-transfer options for the exact arrival segment." },
         { label: "Choose a hotel that is genuinely near the metro", href: "/guides/china-hotel-near-metro/", description: "Verify the entrance and final walk, not the map label." },
         { label: "Prepare for a Forbidden City visit", href: "/guides/forbidden-city-for-foreign-visitors/", description: "Handle the venue-specific booking and entry task on a suitable day." }
       ]

@@ -3,7 +3,7 @@
 - Topic ID: `hg-topic-0230`
 - Reviewed: `2026-08-13`
 - Owner: employee 4 / planning
-- Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+- Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 ## Direct answer and editorial rule
 
@@ -81,14 +81,19 @@ Assess one named ground segment. Eliminate any public option whose operating/acc
 
 ## Canonical audit and ownership boundary
 
-The exact slug is absent from `origin/main`. Specific corridor owners—including `beijing-south-station-to-capital-or-daxing-airport` and `pudong-airport-to-shanghai-disneyland`—retain exact route execution. `shanghai-pudong-or-hongqiao-airport` retains airport selection. The batch wheelchair guide retains end-to-end accessibility verification. This page owns only the purchase decision for one high-friction arrival/departure ground segment; it does not create city × mode pages, a national fare table or supplier rankings.
+At the start of the 2026-08-13 review, the exact slug was absent from the baseline `origin/main`. Specific corridor owners—including `beijing-south-station-to-capital-or-daxing-airport` and `pudong-airport-to-shanghai-disneyland`—retain exact route execution. `shanghai-pudong-or-hongqiao-airport` retains airport selection, while `wheelchair-accessible-china-route-planning` retains end-to-end accessibility verification. This page owns only the purchase decision for one complex arrival/departure ground segment; it does not create city × mode pages, a national fare table or supplier rankings.
 
 ## Link plan
 
 - Parent: `/plan/`.
 - Published supporting owners: `shanghai-pudong-or-hongqiao-airport`, `beijing-south-station-to-capital-or-daxing-airport`, `china-hotel-near-metro`, `china-last-night-before-international-flight`.
+- Same-batch adjacent owner: `wheelchair-accessible-china-route-planning` verifies the end-to-end accessibility chain; this page only compares paid-car and public options for one named segment.
 - Future inbound owners: named airport/station execution pages may link here when users need to choose how much handling to buy away.
 
 ## Maintenance trigger
 
 Recheck terminal pickup points, public operating windows and maintenance, station procedure, ride-hailing price/complaint regulation and CAAC baggage/change rules before publication and after any official update. Quoted service terms always require booking-specific confirmation.
+
+## Central review note — 2026-08-13
+
+EN/ZH/KO copy, structural parity, metadata, internal links and official-source boundaries were reviewed together. Legal-status wording now asks readers to identify the provider and verify any required local credentials instead of asking them to make an unsupported legality judgment; wheelchair claims remain conditional on end-to-end operator confirmation.

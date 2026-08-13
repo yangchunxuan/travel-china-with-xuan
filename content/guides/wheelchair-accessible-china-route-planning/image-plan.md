@@ -1,6 +1,14 @@
 # Image plan — Planning a Wheelchair-Accessible China Route
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** [Exit A ramp of Beiyuan Station (20210709114327).jpg](https://commons.wikimedia.org/wiki/File:Exit_A_ramp_of_Beiyuan_Station_(20210709114327).jpg), N509FZ, CC BY-SA 4.0; photographed 2021-07-09
+- **Documented place:** Exit A, Beiyuan Station, Beijing Subway
+- **Output:** `/images/guides/wheelchair-accessible-china-route-planning/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only; no generative alteration
+- **Accuracy boundary:** the ramp is one observed access node. The image does not certify the full station, lift status, assistance, last mile, hotel, venue or an end-to-end route.
 
 ## Asset principle
 

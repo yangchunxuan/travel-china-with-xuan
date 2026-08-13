@@ -1,6 +1,14 @@
 # Image plan — Beijing, Xi'an and Chengdu Route Order
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Sources:** Homeground local library photographs `北京优选素材/01_北京古都地标/天坛祈年殿_07.jpg`, `西安优选素材/01_城墙钟鼓楼与古城/西安钟楼.jpg`, and `成都优选素材/02_宽窄巷子锦里与街巷/成都宽窄巷子.jpg`
+- **Rights basis:** owner's 2026-08-10 authorization for the organised local library, recorded in the central provenance ledger
+- **Output:** `/images/guides/beijing-xian-chengdu-route-order/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** three conventional documentary crops joined as a triptych; no generative alteration
+- **Accuracy boundary:** the panels identify one real landmark context in each city. They do not prescribe route direction, gateways, transfer times, transport mode or night allocation.
 
 ## Hero recommendation
 

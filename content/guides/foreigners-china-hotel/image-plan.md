@@ -1,6 +1,17 @@
 # Image plan
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** Wikimedia Commons, `File:Check-in counter of Changchun Huatian Hotel (20260120074056).jpg`
+- **Original URL:** https://commons.wikimedia.org/wiki/File:Check-in_counter_of_Changchun_Huatian_Hotel_(20260120074056).jpg
+- **Creator / licence:** N509FZ, CC BY-SA 4.0
+- **Documented place and date:** Changchun Huatian Hotel, Changchun; 2026-01-20
+- **Output:** `/images/guides/foreigners-china-hotel/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only
+- **Accuracy boundary:** the empty counter documents a real hotel check-in setting, not a foreign guest's transaction and not proof that every traveller will be accepted.
+- **AI status:** real documentary photograph; no generative edit
 
 No hero binary is included in this draft.
 

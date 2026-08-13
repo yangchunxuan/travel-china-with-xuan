@@ -1,8 +1,16 @@
 # Image plan — Jingxian Xuan paper
 
-Status: `ASSETS NEEDED`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 
-No image has been added to the repository. Do not use the widely circulated Anhui Museum Xuan-paper diorama as if it were a live Jingxian workshop, and do not use generic East Asian paper-making footage.
+## Final central selection — 2026-08-13
+
+- **Source:** [Jingxian Railway Station (20150807144034).JPG](https://commons.wikimedia.org/wiki/File:Jingxian_Railway_Station_(20150807144034).JPG), N509FZ, CC BY-SA 4.0; photographed 2015-08-07
+- **Documented place:** Jingxian Railway Station, Jing County, Anhui
+- **Output:** `/images/guides/jingxian-xuan-paper-museum-workshop-choice/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only; no generative alteration
+- **Accuracy boundary:** this shows the real arrival gateway to Jing County, not papermaking, a workshop, a museum exhibit, opening conditions or a production demonstration.
+
+No accurately documented reusable workshop photograph was found. Central selected an exact Jingxian arrival image and labels it narrowly. Do not use the widely circulated Anhui Museum Xuan-paper diorama as if it were a live Jingxian workshop, and do not use generic East Asian paper-making footage.
 
 ## Hero — required
 

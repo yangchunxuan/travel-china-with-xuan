@@ -1,6 +1,17 @@
 # Image plan
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** Wikimedia Commons, `File:Entrance of the Haiyu Hotspring Hotel, Beibei, Chongqing.JPG`
+- **Original URL:** https://commons.wikimedia.org/wiki/File:Entrance_of_the_Haiyu_Hotspring_Hotel,_Beibei,_Chongqing.JPG
+- **Creator / licence:** Jpbowen, CC BY-SA 4.0
+- **Documented place and date:** Haiyu Hotspring Hotel, Beibei, Chongqing; 2014-09-16
+- **Output:** `/images/guides/international-chain-or-local-hotel-china/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only
+- **Accuracy boundary:** this is one named local property's exterior. It is not evidence about every local hotel, every international chain, current service standards or passport acceptance.
+- **AI status:** real documentary photograph; no generative edit
 
 ## Required hero
 

@@ -68,3 +68,9 @@ The verified localized Stay parent collection is linked first, followed by three
 ## Asset status
 
 No hero binary is included. See `image-plan.md`. A future documentary image must prove location and rights, be empty of guests and remove room number, key, booking, passport and other personal or access-control information. AI documentary hotel imagery is prohibited.
+
+## Central integration re-review — 2026-08-13
+
+- Reopened the official accessibility law, GB 55019-2021 notice and GB/T 47543-2026 status page. GB/T 47543-2026 remains a recommended standard effective 2026-08-01; no unavailable clause is quoted or inferred.
+- Reconfirmed the article's boundary: law and standards do not certify a particular hotel's room, route, equipment condition or allocation. The traveller must obtain property- and room-specific evidence and retain a usable alternative.
+- EN/ZH/KO structure remained aligned. This pass changed only natural-language wording; `sourceReviewedDate` remains 2026-08-13.

@@ -1,9 +1,10 @@
 # Source log — Qiaopi letters, remittances and migration
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 - Topic ID: `hg-topic-0708`
 - Source review date: 2026-08-13
+- Central verification: 2026-08-13 — UNESCO register/dossier, archive field guidance and Shantou visitor/acquisition notices rechecked
 - Canonical owner: field-level reading of Qiaopi/Yinxin as correspondence, remittance evidence and delivery network
 - Excludes: a generic overseas-Chinese history, genealogy service, modern remittance advice, political narrative, and publication of full private letters
 
@@ -16,9 +17,10 @@ Queries checked on 2026-08-13 included `侨批 银信 UNESCO 提名档案`, `Qia
 1. [UNESCO Memory of the World register entry](https://www.unesco.org/en/memory-world/qiaopi-and-yinxin-correspondence-and-remittance-documents-overseas-chinese) confirms registration in 2013 and describes letters, reports, account books and remittance receipts from the nineteenth and twentieth centuries.
 2. [Formal 2012 nomination dossier](https://media.unesco.org/sites/default/files/webform/mow001/china_qiaopi_and_yinxin.pdf) identifies the Guangdong and Fujian archival owners, lists holding institutions, explains Qiaopi/Yinxin terminology, describes post offices and private banking agents, and records access/copyright conditions.
 3. [Guangdong Provincial Archives illustrated guide](https://www.da.gd.gov.cn/portal_home/content/8105) identifies useful physical fields: condition, date, seals, postmarks, place names, Qiaopi bureaus, banks and courier notes.
-4. [Guangdong Provincial Archives collection introduction](https://da.gd.gov.cn/portal_home/content/385) treats Qiaopi as family/family-clan documents coupling a remittance record with a letter or note.
+4. [Guangdong Provincial Archives collection introduction](https://www.da.gd.gov.cn/portal_home/content/385) treats Qiaopi as family/family-clan documents coupling a remittance record with a letter or note.
 5. [Shantou Municipal Archives visitor notice](https://daj.shantou.gov.cn/daj/1500/202104/94d280030d3a49fc9f954c238534cc38.shtml) is the direct access source; its hours and entry rules are dynamic and therefore omitted from the body.
 6. [Shantou Municipal Archives 2026 acquisition](https://daj.shantou.gov.cn/daj/0500/202604/9f1a0a37c33343be853288e5e32c26a9.shtml) demonstrates that holdings continue to grow; the 2012 dossier total must not be presented as a current universal count.
+7. [Shantou CPPCC — 2026 Qiaopi donation](https://stzx.shantou.gov.cn/stzx/zxxw/202606/1a4351e35017449aa637a3a5ba21fc46.shtml) identifies the museum building as the former local People’s Bank branch premises. This supports the more precise hero-alt wording; it does not identify every previous use of the building.
 
 ## Evidence levels and editorial decisions
 

@@ -1,8 +1,16 @@
 # Image plan — Inner Mongolia long song and Morin Khuur
 
-Status: `ASSETS NEEDED`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 
-No image has been added. No sufficiently identified, openly licensed photograph of a long-song performance in Inner Mongolia was confirmed during this production pass. Do not substitute a generic person in “ethnic costume,” a Mongolian performance in another country, a Morin Khuur player without a singer, or an AI documentary-style scene.
+## Final central selection — 2026-08-13
+
+- **Source:** [Hulun Buir.jpg](https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg), Emmazzye, CC BY-SA 4.0; photographed 2018-07-15
+- **Documented place:** Hulun Buir grassland, Inner Mongolia
+- **Output:** `/images/guides/inner-mongolia-long-song-first-performance/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only; no generative alteration
+- **Accuracy boundary:** this is cultural landscape context only. It does not show a singer, Morin Khuur player, venue or documented long-song performance and is never captioned as one.
+
+No sufficiently identified, openly licensed photograph of a long-song performance in Inner Mongolia was confirmed during this production pass. Central therefore selected a location-accurate landscape and labels it narrowly rather than substituting a generic person in “ethnic costume,” a Mongolian performance in another country, a Morin Khuur player without a singer, or an AI documentary-style scene.
 
 ## Hero — required commission or permission
 

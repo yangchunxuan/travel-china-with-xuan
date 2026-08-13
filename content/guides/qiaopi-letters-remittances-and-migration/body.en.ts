@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "A Qiaopi (侨批, qiáopī), or Yinxin (银信) in Wuyi usage, is best read as a small packet of relationships: a message from an emigrant, money or evidence of money, and marks left by the people and institutions that moved both toward a family in China. UNESCO’s registered collection includes letters, reports, account books and remittance receipts, not one uniform document type. Begin with names, places, dates, currencies and institutional marks before reading the emotional story. One sheet can reveal a route; it cannot stand for every emigrant or every family."
+      text: "A Qiaopi (侨批, qiáopī)—often called Yinxin (银信) in the Wuyi area—is best read as a small packet of relationships: a message from an emigrant, money or evidence of money, and marks left by the people and institutions that moved both toward a family in China. UNESCO’s registered collection includes letters, reports, account books and remittance receipts, not one uniform document type. Begin with names, places, dates, currencies and institutional marks before reading the emotional story. One sheet can reveal a route; it cannot stand for every emigrant or every family."
     },
     {
       id: "direct-answer",
@@ -98,7 +98,7 @@ const body = {
       id: "privacy-callout",
       type: "callout",
       title: "A public display is still a private family record",
-      body: "Follow the holding institution’s photography rule. Quote only the minimum needed, prefer an official transcription, and do not publish full addresses or information about potentially living descendants. If a character is unclear, mark it as uncertain rather than letting OCR invent a fluent sentence. The nomination states that archive and intellectual-property rules govern the corpus; a photograph’s licence does not automatically clear all underlying text for reuse.",
+      body: "Follow the holding institution’s photography rule. Quote only the minimum needed, prefer an official transcription, and do not publish full addresses or information about potentially living descendants. If a character is unclear, mark it as uncertain rather than letting OCR invent a fluent sentence. Access and reuse can depend on archival, privacy and intellectual-property rules; a photograph’s licence does not automatically clear all underlying text for reuse.",
       tone: "warning"
     },
     {
@@ -131,7 +131,7 @@ const body = {
         "If two place names look similar, use the institution’s historical gazetteer or catalogue; modern map search can erase old administrative boundaries.",
         "If the displayed route is a museum graphic, treat it as interpretation and return to the document’s own stamps for item-level claims.",
         "If an original is unavailable, a digitization or facsimile can still support reading, but label the medium and do not claim to have inspected paper, ink or physical layering.",
-        "Before visiting, verify the current exhibition, identity-document rule, opening notice and photography policy with the holding institution. Rotations and access rules were last checked on 13 August 2026."
+        "Before visiting, verify the current exhibition, accepted identity documents, opening notice and photography policy with the holding institution. The Shantou venue’s direct notice was last checked on 13 August 2026; it lists free entry with valid ID, but current rules can change."
       ]
     },
     {
@@ -153,8 +153,10 @@ const body = {
         {"label": "Qiaopi and Yinxin correspondence and remittance documents", "url": "https://www.unesco.org/en/memory-world/qiaopi-and-yinxin-correspondence-and-remittance-documents-overseas-chinese", "publisher": "UNESCO Memory of the World", "reviewedAt": "2026-08-13"},
         {"label": "2012 nomination form", "url": "https://media.unesco.org/sites/default/files/webform/mow001/china_qiaopi_and_yinxin.pdf", "publisher": "UNESCO Memory of the World", "reviewedAt": "2026-08-13"},
         {"label": "Illustrated guide to Qiaopi archives", "url": "https://www.da.gd.gov.cn/portal_home/content/8105", "publisher": "Guangdong Provincial Archives", "reviewedAt": "2026-08-13"},
-        {"label": "Haibang Shengfu: Guangdong Qiaopi Archives", "url": "https://da.gd.gov.cn/portal_home/content/385", "publisher": "Guangdong Provincial Archives", "reviewedAt": "2026-08-13"},
-        {"label": "Shantou Qiaopi Museum visitor notice", "url": "https://daj.shantou.gov.cn/daj/1500/202104/94d280030d3a49fc9f954c238534cc38.shtml", "publisher": "Shantou Municipal Archives", "reviewedAt": "2026-08-13"}
+        {"label": "Haibang Shengfu: Guangdong Qiaopi Archives", "url": "https://www.da.gd.gov.cn/portal_home/content/385", "publisher": "Guangdong Provincial Archives", "reviewedAt": "2026-08-13"},
+        {"label": "Shantou Qiaopi Museum visitor notice", "url": "https://daj.shantou.gov.cn/daj/1500/202104/94d280030d3a49fc9f954c238534cc38.shtml", "publisher": "Shantou Municipal Archives", "reviewedAt": "2026-08-13"},
+        {"label": "2026 accession of 3,969 Qiaopi-related records", "url": "https://daj.shantou.gov.cn/daj/0500/202604/9f1a0a37c33343be853288e5e32c26a9.shtml", "publisher": "Shantou Municipal Archives", "reviewedAt": "2026-08-13"},
+        { label: "Hero photograph: Shantou Qiaopi Museum, Lhzss8 (CC BY 4.0)", url: "https://commons.wikimedia.org/wiki/File:Shantou_Qiaopi_Museum.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ]
     }
   ]

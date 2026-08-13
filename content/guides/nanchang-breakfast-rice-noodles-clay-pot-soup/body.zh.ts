@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -28,7 +28,7 @@ const body = {
       columns: ["菜单用词", "实际上桌", "可以问"],
       rows: [
         ["南昌拌粉 / 拌粉", "米粉沥水后拌入调味底料和各店不同的配菜", "“辣椒已经拌进去了吗？”"],
-        ["炒粉", "在锅里炒制的米粉，通常更热、油感更明显且现炒", "“这个是炒的吗？”"],
+        ["炒粉", "在锅里炒制，而不是沥水后拌底料；油感、温度和是否现炒由门店决定", "“这个是炒的吗？”"],
         ["汤粉", "米粉直接放在汤里，作为一碗上桌", "“这个本来就带汤吗？”"],
         ["瓦罐汤", "另点的小陶罐煨汤，不是煲仔饭或广义的砂锅菜", "“现在哪些瓦罐汤还有？”"]
       ]
@@ -161,7 +161,9 @@ const body = {
         {"label": "南昌早餐：拌粉与瓦罐汤", "url": "https://sgj.nc.gov.cn/ncsgj/mlnc/202105/abbc06c46e8e47518fde111b31cae22f.shtml", "publisher": "南昌市市场监督管理局", "reviewedAt": "2026-08-13"},
         {"label": "南昌美食介绍", "url": "https://www.nc.gov.cn/ncszf/jrnc/202601/f817b2e448964eb59971056204e053cd.shtml", "publisher": "南昌市人民政府", "reviewedAt": "2026-08-13"},
         {"label": "关于推动南昌市餐饮业发展的实施意见", "url": "https://www.nc.gov.cn/ncszf/xxgkzcwj/201806/9c230f5447d44de184cf2da71eee89be.shtml", "publisher": "南昌市人民政府", "reviewedAt": "2026-08-13"},
-        {"label": "当前产品菜单", "url": "https://www.wanfangyuan.com/chanpinzhongxin", "publisher": "万方圆", "reviewedAt": "2026-08-13"}
+        {"label": "当前产品菜单", "url": "https://www.wanfangyuan.com/chanpinzhongxin", "publisher": "万方圆", "reviewedAt": "2026-08-13"},
+        { label: "题图左侧：南昌拌粉，N509FZ（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:Stirred_rice_noodles_in_Nanchang_(20190619174747).jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" },
+        { label: "题图右侧：南昌瓦罐汤早餐，Qa003qa003（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:%E7%93%A6%E7%BD%90%E6%B1%A4_20150119_085552.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" }
       ]
     }
   ]

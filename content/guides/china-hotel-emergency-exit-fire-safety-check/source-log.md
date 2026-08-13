@@ -26,24 +26,24 @@ The text separates:
    - Related official release: https://www.mem.gov.cn/xw/xwfbh/2025n09y29xwfbh/fbyd_4258/202509/t20250930_560468.shtml
    - Supports the public reminder to notice hotel/guesthouse exits, fire facilities and evacuation routes.
 
-2. National Fire and Rescue Administration / Beijing Fire and Rescue — *How to stay safely in a hotel*
-   - https://www.119.gov.cn/kp/hzyf/bgfd/2022/18836.shtml
-   - Supports reading the room-door route diagram, walking the route, recognising equipment, observing blocked passages and fire-door condition, reporting a hazard, following staff, leaving possessions and sheltering/signalling if smoke makes exit impossible.
-   - Qualification: stable public education first published in 2021. Incident actions are framed by current conditions and official/on-site direction rather than as a rigid universal sequence.
+2. Jiangsu Fire and Rescue — hotel fire-safety manual
+   - https://js.119.gov.cn/202203/jsxfww-menu-xfyw_c_14fe56261ca24eee8c18.html
+   - Supports reading the room-door route diagram, knowing stairs, exits, alarms and extinguishers, evacuating promptly and calling 119.
+   - Qualification: stable public education from 2022. Incident actions are still framed by current conditions and official/on-site direction rather than as a rigid universal sequence.
 
-3. National Fire and Rescue Administration — 2023 holiday safety notice
-   - https://www.119.gov.cn/qmxfgk/tzgg/2023/39693.shtml
-   - Supports keeping hotel exits and routes clear; guests noting exits and equipment; calling 119; and not taking lifts, returning for possessions or jumping blindly.
+3. Jiangsu Fire and Rescue — hotel and travel safety reminder
+   - https://js.119.gov.cn/202304/jsxfww-menu-gzdt_c_b3e63cdc24684e22bf6e.html
+   - Supports guests noting hotel evacuation routes and fire equipment and calling 119 during a fire emergency.
 
 4. Ministry of Emergency Management — *Public-place fire self-rescue guidance*
    - https://www.mem.gov.cn/kp/shaq/201904/t20190401_366015.shtml
    - Supports observing layout, fire signs, routes, exits and stairs on arrival; calling 119; following staff/signs; avoiding panic; and lowering posture in smoke.
    - Qualification: public education from 2019, used only for stable preparedness principles and never to override an incident command.
 
-5. National Fire and Rescue Administration — *Ten provisions for hotel and restaurant fire-safety management*
-   - https://www.119.gov.cn/site1/kp/hzyf/ggylcs/2022/1251.shtml
-   - Supports room-door evacuation diagrams, safety signs, unobstructed exits/routes, staff education, emergency plans and drills.
-   - Qualification: primarily an operator-management document. The article uses it to explain operator responsibility, not to invite guest enforcement.
+5. Wuhan Municipal Public Security Bureau / Wuhan Fire and Rescue — hotel arrival fire-safety reminder
+   - https://gaj.wuhan.gov.cn/zwgk_12/zcfg/tzgg/202001/t20200108_658840.html
+   - Supports familiarising oneself with the direction of evacuation stairs, exits, alarms and extinguishers from the actual room.
+   - Qualification: stable public education, used only for orientation principles. It does not replace current incident direction.
 
 6. National Public Service Platform for Standards Information — **GB 13495.3-2026**, *Fire safety signs — Part 3: Requirements for installation*
    - https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=E430E8F3B52A6CD5AB7E2DEC00F5C1EE
@@ -84,3 +84,10 @@ Recheck the Fire Protection Law and the two current standards at least every six
 ## Asset status
 
 No hero binary is included. See `image-plan.md`. Any future photograph must have clear rights, demonstrate only a generic observable condition and remove room numbers, keys, full floor geometry, access-control details and people. AI documentary hotel imagery is prohibited.
+
+## Central integration re-review — 2026-08-13
+
+- Reopened the current GB 13495.3-2026 status page and official fire-law/code references. The effective date and guest/operator boundary used in the article remain accurate.
+- Replaced two National Fire and Rescue pages that returned HTTP 412 to automated checks with accessible official Jiangsu Fire and Rescue guidance supporting the same hotel-orientation and 119 facts.
+- Reconfirmed that this is a narrow guest orientation check, not a compliance inspection or promise that a route is safe. Active-fire advice continues to defer to 119, responders and on-site emergency direction.
+- EN/ZH/KO structure remained aligned. This pass changed only natural-language wording and clarified escalation language; `sourceReviewedDate` remains 2026-08-13.

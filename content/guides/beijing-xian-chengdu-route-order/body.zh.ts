@@ -60,7 +60,7 @@ const body = {
     {
       id: "network-facts",
       type: "paragraph",
-      text: "官方铁路资料确认了北京—西安连接，以及于 2017 年全线开通的西成高铁。这能支持线性路线，却不能让旧时刻表继续有效。西安东站已于 2026-06-30 投入运营，北京和成都也都有多个客运枢纽。必须在 12306 查询准确日期，并把所选车次显示的车站原样写进路线。",
+      text: "官方铁路资料确认了北京—西安连接，以及于 2017 年全线开通的西成高铁。这能支持线性路线，却不能让旧时刻表继续有效。西安东站已于 2026 年 6 月 30 日投入运营，北京和成都也都有多个客运枢纽。必须在 12306 查询准确日期，并把所选车次显示的车站原样写进路线。",
     },
     {
       id: "station-ledger",
@@ -132,7 +132,7 @@ const body = {
       type: "list",
       ordered: true,
       items: [
-        "先固定国际机场，以及出境航班前最后一个安全住宿城市。",
+        "先固定国际机场，以及能保护出境航班的最后一晚住宿城市。",
         "标出每个景点的日期、闭馆日和分时预约依赖。",
         "给每个不可替代的重点一个完整游览日，或一个真正有效的半天。",
         "先把两次跨城移动按 0 个半天放进账本，等实时班次明确后再升级。",
@@ -150,7 +150,7 @@ const body = {
       id: "traveller-scenario-one",
       type: "callout",
       tone: "neutral",
-      title: "情境 1：9 晚、开口程的两人旅行",
+      title: "情境 1：两人、9 晚、异地进出",
       body: "2 人从北京入境，住 9 晚后从成都离境。10 个日历日中，抵达、离境和 2 次移动都先记 0，保守计算只剩 6 个完整游览日当量。线性方向成立，但这 6 天必须按重点分配；写着 10 天，不等于有 10 个游览日。",
     },
     {
@@ -273,7 +273,8 @@ const body = {
       title: "继续规划",
       items: [
         { label: "浏览中国旅行规划指南", href: "/zh/plan/", description: "回到规划集合页，选择下一项决策。" },
-        { label: "判断是否选择开口程", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "比较异地进出与返回同一门户的完整成本。" },
+        { label: "判断是否选择异地进出（开口程）", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "比较异地进出与返回同一门户的完整成本。" },
+        { label: "选择单一基地还是多基地串联", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "先确定路线结构，再安排这条三城顺序。" },
         { label: "第一次乘中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "路线确定后，再处理乘车人信息和车站流程。" },
         { label: "检查行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "用酒店移动、固定预约和恢复时间测试整段旅行。" },
       ],
@@ -288,6 +289,7 @@ const body = {
         { label: "西安东站投入运营", url: "https://en.xa.gov.cn/MediaCenter/News/2072253459180654594.html", publisher: "西安市人民政府", reviewedAt: "2026-08-13" },
         { label: "公共航空运输旅客服务管理规定", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "中国民用航空局", reviewedAt: "2026-08-13" },
         { label: "北京八站两场交通格局", url: "https://www.beijing.gov.cn/ywdt/yaowen/202511/t20251121_4290581.html", publisher: "北京市人民政府", reviewedAt: "2026-08-13" },
+        { label: "成都双机场航班调整公告", url: "https://www.cdairport.com/news_detail.aspx?cid=6393&page=1&t=60", publisher: "四川省机场集团", reviewedAt: "2026-08-13" },
         { label: "故宫博物院开放与参观信息", url: "https://www.dpm.org.cn/Visit.html", publisher: "故宫博物院", reviewedAt: "2026-08-13" },
         { label: "秦始皇帝陵博物院预约与参观指南", url: "https://www.bmy.com.cn/guide/", publisher: "秦始皇帝陵博物院", reviewedAt: "2026-08-13" },
       ],

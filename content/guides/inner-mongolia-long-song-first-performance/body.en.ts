@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -92,10 +92,10 @@ const body = {
       ]
     },
     {
-      id: "current-example",
+      id: "format-example",
       type: "callout",
-      title: "Current example: read the format before the title",
-      body: "A 2026 announcement from Inner Mongolia Art Theatre described the season of Qian Gu Ma Song (《千古马颂》) as running from 1 May to 7 October, with horses, music, dance, acrobatics and other stage elements. That makes it a broad mixed production, not evidence of a dedicated long-song recital. If its current programme explicitly names a long-song item, treat that item as an introduction within the larger show. Season and performance details were checked on 13 August 2026 and still require organizer confirmation for a particular date.",
+      title: "Format example: read the programme, not just the title",
+      body: "Inner Mongolia Art Theatre describes Qian Gu Ma Song (《千古马颂》) as a panoramic variety production combining horsemanship, Mongolian song, dance, music, acrobatics and stage technology. That first-party description establishes a mixed production, not a dedicated long-song recital. Treat a long-song segment as an introduction only when the programme for your exact performance names it; confirm the current date, cast and ticket directly with the organizer.",
       tone: "neutral"
     },
     {
@@ -177,7 +177,8 @@ const body = {
         {"label": "Mongolian long song project record", "url": "https://www.ihchina.cn/project_details/12410.html", "publisher": "China Intangible Cultural Heritage Network", "reviewedAt": "2026-08-13"},
         {"label": "Traditional music of the Morin Khuur", "url": "https://ich.unesco.org/en/RL/traditional-music-of-the-morin-khuur-00068", "publisher": "UNESCO Intangible Cultural Heritage", "reviewedAt": "2026-08-13"},
         {"label": "Inner Mongolia Art Theatre", "url": "https://www.nmgysjygw.cn/", "publisher": "Inner Mongolia Art Theatre", "reviewedAt": "2026-08-13"},
-        {"label": "2026 season announcement for Qian Gu Ma Song", "url": "https://www.nmg.news.cn/20260117/43bec76a82594f209a9224759a314329/c.html", "publisher": "Xinhua Net Inner Mongolia", "reviewedAt": "2026-08-13"}
+        {"label": "Qian Gu Ma Song production overview", "url": "https://www.nmgysjygw.cn/#/news/detail?id=3440", "publisher": "Inner Mongolia Art Theatre", "reviewedAt": "2026-08-13"},
+        { label: "Hero photograph: Hulun Buir grassland, Emmazzye (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ]
     }
   ]

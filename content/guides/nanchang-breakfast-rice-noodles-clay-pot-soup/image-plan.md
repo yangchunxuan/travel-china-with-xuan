@@ -1,8 +1,16 @@
 # Image plan — Nanchang Banfen and Waguan soup
 
-Status: `ASSETS NEEDED`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 
-No image has been added. The Hero must show a verified pair, not a generic rice-noodle bowl beside an unidentified crock. Do not infer the soup’s name, meat or vegetable from appearance.
+## Final central selection — 2026-08-13
+
+- **Left source:** [Stirred rice noodles in Nanchang (20190619174747).jpg](https://commons.wikimedia.org/wiki/File:Stirred_rice_noodles_in_Nanchang_(20190619174747).jpg), N509FZ, CC BY-SA 4.0; photographed at recorded Nanchang coordinates on 2019-06-19
+- **Right source:** [瓦罐汤 20150119 085552.jpg](https://commons.wikimedia.org/wiki/File:%E7%93%A6%E7%BD%90%E6%B1%A4_20150119_085552.jpg), Qa003qa003, CC BY-SA 4.0; creator description identifies a Nanchang breakfast of noodles and clay-pot soup, photographed 2015-01-19
+- **Output:** `/images/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** conventional two-panel composite, crop and resize; no food added or generatively altered
+- **Accuracy boundary:** the two panels document dishes photographed in Nanchang but are not one order, one shop or a verified paired menu. No specific soup ingredients, recipe, price or present availability are inferred from appearance.
+
+The selected Hero deliberately presents two separately sourced Nanchang photographs rather than pretending that they are one verified order. Do not infer the soup’s meat, vegetable, recipe or present availability from appearance.
 
 ## Hero — required paired breakfast
 

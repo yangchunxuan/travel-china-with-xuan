@@ -118,7 +118,7 @@ const body = {
     {
       id: "air-rule",
       type: "paragraph",
-      text: "CAAC rules require requests such as a powered wheelchair, aisle chair, medical oxygen or service dog at booking and no later than 48 hours before departure. A passenger needing boarding help should check in 2 hours before the ordinary deadline. Confirm battery handling, door-side chair return, aisle chair, seat, toilet and remote-stand plan. CAAC's 2026 chain policy does not replace operator and aircraft confirmation."
+      text: "For the services listed in the current CAAC rules—including checking a powered wheelchair, using an onboard aisle chair, medical oxygen or travelling with a service dog—notify the carrier when booking and no later than 48 hours before departure. A passenger needing boarding or disembarkation help should currently complete check-in no later than 2 hours before the ordinary check-in deadline. Confirm battery handling, door-side chair return, aisle chair, seat, toilet and remote-stand plan. CAAC's 2026 chain measures do not replace operator and aircraft confirmation."
     },
     {
       id: "hotel-heading",
@@ -137,8 +137,8 @@ const body = {
         "Bed: height, hoist clearance, approach side and movable furniture.",
         "Bathroom: shower or tub, seat, rail position and side-transfer clearance.",
         "Toilet and basin: height, approach, knee space and door swing.",
-        "Inventory: the exact accessible room is protected from reassignment.",
-        "Fallback: another measured room or nearby property."
+        "Room assignment: obtain written confirmation of the exact measured room requested; do not assume it is protected from reassignment.",
+        "Fallback: document what the property will do if that room is reassigned, including another measured room or a nearby property."
       ]
     },
     {
@@ -181,7 +181,7 @@ const body = {
       caption: "Failure recovery should not depend on unsafe manual carrying",
       columns: ["Failure", "Immediate recovery", "Route-level response"],
       rows: [
-        ["Station lift unavailable", "Use the confirmed staffed route", "Change station or use surface transport"],
+        ["Station lift unavailable", "Contact station assistance and use an operator-confirmed alternative route only if it fits the traveller", "Change station or use surface transport"],
         ["Vehicle cannot load the chair", "Wait safely and call the verified backup", "Replace that last-mile mode"],
         ["Accessible room reassigned", "Request the measured backup in writing", "Move once, then protect hotel stability"],
         ["Venue route partly closed", "Use accessible highlights or an indoor substitute", "Remove it if the core is unreachable"],
@@ -213,7 +213,7 @@ const body = {
       type: "callout",
       tone: "neutral",
       title: "A shorter route with stronger confirmations wins",
-      body: "A solo powered-chair traveller cannot transfer independently. A connecting flight, unmeasured room and heritage site with only a ramp icon create three hard failures. Prefer a direct flight with written chair handling, a held measured room, and a venue with confirmed route and toilet. Remove any city whose hard link lacks a safe fallback."
+      body: "A solo powered-chair traveller cannot transfer independently. A connecting flight, an unmeasured room and a heritage site with only a ramp icon create three essential links that fail verification. Prefer a direct flight with written chair handling; a measured room confirmed in writing, with a documented fallback if it is reassigned; and a venue whose route and toilet have been checked against the traveller's requirements. Remove any city whose essential link lacks a fallback that the traveller has checked against those requirements."
     },
     {
       id: "decision-heading",
@@ -227,8 +227,8 @@ const body = {
       title: "The weakest essential link decides",
       columns: [
         { "heading": "Go", "body": "Every essential link matches the traveller and chair, confirmations are attached to bookings, and dynamic items have a recheck date." },
-        { "heading": "Conditional", "body": "A non-critical link is uncertain, but a named, safe and bookable alternative is ready." },
-        { "heading": "Redesign", "body": "A transfer, toilet, room, boarding method or recovery path is incompatible or unverified without a safe substitute." }
+        { "heading": "Conditional", "body": "A non-critical link is uncertain, but a named, bookable alternative has been checked against the traveller's requirements." },
+        { "heading": "Redesign", "body": "A transfer, toilet, room, boarding method or recovery path is incompatible or unverified without a suitable substitute." }
       ]
     },
     {
@@ -279,7 +279,7 @@ const body = {
       type: "callout",
       tone: "decision",
       title: "Need a human access-chain review?",
-      body: "Send your dates, travellers, wheelchair dimensions and transfer limits, plus the cities you are considering and an approximate budget. A useful review identifies the weakest link and a safe fallback; it does not promise universal accessibility."
+      body: "Send your dates, travellers, wheelchair dimensions and transfer limits, plus the cities you are considering and an approximate budget. A useful review identifies the weakest link and a fallback to verify against the traveller's requirements; it does not promise universal accessibility."
     },
     {
       id: "more-planning",
@@ -288,6 +288,8 @@ const body = {
       items: [
         { "label": "Browse the China planning guides", "href": "/plan/", "description": "Return to the planning collection and narrow the route." },
         { "label": "Choose a hotel near the right metro access", "href": "/guides/china-hotel-near-metro/", "description": "Use station exits and the complete last mile, not a straight-line distance." },
+        { "label": "Verify an accessible hotel room", "href": "/guides/china-accessible-hotel-room-verification/", "description": "Check room measurements, assignment and fallback with the property." },
+        { "label": "Choose a private transfer or public transport", "href": "/guides/china-private-transfer-or-public-transport/", "description": "Compare the exact vehicle and public-transport chains for one ground segment." },
         { "label": "Prepare for a first China high-speed train", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Understand the normal station sequence before adding assistance handoffs." },
         { "label": "Reduce backtracking with open-jaw flights", "href": "/guides/china-open-jaw-flights-route-planning/", "description": "Remove repeat transfers when the accessible chain supports different gateways." }
       ]
@@ -301,10 +303,11 @@ const body = {
         { "label": "GB 55019-2021 official announcement and text", "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/202204/t20220412_2674451.html", "publisher": "Beijing Municipal Government republishing MOHURD standard", "reviewedAt": "2026-08-13" },
         { "label": "Special key-passenger reservation instructions", "url": "https://kyfw.12306.cn/otn/view/icentre_qxyyInfo.html", "publisher": "China Railway 12306", "reviewedAt": "2026-08-13" },
         { "label": "Measures for air transport of persons with disabilities", "url": "https://www.caac.gov.cn/XXGK/XXGK/ZFGW/201601/t20160122_27671.html", "publisher": "Civil Aviation Administration of China", "reviewedAt": "2026-08-13" },
-        { "label": "2026 air-transport accessibility measures explained", "url": "https://www.caac.gov.cn/XXGK/XXGK/ZCJD/202607/t20260713_231259.html", "publisher": "Civil Aviation Administration of China", "reviewedAt": "2026-08-13" },
+        { "label": "2026 measures strengthening disability air-transport support", "url": "https://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260709_231243.html", "publisher": "Civil Aviation Administration of China", "reviewedAt": "2026-08-13" },
         { "label": "Beijing Subway accessibility facilities by station", "url": "https://www.bjsubway.com/station/wzass/", "publisher": "Beijing Subway", "reviewedAt": "2026-08-13" },
         { "label": "Palace Museum visitor routes and accessibility information", "url": "https://www.dpm.org.cn/Visit.html", "publisher": "The Palace Museum", "reviewedAt": "2026-08-13" },
-        { "label": "Shanghai Museum visitor services", "url": "https://www.shanghaimuseum.net/mu/frontend/pg/service/services", "publisher": "Shanghai Museum", "reviewedAt": "2026-08-13" }
+        { "label": "Shanghai Museum visitor services", "url": "https://www.shanghaimuseum.net/mu/frontend/pg/service/services", "publisher": "Shanghai Museum", "reviewedAt": "2026-08-13" },
+        { label: "Hero photograph: Beiyuan Station Exit A ramp, N509FZ (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Exit_A_ramp_of_Beiyuan_Station_(20210709114327).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ]
     }
   ]

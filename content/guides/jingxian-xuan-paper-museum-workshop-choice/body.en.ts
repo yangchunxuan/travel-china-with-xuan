@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -6,13 +6,13 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Choose the museum if you need the whole process explained, a live production area if you want to watch skilled coordination, and a workshop if you mainly want to handle one controlled step. Jingxian (泾县, Jīngxiàn) Xuan paper is not made in a visitor session from raw bark to finished sheet. Official descriptions divide the craft into more than one hundred operations, with raw-material preparation taking months. A short class may let you scoop pulp, print, rub or decorate; that is real participation in a step, not completion of the full traditional craft."
+      text: "Choose the museum if you want the whole process explained, a live production area if you want to watch skilled coordination, and a workshop if you mainly want to try one controlled step. Jingxian (泾县, Jīngxiàn) Xuan paper is not made in a visitor session from raw bark to finished sheet. Official descriptions divide the craft into more than one hundred operations, with raw-material preparation taking months. A short class may let you form a sheet from prepared pulp, print, make a rubbing or decorate; that is real participation in one step, not completion of the full traditional craft."
     },
     {
       id: "direct-answer",
       type: "callout",
       title: "The shortest useful answer",
-      body: "For a first visit, pair the China Xuan Paper Museum with a confirmed live production demonstration. Add a workshop only if the booking states the exact task, duration and whether you keep the result. If you have time for only one format, choose the museum for context, the demonstration for movement and skill, or the workshop for participation.",
+      body: "For a first visit, pair the China Xuan Paper Museum with a confirmed visit to an active production area. Add a workshop only if the booking states the exact task, duration and whether you keep the result. If you have time for only one format, choose the museum for context, live production for movement and skill, or the workshop for participation.",
       tone: "decision"
     },
     {
@@ -42,7 +42,7 @@ const body = {
       ordered: true,
       items: [
         "Start with the two principal fibres: bark from Pteroceltis tatarinowii (青檀) and Shatian rice straw (沙田稻草). The official Jingxian definition also ties Xuan paper to local water, place and traditional production, so ‘Chinese handmade paper’ is not automatically Xuan paper.",
-        "Treat ‘108 processes’ as a craft sequence, not 108 visitor stations. The national ICH presentation groups the work into raw-material processing, pulping, sheet forming, drying and cutting; the Xuancheng protection plan gives still finer stages.",
+        "Treat ‘more than one hundred operations’ as a craft sequence, not a matching number of visitor stations. Official sources use different counting conventions—some say 108 and another says more than 140—while the national ICH presentation groups the work into raw-material processing, pulping, sheet forming, drying and cutting. Do not turn one count into a universal standard for every producer or paper type.",
         "Look for time stored in the material. Bark and straw are repeatedly cooked, washed, weathered and bleached; official local material says the complete production cycle can reach about two years.",
         "At the vat, watch distribution rather than speed. A production sheet requires the screen, slurry, water movement, dimensions and two workers’ coordination to agree.",
         "At drying, notice how a fragile wet sheet is separated and brushed flat. The national ICH account describes drying as a skilled sequence with risks of tearing, wrinkling or losing fibre.",
@@ -94,7 +94,7 @@ const body = {
       id: "field-recovery",
       type: "heading",
       level: 2,
-      text: "If the demonstration or workshop is not what you expected"
+      text: "If live production or the workshop is not what you expected"
     },
     {
       id: "recovery-list",
@@ -102,10 +102,10 @@ const body = {
       items: [
         "If production is paused, ask which station is active later that day; do not assume the visitor route and factory rhythm are identical.",
         "If the class description only says 造纸体验, ask: 我会亲手做哪一步？—‘Which step will I do myself?’",
-        "If the answer is 拓印 or 印刷, treat it as rubbing or printing, not sheet making, and decide whether that still suits you.",
+        "If the answer is 拓印 or 印刷, treat it as making a rubbing or printing, not sheet forming, and decide whether that still suits you.",
         "If the sheet cannot be taken immediately, ask whether it will be dried, posted, substituted or collected later before paying.",
         "If mobility, heat or humidity is a concern, use the museum as the core visit and ask about stairs, wet floors and standing time in the production area.",
-        "Before travel, recheck the museum’s current notice page, same-day operating status, demonstration availability and reservation channel. Temporary closures and production changes are dynamic."
+        "Before travel, recheck the museum’s current notice page, same-day operating status, production-area access and reservation channel. Temporary closures and production changes are dynamic."
       ]
     },
     {
@@ -135,7 +135,9 @@ const body = {
         {"label": "Xuan paper traditional craft project overview", "url": "https://www.ihchina.cn/page_special.html", "publisher": "China Intangible Cultural Heritage Network", "reviewedAt": "2026-08-13"},
         {"label": "Xuan paper craft process", "url": "https://www.ihchina.cn/technology.html", "publisher": "China Intangible Cultural Heritage Network", "reviewedAt": "2026-08-13"},
         {"label": "Xuan Paper Culture Park", "url": "https://www.ahjx.gov.cn/About/show/33534.html", "publisher": "Jing County People’s Government", "reviewedAt": "2026-08-13"},
-        {"label": "Xuan paper cultural ecology protection plan", "url": "https://www.xuancheng.gov.cn/OpennessContent/show/3017793.html", "publisher": "Xuancheng People’s Government", "reviewedAt": "2026-08-13"}
+        {"label": "Xuan paper cultural ecology protection plan", "url": "https://www.xuancheng.gov.cn/OpennessContent/show/3017793.html", "publisher": "Xuancheng People’s Government", "reviewedAt": "2026-08-13"},
+        {"label": "2026 venue notices and visitor information", "url": "https://bwg.hongxingxuanpaper.com.cn/", "publisher": "China Xuan Paper Museum", "reviewedAt": "2026-08-13"},
+        { label: "Hero photograph: Jingxian Railway Station, N509FZ (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Jingxian_Railway_Station_(20150807144034).JPG", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ]
     }
   ]

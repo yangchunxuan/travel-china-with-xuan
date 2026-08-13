@@ -1,9 +1,10 @@
 # Source log — Inner Mongolia long song first performance
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 - Topic ID: `hg-topic-0806`
 - Source review date: 2026-08-13
+- Central verification: 2026-08-13 — UNESCO/China ICH form facts and the Inner Mongolia Art Theatre first-party production description rechecked
 - Canonical owner: identifying and choosing a credible first Urtiin Duu performance in Inner Mongolia
 - Excludes: a complete Mongolian music history, vocal instruction, a permanent event calendar, and claims that one staging is universally authentic
 
@@ -17,7 +18,7 @@ Queries checked on 2026-08-13 included `内蒙古 长调 演出 2026 官方`, `�
 2. [China Intangible Cultural Heritage Network — Mongolian long song](https://www.ihchina.cn/project_details/12410.html) confirms the Chinese project name, `乌日汀哆`, long melodic lines, breath and `诺古拉` ornament terminology.
 3. [UNESCO — traditional music of the Morin Khuur](https://ich.unesco.org/en/RL/traditional-music-of-the-morin-khuur-00068) establishes Morin Khuur as a related but distinct practice that can accompany long song.
 4. [Inner Mongolia Art Theatre](https://www.nmgysjygw.cn/) is a direct organizer channel for current institutional programming.
-5. [Xinhua Net Inner Mongolia — 2026 Qian Gu Ma Song season](https://www.nmg.news.cn/20260117/43bec76a82594f209a9224759a314329/c.html) reports the organizer’s 1 May–7 October season and describes the work’s mixed horse, music, dance and acrobatic format.
+5. [Inner Mongolia Art Theatre — Qian Gu Ma Song production overview](https://www.nmgysjygw.cn/#/news/detail?id=3440) is the first-party description of a panoramic variety production combining horsemanship, Mongolian song, dance, music, acrobatics and stage technology. It supports a format distinction, not a current performance date or a guaranteed long-song item.
 6. [Taipusi Banner People’s Government — 2026 heritage activity](https://www.tpsq.gov.cn/tpsq/zwdt/zyxw/2026042008573311842/index.html) provides a current official example of public cultural programming; it is evidence for that dated event, not a recurring schedule.
 
 ## Evidence levels and editorial decisions
@@ -30,7 +31,7 @@ Queries checked on 2026-08-13 included `内蒙古 长调 演出 2026 官方`, `�
 
 ## Dynamic items
 
-- The announced 2026 `Qian Gu Ma Song` season dates, current organizer pages, individual performance dates, ticket channels, cast, substitutions and refund terms were checked 2026-08-13. Every particular booking requires same-week reconfirmation.
+- The organizer’s current site and its production-format description were checked 2026-08-13. Individual performance dates, ticket channels, cast, substitutions and refund terms require same-week reconfirmation.
 - No permanent performance time, price or guaranteed long-song segment is asserted.
 - Programme archives can remain online after an event; publication date is not proof of a future show.
 

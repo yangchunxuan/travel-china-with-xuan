@@ -1,6 +1,17 @@
 # Image plan
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** Wikimedia Commons, `File:Ji Hotel at Nanxieyu Street, entrance-20240921.jpg`
+- **Original URL:** https://commons.wikimedia.org/wiki/File:Ji_Hotel_at_Nanxieyu_Street,_entrance-20240921.jpg
+- **Creator / licence:** Shwangtianyuan, CC BY-SA 4.0
+- **Documented place and date:** Ji Hotel, Nanxieyu Street, Suzhou Industrial Park; 2024-09-21
+- **Output:** `/images/guides/china-accessible-hotel-room-verification/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only
+- **Accuracy boundary:** the photograph shows one real entrance approach and set of doors. It does **not** certify the room, bathroom, lift, continuous route or the property as accessible.
+- **AI status:** real documentary photograph; no generative edit
 
 ## Required hero
 

@@ -1,6 +1,15 @@
 # Image plan — china-private-transfer-or-public-transport
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** Homeground local library photograph `重庆优选素材/05_重庆桥梁与城市交通/重庆西站_综合换乘大厅_01.jpg`
+- **Rights basis:** owner's 2026-08-10 authorization for the organised local library, recorded in the central provenance ledger
+- **Documented place:** intermodal transfer hall, Chongqing West Railway Station
+- **Output:** `/images/guides/china-private-transfer-or-public-transport/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** crop and resize only; no generative alteration
+- **Accuracy boundary:** this is one real handoff node. It does not compare private transfer against public transport, prove accessibility, show a current pickup zone or establish journey time.
 
 ## Hero priority: original decision graphic
 

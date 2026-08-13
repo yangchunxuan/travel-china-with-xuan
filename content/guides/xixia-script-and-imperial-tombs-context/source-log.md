@@ -1,9 +1,10 @@
 # Source log — Xixia script and imperial tombs context
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 - Topic ID: `hg-topic-0709`
 - Source review date: 2026-08-13
+- Central verification: 2026-08-13 — UNESCO inscription inventory, Ningxia excavation summary and current official interpretation sources rechecked
 - Canonical owner: evidence-led reading of Xixia script, objects and the imperial-cemetery landscape
 - Excludes: a complete Xixia political history, a decipherment tutorial, definitive assignment of every tomb, and Issue #29 restoration research
 
@@ -16,7 +17,7 @@ Queries checked on 2026-08-13 included `Xixia Imperial Tombs UNESCO 2025 nominat
 1. [UNESCO — Xixia Imperial Tombs](https://whc.unesco.org/en/list/1736) confirms 2025 inscription, criteria (ii) and (iii), nine imperial mausoleums, 271 subordinate tombs, the northern architectural complex, 32 flood-control works, and the Helan foothill setting.
 2. [UNESCO — nomination dossier](https://whc.unesco.org/en/documents/206074) supplies the mapped property, component descriptions, authenticity/conservation argument and detailed evidence base.
 3. [Ningxia Department of Culture and Tourism — archaeological work](https://whhlyt.nx.gov.cn/xxfb/wlyw/202311/t20231113_4347356_zzb.html) records excavation campaigns at Mausoleums 3 and 6, the attribution reasoning around Li Deming, the northern complex interpretation, and the MIII-107 gilded bronze ox.
-4. [National Office for Philosophy and Social Sciences — Xixia archaeology](https://www.nopss.gov.cn/n1/2026/0121/c461625-40649844.html) records Xixia–Chinese bilingual stele fragments in the high-status northern architectural area.
+4. [National Office for Philosophy and Social Sciences — Xixia archaeology](https://www.nopss.gov.cn/n1/2026/0121/c461625-40649844.html) records large numbers of Xixia-script and Chinese stele fragments from the imperial cemetery. The body does not call individual fragments bilingual unless a source identifies the same object as carrying both languages.
 5. [Yinchuan People’s Government — Xixia Imperial Tombs Museum](https://www.yinchuan.gov.cn/sshc/lyjd/zdwbcs/202511/t20251125_5090985.html) provides the current official visitor-facing museum context.
 6. [Yinchuan People’s Government — 2026 management priorities](https://www.yinchuan.gov.cn/xxgk/bmxxgkml/xxlqglc/xxgkml_2855/zdgz_2866/202602/t20260227_5180328.html) confirms that interpretation, conservation and visitor operations continue to evolve after inscription.
 

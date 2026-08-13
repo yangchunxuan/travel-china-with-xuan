@@ -60,7 +60,7 @@ const body = {
     {
       id: "network-facts",
       type: "paragraph",
-      text: "공식 철도 자료는 베이징–시안 연결과 2017년 전 구간이 개통된 시안–청두 고속철도를 확인해 줍니다. 이는 일직선 구조의 근거일 뿐 옛 시간표를 보장하지 않습니다. 시안동역은 2026-06-30 운영을 시작했고 베이징과 청두에도 여러 여객 터미널이 있습니다. 12306에서 날짜를 검색하고 선택한 열차에 표시된 역을 그대로 일정에 적으세요.",
+      text: "공식 철도 자료는 베이징–시안 연결과 2017년 전 구간이 개통된 시안–청두 고속철도를 확인해 줍니다. 이는 일직선 구조의 근거일 뿐 옛 시간표를 보장하지 않습니다. 시안동역은 2026년 6월 30일 운영을 시작했고 베이징과 청두에도 여러 여객 교통 거점이 있습니다. 12306에서 날짜를 검색하고 선택한 열차에 표시된 역을 그대로 일정에 적으세요.",
     },
     {
       id: "station-ledger",
@@ -132,7 +132,7 @@ const body = {
       type: "list",
       ordered: true,
       items: [
-        "국제선 공항과 출국편 전 마지막으로 안전하게 잘 도시를 먼저 정합니다.",
+        "국제선 공항과 출국편을 보호할 마지막 숙박 도시를 먼저 정합니다.",
         "각 명소의 날짜, 휴관일, 시간 지정 입장 의존성을 표시합니다.",
         "대체할 수 없는 우선순위마다 온전한 하루 또는 실제로 쓸 수 있는 반나절을 줍니다.",
         "두 도시 간 이동은 먼저 반나절 0개로 넣고 실제 운행편을 확인한 뒤에만 올립니다.",
@@ -150,7 +150,7 @@ const body = {
       id: "traveller-scenario-one",
       type: "callout",
       tone: "neutral",
-      title: "상황 1: 9박, 오픈조 항공권의 두 사람",
+      title: "상황 1: 2명, 9박, 오픈조 항공권",
       body: "2명이 베이징으로 입국해 9박 후 청두에서 출국합니다. 달력상 10일은 도착일·출국일·이동일 2개를 0으로 시작하면 온전한 관광일 환산 6일이 됩니다. 일직선 방향은 맞지만 이 6일에는 우선순위가 필요합니다. ‘10일 여행’이라는 표기가 관광일 10개를 뜻하지 않습니다.",
     },
     {
@@ -274,6 +274,7 @@ const body = {
       items: [
         { label: "중국 여행 계획 가이드 보기", href: "/ko/plan/", description: "여행 계획 컬렉션으로 돌아가 다음 결정을 고르세요." },
         { label: "오픈조 항공편 선택하기", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "서로 다른 입출국 도시와 한 관문으로 돌아가는 전체 비용을 비교하세요." },
+        { label: "한 거점 또는 여러 거점 선택하기", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "이 세 도시의 순서를 정하기 전에 여행 동선 구조부터 결정하세요." },
         { label: "중국 고속철도 첫 이용 준비", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "노선을 정한 뒤 승객 정보와 역 이용 절차를 준비하세요." },
         { label: "여행 일정이 너무 빠듯한지 확인", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "호텔 이동, 고정 방문, 회복 시간으로 전체 여행을 점검하세요." },
       ],
@@ -288,6 +289,7 @@ const body = {
         { label: "시안동역 운영 개시", url: "https://en.xa.gov.cn/MediaCenter/News/2072253459180654594.html", publisher: "시안시 인민정부", reviewedAt: "2026-08-13" },
         { label: "공공항공운송 여객서비스 관리규정", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "중국민용항공국", reviewedAt: "2026-08-13" },
         { label: "베이징 주요 철도역·두 공항 교통망", url: "https://www.beijing.gov.cn/ywdt/yaowen/202511/t20251121_4290581.html", publisher: "베이징시 인민정부", reviewedAt: "2026-08-13" },
+        { label: "청두 두 공항 항공편 조정 공지", url: "https://www.cdairport.com/news_detail.aspx?cid=6393&page=1&t=60", publisher: "쓰촨성공항그룹", reviewedAt: "2026-08-13" },
         { label: "고궁박물원 관람 및 개장 정보", url: "https://www.dpm.org.cn/Visit.html", publisher: "고궁박물원", reviewedAt: "2026-08-13" },
         { label: "진시황릉박물원 예약 및 관람 안내", url: "https://www.bmy.com.cn/guide/", publisher: "진시황릉박물원", reviewedAt: "2026-08-13" },
       ],

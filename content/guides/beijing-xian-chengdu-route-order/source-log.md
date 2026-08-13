@@ -1,6 +1,6 @@
 # Source log — Beijing, Xi'an and Chengdu Route Order
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
@@ -10,9 +10,12 @@ Canonical owner: `/guides/beijing-xian-chengdu-route-order/`
 
 This page owns the order, international-gateway choice, conservative usable-half-day accounting and night-priority method for Beijing, Xi'an and Chengdu. It does not own first-time railway procedure, a general itinerary pace audit, open-jaw fare comparison, individual station transfer instructions, attraction booking walkthroughs or a personalised night-by-night itinerary.
 
+The broader `/guides/china-hub-and-spoke-or-multi-base-route/` page owns the choice between one returning hub, several forward bases and a hybrid. This page starts only after the traveller intends to include Beijing, Xi'an and Chengdu and needs the order, gateways and protected-day ledger for those three named cities.
+
 Potential overlap was checked against the current repository. The main neighbouring owners are:
 
 - `/guides/china-open-jaw-flights-route-planning/` — open-jaw ticket and backtrack decision across China;
+- `/guides/china-hub-and-spoke-or-multi-base-route/` — general hub-versus-forward-base architecture;
 - `/guides/is-your-china-itinerary-too-rushed/` — general transfer-day and pace audit;
 - `/guides/china-high-speed-train-first-time-guide/` — railway passenger procedure;
 - `/guides/which-beijing-railway-station/` — Beijing station selection;
@@ -124,6 +127,13 @@ Potential overlap was checked against the current repository. The main neighbour
 - If a same-gateway itinerary cannot absorb the additional return sector and final-flight buffer, the responsible repairs are a different gateway, more time or one fewer city.
 
 These are planning judgments, not transport-operator guarantees or measured punctuality claims.
+
+## Central review note — 2026-08-13
+
+- Rechecked the Xi'an East opening, Beijing hub network and Chengdu dual-airport notice against current official pages.
+- Added the Chengdu airport notice to the reader-facing source block because the body explicitly asks travellers to distinguish Tianfu and Shuangliu.
+- Clarified the boundary with the existing hub-versus-multi-base owner and linked it in all three locales.
+- Retained the 0–1–2 half-day ledger as an explicitly labelled Homeground planning rule rather than an operator promise.
 
 ## Information-object audit
 

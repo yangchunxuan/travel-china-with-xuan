@@ -1,6 +1,14 @@
 # Image plan — Qiaopi letters
 
-Status: `ASSETS NEEDED`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** [Shantou Qiaopi Museum.jpg](https://commons.wikimedia.org/wiki/File:Shantou_Qiaopi_Museum.jpg), Lhzss8, CC BY 4.0; photographed 2024-02-10
+- **Documented place:** Shantou Qiaopi Museum, Shantou, Guangdong
+- **Output:** `/images/guides/qiaopi-letters-remittances-and-migration/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** restrained architectural crop from the portrait original and resize only; no generative alteration
+- **Accuracy boundary:** the image identifies the museum exterior and former banking building only. It does not show an archive object, prove current admission conditions or reveal private correspondence.
 
 The hero should locate the visitor at a real holding/display institution without turning a private family letter into decorative texture.
 

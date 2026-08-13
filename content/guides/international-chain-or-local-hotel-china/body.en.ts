@@ -6,12 +6,12 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Do not choose a hotel in China by asking whether an international chain is automatically safer or a local hotel is automatically better value. Choose the exact property that can prove the room, foreign-passport check-in, payment, arrival route and recovery process your trip needs. A familiar brand can make documentation or escalation easier at some branches; a local hotel can have the better location and a perfectly workable staffed operation. Neither label answers the booking on its own.",
+      text: "Do not choose a hotel in China by asking whether an international chain is automatically safer or a local hotel is automatically better value. Choose the exact property that can document the room, foreign-passport check-in, payment, arrival route and problem-resolution process your trip needs. A familiar brand can make documentation or escalation easier at some branches; a local hotel can have the better location and a fully workable front-desk operation. Neither label answers the booking on its own.",
     },
     {
       id: "scope",
       type: "paragraph",
-      text: "This page owns the property-choice method. The separate foreign-guest guide owns the legal rule, accommodation registration and refusal-recovery sequence. The hotel-value guide owns prices; the metro guide owns exit-level walking checks. Here, ‘international’ and ‘local’ are discovery labels only. The final decision is about one named branch, one room category, one booking channel and one arrival.",
+      text: "This page covers the property-choice method. The separate foreign-guest guide covers the legal rule, accommodation registration and refusal-recovery sequence. The hotel-value guide covers prices; the metro guide covers exit-level walking checks. Here, ‘international’ and ‘local’ are discovery labels only. The final decision is about one named branch, one room category, one booking channel and one arrival.",
     },
     {
       id: "four-records",
@@ -40,7 +40,7 @@ const body = {
         ["First night or arrival after 22:00", "Staffed desk, written booking hold and duty contact", "Choose whichever proves all three"],
         ["Children, older travellers or much luggage", "Beds, step route, drop-off and replacement support", "Verified usability beats vague space"],
         ["Early train or fixed appointment", "Correct branch, Chinese address and door-to-door route", "Location can defeat familiarity"],
-        ["Employer paperwork or complex deposit", "Issuing entity, invoice, card network and deposit terms", "Prefer the documented process"],
+        ["Business paperwork or complex deposit", "Issuing entity, invoice, card network and deposit terms", "Prefer the documented process"],
         ["Specific accessibility need", "Measured curb-to-room and bathroom evidence", "Use the accessible-room method, not either label"],
       ],
     },
@@ -68,7 +68,7 @@ const body = {
         "Ask whether that desk can register every foreign guest. Save the reply; a website or platform label is not law.",
         "Confirm balance and deposit methods, including the international card networks accepted.",
         "Confirm arrival-time staffing, late-arrival hold, taxi drop-off and luggage storage.",
-        "Identify the seller and read its cancellation and modification terms; property, group and platform may own different failures.",
+        "Identify the seller and read its cancellation and modification terms; the property, group and platform may control different parts of a failure.",
         "Keep replies, room terms and one confirmed backup offline. Recheck shortly before arrival.",
       ],
     },
@@ -122,7 +122,7 @@ const body = {
       caption: "Apply the same method, then let the result differ",
       columns: ["Scenario", "Verified evidence", "Decision"],
       rows: [
-        ["Family arriving at 00:30", "The international branch confirms staffing, passports, family bedding, payment and late hold; the local property gives a generic reply", "Choose the verified branch because this arrival has a documented owner—not because all international chains are safer"],
+        ["Family arriving at 00:30", "The international branch confirms staffing, passports, family bedding, payment and late hold; the local property gives a generic reply", "Choose the verified branch because responsibility for this arrival is documented—not because all international chains are safer"],
         ["Solo traveller with an early train", "A local hotel by the correct station confirms passports, desk, quiet room, luggage and map pin; the international branch adds a long transfer", "Choose the local hotel: evidence and route fit outweigh familiarity"],
       ],
     },
@@ -141,14 +141,14 @@ const body = {
         "Switch when payment or deposit needs an unreliable method.",
         "Let location overturn brand preference when a fixed event or the slowest traveller makes the transfer material.",
         "Let the seller matter when the group cannot change or refund a third-party booking.",
-        "Keep a backup when nobody owns a midnight problem.",
+        "Keep a backup when nobody accepts responsibility for a midnight problem.",
       ],
     },
     {
       id: "recovery-heading",
       type: "heading",
       level: 2,
-      text: "Recover by identifying who owns the failed step",
+      text: "When something fails, identify who controls that step",
     },
     {
       id: "recovery-table",
@@ -166,14 +166,14 @@ const body = {
     {
       id: "channel-boundary",
       type: "paragraph",
-      text: "The property owns the physical room and on-site response. The group can act only within its management and reservation system. The booking channel owns the transaction path it sold. For an unresolved consumer dispute, China’s 12315 route can receive complaints, but it does not produce a room for the night. For nationality-based refusal or registration questions, follow the separate official-channel workflow rather than treating an international brand as the backup plan.",
+      text: "The property controls the physical room and on-site response. The group can act only within its management and reservation system. The booking channel controls the transaction path it sold. For an unresolved consumer dispute, China’s 12315 route can receive complaints, but it does not produce a room for the night. For nationality-based refusal or registration questions, follow the separate official-channel workflow rather than treating an international brand as the backup plan.",
     },
     {
       id: "move-callout",
       type: "callout",
       title: "Set a safe-room deadline",
       tone: "decision",
-      body: "With children, an older traveller, accessibility needs or a late hour, do not spend unlimited time proving which logo should have worked. Ask for the manager, create the support record, protect the no-show position, then move to a property that has confirmed the actual arrival. Preserve the dispute after everyone is safe.",
+      body: "With children, an older traveller, accessibility needs or a late hour, do not spend unlimited time proving which logo should have worked. Ask for the manager, create the support record, document that you arrived and should not be marked as a no-show, then move to a property that has confirmed check-in for the real arrival time. Preserve the dispute after everyone is safe.",
     },
     {
       id: "checklist-heading",
@@ -209,7 +209,7 @@ const body = {
       title: "Continue the accommodation decision",
       items: [
         { label: "Where to stay in China", href: "/stay/", description: "Return to the accommodation collection." },
-        { label: "Can foreigners stay at any hotel in China?", href: "/guides/foreigners-china-hotel/", description: "Use the registration and refusal-recovery owner." },
+        { label: "Can foreigners stay at any hotel in China?", href: "/guides/foreigners-china-hotel/", description: "Use the dedicated registration and refusal-recovery guide." },
         { label: "Why are hotels in China so cheap?", href: "/guides/why-are-hotels-in-china-so-cheap/", description: "Compare like-for-like value." },
         { label: "Is the hotel really near the metro?", href: "/guides/china-hotel-near-metro/", description: "Audit the exit and walking route." },
         { label: "How to pay in China as a tourist", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Prepare a payment backup." },
@@ -223,10 +223,11 @@ const body = {
         { label: "Guide to Working and Living in China as Business Expatriates (2025)", url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025", publisher: "State Council of the People's Republic of China", reviewedAt: "2026-08-13" },
         { label: "Measures to facilitate accommodation for overseas visitors", url: "https://www.mofcom.gov.cn/xwfb/rcxwfb/art/2024/art_6e5fd351d24c460cad01512ce52d3f83.html", publisher: "Ministry of Commerce of the People's Republic of China", reviewedAt: "2026-08-13" },
         { label: "National Enterprise Credit Information Publicity System overview", url: "https://www.samr.gov.cn/xw/mtjj/art/2024/art_cc4c238f12954079a735470b318fe8d7.html", publisher: "State Administration for Market Regulation", reviewedAt: "2026-08-13" },
-        { label: "2026 consumer-dispute and 12315 update", url: "https://www.samr.gov.cn/xw/zj/art/2026/art_d177b8080ae54009bb55f1f7dbabbe13.html", publisher: "State Administration for Market Regulation", reviewedAt: "2026-08-13" },
+        { label: "Official 12315 consumer complaint channels", url: "https://www.samr.gov.cn/hd/xfzn/art/2022/art_9d22351e9bee4da38b89c15e843207b4.html", publisher: "State Administration for Market Regulation", reviewedAt: "2026-08-13" },
         { label: "Four Points by Sheraton Qingtian property information", url: "https://www.marriott.com.cn/hotels/wnzfp-four-points-qingtian/overview/", publisher: "Marriott International", reviewedAt: "2026-08-13" },
         { label: "Marriott reservation FAQ", url: "https://www.marriott.com.cn/help/reservations-faq.mi", publisher: "Marriott International", reviewedAt: "2026-08-13" },
         { label: "Crystal Orange Beijing Qianmen property information", url: "https://m.huazhu.com/Hotel/Detail/1000506", publisher: "H World Group", reviewedAt: "2026-08-13" },
+        { label: "Hero photograph: Haiyu Hotspring Hotel exterior, Jpbowen (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Entrance_of_the_Haiyu_Hotspring_Hotel,_Beibei,_Chongqing.JPG", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ],
     },
   ],

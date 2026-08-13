@@ -118,7 +118,7 @@ const body = {
     {
       id: "air-rule",
       type: "paragraph",
-      text: "中国民航局规则要求，电动轮椅、机上窄型轮椅、医用氧气或服务犬等特定需求应在订座时提出，最迟不得晚于离站前 48 小时。需要登离机协助的旅客，目前应在普通旅客停止办理乘机手续前 2 小时到机场办理。要询问电池处理、包装、舱门口交运与交还、机上窄型轮椅、活动扶手、机上厕所和远机位保障。民航局 2026 年措施强调从下车点到到达乘车点的全链衔接，但具体运营方和实际飞机仍须逐项确认。"
+      text: "中国民航局现行规则列明的服务中，包括托运电动轮椅、使用机上窄型轮椅、医用氧气或携带服务犬；这些需求应在订座时提出，最迟不得晚于离站前 48 小时。需要登机或离机协助的旅客，目前应不晚于普通旅客停止办理乘机手续前 2 小时完成值机。还要询问电池处理、包装、舱门口交运与交还、机上窄型轮椅、活动扶手、机上厕所和远机位保障。民航局 2026 年措施强调从下车点到到达乘车点的全链衔接，但具体运营方和实际飞机仍须逐项确认。"
     },
     {
       id: "hotel-heading",
@@ -137,8 +137,8 @@ const body = {
         "床：床面高度、移位机所需床底空间、可接近的一侧，以及家具能否移动。",
         "浴室：淋浴还是浴缸、固定或折叠座椅、扶手位置和侧向移位净空。",
         "马桶和洗手盆：座高、接近净空、膝部空间，以及门扇是否占用移位位置。",
-        "库存：准确的无障碍客房是否已经保留，并避免被系统自动换房。",
-        "备用：设施维护或分房出错时，是否有另一间实测客房或附近酒店。"
+        "客房分配：取得所需实测客房的书面确认，不要假定系统一定不会换房。",
+        "备用：书面记录换房时酒店如何处理，包括另一间实测客房或附近酒店。"
       ]
     },
     {
@@ -213,7 +213,7 @@ const body = {
       type: "callout",
       tone: "neutral",
       title: "路线更短、确认更强，反而更好",
-      body: "一位独自旅行者无法独立移位，并使用电动轮椅。一次转机、没有实测的酒店客房和一个只有坡道图标的古迹，形成三个独立的硬性失败点。更好的决定是选择直飞，取得电池和舱门口处理的书面确认，订下由酒店保留的实测客房，并选择能够确认完整路线和厕所的场馆。任何硬性环节仍只是“有条件”而没有安全备用，就删掉那座城市，不要承诺现场人员总能临时解决。"
+      body: "一位独自旅行者无法独立移位，并使用电动轮椅。一次转机、没有实测的酒店客房和一个只有坡道图标的古迹，构成三个未通过核验的必要环节。更好的决定是选择直飞，取得电池和舱门口处理的书面确认；让酒店书面确认具体实测客房，并记录客房被换时的处理方案；再选择完整路线和厕所已经按本人需求核验的场馆。任何必要环节仍只是“有条件”，却没有经过本人需求核验的备用，就删掉那座城市，不要承诺现场人员总能临时解决。"
     },
     {
       id: "decision-heading",
@@ -227,8 +227,8 @@ const body = {
       title: "最弱的必要环节决定结果",
       columns: [
         { "heading": "可行", "body": "所有必要环节都适配旅客和轮椅，确认与订单绑定，动态项目也设有复核日期。" },
-        { "heading": "有条件", "body": "一个非关键环节仍不确定，但已经有明确、安全且可预订的替代。" },
-        { "heading": "重做", "body": "移位、厕所、客房、登乘方式或恢复路径不适配，且没有安全备用。" }
+        { "heading": "有条件", "body": "一个非关键环节仍不确定，但已有明确、可预订，并按旅客本人需求核验过的替代。" },
+        { "heading": "重做", "body": "移位、厕所、客房、登乘方式或恢复路径不适配，且没有合适的备用。" }
       ]
     },
     {
@@ -279,7 +279,7 @@ const body = {
       type: "callout",
       tone: "decision",
       title: "需要人工核查无障碍链？",
-      body: "请留下日期、旅客情况、轮椅尺寸和移位限制，以及考虑中的城市和大致预算。有效的人工核查应指出最弱环节与安全备用，而不是承诺所有地方都无障碍。"
+      body: "请留下日期、旅客情况、轮椅尺寸和移位限制，以及考虑中的城市和大致预算。有效的人工核查应指出最弱环节，以及需要按本人需求继续核验的备用，而不是承诺所有地方都无障碍。"
     },
     {
       id: "more-planning",
@@ -288,6 +288,8 @@ const body = {
       items: [
         { "label": "浏览中国旅行规划指南", "href": "/zh/plan/", "description": "回到规划集合页，再缩小路线范围。" },
         { "label": "选择靠近合适地铁出入口的酒店", "href": "/zh/guides/china-hotel-near-metro/", "description": "看车站出入口和完整最后一程，不只看直线距离。" },
+        { "label": "核验真正合适的无障碍客房", "href": "/zh/guides/china-accessible-hotel-room-verification/", "description": "向酒店核验客房尺寸、分配和被换房时的备用。" },
+        { "label": "选择私人接送还是公共交通", "href": "/zh/guides/china-private-transfer-or-public-transport/", "description": "针对一个地面段，比较具体车辆和公共交通的完整链。" },
         { "label": "第一次乘中国高铁前做好准备", "href": "/zh/guides/china-high-speed-train-first-time-guide/", "description": "先了解一般车站流程，再加入协助交接。" },
         { "label": "用开口程航班减少回头路", "href": "/zh/guides/china-open-jaw-flights-route-planning/", "description": "在无障碍链支持不同门户时，减少重复转场。" }
       ]
@@ -301,10 +303,11 @@ const body = {
         { "label": "GB 55019-2021 官方公告与标准正文", "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/202204/t20220412_2674451.html", "publisher": "北京市政府转载住房城乡建设部标准", "reviewedAt": "2026-08-13" },
         { "label": "重点旅客预约服务说明", "url": "https://kyfw.12306.cn/otn/view/icentre_qxyyInfo.html", "publisher": "中国铁路 12306", "reviewedAt": "2026-08-13" },
         { "label": "残疾人航空运输管理办法", "url": "https://www.caac.gov.cn/XXGK/XXGK/ZFGW/201601/t20160122_27671.html", "publisher": "中国民用航空局", "reviewedAt": "2026-08-13" },
-        { "label": "2026 年残疾人航空运输保障措施解读", "url": "https://www.caac.gov.cn/XXGK/XXGK/ZCJD/202607/t20260713_231259.html", "publisher": "中国民用航空局", "reviewedAt": "2026-08-13" },
+        { "label": "2026 年加强残疾人航空运输保障措施", "url": "https://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260709_231243.html", "publisher": "中国民用航空局", "reviewedAt": "2026-08-13" },
         { "label": "北京地铁各站无障碍设施信息", "url": "https://www.bjsubway.com/station/wzass/", "publisher": "北京地铁", "reviewedAt": "2026-08-13" },
         { "label": "故宫博物院参观路线与无障碍信息", "url": "https://www.dpm.org.cn/Visit.html", "publisher": "故宫博物院", "reviewedAt": "2026-08-13" },
-        { "label": "上海博物馆观众服务", "url": "https://www.shanghaimuseum.net/mu/frontend/pg/service/services", "publisher": "上海博物馆", "reviewedAt": "2026-08-13" }
+        { "label": "上海博物馆观众服务", "url": "https://www.shanghaimuseum.net/mu/frontend/pg/service/services", "publisher": "上海博物馆", "reviewedAt": "2026-08-13" },
+        { label: "题图：北苑站 A 口坡道，N509FZ（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:Exit_A_ramp_of_Beiyuan_Station_(20210709114327).jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" }
       ]
     }
   ]

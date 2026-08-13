@@ -32,7 +32,7 @@ Forum material was used only to identify questions. It supports no legal, paymen
 1. The State Council’s 2025 guide says foreign hotel guests present passports, Foreign Permanent Resident ID Cards or other valid documents at reception for registration. It describes RMB cash, bank cards, Alipay and Weixin Pay as hotel payment routes and specifically tells international-card users to ask the hotel in advance whether its card network is accepted.
 2. The July 2024 seven-department accommodation measures say local departments and platforms should not use qualification requirements to restrict accommodation operators from receiving overseas guests, and platforms and operators should not illegally publish refusal notices. The body cites this only as a boundary and sends the full legal/refusal task to `foreigners-china-hotel`.
 3. The State Administration for Market Regulation says the National Enterprise Credit Information Publicity System publishes registered business and credit information. The article explicitly says this does not certify a room, service quality, foreign-guest execution or a remedy.
-4. SAMR’s March 2026 update confirms 12315 as a consumer complaint, reporting and administrative-mediation route. The body does not describe it as an emergency room-finding service or guaranteed compensation.
+4. SAMR’s official consumer guide confirms the 12315 platform and local 12315 channels for consumer complaints. The body does not describe them as emergency room-finding services or guaranteed compensation.
 
 ### Exact-property and group examples
 
@@ -63,7 +63,7 @@ These must be confirmed for the exact property and travel date.
 2. Ministry of Commerce — seven-department measures to facilitate accommodation for overseas visitors: https://www.mofcom.gov.cn/xwfb/rcxwfb/art/2024/art_6e5fd351d24c460cad01512ce52d3f83.html
 3. State Administration for Market Regulation — National Enterprise Credit Information Publicity System overview: https://www.samr.gov.cn/xw/mtjj/art/2024/art_cc4c238f12954079a735470b318fe8d7.html
 4. National Enterprise Credit Information Publicity System: https://www.gsxt.gov.cn/
-5. State Administration for Market Regulation — 2026 consumer-dispute and 12315 update: https://www.samr.gov.cn/xw/zj/art/2026/art_d177b8080ae54009bb55f1f7dbabbe13.html
+5. State Administration for Market Regulation — official 12315 consumer complaint channels: https://www.samr.gov.cn/hd/xfzn/art/2022/art_9d22351e9bee4da38b89c15e843207b4.html
 6. Marriott International — Four Points by Sheraton Qingtian property page: https://www.marriott.com.cn/hotels/wnzfp-four-points-qingtian/overview/
 7. Marriott International — reservation FAQ: https://www.marriott.com.cn/help/reservations-faq.mi
 8. H World Group — Crystal Orange Beijing Qianmen property page: https://m.huazhu.com/Hotel/Detail/1000506
@@ -85,3 +85,10 @@ All sources above were reopened or rechecked on **2026-08-13**. No property, gro
 ## Asset state
 
 No hero binary is included. `metadata.json` reserves the expected `/images/guides/international-chain-or-local-hotel-china/hero-1600.webp` path. Production connection must wait for the rights-verified real asset specified in `image-plan.md`.
+
+## Central integration re-review — 2026-08-13
+
+- Reopened the current Ministry of Commerce accommodation notice, SAMR consumer/enterprise references and the exact Marriott and H World property pages used as examples.
+- Replaced a general 2026 SAMR news update with SAMR's direct, accessible 12315 consumer-channel guide.
+- Reconfirmed the canonical boundary: the article compares evidence from exact properties and booking channels; it does not certify a brand, turn a property-page label into law, or promise foreign-card acceptance, foreign-guest handling, inventory or recovery.
+- EN/ZH/KO structure remained aligned. This pass changed only natural-language wording and support-ticket terminology; `sourceReviewedDate` remains 2026-08-13.

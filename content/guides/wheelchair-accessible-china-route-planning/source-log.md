@@ -1,6 +1,6 @@
 # Source log — Planning a Wheelchair-Accessible China Route
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
@@ -75,7 +75,7 @@ A fact at level 1 or 2 is not treated as proof of level 3.
 - Publisher: Civil Aviation Administration of China
 - Status shown by publisher: Effective
 - Checked: 2026-08-13
-- Facts used: Certain requests must currently be made at booking and no later than 48 hours before departure; passengers needing boarding or disembarkation help should check in 2 hours before the ordinary deadline; the carrier should provide information about chair storage, aircraft accessibility and onboard toilets; the rules address door-side chair use and return, assistance when no bridge is available, irregular-flight support and assistive-device handling.
+- Facts used: For the services listed in the rules—including checking a powered wheelchair, using an onboard aisle chair, medical oxygen and travelling with a service dog—the request must currently be made at booking and no later than 48 hours before departure. Passengers needing boarding or disembarkation help should complete check-in 2 hours before the ordinary deadline. The carrier should provide information about chair storage, aircraft accessibility and onboard toilets; the rules also address door-side chair use and return, assistance when no bridge is available, irregular-flight support and assistive-device handling.
 - Boundary: Aircraft type, aisle-chair availability, battery acceptance, transfer method and remote-stand operation remain booking-specific. The article does not infer that all aircraft toilets are wheelchair accessible.
 - Update trigger: Replacement regulation; carrier special-assistance process; dangerous-goods or battery rule change.
 
@@ -140,11 +140,18 @@ A fact at level 1 or 2 is not treated as proof of level 3.
 ## Homeground editorial judgments
 
 - The weakest essential link decides whether the segment is “go,” “conditional” or “redesign.”
-- A conditional essential link is acceptable only when a safe, named and obtainable fallback exists.
+- A conditional non-critical link is acceptable only when a named and obtainable fallback has been checked against the traveller's own requirements. An essential link that remains incompatible or unverified requires redesign.
 - Direct transport can be preferable even when a connection appears accessible, because each handoff adds another failure point.
 - Fewer cities can produce more usable sightseeing time when they remove repeated hotel moves and transfer verification.
 - A companion's presence does not convert unsafe lifting, an incompatible bathroom or a missing lift into an acceptable plan.
 - Toilets are route infrastructure, not an optional amenity.
+
+## Canonical separation and link ownership
+
+- `/guides/china-accessible-hotel-room-verification/` owns the property-specific room measurement, assignment and fallback conversation.
+- `/guides/china-private-transfer-or-public-transport/` owns the paid-car versus public-transport purchase decision for one named ground segment.
+- `/guides/china-high-speed-train-first-time-guide/` owns the ordinary station sequence; this page adds traveller-specific assistance and accessibility checks.
+- This page owns the route-level end-to-end wheelchair access chain and does not certify a hotel, vehicle, station, airport, venue or city.
 
 ## Explicit unknowns and exclusions
 
@@ -165,3 +172,7 @@ Recheck before publication and whenever one of these triggers occurs:
 4. A cited airport, metro or venue changes terminals, entrances, accessible routes, booking rules or assistance contacts.
 5. A hotel example changes operator, room inventory or accessibility disclosure.
 6. Editorial adds any named route recommendation; every new node then needs its own current access-chain evidence.
+
+## Central review note — 2026-08-13
+
+EN/ZH/KO copy, structural parity, metadata, internal links and official-source boundaries were reviewed together. The CAAC 48-hour and early-check-in statements are limited to the services and assistance categories listed in the operative rule; the reader-facing 2026 source now links to the policy itself. Hotel-room and fallback language now requires written, traveller-specific verification and no longer implies that a property can guarantee assignment or that Homeground can certify safety.

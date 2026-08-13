@@ -1,6 +1,15 @@
 # Image plan — China regional food route
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** Homeground local library photograph `西安优选素材/05_街巷美食与人文/西安晨间包子铺热气腾腾的早餐.jpg`
+- **Rights basis:** owner's 2026-08-10 authorization for the organised local library, recorded in the central provenance ledger
+- **Documented place:** a morning bun stall in Xi'an
+- **Output:** `/images/guides/china-regional-food-route/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** crop and resize only; no generative alteration
+- **Accuracy boundary:** one Xi'an breakfast scene illustrates a regional meal node. It is not a complete China food route, restaurant endorsement, allergen statement, recipe or availability claim.
 
 ## Hero — original editorial route diagram
 

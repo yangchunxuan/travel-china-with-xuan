@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -12,7 +12,7 @@ const body = {
       id: "direct-answer",
       type: "callout",
       title: "What should a first-timer order?",
-      body: "Order one portion of Nanchang Banfen and one small crock soup whose main ingredient you recognize. A plain meat-patty, radish-and-rib or lotus-root-and-rib soup is an editorially practical starting point when that shop actually lists it; it is not an official ranking. Ask for less chilli before mixing, and share one set if your group wants to sample without committing to two full noodle portions.",
+      body: "Order one portion of Nanchang Banfen and one crock soup whose main ingredient you recognize. A plain meat-patty, radish-and-rib or lotus-root-and-rib soup is an editorially practical starting point when that shop actually lists it; it is not an official ranking. Ask for less chilli before mixing, and share one set if your group wants to sample without committing to two full noodle portions.",
       tone: "decision"
     },
     {
@@ -28,7 +28,7 @@ const body = {
       columns: ["Menu words", "What arrives", "Useful question"],
       rows: [
         ["南昌拌粉 / 拌粉", "Rice noodles drained and mixed with a seasoned dressing and shop-specific garnishes", "‘Is the chilli already mixed in?’ 辣椒已经拌进去了吗？"],
-        ["炒粉", "Rice noodles stir-fried in a wok, usually hotter, oilier and made to order", "‘Is this stir-fried?’ 这个是炒的吗？"],
+        ["炒粉", "Rice noodles stir-fried in a wok rather than drained and mixed; oil, heat and preparation vary by shop", "‘Is this stir-fried?’ 这个是炒的吗？"],
         ["汤粉", "Rice noodles served in broth as one bowl", "‘Does this already include soup?’ 这个本来就带汤吗？"],
         ["瓦罐汤", "A separate soup cooked and served from an earthenware crock; it is not a clay-pot rice dish", "‘Which crock soups are left?’ 现在哪些瓦罐汤还有？"]
       ]
@@ -161,7 +161,9 @@ const body = {
         {"label": "Nanchang breakfast: mixed rice noodles and crock soup", "url": "https://sgj.nc.gov.cn/ncsgj/mlnc/202105/abbc06c46e8e47518fde111b31cae22f.shtml", "publisher": "Nanchang Administration for Market Regulation", "reviewedAt": "2026-08-13"},
         {"label": "Nanchang food introduction", "url": "https://www.nc.gov.cn/ncszf/jrnc/202601/f817b2e448964eb59971056204e053cd.shtml", "publisher": "Nanchang People’s Government", "reviewedAt": "2026-08-13"},
         {"label": "Implementation opinion on Nanchang food development", "url": "https://www.nc.gov.cn/ncszf/xxgkzcwj/201806/9c230f5447d44de184cf2da71eee89be.shtml", "publisher": "Nanchang People’s Government", "reviewedAt": "2026-08-13"},
-        {"label": "Current product menu", "url": "https://www.wanfangyuan.com/chanpinzhongxin", "publisher": "Wanfangyuan", "reviewedAt": "2026-08-13"}
+        {"label": "Current product menu", "url": "https://www.wanfangyuan.com/chanpinzhongxin", "publisher": "Wanfangyuan", "reviewedAt": "2026-08-13"},
+        { label: "Hero left photograph: stirred rice noodles in Nanchang, N509FZ (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Stirred_rice_noodles_in_Nanchang_(20190619174747).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" },
+        { label: "Hero right photograph: Nanchang clay-pot soup breakfast, Qa003qa003 (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:%E7%93%A6%E7%BD%90%E6%B1%A4_20150119_085552.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ]
     }
   ]

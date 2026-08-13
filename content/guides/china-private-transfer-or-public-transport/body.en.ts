@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "Pay for a private transfer when it removes a verified weak link whose failure would matter: repeated bag handling, an unusable last stretch, a mobility constraint, an operating-hours gap or a costly missed connection. If public transport is one direct, operating line and every traveller can complete its first and last stretches, it is usually the cleaner choice. A car whose pickup point, capacity, waiting and cancellation terms are unknown is not a low-friction solution."
+      text: "Pay for a private transfer when it removes a verified weak link whose failure would matter: repeated bag handling, an unusable last stretch, a mobility constraint, an operating-hours gap or a costly missed connection. If public transport is one direct, operating line and every traveller can complete its first and last stretches, it is usually the simpler choice. A car whose pickup point, capacity, waiting and cancellation terms are unknown is not an easier solution."
     },
     {
       id: "single-segment",
@@ -37,7 +37,7 @@ const body = {
       ordered: true,
       items: [
         "Remove a public route if its current operating hours, lift/stair chain or last stretch cannot be verified for the actual travellers.",
-        "Remove a private service if the legal operator or booking counterparty, pickup point, vehicle and luggage capacity cannot be identified.",
+        "Remove a private service if the operating provider or booking counterparty cannot be identified, any required local credentials cannot be checked, or the pickup point, vehicle and luggage capacity are unknown.",
         "Remove a private service if waiting starts at an unclear moment or flight delay, terminal change, cancellation and refund terms are missing.",
         "Remove either option if the planned arrival leaves no tested recovery before a separately booked train, flight or timed event.",
         "If both are removed, redesign the segment: change the hotel, protect a buffer night or divide the trip at an airport/station hotel."
@@ -156,6 +156,7 @@ const body = {
         { label: "Choose Pudong or Hongqiao Airport", href: "/guides/shanghai-pudong-or-hongqiao-airport/", description: "Airport choice can remove the difficult ground segment." },
         { label: "Connect Beijing South with Capital or Daxing Airport", href: "/guides/beijing-south-station-to-capital-or-daxing-airport/", description: "Use the named corridor guide for exact mode execution." },
         { label: "Test whether a hotel is really near the metro", href: "/guides/china-hotel-near-metro/", description: "Inspect the correct exit and last stretch." },
+        { label: "Plan an accessible China route", href: "/guides/wheelchair-accessible-china-route-planning/", description: "Verify the complete station, vehicle, hotel and attraction chain for a wheelchair user." },
         { label: "Protect the last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Do not ask a ground transfer to rescue a fragile departure chain." }
       ]
     },

@@ -60,3 +60,9 @@ English, Chinese and Korean are complete, natural editions with exact block-ID/t
 ## Editorial distinctions
 
 Official facts identify route nodes and transport systems. “Move only if it buys a meaningful morning, removes at least two likely cross-area journeys or protects a departure” is explicitly Homeground planning judgment. No specific property, fare, room availability or travel-time promise is made.
+
+## Central integration re-review — 2026-08-13
+
+- Reopened the official geopark route pages, Hunan transport references and 12306 boundary. The sources still support the gate/base distinction and existence of transport links, but not a permanent timetable, fare or transfer duration.
+- Reconfirmed the canonical boundary: this page selects a lodging base from an already chosen attraction order. It does not replace the itinerary, ticketing, live transport or older-traveller guides.
+- EN/ZH/KO structure remained aligned. This pass changed only natural-language wording; `sourceReviewedDate` remains 2026-08-13.

@@ -60,7 +60,7 @@ const body = {
     {
       id: "network-facts",
       type: "paragraph",
-      text: "Official railway sources confirm the Beijing–Xi'an connection and the Xi'an–Chengdu high-speed railway, opened throughout in 2017. This supports the linear shape, not an old timetable. Xi'an East began operation on 2026-06-30, while Beijing and Chengdu have multiple terminals. Search the date in 12306 and copy the station on the selected service.",
+      text: "Official railway sources confirm the Beijing–Xi'an connection and the Xi'an–Chengdu high-speed railway, which fully opened in 2017. This supports the linear shape, not an old timetable. Xi'an East began operation on June 30, 2026, while Beijing and Chengdu also have multiple passenger hubs. Search the date in 12306 and copy the station on the selected service.",
     },
     {
       id: "station-ledger",
@@ -132,7 +132,7 @@ const body = {
       type: "list",
       ordered: true,
       items: [
-        "Fix the international airports and the last safe city before the outbound flight.",
+        "Fix the international airports and the final overnight city that protects the outbound flight.",
         "Mark every attraction with a date, closure day or timed-entry dependency.",
         "Give each non-substitutable priority a protected full day or a genuinely usable half-day.",
         "Insert the two intercity moves at 0 half-days, then upgrade only after live services are known.",
@@ -150,7 +150,7 @@ const body = {
       id: "traveller-scenario-one",
       type: "callout",
       tone: "neutral",
-      title: "Scenario 1: 9 nights, open-jaw pair",
+      title: "Scenario 1: two travellers, 9 nights, open-jaw flights",
       body: "2 travellers arrive in Beijing and leave Chengdu after 9 nights. In 10 calendar days, arrival, departure and 2 moves start at 0, leaving 6 full sightseeing-day equivalents. The line is sound, but those 6 days need priorities: a 10-day label is not 10 sightseeing days.",
     },
     {
@@ -274,6 +274,7 @@ const body = {
       items: [
         { label: "Browse the China planning guides", href: "/plan/", description: "Return to the planning collection and choose the next decision." },
         { label: "Choose open-jaw flights", href: "/guides/china-open-jaw-flights-route-planning/", description: "Compare different entry and exit cities with the cost of returning to one gateway." },
+        { label: "Choose one hub or multiple bases", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide the route architecture before fixing this named three-city order." },
         { label: "Prepare for a first high-speed train", href: "/guides/china-high-speed-train-first-time-guide/", description: "Handle passenger records and station procedure after the route is fixed." },
         { label: "Check whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test the complete trip for hotel moves, fixed visits and recovery." },
       ],
@@ -288,6 +289,7 @@ const body = {
         { label: "Xi'an East railway station begins operation", url: "https://en.xa.gov.cn/MediaCenter/News/2072253459180654594.html", publisher: "Xi'an Municipal Government", reviewedAt: "2026-08-13" },
         { label: "Public air passenger service regulation", url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", publisher: "Civil Aviation Administration of China", reviewedAt: "2026-08-13" },
         { label: "Beijing eight-station, two-airport transport network", url: "https://www.beijing.gov.cn/ywdt/yaowen/202511/t20251121_4290581.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-13" },
+        { label: "Chengdu dual-airport service-change notice", url: "https://www.cdairport.com/news_detail.aspx?cid=6393&page=1&t=60", publisher: "Sichuan Airport Group", reviewedAt: "2026-08-13" },
         { label: "Palace Museum visit and opening information", url: "https://www.dpm.org.cn/Visit.html", publisher: "Palace Museum", reviewedAt: "2026-08-13" },
         { label: "Terracotta Army reservation and visit guide", url: "https://www.bmy.com.cn/guide/", publisher: "Emperor Qinshihuang's Mausoleum Site Museum", reviewedAt: "2026-08-13" },
       ],

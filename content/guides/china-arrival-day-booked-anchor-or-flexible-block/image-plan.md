@@ -1,6 +1,15 @@
 # Image plan — china-arrival-day-booked-anchor-or-flexible-block
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** Homeground local library photograph `北京优选素材/06_北京交通与旅程/北京大兴国际机场_02.jpg`
+- **Rights basis:** owner's 2026-08-10 authorization for the organised local library, recorded in the central provenance ledger
+- **Documented place:** Beijing Daxing International Airport terminal
+- **Output:** `/images/guides/china-arrival-day-booked-anchor-or-flexible-block/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** crop and resize only; no generative alteration
+- **Accuracy boundary:** the aerial view establishes an airport arrival node only. It does not document a current immigration queue, baggage delay, terminal assignment or door-to-city time.
 
 ## Hero priority: original editorial information graphic
 

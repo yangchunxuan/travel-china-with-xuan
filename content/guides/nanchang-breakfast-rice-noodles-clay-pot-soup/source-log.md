@@ -1,9 +1,10 @@
 # Source log — Nanchang breakfast rice noodles and crock soup
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
 - Topic ID: `hg-topic-0759`
 - Source review date: 2026-08-13
+- Central verification: 2026-08-13 — city pairing, policy status and operator menu boundaries rechecked
 - Canonical owner: ordering Nanchang Banfen with an available Waguan soup, including heat, portion and sell-out recovery
 - Excludes: a citywide restaurant ranking, a universal recipe, a fixed price/hours directory, and dish identification from photographs
 

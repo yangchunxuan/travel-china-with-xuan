@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -92,10 +92,10 @@ const body = {
       ]
     },
     {
-      id: "current-example",
+      id: "format-example",
       type: "callout",
-      title: "当前实例：先看形式，再看标题",
-      body: "内蒙古艺术剧院 2026 年《千古马颂》演出季公告写明 5 月 1 日至 10 月 7 日演出，并说明作品包含马术、音乐、舞蹈、杂技等多种舞台元素。因此，它首先是一部大型综合作品，不是长调专场的证据。若当前节目单明确列出长调，可把该段作为综合作品中的入门样本。演出季资料核对于 2026 年 8 月 13 日；任何具体场次仍须向主办方确认。",
+      title: "形式实例：先读节目，再看标题",
+      body: "内蒙古艺术剧院把《千古马颂》介绍为综合运用马术、蒙古族歌舞乐、杂技和舞台技术的全景式综艺演出。这份主办方说明能够确认它是综合作品，却不能证明它是长调专场。只有某一具体场次的节目单明确列出长调时，才把该段视作综合作品中的长调入门；日期、阵容和票务仍须向主办方复核。",
       tone: "neutral"
     },
     {
@@ -177,7 +177,8 @@ const body = {
         {"label": "蒙古族长调民歌项目档案", "url": "https://www.ihchina.cn/project_details/12410.html", "publisher": "中国非物质文化遗产网", "reviewedAt": "2026-08-13"},
         {"label": "蒙古族马头琴音乐", "url": "https://ich.unesco.org/en/RL/traditional-music-of-the-morin-khuur-00068", "publisher": "UNESCO 非物质文化遗产", "reviewedAt": "2026-08-13"},
         {"label": "内蒙古艺术剧院", "url": "https://www.nmgysjygw.cn/", "publisher": "内蒙古艺术剧院", "reviewedAt": "2026-08-13"},
-        {"label": "《千古马颂》2026 演出季公告", "url": "https://www.nmg.news.cn/20260117/43bec76a82594f209a9224759a314329/c.html", "publisher": "新华网内蒙古频道", "reviewedAt": "2026-08-13"}
+        {"label": "《千古马颂》剧目介绍", "url": "https://www.nmgysjygw.cn/#/news/detail?id=3440", "publisher": "内蒙古艺术剧院", "reviewedAt": "2026-08-13"},
+        { label: "题图：呼伦贝尔草原，Emmazzye（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" }
       ]
     }
   ]

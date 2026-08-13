@@ -1,6 +1,14 @@
 # Image plan — Xixia script and imperial tombs
 
-Status: `ASSETS NEEDED`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source:** [Western Xia mausoleums 3.jpg](https://commons.wikimedia.org/wiki/File:Western_Xia_mausoleums_3.jpg), Thebrainchamber1, CC BY-SA 4.0; photographed 2024-05-08
+- **Documented place:** Xixia Imperial Tombs landscape, Ningxia
+- **Output:** `/images/guides/xixia-script-and-imperial-tombs-context/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only; no reconstruction or generative alteration
+- **Accuracy boundary:** the particular structure is not assigned a tomb number. The photograph shows surviving landscape context, not an original complete building, excavated script fragment or reconstruction.
 
 No image has been added to the repository. A generic earthen pagoda, desert mound or “ancient Chinese tomb” image cannot prove that the subject is the Xixia Imperial Tombs. Digital reconstruction must never be presented as a photograph of a surviving building.
 

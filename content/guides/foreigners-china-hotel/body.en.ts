@@ -104,7 +104,7 @@ const body = {
       id: "nonhotel-pilot",
       type: "callout",
       title: "The online pilot is not a hotel check-in method",
-      body: "The NIA page reviewed on 13 August 2026 still describes online non-hotel registration as a pilot in seven provincial-level regions. It does not replace a hotel’s registration duty. Recheck the NIA and local process for a private stay.",
+      body: "The NIA page reviewed on 13 August 2026 still describes online non-hotel registration as a pilot in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan. It does not replace a hotel’s registration duty. Recheck the NIA and local process for a private stay.",
       tone: "warning",
     },
     {
@@ -156,9 +156,9 @@ const body = {
       id: "platform-asks",
       type: "list",
       items: [
-        "Open a case against the live reservation and provide the reference.",
+        "Open a support case on the active reservation and provide the reference.",
         "Call the exact property and identify whether the cause is inventory, booking, document or registration.",
-        "Write the property’s answer into the order record and protect the guest from no-show treatment.",
+        "Write the property’s answer into the booking record and protect the guest from no-show treatment.",
         "Explain the options under the live terms: hotel resolution, replacement, penalty-free cancellation or refund review.",
         "State whether replacement and transport receipts may be reviewed; never promise reimbursement before written approval.",
       ],
@@ -169,8 +169,8 @@ const body = {
       caption: "Choose the replacement for the failure you actually face",
       columns: ["Situation", "Replacement priority", "Avoid"],
       rows: [
-        ["Late-night refusal", "A nearby staffed desk that confirms the exact passport and arrival time.", "Another remote or door-code check-in."],
-        ["Family, mobility need or heavy luggage", "A simple legal transfer and confirmed curb-to-room access.", "Rebooking by district name alone."],
+        ["Late-night refusal", "A nearby staffed desk that confirms the travel-document type and arrival time.", "Another remote or door-code check-in."],
+        ["Family, mobility need or heavy luggage", "A safe, straightforward transfer and confirmed curb-to-room access.", "Rebooking by district name alone."],
         ["Original dispute remains open", "A separate new confirmation and itemised receipts.", "Letting support cancel or overwrite the disputed record without written terms."],
       ],
     },
@@ -233,7 +233,7 @@ const body = {
       id: "final-checklist",
       type: "callout",
       title: "The two checklists to remember",
-      body: "Before arrival: exact branch, original documents, staffed time, written registration confirmation and saved terms. After refusal: exact cause, manager, platform case, no-show protection, confirmed replacement and necessary receipts. Resolve safety first; pursue the commercial or official remedy second.",
+      body: "Before arrival: exact branch, original documents, staffed time, written registration confirmation and saved terms. After refusal: exact cause, manager, platform case, no-show protection, confirmed replacement and necessary receipts. Secure safe accommodation first; pursue the commercial or official remedy second.",
       tone: "decision",
     },
     {
@@ -261,11 +261,12 @@ const body = {
       items: [
         { label: "Measures facilitating accommodation for overseas visitors", url: "https://www.mofcom.gov.cn/zwgk/zcfb/art/2024/art_10ddb29858c24ece86b3f575bda1d9c4.html", publisher: "Ministry of Commerce and six departments", reviewedAt: "2026-08-13" },
         { label: "English summary of the accommodation measures", url: "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html", publisher: "State Council website", reviewedAt: "2026-08-13" },
-        { label: "Response on refusal for lack of foreign-related qualification", url: "https://www.gov.cn/hudong/202405/content_6952770.htm", publisher: "China Government Network", reviewedAt: "2026-08-13" },
+        { label: "Government-hosted report on refusal for lack of foreign-related qualification", url: "https://wlt.xinjiang.gov.cn/wlt/xytx/202406/1ee6037434084d3ab23d68b7df174b4d.shtml", publisher: "Department of Culture and Tourism of Xinjiang", reviewedAt: "2026-08-13" },
         { label: "Hotel and non-hotel accommodation registration interpretation", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" },
         { label: "Beijing accommodation registration guide", url: "https://english.beijing.gov.cn/livinginbeijing/applicationfordocuments/202107/t20210719_2439278.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-13" },
         { label: "Official route to the 12315 consumer platform", url: "https://www.samr.gov.cn/hd/xfzn/art/2022/art_9d22351e9bee4da38b89c15e843207b4.html", publisher: "State Administration for Market Regulation", reviewedAt: "2026-08-13" },
         { label: "Boundary between 12345 and 110", url: "https://www.beijing.gov.cn/zhengce/gwywj/202205/t20220516_2711529.html", publisher: "State Council General Office via Beijing Government", reviewedAt: "2026-08-13" },
+        { label: "Hero photograph: Changchun Huatian Hotel check-in counter, N509FZ (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Check-in_counter_of_Changchun_Huatian_Hotel_(20260120074056).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
       ],
     },
   ],

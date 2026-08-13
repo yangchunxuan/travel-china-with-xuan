@@ -17,7 +17,7 @@ const body = {
     {
       id: "definition-body",
       type: "paragraph",
-      text: "China's national intangible-cultural-heritage material describes ingredients, preparation, cooking and eating customs; the Ministry of Culture and Tourism's 2026 food routes use specific places and traditions. That supports planning around local systems of eating. It does not certify a restaurant, make one dish represent a province or prove a tradition is available daily. Define the region's role before choosing a venue."
+      text: "China's national intangible-cultural-heritage material describes ingredients, preparation, cooking and eating customs. A 2026 collection commissioned by the Ministry of Culture and Tourism's Intangible Cultural Heritage Department and published by China Tourism News also organises food routes around specific places and traditions. That supports planning around local systems of eating. It does not certify a restaurant, make one dish represent a province or prove a tradition is available daily. Define the region's role before choosing a venue."
     },
     {
       id: "role-matrix-heading",
@@ -116,13 +116,13 @@ const body = {
     {
       id: "diet-questions",
       type: "table",
-      caption: "Questions that must be answered before an experience becomes an anchor",
+      caption: "Questions that must be answered before an experience becomes a core booking",
       columns: ["Question", "Why it matters", "If the answer is unclear"],
       rows: [
         ["Which exact ingredient must be avoided?", "Broad words such as vegetarian or nut-free may not identify stocks, sauces or cooking oils", "Use a written ingredient statement and simplify the meal"],
-        ["Is cross-contact a serious risk?", "A menu label cannot describe every shared wok, fryer, knife or serving utensil", "Choose a venue able to answer directly or use a controlled fallback"],
+        ["Is cross-contact a serious risk?", "A menu label cannot describe every shared wok, fryer, knife or serving utensil", "Choose a venue able to answer directly or use a lower-uncertainty fallback"],
         ["Can at least one traveller explain the restriction in writing?", "A busy market is a poor place to improvise a medical conversation", "Prepare Chinese text and an emergency plan before travel"],
-        ["Does the regional role survive the restriction?", "A route may promise contrast while leaving the traveller unable to participate", "Change the role from tasting to technique, culture or a safer meal format"],
+        ["Does the regional role survive the restriction?", "A route may promise contrast while leaving the traveller unable to participate", "Change the role from tasting to technique, culture or a lower-uncertainty meal format"],
         ["Is there a nearby alternative?", "A single must-eat venue creates pressure to accept an uncertain answer", "Record one confirmed substitute and one simple backup meal" ]
       ]
     },
@@ -138,7 +138,7 @@ const body = {
       type: "callout",
       tone: "neutral",
       title: "Traveller scenario 2: the restriction changes the route role",
-      body: "A family includes a vegetarian traveller with a severe peanut allergy. Repeated market tasting creates ingredient and cross-contact uncertainty. They keep the region but change its role: a pre-confirmed meal, a tea or food-culture visit and packaged specialties with readable labels replace uncontrolled sampling. If a restaurant cannot explain oil, sauce and shared equipment, they use a simple backup rather than negotiate while hungry and rushed."
+      body: "A family includes a vegetarian traveller with a severe peanut allergy. Repeated market tasting creates ingredient and cross-contact uncertainty. They keep the region but change its role: a meal at a venue that has answered their exact ingredient and cross-contact questions, a tea or food-culture visit, and packaged specialties with readable labels replace uncontrolled sampling. That answer reduces uncertainty; it is not an allergen-safety guarantee. If a restaurant cannot explain oil, sauce and shared equipment, they use a simple backup rather than negotiate while hungry and rushed."
     },
     {
       id: "fallback-heading",
@@ -155,7 +155,7 @@ const body = {
         ["1. Same role, same area", "The chosen venue is closed or full", "Use another nearby venue serving the same meal format or technique"],
         ["2. Same region, different format", "The meal window or reservation is lost", "Use a market, food hall, tea experience, cultural display or simpler meal"],
         ["3. Same route, different day", "Weather, fatigue or transport removes the current window", "Move the regional role to another stable meal window already in that base"],
-        ["4. Protect health and pace", "No answer is safe or the detour no longer fits", "Use the simple backup, rest, and delete the experience without adding another transfer"]
+        ["4. Protect health and pace", "Answers remain unclear or the detour no longer fits", "Use the simple backup, rest, and delete the experience without adding another transfer"]
       ]
     },
     {
@@ -178,10 +178,10 @@ const body = {
       columns: ["Failure", "Why it fails", "Repair"],
       rows: [
         ["One signature dish per city", "It confuses collection with cultural depth", "Give each region a broader role and allow more than one expression"],
-        ["Every meal is a reservation", "Delays and appetite changes have nowhere to go", "Protect only scarce anchors; leave ordinary meals flexible"],
+        ["Every meal is a reservation", "Delays and appetite changes have nowhere to go", "Protect only scarce core experiences; leave ordinary meals flexible"],
         ["A viral list defines authenticity", "Popularity, opening and ownership can change", "Use official cultural context, then verify the current venue directly"],
         ["Transfer days count as full tasting days", "Door-to-door movement removes meal windows", "Audit breakfast, lunch and dinner separately"],
-        ["Dietary needs are translated once", "Ingredients and shared equipment change by dish and kitchen", "Ask the exact question at every anchor and keep a fallback"]
+        ["Dietary needs are translated once", "Ingredients and shared equipment change by dish and kitchen", "Ask the exact question at every core experience and keep a fallback"]
       ]
     },
     {
@@ -200,7 +200,7 @@ const body = {
         "Every transfer has been converted into remaining breakfast, lunch and dinner windows.",
         "Time-specific markets and meal formats sit on stable nights, not optimistic arrival edges.",
         "Official railway or airline channels confirm the relevant connection, station or airport close to booking.",
-        "Every anchor has a current opening or service check and a same-region substitute.",
+        "Every core experience has a current opening or service check and a same-region substitute.",
         "Dietary questions, written translations, medication and a simple backup meal are ready where relevant.",
         "No non-refundable restaurant booking is carrying more risk than the experience is worth."
       ]
@@ -227,6 +227,7 @@ const body = {
         { "label": "Browse the China planning collection", "href": "/plan/", "description": "Place the food route inside the wider transport, timing and culture plan." },
         { "label": "Prepare for a first shared meal", "href": "/guides/first-shared-meal-in-china/", "description": "Understand ordering, sharing and paying once the route reaches the table." },
         { "label": "Understand Guangzhou morning tea", "href": "/guides/how-guangzhou-morning-tea-works/", "description": "Use the dedicated guide if that regional meal format earns a place." },
+        { "label": "Choose a hub-and-spoke or multi-base route", "href": "/guides/china-hub-and-spoke-or-multi-base-route/", "description": "Set the trip's base structure before adding another food region." },
         { "label": "Use China's high-speed rail for the first time", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Verify the operating steps after the regional direction is chosen." }
       ]
     },
@@ -235,7 +236,7 @@ const body = {
       type: "sources",
       title: "Official sources reviewed",
       items: [
-        { "label": "40 intangible-cultural-heritage food routes", "url": "https://www.mct.gov.cn/whzx/bnsj/fwzwhycs/202601/t20260128_964439.html", "publisher": "Ministry of Culture and Tourism", "reviewedAt": "2026-08-13" },
+        { "label": "40 intangible-cultural-heritage food routes", "url": "https://www.mct.gov.cn/whzx/bnsj/fwzwhycs/202601/t20260128_964439.html", "publisher": "Ministry of Culture and Tourism website / China Tourism News", "reviewedAt": "2026-08-13" },
         { "label": "Chinese culinary techniques and customs", "url": "https://www.ihchina.cn/project_details/23583.html", "publisher": "China Intangible Cultural Heritage Digital Museum", "reviewedAt": "2026-08-13" },
         { "label": "Sichuan cuisine techniques", "url": "https://www.ihchina.cn/project_details/23586.html", "publisher": "China Intangible Cultural Heritage Digital Museum", "reviewedAt": "2026-08-13" },
         { "label": "Guangzhou morning-tea protection rules", "url": "https://wglj.gz.gov.cn/gzdt/zwxx/content/post_10755149.html", "publisher": "Guangzhou Municipal Culture, Radio, Television and Tourism Bureau", "reviewedAt": "2026-08-13" },

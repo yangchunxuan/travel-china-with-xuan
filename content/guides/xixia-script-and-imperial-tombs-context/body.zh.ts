@@ -1,4 +1,4 @@
-import type { StructuredPageBody } from "@/lib/content-system/page-body";
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -82,9 +82,9 @@ const body = {
       caption: "官方记录能确认什么，又在哪里止步",
       columns: ["案例", "官方证据支持的内容", "仍须保留的边界"],
       rows: [
-        ["3 号陵", "2000—2001 年的地面清理发掘进一步明确了部分形制与营造方法", "建筑形制本身不能完整复原每项仪式"],
+        ["3 号陵", "2000—2001 年对地面建筑遗存的清理发掘，进一步明确了部分形制与营造方法", "建筑形制本身不能完整复原每项仪式"],
         ["6 号陵", "1972—1975 年及 2007—2008 年进行过发掘；相关铭文被用来推定其与李德明有关", "墓主人应写成“推定”或“归属判断”，不应当作毫无争议的认定"],
-        ["北端建筑遗址", "发掘记录了一组高等级建筑，并在该区域发现西夏文、汉文双语碑刻残片", "“祖庙遗址”是研究解释，不是原建筑留存下来的名称牌"],
+        ["北端建筑遗址", "发掘记录了一组高等级建筑，并在该区域发现西夏文和汉文碑刻残片", "“祖庙遗址”是研究解释，不是原建筑留存下来的名称牌"],
         ["鎏金铜牛", "出土于 MIII-107 号陪葬墓，可证明特定墓葬语境和精湛金属工艺", "一件精英随葬器不能代表普通家庭，也不能证明单一、固定的“民族风格”"]
       ]
     },
@@ -154,8 +154,9 @@ const body = {
         {"label": "西夏陵世界遗产项目", "url": "https://whc.unesco.org/en/list/1736", "publisher": "UNESCO 世界遗产中心", "reviewedAt": "2026-08-13"},
         {"label": "西夏陵申报档案", "url": "https://whc.unesco.org/en/documents/206074", "publisher": "UNESCO 世界遗产中心", "reviewedAt": "2026-08-13"},
         {"label": "西夏陵考古工作概述", "url": "https://whhlyt.nx.gov.cn/xxfb/wlyw/202311/t20231113_4347356_zzb.html", "publisher": "宁夏回族自治区文化和旅游厅", "reviewedAt": "2026-08-13"},
-        {"label": "西夏考古与北端建筑遗址", "url": "https://www.nopss.gov.cn/n1/2026/0121/c461625-40649844.html", "publisher": "全国哲学社会科学工作办公室", "reviewedAt": "2026-08-13"},
-        {"label": "西夏陵博物馆参观概览", "url": "https://www.yinchuan.gov.cn/sshc/lyjd/zdwbcs/202511/t20251125_5090985.html", "publisher": "银川市人民政府", "reviewedAt": "2026-08-13"}
+        {"label": "西夏考古与碑刻残片", "url": "https://www.nopss.gov.cn/n1/2026/0121/c461625-40649844.html", "publisher": "全国哲学社会科学工作办公室", "reviewedAt": "2026-08-13"},
+        {"label": "西夏陵博物馆参观概览", "url": "https://www.yinchuan.gov.cn/sshc/lyjd/zdwbcs/202511/t20251125_5090985.html", "publisher": "银川市人民政府", "reviewedAt": "2026-08-13"},
+        { label: "题图：西夏陵区景观，Thebrainchamber1（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:Western_Xia_mausoleums_3.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" }
       ]
     }
   ]

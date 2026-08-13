@@ -1,6 +1,16 @@
 # Image plan — zhangjiajie-city-or-wulingyuan-hotel-base
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+
+## Final central selection — 2026-08-13
+
+- **Source original:** `/Users/yangchunxuan/Desktop/Facebook图片素材/张家界优选素材/09_住宿街区与生活氛围/人文建筑·人物步行·街区住宿_187.jpg`
+- **Rights basis:** Homeground-owned local photo library covered by the owner's 2026-08-10 authorization recorded in the central provenance ledger
+- **Documented place:** Xibu Street approach, Wulingyuan, Zhangjiajie
+- **Output:** `/images/guides/zhangjiajie-city-or-wulingyuan-hotel-base/hero-1600.webp`, 1600×1000 WebP
+- **Edit:** centre crop and resize only
+- **Accuracy boundary:** the image shows Wulingyuan accommodation-area context only. It is not Zhangjiajie city and is not a side-by-side comparison of the two bases.
+- **AI status:** real documentary photograph; no generative edit
 
 No image is committed. No AI-generated or generatively altered documentary scene may be used.
 
