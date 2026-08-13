@@ -1,6 +1,14 @@
 # Research and source log
 
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
+
 Reviewed: 2026-08-13 (Asia/Shanghai).
+
+## Release-review revalidation
+
+- On 2026-08-13, the official State Council guidance as republished by the Ministry of Finance remained directly available. It defines the `渗、滞、蓄、净、用、排` sequence and the 70% figure as a policy objective with staged coverage goals.
+- The body correctly does not present that objective as a measured nationwide result, a design standard for one visible feature or a flood-safety guarantee.
+- Current English results were dominated by definitions, city case studies and feature lists. The page's catchment-to-downstream field sequence and explicit overflow/maintenance limits remain its canonical information gain.
 
 ## Action disposition and conflict check
 

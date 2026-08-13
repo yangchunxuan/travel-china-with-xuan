@@ -244,6 +244,7 @@ const body = {
         { "label": "24절기: 안런의 춘분 공동체 관습", "url": "https://www.ihchina.cn/project_details/15064.html", "publisher": "중국무형문화유산망", "reviewedAt": "2026-08-13" },
         { "label": "동지 절기와 지역별 관습", "url": "https://www.cma.gov.cn/ztbd/2025zt/24jq/dongzhi/index.html", "publisher": "중국기상국", "reviewedAt": "2026-08-13" },
         { "label": "1960~2008년 24절기의 기후 변화", "url": "https://link.springer.com/article/10.1007/s11434-011-4724-4", "publisher": "Science Bulletin / Springer Nature", "reviewedAt": "2026-08-13" },
+        { "label": "대표 이미지: Uuongkinghe가 촬영한 반산 입하 행사 북 공연, CC BY-SA 4.0; 크롭 및 크기 조정", "url": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94%E4%BB%A4%E9%BC%93_202405051009.jpg", "publisher": "위키미디어 공용", "reviewedAt": "2026-08-13" },
       ],
     },
   ],

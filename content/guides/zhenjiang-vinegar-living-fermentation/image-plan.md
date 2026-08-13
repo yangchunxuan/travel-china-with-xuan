@@ -1,19 +1,19 @@
 # Image plan — Zhenjiang's living vinegar fermentation culture
 
-Status: **COPY READY — ORIGINAL EXPLANATORY HERO GENERATED AND VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED**
+Status: **COPY READY — AI-ASSISTED EXPLANATORY HERO VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED**
 
 No documentary photograph is supplied. Do not use AI to fabricate a vinegar workshop, craftsperson, fermentation bed or old Zhenjiang factory.
 
 ## Hero — safe production fallback
 
-- **Format:** original editorial illustration, visibly diagrammatic rather than photorealistic.
-- **Composition:** one large ceramic vinegar jar in section, with a simplified layered grain/bran bed and curved arrows indicating air, heat and turning; behind it, a restrained river-and-hill silhouette that signals Zhenjiang without copying a landmark photograph. No company logo or retail label.
+- **Format:** AI-assisted Homeground editorial vector, visibly diagrammatic rather than photorealistic; AI-assisted: yes.
+- **Composition:** one large sectional vinegar jar, two smaller jars, simplified layered contents, curved arrows and abstract background waves. The background is not a documented Zhenjiang skyline or riverfront. No company logo or retail label.
 - **Accuracy rule:** the layers explain a concept, not a measured vessel cross-section or one producer's recipe. Label the hero as an illustration; keep detailed process information in HTML.
 - **Output:** `/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp`, 1600×1000 WebP; editable vector source retained.
-- **Rights:** Homeground-owned illustration with creator and date record. No generated documentary textures, people or factory architecture.
-- **EN alt:** `Illustrated vinegar jars and layered grain fermentation beside a simplified Zhenjiang riverfront silhouette.`
-- **ZH alt:** `醋坛、分层谷物发酵和镇江江岸轮廓组成的原创插画。`
-- **KO alt:** `식초 항아리와 층상 곡물 발효, 전장 강변 윤곽을 조합한 창작 일러스트.`
+- **Rights basis:** Homeground-produced project asset with retained SVG; no third-party photograph, logo, label or factory image is incorporated.
+- **EN alt:** `AI-assisted editorial illustration of three vinegar jars, layered contents and circular arrows; not a documentary Zhenjiang workshop or recipe.`
+- **ZH alt:** `AI 辅助编辑插画：三个醋坛、分层内容物与循环箭头；并非镇江作坊或配方的纪实画面。`
+- **KO alt:** `식초 항아리 세 개와 층상 내용물, 순환 화살표를 그린 AI 보조 편집 일러스트로, 전장 작업장이나 제조법의 기록 장면이 아님.`
 
 ### Production asset record
 
@@ -23,6 +23,7 @@ No documentary photograph is supplied. Do not use AI to fabricate a vinegar work
 - SVG SHA-256: `0e737b1c7fa66fce79087963bbd814c333c01df929105fae5f5600af5a23fa3a`.
 - WebP SHA-256: `15304cf4d31d15a72a4ed3a05894f4e7a62d3341d32002febe0ae209fc0005e7`.
 - Privacy and accuracy check: no person, logo, retail label, health claim, factory scene, proprietary recipe, exact coordinate or documentary claim.
+- Evidence boundary: the vector cannot establish Zhenjiang as the visible location, a real workshop or facility, an actual vessel or ingredient bed, a producer's recipe or process, a dated fermentation stage or any event.
 
 ## Real photograph needs — optional editorial upgrade
 

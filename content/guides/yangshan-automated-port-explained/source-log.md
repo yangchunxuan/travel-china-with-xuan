@@ -1,6 +1,6 @@
 # Source log — yangshan-automated-port-explained
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
 
 - Topic ID: B04
 - Editorial owner: Employee 5 batch
@@ -92,3 +92,10 @@ The copy contains more than 22 independently useful objects, including: scope di
 ## Asset status
 
 No public hero binary is supplied. `hero-source.svg` is an original, abstract, non-documentary process diagram without logos, labels, people, a realistic terminal layout or security-sensitive detail. It is an assets-needed fallback only. See `image-plan.md` for the preferred licensed real Phase IV photograph and rights checks.
+
+## Deep review outcome — 2026-08-13
+
+- Rechecked operator, Shanghai government, Ministry of Transport standard/announcement and peer-reviewed engineering sources for the Phase IV chain, TOS/ECS roles, human intervention and dated operating figures.
+- The Ministry-hosted standard binary may reject automated requests; the official publication announcement remains the stable fallback. No claim relies on a vendor-only source.
+- The copy correctly separates 6.3 million TEU design capacity from the dated 2025 throughput snapshot, and invited group access from public walk-in access. No dynamic number required correction.
+- EN/ZH/KO retain structural parity. The new SEO brief adds search-task, SERP-gap and measurement planning without exposing security-sensitive detail.

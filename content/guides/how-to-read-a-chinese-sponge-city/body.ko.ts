@@ -266,6 +266,12 @@ const body = {
           url: "https://www.mdpi.com/2073-4441/15/5/913",
           publisher: "Water",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "대표 이미지: Karoke Cirno가 촬영한 상하이 화샤공원 빗물정원, CC BY-SA 4.0; 크롭 및 크기 조정",
+          url: "https://commons.wikimedia.org/wiki/File:Rain_garden_in_Huaxia_Park.jpg",
+          publisher: "위키미디어 공용",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

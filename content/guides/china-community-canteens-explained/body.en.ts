@@ -233,9 +233,9 @@ const body = {
           description: "Check the continuous street-to-seat access chain for the actual traveller."
         },
         {
-          label: "Plan a regional food route",
-          href: "/guides/china-regional-food-route/",
-          description: "Keep culinary travel planning separate from community meal-service access."
+          label: "Understand the wider 15-minute neighbourhood",
+          href: "/guides/china-15-minute-neighbourhoods/",
+          description: "Place one canteen inside the broader service network without assuming every community facility is public."
         }
       ]
     },
@@ -302,6 +302,12 @@ const body = {
           label: "Spatial and service factors across 50 Guangzhou senior dining halls",
           url: "https://www.nature.com/articles/s41599-024-03880-y",
           publisher: "Humanities and Social Sciences Communications",
+          reviewedAt: "2026-08-13"
+        },
+        {
+          label: "Hero image: Zhongshan Road community cafeteria in Jinhua by MNXANL, CC BY-SA 4.0; cropped and resized",
+          url: "https://commons.wikimedia.org/wiki/File:202308_Community_Cafeteria_of_Zhongshanlu,_Jinhua.jpg",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-13"
         }
       ]

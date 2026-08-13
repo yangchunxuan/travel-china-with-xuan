@@ -154,7 +154,9 @@ const body = {
         {"label": "中车青岛四方历史沿革", "url": "https://www.crrcgc.cc/sfgfen/53_3341/53_4020/index.html", "publisher": "中车青岛四方", "reviewedAt": "2026-08-13"},
         {"label": "Nature's Tonic：青岛啤酒、生态与城市化（1900—1950）", "url": "https://www.journals.uchicago.edu/doi/full/10.1093/envhis/emy136", "publisher": "Environmental History", "reviewedAt": "2026-08-13"},
         {"label": "青岛外商投资集聚与地方经济发展研究", "url": "https://www.tandfonline.com/doi/full/10.1080/00343400601145186", "publisher": "Regional Studies", "reviewedAt": "2026-08-13"},
-        {"label": "青岛家电产业研发网络研究", "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001679817", "publisher": "韩国经济地理学会志", "reviewedAt": "2026-08-13"}
+        {"label": "青岛家电产业研发网络研究", "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001679817", "publisher": "韩国经济地理学会志", "reviewedAt": "2026-08-13"},
+        {"label": "头图：Lennartbj 于2017年11月15日拍摄青岛啤酒博物馆建筑；已裁切并转为 WebP", "url": "https://commons.wikimedia.org/wiki/File:Tsingtao_Brewery_in_Qingdao.jpg", "publisher": "Wikimedia Commons / Lennartbj", "reviewedAt": "2026-08-13"},
+        {"label": "头图衍生文件许可：CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-13"}
       ]
     }
   ]

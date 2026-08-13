@@ -336,6 +336,12 @@ const body = {
           url: "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2024.1406546/full",
           publisher: "Frontiers in Environmental Science",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "대표 위성 영상: USGS Landsat 자료로 제작한 NASA Earth Observatory의 쿠부치 사막 영상; 퍼블릭 도메인, 크롭 및 크기 조정",
+          url: "https://earthobservatory.nasa.gov/images/153759/building-a-great-solar-wall-in-china",
+          publisher: "NASA Earth Observatory / 미국지질조사국",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

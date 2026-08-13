@@ -58,7 +58,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "Explore China", href: "/explore/", description: "Compare Guiyang's urban role with the next destination."},
     {label: "One hub or multiple bases?", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide whether Guiyang is a base or a one-night transfer."},
     {label: "China climate regions for trip timing", href: "/guides/china-climate-regions-for-trip-timing/", description: "Do not transfer a weather expectation from another Chinese region."},
-    {label: "China itinerary with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Build the seated break and vehicle branch into the wider route."}
+    {label: "China itinerary with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Build the seated break and vehicle branch into the wider route."},
+    {label: "Understand Guizhou Village BA before planning Taipan", href: "/guides/guizhou-village-basketball-culture/", description: "Move from a Guiyang urban walk to a separate event trip whose date, access and return must be confirmed."}
   ]},
   {id: "consultation", type: "callout", title: "Need the walk fitted to a real arrival time?", body: "A Homeground travel consultant can adapt the light sequence, walking load, dinner needs and pickup to your hotel and date. Share the arrival time, group mobility and whether history, photography or food matters most.", tone: "neutral"},
   {id: "sources", type: "sources", title: "Official sources reviewed on 13 August 2026", items: [

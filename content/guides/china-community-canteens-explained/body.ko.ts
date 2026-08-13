@@ -233,9 +233,9 @@ const body = {
           description: "해당 여행자의 거리부터 좌석까지 연속 접근 동선을 확인합니다."
         },
         {
-          label: "중국 지역 음식 여행 계획하기",
-          href: "/ko/guides/china-regional-food-route/",
-          description: "미식 여행과 지역 식사 지원 시설의 출입 문제를 분리합니다."
+          label: "더 넓은 15분 지역 생활 서비스망 이해하기",
+          href: "/ko/guides/china-15-minute-neighbourhoods/",
+          description: "한 식당을 더 넓은 서비스망 안에서 이해하되 모든 지역 시설이 일반에 열려 있다고 가정하지 않습니다."
         }
       ]
     },
@@ -302,6 +302,12 @@ const body = {
           label: "광저우 고령자 식당 50곳의 공간·서비스 요소 연구",
           url: "https://www.nature.com/articles/s41599-024-03880-y",
           publisher: "Humanities and Social Sciences Communications",
+          reviewedAt: "2026-08-13"
+        },
+        {
+          label: "대표 이미지: MNXANL이 촬영한 진화 중산로 지역사회 식당, CC BY-SA 4.0; 크롭 및 크기 조정",
+          url: "https://commons.wikimedia.org/wiki/File:202308_Community_Cafeteria_of_Zhongshanlu,_Jinhua.jpg",
+          publisher: "위키미디어 공용",
           reviewedAt: "2026-08-13"
         }
       ]

@@ -318,6 +318,12 @@ const body = {
           url: "https://japanese.shanghai.gov.cn/ja-Latest-WhatsNew/20260509/fd38d18e47884b8690de97b847febb93.html",
           publisher: "Shanghai Municipal People’s Government",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "Hero image: Yangshan container port in 2013 by Acstar, CC0; cropped and resized",
+          url: "https://commons.wikimedia.org/wiki/File:Yangshan_Intermodal_Container_Port.JPG",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

@@ -231,7 +231,8 @@ const body = {
         { "label": "2026年综合运输春运方案", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "中华人民共和国交通运输部", "reviewedAt": "2026-08-13" },
         { "label": "铁路12306候补购票问答", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "中国铁路12306", "reviewedAt": "2026-08-13" },
         { "label": "迁移时代的家庭仪式研究", "url": "https://www.tandfonline.com/doi/full/10.1080/15267431.2018.1475391", "publisher": "Journal of Family Communication", "reviewedAt": "2026-08-13" },
-        { "label": "春运中的反向人流研究", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" }
+        { "label": "春运中的反向人流研究", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" },
+        { "label": "首图：小溪Yang拍摄广州南站春运候车大厅，CC BY 2.5；已裁切缩放", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "维基共享资源", "reviewedAt": "2026-08-13" }
       ]
     }
   ]

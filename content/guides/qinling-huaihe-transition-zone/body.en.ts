@@ -237,6 +237,7 @@ const body = {
         { "label": "Ten major scientific issues concerning China's north–south transitional zone", "url": "https://www.progressingeography.com/EN/abstract/article/1007-6301/42562", "publisher": "Progress in Geography", "reviewedAt": "2026-08-13" },
         { "label": "North–south vegetation transition in the eastern Qinling–Daba Mountains", "url": "https://www.geogsci.com/EN/abstract/article/1009-637X/49343", "publisher": "Journal of Geographical Sciences", "reviewedAt": "2026-08-13" },
         { "label": "Climate variation in the Qinling–Huaihe demarcation zone since 1961", "url": "https://www.sciencedirect.com/science/article/pii/S1470160X23014875", "publisher": "Ecological Indicators", "reviewedAt": "2026-08-13" },
+        { "label": "Hero image: a Qinling Mountains view by Charlie439753, CC BY-SA 4.0; cropped and resized", "url": "https://commons.wikimedia.org/wiki/File:Part_of_the_view_on_Qinling_mountains.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13" },
       ],
     },
   ],

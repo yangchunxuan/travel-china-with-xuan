@@ -224,9 +224,9 @@ const body = {
       title: "把社区观察接回实际行程规划",
       items: [
         {
-          label: "继续探索当代文化与日常中国",
-          href: "/zh/culture/",
-          description: "返回Homeground文化内容集合，阅读更多社会系统与日常生活解析。"
+          label: "核实社区食堂是否真的对公众开放",
+          href: "/zh/guides/china-community-canteens-explained/",
+          description: "针对生活圈中的一项具体服务，逐店核对准入、普通价格和饭卡要求。"
         },
         {
           label: "核验中国轮椅无障碍路线",
@@ -320,6 +320,12 @@ const body = {
           label: "《城乡社区生活圈规划》国家标准计划",
           url: "https://std.samr.gov.cn/gb/search/gbDetailed?id=3E68E420F12A352EE06397BE0A0ACBAE",
           publisher: "全国标准信息公共服务平台",
+          reviewedAt: "2026-08-13"
+        },
+        {
+          label: "首图：LaouZEI bOENFUOO拍摄深圳华侨城社区中心，CC0；已裁切缩放",
+          url: "https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%8D%97%E5%B1%B1%E5%8D%80_Nanshan_%E6%B7%B1%E5%8D%97%E5%A4%A7%E9%81%93_Shennan_Blvd_OCT_community_center_July_2024_R12S_01.jpg",
+          publisher: "维基共享资源",
           reviewedAt: "2026-08-13"
         }
       ]

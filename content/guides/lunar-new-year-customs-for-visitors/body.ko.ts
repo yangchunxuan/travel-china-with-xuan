@@ -231,7 +231,8 @@ const body = {
         { "label": "2026년 종합 교통 춘윈 계획", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "중화인민공화국 교통운수부", "reviewedAt": "2026-08-13" },
         { "label": "중국철도 대기 신청 FAQ", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "중국철도 12306", "reviewedAt": "2026-08-13" },
         { "label": "이주 시대 가족 의례 연구", "url": "https://www.tandfonline.com/doi/full/10.1080/15267431.2018.1475391", "publisher": "Journal of Family Communication", "reviewedAt": "2026-08-13" },
-        { "label": "춘윈 역방향 교통 흐름 연구", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" }
+        { "label": "춘윈 역방향 교통 흐름 연구", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" },
+        { "label": "대표 이미지: 小溪Yang이 촬영한 광저우남역 춘윈 대합실, CC BY 2.5; 크롭 및 크기 조정", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "위키미디어 공용", "reviewedAt": "2026-08-13" }
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # Source log — Beer, appliances and trains in Qingdao
 
-Status: `COPY READY — ORIGINAL EXPLANATORY HERO READY — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
 
 - Candidate ID: `B07`
 - Action: `new-page`
@@ -59,3 +59,10 @@ All three bodies contain the same blocks, six-by-six fact sets, two scenarios, w
 - `shandong-peninsula-coastal-city-rail-arc`
 - A future Qingdao destination hub
 - A future China industrial-heritage collection page
+
+## Release revalidation — 2026-08-13
+
+- The Tsingtao Beer Museum introduction opened directly and still identifies the Dengzhou Road 56 historic brick complex, retained equipment/archive framing and a view onto contemporary production. This remains first-party interpretation.
+- The Qingdao municipal industrial-heritage page again timed out during direct open. It is retained as an official indexed source, but publication must not depend on it for same-day visitor logistics.
+- A fresh search sample remained dominated by corporate histories, venue listings and city/brand promotion. The page's information gain remains the bounded comparison of site, skill, network and public memory.
+- EN/ZH/KO parity was rechecked. The title was narrowed from a city-building claim to three industrial-history lenses, and the production-photo alt boundary was updated in all locales: the future real Tsingtao Beer Museum hero is one historical industrial viewpoint, not evidence of appliances, rail or current production as a whole.

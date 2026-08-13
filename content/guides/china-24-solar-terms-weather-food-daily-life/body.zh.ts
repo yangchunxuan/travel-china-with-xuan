@@ -244,6 +244,7 @@ const body = {
         { "label": "农历二十四节气（安仁赶分社）", "url": "https://www.ihchina.cn/project_details/15064.html", "publisher": "中国非物质文化遗产网", "reviewedAt": "2026-08-13" },
         { "label": "二十四节气·冬至及地区习俗", "url": "https://www.cma.gov.cn/ztbd/2025zt/24jq/dongzhi/index.html", "publisher": "中国气象局", "reviewedAt": "2026-08-13" },
         { "label": "1960—2008年二十四节气的气候变化研究", "url": "https://link.springer.com/article/10.1007/s11434-011-4724-4", "publisher": "Science Bulletin / Springer Nature", "reviewedAt": "2026-08-13" },
+        { "label": "首图：Uuongkinghe拍摄杭州半山立夏节气鼓乐，CC BY-SA 4.0；已裁切缩放", "url": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94%E4%BB%A4%E9%BC%93_202405051009.jpg", "publisher": "维基共享资源", "reviewedAt": "2026-08-13" },
       ],
     },
   ],

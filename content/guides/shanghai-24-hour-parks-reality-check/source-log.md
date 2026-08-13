@@ -1,12 +1,18 @@
 # Source log — Shanghai 24-hour parks reality check
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
 Canonical owner: `/guides/shanghai-24-hour-parks-reality-check/`
 
 Dynamic classification: **high**. Recheck named-park status, zones, entrance, facilities, weather/works notices and return transport on the intended day.
+
+## Release-review revalidation
+
+- On 2026-08-13, the city 24-hour-park management guideline remained directly available. The body retains its distinction between whole-boundary access, a night-open zone and shorter facility hours.
+- The official Shanghai tourism page for Minhang Culture Park remained directly available and stated `24 hours` for the park while limiting the lake-loop area to `05:00–21:00`. This is still a dated worked example, not a permanent operating promise.
+- Current English and Chinese results were dominated by Century Park announcements and stable profile pages. The article therefore sends readers to current official query channels and does not publish a permanent list.
 
 ## Action disposition and conflict check
 

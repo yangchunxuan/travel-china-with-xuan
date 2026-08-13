@@ -231,7 +231,8 @@ const body = {
         { "label": "2026 integrated Chunyun plan", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "Ministry of Transport of the People’s Republic of China", "reviewedAt": "2026-08-13" },
         { "label": "China Railway waitlist FAQ", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "China Railway 12306", "reviewedAt": "2026-08-13" },
         { "label": "Maintaining Ties and Reaffirming Unity: Family Rituals in the Age of Migration", "url": "https://www.tandfonline.com/doi/full/10.1080/15267431.2018.1475391", "publisher": "Journal of Family Communication", "reviewedAt": "2026-08-13" },
-        { "label": "Reverse traffic flows during the Spring Festival travel rush", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" }
+        { "label": "Reverse traffic flows during the Spring Festival travel rush", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" },
+        { "label": "Hero image: Guangzhou South Chunyun waiting hall by 小溪Yang, CC BY 2.5; cropped and resized", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13" }
       ]
     }
   ]

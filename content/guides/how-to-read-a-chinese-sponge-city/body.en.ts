@@ -266,6 +266,12 @@ const body = {
           url: "https://www.mdpi.com/2073-4441/15/5/913",
           publisher: "Water",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "Hero image: Rain garden in Huaxia Park by Karoke Cirno, CC BY-SA 4.0; cropped and resized",
+          url: "https://commons.wikimedia.org/wiki/File:Rain_garden_in_Huaxia_Park.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

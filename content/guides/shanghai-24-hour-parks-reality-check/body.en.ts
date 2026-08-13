@@ -241,7 +241,8 @@ const body = {
         { "label": "Century Park 24-hour-opening implementation", "url": "https://www.shanghai.gov.cn/nw4411/20240417/479731e035004c3e9a03dd6c5cfe3099.html", "publisher": "Shanghai Municipal People’s Government", "reviewedAt": "2026-08-13" },
         { "label": "Minhang Culture Park current visitor listing", "url": "https://cmp.whlyj.sh.gov.cn/CMP/news_view.ac?id=ba5beafe94914f0497f56e3525d9a11f", "publisher": "Shanghai Municipal Administration of Culture and Tourism", "reviewedAt": "2026-08-13" },
         { "label": "Official Shanghai rail-transit links", "url": "https://jtw.sh.gov.cn/csgdjt/index.html", "publisher": "Shanghai Municipal Transportation Commission", "reviewedAt": "2026-08-13" },
-        { "label": "Government-hosted field reporting on 24-hour public facilities", "url": "https://www.shanghai.gov.cn/nw4411/20260713/7c8d3bccd2ca461f89b659295ac36087.html", "publisher": "Jiefang Daily via Shanghai Municipal People’s Government", "reviewedAt": "2026-08-13" }
+        { "label": "Government-hosted field reporting on 24-hour public facilities", "url": "https://www.shanghai.gov.cn/nw4411/20260713/7c8d3bccd2ca461f89b659295ac36087.html", "publisher": "Jiefang Daily via Shanghai Municipal People’s Government", "reviewedAt": "2026-08-13" },
+        { "label": "Hero image: Century Park at sunset by Mgmoscatello, CC BY-SA 3.0; cropped and converted", "url": "https://commons.wikimedia.org/wiki/File:Shanghai_Century_park_at_sunset.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13" }
       ]
     }
   ]

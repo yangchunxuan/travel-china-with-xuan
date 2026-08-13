@@ -237,6 +237,7 @@ const body = {
         { "label": "중국 남북 전이지대 연구의 10대 과학 과제", "url": "https://www.progressingeography.com/EN/abstract/article/1007-6301/42562", "publisher": "Progress in Geography", "reviewedAt": "2026-08-13" },
         { "label": "친링–다바 산맥 동부의 남북 식생 전이", "url": "https://www.geogsci.com/EN/abstract/article/1009-637X/49343", "publisher": "Journal of Geographical Sciences", "reviewedAt": "2026-08-13" },
         { "label": "1961년 이후 친링–화이허 구분 지대의 기후 시공간 변화", "url": "https://www.sciencedirect.com/science/article/pii/S1470160X23014875", "publisher": "Ecological Indicators", "reviewedAt": "2026-08-13" },
+        { "label": "대표 이미지: Charlie439753이 촬영한 산시성 친링산맥 풍경, CC BY-SA 4.0; 크롭 및 크기 조정", "url": "https://commons.wikimedia.org/wiki/File:Part_of_the_view_on_Qinling_mountains.jpg", "publisher": "위키미디어 공용", "reviewedAt": "2026-08-13" },
       ],
     },
   ],

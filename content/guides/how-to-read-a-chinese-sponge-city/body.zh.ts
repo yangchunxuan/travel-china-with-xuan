@@ -266,6 +266,12 @@ const body = {
           url: "https://www.mdpi.com/2073-4441/15/5/913",
           publisher: "Water",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "首图：Karoke Cirno拍摄上海华夏公园雨水花园，CC BY-SA 4.0；已裁切缩放",
+          url: "https://commons.wikimedia.org/wiki/File:Rain_garden_in_Huaxia_Park.jpg",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

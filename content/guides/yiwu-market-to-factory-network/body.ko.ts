@@ -52,7 +52,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"더 넓은 여정 준비하기",items:[
     {label:"중국 고속철 첫 이용 가이드",href:"/ko/guides/china-high-speed-train-first-time-guide/",description:"이우 시장 공간에 집중하기 전에 역과 탑승 절차를 처리한다."},
     {label:"상하이–항저우 교통 계획",href:"/ko/guides/shanghai-hangzhou-transport-route/",description:"장강삼각주 교통 맥락을 쓰되 이우를 상하이 당일치기로 단정하지 않는다."},
-    {label:"중국 지도 좌표 오프셋 이해",href:"/ko/guides/china-map-coordinate-offset-explained/",description:"정확한 시장 입구와 산업 주소를 저장할 때 핀 오류를 피한다."}
+    {label:"중국 지도 좌표 오프셋 이해",href:"/ko/guides/china-map-coordinate-offset-explained/",description:"정확한 시장 입구와 산업 주소를 저장할 때 핀 오류를 피한다."},
+    {label:"양산 자동화 항만의 컨테이너 이동 이해하기",href:"/ko/guides/yangshan-automated-port-explained/",description:"시장–공장 주장에서 범위가 분명한 항만 시스템으로 이어 가되 한 터미널을 전체 수출 사슬로 보지 마세요."}
   ]},
   {id:"sources",type:"sources",title:"공식·독립 자료",items:[
     {label:"대표 이미지 — 2014-08-01 촬영한 이우 국제상무성 내부 상품 전시. 현재 구역·점포·시장 배치의 증거는 아님",url:"https://commons.wikimedia.org/wiki/File:Tourist_goods_in_Yiwu_International_Trade_Mart.jpg",publisher:"iamdanw — CC BY 2.0; 출처 표기일 뿐 Homeground에 대한 지지를 뜻하지 않음",reviewedAt:"2026-08-13"},

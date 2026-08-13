@@ -241,7 +241,8 @@ const body = {
         { "label": "스지공원 24시간 개방 시행 정보", "url": "https://www.shanghai.gov.cn/nw4411/20240417/479731e035004c3e9a03dd6c5cfe3099.html", "publisher": "상하이시 인민정부", "reviewedAt": "2026-08-13" },
         { "label": "민항문화공원 현재 방문 정보", "url": "https://cmp.whlyj.sh.gov.cn/CMP/news_view.ac?id=ba5beafe94914f0497f56e3525d9a11f", "publisher": "상하이시 문화여유국", "reviewedAt": "2026-08-13" },
         { "label": "상하이 철도교통 공식 링크", "url": "https://jtw.sh.gov.cn/csgdjt/index.html", "publisher": "상하이시 교통위원회", "reviewedAt": "2026-08-13" },
-        { "label": "시 정부 사이트에 실린 24시간 공공시설 현장 보도", "url": "https://www.shanghai.gov.cn/nw4411/20260713/7c8d3bccd2ca461f89b659295ac36087.html", "publisher": "해방일보·상하이시 인민정부 사이트", "reviewedAt": "2026-08-13" }
+        { "label": "시 정부 사이트에 실린 24시간 공공시설 현장 보도", "url": "https://www.shanghai.gov.cn/nw4411/20260713/7c8d3bccd2ca461f89b659295ac36087.html", "publisher": "해방일보·상하이시 인민정부 사이트", "reviewedAt": "2026-08-13" },
+        { "label": "대표 이미지: Mgmoscatello가 촬영한 세기공원 일몰, CC BY-SA 3.0; 크롭 및 변환", "url": "https://commons.wikimedia.org/wiki/File:Shanghai_Century_park_at_sunset.jpg", "publisher": "위키미디어 공용", "reviewedAt": "2026-08-13" }
       ]
     }
   ]

@@ -2,11 +2,11 @@
 
 ## Safe launch hero
 
-- Format: original editorial cutaway diagram, 1600 × 1000 WebP.
-- Content: a clearly stylised modern street and fenced metro work footprint above labelled layers (modern services, disturbed fill, archaeological feature, deeper rail alignment), with a side workflow of “review → explore → excavate/protect → hand back/monitor.”
+- Format: AI-assisted Homeground editorial vector cutaway, 1600 × 1000 WebP; AI-assisted: yes.
+- Content: a clearly stylised modern street, marked excavation/work footprint, abstract subsurface feature, deeper metro alignment and a shape-only decision sequence.
 - Location claim: none. This is a national process explainer, not a rendering of Guangzhou, Beijing, Wuhan or Hangzhou.
 - Required disclosure in alt/caption: “explanatory cutaway” / “not a documentary excavation scene.”
-- Rights: Homeground original; retain source artwork and design file. Do not generate photorealistic workers, artefacts or a recognisable construction site.
+- Rights basis: Homeground-produced project asset with retained SVG; no third-party photograph, map, plan, artefact record or site image is incorporated. Do not generate photorealistic workers, artefacts or a recognisable construction site.
 - Privacy/safety: no faces, badges, licence plates, coordinates, access gates, excavation plans or instructions that could enable worksite entry.
 
 ### Production asset record
@@ -17,6 +17,7 @@
 - SVG SHA-256: `d5ce7055c089343949bab489ff54347e5ae39e88edbd6ed1fc3ed9a1dce0801d`.
 - WebP SHA-256: `3faeca89f66cf1ddbf194d08c75d288dd967e233cc66389160d77907718886b6`.
 - Privacy and safety check: generic cutaway only; no recognisable site, person, artefact record, plan, coordinate, access route or documentary claim.
+- Evidence boundary: the vector cannot establish a real city, metro project, excavation, archaeological feature, discovery, facility, event or completed workflow.
 
 ## Optional real editorial images (central licensing only)
 
@@ -37,4 +38,4 @@
 - Press screenshots, social posts, film/news frames or maps carrying proprietary tiles.
 - An operating station photo presented as the discovery location without source proof.
 
-Status: COPY READY — ORIGINAL EXPLANATORY HERO GENERATED AND VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED
+Status: COPY READY — AI-ASSISTED EXPLANATORY HERO VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED

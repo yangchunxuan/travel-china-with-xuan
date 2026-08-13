@@ -237,6 +237,7 @@ const body = {
         { "label": "中国南北过渡带研究的十大科学问题", "url": "https://www.progressingeography.com/EN/abstract/article/1007-6301/42562", "publisher": "地理科学进展", "reviewedAt": "2026-08-13" },
         { "label": "秦岭—大巴山东部的南北植被过渡", "url": "https://www.geogsci.com/EN/abstract/article/1009-637X/49343", "publisher": "Journal of Geographical Sciences", "reviewedAt": "2026-08-13" },
         { "label": "1961年以来秦岭—淮河分界区气候时空变化", "url": "https://www.sciencedirect.com/science/article/pii/S1470160X23014875", "publisher": "Ecological Indicators", "reviewedAt": "2026-08-13" },
+        { "label": "首图：Charlie439753拍摄陕西秦岭一景，CC BY-SA 4.0；已裁切缩放", "url": "https://commons.wikimedia.org/wiki/File:Part_of_the_view_on_Qinling_mountains.jpg", "publisher": "维基共享资源", "reviewedAt": "2026-08-13" },
       ],
     },
   ],

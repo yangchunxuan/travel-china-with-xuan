@@ -2,11 +2,11 @@
 
 ## Safe launch hero
 
-- Format: Homeground-original editorial illustration, 1600 × 1000 WebP.
+- Format: AI-assisted Homeground editorial vector, 1600 × 1000 WebP; AI-assisted: yes.
 - Content: anonymous hand, generic wood/rubber stamp, red impression forming three simple museum-object silhouettes on a blank unbranded notebook; a small route line connects the motifs.
 - Location claim: none. The image explains the national visitor practice and must not imitate a named museum's proprietary stamps.
 - Required disclosure in alt/caption: illustration; not a documentary photograph and not a current stamp design.
-- Rights: Homeground original; keep source artwork. Do not trace existing museum motifs, logos, mascots or stamp maps.
+- Rights basis: Homeground-produced project asset with retained SVG; no third-party photograph, named-museum motif, logo, mascot or stamp map is incorporated.
 - Privacy: no faces, admission tickets, booking QR codes, passports, ID cards, names or location data.
 
 ### Production asset record
@@ -17,6 +17,7 @@
 - SVG SHA-256: `8a6a966c589a4650704cd445ea19ccc29f18b791ac3051f1f54938ad67a52370`.
 - WebP SHA-256: `0fbe022e8b382494acf98d17f155b103111a23f7f792a8ca8f28ab9f8b5c742d`.
 - Privacy and rights check: no person, passport, admission record, QR code, logo, named museum design, proprietary motif, location data or documentary claim.
+- Evidence boundary: the vector cannot establish a real museum, visitor, stamp point, stamp design, object, route, price, availability or event.
 
 ## Optional real editorial photograph (central licensing only)
 
@@ -33,4 +34,4 @@
 - AI documentary museum photography or a fabricated exact stamp design.
 - A beautiful seal impression copied from a museum collection object without artwork clearance.
 
-Status: COPY READY — ORIGINAL EXPLANATORY HERO GENERATED AND VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED
+Status: COPY READY — AI-ASSISTED EXPLANATORY HERO VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED

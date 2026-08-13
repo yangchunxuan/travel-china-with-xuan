@@ -336,6 +336,12 @@ const body = {
           url: "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2024.1406546/full",
           publisher: "Frontiers in Environmental Science",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "Hero satellite image: Kubuqi Desert by NASA Earth Observatory using USGS Landsat data; public domain, cropped and resized",
+          url: "https://earthobservatory.nasa.gov/images/153759/building-a-great-solar-wall-in-china",
+          publisher: "NASA Earth Observatory / U.S. Geological Survey",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

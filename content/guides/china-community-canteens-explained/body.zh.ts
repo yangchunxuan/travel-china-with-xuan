@@ -233,9 +233,9 @@ const body = {
           description: "为具体旅行者确认从街道到座位的连续无障碍链。"
         },
         {
-          label: "规划中国区域美食路线",
-          href: "/zh/guides/china-regional-food-route/",
-          description: "把美食旅行规划与社区助餐准入分开处理。"
+          label: "理解更完整的15分钟社区服务网络",
+          href: "/zh/guides/china-15-minute-neighbourhoods/",
+          description: "把一家食堂放回更广的服务网络中理解，同时不默认所有社区设施都向公众开放。"
         }
       ]
     },
@@ -302,6 +302,12 @@ const body = {
           label: "广州50家长者饭堂空间与服务因素研究",
           url: "https://www.nature.com/articles/s41599-024-03880-y",
           publisher: "Humanities and Social Sciences Communications",
+          reviewedAt: "2026-08-13"
+        },
+        {
+          label: "首图：MNXANL拍摄金华中山路社区食堂，CC BY-SA 4.0；已裁切缩放",
+          url: "https://commons.wikimedia.org/wiki/File:202308_Community_Cafeteria_of_Zhongshanlu,_Jinhua.jpg",
+          publisher: "维基共享资源",
           reviewedAt: "2026-08-13"
         }
       ]

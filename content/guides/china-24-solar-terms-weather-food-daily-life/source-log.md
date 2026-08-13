@@ -1,9 +1,15 @@
 # Source log — china-24-solar-terms-weather-food-daily-life
 
 - Research review date: 2026-08-13 (Asia/Shanghai).
-- Editorial status: COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT.
+- Editorial status: CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING.
 - Canonical task: help travellers interpret solar-term names, food and local activities encountered during a trip.
 - Explicit non-task: this page is not a national weather forecast, an annual event calendar, a medical guide or a directory of solar-term destinations.
+
+## Release-review revalidation
+
+- On 2026-08-13, the CMA origin/naming page remained directly available and confirmed the 15-degree solar-longitude framework, the distinction between a threshold moment and a whole day, and major regional differences in seasonal conditions.
+- The current CMA Winter Solstice feature remained available and continued to show multiple regional foods and climate settings. It is used as evidence of plurality, never as a nationwide menu or a medical recommendation.
+- Current English search results were list/date/food-heavy. That observation reinforces this page's canonical role as an interpretation and local-verification guide rather than another fixed calendar.
 
 ## Assigned action and conflict check
 

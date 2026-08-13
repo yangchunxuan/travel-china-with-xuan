@@ -224,9 +224,9 @@ const body = {
       title: "동네 관찰을 실제 여행 계획으로 연결하세요",
       items: [
         {
-          label: "현대 문화와 중국의 일상 더 보기",
-          href: "/ko/culture/",
-          description: "Homeground 문화 모음에서 다른 사회 시스템과 일상생활 해설을 살펴봅니다."
+          label: "지역사회 식당이 실제로 일반에 열려 있는지 확인하기",
+          href: "/ko/guides/china-community-canteens-explained/",
+          description: "생활권 안의 한 시설을 대상으로 출입, 일반 가격과 식사카드 조건을 확인합니다."
         },
         {
           label: "중국 휠체어 여행 동선 확인하기",
@@ -320,6 +320,12 @@ const body = {
           label: "도시·농촌 지역사회 생활권 계획 국가표준 제안",
           url: "https://std.samr.gov.cn/gb/search/gbDetailed?id=3E68E420F12A352EE06397BE0A0ACBAE",
           publisher: "중국 국가표준 정보공공서비스 플랫폼",
+          reviewedAt: "2026-08-13"
+        },
+        {
+          label: "대표 이미지: LaouZEI bOENFUOO가 촬영한 선전 화차오청 지역사회 센터, CC0; 크롭 및 크기 조정",
+          url: "https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%8D%97%E5%B1%B1%E5%8D%80_Nanshan_%E6%B7%B1%E5%8D%97%E5%A4%A7%E9%81%93_Shennan_Blvd_OCT_community_center_July_2024_R12S_01.jpg",
+          publisher: "위키미디어 공용",
           reviewedAt: "2026-08-13"
         }
       ]

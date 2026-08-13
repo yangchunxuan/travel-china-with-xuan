@@ -1,6 +1,6 @@
 # Source log — How China's 15-Minute Neighbourhoods Actually Work
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
@@ -165,9 +165,15 @@ Checked `origin/main`, local and remote refs, remote `article/*` and `codex/*` b
 
 ## Internal-link ownership
 
-Only canonicals already present on `origin/main` are linked:
+Published canonicals plus one same-release companion are linked:
 
-- `/culture/`
+- `/guides/china-community-canteens-explained/` — same-release property-level companion; release both pages together or remove this link before a partial release.
 - `/guides/wheelchair-accessible-china-route-planning/`
 - `/guides/china-itinerary-with-young-children/`
 - `/guides/china-map-coordinate-offset-explained/`
+
+## Deep review outcome — 2026-08-13
+
+- Rechecked the national 2023 plan, the 2026 Ministry of Commerce work notice, the recommended industry guide and the named Shanghai/Chongqing/Xiong’an cases against their official or institutional pages.
+- The copy correctly treats 10,000 circles in 2026 as a target, not an achieved total, and keeps commercial convenient-living circles distinct from broader community life circles.
+- No dynamic figure required correction. EN/ZH/KO retain the same block structure and decision boundaries; only the same-release canteen link and SEO brief were added in this pass.

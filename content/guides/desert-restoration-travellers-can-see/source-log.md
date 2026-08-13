@@ -1,6 +1,14 @@
 # Research and source log
 
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
+
 Reviewed: 2026-08-13 (Asia/Shanghai).
+
+## Release-review revalidation
+
+- On 2026-08-13, the National Desertification Prevention and Control Plan publication remained directly available and confirmed that the plan was State-Council-approved and issued for locally implemented work; the article does not convert plan targets into measured outcomes.
+- The 2026 NFGA-hosted photovoltaic explainer remained available and explicitly framed the model as `photovoltaic + desert control`, not panels independently restoring land. The body preserves that causal separation.
+- Current English search results foregrounded visible greening, scale and straw grids. The body therefore retains water, baseline, maintenance, companion measures and legal access as required counterweights.
 
 ## User task and scope
 

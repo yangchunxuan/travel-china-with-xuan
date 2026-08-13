@@ -1,6 +1,6 @@
 # Source log — Who Eats at China's Community Canteens—and Why They Matter
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
@@ -145,9 +145,15 @@ Checked `origin/main`, local and remote refs, remote `article/*` and `codex/*` b
 
 ## Internal-link ownership
 
-Only canonicals already present on `origin/main` are linked:
+Published canonicals plus one same-release companion are linked:
 
 - `/guides/first-shared-meal-in-china/`
 - `/guides/how-to-pay-in-china-as-a-tourist/`
 - `/guides/wheelchair-accessible-china-route-planning/`
-- `/guides/china-regional-food-route/`
+- `/guides/china-15-minute-neighbourhoods/` — same-release service-network companion; release both pages together or remove this link before a partial release.
+
+## Deep review outcome — 2026-08-13
+
+- Rechecked the national older-adult meal-service plan, Hangzhou/Guangzhou/Shanghai/Beijing local frameworks and the named 2026 Shanghai foreign-diner cases.
+- The copy correctly avoids a nationwide public-access, price, subsidy, discount or dietary-suitability claim. Named venues remain dated examples, not evergreen recommendations.
+- No factual correction was required. EN/ZH/KO retain structural parity; the review adds the reciprocal same-release neighbourhood link and SEO brief.

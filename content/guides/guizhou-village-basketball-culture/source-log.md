@@ -1,6 +1,6 @@
 # Source log — Guizhou Village Basketball Culture
 
-Status: `COPY READY — ORIGINAL EXPLANATORY HERO READY — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
 
 - Candidate: `B24`
 - Canonical owner: `/guides/guizhou-village-basketball-culture/`
@@ -105,3 +105,10 @@ No existing owner, exact slug, open work item or remote draft was found. Nearby 
 ## Refresh triggers
 
 Review immediately when Taijiang County, the named organiser or Guizhou sports authorities publish a new calendar, access method, admission rule, security notice, transport plan or venue change. Otherwise re-review the operational callouts quarterly; the historical and analytical sections may use an annual review.
+
+## Release revalidation — 2026-08-13
+
+- Direct-open recheck confirmed that the General Administration of Sport page is advance copy for the 10–12 April programme. It remains evidence of what was announced, not a completion report or future calendar.
+- A fresh EN/ZH search sample remained dominated by viral-event reporting and official retrospectives; no stable first-party future schedule displaced the page's exact-event verification task.
+- Canonical/search-task audit remains clean: Guiyang gateway, holiday timing and performance-etiquette pages answer adjacent tasks, not Taipan's sport-festival mechanism.
+- EN/ZH/KO were rechecked for the same six layers, three clocks, participant roles, event warnings and recovery actions. No locale adds free entry, an annual fixed date or an all-night guarantee.

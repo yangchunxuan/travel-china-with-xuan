@@ -224,9 +224,9 @@ const body = {
       title: "Connect the neighbourhood walk to practical planning",
       items: [
         {
-          label: "Explore contemporary culture and everyday China",
-          href: "/culture/",
-          description: "Return to Homeground's culture collection for other systems and daily-life explainers."
+          label: "Check whether a community canteen is actually public",
+          href: "/guides/china-community-canteens-explained/",
+          description: "Apply a property-level access, ordinary-price and meal-card check to one service inside the wider neighbourhood network."
         },
         {
           label: "Verify a wheelchair-accessible China route",
@@ -320,6 +320,12 @@ const body = {
           label: "Proposed national standard plan for urban and rural community life circles",
           url: "https://std.samr.gov.cn/gb/search/gbDetailed?id=3E68E420F12A352EE06397BE0A0ACBAE",
           publisher: "National Standards Information Public Service Platform",
+          reviewedAt: "2026-08-13"
+        },
+        {
+          label: "Hero image: Shenzhen OCT community center by LaouZEI bOENFUOO, CC0; cropped and resized",
+          url: "https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%8D%97%E5%B1%B1%E5%8D%80_Nanshan_%E6%B7%B1%E5%8D%97%E5%A4%A7%E9%81%93_Shennan_Blvd_OCT_community_center_July_2024_R12S_01.jpg",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-13"
         }
       ]

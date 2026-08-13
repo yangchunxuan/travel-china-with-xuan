@@ -1,10 +1,17 @@
 # Source log — Spring Festival, Chunyun and visitor boundaries
 
-Status: `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
 Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
+
+## Release-review revalidation
+
+- On 2026-08-13, the Ministry of Transport's 2026 integrated Chunyun plan remained directly available and confirmed a separately defined 40-day transport operation from 2 February through 13 March 2026.
+- Those dates remain deliberately absent from the evergreen body. The public-holiday owner carries annual dates; this page uses the official plan only to prove that Chunyun and the statutory break are different clocks.
+- The official 12306 waitlist page remained available. The body continues to describe waitlisting as attempted fulfilment rather than a held seat or guarantee.
+- Current English results frequently repeated the 9.5-billion movement estimate or generic custom lists. The page retains its movement-count boundary and setting-specific consent model instead of competing on a superlative.
 
 ## Action disposition and conflict check
 

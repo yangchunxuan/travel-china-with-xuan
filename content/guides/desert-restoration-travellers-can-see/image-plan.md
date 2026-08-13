@@ -1,52 +1,34 @@
-# Image plan — Desert restoration travellers can read
+# Image plan — desert-restoration-travellers-can-see
 
-**Status: COPY READY — ASSETS NEEDED. No binary is included.**
+## Final hero
 
-Documentary imagery must be a real, place-specific photograph or satellite observation with a direct reusable-rights record. No AI-generated or AI-altered documentary desert scene is permitted.
-
-## Hero candidate — selected real satellite observation
-
-- File: `Building a Great Solar Wall in China (153759 - 20171220 lrg).jpg`.
-- Visible subject/location: Landsat 8 satellite view of photovoltaic fields across dunes in the Kubuqi Desert, Inner Mongolia, south of the Yellow River.
-- Capture date: 2017-12-20.
-- Image maker: NASA Earth Observatory image by Michala Garrison using U.S. Geological Survey Landsat data; associated story by Adam Voiland.
-- NASA source page: https://earthobservatory.nasa.gov/images/153759/building-a-great-solar-wall-in-china
-- High-resolution original: https://eoimages.gsfc.nasa.gov/images/imagerecords/153000/153759/kubuqidesertsolar_oli_20171220_lrg.jpg
-- Rights record: NASA/USGS public-domain material; Commons mirrors both `PD NASA` and `PD USGS` records at https://commons.wikimedia.org/wiki/File:Building_a_Great_Solar_Wall_in_China_(153759_-_20171220_lrg).jpg
-- Source dimensions: 2862 × 1908 on the high-resolution NASA original.
-- Planned derivative: conventional crop and resize to `public/images/guides/desert-restoration-travellers-can-see/hero-1600.webp`, 1600 × 1000, metadata stripped, target under 300 KB and hard maximum 400 KB. Do not use the smaller current Commons derivative as the production source and do not upscale it.
-- Crop instruction: keep the boundary between dunes and photovoltaic footprint legible. Do not add colour, labels, vegetation or access routes that are not in the satellite observation.
-
-## Evidence boundary
-
-The image documents the photovoltaic footprint at this Kubuqi location on the capture date. It does **not** show ground-level vegetation condition, straw checkerboards, shelterbelt survival, water use, public access, construction status in 2026 or ecological causation. It must be labelled as satellite imagery, not a traveller's eye-level photograph.
+- **Original file:** `kubuqidesertsolar_oli_20171220_lrg.jpg`.
+- **NASA source page:** https://earthobservatory.nasa.gov/images/153759/building-a-great-solar-wall-in-china
+- **High-resolution original:** https://eoimages.gsfc.nasa.gov/images/imagerecords/153000/153759/kubuqidesertsolar_oli_20171220_lrg.jpg
+- **Commons rights record:** https://commons.wikimedia.org/wiki/File:Building_a_Great_Solar_Wall_in_China_(153759_-_20171220_lrg).jpg
+- **Creator / data:** NASA Earth Observatory image by Michala Garrison using U.S. Geological Survey Landsat data.
+- **Rights:** NASA/USGS public-domain material. Preserve descriptive attribution and do not imply NASA or USGS endorsement.
+- **Place and observation date:** Kubuqi Desert, Inner Mongolia; Landsat observation dated 2017-12-20. Retrieved for Homeground on 2026-08-13.
+- **Original record:** 2862 × 1908 JPEG; retrieved source SHA-256 `90ff7d7023e982d06e1e0069070521a7739879917837643d02cac65997ce6648`.
+- **Published derivative:** `public/images/guides/desert-restoration-travellers-can-see/hero-1600.webp`, 1600 × 1000 WebP. Conventional centred 8:5 crop, resize and compression only; no labels, colourised vegetation, roads or scene elements were added.
+- **Crop requirement:** retain both the dune field and the visible photovoltaic footprint so their spatial relationship remains legible.
+- **Evidence boundary:** this is a satellite observation of the Kubuqi landscape and photovoltaic footprint on the recorded date. It does not establish ecological restoration, causation, vegetation condition, water use, construction status, traveller access or current opening.
+- **Asset class:** real satellite observation; AI-generated or AI-assisted: **no**.
 
 ## Localized alt text
 
-- EN: `Satellite view of photovoltaic fields on dunes in the Kubuqi Desert, Inner Mongolia`
-- ZH: `内蒙古库布其沙漠沙丘上光伏场的卫星影像`
-- KO: `네이멍구 쿠부치 사막 모래언덕의 태양광 단지를 담은 위성 영상`
+- **EN:** `Landsat satellite view of dunes and photovoltaic fields in the Kubuqi Desert, Inner Mongolia.`
+- **ZH:** `内蒙古库布其沙漠沙丘与光伏场的Landsat卫星影像。`
+- **KO:** `네이멍구 쿠부치 사막의 모래언덕과 태양광 단지를 담은 Landsat 위성 영상.`
 
-## Optional original infographic — central team only
+## Localized caption
 
-Commission an original, clearly labelled editorial diagram with three parallel panels:
+- **EN:** `Dunes and photovoltaic fields in the Kubuqi Desert in a Landsat observation from 20 December 2017. The image records a footprint, not ecological results or public access. NASA Earth Observatory image by Michala Garrison using USGS Landsat data; cropped and resized.`
+- **ZH:** `2017年12月20日Landsat影像中的库布其沙漠沙丘与光伏场。画面只记录空间足迹，不证明生态成效或公众可进入。NASA地球观测站影像，Michala Garrison制作，使用USGS Landsat数据；已裁切并缩放。`
+- **KO:** `2017년 12월 20일 Landsat 관측에 담긴 쿠부치 사막의 모래언덕과 태양광 단지. 공간적 흔적만 보여 주며 생태 성과나 일반인 접근을 입증하지 않는다. Michala Garrison이 USGS Landsat 자료로 제작한 NASA Earth Observatory 영상; 크롭 및 크기 조정.`
 
-1. `straw checkerboard → reduced near-surface wind and redistributed sand`;
-2. `shelterbelt → protected downwind edge, with a visible water-budget question`;
-3. `photovoltaic array → power generation plus separate companion control measures and construction inputs`.
+## Publication controls
 
-The graphic must use original vector geometry and Homeground's editorial palette; it must not imitate a government diagram, engineering drawing, satellite image or real work site. Do not show a single green-success arrow, invented efficiency number, generic public entrance or people walking inside operational land. Caption it `Editorial mechanism diagram—not a site plan or performance result` in all three languages.
-
-## Excluded documentary candidates
-
-- A low-resolution public-domain `Shapotou.jpg` file is not proposed as hero because it cannot support a 1600-pixel derivative without upscaling and does not by itself prove the exact checkerboard or access context.
-- A CC BY 4.0 research photograph titled `Semi-buried straw checkerboard` is not proposed because its Commons record does not state the capture location clearly enough for Homeground's place-accuracy requirement.
-- News-agency or government-page photographs without an explicit reuse licence are not cleared for publication.
-
-## Final asset QA
-
-- Open the high-resolution NASA original and visually confirm that the selected frame is the 2017-12-20 observation, not the separate 2024 comparison frame.
-- Preserve NASA Earth Observatory/USGS attribution even though the file is public domain; do not imply NASA endorses Homeground.
-- Check final SHA-256 against every existing Homeground hero and the other pages in this batch.
-- Verify 1600 × 1000 dimensions, WebP format, file size, no metadata and no upscaling.
-- Render desktop and mobile crops and keep both desert and photovoltaic texture legible.
+- Label the hero as satellite imagery in every locale.
+- Keep the NASA source credit in the default-collapsed Sources block in EN, ZH and KO.
+- Keep restoration mechanisms, performance and access claims in sourced HTML; do not infer them from pixels.

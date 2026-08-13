@@ -1,5 +1,7 @@
 # B22 source log — why-china-museums-have-stamps
 
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
+
 - Candidate: B22
 - Research/review date: 2026-08-13
 - Canonical user task: Explain the cultural phenomenon, the museum/shop mechanisms and a traveller's practical stamp-collecting workflow without turning dated stamp points into permanent promises.
@@ -48,3 +50,10 @@
 - English body: 1,408 visible words under the staging counter (sources excluded); target 1,000–1,500 passed.
 - Independent information objects: 45+ across three explanatory layers, six mechanisms, five dated examples, nine visitor steps, two scenarios, five etiquette rules, five recovery paths and five final checks.
 - Trilingual parity: same block IDs, mechanisms, dated cases, Chinese service-desk phrase, document warning, etiquette, recovery and sources in EN/ZH/KO.
+
+## Release revalidation — 2026-08-13
+
+- The Beijing government-hosted 2022 trend report opened directly and still documents both free and purchase-linked mechanisms, while warning that collecting can displace attention from exhibits.
+- A fresh English search sample showed strong ambiguity between souvenir stamping and philately. The SEO brief therefore makes the visitor ink/rubber-stamp meaning explicit before expanding the query.
+- No sampled result supplied a reliable current national directory. Venue, exhibition, machine, fee, booklet and admission status remain deliberately dynamic.
+- EN/ZH/KO parity was rechecked for all six mechanisms, dated examples, exhibit-first workflow and seal-history boundary; no locale promises free or permanent availability.

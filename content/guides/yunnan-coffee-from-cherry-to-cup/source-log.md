@@ -1,6 +1,6 @@
 # B26 source log — Yunnan coffee from cherry to cup
 
-**Status:** `COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT`
+**Status:** `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
 **Candidate:** B26
 **Canonical slug:** `yunnan-coffee-from-cherry-to-cup`
 **Source review date:** 2026-08-13
@@ -58,3 +58,10 @@ The sources do not expose a shared denominator, exact category method, cut-off d
 - Independent information objects: more than 60 across the nine-stage chain, identity checks, three processing families, five green-lot questions, two scenarios, six-step verification chain, five recovery cases, five conclusion-changing conditions, eight label checks and environmental boundary.
 - EN/ZH/KO use the same block IDs, types, order, table dimensions, comparison-column counts and list lengths.
 - Three internal links target pages present on `origin/main`: Yunnan route order, Zhoucheng tie-dye workshop choice and the Yuanyang rice-terraces route.
+
+## Deep review outcome — 2026-08-13
+
+- Rechecked the Yunnan government policy, agriculture-department 2025 reporting, national standards record, provincial standards account and peer-reviewed processing/agroforestry research.
+- The two official-facing 2025 percentage sets remain irreconcilable from published denominators or cut-off notes. The article’s decision to preserve both and use only the directional conclusion is still the most accurate treatment.
+- DB53/T 149.4-2023 remains described as a recommended local standard; its existence is not presented as product compliance. No dynamic figure required correction.
+- EN/ZH/KO retain the same evidence chain and caution level. The new SEO brief documents the supply-chain query, commercial SERP gap and GSC review plan.

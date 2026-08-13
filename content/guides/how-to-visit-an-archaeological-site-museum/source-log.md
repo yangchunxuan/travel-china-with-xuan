@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
 
 - `slug`: `how-to-visit-an-archaeological-site-museum`
 - `checked_at`: **2026-08-13** (Asia/Shanghai)
@@ -89,3 +89,9 @@ All four links existed on the current base:
 ## Asset status
 
 No hero binary is included. `metadata.json` reserves the intended real-asset path. See `image-plan.md` for the selected CC0 Jinsha candidate, exact location, provenance and the strict named-example caption boundary. No AI-generated archaeological documentary image is allowed.
+
+## Deep review outcome — 2026-08-13
+
+- Rechecked the national archaeological-site-park measures, the current Cultural Relics Protection Law, Jinsha institutional pages, ICOM terminology and the Jinsha conservation paper.
+- The generic method does not inherit a named venue’s hours, tickets or access. It correctly distinguishes institution type, in-situ remains, moved objects, reconstruction, conservation and uncertainty.
+- No factual or structural correction was required. The existing legacy itinerary link resolves through `guideRegistry`; the new SEO brief records canonical boundaries and inbound-link opportunities.

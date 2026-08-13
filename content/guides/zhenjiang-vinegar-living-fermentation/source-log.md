@@ -1,6 +1,6 @@
 # Source log — Zhenjiang vinegar as living fermentation culture
 
-Status: `COPY READY — ORIGINAL EXPLANATORY HERO READY — CENTRAL WILL EDIT`
+Status: `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
 
 - Candidate ID: `B27`
 - Action: `new-page`
@@ -60,3 +60,10 @@ English, Chinese and Korean bodies preserve the same six process stages, five ev
 - `china-regional-food-route`
 - A future Zhenjiang destination hub
 - A future fermentation/industrial-heritage collection page
+
+## Release revalidation — 2026-08-13
+
+- The national standards platform opened directly and listed project `20254914-T-463` as `正在征求意见`, with a consultation draft and explanatory document available. It is still not an approved or published replacement for GB/T 18623-2011.
+- The China ICH project page timed out during direct open in this pass; its scope remains bounded to the named Hengshun aromatic-vinegar technique, not every producer or every vinegar sold in Zhenjiang.
+- Fresh results still collapse product, ICH technique, industrial heritage and museum presentation. The page's four-category evidence model remains its canonical information gain.
+- EN/ZH/KO parity was rechecked for the six process transformations, provenance test and health boundary. No locale supplies a home recipe, medical benefit, universal duration or authenticity-by-colour shortcut.

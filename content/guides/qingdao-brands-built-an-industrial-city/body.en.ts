@@ -154,7 +154,9 @@ const body = {
         {"label": "CRRC Qingdao Sifang history", "url": "https://www.crrcgc.cc/sfgfen/53_3341/53_4020/index.html", "publisher": "CRRC Qingdao Sifang", "reviewedAt": "2026-08-13"},
         {"label": "Nature's Tonic: Beer, Ecology, and Urbanization in a Chinese City, 1900–50", "url": "https://www.journals.uchicago.edu/doi/full/10.1093/envhis/emy136", "publisher": "Environmental History", "reviewedAt": "2026-08-13"},
         {"label": "Formation of Foreign Direct Investment Clustering: The Case of Qingdao", "url": "https://www.tandfonline.com/doi/full/10.1080/00343400601145186", "publisher": "Regional Studies", "reviewedAt": "2026-08-13"},
-        {"label": "R&D Networks in Qingdao's Consumer Electronics Industry", "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001679817", "publisher": "Journal of the Economic Geographical Society of Korea", "reviewedAt": "2026-08-13"}
+        {"label": "R&D Networks in Qingdao's Consumer Electronics Industry", "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001679817", "publisher": "Journal of the Economic Geographical Society of Korea", "reviewedAt": "2026-08-13"},
+        {"label": "Hero photograph: Tsingtao Brewery Museum buildings by Lennartbj, 15 November 2017; cropped and converted to WebP", "url": "https://commons.wikimedia.org/wiki/File:Tsingtao_Brewery_in_Qingdao.jpg", "publisher": "Wikimedia Commons / Lennartbj", "reviewedAt": "2026-08-13"},
+        {"label": "Hero derivative licence: CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-13"}
       ]
     }
   ]

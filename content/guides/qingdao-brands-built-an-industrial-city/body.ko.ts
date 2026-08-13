@@ -154,7 +154,9 @@ const body = {
         {"label": "CRRC 칭다오 쓰팡 연혁", "url": "https://www.crrcgc.cc/sfgfen/53_3341/53_4020/index.html", "publisher": "CRRC 칭다오 쓰팡", "reviewedAt": "2026-08-13"},
         {"label": "Nature's Tonic: 칭다오 맥주, 생태와 도시화(1900–50)", "url": "https://www.journals.uchicago.edu/doi/full/10.1093/envhis/emy136", "publisher": "Environmental History", "reviewedAt": "2026-08-13"},
         {"label": "칭다오 외국인직접투자 집적과 지역 발전 연구", "url": "https://www.tandfonline.com/doi/full/10.1080/00343400601145186", "publisher": "Regional Studies", "reviewedAt": "2026-08-13"},
-        {"label": "칭다오 가전산업 연구개발 네트워크 연구", "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001679817", "publisher": "한국경제지리학회지", "reviewedAt": "2026-08-13"}
+        {"label": "칭다오 가전산업 연구개발 네트워크 연구", "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001679817", "publisher": "한국경제지리학회지", "reviewedAt": "2026-08-13"},
+        {"label": "대표 사진: Lennartbj가 2017년 11월 15일 촬영한 칭다오맥주박물관 건물; 크롭 후 WebP 변환", "url": "https://commons.wikimedia.org/wiki/File:Tsingtao_Brewery_in_Qingdao.jpg", "publisher": "Wikimedia Commons / Lennartbj", "reviewedAt": "2026-08-13"},
+        {"label": "대표 사진 편집본 라이선스: CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-13"}
       ]
     }
   ]

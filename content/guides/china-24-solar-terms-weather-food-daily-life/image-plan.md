@@ -1,39 +1,32 @@
 # Image plan — china-24-solar-terms-weather-food-daily-life
 
-## Status
+## Final hero
 
-- COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT.
-- No image file is included in this draft.
-- No unclear-rights image may be used as a placeholder.
+- **Original file:** `二十四节气令鼓_202405051009.jpg`.
+- **Source page:** https://commons.wikimedia.org/wiki/File:%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94%E4%BB%A4%E9%BC%93_202405051009.jpg
+- **Creator / uploader:** Uuongkinghe, uploaded on Commons by Auongkinghe.
+- **Licence:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); credit the creator, link the file and licence, identify the crop/resize and preserve share-alike for the derivative.
+- **Place and date:** Banshan, Hangzhou; Beginning of Summer festival, 2024-05-05. Retrieved for Homeground on 2026-08-13.
+- **Original record:** 3760 × 2506 JPEG; retrieved source SHA-256 `d858d2c49a827ed1aac8f71188d7461c8a6b363de4383d53f87f2563e5547a5e`.
+- **Published derivative:** `public/images/guides/china-24-solar-terms-weather-food-daily-life/hero-1600.webp`, 1600 × 1000 WebP. A conventional centred 8:5 crop and resize were used; no person, object or scene element was generated, inserted or removed.
+- **Crop requirement:** keep the foreground drummers, drums and wider public-event context. Do not crop the frame into an anonymous performance or imply a private ritual.
+- **Evidence boundary:** the photograph records one contemporary Beginning of Summer activity in Banshan. It does not depict or explain the complete Twenty-Four Solar Terms system, nationwide practice, astronomy, weather or agricultural timing.
+- **Asset class:** real documentary photograph; AI-generated or AI-assisted: **no**.
 
-## Hero — original information graphic
+## Localized alt text
 
-- **Concept:** a circular solar-year diagram with 24 equal markers, four restrained seasonal arcs and three concentric reading layers: astronomical position, environmental memory and living local practice.
-- **Required caution inside the art:** “Solar term ≠ local weather forecast / 节气名≠当地天气预报 / 절기명≠현지 일기예보.”
-- **Avoid:** national temperature colours, cloud/rain icons positioned as forecasts, medical symbols, zodiac imagery and a lunar-phase design that implies the terms are set by the moon.
-- **Production:** original vector artwork commissioned for Homeground; export 1600 × 1000 WebP plus accessible SVG or design source.
-- **Rights TODO:** designer name; commission date; written transfer or perpetual web/social licence; editable-source location; font/icon licences; approval record.
-- **Evidence limit:** the graphic explains structure and interpretation only. It must not imply exact 2026 term times or regional weather.
+- **EN:** `Drummers in red perform at Banshan's 2024 Beginning of Summer festival in Hangzhou.`
+- **ZH:** `杭州半山2024年立夏节气活动中，身着红衣的鼓手正在表演。`
+- **KO:** `항저우 반산의 2024년 입하 행사에서 붉은 옷을 입은 북 연주자들이 공연하는 모습.`
 
-## Documentary image 1 — real agricultural or phenological scene
+## Localized caption
 
-- **Brief:** a verifiable field, orchard, tea garden or documented phenological observation at a named place and date, paired with the producer's or institution's explanation of the visible stage.
-- **Location TODO:** village/county/province and coordinates or institutional venue.
-- **Timing TODO:** capture date, named solar term and the actual observed crop or biological stage.
-- **Rights TODO:** photographer, copyright owner, consent where identifiable people appear, licence scope, cropping permission and source archive.
-- **Caption rule:** say what is visibly happening; never stage snow, blossom or farm work to “match” the term name.
+- **EN:** `Drummers perform at the Beginning of Summer festival in Banshan, Hangzhou, on 5 May 2024. This contemporary local event does not represent the full Twenty-Four Solar Terms system. Photo: Uuongkinghe, CC BY-SA 4.0; cropped and resized.`
+- **ZH:** `2024年5月5日，杭州半山立夏节气活动中的鼓乐表演。这是一场当代地方活动，不能代表完整的二十四节气体系。摄影：Uuongkinghe，CC BY-SA 4.0；已裁切并缩放。`
+- **KO:** `2024년 5월 5일 항저우 반산 입하 행사에서 열린 북 공연. 한 지역의 현대 행사일 뿐 24절기 전체를 대표하지 않는다. 사진: Uuongkinghe, CC BY-SA 4.0; 크롭 및 크기 조정.`
 
-## Documentary image 2 — real community practice or seasonal food
+## Publication controls
 
-- **Brief:** a named local practice, community display or dish with a current responsible host. Include a wider context frame so the venue and custodianship are not erased.
-- **Location TODO:** exact community/venue, city and province.
-- **Provenance TODO:** local name, who explains the link to the solar term, current event/menu date and whether the scene is ritual, household practice, museum interpretation or commercial presentation.
-- **Rights TODO:** organiser and participant permission, photographer, licence, restrictions on sacred/ritual imagery, food-business permission and allowed caption language.
-- **Evidence limit:** one locality cannot illustrate a nationwide custom or medical benefit.
-
-## Accessibility and production notes
-
-- Translate all infographic text consistently across EN/ZH/KO, or use one language-neutral wheel with locale-specific HTML explanation.
-- Preserve high contrast and do not rely on seasonal colour alone; every arc needs text or pattern labels.
-- Keep decision tables, scenarios, source distinctions and current verification steps as HTML, not text embedded in images.
-- Record final asset filename, dimensions, checksum, creator, location, capture date, licence and editorial approver before publication.
+- Keep the Commons image credit in the default-collapsed Sources block in EN, ZH and KO.
+- Keep astronomical explanations, regional variation and current-weather checks in accessible HTML, not inferences from this image.
+- Preserve a retained source copy and this provenance record; do not use generative fill or synthetic extension for alternate crops.

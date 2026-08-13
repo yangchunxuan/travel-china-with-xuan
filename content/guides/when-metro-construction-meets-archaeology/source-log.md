@@ -1,5 +1,7 @@
 # B21 source log — when-metro-construction-meets-archaeology
 
+Status: **CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING**
+
 - Candidate: B21
 - Research/review date: 2026-08-13
 - Canonical user task: Help a traveller understand what can happen when a Chinese metro project encounters an older city below ground, and distinguish archaeology news from a passenger-facing disruption.
@@ -45,3 +47,10 @@
 - English body: 1,448 visible words under the staging counter (sources excluded); target 1,000–1,500 passed.
 - Independent information objects: 40+ across direct answer, three-question separation, five-stage workflow, four city cases, two scenarios, seven-step verification, four recovery cases and five final checks.
 - Trilingual parity: same block IDs, city facts, numbers, warnings, steps, recovery and sources in EN/ZH/KO.
+
+## Release revalidation — 2026-08-13
+
+- The current legal owner remains the 2024 revised Cultural Relics Protection Law, effective 2025-03-01. Browser extraction of the NPC page failed during this release pass, so no new legal quotation or inference was added.
+- Fresh search results remained single-discovery and spectacle heavy, with international station-museum cases competing against China-specific results. This reinforces the need to separate find, response, passenger impact and public display.
+- Guangzhou, Beijing, Wuhan and Hangzhou remain bounded cases with distinct footprints; none is promoted into a national delay rate or display promise.
+- EN/ZH/KO parity was rechecked for the three-question frame, five-stage process, four cases, source ladder and recovery steps. Current service still requires a metro-operator notice.

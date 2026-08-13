@@ -318,6 +318,12 @@ const body = {
           url: "https://japanese.shanghai.gov.cn/ja-Latest-WhatsNew/20260509/fd38d18e47884b8690de97b847febb93.html",
           publisher: "상하이시 인민정부",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "대표 이미지: Acstar가 촬영한 2013년 양산항 컨테이너 터미널, CC0; 크롭 및 크기 조정",
+          url: "https://commons.wikimedia.org/wiki/File:Yangshan_Intermodal_Container_Port.JPG",
+          publisher: "위키미디어 공용",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

@@ -336,6 +336,12 @@ const body = {
           url: "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2024.1406546/full",
           publisher: "Frontiers in Environmental Science",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "首图卫星影像：NASA地球观测站使用USGS Landsat数据制作的库布其沙漠影像；公有领域，已裁切缩放",
+          url: "https://earthobservatory.nasa.gov/images/153759/building-a-great-solar-wall-in-china",
+          publisher: "NASA地球观测站／美国地质调查局",
+          reviewedAt: "2026-08-13"
         }
       ]
     }

@@ -244,6 +244,7 @@ const body = {
         { "label": "Twenty-Four Solar Terms: Anren Spring Equinox community practice", "url": "https://www.ihchina.cn/project_details/15064.html", "publisher": "China Intangible Cultural Heritage Network", "reviewedAt": "2026-08-13" },
         { "label": "Winter Solstice solar-term feature and regional customs", "url": "https://www.cma.gov.cn/ztbd/2025zt/24jq/dongzhi/index.html", "publisher": "China Meteorological Administration", "reviewedAt": "2026-08-13" },
         { "label": "Climatic changes in the Twenty-four Solar Terms during 1960–2008", "url": "https://link.springer.com/article/10.1007/s11434-011-4724-4", "publisher": "Science Bulletin / Springer Nature", "reviewedAt": "2026-08-13" },
+        { "label": "Hero image: Beginning of Summer drummers in Banshan by Uuongkinghe, CC BY-SA 4.0; cropped and resized", "url": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94%E4%BB%A4%E9%BC%93_202405051009.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13" },
       ],
     },
   ],

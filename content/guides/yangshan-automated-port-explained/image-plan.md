@@ -1,48 +1,32 @@
 # Image plan — yangshan-automated-port-explained
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+## Final hero
 
-## Hero requirement
+- **Original file:** `Yangshan Intermodal Container Port.JPG`.
+- **Source page:** https://commons.wikimedia.org/wiki/File:Yangshan_Intermodal_Container_Port.JPG
+- **Creator:** Acstar.
+- **Licence:** [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Preserve descriptive credit and source linkage even though attribution is not required.
+- **Place and date:** Yangshan Deepwater Port; 2013-11-24. Retrieved for Homeground on 2026-08-13.
+- **Original record:** 3936 × 2624 JPEG; retrieved source SHA-256 `b4de6dfac229da3c1997acfc56c83c9f0d76f4178b459d4b4a05f7b9d89c776b`.
+- **Published derivative:** `public/images/guides/yangshan-automated-port-explained/hero-1600.webp`, 1600 × 1000 WebP. Conventional centred 8:5 crop and resize only; no crane, vehicle, container, road or automation element was added or removed.
+- **Crop requirement:** retain cranes, container stacks and the service-road context as a broad historical port scene. Do not crop into container codes, operational screens, access credentials or a security-sensitive layout.
+- **Evidence boundary:** the image was captured before Yangshan Phase IV's automated terminal entered service. It identifies Yangshan Port historical context only and is not evidence of Phase IV, automation, current equipment, throughput, public access or live operating status.
+- **Asset class:** real documentary photograph; AI-generated or AI-assisted: **no**.
 
-- Final output: `/public/images/guides/yangshan-automated-port-explained/hero-1600.webp`
-- Dimensions: 1600 × 1000 px
-- Preferred asset: a rights-cleared, real photograph verified as **Yangshan Phase IV**, showing at least two linked parts of the process—ideally quay cranes plus the horizontal-transport area, or AGVs plus automated yard gantries.
-- Editorial purpose: let the reader identify a handoff in the container chain. Avoid a generic skyline image that merely signals “big port.”
-- Caption must record exact source, creator, capture or publication date, location verification and license or written permission.
+## Localized alt text
 
-## Preferred real-image route
+- **EN:** `Container cranes, stacked containers and a service road at Yangshan Port in 2013.`
+- **ZH:** `2013年的洋山港集装箱起重机、堆箱与港区道路。`
+- **KO:** `2013년 양산항의 컨테이너 크레인, 적재 컨테이너와 항만 도로.`
 
-1. Request a Phase IV press image directly from SIPG/Shangdong or the photographer, with explicit website, crop, derivative and multilingual-use permission.
-2. A precise Phase IV Xinhua photo set published on 1 April 2026 is a useful identification lead: <https://eng.yidaiyilu.gov.cn/p/0P76KKR1.html>. It is **not** an open license. Do not download or republish without written permission from the rights holder.
-3. If commissioning new photography through an authorized visit, obtain operator permission first. Record the shooting position and make sure the terminal confirms what may be published.
+## Localized caption
 
-## Privacy, security and truthfulness checks
+- **EN:** `Container cranes, stacks and a service road at Yangshan Port on 24 November 2013. The photograph predates Phase IV's automated terminal and is not evidence of automation. Photo: Acstar, CC0; cropped and resized.`
+- **ZH:** `2013年11月24日的洋山港集装箱起重机、堆箱与港区道路。照片拍摄于四期自动化码头启用前，不能作为自动化证据。摄影：Acstar，CC0；已裁切并缩放。`
+- **KO:** `2013년 11월 24일 양산항의 컨테이너 크레인, 적재 구역과 항만 도로. 4기 자동화 터미널 가동 이전 사진으로 자동화의 증거가 아니다. 사진: Acstar, CC0; 크롭 및 크기 조정.`
 
-- No readable staff badge, face without release, vehicle plate, container number, manifest, control-screen data or access credential.
-- No detailed gate approach, restricted-route directions, live security posture or high-resolution operational layout.
-- No drone imagery unless both flight and publication rights are documented by the relevant authorities and operator; this draft does not recommend a drone route.
-- Confirm that the image is Phase IV rather than another Yangshan phase or a generic Port of Shanghai terminal.
-- Do not infer “fully unmanned,” current fleet size, live throughput or operating status from a still image.
-- Do not use AI-generated documentary-looking ports, cranes, vehicles, workers or aerial views.
+## Publication controls
 
-## Supplied fallback
-
-- `hero-source.svg` is a 1600 × 1000 original abstract process diagram.
-- It contains no logos, rendered text, people, realistic port scene, map, gate, access route or security-sensitive arrangement.
-- Its five linked geometric nodes represent planning and successive handoffs; they are deliberately non-spatial and are not a plan of Yangshan Phase IV.
-- Use only if central cannot clear an authentic photograph in time. If used, caption it as an editorial process illustration, not as a view of Yangshan.
-- Convert to WebP only during central asset production. No public binary is included in this branch.
-
-## Optional secondary assets
-
-- A licensed close view of an AGV beneath a crane, with identifiers obscured and exact Phase IV provenance.
-- A licensed real image pairing yard cranes and container stacks, cropped to avoid security-relevant layout.
-- A small editorial diagram that labels TOS, ECS, equipment and human intervention. This may be derived from the supplied SVG, but must be clearly marked “simplified” and must not imply a physical map.
-
-## Rejected asset leads
-
-- Xinhua/official-news images without explicit reuse permission.
-- A general Yangshan image whose phase cannot be proven.
-- Open satellite or SAR imagery unless a knowledgeable editor verifies the Phase IV crop and confirms it adds value without exposing a detailed operational layout.
-- Stock imagery of a different container port.
-- Screenshots of maps, terminal control software or security systems.
+- Keep the Commons image credit in the default-collapsed Sources block in EN, ZH and KO.
+- Keep every automation, fleet and throughput claim tied to dated text sources.
+- Never rename the pictured terminal as Yangshan Phase IV or infer a process handoff from the still image.

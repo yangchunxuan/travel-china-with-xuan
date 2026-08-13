@@ -1,9 +1,15 @@
 # Source log — qinling-huaihe-transition-zone
 
 - Research review date: 2026-08-13 (Asia/Shanghai).
-- Editorial status: COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT.
+- Editorial status: CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING.
 - Canonical task: explain the Qinling–Huaihe concept as an observable north–south transition in ecology, climate, agriculture, water and terrain.
 - Explicit non-task: this page does not own central-heating policy, a regional food route, a live train view guide or a precise border map.
+
+## Release-review revalidation
+
+- On 2026-08-13, the CAS institutional record remained directly available and continued to describe one researched transition-zone model as approximately 1,750 km long and 400 km wide on average.
+- The body correctly attributes those dimensions to that framework and does not promote them to a legal boundary, exact crossing coordinate or universal consensus.
+- Current English results were definition-heavy and often repeated the 0°C/800 mm shorthand. The body preserves indicator mismatch, western/eastern landscape differences and the broad-zone model as its canonical information gain.
 
 ## Action disposition and conflict check
 

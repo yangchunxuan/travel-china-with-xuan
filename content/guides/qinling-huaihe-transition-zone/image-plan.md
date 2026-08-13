@@ -1,45 +1,32 @@
 # Image plan — qinling-huaihe-transition-zone
 
-## Status
+## Final hero
 
-- COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT.
-- No image file is included in this draft.
-- No unclear-rights landscape photo may be used as evidence or placeholder.
+- **Original file:** `Part of the view on Qinling mountains.jpg`.
+- **Source page:** https://commons.wikimedia.org/wiki/File:Part_of_the_view_on_Qinling_mountains.jpg
+- **Creator:** Charlie439753.
+- **Licence:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); credit the creator, link the file and licence, identify the crop/resize and preserve share-alike for the derivative.
+- **Place and date:** one view in the Qinling Mountains, Shaanxi; 2017-05-28. Retrieved for Homeground on 2026-08-13.
+- **Original record:** 4640 × 2610 JPEG; retrieved source SHA-256 `27dd88f08e1beb48f2b557b23c8bba96a2f01b7038943960c88c76413cbd9192`.
+- **Published derivative:** `public/images/guides/qinling-huaihe-transition-zone/hero-1600.webp`, 1600 × 1000 WebP. Conventional centred 8:5 crop and resize only; no ridge, vegetation or atmospheric layer was added or removed.
+- **Crop requirement:** retain foreground vegetation, the valley and multiple ridge layers so the frame remains a broad landscape rather than an anonymous peak detail.
+- **Evidence boundary:** this is one Shaanxi Qinling view. It does not depict the Huai River, the full Qinling range, the entire Qinling–Huaihe transition belt, an exact boundary, vegetation distribution or climate indicators across the article's subject.
+- **Asset class:** real documentary photograph; AI-generated or AI-assisted: **no**.
 
-## Hero — original map plus section
+## Localized alt text
 
-- **Concept:** one east–west map strip and two north–south mini-sections. The west shows Qinling–Daba relief and elevation; the east shows the Huai/Jianghuai river-and-plain transition. A translucent band replaces a single hard boundary stroke.
-- **Labels:** “indicator boundaries overlap but do not fully coincide” and the three observation windows “north / transition / south.”
-- **Avoid:** a national map split into two solid colours, a wall or border-gate symbol, a single 0°C/800 mm line presented as exact, central-heating imagery and crop icons implying exclusive distribution.
-- **Production:** original commissioned vector artwork; export 1600 × 1000 WebP plus accessible SVG/design source.
-- **Cartographic source TODO:** base-map licence; relief source; river data source; projection; attribution; version date; editorial simplifications.
-- **Rights TODO:** designer, commission/transfer agreement, editable-source location, font/icon licences and final approval.
+- **EN:** `A green mountain valley and layered ridges in Shaanxi's Qinling Mountains.`
+- **ZH:** `陕西秦岭一处绿色山谷与层叠山脊。`
+- **KO:** `산시성 친링산맥의 푸른 계곡과 겹겹이 이어진 산등성이.`
 
-## Documentary pair 1 — Qinling north/south observations
+## Localized caption
 
-- **Brief:** two verifiable real views from comparable elevation bands and the same season: one on the Guanzhong/northern approach, one on the Han River/southern side. Each frame should show terrain plus vegetation or cultivated land, not only a dramatic peak.
-- **Location TODO:** exact viewpoint, county/province, coordinates, direction of view and elevation.
-- **Timing TODO:** capture date, recent weather and leaf/crop stage.
-- **Rights TODO:** photographer, copyright owner, land/park photography rules, identifiable-person consent, licence and derivative permission.
-- **Evidence limit:** the pair illustrates one transect, not the exact national boundary or all Qinling sections.
+- **EN:** `One view in Shaanxi's Qinling Mountains, photographed on 28 May 2017. It does not represent the whole Qinling–Huaihe transition belt or an exact north–south boundary. Photo: Charlie439753, CC BY-SA 4.0; cropped and resized.`
+- **ZH:** `2017年5月28日拍摄的陕西秦岭一景。它不能代表整个秦岭—淮河过渡带，也不标示一条精确的南北分界线。摄影：Charlie439753，CC BY-SA 4.0；已裁切并缩放。`
+- **KO:** `2017년 5월 28일 촬영한 산시성 친링산맥의 한 풍경. 친링–화이허 전이지대 전체나 정확한 남북 경계선을 대표하지 않는다. 사진: Charlie439753, CC BY-SA 4.0; 크롭 및 크기 조정.`
 
-## Documentary pair 2 — Huai/Jianghuai lowland observations
+## Publication controls
 
-- **Brief:** two real north–south windows showing water management, field form and settlement context on either side of a named lowland segment. Match season and time of day where possible.
-- **Location TODO:** exact river/canal/field area, municipality or county, province, coordinates and orientation.
-- **Context TODO:** irrigation or drainage structure, crop identification from a responsible local source, and whether the land is public, private or a protected flood facility.
-- **Rights TODO:** photographer, landowner or agency permission where needed, licence, drone permit if applicable and allowed caption language.
-- **Evidence limit:** do not use one paddy and one wheat field as proof that the two crops stop at a line.
-
-## Optional field-note asset
-
-- A three-window photo strip—north, transition, south—with date, coordinates, elevation and the same six observation lenses used in HTML.
-- Use only when all three frames come from one documented journey and have comparable metadata.
-- Keep weather, access and agricultural claims in the caption narrow and dated.
-
-## Accessibility and production notes
-
-- Provide a full text alternative describing the band model, western mountain mechanism and eastern lowland mechanism.
-- Do not rely on red/blue or north/south colour alone; use patterns, labels and shapes.
-- Keep the six-lens table, traveller workflow, scenarios and failure recovery as HTML.
-- Log final asset filename, checksum, creator, precise location, capture date, data/licence source and editorial approver before publication.
+- Keep the Commons image credit in the default-collapsed Sources block in EN, ZH and KO.
+- Retain the transition-band model, climate indicators and Huai lowland explanation as sourced HTML.
+- Do not label visible plants, elevation or weather without separate site evidence.

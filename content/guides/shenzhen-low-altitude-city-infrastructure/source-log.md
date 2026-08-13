@@ -2,7 +2,7 @@
 
 - Candidate: B02
 - Research and dynamic-fact review date: 2026-08-13 (Asia/Shanghai)
-- Editorial status: COPY READY — ORIGINAL EXPLANATORY HERO READY — CENTRAL WILL EDIT
+- Editorial status: CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING
 - Canonical task: help a traveller read Shenzhen's low-altitude system as urban infrastructure, not teach anyone to fly a drone or sell an unverified passenger flight.
 - Canonical boundary: Shenzhen only. Cargo, delivery and city-service examples explain the system; passenger eVTOL plans are labelled as plans. This is not a national low-altitude-economy history, operator ranking, flight manual or air-taxi booking guide.
 
@@ -58,3 +58,10 @@ All four owners existed in the 2026-08-13 worktree audit. No future placeholder 
 ## Trilingual parity
 
 EN/ZH/KO use the same 23 block IDs, facts, evidence states, warnings, scenarios, recovery actions, final-check items and source URLs. Titles and prose are naturally rewritten rather than line-translated.
+
+## Release revalidation — 2026-08-13
+
+- The Shenzhen DRC 2025 execution/2026 draft-plan report opened directly and still reports 1,284 low-altitude takeoff/landing points plus 82 new logistics routes and 310 cumulative routes for 2025.
+- These are attributed municipal report figures, not an independent audit and not proof that any named route, app, locker or passenger service is available to a traveller today.
+- The current sampled SERP still mixes policy targets, operating delivery examples and flying-taxi headlines. The page's four-state vocabulary—operating, trial/demonstration, target and plan—remains necessary.
+- EN/ZH/KO parity and legal boundary were rechecked: no locale gives flying instructions, takeoff locations, passenger-booking claims or shortcuts around current aviation rules.

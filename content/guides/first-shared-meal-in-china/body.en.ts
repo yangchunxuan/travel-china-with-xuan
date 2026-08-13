@@ -400,6 +400,16 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Continue from one shared table",
+      items: [
+        { label: "Prepare for Lunar New Year customs as a visitor", href: "/guides/lunar-new-year-customs-for-visitors/", description: "Carry the same observe-first approach into a family festival without treating one household as a national script." },
+        { label: "Understand China's community canteens", href: "/guides/china-community-canteens-explained/", description: "Compare a shared restaurant table with a neighbourhood public-service model without assuming access or eligibility." },
+        { label: "Read Zhenjiang's living vinegar culture", href: "/guides/zhenjiang-vinegar-living-fermentation/", description: "Follow one familiar condiment into fermentation craft and city identity, not a health or authenticity shortcut." },
+      ],
+    },
+    {
       id: "sources",
       type: "sources",
       title: "Official and academic sources checked on 11 August 2026",

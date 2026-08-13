@@ -123,6 +123,8 @@ const body = {
         { label: "Build a regional food route", href: "/guides/china-regional-food-route/", description: "Decide whether a tea landscape deserves a larger role in the trip." },
         { label: "Understand Guangzhou morning tea", href: "/guides/how-guangzhou-morning-tea-works/", description: "Move from producing landscapes to an urban way of sharing tea and food." },
         { label: "Order Shanghai, Suzhou, Hangzhou and Nanjing", href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "Place a Longjing visit inside a realistic lower-Yangtze route." },
+        { label: "Read China's 24 solar terms through weather and food", href: "/guides/china-24-solar-terms-weather-food-daily-life/", description: "Use another seasonal knowledge system without turning it into a fixed national weather calendar." },
+        { label: "Follow Yunnan coffee from cherry to cup", href: "/guides/yunnan-coffee-from-cherry-to-cup/", description: "Compare a newer crop-and-processing landscape while keeping tea and coffee histories distinct." },
       ],
     },
     {

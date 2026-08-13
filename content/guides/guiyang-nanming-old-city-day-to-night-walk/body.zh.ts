@@ -58,7 +58,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "探索中国", href: "/zh/explore/", description: "比较贵阳的城市角色与下一目的地。"},
     {label: "单一基地还是多地换酒店", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断贵阳是基地还是一晚中转。"},
     {label: "中国气候分区与旅行时间", href: "/zh/guides/china-climate-regions-for-trip-timing/", description: "不要把中国其他地区的天气预期套到贵阳。"},
-    {label: "带长辈去中国", href: "/zh/guides/china-itinerary-with-older-parents/", description: "把坐下休息与乘车分支放进整个线路。"}
+    {label: "带长辈去中国", href: "/zh/guides/china-itinerary-with-older-parents/", description: "把坐下休息与乘车分支放进整个线路。"},
+    {label: "去台盘前先理解贵州村BA", href: "/zh/guides/guizhou-village-basketball-culture/", description: "从贵阳城市步行转向一段独立赛事行程，并核实日期、入场与返程。"}
   ]},
   {id: "consultation", type: "callout", title: "需要按真实抵达时间调整？", body: "Homeground 真人旅行顾问可以按酒店和日期调整光线顺序、步行量、晚餐需求与上车点。请说明抵达时间、同行者行动能力，以及历史、摄影或食物哪项最重要。", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026 年 8 月 13 日核验的官方来源", items: [

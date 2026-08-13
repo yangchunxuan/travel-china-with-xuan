@@ -241,7 +241,8 @@ const body = {
         { "label": "世纪公园24小时开放实施信息", "url": "https://www.shanghai.gov.cn/nw4411/20240417/479731e035004c3e9a03dd6c5cfe3099.html", "publisher": "上海市人民政府", "reviewedAt": "2026-08-13" },
         { "label": "闵行文化公园当期游客信息", "url": "https://cmp.whlyj.sh.gov.cn/CMP/news_view.ac?id=ba5beafe94914f0497f56e3525d9a11f", "publisher": "上海市文化和旅游局", "reviewedAt": "2026-08-13" },
         { "label": "上海轨道交通官方链接", "url": "https://jtw.sh.gov.cn/csgdjt/index.html", "publisher": "上海市交通委员会", "reviewedAt": "2026-08-13" },
-        { "label": "市政府网站转载的24小时公共设施实地调查", "url": "https://www.shanghai.gov.cn/nw4411/20260713/7c8d3bccd2ca461f89b659295ac36087.html", "publisher": "解放日报／上海市人民政府网站", "reviewedAt": "2026-08-13" }
+        { "label": "市政府网站转载的24小时公共设施实地调查", "url": "https://www.shanghai.gov.cn/nw4411/20260713/7c8d3bccd2ca461f89b659295ac36087.html", "publisher": "解放日报／上海市人民政府网站", "reviewedAt": "2026-08-13" },
+        { "label": "首图：Mgmoscatello拍摄世纪公园日落，CC BY-SA 3.0；已裁切转换", "url": "https://commons.wikimedia.org/wiki/File:Shanghai_Century_park_at_sunset.jpg", "publisher": "维基共享资源", "reviewedAt": "2026-08-13" }
       ]
     }
   ]

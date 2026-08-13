@@ -18,10 +18,10 @@
   "locales": {
     "en": {
       "path": "/guides/qingdao-brands-built-an-industrial-city/",
-      "title": "Beer, Appliances and Trains: How Brands Built Modern Qingdao",
+      "title": "Beer, Appliances and Trains: Three Lenses on Industrial Qingdao",
       "headline": "Read Modern Qingdao Through Beer, Appliances and Trains",
       "description": "Use Tsingtao Brewery, Haier and CRRC Sifang as three local lenses on how factories, skills, infrastructure and public memory shaped modern Qingdao.",
-      "heroAlt": "Illustrated Qingdao city profile linking a brick brewery, a household appliance and a streamlined train.",
+      "heroAlt": "Historic brick buildings at the Tsingtao Beer Museum, one industrial-heritage viewpoint rather than a view of Qingdao's appliance, rail or current production sectors.",
       "navTitle": "How brands shaped Qingdao",
       "featuredLinkLabel": "Read Qingdao through three industries",
       "openGraphLocale": "en_US",
@@ -29,10 +29,10 @@
     },
     "zh": {
       "path": "/zh/guides/qingdao-brands-built-an-industrial-city/",
-      "title": "啤酒、家电与列车：品牌如何塑造现代青岛",
+      "title": "啤酒、家电与列车：读懂青岛工业史的三条线索",
       "headline": "从啤酒、家电和列车读懂现代青岛",
       "description": "以青岛啤酒、海尔和中车四方为三条本地线索，理解工厂、技术、基础设施和公共记忆如何共同塑造现代青岛。",
-      "heroAlt": "以砖砌啤酒厂、家用电器和流线型列车连接青岛城市轮廓的原创插画。",
+      "heroAlt": "青岛啤酒博物馆的历史砖砌建筑；它只呈现一处工业遗产视角，不代表青岛家电、轨道交通或当前生产。",
       "navTitle": "品牌如何塑造青岛",
       "featuredLinkLabel": "从三种产业读懂青岛",
       "openGraphLocale": "zh_CN",
@@ -40,10 +40,10 @@
     },
     "ko": {
       "path": "/ko/guides/qingdao-brands-built-an-industrial-city/",
-      "title": "맥주·가전·열차: 브랜드가 현대 칭다오를 만든 방식",
+      "title": "맥주·가전·열차: 칭다오 산업사를 읽는 세 가지 렌즈",
       "headline": "맥주와 가전, 열차로 읽는 현대 칭다오",
       "description": "칭다오맥주, 하이얼, CRRC 칭다오 쓰팡을 세 가지 현지 렌즈로 삼아 공장·기술·인프라·공공 기억이 현대 칭다오를 빚은 과정을 읽습니다.",
-      "heroAlt": "벽돌 양조장과 가전제품, 유선형 열차를 칭다오 도시 윤곽에 연결한 창작 일러스트.",
+      "heroAlt": "칭다오맥주박물관의 역사적인 벽돌 건물. 칭다오의 가전·철도·현재 생산 전반을 대표하는 장면이 아닌 하나의 산업유산 시각이다.",
       "navTitle": "브랜드가 빚은 칭다오",
       "featuredLinkLabel": "세 산업으로 칭다오 읽기",
       "openGraphLocale": "ko_KR",

@@ -2,9 +2,9 @@
 
 ## Draft status
 
-ORIGINAL EXPLANATORY HERO READY — CENTRAL WILL EDIT
+AI-ASSISTED EXPLANATORY HERO READY — CENTRAL WILL EDIT
 
-No documentary photograph or AI-generated city scene is included in the staging package. The launch asset is an original, explicitly non-documentary system diagram.
+No documentary photograph is included in the staging package. The launch asset is an AI-assisted Homeground editorial vector and explicitly non-documentary system diagram.
 
 ## Launch-safe hero
 
@@ -13,9 +13,11 @@ No documentary photograph or AI-generated city scene is included in the staging 
 - Dimensions: 1600 × 1000 px, WebP.
 - WebP SHA-256: `4afa8a6d59ffc92ef7395c116760d484773ceff12ebc5894484de4d544989d7a`
 - SVG SHA-256: `a7e78e9c4d67b432b4e358ab2e9e5846e50d29c182e038516e88b242af5fed7e`
-- Treatment: original, clearly editorial system diagram—not a simulated photograph.
+- Asset class: AI-assisted Homeground editorial vector; AI-assisted: yes. Rights basis: Homeground-produced project asset with retained SVG; no third-party photograph, logo, interface or map tile is incorporated.
+- Treatment: clearly editorial system diagram—not a simulated photograph.
 - Geography: generic Shenzhen skyline massing; it does not draw a true route or claim that a particular building is served.
 - System layers: three ground nodes, solid and dotted route forms, a communications/navigation band and a control/dashboard band. The diagram does not label either route as operational; evidence-state distinctions remain in accessible HTML.
+- Evidence boundary: the vector cannot establish a real Shenzhen building, route, landing point, locker, communications/control facility, operator, trial, service or event, and it cannot prove any current operating state.
 - Avoid company logos, app interfaces, route numbers, maps needing official review, restricted/security facilities, faces, licence plates and readable order details.
 - Alt text is already provided in metadata in EN/ZH/KO.
 

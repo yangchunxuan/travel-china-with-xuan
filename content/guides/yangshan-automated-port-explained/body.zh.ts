@@ -318,6 +318,12 @@ const body = {
           url: "https://japanese.shanghai.gov.cn/ja-Latest-WhatsNew/20260509/fd38d18e47884b8690de97b847febb93.html",
           publisher: "上海市人民政府",
           reviewedAt: "2026-08-13"
+        },
+        {
+          label: "首图：Acstar拍摄2013年洋山港集装箱码头，CC0；已裁切缩放",
+          url: "https://commons.wikimedia.org/wiki/File:Yangshan_Intermodal_Container_Port.JPG",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-13"
         }
       ]
     }
