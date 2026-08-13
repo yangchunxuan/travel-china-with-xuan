@@ -182,10 +182,10 @@ const body = {
       id: "stepping-stones-figure",
       type: "figure",
       src: "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
-      alt: "Visitors crossing stepping stones on the Tuojiang in Fenghuang with riverfront buildings behind them.",
+      alt: "Visitors crossing stepping stones on the Tuojiang in Fenghuang—not Chadong—with riverfront buildings behind them.",
       width: 1126,
       height: 819,
-      caption: "The Tuojiang is part of Fenghuang's real urban setting, but a picturesque crossing is not evidence for the novella's ferry."
+      caption: "This is the Tuojiang in Fenghuang, not Chadong; its picturesque crossing is not evidence for the novella's ferry."
     },
     {
       id: "grave-figure",

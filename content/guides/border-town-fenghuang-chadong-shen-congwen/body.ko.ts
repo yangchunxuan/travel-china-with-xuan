@@ -182,10 +182,10 @@ const body = {
       id: "stepping-stones-figure",
       type: "figure",
       src: "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
-      alt: "펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.",
+      alt: "차둥이 아닌 펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.",
       width: 1126,
       height: 819,
-      caption: "퉈장은 펑황의 실제 도시 환경이지만, 사진 찍기 좋은 건넘 지점이 소설 속 나루의 증거는 아니다."
+      caption: "이곳은 차둥이 아니라 펑황의 퉈장이다. 사진 찍기 좋은 건넘 지점도 소설 속 나루의 증거는 아니다."
     },
     {
       id: "grave-figure",

@@ -1,8 +1,8 @@
 # Image plan — Border Town, Fenghuang and Chadong
 
-Status: **REAL ASSETS SELECTED — CHADONG PHOTOGRAPHY GAP RECORDED**
+Status: **PARTIAL — CHADONG ASSETS NOT CLEARED — CENTRAL RE-REVIEW REQUIRED**
 
-Reviewed: 2026-08-13
+Reviewed: 2026-08-14
 
 No AI-generated documentary image, film/television still, modern illustration or unidentified “ancient town” photograph is permitted. Every selected file represents the exact Fenghuang subject named in its caption. No selected photograph is used to prove the age of a building, the location of a fictional scene or the authenticity of a tourism reconstruction.
 
@@ -18,6 +18,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **ZH alt:** `凤凰古城虹桥；这里属于沈从文故乡的真实城市空间，但不能据此认定为《边城》小说场景。`
 - **KO alt:** `펑황 고성의 훙차오. 선충원 고향의 실제 도시 공간이지만 『변성』 속 장면의 증거는 아니다.`
 - **Caption function:** establishes the real author-hometown destination while the text immediately rejects a one-to-one novel map
+- **Visual-balance limit:** this remains a provisional Fenghuang-only hero. It cannot by itself represent the page's Fenghuang–Chadong comparison, and central should not treat the visual package as complete until the two minimum Chadong views below are cleared.
 
 ## Body 1 — Shen Congwen Former Residence
 
@@ -66,9 +67,9 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Location identity:** Tuojiang crossing in Fenghuang Ancient Town
 - **Output:** `/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp`, 1126×819
 - **Edit:** WebP conversion at native dimensions; no upscaling
-- **EN alt:** `Visitors crossing stepping stones on the Tuojiang in Fenghuang with riverfront buildings behind them.`
-- **ZH alt:** `游客从凤凰沱江跳岩上过河，后方是沿江建筑。`
-- **KO alt:** `펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.`
+- **EN alt:** `Visitors crossing stepping stones on the Tuojiang in Fenghuang—not Chadong—with riverfront buildings behind them.`
+- **ZH alt:** `游客从凤凰而非茶峒的沱江跳岩上过河，后方是沿江建筑。`
+- **KO alt:** `차둥이 아닌 펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.`
 - **Caption function:** demonstrates why a picturesque real crossing must not be mistaken for the novella's ferry
 - **People/privacy:** distant public-place figures are incidental and not identified; do not crop to create recognisable portraits
 
@@ -85,11 +86,19 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **KO alt:** `펑황현 선충원 묘의 석제 기념물.`
 - **Caption function:** locates the optional memorial layer and explicitly keeps it outside the fictional world
 
-## Chadong asset gap
+## Chadong correction audit and unresolved asset gap
 
-No location-verified, commercially reusable Chadong photograph was found in the checked open repositories on 2026-08-13. Exact Openverse searches returned no usable result; a Wikimedia Commons geosearch did not return a documentary ground photograph; candidate Flickr images were marked “All rights reserved.” Hunan government photographs were excluded because the site's [copyright statement](https://www.hunan.gov.cn/fzlm/wzsm/201506/t20150608_4831822.html) does not clear commercial reproduction.
+The correction search was repeated on 2026-08-14. No pair of location-verified, commercially reusable Chadong photographs was found in the checked open repositories, remote content branches or direct official pages. Exact searches and Wikimedia Commons geosearches returned no qualifying documentary ground photograph. KartaView had no usable local street coverage. The following candidates were inspected but rejected rather than copied:
 
-Central asset acquisition should request or commission, with written rights:
+| Candidate | Photographer / original source | Location evidence | Rights and capture date | Recognisable people | Decision |
+|---|---|---|---|---|---|
+| Four river/settlement frames in the uploader's Chadong/Huayuan set: [3719108986](https://www.flickr.com/photos/yuner/3719108986), [3718295239](https://www.flickr.com/photos/yuner/3718295239), [3718294539](https://www.flickr.com/photos/yuner/3718294539), [3719106624](https://www.flickr.com/photos/yuner/3719106624) | yuner! / Flickr originals | Uploader set and tags identify the Chadong/Huayuan context; none supplies the formal sign image required for the second slot | Flickr reports **All rights reserved**; a reliable capture date was not exposed in the reviewed public metadata | One frame contains a person at the riverbank; the other thumbnail-level checks did not establish a reusable people-free pair | Reject: no commercial reuse permission and insufficient two-slot coverage |
+| Ferry-boat frame [3473932800](https://www.flickr.com/photos/guojinshan/3473932800) | guojinshan / Flickr original | Uploader context identifies the Chadong ferry setting | Flickr reports **All rights reserved**; a reliable capture date was not exposed in the reviewed public metadata | No recognisable face in the reviewed thumbnail, but this does not cure the licence failure | Reject: no commercial reuse permission |
+| Chadong photographs on Hunan government and institutional pages | Photographer not consistently credited / original government or institutional article | Captions and article context can verify the named place | No separate commercial image licence or dependable capture date; the Hunan government's [copyright statement](https://www.hunan.gov.cn/fzlm/wzsm/201506/t20150608_4831822.html) does not clear republication | Varies by frame; no consent record supplied | Evidence links only; not an image library |
+
+No Chadong file was added, so no Chadong alt or caption has been invented. The existing Fenghuang alt text and captions were re-audited and remain explicitly limited to Fenghuang; none is allowed to stand in for Chadong. The visual package is therefore **PARTIAL**, not ready for complete integration.
+
+At minimum, central asset acquisition should request or commission, with written rights:
 
 1. the east-bank Chadong Ancient Wharf with its heritage plaque and stone steps in the same frame;
 2. a wide river/bank view that explains the crossing relationship without asserting an exact fictional point;
@@ -97,7 +106,7 @@ Central asset acquisition should request or commission, with written rights:
 4. the 2026 entrance lettering and its provenance caption;
 5. the 1993 cliff lettering with a caption that identifies it as a later imitation.
 
-For each commissioned file, record photographer, capture date, exact location, consent for any recognisable person, commercial web licence and unedited original. Until then, the body deliberately uses no generic or wrong-location substitute.
+For each commissioned file, record photographer, capture date, exact location, consent for any recognisable person, commercial web licence and unedited original. Until at least (1) a Chadong riverbank/wharf/ferry environment and (2) a Chadong-identifying street, public space or formal sign are cleared, the hero/body set cannot fairly support the comparison. The body deliberately uses no generic or wrong-location substitute.
 
 ## Brand, text and artwork limits
 

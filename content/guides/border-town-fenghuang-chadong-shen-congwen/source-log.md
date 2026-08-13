@@ -1,12 +1,12 @@
 # Source log — Border Town, Fenghuang and Chadong
 
-Status: `CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED`
+Status: `PARTIAL — CHADONG ASSETS NOT CLEARED — CENTRAL RE-REVIEW REQUIRED`
 
 - Candidate ID: `folk-city-20260813-01`
 - Page owner: literary-place comparison of Chadong and Fenghuang for readers of Shen Congwen's *Border Town*
 - Parent hub: `history-route-collection`
-- Source review date: 2026-08-13
-- Canonical audit: latest `origin/main` and all 89 then-current `origin/*` refs checked on 2026-08-13; only `research/worker-3-folk-city-20260813` contained this candidate or owner
+- Source review date: 2026-08-14
+- Canonical audit: latest `origin/main` and all then-current `origin/*` refs were rechecked on 2026-08-14; no new page owner or reusable Chadong image set was found
 - Research handling: the remote research pack was read with `git show`; it was not cherry-picked
 
 ## Canonical boundary
@@ -65,9 +65,11 @@ The majority of the body serves place choice, onsite observation, visit order an
 - `/guides/zhangjiajie-city-or-wulingyuan-hotel-base/` — Zhangjiajie hotel-base owner; no duplication here
 - `/guides/hunan-cuisine-balanced-first-meal/` — regional food decision after the literary-place visit
 
-## Image-source boundary
+## Image-source boundary and 2026-08-14 correction result
 
-All selected photographs are real-location files with an explicit Wikimedia Commons licence or public-domain dedication recorded in `image-plan.md`. Hunan government photographs were excluded because the site's copyright statement does not clear commercial reuse. Flickr photographs of Chadong marked “All rights reserved” were also excluded. No generic old-town photograph is used to prove Chadong, a literary setting, a building date or authenticity.
+All selected photographs are real Fenghuang-location files with an explicit Wikimedia Commons licence or public-domain dedication recorded in `image-plan.md`. They are accurate for their captions, but they do not form a balanced comparison package. The second audit found zero Chadong files that met both location and commercial-rights requirements. Hunan government photographs were excluded because the site's copyright statement does not clear commercial reuse; five Flickr candidates by yuner! and guojinshan were excluded because they are marked “All rights reserved.” No generic old-town photograph, Fenghuang river view, other Xiangxi town or screen image is used to prove Chadong.
+
+Required before complete integration: one verified Chadong riverbank/wharf/ferry environment and one Chadong-identifying street/public-space/formal-sign view, each with photographer, original source, capture date, commercial web permission, exact location and recognisable-person record. Until those exist, this branch remains `PARTIAL` even though the copy exists.
 
 ## Pre-submission self-assessment
 
@@ -76,5 +78,5 @@ All selected photographs are real-location files with an explicit Wikimedia Comm
 - Practical travel help: 19/20
 - Place-specific information and original explanation: 14/15
 - Trilingual naturalness and information parity: 14/15
-- Image accuracy and rights: 8/10 — six usable real-location assets are cleared, but no open-licence Chadong photograph was available
-- **Total: 93/100; no veto issue identified**
+- Image accuracy and rights: 6/10 — six Fenghuang assets are accurately licensed, but no cleared Chadong image is available for the comparison owner
+- **Total: 91/100 for copy and existing-asset accuracy; a hard visual-completeness gap remains, so this is not a publishable or fully integrable package**
