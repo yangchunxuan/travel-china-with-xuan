@@ -143,6 +143,16 @@ const body = {
         "撒尼彝文名称提示了一段远比最知名的汉语情节和电影形象更宽广的传承史。",
     },
     {
+      id: "ashima-manuscript-figure",
+      type: "figure",
+      src: "/images/guides/shilin-ashima-landscape-story/ashima-manuscript-display-1050.webp",
+      alt: "云南民族博物馆展柜中标注为《阿诗玛的故事》、来源石林县的彝文典籍。",
+      width: 1050,
+      height: 1400,
+      caption:
+        "2011年的展签把左侧文献标为石林县彝文典籍《阿诗玛的故事》。它显示阿诗玛传统进入文字记录和博物馆呈现的一层，并不证明这是原稿、唯一权威版本，也不保证该件目前仍在展。照片：Daderot / Wikimedia Commons，公有领域；经缩放并转换为WebP。",
+    },
+    {
       id: "adaptation-heading",
       type: "heading",
       level: 2,
@@ -394,7 +404,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "官方、遗产、学术及图片来源（2026年8月13日复核）",
+      title: "官方、遗产、学术及图片来源（2026年8月13—14日复核）",
       items: [
         {
           label: "石林世界地质公园——地质与当前机构说明",
@@ -455,6 +465,12 @@ const body = {
           url: "https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg",
           publisher: "维基共享资源",
           reviewedAt: "2026-08-13",
+        },
+        {
+          label: "彝文《阿诗玛的故事》展陈：Daderot，公有领域；经缩放并转换为WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-14",
         },
       ],
     },

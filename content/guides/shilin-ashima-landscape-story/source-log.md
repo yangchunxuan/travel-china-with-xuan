@@ -1,11 +1,11 @@
 # Source log — Shilin Stone Forest and Ashima
 
-Status: **CULTURAL FEATURE DRAFT READY — CENTRAL CONTENT REVIEW REQUIRED**  
-Asset note: **REAL HERO AND FIVE BODY IMAGES INCLUDED — GEOLOGY PROCESS PANEL AND VERIFIED CULTURAL-EXHIBITION PHOTO STILL NEEDED**
+Status: **PARTIAL — CENTRAL RE-REVIEW REQUIRED**
+Asset note: **REAL HERO AND SIX BODY IMAGES INCLUDED — GEOLOGY PROCESS PANEL UNAVAILABLE; ARTICLE REMAINS PARTIAL**
 
-Prepared and reviewed: **2026-08-13**  
-Candidate: `folk-city-20260813-02`  
-Canonical guide ID: `shilin-ashima-landscape-story`  
+Prepared and reviewed: **2026-08-13**; correction audit: **2026-08-14**
+Candidate: `folk-city-20260813-02`
+Canonical guide ID: `shilin-ashima-landscape-story`
 Approved parent classification: `history-route-collection`
 
 ## Editorial boundary
@@ -118,6 +118,14 @@ The evidence labels used in the body are:
 - Supports: the cultural-tourism service centre is in Shilin county town and is listed separately from the Stone Forest Scenic Area.
 - Does **not** support: a practical same-day museum promise or current operation.
 
+### S13 — Public-domain Ashima manuscript display photograph
+
+- URL: https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG
+- Publisher / creator: Wikimedia Commons / Daderot
+- Reviewed: 2026-08-14
+- Supports: the photograph was taken at the Yunnan Nationalities Museum on 2011-08-13; its visible bilingual label identifies the left item as a Yi-script *Story of Ashima* from Shilin County; Daderot released the image to the public domain.
+- Does **not** support: current display in 2026, identification as an original or unique authoritative version, the manuscript's date or author, or identification with either venue named in S1 and S11.
+
 ## Venue-name audit
 
 The source record describes at least two settings: UNESCO's English profile places an Ashima intangible-culture exhibition hall in a Geopark Museum, while provincial and national records place an Ashima ethnic-culture display in a county-town cultural-tourism service centre. No current authoritative page crosswalks the English and Chinese museum names, exact addresses, operators, access rules or hours. The article therefore does not route readers to a named hall. It treats any verified-open geology or cultural display as optional and supplies a no-exhibition recovery route.
@@ -154,8 +162,9 @@ All committed derivatives were visually inspected, non-generatively resized/crop
 - “Ashima” in Sani Yi script — 瑞丽江的河水, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%AF%97%E7%8E%9B%E5%BD%9D%E6%96%87.png
 - Ashima Rock portrait view — Cs california, CC BY 3.0: https://commons.wikimedia.org/wiki/File:Ashima_tourist_attraction.JPG
 - Shilin Sani embroidery — 瑞丽江的河水, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E6%9E%97%E6%92%92%E5%B0%BC%E5%88%BA%E7%BB%A3.jpg
+- Yi-script *Story of Ashima* display — Daderot, public domain: https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG
 
-No image is a film still, AI reconstruction or identifiable-person portrait. A proposed “Ashima and Ahei sculpture” was rejected after visual inspection showed that the Commons candidates were natural limestone formations, not sculptures. A current formation-process panel and a current, accurately identified Ashima exhibition photograph remain editorial-library gaps; the designation monuments, script graphic and embroidery are not used as substitutes for those objects.
+No image is a film still, AI reconstruction or identifiable-person portrait. A proposed “Ashima and Ahei sculpture” was rejected after visual inspection showed that the Commons candidates were natural limestone formations, not sculptures. The public-domain 2011 museum photograph now supplies an accurately identified cultural-display image, with a caption that does not promise current display. A current formation-process panel remains **UNAVAILABLE**: the designation monument is not used as a substitute.
 
 ## Omitted or rejected claims
 
@@ -168,12 +177,14 @@ No image is a film still, AI reconstruction or identifiable-person portrait. A p
 
 ## Validation record
 
-Run in the article worktree on 2026-08-13:
+Correction checks were run in the article worktree on 2026-08-14 after the final trilingual and asset edits:
 
+- Trilingual structural parity — **passed**: 42 blocks per locale, exact ID/type order, 9 H2 and matching figure paths/dimensions and source URL/date sequence.
+- Visible copy count — EN **2,179 article words** excluding source and internal-link blocks; ZH **4,197 Han characters** on the same basis; KO **1,851 space-delimited tokens** on the same basis.
 - `npm run guide:generate` — **passed**; 128 guide folders verified and only ignored temporary registry outputs generated.
 - `npm run typecheck` — **passed**, including a fresh guide generation.
-- `npm run build` — **run but not passed**. The article and manifest checks completed; the shared font-coverage gate stopped on 16 Chinese and 3 Korean glyphs introduced by this cultural vocabulary. The task expressly forbids editing shared fonts, so no font subset was changed or committed.
-- `node_modules/.bin/next build` — **passed** after bypassing only the prohibited shared font-subset mutation. All 496 static pages generated and the EN/ZH/KO article outputs exist.
-- `git diff --check` — **passed**.
+- `npm run build` — **passed** after the tracked content manifest and three tracked locale-font subsets were regenerated temporarily for verification. The repository's official `tools/rebuild-locale-fonts.mjs` process used the exact upstream families named in `public/fonts/README.md`: Google Fonts Noto Serif SC, Pretendard Variable 1.3.9 and NAVER MaruBuri Regular. Compilation, 496-page static generation, export font coverage and internal href/src checks all passed.
+- The temporary `content/generated/content-manifest.json` and all three `public/fonts/homeground-*.woff2` files were restored byte-for-byte to this branch's HEAD and are not part of the correction.
+- `git diff --check` and the complete prospective branch comparison `git diff --check origin/main` — **passed** with return code 0.
 
-This record does not claim the full repository build passed. Central must regenerate/review the shared locale font subsets during integration.
+The successful build validates the copy and assets but does not change the **PARTIAL** editorial state: an accurately located, reusable geology formation-process panel remains unavailable.

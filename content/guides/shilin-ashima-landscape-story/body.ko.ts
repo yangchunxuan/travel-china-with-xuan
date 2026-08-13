@@ -143,6 +143,16 @@ const body = {
         "싸니 이문자로 적은 이름은 가장 널리 알려진 중국어 줄거리와 영화 이미지 너머에 있는 전승사를 가리킵니다.",
     },
     {
+      id: "ashima-manuscript-figure",
+      type: "figure",
+      src: "/images/guides/shilin-ashima-landscape-story/ashima-manuscript-display-1050.webp",
+      alt: "쿤밍 윈난민족박물관에서 ‘아시마 이야기’와 ‘스린현’으로 표기된 이문 고전 문헌.",
+      width: 1050,
+      height: 1400,
+      caption:
+        "2011년 전시 표시는 왼쪽 문헌을 스린현에서 온 이문 ‘아시마 이야기’로 소개합니다. 이는 문자 전승과 박물관 재현이라는 층위를 보여 줄 뿐, 원본이나 유일한 권위본임을 입증하지 않으며 지금도 전시 중이라는 뜻도 아닙니다. 사진: Daderot / Wikimedia Commons, 퍼블릭 도메인. 크기 조정 후 WebP로 변환.",
+    },
+    {
       id: "adaptation-heading",
       type: "heading",
       level: 2,
@@ -394,7 +404,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "2026년 8월 13일 검토한 공식·유산·학술·이미지 자료",
+      title: "2026년 8월 13~14일 검토한 공식·유산·학술·이미지 자료",
       items: [
         {
           label: "스린 유네스코 세계지질공원 — 지질과 현재 기관 설명",
@@ -455,6 +465,12 @@ const body = {
           url: "https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg",
           publisher: "위키미디어 공용",
           reviewedAt: "2026-08-13",
+        },
+        {
+          label: "이문 ‘아시마 이야기’ 전시: Daderot, 퍼블릭 도메인; 크기 조정 후 WebP 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG",
+          publisher: "위키미디어 공용",
+          reviewedAt: "2026-08-14",
         },
       ],
     },
