@@ -43,6 +43,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare tickets and boarding after the station pair is chosen." },
     { label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Compare schedule shape for longer onward travel." },
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count the large-city access legs." },
+    { label: "Read the White Snake sites in Hangzhou and Zhenjiang", href: "/guides/white-snake-legend-hangzhou-zhenjiang/", description: "After solving the station pair, decide whether the legend merits a second-city cultural stop." },
     { label: "Read Yiwu beyond the market", href: "/guides/yiwu-market-to-factory-network/", description: "Understand the roles behind Yiwu's product displays without treating a booth as proof of a factory or an old directory as current guidance." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [

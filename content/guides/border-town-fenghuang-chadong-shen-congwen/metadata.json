@@ -1,0 +1,53 @@
+{
+  "id": "border-town-fenghuang-chadong-shen-congwen",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "literary-place-comparison",
+  "topics": ["Shen Congwen", "Border Town", "Chadong", "Fenghuang", "literary geography"],
+  "destinations": ["chadong", "fenghuang", "xiangxi"],
+  "heroImagePath": "/images/guides/border-town-fenghuang-chadong-shen-congwen/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/border-town-fenghuang-chadong-shen-congwen/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "sourceReviewedDate": "2026-08-14",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/border-town-fenghuang-chadong-shen-congwen/",
+      "title": "Where Is Border Town? Choose Fenghuang, Chadong or Both",
+      "headline": "Read the Novel's Geography Without Mistaking It for a Map",
+      "description": "Separate Shen Congwen's hometown from the literary geography of Border Town, then choose Chadong, Fenghuang or a two-place reading route.",
+      "heroAlt": "Hongqiao in Fenghuang, a real part of Shen Congwen's hometown but not proof of a scene in Border Town.",
+      "navTitle": "Choose Fenghuang or Chadong",
+      "featuredLinkLabel": "Read Border Town through two places",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Border Town", "Shen Congwen", "Xiangxi"]
+    },
+    "zh": {
+      "path": "/zh/guides/border-town-fenghuang-chadong-shen-congwen/",
+      "title": "《边城》究竟在哪里：凤凰、茶峒与沈从文故居怎么选",
+      "headline": "把小说地理、作者故乡与现代旅游叙事分开阅读",
+      "description": "分清茶峒的《边城》文学地理、凤凰的沈从文故乡与纪念空间，再决定去茶峒、凤凰，还是两地都去。",
+      "heroAlt": "凤凰古城虹桥；这里属于沈从文故乡的真实城市空间，但不能据此认定为《边城》小说场景。",
+      "navTitle": "选凤凰还是茶峒",
+      "featuredLinkLabel": "用两个地点读懂《边城》",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["边城", "沈从文", "湘西"]
+    },
+    "ko": {
+      "path": "/ko/guides/border-town-fenghuang-chadong-shen-congwen/",
+      "title": "『변성』을 따라 차둥과 펑황 중 어디로 갈까",
+      "headline": "소설의 지리, 작가의 고향, 현대 관광 서사를 구분해 읽기",
+      "description": "차둥의 『변성』 문학 지리와 펑황의 선충원 고향·기념 공간을 구분한 뒤 한 곳 또는 두 곳을 고르는 안내서입니다.",
+      "heroAlt": "펑황 고성의 훙차오. 선충원의 고향에 실제로 존재하는 도시 공간이지만 『변성』 장면의 증거는 아니다.",
+      "navTitle": "차둥과 펑황 고르기",
+      "featuredLinkLabel": "두 장소로 『변성』 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["변성", "선충원", "샹시"]
+    }
+  }
+}

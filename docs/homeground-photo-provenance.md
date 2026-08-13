@@ -974,3 +974,23 @@ licence, an indication that it was cropped/resized and CC BY-SA 4.0
 share-alike treatment. Its Commons source and licence are also present in the
 article's default-collapsed EN/ZH/KO Sources blocks. The five vector files must
 remain labelled as AI-assisted, non-documentary editorial assets.
+
+## Employee 3–4 folk-city release (August 14, 2026)
+
+All four covers in this release are real documentary photographs from
+Wikimedia Commons. No AI-generated or AI-assisted cover is used: **0 / 4**.
+The source pages, licences, crop decisions and additional body-image records
+are documented in each guide's `image-plan.md`; this central ledger records the
+primary cover assignment and guards against duplicate hero use.
+
+| Guide | Original source, creator and rights | Captured / exact visible scene | Published derivative and final SHA-256 | Asset class / AI use / evidence boundary |
+| --- | --- | --- | --- | --- |
+| `border-town-fenghuang-chadong-shen-congwen` | [凤凰古城 2024-06-22 18.jpg](https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg), xiquinhosilva, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 2024-06-22; Hongqiao entrance in Fenghuang Ancient Town | `public/images/guides/border-town-fenghuang-chadong-shen-congwen/hero-1600.webp`; 1600 × 1000; `b06636b56ae6db09be1793abefed047d382877429abb30dfb51dba192b3d0bf6` | Real photograph; AI: no. Identifies one real place in Shen Congwen's hometown, not a scene from *Border Town*, Chadong or proof that fictional geography maps one-to-one onto Fenghuang. |
+| `luxun-shaoxing-literary-walk` | [20250717 Small reception room of the former residence of Lu Xun.jpg](https://commons.wikimedia.org/wiki/File:20250717_Small_reception_room_of_the_former_residence_of_Lu_Xun.jpg), Yumeto, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 2025-07-17; current interior display in Zhou Family New Taimen, Lu Xun's former residence, Shaoxing | `public/images/guides/luxun-shaoxing-literary-walk/hero-1600.webp`; 1600 × 1000; `91b14902b5e925f7bf5ca049c8292326dfaae53f6897eec09d68c5320fe3cb90` | Real photograph; AI: no. The display conveys scale and present interpretation only; it does not certify every furnishing as original or turn memoir and fiction into literal room labels. |
+| `white-snake-legend-hangzhou-zhenjiang` | [Broken Bridge (Hangzhou), 2025-05-05](https://commons.wikimedia.org/wiki/File:Broken_Bridge_(Hangzhou)_20250505.jpg), Suicasmo, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | 2025-05-05; Broken Bridge at the eastern end of Bai Causeway beside West Lake, Hangzhou | `public/images/guides/white-snake-legend-hangzhou-zhenjiang/hero-1600.webp`; 1600 × 1000; `7d320f74215fc2477c8e6af8fc0e522a177539a9ebb71d5881cd2ec8f1b75a41` | Real photograph; AI: no. Shows the maintained bridge only; it is not evidence that a legendary meeting was a historical event or that the current fabric is ancient. |
+| `three-literary-towers-comparison` | [Yellow Crane Tower 61426-Wuhan (49150471556).jpg](https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61426-Wuhan_(49150471556).jpg), Xiquinho Silva / xiquinhosilva, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | 2019-10-27; current Yellow Crane Tower exterior in Wuhan | `public/images/guides/three-literary-towers-comparison/hero-1600.webp`; 1600 × 1000; `f1532b041360f973cf0b0f7840c209f4f64fbff364aa14988e41d8c29ef00d11` | Real photograph; AI: no. Shows the modern tower exterior only; it does not prove an ancient construction date, surviving historic fabric or equivalence with Yueyang Tower and Tengwang Pavilion. |
+
+The derivatives were produced by conventional crop, resize and WebP
+conversion only. No scene element was generated, added or removed. Attribution,
+licence links and modification notices remain in each guide's default-collapsed
+Sources section wherever the licence requires them.

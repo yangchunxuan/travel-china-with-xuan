@@ -1,0 +1,53 @@
+{
+  "id": "three-literary-towers-comparison",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "literary-architecture-comparison",
+  "topics": ["literature", "architecture", "heritage", "cultural-landscape"],
+  "destinations": ["china", "wuhan", "yueyang", "nanchang"],
+  "heroImagePath": "/images/guides/three-literary-towers-comparison/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/three-literary-towers-comparison/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "sourceReviewedDate": "2026-08-14",
+  "search": {"section": "culture", "family": "comparison", "primaryIntent": "compare"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/three-literary-towers-comparison/",
+      "title": "Yellow Crane, Yueyang or Tengwang: Which Literary Tower?",
+      "headline": "China's Three Literary Towers: What Does Each Preserve?",
+      "description": "Compare Yellow Crane Tower, Yueyang Tower and Tengwang Pavilion by surviving fabric, reconstruction, literary context and what a visitor can actually read on site.",
+      "heroAlt": "The modern Yellow Crane Tower in Wuhan seen against a clear sky",
+      "navTitle": "Compare three literary towers",
+      "featuredLinkLabel": "Choose one literary tower",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Literary towers", "Architecture", "Choose one"]
+    },
+    "zh": {
+      "path": "/zh/guides/three-literary-towers-comparison/",
+      "title": "黄鹤楼、岳阳楼还是滕王阁：三大名楼怎么选",
+      "headline": "诗比楼更古老：三大名楼今天分别保留了什么？",
+      "description": "从现存木构、迁址重建、文学记忆和现场观察比较黄鹤楼、岳阳楼与滕王阁，帮助旅客只选最适合自己的一座。",
+      "heroAlt": "晴空下武汉现存的现代黄鹤楼",
+      "navTitle": "比较三大文学名楼",
+      "featuredLinkLabel": "选一座文学名楼",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["文学名楼", "建筑证据", "三选一"]
+    },
+    "ko": {
+      "path": "/ko/guides/three-literary-towers-comparison/",
+      "title": "황학루·악양루·등왕각: 어느 문학 누각을 볼까",
+      "headline": "시는 누각보다 오래되었다: 세 명루가 오늘 간직한 것",
+      "description": "황학루, 악양루, 등왕각을 현존 부재, 이전과 재건, 문학 기억, 현장 관찰 기준으로 비교해 한 곳을 고르도록 돕습니다.",
+      "heroAlt": "맑은 하늘 아래 보이는 우한의 현대 황학루",
+      "navTitle": "세 문학 명루 비교",
+      "featuredLinkLabel": "문학 누각 한 곳 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["문학 누각", "건축 증거", "한 곳 선택"]
+    }
+  }
+}
