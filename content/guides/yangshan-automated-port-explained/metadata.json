@@ -1,0 +1,57 @@
+{
+  "id": "yangshan-automated-port-explained",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "industrial-system-explainer",
+  "topics": ["yangshan-port", "automated-terminals", "container-shipping", "industrial-technology", "shanghai"],
+  "destinations": ["shanghai"],
+  "heroImagePath": "/images/guides/yangshan-automated-port-explained/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yangshan-automated-port-explained/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/yangshan-automated-port-explained/",
+      "title": "Yangshan Automated Port Explained: Containers, Software and People",
+      "headline": "How a Container Moves Through Yangshan Phase IV",
+      "description": "Follow one container through Yangshan Phase IV and understand what TOS, ECS, automated equipment and human operators each do—and why the terminal is not a walk-in attraction.",
+      "heroAlt": "Container cranes, stacked containers and a service road at Yangshan Port in 2013.",
+      "navTitle": "How Yangshan automation works",
+      "featuredLinkLabel": "Follow a container through Yangshan",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shanghai", "Automated ports", "Industry"]
+    },
+    "zh": {
+      "path": "/zh/guides/yangshan-automated-port-explained/",
+      "title": "洋山自动化码头如何运转：集装箱、软件与人的协作",
+      "headline": "跟着一个集装箱读懂洋山四期",
+      "description": "沿着集装箱在洋山四期的作业链，分清TOS、ECS、自动化设备和现场人员各自做什么，也说明为何这里不是可直接入场的旅游景点。",
+      "heroAlt": "2013年的洋山港集装箱起重机、堆箱与港区道路。",
+      "navTitle": "读懂洋山自动化码头",
+      "featuredLinkLabel": "跟随集装箱了解洋山四期",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["上海", "自动化码头", "当代工业"]
+    },
+    "ko": {
+      "path": "/ko/guides/yangshan-automated-port-explained/",
+      "title": "양산 자동화 항만의 작동 원리: 컨테이너·소프트웨어·사람",
+      "headline": "컨테이너 하나로 이해하는 양산항 4단계 터미널",
+      "description": "양산항 4단계에서 컨테이너가 이동하는 과정을 따라가며 TOS, ECS, 자동화 장비와 사람이 맡는 역할, 그리고 이곳이 자유 관람지가 아닌 이유를 설명합니다.",
+      "heroAlt": "2013년 양산항의 컨테이너 크레인, 적재 컨테이너와 항만 도로.",
+      "navTitle": "양산 자동화 항만 이해하기",
+      "featuredLinkLabel": "컨테이너 이동으로 양산항 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["상하이", "자동화 항만", "현대 산업"]
+    }
+  }
+}

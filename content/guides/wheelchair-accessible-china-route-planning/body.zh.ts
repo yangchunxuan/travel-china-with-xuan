@@ -291,7 +291,8 @@ const body = {
         { "label": "核验真正合适的无障碍客房", "href": "/zh/guides/china-accessible-hotel-room-verification/", "description": "向酒店核验客房尺寸、分配和被换房时的备用。" },
         { "label": "选择私人接送还是公共交通", "href": "/zh/guides/china-private-transfer-or-public-transport/", "description": "针对一个地面段，比较具体车辆和公共交通的完整链。" },
         { "label": "第一次乘中国高铁前做好准备", "href": "/zh/guides/china-high-speed-train-first-time-guide/", "description": "先了解一般车站流程，再加入协助交接。" },
-        { "label": "用开口程航班减少回头路", "href": "/zh/guides/china-open-jaw-flights-route-planning/", "description": "在无障碍链支持不同门户时，减少重复转场。" }
+        { "label": "用开口程航班减少回头路", "href": "/zh/guides/china-open-jaw-flights-route-planning/", "description": "在无障碍链支持不同门户时，减少重复转场。" },
+        { "label": "核验中国十五分钟生活圈", "href": "/zh/guides/china-15-minute-neighbourhoods/", "description": "检查附近日常服务是否组成可用的门到门链条，不把距离近直接等同于无障碍。" }
       ]
     },
     {

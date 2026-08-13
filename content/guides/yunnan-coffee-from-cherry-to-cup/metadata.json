@@ -1,0 +1,64 @@
+{
+  "id": "yunnan-coffee-from-cherry-to-cup",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "supply-chain-explainer",
+  "topics": [
+    "yunnan-coffee",
+    "coffee-processing",
+    "coffee-supply-chain",
+    "green-coffee",
+    "coffee-traceability",
+    "regional-food-systems"
+  ],
+  "destinations": ["yunnan", "puer", "baoshan", "lincang", "dehong", "china"],
+  "heroImagePath": "/images/guides/yunnan-coffee-from-cherry-to-cup/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yunnan-coffee-from-cherry-to-cup/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/yunnan-coffee-from-cherry-to-cup/",
+      "title": "Yunnan Coffee From Cherry to Cup: Processing, Traceability and Value",
+      "headline": "How a Yunnan Coffee Cherry Becomes a Traceable Cup",
+      "description": "Follow Yunnan coffee through picking, processing, drying, green-bean trade, roasting and brewing—and learn what a useful label can and cannot prove.",
+      "heroAlt": "A wood-fronted cafe with a terrace and flowers on a stone lane in Dali Old Town.",
+      "navTitle": "Yunnan coffee from cherry to cup",
+      "featuredLinkLabel": "Trace a Yunnan coffee lot",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Yunnan", "Coffee", "Supply chain"]
+    },
+    "zh": {
+      "path": "/zh/guides/yunnan-coffee-from-cherry-to-cup/",
+      "title": "云南咖啡从鲜果到杯中：加工、溯源与价值链",
+      "headline": "一批云南咖啡如何从鲜果变成可追溯的一杯",
+      "description": "沿着采摘、初加工、干燥、生豆交易、烘焙与冲煮读懂云南咖啡，并判断包装信息能证明什么、不能证明什么。",
+      "heroAlt": "大理古城石板路旁一间带木质外墙、露台与花木的咖啡店。",
+      "navTitle": "云南咖啡从鲜果到杯中",
+      "featuredLinkLabel": "追踪一批云南咖啡",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["云南", "咖啡", "供应链"]
+    },
+    "ko": {
+      "path": "/ko/guides/yunnan-coffee-from-cherry-to-cup/",
+      "title": "윈난 커피, 체리에서 한 잔까지: 가공·추적성·가치사슬",
+      "headline": "윈난 커피 한 로트가 추적 가능한 한 잔이 되기까지",
+      "description": "수확, 1차 가공, 건조, 생두 거래, 로스팅과 추출까지 따라가며 라벨이 무엇을 증명하고 무엇을 증명하지 못하는지 알아봅니다.",
+      "heroAlt": "다리 고성의 돌길가에 나무 외벽과 테라스, 꽃이 있는 카페.",
+      "navTitle": "윈난 커피, 체리에서 한 잔까지",
+      "featuredLinkLabel": "윈난 커피 한 로트 추적하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["윈난", "커피", "공급망"]
+    }
+  }
+}

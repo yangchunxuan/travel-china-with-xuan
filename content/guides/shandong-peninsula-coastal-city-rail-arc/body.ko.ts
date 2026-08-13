@@ -62,7 +62,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "중국 탐색", href: "/ko/explore/", description: "이 지역 역할을 다음 목적지와 비교하세요."},
     {label: "중국 고속철 첫 이용", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "정확한 역명과 여권 승객 기록으로 예매합니다."},
     {label: "중국 철도 전용 일정", href: "/ko/guides/china-rail-only-route/", description: "국내선 없이 전체 일정이 작동하는지 검사합니다."},
-    {label: "한 거점 또는 여러 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "각 호텔 이동을 시간과 에너지로 계산합니다."}
+    {label: "한 거점 또는 여러 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "각 호텔 이동을 시간과 에너지로 계산합니다."},
+    {label: "세 가지 렌즈로 칭다오 산업사 읽기", href: "/ko/guides/qingdao-brands-built-an-industrial-city/", description: "맥주·가전·철도 맥락을 범위 있게 더하되 지역 철도 동선을 세 번의 공장 방문으로 바꾸지 마세요."}
   ]},
   {id: "consultation", type: "callout", title: "철도 호에서 한 도시를 빼야 하나요?", body: "Homeground 여행 상담가가 날짜별 정확한 열차·역·숙박 구역·도시 역할을 비교해 가치가 가장 낮은 정차지를 찾을 수 있습니다. 경로를 판매용 일정으로 바꾸지 않습니다.", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026년 8월 13일 검토한 공식 출처", items: [

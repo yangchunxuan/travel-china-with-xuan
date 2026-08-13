@@ -34,7 +34,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "把其余接驳安排得更稳妥", items: [
     {label: "在中国选择包车接送还是公共交通", href: "/zh/guides/china-private-transfer-or-public-transport/", description: "试点服务不能承担关键接驳时，选择更可靠的交通方案。"},
     {label: "确认中国地图地点标记与入口", href: "/zh/guides/china-map-coordinate-offset-explained/", description: "不要只看一个坐标点，还要确认实际可用的上车入口。"},
-    {label: "在中国丢失手机后的数字恢复", href: "/zh/guides/lost-phone-in-china-digital-recovery/", description: "保护交通和支付工具的使用能力。"}
+    {label: "在中国丢失手机后的数字恢复", href: "/zh/guides/lost-phone-in-china-digital-recovery/", description: "保护交通和支付工具的使用能力。"},
+    {label: "读懂深圳低空基础设施", href: "/zh/guides/shenzhen-low-altitude-city-infrastructure/", description: "比较有边界的道路试点与无人机航线、地面节点，不把任何一方写成有保证的载客交通。"}
   ]},
   {id: "sources", type: "sources", title: "官方与独立来源", items: [
     {label: "自动驾驶汽车运输安全服务指南", url: "https://xxgk.mot.gov.cn/jigou/ysfws/202312/t20231205_3962490.html", publisher: "交通运输部", reviewedAt: "2026-08-13"},

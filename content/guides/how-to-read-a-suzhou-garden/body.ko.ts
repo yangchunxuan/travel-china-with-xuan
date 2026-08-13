@@ -323,6 +323,11 @@ const body: StructuredPageBody = {
           href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "배경 설명이 이해를 더하는 구간에만 사람의 도움을 활용한다.",
         },
+        {
+          label: "중국 스펀지 도시의 빗물 관리 읽기",
+          href: "/ko/guides/how-to-read-a-chinese-sponge-city/",
+          description: "설계된 물과 지면 체계를 비교하되 고전 정원이 현대 기반시설의 계보를 입증한다고 보지 마세요.",
+        },
       ],
     },
     {

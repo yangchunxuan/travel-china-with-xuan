@@ -23,7 +23,10 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"internal-links",type:"internal-links",title:"량주를 여행 동선에 연결하기",items:[
 {label:"상하이-항저우 역 조합",href:"/ko/guides/shanghai-hangzhou-transport-route/",description:"교외 고고유적 하루를 넣기 전에 철도역 연결을 고릅니다."},
 {label:"쑤저우 정원 읽는 법",href:"/ko/guides/how-to-read-a-suzhou-garden/",description:"장난의 설계 정원과 선사시대 보호 풍경을 다른 문화 과제로 봅니다."},
-{label:"중국 고속철 첫 이용",href:"/ko/guides/china-high-speed-train-first-time-guide/",description:"항저우 철도 이동에 정확한 여권 정보를 씁니다."}
+{label:"중국 고속철 첫 이용",href:"/ko/guides/china-high-speed-train-first-time-guide/",description:"항저우 철도 이동에 정확한 여권 정보를 씁니다."},
+{label:"현장 맥락을 놓치지 않고 고고 유적 박물관 보기",href:"/ko/guides/how-to-visit-an-archaeological-site-museum/",description:"량주의 박물관–유적 경관 구분을 재사용할 수 있는 증거 확인법으로 이어 가세요."},
+{label:"중국 박물관 도장 수집 이해하기",href:"/ko/guides/why-china-museums-have-stamps/",description:"도장을 선택적인 해석 도구로 보고 량주에서 특정 도장을 현재 제공한다고 단정하지 마세요."},
+{label:"지하철 공사가 고고 유적을 만나면 생기는 일",href:"/ko/guides/when-metro-construction-meets-archaeology/",description:"계획된 유산 방문과 기반시설 공사 중 우연한 발견을 비교하되 공개 전시를 전제하지 마세요."}
 ]},
 {id:"consultation",type:"callout",title:"항저우·상하이 일정에 량주를 넣어야 하나요?",body:"Homeground 여행 상담가는 두 장소의 현재 입장 절차, 교외 이동, 날씨 대안과 이후 열차 일정을 점검할 수 있습니다. 날짜, 출발 숙소, 보행 제한, 유적 풍경과 박물관 소장품 중 우선순위를 알려 주세요.",tone:"neutral"},
 {id:"sources",type:"sources",title:"확인한 공식·유산·이미지 출처",items:[

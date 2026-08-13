@@ -23,7 +23,10 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"internal-links",type:"internal-links",title:"把良渚接入路线",items:[
 {label:"上海到杭州车站组合",href:"/zh/guides/shanghai-hangzhou-transport-route/",description:"增加郊区考古日之前，先选定铁路车站链。"},
 {label:"怎么看懂苏州园林",href:"/zh/guides/how-to-read-a-suzhou-garden/",description:"把江南人工园林与史前保护地景当成两个不同文化任务。"},
-{label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"坐高铁抵达杭州时使用准确护照信息。"}
+{label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"坐高铁抵达杭州时使用准确护照信息。"},
+{label:"参观考古遗址博物馆而不丢失现场语境",href:"/zh/guides/how-to-visit-an-archaeological-site-museum/",description:"把良渚的博物馆—遗址景观区分带入可复用的证据流程。"},
+{label:"理解中国博物馆里的集章",href:"/zh/guides/why-china-museums-have-stamps/",description:"把印章当成可选的解释工具，不据此声称良渚现在一定提供某枚章。"},
+{label:"看懂地铁建设遇到考古时会发生什么",href:"/zh/guides/when-metro-construction-meets-archaeology/",description:"比较计划内的遗产参观与基础设施偶然发现，不预设发现一定向公众展示。"}
 ]},
 {id:"consultation",type:"callout",title:"需要把良渚放在杭州或上海行程中？",body:"Homeground 真人旅行顾问可以检查两处当期入场安排、郊区交通、天气后备和后续铁路。请提供日期、出发酒店、步行限制，以及你更重视考古地景还是馆藏。",tone:"neutral"},
 {id:"sources",type:"sources",title:"已核验的官方、遗产与图片来源",items:[

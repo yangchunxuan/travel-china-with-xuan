@@ -23,7 +23,10 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"internal-links",type:"internal-links",title:"Connect Liangzhu to the route",items:[
 {label:"Shanghai to Hangzhou station combinations",href:"/guides/shanghai-hangzhou-transport-route/",description:"Choose the rail station chain before adding a suburban archaeological day."},
 {label:"How to read a Suzhou garden",href:"/guides/how-to-read-a-suzhou-garden/",description:"Keep a designed Jiangnan garden and a protected prehistoric landscape as different cultural tasks."},
-{label:"China high-speed trains for first-time visitors",href:"/guides/china-high-speed-train-first-time-guide/",description:"Use the correct passport record when Hangzhou is reached by rail."}
+{label:"China high-speed trains for first-time visitors",href:"/guides/china-high-speed-train-first-time-guide/",description:"Use the correct passport record when Hangzhou is reached by rail."},
+{label:"Use an archaeological-site museum without losing the site context",href:"/guides/how-to-visit-an-archaeological-site-museum/",description:"Carry Liangzhu's museum–landscape separation into a reusable evidence workflow."},
+{label:"Understand stamp collecting in China's museums",href:"/guides/why-china-museums-have-stamps/",description:"Treat stamps as optional interpretation tools, not evidence that Liangzhu currently offers a specific stamp."},
+{label:"See what happens when metro construction meets archaeology",href:"/guides/when-metro-construction-meets-archaeology/",description:"Compare a planned heritage visit with chance finds in infrastructure projects without assuming a public display."}
 ]},
 {id:"consultation",type:"callout",title:"Need Liangzhu fitted around Hangzhou or Shanghai?",body:"A Homeground travel consultant can check both venues' current admission arrangements, suburban transfers, weather fallback and onward rail. Share the visit date, starting hotel, walking limits and whether archaeology or the museum collection matters more.",tone:"neutral"},
 {id:"sources",type:"sources",title:"Official, heritage and image sources reviewed",items:[

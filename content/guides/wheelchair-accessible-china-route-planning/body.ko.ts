@@ -291,7 +291,8 @@ const body = {
         { "label": "실제로 이용 가능한 장애인 객실 확인하기", "href": "/ko/guides/china-accessible-hotel-room-verification/", "description": "호텔과 객실 실측값, 배정, 객실 변경 시 대안을 확인하세요." },
         { "label": "예약 픽업 차량과 대중교통 중 선택하기", "href": "/ko/guides/china-private-transfer-or-public-transport/", "description": "지상 구간 하나의 실제 차량과 대중교통 사슬을 비교하세요." },
         { "label": "중국 고속철도 첫 이용 준비", "href": "/ko/guides/china-high-speed-train-first-time-guide/", "description": "일반 역 이용 순서를 이해한 뒤 지원 인계를 더하세요." },
-        { "label": "오픈조 항공편으로 되돌아가기 줄이기", "href": "/ko/guides/china-open-jaw-flights-route-planning/", "description": "서로 다른 관문이 접근 사슬을 충족할 때 반복 이동을 없애세요." }
+        { "label": "오픈조 항공편으로 되돌아가기 줄이기", "href": "/ko/guides/china-open-jaw-flights-route-planning/", "description": "서로 다른 관문이 접근 사슬을 충족할 때 반복 이동을 없애세요." },
+        { "label": "중국 15분 생활권의 접근성 점검하기", "href": "/ko/guides/china-15-minute-neighbourhoods/", "description": "가까운 일상 서비스가 실제 문 앞부터 목적지까지 이어지는지 확인하고 거리가 가깝다는 이유만으로 접근 가능하다고 보지 마세요." }
       ]
     },
     {

@@ -1,0 +1,53 @@
+{
+  "id": "when-metro-construction-meets-archaeology",
+  "type": "planning",
+  "pillar": "culture-history-people-places",
+  "audienceMarkets": ["global"],
+  "format": "urban-archaeology-explainer",
+  "topics": ["urban-archaeology", "metro-construction", "cultural-heritage", "historic-cities"],
+  "destinations": ["china", "beijing", "guangzhou", "wuhan", "hangzhou"],
+  "heroImagePath": "/images/guides/when-metro-construction-meets-archaeology/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/when-metro-construction-meets-archaeology/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "task", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/when-metro-construction-meets-archaeology/",
+      "title": "What Happens When Metro Construction Meets an Older City?",
+      "headline": "A Metro Dig Can Become an Archaeological Question Before It Becomes a Delay",
+      "description": "Follow the survey, excavation, protection and construction decisions that can occur when a China metro project encounters an older city below ground.",
+      "heroAlt": "AI-assisted editorial illustration of a generic metro work zone and archaeological layers; not a documentary excavation or real project",
+      "navTitle": "When metro work meets archaeology",
+      "featuredLinkLabel": "Read the city below a metro project",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Urban archaeology", "China metros", "Historic cities"]
+    },
+    "zh": {
+      "path": "/zh/guides/when-metro-construction-meets-archaeology/",
+      "title": "当地铁隧道遇上一座更古老的城市，会发生什么？",
+      "headline": "地铁施工遇到考古问题，不等于必然延期",
+      "description": "从调查、勘探、发掘、保护到继续建设，理解中国城市轨道工程碰到地下历史遗存时可能经历的决策链。",
+      "heroAlt": "AI 辅助编辑插画：通用地铁工区与地下考古层；并非真实项目或发掘现场的纪实画面",
+      "navTitle": "地铁施工如何遇上考古",
+      "featuredLinkLabel": "读懂地铁工程下的旧城",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["城市考古", "中国地铁", "历史城市"]
+    },
+    "ko": {
+      "path": "/ko/guides/when-metro-construction-meets-archaeology/",
+      "title": "중국 지하철 공사가 더 오래된 도시를 만나면 무슨 일이 생길까?",
+      "headline": "지하철 공사의 고고학 문제는 곧바로 지연을 뜻하지 않습니다",
+      "description": "중국의 도시철도 공사가 지하 유구를 만날 때 조사, 발굴, 보존, 공사 재개로 이어지는 판단 과정을 실제 도시 사례로 읽습니다.",
+      "heroAlt": "일반 지하철 공사 구역과 지하 고고학 층위를 그린 AI 보조 편집 일러스트로, 실제 공사나 발굴 기록이 아님",
+      "navTitle": "지하철 공사와 도시 고고학",
+      "featuredLinkLabel": "지하철 아래 오래된 도시 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["도시 고고학", "중국 지하철", "역사 도시"]
+    }
+  }
+}

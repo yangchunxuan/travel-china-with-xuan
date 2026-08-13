@@ -323,6 +323,11 @@ const body: StructuredPageBody = {
           href: "/guides/do-you-need-a-tour-guide-in-china/",
           description: "Use human interpretation where it adds context, not as a default for every stop.",
         },
+        {
+          label: "Read how a Chinese sponge city manages water",
+          href: "/guides/how-to-read-a-chinese-sponge-city/",
+          description: "Compare designed water and ground systems without claiming that a classical garden proves the lineage of modern infrastructure.",
+        },
       ],
     },
     {

@@ -143,7 +143,8 @@ const body = {
         {"label": "Homeground 중국 가이드 둘러보기", "href": "/ko/guides/", "description": "전체 가이드 모음으로 돌아갑니다."},
         {"label": "량주 유적공원과 박물관 순서 정하기", "href": "/ko/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "또 다른 박물관–경관 증거 사슬과 비교합니다."},
         {"label": "청동 예기와 명문 읽기", "href": "/ko/guides/ritual-bronze-vessels-and-inscriptions/", "description": "문자·유물·고고 맥락을 함께 잇는 연습입니다."},
-        {"label": "윈강석굴과 박물관 관람 순서", "href": "/ko/guides/yungang-grottoes-cave-order-and-museum/", "description": "다른 대형 유산에서 증거와 보존의 경계를 적용합니다."}
+        {"label": "윈강석굴과 박물관 관람 순서", "href": "/ko/guides/yungang-grottoes-cave-order-and-museum/", "description": "다른 대형 유산에서 증거와 보존의 경계를 적용합니다."},
+        {"label": "여행자가 실제로 볼 수 있는 중국의 사막화 대응", "href": "/ko/guides/desert-restoration-travellers-can-see/", "description": "변화하는 경관에도 증거의 경계를 적용하고 녹색 장면 하나를 전면 복원의 증거로 보지 마세요."}
       ]
     },
     {

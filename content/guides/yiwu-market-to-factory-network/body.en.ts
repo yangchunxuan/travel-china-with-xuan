@@ -52,7 +52,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"Prepare the wider journey",items:[
     {label:"Take your first high-speed train in China",href:"/guides/china-high-speed-train-first-time-guide/",description:"Handle station and boarding steps before focusing on Yiwu's market geography."},
     {label:"Plan Shanghai–Hangzhou transport",href:"/guides/shanghai-hangzhou-transport-route/",description:"Use the lower-Yangtze transport context without treating Yiwu as a Shanghai day-trip assumption."},
-    {label:"Understand China's map-coordinate offset",href:"/guides/china-map-coordinate-offset-explained/",description:"Avoid mismatched pins when saving exact market entrances and industrial addresses."}
+    {label:"Understand China's map-coordinate offset",href:"/guides/china-map-coordinate-offset-explained/",description:"Avoid mismatched pins when saving exact market entrances and industrial addresses."},
+    {label:"See how Yangshan automated port moves containers",href:"/guides/yangshan-automated-port-explained/",description:"Continue from market-to-factory claims to a bounded port-system explanation without treating one terminal as the whole export chain."}
   ]},
   {id:"sources",type:"sources",title:"Official and independent sources",items:[
     {label:"Hero image — product displays inside Yiwu International Trade Mart, photographed 2014-08-01; not evidence of the current district, booth or market layout",url:"https://commons.wikimedia.org/wiki/File:Tourist_goods_in_Yiwu_International_Trade_Mart.jpg",publisher:"iamdanw — CC BY 2.0; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},

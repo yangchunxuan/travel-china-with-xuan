@@ -323,6 +323,11 @@ const body: StructuredPageBody = {
           href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "只在背景讲解真正增加理解的地方安排真人协助。",
         },
+        {
+          label: "读懂中国海绵城市如何管理雨水",
+          href: "/zh/guides/how-to-read-a-chinese-sponge-city/",
+          description: "比较被设计的水与地面系统，但不要把古典园林当成现代基础设施传承关系的证明。",
+        },
       ],
     },
     {

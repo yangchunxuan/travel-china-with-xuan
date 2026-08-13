@@ -400,6 +400,16 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "internal-links",
+      type: "internal-links",
+      title: "从一张共享餐桌继续理解",
+      items: [
+        { label: "以访客身份准备春节习俗", href: "/zh/guides/lunar-new-year-customs-for-visitors/", description: "把先观察再参与的方法带进家庭节庆，但不要把一家人的做法写成全国脚本。" },
+        { label: "理解中国社区食堂", href: "/zh/guides/china-community-canteens-explained/", description: "比较共享餐桌与社区公共服务模式，不预设访客一定能够使用或符合资格。" },
+        { label: "读懂镇江仍在延续的醋文化", href: "/zh/guides/zhenjiang-vinegar-living-fermentation/", description: "从熟悉的调味品走向发酵工艺与城市身份，不用它推导健康或真伪。" },
+      ],
+    },
+    {
       id: "sources",
       type: "sources",
       title: "官方与学术资料，核对日期：2026 年 8 月 11 日",
