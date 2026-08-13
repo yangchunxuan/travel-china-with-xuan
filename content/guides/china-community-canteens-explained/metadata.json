@@ -1,0 +1,63 @@
+{
+  "id": "china-community-canteens-explained",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "everyday-system-explainer",
+  "topics": [
+    "community-canteens",
+    "senior-meal-services",
+    "public-access",
+    "everyday-food",
+    "respectful-community-visits"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-community-canteens-explained/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-community-canteens-explained/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-community-canteens-explained/",
+      "title": "Who Eats at China's Community Canteens—and Why They Matter",
+      "headline": "Verify the Venue Before Assuming You Can Eat There",
+      "description": "Understand China's community and senior canteens, then verify public access, ordinary price, meal cards, payment, accessibility and a practical fallback.",
+      "heroAlt": "The exterior of the community cafeteria on Zhongshan Road in Jinhua, photographed in August 2023.",
+      "navTitle": "China's community canteens",
+      "featuredLinkLabel": "Understand community canteen access",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Everyday China", "Community canteens", "Food access"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-community-canteens-explained/",
+      "title": "谁在中国的社区食堂吃饭——它们为何重要",
+      "headline": "先核验具体场所，再判断能否用餐",
+      "description": "分清社区食堂与老年助餐设施，并逐店核验公众准入、普通价格、饭卡证件、支付、无障碍和备用方案。",
+      "heroAlt": "2023年8月拍摄的浙江金华中山路社区食堂外观。",
+      "navTitle": "读懂中国社区食堂",
+      "featuredLinkLabel": "核验社区食堂准入",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["日常中国", "社区食堂", "助餐服务"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-community-canteens-explained/",
+      "title": "중국의 지역사회 식당은 누가 이용하고 왜 중요할까",
+      "headline": "먹을 수 있다고 가정하기 전에 해당 시설을 확인하세요",
+      "description": "중국의 지역사회·고령자 식당을 구분하고 공개 이용, 일반 가격, 식사카드, 결제, 접근성과 대안을 시설별로 확인합니다.",
+      "heroAlt": "2023년 8월 촬영한 저장성 진화 중산로 지역사회 식당의 외관.",
+      "navTitle": "중국 지역사회 식당 이해하기",
+      "featuredLinkLabel": "지역사회 식당 이용 조건 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국의 일상", "지역사회 식당", "식사 지원"]
+    }
+  }
+}
