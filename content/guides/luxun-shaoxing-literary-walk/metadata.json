@@ -1,0 +1,53 @@
+{
+  "id": "luxun-shaoxing-literary-walk",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "literary-walk",
+  "topics": ["Lu Xun", "Baicao Garden", "Sanwei Study", "Shaoxing", "literary places"],
+  "destinations": ["shaoxing", "yuecheng", "zhejiang"],
+  "heroImagePath": "/images/guides/luxun-shaoxing-literary-walk/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/luxun-shaoxing-literary-walk/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/luxun-shaoxing-literary-walk/",
+      "title": "Lu Xun's Shaoxing: Baicao Garden to Sanwei Study",
+      "headline": "Which Places Are Life Sites, Memoir, Fiction or Modern Staging?",
+      "description": "Follow a flexible Lu Xun walk through Shaoxing while separating documented life sites, remembered prose, fictional characters and modern tourism presentation.",
+      "heroAlt": "A currently interpreted reception room inside Zhou Family New Taimen, Lu Xun's former residence in Shaoxing.",
+      "navTitle": "Walk Lu Xun's Shaoxing",
+      "featuredLinkLabel": "Separate Lu Xun's life sites from literary staging",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Lu Xun", "Shaoxing", "Literary walk"]
+    },
+    "zh": {
+      "path": "/zh/guides/luxun-shaoxing-literary-walk/",
+      "title": "从百草园到三味书屋：绍兴哪些是鲁迅生活现场，哪些属于文学书写？",
+      "headline": "按生活现场、回忆散文、小说与现代呈现读一条绍兴文学步行",
+      "description": "用一条可调整的鲁迅故里步行，分清生活与求学现场、回忆散文、小说人物、纪念馆解释和现代旅游呈现。",
+      "heroAlt": "绍兴周家新台门鲁迅故居内，按当前展陈呈现的小堂前。",
+      "navTitle": "步行读懂鲁迅绍兴",
+      "featuredLinkLabel": "分清鲁迅生活现场与文学呈现",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["鲁迅", "绍兴", "文学步行"]
+    },
+    "ko": {
+      "path": "/ko/guides/luxun-shaoxing-literary-walk/",
+      "title": "바이차오위안에서 싼웨이수우까지: 사오싱의 루쉰 생활 현장과 문학적 글쓰기는 어떻게 다른가",
+      "headline": "생활 공간·회고 산문·소설·현대 관광 연출을 나눠 읽는 문학 산책",
+      "description": "사오싱의 루쉰 관련 장소를 걸으며 실제 생활·교육 현장, 회고 산문, 허구 인물, 기념관 해석과 현대 관광 연출을 구분합니다.",
+      "heroAlt": "현재 전시 해석으로 꾸며진 사오싱 저우자 신타이먼 루쉰 고거의 작은 응접실.",
+      "navTitle": "루쉰의 사오싱 걷기",
+      "featuredLinkLabel": "루쉰의 생활 현장과 문학 연출 구분하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["루쉰", "사오싱", "문학 산책"]
+    }
+  }
+}
