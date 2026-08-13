@@ -1,0 +1,24 @@
+# Dynamic facts — `luxun-shaoxing-literary-walk`
+
+Checked on `2026-08-13` (Asia/Shanghai). This file records operational facts that may expire independently of the literary and historical argument.
+
+| Item | Direct evidence located | Draft treatment | Required recheck and fallback |
+|---|---|---|---|
+| Regular opening hours | No stable direct 2026 operator notice for ordinary dates was located. A February 2026 notice covered named holiday dates only. | No regular timetable is published in body copy. | Check the direct operator account/site within seven days of publication and travel. If unavailable, arrive with margin and use staffed confirmation. |
+| Reservation | A February 2026 special notice refers to existing reservations. | Body says a reservation may apply; it does not promise same-day availability. | Verify current ordinary-date booking flow. If unavailable, do not treat street/exterior viewing as the core visit. |
+| Foreign-passport handling | No complete direct ordinary-date workflow was found for online booking, staffed counter and gate validation. | No claim that passport-only walk-in or a specific app path always works. | Direct operator confirmation required. Carry the physical passport and reserve time for a staffed-counter question; central should add a confirmed fallback if obtained. |
+| Admission / free scope | Government material records free museum opening historically, but the current scope of the whole visitor group was not directly confirmed. | Body avoids “everything is free.” | Confirm each controlled component and booking fee, if any, with current operator material. |
+| Current map and one-way circulation | Operator page contains route material dated 2017; 2025 works were phased. | Article gives an evidence order, not a fixed physical sequence. | Obtain the current map at arrival; follow staff routing while retaining layer labels in notes. |
+| Visit duration | Old operator material names 1/2/3-hour options; no timed 2026 local walk was obtained. | No guaranteed “2–3 hours.” | A named local reviewer should time the current route. Until then, describe a flexible half-day window without a fixed duration. |
+| Construction and closures | 2025 literary-district work was described as phased; no complete August 2026 closure list was located. | All room and street sequences include reordering/skip recovery. | Check operator notice and current map. Use museum chronology when a life-site room is closed; do not invent interior detail. |
+| Step-free access | 23 barrier removals were reported in 2024, but no complete entrance-to-exit step-free chain was found. | Body tells travellers to ask staff and prioritize an accessible core. | Obtain direct accessibility map or local audit. Do not equate removed viewing rails with wheelchair accessibility. |
+| “早” desk display | Provincial culture authority reported the attributed desk moved from storage into display in 2024. | “If displayed”; attribution remains institutional and conditional. | Verify current gallery and exact caption on the visit date. If absent, omit object observation. |
+| Other object rotation | No current complete object list was found. | Museum method works with any clearly captioned timeline and publication object. | Verify gallery inventory/labels; never claim an unseen item. |
+| Interior photography | No comprehensive current rule was found for all rooms and objects. | Follow current signs; no assumption about flash, tripod or close-up permissions. | Operator/venue confirmation plus on-site signs. When prohibited, record title, institution and date in writing. |
+| Xianheng Hotel hours/menu/reservation | Official tourism material confirms current presentation but not a stable 2026 timetable, menu, price or material continuity. | Xianheng is optional; no meal promise or price. | Check direct business source close to travel. Exterior/skip fallback preserves the core walk. |
+| Literary-IP shops | 2025 report documents then-new businesses and scenes during phased development. | Used only as dated evidence of modern tourism presentation. | Verify storefront identity and explanatory text on site; omit closed/replaced examples. |
+| Crowd pressure / holiday controls | Special arrangements can occur; no universal threshold was found. | Flexible sequence and labelled-detail fallback. | Check the [Homeground public-holiday guide](/guides/china-public-holidays-travel-calendar/) and direct operator notices. |
+
+## Publication rule
+
+Any number, opening claim, booking path, passport workflow, route map, accessibility promise, object-display statement or photography rule added after this draft must include a new direct source and `sourceReviewedDate`. Marketing copy may document how a place presents itself but cannot independently establish material history.
