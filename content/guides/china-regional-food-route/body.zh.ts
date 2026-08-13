@@ -20,6 +20,31 @@ const body = {
       text: "中国国家级非遗资料从食材备制、烹饪技艺和享用习俗理解饮食文化；文化和旅游部非物质文化遗产司委托中国旅游报社策划推出的 2026 年非遗美食线路，也围绕具体地域与传统组织。这些证据支持从地方饮食体系出发规划路线，但不能给某家餐厅背书，不能用一道菜代表整个省份，也不能证明某项受保护传统每天都能体验。先判断一个地域给整趟旅行增加什么，再决定去哪家店。"
     },
     {
+      id: "geography-heading",
+      type: "heading",
+      level: 2,
+      text: "地理会塑造饮食，但不会规定唯一风味"
+    },
+    {
+      id: "geography-factors",
+      type: "table",
+      caption: "把地方风味看成流动的体系，而不是边界僵硬的菜系地图",
+      columns: ["层次", "可能塑造什么", "不能据此证明什么"],
+      rows: [
+        ["地貌与生产", "当地较容易获得的谷物、淡水或海产、畜产、茶、蔬菜与时令供给", "当地每个家庭、餐厅或个人都吃同样的食材"],
+        ["保存与技法", "干制、腌渍、发酵、烟熏等让食材可保存并形成特色的方法", "气候可以直接推出口味，或一种技法只存在于一个省"],
+        ["人口流动与交换", "迁徙、贸易、邻近厨师与城市市场让食材和做法跨越边界", "菜肴一旦传播或改变就不再地道"],
+        ["餐型与社会生活", "什么时候吃、如何共享，以及哪些食物属于节庆、日常或待客", "存在全国统一礼仪，或某一菜系有永不变化的定义"]
+      ]
+    },
+    {
+      id: "geography-evidence-boundary",
+      type: "callout",
+      tone: "warning",
+      title: "不要把气候写成口味刻板印象",
+      body: "官方非遗说明把地域饮食传统与生态环境、物候特产和生活习惯联系起来；独立配方研究同时给出重要限制：在其数据集中分离两种相关效应后，地理距离与食材使用相似性仍有关联；控制地理距离后，温度原有的负相关关系则消失。后续研究也显示，人口、物流、资金和信息会推动流行菜系跨地域扩散。因此，地理应帮助你追问食材、技法与交流过程，而不是宣称所有潮湿地区都吃同一种味道，或省界能框住固定不变的菜系。"
+    },
+    {
       id: "role-matrix-heading",
       type: "heading",
       level: 2,
@@ -234,11 +259,14 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "已复核的官方来源",
+      title: "已复核的官方与学术来源",
       items: [
         { "label": "40 条非遗美食特色旅游线路", "url": "https://www.mct.gov.cn/whzx/bnsj/fwzwhycs/202601/t20260128_964439.html", "publisher": "文化和旅游部网站 / 中国旅游报", "reviewedAt": "2026-08-13" },
+        { "label": "饮食非遗、生态环境与地域生活", "url": "https://www.mct.gov.cn/vipchat/home/site/2/341/message.html", "publisher": "文化和旅游部", "reviewedAt": "2026-08-13" },
         { "label": "中餐烹饪技艺与食俗", "url": "https://www.ihchina.cn/project_details/23583.html", "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆", "reviewedAt": "2026-08-13" },
         { "label": "川菜烹饪技艺", "url": "https://www.ihchina.cn/project_details/23586.html", "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆", "reviewedAt": "2026-08-13" },
+        { "label": "中国地方菜的地理与相似性研究", "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079161", "publisher": "PLOS ONE", "reviewedAt": "2026-08-13" },
+        { "label": "流动性与中国流行菜系扩散", "url": "https://html.rhhz.net/RWDL/html/20220403.htm", "publisher": "《人文地理》", "reviewedAt": "2026-08-13" },
         { "label": "广州早茶传承保护规定", "url": "https://wglj.gz.gov.cn/gzdt/zwxx/content/post_10755149.html", "publisher": "广州市文化广电旅游局", "reviewedAt": "2026-08-13" },
         { "label": "食品安全消费提示", "url": "https://www.samr.gov.cn/cms_files/filemanager/1647978232/attach/20233/P020190618522322788915.pdf", "publisher": "国家市场监督管理总局", "reviewedAt": "2026-08-13" },
         { "label": "铁路官方常见问题", "url": "https://www.12306.cn/en/faq.html?item=2", "publisher": "中国铁路12306", "reviewedAt": "2026-08-13" }

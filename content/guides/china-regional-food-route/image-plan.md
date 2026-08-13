@@ -11,15 +11,12 @@ Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 - **Edit:** crop and resize only; no generative alteration
 - **Accuracy boundary:** one Xi'an breakfast scene illustrates a regional meal node. It is not a complete China food route, restaurant endorsement, allergen statement, recipe or availability claim.
 
-## Hero — original editorial route diagram
+## A10 geography update — no extra documentary claim
 
-- Planned file: `public/images/guides/china-regional-food-route/hero-1600.webp`
-- Required size: 1600 × 1000 px, WebP.
-- Concept: A restrained editorial diagram with a single travel line connecting four visibly different meal-format symbols: morning tea, market/seasonal produce, shared dishes and a cooking-technique vessel. One node is crossed out and reconnected to a substitute to show route resilience.
-- Editorial purpose: Explain that the route is built from regional roles and fallbacks, not from pins for famous restaurants.
-- Accuracy boundary: It must be labelled as an original editorial illustration. Do not present the line as a geographically precise railway map or the food symbols as documentary evidence.
-- Rights: Create as an original Homeground asset. Use no third-party logos, restaurant names, map tiles or copied dish photography.
-- Alt text is already prepared in metadata for EN/ZH/KO.
+- The existing licensed Xi'an photograph remains the hero; it documents one precisely located regional meal context, not “Chinese cuisine” as a whole.
+- Do not add a coloured “eight great cuisines” map as if the boundaries were fixed, exhaustive or scientifically exact.
+- If central later commissions an inline visual, use an original conceptual diagram with four interacting layers—landscape/production, technique/preservation, movement/exchange and social meal form. Label it as an editorial model, not a geographic or restaurant dataset.
+- No third-party paper figure, restaurant photograph or government image should be copied merely because it appears in a source.
 
 ## Inline image 1 — real meal-format scene
 
@@ -42,8 +39,8 @@ Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 
 ## Central asset checklist
 
-- Produce and compress the 1600 × 1000 hero WebP.
-- Confirm safe-area crop on desktop and mobile.
+- Verify the existing hero WebP dimensions, checksum and provenance-ledger entry; do not replace it with a route diagram.
+- Confirm its safe-area crop on desktop and mobile.
 - Acquire zero to two real contextual photographs only if rights and location are documented.
-- Add final filenames, dimensions, creator, source, licence and checksums to this plan and the photo-provenance registry.
-- Do not mark the article build-ready until the hero exists at the metadata path.
+- Add any new inline asset's filename, dimensions, creator, source, licence and checksum to this plan and the photo-provenance registry.
+- The existing hero satisfies the required asset path; optional inline assets remain a central editorial choice.

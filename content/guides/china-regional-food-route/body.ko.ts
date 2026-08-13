@@ -20,6 +20,31 @@ const body = {
       text: "중국의 국가급 무형문화유산 자료는 식재료 손질, 조리 기술, 음식을 먹는 관습을 함께 음식 문화로 설명합니다. 중국 문화여유부 무형문화유산사가 중국여유보(China Tourism News)에 기획을 의뢰해 공개한 2026년 음식 루트도 구체적인 장소와 전통을 중심으로 구성되어 있습니다. 따라서 지역의 식생활 체계를 출발점으로 삼는 것은 타당하지만, 이 자료가 특정 식당을 인증하거나 한 가지 음식이 한 성 전체를 대표한다는 뜻은 아닙니다. 보호 대상 전통을 매일 체험할 수 있다는 보장도 없습니다. 먼저 그 지역이 여행 전체에 어떤 역할을 더하는지 정한 뒤 식당을 고르세요."
     },
     {
+      id: "geography-heading",
+      type: "heading",
+      level: 2,
+      text: "지리는 음식을 빚지만 하나의 맛을 명령하지 않습니다"
+    },
+    {
+      id: "geography-factors",
+      type: "table",
+      caption: "지역의 맛을 경계가 고정된 요리 지도가 아니라 움직이는 체계로 읽기",
+      columns: ["층위", "형성에 영향을 줄 수 있는 것", "그것만으로 증명할 수 없는 것"],
+      rows: [
+        ["지형과 생산", "현지에서 구하기 쉬운 곡물, 민물·해산물, 축산물, 차, 채소와 계절 공급", "그 지역의 모든 가정과 식당, 사람이 같은 식재료를 먹는다는 결론"],
+        ["저장과 조리 기술", "건조, 염장, 발효, 훈연처럼 식재료를 활용하고 개성을 만드는 방법", "기후만으로 맛을 단정하거나 한 기술이 한 성에만 존재한다는 결론"],
+        ["이동과 교류", "이주, 무역, 이웃 지역 조리자와 도시 시장이 식재료와 기술을 경계 밖으로 옮기는 과정", "음식이 이동하거나 변하면 정통성을 잃는다는 결론"],
+        ["식사 형태와 사회생활", "언제 먹고 어떻게 나누며 어떤 음식이 명절·평일·손님맞이에 쓰이는지", "전국 공통 예절이나 영원히 고정된 지역 요리 정의"]
+      ]
+    },
+    {
+      id: "geography-evidence-boundary",
+      type: "callout",
+      tone: "warning",
+      title: "기후를 맛의 고정관념으로 만들지 마세요",
+      body: "공식 무형문화유산 설명은 지역 음식 전통을 생태 환경, 지역 산물과 생활 방식에 연결합니다. 독립적인 레시피 연구는 중요한 한계도 보여 줍니다. 두 요인의 상관된 효과를 나눠 본 결과, 지리적 거리는 식재료 사용 유사성과 계속 연관됐지만 거리를 통제하자 기온의 기존 음의 관계는 사라졌습니다. 후속 연구는 사람, 물자, 자본과 정보의 이동이 인기 지역 요리를 다른 곳으로 확산시킨다고 설명합니다. 지리는 식재료, 기술과 교류에 관해 더 나은 질문을 던지는 도구이지, 습한 지역은 모두 같은 맛을 먹는다거나 성 경계 안에 고정된 요리가 갇혀 있다고 선언하는 근거가 아닙니다."
+    },
+    {
       id: "role-matrix-heading",
       type: "heading",
       level: 2,
@@ -234,11 +259,14 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "검토한 공식 출처",
+      title: "검토한 공식 및 학술 출처",
       items: [
         { "label": "무형문화유산 음식 특색 여행 루트 40선", "url": "https://www.mct.gov.cn/whzx/bnsj/fwzwhycs/202601/t20260128_964439.html", "publisher": "중화인민공화국 문화여유부 웹사이트 / 중국여유보", "reviewedAt": "2026-08-13" },
+        { "label": "음식 무형유산, 생태 환경과 지역 생활", "url": "https://www.mct.gov.cn/vipchat/home/site/2/341/message.html", "publisher": "중국 문화여유부", "reviewedAt": "2026-08-13" },
         { "label": "중국 요리 기술과 음식 관습", "url": "https://www.ihchina.cn/project_details/23583.html", "publisher": "중국 무형문화유산 디지털 박물관", "reviewedAt": "2026-08-13" },
         { "label": "쓰촨 요리 기술", "url": "https://www.ihchina.cn/project_details/23586.html", "publisher": "중국 무형문화유산 디지털 박물관", "reviewedAt": "2026-08-13" },
+        { "label": "중국 지역 요리의 지리와 유사성", "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079161", "publisher": "PLOS ONE", "reviewedAt": "2026-08-13" },
+        { "label": "이동성과 중국 인기 요리의 확산", "url": "https://html.rhhz.net/RWDL/html/20220403.htm", "publisher": "Human Geography", "reviewedAt": "2026-08-13" },
         { "label": "광저우 모닝티 전승 보호 규정", "url": "https://wglj.gz.gov.cn/gzdt/zwxx/content/post_10755149.html", "publisher": "광저우시 문화광전여유국", "reviewedAt": "2026-08-13" },
         { "label": "식품 안전 소비자 안내", "url": "https://www.samr.gov.cn/cms_files/filemanager/1647978232/attach/20233/P020190618522322788915.pdf", "publisher": "중국 국가시장감독관리총국", "reviewedAt": "2026-08-13" },
         { "label": "철도 공식 FAQ", "url": "https://www.12306.cn/en/faq.html?item=2", "publisher": "중국철도 12306", "reviewedAt": "2026-08-13" }

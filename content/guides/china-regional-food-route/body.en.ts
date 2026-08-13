@@ -20,6 +20,31 @@ const body = {
       text: "China's national intangible-cultural-heritage material describes ingredients, preparation, cooking and eating customs. A 2026 collection commissioned by the Ministry of Culture and Tourism's Intangible Cultural Heritage Department and published by China Tourism News also organises food routes around specific places and traditions. That supports planning around local systems of eating. It does not certify a restaurant, make one dish represent a province or prove a tradition is available daily. Define the region's role before choosing a venue."
     },
     {
+      id: "geography-heading",
+      type: "heading",
+      level: 2,
+      text: "Geography shapes food, but it does not dictate one flavour"
+    },
+    {
+      id: "geography-factors",
+      type: "table",
+      caption: "Read regional flavour as a living system, not a cuisine map with hard borders",
+      columns: ["Layer", "What it can shape", "What it cannot prove"],
+      rows: [
+        ["Landscape and production", "Locally available grains, freshwater or coastal products, livestock, tea, vegetables and seasonal supply", "That every household, restaurant or person in the region eats the same ingredients"],
+        ["Preservation and technique", "Drying, salting, fermenting, smoking and other ways communities made ingredients usable and distinctive", "A simple climate-to-flavour rule, or that one technique exists only in one province"],
+        ["Movement and exchange", "Migration, trade, neighbouring cooks and urban markets carrying ingredients and methods across boundaries", "That a dish becomes inauthentic when it travels or changes"],
+        ["Meal form and social life", "When people eat, how dishes are shared and which foods belong to festivals, workdays or hospitality", "A universal national etiquette or one permanent definition of a cuisine"]
+      ]
+    },
+    {
+      id: "geography-evidence-boundary",
+      type: "callout",
+      tone: "warning",
+      title: "Do not turn climate into a flavour stereotype",
+      body: "An official cultural-heritage briefing links regional food traditions with ecological setting, local products and ways of life. Independent recipe research adds an important limit: after separating the correlated effects in its dataset, geographic proximity remained associated with ingredient-use similarity, while the temperature relationship disappeared after controlling for distance. Later research also shows popular cuisines spreading through people, goods, capital and information. Use geography to ask better questions about ingredients, technique and exchange—not to declare that all humid places eat one way or that provincial borders contain fixed cuisines."
+    },
+    {
       id: "role-matrix-heading",
       type: "heading",
       level: 2,
@@ -234,11 +259,14 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Official sources reviewed",
+      title: "Official and academic sources reviewed",
       items: [
         { "label": "40 intangible-cultural-heritage food routes", "url": "https://www.mct.gov.cn/whzx/bnsj/fwzwhycs/202601/t20260128_964439.html", "publisher": "Ministry of Culture and Tourism website / China Tourism News", "reviewedAt": "2026-08-13" },
+        { "label": "Food heritage, ecology and regional ways of life", "url": "https://www.mct.gov.cn/vipchat/home/site/2/341/message.html", "publisher": "Ministry of Culture and Tourism", "reviewedAt": "2026-08-13" },
         { "label": "Chinese culinary techniques and customs", "url": "https://www.ihchina.cn/project_details/23583.html", "publisher": "China Intangible Cultural Heritage Digital Museum", "reviewedAt": "2026-08-13" },
         { "label": "Sichuan cuisine techniques", "url": "https://www.ihchina.cn/project_details/23586.html", "publisher": "China Intangible Cultural Heritage Digital Museum", "reviewedAt": "2026-08-13" },
+        { "label": "Geography and similarity of regional cuisines", "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079161", "publisher": "PLOS ONE", "reviewedAt": "2026-08-13" },
+        { "label": "Mobility and the spread of popular cuisines", "url": "https://html.rhhz.net/RWDL/html/20220403.htm", "publisher": "Human Geography", "reviewedAt": "2026-08-13" },
         { "label": "Guangzhou morning-tea protection rules", "url": "https://wglj.gz.gov.cn/gzdt/zwxx/content/post_10755149.html", "publisher": "Guangzhou Municipal Culture, Radio, Television and Tourism Bureau", "reviewedAt": "2026-08-13" },
         { "label": "Food-safety consumer guidance", "url": "https://www.samr.gov.cn/cms_files/filemanager/1647978232/attach/20233/P020190618522322788915.pdf", "publisher": "State Administration for Market Regulation", "reviewedAt": "2026-08-13" },
         { "label": "Official railway FAQ", "url": "https://www.12306.cn/en/faq.html?item=2", "publisher": "China Railway 12306", "reviewedAt": "2026-08-13" }

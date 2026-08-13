@@ -1,6 +1,6 @@
 # Source log — How to Plan a Regional Food Route in China
 
-Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
+Status: `A10 UPDATE DRAFT — CENTRAL INTEGRATION REVIEW REQUIRED`
 
 Checked at: 2026-08-13 (Asia/Shanghai)
 
@@ -59,6 +59,42 @@ This page owns the method for choosing geographically coherent food regions, ass
 - Facts used: 12306 is the official railway channel; ticket changes and alternative trains depend on actual availability and applicable rules.
 - Boundary: No current train number, travel time, price or inventory is copied into the article.
 - Update trigger: Booking, identity-document or ticket-change rules change.
+
+## Independent geography cross-checks added for A10
+
+### Ministry of Culture and Tourism — fifth national ICH list briefing
+
+- URL: https://www.mct.gov.cn/vipchat/home/site/2/341/message.html
+- Checked: 2026-08-13
+- Facts used: The ministry briefing describes food heritage as a system of ingredient selection, preparation, cooking and consumption, and links regional traditions with ecological setting, local products and ways of life.
+- Boundary: The briefing also contains broad cultural and health language that this article does not repeat as a traveller health claim. It does not prove a one-to-one climate-to-flavour rule.
+- Update trigger: The ministry replaces the source or the referenced heritage classifications.
+
+### PLOS ONE — Geography and Similarity of Regional Cuisines in China
+
+- URL: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079161
+- DOI: https://doi.org/10.1371/journal.pone.0079161
+- Checked: 2026-08-13
+- Facts used: In the paper's 8,498-recipe dataset, geographic distance remained negatively associated with ingredient-use similarity after controlling for temperature; after controlling for distance, the original negative relationship with temperature disappeared. The authors model communication and migration between neighbouring regions as mechanisms of cuisine evolution.
+- Boundary: The dataset came from one online recipe repository downloaded in 2012, assigned each recipe to one cuisine and used mean annual temperature as a climate proxy. It cannot define every cuisine, household or present-day menu, and it does not mean climate or production conditions are irrelevant.
+- Rights: The paper is open access under CC BY; no figure is reused in this article.
+
+### Human Geography — spatial diffusion of popular Chinese cuisines
+
+- URL: https://html.rhhz.net/RWDL/html/20220403.htm
+- DOI: https://doi.org/10.13959/j.issn.1003-2398.2022.04.003
+- Checked: 2026-08-13
+- Facts used: The peer-reviewed study uses food-service POI data to describe polycentric spatial patterns and explains how flows of people, goods, capital and information spread and reshape popular cuisines.
+- Boundary: Restaurant POIs measure visible food-service distribution, not the totality, quality, authenticity or household prevalence of regional food. The article uses the study only to reject hard, immobile cuisine borders.
+
+## A10 update disposition
+
+- `candidateId`: A10
+- Action executed: `update-existing`
+- Canonical owner retained: `/guides/china-regional-food-route/`
+- Information added: a geography layer covering landscape/production, preservation/technique, movement/exchange and meal form/social life, plus an explicit anti-determinism boundary.
+- No second regional-cuisine map, URL, restaurant ranking or province-by-dish page was created.
+- No health effect, environmental superiority or authenticity claim was inferred from geography.
 
 ## Homeground editorial judgments
 

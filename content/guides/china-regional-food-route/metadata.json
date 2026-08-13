@@ -35,9 +35,9 @@
   "locales": {
     "en": {
       "path": "/guides/china-regional-food-route/",
-      "title": "How to Plan a Regional Food Route in China",
-      "headline": "Build a Regional Food Route, Not a Fragile Restaurant List",
-      "description": "Plan a coherent China food route by regional roles, transport links, meal formats, dietary limits and fallbacks instead of chasing a list of famous restaurants.",
+      "title": "China's Regional Cuisines: Plan a Food Route by Geography",
+      "headline": "There Is No Single Chinese Cuisine—Build the Route Around Regional Systems",
+      "description": "See how landscape, production, technique and movement shape regional Chinese food, then plan a coherent route without reducing cuisine to a fixed map or restaurant list.",
       "heroAlt": "Steaming buns at a Xi'an breakfast stall, one real regional-meal example rather than a complete China food route.",
       "navTitle": "Plan a regional food route",
       "featuredLinkLabel": "Build a resilient regional food route",
@@ -50,9 +50,9 @@
     },
     "zh": {
       "path": "/zh/guides/china-regional-food-route/",
-      "title": "如何规划中国地域美食路线",
-      "headline": "规划地域美食路线，而不是追逐易失效的餐厅清单",
-      "description": "用地域角色、交通链、餐型、饮食限制和替代方案规划中国美食路线，不靠一张随时会失效的网红餐厅榜单。",
+      "title": "中国地方风味如何形成：按地理规划美食路线",
+      "headline": "不存在一种单一的“中国菜”：从地域体系规划美食路线",
+      "description": "理解地貌、生产、技法与人口流动如何共同塑造中国地方风味，再规划连贯路线，不把菜系缩成固定地图或餐厅清单。",
       "heroAlt": "西安早餐摊上刚出笼的包子，是地域餐食的一个真实例子，并非整条中国美食路线。",
       "navTitle": "规划地域美食路线",
       "featuredLinkLabel": "建立不依赖单一餐厅的美食路线",
@@ -65,9 +65,9 @@
     },
     "ko": {
       "path": "/ko/guides/china-regional-food-route/",
-      "title": "중국 지역 음식 루트 계획법",
-      "headline": "금방 낡는 맛집 목록 대신 지역 음식 루트를 설계하세요",
-      "description": "유명 식당 목록을 좇지 않고 지역 역할, 교통 연결, 식사 형태, 식이 제한과 대안을 기준으로 중국 음식 여행 루트를 짜는 방법입니다.",
+      "title": "중국 지역 음식은 어떻게 만들어졌나: 지리로 짜는 음식 루트",
+      "headline": "하나의 ‘중국 음식’은 없습니다—지역의 체계로 여행을 설계하세요",
+      "description": "지형, 생산, 조리 기술과 이동이 중국 지역의 맛을 함께 빚는 방식을 이해하고, 고정된 요리 지도나 식당 목록 대신 일관된 음식 루트를 짭니다.",
       "heroAlt": "시안 아침 노점의 김 나는 만두로, 중국 음식 동선 전체가 아닌 한 지역 식사 사례다.",
       "navTitle": "지역 음식 루트 계획",
       "featuredLinkLabel": "한 식당에 의존하지 않는 음식 루트 만들기",
