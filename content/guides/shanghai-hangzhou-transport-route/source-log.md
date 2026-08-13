@@ -8,7 +8,7 @@ Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 This page owns the Shanghai–Hangzhou station-pair and door-to-door rail decision. It does not own national rail boarding, airport choice, Hangzhou attraction planning or individual station pages.
 
-Searches reviewed: `Shanghai to Hangzhou train`, `Hongqiao or Shanghai Station to Hangzhou`, and `Hangzhou East or West`. Results usually rank trains by ride duration while leaving the Shanghai first leg, Hangzhou final address, late metro and wrong-station recovery unresolved.
+Searches reviewed: `Shanghai to Hangzhou train`, `Hongqiao or Shanghai Station to Hangzhou`, and `Hangzhou East or West`. Results usually rank trains by ride duration while leaving the Shanghai first leg, Hangzhou final address, late metro and what to do after reaching the wrong station unresolved.
 
 ## Dynamic facts used
 

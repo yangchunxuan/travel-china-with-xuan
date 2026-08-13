@@ -1,7 +1,5 @@
 # Research and source log
 
-**COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
-
 Reviewed: 2026-08-13 (Asia/Shanghai).
 
 ## Evidence and current-state handling
@@ -29,3 +27,10 @@ Current operating company and official purchase channel; foreign-passport handli
 ## Internal links
 
 Parent: `/explore/`. Live guides: climate regions, older-parents planning and Fujian tulou cluster selection. No unlaunched Yunnan road or Jianshui page is linked.
+
+## Published hero image
+
+- `20251218 Bada rice terraces (143520).jpg`, Yumeto, photographed 2025-12-18 at Bada, Yuanyang County.
+- File page: https://commons.wikimedia.org/wiki/File:20251218_Bada_rice_terraces_(143520).jpg
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- Cropped/resized to 1600 × 1000 WebP. It does not identify a particular public platform or prove present visibility, tickets or access.

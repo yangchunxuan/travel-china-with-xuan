@@ -1,14 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "교통 거점보다 공원 입구를 먼저 고르세요. 북쪽 경구를 예약했다면 창바이산역과 츠베이구·얼다오바이허 숙박을 잇는 동선이 가장 단순합니다. 서쪽 경구라면 창바이산시역 또는 창바이산공항과 쑹장허·츠시구 숙박을 비교하는 편이 산악 지역을 가로지르는 이동을 줄여 줍니다. 북쪽과 서쪽은 한 안내센터의 서로 다른 문이 아니라 별도로 운영되는 지역입니다." },
+  { id: "lead", type: "lead", text: "교통 거점보다 관광 구역을 먼저 고르세요. 북쪽 관광 구역을 예약했다면 창바이산역과 츠베이구·얼다오바이허 숙박이 가장 단순합니다. 서쪽 관광 구역이라면 창바이산시역 또는 창바이산공항과 쑹장허·츠시구 숙박을 비교하는 편이 산악 지역을 가로지르는 이동을 줄여 줍니다. 북쪽과 서쪽은 한 안내센터의 서로 다른 문이 아니라 별도로 운영되는 지역입니다." },
   { id: "direct-answer", type: "callout", title: "경구 예약서에 적힌 중국어 명칭이 동선을 결정합니다", tone: "decision", body: "예약서가 北景区라면 长白山站과 츠베이·얼다오바이허 쪽을, 西景区라면 长白山西站 또는 长白山机场과 츠시·쑹장허 쪽을 기본 조합으로 보세요. 출발 전 공식 공지에서 실제 운영 중인 방문자센터를 다시 확인해야 합니다. 지도에 표시된 ‘Changbai Mountain’이라는 넓은 지명만 보고 표를 사면 안 됩니다." },
   { id: "tree-heading", type: "heading", level: 2, text: "입구부터 정하는 의사결정 순서" },
   { id: "decision-tree", type: "list", ordered: true, items: [
     "날짜가 표시된 경구 예약서를 열어 北景区 또는 西景区를 그대로 적습니다. 천지 사진만으로는 어느 쪽 입구인지 알 수 없습니다.",
     "北景区라면 철도는 长白山站, 숙소는 二道白河镇 또는 池北区부터 찾습니다.",
     "西景区라면 长白山西站과 长白山机场을 비교하고 숙소는 松江河镇 또는 池西区부터 봅니다.",
-    "입구가 확정되지 않았다면 환불 불가 열차·항공·숙소를 한꺼번에 묶지 않습니다.",
+    "입구가 확정되지 않았다면 환불 불가 열차·항공권과 숙소를 아직 결제하지 않습니다.",
     "이동 당일에는 경구 운영 공지, 12306 또는 항공사 기록, 도로 날씨, 허가된 마지막 환승의 승차 지점을 다시 확인합니다."
   ]},
   { id: "identity-matrix", type: "table", caption: "아래는 거점의 성격이며 특정 편의 운행 약속이 아닙니다", columns: ["표에 적힌 거점", "기본적으로 맞는 경우", "주요 부담", "결제 전 확인"], rows: [
@@ -18,10 +18,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["옌지·창춘 같은 외부 거점", "현지 열차나 항공 재고가 맞지 않을 때의 대안", "장거리 철도·도로 구간과 날씨 노출이 추가됨", "표값만 보지 말고 전체 이동과 중간 숙박까지 비교"]
   ]},
   { id: "chains-heading", type: "heading", level: 2, text: "당일 운영하는 방문자센터까지 동선을 완성하세요" },
-  { id: "chains", type: "comparison", title: "실행 가능한 세 가지 연결", columns: [
-    { heading: "북쪽 경구", items: ["열차표: 长白山站", "첫 숙박: 池北区 / 二道白河镇", "현재 사용하는 북쪽 방문자센터 확인", "공지된 지점에서 공식 경구 셔틀 체계 이용"] },
-    { heading: "서쪽 경구 철도", items: ["열차표: 长白山西站", "첫 숙박: 池西区 / 松江河镇", "호텔 또는 허가 차량의 정확한 역 픽업 구역 확인", "당일 운영하는 서쪽 환승센터로 이동"] },
-    { heading: "서쪽 경구 항공", items: ["항공편: 长白山机场", "기사 대기 종료 전 수하물 수취", "첫 목적지가 호텔인지 서쪽 환승센터인지 확인", "늦게 도착하면 호텔부터 가는 계획 유지"] }
+  { id: "chains", type: "comparison", title: "세 가지 일반적인 도착 방법", columns: [
+    { heading: "열차로 북쪽 관광 구역", items: ["열차표: 长白山站", "첫 숙박: 池北区 / 二道白河镇", "현재 사용하는 북쪽 방문자센터 확인", "공지된 지점에서 공식 셔틀 이용"] },
+    { heading: "열차로 서쪽 관광 구역", items: ["열차표: 长白山西站", "첫 숙박: 池西区 / 松江河镇", "호텔 또는 허가 차량의 정확한 역 픽업 구역 확인", "당일 운영하는 서쪽 환승센터로 이동"] },
+    { heading: "항공편으로 서쪽 관광 구역", items: ["항공편: 长白山机场", "기사 대기 시간이 끝나기 전에 수하물 수취", "첫 목적지가 호텔인지 서쪽 환승센터인지 확인", "늦게 도착하면 호텔부터 이동"] }
   ]},
   { id: "scenario-heading", type: "heading", level: 2, text: "비슷해 보여도 다른 거점이 필요한 여행" },
   { id: "scenarios", type: "table", caption: "실제로 쓸 수 있는 첫 산행일을 지키는 선택", columns: ["여행 상황", "더 안정적인 계획", "결론이 바뀌는 조건"], rows: [
@@ -32,8 +32,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "winter-heading", type: "heading", level: 2, text: "겨울 날씨는 당일 운영 방식을 바꿉니다" },
   { id: "winter", type: "callout", title: "유효한 표가 산악 도로와 정상 구간의 운영을 보장하지 않습니다", tone: "warning", body: "강풍, 눈, 결빙, 시야 때문에 경구 내부 교통이 바뀌거나 일부 구간이 중단될 수 있습니다. 겨울 운송 방식도 시즌별로 달라집니다. 전날 밤과 호텔 출발 직전에 창바이산 공식 공지와 중국기상국 예보·경보를 확인하세요. 첫날은 반드시 올바른 쪽에서 숙박하고, 도착 당일 정상 방문과 장거리 출발까지 한 줄로 압축하지 마세요." },
-  { id: "recovery-heading", type: "heading", level: 2, text: "잘못된 입구·거점 또는 도로 차질에서 복구하기" },
-  { id: "recovery", type: "table", caption: "당일 강행을 위해 불가능한 시간을 만들지 마세요", columns: ["문제", "즉시 할 일", "안전한 축소안"], rows: [
+  { id: "recovery-heading", type: "heading", level: 2, text: "잘못 도착했거나 도로가 막혔을 때" },
+  { id: "recovery", type: "table", caption: "원래 일정을 억지로 같은 날에 맞추지 마세요", columns: ["문제", "즉시 할 일", "더 안전한 대안"], rows: [
     ["서쪽 예약인데 창바이산역 도착", "츠베이 쪽에 머물며 허가된 지역 간 차량과 경구 상태 확인", "서쪽 방문을 다른 날로 옮기거나 같은 쪽 숙박으로 변경하고 급하게 무허가 차량을 타지 않음"],
     ["북쪽 예약인데 창바이산시역 또는 공항 도착", "호텔·공식 교통 데스크에서 당일 도로편과 실제 도착 시각 확인", "서쪽에서 1박하고 가능하면 북쪽 예약을 조정한 뒤 낮에 이동"],
     ["열차나 항공편이 픽업 시간 이후 도착", "터미널을 나가기 전에 기사·호텔에 연락하고 공식 택시·호출차 구역 이용", "그날은 호텔까지만 가고 닫힌 방문자센터를 쫓지 않음"],
@@ -47,14 +47,14 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "호텔이 산의 어느 쪽인지, 심야 체크인과 정확한 픽업 지점을 확인해 줬다.",
     "이동 업체와 차량, 짐 용량, 연락 방법, 날씨 취소 처리를 확인했다.",
     "이동 당일 경구 운영과 중국기상국 경보를 확인했다.",
-    "마지막 도로·경구 환승이 실패하면 같은 쪽에서 묵을 대안이 있다."
+    "마지막 도로 이동이나 관광 구역 환승이 운행하지 않으면 같은 쪽에서 묵을 수 있다."
   ]},
   { id: "help", type: "callout", title: "표, 입구, 호텔을 한 번에 점검할까요?", tone: "decision", body: "날짜, 확정한 경구, 열차·항공 기록, 호텔, 인원, 짐, 보행 조건을 Homeground에 보내 주세요. 맞지 않는 거점이나 무리한 연결을 찾아드릴 수 있습니다. 실시간 재고와 경구 운영은 공식 사업자의 안내가 최종 기준입니다." },
   { id: "links", type: "internal-links", title: "다음 계획", items: [
     { label: "Homeground 교통·여행 가이드", href: "/ko/guides/", description: "상위 가이드 모음으로 돌아갑니다." },
     { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "철도 탑승 절차는 이 별도 글에서 준비하세요." },
     { label: "국제선 출발 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "날씨 변수 뒤에도 최종 출국을 지키는 방법입니다." },
-    { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "경구 간 이동에 복구 시간이 있는지 점검합니다." }
+    { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "두 구역 사이 이동에 충분한 여유가 있는지 점검합니다." }
   ]},
   { id: "sources", type: "sources", title: "공식 출처", items: [
     { label: "창바이산 북쪽·서쪽 경구 교통 기본 안내", url: "https://www.changbaishan.gov.cn/zbsly/lyzn/bpgl/202106/t20210625_210152.html", publisher: "창바이산 보호개발구 관리위원회", reviewedAt: "2026-08-13" },
@@ -62,7 +62,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "선양–창바이산 고속철도 개통", url: "https://www.jl.gov.cn/szf/zwhd/202509/t20250928_3502171.html", publisher: "지린성 인민정부", reviewedAt: "2026-08-13" },
     { label: "2025–2026 겨울철 대중교통 공지", url: "https://jtyst.jl.gov.cn/ygj/jtyw_5912/202601/t20260105_9388408.html", publisher: "지린성 운수관리국", reviewedAt: "2026-08-13" },
     { label: "창바이산 경구 운영 공지", url: "https://www.changbaishan.gov.cn/index.html", publisher: "창바이산 보호개발구 관리위원회", reviewedAt: "2026-08-13" },
-    { label: "기상 예보와 경보", url: "https://www.cma.gov.cn/", publisher: "중국기상국", reviewedAt: "2026-08-13" }
+    { label: "기상 예보와 경보", url: "https://www.cma.gov.cn/", publisher: "중국기상국", reviewedAt: "2026-08-13" },
+    { label: "대표 사진: 창바이산역 외관 — A Chinese user (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Exterior_of_Changbaishan_Railway_Station,_Aug_13_2022.jpg", publisher: "위키미디어 공용", reviewedAt: "2026-08-13" },
+    { label: "대표 사진 라이선스: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0", publisher: "Creative Commons", reviewedAt: "2026-08-13" }
   ]}
 ] } as const satisfies StructuredPageBody;
 

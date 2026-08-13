@@ -2,9 +2,9 @@ import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "answer", type: "lead", text: "趁建筑立面和历史细节还有日光，先走老城街巷；天黑前抵达甲秀楼，让南明河承接蓝调时刻，等灯光和晚餐客流成为体验后，再以青云市集收尾。一条实用顺序是：曹状元街→甲秀楼与翠微巷→选择一小段公众河岸→青云路和青云市集。这是顺序，不是对每个室内、摊位或灯光都营业的承诺。"},
-  {id: "rhythm-warning", type: "callout", title: "运营要复核，顺序可以保留", body: "2026 年南明官方 Citywalk 线路支持这些片区连接，贵阳也报道了甲秀楼周边晚间灯光升级。但它们不能证明所有历史室内与青云商户有一个永久营业时间。当天复核甲秀楼入内、临时活动、河岸施工和市集通知。若室内关闭，保留昼夜顺序，在合法公众空间看外观，不声称已入内。", tone: "warning"},
+  {id: "rhythm-warning", type: "callout", title: "先看当天开放情况，游览顺序仍可保留", body: "2026 年南明官方 Citywalk 线路支持这些片区连接，贵阳也报道了甲秀楼周边晚间灯光升级。但它们不能证明所有历史室内与青云商户有一个永久营业时间。当天确认甲秀楼入内、临时活动、河岸施工和市集通知。若室内关闭，保留昼夜顺序，在公众空间欣赏外观，不把外观游览写成已经入内。", tone: "warning"},
   {id: "timeline-heading", type: "heading", level: 2, text: "这条路线由光线和体力控制"},
-  {id: "timeline", type: "table", caption: "南明老城由昼入夜的顺序", columns: ["阶段", "地点与任务", "移动前决定"], rows: [
+  {id: "timeline", type: "table", caption: "南明老城由昼入夜的顺序", columns: ["阶段", "地点与体验", "移动前决定"], rows: [
     ["日光", "曹状元街和一条精简历史街巷分支：看街道尺度、遗址和当下社区使用。", "只选一个分支，不收集每一处故居或书院。"],
     ["傍晚日光", "前往甲秀楼。当前允许入内就先完成室内；否则从合法公众一侧理解桥、楼与河的关系。", "增加翠微巷前先看天空和腿力。"],
     ["黄昏／蓝调", "只走甲秀楼附近一段安全公众河岸，把光线变化本身当作活动。", "雨势增强或河岸受控时，直接转乘去青云。"],
@@ -15,10 +15,10 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "stage-one", type: "paragraph", text: "曹状元街适合作为高效起点，因为南明官方游客资料把它定义为历史文化展示区，包含曹维城状元府原址、老南门遗址、王伯群故居与戴蕴珊别墅等。不要把这份名单变成必进清单。挑一两处当前可读的点，尊重私人或关闭的门，把街道本身作为旧城肌理、当下商铺与居民生活的连接。"},
   {id: "heritage-branches", type: "table", caption: "老城分支选择", columns: ["分支", "什么时候选", "什么时候跳过"], rows: [
     ["只走曹状元街", "日光有限，或想用最简线路去甲秀楼。", "另一个经核实的历史室内正在开放，而且时间充足。"],
-    ["官方历史线延伸", "达德学校旧址等有名称的点当前开放，历史又是主要任务。", "会折返、入内未确认，或建筑已经失去日光。"],
+    ["官方历史线延伸", "达德学校旧址等有名称的点当前开放，而且你最重视历史。", "会折返、入内未确认，或建筑已经失去日光。"],
     ["小吃街巷分支", "只需一份小吃而不是晚餐，且当前店铺符合饮食需求。", "它会取代而不是支持晚间市集。"]
   ]},
-  {id: "stage-two-heading", type: "heading", level: 2, text: "第二段——把甲秀楼作为铰链，不是终点"},
+  {id: "stage-two-heading", type: "heading", level: 2, text: "第二段——让甲秀楼承接白天与夜晚，而不是成为终点"},
   {id: "stage-two", type: "list", items: [
     "在建筑仍有日光时抵达。不要发布未核实的最晚入场时间；当天看官方／场馆当前通知。",
     "在公众空间观察或拍摄，不堵桥面、门口和其他行人。",
@@ -38,15 +38,15 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     "晚间人流密集时指定一人留意包和出口；两轮点单之间不要把付款手机留在桌上。"
   ]},
   {id: "scenarios-heading", type: "heading", level: 2, text: "不同旅客应走不同分支"},
-  {id: "scenarios", type: "table", caption: "旅客情境分支", columns: ["旅客", "路线选择", "恢复"], rows: [
-    ["遇到晴朗傍晚的摄影者", "短老城样本→天黑前甲秀楼→固定公众河岸位置→蓝调后青云。", "倒影失败就停止等待，转向市集的城市夜间任务。"],
+  {id: "scenarios", type: "table", caption: "旅客情境分支", columns: ["旅客", "路线选择", "计划变化时怎么办"], rows: [
+    ["遇到晴朗傍晚的摄影者", "短老城样本→天黑前甲秀楼→固定公众河岸位置→蓝调后青云。", "倒影没有出现就停止等待，把时间留给入夜后的市集。"],
     ["带长辈的家庭", "曹状元街或甲秀楼只深看一处→坐下休息→乘车去青云。", "出现疲劳就删河岸段，晚餐前安排上车点。"],
     ["晚出发、以吃为主", "先到甲秀楼外观做短过渡，再去青云。", "不要为了保留书面顺序，入夜后匆忙穿行历史街巷。"]
   ]},
   {id: "rain-fatigue", type: "callout", title: "下雨和疲劳都是路线分叉", body: "小雨且地面安全：缩短历史分支，保留甲秀楼与青云。大雨、雷电、河岸湿滑或防洪管控：删掉河边步行，用两个经核实的上下车点转移。疲劳：曹状元街与甲秀楼保留更重要的一处，坐下再乘车。这条线路靠昼夜反差成立，不靠一步不断。", tone: "decision"},
   {id: "final-check", type: "list", items: [
     "检查当日日落和天气，但不把它们写成保证。",
-    "当天复核甲秀楼入内和临时关闭。",
+    "当天确认甲秀楼能否入内以及有无临时关闭。",
     "只选一个老城分支，排除私人或关闭空间。",
     "到现场确认可走河岸、过街与施工状态。",
     "保存青云当前入口、活动与离场交通。",
@@ -66,7 +66,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "曹状元街、甲秀楼与青云的官方线路组合", url: "https://nanming.english.guiyang.gov.cn/2025-04/30/c_1090089.htm", publisher: "南明区／贵阳市政府", reviewedAt: "2026-08-13"},
     {label: "2026 年甲秀楼夜景灯光升级", url: "https://english.guiyang.gov.cn/2026-06/24/c_1190288.htm", publisher: "贵阳市政府", reviewedAt: "2026-08-13"},
     {label: "青云市集定位与官方地址", url: "https://nanming.english.guiyang.gov.cn/2024-03/11/c_970478.htm", publisher: "南明区／贵阳市政府", reviewedAt: "2026-08-13"},
-    {label: "青云市集夜间场景", url: "https://nanming.english.guiyang.gov.cn/2025-05/30/c_1097328.htm", publisher: "南明区／贵阳市政府", reviewedAt: "2026-08-13"}
+    {label: "青云市集夜间场景", url: "https://nanming.english.guiyang.gov.cn/2025-05/30/c_1097328.htm", publisher: "南明区／贵阳市政府", reviewedAt: "2026-08-13"},
+    {label: "首图：FN-082 于 2024 年 3 月 28 日拍摄的甲秀楼夜景", url: "https://commons.wikimedia.org/wiki/File:%E7%94%B2%E7%A7%80%E6%A5%BC%E5%A4%9C%E6%99%AF%EF%BC%8C%E8%B4%B5%E5%B7%9E_202403_2.jpg", publisher: "Wikimedia Commons / FN-082", reviewedAt: "2026-08-13"},
+    {label: "首图许可：知识共享署名—相同方式共享 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

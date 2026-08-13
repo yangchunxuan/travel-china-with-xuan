@@ -1,23 +1,22 @@
-# Image plan
+# Image record
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **REAL DOCUMENTARY HERO SELECTED**
 
 ## Hero
 
-- **Subject:** a real current Dali Railway Station arrival/pickup area with the station name visible, or a verified vehicle-accessible Dali Old Town gate with ordinary luggage transfer context.
-- **Crop:** horizontal 16:10; retain one full Chinese location sign and a safe pickup/walking cue.
-- **Do not show:** Lijiang Old Town, a generic Bai-style street with no verifiable gate, AI travellers, staged porters without releases, an obsolete bus timetable, or a scenic Erhai lake image that does not explain the last mile.
-- **Alt EN:** Dali Railway Station arrival area or a signed vehicle-accessible Dali Old Town gate.
-- **Alt ZH:** 大理站到达区或有清晰标识、车辆可达的大理古城门。
-- **Alt KO:** 다리역 도착 구역 또는 표지가 있는 차량 접근 가능한 다리고성 성문.
+- **Asset:** `大理古城南门 01.jpg`
+- **File page:** https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg
+- **Original file:** https://upload.wikimedia.org/wikipedia/commons/8/8b/%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg
+- **Author:** Kcx36
+- **Licence:** CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- **Captured:** 2023-01-29
+- **Location:** South Gate of Dali Old Town, Dali, Yunnan, China
+- **Output:** `public/images/guides/dali-station-to-old-town/hero-1600.webp`
+- **Crop:** centred 16:10 editorial crop, resized to 1600×1000; no documentary elements were added or removed.
+- **Alt EN:** The South Gate building of Dali Old Town in Yunnan, photographed in January 2023.
+- **Alt ZH:** 2023年1月拍摄的云南大理古城南门建筑。
+- **Alt KO:** 2023년 1월 촬영한 윈난성 다리고성 남문 건물.
 
-## Optional body images
+## Evidence boundary
 
-1. **Gate identifier set:** rights-cleared current images of South Gate Visitor Centre, Erhai Gate and Cangshan/West Gate signs. Each crop 4:3 and each caption states that access must still be confirmed with the hotel.
-2. **Original information card:** Homeground-designed EN/ZH/KO screenshot-ready destination card with fields for hotel, gate/road point, phone and luggage. No map geometry or live timetable.
-
-## Rights
-
-Record `asset`, file-page `source`, `author`, direct `licence`, exact `location`, capture date and `crop`. Avoid photos in which private faces dominate unless releases exist. An official website is a factual source, not automatic image permission. No AI documentary image.
-
-No image has been added in this Windows draft.
+The photograph identifies the South Gate building on its capture date. The editorial crop does not guarantee that the gate inscription is visible. It does not prove that a particular vehicle can reach a guesthouse, that a named road is open, or that this gate is the correct drop-off for every hotel. Travellers still need a hotel-confirmed, vehicle-accessible meeting point.

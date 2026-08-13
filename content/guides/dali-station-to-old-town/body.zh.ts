@@ -1,7 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "不要只对司机说“大理古城”。火车到站前，先问住宿方离酒店最近、车辆可以到达的城门或路边会合点。南门、东侧洱海门、西侧苍山门/西门和北门，会留下完全不同的最后步行。真正有用的链路是“大理站→已确认城门→酒店可达入口”，不是“大理站→大理古城这个模糊定位”。" },
+  { id: "lead", type: "lead", text: "不要只对司机说“大理古城”。火车到站前，先问住宿方离酒店最近、车辆可以到达的城门或路边会合点。南门、东侧洱海门、西侧苍山门/西门和北门，会留下完全不同的最后一段步行。正确路线应该是“大理站→已确认城门→酒店可达入口”，而不是“大理站→大理古城这个模糊定位”。" },
   { id: "answer", type: "callout", title: "下车点由酒店位置决定", tone: "decision", body: "把到达时间和行李情况发给酒店，书面询问：“出租车最接近酒店可以到哪个城门或路边点？”保存酒店的中文回复。到大理站后，再比较当天官方公交/直通服务与出租车或正规接站车，目的地都必须是这个准确落点。历史线路号可以帮助理解方向，但只有当天官方页面或站牌能证明是否运营。" },
   { id: "before-heading", type: "heading", level: 2, text: "火车到大理之前" },
   { id: "before", type: "list", ordered: true, items: [
@@ -33,11 +33,11 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "travellers", type: "comparison", title: "行李和步行能力会改变交通方式", columns: [
     { heading: "轻装、白天到达", items: ["当天仍运营的公共交通可能高效", "当天核实城门站点", "只接受已知的最后步行"] },
     { heading: "家庭或多只大箱", items: ["选择容量已经确认的车辆", "询问酒店一侧最可达点", "到达前安排酒店协助"] },
-    { heading: "晚到或走路较慢", items: ["选择不确定交接最少的一条", "确认入住和电话畅通", "不要尝试一个离酒店很远的城门"] }
+    { heading: "晚到或走路较慢", items: ["选择不确定换乘最少的一条", "确认入住和电话畅通", "不要尝试一个离酒店很远的城门"] }
   ]},
   { id: "dynamic", type: "callout", title: "线路号属于动态运营事实", tone: "warning", body: "大理和云南交通主管部门曾公布车站到古城服务，以及南门、西门和洱海门方向，并会在高峰增加运力。这些资料不能保证未来某一班、票价、站点或运营时间。出行当天要看车站显示、官方公交渠道或人工服务台。" },
-  { id: "recovery-heading", type: "heading", level: 2, text: "下错点后怎么恢复" },
-  { id: "recovery", type: "table", caption: "不要默认拖箱横穿古城", columns: ["问题", "立即处理", "恢复"], rows: [
+  { id: "recovery-heading", type: "heading", level: 2, text: "下错地点后怎么办" },
+  { id: "recovery", type: "table", caption: "不要默认拖箱横穿古城", columns: ["问题", "立即处理", "下一步"], rows: [
     ["出发前司机说的是另一个门", "先别装行李，给司机看酒店消息", "让酒店与司机通话，或在平台内改目的地"],
     ["已经在错误城门下车", "留在有灯光、可识别的路边点并联系酒店", "在正规出租车/网约车点重新去正确城门，并保存新车记录"],
     ["车辆无法进入巷道", "卸箱前确认这里就是约定的车辆可达点", "叫酒店行李车/工作人员来接；否则转到已保存的备用点"],
@@ -53,20 +53,22 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "酒店知道到达车辆和剩余步行。",
     "道路权限变化时，有第二个城门/路边备用点。"
   ]},
-  { id: "help", type: "callout", title: "需要把大理站到达与酒店城门对应起来？", tone: "decision", body: "把日期、车次、酒店、人数、行李和步行限制发给 Homeground。我们可以整理交接字段并指出不现实的下车点；实时公交、道路权限和车辆供应仍以运营方为准。" },
+  { id: "help", type: "callout", title: "需要把大理站到达与酒店城门对应起来？", tone: "decision", body: "把日期、车次、酒店、人数、行李和步行限制发给 Homeground。我们可以整理地址和会合点，并指出不现实的下车位置；实时公交、道路权限和车辆供应仍以运营方为准。" },
   { id: "links", type: "internal-links", title: "继续规划", items: [
     { label: "Homeground 交通与行程指南", href: "/zh/guides/", description: "返回上级指南集合页。" },
     { label: "第一次坐中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "先准备铁路到达，再完成最后一公里。" },
     { label: "昆明、大理、丽江、香格里拉顺序", href: "/zh/guides/kunming-dali-lijiang-shangri-la-route-order/", description: "把大理放进正确的云南路线顺序。" },
     { label: "中国行程用单一基地还是多地换住宿", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断拖行李换基地是否值得。" },
-    { label: "你的中国行程是不是太赶？", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "为车站和古城交接保留时间。" }
+    { label: "你的中国行程是不是太赶？", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "为车站到古城酒店的移动留够时间。" }
   ]},
   { id: "sources", type: "sources", title: "官方来源", items: [
     { label: "大理古城官方交通指南", url: "https://www.dali.gov.cn/dlzrmzf/c101724/pc/content/1968887474976559104/content_1968887474976559104.html", publisher: "大理白族自治州人民政府", reviewedAt: "2026-08-13" },
     { label: "大理站到古城线路说明", url: "https://jtyst.yn.gov.cn/html/2024/12328hyb_0924/3132885.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
     { label: "2025年大理高峰客运保障", url: "https://jtyst.yn.gov.cn/html/2025/xingyexinwen_0910/3134849.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
     { label: "2026年大理站旅客提示", url: "https://www.dali.gov.cn/dlzrmzf/c101532/pc/content/2015703305571897344/content_2015703305571897344.html", publisher: "大理白族自治州人民政府", reviewedAt: "2026-08-13" },
-    { label: "铁路实时查询", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-13" }
+    { label: "铁路实时查询", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-13" },
+    { label: "头图：大理古城南门——Kcx36（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" },
+    { label: "头图许可证：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0", publisher: "Creative Commons", reviewedAt: "2026-08-13" }
   ]}
 ] } as const satisfies StructuredPageBody;
 

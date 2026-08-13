@@ -1,7 +1,5 @@
 # Research and source log
 
-**COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
-
 Reviewed: 2026-08-13 (Asia/Shanghai).
 
 ## Scope and evidence
@@ -27,3 +25,10 @@ Exact train date, number, station pair and inventory; station construction or ch
 ## Internal links
 
 Parent: `/explore/`. Live related guides: first-time high-speed rail, rail-only routes and hub-versus-multi-base planning. No unlaunched station or city-subpage links.
+
+## Published hero image
+
+- `20240730 Qingdao Railway Station 01.jpg`, Windmemories, photographed 2024-07-30 at Qingdao Railway Station.
+- File page: https://commons.wikimedia.org/wiki/File:20240730_Qingdao_Railway_Station_01.jpg
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- Cropped/resized to 1600 × 1000 WebP. It identifies the station exterior but does not establish any timetable or through service.

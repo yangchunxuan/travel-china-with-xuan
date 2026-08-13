@@ -17,8 +17,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "항공권, 철도표, 도로 여객표 중 무엇인지 구분합니다. 비슷한 지명은 이를 하나로 만들지 않습니다.",
     "실제 구이양 호텔 입구를 표시하고 현재 지하철·도로 정보로 해당 시간의 도시 이동을 계산합니다.",
     "농촌으로 이어지면 ‘구이저우 시골’이 아니라 정확한 마을·관광지·버스 승차 지점을 씁니다.",
-    "역·터미널 진입, 짐, 이른·늦은 운영 제한을 보호합니다.",
-    "거점으로 떠나기 전에 합법적인 표 변경, 더 늦은 편, 통제 가능한 숙박 대안을 둡니다."
+    "역·터미널 진입, 짐, 이른·늦은 운영 제한에 충분한 시간을 둡니다.",
+    "거점으로 떠나기 전에 표 변경 가능 여부, 더 늦은 편, 연결을 놓쳤을 때 묵을 구이양 호텔을 확인합니다."
   ]},
   { id: "hotel-heading", type: "heading", level: 2, text: "호텔 위치는 부담을 바꾸지만 표를 바꾸지 않습니다" },
   { id: "hotel-scenarios", type: "comparison", title: "도시 구역에 맞춰 이해하기", columns: [
@@ -27,10 +27,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "공항·동쪽 숙박", items: ["룽둥바오가 항공 전후 숙박에 편리", "철도역은 확인된 정차 열차에만 사용", "구이양동역은 별도 도로 이동"] }
   ]},
   { id: "rural-heading", type: "heading", level: 2, text: "농촌 후속 이동은 두 번째 정체 확인이 필요합니다" },
-  { id: "rural", type: "table", caption: "나침반 방향만으로 역을 고르지 마세요", columns: ["후속 기록", "확인", "거점 논리", "실패 보호"], rows: [
+  { id: "rural", type: "table", caption: "나침반 방향만으로 역을 고르지 마세요", columns: ["후속 이동", "확인", "거점 선택", "이동이 어려울 때"], rows: [
     ["구이저우 현·도시행 열차", "여행일 12306의 정확한 정차와 도착역", "실제로 적합한 열차가 서는 구이양역 이용", "노선 방향만 보고 동·북·룽둥바오로 이동하지 않음"],
     ["공식 버스·맞춤 노선", "현재 사업자, 승차 지점, 마감, 짐 규칙", "북역·동역의 여객 연계 배경과 공항·중앙역의 날짜별 관광·버스 연결", "과거 공지는 발견용이며 오늘 다시 확인"],
-    ["마을·숙소 전용 차량", "허가 사업자, 정확한 중국어 목적지, 차량, 도로 상태", "구매한 도착 거점에서 도시 내 되돌아가기를 줄임", "기사·날씨·마지막 도로 실패 시 구이양 호텔 유지"],
+    ["마을·숙소 전용 차량", "허가 사업자, 정확한 중국어 목적지, 차량, 도로 상태", "구매한 도착 거점에서 도시 내 되돌아가기를 줄임", "기사·날씨·마지막 도로 때문에 이동할 수 없으면 구이양에서 숙박"],
     ["항공편 뒤 철도", "수하물 수취, 터미널, 룽둥바오 정차, 환승 여유", "정확한 열차가 맞을 때만 공항 철도가 편리", "인쇄된 역의 더 늦은 합법적 편 또는 공항 숙박"]
   ]},
   { id: "scenarios-heading", type: "heading", level: 2, text: "네 가지 여행자 상황" },
@@ -38,11 +38,11 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["항공 도착 후 열차표에 贵阳北", "짐 수취 후 현재 공항–북역 교통을 이용하고 철도 진입 여유 확보", "공항 아래라는 이유로 룽둥바오 철도역으로 감"],
     ["도심 호텔, 표에 贵阳", "구이양역을 이용하고 정확한 입구와 시각 확인", "기사·동행자가 임의로 구이양북역으로 바꿈"],
     ["큰 짐이 있는 가족, 표에 贵阳东", "허가된 동역 직행 픽업을 정하고 중국어 역명 저장", "공항 인근 동버스터미널 표지를 따름"],
-    ["다음 날 이른 국제선", "룽둥바오 인근 숙박 또는 보호된 현재 공항 교통이 있는 도심 숙박", "저녁 관광 편의만 보고 철도 거점을 택해 항공 복구를 없앰"]
+    ["다음 날 이른 국제선", "룽둥바오 인근 숙박 또는 신뢰할 수 있는 공항 이동을 확인한 도심 숙박", "저녁 관광 편의만 보고 철도 거점을 택해 항공편 전 여유를 없앰"]
   ]},
   { id: "early-late", type: "callout", title: "이른 출발과 늦은 도착에는 도로 대안이 필요합니다", tone: "warning", body: "지하철, 버스, 공항버스, 맞춤 관광 노선은 날짜에 따라 바뀌며 모두 밤새 운행하지 않습니다. 여행일에 구이양 공식 교통 채널과 항공·열차 기록을 확인하세요. 매우 이르거나 늦다면 합법적인 택시·호출차 승차장, 호텔 프런트 운영, 짐 용량을 확인하고 낮 시간 연결을 밤으로 확대 해석하지 마세요." },
-  { id: "recovery-heading", type: "heading", level: 2, text: "잘못된 거점에서 복구하기" },
-  { id: "recovery", type: "table", caption: "도시를 가로지르기 전에 표부터 보호하세요", columns: ["실수", "첫 조치", "복구"], rows: [
+  { id: "recovery-heading", type: "heading", level: 2, text: "잘못된 거점에 갔을 때" },
+  { id: "recovery", type: "table", caption: "도시를 가로지르기 전에 표부터 확인하세요", columns: ["실수", "첫 조치", "다음 단계"], rows: [
     ["구이양북역에 있는데 표는 구이양동역", "12306에서 출발 상태와 변경 규칙을 보고 직원에게 잘못 왔다고 알림", "검증된 여유가 있을 때만 도시 횡단, 아니면 합법적으로 표 변경"],
     ["구이양역에 있는데 표는 구이양북역", "공식 지도에서 현재 1호선·도로 시간을 보고 역 진입 시간 추가", "모든 열차가 두 역을 연결한다고 생각하고 임의 탑승하지 않음"],
     ["공항·룽둥바오에 있는데 표는 다른 역", "터미널 출구, 짐 수취, 도시 이동, 철도 진입을 따로 계산", "연결이 무너지면 더 늦은 합법적 편 또는 공항·도심 숙박"],
@@ -57,13 +57,13 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "농촌 후속 목적지와 사업자 이름이 정확하다.",
     "짐 용량, 보행, 역 진입 여유가 일행에 맞는다.",
     "오늘 공식 지하철·버스·도로 정보와 12306·항공사 상태를 확인했다.",
-    "잘못된 거점 이동 실패 시 변경 가능한 표나 구이양 숙박이 있다."
+    "다른 거점으로 제시간에 이동하지 못하면 표를 변경하거나 구이양에서 묵을 수 있다."
   ]},
   { id: "help", type: "callout", title: "표, 호텔, 농촌 연결을 함께 맞춰 볼까요?", tone: "decision", body: "날짜, 정확한 표 기록, 구이양 호텔, 후속 목적지, 인원과 짐을 Homeground에 보내 주세요. 거점과 이동 부담을 확인할 수 있습니다. 실시간 재고, 터미널, 정차역, 도로 서비스는 공식 운영자가 결정합니다." },
   { id: "links", type: "internal-links", title: "다음 계획", items: [
     { label: "Homeground 교통·여행 가이드", href: "/ko/guides/", description: "상위 가이드 모음으로 돌아갑니다." },
     { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "역을 확인한 뒤 철도 절차를 준비합니다." },
-    { label: "국제선 출발 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "구이저우 일정 뒤 룽둥바오 출발을 보호합니다." },
+    { label: "국제선 출발 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "구이저우 일정 뒤 룽둥바오 출발을 계획합니다." },
     { label: "분리 발권 항공권과 셀프 환승 위험", href: "/ko/guides/china-separate-flight-tickets-self-transfer-risk/", description: "항공–철도 또는 분리 항공 연결을 점검합니다." },
     { label: "중국 여행의 한 거점 또는 여러 숙박 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "구이양을 농촌 여행 거점으로 유지할지 결정합니다." }
   ]},
@@ -73,7 +73,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "구이양북역 교통 조직", url: "https://jt.guizhou.gov.cn/xwzx1/hydt/202304/t20230416_82484664.html", publisher: "구이저우성 교통운수청", reviewedAt: "2026-08-13" },
     { label: "구이양 철도역 정체", url: "https://english.guiyang.gov.cn/2019-04/17/c_1056567.htm", publisher: "구이양시 인민정부", reviewedAt: "2026-08-13" },
     { label: "룽둥바오 항공–철도 복합 거점", url: "https://shuanglong.english.guiyang.gov.cn/2025-02/27/c_1043962.htm", publisher: "구이양 솽룽공항경제구", reviewedAt: "2026-08-13" },
-    { label: "철도 실시간 검색", url: "https://www.12306.cn/en/index.html", publisher: "중국철도 12306", reviewedAt: "2026-08-13" }
+    { label: "철도 실시간 검색", url: "https://www.12306.cn/en/index.html", publisher: "중국철도 12306", reviewedAt: "2026-08-13" },
+    { label: "대표 사진: 구이양북역 앞 광장 — Gmbsfd (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:North_Guiyang_Railway_Station_2015.10.7.jpg", publisher: "위키미디어 공용", reviewedAt: "2026-08-13" },
+    { label: "대표 사진 라이선스: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0", publisher: "Creative Commons", reviewedAt: "2026-08-13" }
   ]}
 ] } as const satisfies StructuredPageBody;
 

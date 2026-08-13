@@ -8,7 +8,7 @@ Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 This page owns one bidirectional pre-trip decision: which Shenzhen–Hong Kong crossing best matches the traveller's actual endpoints and constraints. It does not own Hong Kong or mainland entry eligibility, national rail booking, Octopus/payment setup, a live timetable, or a separate page for each crossing.
 
-Google results reviewed for `Shenzhen Hong Kong border crossing`, `Futian to Hong Kong high speed rail or metro`, and `Shenzhen Bay port or Lo Wu`. Current results often rank modes by vehicle time alone, omit the approach on both sides, or treat Lo Wu, Lok Ma Chau and Huanggang as interchangeable. The article's information gain is a door-to-door matrix plus a wrong-crossing recovery rule.
+Google results reviewed for `Shenzhen Hong Kong border crossing`, `Futian to Hong Kong high speed rail or metro`, and `Shenzhen Bay port or Lo Wu`. Current results often rank modes by vehicle time alone, omit the approach on both sides, or treat Lo Wu, Lok Ma Chau and Huanggang as interchangeable. The article adds a door-to-door comparison and clear steps for travellers who reach the wrong crossing.
 
 ## Dynamic facts used
 

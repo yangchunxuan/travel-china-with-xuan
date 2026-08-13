@@ -1,7 +1,5 @@
 # Research and source log
 
-**COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
-
 Reviewed: 2026-08-13 (Asia/Shanghai).
 
 ## Evidence decisions
@@ -27,3 +25,10 @@ Exact operator; public gate; passport/ticket method; opening hours; hide/boardwa
 ## Internal links
 
 Parent: `/explore/`. Live supporting guides: hub-versus-multi-base, rail-only route and shoulder-season trade-off. No future wetland subpage is linked.
+
+## Published hero image
+
+- `Père David's Deer imported from iNaturalist photo 162354434 on 24 January 2024.jpg`, zhangshen, photographed 2021-09-08 in the Yancheng Coastal Wetlands.
+- File page: https://commons.wikimedia.org/wiki/File:P%C3%A8re_David%27s_Deer_imported_from_iNaturalist_photo_162354434_on_24_January_2024.jpg
+- Licence: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+- Cropped/resized to 1600 × 1000 WebP. It shows saltmarsh and distant deer, not a public trail, public access or a guaranteed sighting.

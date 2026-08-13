@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL IMAGE PROVENANCE COMPLETE**
 `topicId`: `hg-topic-0341`
 `checked_at`: **2026-08-13**
 
@@ -43,4 +43,14 @@ Queries reviewed included `长白山 北坡 西坡 火车站`, `Changbai Mountai
 
 ## Editorial follow-up
 
-Central should recheck the visit-date names of the operating North and West visitor centres and replace the missing Hero with a rights-cleared, correctly located image. No unpublished route is described as guaranteed.
+Central should recheck the visit-date names of the operating North and West visitor centres. No unpublished route is described as guaranteed.
+
+## Hero-image provenance
+
+- Asset: `Exterior of Changbaishan Railway Station, Aug 13 2022.jpg`
+- File page: https://commons.wikimedia.org/wiki/File:Exterior_of_Changbaishan_Railway_Station,_Aug_13_2022.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/8/8b/Exterior_of_Changbaishan_Railway_Station%2C_Aug_13_2022.jpg
+- Author: A Chinese user
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- Capture/location: 2022-08-13, Changbaishan Railway Station, Jilin
+- Crop: 16:10, 1600×1000. The image proves station identity and appearance on the capture date only; it does not prove current train or shuttle operations.

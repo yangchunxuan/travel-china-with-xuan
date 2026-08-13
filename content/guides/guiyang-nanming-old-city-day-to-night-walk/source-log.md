@@ -1,7 +1,5 @@
 # Research and source log
 
-**COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
-
 Reviewed: 2026-08-13 (Asia/Shanghai).
 
 ## Evidence and editorial decisions
@@ -27,3 +25,10 @@ Jiaxiu interior admission and closure; temporary lighting or event changes; rive
 ## Internal links
 
 Parent: `/explore/`. Live guides: hub-versus-multi-base, climate regions and older-parents planning. No unlaunched Guiyang neighbourhood page is linked.
+
+## Published hero image
+
+- `甲秀楼夜景，贵州 202403 2.jpg`, FN-082, photographed 2024-03-28 at Jiaxiu Pavilion, Guiyang.
+- File page: https://commons.wikimedia.org/wiki/File:%E7%94%B2%E7%A7%80%E6%A5%BC%E5%A4%9C%E6%99%AF%EF%BC%8C%E8%B4%B5%E5%B7%9E_202403_2.jpg
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- Cropped/resized to 1600 × 1000 WebP. The photograph does not establish current lighting, admission or opening hours.

@@ -6,7 +6,7 @@ Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 ## Canonical boundary and search gap
 
-This page owns the complete Chengdu–Jiuzhaigou transport chain, especially the rail-station-to-valley handoff. It does not own Jiuzhaigou tickets, altitude medical advice, a national rail tutorial or a live shuttle timetable.
+This page covers the complete Chengdu–Jiuzhaigou journey, especially the rail-station-to-valley transfer. It does not cover Jiuzhaigou tickets, altitude medical advice, a national rail tutorial or a live shuttle timetable.
 
 Searches reviewed: `Chengdu to Jiuzhaigou train`, `Huanglongjiuzhai station to Jiuzhaigou`, and `Songpan or Huanglongjiuzhai`. Results frequently call the railway a trip to Jiuzhaigou while leaving the mountain-road transfer, exact drop-off and return unplanned.
 

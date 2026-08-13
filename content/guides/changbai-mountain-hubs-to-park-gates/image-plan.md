@@ -1,23 +1,22 @@
-# Image plan
+# Image record
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **REAL DOCUMENTARY HERO SELECTED**
 
 ## Hero
 
-- **Subject:** a current, real photograph showing the landside transfer area at either Changbaishan Railway Station or a clearly signed North/West Scenic Area visitor centre. The exact place must be verifiable.
-- **Composition/crop:** horizontal 16:10; leave clean space for title treatment; retain one legible Chinese place identifier and ordinary transfer vehicles.
-- **Do not show:** a generic Tianchi landscape, the South Slope, an unidentified ski resort, another railway station, AI travellers, fabricated signs, or an obsolete shuttle timetable.
-- **Alt EN:** Real transfer vehicles and signs at a Changbai Mountain visitor hub.
-- **Alt ZH:** 长白山游客交通枢纽的真实接驳车辆与指示牌。
-- **Alt KO:** 창바이산 관광 교통 거점의 실제 환승 차량과 안내 표지.
+- **Asset:** `Exterior of Changbaishan Railway Station, Aug 13 2022.jpg`
+- **File page:** https://commons.wikimedia.org/wiki/File:Exterior_of_Changbaishan_Railway_Station,_Aug_13_2022.jpg
+- **Original file:** https://upload.wikimedia.org/wikipedia/commons/8/8b/Exterior_of_Changbaishan_Railway_Station%2C_Aug_13_2022.jpg
+- **Author:** A Chinese user
+- **Licence:** CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- **Captured:** 2022-08-13
+- **Location:** Changbaishan Railway Station, Jilin, China
+- **Output:** `public/images/guides/changbai-mountain-hubs-to-park-gates/hero-1600.webp`
+- **Crop:** centred 16:10 editorial crop, resized to 1600×1000; no documentary elements were added or removed.
+- **Alt EN:** Exterior of Changbaishan Railway Station in Jilin, photographed in August 2022.
+- **Alt ZH:** 2022年8月拍摄的吉林长白山站站房外观。
+- **Alt KO:** 2022년 8월 촬영한 지린성 창바이산역 외관.
 
-## Optional body images
+## Evidence boundary
 
-1. **Station-name pair:** rights-cleared documentary photographs of the exterior name signs `长白山站` and `长白山西站`, presented side by side. Crop each to 4:3 without removing the full sign. This is the most useful factual image.
-2. **Visitor-centre handoff:** a current authorised photo of the boarding area at the exact North or West visitor centre. Caption must name the slope and capture date; it must not imply a permanent route or schedule.
-
-## Rights record required
-
-For every selected asset record: `asset`, original file-page `source`, `author`, direct `licence` URL, exact `location`, capture date, and `crop`. Homeground-owned material must name the owner and consent record. Commons is acceptable only from the file page with a licence valid for commercial reuse. No AI documentary image and no hotlinking.
-
-No image has been added in this Windows draft.
+The photograph verifies the identity and exterior of Changbaishan Railway Station only. It does not prove a current train call, shuttle route, scenic-area entrance, timetable or operating condition. Those must be checked through the dated official sources in the article.

@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL IMAGE PROVENANCE COMPLETE**
 `topicId`: `hg-topic-0266`
 `checked_at`: **2026-08-13**
 
@@ -41,3 +41,13 @@ Search results often call Guiyang North the default for every high-speed train, 
 ## Editorial follow-up
 
 Central should verify current Guiyang East city-transport access, the official metro service page and any rural operator used in an itinerary. Do not add a “typical” train direction unless 12306 on a representative dated search supports it and the statement is date-bounded.
+
+## Hero-image provenance
+
+- Asset: `North Guiyang Railway Station 2015.10.7.jpg`
+- File page: https://commons.wikimedia.org/wiki/File:North_Guiyang_Railway_Station_2015.10.7.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/2/29/North_Guiyang_Railway_Station_2015.10.7.jpg
+- Author: Gmbsfd
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- Capture/location: 2015-10-07, Guiyang North Railway Station forecourt, Guizhou
+- Crop: 16:10, 1600×1000. The image identifies the station and forecourt on the capture date; it does not prove current train, metro or onward-service operations.

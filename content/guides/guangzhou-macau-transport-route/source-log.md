@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL IMAGE PROVENANCE COMPLETE**
 `topicId`: `hg-topic-0308`
 `checked_at`: **2026-08-13**
 
@@ -41,3 +41,13 @@ Search results commonly compare only the railway duration from Guangzhou South o
 ## Editorial follow-up
 
 Central should recheck the construction notice, Macau-side LRT/bus service and both ports’ hours immediately before publication. A future reader must still perform a travel-date check.
+
+## Hero-image provenance
+
+- Asset: `Hengqin Port2021.jpg`
+- File page: https://commons.wikimedia.org/wiki/File:Hengqin_Port2021.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/6/65/Hengqin_Port2021.jpg
+- Author: Charlie fong
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- Capture/location: 2021-02-11, Hengqin Port, Zhuhai
+- Crop: 16:10, 1600×1000. The image identifies the port exterior in 2021; it does not prove current hours, eligibility, works, queues or onward services.

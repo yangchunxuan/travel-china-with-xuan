@@ -1,22 +1,20 @@
-# Image plan — Qilian Mountains public gateways
+# Image record — Qilian Mountains public gateways
 
-**Status: real, location-accurate asset required; no hero is bundled in this branch.**
+**Status: selected real, location-specific photograph; publication-ready after binary verification.**
 
 ## Hero
 
-- Exact location: one verified public visitor setting on the Qilian edge, preferably the signed approach to the Qilian Mountains National Park Natural Museum in Hongwansi, Sunan, or a clearly signed public visitor route at Mati township.
-- Required elements: visible public-path or venue context, enough mountain landscape to explain “gateway”, and signage that can be independently geolocated.
-- Forbidden elements: generic snow mountains presented as the national park; wildlife baiting; an unverified backcountry track; drone imagery obtained against local rules; a photo from another Qilian county used to imply this gate.
-- Crop: 1600 × 1000 landscape; keep the public-access cue in the central 60% and preserve safe text space without removing identifying terrain.
-- Alt EN: `A verified public visitor setting on the Qilian Mountains edge, with a signed path and mountain landscape`
-- Alt ZH: `祁连山边缘经核实的公众游览区域、标识步道与山地景观`
-- Alt KO: `치롄산 가장자리의 확인된 공개 방문 구역과 표지판이 있는 길, 산악 풍경`
-- Rights: Homeground-owned original or an external photograph with exact capture location, creator, date, direct licence and derivative permission. Central must retain the source file, URL and hash.
+- File: `甘肃省张掖市肃南 马蹄寺 - panoramio (2).jpg`
+- Subject/location: rock-cut entrance at Mati Temple, Sunan Yugur Autonomous County, Zhangye, Gansu (38.482312, 100.419132), on the northern Qilian edge.
+- Creator: guan.
+- Capture date: 2011-09-30.
+- File page: https://commons.wikimedia.org/wiki/File:%E7%94%98%E8%82%83%E7%9C%81%E5%BC%A0%E6%8E%96%E5%B8%82%E8%82%83%E5%8D%97_%E9%A9%AC%E8%B9%84%E5%AF%BA_-_panoramio_(2).jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/4/4b/%E7%94%98%E8%82%83%E7%9C%81%E5%BC%A0%E6%8E%96%E5%B8%82%E8%82%83%E5%8D%97_%E9%A9%AC%E8%B9%84%E5%AF%BA_-_panoramio_%282%29.jpg
+- Licence: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+- Derivative: centre-cropped and resized to 1600 × 1000 WebP; no signage, access infrastructure or visitors fabricated.
+- Evidence boundary: this older photograph verifies the place and physical entrance only. It does not prove 2026 opening hours, tickets, road access, safety controls or national-park access.
+- Alt EN: `Rock-cut temple entrance at Mati Temple in Sunan County near the Qilian Mountains`
+- Alt ZH: `祁连山附近肃南县马蹄寺的石窟入口`
+- Alt KO: `치롄산 인근 쑤난현 마티사 석굴 입구`
 
-## Supporting images
-
-1. Hongwansi Natural Museum exterior or accurately identified interior orientation panel, with written venue permission if required. Use beside the boundary ledger.
-2. Mati entrance-community public signage or visitor-service facility, not an unnamed grassland. Use beside the base table.
-3. Optional original editorial diagram showing `town base → named operator → signed visitor boundary`; clearly label it as a planning diagram, not a legal map.
-
-No AI-generated documentary scenery and no generic Qilian photograph should be used as access evidence.
+No AI-generated or AI-altered documentary imagery is used.

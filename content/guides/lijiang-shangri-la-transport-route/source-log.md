@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL IMAGE PROVENANCE COMPLETE**
 `topicId`: `hg-topic-0309`
 `checked_at`: **2026-08-13**
 
@@ -39,3 +39,13 @@ Search results now explain that the railway exists, but many stop at station-to-
 ## Editorial follow-up
 
 Central should verify the actual hotel access point, any current authorised coach or scenic-service booking channel and the travel-date weather. Health language should retain the NHC boundary and never become personalised diagnosis.
+
+## Hero-image provenance
+
+- Asset: `20260224 Shangri-La Railway Station 02.jpg`
+- File page: https://commons.wikimedia.org/wiki/File:20260224_Shangri-La_Railway_Station_02.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/7/7e/20260224_Shangri-La_Railway_Station_02.jpg
+- Author: 祝鱼贵
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- Capture/location: 2026-02-24, Shangri-La Railway Station, Diqing, Yunnan
+- Crop: 16:10, 1600×1000. The image proves the station building and identity on the capture date only; it does not prove current train calls, transfers, hotel access or travel conditions.

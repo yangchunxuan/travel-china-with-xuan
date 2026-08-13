@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **CENTRAL IMAGE PROVENANCE COMPLETE**
 `topicId`: `hg-topic-0350`
 `checked_at`: **2026-08-13**
 
@@ -37,3 +37,13 @@ Search results usually give a route number to “Dali Old Town.” Official mate
 ## Editorial follow-up
 
 Central should ask a current Dali accommodation/transport contact to verify the preferred Chinese labels for Cangshan/West Gate and the official real-time bus channel. A gate is never selected without the property’s confirmation.
+
+## Hero-image provenance
+
+- Asset: `大理古城南门 01.jpg`
+- File page: https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg
+- Original: https://upload.wikimedia.org/wikipedia/commons/8/8b/%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg
+- Author: Kcx36
+- Licence: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+- Capture/location: 2023-01-29, Dali Old Town South Gate, Yunnan
+- Crop: 16:10, 1600×1000. The crop identifies the South Gate building but does not guarantee a readable inscription, live vehicle access or the correct drop-off for a particular hotel.

@@ -1,7 +1,5 @@
 # Research and source log
 
-**COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
-
 Reviewed: 2026-08-13 (Asia/Shanghai).
 
 ## Canonical task and fact classes
@@ -28,3 +26,10 @@ Recheck formal establishment status; the exact venue operator; passport/ticket p
 ## Internal-link plan
 
 Parent: `/explore/`. Live guides: climate regions, hub-versus-multi-base planning and first-time high-speed rail. No future Qilian subpage or unlaunched road article is linked.
+
+## Published hero image
+
+- `甘肃省张掖市肃南 马蹄寺 - panoramio (2).jpg`, guan, photographed 2011-09-30 at Mati Temple, Sunan County, Zhangye.
+- File page: https://commons.wikimedia.org/wiki/File:%E7%94%98%E8%82%83%E7%9C%81%E5%BC%A0%E6%8E%96%E5%B8%82%E8%82%83%E5%8D%97_%E9%A9%AC%E8%B9%84%E5%AF%BA_-_panoramio_(2).jpg
+- Licence: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+- Cropped/resized to 1600 × 1000 WebP. The older place image does not prove 2026 operations, road conditions, tickets or broader protected-area access.
