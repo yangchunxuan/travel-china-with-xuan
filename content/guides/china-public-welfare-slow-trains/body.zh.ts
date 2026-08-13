@@ -13,7 +13,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "not-nostalgia-copy", type: "paragraph", text: "高铁主要解决大型中心之间的快速移动，公益性慢火车解决的则是小站与县城或区域中心之间的可达性。国家铁路局资料记录了这些线路在上学、赶集和基本出行中的作用；针对具体车次的高校实地记录也呈现了普通客运功能。它们的价值在于让人能从小站出发、稳定抵达，而不是与高铁竞争速度。"},
   {id: "dated-number", type: "callout", title: "一份有日期的全国快照", body: "国家铁路局在 2024 年 3 月报道，全国当时开行 81 对公益性慢火车。这个数字说明该项目在当时的规模，不是 2026 年实时清单。线路、车次、停站和售票状态都必须在中国铁路官方渠道重新核验。", tone: "warning"},
   {id: "ordinary-passenger", type: "heading", level: 2, text: "普通旅行者能不能乘坐？"},
-  {id: "ordinary-passenger-copy", type: "paragraph", text: "先在 12306 核对准确车次、日期和乘车区间。如果某段行程没有显示可售，既不要推断列车已经停运，也不要认为可以直接上车。部分非长途公益性慢火车和小站可能采用线路自己的办理方式，其中也有公开规定的实名制例外；出发前仍须向 12306 或车站确认，而不能凭旧报道行动。"},
+  {id: "ordinary-passenger-copy", type: "paragraph", text: "先在 12306 核对准确车次、日期和乘车区间。全国原则是旅客列车和车站实行实名制；只有铁路运输企业提前公开公告并说明理由时，公告中的特定非长途公益性慢火车及相关车站才可以暂不实行。某段行程没有显示可售时，既不要推断列车已经停运，也不要认为可以直接上车，仍须向 12306 或车站核对准确服务。"},
   {id: "recognition-test", type: "table", caption: "把一班车当作可用的公益性慢火车之前，先做四项核对", columns: ["核对项", "应使用的证据", "遇到这种情况就停止推断"], rows: [
     ["公共服务身份", "当前铁路或政府来源明确指出该线路或车次。", "只有转载文章或旅行视频使用了“公益慢火车”这个称呼。"],
     ["当前是否开行", "官方铁路系统或车站确认准确车次和日期。", "只有旧报道提供车次；但一次在线搜索没有结果，也不能证明已经停运。"],
@@ -45,7 +45,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "铁路旅客车票实名制管理办法及慢火车例外", url: "https://www.nra.gov.cn/xxgk/gkml/ztjg/gfzd/bmgz/202211/t20221125_339122.shtml", publisher: "国家铁路局", reviewedAt: "2026-08-13"},
     {label: "大凉山公益性慢火车动态", url: "https://www.nra.gov.cn/tlfc/yxfc/202506/t20250623_349047.shtml", publisher: "国家铁路局", reviewedAt: "2026-08-13"},
     {label: "7272 次列车学生实地调研记录", url: "https://stte.csu.edu.cn/info/1047/4083.htm", publisher: "中南大学", reviewedAt: "2026-08-13"},
-    {label: "公益性铁路运输理论研究", url: "https://journal.bjut.edu.cn/bjgydxxbskb/article/doi/10.3969/j.issn.1671-0398.2015.05.005", publisher: "北京工业大学学报（社会科学版）", reviewedAt: "2026-08-13"}
+    {label: "公益性铁路运输理论研究", url: "https://journal.bjut.edu.cn/bjgydxxbskb/article/doi/10.3969/j.issn.1671-0398.2015.05.005", publisher: "北京工业大学学报（社会科学版）", reviewedAt: "2026-08-13"},
+    {label: "封面照片：Saigyouji-Noriko 于 2025 年 4 月 5 日拍摄的上普雄大桥 5633 次列车（已裁切）", url: "https://commons.wikimedia.org/wiki/File:20250405-5633%E6%AC%A1%E5%88%97%E8%BD%A6%E9%80%9A%E8%BF%87%E4%B8%8A%E6%99%AE%E9%9B%84%E5%A4%A7%E6%A1%A5.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
+    {label: "裁切后封面照片的 CC BY-SA 4.0 许可证", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

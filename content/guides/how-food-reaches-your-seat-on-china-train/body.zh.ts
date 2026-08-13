@@ -26,7 +26,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   ]},
   {id: "fallback", type: "table", caption: "订单不顺利时的安全备选", columns: ["问题", "应怎样处理"], rows: [
     ["没有出现可配送车站", "预留安检和检票时间，在上车前从已确认的商家购买食物；也可使用已经确认存在的车上售卖服务。"],
-    ["支付或联系方式验证失败", "不要编造联系方式。12306 协议列出支付宝和微信支付，较早的上海市英文说明还提到银行卡；只相信当前结账页实际接受的方法。"],
+    ["支付或联系方式验证失败", "不要编造联系方式。现行 12306 服务协议明确只列出支付宝和微信支付。上海市英文说明虽提到银行卡，但这份次级说明不是平台保证：不得承诺银行卡可用，只相信当前结账页实际接受的方法。"],
     ["车票改签或退票", "餐单是独立订单，不能直接转到新车次。必须在允许时限内自行取消，再看新行程能否重新下单。"],
     ["列车运行受扰", "协议只为特定情况规定自动取消或退款，包括列车停运、配送站取消办理客运，或列车在配送站晚点超过 30 分钟；按订单通知处理。"],
     ["餐食还没送到", "查看订单状态，并请列车工作人员协助，不要离开列车寻找。无座旅客应在订单记录的车厢等候或联系配送人员，并以订单手机号后五位核验领取。"],
@@ -44,7 +44,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "高铁列车餐食预订说明", url: "https://english.shanghai.gov.cn/en-Transportation/20241213/1a3e604aa23140619e06d90e8d3004f4.html", publisher: "上海市人民政府", reviewedAt: "2026-08-13"},
     {label: "北京南站网络订餐服务动态", url: "https://www.bjwmb.gov.cn/yw/10119254.html", publisher: "首都文明网", reviewedAt: "2026-08-13"},
     {label: "铁路餐食配送链", url: "https://www.ndrc.gov.cn/xwdt/ztzl/cjsjyth1/xwzx/202111/t20211115_1303935_ext.html", publisher: "国家发展和改革委员会", reviewedAt: "2026-08-13"},
-    {label: "高铁按需订餐优化研究", url: "https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "杭州师范大学机构知识库", reviewedAt: "2026-08-13"}
+    {label: "高铁按需订餐优化研究", url: "https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "杭州师范大学机构知识库", reviewedAt: "2026-08-13"},
+    {label: "封面照片：N509FZ 于 2019 年 2 月 24 日拍摄的南京南站 12306 网络配餐中心（已裁切）", url: "https://commons.wikimedia.org/wiki/File:12306_network_ordering_delivery_center_at_Nanjingnan_Railway_Station_(20190224181934).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
+    {label: "裁切后封面照片的 CC BY-SA 4.0 许可证", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

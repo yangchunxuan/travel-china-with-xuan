@@ -1,11 +1,12 @@
 # Image plan — why-china-high-speed-stations-are-far-away
 
-- Status: ASSETS NEEDED. No AI aerial, unlicensed map or unrelated station.
+- Status: ASSET APPROVED AND ADDED. Real station photograph; no AI or generative scene editing.
 
 ## Hero
 
-- Real named Chinese high-speed station in a verifiable edge/new-district context, with transport connection visible if possible.
-- 8:5, 1600 × 1000 WebP. Do not use perspective to exaggerate isolation.
+- Kunming South Railway Station west square and station building, photographed by Baycrest in 2017.
+- Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kunming_South_Railway_Station.jpg), [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/). The 1800 × 1200 source was centred to 1800 × 1125, resized to 1600 × 1000 and stripped of metadata. The derivative remains CC BY-SA 2.5.
+- The photograph identifies the station and west-square setting only. It does not prove distance, current connections or a universal station-location rule.
 
 ## Optional infographic
 
@@ -14,6 +15,6 @@
 
 ## Alt
 
-- EN: A named Chinese high-speed railway station in its documented urban-edge setting.
-- ZH: 位于有明确记录城市边缘环境中的一座中国高铁站。
-- KO: 확인된 도시 외곽 환경에 위치한 중국 고속철도역.
+- EN: The west square and station building of Kunming South Railway Station in 2017.
+- ZH: 2017年的昆明南站西广场与站房。
+- KO: 2017년 쿤밍남역 서광장과 역사.

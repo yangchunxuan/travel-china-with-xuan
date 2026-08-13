@@ -1,8 +1,8 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
-  {id: "answer-first", type: "lead", text: "一些中国高铁站位于既有城市中心之外，是因为选址需要同时平衡铁路走向和运力、建设与拆迁条件、本地接驳，有时还包括城市发展目标。每座城市的取舍不同。国家指引要求新建车站尽量位于中心城区或靠近建成区，因此，站址在郊外本身并不代表规划成功。对旅行者真正有用的做法，是比较准确车站到酒店门口的完整链路。"},
-  {id: "forces", type: "table", caption: "哪些力量会把车站推离老城中心", columns: ["因素", "外围站址可能带来的好处", "需要付出的代价"], rows: [
+  {id: "answer-first", type: "lead", text: "一些中国高铁站位于既有城市中心之外，是因为选址需要同时平衡铁路走向和运力、建设与拆迁条件、本地接驳，有时还包括城市发展目标。每座城市的取舍不同。国家指引要求新建车站尽量位于中心城区或靠近建成区，因此，站址在郊外本身并不代表规划成功。下方六因素表是 Homeground 根据官方指引和所引研究作出的综合归纳，不是政府文件的逐字清单。对旅行者真正有用的做法，是比较准确车站到酒店门口的完整链路。"},
+  {id: "forces", type: "table", caption: "根据官方指引和所引研究综合归纳的规划机制", columns: ["因素", "外围站址可能带来的好处", "需要付出的代价"], rows: [
     ["铁路走向", "在密集城区之外，更容易布置较顺的进出线和通过运行。", "市区接驳距离变长。"],
     ["土地和拆迁", "大型站房与多条股道需要连续成片空间。", "土地便宜并不会自动带来方便的旅客接驳。"],
     ["运力", "外围用地可能容纳更多站台和未来扩建。", "大型站厅会增加步行和寻找出口的成本。"],
@@ -12,7 +12,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   ]},
   {id: "not-one-actor", type: "heading", level: 2, text: "站址不是铁路一家决定的"},
   {id: "not-one-actor-copy", type: "paragraph", text: "有关中国车站选址的研究显示，铁路技术目标、旅客需求和地方发展诉求会彼此协商。国家规划指引要求新建车站尽可能位于中心城区或靠近建成区，反对脱离实际盲目依站造城，并要求快速连接既有城区和其他枢纽。外围车站只有在本地接驳真正好用时，才会对旅客好用。"},
-  {id: "suffix-rule", type: "callout", title: "把每个方位词和限定词都当作站名的一部分", body: "官方站名里只要出现方位或其他限定词，就从 12306 查询结果或订单确认中抄下完整名称；能看到中文时，也一并保存中文站名，用于酒店路线和出租车目的地。“东、西、南、北、新”等字样可能指向完全不同的车站。", tone: "warning"},
+  {id: "suffix-rule", type: "callout", title: "把每个方位词和限定词都当作站名的一部分", body: "官方站名里只要出现方位或其他限定词，就从 12306 查询结果或订单确认中抄下完整名称；能看到中文时，也一并保存中文站名，用于酒店路线和出租车目的地。“东、西、南、北”等字样可能指向完全不同的车站；不要仅凭非官方译名推断另一座车站。", tone: "warning"},
   {id: "comparison-card", type: "table", caption: "用一张门到门卡片比较两张车票", columns: ["记录项目", "车票 A", "车票 B"], rows: [
     ["准确出发站和到达站", "车票上的完整站名", "车票上的完整站名"],
     ["酒店门口到出发站台", "接驳、进站、步行和缓冲", "接驳、进站、步行和缓冲"],
@@ -44,7 +44,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "recovery", type: "callout", title: "如果已经订了不方便的车站", body: "不要假设同城另一座车站也能使用这张票。先在官方 12306 订单中查看当前可用处理方式。如果保留原票，保存准确车站及酒店名称和中文地址，确认末班公共交通与道路备选，并提前出发。抵达后若原定接驳失败，请向车站工作人员询问当前正规的出租车或网约车上客点。", tone: "decision"},
   {id: "help", type: "callout", title: "需要比较两个车站方案的门到门时间？", body: "把日期、准确列车选项、两端酒店入口、人数、行李、步行限制和下一项固定预约发给 Homeground。我们可以比较完整链路，并标出仍须实时核验的交通事实；余票和实际运营仍由铁路及当地交通运营方决定。", tone: "neutral"},
   {id: "internal-links", type: "internal-links", title: "把这个机制应用到真实行程", items: [
-    {label: "北京应该选哪座火车站？", href: "/zh/guides/which-beijing-railway-station/", description: "使用北京五站决策矩阵。"},
+    {label: "北京应该选哪座火车站？", href: "/zh/guides/which-beijing-railway-station/", description: "查看北京八座主要铁路客站的选择指南。"},
     {label: "第一次乘中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "车票、证件与乘车流程请留在全国指南。"},
     {label: "在中国选择包车接送还是公共交通", href: "/zh/guides/china-private-transfer-or-public-transport/", description: "根据人数和行李选择最后一公里。"}
   ]},
@@ -53,7 +53,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "综合交通枢纽规划指导意见", url: "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201605/W020190905516928367231.pdf", publisher: "国家发展和改革委员会", reviewedAt: "2026-08-13"},
     {label: "多主体参与的高铁站选址研究", url: "https://ir.pku.edu.cn/handle/20.500.11897/620610", publisher: "北京大学机构知识库", reviewedAt: "2026-08-13"},
     {label: "车站距离与城市影响研究", url: "https://ces.xmu.edu.cn/CN/abstract/abstract802.shtml", publisher: "中国经济问题", reviewedAt: "2026-08-13"},
-    {label: "既有站与新建站取舍研究", url: "https://www.ort.shu.edu.cn/CN/10.15960/j.cnki.issn.1007-6093.2023.02.005", publisher: "运筹与管理", reviewedAt: "2026-08-13"}
+    {label: "既有站与新建站取舍研究", url: "https://www.ort.shu.edu.cn/CN/10.15960/j.cnki.issn.1007-6093.2023.02.005", publisher: "运筹与管理", reviewedAt: "2026-08-13"},
+    {label: "封面照片：Baycrest 于 2017 年拍摄的昆明南站西广场与站房（已裁切）", url: "https://commons.wikimedia.org/wiki/File:Kunming_South_Railway_Station.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
+    {label: "裁切后封面照片的 CC BY-SA 2.5 许可证", url: "https://creativecommons.org/licenses/by-sa/2.5/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

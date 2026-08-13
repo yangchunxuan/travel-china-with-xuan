@@ -1,9 +1,9 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
-  {id: "answer-first", type: "lead", text: "중국의 일부 고속철도역이 기존 도심 밖에 있는 것은 철도 선형과 용량, 건설·철거의 제약, 지역 교통 연결, 때로는 도시 개발 목표까지 함께 조정하기 때문입니다. 어느 요소를 우선하는지는 도시마다 다릅니다. 국가 지침은 새 역을 시가지 안이나 가능한 한 시가지 가까이에 두도록 하므로 외곽 입지 자체가 계획의 성공을 뜻하지는 않습니다. 여행자에게 필요한 판단은 정확한 역에서 호텔까지 이어지는 전체 이동을 비교하는 것입니다."},
-  {id: "forces", type: "table", caption: "역이 역사적 도심에서 멀어지게 하는 요인", columns: ["요인", "외곽 부지가 유리할 수 있는 이유", "대가"], rows: [
-    ["철도 선형", "밀집 시가지 밖에서는 비교적 곧은 진입선과 통과 운행을 만들기 쉽습니다.", "도시 안 환승 거리가 길어집니다."],
+  {id: "answer-first", type: "lead", text: "중국의 일부 고속철도역이 기존 도심 밖에 있는 것은 철도 선형과 용량, 건설·철거의 제약, 지역 교통 연결, 때로는 도시 개발 목표까지 함께 조정하기 때문입니다. 어느 요소를 우선하는지는 도시마다 다릅니다. 국가 지침은 새 역을 시가지 안이나 가능한 한 시가지 가까이에 두도록 하므로 외곽 입지 자체가 계획의 성공을 뜻하지는 않습니다. 아래 여섯 요인은 Homeground가 공식 지침과 인용 연구를 종합한 것이며 정부 문서의 원문 체크리스트가 아닙니다. 여행자에게 필요한 판단은 정확한 역에서 호텔까지 이어지는 전체 이동을 비교하는 것입니다."},
+  {id: "forces", type: "table", caption: "공식 지침과 인용 연구를 종합한 역 입지 메커니즘", columns: ["요인", "외곽 부지가 유리할 수 있는 이유", "대가"], rows: [
+    ["철도 선형", "밀집 시가지 밖에서는 비교적 곧은 진입선과 통과 운행을 만들기 쉽습니다.", "도심까지의 이동 거리가 길어집니다."],
     ["토지와 철거", "대형 역과 선로에는 이어진 넓은 공간이 필요합니다.", "땅이 저렴하다고 승객 접근성이 생기지는 않습니다."],
     ["수용력", "승강장을 더 설치하고 미래 확장 공간을 확보할 수 있습니다.", "큰 대합실은 보행과 출구 찾기의 부담을 늘립니다."],
     ["환승", "지하철, 버스와 지역철도를 묶는 새 허브를 만들 수 있습니다.", "연결 교통이 나중에 개통되거나 계획보다 불편하게 운행될 수 있습니다."],
@@ -11,9 +11,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     ["기존 철도", "도심역을 재사용하면 접근성을 유지할 수 있습니다.", "기존 진입선이 속도, 용량이나 공사를 제한할 수 있습니다."]
   ]},
   {id: "not-one-actor", type: "heading", level: 2, text: "역 위치는 철도기관 하나만 정하지 않는다"},
-  {id: "not-one-actor-copy", type: "paragraph", text: "중국 고속철도역 입지 연구는 철도 운영 목표, 승객 수요와 지방정부의 개발 이해가 협상되는 과정을 설명합니다. 국가 계획 지침은 가능한 경우 새 역을 도심 또는 시가지 가까이에 두고, 역 하나만 앞세운 무분별한 신도시 건설을 피하며, 기존 시가지와 다른 교통 허브로 빠르게 연결하도록 요구합니다. 외곽역이 승객에게 제대로 기능하려면 이 지역 연결망이 실제로 작동해야 합니다."},
-  {id: "suffix-rule", type: "callout", title: "방향이나 수식어까지 역명의 일부로 보세요", body: "공식 역명에 방향이나 다른 수식어가 붙어 있으면 12306 검색 결과 또는 예약 확인서에서 전체 이름을 그대로 복사하세요. 가능하면 중국어 역명도 함께 호텔 경로와 택시 목적지에 넣습니다. ‘동·서·남·북·신’은 서로 완전히 다른 역을 가리킬 수 있습니다.", tone: "warning"},
-  {id: "comparison-card", type: "table", caption: "두 승차권을 하나의 문 앞 기준표로 비교하기", columns: ["기록할 내용", "승차권 A", "승차권 B"], rows: [
+  {id: "not-one-actor-copy", type: "paragraph", text: "중국 고속철도역 입지 연구는 철도 운영 목표, 승객 수요와 지방정부의 개발 이해관계가 조율되는 과정을 설명합니다. 국가 계획 지침은 가능한 경우 새 역을 도심 또는 시가지 가까이에 두고, 역 하나만 앞세운 무분별한 신도시 건설을 피하며, 기존 시가지와 다른 교통 허브로 빠르게 연결하도록 요구합니다. 외곽역이 승객에게 제대로 기능하려면 이 지역 연결망이 실제로 작동해야 합니다."},
+  {id: "suffix-rule", type: "callout", title: "방향이나 수식어까지 역명의 일부로 보세요", body: "공식 역명에 방향이나 다른 수식어가 붙어 있으면 12306 검색 결과 또는 예약 확인서에서 전체 이름을 그대로 복사하세요. 가능하면 중국어 역명도 함께 호텔 경로와 택시 목적지에 넣습니다. ‘동·서·남·북’은 서로 완전히 다른 역을 가리킬 수 있으며 비공식 번역만으로 다른 역을 추정해서는 안 됩니다.", tone: "warning"},
+  {id: "comparison-card", type: "table", caption: "두 승차권을 출발지부터 목적지까지 비교하기", columns: ["기록할 내용", "승차권 A", "승차권 B"], rows: [
     ["정확한 출발역과 도착역", "승차권의 전체 역명", "승차권의 전체 역명"],
     ["호텔 문 → 출발 승강장", "환승, 역 입장, 보행, 여유 시간", "환승, 역 입장, 보행, 여유 시간"],
     ["공시된 열차 운행 시간", "승차권 시간", "승차권 시간"],
@@ -44,7 +44,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "recovery", type: "callout", title: "불편한 역으로 이미 예약했다면", body: "같은 도시의 다른 역에서 그 승차권을 쓸 수 있다고 가정하지 마세요. 공식 12306 주문에서 현재 가능한 변경·환불 선택지를 확인합니다. 승차권을 유지한다면 정확한 역명과 호텔 이름·주소를 중국어로 저장하고, 마지막 대중교통 종료 시각과 도로 이동 대안을 확인한 뒤 더 일찍 출발하세요. 도착 후 계획한 연결이 끊기면 역 직원에게 현재 허가된 택시 또는 차량 호출 승차 지점을 물어보세요.", tone: "decision"},
   {id: "help", type: "callout", title: "두 역 선택지를 문 앞부터 비교해야 하나요?", body: "날짜, 정확한 열차 선택지, 두 호텔의 실제 입구, 인원, 짐, 보행 제약과 다음 고정 일정을 Homeground에 보내 주세요. 전체 연결을 비교하고 다시 확인해야 할 실시간 교통 정보를 표시해 드릴 수 있습니다. 잔여 좌석과 실제 운행은 철도기관과 지역 교통 운영사가 결정합니다.", tone: "neutral"},
   {id: "internal-links", type: "internal-links", title: "이 원리를 실제 여행에 적용하기", items: [
-    {label: "베이징의 어느 기차역을 이용할까", href: "/ko/guides/which-beijing-railway-station/", description: "베이징의 다섯 역을 실제 선택 기준으로 비교합니다."},
+    {label: "베이징의 어느 기차역을 이용할까", href: "/ko/guides/which-beijing-railway-station/", description: "베이징의 8개 주요 철도 터미널을 선택 기준에 따라 비교합니다."},
     {label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "승차권, 신분증과 탑승 절차는 전국 대표 가이드에서 확인합니다."},
     {label: "중국에서 전용 차량과 대중교통 고르기", href: "/ko/guides/china-private-transfer-or-public-transport/", description: "인원과 짐을 기준으로 마지막 이동 수단을 고릅니다."}
   ]},
@@ -53,7 +53,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "종합교통허브 계획 지침", url: "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201605/W020190905516928367231.pdf", publisher: "중국 국가발전개혁위원회", reviewedAt: "2026-08-13"},
     {label: "여러 주체가 참여하는 고속철도역 입지 연구", url: "https://ir.pku.edu.cn/handle/20.500.11897/620610", publisher: "베이징대학교 기관 리포지터리", reviewedAt: "2026-08-13"},
     {label: "역 거리와 도시 영향 연구", url: "https://ces.xmu.edu.cn/CN/abstract/abstract802.shtml", publisher: "China Economic Studies", reviewedAt: "2026-08-13"},
-    {label: "기존 역과 새 역의 입지 선택", url: "https://www.ort.shu.edu.cn/CN/10.15960/j.cnki.issn.1007-6093.2023.02.005", publisher: "Operations Research and Management Science", reviewedAt: "2026-08-13"}
+    {label: "기존 역과 새 역의 입지 선택", url: "https://www.ort.shu.edu.cn/CN/10.15960/j.cnki.issn.1007-6093.2023.02.005", publisher: "Operations Research and Management Science", reviewedAt: "2026-08-13"},
+    {label: "대표 사진: Baycrest가 2017년 촬영한 쿤밍남역 서광장과 역사(크롭)", url: "https://commons.wikimedia.org/wiki/File:Kunming_South_Railway_Station.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
+    {label: "크롭한 대표 사진의 CC BY-SA 2.5 라이선스", url: "https://creativecommons.org/licenses/by-sa/2.5/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

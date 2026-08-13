@@ -8,9 +8,10 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     ["可用连接", "有名称的车站出口、电梯、扶梯、桥或公共楼梯。", "一条很短的直线变成长爬坡或大绕行。"]
   ]},
   {id: "machines-as-streets", type: "heading", level: 2, text: "这些机械设施本身就是街道网络的一部分"},
-  {id: "machines-copy", type: "paragraph", text: "重庆官方资料把凯旋路公共电梯称为城市垂直交通，也记录了皇冠大扶梯的规模及连接作用；山地社区设计指引同样把电梯和扶梯视为垂直出行基础设施。这些案例用于解释城市形态，不能证明某一设施今天一定开放，也不能证明它适合你的具体路线。"},
+  {id: "machines-copy", type: "paragraph", text: "重庆官方资料把凯旋路公共电梯称为中国第一部城市垂直公共交通设施，记录皇冠大扶梯垂直提升高度为 52.5 米，并把它列入重庆特色公共交通；山地社区设计指引同样把电梯和扶梯视为垂直出行基础设施。这些案例用于解释城市形态，不能证明某一设施今天一定开放，也不能证明它适合你的具体路线。"},
   {id: "liziba", type: "heading", level: 2, text: "李子坝是协同设计的车站，不是列车意外撞进楼里"},
   {id: "liziba-copy", type: "paragraph", text: "重庆官方资料介绍，李子坝站与楼房采用协同设计，轨道结构和楼体结构彼此分离，以控制振动和噪声。这个著名画面是工程师面对受限地形与密集城市空间的解决办法，而不是后来随意把一栋旧住宅打穿。"},
+  {id: "liziba-works-2026", type: "callout", title: "李子坝当天复核的一个现实理由", body: "重庆官方在 2026 年 6 月 13 日发布的通知称，李子坝站下一阶段施工将分阶段关闭站厅、站台及 1、2 号出入口，预计于 2026 年 12 月 30 日完工。这是有日期的施工通知，不是永久关闭说明；使用车站或规划观景路线前，请再次查看重庆轨道交通现行指引。", tone: "warning"},
   {id: "route-heading", type: "heading", level: 2, text: "怎样规划一段重庆短途步行"},
   {id: "route-method", type: "list", ordered: true, items: [
     "保存目的地完整中文名称和你真正需要的入口，不要只保存地图点。",
@@ -41,7 +42,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     ["大件行李", "离开酒店前先确认车辆可以到达的入口。"],
     ["炎热或疲劳", "在轨道站或公共垂直连接处分段，不要连续叠加爬升。"]
   ]},
-  {id: "dynamic-boundary", type: "callout", title: "核验日期：2026 年 8 月 13 日", body: "文中的实物案例用于解释重庆城市形态，并不承诺每部电梯、扶梯、出口或通道始终开放。施工和临时关闭会变化，请在出行当天查看重庆轨道交通及场馆的现行通知。", tone: "neutral"},
+  {id: "dynamic-boundary", type: "callout", title: "核验日期：2026 年 8 月 13 日", body: "文中的实物案例用于解释重庆城市形态，并不承诺每部电梯、扶梯、出口或通道始终开放。2026 年李子坝施工正说明施工和临时关闭会变化；请在出行当天查看重庆轨道交通及相关场馆的现行通知。", tone: "neutral"},
   {id: "help", type: "callout", title: "需要把一条重庆路线按三维空间核对吗？", body: "把日期、酒店与目的地的准确入口、人数、行李、步行限制和计划抵达时间发给 Homeground。我们可以标出需要确认的道路层级、出口和垂直连接，但不会承诺某部电梯、扶梯或通道届时一定开放。", tone: "decision"},
   {id: "internal-links", type: "internal-links", title: "用合适住宿地和步行节奏规划重庆", items: [
     {label: "重庆住解放碑、观音桥还是沙坪坝", href: "/zh/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", description: "根据实际行程和车站连接选择住宿地。"},
@@ -51,11 +52,15 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "sources", type: "sources", title: "官方与独立来源", items: [
     {label: "重庆地形与轨道工程", url: "https://www.cq.gov.cn/ywdt/jrcq/202111/t20211125_10030692.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-13"},
     {label: "李子坝站与楼房", url: "https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202409/t20240905_13599583.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-13"},
-    {label: "公共电梯与皇冠大扶梯安全报告", url: "https://scjgj.cq.gov.cn/zfxxgk_225/gsgg/qtgg/202504/t20250428_14564659.html", publisher: "重庆市市场监督管理局", reviewedAt: "2026-08-13"},
+    {label: "凯旋路电梯与皇冠大扶梯公共交通事实", url: "https://www.cq.gov.cn/ywdt/zwhd/bmdt/202504/t20250414_14519112_wap.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-13"},
+    {label: "皇冠大扶梯作为重庆特色公共交通", url: "https://jtj.cq.gov.cn/sy_240/bmdt/201910/t20191010_4370661.html", publisher: "重庆市交通运输委员会", reviewedAt: "2026-08-13"},
+    {label: "李子坝施工及分阶段关闭通知", url: "https://www.cq.gov.cn/ywdt/jrcq/202606/t20260613_15751500_app.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-13"},
     {label: "山地社区垂直出行指引", url: "https://zfcxjw.cq.gov.cn/zwgk_166/zfxxgkmls/zcwj/qtwj/202206/W020260528580878403095.pdf", publisher: "重庆市住房和城乡建设委员会", reviewedAt: "2026-08-13"},
     {label: "车站出口及扶梯临时关闭案例", url: "https://cq.gov.cn/ywdt/bmts/202606/t20260630_15787973.html", publisher: "重庆市人民政府", reviewedAt: "2026-08-13"},
     {label: "重庆轨道交通当前运营信息", url: "https://www.cqmetro.cn/smbsj.html", publisher: "重庆轨道交通", reviewedAt: "2026-08-13"},
-    {label: "三维垂直城市中的步行行为研究", url: "https://www.sciencedirect.com/science/article/pii/S016920462200192X", publisher: "Landscape and Urban Planning", reviewedAt: "2026-08-13"}
+    {label: "三维垂直城市中的步行行为研究", url: "https://www.sciencedirect.com/science/article/pii/S016920462200192X", publisher: "Landscape and Urban Planning", reviewedAt: "2026-08-13"},
+    {label: "封面照片：Siyuwj 于 2017 年 9 月 21 日拍摄的重庆皇冠大扶梯内部（已裁切）", url: "https://commons.wikimedia.org/wiki/File:Crown_Escalator,_Chongqing,_2017-09-21.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
+    {label: "裁切后封面照片的 CC BY-SA 3.0 许可证", url: "https://creativecommons.org/licenses/by-sa/3.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

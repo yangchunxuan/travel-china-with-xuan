@@ -1,11 +1,12 @@
 # Image plan — how-china-builds-high-speed-trains
 
-- Status: ASSETS NEEDED. No AI factory scene, borrowed press photo without licence, or unrelated metro plant.
+- Status: ASSET APPROVED AND ADDED. Real factory photograph; no AI or generative scene editing.
 
 ## Hero
 
-- A real aluminium high-speed-train carbody in the documented CRRC plant, ideally showing welding or dimensional-control context without confidential screens.
-- 8:5, 1600 × 1000 WebP. Confirm plant, platform or generic production stage, photographer, date and permission.
+- A CRH6 rail vehicle body being transported by road inside CRRC Qingdao Sifang, photographed by N509FZ on 3 October 2019.
+- Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Truck_transporting_CRH6_at_CRRC_Qingdao_Sifang_(20191003131702).jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The 5184 × 3456 source was centred to 5184 × 3240, resized to 1600 × 1000 and stripped of metadata. The derivative remains CC BY-SA 4.0.
+- This is one factory-transport stage. It is not welding, final assembly, a CR400 train or evidence of a test speed.
 
 ## Body
 
@@ -14,6 +15,6 @@
 
 ## Alt
 
-- EN: Aluminium high-speed train carbody during documented factory production.
-- ZH: 在有明确记录的工厂生产阶段中的铝合金高速列车车体。
-- KO: 공식 제작 공정 중인 알루미늄 고속열차 차체.
+- EN: A CRH6 rail vehicle body being transported at CRRC Qingdao Sifang in 2019.
+- ZH: 2019年，中车青岛四方厂区内由卡车转运的CRH6列车车体。
+- KO: 2019년 CRRC 칭다오 쓰팡 공장에서 트럭으로 운송 중인 CRH6 열차 차체.

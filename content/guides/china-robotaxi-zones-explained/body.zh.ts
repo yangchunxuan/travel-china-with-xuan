@@ -16,6 +16,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {heading: "道路测试或示范应用", items: ["国家规则把它们定义为在指定道路开展的测试或试用活动。", "示范活动可能载人，但这个名称本身不等于普通公众出租车服务。", "能否参与仍由当地规则和运营企业当前入口决定。"]},
     {heading: "地方批准的载客运营", items: ["城市可能使用自己的示范、试点或商业运营用语。", "某些地方运营阶段可以获准收费。", "你的账户、上下车点、时间和支付方式仍须全部被系统接受。"]}
   ]},
+  {id: "shanghai-example", type: "callout", title: "一个有明确日期的边界案例", body: "上海市政府英文门户在 2025 年 8 月 5 日报道，小马智行与锦江出租在金桥、花木的指定区域开展面向公众的收费无人驾驶网约车运营，可通过小马智行微信小程序下单；该报道同时区分了此前不能收费的示范应用许可。这只是当时、当地的案例，不代表上海全市可用，也不是 2026 年当前可下单的承诺。", tone: "neutral"},
   {id: "safety-operator", type: "heading", level: 2, text: "驾驶座无人，不等于车辆无人监管"},
   {id: "safety-details", type: "paragraph", text: "按照国家运输安全指南，有条件自动驾驶或高度自动驾驶出租车必须随车配备一名安全员。完全自动驾驶出租车只有在相关城市政府批准其于指定区域运营后，才可以改用远程安全员，而且每名远程安全员同时监管的车辆不得超过三辆。因此，驾驶座空着既不代表车辆没有监管，也不能证明它获准接你。"},
   {id: "scenario-one", type: "callout", title: "什么情况下可以把它当作真实交通选项", body: "只有当运营企业当前的乘客入口接受你在所需日期和时段的准确上车点与目的地，你能完成账户、联系方式和支付步骤，而且服务取消或在运营区边界结束时仍有普通出租车或地铁可用，才适合纳入行程。街上看到企业标志，不能证明这些条件中的任何一项。", tone: "decision"},
@@ -38,11 +39,13 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "sources", type: "sources", title: "官方与独立来源", items: [
     {label: "自动驾驶汽车运输安全服务指南", url: "https://xxgk.mot.gov.cn/jigou/ysfws/202312/t20231205_3962490.html", publisher: "交通运输部", reviewedAt: "2026-08-13"},
     {label: "智能网联汽车道路测试与示范应用管理规范", url: "https://www.miit.gov.cn/jgsj/zbys/qcgy/art/2021/art_a24398849c6a4dd290328ab5d1d8af0f.html", publisher: "工业和信息化部", reviewedAt: "2026-08-13"},
-    {label: "特定区域和时段商业化试点政策解读", url: "https://big5.mot.gov.cn/gate/big5/www.mot.gov.cn/gongkai/zcjd/202512/t20251226_4191175.html", publisher: "交通运输部", reviewedAt: "2026-08-13"},
+    {label: "上海金桥与花木收费公众运营案例", url: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20250805/99c935aed09f41e5bb4a6dd6fa095c96.html", publisher: "上海市人民政府", reviewedAt: "2026-08-13"},
     {label: "上海智能驾驶发展动态", url: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260215/e00a579f253d4903a3bdaf6840babc9f.html", publisher: "上海市人民政府", reviewedAt: "2026-08-13"},
     {label: "北京亦庄自动驾驶示范区动态", url: "https://kfqgw.beijing.gov.cn/ywdt/dwkfgd/kfyz/202505/t20250521_4246493.html", publisher: "北京经济技术开发区", reviewedAt: "2026-08-13"},
     {label: "武汉智能网联汽车发展规划", url: "https://www.wuhan.gov.cn/ztzl/25zt/ltwhfjzx/zcwj/202511/t20251125_2682890.shtml", publisher: "武汉市人民政府", reviewedAt: "2026-08-13"},
-    {label: "自动驾驶运行设计条件综述", url: "https://www.sciencedirect.com/science/article/pii/S0001457525004543", publisher: "Accident Analysis & Prevention", reviewedAt: "2026-08-13"}
+    {label: "自动驾驶运行设计条件综述", url: "https://www.sciencedirect.com/science/article/pii/S0001457525004543", publisher: "Accident Analysis & Prevention", reviewedAt: "2026-08-13"},
+    {label: "封面照片：S5A-0043 于 2025 年 12 月 17 日在武汉拍摄的试验临牌 Apollo Go RT6（已裁切）", url: "https://commons.wikimedia.org/wiki/File:(CHN-Hubei)_Apollo_Go_Apollo_RT6_Temporary-%E9%84%82A1395%E8%AF%95_2025-12-17.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
+    {label: "裁切后封面照片的 CC BY 4.0 许可证", url: "https://creativecommons.org/licenses/by/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
 

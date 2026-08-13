@@ -1,11 +1,12 @@
 # Image plan — chongqing-upper-lower-city-orientation
 
-- Status: ASSETS NEEDED. Real Chongqing imagery only; no AI cityscape or another hillside city.
+- Status: ASSET APPROVED AND ADDED. Real Chongqing photograph; no AI or generative scene editing.
 
 ## Hero
 
-- A rights-cleared photograph that visibly connects an upper road and lower road in central Chongqing, with a public stair, lift or escalator as the legible link.
-- 8:5, 1600 × 1000 WebP. Avoid telephoto compression that invents a false relationship.
+- Interior of Chongqing's Huangguan (Crown) Escalator, photographed by Siyuwj on 21 September 2017.
+- Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Crown_Escalator,_Chongqing,_2017-09-21.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The 4032 × 3016 source was centred to 4032 × 2520 around the escalator's vanishing point, resized to 1600 × 1000 and stripped of metadata. The derivative remains CC BY-SA 3.0.
+- The photograph establishes this facility, not current hours, accessibility or the level relationship of every Chongqing neighbourhood.
 
 ## Body
 
@@ -14,6 +15,6 @@
 
 ## Alt
 
-- EN: Upper and lower street levels connected by public vertical transport in Chongqing.
-- ZH: 重庆由公共垂直交通连接的上下层街道。
-- KO: 공공 수직 교통으로 연결된 충칭의 위·아래 도로.
+- EN: Inside Chongqing's Huangguan Escalator, a long public escalator linking different street levels.
+- ZH: 重庆皇冠大扶梯内部，长距离公共扶梯连接不同街道高度。
+- KO: 서로 다른 도로 높이를 잇는 충칭 황관 대형 에스컬레이터 내부.
