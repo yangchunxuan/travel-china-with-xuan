@@ -1,0 +1,23 @@
+{
+  "id": "china-tiankeng-sinkholes-explained",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "geology-access-explainer",
+  "topics": ["tiankeng", "sinkholes", "karst", "visitor-safety"],
+  "destinations": ["china", "chongqing", "guangxi", "guizhou", "yunnan"],
+  "heroImagePath": "/images/guides/china-tiankeng-sinkholes-explained/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-tiankeng-sinkholes-explained/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/china-tiankeng-sinkholes-explained/", "title": "China's Tiankeng: Sinkholes, Scenic Sites and Wild-Site Safety", "headline": "China's Tiankeng Explained: Separate the Geological Term, Visitor Sites and Wild Sinkholes", "description": "Understand what Chinese geologists mean by tiankeng, how formal scenic sites differ from wild discoveries, and how to choose only lawful, currently managed access.", "heroAlt": "Location-verified tiankeng viewed from an authorized public platform at a formal scenic site in China", "navTitle": "Understand China's tiankeng", "featuredLinkLabel": "Separate tiankeng from wild sinkholes", "openGraphLocale": "en_US", "cardTags": ["Tiankeng", "Karst", "Nature safety"]},
+    "zh": {"path": "/zh/guides/china-tiankeng-sinkholes-explained/", "title": "中国天坑：地质概念、正式景区与野外安全", "headline": "中国天坑解释：分清地质术语、公众景区与野外落水洞", "description": "理解中国地质学中的天坑，分清正式运营景区与野外发现点，只选择合法、当前有人管理的访问入口。", "heroAlt": "从中国正式景区授权公共平台观察地点可核验的天坑", "navTitle": "理解中国天坑", "featuredLinkLabel": "分清天坑与野外落水洞", "openGraphLocale": "zh_CN", "cardTags": ["天坑", "喀斯特", "自然安全"]},
+    "ko": {"path": "/ko/guides/china-tiankeng-sinkholes-explained/", "title": "중국 톈컹: 지질 개념, 정식 관광지와 야생지 안전", "headline": "중국 톈컹 이해하기: 지질 용어·공개 관광지·야생 싱크홀 구분", "description": "중국 지질학의 톈컹 뜻과 정식 관광지·야생 발견지의 차이를 이해하고 합법적으로 현재 관리되는 입구만 고릅니다.", "heroAlt": "중국 정식 관광지의 승인된 공개 전망대에서 보는 위치 확인 톈컹", "navTitle": "중국 톈컹 이해하기", "featuredLinkLabel": "톈컹과 야생 싱크홀 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["톈컹", "카르스트", "자연안전"]}
+  }
+}
