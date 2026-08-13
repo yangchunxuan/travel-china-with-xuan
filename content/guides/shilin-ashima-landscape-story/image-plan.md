@@ -1,6 +1,6 @@
 # Image plan — Shilin Stone Forest and Ashima
 
-Prepared: **2026-08-13**  
+Prepared: **2026-08-13**; rights-gap recheck: **2026-08-14**
 Policy: real, accurately located, publishable photography only. No AI documentary image, film still, substitute minority group, unidentified karst site or unlicensed recognizable-person close-up.
 
 The committed asset set uses Creative Commons files and records every derivative. The body deliberately distinguishes a geopark **designation sign** from a geology **formation-process panel**, and a script graphic or textile detail from a museum or intangible-heritage exhibition. Those distinctions must remain in alt text and captions.
@@ -77,7 +77,24 @@ The committed asset set uses Creative Commons files and records every derivative
 - Alt ZH: `用撒尼彝文书写的“阿诗玛”。`
 - Alt KO: `싸니 이문자로 쓴 ‘아시마’라는 이름.`
 
-## 5. Second rock view — test the angle rather than duplicate the Hero
+## 5. Cultural interpretation — Yi-script *Story of Ashima* museum display
+
+- Local derivative: `ashima-manuscript-display-1050.webp`
+- Exact subject and location: a 2011 display in the Yunnan Nationalities Museum, Kunming. The visible label identifies the left manuscript as *Story of Ashima*, a classic in Yi script, from Shilin County.
+- Necessary elements: complete left manuscript and its bilingual identity/location label. The adjacent Yao manuscript remains in the uncropped frame as museum-display context.
+- Forbidden elements: calling this the original, oldest or only authoritative *Ashima* text; promising it remains on display in 2026; relabelling this Kunming museum as UNESCO's Geopark Museum or the Shilin county service-centre display.
+- Crop: 1050 × 1400 portrait; resize only, with the full source composition and labels retained.
+- Source file: https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG
+- Creator: Daderot; own work, photographed 2011-08-13.
+- Licence: public domain dedication; usable for any purpose.
+- Attribution: `Photo: Daderot / Wikimedia Commons, public domain; resized and converted to WebP.`
+- Rights status: cleared; no person appears.
+- Alt EN: `A Yi-script manuscript labelled “Story of Ashima” and “Shilin County” in the Yunnan Nationalities Museum in Kunming.`
+- Alt ZH: `云南民族博物馆展柜中标注为《阿诗玛的故事》、来源石林县的彝文典籍。`
+- Alt KO: `쿤밍 윈난민족박물관에서 ‘아시마 이야기’와 ‘스린현’으로 표기된 이문 고전 문헌.`
+- Caption boundary: the image documents a 2011 written-transmission and museum-presentation layer only; it proves neither current display nor a unique authoritative text.
+
+## 6. Second rock view — test the angle rather than duplicate the Hero
 
 - Local derivative: `ashima-rock-portrait-1200.webp`
 - Exact subject: Ashima Rock at Shilin, photographed from a different, portrait-oriented public view.
@@ -93,7 +110,7 @@ The committed asset set uses Creative Commons files and records every derivative
 - Alt ZH: `从有利的公共观看角度看到的小石林阿诗玛石及周围岩柱。`
 - Alt KO: `소석림의 공개 관람로에서 보기 좋은 각도로 본 아시마 바위와 주변 석주.`
 
-## 6. Material-culture context — documented Shilin Sani embroidery
+## 7. Material-culture context — documented Shilin Sani embroidery
 
 - Local derivative: `shilin-sani-embroidery-1400.webp`
 - Exact subject: one Sani embroidery textile photographed in Shilin County at coordinates recorded on Commons as 24.749439, 103.268112.
@@ -109,12 +126,13 @@ The committed asset set uses Creative Commons files and records every derivative
 - Alt ZH: `在石林县拍摄的一件撒尼刺绣织物细节。`
 - Alt KO: `스린현에서 촬영한 싸니 자수 직물의 세부 모습.`
 
-## Unfilled central-library opportunities
+## Unavailable required asset
 
-Two stronger explanatory photographs remain desirable but are **not** silently substituted:
+One required explanatory photograph remains **UNAVAILABLE — permission/location evidence not closed**:
 
-1. A current onsite geology panel that actually explains bedding, joints, uplift or dissolution. The cleared designation sign above does not fill that scientific-panel role.
-2. A current, accurately identified Geopark Museum or intangible-heritage exhibition about Ashima, with written publication permission. The script graphic and textile detail document language/material culture but do not prove a museum is open.
+1. A current onsite geology panel or formal geology display that actually explains bedding, joints, uplift or dissolution. The cleared designation sign above does not fill that scientific-panel role.
+
+The Stone Forest operator publishes accurate formation diagrams at http://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31434.html, but the page is a digital explanation rather than evidence of an onsite panel, and the site states All Rights Reserved. The Future Also Comes Stone Forest Karst Geology Museum describes a formal karst exhibition at https://www.ynslsdl.com/subsiteIndex/toPage?newsClassId=90&objectId=102&pageType=view&subsiteFlag=ynslsdl&subsiteId=3, but its available images neither show a formation-process panel nor carry a reuse licence. Neither source image is downloaded or substituted. Written publication permission plus exact exhibit identity/location is still required.
 
 Rejected candidate: Wikimedia Commons files titled `Ashima and Ahei (48623620218).jpg` and `阿詩瑪與阿黑 Ashma and Ahei 20191223162741.jpg` depict natural limestone formations, not a sculpture or exhibition. They were visually checked and excluded rather than relabelled.
 
@@ -130,3 +148,4 @@ The Yunnan Intangible Cultural Heritage Protection Centre published accurate pho
 | `ashima-sani-script-1400.webp` | `c1cebe2421c77f2dbd7f8ddbc158e9abd067e572f7c08fa3cb139ea62af64d18` |
 | `ashima-rock-portrait-1200.webp` | `67e4e741f5d1043f801ed150f12fccd9027f15abc78d9c2bafe626443c6d2dc8` |
 | `shilin-sani-embroidery-1400.webp` | `36f4568758fcb16e92ab430d4c527d2cc6f19b60cc526e7806d9289847b15b60` |
+| `ashima-manuscript-display-1050.webp` | `0144e286bc37707fa56e92abe9b28e39c81f11367e7fb2fc4843bbd546d28ede` |

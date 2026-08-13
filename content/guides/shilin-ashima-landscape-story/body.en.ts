@@ -143,6 +143,16 @@ const body = {
         "The Sani Yi name points to a transmission history beyond the best-known Chinese plot and film image.",
     },
     {
+      id: "ashima-manuscript-figure",
+      type: "figure",
+      src: "/images/guides/shilin-ashima-landscape-story/ashima-manuscript-display-1050.webp",
+      alt: "A Yi-script manuscript labelled “Story of Ashima” and “Shilin County” in the Yunnan Nationalities Museum in Kunming.",
+      width: 1050,
+      height: 1400,
+      caption:
+        "The 2011 display label identifies the left manuscript as a Yi-script “Story of Ashima” from Shilin County. It documents a written-transmission and museum-presentation layer, not an original or single authoritative version, and it does not establish that the object remains on view today. Photo: Daderot / Wikimedia Commons, public domain; resized and converted to WebP.",
+    },
+    {
       id: "adaptation-heading",
       type: "heading",
       level: 2,
@@ -394,7 +404,7 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Official, heritage, academic and image sources reviewed on 13 August 2026",
+      title: "Official, heritage, academic and image sources reviewed on 13–14 August 2026",
       items: [
         {
           label: "Shilin UNESCO Global Geopark — geology and current institutional description",
@@ -455,6 +465,12 @@ const body = {
           url: "https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg",
           publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-13",
+        },
+        {
+          label: "Yi-script Story of Ashima display: Daderot, public domain; resized and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-14",
         },
       ],
     },

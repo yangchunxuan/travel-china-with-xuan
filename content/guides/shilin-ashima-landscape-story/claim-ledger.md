@@ -23,6 +23,7 @@ All claims checked: **2026-08-13**
 | UNESCO names an Ashima display in a Geopark Museum | current institutional description | S1 | Source-log only or conditional body wording; no opening promise |
 | Provincial records name a separate Ashima display in a county-town service centre | tourism presentation | S11, S12 | Source-log only; no execution promise |
 | Current evidence does not cross-identify the two halls or confirm access | evidence gap | S1, S11, S12 | Explicitly explain why the route does not rely on either venue |
+| A 2011 Yunnan Nationalities Museum display photograph visibly labels a Yi-script *Story of Ashima* from Shilin County and is public domain | museum presentation / image rights | S13 | Use as evidence of one dated written-transmission display; never promise current display or call it an original or sole authority |
 | A visitor can test the likeness by changing angle rather than assuming a fixed outline | Homeground judgment | S9, S10 | Practical onsite action; obey barriers |
 | Geological panels, where open and current, should be read for process, scale and designation | Homeground judgment | S1, S2 | Conditional; no guaranteed panel |
 | Cultural displays, where open and current, should be read for narrator, medium and version | Homeground judgment | S3–S7 | Conditional; no guaranteed exhibit |
@@ -31,4 +32,3 @@ All claims checked: **2026-08-13**
 | Visitors with only a geology interest can skip the longer cultural reading, while story-focused visitors should keep both Major and Minor observations | Homeground judgment | S1, S3, S8 | Suitability decision, not an official route |
 
 Source IDs refer to `source-log.md` in this directory.
-
