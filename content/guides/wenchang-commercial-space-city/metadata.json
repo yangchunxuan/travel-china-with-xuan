@@ -1,0 +1,23 @@
+{
+  "id": "wenchang-commercial-space-city",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "destination-boundary-guide",
+  "topics": ["wenchang", "commercial-space", "rocket-launch", "hainan"],
+  "destinations": ["china", "hainan", "wenchang", "longlou"],
+  "heroImagePath": "/images/guides/wenchang-commercial-space-city/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wenchang-commercial-space-city/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/wenchang-commercial-space-city/", "title": "Wenchang Space City: Launch Sites and Visitor Boundaries", "headline": "Wenchang Space City: Separate the National Site, Commercial Site and Visitor Boundaries", "description": "Distinguish Wenchang's national launch site, commercial launch center and aerospace development—and verify any visitor arrangement afresh.", "heroAlt": "Historical June 2022 coastal view of Wenchang launch infrastructure from a nearby beach, not evidence of a designated viewing point or current access", "navTitle": "Understand Wenchang's space sites", "featuredLinkLabel": "Separate Wenchang's space sites", "openGraphLocale": "en_US", "cardTags": ["Wenchang", "Commercial space", "Hainan"]},
+    "zh": {"path": "/zh/guides/wenchang-commercial-space-city/", "title": "文昌航天城解读：国家发射场、商业发射场与游客边界", "headline": "文昌航天城：分清国家发射场、商业发射场与游客边界", "description": "分清文昌国家发射场、海南商业航天发射场与航天城开发，并对任何公众访问安排重新核实。", "heroAlt": "2022年6月从附近海滩隔岸拍摄的文昌发射设施历史影像，不代表当前指定观赏点或准入", "navTitle": "读懂文昌航天空间", "featuredLinkLabel": "分清文昌航天空间", "openGraphLocale": "zh_CN", "cardTags": ["文昌", "商业航天", "海南"]},
+    "ko": {"path": "/ko/guides/wenchang-commercial-space-city/", "title": "원창 우주도시: 국가·상업 발사장과 방문 경계", "headline": "원창 우주도시: 국가 발사장, 상업 발사장과 방문 경계 구분하기", "description": "원창의 국가 발사장, 하이난 상업우주발사센터와 우주도시 개발을 구분하고 모든 방문 안내를 최신 공식 자료로 다시 확인합니다.", "heroAlt": "2022년 6월 인근 해변 건너편에서 촬영한 원창 발사 시설의 역사 사진으로 현재 지정 관람점이나 출입의 증거는 아님", "navTitle": "원창 우주 시설 이해하기", "featuredLinkLabel": "원창의 우주 공간 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["원창", "상업우주", "하이난"]}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "china-tiankeng-sinkholes-explained",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "geology-access-explainer",
+  "topics": ["tiankeng", "sinkholes", "karst", "visitor-safety"],
+  "destinations": ["china", "chongqing", "guangxi", "guizhou", "yunnan"],
+  "heroImagePath": "/images/guides/china-tiankeng-sinkholes-explained/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-tiankeng-sinkholes-explained/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/china-tiankeng-sinkholes-explained/", "title": "China’s Tiankeng: Geology, Public Sites and Safety", "headline": "China's Tiankeng: Separate Geology, Public Sites and Wild Sinkholes", "description": "Learn what tiankeng means in geology, how public scenic sites differ from research locations, and what access evidence to check before visiting.", "heroAlt": "Historical November 2009 view into Xiaozhai Tiankeng from its southern rim, not evidence of a current authorized route", "navTitle": "Understand China's tiankeng", "featuredLinkLabel": "Separate tiankeng from wild sinkholes", "openGraphLocale": "en_US", "cardTags": ["Tiankeng", "Karst", "Nature safety"]},
+    "zh": {"path": "/zh/guides/china-tiankeng-sinkholes-explained/", "title": "中国天坑：地质、公众景区与安全", "headline": "中国天坑：分清地质概念、公众景区与野外地点", "description": "理解地质学中的天坑，分清正式公众景区与科研发现点，并在访问前核对当期路线和安全信息。", "heroAlt": "2009年11月从小寨天坑南缘拍摄的历史影像，不代表今天已有获准游览路线", "navTitle": "理解中国天坑", "featuredLinkLabel": "分清天坑与野外落水洞", "openGraphLocale": "zh_CN", "cardTags": ["天坑", "喀斯特", "自然安全"]},
+    "ko": {"path": "/ko/guides/china-tiankeng-sinkholes-explained/", "title": "중국 톈컹: 지질·공개 관광지·안전", "headline": "중국 톈컹: 지질 개념과 공개 관광지, 야생지를 구분하는 법", "description": "지질학에서 톈컹이 무엇인지 이해하고 공개 관광지와 연구 발견지를 구분한 뒤 방문 전 최신 경로와 안전 정보를 확인합니다.", "heroAlt": "2009년 11월 샤오자이 톈컹 남쪽 가장자리에서 촬영한 역사 사진으로 현재 승인된 관람 경로의 증거는 아님", "navTitle": "중국 톈컹 이해하기", "featuredLinkLabel": "톈컹과 야생 싱크홀 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["톈컹", "카르스트", "자연안전"]}
+  }
+}

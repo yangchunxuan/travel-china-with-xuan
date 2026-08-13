@@ -1,0 +1,23 @@
+{
+  "id": "grand-canal-everyday-urban-history",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "living-heritage-field-guide",
+  "topics": ["grand-canal", "urban-history", "markets", "living-heritage"],
+  "destinations": ["china", "beijing", "jiangsu", "zhejiang", "hangzhou"],
+  "heroImagePath": "/images/guides/grand-canal-everyday-urban-history/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/grand-canal-everyday-urban-history/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/grand-canal-everyday-urban-history/", "title": "The Grand Canal Today: Waterways and City Life", "headline": "The Grand Canal Today: Working Waterways and Everyday City Life", "description": "Separate protected heritage, working waterways and neighbourhood life, then choose a public section where their relationship is visible.", "heroAlt": "Gongchen Bridge, Grand Canal water and riverside public space in Hangzhou, photographed in November 2023", "navTitle": "Read life along the Grand Canal", "featuredLinkLabel": "Read the Grand Canal today", "openGraphLocale": "en_US", "cardTags": ["Grand Canal", "Urban history", "Living heritage"]},
+    "zh": {"path": "/zh/guides/grand-canal-everyday-urban-history/", "title": "今天的大运河：水路与城市生活", "headline": "今天的大运河：从水路、桥梁与街区读城市生活", "description": "分清世界遗产、仍在运行的水道与今天的街区生活，再选择能看见三者关系的公共河段。", "heroAlt": "2023年11月拍摄的杭州拱宸桥、大运河水面与滨水公共空间", "navTitle": "读懂大运河沿线生活", "featuredLinkLabel": "理解今天的大运河", "openGraphLocale": "zh_CN", "cardTags": ["大运河", "城市史", "活态遗产"]},
+    "ko": {"path": "/ko/guides/grand-canal-everyday-urban-history/", "title": "오늘의 대운하: 물길과 도시 생활", "headline": "오늘의 대운하: 물길·다리·동네로 도시 생활 읽기", "description": "세계유산, 지금도 작동하는 수로와 오늘의 동네 생활을 구분하고 세 관계가 함께 보이는 공개 구간을 고릅니다.", "heroAlt": "2023년 11월 촬영한 항저우 궁천교와 대운하 물길, 수변 공공 공간", "navTitle": "대운하의 도시 생활 읽기", "featuredLinkLabel": "오늘의 대운하 이해하기", "openGraphLocale": "ko_KR", "cardTags": ["대운하", "도시사", "생활유산"]}
+  }
+}

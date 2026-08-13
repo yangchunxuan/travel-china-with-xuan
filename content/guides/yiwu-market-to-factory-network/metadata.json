@@ -1,0 +1,23 @@
+{
+  "id": "yiwu-market-to-factory-network",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "urban-economic-field-guide",
+  "topics": ["yiwu", "commodity-market", "manufacturing-network", "urban-economy"],
+  "destinations": ["china", "zhejiang", "yiwu", "jinhua"],
+  "heroImagePath": "/images/guides/yiwu-market-to-factory-network/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yiwu-market-to-factory-network/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "relationship", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/yiwu-market-to-factory-network/", "title": "Yiwu Market: Booths, Traders and Factory Claims", "headline": "Yiwu Beyond the Market: Separate Booths, Traders and Production Claims", "description": "Understand the roles behind Yiwu's product displays without treating a booth as proof of a factory or an old directory as current guidance.", "heroAlt": "Product displays inside Yiwu International Trade Mart in August 2014, not evidence of the current district, booth or market layout", "navTitle": "Understand Yiwu's trading network", "featuredLinkLabel": "Read Yiwu beyond the market", "openGraphLocale": "en_US", "cardTags": ["Yiwu", "Commodity market", "Urban economy"]},
+    "zh": {"path": "/zh/guides/yiwu-market-to-factory-network/", "title": "义乌不只是市场：商位、贸易商与生产声明", "headline": "义乌市场之外：分清商位、贸易商与生产声明", "description": "理解义乌商品陈列背后的不同角色，不把商位当成工厂证明，也不把旧目录当成当前指引。", "heroAlt": "2014年8月义乌国际商贸城内的商品陈列，不代表当前市场区、商位或布局", "navTitle": "理解义乌贸易网络", "featuredLinkLabel": "从市场之外理解义乌", "openGraphLocale": "zh_CN", "cardTags": ["义乌", "小商品市场", "城市经济"]},
+    "ko": {"path": "/ko/guides/yiwu-market-to-factory-network/", "title": "이우 시장 너머: 점포·무역업체·생산 주장", "headline": "이우 시장 너머: 점포와 무역업체, 생산 주장을 구분하는 법", "description": "이우 상품 전시 뒤의 여러 역할을 이해하되 점포를 공장 증거로, 오래된 안내를 현재 정보로 보지 않습니다.", "heroAlt": "2014년 8월 이우 국제상무성 내부 상품 전시로 현재 구역·점포·시장 배치의 증거는 아님", "navTitle": "이우 무역 네트워크 이해하기", "featuredLinkLabel": "시장 너머의 이우 읽기", "openGraphLocale": "ko_KR", "cardTags": ["이우", "소상품시장", "도시경제"]}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "chengdu-greenway-city-ring",
+  "type": "planning",
+  "pillar": "destinations",
+  "audienceMarkets": ["global"],
+  "format": "urban-infrastructure-field-guide",
+  "topics": ["chengdu", "greenway", "cycling", "urban-life"],
+  "destinations": ["china", "sichuan", "chengdu"],
+  "heroImagePath": "/images/guides/chengdu-greenway-city-ring/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-greenway-city-ring/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {"section": "explore", "family": "relationship", "primaryIntent": "plan"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {"path": "/guides/chengdu-greenway-city-ring/", "title": "Chengdu Ring Greenway: How to Choose a Section", "headline": "How to Choose a Chengdu Ring Greenway Section", "description": "Choose a manageable section of Chengdu's ring greenway, connect it to transit and neighbourhood life, and keep a practical exit plan.", "heroAlt": "A section of Chengdu's city-ring greenway near Jincheng Lake, photographed in March 2022", "navTitle": "Choose a Chengdu greenway section", "featuredLinkLabel": "Read Chengdu through its greenway", "openGraphLocale": "en_US", "cardTags": ["Chengdu", "Greenway", "Urban life"]},
+    "zh": {"path": "/zh/guides/chengdu-greenway-city-ring/", "title": "成都环城绿道：如何选择一段适合自己的路线", "headline": "成都环城绿道怎么选：按体力、交通与观察重点决定", "description": "选择一段长度合适的成都环城绿道，连接公共交通与社区，并提前安排途中退出点。", "heroAlt": "2022年3月拍摄的成都锦城湖附近环城绿道路段", "navTitle": "选择成都绿道路段", "featuredLinkLabel": "沿绿道读懂成都", "openGraphLocale": "zh_CN", "cardTags": ["成都", "绿道", "城市生活"]},
+    "ko": {"path": "/ko/guides/chengdu-greenway-city-ring/", "title": "청두 순환 녹도: 구간 고르는 법", "headline": "청두 순환 녹도 구간을 고르는 법", "description": "체력과 관심사에 맞는 청두 순환 녹도 구간을 고르고 대중교통 연결과 중간 출구까지 준비합니다.", "heroAlt": "2022년 3월 촬영한 청두 진청호 인근 순환 녹도 구간", "navTitle": "청두 녹도 구간 고르기", "featuredLinkLabel": "녹도로 청두 읽기", "openGraphLocale": "ko_KR", "cardTags": ["청두", "녹도", "도시생활"]}
+  }
+}

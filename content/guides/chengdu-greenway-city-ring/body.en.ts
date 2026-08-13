@@ -1,0 +1,64 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {schemaVersion:"1.0.0",blocks:[
+  {id:"lead",type:"lead",text:"Chengdu's city-ring greenway is easy to mistake for one scenic cycling attraction. It is better understood as metropolitan infrastructure within the much larger Tianfu Greenway system, linking ecological space, parks, roads, communities and transport. Government sources describe the city-ring greenway as roughly 100 kilometres; a 96-kilometre course reported for a 2026 event was an event route, not a new official length or a standard visitor itinerary. Most visitors will learn more by choosing one well-connected section than by trying to complete the ring."},
+  {id:"answer",type:"callout",title:"The short answer",body:"Choose a section with a confirmed entry, surface and exit; begin near public transport; and save a second exit halfway. Homeground uses 4–8 kilometres for a walk and 8–20 kilometres for a ride as practical planning ranges—not official route categories, limits or safety guarantees. Recheck bicycle rental, food, lighting, maintenance and access before setting out.",tone:"decision"},
+  {id:"layers-heading",type:"heading",level:2,text:"Separate the ring from the wider greenway system"},
+  {id:"layers",type:"table",caption:"Three spatial layers",columns:["Layer","What it is","Visitor use","Mistake to avoid"],rows:[
+    ["Tianfu Greenway system","A broad metropolitan and regional greenway network with ecological, recreational and urban functions.","Context for how many different corridors and parks relate.","Assuming every ‘Tianfu Greenway’ pin lies on the city ring."],
+    ["City-ring greenway","The roughly 100-kilometre greenway reported complete by government sources. A 2026 sporting event used a separate 96-kilometre course.","Choose a section or, for trained riders, research a separately supported circuit.","Treating an infrastructure length or one event course as a tourist obligation or permanent route."],
+    ["Park and neighbourhood connectors","Short paths, entrances and local streets that link the ring to daily life and transport.","Often the most useful layer for walking, food, rest and exit.","Thinking a green line on a map is a continuous protected cycle lane to a metro door."]
+  ]},
+  {id:"mechanism-heading",type:"heading",level:2,text:"Choose a segment by what you want to observe"},
+  {id:"mechanism",type:"table",caption:"Segment-selection mechanism",columns:["Question","Look for","Trade-off","Good stopping point"],rows:[
+    ["How does the ring meet dense urban Chengdu?","A confirmed segment with public-transport access and a neighbourhood street connection.","More crossings, activity and possible detours.","A metro or major transit connection saved in advance."],
+    ["How does it support ecological space?","A park, wetland or water corridor with current public paths.","Fewer services and more exposure to sun, rain or mosquitoes.","A staffed park entrance or known road access."],
+    ["How do residents use it?","A section with community entrances, exercise spaces and mixed walking/cycling use.","Busy periods require slower, more courteous movement.","A neighbourhood centre reached without crossing restricted land."],
+    ["I mainly want a ride","A continuous section with confirmed surface, entry, exit and bike arrangements.","A pleasant route can still be too long for heat, humidity or an unfamiliar bicycle.","A midpoint exit that works even if the final segment is closed." ]
+  ]},
+  {id:"map-heading",type:"heading",level:2,text:"Build a four-pin map, not one route line"},
+  {id:"map",type:"list",items:["Pin A: the exact public entry, including which side of a road, park or bridge it occupies.","Pin B: the planned midpoint and first safe decision point.","Pin C: the intended exit linked to confirmed onward transport.","Pin D: an earlier bailout reached without crossing a fence, expressway, construction zone or water channel.","Save the Chinese names and screenshots offline; overseas maps can misalign with local Chinese mapping coordinates.","Check elevation, surface and crossing notes where available, but treat crowds, maintenance and flooding as live conditions."]},
+  {id:"mode-heading",type:"heading",level:2,text:"Walking and cycling answer different questions"},
+  {id:"mode",type:"comparison",title:"Homeground planning ranges—not official categories",columns:[
+    {heading:"Walk 4–8 kilometres",items:["Best for: Reading entrances, public space, planting, crossings and neighbourhood transitions.","Main risk: A distant exit feels deceptively close on a schematic map.","Requirement: Shade/rest plan and a road-connected exit."]},
+    {heading:"Ride 8–20 kilometres",items:["Best for: Comparing several landscapes and understanding the scale of the ring.","Main risk: Bike fit, mixed users, heat, mechanical trouble and an unverified return point.","Requirement: Confirmed bicycle source and return rules, helmet, lights if relevant, water and two exits."]}
+  ]},
+  {id:"rhythm-heading",type:"heading",level:2,text:"A half-day urban-infrastructure route"},
+  {id:"rhythm",type:"list",items:["Start after checking the day's heat, rain, air and storm notices; avoid making exposed riding the middle of severe weather.","Enter from a verified public-transport or road interface and spend ten minutes reading signs, user separation and park rules.","First third: observe how the greenway crosses or avoids roads and how people enter from surrounding districts.","Middle third: choose one ecological or park section and note water, shade, habitat protection and maintenance boundaries.","At the midpoint, decide using energy, weather and exit status—not the desire to complete the line on an app.","Final third: leave through a neighbourhood connector, slow down around walkers and children, and compare greenway activity with the ordinary street.","Finish at the saved transit point. Do not improvise a shortcut through closed landscaping or a highway edge."]},
+  {id:"life-heading",type:"heading",level:2,text:"What to read as urban life"},
+  {id:"life",type:"list",items:["Who can reach the path easily: adjacent residents, metro users, drivers or organized riders?","Where do exercise, rest, vending and informal social activity cluster—and where are they absent?","How do bridges, ramps and crossings distribute fast and slow users?","Which plantings or wet areas are designed for looking, and which have barriers that protect habitat?","How does maintenance appear: drainage, repaired surface, detours, litter control and staff presence?","Does the route connect to ordinary food and services, or does it create an isolated leisure corridor?","Observe patterns at one time and date only; do not turn a weekend morning into ‘how Chengdu always lives’." ]},
+  {id:"scenarios-heading",type:"heading",level:2,text:"Three traveller scenarios"},
+  {id:"scenarios",type:"table",caption:"Match ambition to conditions",columns:["Traveller","Plan","Decision rule"],rows:[
+    ["First-time Chengdu visitor with half a day","Walk a metro-linked urban-to-park segment and exit into a neighbourhood.","Keep the greenway only if it adds a different view from city-centre parks."],
+    ["Regular cyclist","Arrange a reliable bicycle and support, then select a longer continuous section or a fully researched circuit.","Abort the full loop if weather, surface, access or remaining daylight fails the pre-set threshold."],
+    ["Family or traveller with variable stamina","Use one park-adjacent entry, a short out-and-back or two road-connected exits, and scheduled rest.","Turn back at the first fatigue signal; completion adds no informational value." ]
+  ]},
+  {id:"rules-heading",type:"heading",level:2,text:"Rules and shared-space conduct"},
+  {id:"rules",type:"list",items:["Follow current signs and staff direction; a 2023 consultation draft or old event rule is not necessarily the rule in force today.","Use the marked side or lane where separation exists and reduce speed in mixed space.","Do not enter habitat buffers, maintenance roads, farm plots or closed construction sections.","Keep sound low, control children and pets under the current local rules, and carry waste out when bins are full.","Ask before photographing identifiable users closely; public exercise is not a performance.","Do not assume an organized race route, temporary detour or online GPX track is legal and open on an ordinary day."]},
+  {id:"failure-heading",type:"heading",level:2,text:"If conditions change"},
+  {id:"failure",type:"table",caption:"Adjust the outing without forcing the distance",columns:["Change","What to do","What remains useful"],rows:[
+    ["Heavy rain, lightning or dangerous heat","Use the nearest saved road-connected exit; move the urban observation to covered neighbourhood or metro space.","How the greenway connects—or fails to connect—to everyday transport."],
+    ["Section closed or flooded","Follow the signed detour only if it reaches the planned exit; otherwise leave and choose a short park segment elsewhere.","Maintenance and water management are part of the infrastructure story."],
+    ["Rental unavailable or bicycle unsuitable","Walk a shorter entry-to-neighbourhood section or use a confirmed commercial rental outside the greenway.","The ring can be read without riding."],
+    ["Fatigue or mechanical problem","Stop at Pin B or D, stay with the bike under the provider's rules and use confirmed pickup/return help.","Good planning is visible in the exit, not in a completed distance." ]
+  ]},
+  {id:"verify-heading",type:"heading",level:2,text:"Final verification checklist"},
+  {id:"verify",type:"list",items:["Exact current segment, entry side and two lawful exits","Current official/park notices for maintenance, flooding and events","Weather and daylight across the whole outing","Confirmed bicycle source, fit, return boundary and support contact","Water, sun/rain protection and any necessary lights","Chinese map pins checked for coordinate mismatch","No assumption of continuous services, food, lighting or mobile signal","A public-transport or road-connected bailout before the endpoint"]},
+  {id:"help",type:"callout",title:"Want a greenway segment that adds to your Chengdu trip?",body:"Tell Homeground your base, walking or cycling comfort and what you want to read—neighbourhood life, wetland design, metropolitan scale or ordinary recreation. A real planner can recheck a manageable segment and exits without turning the ring into an endurance badge.",tone:"neutral"},
+  {id:"links",type:"internal-links",title:"Connect the city context",items:[
+    {label:"Choose between Chengdu Panda Base and Panda Valley",href:"/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"Keep animal visits and the greenway as separate, realistic urban tasks."},
+    {label:"Understand China's map-coordinate offset",href:"/guides/china-map-coordinate-offset-explained/",description:"Protect exact greenway entries and exits from mismatched pins."},
+    {label:"Check China's public-holiday calendar",href:"/guides/china-public-holidays-travel-calendar/",description:"Anticipate higher leisure pressure without claiming a guaranteed crowd level."}
+  ]},
+  {id:"sources",type:"sources",title:"Official and independent sources",items:[
+    {label:"Hero image — Chengdu Greenway, photographed 2022-03-12; coordinates support a Chengdu city-ring/Jincheng Greenway section, not current access or services",url:"https://commons.wikimedia.org/wiki/File:Chengdu_Greenway.jpg",publisher:"MspreilsCN — CC0; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},
+    {label:"Hero image licence — CC0 1.0 Universal",url:"https://creativecommons.org/publicdomain/zero/1.0/",publisher:"Creative Commons",reviewedAt:"2026-08-13"},
+    {label:"Chengdu city-ring greenway completion",url:"https://cds.sczwfw.gov.cn/art/2021/2/1/art_15395_140788.html",publisher:"Chengdu Municipal Government Service",reviewedAt:"2026-08-13"},
+    {label:"Tianfu Greenway public-space role",url:"https://www.forestry.gov.cn/c/www/gggddt/656810.jhtml",publisher:"National Forestry and Grassland Administration",reviewedAt:"2026-08-13"},
+    {label:"2026 reporting on a 96-kilometre event course",url:"https://www.sport.gov.cn/n20001280/n20001265/n20067706/c29545336/content.html",publisher:"General Administration of Sport of China",reviewedAt:"2026-08-13"},
+    {label:"Chengdu greenway management consultation",url:"https://www.sc.gov.cn/10462/10464/10465/10595/2023/11/24/17545ce268bc418c9ec6219053899897.shtml",publisher:"Sichuan Provincial Government",reviewedAt:"2026-08-13"},
+    {label:"Greenway accessibility and use research",url:"https://www.mdpi.com/2071-1050/16/14/6185",publisher:"Sustainability",reviewedAt:"2026-08-13"}
+  ]}
+]} as const satisfies StructuredPageBody;
+
+export default body;
