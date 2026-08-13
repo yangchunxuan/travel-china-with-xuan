@@ -1,0 +1,64 @@
+{
+  "id": "how-to-read-a-chinese-sponge-city",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "public-realm-field-guide",
+  "topics": [
+    "sponge-city",
+    "urban-rainwater",
+    "rain-gardens",
+    "permeable-pavement",
+    "urban-wetlands",
+    "public-space-reading"
+  ],
+  "destinations": ["china", "shanghai", "suzhou"],
+  "heroImagePath": "/images/guides/how-to-read-a-chinese-sponge-city/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/how-to-read-a-chinese-sponge-city/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "sourceReviewedDate": "2026-08-13",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/how-to-read-a-chinese-sponge-city/",
+      "title": "How to Read a Chinese Sponge City After Rain",
+      "headline": "How to Read a Chinese Sponge City After Rain",
+      "description": "Trace rain through gardens, paving, wetlands and drains, then test the rainfall, soil, maintenance and system limits behind what you see.",
+      "heroAlt": "A planted rain garden beside a path in Shanghai's Huaxia Park",
+      "navTitle": "Read a Chinese sponge city",
+      "featuredLinkLabel": "Read a sponge city after rain",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Sponge city", "Urban ecology", "Field guide"]
+    },
+    "zh": {
+      "path": "/zh/guides/how-to-read-a-chinese-sponge-city/",
+      "title": "雨后如何读懂一座中国海绵城市",
+      "headline": "雨后如何读懂一座海绵城市",
+      "description": "沿着雨水经过雨水花园、透水铺装、湿地与管网的路径观察，并判断降雨、土壤、维护和排水系统如何改变效果。",
+      "heroAlt": "上海华夏公园步道旁种有植物的雨水花园",
+      "navTitle": "读懂海绵城市",
+      "featuredLinkLabel": "雨后读懂海绵城市",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["海绵城市", "城市生态", "现场观察"]
+    },
+    "ko": {
+      "path": "/ko/guides/how-to-read-a-chinese-sponge-city/",
+      "title": "비 온 뒤 중국 스펀지 도시를 읽는 법",
+      "headline": "비 온 뒤 스펀지 도시를 읽는 법",
+      "description": "빗물정원, 투수 포장, 습지와 배수망으로 이어지는 물길을 따라가며 강우·토양·관리·배수 조건이 성능을 어떻게 바꾸는지 살펴봅니다.",
+      "heroAlt": "상하이 화샤공원 산책로 옆 식재형 빗물정원",
+      "navTitle": "스펀지 도시 읽기",
+      "featuredLinkLabel": "비 온 뒤 스펀지 도시 읽기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["스펀지 도시", "도시 생태", "현장 읽기"]
+    }
+  }
+}
