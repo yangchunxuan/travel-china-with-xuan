@@ -291,11 +291,24 @@ export function getSearchCollection(id: SearchCollectionId) {
 
 export function getGuideCollectionId(guide: GuideEntry): SearchCollectionId {
   const override = guideCollectionOverrides[guide.id];
-  if (override) return override;
-  if (byId.has(guide.pillar as SearchCollectionId)) {
-    return guide.pillar as SearchCollectionId;
+  const collectionId = override ?? (
+    byId.has(guide.pillar as SearchCollectionId)
+      ? guide.pillar as SearchCollectionId
+      : null
+  );
+
+  if (!collectionId) {
+    throw new Error(`Guide ${guide.id} has no reviewed search collection assignment.`);
   }
-  throw new Error(`Guide ${guide.id} has no reviewed search collection assignment.`);
+
+  const collection = getSearchCollection(collectionId);
+  if (guide.search && guide.search.section !== collection.section) {
+    throw new Error(
+      `Guide ${guide.id} is classified in section ${guide.search.section} but its reviewed collection ${collection.id} belongs to ${collection.section}.`,
+    );
+  }
+
+  return collectionId;
 }
 
 export function getSearchCollectionPath(
