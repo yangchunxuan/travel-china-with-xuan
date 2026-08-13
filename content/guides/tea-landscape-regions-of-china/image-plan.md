@@ -1,4 +1,4 @@
-# Image plan — A4 `tea-landscape-regions-of-china`
+# Image plan — tea-landscape-regions-of-china
 
 Status: **HERO SELECTED AND PROCESSED — SUPPORTING COMPARISON ASSETS REMAIN OPTIONAL.**
 
@@ -6,7 +6,7 @@ Status: **HERO SELECTED AND PROCESSED — SUPPORTING COMPARISON ASSETS REMAIN OP
 
 - Published derivative: `public/images/guides/tea-landscape-regions-of-china/hero-1600.webp`.
 - Original: `/Users/yangchunxuan/Desktop/Facebook图片素材/杭州优选素材/04_龙井梅家坞与茶文化/梅家坞茶园1.jpg` (7507 × 5007).
-- Place record: the owner-organised local library labels the photograph as Meijiawu tea garden, Hangzhou. The library record does not preserve a separately verified photographer, capture date, GPS point or named production plot, so the caption must retain that level of uncertainty.
+- Place record: the owner-organised local library labels the photograph as Meijiawu tea garden, Hangzhou. It does not preserve a separately verified photographer, capture date, GPS point or named production plot, so the caption must retain that uncertainty.
 - Rights basis: the project owner supplied the organised `Facebook图片素材` library and authorised its use on the Homeground website on 2026-08-10. This records project-use permission; it is not an independent claim about third-party authorship.
 - Source SHA-256: `726245fb58cd36fefc8fe16ec078fe993fea31bc60753e11822a7fa511519486`.
 - Processing: conventional centred crop from 7507 × 5007 to 7504 × 4690, then Lanczos resize to 1600 × 1000 and RGB WebP export without EXIF, GPS or device metadata. No scene element was added, removed or generated.
@@ -20,23 +20,8 @@ Status: **HERO SELECTED AND PROCESSED — SUPPORTING COMPARISON ASSETS REMAIN OP
 - KO caption: “홈그라운드 자료실에서 항저우 메이자우 차밭으로 표시된 사진으로, 차나무와 보행로, 나무 수관이 보인다. 촬영자와 촬영일은 별도 기록이 없다. 일반적인 자르기와 크기 조정만 했으며, 모든 차 산지나 제다 방식을 대표하지 않는다.”
 - Caption boundary: identify it as one Meijiawu landscape context only. Do not call it Jingmai old tea forest, use it to represent all four regions, or infer origin and processing claims from appearance.
 
-## Supporting photographs
+## Optional supporting set
 
-| Object | Exact place needed | Evidence value | Rights/status |
-| --- | --- | --- | --- |
-| Manual Longjing pan-firing | Named producer or authorized heritage demonstration inside the documented West Lake Longjing production context | Shows a named processing stage, not generic tea ceremony | Obtain producer, demonstrator and photographer permission; record whether leaves are production or practice material |
-| Wuyi garden and processing pair | Same named Wuyishan producer or institution: one garden frame and one withering/leaf-handling/roasting frame | Connects terrain to processing | Written operator and photographer permission; no claim that a scenic-area photo proves tea origin |
-| Jingmai landscape components | One authorized old tea forest plus a management map or plaque | Allows forest–village–plantation distinction | UNESCO nomination image 200164 is attribution + NoDerivatives and cannot be cropped; use only unchanged if central accepts that condition, otherwise commission local reporting |
-| Anhua Qianliang stage | Named workshop showing packing, treading/compression or binding, with the exact step captioned | Prevents the finished cylinder from standing in for the whole process | Workshop, identifiable workers and photographer permission required |
-| Route/factory evidence | A labelled surviving path, documented historic factory element or management display in Anhua | Supports production-and-trade chain | Management permission and an evidence caption distinguishing original, repaired and modern interpretation |
+Use separately cleared, precisely identified photographs only: a named Longjing pan-firing demonstration; a same-producer Wuyi garden/processing pair; an authorised Jingmai forest-management context; and a named Anhua Qianliang production stage. Generic terraces, shop displays, AI documentary scenes and scraped social images are excluded.
 
-## Exclusions
-
-- No generic green terraces as proof of Longjing, Wuyi, Jingmai or Anhua.
-- No shop display as evidence of origin.
-- No AI documentary landscape, staged “tea farmer,” scraped social post or unlicensed UNESCO/ICH slideshow image.
-- Do not identify a tea variety, processing stage or historic building from appearance alone.
-
-## Keep as HTML
-
-The four-region choice matrix, five-step field sequence, evidence boundary and fallback logic must remain accessible HTML tables/lists. They are updateable facts, not infographics.
+The four-region matrix, field sequence and evidence boundary remain accessible HTML, not an infographic.
