@@ -135,7 +135,7 @@ const body = {
     {
       id: "sanwei-caution",
       type: "paragraph",
-      text: "유명한 ‘자오(早, 일찍)’ 글자 책상은 한 단계 더 확인해야 한다. 저장성 문화관광 당국의 2024년 보도는 이 이야기와 연결해 귀속된 책상이 수장고에서 전시 공간으로 옮겨졌다고 밝혔다. 이는 그 날짜의 기관 귀속과 전시를 확인할 뿐, 완전한 전래 경위나 상설 전시를 보장하지 않으며 모든 자국을 곧바로 루쉰의 친필로 입증하지도 않는다. 현장에 있다면 현재 캡션의 표현을 그대로 읽고, 허용될 경우 설명 전체를 찍자. 교체 전시로 빠졌더라도 싼웨이수우의 교육 현장성은 사라지지 않는다. 다른 책상을 대신 지목하지 말자."
+      text: "유명한 ‘자오(早, 일찍)’ 글자 책상은 한 단계 더 확인해야 한다. 저장성 문화관광 당국의 2024년 보도와 기념관 직원 인터뷰는 기관이 원물로 귀속한 책상이 보존을 위해 싼웨이수우에서 철수되어 수장고를 거친 뒤 기념관에 전시됐다고 설명한다. 그러나 이후 보도는 싼웨이수우에 보이는 책상의 원물·복제품 지위를 항상 분명히 구분하지 않는다. 현재 물건, 캡션과 위치는 여전히 현장에서 확인해야 한다. 책상이 있다면 정확한 문구를 읽고 허용될 때 설명 전체를 찍자. 귀속 원물이 교체 전시로 빠졌더라도 교육 현장성은 남는다. 다른 책상을 대신 지목하지 말자."
     },
     {
       id: "new-taimen-heading",
@@ -184,10 +184,10 @@ const body = {
       id: "baicao-figure",
       type: "figure",
       src: "/images/guides/luxun-shaoxing-literary-walk/baicao-garden-1600.webp",
-      alt: "장소 표지석과 현재 재배 구획이 보이는 사오싱 루쉰 고거 뒤 바이차오위안.",
+      alt: "사오싱 루쉰 고거 관람 구역 안에서 ‘바이차오위안(百草園)’ 이름이 보이는 정원 문.",
       width: 1600,
       height: 1067,
-      caption: "정원은 산문에 기억된 실제 장소다. 현재 식재와 관람 조경은 루쉰 어린 시절의 식물 목록이 아니다."
+      caption: "이름 표지는 산문 속 기억과 연결된 실제 정원을 식별하지만, 문의 연대나 루쉰 어린 시절의 시야를 입증하지는 않는다."
     },
     {
       id: "baicao-method",
@@ -242,7 +242,7 @@ const body = {
     {
       id: "fiction-boundary",
       type: "paragraph",
-      text: "현재 사오싱 관광 자료는 「쿵이지」와의 연관으로 셴헝주뎬을 소개하고, 저장성 문화관광 당국의 2025년 보도는 더 넓은 구역에 새 문학 IP 상점과 장면이 조성되었다고 기록한다. 이 층위는 현대 기능대로 즐기면 된다. 상점에 조성 날짜나 해설이 있는지 보고, 문장과 인물이 어떻게 관광 소비로 바뀌는지 살핀다. 현재 내부를 소설 주점의 원형이라 부르거나 조각을 실제 인물의 초상으로 부르지 말자. 식사 예약도 핵심 문학 산책의 조건이 아니다. 문을 닫았거나 붐비면 외관만 보거나 건너뛰어도 앞의 생활·문학 읽기는 완결된다."
+      text: "현재 사오싱 관광 자료는 「쿵이지」와의 연관으로 셴헝주뎬을 소개한다. 호텔이 2025년에 공개한 자체 연혁은 1981년 영업을 재개했고, 이후 확장 때 운영자가 ‘堂吃’이라고 부르는 홀 식사 구역은 남겼지만 나머지는 철거·재건했다고 적는다. 운영자 자기 서술이므로 독립적인 보존 조사로 볼 수는 없지만, 현재 단지 전체가 청말 모습 그대로라는 주장은 배제할 수 있다. 저장성 당국의 2025년 보도는 인근의 새 문학 IP 상점과 장면도 기록한다. 조성 날짜와 해설을 살피되 현재 내부를 소설 주점의 원형이나 조각을 실제 인물의 초상으로 부르지 말자. 문을 닫았거나 붐비면 건너뛰어도 앞의 생활·문학 읽기는 완결된다."
     },
     {
       id: "walk-heading",
@@ -357,10 +357,12 @@ const body = {
         {"label": "신타이먼 매각·개조와 잔존부", "url": "https://sxzx.sx.gov.cn/art/2011/7/13/art_1486822_17724937.html", "publisher": "사오싱시 정협", "reviewedAt": "2026-08-13"},
         {"label": "2003년 보존·기념관 사업사", "url": "https://www.zjds.org.cn/sx/37464.jhtml", "publisher": "저장성 당사·문헌 연구기관", "reviewedAt": "2026-08-13"},
         {"label": "차단 시설 변경과 ‘早’ 이야기 귀속 책상 전시", "url": "https://ct.zj.gov.cn/art/2024/3/20/art_1652992_59019865.html", "publisher": "저장성 문화광전여유청", "reviewedAt": "2026-08-13"},
+        {"label": "기념관 직원이 설명한 ‘早’ 책상의 보존과 2024년 전시", "url": "https://www.chinanews.com.cn/sh/2024/04-10/10196078.shtml", "publisher": "중국신문사", "reviewedAt": "2026-08-14"},
         {"label": "「바이차오위안에서 싼웨이수우까지」 원문", "url": "https://www.chinawriter.com.cn/news/2013/2013-02-06/153980.html", "publisher": "중국작가망·중국작가협회", "reviewedAt": "2026-08-13"},
         {"label": "『아침 꽃을 저녁에 줍다』의 회고 글쓰기", "url": "https://www.chinawriter.com.cn/n1/2022/0428/c419384-32410615.html", "publisher": "중국작가망·중국작가협회", "reviewedAt": "2026-08-13"},
         {"label": "「쿵이지」 원문과 발표 맥락", "url": "https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html", "publisher": "중국작가망·중국작가협회", "reviewedAt": "2026-08-13"},
         {"label": "현재 셴헝 관광 연출", "url": "https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html", "publisher": "사오싱 문화관광 당국", "reviewedAt": "2026-08-13"},
+        {"label": "셴헝주뎬 운영자 연혁: 1981년 재개업과 이후 일부 보존·나머지 재건", "url": "https://www.xianheng.com/index.php?a=show&c=index&catid=151&id=1&m=content", "publisher": "셴헝주뎬", "reviewedAt": "2026-08-14"},
         {"label": "2025년 문학 IP 구역 연출", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html", "publisher": "저장성 문화광전여유청", "reviewedAt": "2026-08-14"},
         {"label": "공식 1·2·3시간 코스 페이지; 현재 시간표가 아닌 날짜가 지난 방향 참고 자료", "url": "https://sxlxmuseum.com/gcyx.htm", "publisher": "사오싱 루쉰 고향·선위안 관광지", "reviewedAt": "2026-08-14"},
         {"label": "2026년 2월 특정 연휴의 개방 조정·예약 공지", "url": "https://www.thepaper.cn/newsDetail_forward_32587318", "publisher": "관광지 공지를 전재한 펑파이뉴스", "reviewedAt": "2026-08-13"},
@@ -368,7 +370,7 @@ const body = {
         {"label": "본문 이미지: Gisling의 라오타이먼 입구; 크롭, CC BY 3.0", "url": "https://commons.wikimedia.org/wiki/File:Ancestral_home_of_Luxun.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "본문 이미지: Yumeto의 싼웨이수우; 크롭, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Sanwei_Shuwu.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "본문 이미지: 猫猫的日记本의 신타이먼 서쪽 축 건물; 크롭, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Former_Residence_of_Lu_Xun_in_Shaoxing_01_2018-09.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
-        {"label": "본문 이미지: Yumeto의 바이차오위안; 크롭, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Baicao_Yuan.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
+        {"label": "본문 이미지: Yiwen122의 바이차오위안 정문; 인물이 없는 크롭, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Baicao_garden.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "본문 이미지: Huanokinhejo의 사오싱 루쉰기념관; 크롭, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Lu_Xun_memorial,_Shaoxing.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "본문 이미지: Amarespeco의 셴헝주뎬; 크롭, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%92%B8%E4%BA%A8%E9%85%92%E5%BA%972017.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "크롭 편집본에 적용되는 CC BY-SA 4.0 라이선스", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-13"},

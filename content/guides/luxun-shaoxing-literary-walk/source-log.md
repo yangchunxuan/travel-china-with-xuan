@@ -29,6 +29,8 @@ The source set was assembled on `2026-08-13`; central review rechecked the direc
 | 9 | [China Writers Association — *Kong Yiji*](https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html) | Authoritative literary text / literature | Short-story genre, 1919 publication, fictional character and Lu Town tavern | The story cannot certify a historical Kong Yiji or the current hotel's material history |
 | 10 | [Shaoxing culture authority — current Xianheng framing](https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html) | Local authority / tourism-presentation | How the present destination markets Xianheng and the Kong Yiji association | Marketing proves current presentation, not a continuous original interior or historical fictional character |
 | 11 | [Zhejiang culture authority — 2025 literary-IP district](https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html) | Provincial culture authority / tourism-presentation | Newly created themed businesses and scenes; phased project context | Business mix, completion and access may have changed by August 2026 |
+| 12 | [Xianheng Hotel — company history](https://www.xianheng.com/index.php?a=show&c=index&catid=151&id=1&m=content) | Direct business source / self-history | The operator says the business reopened in 1981 and later work retained the `堂吃` portion while other parts were demolished and rebuilt | Not independent proof of every founding detail or a conservation survey |
+| 13 | [China News — museum-staff interview on the “早” desk](https://www.chinanews.com.cn/sh/2024/04-10/10196078.shtml) | Direct interview with memorial-museum staff / institutional attribution | The attributed original was withdrawn from Sanwei because of conservation concerns, stored and displayed in the memorial museum in 2024 | Does not establish the August 2026 location or the identity of a desk currently visible at Sanwei |
 
 ## Dynamic and route sources
 
@@ -41,7 +43,7 @@ No stable direct operator source reviewed on `2026-08-13` supplied all of the fo
 
 ## Image and licence sources
 
-All seven published derivatives are real-location photographs. Each was visually checked before processing. Cropping/resizing and WebP conversion were performed on `2026-08-13`; no generative fill, compositing, documentary alteration or AI image generation was used.
+All seven published derivatives are real-location photographs. Six were processed on `2026-08-13`; the Baicao Garden image was replaced and rechecked on `2026-08-14`. No generative fill, compositing, documentary alteration or AI image generation was used.
 
 | Slot / local file | Source file and creator | Capture date | Licence | Transformation and claim limit |
 |---|---|---|---|---|
@@ -49,7 +51,7 @@ All seven published derivatives are real-location photographs. Each was visually
 | Body — `zhou-family-old-taimen-1600.webp` | [Ancestral home of Luxun](https://commons.wikimedia.org/wiki/File:Ancestral_home_of_Luxun.JPG), Gisling | EXIF 2008-11-01; uploaded 2011-11-12 | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | Cropped/resized/WebP. Commons category identifies Zhou Family Old Taimen; image date cannot prove current hours |
 | Body — `sanwei-study-1600.webp` | [20250717 Sanwei Shuwu](https://commons.wikimedia.org/wiki/File:20250717_Sanwei_Shuwu.jpg), Yumeto | 2025-07-17 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped/resized/WebP. Shows the room and current labels; not independent provenance for a desk or painting |
 | Body — `zhou-family-new-taimen-1600.webp` | [Former Residence of Lu Xun in Shaoxing 01 2018-09](https://commons.wikimedia.org/wiki/File:Former_Residence_of_Lu_Xun_in_Shaoxing_01_2018-09.jpg), 猫猫的日记本 | 2018-09-01 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Source description identifies the south side of the fourth building on New Taimen's west axis; cropped/resized/WebP; does not prove unaltered fabric |
-| Body — `baicao-garden-1600.webp` | [20250717 Baicao Yuan](https://commons.wikimedia.org/wiki/File:20250717_Baicao_Yuan.jpg), Yumeto | 2025-07-17 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped/resized/WebP. Wide public-site view with incidental visitors, not a portrait; no person is identified or used as a character; image cannot prove childhood planting |
+| Body — `baicao-garden-1600.webp` | [Baicao garden](https://commons.wikimedia.org/wiki/File:Baicao_garden.jpg), Yiwen122 | 2022-02-03 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped to the named entrance gateway, resized to 1600×1067 and converted to WebP. People visible deeper in the source are outside the crop; the panel identifies the location but cannot date the gate or recreate childhood planting |
 | Body — `lu-xun-memorial-museum-1600.webp` | [Lu Xun memorial, Shaoxing](https://commons.wikimedia.org/wiki/File:Lu_Xun_memorial,_Shaoxing.jpg), Huanokinhejo | 2017-09-08 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped/resized/WebP. Identifies the memorial museum building; banner is time-specific and not evidence of current programming |
 | Body — `xianheng-hotel-1600.webp` | [咸亨酒店2017](https://commons.wikimedia.org/wiki/File:%E5%92%B8%E4%BA%A8%E9%85%92%E5%BA%972017.jpg), Amarespeco | 2017-09-08 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped/resized/WebP. Shows a dated modern frontage and sculpture; sculpture appears only in contextual wide view and is not reproduced as a standalone artwork |
 
@@ -62,7 +64,7 @@ Attribution identifies creators and licences only; it does not imply creator end
 3. A complete step-free route from entrance through the protected group.
 4. Current photography rules for every interior and rotating object.
 5. Current “早” desk label/provenance and rotation status.
-6. A direct current business/heritage chronology for Xianheng Hotel.
+6. Independent material-history evidence for the present Xianheng complex beyond the operator's own chronology.
 7. No named Shaoxing or Lu Xun cultural reviewer or onsite route tester was part of central review; therefore the article does not claim local endorsement, a tested physical sequence or current object-display certainty.
 
 These gaps are handled with narrower wording and recovery routes. They do not authorize central editors to convert old route pages or marketing claims into current facts without a new check.
@@ -74,7 +76,7 @@ These gaps are handled with narrower wording and recovery routes. They do not au
 - Real travel utility: `19/20`
 - Place-specific information and original explanation: `15/15`
 - Trilingual naturalness and information parity: `15/15` — central review verified matching block IDs, information objects, locale-specific internal links and public source/image-credit parity
-- Image accuracy and rights: `9/10` — licences and locations are documented; central may replace the wide Baicao visitor view if its model-release policy is stricter
+- Image accuracy and rights: `10/10` — licences and locations are documented, and the Baicao replacement contains no recognisable person
 - Total: **96/100**
 
 Hard-stop audit: no memoir is called a novel or live diary; no fictional character is presented as a resident; no protected/restored building is called wholly untouched; no modern Xianheng scene is called an original fictional tavern; no AI documentary image, screen still, copied modern translation, invented firsthand observation or unverified fixed itinerary is present.

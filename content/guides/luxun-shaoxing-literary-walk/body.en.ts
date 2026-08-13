@@ -135,7 +135,7 @@ const body = {
     {
       id: "sanwei-caution",
       type: "paragraph",
-      text: "The famous ‘早’—‘early’—desk story requires an extra step. A 2024 Zhejiang culture report said a desk attributed to that story had been moved from museum storage into display. That confirms an institutional attribution at that date, not permanent display, complete provenance or automatic proof that every mark is Lu Xun's autograph. If the desk is present, read the exact current wording and photograph the full caption where allowed. If it has rotated out, the schoolroom remains meaningful; do not substitute another desk or repeat the anecdote as object certainty."
+      text: "The famous ‘早’—‘early’—desk story requires an extra step. A 2024 Zhejiang culture report and a museum-staff interview said the institutionally attributed original had been withdrawn from Sanwei Study for conservation, stored and then displayed in the memorial museum. Later descriptions do not consistently distinguish the status of a desk shown at Sanwei. The current object, label and location therefore still need checking. If a desk is present, read the exact wording and photograph the full caption where allowed. If the attributed original has rotated out, the schoolroom remains meaningful; do not substitute another desk or turn the anecdote into provenance certainty."
     },
     {
       id: "new-taimen-heading",
@@ -184,10 +184,10 @@ const body = {
       id: "baicao-figure",
       type: "figure",
       src: "/images/guides/luxun-shaoxing-literary-walk/baicao-garden-1600.webp",
-      alt: "Baicao Garden behind Lu Xun's former residence in Shaoxing, with its identifying stone and cultivated beds.",
+      alt: "Gateway marked Baicao Garden within the Lu Xun former-residence visitor group in Shaoxing.",
       width: 1600,
       height: 1067,
-      caption: "The garden is a real site remembered in prose; today's plants and visitor landscaping are not a checklist of Lu Xun's childhood vegetation."
+      caption: "The name panel identifies the real garden remembered in prose; it does not date the gateway or reconstruct Lu Xun's childhood view."
     },
     {
       id: "baicao-method",
@@ -242,7 +242,7 @@ const body = {
     {
       id: "fiction-boundary",
       type: "paragraph",
-      text: "Current Shaoxing tourism material promotes Xianheng Hotel through the Kong Yiji association, and a 2025 Zhejiang culture report documents newer literary-IP shops and constructed scenes in the wider district. Enjoy that layer on its own terms: inspect whether a storefront gives a creation date or explanation, and notice how quotations and characters are turned into a visitor economy. Do not call the present interior the original fictional tavern, do not label a statue as a portrait, and do not make a meal reservation part of the core literary walk. If the hotel is closed or busy, an exterior reading—or skipping it—leaves the life-and-writing route intact."
+      text: "Current Shaoxing tourism material promotes Xianheng Hotel through the Kong Yiji association, while the hotel's own 2025 chronology says it reopened in 1981 and that later redevelopment retained what it calls the ‘堂吃’ dining area while other parts were demolished and rebuilt. Treat that as operator self-history, not an independent conservation survey, but it is enough to reject an unchanged late-Qing complex. A 2025 Zhejiang culture report also documents newer literary-IP shops and constructed scenes nearby. Inspect creation dates and explanations; do not call the present interior the original fictional tavern or a statue a portrait. If the hotel is closed or busy, skipping it leaves the life-and-writing route intact."
     },
     {
       id: "walk-heading",
@@ -357,10 +357,12 @@ const body = {
         {"label": "New Taimen sale, redevelopment and surviving portions", "url": "https://sxzx.sx.gov.cn/art/2011/7/13/art_1486822_17724937.html", "publisher": "Shaoxing CPPCC", "reviewedAt": "2026-08-13"},
         {"label": "2003 conservation and museum project history", "url": "https://www.zjds.org.cn/sx/37464.jhtml", "publisher": "Zhejiang Party History and Literature Research Institute", "reviewedAt": "2026-08-13"},
         {"label": "Barrier changes and attributed desk display", "url": "https://ct.zj.gov.cn/art/2024/3/20/art_1652992_59019865.html", "publisher": "Zhejiang Department of Culture, Radio, Television and Tourism", "reviewedAt": "2026-08-13"},
+        {"label": "Museum-staff account of the attributed ‘早’ desk's conservation and 2024 display", "url": "https://www.chinanews.com.cn/sh/2024/04-10/10196078.shtml", "publisher": "China News Service", "reviewedAt": "2026-08-14"},
         {"label": "From Baicao Garden to Sanwei Study", "url": "https://www.chinawriter.com.cn/news/2013/2013-02-06/153980.html", "publisher": "China Writers Association", "reviewedAt": "2026-08-13"},
         {"label": "Dawn Blossoms Plucked at Dusk as crafted recollection", "url": "https://www.chinawriter.com.cn/n1/2022/0428/c419384-32410615.html", "publisher": "China Writers Association", "reviewedAt": "2026-08-13"},
         {"label": "Kong Yiji text and publication context", "url": "https://www.chinawriter.com.cn/n1/2021/0907/c440988-32220179.html", "publisher": "China Writers Association", "reviewedAt": "2026-08-13"},
         {"label": "Current Xianheng tourism presentation", "url": "https://sxwg.sx.gov.cn/art/2024/9/3/art_1644765_59016443.html", "publisher": "Shaoxing Culture and Tourism authority", "reviewedAt": "2026-08-13"},
+        {"label": "Xianheng Hotel operator chronology: 1981 reopening and later partial retention and rebuilding", "url": "https://www.xianheng.com/index.php?a=show&c=index&catid=151&id=1&m=content", "publisher": "Xianheng Hotel", "reviewedAt": "2026-08-14"},
         {"label": "2025 literary-IP district presentation", "url": "https://ct.zj.gov.cn/art/2025/10/14/art_1673778_59028174.html", "publisher": "Zhejiang Department of Culture, Radio, Television and Tourism", "reviewedAt": "2026-08-14"},
         {"label": "Official one-, two- and three-hour route page; dated orientation, not a current timetable", "url": "https://sxlxmuseum.com/gcyx.htm", "publisher": "Shaoxing Lu Xun Native Place and Shen Garden Scenic Area", "reviewedAt": "2026-08-14"},
         {"label": "February 2026 special-hours and reservation notice for named holiday dates", "url": "https://www.thepaper.cn/newsDetail_forward_32587318", "publisher": "The Paper, carrying the venue notice", "reviewedAt": "2026-08-13"},
@@ -368,7 +370,7 @@ const body = {
         {"label": "Old Taimen entrance by Gisling; cropped, CC BY 3.0", "url": "https://commons.wikimedia.org/wiki/File:Ancestral_home_of_Luxun.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "Sanwei Study by Yumeto; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Sanwei_Shuwu.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "New Taimen west-axis building by 猫猫的日记本; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Former_Residence_of_Lu_Xun_in_Shaoxing_01_2018-09.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
-        {"label": "Baicao Garden by Yumeto; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:20250717_Baicao_Yuan.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
+        {"label": "Baicao Garden gateway by Yiwen122; people-free crop, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Baicao_garden.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "Shaoxing Lu Xun Memorial Museum by Huanokinhejo; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Lu_Xun_memorial,_Shaoxing.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "Xianheng Hotel by Amarespeco; cropped, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%92%B8%E4%BA%A8%E9%85%92%E5%BA%972017.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13"},
         {"label": "CC BY-SA 4.0 licence for the cropped derivatives", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-13"},
