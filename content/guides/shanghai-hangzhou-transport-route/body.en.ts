@@ -28,7 +28,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Flight to rail after Hongqiao", "Hongqiao may reduce city crossing", "The airport terminal, rail concourse and independent ticket still require margin"],
   ]},
   { id: "return-heading", type: "heading", level: 2, text: "Design the return before buying a day-trip outbound" },
-  { id: "return-copy", type: "paragraph", text: "Choose a Hangzhou leave-the-attraction time, then add road or metro variability, the correct station entrance, security and boarding. Keep at least one later usable train only if it actually reaches a Shanghai station from which the group can still reach the hotel or airport. If that fallback disappears, the sensible recovery may be a Hangzhou night rather than racing between unfamiliar terminals." },
+  { id: "return-copy", type: "paragraph", text: "Choose a Hangzhou leave-the-attraction time, then add road or metro variability, the correct station entrance, security and boarding. Keep at least one later usable train only if it actually reaches a Shanghai station from which the group can still reach the hotel or airport. If that fallback disappears, the safer choice may be to stay overnight in Hangzhou rather than race between unfamiliar terminals." },
   { id: "recovery-heading", type: "heading", level: 2, text: "If you reach the wrong station" },
   { id: "recovery", type: "table", caption: "Stop before a cross-city race", columns: ["Problem", "Response"], rows: [
     ["Wrong Shanghai terminal", "Use official ticket change/inventory first; compare that with crossing the city"],

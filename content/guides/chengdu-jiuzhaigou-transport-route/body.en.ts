@@ -28,7 +28,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Family or older parents", "Schedule food, toilets and rest before a full next day", "A long multi-mode arrival changes the group's usable pace"],
   ]},
   { id: "hotel", type: "paragraph", text: "Confirm whether the transfer's advertised endpoint is the scenic-area entrance, a transport centre or the booked hotel. Those labels are not interchangeable after dark or with large luggage. Send the accommodation's Chinese name, address and phone number to the operator, ask whether the route provides hotel drop-off, and tell the hotel the expected arrival. If it does not, arrange the last vehicle before leaving Chengdu." },
-  { id: "return-heading", type: "heading", level: 2, text: "Reserve the return as a separate chain" },
+  { id: "return-heading", type: "heading", level: 2, text: "Plan the return separately" },
   { id: "return-plan", type: "list", ordered: true, items: ["Start from the accommodation or scenic exit, not from a generic Jiuzhaigou label.", "Confirm the road transfer's pickup and the train station or airport it actually serves.", "Leave margin for mountain-road disruption before any independent rail or air ticket.", "Keep a later transport option and an additional night only when both are genuinely available.", "If a flight is irreplaceable, move toward Chengdu or the departure airport earlier instead of using the final possible connection."] },
   { id: "recovery-heading", type: "heading", level: 2, text: "If one leg fails" },
   { id: "recovery", type: "table", caption: "Confirm the next workable option", columns: ["Problem", "Next step"], rows: [
