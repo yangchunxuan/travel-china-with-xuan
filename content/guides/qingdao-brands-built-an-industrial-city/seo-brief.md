@@ -68,14 +68,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 - Suggested inbound owner 2: `/guides/china-high-speed-train-first-time-guide/` — from rolling-stock context, link to Qingdao Sifang's bounded historical lens.
 - Suggested inbound owner 3: `/guides/china-regional-food-route/` — from Qingdao beer/food context, link to the brewery-as-city-evidence section.
 
-These are later central edits; this release does not modify old owners.
-
 ## Unique asset plan
 
-- Primary asset: rights-cleared real photograph of the historic brick buildings at Tsingtao Beer Museum.
-- Caption/alt boundary: one industrial-heritage viewpoint only; it does not represent Qingdao's appliance industry, rail sector or current production.
-- Supporting asset: original three-lens matrix (site, capability, public memory, limit).
-- Never caption a museum exterior as a working-factory panorama.
+- **Implemented 2026-08-14:** `industrial-claim-provenance-matrix`, an accessible HTML matrix that tests five claim classes against city archives/independent research, company history, company museums, authorised operating-factory evidence and public streetscape.
+- **Future field-evidence gap:** add rights-cleared, operator-permitted evidence from one appliance public display and one rail-industry public venue, with a local industrial-history specialist checking how the three lenses fit the wider city.
+- The current brewery viewpoint remains evidence of one heritage site only; it does not represent appliances, rail, working conditions or current production across Qingdao.
+- Never caption a museum exterior as a working-factory panorama or photograph restricted production.
 
 ## GSC review
 

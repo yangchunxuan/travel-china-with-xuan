@@ -2,19 +2,36 @@
   "id": "shanghai-24-hour-parks-reality-check",
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "dynamic-access-verification-guide",
-  "topics": ["shanghai", "parks", "24-hour-opening", "night-access", "operating-hours"],
-  "destinations": ["shanghai"],
+  "topics": [
+    "shanghai",
+    "parks",
+    "24-hour-opening",
+    "night-access",
+    "operating-hours"
+  ],
+  "destinations": [
+    "shanghai"
+  ],
   "heroImagePath": "/images/guides/shanghai-24-hour-parks-reality-check/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-24-hour-parks-reality-check/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
-  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/shanghai-24-hour-parks-reality-check/",
@@ -25,7 +42,11 @@
       "navTitle": "Verify a 24-hour Shanghai park",
       "featuredLinkLabel": "Check whether a Shanghai park works at night",
       "openGraphLocale": "en_US",
-      "cardTags": ["Shanghai", "24-hour parks", "Night access"]
+      "cardTags": [
+        "Shanghai",
+        "24-hour parks",
+        "Night access"
+      ]
     },
     "zh": {
       "path": "/zh/guides/shanghai-24-hour-parks-reality-check/",
@@ -36,7 +57,11 @@
       "navTitle": "核验上海24小时公园",
       "featuredLinkLabel": "判断上海公园夜间是否可用",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["上海", "24小时公园", "夜间开放"]
+      "cardTags": [
+        "上海",
+        "24小时公园",
+        "夜间开放"
+      ]
     },
     "ko": {
       "path": "/ko/guides/shanghai-24-hour-parks-reality-check/",
@@ -47,7 +72,28 @@
       "navTitle": "상하이 24시간 공원 확인",
       "featuredLinkLabel": "상하이 공원의 야간 이용 가능성 확인",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["상하이", "24시간 공원", "야간 이용"]
+      "cardTags": [
+        "상하이",
+        "24시간 공원",
+        "야간 이용"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Shanghai 24 hour parks",
+      "Are Shanghai parks open 24 hours",
+      "Shanghai parks open at night"
+    ],
+    "zh": [
+      "上海24小时开放公园",
+      "上海公园全天开放吗",
+      "上海夜间开放公园"
+    ],
+    "ko": [
+      "상하이 24시간 공원",
+      "상하이 공원 야간 개방",
+      "상하이 공원 24시간 운영 여부"
+    ]
   }
 }

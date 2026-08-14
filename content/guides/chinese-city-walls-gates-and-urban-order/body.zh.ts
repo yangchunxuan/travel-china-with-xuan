@@ -313,6 +313,7 @@ const body = {
           href: "/zh/guides/temple-of-heaven-gates-and-ritual-sequence/",
           description: "比较有记录的祭祀轴线与判断城市城门所需的不同证据。",
         },
+        { label: "看地铁建设遇上考古后会发生什么", href: "/zh/guides/when-metro-construction-meets-archaeology/", description: "沿着偶然发现、现场保护、发掘、设计响应和公众展示追踪，不假定每次发现都会停工或最终可见。" }
       ],
     },
     {

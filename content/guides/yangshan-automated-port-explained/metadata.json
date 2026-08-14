@@ -2,23 +2,36 @@
   "id": "yangshan-automated-port-explained",
   "type": "planning",
   "pillar": "culture-festivals-arts-contemporary",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "industrial-system-explainer",
-  "topics": ["yangshan-port", "automated-terminals", "container-shipping", "industrial-technology", "shanghai"],
-  "destinations": ["shanghai"],
+  "topics": [
+    "yangshan-port",
+    "automated-terminals",
+    "container-shipping",
+    "industrial-technology",
+    "shanghai"
+  ],
+  "destinations": [
+    "shanghai"
+  ],
   "heroImagePath": "/images/guides/yangshan-automated-port-explained/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/yangshan-automated-port-explained/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "culture",
     "family": "entity",
     "primaryIntent": "understand"
   },
-  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/yangshan-automated-port-explained/",
@@ -29,7 +42,11 @@
       "navTitle": "How Yangshan automation works",
       "featuredLinkLabel": "Follow a container through Yangshan",
       "openGraphLocale": "en_US",
-      "cardTags": ["Shanghai", "Automated ports", "Industry"]
+      "cardTags": [
+        "Shanghai",
+        "Automated ports",
+        "Industry"
+      ]
     },
     "zh": {
       "path": "/zh/guides/yangshan-automated-port-explained/",
@@ -40,7 +57,11 @@
       "navTitle": "读懂洋山自动化码头",
       "featuredLinkLabel": "跟随集装箱了解洋山四期",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["上海", "自动化码头", "当代工业"]
+      "cardTags": [
+        "上海",
+        "自动化码头",
+        "当代工业"
+      ]
     },
     "ko": {
       "path": "/ko/guides/yangshan-automated-port-explained/",
@@ -51,7 +72,28 @@
       "navTitle": "양산 자동화 항만 이해하기",
       "featuredLinkLabel": "컨테이너 이동으로 양산항 읽기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["상하이", "자동화 항만", "현대 산업"]
+      "cardTags": [
+        "상하이",
+        "자동화 항만",
+        "현대 산업"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "How does Yangshan automated port work",
+      "Yangshan Phase IV automation",
+      "Yangshan port TOS ECS AGV"
+    ],
+    "zh": [
+      "洋山四期自动化码头怎么运作",
+      "洋山港TOS ECS AGV",
+      "上海洋山自动化港口"
+    ],
+    "ko": [
+      "양산 자동화 항만 원리",
+      "양산항 4기 자동화",
+      "양산항 TOS ECS AGV"
+    ]
   }
 }

@@ -115,6 +115,18 @@ const body = {
       ]
     },
     {
+      id: "route-friction-worksheet",
+      type: "table",
+      caption: "Homeground route-friction worksheet: test one real walk without turning it into a neighbourhood score",
+      columns: ["Route segment", "Record on site", "Time or access cost", "Decision"],
+      rows: [
+        ["Anchor to first crossing", "Actual walking minutes, crossing wait, curb or underpass", "Add the wait you experienced; do not use straight-line distance", "Continue only if the return route is also workable"],
+        ["Crossing to service entrance", "Slope, shade, resting place, frontage and the door actually used", "Add detours around walls, compounds or closed gates", "Mark an unverified entrance as unknown, not accessible"],
+        ["Inside the service", "Public eligibility, opening window, queue, payment and toilet", "Record the whole stop, not only travel time", "Keep a nearby public fallback for each essential service"],
+        ["Return or next stop", "Continuous pavement, lighting, weather exposure and companion energy", "Use the slower traveller's pace", "A useful loop is one the group can safely finish"],
+      ],
+    },
+    {
       id: "access-heading",
       type: "heading",
       level: 2,

@@ -49,6 +49,18 @@ const body = {
       text: "The China Meteorological Administration explains the modern system by the sun's apparent position along the ecliptic: each 15 degrees marks another term. Strictly, the threshold is a moment rather than a whole day. In ordinary speech, however, people may use the name for the date or the roughly two-week interval before the next term. If a timetable, exhibition or ceremony matters, use its stated civil date and time instead of calculating from a translated term name.",
     },
     {
+      id: "term-to-trip-decoder",
+      type: "table",
+      caption: "Homeground term-to-trip decoder: translate a solar-term claim before changing a plan",
+      columns: ["Claim you encounter", "Evidence layer", "What to verify now", "Safe travel use"],
+      rows: [
+        ["The solar term begins today", "Astronomical calendar", "The current year's authoritative calendar", "Use it as a time marker, not a temperature threshold"],
+        ["This term means rain, heat or cold", "Seasonal memory", "Local forecast, warnings, altitude and route", "Pack for current conditions rather than the name"],
+        ["People eat this food for the term", "Living practice", "Exact region, community, venue and date", "Describe one documented practice, not a national rule"],
+        ["A themed event is happening", "Current programme", "Named organiser, address, access and cancellation channel", "Treat the term as context; let the notice govern the visit"],
+      ],
+    },
+    {
       id: "names-heading",
       type: "heading",
       level: 2,

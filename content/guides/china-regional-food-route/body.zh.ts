@@ -224,11 +224,11 @@ const body = {
       type: "internal-links",
       title: "继续规划",
       items: [
-        { "label": "浏览中国旅行规划集合", "href": "/zh/plan/", "description": "把美食路线放回交通、时间和文化的整体计划中。" },
+        { label: "沿着云南咖啡从鲜果走到一杯咖啡", href: "/zh/guides/yunnan-coffee-from-cherry-to-cup/", description: "只有在具体批次、准入和路线都合适时才加入农场或咖啡馆；云南地址不证明咖啡豆产地。" },
         { "label": "准备第一次中式共享餐", "href": "/zh/guides/first-shared-meal-in-china/", "description": "路线抵达餐桌后，再了解点菜、分享和结账。" },
         { "label": "了解广州早茶如何运作", "href": "/zh/guides/how-guangzhou-morning-tea-works/", "description": "如果这种地域餐型值得加入，请使用专门指南。" },
         { "label": "选择单基地放射还是多基地路线", "href": "/zh/guides/china-hub-and-spoke-or-multi-base-route/", "description": "增加下一个美食地域前，先确定整趟旅行的驻地结构。" },
-        { "label": "第一次乘坐中国高铁", "href": "/zh/guides/china-high-speed-train-first-time-guide/", "description": "确定地域方向后，再核验铁路操作步骤。" },
+        { label: "沿着镇江香醋从发酵走到餐桌", href: "/zh/guides/zhenjiang-vinegar-living-fermentation/", description: "用产地、工艺、标签和当前参观证据，判断它是否值得成为食物路线的一站。" },
         { label: "了解 12306 列车订餐配送", href: "/zh/guides/how-food-reaches-your-seat-on-china-train/", description: "看懂 12306 餐食从供餐站到车厢座位的接力流程、截止时间、座位信息和安全回退方案。" },
         { label: "搭配南昌拌粉和瓦罐汤", href: "/zh/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "区分南昌拌粉、炒粉与汤粉，按口味和份量搭配瓦罐汤，使用现场点单语言，并处理辣度不合或汤品售罄。" },
         { label: "选择一处茶乡景观", href: "/zh/guides/tea-landscape-regions-of-china/", description: "不按名茶排名，而是从现场能看见的景观、工序与社区关系，选择适合自己的中国茶产地。" },

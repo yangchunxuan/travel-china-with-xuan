@@ -402,6 +402,7 @@ const body: StructuredPageBody = {
           description: "Use the route guide for the transport decisions that often require a separate payment check.",
         },
         { label: "Recover an ATM cash failure", href: "/guides/china-atm-cash-not-dispensed/", description: "Stop repeat withdrawals, preserve ATM evidence, open cases with the ATM bank and your card issuer, and use safer payment fallbacks while you wait." },
+        { label: "Check payment and ordinary price at a community canteen", href: "/guides/china-community-canteens-explained/", description: "Confirm non-resident access, meal cards, the current ordinary price and a fallback before relying on a subsidised-looking venue." }
       ],
     },
     {

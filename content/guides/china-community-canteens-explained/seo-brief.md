@@ -67,10 +67,11 @@ Recommendations only; old pages stay unchanged in this batch.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `canteen-five-gate-card` makes public access, ordinary price, payment, meal window and dietary/access fit independently verifiable.
+
 - Preferred asset: a rights-cleared exterior/service-board photograph of one named canteen whose operator has confirmed public photography and current public access.
 - Companion asset: a language-neutral decision card—identify sign → ask public/non-resident access → ordinary price/card → payment → dietary/access fit → fallback.
 - Do not photograph diners, benefit cards, payment screens, resident lists, children or care recipients. Record operator, address, date, exact permissions and license.
-- This brief does not authorize image creation or provenance changes.
 
 ## GSC review plan
 

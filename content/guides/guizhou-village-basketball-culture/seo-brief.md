@@ -67,13 +67,11 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 - Suggested inbound owner 2: `/guides/china-public-holidays-travel-calendar/` — from event/crowd timing, link to the exact-event verification workflow.
 - Suggested inbound owner 3: `/guides/foshan-lion-dance-first-performance-workflow/` — from observe-first etiquette, noting that the traditions are not interchangeable.
 
-These are later central edits; this release does not modify old owners.
-
 ## Unique asset plan
 
-- Rights-cleared documentary photograph of the Taipan court during a named, dated event, with consent and crowd context recorded.
-- Original three-clock diagram showing competition, festival and visitor time.
-- Compact verification card: organiser, event, venue, date/time, access, return.
+- **Implemented 2026-08-14:** `event-three-clock-timeline`, an accessible four-stage HTML table that keeps competition, festival and visitor/return time on separate tracks. Its blank fields must be completed from the named event notice and the traveller's confirmed return; it contains no future schedule.
+- **Future field-evidence gap:** document one named, dated Taipan event with a rights-cleared court overview, programme, access/crowd-control notice and return node, recording organiser and participant consent where people are identifiable.
+- A future field test should verify whether the three-track worksheet remains usable during queueing, programme changes and an early departure.
 - Do not use an unlabeled viral crowd frame as proof of a future programme.
 
 ## GSC review

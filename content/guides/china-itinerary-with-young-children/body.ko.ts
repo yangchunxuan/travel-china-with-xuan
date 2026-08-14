@@ -61,6 +61,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "실제로 유용한 교통 근처 숙소 선택", href: "/ko/guides/china-hotel-near-metro/", description: "지도 거리뿐 아니라 매일 걷기와 환승을 줄이세요." },
     { label: "실제로 쓸 수 있는 관광일 확인", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "도착, 이동과 회복 시간을 정직하게 세세요." },
     { label: "관광 순서에 맞춰 숙박일 배치하기", href: "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "각 숙박일을 다음 확정 명소·도착·출발 지점과 맞춘 뒤 한 번의 호텔 이동이 반복 이동을 충분히 줄이는지 판단합니다." },
+    { label: "아이의 속도로 15분 동네 점검하기", href: "/ko/guides/china-15-minute-neighbourhoods/", description: "반경을 가족 일정의 보장으로 여기지 말고 연속 동선, 화장실, 휴식 지점, 이용 규정과 운영 시간을 확인합니다." }
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "철도 어린이표 규칙", url: "https://kyfw.12306.cn/otn/gonggao/children.html", publisher: "중국철도 12306", reviewedAt: "2026-08-12" }

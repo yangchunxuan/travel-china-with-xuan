@@ -2,19 +2,39 @@
   "id": "guizhou-village-basketball-culture",
   "type": "planning",
   "pillar": "culture-festivals-arts-contemporary",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "festival-reading-and-visitor-recovery",
-  "topics": ["village-ba", "rural-basketball", "community-festival", "taipan", "guizhou"],
-  "destinations": ["guizhou", "qiandongnan", "taijiang", "taipan-village"],
+  "topics": [
+    "village-ba",
+    "rural-basketball",
+    "community-festival",
+    "taipan",
+    "guizhou"
+  ],
+  "destinations": [
+    "guizhou",
+    "qiandongnan",
+    "taijiang",
+    "taipan-village"
+  ],
   "heroImagePath": "/images/guides/guizhou-village-basketball-culture/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/guizhou-village-basketball-culture/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
-  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
-  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "search": {
+    "section": "culture",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/guizhou-village-basketball-culture/",
@@ -25,7 +45,11 @@
       "navTitle": "Why Guizhou Village BA lasts into the night",
       "featuredLinkLabel": "Read Village BA as a community festival",
       "openGraphLocale": "en_US",
-      "cardTags": ["Guizhou", "Village BA", "Community festival"]
+      "cardTags": [
+        "Guizhou",
+        "Village BA",
+        "Community festival"
+      ]
     },
     "zh": {
       "path": "/zh/guides/guizhou-village-basketball-culture/",
@@ -36,7 +60,11 @@
       "navTitle": "贵州“村BA”为何打到深夜",
       "featuredLinkLabel": "从社区节庆理解“村BA”",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["贵州", "村BA", "社区节庆"]
+      "cardTags": [
+        "贵州",
+        "村BA",
+        "社区节庆"
+      ]
     },
     "ko": {
       "path": "/ko/guides/guizhou-village-basketball-culture/",
@@ -47,7 +75,28 @@
       "navTitle": "구이저우 촌BA가 밤까지 이어지는 이유",
       "featuredLinkLabel": "촌BA를 공동체 축제로 읽기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["구이저우", "촌BA", "공동체 축제"]
+      "cardTags": [
+        "구이저우",
+        "촌BA",
+        "공동체 축제"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Guizhou Village BA explained",
+      "Can tourists watch Village BA",
+      "Taipan Village basketball culture"
+    ],
+    "zh": [
+      "贵州村BA是什么",
+      "游客怎么看村BA",
+      "台盘村篮球文化"
+    ],
+    "ko": [
+      "구이저우 촌BA 설명",
+      "촌BA 관광객 관람",
+      "타이판 마을 농구 문화"
+    ]
   }
 }

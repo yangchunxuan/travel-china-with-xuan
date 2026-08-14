@@ -2,19 +2,36 @@
   "id": "lunar-new-year-customs-for-visitors",
   "type": "planning",
   "pillar": "culture-festivals-arts-contemporary",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "festival-mobility-and-boundaries-guide",
-  "topics": ["spring-festival", "lunar-new-year", "chunyun", "family-customs", "visitor-etiquette"],
-  "destinations": ["china"],
+  "topics": [
+    "spring-festival",
+    "lunar-new-year",
+    "chunyun",
+    "family-customs",
+    "visitor-etiquette"
+  ],
+  "destinations": [
+    "china"
+  ],
   "heroImagePath": "/images/guides/lunar-new-year-customs-for-visitors/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/lunar-new-year-customs-for-visitors/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
-  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/lunar-new-year-customs-for-visitors/",
@@ -25,7 +42,11 @@
       "navTitle": "Spring Festival for visitors",
       "featuredLinkLabel": "Understand Chunyun and family boundaries",
       "openGraphLocale": "en_US",
-      "cardTags": ["Spring Festival", "Chunyun", "Visitor etiquette"]
+      "cardTags": [
+        "Spring Festival",
+        "Chunyun",
+        "Visitor etiquette"
+      ]
     },
     "zh": {
       "path": "/zh/guides/lunar-new-year-customs-for-visitors/",
@@ -36,7 +57,11 @@
       "navTitle": "外国访客理解春节",
       "featuredLinkLabel": "理解春运与家庭边界",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["春节", "春运", "访客礼仪"]
+      "cardTags": [
+        "春节",
+        "春运",
+        "访客礼仪"
+      ]
     },
     "ko": {
       "path": "/ko/guides/lunar-new-year-customs-for-visitors/",
@@ -47,7 +72,28 @@
       "navTitle": "여행자를 위한 춘절",
       "featuredLinkLabel": "춘윈과 가족의 경계 이해하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["춘절", "춘윈", "여행 예절"]
+      "cardTags": [
+        "춘절",
+        "춘윈",
+        "여행 예절"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Chinese New Year customs for visitors",
+      "Spring Festival travel etiquette China",
+      "Chunyun and Chinese New Year travel"
+    ],
+    "zh": [
+      "春节游客礼仪",
+      "外国游客过春节注意什么",
+      "春运和春节旅行"
+    ],
+    "ko": [
+      "중국 춘절 여행 예절",
+      "외국인 중국 설날 풍습",
+      "춘윈과 춘절 여행"
+    ]
   }
 }

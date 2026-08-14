@@ -67,6 +67,19 @@ const body = {
       ]
     },
     {
+      id: "industrial-claim-provenance-matrix",
+      type: "table",
+      caption: "Industrial claim provenance matrix — name the source that earns each sentence before writing it down",
+      columns: ["Claim to test", "City archive or independent research", "Company history", "Company museum", "Operating factory evidence", "Public streetscape"],
+      rows: [
+        ["A site or activity existed on a stated date", "Strong when the record identifies date, footprint and source", "Useful first-party chronology; cross-check changed names and entities", "Useful when an object label gives provenance", "Current operation does not by itself prove the historic date", "A surviving facade is only a location lead"],
+        ["A capability developed through a stated sequence", "Can connect policy, labour, suppliers and urban change", "Shows how the company narrates milestones", "Can reveal selected machines and demonstrations", "Can confirm a current process only with authorised, dated access", "Brand signs cannot demonstrate technical capability"],
+        ["An object or process belonged to this site", "Plans, inventories or research can establish context", "May identify ownership or transfer", "Label must distinguish original, moved and reconstructed material", "A visible line supports only what was operating during the authorised observation", "Exterior appearance cannot establish what happened inside"],
+        ["Production or visitor access is current", "Usually background rather than live status", "Use only a current dated notice", "A current ticket or operator notice can support museum access", "Requires current operator confirmation and photography rules", "An open street does not make a factory or corporate venue public"],
+        ["One brand represents Qingdao's wider industrial life", "Needed to test citywide significance and missing sectors", "A company source cannot establish this alone", "Curated memory is evidence of selection, not completeness", "One plant cannot represent every worker, supplier or district", "Urban traces show presence, not economic share or public consent"]
+      ]
+    },
+    {
       id: "scenarios-heading",
       type: "heading",
       level: 2,

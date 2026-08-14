@@ -71,14 +71,12 @@ Avoid repeating `safe` as an assurance. Use `verify`, `current`, `exact zone` an
 - Suggested inbound owner 2: `/guides/china-hotel-near-metro/` — where the last walk and correct exit matter, link to this page as a late-activity application.
 - Suggested inbound owner 3: `/guides/how-to-pay-in-china-as-a-tourist/` — where transport payment backup is covered, link only from a late-night transport recovery context.
 
-The inbound suggestions are for a later central edit. This release does not modify old owners.
-
 ## Unique asset plan
 
-- Primary asset: rights-cleared real night photograph of one named, officially open public route with location/date and exact zone recorded.
-- Supporting asset: original seven-gate verification card: status, zone, entrance, light, toilet, activity, return.
-- Optional diagram: park boundary containing shorter-hour facilities, explicitly illustrative rather than a map of a real park.
-- Do not photograph a dark/closed route for drama or imply that a generic skyline/park image proves current access.
+- **Implemented 2026-08-14:** `latest-safe-departure-worksheet`, an accessible HTML calculation table using `earliest relevant zone/exit, facility or return cutoff − traveller-chosen buffer`. All time fields are intentionally blank and require a same-day source; any required blank fails the check.
+- **Future field-evidence gap:** complete a dated, weather-recorded night audit of every relevant entrance, lit segment, toilet/facility and return node for one named park, with rights-cleared route evidence and no identifiable night users.
+- A future boundary diagram must remain illustrative unless it is derived from a dated operator map with permission and exact zone provenance.
+- Do not photograph a dark/closed route for drama or imply that a generic skyline/park image proves current access or personal safety.
 
 ## GSC review
 

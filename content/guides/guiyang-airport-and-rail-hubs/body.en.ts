@@ -65,7 +65,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare the rail process after identifying the station." },
     { label: "China's last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Plan a Longdongbao departure after a Guizhou trip." },
     { label: "China separate flight tickets and self-transfer risk", href: "/guides/china-separate-flight-tickets-self-transfer-risk/", description: "Test a flight-to-rail or separate-air connection." },
-    { label: "China hub-and-spoke or multi-base route", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide whether Guiyang should remain the base for rural excursions." }
+    { label: "China hub-and-spoke or multi-base route", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide whether Guiyang should remain the base for rural excursions." },
+    { label: "Build the last-mile plan for a Guizhou Village BA event", href: "/guides/guizhou-village-basketball-culture/", description: "Connect Guiyang transport to Taipan only after checking the named event, local transfer, crowd controls and return cut-off." }
   ]},
   { id: "sources", type: "sources", title: "Official sources", items: [
     { label: "Guiyang airport integrated transport identity", url: "https://english.guiyang.gov.cn/2023-12/15/c_956327.htm", publisher: "Guiyang Municipal Government", reviewedAt: "2026-08-13" },

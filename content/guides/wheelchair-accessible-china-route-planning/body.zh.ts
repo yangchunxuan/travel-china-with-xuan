@@ -286,7 +286,7 @@ const body = {
       type: "internal-links",
       title: "继续规划",
       items: [
-        { "label": "浏览中国旅行规划指南", "href": "/zh/plan/", "description": "回到规划集合页，再缩小路线范围。" },
+        { label: "把社区食堂当作一段完整的无障碍用餐链来核验", href: "/zh/guides/china-community-canteens-explained/", description: "逐项确认入口、排队、座位、厕所、食物质地、支付和离场；能进门不等于能顺利用餐。" },
         { "label": "选择靠近合适地铁出入口的酒店", "href": "/zh/guides/china-hotel-near-metro/", "description": "看车站出入口和完整最后一程，不只看直线距离。" },
         { "label": "核验真正合适的无障碍客房", "href": "/zh/guides/china-accessible-hotel-room-verification/", "description": "向酒店核验客房尺寸、分配和被换房时的备用。" },
         { "label": "选择私人接送还是公共交通", "href": "/zh/guides/china-private-transfer-or-public-transport/", "description": "针对一个地面段，比较具体车辆和公共交通的完整链。" },

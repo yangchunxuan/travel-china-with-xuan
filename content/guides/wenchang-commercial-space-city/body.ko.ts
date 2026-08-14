@@ -50,7 +50,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"주변 이동을 더 준비하기",items:[
     {label:"중국의 기후권 이해하기",href:"/ko/guides/china-climate-regions-for-trip-timing/",description:"하이난을 다른 지역과 분리해 보고 날씨 차질에 대비한다."},
     {label:"중국 국내선 운임·수하물 묶음 비교",href:"/ko/guides/china-domestic-flight-fare-bundle-baggage/",description:"하이난 연결편에서 운임과 수하물을 추정하지 않는다."},
-    {label:"중국 공휴일 여행 달력 확인",href:"/ko/guides/china-public-holidays-travel-calendar/",description:"발사일 계획에 수요와 교통 압력을 반영한다."}
+    {label:"중국 공휴일 여행 달력 확인",href:"/ko/guides/china-public-holidays-travel-calendar/",description:"발사일 계획에 수요와 교통 압력을 반영한다."},
+    { label: "다른 신기술 도시도 증거 상태로 읽기", href: "/ko/guides/shenzhen-low-altitude-city-infrastructure/", description: "인프라를 방문객용 상품으로 보기 전에 계획, 시험, 제한적 공개와 상시 운영을 구분합니다." }
   ]},
   {id:"sources",type:"sources",title:"공식·독립 자료",items:[
     {label:"대표 이미지 — 2022-06-10 인근 해변 건너편에서 촬영한 원창 발사 시설. 현재 지정 관람점이나 출입의 증거는 아님",url:"https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_02.jpg",publisher:"Shujianyang — CC BY-SA 4.0; 출처 표기일 뿐 Homeground에 대한 지지를 뜻하지 않음",reviewedAt:"2026-08-13"},

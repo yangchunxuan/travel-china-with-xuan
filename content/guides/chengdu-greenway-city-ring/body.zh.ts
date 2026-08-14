@@ -48,7 +48,9 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"连接城市背景",items:[
     {label:"成都大熊猫基地还是都江堰熊猫谷",href:"/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"把动物参观和绿道分别设计成现实可行的城市任务。"},
     {label:"理解中国地图坐标偏移",href:"/zh/guides/china-map-coordinate-offset-explained/",description:"防止准确绿道入口与出口出现地图点错位。"},
-    {label:"查中国公共假期日历",href:"/zh/guides/china-public-holidays-travel-calendar/",description:"预判休闲压力，但不保证具体客流量。"}
+    {label:"查中国公共假期日历",href:"/zh/guides/china-public-holidays-travel-calendar/",description:"预判休闲压力，但不保证具体客流量。"},
+    { label: "把15分钟社区读成一张服务网络", href: "/zh/guides/china-15-minute-neighbourhoods/", description: "用同样的路网核验法检查商店、照护、公共空间、门禁和实际步行可达性，而不只看一段绿道。" },
+    { label: "比较全天绿地与上海“24小时公园”", href: "/zh/guides/shanghai-24-hour-parks-reality-check/", description: "在两座城市都按具体地点和时段核验路段、入口、设施、照明和返程交通。" }
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
     {label:"头图——《Chengdu Greenway》，拍摄于2022-03-12；坐标支持其为成都环城／锦城绿道路段，但不能证明当前通行或服务",url:"https://commons.wikimedia.org/wiki/File:Chengdu_Greenway.jpg",publisher:"MspreilsCN — CC0；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},

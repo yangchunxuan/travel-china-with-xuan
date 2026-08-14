@@ -53,6 +53,18 @@ const body = {
       ]
     },
     {
+      id: "event-three-clock-timeline",
+      type: "table",
+      caption: "Three-clock field timeline — fill it from the named event notice and your confirmed return plan; no sample time is a schedule",
+      columns: ["Checkpoint", "Competition clock", "Festival clock", "Visitor and return clock"],
+      rows: [
+        ["Before departure", "Write the exact competition, session and published start: ____", "Write only named performances, market or ceremony windows: ____", "Write the last confirmed pickup or departure and your leave buffer: ____"],
+        ["At arrival", "Check the live bracket, queue and court access; mark any delay: ____", "Check the posted running order; keep games and cultural programme separate", "Locate the usable exit and return point before taking a place"],
+        ["Between segments", "Record whether the game, interval or next match is actually running", "Record which announced activity is happening; do not label an unverified intermission", "Compare the current time with the leave threshold, not with the crowd's mood"],
+        ["Leave threshold", "A close score does not extend your transport", "An unfinished programme does not create a ride home", "Leave by ____ while the verified exit, walking route and return option still work"]
+      ]
+    },
+    {
       id: "not-just-spectacle",
       type: "callout",
       title: "The crowd is not evidence of an ‘untouched’ village",

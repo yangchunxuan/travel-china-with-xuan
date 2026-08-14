@@ -50,7 +50,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"继续处理外围交通",items:[
     {label:"理解中国不同气候区",href:"/zh/guides/china-climate-regions-for-trip-timing/",description:"把海南与其他地区分开判断，并为天气变化留备选。"},
     {label:"比较中国国内航班票价包",href:"/zh/guides/china-domestic-flight-fare-bundle-baggage/",description:"避免海南衔接中的行李和票价假设。"},
-    {label:"查中国公共假期出行日历",href:"/zh/guides/china-public-holidays-travel-calendar/",description:"把客流和交通压力加入发射日方案。"}
+    {label:"查中国公共假期出行日历",href:"/zh/guides/china-public-holidays-travel-calendar/",description:"把客流和交通压力加入发射日方案。"},
+    { label: "用证据状态读懂另一座新兴技术城市", href: "/zh/guides/shenzhen-low-altitude-city-infrastructure/", description: "先分清规划、测试、有限公众使用和常态运营，再判断基础设施是否构成游客产品。" }
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
     {label:"头图——2022-06-10从附近海滩隔岸拍摄的文昌发射设施；不能证明当前指定观赏点或准入",url:"https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_02.jpg",publisher:"Shujianyang — CC BY-SA 4.0；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},

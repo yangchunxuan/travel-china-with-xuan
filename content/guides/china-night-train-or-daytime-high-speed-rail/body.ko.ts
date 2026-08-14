@@ -297,11 +297,8 @@ const body = {
       type: "internal-links",
       title: "계속 계획하기",
       items: [
-        {
-          label: "중국 일정이 너무 빠듯한지 확인하기",
-          href: "/ko/guides/is-your-china-itinerary-too-rushed/",
-          description: "관광일 하루를 더 지키기 전에 이동 부담과 회복시간을 계산하세요.",
-        },
+        { label: "춘절 이동기에 철도 계획 다시 확인하기", href: "/ko/guides/lunar-new-year-customs-for-visitors/", description: "춘윈 수요와 임시 운행 조정은 야간열차와 주간 고속철도 선택을 바꿀 수 있으므로 현재 열차, 침대칸과 대안을 확인합니다." },
+        { label: "중국 일정이 너무 빠듯한지 확인하기", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "관광일 하루를 더 지키기 전에 이동 부담과 회복시간을 계산하세요." },
         {
           label: "처음 타는 중국 고속철도 이용법 확인하기",
           href: "/ko/guides/china-high-speed-train-first-time-guide/",

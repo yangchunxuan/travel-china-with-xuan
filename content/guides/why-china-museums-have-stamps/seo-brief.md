@@ -73,6 +73,8 @@ These are later central edits; this release does not modify old owners.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `stamp-paper-decision-tree` protects passports, identity documents, barcodes and re-entry tickets before any collecting goal.
+
 - Original mechanism card showing free desk, purchase-linked, machine, temporary and shop-operated stamps.
 - Rights-cleared close photograph of a blank personal notebook being stamped, with no identifiable visitor or counterfeit museum mark.
 - Exhibit-first decision card: choose one motif, find its object, then stamp.

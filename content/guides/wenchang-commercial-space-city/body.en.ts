@@ -50,7 +50,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"Plan the surrounding logistics",items:[
     {label:"Understand China's climate regions",href:"/guides/china-climate-regions-for-trip-timing/",description:"Treat Hainan's conditions separately from other regions and prepare for weather disruption."},
     {label:"Compare domestic-flight fare bundles",href:"/guides/china-domestic-flight-fare-bundle-baggage/",description:"Protect Hainan connections from baggage and fare assumptions."},
-    {label:"Check China's public-holiday travel calendar",href:"/guides/china-public-holidays-travel-calendar/",description:"Add demand and transport pressure to any launch-day plan."}
+    {label:"Check China's public-holiday travel calendar",href:"/guides/china-public-holidays-travel-calendar/",description:"Add demand and transport pressure to any launch-day plan."},
+    { label: "Use evidence states for another emerging-technology city", href: "/guides/shenzhen-low-altitude-city-infrastructure/", description: "Separate planned, tested, limited-public and routinely operating systems before treating infrastructure as a visitor product." }
   ]},
   {id:"sources",type:"sources",title:"Official and independent sources",items:[
     {label:"Hero image — Wenchang launch infrastructure seen across the coast from a nearby beach, photographed 2022-06-10; not evidence of a current designated viewing point or access",url:"https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_02.jpg",publisher:"Shujianyang — CC BY-SA 4.0; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},

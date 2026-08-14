@@ -69,13 +69,11 @@ Do not optimize the page around `flood-proof city`; use that phrase only to reje
 - Suggested inbound owner 2: `/guides/northern-jiangsu-yellow-sea-wetland-coast/` — where wetlands and access are discussed, link to the distinct engineered urban-water reading task.
 - Suggested inbound owner 3: `/guides/china-climate-regions-for-trip-timing/` — where rainfall exposure is framed, link to the difference between regional climate and one facility's design conditions.
 
-The inbound suggestions are for a later central edit. This release does not modify old owners.
-
 ## Unique asset plan
 
-- Primary asset: rights-cleared photograph of a named public rain garden with inlet, planted basin and overflow visible from the open path.
-- Supporting asset: original water-route diagram with the five field checkpoints and grey-drain connection.
-- Maintenance card: clear inlet, sediment/litter, erosion, ponding time unknown, overflow and downstream unknown.
+- **Implemented 2026-08-14:** `stormwater-path-diagram`, an accessible six-stage HTML path table from catchment to downstream connection. It includes blocked-inlet and exceeded-capacity branches and leaves infiltration, storage, water quality and flood performance explicitly unscored.
+- **Future field-evidence gap:** record one named public route before and after rain from the same safe viewpoints, with a rights-cleared view of inlet, planted basin or porous surface, overflow and downstream connection, plus maintenance and rainfall context.
+- A future landscape/drainage specialist review should test the route interpretation without turning one observation into a performance certificate.
 - Never stage entry into a basin or photograph active hazardous runoff for the article.
 
 ## GSC review

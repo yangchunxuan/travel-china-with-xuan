@@ -159,6 +159,19 @@ const body = {
       ]
     },
     {
+      id: "restoration-observation-transect",
+      type: "table",
+      caption: "Homeground public-viewpoint transect: move from what is visible to what still needs evidence",
+      columns: ["Transect zone", "Visible from a lawful viewpoint", "Question it can support", "What it cannot prove"],
+      rows: [
+        ["Upwind open ground", "Surface, moving sand signs, wind exposure and existing vegetation", "What pressure may reach the protected edge?", "The historical baseline or annual sand movement"],
+        ["Checkerboard belt", "Grid orientation, condition, replacement and trapped material", "Is surface wind being slowed here?", "Long-term ecosystem recovery"],
+        ["Vegetation or shelterbelt", "Species mix, density, gaps, dead plants and irrigation traces", "What target lies downwind, and what maintenance is visible?", "Survival rate, groundwater balance or off-site effects"],
+        ["Photovoltaic footprint", "Panels, service roads, barriers and managed groundcover", "Which companion measures operate beside energy generation?", "That panels alone restored the site"],
+        ["Fence or work boundary", "Signs, gates, staff direction and designated public route", "Where does public observation end?", "Permission to enter, fly a drone or inspect equipment"],
+      ],
+    },
+    {
       id: "access-boundary",
       type: "callout",
       tone: "warning",

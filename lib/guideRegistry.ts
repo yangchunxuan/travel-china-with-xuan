@@ -99,6 +99,8 @@ export interface GuideEntry {
   datePublished: string;
   dateModified: string;
   sourceReviewedDate: string;
+  /** Reviewed, localized query language; evidence and boundaries live in seo-brief.md. */
+  searchTerms?: Partial<Record<HomegroundLocale, readonly string[]>>;
   locales: Partial<Record<HomegroundLocale, GuideLocaleEntry>>;
   /** Required in independent guide folders; legacy guides use the adapter map. */
   search?: GuideSearchClassification;

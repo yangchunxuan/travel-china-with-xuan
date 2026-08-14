@@ -73,6 +73,8 @@ The inbound suggestions are for a later central edit. This release does not modi
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `restoration-observation-transect` distinguishes what a lawful public viewpoint can show from ecological outcomes that still need measured evidence.
+
 - Primary asset: rights-cleared satellite or elevated image of one named photovoltaic-plus-control site, captioned so energy infrastructure is not presented as restoration proof.
 - Supporting asset: original three-system section showing grid airflow, shelterbelt edge and photovoltaic companion measures.
 - Field card: target → mechanism → water → maintenance → access → unknowns.

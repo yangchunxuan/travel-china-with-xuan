@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Shenzhen's low-altitude city is a ground-and-air system, not simply a sky full of drones. Dispatch hubs, landing points and collection lockers connect to managed routes, communications, navigation, weather sensing, monitoring and human handoffs. Cargo and selected public-service uses are visible; many passenger and coverage claims remain plans or targets. Check the operating state before putting one in a trip."
+      text: "Shenzhen's low-altitude economy is a ground-and-air infrastructure system, not simply a sky full of drones. Dispatch hubs, landing points and collection lockers connect to managed routes, communications, navigation, weather sensing, monitoring and human handoffs. Cargo and selected public-service uses are visible; many passenger and coverage claims remain plans or targets. Check the operating state before putting one in a trip."
     },
     {
       id: "direct-answer",
@@ -96,6 +96,19 @@ const body = {
         ["Test or demonstration", "A dated test, invited flight or one-off route trial", "The equipment flew under that event's conditions; no repeat service is implied"],
         ["Institutional operation", "A named operator, task, node and repeated service for logistics or an agency", "A real operating workflow exists, but it may be closed to the general public"],
         ["Public consumer service", "A current booking or ordering channel, terms, identity/payment rules, operating notice and recovery path", "A traveller may try to use it, subject to date, coverage, weather and account access"]
+      ]
+    },
+    {
+      id: "layer-by-state-matrix",
+      type: "table",
+      caption: "Five layers × four states — a refreshable evidence matrix; fill each cell from a named, dated source rather than one drone sighting",
+      columns: ["Infrastructure layer", "Plan or target", "Test or demonstration", "Limited or institutional operation", "Routine public service"],
+      rows: [
+        ["Ground nodes", "Plan names node type, intended location or quantity", "Dated notice identifies the installed test pad, hub or locker", "Named task repeatedly uses a node but access may be restricted", "Current ordering/collection channel names the node and a failure path"],
+        ["Managed routes", "Map or plan proposes endpoints and coverage", "Dated test identifies endpoints and test conditions", "Operator or agency confirms a repeated route for a defined task", "Current terms show service area, availability check and cancellation handling"],
+        ["Communications, navigation and weather", "Architecture specifies networks or sensors to be built", "A dated test verifies one link or condition", "Responsible operator confirms the layer supports a named workflow", "Current service evidence shows the layer is used; its technical performance remains unscored"],
+        ["Control and digital service", "Plan describes monitoring, coordination or platform functions", "Demonstration shows a bounded workflow, not citywide control", "Named operator or agency documents dispatch and supervision for its task", "Current user channel exposes status, terms, collection and recovery without revealing sensitive operations"],
+        ["Ground handoff", "Plan names loading, collection or last-metre roles", "Test records a staged merchant-to-aircraft or aircraft-to-recipient handoff", "Staff or authorised users repeat the handoff for a defined service", "A current order can be traced from merchant to collection, including delay or ground fallback"]
       ]
     },
     {

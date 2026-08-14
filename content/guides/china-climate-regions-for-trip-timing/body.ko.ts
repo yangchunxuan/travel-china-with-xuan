@@ -65,6 +65,8 @@ const body = {
       { label: "중국 공식 공휴일 달력 확인", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "기후가 좋아도 연휴 혼잡은 남습니다." },
       { label: "숄더 시즌의 가치와 대가 비교", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "기후 검토 뒤 가격, 일조 시간과 운영 제한을 더하세요." },
       { label: "톈컹과 야생 싱크홀 구분하기", href: "/ko/guides/china-tiankeng-sinkholes-explained/", description: "지질학에서 톈컹이 무엇인지 이해하고 공개 관광지와 연구 발견지를 구분한 뒤 방문 전 최신 경로와 안전 정보를 확인합니다." },
+      { label: "24절기를 일기예보로 오해하지 않고 읽기", href: "/ko/guides/china-24-solar-terms-weather-food-daily-life/", description: "여행을 바꾸기 전에 천문학적 기준점, 지역별 날씨, 제철 음식과 현재 상황을 분리해 확인합니다." },
+      { label: "친링–화이허를 날씨의 벽이 아닌 전이지대로 보기", href: "/ko/guides/qinling-huaihe-transition-zone/", description: "남북 차이를 결론 내리기 전에 동서 지형, 현재 예보와 여행자별 조건을 함께 비교합니다." },
       { label: "낮부터 밤까지 난밍 걷기", href: "/ko/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "햇빛과 야경, 식사 리듬에 맞춰 구시가 골목에서 자슈러우·난밍강·칭윈시장까지 걷고 비와 피로 대안도 준비합니다." },
       { label: "원창의 우주 공간 구분하기", href: "/ko/guides/wenchang-commercial-space-city/", description: "원창의 국가 발사장, 하이난 상업우주발사센터와 우주도시 개발을 구분하고 모든 방문 안내를 최신 공식 자료로 다시 확인합니다." },
     ] },

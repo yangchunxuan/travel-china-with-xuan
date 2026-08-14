@@ -45,6 +45,7 @@ const body: StructuredPageBody = {
       { label: "부모님과 함께하는 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "큰 실내 박물관을 걷기와 회복 시간에 맞춥니다." },
       { label: "중국 일정이 너무 빠듯한지 확인하기", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "베이징의 주요 명소를 지친 하루에 몰아넣지 않습니다." },
       { label: "중국 관광지 입장권 확인하기", href: "/ko/guides/official-or-reseller-china-tickets/", description: "관광지의 실제 발권 주체를 찾고 재판매처의 지원·재고·실명 정보·환불 조건을 비교한 뒤 입장 가능한 예약인지 확인하세요." },
+      { label: "박물관 도장이 관람을 지배하지 않게 확인하기", href: "/ko/guides/why-china-museums-have-stamps/", description: "현재 도장 장소, 종이와 대기 규정을 확인한 뒤 소장품 관람 동선을 주된 계획으로 유지합니다." }
     ] },
     { id: "consultation", type: "callout", title: "베이징 하루를 실제 순서로 점검해야 하나요?", body: "박물관 뒤에 또 다른 시간 지정 예약, 부모님의 보행 속도, 당일 역 이동이 이어진다면 Homeground의 여행 상담가가 실제 순서와 여유 시간을 검토할 수 있습니다. 확정된 예약 시간과 숙소 지역을 먼저 알려 주세요.", tone: "neutral" },
     { id: "sources", type: "sources", title: "확인한 공식·이미지 출처", items: [

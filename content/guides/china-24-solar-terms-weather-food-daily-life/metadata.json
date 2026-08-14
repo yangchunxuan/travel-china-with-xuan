@@ -2,7 +2,9 @@
   "id": "china-24-solar-terms-weather-food-daily-life",
   "type": "planning",
   "pillar": "culture-history-people-ideas",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "traveller-interpretation-guide",
   "topics": [
     "twenty-four-solar-terms",
@@ -12,13 +14,15 @@
     "regional-food",
     "local-customs"
   ],
-  "destinations": ["china"],
+  "destinations": [
+    "china"
+  ],
   "heroImagePath": "/images/guides/china-24-solar-terms-weather-food-daily-life/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/china-24-solar-terms-weather-food-daily-life/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "culture",
@@ -39,7 +43,11 @@
       "navTitle": "Read China's 24 solar terms",
       "featuredLinkLabel": "Interpret solar terms while travelling",
       "openGraphLocale": "en_US",
-      "cardTags": ["Solar terms", "Seasonal culture", "Travel interpretation"]
+      "cardTags": [
+        "Solar terms",
+        "Seasonal culture",
+        "Travel interpretation"
+      ]
     },
     "zh": {
       "path": "/zh/guides/china-24-solar-terms-weather-food-daily-life/",
@@ -50,7 +58,11 @@
       "navTitle": "读懂二十四节气",
       "featuredLinkLabel": "在旅行中理解二十四节气",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["二十四节气", "时令文化", "旅行观察"]
+      "cardTags": [
+        "二十四节气",
+        "时令文化",
+        "旅行观察"
+      ]
     },
     "ko": {
       "path": "/ko/guides/china-24-solar-terms-weather-food-daily-life/",
@@ -61,7 +73,28 @@
       "navTitle": "중국의 24절기 읽기",
       "featuredLinkLabel": "여행 중 24절기 이해하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["24절기", "계절 문화", "여행 관찰"]
+      "cardTags": [
+        "24절기",
+        "계절 문화",
+        "여행 관찰"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "China 24 solar terms explained",
+      "Chinese solar terms and weather",
+      "24 solar terms food customs"
+    ],
+    "zh": [
+      "中国二十四节气是什么",
+      "二十四节气和天气",
+      "二十四节气饮食习俗"
+    ],
+    "ko": [
+      "중국 24절기 설명",
+      "중국 절기와 날씨",
+      "중국 24절기 음식 풍습"
+    ]
   }
 }

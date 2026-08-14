@@ -61,6 +61,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Choose a hotel near useful transport", href: "/guides/china-hotel-near-metro/", description: "Reduce daily walking and transfers, not just map distance." },
     { label: "Check the usable sightseeing days", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count arrival, transfer and recovery time honestly." },
     { label: "Match each night to the next sight", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Place each Zhangjiajie night beside the next confirmed sight, arrival or departure, then decide whether one hotel move saves enough backtracking." },
+    { label: "Test a 15-minute neighbourhood at a child’s pace", href: "/guides/china-15-minute-neighbourhoods/", description: "Check continuous routes, toilets, rest points, access rules and hours instead of treating a radius as a family-day promise." }
   ] },
   { id: "sources", type: "sources", title: "Official source reviewed", items: [
     { label: "Railway child-ticket rules", url: "https://kyfw.12306.cn/otn/gonggao/children.html", publisher: "China Railway 12306", reviewedAt: "2026-08-12" }

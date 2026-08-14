@@ -65,7 +65,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "역을 확인한 뒤 철도 절차를 준비합니다." },
     { label: "국제선 출발 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "구이저우 일정 뒤 룽둥바오 출발을 계획합니다." },
     { label: "분리 발권 항공권과 셀프 환승 위험", href: "/ko/guides/china-separate-flight-tickets-self-transfer-risk/", description: "항공–철도 또는 분리 항공 연결을 점검합니다." },
-    { label: "중국 여행의 한 거점 또는 여러 숙박 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "구이양을 농촌 여행 거점으로 유지할지 결정합니다." }
+    { label: "중국 여행의 한 거점 또는 여러 숙박 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "구이양을 농촌 여행 거점으로 유지할지 결정합니다." },
+    { label: "구이양에서 구이저우 촌BA 행사까지 마지막 이동 계획 세우기", href: "/ko/guides/guizhou-village-basketball-culture/", description: "행사명, 현지 이동, 인파 통제와 귀환 마감 시간을 확인한 뒤 구이양 교통과 타이판을 연결합니다." }
   ]},
   { id: "sources", type: "sources", title: "공식 출처", items: [
     { label: "구이양공항 통합 교통 정체", url: "https://english.guiyang.gov.cn/2023-12/15/c_956327.htm", publisher: "구이양시 인민정부", reviewedAt: "2026-08-13" },

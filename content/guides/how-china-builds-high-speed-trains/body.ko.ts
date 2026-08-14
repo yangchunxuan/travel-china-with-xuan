@@ -37,7 +37,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "기술 이야기에서 실제 여정으로", items: [
     {label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "승차권, 역과 탑승 절차는 승객용 대표 가이드에서 확인합니다."},
     {label: "야간열차와 주간 고속철도 비교", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "차량 기술보다 여행일 전체의 득실을 비교합니다."},
-    {label: "고속철도역이 구도심에서 멀 수 있는 이유", href: "/ko/guides/why-china-high-speed-stations-are-far-away/", description: "역 위치를 정하는 계획 논리를 이해합니다."}
+    {label: "고속철도역이 구도심에서 멀 수 있는 이유", href: "/ko/guides/why-china-high-speed-stations-are-far-away/", description: "역 위치를 정하는 계획 논리를 이해합니다."},
+    { label: "칭다오의 철도 제조 서사를 다른 산업과 비교하기", href: "/ko/guides/qingdao-brands-built-an-industrial-city/", description: "공장, 기업 박물관과 공개 관찰 지점에 같은 증거 경계를 적용하세요. 산업유산 전시는 현재 생산의 증거가 아닙니다." },
+    { label: "양산을 자동화 운송 시스템으로 읽기", href: "/ko/guides/yangshan-automated-port-explained/", description: "계획, 제어, 기계 이동과 사람의 일을 철도 제조와 비교하되 접근과 운영 주장은 각 현장에 한정합니다." }
   ]},
   {id: "sources", type: "sources", title: "1차 및 기술 자료", items: [
     {label: "시속 600km 자기부상 공학·시범 단계", url: "https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html", publisher: "중국 국가과학기술혁신센터", reviewedAt: "2026-08-13"},

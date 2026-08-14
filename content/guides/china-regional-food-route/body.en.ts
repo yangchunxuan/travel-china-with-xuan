@@ -224,11 +224,11 @@ const body = {
       type: "internal-links",
       title: "Continue planning",
       items: [
-        { "label": "Browse the China planning collection", "href": "/plan/", "description": "Place the food route inside the wider transport, timing and culture plan." },
+        { label: "Follow Yunnan coffee from cherry to cup", href: "/guides/yunnan-coffee-from-cherry-to-cup/", description: "Add a farm or cafe only when the exact lot, access and route fit; a Yunnan address does not prove bean origin." },
         { "label": "Prepare for a first shared meal", "href": "/guides/first-shared-meal-in-china/", "description": "Understand ordering, sharing and paying once the route reaches the table." },
         { "label": "Understand Guangzhou morning tea", "href": "/guides/how-guangzhou-morning-tea-works/", "description": "Use the dedicated guide if that regional meal format earns a place." },
         { "label": "Choose a hub-and-spoke or multi-base route", "href": "/guides/china-hub-and-spoke-or-multi-base-route/", "description": "Set the trip's base structure before adding another food region." },
-        { "label": "Use China's high-speed rail for the first time", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Verify the operating steps after the regional direction is chosen." },
+        { label: "Follow Zhenjiang vinegar from fermentation to the table", href: "/guides/zhenjiang-vinegar-living-fermentation/", description: "Use origin, process, label and current visitor evidence to decide whether the product deserves a stop on a food route." },
         { label: "Understand 12306 train meal delivery", href: "/guides/how-food-reaches-your-seat-on-china-train/", description: "Follow a 12306 meal from an eligible delivery station to your carriage and understand cutoffs, seat details and safe fallbacks." },
         { label: "Pair Nanchang banfen and crock soup", href: "/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "Decode Nanchang mixed rice noodles and earthenware-crock soup, control chilli and portion size, use practical ordering phrases, and switch soups when stock runs out." },
         { label: "Choose a tea landscape", href: "/guides/tea-landscape-regions-of-china/", description: "Choose a Chinese tea region by the landscape, work and community relationships you can actually observe—not by a best-tea ranking." },

@@ -2,30 +2,50 @@
   "id": "why-china-museums-have-stamps",
   "type": "planning",
   "pillar": "culture-festivals-arts-contemporary",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "cultural-phenomenon-practical-guide",
-  "topics": ["museum-stamps", "museum-visits", "cultural-creative-products", "visitor-etiquette"],
-  "destinations": ["china"],
+  "topics": [
+    "museum-stamps",
+    "museum-visits",
+    "cultural-creative-products",
+    "visitor-etiquette"
+  ],
+  "destinations": [
+    "china"
+  ],
   "heroImagePath": "/images/guides/why-china-museums-have-stamps/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/why-china-museums-have-stamps/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
-  "search": {"section": "culture", "family": "task", "primaryIntent": "execute"},
-  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/why-china-museums-have-stamps/",
       "title": "Why Are So Many People Collecting Stamps in China's Museums?",
       "headline": "A Museum Stamp Can Be a Souvenir, a Route and a Reason to Look Again",
-      "description": "Understand China's museum stamp-collecting trend, tell free stamp points from paid products, and collect without letting the queue replace the collection.",
+      "description": "Understand China's museum souvenir-stamp trend, tell free stamp points from paid products, and collect without letting the queue replace the collection.",
       "heroAlt": "AI-assisted editorial illustration of a generic stamp above a blank travel notebook; not a documentary museum or current stamp design",
       "navTitle": "Museum stamp collecting in China",
       "featuredLinkLabel": "Understand and try museum stamps",
       "openGraphLocale": "en_US",
-      "cardTags": ["Museum stamps", "China museums", "Visitor etiquette"]
+      "cardTags": [
+        "Museum stamps",
+        "China museums",
+        "Visitor etiquette"
+      ]
     },
     "zh": {
       "path": "/zh/guides/why-china-museums-have-stamps/",
@@ -36,7 +56,11 @@
       "navTitle": "中国博物馆集章",
       "featuredLinkLabel": "看懂并尝试博物馆盖章",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["博物馆印章", "中国博物馆", "参观礼仪"]
+      "cardTags": [
+        "博物馆印章",
+        "中国博物馆",
+        "参观礼仪"
+      ]
     },
     "ko": {
       "path": "/ko/guides/why-china-museums-have-stamps/",
@@ -47,7 +71,28 @@
       "navTitle": "중국 박물관 도장 수집",
       "featuredLinkLabel": "박물관 도장 이해하고 체험하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["박물관 도장", "중국 박물관", "관람 예절"]
+      "cardTags": [
+        "박물관 도장",
+        "중국 박물관",
+        "관람 예절"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Why do China museums have souvenir stamps",
+      "China museum stamp collecting",
+      "How to collect museum stamps in China"
+    ],
+    "zh": [
+      "中国博物馆为什么有集章",
+      "博物馆集章怎么玩",
+      "中国博物馆印章收集"
+    ],
+    "ko": [
+      "중국 박물관 기념 스탬프",
+      "중국 박물관 스탬프 투어",
+      "중국 박물관 도장 수집"
+    ]
   }
 }

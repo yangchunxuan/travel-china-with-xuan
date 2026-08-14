@@ -69,14 +69,12 @@ Keep en dashes and transliterations consistent. Do not alternate `Qingling`/`Qin
 - Suggested inbound owner 2: `/guides/china-regional-food-route/` — where regional systems are discussed, link to this page for physical-geography context while keeping cuisine ownership separate.
 - Suggested inbound owner 3: `/guides/is-your-china-itinerary-too-rushed/` — where transfer pace is evaluated, link only if a route deliberately uses observation windows across Qinling or Huai.
 
-The inbound suggestions are for a later central edit. This release does not modify old owners.
-
 ## Unique asset plan
 
-- Primary asset: original China map showing a broad western mountain/eastern lowland transition belt with a legend that identifies the CAS model as one framework.
-- Supporting asset: two-section cross-section comparing Qinling relief with Huai/Jianghuai lowlands.
-- Field card: six lenses × three observation windows, with a visible `weather is not climate` warning.
-- Documentary pairs must record exact location, elevation, season, date and rights; generic rice/wheat photos cannot prove the line.
+- **Implemented 2026-08-14:** `qinling-huaihe-transect`, an accessible, explicitly not-to-scale HTML transect card separating the western mountain mechanism, overlapping gradient and eastern lowland mechanism. It provides blanks for location, elevation/side, date and repeated observation lenses without inventing a crossing point.
+- **Future field-evidence gap:** collect same-date, rights-cleared observation pairs at named public locations with elevation, season, weather and comparable lenses, then have a geography/ecology specialist test the interpretation.
+- A future map may show a broad transition model only with framework, scale and uncertainty visible; it must not turn the zone into a legal or exact border.
+- Generic rice/wheat or mountain/river photos cannot prove the line.
 
 ## GSC review
 

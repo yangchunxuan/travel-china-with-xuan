@@ -68,10 +68,11 @@ These are recommendations only; do not edit the old pages in this batch.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `route-friction-worksheet` records four real route segments, actual time/access costs and a group decision without producing a misleading neighbourhood score.
+
 - Preferred asset: a rights-cleared, named public-street sequence in one community showing the same legal walking route at three points—anchor, barrier/crossing, and public service frontage.
 - Companion asset: a simple route-audit diagram comparing planning radius with continuous usable path; it must not imply a precise national boundary.
 - Evidence to retain: date, exact public viewpoint, route notes, access status and photographer/license. Avoid identifiable residents, access cards, children and care recipients.
-- This brief does not authorize image creation or provenance changes.
 
 ## GSC review plan
 

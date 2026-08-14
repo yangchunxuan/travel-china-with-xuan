@@ -59,6 +59,18 @@ const body = {
       ]
     },
     {
+      id: "new-year-four-clock-calendar",
+      type: "table",
+      caption: "Four-clock trip sheet — copy it for one current year and one exact travel date; blanks mean unresolved, not unchanged from last year",
+      columns: ["Clock", "Write the exact current field", "Attach the dated owner", "Freeze or change this decision"],
+      rows: [
+        ["Lunar and festival date", "Year: ____; lunar date and Gregorian date: ____", "Current official calendar or named public-programme notice checked on: ____", "Keep the festival date separate from the dates when a particular activity is open"],
+        ["Statutory holiday and workday", "Day off, compensatory workday or ordinary day: ____", "Annual State Council arrangement checked on: ____", "Mark office and transport assumptions for recheck; do not infer every business hour"],
+        ["Transport demand and service", "Exact corridor, sales or waitlist state, and fallback: ____", "Rail, airline, road or local operator checked on: ____", "Protect the necessary journey; release optional moves that have no recoverable seat"],
+        ["Household or venue", "Named place or host, public/hosted/private status, and time window: ____", "Organiser notice or direct host confirmation received on: ____", "Attend only the confirmed scope; invitation and opening hours do not transfer to another date or person"]
+      ]
+    },
+    {
       id: "flow-heading",
       type: "heading",
       level: 2,

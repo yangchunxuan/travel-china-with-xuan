@@ -45,7 +45,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"继续建立背景",items:[
     {label:"安排上海—苏州—杭州—南京顺序",href:"/zh/guides/shanghai-suzhou-hangzhou-nanjing-route-order/",description:"先决定哪些长三角城市值得保留，再叠加运河主题。"},
     {label:"从斗拱读懂中国木构",href:"/zh/guides/dougong-and-chinese-timber-frame-reading/",description:"用结构证据替代“看起来很古老”的气氛判断。"},
-    {label:"比较雕版与活字印刷",href:"/zh/guides/woodblock-and-movable-type-printing-decisions/",description:"理解物质生产系统如何与城市交换发生关系。"}
+    {label:"比较雕版与活字印刷",href:"/zh/guides/woodblock-and-movable-type-printing-decisions/",description:"理解物质生产系统如何与城市交换发生关系。"},
+    { label: "沿着雨水路径读懂中国海绵城市", href: "/zh/guides/how-to-read-a-chinese-sponge-city/", description: "先追踪进水、蓄存、溢流、维护和受纳水体，再判断一处景观设施是否构成有效系统。" }
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
     {label:"头图——2023-11-22拍摄的拱宸桥、大运河水面与滨水公共空间；不能证明当前活动或通行状态",url:"https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg",publisher:"Windmemories — CC BY-SA 4.0；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},

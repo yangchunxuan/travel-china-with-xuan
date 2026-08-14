@@ -70,13 +70,11 @@ Do not freeze a year in the title or add a copied annual date table. Chinese sho
 - Suggested inbound owner 2: `/guides/china-night-train-or-daytime-high-speed-rail/` — where Chunyun is cited as a demand condition, link to the four-clock planning method rather than duplicating annual figures.
 - Suggested inbound owner 3: `/guides/first-shared-meal-in-china/` — where ordinary shared meals are scoped, link to the stricter invitation boundary for a family reunion meal.
 
-The inbound suggestions are for a later central edit. This release does not modify old owners.
-
 ## Unique asset plan
 
-- Primary asset: a rights-cleared documentary public-transport scene from a named station during a documented Chunyun period; do not use a private family scene as a generic cultural prop.
-- Supporting asset: original four-clock diagram with official holiday, Chunyun, venue and family.
-- Decision card: public programme / community-open / restaurant / hosted meal / private ritual.
+- **Implemented 2026-08-14:** `new-year-four-clock-calendar`, an accessible HTML trip sheet with updateable year/date fields for the lunar/festival date, statutory holiday/workday, transport state and named household/venue. A blank is unresolved, never permission to reuse last year's dates.
+- **Future field-evidence gap:** document one named station during a defined Chunyun period with rights-cleared public-space photography and dated operator notices, then test the worksheet against an actual booking/fallback sequence.
+- Any future custom evidence must keep public programmes, hosted participation and private household practice separate and obtain specific consent.
 - Never stage, buy or imply access to an `authentic family reunion`.
 
 ## GSC review

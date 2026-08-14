@@ -48,7 +48,9 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"Connect the city context",items:[
     {label:"Choose between Chengdu Panda Base and Panda Valley",href:"/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"Keep animal visits and the greenway as separate, realistic urban tasks."},
     {label:"Understand China's map-coordinate offset",href:"/guides/china-map-coordinate-offset-explained/",description:"Protect exact greenway entries and exits from mismatched pins."},
-    {label:"Check China's public-holiday calendar",href:"/guides/china-public-holidays-travel-calendar/",description:"Anticipate higher leisure pressure without claiming a guaranteed crowd level."}
+    {label:"Check China's public-holiday calendar",href:"/guides/china-public-holidays-travel-calendar/",description:"Anticipate higher leisure pressure without claiming a guaranteed crowd level."},
+    { label: "Read a 15-minute neighbourhood as a service network", href: "/guides/china-15-minute-neighbourhoods/", description: "Use the same route-first test for shops, care, public space, gates and real walking access beyond a greenway segment." },
+    { label: "Compare all-day green space with Shanghai’s 24-hour park claims", href: "/guides/shanghai-24-hour-parks-reality-check/", description: "Verify the segment, gate, facilities, lighting and return transport at the exact place and time in both cities." }
   ]},
   {id:"sources",type:"sources",title:"Official and independent sources",items:[
     {label:"Hero image — Chengdu Greenway, photographed 2022-03-12; coordinates support a Chengdu city-ring/Jincheng Greenway section, not current access or services",url:"https://commons.wikimedia.org/wiki/File:Chengdu_Greenway.jpg",publisher:"MspreilsCN — CC0; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},

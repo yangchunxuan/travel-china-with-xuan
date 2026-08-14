@@ -402,6 +402,7 @@ const body: StructuredPageBody = {
           description: "교통 결제 방식은 실제 티켓과 역을 정한 뒤 한 번 더 확인하세요.",
         },
         { label: "ATM 현금 미지급 복구", href: "/ko/guides/china-atm-cash-not-dispensed/", description: "재출금을 멈추고 ATM 증거를 보존한 뒤 ATM 운영 은행과 카드 발급사에 각각 접수하고 대체 결제를 이용하세요." },
+        { label: "지역사회 식당의 결제와 일반 가격 확인하기", href: "/ko/guides/china-community-canteens-explained/", description: "지원 대상 시설처럼 보이는 곳에 의존하기 전에 비거주자 이용, 식사카드, 현재 일반 가격과 대안을 확인합니다." }
       ],
     },
     {
