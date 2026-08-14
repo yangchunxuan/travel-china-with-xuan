@@ -1,0 +1,80 @@
+{
+  "id": "shilin-ashima-landscape-story",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "destination-cultural-interpretation",
+  "topics": [
+    "shilin-stone-forest",
+    "ashima",
+    "sani-yi",
+    "oral-tradition",
+    "karst"
+  ],
+  "destinations": ["shilin", "kunming", "yunnan", "china"],
+  "heroImagePath": "/images/guides/shilin-ashima-landscape-story/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shilin-ashima-landscape-story/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "sourceReviewedDate": "2026-08-14",
+  "search": {
+    "section": "culture",
+    "family": "relationship",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/shilin-ashima-landscape-story/",
+      "title": "Shilin Stone Forest and Ashima: Story, Geology and Landscape",
+      "headline": "Stone Forest Is More Than Rock: How Ashima Became a Yunnan Landscape Story",
+      "description": "Trace Ashima from Sani Yi oral tradition through film to a named rock, then read Shilin’s karst landscape without mistaking cultural story for geology.",
+      "heroAlt": "Ashima Rock seen from a favorable viewing angle in the Minor Stone Forest at Shilin, Yunnan.",
+      "navTitle": "Read Ashima at Shilin Stone Forest",
+      "featuredLinkLabel": "Understand Ashima at Shilin Stone Forest",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shilin", "Ashima", "Cultural landscape"]
+    },
+    "zh": {
+      "path": "/zh/guides/shilin-ashima-landscape-story/",
+      "title": "石林与阿诗玛：怎样读懂景观，又不把传说当成地质",
+      "headline": "石林不只是一片岩石：阿诗玛如何成为云南景观故事",
+      "description": "分清撒尼彝族口述传统、20世纪整理文本、电影形象和“阿诗玛石”的景区命名，再带着这四层线索到石林现场观察。",
+      "heroAlt": "从有利观看角度看到的云南石林小石林阿诗玛石。",
+      "navTitle": "在石林读懂阿诗玛",
+      "featuredLinkLabel": "理解石林里的阿诗玛故事",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["石林", "阿诗玛", "文化景观"]
+    },
+    "ko": {
+      "path": "/ko/guides/shilin-ashima-landscape-story/",
+      "title": "스린 석림과 아시마: 이야기와 지질을 구분해 풍경 읽기",
+      "headline": "석림은 바위만이 아니다: 아시마가 윈난의 풍경 이야기가 된 과정",
+      "description": "싸니 이족의 구전 전통, 20세기 정리본, 영화 속 인물, 아시마 바위라는 관광 명칭을 구분하고 현장에서 석림을 읽는 법을 안내합니다.",
+      "heroAlt": "윈난 스린 소석림에서 보기 좋은 각도로 바라본 아시마 바위.",
+      "navTitle": "스린에서 아시마 읽기",
+      "featuredLinkLabel": "스린의 아시마 이야기 이해하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["스린", "아시마", "문화 경관"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Shilin Stone Forest Ashima story",
+      "Ashima Rock Minor Stone Forest",
+      "Shilin Stone Forest geology and legend"
+    ],
+    "zh": [
+      "石林阿诗玛传说",
+      "小石林阿诗玛石",
+      "石林地质与阿诗玛故事"
+    ],
+    "ko": [
+      "스린 석림 아시마 이야기",
+      "소석림 아시마 바위",
+      "스린 석림 지질과 전설"
+    ]
+  }
+}

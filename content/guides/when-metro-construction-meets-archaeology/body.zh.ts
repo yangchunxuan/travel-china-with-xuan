@@ -177,7 +177,8 @@ const body = {
         {"label": "安排良渚博物院与遗址公园顺序", "href": "/zh/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "比较博物馆藏品与正式开放的考古地景。"},
         {"label": "核对中国地图上的偏移 pin", "href": "/zh/guides/china-map-coordinate-offset-explained/", "description": "用中文地址交叉确认车站、入口或博物馆位置。"},
         {"label": "判断酒店是否真的靠近地铁", "href": "/zh/guides/china-hotel-near-metro/", "description": "按实际入口和步行路线判断，而不是只看站名。"},
-        {"label": "从西夏文字与陵墓读考古证据", "href": "/zh/guides/xixia-script-and-imperial-tombs-context/", "description": "看考古材料如何支持有边界的历史解读。"}
+        {"label": "从西夏文字与陵墓读考古证据", "href": "/zh/guides/xixia-script-and-imperial-tombs-context/", "description": "看考古材料如何支持有边界的历史解读。"},
+        {"label": "比较州桥考古与现代主题开封", "href": "/zh/guides/kaifeng-song-dynasty-urban-landscape/", "description": "通过一处具名发掘分清留存物证、后期重建和面向游客的历史场景。"}
       ]
     },
     {

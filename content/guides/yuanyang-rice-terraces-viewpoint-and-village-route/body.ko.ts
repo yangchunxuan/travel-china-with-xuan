@@ -61,7 +61,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "중국 탐색", href: "/ko/explore/", description: "위안양 생활경관의 역할을 다른 유산 정차와 비교하세요."},
     {label: "중국 기후권과 여행 시기", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "윈난 고지 날씨 기대를 중국 전체에 옮기거나 그 반대로 하지 마세요."},
     {label: "부모님과 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "전체 일정에서 어둠·계단·반복 도로 갈래를 줄입니다."},
-    {label: "푸젠 토루 군락 선택", href: "/ko/guides/fujian-tulou-cluster-selection/", description: "같은 원칙입니다. 살아 있는 공동체에서는 범위가 분명하고 주민을 존중하는 공개 방문이 필요합니다."}
+    {label: "푸젠 토루 군락 선택", href: "/ko/guides/fujian-tulou-cluster-selection/", description: "같은 원칙입니다. 살아 있는 공동체에서는 범위가 분명하고 주민을 존중하는 공개 방문이 필요합니다."},
+    {label: "아시마 이야기로 스린 석림 읽기", href: "/ko/guides/shilin-ashima-landscape-story/", description: "윈난의 또 다른 문화경관을 비교하되 지질, 구전 전통과 현대 해석을 서로 다른 증거 층으로 구분합니다."}
   ]},
   {id: "consultation", type: "callout", title: "안개에도 흔들리지 않는 위안양 일정이 필요한가요?", body: "Homeground 여행 상담가가 도착 도로, 숙박 구역, 전망 우선순위, 마을 접근, 흐린 날의 대안을 비교할 수 있습니다. 날짜, 이동 능력, 사진 우선순위, 아침이 한 번인지 두 번인지 알려 주세요.", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026년 8월 13일 검토한 공식 출처", items: [

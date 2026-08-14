@@ -1,0 +1,85 @@
+{
+  "id": "kaifeng-song-dynasty-urban-landscape",
+  "type": "planning",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": ["global"],
+  "format": "orientation-guide",
+  "topics": [
+    "kaifeng",
+    "song-dynasty-urban-landscape",
+    "qingming-shanghe-tu",
+    "qingming-riverside-landscape-garden",
+    "millennium-city-park",
+    "qingming-shanghe-garden",
+    "zhouqiao-archaeology"
+  ],
+  "destinations": ["kaifeng", "henan", "china"],
+  "heroImagePath": "/images/guides/kaifeng-song-dynasty-urban-landscape/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/kaifeng-song-dynasty-urban-landscape/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "sourceReviewedDate": "2026-08-14",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/kaifeng-song-dynasty-urban-landscape/",
+      "title": "Kaifeng's Song-Dynasty Landscape: What Is Historic, Rebuilt or Themed?",
+      "headline": "Read the Scroll, Zhouqiao and Qingming Shanghe Garden as Different Kinds of Evidence",
+      "description": "Separate the Qingming scroll, Zhouqiao archaeology and modern Qingming Shanghe Garden, then choose themed interpretation or material evidence in Kaifeng.",
+      "heroAlt": "Modern themed buildings and waterways in Qingming Riverside Landscape Garden with present-day Kaifeng beyond.",
+      "navTitle": "Read Kaifeng's Song-Dynasty Landscape",
+      "featuredLinkLabel": "Separate historic, rebuilt and themed Kaifeng",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Kaifeng", "Qingming scroll", "Urban archaeology"]
+    },
+    "zh": {
+      "path": "/zh/guides/kaifeng-song-dynasty-urban-landscape/",
+      "title": "开封宋代城市景观：哪些是史迹、重建与主题呈现？",
+      "headline": "把《清明上河图》、州桥考古与清明上河园当作三类证据来读",
+      "description": "分清《清明上河图》、州桥考古和现代清明上河园，再判断开封之行更适合主题体验还是物证优先。",
+      "heroAlt": "清明上河园内的现代主题建筑与水道，远处可见今天的开封城市。",
+      "navTitle": "读懂开封宋代城市景观",
+      "featuredLinkLabel": "分清开封的史迹、重建与主题呈现",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["开封", "清明上河图", "城市考古"]
+    },
+    "ko": {
+      "path": "/ko/guides/kaifeng-song-dynasty-urban-landscape/",
+      "title": "카이펑 송대 도시 풍경: 역사 유적, 재현, 테마 연출 구분하기",
+      "headline": "청명상하도, 저우차오 유적, 청명상하원을 서로 다른 증거로 읽는 법",
+      "description": "청명상하도와 저우차오 고고학, 현대 청명상하원을 구분하고 테마 체험과 물적 증거 중 어떤 카이펑 방문이 맞는지 판단하세요.",
+      "heroAlt": "청명상하원 안의 현대 테마 건축과 수로, 그 너머로 보이는 오늘날의 카이펑 시가지.",
+      "navTitle": "카이펑의 송대 도시 풍경 읽기",
+      "featuredLinkLabel": "카이펑의 유적, 재현, 테마 연출 구분하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["카이펑", "청명상하도", "도시 고고학"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Kaifeng Song Dynasty city history",
+      "is Millennium City Park historically accurate",
+      "Qingming Riverside Landscape Garden Kaifeng",
+      "Kaifeng Zhouqiao archaeology"
+    ],
+    "zh": [
+      "开封宋代城市遗迹",
+      "清明上河园是复原建筑吗",
+      "开封州桥考古",
+      "清明上河图与开封"
+    ],
+    "ko": [
+      "카이펑 송대 도시 유적",
+      "청명상하원 역사적 재현",
+      "카이펑 저우차오 유적",
+      "청명상하도 카이펑 여행"
+    ]
+  }
+}

@@ -994,3 +994,23 @@ The derivatives were produced by conventional crop, resize and WebP
 conversion only. No scene element was generated, added or removed. Attribution,
 licence links and modification notices remain in each guide's default-collapsed
 Sources section wherever the licence requires them.
+
+## Employee 2 Shilin and Kaifeng release (August 14, 2026)
+
+Both covers are real, location-identified photographs from Wikimedia Commons.
+They were conventionally cropped, resized and converted to WebP; no scene
+element was generated, added, removed or composited. This release therefore
+contains **0 / 2 AI-generated or AI-assisted covers**. The additional eleven
+body images and their exact source, creator, licence, derivative and evidence
+boundaries remain recorded in each guide's `image-plan.md` and default-collapsed
+trilingual Sources disclosure.
+
+| Guide | Original source, creator and rights | Captured / exact visible scene | Source SHA-256 | Published derivative and final SHA-256 | Use and evidence boundary |
+| --- | --- | --- | --- | --- | --- |
+| `shilin-ashima-landscape-story` | [Ashima rock 2](https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg), LHOON, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | 2006-07-19; Minor Stone Forest at Shilin, Yunnan; Ashima Rock, nearby pinnacles and vegetation seen from one favourable angle | `4736ace810eab3cffd25dbd76a311a0067bb758e7936d14a5306e8678be5259b` (1800 × 1200 source JPEG) | `public/images/guides/shilin-ashima-landscape-story/hero-1600.webp`; `5639a30d74407ec5433c1d9f4328ed680f61d69b08551c5f36d8366c358d38cd` | Real photograph; AI: no. The resemblance is angle-dependent and the formation is natural: the image is not evidence of a carved statue, a marked viewpoint, a unique Ashima text or a geological formation process. The cropped/resized derivative remains CC BY-SA 2.0. |
+| `kaifeng-song-dynasty-urban-landscape` | [2014 Millennium City Park with Kaifeng in Background](https://commons.wikimedia.org/wiki/File:2014_Millennium_City_Park_with_Kaifeng_in_Background.jpg), Gary Todd, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | 2014-04-26; modern Qingming Riverside Landscape Garden buildings and waterways with present-day Kaifeng beyond | `9614c2a5226192178e3b91c9069384337ca26a3f00187a77db124ffd876ae399` (4752 × 3168 source JPEG) | `public/images/guides/kaifeng-song-dynasty-urban-landscape/hero-1600.webp`; `3b602d301a74f9ebe6f673464d56c48f51866864dbe80d69350099eead1ca19a` | Real photograph; AI: no. It deliberately documents a modern themed landscape and current city context, not surviving Northern Song urban fabric, the original scroll, Zhouqiao archaeology or present-day opening conditions. |
+
+The Shilin derivative must retain LHOON attribution, source and licence links,
+an indication that it was cropped/resized and CC BY-SA 2.0 share-alike
+treatment. The Kaifeng CC0 photograph retains descriptive credit even though
+attribution is not legally required.

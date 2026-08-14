@@ -46,7 +46,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
     {label:"Build a Shanghai–Suzhou–Hangzhou–Nanjing route",href:"/guides/shanghai-suzhou-hangzhou-nanjing-route-order/",description:"Decide which lower-Yangtze cities earn a place before adding a canal theme."},
     {label:"Read Chinese timber buildings through dougong",href:"/guides/dougong-and-chinese-timber-frame-reading/",description:"Use construction evidence rather than old-looking atmosphere."},
     {label:"Compare woodblock and movable-type printing",href:"/guides/woodblock-and-movable-type-printing-decisions/",description:"See how material systems shaped urban production and exchange."},
-    { label: "Follow rainwater through a Chinese sponge-city site", href: "/guides/how-to-read-a-chinese-sponge-city/", description: "Trace inlet, storage, overflow, maintenance and receiving water before calling one landscaped feature a working system." }
+    { label: "Follow rainwater through a Chinese sponge-city site", href: "/guides/how-to-read-a-chinese-sponge-city/", description: "Trace inlet, storage, overflow, maintenance and receiving water before calling one landscaped feature a working system." },
+    { label: "Read Kaifeng's Song landscape as separate evidence layers", href: "/guides/kaifeng-song-dynasty-urban-landscape/", description: "Compare a historic scroll, excavated canal crossing and modern themed space without making any one layer stand for the whole Song city." }
   ]},
   {id:"sources",type:"sources",title:"Official and independent sources",items:[
     {label:"Hero image — Gongchen Bridge, Grand Canal water and riverside public space, photographed 2023-11-22; not evidence of current event or access conditions",url:"https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg",publisher:"Windmemories — CC BY-SA 4.0; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},

@@ -54,7 +54,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"자연 출입을 책임 있게 계획하기",items:[
     {label:"치롄산 공개 관문 고르기",href:"/ko/guides/qilian-mountains-public-gateways-and-access/",description:"큰 보호 경관에도 같은 경계 원칙을 적용한다."},
     {label:"중국 기후권 이해",href:"/ko/guides/china-climate-regions-for-trip-timing/",description:"한 지역의 날씨 결론을 모든 카르스트 지역에 옮기지 않는다."},
-    {label:"중국 휠체어 접근 경로 계획",href:"/ko/guides/wheelchair-accessible-china-route-planning/",description:"모호한 접근성 표시를 측정 가능한 경로 근거로 바꾼다."}
+    {label:"중국 휠체어 접근 경로 계획",href:"/ko/guides/wheelchair-accessible-china-route-planning/",description:"모호한 접근성 표시를 측정 가능한 경로 근거로 바꾼다."},
+    {label:"스린에서 지질과 아시마 이야기 구분하기",href:"/ko/guides/shilin-ashima-landscape-story/",description:"관리되는 카르스트 경관을 읽되 이름 붙은 바위나 구전 전통을 지질 설명으로 바꾸지 않습니다."}
   ]},
   {id:"sources",type:"sources",title:"공식·독립 자료",items:[
     {label:"대표 이미지 — 2009년 11월 샤오자이 톈컹 남쪽 가장자리에서 촬영. 역사 사진일 뿐 현재 승인된 경로의 증거는 아님",url:"https://commons.wikimedia.org/wiki/File:Xiaozhaitiankeng.jpg",publisher:"Brookqi — PD-self; 출처 표기일 뿐 Homeground에 대한 지지를 뜻하지 않음",reviewedAt:"2026-08-13"},

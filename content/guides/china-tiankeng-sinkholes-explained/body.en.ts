@@ -54,7 +54,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"Plan nature access responsibly",items:[
     {label:"Choose public gateways in the Qilian Mountains",href:"/guides/qilian-mountains-public-gateways-and-access/",description:"Apply the same boundary discipline to a large protected landscape."},
     {label:"Understand China's climate regions",href:"/guides/china-climate-regions-for-trip-timing/",description:"Do not transfer one region's weather conclusion to every karst area."},
-    {label:"Plan wheelchair-accessible routes in China",href:"/guides/wheelchair-accessible-china-route-planning/",description:"Replace vague accessibility labels with measurable route evidence."}
+    {label:"Plan wheelchair-accessible routes in China",href:"/guides/wheelchair-accessible-china-route-planning/",description:"Replace vague accessibility labels with measurable route evidence."},
+    {label:"Separate geology from the Ashima story at Shilin",href:"/guides/shilin-ashima-landscape-story/",description:"Read one managed karst landscape without turning a named rock or oral tradition into a geological explanation."}
   ]},
   {id:"sources",type:"sources",title:"Official and independent sources",items:[
     {label:"Hero image — Xiaozhai Tiankeng from the southern rim, November 2009; historical view only, not proof of an authorized or current route",url:"https://commons.wikimedia.org/wiki/File:Xiaozhaitiankeng.jpg",publisher:"Brookqi — PD-self; attribution only, no endorsement implied",reviewedAt:"2026-08-13"},

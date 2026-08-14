@@ -313,7 +313,8 @@ const body = {
           href: "/zh/guides/temple-of-heaven-gates-and-ritual-sequence/",
           description: "比较有记录的祭祀轴线与判断城市城门所需的不同证据。",
         },
-        { label: "看地铁建设遇上考古后会发生什么", href: "/zh/guides/when-metro-construction-meets-archaeology/", description: "沿着偶然发现、现场保护、发掘、设计响应和公众展示追踪，不假定每次发现都会停工或最终可见。" }
+        { label: "看地铁建设遇上考古后会发生什么", href: "/zh/guides/when-metro-construction-meets-archaeology/", description: "沿着偶然发现、现场保护、发掘、设计响应和公众展示追踪，不假定每次发现都会停工或最终可见。" },
+        { label: "分清开封的史迹、重建与主题呈现", href: "/zh/guides/kaifeng-song-dynasty-urban-landscape/", description: "用材料、年代与解释证据分别阅读州桥、《清明上河图》和现代主题园区，不把它们合并成一座完整留存的宋城。" }
       ],
     },
     {
