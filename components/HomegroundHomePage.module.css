@@ -2844,6 +2844,26 @@
     gap: 1rem;
   }
 
+  .travelGuides,
+  .travelGuidesHeader,
+  .travelGuidesIntro,
+  .travelGuideGrid {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .localeRoot[data-homeground-locale="zh"] .sectionIntro h2,
+  .localeRoot[data-homeground-locale="zh"] .travelGuidesIntro h2,
+  .localeRoot[data-homeground-locale="zh"] .studioIntro h2,
+  .localeRoot[data-homeground-locale="zh"] .faqIntro h2,
+  .localeRoot[data-homeground-locale="zh"] .finalCta h2 {
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+    word-break: normal;
+  }
+
   .travelGuidesIndexLink {
     align-self: stretch;
     justify-content: space-between;
@@ -2898,9 +2918,6 @@
 
   .localeRoot[data-homeground-locale="zh"] .studioIntro h2 {
     font-size: 2.2rem;
-    overflow-wrap: break-word;
-    text-wrap: pretty;
-    word-break: normal;
   }
 
   .sampleRouteHeading {

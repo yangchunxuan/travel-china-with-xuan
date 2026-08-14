@@ -97,6 +97,21 @@ test("homepage guide selection is explicit, ranked and stable", async () => {
     homepageCss,
     /\[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"\][\s\S]*?aspect-ratio: 1;/,
   );
+
+  const mobileHomepageStyles = homepageCss.slice(
+    homepageCss.indexOf("@media (max-width: 680px)"),
+    homepageCss.indexOf("@media (max-width: 360px)"),
+  );
+  assert.match(
+    mobileHomepageStyles,
+    /\.travelGuidesIntro,[\s\S]*?min-inline-size: 0;/,
+    "the mobile guide header must be allowed to shrink inside the viewport",
+  );
+  assert.match(
+    mobileHomepageStyles,
+    /\[data-homeground-locale="zh"\] \.travelGuidesIntro h2,[\s\S]*?overflow-wrap: anywhere;[\s\S]*?word-break: normal;/,
+    "long Chinese guide headings must wrap instead of widening the page",
+  );
 });
 
 test("three hub routes publish localized canonical and hreflang metadata", async () => {
