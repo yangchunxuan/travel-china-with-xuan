@@ -2039,7 +2039,7 @@
         "lastReviewedAt": "2026-08-14",
         "status": "published-indexable",
         "stateTransition": "topic-universe-hg-topic-0084-authorized-and-materialized-for-release-2026-08-14",
-        "originMainCommit": "7c1c49a6a0f60f94a6ef167ad97d28bafbf7aa87"
+        "originMainCommit": "6e49cf962453c4d8e2997ac0fda28d23fe6c5039"
       },
       {
         "id": "shilin-ashima-landscape-story",
@@ -2070,7 +2070,7 @@
         "lastReviewedAt": "2026-08-14",
         "status": "published-indexable",
         "stateTransition": "employee-2-research-candidate-authorized-and-materialized-for-release-2026-08-14",
-        "originMainCommit": "7c1c49a6a0f60f94a6ef167ad97d28bafbf7aa87"
+        "originMainCommit": "6e49cf962453c4d8e2997ac0fda28d23fe6c5039"
       }
     ],
     "hubsAndDirectories": [
