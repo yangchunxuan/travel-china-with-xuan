@@ -60,13 +60,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 | Rail | `CRRC Qingdao Sifang history` | capability sequence and visit boundary |
 | Visit | `Qingdao industrial heritage` | scenarios and recovery |
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-cities-industrial-heritage` → Qingdao city identity.
-- Hub: `/explore/`; this page owns the three-lens interpretation, while route and train execution remain with their guides.
-- Suggested inbound owner 1: `/guides/shandong-peninsula-coastal-city-rail-arc/` — from Qingdao city selection, link to the industrial-history reading layer.
-- Suggested inbound owner 2: `/guides/china-high-speed-train-first-time-guide/` — from rolling-stock context, link to Qingdao Sifang's bounded historical lens.
-- Suggested inbound owner 3: `/guides/china-regional-food-route/` — from Qingdao beer/food context, link to the brewery-as-city-evidence section.
+- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `how-china-builds-high-speed-trains`, `shandong-peninsula-coastal-city-rail-arc`, `yiwu-market-to-factory-network` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

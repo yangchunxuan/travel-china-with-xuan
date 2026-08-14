@@ -60,13 +60,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 | Display | `archaeology in metro stations` | public-display separation |
 | Current service | `metro disruption archaeological discovery` | source ladder and final checks |
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-heritage-archaeology` → infrastructure encounters.
-- Hub: `/explore/`; this page owns the national process, while destination and museum pages own visits.
-- Suggested inbound owner 1: `/guides/liangzhu-ruins-park-and-museum-sequence/` — from the distinction between excavated context, protected site and curated public interpretation.
-- Suggested inbound owner 2: `/guides/china-hotel-near-metro/` — from current metro convenience, link only where readers may confuse project history with passenger-facing service status.
-- Suggested inbound owner 3: `/guides/xixia-script-and-imperial-tombs-context/` — from archaeological evidence and public interpretation, link to the broader discovery-to-access chain without implying the same site type.
+- Runtime section: `culture`; indexable collection: `culture-history-people-ideas` at `/culture/history-people-ideas/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `chinese-city-walls-gates-and-urban-order`, `liangzhu-ruins-park-and-museum-sequence`, `shaanxi-history-museum-booking-and-collection-plan` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

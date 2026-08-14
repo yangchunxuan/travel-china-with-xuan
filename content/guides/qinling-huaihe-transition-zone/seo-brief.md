@@ -61,13 +61,12 @@ This is a dated qualitative observation, not a ranking guarantee or traffic esti
 
 Keep en dashes and transliterations consistent. Do not alternate `Qingling`/`Qinling` or imply a single exact crossing point.
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `culture-history-people-ideas` → geographic frameworks that help read places.
-- Hub: `/culture/` or current explore/context collection; no separate north/south index is needed.
-- Suggested inbound owner 1: `/guides/china-climate-regions-for-trip-timing/` — where regional climate variation is introduced, link to the Qinling–Huaihe case as a transition rather than a forecast boundary.
-- Suggested inbound owner 2: `/guides/china-regional-food-route/` — where regional systems are discussed, link to this page for physical-geography context while keeping cuisine ownership separate.
-- Suggested inbound owner 3: `/guides/is-your-china-itinerary-too-rushed/` — where transfer pace is evaluated, link only if a route deliberately uses observation windows across Qinling or Huai.
+- Runtime section: `explore`; indexable collection: `explore-regions-provinces` at `/explore/regions-provinces/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `beijing-xian-chengdu-route-order`, `china-climate-regions-for-trip-timing`, `tea-landscape-regions-of-china` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

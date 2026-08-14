@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 
@@ -45,6 +45,12 @@ test("the reviewed 17-guide release exports localized search language", async ()
       "utf8",
     ),
   );
+  const guidesRoot = path.join(projectRoot, "content/guides");
+  const guideDirectories = (
+    await readdir(guidesRoot, { withFileTypes: true })
+  )
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
 
   for (const guideId of reviewedGuideIds) {
     const metadata = JSON.parse(
@@ -75,6 +81,80 @@ test("the reviewed 17-guide release exports localized search language", async ()
       owners[0].targetIntent,
       metadata.search.primaryIntent,
       `${guideId}: Search Map intent drift`,
+    );
+
+    const inboundOwners = [];
+    for (const ownerId of guideDirectories) {
+      if (ownerId === guideId) continue;
+      const ownerRoot = path.join(guidesRoot, ownerId);
+      const localizedPaths = {
+        en: `/guides/${guideId}/`,
+        zh: `/zh/guides/${guideId}/`,
+        ko: `/ko/guides/${guideId}/`,
+      };
+      const enBody = await readFile(path.join(ownerRoot, "body.en.ts"), "utf8").catch(
+        () => "",
+      );
+      if (!enBody.includes(localizedPaths.en)) continue;
+      for (const locale of ["zh", "ko"]) {
+        const body = await readFile(
+          path.join(ownerRoot, `body.${locale}.ts`),
+          "utf8",
+        );
+        assert.ok(
+          body.includes(localizedPaths[locale]),
+          `${ownerId} -> ${guideId}: missing ${locale} inbound-link parity`,
+        );
+      }
+      inboundOwners.push(ownerId);
+    }
+
+    assert.ok(inboundOwners.length >= 2, `${guideId}: needs at least two inbound owners`);
+    const brief = await readFile(path.join(guidesRoot, guideId, "seo-brief.md"), "utf8");
+    const clusterSection = brief.match(
+      /## Cluster, hub[^\n]*\n([\s\S]*?)\n## Unique asset plan/,
+    )?.[1];
+    assert.ok(clusterSection, `${guideId}: missing cluster and inbound evidence section`);
+    const section = metadata.search.section;
+    const collectionPath = `/${section}/${metadata.pillar.replace(`${section}-`, "")}/`;
+    assert.ok(
+      clusterSection.includes(
+        `Runtime section: \`${section}\`; indexable collection: \`${metadata.pillar}\` at \`${collectionPath}\`.`,
+      ),
+      `${guideId}: runtime collection evidence drift`,
+    );
+    assert.match(
+      clusterSection,
+      /Implemented and verified \d{4}-\d{2}-\d{2}:/,
+      `${guideId}: missing implementation date`,
+    );
+    const implementedLine = clusterSection
+      .split("\n")
+      .find((line) => line.startsWith("- Implemented and verified "));
+    const documentedOwners = [...(implementedLine?.matchAll(/`([^`]+)`/g) ?? [])]
+      .map((match) => match[1])
+      .sort();
+    assert.deepEqual(
+      documentedOwners,
+      [...inboundOwners].sort(),
+      `${guideId}: documented inbound-owner set drift`,
+    );
+    for (const ownerId of inboundOwners) {
+      assert.ok(
+        clusterSection.includes(`\`${ownerId}\``),
+        `${guideId}: brief omitted implemented inbound owner ${ownerId}`,
+      );
+    }
+    assert.ok(
+      clusterSection.includes(
+        `Current trilingual body-level inbound-owner count: **${inboundOwners.length}**.`,
+      ),
+      `${guideId}: inbound-owner count drift`,
+    );
+    assert.doesNotMatch(
+      clusterSection,
+      /suggested inbound|recommendations only|does not modify old owners|old pages are unchanged|later central edit/i,
+      `${guideId}: stale proposed-only language remains`,
     );
   }
 });

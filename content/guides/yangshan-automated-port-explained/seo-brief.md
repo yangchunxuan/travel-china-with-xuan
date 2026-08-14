@@ -49,20 +49,12 @@ Observed through web search; ordering and snippets may change.
 | `unmanned port` / `workerless` | human-role correction | Treat as a misconception query, never the editorial claim. |
 | `visit Yangshan port` | access section | No walk-in claim without current official confirmation. |
 
-## Cluster, hub and canonical boundary
+## Cluster, hub and implemented inbound owners
 
-- Primary cluster: `culture / contemporary industry and technology`.
-- Supporting clusters: Shanghai route planning and transport-system literacy.
-- Hub: `/culture/`; destination pages own airport and intercity routing.
-- This guide owns Phase IV system explanation, not Shanghai Port totals, rankings, logistics booking or terminal access instructions.
-
-## Suggested inbound-link owners already live
-
-Recommendations only; do not modify old pages in this batch.
-
-1. `shanghai-suzhou-hangzhou-nanjing-route-order`: in the Shanghai contemporary-industry context, link to this explainer without suggesting a terminal visit.
-2. `shanghai-pudong-or-hongqiao-airport`: where it distinguishes transport infrastructure from visitor access, offer Yangshan as a non-airport system explainer.
-3. `china-map-coordinate-offset-explained`: if it discusses operational sites or misleading public pins, link only to the access boundary—not to any gate or route.
+- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `how-china-builds-high-speed-trains`, `nanhai-one-shipwreck-cargo-and-conservation`, `yiwu-market-to-factory-network` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

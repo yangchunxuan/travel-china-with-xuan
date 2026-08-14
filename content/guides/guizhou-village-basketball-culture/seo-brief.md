@@ -59,13 +59,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 | Transport | `Guiyang to Taipan Village` | internal handoff; do not duplicate gateway logistics |
 | Etiquette | `photograph Village BA respectfully` | etiquette and camera warning |
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-festivals-living-culture` → Guizhou community sport.
-- Hub: `/explore/`; this page owns Taipan interpretation and event verification, not all rural sport.
-- Suggested inbound owner 1: `/guides/guiyang-airport-and-rail-hubs/` — from the section that hands a traveller from the Guizhou gateway to a confirmed local destination.
-- Suggested inbound owner 2: `/guides/china-public-holidays-travel-calendar/` — from event/crowd timing, link to the exact-event verification workflow.
-- Suggested inbound owner 3: `/guides/foshan-lion-dance-first-performance-workflow/` — from observe-first etiquette, noting that the traditions are not interchangeable.
+- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `foshan-lion-dance-first-performance-workflow`, `guiyang-airport-and-rail-hubs`, `guiyang-nanming-old-city-day-to-night-walk` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

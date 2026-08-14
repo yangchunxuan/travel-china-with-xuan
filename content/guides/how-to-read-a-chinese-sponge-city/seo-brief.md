@@ -61,13 +61,12 @@ This is a dated qualitative observation, not a ranking guarantee or traffic esti
 
 Do not optimize the page around `flood-proof city`; use that phrase only to reject the promise.
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-attractions-nature-heritage` → urban ecology and water systems.
-- Hub: `/explore/`; retain one national concept owner rather than city × project pages.
-- Suggested inbound owner 1: `/guides/how-to-read-a-suzhou-garden/` — where designed water and terrain are discussed, contrast historical garden interpretation with a modern stormwater chain.
-- Suggested inbound owner 2: `/guides/northern-jiangsu-yellow-sea-wetland-coast/` — where wetlands and access are discussed, link to the distinct engineered urban-water reading task.
-- Suggested inbound owner 3: `/guides/china-climate-regions-for-trip-timing/` — where rainfall exposure is framed, link to the difference between regional climate and one facility's design conditions.
+- Runtime section: `explore`; indexable collection: `explore-cities-neighborhoods` at `/explore/cities-neighborhoods/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `grand-canal-everyday-urban-history`, `how-to-read-a-suzhou-garden`, `northern-jiangsu-yellow-sea-wetland-coast` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 
