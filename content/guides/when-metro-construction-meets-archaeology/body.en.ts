@@ -216,7 +216,8 @@ const body = {
         {"label": "Visit Liangzhu Museum and Ruins Park in sequence", "href": "/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "Compare a museum collection with a formally accessible archaeological landscape."},
         {"label": "Confirm a shifted map pin in China", "href": "/guides/china-map-coordinate-offset-explained/", "description": "Resolve a station, entrance or museum location with Chinese-address cross-checks."},
         {"label": "Read whether a hotel is really near the metro", "href": "/guides/china-hotel-near-metro/", "description": "Use the actual entrance and walking route rather than a station label."},
-        {"label": "Read Western Xia script and tomb evidence", "href": "/guides/xixia-script-and-imperial-tombs-context/", "description": "See how archaeological evidence supports a careful historical interpretation."}
+        {"label": "Read Western Xia script and tomb evidence", "href": "/guides/xixia-script-and-imperial-tombs-context/", "description": "See how archaeological evidence supports a careful historical interpretation."},
+        {"label": "Compare Zhouqiao archaeology with modern themed Kaifeng", "href": "/guides/kaifeng-song-dynasty-urban-landscape/", "description": "Use one named excavation to distinguish surviving evidence, later reconstruction and visitor-oriented historical staging."}
       ]
     },
     {

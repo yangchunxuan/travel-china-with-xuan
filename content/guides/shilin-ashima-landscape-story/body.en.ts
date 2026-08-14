@@ -61,7 +61,7 @@ const body = {
       id: "geology-explanation",
       type: "paragraph",
       text:
-        "The useful sequence is material, structure and water. UNESCO describes carbonate rocks deposited in a shallow-marine environment, then affected by uplift and fracturing. Water worked along joints, dissolving rock and enlarging separations through a long, multi-stage history. This produced pillars, grooves, fissures and gaps. It does not give the individual Ashima silhouette one birthday or exact rock history. “A girl became stone” belongs to narrative, not physical explanation.",
+        "The useful sequence is material, structure and water. UNESCO describes carbonate rocks deposited in a shallow-marine environment, later uplifted and subjected to long weathering and dissolution. The Stone Forest operator explains how fractures divided the rock and water enlarged those weaknesses through a long, multi-stage history. This produced pillars, grooves, fissures and gaps. It does not give the individual Ashima silhouette one birthday or exact rock history. “A girl became stone” belongs to narrative, not physical explanation.",
     },
     {
       id: "geology-onsite",
@@ -102,7 +102,7 @@ const body = {
       src: "/images/guides/shilin-ashima-landscape-story/geopark-designation-sign-1400.webp",
       alt: "A national geopark and national scenic-area designation sign at Shilin Stone Forest.",
       width: 1400,
-      height: 1053,
+      height: 1050,
       caption:
         "This designation sign is not a formation-process panel. Read each official emblem for the status it actually names.",
     },
@@ -162,7 +162,7 @@ const body = {
       id: "adaptation-explanation",
       type: "paragraph",
       text:
-        "Chinese-language collection and edited publication began in the early 1950s. Print widened circulation, but selection, ordering, translation and editing were interventions—not a recording of every local variant. The 1964 film adapted again. The Hong Kong Film Archive notes a major change: Ahei, Ashima's brother in the edited source it discusses, became her screen lover. Scholarship also shows different endings among representative oral, edited and film forms.",
+        "Chinese-language collection and edited publication began in the early 1950s. Print widened circulation, but selection, ordering, translation and editing were interventions—not a recording of every local variant. The 1964 film adapted again. A scholarly comparison documents a major change: representative oral and edited texts in its sample treat Ahei as Ashima's brother, while the film makes him her lover. The Hong Kong Film Archive independently confirms the 1964 production details and the film's romance plot. The same scholarship also shows different endings among representative oral, edited and film forms.",
     },
     {
       id: "adaptation-meaning",
@@ -224,9 +224,9 @@ const body = {
     {
       id: "viewing-angle-warning",
       type: "callout",
-      title: "A favorable angle is not necessarily a marked angle",
+      title: "A favorable angle is not proof of a marked viewing point",
       body:
-        "An official archive says visitors were shown the formation from one angle, but that does not prove a current sign marks the exact photo position. Follow the present route and barriers. A caption or alt text should say “seen from a favorable public viewing angle,” not “from the marked viewing angle.”",
+        "The two rights-cleared photographs show that the silhouette becomes easier to recognize from some positions, but neither establishes a current official marker. Follow the present route and barriers. A caption or alt text should say “seen from a favorable public viewing angle,” not “from the marked viewing angle.”",
       tone: "warning",
     },
     {
@@ -259,7 +259,7 @@ const body = {
       type: "callout",
       title: "The route must still work with no exhibition or performance",
       body:
-        "Official sources mention an Ashima display in a Geopark Museum and a separate display in a county-town tourism service centre, but current pages do not cross-identify the venues or confirm addresses, hours and access. Do not build the day around either. Rock, viewpoint and careful label-reading carry the essential task.",
+        "UNESCO's current profile mentions an Ashima intangible-culture exhibition hall inside a Geopark Museum, but it does not provide a current address, hours or access conditions. Do not build the day around that optional venue. Rock, viewpoint and careful label-reading carry the essential task.",
       tone: "warning",
     },
     {
@@ -404,67 +404,97 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "Official, heritage, academic and image sources reviewed on 13–14 August 2026",
+      title: "Official, heritage, academic and image sources reviewed on 14 August 2026",
       items: [
         {
           label: "Shilin UNESCO Global Geopark — geology and current institutional description",
           url: "https://www.unesco.org/en/iggp/shilin-unesco-global-geopark",
           publisher: "UNESCO",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "South China Karst — serial World Heritage property and mapped components",
           url: "https://whc.unesco.org/en/list/1248",
           publisher: "UNESCO World Heritage Centre",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Ashima — national intangible cultural heritage project record",
           url: "https://www.ihchina.cn/project_details/12241.html",
           publisher: "China Intangible Cultural Heritage Network / China Intangible Cultural Heritage Museum",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Transmission and textual forms of Ashima",
           url: "https://www.cssn.cn/wx/wx_mzwx/202208/t20220802_5443066.shtml",
           publisher: "Chinese Social Sciences Net",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Performance context and variation in the Ashima tradition",
           url: "https://chinafolklore.org/web/?NewsID=4176",
           publisher: "China Folklore Society",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Comparing oral, edited and film versions of Ashima",
           url: "https://xb.ynau.edu.cn/jwk_sk/cn/article/pdf/preview/10.3969/j.issn.1004-390X%28s%29.2018.01.018.pdf",
           publisher: "Journal of Yunnan Agricultural University (Social Science)",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
-          label: "Ashima (1964) — film-archive adaptation note",
+          label: "Ashima (1964) — film-archive programme record",
           url: "https://www.filmarchive.gov.hk/en/web/hkfa/2025/sh/pe-event-2025-sh-fs-film01.html",
           publisher: "Hong Kong Film Archive",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Major and Minor Stone Forest — current visitor-facing landscape description",
           url: "https://shilingeopark.com/public/park/en-US/detail-447-28203.html",
           publisher: "Shilin UNESCO Global Geopark",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
-          label: "Ashima Rock — official location in the Minor Stone Forest",
-          url: "https://park.shilin.com.cn/public/park/zh-CHS/detail-428-538.html",
-          publisher: "Shilin scenic-area institution",
-          reviewedAt: "2026-08-13",
+          label: "How Stone Forest formed — fractures, dissolution and multi-stage development",
+          url: "https://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31433.html",
+          publisher: "Stone Forest scenic-area institution",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Ashima Rock hero: LHOON, CC BY-SA 2.0; cropped and converted to WebP",
           url: "https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg",
           publisher: "Wikimedia Commons",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Wider Shilin view: Ngguls, CC BY-SA 4.0; resized and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:20260222_Stone_Forest,_Shilin_01.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Shilin designation monuments: Ngguls, CC BY-SA 4.0; resized and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Ashima in Sani Yi script: 瑞丽江的河水, CC BY-SA 4.0; resized and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%AF%97%E7%8E%9B%E5%BD%9D%E6%96%87.png",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Ashima Rock portrait: Cs california, CC BY 3.0; resized and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Ashima_tourist_attraction.JPG",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Shilin Sani embroidery: 瑞丽江的河水, CC BY-SA 4.0; cropped and converted to WebP",
+          url: "https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E6%9E%97%E6%92%92%E5%B0%BC%E5%88%BA%E7%BB%A3.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Yi-script Story of Ashima display: Daderot, public domain; resized and converted to WebP",

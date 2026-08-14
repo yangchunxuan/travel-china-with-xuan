@@ -54,7 +54,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"负责任地安排自然准入",items:[
     {label:"选择祁连山公共入口",href:"/zh/guides/qilian-mountains-public-gateways-and-access/",description:"在大型保护景观中使用同样严格的边界方法。"},
     {label:"理解中国气候区",href:"/zh/guides/china-climate-regions-for-trip-timing/",description:"不要把一个地区的天气结论套到所有喀斯特区域。"},
-    {label:"规划中国轮椅可达路线",href:"/zh/guides/wheelchair-accessible-china-route-planning/",description:"用可测路线证据替换模糊无障碍标签。"}
+    {label:"规划中国轮椅可达路线",href:"/zh/guides/wheelchair-accessible-china-route-planning/",description:"用可测路线证据替换模糊无障碍标签。"},
+    {label:"在石林分清地质与阿诗玛故事",href:"/zh/guides/shilin-ashima-landscape-story/",description:"读懂一处正式管理的喀斯特景观，同时不把命名岩石或口述传统当成地质解释。"}
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
     {label:"头图——2009年11月从小寨天坑南缘拍摄；只是一张历史影像，不能证明当前有获准路线",url:"https://commons.wikimedia.org/wiki/File:Xiaozhaitiankeng.jpg",publisher:"Brookqi — PD-self；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},

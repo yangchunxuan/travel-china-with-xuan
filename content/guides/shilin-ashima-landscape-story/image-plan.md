@@ -1,9 +1,15 @@
 # Image plan — Shilin Stone Forest and Ashima
 
-Prepared: **2026-08-13**; rights-gap recheck: **2026-08-14**
+Prepared and fully rechecked: **2026-08-14**
 Policy: real, accurately located, publishable photography only. No AI documentary image, film still, substitute minority group, unidentified karst site or unlicensed recognizable-person close-up.
 
 The committed asset set uses Creative Commons files and records every derivative. The body deliberately distinguishes a geopark **designation sign** from a geology **formation-process panel**, and a script graphic or textile detail from a museum or intangible-heritage exhibition. Those distinctions must remain in alt text and captions.
+
+All seven local derivatives were opened individually at original detail on 2026-08-14. Their visible subjects, source records, current Commons artist/licence metadata, alt text, captions and credits were cross-checked. No person appears in any selected frame, and no binary was modified during this audit.
+
+### Hero visual decision
+
+The real Ashima hero is visibly dark and slightly underexposed, but the complete silhouette and surrounding pinnacles remain legible. In the actual `editorial-v1` layout the image sits beside, rather than underneath, the hero copy on desktop and becomes a full-width figure on narrower screens; there is no text overlay to lose contrast. This is a **non-blocking visual weakness**. The clearer Ashima image in this set is an 803 × 1200 portrait and would require an aggressive landscape crop, while the other wide Shilin image does not show Ashima. Keep the present hero unchanged and seek a rights-cleared wide daylight Ashima photograph only as a future enhancement.
 
 ## 1. Hero — Ashima Rock within the Minor Stone Forest
 
@@ -17,7 +23,7 @@ The committed asset set uses Creative Commons files and records every derivative
 - Creator: LHOON. Flickr licence was verified by Commons.
 - Licence: CC BY-SA 2.0, https://creativecommons.org/licenses/by-sa/2.0/
 - Attribution: `Photo: LHOON / Wikimedia Commons, CC BY-SA 2.0; cropped, resized and converted to WebP.`
-- Rights status: cleared for reuse with attribution and share-alike notice; final original-resolution check must exclude a recognizable-person issue.
+- Rights status: cleared for reuse with attribution and share-alike notice; original-detail review found no recognizable person.
 - Alt EN: `Ashima Rock seen from a favorable viewing angle in the Minor Stone Forest at Shilin, Yunnan.`
 - Alt ZH: `从有利观看角度看到的云南石林小石林阿诗玛石。`
 - Alt KO: `윈난 스린 소석림에서 보기 좋은 각도로 바라본 아시마 바위.`
@@ -37,7 +43,7 @@ The committed asset set uses Creative Commons files and records every derivative
 - Creator: Ngguls; own work, 2026-02-22.
 - Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
 - Attribution: `Photo: Ngguls / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP.`
-- Rights status: cleared; final frame checked for incidental recognizable people before publication.
+- Rights status: cleared; original-detail review found no recognizable person.
 - Alt EN: `Dense limestone pinnacles and public paths in the Stone Forest at Shilin.`
 - Alt ZH: `云南石林景区内密集的石灰岩石柱与公共游路。`
 - Alt KO: `윈난 스린의 촘촘한 석회암 석주와 공개 관람로.`
@@ -49,7 +55,7 @@ The committed asset set uses Creative Commons files and records every derivative
 - Exact subject: the national-geopark / national-scenic-area designation monuments at Shilin Stone Forest.
 - Necessary elements: full sign face, legible designation wording and enough surroundings to show a real onsite sign.
 - Forbidden elements: cropping to isolated official emblems; captioning it as a limestone-dissolution explanation board; upgrading its wording into a UNESCO World Heritage boundary claim.
-- Crop: 1400 × 1053, keep complete panel.
+- Crop: 1400 × 1050, keep the complete monuments and their visible wording.
 - Source file: https://commons.wikimedia.org/wiki/File:20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg
 - Original: https://upload.wikimedia.org/wikipedia/commons/3/3a/20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg
 - Creator: Ngguls; own work, 2026-02-22.
@@ -72,10 +78,10 @@ The committed asset set uses Creative Commons files and records every derivative
 - Creator: 瑞丽江的河水; own work.
 - Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
 - Attribution: `Graphic: 瑞丽江的河水 / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP.`
-- Rights status: cleared, subject to final verification of the Commons file record.
+- Rights status: cleared; Commons file record rechecked on 2026-08-14.
 - Alt EN: `The name Ashima written in Sani Yi script.`
 - Alt ZH: `用撒尼彝文书写的“阿诗玛”。`
-- Alt KO: `싸니 이문자로 쓴 ‘아시마’라는 이름.`
+- Alt KO: `싸니 이족 문자로 적은 아시마라는 이름.`
 
 ## 5. Cultural interpretation — Yi-script *Story of Ashima* museum display
 
@@ -91,7 +97,7 @@ The committed asset set uses Creative Commons files and records every derivative
 - Rights status: cleared; no person appears.
 - Alt EN: `A Yi-script manuscript labelled “Story of Ashima” and “Shilin County” in the Yunnan Nationalities Museum in Kunming.`
 - Alt ZH: `云南民族博物馆展柜中标注为《阿诗玛的故事》、来源石林县的彝文典籍。`
-- Alt KO: `쿤밍 윈난민족박물관에서 ‘아시마 이야기’와 ‘스린현’으로 표기된 이문 고전 문헌.`
+- Alt KO: `쿤밍 윈난민족박물관에서 ‘아시마 이야기’와 ‘스린현’으로 표기된 이족 문자 고전 문헌.`
 - Caption boundary: the image documents a 2011 written-transmission and museum-presentation layer only; it proves neither current display nor a unique authoritative text.
 
 ## 6. Second rock view — test the angle rather than duplicate the Hero
@@ -105,10 +111,10 @@ The committed asset set uses Creative Commons files and records every derivative
 - Creator: Cs california; own work, 2008-08-30.
 - Licence: CC BY 3.0, https://creativecommons.org/licenses/by/3.0/
 - Attribution: `Photo: Cs california / Wikimedia Commons, CC BY 3.0; cropped, resized and converted to WebP.`
-- Rights status: cleared, pending original-resolution check for incidental people.
+- Rights status: cleared; original-detail review found no recognizable person.
 - Alt EN: `Ashima Rock and surrounding pinnacles seen from a favorable public viewing angle in the Minor Stone Forest.`
 - Alt ZH: `从有利的公共观看角度看到的小石林阿诗玛石及周围岩柱。`
-- Alt KO: `소석림의 공개 관람로에서 보기 좋은 각도로 본 아시마 바위와 주변 석주.`
+- Alt KO: `소석림의 일반 관람로에서 보기 좋은 각도로 본 아시마 바위와 주변 돌기둥.`
 
 ## 7. Material-culture context — documented Shilin Sani embroidery
 
@@ -126,13 +132,15 @@ The committed asset set uses Creative Commons files and records every derivative
 - Alt ZH: `在石林县拍摄的一件撒尼刺绣织物细节。`
 - Alt KO: `스린현에서 촬영한 싸니 자수 직물의 세부 모습.`
 
-## Unavailable required asset
+## Future enhancement — not a publication blocker
 
-One required explanatory photograph remains **UNAVAILABLE — permission/location evidence not closed**:
+One desirable explanatory photograph remains **UNAVAILABLE — permission/location evidence not closed**:
 
 1. A current onsite geology panel or formal geology display that actually explains bedding, joints, uplift or dissolution. The cleared designation sign above does not fill that scientific-panel role.
 
-The Stone Forest operator publishes accurate formation diagrams at http://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31434.html, but the page is a digital explanation rather than evidence of an onsite panel, and the site states All Rights Reserved. The Future Also Comes Stone Forest Karst Geology Museum describes a formal karst exhibition at https://www.ynslsdl.com/subsiteIndex/toPage?newsClassId=90&objectId=102&pageType=view&subsiteFlag=ynslsdl&subsiteId=3, but its available images neither show a formation-process panel nor carry a reuse licence. Neither source image is downloaded or substituted. Written publication permission plus exact exhibit identity/location is still required.
+The Stone Forest operator publishes an accurate digital formation explanation at https://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31433.html, but the page is not evidence of an onsite panel and the site states All Rights Reserved. The Future Also Comes Stone Forest Karst Geology Museum describes a formal karst exhibition at https://www.ynslsdl.com/subsiteIndex/toPage?newsClassId=90&objectId=102&pageType=view&subsiteFlag=ynslsdl&subsiteId=3, but its available images neither show a formation-process panel nor carry a reuse licence. Neither source image is downloaded or substituted. Written publication permission plus exact exhibit identity/location would still be required.
+
+The article does not depend on that photograph. Its geology paragraph, observation prompts, evidence-layer table, wider Shilin photograph and explicit sign-versus-process caption already give readers enough original explanation to keep story and formation separate. Do not fabricate an onsite panel, relabel the cleared designation monument, or generate an AI documentary substitute.
 
 Rejected candidate: Wikimedia Commons files titled `Ashima and Ahei (48623620218).jpg` and `阿詩瑪與阿黑 Ashma and Ahei 20191223162741.jpg` depict natural limestone formations, not a sculpture or exhibition. They were visually checked and excluded rather than relabelled.
 

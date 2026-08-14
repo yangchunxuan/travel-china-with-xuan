@@ -61,7 +61,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "探索中国", href: "/zh/explore/", description: "比较元阳的活态景观角色与另一处遗产停留。"},
     {label: "中国气候分区与旅行时间", href: "/zh/guides/china-climate-regions-for-trip-timing/", description: "不要把云南高地天气套到中国其他区域，反之亦然。"},
     {label: "带长辈去中国", href: "/zh/guides/china-itinerary-with-older-parents/", description: "在整个旅行中减少摸黑、台阶和重复公路分支。"},
-    {label: "福建土楼群怎么选", href: "/zh/guides/fujian-tulou-cluster-selection/", description: "同一原则：面对活着的社区，应选择范围清楚、尊重居民的公众游览。"}
+    {label: "福建土楼群怎么选", href: "/zh/guides/fujian-tulou-cluster-selection/", description: "同一原则：面对活着的社区，应选择范围清楚、尊重居民的公众游览。"},
+    {label: "从阿诗玛故事读石林", href: "/zh/guides/shilin-ashima-landscape-story/", description: "比较另一处云南文化景观，同时把地质、口述传统和现代诠释分成不同证据层。"}
   ]},
   {id: "consultation", type: "callout", title: "需要一条能应对云雾的元阳路线？", body: "Homeground 真人旅行顾问可以比较你的抵达公路、住宿区域、观景优先、村寨访问和阴天替代。请提供日期、行动能力、摄影重点，以及有一个还是两个清晨。", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026 年 8 月 13 日核验的官方来源", items: [

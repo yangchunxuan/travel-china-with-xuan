@@ -67,7 +67,7 @@ const body: StructuredPageBody = {
       id: "scroll-object",
       type: "paragraph",
       text:
-        "The Palace Museum identifies a Northern Song handscroll by Zhang Zeduan, silk, 24.8 by 528 centimetres. Its description moves through countryside, the Bian River and Hongqiao, then a gate and streets. Boats, porters, carts, animals and shops record what the artist selected. But a handscroll has no single fixed viewpoint: it guides the eye through successive, compressed scenes. Palace Museum scholar Yu Hui calls this real conditions rather than one literal scene—an attributed interpretation, not permission to dismiss every detail as imaginary.",
+        "The Palace Museum identifies a Northern Song handscroll by Zhang Zeduan, silk, 24.8 by 528 centimetres. Its description moves through countryside, the Bian River and Hongqiao, then a gate and streets. Boats, porters, carts, animals and shops record what the artist selected. But a handscroll has no single fixed viewpoint: it guides the eye through successive, compressed scenes. Palace Museum scholar Yu Hui argues that the work combines, concentrates and distils types of Kaifeng buildings and social life. That is an attributed interpretation, not permission to dismiss every detail as imaginary.",
     },
     {
       id: "scroll-observation",
@@ -87,7 +87,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 853,
       caption:
-        "This park relief enlarges the scroll's bridge scene for public viewing. It is useful as an orientation device, not as a Northern Song artefact or the Palace Museum original.",
+        "This park relief enlarges the scroll's bridge scene for public viewing. It is useful as an orientation device, not as a Northern Song artefact or the Palace Museum original. Photo: Gary Todd / Wikimedia Commons, CC0 1.0; resized and converted to WebP.",
     },
     {
       id: "scroll-boundary",
@@ -134,7 +134,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 853,
       caption:
-        "The park's Hongqiao is a modern visitor structure. Compare how it carries people across water; do not caption it as the surviving Northern Song bridge or Zhouqiao. Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "The park's Hongqiao is a modern visitor structure. Compare how it carries people across water; do not caption it as the surviving Northern Song bridge or Zhouqiao. Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP; derivative CC BY-SA 4.0.",
     },
     {
       id: "bridge-reading",
@@ -172,14 +172,14 @@ const body: StructuredPageBody = {
       width: 1400,
       height: 1050,
       caption:
-        "Exposed bridge fabric, canal walls and deposits are archaeological evidence. The visible bridge is early Ming on Song foundations—not the lost Northern Song bridge—and proves neither the painted Hongqiao's location nor the park bridge's accuracy. The 2025 photo does not prove current access. Photo: Yumeto / Wikimedia Commons, CC BY-SA 4.0; resized to WebP; derivative CC BY-SA 4.0.",
+        "Exposed bridge fabric, canal walls and deposits are archaeological evidence. The visible bridge is early Ming on Song foundations—not the lost Northern Song bridge—and proves neither the painted Hongqiao's location nor the park bridge's accuracy. The 2025 photo does not prove current access. Photo: Yumeto / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP; derivative CC BY-SA 4.0.",
     },
     {
       id: "zhouqiao-dynamic",
       type: "callout",
       title: "Do not treat archaeological access as guaranteed",
       body:
-        "Archaeological reports establish Zhouqiao's significance, but not a complete 2026 chain for ordinary admission, booking, tickets or foreign-passport handling. Confirm with the operating or protection unit. If entry is unavailable, stay in lawful public space and use Kaifeng Museum for broader material history; never cross barriers.",
+        "Archaeological reports establish Zhouqiao's significance, but they do not establish a reliable 2026 process for general admission, booking, tickets or foreign-passport handling. Confirm with the operating or protection unit. If entry is unavailable, stay in lawful public space and use Kaifeng Museum for broader material history; never cross barriers.",
       tone: "warning",
     },
     {
@@ -212,7 +212,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 960,
       caption:
-        "Linshui Hall belongs to the park's expanded themed landscape. Use it to see how the attraction moves beyond the scroll, not to claim a surviving Song building or an exact painted counterpart. Photo: Yumeto / Wikimedia Commons, CC BY-SA 4.0.",
+        "Linshui Hall belongs to the park's expanded themed landscape. Use it to see how the attraction moves beyond the scroll, not to claim a surviving Song building or an exact painted counterpart. Photo: Yumeto / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP; derivative CC BY-SA 4.0.",
     },
     {
       id: "park-onsite-heading",
@@ -260,7 +260,7 @@ const body: StructuredPageBody = {
       id: "gate-stop",
       type: "paragraph",
       text:
-        "The museum description calls the painted gate East Corner Gate; the park calls its structure Shangshan Gate. Similar river-to-city functions do not make them identical. Read the stated basis, then see how façades and shops direct today's crowd. “Song style” may mean stylistic reference, not surviving timber or archaeological reconstruction. Our timber-frame guide helps ask structural questions without guessing age from appearance.",
+        "The Palace Museum collection record calls the painted gate East Corner Gate; the park calls its structure Shangshan Gate. Similar river-to-city functions do not make them identical. Read the stated basis, then see how façades and shops direct today's crowd. “Song style” may mean stylistic reference, not surviving timber or archaeological reconstruction. Our timber-frame guide helps ask structural questions without guessing age from appearance.",
     },
     {
       id: "shangshan-figure",
@@ -270,7 +270,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 853,
       caption:
-        "Shangshan Gate helps the park create a transition into its themed city. It should not be renamed as the scroll's East Corner Gate or presented as a surviving Northern Song gate. Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "Shangshan Gate helps the park create a transition into its themed city. It should not be renamed as the scroll's East Corner Gate or presented as a surviving Northern Song gate. Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized and converted to WebP; derivative CC BY-SA 4.0.",
     },
     {
       id: "extension-stop-heading",
@@ -369,7 +369,7 @@ const body: StructuredPageBody = {
       type: "callout",
       title: "When the park ticket has clear value",
       body:
-        "The park fits visitors wanting a large-scale scroll translation, family-accessible space or performance. It is weak for those seeking only original Song material or avoiding theme-park sound and interaction. Accessible 2026 official material did not close current price, passport handling, inclusions or day/night product relationships; verify the current operator sales channel before paying.",
+        "The park fits visitors wanting a large-scale scroll translation, family-accessible space or performance. It is weak for those seeking only original Song material or avoiding theme-park sound and interaction. The official 2026 sources we could access did not establish one reliable current price, a foreign-passport process, what each ticket includes or how day and night products relate; verify the current operator sales channel before paying.",
       tone: "decision",
     },
     {
@@ -484,67 +484,133 @@ const body: StructuredPageBody = {
     {
       id: "sources",
       type: "sources",
-      title: "Core sources reviewed for this guide",
+      title: "Core sources and image licence records reviewed for this guide",
       items: [
         {
           label: "Zhang Zeduan's Qingming Shanghe Tu collection record",
           url: "https://www.dpm.org.cn/collection/paint/228226.html",
           publisher: "The Palace Museum",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Palace Museum lecture on interpreting the Qingming scroll",
           url: "https://www.dpm.org.cn/forum_detail/99722.html",
           publisher: "The Palace Museum",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Research discussion of the scroll's open questions",
           url: "https://www.dpm.org.cn/study_detail/100187.html",
           publisher: "The Palace Museum",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Kaifeng Zhouqiao archaeological project overview",
           url: "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=1985",
           publisher: "Henan Provincial Institute of Cultural Heritage and Archaeology",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "2020 Zhouqiao excavation record",
           url: "https://hnswwkgyjy.cn/NewsView.php?News_ID=2051",
           publisher: "Henan Provincial Institute of Cultural Heritage and Archaeology",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Urban archaeology in Kaifeng: progress and insights",
-          url: "https://discovery.ucl.ac.uk/10183429/1/Manuscript_with_author_details_revised.pdf",
-          publisher: "Archaeological Research in Asia / UCL Discovery",
-          reviewedAt: "2026-08-13",
+          url: "https://doi.org/10.1080/00438243.2024.2304336",
+          publisher: "World Archaeology / Taylor & Francis",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Qingming Shanghe Garden development overview",
-          url: "https://www.longting.gov.cn/ltq/c00044/pc/content/content_2003660780649967616.html",
+          url: "http://www.longting.gov.cn/ltq/c00044/pc/content/content_2003660780649967616.html",
           publisher: "Longting District People's Government",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Current park building directory",
           url: "https://www.qmsyun.com/Mobile_page/q_building.php",
           publisher: "Qingming Riverside Landscape Garden",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "Current park programme and change notice",
           url: "https://www.qmsyun.com/Mobile_page/o_program.php",
           publisher: "Qingming Riverside Landscape Garden",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
-          label: "Kaifeng Museum reservation-channel statement",
-          url: "https://www.kaifeng.gov.cn/kfsrmzfwz/whty/pc/content/content_1873557496836997120.html",
-          publisher: "Kaifeng Municipal People's Government / Kaifeng Museum",
-          reviewedAt: "2026-08-13",
+          label: "Kaifeng Museum 2026 reservation-system notice",
+          url: "https://www.sina.cn/news/detail/5291280644969326.html",
+          publisher: "Kaifeng Museum verified account / Sina",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Palace Museum image-licensing application",
+          url: "https://digicol.dpm.org.cn/page/applyimage",
+          publisher: "The Palace Museum Digital Collection",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Palace Museum website terms of use",
+          url: "https://www.dpm.org.cn/bottom/privacy/254.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Official English naming record for Millennium City Park",
+          url: "https://english.henan.gov.cn/2025/04-01/3143768.html",
+          publisher: "People's Government of Henan Province",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Hero photograph source and CC0 record",
+          url: "https://commons.wikimedia.org/wiki/File:2014_Millennium_City_Park_with_Kaifeng_in_Background.jpg",
+          publisher: "Gary Todd / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Park relief photograph source and CC0 record",
+          url: "https://commons.wikimedia.org/wiki/File:2008_Zhang_Zeduan_Painting_Carved_in_Stone_a.jpg",
+          publisher: "Gary Todd / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Modern Hongqiao photograph and licence record",
+          url: "https://commons.wikimedia.org/wiki/File:Rainbow_Bridge_in_Millennium_City_Park_20180120.jpg",
+          publisher: "Windmemories / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Zhouqiao photograph and licence record",
+          url: "https://commons.wikimedia.org/wiki/File:20250531_Zhou_Qiao.jpg",
+          publisher: "Yumeto / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Linshui Hall photograph and licence record",
+          url: "https://commons.wikimedia.org/wiki/File:20250531_Linshui_Dadian.jpg",
+          publisher: "Yumeto / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Shangshan Gate photograph and licence record",
+          url: "https://commons.wikimedia.org/wiki/File:Shangshan_Gate_20180120.jpg",
+          publisher: "Windmemories / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "CC0 1.0 Universal public-domain dedication",
+          url: "https://creativecommons.org/publicdomain/zero/1.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Creative Commons Attribution-ShareAlike 4.0 licence",
+          url: "https://creativecommons.org/licenses/by-sa/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-14",
         },
       ],
     },

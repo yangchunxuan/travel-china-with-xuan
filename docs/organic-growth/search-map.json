@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2.0",
   "snapshotDate": "2026-08-14",
-  "checkedAt": "2026-08-14T07:52:11+08:00",
-  "finalStatus": "SEARCH MAP UPDATED — 17 PUBLISHED OWNERS REMEDIATED",
+  "checkedAt": "2026-08-14T21:45:00+08:00",
+  "finalStatus": "SEARCH MAP UPDATED — 2 EMPLOYEE 2 OWNERS APPROVED FOR RELEASE",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -2008,6 +2008,69 @@
         "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
         "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
         "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "kaifeng-song-dynasty-urban-landscape",
+        "title": "Kaifeng's Song-Dynasty Landscape: What Is Historic, Rebuilt or Themed?",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/kaifeng-song-dynasty-urban-landscape/",
+        "section": "explore",
+        "primaryCollectionId": "explore-cities-neighborhoods",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "city-kaifeng",
+        "secondaryEntityIds": [
+          "site-zhouqiao",
+          "attraction-qingming-riverside-landscape-garden"
+        ],
+        "queryCluster": [
+          "Kaifeng Song Dynasty city history",
+          "is Millennium City Park historically accurate",
+          "Qingming Riverside Landscape Garden Kaifeng",
+          "Kaifeng Zhouqiao archaeology"
+        ],
+        "cannibalizationOwner": "kaifeng-song-dynasty-urban-landscape",
+        "freshnessClass": "medium-site-and-interpretation-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "topic-universe-hg-topic-0084-authorized-and-materialized-for-release-2026-08-14",
+        "originMainCommit": "7c1c49a6a0f60f94a6ef167ad97d28bafbf7aa87"
+      },
+      {
+        "id": "shilin-ashima-landscape-story",
+        "title": "Shilin Stone Forest and Ashima: Story, Geology and Landscape",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/shilin-ashima-landscape-story/",
+        "section": "culture",
+        "primaryCollectionId": "culture-history-people-ideas",
+        "targetIntent": "understand",
+        "pageFamily": "relationship",
+        "primaryEntityId": "place-shilin-stone-forest",
+        "secondaryEntityIds": [
+          "tradition-ashima",
+          "community-sani-yi"
+        ],
+        "queryCluster": [
+          "Shilin Stone Forest Ashima story",
+          "Ashima Rock Minor Stone Forest",
+          "Shilin Stone Forest geology and legend"
+        ],
+        "cannibalizationOwner": "shilin-ashima-landscape-story",
+        "freshnessClass": "medium-operator-and-interpretation-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "employee-2-research-candidate-authorized-and-materialized-for-release-2026-08-14",
+        "originMainCommit": "7c1c49a6a0f60f94a6ef167ad97d28bafbf7aa87"
       }
     ],
     "hubsAndDirectories": [
@@ -3753,6 +3816,27 @@
         "Zhenjiang Vinegar Culture Museum"
       ],
       "boundarySource": "content/guides/zhenjiang-vinegar-living-fermentation/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Kaifeng Song Dynasty city history",
+      "canonicalOwner": "kaifeng-song-dynasty-urban-landscape",
+      "doNotSplit": [
+        "is Millennium City Park historically accurate",
+        "Qingming Riverside Landscape Garden Kaifeng",
+        "Kaifeng Zhouqiao archaeology"
+      ],
+      "boundarySource": "content/guides/kaifeng-song-dynasty-urban-landscape/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Shilin Stone Forest Ashima story",
+      "canonicalOwner": "shilin-ashima-landscape-story",
+      "doNotSplit": [
+        "Ashima Rock Minor Stone Forest",
+        "Shilin Stone Forest geology and legend"
+      ],
+      "boundarySource": "content/guides/shilin-ashima-landscape-story/seo-brief.md",
       "reviewedAt": "2026-08-14"
     }
   ],

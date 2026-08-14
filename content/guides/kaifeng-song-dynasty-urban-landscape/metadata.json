@@ -18,9 +18,9 @@
   "heroImageUrl": "https://homegroundchina.com/images/guides/kaifeng-song-dynasty-urban-landscape/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
-  "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
-  "sourceReviewedDate": "2026-08-13",
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "sourceReviewedDate": "2026-08-14",
   "search": {
     "section": "explore",
     "family": "entity",
@@ -32,7 +32,7 @@
       "path": "/guides/kaifeng-song-dynasty-urban-landscape/",
       "title": "Kaifeng's Song-Dynasty Landscape: What Is Historic, Rebuilt or Themed?",
       "headline": "Read the Scroll, Zhouqiao and Qingming Shanghe Garden as Different Kinds of Evidence",
-      "description": "Separate the Qingming scroll, Zhouqiao archaeology and modern Qingming Shanghe Garden, then decide whether themed space or material evidence fits your Kaifeng visit.",
+      "description": "Separate the Qingming scroll, Zhouqiao archaeology and modern Qingming Shanghe Garden, then choose themed interpretation or material evidence in Kaifeng.",
       "heroAlt": "Modern themed buildings and waterways in Qingming Riverside Landscape Garden with present-day Kaifeng beyond.",
       "navTitle": "Read Kaifeng's Song-Dynasty Landscape",
       "featuredLinkLabel": "Separate historic, rebuilt and themed Kaifeng",
@@ -61,5 +61,25 @@
       "openGraphLocale": "ko_KR",
       "cardTags": ["카이펑", "청명상하도", "도시 고고학"]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Kaifeng Song Dynasty city history",
+      "is Millennium City Park historically accurate",
+      "Qingming Riverside Landscape Garden Kaifeng",
+      "Kaifeng Zhouqiao archaeology"
+    ],
+    "zh": [
+      "开封宋代城市遗迹",
+      "清明上河园是复原建筑吗",
+      "开封州桥考古",
+      "清明上河图与开封"
+    ],
+    "ko": [
+      "카이펑 송대 도시 유적",
+      "청명상하원 역사적 재현",
+      "카이펑 저우차오 유적",
+      "청명상하도 카이펑 여행"
+    ]
   }
 }

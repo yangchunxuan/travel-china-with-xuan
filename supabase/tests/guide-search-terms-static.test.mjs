@@ -12,10 +12,12 @@ const reviewedGuideIds = [
   "guizhou-village-basketball-culture",
   "how-to-read-a-chinese-sponge-city",
   "how-to-visit-an-archaeological-site-museum",
+  "kaifeng-song-dynasty-urban-landscape",
   "lunar-new-year-customs-for-visitors",
   "qingdao-brands-built-an-industrial-city",
   "qinling-huaihe-transition-zone",
   "shanghai-24-hour-parks-reality-check",
+  "shilin-ashima-landscape-story",
   "shenzhen-low-altitude-city-infrastructure",
   "when-metro-construction-meets-archaeology",
   "why-china-museums-have-stamps",
@@ -24,7 +26,7 @@ const reviewedGuideIds = [
   "zhenjiang-vinegar-living-fermentation",
 ];
 
-test("the reviewed 17-guide release exports localized search language", async () => {
+test("reviewed guide releases export localized search language", async () => {
   const adapterSource = await readFile(
     path.join(projectRoot, "lib/searchPlatformContentAdapter.ts"),
     "utf8",

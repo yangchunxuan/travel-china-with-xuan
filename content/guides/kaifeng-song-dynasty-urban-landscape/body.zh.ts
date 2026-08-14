@@ -7,7 +7,7 @@ const body: StructuredPageBody = {
       id: "answer-first",
       type: "lead",
       text:
-        "如果你想把《清明上河图》转化成可步行、可观看表演的空间体验，清明上河园（Qingming Riverside Landscape Garden，也称 Millennium City Park 或 Qingming Shanghe Garden）的门票就有价值；但它不是保存至今的北宋开封城。画卷记录经过选择的交通与商业活动，现代园区把图像母题变成娱乐空间，州桥则在原有城市交叉点提供物质证据。三者可以合读，却不能彼此代为证明。本文提供一条3—4小时园区路线、物证优先的替代选择，以及演出或考古参观条件变化时的恢复方案。",
+        "如果你想把《清明上河图》转化成可步行、可观看表演的空间体验，清明上河园（Qingming Riverside Landscape Garden，也称 Millennium City Park 或 Qingming Shanghe Garden）的门票就有价值；但它不是保存至今的北宋开封城。画卷记录经过选择的交通与商业活动，现代园区把图像母题变成娱乐空间，州桥则在原有城市交叉点提供物质证据。三者可以合读，却不能彼此代为证明。本文提供一条3—4小时园区路线、物证优先的替代选择，以及演出或考古参观条件变化时的备用方案。",
     },
     {
       id: "names-heading",
@@ -44,7 +44,7 @@ const body: StructuredPageBody = {
         ],
         [
           "Homeground 规划判断",
-          "哪种顺序能回答你的问题，以及条件变化时怎样恢复。",
+          "哪种顺序能回答你的问题，以及条件变化时怎样调整。",
           "新的历史事实或保证开放。",
         ],
       ],
@@ -67,7 +67,7 @@ const body: StructuredPageBody = {
       id: "scroll-object",
       type: "paragraph",
       text:
-        "故宫博物院将其定为北宋张择端所作绢本长卷，纵24.8厘米、横528厘米。官方介绍依次经过郊野、汴河与虹桥，再进入城门和街市。船工、脚夫、车马、牲畜与店面记录的是画家选择呈现的内容。但长卷没有单一固定视点，而是带领目光经过连续、压缩的场景。故宫学者余辉称其反映“真实情况”而不是一个“实景”；这是具名阐释，不等于可以把每个细节都斥为想象。",
+        "故宫博物院将其定为北宋张择端所作绢本长卷，纵24.8厘米、横528厘米。官方介绍依次经过郊野、汴河与虹桥，再进入城门和街市。船工、脚夫、车马、牲畜与店面记录的是画家选择呈现的内容。但长卷没有单一固定视点，而是带领目光经过连续、压缩的场景。故宫学者余辉认为，画家综合、集中并提炼了开封城内外多种建筑与社会生活。这是具名阐释，不等于可以把每个细节都斥为想象。",
     },
     {
       id: "scroll-observation",
@@ -87,14 +87,14 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 853,
       caption:
-        "这幅园内浮雕放大了画卷中的桥梁场面，便于公众观看。它可以帮助定位画面，却不是北宋文物，也不是故宫收藏的原作。",
+        "这幅园内浮雕放大了画卷中的桥梁场面，便于公众观看。它可以帮助定位画面，却不是北宋文物，也不是故宫收藏的原作。照片：Gary Todd / Wikimedia Commons，CC0 1.0；缩放并转为 WebP。",
     },
     {
       id: "scroll-boundary",
       type: "callout",
       title: "不要把长卷当成地籍图",
       body:
-        "研究者仍在讨论画卷的地理位置、季节和目的。稳妥的结论更窄：具体的城市观察经过了艺术安排。画卷可以引出交通与贸易问题，却不能单独授权逐栋复原开封。",
+        "研究者仍在讨论画卷的地理位置、季节和目的。稳妥的结论更窄：具体的城市观察经过了艺术安排。画卷可以引出交通与贸易问题，却不能单独支持逐栋复原开封。",
       tone: "warning",
     },
     {
@@ -134,7 +134,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 853,
       caption:
-        "园内虹桥是现代游客设施。可以比较它如何让人跨越水面，但不要把它标成保存至今的北宋桥梁或州桥。Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "园内虹桥是现代游客设施。可以比较它如何让人跨越水面，但不要把它标成保存至今的北宋桥梁或州桥。照片：Windmemories / Wikimedia Commons，CC BY-SA 4.0；缩放并转为 WebP，衍生图继续采用 CC BY-SA 4.0。",
     },
     {
       id: "bridge-reading",
@@ -172,14 +172,14 @@ const body: StructuredPageBody = {
       width: 1400,
       height: 1050,
       caption:
-        "裸露的桥体、河壁与叠压地层属于考古证据。可见桥体是建在宋代基础上的明代早期结构，并非已经消失的北宋原桥；它既不能确定画中虹桥的位置，也不能为园内虹桥的准确性背书。2025年的照片同样不能证明当前开放。照片：Yumeto / Wikimedia Commons，CC BY-SA 4.0；缩放并转为WebP，衍生图继续采用CC BY-SA 4.0。",
+        "裸露的桥体、河壁与叠压地层属于考古证据。可见桥体是建在宋代基础上的明代早期结构，并非已经消失的北宋原桥；它既不能确定画中虹桥的位置，也不能为园内虹桥的准确性背书。2025年的照片同样不能证明当前开放。照片：Yumeto / Wikimedia Commons，CC BY-SA 4.0；缩放并转为 WebP，衍生图继续采用 CC BY-SA 4.0。",
     },
     {
       id: "zhouqiao-dynamic",
       type: "callout",
       title: "不要假定州桥考古区一定开放",
       body:
-        "考古报告足以确立州桥的重要性，却不能闭合2026年普通游客入场、预约、票务和外国护照处理的信息链。请向运营或保护单位确认。若不能进入，留在合法公共空间，并以开封博物馆补充更广的物质史；绝不要跨越围挡。",
+        "考古报告足以确立州桥的重要性，却没有说明一套可靠的2026年普通游客入场、预约、票务与外国护照处理流程。请向运营或保护单位确认。若不能进入，留在合法公共空间，并以开封博物馆补充更广的物质史；绝不要跨越围挡。",
       tone: "warning",
     },
     {
@@ -212,7 +212,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 960,
       caption:
-        "临水大殿属于园区扩展后的主题景观。它可以帮助你观察景区如何超出画卷继续创作，却不能被说成保存至今的宋代建筑或画中某座建筑的精确对应物。Photo: Yumeto / Wikimedia Commons, CC BY-SA 4.0.",
+        "临水大殿属于园区扩展后的主题景观。它可以帮助你观察景区如何超出画卷继续创作，却不能被说成保存至今的宋代建筑或画中某座建筑的精确对应物。照片：Yumeto / Wikimedia Commons，CC BY-SA 4.0；缩放并转为 WebP，衍生图继续采用 CC BY-SA 4.0。",
     },
     {
       id: "park-onsite-heading",
@@ -260,7 +260,7 @@ const body: StructuredPageBody = {
       id: "gate-stop",
       type: "paragraph",
       text:
-        "故宫资料称画中城门为“东角子门”，园区建筑则名为“上善门”。相似的河岸到城市功能不会让两者变成同一对象。阅读现场陈述的依据，再看立面与店铺怎样引导今天的人流。“宋式”可能只是风格参照，不等于留存宋代木构或考古复原。Homeground 的木构指南可帮助你问结构问题，而不是凭外观猜年代。",
+        "故宫藏品记录称画中城门为“东角子门”，园区建筑则名为“上善门”。相似的河岸到城市功能不会让两者变成同一对象。阅读现场陈述的依据，再看立面与店铺怎样引导今天的人流。“宋式”可能只是风格参照，不等于留存宋代木构或考古复原。Homeground 的木构指南可帮助你问结构问题，而不是凭外观猜年代。",
     },
     {
       id: "shangshan-figure",
@@ -270,7 +270,7 @@ const body: StructuredPageBody = {
       width: 1280,
       height: 853,
       caption:
-        "上善门帮助园区营造进入主题城市的空间转换。不要把它改称画中的东角子门，也不要把它介绍为保存至今的北宋城门。Photo: Windmemories / Wikimedia Commons, CC BY-SA 4.0; resized.",
+        "上善门帮助园区营造进入主题城市的空间转换。不要把它改称画中的东角子门，也不要把它介绍为保存至今的北宋城门。照片：Windmemories / Wikimedia Commons，CC BY-SA 4.0；缩放并转为 WebP，衍生图继续采用 CC BY-SA 4.0。",
     },
     {
       id: "extension-stop-heading",
@@ -311,7 +311,7 @@ const body: StructuredPageBody = {
       type: "callout",
       title: "设计一条演出取消后仍然成立的路线",
       body:
-        "运营方提示，天气或其他情况可能调整或取消演出。选定节目若消失，继续“浮雕—虹桥—城门—扩展景观”；空间比较不需要演员或固定时间。",
+        "运营方提示，天气或其他情况可能调整或取消演出。选定节目若临时取消，继续“浮雕—虹桥—城门—扩展景观”；空间比较不需要演员或固定时间。",
       tone: "warning",
     },
     {
@@ -327,7 +327,7 @@ const body: StructuredPageBody = {
       items: [
         "定位，15—20分钟：找出画卷次序，并选两个细节追踪。",
         "虹桥，25—35分钟：比较桥面与水面移动；若停留妨碍他人，就从岸边看。",
-        "城门与街道，40—50分钟：检验名称，把主题商业与关于原有建筑遗存的主张分开。",
+        "城门与街道，40—50分钟：检验名称，把主题商业与原有建筑遗存的主张分开。",
         "一个弹性演出时段：当天确认时长、场地与票种包含关系；如有变化就跳过。",
         "扩展区域，约30分钟：辨认园区从哪里超出画卷；疲劳时首先缩短这一段。",
         "机动时间，30—45分钟：应对排队、天气与休息。只有真正想看现行夜间产品时才留到晚上。",
@@ -343,7 +343,7 @@ const body: StructuredPageBody = {
           items: [
             "你想要可步行的入门体验，或带着孩子旅行。",
             "你喜欢舞台互动，但能把氛围与证据分开。",
-            "先走园区路线，再用博物馆或已确认开放的州桥作物证纠偏。",
+            "先走园区路线，再用博物馆或已确认开放的州桥作物证校准。",
           ],
         },
         {
@@ -359,7 +359,7 @@ const body: StructuredPageBody = {
           items: [
             "只选一个：园区负责阐释；已确认开放的州桥或博物馆负责证据。",
             "不要为全部完成而在三者之间赶路。",
-            "开放不确定时，把重新核对预约与展览的博物馆作为恢复候选。",
+            "开放不确定时，把重新核对预约与展览的博物馆作为备选。",
           ],
         },
       ],
@@ -369,7 +369,7 @@ const body: StructuredPageBody = {
       type: "callout",
       title: "什么情况下园区门票价值明确",
       body:
-        "园区适合想看画卷大尺度转译、需要家庭友好空间或喜欢演出的游客；只寻找宋代原物，或排斥主题公园声响与互动的人则不太合适。可访问的2026年官方资料未能闭合当前价格、护照处理、包含项目或日夜产品关系；付款前请核对运营方当前销售渠道。",
+        "园区适合想看画卷大尺度转译、需要家庭友好空间或喜欢演出的游客；只寻找宋代原物，或排斥主题公园声响与互动的人则不太合适。我们能访问的2026年官方资料仍不足以确认一项可靠的当前票价、外国护照处理流程、各票种所含项目或日夜产品关系；付款前请核对运营方当前销售渠道。",
       tone: "decision",
     },
     {
@@ -394,7 +394,7 @@ const body: StructuredPageBody = {
       id: "photography-rights",
       type: "paragraph",
       text:
-        "允许拍摄与允许发表是两回事。遵守现行标识，并在把可识别的演员或儿童作为主要拍摄对象前取得同意。本文未复制故宫原画，因为网页图片不自动获得发表授权。为自己的照片准确记录日期和地点，绝不要把园内浮雕、复制品或后建桥梁标成原件。",
+        "允许拍摄与允许公开发布是两回事。遵守现行标识，并在把可识别的演员或儿童作为主要拍摄对象前取得同意。本文未复制故宫原画，因为故宫网页上的图片并不自动附带公开发布许可。为自己的照片准确记录日期和地点，绝不要把园内浮雕、复制品或后建桥梁标成原件。",
     },
     {
       id: "recovery-heading",
@@ -405,8 +405,8 @@ const body: StructuredPageBody = {
     {
       id: "recovery-table",
       type: "table",
-      caption: "仍能保住核心任务的失败恢复选择",
-      columns: ["变化", "恢复方案", "不要声称什么"],
+      caption: "发生变化时仍能保住核心任务的备用方案",
+      columns: ["变化", "备用方案", "不要声称什么"],
       rows: [
         [
           "原定演出改期或取消",
@@ -484,67 +484,133 @@ const body: StructuredPageBody = {
     {
       id: "sources",
       type: "sources",
-      title: "本指南核查的核心来源",
+      title: "本指南核查的核心来源与图片许可记录",
       items: [
         {
           label: "张择端《清明上河图》藏品记录",
           url: "https://www.dpm.org.cn/collection/paint/228226.html",
           publisher: "故宫博物院",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "故宫关于《清明上河图》解读的讲座",
           url: "https://www.dpm.org.cn/forum_detail/99722.html",
           publisher: "故宫博物院",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "《清明上河图》未决问题研究讨论",
           url: "https://www.dpm.org.cn/study_detail/100187.html",
           publisher: "故宫博物院",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "开封州桥考古项目概况",
           url: "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=1985",
           publisher: "河南省文物考古研究院",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "2020年州桥考古发掘记录",
           url: "https://hnswwkgyjy.cn/NewsView.php?News_ID=2051",
           publisher: "河南省文物考古研究院",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "开封城市考古：进展与认识",
-          url: "https://discovery.ucl.ac.uk/10183429/1/Manuscript_with_author_details_revised.pdf",
-          publisher: "Archaeological Research in Asia / UCL Discovery",
-          reviewedAt: "2026-08-13",
+          url: "https://doi.org/10.1080/00438243.2024.2304336",
+          publisher: "World Archaeology / Taylor & Francis",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "清明上河园建设发展概况",
-          url: "https://www.longting.gov.cn/ltq/c00044/pc/content/content_2003660780649967616.html",
+          url: "http://www.longting.gov.cn/ltq/c00044/pc/content/content_2003660780649967616.html",
           publisher: "开封市龙亭区人民政府",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "园区现行建筑目录",
           url: "https://www.qmsyun.com/Mobile_page/q_building.php",
           publisher: "清明上河园",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "园区现行节目表与调整提示",
           url: "https://www.qmsyun.com/Mobile_page/o_program.php",
           publisher: "清明上河园",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
-          label: "开封博物馆预约渠道说明",
-          url: "https://www.kaifeng.gov.cn/kfsrmzfwz/whty/pc/content/content_1873557496836997120.html",
-          publisher: "开封市人民政府 / 开封博物馆",
-          reviewedAt: "2026-08-13",
+          label: "开封博物馆2026年预约系统更新公告",
+          url: "https://www.sina.cn/news/detail/5291280644969326.html",
+          publisher: "开封市博物馆认证账号 / 新浪",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "故宫博物院影像授权申请",
+          url: "https://digicol.dpm.org.cn/page/applyimage",
+          publisher: "故宫博物院数字文物库",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "故宫博物院网站使用条款",
+          url: "https://www.dpm.org.cn/bottom/privacy/254.html",
+          publisher: "故宫博物院",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "Millennium City Park 官方英文名称记录",
+          url: "https://english.henan.gov.cn/2025/04-01/3143768.html",
+          publisher: "河南省人民政府",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "首图照片来源与 CC0 记录",
+          url: "https://commons.wikimedia.org/wiki/File:2014_Millennium_City_Park_with_Kaifeng_in_Background.jpg",
+          publisher: "Gary Todd / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "园内浮雕照片来源与 CC0 记录",
+          url: "https://commons.wikimedia.org/wiki/File:2008_Zhang_Zeduan_Painting_Carved_in_Stone_a.jpg",
+          publisher: "Gary Todd / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "园内现代虹桥照片与许可记录",
+          url: "https://commons.wikimedia.org/wiki/File:Rainbow_Bridge_in_Millennium_City_Park_20180120.jpg",
+          publisher: "Windmemories / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "州桥照片与许可记录",
+          url: "https://commons.wikimedia.org/wiki/File:20250531_Zhou_Qiao.jpg",
+          publisher: "Yumeto / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "临水大殿照片与许可记录",
+          url: "https://commons.wikimedia.org/wiki/File:20250531_Linshui_Dadian.jpg",
+          publisher: "Yumeto / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "上善门照片与许可记录",
+          url: "https://commons.wikimedia.org/wiki/File:Shangshan_Gate_20180120.jpg",
+          publisher: "Windmemories / Wikimedia Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "CC0 1.0 通用公共领域贡献声明",
+          url: "https://creativecommons.org/publicdomain/zero/1.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "知识共享署名—相同方式共享 4.0 许可",
+          url: "https://creativecommons.org/licenses/by-sa/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-14",
         },
       ],
     },

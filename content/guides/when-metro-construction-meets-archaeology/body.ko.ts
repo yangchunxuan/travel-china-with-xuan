@@ -177,7 +177,8 @@ const body = {
         {"label": "량주박물관과 유적공원 순서 정하기", "href": "/ko/guides/liangzhu-ruins-park-and-museum-sequence/", "description": "박물관 유물과 공식 공개 고고학 경관을 비교합니다."},
         {"label": "중국 지도 핀 어긋남 확인하기", "href": "/ko/guides/china-map-coordinate-offset-explained/", "description": "중국어 주소로 역, 출입구, 박물관 위치를 교차 확인합니다."},
         {"label": "호텔이 실제로 지하철과 가까운지 판단하기", "href": "/ko/guides/china-hotel-near-metro/", "description": "역 이름이 아니라 실제 입구와 보행 경로를 확인합니다."},
-        {"label": "서하 문자와 왕릉의 고고학 증거 읽기", "href": "/ko/guides/xixia-script-and-imperial-tombs-context/", "description": "고고학 자료가 신중한 역사 해석을 어떻게 지지하는지 봅니다."}
+        {"label": "서하 문자와 왕릉의 고고학 증거 읽기", "href": "/ko/guides/xixia-script-and-imperial-tombs-context/", "description": "고고학 자료가 신중한 역사 해석을 어떻게 지지하는지 봅니다."},
+        {"label": "저우차오 고고학과 현대 테마 카이펑 비교하기", "href": "/ko/guides/kaifeng-song-dynasty-urban-landscape/", "description": "한 곳의 이름 있는 발굴을 통해 남은 물적 증거, 후대 재건과 관광객용 역사 연출을 구분합니다."}
       ]
     },
     {

@@ -1,190 +1,205 @@
 # Source log — Shilin Stone Forest and Ashima
 
-Status: **PARTIAL — CENTRAL RE-REVIEW REQUIRED**
-Asset note: **REAL HERO AND SIX BODY IMAGES INCLUDED — GEOLOGY PROCESS PANEL UNAVAILABLE; ARTICLE REMAINS PARTIAL**
+Status: **READY FOR CENTRAL INTEGRATION**
 
-Prepared and reviewed: **2026-08-13**; correction audit: **2026-08-14**
-Candidate: `folk-city-20260813-02`
+Asset note: **SEVEN RIGHTS-CLEARED, LOCATION-ACCURATE IMAGES INCLUDED. A FORMATION-PROCESS PANEL WOULD BE A FUTURE ENHANCEMENT, NOT A PUBLICATION BLOCKER.**
+
+Last full source, URL, rights and visual review: **2026-08-14**
+
 Canonical guide ID: `shilin-ashima-landscape-story`
-Approved parent classification: `history-route-collection`
+Runtime section: `culture`
+Runtime collection: `/culture/history-people-ideas/`
 
 ## Editorial boundary
 
-This page owns one task: using the Ashima story to read the Stone Forest on site while keeping geology, Sani Yi oral tradition, twentieth-century editing and film, and present-day tourism presentation distinct. It does not own Kunming–Shilin transport, current ticketing, a general Stone Forest day-trip itinerary, a complete history of the Sani people, or a film history of *Ashima*.
+This page owns one task: using Ashima to read Shilin Stone Forest while keeping geology, Sani Yi oral tradition, twentieth-century editing and film, and present-day tourism naming distinct. It does not own Kunming–Shilin transport, tickets, a complete Sani history, a film history, or a general Stone Forest day-trip itinerary.
 
-The evidence labels used in the body are:
+The body uses four evidence layers:
 
-- **Geology / material evidence:** processes that formed the karst landscape and observations visible in the rock.
-- **Living oral tradition:** the Sani Yi narrative tradition, its oral and manuscript transmission, performance settings and variants.
-- **Edited text and film:** twentieth-century collection, Chinese-language editing and the 1964 screen adaptation.
-- **Tourism presentation:** a named rock, signs, displays, performances and scenic-area interpretation used for visitors today.
-- **Homeground judgment:** suggested order, stopping time, crowd recovery and a choice mechanism for travellers.
+- **Geology / material evidence:** processes that formed the karst and observations visible in rock.
+- **Living oral tradition:** Sani Yi narrative transmission, performance, manuscripts and variants.
+- **Edited text and film:** collection, Chinese-language editing and the 1964 screen adaptation.
+- **Tourism presentation:** a named natural formation, signs, displays and scenic interpretation.
 
-## Core sources
+The central boundary is explicit in every locale: narrative can explain why people recognise Ashima in a natural pillar, but it is not a geological formation account.
+
+## Substantive sources
 
 ### S1 — UNESCO Global Geopark profile
 
 - URL: https://www.unesco.org/en/iggp/shilin-unesco-global-geopark
 - Publisher: UNESCO
-- Reviewed: 2026-08-13
-- Supports: late-Palaeozoic shallow-marine carbonate deposition; uplift, weathering and dissolution; multi-stage karst development; UNESCO's current mention of an Ashima intangible-culture exhibition hall within a Geopark Museum.
-- Does **not** support: an exact formation date or lithology for the individual Ashima Rock; current museum opening, address or admission; a claim that the legend caused the landform.
+- Reviewed: 2026-08-14
+- Supports: shallow-marine carbonate deposition; uplift, long-term weathering, dissolution and multi-stage karst development; the current profile's mention of an Ashima intangible-culture exhibition hall in a Geopark Museum.
+- Limit: it does not give the individual Ashima Rock an exact formation date or complete lithological history, and it gives no current museum address, hours, admission or access guarantee.
 
-### S2 — South China Karst World Heritage property and maps
+### S2 — South China Karst World Heritage property
 
-- URLs: https://whc.unesco.org/en/list/1248 and https://whc.unesco.org/en/list/1248/maps
+- URL: https://whc.unesco.org/en/list/1248
+- Map URL checked: https://whc.unesco.org/en/list/1248/maps
 - Publisher: UNESCO World Heritage Centre
-- Reviewed: 2026-08-13
-- Supports: South China Karst is a serial property; the mapped Shilin components are Naigu Stone Forest and Suogeyi Village/Suyishan.
-- Does **not** support: transferring World Heritage status to every visitor landmark in the wider scenic area. The body must not call Ashima Rock itself a World Heritage component.
+- Reviewed: 2026-08-14
+- Supports: South China Karst is a serial property; the mapped Shilin components are Naigu Stone Forest and Suyishan/Suogeyi.
+- Limit: it does not make every landmark in the wider scenic area, or Ashima Rock specifically, an individually listed World Heritage component.
 
-### S3 — National intangible cultural heritage record for *Ashima*
+### S3 — National intangible-cultural-heritage project record
 
 - URL: https://www.ihchina.cn/project_details/12241.html
 - Publisher: China Intangible Cultural Heritage Network / China Intangible Cultural Heritage Museum
-- Reviewed: 2026-08-13
-- Supports: classification as Sani Yi folk literature; oral telling and singing; Sani-language creation; different streams and performance contexts; early-1950s Chinese-language collection and publication; first-batch national ICH listing in 2006.
-- Does **not** support: treating Ashima as a verified historical person, choosing one version as the only authentic original, or using the story as a geological account.
+- Reviewed: 2026-08-14
+- Supports: classification as Sani Yi folk literature; Sani-language creation; telling and singing; different streams and contexts; early-1950s collection and publication; first-batch national ICH listing.
+- Limit: it does not prove Ashima was an identifiable historical person, select one universal original, or turn the story into geology.
 
-### S4 — Wang Dan, transmission and textual form of *Ashima*
+### S4 — Transmission and textual forms of *Ashima*
 
 - URL: https://www.cssn.cn/wx/wx_mzwx/202208/t20220802_5443066.shtml
-- Publisher: Chinese Social Sciences Net (republication of scholarship by Wang Dan)
-- Reviewed: 2026-08-13
-- Supports: interaction among oral transmission, bimo manuscript traditions, collection and edited publication; the existence of multiple textual forms.
-- Does **not** support: freezing one narration as universal among all Sani communities.
+- Publisher: Chinese Social Sciences Net
+- Reviewed: 2026-08-14
+- Supports: interaction among oral transmission, bimo manuscript traditions, collection and edited publication; multiple textual forms.
+- Limit: it does not freeze one narration as universal among Sani communities.
 
 ### S5 — Performance context and variation
 
 - URL: https://chinafolklore.org/web/?NewsID=4176
 - Publisher: China Folklore Society
-- Reviewed: 2026-08-13
+- Reviewed: 2026-08-14
 - Supports: oral performance context and variation; why a written summary cannot stand in for every telling.
-- Does **not** support: a current tourist performance schedule or the claim that any scenic-area show is the same thing as community transmission.
+- Limit: it does not establish a current tourist performance schedule or equate a scenic show with community transmission.
 
-### S6 — Comparison of oral/edited forms and the 1964 film
+### S6 — Comparison of oral, edited and film versions
 
 - URL: https://xb.ynau.edu.cn/jwk_sk/cn/article/pdf/preview/10.3969/j.issn.1004-390X%28s%29.2018.01.018.pdf
 - Publisher: *Journal of Yunnan Agricultural University (Social Science)*
-- Reviewed: 2026-08-13
-- Supports: a documented comparison of character relationships and endings across representative oral, edited and film versions; the film's conversion of Ahei and Ashima from siblings to romantic partners.
-- Does **not** support: saying every oral variant uses the same relationship or ending.
+- Reviewed: 2026-08-14
+- Supports: a documented comparison of representative oral, edited and film versions, including the sampled oral/edited sibling relationship, the film's romantic relationship and differing endings.
+- Limit: it does not establish that every oral variant uses the same relationship or ending.
 
-### S7 — Hong Kong Film Archive programme note
+### S7 — Hong Kong Film Archive programme record
 
 - URL: https://www.filmarchive.gov.hk/en/web/hkfa/2025/sh/pe-event-2025-sh-fs-film01.html
 - Publisher: Hong Kong Film Archive
-- Reviewed: 2026-08-13
-- Supports: the 1964 film's production identity and the adaptation's major change from a sibling relationship to a romantic one.
-- Does **not** support: using a film still without permission, or treating the film as a documentary record of Sani life.
+- Reviewed: 2026-08-14
+- Supports: the film's 1964 production identity and its romance plot.
+- Limit: it does **not** independently document the brother-to-lover change; that comparison belongs to S6. It also provides no permission to reuse a film still.
 
 ### S8 — Major and Minor Stone Forest visitor description
 
 - URL: https://shilingeopark.com/public/park/en-US/detail-447-28203.html
 - Publisher: Shilin UNESCO Global Geopark / scenic-area institution
-- Reviewed: 2026-08-13
-- Supports: the visitor-facing contrast between denser formations in Major Stone Forest and more open, scattered formations in Minor Stone Forest; location of the named Ashima formation in Minor Stone Forest.
-- Does **not** support: fixed admission prices, opening times, shuttle operations or a formal geological classification called “major” versus “minor.”
-
-### S9 — Current official location page for Ashima Rock
-
-- URL: https://park.shilin.com.cn/public/park/zh-CHS/detail-428-538.html
-- Publisher: Shilin scenic-area institution
-- Reviewed: 2026-08-13
-- Supports: Ashima Rock is a named formation in Minor Stone Forest.
-- Does **not** support: a currently signed viewing point, a guaranteed unobstructed photograph or any single historical origin for the name.
-
-### S10 — Archived official visitor account about the viewing angle
-
-- URL: https://www.chinastoneforest.com/public/protal/zh-CHS/special-198-9.html
-- Publisher: Shilin scenic-area institution
-- Reviewed: 2026-08-13
-- Supports: the likeness has historically been presented to visitors from one useful angle.
-- Does **not** support: the existence of a current marked or staffed photo position. All body and image alt text therefore says “favourable viewing angle,” not “marked viewing angle.”
-
-### S11 — County cultural-tourism service centre
-
-- URLs: https://mzzj.yn.gov.cn/html/2022/difangdongtai_0314/42290.html and https://mzzj.yn.gov.cn/html/2023/difangdongtai_1020/50717.html
-- Publisher: Ethnic and Religious Affairs Commission of Yunnan Province
-- Reviewed: 2026-08-13
-- Supports: a 2022 county cultural-tourism service centre and a later report that it contained an Ashima ethnic-culture display and Shilin ethnic-culture corridor.
-- Does **not** support: current hours, exact exhibition contents, admission or the identity of UNESCO's Geopark Museum display.
-
-### S12 — Ministry of Culture and Tourism route record
-
-- URL: https://zhuanti.mct.gov.cn/xcszbwg2022/yunnan/detail/1993.html
-- Publisher: Ministry of Culture and Tourism of the People's Republic of China
-- Reviewed: 2026-08-13
-- Supports: the cultural-tourism service centre is in Shilin county town and is listed separately from the Stone Forest Scenic Area.
-- Does **not** support: a practical same-day museum promise or current operation.
-
-### S13 — Public-domain Ashima manuscript display photograph
-
-- URL: https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG
-- Publisher / creator: Wikimedia Commons / Daderot
 - Reviewed: 2026-08-14
-- Supports: the photograph was taken at the Yunnan Nationalities Museum on 2011-08-13; its visible bilingual label identifies the left item as a Yi-script *Story of Ashima* from Shilin County; Daderot released the image to the public domain.
-- Does **not** support: current display in 2026, identification as an original or unique authoritative version, the manuscript's date or author, or identification with either venue named in S1 and S11.
+- Supports: visitor-facing contrast between the denser Major Stone Forest and more open Minor Stone Forest; Ashima as the best-known named spot in Minor Stone Forest.
+- Limit: it is not used for its ticket, opening, shuttle or performance details, and “Major” and “Minor” are not presented as formal rock types.
 
-## Venue-name audit
+### S9 — Official Stone Forest formation explanation
 
-The source record describes at least two settings: UNESCO's English profile places an Ashima intangible-culture exhibition hall in a Geopark Museum, while provincial and national records place an Ashima ethnic-culture display in a county-town cultural-tourism service centre. No current authoritative page crosswalks the English and Chinese museum names, exact addresses, operators, access rules or hours. The article therefore does not route readers to a named hall. It treats any verified-open geology or cultural display as optional and supplies a no-exhibition recovery route.
+- URL: https://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31433.html
+- Publisher: Stone Forest scenic-area institution
+- Reviewed: 2026-08-14
+- Supports: limestone/carbonate material; uplift; intersecting fractures; water and biological dissolution along weaknesses; separation of pillars; long, multi-stage development.
+- Limit: its digital illustrations are all-rights-reserved and are not evidence that an equivalent panel exists onsite. Its exact-age examples apply to the wider Stone Forest history, not a birthday for the Ashima silhouette.
 
-## Dynamic-fact table
+## Public-source URL audit
 
-| Item | Evidence on 2026-08-13 | Publication rule |
+Every URL exposed in the trilingual `sources` block was checked again on 2026-08-14.
+
+| Public source | Review result | Publication decision |
 |---|---|---|
-| Scenic-area admission and opening | No single current page was needed or sufficiently stable for this cultural-interpretation task | Do not print a price or fixed opening time; link no ticket claim; readers must check the official scenic-area notice before travel |
-| Foreign-passport purchase | A 2025 real-name trial mentioned offline handling but does not establish a complete 2026 workflow | Omit the workflow entirely; this page does not own ticketing |
-| Internal shuttle or walking routing | Current routes, stops and operating times were not verified | Describe a conceptual observation order only; follow current maps, signs and staff directions onsite |
-| Daily cultural performance | Older official pages conflict and 2026 material found was event-specific | Never promise a show; the route works with no performance |
-| Geopark Museum display | UNESCO names a hall but gives no current address, access or hours | Treat as optional only after same-day official confirmation |
-| County-town Ashima display | Official reports establish the setting but not current public operation | Do not send readers there as a guaranteed stop |
-| Geology interpretation panels | The park has a geological interpretation purpose, but no current panel inventory or exact location was verified | Tell readers what evidence to look for; never promise a particular board will be present |
-| Ashima viewing point | Official archive supports a useful angle, not a current marked point | Use “favourable angle”; allow time to step sideways and follow current barriers |
-| Crowd level / visibility | No crowd or visibility guarantee exists | Use a step-aside, return-later and wider-context recovery plan |
+| S1 UNESCO Global Geopark | Live official page in the web extractor; command-line HTTP did not complete | Keep; use only the geological framework and conditional museum mention |
+| S2 UNESCO World Heritage | Live official property page and map index; command-line HTTP received an access-control 403 | Keep; preserve the serial-property boundary |
+| S3 national ICH record | Live first-party page over direct HTTP (200) and recently crawled exact search result; one extractor timed out | Keep for stable heritage-record facts, not current visitor operations |
+| S4 Chinese Social Sciences Net | Live scholarly republication in the web extractor; command-line HTTP did not complete | Keep |
+| S5 China Folklore Society | Exact article remains indexed and retrievable; direct command-line HTTP received 403 | Keep for stable scholarly context; do not treat it as a dynamic visitor source |
+| S6 Yunnan Agricultural University PDF | Live journal PDF | Keep; this source owns the relationship comparison |
+| S7 Hong Kong Film Archive | Live first-party archive page | Keep; narrow use to production identity and film plot |
+| S8 official Shilin visitor page | Exact official page and text remain recently indexed; the origin timed out during direct automated review | Keep for the static Major/Minor/Ashima description only; publish no dynamic details from it |
+| S9 official Stone Forest formation page | Exact official page and text remain recently indexed; the origin did not return through the direct automated request | Keep for static fracture/dissolution explanation; do not reuse its illustrations |
+| Ashima Rock hero | Commons page and current licence metadata live | Keep; LHOON, CC BY-SA 2.0 |
+| Wider Shilin view | Commons page and current licence metadata live | Keep; Ngguls, CC BY-SA 4.0 |
+| Designation monuments | Commons page and current licence metadata live | Keep; Ngguls, CC BY-SA 4.0 |
+| “Ashima” in Sani Yi script | Commons page and current licence metadata live | Keep; 瑞丽江的河水, CC BY-SA 4.0 |
+| Ashima Rock portrait | Commons page and current licence metadata live | Keep; Cs california, CC BY 3.0 |
+| Shilin Sani embroidery | Commons page and current licence metadata live | Keep; 瑞丽江的河水, CC BY-SA 4.0 |
+| Yi-script *Story of Ashima* display | Commons page and public-domain record live | Keep; Daderot, public domain |
+
+Two previously logged URLs were removed from both public sourcing and evidentiary dependence:
+
+- `https://park.shilin.com.cn/public/park/zh-CHS/detail-428-538.html` duplicated S8's location claim and was not reliably reachable directly.
+- `https://www.chinastoneforest.com/public/protal/zh-CHS/special-198-9.html` is an event/poem page and does not support a special or marked Ashima viewing angle.
+
+Provincial and ministry pages about a separate county cultural-tourism service centre were also removed from the page's evidence chain. They did not establish current public access and were outside this guide's route boundary.
+
+## Dynamic-fact rules
+
+| Item | Evidence as of 2026-08-14 | Rule in the published body |
+|---|---|---|
+| Admission, opening and passport workflow | Not required for this cultural-interpretation task and liable to change | Print no price, opening time or purchase workflow |
+| Internal transport and routing | Current route operation was not independently verified | Present a conceptual observation sequence and defer to onsite routes, closures and staff |
+| Daily performance | No current schedule is required or promised | The route must work without a show |
+| Ashima exhibition hall | UNESCO's current profile names one but supplies no access details | Mention conditionally; do not route a day around it |
+| Geology panel | No reusable, accurately located current formation panel was verified | Say “if available”; do not promise a particular board |
+| Viewing position | Cleared photographs demonstrate angle-dependent recognition; no current official marker was verified | Use “favourable public viewing angle,” not “marked viewpoint” |
+
+## Image-rights and visual audit
+
+All seven local derivatives were opened individually at original detail on 2026-08-14. Their source identity, visible subject, alt text, caption boundary, credit and current Commons licence metadata were cross-checked. No binary was changed.
+
+| Local image | What the inspection established | Credit / licence | Editorial boundary |
+|---|---|---|---|
+| `hero-1600.webp` | Real Ashima Rock silhouette within surrounding Shilin pinnacles; no people | LHOON / Commons, CC BY-SA 2.0 | Natural pillar, not a statue or geological proof of the story |
+| `major-stone-forest-karst-1400.webp` | Real wider Shilin limestone-pinnacle and path context; no exact sub-area is proved | Ngguls / Commons, CC BY-SA 4.0 | Caption says wider Shilin, not Major, Minor or World Heritage component |
+| `geopark-designation-sign-1400.webp` | Visible national-geopark and national-scenic-area monuments | Ngguls / Commons, CC BY-SA 4.0 | A designation record, not a formation-process panel |
+| `ashima-sani-script-1400.webp` | Graphic spelling of Ashima in Sani Yi script | 瑞丽江的河水 / Commons, CC BY-SA 4.0 | Not a manuscript, exhibit or unique historical spelling |
+| `ashima-manuscript-display-1050.webp` | 2011 Yunnan Nationalities Museum display; visible label identifies a Yi-script *Story of Ashima* from Shilin County | Daderot / Commons, public domain | No claim of current display, original status, date or sole authority |
+| `ashima-rock-portrait-1200.webp` | Real Ashima Rock from a clearer portrait-oriented public view; no people | Cs california / Commons, CC BY 3.0 | Supports angle testing, not a marked viewpoint |
+| `shilin-sani-embroidery-1400.webp` | A documented Shilin Sani embroidery textile; no people | 瑞丽江的河水 / Commons, CC BY-SA 4.0 | Not labelled an Ashima costume, ritual object or narrative episode |
+
+The public Sources block exposes all seven image-licence pages. Existing page rendering keeps that block collapsed by default; no component change is needed.
+
+### Hero judgement
+
+The hero is accurate and the Ashima silhouette remains legible, but the file is visibly dark and slightly underexposed. Review against the actual `editorial-v1` layout and CSS found no overlaid text: desktop places the image in a separate two-column figure, and narrow layouts show it at full width. That makes the darkness a **non-blocking visual weakness**, not a readability or identity failure. The clearer Ashima alternative is an 803 × 1200 portrait and would require an aggressive hero crop; the other wide photograph does not depict Ashima. Retain the present hero without brightening, generation or binary modification, and consider a future rights-cleared wide daylight Ashima photograph.
+
+## Formation-panel decision
+
+A current onsite formation-process panel remains unverified, but that is **not a release blocker**. The guide already supplies:
+
+- an answer-first boundary between story and geology;
+- a three-step material–structure–water explanation grounded in S1 and S9;
+- an observation paragraph and checklist for joints, bedding, grooves, fissures and gaps;
+- a four-layer evidence table;
+- a real wider Shilin context image; and
+- a real designation monument explicitly captioned as **not** a process panel.
+
+The operator's accurate digital formation explainer is at `https://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31433.html`; its images are not reused because the site reserves rights and the page does not establish an onsite panel. A geology museum page likewise does not provide a reusable, accurately located process-panel photograph. The future asset plan is therefore narrowly defined as a rights-cleared, exactly located current panel or formal display. The team must not fabricate an onsite scene, relabel a designation monument, or generate an AI documentary substitute.
 
 ## Internal-link boundary
 
-- `/guides/kunming-dali-lijiang-shangri-la-route-order/`: place Shilin as an optional cultural stop within a broader Yunnan journey; do not add transport instructions here.
-- `/guides/china-tiankeng-sinkholes-explained/`: offer a separate karst-reading page while explicitly avoiding an equation between tiankeng and Shilin pinnacles.
-- `/guides/yuanyang-rice-terraces-viewpoint-and-village-route/`: connect to another Yunnan landscape where physical form and living cultural meaning must be read together without treating residents as scenery.
+The trilingual body contains the three implemented inbound-owner relationships expected by the runtime map:
 
-All three links exist in English, Simplified Chinese and Korean on the reviewed main branch. No link is created to the unbuilt parent collection.
+- `china-tiankeng-sinkholes-explained`: a separate karst-reading vocabulary, never an equation between tiankeng and Shilin pinnacles.
+- `yuanyang-rice-terraces-viewpoint-and-village-route`: another Yunnan landscape where physical form and living culture must both remain visible.
+- `kunming-dali-lijiang-shangri-la-route-order`: the broader Yunnan sequence; this page does not absorb transport planning.
 
-## Image-rights record
-
-All committed derivatives were visually inspected, non-generatively resized/cropped and checked against their Commons records on 2026-08-13. Full file-level provenance, multilingual alt/caption text and SHA256 values are recorded in `image-plan.md`.
-
-- Ashima Rock Hero — LHOON, CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg
-- Wider Shilin Stone Forest — Ngguls, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:20260222_Stone_Forest,_Shilin_01.jpg
-- National-geopark / national-scenic-area designation monuments — Ngguls, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg
-- “Ashima” in Sani Yi script — 瑞丽江的河水, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%AF%97%E7%8E%9B%E5%BD%9D%E6%96%87.png
-- Ashima Rock portrait view — Cs california, CC BY 3.0: https://commons.wikimedia.org/wiki/File:Ashima_tourist_attraction.JPG
-- Shilin Sani embroidery — 瑞丽江的河水, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E6%9E%97%E6%92%92%E5%B0%BC%E5%88%BA%E7%BB%A3.jpg
-- Yi-script *Story of Ashima* display — Daderot, public domain: https://commons.wikimedia.org/wiki/File:Manuscripts_in_the_Yunnan_Nationalities_Museum_-_DSC03920.JPG
-
-No image is a film still, AI reconstruction or identifiable-person portrait. A proposed “Ashima and Ahei sculpture” was rejected after visual inspection showed that the Commons candidates were natural limestone formations, not sculptures. The public-domain 2011 museum photograph now supplies an accurately identified cultural-display image, with a caption that does not promise current display. A current formation-process panel remains **UNAVAILABLE**: the designation monument is not used as a substitute.
+No unbuilt parent-collection link is inserted in the article.
 
 ## Omitted or rejected claims
 
-- “Sani people have lived here for more than two thousand years”: omitted because no independent population-history or archaeological cross-check was established.
-- “Ashima Rock formed 270 million years ago”: omitted; the landscape has a multi-stage geological history, not a single birthday for one named silhouette.
-- “Ashima became this exact rock” as history: rejected; it can only be presented as a narrative or tourism association, with version attribution.
-- “Ashima Rock is World Heritage”: rejected; mapped World Heritage components do not include the named visitor landmark.
-- A fixed “original” story, universal ending or universal character relationship: rejected because the oral and textual record contains variants.
-- Current museum, show, ticket, passport, shuttle and opening promises: omitted pending current operator confirmation.
+- “Sani people have lived here for more than two thousand years”: omitted without an independent population-history or archaeological check.
+- “Ashima Rock formed 270 million years ago”: omitted; the landscape has a multi-stage history, not one birthday for this silhouette.
+- “Ashima became this exact rock” as history: rejected; that belongs to narrative or tourism association.
+- “Ashima Rock is World Heritage”: rejected; the mapped property boundary does not support it.
+- A fixed original story, ending or universal character relationship: rejected because oral and textual variants exist.
+- Current museum, show, ticket, passport, shuttle and opening promises: omitted.
 
 ## Validation record
 
-Correction checks were run in the article worktree on 2026-08-14 after the final trilingual and asset edits:
+Final scoped checks after the last trilingual and documentation edits:
 
-- Trilingual structural parity — **passed**: 42 blocks per locale, exact ID/type order, 9 H2 and matching figure paths/dimensions and source URL/date sequence.
-- Visible copy count — EN **2,179 article words** excluding source and internal-link blocks; ZH **4,197 Han characters** on the same basis; KO **1,851 space-delimited tokens** on the same basis.
-- `npm run guide:generate` — **passed**; 128 guide folders verified and only ignored temporary registry outputs generated.
-- `npm run typecheck` — **passed**, including a fresh guide generation.
-- `npm run build` — **passed** after the tracked content manifest and three tracked locale-font subsets were regenerated temporarily for verification. The repository's official `tools/rebuild-locale-fonts.mjs` process used the exact upstream families named in `public/fonts/README.md`: Google Fonts Noto Serif SC, Pretendard Variable 1.3.9 and NAVER MaruBuri Regular. Compilation, 496-page static generation, export font coverage and internal href/src checks all passed.
-- The temporary `content/generated/content-manifest.json` and all three `public/fonts/homeground-*.woff2` files were restored byte-for-byte to this branch's HEAD and are not part of the correction.
-- `git diff --check` and the complete prospective branch comparison `git diff --check origin/main` — **passed** with return code 0.
-
-The successful build validates the copy and assets but does not change the **PARTIAL** editorial state: an accurately located, reusable geology formation-process panel remains unavailable.
+- Structured-body assertion — **passed** in EN, ZH and KO.
+- Trilingual parity — **passed**: 42 blocks, 9 H2s, exact ID/type order, 6 body figures plus the hero, matching figure paths/dimensions, 16 matching public-source URLs and 3 body-level internal links per locale.
+- Metadata — **passed**: runtime taxonomy, three 2026-08-14 dates and three reviewed search terms per locale; EN title is 60 characters and description is 151 characters.
+- Image file audit — **passed**: all seven local dimensions and SHA256 values match `image-plan.md`; no binary changed.
+- TypeScript — **passed** with `npx --no-install tsc --noEmit`.
+- Public URLs — **reviewed**: 10 returned direct HTTP 200; access-controlled or non-returning command-line requests were independently resolved through the live web extractor or exact recently indexed page text. Two mismatched legacy URLs were retired.
+- `npm run guide:check` — metadata validation completed, then the read-only check reported the central generated Registry as stale. That file is intentionally outside this scoped article task and remains a central-integration step.
+- No generator, build, Registry, Search Map, provenance, font or binary-writing command was run.

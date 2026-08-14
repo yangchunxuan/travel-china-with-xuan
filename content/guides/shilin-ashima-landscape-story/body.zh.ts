@@ -61,7 +61,7 @@ const body = {
       id: "geology-explanation",
       type: "paragraph",
       text:
-        "最容易理解的顺序是物质、构造和水。UNESCO的说明指出，这里的碳酸盐岩沉积于浅海环境，后来又受到抬升和断裂作用影响。水沿着节理作用，溶解岩石，并在漫长、多阶段的过程中扩大岩体之间的分隔，由此形成石柱、溶沟、裂隙和空隙。这套解释并不能为阿诗玛石的具体轮廓指定一个诞生日，也不能完整复原这一根石柱的独立演化史。“姑娘变成石头”属于叙事，不属于物理成因。",
+        "最容易理解的顺序是物质、构造和水。UNESCO的说明指出，这里的碳酸盐岩沉积于浅海环境，后来抬升并经历了长期风化与溶蚀。石林运营机构的地质说明进一步解释，裂隙如何分割岩体，水又如何沿裂隙继续溶蚀，在漫长、多阶段的过程中扩大岩体之间的分隔，由此形成石柱、溶沟、裂隙和空隙。这套解释并不能为阿诗玛石的具体轮廓指定一个诞生日，也不能完整复原这一根石柱的独立演化史。“姑娘变成石头”属于叙事，不属于物理成因。",
     },
     {
       id: "geology-onsite",
@@ -75,7 +75,7 @@ const body = {
       items: [
         "把一组密集石柱与一根相对孤立的石柱作比较，想一想哪些物质被溶解、哪些间隔被扩大了。",
         "在步道上观察边缘、溶沟和裂隙；比起剪影，表面纹理往往更能帮助理解溶蚀。",
-        "如果现场有当期可读的地质解说牌，先核对它给出的证据，再回头看岩石。认定或称号标志只说明地点身份，并不解释形成过程。",
+        "如果现场有当期可读的地质解说牌，先核对它给出的证据，再回头看岩石。身份或称号标志只说明地点属性，并不解释形成过程。",
       ],
     },
     {
@@ -102,7 +102,7 @@ const body = {
       src: "/images/guides/shilin-ashima-landscape-story/geopark-designation-sign-1400.webp",
       alt: "石林景区内的国家地质公园和国家级风景名胜区认定标志。",
       width: 1400,
-      height: 1053,
+      height: 1050,
       caption:
         "这是认定标志，不是解释岩石形成过程的地质牌。阅读每一枚官方标志时，只把它对应到实际标明的身份。",
     },
@@ -162,7 +162,7 @@ const body = {
       id: "adaptation-explanation",
       type: "paragraph",
       text:
-        "《阿诗玛》的汉语搜集和整理出版始于20世纪50年代初。印刷扩大了传播范围，但取舍、排序、翻译和编辑本身就是介入，并不是把每一种地方异文原样录下。1964年电影又进行了一次改编。香港电影资料馆特别指出一处重大变化：在其所讨论的整理本中，阿黑是阿诗玛的哥哥；到了银幕上，两人变成恋人。学术研究也显示，具有代表性的口传、整理和电影形态之间存在不同结局。",
+        "《阿诗玛》的汉语搜集和整理出版始于20世纪50年代初。印刷扩大了传播范围，但取舍、排序、翻译和编辑本身就是介入，并不是把每一种地方异文原样录下。1964年电影又进行了一次改编。一项学术比较记录了一个重大变化：其抽样的代表性口传文本和整理文本把阿黑写作阿诗玛的哥哥，电影则把他改成恋人。香港电影资料馆的节目资料可独立确认1964年影片信息及银幕爱情情节。同一项研究也显示，具有代表性的口传、整理和电影形态之间存在不同结局。",
     },
     {
       id: "adaptation-meaning",
@@ -224,9 +224,9 @@ const body = {
     {
       id: "viewing-angle-warning",
       type: "callout",
-      title: "“有利观看角度”不等于“现场标示观看角度”",
+      title: "“有利观看角度”不能证明现场设有标定点",
       body:
-        "一份官方档案提到游客曾从某一角度观看这处岩体，但这不足以证明现在仍有标牌标出准确拍摄点。应遵循现场路线和围栏。图片说明或替代文本应写“从公共步道的有利观看角度所见”，而不是“从标示观看角度所见”。",
+        "两张已获再利用许可的实拍照片显示，人形轮廓会在某些位置更容易辨认；但它们都不能证明现场目前设有官方标定点。应遵循现场路线和围栏。图片说明或替代文本应写“从公共步道的有利观看角度所见”，而不是“从标示观看角度所见”。",
       tone: "warning",
     },
     {
@@ -259,7 +259,7 @@ const body = {
       type: "callout",
       title: "即使没有展览或表演，这条阅读路线也必须成立",
       body:
-        "官方资料分别提到世界地质公园博物馆内的阿诗玛展陈，以及位于县城旅游服务中心的另一处展陈；但现有网页没有交叉说明两者身份，也没有确认地址、开放时间和进入条件。不要围绕任何一处安排当天行程。岩体、观看角度和对标牌措辞的细读，已经足以承担核心任务。",
+        "UNESCO当前资料提到世界地质公园博物馆内设有阿诗玛非遗展厅，却没有提供可用于当期出行的地址、开放时间或进入条件。不要围绕这处可选场馆安排当天行程。岩体、观看角度和对标牌措辞的细读，已经足以承担核心任务。",
       tone: "warning",
     },
     {
@@ -276,7 +276,7 @@ const body = {
       id: "traveler-choice-heading",
       type: "heading",
       level: 2,
-      text: "谁值得为故事多留时间，谁可以简略了解？",
+      text: "哪些人适合为故事多留时间，哪些人可以简略了解？",
     },
     {
       id: "traveler-choice",
@@ -352,7 +352,7 @@ const body = {
           "核心任务并未失败。比较非遗项目资料、景观命名和现代呈现即可。",
         ],
         [
-          "有利观看点很拥挤。",
+          "有利观看位置很拥挤。",
           "在狭窄人流之外等候，或先用另一处岩体检验角度和命名。只有路线允许时再回来。",
         ],
         [
@@ -404,67 +404,97 @@ const body = {
     {
       id: "sources",
       type: "sources",
-      title: "官方、遗产、学术及图片来源（2026年8月13—14日复核）",
+      title: "官方、遗产、学术及图片来源（2026年8月14日复核）",
       items: [
         {
           label: "石林世界地质公园——地质与当前机构说明",
           url: "https://www.unesco.org/en/iggp/shilin-unesco-global-geopark",
           publisher: "联合国教科文组织（UNESCO）",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "中国南方喀斯特——系列世界遗产及其制图组成部分",
           url: "https://whc.unesco.org/en/list/1248",
           publisher: "联合国教科文组织世界遗产中心",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "阿诗玛——国家级非物质文化遗产项目资料",
           url: "https://www.ihchina.cn/project_details/12241.html",
           publisher: "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "《阿诗玛》的传承与文本形态",
           url: "https://www.cssn.cn/wx/wx_mzwx/202208/t20220802_5443066.shtml",
           publisher: "中国社会科学网",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "阿诗玛传统的表演语境与版本差异",
           url: "https://chinafolklore.org/web/?NewsID=4176",
           publisher: "中国民俗学会",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "阿诗玛口传、整理和电影版本比较",
           url: "https://xb.ynau.edu.cn/jwk_sk/cn/article/pdf/preview/10.3969/j.issn.1004-390X%28s%29.2018.01.018.pdf",
           publisher: "《云南农业大学学报（社会科学）》",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
-          label: "《阿诗玛》（1964）——电影资料馆改编说明",
+          label: "《阿诗玛》（1964）——电影资料馆影片资料",
           url: "https://www.filmarchive.gov.hk/en/web/hkfa/2025/sh/pe-event-2025-sh-fs-film01.html",
           publisher: "香港电影资料馆",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "大石林与小石林——当前面向游客的景观说明",
           url: "https://shilingeopark.com/public/park/en-US/detail-447-28203.html",
           publisher: "石林世界地质公园",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
         },
         {
-          label: "阿诗玛石——小石林内的官方位置说明",
-          url: "https://park.shilin.com.cn/public/park/zh-CHS/detail-428-538.html",
-          publisher: "石林景区机构",
-          reviewedAt: "2026-08-13",
+          label: "石林的形成——裂隙、溶蚀与多阶段演化",
+          url: "https://www.chinastoneforest.com/public/protal/zh-CHS/detail-67-31433.html",
+          publisher: "石林旅游官方机构",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "阿诗玛石主图：LHOON，CC BY-SA 2.0；经裁切并转换为WebP",
           url: "https://commons.wikimedia.org/wiki/File:Ashima_rock_2.jpg",
           publisher: "维基共享资源",
-          reviewedAt: "2026-08-13",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "石林广角实景：Ngguls，CC BY-SA 4.0；经缩放并转换为WebP",
+          url: "https://commons.wikimedia.org/wiki/File:20260222_Stone_Forest,_Shilin_01.jpg",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "石林国家地质公园与国家级风景名胜区标识碑：Ngguls，CC BY-SA 4.0；经缩放并转换为WebP",
+          url: "https://commons.wikimedia.org/wiki/File:20260222_Yunnan_Stone_Forest_Scenic_Area_National_Geological_Park.jpg",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "撒尼彝文“阿诗玛”：瑞丽江的河水，CC BY-SA 4.0；经缩放并转换为WebP",
+          url: "https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%AF%97%E7%8E%9B%E5%BD%9D%E6%96%87.png",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "阿诗玛石竖幅实景：Cs california，CC BY 3.0；经缩放并转换为WebP",
+          url: "https://commons.wikimedia.org/wiki/File:Ashima_tourist_attraction.JPG",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-14",
+        },
+        {
+          label: "石林撒尼刺绣：瑞丽江的河水，CC BY-SA 4.0；经裁切并转换为WebP",
+          url: "https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E6%9E%97%E6%92%92%E5%B0%BC%E5%88%BA%E7%BB%A3.jpg",
+          publisher: "维基共享资源",
+          reviewedAt: "2026-08-14",
         },
         {
           label: "彝文《阿诗玛的故事》展陈：Daderot，公有领域；经缩放并转换为WebP",

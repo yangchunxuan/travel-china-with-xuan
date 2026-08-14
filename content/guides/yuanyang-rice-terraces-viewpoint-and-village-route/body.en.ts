@@ -61,7 +61,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "Explore China", href: "/explore/", description: "Compare Yuanyang's living-landscape role with another heritage stop."},
     {label: "China climate regions for trip timing", href: "/guides/china-climate-regions-for-trip-timing/", description: "Do not transfer Yunnan highland weather expectations to the rest of China—or vice versa."},
     {label: "China itinerary with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Reduce darkness, stairs and repeated road branches in the wider trip."},
-    {label: "Fujian tulou cluster selection", href: "/guides/fujian-tulou-cluster-selection/", description: "Use the same principle: visit living communities with a clear, respectful purpose."}
+    {label: "Fujian tulou cluster selection", href: "/guides/fujian-tulou-cluster-selection/", description: "Use the same principle: visit living communities with a clear, respectful purpose."},
+    {label: "Read Shilin Stone Forest through the Ashima story", href: "/guides/shilin-ashima-landscape-story/", description: "Compare another Yunnan cultural landscape while keeping geology, oral tradition and modern interpretation in separate evidence layers."}
   ]},
   {id: "consultation", type: "callout", title: "Need a Yuanyang route that can handle cloud?", body: "A Homeground travel consultant can compare your arrival road, lodging area, viewpoint priorities, village access and cloudy-weather alternatives. Share the dates, mobility, photography priorities and whether you have one or two mornings.", tone: "neutral"},
   {id: "sources", type: "sources", title: "Official sources reviewed on 13 August 2026", items: [
