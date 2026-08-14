@@ -61,15 +61,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 | Visit | `Zhenjiang Vinegar Culture Museum` | museum provenance test and scenarios |
 | Standard | `Zhenjiang vinegar standard` | evidence/date warning only |
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-food-craft-industrial-heritage` → Jiangsu fermentation culture.
-- Hub: `/explore/`; this page owns fermentation and heritage interpretation, not a regional eating itinerary.
-- Suggested inbound owner 1: `/guides/china-regional-food-route/` — from Jiangsu/local-condiment planning, link to the process-and-city-identity deep dive.
-- Suggested inbound owner 2: `/guides/jingxian-xuan-paper-museum-workshop-choice/` — from living-craft evidence, link to the comparable provenance test while preserving different materials and processes.
-- Suggested inbound owner 3: `/guides/zhoucheng-bai-tie-dye-workshop-choice/` — from workshop/demo interpretation, link to the distinction between staged presentation and active production.
-
-These are later central edits; this release does not modify old owners.
+- Runtime section: `culture`; indexable collection: `culture-regional-food` at `/culture/regional-food/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `china-regional-food-route`, `first-shared-meal-in-china`, `hunan-cuisine-balanced-first-meal` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

@@ -61,13 +61,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 | Passenger | `Shenzhen flying taxi`, `eVTOL Shenzhen` | planned-layer warning only |
 | Risks | `urban drone noise privacy safety` | trade-off section |
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-cities-future-infrastructure` → Shenzhen urban systems.
-- Hub: `/explore/`; this page owns system explanation, not flight operations or booking.
-- Suggested inbound owner 1: `/guides/shenzhen-where-to-stay-futian-luohu-nanshan/` — from district character/public-space observations, link to what low-altitude infrastructure may look like on the ground.
-- Suggested inbound owner 2: `/guides/guangzhou-shenzhen-hong-kong-route-order/` — from why Shenzhen merits a city stop, link to the evidence-led urban-system guide.
-- Suggested inbound owner 3: `/guides/china-private-transfer-or-public-transport/` — from last-mile systems, link to the drone-ground-handoff explanation without presenting it as traveller transport.
+- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `china-robotaxi-zones-explained`, `wenchang-commercial-space-city`, `yiwu-market-to-factory-network` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

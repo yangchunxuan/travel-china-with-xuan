@@ -61,15 +61,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 | Equipment | `museum stamp book`, `use your own notebook` | preparation steps |
 | Cultural context | `Chinese seals and souvenir stamps` | resonance-not-descent section |
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-museums-cultural-practice` → visitor participation.
-- Hub: `/explore/`; this page owns the mechanism and workflow, not venue availability.
-- Suggested inbound owner 1: `/guides/national-museum-of-china-booking-and-route/` — from visit pacing, link to the exhibit-first stamp workflow as an optional onsite layer.
-- Suggested inbound owner 2: `/guides/shaanxi-history-museum-booking-and-collection-plan/` — from collection priorities, link to why a stamp route should not replace object viewing.
-- Suggested inbound owner 3: `/guides/sanxingdui-museum-booking-and-gallery-order/` — from admission-versus-onsite-activity separation, link to why stamp access never substitutes for entry confirmation.
-
-These are later central edits; this release does not modify old owners.
+- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `liangzhu-ruins-park-and-museum-sequence`, `national-museum-of-china-booking-and-route`, `sanxingdui-museum-booking-and-gallery-order` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

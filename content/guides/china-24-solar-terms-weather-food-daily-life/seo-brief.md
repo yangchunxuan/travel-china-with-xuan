@@ -62,15 +62,12 @@ This is a dated qualitative observation, not a ranking guarantee or traffic esti
 
 Do not repeat an exact-match phrase in every heading. Chinese and Korean should optimize for natural reader language, not mirror English keyword order.
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `culture-history-people-ideas` → seasonal knowledge and living practice.
-- Hub: `/culture/` or the current published culture/explore collection; do not invent a solar-term subhub until more canonical owners exist.
-- Suggested inbound owner 1: `/guides/china-climate-regions-for-trip-timing/` — where it separates climate from weather, add a contextual link explaining why solar-term names are not city forecasts.
-- Suggested inbound owner 2: `/guides/china-regional-food-route/` — where it discusses regional food systems, link to the classifier for seasonal ingredient versus community custom versus marketing theme.
-- Suggested inbound owner 3: `/guides/china-public-holidays-travel-calendar/` — only if a future passage distinguishes solar markers from statutory holidays; do not imply solar terms are days off.
-
-The inbound suggestions are for a later central edit. This release does not modify old owners.
+- Runtime section: `culture`; indexable collection: `culture-history-people-ideas` at `/culture/history-people-ideas/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `china-climate-regions-for-trip-timing`, `china-public-holidays-travel-calendar`, `tea-landscape-regions-of-china` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

@@ -63,13 +63,12 @@ This is a dated qualitative observation, not a ranking guarantee or traffic esti
 
 Avoid repeating `safe` as an assurance. Use `verify`, `current`, `exact zone` and `intended time` naturally.
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-attractions-nature-heritage` → Shanghai public-space execution.
-- Hub: `/explore/`; the page is the dynamic verification owner, not a permanent directory hub.
-- Suggested inbound owner 1: `/guides/shanghai-where-to-stay-first-trip/` — where evening convenience/return is discussed, link to the route-and-return verification chain.
-- Suggested inbound owner 2: `/guides/china-hotel-near-metro/` — where the last walk and correct exit matter, link to this page as a late-activity application.
-- Suggested inbound owner 3: `/guides/how-to-pay-in-china-as-a-tourist/` — where transport payment backup is covered, link only from a late-night transport recovery context.
+- Runtime section: `explore`; indexable collection: `explore-attractions-nature-heritage` at `/explore/attractions-nature-heritage/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `chengdu-greenway-city-ring`, `china-hotel-near-metro`, `shanghai-where-to-stay-first-trip` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

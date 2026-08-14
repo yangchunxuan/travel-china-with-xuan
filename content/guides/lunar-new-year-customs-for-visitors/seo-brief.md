@@ -62,13 +62,12 @@ This is a dated qualitative observation, not a ranking guarantee or traffic esti
 
 Do not freeze a year in the title or add a copied annual date table. Chinese should use `春节/春运`; Korean should use natural `춘절/춘윈` explanations without stuffing transliterations.
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `culture-festivals-arts-contemporary` → living festival practice and travel execution.
-- Hub: `/culture/`; annual logistics remain owned by the public-holiday page.
-- Suggested inbound owner 1: `/guides/china-public-holidays-travel-calendar/` — in the Spring Festival/Chunyun section, link to this page for public/private practice and transport-recovery depth.
-- Suggested inbound owner 2: `/guides/china-night-train-or-daytime-high-speed-rail/` — where Chunyun is cited as a demand condition, link to the four-clock planning method rather than duplicating annual figures.
-- Suggested inbound owner 3: `/guides/first-shared-meal-in-china/` — where ordinary shared meals are scoped, link to the stricter invitation boundary for a family reunion meal.
+- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `china-night-train-or-daytime-high-speed-rail`, `china-public-holidays-travel-calendar`, `first-shared-meal-in-china` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

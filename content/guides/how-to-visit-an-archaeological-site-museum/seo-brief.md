@@ -49,21 +49,12 @@ Observed through web search; this is a dated composition note, not a ranking cla
 | `ruins closed or backfilled` | scenarios and recovery | Never promise live access or infer a closure reason. |
 | `archaeological park` | boundary section | National designation is not universal to all site museums. |
 
-## Cluster, hub and canonical boundary
+## Cluster, hub and implemented inbound owners
 
-- Primary cluster: `culture / history, people and ideas`.
-- Supporting clusters: heritage conservation, museum interpretation and itinerary pace.
-- Hub: `/culture/`; named venue canonicals retain transactional and route intent.
-- This page must not compete with Liangzhu sequence, Nanhai No. 1 conservation, Sanxingdui booking or Terracotta Warriors visit pages.
-
-## Suggested inbound-link owners already live
-
-Recommendations only; no old page is edited in this batch.
-
-1. `liangzhu-ruins-park-and-museum-sequence`: after explaining museum-before-landscape order, link to this reusable site–layer–object workflow.
-2. `nanhai-one-shipwreck-cargo-and-conservation`: where treatment and display affect what visitors see, link to the generic conservation-evidence checklist.
-3. `ritual-bronze-vessels-and-inscriptions`: where object reading begins, link readers who need to reconnect a museum object to archaeological context.
-4. Legacy owner `is-your-china-itinerary-too-rushed`: where it budgets a large museum/site day, link to the one-chain fallback for limited time.
+- Runtime section: `explore`; indexable collection: `explore-attractions-nature-heritage` at `/explore/attractions-nature-heritage/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `liangzhu-ruins-park-and-museum-sequence`, `nanhai-one-shipwreck-cargo-and-conservation`, `ritual-bronze-vessels-and-inscriptions` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

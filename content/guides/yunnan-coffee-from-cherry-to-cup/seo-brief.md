@@ -51,21 +51,12 @@ Observed through web search; this is not a stable ranking statement.
 | `Yunnan coffee flavour` | roasting/scenario sections | Explain interacting causes rather than one regional profile. |
 | `visit Yunnan coffee farm` | boundary callout | Require current written property permission. |
 
-## Cluster, hub and canonical boundary
+## Cluster, hub and implemented inbound owners
 
-- Primary cluster: `culture / regional food and production systems`.
-- Supporting clusters: Yunnan route planning, responsible workshop visits and landscape interpretation.
-- Hub: `/culture/`; route owners retain destination sequencing and access tasks.
-- This page owns the production/traceability decision, not café rankings, farm bookings, product stock or real-time price.
-
-## Suggested inbound-link owners already live
-
-Recommendations only; old pages are unchanged in this batch.
-
-1. `kunming-dali-lijiang-shangri-la-route-order`: in the Yunnan identity or optional-interest section, link readers who want to understand coffee production without adding an unverified estate stop.
-2. `china-regional-food-route`: where it asks whether a food experience preserves producer/process context, link to the coffee lot evidence chain.
-3. `zhoucheng-bai-tie-dye-workshop-choice`: in its workshop-transparency section, cross-link the shared principle that a process demonstration and supply-chain claim require specific evidence.
-4. `yuanyang-rice-terraces-viewpoint-and-village-route`: where landscape and livelihoods are separated from generic scenery, link only if coffee-agroforestry context is relevant.
+- Runtime section: `culture`; indexable collection: `culture-regional-food` at `/culture/regional-food/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `china-regional-food-route`, `kunming-dali-lijiang-shangri-la-route-order`, `tea-landscape-regions-of-china` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

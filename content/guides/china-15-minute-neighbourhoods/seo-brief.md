@@ -50,21 +50,12 @@ Observed through a clean web search; composition and ordering can change and thi
 | `walkability` / `accessible route` | reality, walk and scenario blocks | Describe the continuous route, not straight-line radius. |
 | `community canteen public access` | access table and internal link | Let the canteen canonical own property-level eligibility. |
 
-## Cluster, hub and canonical boundary
+## Cluster, hub and implemented inbound owners
 
-- Primary cluster: `culture / contemporary everyday systems`.
-- Supporting clusters: accessible route planning, family travel, map verification and community meal access.
-- Hub: `/culture/` remains the collection owner; this guide owns the national concept plus field method.
-- `china-community-canteens-explained` owns canteen types, eligibility, price and meal-card verification.
-
-## Suggested inbound-link owners already live
-
-These are recommendations only; do not edit the old pages in this batch.
-
-1. `wheelchair-accessible-china-route-planning`: in its route-audit or neighbourhood-services section, link “a nominal 15-minute radius can still fail at kerbs, gates or crossings” to this guide.
-2. `china-map-coordinate-offset-explained`: where it warns that a pin is not an entrance, link readers who are testing a neighbourhood service network.
-3. `china-itinerary-with-young-children`: where it plans rest, toilets and everyday services, link to the traveller-specific circle test.
-4. `first-shared-meal-in-china`: where nearby everyday meal options are discussed, link only if the copy clearly distinguishes public restaurants from community facilities.
+- Runtime section: `explore`; indexable collection: `explore-cities-neighborhoods` at `/explore/cities-neighborhoods/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `chengdu-greenway-city-ring`, `china-community-canteens-explained`, `china-itinerary-with-young-children`, `wheelchair-accessible-china-route-planning` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **4**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

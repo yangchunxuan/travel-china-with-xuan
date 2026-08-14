@@ -49,21 +49,12 @@ Observed through a clean web search; ordering is volatile and this is not a rank
 | `price`, `discount`, `meal card` | scenario and failure-recovery blocks | Do not publish a volatile national price. |
 | `allergy`, `halal`, `vegetarian` | food-suitability boundary | Do not equate food-safety oversight with dietary certification. |
 
-## Cluster, hub and canonical boundary
+## Cluster, hub and implemented inbound owners
 
-- Primary cluster: `culture / regional food and everyday systems`.
-- Supporting clusters: payment, accessible travel, respectful dining and 15-minute neighbourhoods.
-- Hub: `/culture/`; this page owns the facility-level visitor decision.
-- `china-15-minute-neighbourhoods` owns the wider service-network concept; `first-shared-meal-in-china` owns ordinary restaurant flow; `china-regional-food-route` owns culinary routing.
-
-## Suggested inbound-link owners already live
-
-Recommendations only; old pages stay unchanged in this batch.
-
-1. `first-shared-meal-in-china`: in the venue-choice section, link readers who encounter a sign containing `社区食堂` and need to verify access before using the normal restaurant workflow.
-2. `how-to-pay-in-china-as-a-tourist`: where payment preparation cannot guarantee merchant acceptance, use a community canteen as the property-specific example and link here.
-3. `wheelchair-accessible-china-route-planning`: in the street-to-seat chain, link to this guide for meal-window, queue, tray-carrying and seating checks.
-4. `china-regional-food-route`: where everyday meals and food infrastructure are separated from destination dishes, link without presenting canteens as attractions.
+- Runtime section: `culture`; indexable collection: `culture-regional-food` at `/culture/regional-food/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `china-15-minute-neighbourhoods`, `first-shared-meal-in-china`, `how-to-pay-in-china-as-a-tourist`, `wheelchair-accessible-china-route-planning` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **4**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

@@ -61,15 +61,12 @@ This is a dated qualitative observation, not a ranking guarantee or traffic esti
 
 Use `desert greening` only when explaining or correcting that framing. Do not imply a blanket ecological objective.
 
-## Cluster, hub and inbound owners
+## Cluster, hub and implemented inbound owners
 
-- Cluster: `explore-attractions-nature-heritage` → drylands, access and landscape interpretation.
-- Hub: `/explore/`; a future drylands cluster is justified only when multiple non-overlapping canonical owners exist.
-- Suggested inbound owner 1: `/guides/qilian-mountains-public-gateways-and-access/` — where it teaches sensitive-area access, link to the desert work-zone and public-viewpoint protocol.
-- Suggested inbound owner 2: `/guides/xixia-script-and-imperial-tombs-context/` — where Ningxia route context is discussed, offer the desert-control landscape as a separate evidence-led reading task.
-- Suggested inbound owner 3: `/guides/china-climate-regions-for-trip-timing/` — where arid exposure is introduced, link to the water/maintenance constraints behind visible interventions.
-
-The inbound suggestions are for a later central edit. This release does not modify old owners.
+- Runtime section: `explore`; indexable collection: `explore-attractions-nature-heritage` at `/explore/attractions-nature-heritage/`.
+- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
+- Implemented and verified 2026-08-14: `northern-jiangsu-yellow-sea-wetland-coast`, `qilian-mountains-public-gateways-and-access`, `xixia-script-and-imperial-tombs-context` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 
