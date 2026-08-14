@@ -29,6 +29,9 @@ export const productPreviewCopy = {
     htmlLang: "en",
     previewLabel: "Local product preview · not open for booking",
     skipLink: "Skip to tour details",
+    breadcrumbLabel: "Breadcrumb",
+    homeLabel: "Home",
+    previewBreadcrumb: "Private tour preview",
     eyebrow: "4 days · 3 nights · private itinerary",
     priceBasis: "Per person · minimum 2 adults",
     validThrough: "Approved price window through 31 August 2026",
@@ -44,6 +47,8 @@ export const productPreviewCopy = {
       "This review page does not take payment. Final inclusions, the operating partner and the booking terms must be confirmed in writing first.",
     primaryCta: "Check dates and room availability",
     secondaryCta: "See the four-day plan",
+    heroImageCaption:
+      "Zhangjiajie's sandstone landscape, the natural setting for this four-day itinerary.",
     whyEyebrow: "Built around the actual trip",
     whyTitle: "Private enough to adapt, specific enough to price",
     whyIntro:
@@ -63,6 +68,74 @@ export const productPreviewCopy = {
       "Use a full day for the National Forest Park, with the Bailong Elevator, Yuanjiajie, Tianzi Mountain and the cableway shaped around current operation.",
       "Visit the Grand Canyon Glass Bridge, then choose either Huanglong Cave or Baofeng Lake in the final written itinerary.",
       "Visit Tianmen Mountain on the available A, B or C route, then continue to the airport or railway station for departure.",
+    ],
+    staysEyebrow: "Accommodation choices",
+    staysTitle: "See the rooms and shared spaces before choosing a tier",
+    staysIntro:
+      "The city stay, family villa and signature villa are different products. These photographs keep the three choices separate so you can compare the kind of space before the exact property is confirmed.",
+    previewAssetNote:
+      "Internal preview photographs only. Exact property, room type, availability and publication rights must be confirmed before this page can be released or a booking accepted.",
+    accommodationOptions: [
+      {
+        id: "city-stay",
+        label: "City-stay candidates",
+        name: "Selected city hotel",
+        price: "CNY 5,390 from · regular CNY 5,590 per person",
+        summary:
+          "Two city-hotel candidates are shown separately. The final property and room are matched to the travel dates rather than silently substituted.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
+            alt: "Candidate twin room with a mountain-facing window at Ni Hao Hotel in Zhangjiajie",
+            caption: "City candidate 01 · twin-room and window-view reference",
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
+            alt: "Candidate twin room with a mountain-facing window at West Hotel in Zhangjiajie",
+            caption: "City candidate 02 · twin-room and window-view reference",
+          },
+        ],
+      },
+      {
+        id: "family-villa",
+        label: "Family-villa reference",
+        name: "Country Garden family villa",
+        price: "CNY 6,090 per person",
+        summary:
+          "The living room and terrace belong to the family-villa material set. The exact villa, room count, occupancy rules and foreign-guest acceptance still require written confirmation.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
+            alt: "Bright living room with full-height windows in a candidate Country Garden family villa",
+            caption: "Family-villa set · living-room reference",
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
+            alt: "Terrace and lawn in a candidate Country Garden family villa",
+            caption: "Family-villa set · terrace and lawn reference",
+          },
+        ],
+      },
+      {
+        id: "signature-villa",
+        label: "Signature-villa reference",
+        name: "Signature mountain villa",
+        price: "CNY 7,090 per person",
+        summary:
+          "The terrace and suite come from one premium candidate set. They do not mean that every room has the same view, dimensions or layout.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
+            alt: "Mountain-facing dining terrace in a candidate signature villa near Zhangjiajie",
+            caption: "Signature-villa set · dining-terrace reference",
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-suite.jpg",
+            alt: "Large scenic suite in a candidate signature villa near Zhangjiajie",
+            caption: "Signature-villa set · large-suite reference",
+          },
+        ],
+      },
     ],
     pricesEyebrow: "Three approved August price tiers",
     pricesTitle: "Change the stay—not the core four-day structure",
@@ -108,6 +181,9 @@ export const productPreviewCopy = {
     htmlLang: "zh-Hans",
     previewLabel: "本地产品预览 · 尚未开放预订",
     skipLink: "跳到产品详情",
+    breadcrumbLabel: "面包屑导航",
+    homeLabel: "首页",
+    previewBreadcrumb: "私家行程预览",
     eyebrow: "4天 · 3晚 · 私家行程",
     priceBasis: "每人价格 · 2位成人起订",
     validThrough: "已批准价格有效至2026年8月31日",
@@ -121,6 +197,7 @@ export const productPreviewCopy = {
     heroNote: "本预览页不收款。包含项目、实际履约方和预订条款必须先书面确认。",
     primaryCta: "查询日期与可订房型",
     secondaryCta: "先看四日路线",
+    heroImageCaption: "张家界砂岩峰林，也是这套四日行程所进入的自然环境。",
     whyEyebrow: "从真实行程出发",
     whyTitle: "能按人调整，也能把价格说清",
     whyIntro: "四天三晚和核心游览顺序保持清楚；住宿、车辆与每天节奏，再根据真正出行的人书面确认。",
@@ -139,6 +216,69 @@ export const productPreviewCopy = {
       "完整游览张家界国家森林公园，根据当日运营安排百龙天梯、袁家界、天子山与索道。",
       "游览大峡谷玻璃桥，再在最终确认单中选择黄龙洞或宝峰湖。",
       "按可订票源采用天门山A、B或C线，游览结束后送机场或车站。",
+    ],
+    staysEyebrow: "住宿选择",
+    staysTitle: "先看房间与公共空间，再选择住宿档位",
+    staysIntro: "市区酒店、家庭别墅与精品山景别墅不是同一种产品。这里把三档素材分开呈现，让你先比较空间类型，再按真实日期确认具体房源。",
+    previewAssetNote: "以下仅为内部预览照片。具体物业、房型、库存及图片公开使用权，必须在页面正式发布或接受订单前逐项确认。",
+    accommodationOptions: [
+      {
+        id: "city-stay",
+        label: "市区酒店候选",
+        name: "市区精选酒店",
+        price: "每人¥5,390起 · 常规¥5,590",
+        summary: "两家市区候选酒店分开展示；最终酒店与房型按实际日期匹配，不会在未说明的情况下替换。",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
+            alt: "张家界你好酒店候选双床房及窗外山景",
+            caption: "市区候选01 · 双床房与窗景参考",
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
+            alt: "张家界韦斯特酒店候选双床房及窗外山景",
+            caption: "市区候选02 · 双床房与窗景参考",
+          },
+        ],
+      },
+      {
+        id: "family-villa",
+        label: "家庭别墅参考",
+        name: "碧桂园家庭度假别墅",
+        price: "每人¥6,090",
+        summary: "客厅和露台来自家庭别墅同一组素材；具体别墅、房间数、入住规则与外宾接待仍须书面确认。",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
+            alt: "碧桂园家庭别墅候选房源的落地窗客厅",
+            caption: "家庭别墅素材组 · 客厅参考",
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
+            alt: "碧桂园家庭别墅候选房源的露台与草坪",
+            caption: "家庭别墅素材组 · 露台与草坪参考",
+          },
+        ],
+      },
+      {
+        id: "signature-villa",
+        label: "精品别墅参考",
+        name: "精品山景别墅",
+        price: "每人¥7,090",
+        summary: "露台和套房来自同一组精品候选素材；这不代表每间房都拥有相同景观、面积或布局。",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
+            alt: "张家界精品山景别墅候选素材中的景观餐厅露台",
+            caption: "精品别墅素材组 · 景观餐厅露台参考",
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-suite.jpg",
+            alt: "张家界精品山景别墅候选素材中的超大景观套房",
+            caption: "精品别墅素材组 · 超大景观套房参考",
+          },
+        ],
+      },
     ],
     pricesEyebrow: "三个已批准的8月价格档",
     pricesTitle: "更换住宿选择，不改变四天核心结构",

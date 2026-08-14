@@ -28,6 +28,7 @@ const privatePreviewExportRoots = [
 
 const sourceOnlyAssetRoots = [
   "images/guides/zhangjiajie/restored",
+  "product-previews/zhangjiajie-4-day-private-tour",
 ];
 
 // Next 15 requires at least one generated param for an otherwise empty static

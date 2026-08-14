@@ -45,6 +45,31 @@ test("Zhangjiajie product preview preserves the closed release gate", async () =
   assert.match(exportPruner, /"ko\/preview"/);
   assert.match(exportPruner, /\(default\)\/preview/);
   assert.match(exportPruner, /\(localized\)\/\[locale\]\/preview/);
+  assert.match(
+    exportPruner,
+    /product-previews\/zhangjiajie-4-day-private-tour/,
+  );
+});
+
+test("preview uses the established editorial design and distinct stay photos", async () => {
+  const [page, copy, css] = await Promise.all([
+    source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
+    source("lib/zhangjiajiePrivateTourPreview.ts"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.module.css"),
+  ]);
+
+  assert.match(page, /EditorialGuidePage\.module\.css/);
+  assert.match(page, /editorialStyles\.hero/);
+  assert.match(page, /editorialStyles\.article/);
+  assert.match(page, /editorialStyles\.cta/);
+  assert.match(page, /GuideCtaLink/);
+  assert.match(copy, /city-nihao-twin\.jpg/);
+  assert.match(copy, /city-west-twin\.jpg/);
+  assert.match(copy, /family-villa-living\.jpg/);
+  assert.match(copy, /family-villa-terrace\.jpg/);
+  assert.match(copy, /signature-villa-terrace\.jpg/);
+  assert.match(copy, /signature-villa-suite\.jpg/);
+  assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
 });
 
 test("approved prices have one runtime expiry path and no internal data leak", async () => {
