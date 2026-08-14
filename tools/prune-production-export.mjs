@@ -17,6 +17,15 @@ const labExportRoots = [
   "waterway-lab",
 ];
 
+// Product previews may render in local development for owner review, but they
+// are not part of the production artifact until the product release gates are
+// explicitly opened. Remove every locale variant and its client chunks.
+const privatePreviewExportRoots = [
+  "preview",
+  "zh/preview",
+  "ko/preview",
+];
+
 const sourceOnlyAssetRoots = [
   "images/guides/zhangjiajie/restored",
 ];
@@ -47,6 +56,16 @@ for (const relativeRoot of labExportRoots) {
   const target = path.resolve(outputRoot, relativeRoot);
 
   if (path.dirname(target) !== outputRoot) {
+    throw new Error(`Refusing to prune path outside export root: ${target}`);
+  }
+
+  await rm(target, { recursive: true, force: true });
+}
+
+for (const relativeRoot of privatePreviewExportRoots) {
+  const target = path.resolve(outputRoot, relativeRoot);
+
+  if (!target.startsWith(`${outputRoot}${path.sep}`)) {
     throw new Error(`Refusing to prune path outside export root: ${target}`);
   }
 
@@ -101,6 +120,19 @@ if (!labRouteGroupChunks.startsWith(`${outputRoot}${path.sep}`)) {
 
 await rm(labRouteGroupChunks, { recursive: true, force: true });
 
+for (const relativeChunkRoot of [
+  "_next/static/chunks/app/(default)/preview",
+  "_next/static/chunks/app/(localized)/[locale]/preview",
+]) {
+  const target = path.resolve(outputRoot, relativeChunkRoot);
+
+  if (!target.startsWith(`${outputRoot}${path.sep}`)) {
+    throw new Error(`Refusing to prune path outside export root: ${target}`);
+  }
+
+  await rm(target, { recursive: true, force: true });
+}
+
 const staticRoot = path.join(outputRoot, "_next", "static");
 const buildDirectories = await readdir(staticRoot, { withFileTypes: true });
 let prunedManifestEntries = 0;
@@ -132,13 +164,19 @@ for (const buildDirectory of buildDirectories) {
           .replace(/^"|"$/g, "")
           .replace(/\\u002F/g, "/");
         const isLabRoute = labExportRoots.includes(route.split("/")[1]);
+        const isPrivatePreviewRoute = route
+          .split("/")
+          .filter(Boolean)
+          .includes("preview");
         const isEmptyGuideSentinel = route.endsWith(
           "/guides/__no-template-guides__",
         );
 
-        if (isLabRoute || isEmptyGuideSentinel) prunedManifestEntries += 1;
+        if (isLabRoute || isPrivatePreviewRoute || isEmptyGuideSentinel) {
+          prunedManifestEntries += 1;
+        }
 
-        return !isLabRoute && !isEmptyGuideSentinel;
+        return !isLabRoute && !isPrivatePreviewRoute && !isEmptyGuideSentinel;
       });
 
       return `new Set([${kept.join(",")}])`;
@@ -215,5 +253,5 @@ for (const requiredAsset of [
 }
 
 console.log(
-  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and the (lab) chunk group removed), and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
+  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${privatePreviewExportRoots.length} private-preview roots, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and unpublished client chunks removed), and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
 );

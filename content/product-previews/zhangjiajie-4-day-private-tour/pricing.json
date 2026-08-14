@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "product_id": "zjj-4d3n-private-2026",
+  "status": "approved_price_decision",
+  "public_eligible": true,
+  "updated_at": "2026-08-15T00:28:48+08:00",
+  "currency": "CNY",
+  "approved_decision_id": "approved-public-pricing-20260815",
+  "valid_from": "2026-08-15",
+  "valid_until": "2026-08-31T23:59:59+08:00",
+  "basis": {
+    "duration_days": 4,
+    "nights": 3,
+    "minimum_adults": 2,
+    "unit": "per_person",
+    "standard_rooming": "two_adults_sharing_one_room",
+    "same_rate_adult_group_sizes": [2, 3, 4],
+    "automatic_group_discount": false,
+    "five_plus_rule": "Keep the listed per-person rate as the starting rule; confirm room count, luggage and vehicle capacity before booking.",
+    "children_rule": "Quote separately according to age, height, ticket eligibility, breakfast and bedding requirements."
+  },
+  "tiers": [
+    {
+      "tier_id": "selected-city-stay",
+      "name_zh": "精选市区酒店",
+      "name_en": "Selected City Stay",
+      "from_price_per_person": 5390,
+      "regular_price_per_person": 5590,
+      "positioning_zh": "你好酒店或韦斯特大酒店等最终确认的市区住宿",
+      "featured": true
+    },
+    {
+      "tier_id": "country-garden-family-villa",
+      "name_zh": "碧桂园家庭度假别墅",
+      "name_en": "Country Garden Family Villa",
+      "price_per_person": 6090,
+      "positioning_zh": "适合希望获得更大空间与家庭氛围的客人",
+      "featured": false
+    },
+    {
+      "tier_id": "country-garden-signature-villa",
+      "name_zh": "碧桂园精品山景别墅",
+      "name_en": "Country Garden Signature Mountain Villa",
+      "price_per_person": 7090,
+      "positioning_zh": "高端设计感与特色山景住宿选项",
+      "featured": false
+    }
+  ],
+  "public_notes": {
+    "zh-CN": "以上价格按至少2位成人同行、4天3晚计算。3人及以上不自动享受人数折扣。具体酒店或别墅、房型、房间数、早餐、车辆及可订状态以付款前的书面确认单为准；价格过期后请重新询价。",
+    "en": "Prices are per person for a minimum of two adults on a 4-day, 3-night itinerary. There is no automatic group discount for three or more travelers. The exact hotel or villa, room type, room count, breakfast, vehicle and availability must be confirmed in writing before payment. Request a new quote after the validity date."
+  }
+}

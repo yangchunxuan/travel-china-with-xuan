@@ -1,0 +1,69 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import test from "node:test";
+
+const projectRoot = path.resolve(import.meta.dirname, "../..");
+const source = (relativePath) =>
+  readFile(path.join(projectRoot, relativePath), "utf8");
+
+const productPath =
+  "content/product-previews/zhangjiajie-4-day-private-tour/product.json";
+const pricingPath =
+  "content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
+
+test("Zhangjiajie product preview preserves the closed release gate", async () => {
+  const [product, pricing, defaultRoute, localizedRoute, sitemap, exportPruner] =
+    await Promise.all([
+      source(productPath).then(JSON.parse),
+      source(pricingPath).then(JSON.parse),
+      source(
+        "app/(default)/preview/zhangjiajie-4-day-private-tour/page.tsx",
+      ),
+      source(
+        "app/(localized)/[locale]/preview/zhangjiajie-4-day-private-tour/page.tsx",
+      ),
+      source("app/sitemap.ts"),
+      source("tools/prune-production-export.mjs"),
+    ]);
+
+  assert.equal(product.status, "draft");
+  assert.equal(product.public_eligible, false);
+  assert.equal(product.seo.indexable, false);
+  assert.equal(pricing.status, "approved_price_decision");
+  assert.equal(pricing.public_eligible, true);
+  assert.equal(pricing.approved_decision_id, product.price_display.approved_decision_id);
+  assert.match(defaultRoute, /process\.env\.NODE_ENV === "production"/);
+  assert.match(defaultRoute, /notFound\(\)/);
+  assert.match(defaultRoute, /index: false, follow: false/);
+  assert.match(localizedRoute, /process\.env\.NODE_ENV === "production"/);
+  assert.match(localizedRoute, /locale !== "zh"/);
+  assert.doesNotMatch(sitemap, /zhangjiajie-4-day-private-tour/);
+  assert.match(exportPruner, /privatePreviewExportRoots/);
+  assert.match(exportPruner, /"preview"/);
+  assert.match(exportPruner, /"zh\/preview"/);
+  assert.match(exportPruner, /"ko\/preview"/);
+  assert.match(exportPruner, /\(default\)\/preview/);
+  assert.match(exportPruner, /\(localized\)\/\[locale\]\/preview/);
+});
+
+test("approved prices have one runtime expiry path and no internal data leak", async () => {
+  const [pricing, helper, priceWindow, page] = await Promise.all([
+    source(pricingPath).then(JSON.parse),
+    source("lib/zhangjiajiePrivateTourPreview.ts"),
+    source("components/ZhangjiajiePrivateTourPriceWindow.tsx"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
+  ]);
+
+  assert.deepEqual(
+    pricing.tiers.map((tier) =>
+      tier.from_price_per_person ?? tier.price_per_person,
+    ),
+    [5390, 6090, 7090],
+  );
+  assert.equal(pricing.tiers[0].regular_price_per_person, 5590);
+  assert.match(helper, /isProductPriceCurrent/);
+  assert.match(priceWindow, /isProductPriceCurrent\(pricing\.valid_from, pricing\.valid_until\)/);
+  assert.match(priceWindow, /copy\.expiredPrice/);
+  assert.doesNotMatch(page, /data\/internal|source\/private|gross_margin|supplier_cost|CAC|negotiation_floor/);
+});
