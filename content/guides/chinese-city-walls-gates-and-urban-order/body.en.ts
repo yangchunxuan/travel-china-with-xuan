@@ -313,6 +313,7 @@ const body = {
           href: "/guides/temple-of-heaven-gates-and-ritual-sequence/",
           description: "Compare a documented ritual axis with the different evidence needed to interpret a city gate.",
         },
+        { label: "See what happens when metro construction meets archaeology", href: "/guides/when-metro-construction-meets-archaeology/", description: "Follow chance find, protection, excavation, design response and public display instead of assuming every discovery stops work or becomes visible." }
       ],
     },
     {

@@ -74,6 +74,8 @@ The inbound suggestions are for a later central edit. This release does not modi
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `term-to-trip-decoder` separates astronomical calendar, seasonal memory, living practice and current programme before a traveller changes a plan.
+
 - Primary asset: an original circular 24-term diagram with solar-longitude logic, four name families and a visible `not a weather forecast` note.
 - Supporting asset: a three-layer claim card for astronomy, environment and living practice.
 - Evidence requirement: original editable artwork; exact term order and translations checked against CMA/authoritative calendar material.

@@ -2,7 +2,9 @@
   "id": "how-to-visit-an-archaeological-site-museum",
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "museum-field-guide",
   "topics": [
     "archaeological-site-museums",
@@ -11,20 +13,25 @@
     "conservation",
     "museum-reading"
   ],
-  "destinations": ["china"],
+  "destinations": [
+    "china"
+  ],
   "heroImagePath": "/images/guides/how-to-visit-an-archaeological-site-museum/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/how-to-visit-an-archaeological-site-museum/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "explore",
     "family": "task",
     "primaryIntent": "understand"
   },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/how-to-visit-an-archaeological-site-museum/",
@@ -35,7 +42,11 @@
       "navTitle": "Read an archaeological site museum",
       "featuredLinkLabel": "Learn to read an archaeological site museum",
       "openGraphLocale": "en_US",
-      "cardTags": ["Archaeology", "Museums", "Conservation"]
+      "cardTags": [
+        "Archaeology",
+        "Museums",
+        "Conservation"
+      ]
     },
     "zh": {
       "path": "/zh/guides/how-to-visit-an-archaeological-site-museum/",
@@ -46,7 +57,11 @@
       "navTitle": "读懂考古遗址博物馆",
       "featuredLinkLabel": "学习参观考古遗址博物馆",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["考古", "博物馆", "遗址保护"]
+      "cardTags": [
+        "考古",
+        "博物馆",
+        "遗址保护"
+      ]
     },
     "ko": {
       "path": "/ko/guides/how-to-visit-an-archaeological-site-museum/",
@@ -57,7 +72,28 @@
       "navTitle": "고고유적박물관 읽기",
       "featuredLinkLabel": "고고유적박물관 관람법 배우기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["고고학", "박물관", "유적 보존"]
+      "cardTags": [
+        "고고학",
+        "박물관",
+        "유적 보존"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "How to visit an archaeological site museum in China",
+      "in situ archaeological museum explained",
+      "original ruins or reconstructed museum display"
+    ],
+    "zh": [
+      "考古遗址博物馆怎么看",
+      "原址考古博物馆",
+      "遗址原状还是复原展示"
+    ],
+    "ko": [
+      "중국 고고유적 박물관 관람법",
+      "현지 보존 유적 박물관",
+      "유적 원형과 복원 전시 구분"
+    ]
   }
 }

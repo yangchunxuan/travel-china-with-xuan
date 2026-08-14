@@ -2,7 +2,9 @@
   "id": "yunnan-coffee-from-cherry-to-cup",
   "type": "planning",
   "pillar": "culture-regional-food",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "supply-chain-explainer",
   "topics": [
     "yunnan-coffee",
@@ -12,20 +14,30 @@
     "coffee-traceability",
     "regional-food-systems"
   ],
-  "destinations": ["yunnan", "puer", "baoshan", "lincang", "dehong", "china"],
+  "destinations": [
+    "yunnan",
+    "puer",
+    "baoshan",
+    "lincang",
+    "dehong",
+    "china"
+  ],
   "heroImagePath": "/images/guides/yunnan-coffee-from-cherry-to-cup/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/yunnan-coffee-from-cherry-to-cup/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "culture",
     "family": "entity",
     "primaryIntent": "understand"
   },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/yunnan-coffee-from-cherry-to-cup/",
@@ -36,7 +48,11 @@
       "navTitle": "Yunnan coffee from cherry to cup",
       "featuredLinkLabel": "Trace a Yunnan coffee lot",
       "openGraphLocale": "en_US",
-      "cardTags": ["Yunnan", "Coffee", "Supply chain"]
+      "cardTags": [
+        "Yunnan",
+        "Coffee",
+        "Supply chain"
+      ]
     },
     "zh": {
       "path": "/zh/guides/yunnan-coffee-from-cherry-to-cup/",
@@ -47,7 +63,11 @@
       "navTitle": "云南咖啡从鲜果到杯中",
       "featuredLinkLabel": "追踪一批云南咖啡",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["云南", "咖啡", "供应链"]
+      "cardTags": [
+        "云南",
+        "咖啡",
+        "供应链"
+      ]
     },
     "ko": {
       "path": "/ko/guides/yunnan-coffee-from-cherry-to-cup/",
@@ -58,7 +78,28 @@
       "navTitle": "윈난 커피, 체리에서 한 잔까지",
       "featuredLinkLabel": "윈난 커피 한 로트 추적하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["윈난", "커피", "공급망"]
+      "cardTags": [
+        "윈난",
+        "커피",
+        "공급망"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Yunnan coffee from cherry to cup",
+      "How is Yunnan coffee processed",
+      "Yunnan coffee traceability"
+    ],
+    "zh": [
+      "云南咖啡从鲜果到杯子",
+      "云南咖啡加工流程",
+      "云南咖啡溯源"
+    ],
+    "ko": [
+      "윈난 커피 체리부터 한 잔까지",
+      "윈난 커피 가공 과정",
+      "윈난 커피 이력 추적"
+    ]
   }
 }

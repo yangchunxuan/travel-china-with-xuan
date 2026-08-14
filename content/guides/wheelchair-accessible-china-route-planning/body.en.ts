@@ -286,7 +286,7 @@ const body = {
       type: "internal-links",
       title: "Continue planning",
       items: [
-        { "label": "Browse the China planning guides", "href": "/plan/", "description": "Return to the planning collection and narrow the route." },
+        { label: "Audit a community canteen as one complete accessible meal stop", href: "/guides/china-community-canteens-explained/", description: "Verify the entrance, queue, seating, toilet, food texture, payment and exit; admission alone does not make the meal workable." },
         { "label": "Choose a hotel near the right metro access", "href": "/guides/china-hotel-near-metro/", "description": "Use station exits and the complete last mile, not a straight-line distance." },
         { "label": "Verify an accessible hotel room", "href": "/guides/china-accessible-hotel-room-verification/", "description": "Check room measurements, assignment and fallback with the property." },
         { "label": "Choose a private transfer or public transport", "href": "/guides/china-private-transfer-or-public-transport/", "description": "Compare the exact vehicle and public-transport chains for one ground segment." },

@@ -36,7 +36,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "Move from engineering to an actual journey", items: [
     {label: "China high-speed rail: first-trip guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Use the published passenger guide for tickets, stations and boarding."},
     {label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Compare the travel-day trade-off rather than vehicle technology."},
-    {label: "Why high-speed stations can be far from the old city", href: "/guides/why-china-high-speed-stations-are-far-away/", description: "Understand the planning behind the station location."}
+    {label: "Why high-speed stations can be far from the old city", href: "/guides/why-china-high-speed-stations-are-far-away/", description: "Understand the planning behind the station location."},
+    { label: "Compare Qingdao’s rail-manufacturing story with its other industries", href: "/guides/qingdao-brands-built-an-industrial-city/", description: "Use the same evidence boundary for factories, corporate museums and public viewpoints; heritage display is not proof of current production." },
+    { label: "Read Yangshan as an automated transport system", href: "/guides/yangshan-automated-port-explained/", description: "Compare planning, control, machine movement and human work with rail manufacturing while keeping access and operating claims site-specific." }
   ]},
   {id: "sources", type: "sources", title: "Primary and technical sources", items: [
     {label: "600 km/h maglev engineering and demonstration sequence", url: "https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html", publisher: "National Science and Technology Innovation Center", reviewedAt: "2026-08-13"},

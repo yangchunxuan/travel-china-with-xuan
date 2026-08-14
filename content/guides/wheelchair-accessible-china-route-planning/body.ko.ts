@@ -286,7 +286,7 @@ const body = {
       type: "internal-links",
       title: "계속 계획하기",
       items: [
-        { "label": "중국 여행 계획 가이드 둘러보기", "href": "/ko/plan/", "description": "여행 계획 컬렉션으로 돌아가 동선 범위를 좁혀 보세요." },
+        { label: "지역사회 식당을 접근 가능한 한 끼 동선으로 점검하기", href: "/ko/guides/china-community-canteens-explained/", description: "입구, 대기, 좌석, 화장실, 음식 질감, 결제와 퇴장 동선을 확인하세요. 입장 가능하다고 식사가 가능한 것은 아닙니다." },
         { "label": "적합한 지하철 출입구 근처 호텔 고르기", "href": "/ko/guides/china-hotel-near-metro/", "description": "직선거리가 아니라 역 출입구와 마지막 이동 전체를 확인하세요." },
         { "label": "실제로 이용 가능한 장애인 객실 확인하기", "href": "/ko/guides/china-accessible-hotel-room-verification/", "description": "호텔과 객실 실측값, 배정, 객실 변경 시 대안을 확인하세요." },
         { "label": "예약 픽업 차량과 대중교통 중 선택하기", "href": "/ko/guides/china-private-transfer-or-public-transport/", "description": "지상 구간 하나의 실제 차량과 대중교통 사슬을 비교하세요." },

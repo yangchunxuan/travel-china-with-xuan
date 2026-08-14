@@ -66,10 +66,11 @@ Recommendations only; do not modify old pages in this batch.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `container-handoff-ledger` separates physical movement, TOS/ECS decisions and human responsibility across five handoff states.
+
 - Preferred asset: a licensed, operator-confirmed Phase IV overview from a legal public or invited viewpoint, with exact phase/date and no readable credentials, screens or security detail.
 - Companion asset: an abstract non-documentary handoff diagram showing vessel → quay crane → AGV → yard gantry → external truck, with TOS/ECS/human oversight layers.
 - Never infer Phase IV from a generic Shanghai-port image. Do not publish gate routes, personnel identities, live screens, drone instructions or detailed layouts.
-- This brief does not authorize image creation or provenance changes.
 
 ## GSC review plan
 

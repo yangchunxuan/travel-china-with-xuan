@@ -45,7 +45,8 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"맥락을 더 넓히기",items:[
     {label:"상하이–쑤저우–항저우–난징 순서 정하기",href:"/ko/guides/shanghai-suzhou-hangzhou-nanjing-route-order/",description:"운하 테마를 더하기 전에 강남의 어느 도시가 일정에 필요한지 정한다."},
     {label:"두공으로 중국 목조건축 읽기",href:"/ko/guides/dougong-and-chinese-timber-frame-reading/",description:"옛 분위기가 아니라 구조 증거를 읽는다."},
-    {label:"목판과 활자 인쇄 비교하기",href:"/ko/guides/woodblock-and-movable-type-printing-decisions/",description:"물질과 생산 시스템이 도시 교류를 만든 방식을 본다."}
+    {label:"목판과 활자 인쇄 비교하기",href:"/ko/guides/woodblock-and-movable-type-printing-decisions/",description:"물질과 생산 시스템이 도시 교류를 만든 방식을 본다."},
+    { label: "빗물의 경로를 따라 중국 스펀지 도시 읽기", href: "/ko/guides/how-to-read-a-chinese-sponge-city/", description: "유입, 저류, 월류, 유지관리와 방류 수계를 추적한 뒤 하나의 조경 시설을 작동하는 시스템으로 판단합니다." }
   ]},
   {id:"sources",type:"sources",title:"공식·독립 자료",items:[
     {label:"대표 이미지 — 2023-11-22 촬영한 궁천교, 대운하 물길과 수변 공공 공간. 현재 행사나 통행 상태의 증거는 아님",url:"https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg",publisher:"Windmemories — CC BY-SA 4.0; 출처 표기일 뿐 Homeground에 대한 지지를 뜻하지 않음",reviewedAt:"2026-08-13"},

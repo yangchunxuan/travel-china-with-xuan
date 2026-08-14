@@ -57,7 +57,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "Explore China", href: "/explore/", description: "Compare destination roles before adding another coastal stop."},
     {label: "One hub or multiple bases?", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide whether a Dongtai or Dafeng overnight earns the hotel change."},
     {label: "China rail-only route planning", href: "/guides/china-rail-only-route/", description: "Separate the intercity rail leg from the final coastal road transfer."},
-    {label: "China shoulder-season trade-offs", href: "/guides/china-shoulder-season-value-tradeoff/", description: "Treat seasonal value as a trade-off, not a wildlife guarantee."}
+    {label: "China shoulder-season trade-offs", href: "/guides/china-shoulder-season-value-tradeoff/", description: "Treat seasonal value as a trade-off, not a wildlife guarantee."},
+    { label: "Compare wetland protection with desert-restoration evidence", href: "/guides/desert-restoration-travellers-can-see/", description: "Read management boundaries, water trade-offs, restoration claims and public access at the exact site and date." },
+    { label: "Compare urban sponge features with a coastal wetland water system", href: "/guides/how-to-read-a-chinese-sponge-city/", description: "Use a mechanism-and-boundary check rather than treating green space as proof of storage, drainage or ecological performance." }
   ]},
   {id: "consultation", type: "callout", title: "Need the coast matched to your dates?", body: "A Homeground travel consultant can compare the practical base, currently open visitor area, road transfer and bad-weather alternative for your dates. Tell us whether habitat, photography, milu or a particular migration window matters most.", tone: "neutral"},
   {id: "sources", type: "sources", title: "Official sources reviewed on 13 August 2026", items: [

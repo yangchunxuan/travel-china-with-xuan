@@ -125,6 +125,7 @@ const body = {
         { label: "Order Shanghai, Suzhou, Hangzhou and Nanjing", href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "Place a Longjing visit inside a realistic lower-Yangtze route." },
         { label: "Read China's 24 solar terms through weather and food", href: "/guides/china-24-solar-terms-weather-food-daily-life/", description: "Use another seasonal knowledge system without turning it into a fixed national weather calendar." },
         { label: "Follow Yunnan coffee from cherry to cup", href: "/guides/yunnan-coffee-from-cherry-to-cup/", description: "Compare a newer crop-and-processing landscape while keeping tea and coffee histories distinct." },
+        { label: "Place China’s tea landscapes inside the Qinling–Huaihe transition", href: "/guides/qinling-huaihe-transition-zone/", description: "Use climate, terrain and land use as gradients; do not turn one tea region or crop boundary into a national dividing line." }
       ],
     },
     {

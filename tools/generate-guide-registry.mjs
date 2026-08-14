@@ -55,6 +55,7 @@ const metadataKeys = new Set([
   "datePublished",
   "dateModified",
   "sourceReviewedDate",
+  "searchTerms",
   "locales",
   "search",
   "layout",
@@ -149,6 +150,17 @@ async function validateMetadata(metadata, directory, guidesRoot) {
   if (!nonEmpty(metadata.format)) throw new Error(`${label}.format is required.`);
   for (const key of ["topics", "destinations"]) {
     if (!validStringArray(metadata[key])) throw new Error(`${label}.${key} is required.`);
+  }
+  if (metadata.searchTerms !== undefined) {
+    if (!isRecord(metadata.searchTerms)) {
+      throw new Error(`${label}.searchTerms must be an object when supplied.`);
+    }
+    assertOnlyKeys(metadata.searchTerms, new Set(locales), `${label}.searchTerms`);
+    for (const locale of locales) {
+      if (!validStringArray(metadata.searchTerms[locale])) {
+        throw new Error(`${label}.searchTerms.${locale} needs at least one reviewed search phrase.`);
+      }
+    }
   }
   if (!validLocalPath(metadata.heroImagePath)) {
     throw new Error(`${label}.heroImagePath must be a safe path under public/.`);

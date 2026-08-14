@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2.0",
-  "snapshotDate": "2026-08-11",
-  "checkedAt": "2026-08-11T17:03:41+08:00",
-  "finalStatus": "SEARCH MAP SYNC READY — CENTRAL REVIEW REQUIRED",
+  "snapshotDate": "2026-08-14",
+  "checkedAt": "2026-08-14T07:52:11+08:00",
+  "finalStatus": "SEARCH MAP UPDATED — 17 PUBLISHED OWNERS REMEDIATED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -1471,6 +1471,543 @@
         "releaseCommit": "41f53a8b6f8370afdde666ffe0f0f1c26f127a34",
         "originMainCommit": "8769b2ffa4d2d719699bf98fb4bc215dc89bdda9",
         "liveVerifiedAt": "2026-08-11T17:03:41+08:00"
+      },
+      {
+        "id": "china-15-minute-neighbourhoods",
+        "title": "How China's 15-Minute Neighbourhoods Actually Work",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/china-15-minute-neighbourhoods/",
+        "section": "explore",
+        "primaryCollectionId": "explore-cities-neighborhoods",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "China 15 minute neighbourhood explained",
+          "15-minute community life circle China",
+          "China community life circle services"
+        ],
+        "cannibalizationOwner": "china-15-minute-neighbourhoods",
+        "freshnessClass": "low-quarterly",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "china-24-solar-terms-weather-food-daily-life",
+        "title": "China's 24 Solar Terms: Read Food, Weather and Daily Life",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/china-24-solar-terms-weather-food-daily-life/",
+        "section": "culture",
+        "primaryCollectionId": "culture-history-people-ideas",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "China 24 solar terms explained",
+          "Chinese solar terms and weather",
+          "24 solar terms food customs"
+        ],
+        "cannibalizationOwner": "china-24-solar-terms-weather-food-daily-life",
+        "freshnessClass": "low-quarterly",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "china-community-canteens-explained",
+        "title": "Can Tourists Eat at China's Community Canteens? Check Access First",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/china-community-canteens-explained/",
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "Can tourists eat at community canteens in China",
+          "China community canteen public access",
+          "China senior canteen ordinary price"
+        ],
+        "cannibalizationOwner": "china-community-canteens-explained",
+        "freshnessClass": "medium-local-policy-and-venue-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "desert-restoration-travellers-can-see",
+        "title": "China's Desert Restoration: What Travellers Can See",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/desert-restoration-travellers-can-see/",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "China desert restoration explained",
+          "straw checkerboards China desert",
+          "China solar desert restoration"
+        ],
+        "cannibalizationOwner": "desert-restoration-travellers-can-see",
+        "freshnessClass": "medium-project-and-access-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "guizhou-village-basketball-culture",
+        "title": "Guizhou Village Basketball: Why One Game Can Become a Late-Night Festival",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/guizhou-village-basketball-culture/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "place-guizhou",
+        "secondaryEntityIds": [
+          "place-taipan"
+        ],
+        "queryCluster": [
+          "Guizhou Village BA explained",
+          "Can tourists watch Village BA",
+          "Taipan Village basketball culture"
+        ],
+        "cannibalizationOwner": "guizhou-village-basketball-culture",
+        "freshnessClass": "high-on-event-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "how-to-read-a-chinese-sponge-city",
+        "title": "What Is a Sponge City in China? How to Read One After Rain",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/how-to-read-a-chinese-sponge-city/",
+        "section": "explore",
+        "primaryCollectionId": "explore-cities-neighborhoods",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "How does a sponge city work in China",
+          "China sponge city rain garden",
+          "How to identify sponge city features"
+        ],
+        "cannibalizationOwner": "how-to-read-a-chinese-sponge-city",
+        "freshnessClass": "medium-project-and-weather-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "how-to-visit-an-archaeological-site-museum",
+        "title": "How to Visit an Archaeological Site Museum in China",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/how-to-visit-an-archaeological-site-museum/",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "How to visit an archaeological site museum in China",
+          "in situ archaeological museum explained",
+          "original ruins or reconstructed museum display"
+        ],
+        "cannibalizationOwner": "how-to-visit-an-archaeological-site-museum",
+        "freshnessClass": "medium-venue-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "lunar-new-year-customs-for-visitors",
+        "title": "Spring Festival in China: Chunyun, Family Customs and Visitor Boundaries",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/lunar-new-year-customs-for-visitors/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "Chinese New Year customs for visitors",
+          "Spring Festival travel etiquette China",
+          "Chunyun and Chinese New Year travel"
+        ],
+        "cannibalizationOwner": "lunar-new-year-customs-for-visitors",
+        "freshnessClass": "high-annual-and-venue-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "qingdao-brands-built-an-industrial-city",
+        "title": "Beer, Appliances and Trains: Three Lenses on Industrial Qingdao",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/qingdao-brands-built-an-industrial-city/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "relationship",
+        "primaryEntityId": "place-shandong",
+        "secondaryEntityIds": [
+          "city-qingdao"
+        ],
+        "queryCluster": [
+          "Qingdao industrial history explained",
+          "Tsingtao Haier CRRC Qingdao history",
+          "Qingdao industrial heritage travel"
+        ],
+        "cannibalizationOwner": "qingdao-brands-built-an-industrial-city",
+        "freshnessClass": "medium-venue-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "qinling-huaihe-transition-zone",
+        "title": "Qinling–Huaihe: Read China's Invisible North–South Divide",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/qinling-huaihe-transition-zone/",
+        "section": "explore",
+        "primaryCollectionId": "explore-regions-provinces",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [
+          "region-qinling-huaihe"
+        ],
+        "queryCluster": [
+          "Qinling Huaihe line explained",
+          "China north south dividing line",
+          "Qinling Huaihe climate transition"
+        ],
+        "cannibalizationOwner": "qinling-huaihe-transition-zone",
+        "freshnessClass": "low-quarterly",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "shanghai-24-hour-parks-reality-check",
+        "title": "Shanghai 24-Hour Parks: A Reality Check Before You Go",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/shanghai-24-hour-parks-reality-check/",
+        "section": "explore",
+        "primaryCollectionId": "explore-attractions-nature-heritage",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "place-shanghai",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "Shanghai 24 hour parks",
+          "Are Shanghai parks open 24 hours",
+          "Shanghai parks open at night"
+        ],
+        "cannibalizationOwner": "shanghai-24-hour-parks-reality-check",
+        "freshnessClass": "high-on-park-notice-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "shenzhen-low-altitude-city-infrastructure",
+        "title": "Shenzhen's Low-Altitude Economy: How Drones Become City Infrastructure",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/shenzhen-low-altitude-city-infrastructure/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "place-shenzhen",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "Shenzhen low altitude economy explained",
+          "Shenzhen drone delivery infrastructure",
+          "Shenzhen urban drone routes"
+        ],
+        "cannibalizationOwner": "shenzhen-low-altitude-city-infrastructure",
+        "freshnessClass": "high-on-policy-and-operation-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "when-metro-construction-meets-archaeology",
+        "title": "When Metro Construction Meets Archaeology in China",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/when-metro-construction-meets-archaeology/",
+        "section": "culture",
+        "primaryCollectionId": "culture-history-people-ideas",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "China metro construction archaeology",
+          "What happens when subway construction finds relics",
+          "urban archaeology China metro"
+        ],
+        "cannibalizationOwner": "when-metro-construction-meets-archaeology",
+        "freshnessClass": "medium-project-and-law-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "why-china-museums-have-stamps",
+        "title": "Why Are So Many People Collecting Stamps in China's Museums?",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/why-china-museums-have-stamps/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "execute",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "Why do China museums have souvenir stamps",
+          "China museum stamp collecting",
+          "How to collect museum stamps in China"
+        ],
+        "cannibalizationOwner": "why-china-museums-have-stamps",
+        "freshnessClass": "high-on-venue-program-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "yangshan-automated-port-explained",
+        "title": "Yangshan Automated Port Explained: Containers, Software and People",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/yangshan-automated-port-explained/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "place-shanghai",
+        "secondaryEntityIds": [
+          "port-yangshan"
+        ],
+        "queryCluster": [
+          "How does Yangshan automated port work",
+          "Yangshan Phase IV automation",
+          "Yangshan port TOS ECS AGV"
+        ],
+        "cannibalizationOwner": "yangshan-automated-port-explained",
+        "freshnessClass": "medium-operations-and-access-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "yunnan-coffee-from-cherry-to-cup",
+        "title": "Yunnan Coffee From Cherry to Cup: Processing, Traceability and Value",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/yunnan-coffee-from-cherry-to-cup/",
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "place-yunnan",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "Yunnan coffee from cherry to cup",
+          "How is Yunnan coffee processed",
+          "Yunnan coffee traceability"
+        ],
+        "cannibalizationOwner": "yunnan-coffee-from-cherry-to-cup",
+        "freshnessClass": "medium-market-and-venue-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "zhenjiang-vinegar-living-fermentation",
+        "title": "Zhenjiang Vinegar: A Living Fermentation Culture",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/zhenjiang-vinegar-living-fermentation/",
+        "section": "culture",
+        "primaryCollectionId": "culture-regional-food",
+        "targetIntent": "understand",
+        "pageFamily": "relationship",
+        "primaryEntityId": "place-jiangsu",
+        "secondaryEntityIds": [
+          "city-zhenjiang"
+        ],
+        "queryCluster": [
+          "Zhenjiang vinegar culture",
+          "How is Zhenjiang vinegar fermented",
+          "Zhenjiang Vinegar Culture Museum"
+        ],
+        "cannibalizationOwner": "zhenjiang-vinegar-living-fermentation",
+        "freshnessClass": "medium-standard-and-venue-change",
+        "lastReviewedAt": "2026-08-14",
+        "status": "published-indexable",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
+        "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
+        "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
+        "liveVerifiedAt": "2026-08-13"
       }
     ],
     "hubsAndDirectories": [
@@ -3047,6 +3584,176 @@
       "cluster": "First shared meal in China",
       "canonicalOwnerIfApproved": "culture-20260811-01",
       "doNotSplit": ["ordering etiquette", "seating etiquette", "sharing dishes", "paying etiquette"]
+    },
+    {
+      "cluster": "China 15 minute neighbourhood explained",
+      "canonicalOwner": "china-15-minute-neighbourhoods",
+      "doNotSplit": [
+        "15-minute community life circle China",
+        "China community life circle services"
+      ],
+      "boundarySource": "content/guides/china-15-minute-neighbourhoods/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "China 24 solar terms explained",
+      "canonicalOwner": "china-24-solar-terms-weather-food-daily-life",
+      "doNotSplit": [
+        "Chinese solar terms and weather",
+        "24 solar terms food customs"
+      ],
+      "boundarySource": "content/guides/china-24-solar-terms-weather-food-daily-life/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Can tourists eat at community canteens in China",
+      "canonicalOwner": "china-community-canteens-explained",
+      "doNotSplit": [
+        "China community canteen public access",
+        "China senior canteen ordinary price"
+      ],
+      "boundarySource": "content/guides/china-community-canteens-explained/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "China desert restoration explained",
+      "canonicalOwner": "desert-restoration-travellers-can-see",
+      "doNotSplit": [
+        "straw checkerboards China desert",
+        "China solar desert restoration"
+      ],
+      "boundarySource": "content/guides/desert-restoration-travellers-can-see/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Guizhou Village BA explained",
+      "canonicalOwner": "guizhou-village-basketball-culture",
+      "doNotSplit": [
+        "Can tourists watch Village BA",
+        "Taipan Village basketball culture"
+      ],
+      "boundarySource": "content/guides/guizhou-village-basketball-culture/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "How does a sponge city work in China",
+      "canonicalOwner": "how-to-read-a-chinese-sponge-city",
+      "doNotSplit": [
+        "China sponge city rain garden",
+        "How to identify sponge city features"
+      ],
+      "boundarySource": "content/guides/how-to-read-a-chinese-sponge-city/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "How to visit an archaeological site museum in China",
+      "canonicalOwner": "how-to-visit-an-archaeological-site-museum",
+      "doNotSplit": [
+        "in situ archaeological museum explained",
+        "original ruins or reconstructed museum display"
+      ],
+      "boundarySource": "content/guides/how-to-visit-an-archaeological-site-museum/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Chinese New Year customs for visitors",
+      "canonicalOwner": "lunar-new-year-customs-for-visitors",
+      "doNotSplit": [
+        "Spring Festival travel etiquette China",
+        "Chunyun and Chinese New Year travel"
+      ],
+      "boundarySource": "content/guides/lunar-new-year-customs-for-visitors/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Qingdao industrial history explained",
+      "canonicalOwner": "qingdao-brands-built-an-industrial-city",
+      "doNotSplit": [
+        "Tsingtao Haier CRRC Qingdao history",
+        "Qingdao industrial heritage travel"
+      ],
+      "boundarySource": "content/guides/qingdao-brands-built-an-industrial-city/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Qinling Huaihe line explained",
+      "canonicalOwner": "qinling-huaihe-transition-zone",
+      "doNotSplit": [
+        "China north south dividing line",
+        "Qinling Huaihe climate transition"
+      ],
+      "boundarySource": "content/guides/qinling-huaihe-transition-zone/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Shanghai 24 hour parks",
+      "canonicalOwner": "shanghai-24-hour-parks-reality-check",
+      "doNotSplit": [
+        "Are Shanghai parks open 24 hours",
+        "Shanghai parks open at night"
+      ],
+      "boundarySource": "content/guides/shanghai-24-hour-parks-reality-check/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Shenzhen low altitude economy explained",
+      "canonicalOwner": "shenzhen-low-altitude-city-infrastructure",
+      "doNotSplit": [
+        "Shenzhen drone delivery infrastructure",
+        "Shenzhen urban drone routes"
+      ],
+      "boundarySource": "content/guides/shenzhen-low-altitude-city-infrastructure/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "China metro construction archaeology",
+      "canonicalOwner": "when-metro-construction-meets-archaeology",
+      "doNotSplit": [
+        "What happens when subway construction finds relics",
+        "urban archaeology China metro"
+      ],
+      "boundarySource": "content/guides/when-metro-construction-meets-archaeology/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Why do China museums have souvenir stamps",
+      "canonicalOwner": "why-china-museums-have-stamps",
+      "doNotSplit": [
+        "China museum stamp collecting",
+        "How to collect museum stamps in China"
+      ],
+      "boundarySource": "content/guides/why-china-museums-have-stamps/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "How does Yangshan automated port work",
+      "canonicalOwner": "yangshan-automated-port-explained",
+      "doNotSplit": [
+        "Yangshan Phase IV automation",
+        "Yangshan port TOS ECS AGV"
+      ],
+      "boundarySource": "content/guides/yangshan-automated-port-explained/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Yunnan coffee from cherry to cup",
+      "canonicalOwner": "yunnan-coffee-from-cherry-to-cup",
+      "doNotSplit": [
+        "How is Yunnan coffee processed",
+        "Yunnan coffee traceability"
+      ],
+      "boundarySource": "content/guides/yunnan-coffee-from-cherry-to-cup/seo-brief.md",
+      "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Zhenjiang vinegar culture",
+      "canonicalOwner": "zhenjiang-vinegar-living-fermentation",
+      "doNotSplit": [
+        "How is Zhenjiang vinegar fermented",
+        "Zhenjiang Vinegar Culture Museum"
+      ],
+      "boundarySource": "content/guides/zhenjiang-vinegar-living-fermentation/seo-brief.md",
+      "reviewedAt": "2026-08-14"
     }
   ],
   "poolDecisions": [

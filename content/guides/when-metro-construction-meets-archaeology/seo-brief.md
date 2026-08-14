@@ -68,14 +68,12 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 - Suggested inbound owner 2: `/guides/china-hotel-near-metro/` — from current metro convenience, link only where readers may confuse project history with passenger-facing service status.
 - Suggested inbound owner 3: `/guides/xixia-script-and-imperial-tombs-context/` — from archaeological evidence and public interpretation, link to the broader discovery-to-access chain without implying the same site type.
 
-These are later central edits; this release does not modify old owners.
-
 ## Unique asset plan
 
-- Original five-stage decision-chain diagram keyed to law and source type.
-- Four-case comparison card with exact footprint, evidence and non-inference.
-- Rights-cleared documentary image only if the named excavation authority supplies date/location/context.
-- Do not use a generic tunnel image as evidence of an archaeological encounter.
+- **Implemented 2026-08-14:** `chance-find-stage-gates`, an accessible six-stage HTML workflow that records the heritage-decision line separately from the project/passenger-status line from discovery through possible display.
+- **Future field-evidence gap:** document one completed, authorised display or protected site with exact findspot, conservation/display status, date and rights, then interview both an archaeology/conservation specialist and a metro project/operator representative.
+- Any future case evidence must keep the bounded excavation footprint, engineering response, passenger notice and public-display decision separate.
+- Do not use a generic tunnel image as evidence of an archaeological encounter or photograph an active worksite or sensitive infrastructure.
 
 ## GSC review
 

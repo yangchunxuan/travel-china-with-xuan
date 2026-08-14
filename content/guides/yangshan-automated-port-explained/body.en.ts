@@ -46,6 +46,19 @@ const body = {
       ]
     },
     {
+      id: "container-handoff-ledger",
+      type: "table",
+      caption: "Homeground container-handoff ledger: separate machine movement, software decision and human responsibility",
+      columns: ["Handoff", "Physical movement", "System decision", "Human responsibility / public visibility"],
+      rows: [
+        ["Vessel to quay", "Quay crane lifts the box from a planned ship bay", "TOS sequences work; equipment control executes motions", "Planners, operators and safety staff supervise; distant movement may be visible"],
+        ["Quay to AGV", "The box is transferred to a controlled terminal vehicle", "ECS dispatches and routes equipment inside the operating envelope", "Exception and maintenance teams intervene; the route is not a public road"],
+        ["AGV to yard", "Yard crane receives and stacks the box", "Inventory and yard logic select a slot and future retrieval order", "People set rules and handle faults; a stack does not reveal the full decision"],
+        ["Yard to gate, rail or barge", "The box leaves the automated yard for another transport mode", "Identity, release and scheduling systems coordinate the exchange", "Customs, security, truck, rail and barge teams retain separate duties"],
+        ["Any exception", "Movement slows, pauses or changes equipment", "Alerts and fallback rules escalate the state", "Authorised staff diagnose and recover it; automation is not absence of people"],
+      ],
+    },
+    {
       id: "inbound-heading",
       type: "heading",
       level: 2,

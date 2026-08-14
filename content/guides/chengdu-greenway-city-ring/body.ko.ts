@@ -48,7 +48,9 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"links",type:"internal-links",title:"도시 맥락 연결하기",items:[
     {label:"청두 판다기지와 두장옌 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"동물 관람과 녹도를 별도의 현실적인 도시 과제로 둔다."},
     {label:"중국 지도 좌표 오프셋 이해",href:"/ko/guides/china-map-coordinate-offset-explained/",description:"정확한 녹도 입구·출구 핀 오류를 피한다."},
-    {label:"중국 공휴일 달력 확인",href:"/ko/guides/china-public-holidays-travel-calendar/",description:"정확한 인파를 보장하지 않고 여가 압력을 예상한다."}
+    {label:"중국 공휴일 달력 확인",href:"/ko/guides/china-public-holidays-travel-calendar/",description:"정확한 인파를 보장하지 않고 여가 압력을 예상한다."},
+    { label: "15분 동네를 생활 서비스망으로 읽기", href: "/ko/guides/china-15-minute-neighbourhoods/", description: "녹지 구간만 보지 말고 상점·돌봄·공공공간·출입 통제와 실제 보행 접근을 같은 동선 기준으로 확인합니다." },
+    { label: "종일 이용 녹지와 상하이 24시간 공원 주장을 비교하기", href: "/ko/guides/shanghai-24-hour-parks-reality-check/", description: "두 도시 모두 정확한 장소와 시간에 구간, 출입구, 시설, 조명과 귀환 교통을 확인합니다." }
   ]},
   {id:"sources",type:"sources",title:"공식·독립 자료",items:[
     {label:"대표 이미지 — ‘Chengdu Greenway’, 2022-03-12 촬영. 좌표는 청두 순환·진청 녹도 구간을 뒷받침하지만 현재 통행이나 서비스의 증거는 아님",url:"https://commons.wikimedia.org/wiki/File:Chengdu_Greenway.jpg",publisher:"MspreilsCN — CC0; 출처 표기일 뿐 Homeground에 대한 지지를 뜻하지 않음",reviewedAt:"2026-08-13"},

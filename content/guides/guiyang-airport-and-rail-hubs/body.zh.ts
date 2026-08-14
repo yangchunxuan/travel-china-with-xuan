@@ -65,7 +65,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "第一次坐中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "认准车站后再准备铁路乘车流程。" },
     { label: "国际航班前最后一晚怎么安排", href: "/zh/guides/china-last-night-before-international-flight/", description: "安排贵州行程后的龙洞堡离境。" },
     { label: "分开购买机票与自助转机风险", href: "/zh/guides/china-separate-flight-tickets-self-transfer-risk/", description: "检查空铁或分开机票连接。" },
-    { label: "中国行程用单一基地还是多地换住宿", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断贵阳是否适合作为乡村游览基地。" }
+    { label: "中国行程用单一基地还是多地换住宿", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断贵阳是否适合作为乡村游览基地。" },
+    { label: "为贵州村BA补全最后一程", href: "/zh/guides/guizhou-village-basketball-culture/", description: "先核验具体赛事、本地接驳、人流管控和返程截止时间，再把贵阳交通与台盘连起来。" }
   ]},
   { id: "sources", type: "sources", title: "官方来源", items: [
     { label: "贵阳机场综合交通身份", url: "https://english.guiyang.gov.cn/2023-12/15/c_956327.htm", publisher: "贵阳市人民政府", reviewedAt: "2026-08-13" },

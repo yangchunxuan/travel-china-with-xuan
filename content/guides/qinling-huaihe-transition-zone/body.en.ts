@@ -43,6 +43,17 @@ const body = {
       ],
     },
     {
+      id: "qinling-huaihe-transect",
+      type: "table",
+      caption: "Not-to-scale west–east transect card — three panels in one model, not three exact border points",
+      columns: ["Panel", "Landscape mechanism", "Field entry to complete", "Conclusion boundary"],
+      rows: [
+        ["Western mountain mechanism", "Relief, slope aspect, elevation and watershed direction can compress change across the Qinling–Daba terrain", "Place: ____; elevation/side: ____; date: ____; terrain, water and vegetation notes: ____", "Compare like elevations where possible; a summit-to-plain contrast is not a latitude test"],
+        ["Overlapping transition gradient", "Climate, vegetation, cultivated land and water indicators need not shift together", "North/inside/south windows: ____ / ____ / ____; three repeated lenses: ____", "Mixed signals are data. Do not choose one crop, tree or weather event as the crossing point"],
+        ["Eastern lowland mechanism", "Rivers, plains, canals, drainage and managed fields spread change across the Huai–Jianghuai landscape", "Place: ____; date: ____; field form, drainage, winter use and water-network notes: ____", "A mapped riverbank is easy to locate, but it does not make every ecological transition instantaneous"]
+      ],
+    },
+    {
       id: "not-wall",
       type: "callout",
       tone: "warning",

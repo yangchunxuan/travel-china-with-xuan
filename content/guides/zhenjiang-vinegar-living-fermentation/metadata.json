@@ -2,19 +2,37 @@
   "id": "zhenjiang-vinegar-living-fermentation",
   "type": "field-note",
   "pillar": "culture-regional-food",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "craft-process-city-reading-guide",
-  "topics": ["zhenjiang", "aromatic-vinegar", "fermentation", "intangible-cultural-heritage", "industrial-heritage"],
-  "destinations": ["jiangsu", "zhenjiang"],
+  "topics": [
+    "zhenjiang",
+    "aromatic-vinegar",
+    "fermentation",
+    "intangible-cultural-heritage",
+    "industrial-heritage"
+  ],
+  "destinations": [
+    "jiangsu",
+    "zhenjiang"
+  ],
   "heroImagePath": "/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
-  "search": {"section": "culture", "family": "relationship", "primaryIntent": "understand"},
-  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "search": {
+    "section": "culture",
+    "family": "relationship",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/zhenjiang-vinegar-living-fermentation/",
@@ -25,7 +43,11 @@
       "navTitle": "Zhenjiang's living vinegar culture",
       "featuredLinkLabel": "Read Zhenjiang through vinegar fermentation",
       "openGraphLocale": "en_US",
-      "cardTags": ["Zhenjiang", "Vinegar craft", "Fermentation"]
+      "cardTags": [
+        "Zhenjiang",
+        "Vinegar craft",
+        "Fermentation"
+      ]
     },
     "zh": {
       "path": "/zh/guides/zhenjiang-vinegar-living-fermentation/",
@@ -36,7 +58,11 @@
       "navTitle": "镇江的活态醋文化",
       "featuredLinkLabel": "从发酵工艺读懂镇江香醋",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["镇江", "制醋技艺", "发酵"]
+      "cardTags": [
+        "镇江",
+        "制醋技艺",
+        "发酵"
+      ]
     },
     "ko": {
       "path": "/ko/guides/zhenjiang-vinegar-living-fermentation/",
@@ -47,7 +73,28 @@
       "navTitle": "전장의 살아 있는 식초 문화",
       "featuredLinkLabel": "발효 공정으로 전장 향초 읽기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["전장", "식초 공예", "발효"]
+      "cardTags": [
+        "전장",
+        "식초 공예",
+        "발효"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Zhenjiang vinegar culture",
+      "How is Zhenjiang vinegar fermented",
+      "Zhenjiang Vinegar Culture Museum"
+    ],
+    "zh": [
+      "镇江香醋文化",
+      "镇江香醋发酵工艺",
+      "镇江醋文化博物馆"
+    ],
+    "ko": [
+      "전장 향초 문화",
+      "전장 식초 발효 과정",
+      "전장 식초문화박물관"
+    ]
   }
 }

@@ -54,6 +54,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "One hub or multiple bases?", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide whether a remote overnight base earns its hotel change."},
     {label: "China high-speed trains for first-time visitors", href: "/guides/china-high-speed-train-first-time-guide/", description: "Keep the Zhangye rail leg separate from the final road transfer."},
     { label: "Separate tiankeng from wild sinkholes", href: "/guides/china-tiankeng-sinkholes-explained/", description: "Learn what tiankeng means in geology, how public scenic sites differ from research locations, and what access evidence to check before visiting." },
+    { label: "See desert restoration without entering a work or protected zone", href: "/guides/desert-restoration-travellers-can-see/", description: "Use public observation points and separate visible checkerboards, shelterbelts or solar footprints from proof of ecological outcomes." }
   ]},
   {id: "consultation", type: "callout", title: "Need help choosing the Qilian side of your trip?", body: "A Homeground travel consultant can check the named gateway, currently open public venue, road conditions and a closure alternative for your dates. Share the exact towns, mobility needs and any activity you have been promised; we will not turn an unconfirmed protected-area pin into a route.", tone: "neutral"},
   {id: "sources", type: "sources", title: "Official sources reviewed on 13 August 2026", items: [

@@ -58,6 +58,20 @@ const body = {
       ]
     },
     {
+      id: "chance-find-stage-gates",
+      type: "table",
+      caption: "Chance-find stage gates — keep the heritage decision line separate from the passenger-status line",
+      columns: ["Gate", "Heritage evidence to record", "Project or passenger evidence to record", "Do not infer"],
+      rows: [
+        ["1. Discovery located", "Issuing authority, date, exact station/exit/depot/adjacent footprint and what was found: ____", "Is this an operating line, future project or separate development? ____", "A discovery at one footprint does not describe the whole line"],
+        ["2. Stop, protect and report", "Dated notice that the immediate scene was protected and reported: ____", "Any project or operator notice naming the affected work area or service: ____", "Protection of a work face is not an automatic network shutdown"],
+        ["3. Archaeological opinion", "Investigation, excavation or protection decision and responsible authority: ____", "Engineering decision still pending, or named response: ____", "Excavation does not by itself mean rerouting, delay or public display"],
+        ["4. Design response or hand-back", "Documented protected-in-place, removed, modified or cleared footprint: ____", "Current construction milestone or access change from the responsible project: ____", "Hand-back of one bounded area is not clearance of every footprint"],
+        ["5. Passenger status", "Heritage record may remain unchanged; note its date: ____", "Metro operator's route- and date-specific opening, closure or entrance notice: ____", "Use archaeology news as context, never as a substitute for a service notice"],
+        ["6. Public display", "Museum or site label states original/replica, findspot, in-situ status and interpreter: ____", "Station access and display hours from the current operator or venue: ____", "Discovery and conservation do not guarantee that passengers will see the remains"]
+      ]
+    },
+    {
       id: "chance-find",
       type: "callout",
       tone: "warning",

@@ -125,6 +125,7 @@ const body = {
         { label: "상하이·쑤저우·항저우·난징 순서 정하기", href: "/ko/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "룽징 방문을 현실적인 창장 하류 일정에 넣으세요." },
         { label: "날씨와 음식으로 중국 24절기 읽기", href: "/ko/guides/china-24-solar-terms-weather-food-daily-life/", description: "또 다른 계절 지식 체계를 이해하되 전국의 고정 날씨표로 받아들이지 마세요." },
         { label: "윈난 커피가 열매에서 한 잔이 되는 과정", href: "/ko/guides/yunnan-coffee-from-cherry-to-cup/", description: "차와 커피의 역사를 섞지 않으면서 더 새로운 작물·가공 경관을 비교하세요." },
+        { label: "중국의 차 산지를 친링–화이허 전이지대 안에서 보기", href: "/ko/guides/qinling-huaihe-transition-zone/", description: "기후, 지형과 토지 이용을 연속적인 변화로 읽고 한 차 산지나 작물 경계를 전국의 분계선으로 확대하지 않습니다." }
       ],
     },
     {

@@ -69,13 +69,11 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 - Suggested inbound owner 2: `/guides/guangzhou-shenzhen-hong-kong-route-order/` — from why Shenzhen merits a city stop, link to the evidence-led urban-system guide.
 - Suggested inbound owner 3: `/guides/china-private-transfer-or-public-transport/` — from last-mile systems, link to the drone-ground-handoff explanation without presenting it as traveller transport.
 
-These are later central edits; this release does not modify old owners.
-
 ## Unique asset plan
 
-- Original five-layer system diagram with explicit `operating / trial / target / plan` labels.
-- Rights-cleared documentary photograph of a named public delivery locker or landing node, dated and confirmed active.
-- Seven-step handoff card from merchant to aircraft to locker/recipient.
+- **Implemented 2026-08-14:** `layer-by-state-matrix`, an accessible HTML matrix crossing five infrastructure layers with plan/target, test/demonstration, limited/institutional operation and routine public service. Each cell demands named, dated evidence and exposes no sensitive operating detail.
+- **Future field-evidence gap:** obtain operator-permitted, rights-cleared evidence of one named public locker or handoff node, recording the date, service state and human handoff while obscuring QR codes, orders, medical and resident data.
+- A future operator interview should test responsibility and recovery at each handoff without converting one route into a citywide claim.
 - Do not use a prototype eVTOL image as evidence of ticketed passenger service.
 
 ## GSC review

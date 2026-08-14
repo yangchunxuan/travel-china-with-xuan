@@ -297,11 +297,8 @@ const body = {
       type: "internal-links",
       title: "继续规划",
       items: [
-        {
-          label: "检查你的中国行程是不是太赶",
-          href: "/zh/guides/is-your-china-itinerary-too-rushed/",
-          description: "为了多保住一个观光日之前，先计算转场负担和恢复时间。",
-        },
+        { label: "春节出行时重新核验铁路方案", href: "/zh/guides/lunar-new-year-customs-for-visitors/", description: "春运需求和临时调整会改变夜车与日间高铁的取舍；核对当日车次、铺位和备选。" },
+        { label: "检查你的中国行程是不是太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "为了多保住一个观光日之前，先计算转场负担和恢复时间。" },
         {
           label: "第一次坐高铁，查看购票与进站指南",
           href: "/zh/guides/china-high-speed-train-first-time-guide/",

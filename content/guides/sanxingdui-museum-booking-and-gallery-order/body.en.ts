@@ -30,7 +30,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"internal-links",type:"internal-links",title:"Connect Sanxingdui to Sichuan",items:[
   {label:"Chengdu Panda Base or Dujiangyan Panda Valley",href:"/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"Keep the panda-site decision separate rather than forcing both major outings into one rushed day."},
   {label:"Chengdu to Jiuzhaigou transport",href:"/guides/chengdu-jiuzhaigou-transport-route/",description:"Plan the next Sichuan transfer with exact stations and local links."},
-  {label:"Do you need a tour guide in China?",href:"/guides/do-you-need-a-tour-guide-in-china/",description:"Compare site-specific interpretation with the broader independent-travel decision."}
+  {label:"Do you need a tour guide in China?",href:"/guides/do-you-need-a-tour-guide-in-china/",description:"Compare site-specific interpretation with the broader independent-travel decision."},
+  { label: "Understand China’s museum-stamp habit before looking for one", href: "/guides/why-china-museums-have-stamps/", description: "Do not assume Sanxingdui offers a current stamp; check the museum’s own channel and keep the gallery route primary." }
  ]},
  {id:"consultation",type:"callout",title:"Need Sanxingdui fitted into a Sichuan route?",body:"A Homeground travel consultant can review the real ticket window, Chengdu hotel, group pace and onward transport. Share the date, passport types, preferred transport and how much museum interpretation matters.",tone:"neutral"},
  {id:"sources",type:"sources",title:"Official and image sources reviewed",items:[

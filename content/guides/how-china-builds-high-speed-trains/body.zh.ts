@@ -37,7 +37,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "从工程知识回到真实旅程", items: [
     {label: "第一次乘中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "购票、车站与乘车流程请使用已发布的乘客指南。"},
     {label: "夜间列车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "比较整个旅行日的得失，而不是只看车辆技术。"},
-    {label: "高铁站为什么可能远离老城", href: "/zh/guides/why-china-high-speed-stations-are-far-away/", description: "理解车站选址背后的规划机制。"}
+    {label: "高铁站为什么可能远离老城", href: "/zh/guides/why-china-high-speed-stations-are-far-away/", description: "理解车站选址背后的规划机制。"},
+    { label: "把青岛轨道制造与其他产业放在一起比较", href: "/zh/guides/qingdao-brands-built-an-industrial-city/", description: "用同一证据边界核验工厂、企业博物馆和公共观察点；工业遗产展陈不证明当前生产。" },
+    { label: "把洋山读成一套自动化运输系统", href: "/zh/guides/yangshan-automated-port-explained/", description: "把规划、控制、机器运动和人的工作与轨道制造对照，同时让准入和运营结论保持在具体场所范围内。" }
   ]},
   {id: "sources", type: "sources", title: "一手与技术来源", items: [
     {label: "600 公里时速磁悬浮工程与示范路径", url: "https://www.ncsti.gov.cn/kjdt/kjrd/202603/t20260327_242172.html", publisher: "国家科技创新中心", reviewedAt: "2026-08-13"},

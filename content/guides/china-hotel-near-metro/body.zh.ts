@@ -255,6 +255,7 @@ const body = {
           description: "决定再加一站之前，把转场负担和恢复时间计算进去。",
         },
         { label: "规划适合孩子的路线", href: "/zh/guides/china-itinerary-with-young-children/", description: "从睡眠、饮食、如厕、照顾孩子的负担、酒店稳定性和儿童票规则设计中国亲子路线。" },
+        { label: "核验上海24小时公园在夜间是否真的可用", href: "/zh/guides/shanghai-24-hour-parks-reality-check/", description: "要算开放入口、照明动线、设施和最后安全返程，不只看“24小时”标签或邻近地铁站。" },
         { label: "比较桂林到阳朔", href: "/zh/guides/guilin-yangshuo-transport-route/", description: "按车站、机场、酒店、行李、方向和回程，比较桂林与阳朔之间的火车、公路接驳和水路体验。" },
         { label: "选择上海住宿区", href: "/zh/guides/shanghai-where-to-stay-first-trip/", description: "从步行、轨道覆盖、夜间活动、行李和人流取舍比较外滩、人民广场与原法租界片区。" },
       ],

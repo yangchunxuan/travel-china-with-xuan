@@ -313,6 +313,7 @@ const body = {
           href: "/ko/guides/temple-of-heaven-gates-and-ritual-sequence/",
           description: "기록된 의례축과 도시 성문을 해석할 때 필요한 서로 다른 증거를 비교하세요.",
         },
+        { label: "지하철 건설과 고고학이 만날 때의 과정 보기", href: "/ko/guides/when-metro-construction-meets-archaeology/", description: "우연한 발견, 현장 보호, 발굴, 설계 대응과 공개 전시를 따라가며 모든 발견이 공사를 멈추거나 공개된다고 가정하지 않습니다." }
       ],
     },
     {

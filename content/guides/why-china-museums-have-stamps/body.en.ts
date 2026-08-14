@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "People collect stamps in many Chinese museums because one physical action can mark a visit, turn objects into a souvenir, create a gallery route and produce a collection to compare. Museums and shops also use stamps for education, temporary exhibitions and cultural-creative retail. But there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or unavailable today. Check the venue before making it a mission."
+      text: "This guide is about visitor ink and rubber stamps in Chinese museums—not postage stamps or philately. People collect these stamps because one physical action can mark a visit, turn objects into a souvenir, create a gallery route and produce a collection to compare. Museums and shops also use them for education, temporary exhibitions and cultural-creative retail. But there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or unavailable today. Check the venue before making it a mission."
     },
     {
       id: "layers-heading",
@@ -118,6 +118,19 @@ const body = {
       tone: "neutral",
       title: "Carry a small, replaceable paper setup",
       body: "A compact uncoated notebook, practice sheet and clean paper protecting the facing page are enough. Let impressions dry. Do not test on walls, labels, tickets or leaflets unless the venue provides them for that purpose."
+    },
+    {
+      id: "stamp-paper-decision-tree",
+      type: "table",
+      caption: "Homeground stamp-paper decision tree: protect documents before collecting",
+      columns: ["Paper in hand", "First check", "Decision", "Reason"],
+      rows: [
+        ["Passport, visa, residence card or identity document", "No further check", "Stop—never stamp it", "Ink, damage or an unofficial mark can compromise an important document"],
+        ["Ticket with barcode, QR code or required re-entry section", "Ask whether a blank detachable area is designated", "Use only a clearly permitted area; otherwise choose other paper", "The stamp must not block scanning or re-entry"],
+        ["Your own notebook or postcard", "Ask whether outside paper is accepted and test page size", "Use one blank page if permitted", "Some machines, routes or pads require venue paper"],
+        ["Venue booklet or free card", "Confirm whether purchase, order or date conditions apply", "Use it under the current rules", "A branded booklet may be optional, required or event-only"],
+        ["No suitable paper", "Ask for an official blank card or skip the point", "Do not improvise on walls, labels or personal documents", "Completing a set is never worth damaging property or records"],
+      ],
     },
     {
       id: "scenarios-heading",

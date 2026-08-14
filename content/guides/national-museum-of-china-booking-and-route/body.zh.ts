@@ -45,6 +45,7 @@ const body: StructuredPageBody = {
       { label: "带父母去中国旅行", href: "/zh/guides/china-itinerary-with-older-parents/", description: "把大型室内博物馆与步行量、休息和恢复时间配平。" },
       { label: "你的中国行程是不是太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "不要把多个北京重头景点堆进同一个疲惫的白天。" },
       { label: "核验中国景点门票", href: "/zh/guides/official-or-reseller-china-tickets/", description: "先识别景点票务运营方，再比较经销商支持、库存状态、实名传递与退改条款，最后核验真正可入园的订单。" },
+      { label: "核验博物馆盖章，但别让它控制参观", href: "/zh/guides/why-china-museums-have-stamps/", description: "确认当前盖章点、用纸和排队规则，再把藏品路线保留为主计划。" }
     ] },
     { id: "consultation", type: "callout", title: "需要把北京一天串成真实顺序？", body: "如果国博必须衔接另一项定时预约、长辈节奏或当天车站转移，可以让 Homeground 真人旅行顾问按实际时间检查顺序与缓冲。请先提供已经确认的预约时段和酒店区域。", tone: "neutral" },
     { id: "sources", type: "sources", title: "已核验的官方与图片来源", items: [

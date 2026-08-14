@@ -57,7 +57,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "探索中国", href: "/zh/explore/", description: "增加另一个海岸停留前，先比较目的地角色。"},
     {label: "单一基地还是多地换酒店", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断是否值得为东台或大丰多换一次酒店。"},
     {label: "中国全程铁路路线", href: "/zh/guides/china-rail-only-route/", description: "把城际铁路与最后海岸公路接驳分开。"},
-    {label: "中国肩季价值取舍", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "季节价值是取舍，不是野生动物保证。"}
+    {label: "中国肩季价值取舍", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "季节价值是取舍，不是野生动物保证。"},
+    { label: "比较湿地保护与荒漠治理的证据", href: "/zh/guides/desert-restoration-travellers-can-see/", description: "在明确地点与日期下，核验管理边界、用水权衡、治理主张和公众准入。" },
+    { label: "比较城市海绵设施与滨海湿地水系统", href: "/zh/guides/how-to-read-a-chinese-sponge-city/", description: "按机制和边界核验，不把一片绿色空间直接当作蓄水、排水或生态成效的证明。" }
   ]},
   {id: "consultation", type: "callout", title: "需要按日期匹配海岸基地？", body: "Homeground 真人旅行顾问可以比较你日期下更实用的基地、当时开放的公众区域、公路接驳和坏天气替代。请说明你最看重栖息地、摄影、麋鹿还是某个迁徙窗口。", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026 年 8 月 13 日核验的官方来源", items: [

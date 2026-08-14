@@ -73,6 +73,8 @@ These are later central edits; this release does not modify old owners.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `fermentation-stage-clock` is a visitor evidence tool that labels observable changes and producer-only facts without publishing a recipe.
+
 - Original six-stage fermentation transformation diagram, explicitly non-recipe.
 - Rights-cleared documentary detail of a labelled museum vessel/tool with provenance and location recorded.
 - Four-category evidence card: craft, product, heritage, visitor presentation.

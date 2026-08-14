@@ -24,7 +24,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"internal-links",type:"internal-links",title:"把三星堆接入四川行程",items:[
   {label:"成都大熊猫基地还是都江堰熊猫谷",href:"/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"把熊猫点选择留在独立一天，不要强行与三星堆打包赶路。"},
   {label:"成都到九寨沟交通链",href:"/zh/guides/chengdu-jiuzhaigou-transport-route/",description:"按准确车站和最后一段接驳规划下一段四川转移。"},
-  {label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"把三星堆的讲解价值与整段中国行是否需要支持分开。"}
+  {label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"把三星堆的讲解价值与整段中国行是否需要支持分开。"},
+  { label: "找章前先读懂中国博物馆盖章", href: "/zh/guides/why-china-museums-have-stamps/", description: "不要假定三星堆当前一定有章；查博物馆自有渠道，并以展厅路线为主。" }
  ]},
  {id:"consultation",type:"callout",title:"需要把三星堆放进真实四川路线？",body:"Homeground 真人旅行顾问可以按当期票务、成都酒店、团队节奏与后续交通检查当天安排。请提供日期、证件类型、交通偏好和你对博物馆讲解的重视程度。",tone:"neutral"},
  {id:"sources",type:"sources",title:"已核验的官方与图片来源",items:[

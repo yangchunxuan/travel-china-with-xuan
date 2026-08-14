@@ -2,7 +2,9 @@
   "id": "qinling-huaihe-transition-zone",
   "type": "planning",
   "pillar": "explore-regions-provinces",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "landscape-transect-field-guide",
   "topics": [
     "qinling-huaihe-line",
@@ -12,13 +14,17 @@
     "vegetation",
     "agricultural-landscape"
   ],
-  "destinations": ["china", "qinling", "huaihe"],
+  "destinations": [
+    "china",
+    "qinling",
+    "huaihe"
+  ],
   "heroImagePath": "/images/guides/qinling-huaihe-transition-zone/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/qinling-huaihe-transition-zone/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "explore",
@@ -39,7 +45,11 @@
       "navTitle": "Read the Qinling–Huaihe transition",
       "featuredLinkLabel": "See China's north–south transition on the ground",
       "openGraphLocale": "en_US",
-      "cardTags": ["Qinling–Huaihe", "Physical geography", "Landscape reading"]
+      "cardTags": [
+        "Qinling–Huaihe",
+        "Physical geography",
+        "Landscape reading"
+      ]
     },
     "zh": {
       "path": "/zh/guides/qinling-huaihe-transition-zone/",
@@ -50,7 +60,11 @@
       "navTitle": "读懂秦岭—淮河过渡带",
       "featuredLinkLabel": "在旅途中观察中国南北过渡",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["秦岭—淮河", "自然地理", "景观观察"]
+      "cardTags": [
+        "秦岭—淮河",
+        "自然地理",
+        "景观观察"
+      ]
     },
     "ko": {
       "path": "/ko/guides/qinling-huaihe-transition-zone/",
@@ -61,7 +75,28 @@
       "navTitle": "친링–화이허 전이지대 읽기",
       "featuredLinkLabel": "여행 중 중국의 남북 전이 관찰하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["친링–화이허", "자연지리", "경관 관찰"]
+      "cardTags": [
+        "친링–화이허",
+        "자연지리",
+        "경관 관찰"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Qinling Huaihe line explained",
+      "China north south dividing line",
+      "Qinling Huaihe climate transition"
+    ],
+    "zh": [
+      "秦岭淮河线是什么",
+      "中国南北分界线",
+      "秦岭淮河气候过渡带"
+    ],
+    "ko": [
+      "친링 화이허선 설명",
+      "중국 남북 분계선",
+      "친링 화이허 기후 전이지대"
+    ]
   }
 }

@@ -57,7 +57,9 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "중국 탐색", href: "/ko/explore/", description: "해안 체류를 더하기 전에 목적지 역할을 비교하세요."},
     {label: "한 거점 또는 여러 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "둥타이나 다펑 숙박이 호텔 이동을 감수할 가치가 있는지 봅니다."},
     {label: "중국 철도 전용 일정", href: "/ko/guides/china-rail-only-route/", description: "도시 간 철도와 마지막 해안 도로 이동을 분리합니다."},
-    {label: "중국 숄더 시즌의 절충", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "계절적 가치는 절충이지 야생동물 보장이 아닙니다."}
+    {label: "중국 숄더 시즌의 절충", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "계절적 가치는 절충이지 야생동물 보장이 아닙니다."},
+    { label: "습지 보호와 사막 복원의 증거 비교하기", href: "/ko/guides/desert-restoration-travellers-can-see/", description: "정확한 장소와 날짜를 기준으로 관리 경계, 물 사용의 상충, 복원 주장과 일반인 접근을 확인합니다." },
+    { label: "도시 스펀지 시설과 연안 습지의 물 시스템 비교하기", href: "/ko/guides/how-to-read-a-chinese-sponge-city/", description: "녹지를 저류·배수·생태 성과의 증거로 단정하지 말고 작동 원리와 경계를 확인합니다." }
   ]},
   {id: "consultation", type: "callout", title: "날짜에 맞는 해안 거점이 필요한가요?", body: "Homeground 여행 상담가가 날짜에 맞는 실용적인 거점, 당시 공개된 방문 구역, 도로 이동, 악천후 대안을 비교해 드릴 수 있습니다. 서식지·사진·미루·특정 이동 시기 중 무엇이 가장 중요한지 알려 주세요.", tone: "neutral"},
   {id: "sources", type: "sources", title: "2026년 8월 13일 검토한 공식 출처", items: [

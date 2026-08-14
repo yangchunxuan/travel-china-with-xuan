@@ -24,7 +24,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"internal-links",type:"internal-links",title:"쓰촨 일정에 연결하기",items:[
   {label:"청두 판다기지와 두장옌 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"두 큰 외출을 한 날에 억지로 넣지 말고 판다 장소를 별도로 고릅니다."},
   {label:"청두-주자이거우 교통",href:"/ko/guides/chengdu-jiuzhaigou-transport-route/",description:"정확한 역과 마지막 연결로 다음 쓰촨 이동을 준비합니다."},
-  {label:"중국 여행에 가이드가 필요한가",href:"/ko/guides/do-you-need-a-tour-guide-in-china/",description:"이 박물관의 해설 가치와 여행 전체 지원 결정을 분리합니다."}
+  {label:"중국 여행에 가이드가 필요한가",href:"/ko/guides/do-you-need-a-tour-guide-in-china/",description:"이 박물관의 해설 가치와 여행 전체 지원 결정을 분리합니다."},
+  { label: "도장을 찾기 전에 중국 박물관 도장 문화를 이해하기", href: "/ko/guides/why-china-museums-have-stamps/", description: "싼싱두이에 현재 도장이 있다고 가정하지 말고 박물관 자체 채널을 확인하며 전시실 동선을 우선합니다." }
  ]},
  {id:"consultation",type:"callout",title:"싼싱두이를 실제 쓰촨 동선에 넣어야 하나요?",body:"Homeground 여행 상담가는 실제 예매 일정, 청두 숙소, 그룹 속도와 다음 교통을 검토할 수 있습니다. 날짜, 여권 종류, 선호 교통, 박물관 해설의 중요도를 알려 주세요.",tone:"neutral"},
  {id:"sources",type:"sources",title:"확인한 공식·이미지 출처",items:[

@@ -297,11 +297,8 @@ const body = {
       type: "internal-links",
       title: "Continue planning",
       items: [
-        {
-          label: "Check whether your China itinerary is too rushed",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
-          description: "Measure transfer load and recovery time before protecting another sightseeing day.",
-        },
+        { label: "Recheck rail plans during Lunar New Year travel", href: "/guides/lunar-new-year-customs-for-visitors/", description: "Chunyun demand and temporary schedules can change the sleeper-versus-day-train decision; verify the current train, berth and fallback." },
+        { label: "Check whether your China itinerary is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Measure transfer load and recovery time before protecting another sightseeing day." },
         {
           label: "Use the first-time high-speed rail guide",
           href: "/guides/china-high-speed-train-first-time-guide/",

@@ -61,6 +61,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "选择靠近真正有用交通的酒店", href: "/zh/guides/china-hotel-near-metro/", description: "减少每天步行与换乘，而不只是地图距离。" },
     { label: "检查可用观光天数", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "如实计算抵达、转场和恢复时间。" },
     { label: "按景点顺序安排每一晚", href: "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "把每一晚放到下一项已确定的景点、抵达或离开节点附近，再判断一次换酒店是否真正减少折返。" },
+    { label: "按孩子的步速核验15分钟社区", href: "/zh/guides/china-15-minute-neighbourhoods/", description: "检查连续动线、厕所、休息点、准入规则和开放时间，不把一个半径当作亲子日程的保证。" }
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "铁路儿童票规则", url: "https://kyfw.12306.cn/otn/gonggao/children.html", publisher: "中国铁路12306", reviewedAt: "2026-08-12" }

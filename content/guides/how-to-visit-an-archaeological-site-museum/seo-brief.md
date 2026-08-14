@@ -67,10 +67,11 @@ Recommendations only; no old page is edited in this batch.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `site-to-label-evidence-chain` follows context, findspot, conservation, interpretation and claim scope while exposing each uncertainty boundary.
+
 - Preferred asset: a rights-cleared, accurately captioned view where a public walkway, labelled in-situ remains, shelter and interpretation panel are visible together at one named site.
 - Companion asset: an original evidence-chain diagram: site → layer → findspot → associated objects → conservation → interpretation/uncertainty.
 - Caption must distinguish ancient fabric, modern shelter, replacement material and public route. No fabricated before/after image or access beyond barriers.
-- This brief does not authorize image creation or provenance changes.
 
 ## GSC review plan
 

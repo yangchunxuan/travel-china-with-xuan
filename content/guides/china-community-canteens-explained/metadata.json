@@ -2,7 +2,9 @@
   "id": "china-community-canteens-explained",
   "type": "planning",
   "pillar": "culture-regional-food",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "everyday-system-explainer",
   "topics": [
     "community-canteens",
@@ -11,31 +13,40 @@
     "everyday-food",
     "respectful-community-visits"
   ],
-  "destinations": ["china"],
+  "destinations": [
+    "china"
+  ],
   "heroImagePath": "/images/guides/china-community-canteens-explained/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/china-community-canteens-explained/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "culture",
     "family": "entity",
     "primaryIntent": "understand"
   },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/china-community-canteens-explained/",
-      "title": "Who Eats at China's Community Canteens—and Why They Matter",
+      "title": "Can Tourists Eat at China's Community Canteens? Check Access First",
       "headline": "Verify the Venue Before Assuming You Can Eat There",
       "description": "Understand China's community and senior canteens, then verify public access, ordinary price, meal cards, payment, accessibility and a practical fallback.",
       "heroAlt": "The street-facing entrance and windows of the community cafeteria on Zhongshan Road in Jinhua.",
       "navTitle": "China's community canteens",
       "featuredLinkLabel": "Understand community canteen access",
       "openGraphLocale": "en_US",
-      "cardTags": ["Everyday China", "Community canteens", "Food access"]
+      "cardTags": [
+        "Everyday China",
+        "Community canteens",
+        "Food access"
+      ]
     },
     "zh": {
       "path": "/zh/guides/china-community-canteens-explained/",
@@ -46,7 +57,11 @@
       "navTitle": "读懂中国社区食堂",
       "featuredLinkLabel": "核验社区食堂准入",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["日常中国", "社区食堂", "助餐服务"]
+      "cardTags": [
+        "日常中国",
+        "社区食堂",
+        "助餐服务"
+      ]
     },
     "ko": {
       "path": "/ko/guides/china-community-canteens-explained/",
@@ -57,7 +72,28 @@
       "navTitle": "중국 지역사회 식당 이해하기",
       "featuredLinkLabel": "지역사회 식당 이용 조건 확인",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["중국의 일상", "지역사회 식당", "식사 지원"]
+      "cardTags": [
+        "중국의 일상",
+        "지역사회 식당",
+        "식사 지원"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Can tourists eat at community canteens in China",
+      "China community canteen public access",
+      "China senior canteen ordinary price"
+    ],
+    "zh": [
+      "游客可以去社区食堂吃饭吗",
+      "社区食堂对外开放吗",
+      "老年食堂普通价格"
+    ],
+    "ko": [
+      "중국 지역사회 식당 관광객 이용",
+      "중국 커뮤니티 식당 외부인 이용",
+      "중국 노인 식당 일반 가격"
+    ]
   }
 }

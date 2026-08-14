@@ -402,6 +402,7 @@ const body: StructuredPageBody = {
           description: "需要买票或进站时，再把交通支付方式单独核对一次。",
         },
         { label: "处理 ATM 未出钞", href: "/zh/guides/china-atm-cash-not-dispensed/", description: "停止重复取款，保存 ATM 证据，分别向 ATM 所属行和发卡行立案，并在等待期间使用安全的付款备选。" },
+        { label: "核验社区食堂的支付方式与普通价格", href: "/zh/guides/china-community-canteens-explained/", description: "依赖看似有补贴的场所前，确认非居民能否进入、是否需要餐卡、当前普通价格及备用方案。" }
       ],
     },
     {

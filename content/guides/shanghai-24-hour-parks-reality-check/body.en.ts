@@ -78,6 +78,19 @@ const body = {
       ]
     },
     {
+      id: "latest-safe-departure-worksheet",
+      type: "table",
+      caption: "Latest departure worksheet — earliest relevant cutoff minus your own buffer; complete it on the day and treat any required blank as a failed check",
+      columns: ["Constraint", "Enter today's cutoff", "Evidence and check time", "Convert it into a leave limit"],
+      rows: [
+        ["Night-open zone and usable exit", "Exact route/exit cutoff, or confirmed no cutoff: ____", "Named park or operator source checked at: ____", "If the route or exit becomes unavailable, this is the hard limit"],
+        ["Needed facility", "Toilet, play area, loop or indoor facility cutoff: ____", "Facility-specific notice or staff confirmation checked at: ____", "Use only if the visit depends on it; park hours do not replace this value"],
+        ["Return transport", "Latest time you must reach the station, stop or lawful pickup point: ____", "Current operator journey checked at: ____", "Include the walk to the gate and any interchange; do not copy the final train time alone"],
+        ["Personal delay buffer", "Minutes reserved for orientation, crowds, companions and pickup: ____", "Chosen for this group and conditions on: ____", "Subtract this buffer from the earliest relevant cutoff above"],
+        ["Latest planned departure", "min(zone/exit, needed facility, return transport) − buffer = ____", "Rechecked immediately before entry at: ____", "If any required input is unknown, move earlier, shorten the activity or do not start"]
+      ]
+    },
+    {
       id: "century-heading",
       type: "heading",
       level: 2,

@@ -111,6 +111,19 @@ const body = {
       ]
     },
     {
+      id: "canteen-five-gate-card",
+      type: "table",
+      caption: "Homeground five-gate card: every row must be confirmed for the exact canteen",
+      columns: ["Gate", "Ask or observe", "Record", "If unconfirmed"],
+      rows: [
+        ["Public access", "Can a non-resident or visitor eat here today?", "Yes, no, or a named eligibility condition", "Use an ordinary public restaurant"],
+        ["Ordinary price", "Which price applies without age, residence or benefit status?", "Exact dish/meal and current ordinary price", "Do not budget from the subsidised price"],
+        ["Card and payment", "Is a meal card, app, cash or mobile payment required?", "A method your group can actually use", "Keep cash/card/payment fallback"],
+        ["Meal window and stock", "When does public service begin, and can dishes sell out?", "Date, meal period and latest useful arrival", "Move the meal earlier or choose backup"],
+        ["Diet and access", "Can the venue explain ingredients, seating, toilet and step-free route?", "Confirmed needs and unresolved risks", "Do not rely on the venue for this meal"],
+      ],
+    },
+    {
       id: "food-boundary",
       type: "callout",
       title: "Food-safety oversight is not an allergy guarantee",

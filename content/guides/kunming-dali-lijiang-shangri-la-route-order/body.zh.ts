@@ -69,6 +69,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "测试路线是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "转场与恢复后再计算可用日。" },
     { label: "选择正确的大理古城下车点", href: "/zh/guides/dali-station-to-old-town/", description: "按住宿位置选择南门、洱海门、苍山门或北门下车点，保存中文目的地卡，避免下错地点后拖着行李横穿古城。" },
     { label: "安排铁路、住宿基地与第一晚", href: "/zh/guides/lijiang-shangri-la-transport-route/", description: "比较丽江到香格里拉的铁路和公路交通，安排车站到住宿点的接驳，并为海拔上升后的第一晚留出休息时间。" },
+    { label: "把可追溯的云南咖啡体验放进行程", href: "/zh/guides/yunnan-coffee-from-cherry-to-cup/", description: "核验具体生产者或咖啡馆、当前准入和批次身份，不添加泛泛的“咖啡绕行”。" }
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "丽江至香格里拉铁路开通运营", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "国家铁路局", reviewedAt: "2026-08-12" },

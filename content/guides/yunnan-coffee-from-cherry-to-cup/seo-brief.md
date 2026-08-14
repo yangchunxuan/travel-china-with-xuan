@@ -69,10 +69,11 @@ Recommendations only; old pages are unchanged in this batch.
 
 ## Unique asset plan
 
+- Implemented 2026-08-14: the trilingual `coffee-lot-passport` records minimum provenance and evidence at farm, processing, drying, green-trade and roasting/cup stages; unknown fields stay blank.
+
 - Preferred asset: a rights-cleared, location-accurate sequence from one documented lot—ripe cherry, labelled processing lot, drying, green sample and roasted bag—with a written chain connecting the stages.
 - Companion asset: a non-photoreal nine-stage lot passport that distinguishes producer, processor, trader and roaster roles.
 - Record lot/date/place/process/rights. Do not imply visitor access, stage unrelated stock as one lot, or use one farm to represent all Yunnan coffee.
-- This brief does not authorize image creation or provenance changes.
 
 ## GSC review plan
 

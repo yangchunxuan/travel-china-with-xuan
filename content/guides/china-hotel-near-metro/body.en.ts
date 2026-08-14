@@ -255,6 +255,7 @@ const body = {
           description: "Count transfer friction and recovery time before adding another stop.",
         },
         { label: "Plan a child-compatible route", href: "/guides/china-itinerary-with-young-children/", description: "Design a China route for young children by sleep, food, toilets, carrying load, hotel stability and current child-ticket rules." },
+        { label: "Check whether a 24-hour Shanghai park is usable after dark", href: "/guides/shanghai-24-hour-parks-reality-check/", description: "Count the open gate, lit route, facilities and last safe transport back—not just the park label or nearby station." },
         { label: "Compare Guilin to Yangshuo", href: "/guides/guilin-yangshuo-transport-route/", description: "Compare rail, road transfer and river travel between Guilin and Yangshuo by station, airport, hotel, luggage, direction and return plan." },
         { label: "Choose a Shanghai base", href: "/guides/shanghai-where-to-stay-first-trip/", description: "Compare the Bund, People’s Square and the former French Concession by walking, metro reach, evenings, luggage and crowd trade-offs." },
       ],

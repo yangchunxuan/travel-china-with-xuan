@@ -66,6 +66,19 @@ const body = {
       ]
     },
     {
+      id: "coffee-lot-passport",
+      type: "table",
+      caption: "Homeground coffee-lot passport: leave unknown fields blank instead of turning a story into provenance",
+      columns: ["Stage", "Minimum identity field", "Evidence to keep", "Do not infer"],
+      rows: [
+        ["Farm or cherry source", "Producer, village/county, harvest window and variety if known", "Producer record, bag/lot label or named interview", "A cafe address proves where cherries grew"],
+        ["Processing station", "Station, lot code, process and start date", "Intake/processing record or labelled batch", "Washed/natural/honey guarantees flavour"],
+        ["Drying and storage", "Method, end condition, storage owner and separation", "Drying log, labelled bed/bag and custody note", "One photograph represents the whole lot"],
+        ["Green trade", "Lot identity, grade/size language, buyer and transfer date", "Contract, sample label or traceable invoice with private data redacted", "Export language is an independent quality score"],
+        ["Roasting and cup", "Roaster, roast date, batch link and brew used", "Bag label and explicit link back to green lot", "Roasted in Yunnan means grown in Yunnan"],
+      ],
+    },
+    {
       id: "processing-heading",
       type: "heading",
       level: 2,

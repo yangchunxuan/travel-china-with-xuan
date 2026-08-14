@@ -2,19 +2,37 @@
   "id": "qingdao-brands-built-an-industrial-city",
   "type": "field-note",
   "pillar": "culture-festivals-arts-contemporary",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "three-lens-city-reading-guide",
-  "topics": ["qingdao", "industrial-heritage", "tsingtao-brewery", "haier", "crrc-sifang"],
-  "destinations": ["shandong", "qingdao"],
+  "topics": [
+    "qingdao",
+    "industrial-heritage",
+    "tsingtao-brewery",
+    "haier",
+    "crrc-sifang"
+  ],
+  "destinations": [
+    "shandong",
+    "qingdao"
+  ],
   "heroImagePath": "/images/guides/qingdao-brands-built-an-industrial-city/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/qingdao-brands-built-an-industrial-city/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
-  "search": {"section": "culture", "family": "relationship", "primaryIntent": "understand"},
-  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "search": {
+    "section": "culture",
+    "family": "relationship",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/qingdao-brands-built-an-industrial-city/",
@@ -25,7 +43,11 @@
       "navTitle": "How brands shaped Qingdao",
       "featuredLinkLabel": "Read Qingdao through three industries",
       "openGraphLocale": "en_US",
-      "cardTags": ["Qingdao", "Industrial history", "City identity"]
+      "cardTags": [
+        "Qingdao",
+        "Industrial history",
+        "City identity"
+      ]
     },
     "zh": {
       "path": "/zh/guides/qingdao-brands-built-an-industrial-city/",
@@ -36,7 +58,11 @@
       "navTitle": "品牌如何塑造青岛",
       "featuredLinkLabel": "从三种产业读懂青岛",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["青岛", "工业史", "城市身份"]
+      "cardTags": [
+        "青岛",
+        "工业史",
+        "城市身份"
+      ]
     },
     "ko": {
       "path": "/ko/guides/qingdao-brands-built-an-industrial-city/",
@@ -47,7 +73,28 @@
       "navTitle": "브랜드가 빚은 칭다오",
       "featuredLinkLabel": "세 산업으로 칭다오 읽기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["칭다오", "산업사", "도시 정체성"]
+      "cardTags": [
+        "칭다오",
+        "산업사",
+        "도시 정체성"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Qingdao industrial history explained",
+      "Tsingtao Haier CRRC Qingdao history",
+      "Qingdao industrial heritage travel"
+    ],
+    "zh": [
+      "青岛工业史怎么看",
+      "青岛啤酒海尔中车四方",
+      "青岛工业遗产旅行"
+    ],
+    "ko": [
+      "칭다오 산업 역사",
+      "칭다오 맥주 하이얼 CRRC",
+      "칭다오 산업유산 여행"
+    ]
   }
 }

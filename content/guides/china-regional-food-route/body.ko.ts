@@ -224,11 +224,11 @@ const body = {
       type: "internal-links",
       title: "계속 계획하기",
       items: [
-        { "label": "중국 여행 계획 모아보기", "href": "/ko/plan/", "description": "음식 루트를 교통, 시기와 문화 계획 전체에 연결하세요." },
+        { label: "윈난 커피를 체리에서 한 잔까지 따라가기", href: "/ko/guides/yunnan-coffee-from-cherry-to-cup/", description: "정확한 로트, 방문 가능 여부와 동선이 맞을 때만 농장이나 카페를 넣고, 윈난 주소만으로 원두 산지를 판단하지 않습니다." },
         { "label": "중국에서 첫 공유 식사 준비하기", "href": "/ko/guides/first-shared-meal-in-china/", "description": "식탁에 도착한 뒤 주문, 나눠 먹기와 계산 방식을 이해하세요." },
         { "label": "광저우 모닝티 이해하기", "href": "/ko/guides/how-guangzhou-morning-tea-works/", "description": "그 지역 식사 형태를 넣기로 했다면 전용 가이드를 확인하세요." },
         { "label": "거점 왕복형과 다중 거점 루트 중 선택하기", "href": "/ko/guides/china-hub-and-spoke-or-multi-base-route/", "description": "다음 음식 지역을 더하기 전에 여행 전체의 거점 구조를 정하세요." },
-        { "label": "중국 고속철 처음 이용하기", "href": "/ko/guides/china-high-speed-train-first-time-guide/", "description": "지역 방향을 정한 뒤 실제 철도 이용 절차를 확인하세요." },
+        { label: "전장 식초를 발효에서 식탁까지 따라가기", href: "/ko/guides/zhenjiang-vinegar-living-fermentation/", description: "산지, 공정, 라벨과 현재 방문 증거로 이 식품을 미식 동선의 한 지점으로 넣을지 판단합니다." },
         { label: "12306 열차 음식 배달 이해하기", href: "/ko/guides/how-food-reaches-your-seat-on-china-train/", description: "12306 음식이 배송역에서 객차 좌석까지 전달되는 과정과 주문 마감, 좌석 정보, 안전한 대안을 알아봅니다." },
         { label: "난창 반펀과 와관탕 맞추기", href: "/ko/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "난창 반펀, 볶음 쌀국수, 국물 쌀국수를 구별하고 양과 매운맛에 맞춰 와관탕을 고르며 매진 시 대체하는 주문법입니다." },
         { label: "차 산지 풍경 고르기", href: "/ko/guides/tea-landscape-regions-of-china/", description: "최고의 차 순위가 아니라 현장에서 볼 수 있는 풍경, 작업과 공동체의 관계로 중국 차 산지를 고릅니다." },

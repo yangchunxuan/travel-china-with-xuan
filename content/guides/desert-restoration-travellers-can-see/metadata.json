@@ -2,7 +2,9 @@
   "id": "desert-restoration-travellers-can-see",
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "landscape-reading-field-guide",
   "topics": [
     "desertification-control",
@@ -12,20 +14,27 @@
     "dryland-restoration",
     "responsible-access"
   ],
-  "destinations": ["china", "ningxia", "inner-mongolia"],
+  "destinations": [
+    "china",
+    "ningxia",
+    "inner-mongolia"
+  ],
   "heroImagePath": "/images/guides/desert-restoration-travellers-can-see/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/desert-restoration-travellers-can-see/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-08-14",
   "sourceReviewedDate": "2026-08-13",
   "search": {
     "section": "explore",
     "family": "entity",
     "primaryIntent": "understand"
   },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/desert-restoration-travellers-can-see/",
@@ -36,7 +45,11 @@
       "navTitle": "Read China's desert restoration",
       "featuredLinkLabel": "Understand desert-control landscapes",
       "openGraphLocale": "en_US",
-      "cardTags": ["Drylands", "Desert control", "Landscape reading"]
+      "cardTags": [
+        "Drylands",
+        "Desert control",
+        "Landscape reading"
+      ]
     },
     "zh": {
       "path": "/zh/guides/desert-restoration-travellers-can-see/",
@@ -47,7 +60,11 @@
       "navTitle": "读懂中国荒漠治理",
       "featuredLinkLabel": "理解荒漠治理景观",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["干旱区", "防沙治沙", "景观解读"]
+      "cardTags": [
+        "干旱区",
+        "防沙治沙",
+        "景观解读"
+      ]
     },
     "ko": {
       "path": "/ko/guides/desert-restoration-travellers-can-see/",
@@ -58,7 +75,28 @@
       "navTitle": "중국 사막화 대응 읽기",
       "featuredLinkLabel": "사막화 대응 경관 이해하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["건조지", "사막화 대응", "경관 읽기"]
+      "cardTags": [
+        "건조지",
+        "사막화 대응",
+        "경관 읽기"
+      ]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "China desert restoration explained",
+      "straw checkerboards China desert",
+      "China solar desert restoration"
+    ],
+    "zh": [
+      "中国荒漠化治理怎么看",
+      "草方格治沙原理",
+      "光伏治沙是什么"
+    ],
+    "ko": [
+      "중국 사막 복원 설명",
+      "중국 짚 모래 장벽",
+      "중국 태양광 사막화 방지"
+    ]
   }
 }

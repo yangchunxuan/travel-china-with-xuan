@@ -65,6 +65,8 @@ const body = {
       { label: "查看中国法定节假日日历", href: "/zh/guides/china-public-holidays-travel-calendar/", description: "气候合适并不代表没有假期压力。" },
       { label: "比较平季旅行的价值与代价", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "完成气候筛选后，再加入价格、日照和运营限制。" },
       { label: "分清天坑与野外落水洞", href: "/zh/guides/china-tiankeng-sinkholes-explained/", description: "理解地质学中的天坑，分清正式公众景区与科研发现点，并在访问前核对当期路线和安全信息。" },
+      { label: "读懂二十四节气，但不把它当天气预报", href: "/zh/guides/china-24-solar-terms-weather-food-daily-life/", description: "调整行程前，先分开天文节点、区域天气、时令食物和当下实况。" },
+      { label: "把秦岭—淮河看作过渡带，而不是天气墙", href: "/zh/guides/qinling-huaihe-transition-zone/", description: "先比较东西向地形、当前预报和具体旅行者条件，再作南北差异判断。" },
       { label: "从白天走到夜晚游南明", href: "/zh/guides/guiyang-nanming-old-city-day-to-night-walk/", description: "按日光、夜景与用餐节奏，从老城街巷走到甲秀楼、南明河和青云市集，并准备下雨与疲劳分支。" },
       { label: "分清文昌航天空间", href: "/zh/guides/wenchang-commercial-space-city/", description: "分清文昌国家发射场、海南商业航天发射场与航天城开发，并对任何公众访问安排重新核实。" },
     ] },

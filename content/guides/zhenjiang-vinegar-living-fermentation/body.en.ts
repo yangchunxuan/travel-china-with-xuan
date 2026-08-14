@@ -23,6 +23,19 @@ const body = {
       ]
     },
     {
+      id: "fermentation-stage-clock",
+      type: "table",
+      caption: "Homeground fermentation-stage clock: a visitor evidence tool, not a recipe",
+      columns: ["Stage window", "Input or managed change", "What may be observable", "Producer confirmation still needed"],
+      rows: [
+        ["Grain to alcoholic stage", "Cooked grain, starter, time and temperature management", "Prepared grain, vessels or interpreted fermentation material", "Exact grain mix, starter, duration and whether material is active"],
+        ["Alcoholic to acetic stage", "Solid mash, oxygen, heat, moisture and microbial succession", "Warmth, aroma, layers and turning activity", "Batch identity, measurements and responsibility for decisions"],
+        ["Turning cycle", "Workers or equipment redistribute heat, oxygen and active material", "A tool, demonstrated motion or mechanised turner", "Whether this is production, teaching material or reconstruction"],
+        ["Extraction and stabilisation", "Liquid is separated and managed for the named product process", "Draining, pipework, vessels or an interpreted line", "Which product/batch it serves and what treatment follows"],
+        ["Aging and blending", "Storage and selection continue to change the product profile", "Labelled tanks, jars, samples or archived records", "Actual age, blend, storage condition and applicable label claim"],
+      ],
+    },
+    {
       id: "direct-answer",
       type: "callout",
       title: "Why vinegar became a city identity",

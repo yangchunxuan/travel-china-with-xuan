@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "After rain, read a sponge-city space as a water route, not a collection of green objects. Find where runoff enters, where it slows or sinks, where excess water can overflow, and how the route reconnects to pipes or a receiving waterbody. A rain garden, porous path or wetland can reduce and delay runoff within its design conditions; none proves that a district is flood-safe. One visit can reveal the intended mechanism and signs of upkeep, but it cannot certify engineering performance."
+      text: "A sponge city in China manages rain through connected green infrastructure and conventional drainage that slow, store, infiltrate and reuse runoff, then carry overflow away when capacity is exceeded. After rain, read one as a water route, not a collection of green objects. Find where runoff enters, where it slows or sinks, where excess water can overflow, and how the route reconnects to pipes or a receiving waterbody. A rain garden, porous path or wetland can reduce and delay runoff within its design conditions; none proves that a district is flood-safe. One visit can reveal the intended mechanism and signs of upkeep, but it cannot certify engineering performance."
     },
     {
       id: "scope-boundary",
@@ -31,6 +31,20 @@ const body = {
         "Storage or infiltration: identify a lower planted bed, porous surface, pond, tank connection or wetland shelf where water can pause, soak or spread.",
         "Overflow: look for a raised grate, spillway or second channel. A designed escape route is evidence of capacity limits, not a contradiction of the sponge idea.",
         "Downstream link: ask where excess water goes next. Green measures usually work with street drains, pipes, pumps, rivers or lakes rather than replacing them."
+      ]
+    },
+    {
+      id: "stormwater-path-diagram",
+      type: "table",
+      caption: "Stormwater path with two failure branches — follow only from an open, safe path and leave performance unscored",
+      columns: ["Path segment", "Expected visible connection", "Branch to record", "What the branch cannot prove"],
+      rows: [
+        ["Roof or road → inlet", "Runoff surface slopes or drains toward an open kerb, slot, swale or downpipe", "Water bypasses the inlet, or litter and sediment obstruct it", "One dry or blocked inlet does not reveal the whole catchment or the next storm"],
+        ["Inlet → lowered planting or porous paving", "A continuous edge, channel or fall carries water into the treatment surface", "Erosion, an improvised shortcut or a disconnected decorative bed interrupts the route", "Appearance alone does not establish the design connection below ground"],
+        ["Treatment surface → temporary storage", "The basin, joints or wetland shelf provide space for water to pause or spread", "Ponding depth, duration and prior wetness are unknown", "Visible water cannot by itself be labelled either correct storage or failure"],
+        ["Storage → soil, underdrain or controlled outlet", "An outlet, inspection point or plan identifies the next controlled path", "The below-ground connection cannot be seen from the public path", "Do not claim an infiltration rate, storage volume or water-quality result"],
+        ["Capacity exceeded → overflow", "A raised grate, spillway or secondary channel receives excess water", "Water leaves by an unintended edge, or the overflow route is blocked", "Overflow can be designed; without rainfall and design data it proves neither success nor failure"],
+        ["Overflow → drain, pump, river or lake", "The final visible link reconnects the green feature to the wider drainage system", "The downstream destination or operating state remains unknown", "A complete-looking local route does not certify district flood safety"]
       ]
     },
     {

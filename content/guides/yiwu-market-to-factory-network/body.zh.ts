@@ -53,7 +53,9 @@ const body = {schemaVersion:"1.0.0",blocks:[
     {label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"先处理车站和乘车步骤，再专注义乌市场空间。"},
     {label:"安排上海—杭州交通",href:"/zh/guides/shanghai-hangzhou-transport-route/",description:"理解长三角交通，但不要默认义乌只是上海一日游。"},
     {label:"理解中国地图坐标偏移",href:"/zh/guides/china-map-coordinate-offset-explained/",description:"保存市场入口和产业地址时避免地图点错位。"},
-    {label:"看懂洋山自动化港口如何转运集装箱",href:"/zh/guides/yangshan-automated-port-explained/",description:"从市场—工厂关系继续理解边界清楚的港口系统，不把一座码头当成完整出口链。"}
+    {label:"看懂洋山自动化港口如何转运集装箱",href:"/zh/guides/yangshan-automated-port-explained/",description:"从市场—工厂关系继续理解边界清楚的港口系统，不把一座码头当成完整出口链。"},
+    { label: "把青岛品牌读成工业城市的不同层次", href: "/zh/guides/qingdao-brands-built-an-industrial-city/", description: "追踪博物馆叙事、生产证据、城市空间和当前准入，不用一个品牌代替整座城市。" },
+    { label: "追踪深圳低空基础设施背后的配送链", href: "/zh/guides/shenzhen-low-altitude-city-infrastructure/", description: "沿着商户、起降节点、控制层和人工交接追踪，不把看到一架无人机等同于全城服务。" }
   ]},
   {id:"sources",type:"sources",title:"官方与独立来源",items:[
     {label:"头图——2014-08-01拍摄的义乌国际商贸城内商品陈列；不能证明当前市场区、商位或布局",url:"https://commons.wikimedia.org/wiki/File:Tourist_goods_in_Yiwu_International_Trade_Mart.jpg",publisher:"iamdanw — CC BY 2.0；仅作署名，不代表作者认可Homeground",reviewedAt:"2026-08-13"},

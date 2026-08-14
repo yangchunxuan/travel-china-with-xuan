@@ -125,6 +125,7 @@ const body = {
         { label: "安排上海、苏州、杭州与南京的顺序", href: "/zh/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "把龙井参观放进现实的江南行程。" },
         { label: "从天气与饮食读懂二十四节气", href: "/zh/guides/china-24-solar-terms-weather-food-daily-life/", description: "理解另一套季节知识，但不要把它当成全国固定天气表。" },
         { label: "跟着云南咖啡从鲜果走到杯中", href: "/zh/guides/yunnan-coffee-from-cherry-to-cup/", description: "比较一种较新的作物与加工景观，同时保留茶与咖啡各自的历史。" },
+        { label: "把中国茶景观放回秦岭—淮河过渡带", href: "/zh/guides/qinling-huaihe-transition-zone/", description: "把气候、地形和土地利用读成梯度，不把一个茶区或作物边界夸成全国分界线。" }
       ],
     },
     {

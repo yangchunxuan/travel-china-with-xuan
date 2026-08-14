@@ -240,7 +240,7 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
             description: localized.description,
             h1: localized.headline,
             bodyResource: `guide:${guide.id}`,
-            searchTerms: [],
+            searchTerms: guide.searchTerms?.[siteLocale as keyof typeof guide.searchTerms] ?? [],
             localizationStatus:
               siteLocale === "en" ? "source" : "localized",
             openGraphLocale: localized.openGraphLocale,
