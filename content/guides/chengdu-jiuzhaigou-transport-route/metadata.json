@@ -2,7 +2,7 @@
   "id": "chengdu-jiuzhaigou-transport-route", "type": "planning", "pillar": "transport-city-pair-routes", "audienceMarkets": ["global"], "format": "rail-last-mile-decision",
   "topics": ["transport", "rail", "mountain-transfer", "last-mile"], "destinations": ["chengdu", "jiuzhaigou"],
   "heroImagePath": "/images/guides/chengdu-jiuzhaigou-transport-route/hero-1600.webp", "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-jiuzhaigou-transport-route/hero-1600.webp", "imageWidth": 1600, "imageHeight": 1000,
-  "datePublished": "2026-08-12", "dateModified": "2026-08-13", "sourceReviewedDate": "2026-08-13",
+  "datePublished": "2026-08-12", "dateModified": "2026-08-14", "sourceReviewedDate": "2026-08-13",
   "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "plan" }, "layout": { "mode": "template", "templateId": "editorial-v1" },
   "locales": {
     "en": { "path": "/guides/chengdu-jiuzhaigou-transport-route/", "title": "Chengdu to Jiuzhaigou: Train, Transfer, Flight or Road?", "headline": "Chengdu to Jiuzhaigou: The Train Stops Before the Scenic Area", "description": "Choose a Chengdu–Jiuzhaigou route by the exact rail station, onward transfer, flight, luggage, return and disruption risks.", "heroAlt": "Turquoise lakes and forest in Jiuzhaigou Valley.", "navTitle": "Chengdu to Jiuzhaigou", "featuredLinkLabel": "Plan Chengdu to Jiuzhaigou", "openGraphLocale": "en_US", "cardTags": ["Chengdu", "Jiuzhaigou", "Transport"] },

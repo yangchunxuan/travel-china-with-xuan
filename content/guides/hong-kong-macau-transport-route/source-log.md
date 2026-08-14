@@ -6,7 +6,7 @@ Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 ## Canonical boundary and search gap
 
-This page owns the Hong Kong–Macao door-to-door choice among ferry, HZMB port shuttle and licensed through coach. It does not own Macao immigration eligibility, a ferry timetable, an HZMB attraction guide or private-car permits.
+This page owns the Hong Kong–Macao door-to-door choice among ferry, HZMB shuttle bus and licensed cross-boundary coach. It does not own Macao immigration eligibility, a ferry timetable, an HZMB attraction guide or private-car permits.
 
 Searches reviewed: `Hong Kong to Macau ferry or bus`, `HZMB shuttle to Macau`, and `Hong Kong Macau late night`. Results commonly compare only sailing or bridge-crossing time and omit hotel-to-terminal legs, two clearance processes, Macao local transport and backup options when service is disrupted.
 
