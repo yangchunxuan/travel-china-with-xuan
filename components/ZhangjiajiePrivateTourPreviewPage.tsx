@@ -8,8 +8,10 @@ import { GuideCtaLink } from "./GuideCtaLink";
 import { ZhangjiajiePrivateTourPriceWindow } from "./ZhangjiajiePrivateTourPriceWindow";
 import editorialStyles from "./content/EditorialGuidePage.module.css";
 import {
+  getZhangjiajiePrivateTourPublicPricing,
   productPreviewCopy,
   type ProductPreviewLocale,
+  zhangjiajiePrivateTourPaths,
   zhangjiajiePrivateTourPreviewPaths,
   zhangjiajiePrivateTourProduct,
 } from "../lib/zhangjiajiePrivateTourPreview";
@@ -17,14 +19,96 @@ import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
 
 export function ZhangjiajiePrivateTourPreviewPage({
   locale,
+  published = false,
 }: {
   locale: ProductPreviewLocale;
+  published?: boolean;
 }) {
   const copy = productPreviewCopy[locale];
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
   const homePath = isZh ? "/zh/" : "/";
-  const inquiryHref = `${homePath}?utm_source=product_preview&utm_medium=website&utm_campaign=zhangjiajie_4d3n#planner-contact`;
+  const languagePaths = published
+    ? zhangjiajiePrivateTourPaths
+    : zhangjiajiePrivateTourPreviewPaths;
+  const inquiryHref = `${homePath}?utm_source=${
+    published ? "private_tour" : "product_preview"
+  }&utm_medium=website&utm_campaign=zhangjiajie_4d3n#planner-contact`;
+  const publicPricing = getZhangjiajiePrivateTourPublicPricing(locale);
+  const publicPriceCopy = {
+    checkingPrice: copy.checkingPrice,
+    expiredPrice: copy.expiredPrice,
+    featured: copy.featured,
+    fromLabel: copy.fromLabel,
+    perPerson: copy.perPerson,
+    regularLabel: copy.regularLabel,
+    exactStayNote: copy.exactStayNote,
+  };
+  const comparisonGuidePath = isZh
+    ? "/zh/guides/zhangjiajie-itinerary/"
+    : "/guides/zhangjiajie-itinerary/";
+  const canonicalPath = languagePaths[locale];
+  const pageUrl = `https://homegroundchina.com${canonicalPath}`;
+  const structuredData = published
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": `${pageUrl}#webpage`,
+            url: pageUrl,
+            name: copy.metadataTitle,
+            description: copy.metadataDescription,
+            inLanguage: copy.htmlLang,
+            mainEntity: { "@id": `${pageUrl}#tour` },
+          },
+          {
+            "@type": "TouristTrip",
+            "@id": `${pageUrl}#tour`,
+            name: copy.heroTitle,
+            description: copy.heroLede,
+            url: pageUrl,
+            image:
+              "https://homegroundchina.com/product-previews/zhangjiajie-4-day-private-tour/hero/forest-pillars-og-1200.jpg",
+            touristType: isZh ? "张家界首次到访旅客" : "First-time Zhangjiajie visitors",
+            provider: {
+              "@type": "Organization",
+              "@id": "https://homegroundchina.com/#organization",
+              name: "Homeground China",
+              url: "https://homegroundchina.com/",
+            },
+            itinerary: {
+              "@type": "ItemList",
+              numberOfItems: product.route.length,
+              itemListElement: product.route.map((day, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: isZh ? day.title_zh : day.title_en,
+                description: copy.daySummaries[index],
+              })),
+            },
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${pageUrl}#breadcrumb`,
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: copy.homeLabel,
+                item: `https://homegroundchina.com${homePath}`,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: copy.previewBreadcrumb,
+                item: pageUrl,
+              },
+            ],
+          },
+        ],
+      }
+    : null;
   const routePhotos: Partial<
     Record<
       number,
@@ -95,17 +179,16 @@ export function ZhangjiajiePrivateTourPreviewPage({
       <a className={editorialStyles.skipLink} href="#tour-details">
         {copy.skipLink}
       </a>
-      <div className={styles.previewBar} role="status">
-        <CircleAlert aria-hidden="true" size={17} />
-        <span>{copy.previewLabel}</span>
-      </div>
+      {!published ? (
+        <div className={styles.previewBar} role="status">
+          <CircleAlert aria-hidden="true" size={17} />
+          <span>{copy.previewLabel}</span>
+        </div>
+      ) : null}
       <HomegroundHeader
-        languagePaths={{
-          en: zhangjiajiePrivateTourPreviewPaths.en,
-          zh: zhangjiajiePrivateTourPreviewPaths.zh,
-        }}
+        languagePaths={languagePaths}
         locale={locale}
-        pageContext="guide"
+        pageContext={published ? "services" : "guide"}
       />
 
       <main id="tour-details">
@@ -161,6 +244,16 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <h2 id="why-private-title">{copy.whyTitle}</h2>
               <p>{copy.whyIntro}</p>
             </div>
+            <aside className={styles.guideBridge}>
+              <div>
+                <h3>{copy.guideBridgeTitle}</h3>
+                <p>{copy.guideBridgeBody}</p>
+              </div>
+              <Link href={comparisonGuidePath}>
+                {copy.guideBridgeAction}
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+            </aside>
             <div className={styles.benefitGrid}>
               {copy.benefits.map(([heading, body], index) => (
                 <section className={styles.benefitCard} key={heading}>
@@ -292,7 +385,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <h2 id="prices-title">{copy.pricesTitle}</h2>
               <p>{copy.pricesIntro}</p>
             </div>
-            <ZhangjiajiePrivateTourPriceWindow locale={locale} />
+            <ZhangjiajiePrivateTourPriceWindow
+              copy={publicPriceCopy}
+              locale={locale}
+              pricing={publicPricing}
+            />
           </section>
 
           <section className={styles.contentSection} aria-labelledby="faq-title">
@@ -382,7 +479,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
             <p>{copy.finalBody}</p>
           </div>
           <GuideCtaLink
-            guideId="zhangjiajie-4-day-private-tour-preview"
+            guideId={
+              published
+                ? "zhangjiajie-4-day-private-tour"
+                : "zhangjiajie-4-day-private-tour-preview"
+            }
             href={inquiryHref}
             locale={locale}
             position="footer"
@@ -393,7 +494,18 @@ export function ZhangjiajiePrivateTourPreviewPage({
         </aside>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="content" />
+      <HomegroundFooter
+        locale={locale}
+        pageContext={published ? "services" : "content"}
+      />
+      {structuredData ? (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+          type="application/ld+json"
+        />
+      ) : null}
     </div>
   );
 }

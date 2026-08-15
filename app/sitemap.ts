@@ -20,6 +20,9 @@ function sitemapPriority(entry: ContentManifestEntry) {
   if (entry.contentId === "system-studio") return entry.locale === "en" ? 0.7 : 0.65;
   if (entry.contentId === "system-author-evan") return entry.locale === "en" ? 0.68 : 0.63;
   if (entry.contentId === "system-itinerary-review") return entry.locale === "en" ? 0.65 : 0.6;
+  if (entry.contentId === "system-zhangjiajie-4-day-private-tour") {
+    return entry.locale === "en" ? 0.75 : 0.7;
+  }
   return 0.3;
 }
 
@@ -28,6 +31,7 @@ function changeFrequency(entry: ContentManifestEntry) {
     entry.contentId === "system-home" ||
     entry.contentId === "system-guides" ||
     entry.contentId === "system-entry-requirements" ||
+    entry.contentId === "system-zhangjiajie-4-day-private-tour" ||
     entry.contentId.startsWith("hub-") ||
     entry.contentId.startsWith("collection-")
   ) {

@@ -1,15 +1,37 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  isProductPriceCurrent,
-  productPreviewCopy,
-  type ProductPreviewLocale,
-  zhangjiajiePrivateTourPricing,
-} from "../lib/zhangjiajiePrivateTourPreview";
+import type { ProductPreviewLocale } from "../lib/zhangjiajiePrivateTourPreview";
 import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
 
-type PriceWindowStatus = "checking" | "current" | "expired";
+export type PriceWindowStatus = "checking" | "current" | "expired";
+
+interface PublicPriceTier {
+  id: string;
+  name: string;
+  description: string;
+  fromPrice?: number;
+  price?: number;
+  regularPrice?: number;
+  featured: boolean;
+}
+
+interface PublicPricing {
+  validFrom: string;
+  validUntil: string;
+  publicNote: string;
+  tiers: readonly PublicPriceTier[];
+}
+
+interface PriceCopy {
+  checkingPrice: string;
+  expiredPrice: string;
+  featured: string;
+  fromLabel: string;
+  perPerson: string;
+  regularLabel: string;
+  exactStayNote: string;
+}
 
 function formatPrice(value: number, locale: ProductPreviewLocale) {
   return new Intl.NumberFormat(locale === "zh" ? "zh-CN" : "en", {
@@ -19,20 +41,24 @@ function formatPrice(value: number, locale: ProductPreviewLocale) {
 
 export function ZhangjiajiePrivateTourPriceWindow({
   locale,
+  copy,
+  pricing,
 }: {
   locale: ProductPreviewLocale;
+  copy: PriceCopy;
+  pricing: PublicPricing;
 }) {
   const [status, setStatus] = useState<PriceWindowStatus>("checking");
-  const copy = productPreviewCopy[locale];
-  const pricing = zhangjiajiePrivateTourPricing;
 
   useEffect(() => {
+    const now = Date.now();
     setStatus(
-      isProductPriceCurrent(pricing.valid_from, pricing.valid_until)
+      now >= new Date(`${pricing.validFrom}T00:00:00+08:00`).getTime() &&
+        now <= new Date(pricing.validUntil).getTime()
         ? "current"
         : "expired",
     );
-  }, [pricing.valid_from, pricing.valid_until]);
+  }, [pricing.validFrom, pricing.validUntil]);
 
   if (status === "checking") {
     return (
@@ -60,16 +86,9 @@ export function ZhangjiajiePrivateTourPriceWindow({
     <div aria-live="polite">
       <div className={styles.priceGrid}>
         {pricing.tiers.map((tier) => {
-          const fromPrice =
-            "from_price_per_person" in tier
-              ? tier.from_price_per_person
-              : undefined;
-          const price =
-            "price_per_person" in tier ? tier.price_per_person : undefined;
-          const regularPrice =
-            "regular_price_per_person" in tier
-              ? tier.regular_price_per_person
-              : undefined;
+          const fromPrice = tier.fromPrice;
+          const price = tier.price;
+          const regularPrice = tier.regularPrice;
           const displayedPrice = fromPrice ?? price;
 
           return (
@@ -77,12 +96,12 @@ export function ZhangjiajiePrivateTourPriceWindow({
               className={`${styles.priceCard} ${
                 tier.featured ? styles.priceCardFeatured : ""
               }`}
-              key={tier.tier_id}
+              key={tier.id}
             >
               {tier.featured ? (
                 <span className={styles.featuredLabel}>{copy.featured}</span>
               ) : null}
-              <h3>{locale === "zh" ? tier.name_zh : tier.name_en}</h3>
+              <h3>{tier.name}</h3>
               <p className={styles.priceValue}>
                 {fromPrice ? <span>{copy.fromLabel}</span> : null}
                 <strong>
@@ -95,23 +114,13 @@ export function ZhangjiajiePrivateTourPriceWindow({
                   {copy.regularLabel}: CNY {formatPrice(regularPrice, locale)}
                 </p>
               ) : null}
-              <p>
-                {
-                  copy.tierDescriptions[
-                    tier.tier_id as keyof typeof copy.tierDescriptions
-                  ]
-                }
-              </p>
+              <p>{tier.description}</p>
               <p className={styles.confirmationLine}>{copy.exactStayNote}</p>
             </article>
           );
         })}
       </div>
-      <p className={styles.priceFootnote}>
-        {locale === "zh"
-          ? pricing.public_notes["zh-CN"]
-          : pricing.public_notes.en}
-      </p>
+      <p className={styles.priceFootnote}>{pricing.publicNote}</p>
     </div>
   );
 }

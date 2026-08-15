@@ -26,9 +26,31 @@ const privatePreviewExportRoots = [
   "ko/preview",
 ];
 
+// The product currently has reviewed English and Chinese copy only. Next may
+// still emit a static not-found file for the parent layout's Korean locale;
+// remove that soft-404 artifact until a real Korean product page exists.
+const unsupportedLocalizedProductExportRoots = [
+  "ko/tours/zhangjiajie-4-day-private-tour",
+];
+
 const sourceOnlyAssetRoots = [
   "images/guides/zhangjiajie/restored",
-  "product-previews/zhangjiajie-4-day-private-tour",
+];
+
+const forbiddenProductionMarkers = [
+  ["internal product id", "zjj-4d3n-private-2026"],
+  ["internal pricing decision id", "approved-public-pricing-20260815"],
+  ["English local-preview ribbon", "Local editorial preview"],
+  ["Chinese local-preview ribbon", "本地文章预览"],
+  ["internal product eligibility", "public_eligible"],
+  ["internal pricing approval field", "approved_decision_id"],
+  ["internal pricing source field", "pricing_source"],
+  ["draft inclusion field", "draft_inclusions"],
+  ["draft exclusion field", "draft_exclusions"],
+  ["internal claim status field", "claim_status"],
+  ["internal approved-price status", "approved_price_decision"],
+  ["internal unconfirmed-claim status", "needs_confirmation"],
+  ["internal working-claim status", "working_standard"],
 ];
 
 // Next 15 requires at least one generated param for an otherwise empty static
@@ -64,6 +86,16 @@ for (const relativeRoot of labExportRoots) {
 }
 
 for (const relativeRoot of privatePreviewExportRoots) {
+  const target = path.resolve(outputRoot, relativeRoot);
+
+  if (!target.startsWith(`${outputRoot}${path.sep}`)) {
+    throw new Error(`Refusing to prune path outside export root: ${target}`);
+  }
+
+  await rm(target, { recursive: true, force: true });
+}
+
+for (const relativeRoot of unsupportedLocalizedProductExportRoots) {
   const target = path.resolve(outputRoot, relativeRoot);
 
   if (!target.startsWith(`${outputRoot}${path.sep}`)) {
@@ -189,6 +221,38 @@ for (const buildDirectory of buildDirectories) {
   }
 }
 
+async function scanExportDirectory(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const entryPath = path.join(directory, entry.name);
+
+    if (entry.isSymbolicLink()) {
+      throw new Error(`Refusing to scan symlink in production export: ${entryPath}`);
+    }
+
+    if (entry.isDirectory()) {
+      await scanExportDirectory(entryPath);
+      continue;
+    }
+
+    if (!entry.isFile()) continue;
+
+    const contents = await readFile(entryPath);
+    for (const [label, marker] of forbiddenProductionMarkers) {
+      if (contents.includes(Buffer.from(marker))) {
+        throw new Error(
+          `Forbidden ${label} remains in production export: ${path.relative(outputRoot, entryPath)}`,
+        );
+      }
+    }
+  }
+}
+
+// Scan only the completed static export. Server-side source and build caches
+// intentionally remain outside this boundary.
+await scanExportDirectory(outputRoot);
+
 for (const requiredPage of [
   "index.html",
   "zh/index.html",
@@ -217,6 +281,8 @@ for (const requiredPage of [
   "ko/guides/is-your-china-itinerary-too-rushed/index.html",
   "ko/guides/china-240-hour-visa-free-transit-route-check/index.html",
   "ko/guides/zhangjiajie-from-malaysia/index.html",
+  "tours/zhangjiajie-4-day-private-tour/index.html",
+  "zh/tours/zhangjiajie-4-day-private-tour/index.html",
 ]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);
@@ -244,6 +310,37 @@ for (const requiredAsset of [
   "images/guides/zhangjiajie-from-malaysia/park-entrance-1200.jpg",
   "images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-card-1200.webp",
   "images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-og-1200.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-bathroom.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-exterior.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin-decorated.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-double.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-twin.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-bathtub.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-colour-room.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-fireplace-room.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-four-poster.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-garden-lounge.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-lounge-detail.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-red-room.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-shower.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-suite.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-vanity.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/hero/forest-pillars-og-1200.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/hero/tianmen-cave-and-stairs.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/route/day-1-hehua-airport.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
 ]) {
   const requiredPath = path.join(outputRoot, requiredAsset);
   const requiredStat = await lstat(requiredPath);
@@ -254,5 +351,5 @@ for (const requiredAsset of [
 }
 
 console.log(
-  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${privatePreviewExportRoots.length} private-preview roots, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and unpublished client chunks removed), and ${sourceOnlyAssetRoots.length} source-only asset root; source assets remain untouched in public/.`,
+  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${privatePreviewExportRoots.length} private-preview roots, ${unsupportedLocalizedProductExportRoots.length} unsupported localized product root, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and unpublished client chunks removed), and ${sourceOnlyAssetRoots.length} source-only asset root; required tour pages/assets remain and ${forbiddenProductionMarkers.length} private markers are absent from out/.`,
 );

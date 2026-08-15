@@ -1,13 +1,15 @@
-# Accommodation image preview plan
+# Accommodation image publication plan
 
-Status: internal preview only. None of these derivatives is eligible for the
-production export yet.
+Status: approved for this Homeground product-page release by the site owner on
+15 August 2026. The approval covers the selected derivatives on this page; it
+does not turn the photographs into fixed-property, fixed-room or fixed-view
+promises.
 
-All twenty-five accommodation source records currently have `rights_status: needs_confirmation`,
-`public_eligible: false`, `room_type_id: null`, and
-`room_mapping_status: needs_confirmation` in the product library. The page and
-its assets are therefore removed from the production export by
-`tools/prune-production-export.mjs`.
+The upstream product-library records still need their rights and room-mapping
+fields normalized. Until that administrative update is complete, the public
+page keeps every group anonymous, labels the photographs as references, and
+states that the exact accommodation and room are confirmed for the travel
+dates before payment.
 
 | Preview derivative | Product-library asset | Asset ID | Use boundary |
 | --- | --- | --- | --- |
@@ -37,10 +39,10 @@ its assets are therefore removed from the production export by
 | `signature-villa-shower.jpg` | `assets/accommodations/jianai-shanye-pending/11_淋浴卫生间_辅助.JPG` | `acc-jianai-shanye-pending-11` | Shower-bathroom reference; the visible notice and room mapping still require confirmation. |
 | `signature-villa-lounge-detail.jpg` | `assets/accommodations/jianai-shanye-pending/12_休息区陈设_辅助.JPG` | `acc-jianai-shanye-pending-12` | Interior-detail reference, likely from the same unit as the large-room photograph. |
 
-The family-villa and signature-villa sets must never be mixed into one property
-or room. Before public release, confirm publication rights, the exact property,
-room mapping, current availability, foreign-guest acceptance, and truthful
-localized alt text.
+The spacious-premium and distinctive-mountain sets must never be mixed into one
+property or room. Before accepting an order, confirm the exact property, room
+mapping, current availability and foreign-guest acceptance. The localized alt
+text describes only what is visibly present in each photograph.
 
 ## Editorial landscape images
 
@@ -51,14 +53,14 @@ The Tianmen Cave and Glass Bridge photographs are no longer alternative covers:
 they appear beside Day 4 and Day 3 respectively. Day 1 now uses a separately
 licensed photograph of Zhangjiajie Hehua International Airport, while Day 2 uses
 the organized-library Bailong Elevator photograph. All images are real
-Zhangjiajie photographs. The organized-library images remain preview-only because
-their records show `commercialRightsConfirmed: false`; approve every selected
-local-library file before public release.
+Zhangjiajie photographs. The site owner selected the organized-library images
+and directed their use for this release. Their role remains editorial: they do
+not prove current operations, weather or a specific bookable room.
 
 | Placement | Preview derivative | Organized source | Editorial role |
 | --- | --- | --- | --- |
 | Title image · current | `hero/sunlit-forest-pillars-174.jpg` | `张家界优选素材/01_国家森林公园与峰林/国家森林公园峰林_174.jpg` | Owner-selected morning panorama; the wide derivative supports responsive art direction without pretending to show every stop. |
 | Day 1 article image | `route/day-1-hehua-airport.jpg` | [Wikimedia Commons: `Zhangjiajie Airport (27796134377).jpg`](https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg), Martin Lewison, 6 June 2018, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | Exact Zhangjiajie Hehua International Airport scene with Tianmen Mountain beyond the apron. Cropped from 4896×3672 to a 1280×1600 derivative; it establishes one arrival gateway but does not depict or prove the private pickup service. Source SHA-256: `6293d810b987628ea2ab797dd39fb6c9661a363966c4bcc43ecbbc20c29908e1`; derivative SHA-256: `6ea432d7bc4ad3cd670075c8b9c072f299878e7be6061d0e7200a5725c5b22e0`. |
-| Day 2 article image | `route/day-2-bailong-elevator.jpg` | `张家界优选素材/08_交通与移动体验/交通移动_190.jpg` | Shows the Bailong Elevator against the sandstone cliffs named in Day 2. Cropped from 4512×3000 to a 1280×1600 derivative. The local record still has `commercialRightsConfirmed: false`; it cannot enter production until the photographer/publication right is confirmed. Source SHA-256: `71de41d211924e76cad3d2795dd9811b55385ba6ce055567de58e60a80dbbd62`; derivative SHA-256: `b840626a062748542dc43e9d91c2bb526ddadf23a76b9b5b5b393a0cf9607f08`. |
+| Day 2 article image | `route/day-2-bailong-elevator.jpg` | `张家界优选素材/08_交通与移动体验/交通移动_190.jpg` | Shows the Bailong Elevator against the sandstone cliffs named in Day 2. Cropped from 4512×3000 to a 1280×1600 derivative. It does not prove current opening hours or route order. Source SHA-256: `71de41d211924e76cad3d2795dd9811b55385ba6ce055567de58e60a80dbbd62`; derivative SHA-256: `b840626a062748542dc43e9d91c2bb526ddadf23a76b9b5b5b393a0cf9607f08`. |
 | Day 4 article image | `hero/tianmen-cave-and-stairs.jpg` | `张家界优选素材/02_天门山与天路/天门山_093.jpg` | Shows Tianmen Cave and the stairway named in the final sightseeing day. |
 | Day 3 article image | `hero/grand-canyon-glass-bridge.jpg` | `张家界优选素材/03_大峡谷与玻璃体验/大峡谷·交通移动_139.jpg` | Shows the actual Zhangjiajie Grand Canyon Glass Bridge named in Day 3. |

@@ -12,33 +12,105 @@ const productPath =
 const pricingPath =
   "content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
 
-test("Zhangjiajie product preview preserves the closed release gate", async () => {
-  const [product, pricing, defaultRoute, localizedRoute, sitemap, exportPruner] =
-    await Promise.all([
-      source(productPath).then(JSON.parse),
-      source(pricingPath).then(JSON.parse),
-      source(
-        "app/(default)/preview/zhangjiajie-4-day-private-tour/page.tsx",
-      ),
-      source(
-        "app/(localized)/[locale]/preview/zhangjiajie-4-day-private-tour/page.tsx",
-      ),
-      source("app/sitemap.ts"),
-      source("tools/prune-production-export.mjs"),
-    ]);
+test("published product has indexable EN/ZH routes while local previews stay closed", async () => {
+  const [
+    product,
+    pricing,
+    defaultPreviewRoute,
+    localizedPreviewRoute,
+    defaultPublicRoute,
+    localizedPublicRoute,
+    productHelper,
+  ] = await Promise.all([
+    source(productPath).then(JSON.parse),
+    source(pricingPath).then(JSON.parse),
+    source(
+      "app/(default)/preview/zhangjiajie-4-day-private-tour/page.tsx",
+    ),
+    source(
+      "app/(localized)/[locale]/preview/zhangjiajie-4-day-private-tour/page.tsx",
+    ),
+    source("app/(default)/tours/zhangjiajie-4-day-private-tour/page.tsx"),
+    source(
+      "app/(localized)/[locale]/tours/zhangjiajie-4-day-private-tour/page.tsx",
+    ),
+    source("lib/zhangjiajiePrivateTourPreview.ts"),
+  ]);
 
-  assert.equal(product.status, "draft");
-  assert.equal(product.public_eligible, false);
-  assert.equal(product.seo.indexable, false);
+  assert.equal(product.status, "published");
+  assert.equal(product.public_eligible, true);
+  assert.equal(product.seo.indexable, true);
   assert.equal(pricing.status, "approved_price_decision");
   assert.equal(pricing.public_eligible, true);
   assert.equal(pricing.approved_decision_id, product.price_display.approved_decision_id);
-  assert.match(defaultRoute, /process\.env\.NODE_ENV === "production"/);
-  assert.match(defaultRoute, /notFound\(\)/);
-  assert.match(defaultRoute, /index: false, follow: false/);
-  assert.match(localizedRoute, /process\.env\.NODE_ENV === "production"/);
-  assert.match(localizedRoute, /locale !== "zh"/);
-  assert.doesNotMatch(sitemap, /zhangjiajie-4-day-private-tour/);
+
+  assert.match(defaultPreviewRoute, /process\.env\.NODE_ENV === "production"/);
+  assert.match(defaultPreviewRoute, /notFound\(\)/);
+  assert.match(defaultPreviewRoute, /index: false, follow: false/);
+  assert.match(localizedPreviewRoute, /process\.env\.NODE_ENV === "production"/);
+  assert.match(localizedPreviewRoute, /locale !== "zh"/);
+  assert.match(localizedPreviewRoute, /index: false, follow: false/);
+
+  assert.match(defaultPublicRoute, /zhangjiajiePrivateTourPaths\.en/);
+  assert.match(defaultPublicRoute, /index: true/);
+  assert.match(defaultPublicRoute, /follow: true/);
+  assert.match(defaultPublicRoute, /locale="en" published/);
+  assert.match(localizedPublicRoute, /requireChinese\(routeLocale\)/);
+  assert.match(localizedPublicRoute, /dynamicParams = false/);
+  assert.match(localizedPublicRoute, /return \[\{ locale: "zh" \}\]/);
+  assert.match(localizedPublicRoute, /zhangjiajiePrivateTourPaths\.zh/);
+  assert.match(localizedPublicRoute, /index: true/);
+  assert.match(localizedPublicRoute, /follow: true/);
+  assert.match(localizedPublicRoute, /locale=\{locale\} published/);
+  assert.match(
+    productHelper,
+    /en: "\/tours\/zhangjiajie-4-day-private-tour\/"/,
+  );
+  assert.match(
+    productHelper,
+    /zh: "\/zh\/tours\/zhangjiajie-4-day-private-tour\/"/,
+  );
+});
+
+test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
+  const [adapter, manifest, sitemap, homepage, homeCard] = await Promise.all([
+    source("lib/legacySystemContentAdapter.ts"),
+    source("lib/searchPlatformManifest.ts"),
+    source("app/sitemap.ts"),
+    source("components/HomegroundHomePage.tsx"),
+    source("lib/zhangjiajiePrivateTourHomeCard.ts"),
+  ]);
+
+  assert.match(adapter, /id: "zhangjiajie-4-day-private-tour"/);
+  assert.match(adapter, /definitions: zhangjiajiePrivateTour/);
+  assert.match(adapter, /family: "service"/);
+  assert.match(adapter, /primaryIntent: "purchase"/);
+  assert.match(adapter, /schemaTypes: \["WebPage", "TouristTrip"\]/);
+  assert.match(manifest, /\.\.\.buildLegacySystemContentNodes\(\)\.map\(contentNodeRecord\)/);
+  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
+  assert.match(sitemap, /system-zhangjiajie-4-day-private-tour/);
+
+  assert.match(homepage, /getZhangjiajiePrivateTourHomeCard/);
+  assert.match(homepage, /guide\.id === "zhangjiajie-itinerary"/);
+  assert.match(homepage, /\{ \.\.\.guide, \.\.\.featuredTourCard \}/);
+  assert.match(
+    homeCard,
+    /canonicalPath: "\/tours\/zhangjiajie-4-day-private-tour\/"/,
+  );
+  assert.match(
+    homeCard,
+    /canonicalPath: "\/zh\/tours\/zhangjiajie-4-day-private-tour\/"/,
+  );
+  assert.match(homeCard, /locale === "ko" \? null : cards\[locale\]/);
+});
+
+test("production pruning removes previews but retains published routes and product assets", async () => {
+  const exportPruner = await source("tools/prune-production-export.mjs");
+  const sourceOnlyAssetBlock = exportPruner.match(
+    /const sourceOnlyAssetRoots = \[(.*?)\];/s,
+  )?.[1];
+
+  assert.ok(sourceOnlyAssetBlock);
   assert.match(exportPruner, /privatePreviewExportRoots/);
   assert.match(exportPruner, /"preview"/);
   assert.match(exportPruner, /"zh\/preview"/);
@@ -47,8 +119,26 @@ test("Zhangjiajie product preview preserves the closed release gate", async () =
   assert.match(exportPruner, /\(localized\)\/\[locale\]\/preview/);
   assert.match(
     exportPruner,
+    /"ko\/tours\/zhangjiajie-4-day-private-tour"/,
+  );
+  assert.doesNotMatch(
+    sourceOnlyAssetBlock,
     /product-previews\/zhangjiajie-4-day-private-tour/,
   );
+
+  for (const requiredOutput of [
+    "tours/zhangjiajie-4-day-private-tour/index.html",
+    "zh/tours/zhangjiajie-4-day-private-tour/index.html",
+    "product-previews/zhangjiajie-4-day-private-tour/hero/forest-pillars-og-1200.jpg",
+    "product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
+    "product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
+    "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-shower.jpg",
+  ]) {
+    assert.match(
+      exportPruner,
+      new RegExp(requiredOutput.replaceAll(".", "\\.")),
+    );
+  }
 });
 
 test("preview uses the established editorial design and complete, distinct stay-photo sets", async () => {
@@ -123,7 +213,27 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
 });
 
-test("approved prices have one runtime expiry path and no internal data leak", async () => {
+test("visible product scope contains no deposit amount or percentage promise", async () => {
+  const visibleProductSources = await Promise.all([
+    source(productPath),
+    source(pricingPath),
+    source("lib/zhangjiajiePrivateTourPreview.ts"),
+    source("lib/zhangjiajiePrivateTourHomeCard.ts"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
+    source("components/ZhangjiajiePrivateTourPriceWindow.tsx"),
+    source("app/(default)/tours/zhangjiajie-4-day-private-tour/page.tsx"),
+    source(
+      "app/(localized)/[locale]/tours/zhangjiajie-4-day-private-tour/page.tsx",
+    ),
+  ]);
+
+  assert.doesNotMatch(
+    visibleProductSources.join("\n"),
+    /\bdeposit\b|定金|订金|(?:30|35)\s*(?:%|％)/iu,
+  );
+});
+
+test("approved prices cross the client boundary as a public projection only", async () => {
   const [pricing, helper, priceWindow, page] = await Promise.all([
     source(pricingPath).then(JSON.parse),
     source("lib/zhangjiajiePrivateTourPreview.ts"),
@@ -142,8 +252,59 @@ test("approved prices have one runtime expiry path and no internal data leak", a
     JSON.stringify(pricing),
     /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱/,
   );
-  assert.match(helper, /isProductPriceCurrent/);
-  assert.match(priceWindow, /isProductPriceCurrent\(pricing\.valid_from, pricing\.valid_until\)/);
+  assert.match(helper, /getZhangjiajiePrivateTourPublicPricing/);
+  assert.match(helper, /validFrom: pricing\.valid_from/);
+  assert.match(helper, /validUntil: pricing\.valid_until/);
+  assert.match(page, /getZhangjiajiePrivateTourPublicPricing\(locale\)/);
+  assert.match(priceWindow, /pricing: PublicPricing/);
+  assert.match(priceWindow, /Date\.now\(\)/);
+  assert.match(
+    priceWindow,
+    /useState<PriceWindowStatus>\("checking"\)/,
+  );
   assert.match(priceWindow, /copy\.expiredPrice/);
+  assert.doesNotMatch(
+    [helper, page].join("\n"),
+    /AggregateOffer|lowPrice|highPrice/,
+  );
+  assert.doesNotMatch(
+    helper,
+    /CNY 5,390|CNY 6,090|CNY 7,090|¥5,390|¥6,090|¥7,090/,
+  );
+  assert.doesNotMatch(page, /^"use client";/m);
+  assert.doesNotMatch(
+    priceWindow,
+    /product\.json|pricing\.json|approved_decision_id|approved-public-pricing-20260815|zhangjiajiePrivateTourProduct|zhangjiajiePrivateTourPricing/,
+  );
   assert.doesNotMatch(page, /data\/internal|source\/private|gross_margin|supplier_cost|CAC|negotiation_floor/);
+});
+
+test("post-prune scan rejects preview labels and internal product markers across all of out", async () => {
+  const exportPruner = await source("tools/prune-production-export.mjs");
+
+  for (const marker of [
+    "zjj-4d3n-private-2026",
+    "approved-public-pricing-20260815",
+    "Local editorial preview",
+    "本地文章预览",
+    "public_eligible",
+    "approved_decision_id",
+    "pricing_source",
+    "draft_inclusions",
+    "draft_exclusions",
+    "claim_status",
+    "approved_price_decision",
+    "needs_confirmation",
+    "working_standard",
+  ]) {
+    assert.match(exportPruner, new RegExp(marker));
+  }
+
+  assert.match(exportPruner, /async function scanExportDirectory\(directory\)/);
+  assert.match(exportPruner, /readdir\(directory, \{ withFileTypes: true \}\)/);
+  assert.match(exportPruner, /await scanExportDirectory\(entryPath\)/);
+  assert.match(exportPruner, /await readFile\(entryPath\)/);
+  assert.match(exportPruner, /await scanExportDirectory\(outputRoot\)/);
+  assert.match(exportPruner, /Server-side source and build caches/);
+  assert.doesNotMatch(exportPruner, /\.next[\\/]server/);
 });

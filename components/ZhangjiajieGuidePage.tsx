@@ -26,6 +26,19 @@ const guideHubLabels: Record<HomegroundLocale, string> = {
   ko: "여행 가이드",
 };
 
+const privateTourRelatedCopy: Partial<
+  Record<HomegroundLocale, { action: string; path: string }>
+> = {
+  en: {
+    action: "See the ready 4-day, 3-night private route",
+    path: "/tours/zhangjiajie-4-day-private-tour/",
+  },
+  zh: {
+    action: "查看已排好的4天3晚私家路线",
+    path: "/zh/tours/zhangjiajie-4-day-private-tour/",
+  },
+};
+
 function guideHubPath(locale: HomegroundLocale) {
   return locale === "en" ? "/guides/" : `/${locale}/guides/`;
 }
@@ -348,6 +361,7 @@ export function ZhangjiajieGuidePage({
     locale,
   );
   const malaysiaCopy = malaysiaRelatedCopy[locale];
+  const privateTourCopy = privateTourRelatedCopy[locale];
   const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -457,6 +471,15 @@ export function ZhangjiajieGuidePage({
                   </p>
                 </div>
               </div>
+              {privateTourCopy ? (
+                <Link
+                  className={styles.privateTourLink}
+                  href={privateTourCopy.path}
+                >
+                  {privateTourCopy.action}
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              ) : null}
               <GuideCtaLink
                 className={styles.quickPlannerLink}
                 guideId="zhangjiajie-itinerary"

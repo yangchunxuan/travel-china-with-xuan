@@ -11,22 +11,17 @@ export const zhangjiajiePrivateTourPreviewPaths = {
   zh: "/zh/preview/zhangjiajie-4-day-private-tour/",
 } as const;
 
-export function isProductPriceCurrent(
-  validFrom: string,
-  validUntil: string,
-  now = new Date(),
-) {
-  const time = now.getTime();
-  return (
-    Number.isFinite(time) &&
-    time >= new Date(`${validFrom}T00:00:00+08:00`).getTime() &&
-    time <= new Date(validUntil).getTime()
-  );
-}
+export const zhangjiajiePrivateTourPaths = {
+  en: "/tours/zhangjiajie-4-day-private-tour/",
+  zh: "/zh/tours/zhangjiajie-4-day-private-tour/",
+} as const;
 
 export const productPreviewCopy = {
   en: {
     htmlLang: "en",
+    metadataTitle: "Zhangjiajie 4-Day Private Tour: Itinerary & 2026 Price",
+    metadataDescription:
+      "A private 4-day Zhangjiajie route through Wulingyuan, the Glass Bridge and Tianmen Mountain, with flexible stay choices and a date-checked written quote.",
     previewLabel: "Local editorial preview · not open for booking",
     skipLink: "Skip to the article",
     breadcrumbLabel: "Breadcrumb",
@@ -54,6 +49,11 @@ export const productPreviewCopy = {
     whyTitle: "Four days, without turning Zhangjiajie into a race",
     whyIntro:
       "Zhangjiajie is not one viewpoint. It is a journey through sandstone pillars, a canyon crossing, cave or lake scenery, and the high slopes of Tianmen Mountain. This route gives the National Forest Park its own full day, keeps the Grand Canyon separate and lets the final mountain feel like a finale—not one more stop forced into a crowded list.",
+    guideBridgeTitle:
+      "Still deciding whether Zhangjiajie needs two, three or four full sightseeing days?",
+    guideBridgeBody:
+      "This page is one ready 4-day, 3-night private route. Our independent itinerary guide compares the wider choices and what each trip length leaves out.",
+    guideBridgeAction: "Compare 2, 3 and 4 full sightseeing days",
     benefits: [
       [
         "A gentle arrival",
@@ -94,7 +94,7 @@ export const productPreviewCopy = {
         id: "city-nihao",
         label: "City candidate 01",
         name: "Modern City Stay",
-        price: "City-stay tier · CNY 5,390 from",
+        price: "City-stay tier",
         summary:
           "A bright, contemporary city candidate shown through both available twin-room photographs. The window outlook and exact room remain subject to the date-specific assignment.",
         images: [
@@ -118,7 +118,7 @@ export const productPreviewCopy = {
         id: "city-west",
         label: "City candidate 02",
         name: "Comfortable City Stay",
-        price: "City-stay tier · CNY 5,390 from",
+        price: "City-stay tier",
         summary:
           "The complete candidate set shows the hotel exterior, twin and double rooms, a specially decorated twin room and a bathroom. Balloons, floral styling and the window outlook are photographed examples, not standard guarantees.",
         images: [
@@ -163,7 +163,7 @@ export const productPreviewCopy = {
         id: "premium-villa",
         label: "Premium stay option",
         name: "Spacious Premium Stay",
-        price: "CNY 6,090 per person",
+        price: "Spacious premium tier",
         summary:
           "For travellers who want the evening to feel spacious rather than merely functional. This candidate set shows the living room, twin room, double room, bathroom, terrace and recreation area; the exact accommodation and room allocation are confirmed for the dates.",
         images: [
@@ -215,7 +215,7 @@ export const productPreviewCopy = {
         id: "signature-villa",
         label: "Signature stay reference",
         name: "Distinctive Mountain Stay",
-        price: "CNY 7,090 per person",
+        price: "Distinctive mountain tier",
         summary:
           "Twelve candidate views show the exterior, dining terrace, several room styles, bathrooms and quiet lounge spaces. Together they convey the character of this more distinctive stay; they do not promise that every feature, view or layout belongs to one bookable room.",
         images: [
@@ -309,7 +309,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "4-day private tour price",
     pricesTitle: "One route, three ways to stay",
     pricesIntro:
-      "For the approved 15–31 August 2026 window, the 4-day, 3-night route starts at CNY 5,390 per person with a selected city stay. The Spacious Premium Stay is CNY 6,090 per person and the Distinctive Mountain Stay is CNY 7,090 per person. The accommodation changes; the core sightseeing structure does not.",
+      "The current price cards below are checked against their dated validity window. When that window ends, the page will ask you to request a fresh quote; the core sightseeing structure remains the same.",
     tierDescriptions: {
       "selected-city-stay":
         "A practical city base matched from the properties and rooms available for the actual dates.",
@@ -377,7 +377,7 @@ export const productPreviewCopy = {
       [
         "03",
         "Review one clear plan",
-        "Receive the total price, scope, operator, payment schedule, cancellation terms and any disclosed non-refundable resources in writing before deciding.",
+        "Receive the total price, exact scope, operator and date-specific booking conditions in writing before deciding whether to continue.",
       ],
     ],
     sourcesTitle: "Official route and destination sources",
@@ -411,6 +411,9 @@ export const productPreviewCopy = {
   },
   zh: {
     htmlLang: "zh-Hans",
+    metadataTitle: "张家界4天3晚私家游：森林公园、玻璃桥与天门山",
+    metadataDescription:
+      "4天3晚私家路线串联张家界国家森林公园、大峡谷玻璃桥与天门山，住宿可选，按真实日期核价。",
     previewLabel: "本地文章预览 · 尚未开放预订",
     skipLink: "跳到文章正文",
     breadcrumbLabel: "面包屑导航",
@@ -435,6 +438,10 @@ export const productPreviewCopy = {
     whyTitle: "四天看见张家界，不把它赶成一张打卡表",
     whyIntro:
       "张家界不是一个观景台，而是峰林、峡谷、洞穴或湖面，再到天门山高处的一段连续变化。这个安排把森林公园留出完整一天，把大峡谷单独展开，也让抵达日不必匆忙；最后以天门山收尾，而不是把离开前一天塞成另一张景点清单。",
+    guideBridgeTitle: "还在比较张家界到底需要2、3还是4个完整游览日？",
+    guideBridgeBody:
+      "本页是一条已经排好的4天3晚私家路线；独立行程指南会进一步比较不同天数能留下什么、必须舍弃什么。",
+    guideBridgeAction: "比较2、3、4个完整游览日",
     benefits: [
       [
         "抵达日，先慢下来",
@@ -475,7 +482,7 @@ export const productPreviewCopy = {
         id: "city-nihao",
         label: "市区候选01",
         name: "现代市区住宿",
-        price: "市区住宿档 · 每人¥5,390起",
+        price: "市区住宿档",
         summary:
           "一组明亮、现代的市区住宿候选，现有两张双床房照片全部展示。窗外景观与准确房型仍按实际日期分配。",
         images: [
@@ -499,7 +506,7 @@ export const productPreviewCopy = {
         id: "city-west",
         label: "市区候选02",
         name: "舒适市区住宿",
-        price: "市区住宿档 · 每人¥5,390起",
+        price: "市区住宿档",
         summary:
           "现有候选素材全部展示：酒店外观、双床房、大床房、特殊布置双床房与卫生间。气球、花饰及窗外景观属于拍摄示例，不是标准保证。",
         images: [
@@ -544,7 +551,7 @@ export const productPreviewCopy = {
         id: "premium-villa",
         label: "高级住宿选择",
         name: "宽敞高级住宿",
-        price: "每人¥6,090",
+        price: "宽敞高级住宿档",
         summary:
           "适合希望一天游览后仍能舒展下来、而不是只回房睡觉的旅客。候选素材完整展示客厅、双床房、大床房、卫生间、露台与休闲区；具体住宿和房间分配按日期确认。",
         images: [
@@ -596,7 +603,7 @@ export const productPreviewCopy = {
         id: "signature-villa",
         label: "精品住宿参考",
         name: "精品山景住宿",
-        price: "每人¥7,090",
+        price: "精品山景住宿档",
         summary:
           "12张候选照片完整呈现建筑外观、景观餐厅、不同客房、卫浴与休息空间，让这一档住宿的气质更具体；但不代表所有设施、景观与布局都同时属于同一间可订客房。",
         images: [
@@ -690,7 +697,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "张家界4天3晚私家游价格",
     pricesTitle: "同一条路线，三种住宿质感",
     pricesIntro:
-      "在2026年8月15日至31日的已批准价格期内，这套4天3晚行程选择市区住宿每人¥5,390起；宽敞高级住宿每人¥6,090，精品山景住宿每人¥7,090。三档改变住宿体验，不改变四日核心游览结构。",
+      "下方当期价格卡会按有效期自动核对；价格窗口结束后，页面会提示重新询价。住宿档位会改变停留体验，但不改变四日核心游览结构。",
     tierDescriptions: {
       "selected-city-stay": "按真实日期可订情况，从两家市区候选中匹配准确酒店与房型。",
       "spacious-premium-stay":
@@ -735,7 +742,7 @@ export const productPreviewCopy = {
     excludedItems: [
       "往返张家界的大交通",
       "正餐与个人消费",
-      "VIP通道、蹦极、滑索、演出等自选项目",
+      "VIP通道、高空弹跳、滑索、演出等自选项目",
       "单房、儿童、导游语种与车型升级差价",
       "客人在本国购买的综合旅行保险",
     ],
@@ -757,7 +764,7 @@ export const productPreviewCopy = {
       [
         "03",
         "查看一份清楚方案",
-        "在决定之前，书面看到总价、范围、履约方、付款节点、取消条款与已披露的不可退资源。",
+        "在决定是否继续之前，书面看到总价、准确范围、履约方与当前日期对应的预订条件。",
       ],
     ],
     sourcesTitle: "官方路线与目的地资料",
@@ -790,3 +797,34 @@ export const productPreviewCopy = {
     finalCtaLabel: "让 Homeground 帮你规划张家界",
   },
 } as const;
+
+export function getZhangjiajiePrivateTourPublicPricing(
+  locale: ProductPreviewLocale,
+) {
+  const copy = productPreviewCopy[locale];
+
+  return {
+    validFrom: pricing.valid_from,
+    validUntil: pricing.valid_until,
+    publicNote:
+      locale === "zh" ? pricing.public_notes["zh-CN"] : pricing.public_notes.en,
+    tiers: pricing.tiers.map((tier) => ({
+      id: tier.tier_id,
+      name: locale === "zh" ? tier.name_zh : tier.name_en,
+      description:
+        copy.tierDescriptions[
+          tier.tier_id as keyof typeof copy.tierDescriptions
+        ],
+      ...(tier.featured ? { featured: true } : { featured: false }),
+      ...("from_price_per_person" in tier
+        ? { fromPrice: tier.from_price_per_person }
+        : {}),
+      ...("price_per_person" in tier
+        ? { price: tier.price_per_person }
+        : {}),
+      ...("regular_price_per_person" in tier
+        ? { regularPrice: tier.regular_price_per_person }
+        : {}),
+    })),
+  };
+}

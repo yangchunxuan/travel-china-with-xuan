@@ -17,6 +17,7 @@ import {
 import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomeFeaturedGuides } from "../lib/guideRegistry";
+import { getZhangjiajiePrivateTourHomeCard } from "../lib/zhangjiajiePrivateTourHomeCard";
 import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
@@ -162,7 +163,12 @@ export function HomegroundHomePage({
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
-  const featuredGuides = getHomeFeaturedGuides(locale);
+  const featuredTourCard = getZhangjiajiePrivateTourHomeCard(locale);
+  const featuredGuides = getHomeFeaturedGuides(locale).map((guide) =>
+    guide.id === "zhangjiajie-itinerary" && featuredTourCard
+      ? { ...guide, ...featuredTourCard }
+      : guide,
+  );
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const plannerTarget =

@@ -19,6 +19,10 @@ import {
 import { getHomegroundPrivacyCopy } from "./homegroundPrivacyI18n";
 import { getHomegroundStudioCopy } from "./homegroundStudioI18n";
 import { getEditorialAuthor } from "./editorialIdentity";
+import {
+  productPreviewCopy,
+  zhangjiajiePrivateTourPaths,
+} from "./zhangjiajiePrivateTourPreview";
 
 const locales = ["en", "zh", "ko"] as const;
 const schemaLocale: Record<HomegroundLocale, SchemaLocale> = {
@@ -67,6 +71,10 @@ function systemNode({
   dateModified,
   schemaTypes = ["WebPage"],
   legacyAliases = [],
+  entityIds = ["country-china"],
+  volatility = "low",
+  refreshCadence = "on-source-change",
+  nextReviewAt,
 }: {
   id: string;
   section: ContentSection;
@@ -76,13 +84,17 @@ function systemNode({
   dateModified: string;
   schemaTypes?: readonly string[];
   legacyAliases?: readonly string[];
+  entityIds?: readonly string[];
+  volatility?: ContentNode["updatePolicy"]["volatility"];
+  refreshCadence?: ContentNode["updatePolicy"]["refreshCadence"];
+  nextReviewAt?: string;
 }): ContentNode {
   return {
     id: `system-${id}`,
     section,
     family,
     primaryIntent,
-    entityIds: ["country-china"],
+    entityIds,
     relationIds: [],
     parentContentId: null,
     status: "published",
@@ -99,9 +111,10 @@ function systemNode({
       lastReviewed: dateModified,
     },
     updatePolicy: {
-      volatility: "low",
-      refreshCadence: "on-source-change",
+      volatility,
+      refreshCadence,
       owner: "homeground-platform",
+      ...(nextReviewAt ? { nextReviewAt } : {}),
     },
   };
 }
@@ -177,6 +190,22 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       ];
     }),
   );
+  const zhangjiajiePrivateTour = {
+    en: {
+      path: zhangjiajiePrivateTourPaths.en,
+      title: productPreviewCopy.en.metadataTitle,
+      description: productPreviewCopy.en.metadataDescription,
+      h1: productPreviewCopy.en.heroTitle,
+      openGraphLocale: "en_US",
+    },
+    zh: {
+      path: zhangjiajiePrivateTourPaths.zh,
+      title: productPreviewCopy.zh.metadataTitle,
+      description: productPreviewCopy.zh.metadataDescription,
+      h1: productPreviewCopy.zh.heroTitle,
+      openGraphLocale: "zh_CN",
+    },
+  };
   const privacy = Object.fromEntries(
     locales.map((locale) => {
       const copy = getHomegroundPrivacyCopy(locale);
@@ -237,6 +266,19 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: itineraryReview,
       dateModified: "2026-07-22",
       schemaTypes: ["Service"],
+    }),
+    systemNode({
+      id: "zhangjiajie-4-day-private-tour",
+      section: "services",
+      family: "service",
+      primaryIntent: "purchase",
+      definitions: zhangjiajiePrivateTour,
+      dateModified: "2026-08-15",
+      schemaTypes: ["WebPage", "TouristTrip"],
+      entityIds: ["city-zhangjiajie"],
+      volatility: "high",
+      refreshCadence: "weekly",
+      nextReviewAt: "2026-08-31",
     }),
     systemNode({
       id: "entry-requirements",

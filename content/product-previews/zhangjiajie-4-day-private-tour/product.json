@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "product_id": "zjj-4d3n-private-2026",
-  "status": "draft",
-  "public_eligible": false,
+  "status": "published",
+  "public_eligible": true,
   "updated_at": "2026-08-15T10:25:00+08:00",
   "title": {
     "zh-CN": "张家界4天3晚：峰林、玻璃桥与天门山",
@@ -87,7 +87,7 @@
   "draft_exclusions": [
     "往返张家界的大交通",
     "正餐和个人消费",
-    "VIP通道、蹦极、滑索和演出等自选项目",
+    "VIP通道、高空弹跳、滑索和演出等自选项目",
     "单房差、儿童差价、外语导游差价和车型升级",
     "客人在本国购买的综合旅行保险"
   ],
@@ -98,6 +98,6 @@
   },
   "seo": {
     "slug": "zhangjiajie-4-day-private-tour",
-    "indexable": false
+    "indexable": true
   }
 }
