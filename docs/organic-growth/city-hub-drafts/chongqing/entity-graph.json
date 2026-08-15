@@ -1,0 +1,628 @@
+{
+  "schemaVersion": "city-hub-draft-1.0",
+  "draftStatus": "central-review-required",
+  "checkedAt": "2026-08-15",
+  "canonicalProposal": {
+    "primaryEntityId": "city-chongqing",
+    "status": "proposed",
+    "entityType": "provincial-level-municipality",
+    "parentEntityId": "country-china",
+    "parentRule": "Chongqing connects directly to country-china and must not be nested under province-sichuan.",
+    "paths": {
+      "en": "/destinations/chongqing/",
+      "zh": "/zh/destinations/chongqing/",
+      "ko": "/ko/destinations/chongqing/"
+    },
+    "forbiddenPaths": [
+      "/guides/chongqing-travel-guide/",
+      "/zh/guides/chongqing-travel-guide/",
+      "/ko/guides/chongqing-travel-guide/"
+    ],
+    "centralRegistryMutation": false
+  },
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "existing-reference",
+      "names": {"en": "China", "zh": "中国", "ko": "중국"}
+    },
+    {
+      "id": "city-chongqing",
+      "type": "provincial-level-municipality",
+      "status": "proposed",
+      "names": {"en": "Chongqing", "zh": "重庆", "ko": "충칭"},
+      "scopeNote": "May refer to the central urban area or the much larger municipality; the Hub must distinguish those meanings."
+    },
+    {
+      "id": "district-yuzhong-chongqing",
+      "type": "urban-district",
+      "status": "proposed",
+      "names": {"en": "Yuzhong", "zh": "渝中区", "ko": "위중구"}
+    },
+    {
+      "id": "district-jiangbei-chongqing",
+      "type": "urban-district",
+      "status": "proposed",
+      "names": {"en": "Jiangbei", "zh": "江北区", "ko": "장베이구"}
+    },
+    {
+      "id": "district-nanan-chongqing",
+      "type": "urban-district",
+      "status": "proposed",
+      "names": {"en": "Nan'an", "zh": "南岸区", "ko": "난안구"}
+    },
+    {
+      "id": "district-shapingba-chongqing",
+      "type": "urban-district",
+      "status": "proposed",
+      "names": {"en": "Shapingba", "zh": "沙坪坝区", "ko": "사핑바구"}
+    },
+    {
+      "id": "district-yubei-chongqing",
+      "type": "urban-district",
+      "status": "proposed",
+      "names": {"en": "Yubei", "zh": "渝北区", "ko": "위베이구"}
+    },
+    {
+      "id": "river-yangtze",
+      "type": "river",
+      "status": "reference-pending-central-id-check",
+      "names": {"en": "Yangtze River", "zh": "长江", "ko": "양쯔강"}
+    },
+    {
+      "id": "river-jialing",
+      "type": "river",
+      "status": "reference-pending-central-id-check",
+      "names": {"en": "Jialing River", "zh": "嘉陵江", "ko": "자링강"}
+    },
+    {
+      "id": "area-jiefangbei",
+      "type": "accommodation-and-urban-area",
+      "status": "proposed",
+      "names": {"en": "Jiefangbei", "zh": "解放碑", "ko": "제팡베이"}
+    },
+    {
+      "id": "area-guanyinqiao",
+      "type": "accommodation-and-urban-area",
+      "status": "proposed",
+      "names": {"en": "Guanyinqiao", "zh": "观音桥", "ko": "관인차오"}
+    },
+    {
+      "id": "area-shapingba-base",
+      "type": "accommodation-and-transport-area",
+      "status": "proposed",
+      "names": {"en": "Shapingba accommodation base", "zh": "沙坪坝住宿基地", "ko": "사핑바 숙박 거점"}
+    },
+    {
+      "id": "area-nanbin-road",
+      "type": "south-bank-accommodation-and-view-area",
+      "status": "proposed",
+      "names": {"en": "Nanbin Road", "zh": "南滨路", "ko": "난빈루"}
+    },
+    {
+      "id": "area-nanping",
+      "type": "south-bank-accommodation-and-commercial-area",
+      "status": "proposed",
+      "names": {"en": "Nanping", "zh": "南坪", "ko": "난핑"}
+    },
+    {
+      "id": "area-danzishi",
+      "type": "south-bank-accommodation-and-river-area",
+      "status": "proposed",
+      "names": {"en": "Danzishi", "zh": "弹子石", "ko": "단쯔스"}
+    },
+    {
+      "id": "area-nanshan-chongqing",
+      "type": "hillside-view-area",
+      "status": "proposed",
+      "names": {"en": "Nanshan", "zh": "南山", "ko": "난산"}
+    },
+    {
+      "id": "cluster-jiefangbei-hongyadong-chaotianmen",
+      "type": "urban-planning-cluster",
+      "status": "proposed",
+      "names": {
+        "en": "Jiefangbei–Hongyadong–Chaotianmen cluster",
+        "zh": "解放碑—洪崖洞—朝天门组团",
+        "ko": "제팡베이–훙야둥–차오톈먼 구역"
+      }
+    },
+    {
+      "id": "place-hongyadong",
+      "type": "urban-place",
+      "status": "proposed",
+      "names": {"en": "Hongyadong", "zh": "洪崖洞", "ko": "훙야둥"}
+    },
+    {
+      "id": "place-chaotianmen",
+      "type": "river-confluence-area",
+      "status": "proposed",
+      "names": {"en": "Chaotianmen", "zh": "朝天门", "ko": "차오톈먼"}
+    },
+    {
+      "id": "cluster-shibati-mountain-city-trail",
+      "type": "slope-urbanism-cluster",
+      "status": "proposed",
+      "names": {
+        "en": "Shibati and Mountain City Trail",
+        "zh": "十八梯与山城步道",
+        "ko": "스바티와 산청보도"
+      }
+    },
+    {
+      "id": "place-liziba",
+      "type": "cross-district-rail-place",
+      "status": "proposed",
+      "names": {"en": "Liziba", "zh": "李子坝", "ko": "리쯔바"}
+    },
+    {
+      "id": "place-ciqikou",
+      "type": "historic-neighbourhood",
+      "status": "proposed",
+      "names": {"en": "Ciqikou", "zh": "磁器口", "ko": "츠치커우"}
+    },
+    {
+      "id": "airport-chongqing-jiangbei-ckg",
+      "type": "airport",
+      "status": "proposed",
+      "iata": "CKG",
+      "names": {
+        "en": "Chongqing Jiangbei International Airport",
+        "zh": "重庆江北国际机场",
+        "ko": "충칭 장베이 국제공항"
+      }
+    },
+    {
+      "id": "rail-station-chongqing-north",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {"en": "Chongqing North", "zh": "重庆北站", "ko": "충칭북역"}
+    },
+    {
+      "id": "rail-station-chongqing-west",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {"en": "Chongqing West", "zh": "重庆西站", "ko": "충칭서역"}
+    },
+    {
+      "id": "rail-station-shapingba",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {"en": "Shapingba", "zh": "沙坪坝站", "ko": "사핑바역"}
+    },
+    {
+      "id": "rail-station-chongqing-east",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {"en": "Chongqing East", "zh": "重庆东站", "ko": "충칭동역"}
+    },
+    {
+      "id": "rail-station-chongqing-caiyuanba",
+      "type": "railway-station-under-reconstruction",
+      "status": "proposed-dynamic",
+      "names": {
+        "en": "Chongqing Station (Caiyuanba)",
+        "zh": "重庆站（菜园坝）",
+        "ko": "충칭역(차이위안바)"
+      }
+    },
+    {
+      "id": "rail-station-wulong-south",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {"en": "Wulong South", "zh": "武隆南站", "ko": "우룽남역"}
+    },
+    {
+      "id": "district-wulong-chongqing",
+      "type": "municipality-outlying-district",
+      "status": "proposed",
+      "names": {"en": "Wulong", "zh": "武隆区", "ko": "우룽구"}
+    },
+    {
+      "id": "landscape-wulong-karst",
+      "type": "karst-landscape-destination",
+      "status": "proposed",
+      "names": {"en": "Wulong Karst landscapes", "zh": "武隆喀斯特景观", "ko": "우룽 카르스트 경관"}
+    },
+    {
+      "id": "district-dazu-chongqing",
+      "type": "municipality-outlying-district",
+      "status": "proposed",
+      "names": {"en": "Dazu", "zh": "大足区", "ko": "다쭈구"}
+    },
+    {
+      "id": "heritage-dazu-rock-carvings",
+      "type": "world-heritage-cultural-destination",
+      "status": "proposed",
+      "names": {"en": "Dazu Rock Carvings", "zh": "大足石刻", "ko": "다쭈 석각"}
+    },
+    {
+      "id": "heritage-baodingshan",
+      "type": "rock-carving-group",
+      "status": "proposed",
+      "names": {"en": "Baodingshan", "zh": "宝顶山", "ko": "바오딩산"}
+    },
+    {
+      "id": "heritage-beishan-dazu",
+      "type": "rock-carving-group",
+      "status": "proposed",
+      "names": {"en": "Beishan", "zh": "北山石刻", "ko": "베이산 석각"}
+    },
+    {
+      "id": "city-chengdu",
+      "type": "city",
+      "status": "existing-reference",
+      "names": {"en": "Chengdu", "zh": "成都", "ko": "청두"}
+    },
+    {
+      "id": "city-zhangjiajie",
+      "type": "city",
+      "status": "existing-reference",
+      "names": {"en": "Zhangjiajie", "zh": "张家界", "ko": "장자제"}
+    },
+    {
+      "id": "place-furong-town",
+      "type": "town-destination",
+      "status": "reference-pending-central-id-check",
+      "names": {"en": "Furong Town", "zh": "芙蓉镇", "ko": "푸룽전"}
+    },
+    {
+      "id": "city-fenghuang",
+      "type": "historic-town-destination",
+      "status": "reference-pending-central-id-check",
+      "names": {"en": "Fenghuang", "zh": "凤凰古城", "ko": "펑황고성"}
+    },
+    {
+      "id": "route-yangtze-cruise-chongqing-yichang",
+      "type": "dynamic-cruise-route",
+      "status": "proposed-dynamic",
+      "names": {
+        "en": "Chongqing–Yichang Yangtze cruise",
+        "zh": "重庆—宜昌长江游轮",
+        "ko": "충칭–이창 양쯔강 크루즈"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "city-chongqing",
+      "to": "country-china",
+      "relation": "ADMIN_PARENT",
+      "confidence": "required",
+      "note": "Direct national-level relationship; never province-sichuan."
+    },
+    {
+      "from": "city-chongqing",
+      "to": "river-yangtze",
+      "relation": "SITUATED_ON"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "river-jialing",
+      "relation": "SITUATED_ON"
+    },
+    {
+      "from": "place-chaotianmen",
+      "to": "river-yangtze",
+      "relation": "AT_CONFLUENCE_WITH",
+      "note": "Pair with river-jialing; this relation describes orientation, not a walking route."
+    },
+    {
+      "from": "place-chaotianmen",
+      "to": "river-jialing",
+      "relation": "AT_CONFLUENCE_WITH"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-yuzhong-chongqing",
+      "relation": "CONTAINS"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-jiangbei-chongqing",
+      "relation": "CONTAINS"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-nanan-chongqing",
+      "relation": "CONTAINS"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-shapingba-chongqing",
+      "relation": "CONTAINS"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-yubei-chongqing",
+      "relation": "CONTAINS"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-wulong-chongqing",
+      "relation": "CONTAINS_DISTANT_MUNICIPALITY_DESTINATION",
+      "note": "Inside the municipality but not a central-city attraction."
+    },
+    {
+      "from": "city-chongqing",
+      "to": "district-dazu-chongqing",
+      "relation": "CONTAINS_DISTANT_MUNICIPALITY_DESTINATION",
+      "note": "Inside the municipality but not a central-city attraction."
+    },
+    {
+      "from": "district-yuzhong-chongqing",
+      "to": "district-jiangbei-chongqing",
+      "relation": "ACROSS_RIVER",
+      "via": "river-jialing",
+      "note": "Requires a bridge, tunnel, ferry or rail connection; no exact walking time is asserted."
+    },
+    {
+      "from": "district-yuzhong-chongqing",
+      "to": "district-nanan-chongqing",
+      "relation": "ACROSS_RIVER",
+      "via": "river-yangtze",
+      "note": "Requires a bridge, tunnel, ferry or rail connection; no exact walking time is asserted."
+    },
+    {
+      "from": "area-jiefangbei",
+      "to": "district-yuzhong-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-guanyinqiao",
+      "to": "district-jiangbei-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-shapingba-base",
+      "to": "district-shapingba-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-nanbin-road",
+      "to": "district-nanan-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-nanping",
+      "to": "district-nanan-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-danzishi",
+      "to": "district-nanan-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-nanshan-chongqing",
+      "to": "district-nanan-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "area-nanshan-chongqing",
+      "to": "area-nanbin-road",
+      "relation": "ABOVE_BUT_NOT_DIRECTLY_WALKABLE",
+      "note": "A separate road transfer may be required; no exact elevation or walking time is asserted."
+    },
+    {
+      "from": "cluster-jiefangbei-hongyadong-chaotianmen",
+      "to": "district-yuzhong-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "place-hongyadong",
+      "to": "cluster-jiefangbei-hongyadong-chaotianmen",
+      "relation": "PART_OF"
+    },
+    {
+      "from": "place-chaotianmen",
+      "to": "cluster-jiefangbei-hongyadong-chaotianmen",
+      "relation": "PART_OF"
+    },
+    {
+      "from": "place-hongyadong",
+      "to": "district-yuzhong-chongqing",
+      "relation": "SPANS_MULTIPLE_STREET_LEVELS",
+      "note": "Entrance level must be checked; this is not a precision walking-time claim."
+    },
+    {
+      "from": "cluster-shibati-mountain-city-trail",
+      "to": "district-yuzhong-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "cluster-shibati-mountain-city-trail",
+      "to": "district-yuzhong-chongqing",
+      "relation": "REQUIRES_VERTICAL_ROUTE_CHOICE",
+      "note": "Choose a coherent uphill or downhill route after confirming entrances."
+    },
+    {
+      "from": "place-liziba",
+      "to": "district-yuzhong-chongqing",
+      "relation": "LOCATED_IN_WESTERN_YUZHONG"
+    },
+    {
+      "from": "place-liziba",
+      "to": "cluster-jiefangbei-hongyadong-chaotianmen",
+      "relation": "SEPARATE_CROSS_DISTRICT_CLUSTER",
+      "note": "Do not present it as part of one central peninsula walk."
+    },
+    {
+      "from": "place-ciqikou",
+      "to": "district-shapingba-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "airport-chongqing-jiangbei-ckg",
+      "to": "district-yubei-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "airport-chongqing-jiangbei-ckg",
+      "to": "city-chongqing",
+      "relation": "SERVES"
+    },
+    {
+      "from": "rail-station-chongqing-north",
+      "to": "city-chongqing",
+      "relation": "MAJOR_RAIL_HUB_FOR"
+    },
+    {
+      "from": "rail-station-chongqing-west",
+      "to": "city-chongqing",
+      "relation": "MAJOR_RAIL_HUB_FOR"
+    },
+    {
+      "from": "rail-station-shapingba",
+      "to": "district-shapingba-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "rail-station-shapingba",
+      "to": "city-chengdu",
+      "relation": "SERVES_SELECTED_CORRIDOR_TRAINS",
+      "dynamic": true
+    },
+    {
+      "from": "rail-station-chongqing-east",
+      "to": "district-nanan-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "rail-station-chongqing-east",
+      "to": "rail-station-wulong-south",
+      "relation": "CURRENT_SOUTHEAST_RAIL_CORRIDOR",
+      "dynamic": true
+    },
+    {
+      "from": "rail-station-chongqing-east",
+      "to": "city-zhangjiajie",
+      "relation": "SELECTED_DIRECT_SERVICE",
+      "dynamic": true,
+      "note": "Exact train and date must be checked in Railway 12306."
+    },
+    {
+      "from": "rail-station-chongqing-caiyuanba",
+      "to": "city-chongqing",
+      "relation": "UNDER_RECONSTRUCTION_WITHIN",
+      "dynamic": true,
+      "note": "Not a current passenger alternative as checked 2026-08-15."
+    },
+    {
+      "from": "rail-station-wulong-south",
+      "to": "district-wulong-chongqing",
+      "relation": "SERVES_DISTRICT_BUT_NOT_SCENIC_GATE",
+      "note": "A separate station-to-visitor-centre transfer is required."
+    },
+    {
+      "from": "landscape-wulong-karst",
+      "to": "district-wulong-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "heritage-dazu-rock-carvings",
+      "to": "district-dazu-chongqing",
+      "relation": "LOCATED_IN"
+    },
+    {
+      "from": "heritage-baodingshan",
+      "to": "heritage-dazu-rock-carvings",
+      "relation": "SITE_GROUP_OF"
+    },
+    {
+      "from": "heritage-beishan-dazu",
+      "to": "heritage-dazu-rock-carvings",
+      "relation": "SITE_GROUP_OF"
+    },
+    {
+      "from": "city-chongqing",
+      "to": "city-chengdu",
+      "relation": "FREQUENT_RAIL_ROUTE_PAIR",
+      "dynamic": true
+    },
+    {
+      "from": "city-chongqing",
+      "to": "city-zhangjiajie",
+      "relation": "ONWARD_ROUTE",
+      "dynamic": true
+    },
+    {
+      "from": "city-chongqing",
+      "to": "place-furong-town",
+      "relation": "ONWARD_WESTERN_HUNAN_ROUTE",
+      "dynamic": true,
+      "note": "Not a central-Chongqing side trip; coordinate with Zhangjiajie or another verified connection."
+    },
+    {
+      "from": "city-chongqing",
+      "to": "city-fenghuang",
+      "relation": "ONWARD_WESTERN_HUNAN_ROUTE",
+      "dynamic": true,
+      "note": "Do not rely on the approved but unbuilt Qianjiang–Jishou railway."
+    },
+    {
+      "from": "route-yangtze-cruise-chongqing-yichang",
+      "to": "city-chongqing",
+      "relation": "EMBARKATION_REGION",
+      "dynamic": true,
+      "note": "Operator, ship, route, assigned pier and boarding time determine the actual handoff."
+    }
+  ],
+  "ownerConnections": [
+    {
+      "ownerId": "chongqing-upper-lower-city-orientation",
+      "relation": "SPECIALIST_OWNER_FOR_ORIENTATION",
+      "hubBoundary": "Hub gives the four-question bank–level–entrance–connection framework only."
+    },
+    {
+      "ownerId": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "relation": "SPECIALIST_OWNER_FOR_THREE_BASE_COMPARISON",
+      "hubBoundary": "Hub assigns accommodation tasks and keeps Nan'an as a route-level family of bases."
+    },
+    {
+      "ownerId": "china-tiankeng-sinkholes-explained",
+      "relation": "SPECIALIST_OWNER_FOR_GEOLOGY",
+      "hubBoundary": "Hub decides whether Wulong deserves a day or overnight; it does not rewrite tiankeng geology."
+    },
+    {
+      "ownerId": "sichuan-opera-face-changing-with-context",
+      "relation": "SPECIALIST_OWNER_FOR_PERFORMANCE_CONTEXT",
+      "hubBoundary": "Hub positions performance within the itinerary; it does not rewrite cultural history or freeze schedules."
+    }
+  ],
+  "spatialRules": [
+    "Straight-line map distance must never be converted into a promised walking time.",
+    "Every pedestrian claim must consider river bank, street level, usable entrance and vertical connector.",
+    "A working lift, escalator or station exit does not establish an end-to-end step-free route.",
+    "Across-river and above-river relations describe topology, not a guaranteed travel duration.",
+    "Wulong and Dazu are within Chongqing Municipality but outside the central-city attraction set."
+  ],
+  "dynamicFactClasses": [
+    {
+      "class": "airport-terminal-assignment",
+      "checkedAt": "2026-08-15",
+      "recheckBeforePublish": true
+    },
+    {
+      "class": "rail-station-role-and-national-timetable",
+      "checkedAt": "2026-08-15",
+      "recheckBeforePublish": true
+    },
+    {
+      "class": "station-exit-lift-escalator-and-construction-status",
+      "checkedAt": "2026-08-15",
+      "recheckBeforePublish": true
+    },
+    {
+      "class": "wulong-dazu-opening-and-protection-status",
+      "checkedAt": "2026-08-15",
+      "recheckBeforePublish": true
+    },
+    {
+      "class": "cruise-operator-ship-pier-and-boarding-time",
+      "checkedAt": "2026-08-15",
+      "recheckBeforePublish": true
+    }
+  ]
+}
