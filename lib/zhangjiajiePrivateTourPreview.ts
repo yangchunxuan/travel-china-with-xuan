@@ -82,10 +82,13 @@ export const productPreviewCopy = {
       "Begin at the Grand Canyon Glass Bridge, then take the day in one of two directions: the enclosed formations of Huanglong Cave or the open water and mountain setting of Baofeng Lake. The final choice is written into the itinerary.",
       "Take the available A, B or C route on Tianmen Mountain, then continue to the airport or railway station. Ticket availability determines the line; the mountain remains the final major chapter of the trip.",
     ],
-    staysEyebrow: "Four real accommodation material sets",
+    staysEyebrow: "A sample of possible stays",
     staysTitle: "Choose how the journey feels after the mountains",
     staysIntro:
-      "The sightseeing route stays strong; the atmosphere after each day can change. Compare two city-hotel candidates, more room to spread out in a premium villa setting, or a more distinctive signature stay. Every available photograph is kept with its own property set so different hotels and rooms are never blended into one promise.",
+      "The sightseeing route stays the same while the atmosphere after each day can change. These four galleries show a range from city convenience to more spacious or distinctive stays, so you can tell us what feels right. Every photograph remains with its own candidate property; rooms from different hotels are never blended into one promise.",
+    otherStaysTitle: "Not limited to the stays shown here",
+    otherStaysBody:
+      "These photographs are only part of the hotel selection we can arrange. If the style, location or room setup is not right for you, tell us what matters most and we will screen other Zhangjiajie hotels for your actual dates. You can keep the four-day route you like while we match a better-fitting hotel, room and price for written confirmation before payment.",
     previewAssetNote:
       "Internal preview photographs only. They show the candidate material sets in full, but publication rights, exact property, room assignment, availability and foreign-guest acceptance must be confirmed before release or booking.",
     accommodationOptions: [
@@ -462,10 +465,13 @@ export const productPreviewCopy = {
       "先走进张家界大峡谷玻璃桥；之后二选一：进入黄龙洞的地下空间，或转向宝峰湖的水面与群山。最终选择写入确认行程。",
       "按可订票源采用天门山A、B或C线，游览后前往机场或车站。线路由票源决定，但天门山始终是这趟旅程最后一个完整篇章。",
     ],
-    staysEyebrow: "四组真实住宿素材",
+    staysEyebrow: "部分住宿选择",
     staysTitle: "山水之后，选择更适合你们的停留方式",
     staysIntro:
-      "核心路线不变，每天回到住宿后的感受可以不同。这里完整展示两家市区候选酒店、一档空间更舒展的高级别墅，以及更有辨识度的精品住宿；每组照片严格属于各自候选物业，绝不把不同酒店和房型拼成一个承诺。",
+      "核心路线不变，每天回到住宿后的感受可以不同。下面四组照片展示从市区便利到更宽敞、更有辨识度的住宿方向，方便你告诉我们更喜欢哪一种；每组照片只属于对应候选酒店，不把不同酒店和房型拼在一起。",
+    otherStaysTitle: "不只限于页面里的酒店",
+    otherStaysBody:
+      "这些照片只是我们能够安排的部分住宿选择。如果这里展示的风格、位置或房型不合适，直接告诉我们你最看重什么，我们会按真实日期继续筛选其他张家界酒店。你不需要为了喜欢这条四日路线而勉强接受页面中的一家酒店；我们会把更合适的酒店、房型和价格，在付款前写入确认方案。",
     previewAssetNote:
       "以下仅为内部预览照片。这里完整展示候选素材，但图片公开使用权、具体物业、房型分配、库存与外宾接待，仍须在正式发布或接受订单前逐项确认。",
     accommodationOptions: [

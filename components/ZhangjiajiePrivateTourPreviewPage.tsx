@@ -248,6 +248,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <h2 id="stays-title">{copy.staysTitle}</h2>
               <p>{copy.staysIntro}</p>
             </div>
+            <aside className={styles.stayChoiceNote}>
+              <Check aria-hidden="true" size={20} />
+              <div>
+                <h3>{copy.otherStaysTitle}</h3>
+                <p>{copy.otherStaysBody}</p>
+              </div>
+            </aside>
             <p className={styles.previewAssetNote}>
               <CircleAlert aria-hidden="true" size={18} />
               <span>{copy.previewAssetNote}</span>

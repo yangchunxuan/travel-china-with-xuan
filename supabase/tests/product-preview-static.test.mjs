@@ -108,6 +108,11 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(page, /creativecommons\.org\/licenses\/by-sa\/2\.0/);
   assert.match(copy, /Country Garden Premium Villa Stay/);
   assert.match(copy, /碧桂园高级度假别墅/);
+  assert.match(copy, /Not limited to the stays shown here/);
+  assert.match(copy, /only part of the hotel selection we can arrange/);
+  assert.match(copy, /不只限于页面里的酒店/);
+  assert.match(copy, /只是我们能够安排的部分住宿选择/);
+  assert.match(page, /className=\{styles\.stayChoiceNote\}/);
   assert.doesNotMatch(copy, /Country Garden Family Villa|碧桂园家庭度假别墅/);
   assert.doesNotMatch(copy, /Check dates and room availability|查询日期与可订房型/);
   assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
