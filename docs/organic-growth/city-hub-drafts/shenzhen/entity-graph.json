@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "homeground.city-hub-entity-graph.draft.v1",
+  "recordType": "city-hub-entity-graph-proposal",
+  "status": "proposed",
+  "reviewState": "central-review-required",
+  "generatedAt": "2026-08-15T18:30:00+09:00",
+  "sourceBaseCommit": "cc6be75e59155935f321df0334588b52769eb6e4",
+  "canonicalProposal": {
+    "primaryEntityId": "city-shenzhen",
+    "parentEntityId": "province-guangdong",
+    "paths": {
+      "en": "/destinations/shenzhen/",
+      "zh-Hans": "/zh/destinations/shenzhen/",
+      "ko": "/ko/destinations/shenzhen/"
+    },
+    "forbiddenDuplicatePath": "/guides/shenzhen-travel-guide/"
+  },
+  "mutationPolicy": {
+    "centralEntityRegistryModified": false,
+    "searchMapModified": false,
+    "sitemapModified": false,
+    "indexabilityModified": false,
+    "note": "Every node except country-china is a draft proposal or external route reference. This file does not authorize central registry insertion."
+  },
+  "legacyIdentifierNotes": [
+    {
+      "legacyId": "place-shenzhen",
+      "observedOwner": "shenzhen-low-altitude-city-infrastructure",
+      "proposedCanonicalId": "city-shenzhen",
+      "action": "central migration review only",
+      "note": "Do not silently rewrite the published owner or Search Map from this draft."
+    }
+  ],
+  "volatileFieldsExcluded": [
+    "checkpoint opening hours",
+    "holiday extensions",
+    "rail timetables and train counts",
+    "ferry sailings",
+    "Huanggang redevelopment opening date",
+    "visa, entry and re-entry eligibility"
+  ],
+  "nodes": [
+    {
+      "id": "country-china",
+      "entityType": "country",
+      "registryState": "existing",
+      "names": {"en": "China", "zh-Hans": "中国", "ko": "중국"}
+    },
+    {
+      "id": "province-guangdong",
+      "entityType": "province",
+      "registryState": "proposed",
+      "names": {"en": "Guangdong", "zh-Hans": "广东", "ko": "광둥"}
+    },
+    {
+      "id": "city-shenzhen",
+      "entityType": "city",
+      "registryState": "proposed",
+      "names": {"en": "Shenzhen", "zh-Hans": "深圳", "ko": "선전"},
+      "canonicalOwnerProposal": "/destinations/shenzhen/"
+    },
+    {
+      "id": "city-guangzhou",
+      "entityType": "city",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Guangzhou", "zh-Hans": "广州", "ko": "광저우"}
+    },
+    {
+      "id": "sar-hong-kong",
+      "entityType": "specialAdministrativeRegion",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Hong Kong", "zh-Hans": "香港", "ko": "홍콩"}
+    },
+    {
+      "id": "sar-macao",
+      "entityType": "specialAdministrativeRegion",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Macao", "zh-Hans": "澳门", "ko": "마카오"},
+      "aliases": {"en": ["Macau"]}
+    },
+    {
+      "id": "district-luohu",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Luohu", "zh-Hans": "罗湖", "ko": "뤄후"}
+    },
+    {
+      "id": "district-futian",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Futian", "zh-Hans": "福田", "ko": "푸톈"}
+    },
+    {
+      "id": "district-nanshan",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Nanshan", "zh-Hans": "南山", "ko": "난산"}
+    },
+    {
+      "id": "area-shekou",
+      "entityType": "urbanArea",
+      "registryState": "proposed",
+      "names": {"en": "Shekou", "zh-Hans": "蛇口", "ko": "서커우"}
+    },
+    {
+      "id": "district-baoan",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Bao'an", "zh-Hans": "宝安", "ko": "바오안"}
+    },
+    {
+      "id": "district-longhua",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Longhua", "zh-Hans": "龙华", "ko": "룽화"}
+    },
+    {
+      "id": "district-longgang",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Longgang", "zh-Hans": "龙岗", "ko": "룽강"}
+    },
+    {
+      "id": "district-pingshan",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Pingshan", "zh-Hans": "坪山", "ko": "핑산"}
+    },
+    {
+      "id": "district-guangming",
+      "entityType": "district",
+      "registryState": "proposed",
+      "names": {"en": "Guangming", "zh-Hans": "光明", "ko": "광밍"}
+    },
+    {
+      "id": "area-dapeng-peninsula",
+      "entityType": "regionalArea",
+      "registryState": "proposed",
+      "names": {"en": "Dapeng Peninsula", "zh-Hans": "大鹏半岛", "ko": "다펑반도"}
+    },
+    {
+      "id": "airport-szx",
+      "entityType": "airport",
+      "registryState": "proposed",
+      "iataCode": "SZX",
+      "names": {"en": "Shenzhen Bao'an International Airport", "zh-Hans": "深圳宝安国际机场", "ko": "선전 바오안 국제공항"}
+    },
+    {
+      "id": "rail-station-shenzhen-north",
+      "entityType": "railwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Shenzhen North Railway Station", "zh-Hans": "深圳北站", "ko": "선전북역"}
+    },
+    {
+      "id": "rail-station-futian",
+      "entityType": "railwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Futian Railway Station", "zh-Hans": "福田站", "ko": "푸톈역"}
+    },
+    {
+      "id": "rail-station-shenzhen",
+      "entityType": "railwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Shenzhen Railway Station", "zh-Hans": "深圳站", "ko": "선전역"}
+    },
+    {
+      "id": "rail-station-shenzhen-east",
+      "entityType": "railwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Shenzhen East Railway Station", "zh-Hans": "深圳东站", "ko": "선전동역"}
+    },
+    {
+      "id": "rail-station-pingshan",
+      "entityType": "railwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Pingshan Railway Station", "zh-Hans": "深圳坪山站", "ko": "선전핑산역"}
+    },
+    {
+      "id": "rail-station-guangmingcheng",
+      "entityType": "railwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Guangmingcheng Railway Station", "zh-Hans": "光明城站", "ko": "광밍청역"}
+    },
+    {
+      "id": "rail-station-shenzhen-airport",
+      "entityType": "intercityRailwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Shenzhen Airport Railway Station", "zh-Hans": "深圳机场站", "ko": "선전공항역"}
+    },
+    {
+      "id": "rail-station-shenzhen-airport-north",
+      "entityType": "intercityRailwayStation",
+      "registryState": "proposed",
+      "names": {"en": "Shenzhen Airport North Railway Station", "zh-Hans": "深圳机场北站", "ko": "선전공항북역"}
+    },
+    {
+      "id": "rail-station-hong-kong-west-kowloon",
+      "entityType": "crossBoundaryRailwayStation",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Hong Kong West Kowloon Station", "zh-Hans": "香港西九龙站", "ko": "홍콩서구룡역"}
+    },
+    {
+      "id": "checkpoint-futian",
+      "entityType": "borderCheckpoint",
+      "registryState": "proposed",
+      "mode": "pedestrian-rail",
+      "names": {"en": "Futian Checkpoint", "zh-Hans": "福田口岸", "ko": "푸톈 출입경 지점"}
+    },
+    {
+      "id": "checkpoint-luohu",
+      "entityType": "borderCheckpoint",
+      "registryState": "proposed",
+      "mode": "pedestrian-rail",
+      "names": {"en": "Luohu Checkpoint", "zh-Hans": "罗湖口岸", "ko": "뤄후 출입경 지점"}
+    },
+    {
+      "id": "checkpoint-huanggang",
+      "entityType": "borderCheckpoint",
+      "registryState": "proposed",
+      "mode": "road",
+      "names": {"en": "Huanggang Checkpoint", "zh-Hans": "皇岗口岸", "ko": "황강 출입경 지점"},
+      "operationalStateAtReview": "temporary-passenger-facility-operating; redeveloped-port-public-opening-date-not-yet-announced"
+    },
+    {
+      "id": "checkpoint-shenzhen-bay",
+      "entityType": "borderCheckpoint",
+      "registryState": "proposed",
+      "mode": "road",
+      "names": {"en": "Shenzhen Bay Checkpoint", "zh-Hans": "深圳湾口岸", "ko": "선전만 출입경 지점"}
+    },
+    {
+      "id": "checkpoint-liantang",
+      "entityType": "borderCheckpoint",
+      "registryState": "proposed",
+      "mode": "pedestrian-road",
+      "names": {"en": "Liantang Checkpoint", "zh-Hans": "莲塘口岸", "ko": "롄탕 출입경 지점"}
+    },
+    {
+      "id": "checkpoint-wenjindu",
+      "entityType": "borderCheckpoint",
+      "registryState": "proposed",
+      "mode": "road",
+      "names": {"en": "Wenjindu Checkpoint", "zh-Hans": "文锦渡口岸", "ko": "원진두 출입경 지점"}
+    },
+    {
+      "id": "checkpoint-shekou-cruise-homeport",
+      "entityType": "seaCheckpoint",
+      "registryState": "proposed",
+      "mode": "sea",
+      "names": {"en": "Shekou Cruise Homeport", "zh-Hans": "蛇口邮轮母港", "ko": "서커우 크루즈 홈포트"}
+    },
+    {
+      "id": "control-point-lo-wu",
+      "entityType": "borderControlPoint",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Lo Wu Control Point", "zh-Hans": "香港罗湖管制站", "ko": "로우 통제소"}
+    },
+    {
+      "id": "control-point-lok-ma-chau-spur-line",
+      "entityType": "borderControlPoint",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Lok Ma Chau Spur Line Control Point", "zh-Hans": "落马洲支线管制站", "ko": "록마차우 지선 통제소"}
+    },
+    {
+      "id": "control-point-lok-ma-chau-road",
+      "entityType": "borderControlPoint",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Lok Ma Chau Control Point", "zh-Hans": "落马洲管制站", "ko": "록마차우 도로 통제소"}
+    },
+    {
+      "id": "control-point-shenzhen-bay-hk",
+      "entityType": "borderControlPoint",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Shenzhen Bay Control Point", "zh-Hans": "香港深圳湾管制站", "ko": "홍콩 선전만 통제소"}
+    },
+    {
+      "id": "control-point-heung-yuen-wai",
+      "entityType": "borderControlPoint",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Heung Yuen Wai Control Point", "zh-Hans": "香园围边境管制站", "ko": "헝윈와이 통제소"}
+    },
+    {
+      "id": "control-point-man-kam-to",
+      "entityType": "borderControlPoint",
+      "registryState": "proposed-route-reference",
+      "names": {"en": "Man Kam To Control Point", "zh-Hans": "文锦渡管制站", "ko": "만캄토 통제소"}
+    },
+    {
+      "id": "stay-zone-luohu",
+      "entityType": "accommodationZone",
+      "registryState": "proposed",
+      "names": {"en": "Luohu stay zone", "zh-Hans": "罗湖住宿区", "ko": "뤄후 숙박권역"},
+      "owner": "shenzhen-where-to-stay-futian-luohu-nanshan"
+    },
+    {
+      "id": "stay-zone-futian",
+      "entityType": "accommodationZone",
+      "registryState": "proposed",
+      "names": {"en": "Futian stay zone", "zh-Hans": "福田住宿区", "ko": "푸톈 숙박권역"},
+      "owner": "shenzhen-where-to-stay-futian-luohu-nanshan"
+    },
+    {
+      "id": "stay-zone-nanshan",
+      "entityType": "accommodationZone",
+      "registryState": "proposed",
+      "names": {"en": "Nanshan stay zone", "zh-Hans": "南山住宿区", "ko": "난산 숙박권역"},
+      "owner": "shenzhen-where-to-stay-futian-luohu-nanshan"
+    },
+    {
+      "id": "stay-zone-shekou",
+      "entityType": "accommodationZone",
+      "registryState": "proposed",
+      "names": {"en": "Shekou stay zone", "zh-Hans": "蛇口住宿区", "ko": "서커우 숙박권역"},
+      "owner": "shenzhen-where-to-stay-futian-luohu-nanshan"
+    }
+  ],
+  "edges": [
+    {"from": "province-guangdong", "type": "parentedBy", "to": "country-china"},
+    {"from": "city-shenzhen", "type": "parentedBy", "to": "province-guangdong"},
+    {"from": "city-guangzhou", "type": "parentedBy", "to": "province-guangdong"},
+    {"from": "sar-hong-kong", "type": "parentedBy", "to": "country-china"},
+    {"from": "sar-macao", "type": "parentedBy", "to": "country-china"},
+
+    {"from": "district-luohu", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "district-futian", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "district-nanshan", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "area-shekou", "type": "locatedIn", "to": "district-nanshan"},
+    {"from": "district-baoan", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "district-longhua", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "district-longgang", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "district-pingshan", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "district-guangming", "type": "locatedIn", "to": "city-shenzhen"},
+    {"from": "area-dapeng-peninsula", "type": "locatedIn", "to": "city-shenzhen"},
+
+    {"from": "airport-szx", "type": "locatedIn", "to": "district-baoan"},
+    {"from": "rail-station-shenzhen-north", "type": "locatedIn", "to": "district-longhua"},
+    {"from": "rail-station-futian", "type": "locatedIn", "to": "district-futian"},
+    {"from": "rail-station-shenzhen", "type": "locatedIn", "to": "district-luohu"},
+    {"from": "rail-station-shenzhen-east", "type": "locatedIn", "to": "district-longgang"},
+    {"from": "rail-station-pingshan", "type": "locatedIn", "to": "district-pingshan"},
+    {"from": "rail-station-guangmingcheng", "type": "locatedIn", "to": "district-guangming"},
+    {"from": "rail-station-shenzhen-airport", "type": "locatedIn", "to": "airport-szx"},
+    {"from": "rail-station-shenzhen-airport-north", "type": "locatedIn", "to": "district-baoan"},
+    {"from": "rail-station-hong-kong-west-kowloon", "type": "locatedIn", "to": "sar-hong-kong"},
+
+    {"from": "checkpoint-futian", "type": "locatedIn", "to": "district-futian"},
+    {"from": "checkpoint-luohu", "type": "locatedIn", "to": "district-luohu"},
+    {"from": "checkpoint-huanggang", "type": "locatedIn", "to": "district-futian"},
+    {"from": "checkpoint-shenzhen-bay", "type": "locatedIn", "to": "district-nanshan"},
+    {"from": "checkpoint-liantang", "type": "locatedIn", "to": "district-luohu"},
+    {"from": "checkpoint-wenjindu", "type": "locatedIn", "to": "district-luohu"},
+    {"from": "checkpoint-shekou-cruise-homeport", "type": "locatedIn", "to": "area-shekou"},
+
+    {"from": "checkpoint-luohu", "type": "crossBorderCounterpart", "to": "control-point-lo-wu"},
+    {"from": "checkpoint-futian", "type": "crossBorderCounterpart", "to": "control-point-lok-ma-chau-spur-line"},
+    {"from": "checkpoint-huanggang", "type": "crossBorderCounterpart", "to": "control-point-lok-ma-chau-road"},
+    {"from": "checkpoint-shenzhen-bay", "type": "crossBorderCounterpart", "to": "control-point-shenzhen-bay-hk"},
+    {"from": "checkpoint-liantang", "type": "crossBorderCounterpart", "to": "control-point-heung-yuen-wai"},
+    {"from": "checkpoint-wenjindu", "type": "crossBorderCounterpart", "to": "control-point-man-kam-to"},
+
+    {"from": "rail-station-futian", "type": "directRailRelationship", "to": "rail-station-hong-kong-west-kowloon"},
+    {"from": "rail-station-shenzhen-north", "type": "directRailRelationship", "to": "rail-station-hong-kong-west-kowloon"},
+    {"from": "rail-station-shenzhen", "type": "adjacentButOperationallyDistinctFrom", "to": "checkpoint-luohu"},
+    {"from": "rail-station-futian", "type": "notSameAs", "to": "checkpoint-futian"},
+    {"from": "checkpoint-futian", "type": "notSameAs", "to": "checkpoint-huanggang"},
+    {"from": "control-point-lok-ma-chau-spur-line", "type": "notSameAs", "to": "control-point-lok-ma-chau-road"},
+    {"from": "checkpoint-shenzhen-bay", "type": "notSameAs", "to": "checkpoint-shekou-cruise-homeport"},
+
+    {"from": "stay-zone-luohu", "type": "stayZoneFor", "to": "district-luohu"},
+    {"from": "stay-zone-futian", "type": "stayZoneFor", "to": "district-futian"},
+    {"from": "stay-zone-nanshan", "type": "stayZoneFor", "to": "district-nanshan"},
+    {"from": "stay-zone-shekou", "type": "stayZoneFor", "to": "area-shekou"},
+
+    {"from": "city-shenzhen", "type": "regionalRouteRelationship", "to": "sar-hong-kong", "role": "border-gateway-and-complementary-modern-city"},
+    {"from": "city-shenzhen", "type": "regionalRouteRelationship", "to": "city-guangzhou", "role": "one-way-south-china-city-chain"},
+    {"from": "city-shenzhen", "type": "regionalRouteRelationship", "to": "sar-macao", "role": "sea-and-greater-bay-area-connection"},
+    {"from": "checkpoint-shekou-cruise-homeport", "type": "seaRouteRelationship", "to": "sar-hong-kong"},
+    {"from": "checkpoint-shekou-cruise-homeport", "type": "seaRouteRelationship", "to": "sar-macao"}
+  ],
+  "ownershipBoundaries": [
+    {
+      "owner": "shenzhen-where-to-stay-futian-luohu-nanshan",
+      "retains": ["exact accommodation-area comparison", "hotel-to-station and hotel-to-checkpoint execution"]
+    },
+    {
+      "owner": "shenzhen-hong-kong-transport-route",
+      "retains": ["door-to-door crossing choice", "named control-point execution", "dynamic operating checks"]
+    },
+    {
+      "owner": "guangzhou-shenzhen-hong-kong-route-order",
+      "retains": ["three-city order", "whether Shenzhen earns a hotel in that chain"]
+    },
+    {
+      "owner": "shenzhen-low-altitude-city-infrastructure",
+      "retains": ["low-altitude infrastructure system", "service-versus-trial-versus-target evidence states"]
+    }
+  ]
+}
