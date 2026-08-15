@@ -1,0 +1,410 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "destination-hub-entity-graph-proposal",
+  "snapshotDate": "2026-08-15",
+  "hub": {
+    "contentId": "destination-hub-hangzhou",
+    "primaryEntityId": "city-hangzhou",
+    "primaryEntityStatus": "proposed",
+    "parentEntityId": "province-zhejiang",
+    "parentEntityStatus": "proposed",
+    "proposedPaths": {
+      "en": "/destinations/hangzhou/",
+      "zh": "/zh/destinations/hangzhou/",
+      "ko": "/ko/destinations/hangzhou/"
+    },
+    "publicationMode": "draft-only-central-review-required",
+    "forbiddenAlternatePath": "/guides/hangzhou-travel-guide/",
+    "centralRegistryEditAuthorized": false
+  },
+  "entities": [
+    {
+      "id": "country-china",
+      "entityType": "country",
+      "status": "existing-published",
+      "names": { "en": "China", "zh-Hans": "中国", "ko": "중국" }
+    },
+    {
+      "id": "province-zhejiang",
+      "entityType": "province",
+      "status": "proposed",
+      "parentEntityIds": ["country-china"],
+      "names": { "en": "Zhejiang", "zh-Hans": "浙江", "ko": "저장성" }
+    },
+    {
+      "id": "city-hangzhou",
+      "entityType": "city",
+      "status": "proposed",
+      "parentEntityIds": ["province-zhejiang"],
+      "names": { "en": "Hangzhou", "zh-Hans": "杭州", "ko": "항저우" },
+      "canonicalOwner": "destination-hub-hangzhou"
+    },
+    {
+      "id": "area-west-lake-hangzhou",
+      "entityType": "cultural-landscape-area",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "West Lake area", "zh-Hans": "西湖片区", "ko": "서호 권역" }
+    },
+    {
+      "id": "stay-area-hangzhou-hubin-east-shore",
+      "entityType": "stay-area",
+      "status": "proposed",
+      "parentEntityIds": ["area-west-lake-hangzhou"],
+      "names": { "en": "East shore and Hubin", "zh-Hans": "西湖东岸与湖滨", "ko": "서호 동쪽·후빈" }
+    },
+    {
+      "id": "stay-area-hangzhou-beishan-wulin",
+      "entityType": "stay-area",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Beishan and Wulin", "zh-Hans": "北山与武林", "ko": "베이산·우린" },
+      "notes": "Beishan and Wulin are presented as one decision row but are not asserted to be one micro-neighbourhood."
+    },
+    {
+      "id": "stay-area-hangzhou-west-hills-longjing",
+      "entityType": "stay-area",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "West hills, Lingyin and Longjing side", "zh-Hans": "湖西山林、灵隐与龙井方向", "ko": "서쪽 산림·링인·룽징 방향" }
+    },
+    {
+      "id": "stay-area-hangzhou-east-station",
+      "entityType": "stay-area",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Hangzhou East Station area", "zh-Hans": "杭州东站附近", "ko": "항저우동역 주변" }
+    },
+    {
+      "id": "airport-hangzhou-xiaoshan-hgh",
+      "entityType": "airport",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "codes": ["HGH"],
+      "names": { "en": "Hangzhou Xiaoshan International Airport", "zh-Hans": "杭州萧山国际机场", "ko": "항저우 샤오산 국제공항" }
+    },
+    {
+      "id": "station-hangzhou",
+      "entityType": "railway-station",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "aliases": ["Chengzhan", "城站", "청잔"],
+      "names": { "en": "Hangzhou Railway Station", "zh-Hans": "杭州站（城站）", "ko": "항저우역(청잔)" }
+    },
+    {
+      "id": "station-hangzhou-east",
+      "entityType": "railway-station",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Hangzhou East Railway Station", "zh-Hans": "杭州东站", "ko": "항저우동역" }
+    },
+    {
+      "id": "station-hangzhou-west",
+      "entityType": "railway-station",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Hangzhou West Railway Station", "zh-Hans": "杭州西站", "ko": "항저우서역" },
+      "disambiguation": {
+        "en": "Not a West Lake station.",
+        "zh-Hans": "杭州西站不等于“西湖站”。",
+        "ko": "항저우서역은 서호역이 아니다."
+      }
+    },
+    {
+      "id": "station-hangzhou-south",
+      "entityType": "railway-station",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Hangzhou South Railway Station", "zh-Hans": "杭州南站", "ko": "항저우남역" }
+    },
+    {
+      "id": "place-lingyin-feilai-peak",
+      "entityType": "heritage-attraction-cluster",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Lingyin and Feilai Peak", "zh-Hans": "灵隐飞来峰", "ko": "링인·페이라이펑" }
+    },
+    {
+      "id": "landscape-longjing-hangzhou",
+      "entityType": "tea-cultural-landscape",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Longjing tea landscape", "zh-Hans": "龙井茶地景", "ko": "룽징 차 경관" }
+    },
+    {
+      "id": "place-grand-canal-hangzhou",
+      "entityType": "urban-heritage-corridor",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Hangzhou Grand Canal corridor", "zh-Hans": "杭州大运河片区", "ko": "항저우 대운하 권역" }
+    },
+    {
+      "id": "heritage-liangzhu-hangzhou",
+      "entityType": "world-heritage-landscape",
+      "status": "proposed",
+      "parentEntityIds": ["city-hangzhou"],
+      "names": { "en": "Archaeological Ruins of Liangzhu City", "zh-Hans": "良渚古城遗址", "ko": "량주고성 고고유적" }
+    },
+    {
+      "id": "museum-liangzhu",
+      "entityType": "museum",
+      "status": "proposed",
+      "parentEntityIds": ["heritage-liangzhu-hangzhou"],
+      "names": { "en": "Liangzhu Museum", "zh-Hans": "良渚博物院", "ko": "량주박물관" }
+    },
+    {
+      "id": "park-liangzhu-archaeological-ruins",
+      "entityType": "archaeological-park",
+      "status": "proposed",
+      "parentEntityIds": ["heritage-liangzhu-hangzhou"],
+      "names": { "en": "Liangzhu Archaeological Ruins Park", "zh-Hans": "良渚古城遗址公园", "ko": "량주고성 고고유적공원" }
+    },
+    {
+      "id": "city-shanghai",
+      "entityType": "municipality-city",
+      "status": "existing-published",
+      "parentEntityIds": ["country-china"],
+      "names": { "en": "Shanghai", "zh-Hans": "上海", "ko": "상하이" }
+    },
+    {
+      "id": "province-jiangsu",
+      "entityType": "province",
+      "status": "proposed",
+      "parentEntityIds": ["country-china"],
+      "names": { "en": "Jiangsu", "zh-Hans": "江苏", "ko": "장쑤성" }
+    },
+    {
+      "id": "city-suzhou",
+      "entityType": "city",
+      "status": "proposed",
+      "parentEntityIds": ["province-jiangsu"],
+      "names": { "en": "Suzhou", "zh-Hans": "苏州", "ko": "쑤저우" }
+    },
+    {
+      "id": "city-shaoxing",
+      "entityType": "city",
+      "status": "proposed",
+      "parentEntityIds": ["province-zhejiang"],
+      "names": { "en": "Shaoxing", "zh-Hans": "绍兴", "ko": "샤오싱" }
+    },
+    {
+      "id": "city-jiaxing",
+      "entityType": "city",
+      "status": "proposed",
+      "parentEntityIds": ["province-zhejiang"],
+      "names": { "en": "Jiaxing", "zh-Hans": "嘉兴", "ko": "자싱" }
+    },
+    {
+      "id": "county-level-city-tongxiang",
+      "entityType": "county-level-city",
+      "status": "proposed",
+      "parentEntityIds": ["city-jiaxing"],
+      "names": { "en": "Tongxiang", "zh-Hans": "桐乡", "ko": "퉁샹" }
+    },
+    {
+      "id": "town-wuzhen",
+      "entityType": "town",
+      "status": "proposed",
+      "parentEntityIds": ["county-level-city-tongxiang"],
+      "names": { "en": "Wuzhen", "zh-Hans": "乌镇", "ko": "우전" },
+      "boundaryNote": "Wuzhen is in Tongxiang, Jiaxing and must not be represented as a central Hangzhou attraction."
+    },
+    {
+      "id": "province-anhui",
+      "entityType": "province",
+      "status": "proposed",
+      "parentEntityIds": ["country-china"],
+      "names": { "en": "Anhui", "zh-Hans": "安徽", "ko": "안후이성" }
+    },
+    {
+      "id": "city-huangshan",
+      "entityType": "city",
+      "status": "proposed",
+      "parentEntityIds": ["province-anhui"],
+      "names": { "en": "Huangshan City", "zh-Hans": "黄山市", "ko": "황산시" },
+      "boundaryNote": "The onward route must still distinguish Huangshan City, railway station, mountain gateways and the Huangshan scenic area."
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-hangzhou-in-zhejiang",
+      "relationType": "locatedIn",
+      "fromEntityId": "city-hangzhou",
+      "toEntityId": "province-zhejiang",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-west-lake-part-of-hangzhou",
+      "relationType": "locatedIn",
+      "fromEntityId": "area-west-lake-hangzhou",
+      "toEntityId": "city-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-hgh-serves-hangzhou",
+      "relationType": "serves",
+      "fromEntityId": "airport-hangzhou-xiaoshan-hgh",
+      "toEntityId": "city-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-hangzhou-station-serves-hangzhou",
+      "relationType": "serves",
+      "fromEntityId": "station-hangzhou",
+      "toEntityId": "city-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-hangzhou-east-serves-hangzhou",
+      "relationType": "serves",
+      "fromEntityId": "station-hangzhou-east",
+      "toEntityId": "city-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-hangzhou-west-serves-hangzhou",
+      "relationType": "serves",
+      "fromEntityId": "station-hangzhou-west",
+      "toEntityId": "city-hangzhou",
+      "status": "proposed",
+      "negativeAssertion": "station-hangzhou-west is not area-west-lake-hangzhou"
+    },
+    {
+      "id": "rel-hangzhou-south-serves-hangzhou",
+      "relationType": "serves",
+      "fromEntityId": "station-hangzhou-south",
+      "toEntityId": "city-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-lingyin-west-of-lake",
+      "relationType": "westOf",
+      "fromEntityId": "place-lingyin-feilai-peak",
+      "toEntityId": "area-west-lake-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-longjing-west-of-lake",
+      "relationType": "westOf",
+      "fromEntityId": "landscape-longjing-hangzhou",
+      "toEntityId": "area-west-lake-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-canal-north-corridor",
+      "relationType": "separateUrbanClusterFrom",
+      "fromEntityId": "place-grand-canal-hangzhou",
+      "toEntityId": "area-west-lake-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-liangzhu-separate-suburban-task",
+      "relationType": "separateSuburbanTaskFrom",
+      "fromEntityId": "heritage-liangzhu-hangzhou",
+      "toEntityId": "area-west-lake-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-liangzhu-museum-interprets-heritage",
+      "relationType": "interprets",
+      "fromEntityId": "museum-liangzhu",
+      "toEntityId": "heritage-liangzhu-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-liangzhu-park-presents-part-of-heritage",
+      "relationType": "presentsPartOf",
+      "fromEntityId": "park-liangzhu-archaeological-ruins",
+      "toEntityId": "heritage-liangzhu-hangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "route-hangzhou-shanghai",
+      "relationType": "routeConnectedTo",
+      "fromEntityId": "city-hangzhou",
+      "toEntityId": "city-shanghai",
+      "status": "proposed",
+      "routeRoles": ["day-return", "international-gateway", "two-base-yangtze-delta"],
+      "ownerContentId": "shanghai-hangzhou-transport-route"
+    },
+    {
+      "id": "route-hangzhou-suzhou",
+      "relationType": "routeConnectedTo",
+      "fromEntityId": "city-hangzhou",
+      "toEntityId": "city-suzhou",
+      "status": "proposed",
+      "routeRoles": ["complementary-jiangnan-city", "multi-city-order-decision"],
+      "ownerContentId": "shanghai-suzhou-hangzhou-nanjing-route-order"
+    },
+    {
+      "id": "route-hangzhou-shaoxing",
+      "relationType": "routeConnectedTo",
+      "fromEntityId": "city-hangzhou",
+      "toEntityId": "city-shaoxing",
+      "status": "proposed",
+      "routeRoles": ["onward-zhejiang", "canal-and-literary-history"]
+    },
+    {
+      "id": "route-hangzhou-huangshan",
+      "relationType": "routeConnectedTo",
+      "fromEntityId": "city-hangzhou",
+      "toEntityId": "city-huangshan",
+      "status": "proposed",
+      "routeRoles": ["onward-west", "mountain-region-transfer"],
+      "handoffContentId": "huangshan-summit-or-gateway-base"
+    },
+    {
+      "id": "route-hangzhou-wuzhen",
+      "relationType": "routeConnectedTo",
+      "fromEntityId": "city-hangzhou",
+      "toEntityId": "town-wuzhen",
+      "status": "proposed",
+      "routeRoles": ["separate-water-town-task", "shanghai-hangzhou-corridor-side-trip"],
+      "negativeAssertion": "town-wuzhen is not located in city-hangzhou"
+    }
+  ],
+  "contentOwnership": {
+    "hubOwns": [
+      "broad Hangzhou travel guide intent",
+      "Shanghai day return versus Hangzhou overnight decision",
+      "one day versus two nights versus three nights",
+      "broad stay-area choice",
+      "airport and station overview",
+      "West Lake, western hills, Grand Canal and Liangzhu spatial relationship",
+      "next-city relationship"
+    ],
+    "handoffs": [
+      {
+        "contentId": "shanghai-hangzhou-transport-route",
+        "owns": "exact Shanghai-Hangzhou station-pair and door-to-door rail execution"
+      },
+      {
+        "contentId": "shanghai-suzhou-hangzhou-nanjing-route-order",
+        "owns": "four-city Yangtze Delta route architecture"
+      },
+      {
+        "contentId": "liangzhu-ruins-park-and-museum-sequence",
+        "owns": "Liangzhu museum-versus-park sequence and current operational checks"
+      },
+      {
+        "contentId": "white-snake-legend-hangzhou-zhenjiang",
+        "owns": "White Snake folklore, evidence layers and Hangzhou-Zhenjiang comparison"
+      },
+      {
+        "contentId": "grand-canal-everyday-urban-history",
+        "owns": "Grand Canal heritage-working-waterway-everyday-life interpretation"
+      },
+      {
+        "contentId": "tea-landscape-regions-of-china",
+        "owns": "Longjing and other Chinese tea-landscape comparison"
+      }
+    ]
+  },
+  "reviewFlags": [
+    "Do not edit content/entities/core-places.json from this draft.",
+    "Central review must approve province-zhejiang and city-hangzhou IDs before registry use.",
+    "Central review should reconcile future Suzhou, Shaoxing, Jiaxing, Tongxiang, Wuzhen and Huangshan entity IDs with any later central schema.",
+    "The graph deliberately models Wuzhen under Tongxiang and Jiaxing, not under Hangzhou.",
+    "The graph deliberately disambiguates Hangzhou West Railway Station from West Lake."
+  ]
+}
