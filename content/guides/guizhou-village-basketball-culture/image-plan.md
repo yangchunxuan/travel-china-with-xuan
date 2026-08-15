@@ -5,17 +5,19 @@ Status: **COPY READY — AI-ASSISTED EXPLANATORY HERO VISUALLY CHECKED — REAL 
 ## Production hero
 
 - Final file: `public/images/guides/guizhou-village-basketball-culture/hero-1600.webp`
-- Source: `content/guides/guizhou-village-basketball-culture/hero-source.svg`
+- Current source: `content/guides/guizhou-village-basketball-culture/hero-source-20260815.png` (1536×1024).
 - Size: 1600 × 1000 px.
-- Asset class: AI-assisted Homeground editorial vector; AI-assisted: yes. It is a non-documentary project asset, not a photograph or a rendering of a verified place or event.
-- Treatment: top-down basketball court, abstract crowd dots, curved movement/crowd lines and a large night-light circle. It is visibly diagrammatic and is not presented as evidence of an actual match.
+- Asset class: AI-assisted Homeground miniature editorial raster; AI-assisted: yes. It is a non-documentary project asset, not a photograph or a rendering of a verified place or event.
+- Treatment: an elevated view of a circular clay-red court, abstract wooden peg spectators, unbranded canopy shapes, baskets, lamps and layered paper hills. It is visibly miniature and is not presented as evidence of an actual match.
 - Rights basis: Homeground-produced project asset; no person, team mark, league logo, map tile, social-media frame, news image or third-party photograph is incorporated.
 - Privacy: no recognisable face, child, plate, ticket, QR code, phone screen, private home, exact GPS marker or identifying banner.
-- Central visual QA recorded on 2026-08-13: passed.
-- Generated WebP SHA-256: `63bb58bdd4a31d56ddaa92f3caae6ea72d520b015f0f5857bbed98fef45b6cac`.
-- Source SVG SHA-256: `c4fc02b5bddfa5ee1e8a5d4989d56a9f48491ffb8f28ee0db898f2625844b6aa`.
-- Evidence boundary: the vector cannot establish Taipan Village, a named court, an actual Village BA match or festival, a crowd, a market, a performance, an event date, a schedule or night-time conditions. A real documentary replacement still requires central licensing and a fresh fact check.
-- Target-package check: the SVG and generated WebP are both present in the isolated worktree and match the recorded hashes.
+- Created, background-revised, selected by the project owner and visually checked: 2026-08-15.
+- Source PNG SHA-256: `613e83440ad717f670bb4bb9cc47f872ca039f350336666c9fc2defcfdddc996`.
+- Generated WebP SHA-256: `907a7f5f66375b0ca8a8a6c3fab452097ca224e58b8ed54e130e1de4a576d216`.
+- Derivative treatment: centred 16:10 crop, Lanczos resize, sRGB RGB export and metadata-stripped WebP encoding at quality 88.
+- Superseded source retained for history only: `hero-source.svg`, SHA-256 `c4fc02b5bddfa5ee1e8a5d4989d56a9f48491ffb8f28ee0db898f2625844b6aa`; it no longer generates the production hero.
+- Evidence boundary: the illustration cannot establish Taipan Village, a named court, an actual Village BA match or festival, a crowd, a market, a performance, an event date, a schedule or night-time conditions. A real documentary replacement still requires central licensing and a fresh fact check.
+- Target-package check: the approved PNG source and generated WebP are both present in the isolated worktree and match the recorded hashes.
 
 ## Real editorial photograph still needed
 
@@ -33,5 +35,5 @@ The preferred documentary replacement is **not cleared in this production pack**
 ## Alt/caption boundary
 
 - Alt text identifies an AI-assisted symbolic basketball-court illustration and states that it is not documentary; it must not present Taipan or a named event as visibly verified.
-- A caption may identify the article topic, but it must not assign an exact competition, date, crowd or venue to this vector.
+- A caption may identify the article topic, but it must not assign an exact competition, date, crowd or venue to this illustration.
 - Do not call an image “traditional,” “spontaneous,” “all-night” or “free” unless the image record and dated event notice support that wording.

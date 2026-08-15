@@ -2,22 +2,24 @@
 
 ## Safe launch hero
 
-- Format: AI-assisted Homeground editorial vector, 1600 × 1000 WebP; AI-assisted: yes.
-- Content: anonymous hand, generic wood/rubber stamp, red impression forming three simple museum-object silhouettes on a blank unbranded notebook; a small route line connects the motifs.
+- Format: AI-assisted Homeground miniature editorial raster, 1600 × 1000 WebP; AI-assisted: yes.
+- Content: a bright handmade-paper flat lay with an accordion notebook, three wooden stamp tools, one ink pad and abstract geometric impressions. No hand or named-museum motif appears.
 - Location claim: none. The image explains the national visitor practice and must not imitate a named museum's proprietary stamps.
 - Required disclosure in alt/caption: illustration; not a documentary photograph and not a current stamp design.
-- Rights basis: Homeground-produced project asset with retained SVG; no third-party photograph, named-museum motif, logo, mascot or stamp map is incorporated.
+- Rights basis: Homeground-produced AI-assisted project asset with the approved PNG source retained in the guide directory; no third-party photograph, named-museum motif, logo, mascot or stamp map is incorporated.
 - Privacy: no faces, admission tickets, booking QR codes, passports, ID cards, names or location data.
 
 ### Production asset record
 
-- Created and visually checked: 2026-08-13.
-- Source: `content/guides/why-china-museums-have-stamps/hero-source.svg`.
+- Created, selected by the project owner and visually checked: 2026-08-15.
+- Current source: `content/guides/why-china-museums-have-stamps/hero-source-20260815.png` (1536×1024).
 - Final: `public/images/guides/why-china-museums-have-stamps/hero-1600.webp` (1600×1000).
-- SVG SHA-256: `8a6a966c589a4650704cd445ea19ccc29f18b791ac3051f1f54938ad67a52370`.
-- WebP SHA-256: `0fbe022e8b382494acf98d17f155b103111a23f7f792a8ca8f28ab9f8b5c742d`.
+- Source PNG SHA-256: `fabe8ab84ccd22ee046e90a962c3cc14b1100211d5bf0dd5f31df8b23ad6d216`.
+- WebP SHA-256: `f0b4415cd14256adc1ae8914182fb6446d959cc5eae40090e192c1c2d3c0ccc6`.
+- Derivative treatment: centred 16:10 crop, Lanczos resize, sRGB RGB export and metadata-stripped WebP encoding at quality 88.
+- Superseded source retained for history only: `hero-source.svg`, SHA-256 `8a6a966c589a4650704cd445ea19ccc29f18b791ac3051f1f54938ad67a52370`; it no longer generates the production hero.
 - Privacy and rights check: no person, passport, admission record, QR code, logo, named museum design, proprietary motif, location data or documentary claim.
-- Evidence boundary: the vector cannot establish a real museum, visitor, stamp point, stamp design, object, route, price, availability or event.
+- Evidence boundary: the illustration cannot establish a real museum, visitor, stamp point, stamp design, object, route, price, availability or event.
 
 ## Optional real editorial photograph (central licensing only)
 
