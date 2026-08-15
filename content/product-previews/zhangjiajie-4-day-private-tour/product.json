@@ -3,14 +3,16 @@
   "product_id": "zjj-4d3n-private-2026",
   "status": "published",
   "public_eligible": true,
-  "updated_at": "2026-08-15T10:25:00+08:00",
+  "updated_at": "2026-08-16T01:28:39+08:00",
   "title": {
     "zh-CN": "张家界4天3晚：峰林、玻璃桥与天门山",
-    "en": "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain"
+    "en": "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain",
+    "ko": "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산"
   },
   "short_description": {
     "zh-CN": "用4天3晚走进砂岩峰林、大峡谷玻璃桥与天门山，抵达日不赶路，三天游览各有自己的高潮。",
-    "en": "Four carefully paced days through Zhangjiajie's sandstone peaks, the Grand Canyon Glass Bridge and Tianmen Mountain."
+    "en": "Four carefully paced days through Zhangjiajie's sandstone peaks, the Grand Canyon Glass Bridge and Tianmen Mountain.",
+    "ko": "장자제의 사암 봉우리와 대협곡 유리다리, 톈먼산을 서두르지 않고 만나는 4일 3박 일정입니다."
   },
   "duration": {
     "days": 4,
@@ -33,6 +35,7 @@
       "day": 1,
       "title_zh": "抵达张家界，先把脚步放慢",
       "title_en": "Arrive in Zhangjiajie, Then Exhale",
+      "title_ko": "장자제에 도착해 천천히 시작하기",
       "summary_zh": "机场或高铁站接客，送往最终确认的酒店，自由活动。",
       "guide_planned": false,
       "fact_ids": ["day-one-transfer-no-guide"]
@@ -41,6 +44,7 @@
       "day": 2,
       "title_zh": "走进砂岩峰林：袁家界与天子山",
       "title_en": "Into the Sandstone Forest: Yuanjiajie and Tianzi Mountain",
+      "title_ko": "사암 봉우리 사이로: 위안자제와 톈쯔산",
       "summary_zh": "百龙天梯、袁家界、天子山及天子山索道等核心游览。",
       "guide_planned": true,
       "fact_ids": ["guide-three-days"]
@@ -49,6 +53,7 @@
       "day": 3,
       "title_zh": "跨过峡谷，再选洞穴或湖面",
       "title_en": "Cross the Canyon, Then Choose Cave or Lake",
+      "title_ko": "대협곡을 건넌 뒤, 동굴 또는 호수 선택",
       "summary_zh": "大峡谷玻璃桥，之后安排黄龙洞或宝峰湖二选一；以最终确认单为准。",
       "guide_planned": true,
       "fact_ids": ["ticket-bundle-itemization"]
@@ -57,6 +62,7 @@
       "day": 4,
       "title_zh": "以天门山收尾，再启程",
       "title_en": "Tianmen Mountain, Then Onward",
+      "title_ko": "톈먼산으로 마무리하고 다음 여정으로",
       "summary_zh": "按票源采用A/B/C线游览，结束后送机场或车站。",
       "guide_planned": true,
       "fact_ids": ["guide-three-days", "ticket-bundle-itemization"]
@@ -94,7 +100,8 @@
   "primary_cta": {
     "type": "inquiry",
     "label_zh": "让 Homeground 帮你规划张家界",
-    "label_en": "Plan Zhangjiajie with Homeground"
+    "label_en": "Plan Zhangjiajie with Homeground",
+    "label_ko": "Homeground와 장자제 여행 계획하기"
   },
   "seo": {
     "slug": "zhangjiajie-4-day-private-tour",

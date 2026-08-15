@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ZhangjiajiePrivateTourPreviewPage } from "../../../../../components/ZhangjiajiePrivateTourPreviewPage";
 import {
   productPreviewCopy,
+  type ProductPreviewLocale,
   zhangjiajiePrivateTourPaths,
 } from "../../../../../lib/zhangjiajiePrivateTourPreview";
 
@@ -12,12 +13,14 @@ const socialImage =
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [{ locale: "zh" }];
+  return [{ locale: "zh" }, { locale: "ko" }];
 }
 
-function requireChinese(locale: string) {
-  if (locale !== "zh") notFound();
-  return "zh" as const;
+type LocalizedLocale = Exclude<ProductPreviewLocale, "en">;
+
+function localizedLocale(value: string): LocalizedLocale {
+  if (value === "zh" || value === "ko") return value;
+  notFound();
 }
 
 export async function generateMetadata({
@@ -26,17 +29,24 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale: routeLocale } = await params;
-  requireChinese(routeLocale);
-  const copy = productPreviewCopy.zh;
+  const locale = localizedLocale(routeLocale);
+  const copy = productPreviewCopy[locale];
+  const canonicalPath = zhangjiajiePrivateTourPaths[locale];
+  const openGraphLocale = locale === "zh" ? "zh_CN" : "ko_KR";
+  const socialImageAlt =
+    locale === "zh"
+      ? "阳光照亮张家界国家森林公园的砂岩峰柱。"
+      : "햇살이 비치는 장자제 국가삼림공원의 사암 봉우리.";
 
   return {
     title: copy.metadataTitle,
     description: copy.metadataDescription,
     alternates: {
-      canonical: zhangjiajiePrivateTourPaths.zh,
+      canonical: canonicalPath,
       languages: {
         en: zhangjiajiePrivateTourPaths.en,
         "zh-Hans": zhangjiajiePrivateTourPaths.zh,
+        ko: zhangjiajiePrivateTourPaths.ko,
         "x-default": zhangjiajiePrivateTourPaths.en,
       },
     },
@@ -54,15 +64,16 @@ export async function generateMetadata({
       title: copy.heroTitle,
       description: copy.metadataDescription,
       type: "website",
-      locale: "zh_CN",
-      alternateLocale: ["en_US"],
-      url: zhangjiajiePrivateTourPaths.zh,
+      locale: openGraphLocale,
+      alternateLocale:
+        locale === "zh" ? ["en_US", "ko_KR"] : ["en_US", "zh_CN"],
+      url: canonicalPath,
       images: [
         {
           url: socialImage,
           width: 1200,
           height: 630,
-          alt: "阳光照亮张家界国家森林公园的砂岩峰柱。",
+          alt: socialImageAlt,
         },
       ],
     },
@@ -81,7 +92,7 @@ export default async function LocalizedZhangjiajiePrivateTourRoute({
   params: Promise<{ locale: string }>;
 }) {
   const { locale: routeLocale } = await params;
-  const locale = requireChinese(routeLocale);
+  const locale = localizedLocale(routeLocale);
 
   return <ZhangjiajiePrivateTourPreviewPage locale={locale} published />;
 }

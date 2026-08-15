@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 
@@ -12,7 +12,7 @@ const productPath =
 const pricingPath =
   "content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
 
-test("published product has indexable EN/ZH routes while local previews stay closed", async () => {
+test("published product has indexable EN/ZH/KO routes while local previews stay closed", async () => {
   const [
     product,
     pricing,
@@ -40,25 +40,33 @@ test("published product has indexable EN/ZH routes while local previews stay clo
   assert.equal(product.status, "published");
   assert.equal(product.public_eligible, true);
   assert.equal(product.seo.indexable, true);
+  assert.match(product.title.ko, /장자제/);
+  assert.equal(product.route.length, 4);
+  assert.ok(product.route.every((day) => day.title_ko));
   assert.equal(pricing.status, "approved_price_decision");
   assert.equal(pricing.public_eligible, true);
   assert.equal(pricing.approved_decision_id, product.price_display.approved_decision_id);
+  assert.match(pricing.public_notes.ko, /성인/);
+  assert.ok(pricing.tiers.every((tier) => tier.name_ko));
 
   assert.match(defaultPreviewRoute, /process\.env\.NODE_ENV === "production"/);
   assert.match(defaultPreviewRoute, /notFound\(\)/);
   assert.match(defaultPreviewRoute, /index: false, follow: false/);
   assert.match(localizedPreviewRoute, /process\.env\.NODE_ENV === "production"/);
-  assert.match(localizedPreviewRoute, /locale !== "zh"/);
+  assert.match(localizedPreviewRoute, /value === "zh" \|\| value === "ko"/);
   assert.match(localizedPreviewRoute, /index: false, follow: false/);
 
   assert.match(defaultPublicRoute, /zhangjiajiePrivateTourPaths\.en/);
   assert.match(defaultPublicRoute, /index: true/);
   assert.match(defaultPublicRoute, /follow: true/);
   assert.match(defaultPublicRoute, /locale="en" published/);
-  assert.match(localizedPublicRoute, /requireChinese\(routeLocale\)/);
+  assert.match(localizedPublicRoute, /localizedLocale\(routeLocale\)/);
   assert.match(localizedPublicRoute, /dynamicParams = false/);
-  assert.match(localizedPublicRoute, /return \[\{ locale: "zh" \}\]/);
-  assert.match(localizedPublicRoute, /zhangjiajiePrivateTourPaths\.zh/);
+  assert.match(
+    localizedPublicRoute,
+    /return \[\{ locale: "zh" \}, \{ locale: "ko" \}\]/,
+  );
+  assert.match(localizedPublicRoute, /zhangjiajiePrivateTourPaths\[locale\]/);
   assert.match(localizedPublicRoute, /index: true/);
   assert.match(localizedPublicRoute, /follow: true/);
   assert.match(localizedPublicRoute, /locale=\{locale\} published/);
@@ -70,6 +78,12 @@ test("published product has indexable EN/ZH routes while local previews stay clo
     productHelper,
     /zh: "\/zh\/tours\/zhangjiajie-4-day-private-tour\/"/,
   );
+  assert.match(
+    productHelper,
+    /ko: "\/ko\/tours\/zhangjiajie-4-day-private-tour\/"/,
+  );
+  assert.match(productHelper, /ko: \{/);
+  assert.match(productHelper, /htmlLang: "ko"/);
 });
 
 test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
@@ -101,7 +115,11 @@ test("manifest, sitemap and homepage expose the product independently of the gui
     homeCard,
     /canonicalPath: "\/zh\/tours\/zhangjiajie-4-day-private-tour\/"/,
   );
-  assert.match(homeCard, /locale === "ko" \? null : cards\[locale\]/);
+  assert.match(
+    homeCard,
+    /canonicalPath: "\/ko\/tours\/zhangjiajie-4-day-private-tour\/"/,
+  );
+  assert.match(homeCard, /return cards\[locale\]/);
 });
 
 test("production pruning removes previews but retains published routes and product assets", async () => {
@@ -117,10 +135,7 @@ test("production pruning removes previews but retains published routes and produ
   assert.match(exportPruner, /"ko\/preview"/);
   assert.match(exportPruner, /\(default\)\/preview/);
   assert.match(exportPruner, /\(localized\)\/\[locale\]\/preview/);
-  assert.match(
-    exportPruner,
-    /"ko\/tours\/zhangjiajie-4-day-private-tour"/,
-  );
+  assert.doesNotMatch(exportPruner, /unsupportedLocalizedProductExportRoots/);
   assert.doesNotMatch(
     sourceOnlyAssetBlock,
     /product-previews\/zhangjiajie-4-day-private-tour/,
@@ -129,9 +144,12 @@ test("production pruning removes previews but retains published routes and produ
   for (const requiredOutput of [
     "tours/zhangjiajie-4-day-private-tour/index.html",
     "zh/tours/zhangjiajie-4-day-private-tour/index.html",
+    "ko/tours/zhangjiajie-4-day-private-tour/index.html",
     "product-previews/zhangjiajie-4-day-private-tour/hero/forest-pillars-og-1200.jpg",
     "product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
     "product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
+    "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-window.jpg",
+    "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin.jpg",
     "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-shower.jpg",
   ]) {
     assert.match(
@@ -158,22 +176,22 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(page, /GuideCtaLink/);
   assert.match(page, /className=\{styles\.articleJump\}/);
   assert.doesNotMatch(page, /mode="hero"|heroPricePanel/);
-  assert.match(copy, /city-nihao-twin\.jpg/);
-  assert.match(copy, /city-nihao-twin-entry\.jpg/);
-  assert.match(copy, /city-west-exterior\.jpg/);
-  assert.match(copy, /city-west-twin\.jpg/);
-  assert.match(copy, /city-west-double\.jpg/);
-  assert.match(copy, /city-west-twin-decorated\.jpg/);
-  assert.match(copy, /city-west-bathroom\.jpg/);
+  assert.match(copy, /city-candidate-01-twin-window\.jpg/);
+  assert.match(copy, /city-candidate-01-twin-entry\.jpg/);
+  assert.match(copy, /city-candidate-02-twin\.jpg/);
+  assert.match(copy, /city-candidate-02-double\.jpg/);
+  assert.match(copy, /city-candidate-02-twin-decorated\.jpg/);
+  assert.match(copy, /city-candidate-02-bathroom\.jpg/);
+  assert.doesNotMatch(copy, /city-candidate-02-exterior\.jpg/);
   assert.match(copy, /family-villa-living\.jpg/);
   assert.match(copy, /family-villa-twin\.jpg/);
   assert.match(copy, /family-villa-double\.jpg/);
-  assert.match(copy, /family-villa-bathroom\.jpg/);
+  assert.doesNotMatch(copy, /family-villa-bathroom\.jpg/);
   assert.match(copy, /family-villa-terrace\.jpg/);
-  assert.match(copy, /family-villa-recreation\.jpg/);
+  assert.doesNotMatch(copy, /family-villa-recreation\.jpg/);
   assert.match(copy, /signature-villa-terrace\.jpg/);
   assert.match(copy, /signature-villa-suite\.jpg/);
-  assert.match(copy, /signature-villa-exterior\.jpg/);
+  assert.doesNotMatch(copy, /signature-villa-exterior\.jpg/);
   assert.match(copy, /signature-villa-four-poster\.jpg/);
   assert.match(copy, /signature-villa-fireplace-room\.jpg/);
   assert.match(copy, /signature-villa-garden-lounge\.jpg/);
@@ -202,14 +220,45 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(copy, /only part of the hotel selection we can arrange/);
   assert.match(copy, /不只限于页面里的酒店/);
   assert.match(copy, /页面仅展示部分住宿/);
+  assert.match(copy, /화면에 보이는 숙소만 선택할 필요는 없습니다/);
   assert.match(page, /className=\{styles\.stayChoiceNote\}/);
   assert.doesNotMatch(
     copy,
-    /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱/,
+    /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱|city-nihao|city-west/i,
   );
+  assert.match(imagePlan, /deterministic publication edits, not\s+AI-generated or AI-assisted/);
   assert.doesNotMatch(copy, /previewAssetNote|Internal preview photographs|内部预览照片/);
   assert.doesNotMatch(page, /styles\.previewAssetNote|copy\.previewAssetNote/);
   assert.doesNotMatch(copy, /Check dates and room availability|查询日期与可订房型/);
+  assert.doesNotMatch(
+    [copy, page, css].join("\n"),
+    /guideBridge|Still deciding whether Zhangjiajie needs two, three or four|还在比较张家界到底需要2、3还是4个完整游览日/,
+  );
+  assert.doesNotMatch(
+    [copy, imagePlan].join("\n"),
+    /family-villa-(?:bathroom|recreation)\.jpg/,
+  );
+
+  for (const removedAsset of [
+    "family-villa-bathroom.jpg",
+    "family-villa-recreation.jpg",
+    "city-candidate-02-exterior.jpg",
+    "signature-villa-exterior.jpg",
+    "city-nihao-twin.jpg",
+    "city-nihao-twin-entry.jpg",
+    "city-west-twin.jpg",
+    "city-west-double.jpg",
+  ]) {
+    await assert.rejects(
+      access(
+        path.join(
+          projectRoot,
+          "public/product-previews/zhangjiajie-4-day-private-tour/accommodations",
+          removedAsset,
+        ),
+      ),
+    );
+  }
   assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
 });
 
@@ -229,7 +278,7 @@ test("visible product scope contains no deposit amount or percentage promise", a
 
   assert.doesNotMatch(
     visibleProductSources.join("\n"),
-    /\bdeposit\b|定金|订金|(?:30|35)\s*(?:%|％)/iu,
+    /\bdeposit\b|定金|订金|계약금|예약금|선금|(?:30|35)\s*(?:%|％)/iu,
   );
 });
 
@@ -263,6 +312,7 @@ test("approved prices cross the client boundary as a public projection only", as
     /useState<PriceWindowStatus>\("checking"\)/,
   );
   assert.match(priceWindow, /copy\.expiredPrice/);
+  assert.match(priceWindow, /copy\.validThrough/);
   assert.doesNotMatch(
     [helper, page].join("\n"),
     /AggregateOffer|lowPrice|highPrice/,
@@ -287,6 +337,7 @@ test("post-prune scan rejects preview labels and internal product markers across
     "approved-public-pricing-20260815",
     "Local editorial preview",
     "本地文章预览",
+    "로컬 편집 미리보기",
     "public_eligible",
     "approved_decision_id",
     "pricing_source",

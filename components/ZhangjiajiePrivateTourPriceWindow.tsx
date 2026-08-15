@@ -31,10 +31,17 @@ interface PriceCopy {
   perPerson: string;
   regularLabel: string;
   exactStayNote: string;
+  validThrough: string;
 }
 
 function formatPrice(value: number, locale: ProductPreviewLocale) {
-  return new Intl.NumberFormat(locale === "zh" ? "zh-CN" : "en", {
+  const numberLocale = {
+    en: "en",
+    zh: "zh-CN",
+    ko: "ko-KR",
+  }[locale];
+
+  return new Intl.NumberFormat(numberLocale, {
     maximumFractionDigits: 0,
   }).format(value);
 }
@@ -84,6 +91,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
 
   return (
     <div aria-live="polite">
+      <p className={styles.priceValidity}>{copy.validThrough}</p>
       <div className={styles.priceGrid}>
         {pricing.tiers.map((tier) => {
           const fromPrice = tier.fromPrice;

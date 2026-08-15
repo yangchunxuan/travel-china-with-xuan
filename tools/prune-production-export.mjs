@@ -26,13 +26,6 @@ const privatePreviewExportRoots = [
   "ko/preview",
 ];
 
-// The product currently has reviewed English and Chinese copy only. Next may
-// still emit a static not-found file for the parent layout's Korean locale;
-// remove that soft-404 artifact until a real Korean product page exists.
-const unsupportedLocalizedProductExportRoots = [
-  "ko/tours/zhangjiajie-4-day-private-tour",
-];
-
 const sourceOnlyAssetRoots = [
   "images/guides/zhangjiajie/restored",
 ];
@@ -42,6 +35,7 @@ const forbiddenProductionMarkers = [
   ["internal pricing decision id", "approved-public-pricing-20260815"],
   ["English local-preview ribbon", "Local editorial preview"],
   ["Chinese local-preview ribbon", "本地文章预览"],
+  ["Korean local-preview ribbon", "로컬 편집 미리보기"],
   ["internal product eligibility", "public_eligible"],
   ["internal pricing approval field", "approved_decision_id"],
   ["internal pricing source field", "pricing_source"],
@@ -86,16 +80,6 @@ for (const relativeRoot of labExportRoots) {
 }
 
 for (const relativeRoot of privatePreviewExportRoots) {
-  const target = path.resolve(outputRoot, relativeRoot);
-
-  if (!target.startsWith(`${outputRoot}${path.sep}`)) {
-    throw new Error(`Refusing to prune path outside export root: ${target}`);
-  }
-
-  await rm(target, { recursive: true, force: true });
-}
-
-for (const relativeRoot of unsupportedLocalizedProductExportRoots) {
   const target = path.resolve(outputRoot, relativeRoot);
 
   if (!target.startsWith(`${outputRoot}${path.sep}`)) {
@@ -283,6 +267,7 @@ for (const requiredPage of [
   "ko/guides/zhangjiajie-from-malaysia/index.html",
   "tours/zhangjiajie-4-day-private-tour/index.html",
   "zh/tours/zhangjiajie-4-day-private-tour/index.html",
+  "ko/tours/zhangjiajie-4-day-private-tour/index.html",
 ]) {
   const requiredPath = path.join(outputRoot, requiredPage);
   const requiredStat = await lstat(requiredPath);
@@ -310,22 +295,18 @@ for (const requiredAsset of [
   "images/guides/zhangjiajie-from-malaysia/park-entrance-1200.jpg",
   "images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-card-1200.webp",
   "images/guides/zhangjiajie-from-malaysia/malaysia-zhangjiajie-og-1200.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-bathroom.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-exterior.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin-decorated.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-entry.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-window.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-bathroom.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-double.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin-decorated.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-double.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-twin.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-bathtub.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-colour-room.jpg",
-  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-fireplace-room.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-four-poster.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-garden-lounge.jpg",
@@ -350,6 +331,31 @@ for (const requiredAsset of [
   }
 }
 
+for (const forbiddenAsset of [
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-exterior.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
+  "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
+]) {
+  const forbiddenPath = path.join(outputRoot, forbiddenAsset);
+
+  try {
+    await lstat(forbiddenPath);
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      continue;
+    }
+
+    throw error;
+  }
+
+  throw new Error(`Withdrawn production asset is still exported: ${forbiddenAsset}`);
+}
+
 console.log(
-  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${privatePreviewExportRoots.length} private-preview roots, ${unsupportedLocalizedProductExportRoots.length} unsupported localized product root, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and unpublished client chunks removed), and ${sourceOnlyAssetRoots.length} source-only asset root; required tour pages/assets remain and ${forbiddenProductionMarkers.length} private markers are absent from out/.`,
+  `✓ Production export excludes ${labExportRoots.length} experimental roots, ${privatePreviewExportRoots.length} private-preview roots, ${emptyGuideSentinelRoots.length} empty-guide sentinels (${prunedManifestEntries} manifest entries and unpublished client chunks removed), and ${sourceOnlyAssetRoots.length} source-only asset root; required tour pages/assets remain and ${forbiddenProductionMarkers.length} private markers are absent from out/.`,
 );

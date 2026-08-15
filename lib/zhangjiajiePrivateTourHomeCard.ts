@@ -13,7 +13,7 @@ const cards = {
       "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park.",
     cardImageWidth: 1280,
     cardImageHeight: 1600,
-    dateModified: "2026-08-15",
+    dateModified: "2026-08-16",
   },
   zh: {
     id: "zhangjiajie-4-day-private-tour",
@@ -25,10 +25,23 @@ const cards = {
     cardImageAlt: "阳光照亮张家界国家森林公园的砂岩峰柱与深谷。",
     cardImageWidth: 1280,
     cardImageHeight: 1600,
-    dateModified: "2026-08-15",
+    dateModified: "2026-08-16",
+  },
+  ko: {
+    id: "zhangjiajie-4-day-private-tour",
+    canonicalPath: "/ko/tours/zhangjiajie-4-day-private-tour/",
+    headline: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+    featuredLinkLabel: "4일 3박 프라이빗 일정 보기",
+    cardImagePath:
+      "/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
+    cardImageAlt:
+      "햇살이 비치는 장자제 국가삼림공원의 사암 봉우리와 숲이 우거진 깊은 계곡.",
+    cardImageWidth: 1280,
+    cardImageHeight: 1600,
+    dateModified: "2026-08-16",
   },
 } as const;
 
 export function getZhangjiajiePrivateTourHomeCard(locale: HomegroundLocale) {
-  return locale === "ko" ? null : cards[locale];
+  return cards[locale];
 }

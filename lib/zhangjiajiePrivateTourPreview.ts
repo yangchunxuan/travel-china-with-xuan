@@ -1,7 +1,7 @@
 import product from "../content/product-previews/zhangjiajie-4-day-private-tour/product.json";
 import pricing from "../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
 
-export type ProductPreviewLocale = "en" | "zh";
+export type ProductPreviewLocale = "en" | "zh" | "ko";
 
 export { product as zhangjiajiePrivateTourProduct };
 export { pricing as zhangjiajiePrivateTourPricing };
@@ -9,11 +9,13 @@ export { pricing as zhangjiajiePrivateTourPricing };
 export const zhangjiajiePrivateTourPreviewPaths = {
   en: "/preview/zhangjiajie-4-day-private-tour/",
   zh: "/zh/preview/zhangjiajie-4-day-private-tour/",
+  ko: "/ko/preview/zhangjiajie-4-day-private-tour/",
 } as const;
 
 export const zhangjiajiePrivateTourPaths = {
   en: "/tours/zhangjiajie-4-day-private-tour/",
   zh: "/zh/tours/zhangjiajie-4-day-private-tour/",
+  ko: "/ko/tours/zhangjiajie-4-day-private-tour/",
 } as const;
 
 export const productPreviewCopy = {
@@ -49,11 +51,6 @@ export const productPreviewCopy = {
     whyTitle: "Four days, without turning Zhangjiajie into a race",
     whyIntro:
       "Zhangjiajie is not one viewpoint. It is a journey through sandstone pillars, a canyon crossing, cave or lake scenery, and the high slopes of Tianmen Mountain. This route gives the National Forest Park its own full day, keeps the Grand Canyon separate and lets the final mountain feel like a finale—not one more stop forced into a crowded list.",
-    guideBridgeTitle:
-      "Still deciding whether Zhangjiajie needs two, three or four full sightseeing days?",
-    guideBridgeBody:
-      "This page is one ready 4-day, 3-night private route. Our independent itinerary guide compares the wider choices and what each trip length leaves out.",
-    guideBridgeAction: "Compare 2, 3 and 4 full sightseeing days",
     benefits: [
       [
         "A gentle arrival",
@@ -91,7 +88,7 @@ export const productPreviewCopy = {
       "These photographs show only part of the hotel selection we can arrange. If none fits your preferred style, location or room setup, tell us what matters most. We can screen other Zhangjiajie hotels for your dates, so you can keep the four-day route you like and confirm a better fit before payment.",
     accommodationOptions: [
       {
-        id: "city-nihao",
+        id: "city-candidate-01",
         label: "City candidate 01",
         name: "Modern City Stay",
         price: "City-stay tier",
@@ -99,59 +96,52 @@ export const productPreviewCopy = {
           "A bright, contemporary city candidate shown through both available twin-room photographs. The window outlook and exact room remain subject to the date-specific assignment.",
         images: [
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-window.jpg",
             alt: "Bright twin room with two beds and a window outlook",
             caption: "City candidate 01 · twin room and window reference",
-            width: 1206,
+            width: 1016,
             height: 782,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-entry.jpg",
             alt: "Twin room with its entrance and vanity area visible",
             caption: "City candidate 01 · twin room, entrance and vanity reference",
-            width: 1206,
+            width: 830,
             height: 775,
           },
         ],
       },
       {
-        id: "city-west",
+        id: "city-candidate-02",
         label: "City candidate 02",
         name: "Comfortable City Stay",
         price: "City-stay tier",
         summary:
-          "The complete candidate set shows the hotel exterior, twin and double rooms, a specially decorated twin room and a bathroom. Balloons, floral styling and the window outlook are photographed examples, not standard guarantees.",
+          "Four candidate views show twin and double rooms, a specially decorated twin room and a bathroom. Balloons, floral styling and the window outlook are photographed examples, not standard guarantees.",
         images: [
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-exterior.jpg",
-            alt: "Exterior of the second city-stay candidate",
-            caption: "City candidate 02 · exterior reference",
-            width: 1206,
-            height: 763,
-          },
-          {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin.jpg",
             alt: "Twin room and window outlook in the second city-stay set",
             caption: "City candidate 02 · twin-room and window reference",
             width: 1206,
             height: 746,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-double.jpg",
             alt: "Double room in the second city-stay set",
             caption: "City candidate 02 · double-room reference",
             width: 1206,
             height: 788,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin-decorated.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin-decorated.jpg",
             alt: "Twin room with a special balloon and towel setup",
             caption: "City candidate 02 · special twin-room setup, not a standard inclusion",
             width: 1206,
             height: 785,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-bathroom.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-bathroom.jpg",
             alt: "Bathroom with shower and wall-mounted hair dryer",
             caption: "City candidate 02 · bathroom and shower reference",
             width: 1206,
@@ -165,7 +155,7 @@ export const productPreviewCopy = {
         name: "Spacious Premium Stay",
         price: "Spacious premium tier",
         summary:
-          "For travellers who want the evening to feel spacious rather than merely functional. This candidate set shows the living room, twin room, double room, bathroom, terrace and recreation area; the exact accommodation and room allocation are confirmed for the dates.",
+          "For travellers who want the evening to feel spacious rather than merely functional. This candidate set shows the living room, twin room, double room and terrace; the exact accommodation and room allocation are confirmed for the dates.",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
@@ -189,25 +179,11 @@ export const productPreviewCopy = {
             height: 1050,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
-            alt: "Bathroom with an enclosed shower in the premium-stay set",
-            caption: "Premium-stay material set · bathroom and enclosed-shower reference",
-            width: 1050,
-            height: 1400,
-          },
-          {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
             alt: "Outdoor deck and lawn in the premium-stay set",
             caption: "Premium-stay material set · deck and lawn reference",
             width: 1400,
             height: 1050,
-          },
-          {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
-            alt: "Bright recreation area with a mahjong table in the premium-stay set",
-            caption: "Premium-stay material set · recreation-area reference",
-            width: 980,
-            height: 1400,
           },
         ],
       },
@@ -217,15 +193,8 @@ export const productPreviewCopy = {
         name: "Distinctive Mountain Stay",
         price: "Distinctive mountain tier",
         summary:
-          "Twelve candidate views show the exterior, dining terrace, several room styles, bathrooms and quiet lounge spaces. Together they convey the character of this more distinctive stay; they do not promise that every feature, view or layout belongs to one bookable room.",
+          "Eleven candidate views show the dining terrace, several room styles, bathrooms and quiet lounge spaces. Together they convey the character of this more distinctive stay; they do not promise that every feature, view or layout belongs to one bookable room.",
         images: [
-          {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
-            alt: "Exterior and landscaped entrance of the mountain-stay candidate",
-            caption: "Mountain-stay candidate · exterior reference",
-            width: 1600,
-            height: 1091,
-          },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
             alt: "Glass-enclosed dining area with trees and distant mountains in the signature-stay candidate set",
@@ -438,10 +407,6 @@ export const productPreviewCopy = {
     whyTitle: "四天看见张家界，不把它赶成一张打卡表",
     whyIntro:
       "张家界不是一个观景台，而是峰林、峡谷、洞穴或湖面，再到天门山高处的一段连续变化。这个安排把森林公园留出完整一天，把大峡谷单独展开，也让抵达日不必匆忙；最后以天门山收尾，而不是把离开前一天塞成另一张景点清单。",
-    guideBridgeTitle: "还在比较张家界到底需要2、3还是4个完整游览日？",
-    guideBridgeBody:
-      "本页是一条已经排好的4天3晚私家路线；独立行程指南会进一步比较不同天数能留下什么、必须舍弃什么。",
-    guideBridgeAction: "比较2、3、4个完整游览日",
     benefits: [
       [
         "抵达日，先慢下来",
@@ -479,7 +444,7 @@ export const productPreviewCopy = {
       "页面仅展示部分住宿。如果这些酒店不合适，我们可按你的风格、位置和房型偏好继续匹配，确认满意后再付款。",
     accommodationOptions: [
       {
-        id: "city-nihao",
+        id: "city-candidate-01",
         label: "市区候选01",
         name: "现代市区住宿",
         price: "市区住宿档",
@@ -487,59 +452,52 @@ export const productPreviewCopy = {
           "一组明亮、现代的市区住宿候选，现有两张双床房照片全部展示。窗外景观与准确房型仍按实际日期分配。",
         images: [
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-window.jpg",
             alt: "明亮的双床房与窗外景观",
             caption: "市区候选01 · 双床房与窗景参考",
-            width: 1206,
+            width: 1016,
             height: 782,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-entry.jpg",
             alt: "双床房、入口与洗漱区",
             caption: "市区候选01 · 双床房、入口与洗漱区参考",
-            width: 1206,
+            width: 830,
             height: 775,
           },
         ],
       },
       {
-        id: "city-west",
+        id: "city-candidate-02",
         label: "市区候选02",
         name: "舒适市区住宿",
         price: "市区住宿档",
         summary:
-          "现有候选素材全部展示：酒店外观、双床房、大床房、特殊布置双床房与卫生间。气球、花饰及窗外景观属于拍摄示例，不是标准保证。",
+          "4张候选照片展示双床房、大床房、特殊布置双床房与卫生间。气球、花饰及窗外景观属于拍摄示例，不是标准保证。",
         images: [
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-exterior.jpg",
-            alt: "第二组市区住宿候选的建筑外观",
-            caption: "市区候选02 · 建筑外观参考",
-            width: 1206,
-            height: 763,
-          },
-          {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin.jpg",
             alt: "第二组市区住宿中的双床房与窗外景观",
             caption: "市区候选02 · 双床房与窗景参考",
             width: 1206,
             height: 746,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-double.jpg",
             alt: "第二组市区住宿中的大床房",
             caption: "市区候选02 · 大床房参考",
             width: 1206,
             height: 788,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin-decorated.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin-decorated.jpg",
             alt: "带特殊气球与毛巾布置的双床房",
             caption: "市区候选02 · 特殊双床房布置，并非标准包含",
             width: 1206,
             height: 785,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-bathroom.jpg",
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-bathroom.jpg",
             alt: "带淋浴与壁挂吹风机的卫生间",
             caption: "市区候选02 · 卫生间与淋浴设施参考",
             width: 1206,
@@ -553,7 +511,7 @@ export const productPreviewCopy = {
         name: "宽敞高级住宿",
         price: "宽敞高级住宿档",
         summary:
-          "适合希望一天游览后仍能舒展下来、而不是只回房睡觉的旅客。候选素材完整展示客厅、双床房、大床房、卫生间、露台与休闲区；具体住宿和房间分配按日期确认。",
+          "适合希望一天游览后仍能舒展下来、而不是只回房睡觉的旅客。候选素材展示客厅、双床房、大床房与露台；具体住宿和房间分配按日期确认。",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
@@ -577,25 +535,11 @@ export const productPreviewCopy = {
             height: 1050,
           },
           {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
-            alt: "高级住宿候选中带独立淋浴间的卫生间",
-            caption: "高级住宿素材组 · 卫生间与独立淋浴参考",
-            width: 1050,
-            height: 1400,
-          },
-          {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
             alt: "高级住宿候选中的户外露台与草坪",
             caption: "高级住宿素材组 · 露台与草坪参考",
             width: 1400,
             height: 1050,
-          },
-          {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
-            alt: "高级住宿候选中带麻将桌的明亮休闲区",
-            caption: "高级住宿素材组 · 休闲区参考",
-            width: 980,
-            height: 1400,
           },
         ],
       },
@@ -605,15 +549,8 @@ export const productPreviewCopy = {
         name: "精品山景住宿",
         price: "精品山景住宿档",
         summary:
-          "12张候选照片完整呈现建筑外观、景观餐厅、不同客房、卫浴与休息空间，让这一档住宿的气质更具体；但不代表所有设施、景观与布局都同时属于同一间可订客房。",
+          "11张候选照片呈现景观餐厅、不同客房、卫浴与休息空间，让这一档住宿的气质更具体；但不代表所有设施、景观与布局都同时属于同一间可订客房。",
         images: [
-          {
-            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
-            alt: "精品山景住宿候选的建筑外观与景观入口",
-            caption: "精品山景住宿 · 建筑外观参考",
-            width: 1600,
-            height: 1091,
-          },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
             alt: "玻璃围合的用餐区，桌椅旁可见绿树与远处山体",
@@ -796,6 +733,364 @@ export const productPreviewCopy = {
       "发来出行月份、抵达地点、同行人数、儿童年龄与想要的住宿感受。Homeground 会先把这条路线变成一份真正适配日期的方案，再讨论付款。",
     finalCtaLabel: "让 Homeground 帮你规划张家界",
   },
+  ko: {
+    htmlLang: "ko",
+    metadataTitle: "장자제(장가계) 4일 3박 프라이빗 여행: 일정·2026년 가격",
+    metadataDescription:
+      "장자제 국가삼림공원, 대협곡 유리다리와 톈먼산을 잇는 4일 3박 프라이빗 일정입니다. 숙소 선택과 실제 날짜를 확인한 서면 견적을 안내합니다.",
+    previewLabel: "로컬 편집 미리보기 · 현재 예약 불가",
+    skipLink: "본문으로 바로가기",
+    breadcrumbLabel: "현재 위치",
+    homeLabel: "홈",
+    previewBreadcrumb: "장자제 4일 일정",
+    eyebrow: "4일 · 3박 · 장자제 프라이빗 일정",
+    heroTitle: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+    heroLede:
+      "나흘 동안 장자제의 사암 봉우리와 대협곡 유리다리, 톈먼산을 차례로 만납니다. 첫날은 서두르지 않고 도착하며, 이후 사흘은 서로 다른 풍경에 집중합니다. 같은 일정도 숙소 선택에 따라 여행의 분위기가 달라집니다.",
+    secondaryCta: "4일 일정부터 보기",
+    validThrough: "가격 적용 기간: 2026년 8월 15일–31일",
+    checkingPrice: "현재 가격 적용 기간을 확인하고 있습니다…",
+    expiredPrice:
+      "고정 가격의 유효기간이 지났습니다. 이 금액을 참고하기 전에 새 견적을 요청해 주세요.",
+    fromLabel: "최저",
+    regularLabel: "일반가",
+    perPerson: "1인 기준",
+    featured: "기본 옵션",
+    exactStayNote:
+      "정확한 숙소, 객실 유형, 조식, 객실 수와 예약 가능 여부는 결제 전 서면 확인 내용을 기준으로 합니다.",
+    heroImageCaption:
+      "아침 햇살이 비치는 장자제의 사암 봉우리. 이 4일 일정이 다루는 풍경의 규모를 보여 줍니다.",
+    whyEyebrow: "이렇게 구성한 이유",
+    whyTitle: "장자제를 체크리스트처럼 쫓아다니지 않는 4일",
+    whyIntro:
+      "장자제는 전망대 하나로 끝나는 곳이 아닙니다. 사암 봉우리와 협곡을 건너는 유리다리, 동굴 또는 호수 풍경, 그리고 톈먼산 고지대가 차례로 이어집니다. 국가삼림공원에는 하루를 온전히 쓰고, 대협곡은 별도의 날로 두며, 톈먼산으로 여행을 마무리합니다.",
+    benefits: [
+      [
+        "서두르지 않는 도착일",
+        "공항이나 기차역에서 만나 확정된 숙소로 이동합니다. 반나절뿐인 도착일을 온전한 관광일처럼 포장하지 않습니다.",
+      ],
+      [
+        "세 날에 나누어 만나는 세 풍경",
+        "국가삼림공원, 대협곡과 톈먼산을 하나의 막연한 명소 목록에 몰아넣지 않고 각각의 흐름으로 둘러봅니다.",
+      ],
+      [
+        "저녁의 분위기를 바꾸는 숙소",
+        "관광 동선은 유지하면서 시내의 편리함, 더 넉넉한 공간 또는 개성 있는 산악 분위기 중에서 고릅니다.",
+      ],
+      [
+        "실제 날짜에 맞추는 세부사항",
+        "객실, 차량, 입장권과 가이드 언어를 실제 여행 인원과 날짜에 맞춘 뒤 예약 단계로 넘어갑니다.",
+      ],
+    ],
+    routeEyebrow: "장자제 4일 3박 일정",
+    routeTitle: "도착하는 하루, 서로 다른 풍경으로 이어지는 사흘",
+    guideLabel: "가이드 동행 관광",
+    arrivalLabel: "도착 및 전용 차량 이동",
+    daySummaries: [
+      "장자제 공항 또는 기차역에서 만나 확정된 숙소로 이동합니다. 이날은 가이드 관광을 잡지 않고, 남은 시간은 쉬며 여유롭게 여행을 시작합니다.",
+      "장자제 국가삼림공원을 하루 종일 둘러봅니다. 백룡천제(바이룽 엘리베이터), 원가계(위안자제), 천자산(톈쯔산)과 케이블카를 잇되, 실제 순서는 당일 운영 상황에 맞춥니다.",
+      "장자제 대협곡 유리다리를 먼저 둘러본 뒤 두 방향 중 하나를 고릅니다. 황룡동굴(황룽동)의 동굴 풍경 또는 보봉호(바오펑호)의 호수와 산 풍경을 선택하며, 선택한 코스는 확정 일정표에 명시합니다.",
+      "예약 가능한 천문산(톈먼산) A·B·C 코스 중 하나를 이용한 뒤 공항 또는 기차역으로 이동합니다. 코스는 입장권 예약 가능 여부에 따라 정하지만, 천문산은 여행의 마지막 주요 일정으로 남깁니다.",
+    ],
+    staysEyebrow: "숙소 선택 예시",
+    staysTitle: "산을 내려온 뒤의 분위기까지 고르세요",
+    staysIntro:
+      "관광 동선은 같지만 하루를 마치고 머무는 분위기는 달라질 수 있습니다. 아래 네 사진 모음은 시내의 편리함부터 더 넉넉하거나 개성 있는 숙소까지 선택의 폭을 보여 줍니다. 각 사진은 해당 후보 숙소에만 속하며, 서로 다른 숙소의 객실을 하나의 약속처럼 섞어 보여 주지 않습니다.",
+    otherStaysTitle: "화면에 보이는 숙소만 선택할 필요는 없습니다",
+    otherStaysBody:
+      "사진은 마련 가능한 숙소 중 일부입니다. 선호하는 스타일, 위치 또는 객실 구성이 맞지 않으면 중요한 조건을 알려 주세요. 실제 날짜에 다른 장자제 숙소도 확인하고, 결제 전에 일정에 맞는 숙소를 확정할 수 있습니다.",
+    accommodationOptions: [
+      {
+        id: "city-candidate-01",
+        label: "시내 후보 01",
+        name: "모던한 시내 숙소",
+        price: "시내 숙소 등급",
+        summary:
+          "밝고 현대적인 분위기의 시내 후보 숙소입니다. 현재 확보한 두 장의 트윈룸 사진을 모두 보여 줍니다. 창밖 전망과 정확한 객실은 실제 날짜의 배정 결과에 따릅니다.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-window.jpg",
+            alt: "침대 두 개와 창밖 전망이 보이는 밝은 트윈룸",
+            caption: "시내 후보 01 · 트윈룸과 창밖 전망 참고",
+            width: 1016,
+            height: 782,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-entry.jpg",
+            alt: "입구와 세면 공간이 함께 보이는 트윈룸",
+            caption: "시내 후보 01 · 트윈룸, 입구와 세면 공간 참고",
+            width: 830,
+            height: 775,
+          },
+        ],
+      },
+      {
+        id: "city-candidate-02",
+        label: "시내 후보 02",
+        name: "편안한 시내 숙소",
+        price: "시내 숙소 등급",
+        summary:
+          "후보 사진 4장으로 트윈룸과 더블룸, 특별히 꾸민 트윈룸과 욕실을 보여 줍니다. 풍선, 꽃 장식과 창밖 전망은 촬영 당시의 예시이며 기본 제공을 보장하지 않습니다.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin.jpg",
+            alt: "두 번째 시내 후보 숙소의 트윈룸과 창밖 전망",
+            caption: "시내 후보 02 · 트윈룸과 창밖 전망 참고",
+            width: 1206,
+            height: 746,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-double.jpg",
+            alt: "두 번째 시내 후보 숙소의 더블룸",
+            caption: "시내 후보 02 · 더블룸 참고",
+            width: 1206,
+            height: 788,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-twin-decorated.jpg",
+            alt: "풍선과 수건으로 특별히 꾸민 트윈룸",
+            caption: "시내 후보 02 · 특별 연출 예시, 기본 포함 아님",
+            width: 1206,
+            height: 785,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-02-bathroom.jpg",
+            alt: "샤워 공간과 벽걸이형 헤어드라이어가 있는 욕실",
+            caption: "시내 후보 02 · 욕실과 샤워 시설 참고",
+            width: 1206,
+            height: 788,
+          },
+        ],
+      },
+      {
+        id: "premium-villa",
+        label: "프리미엄 숙소 옵션",
+        name: "넉넉한 프리미엄 숙소",
+        price: "넉넉한 프리미엄 등급",
+        summary:
+          "하루 관광을 마친 뒤 단순히 잠만 자는 곳보다 넉넉한 공간을 원하는 여행자에게 맞는 후보입니다. 거실, 트윈룸, 더블룸과 테라스를 보여 주며, 정확한 숙소와 객실 배정은 날짜별로 확인합니다.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
+            alt: "통창으로 햇빛이 드는 프리미엄 숙소 거실",
+            caption: "프리미엄 숙소 자료 · 거실 참고",
+            width: 1400,
+            height: 1050,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-twin.jpg",
+            alt: "정원 쪽으로 열린 프리미엄 숙소의 트윈 침실",
+            caption: "프리미엄 숙소 자료 · 트윈 침실 참고",
+            width: 1050,
+            height: 1400,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-double.jpg",
+            alt: "큰 창이 있는 프리미엄 숙소의 더블 침실",
+            caption: "프리미엄 숙소 자료 · 더블 침실 참고",
+            width: 1400,
+            height: 1050,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
+            alt: "프리미엄 숙소의 야외 데크와 잔디 공간",
+            caption: "프리미엄 숙소 자료 · 데크와 잔디 공간 참고",
+            width: 1400,
+            height: 1050,
+          },
+        ],
+      },
+      {
+        id: "signature-villa",
+        label: "개성 있는 숙소 참고",
+        name: "특색 있는 산악 숙소",
+        price: "특색 있는 산악 숙소 등급",
+        summary:
+          "다이닝 테라스, 여러 객실 유형, 욕실과 조용한 라운지 공간을 후보 사진 11장으로 보여 줍니다. 이 사진들은 숙소의 전체 분위기를 전달하지만, 모든 시설과 전망, 구조가 한 객실에 함께 제공된다는 뜻은 아닙니다.",
+        images: [
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
+            alt: "유리로 둘러싸인 식사 공간 너머로 나무와 먼 산이 보이는 모습",
+            caption: "다이닝 테라스 참고 · 전망과 공간 배정은 보장하지 않음",
+            width: 1400,
+            height: 1016,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-suite.jpg",
+            alt: "침대 하나와 여러 라운지 의자가 놓인 넓은 오픈형 객실",
+            caption: "넓은 객실 참고 · 정확한 등급, 면적과 전망은 미확정",
+            width: 1600,
+            height: 1133,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-four-poster.jpg",
+            alt: "캐노피 침대와 창가 휴식 공간이 있는 객실",
+            caption: "캐노피 객실 참고 · 정확한 객실과 침대 유형은 미확정",
+            width: 1600,
+            height: 1102,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-fireplace-room.jpg",
+            alt: "침대와 벽난로, 창밖의 녹지가 보이는 객실",
+            caption: "벽난로 객실 참고 · 작동 여부, 객실 유형과 전망은 확인 필요",
+            width: 1600,
+            height: 1158,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-garden-lounge.jpg",
+            alt: "나무가 있는 야외 좌석 쪽을 바라보는 실내 라운지 의자",
+            caption: "실내외 라운지 참고 · 전용 정원이나 독점 사용은 보장하지 않음",
+            width: 1600,
+            height: 1182,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-bathtub.jpg",
+            alt: "독립형 욕조, 샤워 공간과 변기가 있는 욕실",
+            caption: "욕조가 있는 욕실 참고 · 모든 객실에 같은 구성이 있는 것은 아님",
+            width: 1600,
+            height: 1113,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-red-room.jpg",
+            alt: "짙은 붉은색 커튼과 패턴 직물로 꾸민 캐노피 객실",
+            caption: "붉은색 테마 객실 참고 · 정확한 등급과 예약 가능 여부는 미확정",
+            width: 1600,
+            height: 1199,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-colour-room.jpg",
+            alt: "침대와 라운지 의자, 창밖 산이 보이는 색감 있는 객실",
+            caption: "색감 있는 객실 참고 · 전망, 발코니와 객실 유형은 보장하지 않음",
+            width: 1600,
+            height: 1159,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-vanity.jpg",
+            alt: "침대 옆 개방형 세면 공간과 창밖 녹지가 보이는 객실",
+            caption: "침실과 세면 공간 배치 참고 · 칸막이와 객실 연결 관계는 확인 필요",
+            width: 1600,
+            height: 1099,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-shower.jpg",
+            alt: "두 개의 세면대, 개방형 샤워 공간과 변기가 있는 욕실",
+            caption: "샤워 욕실 참고 · 객실별 정확한 구성은 미확정",
+            width: 1600,
+            height: 1199,
+          },
+          {
+            src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-lounge-detail.jpg",
+            alt: "패턴 의자, 도자기 장식과 조명이 켜진 아치형 벽감",
+            caption: "실내 장식 참고 · 넓은 객실과 같은 공간에서 촬영된 것으로 보임",
+            width: 1600,
+            height: 1168,
+          },
+        ],
+      },
+    ],
+    pricesEyebrow: "장자제 4일 3박 프라이빗 여행 가격",
+    pricesTitle: "같은 일정, 세 가지 숙소 선택",
+    pricesIntro:
+      "아래 가격 카드는 표시된 유효기간과 현재 날짜를 대조합니다. 유효기간이 지나면 새 견적을 요청하도록 안내하며, 숙소 등급이 달라져도 4일 핵심 관광 동선은 유지됩니다.",
+    tierDescriptions: {
+      "selected-city-stay":
+        "실제 날짜에 예약 가능한 숙소와 객실 가운데 실용적인 시내 숙소를 맞춥니다.",
+      "spacious-premium-stay":
+        "공용 공간과 개별 객실에 더 여유가 있는 프리미엄 숙소입니다. 정확한 숙소와 객실 배정은 날짜별로 확인합니다.",
+      "distinctive-mountain-stay":
+        "디자인과 산악 분위기가 더 뚜렷한 숙소입니다. 정확한 숙소와 객실은 결제 전에 확인합니다.",
+    },
+    faqEyebrow: "4일을 선택하기 전에",
+    faqTitle: "실제로 일정을 바꾸는 질문",
+    faqItems: [
+      [
+        "장자제 여행에 4일이면 충분한가요?",
+        "1일 차를 도착일로 쓰고 2·3일 차에는 국가삼림공원과 대협곡 일대를 주요 일정으로 두며, 4일 차는 출발 시간이 허락하는 범위에서 천문산을 둘러보는 구성이라면 첫 방문의 핵심을 볼 수 있습니다. 다만 주변 명소를 모두 보는 일정은 아닙니다.",
+      ],
+      [
+        "장자제 대협곡 유리다리와 톈먼산 유리잔도는 같은 곳인가요?",
+        "아닙니다. 대협곡 유리다리는 장자제 대협곡에 있고, 톈먼산 유리잔도는 별도의 톈먼산 일정 안에 있습니다. 서로 다른 날 방문하는 별개의 장소입니다.",
+      ],
+      [
+        "시내 숙소와 더 넉넉한 숙소 중 무엇을 고를까요?",
+        "시내 숙소는 대체로 도착과 출발의 편리함을 우선합니다. 더 넉넉한 등급은 저녁 분위기와 함께 머무는 공간을 바꿉니다. 최종 선택은 정확한 숙소, 관광 순서와 출발 지점을 함께 보고 정해야 합니다.",
+      ],
+      [
+        "비행기나 기차를 타기 전에 톈먼산을 둘러볼 수 있나요?",
+        "가능한 경우도 있지만, 예약 가능한 코스와 입장 시간, 출발 시간 사이에 충분한 여유가 있어야 합니다. 늦은 입장권이나 이른 출발편이라면 같은 계획이 성립하지 않을 수 있습니다.",
+      ],
+      [
+        "장자제에서 프라이빗 일정의 가치는 무엇인가요?",
+        "날씨나 대기 시간을 통제한다는 약속이 아닙니다. 올바른 입구, 전용 차량, 수하물, 입장권 코스와 일행의 속도를 실행 가능한 하루로 연결하고, 운영 상황이 바뀌면 순서를 다시 맞추는 데 가치가 있습니다.",
+      ],
+    ],
+    scopeEyebrow: "프라이빗 여행 가격의 범위",
+    scopeTitle: "여행이 수월해 보이는 이유는 어려운 부분을 숨기지 않았기 때문입니다",
+    plannedTitle: "견적에 포함해 설계하는 항목",
+    plannedItems: [
+      "현지 전용 차량과 합의된 범위의 도착·출발 이동",
+      "관광일인 2–4일 차 전담 가이드",
+      "선택한 숙소 등급의 3박",
+      "확인서에 명시한 성인 입장권과 기본 관광지 내 교통",
+    ],
+    excludedTitle: "기본 가격에 포함하지 않는 항목",
+    excludedItems: [
+      "장자제까지 오고 가는 교통편",
+      "식사와 개인 경비",
+      "VIP 통로, 번지점프, 집라인, 공연 등 선택 활동",
+      "1인실, 어린이 요금, 가이드 언어와 차량 업그레이드에 따른 차액",
+      "여행자가 거주국에서 구입하는 종합 여행자보험",
+    ],
+    confirmationNote:
+      "정확한 포함 항목, 실제 서비스 제공자와 날짜별 차이는 결제 전 서면 확인서에 명시합니다.",
+    paymentEyebrow: "여행 구상에서 예약 가능한 일정까지",
+    paymentTitle: "단계가 갈수록 복잡해지기보다 분명해져야 합니다",
+    paymentSteps: [
+      [
+        "01",
+        "여행의 기본 조건 알려 주기",
+        "날짜, 도착 장소, 성인과 어린이 수, 선호 숙소와 출발 계획을 알려 주세요.",
+      ],
+      [
+        "02",
+        "날짜별 예약 조건 확인하기",
+        "실제 날짜에 맞춰 객실 유형, 조식, 차량, 입장권과 가이드 언어를 확인합니다.",
+      ],
+      [
+        "03",
+        "한눈에 이해되는 일정 검토하기",
+        "진행 여부를 정하기 전에 총액, 정확한 포함 범위, 실제 서비스 제공자와 해당 날짜의 예약 조건을 서면으로 확인합니다.",
+      ],
+    ],
+    sourcesTitle: "공식 동선 및 목적지 자료",
+    sources: [
+      {
+        label: "우링위안 풍경명승구",
+        publisher: "유네스코 세계유산센터",
+        url: "https://whc.unesco.org/en/list/640/",
+      },
+      {
+        label: "장자제 세계지질공원 2일 코스",
+        publisher: "장자제 유네스코 세계지질공원",
+        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620135033852.html",
+      },
+      {
+        label: "장자제 세계지질공원 3일 코스",
+        publisher: "장자제 유네스코 세계지질공원",
+        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620161311924.html",
+      },
+      {
+        label: "톈먼산 방문객 교통 자료",
+        publisher: "후난성 문화관광청",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716284.html",
+      },
+    ],
+    finalEyebrow: "실제 일정에 맞춰 조정하기",
+    finalTitle: "내 여행 날짜에 이 4일을 넣으면 어떻게 될까요?",
+    finalBody:
+      "여행 월, 도착 장소, 인원, 어린이 나이와 원하는 숙소 분위기를 알려 주세요. Homeground가 결제 단계를 논의하기 전에 이 동선을 실제 날짜에 맞는 하나의 일정으로 구체화합니다.",
+    finalCtaLabel: "Homeground와 장자제 여행 계획하기",
+  },
 } as const;
 
 export function getZhangjiajiePrivateTourPublicPricing(
@@ -806,11 +1101,18 @@ export function getZhangjiajiePrivateTourPublicPricing(
   return {
     validFrom: pricing.valid_from,
     validUntil: pricing.valid_until,
-    publicNote:
-      locale === "zh" ? pricing.public_notes["zh-CN"] : pricing.public_notes.en,
+    publicNote: {
+      en: pricing.public_notes.en,
+      zh: pricing.public_notes["zh-CN"],
+      ko: pricing.public_notes.ko,
+    }[locale],
     tiers: pricing.tiers.map((tier) => ({
       id: tier.tier_id,
-      name: locale === "zh" ? tier.name_zh : tier.name_en,
+      name: {
+        en: tier.name_en,
+        zh: tier.name_zh,
+        ko: tier.name_ko,
+      }[locale],
       description:
         copy.tierDescriptions[
           tier.tier_id as keyof typeof copy.tierDescriptions

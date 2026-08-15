@@ -205,6 +205,13 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       h1: productPreviewCopy.zh.heroTitle,
       openGraphLocale: "zh_CN",
     },
+    ko: {
+      path: zhangjiajiePrivateTourPaths.ko,
+      title: productPreviewCopy.ko.metadataTitle,
+      description: productPreviewCopy.ko.metadataDescription,
+      h1: productPreviewCopy.ko.heroTitle,
+      openGraphLocale: "ko_KR",
+    },
   };
   const privacy = Object.fromEntries(
     locales.map((locale) => {
@@ -273,7 +280,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "service",
       primaryIntent: "purchase",
       definitions: zhangjiajiePrivateTour,
-      dateModified: "2026-08-15",
+      dateModified: "2026-08-16",
       schemaTypes: ["WebPage", "TouristTrip"],
       entityIds: ["city-zhangjiajie"],
       volatility: "high",
