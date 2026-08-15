@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "product_id": "zjj-4d3n-private-2026",
+  "status": "published",
+  "public_eligible": true,
+  "updated_at": "2026-08-15T10:25:00+08:00",
+  "title": {
+    "zh-CN": "张家界4天3晚：峰林、玻璃桥与天门山",
+    "en": "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain"
+  },
+  "short_description": {
+    "zh-CN": "用4天3晚走进砂岩峰林、大峡谷玻璃桥与天门山，抵达日不赶路，三天游览各有自己的高潮。",
+    "en": "Four carefully paced days through Zhangjiajie's sandstone peaks, the Grand Canyon Glass Bridge and Tianmen Mountain."
+  },
+  "duration": {
+    "days": 4,
+    "nights": 3
+  },
+  "group_basis": {
+    "minimum_adults": 2,
+    "room_basis": "two_adults_sharing_one_room"
+  },
+  "price_display": {
+    "mode": "from_price",
+    "currency": "CNY",
+    "from_price_per_person": 5390,
+    "approved_decision_id": "approved-public-pricing-20260815",
+    "valid_until": "2026-08-31T23:59:59+08:00",
+    "pricing_source": "pricing.json"
+  },
+  "route": [
+    {
+      "day": 1,
+      "title_zh": "抵达张家界，先把脚步放慢",
+      "title_en": "Arrive in Zhangjiajie, Then Exhale",
+      "summary_zh": "机场或高铁站接客，送往最终确认的酒店，自由活动。",
+      "guide_planned": false,
+      "fact_ids": ["day-one-transfer-no-guide"]
+    },
+    {
+      "day": 2,
+      "title_zh": "走进砂岩峰林：袁家界与天子山",
+      "title_en": "Into the Sandstone Forest: Yuanjiajie and Tianzi Mountain",
+      "summary_zh": "百龙天梯、袁家界、天子山及天子山索道等核心游览。",
+      "guide_planned": true,
+      "fact_ids": ["guide-three-days"]
+    },
+    {
+      "day": 3,
+      "title_zh": "跨过峡谷，再选洞穴或湖面",
+      "title_en": "Cross the Canyon, Then Choose Cave or Lake",
+      "summary_zh": "大峡谷玻璃桥，之后安排黄龙洞或宝峰湖二选一；以最终确认单为准。",
+      "guide_planned": true,
+      "fact_ids": ["ticket-bundle-itemization"]
+    },
+    {
+      "day": 4,
+      "title_zh": "以天门山收尾，再启程",
+      "title_en": "Tianmen Mountain, Then Onward",
+      "summary_zh": "按票源采用A/B/C线游览，结束后送机场或车站。",
+      "guide_planned": true,
+      "fact_ids": ["guide-three-days", "ticket-bundle-itemization"]
+    }
+  ],
+  "draft_inclusions": [
+    {
+      "label_zh": "当地私人车辆和约定范围内接送",
+      "fact_id": "vehicle-private-four-days",
+      "claim_status": "needs_confirmation"
+    },
+    {
+      "label_zh": "第2至第4天私人导游",
+      "fact_id": "guide-three-days",
+      "claim_status": "working_standard"
+    },
+    {
+      "label_zh": "3晚所选档位住宿",
+      "fact_id": "hotel-whitelist",
+      "claim_status": "needs_confirmation"
+    },
+    {
+      "label_zh": "最终确认单列明的成人门票和标准景交",
+      "fact_id": "ticket-bundle-itemization",
+      "claim_status": "needs_confirmation"
+    }
+  ],
+  "draft_exclusions": [
+    "往返张家界的大交通",
+    "正餐和个人消费",
+    "VIP通道、高空弹跳、滑索和演出等自选项目",
+    "单房差、儿童差价、外语导游差价和车型升级",
+    "客人在本国购买的综合旅行保险"
+  ],
+  "primary_cta": {
+    "type": "inquiry",
+    "label_zh": "让 Homeground 帮你规划张家界",
+    "label_en": "Plan Zhangjiajie with Homeground"
+  },
+  "seo": {
+    "slug": "zhangjiajie-4-day-private-tour",
+    "indexable": true
+  }
+}

@@ -334,6 +334,25 @@
   text-underline-offset: 0.24em;
 }
 
+.privateTourLink {
+  align-items: center;
+  color: var(--guide-dark-rust);
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 740;
+  gap: 0.45rem;
+  justify-self: end;
+  margin-block-start: 1rem;
+  min-height: 2.75rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+}
+
+.privateTourLink:hover,
+.privateTourLink:focus-visible {
+  color: var(--guide-green);
+}
+
 .quickPlannerLink:hover,
 .quickPlannerLink:focus-visible {
   color: var(--guide-green);
