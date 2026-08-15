@@ -1,12 +1,12 @@
 # Image plan and rights record — How to Read Heritage Sites in China
 
-Status: **five real, place-specific files prepared; central editorial and licence notice review required before publication**
+Status: **five real, place-specific files verified for release; central provenance transferred**
 
-- Reviewed: 2026-08-14
+- Reviewed: 2026-08-15
 - Documentary policy: no AI-generated documentary image, no film/television still, no generic “old-looking” architecture and no image-location guessing
 - Processing: ordinary crop, resize and WebP conversion only; no generative fill or semantic alteration; output files were visually inspected after conversion and EXIF was stripped
 - Rights model: each derivative retains the source licence and attribution; ShareAlike derivatives must continue under the corresponding CC BY-SA version
-- Shared provenance registry: intentionally not modified on this isolated article branch; all provenance is recorded below for central transfer
+- Shared provenance registry: transferred to `docs/homeground-photo-provenance.md` during central release review on 2026-08-15
 
 ## Asset matrix
 

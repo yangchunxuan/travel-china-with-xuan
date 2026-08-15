@@ -11,6 +11,7 @@ const reviewedGuideIds = [
   "desert-restoration-travellers-can-see",
   "guizhou-village-basketball-culture",
   "how-to-read-a-chinese-sponge-city",
+  "how-to-read-heritage-sites-in-china",
   "how-to-visit-an-archaeological-site-museum",
   "kaifeng-song-dynasty-urban-landscape",
   "lunar-new-year-customs-for-visitors",

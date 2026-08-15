@@ -314,7 +314,8 @@ const body = {
           description: "Compare a documented ritual axis with the different evidence needed to interpret a city gate.",
         },
         { label: "See what happens when metro construction meets archaeology", href: "/guides/when-metro-construction-meets-archaeology/", description: "Follow chance find, protection, excavation, design response and public display instead of assuming every discovery stops work or becomes visible." },
-        { label: "Separate historic, rebuilt and themed Kaifeng", href: "/guides/kaifeng-song-dynasty-urban-landscape/", description: "Apply material, date and interpretation checks to Zhouqiao, the Qingming scroll and a modern themed park instead of treating them as one surviving Song city." }
+        { label: "Separate historic, rebuilt and themed Kaifeng", href: "/guides/kaifeng-song-dynasty-urban-landscape/", description: "Apply material, date and interpretation checks to Zhouqiao, the Qingming scroll and a modern themed park instead of treating them as one surviving Song city." },
+        { label: "Read whether heritage fabric is original, repaired or rebuilt", href: "/guides/how-to-read-heritage-sites-in-china/", description: "Use a component-by-component evidence method before calling a wall, gate or tower ancient, restored or reconstructed." }
       ],
     },
     {

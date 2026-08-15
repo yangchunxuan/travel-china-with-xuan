@@ -1,6 +1,6 @@
 # Canonical boundary — How to Read Heritage Sites in China
 
-Reviewed: 2026-08-14
+Reviewed: 2026-08-15
 
 ## This page owns
 

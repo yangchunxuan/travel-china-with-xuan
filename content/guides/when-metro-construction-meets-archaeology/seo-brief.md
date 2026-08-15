@@ -64,8 +64,8 @@ This is a dated qualitative sample, not a ranking or traffic estimate.
 
 - Runtime section: `culture`; indexable collection: `culture-history-people-ideas` at `/culture/history-people-ideas/`.
 - Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
-- Implemented and verified 2026-08-14: `chinese-city-walls-gates-and-urban-order`, `liangzhu-ruins-park-and-museum-sequence`, `shaanxi-history-museum-booking-and-collection-plan` each links from its EN/ZH/KO body to this canonical guide.
-- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
+- Implemented and verified 2026-08-15: `chinese-city-walls-gates-and-urban-order`, `how-to-read-heritage-sites-in-china`, `liangzhu-ruins-park-and-museum-sequence`, `shaanxi-history-museum-booking-and-collection-plan` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **4**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

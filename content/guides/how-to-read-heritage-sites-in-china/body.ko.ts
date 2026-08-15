@@ -21,12 +21,12 @@ const body = {
       id: "question-heading",
       type: "heading",
       level: 2,
-      text: "‘진짜인가’ 대신 눈앞의 대상을 일곱 가지로 구분하세요",
+      text: "‘진짜인가’ 대신 이 글의 일곱 가지 편집용 표현을 사용하세요",
     },
     {
       id: "labels",
       type: "table",
-      caption: "눈앞의 물질적 대상을 읽는 일곱 가지 실무 분류",
+      caption: "Homeground가 이 글에서 사용하는 일곱 가지 편집용 표현",
       columns: ["분류", "이 글에서의 뜻", "찾아야 할 근거", "겉모습만으로 알 수 없는 것"],
       rows: [
         [
@@ -117,7 +117,7 @@ const body = {
       ordered: true,
       items: [
         "가치: 여기서 중요한 것은 재료 증거, 도시 축, 건축 형태, 기능, 기술 전통, 주변 환경 중 무엇이며 여러 가치가 함께 있는가?",
-        "대상: 주장이 정확히 어느 층위, 건물, 유물 또는 표면에 관한 것인가? 기초와 모형, 성대와 성루, 원래 석액과 복제품을 나누어 보세요.",
+          "대상: 주장이 정확히 어느 층위, 건물, 유물 또는 표면에 관한 것인가? 기초와 모형, 성대와 성루, 원래 돌 현판(석액·石額)과 복제품을 나누어 보세요.",
         "개입: 노출, 되메우기, 안정화, 부분 복원, 재건, 이건 또는 신축 중 무엇인가? 착공·완공·검수는 서로 다른 시점이므로 따로 적으세요.",
         "정보원: 고고학, 공사 기록, 부재 표지, 역사 도면, 구전 전통, 관광 홍보문 중 무엇이 뒷받침하는가? 확실하지 않으면 추측 대신 불확실성을 기록하세요.",
       ],
@@ -132,7 +132,7 @@ const body = {
       id: "yinxu-p1",
       type: "paragraph",
       text:
-        "안양의 인쉬(殷墟)는 진정한 고도라면 온전한 궁전이 서 있어야 한다는 기대를 뒤집습니다. UNESCO는 후기 상 왕조 수도의 증거로 건물 기초, 왕릉, 고고학 퇴적층, 갑골문, 출토 유물을 듭니다. 진정성 설명에 따르면 유적과 출토 유물은 가능한 한 원위치에서 보존하며, 발굴 뒤 보호를 위해 되메우고 지상에 식생으로 표시할 수 있습니다. 중요한 유물은 박물관에서 관리합니다. 따라서 보호 조치 때문에 시각적 인상이 약해질 수 있지만, 증거 자체가 덜 진실해지는 것은 아닙니다.",
+        "안양의 인쉬(殷墟)는 진정한 고도라면 온전한 궁전이 서 있어야 한다는 기대를 뒤집습니다. UNESCO는 후기 상 왕조 수도의 증거로 건물 기초, 왕릉, 고고학 퇴적층, 갑골문, 출토 유물을 듭니다. 진정성 설명에 따르면 유적과 출토 유물은 가능한 한 원위치에서 보존하며, 발굴 뒤 보호를 위해 되메우고 지상에 식생으로 표시할 수 있습니다. 중요한 유물은 박물관에서 관리합니다. 따라서 보호 조치 때문에 시각적 인상이 약해질 수 있지만, 증거의 가치가 낮아지는 것은 아닙니다.",
     },
     {
       id: "yinxu-marker-figure",
@@ -207,7 +207,7 @@ const body = {
     {
       id: "jiankou-warning",
       type: "callout",
-      title: "현재 상태 확인일: 2026년 8월 14일",
+      title: "현재 상태 확인일: 2026년 8월 15일",
       body:
         "화이러우구 정부가 2026년 4월 27일 발표한 자료는 1~4기가 완료되었고 5기는 연말 완공을 목표로 진행 중이며 6기 설계가 시작됐다고 밝힙니다. 확인일까지 5기의 정식 준공·검수 공지는 찾지 못했습니다. 공사 상태와 방문객 개방은 다른 문제입니다. 일반 관람은 공식 개방 장성 구간을 이용하고, 이 글의 젠커우는 보존 사례로만 읽어야 하며 탐방로 추천이 아닙니다.",
       tone: "warning",
@@ -222,7 +222,7 @@ const body = {
       id: "yong-p1",
       type: "paragraph",
       text:
-        "베이징 중축선 남단의 역사적 융딩먼 복합 시설은 1950년대에 철거됐으며, UNESCO와 ICOMOS 자료는 성문 철거 연도를 대체로 1957년으로 적습니다. 오늘의 성루는 역사 측량, 사진, 고고학 조사, 전통 영조 자료를 바탕으로 21세기에 재건했습니다. 서로 다른 사업 연도는 모순이 아니라 단계를 뜻합니다. 공사는 2004년에 구체화됐고 2005년 10월 재건을 마쳤으며 뒤이어 행정 검수 기록이 남았습니다. 현재 보이는 상부 성루는 1553년부터 남은 건물이 아닙니다.",
+        "베이징 중축선 남단의 역사적 융딩먼 복합 시설은 1950년대에 철거됐으며, UNESCO와 ICOMOS 자료는 성문 철거 연도를 대체로 1957년으로 적습니다. 오늘의 성루는 옛 실측 도면, 사진, 고고학 조사, 전통 영조 자료를 바탕으로 21세기에 재건했습니다. 서로 다른 사업 연도는 모순이 아니라 단계를 뜻합니다. 재건 공사는 2004년에 시작됐고 둥청구 자료는 2005년 10월 완공으로 기록합니다. UNESCO가 공개한 중국 당사국 추가 자료는 준공 검수 등록 절차가 2007년 6월 15일 시작됐다고 적습니다. 현재 보이는 상부 성루는 1553년부터 남은 건물이 아닙니다.",
     },
     {
       id: "yong-figure",
@@ -238,14 +238,14 @@ const body = {
       id: "yong-p2",
       type: "paragraph",
       text:
-        "융딩먼은 ‘재건’이 건물 이력의 끝이 아니라는 점도 보여 줍니다. 둥청구는 2026년 3월, 2005년 재건물에서 부재 균열, 지붕 누수, 전기 설비 노후가 나타나 재건 후 첫 체계적 보수를 시작했다고 밝혔습니다. 지붕, 목구조, 벽체, 마감, 소방, 모니터링을 포함하는 공사입니다. 7월 공식 보도도 여전히 보수 공사 현장이라고 불렀고 8월 14일까지 준공 공지는 찾지 못했습니다. 현대 재건물을 보존하는 공사이지, 명대 원래 성루를 수리하는 작업으로 설명해서는 안 됩니다.",
+        "융딩먼은 ‘재건’이 건물 이력의 끝이 아니라는 점도 보여 줍니다. 둥청구는 2026년 3월, 2005년 재건물에서 부재 균열, 지붕 누수, 전기 설비 노후가 나타나 재건 후 첫 체계적 보수를 시작했다고 밝혔습니다. 지붕, 목구조, 벽체, 마감, 소방, 모니터링을 포함하는 공사입니다. 7월 공식 보도도 여전히 보수 공사 현장이라고 불렀고 8월 15일까지 준공 공지는 찾지 못했습니다. 현대 재건물을 보존하는 공사이지, 명대 원래 성루를 수리하는 작업으로 설명해서는 안 됩니다.",
     },
     {
       id: "yong-field",
       type: "callout",
       title: "융딩먼에서 해 볼 일",
       body:
-        "역사적 건설, 철거, 재건, 최근 보수라는 네 날짜를 적으세요. 그다음 가치를 나눕니다. 성루 형태, 중축선 남단의 위치, 기록 근거, 되살아난 도시 표지는 의미가 있을 수 있지만 재료 연대는 현대입니다. 베이징 문화유산 자료는 수도박물관이 보관하는 원래 석액과 성루에 설치한 복제품도 구분합니다.",
+        "역사적 건설, 철거, 재건, 최근 보수라는 네 날짜를 적으세요. 그다음 가치를 나눕니다. 성루 형태, 중축선 남단의 위치, 기록 근거, 되살아난 도시 표지는 의미가 있을 수 있지만 재료 연대는 현대입니다. 베이징 문화유산 자료는 수도박물관이 보관하는 원래 돌 현판과 성루에 설치한 복제품도 구분합니다.",
       tone: "decision",
     },
     {
@@ -287,13 +287,13 @@ const body = {
       id: "scenario-heading",
       type: "heading",
       level: 2,
-      text: "현장 설명이 불명확할 때는 맞는 복구 행동을 고르세요",
+      text: "현장 설명이 불명확할 때는 다음 확인 방법을 고르세요",
     },
     {
       id: "scenario-table",
       type: "table",
-      caption: "현장에서 생기는 문제와 복구 방법",
-      columns: ["문제", "복구 행동", "안전하게 내릴 수 있는 결론"],
+      caption: "근거가 불명확할 때 다시 확인할 것",
+      columns: ["문제", "다시 확인할 것", "안전하게 내릴 수 있는 결론"],
       rows: [
         [
           "고고학 유구가 되메워져 보이지 않습니다.",
@@ -352,7 +352,7 @@ const body = {
     {
       id: "dynamic",
       type: "callout",
-      title: "변동 정보 확인일: 2026년 8월 14일",
+      title: "변동 정보 확인일: 2026년 8월 15일",
       body:
         "공식 자료는 2026년 4월에도 젠커우 5기를 연말 완공 예정인 진행 사업으로 설명했고, 융딩먼의 2026년 보수는 7월에도 공사 현장으로 언급됐습니다. 확인일까지 그보다 늦은 정식 준공 공지는 찾지 못했습니다. 개방 구역, 비계, 박물관 전시, 촬영 규칙은 바뀔 수 있으므로 여행 전 해당 관리 기관에 다시 확인하세요.",
       tone: "warning",
@@ -392,7 +392,7 @@ const body = {
       type: "callout",
       title: "근거 층위를 섞지 않는 유산 동선이 필요하신가요?",
       body:
-        "고려 중인 유산과 고고학·건축·보존 실무 중 무엇을 가장 보고 싶은지 Homeground에 알려 주세요. 사람 여행 플래너가 현재 접근 가능 상태와 알맞은 박물관·해설 지점을 연결하면서 재건 재료를 고대 원형 부재라고 부르지 않는 동선을 함께 만들 수 있습니다.",
+        "고려 중인 유산과 고고학·건축·보존 실무 중 무엇을 가장 보고 싶은지 Homeground에 알려 주세요. 실제 담당 여행 플래너가 현재 관람 가능 여부와 알맞은 박물관·해설 지점을 연결하면서 재건 재료를 고대 원형 부재라고 부르지 않는 동선을 함께 만들 수 있습니다.",
       tone: "neutral",
     },
     {
@@ -404,103 +404,109 @@ const body = {
           label: "나라 진정성 문서 — WHC-94/CONF.003/INF.008",
           url: "https://whc.unesco.org/archive/nara94.htm",
           publisher: "UNESCO 세계유산센터",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "UNESCO 문서 목록 116018 — 나라 진정성 문서",
           url: "https://whc.unesco.org/en/documents/116018",
           publisher: "UNESCO 세계유산센터",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "2025년 운영지침 79~86항 및 부속서 4",
           url: "https://whc.unesco.org/document/222376",
           publisher: "UNESCO 세계유산센터",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "인쉬 — 탁월한 보편적 가치와 진정성 설명",
           url: "https://whc.unesco.org/en/list/1114",
           publisher: "UNESCO 세계유산센터",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "젠커우 5기 고고학·보존, 2024년",
           url: "https://www.beijing.gov.cn/ywdt/gqrd/202410/t20241016_3921803.html",
           publisher: "베이징시 인민정부",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "젠커우 5기 범위와 공법, 2025년",
           url: "https://www.beijing.gov.cn/ywdt/gzdt/202505/t20250514_4088536.html",
           publisher: "베이징시 인민정부",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "젠커우 공사 현황, 2026년 4월 27일",
           url: "https://www.bjhr.gov.cn/ywdt/rdgz/202604/t20260427_4615576.html",
           publisher: "베이징시 화이러우구 인민정부",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
+        },
+        {
+          label: "중국 측 추가 자료 — 융딩먼 재건·준공 검수 일정",
+          url: "https://whc.unesco.org/document/204904",
+          publisher: "UNESCO 세계유산센터가 공개한 중국 당사국 제출 자료",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "베이징 중축선 ICOMOS 평가",
           url: "https://whc.unesco.org/document/208501",
           publisher: "ICOMOS／UNESCO 세계유산센터",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "결정 46 COM 8B.15 — 베이징 중축선",
           url: "https://whc.unesco.org/en/decisions/8607",
           publisher: "세계유산위원회",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "융딩먼 철거·재건·석액 기록",
           url: "https://wwj.beijing.gov.cn/bjww/362760/362767/bjzzxwhycccycxds/dsxw/11156748/",
           publisher: "베이징시 문물국",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "재건 이후 융딩먼의 첫 체계적 보수",
           url: "https://www.bjdch.gov.cn/ywdt/dcyw/202603/t20260320_4562576.html",
           publisher: "베이징시 둥청구 인민정부",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "융딩먼 보수 공사 현황, 2026년 7월 10일",
           url: "https://www.bjdch.gov.cn/ywdt/dcyw/202607/t20260710_4756233.html",
           publisher: "베이징시 둥청구 인민정부",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "이미지: 인쉬 왕릉 M1400호",
           url: "https://commons.wikimedia.org/wiki/File:Yinxu_-_%E6%AE%B7%E5%A2%9F_(5067245178).jpg",
           publisher: "Wikimedia Commons — tak.wing, CC BY-SA 2.0",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "이미지: 인쉬 세계유산 표지",
           url: "https://commons.wikimedia.org/wiki/File:Yinxu_Royal_Tombs_(53565240593).jpg",
           publisher: "Wikimedia Commons — xiquinhosilva, CC BY 2.0",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "이미지: 인쉬박물관",
           url: "https://commons.wikimedia.org/wiki/File:Yin_Xu_Museum.jpg",
           publisher: "Wikimedia Commons — 유신예, CC BY-SA 4.0",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "이미지: 2017년 젠커우 장성",
           url: "https://commons.wikimedia.org/wiki/File:Tower_and_path_in_disrepair_-_Great_Wall_of_China_at_Jiankou.jpg",
           publisher: "Wikimedia Commons — Sindarus, CC BY-SA 4.0",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
         {
           label: "이미지: 2024년 융딩먼",
           url: "https://commons.wikimedia.org/wiki/File:%E6%B0%B8%E5%AE%9A%E9%97%A8_2024-10-11.jpg",
           publisher: "Wikimedia Commons — xiquinhosilva, CC BY 4.0",
-          reviewedAt: "2026-08-14",
+          reviewedAt: "2026-08-15",
         },
       ],
     },

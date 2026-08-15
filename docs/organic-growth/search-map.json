@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2.0",
-  "snapshotDate": "2026-08-14",
-  "checkedAt": "2026-08-14T21:45:00+08:00",
-  "finalStatus": "SEARCH MAP UPDATED — 2 EMPLOYEE 2 OWNERS APPROVED FOR RELEASE",
+  "snapshotDate": "2026-08-15",
+  "checkedAt": "2026-08-15T14:20:00+08:00",
+  "finalStatus": "SEARCH MAP UPDATED — HERITAGE INTERVENTION OWNER APPROVED FOR RELEASE",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -1659,6 +1659,33 @@
         "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
         "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
         "liveVerifiedAt": "2026-08-13"
+      },
+      {
+        "id": "how-to-read-heritage-sites-in-china",
+        "title": "Original, Restored, Rebuilt or Relocated? How to Read Heritage Sites in China",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/how-to-read-heritage-sites-in-china/",
+        "section": "culture",
+        "primaryCollectionId": "culture-history-people-ideas",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "country-china",
+        "secondaryEntityIds": [],
+        "queryCluster": [
+          "are heritage sites in China original or rebuilt",
+          "Chinese heritage restoration explained",
+          "Nara Document authenticity China travel"
+        ],
+        "cannibalizationOwner": "how-to-read-heritage-sites-in-china",
+        "freshnessClass": "medium-conservation-project-change",
+        "lastReviewedAt": "2026-08-15",
+        "status": "published-indexable",
+        "stateTransition": "business-owner-direct-release-authorized-and-centrally-reviewed-2026-08-15"
       },
       {
         "id": "how-to-visit-an-archaeological-site-museum",
