@@ -25,6 +25,28 @@ export function ZhangjiajiePrivateTourPreviewPage({
   const isZh = locale === "zh";
   const homePath = isZh ? "/zh/" : "/";
   const inquiryHref = `${homePath}?utm_source=product_preview&utm_medium=website&utm_campaign=zhangjiajie_4d3n#planner-contact`;
+  const routePhotos: Partial<
+    Record<number, { alt: string; caption: string; src: string }>
+  > = {
+    3: {
+      alt: isZh
+        ? "游客正在跨越张家界大峡谷玻璃桥"
+        : "Visitors crossing the Zhangjiajie Grand Canyon Glass Bridge",
+      caption: isZh
+        ? "张家界大峡谷玻璃桥 · 第3天实景参考"
+        : "Zhangjiajie Grand Canyon Glass Bridge · Day 3 reference",
+      src: "/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
+    },
+    4: {
+      alt: isZh
+        ? "天门山上天梯尽头的天门洞"
+        : "Tianmen Cave above the stairway at Tianmen Mountain",
+      caption: isZh
+        ? "天门洞与上天梯 · 第4天实景参考"
+        : "Tianmen Cave and its stairway approach · Day 4 reference",
+      src: "/product-previews/zhangjiajie-4-day-private-tour/hero/tianmen-cave-and-stairs.jpg",
+    },
+  };
 
   return (
     <div
@@ -81,13 +103,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <Image
                 alt={
                   isZh
-                    ? "云雾中的张家界砂岩峰林"
-                    : "Zhangjiajie sandstone peaks rising through mist"
+                    ? "阳光照亮张家界国家森林公园的砂岩峰柱与深谷"
+                    : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
                 }
                 fill
                 priority
                 sizes="(max-width: 860px) 100vw, 42vw"
-                src="/images/hero-zhangjiajie.jpg"
+                src="/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg"
               />
             </div>
             <figcaption>{copy.heroImageCaption}</figcaption>
@@ -122,24 +144,45 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <h2 id="route-title">{copy.routeTitle}</h2>
             </div>
             <ol className={styles.routeList}>
-              {product.route.map((day, index) => (
-                <li key={day.day}>
-                  <div className={styles.dayMarker}>
-                    <span>{isZh ? "第" : "Day"}</span>
-                    <strong>{day.day}</strong>
-                    {isZh ? <span>天</span> : null}
-                  </div>
-                  <div className={styles.dayCopy}>
-                    <div>
-                      <h3>{isZh ? day.title_zh : day.title_en}</h3>
-                      <span className={styles.dayStatus}>
-                        {day.guide_planned ? copy.guideLabel : copy.arrivalLabel}
-                      </span>
+              {product.route.map((day, index) => {
+                const routePhoto = routePhotos[day.day];
+
+                return (
+                  <li key={day.day}>
+                    <div className={styles.dayMarker}>
+                      <span>{isZh ? "第" : "Day"}</span>
+                      <strong>{day.day}</strong>
+                      {isZh ? <span>天</span> : null}
                     </div>
-                    <p>{copy.daySummaries[index]}</p>
-                  </div>
-                </li>
-              ))}
+                    <div
+                      className={`${styles.dayCopy} ${
+                        routePhoto ? styles.dayCopyWithImage : ""
+                      }`}
+                    >
+                      <div>
+                        <h3>{isZh ? day.title_zh : day.title_en}</h3>
+                        <span className={styles.dayStatus}>
+                          {day.guide_planned ? copy.guideLabel : copy.arrivalLabel}
+                        </span>
+                      </div>
+                      <p>{copy.daySummaries[index]}</p>
+                      {routePhoto ? (
+                        <figure className={styles.dayFigure}>
+                          <div className={styles.dayFigureMedia}>
+                            <Image
+                              alt={routePhoto.alt}
+                              fill
+                              sizes="(max-width: 680px) 82vw, 17rem"
+                              src={routePhoto.src}
+                            />
+                          </div>
+                          <figcaption>{routePhoto.caption}</figcaption>
+                        </figure>
+                      ) : null}
+                    </div>
+                  </li>
+                );
+              })}
             </ol>
           </section>
 

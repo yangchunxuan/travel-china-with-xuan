@@ -74,6 +74,7 @@
 
 .heroImage img {
   object-fit: cover;
+  object-position: 46% 50%;
 }
 
 .heroFigure figcaption {
@@ -255,6 +256,45 @@
   font-size: 0.72rem;
   font-weight: 700;
   padding: 0.4rem 0.55rem;
+}
+
+.dayCopyWithImage {
+  display: grid;
+  gap: 0 2rem;
+  grid-template-columns: minmax(0, 1fr) clamp(12rem, 20vw, 17rem);
+}
+
+.dayCopyWithImage > div,
+.dayCopyWithImage > p {
+  grid-column: 1;
+}
+
+.dayFigure {
+  align-self: start;
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  min-width: 0;
+}
+
+.dayFigureMedia {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  position: relative;
+}
+
+.dayFigureMedia img {
+  object-fit: cover;
+}
+
+.dayFigure figcaption {
+  border-block-start: 1px solid var(--hg-color-line);
+  color: var(--hg-color-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  padding: 0.7rem 0.8rem;
 }
 
 .previewAssetNote {
@@ -668,6 +708,15 @@
 
   .dayStatus {
     white-space: normal;
+  }
+
+  .dayCopyWithImage {
+    display: block;
+  }
+
+  .dayFigure {
+    margin-block-start: 1.25rem;
+    max-width: 20rem;
   }
 
   .stayHeading > strong {

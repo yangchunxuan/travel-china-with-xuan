@@ -3,7 +3,7 @@
 Status: internal preview only. None of these derivatives is eligible for the
 production export yet.
 
-All fifteen source records currently have `rights_status: needs_confirmation`,
+All twenty-five accommodation source records currently have `rights_status: needs_confirmation`,
 `public_eligible: false`, `room_type_id: null`, and
 `room_mapping_status: needs_confirmation` in the product library. The page and
 its assets are therefore removed from the production export by
@@ -25,9 +25,36 @@ its assets are therefore removed from the production export by
 | `family-villa-terrace.jpg` | `assets/accommodations/family-villa/04_露台草坪_主推.JPG` | `acc-family-villa-04` | Same family-villa set; do not claim privacy, exclusive use, or a fixed view. |
 | `family-villa-recreation.jpg` | `assets/accommodations/family-villa/06_餐区麻将桌_备选.jpg` | `acc-family-villa-06` | Recreation-area reference; do not imply that the table or room is guaranteed. |
 | `signature-villa-terrace.jpg` | `assets/accommodations/jianai-shanye-pending/02_景观餐厅露台_主推.JPG` | `acc-jianai-shanye-pending-02` | Premium candidate set only; property identity and room mapping remain unconfirmed. |
-| `signature-villa-suite.jpg` | `assets/accommodations/jianai-shanye-pending/03_超大景观套房_主推.JPG` | `acc-jianai-shanye-pending-03` | Same premium candidate set; it must not represent the entry room tier. |
+| `signature-villa-suite.jpg` | `assets/accommodations/jianai-shanye-pending/03_超大景观套房_主推.JPG` | `acc-jianai-shanye-pending-03` | Large-room reference only; suite name, area and outlook remain unconfirmed. |
+| `signature-villa-exterior.jpg` | `assets/accommodations/jianai-shanye-pending/01_别墅外观及招牌_主推.JPG` | `acc-jianai-shanye-pending-01` | Cropped to remove the person at lower left; the visible Jianai Shanye identity and address remain unconfirmed. |
+| `signature-villa-four-poster.jpg` | `assets/accommodations/jianai-shanye-pending/04_四柱大床房_主推.JPG` | `acc-jianai-shanye-pending-04` | Four-poster room reference; room category and bed type remain unconfirmed. |
+| `signature-villa-fireplace-room.jpg` | `assets/accommodations/jianai-shanye-pending/05_壁炉景观大床房_主推.JPG` | `acc-jianai-shanye-pending-05` | Fireplace operation, room category and outlook remain unconfirmed. |
+| `signature-villa-garden-lounge.jpg` | `assets/accommodations/jianai-shanye-pending/06_休息区与庭院_主推.JPG` | `acc-jianai-shanye-pending-06` | Indoor-outdoor lounge reference; do not promise a private garden or exclusive terrace. |
+| `signature-villa-bathtub.jpg` | `assets/accommodations/jianai-shanye-pending/07_浴缸卫生间_主推.JPG` | `acc-jianai-shanye-pending-07` | Bathtub-bathroom reference; exact room mapping remains unconfirmed. |
+| `signature-villa-red-room.jpg` | `assets/accommodations/jianai-shanye-pending/08_红色主题大床房_辅助.JPG` | `acc-jianai-shanye-pending-08` | Distinct themed-room reference; it must not represent the full property. |
+| `signature-villa-colour-room.jpg` | `assets/accommodations/jianai-shanye-pending/09_彩色主题景观房_辅助.JPG` | `acc-jianai-shanye-pending-09` | Outlook, balcony and room category are not guaranteed. |
+| `signature-villa-vanity.jpg` | `assets/accommodations/jianai-shanye-pending/10_洗漱区及卧室_辅助.JPG` | `acc-jianai-shanye-pending-10` | Vanity-and-bedroom layout reference; partition and room mapping remain unconfirmed. |
+| `signature-villa-shower.jpg` | `assets/accommodations/jianai-shanye-pending/11_淋浴卫生间_辅助.JPG` | `acc-jianai-shanye-pending-11` | Shower-bathroom reference; the visible notice and room mapping still require confirmation. |
+| `signature-villa-lounge-detail.jpg` | `assets/accommodations/jianai-shanye-pending/12_休息区陈设_辅助.JPG` | `acc-jianai-shanye-pending-12` | Interior-detail reference, likely from the same unit as the large-room photograph. |
 
 The family-villa and signature-villa sets must never be mixed into one property
 or room. Before public release, confirm publication rights, the exact property,
 room mapping, current availability, foreign-guest acceptance, and truthful
 localized alt text.
+
+## Editorial landscape images
+
+The page now uses the owner-selected `国家森林公园峰林_174.jpg` as its title
+image. It is exported at 1920×1280 so the desktop 4:5 split hero can focus on
+the central pillars while the mobile 16:10 treatment retains the wider canyon.
+The Tianmen Cave and Glass Bridge photographs are no longer alternative covers:
+they appear beside Day 4 and Day 3 respectively. All images are real Zhangjiajie
+photographs. They remain preview-only because the organized photo library records
+`commercialRightsConfirmed: false`; approve the selected file before public
+release.
+
+| Placement | Preview derivative | Organized source | Editorial role |
+| --- | --- | --- | --- |
+| Title image · current | `hero/sunlit-forest-pillars-174.jpg` | `张家界优选素材/01_国家森林公园与峰林/国家森林公园峰林_174.jpg` | Owner-selected morning panorama; the wide derivative supports responsive art direction without pretending to show every stop. |
+| Day 4 article image | `hero/tianmen-cave-and-stairs.jpg` | `张家界优选素材/02_天门山与天路/天门山_093.jpg` | Shows Tianmen Cave and the stairway named in the final sightseeing day. |
+| Day 3 article image | `hero/grand-canyon-glass-bridge.jpg` | `张家界优选素材/03_大峡谷与玻璃体验/大峡谷·交通移动_139.jpg` | Shows the actual Zhangjiajie Grand Canyon Glass Bridge named in Day 3. |

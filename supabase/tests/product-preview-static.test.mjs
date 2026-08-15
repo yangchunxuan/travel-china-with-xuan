@@ -52,10 +52,13 @@ test("Zhangjiajie product preview preserves the closed release gate", async () =
 });
 
 test("preview uses the established editorial design and complete, distinct stay-photo sets", async () => {
-  const [page, copy, css] = await Promise.all([
+  const [page, copy, css, imagePlan] = await Promise.all([
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
     source("lib/zhangjiajiePrivateTourPreview.ts"),
     source("components/ZhangjiajiePrivateTourPreviewPage.module.css"),
+    source(
+      "content/product-previews/zhangjiajie-4-day-private-tour/image-preview-plan.md",
+    ),
   ]);
 
   assert.match(page, /EditorialGuidePage\.module\.css/);
@@ -80,6 +83,23 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(copy, /family-villa-recreation\.jpg/);
   assert.match(copy, /signature-villa-terrace\.jpg/);
   assert.match(copy, /signature-villa-suite\.jpg/);
+  assert.match(copy, /signature-villa-exterior\.jpg/);
+  assert.match(copy, /signature-villa-four-poster\.jpg/);
+  assert.match(copy, /signature-villa-fireplace-room\.jpg/);
+  assert.match(copy, /signature-villa-garden-lounge\.jpg/);
+  assert.match(copy, /signature-villa-bathtub\.jpg/);
+  assert.match(copy, /signature-villa-red-room\.jpg/);
+  assert.match(copy, /signature-villa-colour-room\.jpg/);
+  assert.match(copy, /signature-villa-vanity\.jpg/);
+  assert.match(copy, /signature-villa-shower\.jpg/);
+  assert.match(copy, /signature-villa-lounge-detail\.jpg/);
+  assert.match(page, /hero\/sunlit-forest-pillars-174\.jpg/);
+  assert.doesNotMatch(page, /images\/hero-zhangjiajie\.jpg/);
+  assert.match(imagePlan, /国家森林公园峰林_174\.jpg/);
+  assert.match(imagePlan, /hero\/tianmen-cave-and-stairs\.jpg/);
+  assert.match(imagePlan, /hero\/grand-canyon-glass-bridge\.jpg/);
+  assert.match(page, /hero\/tianmen-cave-and-stairs\.jpg/);
+  assert.match(page, /hero\/grand-canyon-glass-bridge\.jpg/);
   assert.match(copy, /Country Garden Premium Villa Stay/);
   assert.match(copy, /碧桂园高级度假别墅/);
   assert.doesNotMatch(copy, /Country Garden Family Villa|碧桂园家庭度假别墅/);
