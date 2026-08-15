@@ -98,8 +98,14 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(imagePlan, /国家森林公园峰林_174\.jpg/);
   assert.match(imagePlan, /hero\/tianmen-cave-and-stairs\.jpg/);
   assert.match(imagePlan, /hero\/grand-canyon-glass-bridge\.jpg/);
+  assert.match(imagePlan, /route\/day-1-hehua-airport\.jpg/);
+  assert.match(imagePlan, /route\/day-2-bailong-elevator\.jpg/);
   assert.match(page, /hero\/tianmen-cave-and-stairs\.jpg/);
   assert.match(page, /hero\/grand-canyon-glass-bridge\.jpg/);
+  assert.match(page, /route\/day-1-hehua-airport\.jpg/);
+  assert.match(page, /route\/day-2-bailong-elevator\.jpg/);
+  assert.match(page, /Martin Lewison/);
+  assert.match(page, /creativecommons\.org\/licenses\/by-sa\/2\.0/);
   assert.match(copy, /Country Garden Premium Villa Stay/);
   assert.match(copy, /碧桂园高级度假别墅/);
   assert.doesNotMatch(copy, /Country Garden Family Villa|碧桂园家庭度假别墅/);

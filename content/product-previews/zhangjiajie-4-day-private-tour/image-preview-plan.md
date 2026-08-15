@@ -48,13 +48,17 @@ The page now uses the owner-selected `国家森林公园峰林_174.jpg` as its t
 image. It is exported at 1920×1280 so the desktop 4:5 split hero can focus on
 the central pillars while the mobile 16:10 treatment retains the wider canyon.
 The Tianmen Cave and Glass Bridge photographs are no longer alternative covers:
-they appear beside Day 4 and Day 3 respectively. All images are real Zhangjiajie
-photographs. They remain preview-only because the organized photo library records
-`commercialRightsConfirmed: false`; approve the selected file before public
-release.
+they appear beside Day 4 and Day 3 respectively. Day 1 now uses a separately
+licensed photograph of Zhangjiajie Hehua International Airport, while Day 2 uses
+the organized-library Bailong Elevator photograph. All images are real
+Zhangjiajie photographs. The organized-library images remain preview-only because
+their records show `commercialRightsConfirmed: false`; approve every selected
+local-library file before public release.
 
 | Placement | Preview derivative | Organized source | Editorial role |
 | --- | --- | --- | --- |
 | Title image · current | `hero/sunlit-forest-pillars-174.jpg` | `张家界优选素材/01_国家森林公园与峰林/国家森林公园峰林_174.jpg` | Owner-selected morning panorama; the wide derivative supports responsive art direction without pretending to show every stop. |
+| Day 1 article image | `route/day-1-hehua-airport.jpg` | [Wikimedia Commons: `Zhangjiajie Airport (27796134377).jpg`](https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg), Martin Lewison, 6 June 2018, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | Exact Zhangjiajie Hehua International Airport scene with Tianmen Mountain beyond the apron. Cropped from 4896×3672 to a 1280×1600 derivative; it establishes one arrival gateway but does not depict or prove the private pickup service. Source SHA-256: `6293d810b987628ea2ab797dd39fb6c9661a363966c4bcc43ecbbc20c29908e1`; derivative SHA-256: `6ea432d7bc4ad3cd670075c8b9c072f299878e7be6061d0e7200a5725c5b22e0`. |
+| Day 2 article image | `route/day-2-bailong-elevator.jpg` | `张家界优选素材/08_交通与移动体验/交通移动_190.jpg` | Shows the Bailong Elevator against the sandstone cliffs named in Day 2. Cropped from 4512×3000 to a 1280×1600 derivative. The local record still has `commercialRightsConfirmed: false`; it cannot enter production until the photographer/publication right is confirmed. Source SHA-256: `71de41d211924e76cad3d2795dd9811b55385ba6ce055567de58e60a80dbbd62`; derivative SHA-256: `b840626a062748542dc43e9d91c2bb526ddadf23a76b9b5b5b393a0cf9607f08`. |
 | Day 4 article image | `hero/tianmen-cave-and-stairs.jpg` | `张家界优选素材/02_天门山与天路/天门山_093.jpg` | Shows Tianmen Cave and the stairway named in the final sightseeing day. |
 | Day 3 article image | `hero/grand-canyon-glass-bridge.jpg` | `张家界优选素材/03_大峡谷与玻璃体验/大峡谷·交通移动_139.jpg` | Shows the actual Zhangjiajie Grand Canyon Glass Bridge named in Day 3. |

@@ -26,8 +26,46 @@ export function ZhangjiajiePrivateTourPreviewPage({
   const homePath = isZh ? "/zh/" : "/";
   const inquiryHref = `${homePath}?utm_source=product_preview&utm_medium=website&utm_campaign=zhangjiajie_4d3n#planner-contact`;
   const routePhotos: Partial<
-    Record<number, { alt: string; caption: string; src: string }>
+    Record<
+      number,
+      {
+        alt: string;
+        caption: string;
+        credit?: {
+          author: string;
+          license: string;
+          licenseHref: string;
+          sourceHref: string;
+        };
+        src: string;
+      }
+    >
   > = {
+    1: {
+      alt: isZh
+        ? "张家界荷花国际机场停机坪上的客机与登机桥，远处可见天门山"
+        : "Passenger aircraft and boarding bridges at Zhangjiajie Hehua International Airport, with Tianmen Mountain beyond the apron",
+      caption: isZh
+        ? "张家界荷花国际机场 · 第1天抵达节点参考（照片不代表私人接站服务）"
+        : "Zhangjiajie Hehua International Airport · Day 1 arrival reference (the photograph does not depict the private transfer)",
+      credit: {
+        author: "Martin Lewison",
+        license: "CC BY-SA 2.0",
+        licenseHref: "https://creativecommons.org/licenses/by-sa/2.0/",
+        sourceHref:
+          "https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg",
+      },
+      src: "/product-previews/zhangjiajie-4-day-private-tour/route/day-1-hehua-airport.jpg",
+    },
+    2: {
+      alt: isZh
+        ? "百龙天梯沿张家界国家森林公园的砂岩崖壁升起"
+        : "The Bailong Elevator rising against a sandstone cliff in Zhangjiajie National Forest Park",
+      caption: isZh
+        ? "百龙天梯 · 第2天进山路线实景参考"
+        : "Bailong Elevator · Day 2 route reference",
+      src: "/product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
+    },
     3: {
       alt: isZh
         ? "游客正在跨越张家界大峡谷玻璃桥"
@@ -176,7 +214,25 @@ export function ZhangjiajiePrivateTourPreviewPage({
                               src={routePhoto.src}
                             />
                           </div>
-                          <figcaption>{routePhoto.caption}</figcaption>
+                          <figcaption>
+                            <span>{routePhoto.caption}</span>
+                            {routePhoto.credit ? (
+                              <span className={styles.dayFigureCredit}>
+                                {isZh ? "图片：" : "Photo: "}
+                                <a href={routePhoto.credit.sourceHref}>
+                                  {routePhoto.credit.author}
+                                </a>
+                                {" · "}
+                                <a
+                                  href={routePhoto.credit.licenseHref}
+                                  rel="license"
+                                >
+                                  {routePhoto.credit.license}
+                                </a>
+                                {isZh ? " · 已裁切" : " · cropped"}
+                              </span>
+                            ) : null}
+                          </figcaption>
                         </figure>
                       ) : null}
                     </div>

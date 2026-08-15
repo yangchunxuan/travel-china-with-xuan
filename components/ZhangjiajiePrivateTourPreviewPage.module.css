@@ -292,9 +292,27 @@
 .dayFigure figcaption {
   border-block-start: 1px solid var(--hg-color-line);
   color: var(--hg-color-muted);
+  display: grid;
   font-size: 0.72rem;
+  gap: 0.35rem;
   line-height: 1.5;
   padding: 0.7rem 0.8rem;
+}
+
+.dayFigureCredit {
+  font-size: 0.66rem;
+}
+
+.dayFigureCredit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.dayFigureCredit a:focus-visible {
+  outline: 2px solid var(--hg-color-rust);
+  outline-offset: 2px;
 }
 
 .previewAssetNote {
