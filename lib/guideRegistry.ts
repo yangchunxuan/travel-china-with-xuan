@@ -67,6 +67,13 @@ export interface GuideLocaleEntry {
   headline: string;
   description: string;
   heroAlt: string;
+  heroCredit?: {
+    text: string;
+    sourceLabel: string;
+    sourceUrl: string;
+    licenseLabel: string;
+    licenseUrl: string;
+  };
   cardImageAlt?: string;
   navTitle: string;
   featuredLinkLabel: string;

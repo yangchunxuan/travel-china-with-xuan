@@ -246,6 +246,14 @@ export function EditorialGuidePage({
               src={guide.heroImagePath}
               width={guide.imageWidth}
             />
+            {guide.heroCredit ? (
+              <figcaption className={styles.heroCredit}>
+                <span>{guide.heroCredit.text}</span>{" "}
+                <a href={guide.heroCredit.sourceUrl}>{guide.heroCredit.sourceLabel}</a>
+                <span aria-hidden="true"> · </span>
+                <a href={guide.heroCredit.licenseUrl}>{guide.heroCredit.licenseLabel}</a>
+              </figcaption>
+            ) : null}
           </figure>
         </header>
 

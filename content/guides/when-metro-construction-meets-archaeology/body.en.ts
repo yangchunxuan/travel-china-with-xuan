@@ -217,7 +217,8 @@ const body = {
         {"label": "Confirm a shifted map pin in China", "href": "/guides/china-map-coordinate-offset-explained/", "description": "Resolve a station, entrance or museum location with Chinese-address cross-checks."},
         {"label": "Read whether a hotel is really near the metro", "href": "/guides/china-hotel-near-metro/", "description": "Use the actual entrance and walking route rather than a station label."},
         {"label": "Read Western Xia script and tomb evidence", "href": "/guides/xixia-script-and-imperial-tombs-context/", "description": "See how archaeological evidence supports a careful historical interpretation."},
-        {"label": "Compare Zhouqiao archaeology with modern themed Kaifeng", "href": "/guides/kaifeng-song-dynasty-urban-landscape/", "description": "Use one named excavation to distinguish surviving evidence, later reconstruction and visitor-oriented historical staging."}
+        {"label": "Compare Zhouqiao archaeology with modern themed Kaifeng", "href": "/guides/kaifeng-song-dynasty-urban-landscape/", "description": "Use one named excavation to distinguish surviving evidence, later reconstruction and visitor-oriented historical staging."},
+        {"label": "Read whether heritage fabric is original, repaired or rebuilt", "href": "/guides/how-to-read-heritage-sites-in-china/", "description": "Carry the discovery process into a component-level method for identifying intervention, material status and evidence."}
       ]
     },
     {

@@ -1022,3 +1022,24 @@ The Shilin derivative must retain LHOON attribution, source and licence links,
 an indication that it was cropped/resized and CC BY-SA 2.0 share-alike
 treatment. The Kaifeng CC0 photograph retains descriptive credit even though
 attribution is not legally required.
+
+## Heritage intervention reading guide (August 15, 2026)
+
+This release uses five real, location-specific Wikimedia Commons photographs.
+All derivatives were made through conventional crop, resize and WebP conversion
+only; no scene element was generated, added, removed or composited. The release
+therefore contains **0 / 5 AI-generated or AI-assisted images**. Each caption
+limits the photograph to what its file identity and date can establish.
+
+| Role | Original source, creator, date and rights | Source SHA-256 | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Hero — Yinxu royal grave M1400 surface presentation | [Yinxu - 殷墟 (5067245178).jpg](https://commons.wikimedia.org/wiki/File:Yinxu_-_%E6%AE%B7%E5%A2%9F_(5067245178).jpg), tak.wing, 2010-06-30, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | `013ca0cc507690ceac8b01b84263ef438a718154dd7e590a1f92afb061535b75` | `public/images/guides/how-to-read-heritage-sites-in-china/hero-1600.webp`; 1600 × 1000; `230bafc3f435c04dd669410d14ad65f1410a608dda38e94808f5f84ecdbe77b1` | Real photograph; AI: no. Exact named grave context. The landscaped surface does not by appearance establish the material condition or date of the protected archaeological layer below. |
+| Body — Yinxu World Heritage marker | [Yinxu Royal Tombs (53565240593).jpg](https://commons.wikimedia.org/wiki/File:Yinxu_Royal_Tombs_(53565240593).jpg), xiquinhosilva, 2019-09-15, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `6116adc7d47de6f45f245f33869e66d1e0610874ec0e2b95b3b317b758f043d2` | `public/images/guides/how-to-read-heritage-sites-in-china/yinxu-world-heritage-marker-1400.webp`; 1400 × 900; `abf42580acfaa74e91acb3569238f77ad8b75f82e5528252db2f6de3bdaf65c9` | Real photograph; AI: no. Confirms the photographed property's identity only, not the age of any archaeological layer or object. |
+| Body — Yin Xu Museum exterior | [Yin Xu Museum.jpg](https://commons.wikimedia.org/wiki/File:Yin_Xu_Museum.jpg), 유신예, 2024-11-24, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `e3263c06484bd334d0a25f75ddf47dbf0f679bd6b90bce53fce3e1ecbed2c147` | `public/images/guides/how-to-read-heritage-sites-in-china/yinxu-museum-1200.webp`; 1200 × 900; `d04709e2123f8fc85c2d3b9b6b1b8532422e33f2a0a6614d38ed52ed50be7b8a` | Real photograph; AI: no. Shows a modern conservation and interpretation facility, not a reconstructed Shang palace. |
+| Body — damaged tower and wall at Jiankou | [Tower and path in disrepair - Great Wall of China at Jiankou.jpg](https://commons.wikimedia.org/wiki/File:Tower_and_path_in_disrepair_-_Great_Wall_of_China_at_Jiankou.jpg), Sindarus, 2017-10-04, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `84cfb602ca0b291366c556c6046e40b40ecec0787ec70e937696840ab41dbee` | `public/images/guides/how-to-read-heritage-sites-in-china/jiankou-before-phase-five-1400.webp`; 1400 × 1050; `a5ca7a11dc90fe4a1e3cfaaa1ea84b5014f5b3dc4bf768fd0e7f7a3cd18bf047` | Real photograph; AI: no. Exact Jiankou context before phase five; it does not identify towers 117–122 or document later repair materials. |
+| Body — reconstructed Yongdingmen | [永定门 2024-10-11.jpg](https://commons.wikimedia.org/wiki/File:%E6%B0%B8%E5%AE%9A%E9%97%A8_2024-10-11.jpg), xiquinhosilva, 2024-10-11, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | `4f9df0479aa4bc900d9aff7e896da51f255b60f9739679370a8b6d4e288b640d` | `public/images/guides/how-to-read-heritage-sites-in-china/yongdingmen-reconstruction-2024-1400.webp`; 1400 × 788; `6b7c9c62eb68b73ff3959a694bba9986b3666423543905813ebb8d81c97de5b1` | Real photograph; AI: no. Shows the twenty-first-century reconstruction before the 2026 repair; it does not establish ancient upper-tower fabric or current project completion. |
+
+CC BY-SA derivatives retain attribution, source and licence links, an
+indication of crop/resize modifications and the applicable share-alike duty.
+The default-collapsed EN/ZH/KO Sources blocks carry the same public attribution
+and evidence boundaries.
