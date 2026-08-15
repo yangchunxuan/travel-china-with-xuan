@@ -255,10 +255,6 @@ export function ZhangjiajiePrivateTourPreviewPage({
                 <p>{copy.otherStaysBody}</p>
               </div>
             </aside>
-            <p className={styles.previewAssetNote}>
-              <CircleAlert aria-hidden="true" size={18} />
-              <span>{copy.previewAssetNote}</span>
-            </p>
             <div className={styles.stayGrid}>
               {copy.accommodationOptions.map((option) => (
                 <section className={styles.stayCard} key={option.id}>

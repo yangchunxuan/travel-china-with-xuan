@@ -65,7 +65,7 @@ export const productPreviewCopy = {
       ],
       [
         "A stay that changes the mood",
-        "Keep the route and choose between city convenience, a spacious premium villa setting or a more distinctive signature stay.",
+        "Keep the route and choose between city convenience, a more spacious premium stay or a more distinctive mountain setting.",
       ],
       [
         "Details that follow your dates",
@@ -88,28 +88,26 @@ export const productPreviewCopy = {
       "The sightseeing route stays the same while the atmosphere after each day can change. These four galleries show a range from city convenience to more spacious or distinctive stays, so you can tell us what feels right. Every photograph remains with its own candidate property; rooms from different hotels are never blended into one promise.",
     otherStaysTitle: "Not limited to the stays shown here",
     otherStaysBody:
-      "These photographs are only part of the hotel selection we can arrange. If the style, location or room setup is not right for you, tell us what matters most and we will screen other Zhangjiajie hotels for your actual dates. You can keep the four-day route you like while we match a better-fitting hotel, room and price for written confirmation before payment.",
-    previewAssetNote:
-      "Internal preview photographs only. They show the candidate material sets in full, but publication rights, exact property, room assignment, availability and foreign-guest acceptance must be confirmed before release or booking.",
+      "These photographs show only part of the hotel selection we can arrange. If none fits your preferred style, location or room setup, tell us what matters most. We can screen other Zhangjiajie hotels for your dates, so you can keep the four-day route you like and confirm a better fit before payment.",
     accommodationOptions: [
       {
         id: "city-nihao",
         label: "City candidate 01",
-        name: "Ni Hao Hotel · Ziwu Road",
+        name: "Modern City Stay",
         price: "City-stay tier · CNY 5,390 from",
         summary:
           "A bright, contemporary city candidate shown through both available twin-room photographs. The window outlook and exact room remain subject to the date-specific assignment.",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
-            alt: "Twin room and window outlook in the Ni Hao Hotel candidate set",
+            alt: "Bright twin room with two beds and a window outlook",
             caption: "City candidate 01 · twin room and window reference",
             width: 1206,
             height: 782,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
-            alt: "Twin room, entrance and vanity area in the Ni Hao Hotel candidate set",
+            alt: "Twin room with its entrance and vanity area visible",
             caption: "City candidate 01 · twin room, entrance and vanity reference",
             width: 1206,
             height: 775,
@@ -119,42 +117,42 @@ export const productPreviewCopy = {
       {
         id: "city-west",
         label: "City candidate 02",
-        name: "Zhangjiajie Western Grand Hotel",
+        name: "Comfortable City Stay",
         price: "City-stay tier · CNY 5,390 from",
         summary:
           "The complete candidate set shows the hotel exterior, twin and double rooms, a specially decorated twin room and a bathroom. Balloons, floral styling and the window outlook are photographed examples, not standard guarantees.",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-exterior.jpg",
-            alt: "Exterior of the Zhangjiajie Western Grand Hotel candidate",
-            caption: "City candidate 02 · hotel exterior and identity reference",
+            alt: "Exterior of the second city-stay candidate",
+            caption: "City candidate 02 · exterior reference",
             width: 1206,
             height: 763,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
-            alt: "Twin room and window outlook in the Western Grand Hotel candidate set",
+            alt: "Twin room and window outlook in the second city-stay set",
             caption: "City candidate 02 · twin-room and window reference",
             width: 1206,
             height: 746,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
-            alt: "Double room in the Western Grand Hotel candidate set",
+            alt: "Double room in the second city-stay set",
             caption: "City candidate 02 · double-room reference",
             width: 1206,
             height: 788,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin-decorated.jpg",
-            alt: "Twin room with a special balloon and towel setup in the Western Grand Hotel candidate set",
+            alt: "Twin room with a special balloon and towel setup",
             caption: "City candidate 02 · special twin-room setup, not a standard inclusion",
             width: 1206,
             height: 785,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-bathroom.jpg",
-            alt: "Bathroom with shower and wall-mounted hair dryer in the Western Grand Hotel candidate set",
+            alt: "Bathroom with shower and wall-mounted hair dryer",
             caption: "City candidate 02 · bathroom and shower reference",
             width: 1206,
             height: 788,
@@ -163,51 +161,51 @@ export const productPreviewCopy = {
       },
       {
         id: "premium-villa",
-        label: "Elevated villa option",
-        name: "Country Garden Premium Villa Stay",
+        label: "Premium stay option",
+        name: "Spacious Premium Stay",
         price: "CNY 6,090 per person",
         summary:
-          "For travellers who want the evening to feel spacious rather than merely functional. This candidate set shows the living room, twin room, double room, bathroom, terrace and recreation area; exact villa and room allocation are confirmed for the dates.",
+          "For travellers who want the evening to feel spacious rather than merely functional. This candidate set shows the living room, twin room, double room, bathroom, terrace and recreation area; the exact accommodation and room allocation are confirmed for the dates.",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
-            alt: "Sunlit living room with full-height windows in the premium villa candidate set",
-            caption: "Premium villa material set · living-room reference",
+            alt: "Sunlit living room with full-height windows in the premium-stay set",
+            caption: "Premium-stay material set · living-room reference",
             width: 1400,
             height: 1050,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-twin.jpg",
-            alt: "Twin bedroom opening toward a garden in the premium villa candidate set",
-            caption: "Premium villa material set · twin-bedroom reference",
+            alt: "Twin bedroom opening toward a garden in the premium-stay set",
+            caption: "Premium-stay material set · twin-bedroom reference",
             width: 1050,
             height: 1400,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-double.jpg",
-            alt: "Double bedroom with a large window in the premium villa candidate set",
-            caption: "Premium villa material set · double-bedroom reference",
+            alt: "Double bedroom with a large window in the premium-stay set",
+            caption: "Premium-stay material set · double-bedroom reference",
             width: 1400,
             height: 1050,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
-            alt: "Bathroom with an enclosed shower in the premium villa candidate set",
-            caption: "Premium villa material set · bathroom and enclosed-shower reference",
+            alt: "Bathroom with an enclosed shower in the premium-stay set",
+            caption: "Premium-stay material set · bathroom and enclosed-shower reference",
             width: 1050,
             height: 1400,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
-            alt: "Outdoor deck and lawn in the premium villa candidate set",
-            caption: "Premium villa material set · deck and lawn reference",
+            alt: "Outdoor deck and lawn in the premium-stay set",
+            caption: "Premium-stay material set · deck and lawn reference",
             width: 1400,
             height: 1050,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
-            alt: "Bright recreation area with a mahjong table in the premium villa candidate set",
-            caption: "Premium villa material set · recreation-area reference",
+            alt: "Bright recreation area with a mahjong table in the premium-stay set",
+            caption: "Premium-stay material set · recreation-area reference",
             width: 980,
             height: 1400,
           },
@@ -216,15 +214,15 @@ export const productPreviewCopy = {
       {
         id: "signature-villa",
         label: "Signature stay reference",
-        name: "Signature Mountain Villa",
+        name: "Distinctive Mountain Stay",
         price: "CNY 7,090 per person",
         summary:
           "Twelve candidate views show the exterior, dining terrace, several room styles, bathrooms and quiet lounge spaces. Together they convey the character of this more distinctive stay; they do not promise that every feature, view or layout belongs to one bookable room.",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
-            alt: "Exterior of the unconfirmed signature-villa candidate with Jianai Shanye signage",
-            caption: "Candidate exterior · exact property identity and address remain to be confirmed",
+            alt: "Exterior and landscaped entrance of the mountain-stay candidate",
+            caption: "Mountain-stay candidate · exterior reference",
             width: 1600,
             height: 1091,
           },
@@ -311,13 +309,13 @@ export const productPreviewCopy = {
     pricesEyebrow: "4-day private tour price",
     pricesTitle: "One route, three ways to stay",
     pricesIntro:
-      "For the approved 15–31 August 2026 window, the 4-day, 3-night route starts at CNY 5,390 per person with a selected city stay. The Premium Villa Stay is CNY 6,090 per person and the Signature Mountain Villa is CNY 7,090 per person. The accommodation changes; the core sightseeing structure does not.",
+      "For the approved 15–31 August 2026 window, the 4-day, 3-night route starts at CNY 5,390 per person with a selected city stay. The Spacious Premium Stay is CNY 6,090 per person and the Distinctive Mountain Stay is CNY 7,090 per person. The accommodation changes; the core sightseeing structure does not.",
     tierDescriptions: {
       "selected-city-stay":
         "A practical city base matched from the properties and rooms available for the actual dates.",
-      "country-garden-family-villa":
-        "More shared and private-room space in the Premium Villa Stay, subject to exact villa and room allocation.",
-      "country-garden-signature-villa":
+      "spacious-premium-stay":
+        "More shared and private-room space in the premium stay, subject to exact accommodation and room allocation.",
+      "distinctive-mountain-stay":
         "A more distinctive design-and-view setting, with the exact property and room matched before payment.",
     },
     faqEyebrow: "Before you choose four days",
@@ -332,8 +330,8 @@ export const productPreviewCopy = {
         "No. The Grand Canyon Glass Bridge is in the Zhangjiajie Grand Canyon area; Tianmen Mountain's glass walkways belong to a separate mountain visit on a different day.",
       ],
       [
-        "Should I stay in the city or choose a villa setting?",
-        "A city stay usually prioritizes practical arrivals and departures. A villa tier changes the evening atmosphere and shared space. The best choice still depends on the confirmed property, route order and departure point.",
+        "Should I stay in the city or choose a more spacious setting?",
+        "A city stay usually prioritizes practical arrivals and departures. A more spacious tier changes the evening atmosphere and shared space. The best choice still depends on the confirmed accommodation, route order and departure point.",
       ],
       [
         "Can Tianmen Mountain fit before my flight or train?",
@@ -448,7 +446,7 @@ export const productPreviewCopy = {
       ],
       [
         "住宿决定旅途的质感",
-        "路线不变，在市区便利、高级别墅空间与更有辨识度的精品住宿之间选择。",
+        "路线不变，在市区便利、更宽敞的高级住宿与更有辨识度的山景住宿之间选择。",
       ],
       [
         "细节跟着真实日期走",
@@ -471,28 +469,26 @@ export const productPreviewCopy = {
       "核心路线不变，每天回到住宿后的感受可以不同。下面四组照片展示从市区便利到更宽敞、更有辨识度的住宿方向，方便你告诉我们更喜欢哪一种；每组照片只属于对应候选酒店，不把不同酒店和房型拼在一起。",
     otherStaysTitle: "不只限于页面里的酒店",
     otherStaysBody:
-      "这些照片只是我们能够安排的部分住宿选择。如果这里展示的风格、位置或房型不合适，直接告诉我们你最看重什么，我们会按真实日期继续筛选其他张家界酒店。你不需要为了喜欢这条四日路线而勉强接受页面中的一家酒店；我们会把更合适的酒店、房型和价格，在付款前写入确认方案。",
-    previewAssetNote:
-      "以下仅为内部预览照片。这里完整展示候选素材，但图片公开使用权、具体物业、房型分配、库存与外宾接待，仍须在正式发布或接受订单前逐项确认。",
+      "页面仅展示部分住宿。如果这些酒店不合适，我们可按你的风格、位置和房型偏好继续匹配，确认满意后再付款。",
     accommodationOptions: [
       {
         id: "city-nihao",
         label: "市区候选01",
-        name: "你好酒店 · 子午路店",
+        name: "现代市区住宿",
         price: "市区住宿档 · 每人¥5,390起",
         summary:
           "一组明亮、现代的市区住宿候选，现有两张双床房照片全部展示。窗外景观与准确房型仍按实际日期分配。",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin.jpg",
-            alt: "你好酒店候选素材中的双床房与窗外景观",
+            alt: "明亮的双床房与窗外景观",
             caption: "市区候选01 · 双床房与窗景参考",
             width: 1206,
             height: 782,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
-            alt: "你好酒店候选素材中的双床房、入口与洗漱区",
+            alt: "双床房、入口与洗漱区",
             caption: "市区候选01 · 双床房、入口与洗漱区参考",
             width: 1206,
             height: 775,
@@ -502,42 +498,42 @@ export const productPreviewCopy = {
       {
         id: "city-west",
         label: "市区候选02",
-        name: "张家界韦斯特大酒店",
+        name: "舒适市区住宿",
         price: "市区住宿档 · 每人¥5,390起",
         summary:
           "现有候选素材全部展示：酒店外观、双床房、大床房、特殊布置双床房与卫生间。气球、花饰及窗外景观属于拍摄示例，不是标准保证。",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-exterior.jpg",
-            alt: "张家界韦斯特大酒店候选物业外观",
-            caption: "市区候选02 · 酒店外观与实体识别参考",
+            alt: "第二组市区住宿候选的建筑外观",
+            caption: "市区候选02 · 建筑外观参考",
             width: 1206,
             height: 763,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
-            alt: "张家界韦斯特大酒店候选素材中的双床房与窗外景观",
+            alt: "第二组市区住宿中的双床房与窗外景观",
             caption: "市区候选02 · 双床房与窗景参考",
             width: 1206,
             height: 746,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
-            alt: "张家界韦斯特大酒店候选素材中的大床房",
+            alt: "第二组市区住宿中的大床房",
             caption: "市区候选02 · 大床房参考",
             width: 1206,
             height: 788,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin-decorated.jpg",
-            alt: "张家界韦斯特大酒店候选素材中特殊气球与毛巾布置的双床房",
+            alt: "带特殊气球与毛巾布置的双床房",
             caption: "市区候选02 · 特殊双床房布置，并非标准包含",
             width: 1206,
             height: 785,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-bathroom.jpg",
-            alt: "张家界韦斯特大酒店候选素材中的淋浴卫生间与壁挂吹风机",
+            alt: "带淋浴与壁挂吹风机的卫生间",
             caption: "市区候选02 · 卫生间与淋浴设施参考",
             width: 1206,
             height: 788,
@@ -546,51 +542,51 @@ export const productPreviewCopy = {
       },
       {
         id: "premium-villa",
-        label: "高级别墅选择",
-        name: "碧桂园高级度假别墅",
+        label: "高级住宿选择",
+        name: "宽敞高级住宿",
         price: "每人¥6,090",
         summary:
-          "适合希望一天游览后仍能舒展下来、而不是只回房睡觉的旅客。候选素材完整展示客厅、双床房、大床房、卫生间、露台与休闲区；具体别墅和房间分配按日期确认。",
+          "适合希望一天游览后仍能舒展下来、而不是只回房睡觉的旅客。候选素材完整展示客厅、双床房、大床房、卫生间、露台与休闲区；具体住宿和房间分配按日期确认。",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
-            alt: "碧桂园高级度假别墅候选素材中的落地窗客厅",
-            caption: "高级别墅素材组 · 客厅参考",
+            alt: "高级住宿候选中的落地窗客厅",
+            caption: "高级住宿素材组 · 客厅参考",
             width: 1400,
             height: 1050,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-twin.jpg",
-            alt: "碧桂园高级度假别墅候选素材中通向花园一侧的双床房",
-            caption: "高级别墅素材组 · 双床房参考",
+            alt: "高级住宿候选中通向花园一侧的双床房",
+            caption: "高级住宿素材组 · 双床房参考",
             width: 1050,
             height: 1400,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-double.jpg",
-            alt: "碧桂园高级度假别墅候选素材中的大窗大床房",
-            caption: "高级别墅素材组 · 大床房参考",
+            alt: "高级住宿候选中的大窗大床房",
+            caption: "高级住宿素材组 · 大床房参考",
             width: 1400,
             height: 1050,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-bathroom.jpg",
-            alt: "碧桂园高级度假别墅候选素材中带独立淋浴间的卫生间",
-            caption: "高级别墅素材组 · 卫生间与独立淋浴参考",
+            alt: "高级住宿候选中带独立淋浴间的卫生间",
+            caption: "高级住宿素材组 · 卫生间与独立淋浴参考",
             width: 1050,
             height: 1400,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-terrace.jpg",
-            alt: "碧桂园高级度假别墅候选素材中的户外露台与草坪",
-            caption: "高级别墅素材组 · 露台与草坪参考",
+            alt: "高级住宿候选中的户外露台与草坪",
+            caption: "高级住宿素材组 · 露台与草坪参考",
             width: 1400,
             height: 1050,
           },
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-recreation.jpg",
-            alt: "碧桂园高级度假别墅候选素材中带麻将桌的明亮休闲区",
-            caption: "高级别墅素材组 · 休闲区参考",
+            alt: "高级住宿候选中带麻将桌的明亮休闲区",
+            caption: "高级住宿素材组 · 休闲区参考",
             width: 980,
             height: 1400,
           },
@@ -599,15 +595,15 @@ export const productPreviewCopy = {
       {
         id: "signature-villa",
         label: "精品住宿参考",
-        name: "精品山景别墅",
+        name: "精品山景住宿",
         price: "每人¥7,090",
         summary:
           "12张候选照片完整呈现建筑外观、景观餐厅、不同客房、卫浴与休息空间，让这一档住宿的气质更具体；但不代表所有设施、景观与布局都同时属于同一间可订客房。",
         images: [
           {
             src: "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-exterior.jpg",
-            alt: "候选精品别墅建筑外观，入口可见简爱山野招牌",
-            caption: "候选住宿外观 · 具体物业名称与地址仍待确认",
+            alt: "精品山景住宿候选的建筑外观与景观入口",
+            caption: "精品山景住宿 · 建筑外观参考",
             width: 1600,
             height: 1091,
           },
@@ -694,12 +690,12 @@ export const productPreviewCopy = {
     pricesEyebrow: "张家界4天3晚私家游价格",
     pricesTitle: "同一条路线，三种住宿质感",
     pricesIntro:
-      "在2026年8月15日至31日的已批准价格期内，这套4天3晚行程选择市区住宿每人¥5,390起；高级度假别墅每人¥6,090，精品山景别墅每人¥7,090。三档改变住宿体验，不改变四日核心游览结构。",
+      "在2026年8月15日至31日的已批准价格期内，这套4天3晚行程选择市区住宿每人¥5,390起；宽敞高级住宿每人¥6,090，精品山景住宿每人¥7,090。三档改变住宿体验，不改变四日核心游览结构。",
     tierDescriptions: {
       "selected-city-stay": "按真实日期可订情况，从两家市区候选中匹配准确酒店与房型。",
-      "country-garden-family-villa":
-        "高级度假别墅提供更多公共空间与独立房间选择，具体别墅和分房按日期确认。",
-      "country-garden-signature-villa":
+      "spacious-premium-stay":
+        "高级住宿提供更多公共空间与独立房间选择，具体住宿和分房按日期确认。",
+      "distinctive-mountain-stay":
         "更强调设计与景观氛围，付款前匹配准确物业和房型。",
     },
     faqEyebrow: "决定四天之前",
@@ -714,8 +710,8 @@ export const productPreviewCopy = {
         "不是。大峡谷玻璃桥位于张家界大峡谷区域；天门山玻璃栈道属于另一天的天门山游览，两者不能在地图和门票上混为一谈。",
       ],
       [
-        "住市区，还是选择别墅住宿？",
-        "市区住宿通常更强调抵离便利；别墅档位改变的是夜晚氛围与相聚空间。最终仍要结合准确物业、景点顺序和离开站点判断。",
+        "住市区，还是选择更宽敞的住宿？",
+        "市区住宿通常更强调抵离便利；更宽敞的档位改变的是夜晚氛围与相聚空间。最终仍要结合准确住宿、景点顺序和离开站点判断。",
       ],
       [
         "天门山能不能放在飞机或火车前？",

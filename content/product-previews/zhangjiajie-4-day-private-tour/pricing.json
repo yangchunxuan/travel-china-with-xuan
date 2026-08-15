@@ -26,28 +26,28 @@
       "name_en": "Selected City Stay",
       "from_price_per_person": 5390,
       "regular_price_per_person": 5590,
-      "positioning_zh": "你好酒店或韦斯特大酒店等最终确认的市区住宿",
+      "positioning_zh": "按实际日期最终确认的市区住宿",
       "featured": true
     },
     {
-      "tier_id": "country-garden-family-villa",
-      "name_zh": "碧桂园高级度假别墅",
-      "name_en": "Country Garden Premium Villa Stay",
+      "tier_id": "spacious-premium-stay",
+      "name_zh": "宽敞高级住宿",
+      "name_en": "Spacious Premium Stay",
       "price_per_person": 6090,
       "positioning_zh": "适合重视更舒展空间与完整住宿体验的客人",
       "featured": false
     },
     {
-      "tier_id": "country-garden-signature-villa",
-      "name_zh": "碧桂园精品山景别墅",
-      "name_en": "Country Garden Signature Mountain Villa",
+      "tier_id": "distinctive-mountain-stay",
+      "name_zh": "精品山景住宿",
+      "name_en": "Distinctive Mountain Stay",
       "price_per_person": 7090,
       "positioning_zh": "高端设计感与特色山景住宿选项",
       "featured": false
     }
   ],
   "public_notes": {
-    "zh-CN": "以上价格按至少2位成人同行、4天3晚计算。3人及以上不自动享受人数折扣。具体酒店或别墅、房型、房间数、早餐、车辆及可订状态以付款前的书面确认单为准；价格过期后请重新询价。",
-    "en": "Prices are per person for a minimum of two adults on a 4-day, 3-night itinerary. There is no automatic group discount for three or more travelers. The exact hotel or villa, room type, room count, breakfast, vehicle and availability must be confirmed in writing before payment. Request a new quote after the validity date."
+    "zh-CN": "以上价格按至少2位成人同行、4天3晚计算。3人及以上不自动享受人数折扣。具体住宿、房型、房间数、早餐、车辆及可订状态以付款前的书面确认单为准；价格过期后请重新询价。",
+    "en": "Prices are per person for a minimum of two adults on a 4-day, 3-night itinerary. There is no automatic group discount for three or more travelers. The exact accommodation, room type, room count, breakfast, vehicle and availability must be confirmed in writing before payment. Request a new quote after the validity date."
   }
 }

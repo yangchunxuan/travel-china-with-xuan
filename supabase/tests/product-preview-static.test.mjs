@@ -106,14 +106,19 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(page, /route\/day-2-bailong-elevator\.jpg/);
   assert.match(page, /Martin Lewison/);
   assert.match(page, /creativecommons\.org\/licenses\/by-sa\/2\.0/);
-  assert.match(copy, /Country Garden Premium Villa Stay/);
-  assert.match(copy, /碧桂园高级度假别墅/);
+  assert.match(copy, /Spacious Premium Stay/);
+  assert.match(copy, /宽敞高级住宿/);
   assert.match(copy, /Not limited to the stays shown here/);
   assert.match(copy, /only part of the hotel selection we can arrange/);
   assert.match(copy, /不只限于页面里的酒店/);
-  assert.match(copy, /只是我们能够安排的部分住宿选择/);
+  assert.match(copy, /页面仅展示部分住宿/);
   assert.match(page, /className=\{styles\.stayChoiceNote\}/);
-  assert.doesNotMatch(copy, /Country Garden Family Villa|碧桂园家庭度假别墅/);
+  assert.doesNotMatch(
+    copy,
+    /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱/,
+  );
+  assert.doesNotMatch(copy, /previewAssetNote|Internal preview photographs|内部预览照片/);
+  assert.doesNotMatch(page, /styles\.previewAssetNote|copy\.previewAssetNote/);
   assert.doesNotMatch(copy, /Check dates and room availability|查询日期与可订房型/);
   assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
 });
@@ -133,6 +138,10 @@ test("approved prices have one runtime expiry path and no internal data leak", a
     [5390, 6090, 7090],
   );
   assert.equal(pricing.tiers[0].regular_price_per_person, 5590);
+  assert.doesNotMatch(
+    JSON.stringify(pricing),
+    /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱/,
+  );
   assert.match(helper, /isProductPriceCurrent/);
   assert.match(priceWindow, /isProductPriceCurrent\(pricing\.valid_from, pricing\.valid_until\)/);
   assert.match(priceWindow, /copy\.expiredPrice/);
