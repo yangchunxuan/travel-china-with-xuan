@@ -6,24 +6,26 @@ No documentary photograph is supplied. Do not use AI to fabricate a vinegar work
 
 ## Hero — safe production fallback
 
-- **Format:** AI-assisted Homeground editorial vector, visibly diagrammatic rather than photorealistic; AI-assisted: yes.
-- **Composition:** one large sectional vinegar jar, two smaller jars, simplified layered contents, curved arrows and abstract background waves. The background is not a documented Zhenjiang skyline or riverfront. No company logo or retail label.
-- **Accuracy rule:** the layers explain a concept, not a measured vessel cross-section or one producer's recipe. Label the hero as an illustration; keep detailed process information in HTML.
-- **Output:** `/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp`, 1600×1000 WebP; editable vector source retained.
-- **Rights basis:** Homeground-produced project asset with retained SVG; no third-party photograph, logo, label or factory image is incorporated.
-- **EN alt:** `AI-assisted editorial illustration of three vinegar jars, layered contents and circular arrows; not a documentary Zhenjiang workshop or recipe.`
-- **ZH alt:** `AI 辅助编辑插画：三个醋坛、分层内容物与循环箭头；并非镇江作坊或配方的纪实画面。`
-- **KO alt:** `식초 항아리 세 개와 층상 내용물, 순환 화살표를 그린 AI 보조 편집 일러스트로, 전장 작업장이나 제조법의 기록 장면이 아님.`
+- **Format:** AI-assisted Homeground miniature editorial raster, visibly illustrative rather than documentary; AI-assisted: yes.
+- **Composition:** one large ceramic crock with a wooden paddle, one smaller sealed jar, grain, bowls and blank paper tabs on a circular wood stage against a bright abstract paper backdrop. The setting is not a documented Zhenjiang workshop, skyline or riverfront.
+- **Accuracy rule:** the objects evoke material change and aging but do not document one producer's ingredients, quantities, vessel or recipe. Keep detailed process information in HTML.
+- **Output:** `/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp`, 1600×1000 WebP; approved PNG source retained.
+- **Rights basis:** Homeground-produced AI-assisted project asset; no third-party photograph, logo, label or factory image is incorporated.
+- **EN alt:** `AI-assisted miniature editorial illustration of a ceramic vinegar crock, grains, paddle and bowls; not a documentary Zhenjiang workshop or recipe.`
+- **ZH alt:** `AI 辅助微缩编辑插画：陶制醋坛、谷物、木制搅拌工具与小碗；并非镇江作坊或配方的纪实画面。`
+- **KO alt:** `도자기 식초 항아리, 곡물, 나무 주걱과 작은 그릇을 담은 AI 보조 미니어처 편집 일러스트로, 전장 작업장이나 제조법의 기록 장면이 아닙니다.`
 
 ### Production asset record
 
-- Created and visually checked: 2026-08-13.
-- Source: `content/guides/zhenjiang-vinegar-living-fermentation/hero-source.svg`.
+- Created, background-revised, selected by the project owner and visually checked: 2026-08-15.
+- Current source: `content/guides/zhenjiang-vinegar-living-fermentation/hero-source-20260815.png` (1536×1024).
 - Final: `public/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp` (1600×1000).
-- SVG SHA-256: `0e737b1c7fa66fce79087963bbd814c333c01df929105fae5f5600af5a23fa3a`.
-- WebP SHA-256: `15304cf4d31d15a72a4ed3a05894f4e7a62d3341d32002febe0ae209fc0005e7`.
+- Source PNG SHA-256: `6749d497c3b309c25110eefb2535031481c07a0868fe8fb827c463d569c0ef71`.
+- WebP SHA-256: `bfdeac054f8ed4dba9078ea3dd249571449cf7be94aec1245ff42bcc32d9f9e6`.
+- Derivative treatment: centred 16:10 crop, Lanczos resize, sRGB RGB export and metadata-stripped WebP encoding at quality 88.
+- Superseded source retained for history only: `hero-source.svg`, SHA-256 `0e737b1c7fa66fce79087963bbd814c333c01df929105fae5f5600af5a23fa3a`; it no longer generates the production hero.
 - Privacy and accuracy check: no person, logo, retail label, health claim, factory scene, proprietary recipe, exact coordinate or documentary claim.
-- Evidence boundary: the vector cannot establish Zhenjiang as the visible location, a real workshop or facility, an actual vessel or ingredient bed, a producer's recipe or process, a dated fermentation stage or any event.
+- Evidence boundary: the illustration cannot establish Zhenjiang as the visible location, a real workshop or facility, an actual vessel or ingredient bed, a producer's recipe or process, a dated fermentation stage or any event.
 
 ## Real photograph needs — optional editorial upgrade
 
