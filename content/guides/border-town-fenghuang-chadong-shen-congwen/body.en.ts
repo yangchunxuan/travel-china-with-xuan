@@ -312,6 +312,11 @@ const body = {
           label: "Order a balanced first meal in Hunan",
           href: "/guides/hunan-cuisine-balanced-first-meal/",
           description: "Continue from literary geography to a practical regional-food decision."
+        },
+        {
+          label: "Read Zibo's Liaozhai places and living ballad tradition",
+          href: "/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "Compare how another literary identity connects an author's home, a book, living performance and a modern visitor attraction."
         }
       ]
     },

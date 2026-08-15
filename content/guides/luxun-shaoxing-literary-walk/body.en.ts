@@ -343,6 +343,11 @@ const body = {
           label: "Verify official and reseller ticket channels",
           href: "/guides/official-or-reseller-china-tickets/",
           description: "Use a current operator source if the heritage area requires a reservation."
+        },
+        {
+          label: "Separate the layers behind Liaozhai in Zibo",
+          href: "/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "Compare another writer-and-place visit by keeping the former residence, literature, living performance and modern scenic interpretation distinct."
         }
       ]
     },

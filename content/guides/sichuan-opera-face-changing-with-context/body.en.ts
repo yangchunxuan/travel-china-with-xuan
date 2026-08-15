@@ -136,6 +136,7 @@ const body = {
         { label: "Choose a first Inner Mongolian long-song performance", href: "/guides/inner-mongolia-long-song-first-performance/", description: "Use the same discipline of identifying format, performers and listening task." },
         { label: "Read a first Foshan lion-dance performance", href: "/guides/foshan-lion-dance-first-performance-workflow/", description: "Prepare for a live form without treating a viral technique as the whole tradition." },
         { label: "Order Beijing, Xi'an and Chengdu", href: "/guides/beijing-xian-chengdu-route-order/", description: "Decide where a Chengdu performance fits in the larger trip." },
+        { label: "Read an Anshun Dixi mask and first performance", href: "/guides/anshun-dixi-mask-performance-guide/", description: "Compare another masked performance through its face, veil, voice, percussion and body rather than a single visual effect." },
       ],
     },
     {

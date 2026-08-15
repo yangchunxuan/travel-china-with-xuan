@@ -142,7 +142,8 @@ const body = {
         {"label": "Browse Homeground’s China guides", "href": "/guides/", "description": "Return to the complete guide collection."},
         {"label": "Read Liye Qin slips as local records", "href": "/guides/liye-qin-slips-local-government-records/", "description": "Compare family-financial papers with administrative records."},
         {"label": "Read Nanhai No. 1 through cargo and conservation", "href": "/guides/nanhai-one-shipwreck-cargo-and-conservation/", "description": "Use another evidence chain to understand maritime movement."},
-        {"label": "Choose a Fujian Tulou cluster", "href": "/guides/fujian-tulou-cluster-selection/", "description": "Place documentary migration history beside the built landscapes of Fujian communities."}
+        {"label": "Choose a Fujian Tulou cluster", "href": "/guides/fujian-tulou-cluster-selection/", "description": "Place documentary migration history beside the built landscapes of Fujian communities."},
+        {"label": "Read the Meizhou Mazu Ancestral Temple in context", "href": "/guides/meizhou-mazu-ancestral-temple-reading-guide/", "description": "Continue from maritime migration records to a coastal institution, living belief and layered modern temple complex without merging their evidence."}
       ]
     },
     {

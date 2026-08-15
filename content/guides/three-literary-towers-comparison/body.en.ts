@@ -328,6 +328,11 @@ const body = {
           href: "/guides/how-to-read-a-suzhou-garden/",
           description: "Continue separating literary ways of seeing from claims about material age.",
         },
+        {
+          label: "Separate Zibo's Liaozhai evidence layers",
+          href: "/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "Carry the literature-versus-material-evidence method to a former residence, a living ballad tradition and a modern scenic attraction.",
+        },
       ],
     },
     {

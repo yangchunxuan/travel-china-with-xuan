@@ -1,0 +1,91 @@
+{
+  "id": "liaozhai-zibo-former-residence-liqu-liaozhai-city",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "cultural-evidence-layer-guide",
+  "topics": ["Pu Songling", "Liaozhai Zhiyi", "Liaozhai liqu", "literary heritage", "living heritage"],
+  "destinations": ["zibo", "zichuan"],
+  "heroImagePath": "/images/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-16",
+  "dateModified": "2026-08-16",
+  "sourceReviewedDate": "2026-08-15",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+      "title": "Zibo Liaozhai: Former Residence, Liaozhai Liqu and Liaozhai City",
+      "headline": "Separate Pu Songling's former residence from literature, living music and modern tourism",
+      "description": "Read Zibo's Liaozhai evidence in four layers: Pu Songling's former residence and museum, Strange Tales, Liaozhai liqu and modern Liaozhai City.",
+      "heroAlt": "Gate of Pu Songling's former residence in Zibo, with a national cultural-site protection plaque beside the entrance.",
+      "heroCredit": {
+        "text": "Photo by Finblanco, 29 July 2008; cropped and resized by Homeground. The frame identifies the former-residence gate and protection plaque, not current access or the age of every visible component.",
+        "sourceLabel": "Original file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_of_pusongling%27s_house.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "Read Liaozhai in Zibo",
+      "featuredLinkLabel": "Separate Zibo's Liaozhai layers",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Liaozhai", "Pu Songling", "Zibo"]
+    },
+    "zh": {
+      "path": "/zh/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+      "title": "淄博聊斋怎么看：蒲松龄故居、聊斋俚曲与聊斋城",
+      "headline": "把有据可查的故居、文学作品、活态音乐与现代旅游呈现分开读",
+      "description": "用四个证据层读懂淄博聊斋：蒲松龄故居与纪念馆、《聊斋志异》、聊斋俚曲，以及现代聊斋城景区。",
+      "heroAlt": "淄博蒲松龄故居大门，入口旁可见全国重点文物保护单位标志牌。",
+      "heroCredit": {
+        "text": "Finblanco 摄于 2008 年 7 月 29 日；Homeground 裁切并缩放。画面只确认故居入口和文保标志牌，不能证明当前开放状态或每个可见构件的年代。",
+        "sourceLabel": "原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_of_pusongling%27s_house.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "读懂淄博聊斋",
+      "featuredLinkLabel": "分清淄博聊斋的四个层次",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["聊斋", "蒲松龄", "淄博"]
+    },
+    "ko": {
+      "path": "/ko/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+      "title": "쯔보 랴오자이 읽기: 포송령 옛집, 랴오자이 리취, 랴오자이청",
+      "headline": "근거가 있는 옛집과 문학, 살아 있는 음악, 현대 관광 연출을 구분해 읽기",
+      "description": "포송령 옛집과 기념관, 『요재지이』, 랴오자이 리취, 현대 랴오자이청을 네 가지 증거 층위로 구분합니다.",
+      "heroAlt": "쯔보 포송령 옛집의 대문과 입구 옆 국가급 문화재 보호 표지판.",
+      "heroCredit": {
+        "text": "Finblanco가 2008년 7월 29일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 옛집 입구와 보호 표지판만 확인하며, 현재 관람 가능 여부나 보이는 모든 부재의 연대를 증명하지 않습니다.",
+        "sourceLabel": "원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_of_pusongling%27s_house.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "쯔보 랴오자이 읽기",
+      "featuredLinkLabel": "쯔보 랴오자이의 네 층위 구분하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["랴오자이", "포송령", "쯔보"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Pu Songling former residence Zibo",
+      "Liaozhai liqu intangible heritage",
+      "Liaozhai City or Pu Songling museum"
+    ],
+    "zh": [
+      "淄博蒲松龄故居和聊斋城区别",
+      "聊斋俚曲是什么",
+      "淄博聊斋怎么参观"
+    ],
+    "ko": [
+      "쯔보 포송령 옛집 랴오자이청 차이",
+      "랴오자이 리취란",
+      "쯔보 랴오자이 문화 여행"
+    ]
+  }
+}

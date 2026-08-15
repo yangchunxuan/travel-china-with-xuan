@@ -66,8 +66,8 @@ Do not freeze a year in the title or add a copied annual date table. Chinese sho
 
 - Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
 - Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
-- Implemented and verified 2026-08-14: `china-night-train-or-daytime-high-speed-rail`, `china-public-holidays-travel-calendar`, `first-shared-meal-in-china` each links from its EN/ZH/KO body to this canonical guide.
-- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
+- Implemented and verified 2026-08-15: `china-night-train-or-daytime-high-speed-rail`, `china-public-holidays-travel-calendar`, `first-shared-meal-in-china`, and `meizhou-mazu-ancestral-temple-reading-guide` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **4**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 

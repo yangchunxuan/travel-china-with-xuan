@@ -167,6 +167,7 @@ const body = {
         {"label": "중국 공휴일 여행 달력 확인하기", "href": "/ko/guides/china-public-holidays-travel-calendar/", "description": "축제 인파와 일정 변경을 예상합니다."},
         {"label": "중국에서 공연표 결제 준비하기", "href": "/ko/guides/how-to-pay-in-china-as-a-tourist/", "description": "현재 공연을 살 때 예비 결제 수단을 둡니다."},
         { label: "천극 공연 고르기", href: "/ko/guides/sichuan-opera-face-changing-with-context/", description: "가면 사진보다 극단, 작품, 노래와 대사, 몸짓과 무대 맥락을 확인해 천극 공연을 고르고 읽습니다." },
+        { label: "첫 안순 디시 공연 읽기", href: "/ko/guides/anshun-dixi-mask-performance-guide/", description: "근거가 분명한 소리와 몸짓 틀로 가면 공연을 이해하고 마을 의례와 관광 단막을 구분합니다." },
       ]
     },
     {

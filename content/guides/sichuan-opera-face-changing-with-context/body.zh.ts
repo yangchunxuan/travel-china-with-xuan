@@ -136,6 +136,7 @@ const body = {
         { label: "选择第一次内蒙古长调演出", href: "/zh/guides/inner-mongolia-long-song-first-performance/", description: "同样从形式、表演者和聆听任务开始核验。" },
         { label: "看懂第一次佛山醒狮表演", href: "/zh/guides/foshan-lion-dance-first-performance-workflow/", description: "不要让一种传播性技艺代替整项传统。" },
         { label: "安排北京、西安与成都的顺序", href: "/zh/guides/beijing-xian-chengdu-route-order/", description: "判断成都的演出晚上适合放在整段行程哪里。" },
+        { label: "看懂安顺地戏脸子与第一场表演", href: "/zh/guides/anshun-dixi-mask-performance-guide/", description: "从脸子、遮面、声音、锣鼓和身体读另一种面具表演，不让单一视觉效果代替全貌。" },
       ],
     },
     {

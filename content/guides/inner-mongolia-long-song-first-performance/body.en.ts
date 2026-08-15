@@ -167,6 +167,7 @@ const body = {
         {"label": "Check China’s public-holiday travel calendar", "href": "/guides/china-public-holidays-travel-calendar/", "description": "Anticipate festival crowds and schedule changes."},
         {"label": "Prepare payment for tickets in China", "href": "/guides/how-to-pay-in-china-as-a-tourist/", "description": "Keep a backup method when buying current performances."},
         { label: "Choose a Sichuan opera performance", href: "/guides/sichuan-opera-face-changing-with-context/", description: "Choose and read a Sichuan opera performance by its troupe, excerpt, voice and stage context—not by a mask photograph alone." },
+        { label: "Read an Anshun Dixi first performance", href: "/guides/anshun-dixi-mask-performance-guide/", description: "Use an evidence-led listening and movement frame for a masked form while keeping village ritual and visitor excerpts distinct." },
       ]
     },
     {

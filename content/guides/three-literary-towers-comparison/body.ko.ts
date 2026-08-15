@@ -328,6 +328,11 @@ const body = {
           href: "/ko/guides/how-to-read-a-suzhou-garden/",
           description: "문학이 제안하는 시선과 건축 재료의 연대에 관한 주장을 계속 구분해 보세요.",
         },
+        {
+          label: "쯔보 랴오자이의 증거 층위 구분하기",
+          href: "/ko/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "문학과 물질 증거를 나누는 방법을 옛집, 살아 있는 리취 전통과 현대 관광지에 적용합니다.",
+        },
       ],
     },
     {

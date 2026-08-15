@@ -1,0 +1,104 @@
+{
+  "id": "anshun-dixi-mask-performance-guide",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "first-audience-culture-guide",
+  "topics": [
+    "anshun-dixi",
+    "dixi-masks",
+    "tunpu-culture",
+    "intangible-cultural-heritage",
+    "performance-reading"
+  ],
+  "destinations": ["anshun", "guizhou", "tianlong-tunpu"],
+  "heroImagePath": "/images/guides/anshun-dixi-mask-performance-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/anshun-dixi-mask-performance-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-16",
+  "dateModified": "2026-08-16",
+  "sourceReviewedDate": "2026-08-15",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/anshun-dixi-mask-performance-guide/",
+      "title": "Anshun Dixi: Why the Mask Sits Above the Face and What to Watch",
+      "headline": "Read the Lianzi, Qingjin, Voice, Percussion and Body Together",
+      "description": "Understand Anshun Dixi through its forehead-worn lianzi, qingjin head cloth, call-and-response singing, gong, drum, weapons and changing performance contexts.",
+      "heroAlt": "Two masked Dixi performers in a Guizhou Tunpu village, photographed in 2014",
+      "heroCredit": {
+        "text": "Dixi performers in a Guizhou Tunpu village, photographed by Yinwang888 on 2 January 2014; centre-cropped and resized. The image demonstrates the mask-and-qingjin arrangement but does not identify a current venue or programme.",
+        "sourceLabel": "Source image",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhaopian01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Read Anshun Dixi",
+      "featuredLinkLabel": "Understand an Anshun Dixi performance",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Anshun", "Dixi", "Performance"]
+    },
+    "zh": {
+      "path": "/zh/guides/anshun-dixi-mask-performance-guide/",
+      "title": "安顺地戏初看指南：脸子为何在额上，第一场看什么",
+      "headline": "把脸子、青巾、唱腔、锣鼓和身体一起看",
+      "description": "从额戴脸子、青巾蒙面、领唱帮腔、一锣一鼓、兵器和身体动作读懂安顺地戏，并分清村寨仪式与游客短场。",
+      "heroAlt": "2014年拍摄于贵州屯堡村寨的两位蒙面地戏演员",
+      "heroCredit": {
+        "text": "贵州屯堡村寨的地戏演员，Yinwang888摄于2014年1月2日；图片经居中裁切和缩放。照片可说明脸子与青巾的佩戴关系，不能证明当前演出地点或节目。",
+        "sourceLabel": "原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhaopian01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "看懂安顺地戏",
+      "featuredLinkLabel": "准备第一次看安顺地戏",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["安顺", "地戏", "表演"]
+    },
+    "ko": {
+      "path": "/ko/guides/anshun-dixi-mask-performance-guide/",
+      "title": "안순 디시(地戏) 첫 관람: 이마 위 가면과 공연 읽기",
+      "headline": "롄쯔, 칭진, 소리, 징과 북, 몸을 함께 보세요",
+      "description": "이마 위 롄쯔, 칭진(青巾), 선창과 집단 응답, 징·북, 무기와 몸동작으로 안순 디시를 읽고 마을 의례와 관광 단막을 구분합니다.",
+      "heroAlt": "2014년 구이저우의 한 툰푸 마을에서 촬영한 가면 쓴 디시 공연자 두 명",
+      "heroCredit": {
+        "text": "구이저우 툰푸 마을의 디시 공연자. Yinwang888이 2014년 1월 2일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 롄쯔와 칭진의 착용 관계를 보여 주지만 현재 공연장이나 프로그램을 확인하는 사진은 아닙니다.",
+        "sourceLabel": "원본 이미지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhaopian01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "안순 디시 읽기",
+      "featuredLinkLabel": "안순 디시 첫 공연 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["안순", "디시", "공연"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Anshun Dixi mask on forehead",
+      "what to watch in Anshun Dixi",
+      "Anshun Dixi and Nuo opera"
+    ],
+    "zh": [
+      "安顺地戏面具为什么戴在额头",
+      "第一次看安顺地戏看什么",
+      "安顺地戏和傩戏关系"
+    ],
+    "ko": [
+      "안순 디시 가면 이마",
+      "안순 디시 공연 관람",
+      "디시와 나희 차이"
+    ]
+  }
+}

@@ -385,6 +385,11 @@ const body = {
           href: "/ko/guides/when-metro-construction-meets-archaeology/",
           description: "발견, 보호, 발굴, 설계 대응, 공개 전시를 따라가되 모든 유물이 계속 보인다고 가정하지 않습니다.",
         },
+        {
+          label: "근거 층위로 메이저우 마쭈 조묘 읽기",
+          href: "/ko/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+          description: "기관의 연속성, 재건 건축, 살아 있는 신앙, 전승 서사와 현대 관광 연출을 구분합니다.",
+        },
       ],
     },
     {

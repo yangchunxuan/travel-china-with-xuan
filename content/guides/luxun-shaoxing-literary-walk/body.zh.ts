@@ -343,6 +343,11 @@ const body = {
           label: "核对官方与第三方票务渠道",
           href: "/zh/guides/official-or-reseller-china-tickets/",
           description: "若遗址区需要预约，应使用当前运营方来源复核。"
+        },
+        {
+          label: "分清淄博聊斋背后的不同层次",
+          href: "/zh/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "在另一段作家与地点之旅中，分开故居、文学、活态表演与现代景区呈现。"
         }
       ]
     },
