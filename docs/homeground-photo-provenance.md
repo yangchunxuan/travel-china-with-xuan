@@ -1069,3 +1069,21 @@ retain named attribution, source and licence links, and a disclosure of crop,
 resize or format changes in the guide's visible credit or default-collapsed
 Sources. No absent performance, ritual or visitor scene was filled with an AI
 or unrelated photograph.
+
+## Zhangjiajie 4-day private-tour page (August 15, 2026)
+
+This release uses thirty real photographs and **0 AI-generated or AI-assisted
+images**. The site owner selected the Homeground-library photographs and
+directed their use on the product page on 2026-08-15. The complete source-path,
+asset-ID, crop and evidence-boundary ledger is kept in
+`content/product-previews/zhangjiajie-4-day-private-tour/image-preview-plan.md`.
+
+| Role | Source and rights basis | Published derivatives | Evidence boundary |
+| --- | --- | --- | --- |
+| Hero, Day 2, Day 3 and Day 4 | Owner-selected photographs from the organized `张家界优选素材` project library; Homeground product-page publication directed by the site owner on 2026-08-15 | `public/product-previews/zhangjiajie-4-day-private-tour/hero/` and `route/day-2-bailong-elevator.jpg` | Real Zhangjiajie landscapes and attractions only. They do not prove weather, current opening, route order, queue time or ticket availability. |
+| Day 1 arrival | [Zhangjiajie Airport (27796134377).jpg](https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg), Martin Lewison, 2018-06-06, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | `public/product-previews/zhangjiajie-4-day-private-tour/route/day-1-hehua-airport.jpg`; cropped/resized derivative | Exact Hehua International Airport scene; not evidence of a Homeground driver, a current flight or the private-transfer service. |
+| Twenty-five accommodation references | Owner-selected supplier/project media grouped as two anonymous city candidates, one spacious-premium set and one distinctive-mountain set; Homeground product-page publication directed by the site owner on 2026-08-15 | `public/product-previews/zhangjiajie-4-day-private-tour/accommodations/` | Photographs show only candidate style and visible facilities. They do not promise the pictured property, room, outlook, decoration, exclusive use, breakfast, inventory or foreign-guest acceptance; exact accommodation is confirmed before payment. |
+
+The four accommodation groups remain separate in code and captions. Property
+names are intentionally omitted from the public page, and no image from one
+group is represented as a room or facility belonging to another.
