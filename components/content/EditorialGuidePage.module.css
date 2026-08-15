@@ -118,6 +118,20 @@
   object-fit: cover;
 }
 
+.heroCredit {
+  color: var(--hg-color-muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  margin: 0.65rem 0 0;
+  text-wrap: pretty;
+}
+
+.heroCredit a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
 .article {
   border-block-start: 1px solid var(--hg-color-line);
   margin-inline: auto;

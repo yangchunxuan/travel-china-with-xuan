@@ -314,7 +314,8 @@ const body = {
           description: "기록된 의례축과 도시 성문을 해석할 때 필요한 서로 다른 증거를 비교하세요.",
         },
         { label: "지하철 건설과 고고학이 만날 때의 과정 보기", href: "/ko/guides/when-metro-construction-meets-archaeology/", description: "우연한 발견, 현장 보호, 발굴, 설계 대응과 공개 전시를 따라가며 모든 발견이 공사를 멈추거나 공개된다고 가정하지 않습니다." },
-        { label: "카이펑의 유적, 재현과 테마 연출 구분하기", href: "/ko/guides/kaifeng-song-dynasty-urban-landscape/", description: "저우차오, 청명상하도와 현대 테마공원을 재료·연대·해석 근거로 따로 읽고 하나의 온전한 송대 도시로 합치지 않습니다." }
+        { label: "카이펑의 유적, 재현과 테마 연출 구분하기", href: "/ko/guides/kaifeng-song-dynasty-urban-landscape/", description: "저우차오, 청명상하도와 현대 테마공원을 재료·연대·해석 근거로 따로 읽고 하나의 온전한 송대 도시로 합치지 않습니다." },
+        { label: "문화유산 부재가 원형·보수·재건인지 읽기", href: "/ko/guides/how-to-read-heritage-sites-in-china/", description: "성벽·성문·성루를 옛것, 보수, 재건으로 부르기 전에 구성 요소와 근거를 하나씩 확인하세요." }
       ],
     },
     {

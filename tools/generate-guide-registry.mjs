@@ -82,6 +82,15 @@ function validLocalPath(value) {
   );
 }
 
+function validHttpsUrl(value) {
+  if (!nonEmpty(value)) return false;
+  try {
+    return new URL(value).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
 function validDate(value) {
   if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/u.test(value)) return false;
   const date = new Date(`${value}T00:00:00.000Z`);
@@ -118,7 +127,7 @@ function validateLocaleEntry(entry, id, locale, label) {
   ];
   assertOnlyKeys(
     entry,
-    new Set([...requiredText, "cardImageAlt", "cardTags"]),
+    new Set([...requiredText, "heroCredit", "cardImageAlt", "cardTags"]),
     label,
   );
   for (const key of requiredText) {
@@ -126,6 +135,29 @@ function validateLocaleEntry(entry, id, locale, label) {
   }
   if (entry.cardImageAlt !== undefined && !nonEmpty(entry.cardImageAlt)) {
     throw new Error(`${label}.cardImageAlt must be non-empty when supplied.`);
+  }
+  if (entry.heroCredit !== undefined) {
+    if (!isRecord(entry.heroCredit)) {
+      throw new Error(`${label}.heroCredit must be an object when supplied.`);
+    }
+    const creditKeys = [
+      "text",
+      "sourceLabel",
+      "sourceUrl",
+      "licenseLabel",
+      "licenseUrl",
+    ];
+    assertOnlyKeys(entry.heroCredit, new Set(creditKeys), `${label}.heroCredit`);
+    for (const key of ["text", "sourceLabel", "licenseLabel"]) {
+      if (!nonEmpty(entry.heroCredit[key])) {
+        throw new Error(`${label}.heroCredit.${key} must be non-empty.`);
+      }
+    }
+    for (const key of ["sourceUrl", "licenseUrl"]) {
+      if (!validHttpsUrl(entry.heroCredit[key])) {
+        throw new Error(`${label}.heroCredit.${key} must be an HTTPS URL.`);
+      }
+    }
   }
   if (!validStringArray(entry.cardTags)) {
     throw new Error(`${label}.cardTags needs at least one localized card label.`);

@@ -53,8 +53,8 @@ Observed through web search; this is a dated composition note, not a ranking cla
 
 - Runtime section: `explore`; indexable collection: `explore-attractions-nature-heritage` at `/explore/attractions-nature-heritage/`.
 - Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
-- Implemented and verified 2026-08-14: `liangzhu-ruins-park-and-museum-sequence`, `nanhai-one-shipwreck-cargo-and-conservation`, `ritual-bronze-vessels-and-inscriptions` each links from its EN/ZH/KO body to this canonical guide.
-- Current trilingual body-level inbound-owner count: **3**. Future links must add a genuinely related reader path and must not replace established links.
+- Implemented and verified 2026-08-15: `how-to-read-heritage-sites-in-china`, `liangzhu-ruins-park-and-museum-sequence`, `nanhai-one-shipwreck-cargo-and-conservation`, `ritual-bronze-vessels-and-inscriptions` each links from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **4**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 
