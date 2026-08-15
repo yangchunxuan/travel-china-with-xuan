@@ -1,0 +1,739 @@
+{
+  "schemaVersion": "0.2.0-draft",
+  "draftId": "destination-hub-guilin-20260815",
+  "status": "internal-draft",
+  "publicationMode": "internal",
+  "indexable": false,
+  "canonicalProposal": {
+    "primaryEntityId": "city-guilin",
+    "parentEntityIdProposal": "autonomous-region-guangxi",
+    "paths": {
+      "en": "/destinations/guilin/",
+      "zh": "/zh/destinations/guilin/",
+      "ko": "/ko/destinations/guilin/"
+    },
+    "forbiddenCompetingPath": "/guides/guilin-travel-guide/",
+    "ownershipBoundary": "The Guilin hub owns the city gateway and regional-composition decision. Yangshuo remains a separate proposed entity and future hub, not a Guilin neighbourhood."
+  },
+  "registryMutation": false,
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "existing",
+      "names": {
+        "en": "China",
+        "zh": "中国",
+        "ko": "중국"
+      }
+    },
+    {
+      "id": "autonomous-region-guangxi",
+      "type": "autonomous-region",
+      "status": "proposed",
+      "names": {
+        "en": "Guangxi Zhuang Autonomous Region",
+        "zh": "广西壮族自治区",
+        "ko": "광시좡족자치구"
+      },
+      "proposalOnly": true
+    },
+    {
+      "id": "city-guilin",
+      "type": "city",
+      "status": "existing",
+      "names": {
+        "en": "Guilin",
+        "zh": "桂林",
+        "ko": "구이린"
+      },
+      "primaryForHub": true
+    },
+    {
+      "id": "county-yangshuo",
+      "type": "county",
+      "status": "proposed",
+      "names": {
+        "en": "Yangshuo County",
+        "zh": "阳朔县",
+        "ko": "양숴현"
+      },
+      "futureIndependentHub": true,
+      "notANeighbourhoodOf": "city-guilin"
+    },
+    {
+      "id": "town-xingping",
+      "type": "town",
+      "status": "proposed",
+      "names": {
+        "en": "Xingping",
+        "zh": "兴坪",
+        "ko": "싱핑"
+      }
+    },
+    {
+      "id": "county-longsheng",
+      "type": "autonomous-county",
+      "status": "proposed",
+      "names": {
+        "en": "Longsheng Various Nationalities Autonomous County",
+        "zh": "龙胜各族自治县",
+        "ko": "룽성 각족자치현"
+      }
+    },
+    {
+      "id": "scenic-area-longji-rice-terraces",
+      "type": "scenic-region",
+      "status": "proposed",
+      "names": {
+        "en": "Longji Rice Terraces",
+        "zh": "龙脊梯田",
+        "ko": "룽지 계단식 논"
+      }
+    },
+    {
+      "id": "village-pingan-longji",
+      "type": "village",
+      "status": "proposed",
+      "names": {
+        "en": "Ping'an Village",
+        "zh": "平安村",
+        "ko": "핑안촌"
+      }
+    },
+    {
+      "id": "village-dazhai-longji",
+      "type": "village",
+      "status": "proposed",
+      "names": {
+        "en": "Dazhai Village",
+        "zh": "大寨村",
+        "ko": "다자이촌"
+      }
+    },
+    {
+      "id": "river-li",
+      "type": "river",
+      "status": "proposed",
+      "names": {
+        "en": "Li River",
+        "zh": "漓江",
+        "ko": "리강"
+      }
+    },
+    {
+      "id": "river-yulong",
+      "type": "river",
+      "status": "proposed",
+      "names": {
+        "en": "Yulong River",
+        "zh": "遇龙河",
+        "ko": "위룽강"
+      }
+    },
+    {
+      "id": "airport-guilin-liangjiang-kwl",
+      "type": "airport",
+      "status": "proposed",
+      "iata": "KWL",
+      "names": {
+        "en": "Guilin Liangjiang International Airport",
+        "zh": "桂林两江国际机场",
+        "ko": "구이린 량장 국제공항"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "station-guilin",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {
+        "en": "Guilin Railway Station",
+        "zh": "桂林站",
+        "ko": "구이린역"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "station-guilin-north",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {
+        "en": "Guilin North Railway Station",
+        "zh": "桂林北站",
+        "ko": "구이린북역"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "station-guilin-west",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {
+        "en": "Guilin West Railway Station",
+        "zh": "桂林西站",
+        "ko": "구이린서역"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "station-yangshuo",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": {
+        "en": "Yangshuo Railway Station",
+        "zh": "阳朔站",
+        "ko": "양숴역"
+      },
+      "volatility": "high",
+      "locationWarning": "Near Xingping, not central Yangshuo town."
+    },
+    {
+      "id": "port-mopanshan",
+      "type": "passenger-port",
+      "status": "proposed",
+      "names": {
+        "en": "Mopanshan Passenger Port",
+        "zh": "磨盘山客运港",
+        "ko": "모판산 여객항"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "port-zhujiang",
+      "type": "passenger-port",
+      "status": "proposed",
+      "names": {
+        "en": "Zhujiang Passenger Port",
+        "zh": "竹江客运港",
+        "ko": "주장 여객항"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "pier-longtoushan",
+      "type": "passenger-pier",
+      "status": "proposed",
+      "names": {
+        "en": "Longtoushan Pier",
+        "zh": "龙头山码头",
+        "ko": "룽터우산 선착장"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "stay-base-guilin-central",
+      "type": "stay-base",
+      "status": "proposed",
+      "names": {
+        "en": "Central Guilin city",
+        "zh": "桂林市区中心",
+        "ko": "구이린 중심 시내"
+      },
+      "task": "gateway-buffer"
+    },
+    {
+      "id": "stay-base-yangshuo-west-street",
+      "type": "stay-base",
+      "status": "proposed",
+      "names": {
+        "en": "Yangshuo West Street area",
+        "zh": "阳朔西街周边",
+        "ko": "양숴 서가 주변"
+      },
+      "task": "evening-convenience"
+    },
+    {
+      "id": "stay-base-yulong-countryside",
+      "type": "stay-base",
+      "status": "proposed",
+      "names": {
+        "en": "Yulong River countryside",
+        "zh": "遇龙河乡村",
+        "ko": "위룽강 농촌"
+      },
+      "task": "slow-rural-stay"
+    },
+    {
+      "id": "stay-base-xingping",
+      "type": "stay-base",
+      "status": "proposed",
+      "names": {
+        "en": "Xingping",
+        "zh": "兴坪",
+        "ko": "싱핑"
+      },
+      "task": "li-river-photography-and-rail"
+    },
+    {
+      "id": "stay-base-longji-pingan",
+      "type": "stay-base",
+      "status": "proposed",
+      "names": {
+        "en": "Longji — Ping'an",
+        "zh": "龙脊—平安",
+        "ko": "룽지—핑안"
+      },
+      "task": "terrace-village-overnight"
+    },
+    {
+      "id": "stay-base-longji-dazhai",
+      "type": "stay-base",
+      "status": "proposed",
+      "names": {
+        "en": "Longji — Dazhai",
+        "zh": "龙脊—大寨",
+        "ko": "룽지—다자이"
+      },
+      "task": "terrace-village-overnight"
+    },
+    {
+      "id": "product-li-river-large-cruise",
+      "type": "transport-experience",
+      "status": "proposed",
+      "names": {
+        "en": "Large Li River star-rated cruise",
+        "zh": "漓江大型星级游船",
+        "ko": "대형 리강 등급 크루즈"
+      },
+      "direction": "one-way-guilin-side-to-yangshuo-side",
+      "volatility": "high"
+    },
+    {
+      "id": "product-li-river-other-authorised-water",
+      "type": "transport-experience-class",
+      "status": "proposed",
+      "names": {
+        "en": "Other currently authorised Li River water projects",
+        "zh": "漓江其他当前合法水上项目",
+        "ko": "현재 허가된 기타 리강 수상 상품"
+      },
+      "volatility": "very-high"
+    },
+    {
+      "id": "product-yulong-manual-bamboo-raft",
+      "type": "transport-experience",
+      "status": "proposed",
+      "names": {
+        "en": "Yulong River manually propelled bamboo raft",
+        "zh": "遇龙河人工竹筏",
+        "ko": "위룽강 인력 대나무 뗏목"
+      },
+      "volatility": "very-high"
+    },
+    {
+      "id": "mode-yangshuo-xingping-road",
+      "type": "road-movement",
+      "status": "proposed",
+      "names": {
+        "en": "Yangshuo–Xingping road movement",
+        "zh": "阳朔—兴坪陆路移动",
+        "ko": "양숴–싱핑 도로 이동"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "city-guangzhou",
+      "type": "city",
+      "status": "proposed-reference",
+      "names": {
+        "en": "Guangzhou",
+        "zh": "广州",
+        "ko": "광저우"
+      }
+    },
+    {
+      "id": "region-hong-kong",
+      "type": "special-administrative-region",
+      "status": "proposed-reference",
+      "names": {
+        "en": "Hong Kong",
+        "zh": "香港",
+        "ko": "홍콩"
+      }
+    },
+    {
+      "id": "municipality-chongqing",
+      "type": "municipality",
+      "status": "proposed-reference",
+      "names": {
+        "en": "Chongqing",
+        "zh": "重庆",
+        "ko": "충칭"
+      }
+    },
+    {
+      "id": "route-guilin-guangzhou",
+      "type": "intercity-route",
+      "status": "proposed",
+      "names": {
+        "en": "Guilin–Guangzhou route",
+        "zh": "桂林—广州路线",
+        "ko": "구이린–광저우 노선"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "route-guilin-hong-kong",
+      "type": "intercity-route",
+      "status": "proposed",
+      "names": {
+        "en": "Guilin–Hong Kong route",
+        "zh": "桂林—香港路线",
+        "ko": "구이린–홍콩 노선"
+      },
+      "volatility": "high"
+    },
+    {
+      "id": "route-guilin-chongqing",
+      "type": "intercity-route",
+      "status": "proposed",
+      "names": {
+        "en": "Guilin–Chongqing route",
+        "zh": "桂林—重庆路线",
+        "ko": "구이린–충칭 노선"
+      },
+      "volatility": "high"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-guangxi-china",
+      "type": "part-of",
+      "from": "autonomous-region-guangxi",
+      "to": "country-china",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-guilin-guangxi",
+      "type": "part-of",
+      "from": "city-guilin",
+      "to": "autonomous-region-guangxi",
+      "status": "proposed",
+      "registryChangeProhibited": true
+    },
+    {
+      "id": "rel-yangshuo-guilin",
+      "type": "administratively-within-prefecture",
+      "from": "county-yangshuo",
+      "to": "city-guilin",
+      "status": "proposed",
+      "semanticWarning": "Administrative containment does not make Yangshuo a Guilin-city neighbourhood."
+    },
+    {
+      "id": "rel-xingping-yangshuo",
+      "type": "part-of",
+      "from": "town-xingping",
+      "to": "county-yangshuo",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-longsheng-guilin",
+      "type": "administratively-within-prefecture",
+      "from": "county-longsheng",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-longji-longsheng",
+      "type": "located-in",
+      "from": "scenic-area-longji-rice-terraces",
+      "to": "county-longsheng",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-pingan-longji",
+      "type": "located-in",
+      "from": "village-pingan-longji",
+      "to": "scenic-area-longji-rice-terraces",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-dazhai-longji",
+      "type": "located-in",
+      "from": "village-dazhai-longji",
+      "to": "scenic-area-longji-rice-terraces",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-li-corridor-guilin",
+      "type": "passes-through-region",
+      "from": "river-li",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-li-corridor-yangshuo",
+      "type": "passes-through-region",
+      "from": "river-li",
+      "to": "county-yangshuo",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-yulong-yangshuo",
+      "type": "located-in",
+      "from": "river-yulong",
+      "to": "county-yangshuo",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-kwl-guilin-gateway",
+      "type": "gateway-to",
+      "from": "airport-guilin-liangjiang-kwl",
+      "to": "city-guilin",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-kwl-yangshuo-road",
+      "type": "road-access-to",
+      "from": "airport-guilin-liangjiang-kwl",
+      "to": "county-yangshuo",
+      "status": "proposed",
+      "dynamicFact": true,
+      "verification": "Official airport sales system on travel date."
+    },
+    {
+      "id": "rel-station-guilin-city",
+      "type": "station-serves",
+      "from": "station-guilin",
+      "to": "city-guilin",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-station-north-city",
+      "type": "station-serves",
+      "from": "station-guilin-north",
+      "to": "city-guilin",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-station-west-city",
+      "type": "station-serves",
+      "from": "station-guilin-west",
+      "to": "city-guilin",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-yangshuo-station-xingping",
+      "type": "located-near",
+      "from": "station-yangshuo",
+      "to": "town-xingping",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-yangshuo-station-county",
+      "type": "station-serves",
+      "from": "station-yangshuo",
+      "to": "county-yangshuo",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-mopanshan-guilin",
+      "type": "located-on-guilin-side",
+      "from": "port-mopanshan",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-zhujiang-guilin",
+      "type": "located-on-guilin-side",
+      "from": "port-zhujiang",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-longtoushan-yangshuo",
+      "type": "located-in",
+      "from": "pier-longtoushan",
+      "to": "county-yangshuo",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-cruise-li-river",
+      "type": "operates-on",
+      "from": "product-li-river-large-cruise",
+      "to": "river-li",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-cruise-mopanshan",
+      "type": "departs-from",
+      "from": "product-li-river-large-cruise",
+      "to": "port-mopanshan",
+      "status": "proposed",
+      "qualifier": "three-star boats in reviewed official guidance",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-cruise-zhujiang",
+      "type": "departs-from",
+      "from": "product-li-river-large-cruise",
+      "to": "port-zhujiang",
+      "status": "proposed",
+      "qualifier": "four-star boats in reviewed official guidance",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-cruise-longtoushan",
+      "type": "arrives-at",
+      "from": "product-li-river-large-cruise",
+      "to": "pier-longtoushan",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-other-water-li",
+      "type": "may-operate-on-authorised-sections",
+      "from": "product-li-river-other-authorised-water",
+      "to": "river-li",
+      "status": "proposed",
+      "dynamicFact": true,
+      "verification": "Current scenic-area/operator notice; never infer legality from a roadside product name."
+    },
+    {
+      "id": "rel-yulong-raft-river",
+      "type": "operates-on-authorised-sections",
+      "from": "product-yulong-manual-bamboo-raft",
+      "to": "river-yulong",
+      "status": "proposed",
+      "dynamicFact": true,
+      "verification": "Exact boarding section and current official restrictions."
+    },
+    {
+      "id": "rel-road-yangshuo-xingping-a",
+      "type": "connects",
+      "from": "mode-yangshuo-xingping-road",
+      "to": "county-yangshuo",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-road-yangshuo-xingping-b",
+      "type": "connects",
+      "from": "mode-yangshuo-xingping-road",
+      "to": "town-xingping",
+      "status": "proposed",
+      "dynamicFact": true
+    },
+    {
+      "id": "rel-stay-guilin",
+      "type": "located-in",
+      "from": "stay-base-guilin-central",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-stay-west-street",
+      "type": "located-in",
+      "from": "stay-base-yangshuo-west-street",
+      "to": "county-yangshuo",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-stay-yulong",
+      "type": "located-near",
+      "from": "stay-base-yulong-countryside",
+      "to": "river-yulong",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-stay-xingping",
+      "type": "located-in",
+      "from": "stay-base-xingping",
+      "to": "town-xingping",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-stay-pingan",
+      "type": "located-in",
+      "from": "stay-base-longji-pingan",
+      "to": "village-pingan-longji",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-stay-dazhai",
+      "type": "located-in",
+      "from": "stay-base-longji-dazhai",
+      "to": "village-dazhai-longji",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-route-guangzhou-from",
+      "type": "starts-at-region",
+      "from": "route-guilin-guangzhou",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-route-guangzhou-to",
+      "type": "ends-at",
+      "from": "route-guilin-guangzhou",
+      "to": "city-guangzhou",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-route-hongkong-from",
+      "type": "starts-at-region",
+      "from": "route-guilin-hong-kong",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-route-hongkong-to",
+      "type": "ends-at",
+      "from": "route-guilin-hong-kong",
+      "to": "region-hong-kong",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-route-chongqing-from",
+      "type": "starts-at-region",
+      "from": "route-guilin-chongqing",
+      "to": "city-guilin",
+      "status": "proposed"
+    },
+    {
+      "id": "rel-route-chongqing-to",
+      "type": "ends-at",
+      "from": "route-guilin-chongqing",
+      "to": "municipality-chongqing",
+      "status": "proposed"
+    }
+  ],
+  "dynamicFactPolicy": {
+    "recheckBeforeUse": [
+      "airport and coach schedules, fares, terminal and final stops",
+      "12306 train services and exact station pairs",
+      "Li River ticket sale windows, ports, sailing and luggage rules",
+      "water level, flood control, navigation restrictions and suspensions",
+      "Yulong River passenger, age, height, flow and section rules",
+      "Longji road, local transfer, village access and luggage arrangements"
+    ],
+    "prohibitedAsEvergreenClaims": [
+      "fixed airport-bus timetable or fare",
+      "guaranteed cruise operation",
+      "permanent bamboo-raft passenger eligibility",
+      "guaranteed terrace visibility or agricultural stage",
+      "guaranteed direct train to Hong Kong"
+    ]
+  },
+  "sourceIds": [
+    "repo-production-lite",
+    "repo-search-platform-spec",
+    "repo-search-map",
+    "repo-core-places",
+    "owner-guilin-yangshuo-transport-route",
+    "owner-china-in-october",
+    "official-guilin-airport",
+    "official-12306",
+    "official-li-river",
+    "official-guangxi-natural-resources",
+    "official-guangxi-culture-tourism"
+  ]
+}
