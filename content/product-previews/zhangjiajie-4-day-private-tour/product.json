@@ -3,14 +3,14 @@
   "product_id": "zjj-4d3n-private-2026",
   "status": "draft",
   "public_eligible": false,
-  "updated_at": "2026-08-15T00:28:48+08:00",
+  "updated_at": "2026-08-15T10:25:00+08:00",
   "title": {
-    "zh-CN": "张家界4天3晚私家定制",
-    "en": "Zhangjiajie 4-Day Private Tour"
+    "zh-CN": "张家界4天3晚：峰林、玻璃桥与天门山",
+    "en": "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain"
   },
   "short_description": {
-    "zh-CN": "以私人车辆和按需定制为核心的张家界4天3晚行程。",
-    "en": "A flexible four-day Zhangjiajie itinerary built around private transport and personalized planning."
+    "zh-CN": "用4天3晚走进砂岩峰林、大峡谷玻璃桥与天门山，抵达日不赶路，三天游览各有自己的高潮。",
+    "en": "Four carefully paced days through Zhangjiajie's sandstone peaks, the Grand Canyon Glass Bridge and Tianmen Mountain."
   },
   "duration": {
     "days": 4,
@@ -31,32 +31,32 @@
   "route": [
     {
       "day": 1,
-      "title_zh": "抵达与接送",
-      "title_en": "Arrival and Private Transfer",
+      "title_zh": "抵达张家界，先把脚步放慢",
+      "title_en": "Arrive in Zhangjiajie, Then Exhale",
       "summary_zh": "机场或高铁站接客，送往最终确认的酒店，自由活动。",
       "guide_planned": false,
       "fact_ids": ["day-one-transfer-no-guide"]
     },
     {
       "day": 2,
-      "title_zh": "张家界国家森林公园",
-      "title_en": "Zhangjiajie National Forest Park",
+      "title_zh": "走进砂岩峰林：袁家界与天子山",
+      "title_en": "Into the Sandstone Forest: Yuanjiajie and Tianzi Mountain",
       "summary_zh": "百龙天梯、袁家界、天子山及天子山索道等核心游览。",
       "guide_planned": true,
       "fact_ids": ["guide-three-days"]
     },
     {
       "day": 3,
-      "title_zh": "大峡谷玻璃桥与二选一景点",
-      "title_en": "Grand Canyon Glass Bridge and One Additional Scenic Area",
+      "title_zh": "跨过峡谷，再选洞穴或湖面",
+      "title_en": "Cross the Canyon, Then Choose Cave or Lake",
       "summary_zh": "大峡谷玻璃桥，之后安排黄龙洞或宝峰湖二选一；以最终确认单为准。",
       "guide_planned": true,
       "fact_ids": ["ticket-bundle-itemization"]
     },
     {
       "day": 4,
-      "title_zh": "天门山与送站",
-      "title_en": "Tianmen Mountain and Departure Transfer",
+      "title_zh": "以天门山收尾，再启程",
+      "title_en": "Tianmen Mountain, Then Onward",
       "summary_zh": "按票源采用A/B/C线游览，结束后送机场或车站。",
       "guide_planned": true,
       "fact_ids": ["guide-three-days", "ticket-bundle-itemization"]
@@ -93,8 +93,8 @@
   ],
   "primary_cta": {
     "type": "inquiry",
-    "label_zh": "确认日期与可订房型",
-    "label_en": "Check Dates and Room Availability"
+    "label_zh": "让 Homeground 帮你规划张家界",
+    "label_en": "Plan Zhangjiajie with Homeground"
   },
   "seo": {
     "slug": "zhangjiajie-4-day-private-tour",

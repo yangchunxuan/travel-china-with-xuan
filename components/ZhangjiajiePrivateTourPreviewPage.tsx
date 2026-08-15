@@ -25,9 +25,6 @@ export function ZhangjiajiePrivateTourPreviewPage({
   const isZh = locale === "zh";
   const homePath = isZh ? "/zh/" : "/";
   const inquiryHref = `${homePath}?utm_source=product_preview&utm_medium=website&utm_campaign=zhangjiajie_4d3n#planner-contact`;
-  const description = isZh
-    ? product.short_description["zh-CN"]
-    : product.short_description.en;
 
   return (
     <div
@@ -48,7 +45,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
           zh: zhangjiajiePrivateTourPreviewPaths.zh,
         }}
         locale={locale}
-        pageContext="content"
+        pageContext="guide"
       />
 
       <main id="tour-details">
@@ -68,46 +65,15 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </nav>
             <p className={editorialStyles.eyebrow}>
               <span>{copy.eyebrow}</span>
-              <span>{copy.validThrough}</span>
             </p>
-            <h1 id="product-title">
-              {isZh ? (
-                <>
-                  张家界<span className={styles.nowrap}>4天3晚</span>私家定制
-                </>
-              ) : (
-                <>
-                  Zhangjiajie <span className={styles.nowrap}>4-Day</span>{" "}
-                  Private Tour
-                </>
-              )}
-            </h1>
+            <h1 id="product-title">{copy.heroTitle}</h1>
             <p className={`${editorialStyles.dek} ${styles.heroLede}`}>
-              {description}
+              {copy.heroLede}
             </p>
-            <div className={styles.heroActions}>
-              <GuideCtaLink
-                className={styles.primaryButton}
-                guideId="zhangjiajie-4-day-private-tour-preview"
-                href={inquiryHref}
-                locale={locale}
-                position="header"
-              >
-                {copy.primaryCta}
-                <ArrowRight aria-hidden="true" size={19} />
-              </GuideCtaLink>
-              <a className={styles.secondaryButton} href="#four-day-route">
-                {copy.secondaryCta}
-                <ArrowDown aria-hidden="true" size={18} />
-              </a>
-            </div>
-            <aside className={styles.heroPricePanel} aria-label={copy.priceBasis}>
-              <ZhangjiajiePrivateTourPriceWindow locale={locale} mode="hero" />
-              <div>
-                <strong>{copy.priceBasis}</strong>
-                <span>{copy.heroNote}</span>
-              </div>
-            </aside>
+            <a className={styles.articleJump} href="#four-day-route">
+              {copy.secondaryCta}
+              <ArrowDown aria-hidden="true" size={18} />
+            </a>
           </div>
 
           <figure className={`${editorialStyles.heroFigure} ${styles.heroFigure}`}>
@@ -201,14 +167,14 @@ export function ZhangjiajiePrivateTourPreviewPage({
                   <div className={styles.stayGallery}>
                     {option.images.map((photo) => (
                       <figure key={photo.src}>
-                        <div className={styles.stayImage}>
-                          <Image
-                            alt={photo.alt}
-                            fill
-                            sizes="(max-width: 720px) 92vw, (max-width: 1100px) 44vw, 34vw"
-                            src={photo.src}
-                          />
-                        </div>
+                        <Image
+                          alt={photo.alt}
+                          className={styles.stayImage}
+                          height={photo.height}
+                          sizes="(max-width: 540px) 92vw, (max-width: 1100px) 44vw, 36vw"
+                          src={photo.src}
+                          width={photo.width}
+                        />
                         <figcaption>{photo.caption}</figcaption>
                       </figure>
                     ))}
@@ -224,7 +190,22 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <h2 id="prices-title">{copy.pricesTitle}</h2>
               <p>{copy.pricesIntro}</p>
             </div>
-            <ZhangjiajiePrivateTourPriceWindow locale={locale} mode="tiers" />
+            <ZhangjiajiePrivateTourPriceWindow locale={locale} />
+          </section>
+
+          <section className={styles.contentSection} aria-labelledby="faq-title">
+            <div className={styles.sectionHeading}>
+              <p className={styles.sectionEyebrow}>{copy.faqEyebrow}</p>
+              <h2 id="faq-title">{copy.faqTitle}</h2>
+            </div>
+            <dl className={styles.faqList}>
+              {copy.faqItems.map(([question, answer]) => (
+                <div key={question}>
+                  <dt>{question}</dt>
+                  <dd>{answer}</dd>
+                </div>
+              ))}
+            </dl>
           </section>
 
           <section className={styles.contentSection} aria-labelledby="scope-title">
@@ -276,11 +257,25 @@ export function ZhangjiajiePrivateTourPreviewPage({
               ))}
             </ol>
           </section>
+
+          <details className={styles.sources}>
+            <summary>{copy.sourcesTitle}</summary>
+            <ul>
+              {copy.sources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} rel="noreferrer" target="_blank">
+                    {source.label}
+                  </a>
+                  <span>{source.publisher}</span>
+                </li>
+              ))}
+            </ul>
+          </details>
         </article>
 
         <aside className={`${editorialStyles.cta} ${styles.finalCta}`} aria-labelledby="final-cta-title">
           <div>
-            <p className={editorialStyles.ctaLabel}>{copy.eyebrow}</p>
+            <p className={editorialStyles.ctaLabel}>{copy.finalEyebrow}</p>
             <h2 id="final-cta-title">{copy.finalTitle}</h2>
             <p>{copy.finalBody}</p>
           </div>
@@ -290,7 +285,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             locale={locale}
             position="footer"
           >
-            {copy.primaryCta}
+            {copy.finalCtaLabel}
             <ArrowRight aria-hidden="true" size={20} />
           </GuideCtaLink>
         </aside>

@@ -3,7 +3,7 @@
   "product_id": "zjj-4d3n-private-2026",
   "status": "approved_price_decision",
   "public_eligible": true,
-  "updated_at": "2026-08-15T00:28:48+08:00",
+  "updated_at": "2026-08-15T10:25:00+08:00",
   "currency": "CNY",
   "approved_decision_id": "approved-public-pricing-20260815",
   "valid_from": "2026-08-15",
@@ -31,10 +31,10 @@
     },
     {
       "tier_id": "country-garden-family-villa",
-      "name_zh": "碧桂园家庭度假别墅",
-      "name_en": "Country Garden Family Villa",
+      "name_zh": "碧桂园高级度假别墅",
+      "name_en": "Country Garden Premium Villa Stay",
       "price_per_person": 6090,
-      "positioning_zh": "适合希望获得更大空间与家庭氛围的客人",
+      "positioning_zh": "适合重视更舒展空间与完整住宿体验的客人",
       "featured": false
     },
     {

@@ -51,7 +51,7 @@ test("Zhangjiajie product preview preserves the closed release gate", async () =
   );
 });
 
-test("preview uses the established editorial design and distinct stay photos", async () => {
+test("preview uses the established editorial design and complete, distinct stay-photo sets", async () => {
   const [page, copy, css] = await Promise.all([
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
     source("lib/zhangjiajiePrivateTourPreview.ts"),
@@ -63,12 +63,27 @@ test("preview uses the established editorial design and distinct stay photos", a
   assert.match(page, /editorialStyles\.article/);
   assert.match(page, /editorialStyles\.cta/);
   assert.match(page, /GuideCtaLink/);
+  assert.match(page, /className=\{styles\.articleJump\}/);
+  assert.doesNotMatch(page, /mode="hero"|heroPricePanel/);
   assert.match(copy, /city-nihao-twin\.jpg/);
+  assert.match(copy, /city-nihao-twin-entry\.jpg/);
+  assert.match(copy, /city-west-exterior\.jpg/);
   assert.match(copy, /city-west-twin\.jpg/);
+  assert.match(copy, /city-west-double\.jpg/);
+  assert.match(copy, /city-west-twin-decorated\.jpg/);
+  assert.match(copy, /city-west-bathroom\.jpg/);
   assert.match(copy, /family-villa-living\.jpg/);
+  assert.match(copy, /family-villa-twin\.jpg/);
+  assert.match(copy, /family-villa-double\.jpg/);
+  assert.match(copy, /family-villa-bathroom\.jpg/);
   assert.match(copy, /family-villa-terrace\.jpg/);
+  assert.match(copy, /family-villa-recreation\.jpg/);
   assert.match(copy, /signature-villa-terrace\.jpg/);
   assert.match(copy, /signature-villa-suite\.jpg/);
+  assert.match(copy, /Country Garden Premium Villa Stay/);
+  assert.match(copy, /碧桂园高级度假别墅/);
+  assert.doesNotMatch(copy, /Country Garden Family Villa|碧桂园家庭度假别墅/);
+  assert.doesNotMatch(copy, /Check dates and room availability|查询日期与可订房型/);
   assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
 });
 

@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import { ZhangjiajiePrivateTourPreviewPage } from "../../../../components/ZhangjiajiePrivateTourPreviewPage";
 
 export const metadata: Metadata = {
-  title: "Zhangjiajie 4-Day Private Tour Preview",
+  title: "Zhangjiajie 4-Day Private Tour: Itinerary & 2026 Price",
   description:
-    "A non-bookable local preview of Homeground's four-day private Zhangjiajie itinerary.",
+    "Plan 4 days in Zhangjiajie across Wulingyuan, the Glass Bridge and Tianmen Mountain, with realistic pacing, accommodation choices and private-tour pricing.",
   robots: { index: false, follow: false },
 };
 

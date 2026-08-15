@@ -19,10 +19,8 @@ function formatPrice(value: number, locale: ProductPreviewLocale) {
 
 export function ZhangjiajiePrivateTourPriceWindow({
   locale,
-  mode,
 }: {
   locale: ProductPreviewLocale;
-  mode: "hero" | "tiers";
 }) {
   const [status, setStatus] = useState<PriceWindowStatus>("checking");
   const copy = productPreviewCopy[locale];
@@ -40,7 +38,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
     return (
       <div
         aria-live="polite"
-        className={mode === "hero" ? styles.heroPrice : styles.priceStatus}
+        className={styles.priceStatus}
       >
         <span>{copy.checkingPrice}</span>
       </div>
@@ -51,28 +49,9 @@ export function ZhangjiajiePrivateTourPriceWindow({
     return (
       <div
         aria-live="polite"
-        className={mode === "hero" ? styles.heroPrice : styles.priceStatus}
+        className={styles.priceStatus}
       >
         <strong>{copy.expiredPrice}</strong>
-      </div>
-    );
-  }
-
-  const startingTier = pricing.tiers.find((tier) => tier.featured);
-
-  if (mode === "hero") {
-    const startingPrice =
-      startingTier && "from_price_per_person" in startingTier
-        ? startingTier.from_price_per_person
-        : undefined;
-
-    return (
-      <div aria-live="polite" className={styles.heroPrice}>
-        <span>{copy.fromLabel}</span>
-        <strong>
-          CNY {startingPrice ? formatPrice(startingPrice, locale) : "—"}
-        </strong>
-        <small>{copy.perPerson}</small>
       </div>
     );
   }
