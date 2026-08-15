@@ -5,6 +5,7 @@ import test from "node:test";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const reviewedGuideIds = [
+  "anshun-dixi-mask-performance-guide",
   "china-15-minute-neighbourhoods",
   "china-24-solar-terms-weather-food-daily-life",
   "china-community-canteens-explained",
@@ -15,6 +16,8 @@ const reviewedGuideIds = [
   "how-to-visit-an-archaeological-site-museum",
   "kaifeng-song-dynasty-urban-landscape",
   "lunar-new-year-customs-for-visitors",
+  "liaozhai-zibo-former-residence-liqu-liaozhai-city",
+  "meizhou-mazu-ancestral-temple-reading-guide",
   "qingdao-brands-built-an-industrial-city",
   "qinling-huaihe-transition-zone",
   "shanghai-24-hour-parks-reality-check",

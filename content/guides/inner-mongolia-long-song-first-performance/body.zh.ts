@@ -167,6 +167,7 @@ const body = {
         {"label": "查看中国公共假期旅行日历", "href": "/zh/guides/china-public-holidays-travel-calendar/", "description": "预判节庆客流和排期变化。"},
         {"label": "准备在中国购买门票的支付方式", "href": "/zh/guides/how-to-pay-in-china-as-a-tourist/", "description": "购买当前演出时保留备用支付。"},
         { label: "选择一场川剧演出", href: "/zh/guides/sichuan-opera-face-changing-with-context/", description: "不要只看面具海报；按剧团、剧目、唱念、身段与舞台语境选择并读懂一场川剧。" },
+        { label: "读懂第一场安顺地戏", href: "/zh/guides/anshun-dixi-mask-performance-guide/", description: "用证据清楚的听觉与动作框架理解面具表演，同时分开村寨仪式与游客短场。" },
       ]
     },
     {

@@ -312,6 +312,11 @@ const body = {
           label: "在湖南点一顿均衡的第一餐",
           href: "/zh/guides/hunan-cuisine-balanced-first-meal/",
           description: "从文学地理继续进入一个可执行的地方饮食选择。"
+        },
+        {
+          label: "读懂淄博聊斋地点与活态俚曲",
+          href: "/zh/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "比较另一项文学身份怎样连接作家故居、作品、活态表演与现代景区。"
         }
       ]
     },

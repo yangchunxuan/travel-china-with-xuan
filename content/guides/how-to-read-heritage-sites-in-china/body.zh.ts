@@ -385,6 +385,11 @@ const body = {
           href: "/zh/guides/when-metro-construction-meets-archaeology/",
           description: "理解发现、保护、发掘、设计响应和公共展示，不假定所有发现都会长期露天可见。",
         },
+        {
+          label: "按证据层读湄洲妈祖祖庙",
+          href: "/zh/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+          description: "分开机构延续、重建建筑、活态信俗、传统叙事与现代旅游展示。",
+        },
       ],
     },
     {

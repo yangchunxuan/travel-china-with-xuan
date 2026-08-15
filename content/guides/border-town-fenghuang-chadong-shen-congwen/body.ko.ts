@@ -312,6 +312,11 @@ const body = {
           label: "후난에서 균형 잡힌 첫 끼 주문하기",
           href: "/ko/guides/hunan-cuisine-balanced-first-meal/",
           description: "문학 지리 다음에는 실제로 쓸 수 있는 지역 음식 선택으로 이어 간다."
+        },
+        {
+          label: "쯔보 랴오자이 장소와 살아 있는 리취 읽기",
+          href: "/ko/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "또 다른 문학 정체성이 작가의 옛집, 작품, 살아 있는 공연과 현대 관광지를 어떻게 잇는지 비교합니다."
         }
       ]
     },

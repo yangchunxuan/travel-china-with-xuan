@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2.0",
   "snapshotDate": "2026-08-15",
-  "checkedAt": "2026-08-15T14:20:00+08:00",
-  "finalStatus": "SEARCH MAP UPDATED — HERITAGE INTERVENTION OWNER APPROVED FOR RELEASE",
+  "checkedAt": "2026-08-15T21:40:34+08:00",
+  "finalStatus": "SEARCH MAP UPDATED — THREE RESEARCH PACKS MATERIALIZED AS BOUNDED RELEASE OWNERS",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -2098,6 +2098,97 @@
         "status": "published-indexable",
         "stateTransition": "employee-2-research-candidate-authorized-and-materialized-for-release-2026-08-14",
         "originMainCommit": "6e49cf962453c4d8e2997ac0fda28d23fe6c5039"
+      },
+      {
+        "id": "anshun-dixi-mask-performance-guide",
+        "title": "Anshun Dixi: Why the Mask Sits Above the Face and What to Watch",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/anshun-dixi-mask-performance-guide/",
+        "section": "culture",
+        "primaryCollectionId": "culture-festivals-arts-contemporary",
+        "targetIntent": "understand",
+        "pageFamily": "task",
+        "primaryEntityId": "place-anshun",
+        "secondaryEntityIds": [
+          "tradition-anshun-dixi",
+          "place-tianlong-tunpu"
+        ],
+        "queryCluster": [
+          "Anshun Dixi mask on forehead",
+          "what to watch in Anshun Dixi",
+          "Anshun Dixi and Nuo opera"
+        ],
+        "cannibalizationOwner": "anshun-dixi-mask-performance-guide",
+        "freshnessClass": "high-performance-and-operator-change",
+        "lastReviewedAt": "2026-08-15",
+        "status": "published-indexable",
+        "stateTransition": "business-owner-authorized-research-pack-materialization-and-central-release-review-2026-08-15"
+      },
+      {
+        "id": "liaozhai-zibo-former-residence-liqu-liaozhai-city",
+        "title": "Zibo Liaozhai: Former Residence, Liaozhai Liqu and Liaozhai City",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+        "section": "culture",
+        "primaryCollectionId": "culture-history-people-ideas",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "city-zibo",
+        "secondaryEntityIds": [
+          "person-pu-songling",
+          "tradition-liaozhai-liqu",
+          "attraction-liaozhai-city"
+        ],
+        "queryCluster": [
+          "Pu Songling former residence Zibo",
+          "Liaozhai liqu intangible heritage",
+          "Liaozhai City or Pu Songling museum"
+        ],
+        "cannibalizationOwner": "liaozhai-zibo-former-residence-liqu-liaozhai-city",
+        "freshnessClass": "high-museum-attraction-and-performance-change",
+        "lastReviewedAt": "2026-08-15",
+        "status": "published-indexable",
+        "stateTransition": "business-owner-authorized-research-pack-materialization-and-central-release-review-2026-08-15"
+      },
+      {
+        "id": "meizhou-mazu-ancestral-temple-reading-guide",
+        "title": "How to Read the Meizhou Mazu Ancestral Temple",
+        "kind": "article",
+        "locales": [
+          "en",
+          "zh",
+          "ko"
+        ],
+        "canonicalPath": "/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+        "section": "culture",
+        "primaryCollectionId": "culture-history-people-ideas",
+        "targetIntent": "understand",
+        "pageFamily": "entity",
+        "primaryEntityId": "place-meizhou-island",
+        "secondaryEntityIds": [
+          "site-meizhou-mazu-ancestral-temple",
+          "tradition-mazu-belief-and-customs"
+        ],
+        "queryCluster": [
+          "Meizhou Mazu Ancestral Temple history",
+          "Meizhou Mazu west and south axis",
+          "Mazu belief and customs UNESCO"
+        ],
+        "cannibalizationOwner": "meizhou-mazu-ancestral-temple-reading-guide",
+        "freshnessClass": "high-operator-ritual-and-visitor-change",
+        "lastReviewedAt": "2026-08-15",
+        "status": "published-indexable",
+        "stateTransition": "business-owner-authorized-research-pack-materialization-and-central-release-review-2026-08-15"
       }
     ],
     "hubsAndDirectories": [
@@ -3865,6 +3956,39 @@
       ],
       "boundarySource": "content/guides/shilin-ashima-landscape-story/seo-brief.md",
       "reviewedAt": "2026-08-14"
+    },
+    {
+      "cluster": "Anshun Dixi mask and first performance",
+      "canonicalOwner": "anshun-dixi-mask-performance-guide",
+      "doNotSplit": [
+        "why the Anshun Dixi mask sits on the forehead",
+        "Anshun Dixi versus Nuo opera",
+        "Tianlong Dixi visitor excerpt"
+      ],
+      "boundarySource": "content/guides/anshun-dixi-mask-performance-guide/seo-brief.md",
+      "reviewedAt": "2026-08-15"
+    },
+    {
+      "cluster": "Zibo Liaozhai evidence layers",
+      "canonicalOwner": "liaozhai-zibo-former-residence-liqu-liaozhai-city",
+      "doNotSplit": [
+        "Pu Songling former residence versus memorial museum",
+        "Liaozhai liqu for visitors",
+        "Liaozhai City versus the historic former residence"
+      ],
+      "boundarySource": "content/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/seo-brief.md",
+      "reviewedAt": "2026-08-15"
+    },
+    {
+      "cluster": "Meizhou Mazu Ancestral Temple evidence layers",
+      "canonicalOwner": "meizhou-mazu-ancestral-temple-reading-guide",
+      "doNotSplit": [
+        "Meizhou Mazu temple west axis and south axis",
+        "Mazu belief and customs for non-believers",
+        "Meizhou Mazu Ancestral Temple reconstruction history"
+      ],
+      "boundarySource": "content/guides/meizhou-mazu-ancestral-temple-reading-guide/seo-brief.md",
+      "reviewedAt": "2026-08-15"
     }
   ],
   "poolDecisions": [

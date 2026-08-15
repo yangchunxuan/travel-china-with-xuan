@@ -136,6 +136,7 @@ const body = {
         { label: "첫 내몽골 장조 공연 고르기", href: "/ko/guides/inner-mongolia-long-song-first-performance/", description: "형식, 공연자와 듣기 과제를 식별하는 같은 원칙을 적용하세요." },
         { label: "첫 포산 사자춤 공연 읽기", href: "/ko/guides/foshan-lion-dance-first-performance-workflow/", description: "바이럴 기예 하나가 전통 전체를 대신하지 않도록 준비하세요." },
         { label: "베이징·시안·청두 순서 정하기", href: "/ko/guides/beijing-xian-chengdu-route-order/", description: "청두의 공연 저녁을 전체 여정 어디에 둘지 판단하세요." },
+        { label: "안순 디시 가면과 첫 공연 읽기", href: "/ko/guides/anshun-dixi-mask-performance-guide/", description: "얼굴 조각, 얼굴 가림, 소리, 타악과 몸짓으로 또 다른 가면 공연을 읽고 한 가지 시각 효과로 전체를 판단하지 않습니다." },
       ],
     },
     {

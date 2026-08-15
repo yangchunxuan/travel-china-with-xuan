@@ -328,6 +328,11 @@ const body = {
           href: "/zh/guides/how-to-read-a-suzhou-garden/",
           description: "继续把文学观看方法与材料年代判断分开。",
         },
+        {
+          label: "分清淄博聊斋的证据层",
+          href: "/zh/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "把文学与物质证据分开的方法带到故居、活态俚曲与现代景区。",
+        },
       ],
     },
     {

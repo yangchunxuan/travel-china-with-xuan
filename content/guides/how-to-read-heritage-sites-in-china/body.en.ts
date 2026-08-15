@@ -385,6 +385,11 @@ const body = {
           href: "/guides/when-metro-construction-meets-archaeology/",
           description: "Follow discovery, protection, excavation, design response and public display without assuming every find remains visible.",
         },
+        {
+          label: "Read the Meizhou Mazu Ancestral Temple by evidence layer",
+          href: "/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+          description: "Separate institutional continuity, rebuilt architecture, living belief, traditional narrative and modern visitor presentation.",
+        },
       ],
     },
     {

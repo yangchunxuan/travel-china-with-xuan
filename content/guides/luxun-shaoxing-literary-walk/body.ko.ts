@@ -343,6 +343,11 @@ const body = {
           label: "공식·재판매 티켓 채널 확인하기",
           href: "/ko/guides/official-or-reseller-china-tickets/",
           description: "유적 구역에 예약이 필요하면 현재 운영자 출처를 사용합니다."
+        },
+        {
+          label: "쯔보 랴오자이의 여러 층위 구분하기",
+          href: "/ko/guides/liaozhai-zibo-former-residence-liqu-liaozhai-city/",
+          description: "또 다른 작가와 장소의 여행에서 옛집, 문학, 살아 있는 공연과 현대 관광 해석을 나눠 봅니다."
         }
       ]
     },

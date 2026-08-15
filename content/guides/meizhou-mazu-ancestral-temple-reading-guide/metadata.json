@@ -1,0 +1,91 @@
+{
+  "id": "meizhou-mazu-ancestral-temple-reading-guide",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "cultural-evidence-layer-guide",
+  "topics": ["Mazu belief and customs", "Meizhou Mazu Ancestral Temple", "living heritage", "religious heritage", "heritage reconstruction"],
+  "destinations": ["meizhou-island", "putian"],
+  "heroImagePath": "/images/guides/meizhou-mazu-ancestral-temple-reading-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/meizhou-mazu-ancestral-temple-reading-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-16",
+  "dateModified": "2026-08-16",
+  "sourceReviewedDate": "2026-08-15",
+  "search": {"section": "culture", "family": "entity", "primaryIntent": "understand"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+      "title": "How to Read the Meizhou Mazu Ancestral Temple",
+      "headline": "Separate the institution, rebuilt architecture, living belief, traditional narrative and modern visitor display",
+      "description": "A low-interference cultural reading guide to the Meizhou Mazu Ancestral Temple—not an opening-hours, ferry or ritual schedule.",
+      "heroAlt": "A stepped view inside the Meizhou Mazu Ancestral Temple complex, with buildings rising along the slope.",
+      "heroCredit": {
+        "text": "Photo by 江上清风1961, 23 September 2012; centre-cropped from the 2272 × 1704 original and resized to 1600 × 1000 WebP by Homeground. Commons identifies the file with the Meizhou Mazu Ancestral Temple category; the image does not date every visible structure.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E5%A6%88%E7%A5%96%E5%BA%99_-_panoramio_(1).jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "Read the Meizhou Mazu temple",
+      "featuredLinkLabel": "Separate Meizhou Mazu's evidence layers",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Mazu", "Meizhou", "Living heritage"]
+    },
+    "zh": {
+      "path": "/zh/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+      "title": "湄洲妈祖祖庙怎么读：建筑、信俗与现代展示",
+      "headline": "分清祖庙机构、重建建筑、活态信俗、传统叙事与现代旅游展示",
+      "description": "给非信众的低干扰文化观察指南；不是开放时间、船班、仪式或摄影许可攻略。",
+      "heroAlt": "湄洲妈祖祖庙内沿山势展开的台阶与建筑。",
+      "heroCredit": {
+        "text": "江上清风1961 摄于 2012 年 9 月 23 日；Homeground 将 2272 × 1704 原图居中裁切并缩放为 1600 × 1000 WebP。Commons 文件分类确认祖庙地点，照片不能给所有可见建筑断代。",
+        "sourceLabel": "Commons 原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E5%A6%88%E7%A5%96%E5%BA%99_-_panoramio_(1).jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "读懂湄洲妈祖祖庙",
+      "featuredLinkLabel": "分清祖庙的文化证据层",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["妈祖", "湄洲", "活态遗产"]
+    },
+    "ko": {
+      "path": "/ko/guides/meizhou-mazu-ancestral-temple-reading-guide/",
+      "title": "메이저우 마쭈 조묘 읽기: 건축, 신앙 관습, 현대 전시",
+      "headline": "조묘 기관, 재건 건축, 살아 있는 신앙, 전승 서사와 관광 연출을 구분하기",
+      "description": "비신자가 방해를 최소화하며 문화를 관찰하도록 돕는 안내입니다. 운영 시간, 배편, 의례나 촬영 허가를 보장하지 않습니다.",
+      "heroAlt": "메이저우 마쭈 조묘 경사면을 따라 계단과 건물이 이어지는 모습.",
+      "heroCredit": {
+        "text": "작가명 ‘江上清风1961’로 2012년 9월 23일 촬영된 사진입니다. Homeground가 2272 × 1704 원본을 중앙 기준으로 잘라 1600 × 1000 WebP로 축소했습니다. Commons 분류는 조묘 장소를 확인하지만 보이는 모든 건물의 연대를 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E5%A6%88%E7%A5%96%E5%BA%99_-_panoramio_(1).jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "메이저우 마쭈 조묘 읽기",
+      "featuredLinkLabel": "조묘의 문화 근거 층위 구분하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["마쭈", "메이저우", "살아 있는 유산"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Meizhou Mazu Ancestral Temple history",
+      "Meizhou Mazu west and south axis",
+      "Mazu belief and customs UNESCO"
+    ],
+    "zh": [
+      "湄洲妈祖祖庙建筑重建历史",
+      "湄洲妈祖信俗怎么理解",
+      "妈祖祖庙西轴线南轴线"
+    ],
+    "ko": [
+      "메이저우 마쭈 조묘 역사",
+      "마쭈 신앙 관습 유네스코",
+      "메이저우 조묘 서축 남축"
+    ]
+  }
+}
