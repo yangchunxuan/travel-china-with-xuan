@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     languages: {
       en: zhangjiajiePrivateTourPaths.en,
       "zh-Hans": zhangjiajiePrivateTourPaths.zh,
+      ko: zhangjiajiePrivateTourPaths.ko,
       "x-default": zhangjiajiePrivateTourPaths.en,
     },
   },
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     description: copy.metadataDescription,
     type: "website",
     locale: "en_US",
-    alternateLocale: ["zh_CN"],
+    alternateLocale: ["zh_CN", "ko_KR"],
     url: zhangjiajiePrivateTourPaths.en,
     images: [
       {

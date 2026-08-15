@@ -26,8 +26,9 @@ const guideHubLabels: Record<HomegroundLocale, string> = {
   ko: "여행 가이드",
 };
 
-const privateTourRelatedCopy: Partial<
-  Record<HomegroundLocale, { action: string; path: string }>
+const privateTourRelatedCopy: Record<
+  HomegroundLocale,
+  { action: string; path: string }
 > = {
   en: {
     action: "See the ready 4-day, 3-night private route",
@@ -36,6 +37,10 @@ const privateTourRelatedCopy: Partial<
   zh: {
     action: "查看已排好的4天3晚私家路线",
     path: "/zh/tours/zhangjiajie-4-day-private-tour/",
+  },
+  ko: {
+    action: "4일 3박 프라이빗 일정 보기",
+    path: "/ko/tours/zhangjiajie-4-day-private-tour/",
   },
 };
 

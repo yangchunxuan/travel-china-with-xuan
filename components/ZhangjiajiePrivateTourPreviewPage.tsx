@@ -27,7 +27,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
   const copy = productPreviewCopy[locale];
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
-  const homePath = isZh ? "/zh/" : "/";
+  const isKo = locale === "ko";
+  const homePath = locale === "en" ? "/" : `/${locale}/`;
   const languagePaths = published
     ? zhangjiajiePrivateTourPaths
     : zhangjiajiePrivateTourPreviewPaths;
@@ -43,10 +44,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
     perPerson: copy.perPerson,
     regularLabel: copy.regularLabel,
     exactStayNote: copy.exactStayNote,
+    validThrough: copy.validThrough,
   };
-  const comparisonGuidePath = isZh
-    ? "/zh/guides/zhangjiajie-itinerary/"
-    : "/guides/zhangjiajie-itinerary/";
   const canonicalPath = languagePaths[locale];
   const pageUrl = `https://homegroundchina.com${canonicalPath}`;
   const structuredData = published
@@ -70,7 +69,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
             url: pageUrl,
             image:
               "https://homegroundchina.com/product-previews/zhangjiajie-4-day-private-tour/hero/forest-pillars-og-1200.jpg",
-            touristType: isZh ? "张家界首次到访旅客" : "First-time Zhangjiajie visitors",
+            touristType: isZh
+              ? "张家界首次到访旅客"
+              : isKo
+                ? "장자제를 처음 찾는 여행자"
+                : "First-time Zhangjiajie visitors",
             provider: {
               "@type": "Organization",
               "@id": "https://homegroundchina.com/#organization",
@@ -83,7 +86,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
               itemListElement: product.route.map((day, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
-                name: isZh ? day.title_zh : day.title_en,
+                name: isZh
+                  ? day.title_zh
+                  : isKo
+                    ? day.title_ko
+                    : day.title_en,
                 description: copy.daySummaries[index],
               })),
             },
@@ -128,10 +135,14 @@ export function ZhangjiajiePrivateTourPreviewPage({
     1: {
       alt: isZh
         ? "张家界荷花国际机场停机坪上的客机与登机桥，远处可见天门山"
-        : "Passenger aircraft and boarding bridges at Zhangjiajie Hehua International Airport, with Tianmen Mountain beyond the apron",
+        : isKo
+          ? "장자제 허화 국제공항 계류장의 여객기와 탑승교, 그 너머로 보이는 톈먼산"
+          : "Passenger aircraft and boarding bridges at Zhangjiajie Hehua International Airport, with Tianmen Mountain beyond the apron",
       caption: isZh
         ? "张家界荷花国际机场 · 第1天抵达节点参考（照片不代表私人接站服务）"
-        : "Zhangjiajie Hehua International Airport · Day 1 arrival reference (the photograph does not depict the private transfer)",
+        : isKo
+          ? "장자제 허화 국제공항 · 1일 차 도착 지점 참고(사진은 전용 픽업 서비스를 보여 주는 것이 아님)"
+          : "Zhangjiajie Hehua International Airport · Day 1 arrival reference (the photograph does not depict the private transfer)",
       credit: {
         author: "Martin Lewison",
         license: "CC BY-SA 2.0",
@@ -144,28 +155,40 @@ export function ZhangjiajiePrivateTourPreviewPage({
     2: {
       alt: isZh
         ? "百龙天梯沿张家界国家森林公园的砂岩崖壁升起"
-        : "The Bailong Elevator rising against a sandstone cliff in Zhangjiajie National Forest Park",
+        : isKo
+          ? "장자제 국가삼림공원의 사암 절벽을 따라 솟은 바이룽 엘리베이터"
+          : "The Bailong Elevator rising against a sandstone cliff in Zhangjiajie National Forest Park",
       caption: isZh
         ? "百龙天梯 · 第2天进山路线实景参考"
-        : "Bailong Elevator · Day 2 route reference",
+        : isKo
+          ? "바이룽 엘리베이터 · 2일 차 산악 일정 현장 참고"
+          : "Bailong Elevator · Day 2 route reference",
       src: "/product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
     },
     3: {
       alt: isZh
         ? "游客正在跨越张家界大峡谷玻璃桥"
-        : "Visitors crossing the Zhangjiajie Grand Canyon Glass Bridge",
+        : isKo
+          ? "장자제 대협곡 유리다리를 건너는 방문객들"
+          : "Visitors crossing the Zhangjiajie Grand Canyon Glass Bridge",
       caption: isZh
         ? "张家界大峡谷玻璃桥 · 第3天实景参考"
-        : "Zhangjiajie Grand Canyon Glass Bridge · Day 3 reference",
+        : isKo
+          ? "장자제 대협곡 유리다리 · 3일 차 현장 참고"
+          : "Zhangjiajie Grand Canyon Glass Bridge · Day 3 reference",
       src: "/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
     },
     4: {
       alt: isZh
         ? "天门山上天梯尽头的天门洞"
-        : "Tianmen Cave above the stairway at Tianmen Mountain",
+        : isKo
+          ? "톈먼산 계단 위쪽의 톈먼동"
+          : "Tianmen Cave above the stairway at Tianmen Mountain",
       caption: isZh
         ? "天门洞与上天梯 · 第4天实景参考"
-        : "Tianmen Cave and its stairway approach · Day 4 reference",
+        : isKo
+          ? "톈먼동과 이어지는 계단 · 4일 차 현장 참고"
+          : "Tianmen Cave and its stairway approach · Day 4 reference",
       src: "/product-previews/zhangjiajie-4-day-private-tour/hero/tianmen-cave-and-stairs.jpg",
     },
   };
@@ -225,7 +248,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
                 alt={
                   isZh
                     ? "阳光照亮张家界国家森林公园的砂岩峰柱与深谷"
-                    : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
+                    : isKo
+                      ? "햇빛을 받은 장자제 국가삼림공원의 사암 봉우리와 깊은 숲속 계곡"
+                      : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
                 }
                 fill
                 priority
@@ -244,16 +269,6 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <h2 id="why-private-title">{copy.whyTitle}</h2>
               <p>{copy.whyIntro}</p>
             </div>
-            <aside className={styles.guideBridge}>
-              <div>
-                <h3>{copy.guideBridgeTitle}</h3>
-                <p>{copy.guideBridgeBody}</p>
-              </div>
-              <Link href={comparisonGuidePath}>
-                {copy.guideBridgeAction}
-                <ArrowRight aria-hidden="true" size={18} />
-              </Link>
-            </aside>
             <div className={styles.benefitGrid}>
               {copy.benefits.map(([heading, body], index) => (
                 <section className={styles.benefitCard} key={heading}>
@@ -281,9 +296,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
                 return (
                   <li key={day.day}>
                     <div className={styles.dayMarker}>
-                      <span>{isZh ? "第" : "Day"}</span>
+                      {isKo ? null : <span>{isZh ? "第" : "Day"}</span>}
                       <strong>{day.day}</strong>
-                      {isZh ? <span>天</span> : null}
+                      {isZh ? <span>天</span> : isKo ? <span>일 차</span> : null}
                     </div>
                     <div
                       className={`${styles.dayCopy} ${
@@ -291,7 +306,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
                       }`}
                     >
                       <div>
-                        <h3>{isZh ? day.title_zh : day.title_en}</h3>
+                        <h3>
+                          {isZh
+                            ? day.title_zh
+                            : isKo
+                              ? day.title_ko
+                              : day.title_en}
+                        </h3>
                         <span className={styles.dayStatus}>
                           {day.guide_planned ? copy.guideLabel : copy.arrivalLabel}
                         </span>
@@ -311,7 +332,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                             <span>{routePhoto.caption}</span>
                             {routePhoto.credit ? (
                               <span className={styles.dayFigureCredit}>
-                                {isZh ? "图片：" : "Photo: "}
+                                {isZh ? "图片：" : isKo ? "사진: " : "Photo: "}
                                 <a href={routePhoto.credit.sourceHref}>
                                   {routePhoto.credit.author}
                                 </a>
@@ -322,7 +343,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
                                 >
                                   {routePhoto.credit.license}
                                 </a>
-                                {isZh ? " · 已裁切" : " · cropped"}
+                                {isZh
+                                  ? " · 已裁切"
+                                  : isKo
+                                    ? " · 일부 잘라냄"
+                                    : " · cropped"}
                               </span>
                             ) : null}
                           </figcaption>
