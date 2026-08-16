@@ -376,7 +376,7 @@ export default {
       id: "related-guides",
       type: "internal-links",
       title: "把兵马俑这一天接入整趟中国行程",
-      items: [
+      items: [ { label: "西安城市总览", href: "/zh/destinations/xian/", description: "在敲定这类细节之前，先决定住几晚、以哪里为基地和下一站去哪。" },
         {
           label: "第一次乘中国高铁",
           href: "/zh/guides/china-high-speed-train-first-time-guide/",

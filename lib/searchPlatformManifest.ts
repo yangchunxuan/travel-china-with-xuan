@@ -14,6 +14,11 @@ import type {
   ContentRecordEnvelope,
   SiteLocale,
 } from "./content-system/types";
+import { buildDestinationHubContentNodes } from "./destinationHubContentAdapter";
+import {
+  getDestinationHubEntry,
+  type DestinationHubId,
+} from "./destinationHubs";
 import { getGuideEntry } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
 import {
@@ -51,6 +56,7 @@ export const searchPlatformManifest = buildContentManifest([
   ...buildLegacySystemContentNodes().map(contentNodeRecord),
   ...buildSearchHubContentNodes().map(contentNodeRecord),
   ...buildSearchCollectionContentNodes().map(contentNodeRecord),
+  ...buildDestinationHubContentNodes().map(contentNodeRecord),
   ...buildLegacyGuideContentNodes().map(contentNodeRecord),
 ]);
 
@@ -434,6 +440,76 @@ export function getSearchHubMetadata(
       title: entry.h1,
       description: entry.description,
       images: socialImage?.map((image) => image.url),
+    },
+  };
+}
+
+export function getDestinationHubManifestEntry(
+  hubId: DestinationHubId,
+  locale: HomegroundLocale,
+): ContentManifestEntry {
+  const entry = getManifestEntriesByNodeId(
+    searchPlatformManifest,
+    `destination-${hubId}`,
+  ).find((candidate) => candidate.locale === locale);
+
+  if (!entry) {
+    throw new Error(`Missing destination hub manifest entry: ${hubId}/${locale}`);
+  }
+
+  return entry;
+}
+
+export function getDestinationHubMetadata(
+  hubId: DestinationHubId,
+  locale: HomegroundLocale,
+): Metadata {
+  const entry = getDestinationHubManifestEntry(hubId, locale);
+  const hub = getDestinationHubEntry(hubId, locale);
+  const alternateLocale = getManifestEntriesByNodeId(
+    searchPlatformManifest,
+    entry.contentId,
+  )
+    .filter((candidate) => candidate.locale !== locale)
+    .map((candidate) => candidate.openGraphLocale)
+    .filter((value): value is string => Boolean(value));
+  const socialImage = [
+    {
+      url: hub.heroImageUrl,
+      width: hub.imageWidth,
+      height: hub.imageHeight,
+      alt: hub.heroAlt,
+    },
+  ];
+
+  return {
+    title: entry.title,
+    description: entry.description,
+    alternates: { canonical: entry.canonicalPath, languages: entry.alternates },
+    robots: {
+      index: entry.status === "published" && entry.indexability.index,
+      follow: entry.indexability.follow,
+      googleBot: {
+        index: entry.status === "published" && entry.indexability.index,
+        follow: entry.indexability.follow,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    openGraph: {
+      title: entry.h1,
+      description: entry.description,
+      type: "website",
+      locale: entry.openGraphLocale ?? undefined,
+      alternateLocale,
+      url: entry.canonicalPath,
+      images: socialImage,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: entry.h1,
+      description: entry.description,
+      images: socialImage.map((image) => image.url),
     },
   };
 }

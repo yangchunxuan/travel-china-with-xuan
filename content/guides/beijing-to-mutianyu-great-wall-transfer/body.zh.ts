@@ -43,7 +43,7 @@ const body = {
     ]},
     { id: "fact-check", type: "callout", title: "动态交通信息核验于2026年8月13日", tone: "neutral", body: "北京官方游客页面目前说明东直门、怀柔与慕田峪的公共交通衔接。线路号、站点、运营时间、旅游巴士产品、景区时间和夜游日期均可能变化，出发前要重查。" },
     { id: "help-callout", type: "callout", title: "需要把接驳放进你的北京行程？", tone: "decision", body: "提供日期、酒店、人数、行动需求、行李，以及当晚固定火车或航班。Homeground可以找出可行路线与复核点，但不承诺实时路况或景区开放。" },
-    { id: "internal-links", type: "internal-links", title: "让北京行程接得起来", items: [
+    { id: "internal-links", type: "internal-links", title: "让北京行程接得起来", items: [ { label: "北京城市总览", href: "/zh/destinations/beijing/", description: "在敲定这类细节之前，先决定住几晚、住哪个区域、走哪个门户和下一站。" },
       { label: "第一次去北京住哪里", href: "/zh/guides/beijing-where-to-stay-first-trip/", description: "住宿区域会改变第一段与最后一段。" },
       { label: "北京应该选哪个火车站", href: "/zh/guides/which-beijing-railway-station/", description: "用正确车站保护后续列车。" },
       { label: "外国游客去故宫", href: "/zh/guides/forbidden-city-for-foreign-visitors/", description: "把另一个交通和预约都较复杂的北京日单独规划。" },

@@ -376,7 +376,7 @@ export default {
       id: "related-guides",
       type: "internal-links",
       title: "Connect this day to the rest of the China trip",
-      items: [
+      items: [ { label: "Xi'an destination hub", href: "/destinations/xian/", description: "Decide nights, base and the next city before fixing this detail." },
         {
           label: "China high-speed trains for first-time visitors",
           href: "/guides/china-high-speed-train-first-time-guide/",

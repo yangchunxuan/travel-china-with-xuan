@@ -505,7 +505,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "继续处理真正属于下一步的问题",
-      items: [
+      items: [ { label: "上海城市总览", href: "/zh/destinations/shanghai/", description: "在敲定这类细节之前，先决定几个完整游览日、住哪一岸和走哪个门户。" },
         {
           label: "规划PVG到上海迪士尼的详细接驳",
           href: "/zh/guides/pudong-airport-to-shanghai-disneyland/",

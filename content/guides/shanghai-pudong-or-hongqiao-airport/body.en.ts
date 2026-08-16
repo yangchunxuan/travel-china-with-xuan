@@ -505,7 +505,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the part of the plan that owns the next decision",
-      items: [
+      items: [ { label: "Shanghai destination hub", href: "/destinations/shanghai/", description: "Decide complete days, which bank to stay on and the gateway before fixing this detail." },
         {
           label: "Plan the detailed PVG-to-Shanghai-Disney transfer",
           href: "/guides/pudong-airport-to-shanghai-disneyland/",

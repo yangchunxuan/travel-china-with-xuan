@@ -43,7 +43,7 @@ const body = {
     ]},
     { id: "fact-check", type: "callout", title: "동적 교통 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "베이징 공식 관광 페이지는 현재 둥즈먼, 화이러우, 무톈위 대중교통 연결을 설명한다. 노선 번호, 정류장, 운영 시간, 관광버스 상품, 관광지 시간과 야간 관람 날짜는 바뀔 수 있으므로 출발 전에 다시 확인한다." },
     { id: "help-callout", type: "callout", title: "베이징 하루 일정에 이동을 맞춰 볼까요?", tone: "decision", body: "날짜, 호텔, 인원, 이동 요구, 짐과 저녁의 고정 열차나 항공편을 보내 주세요. Homeground는 가능한 이동과 확인 지점을 찾을 수 있지만 실시간 도로나 개장을 보장하지 않습니다." },
-    { id: "internal-links", type: "internal-links", title: "베이징 계획을 이어서", items: [
+    { id: "internal-links", type: "internal-links", title: "베이징 계획을 이어서", items: [ { label: "베이징 도시 허브", href: "/ko/destinations/beijing/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 관문, 다음 도시를 먼저 결정하세요." },
       { label: "첫 베이징 여행 숙소 지역", href: "/ko/guides/beijing-where-to-stay-first-trip/", description: "숙소 지역이 첫 이동과 귀환을 바꿉니다." },
       { label: "어느 베이징 기차역인가요?", href: "/ko/guides/which-beijing-railway-station/", description: "올바른 터미널로 후속 열차를 지킵니다." },
       { label: "외국인 여행자의 자금성", href: "/ko/guides/forbidden-city-for-foreign-visitors/", description: "또 다른 어려운 베이징 하루를 따로 준비합니다." },

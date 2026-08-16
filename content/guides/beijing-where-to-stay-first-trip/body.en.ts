@@ -449,7 +449,7 @@ const body = {
       id: "related-guides",
       type: "internal-links",
       title: "Continue planning the parts that affect the stay",
-      items: [
+      items: [ { label: "Beijing destination hub", href: "/destinations/beijing/", description: "Decide nights, base area, gateway and the next city before fixing this detail." },
         {
           label: "Why are hotels in China so cheap?",
           href: "/guides/why-are-hotels-in-china-so-cheap/",

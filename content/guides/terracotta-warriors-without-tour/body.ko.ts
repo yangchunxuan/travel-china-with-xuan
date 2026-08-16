@@ -376,7 +376,7 @@ export default {
       id: "related-guides",
       type: "internal-links",
       title: "병마용 하루를 전체 중국 여행에 연결하세요",
-      items: [
+      items: [ { label: "시안 도시 허브", href: "/ko/destinations/xian/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 다음 도시를 먼저 정하세요." },
         {
           label: "처음 타는 중국 고속철도",
           href: "/ko/guides/china-high-speed-train-first-time-guide/",

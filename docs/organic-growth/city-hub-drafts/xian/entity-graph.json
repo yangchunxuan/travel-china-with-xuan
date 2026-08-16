@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "1.0.0",
+  "draftType": "destination-hub-entity-graph",
+  "generatedFor": "codex/city-hub-xian-draft-20260815",
+  "reviewedAt": "2026-08-15",
+  "hub": {
+    "primaryEntityId": "city-xian",
+    "primaryEntityStatus": "existing",
+    "canonicalProposal": "/destinations/xian/",
+    "localizedPathProposals": {
+      "en": "/destinations/xian/",
+      "zh-Hans": "/zh/destinations/xian/",
+      "ko": "/ko/destinations/xian/"
+    },
+    "publicationStatus": "draft-central-review-required",
+    "parentProposal": {
+      "entityId": "province-shaanxi",
+      "status": "proposed",
+      "boundary": "This is a proposed geographic parent only. Province-wide population, policy, tourism and attraction data must not be inherited as Xi'an city data."
+    }
+  },
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "existing",
+      "names": { "en": "China", "zh-Hans": "中国", "ko": "중국" }
+    },
+    {
+      "id": "province-shaanxi",
+      "type": "province",
+      "status": "proposed",
+      "names": { "en": "Shaanxi", "zh-Hans": "陕西", "ko": "산시성" }
+    },
+    {
+      "id": "city-xian",
+      "type": "city",
+      "status": "existing",
+      "names": {
+        "en": { "name": "Xi'an", "aliases": ["Xian"] },
+        "zh-Hans": { "name": "西安" },
+        "ko": { "name": "시안" }
+      }
+    },
+    {
+      "id": "city-xianyang",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Xianyang", "zh-Hans": "咸阳", "ko": "셴양" },
+      "boundary": "Geographic host side for XIY; not an alternative label for Xi'an."
+    },
+    {
+      "id": "district-lintong",
+      "type": "district",
+      "status": "proposed",
+      "names": { "en": "Lintong District", "zh-Hans": "临潼区", "ko": "린퉁구" }
+    },
+    {
+      "id": "area-xian-old-city-core",
+      "type": "urban-area",
+      "status": "proposed",
+      "names": { "en": "Xi'an old-city core", "zh-Hans": "西安古城核心", "ko": "시안 구시가지 중심" }
+    },
+    {
+      "id": "area-xian-yongningmen",
+      "type": "urban-area",
+      "status": "proposed",
+      "names": { "en": "Yongningmen / South Gate", "zh-Hans": "永宁门 / 南门", "ko": "융닝먼 / 남문" }
+    },
+    {
+      "id": "area-xian-dayanta-xiaozhai",
+      "type": "urban-area",
+      "status": "proposed",
+      "names": { "en": "Dayanta / Xiaozhai", "zh-Hans": "大雁塔 / 小寨", "ko": "다옌타 / 샤오자이" }
+    },
+    {
+      "id": "poi-xian-city-wall",
+      "type": "attraction",
+      "status": "proposed",
+      "names": { "en": "Xi'an City Wall", "zh-Hans": "西安城墙", "ko": "시안 성벽" }
+    },
+    {
+      "id": "poi-xian-bell-tower",
+      "type": "attraction",
+      "status": "proposed",
+      "names": { "en": "Xi'an Bell Tower", "zh-Hans": "西安钟楼", "ko": "시안 종루" }
+    },
+    {
+      "id": "poi-xian-drum-tower",
+      "type": "attraction",
+      "status": "proposed",
+      "names": { "en": "Xi'an Drum Tower", "zh-Hans": "西安鼓楼", "ko": "시안 고루" }
+    },
+    {
+      "id": "area-xian-muslim-quarter",
+      "type": "neighbourhood-area",
+      "status": "proposed",
+      "names": { "en": "Muslim Quarter area", "zh-Hans": "回民街片区", "ko": "후이민제 권역" },
+      "boundary": "The busiest commercial lane is not a proxy for all Muslim communities or food culture in Xi'an."
+    },
+    {
+      "id": "poi-shaanxi-history-museum-main",
+      "type": "museum",
+      "status": "proposed",
+      "names": { "en": "Shaanxi History Museum Main Building", "zh-Hans": "陕西历史博物馆本馆", "ko": "산시역사박물관 본관" },
+      "boundary": "Separate from the Qin-Han Gallery."
+    },
+    {
+      "id": "poi-shaanxi-history-museum-qinhan",
+      "type": "museum",
+      "status": "proposed",
+      "names": { "en": "Shaanxi History Museum Qin-Han Gallery", "zh-Hans": "陕西历史博物馆秦汉馆", "ko": "산시역사박물관 진한관" },
+      "boundary": "Separate venue outside the Main Building cluster."
+    },
+    {
+      "id": "poi-giant-wild-goose-pagoda",
+      "type": "attraction",
+      "status": "proposed",
+      "names": { "en": "Giant Wild Goose Pagoda", "zh-Hans": "大雁塔", "ko": "대안탑" }
+    },
+    {
+      "id": "area-xian-tang-culture-zone",
+      "type": "visitor-area",
+      "status": "proposed",
+      "names": { "en": "Dayanta Tang-culture evening zone", "zh-Hans": "大雁塔唐文化夜游片区", "ko": "다옌타 당 문화 야간 구역" },
+      "boundary": "Contemporary visitor district; visible buildings must not all be labelled surviving Tang fabric."
+    },
+    {
+      "id": "poi-emperor-qinshihuang-mausoleum-site-museum",
+      "type": "museum-site",
+      "status": "proposed",
+      "names": { "en": "Emperor Qinshihuang's Mausoleum Site Museum", "zh-Hans": "秦始皇帝陵博物院", "ko": "진시황제릉박물원" }
+    },
+    {
+      "id": "poi-terracotta-warriors-visitor-area",
+      "type": "archaeological-visitor-area",
+      "status": "proposed",
+      "names": { "en": "Terracotta Warriors visitor area", "zh-Hans": "兵马俑参观区", "ko": "병마용 관람 구역" }
+    },
+    {
+      "id": "poi-lishan-garden",
+      "type": "archaeological-site-park",
+      "status": "proposed",
+      "names": { "en": "Lishan Garden", "zh-Hans": "丽山园", "ko": "리산위안" }
+    },
+    {
+      "id": "poi-huaqing-palace",
+      "type": "attraction",
+      "status": "proposed",
+      "names": { "en": "Huaqing Palace", "zh-Hans": "华清宫", "ko": "화칭궁" },
+      "boundary": "Optional separately ticketed Lintong addition; not part of Terracotta admission."
+    },
+    {
+      "id": "airport-xiy",
+      "type": "airport",
+      "status": "proposed",
+      "codes": { "iata": "XIY" },
+      "names": { "en": "Xi'an Xianyang International Airport", "zh-Hans": "西安咸阳国际机场", "ko": "시안 셴양 국제공항" },
+      "boundary": "Serves Xi'an but is geographically on the Xianyang side; terminal assignment is dynamic."
+    },
+    {
+      "id": "station-xian-north",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Xi'an North Railway Station", "zh-Hans": "西安北站", "ko": "시안북역" }
+    },
+    {
+      "id": "station-xian",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Xi'an Railway Station", "zh-Hans": "西安站", "ko": "시안역" }
+    },
+    {
+      "id": "station-xian-east",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Xi'an East Railway Station", "zh-Hans": "西安东站", "ko": "시안동역" },
+      "boundary": "Opened in 2026; the dated ticket determines relevance."
+    },
+    {
+      "id": "city-weinan",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Weinan", "zh-Hans": "渭南", "ko": "웨이난" }
+    },
+    {
+      "id": "city-huayin",
+      "type": "county-level-city",
+      "status": "proposed",
+      "names": { "en": "Huayin", "zh-Hans": "华阴", "ko": "화인" }
+    },
+    {
+      "id": "mountain-huashan",
+      "type": "mountain-attraction",
+      "status": "proposed",
+      "names": { "en": "Mount Hua", "zh-Hans": "华山", "ko": "화산" }
+    },
+    {
+      "id": "station-huashan-north",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Huashan North Railway Station", "zh-Hans": "华山北站", "ko": "화산북역" }
+    },
+    {
+      "id": "city-beijing",
+      "type": "city",
+      "status": "existing",
+      "names": { "en": "Beijing", "zh-Hans": "北京", "ko": "베이징" }
+    },
+    {
+      "id": "city-chengdu",
+      "type": "city",
+      "status": "existing",
+      "names": { "en": "Chengdu", "zh-Hans": "成都", "ko": "청두" }
+    },
+    {
+      "id": "city-luoyang",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Luoyang", "zh-Hans": "洛阳", "ko": "뤄양" }
+    },
+    {
+      "id": "city-pingyao",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Pingyao", "zh-Hans": "平遥", "ko": "핑야오" }
+    },
+    {
+      "id": "article-terracotta-warriors-without-tour",
+      "type": "content-owner",
+      "status": "existing",
+      "slug": "terracotta-warriors-without-tour"
+    },
+    {
+      "id": "article-shaanxi-history-museum-booking-and-collection-plan",
+      "type": "content-owner",
+      "status": "existing",
+      "slug": "shaanxi-history-museum-booking-and-collection-plan"
+    },
+    {
+      "id": "article-xian-where-to-stay-city-wall-or-dayanta",
+      "type": "content-owner",
+      "status": "existing",
+      "slug": "xian-where-to-stay-city-wall-or-dayanta"
+    },
+    {
+      "id": "article-beijing-xian-chengdu-route-order",
+      "type": "content-owner",
+      "status": "existing",
+      "slug": "beijing-xian-chengdu-route-order"
+    },
+    {
+      "id": "article-chinese-city-walls-gates-and-urban-order",
+      "type": "content-owner",
+      "status": "existing",
+      "slug": "chinese-city-walls-gates-and-urban-order"
+    },
+    {
+      "id": "article-ritual-bronze-vessels-and-inscriptions",
+      "type": "content-owner",
+      "status": "existing",
+      "slug": "ritual-bronze-vessels-and-inscriptions"
+    }
+  ],
+  "edges": [
+    { "from": "country-china", "relation": "contains", "to": "province-shaanxi", "status": "proposed" },
+    { "from": "province-shaanxi", "relation": "contains", "to": "city-xian", "status": "proposed" },
+    { "from": "province-shaanxi", "relation": "contains", "to": "city-xianyang", "status": "proposed" },
+    { "from": "province-shaanxi", "relation": "contains", "to": "city-weinan", "status": "proposed" },
+    { "from": "city-xian", "relation": "containsDistrict", "to": "district-lintong", "status": "proposed" },
+    { "from": "city-xian", "relation": "containsUrbanArea", "to": "area-xian-old-city-core", "status": "proposed" },
+    { "from": "city-xian", "relation": "containsUrbanArea", "to": "area-xian-yongningmen", "status": "proposed" },
+    { "from": "city-xian", "relation": "containsUrbanArea", "to": "area-xian-dayanta-xiaozhai", "status": "proposed" },
+    { "from": "poi-xian-city-wall", "relation": "locatedIn", "to": "city-xian", "status": "proposed" },
+    { "from": "poi-xian-bell-tower", "relation": "locatedIn", "to": "area-xian-old-city-core", "status": "proposed" },
+    { "from": "poi-xian-drum-tower", "relation": "locatedIn", "to": "area-xian-old-city-core", "status": "proposed" },
+    { "from": "area-xian-muslim-quarter", "relation": "locatedIn", "to": "area-xian-old-city-core", "status": "proposed" },
+    { "from": "poi-shaanxi-history-museum-main", "relation": "locatedIn", "to": "area-xian-dayanta-xiaozhai", "status": "proposed" },
+    { "from": "poi-giant-wild-goose-pagoda", "relation": "locatedIn", "to": "area-xian-dayanta-xiaozhai", "status": "proposed" },
+    { "from": "area-xian-tang-culture-zone", "relation": "locatedIn", "to": "area-xian-dayanta-xiaozhai", "status": "proposed" },
+    { "from": "poi-emperor-qinshihuang-mausoleum-site-museum", "relation": "locatedIn", "to": "district-lintong", "status": "proposed" },
+    { "from": "poi-emperor-qinshihuang-mausoleum-site-museum", "relation": "includesVisitorArea", "to": "poi-terracotta-warriors-visitor-area", "status": "proposed" },
+    { "from": "poi-emperor-qinshihuang-mausoleum-site-museum", "relation": "includesVisitorArea", "to": "poi-lishan-garden", "status": "proposed" },
+    { "from": "poi-huaqing-palace", "relation": "locatedIn", "to": "district-lintong", "status": "proposed" },
+    { "from": "airport-xiy", "relation": "locatedOnSideOf", "to": "city-xianyang", "status": "proposed" },
+    { "from": "airport-xiy", "relation": "serves", "to": "city-xian", "status": "proposed" },
+    { "from": "station-xian-north", "relation": "locatedIn", "to": "city-xian", "status": "proposed" },
+    { "from": "station-xian", "relation": "locatedIn", "to": "city-xian", "status": "proposed" },
+    { "from": "station-xian-east", "relation": "locatedIn", "to": "city-xian", "status": "proposed" },
+    { "from": "city-weinan", "relation": "contains", "to": "city-huayin", "status": "proposed" },
+    { "from": "mountain-huashan", "relation": "locatedIn", "to": "city-huayin", "status": "proposed" },
+    { "from": "station-huashan-north", "relation": "locatedIn", "to": "city-huayin", "status": "proposed" },
+    { "from": "city-xian", "relation": "fullDayExtensionTo", "to": "mountain-huashan", "status": "proposed" },
+    { "from": "city-xian", "relation": "routeConnectsTo", "to": "city-beijing", "status": "proposed" },
+    { "from": "city-xian", "relation": "routeConnectsTo", "to": "city-chengdu", "status": "proposed" },
+    { "from": "city-xian", "relation": "routeConnectsTo", "to": "city-luoyang", "status": "proposed" },
+    { "from": "city-xian", "relation": "routeConnectsTo", "to": "city-pingyao", "status": "proposed" },
+    { "from": "city-xian", "relation": "delegatesExecutionTo", "to": "article-terracotta-warriors-without-tour", "status": "existing" },
+    { "from": "city-xian", "relation": "delegatesExecutionTo", "to": "article-shaanxi-history-museum-booking-and-collection-plan", "status": "existing" },
+    { "from": "city-xian", "relation": "delegatesComparisonTo", "to": "article-xian-where-to-stay-city-wall-or-dayanta", "status": "existing" },
+    { "from": "city-xian", "relation": "delegatesRouteOrderTo", "to": "article-beijing-xian-chengdu-route-order", "status": "existing" },
+    { "from": "city-xian", "relation": "delegatesInterpretationTo", "to": "article-chinese-city-walls-gates-and-urban-order", "status": "existing" },
+    { "from": "city-xian", "relation": "delegatesInterpretationTo", "to": "article-ritual-bronze-vessels-and-inscriptions", "status": "existing" }
+  ],
+  "validationRules": [
+    "city-xian remains the sole primary entity",
+    "Xian remains an English alias rather than a second entity",
+    "province-shaanxi is only a proposed parent and contributes no inherited city metrics",
+    "airport-xiy serves Xi'an but is not modelled as a central Xi'an attraction",
+    "district-lintong remains distinct from the old-city and south-side clusters",
+    "mountain-huashan and station-huashan-north remain external to Xi'an under the Weinan/Huayin branch",
+    "the six content-owner nodes remain existing articles and are not rewritten by this hub"
+  ]
+}

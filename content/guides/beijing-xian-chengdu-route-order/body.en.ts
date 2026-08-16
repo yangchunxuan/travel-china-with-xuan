@@ -271,7 +271,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",
-      items: [
+      items: [ { label: "Beijing destination hub", href: "/destinations/beijing/", description: "Decide nights, base area, gateway and the next city before fixing this detail." },
         { label: "Browse the China planning guides", href: "/plan/", description: "Return to the planning collection and choose the next decision." },
         { label: "Choose open-jaw flights", href: "/guides/china-open-jaw-flights-route-planning/", description: "Compare different entry and exit cities with the cost of returning to one gateway." },
         { label: "Choose one hub or multiple bases", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide the route architecture before fixing this named three-city order." },

@@ -1087,3 +1087,38 @@ asset-ID, crop and evidence-boundary ledger is kept in
 The four accommodation groups remain separate in code and captions. Property
 names are intentionally omitted from the public page, and no image from one
 group is represented as a room or facility belonging to another.
+
+## Destination hub pilot — Beijing, Shanghai and Xi'an (August 16, 2026)
+
+The three city hubs at `/destinations/beijing/`, `/destinations/shanghai/` and
+`/destinations/xian/` publish **nine real photographs and 0 AI or AI-assisted
+images**. Every file was selected from the organized local `Facebook图片素材`
+library. The local library was checked first for this batch and contained an
+accurate photograph for every required subject, so no Wikimedia substitute was
+needed. As with the other local-library entries in this
+register, the owner's authorization establishes Homeground project use
+permission; it is not an independent third-party authorship claim.
+
+Each derivative is a conventional centred 16:10 cover crop, resized and
+converted to WebP with `sharp` at quality 84 and without EXIF, GPS or device
+metadata. No scene element was combined, removed or generated, and no image is
+reused as another city.
+
+| Page and role | Original library path and depicted place | Source SHA-256 | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Beijing hub — hero | `北京优选素材/01_北京古都地标/故宫全景_02.jpg`; the Forbidden City seen from the north, central Beijing beyond | `b52ca395b0642ac7205bdb207939389ab3e0d7454c7546a1618e1fc1f857992c` | `public/images/destinations/beijing/hero-1600.webp`; 1600 × 1000; `96b24543521bddf2deb9d06371177a2cba0690589751318a76573e1841e6aac8` | Shows the scale of the palace precinct only. It does not prove current opening, reservation availability, crowding or a viewpoint's access status. |
+| Beijing hub — Great Wall figure | `北京优选素材/02_万里长城/长城群山远景_01.jpg`; a restored Great Wall section on mountain ridges north of Beijing | `7f22ac9b9e8988b07534eaab4df6bcf691a43fc146e75b1473de75b14fb5136d` | `public/images/destinations/beijing/great-wall-1200.webp`; 1200 × 750; `5e7293b7f47ccac330d20fa3b8c2d3607d87d794577f315528e93880c19d82f3` | The exact wall section is deliberately **not** claimed. Used only to show that the Wall is a ridge-line journey, never to identify Mutianyu or Badaling. |
+| Beijing hub — Gulou figure | `北京优选素材/04_北京胡同与人文/北京钟鼓楼与胡同全景_01.jpg`; the Drum Tower and Bell Tower above hutong roofs | `cb7bfa6bc126fe76ca710d1014384a4ea9321fb8da3c1845c8f889ceed6cc729` | `public/images/destinations/beijing/gulou-hutong-1200.webp`; 1200 × 750; `96b0a6f90622dae8be8d23a99c6fdb31bd43ffd316a55090fbd07fd9c794765c` | Neighbourhood scale only. It is not evidence about any hotel, lane access, lift or vehicle entrance. |
+| Shanghai hub — hero | `上海优选素材/01_外滩与万国建筑/外滩历史建筑与浦东天际线_02.jpg`; Puxi rooftops with the Lujiazui skyline in Pudong beyond | `5594b513fafe225eb1cea9a253c4143a98e1169ed23357370eaa4a01b78b2920` | `public/images/destinations/shanghai/hero-1600.webp`; 1600 × 1000; `379eee1ab33b9150b2279f924c39b83e4812c377b481c581296d82711f0911a7` | The two-bank relationship only. It does not identify a hotel, observatory ticket or viewing platform. |
+| Shanghai hub — Suzhou Creek figure | `上海优选素材/06_交通与旅程/苏州河与陆家嘴白昼_01.jpg`; the Waibaidu Bridge at the mouth of Suzhou Creek | `0e91bd44d734de8d4371154171ad4d4d06c1d3ca16673938609a21fe853ecdbf` | `public/images/destinations/shanghai/suzhou-creek-1200.webp`; 1200 × 750; `f1a69c13d742a72c681fcd040a9c2968e83dbb7736061407bb1688964e0bb556` | City geography only. No claim about bridge access, navigation, tours or current works. |
+| Shanghai hub — Bund figure | `上海优选素材/01_外滩与万国建筑/外滩建筑群_01.jpg`; early twentieth-century Bund buildings including the Customs House clock tower | `95b45b318772c32eee1c8f02465fc8378f42a792dc01ad89fe3d35bab1986f66` | `public/images/destinations/shanghai/bund-architecture-1200.webp`; 1200 × 750; `70db0b89112ca78aa4ab9564e0e2b04d88a5b4c56825949d3ec53c62dad11d02` | Street-wall character only. Individual buildings are not named, and no occupant, hotel or interior is implied. |
+| Xi'an hub — hero | `西安优选素材/01_城墙钟鼓楼与古城/长安中轴线.jpg`; the south gate and city wall at dusk, with the avenue running north to the Bell Tower | `1a8a3459ca867377caf125ec7eef2ee1348775c23289a78619b655313ae519a0` | `public/images/destinations/xian/hero-1600.webp`; 1600 × 1000; `8f887864968e68da48a49300727b4ad70271de10fe093d39690f764138449666` | Urban structure only. It does not prove wall access, cycling availability, night opening or lighting on any given date. |
+| Xi'an hub — Terracotta figure | `西安优选素材/02_兵马俑与秦文化/西安兵马俑博物馆一号坑.jpg`; the interior of Pit 1 in Lintong | `ae5a26420cf9acd5a1b201413b085654d9fc2b058ceba68bd30ef1c9fd19fb84` | `public/images/destinations/xian/terracotta-pit-one-1200.webp`; 1200 × 750; `c1982f860cfd30bc3643c8e1331259acca9d7772fe61af6eff590e8fd294fbf2` | Scale of the pit hall only. Not evidence of reservation availability, queue length, visitor numbers or the current display arrangement. |
+| Xi'an hub — Dayanta figure | `西安优选素材/03_大小雁塔与寺院/西安大雁塔秋季摄影.jpg`; the Giant Wild Goose Pagoda seen across the north square pool in autumn | `a314a7eb7d72e0d29209be7d31d8cec673b3b62012654864fbde362b67164c21` | `public/images/destinations/xian/dayanta-1200.webp`; 1200 × 750; `bddb52daf816b9bc9de8a85f21bf3eabaef9e1d931afbc140410366268a98c0f` | Location and seasonal context only. It does not promise autumn colour, fountain operation, temple opening or pagoda ascent on any date. |
+
+The spatial-relationship asset on each hub is **not** an image file. It is a
+hand-authored inline SVG orientation diagram
+(`components/content/DestinationGeographyDiagram.tsx`) drawn from reviewed
+coordinates in `lib/destinationHubs.ts`. It carries no scale, copies no
+commercial map, and its labels are ordinary localized HTML rather than baked-in
+text, so Chinese and Korean read correctly at every viewport width.

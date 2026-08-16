@@ -62,6 +62,20 @@
 | `china-hotel-near-metro` | hotel near metro China、how close to subway、luggage/family/accessibility rubric | 城市版同一距离判断、家庭版/老人版拆页 |
 | `how-to-pay-in-china-as-a-tourist` | how to pay、Alipay、WeChat、cash、cards、failure recovery | Alipay vs WeChat、单一支付方式、支付失败页 |
 
+## 目的地 Hub（2026-08-16 发布）：城市级 canonical owner
+
+三个 city hub 已上线，`X travel guide` 这一类宽泛城市意图由它们独占。不得再建同城的通用城市介绍、`X 旅游攻略` 或换标题的城市百科；具体执行仍归各自更窄的 owner。
+
+| Canonical owner | 占用的意图 | 应合并内容 |
+|---|---|---|
+| `/destinations/beijing/`（`destination-beijing`） | Beijing travel guide、北京旅行指南、住几晚、住哪个区域、机场与车站选择、下一站 | 通用“北京攻略”、城市百科、按天数或人群拆的北京总览 |
+| `/destinations/shanghai/`（`destination-shanghai`） | Shanghai travel guide、上海旅行指南、完整游览日、浦西浦东取舍、机场门户、长三角当日往返还是换城 | 通用“上海攻略”、按天数或人群拆的上海总览 |
+| `/destinations/xian/`（`destination-xian`） | Xi'an travel guide、西安旅行指南、住几晚、城内与城南基地、三座铁路站、华山要不要加一天 | 通用“西安攻略”、按天数或人群拆的西安总览 |
+
+三语只算一个内容身份。Hub 只做城市级取舍，不复述 `beijing-where-to-stay-first-trip`、`which-beijing-railway-station`、`terracotta-warriors-without-tour`、`shanghai-pudong-or-hongqiao-airport` 等既有 owner 的执行细节。
+
+**待补**：`docs/organic-growth/search-map.json` 尚未登记这三个身份。它的 `coverage` 与轮次计数字段含义不明确，本批不擅自改写；请员工 7 在下一次同步时按现有 schema 回填。
+
 ## 其余已发布 canonical owners：不可撞题
 
 ### 张家界

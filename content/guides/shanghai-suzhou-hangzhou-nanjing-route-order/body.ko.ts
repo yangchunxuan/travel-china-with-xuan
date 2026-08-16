@@ -63,7 +63,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "dynamic-boundary", type: "callout", tone: "warning", title: "교통망은 계속 바뀝니다", body: "역 사용, 공사, 열차 패턴과 공항 연결은 변합니다. 12306과 현지 공식 공지에서 정확한 날짜와 역을 확인하세요. 이 글은 실시간 열차, 소요 시간 또는 전국 공통 당일치기 규칙을 약속하지 않습니다." },
   { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 네 도시 순서와 한 방향, 상하이 거점, 두 거점 혼합 중 선택만 다룹니다. 도시 교통 가이드는 정확한 수단, 쑤저우 정원 글은 방문 자체, 공항 글은 푸둥과 훙차오를 담당합니다." },
   { id: "help-cta", type: "callout", tone: "decision", title: "창장삼각주 동선을 확인할까요?", body: "도착·출국 공항, 날짜, 숙소 선호, 짐과 도시별 우선순위 하나를 알려 주세요. 좋은 검토는 가장 약한 숙소와 숙소에서 역까지 가장 긴 전체 이동을 찾습니다." },
-  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [ { label: "상하이 도시 허브", href: "/ko/destinations/shanghai/", description: "이 세부 사항을 정하기 전에 온전한 일수, 어느 강안에 묵을지, 어느 관문을 쓸지 먼저 정하세요." },
     { label: "상하이–항저우 교통 계획", href: "/ko/guides/shanghai-hangzhou-transport-route/", description: "도시 순서 뒤 역을 고르세요." },
     { label: "쑤저우 정원 읽기", href: "/ko/guides/how-to-read-a-suzhou-garden/", description: "숙소를 더하기 전에 쑤저우 목적을 만드세요." },
     { label: "푸둥과 훙차오 비교", href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/", description: "항공 공항이 최적 동선을 뒤집을 수 있습니다." },
