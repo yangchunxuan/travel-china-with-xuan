@@ -353,7 +353,7 @@ const body = {
           "Shanghai Songjiang Railway Station",
           "South-western station on the Shanghai–Suzhou–Huzhou corridor",
           "Useful only when the hotel or route aligns with the south-west",
-          "Renamed from Songjiang South in 2024, so older advice can name it wrongly",
+          "It opened in December 2024 on the former Songjiang South site, so older advice can name it wrongly",
         ],
       ],
     },
