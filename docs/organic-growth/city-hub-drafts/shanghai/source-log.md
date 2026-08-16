@@ -134,29 +134,38 @@ The proposed destination paths are recorded in frontmatter and planning files on
     https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html
     Reviewed through the existing Shanghai–Hangzhou owner on the same base. Supports station-specific planning rather than a generic “Shanghai station” label.
 
-19. Shanghai Municipal Government, four major railway stations during the 2026 Spring Festival rush
+19. Shanghai Municipal Government, Songjiang South station renamed Shanghai Songjiang
+    https://www.shanghai.gov.cn/xbhygq/20240514/45ef2426bf66467d96a2a2927cf53579.html
+    Reviewed 2026-08-16. Confirms that the existing Songjiang South station was renamed Shanghai Songjiang from 22 May 2024. This is the naming stage, not evidence that the later hub expansion was only a change of signs.
+
+20. Shanghai Municipal Government, expanded Shanghai Songjiang hub structure and opening
+    https://www.shanghai.gov.cn/nw4411/20241217/f322c0d1b5bc48ac9f07e84660c40723.html
+    https://www.shanghai.gov.cn/nw4411/20241227/bc93ea86a3df41a3aa418d7cf7b283bb.html
+    Reviewed 2026-08-16. Confirms the new north station building, the former Songjiang South building as the south section, and the expanded hub's opening on 26 December 2024.
+
+21. Shanghai Municipal Government, four major railway stations during the 2026 Spring Festival rush
     https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260210/8006a8a6babc4cb2829b8026aab17953.html
     Reviewed 2026-08-15. Confirms current operational relevance of Shanghai Hongqiao, Shanghai, Shanghai South and Shanghai Songjiang. The temporary 24-hour holiday operation is not generalized.
 
-20. Shanghai Municipal Government, Yangtze Delta timetable update
+22. Shanghai Municipal Government, Yangtze Delta timetable update
     https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260120/4fefd5c7bcfd4ec0a45f6c882cfbbd9e.html
     Reviewed 2026-08-15. Demonstrates that station assignments and schedules change; supports the live-12306 instruction.
 
-21. Shanghai Municipal Government, future Shanghai East and Baoshan station construction
+23. Shanghai Municipal Government, future Shanghai East and Baoshan station construction
     https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260503/fd2ece2ed5df4557b2048f3d8acdc03d.html
     Reviewed 2026-08-15. Used only to exclude future facilities from current trip planning until officially open and bookable.
 
 ### Disney and controlled outer-city tasks
 
-22. Shanghai Disney Resort, rail transport
+24. Shanghai Disney Resort, rail transport
     https://www.shanghaidisneyresort.com/en/experience/guest-service/rail
     Reviewed through the existing Disney owner at the same base. Supports Line 11/Disney Resort execution boundary.
 
-23. Shanghai Disney Resort, official travel information
+25. Shanghai Disney Resort, official travel information
     https://www.shanghaidisneyresort.com/en/experience/guest-service/travel-information
     Reviewed through the existing Disney owner. Used to keep park transport dynamic and separate from the city-day count.
 
-24. Existing Homeground Yangshan source ledger, based on official port and government channels
+26. Existing Homeground Yangshan source ledger, based on official port and government channels
     Repository owner: `content/guides/yangshan-automated-port-explained/source-log.md`
     Reviewed 2026-08-15. Supports the controlled-working-port boundary; the Hub does not restate the technical explainer.
 

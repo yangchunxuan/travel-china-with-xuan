@@ -353,7 +353,7 @@ const body = {
           "Shanghai Songjiang Railway Station",
           "South-western station on the Shanghai–Suzhou–Huzhou corridor",
           "Useful only when the hotel or route aligns with the south-west",
-          "It opened in December 2024 on the former Songjiang South site, so older advice can name it wrongly",
+          "Songjiang South was renamed Shanghai Songjiang in May 2024; the expanded hub opened on 26 December with a new north station building and the former station as its south section",
         ],
       ],
     },
@@ -668,7 +668,13 @@ const body = {
           reviewedAt: "2026-08-16",
         },
         {
-          label: "Shanghai Songjiang Station opening and corridor role",
+          label: "Songjiang South renamed Shanghai Songjiang from 22 May 2024",
+          url: "https://www.shanghai.gov.cn/xbhygq/20240514/45ef2426bf66467d96a2a2927cf53579.html",
+          publisher: "Shanghai Municipal Government",
+          reviewedAt: "2026-08-16",
+        },
+        {
+          label: "Expanded Shanghai Songjiang hub opened on 26 December 2024",
           url: "https://www.shanghai.gov.cn/nw4411/20241227/bc93ea86a3df41a3aa418d7cf7b283bb.html",
           publisher: "Shanghai Municipal Government",
           reviewedAt: "2026-08-16",

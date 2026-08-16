@@ -23,6 +23,12 @@ import { DestinationGeographyDiagram } from "./DestinationGeographyDiagram";
 
 const SITE_URL = "https://homegroundchina.com";
 
+const zhHeadingSegments = {
+  beijing: ["北京旅行指南：", "先分配", "完整的一天，", "再安排景点"],
+  shanghai: ["上海旅行指南：", "先算", "完整游览日，", "再决定", "住哪一岸"],
+  xian: ["西安旅行指南：", "住几晚、", "以哪里为基地、", "下一站去哪"],
+} as const satisfies Record<DestinationHubId, readonly string[]>;
+
 const ui = {
   en: {
     skip: "Skip to the guide",
@@ -205,6 +211,7 @@ export function DestinationHubPage({
     { dateStyle: "long", timeZone: "UTC" },
   ).format(new Date(`${hub.sourceReviewedDate}T00:00:00.000Z`));
   const schema = structuredData(hub, locale, body);
+  const titleSegments = locale === "zh" ? zhHeadingSegments[hubId] : null;
 
   return (
     <div
@@ -252,7 +259,17 @@ export function DestinationHubPage({
                 {copy.reviewed} {date}
               </span>
             </p>
-            <h1>{hub.h1}</h1>
+            <h1>
+              {titleSegments ? (
+                titleSegments.map((segment, index) => (
+                  <span className={styles.keepTogether} key={`${segment}-${index}`}>
+                    {segment}
+                  </span>
+                ))
+              ) : (
+                hub.h1
+              )}
+            </h1>
             <p className={styles.dek}>{hub.summary}</p>
             <EditorialByline locale={locale} reviewedAt={hub.sourceReviewedDate} />
           </div>
