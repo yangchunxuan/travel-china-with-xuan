@@ -1,0 +1,700 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "lead",
+      type: "lead",
+      text: "Beijing is often the strongest place to begin a first China trip, because it teaches the country's scale before the route starts moving quickly. An imperial centre, a modern political core, hutong neighbourhoods, large gardens, business districts, two airports and eight major railway stations share one municipality. That range is the city's advantage and the reason a short visit turns inefficient: the Forbidden City, the Great Wall, the Summer Palace and a departure train are not interchangeable pins on a map.",
+    },
+    {
+      id: "role-heading",
+      type: "heading",
+      level: 2,
+      text: "What Beijing is for in a first China trip",
+    },
+    {
+      id: "role-1",
+      type: "paragraph",
+      text: "Beijing is not simply the history city. The Forbidden City and the north–south ceremonial axis show how imperial order was written into urban space. Tiananmen Square and the National Museum place that inherited centre inside a modern capital. The hutongs around the Drum and Bell Towers work at a much smaller street scale, and Chaoyang and the CBD stop the trip from reducing Beijing to the past.",
+    },
+    {
+      id: "role-2",
+      type: "paragraph",
+      text: "That makes Beijing a strong opening city. One stable central base gives an international arrival time to recover while introducing passport-linked reservations, subway navigation, long walking distances inside single sites, and the difference between a ticket time and a complete day. Those lessons make later cities easier. Beijing can also finish a trip, but the end of a route has less tolerance: a long-distance rail arrival, a Great Wall day and a next-morning international flight should never depend on one another.",
+    },
+    {
+      id: "who-heading",
+      type: "heading",
+      level: 2,
+      text: "Who Beijing suits, and who should keep it short",
+    },
+    {
+      id: "who-1",
+      type: "paragraph",
+      text: "Beijing is particularly strong for first-time visitors, families introducing children to China, architecture and history travellers, museum visitors, neighbourhood walkers, and groups willing to give the Great Wall a complete day. It also suits travellers who dislike moving hotels: five Beijing nights are often easier than splitting the same time between two cities and adding another transfer.",
+    },
+    {
+      id: "who-2",
+      type: "paragraph",
+      text: "It is less natural for travellers who want every day to stay spontaneous. Several major venues use timed or identity-linked entry, and the city's scale magnifies the cost of a last-minute cross-town change. Travellers who dislike long walks, security queues or early starts can still enjoy Beijing, but should reduce the number of large sites per day. Travellers prioritising tropical scenery, compact old towns or nightlife can reasonably hold Beijing to three or four nights.",
+    },
+    {
+      id: "who-3",
+      type: "paragraph",
+      text: "The useful question is not whether Beijing is worth it. It is whether this trip needs a three-night introduction, a five-night first-trip anchor or a seven-night cultural stay.",
+    },
+    {
+      id: "nights-heading",
+      type: "heading",
+      level: 2,
+      text: "How many nights does Beijing need?",
+    },
+    {
+      id: "nights-1",
+      type: "paragraph",
+      text: "Count hotel nights, complete sightseeing days and partial arrival or departure days separately. A flight landing at 15:00 is not a Beijing day. Neither is a morning that starts with checkout, station travel, security and boarding.",
+    },
+    {
+      id: "nights-table",
+      type: "table",
+      caption: "Beijing stay shapes and what each can honestly hold",
+      columns: [
+        "Stay shape",
+        "Hotel nights",
+        "Likely complete days",
+        "What it can hold",
+        "Main compromise",
+      ],
+      rows: [
+        [
+          "Minimum first look",
+          "3",
+          "2",
+          "One central-axis day and either the Great Wall or a second city cluster",
+          "Major clusters must be dropped; almost no recovery margin",
+        ],
+        [
+          "Recommended first visit",
+          "4–5",
+          "3–4",
+          "Central axis, Great Wall, Summer Palace or Temple of Heaven, plus a neighbourhood or museum block",
+          "Secondary sights stay optional",
+        ],
+        [
+          "Deeper Beijing stay",
+          "6–7",
+          "5–6",
+          "Every major cluster at a calmer pace, with neighbourhood time, museums and weather margin",
+          "You must deliberately resist adding another city",
+        ],
+      ],
+    },
+    {
+      id: "nights-2",
+      type: "paragraph",
+      text: "Three nights work best as an evening arrival, two complete days and a later departure. One day follows Tiananmen–Forbidden City–Jingshan; the other is the Great Wall. That is a valid visit, but it usually omits the Summer Palace and leaves nowhere to move a failed reservation.",
+    },
+    {
+      id: "nights-3",
+      type: "paragraph",
+      text: "Four nights usually produce three real days and are a practical minimum for many first trips. Five nights let the Wall stay independent, stop the northwest competing with the centre and keep the arrival day light. Six or seven suit travellers who value imperial architecture, museums, hutongs or slower mornings. The extra nights buy choice and recovery, not simply more attractions.",
+    },
+    {
+      id: "stay-heading",
+      type: "heading",
+      level: 2,
+      text: "Where to stay: choose the job of the neighbourhood",
+    },
+    {
+      id: "stay-1",
+      type: "paragraph",
+      text: "Until the first and last transport tasks are known, there is no single best Beijing area. A hotel beside a famous sight can still be inconvenient when its entrance sits deep inside a lane, the group has large luggage, or the final train leaves from the opposite side of the city. Compare what each area has to do, not its reputation.",
+    },
+    {
+      id: "stay-table",
+      type: "table",
+      caption: "Four Beijing base areas compared by job",
+      columns: [
+        "Area",
+        "Best job",
+        "What becomes easier",
+        "What becomes harder",
+        "Best fit",
+      ],
+      rows: [
+        [
+          "Wangfujing / Dongdan",
+          "Central first-trip base",
+          "Historic centre, several subway directions, broad hotel choice, simple evenings",
+          "Great Wall and the northwest still need dedicated travel",
+          "First-time couples, families, short stays",
+        ],
+        [
+          "Qianmen",
+          "Southern central-axis base",
+          "Qianmen, Dashilar and the Temple of Heaven pair naturally",
+          "Pedestrian lanes complicate luggage; northern tasks take longer",
+          "Atmosphere-led travellers with a south-central plan",
+        ],
+        [
+          "Gulou–Shichahai",
+          "Hutong and evening base",
+          "Drum and Bell Towers, the lakes, lanes and neighbourhood time",
+          "Vehicle access, lifts, sound insulation and room size vary sharply",
+          "Couples, repeat visitors, light packers",
+        ],
+        [
+          "Dongzhimen / Chaoyang",
+          "Airport, dining and modern-city base",
+          "PEK-side access, Sanlitun, newer hotels",
+          "Imperial sights become deliberate cross-city trips",
+          "Business-plus-leisure, late PEK arrivals, nightlife priorities",
+        ],
+      ],
+    },
+    {
+      id: "stay-2",
+      type: "paragraph",
+      text: "Wangfujing and Dongdan do the same city-level job: they reduce first-trip uncertainty. Central does not mean everything is walkable; it means several directions stay manageable. Qianmen is stronger when the southern axis should feel continuous, but “near Qianmen” can mean a main-road hotel or a property inside a pedestrian lane, and those are different arrival experiences with luggage.",
+    },
+    {
+      id: "stay-3",
+      type: "paragraph",
+      text: "Gulou–Shichahai rewards property-level scrutiny. A courtyard hotel can be memorable, but heritage character does not guarantee a lift, soundproofing, a spacious room or vehicle access to the door. Dongzhimen and Chaoyang make sense when airport access, newer hotels, dining or evenings matter more than waking beside the old centre.",
+    },
+    {
+      id: "gulou-figure",
+      type: "figure",
+      src: "/images/destinations/beijing/gulou-hutong-1200.webp",
+      alt: "Beijing's Drum Tower and Bell Tower rising above grey-tiled hutong roofs, with a busy lane on the right.",
+      width: 1200,
+      height: 750,
+      caption:
+        "The Gulou–Shichahai area works at lane scale. That is its appeal and also why the specific building, not the district name, decides whether luggage, lifts and late arrivals will be easy.",
+    },
+    {
+      id: "stay-links",
+      type: "internal-links",
+      title: "Choose the base with the accommodation owners",
+      items: [
+        {
+          label: "Where to stay in Beijing on a first trip",
+          href: "/guides/beijing-where-to-stay-first-trip/",
+          description:
+            "Compares Wangfujing, Qianmen, Sanlitun and the northern hutongs by itinerary, arrival station, evenings, luggage and walking tolerance.",
+        },
+        {
+          label: "Beijing courtyard hotel or modern hotel?",
+          href: "/guides/beijing-courtyard-hotel-or-modern-hotel/",
+          description:
+            "What courtyard character actually changes about rooms, lifts, noise, heating and vehicle access.",
+        },
+      ],
+    },
+    {
+      id: "gateways-heading",
+      type: "heading",
+      level: 2,
+      text: "Two airports and eight railway stations shape the first and last day",
+    },
+    {
+      id: "gateways-1",
+      type: "paragraph",
+      text: "The planning order is fixed: confirm the actual flight or train, identify the terminal or the complete station name, then choose the transfer and the hotel implications. Never pick a “Beijing station” from a map before the ticket exists.",
+    },
+    {
+      id: "gateways-table",
+      type: "table",
+      caption: "Beijing gateways and what each one changes",
+      columns: ["Hub", "City-side orientation", "What it changes"],
+      rows: [
+        [
+          "PEK — Capital Airport",
+          "Northeast; the Capital Airport Express links Dongzhimen and Sanyuanqiao",
+          "Favours Dongzhimen or Chaoyang for a late first night; a central Dongcheng hotel still needs a full transfer allowance",
+        ],
+        [
+          "PKX — Daxing Airport",
+          "Far south; the Daxing Airport Express runs to Caoqiao",
+          "Can suit Qianmen or a south-side rail sequence; a late arrival should not precede an early northern sight",
+        ],
+        [
+          "Beijing Railway Station",
+          "East of the historic centre",
+          "Works well from Dongdan or Jianguomen for the trains that actually use it",
+        ],
+        [
+          "Beijing West",
+          "West of the centre",
+          "Important for many westbound routes, including numerous Xi'an services; eastern hotels need a deliberate transfer",
+        ],
+        [
+          "Beijing South",
+          "South of the centre",
+          "Major high-speed gateway toward Shanghai, Tianjin and eastern corridors; more natural from Qianmen than from the far northeast",
+        ],
+        [
+          "Beijing North",
+          "Northwest of the old centre",
+          "Serves selected northwest corridors, but the actual train may use Qinghe instead",
+        ],
+        [
+          "Qinghe",
+          "Northwest, beyond the inner centre",
+          "Relevant to northwest high-speed services and some Badaling and Zhangjiakou trains; never a central default",
+        ],
+        [
+          "Beijing Chaoyang",
+          "Northeast",
+          "Major northeast high-speed gateway; convenient from Chaoyang, awkward from Qianmen or the far west",
+        ],
+        [
+          "Beijing Fengtai",
+          "Southwest",
+          "Handles a mixed and growing set of long-distance services; rely on the ticket, not an old rule of thumb",
+        ],
+        [
+          "Beijing Tongzhou",
+          "Eastern municipal sub-centre",
+          "Relevant to selected eastbound intercity services; rarely the first assumption for a central stay",
+        ],
+      ],
+    },
+    {
+      id: "gateways-2",
+      type: "paragraph",
+      text: "PEK versus PKX has no permanent winner. PEK is usually easier for Dongzhimen and the northeast; PKX can be more logical for southern Beijing and some onward rail sequences. Airfare, landing time and the next hotel matter more than a distance comparison, and a cheap midnight arrival can cost the following morning.",
+    },
+    {
+      id: "gateways-3",
+      type: "paragraph",
+      text: "Rail follows the same rule. Beijing South is strongly associated with Shanghai and Beijing West with Xi'an, but the ticket remains the authority. Keep the Chinese station name alongside the English one, and plan the hotel departure only after the exact station is fixed. For a same-day station-to-airport connection, count leaving the platform, crossing the city, entering the correct terminal and preserving the airline buffer; an extra night is often more rational when the tickets are separate.",
+    },
+    {
+      id: "transport-links",
+      type: "internal-links",
+      title: "Hand the gateway decision to its owner",
+      items: [
+        {
+          label: "Which Beijing railway station do you need?",
+          href: "/guides/which-beijing-railway-station/",
+          description:
+            "The eight-station matrix, read from the ticket rather than from the city name.",
+        },
+        {
+          label: "Beijing South Station to Capital or Daxing airport",
+          href: "/guides/beijing-south-station-to-capital-or-daxing-airport/",
+          description:
+            "Whether a same-day station-to-airport link is defensible, and when to buy a hotel night instead.",
+        },
+        {
+          label: "Beijing to Mutianyu Great Wall transfer",
+          href: "/guides/beijing-to-mutianyu-great-wall-transfer/",
+          description: "How the Mutianyu day is actually executed door to door.",
+        },
+        {
+          label: "Beijing to Badaling Great Wall transfer",
+          href: "/guides/beijing-to-badaling-great-wall-transfer/",
+          description:
+            "Rail, suburban rail and bus options to Badaling, with the return plan.",
+        },
+      ],
+    },
+    {
+      id: "clusters-heading",
+      type: "heading",
+      level: 2,
+      text: "Read Beijing as four spatial tasks",
+    },
+    {
+      id: "clusters-1",
+      type: "paragraph",
+      text: "The central planning mistake is grouping sights by fame instead of by geography and operating constraints.",
+    },
+    {
+      id: "clusters-table",
+      type: "table",
+      caption: "Four Beijing tasks and their honest time shape",
+      columns: [
+        "Task",
+        "Natural sequence",
+        "Honest time shape",
+        "What not to attach",
+      ],
+      rows: [
+        [
+          "Tiananmen–Forbidden City–Jingshan",
+          "A south-to-north ceremonial and visual sequence",
+          "One substantial central day",
+          "The Great Wall, an airport departure or a distant timed museum",
+        ],
+        [
+          "Qianmen–Temple of Heaven",
+          "Historic commercial approach plus a southern ritual landscape",
+          "Half to full day depending on depth",
+          "The Summer Palace as a casual add-on",
+        ],
+        [
+          "Summer Palace and the northwest",
+          "Imperial garden, lake and hill landscape",
+          "A strong half day, often most of a day",
+          "A tightly timed central attraction before or after",
+        ],
+        [
+          "Great Wall",
+          "One selected section with complete outward and return transport",
+          "An independent full day",
+          "The Forbidden City, a major museum or a same-day intercity departure",
+        ],
+      ],
+    },
+    {
+      id: "axis-heading",
+      type: "heading",
+      level: 3,
+      text: "Tiananmen, the Forbidden City and Jingshan belong together",
+    },
+    {
+      id: "axis-1",
+      type: "paragraph",
+      text: "Tiananmen and the square establish the monumental southern approach. The Forbidden City carries the route through the former imperial centre. Jingshan sits immediately north and gives the clearest view of the palace's scale and alignment. Walking south to north reduces backtracking and lets the city's structure explain itself. The National Museum is geographically close but operationally separate, with its own reservation, security and real visit time.",
+    },
+    {
+      id: "south-heading",
+      type: "heading",
+      level: 3,
+      text: "Qianmen and the Temple of Heaven form the southern task",
+    },
+    {
+      id: "south-1",
+      type: "paragraph",
+      text: "Qianmen and Dashilar show the commercial side of the old centre. The Temple of Heaven lies farther south and works at a larger scale: a ritual landscape rather than a single hall. They pair well because the route keeps moving south. The gate you enter changes the walking sequence, so choose it after mobility, transport and available hours are known.",
+    },
+    {
+      id: "northwest-heading",
+      type: "heading",
+      level: 3,
+      text: "The Summer Palace is a northwest commitment",
+    },
+    {
+      id: "northwest-1",
+      type: "paragraph",
+      text: "The Summer Palace is not a compact palace building. Its lake, hill, gates and internal distances make it a substantial outdoor visit, easiest when the day is already oriented northwest and the entrance and exit support the next movement. Boats can change the route when operating, but the day must still work without them. With only two complete Beijing days, leaving the Summer Palace out is a reasonable trade.",
+    },
+    {
+      id: "wall-figure",
+      type: "figure",
+      src: "/images/destinations/beijing/great-wall-1200.webp",
+      alt: "A restored section of the Great Wall following mountain ridges north of Beijing, with watchtowers on the skyline.",
+      width: 1200,
+      height: 750,
+      caption:
+        "The Wall sits outside the central sightseeing system. The ridgeline in this frame is the reason it needs an outward and return journey rather than an afternoon.",
+    },
+    {
+      id: "wall-heading",
+      type: "heading",
+      level: 3,
+      text: "The Great Wall is its own day",
+    },
+    {
+      id: "wall-1",
+      type: "paragraph",
+      text: "Mutianyu and Badaling differ in access, terrain, facilities and crowd pattern, but both need an outward journey, entry, real time on the wall and a return. A cable car reduces the climb; it does not turn the Wall into a half-day companion to the Forbidden City.",
+    },
+    {
+      id: "wall-2",
+      type: "paragraph",
+      text: "Mutianyu is often a strong family default because assisted ascent and different walking lengths can be combined. Badaling can suit travellers who value rail access, extensive facilities or the best-known restored section. Travellers who genuinely want to hike should select a route by current opening status, verified route condition, weather, transport and their own capacity rather than by a dramatic photograph.",
+    },
+    {
+      id: "sight-links",
+      type: "internal-links",
+      title: "Open the execution owner when a cluster becomes a booking",
+      items: [
+        {
+          label: "The Forbidden City for foreign visitors",
+          href: "/guides/forbidden-city-for-foreign-visitors/",
+          description:
+            "Passport reservation, entrance sequence and what a realistic visit costs in time.",
+        },
+        {
+          label: "Temple of Heaven: gates and ritual sequence",
+          href: "/guides/temple-of-heaven-gates-and-ritual-sequence/",
+          description: "Which gate to use, and how the park reads as one landscape.",
+        },
+        {
+          label: "Summer Palace: gates, route and boat plan",
+          href: "/guides/summer-palace-gates-route-and-boat-plan/",
+          description:
+            "Entrances, internal distances and a route that still works when boats are not running.",
+        },
+        {
+          label: "National Museum of China: booking and route",
+          href: "/guides/national-museum-of-china-booking-and-route/",
+          description:
+            "Its own reservation and a focused collection route, so it is never treated as an automatic substitute.",
+        },
+      ],
+    },
+    {
+      id: "failure-heading",
+      type: "heading",
+      level: 2,
+      text: "What to do when a reservation fails",
+    },
+    {
+      id: "failure-1",
+      type: "paragraph",
+      text: "A failed reservation should change the day architecture, not trigger a random search for another famous sight. Protect the Great Wall day and the intercity departure first, then move a flexible geographic cluster into the open day.",
+    },
+    {
+      id: "failure-2",
+      type: "paragraph",
+      text: "If the Forbidden City is unavailable, keep the central geography without pretending the experience is identical: Jingshan, Beihai or a hutong block can form a coherent day, subject to current requirements. The Temple of Heaven or the Summer Palace can move into a full open day. The National Museum replaces the palace only when its own reservation is secured. This is exactly where five nights beat three: a fixed visit has somewhere else to go.",
+    },
+    {
+      id: "scenarios-heading",
+      type: "heading",
+      level: 2,
+      text: "Two traveller scenarios",
+    },
+    {
+      id: "scenario-1-heading",
+      type: "heading",
+      level: 3,
+      text: "Family of four, five nights, PEK arrival, Shanghai next",
+    },
+    {
+      id: "scenario-1",
+      type: "paragraph",
+      text: "The family lands at PEK in the afternoon and stays near Wangfujing or Dongdan. Day one follows Tiananmen–Forbidden City–Jingshan. Day two is an independent Mutianyu day. Day three combines Qianmen and the Temple of Heaven at a child-compatible pace. Day four stays flexible: the Summer Palace if energy is good, otherwise Shichahai with a lighter park or museum block. The fifth night protects the route, and they leave for Shanghai from the station printed on the ticket — often Beijing South for this corridor, but never assumed before booking.",
+    },
+    {
+      id: "scenario-2-heading",
+      type: "heading",
+      level: 3,
+      text: "Culture-and-walking couple, six nights, PKX arrival, Xi'an next",
+    },
+    {
+      id: "scenario-2",
+      type: "paragraph",
+      text: "The couple arrives at PKX and chooses Qianmen for the southern-axis atmosphere. Their complete days cover the central palace sequence, the Temple of Heaven and Qianmen in depth, Gulou–Shichahai, the Summer Palace and one Wall section chosen for walking rather than name recognition. The final full day stays movable: they confirm the actual departure station for Xi'an and keep the transfer day light. The sixth night is what lets bad Wall weather or a missed palace reservation move without collapsing the route.",
+    },
+    {
+      id: "next-heading",
+      type: "heading",
+      level: 2,
+      text: "Where Beijing should go next",
+    },
+    {
+      id: "next-table",
+      type: "table",
+      caption: "Choosing the city after Beijing",
+      columns: ["Next stop", "Why it follows Beijing", "Route implication", "Choose it when"],
+      rows: [
+        [
+          "Xi'an",
+          "Continues the capital-and-empire story at a different scale",
+          "Usually a straightforward high-speed leg; many services use Beijing West, but verify",
+          "History is central and several nights remain",
+        ],
+        [
+          "Shanghai",
+          "Creates an old-capital and modern-metropolis contrast, and supports open-jaw flights",
+          "High-speed rail is often practical; many services run Beijing South to Shanghai Hongqiao",
+          "You want a clean first-trip arc or fly home from Shanghai",
+        ],
+        [
+          "Zhangjiajie",
+          "Replaces urban monumentality with mountain scenery",
+          "Usually deserves a flight comparison; rail can consume a full day",
+          "Nature is a priority and two complete local days are protected",
+        ],
+        [
+          "Chengdu",
+          "Adds food culture, a slower urban rhythm and panda-focused visits",
+          "Often stronger after Xi'an than as a direct add-on",
+          "The route is long enough to continue west before turning east or south",
+        ],
+      ],
+    },
+    {
+      id: "next-1",
+      type: "paragraph",
+      text: "Xi'an is the continuous answer; Shanghai is the contrasting one. Beijing–Xi'an–Shanghai can form a clean rail-based route. Add Zhangjiajie only after accepting two significant transfer days.",
+    },
+    {
+      id: "route-links",
+      type: "internal-links",
+      title: "Continue with the route owners",
+      items: [
+        {
+          label: "Beijing, Xi'an and Chengdu: choose the route order",
+          href: "/guides/beijing-xian-chengdu-route-order/",
+          description:
+            "Direction, gateways and how many usable half-days each order really produces.",
+        },
+        {
+          label: "Beijing → Zhangjiajie → Shanghai: what the travel days cost",
+          href: "/guides/beijing-zhangjiajie-shanghai-transport/",
+          description:
+            "Door-to-door comparison of train and flight once those three cities are shortlisted.",
+        },
+        {
+          label: "Beijing–Zhangjiajie–Shanghai in 10 days: is it realistic?",
+          href: "/guides/beijing-zhangjiajie-shanghai-10-days/",
+          description: "Read this when 10 days is the hard constraint.",
+        },
+        {
+          label: "Is your China itinerary too rushed?",
+          href: "/guides/is-your-china-itinerary-too-rushed/",
+          description:
+            "Read this when the problem may be base changes and transfer chains rather than Beijing itself.",
+        },
+      ],
+    },
+    {
+      id: "faq-heading",
+      type: "heading",
+      level: 2,
+      text: "Frequently asked questions",
+    },
+    {
+      id: "faq-1-heading",
+      type: "heading",
+      level: 3,
+      text: "Are three nights enough for Beijing?",
+    },
+    {
+      id: "faq-1",
+      type: "paragraph",
+      text: "Yes for a selective first look, usually two complete sightseeing days. Protect one central day and choose between the Great Wall and another cluster. Four or five nights are better when both the Wall and the Summer Palace or Temple of Heaven matter.",
+    },
+    {
+      id: "faq-2-heading",
+      type: "heading",
+      level: 3,
+      text: "Should I fly into PEK or PKX?",
+    },
+    {
+      id: "faq-2",
+      type: "paragraph",
+      text: "Choose by international route, arrival time and fare, then test the ground transfer. PEK is northeast and links through Sanyuanqiao and Dongzhimen; PKX is far south and links through Caoqiao. Hotel location and landing hour often matter more than the airport label.",
+    },
+    {
+      id: "faq-3-heading",
+      type: "heading",
+      level: 3,
+      text: "Can I visit the Forbidden City and the Great Wall on the same day?",
+    },
+    {
+      id: "faq-3",
+      type: "paragraph",
+      text: "Do not plan them together for a normal first visit. The Forbidden City belongs to a substantial central sequence and the Wall needs an independent outward and return journey. Combining them removes all resilience and reduces both visits.",
+    },
+    {
+      id: "faq-4-heading",
+      type: "heading",
+      level: 3,
+      text: "Which Beijing railway station do I need?",
+    },
+    {
+      id: "faq-4",
+      type: "paragraph",
+      text: "The one printed on the ticket. Beijing, West, South, North, Qinghe, Chaoyang, Fengtai and Tongzhou are separate hubs. Confirm the complete English and Chinese station name before planning the hotel departure.",
+    },
+    {
+      id: "faq-5-heading",
+      type: "heading",
+      level: 3,
+      text: "Is Beijing walkable?",
+    },
+    {
+      id: "faq-5",
+      type: "paragraph",
+      text: "Individual clusters are walkable, but Beijing is not a walk-between-everything city. Use the subway or a vehicle between districts, then walk within the central axis, Qianmen, Shichahai or the Summer Palace. Internal distances still count after you reach the gate.",
+    },
+    {
+      id: "faq-6-heading",
+      type: "heading",
+      level: 3,
+      text: "Do I need to change hotels inside Beijing?",
+    },
+    {
+      id: "faq-6",
+      type: "paragraph",
+      text: "Usually not. One well-chosen base is worth more than the time lost to a hotel move. Change only when it clearly protects a very early airport or station departure, solves a mobility problem, or supports a materially different second half of a long stay.",
+    },
+    {
+      id: "cta-heading",
+      type: "heading",
+      level: 2,
+      text: "Turn the Beijing choice into a China route",
+    },
+    {
+      id: "cta-1",
+      type: "paragraph",
+      text: "When the trip is still a set of cities, test which sequence fits the available nights before committing to Beijing–Xi'an, Beijing–Shanghai or Beijing–Zhangjiajie–Shanghai. When flights, cities and a day-by-day plan already exist, the better question is whether the route protects the right Beijing days, stations and reservations.",
+    },
+    {
+      id: "cta-links",
+      type: "internal-links",
+      title: "Two ways to continue",
+      items: [
+        {
+          label: "Route Finder",
+          href: "/#route-finder",
+          description: "Test which city sequence fits the nights you actually have.",
+        },
+        {
+          label: "China itinerary review",
+          href: "/china-itinerary-review/",
+          description:
+            "Bring an existing day-by-day route and have the weak links checked.",
+        },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "Official sources and image credit",
+      items: [
+        {
+          label: "Beijing subway links to the city's major railway stations and both airports",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-16",
+        },
+        {
+          label: "Beijing transport overview, including the airport express service",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-16",
+        },
+        {
+          label: "Palace Museum online booking rules",
+          url: "https://www.dpm.org.cn/subject_booking/",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-16",
+        },
+        {
+          label: "National Museum of China visitor reservation guidelines",
+          url: "https://en.chnmuseum.cn/visit_692/",
+          publisher: "National Museum of China",
+          reviewedAt: "2026-08-16",
+        },
+        {
+          label: "China Railway 12306 — confirm the exact station pair before booking",
+          url: "https://www.12306.cn/en/index.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-08-16",
+        },
+      ],
+    },
+  ],
+} as const satisfies StructuredPageBody;
+
+export default body;

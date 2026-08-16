@@ -271,7 +271,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "继续规划",
-      items: [
+      items: [ { label: "北京城市总览", href: "/zh/destinations/beijing/", description: "在敲定这类细节之前，先决定住几晚、住哪个区域、走哪个门户和下一站。" },
         { label: "浏览中国旅行规划指南", href: "/zh/plan/", description: "回到规划集合页，选择下一项决策。" },
         { label: "判断是否选择异地进出（开口程）", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "比较异地进出与返回同一门户的完整成本。" },
         { label: "选择单一基地还是多基地串联", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "先确定路线结构，再安排这条三城顺序。" },

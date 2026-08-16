@@ -271,7 +271,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "계속 계획하기",
-      items: [
+      items: [ { label: "베이징 도시 허브", href: "/ko/destinations/beijing/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 관문, 다음 도시를 먼저 결정하세요." },
         { label: "중국 여행 계획 가이드 보기", href: "/ko/plan/", description: "여행 계획 컬렉션으로 돌아가 다음 결정을 고르세요." },
         { label: "오픈조 항공편 선택하기", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "서로 다른 입출국 도시와 한 관문으로 돌아가는 전체 비용을 비교하세요." },
         { label: "한 거점 또는 여러 거점 선택하기", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "이 세 도시의 순서를 정하기 전에 여행 동선 구조부터 결정하세요." },

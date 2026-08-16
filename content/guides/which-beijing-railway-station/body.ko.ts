@@ -414,7 +414,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "이제 계획의 맞는 부분을 이어서 확인하기",
-      items: [
+      items: [ { label: "베이징 도시 허브", href: "/ko/destinations/beijing/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 관문, 다음 도시를 먼저 결정하세요." },
         {
           label: "중국 고속철도 첫 이용 가이드",
           href: "/ko/guides/china-high-speed-train-first-time-guide/",

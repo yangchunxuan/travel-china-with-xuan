@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactType": "destination-hub-entity-graph-draft",
+  "status": "central-review-required",
+  "generatedAt": "2026-08-15",
+  "primaryEntityId": "city-shanghai",
+  "canonicalProposal": {
+    "en": "/destinations/shanghai/",
+    "zh-Hans": "/zh/destinations/shanghai/",
+    "ko": "/ko/destinations/shanghai/"
+  },
+  "administrativeBoundary": {
+    "entityType": "direct-administered-municipality-city",
+    "parentEntityId": "country-china",
+    "forbiddenParentProposal": "province-shanghai",
+    "note": "Shanghai is represented as a municipality-level city directly under country-china. This draft does not create a Shanghai province node and does not modify the central entity library."
+  },
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "existing",
+      "names": { "en": "China", "zh-Hans": "中国", "ko": "중국" }
+    },
+    {
+      "id": "city-shanghai",
+      "type": "city",
+      "status": "existing",
+      "names": { "en": "Shanghai", "zh-Hans": "上海", "ko": "상하이" }
+    },
+    {
+      "id": "area-bund-shanghai",
+      "type": "visitor-area",
+      "status": "proposed",
+      "names": { "en": "The Bund", "zh-Hans": "外滩", "ko": "와이탄" }
+    },
+    {
+      "id": "area-east-nanjing-road-shanghai",
+      "type": "visitor-area",
+      "status": "proposed",
+      "names": { "en": "East Nanjing Road", "zh-Hans": "南京东路", "ko": "난징둥루" }
+    },
+    {
+      "id": "area-peoples-square-shanghai",
+      "type": "visitor-area",
+      "status": "proposed",
+      "names": { "en": "People's Square", "zh-Hans": "人民广场", "ko": "인민광장" }
+    },
+    {
+      "id": "area-jingan-shanghai",
+      "type": "visitor-area",
+      "status": "proposed",
+      "names": { "en": "Jing'an", "zh-Hans": "静安", "ko": "징안" }
+    },
+    {
+      "id": "area-former-french-concession-shanghai",
+      "type": "travel-area",
+      "status": "proposed",
+      "names": { "en": "Former French Concession travel area", "zh-Hans": "原法租界旅行区域", "ko": "옛 프랑스 조계지 여행권역" },
+      "boundaryNote": "A broad travel label spanning parts of present-day districts, not one administrative district or gated attraction."
+    },
+    {
+      "id": "area-lujiazui-shanghai",
+      "type": "visitor-area",
+      "status": "proposed",
+      "names": { "en": "Lujiazui", "zh-Hans": "陆家嘴", "ko": "루자쭈이" }
+    },
+    {
+      "id": "area-hongqiao-shanghai",
+      "type": "transport-stay-area",
+      "status": "proposed",
+      "names": { "en": "Hongqiao", "zh-Hans": "虹桥", "ko": "훙차오" }
+    },
+    {
+      "id": "airport-shanghai-pudong-pvg",
+      "type": "airport",
+      "status": "proposed",
+      "iataCode": "PVG",
+      "names": { "en": "Shanghai Pudong International Airport", "zh-Hans": "上海浦东国际机场", "ko": "상하이 푸둥국제공항" }
+    },
+    {
+      "id": "airport-shanghai-hongqiao-sha",
+      "type": "airport",
+      "status": "proposed",
+      "iataCode": "SHA",
+      "names": { "en": "Shanghai Hongqiao International Airport", "zh-Hans": "上海虹桥国际机场", "ko": "상하이 훙차오국제공항" }
+    },
+    {
+      "id": "station-shanghai-hongqiao-railway",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Shanghai Hongqiao Railway Station", "zh-Hans": "上海虹桥站", "ko": "상하이 훙차오역" }
+    },
+    {
+      "id": "station-shanghai-railway",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Shanghai Railway Station", "zh-Hans": "上海站", "ko": "상하이역" }
+    },
+    {
+      "id": "station-shanghai-south-railway",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Shanghai South Railway Station", "zh-Hans": "上海南站", "ko": "상하이 남역" }
+    },
+    {
+      "id": "station-shanghai-songjiang-railway",
+      "type": "railway-station",
+      "status": "proposed",
+      "names": { "en": "Shanghai Songjiang Railway Station", "zh-Hans": "上海松江站", "ko": "상하이 쑹장역" }
+    },
+    {
+      "id": "line-shanghai-airport-link",
+      "type": "suburban-rail-line",
+      "status": "proposed",
+      "names": { "en": "Shanghai Airport Link Line", "zh-Hans": "上海市域机场联络线", "ko": "상하이 공항연락선" }
+    },
+    {
+      "id": "line-shanghai-metro-2",
+      "type": "metro-line",
+      "status": "proposed",
+      "names": { "en": "Shanghai Metro Line 2", "zh-Hans": "上海地铁2号线", "ko": "상하이 지하철 2호선" }
+    },
+    {
+      "id": "service-shanghai-maglev",
+      "type": "airport-rail-service",
+      "status": "proposed",
+      "names": { "en": "Shanghai Maglev", "zh-Hans": "上海磁浮列车", "ko": "상하이 자기부상열차" }
+    },
+    {
+      "id": "attraction-yuyuan-garden-shanghai",
+      "type": "attraction",
+      "status": "proposed",
+      "names": { "en": "Yuyuan Garden", "zh-Hans": "豫园", "ko": "예원" }
+    },
+    {
+      "id": "attraction-shanghai-disney-resort",
+      "type": "resort",
+      "status": "proposed",
+      "names": { "en": "Shanghai Disney Resort", "zh-Hans": "上海迪士尼度假区", "ko": "상하이 디즈니 리조트" }
+    },
+    {
+      "id": "cluster-bund-old-city-yuyuan",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "names": { "en": "Bund–Old City–Yuyuan cluster", "zh-Hans": "外滩—老城—豫园景点簇", "ko": "와이탄–옛 도심–예원 묶음" }
+    },
+    {
+      "id": "cluster-peoples-square-nanjing-road",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "names": { "en": "People's Square–Nanjing Road cluster", "zh-Hans": "人民广场—南京路景点簇", "ko": "인민광장–난징루 묶음" }
+    },
+    {
+      "id": "cluster-jingan-former-french-concession",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "names": { "en": "Jing'an–Former French Concession cluster", "zh-Hans": "静安—原法租界景点簇", "ko": "징안–옛 프랑스 조계지 묶음" }
+    },
+    {
+      "id": "cluster-lujiazui",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "names": { "en": "Lujiazui cluster", "zh-Hans": "陆家嘴景点簇", "ko": "루자쭈이 묶음" }
+    },
+    {
+      "id": "cluster-disney-outer-shanghai",
+      "type": "independent-travel-task-cluster",
+      "status": "proposed",
+      "names": { "en": "Disney and outer-Shanghai tasks", "zh-Hans": "迪士尼及上海远郊独立任务", "ko": "디즈니와 상하이 외곽 독립 과제" }
+    },
+    {
+      "id": "city-suzhou",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Suzhou", "zh-Hans": "苏州", "ko": "쑤저우" }
+    },
+    {
+      "id": "city-hangzhou",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Hangzhou", "zh-Hans": "杭州", "ko": "항저우" }
+    },
+    {
+      "id": "city-nanjing",
+      "type": "city",
+      "status": "proposed",
+      "names": { "en": "Nanjing", "zh-Hans": "南京", "ko": "난징" }
+    }
+  ],
+  "edges": [
+    { "from": "city-shanghai", "to": "country-china", "type": "directly-administered-under" },
+    { "from": "area-bund-shanghai", "to": "city-shanghai", "type": "located-in" },
+    { "from": "area-east-nanjing-road-shanghai", "to": "city-shanghai", "type": "located-in" },
+    { "from": "area-peoples-square-shanghai", "to": "city-shanghai", "type": "located-in" },
+    { "from": "area-jingan-shanghai", "to": "city-shanghai", "type": "located-in" },
+    { "from": "area-former-french-concession-shanghai", "to": "city-shanghai", "type": "travel-area-within" },
+    { "from": "area-lujiazui-shanghai", "to": "city-shanghai", "type": "located-in" },
+    { "from": "area-hongqiao-shanghai", "to": "city-shanghai", "type": "located-in" },
+    { "from": "airport-shanghai-pudong-pvg", "to": "city-shanghai", "type": "international-gateway-for" },
+    { "from": "airport-shanghai-hongqiao-sha", "to": "city-shanghai", "type": "air-gateway-for" },
+    { "from": "station-shanghai-hongqiao-railway", "to": "area-hongqiao-shanghai", "type": "located-in" },
+    { "from": "airport-shanghai-hongqiao-sha", "to": "area-hongqiao-shanghai", "type": "located-in" },
+    { "from": "line-shanghai-airport-link", "to": "airport-shanghai-pudong-pvg", "type": "serves" },
+    { "from": "line-shanghai-airport-link", "to": "airport-shanghai-hongqiao-sha", "type": "serves-terminal-2" },
+    { "from": "line-shanghai-metro-2", "to": "airport-shanghai-pudong-pvg", "type": "serves" },
+    { "from": "line-shanghai-metro-2", "to": "area-lujiazui-shanghai", "type": "serves" },
+    { "from": "line-shanghai-metro-2", "to": "area-peoples-square-shanghai", "type": "serves" },
+    { "from": "line-shanghai-metro-2", "to": "area-hongqiao-shanghai", "type": "serves" },
+    { "from": "service-shanghai-maglev", "to": "airport-shanghai-pudong-pvg", "type": "serves" },
+    { "from": "attraction-yuyuan-garden-shanghai", "to": "cluster-bund-old-city-yuyuan", "type": "member-of" },
+    { "from": "area-bund-shanghai", "to": "cluster-bund-old-city-yuyuan", "type": "member-of" },
+    { "from": "area-peoples-square-shanghai", "to": "cluster-peoples-square-nanjing-road", "type": "member-of" },
+    { "from": "area-east-nanjing-road-shanghai", "to": "cluster-peoples-square-nanjing-road", "type": "member-of" },
+    { "from": "area-jingan-shanghai", "to": "cluster-jingan-former-french-concession", "type": "member-of" },
+    { "from": "area-former-french-concession-shanghai", "to": "cluster-jingan-former-french-concession", "type": "member-of" },
+    { "from": "area-lujiazui-shanghai", "to": "cluster-lujiazui", "type": "member-of" },
+    { "from": "attraction-shanghai-disney-resort", "to": "cluster-disney-outer-shanghai", "type": "member-of" },
+    { "from": "area-bund-shanghai", "to": "area-lujiazui-shanghai", "type": "faces-across-huangpu-river" },
+    { "from": "city-shanghai", "to": "city-suzhou", "type": "day-trip-or-next-city" },
+    { "from": "city-shanghai", "to": "city-hangzhou", "type": "next-city-preferred-or-focused-day-trip" },
+    { "from": "city-shanghai", "to": "city-nanjing", "type": "next-city-preferred" },
+    { "from": "station-shanghai-hongqiao-railway", "to": "city-suzhou", "type": "rail-route-subject-to-live-timetable" },
+    { "from": "station-shanghai-hongqiao-railway", "to": "city-hangzhou", "type": "rail-route-subject-to-live-timetable" },
+    { "from": "station-shanghai-hongqiao-railway", "to": "city-nanjing", "type": "rail-route-subject-to-live-timetable" }
+  ],
+  "implementationNotes": [
+    "Only country-china and city-shanghai are marked existing because they are present in content/entities/core-places.json at the reviewed base commit.",
+    "All other nodes are proposals local to this draft, including Suzhou, Hangzhou and Nanjing; central review must reconcile them with any later entity-library additions.",
+    "No central entity file, registry, sitemap, Search Map or indexability configuration is changed by this draft."
+  ]
+}

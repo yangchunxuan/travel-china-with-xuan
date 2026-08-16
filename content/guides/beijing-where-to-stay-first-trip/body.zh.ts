@@ -449,7 +449,7 @@ const body = {
       id: "related-guides",
       type: "internal-links",
       title: "继续规划会影响住宿选择的环节",
-      items: [
+      items: [ { label: "北京城市总览", href: "/zh/destinations/beijing/", description: "在敲定这类细节之前，先决定住几晚、住哪个区域、走哪个门户和下一站。" },
         {
           label: "为什么中国酒店这么便宜？",
           href: "/zh/guides/why-are-hotels-in-china-so-cheap/",

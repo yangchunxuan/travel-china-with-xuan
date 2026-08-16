@@ -1,0 +1,1288 @@
+{
+  "schemaVersion": "1.0.0",
+  "draftId": "city-hub-beijing",
+  "primaryEntityId": "city-beijing",
+  "canonicalPaths": {
+    "en": "/destinations/beijing/",
+    "zh": "/zh/destinations/beijing/",
+    "ko": "/ko/destinations/beijing/"
+  },
+  "statusSemantics": {
+    "existing": "Already represented by the current repository, live site, or an established operational place identity; this draft does not create or edit the central record.",
+    "proposed": "Introduced as a Hub-only editorial cluster, relationship, intent, route edge, or central-review candidate. It is not written to a central registry by this draft."
+  },
+  "centralEntityMutation": false,
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "existing",
+      "labels": {
+        "en": "China",
+        "zh": "中国",
+        "ko": "중국"
+      },
+      "centralRegistryStatus": "existing"
+    },
+    {
+      "id": "municipality-beijing",
+      "type": "direct-administered-municipality",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Municipality",
+        "zh": "北京市（直辖市）",
+        "ko": "베이징 직할시"
+      },
+      "centralRegistryStatus": "represented-by-city-beijing",
+      "note": "Administrative identity represented by city-beijing in the current central entity file; no new central record is requested by this draft."
+    },
+    {
+      "id": "city-beijing",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing",
+        "zh": "北京",
+        "ko": "베이징"
+      },
+      "primary": true,
+      "centralRegistryStatus": "existing",
+      "sourceOfTruth": "content/entities/core-places.json"
+    },
+    {
+      "id": "cluster-beijing-central-axis",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Tiananmen–Forbidden City–Jingshan",
+        "zh": "天安门—故宫—景山",
+        "ko": "톈안먼–자금성–징산"
+      },
+      "planningRole": "one substantial south-to-north central day"
+    },
+    {
+      "id": "cluster-beijing-southern-axis",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Qianmen–Temple of Heaven",
+        "zh": "前门—天坛",
+        "ko": "첸먼–천단공원"
+      },
+      "planningRole": "south-central commercial and ritual landscape task"
+    },
+    {
+      "id": "cluster-beijing-northwest",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Summer Palace and northwest Beijing",
+        "zh": "颐和园及北京西北方向",
+        "ko": "이허위안과 베이징 서북부"
+      },
+      "planningRole": "strong half-day to full-day imperial-garden task"
+    },
+    {
+      "id": "cluster-beijing-great-wall",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Great Wall full-day task",
+        "zh": "长城独立全天任务",
+        "ko": "만리장성 독립 하루 일정"
+      },
+      "planningRole": "independent outward-and-return day"
+    },
+    {
+      "id": "cluster-beijing-hutong-north",
+      "type": "attraction-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Gulou–Shichahai neighbourhood cluster",
+        "zh": "鼓楼—什刹海街区簇",
+        "ko": "구러우–스차하이 동네 권역"
+      },
+      "planningRole": "neighbourhood and evening counterweight to monumental Beijing"
+    },
+    {
+      "id": "place-tiananmen-square",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Tiananmen Square",
+        "zh": "天安门广场",
+        "ko": "톈안먼광장"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-forbidden-city",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Forbidden City / Palace Museum",
+        "zh": "故宫博物院",
+        "ko": "자금성／고궁박물원"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-jingshan-park",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Jingshan Park",
+        "zh": "景山公园",
+        "ko": "징산공원"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-national-museum-china",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "National Museum of China",
+        "zh": "中国国家博物馆",
+        "ko": "중국국가박물관"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-qianmen",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Qianmen",
+        "zh": "前门",
+        "ko": "첸먼"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-dashilar",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Dashilar",
+        "zh": "大栅栏",
+        "ko": "다스란"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-temple-of-heaven",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Temple of Heaven",
+        "zh": "天坛",
+        "ko": "천단공원"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-summer-palace",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Summer Palace",
+        "zh": "颐和园",
+        "ko": "이허위안"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-mutianyu-great-wall",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Mutianyu Great Wall",
+        "zh": "慕田峪长城",
+        "ko": "무톈위 만리장성"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-badaling-great-wall",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Badaling Great Wall",
+        "zh": "八达岭长城",
+        "ko": "바다링 만리장성"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-drum-bell-towers",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Drum and Bell Towers",
+        "zh": "钟鼓楼",
+        "ko": "종루·고루"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "place-shichahai",
+      "type": "attraction-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "Shichahai",
+        "zh": "什刹海",
+        "ko": "스차하이"
+      },
+      "centralRegistryStatus": "not-modified-by-this-draft"
+    },
+    {
+      "id": "airport-pek",
+      "type": "airport",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Capital International Airport (PEK)",
+        "zh": "北京首都国际机场（PEK）",
+        "ko": "베이징 수도국제공항(PEK)"
+      },
+      "orientation": "northeast",
+      "interchange": "Sanyuanqiao / Dongzhimen"
+    },
+    {
+      "id": "airport-pkx",
+      "type": "airport",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Daxing International Airport (PKX)",
+        "zh": "北京大兴国际机场（PKX）",
+        "ko": "베이징 다싱국제공항(PKX)"
+      },
+      "orientation": "far south",
+      "interchange": "Caoqiao"
+    },
+    {
+      "id": "station-beijing",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Railway Station",
+        "zh": "北京站",
+        "ko": "베이징역"
+      },
+      "orientation": "east-central",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-beijing-west",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing West Railway Station",
+        "zh": "北京西站",
+        "ko": "베이징서역"
+      },
+      "orientation": "west",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-beijing-south",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing South Railway Station",
+        "zh": "北京南站",
+        "ko": "베이징남역"
+      },
+      "orientation": "south",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-beijing-north",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing North Railway Station",
+        "zh": "北京北站",
+        "ko": "베이징북역"
+      },
+      "orientation": "northwest inner city",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-qinghe",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Qinghe Railway Station",
+        "zh": "清河站",
+        "ko": "칭허역"
+      },
+      "orientation": "northwest outer city",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-beijing-chaoyang",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Chaoyang Railway Station",
+        "zh": "北京朝阳站",
+        "ko": "베이징차오양역"
+      },
+      "orientation": "northeast",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-beijing-fengtai",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Fengtai Railway Station",
+        "zh": "北京丰台站",
+        "ko": "베이징펑타이역"
+      },
+      "orientation": "southwest",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "station-beijing-tongzhou",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing Tongzhou Railway Station",
+        "zh": "北京通州站",
+        "ko": "베이징퉁저우역"
+      },
+      "orientation": "eastern municipal sub-centre",
+      "selectionRule": "Use the exact station printed on the dated ticket."
+    },
+    {
+      "id": "stay-wangfujing-dongdan",
+      "type": "stay-area",
+      "status": "existing",
+      "labels": {
+        "en": "Wangfujing / Dongdan",
+        "zh": "王府井／东单",
+        "ko": "왕푸징／둥단"
+      },
+      "planningJob": "central first-trip base"
+    },
+    {
+      "id": "stay-qianmen",
+      "type": "stay-area",
+      "status": "existing",
+      "labels": {
+        "en": "Qianmen",
+        "zh": "前门",
+        "ko": "첸먼"
+      },
+      "planningJob": "southern central-axis base"
+    },
+    {
+      "id": "stay-gulou-shichahai",
+      "type": "stay-area",
+      "status": "existing",
+      "labels": {
+        "en": "Gulou–Shichahai",
+        "zh": "鼓楼—什刹海",
+        "ko": "구러우–스차하이"
+      },
+      "planningJob": "hutong and evening base"
+    },
+    {
+      "id": "stay-dongzhimen-chaoyang",
+      "type": "stay-area",
+      "status": "existing",
+      "labels": {
+        "en": "Dongzhimen / Chaoyang",
+        "zh": "东直门／朝阳",
+        "ko": "둥즈먼／차오양"
+      },
+      "planningJob": "airport, dining and modern-city base"
+    },
+    {
+      "id": "city-xian",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Xi’an",
+        "zh": "西安",
+        "ko": "시안"
+      },
+      "centralRegistryStatus": "existing"
+    },
+    {
+      "id": "city-shanghai",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Shanghai",
+        "zh": "上海",
+        "ko": "상하이"
+      },
+      "centralRegistryStatus": "existing"
+    },
+    {
+      "id": "city-zhangjiajie",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Zhangjiajie",
+        "zh": "张家界",
+        "ko": "장자제"
+      },
+      "centralRegistryStatus": "existing"
+    },
+    {
+      "id": "city-chengdu",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu",
+        "zh": "成都",
+        "ko": "청두"
+      },
+      "centralRegistryStatus": "existing"
+    },
+    {
+      "id": "city-chengde",
+      "type": "city",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengde",
+        "zh": "承德",
+        "ko": "청더"
+      },
+      "centralRegistryStatus": "proposed-not-added-by-this-draft"
+    },
+    {
+      "id": "route-edge-beijing-xian",
+      "type": "intercity-route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Beijing → Xi’an",
+        "zh": "北京 → 西安",
+        "ko": "베이징 → 시안"
+      },
+      "fromNode": "city-beijing",
+      "toNode": "city-xian",
+      "decisionTheme": "historical continuity and a usually coherent rail leg"
+    },
+    {
+      "id": "route-edge-beijing-shanghai",
+      "type": "intercity-route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Beijing → Shanghai",
+        "zh": "北京 → 上海",
+        "ko": "베이징 → 상하이"
+      },
+      "fromNode": "city-beijing",
+      "toNode": "city-shanghai",
+      "decisionTheme": "city contrast and open-jaw route potential"
+    },
+    {
+      "id": "route-edge-beijing-zhangjiajie",
+      "type": "intercity-route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Beijing → Zhangjiajie",
+        "zh": "北京 → 张家界",
+        "ko": "베이징 → 장자제"
+      },
+      "fromNode": "city-beijing",
+      "toNode": "city-zhangjiajie",
+      "decisionTheme": "urban-to-nature contrast with a significant transfer"
+    },
+    {
+      "id": "route-edge-beijing-chengde",
+      "type": "intercity-route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Beijing → Chengde",
+        "zh": "北京 → 承德",
+        "ko": "베이징 → 청더"
+      },
+      "fromNode": "city-beijing",
+      "toNode": "city-chengde",
+      "decisionTheme": "imperial-landscape extension"
+    },
+    {
+      "id": "route-edge-beijing-chengdu",
+      "type": "intercity-route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Beijing → Chengdu",
+        "zh": "北京 → 成都",
+        "ko": "베이징 → 청두"
+      },
+      "fromNode": "city-beijing",
+      "toNode": "city-chengdu",
+      "decisionTheme": "westward continuation, often stronger through Xi’an"
+    },
+    {
+      "id": "faq-beijing-three-nights",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Are three nights enough?",
+        "zh": "北京住三晚够吗？",
+        "ko": "베이징 3박이면 충분한가요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-pek-or-pkx",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "PEK or PKX?",
+        "zh": "PEK还是PKX？",
+        "ko": "PEK와 PKX 중 어느 공항인가요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-wangfujing-or-qianmen",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Wangfujing or Qianmen?",
+        "zh": "住王府井还是前门？",
+        "ko": "왕푸징과 첸먼 중 어디가 좋나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-forbidden-city-great-wall-same-day",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Forbidden City and Great Wall in one day?",
+        "zh": "故宫和长城能否同一天？",
+        "ko": "자금성과 만리장성을 같은 날 볼 수 있나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-great-wall-family-hiking",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Which Great Wall section for families or hikers?",
+        "zh": "家庭或徒步适合哪段长城？",
+        "ko": "가족·도보 여행자에게 어느 구간이 맞나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-which-beijing-station",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Which Beijing railway station?",
+        "zh": "哪座北京火车站？",
+        "ko": "어느 베이징 기차역을 이용하나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-booking-failure",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "How should a failed reservation change the plan?",
+        "zh": "预约失败如何调整？",
+        "ko": "예약 실패 후 일정을 어떻게 바꾸나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-xian-or-shanghai-next",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Xi’an or Shanghai after Beijing?",
+        "zh": "北京之后接西安还是上海？",
+        "ko": "베이징 다음은 시안인가요, 상하이인가요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-is-beijing-walkable",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Is Beijing walkable?",
+        "zh": "北京适合全程步行吗？",
+        "ko": "베이징은 걸어서 여행할 수 있나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "faq-change-hotels-beijing",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Should I change hotels inside Beijing?",
+        "zh": "北京需要换酒店吗？",
+        "ko": "베이징에서 호텔을 바꿔야 하나요?"
+      },
+      "owner": "city-hub-beijing"
+    },
+    {
+      "id": "action-route-finder",
+      "type": "consultation-action",
+      "status": "existing",
+      "labels": {
+        "en": "Route Finder",
+        "zh": "路线查找器",
+        "ko": "여행 동선 찾기"
+      },
+      "paths": {
+        "en": "/#route-finder",
+        "zh": "/zh/#route-finder",
+        "ko": "/ko/#route-finder"
+      },
+      "useWhen": "Route is not yet formed",
+      "publicationStatus": "live"
+    },
+    {
+      "id": "action-itinerary-review",
+      "type": "consultation-action",
+      "status": "existing",
+      "labels": {
+        "en": "China itinerary review",
+        "zh": "中国行程点评",
+        "ko": "중국 여행 일정 검토"
+      },
+      "paths": {
+        "en": "/china-itinerary-review/",
+        "zh": "/zh/china-itinerary-review/",
+        "ko": "/ko/china-itinerary-review/"
+      },
+      "useWhen": "Traveller already has a usable route",
+      "publicationStatus": "live"
+    },
+    {
+      "id": "owner-beijing-where-to-stay-first-trip",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-where-to-stay-first-trip",
+        "zh": "beijing-where-to-stay-first-trip",
+        "ko": "beijing-where-to-stay-first-trip"
+      },
+      "slug": "beijing-where-to-stay-first-trip",
+      "category": "stay",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-courtyard-hotel-or-modern-hotel",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-courtyard-hotel-or-modern-hotel",
+        "zh": "beijing-courtyard-hotel-or-modern-hotel",
+        "ko": "beijing-courtyard-hotel-or-modern-hotel"
+      },
+      "slug": "beijing-courtyard-hotel-or-modern-hotel",
+      "category": "stay",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-which-beijing-railway-station",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "which-beijing-railway-station",
+        "zh": "which-beijing-railway-station",
+        "ko": "which-beijing-railway-station"
+      },
+      "slug": "which-beijing-railway-station",
+      "category": "transport",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-south-station-to-capital-or-daxing-airport",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-south-station-to-capital-or-daxing-airport",
+        "zh": "beijing-south-station-to-capital-or-daxing-airport",
+        "ko": "beijing-south-station-to-capital-or-daxing-airport"
+      },
+      "slug": "beijing-south-station-to-capital-or-daxing-airport",
+      "category": "transport",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-to-mutianyu-great-wall-transfer",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-to-mutianyu-great-wall-transfer",
+        "zh": "beijing-to-mutianyu-great-wall-transfer",
+        "ko": "beijing-to-mutianyu-great-wall-transfer"
+      },
+      "slug": "beijing-to-mutianyu-great-wall-transfer",
+      "category": "transport",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-to-badaling-great-wall-transfer",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-to-badaling-great-wall-transfer",
+        "zh": "beijing-to-badaling-great-wall-transfer",
+        "ko": "beijing-to-badaling-great-wall-transfer"
+      },
+      "slug": "beijing-to-badaling-great-wall-transfer",
+      "category": "transport",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-forbidden-city-for-foreign-visitors",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "forbidden-city-for-foreign-visitors",
+        "zh": "forbidden-city-for-foreign-visitors",
+        "ko": "forbidden-city-for-foreign-visitors"
+      },
+      "slug": "forbidden-city-for-foreign-visitors",
+      "category": "sight-execution",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-national-museum-of-china-booking-and-route",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "national-museum-of-china-booking-and-route",
+        "zh": "national-museum-of-china-booking-and-route",
+        "ko": "national-museum-of-china-booking-and-route"
+      },
+      "slug": "national-museum-of-china-booking-and-route",
+      "category": "sight-execution",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-temple-of-heaven-gates-and-ritual-sequence",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "temple-of-heaven-gates-and-ritual-sequence",
+        "zh": "temple-of-heaven-gates-and-ritual-sequence",
+        "ko": "temple-of-heaven-gates-and-ritual-sequence"
+      },
+      "slug": "temple-of-heaven-gates-and-ritual-sequence",
+      "category": "sight-execution",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-summer-palace-gates-route-and-boat-plan",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "summer-palace-gates-route-and-boat-plan",
+        "zh": "summer-palace-gates-route-and-boat-plan",
+        "ko": "summer-palace-gates-route-and-boat-plan"
+      },
+      "slug": "summer-palace-gates-route-and-boat-plan",
+      "category": "sight-execution",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-xian-chengdu-route-order",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-xian-chengdu-route-order",
+        "zh": "beijing-xian-chengdu-route-order",
+        "ko": "beijing-xian-chengdu-route-order"
+      },
+      "slug": "beijing-xian-chengdu-route-order",
+      "category": "route",
+      "publicationStatus": "pending-live-verification",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-zhangjiajie-shanghai-10-days",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-zhangjiajie-shanghai-10-days",
+        "zh": "beijing-zhangjiajie-shanghai-10-days",
+        "ko": "beijing-zhangjiajie-shanghai-10-days"
+      },
+      "slug": "beijing-zhangjiajie-shanghai-10-days",
+      "category": "route",
+      "publicationStatus": "live-in-all-three-locales",
+      "bodyLinkPolicy": "Link only after the corresponding public locale URL is verified live."
+    },
+    {
+      "id": "owner-beijing-zhangjiajie-shanghai-transport",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "beijing-zhangjiajie-shanghai-transport",
+        "zh": "beijing-zhangjiajie-shanghai-transport",
+        "ko": "beijing-zhangjiajie-shanghai-transport"
+      },
+      "slug": "beijing-zhangjiajie-shanghai-transport",
+      "category": "transport",
+      "publicationStatus": "live-in-all-three-locales",
+      "bodyLinkPolicy": "Linked at the point where the broad city decision becomes a route or pace task."
+    },
+    {
+      "id": "owner-is-your-china-itinerary-too-rushed",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "is-your-china-itinerary-too-rushed",
+        "zh": "is-your-china-itinerary-too-rushed",
+        "ko": "is-your-china-itinerary-too-rushed"
+      },
+      "slug": "is-your-china-itinerary-too-rushed",
+      "category": "route",
+      "publicationStatus": "live-in-all-three-locales",
+      "bodyLinkPolicy": "Linked at the point where the broad city decision becomes a route or pace task."
+    }
+  ],
+  "edges": [
+    {
+      "from": "country-china",
+      "to": "municipality-beijing",
+      "relation": "contains",
+      "status": "existing"
+    },
+    {
+      "from": "municipality-beijing",
+      "to": "city-beijing",
+      "relation": "represented-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "cluster-beijing-central-axis",
+      "relation": "has-editorial-cluster",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "cluster-beijing-southern-axis",
+      "relation": "has-editorial-cluster",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "cluster-beijing-northwest",
+      "relation": "has-editorial-cluster",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "cluster-beijing-great-wall",
+      "relation": "has-editorial-cluster",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "cluster-beijing-hutong-north",
+      "relation": "has-editorial-cluster",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-central-axis",
+      "to": "place-tiananmen-square",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-central-axis",
+      "to": "place-forbidden-city",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-central-axis",
+      "to": "place-jingshan-park",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-central-axis",
+      "to": "place-national-museum-china",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-southern-axis",
+      "to": "place-qianmen",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-southern-axis",
+      "to": "place-dashilar",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-southern-axis",
+      "to": "place-temple-of-heaven",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-northwest",
+      "to": "place-summer-palace",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-great-wall",
+      "to": "place-mutianyu-great-wall",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-great-wall",
+      "to": "place-badaling-great-wall",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-hutong-north",
+      "to": "place-drum-bell-towers",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-beijing-hutong-north",
+      "to": "place-shichahai",
+      "relation": "groups",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "airport-pek",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "airport-pkx",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing-west",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing-south",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing-north",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-qinghe",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing-chaoyang",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing-fengtai",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "station-beijing-tongzhou",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "stay-wangfujing-dongdan",
+      "relation": "has-stay-area",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "stay-qianmen",
+      "relation": "has-stay-area",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "stay-gulou-shichahai",
+      "relation": "has-stay-area",
+      "status": "existing"
+    },
+    {
+      "from": "city-beijing",
+      "to": "stay-dongzhimen-chaoyang",
+      "relation": "has-stay-area",
+      "status": "existing"
+    },
+    {
+      "from": "stay-wangfujing-dongdan",
+      "to": "cluster-beijing-central-axis",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-qianmen",
+      "to": "cluster-beijing-southern-axis",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-gulou-shichahai",
+      "to": "cluster-beijing-hutong-north",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-dongzhimen-chaoyang",
+      "to": "airport-pek",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "route-edge-beijing-xian",
+      "relation": "has-route-choice",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "route-edge-beijing-shanghai",
+      "relation": "has-route-choice",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "route-edge-beijing-zhangjiajie",
+      "relation": "has-route-choice",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "route-edge-beijing-chengde",
+      "relation": "has-route-choice",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "route-edge-beijing-chengdu",
+      "relation": "has-route-choice",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-beijing-three-nights",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-pek-or-pkx",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-wangfujing-or-qianmen",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-forbidden-city-great-wall-same-day",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-great-wall-family-hiking",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-which-beijing-station",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-booking-failure",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-xian-or-shanghai-next",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-is-beijing-walkable",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "faq-change-hotels-beijing",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "action-route-finder",
+      "relation": "offers-planning-action",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "action-itinerary-review",
+      "relation": "offers-planning-action",
+      "status": "proposed"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-where-to-stay-first-trip",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-courtyard-hotel-or-modern-hotel",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-which-beijing-railway-station",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-south-station-to-capital-or-daxing-airport",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-to-mutianyu-great-wall-transfer",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-to-badaling-great-wall-transfer",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-forbidden-city-for-foreign-visitors",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-national-museum-of-china-booking-and-route",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-temple-of-heaven-gates-and-ritual-sequence",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-summer-palace-gates-route-and-boat-plan",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-xian-chengdu-route-order",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "pending-live-verification"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-zhangjiajie-shanghai-10-days",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-beijing-zhangjiajie-shanghai-transport",
+      "relation": "connects-to-supporting-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-beijing",
+      "to": "owner-is-your-china-itinerary-too-rushed",
+      "relation": "connects-to-supporting-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    }
+  ]
+}

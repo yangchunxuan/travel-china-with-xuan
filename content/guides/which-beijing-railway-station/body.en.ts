@@ -446,7 +446,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the right part of the plan",
-      items: [
+      items: [ { label: "Beijing destination hub", href: "/destinations/beijing/", description: "Decide nights, base area, gateway and the next city before fixing this detail." },
         {
           label: "Use China's high-speed trains for the first time",
           href: "/guides/china-high-speed-train-first-time-guide/",

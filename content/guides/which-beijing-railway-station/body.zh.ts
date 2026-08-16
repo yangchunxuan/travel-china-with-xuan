@@ -414,7 +414,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "继续处理行程中正确的那一部分",
-      items: [
+      items: [ { label: "北京城市总览", href: "/zh/destinations/beijing/", description: "在敲定这类细节之前，先决定住几晚、住哪个区域、走哪个门户和下一站。" },
         {
           label: "第一次坐中国高铁完整指南",
           href: "/zh/guides/china-high-speed-train-first-time-guide/",

@@ -505,7 +505,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "다음 결정을 맡는 가이드로 이어가기",
-      items: [
+      items: [ { label: "상하이 도시 허브", href: "/ko/destinations/shanghai/", description: "이 세부 사항을 정하기 전에 온전한 일수, 어느 강안에 묵을지, 어느 관문을 쓸지 먼저 정하세요." },
         {
           label: "PVG에서 상하이 디즈니까지 세부 이동 계획하기",
           href: "/ko/guides/pudong-airport-to-shanghai-disneyland/",

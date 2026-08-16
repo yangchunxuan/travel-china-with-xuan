@@ -449,7 +449,7 @@ const body = {
       id: "related-guides",
       type: "internal-links",
       title: "숙박에 영향을 주는 요소를 계속 계획하세요",
-      items: [
+      items: [ { label: "베이징 도시 허브", href: "/ko/destinations/beijing/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 관문, 다음 도시를 먼저 결정하세요." },
         {
           label: "중국 호텔은 왜 이렇게 저렴할까요?",
           href: "/ko/guides/why-are-hotels-in-china-so-cheap/",
