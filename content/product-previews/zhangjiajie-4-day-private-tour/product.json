@@ -27,7 +27,7 @@
     "currency": "CNY",
     "from_price_per_person": 5390,
     "approved_decision_id": "approved-public-pricing-20260815",
-    "valid_until": "2026-08-31T23:59:59+08:00",
+    "valid_until": "2026-09-30T23:59:59+08:00",
     "pricing_source": "pricing.json"
   },
   "route": [

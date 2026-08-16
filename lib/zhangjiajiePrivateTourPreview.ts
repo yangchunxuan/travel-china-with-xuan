@@ -35,7 +35,7 @@ export const productPreviewCopy = {
     heroLede:
       "Four carefully paced days through Zhangjiajie's sandstone peaks, the Grand Canyon Glass Bridge and Tianmen Mountain—with an unhurried arrival, three distinct sightseeing days and a stay that can change the mood of the journey.",
     secondaryCta: "Start with the four-day route",
-    validThrough: "Price window: 15–31 August 2026",
+    validThrough: "Price window: 15 August–30 September 2026",
     checkingPrice: "Checking the current price window…",
     expiredPrice:
       "The fixed-price window has ended. Ask for a fresh quote before relying on these figures.",
@@ -393,7 +393,7 @@ export const productPreviewCopy = {
     heroLede:
       "用四天走进张家界最有层次的三种风景：砂岩峰林、大峡谷玻璃桥与天门山；抵达日不赶路，三天游览各有自己的高潮，住宿也成为旅程气质的一部分。",
     secondaryCta: "先看四天怎么走",
-    validThrough: "价格期：2026年8月15日至31日",
+    validThrough: "价格期：2026年8月15日至9月30日",
     checkingPrice: "正在核对当前价格有效期…",
     expiredPrice: "固定价格有效期已结束，请在参考这些数字前重新询价。",
     fromLabel: "起价",
@@ -748,7 +748,7 @@ export const productPreviewCopy = {
     heroLede:
       "나흘 동안 장자제의 사암 봉우리와 대협곡 유리다리, 톈먼산을 차례로 만납니다. 첫날은 서두르지 않고 도착하며, 이후 사흘은 서로 다른 풍경에 집중합니다. 같은 일정도 숙소 선택에 따라 여행의 분위기가 달라집니다.",
     secondaryCta: "4일 일정부터 보기",
-    validThrough: "가격 적용 기간: 2026년 8월 15일–31일",
+    validThrough: "가격 적용 기간: 2026년 8월 15일–9월 30일",
     checkingPrice: "현재 가격 적용 기간을 확인하고 있습니다…",
     expiredPrice:
       "고정 가격의 유효기간이 지났습니다. 이 금액을 참고하기 전에 새 견적을 요청해 주세요.",
