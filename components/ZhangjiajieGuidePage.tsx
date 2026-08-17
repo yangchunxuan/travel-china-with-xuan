@@ -3,8 +3,12 @@ import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
   ZHANGJIAJIE_GUIDE_SOURCES,
@@ -274,12 +278,8 @@ function createStructuredData(
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://homegroundchina.com/#organization",
-        name: "Homeground China",
-        url: "https://homegroundchina.com/",
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -297,9 +297,10 @@ function createStructuredData(
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": "https://homegroundchina.com/#organization" },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         citation: ZHANGJIAJIE_GUIDE_SOURCES.map((source, index) => ({
           "@type": "WebPage",
           name: copy.sources.names[index],

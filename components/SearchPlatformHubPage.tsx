@@ -19,6 +19,7 @@ import {
   searchSectionIds,
   type SearchSectionId,
 } from "../lib/searchPlatformI18n";
+import { DestinationHubDiscovery } from "./DestinationHubDiscovery";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -215,6 +216,13 @@ export function SearchPlatformHubPage({
             ))}
           </ul>
         </section>
+
+        {section === "explore" ? (
+          <DestinationHubDiscovery
+            headingId="explore-destination-hubs-title"
+            locale={locale}
+          />
+        ) : null}
 
         <section className={styles.collection} aria-labelledby="hub-collection-title">
           <div className={styles.collectionHeading}>

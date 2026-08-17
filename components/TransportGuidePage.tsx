@@ -8,8 +8,12 @@ import {
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import { BEIJING_ZHANGJIAJIE_SHANGHAI_TRANSPORT_SOURCES } from "../lib/beijingZhangjiajieShanghaiTransport";
 import {
@@ -125,12 +129,8 @@ function createStructuredData(
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://homegroundchina.com/#organization",
-        name: "Homeground China",
-        url: "https://homegroundchina.com/",
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -148,9 +148,10 @@ function createStructuredData(
           width: 1600,
           height: 692,
         },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": "https://homegroundchina.com/#organization" },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         citation: BEIJING_ZHANGJIAJIE_SHANGHAI_TRANSPORT_SOURCES.map(
           (source, index) => ({
             "@type": "WebPage",

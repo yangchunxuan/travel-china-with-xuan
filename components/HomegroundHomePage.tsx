@@ -19,6 +19,11 @@ import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomeFeaturedGuides } from "../lib/guideRegistry";
 import { getZhangjiajiePrivateTourHomeCard } from "../lib/zhangjiajiePrivateTourHomeCard";
 import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
+import {
+  editorialOrganizationSchema,
+  editorialPersonSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
 import type { DestinationPlan } from "../lib/destinationPlanner";
 import {
   getRouteServiceInterest,
@@ -189,12 +194,8 @@ export function HomegroundHomePage({
   );
   const facebookPageUrl = getHomegroundFacebookPageUrl();
   const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://homegroundchina.com/#organization",
-    name: "Homeground China",
+    ...editorialOrganizationSchema(),
     legalName: homegroundBusiness.registeredName,
-    url: "https://homegroundchina.com/",
     email: homegroundBusiness.serviceEmail,
     description: copy.schemaDescription,
     inLanguage: copy.htmlLang,
@@ -211,6 +212,14 @@ export function HomegroundHomePage({
       addressCountry: "CN",
     },
     ...(facebookPageUrl ? { sameAs: [facebookPageUrl] } : {}),
+  };
+  const identitySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      editorialWebsiteSchema(),
+      organizationSchema,
+      editorialPersonSchema(locale),
+    ],
   };
   const routeInteractionLocked =
     handoffStatus === "submitting" || handoffStatus === "uncertain";
@@ -767,7 +776,7 @@ export function HomegroundHomePage({
 
       <HomegroundFooter locale={locale} />
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(identitySchema) }} />
     </div>
   );
 }

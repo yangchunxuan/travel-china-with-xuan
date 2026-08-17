@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
   getEditorialAuthor,
   getEditorialAuthorLanguagePaths,
 } from "../lib/editorialIdentity";
@@ -28,12 +30,8 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": EDITORIAL_ORGANIZATION_ID,
-        name: "Homeground China",
-        url: `${SITE_URL}/`,
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "ProfilePage",
@@ -43,6 +41,7 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
         description: author.copy.introduction,
         inLanguage: home.htmlLang,
         dateModified: "2026-08-13",
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: { "@id": EDITORIAL_PERSON_ID },
       },
     ],

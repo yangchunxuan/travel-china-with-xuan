@@ -2,8 +2,12 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
   CANADA_PASSPORT_CASES,
@@ -25,17 +29,11 @@ const plannerHref =
   "/?utm_source=china-visa-free-canadian-citizens-2026&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta&planner=destinations#route-finder";
 
 function createStructuredData() {
-  const organizationId = "https://homegroundchina.com/#organization";
-
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: "Homeground China",
-        url: "https://homegroundchina.com/",
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema("en"),
       {
         "@type": "Article",
@@ -53,11 +51,10 @@ function createStructuredData() {
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: "en-CA",
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: {
-          "@id": organizationId,
-        },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         mainEntityOfPage: guide.canonicalUrl,
         citation: CANADA_VISA_GUIDE_SOURCES.map((source) => source.url),
         about: [
