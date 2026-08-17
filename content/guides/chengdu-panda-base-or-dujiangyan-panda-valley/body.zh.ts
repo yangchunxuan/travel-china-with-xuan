@@ -263,7 +263,7 @@ export default {
       id: "related-guides",
       type: "internal-links",
       title: "继续规划中国旅行",
-      items: [
+      items: [ { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "先决定城市住几天、以哪里为基地，以及哪些四川行程是独立支线。" },
         {
           label: "探索中国",
           href: "/zh/explore/",

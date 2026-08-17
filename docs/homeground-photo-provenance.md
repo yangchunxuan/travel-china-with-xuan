@@ -1122,3 +1122,38 @@ hand-authored inline SVG orientation diagram
 coordinates in `lib/destinationHubs.ts`. It carries no scale, copies no
 commercial map, and its labels are ordinary localized HTML rather than baked-in
 text, so Chinese and Korean read correctly at every viewport width.
+
+## Destination hub batch two — Chengdu and Guangzhou (August 17, 2026)
+
+The two hubs published in this batch use **six real photographs and 0 AI or
+AI-assisted images**. Chengdu is served entirely from the organised local
+`Facebook图片素材` library, whose use rests on the owner's authorization
+recorded earlier in this register. The local library contains **no Guangzhou
+folder**, so all three Guangzhou photographs are Wikimedia Commons files under
+licences that permit commercial use and modification; each retains named
+attribution, a source link and a licence link in the page's default-collapsed
+Sources block. The Chongqing hub is not published in this batch, so no
+Chongqing image was prepared.
+
+Derivatives are centred 16:10 crops, resized and converted to WebP with `sharp`
+at quality 84, without EXIF, GPS or device metadata. No scene element was
+combined, removed or generated, and none of these files duplicates a hero
+already used elsewhere in this register.
+
+| Page and role | Original source, place, creator and rights | Source SHA-256 | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Chengdu hub — hero | Homeground local file `成都优选素材/04_人民公园茶馆与生活/成都人民公园内的传统茶馆.jpg`; traditional tea house, People's Park, Chengdu | `b63e0908950c50652b608386707cd299f5ddbb84daa604e241a59dfefe2d5b95` | `public/images/destinations/chengdu/hero-1600.webp`; 1600 × 1000; `5bcd8a50e5922ee61fce08725d5dbbec78bc1219ce1c5b9256a08b6ec97ccd67` | Framed deliberately on the pavilion and mid-ground so the closest foreground faces fall outside the crop. A public-park scene only: no individual is identified, and it makes no claim about opening hours, prices or seating availability. |
+| Chengdu hub — Dujiangyan figure | Homeground local file `成都优选素材/06_都江堰青城山与周边/都江堰全景.jpg`; Dujiangyan irrigation site and river valley | `29c58b1e6b8a5d46da115f1e1e3a450cf684d9b9f291e3a95bc2f4dc6b022900` | `public/images/destinations/chengdu/dujiangyan-1200.webp`; 1200 × 750; `5db4c208f91466f9ade159133153110339a53ea5b8a8f037aa3c72ade2d7ba05` | Landscape scale only, used to show that Dujiangyan is a separate city. No claim about ticketing, internal routes, shuttle operation or Panda Valley access. |
+| Chengdu hub — Jin River figure | Homeground local file `成都优选素材/05_九眼桥锦江与城市夜景/四川成都九眼桥.jpg`; covered bridge over the Jin River, central Chengdu | `9285285ad5015366e848302512d2f9f7117d2604c913db006987a5ee48e34ab0` | `public/images/destinations/chengdu/jinjiang-bridge-1200.webp`; 1200 × 750; `e6a46b7dd749c916336764736f54b82be58f9a4e57e827ea19a6a09b7aad2eec` | The caption deliberately does **not** name the individual bridge, because the library filename and the visible structure do not clearly agree. Central-river context only. |
+| Guangzhou hub — hero | [Chen Clan Ancestral Hall 2025.06 01.jpg](https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_01.jpg), Chen Clan Ancestral Hall, Guangzhou; Shujianyang; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); 2025-06-07 | `1f1f041eb75c4937c5bb85023e7db3fb7d587f25386fb2f75692b533b082cfa7` | `public/images/destinations/guangzhou/hero-1600.webp`; 1600 × 1000; `ecc2d097b9742e61d7aff8c057267791d913f122049c34b7c1b9ea95a9036838` | Exterior and roof ridge only. Visitors appear at a distance and are not identified; the image proves neither current opening nor admission arrangements. |
+| Guangzhou hub — Shamian figure | [Shamian Island 03111-Guangzhou (32831146512).jpg](https://commons.wikimedia.org/wiki/File:Shamian_Island_03111-Guangzhou_(32831146512).jpg), Shamian Island, Guangzhou; xiquinhosilva; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/); 2016-12-11 | `52effebf337b12de5c4b1cbbe246f05a2bf5ccaf7bd3bfe25b2a5247121d8602` | `public/images/destinations/guangzhou/shamian-1200.webp`; 1200 × 750; `6258d2809d84b8b964c41e1e5080305d466c6bc6cace10776749422d30603c71` | Street and building character only; no named property, business or current occupant is implied. |
+| Guangzhou hub — Zhujiang New Town figure | [The architectural complex of the Zhujiang New Town in 2017 12(2).jpg](https://commons.wikimedia.org/wiki/File:The_architectural_complex_of_the_Zhujiang_New_Town_in_2017_12(2).jpg), Zhujiang New Town seen across the Pearl River, Guangzhou; Nissangeniss; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); 2017-12-22 | `c32b9c222a031e614bd9d153ccf37dd6e5659e12329e2664f6a94eadab88162f` | `public/images/destinations/guangzhou/zhujiang-new-town-1200.webp`; 1200 × 750; `ad5676e76e3f7c5bccbb27fe7968d125702064b6c2faf4554135ac338cce1c26` | Skyline context from the opposite bank. Individual towers are not named and no observation-deck experience is implied. |
+
+**Rejected during selection.** A Shamian close-up showing a historic bank
+inscription was discarded because a signage-dominated crop is neither useful to
+the hub's argument nor appropriate as a destination image. It is recorded here
+so the same file is not revisited.
+
+The CC BY-SA derivatives carry the share-alike duty; all three Wikimedia
+derivatives keep named attribution, source and licence links plus a disclosure
+of the crop and format change in the article's Sources section.

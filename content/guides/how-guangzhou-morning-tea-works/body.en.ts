@@ -358,7 +358,7 @@ const body: StructuredPageBody = {
       id: "internal-links",
       type: "internal-links",
       title: "Keep planning Guangzhou and your wider China trip",
-      items: [
+      items: [ { label: "Guangzhou destination hub", href: "/destinations/guangzhou/", description: "Decide whether the city gets nights, then choose the terminal, the station and the base together." },
         {
           label: "Confirm whether your Baiyun Airport flight uses T2 or T3",
           href: "/guides/guangzhou-baiyun-airport-t2-t3/",

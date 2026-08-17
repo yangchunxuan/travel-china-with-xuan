@@ -358,7 +358,7 @@ const body: StructuredPageBody = {
       id: "internal-links",
       type: "internal-links",
       title: "광저우와 중국 여행을 계속 계획하기",
-      items: [
+      items: [ { label: "광저우 도시 허브", href: "/ko/destinations/guangzhou/", description: "묵을지 먼저 정하고 터미널과 역, 거점을 하나의 사슬로 함께 고르세요." },
         {
           label: "바이윈공항 항공편이 T2인지 T3인지 확인하기",
           href: "/ko/guides/guangzhou-baiyun-airport-t2-t3/",

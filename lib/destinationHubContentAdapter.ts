@@ -80,7 +80,9 @@ export function buildDestinationHubContentNodes(): ContentNode[] {
             description: copy.description,
             h1: copy.h1,
             bodyResource: `destination-hub:${hub.id}`,
-            searchTerms: [],
+            // Optional per-locale field: hubs registered before it existed
+            // simply carry no reviewed terms.
+            searchTerms: "searchTerms" in copy ? (copy.searchTerms ?? []) : [],
             localizationStatus: locale === "en" ? "source" : "localized",
             openGraphLocale: copy.openGraphLocale,
             ctaId: "trip-brief",

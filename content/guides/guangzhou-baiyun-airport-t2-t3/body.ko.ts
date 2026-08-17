@@ -453,7 +453,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "환승일 전체 계획을 이어서 점검하세요",
-      items: [
+      items: [ { label: "광저우 도시 허브", href: "/ko/destinations/guangzhou/", description: "묵을지 먼저 정하고 터미널과 역, 거점을 하나의 사슬로 함께 고르세요." },
         {
           label: "경유 노선이 실제로 허용되는지 확인하기",
           href: "/ko/guides/china-240-hour-visa-free-transit-route-check/",

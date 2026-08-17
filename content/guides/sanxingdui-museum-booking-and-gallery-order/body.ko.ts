@@ -21,7 +21,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"guide-heading",type:"heading",level:2,text:"해설이 실제로 가치 있는 때"},
  {id:"guide",type:"paragraph",text:"고고학 맥락이 중요하거나 증거와 대중 신화를 구분하고 싶거나 아이에게 맞춘 설명이 필요할 때 좋은 해설사나 공식 오디오가 유용합니다. 큰 유물만 빠르게 도는 서비스라면 가치가 작습니다. 언어, 시간, 만남 장소, 취소, 공식 권한을 확인하고 공식 규정이 없으면 해설사가 별도 표를 갖는다는 말을 믿지 마세요."},
  {id:"final-check",type:"list",items:["여권 이름과 번호가 원본과 같습니다.","최신 공식 공지에서 운영과 입장 시간을 확인했습니다.","청두 출발안에 정확한 역이나 승차점이 있습니다.","귀환에는 현지 이동과 퇴장 여유가 포함됩니다.","그룹은 하나의 중심 주제를 정했고 시간 변화 시 덜 중요한 전시를 뺄 수 있습니다."]},
- {id:"internal-links",type:"internal-links",title:"쓰촨 일정에 연결하기",items:[
+ {id:"internal-links",type:"internal-links",title:"쓰촨 일정에 연결하기",items:[ { label: "청두 도시 허브", href: "/ko/destinations/chengdu/", description: "도시에 며칠을 줄지, 어디를 거점으로 삼을지, 어떤 쓰촨 일정이 별개 갈래인지 먼저 정하세요." },
   {label:"청두 판다기지와 두장옌 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"두 큰 외출을 한 날에 억지로 넣지 말고 판다 장소를 별도로 고릅니다."},
   {label:"청두-주자이거우 교통",href:"/ko/guides/chengdu-jiuzhaigou-transport-route/",description:"정확한 역과 마지막 연결로 다음 쓰촨 이동을 준비합니다."},
   {label:"중국 여행에 가이드가 필요한가",href:"/ko/guides/do-you-need-a-tour-guide-in-china/",description:"이 박물관의 해설 가치와 여행 전체 지원 결정을 분리합니다."},

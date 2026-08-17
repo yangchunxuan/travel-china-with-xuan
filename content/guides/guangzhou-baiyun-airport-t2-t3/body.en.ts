@@ -453,7 +453,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning the whole transfer day",
-      items: [
+      items: [ { label: "Guangzhou destination hub", href: "/destinations/guangzhou/", description: "Decide whether the city gets nights, then choose the terminal, the station and the base together." },
         {
           label: "Check whether a transit route is actually allowed",
           href: "/guides/china-240-hour-visa-free-transit-route-check/",

@@ -263,7 +263,7 @@ export default {
       id: "related-guides",
       type: "internal-links",
       title: "중국 여행 계속 준비하기",
-      items: [
+      items: [ { label: "청두 도시 허브", href: "/ko/destinations/chengdu/", description: "도시에 며칠을 줄지, 어디를 거점으로 삼을지, 어떤 쓰촨 일정이 별개 갈래인지 먼저 정하세요." },
         {
           label: "중국 탐색하기",
           href: "/ko/explore/",

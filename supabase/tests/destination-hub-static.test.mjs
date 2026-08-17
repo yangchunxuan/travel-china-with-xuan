@@ -45,3 +45,65 @@ test("Shanghai Songjiang copy records both the rename and expanded-hub opening",
   assert.match(bodies[1], /2024 年 5 月更名为上海松江站/);
   assert.match(bodies[2], /2024년 5월 상하이쑹장역으로 이름이 바뀌었고/);
 });
+
+test("batch two hubs keep the Chinese guide phrase together on narrow screens", async () => {
+  const page = await source("components/content/DestinationHubPage.tsx");
+
+  assert.match(page, /chengdu: \["成都旅行指南：", "先把城市", "住稳，", "再搭四川路线"\]/);
+  assert.match(page, /guangzhou: \["广州旅行指南：", "住几晚、", "住哪个区、", "走哪个门户"\]/);
+});
+
+test("batch two hubs are registered with reviewed support owners and 2026-08-17 dates", async () => {
+  const registry = await source("lib/destinationHubs.ts");
+
+  assert.match(registry, /id: "chengdu"/);
+  assert.match(registry, /id: "guangzhou"/);
+  assert.match(registry, /entityId: "city-chengdu"/);
+  assert.match(registry, /entityId: "city-guangzhou"/);
+  // The published and reviewed dates must be the real release date, not the
+  // 2026-08-15 draft date carried over from the source packages.
+  assert.doesNotMatch(registry, /sourceReviewedDate: "2026-08-15"/);
+  assert.match(registry, /sourceReviewedDate: "2026-08-17"/);
+});
+
+test("Guangzhou hub states the closed T1 and the January 2026 station swap in all three locales", async () => {
+  const paths = [
+    "content/destinations/guangzhou/body.en.ts",
+    "content/destinations/guangzhou/body.zh.ts",
+    "content/destinations/guangzhou/body.ko.ts",
+  ];
+  const bodies = await Promise.all(paths.map(source));
+
+  for (const [index, body] of bodies.entries()) {
+    // Both government sources must remain attached to the volatile claims.
+    assert.match(
+      body,
+      /https:\/\/www\.eguangzhou\.gov\.cn\/gzlatest\/content\/post_43024\.html/,
+      paths[index],
+    );
+    assert.match(
+      body,
+      /https:\/\/www\.gz\.gov\.cn\/zwfw\/zxfw\/jtfw\/content\/post_10648700\.html/,
+      paths[index],
+    );
+    // T3 has no direct metro; the page must not promise one.
+    assert.doesNotMatch(body, /direct metro station at T3|T3 直连地铁|T3 직결 지하철역이 있/u, paths[index]);
+  }
+
+  assert.match(bodies[0], /ceased passenger operations for an upgrade/);
+  assert.match(bodies[1], /停止客运并进入改造/);
+  assert.match(bodies[2], /여객 운영을 중단했습니다/);
+});
+
+test("Chengdu hub refuses to treat the closed central station as usable", async () => {
+  const paths = [
+    "content/destinations/chengdu/body.en.ts",
+    "content/destinations/chengdu/body.zh.ts",
+    "content/destinations/chengdu/body.ko.ts",
+  ];
+  const bodies = await Promise.all(paths.map(source));
+
+  assert.match(bodies[0], /Closed for reconstruction/);
+  assert.match(bodies[1], /改扩建中，未办理客运/);
+  assert.match(bodies[2], /재건축으로 여객 취급 중단/);
+});

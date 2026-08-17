@@ -263,7 +263,7 @@ export default {
       id: "related-guides",
       type: "internal-links",
       title: "Keep planning your China trip",
-      items: [
+      items: [ { label: "Chengdu destination hub", href: "/destinations/chengdu/", description: "Decide the city days, the base and which Sichuan trips are separate branches." },
         {
           label: "Explore China",
           href: "/explore/",

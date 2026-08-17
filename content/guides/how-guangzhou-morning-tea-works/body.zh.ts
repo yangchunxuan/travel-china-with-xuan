@@ -358,7 +358,7 @@ const body: StructuredPageBody = {
       id: "internal-links",
       type: "internal-links",
       title: "继续规划广州与中国行程",
-      items: [
+      items: [ { label: "广州城市总览", href: "/zh/destinations/guangzhou/", description: "先决定要不要住，再把航站楼、车站和住宿区当成一条链一起选。" },
         {
           label: "确认白云机场该去 T2 还是 T3",
           href: "/zh/guides/guangzhou-baiyun-airport-t2-t3/",

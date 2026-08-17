@@ -26,6 +26,16 @@ const bodyLoaders = {
     zh: () => import("../content/destinations/xian/body.zh"),
     ko: () => import("../content/destinations/xian/body.ko"),
   },
+  chengdu: {
+    en: () => import("../content/destinations/chengdu/body.en"),
+    zh: () => import("../content/destinations/chengdu/body.zh"),
+    ko: () => import("../content/destinations/chengdu/body.ko"),
+  },
+  guangzhou: {
+    en: () => import("../content/destinations/guangzhou/body.en"),
+    zh: () => import("../content/destinations/guangzhou/body.zh"),
+    ko: () => import("../content/destinations/guangzhou/body.ko"),
+  },
 } as const satisfies Record<
   DestinationHubId,
   Record<HomegroundLocale, BodyLoader>

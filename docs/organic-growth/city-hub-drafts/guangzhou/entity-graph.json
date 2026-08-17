@@ -1,0 +1,1232 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "destination-hub-draft-entity-graph",
+  "draftId": "city-hub-guangzhou-draft-20260815",
+  "baseCommit": "cc6be75e59155935f321df0334588b52769eb6e4",
+  "reviewedAt": "2026-08-15",
+  "publicationMode": "draft-only",
+  "centralRegistryMutation": false,
+  "canonicalProposal": {
+    "primaryEntityId": "city-guangzhou",
+    "parentEntityId": "province-guangdong",
+    "paths": {
+      "en": "/destinations/guangzhou/",
+      "zh": "/zh/destinations/guangzhou/",
+      "ko": "/ko/destinations/guangzhou/"
+    },
+    "forbiddenDuplicatePath": "/guides/guangzhou-travel-guide/"
+  },
+  "administrativeBoundaryNotes": [
+    "Guangzhou is proposed as a child of Guangdong Province.",
+    "Hong Kong and Macao are represented as Special Administrative Regions under country-china, not as ordinary cities or children of province-guangdong.",
+    "Shunde is represented as a district of Foshan, not a district of Guangzhou."
+  ],
+  "statusDefinitions": {
+    "existing": "Present in the central entity file or already published as a canonical content owner at the base commit.",
+    "proposed": "Exists only inside this draft graph and requires central review before any registry use."
+  },
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "names": {
+        "en": "China",
+        "zh-Hans": "中国",
+        "ko": "중국"
+      },
+      "registryStatus": "existing"
+    },
+    {
+      "id": "province-guangdong",
+      "type": "province",
+      "names": {
+        "en": "Guangdong",
+        "zh-Hans": "广东",
+        "ko": "광둥"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "country-china"
+      ]
+    },
+    {
+      "id": "city-guangzhou",
+      "type": "city",
+      "names": {
+        "en": "Guangzhou",
+        "zh-Hans": "广州",
+        "ko": "광저우"
+      },
+      "aliases": {
+        "en": [
+          "Canton"
+        ],
+        "zh-Hans": [],
+        "ko": []
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "province-guangdong"
+      ],
+      "proposedCanonical": "/destinations/guangzhou/"
+    },
+    {
+      "id": "sar-hong-kong",
+      "type": "special-administrative-region",
+      "names": {
+        "en": "Hong Kong",
+        "zh-Hans": "香港",
+        "ko": "홍콩"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "country-china"
+      ],
+      "notChildOf": [
+        "province-guangdong"
+      ]
+    },
+    {
+      "id": "sar-macao",
+      "type": "special-administrative-region",
+      "names": {
+        "en": "Macao",
+        "zh-Hans": "澳门",
+        "ko": "마카오"
+      },
+      "aliases": {
+        "en": [
+          "Macau"
+        ]
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "country-china"
+      ],
+      "notChildOf": [
+        "province-guangdong"
+      ]
+    },
+    {
+      "id": "city-shenzhen",
+      "type": "city",
+      "names": {
+        "en": "Shenzhen",
+        "zh-Hans": "深圳",
+        "ko": "선전"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "province-guangdong"
+      ]
+    },
+    {
+      "id": "city-foshan",
+      "type": "city",
+      "names": {
+        "en": "Foshan",
+        "zh-Hans": "佛山",
+        "ko": "포산"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "province-guangdong"
+      ]
+    },
+    {
+      "id": "district-shunde",
+      "type": "district",
+      "names": {
+        "en": "Shunde",
+        "zh-Hans": "顺德",
+        "ko": "순더"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-foshan"
+      ]
+    },
+    {
+      "id": "city-changsha",
+      "type": "city",
+      "names": {
+        "en": "Changsha",
+        "zh-Hans": "长沙",
+        "ko": "창사"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "country-china"
+      ]
+    },
+    {
+      "id": "city-zhangjiajie",
+      "type": "city",
+      "names": {
+        "en": "Zhangjiajie",
+        "zh-Hans": "张家界",
+        "ko": "장자제"
+      },
+      "registryStatus": "existing",
+      "parentEntityIds": [
+        "country-china"
+      ]
+    },
+    {
+      "id": "district-liwan",
+      "type": "district",
+      "names": {
+        "en": "Liwan",
+        "zh-Hans": "荔湾",
+        "ko": "리완"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "district-yuexiu",
+      "type": "district",
+      "names": {
+        "en": "Yuexiu",
+        "zh-Hans": "越秀",
+        "ko": "웨슈"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "district-tianhe",
+      "type": "district",
+      "names": {
+        "en": "Tianhe",
+        "zh-Hans": "天河",
+        "ko": "톈허"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "district-haizhu",
+      "type": "district",
+      "names": {
+        "en": "Haizhu",
+        "zh-Hans": "海珠",
+        "ko": "하이주"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "district-panyu",
+      "type": "district",
+      "names": {
+        "en": "Panyu",
+        "zh-Hans": "番禺",
+        "ko": "판위"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "district-baiyun-guangzhou",
+      "type": "district",
+      "names": {
+        "en": "Baiyun District",
+        "zh-Hans": "白云区",
+        "ko": "바이윈구"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "district-huadu",
+      "type": "district",
+      "names": {
+        "en": "Huadu",
+        "zh-Hans": "花都",
+        "ko": "화두"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "stay-liwan-shamian",
+      "type": "stay-area",
+      "names": {
+        "en": "Liwan / Shamian",
+        "zh-Hans": "荔湾 / 沙面",
+        "ko": "리완 / 사몐"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-liwan"
+      ]
+    },
+    {
+      "id": "stay-beijing-road-yuexiu",
+      "type": "stay-area",
+      "names": {
+        "en": "Beijing Road / Yuexiu",
+        "zh-Hans": "北京路 / 越秀",
+        "ko": "베이징루 / 웨슈"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-yuexiu"
+      ]
+    },
+    {
+      "id": "stay-tianhe-zhujiang-new-town",
+      "type": "stay-area",
+      "names": {
+        "en": "Tianhe / Zhujiang New Town",
+        "zh-Hans": "天河 / 珠江新城",
+        "ko": "톈허 / 주장신청"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-tianhe"
+      ]
+    },
+    {
+      "id": "stay-haizhu-pazhou",
+      "type": "stay-area",
+      "names": {
+        "en": "Haizhu / Pazhou",
+        "zh-Hans": "海珠 / 琶洲",
+        "ko": "하이주 / 파저우"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-haizhu"
+      ]
+    },
+    {
+      "id": "stay-panyu-chimelong",
+      "type": "stay-area",
+      "names": {
+        "en": "Panyu / Chimelong",
+        "zh-Hans": "番禺 / 长隆",
+        "ko": "판위 / 창룽"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-panyu"
+      ]
+    },
+    {
+      "id": "airport-guangzhou-baiyun",
+      "type": "airport",
+      "names": {
+        "en": "Guangzhou Baiyun International Airport",
+        "zh-Hans": "广州白云国际机场",
+        "ko": "광저우 바이윈국제공항"
+      },
+      "codes": [
+        "CAN"
+      ],
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "terminal-can-t1",
+      "type": "airport-terminal",
+      "names": {
+        "en": "Baiyun Airport Terminal 1",
+        "zh-Hans": "白云机场1号航站楼",
+        "ko": "바이윈공항 제1터미널"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "airport-guangzhou-baiyun"
+      ],
+      "operationalSnapshot": {
+        "asOf": "2026-08-15",
+        "passengerStatus": "suspended",
+        "effectiveDate": "2026-05-07",
+        "volatility": "critical"
+      }
+    },
+    {
+      "id": "terminal-can-t2",
+      "type": "airport-terminal",
+      "names": {
+        "en": "Baiyun Airport Terminal 2",
+        "zh-Hans": "白云机场2号航站楼",
+        "ko": "바이윈공항 제2터미널"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "airport-guangzhou-baiyun"
+      ],
+      "operationalSnapshot": {
+        "asOf": "2026-08-15",
+        "passengerStatus": "active",
+        "volatility": "critical"
+      }
+    },
+    {
+      "id": "terminal-can-t3",
+      "type": "airport-terminal",
+      "names": {
+        "en": "Baiyun Airport Terminal 3",
+        "zh-Hans": "白云机场3号航站楼",
+        "ko": "바이윈공항 제3터미널"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "airport-guangzhou-baiyun"
+      ],
+      "operationalSnapshot": {
+        "asOf": "2026-08-15",
+        "passengerStatus": "active-domestic-international-regional",
+        "volatility": "critical"
+      }
+    },
+    {
+      "id": "metro-airport-south-t1",
+      "type": "metro-station",
+      "names": {
+        "en": "Airport South (T1)",
+        "zh-Hans": "机场南（1号航站楼）",
+        "ko": "공항남(T1)"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "terminal-can-t1"
+      ],
+      "operationalSnapshot": {
+        "asOf": "2026-08-15",
+        "passengerStatus": "non-stopping"
+      }
+    },
+    {
+      "id": "metro-airport-north-t2",
+      "type": "metro-station",
+      "names": {
+        "en": "Airport North (T2)",
+        "zh-Hans": "机场北（2号航站楼）",
+        "ko": "공항북(T2)"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "terminal-can-t2"
+      ],
+      "railSystem": "Guangzhou Metro Line 3"
+    },
+    {
+      "id": "intercity-baiyun-airport-south-t1",
+      "type": "intercity-station",
+      "names": {
+        "en": "Baiyun Airport South (T1)",
+        "zh-Hans": "白云机场南（1号航站楼）",
+        "ko": "바이윈공항남(T1)"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "terminal-can-t1"
+      ],
+      "operationalSnapshot": {
+        "asOf": "2026-08-15",
+        "passengerStatus": "non-stopping"
+      }
+    },
+    {
+      "id": "intercity-baiyun-airport-north-t2",
+      "type": "intercity-station",
+      "names": {
+        "en": "Baiyun Airport North (T2)",
+        "zh-Hans": "白云机场北（2号航站楼）",
+        "ko": "바이윈공항북(T2)"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "terminal-can-t2"
+      ],
+      "railSystem": "Guangdong Intercity"
+    },
+    {
+      "id": "intercity-baiyun-airport-east-t3",
+      "type": "intercity-station",
+      "names": {
+        "en": "Baiyun Airport East (T3)",
+        "zh-Hans": "白云机场东（3号航站楼）",
+        "ko": "바이윈공항동(T3)"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "terminal-can-t3"
+      ],
+      "railSystem": "Guangdong Intercity"
+    },
+    {
+      "id": "transfer-gaozeng-t3-feeder",
+      "type": "airport-transfer-node",
+      "names": {
+        "en": "Gaozeng–T3 feeder connection",
+        "zh-Hans": "高增—T3机场接驳",
+        "ko": "가오쩡–T3 공항 피더"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "airport-guangzhou-baiyun"
+      ],
+      "volatility": "critical"
+    },
+    {
+      "id": "station-guangzhou-south",
+      "type": "railway-station",
+      "names": {
+        "en": "Guangzhou South Railway Station",
+        "zh-Hans": "广州南站",
+        "ko": "광저우남역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-panyu"
+      ],
+      "volatility": "high"
+    },
+    {
+      "id": "station-guangzhou-east",
+      "type": "railway-station",
+      "names": {
+        "en": "Guangzhou East Railway Station",
+        "zh-Hans": "广州东站",
+        "ko": "광저우동역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-tianhe"
+      ],
+      "volatility": "high"
+    },
+    {
+      "id": "station-guangzhou-baiyun",
+      "type": "railway-station",
+      "names": {
+        "en": "Guangzhou Baiyun Railway Station",
+        "zh-Hans": "广州白云站",
+        "ko": "광저우바이윈역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-baiyun-guangzhou"
+      ],
+      "volatility": "high"
+    },
+    {
+      "id": "station-guangzhou",
+      "type": "railway-station",
+      "names": {
+        "en": "Guangzhou Railway Station",
+        "zh-Hans": "广州站",
+        "ko": "광저우역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ],
+      "operationalSnapshot": {
+        "asOf": "2026-08-15",
+        "role": "high-speed-focused; no conventional passenger origins/termini from 2026-01-26",
+        "volatility": "high"
+      }
+    },
+    {
+      "id": "station-guangzhou-north",
+      "type": "railway-station",
+      "names": {
+        "en": "Guangzhou North Railway Station",
+        "zh-Hans": "广州北站",
+        "ko": "광저우북역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-huadu"
+      ],
+      "volatility": "high"
+    },
+    {
+      "id": "intercity-station-panyu",
+      "type": "intercity-station",
+      "names": {
+        "en": "Panyu intercity station",
+        "zh-Hans": "番禺城际站",
+        "ko": "판위 도시간철도역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "station-guangzhou-south"
+      ],
+      "railSystem": "Guangdong Intercity"
+    },
+    {
+      "id": "attraction-chen-clan-ancestral-hall",
+      "type": "attraction",
+      "names": {
+        "en": "Chen Clan Ancestral Hall",
+        "zh-Hans": "陈家祠",
+        "ko": "천자츠"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-liwan"
+      ]
+    },
+    {
+      "id": "area-yongqingfang",
+      "type": "neighbourhood-attraction",
+      "names": {
+        "en": "Yongqingfang",
+        "zh-Hans": "永庆坊",
+        "ko": "융칭팡"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-liwan"
+      ]
+    },
+    {
+      "id": "area-shamian",
+      "type": "historic-urban-area",
+      "names": {
+        "en": "Shamian",
+        "zh-Hans": "沙面",
+        "ko": "사몐"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-liwan"
+      ]
+    },
+    {
+      "id": "cluster-liwan-heritage",
+      "type": "attraction-cluster",
+      "names": {
+        "en": "Chen Clan–Yongqingfang–Shamian cluster",
+        "zh-Hans": "陈家祠—永庆坊—沙面簇",
+        "ko": "천자츠–융칭팡–사몐 묶음"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-liwan"
+      ]
+    },
+    {
+      "id": "area-beijing-road",
+      "type": "historic-commercial-area",
+      "names": {
+        "en": "Beijing Road",
+        "zh-Hans": "北京路",
+        "ko": "베이징루"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-yuexiu"
+      ]
+    },
+    {
+      "id": "area-yuexiu-core",
+      "type": "urban-area",
+      "names": {
+        "en": "Yuexiu historic and civic core",
+        "zh-Hans": "越秀历史与公共核心",
+        "ko": "웨슈 역사·시민 중심"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-yuexiu"
+      ]
+    },
+    {
+      "id": "cluster-beijing-road-yuexiu",
+      "type": "attraction-cluster",
+      "names": {
+        "en": "Beijing Road–Yuexiu cluster",
+        "zh-Hans": "北京路—越秀簇",
+        "ko": "베이징루–웨슈 묶음"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-yuexiu"
+      ]
+    },
+    {
+      "id": "area-zhujiang-new-town",
+      "type": "modern-urban-area",
+      "names": {
+        "en": "Zhujiang New Town",
+        "zh-Hans": "珠江新城",
+        "ko": "주장신청"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-tianhe"
+      ]
+    },
+    {
+      "id": "attraction-canton-tower",
+      "type": "attraction",
+      "names": {
+        "en": "Canton Tower",
+        "zh-Hans": "广州塔",
+        "ko": "광저우타워"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-haizhu"
+      ]
+    },
+    {
+      "id": "cluster-zhujiang-canton-tower",
+      "type": "attraction-cluster",
+      "names": {
+        "en": "Zhujiang New Town–Canton Tower axis",
+        "zh-Hans": "珠江新城—广州塔轴线",
+        "ko": "주장신청–광저우타워 축"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "city-guangzhou"
+      ]
+    },
+    {
+      "id": "area-pazhou",
+      "type": "exhibition-district",
+      "names": {
+        "en": "Pazhou exhibition district",
+        "zh-Hans": "琶洲会展区",
+        "ko": "파저우 전시지구"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-haizhu"
+      ],
+      "volatility": "event-calendar"
+    },
+    {
+      "id": "venue-canton-fair-complex",
+      "type": "exhibition-venue",
+      "names": {
+        "en": "China Import and Export Fair Complex",
+        "zh-Hans": "中国进出口商品交易会展馆",
+        "ko": "중국수출입상품교역회 전시장"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "area-pazhou"
+      ],
+      "volatility": "event-calendar"
+    },
+    {
+      "id": "area-chimelong-panyu",
+      "type": "family-attraction-zone",
+      "names": {
+        "en": "Chimelong / Panyu zone",
+        "zh-Hans": "长隆 / 番禺区域",
+        "ko": "창룽 / 판위 구역"
+      },
+      "registryStatus": "proposed",
+      "parentEntityIds": [
+        "district-panyu"
+      ]
+    },
+    {
+      "id": "route-guangzhou-hong-kong",
+      "type": "route",
+      "names": {
+        "en": "Guangzhou–Hong Kong route",
+        "zh-Hans": "广州—香港路线",
+        "ko": "광저우–홍콩 노선"
+      },
+      "registryStatus": "proposed",
+      "volatility": "critical"
+    },
+    {
+      "id": "route-guangzhou-macao",
+      "type": "route",
+      "names": {
+        "en": "Guangzhou–Macao route",
+        "zh-Hans": "广州—澳门路线",
+        "ko": "광저우–마카오 노선"
+      },
+      "registryStatus": "proposed",
+      "volatility": "critical"
+    },
+    {
+      "id": "route-guangzhou-shenzhen-hong-kong",
+      "type": "route-chain",
+      "names": {
+        "en": "Guangzhou–Shenzhen–Hong Kong route chain",
+        "zh-Hans": "广州—深圳—香港路线链",
+        "ko": "광저우–선전–홍콩 노선 사슬"
+      },
+      "registryStatus": "proposed",
+      "volatility": "critical"
+    },
+    {
+      "id": "route-guangzhou-foshan-shunde",
+      "type": "regional-extension",
+      "names": {
+        "en": "Guangzhou–Foshan–Shunde extension",
+        "zh-Hans": "广州—佛山—顺德延伸",
+        "ko": "광저우–포산–순더 확장"
+      },
+      "registryStatus": "proposed"
+    },
+    {
+      "id": "route-guangzhou-changsha",
+      "type": "rail-route",
+      "names": {
+        "en": "Guangzhou–Changsha rail direction",
+        "zh-Hans": "广州—长沙铁路方向",
+        "ko": "광저우–창사 철도 방향"
+      },
+      "registryStatus": "proposed",
+      "volatility": "high"
+    },
+    {
+      "id": "route-guangzhou-zhangjiajie",
+      "type": "rail-route",
+      "names": {
+        "en": "Guangzhou–Zhangjiajie rail direction",
+        "zh-Hans": "广州—张家界铁路方向",
+        "ko": "광저우–장자제 철도 방향"
+      },
+      "registryStatus": "proposed",
+      "volatility": "high"
+    },
+    {
+      "id": "guide-guangzhou-baiyun-airport-t2-t3",
+      "type": "content-owner",
+      "names": {
+        "en": "Guangzhou Baiyun Airport T2 or T3",
+        "zh-Hans": "广州白云机场T2还是T3",
+        "ko": "광저우 바이윈공항 T2·T3"
+      },
+      "registryStatus": "existing",
+      "canonicalPath": "/guides/guangzhou-baiyun-airport-t2-t3/"
+    },
+    {
+      "id": "guide-guangzhou-hong-kong-transport-route",
+      "type": "content-owner",
+      "names": {
+        "en": "Guangzhou to Hong Kong transport",
+        "zh-Hans": "广州到香港交通",
+        "ko": "광저우에서 홍콩까지"
+      },
+      "registryStatus": "existing",
+      "canonicalPath": "/guides/guangzhou-hong-kong-transport-route/"
+    },
+    {
+      "id": "guide-guangzhou-macau-transport-route",
+      "type": "content-owner",
+      "names": {
+        "en": "Guangzhou to Macao transport",
+        "zh-Hans": "广州到澳门交通",
+        "ko": "광저우–마카오 이동"
+      },
+      "registryStatus": "existing",
+      "canonicalPath": "/guides/guangzhou-macau-transport-route/"
+    },
+    {
+      "id": "guide-guangzhou-shenzhen-hong-kong-route-order",
+      "type": "content-owner",
+      "names": {
+        "en": "Guangzhou–Shenzhen–Hong Kong route order",
+        "zh-Hans": "广州—深圳—香港路线顺序",
+        "ko": "광저우–선전–홍콩 순서"
+      },
+      "registryStatus": "existing",
+      "canonicalPath": "/guides/guangzhou-shenzhen-hong-kong-route-order/"
+    },
+    {
+      "id": "guide-how-guangzhou-morning-tea-works",
+      "type": "content-owner",
+      "names": {
+        "en": "How Guangzhou morning tea works",
+        "zh-Hans": "广州早茶怎么吃",
+        "ko": "광저우 모닝티 이해하기"
+      },
+      "registryStatus": "existing",
+      "canonicalPath": "/guides/how-guangzhou-morning-tea-works/"
+    },
+    {
+      "id": "guide-when-metro-construction-meets-archaeology",
+      "type": "content-owner",
+      "names": {
+        "en": "When metro construction meets archaeology",
+        "zh-Hans": "地铁施工遇到考古会发生什么",
+        "ko": "지하철 공사와 도시 고고학"
+      },
+      "registryStatus": "existing",
+      "canonicalPath": "/guides/when-metro-construction-meets-archaeology/"
+    }
+  ],
+  "edges": [
+    {
+      "from": "province-guangdong",
+      "to": "country-china",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "city-guangzhou",
+      "to": "province-guangdong",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "sar-hong-kong",
+      "to": "country-china",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "sar-macao",
+      "to": "country-china",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "sar-hong-kong",
+      "to": "province-guangdong",
+      "relation": "not-administrative-child"
+    },
+    {
+      "from": "sar-macao",
+      "to": "province-guangdong",
+      "relation": "not-administrative-child"
+    },
+    {
+      "from": "city-shenzhen",
+      "to": "province-guangdong",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "city-foshan",
+      "to": "province-guangdong",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-shunde",
+      "to": "city-foshan",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-liwan",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-yuexiu",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-tianhe",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-haizhu",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-panyu",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-baiyun-guangzhou",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "district-huadu",
+      "to": "city-guangzhou",
+      "relation": "administrative-parent"
+    },
+    {
+      "from": "stay-liwan-shamian",
+      "to": "cluster-liwan-heritage",
+      "relation": "best-for"
+    },
+    {
+      "from": "stay-beijing-road-yuexiu",
+      "to": "cluster-beijing-road-yuexiu",
+      "relation": "best-for"
+    },
+    {
+      "from": "stay-tianhe-zhujiang-new-town",
+      "to": "cluster-zhujiang-canton-tower",
+      "relation": "best-for"
+    },
+    {
+      "from": "stay-haizhu-pazhou",
+      "to": "area-pazhou",
+      "relation": "best-for"
+    },
+    {
+      "from": "stay-panyu-chimelong",
+      "to": "area-chimelong-panyu",
+      "relation": "best-for"
+    },
+    {
+      "from": "stay-panyu-chimelong",
+      "to": "station-guangzhou-south",
+      "relation": "useful-for-departure"
+    },
+    {
+      "from": "airport-guangzhou-baiyun",
+      "to": "city-guangzhou",
+      "relation": "international-gateway"
+    },
+    {
+      "from": "terminal-can-t1",
+      "to": "airport-guangzhou-baiyun",
+      "relation": "part-of"
+    },
+    {
+      "from": "terminal-can-t2",
+      "to": "airport-guangzhou-baiyun",
+      "relation": "part-of"
+    },
+    {
+      "from": "terminal-can-t3",
+      "to": "airport-guangzhou-baiyun",
+      "relation": "part-of"
+    },
+    {
+      "from": "metro-airport-north-t2",
+      "to": "terminal-can-t2",
+      "relation": "serves-directly"
+    },
+    {
+      "from": "intercity-baiyun-airport-north-t2",
+      "to": "terminal-can-t2",
+      "relation": "serves-directly"
+    },
+    {
+      "from": "intercity-baiyun-airport-east-t3",
+      "to": "terminal-can-t3",
+      "relation": "serves-directly"
+    },
+    {
+      "from": "transfer-gaozeng-t3-feeder",
+      "to": "terminal-can-t3",
+      "relation": "serves-with-transfer"
+    },
+    {
+      "from": "metro-airport-south-t1",
+      "to": "terminal-can-t1",
+      "relation": "service-suspended-with-terminal"
+    },
+    {
+      "from": "intercity-baiyun-airport-south-t1",
+      "to": "terminal-can-t1",
+      "relation": "service-suspended-with-terminal"
+    },
+    {
+      "from": "intercity-station-panyu",
+      "to": "station-guangzhou-south",
+      "relation": "connected-hub"
+    },
+    {
+      "from": "intercity-station-panyu",
+      "to": "intercity-baiyun-airport-north-t2",
+      "relation": "date-specific-intercity-service"
+    },
+    {
+      "from": "intercity-station-panyu",
+      "to": "intercity-baiyun-airport-east-t3",
+      "relation": "date-specific-intercity-service"
+    },
+    {
+      "from": "attraction-chen-clan-ancestral-hall",
+      "to": "cluster-liwan-heritage",
+      "relation": "member-of"
+    },
+    {
+      "from": "area-yongqingfang",
+      "to": "cluster-liwan-heritage",
+      "relation": "member-of"
+    },
+    {
+      "from": "area-shamian",
+      "to": "cluster-liwan-heritage",
+      "relation": "member-of"
+    },
+    {
+      "from": "area-beijing-road",
+      "to": "cluster-beijing-road-yuexiu",
+      "relation": "member-of"
+    },
+    {
+      "from": "area-yuexiu-core",
+      "to": "cluster-beijing-road-yuexiu",
+      "relation": "member-of"
+    },
+    {
+      "from": "area-zhujiang-new-town",
+      "to": "cluster-zhujiang-canton-tower",
+      "relation": "member-of-north-bank"
+    },
+    {
+      "from": "attraction-canton-tower",
+      "to": "cluster-zhujiang-canton-tower",
+      "relation": "member-of-south-bank"
+    },
+    {
+      "from": "venue-canton-fair-complex",
+      "to": "area-pazhou",
+      "relation": "located-in"
+    },
+    {
+      "from": "area-chimelong-panyu",
+      "to": "district-panyu",
+      "relation": "separate-zone-within"
+    },
+    {
+      "from": "route-guangzhou-hong-kong",
+      "to": "city-guangzhou",
+      "relation": "origin-or-destination"
+    },
+    {
+      "from": "route-guangzhou-hong-kong",
+      "to": "sar-hong-kong",
+      "relation": "cross-boundary-destination-or-origin"
+    },
+    {
+      "from": "route-guangzhou-hong-kong",
+      "to": "station-guangzhou-south",
+      "relation": "primary-search-hub-not-exclusive"
+    },
+    {
+      "from": "route-guangzhou-hong-kong",
+      "to": "station-guangzhou-east",
+      "relation": "date-specific-search-hub"
+    },
+    {
+      "from": "route-guangzhou-macao",
+      "to": "city-guangzhou",
+      "relation": "origin-or-destination"
+    },
+    {
+      "from": "route-guangzhou-macao",
+      "to": "sar-macao",
+      "relation": "cross-boundary-destination-or-origin"
+    },
+    {
+      "from": "route-guangzhou-macao",
+      "to": "station-guangzhou-south",
+      "relation": "rail-chain-start"
+    },
+    {
+      "from": "route-guangzhou-shenzhen-hong-kong",
+      "to": "city-guangzhou",
+      "relation": "route-stop"
+    },
+    {
+      "from": "route-guangzhou-shenzhen-hong-kong",
+      "to": "city-shenzhen",
+      "relation": "optional-or-full-route-stop"
+    },
+    {
+      "from": "route-guangzhou-shenzhen-hong-kong",
+      "to": "sar-hong-kong",
+      "relation": "cross-boundary-route-stop"
+    },
+    {
+      "from": "route-guangzhou-foshan-shunde",
+      "to": "city-guangzhou",
+      "relation": "regional-base"
+    },
+    {
+      "from": "route-guangzhou-foshan-shunde",
+      "to": "city-foshan",
+      "relation": "day-extension-or-next-stop"
+    },
+    {
+      "from": "route-guangzhou-foshan-shunde",
+      "to": "district-shunde",
+      "relation": "food-led-extension-or-next-stop"
+    },
+    {
+      "from": "route-guangzhou-changsha",
+      "to": "city-guangzhou",
+      "relation": "rail-origin-or-destination"
+    },
+    {
+      "from": "route-guangzhou-changsha",
+      "to": "city-changsha",
+      "relation": "rail-origin-or-destination"
+    },
+    {
+      "from": "route-guangzhou-zhangjiajie",
+      "to": "city-guangzhou",
+      "relation": "rail-origin-or-destination"
+    },
+    {
+      "from": "route-guangzhou-zhangjiajie",
+      "to": "city-zhangjiajie",
+      "relation": "rail-origin-or-destination"
+    },
+    {
+      "from": "guide-guangzhou-baiyun-airport-t2-t3",
+      "to": "airport-guangzhou-baiyun",
+      "relation": "canonical-content-owner"
+    },
+    {
+      "from": "guide-guangzhou-hong-kong-transport-route",
+      "to": "route-guangzhou-hong-kong",
+      "relation": "canonical-content-owner"
+    },
+    {
+      "from": "guide-guangzhou-macau-transport-route",
+      "to": "route-guangzhou-macao",
+      "relation": "canonical-content-owner"
+    },
+    {
+      "from": "guide-guangzhou-shenzhen-hong-kong-route-order",
+      "to": "route-guangzhou-shenzhen-hong-kong",
+      "relation": "canonical-content-owner"
+    },
+    {
+      "from": "guide-how-guangzhou-morning-tea-works",
+      "to": "city-guangzhou",
+      "relation": "canonical-owner-for-morning-tea-task"
+    },
+    {
+      "from": "guide-when-metro-construction-meets-archaeology",
+      "to": "area-beijing-road",
+      "relation": "supporting-context-not-destination-owner"
+    }
+  ],
+  "dynamicFactPolicy": {
+    "critical": [
+      "Baiyun Airport terminal assignments and terminal access",
+      "Metro and intercity stopping patterns at airport stations",
+      "Cross-boundary rail, port and immigration operations"
+    ],
+    "high": [
+      "Guangzhou railway station service allocation",
+      "Date-specific trains to Hong Kong, Shenzhen, Changsha and Zhangjiajie"
+    ],
+    "rule": "The hub may summarize current orientation, but the named official operator and existing specialist owner remain the travel-date authority."
+  }
+}
