@@ -10,8 +10,12 @@ import {
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
   getChinaItineraryWithOlderParentsCopy,
@@ -43,12 +47,8 @@ function createStructuredData(locale: HomegroundLocale) {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": `${siteUrl}/#organization`,
-        name: "Homeground China",
-        url: `${siteUrl}/`,
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -61,9 +61,10 @@ function createStructuredData(locale: HomegroundLocale) {
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": `${siteUrl}/#organization` },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         about: copy.schemaAbout.map((name) => ({ "@type": "Thing", name })),
       },
       {

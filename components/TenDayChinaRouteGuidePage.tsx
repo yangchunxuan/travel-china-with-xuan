@@ -13,8 +13,12 @@ import {
 } from "lucide-react";
 import { getGuideEntry, getGuideLanguagePaths } from "../lib/guideRegistry";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
   localePath,
@@ -131,12 +135,8 @@ function createStructuredData(
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://homegroundchina.com/#organization",
-        name: "Homeground China",
-        url: "https://homegroundchina.com/",
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -149,9 +149,10 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         image: guide.heroImageUrl,
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": "https://homegroundchina.com/#organization" },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         about: copy.hero.places.map((name) => ({ "@type": "Place", name })),
       },
       {

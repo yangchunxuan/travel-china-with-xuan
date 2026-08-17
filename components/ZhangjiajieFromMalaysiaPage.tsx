@@ -14,7 +14,10 @@ import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
   EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
   MALAYSIA_ZHANGJIAJIE_IMAGE_ROOT,
@@ -59,17 +62,12 @@ function createStructuredData(
   copy: MalaysiaZhangjiajieGuideCopy,
 ) {
   const guide = getGuideEntry(malaysiaZhangjiajieGuideId, locale);
-  const organizationId = EDITORIAL_ORGANIZATION_ID;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: "Homeground China",
-        url: `${SITE_URL}/`,
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -88,9 +86,10 @@ function createStructuredData(
           height: guide.imageHeight,
           caption: copy.images.heroCaption,
         },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": organizationId },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         audience: {
           "@type": "Audience",
           audienceType: copy.structuredData.audience,

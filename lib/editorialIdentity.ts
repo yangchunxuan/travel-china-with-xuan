@@ -6,6 +6,10 @@ export const EDITORIAL_PERSON_ID =
   "https://homegroundchina.com/studio/evan/#person";
 export const EDITORIAL_ORGANIZATION_ID =
   "https://homegroundchina.com/#organization";
+export const EDITORIAL_WEBSITE_ID =
+  "https://homegroundchina.com/#website";
+
+const EDITORIAL_SITE_URL = "https://homegroundchina.com/";
 
 const profilePaths: Record<HomegroundLocale, string> = {
   en: "/studio/evan/",
@@ -99,5 +103,24 @@ export function editorialPersonSchema(locale: HomegroundLocale) {
     description: author.bio,
     knowsLanguage: ["English", "Korean", "Chinese"],
     worksFor: { "@id": EDITORIAL_ORGANIZATION_ID },
+  };
+}
+
+export function editorialOrganizationSchema() {
+  return {
+    "@type": "Organization",
+    "@id": EDITORIAL_ORGANIZATION_ID,
+    name: "Homeground China",
+    url: EDITORIAL_SITE_URL,
+  };
+}
+
+export function editorialWebsiteSchema() {
+  return {
+    "@type": "WebSite",
+    "@id": EDITORIAL_WEBSITE_ID,
+    name: "Homeground China",
+    url: EDITORIAL_SITE_URL,
+    publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
   };
 }

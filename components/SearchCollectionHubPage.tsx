@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import {
   getSearchCollection,
   getSearchCollectionPath,
@@ -19,6 +20,7 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { DestinationHubDiscovery } from "./DestinationHubDiscovery";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -30,6 +32,25 @@ const dateLocales: Record<HomegroundLocale, string> = {
   zh: "zh-CN",
   ko: "ko-KR",
 };
+
+const chineseCityCollectionTitle = "从街道和日常空间理解一座中国城市";
+const chineseCityCollectionTitleSegments = [
+  "从街道和",
+  "日常空间",
+  "理解一座",
+  "中国城市",
+] as const;
+
+function renderCollectionTitle(title: string, locale: HomegroundLocale) {
+  if (locale !== "zh" || title !== chineseCityCollectionTitle) return title;
+
+  return chineseCityCollectionTitleSegments.map((segment, index) => (
+    <Fragment key={segment}>
+      <span className={styles.titleSegment}>{segment}</span>
+      {index < chineseCityCollectionTitleSegments.length - 1 ? <wbr /> : null}
+    </Fragment>
+  ));
+}
 
 const labels = {
   en: {
@@ -166,7 +187,12 @@ export function SearchCollectionHubPage({
                 </p>
               </nav>
               <p className={styles.eyebrow}>{ui.collection}</p>
-              <h1>{collectionCopy.title}</h1>
+              <h1
+                className={locale === "zh" ? styles.segmentedTitle : undefined}
+                id="collection-title"
+              >
+                {renderCollectionTitle(collectionCopy.title, locale)}
+              </h1>
               <p className={styles.lede}>{collectionCopy.description}</p>
             </div>
             <aside className={styles.scope} aria-labelledby="collection-scope-title">
@@ -178,6 +204,14 @@ export function SearchCollectionHubPage({
             </aside>
           </div>
         </header>
+
+        {collectionId === "explore-cities-neighborhoods" ? (
+          <DestinationHubDiscovery
+            headingId="collection-title"
+            locale={locale}
+            showIntro={false}
+          />
+        ) : null}
 
         <section className={styles.collection} aria-labelledby="collection-guides-title">
           <div className={styles.collectionHeading}>

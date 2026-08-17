@@ -69,6 +69,17 @@
 .hubPage[data-homeground-locale="zh"] .hero h1 {
   font-size: clamp(3.35rem, 6.45vw, 6.7rem);
   max-width: 13ch;
+  word-break: auto-phrase;
+}
+
+.titleSegment {
+  display: inline-block;
+}
+
+.hubPage[data-homeground-locale="zh"] .hero h1.segmentedTitle {
+  max-width: 16em;
+  text-wrap: wrap;
+  word-break: keep-all;
 }
 
 .hubPage[data-homeground-locale="ko"] .hero h1 {

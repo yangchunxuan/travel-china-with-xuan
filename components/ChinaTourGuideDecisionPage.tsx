@@ -8,8 +8,12 @@ import {
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
@@ -24,17 +28,11 @@ function createStructuredData(
   copy: TourGuideDecisionCopy,
   guide: ReturnType<typeof getGuideEntry>,
 ) {
-  const organizationId = `${SITE_URL}/#organization`;
-
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: "Homeground China",
-        url: `${SITE_URL}/`,
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -52,9 +50,10 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: copy.metadata.inLanguage,
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": organizationId },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         mainEntityOfPage: guide.canonicalUrl,
         citation: copy.sources.map((source) => source.url),
         about: copy.metadata.about,

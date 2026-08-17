@@ -11,8 +11,12 @@ import {
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
+  EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
   getNightShowSource,
@@ -90,12 +94,8 @@ function createStructuredData(
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://homegroundchina.com/#organization",
-        name: "Homeground China",
-        url: "https://homegroundchina.com/",
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -114,9 +114,10 @@ function createStructuredData(
           height: 1024,
           caption: copy.hero.figureCaption,
         },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": "https://homegroundchina.com/#organization" },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         about: {
           "@type": "Thing",
           name: copy.structuredData.aboutName,

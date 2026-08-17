@@ -28,7 +28,10 @@ import homeStyles from "../HomegroundHomePage.module.css";
 import {
   EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialWebsiteSchema,
 } from "../../lib/editorialIdentity";
 import styles from "./EditorialGuidePage.module.css";
 
@@ -91,17 +94,12 @@ function structuredData(
   const sectionPath = getSearchSectionPath(collection.section, locale);
   const collectionPath = getSearchCollectionPath(collection, locale);
   const inLanguage = locale === "zh" ? "zh-Hans" : locale;
-  const organizationId = EDITORIAL_ORGANIZATION_ID;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: "Homeground China",
-        url: `${SITE_URL}/`,
-      },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       editorialPersonSchema(locale),
       {
         "@type": "Article",
@@ -118,9 +116,10 @@ function structuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage,
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
-        publisher: { "@id": organizationId },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         mainEntityOfPage: guide.canonicalUrl,
         ...(sources.length > 0 ? { citation: sources } : {}),
       },
