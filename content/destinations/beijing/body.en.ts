@@ -203,7 +203,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "Choose the base with the accommodation owners",
+      title: "Compare Beijing bases in the detailed stay guides",
       items: [
         {
           label: "Where to stay in Beijing on a first trip",
@@ -351,7 +351,7 @@ const body = {
     {
       id: "transport-links",
       type: "internal-links",
-      title: "Hand the gateway decision to its owner",
+      title: "Continue with the detailed airport and station guides",
       items: [
         {
           label: "Which Beijing railway station do you need?",
@@ -499,7 +499,7 @@ const body = {
     {
       id: "sight-links",
       type: "internal-links",
-      title: "Open the execution owner when a cluster becomes a booking",
+      title: "Open the detailed guide when you are ready to book",
       items: [
         {
           label: "The Forbidden City for foreign visitors",
@@ -629,7 +629,7 @@ const body = {
     {
       id: "route-links",
       type: "internal-links",
-      title: "Continue with the route owners",
+      title: "Continue with the detailed route guides",
       items: [
         {
           label: "Beijing, Xi'an and Chengdu: choose the route order",
