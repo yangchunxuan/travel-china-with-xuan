@@ -207,7 +207,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "Compare exact bases with the accommodation owner",
+      title: "Compare Xi'an bases in the detailed stay guide",
       items: [
         {
           label: "Where to stay in Xi'an: City Wall, Bell Tower or Dayanta?",
@@ -354,7 +354,7 @@ const body = {
     {
       id: "sight-links",
       type: "internal-links",
-      title: "Open the execution owner when a cluster becomes a booking",
+      title: "Open the detailed guide when you are ready to book",
       items: [
         {
           label: "Visiting the Terracotta Army without a tour",
@@ -472,7 +472,7 @@ const body = {
     {
       id: "route-links",
       type: "internal-links",
-      title: "Continue with the route owners",
+      title: "Continue with the detailed route guides",
       items: [
         {
           label: "Beijing, Xi'an and Chengdu: choose the route order",
