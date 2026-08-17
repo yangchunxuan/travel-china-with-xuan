@@ -71,10 +71,14 @@
 | `/destinations/beijing/`（`destination-beijing`） | Beijing travel guide、北京旅行指南、住几晚、住哪个区域、机场与车站选择、下一站 | 通用“北京攻略”、城市百科、按天数或人群拆的北京总览 |
 | `/destinations/shanghai/`（`destination-shanghai`） | Shanghai travel guide、上海旅行指南、完整游览日、浦西浦东取舍、机场门户、长三角当日往返还是换城 | 通用“上海攻略”、按天数或人群拆的上海总览 |
 | `/destinations/xian/`（`destination-xian`） | Xi'an travel guide、西安旅行指南、住几晚、城内与城南基地、三座铁路站、华山要不要加一天 | 通用“西安攻略”、按天数或人群拆的西安总览 |
+| `/destinations/chengdu/`（`destination-chengdu`） | Chengdu travel guide、成都旅行指南、城市住几天、住哪个区、天府与双流、哪些四川行程是独立支线 | 通用“成都攻略”、城市百科、按天数或人群拆的成都总览 |
+| `/destinations/guangzhou/`（`destination-guangzhou`） | Guangzhou travel guide、广州旅行指南、要不要住、住哪个区、白云航站楼与五个火车站、佛山顺德长隆怎么算 | 通用“广州攻略”、按天数或人群拆的广州总览 |
 
 三语只算一个内容身份。Hub 只做城市级取舍，不复述 `beijing-where-to-stay-first-trip`、`which-beijing-railway-station`、`terracotta-warriors-without-tour`、`shanghai-pudong-or-hongqiao-airport` 等既有 owner 的执行细节。
 
-**待补**：`docs/organic-growth/search-map.json` 尚未登记这三个身份。它的 `coverage` 与轮次计数字段含义不明确，本批不擅自改写；请员工 7 在下一次同步时按现有 schema 回填。
+**重庆暂缓（2026-08-17）**：`/destinations/chongqing/` 尚未上线，卡在 Phase 1 Gate B（现有 4 个合格 owner／3 个 section，门槛是 5／3）。解锁方式已定为发布第五个重庆为主的 owner：Topic Universe `hg-topic-0860`、canonical slug `chongqing-railway-station-selector`，三语 editorial transport guide，由员工1（交通）完成。在该文通过中央审核并进入发布基线之前，不得把重庆加入 hub 注册表，也不得降低 Gate B 或改写 Gate A。
+
+**待补**：`docs/organic-growth/search-map.json` 尚未登记这些身份。它的 `coverage` 与轮次计数字段含义不明确，本批不擅自改写；请员工 7 在下一次同步时按现有 schema 回填。
 
 ## 其余已发布 canonical owners：不可撞题
 

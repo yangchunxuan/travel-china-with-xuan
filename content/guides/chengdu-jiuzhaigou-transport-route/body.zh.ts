@@ -39,7 +39,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月13日", tone: "neutral", body: "九寨沟管理局2026年7月公告要求通过“九旅悦行”提前购买黄龙九寨站接驳，并说明班车按动车到站衔接，约2小时到景区门口。松潘站只有在同一渠道查到当日匹配接驳时才成立。官方到达页显示九黄机场距沟口仍约88公里，落地后还需公路接驳；川航当前时刻表只列出每周部分日期的成都—九寨沟航班，不能当作每日服务，具体日期与成都机场须在实时购票页确认。" },
   { id: "help", type: "callout", title: "需要核对铁路与公路交接？", tone: "decision", body: "提供日期、成都酒店、九寨沟酒店、人数、行李和固定航班。Homeground可标出交接点与保守缓冲，实时运营仍以承运方为准。" },
-  { id: "links", type: "internal-links", title: "继续规划", items: [
+  { id: "links", type: "internal-links", title: "继续规划", items: [ { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "先决定城市住几天、以哪里为基地，以及哪些四川行程是独立支线。" },
     { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选定准确站点后再使用。" },
     { label: "夜车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "比较时间表形状，不只看时长。" },
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "给山区接驳真实缓冲。" },

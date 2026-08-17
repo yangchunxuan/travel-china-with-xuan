@@ -63,7 +63,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "dynamic-boundary", type: "callout", tone: "warning", title: "口岸信息会变化", body: "管制站开放时间、交通、票务和入境要求会变化。临近出行查询香港与内地责任机关及具体运营方。本文不判断签证或入境资格。" },
   { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责三城顺序和深圳是否值得住一晚。广州—香港与深圳—香港指南分别负责准确交通方式、车站与口岸执行。" },
   { id: "help-cta", type: "callout", tone: "decision", title: "需要检查受口岸影响的路线？", body: "请提供航班口岸、护照国籍、酒店区域、行李和每城一个重点。不要发送护照号码或证件图片。" },
-  { id: "more-planning", type: "internal-links", title: "继续规划", items: [
+  { id: "more-planning", type: "internal-links", title: "继续规划", items: [ { label: "广州城市总览", href: "/zh/destinations/guangzhou/", description: "先决定要不要住，再把航站楼、车站和住宿区当成一条链一起选。" },
     { label: "比较广州—香港交通", href: "/zh/guides/guangzhou-hong-kong-transport-route/", description: "路线顺序确定后再选择车站和方式。" },
     { label: "选择深圳—香港口岸", href: "/zh/guides/shenzhen-hong-kong-transport-route/", description: "按两侧酒店和后续安排匹配管制站。" },
     { label: "测试开口程航班", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "查看不同抵离城市能否消除折返。" },

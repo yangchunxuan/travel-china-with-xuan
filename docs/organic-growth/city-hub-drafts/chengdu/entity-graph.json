@@ -1,0 +1,1091 @@
+{
+  "schemaVersion": "1.0.0",
+  "draftId": "city-hub-chengdu",
+  "primaryEntityId": "city-chengdu",
+  "proposedParentEntityId": "province-sichuan",
+  "canonicalPaths": {
+    "en": "/destinations/chengdu/",
+    "zh": "/zh/destinations/chengdu/",
+    "ko": "/ko/destinations/chengdu/"
+  },
+  "statusSemantics": {
+    "existing": "An established real place, operating hub, current live content owner or central entity. Existing does not mean every node already has a central registry record.",
+    "proposed": "A Hub-only cluster, relationship, route edge, stay area, FAQ intent, or central-review candidate. This draft does not write it to a public registry."
+  },
+  "centralEntityMutation": false,
+  "publicPageMutation": false,
+  "nodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "existing",
+      "labels": {
+        "en": "China",
+        "zh": "中国",
+        "ko": "중국"
+      },
+      "centralRegistryStatus": "existing"
+    },
+    {
+      "id": "province-sichuan",
+      "type": "province",
+      "status": "proposed",
+      "labels": {
+        "en": "Sichuan Province",
+        "zh": "四川省",
+        "ko": "쓰촨성"
+      },
+      "realWorldStatus": "existing",
+      "centralRegistryStatus": "proposed-parent-node",
+      "note": "The current core entity file places city-chengdu under country-china. This draft proposes Sichuan as the reviewed parent without editing the central registry."
+    },
+    {
+      "id": "city-chengdu",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu",
+        "zh": "成都",
+        "ko": "청두"
+      },
+      "primary": true,
+      "centralRegistryStatus": "existing",
+      "sourceOfTruth": "content/entities/core-places.json"
+    },
+    {
+      "id": "airport-chengdu-tianfu",
+      "type": "airport",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu Tianfu International Airport (TFU)",
+        "zh": "成都天府国际机场（TFU）",
+        "ko": "청두 톈푸국제공항(TFU)"
+      },
+      "orientation": "southeast of the traditional city centre",
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "airport-chengdu-shuangliu",
+      "type": "airport",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu Shuangliu International Airport (CTU)",
+        "zh": "成都双流国际机场（CTU）",
+        "ko": "청두 솽류국제공항(CTU)"
+      },
+      "orientation": "southwest of the traditional city centre",
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "station-chengdu-east",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu East Railway Station",
+        "zh": "成都东站",
+        "ko": "청두동역"
+      },
+      "planningRole": "major high-speed-rail gateway; actual ticket controls",
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "station-chengdu-south",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu South Railway Station",
+        "zh": "成都南站",
+        "ko": "청두남역"
+      },
+      "planningRole": "major south-side passenger station and Line 18 interchange",
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "station-chengdu-west",
+      "type": "railway-station",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu West Railway Station",
+        "zh": "成都西站",
+        "ko": "청두서역"
+      },
+      "planningRole": "western passenger hub for selected regional and long-distance services",
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "station-chengdu-central",
+      "type": "railway-station-project",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu Railway Station / older North Station references",
+        "zh": "成都站／旧资料中的火车北站",
+        "ko": "청두역／오래된 북역 표기"
+      },
+      "planningRole": "dynamic rebuilt central-station project; use only current ticket and dated official notice",
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "stay-chunxi-taikoo",
+      "type": "stay-area",
+      "status": "proposed",
+      "labels": {
+        "en": "Chunxi Road / Taikoo Li",
+        "zh": "春熙路／太古里",
+        "ko": "춘시루／타이쿠리"
+      },
+      "planningRole": "first-time central base, dining and evenings"
+    },
+    {
+      "id": "stay-tianfu-square",
+      "type": "stay-area",
+      "status": "proposed",
+      "labels": {
+        "en": "Tianfu Square",
+        "zh": "天府广场",
+        "ko": "톈푸광장"
+      },
+      "planningRole": "transport-balanced central base"
+    },
+    {
+      "id": "stay-kuanzhai-peoples-park",
+      "type": "stay-area",
+      "status": "proposed",
+      "labels": {
+        "en": "Kuanzhai Alleys / People's Park side",
+        "zh": "宽窄巷子／人民公园一侧",
+        "ko": "콴자이샹쯔／인민공원 쪽"
+      },
+      "planningRole": "tea-house and western-centre atmosphere"
+    },
+    {
+      "id": "stay-chengdu-east",
+      "type": "stay-area",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu East station area",
+        "zh": "成都东站周边",
+        "ko": "청두동역 주변"
+      },
+      "planningRole": "one-night transfer-first base"
+    },
+    {
+      "id": "cluster-chengdu-tea-west",
+      "type": "city-experience-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "People's Park and western central Chengdu",
+        "zh": "人民公园及成都西侧中心城区",
+        "ko": "인민공원과 청두 서쪽 중심부"
+      },
+      "planningRole": "tea-house, park, museum or historic-street city block"
+    },
+    {
+      "id": "cluster-chengdu-daci-east",
+      "type": "city-experience-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Daci Temple, Taikoo Li and eastern central Chengdu",
+        "zh": "大慈寺、太古里及成都东侧中心城区",
+        "ko": "다츠사·타이쿠리와 청두 동쪽 중심부"
+      },
+      "planningRole": "religious-space and contemporary-city contrast"
+    },
+    {
+      "id": "cluster-chengdu-wuhou-history",
+      "type": "city-experience-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Wuhou Shrine and historical narrative",
+        "zh": "武侯祠及历史叙事区块",
+        "ko": "우허우츠와 역사 서사 구간"
+      },
+      "planningRole": "one coherent history-led city block"
+    },
+    {
+      "id": "cluster-chengdu-panda-city",
+      "type": "city-experience-cluster",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu Panda Base city-edge morning",
+        "zh": "成都熊猫基地城市边缘上午任务",
+        "ko": "청두 판다기지 도시 가장자리 오전"
+      },
+      "planningRole": "serious morning plus one flexible city afternoon"
+    },
+    {
+      "id": "place-peoples-park-chengdu",
+      "type": "park-or-neighbourhood",
+      "status": "existing",
+      "labels": {
+        "en": "People's Park",
+        "zh": "人民公园",
+        "ko": "인민공원"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-kuanzhai-alleys",
+      "type": "historic-street-cluster",
+      "status": "existing",
+      "labels": {
+        "en": "Kuanzhai Alleys",
+        "zh": "宽窄巷子",
+        "ko": "콴자이샹쯔"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-tianfu-square",
+      "type": "urban-centre",
+      "status": "existing",
+      "labels": {
+        "en": "Tianfu Square",
+        "zh": "天府广场",
+        "ko": "톈푸광장"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-daci-temple",
+      "type": "religious-site",
+      "status": "existing",
+      "labels": {
+        "en": "Daci Temple",
+        "zh": "大慈寺",
+        "ko": "다츠사"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-taikoo-li-chengdu",
+      "type": "commercial-urban-area",
+      "status": "existing",
+      "labels": {
+        "en": "Taikoo Li Chengdu",
+        "zh": "成都太古里",
+        "ko": "청두 타이쿠리"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-wuhou-shrine",
+      "type": "heritage-site",
+      "status": "existing",
+      "labels": {
+        "en": "Wuhou Shrine",
+        "zh": "武侯祠",
+        "ko": "우허우츠"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-chengdu-panda-base",
+      "type": "conservation-visitor-site",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu Research Base of Giant Panda Breeding",
+        "zh": "成都大熊猫繁育研究基地",
+        "ko": "청두 자이언트판다 번식연구기지"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-chengdu-ring-greenway",
+      "type": "urban-infrastructure",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu city-ring greenway",
+        "zh": "成都环城绿道",
+        "ko": "청두 순환 녹도"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "city-dujiangyan",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Dujiangyan",
+        "zh": "都江堰",
+        "ko": "두장옌"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-panda-valley",
+      "type": "conservation-visitor-site",
+      "status": "existing",
+      "labels": {
+        "en": "Dujiangyan Panda Valley",
+        "zh": "都江堰熊猫谷",
+        "ko": "두장옌 판다밸리"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-dujiangyan-irrigation",
+      "type": "heritage-site",
+      "status": "existing",
+      "labels": {
+        "en": "Dujiangyan Irrigation System",
+        "zh": "都江堰水利工程",
+        "ko": "두장옌 수리 시설"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "city-guanghan",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Guanghan",
+        "zh": "广汉",
+        "ko": "광한"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-sanxingdui-museum",
+      "type": "museum-and-archaeological-site",
+      "status": "existing",
+      "labels": {
+        "en": "Sanxingdui Museum",
+        "zh": "三星堆博物馆",
+        "ko": "싼싱두이박물관"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "city-leshan",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Leshan",
+        "zh": "乐山",
+        "ko": "러산"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-leshan-giant-buddha",
+      "type": "heritage-site",
+      "status": "existing",
+      "labels": {
+        "en": "Leshan Giant Buddha",
+        "zh": "乐山大佛",
+        "ko": "러산대불"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "place-mount-emei",
+      "type": "mountain-destination",
+      "status": "existing",
+      "labels": {
+        "en": "Mount Emei",
+        "zh": "峨眉山",
+        "ko": "어메이산"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "destination-jiuzhaigou",
+      "type": "nature-destination",
+      "status": "existing",
+      "labels": {
+        "en": "Jiuzhaigou Valley",
+        "zh": "九寨沟",
+        "ko": "주자이거우"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "city-chongqing",
+      "type": "municipality-city",
+      "status": "existing",
+      "labels": {
+        "en": "Chongqing",
+        "zh": "重庆",
+        "ko": "충칭"
+      },
+      "centralRegistryStatus": "proposed"
+    },
+    {
+      "id": "city-xian",
+      "type": "city",
+      "status": "existing",
+      "labels": {
+        "en": "Xi'an",
+        "zh": "西安",
+        "ko": "시안"
+      },
+      "centralRegistryStatus": "existing",
+      "sourceOfTruth": "content/entities/core-places.json"
+    },
+    {
+      "id": "route-edge-chengdu-chongqing",
+      "type": "route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu–Chongqing",
+        "zh": "成都—重庆",
+        "ko": "청두–충칭"
+      },
+      "planningRole": "fast city-pair contrast; current ticketed stations control"
+    },
+    {
+      "id": "route-edge-xian-chengdu",
+      "type": "route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Xi'an–Chengdu",
+        "zh": "西安—成都",
+        "ko": "시안–청두"
+      },
+      "planningRole": "first-trip historical-to-regional sequence"
+    },
+    {
+      "id": "route-edge-chengdu-dujiangyan",
+      "type": "route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu–Dujiangyan",
+        "zh": "成都—都江堰",
+        "ko": "청두–두장옌"
+      },
+      "planningRole": "full-day or overnight western branch"
+    },
+    {
+      "id": "route-edge-chengdu-guanghan",
+      "type": "route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu–Guanghan / Sanxingdui",
+        "zh": "成都—广汉／三星堆",
+        "ko": "청두–광한／싼싱두이"
+      },
+      "planningRole": "museum-focused day branch"
+    },
+    {
+      "id": "route-edge-chengdu-leshan",
+      "type": "route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu–Leshan",
+        "zh": "成都—乐山",
+        "ko": "청두–러산"
+      },
+      "planningRole": "day or overnight southern branch"
+    },
+    {
+      "id": "route-edge-chengdu-jiuzhaigou",
+      "type": "route-edge",
+      "status": "proposed",
+      "labels": {
+        "en": "Chengdu–Jiuzhaigou",
+        "zh": "成都—九寨沟",
+        "ko": "청두–주자이거우"
+      },
+      "planningRole": "independent multi-day route with rail or flight plus road transfer"
+    },
+    {
+      "id": "owner-chengdu-panda-choice",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu Panda Base or Panda Valley guide",
+        "zh": "成都熊猫基地与熊猫谷比较 owner",
+        "ko": "청두 판다기지와 판다밸리 비교 owner"
+      },
+      "contentId": "chengdu-panda-base-or-dujiangyan-panda-valley",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "owner-sanxingdui-booking",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Sanxingdui booking and gallery-order guide",
+        "zh": "三星堆预约与展厅顺序 owner",
+        "ko": "싼싱두이 예약과 전시 순서 owner"
+      },
+      "contentId": "sanxingdui-museum-booking-and-gallery-order",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "owner-chengdu-jiuzhaigou",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu–Jiuzhaigou transport guide",
+        "zh": "成都到九寨沟交通 owner",
+        "ko": "청두–주자이거우 교통 owner"
+      },
+      "contentId": "chengdu-jiuzhaigou-transport-route",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "owner-chengdu-greenway",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Chengdu city-ring greenway guide",
+        "zh": "成都环城绿道 owner",
+        "ko": "청두 순환 녹도 owner"
+      },
+      "contentId": "chengdu-greenway-city-ring",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "owner-sichuan-opera",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Sichuan opera first-audience guide",
+        "zh": "川剧初次观演 owner",
+        "ko": "천극 첫 관람 owner"
+      },
+      "contentId": "sichuan-opera-face-changing-with-context",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "owner-beijing-xian-chengdu",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Beijing–Xi'an–Chengdu route-order guide",
+        "zh": "北京—西安—成都顺序 owner",
+        "ko": "베이징–시안–청두 순서 owner"
+      },
+      "contentId": "beijing-xian-chengdu-route-order",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "owner-leshan-land-boat",
+      "type": "content-owner",
+      "status": "existing",
+      "labels": {
+        "en": "Leshan land-or-boat guide",
+        "zh": "乐山大佛游山／游江 owner",
+        "ko": "러산대불 육로／배 owner"
+      },
+      "contentId": "leshan-giant-buddha-land-or-boat-visit",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "action-china-itinerary-review",
+      "type": "planning-action",
+      "status": "existing",
+      "labels": {
+        "en": "China itinerary review and route planning",
+        "zh": "中国旅行路线审核与规划",
+        "ko": "중국 여행 일정 검토 및 동선 설계"
+      },
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "id": "faq-chengdu-nights",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "How many nights in Chengdu?",
+        "zh": "成都需要几晚？",
+        "ko": "청두에는 몇 박이 필요한가?"
+      }
+    },
+    {
+      "id": "faq-chengdu-without-pandas",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Is Chengdu worth it without pandas?",
+        "zh": "不看熊猫，成都是否值得？",
+        "ko": "판다 없이도 청두가 가치 있는가?"
+      }
+    },
+    {
+      "id": "faq-tfu-or-ctu",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "TFU or CTU?",
+        "zh": "TFU 还是 CTU？",
+        "ko": "TFU와 CTU 중 어디인가?"
+      }
+    },
+    {
+      "id": "faq-chunxi-or-tianfu",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Chunxi Road or Tianfu Square?",
+        "zh": "春熙路还是天府广场？",
+        "ko": "춘시루와 톈푸광장 중 어디인가?"
+      }
+    },
+    {
+      "id": "faq-which-panda-base",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Which panda base?",
+        "zh": "哪个熊猫基地？",
+        "ko": "어느 판다기지인가?"
+      }
+    },
+    {
+      "id": "faq-panda-and-city-same-day",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Panda Base and city centre in one day?",
+        "zh": "熊猫基地能否与市区同一天？",
+        "ko": "판다기지와 도심을 같은 날 볼 수 있는가?"
+      }
+    },
+    {
+      "id": "faq-sanxingdui-day-trip",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Is Sanxingdui a day trip?",
+        "zh": "三星堆适合一日游吗？",
+        "ko": "싼싱두이는 당일치기인가?"
+      }
+    },
+    {
+      "id": "faq-leshan-emei-same-day",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "Leshan and Mount Emei in one day?",
+        "zh": "乐山和峨眉山能否同一天？",
+        "ko": "러산과 어메이산을 같은 날 갈 수 있는가?"
+      }
+    },
+    {
+      "id": "faq-chengdu-chongqing-split",
+      "type": "faq-intent",
+      "status": "proposed",
+      "labels": {
+        "en": "How to divide Chengdu and Chongqing?",
+        "zh": "成都和重庆怎样分配？",
+        "ko": "청두와 충칭 시간을 어떻게 나누는가?"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "country-china",
+      "to": "province-sichuan",
+      "relation": "contains",
+      "status": "proposed",
+      "centralReviewRequired": true
+    },
+    {
+      "from": "province-sichuan",
+      "to": "city-chengdu",
+      "relation": "contains",
+      "status": "proposed",
+      "centralReviewRequired": true
+    },
+    {
+      "from": "city-chengdu",
+      "to": "airport-chengdu-tianfu",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "airport-chengdu-shuangliu",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "station-chengdu-east",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "station-chengdu-south",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "station-chengdu-west",
+      "relation": "served-by",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "station-chengdu-central",
+      "relation": "served-by-dynamically",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "stay-chunxi-taikoo",
+      "relation": "offers-stay-area",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "stay-tianfu-square",
+      "relation": "offers-stay-area",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "stay-kuanzhai-peoples-park",
+      "relation": "offers-stay-area",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "stay-chengdu-east",
+      "relation": "offers-stay-area",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-chunxi-taikoo",
+      "to": "cluster-chengdu-daci-east",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-tianfu-square",
+      "to": "cluster-chengdu-tea-west",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-kuanzhai-peoples-park",
+      "to": "cluster-chengdu-tea-west",
+      "relation": "supports",
+      "status": "proposed"
+    },
+    {
+      "from": "stay-chengdu-east",
+      "to": "station-chengdu-east",
+      "relation": "supports-transfer",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-tea-west",
+      "to": "place-peoples-park-chengdu",
+      "relation": "contains",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-tea-west",
+      "to": "place-kuanzhai-alleys",
+      "relation": "contains",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-tea-west",
+      "to": "place-tianfu-square",
+      "relation": "connects",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-daci-east",
+      "to": "place-daci-temple",
+      "relation": "contains",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-daci-east",
+      "to": "place-taikoo-li-chengdu",
+      "relation": "contains",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-wuhou-history",
+      "to": "place-wuhou-shrine",
+      "relation": "contains",
+      "status": "proposed"
+    },
+    {
+      "from": "cluster-chengdu-panda-city",
+      "to": "place-chengdu-panda-base",
+      "relation": "contains",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "cluster-chengdu-tea-west",
+      "relation": "has-city-task",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "cluster-chengdu-daci-east",
+      "relation": "has-city-task",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "cluster-chengdu-wuhou-history",
+      "relation": "has-city-task",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "cluster-chengdu-panda-city",
+      "relation": "has-city-task",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "place-chengdu-ring-greenway",
+      "relation": "has-urban-extension",
+      "status": "existing"
+    },
+    {
+      "from": "city-dujiangyan",
+      "to": "place-panda-valley",
+      "relation": "contains",
+      "status": "existing"
+    },
+    {
+      "from": "city-dujiangyan",
+      "to": "place-dujiangyan-irrigation",
+      "relation": "contains",
+      "status": "existing"
+    },
+    {
+      "from": "city-guanghan",
+      "to": "place-sanxingdui-museum",
+      "relation": "contains",
+      "status": "existing"
+    },
+    {
+      "from": "city-leshan",
+      "to": "place-leshan-giant-buddha",
+      "relation": "contains",
+      "status": "existing"
+    },
+    {
+      "from": "city-leshan",
+      "to": "place-mount-emei",
+      "relation": "regional-connection",
+      "status": "existing",
+      "note": "Mount Emei is not treated as the same attraction or a default same-day combination."
+    },
+    {
+      "from": "city-chengdu",
+      "to": "route-edge-chengdu-chongqing",
+      "relation": "has-route-choice",
+      "status": "proposed"
+    },
+    {
+      "from": "route-edge-chengdu-chongqing",
+      "to": "city-chongqing",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "city-xian",
+      "to": "route-edge-xian-chengdu",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "route-edge-xian-chengdu",
+      "to": "city-chengdu",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "route-edge-chengdu-dujiangyan",
+      "relation": "has-branch",
+      "status": "proposed"
+    },
+    {
+      "from": "route-edge-chengdu-dujiangyan",
+      "to": "city-dujiangyan",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "route-edge-chengdu-guanghan",
+      "relation": "has-branch",
+      "status": "proposed"
+    },
+    {
+      "from": "route-edge-chengdu-guanghan",
+      "to": "city-guanghan",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "route-edge-chengdu-leshan",
+      "relation": "has-branch",
+      "status": "proposed"
+    },
+    {
+      "from": "route-edge-chengdu-leshan",
+      "to": "city-leshan",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "route-edge-chengdu-jiuzhaigou",
+      "relation": "has-independent-multi-day-route",
+      "status": "proposed"
+    },
+    {
+      "from": "route-edge-chengdu-jiuzhaigou",
+      "to": "destination-jiuzhaigou",
+      "relation": "connects-to",
+      "status": "existing"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-chengdu-panda-choice",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-sanxingdui-booking",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-chengdu-jiuzhaigou",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-chengdu-greenway",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-sichuan-opera",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-beijing-xian-chengdu",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "owner-leshan-land-boat",
+      "relation": "connects-to-owner",
+      "status": "proposed",
+      "publicationStatus": "live-in-all-three-locales"
+    },
+    {
+      "from": "place-chengdu-panda-base",
+      "to": "owner-chengdu-panda-choice",
+      "relation": "delegates-execution-detail",
+      "status": "proposed"
+    },
+    {
+      "from": "place-panda-valley",
+      "to": "owner-chengdu-panda-choice",
+      "relation": "delegates-comparison-detail",
+      "status": "proposed"
+    },
+    {
+      "from": "place-sanxingdui-museum",
+      "to": "owner-sanxingdui-booking",
+      "relation": "delegates-booking-and-gallery-detail",
+      "status": "proposed"
+    },
+    {
+      "from": "destination-jiuzhaigou",
+      "to": "owner-chengdu-jiuzhaigou",
+      "relation": "delegates-transport-detail",
+      "status": "proposed"
+    },
+    {
+      "from": "place-chengdu-ring-greenway",
+      "to": "owner-chengdu-greenway",
+      "relation": "delegates-route-detail",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "action-china-itinerary-review",
+      "relation": "offers-planning-action",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-chengdu-nights",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-chengdu-without-pandas",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-tfu-or-ctu",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-chunxi-or-tianfu",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-which-panda-base",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-panda-and-city-same-day",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-sanxingdui-day-trip",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-leshan-emei-same-day",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    },
+    {
+      "from": "city-chengdu",
+      "to": "faq-chengdu-chongqing-split",
+      "relation": "owns-faq-intent",
+      "status": "proposed"
+    }
+  ]
+}

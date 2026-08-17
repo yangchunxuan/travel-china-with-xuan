@@ -10,7 +10,13 @@ const SITE_URL = "https://homegroundchina.com";
  * and hand every execution detail to the narrower canonical guide owners
  * listed in `supportGuideIds`.
  */
-export const destinationHubIds = ["beijing", "shanghai", "xian"] as const;
+export const destinationHubIds = [
+  "beijing",
+  "shanghai",
+  "xian",
+  "chengdu",
+  "guangzhou",
+] as const;
 export type DestinationHubId = (typeof destinationHubIds)[number];
 
 /** A node on the hand-drawn city-geography diagram. Coordinates are 0–1. */
@@ -47,6 +53,12 @@ export interface DestinationHubLocaleEntry {
   readonly heroAlt: string;
   readonly heroCaption: string;
   readonly openGraphLocale: string;
+  /**
+   * Reviewed query terms for the manifest entry. Hubs stay outside the Phase 1
+   * guide search corpus, so these describe the page rather than power a live
+   * index; they must be phrases the page actually answers.
+   */
+  readonly searchTerms?: readonly string[];
   readonly geography: DestinationGeographyCopy;
 }
 
@@ -617,6 +629,365 @@ export const destinationHubRegistry = [
             north: { label: "시안북역", note: "도심 북쪽의 주요 고속철도 허브" },
             xiy: { label: "XIY 공항", note: "북서쪽, 셴양 방향" },
             east: { label: "시안동역", note: "2026년부터 운영되는 동부 허브" },
+          },
+        },
+      },
+    },
+  },
+  {
+    id: "chengdu",
+    entityId: "city-chengdu",
+    heroImagePath: "/images/destinations/chengdu/hero-1600.webp",
+    heroImageUrl:
+      "https://homegroundchina.com/images/destinations/chengdu/hero-1600.webp",
+    imageWidth: 1600,
+    imageHeight: 1000,
+    datePublished: "2026-08-17",
+    dateModified: "2026-08-17",
+    sourceReviewedDate: "2026-08-17",
+    supportGuideIds: [
+      "chengdu-panda-base-or-dujiangyan-panda-valley",
+      "sanxingdui-museum-booking-and-gallery-order",
+      "chengdu-jiuzhaigou-transport-route",
+      "chengdu-greenway-city-ring",
+      "sichuan-opera-face-changing-with-context",
+      "beijing-xian-chengdu-route-order",
+      "china-in-october-golden-week-or-later",
+    ],
+    geometry: [
+      { id: "centre", x: 0.46, y: 0.48, kind: "core" },
+      { id: "panda", x: 0.63, y: 0.28, kind: "cluster" },
+      { id: "wuhou", x: 0.34, y: 0.58, kind: "cluster" },
+      { id: "dujiangyan", x: 0.14, y: 0.2, kind: "outside" },
+      { id: "sanxingdui", x: 0.6, y: 0.08, kind: "outside" },
+      { id: "leshan", x: 0.38, y: 0.9, kind: "outside" },
+      { id: "tfu", x: 0.82, y: 0.68, kind: "gateway" },
+      { id: "ctu", x: 0.26, y: 0.72, kind: "gateway" },
+      { id: "east", x: 0.68, y: 0.48, kind: "gateway" },
+    ],
+    locales: {
+      en: {
+        path: hubPath("chengdu", "en"),
+        title: "Chengdu Travel Guide: Nights, Base, Airports, Sichuan Next",
+        h1: "Chengdu travel guide: settle the city first, then build the Sichuan route",
+        description:
+          "How many complete days Chengdu itself needs, which base protects them, why TFU and CTU are separate decisions, and which Sichuan trips are branches rather than half-days.",
+        navTitle: "Chengdu",
+        summary:
+          "Chengdu does three jobs at once: a slower counterweight to Beijing, Xi'an or Shanghai, the easiest big-city base for a first panda visit, and the gateway to a much larger Sichuan journey. Two or three nights cover the city. Dujiangyan, Sanxingdui, Leshan and Jiuzhaigou are separate branches that need their own days or their own beds, not a longer commute from one downtown hotel.",
+        heroAlt:
+          "Visitors drinking tea in bamboo chairs under a covered pavilion at a traditional tea house in Chengdu's People's Park.",
+        heroCaption:
+          "A People's Park tea house is not a ten-minute photo stop. Sitting long enough to watch the place work is the clearest illustration of how Chengdu spends a day.",
+        openGraphLocale: "en_US",
+        searchTerms: [
+          "how many days in Chengdu",
+          "where to stay in Chengdu first time",
+          "Tianfu or Shuangliu airport",
+          "Chengdu to Dujiangyan day trip",
+          "Chengdu Sichuan itinerary",
+        ],
+        geography: {
+          title: "Chengdu, and the Sichuan trips that only start there",
+          caption:
+            "Orientation diagram, not to scale. Distance from the centre is what decides whether something is a Chengdu day or a separate journey.",
+          legend: {
+            core: "Central anchor",
+            cluster: "Own block of time",
+            outside: "Separate day or its own bed",
+            gateway: "Airport or rail gateway",
+          },
+          nodes: {
+            centre: {
+              label: "People's Park · Tianfu Square",
+              note: "Tea houses, museums, central walking",
+            },
+            panda: {
+              label: "Chengdu Panda Base",
+              note: "City-edge morning plus its transport block",
+            },
+            wuhou: {
+              label: "Wuhou Shrine · Jinli",
+              note: "Historical narrative and its commercial frame",
+            },
+            dujiangyan: {
+              label: "Dujiangyan · Panda Valley",
+              note: "A separate city west of Chengdu; full day",
+            },
+            sanxingdui: {
+              label: "Sanxingdui, Guanghan",
+              note: "Another city north-east; timed reservation",
+            },
+            leshan: {
+              label: "Leshan",
+              note: "A city to the south; never a half-day",
+            },
+            tfu: { label: "TFU Tianfu Airport", note: "Far south-east; long transfer" },
+            ctu: { label: "CTU Shuangliu Airport", note: "South-west; closer in" },
+            east: { label: "Chengdu East", note: "Main high-speed gateway" },
+          },
+        },
+      },
+      zh: {
+        path: hubPath("chengdu", "zh"),
+        title: "成都旅行指南：住几晚、住哪里、机场与四川下一站",
+        h1: "成都旅行指南：先把城市住稳，再搭四川路线",
+        description:
+          "成都本身需要几个完整日、哪个基地能保住这些日子、天府与双流为什么是两个独立决定，以及哪些四川行程是独立支线而不是半天。",
+        navTitle: "成都",
+        summary:
+          "成都同时承担三件事：北京、西安、上海之后的慢节奏对照，第一次看熊猫最省事的大城市基地，以及整段四川行程的门户。城市本身两到三晚够用；都江堰、三星堆、乐山和九寨沟是各自独立的支线，需要自己的一天或自己的床位，而不是从市中心酒店反复长途通勤。",
+        heroAlt: "成都人民公园传统茶馆的廊下，游客坐在竹椅上喝盖碗茶。",
+        heroCaption:
+          "人民公园的茶馆不是十分钟拍照点。坐得够久、看清这个地方怎么运转，才最能说明成都的一天该怎么花。",
+        openGraphLocale: "zh_CN",
+        searchTerms: [
+          "成都要玩几天",
+          "第一次去成都住哪里",
+          "天府机场还是双流机场",
+          "成都到都江堰一日游",
+          "成都四川行程怎么排",
+        ],
+        geography: {
+          title: "成都，以及那些只是从成都出发的四川行程",
+          caption: "方位示意图，非按比例。离市中心多远，决定了它是成都的一天，还是一段独立行程。",
+          legend: {
+            core: "城市中心锚点",
+            cluster: "需要独立时段",
+            outside: "需要独立一天或自己的住宿",
+            gateway: "机场或铁路门户",
+          },
+          nodes: {
+            centre: { label: "人民公园 · 天府广场", note: "茶馆、博物馆与中心步行" },
+            panda: { label: "成都大熊猫繁育研究基地", note: "城市边缘的上午，加上往返时段" },
+            wuhou: { label: "武侯祠 · 锦里", note: "历史叙事及其商业外壳" },
+            dujiangyan: { label: "都江堰 · 熊猫谷", note: "成都以西的另一座城市；整天" },
+            sanxingdui: { label: "广汉三星堆", note: "东北方向另一座城市；需分时预约" },
+            leshan: { label: "乐山", note: "南面的另一座城市；从来不是半天" },
+            tfu: { label: "天府机场 TFU", note: "东南远端；接驳时间长" },
+            ctu: { label: "双流机场 CTU", note: "西南方向；离城更近" },
+            east: { label: "成都东站", note: "主要高铁门户" },
+          },
+        },
+      },
+      ko: {
+        path: hubPath("chengdu", "ko"),
+        title: "청두 여행 가이드: 숙박 일수·거점·공항·쓰촨 다음 코스",
+        h1: "청두 여행 가이드: 도시를 먼저 정하고 쓰촨 동선을 붙이세요",
+        description:
+          "청두 자체에 온전한 며칠이 필요한지, 어느 거점이 그 시간을 지켜 주는지, TFU와 CTU가 왜 별개의 결정인지, 어떤 쓰촨 일정이 반나절이 아니라 독립된 갈래인지 정리합니다.",
+        navTitle: "청두",
+        summary:
+          "청두는 세 가지 역할을 동시에 합니다. 베이징·시안·상하이 뒤의 느린 대비, 첫 판다 방문에 가장 수월한 대도시 거점, 그리고 훨씬 큰 쓰촨 여정의 관문입니다. 도시 자체는 2~3박이면 충분하고, 두장옌·싼싱두이·러산·주자이거우는 각자의 하루나 각자의 잠자리를 요구하는 별개의 갈래입니다.",
+        heroAlt:
+          "청두 인민공원의 전통 찻집 정자 아래에서 대나무 의자에 앉아 차를 마시는 사람들.",
+        heroCaption:
+          "인민공원 찻집은 10분짜리 사진 명소가 아닙니다. 그곳이 돌아가는 모습을 볼 만큼 앉아 있는 것이 청두의 하루를 가장 잘 설명합니다.",
+        openGraphLocale: "ko_KR",
+        searchTerms: [
+          "청두 며칠",
+          "청두 첫 여행 숙소",
+          "톈푸공항 솽류공항 차이",
+          "청두 두장옌 당일치기",
+          "청두 쓰촨 일정",
+        ],
+        geography: {
+          title: "청두, 그리고 청두에서 출발할 뿐인 쓰촨 일정들",
+          caption:
+            "축척이 아닌 방위 개념도입니다. 도심에서 얼마나 떨어져 있는지가 그것이 청두의 하루인지 별개의 여정인지를 결정합니다.",
+          legend: {
+            core: "도심 중심축",
+            cluster: "별도 시간대 필요",
+            outside: "독립된 하루 또는 별도 숙박",
+            gateway: "공항 또는 철도 관문",
+          },
+          nodes: {
+            centre: { label: "인민공원 · 톈푸광장", note: "찻집, 박물관, 도심 보행" },
+            panda: { label: "청두 자이언트판다 기지", note: "도시 외곽의 오전과 이동 시간" },
+            wuhou: { label: "우허우츠 · 진리", note: "역사 서사와 그 상업적 외피" },
+            dujiangyan: { label: "두장옌 · 판다밸리", note: "청두 서쪽의 다른 도시; 하루" },
+            sanxingdui: { label: "광한 싼싱두이", note: "북동쪽 다른 도시; 시간대 예약" },
+            leshan: { label: "러산", note: "남쪽의 다른 도시; 반나절이 될 수 없음" },
+            tfu: { label: "TFU 톈푸공항", note: "남동쪽 끝; 이동이 긺" },
+            ctu: { label: "CTU 솽류공항", note: "남서쪽; 도심에 더 가까움" },
+            east: { label: "청두동역", note: "주요 고속철도 관문" },
+          },
+        },
+      },
+    },
+  },
+  {
+    id: "guangzhou",
+    entityId: "city-guangzhou",
+    heroImagePath: "/images/destinations/guangzhou/hero-1600.webp",
+    heroImageUrl:
+      "https://homegroundchina.com/images/destinations/guangzhou/hero-1600.webp",
+    imageWidth: 1600,
+    imageHeight: 1000,
+    datePublished: "2026-08-17",
+    dateModified: "2026-08-17",
+    sourceReviewedDate: "2026-08-17",
+    supportGuideIds: [
+      "guangzhou-baiyun-airport-t2-t3",
+      "guangzhou-hong-kong-transport-route",
+      "guangzhou-macau-transport-route",
+      "guangzhou-shenzhen-hong-kong-route-order",
+      "how-guangzhou-morning-tea-works",
+      "when-metro-construction-meets-archaeology",
+    ],
+    geometry: [
+      { id: "liwan", x: 0.3, y: 0.48, kind: "core" },
+      { id: "yuexiu", x: 0.44, y: 0.46, kind: "cluster" },
+      { id: "tianhe", x: 0.62, y: 0.44, kind: "cluster" },
+      { id: "pazhou", x: 0.64, y: 0.6, kind: "cluster" },
+      { id: "panyu", x: 0.55, y: 0.86, kind: "outside" },
+      { id: "baiyun", x: 0.42, y: 0.08, kind: "gateway" },
+      { id: "gzstation", x: 0.38, y: 0.3, kind: "gateway" },
+      { id: "east", x: 0.66, y: 0.3, kind: "gateway" },
+      { id: "south", x: 0.46, y: 0.72, kind: "gateway" },
+    ],
+    locales: {
+      en: {
+        path: hubPath("guangzhou", "en"),
+        title: "Guangzhou Travel Guide: Nights, Base, Terminal, Station",
+        h1: "Guangzhou travel guide: decide whether the city gets nights, then pick the terminal and the station",
+        description:
+          "Whether Guangzhou deserves its own nights, which district to base in, how Baiyun's terminals and five railway stations change the plan, and what Foshan, Shunde or Chimelong really cost.",
+        navTitle: "Guangzhou",
+        summary:
+          "Guangzhou is an international arrival city, the centre of Lingnan urban culture, and a rail hinge for the Pearl River Delta. Two nights buy one strong old-city day; three let Liwan and the new Pearl River axis coexist. The airport terminal, the railway station and the hotel district have to be chosen as one chain, because none of those names is interchangeable.",
+        heroAlt:
+          "The front hall of the Chen Clan Ancestral Hall in Guangzhou, with carved ridge sculpture along the roofline.",
+        heroCaption:
+          "Lingnan craft reads at roof level. The Chen Clan Ancestral Hall is a focused architecture visit, not a wing of a larger old-town circuit.",
+        openGraphLocale: "en_US",
+        searchTerms: [
+          "how many nights in Guangzhou",
+          "where to stay in Guangzhou first time",
+          "Baiyun airport terminal T2 or T3",
+          "which Guangzhou railway station",
+          "Guangzhou to Hong Kong or Macao",
+        ],
+        geography: {
+          title: "Guangzhou as an old west, a new east and four separate gateways",
+          caption:
+            "Orientation diagram, not to scale. The gateways sit on different sides of the city, which is why the hotel cannot be chosen before the ticket.",
+          legend: {
+            core: "Central anchor",
+            cluster: "Own block of time",
+            outside: "Separate full day",
+            gateway: "Airport or rail gateway",
+          },
+          nodes: {
+            liwan: {
+              label: "Liwan · Shamian",
+              note: "Lingnan old city, lanes, a slower evening",
+            },
+            yuexiu: {
+              label: "Beijing Road · Yuexiu",
+              note: "Civic history, museums, visible road layers",
+            },
+            tianhe: {
+              label: "Tianhe · Zhujiang New Town",
+              note: "The contemporary central axis",
+            },
+            pazhou: {
+              label: "Pazhou",
+              note: "Exhibition district; a fair changes prices and crowds",
+            },
+            panyu: {
+              label: "Chimelong, Panyu",
+              note: "A southern family zone; its own full day",
+            },
+            baiyun: { label: "Baiyun Airport", note: "Far north; T2 and T3 differ" },
+            gzstation: { label: "Guangzhou Station", note: "Central-north; high-speed since Jan 2026" },
+            east: { label: "Guangzhou East", note: "Tianhe side; strong city access" },
+            south: { label: "Guangzhou South", note: "Panyu; large and not downtown" },
+          },
+        },
+      },
+      zh: {
+        path: hubPath("guangzhou", "zh"),
+        title: "广州旅行指南：住不住、住哪里、哪个航站楼、哪个车站",
+        h1: "广州旅行指南：住几晚、住哪个区、走哪个门户",
+        description:
+          "广州值不值得单独住几晚、以哪个城区为基地、白云机场航站楼与五个火车站怎样改变计划，以及佛山、顺德和长隆真正要花多少时间。",
+        navTitle: "广州",
+        summary:
+          "广州同时是国际到达城市、岭南城市文化的中心，以及珠三角的铁路枢纽。住两晚能换来一个扎实的老城日；三晚才能让荔湾和珠江新城这条新轴线同时成立。航站楼、火车站和住宿区必须当成一条链一起选，因为这几个名字没有一个是可以互换的。",
+        heroAlt: "广州陈家祠前殿，屋脊上是成排的灰塑与陶塑装饰。",
+        heroCaption:
+          "岭南工艺要抬头看屋脊。陈家祠是一次集中的建筑参观，不是某条老城线路顺路的一站。",
+        openGraphLocale: "zh_CN",
+        searchTerms: [
+          "广州要住几晚",
+          "第一次去广州住哪个区",
+          "白云机场 T2 还是 T3",
+          "广州哪个火车站",
+          "广州去香港澳门怎么走",
+        ],
+        geography: {
+          title: "广州：西边的老城、东边的新轴线，和四个分散的门户",
+          caption: "方位示意图，非按比例。门户分布在城市不同侧，这就是酒店不能先于车票决定的原因。",
+          legend: {
+            core: "城市中心锚点",
+            cluster: "需要独立时段",
+            outside: "需要独立整天",
+            gateway: "机场或铁路门户",
+          },
+          nodes: {
+            liwan: { label: "荔湾 · 沙面", note: "岭南老城、街巷与更慢的晚上" },
+            yuexiu: { label: "北京路 · 越秀", note: "城市史、博物馆与可见的路面层" },
+            tianhe: { label: "天河 · 珠江新城", note: "当代中央轴线" },
+            pazhou: { label: "琶洲", note: "会展片区；展会会改变房价与人流" },
+            panyu: { label: "番禺长隆", note: "南部亲子片区；需要独立一天" },
+            baiyun: { label: "白云机场", note: "城北远端；T2 与 T3 不同" },
+            gzstation: { label: "广州站", note: "城中偏北；2026 年 1 月起转高铁" },
+            east: { label: "广州东站", note: "天河一侧；进城方便" },
+            south: { label: "广州南站", note: "在番禺；很大且不在市区" },
+          },
+        },
+      },
+      ko: {
+        path: hubPath("guangzhou", "ko"),
+        title: "광저우 여행 가이드: 숙박 여부·지역·터미널·기차역",
+        h1: "광저우 여행 가이드: 묵을지부터 정하고 터미널과 역을 고르세요",
+        description:
+          "광저우에 따로 묵을 가치가 있는지, 어느 지역을 거점으로 삼을지, 바이윈공항 터미널과 다섯 기차역이 계획을 어떻게 바꾸는지, 포산·순더·침롱이 실제로 얼마를 쓰는지 정리합니다.",
+        navTitle: "광저우",
+        summary:
+          "광저우는 국제선 도착 도시이자 링난 도시 문화의 중심이며 주장 삼각주의 철도 결절점입니다. 2박이면 탄탄한 옛 도심 하루를, 3박이면 리완과 주장신청 축을 함께 담을 수 있습니다. 터미널과 기차역, 숙소 지역은 하나의 사슬로 함께 골라야 합니다. 그 이름들 중 서로 바꿔 쓸 수 있는 것은 하나도 없습니다.",
+        heroAlt: "광저우 천가사 앞 전각과 지붕마루를 따라 늘어선 조소 장식.",
+        heroCaption:
+          "링난 공예는 지붕마루에서 읽힙니다. 천가사는 옛 도심 코스에 곁들이는 곳이 아니라 집중해서 보는 건축 방문입니다.",
+        openGraphLocale: "ko_KR",
+        searchTerms: [
+          "광저우 몇 박",
+          "광저우 첫 여행 숙소 지역",
+          "바이윈공항 T2 T3",
+          "광저우 어느 기차역",
+          "광저우 홍콩 마카오 이동",
+        ],
+        geography: {
+          title: "서쪽의 옛 도심, 동쪽의 새 축, 그리고 흩어진 네 관문",
+          caption:
+            "축척이 아닌 방위 개념도입니다. 관문이 도시의 서로 다른 방향에 있어서 티켓보다 숙소를 먼저 정할 수 없습니다.",
+          legend: {
+            core: "도심 중심축",
+            cluster: "별도 시간대 필요",
+            outside: "독립된 하루 필요",
+            gateway: "공항 또는 철도 관문",
+          },
+          nodes: {
+            liwan: { label: "리완 · 사몐", note: "링난 옛 도심, 골목, 느린 저녁" },
+            yuexiu: { label: "베이징루 · 웨슈", note: "도시사, 박물관, 드러난 옛 노면" },
+            tianhe: { label: "톈허 · 주장신청", note: "현대의 중앙축" },
+            pazhou: { label: "파저우", note: "전시 구역; 박람회가 가격과 혼잡을 바꿈" },
+            panyu: { label: "판위 침롱", note: "남부 가족 구역; 독립된 하루" },
+            baiyun: { label: "바이윈공항", note: "도시 북쪽 끝; T2와 T3가 다름" },
+            gzstation: { label: "광저우역", note: "도심 북쪽; 2026년 1월부터 고속철도" },
+            east: { label: "광저우동역", note: "톈허 쪽; 도심 접근 좋음" },
+            south: { label: "광저우남역", note: "판위 소재; 크고 도심이 아님" },
           },
         },
       },

@@ -137,5 +137,25 @@
         "updatedAt": "2026-08-10"
       }
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-guangzhou",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Guangzhou" },
+        "zh-Hans": { "name": "广州" },
+        "ko": { "name": "광저우" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-17",
+        "updatedAt": "2026-08-17"
+      }
+    }
   }
 ]

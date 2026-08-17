@@ -21,7 +21,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"guide-heading",type:"heading",level:2,text:"什么时候讲解确实值得"},
  {id:"guide",type:"paragraph",text:"当旅客重视考古背景、希望分开证据与流行神话，或孩子需要适龄说明时，合格讲解员或官方语音资源很有价值。如果服务只是带队赶大型文物，价值就小得多。确认语言、时长、集合点、取消规则与授权身份；除非官方规则明确支持，不要相信讲解员拥有独立票源。"},
  {id:"final-check",type:"list",items:["所有护照姓名、号码与原件一致。","最新官方公告确认开放时间与入馆时段。","成都出发方案写明准确车站或上车点。","返程时间包含本地接驳与出馆缓冲。","全组只有一个主叙事重点，并允许时间变化时跳过次要展厅。"]},
- {id:"internal-links",type:"internal-links",title:"把三星堆接入四川行程",items:[
+ {id:"internal-links",type:"internal-links",title:"把三星堆接入四川行程",items:[ { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "先决定城市住几天、以哪里为基地，以及哪些四川行程是独立支线。" },
   {label:"成都大熊猫基地还是都江堰熊猫谷",href:"/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"把熊猫点选择留在独立一天，不要强行与三星堆打包赶路。"},
   {label:"成都到九寨沟交通链",href:"/zh/guides/chengdu-jiuzhaigou-transport-route/",description:"按准确车站和最后一段接驳规划下一段四川转移。"},
   {label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"把三星堆的讲解价值与整段中国行是否需要支持分开。"},

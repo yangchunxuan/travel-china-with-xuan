@@ -453,7 +453,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "继续规划完整的中转日",
-      items: [
+      items: [ { label: "广州城市总览", href: "/zh/destinations/guangzhou/", description: "先决定要不要住，再把航站楼、车站和住宿区当成一条链一起选。" },
         {
           label: "核对过境路线是否真的符合规定",
           href: "/zh/guides/china-240-hour-visa-free-transit-route-check/",

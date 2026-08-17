@@ -63,7 +63,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "dynamic-boundary", type: "callout", tone: "warning", title: "국경 정보는 바뀝니다", body: "출입경 통제소 운영시간, 교통, 발권과 입국 요건은 변합니다. 여행 직전에 홍콩·중국 본토 담당 기관과 해당 운영기관을 확인하세요. 이 동선 가이드는 비자·입국 자격을 판단하지 않습니다." },
   { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 세 도시 순서와 선전 숙박 여부만 다룹니다. 광저우–홍콩 및 선전–홍콩 가이드는 정확한 수단, 역과 출입경 통제소 이용 절차를 담당합니다." },
   { id: "help-cta", type: "callout", tone: "decision", title: "국경 민감 동선을 확인할까요?", body: "항공 관문, 여권 국적, 숙소 지역, 짐과 도시별 우선순위 하나를 알려 주세요. 여권 번호나 여행 서류 이미지는 보내지 마세요." },
-  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+  { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [ { label: "광저우 도시 허브", href: "/ko/destinations/guangzhou/", description: "묵을지 먼저 정하고 터미널과 역, 거점을 하나의 사슬로 함께 고르세요." },
     { label: "광저우–홍콩 교통 비교", href: "/ko/guides/guangzhou-hong-kong-transport-route/", description: "도시 순서 뒤 역과 수단을 고르세요." },
     { label: "선전–홍콩 출입경 지점 선택", href: "/ko/guides/shenzhen-hong-kong-transport-route/", description: "양쪽 숙소와 이후 계획에 맞추세요." },
     { label: "오픈조 항공편 시험", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "서로 다른 도착·출국 도시가 되돌아가기를 없애는지 보세요." },

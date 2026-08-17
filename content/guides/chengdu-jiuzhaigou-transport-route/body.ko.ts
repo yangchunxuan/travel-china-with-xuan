@@ -39,7 +39,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "facts", type: "callout", title: "동적 교통 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "주자이거우의 2026년 7월 공지는 황룽주자이역 환승을 주뤼웨싱에서 미리 예약하도록 안내하며, 열차 도착에 맞춰 연결되고 관광지 입구까지 약 2시간 걸린다고 설명한다. 쑹판은 같은 채널에 해당 날짜 연결편이 있을 때만 대안이 된다. 공식 도착 안내에 따르면 주황공항은 계곡 입구에서 약 88km 떨어져 있어 항공편을 이용해도 도로 이동이 남는다. 쓰촨항공의 현재 시간표에는 청두–주자이거우 항공편이 일부 요일에만 표시되므로 실제 예약 화면에서 날짜와 청두 출발 공항을 다시 확인해야 한다." },
   { id: "help", type: "callout", title: "철도와 도로 연결을 확인할까요?", tone: "decision", body: "날짜, 청두 숙소, 주자이거우 숙소, 인원, 짐과 고정 항공편을 보내 주세요. Homeground는 연결과 보수적 여유를 표시할 수 있으며 실시간 운행은 운영사가 결정합니다." },
-  { id: "links", type: "internal-links", title: "계속 계획하기", items: [
+  { id: "links", type: "internal-links", title: "계속 계획하기", items: [ { label: "청두 도시 허브", href: "/ko/destinations/chengdu/", description: "도시에 며칠을 줄지, 어디를 거점으로 삼을지, 어떤 쓰촨 일정이 별개 갈래인지 먼저 정하세요." },
     { label: "중국 고속철도 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "정확한 역 조합을 고른 뒤 이용합니다." },
     { label: "야간열차 또는 주간 고속철도", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "시간보다 일정 모양을 비교합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "산악 환승에 실제 여유를 둡니다." },
