@@ -1157,3 +1157,15 @@ so the same file is not revisited.
 The CC BY-SA derivatives carry the share-alike duty; all three Wikimedia
 derivatives keep named attribution, source and licence links plus a disclosure
 of the crop and format change in the article's Sources section.
+
+## Chongqing railway-station selector (August 17, 2026)
+
+This article uses one real, location-identified Wikimedia Commons photograph
+and **0 AI-generated or AI-assisted images**. The derivative was made through
+conventional crop, resize and WebP conversion only; no scene element was
+generated, removed or composited. Repository source and hero inventories were
+checked before assignment, and this photograph is not used by another guide.
+
+| Page and role | Original source, place, creator and rights | Source SHA-256 | Published derivative and final SHA-256 | Crop and evidence boundary |
+| --- | --- | --- | --- | --- |
+| `chongqing-railway-station-selector` hero | [September 2025 at Chongqing East Railway Station 02.jpg](https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg), Chongqing East Railway Station, Nan'an District, Chongqing (29.488573, 106.665398); Renek78; 2025-09-06; [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `07cffcc0d9c5e4a08ecac6cc62d4741a27d602a35e4437f496bb7d6343a1d845` (4000 × 2252 source JPEG) | `public/images/guides/chongqing-railway-station-selector/hero-1600.webp`; 1600 × 1000; `c3ea949548065c2edcd5fae318a7cd6f36ac4a8a391904937c3deabc66e0425f` | Source box x=160, y=1, 3600 × 2250, resized at quality 84 with metadata stripped. The real station name and multi-level road approach identify Chongqing East only. The image does not make East the default station or establish current trains, entrance operation, road access, crowding or step-free travel. |

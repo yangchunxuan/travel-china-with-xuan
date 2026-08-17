@@ -1,0 +1,261 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "decision-lead",
+      type: "lead",
+      text: "If your ticket is issued, both stations are fixed: go to the exact departure station printed on it and arrange arrival pickup from the exact destination station. If you have not booked, compare trains that actually run on your date, the hotel-door-to-platform journey in Chongqing and the platform-to-hotel journey on arrival. This guide compares four principal urban hubs—Chongqing North, West, East and Shapingba—not every passenger stop across the municipality.",
+    },
+    {
+      id: "quick-answer",
+      type: "callout",
+      title: "Arrival and departure follow the same rule",
+      tone: "decision",
+      body: "Before booking, search the route and date first, then compare both city-side transfers using hotel area, time of day, luggage, walking tolerance and vertical handoffs. After booking, the complete Chinese origin and destination names on the ticket overrule every shortcut in this page. A closer station with no suitable train is not useful; a different station printed on your ticket still controls even if it is outside this four-hub comparison.",
+    },
+    {
+      id: "scope-boundary",
+      type: "callout",
+      title: "What this page does — and does not — decide",
+      tone: "neutral",
+      body: "This is a choice and wrong-station recovery guide for four principal urban railway hubs. It does not cover every station in the very large Chongqing municipality, airport transfers, buying on 12306, passports, seat classes, security, boarding, fares or a permanent timetable. If an issued ticket names another station, follow that exact ticket and verify its access separately. Use the linked guides for the national railway process, Chongqing hotel areas and upper and lower street levels.",
+    },
+    {
+      id: "ticket-check",
+      type: "list",
+      ordered: true,
+      items: [
+        "Read the origin station, destination station, train number, date, departure time and ticket status together; a saved search is not an issued ticket.",
+        "Match the relevant Chinese name character for character: 重庆北, 重庆西, 重庆东 or 沙坪坝. Do not navigate to a pin labelled only ‘Chongqing railway station’.",
+        "Open the railway facility, not a similarly named metro stop, bus station, district or shopping centre.",
+        "Only after the station is settled should you choose the current passenger entrance for departure or the correct pickup exit and level on arrival.",
+      ],
+    },
+    {
+      id: "station-name-warning",
+      type: "callout",
+      title: "‘Chongqing Station’ is a specific place, not a generic label",
+      tone: "warning",
+      body: "重庆站 means Chongqing Station at Caiyuanba. It stopped passenger service in 2022 and was still under reconstruction in the official July 2026 update, so it is not one of the four current choices below. An old map, blog or driver using ‘Chongqing Station’ should trigger a fresh check. 重庆汽车站 is a bus station and is not your railway terminal.",
+    },
+    {
+      id: "matrix-heading",
+      type: "heading",
+      level: 2,
+      text: "Four principal urban hubs compared",
+    },
+    {
+      id: "station-matrix",
+      type: "table",
+      caption: "Four principal urban hubs, checked 17 August 2026; route patterns are clues, never substitutes for the live ticket",
+      columns: ["Ticket name", "When it enters the shortlist", "City-side access to test", "Mistake to prevent"],
+      rows: [
+        [
+          "Chongqing North / 重庆北",
+          "Current 2026 official examples include Xi’an and regional services, while other trains have been reassigned between North and West. Include it when the live search offers a useful train, not because a destination name guarantees North.",
+          "Longtousi/Yubei side. North Square metro serves Lines 4 and 10; South Square serves Lines 3, 10 and the Loop Line. Your hotel approach and drop-off side change the internal walk.",
+          "Do not turn ‘northbound’ into a rule. Also do not confuse the two metro square names with two different railway stations.",
+        ],
+        [
+          "Chongqing West / 重庆西",
+          "Current 2026 official examples span Guiyang, Guangzhou, regional and long-distance conventional services, while some routes move between West and North. It often enters a south or southwest search, but direction never settles the station.",
+          "Shangqiao on the western/southwestern side of the urban area. Lines 5 and Loop connect; taxi, ride-hail and metro functions occupy different levels in a large complex.",
+          "Do not assume every train to Guangzhou, Guiyang, Chengdu or another western/southern city uses West.",
+        ],
+        [
+          "Chongqing East / 重庆东",
+          "Especially relevant to the Chongqing East–Qianjiang section and current Wulong, Qianjiang, Zhangjiajie and Changsha patterns; through trains also reach other national corridors.",
+          "Southeast of Chayuan in Nan’an. The current urban-rail connection uses the Line 6 East section, followed by a same-platform transfer into the established Line 6 network.",
+          "Do not replace an East ticket with North or West because an older guide omits this 2025-opened station. Lines 24 and 27 were still under construction at review.",
+        ],
+        [
+          "Shapingba / 沙坪坝",
+          "A smaller but real passenger station, most naturally considered when a suitable Chengdu–Chongqing high-speed or regional train is offered on your date.",
+          "Inside Shapingba’s core commercial area, with internal access to Lines 1, 9 and Loop. It can remove a long city transfer for a Shapingba stay.",
+          "Do not assume every Chengdu train stops here. Its convenient city location does not compensate for a train that is unavailable or poorly timed.",
+        ],
+      ],
+    },
+    {
+      id: "direction-boundary",
+      type: "callout",
+      title: "Direction is a filter, not a promise",
+      tone: "warning",
+      body: "The July 2026 railway adjustment moved some services between Chongqing North and West and showed East and North handling different ends of the same regional pattern. That is why this page does not publish a permanent route list. Search the exact date in the official 12306 channel and let the issued ticket overrule every shortcut in this table.",
+    },
+    {
+      id: "choice-heading",
+      type: "heading",
+      level: 2,
+      text: "Choose the train and the city transfer together",
+    },
+    {
+      id: "choice-table",
+      type: "table",
+      caption: "Use the station location only after a workable railway option exists",
+      columns: ["Situation", "Decision", "What to verify"],
+      rows: [
+        ["One issued ticket", "The origin and destination stations are fixed; solve departure access and arrival pickup instead of shopping for a ‘better’ terminal.", "Exact Chinese station names, entrance or square, current urban route and a normal station-entry margin"],
+        ["Several workable trains", "Compare hotel door to platform and platform to hotel, not railway time alone.", "Each hotel’s real entrance and street level, transfers, internal walking, train time and arrival-side handoff"],
+        ["Early departure or late arrival", "Use rail transit only if the entire chain operates at the required time; keep a legal road-transfer fallback.", "Current first/last service, transfer closure times, signed drop-off or pickup zone and hotel reception"],
+        ["Large bags, children, older parents or slower walking", "Prefer fewer handoffs and clearer vertical movement, even if the map distance is slightly longer.", "Lifts on the whole route, stairs, long concourses, toilets, group meeting point and vehicle capacity"],
+        ["Only one realistic train", "Accept its station or reconsider the schedule or transport mode; another Chongqing station cannot take the same ticket.", "Change/refund conditions, remaining inventory and the cost of moving the rest of the itinerary"],
+      ],
+    },
+    {
+      id: "door-to-door-check",
+      type: "list",
+      ordered: true,
+      items: [
+        "Pin the hotel’s actual pedestrian entrance and its vehicle-accessible lobby; in Chongqing these may sit on different street levels.",
+        "Build the current metro or road route to the exact railway station, including every interchange rather than only the line names.",
+        "Identify the railway entrance, North Station square if relevant, or the signed taxi/ride-hail drop-off level before leaving the hotel.",
+        "Add ordinary time for security, finding the waiting area and walking inside the station; a car’s arrival at the complex is not arrival at the platform.",
+        "Plan the destination-side pickup separately, then reverse the same checks when Chongqing is the arrival city. A fast train does not solve a late hotel check-in or an unprotected onward transfer.",
+      ],
+    },
+    {
+      id: "terrain-boundary",
+      type: "callout",
+      title: "A short map distance can still be a hard luggage route",
+      tone: "warning",
+      body: "Chongqing’s roads, podiums, station concourses and hotel lobbies can occupy different levels. Check the route as an end-to-end chain of entrances, lifts, escalators and open passages; one step-free metro station does not prove the whole journey is step-free. The separate vertical-city guide explains how to read these levels without turning this station page into a walking guide.",
+    },
+    {
+      id: "scenarios",
+      type: "comparison",
+      title: "Three decisions in practice",
+      columns: [
+        {
+          heading: "Jiefangbei, ticket says 重庆西",
+          items: [
+            "West is no longer optional",
+            "Pin the correct station drop-off and the hotel’s road-level lobby",
+            "With two large cases, compare a direct car with the complete metro chain, not a partial map route",
+          ],
+        },
+        {
+          heading: "Shapingba stay, two Chengdu options",
+          items: [
+            "Test the Shapingba departure only if it is live for the date",
+            "Compare its compact city transfer with the other train’s full chain",
+            "If the chosen ticket says North or West, go there; do not force Shapingba for convenience",
+          ],
+        },
+        {
+          heading: "Family in Chayuan, train to Zhangjiajie",
+          items: [
+            "East is the first station to test, not a guaranteed answer",
+            "Confirm the exact dated train and the same-platform transfer from the Line 6 East section into established Line 6",
+            "For a very early or late journey, verify the current operating chain and keep a road fallback",
+          ],
+        },
+      ],
+    },
+    {
+      id: "wrong-station-heading",
+      type: "heading",
+      level: 2,
+      text: "If you go to the wrong station, recover in this order",
+    },
+    {
+      id: "wrong-station-recovery",
+      type: "list",
+      ordered: true,
+      items: [
+        "Stop. Recheck the Chinese departure station, train, date, time and whether the ticket is issued. Do not keep moving on a guess.",
+        "Work out whether this is the correct railway station but the wrong entrance or level, or a genuinely different station. Ask uniformed station staff if the signage is unclear.",
+        "If the original ticket is valid, compare the live arrival time at the correct entrance plus a normal station-entry margin. When that is clearly safe, keep the ticket and go; do not spend the remaining window on an unnecessary change.",
+        "If the transfer is not clearly safe, handle the ticket before crossing the city. For a ticket just bought through a registered account on an official 12306 channel, the order page may offer a fee-free mistaken-purchase refund within 30 minutes of payment and at least 4 hours before departure for qualifying electronic or points payment. It is limited to one order per account per calendar day, has excluded order types, and does not cover a third-party seller’s booking path.",
+        "If that option is unavailable, check current change/refund choices or ask staff. A change depends on inventory and current rules; another Chongqing station cannot simply honour the original departure station.",
+        "Only with a valid plan and enough margin should you use the live metro or legal taxi/ride-hail route to the correct station. Keep passports, luggage and the group together.",
+        "If departure is close, the app gives no workable option or the train has left, go to the service desk or contact 12306 immediately. Do not promise yourself a universal refund or after-departure rescue.",
+      ],
+    },
+    {
+      id: "north-square-callout",
+      type: "callout",
+      title: "At Chongqing North, the wrong square is not the wrong railway station",
+      tone: "neutral",
+      body: "The railway station’s north and south sides have been internally connected since the 2021 upgrade, so passengers no longer have separate railway departure stations. The metro still uses the names 重庆北站北广场 and 重庆北站南广场. Stay within the complex and follow current signs or staff directions instead of starting a cross-city recovery.",
+    },
+    {
+      id: "final-check",
+      type: "list",
+      ordered: false,
+      items: [
+        "Issued ticket: exact Chinese origin and destination stations, train, date and departure time",
+        "Hotel: correct branch, address, entrance, street level and reception hours",
+        "Station access: current metro stop or signed vehicle drop-off side and level",
+        "Timing: current first/last urban connection plus a realistic inside-station margin",
+        "Group: luggage, children, slower walker, lift dependence and one meeting point",
+        "Recovery threshold: the time at which you stop trying to cross town and ask railway staff for a ticket solution",
+      ],
+    },
+    {
+      id: "dynamic-boundary",
+      type: "table",
+      caption: "What stays useful and what must be checked again",
+      columns: ["Status", "Information", "Action"],
+      rows: [
+        ["Durable logic", "The issued station name controls; Chongqing stations are not interchangeable; compare door to platform; terrain changes the last mile.", "Use these rules for every journey."],
+        ["Reviewed 17 August 2026", "The four principal hubs all had current official passenger evidence; Chongqing Station remained under reconstruction; East connected by same-platform transfer from the Line 6 East section into established Line 6.", "Treat this as a dated baseline, not an exhaustive station list or permanent operating guarantee."],
+        ["Check for each trip", "Actual train and stop, station entrance, first/last transit, temporary closures, road conditions, pickup zone and current ticket-handling rules.", "Use 12306, current municipal/transport notices and live navigation on the travel date."],
+      ],
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Continue planning",
+      items: [
+        {
+          label: "China high-speed train first-time guide",
+          href: "/guides/china-high-speed-train-first-time-guide/",
+          description: "Use this after the exact station pair is settled for tickets, documents, station entry and boarding.",
+        },
+        {
+          label: "Where to stay in Chongqing",
+          href: "/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/",
+          description: "Compare Jiefangbei, Guanyinqiao and Shapingba before testing the city-side station transfer.",
+        },
+        {
+          label: "Read Chongqing’s upper and lower street levels",
+          href: "/guides/chongqing-upper-lower-city-orientation/",
+          description: "Check road height, station exit and building entrance before trusting a short walk.",
+        },
+        {
+          label: "Private transfer or public transport in China",
+          href: "/guides/china-private-transfer-or-public-transport/",
+          description: "Choose the last mile by handoffs, luggage and recovery options rather than distance alone.",
+        },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "Official sources and image credit",
+      items: [
+        { label: "2026 Spring Festival passenger activity at Chongqing North, West, East and Shapingba", url: "https://jtysw.cq.gov.cn/sy_240/bmdt/202602/t20260224_15449936.html", publisher: "Chongqing Municipal Commission of Transport", reviewedAt: "2026-08-17" },
+        { label: "July 2026 railway adjustment and current station-pattern examples", url: "https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html", publisher: "Chongqing Municipal Government", reviewedAt: "2026-08-17" },
+        { label: "January 2026 Chongqing West route-pattern examples", url: "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jt/jtzx/202601/t20260126_15354224.html", publisher: "Chongqing Municipal Government", reviewedAt: "2026-08-17" },
+        { label: "Chongqing East opening, location and initial passenger operation", url: "https://jtysw.cq.gov.cn/sy_240/bmdt/202506/t20250626_14748304.html", publisher: "Chongqing Municipal Commission of Transport", reviewedAt: "2026-08-17" },
+        { label: "Line 6 East section operating pattern", url: "https://www.cq.gov.cn/ywdt/bmts/202507/t20250728_14853868.html", publisher: "Chongqing Municipal Government", reviewedAt: "2026-08-17" },
+        { label: "Line 24 remained in testing and construction", url: "https://jkq.cq.gov.cn/zwxx/jkdt/202601/t20260108_15301324_wap.html", publisher: "Chongqing Economic and Technological Development Zone", reviewedAt: "2026-08-17" },
+        { label: "Line 27 remained under construction", url: "https://www.cq.gov.cn/zwgk/zfxxgkzl/fdzdgknr/zdxm/dtxx/202607/t20260703_15798127.html", publisher: "Chongqing Municipal Government", reviewedAt: "2026-08-17" },
+        { label: "Chongqing North integrated north and south station sides", url: "https://jtysw.cq.gov.cn/sy_240/bmdt/202101/t20210120_8788761.html", publisher: "Chongqing Municipal Commission of Transport", reviewedAt: "2026-08-17" },
+        { label: "Current official Chongqing metro station names and line table", url: "https://fzggw.cq.gov.cn/zwgk/zfxxgkml/zcwj/xzgfxwj/sfzggwxzgfxwj/202507/W020250915569783850930.pdf", publisher: "Chongqing Development and Reform Commission", reviewedAt: "2026-08-17" },
+        { label: "Chongqing West multi-level transport interchange", url: "https://jtysw.cq.gov.cn/sy_240/jdtp/202209/t20220919_11122399.html", publisher: "Chongqing Municipal Commission of Transport", reviewedAt: "2026-08-17" },
+        { label: "Shapingba rail and metro integration", url: "https://jtysw.cq.gov.cn/sy_240/bmdt/202209/t20220930_11159836.html", publisher: "Chongqing Municipal Commission of Transport", reviewedAt: "2026-08-17" },
+        { label: "Current China Railway ticket change and refund information", url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/orderWarmTips.html", publisher: "China Railway 12306", reviewedAt: "2026-08-17" },
+        { label: "Chongqing Station suspension of passenger service", url: "https://www.cq.gov.cn/ywdt/bmts/202206/t20220615_10817239.html", publisher: "Chongqing Municipal Government", reviewedAt: "2026-08-17" },
+        { label: "July 2026 Chongqing Station construction update", url: "https://jtysw.cq.gov.cn/sy_240/jdtp/202607/t20260715_15825144.html", publisher: "Chongqing Municipal Commission of Transport", reviewedAt: "2026-08-17" },
+        { label: "Hero: Chongqing East Railway Station by Renek78, CC0 1.0; cropped and converted to WebP", url: "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-17" },
+        { label: "Hero source licence: CC0 1.0", url: "https://creativecommons.org/publicdomain/zero/1.0/", publisher: "Creative Commons", reviewedAt: "2026-08-17" },
+      ],
+    },
+  ],
+} as const satisfies StructuredPageBody;
+
+export default body;
