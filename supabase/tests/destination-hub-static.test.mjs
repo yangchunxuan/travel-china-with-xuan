@@ -22,24 +22,27 @@ test("destination hubs keep the Chinese guide phrase together on narrow screens"
   assert.match(styles, /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap;/);
 });
 
-test("batch three hubs are trilingual release candidates with canonical boundaries", async () => {
-  const [registry, runtime, hangzhouBody, zhangjiajieBody, readme] = await Promise.all([
+test("batch three hubs are published trilingual routes with canonical boundaries", async () => {
+  const [registry, runtime, hangzhouBody, zhangjiajieBody] = await Promise.all([
     source("lib/destinationHubs.ts"),
     source("lib/destinationHubRuntime.ts"),
     source("content/destinations/hangzhou/body.shared.ts"),
     source("content/destinations/zhangjiajie/body.shared.ts"),
-    source("docs/organic-growth/city-hub-drafts/README.md"),
   ]);
 
   for (const id of ["hangzhou", "zhangjiajie"]) {
     assert.match(registry, new RegExp(`id: "${id}"`));
     assert.match(registry, new RegExp(`entityId: "city-${id}"`));
+    const entryStart = registry.indexOf(`id: "${id}"`);
+    assert.notEqual(entryStart, -1);
+    const entryHeader = registry.slice(entryStart, entryStart + 700);
+    assert.match(entryHeader, /datePublished: "2026-08-20"/);
+    assert.match(entryHeader, /dateModified: "2026-08-21"/);
     assert.match(runtime, new RegExp(`${id}: \\{[\\s\\S]*body\\.en[\\s\\S]*body\\.zh[\\s\\S]*body\\.ko`));
   }
   assert.match(registry, /sourceReviewedDate: "2026-08-20"/);
   assert.match(hangzhouBody, /No second generic Hangzhou travel guide should be created/);
   assert.match(zhangjiajieBody, /Do not copy that volatile workflow into this broad page/);
-  assert.match(readme, /release candidates, not live pages/);
 });
 
 test("Shanghai Songjiang copy records both the rename and expanded-hub opening", async () => {

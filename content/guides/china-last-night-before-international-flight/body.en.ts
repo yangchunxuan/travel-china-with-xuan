@@ -315,7 +315,7 @@ const body = {
     {
       id: "human-help-text",
       type: "paragraph",
-      text: "Leave your travel dates, number of travellers, rough total budget, the city you will be in before departure, and the exact international flight time and airport. A Homeground trip planner can help test the workable risk windows without publishing a private, copy-ready itinerary.",
+      text: "Use the general planner only for a first contact. In the initial form, share travel dates, the city before departure, the airport and approximate departure time band if known, traveller and room counts, and a rough accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent. This is not live inventory and does not guarantee price, availability, foreign-guest acceptance, room type or accessibility.",
     },
     {
       id: "related-guides",

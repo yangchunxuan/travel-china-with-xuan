@@ -178,7 +178,34 @@ const body = {
           href: "/ko/guides/beijing-courtyard-hotel-or-modern-hotel/",
           description: "사합원의 분위기가 객실, 엘리베이터, 소음, 난방, 차량 접근을 실제로 어떻게 바꾸는지.",
         },
+        {
+          label: "호텔이 정말 지하철역과 가까운가?",
+          href: "/ko/guides/china-hotel-near-metro/",
+          description: "지도상 반경이 아니라 실제로 쓸 출구, 보도, 횡단로와 로비까지의 동선을 확인합니다.",
+        },
+        {
+          label: "실제로 이용 가능한 장애인 객실 확인",
+          href: "/ko/guides/china-accessible-hotel-room-verification/",
+          description: "도로에서 객실까지 이어지는 전 구간에 대해 해당 객실 유형의 치수와 증거를 요청합니다.",
+        },
+        {
+          label: "외국인 예약·숙박 등록·입실 거절 대처",
+          href: "/ko/guides/foreigners-china-hotel/",
+          description: "전국 규정, 플랫폼 표시와 해당 숙소 프런트가 실제로 처리할 수 있는 일을 구분합니다.",
+        },
+        {
+          label: "국제선 출발 전 마지막 밤 정하기",
+          href: "/ko/guides/china-last-night-before-international-flight/",
+          description: "정확한 항공편과 대체 이동 수단을 기준으로 도심 숙박과 공항 인근 완충 숙박을 비교합니다.",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "숙박 지역과 객실 조건을 사람이 확인해 드릴까요?",
+      tone: "decision",
+      body: "현재 일반 플래너 창구는 첫 연락에만 이용하세요. 초기 양식에는 여행 날짜, 비교할 도시나 지역, 여행자 수와 객실 수, 필요하다면 대략적인 숙박 예산만 적으세요. 가족 또는 접근성 준비를 나중에 상의하고 싶다고 표시할 수는 있지만, 어린이의 구체적인 나이, 이동·의료·접근성 세부 정보, 여권이나 기타 신분증 정보, 예약·결제 기록, 호텔·DMC 등 공급업체에 전달하려는 식별 가능한 자료는 제출하지 마세요. 플래너가 별도의 후속 상담을 안내하며, 이런 세부 정보는 필요한 경우 적절한 동의를 받은 뒤에만 논의합니다. 별도의 목적별 동의 없이는 공급업체와 자료를 공유하지 않으며, 이 창구는 실시간 재고가 아니므로 가격·객실 가능 여부·외국인 투숙·객실 유형·접근성을 보장하지 않습니다.",
     },
     {
       id: "gateways-heading",
@@ -582,6 +609,17 @@ const body = {
       text: "대개 필요 없습니다. 잘 고른 거점 하나가 이동에 쓰는 시간보다 가치가 큽니다. 아주 이른 항공편이나 열차를 지켜야 하거나, 이동 제약을 해결하거나, 긴 체류의 후반부가 실질적으로 달라질 때만 옮기세요.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "베이징 마지막 밤은 PEK나 PKX 근처에서 보내야 하나요?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "정확한 공항·터미널, 체크인 마감과 대체 이동 수단을 먼저 보세요. 도심에서 출발하는 동선이 불안정하고 특히 이른 항공편, 어린이·고령자 또는 많은 짐이 있다면 공항 인근 숙박이 유리합니다. 당일 이동을 충분히 검증했고 마지막 베이징 저녁이 중요하다면 도심 호텔을 유지해도 됩니다. 위의 전국 마지막 밤 가이드 방식을 적용하고 공항 이름만으로 결정하지 마세요.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -598,9 +636,9 @@ const body = {
       title: "이어가는 두 가지 방법",
       items: [
         {
-          label: "루트 파인더",
-          href: "/ko/#route-finder",
-          description: "지금 가진 숙박 일수로 어떤 도시 순서가 성립하는지 시험합니다.",
+          label: "무료 사람 검토",
+          href: "/ko/#planner-contact",
+          description: "동선과 숙박 조건을 보내 무료로 먼저 검토받으세요. 유료 서비스는 미리 선택되지 않습니다.",
         },
         {
           label: "중국 일정 리뷰",

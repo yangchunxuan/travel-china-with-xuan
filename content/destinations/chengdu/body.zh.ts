@@ -146,6 +146,40 @@ const body = {
       tone: "decision",
     },
     {
+      id: "stay-network-links",
+      type: "internal-links",
+      title: "选定成都基地后，再核验具体物业",
+      items: [
+        {
+          label: "酒店是真的靠近地铁吗？",
+          href: "/zh/guides/china-hotel-near-metro/",
+          description: "核对真正有用的出入口、商业体内部路线、过街与大堂，不只看地图半径。",
+        },
+        {
+          label: "核验真正可用的无障碍客房",
+          href: "/zh/guides/china-accessible-hotel-room-verification/",
+          description: "为从街道到客房的完整路线索要对应房型的尺寸与证据。",
+        },
+        {
+          label: "外宾预订、住宿登记与被拒恢复",
+          href: "/zh/guides/foreigners-china-hotel/",
+          description: "分清全国规则、平台页面与这家物业前台实际能够完成的流程。",
+        },
+        {
+          label: "决定国际航班前最后一晚住哪里",
+          href: "/zh/guides/china-last-night-before-international-flight/",
+          description: "从准确航班与后备链比较成都市区最后一晚和天府或双流机场侧缓冲住宿。",
+        },
+      ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "需要人工核对住宿区和房型吗？",
+      tone: "decision",
+      body: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备比较的城市或区域、旅客与房间数量，以及必要时的大致住宿预算。可以说明希望稍后讨论家庭或无障碍安排，但不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商；这里也不是实时库存系统，不保证价格、房态、外宾接待、房型或无障碍适用性。",
+    },
+    {
       id: "gateways-heading",
       type: "heading",
       level: 2,
@@ -467,6 +501,17 @@ const body = {
       text: "看车票。成都东站承担很多高铁，但南站和西站是独立枢纽；老的成都站正在改扩建、目标 2027 年，现在不能进入任何实际计划。",
     },
     {
+      id: "faq-6-heading",
+      type: "heading",
+      level: 3,
+      text: "国际航班前一晚应该住天府还是双流机场附近？",
+    },
+    {
+      id: "faq-6",
+      type: "paragraph",
+      text: "先从当前行程单读取准确机场和航站楼，再核对值机截止时间、市区酒店出发的完整链条与后备方案。若这条链很脆弱，尤其是早班机、带儿童老人或行李较多时，机场侧住宿更合理；若已核实出发当天的转场，且最后一个成都夜晚仍有价值，就可保留市区酒店。使用上方全国末晚指南的方法，天府与双流不能互相代替。",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -483,9 +528,9 @@ const body = {
       title: "两种继续方式",
       items: [
         {
-          label: "路线查找器",
-          href: "/zh/#route-finder",
-          description: "用现有晚数测试哪种城市顺序真正成立。",
+          label: "免费人工规划初查",
+          href: "/zh/#planner-contact",
+          description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",
         },
         {
           label: "中国行程点评",

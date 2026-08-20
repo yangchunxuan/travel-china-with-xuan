@@ -228,7 +228,34 @@ const body = {
           description:
             "按步行、地铁可达、夜间安排、行李和人流，比较外滩、人民广场与原法租界。",
         },
+        {
+          label: "酒店是真的靠近地铁吗？",
+          href: "/zh/guides/china-hotel-near-metro/",
+          description: "核对真正有用的出入口、站内距离、过街与大堂路线，不只看地图半径。",
+        },
+        {
+          label: "核验真正可用的无障碍客房",
+          href: "/zh/guides/china-accessible-hotel-room-verification/",
+          description: "为从街道到客房的完整路线索要对应房型的尺寸与证据。",
+        },
+        {
+          label: "外宾预订、住宿登记与被拒恢复",
+          href: "/zh/guides/foreigners-china-hotel/",
+          description: "分清全国规则、平台页面与这家物业前台实际能够完成的流程。",
+        },
+        {
+          label: "决定国际航班前最后一晚住哪里",
+          href: "/zh/guides/china-last-night-before-international-flight/",
+          description: "从准确航班与后备链比较上海市区最后一晚和浦东或虹桥机场侧缓冲住宿。",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "需要人工核对住宿区和房型吗？",
+      tone: "decision",
+      body: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备比较的城市或区域、旅客与房间数量，以及必要时的大致住宿预算。可以说明希望稍后讨论家庭或无障碍安排，但不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商；这里也不是实时库存系统，不保证价格、房态、外宾接待、房型或无障碍适用性。",
     },
     {
       id: "airports-heading",
@@ -619,6 +646,17 @@ const body = {
       text: "只有当抵达时刻、边检、行李、机场接驳、确切火车站和车票缓冲全部按保守方式都成立时才行。火车不会因为航班延误而受到保护，所以在晚到或长途抵达之后，通常在上海住一晚更安全。",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "上海最后一晚应该住浦东机场还是虹桥机场附近？",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "先看准确机场、航站楼、值机截止时间与后备交通链。若从市区出发的链条很脆弱，尤其是早班机、带儿童老人或行李较多时，机场侧住宿更合理；若已核实出发当天的完整转场，且最后一个上海夜晚仍有价值，就可保留市区酒店。使用上方全国末晚指南的方法，不要把整个浦东或虹桥当作一个机场酒店区。",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -635,9 +673,9 @@ const body = {
       title: "两种继续方式",
       items: [
         {
-          label: "路线查找器",
-          href: "/zh/#route-finder",
-          description: "用现有晚数测试哪种城市顺序真正成立。",
+          label: "免费人工规划初查",
+          href: "/zh/#planner-contact",
+          description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",
         },
         {
           label: "中国行程点评",

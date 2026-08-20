@@ -146,6 +146,40 @@ const body = {
       tone: "decision",
     },
     {
+      id: "stay-network-links",
+      type: "internal-links",
+      title: "청두 거점을 고른 뒤 숙소를 검증하세요",
+      items: [
+        {
+          label: "호텔이 정말 지하철역과 가까운가?",
+          href: "/ko/guides/china-hotel-near-metro/",
+          description: "지도상 반경이 아니라 실제 출구, 상업시설 내부 동선, 횡단로와 로비를 확인합니다.",
+        },
+        {
+          label: "실제로 이용 가능한 장애인 객실 확인",
+          href: "/ko/guides/china-accessible-hotel-room-verification/",
+          description: "도로에서 객실까지 이어지는 전 구간에 대해 해당 객실 유형의 치수와 증거를 요청합니다.",
+        },
+        {
+          label: "외국인 예약·숙박 등록·입실 거절 대처",
+          href: "/ko/guides/foreigners-china-hotel/",
+          description: "전국 규정, 플랫폼 표시와 해당 숙소 프런트가 실제로 처리할 수 있는 일을 구분합니다.",
+        },
+        {
+          label: "국제선 출발 전 마지막 밤 정하기",
+          href: "/ko/guides/china-last-night-before-international-flight/",
+          description: "정확한 항공편과 대체 이동 수단을 기준으로 청두 도심과 TFU·CTU 인근 완충 숙박을 비교합니다.",
+        },
+      ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "숙박 지역과 객실 조건을 사람이 확인해 드릴까요?",
+      tone: "decision",
+      body: "현재 일반 플래너 창구는 첫 연락에만 이용하세요. 초기 양식에는 여행 날짜, 비교할 도시나 지역, 여행자 수와 객실 수, 필요하다면 대략적인 숙박 예산만 적으세요. 가족 또는 접근성 준비를 나중에 상의하고 싶다고 표시할 수는 있지만, 어린이의 구체적인 나이, 이동·의료·접근성 세부 정보, 여권이나 기타 신분증 정보, 예약·결제 기록, 호텔·DMC 등 공급업체에 전달하려는 식별 가능한 자료는 제출하지 마세요. 플래너가 별도의 후속 상담을 안내하며, 이런 세부 정보는 필요한 경우 적절한 동의를 받은 뒤에만 논의합니다. 별도의 목적별 동의 없이는 공급업체와 자료를 공유하지 않으며, 이 창구는 실시간 재고가 아니므로 가격·객실 가능 여부·외국인 투숙·객실 유형·접근성을 보장하지 않습니다.",
+    },
+    {
       id: "gateways-heading",
       type: "heading",
       level: 2,
@@ -468,6 +502,17 @@ const body = {
       text: "티켓에서 읽으세요. 청두동역이 많은 고속열차를 담당하지만 남역과 서역은 별개 허브이고, 옛 청두역은 2027년 목표로 재건축 중이어서 지금의 계획에 넣을 수 없습니다.",
     },
     {
+      id: "faq-6-heading",
+      type: "heading",
+      level: 3,
+      text: "국제선 전날 TFU나 CTU 근처에서 자야 하나요?",
+    },
+    {
+      id: "faq-6",
+      type: "paragraph",
+      text: "현재 일정표에서 정확한 공항과 터미널을 먼저 읽고 체크인 마감, 도심 호텔 출발 동선과 대체 수단을 확인하세요. 이 동선이 불안정하고 특히 이른 항공편, 어린이·고령자 또는 많은 짐이 있다면 공항 인근 숙박이 유리합니다. 당일 이동을 충분히 검증했고 마지막 청두 저녁이 중요하다면 도심 호텔을 유지해도 됩니다. 위의 전국 마지막 밤 가이드 방식을 적용하고 TFU와 CTU를 서로 바꿔 쓰지 마세요.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -484,9 +529,9 @@ const body = {
       title: "이어가는 두 가지 방법",
       items: [
         {
-          label: "루트 파인더",
-          href: "/ko/#route-finder",
-          description: "지금 가진 숙박 일수로 어떤 도시 순서가 성립하는지 시험합니다.",
+          label: "무료 사람 검토",
+          href: "/ko/#planner-contact",
+          description: "동선과 숙박 조건을 보내 무료로 먼저 검토받으세요. 유료 서비스는 미리 선택되지 않습니다.",
         },
         {
           label: "중국 일정 리뷰",
