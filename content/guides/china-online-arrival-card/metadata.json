@@ -1,0 +1,57 @@
+{
+  "id": "china-online-arrival-card",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "task-and-recovery-guide",
+  "topics": ["arrival-card", "border-inspection", "online-form", "entry-preparation", "scam-recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-online-arrival-card/hero-1600.jpg",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-online-arrival-card/hero-1600.jpg",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-online-arrival-card/",
+      "title": "China Online Arrival Card: Official Free Form and Backup",
+      "headline": "China Online Arrival Card: Fill the Official Free Form and Keep a Port Backup",
+      "description": "Use China’s official free arrival-card service, prepare the right records, identify exemptions and recover from form errors, outages or fake paid websites.",
+      "heroAlt": "Beijing Capital International Airport Terminal 1 arrival hall, photographed in November 2016 as a general arrival setting.",
+      "navTitle": "China online arrival card",
+      "featuredLinkLabel": "Complete the official arrival card",
+      "openGraphLocale": "en_US",
+      "cardTags": ["China entry", "Arrival card", "Official form"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-online-arrival-card/",
+      "title": "外国人来华网上入境卡：官方免费入口、填写与失败兜底",
+      "headline": "来华网上入境卡：认准官方免费入口，并准备口岸兜底",
+      "description": "使用国家移民管理局免费的网上入境卡服务，准备填写资料，核对免填情形，并处理填错、打不开或误入收费假网站等问题。",
+      "heroAlt": "2016年11月拍摄的北京首都国际机场1号航站楼到达大厅，仅作为一般抵达场景。",
+      "navTitle": "来华网上入境卡",
+      "featuredLinkLabel": "填写官方免费入境卡",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["中国入境", "入境卡", "官方填报"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-online-arrival-card/",
+      "title": "중국 온라인 입국카드: 공식 무료 작성과 현장 대안",
+      "headline": "중국 온라인 입국카드: 공식 무료 양식으로 작성하고 현장 대안까지 준비하세요",
+      "description": "중국 국가이민관리국의 무료 공식 입국카드를 작성하고 면제 대상, 준비 정보, 오류·접속 실패·유료 사칭 사이트 대응을 확인합니다.",
+      "heroAlt": "일반적인 도착 환경을 보여 주는 2016년 11월 베이징 서우두국제공항 제1터미널 도착장 사진.",
+      "navTitle": "중국 온라인 입국카드",
+      "featuredLinkLabel": "공식 입국카드 작성하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 입국", "입국카드", "공식 양식"]
+    }
+  }
+}
