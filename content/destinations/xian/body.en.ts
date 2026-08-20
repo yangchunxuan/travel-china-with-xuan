@@ -215,7 +215,38 @@ const body = {
           description:
             "Property-level comparison of entrances, night patterns, luggage access and metro exits.",
         },
+        {
+          label: "Is the hotel really near the metro?",
+          href: "/guides/china-hotel-near-metro/",
+          description:
+            "Audit the useful exit, wall or road crossing and lobby route instead of trusting a map radius.",
+        },
+        {
+          label: "Verify an actually usable accessible room",
+          href: "/guides/china-accessible-hotel-room-verification/",
+          description:
+            "Request room-specific measurements and evidence for the complete street-to-room route.",
+        },
+        {
+          label: "Foreign-guest booking, registration and refusal recovery",
+          href: "/guides/foreigners-china-hotel/",
+          description:
+            "Separate the national rule, a platform listing and what the named property can execute at check-in.",
+        },
+        {
+          label: "Choose the last night before an international flight",
+          href: "/guides/china-last-night-before-international-flight/",
+          description:
+            "Compare a central Xi'an night with an XIY-side buffer from the exact flight and fallback chain.",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "Need a hotel-area and room-fit check?",
+      tone: "decision",
+      body: "Send the travel dates; traveller, room and bed requirements; exact arrival and departure airport or railway station; priority days; accommodation budget and currency; luggage; and any children, older travellers, reduced-mobility or accessibility needs. Homeground can manually verify the area, property facts and a current written quote. That quote is not a guarantee of live availability, final price or the property's ability to register foreign guests; reconfirm with the named property before payment and arrival.",
     },
     {
       id: "gateways-heading",
@@ -561,6 +592,17 @@ const body = {
       text: "Usually not. Treat it as part of the old-city cluster and an evening or meal environment rather than a substitute for the City Wall, the museums or Lintong. Go beyond the busiest commercial lane when neighbourhood and food culture are genuine interests, and do not use one market street as a complete account of Xi'an's Muslim history.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "Should my last Xi'an night be near XIY airport?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "Use the exact terminal, check-in deadline, central-hotel departure chain and a real fallback. An airport-side night is stronger when that chain would be fragile, particularly for an early international departure, children, older travellers or heavy luggage. Keep the central hotel when the dated transfer is defensible and the final Xi'an evening still matters. Apply the nationwide last-night method linked above; do not move solely because XIY looks far away on a map.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -577,9 +619,10 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
-          label: "Route Finder",
-          href: "/#route-finder",
-          description: "Test which city sequence fits the nights you actually have.",
+          label: "Free human planning check",
+          href: "/#planner-contact",
+          description:
+            "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
           label: "China itinerary review",

@@ -209,7 +209,34 @@ const body = {
           href: "/ko/guides/xian-where-to-stay-city-wall-or-dayanta/",
           description: "입구, 야간 상황, 수하물 접근성, 지하철 출구까지 숙소 단위로 비교합니다.",
         },
+        {
+          label: "호텔이 정말 지하철역과 가까운가?",
+          href: "/ko/guides/china-hotel-near-metro/",
+          description: "지도상 반경이 아니라 실제 출구, 성벽·도로 횡단과 로비 동선을 확인합니다.",
+        },
+        {
+          label: "실제로 이용 가능한 장애인 객실 확인",
+          href: "/ko/guides/china-accessible-hotel-room-verification/",
+          description: "도로에서 객실까지 이어지는 전 구간에 대해 해당 객실 유형의 치수와 증거를 요청합니다.",
+        },
+        {
+          label: "외국인 예약·숙박 등록·입실 거절 대처",
+          href: "/ko/guides/foreigners-china-hotel/",
+          description: "전국 규정, 플랫폼 표시와 해당 숙소 프런트가 실제로 처리할 수 있는 일을 구분합니다.",
+        },
+        {
+          label: "국제선 출발 전 마지막 밤 정하기",
+          href: "/ko/guides/china-last-night-before-international-flight/",
+          description: "정확한 항공편과 대체 이동 수단을 기준으로 시안 도심과 XIY 인근 완충 숙박을 비교합니다.",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "숙박 지역과 객실 조건을 사람이 확인해 드릴까요?",
+      tone: "decision",
+      body: "여행 날짜, 인원·객실 수·침대 구성, 정확한 도착·출발 공항 또는 기차역, 핵심 일정, 숙박 예산과 통화, 짐, 어린이·고령자·이동 제약·접근성 요구를 보내 주세요. Homeground가 지역과 숙소 사실을 직접 확인하고 현재 시점의 서면 견적을 받을 수 있습니다. 이 견적은 실시간 객실 가능 여부, 최종 가격 또는 해당 숙소의 외국인 등록 처리 능력을 보장하지 않으므로 결제 전과 도착 전에 지정 숙소에 다시 확인해야 합니다.",
     },
     {
       id: "gateways-heading",
@@ -544,6 +571,17 @@ const body = {
       text: "대개 그렇지 않습니다. 성벽이나 박물관, 린퉁의 대체가 아니라 옛 도심 권역의 일부이자 저녁·식사 환경으로 다루세요. 동네와 음식 문화가 진짜 관심사라면 가장 붐비는 상업 골목 너머로 나가고, 시장 거리 하나를 시안 무슬림 역사의 전부로 쓰지 마세요.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "시안 마지막 밤은 XIY 공항 근처에서 보내야 하나요?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "정확한 터미널, 체크인 마감, 도심 호텔에서 출발하는 전 구간과 실제 대체 수단을 먼저 보세요. 이 동선이 불안정하고 특히 이른 국제선, 어린이·고령자 또는 많은 짐이 있다면 공항 인근 숙박이 유리합니다. 당일 이동을 충분히 검증했고 마지막 시안 저녁이 중요하다면 도심 호텔을 유지해도 됩니다. 위의 전국 마지막 밤 가이드 방식을 적용하고 지도상 거리만으로 옮기지 마세요.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -560,9 +598,9 @@ const body = {
       title: "이어가는 두 가지 방법",
       items: [
         {
-          label: "루트 파인더",
-          href: "/ko/#route-finder",
-          description: "지금 가진 숙박 일수로 어떤 도시 순서가 성립하는지 시험합니다.",
+          label: "무료 사람 검토",
+          href: "/ko/#planner-contact",
+          description: "동선과 숙박 조건을 보내 무료로 먼저 검토받으세요. 유료 서비스는 미리 선택되지 않습니다.",
         },
         {
           label: "중국 일정 리뷰",
