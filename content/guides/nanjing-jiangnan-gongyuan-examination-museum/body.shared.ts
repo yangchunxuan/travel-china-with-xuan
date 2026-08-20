@@ -1,0 +1,105 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const en = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    { id: "lead", type: "lead", text: "Jiangnan Gongyuan is easy to misread because one view can contain a historic tower, reconstructed examination cells and a modern museum. The safest answer is not “the old examination hall survives” or “nothing is original.” Nanjing preserves important reference points from a compound that was largely dismantled, while the China Imperial Examination Museum rebuilds selected spaces and explains a much larger institution underground." },
+    { id: "answer", type: "callout", title: "The direct answer", body: "Mingyuan Tower and Feihong Bridge are the strongest surviving anchors named by the institution. Rows of candidate cells and several functional spaces are interpretive reconstruction or restoration. The underground galleries are a twenty-first-century museum. Read all three; never give them one date.", tone: "decision" },
+    { id: "scale-h", type: "heading", level: 2, text: "First recover the scale that the present precinct cannot show" },
+    { id: "scale-p1", type: "paragraph", text: "The museum traces the examination site to 1168. It expanded through later dynasties and became an enormous compound associated with the Jiangnan provincial examination. Institutional history records major demolition in 1918. The present visitor zone is therefore a fragment, reconstruction and museum synthesis—not a complete walled examination city preserved in place." },
+    { id: "scale-p2", type: "paragraph", text: "Start at the official plan or model. Locate the supervisory core, candidate-cell areas, circulation routes and boundaries. Then ask which footprint belongs to the historic compound, which line is inferred from records, and which building is a modern visitor facility. A model can communicate scale, but only its legend can tell you whether it represents one date or a composite high point." },
+    { id: "layers-h", type: "heading", level: 2, text: "Use three labels before you photograph anything" },
+    { id: "layers-table", type: "table", caption: "What is in front of you?", columns: ["Label", "Examples here", "Safe caption"], rows: [["Surviving reference point", "Mingyuan Tower; Feihong Bridge, as identified by the museum", "Name the component and note that it has its own repair history"], ["Reconstructed interpretation", "Rows of examination cells and restored functional scenes", "Say reconstructed cells; do not call the whole row ancient fabric"], ["Modern museum", "Underground exhibition spaces, media and models", "Use them as curatorial explanation, not examination-era architecture"]] },
+    { id: "tower-h", type: "heading", level: 2, text: "At Mingyuan Tower, look for control rather than a picturesque roof" },
+    { id: "tower-p", type: "paragraph", text: "Mingyuan Tower's raised, central form makes sense when read as part of supervising a dense enclosed compound. Stand far enough back to see sightlines toward the cells and entrances. Then read the date and conservation label for the actual structure. The tower's survival gives the site an authentic spatial reference; it does not make every cell around it contemporary with the tower." },
+    { id: "cells-h", type: "heading", level: 2, text: "The cells explain an examination as a bodily task" },
+    { id: "cells-p1", type: "paragraph", text: "A candidate cell was not merely a desk. It compressed writing, waiting, eating and resting into a narrow bay over a multi-day examination period. Use a reconstructed cell to test dimensions: where would boards become desk and seat, where would supplies go, what did weather and proximity mean? Read the panel before repeating any exact duration or routine, because practices differed by period and examination." },
+    { id: "cells-p2", type: "paragraph", text: "Reconstruction is useful here because scale is physical. It becomes misleading only when a staged object is treated as an untouched relic. Separate the reconstructed shell, replica furnishings, any original excavated object and the textual source used by curators. If a cell row is closed, use one measured bay, the plan and the model; the learning task does not require walking every aisle." },
+    { id: "process-h", type: "heading", level: 2, text: "Follow one answer paper through the institution" },
+    { id: "process-list", type: "list", ordered: true, items: ["Entry and identity controls placed a candidate inside a regulated compound.", "A numbered cell turned an abstract examination into an assigned physical position.", "Writing produced a script that had to move without simply becoming a personal conversation with an examiner.", "Supervision, copying or marking procedures varied by period but aimed to control opportunity and attribution.", "Ranking transformed written performance into an administrative result with consequences beyond the compound."] },
+    { id: "process-p", type: "paragraph", text: "This sequence is a reading scaffold, not one timeless procedure. Use the museum's period labels to learn which dynasty, examination level and rule each display describes. Avoid the phrase “ancient Chinese SAT.” It hides the institution's curriculum, social reach, political role and historical change behind a modern analogy." },
+    { id: "bridge-h", type: "heading", level: 2, text: "Why pause at Feihong Bridge?" },
+    { id: "bridge-p", type: "paragraph", text: "A bridge may look minor beside a tower, but it restores circulation to the story. Confirm the official identity, then ask what it connected and who could cross during the compound's operation. Do not infer an examination ritual from its poetic name. Its value is to remind you that control depended on routes and thresholds as much as on questions and calligraphy." },
+    { id: "underground-h", type: "heading", level: 2, text: "Use the underground museum to compare sources, not to search for an old basement" },
+    { id: "underground-p1", type: "paragraph", text: "The descent is a change of evidence layer. Here, documents, objects, models and media can reconnect the small visible precinct to the national examination system. For each display, record four things: object or reproduction, date, institutional level, and provenance. A facsimile answer paper can explain format but cannot be photographed and captioned as an original without the label saying so." },
+    { id: "underground-p2", type: "paragraph", text: "Give priority to evidence that explains the Nanjing site: maps of expansion, records of candidates and staff, objects with local provenance, and the 1918 loss/reuse history. A broad dynasty timeline is useful orientation, but it should not crowd out the question you came to answer: what happened on this ground and how do we know?" },
+    { id: "route-h", type: "heading", level: 2, text: "A gate-to-gallery route with a failure plan" },
+    { id: "route-table", type: "table", caption: "A conceptual order; follow current operator flow", columns: ["Stage", "Main task", "Recovery"], rows: [["Exterior/map", "Recover former scale", "Use the museum model if the outdoor map is unavailable"], ["Mingyuan Tower", "Read supervision and surviving fabric", "Use a dated exterior label if the interior is closed"], ["Cells", "Test bodily scale and reconstruction status", "Use one bay plus measurements/model"], ["Feihong Bridge", "Read circulation and thresholds", "Do not force access if cordoned"], ["Underground museum", "Reconnect documents, objects and site loss", "Choose three Nanjing-specific labels if galleries are crowded"]] },
+    { id: "misread-h", type: "heading", level: 2, text: "Do not mistake a convincing set for a surviving city" },
+    { id: "misread-list", type: "list", ordered: false, items: ["A row of cells can demonstrate scale while being reconstructed.", "A historic tower can survive inside a heavily transformed precinct.", "A theme display can show how the museum presents examination culture without proving everyday life in one dynasty.", "The painting, model and present site are three representations, not interchangeable maps."] },
+    { id: "who-h", type: "heading", level: 2, text: "Is the museum worth your Nanjing time?" },
+    { id: "who-p", type: "paragraph", text: "Choose it if institutions, education history or the relation between preserved fragments and modern museums interest you. It is especially strong when paired with a walk that treats the Qinhuai district as a changed urban setting rather than period scenery. Skip it if you only want an intact ancient compound or if dense text displays are a poor fit. Recheck the official museum for admission, current entrance, accessible route, closures and photography rules." },
+    { id: "links", type: "internal-links", title: "Continue with evidence-led city reading", items: [{ label: "Read city walls, gates and urban order", href: "/guides/chinese-city-walls-gates-and-urban-order/", description: "Move from examination control to the routes and thresholds of a whole city." }, { label: "Read original, repaired and rebuilt heritage", href: "/guides/how-to-read-heritage-sites-in-china/", description: "Use a broader material-intervention vocabulary." }] },
+    { id: "sources", type: "sources", title: "Core institutional sources reviewed", items: [{ label: "China Imperial Examination Museum", url: "https://www.njiemuseum.com/", publisher: "China Imperial Examination Museum", reviewedAt: "2026-08-20" }, { label: "History of Jiangnan Gongyuan", url: "https://www.njiemuseum.com/about/8.html", publisher: "China Imperial Examination Museum", reviewedAt: "2026-08-20" }, { label: "Museum learning article", url: "https://www.njiemuseum.com/xuetang_1/6.html", publisher: "China Imperial Examination Museum", reviewedAt: "2026-08-20" }, { label: "Nanjing local-chronicle update", url: "https://dfz.nanjing.gov.cn/gzdt/202604/t20260416_5824879.html", publisher: "Nanjing Local Chronicles Office", reviewedAt: "2026-08-20" }] }
+  ]
+} satisfies StructuredPageBody;
+
+const zh = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    { id: "lead", type: "lead", text: "江南贡院最容易误读的原因，是同一画面里可能同时出现历史建筑、复建号舍和现代博物馆。可靠答案既不是“古代考场完整保存”，也不是“这里全是新的”。南京留下了大规模拆除后仍可定位贡院的关键节点，同时用复建空间和地下中国科举博物馆解释曾经远大于今日的制度与场地。" },
+    { id: "answer", type: "callout", title: "直接答案", body: "馆方明确指认的明远楼、飞虹桥，是最重要的遗存锚点；成排号舍和部分功能场景属于复建、修复或解释性展示；地下展馆是现代博物馆。三层都值得看，但不能给它们写成同一个年代。", tone: "decision" },
+    { id: "scale-h", type: "heading", level: 2, text: "先恢复今天现场无法完整呈现的规模" },
+    { id: "scale-p1", type: "paragraph", text: "博物馆把贡院历史追溯到1168年，之后历代扩展，成为与江南乡试密切相关的庞大考场。机构沿革还记录了1918年的大规模拆除。因此，今天的参观区是遗存、复建与博物馆综合解释，不是一座完整封闭的古代考试城。" },
+    { id: "scale-p2", type: "paragraph", text: "先找官方平面图或模型，定位管理核心、号舍区、通行路线和边界。再问：哪些轮廓来自历史场地，哪些依据文献推定，哪些是现代游客设施。模型能恢复规模，但只有图例才能告诉你，它表现的是某一具体年份，还是多个阶段的综合高峰。" },
+    { id: "layers-h", type: "heading", level: 2, text: "拍照前，先给眼前空间贴上三种标签" },
+    { id: "layers-table", type: "table", caption: "眼前究竟是什么？", columns: ["标签", "现场例子", "安全的图片说明"], rows: [["遗存锚点", "馆方指认的明远楼、飞虹桥", "点名具体构件，并承认它也有维修史"], ["复建解释", "成排号舍和恢复的功能场景", "写“复建号舍”，不把整排称为古代原构"], ["现代博物馆", "地下展厅、媒体和模型", "用作策展解释，不当成考试时代建筑"]] },
+    { id: "tower-h", type: "heading", level: 2, text: "在明远楼，不只看屋顶，要看控制视线" },
+    { id: "tower-p", type: "paragraph", text: "明远楼高起且居中的形态，放回密集、封闭的贡院环境，才能理解其监督意义。退后一点，看它与号舍、入口之间的视线关系；再读建筑本体的年代与保护说明。明远楼提供真实的空间定位，却不能让周边每间号舍自动与它同龄。" },
+    { id: "cells-h", type: "heading", level: 2, text: "号舍让“考试”重新变成身体任务" },
+    { id: "cells-p1", type: "paragraph", text: "号舍不只是一张桌子，而是把书写、等待、进食和休息压进狭窄空间。可用复建号舍检验尺度：木板怎样变成桌凳，用品放在哪里，天气和紧邻他人意味着什么。具体持续时间和程序必须先看展板，因为不同年代、不同级别的考试并不完全相同。" },
+    { id: "cells-p2", type: "paragraph", text: "复建在这里很有用，因为尺度必须靠身体理解；误导发生在把布景物品当成未经移动的古物时。分清复建外壳、复制家具、真正出土物和策展依据的文字来源。若号舍区关闭，一间有尺寸的号舍加上平面图、模型，就足以完成学习任务。" },
+    { id: "process-h", type: "heading", level: 2, text: "跟着一份答卷穿过这套机构" },
+    { id: "process-list", type: "list", ordered: true, items: ["入口与身份查验，把考生纳入受管制的封闭场地。", "编号号舍把抽象考试变成一个指定位置。", "书写形成答卷，答卷不能只是考生与阅卷者的私人交流。", "监督、誊录或阅卷方式随时代变化，但都在控制机会与署名关系。", "排名把书面表现转换成对贡院之外产生影响的行政结果。"] },
+    { id: "process-p", type: "paragraph", text: "这只是帮助阅读的骨架，不是一套千年不变的流程。每看一个展项，都确认朝代、考试级别和制度背景。不要把科举简单叫作“古代中国高考”或“SAT”，现代类比会遮蔽课程、社会覆盖、政治作用和历史变化。" },
+    { id: "bridge-h", type: "heading", level: 2, text: "为什么要在飞虹桥停一下？" },
+    { id: "bridge-p", type: "paragraph", text: "桥在楼前可能显得次要，却能把“流动”放回故事。先核对官方身份，再问它连接什么、贡院运行时谁能通过。不要只凭诗意名字推演考试仪式。桥提醒我们：管理不仅靠题目和书法，也靠道路、门槛与人员分隔。" },
+    { id: "underground-h", type: "heading", level: 2, text: "地下展馆不是古代地下室，而是比较资料的地方" },
+    { id: "underground-p1", type: "paragraph", text: "下到地下，就是进入另一层证据。文献、物件、模型和媒体把有限地面遗址重新接到全国科举制度。每件展品记录四项：原物还是复制、年代、考试层级、来源。复制答卷可以解释格式，标签没有说明时，不能把照片写成古代原件。" },
+    { id: "underground-p2", type: "paragraph", text: "优先看与南京现场直接相关的证据：扩展平面、考生与管理记录、本地出土或收藏物、1918年以后的拆除和再利用。朝代通史可作定位，却不应挤掉核心问题：这块地上实际发生了什么，我们凭什么知道？" },
+    { id: "route-h", type: "heading", level: 2, text: "一条从门到展厅、遇到关闭也能恢复的路线" },
+    { id: "route-table", type: "table", caption: "这是概念顺序，当天以官方游线为准", columns: ["阶段", "主要任务", "恢复方法"], rows: [["外部与地图", "恢复原有规模", "户外图不可用就看馆内模型"], ["明远楼", "读监督功能与遗存", "室内关闭时读有年代的外部说明"], ["号舍", "体验尺度并辨认复建", "用一间加尺寸与模型"], ["飞虹桥", "读道路和门槛", "围挡时不强行接近"], ["地下展馆", "把文献、物件和拆除史连回现场", "拥挤时只选三块南京专属标签"]] },
+    { id: "misread-h", type: "heading", level: 2, text: "不要把有说服力的布景误认成完整古城" },
+    { id: "misread-list", type: "list", ordered: false, items: ["复建号舍可以准确传达部分尺度，却仍是复建。", "历史楼阁可以存在于大幅改变的场地里。", "主题展示只能证明博物馆怎样讲科举，不能单独证明某一朝代的日常。", "画卷、模型和现址是三种不同表达，不能互当精确地图。"] },
+    { id: "who-h", type: "heading", level: 2, text: "江南贡院值得占用南京时间吗？" },
+    { id: "who-p", type: "paragraph", text: "若你关心制度、教育史，或想理解残存遗迹与现代博物馆怎样合作，这里值得去。最好把周边秦淮街区视作持续变化的城市环境，而不是古代布景。若你只想看完整古建筑群，或不喜欢文字密集型展览，可以跳过。门票、当前入口、无障碍路线、闭馆区和摄影规则，临行前查博物馆官网。" },
+    { id: "links", type: "internal-links", title: "继续读城市中的制度与证据", items: [{ label: "看懂中国城墙、城门与城市秩序", href: "/zh/guides/chinese-city-walls-gates-and-urban-order/", description: "从贡院控制转向整座城市的道路与门槛。" }, { label: "分清原存、修缮与重建", href: "/zh/guides/how-to-read-heritage-sites-in-china/", description: "用更完整的遗产干预词汇判断材料。" }] },
+    { id: "sources", type: "sources", title: "已核对的核心机构来源", items: [{ label: "中国科举博物馆", url: "https://www.njiemuseum.com/", publisher: "中国科举博物馆", reviewedAt: "2026-08-20" }, { label: "江南贡院沿革", url: "https://www.njiemuseum.com/about/8.html", publisher: "中国科举博物馆", reviewedAt: "2026-08-20" }, { label: "馆方科举学堂资料", url: "https://www.njiemuseum.com/xuetang_1/6.html", publisher: "中国科举博物馆", reviewedAt: "2026-08-20" }, { label: "南京地方志动态", url: "https://dfz.nanjing.gov.cn/gzdt/202604/t20260416_5824879.html", publisher: "南京市地方志办公室", reviewedAt: "2026-08-20" }] }
+  ]
+} satisfies StructuredPageBody;
+
+const ko = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    { id: "lead", type: "lead", text: "장난궁위안은 한 장면에 역사 건물, 재현 시험 칸, 현대 박물관이 함께 보여 오해하기 쉽습니다. ‘옛 시험장이 그대로 남았다’도 ‘전부 새것이다’도 정확하지 않습니다. 난징에는 대규모 철거 뒤에도 장소를 잡아 주는 중요한 기준점이 남았고, 중국과거박물관은 일부 공간을 재현하며 훨씬 컸던 제도를 지하 전시로 설명합니다." },
+    { id: "answer", type: "callout", title: "바로 답하면", body: "기관이 명시한 밍위안러우와 페이훙차오가 핵심 잔존 기준점입니다. 응시 칸과 일부 기능 공간은 재현·복원·해석 전시이며, 지하 전시실은 21세기 박물관입니다. 세 층을 모두 보되 한 연대로 묶지 마세요.", tone: "decision" },
+    { id: "scale-h", type: "heading", level: 2, text: "현재 경내가 보여 주지 못하는 규모부터 복원하세요" },
+    { id: "scale-p1", type: "paragraph", text: "박물관은 시험장 역사를 1168년까지 거슬러 설명합니다. 후대에 확장되어 강남 향시와 연결된 거대한 시설이 되었고, 1918년 대규모 철거가 이루어졌다고 기록합니다. 지금의 관람 구역은 남은 요소, 재현, 박물관의 종합 해석이지 성벽 안 시험 도시가 온전히 보존된 곳이 아닙니다." },
+    { id: "scale-p2", type: "paragraph", text: "공식 평면도나 모형에서 감독 중심, 응시 칸 구역, 동선과 경계를 찾으세요. 그다음 옛 부지, 기록에서 추정한 선, 현대 방문 시설을 나눕니다. 모형은 규모를 보여 주지만 범례를 읽어야 한 시점의 모습인지 여러 시대의 최대 규모를 합친 것인지 알 수 있습니다." },
+    { id: "layers-h", type: "heading", level: 2, text: "사진을 찍기 전에 세 라벨을 붙이세요" },
+    { id: "layers-table", type: "table", caption: "눈앞의 공간은 무엇인가?", columns: ["라벨", "현장 예", "안전한 캡션"], rows: [["남은 기준점", "기관이 확인한 밍위안러우와 페이훙차오", "구성요소를 특정하고 자체 보수 이력도 인정"], ["재현 해석", "응시 칸 열과 기능 장면", "재현 칸이라고 쓰고 전체를 고대 원형으로 부르지 않기"], ["현대 박물관", "지하 전시실·미디어·모형", "큐레이션 설명으로 쓰되 시험시대 건축으로 보지 않기"]] },
+    { id: "tower-h", type: "heading", level: 2, text: "밍위안러우에서는 지붕보다 통제 시선을 보세요" },
+    { id: "tower-p", type: "paragraph", text: "높고 중앙에 놓인 밍위안러우는 빽빽하고 폐쇄된 시험장 감독 구조 속에서 읽어야 의미가 생깁니다. 물러나 칸과 출입구를 향한 시야를 보고, 실제 건물의 연대와 보존 라벨을 읽으세요. 이 건물이 남았다는 사실은 진짜 공간 기준을 주지만 주변의 모든 칸을 같은 시대 건물로 만들지는 않습니다." },
+    { id: "cells-h", type: "heading", level: 2, text: "응시 칸은 시험을 다시 몸의 과제로 만듭니다" },
+    { id: "cells-p1", type: "paragraph", text: "칸은 책상 하나가 아니라 쓰기·기다리기·먹기·쉬기를 좁은 공간에 압축했습니다. 재현 칸에서 널판이 책상과 의자로 어떻게 바뀌는지, 물품은 어디에 두는지, 날씨와 밀집은 어떤 문제였는지 살피세요. 기간과 절차는 시대와 시험에 따라 달랐으므로 라벨 없이 숫자를 반복하지 않습니다." },
+    { id: "cells-p2", type: "paragraph", text: "몸으로 규모를 알아야 하므로 재현은 유용합니다. 다만 연출 소품을 움직이지 않은 옛 유물로 여길 때 오해가 생깁니다. 재현 외피, 복제 가구, 출토 원물, 큐레이터가 근거로 삼은 문헌을 분리하세요. 칸 구역이 닫혀도 치수가 있는 한 칸과 평면도·모형이면 충분합니다." },
+    { id: "process-h", type: "heading", level: 2, text: "답안지 한 장을 따라 기관을 통과해 보세요" },
+    { id: "process-list", type: "list", ordered: true, items: ["입장과 신원 확인으로 응시자를 통제된 시설 안에 넣습니다.", "번호가 있는 칸이 추상적 시험을 지정된 물리적 자리로 바꿉니다.", "작성된 답안은 응시자와 채점자의 사적 대화가 되지 않도록 이동합니다.", "감독·전사·채점 절차는 시대별로 달라도 기회와 신원 관계를 통제하려 했습니다.", "순위는 글쓰기 결과를 시설 밖에서 영향력을 갖는 행정 결과로 바꿉니다."] },
+    { id: "process-p", type: "paragraph", text: "이 순서는 독해 틀이지 천 년 동안 같았던 절차가 아닙니다. 전시마다 왕조, 시험 단계, 규정을 확인하세요. ‘고대 중국의 수능/SAT’ 같은 표현은 교육 내용, 사회적 범위, 정치적 역할과 변화를 현대 비유로 가려 버립니다." },
+    { id: "bridge-h", type: "heading", level: 2, text: "왜 페이훙차오에서 멈춰야 할까요?" },
+    { id: "bridge-p", type: "paragraph", text: "탑 옆의 다리는 작아 보이지만 이동을 이야기로 되돌립니다. 공식 명칭을 확인하고 무엇을 연결했는지, 운영 시 누가 건널 수 있었는지 묻습니다. 시적인 이름만으로 의례를 추론하지 마세요. 통제는 문제와 필체뿐 아니라 길·문턱·사람의 분리에 의존했습니다." },
+    { id: "underground-h", type: "heading", level: 2, text: "지하 전시실은 옛 지하실이 아니라 자료를 비교하는 곳입니다" },
+    { id: "underground-p1", type: "paragraph", text: "지하로 내려가면 증거 층이 바뀝니다. 문서·유물·모형·미디어가 작은 현장을 전국 제도와 연결합니다. 전시마다 원물/복제, 연대, 시험 단계, 출처 네 가지를 적으세요. 복제 답안은 형식을 알려 주지만 라벨 확인 없이 원본이라고 캡션을 달 수 없습니다." },
+    { id: "underground-p2", type: "paragraph", text: "난징 장소를 설명하는 자료를 우선하세요. 확장 지도, 응시자·직원 기록, 현지 출처 유물, 1918년 이후 철거·재사용 이력입니다. 왕조 연표는 방향을 잡지만 ‘이 땅에서 무엇이 일어났고 어떻게 아는가’라는 질문을 밀어내면 안 됩니다." },
+    { id: "route-h", type: "heading", level: 2, text: "문에서 전시실까지, 폐쇄에도 대응하는 순서" },
+    { id: "route-table", type: "table", caption: "개념 순서이며 당일 공식 동선을 따르세요", columns: ["단계", "과제", "대안"], rows: [["외부/지도", "옛 규모 회복", "야외 지도가 없으면 박물관 모형"], ["밍위안러우", "감독 기능과 잔존 부재 읽기", "내부 폐쇄 시 연대가 적힌 외부 라벨"], ["응시 칸", "몸의 규모와 재현 여부 확인", "한 칸의 치수와 모형"], ["페이훙차오", "동선과 문턱 읽기", "통제선이 있으면 접근하지 않기"], ["지하 박물관", "문서·유물·철거사를 현장과 연결", "혼잡하면 난징 고유 라벨 세 개만 선택"]] },
+    { id: "misread-h", type: "heading", level: 2, text: "설득력 있는 세트를 보존된 도시로 오해하지 마세요" },
+    { id: "misread-list", type: "list", ordered: false, items: ["재현 칸은 일부 규모를 정확히 보여 주면서도 재현일 수 있습니다.", "역사 탑은 크게 바뀐 경내 안에 남을 수 있습니다.", "테마 전시는 박물관의 설명 방식이지 특정 왕조 일상의 단독 증거가 아닙니다.", "그림·모형·현장은 서로 바꿔 쓸 수 없는 세 표현입니다."] },
+    { id: "who-h", type: "heading", level: 2, text: "난징 일정에서 가치가 있을까요?" },
+    { id: "who-p", type: "paragraph", text: "제도·교육사, 남은 조각과 현대 박물관의 관계에 관심 있다면 선택하세요. 주변 친화이 지구를 시대 배경 세트가 아니라 변한 도시로 볼 때 더 좋습니다. 온전한 고대 시설만 원하거나 글이 많은 전시가 맞지 않으면 건너뛰어도 됩니다. 입장·현행 출입구·무장애 동선·폐쇄·촬영은 공식 사이트에서 다시 확인하세요." },
+    { id: "links", type: "internal-links", title: "도시의 제도와 증거 계속 읽기", items: [{ label: "중국 성벽·성문·도시 질서 읽기", href: "/ko/guides/chinese-city-walls-gates-and-urban-order/", description: "시험장 통제에서 도시 전체의 길과 문턱으로 확장합니다." }, { label: "원형·보수·재건 구분하기", href: "/ko/guides/how-to-read-heritage-sites-in-china/", description: "더 넓은 유산 개입 용어로 재료를 판단합니다." }] },
+    { id: "sources", type: "sources", title: "검토한 핵심 기관 자료", items: [{ label: "중국과거박물관", url: "https://www.njiemuseum.com/", publisher: "중국과거박물관", reviewedAt: "2026-08-20" }, { label: "장난궁위안 연혁", url: "https://www.njiemuseum.com/about/8.html", publisher: "중국과거박물관", reviewedAt: "2026-08-20" }, { label: "박물관 학습 자료", url: "https://www.njiemuseum.com/xuetang_1/6.html", publisher: "중국과거박물관", reviewedAt: "2026-08-20" }, { label: "난징 지방지 자료", url: "https://dfz.nanjing.gov.cn/gzdt/202604/t20260416_5824879.html", publisher: "난징시 지방지판공실", reviewedAt: "2026-08-20" }] }
+  ]
+} satisfies StructuredPageBody;
+
+export const bodies = { en, zh, ko };

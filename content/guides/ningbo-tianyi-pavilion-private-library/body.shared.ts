@@ -1,0 +1,102 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const en = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    { id: "lead", type: "lead", text: "Tianyi Pavilion is a library where the absence of open shelves is part of the story. Fan Qin built a private collection in Ningbo during the Ming period; survival depended not only on a building, but on fire precautions, cataloguing, family continuity and restrictions on access. Today's museum adds gardens, exhibition rooms and later memorial spaces. Visit by thresholds: ask who could approach which books, under what rules, and how the institution now interprets that controlled world." },
+    { id: "answer", type: "callout", title: "The direct answer", body: "Do not expect to browse Fan Qin's rare books. Read Tianyi Pavilion as a preservation system: the historic library building, water and fire logic, family governance, catalogues, losses and the later museum. A facsimile or closed case is not a failed visit if its status and provenance are clear.", tone: "decision" },
+    { id: "private-h", type: "heading", level: 2, text: "“Private library” describes an institution, not simply ownership" },
+    { id: "private-p1", type: "paragraph", text: "Museum and Palace Museum accounts date Fan Qin's library to roughly 1561–1566. He collected books as a scholar-official, but the difficult achievement was continuity after one collector's death. Books had to remain together, be counted and organised, survive damp, insects and fire, and pass through family decisions rather than disperse as ordinary property." },
+    { id: "private-p2", type: "paragraph", text: "Restricted access now sounds contrary to the idea of a library, yet it could protect a fragile collection. It also meant knowledge was unequally available. Hold both facts: rules helped survival, and they limited use. Do not romanticise restriction as perfect stewardship; Tianyi's collection also suffered loss, removal and change." },
+    { id: "system-h", type: "heading", level: 2, text: "Look for four preservation systems before one famous book" },
+    { id: "system-table", type: "table", caption: "What kept a collection together?", columns: ["System", "On-site evidence", "Limit"], rows: [["Architecture", "Baoshu Lou, separated spaces, thresholds and storage logic", "Present fabric has repair and later context"], ["Environment/fire", "Water feature, separation and institutional explanation", "A pond alone does not prove the whole fire strategy"], ["Governance", "Family rules, access stories and succession records", "Rules changed and were not always perfectly followed"], ["Knowledge control", "Catalogues, shelf classifications and seals", "A catalogue entry does not mean the volume is now displayed"]] },
+    { id: "building-h", type: "heading", level: 2, text: "At Baoshu Lou, read the building from outside in" },
+    { id: "building-p1", type: "paragraph", text: "First confirm the official name Baoshu Lou (宝书楼), the historic library core. Stand where you can see its relationship to adjoining structures and water. Look for separation, limited openings, upper/lower storage logic and the approach path—but assign a function only when the museum explains it. An old threshold is not automatically a security device; a pool is not automatically a fire cistern." },
+    { id: "building-p2", type: "paragraph", text: "If entry is restricted, do not treat the exterior as a consolation prize. The line you cannot cross is evidence of continuing conservation and visitor management. Read the building label, current access reason and any section diagram. Never peer through barriers, touch timber or use flash to compensate for a dim interior." },
+    { id: "water-h", type: "heading", level: 2, text: "What does water mean at Tianyi Pavilion?" },
+    { id: "water-p1", type: "paragraph", text: "The name Tianyi invokes a traditional association between water and fire control, and museum interpretation connects water management with book protection. Separate symbolic naming from engineering evidence. A literary phrase can explain why water mattered culturally; dated plans, building records and site labels establish which water features served practical functions." },
+    { id: "water-p2", type: "paragraph", text: "On site, photograph water and the library in one frame only if the view makes their relationship legible. Record whether you are seeing a historic feature, repaired garden element or later landscaping. Do not caption every rock pool as a sixteenth-century fire system." },
+    { id: "catalogue-h", type: "heading", level: 2, text: "A catalogue is the library's second architecture" },
+    { id: "catalogue-p1", type: "paragraph", text: "Catalogues arrange books conceptually when shelves and volumes cannot all be seen. They record titles, categories and sometimes ownership history; later catalogues also reveal disappearance and change. Select one catalogue display and ask when it was compiled, which collection stage it describes and whether the page is original, facsimile or digital." },
+    { id: "catalogue-p2", type: "paragraph", text: "The National Library's rare-book work shows why description matters beyond one museum. Cataloguing allows institutions to identify editions, compare copies and coordinate preservation. Yet a catalogue cannot replace the book's physical evidence—paper, binding, seals, annotations—or guarantee its present location." },
+    { id: "museum-h", type: "heading", level: 2, text: "The present museum is larger than Fan Qin's library" },
+    { id: "museum-p1", type: "paragraph", text: "Today's Tianyi Pavilion Museum includes the historic library core, later buildings, gardens, memorial and exhibition spaces. A pleasant courtyard may belong to the museum's later interpretive landscape rather than the sixteenth-century collecting system. Use the official map and name each zone before assigning it to Fan Qin." },
+    { id: "museum-p2", type: "paragraph", text: "Temporary exhibitions can broaden the visit to book arts or regional collecting. Treat them as current curatorial work. If an original rare book is replaced by a facsimile for conservation, that is not concealment: note the substitution and ask what risk the original is being protected from. Permission to photograph a case never grants the right to reproduce a full modern facsimile or catalogue." },
+    { id: "route-h", type: "heading", level: 2, text: "A threshold-first route through Tianyi Pavilion" },
+    { id: "route-table", type: "table", caption: "Follow access, not just scenery", columns: ["Stop", "Question", "If unavailable"], rows: [["Official map", "Which zone is the historic library core?", "Ask staff to point out Baoshu Lou"], ["Approach/threshold", "Who could cross, historically and today?", "Read the exterior access notice"], ["Water/separation", "Symbolic meaning, practical function, or both?", "Use the museum's section/plan"], ["Catalogue display", "Which collection stage is described?", "Choose another dated catalogue or digital record"], ["Book case", "Original, facsimile or reproduction?", "Use the label without demanding an original"], ["Later garden/museum", "Which layer was added after the private library?", "Name it simply as current museum landscape"]] },
+    { id: "misread-h", type: "heading", level: 2, text: "Do not confuse preservation with timeless perfection" },
+    { id: "misread-list", type: "list", ordered: false, items: ["The library survived, but not every book, rule or building element remained unchanged.", "Private restriction supported preservation and also limited readers.", "A beautiful garden is not automatically Fan Qin's original design.", "A facsimile can be honest interpretation; an unlabelled claim that it is original is the problem.", "A famous catalogue does not promise the named volume is on display today."] },
+    { id: "who-h", type: "heading", level: 2, text: "Who should make Tianyi Pavilion a Ningbo priority?" },
+    { id: "who-p", type: "paragraph", text: "Prioritise it if you care about books as physical heritage, family institutions or architecture designed around risk and access. It is less suitable if you expect an open reading room or a single spectacular manuscript. Check the museum's current notices for booking, open buildings, accessible route, photography and exhibition rotation. If Baoshu Lou is closed, the map, exterior, water relationship and catalogue displays still complete the central task." },
+    { id: "links", type: "internal-links", title: "Continue reading collections and buildings", items: [{ label: "Read heritage interventions in China", href: "/guides/how-to-read-heritage-sites-in-china/", description: "Separate historic fabric, repair and later museum additions." }, { label: "How to visit an archaeological site museum", href: "/guides/how-to-visit-an-archaeological-site-museum/", description: "Use the same provenance discipline for objects and labels." }] },
+    { id: "sources", type: "sources", title: "Core institutional sources reviewed", items: [{ label: "Tianyi Pavilion Museum", url: "https://nbtygyh.haishu.gov.cn/", publisher: "Tianyi Pavilion Museum", reviewedAt: "2026-08-20" }, { label: "Site and building introduction", url: "https://nbtygyh.haishu.gov.cn/sight_1.html", publisher: "Tianyi Pavilion Museum", reviewedAt: "2026-08-20" }, { label: "Tianyi Pavilion history and culture", url: "https://nbtygyh.haishu.gov.cn/culture.html", publisher: "Tianyi Pavilion Museum", reviewedAt: "2026-08-20" }, { label: "Palace Museum entry on Tianyi Pavilion", url: "https://www.dpm.org.cn/lemmas/241810.html", publisher: "Palace Museum", reviewedAt: "2026-08-20" }, { label: "National rare-book catalogue project", url: "https://www.nlc.cn/pcab/ztzl/gjpcml/page5/201810/t20181026_173280.htm", publisher: "National Library of China", reviewedAt: "2026-08-20" }] }
+  ]
+} satisfies StructuredPageBody;
+
+const zh = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    { id: "lead", type: "lead", text: "天一阁是一座“看不到开放书架”本身也有意义的藏书楼。明代范钦在宁波建立私人收藏，延续靠的不只是一栋房子，还包括防火、防潮、目录、家族传承和访问限制。今天的博物院又加入园林、展厅与后世纪念空间。参观应沿门槛前进：谁在什么规则下能接近哪些书，今天的机构又怎样解释那个受控制的世界？" },
+    { id: "answer", type: "callout", title: "直接答案", body: "不要期待翻阅范钦旧藏。把天一阁读成一套保存系统：历史藏书楼、水与防火逻辑、家族治理、目录、散失，以及后来的博物馆。原件不开放、展出复制品，只要状态和来源标清，都不等于参观失败。", tone: "decision" },
+    { id: "private-h", type: "heading", level: 2, text: "“私人藏书楼”不只是产权，而是一套制度" },
+    { id: "private-p1", type: "paragraph", text: "馆方与故宫资料通常把范钦建楼定在1561至1566年。他以官员、藏书家身份收书，更困难的成就是如何在个人去世后延续：书要保持成组、清点编目，抵御潮湿、虫害和火灾，并通过家族决策传承，而不是像普通财物一样分散。" },
+    { id: "private-p2", type: "paragraph", text: "今天看，限制进入似乎与“图书馆”相反，却可能保护脆弱收藏；它同时意味着知识并非平等可得。两点都要保留：规则帮助保存，也限制使用。不要把限制浪漫化成完美管理，天一阁藏书同样经历散失、转移与变化。" },
+    { id: "system-h", type: "heading", level: 2, text: "找名贵古籍前，先找四套保存系统" },
+    { id: "system-table", type: "table", caption: "什么让收藏保持在一起？", columns: ["系统", "现场证据", "边界"], rows: [["建筑", "宝书楼、空间分隔、门槛和储藏逻辑", "现存构件有维修和后期环境"], ["环境/防火", "水体、隔离和机构说明", "一池水不能单独证明完整防火体系"], ["治理", "家族规则、访问故事与传承记录", "规则会变化，也未必完全执行"], ["知识控制", "目录、分类和藏书印", "目录有书名不等于今天展出"]] },
+    { id: "building-h", type: "heading", level: 2, text: "到宝书楼，从外向内读建筑" },
+    { id: "building-p1", type: "paragraph", text: "先确认官方名称“宝书楼”，也就是历史藏书核心。站在能看到它与邻近建筑、水体关系的位置，观察分隔、开口、上下层储藏和接近路线；功能只能在馆方说明支持时判断。旧门槛未必就是安全设施，水池也未必全是消防水池。" },
+    { id: "building-p2", type: "paragraph", text: "若内部限制进入，不要把外观当作安慰奖。不可跨越的线本身说明持续的保护与游客管理。读建筑标签、当天限制原因和剖面图，不探身越栏、不触木构，也不用闪光补偿昏暗。" },
+    { id: "water-h", type: "heading", level: 2, text: "天一阁的“水”到底意味着什么？" },
+    { id: "water-p1", type: "paragraph", text: "“天一”名称涉及传统上水与制火的观念，馆方解释也把水管理与护书相连。应把象征命名与工程证据分开：典故说明文化上为什么重水；有年代的图纸、建筑记录和现场标签，才说明某个水体实际承担什么功能。" },
+    { id: "water-p2", type: "paragraph", text: "只有在同一画面能说明水体与藏书楼关系时，才一起拍摄。记录眼前是历史设施、修整后的园林构件还是后来景观，不要把所有池石都写成十六世纪消防系统。" },
+    { id: "catalogue-h", type: "heading", level: 2, text: "目录是藏书楼的第二套建筑" },
+    { id: "catalogue-p1", type: "paragraph", text: "当书架和古籍不能全部看见，目录在概念上重新排列收藏。它记录书名、分类，有时也记录所有关系；不同时期目录还能暴露散失与变化。选一件目录展项，确认编纂年代、描述哪个收藏阶段，以及纸页是原件、复制还是数字图。" },
+    { id: "catalogue-p2", type: "paragraph", text: "国家图书馆的古籍工作说明，著录为何超出一家博物馆：机构可识别版本、比较存本、协调保护。但目录不能代替纸张、装帧、印章和批校等物质证据，也不能保证书仍在原位置。" },
+    { id: "museum-h", type: "heading", level: 2, text: "今天的博物院比范钦藏书楼大得多" },
+    { id: "museum-p1", type: "paragraph", text: "今天的天一阁博物院包括历史藏书核心、后期建筑、园林、纪念与展览空间。宜人的院落可能属于后来的博物馆景观，而非十六世纪收藏系统。先用官方地图给每区命名，再判断是否与范钦相关。" },
+    { id: "museum-p2", type: "paragraph", text: "临展会扩展到书籍艺术或区域藏书史，应当标为当前策展。若原古籍为保护而换成复制品，不是隐瞒：记录替换，并问原件在规避什么风险。允许拍展柜，不等于可以复制整页现代仿本或目录。" },
+    { id: "route-h", type: "heading", level: 2, text: "一条以门槛为线索的天一阁游线" },
+    { id: "route-table", type: "table", caption: "沿访问权限走，不只沿风景走", columns: ["停点", "问题", "不可用时"], rows: [["官方地图", "历史藏书核心是哪一块？", "请工作人员指出宝书楼"], ["接近路线/门槛", "历史上和今天谁能跨过？", "读外部开放说明"], ["水体/分隔", "象征、实用，还是两者？", "看馆方剖面或平面"], ["目录展项", "它描述哪个收藏阶段？", "换一件有日期目录或数字记录"], ["古籍展柜", "原件、复制还是再制作？", "依标签判断，不要求原件常展"], ["后期园林/博物馆", "哪一层晚于私人藏书楼？", "直接写“当前博物院园林”"]] },
+    { id: "misread-h", type: "heading", level: 2, text: "不要把保存成功误写成永恒不变" },
+    { id: "misread-list", type: "list", ordered: false, items: ["藏书楼延续下来，不等于每本书、规则和构件都未变化。", "私人限制有利保护，也限制读者。", "美丽园林不自动等于范钦原设计。", "标明状态的复制品可以诚实解释，问题在于冒充原件。", "著名目录不保证所列古籍当天展出。"] },
+    { id: "who-h", type: "heading", level: 2, text: "谁应该把天一阁列为宁波重点？" },
+    { id: "who-p", type: "paragraph", text: "关心书籍物质史、家族制度，或建筑怎样应对风险与访问权限的人应优先。若期待开放阅览室或一件轰动手稿，可能不合适。预约、开放建筑、无障碍、摄影和展品轮换看馆方通知。即使宝书楼内部关闭，地图、外观、水体关系与目录仍能完成核心任务。" },
+    { id: "links", type: "internal-links", title: "继续读收藏与建筑", items: [{ label: "看懂中国遗产修缮与重建", href: "/zh/guides/how-to-read-heritage-sites-in-china/", description: "分清历史原构、维修和后来的博物馆层。" }, { label: "怎样参观考古遗址博物馆", href: "/zh/guides/how-to-visit-an-archaeological-site-museum/", description: "把相同的来源纪律用于物件与标签。" }] },
+    { id: "sources", type: "sources", title: "已核对的核心机构来源", items: [{ label: "天一阁博物院", url: "https://nbtygyh.haishu.gov.cn/", publisher: "天一阁博物院", reviewedAt: "2026-08-20" }, { label: "场馆与建筑介绍", url: "https://nbtygyh.haishu.gov.cn/sight_1.html", publisher: "天一阁博物院", reviewedAt: "2026-08-20" }, { label: "天一阁历史文化", url: "https://nbtygyh.haishu.gov.cn/culture.html", publisher: "天一阁博物院", reviewedAt: "2026-08-20" }, { label: "故宫博物院天一阁条目", url: "https://www.dpm.org.cn/lemmas/241810.html", publisher: "故宫博物院", reviewedAt: "2026-08-20" }, { label: "国家珍贵古籍名录工作", url: "https://www.nlc.cn/pcab/ztzl/gjpcml/page5/201810/t20181026_173280.htm", publisher: "国家图书馆", reviewedAt: "2026-08-20" }] }
+  ]
+} satisfies StructuredPageBody;
+
+const ko = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    { id: "lead", type: "lead", text: "톈이거는 열린 서가가 없다는 사실도 이야기의 일부인 도서관입니다. 명대 판친이 닝보에 사가 장서를 만들었고, 생존에는 건물뿐 아니라 방화·목록·가문 연속성과 접근 제한이 필요했습니다. 오늘의 박물원은 정원·전시실·후대 기념 공간을 더했습니다. 문턱을 따라 누가 어떤 규칙으로 어느 책에 접근했고, 지금 기관이 그 통제 세계를 어떻게 설명하는지 물으세요." },
+    { id: "answer", type: "callout", title: "바로 답하면", body: "판친의 희귀서를 직접 넘길 기대는 하지 마세요. 역사 장서각, 물·방화 논리, 가문 운영, 목록, 손실, 후대 박물관을 하나의 보존 체계로 읽습니다. 원본이 닫혀 있거나 복제본을 전시해도 상태와 출처가 명확하면 실패가 아닙니다.", tone: "decision" },
+    { id: "private-h", type: "heading", level: 2, text: "‘사가 장서각’은 소유권보다 큰 제도입니다" },
+    { id: "private-p1", type: "paragraph", text: "박물관과 고궁박물원 자료는 판친의 장서각을 대체로 1561~1566년으로 봅니다. 관리이자 수장가였던 그가 책을 모았지만 더 어려운 성취는 개인 사후의 연속성이었습니다. 책을 함께 두고 목록화하며 습기·벌레·불을 피하고 보통 재산처럼 흩어지지 않도록 가문 결정으로 이어야 했습니다." },
+    { id: "private-p2", type: "paragraph", text: "오늘날 접근 제한은 도서관과 반대로 보이지만 취약한 장서를 보호할 수 있었습니다. 동시에 지식 이용은 평등하지 않았습니다. 규칙은 보존을 도왔고 이용을 막았다는 두 사실을 함께 두세요. 제한을 완벽한 관리로 낭만화하면 안 됩니다. 장서도 손실·이동·변화를 겪었습니다." },
+    { id: "system-h", type: "heading", level: 2, text: "유명한 책보다 네 보존 체계를 먼저 찾으세요" },
+    { id: "system-table", type: "table", caption: "장서를 묶어 둔 것은 무엇인가?", columns: ["체계", "현장 증거", "한계"], rows: [["건축", "바오수러우·공간 분리·문턱·수장 논리", "현존 부재에는 보수와 후대 맥락"], ["환경/방화", "물·분리·기관 설명", "연못 하나가 전체 방화 체계를 증명하지 않음"], ["운영", "가문 규칙·접근 이야기·계승 기록", "규칙은 변하고 완벽히 지켜지지 않음"], ["지식 통제", "목록·분류·장서인", "목록에 있어도 오늘 전시되지는 않음"]] },
+    { id: "building-h", type: "heading", level: 2, text: "바오수러우에서는 밖에서 안으로 읽으세요" },
+    { id: "building-p1", type: "paragraph", text: "역사 장서 중심의 공식 이름 바오수러우(宝书楼)를 확인합니다. 주변 건물·물과 관계가 보이는 곳에서 분리, 개구부, 상하층 수장 논리, 접근로를 보되 기능은 박물관 설명이 있을 때만 붙이세요. 오래된 문턱이 곧 보안 장치는 아니며 물이 모두 소방 저수지는 아닙니다." },
+    { id: "building-p2", type: "paragraph", text: "내부가 제한되어도 외관은 차선책이 아닙니다. 넘을 수 없는 선 자체가 계속되는 보존과 방문자 관리를 보여 줍니다. 라벨·당일 제한 이유·단면을 읽고, 울타리를 넘거나 목재를 만지거나 어둡다고 플래시를 쓰지 않습니다." },
+    { id: "water-h", type: "heading", level: 2, text: "톈이거에서 물은 무엇을 뜻할까요?" },
+    { id: "water-p1", type: "paragraph", text: "‘톈이’라는 이름에는 물과 화재 억제의 전통적 연상이 있고, 박물관은 물 관리와 책 보호를 연결합니다. 상징적 이름과 공학 증거를 분리하세요. 고사는 물의 문화적 중요성을 설명하고, 연대 있는 도면·건물 기록·라벨이 실제 기능을 정합니다." },
+    { id: "water-p2", type: "paragraph", text: "물과 장서각 관계가 읽히는 구도일 때만 한 화면에 담으세요. 역사 시설, 보수된 정원 요소, 후대 조경 중 무엇인지 기록하고 모든 못과 돌을 16세기 소방 체계라 하지 않습니다." },
+    { id: "catalogue-h", type: "heading", level: 2, text: "목록은 장서각의 두 번째 건축입니다" },
+    { id: "catalogue-p1", type: "paragraph", text: "서가와 책을 모두 볼 수 없을 때 목록이 개념적으로 장서를 배열합니다. 제목·분류·때로는 소유 이력을 기록하고, 다른 시대 목록은 손실과 변화를 보여 줍니다. 한 목록 전시에서 편찬 연대, 어떤 수장 단계를 말하는지, 원본·복제·디지털인지 확인하세요." },
+    { id: "catalogue-p2", type: "paragraph", text: "국가도서관의 고서 작업은 서지가 한 박물관을 넘어 중요한 이유를 보여 줍니다. 판본 식별, 이본 비교, 보존 협력이 가능해집니다. 그러나 목록은 종이·장정·인장·주석을 대신하지 못하며 현재 위치를 보장하지 않습니다." },
+    { id: "museum-h", type: "heading", level: 2, text: "오늘의 박물원은 판친의 장서각보다 큽니다" },
+    { id: "museum-p1", type: "paragraph", text: "현 박물원에는 역사 장서 중심, 후대 건물, 정원, 기념·전시 공간이 있습니다. 아름다운 중정이 16세기 수장 체계가 아니라 후대 해석 경관일 수 있습니다. 공식 지도에서 구역 이름부터 확인하고 판친 시기로 배정하세요." },
+    { id: "museum-p2", type: "paragraph", text: "특별전은 책 예술·지역 수장사로 넓어질 수 있으며 현재 큐레이션으로 표시합니다. 보존 때문에 원본 대신 복제본을 쓰는 것은 은폐가 아닙니다. 교체를 적고 어떤 위험을 피하는지 묻습니다. 진열장 촬영 허가도 현대 복제·목록 전체를 재사용할 권리는 아닙니다." },
+    { id: "route-h", type: "heading", level: 2, text: "문턱을 따라가는 톈이거 동선" },
+    { id: "route-table", type: "table", caption: "경치보다 접근 권한 따라가기", columns: ["지점", "질문", "대안"], rows: [["공식 지도", "역사 장서 중심은 어디인가?", "직원에게 바오수러우 문의"], ["접근로/문턱", "과거와 오늘 누가 넘나?", "외부 접근 안내 읽기"], ["물/분리", "상징·실용 또는 둘 다?", "박물관 단면/평면"], ["목록 전시", "어느 수장 단계를 설명하나?", "다른 연대 목록·디지털 기록"], ["책 진열장", "원본·복제·재제작?", "원본 상설을 요구하지 말고 라벨 사용"], ["후대 정원/박물관", "사가 장서각 뒤에 추가된 층은?", "현재 박물원 경관으로 정확히 명명"]] },
+    { id: "misread-h", type: "heading", level: 2, text: "보존을 영원한 완전함으로 오해하지 마세요" },
+    { id: "misread-list", type: "list", ordered: false, items: ["장서각이 남았어도 모든 책·규칙·부재가 변함없지는 않습니다.", "사가 제한은 보존을 도우며 독자를 제한했습니다.", "아름다운 정원이 판친 원설계인 것은 아닙니다.", "명시된 복제는 정직한 해석이며 원본으로 가장할 때가 문제입니다.", "유명 목록에 있어도 당일 전시는 보장되지 않습니다."] },
+    { id: "who-h", type: "heading", level: 2, text: "누가 닝보에서 톈이거를 우선해야 할까요?" },
+    { id: "who-p", type: "paragraph", text: "책의 물질 유산, 가문 제도, 위험과 접근을 다룬 건축에 관심 있으면 우선하세요. 열린 열람실이나 한 점의 화려한 필사본을 기대하면 맞지 않을 수 있습니다. 예약·개방 건물·무장애·촬영·교체 전시는 공지를 확인하세요. 바오수러우가 닫혀도 지도·외관·물 관계·목록으로 핵심 과제를 끝낼 수 있습니다." },
+    { id: "links", type: "internal-links", title: "수장품과 건축 계속 읽기", items: [{ label: "중국 유산 개입 읽기", href: "/ko/guides/how-to-read-heritage-sites-in-china/", description: "역사 부재·보수·후대 박물관 층을 구분합니다." }, { label: "고고유적 박물관 방문법", href: "/ko/guides/how-to-visit-an-archaeological-site-museum/", description: "같은 출처 규율을 물건과 라벨에 적용합니다." }] },
+    { id: "sources", type: "sources", title: "검토한 핵심 기관 자료", items: [{ label: "톈이거박물원", url: "https://nbtygyh.haishu.gov.cn/", publisher: "톈이거박물원", reviewedAt: "2026-08-20" }, { label: "장소·건물 소개", url: "https://nbtygyh.haishu.gov.cn/sight_1.html", publisher: "톈이거박물원", reviewedAt: "2026-08-20" }, { label: "톈이거 역사·문화", url: "https://nbtygyh.haishu.gov.cn/culture.html", publisher: "톈이거박물원", reviewedAt: "2026-08-20" }, { label: "고궁박물원 톈이거 항목", url: "https://www.dpm.org.cn/lemmas/241810.html", publisher: "고궁박물원", reviewedAt: "2026-08-20" }, { label: "국가 귀중 고서 목록 사업", url: "https://www.nlc.cn/pcab/ztzl/gjpcml/page5/201810/t20181026_173280.htm", publisher: "중국국가도서관", reviewedAt: "2026-08-20" }] }
+  ]
+} satisfies StructuredPageBody;
+
+export const bodies = { en, zh, ko };

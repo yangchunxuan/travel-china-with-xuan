@@ -1,0 +1,24 @@
+{
+  "id": "pingyao-rishengchang-draft-bank-network",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "historic-network-site-guide",
+  "topics": ["rishengchang", "piaohao", "pingyao", "remittances", "business-history"],
+  "destinations": ["pingyao", "shanxi"],
+  "heroImagePath": "/images/guides/pingyao-rishengchang-draft-bank-network/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/pingyao-rishengchang-draft-bank-network/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/pingyao-rishengchang-draft-bank-network/", "title": "Rishengchang in Pingyao: How a Courtyard Moved Money Across Qing China", "headline": "A Draft Was a Network, Not Just a Slip of Paper", "description": "Read counters, account rooms, security practice and branch relationships at Rishengchang without reducing piaohao to a modern-bank origin myth.", "heroAlt": "Huitong Tianxia plaque and rear-hall doorway inside Rishengchang in Pingyao", "heroCredit": { "text": "Rishengchang's 'Huitong Tianxia' plaque and rear hall, photographed by Gisling in October 2008; cropped and resized. One incidental visitor is seen from behind; the plaque does not prove a nationwide monopoly.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rishengchang_global_money_exchange_board.JPG", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" }, "navTitle": "Read Rishengchang's network", "featuredLinkLabel": "Trace how a piaohao moved money", "openGraphLocale": "en_US", "cardTags": ["Pingyao", "Rishengchang", "Money history"] },
+    "zh": { "path": "/zh/guides/pingyao-rishengchang-draft-bank-network/", "title": "平遥日升昌怎么看：一座院落怎样连接清代汇兑网络", "headline": "汇票背后是一张网络，不只是一张纸", "description": "从柜台、账房、防伪和分号关系读懂日升昌，不把票号简化成“现代银行起点”神话。", "heroAlt": "平遥日升昌内“汇通天下”匾与后厅门口", "heroCredit": { "text": "日升昌“汇通天下”匾与后厅，Gisling摄于2008年10月；经裁切和缩放。门内有一名背对镜头的偶然入镜访客；匾额不能证明全国垄断。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rishengchang_global_money_exchange_board.JPG", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" }, "navTitle": "读懂日升昌汇兑网络", "featuredLinkLabel": "追踪票号怎样转移资金", "openGraphLocale": "zh_CN", "cardTags": ["平遥", "日升昌", "金融史"] },
+    "ko": { "path": "/ko/guides/pingyao-rishengchang-draft-bank-network/", "title": "핑야오 르성창 읽기: 청대 송금망을 움직인 한 중정", "headline": "환어음 뒤에는 종이 한 장보다 큰 네트워크가 있었습니다", "description": "르성창의 창구·장부방·위조 방지·지점 관계를 읽되 표호를 현대 은행의 기원 신화로 단순화하지 않습니다.", "heroAlt": "핑야오 르성창 내부의 후이퉁톈샤 현판과 뒤채 출입구", "heroCredit": { "text": "르성창의 ‘후이퉁톈샤’ 현판과 뒤채. Gisling이 2008년 10월 촬영했으며 잘라 크기를 조정했습니다. 문 안에 뒷모습의 우연한 방문객 한 명이 보이며, 현판만으로 전국 독점을 입증할 수 없습니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rishengchang_global_money_exchange_board.JPG", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" }, "navTitle": "르성창 송금망 읽기", "featuredLinkLabel": "표호가 돈을 옮긴 방식 추적하기", "openGraphLocale": "ko_KR", "cardTags": ["핑야오", "르성창", "금융사"] }
+  },
+  "searchTerms": { "en": ["Rishengchang Pingyao history guide", "how piaohao remittances worked"], "zh": ["平遥日升昌怎么参观", "票号汇兑怎么运作"], "ko": ["핑야오 르성창 관람", "표호 송금 방식"] }
+}

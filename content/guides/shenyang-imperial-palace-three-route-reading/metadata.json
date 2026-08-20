@@ -1,0 +1,24 @@
+{
+  "id": "shenyang-imperial-palace-three-route-reading",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "palace-route-comparison",
+  "topics": ["shenyang-imperial-palace", "early-qing", "palace-architecture", "museum-reading"],
+  "destinations": ["shenyang", "liaoning"],
+  "heroImagePath": "/images/guides/shenyang-imperial-palace-three-route-reading/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shenyang-imperial-palace-three-route-reading/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/shenyang-imperial-palace-three-route-reading/", "title": "Shenyang Imperial Palace: Read an Early Qing Court Before Beijing", "headline": "East, Central and West Routes Were Not Built for One Moment", "description": "Walk Shenyang Imperial Palace by three routes, separating the early assembly court, central residence and later imperial library additions.", "heroAlt": "Dazheng Hall on the east route of Shenyang Imperial Palace", "heroCredit": { "text": "Dazheng Hall, photographed by Wilson44691 on 3 July 2014; centre-cropped and resized. It anchors the east route and does not represent every building phase in the palace.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dazheng_Hall_070314.jpg", "licenseLabel": "CC0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/" }, "navTitle": "Read Shenyang Palace by route", "featuredLinkLabel": "Separate three building phases", "openGraphLocale": "en_US", "cardTags": ["Shenyang", "Early Qing", "Palace"] },
+    "zh": { "path": "/zh/guides/shenyang-imperial-palace-three-route-reading/", "title": "沈阳故宫怎么读：在北京之前看懂早期清代宫廷", "headline": "东、中、西三路不是同一时刻建成的", "description": "按东路议政空间、中路宫廷生活和西路后期藏书工程，分阶段走读沈阳故宫。", "heroAlt": "沈阳故宫东路大政殿", "heroCredit": { "text": "沈阳故宫大政殿，Wilson44691摄于2014年7月3日；经居中裁切和缩放。它是东路核心，不能代表宫殿所有建设阶段。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dazheng_Hall_070314.jpg", "licenseLabel": "CC0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/" }, "navTitle": "按三路读沈阳故宫", "featuredLinkLabel": "分清沈阳故宫三期空间", "openGraphLocale": "zh_CN", "cardTags": ["沈阳", "清初", "宫殿"] },
+    "ko": { "path": "/ko/guides/shenyang-imperial-palace-three-route-reading/", "title": "선양고궁 읽기: 베이징 이전 초기 청 궁정을 만나다", "headline": "동·중·서로는 한 시기에 지어진 공간이 아닙니다", "description": "동로의 집회 공간, 중로의 궁정 생활, 후대 서로의 서고를 나눠 선양고궁을 걷습니다.", "heroAlt": "선양고궁 동로의 다정뎬", "heroCredit": { "text": "선양고궁 다정뎬. Wilson44691이 2014년 7월 3일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 동로의 중심 건물이지 궁 전체의 모든 건축 시기를 대표하지 않습니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dazheng_Hall_070314.jpg", "licenseLabel": "CC0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/" }, "navTitle": "세 길로 선양고궁 읽기", "featuredLinkLabel": "세 건축 단계 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["선양", "초기 청", "궁궐"] }
+  },
+  "searchTerms": { "en": ["Shenyang Imperial Palace route guide", "Dazheng Hall east route"], "zh": ["沈阳故宫三路怎么走", "大政殿中路西路区别"], "ko": ["선양고궁 관람 동선", "다정뎬 동로 서로"] }
+}
