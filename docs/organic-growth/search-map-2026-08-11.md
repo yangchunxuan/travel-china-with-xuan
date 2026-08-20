@@ -10,9 +10,9 @@
 - 当前指南库存：**173 个内容身份、513 个 locale URL**；其中 154 个独立 guide 目录均三语，另有 19 个受保护 legacy guide 身份（16 个三语、3 个仅英文）。三语始终只算一个身份。
 - 当前已发布城市 Hub：**5 个身份、15 个 locale URL**，分别为 Beijing、Shanghai、Xi'an、Chengdu、Guangzhou。再计 1 个英文系统 entry collection，当前公开编辑型详情总数为 **179 个身份、529 个 URL**。
 - `first-shared-meal-in-china` 已随 PR #31 发布；`foreigners-china-hotel` 已随 PR #50 发布；`china-esim-vs-local-sim` 已随 PR #41 发布。三项都不能继续标作等待审核或本地不耐久稿。
-- 中央本批批准但尚未发布：Zhangjiajie City Hub、China Online Arrival Card、Zhangjiajie National Forest Park tickets/entrances/in-park transport workflow。三项已在 `codex/seo-gap-batch-20260820` 形成三语 release candidate，仍须 Draft PR、中央审核与合并后才可上线。
+- 中央本批批准但尚未发布：Zhangjiajie City Hub、China Online Arrival Card、Zhangjiajie National Forest Park tickets/entrances/in-park transport workflow。三项已随 [Draft PR #74](https://github.com/yangchunxuan/travel-china-with-xuan/pull/74) 提交中央审核，仍须中央批准与合并后才可上线。
 - `First 24 Hours in China`：`defer / not-started / not-published`；arrival-card canonical owner 形成且 collection gate 重新审核前，不写正文、不建公开页。
-- 库存完成状态：`chongqing-railway-station-selector` 已刷新日期、重庆东站官方证据与动态事实；Hangzhou Hub 已完成 runtime 转换、三语结构和真实素材记录。二者均已进入同一 release candidate，但仍是 `not-published`。
+- 库存完成状态：`chongqing-railway-station-selector` 已刷新日期、重庆东站官方证据与动态事实；Hangzhou Hub 已完成 runtime 转换、三语结构和真实素材记录。二者均已随 Draft PR #74 提交中央审核，但仍是 `not-published`。
 - Search Console 最新可用小样本为 2026-07-09 至 2026-08-18：17 clicks、1,060 impressions、CTR 1.6%、average position 20.5。隐私过滤隐藏大量 query；关键词量、CPC、难度、购买概率仍为**不可用**。
 - 本同步不虚构 GitHub Issue URL；三个新批准项的 `executionIssueUrl` 都是 `null`。中央批准只授权有边界的实现与审核，不等于合并、部署或上线。
 
