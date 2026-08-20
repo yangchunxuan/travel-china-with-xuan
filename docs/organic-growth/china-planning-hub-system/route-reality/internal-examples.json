@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "fixtureSet": "route-reality-v2-internal-contract-2026-08-20",
+  "status": "INTERNAL_ONLY_NUMERIC_POLICY_PENDING",
+  "modelVersion": "route-reality-v2.0.0-internal-draft",
+  "notes": [
+    "These fixtures test validation, topology and output properties; they do not approve legacy coefficients or numeric scores.",
+    "javascript-expression fixtures cover values that JSON cannot encode, such as NaN or a non-plain object.",
+    "Every future numeric fixture must identify an independently approved policyPackVersion."
+  ],
+  "scenarios": [
+    {
+      "id": "BND-01",
+      "group": "boundary",
+      "input": {"totalNights": 1, "arrivalWindow": "after_18", "departureWindow": "before_09", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "calendarDays": 2, "transitionDays": 0, "status": "ok"}
+    },
+    {
+      "id": "BND-02",
+      "group": "boundary",
+      "input": {"totalNights": 30, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 29, "airportStationTransfers": 30, "hotelChanges": 0, "travellerPace": "fast"},
+      "expected": {"validation": "valid", "calendarDays": 31, "transitionDays": 29, "status": "ok"}
+    },
+    {
+      "id": "SEM-01",
+      "group": "count-semantics",
+      "routeFact": "One out-and-back city day trip, same overnight base",
+      "input": {"totalNights": 3, "arrivalWindow": "12_15", "departureWindow": "15_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "note": "Day trip is excluded from crossCityMoves."}
+    },
+    {
+      "id": "SEM-02",
+      "group": "count-semantics",
+      "routeFact": "A to B overnight-base relocation by direct train",
+      "input": {"totalNights": 3, "arrivalWindow": "12_15", "departureWindow": "15_18", "crossCityMoves": 1, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "note": "Normal checkout/check-in is contained in the move; hotelChanges stays zero."}
+    },
+    {
+      "id": "SEM-03",
+      "group": "count-semantics",
+      "routeFact": "One cross-city base change plus a later same-city hotel switch",
+      "input": {"totalNights": 4, "arrivalWindow": "09_12", "departureWindow": "15_18", "crossCityMoves": 1, "airportStationTransfers": 0, "hotelChanges": 1, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "accommodationChangeDays": 2, "note": "No H minus C overlap calculation."}
+    },
+    {
+      "id": "SEM-04",
+      "group": "count-semantics",
+      "routeFact": "Airport to separate railway station on a base-change day",
+      "input": {"totalNights": 4, "arrivalWindow": "09_12", "departureWindow": "15_18", "crossCityMoves": 1, "airportStationTransfers": 1, "hotelChanges": 0, "travellerPace": "slow"},
+      "expected": {"validation": "valid", "note": "One interchange may share one move day; burdens remain separate."}
+    },
+    {
+      "id": "UNK-01",
+      "group": "unknown-range",
+      "input": {"totalNights": "unknown", "arrivalWindow": "unknown", "departureWindow": "unknown", "crossCityMoves": "unknown", "airportStationTransfers": "unknown", "hotelChanges": "unknown", "travellerPace": "unknown"},
+      "expected": {"validation": "valid", "status": "insufficient_input", "decisionUseful": false, "confidence": "low", "suggestedBufferDays": null, "bufferActionable": false, "unknownFieldCount": 7, "alertsMayNotBeConfirmedFromPossibleOnlyWitness": true}
+    },
+    {
+      "id": "UNK-02",
+      "group": "unknown-range",
+      "input": {"totalNights": "unknown", "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 29, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "status": "insufficient_input", "decisionUseful": false, "feasibleNights": [30], "requiredAssumption": "UNKNOWN_DOMAIN_RELATIONALLY_FILTERED"}
+    },
+    {
+      "id": "UNK-03",
+      "group": "unknown-range",
+      "input": {"totalNights": 5, "arrivalWindow": "after_18", "departureWindow": "before_09", "crossCityMoves": "unknown", "airportStationTransfers": 0, "hotelChanges": 1, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "status": "insufficient_input", "feasibleCrossCityMoves": [0, 1, 2, 3], "note": "C and H domains are filtered jointly by C + H <= 4."}
+    },
+    {
+      "id": "UNK-04",
+      "group": "unknown-range",
+      "input": {"totalNights": 2, "arrivalWindow": "unknown", "departureWindow": "15_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "status": "insufficient_input", "unknownFields": ["arrivalWindow"], "note": "Time-band states are evaluated jointly, not by mixing marginal endpoints."}
+    },
+    {
+      "id": "INV-01",
+      "group": "invalid-scalar",
+      "input": {"totalNights": 0, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "totalNights", "code": "COUNT_OUT_OF_RANGE"}], "result": null}
+    },
+    {
+      "id": "INV-02",
+      "group": "invalid-scalar",
+      "input": {"totalNights": 31, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "totalNights", "code": "COUNT_OUT_OF_RANGE"}], "result": null}
+    },
+    {
+      "id": "INV-03",
+      "group": "invalid-type",
+      "input": {"totalNights": 3.5, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "totalNights", "code": "COUNT_NOT_INTEGER"}], "result": null}
+    },
+    {
+      "id": "INV-04",
+      "group": "invalid-type",
+      "input": {"totalNights": "3", "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "totalNights", "code": "COUNT_NOT_INTEGER"}], "result": null, "note": "No numeric-string coercion."}
+    },
+    {
+      "id": "INV-05",
+      "group": "invalid-enum",
+      "input": {"totalNights": 3, "arrivalWindow": null, "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "arrivalWindow", "code": "UNSUPPORTED_TIME_WINDOW"}], "result": null}
+    },
+    {
+      "id": "INV-06",
+      "group": "invalid-enum",
+      "input": {"totalNights": 3, "arrivalWindow": " Before_09 ", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "Balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "arrivalWindow", "code": "UNSUPPORTED_TIME_WINDOW"}, {"field": "travellerPace", "code": "UNSUPPORTED_PACE"}], "result": null, "note": "No trimming or case folding."}
+    },
+    {
+      "id": "INV-07",
+      "group": "shape",
+      "input": {"totalNights": 3, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0},
+      "expected": {"status": "invalid", "errors": [{"field": "travellerPace", "code": "MISSING_FIELD"}], "result": null}
+    },
+    {
+      "id": "INV-08",
+      "group": "shape",
+      "input": {"totalNights": 3, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced", "city": "Example"},
+      "expected": {"status": "invalid", "errors": [{"field": "$request", "code": "EXTRA_FIELD"}], "result": null, "note": "Free-text city data is rejected."}
+    },
+    {
+      "id": "INV-09",
+      "group": "shape",
+      "input": [],
+      "expected": {"status": "invalid", "errors": [{"field": "$request", "code": "REQUEST_NOT_PLAIN_OBJECT"}], "result": null}
+    },
+    {
+      "id": "INV-10",
+      "group": "javascript-only-invalid-type",
+      "inputEncoding": "javascript-expression",
+      "inputExpression": "({totalNights: NaN, arrivalWindow: 'before_09', departureWindow: 'after_18', crossCityMoves: 0, airportStationTransfers: 0, hotelChanges: 0, travellerPace: 'balanced'})",
+      "expected": {"status": "invalid", "errors": [{"field": "totalNights", "code": "COUNT_NOT_INTEGER"}], "result": null}
+    },
+    {
+      "id": "REL-01",
+      "group": "relational-topology",
+      "input": {"totalNights": 3, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 3, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "crossCityMoves", "code": "RELATIONAL_COUNT_CONFLICT"}], "result": null, "note": "Only N - 1 transition days exist."}
+    },
+    {
+      "id": "REL-02",
+      "group": "relational-topology",
+      "input": {"totalNights": 4, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 2, "airportStationTransfers": 0, "hotelChanges": 2, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "hotelChanges", "code": "RELATIONAL_COUNT_CONFLICT"}], "result": null, "note": "C + H exceeds N - 1."}
+    },
+    {
+      "id": "REL-03",
+      "group": "relational-topology",
+      "input": {"totalNights": 2, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 4, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "errors": [{"field": "airportStationTransfers", "code": "EVENT_TOPOLOGY_OVERFLOW"}], "result": null, "note": "Only N + 1 distinct calendar days exist."}
+    },
+    {
+      "id": "REL-04",
+      "group": "relational-topology",
+      "input": {"totalNights": "unknown", "arrivalWindow": "unknown", "departureWindow": "unknown", "crossCityMoves": 30, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "unknown"},
+      "expected": {"status": "invalid", "errors": [{"field": "crossCityMoves", "code": "RELATIONAL_COUNT_CONFLICT"}], "result": null, "note": "No N in 1..30 can provide 30 transition days."}
+    },
+    {
+      "id": "REL-05",
+      "group": "relational-topology",
+      "input": {"totalNights": 1, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 2, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"validation": "valid", "status": "ok", "note": "Two transfer days fit two calendar slots; they may not stack on one slot."}
+    },
+    {
+      "id": "PROP-01",
+      "group": "classification-reconciliation",
+      "input": {"totalNights": 5, "arrivalWindow": "unknown", "departureWindow": "unknown", "crossCityMoves": 1, "airportStationTransfers": 1, "hotelChanges": 1, "travellerPace": "unknown"},
+      "expectedProperty": "For every joint tuple, fullSightseeingDays + fragmentDays + unavailableDays equals calendarDays; marginal endpoints carry nonAdditive=true."
+    },
+    {
+      "id": "PROP-02",
+      "group": "burden-accounting",
+      "input": {"totalNights": 5, "arrivalWindow": "after_18", "departureWindow": "before_09", "crossCityMoves": 1, "airportStationTransfers": 1, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expectedProperty": "For every placement: grossBurden >= appliedTax >= 0; net = baseline - appliedTax >= 0. Gross burden is not subtracted directly."
+    },
+    {
+      "id": "PROP-03",
+      "group": "unknown-alert-basis",
+      "input": {"totalNights": 5, "arrivalWindow": "unknown", "departureWindow": "unknown", "crossCityMoves": "unknown", "airportStationTransfers": "unknown", "hotelChanges": "unknown", "travellerPace": "unknown"},
+      "expectedProperty": "A trigger true in some but not all feasible states has basis=possible_unknown_extreme, never confirmed."
+    },
+    {
+      "id": "PROP-04",
+      "group": "determinism",
+      "input": {"totalNights": 6, "arrivalWindow": "09_12", "departureWindow": "15_18", "crossCityMoves": 2, "airportStationTransfers": 1, "hotelChanges": 1, "travellerPace": "slow"},
+      "repeat": 20,
+      "expectedProperty": "Canonical outputs are byte-equivalent across repeats and deep clones, including code, unknown and assumption order."
+    },
+    {
+      "id": "PROP-05",
+      "group": "unknown-containment",
+      "input": {"totalNights": 6, "arrivalWindow": "09_12", "departureWindow": "15_18", "crossCityMoves": 2, "airportStationTransfers": 1, "hotelChanges": 1, "travellerPace": "slow"},
+      "expectedProperty": "Replacing any one field with unknown contains the known result within the same correlated relational domain."
+    },
+    {
+      "id": "PROP-06",
+      "group": "monotonicity",
+      "input": {"totalNights": 8, "arrivalWindow": "12_15", "departureWindow": "15_18", "crossCityMoves": 1, "airportStationTransfers": 1, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expectedProperty": "Within valid known states, increasing C, T or H independently cannot lower gross/applied burden or raise net/full capacity; fragment count is not asserted monotonic."
+    },
+    {
+      "id": "PROP-07",
+      "group": "privacy-network",
+      "input": {"totalNights": 4, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 1, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "fast"},
+      "expectedProperty": "With fetch/XHR/WebSocket/http/net/DNS traps installed, attempted network calls equal zero and output is unchanged."
+    },
+    {
+      "id": "PROP-08",
+      "group": "privacy-network",
+      "input": {"totalNights": 4, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 1, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "fast"},
+      "expectedProperty": "Input and output contain no city/date/name/contact/free-text/exact-transport/service-recommendation fields and are not logged, persisted, analyzed or serialized into a URL."
+    },
+    {
+      "id": "REG-12",
+      "group": "legacy-regression",
+      "input": {"totalNights": "unknown", "arrivalWindow": "after_18", "departureWindow": "before_09", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expectedProperty": "If the approved trigger finds no guaranteed full day, NO_GUARANTEED_FULL_DAY must be emitted with the correct unknown basis; it may not be omitted merely because the old T12 table omitted it."
+    },
+    {
+      "id": "REG-13",
+      "group": "legacy-regression",
+      "input": {"totalNights": 2, "arrivalWindow": "after_18", "departureWindow": "before_09", "crossCityMoves": 2, "airportStationTransfers": 3, "hotelChanges": 1, "travellerPace": "slow"},
+      "expected": {"status": "invalid", "result": null, "alerts": [], "note": "Invalid topology short-circuits every derived score and alert."}
+    },
+    {
+      "id": "REG-14",
+      "group": "legacy-regression",
+      "input": {"totalNights": 1, "arrivalWindow": "unknown", "departureWindow": "unknown", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expectedProperty": "Joint classifications reconcile for each two-day state; marginal full/fragment/unavailable maxima are not added, and confidence comes from the approved v2 rule rather than the old T14 label."
+    },
+    {
+      "id": "REG-19",
+      "group": "legacy-regression",
+      "input": {"totalNights": 31, "arrivalWindow": "before_09", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "decisionUseful": false, "errors": [{"field": "totalNights", "code": "COUNT_OUT_OF_RANGE"}], "result": null}
+    },
+    {
+      "id": "REG-20",
+      "group": "legacy-regression",
+      "input": {"totalNights": 3, "arrivalWindow": "morning", "departureWindow": "after_18", "crossCityMoves": 0, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expected": {"status": "invalid", "decisionUseful": false, "errors": [{"field": "arrivalWindow", "code": "UNSUPPORTED_TIME_WINDOW"}], "result": null}
+    },
+    {
+      "id": "HANDOFF-01",
+      "group": "handoff-routing",
+      "question": "Open-jaw gateways or a return to the arrival airport?",
+      "input": {"totalNights": 8, "arrivalWindow": "12_15", "departureWindow": "15_18", "crossCityMoves": 2, "airportStationTransfers": 1, "hotelChanges": 0, "travellerPace": "balanced"},
+      "comparisonInput": {"totalNights": 8, "arrivalWindow": "12_15", "departureWindow": "15_18", "crossCityMoves": 3, "airportStationTransfers": 2, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expectedProperty": "The model may compare two independently validated skeletons only after an upstream owner defines them. It cannot identify airports, find flights, label either input open-jaw, or recommend a gateway."
+    },
+    {
+      "id": "HANDOFF-02",
+      "group": "handoff-routing",
+      "question": "Does a fixed attraction booking conflict with an arrival or relocation?",
+      "input": {"totalNights": 5, "arrivalWindow": "15_18", "departureWindow": "after_18", "crossCityMoves": 1, "airportStationTransfers": 0, "hotelChanges": 0, "travellerPace": "balanced"},
+      "expectedProperty": "The seven fields contain no booking date, sequence, refund rule or consequence. Return no conflict claim; route the question to the Plan constraint ledger and the relevant arrival-day, ticket or venue owner."
+    },
+    {
+      "id": "HANDOFF-03",
+      "group": "handoff-routing",
+      "question": "Do consecutive difficult days create a fatigue chain?",
+      "input": {"totalNights": 6, "arrivalWindow": "after_18", "departureWindow": "before_09", "crossCityMoves": 2, "airportStationTransfers": 2, "hotelChanges": 1, "travellerPace": "slow"},
+      "expectedProperty": "Aggregate counts can support a possible density alert only after policy approval. They do not encode event sequence or health and cannot confirm fatigue; route that judgment to the traveller-fit owner or human review."
+    }
+  ]
+}

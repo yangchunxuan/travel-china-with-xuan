@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "draftOnly": true,
+  "implementationAction": "update-existing-hub-no-new-canonical",
+  "contentOwner": "system-guides",
+  "primaryEntityId": "country-china",
+  "lastFactReview": "2026-08-20",
+  "publicRouteRealityCheckerAuthorized": false,
+  "locales": {
+    "en": {
+      "path": "/guides/",
+      "title": "China Travel Guide | Entry, Places & Practical Planning",
+      "headline": "China Travel Guide: Start With the Decision That Changes Your Trip",
+      "description": "Start a China trip with the right decision: entry, places, route, transport, stays, pace, holidays, tickets and practical setup—then verify the fragile parts."
+    },
+    "zh": {
+      "path": "/zh/guides/",
+      "title": "中国旅行指南｜规划一次真正走得通的旅行",
+      "headline": "中国旅行指南：先找到会改变整趟旅行的决定",
+      "description": "从入境、目的地、路线、交通、住宿、节奏、假期、门票与实用准备中找到当前问题，再核验最易失效的环节。"
+    },
+    "ko": {
+      "path": "/ko/guides/",
+      "title": "중국 여행 가이드 | 입국, 여행지와 실용 준비",
+      "headline": "중국 여행 가이드: 여행 전체를 바꾸는 결정에서 시작하세요",
+      "description": "입국, 여행지, 동선, 교통, 숙소, 속도, 공휴일, 입장권과 실용 준비 중 지금 필요한 결정을 찾고 변경 가능한 부분을 검증하세요."
+    }
+  },
+  "forbiddenAlternatePaths": [
+    "/china-travel-guide/",
+    "/guides/china-travel-guide/",
+    "/travel-guide-to-china/"
+  ]
+}

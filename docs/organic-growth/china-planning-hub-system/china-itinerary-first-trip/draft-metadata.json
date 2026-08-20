@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "draftOnly": true,
+  "implementationAction": "update-existing-hub-no-new-canonical",
+  "contentOwner": "hub-plan",
+  "primaryEntityId": "country-china",
+  "parentOwner": "system-guides",
+  "lastFactReview": "2026-08-20",
+  "publicRouteRealityCheckerAuthorized": false,
+  "locales": {
+    "en": {
+      "path": "/plan/",
+      "title": "China Itinerary Planning: Build a First Trip That Fits",
+      "headline": "China itinerary planning: build a first trip that fits the nights you have",
+      "description": "Plan a first China itinerary by counting usable days, choosing city roles and gateways, pricing in transfers, protecting bookings and matching the route to your pace."
+    },
+    "zh": {
+      "path": "/zh/plan/",
+      "title": "中国行程规划：第一次来华，怎样把路线排得走得通",
+      "headline": "中国行程规划：第一次来华，怎样把路线排得走得通",
+      "description": "从有效游览日、城市角色、进出门户、门到门转场、固定预约和旅客节奏，搭出真正走得通的第一次中国行程。"
+    },
+    "ko": {
+      "path": "/ko/plan/",
+      "title": "중국 여행 일정 짜기: 첫 여행을 실제 가능한 동선으로",
+      "headline": "중국 여행 일정 짜기: 주어진 숙박일에 맞는 첫 여행 만들기",
+      "description": "실제 관광일, 도시 역할, 입출국 관문, 문에서 문까지의 이동, 고정 예약과 여행 속도를 기준으로 첫 중국 여행 동선을 설계합니다."
+    }
+  },
+  "forbiddenAlternatePaths": [
+    "/china-itinerary/",
+    "/first-trip-to-china/",
+    "/guides/china-itinerary/",
+    "/guides/first-china-trip-routes/"
+  ]
+}

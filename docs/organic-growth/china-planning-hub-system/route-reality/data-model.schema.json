@@ -1,0 +1,451 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:homeground:route-reality:v2:data-model",
+  "title": "Homeground Route Reality v2 internal data model",
+  "description": "Internal specification only. This schema does not authorize a public implementation, API, page or indexable state.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/RouteRealityInput"
+    },
+    {
+      "$ref": "#/$defs/RouteRealityOutput"
+    }
+  ],
+  "$defs": {
+    "KnownCount": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "KnownNights": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "KnownTimeWindow": {
+      "enum": [
+        "before_09",
+        "09_12",
+        "12_15",
+        "15_18",
+        "after_18",
+        "unknown"
+      ]
+    },
+    "KnownPace": {
+      "enum": [
+        "fast",
+        "balanced",
+        "slow",
+        "unknown"
+      ]
+    },
+    "PendingPolicyPackVersion": {
+      "type": "null",
+      "description": "The internal draft has no approved numeric policy pack. Any later non-null version requires a schema and model-contract version bump."
+    },
+    "RouteRealityInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalNights",
+        "arrivalWindow",
+        "departureWindow",
+        "crossCityMoves",
+        "airportStationTransfers",
+        "hotelChanges",
+        "travellerPace"
+      ],
+      "properties": {
+        "totalNights": {
+          "$ref": "#/$defs/KnownNights"
+        },
+        "arrivalWindow": {
+          "$ref": "#/$defs/KnownTimeWindow"
+        },
+        "departureWindow": {
+          "$ref": "#/$defs/KnownTimeWindow"
+        },
+        "crossCityMoves": {
+          "$ref": "#/$defs/KnownCount"
+        },
+        "airportStationTransfers": {
+          "$ref": "#/$defs/KnownCount"
+        },
+        "hotelChanges": {
+          "$ref": "#/$defs/KnownCount"
+        },
+        "travellerPace": {
+          "$ref": "#/$defs/KnownPace"
+        }
+      }
+    },
+    "NonNegativeRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "JointDayClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calendarDays",
+        "fullSightseeingDays",
+        "fragmentDays",
+        "unavailableDays"
+      ],
+      "properties": {
+        "calendarDays": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 31
+        },
+        "fullSightseeingDays": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 31
+        },
+        "fragmentDays": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 31
+        },
+        "unavailableDays": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 31
+        }
+      }
+    },
+    "ClassificationMarginals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nonAdditive",
+        "calendarDays",
+        "fullSightseeingDays",
+        "fragmentDays",
+        "unavailableDays"
+      ],
+      "properties": {
+        "nonAdditive": {
+          "const": true
+        },
+        "calendarDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "fullSightseeingDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "fragmentDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "unavailableDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        }
+      }
+    },
+    "ValidationCode": {
+      "enum": [
+        "REQUEST_NOT_PLAIN_OBJECT",
+        "MISSING_FIELD",
+        "EXTRA_FIELD",
+        "COUNT_NOT_INTEGER",
+        "COUNT_OUT_OF_RANGE",
+        "UNSUPPORTED_TIME_WINDOW",
+        "UNSUPPORTED_PACE",
+        "RELATIONAL_COUNT_CONFLICT",
+        "EVENT_TOPOLOGY_OVERFLOW"
+      ]
+    },
+    "InputField": {
+      "enum": [
+        "$request",
+        "totalNights",
+        "arrivalWindow",
+        "departureWindow",
+        "crossCityMoves",
+        "airportStationTransfers",
+        "hotelChanges",
+        "travellerPace"
+      ]
+    },
+    "ValidationError": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "field"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/ValidationCode"
+        },
+        "field": {
+          "$ref": "#/$defs/InputField"
+        }
+      }
+    },
+    "AlertCode": {
+      "enum": [
+        "NO_GUARANTEED_FULL_DAY",
+        "TRANSFER_TAX_EXHAUSTS_CAPACITY",
+        "TRANSFER_TAX_HIGH",
+        "TRANSFER_TAX_VISIBLE",
+        "CROSS_CITY_DENSITY_HIGH",
+        "HOTEL_CHURN_HIGH",
+        "COMPLEX_INTERCHANGE_HIGH",
+        "OUTPUT_RANGE_WIDE"
+      ]
+    },
+    "Alert": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "severity",
+        "basis"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/AlertCode"
+        },
+        "severity": {
+          "enum": [
+            "notice",
+            "high",
+            "critical"
+          ]
+        },
+        "basis": {
+          "enum": [
+            "confirmed",
+            "possible_unknown_extreme"
+          ]
+        }
+      }
+    },
+    "AssumptionId": {
+      "enum": [
+        "NIGHTS_CREATE_N_PLUS_ONE_CALENDAR_DAYS",
+        "EDGE_WINDOWS_ARE_BROAD_CAPACITY_BANDS",
+        "ORDINARY_EDGE_ACCESS_NOT_SEPARATE_TRANSFER",
+        "CROSS_CITY_COUNTS_OVERNIGHT_BASE_CHANGE_DAYS",
+        "DAY_TRIPS_EXCLUDED_FROM_CROSS_CITY_MOVES",
+        "HOTEL_CHANGES_EXCLUDE_CROSS_CITY_BASE_CHANGES",
+        "ONE_ACCOMMODATION_CHANGE_EVENT_PER_TRANSITION_DAY",
+        "ONE_COMPLEX_INTERCHANGE_PER_CALENDAR_DAY",
+        "EVENT_PLACEMENT_UNKNOWN",
+        "MARGINAL_CLASSIFICATION_RANGES_ARE_NON_ADDITIVE",
+        "TRANSFER_BURDEN_IS_NOT_LIVE_JOURNEY_TIME",
+        "BUFFER_IS_NOT_CONNECTION_PROTECTION",
+        "UNKNOWN_DOMAIN_RELATIONALLY_FILTERED",
+        "NUMERIC_POLICY_PACK_PENDING_APPROVAL"
+      ]
+    },
+    "UnknownField": {
+      "enum": [
+        "totalNights",
+        "arrivalWindow",
+        "departureWindow",
+        "crossCityMoves",
+        "airportStationTransfers",
+        "hotelChanges",
+        "travellerPace"
+      ]
+    },
+    "ValidResultBody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "jointDayClassifications",
+        "classificationMarginals",
+        "baselineSightseeingEquivalentDays",
+        "grossTransferBurdenEquivalentDays",
+        "appliedTransferTaxEquivalentDays",
+        "netSightseeingEquivalentDays",
+        "suggestedBufferDays",
+        "bufferActionable",
+        "alerts",
+        "assumptionIds",
+        "unknownFields",
+        "confidence"
+      ],
+      "properties": {
+        "jointDayClassifications": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/JointDayClassification"
+          }
+        },
+        "classificationMarginals": {
+          "$ref": "#/$defs/ClassificationMarginals"
+        },
+        "baselineSightseeingEquivalentDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "grossTransferBurdenEquivalentDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "appliedTransferTaxEquivalentDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "netSightseeingEquivalentDays": {
+          "$ref": "#/$defs/NonNegativeRange"
+        },
+        "suggestedBufferDays": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bufferActionable": {
+          "type": "boolean"
+        },
+        "alerts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Alert"
+          }
+        },
+        "assumptionIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/AssumptionId"
+          }
+        },
+        "unknownFields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/UnknownField"
+          }
+        },
+        "confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "ValidOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "modelVersion",
+        "policyPackVersion",
+        "decisionUseful",
+        "errors",
+        "result"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "insufficient_input"
+          ]
+        },
+        "modelVersion": {
+          "const": "route-reality-v2.0.0-internal-draft"
+        },
+        "policyPackVersion": {
+          "$ref": "#/$defs/PendingPolicyPackVersion"
+        },
+        "decisionUseful": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "result": {
+          "$ref": "#/$defs/ValidResultBody"
+        }
+      }
+    },
+    "InvalidOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "modelVersion",
+        "policyPackVersion",
+        "decisionUseful",
+        "errors",
+        "result"
+      ],
+      "properties": {
+        "status": {
+          "const": "invalid"
+        },
+        "modelVersion": {
+          "const": "route-reality-v2.0.0-internal-draft"
+        },
+        "policyPackVersion": {
+          "$ref": "#/$defs/PendingPolicyPackVersion"
+        },
+        "decisionUseful": {
+          "const": false
+        },
+        "errors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ValidationError"
+          }
+        },
+        "result": {
+          "type": "null"
+        }
+      }
+    },
+    "RouteRealityOutput": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ValidOutput"
+        },
+        {
+          "$ref": "#/$defs/InvalidOutput"
+        }
+      ]
+    }
+  }
+}
