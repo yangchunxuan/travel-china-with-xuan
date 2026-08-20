@@ -15,9 +15,31 @@ test("destination hubs keep the Chinese guide phrase together on narrow screens"
   assert.match(page, /beijing: \["北京旅行指南：", "先分配", "完整的一天，", "再安排景点"\]/);
   assert.match(page, /shanghai: \["上海旅行指南：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
   assert.match(page, /xian: \["西安旅行指南：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
+  assert.match(page, /hangzhou: \["杭州旅行指南：", "先决定一日往返，", "还是把杭州真正住下来"\]/);
+  assert.match(page, /zhangjiajie: \["张家界旅行指南：", "先分清市区、", "武陵源和不同山岳系统"\]/);
   assert.match(page, /titleSegments\.map\(\(segment, index\) =>/);
   assert.match(page, /className=\{styles\.keepTogether\}/);
   assert.match(styles, /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap;/);
+});
+
+test("batch three hubs are trilingual release candidates with canonical boundaries", async () => {
+  const [registry, runtime, hangzhouBody, zhangjiajieBody, readme] = await Promise.all([
+    source("lib/destinationHubs.ts"),
+    source("lib/destinationHubRuntime.ts"),
+    source("content/destinations/hangzhou/body.shared.ts"),
+    source("content/destinations/zhangjiajie/body.shared.ts"),
+    source("docs/organic-growth/city-hub-drafts/README.md"),
+  ]);
+
+  for (const id of ["hangzhou", "zhangjiajie"]) {
+    assert.match(registry, new RegExp(`id: "${id}"`));
+    assert.match(registry, new RegExp(`entityId: "city-${id}"`));
+    assert.match(runtime, new RegExp(`${id}: \\{[\\s\\S]*body\\.en[\\s\\S]*body\\.zh[\\s\\S]*body\\.ko`));
+  }
+  assert.match(registry, /sourceReviewedDate: "2026-08-20"/);
+  assert.match(hangzhouBody, /No second generic Hangzhou travel guide should be created/);
+  assert.match(zhangjiajieBody, /Do not copy that volatile workflow into this broad page/);
+  assert.match(readme, /release candidates, not live pages/);
 });
 
 test("Shanghai Songjiang copy records both the rename and expanded-hub opening", async () => {

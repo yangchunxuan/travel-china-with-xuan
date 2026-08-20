@@ -1,8 +1,16 @@
 # QA — Hangzhou Destination Hub draft
 
-**Final status:** `CITY HUB DRAFT READY — CENTRAL REVIEW REQUIRED`
-**QA date:** `2026-08-15`
+**Original package status:** `CITY HUB DRAFT READY — CENTRAL REVIEW REQUIRED`
+**Original QA date:** `2026-08-15`
 **Draft base:** `origin/main` at `cc6be75e59155935f321df0334588b52769eb6e4`
+
+> **Central integration record — 2026-08-20:** Gate B was rechecked against
+> seven published supporting owners across transport, planning, explore and
+> culture. Reviewed trilingual runtime copy now lives in
+> `content/destinations/hangzhou/`, uses the canonical owner `city-hangzhou`,
+> and is a release candidate only. It is not live until the central Draft PR is
+> reviewed and merged. The original checks below describe the submitted draft
+> package, not the later runtime release candidate.
 
 ## 1. Scope and repository-safety gate
 
@@ -11,7 +19,7 @@ Passed.
 - The deliverable contains exactly eight files under `docs/organic-growth/city-hub-drafts/hangzhou/`.
 - No public route, homepage, guide, registry, sitemap, Search Map, generated manifest, indexability control or central entity file is changed.
 - No `/guides/hangzhou-travel-guide/` page is created.
-- Proposed public ownership remains `/destinations/hangzhou/`, `/zh/destinations/hangzhou/` and `/ko/destinations/hangzhou/`, subject to central approval.
+- Proposed public ownership was `/destinations/hangzhou/`, `/zh/destinations/hangzhou/` and `/ko/destinations/hangzhou/`; central selected that exact canonical on 2026-08-20, subject to merge.
 - `city-hangzhou` and `province-zhejiang` remain proposals inside the draft entity graph. `content/entities/core-places.json` is untouched.
 - After the user's remote-write stop instruction, no further GitHub write or PR action was attempted. Final delivery is a local `git format-patch` only.
 

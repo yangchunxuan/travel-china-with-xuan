@@ -1,8 +1,16 @@
 # Image plan — Hangzhou Destination Hub draft
 
-**Status:** `REAL-PLACE ASSET PLAN COMPLETE — CENTRAL ASSET PRODUCTION REQUIRED`
-**Reviewed:** `2026-08-15`
+**Original status:** `REAL-PLACE ASSET PLAN COMPLETE — CENTRAL ASSET PRODUCTION REQUIRED`
+**Original review:** `2026-08-15`
 **Documentary-image rule:** no AI-generated or AI-assisted tourism photograph, no synthetic crowd, no invented skyline, no unverified “generic China” lake or tea field.
+
+> **Central asset decision — 2026-08-20:** the release candidate uses the
+> existing real project-owner-supplied `public/images/home/hangzhou-1600.jpg`
+> as its hero. It does not use the proposed Commons skyline crop or publish the
+> optional supporting set below. The selected asset, SHA-256 and restrained
+> evidence boundary are recorded in `docs/homeground-photo-provenance.md`.
+> The original plan remains below as editorial history, not as a list of
+> images claimed to be in the release.
 
 This draft package contains no binary image files. The central production pass must download or retrieve the exact sources below, preserve the licence record, create conventional derivatives and visually inspect every final crop before publication.
 

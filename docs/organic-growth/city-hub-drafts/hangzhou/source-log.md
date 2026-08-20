@@ -1,13 +1,18 @@
 # Source log — Hangzhou Destination Hub draft
 
-**Status:** `CITY HUB DRAFT READY — CENTRAL REVIEW REQUIRED`
-**Source review completed:** `2026-08-15` (Asia/Shanghai)
+**Original status:** `CITY HUB DRAFT READY — CENTRAL REVIEW REQUIRED`
+**Original source review:** `2026-08-15` (Asia/Shanghai)
 **Draft base:** `origin/main` at `cc6be75e59155935f321df0334588b52769eb6e4`
 **Proposed canonical owner:** `city-hangzhou`
 **Proposed parent entity:** `province-zhejiang`
 **Proposed public path:** `/destinations/hangzhou/` with `/zh/` and `/ko/` locale variants
 
-This package is editorial draft material only. It does not create a public route, change indexability, edit the destination registry, modify the Search Map, add a sitemap entry or alter `content/entities/core-places.json`.
+This package began as editorial draft material only. On 2026-08-20 central rechecked its official source register, canonical boundary and Gate B support, then used it to prepare the separate trilingual runtime release candidate. The draft files themselves still do not create a route or indexability.
+
+**Central re-review:** `2026-08-20` (Asia/Shanghai). Volatile airport,
+railway, Lingyin, Liangzhu, boat and traffic facts remain excluded or carry an
+explicit travel-date recheck. The runtime candidate freezes no fare, timetable,
+quota, opening hour or crowd promise.
 
 ## Canonical boundary
 

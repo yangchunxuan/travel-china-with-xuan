@@ -1,9 +1,9 @@
 # Source log — chongqing-railway-station-selector
 
-- Status: **ARTICLE REVIEW READY**
+- Status: **CENTRAL INTEGRATION REVIEW READY**
 - `topicId`: `hg-topic-0860`
 - `canonicalSlug`: `chongqing-railway-station-selector`
-- `checked_at`: **2026-08-17**
+- `checked_at`: **2026-08-20**
 - Scope: choosing among four principal central Chongqing passenger railway hubs, planning their departure and arrival last mile, and recovering from a wrong-station mistake. It is not an exhaustive list of every passenger stop in the municipality. Airport choice, ticket-purchase procedure, fixed fares/timetables, the Chengdu–Chongqing route, hotel-area selection and Chongqing street-level orientation remain with their existing or reserved owners.
 
 ## Canonical audit
@@ -21,9 +21,9 @@ The 2026-02-24 Chongqing transport authority report records actual holiday passe
 | Fact | Official evidence | Scope used in copy |
 | --- | --- | --- |
 | North, West, East and Shapingba were current passenger stations | https://jtysw.cq.gov.cn/sy_240/bmdt/202602/t20260224_15449936.html | Dated evidence for the four principal hubs, not an exhaustive list or permanent promise |
-| Station assignments change between timetable periods | https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html | Direction is only a search clue; ticket/12306 wins |
-| West handles a mixed set of current south/southwest, regional and long-distance patterns | https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jt/jtzx/202601/t20260126_15354224.html | Direction clue only; examples are not frozen as a route list |
-| East opened in Chayuan/Nan'an and handles the Chongqing East–Qianjiang corridor | https://jtysw.cq.gov.cn/sy_240/bmdt/202506/t20250626_14748304.html | Current role and location; initial train counts/times omitted |
+| Station assignments change between timetable periods | https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html | Recent Q3 2026 examples only; direction is a search clue and the dated 12306 result/ticket wins |
+| West has recent official south/southwest, regional and long-distance examples | https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jt/jtzx/202601/t20260126_15354224.html | Dated direction clue only; examples are not frozen as a route list |
+| East opened in Chayuan/Nan'an and the June 2026 official adjustment still included East–Qianjiang examples | https://jtysw.cq.gov.cn/sy_240/bmdt/202506/t20250626_14748304.html and https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html | Recent official example and location; no permanent corridor, train count or time promise |
 | East's current urban-rail connection uses the Line 6 East section to Liujaping | https://www.cq.gov.cn/ywdt/bmts/202507/t20250728_14853868.html | Connection pattern only; no permanent first/last train promise |
 | North's railway sides are internally connected, although metro stop names still distinguish north/south squares | https://jtysw.cq.gov.cn/sy_240/bmdt/202101/t20210120_8788761.html and https://fzggw.cq.gov.cn/zwgk/zfxxgkml/zcwj/xzgfxwj/sfzggwxzgfxwj/202507/W020250915569783850930.pdf | Wrong-square recovery and current metro naming |
 | West integrates Line 5/Loop, taxi and ride-hail on different levels | https://jtysw.cq.gov.cn/sy_240/jdtp/202209/t20220919_11122399.html | Transfer-friction description; no fixed walking time |
