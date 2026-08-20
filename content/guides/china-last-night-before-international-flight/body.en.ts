@@ -315,7 +315,7 @@ const body = {
     {
       id: "human-help-text",
       type: "paragraph",
-      text: "Leave your travel dates, number of travellers, rough total budget, the city you will be in before departure, and the exact international flight time and airport. A Homeground trip planner can help test the workable risk windows without publishing a private, copy-ready itinerary.",
+      text: "Leave your travel dates; traveller and room count; bed setup; rough accommodation budget and currency; the city you will be in before departure; the exact international flight time, airport and terminal if confirmed; luggage; and any child, older-traveller, mobility or accessibility needs. A Homeground trip planner can help test both the workable risk window and the last-night stay fit without publishing a private, copy-ready itinerary. This is a human verification handoff, not live inventory: it does not guarantee a real-time price, room availability, foreign-guest acceptance or a particular room type.",
     },
     {
       id: "related-guides",

@@ -78,6 +78,38 @@ The set can use fewer files only when one image truthfully supports more than on
 
 For Zhangjiajie, distinguish Zhangjiajie city, the confirmed station/airport context, Wulingyuan/scenic gateways, and the actual sight order. For Guilin and Guangzhou, do not use Yangshuo or Shenzhen images as if they represented the city record. For Hangzhou and Shenzhen, create exact-city assets rather than inheriting grouped planner imagery.
 
+### Current asset audit at this baseline
+
+“Present” below means the repository contains a real photographic asset and a
+project provenance entry. It does not automatically close the original-creator,
+licence, property-release or recency checks in the asset ledger.
+
+| City | Current documentary coverage | Decision-network gap before central release |
+| --- | --- | --- |
+| Beijing | Hub hero plus Gulou/hutong and Great Wall scenes; first-trip owner has a real city hero | Add an entrance/last-metre scene for a representative central lodging block; finish any incomplete original-rights chain. |
+| Shanghai | Hub hero plus Suzhou Creek and Bund scenes; first-trip owner has a real East Nanjing Road hero | Add a station-exit-to-lodging-block scene and a luggage/step-chain example; do not let a skyline prove property access. |
+| Xi'an | Hub hero plus Dayanta and Terracotta Army scenes; city-area owner has a real Bell Tower hero | Add a wall-gate/surface-crossing lodging approach and vehicle set-down example. |
+| Chengdu | Hub hero plus Jinjiang and Dujiangyan scenes | Add a real Chunxi/Taikoo Li or Tianfu Square lodging-block approach and a Chengdu East buffer scene. |
+| Guangzhou | Hub hero plus Shamian and Zhujiang New Town scenes | Add a real accommodation-block/metro-exit route and keep volatile airport-terminal imagery dated. |
+| Zhangjiajie | Runtime hero is a real repository landscape; city-versus-Wulingyuan owner has a real hero | Obtain distinct city gateway, Wulingyuan street/entrance and luggage-transfer scenes; a mountain panorama does not prove either hotel base. Public route state also needs verification. |
+| Hangzhou | Runtime hero is a real repository West Lake image | Obtain Hubin/east-shore, west-side hill-road and Hangzhou East lodging-buffer scenes; the lake hero does not prove property access. Public route state also needs verification. |
+| Chongqing | Existing three-area owner has a real Jiefangbei night hero; Hub remains draft-only | Add a visible elevation/exit-to-entrance chain and safe vehicle set-down context before any Hub release. |
+| Guilin | No production Hub/owner asset in this branch; a separate draft package exists | Commission/license exact Guilin-city, Yangshuo/Yulong and one transfer/luggage scene after the Hub canonical is approved. Keep Guilin and Yangshuo location claims separate. |
+| Shenzhen | Existing three-area owner has a real Futian public-realm hero; Hub remains draft-only | Add Luohu/Nanshan gateway and weather-protected last-metre scenes before Hub release. |
+
+Current repository paths include:
+
+- `/images/destinations/{beijing,shanghai,xian,chengdu,guangzhou}/hero-1600.webp`
+  and their body figures recorded in `docs/homeground-photo-provenance.md`;
+- `/images/home/hangzhou-1600.jpg` and
+  `/images/home/zhangjiajie-1600.jpg` for the two PR-#74 runtimes;
+- real hero files under `/images/guides/<city-stay-owner>/hero-1600.webp`
+  for Beijing, Shanghai, Xi'an, Chongqing, Shenzhen and Zhangjiajie.
+
+Do not infer that project possession alone is a complete commercial rights
+chain. Central must verify the saved licence/permission record, original file,
+creator, permitted derivatives and any property/person releases before release.
+
 ## Source ledger
 
 Every factual claim that can change the decision needs a ledger row:

@@ -35,6 +35,8 @@ supplier-neutral data boundary for a later human hotel/DMC quote workflow.
   limits and page-level review-date rules.
 - `image-source-qa.md`: documentary image ledger, rights/privacy rules, source
   ledger and release checks.
+- `qa-report-2026-08-20.md`: executed checks, expected generated-artifact
+  integration failures and the no-build/no-deploy boundary.
 - `lib/stayNetworkContract.ts` plus its targeted test: executable safeguards for
   the exact ten-city model and public/private boundary.
 

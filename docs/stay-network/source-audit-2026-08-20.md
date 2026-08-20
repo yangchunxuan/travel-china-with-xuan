@@ -20,9 +20,9 @@ All seven official URLs below reopened successfully on 2026-08-20:
 
 **Result:** PR #74 records the same 2026-08-20 reopen event in
 `foreigners-china-hotel/source-log.md`, while its metadata factual-review date
-remained 2026-08-13. After replaying onto `ef189874` and confirming the log is
-intact, aligning the metadata to 2026-08-20 is warranted. Legal rule, platform
-display and property execution must remain separate.
+had remained 2026-08-13. This branch confirmed the log after replaying onto
+`ef189874` and aligned the metadata to 2026-08-20. Legal rule, platform display
+and property execution remain separate.
 
 Recheck triggers: amendment/replacement of the 2024 measures; NIA pilot
 expansion; changes to 12367/12345/12315 routes; local registration changes; the

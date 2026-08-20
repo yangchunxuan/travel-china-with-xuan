@@ -314,3 +314,104 @@ test("restricted stay contract is not wired into public content, client UI, or a
     assert.doesNotMatch(source, /stayNetworkContract|internalPropertyRef|internalSupplierRef/, `restricted stay contract leaked into ${path}`);
   }
 });
+
+const networkOwnerSlugs = [
+  "china-hotel-near-metro",
+  "china-accessible-hotel-room-verification",
+  "foreigners-china-hotel",
+  "china-last-night-before-international-flight",
+];
+
+function blockSignature(source) {
+  return [...source.matchAll(/\{\s*id:\s*"([^"]+)"\s*,\s*type:\s*"([^"]+)"/gu)]
+    .map((match) => `${match[1]}:${match[2]}`);
+}
+
+test("the four nationwide stay-owner link targets exist", async () => {
+  for (const slug of networkOwnerSlugs) {
+    const metadata = await stat(resolve(repositoryRoot, `content/guides/${slug}/metadata.json`));
+    assert.equal(metadata.isFile(), true, `${slug} metadata must exist`);
+  }
+});
+
+test("ten-city matrix contains every exact city once", async () => {
+  const source = await readFile(resolve(repositoryRoot, "docs/stay-network/ten-city-stay-matrix.md"), "utf8");
+  const labels = ["Beijing", "Shanghai", "Xi'an", "Chengdu", "Guangzhou", "Zhangjiajie", "Hangzhou", "Chongqing", "Guilin", "Shenzhen"];
+  for (const label of labels) {
+    const rows = source.match(new RegExp(`^\\| ${label.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")} \\|`, "gmu")) ?? [];
+    assert.equal(rows.length, 1, `${label} must appear in exactly one matrix row`);
+  }
+});
+
+test("five established Hubs keep locale parity and the four stay handoffs", async () => {
+  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
+    const localeSources = {};
+    for (const locale of ["en", "zh", "ko"]) {
+      const source = await readFile(resolve(repositoryRoot, `content/destinations/${city}/body.${locale}.ts`), "utf8");
+      localeSources[locale] = source;
+      assert.match(source, /id:\s*"stay-quote-handoff"/u, `${city}/${locale} needs the stay quote handoff`);
+      assert.match(source, /\/#planner-contact/u, `${city}/${locale} needs the human planner route`);
+      for (const slug of networkOwnerSlugs) {
+        const prefix = locale === "en" ? "" : `/${locale}`;
+        assert.match(source, new RegExp(`href:\\s*"${prefix}/guides/${slug}/"`, "u"), `${city}/${locale} must link ${slug}`);
+      }
+    }
+    assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.zh), `${city} EN/ZH block parity`);
+    assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.ko), `${city} EN/KO block parity`);
+  }
+});
+
+test("five city stay owners keep locale parity and the four national owners", async () => {
+  const owners = {
+    "shanghai-where-to-stay-first-trip": "2026-08-12",
+    "xian-where-to-stay-city-wall-or-dayanta": "2026-08-12",
+    "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": "2026-08-12",
+    "shenzhen-where-to-stay-futian-luohu-nanshan": "2026-08-13",
+    "zhangjiajie-city-or-wulingyuan-hotel-base": "2026-08-13",
+  };
+  for (const [owner, expectedSourceDate] of Object.entries(owners)) {
+    const localeSources = {};
+    for (const locale of ["en", "zh", "ko"]) {
+      const source = await readFile(resolve(repositoryRoot, `content/guides/${owner}/body.${locale}.ts`), "utf8");
+      localeSources[locale] = source;
+      assert.match(source, owner.startsWith("zhangjiajie-") ? /id:\s*"consult"/u : /id:\s*"stay-quote-handoff"/u, `${owner}/${locale} needs one human handoff`);
+      for (const slug of networkOwnerSlugs) {
+        const prefix = locale === "en" ? "" : `/${locale}`;
+        assert.match(source, new RegExp(`href:\\s*"${prefix}/guides/${slug}/"`, "u"), `${owner}/${locale} must link ${slug}`);
+      }
+    }
+    assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.zh), `${owner} EN/ZH block parity`);
+    assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.ko), `${owner} EN/KO block parity`);
+    const metadata = JSON.parse(await readFile(resolve(repositoryRoot, `content/guides/${owner}/metadata.json`), "utf8"));
+    assert.equal(metadata.dateModified, "2026-08-20");
+    assert.equal(metadata.sourceReviewedDate, expectedSourceDate, `${owner} must not imply a fresh factual review`);
+  }
+});
+
+test("Hangzhou and Zhangjiajie shared Hub builders carry trilingual stay handoffs", async () => {
+  for (const city of ["hangzhou", "zhangjiajie"]) {
+    const source = await readFile(resolve(repositoryRoot, `content/destinations/${city}/body.shared.ts`), "utf8");
+    assert.match(source, /id:\s*"stay-owners"/u);
+    assert.match(source, /id:\s*"stay-quote-handoff"/u);
+    for (const slug of networkOwnerSlugs) {
+      const occurrences = source.match(new RegExp(`"${slug}"`, "gu")) ?? [];
+      assert.equal(occurrences.length, 3, `${city} must carry ${slug} once in each locale copy`);
+    }
+  }
+});
+
+test("policy review dates preserve complete versus partial rechecks", async () => {
+  const foreigners = JSON.parse(await readFile(resolve(repositoryRoot, "content/guides/foreigners-china-hotel/metadata.json"), "utf8"));
+  const foreignersLog = await readFile(resolve(repositoryRoot, "content/guides/foreigners-china-hotel/source-log.md"), "utf8");
+  const accessible = JSON.parse(await readFile(resolve(repositoryRoot, "content/guides/china-accessible-hotel-room-verification/metadata.json"), "utf8"));
+  const lastNight = JSON.parse(await readFile(resolve(repositoryRoot, "content/guides/china-last-night-before-international-flight/metadata.json"), "utf8"));
+  const lastNightLog = await readFile(resolve(repositoryRoot, "content/guides/china-last-night-before-international-flight/source-log.md"), "utf8");
+
+  assert.equal(foreigners.sourceReviewedDate, "2026-08-20");
+  assert.match(foreignersLog, /all seven official URLs/u);
+  assert.equal(accessible.sourceReviewedDate, "2026-08-20");
+  assert.equal(lastNight.dateModified, "2026-08-20");
+  assert.equal(lastNight.sourceReviewedDate, "2026-08-11");
+  assert.match(lastNightLog, /not a page-complete factual re-review/u);
+  assert.match(lastNightLog, /Shanghai Airport Authority page did not return a usable page/u);
+});

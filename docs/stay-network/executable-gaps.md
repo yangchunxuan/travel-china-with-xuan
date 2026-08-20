@@ -70,8 +70,9 @@ to make the numbers pass.
 
 ## P1 — city FAQ and owner completion
 
-- Finish city-specific final-night FAQs for Hangzhou, Zhangjiajie, Chongqing,
-  Guilin and Shenzhen, using the national last-night owner for the workflow.
+- Finish city-specific final-night FAQs for Chongqing, Guilin and Shenzhen,
+  using the national last-night owner for the workflow. Hangzhou and
+  Zhangjiajie now carry the conditional FAQ in their integrated Hub bodies.
 - Add city-context links to near-metro, accessible-room and foreign-guest
   recovery owners wherever an existing page lacks them.
 - Recheck every changed dynamic fact before changing its

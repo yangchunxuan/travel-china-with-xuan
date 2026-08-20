@@ -33,20 +33,20 @@ source.
 
 ### Canonical owner integration
 
-The following owner changes are safe after replaying onto the latest main:
+After replaying onto the latest main, this branch implements the following:
 
-- align `foreigners-china-hotel` metadata factual-review date with its own
+- aligns `foreigners-china-hotel` metadata factual-review date with its own
   PR-#74 source log after verifying that every referenced official URL was in
   fact reopened on 2026-08-20;
-- add a source audit for `china-last-night-before-international-flight` without
+- adds a source audit for `china-last-night-before-international-flight` without
   moving its page-level review date, because the Shanghai Airport source did
   not successfully reopen in this check;
-- add supplier-neutral, trilingual stay-fit handoffs to the Shanghai, Xi'an,
+- adds supplier-neutral, trilingual stay-fit handoffs to the Shanghai, Xi'an,
   Chongqing and Shenzhen city owners and extend Zhangjiajie's existing handoff;
-- link those owners to the national near-metro, accessible-room,
+- links those owners to the national near-metro, accessible-room,
   foreign-guest-recovery and final-night tasks without copying their full
   workflows;
-- update `dateModified` only for pages whose copy changes; update
+- updates `dateModified` only for pages whose copy changes; updates
   `sourceReviewedDate` only when the full factual source set has been reopened.
 
 ## PR #74 content to consume, not recreate
@@ -71,18 +71,18 @@ Hub entries.
 | Page or city | Action | What is intentionally not added |
 | --- | --- | --- |
 | Beijing Hub | implemented update | no second first-trip guide, no airport-hotel list |
-| Shanghai Hub + owner | implemented/queued update | no “best Shanghai hotels” page |
-| Xi'an Hub + owner | implemented/queued update | no duplicate wall-versus-Dayanta owner |
+| Shanghai Hub + owner | implemented update | no “best Shanghai hotels” page |
+| Xi'an Hub + owner | implemented update | no duplicate wall-versus-Dayanta owner |
 | Chengdu Hub | implemented update | no `hg-topic-0494` generic owner |
 | Guangzhou Hub | implemented update | no `hg-topic-0502` generic owner or frozen terminal instructions |
-| Zhangjiajie owner + integrated Hub | owner refinement; central verifies Hub release state | no second city-versus-Wulingyuan comparison |
-| Hangzhou integrated Hub | central verifies public release and then adds FAQ | no `hg-topic-0498` broad owner |
-| Chongqing owner + Hub draft | owner refinement; Hub remains central-gated | no second area owner and no branch-side Hub registration |
+| Zhangjiajie owner + integrated Hub | implemented update; central verifies Hub release state | no second city-versus-Wulingyuan comparison |
+| Hangzhou integrated Hub | implemented stay-network/FAQ update; central verifies public release | no `hg-topic-0498` broad owner |
+| Chongqing owner + Hub draft | owner update implemented; Hub remains central-gated | no second area owner and no branch-side Hub registration |
 | Guilin Hub draft | central reviews/releases draft first | no copied Hub and no city-versus-Yangshuo owner yet |
-| Shenzhen owner + Hub draft | owner refinement; Hub remains central-gated | no second area owner and no branch-side Hub registration |
-| Foreign-guest owner | retain PR #74; correct documented review-date mismatch if full recheck is confirmed | no platform-label-as-law or “all hotels” promise |
-| Accessible-room owner | source-date refresh only after complete official recheck | no district/property accessibility guarantee |
-| Final-night owner | partial source audit, copy/consult refinement | no ten-city airport-hotel pages |
+| Shenzhen owner + Hub draft | owner update implemented; Hub remains central-gated | no second area owner and no branch-side Hub registration |
+| Foreign-guest owner | retained PR #74 and aligned metadata to the documented full official recheck | no platform-label-as-law or “all hotels” promise |
+| Accessible-room owner | completed official-source recheck and date alignment; image-credit date retained | no district/property accessibility guarantee |
+| Final-night owner | implemented partial source audit and copy/consult refinement | no ten-city airport-hotel pages |
 
 ## Consultation copy contract
 

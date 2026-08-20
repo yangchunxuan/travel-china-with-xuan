@@ -94,3 +94,9 @@ The published hero is a real photograph of the Changchun Huatian Hotel check-in 
 - Reopened the controlling seven-department accommodation measures, the NIA hotel/non-hotel registration explanation, the SAMR 12315 direction and the State Council boundary between 12345 and 110.
 - Added matching EN/ZH/KO FAQ answers for platform labels, a confirmed-property refusal, the hotel-versus-non-hotel 24-hour boundary, self-cancellation and the correct official channel.
 - Added contextual inbound links from the nationwide metro-hotel guide and the Beijing first-trip stay guide. The canonical boundary did not change.
+
+## Stay-network review-date reconciliation — 2026-08-20
+
+- The ten-city stay-network audit reopened all seven official URLs listed in this log: the Ministry of Commerce circular, State Council English summary, Xinjiang government-hosted corroborating report, NIA interpretation, Beijing local registration guide, SAMR complaint direction and State Council 12345/110 boundary.
+- After that complete official-source pass, metadata `sourceReviewedDate` was aligned to **2026-08-20**. This supersedes the earlier 2026-08-13 integration note without rewriting its historical record.
+- The refreshed date supports only the national/local rules and escalation boundaries stated in the article. It does not prove a platform label, property availability, front-desk execution, refund or replacement outcome; all property-level facts still require current written confirmation and a fallback.
