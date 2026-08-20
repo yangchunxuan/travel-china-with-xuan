@@ -286,7 +286,7 @@
     }
   },
   "currentBatchExecutionControl": {
-    "checkedAt": "2026-08-20T20:05:18+08:00",
+    "checkedAt": "2026-08-20T20:20:04+08:00",
     "centralDecisionSource": "business owner acting as central editor in the active task",
     "writeIssueCreationAuthorized": false,
     "releasePr": null,
@@ -306,7 +306,7 @@
         "artifactType": "guide",
         "candidateStatus": "selected",
         "centralDecision": "approved-for-completion",
-        "executionStatus": "durable-draft-corrections-required",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": null,
@@ -314,15 +314,16 @@
         "durableArtifact": true,
         "remoteRef": "origin/article/worker-1-chongqing-railway-station-selector",
         "observedCommit": "2c68d5036217b3dc8ebfc58edcdb0dd7c9e14ca2",
-        "lastVerifiedAt": "2026-08-20T20:05:18+08:00",
-        "blockingReview": "Refresh dates and current official evidence for Chongqing East route examples before release."
+        "lastVerifiedAt": "2026-08-20T20:20:04+08:00",
+        "blockingReview": null,
+        "completionEvidence": "Dates and current Chongqing East official evidence were refreshed, dynamic facts were recorded, and the trilingual guide was integrated on codex/seo-gap-batch-20260820."
       },
       {
         "contentId": "destination-hangzhou",
-        "artifactType": "destination-hub-draft-package",
+        "artifactType": "destination-hub",
         "candidateStatus": "selected",
         "centralDecision": "approved-for-completion",
-        "executionStatus": "durable-draft-runtime-conversion-required",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": null,
@@ -330,8 +331,9 @@
         "durableArtifact": true,
         "remoteRef": "origin/codex/city-hub-hangzhou-draft-20260815",
         "observedCommit": "273b801e5923aba9d1c6423106527bc3bcb6e52a",
-        "lastVerifiedAt": "2026-08-20T20:05:18+08:00",
-        "blockingReview": "Convert the reviewed draft package into the runtime hub, refresh sources and imagery, then rerun Gate B and locale QA."
+        "lastVerifiedAt": "2026-08-20T20:20:04+08:00",
+        "blockingReview": null,
+        "completionEvidence": "The reviewed package was converted into a trilingual runtime hub with a real owner-supplied production image and integrated on codex/seo-gap-batch-20260820."
       }
     ],
     "rule": "These decisions authorize bounded implementation and review only. They do not prove publication, create an Issue URL, authorize merge/deploy, or permit a generic First 24 Hours page before the arrival-card owner exists."
@@ -2570,7 +2572,7 @@
         "artifactType": "destination-hub",
         "candidateId": "destination-20260820-zhangjiajie-city-hub",
         "centralDecision": "approved",
-        "executionStatus": "implementation-authorized",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "canonicalPath": "/destinations/zhangjiajie/"
       },
@@ -2579,7 +2581,7 @@
         "artifactType": "guide",
         "candidateId": "essentials-20260820-china-online-arrival-card",
         "centralDecision": "approved",
-        "executionStatus": "implementation-authorized",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "canonicalPath": "/guides/china-online-arrival-card/"
       },
@@ -2588,7 +2590,7 @@
         "artifactType": "guide",
         "candidateId": "destination-20260820-zhangjiajie-forest-park-workflow",
         "centralDecision": "approved",
-        "executionStatus": "implementation-authorized",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "canonicalPath": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
       },
@@ -2597,7 +2599,7 @@
         "artifactType": "guide",
         "candidateId": null,
         "centralDecision": "approved-for-completion",
-        "executionStatus": "durable-draft-corrections-required",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "canonicalPath": "/guides/chongqing-railway-station-selector/",
         "remoteRef": "origin/article/worker-1-chongqing-railway-station-selector",
@@ -2605,10 +2607,10 @@
       },
       {
         "id": "destination-hangzhou",
-        "artifactType": "destination-hub-draft-package",
+        "artifactType": "destination-hub",
         "candidateId": null,
         "centralDecision": "approved-for-completion",
-        "executionStatus": "durable-draft-runtime-conversion-required",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "canonicalPath": "/destinations/hangzhou/",
         "remoteRef": "origin/codex/city-hub-hangzhou-draft-20260815",
@@ -3705,7 +3707,7 @@
         "status": "selected",
         "candidateStatus": "selected",
         "centralDecision": "approved",
-        "executionStatus": "implementation-authorized",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": null,
@@ -3730,7 +3732,7 @@
         "cannibalizationOwner": "destination-zhangjiajie",
         "freshnessClass": "high-gateway-and-attraction-change",
         "checkedAt": "2026-08-20",
-        "decision": "central-approved-bounded-implementation",
+        "decision": "central-approved-release-candidate-prepared",
         "parentHub": "hub-explore",
         "suggestedInternalLinks": [
           "zhangjiajie-itinerary",
@@ -3760,7 +3762,7 @@
         "status": "selected",
         "candidateStatus": "selected",
         "centralDecision": "approved",
-        "executionStatus": "implementation-authorized",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": null,
@@ -3789,7 +3791,7 @@
         "cannibalizationOwner": "china-online-arrival-card",
         "freshnessClass": "critical-on-nia-source-change",
         "checkedAt": "2026-08-20",
-        "decision": "central-approved-bounded-implementation",
+        "decision": "central-approved-release-candidate-prepared",
         "parentHub": "hub-essentials",
         "suggestedInternalLinks": [
           "system-entry-requirements",
@@ -3818,7 +3820,7 @@
         "status": "selected",
         "candidateStatus": "selected",
         "centralDecision": "approved",
-        "executionStatus": "implementation-authorized",
+        "executionStatus": "release-candidate-prepared",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": null,
@@ -3843,7 +3845,7 @@
         "cannibalizationOwner": "zhangjiajie-national-forest-park-tickets-and-entrances",
         "freshnessClass": "critical-ticket-gate-and-operator-change",
         "checkedAt": "2026-08-20",
-        "decision": "central-approved-bounded-implementation",
+        "decision": "central-approved-release-candidate-prepared",
         "parentHub": "destination-zhangjiajie",
         "suggestedInternalLinks": [
           "zhangjiajie-itinerary",

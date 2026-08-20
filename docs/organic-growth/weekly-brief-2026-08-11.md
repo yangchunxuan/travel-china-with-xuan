@@ -25,12 +25,12 @@
 
 | candidateId | 页面 owner / 形态 | centralDecision | executionStatus | publicationStatus |
 |---|---|---|---|---|
-| `destination-20260820-zhangjiajie-city-hub` | `/destinations/zhangjiajie/` / Destination Hub | approved | implementation-authorized | not-published |
-| `essentials-20260820-china-online-arrival-card` | `/guides/china-online-arrival-card/` / task guide | approved | implementation-authorized | not-published |
-| `destination-20260820-zhangjiajie-forest-park-workflow` | `/guides/zhangjiajie-national-forest-park-tickets-and-entrances/` / task guide | approved | implementation-authorized | not-published |
+| `destination-20260820-zhangjiajie-city-hub` | `/destinations/zhangjiajie/` / Destination Hub | approved | release-candidate-prepared | not-published |
+| `essentials-20260820-china-online-arrival-card` | `/guides/china-online-arrival-card/` / task guide | approved | release-candidate-prepared | not-published |
+| `destination-20260820-zhangjiajie-forest-park-workflow` | `/guides/zhangjiajie-national-forest-park-tickets-and-entrances/` / task guide | approved | release-candidate-prepared | not-published |
 | `planning-20260820-first-24-hours` | routed collection only | defer | not-started | not-published |
 
-库存完成项另行锁定：`chongqing-railway-station-selector` 与 Hangzhou Hub draft package 均是 durable artifact，但都尚未发布。前者需刷新日期与重庆东站官方证据，后者需完成 runtime 转换、真实素材和 Gate B/三语 QA。
+库存完成项另行锁定：`chongqing-railway-station-selector` 已完成日期、重庆东站官方证据和动态事实复核；Hangzhou Hub 已完成 runtime 转换、三语结构与真实素材记录。两项均已进入 `codex/seo-gap-batch-20260820` release candidate，但都尚未发布。
 
 ## Ticket 1 — 员工 1 / 交通
 

@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { tmpdir } from "node:os";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -54,7 +55,7 @@ const chineseText = [
 const koreanText = characterSet(/[\p{Script=Hangul}]/gu);
 const python = argumentsByName.python;
 const pythonPath = argumentsByName.fonttools;
-const fixedNoto = "/private/tmp/homeground-noto-serif-sc-500.ttf";
+const fixedNoto = resolve(tmpdir(), "homeground-noto-serif-sc-500.ttf");
 
 function runPython(module, args) {
   const result = spawnSync(python, ["-m", module, ...args], {

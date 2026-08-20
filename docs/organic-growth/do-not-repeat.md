@@ -86,7 +86,7 @@
 - `essentials-20260820-china-online-arrival-card` ↔ `china-online-arrival-card`：只拥有 NIA 官方 arrival-card 表单、填写时机、免费官方渠道识别和失败恢复；不得吸收签证资格、过境规则、海关申报或住宿登记。
 - `destination-20260820-zhangjiajie-forest-park-workflow` ↔ `zhangjiajie-national-forest-park-tickets-and-entrances`：只拥有 Forest Park ticket/gate/slot/passport fallback 及 shuttle/elevator/cableway 关系；不得吸收 general itinerary、Wulingyuan-vs-city hotel、Tianmen A/B/C 或 Glass Bridge comparison。
 - `planning-20260820-first-24-hours`：`defer / not-started / not-published`。它未来也只能是路由 collection；arrival-card owner 和 collection gate 未完成前，不写正文、不建公开页。
-- `chongqing-railway-station-selector` 与 Hangzhou Hub 已有 durable draft，仍未发布；修复、转 runtime、换图或补 locale 都不得重复计为新题。
+- `chongqing-railway-station-selector` 与 Hangzhou Hub 已完成 release-candidate 整合但仍未发布；后续中央审核修正、图片复核或 locale QA 都不得重复计为新题。
 
 ## 其余已发布 canonical owners：不可撞题
 

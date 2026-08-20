@@ -1163,6 +1163,7 @@ export const destinationHubRegistry = [
     sourceReviewedDate: "2026-08-20",
     supportGuideIds: [
       "zhangjiajie-itinerary",
+      "zhangjiajie-national-forest-park-tickets-and-entrances",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-glass-bridge-vs-skywalk",
       "zhangjiajie-older-travellers",

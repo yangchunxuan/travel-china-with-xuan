@@ -1181,3 +1181,16 @@ current access, weather, boats, gates, queues, tickets or transport operation.
 | --- | --- | --- | --- |
 | `city-hangzhou` hero | City photograph supplied by the project owner for Homeground website use during the July 2026 redesign; the retained production file shows West Lake water, small passenger boats and wooded hills. Photographer and original capture metadata were not separately recorded, so no narrower shore, boat route or viewpoint is claimed. | Existing `public/images/home/hangzhou-1600.jpg`; 1600 × 1066; `c2833ac865a0652cc932e5e5aea6b5e9e04f06b486a9e5c1ca3d8f1664a1e057` | Identifies the broad West Lake landscape only. It does not establish a current boat service, safe route, visibility, crowd level, fare or hotel view. |
 | `city-zhangjiajie` hero | Project-owner-supplied `张家界.png`, already approved for Homeground production use and recorded at the start of this register. | Existing `public/images/home/zhangjiajie-1600.jpg`; 1600 × 954; `804c41ae605faeb67f1ef77da6d012400169a5b0e151b857e0e5e97856cec176` | Identifies the sandstone-pillar landscape in Zhangjiajie. It does not identify a gate, plateau, path or transport product and proves no current weather or access condition. |
+
+## Arrival card and Zhangjiajie park execution guides (August 20, 2026)
+
+Both guides use real, location-identified Wikimedia Commons photographs and
+**0 AI-generated or AI-assisted documentary images**. Each derivative was made
+only by resizing or a conventional centre crop, with metadata removed. Named
+attribution, source and commercial-use licence links remain in the guide source
+record and image plan.
+
+| Page and role | Original source, place, creator and rights | Published derivative and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| `china-online-arrival-card` hero | [Beijing Capital International Airport T1 Arrival hall 20161124.jpg](https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg), Beijing Capital International Airport Terminal 1 arrival hall; Tyg728; 2016-11-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/china-online-arrival-card/hero-1600.jpg`; 1600 × 1000; `2246f6c0c7628651b8714d0566b6972fe931f0ada04d05a3ba0339df14d7ee6e` | A general China-arrival setting only. It is not an immigration counter or arrival-card desk and proves no current form, queue, processing time, terminal operation or successful admission. |
+| `zhangjiajie-national-forest-park-tickets-and-entrances` hero | [Zhangjiajie National Forest Park.jpg](https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg), quartz-sandstone landscape in Zhangjiajie National Forest Park; Kuruman; 2016-08-13; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `public/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg`; 1600 × 1000; `c7f5fa0ec990da6fc8ed14c92ec6c709444e8823e4cb467c2e45109ee887ec61` | Identifies the park landscape only. It does not depict or identify a gate and proves no current ticket product, queue, shuttle, cableway, lift, opening status or weather. |
