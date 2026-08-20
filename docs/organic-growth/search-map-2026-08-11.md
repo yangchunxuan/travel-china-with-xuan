@@ -1,18 +1,30 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-状态：`SEARCH MAP SYNC READY — CENTRAL REVIEW REQUIRED`
+状态：`SEARCH MAP SYNCHRONIZED — CENTRAL-APPROVED BATCH NOT YET PUBLISHED`
 
-本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。员工 7 本次只同步状态，没有研究下一批选题、增加第七张票、写文章、创建公开页面或修改 registry/sitemap/indexability。草稿、规格和本地文件只作为执行证据入账，不自行构成中央批准。
+本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。2026-08-20 的同步段落取代下文保留的 2026-08-11 历史审计口径；历史段落用于追踪当时的决定，不得再用来判断当前发布状态。
+
+## 2026-08-20 同步结论
+
+- 最新基线：`origin/main@cbbfddabe2513874cc4e55981e08244db7338ff9`。
+- 当前指南库存：**173 个内容身份、513 个 locale URL**；其中 154 个独立 guide 目录均三语，另有 19 个受保护 legacy guide 身份（16 个三语、3 个仅英文）。三语始终只算一个身份。
+- 当前已发布城市 Hub：**5 个身份、15 个 locale URL**，分别为 Beijing、Shanghai、Xi'an、Chengdu、Guangzhou。再计 1 个英文系统 entry collection，当前公开编辑型详情总数为 **179 个身份、529 个 URL**。
+- `first-shared-meal-in-china` 已随 PR #31 发布；`foreigners-china-hotel` 已随 PR #50 发布；`china-esim-vs-local-sim` 已随 PR #41 发布。三项都不能继续标作等待审核或本地不耐久稿。
+- 中央本批批准但尚未发布：Zhangjiajie City Hub、China Online Arrival Card、Zhangjiajie National Forest Park tickets/entrances/in-park transport workflow。
+- `First 24 Hours in China`：`defer / not-started / not-published`；arrival-card canonical owner 形成且 collection gate 重新审核前，不写正文、不建公开页。
+- 待完成库存：`chongqing-railway-station-selector` 是 durable draft，仍需日期和重庆东站来源复核；Hangzhou Hub 是 durable draft package，仍需转为 runtime、补真实素材和最终 Gate B/三语 QA。二者均未发布。
+- Search Console 最新可用小样本为 2026-07-09 至 2026-08-18：17 clicks、1,060 impressions、CTR 1.6%、average position 20.5。隐私过滤隐藏大量 query；关键词量、CPC、难度、购买概率仍为**不可用**。
+- 本同步不虚构 GitHub Issue URL；三个新批准项的 `executionIssueUrl` 都是 `null`。中央批准只授权有边界的实现与审核，不等于合并、部署或上线。
 
 ## 1. 口径与输入审计
 
 - 内容身份：英文、中文、韩文最多是同一内容身份的三个 locale，不按三篇计算。
-- 仓库基线：最新 `origin/main`，提交 `8769b2ffa4d2d719699bf98fb4bc215dc89bdda9`，即 PR #24 的合并提交；PR #22、PR #23 与 Batch C 均已包含。同步工作在独立 worktree `C:/Users/User/Documents/homeground-seo-intelligence-sync` 和分支 `ops/seo-intelligence-sync-20260811` 完成。
+- 仓库基线：最新 `origin/main`，提交 `cbbfddabe2513874cc4e55981e08244db7338ff9`。本次平台同步工作在独立 worktree `C:/Users/User/Documents/宝格丽的agent/homeground-seo-platform-20260820` 和分支 `codex/seo-gap-platform-20260820` 完成。
 - 仓库规范：已完整读取 `docs/article-production-lite.md` 与 `docs/homeground-search-platform-phase-1-spec.md`。
 - 线上：2026-08-11 17:03（Asia/Shanghai）复核了 [sitemap](https://homegroundchina.com/sitemap.xml)、[guides 目录](https://homegroundchina.com/guides/) 与 PR #24 的六个 locale URL。6/6 均为 200、自 canonical、`index, follow`，并有对应的 en、zh-Hans、ko、x-default hreflang；技术可索引不等于 Google 已实际收录。
 - 远端：已检查全部 34 个 `origin/article/*` 与 `origin/codex/*` ref，包括新增的 `origin/codex/batch-c-five-guide-release-20260811`；修复或视觉整合分支只算相同稿件的新版本；current-round draft/spec 仍按既有六张票据计数。
 - 现有 Search Map：**可用（旧分支）**。来源为 `ops/seo-intelligence-20260811@a30caec2d53ba5e2cea21167d2ea541ce547b885`；本轮复制到 PR #24 基线后修订，没有修改旧分支。
-- Search Console：**可用（浏览器导出）**。`sc-domain:homegroundchina.com` 在 2026-07-09 至 2026-08-09 有 11 clicks、804 impressions、CTR 1.4%、average position 18.7。94 个可见 query 行只有 153 impressions、0 clicks；11 个 clicks 无法归因到可见 query。该样本只作基线、CTR/排名和蚕食验证，不承担市场发现。
+- Search Console：**可用但样本很小**。`sc-domain:homegroundchina.com` 在 2026-07-09 至 2026-08-18 有 17 clicks、1,060 impressions、CTR 1.6%、average position 20.5。隐私过滤隐藏大量 query；该样本只作基线、CTR/排名和蚕食验证，不承担市场发现。
 - 关键词工具：**不可用**。没有已认证的 Keyword Planner、Semrush 等体量工具；搜索量、CPC、关键词难度、购买概率与流量预测均未估算。
 - Google Trends：**可用但仅为相对趋势**。使用全球、过去五年、Travel 类别、Google 网页搜索；不同图不能横比，0 可能只是低于显示阈值，不能当月搜索量。
 - 当前 SERP 与真实问题：可用但只作定性任务证据。没有把 Google 自动补全、结果数量、论坛帖数或 Trends 指数当搜索量。
@@ -22,20 +34,21 @@
 
 | 状态 | 内容身份数 | 说明 |
 |---|---:|---|
-| 已发布指南身份 | 36 | 35 篇文章 + 1 个 entry requirements 系统 collection；共 100 个详情 URL |
+| 已发布指南身份 | 173 | 154 个独立 guide + 19 个 legacy guide；共 513 个 locale URL |
+| 已发布城市 Hub | 5 | Beijing、Shanghai、Xi'an、Chengdu、Guangzhou；共 15 个 locale URL |
 | Guides 目录 | 1 | `/guides/` 的 en/zh/ko 三个 locale URL |
 | Section Hub | 9 | 6 个 published/indexable；when-to-go、culture、tools 为 review/noindex |
 | 本轮开工时锁定稿 | 14 | 14 个身份全部已纳入且仍禁止重选 |
 | 旧 14 稿的当前制作中 | 0 | PR #23 已将 Batch C 五个身份全部转为 published/indexable；本轮六票另按四层状态记录 |
 | 本轮候选 | 18 | 六个内容池各 3 个 |
-| 已选中票据 | 6 | 每池 1 个；Ticket 1、2 已由中央批准并发布，Ticket 3–6 仍待中央内容/产品审核 |
-| 本轮执行锁 | 6 | 2 个已发布、2 个 canonical-repo durable draft、1 个 `SPEC REVIEW READY` 内部规格、1 个独立 unborn repo 的本地英文稿；不追加第七篇 |
+| 2026-08-11 六张历史票 | 6 | 除 Route Reality Checker 仍是内部规格外，五篇文章 owner 均已发布；历史票不重开 |
+| 2026-08-20 批准项 | 3 | Zhangjiajie Hub、Online Arrival Card、Forest Park workflow；均为 not-published |
 | 外部市场观察簇 | 12 | 只进入下一轮研究池，不是 candidateId、票据或开工授权 |
 | 合并/更新路由 | 9 | 8 个候选路由 + 1 个已合并 legacy shell；不创建第二 canonical URL |
 | 明确拒绝模式 | 12 | 包含近义页和排列组合页 |
 | 动态事实复核组 | 12 | 法规、机场、铁路、支付、门票、非政治旅行新闻等 |
 
-最终线上 sitemap 共 142 个 URL；指南范围为 100 个详情 URL + 3 个 guides 目录 locale URL。100 个详情 URL 合并 locale 后是 36 个指南身份：35 篇文章、99 个文章 locale URL，加 1 个英文系统 entry collection。本次主题盘点聚焦指南、目录与 section hubs。除已单列的 `system-guides` 与 `system-entry-requirements` 外，另有 7 个运营/法律/转化系统身份，不作为搜索编辑选题身份。
+2026-08-11 的线上 sitemap 142 URL 仅保留为历史快照，不再代表当前库存。最新 `origin/main` 的指南源库存为 173 个身份、513 个 locale URL；另有 5 个已发布城市 Hub、15 个 locale URL。技术可索引不等于 Google 已实际收录。
 
 ### 审计期间状态变化
 
@@ -47,11 +60,11 @@
 
 14:11，PR #24 合并为 `origin/main@8769b2f`。17:03 线上核验确认 `which-beijing-railway-station` 与 `forbidden-city-for-foreign-visitors` 的六个 locale URL 全部上线。两页 `datePublished`、`dateModified` 与 `sourceReviewedDate` 均为 2026-08-11；release PR 为 [#24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24)。
 
-本轮票据仍冻结为六项，但状态已分层：Ticket 1、2 为 `selected / approved / release-completed / published`；shared-meal 与 foreign-hotel 为 `selected / pending-review / draft-submitted / not-published`；Route Reality Checker 为 `selected / pending-review / specification-submitted / not-published`；员工 6 为 `selected / pending-review / local-undurable-draft / not-published`。本轮不研究或递补新题。
+2026-08-11 六张票仍作为历史锁题记录：北京站、故宫、shared-meal、foreign-hotel 与 eSIM 均为 `selected / approved / release-completed / published`；Route Reality Checker 仍为 `selected / pending-review / specification-submitted / not-published`，且不授权公开工具。
 
 重复风险提示：北京站点正式 owner 已扩展为北京、北京西、北京南、北京北、清河、北京朝阳、北京丰台、北京通州八站，并以 `primaryIntent: plan` / `family: comparison` 发布。旧的五站标题和 `execute / combined-decision` 提案边界已被正式页面取代；八站仍是一个 canonical identity，不能拆成八页。
 
-交付风险提示：员工 6 的英文稿题目与四路径边界、供应商中立和 payment-guide handoff 均与主账本一致，但 9 个链接全是外部来源，内部链接为 0。进入中央验收前，需在 canonical repo 中建立 durable artifact/metadata，并补 payment、entry collection、HSR 与 foreign-hotel owner 的真实内部链接；不得借迁移或补链接改变 topic identity。
+历史交付风险已关闭：eSIM owner 已进入 canonical repository，并通过 PR #41 发布三语版本；旧本地英文稿路径不再是当前执行状态。
 
 ## 3. 已发布清单
 
@@ -123,18 +136,18 @@
 |---|---|---|---|---|---|
 | `transport-20260811-01` | selected | approved | release-completed | published | Issue：`null`；PR [#24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24)；[EN](https://homegroundchina.com/guides/which-beijing-railway-station/) / [ZH](https://homegroundchina.com/zh/guides/which-beijing-railway-station/) / [KO](https://homegroundchina.com/ko/guides/which-beijing-railway-station/) |
 | `destination-20260811-01` | selected | approved | release-completed | published | Issue：`null`；PR [#24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24)；[EN](https://homegroundchina.com/guides/forbidden-city-for-foreign-visitors/) / [ZH](https://homegroundchina.com/zh/guides/forbidden-city-for-foreign-visitors/) / [KO](https://homegroundchina.com/ko/guides/forbidden-city-for-foreign-visitors/) |
-| `culture-20260811-01` | selected | pending-review | draft-submitted | not-published | Issue：`null`；durable draft `origin/article/worker-3-first-shared-meal@72dc3ea`；无 release PR / live URL |
+| `culture-20260811-01` | selected | approved | release-completed | published | Issue：`null`；PR #31；`first-shared-meal-in-china` 三语 owner |
 | `planning-20260811-01` | selected | pending-review | specification-submitted | not-published | Issue：`null`；`specificationStatus: review-ready`；`publicImplementationAuthorized: false`；`indexablePageAuthorized: false` |
-| `stay-20260811-01` | selected | pending-review | draft-submitted | not-published | Issue：`null`；durable draft `origin/article/worker-5-foreigners-china-hotel@a5be2b6`；无 release PR / live URL |
-| `essentials-20260811-01` | selected | pending-review | local-undurable-draft | not-published | Issue：`null`；`durableArtifact: false`；独立本地 repo、未跟踪/暂存/提交/推送且无 remote |
+| `stay-20260811-01` | selected | approved | release-completed | published | Issue：`null`；PR #50；`foreigners-china-hotel` 三语 owner |
+| `essentials-20260811-01` | selected | approved | release-completed | published | Issue：`null`；PR #41；`china-esim-vs-local-sim` 三语 owner；`durableArtifact: true` |
 
-六票均未发现正式 SEO GitHub Issue，因此 `executionIssueUrl` 明确为 `null`，没有虚构或创建 Issue。Ticket 1、2 的中央批准证据是 PR #24 合并和线上中央验收；其执行发生在本工作流正式写入前，作为历史例外登记。Ticket 3–6 的草稿、规格或本地稿不等于中央批准。
+六张历史票均未发现正式 SEO GitHub Issue，因此 `executionIssueUrl` 明确为 `null`，没有虚构或补写 Issue。Ticket 1、2 的批准证据是 PR #24；Ticket 3 是 PR #31；Ticket 5 是 PR #50；Ticket 6 是 PR #41。Ticket 4 只有内部规格，仍不构成公开实现授权。
 
 本轮票据集合冻结为以上六项，不增加第七个文章、页面或票据，也不因 Ticket 1、2 已上线或其他票延迟、退回、拒绝而自动递补。Route Reality Checker 的内部规格与员工 8 审查不计作新增文章；`SPEC REVIEW READY` 只开放员工 8 的技术可行性与测试审查，不开放实现、建页、索引或发布。
 
 ## 4B. 外部中国需求与未来占位方向
 
-现有 GSC 的 804 impressions 太小，适合验证已发布 owner 是否开始获得排名、CTR 是否异常、同一 query 是否出现多个页面，不适合决定整个市场下一步。选题发现因此以外部需求为主，GSC 作为后验验证层保留。
+现有 GSC 的 1,060 impressions 仍然很小，适合验证已发布 owner 是否开始获得排名、CTR 是否异常、同一 query 是否出现多个页面，不适合决定整个市场下一步。选题发现因此以外部需求为主，GSC 作为后验验证层保留。
 
 市场盘子正在扩大：[国家统计局](https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html)记录 2025 年 1.545 亿入境访问（+17.1%），其中外国人 3517 万（+30.6%）、免签入境外国人 3008 万（+49.5%）；“访问”不是独立游客，且总入境口径包含港澳台。[国家移民管理局](https://www.nia.gov.cn/n741440/n741567/c1789835/content.html)记录 2026 上半年外国人入境 2291.4 万（+20.4%），其中免签 1781.5 万，占 77.7%。[2026–2030 旅游规划](https://english.www.gov.cn/policies/latestreleases/202607/08/content_WS6a4dc693c6d00ca5f9a0c10b.html)把签证、支付、交通、通信、住宿和多语服务列为持续改进对象。
 
@@ -179,16 +192,16 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 | 2 目的地 | `destination-20260811-01` | How to Visit the Forbidden City: Tickets and a 3-Hour Route | new-page | 23/13/15/14/14/6 = **85** | **已由中央批准；PR #24 已发布** |
 | 2 目的地 | `destination-20260811-02` | Mutianyu or Badaling? | reject | 23/7/15/11/13/7 = 76 | 拒绝通用新页；SERP 同质化 |
 | 2 目的地 | `destination-20260811-03` | Panda Base Gate, Time and Route | merge | 20/8/15/5/12/6 = 66 | 并入熊猫场馆比较稿 |
-| 3 文化 | `culture-20260811-01` | Your First Shared Meal in China | new-page | 18/14/11/15/13/9 = **80** | **已选中；draft-submitted；待中央审核** |
+| 3 文化 | `culture-20260811-01` | Your First Shared Meal in China | new-page | 18/14/11/15/13/9 = **80** | **已发布；PR #31** |
 | 3 文化 | `culture-20260811-02` | How Do Chinese Tea Houses Work? | update-existing | 17/13/11/11/11/9 = 72 | 先做 culture hub/FAQ 模块，暂不独立 |
 | 3 文化 | `culture-20260811-03` | Guangzhou Dim Sum Etiquette | merge | 20/9/13/4/10/9 = 65 | 并入广州早茶稿 |
 | 4 规划 | `planning-20260811-01` | China Route Reality Checker | tool | 24/16/12/15/15/8 = **90** | **已选中；spec review-ready；待中央审核** |
 | 4 规划 | `planning-20260811-02` | How Many Days: 7 vs 10 vs 14 | update-existing | 24/8/14/7/14/9 = 76 | 更新 rushed-itinerary owner |
 | 4 规划 | `planning-20260811-03` | First China Trip Routes by Pace | collection | 22/11/12/10/15/8 = 78 | 暂缓；Phase 1 gate 未满足，不公开/索引 |
-| 5 住宿 | `stay-20260811-01` | Can Foreigners Stay in Any Hotel? | new-page | 23/14/15/15/15/6 = **88** | **已选中；draft-submitted；待中央审核** |
+| 5 住宿 | `stay-20260811-01` | Can Foreigners Stay in Any Hotel? | new-page | 23/14/15/15/15/6 = **88** | **已发布；PR #50** |
 | 5 住宿 | `stay-20260811-02` | Airport Hotel or City Hotel Last Night? | merge | 17/7/12/5/13/8 = 62 | 并入已发布 last-night owner |
 | 5 住宿 | `stay-20260811-03` | Best Hotel Booking Apps | update-existing | 20/10/9/7/13/5 = 64 | 做 owner 内模块，不做易过时榜单 |
-| 6 入境/实用 | `essentials-20260811-01` | China eSIM or Local SIM? | new-page | 24/15/13/15/15/6 = **88** | **已选中；local-undurable-draft；待中央审核** |
+| 6 入境/实用 | `essentials-20260811-01` | China eSIM or Local SIM? | new-page | 24/15/13/15/15/6 = **88** | **已发布；PR #41** |
 | 6 入境/实用 | `essentials-20260811-02` | China Entry Eligibility Checker | tool | 25/12/15/12/15/3 = 82 | 暂缓；法律数据 owner/SLA 未建立 |
 | 6 入境/实用 | `essentials-20260811-03` | Alipay or WeChat Pay? | merge | 25/9/15/4/14/5 = 72 | 并入支付稿 |
 
@@ -266,9 +279,9 @@ Google Trends 设置为全球、过去五年、Travel 类别、Google 网页搜�
 - `collection`、Hub 或 tool 只有在 eligibility、coverage、source、maintenance gate 均满足后，才可由中央编辑另行批准公开或索引。
 - 每页仅有一个 section、一个 primary collection 和一个 canonical owner；entity 是正交标注，不等于新 URL。
 - `targetIntent` 与 `pageFamily` 使用仓库受控词表；更细的候选形态放在 `taskMode` 与 `artifactShape`，避免机器字段混义。
-- 机器账本分别保存 origin/main 的 7 个真实 entity ID/已发布 runtime assignments 与编辑提议。候选的 `primaryEntityId`/`secondaryEntityIds` 是未落地提案，不会自动创建 entity record。
+- 机器账本保存 origin/main 的 11 个受控 entity ID、已发布 runtime assignments 与编辑提议。2026-08-20 只补齐广州、杭州、重庆、深圳四个有现成 Hub、已发布指南或可定位 durable artifact 的城市；张家界沿用原受控实体。每个新增城市的仓库证据路径记录在 `repositoryEntityEvidence`，没有按候选池批量造实体。候选的 `primaryEntityId`/`secondaryEntityIds` 仍只是未落地提案，不会自动创建 entity record。
 - `freshnessClass` 是 Search Map 对编辑复核风险的治理 override，不声称等于仓库当前 `updatePolicy`。
-- 六个已选中项分别读取四层状态：Ticket 1、2 已批准并发布；Ticket 3–6 仍待中央审核。draft、规格或本地稿本身不构成批准、追加工作、建页、索引或发布授权。
+- 六个历史已选中项分别读取四层状态：Ticket 1、2、3、5、6 已批准并发布；Ticket 4 仍为内部 specification，不构成公开实现、建页、索引或发布授权。
 - 本轮 ticket set 硬冻结为六项；不得追加第七篇，也不得把 held/rejected/runner-up 自动递补进本轮。
 - 城市、景点、历史与传说可以进入未来研究池，但必须有地点/旅客任务、可验证来源或 Homeground 信息增量；传说与史实必须分栏。
 - 旅行新闻不得绕过 Search Map。优先更新现有城市、景点、交通或实用 owner；政治、意识形态、地缘与泛流量新闻拒绝。

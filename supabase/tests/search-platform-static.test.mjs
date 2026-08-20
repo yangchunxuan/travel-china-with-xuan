@@ -139,6 +139,46 @@ test("every independent guide resolves to a collection in its declared section",
   );
 });
 
+test("guide entities and freshness use the current metadata vocabulary", async () => {
+  const [adapter, entitySource] = await Promise.all([
+    source("lib/searchPlatformContentAdapter.ts"),
+    source("content/entities/core-places.json"),
+  ]);
+  const entityIds = new Set(
+    JSON.parse(entitySource).map((record) => record.data.id),
+  );
+
+  for (const [slug, entityId] of [
+    ["guangzhou", "city-guangzhou"],
+    ["zhangjiajie", "city-zhangjiajie"],
+    ["hangzhou", "city-hangzhou"],
+    ["chongqing", "city-chongqing"],
+    ["shenzhen", "city-shenzhen"],
+  ]) {
+    assert.match(adapter, new RegExp(`${slug}: "${entityId}"`));
+    assert.ok(entityIds.has(entityId), entityId);
+  }
+
+  assert.match(
+    adapter,
+    /criticalFreshnessPillars[\s\S]*?"entry-rules"[\s\S]*?"entry-practicalities"/,
+  );
+  for (const dynamicPillar of [
+    "essentials-payments-connectivity",
+    "timing-holidays-crowds",
+    "transport-airports-rail-hubs",
+    "transport-city-pair-routes",
+    "transport-last-mile-transfers",
+  ]) {
+    assert.match(adapter, new RegExp(`"${dynamicPillar}"`));
+  }
+  assert.match(adapter, /dynamicTicketTopicFragments[\s\S]*?"booking"/);
+  assert.match(adapter, /dynamicTicketTopicFragments[\s\S]*?"ticket"/);
+  assert.match(adapter, /function guideUpdatePolicy/);
+  assert.match(adapter, /updatePolicy: guideUpdatePolicy\(guide\)/);
+  assert.doesNotMatch(adapter, /guide\.pillar === "entry-rules"/);
+});
+
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {
   const [sitemap, header, aliases, hubPage, adapter] = await Promise.all([
     source("app/sitemap.ts"),

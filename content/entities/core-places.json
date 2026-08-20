@@ -157,5 +157,65 @@
         "updatedAt": "2026-08-17"
       }
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-hangzhou",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Hangzhou" },
+        "zh-Hans": { "name": "杭州" },
+        "ko": { "name": "항저우" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-chongqing",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Chongqing" },
+        "zh-Hans": { "name": "重庆" },
+        "ko": { "name": "충칭" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-shenzhen",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Shenzhen" },
+        "zh-Hans": { "name": "深圳" },
+        "ko": { "name": "선전" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
   }
 ]
