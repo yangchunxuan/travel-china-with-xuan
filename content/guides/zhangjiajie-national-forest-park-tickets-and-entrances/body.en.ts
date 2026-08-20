@@ -11,8 +11,8 @@ const body: StructuredPageBody = {
     {
       id: "canonical-boundary",
       type: "callout",
-      title: "This page owns the park transaction and navigation layer",
-      body: "It explains the ticket stack, passport-booking fallback, first-entry gate and time, displayed validity, the five gate identities, and how scenic shuttles connect with the Bailong Elevator, Tianzi Mountain, Yangjiajie and Huangshi Village cableways. It does not design a two-, three- or four-day itinerary, choose Zhangjiajie city versus Wulingyuan hotels, explain Tianmen Mountain A/B/C routes, or compare the Grand Canyon Glass Bridge with a mountain skywalk.",
+      title: "What this guide covers",
+      body: "Use it to check ticket combinations, recover from a passport-booking failure, record the first-entry gate and time, read the displayed validity, distinguish the five gates, and connect scenic shuttles with Bailong Elevator and the Tianzi Mountain, Yangjiajie and Huangshi Village cableways. For a two-, three- or four-day itinerary, hotel-base choice, Tianmen Mountain A/B/C routes, or a Glass Bridge comparison, use the separate guides linked below.",
       tone: "neutral",
     },
     {
@@ -45,8 +45,8 @@ const body: StructuredPageBody = {
       caption: "What to locate on the live product page before paying",
       columns: ["Layer", "What official material establishes", "What the current order must prove"],
       rows: [
-        ["Core scenic-area admission", "The Forest Park/Wulingyuan core area has its own admission product", "Exact attraction name, visit date, eligible traveller, first gate/time and displayed validity"],
-        ["Eco/sightseeing shuttles", "The 2023 government one-ticket notice described the core admission as including eco-bus transport", "Which shuttle segments operate on the visit date and whether the selected product still includes them"],
+        ["Core scenic-area admission", "The current official ticket page reviewed on 20 August 2026 lists a RMB 165 admission product, plus optional RMB 3 insurance, valid for four consecutive days and excluding eco-bus, cableways and elevators", "Exact attraction name, visit date, eligible traveller, first gate/time and displayed validity"],
+        ["Eco/sightseeing shuttles", "The same current page lists a separate RMB 236 admission-plus-eco-bus product, plus optional RMB 3 insurance, also valid for four consecutive days; cableways and elevators remain excluded", "Which shuttle segments operate on the visit date and whether the selected product actually includes them"],
         ["Three cableways and one elevator", "The 2023 framework named Tianzi Mountain, Huangshi Village and Yangjiajie cableways plus Bailong Elevator as separately purchasable or combinable transport", "Direction, number of rides, validity and whether each desired segment is actually in the product"],
         ["Ten-Mile Gallery sightseeing train", "It is an in-park transport option but was not one of the ‘three cableways and one elevator’ named in that framework", "Whether it is sold separately, its operating status and the correct boarding point"],
         ["Discount or free-admission category", "Zhangjiajie applies documented preferential categories and requires valid proof", "Whether a foreign document is accepted for the exact category and whether transport charges remain payable"],
@@ -55,8 +55,8 @@ const body: StructuredPageBody = {
     {
       id: "price-warning",
       type: "callout",
-      title: "Do not buy from an old price screenshot",
-      body: "The government sources reviewed here establish the product structure and the need to reserve; they do not make a 2023 or 2024 price, opening time or bundle permanent in 2026. Use the amount, inclusions, refund rule and validity shown in the live official order at payment. Save that product page with the order.",
+      title: "Use the current official product, not an old price screenshot",
+      body: "As reviewed on 20 August 2026, the official page separates RMB 165 admission from RMB 236 admission plus eco-bus; optional RMB 3 insurance is listed for each, and neither product includes cableways or elevators. Prices, products and operating rules can change. Use the amount, inclusions, refund rule and validity shown in the live official order at payment, and save that product page with the order.",
       tone: "warning",
     },
     {
@@ -72,7 +72,7 @@ const body: StructuredPageBody = {
       items: [
         "Copy the visit date and the named first check-in. Official visitor guidance identifies timed reservations at different check-ins; a generic ‘Zhangjiajie ticket’ screenshot is not enough.",
         "Copy the first-entry period exactly and plan the hotel departure around the named gate, not around the city name.",
-        "Read the displayed validity of the exact admission and each transport product. Do not borrow a validity period from a historical combo notice; the current order controls your purchase.",
+        "The current official admission-only and admission-plus-eco-bus products both display four consecutive days of validity. Copy the exact dates from your order, then confirm later-entry gates, time reservations and each separate transport product rather than treating multi-day validity as unrestricted access.",
         "Check whether later entries may use another gate and whether another time reservation is required. Do not infer unlimited gate changes from multi-day validity.",
         "Check the last usable date and the treatment of weather closure, unused rides, refunds and rescheduling before payment.",
       ],
@@ -81,7 +81,7 @@ const body: StructuredPageBody = {
       id: "record-heading",
       type: "heading",
       level: 2,
-      text: "Build a booking record that a gate agent can audit",
+      text: "Keep the six booking records staff may need to check",
     },
     {
       id: "record-table",
@@ -120,7 +120,7 @@ const body: StructuredPageBody = {
       id: "gate-heading",
       type: "heading",
       level: 2,
-      text: "Choose the first entrance from the first route node",
+      text: "Choose the first entrance from your first planned area",
     },
     {
       id: "gate-table",
@@ -247,7 +247,7 @@ const body: StructuredPageBody = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "Continue Zhangjiajie planning with the correct owner",
+      title: "Continue planning without mixing up separate decisions",
       items: [
         { label: "How many days in Zhangjiajie?", href: "/guides/zhangjiajie-itinerary/", description: "Use the itinerary owner to distribute park chains across the trip." },
         { label: "Stay in Zhangjiajie city or Wulingyuan?", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Choose the hotel base separately from the park transaction." },
@@ -263,12 +263,14 @@ const body: StructuredPageBody = {
       items: [
         { label: "Zhangjiajie National Forest Park reservation, five check-ins and official service numbers", url: "https://www.enghunan.gov.cn/hneng/SP/sp2023/2023MayDay/202304/t20230426_29324679.html", publisher: "Hunan Provincial Government", reviewedAt: "2026-08-20" },
         { label: "Official Wulingyuan transport guide identifying five entrances and attraction connections", url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716245.html", publisher: "Hunan Provincial Department of Culture and Tourism", reviewedAt: "2026-08-20" },
+        { label: "Current Wulingyuan admission, eco-bus products, validity and five entrance identities", url: "https://www.hnzjj.com/index.php/Ticket/show/2.html", publisher: "Wulingyuan Scenic Area official website", reviewedAt: "2026-08-20" },
+        { label: "Hunan government-priced catalogue: Wulingyuan core admission and four-day validity", url: "https://fgw.hunan.gov.cn/fgw/xxgk_70899/gzdtf/gzdt/202507/t20250724_33748630.html", publisher: "Hunan Provincial Development and Reform Commission", reviewedAt: "2026-08-20" },
         { label: "Wulingyuan one-ticket framework for admission, eco-bus, three cableways and one elevator", url: "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202312/t20231202_32455306.html", publisher: "Hunan Provincial Government", reviewedAt: "2026-08-20" },
         { label: "Advance reservation and weather-closure reminder after the park's 2025 reopening", url: "https://enghunan.gov.cn/hneng/News/Localnews/202506/t20250623_33717855.html", publisher: "Hunan Provincial Government", reviewedAt: "2026-08-20" },
         { label: "Inbound visitor services, staggered entry and self-service ticketing", url: "https://enghunan.gov.cn/hneng/News/Localnews/202508/t20250815_33773650.html", publisher: "Hunan Provincial Government", reviewedAt: "2026-08-20" },
         { label: "2026 reservation-system and in-park transport-capacity update", url: "https://www.enghunan.gov.cn/hneng/News/Localnews/202605/t20260523_33984056.html", publisher: "Hunan Provincial Government", reviewedAt: "2026-08-20" },
         { label: "Zhangjiajie scenic-area preferential ticket policy and document requirement", url: "https://enghunan.gov.cn/hneng/News/Localnews/202404/t20240425_33285051.html", publisher: "Hunan Provincial Government", reviewedAt: "2026-08-20" },
-        { label: "Hero: Zhangjiajie National Forest Park — Kuruman (CC BY 2.0)", url: "https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
+        { label: "Hero: Zhangjiajie National Forest Park — Kuruman (CC BY 2.0); resized and cropped by Homeground", url: "https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
         { label: "Hero photograph licence: CC BY 2.0", url: "https://creativecommons.org/licenses/by/2.0/", publisher: "Creative Commons", reviewedAt: "2026-08-20" },
       ],
     },

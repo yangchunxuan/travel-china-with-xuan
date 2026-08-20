@@ -6,7 +6,7 @@ const body: StructuredPageBody = {
     {
       id: "answer-first",
       type: "lead",
-      text: "입국카드 작성 대상이고 여권, 중국 입국편, 첫 숙소가 확정됐다면 출발 전에 중국 국가이민관리국(NIA)의 공식 온라인 서비스를 이용하세요. 공식 서비스는 무료입니다. 사이트가 열리지 않거나 미리 작성할 수 없거나 일정이 바뀐 경우에는 중국 입국장에 도착해 지정 QR 코드나 현장 기기로 작성하거나 종이 입국카드를 쓸 수 있다고 NIA가 안내합니다. 입국카드는 입국 정보를 기록하는 양식일 뿐 비자, 무비자 승인 또는 출입국 심사 면제 수단이 아닙니다.",
+      text: "입국카드 작성 대상이고 여권, 중국 입국편, 첫 숙소가 확정됐다면 출발 전에 중국 국가이민관리국(NIA)의 공식 온라인 서비스를 이용하세요. 공식 서비스는 무료입니다. 사이트가 열리지 않거나 미리 작성할 수 없다면 중국 입국장에 도착해 지정 QR 코드나 현장 기기로 작성하거나 종이 입국카드를 쓸 수 있다고 NIA가 안내합니다. 제출 뒤 정보가 바뀌면 실시간 공식 서비스에 표시된 수정 방법을 먼저 따르세요. 명확한 수정 기능이 없으면 정확한 자료를 지참하고 12367 또는 입국장 출입국 심사 직원에게 문의하세요. 입국카드는 입국 정보를 기록하는 양식일 뿐 비자, 무비자 승인 또는 출입국 심사 면제 수단이 아닙니다.",
     },
     {
       id: "official-free",
@@ -24,16 +24,17 @@ const body: StructuredPageBody = {
     {
       id: "who-table",
       type: "table",
-      caption: "2025년 11월 20일부터 적용된 NIA 공지의 일곱 가지 면제 유형",
+      caption: "2025년 NIA 공지는 면제 유형 7가지를 열거했으며, 2026년 8월 20일 확인한 실시간 공식 양식에는 서류 일괄 제출 우대 대상이 추가되어 있습니다",
       columns: ["여행자 또는 여정", "입국카드", "그래도 확인할 사항"],
       rows: [
         ["중화인민공화국 외국인 영구거류 신분증 소지자", "면제 대상으로 명시", "해당 신분증을 지참하고 사용해야 하며, 카드 면제가 출입국 심사 면제는 아닙니다."],
-        ["비중국적 홍콩·마카오 주민용 내지통행증 소지자", "면제 대상으로 명시", "이번 입국에 실제로 그 문서를 사용하는지 확인하세요."],
+        ["홍콩·마카오 주민 중국 본토 통행증(비중국 국적자용) 소지자", "면제 대상으로 명시", "이번 입국에 실제로 그 문서를 사용하는지 확인하세요."],
         ["단체비자 소지자 또는 단체 무비자 입국 대상자", "면제 대상으로 명시", "구체적인 단체 절차는 주관사와 출입국 당국이 결정합니다."],
         ["항만 제한구역을 나가지 않고 24시간 이내 직접 환승", "면제 대상으로 명시", "입국 후 수하물 수취, 일반구역 이동 또는 비보호 환승이 필요하면 이 면제를 임의로 적용하지 마세요."],
         ["같은 크루즈선으로 입국하고 출국", "면제 대상으로 명시", "해당 기항지와 크루즈의 실제 절차를 확인하세요."],
-        ["패스트 레인으로 입국", "면제 대상으로 명시", "국적만 보고 패스트 레인 사용 자격을 추정하지 마세요."],
+        ["출입국 심사 신속통로로 입국", "면제 대상으로 명시", "국적만 보고 신속통로 이용 자격을 추정하지 마세요."],
         ["출입국 운송수단의 외국인 승무원", "면제 대상으로 명시", "일반 항공 승객이 아니라 직무상 승무원 유형입니다."],
+        ["출입국 서류 일괄 제출 우대 조건을 충족하는 사람", "2026년 8월 20일 확인한 실시간 공식 양식에서 면제로 명시", "관련 기관과 출입국 당국이 운영하는 우대 절차입니다. 여권 종류나 단체여행만으로 자격을 추정하지 말고 주관 기관 또는 출입국 당국에 확인하세요."],
       ],
     },
     {
@@ -222,7 +223,7 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "규칙을 중복하지 않고 도착 준비 계속하기",
       items: [
-        { label: "중국 입국 요건", href: "/guides/china-entry-requirements/", description: "비자, 무비자, 환승 자격을 입국카드와 분리해 확인하세요." },
+        { label: "중국 입국 요건(영문 허브)", href: "/guides/china-entry-requirements/", description: "비자, 무비자, 환승 자격을 입국카드와 분리해 확인하세요." },
         { label: "여권 유효기간과 빈 페이지", href: "/ko/guides/china-passport-validity-and-blank-pages/", description: "실물 여권을 점검하고 항공사·비자·국경 규칙을 구분하세요." },
         { label: "중국 세관 적색·녹색 통로", href: "/ko/guides/china-customs-red-green-channels/", description: "출입국 심사 뒤 수하물 세관 신고가 필요한지 결정하세요." },
         { label: "중국 도착일 시간 지정 예약 판단", href: "/ko/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "온라인 카드가 심사시간의 불확실성을 없앤다고 가정하지 말고 첫날을 보호하세요." },
@@ -236,9 +237,9 @@ const body: StructuredPageBody = {
       items: [
         { label: "가짜 입국카드 웹사이트 주의", url: "https://en.nia.gov.cn/n147418/n147463/c191530/content.html", publisher: "중국 국가이민관리국", reviewedAt: "2026-08-20" },
         { label: "공식 온라인 입국카드 서비스", url: "https://s.nia.gov.cn/ArrivalCardFillingPC/", publisher: "국가이민관리국 정부 서비스 플랫폼", reviewedAt: "2026-08-20" },
-        { label: "온라인 입국카드와 일곱 면제 유형 시행 공지", url: "https://en.nia.gov.cn/n147413/c187308/content.html", publisher: "중국 국가이민관리국", reviewedAt: "2026-08-20" },
+        { label: "2025년 온라인 입국카드 시행 공지와 당시 열거된 면제 유형 7가지", url: "https://en.nia.gov.cn/n147413/c187308/content.html", publisher: "중국 국가이민관리국", reviewedAt: "2026-08-20" },
         { label: "온라인 입국카드 제출 방법", url: "https://en.nia.gov.cn/n147418/n147463/c195170/content.html", publisher: "중국 국가이민관리국", reviewedAt: "2026-08-20" },
-        { label: "대표 이미지: 베이징 서우두국제공항 T1 도착장 — Tyg728 (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
+        { label: "대표 이미지: 베이징 서우두국제공항 T1 도착장 — Tyg728 (CC BY-SA 4.0), Homeground에서 크기 조정", url: "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
         { label: "대표 이미지 라이선스: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-20" },
       ],
     },

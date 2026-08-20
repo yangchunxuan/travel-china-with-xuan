@@ -6,7 +6,7 @@ const body: StructuredPageBody = {
     {
       id: "answer-first",
       type: "lead",
-      text: "如果你需要填写外国人入境卡，而且护照、入境交通和首晚住宿已经确定，可以在来华前使用国家移民管理局的官方网上服务填报。官方服务免费。若官网打不开、无法提前填写或行程有变，国家移民管理局明确保留了口岸兜底：抵达后扫描指定二维码、使用现场智能设备，或填写纸质入境卡。入境卡只记录入境信息，不是签证、免签批准，也不能跳过边防检查。",
+      text: "如果你需要填写外国人入境卡，而且护照、入境交通和首晚住宿已经确定，可以在来华前使用国家移民管理局的官方网上服务填报。官方服务免费。若官网打不开或无法提前填写，国家移民管理局明确保留了口岸兜底：抵达后扫描指定二维码、使用现场智能设备，或填写纸质入境卡。提交后资料有变时，先使用实时官方页面明确提供的更正方式；若页面没有清楚入口，应携带正确资料并咨询12367或口岸边检人员。入境卡只记录入境信息，不是签证、免签批准，也不能跳过边防检查。",
     },
     {
       id: "official-free",
@@ -24,7 +24,7 @@ const body: StructuredPageBody = {
     {
       id: "who-table",
       type: "table",
-      caption: "国家移民管理局自2025年11月20日起公布的七类免填情形",
+      caption: "2025年公告列出七类免填情形；2026年8月20日复核的实时官方表单又列入一类集中交验证件礼遇人员",
       columns: ["旅客或行程", "入境卡结论", "仍要确认什么"],
       rows: [
         ["持中华人民共和国外国人永久居留身份证", "公告列为免填", "携带并使用符合条件的证件；免填入境卡不等于免除边检。"],
@@ -34,6 +34,7 @@ const body: StructuredPageBody = {
         ["随同一邮轮入境并随原邮轮出境", "公告列为免填", "向邮轮和停靠口岸确认本航次流程。"],
         ["通过快捷通道入境", "公告列为免填", "不要仅凭护照国籍推断自己可以使用快捷通道。"],
         ["外国籍出入境交通运输工具员工", "公告列为免填", "这是职业身份，不适用于普通航空旅客。"],
+        ["符合集中交验出入境证件礼遇条件的人员", "2026年8月20日复核的实时官方表单列为免填", "这是由相关单位和边检执行的礼遇流程；不要仅凭护照类型或团队出行自行认定，应向组织方或边检机关确认。"],
       ],
     },
     {
@@ -222,7 +223,7 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "继续处理抵达任务，但不要重复规则",
       items: [
-        { label: "中国入境要求", href: "/guides/china-entry-requirements/", description: "把签证、免签与过境资格和入境卡分开核对。" },
+        { label: "中国入境要求（英文专题页）", href: "/guides/china-entry-requirements/", description: "把签证、免签与过境资格和入境卡分开核对。" },
         { label: "护照有效期与空白页", href: "/zh/guides/china-passport-validity-and-blank-pages/", description: "检查实体护照，并区分航空公司、签证和边检规则。" },
         { label: "中国海关红色或绿色通道", href: "/zh/guides/china-customs-red-green-channels/", description: "通过边检后判断行李是否需要向海关申报。" },
         { label: "抵达中国当天能否安排限时预约", href: "/zh/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "保护抵达日，不假设网上填卡能消除边检耗时的不确定性。" },
@@ -236,9 +237,9 @@ const body: StructuredPageBody = {
       items: [
         { label: "警惕假冒外国人入境卡网站", url: "https://en.nia.gov.cn/n147418/n147463/c191530/content.html", publisher: "中国国家移民管理局", reviewedAt: "2026-08-20" },
         { label: "外国人入境卡官方网上填报服务", url: "https://s.nia.gov.cn/ArrivalCardFillingPC/", publisher: "国家移民管理局政务服务平台", reviewedAt: "2026-08-20" },
-        { label: "网上填报外国人入境卡及七类免填情形公告", url: "https://en.nia.gov.cn/n147413/c187308/content.html", publisher: "中国国家移民管理局", reviewedAt: "2026-08-20" },
+        { label: "2025年网上填报外国人入境卡公告及其原列七类免填情形", url: "https://en.nia.gov.cn/n147413/c187308/content.html", publisher: "中国国家移民管理局", reviewedAt: "2026-08-20" },
         { label: "如何网上填写外国人入境卡", url: "https://en.nia.gov.cn/n147418/n147463/c195170/content.html", publisher: "中国国家移民管理局", reviewedAt: "2026-08-20" },
-        { label: "主图：北京首都国际机场T1到达大厅，Tyg728拍摄（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
+        { label: "主图：北京首都国际机场T1到达大厅，Tyg728拍摄（CC BY-SA 4.0），由Homeground缩放", url: "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
         { label: "主图许可：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-20" },
       ],
     },

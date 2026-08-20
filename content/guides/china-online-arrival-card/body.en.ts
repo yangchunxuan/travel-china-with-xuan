@@ -6,7 +6,7 @@ const body: StructuredPageBody = {
     {
       id: "answer-first",
       type: "lead",
-      text: "Use the National Immigration Administration's official online arrival-card service before travelling if you are required to complete a card and your trip details are settled. The service is free. If the official form will not load, you cannot complete it in advance, or your details change, the NIA says you may complete the information at the Chinese port using the official QR code or a port device, or use a paper arrival card. The card records entry information; it is not a visa, visa-free approval or permission to bypass border inspection.",
+      text: "Use the National Immigration Administration's official online arrival-card service before travelling if you are required to complete a card and your trip details are settled. The service is free. If the official form will not load or you cannot complete it in advance, the NIA says you may fill in the information at the Chinese port using the official QR code or a port device, or use a paper arrival card. If details change after submission, use any correction route shown by the live official service; if none is clear, carry the correct records and ask 12367 or immigration staff at the port. The card records entry information; it is not a visa, visa-free approval or permission to bypass border inspection.",
     },
     {
       id: "official-free",
@@ -24,7 +24,7 @@ const body: StructuredPageBody = {
     {
       id: "who-table",
       type: "table",
-      caption: "The seven exemption categories in the NIA announcement effective 20 November 2025",
+      caption: "The 2025 NIA announcement listed seven exemptions; the live official form reviewed on 20 August 2026 lists an eighth document-presentation courtesy category",
       columns: ["Traveller or journey", "Arrival-card position", "What still needs checking"],
       rows: [
         ["Holder of a PRC Foreign Permanent Resident ID Card", "Listed as exempt", "Carry and use the qualifying document; exemption from the card is not exemption from inspection."],
@@ -34,6 +34,7 @@ const body: StructuredPageBody = {
         ["Traveller entering and leaving on the same cruise ship", "Listed as exempt", "Confirm the cruise and port procedure for the exact call."],
         ["Traveller using a fast lane", "Listed as exempt", "Do not assume ordinary eligibility for a fast lane from passport type alone."],
         ["Foreign employee of an exit-entry transport vehicle", "Listed as exempt", "This is an occupational category, not a general airline-passenger exemption."],
+        ["Traveller formally eligible for the courtesy arrangement for centralized presentation of entry-exit documents", "Listed as exempt in the live official form reviewed on 20 August 2026", "This is a managed courtesy process. Do not infer eligibility from passport type or group travel; confirm it with the responsible organiser or immigration authority."],
       ],
     },
     {
@@ -77,7 +78,7 @@ const body: StructuredPageBody = {
     {
       id: "timing-copy",
       type: "paragraph",
-      text: "The NIA permits online filling before coming to China but does not publish a universal Homeground deadline in the notices reviewed here. The useful moment is after the passport, inbound service, entry port and first China address are sufficiently settled, yet early enough to fix a mismatch. Do not invent a flight number or hotel merely to submit sooner. If the live form displays a validity window or submission instruction, that current on-screen rule controls.",
+      text: "The NIA permits online filling before coming to China, but the notices reviewed for this guide do not state one universal filing deadline. The useful moment is after the passport, inbound service, entry port and first China address are sufficiently settled, yet early enough to fix a mismatch. Do not invent a flight number or hotel merely to submit sooner. If the live form displays a validity window or submission instruction, that current on-screen rule controls.",
     },
     {
       id: "prepare-heading",
@@ -236,9 +237,9 @@ const body: StructuredPageBody = {
       items: [
         { label: "Beware of fraudulent arrival-card websites", url: "https://en.nia.gov.cn/n147418/n147463/c191530/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-20" },
         { label: "Official online arrival-card service", url: "https://s.nia.gov.cn/ArrivalCardFillingPC/", publisher: "National Immigration Administration Government Service Platform", reviewedAt: "2026-08-20" },
-        { label: "Announcement implementing online arrival-card filling and seven exemptions", url: "https://en.nia.gov.cn/n147413/c187308/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-20" },
+        { label: "2025 announcement implementing online arrival-card filling and its original seven exemptions", url: "https://en.nia.gov.cn/n147413/c187308/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-20" },
         { label: "How to submit the arrival card online", url: "https://en.nia.gov.cn/n147418/n147463/c195170/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-20" },
-        { label: "Hero: Beijing Capital International Airport T1 arrival hall — Tyg728 (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
+        { label: "Hero: Beijing Capital International Airport T1 arrival hall — Tyg728 (CC BY-SA 4.0); resized by Homeground", url: "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
         { label: "Hero photograph licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-20" },
       ],
     },

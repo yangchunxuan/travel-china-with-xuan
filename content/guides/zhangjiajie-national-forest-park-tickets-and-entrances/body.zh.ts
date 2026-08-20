@@ -11,8 +11,8 @@ const body: StructuredPageBody = {
     {
       id: "canonical-boundary",
       type: "callout",
-      title: "本文只负责景区交易与导航这一层",
-      body: "本文拥有门票组合、护照购票失败兜底、首次入园门与时段、票面有效期、五个门票站身份，以及环保车如何连接百龙天梯、天子山索道、杨家界索道和黄石寨索道。本文不设计两日、三日或四日行程，不选择张家界市区或武陵源酒店，不解释天门山A/B/C线，也不比较大峡谷玻璃桥与山顶玻璃栈道。",
+      title: "这篇只处理景区购票与入园衔接",
+      body: "这里说明门票组合、护照购票失败后的处理方式、首次入园门与时段、票面有效期、五个门票站的区别，以及环保车怎样衔接百龙天梯、天子山索道、杨家界索道和黄石寨索道。两日、三日或四日行程、张家界市区与武陵源住宿选择、天门山A/B/C线，以及大峡谷玻璃桥与山顶玻璃栈道比较，请使用文末对应指南。",
       tone: "neutral",
     },
     {
@@ -45,8 +45,8 @@ const body: StructuredPageBody = {
       caption: "付款前在实时商品页找到这些内容",
       columns: ["层级", "官方资料能证明什么", "本次订单还必须证明什么"],
       rows: [
-        ["核心景区门票", "张家界国家森林公园/武陵源核心景区有独立门票产品", "准确景区名、游览日期、适用旅客、首次入园门/时段与显示的有效期"],
-        ["环保车/景区观光车", "2023年政府“一票制”资料将核心景区门票描述为包含环保车", "出行当天哪些路段运行，以及当前产品是否仍包含这些车段"],
+        ["核心景区门票", "2026年8月20日复核的官方票页列出165元门票，另有自愿购买的3元保险；连续4日有效，不含环保车、索道与电梯", "准确景区名、游览日期、适用旅客、首次入园门/时段与显示的有效期"],
+        ["环保车/景区观光车", "同一官方票页另列236元门票加环保车产品，另有自愿购买的3元保险；同样连续4日有效，仍不含索道与电梯", "出行当天哪些路段运行，以及本次订单是否确实包含环保车"],
         ["三索一梯", "2023年框架列出天子山、黄石寨、杨家界三条索道与百龙天梯，可单买或组合", "方向、乘坐次数、有效期，以及想坐的每一段是否真的写入产品"],
         ["十里画廊观光电车", "它是景区内部交通，但不属于上述“三索一梯”四项", "是否单独出售、当天是否运行、正确上车点"],
         ["优惠或免票类型", "张家界有凭有效证件执行的优惠政策", "外国证件是否适用于本类优惠，以及交通项目是否仍需付费"],
@@ -55,8 +55,8 @@ const body: StructuredPageBody = {
     {
       id: "price-warning",
       type: "callout",
-      title: "不要照着旧价格截图买票",
-      body: "本次核对的政府来源能证明产品结构与预约要求，却不能让2023或2024年的价格、开放时间和套餐永久有效。付款时以实时官方订单显示的金额、包含项目、退改规则和有效期为准，并把完整商品页与订单一起保存。",
+      title: "按实时官方商品购买，不要照着旧价格截图下单",
+      body: "截至2026年8月20日，官方票页把165元门票和236元门票加环保车分开列出，两种产品都另列自愿购买的3元保险，且都不含索道与电梯。价格、商品和运营规则可能调整；付款时仍以实时官方订单显示的金额、包含项目、退改规则和有效期为准，并把完整商品页与订单一起保存。",
       tone: "warning",
     },
     {
@@ -72,7 +72,7 @@ const body: StructuredPageBody = {
       items: [
         "抄下游览日期与首次检票口。官方游客指引明确要求按不同时段、不同检票口预约；只有一张“张家界门票”截图不够。",
         "逐字抄下首次入园时段，并按具体门票站安排酒店出发，而不是按“张家界”这个城市名估算。",
-        "阅读本次门票和每个交通产品显示的有效期。不要把历史组合票公告中的期限套用到当前订单；控制你购买的是付款时的实时产品。",
+        "当前官方门票和门票加环保车产品都显示连续4日有效。逐字抄下订单中的实际日期，再核实后续入园门、时段预约及每个独立交通产品；多日有效不等于无限制入园。",
         "核实后续入园能否更换入口、是否仍需另约时段。多日有效不等于可以无限次随意换门。",
         "付款前看清最后可用日期，以及天气关闭、未使用乘次、退款与改期怎么处理。",
       ],
@@ -221,7 +221,7 @@ const body: StructuredPageBody = {
     {
       id: "weather-warning",
       type: "callout",
-      title: "天气发生后也要复核，不是付款前查一次就够",
+      title: "天气变化后也要复核，不是付款前查一次就够",
       body: "景区曾因暴雨暂停后重新开放，2026年官方报道仍提到持续优化预约系统和景区交通运力。前一晚查一次，离开酒店前再查一次景区公告。有效门票不能证明当天每条步道、环保车、索道或电梯都运行。",
       tone: "warning",
     },
@@ -247,7 +247,7 @@ const body: StructuredPageBody = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "把后续问题交给正确的张家界内容 owner",
+      title: "继续处理张家界的其他旅行问题",
       items: [
         { label: "张家界需要几天？", href: "/zh/guides/zhangjiajie-itinerary/", description: "由行程页把公园交通链分配到整趟旅行。" },
         { label: "住张家界市区还是武陵源？", href: "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "酒店基地与景区交易分开决定。" },
@@ -263,12 +263,14 @@ const body: StructuredPageBody = {
       items: [
         { label: "张家界国家森林公园预约、五个检票口与官方咨询电话", url: "https://www.enghunan.gov.cn/hneng/SP/sp2023/2023MayDay/202304/t20230426_29324679.html", publisher: "湖南省人民政府英文门户", reviewedAt: "2026-08-20" },
         { label: "列明五个入口及景点交通关系的武陵源官方交通指南", url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716245.html", publisher: "湖南省文化和旅游厅", reviewedAt: "2026-08-20" },
+        { label: "武陵源现行门票、环保车商品、有效期与五个门票站", url: "https://www.hnzjj.com/index.php/Ticket/show/2.html", publisher: "武陵源风景名胜区官方网站", reviewedAt: "2026-08-20" },
+        { label: "湖南省政府定价目录：武陵源核心景区门票与连续4日有效期", url: "https://fgw.hunan.gov.cn/fgw/xxgk_70899/gzdtf/gzdt/202507/t20250724_33748630.html", publisher: "湖南省发展和改革委员会", reviewedAt: "2026-08-20" },
         { label: "武陵源门票、环保车与“三索一梯”一票制框架", url: "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202312/t20231202_32455306.html", publisher: "湖南省人民政府", reviewedAt: "2026-08-20" },
         { label: "2025年景区恢复开放后的提前预约与天气提醒", url: "https://enghunan.gov.cn/hneng/News/Localnews/202506/t20250623_33717855.html", publisher: "湖南省人民政府英文门户", reviewedAt: "2026-08-20" },
         { label: "入境游客服务、错峰入园与自助购票", url: "https://enghunan.gov.cn/hneng/News/Localnews/202508/t20250815_33773650.html", publisher: "湖南省人民政府英文门户", reviewedAt: "2026-08-20" },
         { label: "2026年预约系统与景区交通运力优化", url: "https://www.enghunan.gov.cn/hneng/News/Localnews/202605/t20260523_33984056.html", publisher: "湖南省人民政府英文门户", reviewedAt: "2026-08-20" },
         { label: "张家界景区优惠票价政策与证件要求", url: "https://enghunan.gov.cn/hneng/News/Localnews/202404/t20240425_33285051.html", publisher: "湖南省人民政府英文门户", reviewedAt: "2026-08-20" },
-        { label: "主图：张家界国家森林公园，Kuruman拍摄（CC BY 2.0）", url: "https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
+        { label: "主图：张家界国家森林公园，Kuruman拍摄（CC BY 2.0），由Homeground缩放并裁切", url: "https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-20" },
         { label: "主图许可：CC BY 2.0", url: "https://creativecommons.org/licenses/by/2.0/", publisher: "Creative Commons", reviewedAt: "2026-08-20" },
       ],
     },
