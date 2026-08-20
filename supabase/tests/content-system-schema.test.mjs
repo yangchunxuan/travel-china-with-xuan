@@ -217,4 +217,8 @@ test("generator scans repository folders and writes stable output", async () => 
 
   const checked = await generateContentManifest({ contentRoot: root, check: true });
   assert.equal(checked.changed, false);
+
+  await writeFile(result.outputPath, output.replaceAll("\n", "\r\n"), "utf8");
+  const checkedCrlf = await generateContentManifest({ contentRoot: root, check: true });
+  assert.equal(checkedCrlf.changed, false);
 });
