@@ -63,7 +63,7 @@ const copies = {
       ["Choose the last night before an international flight", "china-last-night-before-international-flight", "Protect the local DYG or rail positioning leg, then work backwards from the actual international airport and terminal."],
     ],
     quoteTitle: "Need a human Zhangjiajie property-fit check?",
-    quoteBody: "Send the travel dates; traveller, room and bed requirements; confirmed park, Tianmen and Grand Canyon order; exact DYG or railway arrival and departure; accommodation budget and currency; luggage; children's ages; older-traveller or accessibility needs; and flexibility on base, room type or a fallback hotel. A planner can compare those constraints with current written property answers and organise a supplier-neutral enquiry. Every property, room, foreign-passport registration process and complete accessible route still needs human reconfirmation; this does not guarantee a live price, availability, guest acceptance, room type or accessibility.",
+    quoteBody: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
     onwardHeading: "Choose the next city by the journey it creates",
     onwardColumns: ["Next place", "Works when", "Boundary"],
     onwardRows: [
@@ -159,7 +159,7 @@ const copies = {
       ["选择国际航班前最后一晚", "china-last-night-before-international-flight", "先保护 DYG 或铁路定位段，再从真正的国际出境机场和航站楼倒推。"],
     ],
     quoteTitle: "需要人工核对张家界候选住宿？",
-    quoteBody: "请提供旅行日期、人数、房间与床型需求，已确定的森林公园、天门山和大峡谷顺序，准确的 DYG 或铁路抵离信息，住宿预算与币种、行李、儿童年龄、老人或无障碍需求，以及对基地、房型或备用酒店的调整空间。规划师可以按这些条件核对物业当前书面回复，并协助组织供应商中立的询价。每家物业、每种房间、外国护照登记流程和完整无障碍通路仍须人工复核；这不保证实时价格、房态、接待、房型或无障碍适用性。",
+    quoteBody: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备比较的城市或区域、旅客与房间数量，以及必要时的大致住宿预算。可以说明希望稍后讨论家庭或无障碍安排，但不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商；这里也不是实时库存系统，不保证价格、房态、外宾接待、房型或无障碍适用性。",
     onwardHeading: "按它创造的旅程选择下一座城市",
     onwardColumns: ["下一站", "何时成立", "边界"],
     onwardRows: [
@@ -248,7 +248,7 @@ const copies = {
       ["국제선 전 마지막 밤 선택", "china-last-night-before-international-flight", "DYG 또는 철도 포지셔닝 구간을 먼저 보호하고 실제 국제선 출발 공항과 터미널에서 거꾸로 계산하세요."],
     ],
     quoteTitle: "장자제 후보 숙소를 사람과 함께 확인하고 싶다면",
-    quoteBody: "여행 날짜, 인원, 객실 수와 침대 구성, 확정된 국가삼림공원·톈먼산·대협곡 순서, 정확한 DYG 또는 철도 도착·출발, 숙박 예산과 통화, 짐, 어린이 나이, 고령자 또는 접근성 필요, 거점·객실 유형·대체 호텔에 대한 조정 가능 범위를 보내 주세요. 플래너는 이 조건과 숙소의 최신 서면 답변을 대조하고 특정 공급업체에 치우치지 않은 문의를 정리할 수 있습니다. 각 숙소와 객실, 외국 여권 등록 절차, 전체 접근 경로는 사람이 다시 확인해야 하며 실시간 요금·객실 재고·투숙 허용·객실 유형·접근성을 보장하지 않습니다.",
+    quoteBody: "현재 일반 플래너 창구는 첫 연락에만 이용하세요. 초기 양식에는 여행 날짜, 비교할 도시나 지역, 여행자 수와 객실 수, 필요하다면 대략적인 숙박 예산만 적으세요. 가족 또는 접근성 준비를 나중에 상의하고 싶다고 표시할 수는 있지만, 어린이의 구체적인 나이, 이동·의료·접근성 세부 정보, 여권이나 기타 신분증 정보, 예약·결제 기록, 호텔·DMC 등 공급업체에 전달하려는 식별 가능한 자료는 제출하지 마세요. 플래너가 별도의 후속 상담을 안내하며, 이런 세부 정보는 필요한 경우 적절한 동의를 받은 뒤에만 논의합니다. 별도의 목적별 동의 없이는 공급업체와 자료를 공유하지 않으며, 이 창구는 실시간 재고가 아니므로 가격·객실 가능 여부·외국인 투숙·객실 유형·접근성을 보장하지 않습니다.",
     onwardHeading: "만들어지는 여정으로 다음 도시를 고르세요",
     onwardColumns: ["다음 장소", "성립할 때", "경계"],
     onwardRows: [

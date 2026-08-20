@@ -49,6 +49,37 @@ That existing flow is not yet a safe stay procurement system because:
 
 The current contract therefore remains disconnected. Central should reconcile it with the latest inquiry and privacy changes before implementation.
 
+Until that end-to-end work ships, the existing general planner is a first-contact
+channel only. It is not a `StayHandoff`, structured accommodation intake,
+property-verification workflow or supplier-consent interface. This package does
+not add any of those runtime capabilities.
+
+### Minimum initial submission
+
+Public stay CTAs may ask the traveller to submit only the minimum non-sensitive
+information needed to request a human conversation:
+
+- travel dates;
+- the city or public areas being compared;
+- traveller and room counts;
+- an approximate accommodation budget, when useful;
+- a statement that family or accessibility arrangements should be discussed in
+  a later human follow-up, without the underlying details.
+
+The initial general form must not ask for or invite:
+
+- children's specific ages;
+- mobility, medical or accessibility details;
+- passport or other identity-document information;
+- booking/order or payment records;
+- identifiable material intended to be forwarded to a hotel, DMC or another
+  supplier.
+
+Those details may be discussed only in a separate, appropriate human workflow
+after the purpose and handling are clear. Supplier sharing requires a separate,
+purpose-specific affirmative consent; submitting the initial form is never that
+consent.
+
 ## Public-to-private handoff
 
 A public page may pass only non-sensitive context into a traveller-initiated inquiry:
@@ -68,11 +99,19 @@ Do not place any of the following in a query string, URL fragment, analytics eve
 - a property/supplier reference, property confirmation, quote, or verification evidence;
 - mobility details or children's ages.
 
-The public CTA should say what information a human needs and why. It must not claim that submitting the form guarantees a suitable room, current availability, a price, foreign-guest acceptance, or successful recovery.
+The public CTA should identify the minimum initial fields, tell the traveller not
+to submit the excluded details above, and explain that a human can arrange a
+later conversation. It must not claim that submitting the form guarantees a
+suitable room, current availability, a price, foreign-guest acceptance, or
+successful recovery.
 
 ## Private intake: minimum necessary fields
 
-Use the controlled fields in `StayRequirement` before adding free text. For early area advice, dates, budget, mobility measurements, and travel-document class may remain uncollected if they do not affect the answer.
+`StayRequirement` describes a possible later restricted workflow; it is not the
+payload accepted by the current public planner. If central later implements that
+workflow, use controlled fields before adding free text. For early area advice,
+dates, budget, mobility measurements, and travel-document class may remain
+uncollected if they do not affect the answer.
 
 When details are needed:
 
@@ -101,6 +140,11 @@ If a traveller voluntarily sends sensitive free text or an attachment, the opera
 ```
 
 No property, hotel group, DMC, ground operator, platform, or other supplier receives traveller data under that state.
+
+An `authorized: true` supplier-sharing record belongs only to the later
+restricted workflow after a separate affirmative choice. It must never be
+constructed from the initial general-planner submission or inferred from a
+request for human help.
 
 Before sharing, obtain an affirmative choice that records:
 

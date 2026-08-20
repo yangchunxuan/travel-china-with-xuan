@@ -167,7 +167,7 @@ const body = {
       type: "callout",
       title: "Need a hotel-area and room-fit check?",
       tone: "decision",
-      body: "Send the travel dates; traveller, room and bed requirements; exact arrival and departure airport or railway station; priority days; accommodation budget and currency; luggage; and any children, older travellers, reduced-mobility or accessibility needs. Homeground can manually verify the area, property facts and a current written quote. That quote is not a guarantee of live availability, final price or the property's ability to register foreign guests; reconfirm with the named property before payment and arrival.",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
     },
     {
       id: "airport-heading",

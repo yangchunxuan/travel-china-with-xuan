@@ -15,10 +15,95 @@ const networkOwnerSlugs = [
   "china-last-night-before-international-flight",
 ];
 
+const ctaBoundaryByLocale = {
+  en: [
+    /initial form/u,
+    /do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records/iu,
+    /separate human follow-up/u,
+    /separate, purpose-specific consent/u,
+  ],
+  zh: [
+    /初始表单/u,
+    /不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录/u,
+    /另行安排人工跟进/u,
+    /未经另行、针对明确目的的同意/u,
+  ],
+  ko: [
+    /초기 양식/u,
+    /어린이의 구체적인 나이, 이동·의료·접근성 세부 정보, 여권이나 기타 신분증 정보, 예약·결제 기록/u,
+    /별도의 후속 상담/u,
+    /별도의 목적별 동의/u,
+  ],
+};
+
+const legacyDirectSubmissionPatterns = [
+  /For a human comparison of a shortlist, send/u,
+  /Send the travel dates; traveller/u,
+  /organise a supplier-neutral enquiry/u,
+  /请提供旅行日期、人数、房间/u,
+  /可以提供旅行日期、人数、房间/u,
+  /协助组织供应商中立的询价/u,
+  /어린이 나이[^"\n]*보내 주세요/u,
+  /공급업체에 치우치지 않은 문의/u,
+];
+
+function assertCtaBoundary(source, locale, label) {
+  for (const pattern of ctaBoundaryByLocale[locale]) {
+    assert.match(source, pattern, `${label} must state ${pattern}`);
+  }
+  for (const pattern of legacyDirectSubmissionPatterns) {
+    assert.doesNotMatch(source, pattern, `${label} retains unsafe direct-submission copy`);
+  }
+}
+
 function blockSignature(source) {
   return [...source.matchAll(/\{\s*id:\s*"([^"]+)"\s*,\s*type:\s*"([^"]+)"/gu)]
     .map((match) => `${match[1]}:${match[2]}`);
 }
+
+test("all 38 public stay handoff files enforce the initial-form privacy boundary", async () => {
+  let checkedFiles = 0;
+
+  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
+    for (const locale of ["en", "zh", "ko"]) {
+      const path = `content/destinations/${city}/body.${locale}.ts`;
+      assertCtaBoundary(await read(path), locale, path);
+      checkedFiles += 1;
+    }
+  }
+
+  for (const city of ["hangzhou", "zhangjiajie"]) {
+    const path = `content/destinations/${city}/body.shared.ts`;
+    const source = await read(path);
+    for (const locale of ["en", "zh", "ko"]) {
+      assertCtaBoundary(source, locale, `${path}/${locale}`);
+    }
+    checkedFiles += 1;
+  }
+
+  for (const owner of [
+    "shanghai-where-to-stay-first-trip",
+    "xian-where-to-stay-city-wall-or-dayanta",
+    "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+    "shenzhen-where-to-stay-futian-luohu-nanshan",
+    "zhangjiajie-city-or-wulingyuan-hotel-base",
+    "foreigners-china-hotel",
+    "china-last-night-before-international-flight",
+  ]) {
+    for (const locale of ["en", "zh", "ko"]) {
+      const path = `content/guides/${owner}/body.${locale}.ts`;
+      assertCtaBoundary(await read(path), locale, path);
+      checkedFiles += 1;
+    }
+  }
+
+  assert.equal(checkedFiles, 38);
+
+  const boundary = await read("docs/stay-network/inquiry-and-supplier-boundary.md");
+  assert.match(boundary, /The initial general form must not ask for or invite/u);
+  assert.match(boundary, /submitting the initial form is never that\s+consent/u);
+  assert.match(boundary, /does\s+not add any of those runtime capabilities/u);
+});
 
 test("the destination registry retains seven published Hubs and truthful dates", async () => {
   const registry = await read("lib/destinationHubs.ts");
