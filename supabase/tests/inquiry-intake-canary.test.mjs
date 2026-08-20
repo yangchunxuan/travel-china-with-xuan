@@ -6,7 +6,8 @@ import test from "node:test";
 const canaryWorkflowPath = ".github/workflows/inquiry-intake-canary.yml";
 
 async function source(path) {
-  return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
+  return (await readFile(new URL(`../../${path}`, import.meta.url), "utf8"))
+    .replace(/\r\n?/gu, "\n");
 }
 
 /**
@@ -132,7 +133,7 @@ test("the intake canary covers cached UTM payloads on every locale", async () =>
   assert.match(workflow, /persistence_state\}" != "not_persisted"/);
 });
 
-test("the intake canary jq filter returns contract field names", async () => {
+test("the intake canary jq filter returns contract field names", async (t) => {
   const workflow = await source(canaryWorkflowPath);
   const filterMatch = workflow.match(
     /contract_errors="\$\(\s*jq -r '([\s\S]*?)'\s*"\$\{response_file\}"/,
@@ -151,6 +152,11 @@ test("the intake canary jq filter returns contract field names", async () => {
       },
     }),
   });
+
+  if (result.error?.code === "ENOENT") {
+    t.skip("jq is not installed in this Windows environment; CI must execute this assertion");
+    return;
+  }
 
   assert.equal(result.status, 0, result.stderr);
   assert.equal(

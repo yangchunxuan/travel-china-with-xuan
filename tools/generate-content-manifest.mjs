@@ -62,6 +62,10 @@ export function serializeContentManifest(manifest) {
   return `${JSON.stringify(manifest, null, 2)}\n`;
 }
 
+function normalizeLineEndings(value) {
+  return value.replace(/\r\n?/gu, "\n");
+}
+
 export async function generateContentManifest({
   contentRoot = path.resolve(process.cwd(), "content"),
   outputPath = path.resolve(contentRoot, "generated/content-manifest.json"),
@@ -82,7 +86,7 @@ export async function generateContentManifest({
       }
       throw error;
     }
-    if (current !== output) {
+    if (normalizeLineEndings(current) !== normalizeLineEndings(output)) {
       throw new Error(`Manifest is stale: ${outputPath}. Regenerate it.`);
     }
     return { manifest, files, outputPath, changed: false };
