@@ -1,0 +1,325 @@
+{
+  "contractVersion": "route-reality-v3.0.0-internal-draft",
+  "requestSchemaId": "urn:homeground:route-reality:v3:request",
+  "draftOutcomeSchemaId": "urn:homeground:route-reality:v3:draft-outcome",
+  "policyPackVersion": null,
+  "requestFields": [
+    "totalNights",
+    "arrivalWindow",
+    "departureWindow",
+    "crossCityMoves",
+    "airportStationTransfers",
+    "hotelChanges",
+    "travellerPace"
+  ],
+  "countFields": [
+    "totalNights",
+    "crossCityMoves",
+    "airportStationTransfers",
+    "hotelChanges"
+  ],
+  "timeWindowOrder": [
+    "before_09",
+    "09_12",
+    "12_15",
+    "15_18",
+    "after_18"
+  ],
+  "paceOrder": [
+    "fast",
+    "balanced",
+    "slow"
+  ],
+  "validationPhases": [
+    "request_shape",
+    "missing_fields",
+    "scalar_fields",
+    "extra_keys",
+    "cross_city_relation",
+    "hotel_relation",
+    "interchange_topology"
+  ],
+  "relationalRules": [
+    {
+      "ruleId": "RR3-RELATION-001",
+      "predicate": "crossCityMoves > totalNights - 1",
+      "code": "RELATIONAL_COUNT_CONFLICT",
+      "field": "crossCityMoves",
+      "relatedFields": [
+        "totalNights",
+        "crossCityMoves"
+      ]
+    },
+    {
+      "ruleId": "RR3-RELATION-002",
+      "predicate": "hotelChanges > 0 and crossCityMoves + hotelChanges > totalNights - 1",
+      "code": "RELATIONAL_COUNT_CONFLICT",
+      "field": "hotelChanges",
+      "relatedFields": [
+        "totalNights",
+        "crossCityMoves",
+        "hotelChanges"
+      ]
+    },
+    {
+      "ruleId": "RR3-TOPOLOGY-003",
+      "predicate": "airportStationTransfers > totalNights + 1",
+      "code": "EVENT_TOPOLOGY_OVERFLOW",
+      "field": "airportStationTransfers",
+      "relatedFields": [
+        "totalNights",
+        "airportStationTransfers"
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "NIGHTS_CREATE_N_PLUS_ONE_CALENDAR_DAYS",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "totalNights"
+      ],
+      "ruleId": "RR3-CALENDAR-001",
+      "targetContracts": [
+        "validation.calendarTopology"
+      ]
+    },
+    {
+      "id": "EDGE_WINDOWS_ARE_BROAD_CAPACITY_BANDS",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "arrivalWindow",
+        "departureWindow"
+      ],
+      "ruleId": "RR3-WINDOW-001",
+      "targetContracts": [
+        "futurePolicy.edgeCapacityOrdering"
+      ]
+    },
+    {
+      "id": "ORDINARY_EDGE_ACCESS_NOT_SEPARATE_COMPLEX_TRANSFER",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "arrivalWindow",
+        "departureWindow",
+        "airportStationTransfers"
+      ],
+      "ruleId": "RR3-TRANSFER-001",
+      "targetContracts": [
+        "validation.transferSemantics"
+      ]
+    },
+    {
+      "id": "CROSS_CITY_COUNTS_OVERNIGHT_BASE_CHANGE_DAYS",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "crossCityMoves"
+      ],
+      "ruleId": "RR3-MOVE-001",
+      "targetContracts": [
+        "validation.crossCitySemantics"
+      ]
+    },
+    {
+      "id": "DAY_TRIPS_EXCLUDED_FROM_CROSS_CITY_MOVES",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "crossCityMoves"
+      ],
+      "ruleId": "RR3-MOVE-002",
+      "targetContracts": [
+        "validation.crossCitySemantics"
+      ]
+    },
+    {
+      "id": "HOTEL_CHANGES_EXCLUDE_CROSS_CITY_BASE_CHANGES",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "crossCityMoves",
+        "hotelChanges"
+      ],
+      "ruleId": "RR3-HOTEL-001",
+      "targetContracts": [
+        "validation.hotelChangeSemantics"
+      ]
+    },
+    {
+      "id": "ONE_ACCOMMODATION_EVENT_PER_TRANSITION_DAY",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "totalNights",
+        "crossCityMoves",
+        "hotelChanges"
+      ],
+      "ruleId": "RR3-TOPOLOGY-001",
+      "targetContracts": [
+        "validation.accommodationTopology",
+        "uncertainty.placement"
+      ]
+    },
+    {
+      "id": "ONE_COMPLEX_INTERCHANGE_PER_CALENDAR_DAY",
+      "emissionPredicate": "every relationally valid request",
+      "sourceFields": [
+        "totalNights",
+        "airportStationTransfers"
+      ],
+      "ruleId": "RR3-TOPOLOGY-002",
+      "targetContracts": [
+        "validation.interchangeTopology",
+        "uncertainty.placement"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "code": "INPUT_VALUE_UNKNOWN",
+      "emissionPredicate": "at least one request field equals unknown",
+      "sourceFieldMode": "all unknown request fields in request-field order",
+      "ruleId": "RR3-UNCERTAINTY-001",
+      "targetContracts": [
+        "uncertainty.inputDomain"
+      ]
+    },
+    {
+      "code": "RELATIONAL_DOMAIN_FILTERED",
+      "emissionPredicate": "an unknown count exists, at least one raw count tuple is rejected by a relation or topology predicate, and at least one feasible tuple remains",
+      "sourceFieldMode": "unknown count fields participating in a pruning rule, in request-field order",
+      "ruleId": "RR3-UNCERTAINTY-002",
+      "targetContracts": [
+        "uncertainty.feasibleDomain"
+      ]
+    },
+    {
+      "code": "EVENT_PLACEMENT_UNSPECIFIED",
+      "emissionPredicate": "at least one feasible concrete count tuple has more than one canonical event placement",
+      "sourceFieldMode": "totalNights followed by each event-count field whose value is unknown or positive, in request-field order",
+      "ruleId": "RR3-UNCERTAINTY-003",
+      "targetContracts": [
+        "uncertainty.placement",
+        "futurePolicy.triggerWitnesses"
+      ]
+    },
+    {
+      "code": "TRIGGER_EVALUATION_BLOCKED_BY_POLICY",
+      "emissionPredicate": "every relationally valid v3 internal-draft request",
+      "sourceFieldMode": "empty",
+      "ruleId": "RR3-POLICY-001",
+      "targetContracts": [
+        "futurePolicy.numericResults",
+        "futurePolicy.alerts"
+      ]
+    }
+  ],
+  "uncertaintyOrder": [
+    "INPUT_VALUE_UNKNOWN",
+    "RELATIONAL_DOMAIN_FILTERED",
+    "EVENT_PLACEMENT_UNSPECIFIED",
+    "TRIGGER_EVALUATION_BLOCKED_BY_POLICY"
+  ],
+  "terminalStates": [
+    {
+      "inputState": "fully_known",
+      "placementAmbiguous": false,
+      "uncertaintyState": "none",
+      "terminalState": "policy_pending_fully_known_unique_placement"
+    },
+    {
+      "inputState": "fully_known",
+      "placementAmbiguous": true,
+      "uncertaintyState": "placement_unresolved",
+      "terminalState": "policy_pending_fully_known_placement_unresolved"
+    },
+    {
+      "inputState": "contains_unknown",
+      "placementAmbiguous": false,
+      "uncertaintyState": "input_unresolved",
+      "terminalState": "policy_pending_input_unresolved"
+    },
+    {
+      "inputState": "contains_unknown",
+      "placementAmbiguous": true,
+      "uncertaintyState": "input_and_placement_unresolved",
+      "terminalState": "policy_pending_input_and_placement_unresolved"
+    }
+  ],
+  "triggerWitnessBasis": [
+    {
+      "truthCoverage": "none",
+      "basis": null,
+      "emit": false
+    },
+    {
+      "truthCoverage": "all",
+      "basis": "confirmed",
+      "emit": true
+    },
+    {
+      "truthCoverage": "some",
+      "basis": "possible_feasible_extreme",
+      "emit": true,
+      "sourceOrder": [
+        "input_domain",
+        "event_placement"
+      ]
+    }
+  ],
+  "monotonicity": [
+    {
+      "axis": "arrivalWindow",
+      "sequence": [
+        "before_09",
+        "09_12",
+        "12_15",
+        "15_18",
+        "after_18"
+      ],
+      "capacityDirection": "non_increasing"
+    },
+    {
+      "axis": "departureWindow",
+      "sequence": [
+        "before_09",
+        "09_12",
+        "12_15",
+        "15_18",
+        "after_18"
+      ],
+      "capacityDirection": "non_decreasing"
+    },
+    {
+      "axis": "travellerPace",
+      "sequence": [
+        "fast",
+        "balanced",
+        "slow"
+      ],
+      "capacityDirection": "non_increasing",
+      "burdenDirection": "non_decreasing"
+    },
+    {
+      "axis": "crossCityMoves",
+      "sequence": "increasing count",
+      "capacityDirection": "non_increasing",
+      "burdenDirection": "non_decreasing"
+    },
+    {
+      "axis": "airportStationTransfers",
+      "sequence": "increasing count",
+      "capacityDirection": "non_increasing",
+      "burdenDirection": "non_decreasing"
+    },
+    {
+      "axis": "hotelChanges",
+      "sequence": "increasing count",
+      "capacityDirection": "non_increasing",
+      "burdenDirection": "non_decreasing"
+    }
+  ],
+  "authorization": {
+    "publicImplementationAuthorized": false,
+    "indexablePageAuthorized": false,
+    "apiAuthorized": false,
+    "numericPolicyApproved": false
+  }
+}

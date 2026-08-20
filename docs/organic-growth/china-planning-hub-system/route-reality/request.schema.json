@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:homeground:route-reality:v3:request",
+  "title": "Homeground Route Reality v3 internal request",
+  "description": "The only request-validator entry point. It accepts exactly the seven bounded planning fields and never accepts an outcome object. JavaScript prototype and symbol-key preflight is specified separately because JSON Schema operates on JSON data.",
+  "$ref": "#/$defs/RouteRealityRequest",
+  "$defs": {
+    "KnownNights": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "KnownCount": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "KnownTimeWindow": {
+      "enum": [
+        "before_09",
+        "09_12",
+        "12_15",
+        "15_18",
+        "after_18",
+        "unknown"
+      ]
+    },
+    "KnownPace": {
+      "enum": [
+        "fast",
+        "balanced",
+        "slow",
+        "unknown"
+      ]
+    },
+    "RouteRealityRequest": {
+      "type": "object",
+      "minProperties": 7,
+      "maxProperties": 7,
+      "additionalProperties": false,
+      "required": [
+        "totalNights",
+        "arrivalWindow",
+        "departureWindow",
+        "crossCityMoves",
+        "airportStationTransfers",
+        "hotelChanges",
+        "travellerPace"
+      ],
+      "properties": {
+        "totalNights": {
+          "$ref": "#/$defs/KnownNights"
+        },
+        "arrivalWindow": {
+          "$ref": "#/$defs/KnownTimeWindow"
+        },
+        "departureWindow": {
+          "$ref": "#/$defs/KnownTimeWindow"
+        },
+        "crossCityMoves": {
+          "$ref": "#/$defs/KnownCount"
+        },
+        "airportStationTransfers": {
+          "$ref": "#/$defs/KnownCount"
+        },
+        "hotelChanges": {
+          "$ref": "#/$defs/KnownCount"
+        },
+        "travellerPace": {
+          "$ref": "#/$defs/KnownPace"
+        }
+      }
+    }
+  }
+}
