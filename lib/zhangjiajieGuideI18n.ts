@@ -27,6 +27,10 @@ export interface ZhangjiajieGuideCopy {
   breadcrumbLabel: string;
   breadcrumbHome: string;
   breadcrumbCurrent: string;
+  metadata: {
+    title: string;
+    description: string;
+  };
   hero: {
     eyebrow: string;
     lead: string;
@@ -182,10 +186,15 @@ const english: ZhangjiajieGuideCopy = {
   breadcrumbLabel: "Breadcrumb",
   breadcrumbHome: "Home",
   breadcrumbCurrent: "Zhangjiajie itinerary",
+  metadata: {
+    title: "How Many Days in Zhangjiajie? Plan 3 Full Days First",
+    description:
+      "Plan 3 full sightseeing days for a first Zhangjiajie trip: two in the national park and one at Tianmen Mountain. See what changes with 2 or 4 days.",
+  },
   hero: {
     eyebrow: "Route guide · Full days on the ground",
     lead:
-      "See the national park properly, understand which sights can share a day, and know when adding Furong or Fenghuang changes the whole route.",
+      "Start with 3 full sightseeing days: two for Zhangjiajie National Forest Park and one for Tianmen Mountain. With 2 days you must choose; a fourth day adds depth or an onward move to Fenghuang.",
     preparedBy:
       "Prepared by Homeground China · local background: Xuan grew up in Zhangjiajie",
     publishedLabel: "Published",
@@ -196,7 +205,7 @@ const english: ZhangjiajieGuideCopy = {
   },
   quick: {
     sectionLabel: "The short answer",
-    title: "Count full days on the ground.",
+    title: "Plan 3 full days for a first visit.",
     summaryBeforeEmphasis:
       "Two days force a choice. Three cover the classic first visit. Four let you stay deeper ",
     summaryEmphasis: "or",
@@ -624,10 +633,15 @@ const chinese: ZhangjiajieGuideCopy = {
   breadcrumbLabel: "面包屑导航",
   breadcrumbHome: "首页",
   breadcrumbCurrent: "张家界路线指南",
+  metadata: {
+    title: "张家界需要几天？第一次建议留 3 个完整游览日",
+    description:
+      "第一次去张家界，建议留 3 个完整游览日：森林公园 2 天、天门山 1 天；并看清只有 2 天或增加到 4 天时该怎样取舍。",
+  },
   hero: {
     eyebrow: "路线指南 · 按完整游览日计算",
     lead:
-      "认真游览国家森林公园，分清哪些景点可以同日安排，也看清加入芙蓉镇或凤凰古城后整条路线会如何改变。",
+      "第一次来，先按 3 个完整游览日规划：森林公园 2 天、天门山 1 天。只有 2 天必须取舍；第 4 天可增加深度，或作为前往凤凰古城的移动日。",
     preparedBy: "由 Homeground China 整理 · 本地背景：Xuan 在张家界长大",
     publishedLabel: "发布于",
     publishedDate: "2026年7月20日",
@@ -637,7 +651,7 @@ const chinese: ZhangjiajieGuideCopy = {
   },
   quick: {
     sectionLabel: "先说结论",
-    title: "按真正完整的游览日来计算。",
+    title: "第一次来，建议留 3 个完整游览日。",
     summaryBeforeEmphasis: "2 天必须取舍，3 天适合第一次到访；4 天可以深度游张家界，",
     summaryEmphasis: "或者",
     summaryAfterEmphasis: "继续前往凤凰古城。",
@@ -1037,10 +1051,15 @@ const korean: ZhangjiajieGuideCopy = {
   breadcrumbLabel: "현재 위치",
   breadcrumbHome: "홈",
   breadcrumbCurrent: "장자제 일정 가이드",
+  metadata: {
+    title: "장자제는 며칠이 필요할까? 첫 여행은 온전한 3일",
+    description:
+      "첫 장자제 여행은 국가삼림공원 2일과 톈먼산 1일, 총 3일을 기준으로 계획하세요. 2일 또는 4일일 때의 선택도 비교합니다.",
+  },
   hero: {
     eyebrow: "일정 가이드 · 현지에서 온전히 보내는 날짜 기준",
     lead:
-      "국가삼림공원을 제대로 보는 방법, 하루에 묶을 수 있는 명소, 푸룽진이나 펑황고성을 더할 때 전체 동선이 어떻게 달라지는지 정리했습니다.",
+      "첫 방문은 온전한 관광일 3일을 기준으로 잡으세요. 국가삼림공원에 2일, 톈먼산에 1일이 기본입니다. 2일이면 선택이 필요하고, 4일이면 깊이를 더하거나 펑황고성으로 이동할 수 있습니다.",
     preparedBy: "Homeground China 작성 · 현지 배경: Xuan은 장자제에서 자랐습니다",
     publishedLabel: "게시",
     publishedDate: "2026년 7월 20일",
@@ -1050,7 +1069,7 @@ const korean: ZhangjiajieGuideCopy = {
   },
   quick: {
     sectionLabel: "먼저 결론",
-    title: "온전히 관광할 수 있는 날짜로 계산하세요.",
+    title: "첫 방문은 온전한 관광일 3일을 권합니다.",
     summaryBeforeEmphasis: "2일이면 선택이 필요하고, 3일이면 첫 방문의 핵심을 볼 수 있습니다. 4일이면 장자제를 더 깊게 볼 수 있고, ",
     summaryEmphasis: "또는",
     summaryAfterEmphasis: " 펑황고성으로 이동할 수 있습니다.",

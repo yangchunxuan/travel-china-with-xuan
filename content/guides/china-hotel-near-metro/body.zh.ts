@@ -245,6 +245,11 @@ const body = {
           description: "看到低价时，先比较位置、房型、抵达接待安排和最新可核实信息。",
         },
         {
+          label: "准备外国护照入住与被拒后的处理",
+          href: "/zh/guides/foreigners-china-hotel/",
+          description: "确认准确门店、旅馆住宿登记，以及已确认酒店拒绝入住时的恢复顺序。",
+        },
+        {
           label: "规划与年长父母同行的中国之旅",
           href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "减少更换酒店的次数，并以行动最不灵活的同行者为基准安排交通。",

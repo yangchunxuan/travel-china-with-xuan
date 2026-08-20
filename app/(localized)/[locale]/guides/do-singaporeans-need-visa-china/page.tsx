@@ -6,6 +6,7 @@ import {
   getGuideLanguagePaths,
 } from "../../../../../lib/guideRegistry";
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
+import { getSingaporeChinaVisaCopy } from "../../../../../lib/singaporeChinaVisaI18n";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
@@ -22,10 +23,11 @@ export async function generateMetadata({
   const { locale: routeLocale } = await params;
   const locale = localizedLocale(routeLocale);
   const guide = getGuideEntry("do-singaporeans-need-visa-china", locale);
+  const copy = getSingaporeChinaVisaCopy(locale);
 
   return {
-    title: guide.title,
-    description: guide.description,
+    title: copy.title,
+    description: copy.metadataDescription,
     alternates: {
       canonical: guide.canonicalPath,
       languages: getGuideLanguagePaths(guide.id),
@@ -42,15 +44,15 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: guide.title,
-      description: guide.description,
+      title: copy.title,
+      description: copy.metadataDescription,
       type: "article",
       locale: guide.openGraphLocale,
       alternateLocale:
         locale === "zh" ? ["en_US", "ko_KR"] : ["en_US", "zh_CN"],
       url: guide.canonicalPath,
       publishedTime: guide.datePublished,
-      modifiedTime: guide.dateModified,
+      modifiedTime: copy.sourceReviewedAt,
       images: [
         {
           url: guide.heroImageUrl,
@@ -62,8 +64,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.title,
-      description: guide.description,
+      title: copy.title,
+      description: copy.metadataDescription,
       images: [guide.heroImageUrl],
     },
   };

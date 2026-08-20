@@ -456,6 +456,11 @@ const body = {
           description: "Compare exact branches, recent room evidence, passport check-in and real value after choosing the area.",
         },
         {
+          label: "Can foreigners stay at any hotel in China?",
+          href: "/guides/foreigners-china-hotel/",
+          description: "Confirm the Beijing branch's passport handling and prepare a documented refusal-recovery sequence.",
+        },
+        {
           label: "China with older parents",
           href: "/guides/china-itinerary-with-older-parents/",
           description: "Review Beijing walking, hotel access, luggage and the pace of the whole route.",

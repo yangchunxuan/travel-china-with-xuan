@@ -4,12 +4,14 @@ import {
   getGuideEntry,
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
+import { getItineraryRushGuideCopy } from "../../../../lib/chinaItineraryTooRushedI18n";
 
 const guide = getGuideEntry("is-your-china-itinerary-too-rushed", "en");
+const copy = getItineraryRushGuideCopy("en");
 
 export const metadata: Metadata = {
-  title: guide.title,
-  description: guide.description,
+  title: copy.metadata.title,
+  description: copy.metadata.description,
   alternates: {
     canonical: guide.canonicalPath,
     languages: getGuideLanguagePaths(guide.id),
@@ -25,8 +27,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     type: "article",
     locale: guide.openGraphLocale,
     alternateLocale: ["zh_CN", "ko_KR"],
@@ -44,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     images: [guide.heroImageUrl],
   },
 };

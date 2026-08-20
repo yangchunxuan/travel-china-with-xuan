@@ -55,6 +55,13 @@ export interface TantanZhangjiajieStoryCopy {
   schemaAbout: string[];
 }
 
+export const ZHANGJIAJIE_GLASS_BRIDGE_HERO = {
+  path: "/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
+  url: "https://homegroundchina.com/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
+  width: 1280,
+  height: 1600,
+} as const;
+
 const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
   en: {
     htmlLang: "en",
@@ -63,12 +70,12 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     breadcrumbLabel: "Breadcrumb",
     breadcrumbHome: "Home",
     breadcrumbStudio: "Studio",
-    breadcrumbCurrent: "Tantan’s Zhangjiajie field note",
-    eyebrow: "Field note · Zhangjiajie",
+    breadcrumbCurrent: "Glass Bridge, skywalk or national park",
+    eyebrow: "Attraction decision · Zhangjiajie",
     title:
-      "The Glass Bridge Is Not the Glass Skywalk: 7 Things Tantan Checks Before a Zhangjiajie Trip",
+      "Zhangjiajie Glass Bridge, Tianmen Skywalk or National Forest Park?",
     dek:
-      "In a destination where similar English names can lead to very different places, clear expectations matter just as much as a beautiful route.",
+      "They are three different places: the Glass Bridge is at Zhangjiajie Grand Canyon, the glass skywalks are on Tianmen Mountain, and the pillar landscape is in Zhangjiajie National Forest Park.",
     authorLabel: "On-the-ground notes by",
     authorName: "Tantan",
     authorRole: "Trip planner · Hunan local coordination",
@@ -76,9 +83,9 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     updatedLabel: "Published",
     updatedDate: "23 July 2026",
     heroAlt:
-      "Tantan smiling while using a wooden pestle beneath a bamboo-roofed shelter.",
+      "The Zhangjiajie Grand Canyon Glass Bridge spanning the forested canyon.",
     heroCaption:
-      "Tantan brings an unhurried, attentive approach to helping international guests make sense of a Zhangjiajie journey.",
+      "This is the Grand Canyon Glass Bridge—not a Tianmen Mountain glass skywalk or Zhangjiajie National Forest Park.",
     intro: [
       "In Zhangjiajie, the “Glass Bridge” and the “glass skywalk” may sound like two names for the same attraction. On the ground, they are two very different experiences.",
       "The Zhangjiajie Grand Canyon Glass Bridge is inside the Grand Canyon scenic area. The glass skywalks at Tianmen Mountain belong to a separate mountaintop route. Zhangjiajie National Forest Park—with Yuanjiajie, Tianzi Mountain and other well-known areas—is another part of the destination altogether.",
@@ -213,20 +220,20 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     breadcrumbLabel: "面包屑导航",
     breadcrumbHome: "首页",
     breadcrumbStudio: "工作室",
-    breadcrumbCurrent: "Tantan 的张家界现场笔记",
-    eyebrow: "现场笔记 · 张家界",
-    title: "玻璃桥不是玻璃栈道：Tantan 在张家界替客人核对的 7 个细节",
+    breadcrumbCurrent: "玻璃桥、玻璃栈道还是森林公园",
+    eyebrow: "景点判断 · 张家界",
+    title: "张家界大峡谷玻璃桥、天门山玻璃栈道和森林公园怎么区分？",
     dek:
-      "在一个相似英文名称可能指向完全不同景点的目的地，清楚的预期与漂亮的路线同样重要。",
+      "这是三个不同地点：玻璃桥在张家界大峡谷，玻璃栈道在天门山，石英砂岩峰林主景区则是张家界国家森林公园。",
     authorLabel: "现场经验来自",
     authorName: "Tantan",
     authorRole: "行程规划 · 湖南在地协调",
     readTime: "阅读约 8 分钟",
     updatedLabel: "发布于",
     updatedDate: "2026 年 7 月 23 日",
-    heroAlt: "Tantan 在竹棚下体验用木杵舂制食物。",
+    heroAlt: "张家界大峡谷玻璃桥横跨林木覆盖的峡谷。",
     heroCaption:
-      "旅行中的 Tantan。她把这种不匆忙、愿意观察细节的方式，也带进了客人的行程。",
+      "画面是张家界大峡谷玻璃桥，不是天门山玻璃栈道，也不属于张家界国家森林公园。",
     intro: [
       "在张家界，“玻璃桥”和“玻璃栈道”听起来像是同一个景点的两种叫法，但到了现场，它们是两段完全不同的体验。",
       "张家界大峡谷玻璃桥位于大峡谷景区；天门山玻璃栈道属于另一条山顶线路；包含袁家界、天子山等区域的张家界国家森林公园，又是另一部分。",
@@ -355,20 +362,20 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     breadcrumbLabel: "현재 위치",
     breadcrumbHome: "홈",
     breadcrumbStudio: "스튜디오",
-    breadcrumbCurrent: "탄탄의 장가계 현장 노트",
-    eyebrow: "현장 노트 · 장가계",
-    title: "유리다리와 유리잔도는 다릅니다: 탄탄이 장가계 여행 전 확인하는 7가지",
+    breadcrumbCurrent: "유리다리·유리잔도·국가삼림공원",
+    eyebrow: "관광지 선택 · 장자제",
+    title: "장자제 대협곡 유리다리·톈먼산 유리잔도·국가삼림공원 구분하기",
     dek:
-      "비슷한 영어 이름이 서로 다른 장소를 가리키는 여행지에서는, 아름다운 동선만큼 정확한 기대도 중요합니다.",
+      "서로 다른 세 곳입니다. 유리다리는 장자제 대협곡, 유리잔도는 톈먼산, 사암 봉우리 풍경은 장자제 국가삼림공원에 있습니다.",
     authorLabel: "현장 경험",
     authorName: "Tantan",
     authorRole: "여행 플래너 · 후난 현지 일정 조율",
     readTime: "약 8분",
     updatedLabel: "게시일",
     updatedDate: "2026년 7월 23일",
-    heroAlt: "대나무 지붕 아래에서 긴 나무 공이로 절구 체험을 하는 탄탄.",
+    heroAlt: "숲이 우거진 협곡을 가로지르는 장자제 대협곡 유리다리.",
     heroCaption:
-      "여행지에서 현지 체험을 즐기는 탄탄. 서두르지 않고 디테일을 살피는 태도를 여행 일정에도 담습니다.",
+      "사진은 장자제 대협곡 유리다리입니다. 톈먼산 유리잔도나 장자제 국가삼림공원과는 다른 곳입니다.",
     intro: [
       "장가계에서 ‘유리다리’와 ‘유리잔도’는 이름만 들으면 비슷해 보이지만, 서로 다른 장소에서 만나는 별개의 여행 코스입니다.",
       "장가계 대협곡 유리다리는 대협곡 관광지에 있습니다. 반면 천문산 유리잔도는 천문산 코스 안에 있습니다. 원가계와 천자산 등이 있는 장가계 국가삼림공원은 또 다른 관광지입니다.",

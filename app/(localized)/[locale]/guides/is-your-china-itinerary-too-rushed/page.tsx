@@ -6,6 +6,7 @@ import {
   getGuideLanguagePaths,
 } from "../../../../../lib/guideRegistry";
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
+import { getItineraryRushGuideCopy } from "../../../../../lib/chinaItineraryTooRushedI18n";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
@@ -22,10 +23,11 @@ export async function generateMetadata({
   const { locale: routeLocale } = await params;
   const locale = localizedLocale(routeLocale);
   const guide = getGuideEntry("is-your-china-itinerary-too-rushed", locale);
+  const copy = getItineraryRushGuideCopy(locale);
 
   return {
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     alternates: {
       canonical: guide.canonicalPath,
       languages: getGuideLanguagePaths(guide.id),
@@ -41,8 +43,8 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: guide.title,
-      description: guide.description,
+      title: copy.metadata.title,
+      description: copy.metadata.description,
       type: "article",
       locale: guide.openGraphLocale,
       alternateLocale:
@@ -61,8 +63,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.title,
-      description: guide.description,
+      title: copy.metadata.title,
+      description: copy.metadata.description,
       images: [guide.heroImageUrl],
     },
   };

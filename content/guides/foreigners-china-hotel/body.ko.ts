@@ -230,6 +230,67 @@ const body = {
       ],
     },
     {
+      id: "faq-heading",
+      type: "heading",
+      level: 2,
+      text: "외국 여권 호텔 체크인 실용 FAQ",
+    },
+    {
+      id: "faq-platform-label-heading",
+      type: "heading",
+      level: 3,
+      text: "플랫폼에 외국인을 받지 않는다고 표시된 호텔을 예약해도 될까요?",
+    },
+    {
+      id: "faq-platform-label-answer",
+      type: "paragraph",
+      text: "플랫폼 표시를 법으로 받아들이지도, 가볍게 무시하지도 마세요. 숙소 화면을 저장하고 정확한 지점에 서면으로 연락해 여권 종류와 도착 시간에 맞춰 호텔 숙박 등록을 처리할 수 있는지 물어보세요. 답이 불분명하면 결제 전에 절차를 확인해 주는 숙소를 고르세요.",
+    },
+    {
+      id: "faq-confirmed-refusal-heading",
+      type: "heading",
+      level: 3,
+      text: "확인받은 호텔이 현장에서 체크인을 거절하면 어떻게 하나요?",
+    },
+    {
+      id: "faq-confirmed-refusal-answer",
+      type: "paragraph",
+      text: "지점, 날짜, 예약자 이름, 객실 상태와 여행증명서를 한 번 확인한 뒤 당직 매니저에게 정확한 이유를 물으세요. 직접 취소하지 말고 플랫폼에 사건을 열어 노쇼 처리를 막으세요. 특히 심야이거나 어린이·고령자와 함께라면 문제가 빨리 해결되지 않을 때 직원이 있는 대체 숙소로 먼저 이동하세요.",
+    },
+    {
+      id: "faq-registration-heading",
+      type: "heading",
+      level: 3,
+      text: "호텔 숙박도 여행자가 24시간 안에 직접 등록해야 하나요?",
+    },
+    {
+      id: "faq-registration-answer",
+      type: "paragraph",
+      text: "호텔에서는 호텔이 투숙객을 등록하고 호텔 숙박 정보를 제출합니다. 호텔이 아닌 주거지에 묵을 때 외국인 본인이나 숙박 제공자가 도착 후 24시간 안에 등록합니다. 아파트·게스트하우스·민쑤의 운영 형태가 불분명하면 도착 전에 어느 범주로 처리되는지 확인하세요.",
+    },
+    {
+      id: "faq-self-cancel-heading",
+      type: "heading",
+      level: 3,
+      text: "거절당한 뒤 예약을 직접 취소해야 하나요?",
+    },
+    {
+      id: "faq-self-cancel-answer",
+      type: "paragraph",
+      text: "플랫폼이 취소, 수수료와 노쇼 상태를 어떻게 처리할지 서면으로 밝히기 전에는 직접 취소하지 마세요. 직접 취소하면 거래 기록이 약해질 수 있습니다. 안전한 대체 숙소를 마련하면서 기존 고객지원 사건을 열어 두고 심사에 필요한 증거만 보관하세요.",
+    },
+    {
+      id: "faq-channel-heading",
+      type: "heading",
+      level: 3,
+      text: "어느 공식 번호로 연락해야 하나요?",
+    },
+    {
+      id: "faq-channel-answer",
+      type: "paragraph",
+      text: "이민 및 숙박 등록 정책은 12367, 비긴급 지방정부 지원은 12345, 증빙이 있는 소비자 분쟁은 12315를 이용하세요. 즉각적인 신변·재산 위협, 범죄 의심 또는 다른 경찰 긴급상황에만 110을 사용하세요. 어느 채널도 그날 밤 객실이나 환불을 보장하지 않습니다.",
+    },
+    {
       id: "final-checklist",
       type: "callout",
       title: "두 가지 체크리스트만 기억하세요",

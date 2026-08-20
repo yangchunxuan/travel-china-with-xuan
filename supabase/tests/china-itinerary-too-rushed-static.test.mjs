@@ -18,7 +18,7 @@ test("pace article gives a server-readable answer without inventing a city limit
   assert.match(article, /<h1>\{copy\.metadata\.headline\}<\/h1>/);
   assert.match(
     copy,
-    /There is no fixed city count that makes a China trip rushed/,
+    /Do not count cities first; count the friction between them/,
   );
   assert.match(
     copy,
@@ -128,9 +128,11 @@ test("metadata, sitemap and contextual links expose the English article", async 
   const service = await source("components/ChinaItineraryReviewPage.tsx");
   const productionExport = await source("tools/prune-production-export.mjs");
 
+  assert.match(route, /title: copy\.metadata\.title/);
+  assert.match(route, /description: copy\.metadata\.description/);
   assert.match(
-    registry,
-    /title: "China Itinerary Too Rushed\? A Practical Check"/,
+    await source("lib/chinaItineraryTooRushedI18n.ts"),
+    /Is Your China Itinerary Too Rushed\? 5 Checks Before Booking/,
   );
   assert.match(route, /card: "summary_large_image"/);
   assert.match(route, /getGuideLanguagePaths\(guide\.id\)/);

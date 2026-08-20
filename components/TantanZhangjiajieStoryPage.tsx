@@ -10,7 +10,10 @@ import {
   editorialPersonSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
-import { getTantanZhangjiajieStoryCopy } from "../lib/tantanZhangjiajieStoryI18n";
+import {
+  getTantanZhangjiajieStoryCopy,
+  ZHANGJIAJIE_GLASS_BRIDGE_HERO,
+} from "../lib/tantanZhangjiajieStoryI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -58,17 +61,17 @@ function createStructuredData(locale: HomegroundLocale) {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
         url: guide.canonicalUrl,
-        headline: guide.headline,
-        description: guide.description,
+        headline: copy.title,
+        description: copy.dek,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         image: {
           "@type": "ImageObject",
-          url: guide.heroImageUrl,
-          width: 1200,
-          height: 630,
+          url: ZHANGJIAJIE_GLASS_BRIDGE_HERO.url,
+          width: ZHANGJIAJIE_GLASS_BRIDGE_HERO.width,
+          height: ZHANGJIAJIE_GLASS_BRIDGE_HERO.height,
           caption: copy.heroCaption,
         },
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
@@ -199,28 +202,14 @@ export function TantanZhangjiajieStoryPage({
               </div>
 
               <figure className={styles.heroFigure}>
-                <picture>
-                  <source
-                    type="image/avif"
-                    srcSet={`${assetPath}/tantan-hero-720.avif 720w, ${assetPath}/tantan-hero-1200.avif 1200w`}
-                    sizes="(max-width: 52rem) calc(100vw - 2rem), 40vw"
-                  />
-                  <source
-                    type="image/webp"
-                    srcSet={`${assetPath}/tantan-hero-720.webp 720w, ${assetPath}/tantan-hero-1200.webp 1200w`}
-                    sizes="(max-width: 52rem) calc(100vw - 2rem), 40vw"
-                  />
-                  <img
-                    src={`${assetPath}/tantan-hero-1200.jpg`}
-                    srcSet={`${assetPath}/tantan-hero-720.jpg 720w, ${assetPath}/tantan-hero-1200.jpg 1200w`}
-                    sizes="(max-width: 52rem) calc(100vw - 2rem), 40vw"
-                    alt={copy.heroAlt}
-                    width="1200"
-                    height="1500"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  src={ZHANGJIAJIE_GLASS_BRIDGE_HERO.path}
+                  alt={copy.heroAlt}
+                  width={ZHANGJIAJIE_GLASS_BRIDGE_HERO.width}
+                  height={ZHANGJIAJIE_GLASS_BRIDGE_HERO.height}
+                  fetchPriority="high"
+                  decoding="async"
+                />
                 <figcaption>{copy.heroCaption}</figcaption>
               </figure>
             </div>
