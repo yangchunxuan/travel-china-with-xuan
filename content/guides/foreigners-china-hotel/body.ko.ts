@@ -319,7 +319,7 @@ const body = {
     {
       id: "official-sources",
       type: "sources",
-      title: "2026년 8월 13일 확인한 공식 자료",
+      title: "2026년 8월 20일 확인한 공식 자료",
       items: [
         { label: "해외 방문객 숙박 편의 조치", url: "https://www.mofcom.gov.cn/zwgk/zcfb/art/2024/art_10ddb29858c24ece86b3f575bda1d9c4.html", publisher: "중국 상무부 등 7개 부처", reviewedAt: "2026-08-20" },
         { label: "숙박 편의 조치 영문 요약", url: "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html", publisher: "중국 국무원 영문 사이트", reviewedAt: "2026-08-20" },

@@ -319,7 +319,7 @@ const body = {
     {
       id: "official-sources",
       type: "sources",
-      title: "Official sources checked on 13 August 2026",
+      title: "Official sources checked on 20 August 2026",
       items: [
         { label: "Measures facilitating accommodation for overseas visitors", url: "https://www.mofcom.gov.cn/zwgk/zcfb/art/2024/art_10ddb29858c24ece86b3f575bda1d9c4.html", publisher: "Ministry of Commerce and six departments", reviewedAt: "2026-08-20" },
         { label: "English summary of the accommodation measures", url: "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html", publisher: "State Council website", reviewedAt: "2026-08-20" },
