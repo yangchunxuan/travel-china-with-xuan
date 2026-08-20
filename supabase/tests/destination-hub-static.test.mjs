@@ -22,10 +22,11 @@ test("destination hubs keep the Chinese guide phrase together on narrow screens"
   assert.match(styles, /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap;/);
 });
 
-test("batch three hubs are trilingual release candidates with canonical boundaries", async () => {
-  const [registry, runtime, hangzhouBody, zhangjiajieBody, readme] = await Promise.all([
+test("batch three hubs are trilingual published pages with canonical boundaries", async () => {
+  const [registry, runtime, adapter, hangzhouBody, zhangjiajieBody, readme] = await Promise.all([
     source("lib/destinationHubs.ts"),
     source("lib/destinationHubRuntime.ts"),
+    source("lib/destinationHubContentAdapter.ts"),
     source("content/destinations/hangzhou/body.shared.ts"),
     source("content/destinations/zhangjiajie/body.shared.ts"),
     source("docs/organic-growth/city-hub-drafts/README.md"),
@@ -36,10 +37,20 @@ test("batch three hubs are trilingual release candidates with canonical boundari
     assert.match(registry, new RegExp(`entityId: "city-${id}"`));
     assert.match(runtime, new RegExp(`${id}: \\{[\\s\\S]*body\\.en[\\s\\S]*body\\.zh[\\s\\S]*body\\.ko`));
   }
+  assert.equal(
+    [...registry.matchAll(/datePublished: "2026-08-20"/g)].length,
+    2,
+    "Hangzhou and Zhangjiajie retain their real publication date",
+  );
   assert.match(registry, /sourceReviewedDate: "2026-08-20"/);
+  assert.match(adapter, /status: "published"/);
+  assert.match(adapter, /indexability: \{ index: true, follow: true \}/);
   assert.match(hangzhouBody, /No second generic Hangzhou travel guide should be created/);
   assert.match(zhangjiajieBody, /Do not copy that volatile workflow into this broad page/);
-  assert.match(readme, /release candidates, not live pages/);
+  assert.match(readme, /Batch three published \(August 20, 2026\): PR #74/);
+  assert.match(readme, /five trilingual identities are now live/);
+  assert.ok(readme.includes("649 `<loc>` entries"));
+  assert.doesNotMatch(readme, /release candidates, not live pages/);
 });
 
 test("Shanghai Songjiang copy records both the rename and expanded-hub opening", async () => {

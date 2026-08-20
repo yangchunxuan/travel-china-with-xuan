@@ -13,6 +13,8 @@
     "check:font-coverage:export": "node tools/check-font-coverage.mjs --production-export",
     "check:planning-scope-lines": "node --experimental-strip-types --no-warnings tools/check-planning-scope-lines.mjs",
     "check:indexable-export": "node tools/check-indexable-export.mjs",
+    "check:index-cohorts": "node tools/check-index-cohorts.mjs",
+    "check:guide-entities": "node --experimental-strip-types --no-warnings tools/check-guide-entity-coverage.mjs",
     "check:search-platform-export": "node tools/check-search-platform-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
     "content:generate": "node tools/generate-content-manifest.mjs",
