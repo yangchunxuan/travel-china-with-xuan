@@ -39,6 +39,98 @@
     "hotel_relation",
     "interchange_topology"
   ],
+  "validationErrorOwnership": [
+    {
+      "code": "REQUEST_NOT_PLAIN_OBJECT",
+      "ruleId": "RR3-SHAPE-001",
+      "fields": ["$request"],
+      "relatedFieldMode": "fixed",
+      "relatedFields": ["$request"],
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 0, "fieldOrder": "fixed", "keyOrder": "none"}
+    },
+    {
+      "code": "MISSING_FIELD",
+      "ruleId": "RR3-SHAPE-002",
+      "fields": ["totalNights", "arrivalWindow", "departureWindow", "crossCityMoves", "airportStationTransfers", "hotelChanges", "travellerPace"],
+      "relatedFieldMode": "same_as_field",
+      "relatedFields": null,
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 1, "fieldOrder": "request_field_order", "keyOrder": "none"}
+    },
+    {
+      "code": "COUNT_NOT_INTEGER",
+      "ruleId": "RR3-SCALAR-001",
+      "fields": ["totalNights", "crossCityMoves", "airportStationTransfers", "hotelChanges"],
+      "relatedFieldMode": "same_as_field",
+      "relatedFields": null,
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 2, "fieldOrder": "request_field_order", "keyOrder": "none"}
+    },
+    {
+      "code": "COUNT_OUT_OF_RANGE",
+      "ruleId": "RR3-SCALAR-002",
+      "fields": ["totalNights", "crossCityMoves", "airportStationTransfers", "hotelChanges"],
+      "relatedFieldMode": "same_as_field",
+      "relatedFields": null,
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 2, "fieldOrder": "request_field_order", "keyOrder": "none"}
+    },
+    {
+      "code": "UNSUPPORTED_TIME_WINDOW",
+      "ruleId": "RR3-SCALAR-003",
+      "fields": ["arrivalWindow", "departureWindow"],
+      "relatedFieldMode": "same_as_field",
+      "relatedFields": null,
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 2, "fieldOrder": "request_field_order", "keyOrder": "none"}
+    },
+    {
+      "code": "UNSUPPORTED_PACE",
+      "ruleId": "RR3-SCALAR-004",
+      "fields": ["travellerPace"],
+      "relatedFieldMode": "same_as_field",
+      "relatedFields": null,
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 2, "fieldOrder": "request_field_order", "keyOrder": "none"}
+    },
+    {
+      "code": "EXTRA_FIELD",
+      "ruleId": "RR3-SHAPE-003",
+      "fields": ["$request"],
+      "relatedFieldMode": "fixed",
+      "relatedFields": [],
+      "offendingKeyMode": "canonical_extra_key",
+      "canonicalPriority": {"phase": 3, "fieldOrder": "fixed", "keyOrder": "string_code_point_then_symbol_description_then_original_index"}
+    },
+    {
+      "code": "RELATIONAL_COUNT_CONFLICT",
+      "ruleId": "RR3-RELATION-001",
+      "fields": ["crossCityMoves"],
+      "relatedFieldMode": "fixed",
+      "relatedFields": ["totalNights", "crossCityMoves"],
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 4, "fieldOrder": "fixed", "keyOrder": "none"}
+    },
+    {
+      "code": "RELATIONAL_COUNT_CONFLICT",
+      "ruleId": "RR3-RELATION-002",
+      "fields": ["hotelChanges"],
+      "relatedFieldMode": "fixed",
+      "relatedFields": ["totalNights", "crossCityMoves", "hotelChanges"],
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 5, "fieldOrder": "fixed", "keyOrder": "none"}
+    },
+    {
+      "code": "EVENT_TOPOLOGY_OVERFLOW",
+      "ruleId": "RR3-TOPOLOGY-003",
+      "fields": ["airportStationTransfers"],
+      "relatedFieldMode": "fixed",
+      "relatedFields": ["totalNights", "airportStationTransfers"],
+      "offendingKeyMode": "null",
+      "canonicalPriority": {"phase": 6, "fieldOrder": "fixed", "keyOrder": "none"}
+    }
+  ],
   "relationalRules": [
     {
       "ruleId": "RR3-RELATION-001",
@@ -176,6 +268,7 @@
       "code": "INPUT_VALUE_UNKNOWN",
       "emissionPredicate": "at least one request field equals unknown",
       "sourceFieldMode": "all unknown request fields in request-field order",
+      "sourceFieldOrder": ["totalNights", "arrivalWindow", "departureWindow", "crossCityMoves", "airportStationTransfers", "hotelChanges", "travellerPace"],
       "ruleId": "RR3-UNCERTAINTY-001",
       "targetContracts": [
         "uncertainty.inputDomain"
@@ -185,6 +278,7 @@
       "code": "RELATIONAL_DOMAIN_FILTERED",
       "emissionPredicate": "an unknown count exists, at least one raw count tuple is rejected by a relation or topology predicate, and at least one feasible tuple remains",
       "sourceFieldMode": "unknown count fields participating in a pruning rule, in request-field order",
+      "sourceFieldOrder": ["totalNights", "crossCityMoves", "airportStationTransfers", "hotelChanges"],
       "ruleId": "RR3-UNCERTAINTY-002",
       "targetContracts": [
         "uncertainty.feasibleDomain"
@@ -194,6 +288,7 @@
       "code": "EVENT_PLACEMENT_UNSPECIFIED",
       "emissionPredicate": "at least one feasible concrete count tuple has more than one canonical event placement",
       "sourceFieldMode": "totalNights followed by each event-count field whose value is unknown or positive, in request-field order",
+      "sourceFieldOrder": ["totalNights", "crossCityMoves", "airportStationTransfers", "hotelChanges"],
       "ruleId": "RR3-UNCERTAINTY-003",
       "targetContracts": [
         "uncertainty.placement",
@@ -204,6 +299,7 @@
       "code": "TRIGGER_EVALUATION_BLOCKED_BY_POLICY",
       "emissionPredicate": "every relationally valid v3 internal-draft request",
       "sourceFieldMode": "empty",
+      "sourceFieldOrder": [],
       "ruleId": "RR3-POLICY-001",
       "targetContracts": [
         "futurePolicy.numericResults",
@@ -264,6 +360,13 @@
       ]
     }
   ],
+  "triggerStateSignature": {
+    "definition": "ordered Boolean vector across canonical feasible placements",
+    "encoding": "<length>:<0-or-1 at each canonical placement index>",
+    "differentWhen": "length or any placement-index value differs",
+    "sortingAllowed": false,
+    "summaryReductionAllowed": false
+  },
   "monotonicity": [
     {
       "axis": "arrivalWindow",

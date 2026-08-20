@@ -87,6 +87,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "REQUEST_NOT_PLAIN_OBJECT"
@@ -115,6 +116,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "MISSING_FIELD"
@@ -128,42 +130,49 @@
               },
               "oneOf": [
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "totalNights" },
                     "relatedFields": { "const": ["totalNights"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "arrivalWindow" },
                     "relatedFields": { "const": ["arrivalWindow"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "departureWindow" },
                     "relatedFields": { "const": ["departureWindow"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "crossCityMoves" },
                     "relatedFields": { "const": ["crossCityMoves"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "airportStationTransfers" },
                     "relatedFields": { "const": ["airportStationTransfers"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "hotelChanges" },
                     "relatedFields": { "const": ["hotelChanges"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "travellerPace" },
                     "relatedFields": { "const": ["travellerPace"] }
@@ -179,6 +188,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "EXTRA_FIELD"
@@ -206,6 +216,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "offendingKey": {
                   "type": "null"
@@ -215,12 +226,14 @@
                 {
                   "oneOf": [
                     {
+                      "type": "object",
                       "properties": {
                         "code": { "const": "COUNT_NOT_INTEGER" },
                         "ruleId": { "const": "RR3-SCALAR-001" }
                       }
                     },
                     {
+                      "type": "object",
                       "properties": {
                         "code": { "const": "COUNT_OUT_OF_RANGE" },
                         "ruleId": { "const": "RR3-SCALAR-002" }
@@ -231,24 +244,28 @@
                 {
                   "oneOf": [
                     {
+                      "type": "object",
                       "properties": {
                         "field": { "const": "totalNights" },
                         "relatedFields": { "const": ["totalNights"] }
                       }
                     },
                     {
+                      "type": "object",
                       "properties": {
                         "field": { "const": "crossCityMoves" },
                         "relatedFields": { "const": ["crossCityMoves"] }
                       }
                     },
                     {
+                      "type": "object",
                       "properties": {
                         "field": { "const": "airportStationTransfers" },
                         "relatedFields": { "const": ["airportStationTransfers"] }
                       }
                     },
                     {
+                      "type": "object",
                       "properties": {
                         "field": { "const": "hotelChanges" },
                         "relatedFields": { "const": ["hotelChanges"] }
@@ -266,6 +283,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "UNSUPPORTED_TIME_WINDOW"
@@ -279,12 +297,14 @@
               },
               "oneOf": [
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "arrivalWindow" },
                     "relatedFields": { "const": ["arrivalWindow"] }
                   }
                 },
                 {
+                  "type": "object",
                   "properties": {
                     "field": { "const": "departureWindow" },
                     "relatedFields": { "const": ["departureWindow"] }
@@ -300,6 +320,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "UNSUPPORTED_PACE"
@@ -328,6 +349,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "RELATIONAL_COUNT_CONFLICT"
@@ -357,6 +379,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "RELATIONAL_COUNT_CONFLICT"
@@ -387,6 +410,7 @@
               "$ref": "#/$defs/BaseValidationError"
             },
             {
+              "type": "object",
               "properties": {
                 "code": {
                   "const": "EVENT_TOPOLOGY_OVERFLOW"
@@ -457,6 +481,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "NIGHTS_CREATE_N_PLUS_ONE_CALENDAR_DAYS"
@@ -484,6 +509,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "EDGE_WINDOWS_ARE_BROAD_CAPACITY_BANDS"
@@ -512,6 +538,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "ORDINARY_EDGE_ACCESS_NOT_SEPARATE_COMPLEX_TRANSFER"
@@ -541,6 +568,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "CROSS_CITY_COUNTS_OVERNIGHT_BASE_CHANGE_DAYS"
@@ -568,6 +596,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "DAY_TRIPS_EXCLUDED_FROM_CROSS_CITY_MOVES"
@@ -595,6 +624,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "HOTEL_CHANGES_EXCLUDE_CROSS_CITY_BASE_CHANGES"
@@ -623,6 +653,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "ONE_ACCOMMODATION_EVENT_PER_TRANSITION_DAY"
@@ -653,6 +684,7 @@
               "$ref": "#/$defs/AssumptionRecord"
             },
             {
+              "type": "object",
               "properties": {
                 "id": {
                   "const": "ONE_COMPLEX_INTERCHANGE_PER_CALENDAR_DAY"
@@ -727,6 +759,7 @@
           "$ref": "#/$defs/BaseUncertaintyRecord"
         },
         {
+          "type": "object",
           "properties": {
             "code": {
               "const": "INPUT_VALUE_UNKNOWN"
@@ -765,6 +798,7 @@
           "$ref": "#/$defs/BaseUncertaintyRecord"
         },
         {
+          "type": "object",
           "properties": {
             "code": {
               "const": "RELATIONAL_DOMAIN_FILTERED"
@@ -800,27 +834,21 @@
           "$ref": "#/$defs/BaseUncertaintyRecord"
         },
         {
+          "type": "object",
           "properties": {
             "code": {
               "const": "EVENT_PLACEMENT_UNSPECIFIED"
             },
             "sourceFields": {
-              "type": "array",
-              "minItems": 2,
-              "uniqueItems": true,
-              "prefixItems": [
-                {
-                  "const": "totalNights"
-                }
-              ],
-              "items": {
-                "enum": [
-                  "totalNights",
-                  "crossCityMoves",
-                  "airportStationTransfers",
-                  "hotelChanges"
-                ]
-              }
+              "enum": [
+                ["totalNights", "crossCityMoves"],
+                ["totalNights", "airportStationTransfers"],
+                ["totalNights", "hotelChanges"],
+                ["totalNights", "crossCityMoves", "airportStationTransfers"],
+                ["totalNights", "crossCityMoves", "hotelChanges"],
+                ["totalNights", "airportStationTransfers", "hotelChanges"],
+                ["totalNights", "crossCityMoves", "airportStationTransfers", "hotelChanges"]
+              ]
             },
             "ruleId": {
               "const": "RR3-UNCERTAINTY-003"
@@ -841,6 +869,7 @@
           "$ref": "#/$defs/BaseUncertaintyRecord"
         },
         {
+          "type": "object",
           "properties": {
             "code": {
               "const": "TRIGGER_EVALUATION_BLOCKED_BY_POLICY"
@@ -1037,6 +1066,7 @@
         {
           "oneOf": [
             {
+              "type": "object",
               "properties": {
                 "inputState": {
                   "const": "fully_known"
@@ -1053,6 +1083,7 @@
               }
             },
             {
+              "type": "object",
               "properties": {
                 "inputState": {
                   "const": "fully_known"
@@ -1069,6 +1100,7 @@
               }
             },
             {
+              "type": "object",
               "properties": {
                 "inputState": {
                   "const": "contains_unknown"
@@ -1092,6 +1124,7 @@
               }
             },
             {
+              "type": "object",
               "properties": {
                 "inputState": {
                   "const": "contains_unknown"

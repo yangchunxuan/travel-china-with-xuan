@@ -19,6 +19,13 @@ The request validator consists of two mechanical layers:
 1. JavaScript preflight for plain-object/prototype and complete own-key checks;
 2. the Draft 2020-12 request schema for exact keys and scalar domains.
 
+The permanent acceptance suite MUST compile both schema roots through Ajv's
+Draft 2020-12 entry point with `strict:true`, `strictTuples:true` and
+`allErrors:true`. It MUST NOT suppress format or strict warnings. JSON-domain
+fixtures MUST execute against the compiled schema as well as the semantic
+validator. Prototype and symbol behavior remains preflight-owned because JSON
+Schema cannot observe it.
+
 An ordinary object and an `Object.create(null)` object MAY pass. Null, arrays,
 Date, Map, Set, class instances, boxed primitives and any other prototype MUST
 fail with `REQUEST_NOT_PLAIN_OBJECT`. A symbol own key or an unapproved string
@@ -107,6 +114,11 @@ Therefore:
 
 No implementation may choose a different owner, omit one of the latter three
 errors, or reorder them.
+
+JSON Schema owns each error record's shape and field/rule binding. Canonical
+array order is a semantic contract layered after schema validation. Reversing
+an otherwise valid multi-error array MUST therefore produce
+`schema=true, semantic=false`; it MUST NOT be treated as a valid outcome.
 
 ## 5. Correlated feasible domains
 
@@ -205,6 +217,12 @@ For the possible basis, emit sources in this order:
 1. `input_domain` when trigger signatures differ across concrete states;
 2. `event_placement` when truth differs between placements inside one state.
 
+Each concrete state's trigger signature MUST preserve the complete Boolean
+vector in canonical placement order. Its encoding is `<length>:<bits>`, where
+each bit is `0` or `1`. The vector MUST NOT be sorted or reduced to `some` and
+`every`. Thus `[false]` differs from `[false,false]`, and `[false,true]` differs
+from `[true,false]`.
+
 The fully known `N=2,C=1,T=1,H=0` fixture has a false/true placement witness
 matrix under employee 8's permitted synthetic counterexample. Its basis is
 `possible_feasible_extreme` with source `event_placement`, never `confirmed`.
@@ -253,6 +271,12 @@ The executable fixtures use ordinal ranks marked `notPolicyPack:true`. They
 verify that the invariant checker accepts a monotone witness and rejects a
 reversed adjacent pair. The ranks are not hours, days, tax or an approved pack.
 
+The valid fixture and all ten negative fixtures MUST be compared with an
+independent full-record oracle. Every negative record MUST own
+`expectedViolation`, and the validator MUST return exactly that singleton
+array. The ten axis × metric × direction combinations MUST be unique. Retaining
+an ID while rebinding arrival to departure is a contract failure.
+
 ## 12. Fixture execution
 
 Every fixture has a unique ID and a closed `assertionKind`. The test dispatcher
@@ -264,6 +288,22 @@ The count invalid matrix covers four fields by twelve value classes: `-1`,
 `31`, decimal, numeric string, true, false, null, array, object, NaN, positive
 infinity and negative infinity. Time-window and pace matrices cover both token
 and type failures. JavaScript-only values are produced by a closed factory map.
+
+The golden ownership and monotonic contracts MUST be hard-coded in the test,
+not generated from `contract-catalog.json` or `internal-examples.json`. The
+catalog, schema extraction, builder output and fixture semantics MUST each be
+compared with that independent oracle.
+
+The suite MUST audit the unmodified artifacts to zero drift, then reproduce the
+review mutations in isolated artifact clones. Adding `Balanced`, relaxing
+either `result:null` arm, rebinding uncertainty or scalar-error ownership,
+reversing canonical priority, rebinding the arrival fixture, or deleting all
+`expectedViolation` properties MUST each produce non-zero exact drift. The
+same applies to an undeclared error arm, an undeclared uncertainty definition
+or terminal combination, and a replacement asymmetric trigger witness with an
+unchanged ID. Schema inventories MUST retain every extracted record, reject
+duplicates and reject unmatched extras. A fresh Ajv instance MUST compile
+every schema mutant so `$id` caching cannot hide an attack.
 
 ## 13. Non-product boundaries
 

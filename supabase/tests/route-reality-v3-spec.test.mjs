@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { isDeepStrictEqual } from "node:util";
+import Ajv2020 from "ajv/dist/2020.js";
 
 const specRoot =
   "docs/organic-growth/china-planning-hub-system/route-reality";
@@ -18,8 +20,23 @@ const [requestSchema, draftOutcomeSchema, catalog, fixtures] = await Promise.all
   loadJson("internal-examples.json"),
 ]);
 
-const requestFields = catalog.requestFields;
-const countFields = new Set(catalog.countFields);
+const expectedRequestFields = [
+  "totalNights",
+  "arrivalWindow",
+  "departureWindow",
+  "crossCityMoves",
+  "airportStationTransfers",
+  "hotelChanges",
+  "travellerPace",
+];
+const expectedCountFields = [
+  "totalNights",
+  "crossCityMoves",
+  "airportStationTransfers",
+  "hotelChanges",
+];
+const requestFields = expectedRequestFields;
+const countFields = new Set(expectedCountFields);
 const timeWindows = new Set([
   "before_09",
   "09_12",
@@ -30,6 +47,655 @@ const timeWindows = new Set([
 ]);
 const paces = new Set(["fast", "balanced", "slow", "unknown"]);
 const modelVersion = "route-reality-v3.0.0-internal-draft";
+
+function compileStrictSchemas(requestArtifact, outcomeArtifact) {
+  const ajv = new Ajv2020({
+    strict: true,
+    strictTuples: true,
+    allErrors: true,
+  });
+  return {
+    request: ajv.compile(requestArtifact),
+    outcome: ajv.compile(outcomeArtifact),
+  };
+}
+
+const standardValidators = compileStrictSchemas(
+  requestSchema,
+  draftOutcomeSchema,
+);
+
+function assertSchemaResult(validator, value, expected, label) {
+  const actual = validator(value);
+  assert.equal(
+    actual,
+    expected,
+    `${label}: ${JSON.stringify(validator.errors ?? [])}`,
+  );
+}
+
+const expectedValidationPhases = [
+  "request_shape",
+  "missing_fields",
+  "scalar_fields",
+  "extra_keys",
+  "cross_city_relation",
+  "hotel_relation",
+  "interchange_topology",
+];
+
+const expectedAssumptionCatalog = [
+  {
+    id: "NIGHTS_CREATE_N_PLUS_ONE_CALENDAR_DAYS",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["totalNights"],
+    ruleId: "RR3-CALENDAR-001",
+    targetContracts: ["validation.calendarTopology"],
+  },
+  {
+    id: "EDGE_WINDOWS_ARE_BROAD_CAPACITY_BANDS",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["arrivalWindow", "departureWindow"],
+    ruleId: "RR3-WINDOW-001",
+    targetContracts: ["futurePolicy.edgeCapacityOrdering"],
+  },
+  {
+    id: "ORDINARY_EDGE_ACCESS_NOT_SEPARATE_COMPLEX_TRANSFER",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: [
+      "arrivalWindow",
+      "departureWindow",
+      "airportStationTransfers",
+    ],
+    ruleId: "RR3-TRANSFER-001",
+    targetContracts: ["validation.transferSemantics"],
+  },
+  {
+    id: "CROSS_CITY_COUNTS_OVERNIGHT_BASE_CHANGE_DAYS",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["crossCityMoves"],
+    ruleId: "RR3-MOVE-001",
+    targetContracts: ["validation.crossCitySemantics"],
+  },
+  {
+    id: "DAY_TRIPS_EXCLUDED_FROM_CROSS_CITY_MOVES",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["crossCityMoves"],
+    ruleId: "RR3-MOVE-002",
+    targetContracts: ["validation.crossCitySemantics"],
+  },
+  {
+    id: "HOTEL_CHANGES_EXCLUDE_CROSS_CITY_BASE_CHANGES",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["crossCityMoves", "hotelChanges"],
+    ruleId: "RR3-HOTEL-001",
+    targetContracts: ["validation.hotelChangeSemantics"],
+  },
+  {
+    id: "ONE_ACCOMMODATION_EVENT_PER_TRANSITION_DAY",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["totalNights", "crossCityMoves", "hotelChanges"],
+    ruleId: "RR3-TOPOLOGY-001",
+    targetContracts: [
+      "validation.accommodationTopology",
+      "uncertainty.placement",
+    ],
+  },
+  {
+    id: "ONE_COMPLEX_INTERCHANGE_PER_CALENDAR_DAY",
+    emissionPredicate: "every relationally valid request",
+    sourceFields: ["totalNights", "airportStationTransfers"],
+    ruleId: "RR3-TOPOLOGY-002",
+    targetContracts: [
+      "validation.interchangeTopology",
+      "uncertainty.placement",
+    ],
+  },
+];
+
+const expectedAssumptionRecords = expectedAssumptionCatalog.map(
+  ({ id, sourceFields, ruleId, targetContracts }) => ({
+    id,
+    sourceFields,
+    ruleId,
+    targetContracts,
+  }),
+);
+
+const expectedUncertaintyOwnership = [
+  {
+    code: "INPUT_VALUE_UNKNOWN",
+    emissionPredicate: "at least one request field equals unknown",
+    sourceFieldMode: "all unknown request fields in request-field order",
+    sourceFieldOrder: expectedRequestFields,
+    ruleId: "RR3-UNCERTAINTY-001",
+    targetContracts: ["uncertainty.inputDomain"],
+  },
+  {
+    code: "RELATIONAL_DOMAIN_FILTERED",
+    emissionPredicate:
+      "an unknown count exists, at least one raw count tuple is rejected by a relation or topology predicate, and at least one feasible tuple remains",
+    sourceFieldMode:
+      "unknown count fields participating in a pruning rule, in request-field order",
+    sourceFieldOrder: expectedCountFields,
+    ruleId: "RR3-UNCERTAINTY-002",
+    targetContracts: ["uncertainty.feasibleDomain"],
+  },
+  {
+    code: "EVENT_PLACEMENT_UNSPECIFIED",
+    emissionPredicate:
+      "at least one feasible concrete count tuple has more than one canonical event placement",
+    sourceFieldMode:
+      "totalNights followed by each event-count field whose value is unknown or positive, in request-field order",
+    sourceFieldOrder: expectedCountFields,
+    ruleId: "RR3-UNCERTAINTY-003",
+    targetContracts: [
+      "uncertainty.placement",
+      "futurePolicy.triggerWitnesses",
+    ],
+  },
+  {
+    code: "TRIGGER_EVALUATION_BLOCKED_BY_POLICY",
+    emissionPredicate: "every relationally valid v3 internal-draft request",
+    sourceFieldMode: "empty",
+    sourceFieldOrder: [],
+    ruleId: "RR3-POLICY-001",
+    targetContracts: ["futurePolicy.numericResults", "futurePolicy.alerts"],
+  },
+];
+
+const expectedEventPlacementSourceArrays = [
+  ["totalNights", "crossCityMoves"],
+  ["totalNights", "airportStationTransfers"],
+  ["totalNights", "hotelChanges"],
+  ["totalNights", "crossCityMoves", "airportStationTransfers"],
+  ["totalNights", "crossCityMoves", "hotelChanges"],
+  ["totalNights", "airportStationTransfers", "hotelChanges"],
+  [
+    "totalNights",
+    "crossCityMoves",
+    "airportStationTransfers",
+    "hotelChanges",
+  ],
+];
+
+const expectedSchemaUncertaintyBindings = [
+  {
+    definition: "InputValueUnknownUncertainty",
+    code: "INPUT_VALUE_UNKNOWN",
+    ruleId: "RR3-UNCERTAINTY-001",
+    targetContracts: ["uncertainty.inputDomain"],
+    sourceContract: {
+      kind: "ordered_unique_subset",
+      minimumItems: 1,
+      fieldOrder: expectedRequestFields,
+    },
+  },
+  {
+    definition: "RelationalDomainFilteredUncertainty",
+    code: "RELATIONAL_DOMAIN_FILTERED",
+    ruleId: "RR3-UNCERTAINTY-002",
+    targetContracts: ["uncertainty.feasibleDomain"],
+    sourceContract: {
+      kind: "ordered_unique_subset",
+      minimumItems: 1,
+      fieldOrder: expectedCountFields,
+    },
+  },
+  {
+    definition: "EventPlacementUnspecifiedUncertainty",
+    code: "EVENT_PLACEMENT_UNSPECIFIED",
+    ruleId: "RR3-UNCERTAINTY-003",
+    targetContracts: [
+      "uncertainty.placement",
+      "futurePolicy.triggerWitnesses",
+    ],
+    sourceContract: {
+      kind: "exact_ordered_arrays",
+      arrays: expectedEventPlacementSourceArrays,
+    },
+  },
+  {
+    definition: "TriggerEvaluationBlockedUncertainty",
+    code: "TRIGGER_EVALUATION_BLOCKED_BY_POLICY",
+    ruleId: "RR3-POLICY-001",
+    targetContracts: ["futurePolicy.numericResults", "futurePolicy.alerts"],
+    sourceContract: { kind: "exact", fields: [] },
+  },
+];
+
+const expectedValidationErrorOwnership = [
+  {
+    code: "REQUEST_NOT_PLAIN_OBJECT",
+    ruleId: "RR3-SHAPE-001",
+    fields: ["$request"],
+    relatedFieldMode: "fixed",
+    relatedFields: ["$request"],
+    offendingKeyMode: "null",
+    canonicalPriority: { phase: 0, fieldOrder: "fixed", keyOrder: "none" },
+  },
+  {
+    code: "MISSING_FIELD",
+    ruleId: "RR3-SHAPE-002",
+    fields: expectedRequestFields,
+    relatedFieldMode: "same_as_field",
+    relatedFields: null,
+    offendingKeyMode: "null",
+    canonicalPriority: {
+      phase: 1,
+      fieldOrder: "request_field_order",
+      keyOrder: "none",
+    },
+  },
+  {
+    code: "COUNT_NOT_INTEGER",
+    ruleId: "RR3-SCALAR-001",
+    fields: expectedCountFields,
+    relatedFieldMode: "same_as_field",
+    relatedFields: null,
+    offendingKeyMode: "null",
+    canonicalPriority: {
+      phase: 2,
+      fieldOrder: "request_field_order",
+      keyOrder: "none",
+    },
+  },
+  {
+    code: "COUNT_OUT_OF_RANGE",
+    ruleId: "RR3-SCALAR-002",
+    fields: expectedCountFields,
+    relatedFieldMode: "same_as_field",
+    relatedFields: null,
+    offendingKeyMode: "null",
+    canonicalPriority: {
+      phase: 2,
+      fieldOrder: "request_field_order",
+      keyOrder: "none",
+    },
+  },
+  {
+    code: "UNSUPPORTED_TIME_WINDOW",
+    ruleId: "RR3-SCALAR-003",
+    fields: ["arrivalWindow", "departureWindow"],
+    relatedFieldMode: "same_as_field",
+    relatedFields: null,
+    offendingKeyMode: "null",
+    canonicalPriority: {
+      phase: 2,
+      fieldOrder: "request_field_order",
+      keyOrder: "none",
+    },
+  },
+  {
+    code: "UNSUPPORTED_PACE",
+    ruleId: "RR3-SCALAR-004",
+    fields: ["travellerPace"],
+    relatedFieldMode: "same_as_field",
+    relatedFields: null,
+    offendingKeyMode: "null",
+    canonicalPriority: {
+      phase: 2,
+      fieldOrder: "request_field_order",
+      keyOrder: "none",
+    },
+  },
+  {
+    code: "EXTRA_FIELD",
+    ruleId: "RR3-SHAPE-003",
+    fields: ["$request"],
+    relatedFieldMode: "fixed",
+    relatedFields: [],
+    offendingKeyMode: "canonical_extra_key",
+    canonicalPriority: {
+      phase: 3,
+      fieldOrder: "fixed",
+      keyOrder:
+        "string_code_point_then_symbol_description_then_original_index",
+    },
+  },
+  {
+    code: "RELATIONAL_COUNT_CONFLICT",
+    ruleId: "RR3-RELATION-001",
+    fields: ["crossCityMoves"],
+    relatedFieldMode: "fixed",
+    relatedFields: ["totalNights", "crossCityMoves"],
+    offendingKeyMode: "null",
+    canonicalPriority: { phase: 4, fieldOrder: "fixed", keyOrder: "none" },
+  },
+  {
+    code: "RELATIONAL_COUNT_CONFLICT",
+    ruleId: "RR3-RELATION-002",
+    fields: ["hotelChanges"],
+    relatedFieldMode: "fixed",
+    relatedFields: ["totalNights", "crossCityMoves", "hotelChanges"],
+    offendingKeyMode: "null",
+    canonicalPriority: { phase: 5, fieldOrder: "fixed", keyOrder: "none" },
+  },
+  {
+    code: "EVENT_TOPOLOGY_OVERFLOW",
+    ruleId: "RR3-TOPOLOGY-003",
+    fields: ["airportStationTransfers"],
+    relatedFieldMode: "fixed",
+    relatedFields: ["totalNights", "airportStationTransfers"],
+    offendingKeyMode: "null",
+    canonicalPriority: { phase: 6, fieldOrder: "fixed", keyOrder: "none" },
+  },
+];
+
+const expectedSchemaValidationErrorOwnership =
+  expectedValidationErrorOwnership.map(
+    ({ canonicalPriority: _canonicalPriority, ...ownership }) => ownership,
+  );
+
+const expectedValidationCodes = [
+  "REQUEST_NOT_PLAIN_OBJECT",
+  "MISSING_FIELD",
+  "EXTRA_FIELD",
+  "COUNT_NOT_INTEGER",
+  "COUNT_OUT_OF_RANGE",
+  "UNSUPPORTED_TIME_WINDOW",
+  "UNSUPPORTED_PACE",
+  "RELATIONAL_COUNT_CONFLICT",
+  "EVENT_TOPOLOGY_OVERFLOW",
+];
+
+const expectedRelationalRules = [
+  {
+    ruleId: "RR3-RELATION-001",
+    predicate: "crossCityMoves > totalNights - 1",
+    code: "RELATIONAL_COUNT_CONFLICT",
+    field: "crossCityMoves",
+    relatedFields: ["totalNights", "crossCityMoves"],
+  },
+  {
+    ruleId: "RR3-RELATION-002",
+    predicate:
+      "hotelChanges > 0 and crossCityMoves + hotelChanges > totalNights - 1",
+    code: "RELATIONAL_COUNT_CONFLICT",
+    field: "hotelChanges",
+    relatedFields: ["totalNights", "crossCityMoves", "hotelChanges"],
+  },
+  {
+    ruleId: "RR3-TOPOLOGY-003",
+    predicate: "airportStationTransfers > totalNights + 1",
+    code: "EVENT_TOPOLOGY_OVERFLOW",
+    field: "airportStationTransfers",
+    relatedFields: ["totalNights", "airportStationTransfers"],
+  },
+];
+
+const expectedTriggerStateSignature = {
+  definition: "ordered Boolean vector across canonical feasible placements",
+  encoding: "<length>:<0-or-1 at each canonical placement index>",
+  differentWhen: "length or any placement-index value differs",
+  sortingAllowed: false,
+  summaryReductionAllowed: false,
+};
+
+const expectedUncertaintyCodes = [
+  "INPUT_VALUE_UNKNOWN",
+  "RELATIONAL_DOMAIN_FILTERED",
+  "EVENT_PLACEMENT_UNSPECIFIED",
+  "TRIGGER_EVALUATION_BLOCKED_BY_POLICY",
+];
+
+const expectedTerminalUncertaintyContracts = [
+  {
+    inputState: "fully_known",
+    uncertaintyState: "none",
+    terminalState: "policy_pending_fully_known_unique_placement",
+    uncertaintyDefinitions: [
+      ["TriggerEvaluationBlockedUncertainty"],
+    ],
+  },
+  {
+    inputState: "fully_known",
+    uncertaintyState: "placement_unresolved",
+    terminalState: "policy_pending_fully_known_placement_unresolved",
+    uncertaintyDefinitions: [
+      [
+        "EventPlacementUnspecifiedUncertainty",
+        "TriggerEvaluationBlockedUncertainty",
+      ],
+    ],
+  },
+  {
+    inputState: "contains_unknown",
+    uncertaintyState: "input_unresolved",
+    terminalState: "policy_pending_input_unresolved",
+    uncertaintyDefinitions: [
+      [
+        "InputValueUnknownUncertainty",
+        "TriggerEvaluationBlockedUncertainty",
+      ],
+      [
+        "InputValueUnknownUncertainty",
+        "RelationalDomainFilteredUncertainty",
+        "TriggerEvaluationBlockedUncertainty",
+      ],
+    ],
+  },
+  {
+    inputState: "contains_unknown",
+    uncertaintyState: "input_and_placement_unresolved",
+    terminalState: "policy_pending_input_and_placement_unresolved",
+    uncertaintyDefinitions: [
+      [
+        "InputValueUnknownUncertainty",
+        "EventPlacementUnspecifiedUncertainty",
+        "TriggerEvaluationBlockedUncertainty",
+      ],
+      [
+        "InputValueUnknownUncertainty",
+        "RelationalDomainFilteredUncertainty",
+        "EventPlacementUnspecifiedUncertainty",
+        "TriggerEvaluationBlockedUncertainty",
+      ],
+    ],
+  },
+];
+
+const expectedTriggerWitnessFixtures = [
+  {
+    id: "WITNESS-NONE",
+    assertionKind: "trigger_witness_basis",
+    hasInputUncertainty: false,
+    witnessMatrix: [[false]],
+    expected: { emit: false, basis: null, sources: [] },
+  },
+  {
+    id: "WITNESS-CONFIRMED",
+    assertionKind: "trigger_witness_basis",
+    hasInputUncertainty: false,
+    witnessMatrix: [[true, true]],
+    expected: { emit: true, basis: "confirmed", sources: [] },
+  },
+  {
+    id: "WITNESS-FULLY-KNOWN-PLACEMENT-POSSIBLE",
+    assertionKind: "trigger_witness_basis",
+    sourceScenarioId: "UNC-FULLY-KNOWN-PLACEMENT-UNRESOLVED",
+    hasInputUncertainty: false,
+    witnessMatrix: [[false, true]],
+    expected: {
+      emit: true,
+      basis: "possible_feasible_extreme",
+      sources: ["event_placement"],
+    },
+  },
+  {
+    id: "WITNESS-INPUT-POSSIBLE",
+    assertionKind: "trigger_witness_basis",
+    hasInputUncertainty: true,
+    witnessMatrix: [[false], [true]],
+    expected: {
+      emit: true,
+      basis: "possible_feasible_extreme",
+      sources: ["input_domain"],
+    },
+  },
+  {
+    id: "WITNESS-INPUT-AND-PLACEMENT-POSSIBLE",
+    assertionKind: "trigger_witness_basis",
+    hasInputUncertainty: true,
+    witnessMatrix: [[false, true], [true, true]],
+    expected: {
+      emit: true,
+      basis: "possible_feasible_extreme",
+      sources: ["input_domain", "event_placement"],
+    },
+  },
+  {
+    id: "WITNESS-ASYMMETRIC-STATE-SIGNATURE",
+    assertionKind: "trigger_witness_basis",
+    hasInputUncertainty: true,
+    witnessMatrix: [[false, true], [true, false]],
+    expected: {
+      emit: true,
+      basis: "possible_feasible_extreme",
+      sources: ["input_domain", "event_placement"],
+    },
+  },
+];
+
+const expectedMonotonicityCatalog = [
+  {
+    axis: "arrivalWindow",
+    sequence: ["before_09", "09_12", "12_15", "15_18", "after_18"],
+    capacityDirection: "non_increasing",
+  },
+  {
+    axis: "departureWindow",
+    sequence: ["before_09", "09_12", "12_15", "15_18", "after_18"],
+    capacityDirection: "non_decreasing",
+  },
+  {
+    axis: "travellerPace",
+    sequence: ["fast", "balanced", "slow"],
+    capacityDirection: "non_increasing",
+    burdenDirection: "non_decreasing",
+  },
+  {
+    axis: "crossCityMoves",
+    sequence: "increasing count",
+    capacityDirection: "non_increasing",
+    burdenDirection: "non_decreasing",
+  },
+  {
+    axis: "airportStationTransfers",
+    sequence: "increasing count",
+    capacityDirection: "non_increasing",
+    burdenDirection: "non_decreasing",
+  },
+  {
+    axis: "hotelChanges",
+    sequence: "increasing count",
+    capacityDirection: "non_increasing",
+    burdenDirection: "non_decreasing",
+  },
+];
+
+const expectedValidMonotonicFixture = {
+  id: "MONO-ORDINAL-VALID",
+  assertionKind: "monotonicity_contract",
+  notPolicyPack: true,
+  expectedValid: true,
+  capacity: {
+    arrivalWindow: [5, 4, 3, 2, 1],
+    departureWindow: [1, 2, 3, 4, 5],
+    travellerPace: [3, 2, 1],
+    crossCityMoves: [3, 2, 1],
+    airportStationTransfers: [3, 2, 1],
+    hotelChanges: [3, 2, 1],
+  },
+  burden: {
+    travellerPace: [1, 2, 3],
+    crossCityMoves: [1, 2, 3],
+    airportStationTransfers: [1, 2, 3],
+    hotelChanges: [1, 2, 3],
+  },
+};
+
+const expectedNegativeMonotonicContracts = [
+  [
+    "MONO-ARRIVAL-REVERSED",
+    "arrivalWindow",
+    "capacity",
+    "non_increasing",
+    [5, 4, 6, 2, 1],
+  ],
+  [
+    "MONO-DEPARTURE-REVERSED",
+    "departureWindow",
+    "capacity",
+    "non_decreasing",
+    [1, 2, 0, 4, 5],
+  ],
+  [
+    "MONO-PACE-CAPACITY-REVERSED",
+    "travellerPace",
+    "capacity",
+    "non_increasing",
+    [3, 4, 1],
+  ],
+  [
+    "MONO-PACE-BURDEN-REVERSED",
+    "travellerPace",
+    "burden",
+    "non_decreasing",
+    [1, 0, 3],
+  ],
+  [
+    "MONO-CROSS-CITY-CAPACITY-REVERSED",
+    "crossCityMoves",
+    "capacity",
+    "non_increasing",
+    [3, 4, 1],
+  ],
+  [
+    "MONO-CROSS-CITY-BURDEN-REVERSED",
+    "crossCityMoves",
+    "burden",
+    "non_decreasing",
+    [1, 0, 3],
+  ],
+  [
+    "MONO-TRANSFER-CAPACITY-REVERSED",
+    "airportStationTransfers",
+    "capacity",
+    "non_increasing",
+    [3, 4, 1],
+  ],
+  [
+    "MONO-TRANSFER-BURDEN-REVERSED",
+    "airportStationTransfers",
+    "burden",
+    "non_decreasing",
+    [1, 0, 3],
+  ],
+  [
+    "MONO-HOTEL-CAPACITY-REVERSED",
+    "hotelChanges",
+    "capacity",
+    "non_increasing",
+    [3, 4, 1],
+  ],
+  [
+    "MONO-HOTEL-BURDEN-REVERSED",
+    "hotelChanges",
+    "burden",
+    "non_decreasing",
+    [1, 0, 3],
+  ],
+].map(([id, axis, metric, direction, values]) => ({
+  id,
+  axis,
+  metric,
+  direction,
+  mutateFrom: "MONO-ORDINAL-VALID",
+  mutation: { metric, axis, values },
+  expectedValid: false,
+  expectedViolation: `${axis}:${metric}:${direction}`,
+}));
 const requiredFixtureIds = [
   "REQ-PLAIN-VALID",
   "REQ-NULL-PROTOTYPE-VALID",
@@ -57,6 +723,7 @@ const requiredFixtureIds = [
   "DRAFT-POLICY-PENDING-VALID",
   "DRAFT-INVALID-OUTCOME-VALID",
   "DRAFT-NUMERIC-RESULT-REJECTED",
+  "DRAFT-INVALID-NUMERIC-RESULT-REJECTED",
   "DRAFT-OBJECT-RESULT-REJECTED",
   "DRAFT-NONNULL-POLICY-REJECTED",
   "DRAFT-OK-STATUS-REJECTED",
@@ -70,6 +737,7 @@ const requiredFixtureIds = [
   "DRAFT-UNCERTAINTY-DUPLICATE-CODE-REJECTED",
   "DRAFT-PLACEMENT-RECORD-MISSING-REJECTED",
   "DRAFT-PLACEMENT-SOURCE-INCOMPLETE-REJECTED",
+  "DRAFT-ERROR-ORDER-REVERSED-REJECTED",
   "DRAFT-V2-NUMERIC-BODY-REJECTED",
   "MATRIX-COUNT-INVALID",
   "MATRIX-TIME-WINDOW-INVALID",
@@ -81,6 +749,7 @@ const requiredFixtureIds = [
   "WITNESS-FULLY-KNOWN-PLACEMENT-POSSIBLE",
   "WITNESS-INPUT-POSSIBLE",
   "WITNESS-INPUT-AND-PLACEMENT-POSSIBLE",
+  "WITNESS-ASYMMETRIC-STATE-SIGNATURE",
   "MONO-ORDINAL-VALID",
   "MONO-ARRIVAL-REVERSED",
   "MONO-DEPARTURE-REVERSED",
@@ -830,6 +1499,12 @@ function containsNumber(value) {
   return false;
 }
 
+function triggerStateSignature(row) {
+  assert.ok(row.length > 0);
+  assert.ok(row.every((value) => typeof value === "boolean"));
+  return `${row.length}:${row.map((value) => (value ? "1" : "0")).join("")}`;
+}
+
 function classifyTriggerWitnesses(witnessMatrix, hasInputUncertainty) {
   assert.ok(witnessMatrix.length > 0);
   assert.ok(witnessMatrix.every((row) => row.length > 0));
@@ -843,9 +1518,7 @@ function classifyTriggerWitnesses(witnessMatrix, hasInputUncertainty) {
   const placementVaries = witnessMatrix.some(
     (row) => row.some(Boolean) && row.some((value) => !value),
   );
-  const stateSignatures = witnessMatrix.map(
-    (row) => `${row.some(Boolean)}:${row.every(Boolean)}`,
-  );
+  const stateSignatures = witnessMatrix.map(triggerStateSignature);
   const inputVaries =
     hasInputUncertainty && new Set(stateSignatures).size > 1;
   const sources = [];
@@ -978,6 +1651,11 @@ function requestFactory(fixture) {
       return buildDraftOutcome({ ...base, totalNights: 0 });
     case "policy_pending_numeric_result":
       return { ...buildDraftOutcome(base), result: 1 };
+    case "invalid_numeric_result":
+      return {
+        ...buildDraftOutcome({ ...base, totalNights: 0 }),
+        result: 1,
+      };
     case "policy_pending_object_result":
       return { ...buildDraftOutcome(base), result: { min: 0, max: 1 } };
     case "policy_pending_nonnull_policy":
@@ -1052,6 +1730,17 @@ function requestFactory(fixture) {
       placement.sourceFields = ["totalNights"];
       return output;
     }
+    case "invalid_reversed_canonical_errors": {
+      const output = buildDraftOutcome({
+        ...base,
+        totalNights: 3,
+        crossCityMoves: 3,
+        airportStationTransfers: 5,
+        hotelChanges: 1,
+      });
+      output.errors.reverse();
+      return output;
+    }
     case "v2_numeric_result":
       return {
         ...buildDraftOutcome(base),
@@ -1072,17 +1761,49 @@ function errorSignature(item) {
   return `${item.field}:${item.code}${suffix}`;
 }
 
+const requestSchemaAcceptsSemanticInvalid = new Set([
+  "REQ-SYMBOL-KEY-REJECTED",
+  "REL-CROSS-CITY-OWNER",
+  "REL-TRANSFER-OWNER",
+  "REL-MULTI-ERROR-CANONICAL",
+]);
+
+function assertValidInvalidOutcomeFromRequest(value, expectedErrors, label) {
+  const output = buildDraftOutcome(value);
+  assert.equal(output.status, "invalid", `${label}/status`);
+  assert.deepEqual(output.errors, expectedErrors, `${label}/errors`);
+  assertSchemaResult(
+    standardValidators.outcome,
+    output,
+    true,
+    `${label}/outcome-schema`,
+  );
+  assert.equal(validateDraftOutcome(output), true, `${label}/outcome-semantic`);
+}
+
 function executeScenario(fixture) {
   const value = requestFactory(fixture);
   switch (fixture.assertionKind) {
     case "request_valid": {
       const validation = validateRequest(value);
       assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+      assertSchemaResult(
+        standardValidators.request,
+        value,
+        true,
+        `${fixture.id}/request-schema`,
+      );
       return;
     }
     case "request_invalid": {
       const validation = validateRequest(value);
       assert.equal(validation.valid, false);
+      assertSchemaResult(
+        standardValidators.request,
+        value,
+        requestSchemaAcceptsSemanticInvalid.has(fixture.id),
+        `${fixture.id}/request-schema`,
+      );
       if (fixture.expectedFirstCode) {
         assert.equal(validation.errors[0].code, fixture.expectedFirstCode);
       }
@@ -1095,12 +1816,31 @@ function executeScenario(fixture) {
           fixture.expectedErrorSignature,
         );
       }
+      assertValidInvalidOutcomeFromRequest(
+        value,
+        validation.errors,
+        fixture.id,
+      );
       return;
     }
     case "invalid_outcome": {
+      const validation = validateRequest(value);
+      assert.equal(validation.valid, false);
+      assertSchemaResult(
+        standardValidators.request,
+        value,
+        false,
+        `${fixture.id}/request-schema`,
+      );
       const output = buildDraftOutcome(value);
       assert.equal(output.status, "invalid");
       assert.equal(validateDraftOutcome(output), true);
+      assertSchemaResult(
+        standardValidators.outcome,
+        output,
+        true,
+        `${fixture.id}/outcome-schema`,
+      );
       assert.deepEqual(
         output.errors.map(errorSignature),
         fixture.expectedErrorSignature,
@@ -1108,8 +1848,20 @@ function executeScenario(fixture) {
       return;
     }
     case "draft_outcome": {
+      assertSchemaResult(
+        standardValidators.request,
+        value,
+        true,
+        `${fixture.id}/request-schema`,
+      );
       const output = buildDraftOutcome(value);
       assert.equal(validateDraftOutcome(output), true);
+      assertSchemaResult(
+        standardValidators.outcome,
+        output,
+        true,
+        `${fixture.id}/outcome-schema`,
+      );
       assert.equal(output.terminalState, fixture.expectedTerminalState);
       assert.equal(output.uncertaintyState, fixture.expectedUncertaintyState);
       assert.deepEqual(
@@ -1131,9 +1883,21 @@ function executeScenario(fixture) {
       return;
     }
     case "assumption_bindings": {
+      assertSchemaResult(
+        standardValidators.request,
+        value,
+        true,
+        `${fixture.id}/request-schema`,
+      );
       const output = buildDraftOutcome(value);
-      assert.deepEqual(output.assumptions, fixtures.expectedAssumptions);
-      assert.deepEqual(assumptionRecords(), fixtures.expectedAssumptions);
+      assertSchemaResult(
+        standardValidators.outcome,
+        output,
+        true,
+        `${fixture.id}/outcome-schema`,
+      );
+      assert.deepEqual(output.assumptions, expectedAssumptionRecords);
+      assert.deepEqual(assumptionRecords(), expectedAssumptionRecords);
       for (const item of output.assumptions) {
         const definition = catalog.assumptions.find(({ id }) => id === item.id);
         assert.ok(definition);
@@ -1144,8 +1908,20 @@ function executeScenario(fixture) {
       return;
     }
     case "deterministic_outcome": {
+      assertSchemaResult(
+        standardValidators.request,
+        value,
+        true,
+        `${fixture.id}/request-schema`,
+      );
       const first = buildDraftOutcome(value);
       const second = buildDraftOutcome(clone(value));
+      assertSchemaResult(
+        standardValidators.outcome,
+        first,
+        true,
+        `${fixture.id}/outcome-schema`,
+      );
       assert.equal(JSON.stringify(first), JSON.stringify(second));
       assert.equal(
         new Set(first.uncertainties.map(({ code }) => code)).size,
@@ -1158,15 +1934,53 @@ function executeScenario(fixture) {
       return;
     }
     case "draft_schema_valid":
+      assertSchemaResult(
+        standardValidators.outcome,
+        value,
+        true,
+        `${fixture.id}/outcome-schema`,
+      );
       assert.equal(validateDraftOutcome(value), true);
       assert.equal(containsNumber(value), false);
       return;
     case "draft_schema_invalid":
+      assertSchemaResult(
+        standardValidators.outcome,
+        value,
+        false,
+        `${fixture.id}/outcome-schema`,
+      );
+      assert.equal(validateDraftOutcome(value), false);
+      return;
+    case "draft_semantic_invalid_schema_valid":
+      assertSchemaResult(
+        standardValidators.outcome,
+        value,
+        true,
+        `${fixture.id}/outcome-schema`,
+      );
       assert.equal(validateDraftOutcome(value), false);
       return;
     default:
       throw new Error(`unknown assertion kind ${fixture.assertionKind}`);
   }
+}
+
+function expectedOwnedError(code, field, offendingKey = null) {
+  const owner = expectedValidationErrorOwnership.find(
+    (item) => item.code === code && item.fields.includes(field),
+  );
+  assert.ok(owner, `missing independent error owner for ${code}/${field}`);
+  return {
+    code,
+    field,
+    ruleId: owner.ruleId,
+    relatedFields:
+      owner.relatedFieldMode === "same_as_field"
+        ? [field]
+        : clone(owner.relatedFields),
+    offendingKey,
+  };
 }
 
 function executeMatrix(matrix) {
@@ -1184,8 +1998,19 @@ function executeMatrix(matrix) {
             factory === "negative_one" || factory === "above_max"
               ? "COUNT_OUT_OF_RANGE"
               : "COUNT_NOT_INTEGER";
-          assert.equal(validation.errors[0].field, field);
-          assert.equal(validation.errors[0].code, expectedCode);
+          const expectedError = expectedOwnedError(expectedCode, field);
+          assert.deepEqual(validation.errors, [expectedError]);
+          assertSchemaResult(
+            standardValidators.request,
+            input,
+            false,
+            `${matrix.id}/${field}/${factory}/request-schema`,
+          );
+          assertValidInvalidOutcomeFromRequest(
+            input,
+            [expectedError],
+            `${matrix.id}/${field}/${factory}`,
+          );
           count += 1;
         }
       }
@@ -1201,8 +2026,19 @@ function executeMatrix(matrix) {
           const validation = validateRequest(input);
           assert.equal(validation.valid, false, `${field}/${factory}`);
           assert.equal(validation.errors.length, 1, `${field}/${factory}`);
-          assert.equal(validation.errors[0].field, field);
-          assert.equal(validation.errors[0].code, matrix.expectedCode);
+          const expectedError = expectedOwnedError(matrix.expectedCode, field);
+          assert.deepEqual(validation.errors, [expectedError]);
+          assertSchemaResult(
+            standardValidators.request,
+            input,
+            false,
+            `${matrix.id}/${field}/${factory}/request-schema`,
+          );
+          assertValidInvalidOutcomeFromRequest(
+            input,
+            [expectedError],
+            `${matrix.id}/${field}/${factory}`,
+          );
           count += 1;
         }
       }
@@ -1215,9 +2051,19 @@ function executeMatrix(matrix) {
         const input = clone(fixtures.baseRequest);
         delete input[field];
         const validation = validateRequest(input);
-        assert.deepEqual(validation.errors, [
-          error("MISSING_FIELD", field, "RR3-SHAPE-002", [field]),
-        ]);
+        const expectedError = expectedOwnedError("MISSING_FIELD", field);
+        assert.deepEqual(validation.errors, [expectedError]);
+        assertSchemaResult(
+          standardValidators.request,
+          input,
+          false,
+          `${matrix.id}/${field}/request-schema`,
+        );
+        assertValidInvalidOutcomeFromRequest(
+          input,
+          [expectedError],
+          `${matrix.id}/${field}`,
+        );
         count += 1;
       }
       assert.equal(count, matrix.expectedCaseCount);
@@ -1226,15 +2072,24 @@ function executeMatrix(matrix) {
     case "nonplain_root_matrix": {
       let count = 0;
       for (const factory of matrix.valueFactories) {
-        const validation = validateRequest(valueFactory(factory, "$request"));
-        assert.deepEqual(validation.errors, [
-          error(
-            "REQUEST_NOT_PLAIN_OBJECT",
-            "$request",
-            "RR3-SHAPE-001",
-            ["$request"],
-          ),
-        ]);
+        const input = valueFactory(factory, "$request");
+        const validation = validateRequest(input);
+        const expectedError = expectedOwnedError(
+          "REQUEST_NOT_PLAIN_OBJECT",
+          "$request",
+        );
+        assert.deepEqual(validation.errors, [expectedError]);
+        assertSchemaResult(
+          standardValidators.request,
+          input,
+          false,
+          `${matrix.id}/${factory}/request-schema`,
+        );
+        assertValidInvalidOutcomeFromRequest(
+          input,
+          [expectedError],
+          `${matrix.id}/${factory}`,
+        );
         count += 1;
       }
       assert.equal(count, matrix.expectedCaseCount);
@@ -1257,6 +2112,900 @@ function monotonicityCandidate(fixture) {
   }
   return candidate;
 }
+
+function schemaAssumptionRecords(schema) {
+  return schema.$defs.Assumptions.prefixItems.map((item) => {
+    const properties = item.allOf[1].properties;
+    return {
+      id: properties.id.const,
+      sourceFields: properties.sourceFields.const,
+      ruleId: properties.ruleId.const,
+      targetContracts: properties.targetContracts.const,
+    };
+  });
+}
+
+function schemaUncertaintyBindings(schema) {
+  const records = Object.entries(schema.$defs)
+    .filter(
+      ([, definition]) =>
+        definition?.allOf?.[0]?.$ref === "#/$defs/BaseUncertaintyRecord" &&
+        definition?.allOf?.[1]?.properties?.code?.const,
+    )
+    .map(([definition, contract]) => {
+    const properties = contract.allOf[1].properties;
+    let sourceContract;
+    if (Array.isArray(properties.sourceFields.enum)) {
+      sourceContract = {
+        kind: "exact_ordered_arrays",
+        arrays: properties.sourceFields.enum,
+      };
+    } else if (Object.hasOwn(properties.sourceFields, "const")) {
+      sourceContract = {
+        kind: "exact",
+        fields: properties.sourceFields.const,
+      };
+    } else {
+      sourceContract = {
+        kind: "ordered_unique_subset",
+        minimumItems: properties.sourceFields.minItems,
+        fieldOrder: properties.sourceFields.items.enum,
+      };
+    }
+    return {
+      definition,
+      code: properties.code.const,
+      ruleId: properties.ruleId.const,
+      targetContracts: properties.targetContracts.const,
+      sourceContract,
+    };
+  });
+
+  const expectedOrder = new Map(
+    expectedSchemaUncertaintyBindings.map(({ code }, index) => [code, index]),
+  );
+  return records.sort((left, right) => {
+    const leftOrder = expectedOrder.get(left.code);
+    const rightOrder = expectedOrder.get(right.code);
+    if (leftOrder !== undefined || rightOrder !== undefined) {
+      return (
+        (leftOrder ?? expectedSchemaUncertaintyBindings.length) -
+        (rightOrder ?? expectedSchemaUncertaintyBindings.length)
+      );
+    }
+    return compareCodePoint(JSON.stringify(left), JSON.stringify(right));
+  });
+}
+
+function schemaTerminalUncertaintyContracts(schema) {
+  const definitionName = (reference) =>
+    reference.$ref.slice("#/$defs/".length);
+  const resolveSequence = (reference) => {
+    const definition = schema.$defs[definitionName(reference)];
+    return definition.prefixItems.map(definitionName);
+  };
+  const resolveAlternatives = (contract) => {
+    if (contract.$ref) return [resolveSequence(contract)];
+    return contract.oneOf.map(resolveSequence);
+  };
+  return schema.$defs.PolicyPendingOutcome.allOf[0].oneOf.map((arm) => {
+    const properties = arm.properties;
+    return {
+      inputState: properties.inputState.const,
+      uncertaintyState: properties.uncertaintyState.const,
+      terminalState: properties.terminalState.const,
+      uncertaintyDefinitions: resolveAlternatives(properties.uncertainties),
+    };
+  });
+}
+
+function schemaValidationErrorOwnership(schema) {
+  const records = [];
+  const normalizeOffendingKeyMode = (properties) => {
+    const contract = properties.offendingKey;
+    if (contract?.type === "null") return "null";
+    if (typeof contract?.pattern === "string") return "canonical_extra_key";
+    return "unrecognized";
+  };
+  const appendRecord = ({ code, ruleId, fields, relatedFields, offendingKeyMode }) => {
+    const fieldOwnedFamilies = new Set([
+      "MISSING_FIELD",
+      "COUNT_NOT_INTEGER",
+      "COUNT_OUT_OF_RANGE",
+      "UNSUPPORTED_TIME_WINDOW",
+      "UNSUPPORTED_PACE",
+    ]);
+    const sameAsField =
+      fieldOwnedFamilies.has(code) &&
+      fields.every((field, index) =>
+        isDeepStrictEqual(relatedFields[index], [field]),
+      );
+    records.push({
+      code,
+      ruleId,
+      fields,
+      relatedFieldMode: sameAsField ? "same_as_field" : "fixed",
+      relatedFields: sameAsField ? null : relatedFields[0],
+      offendingKeyMode,
+    });
+  };
+
+  for (const arm of schema.$defs.ValidationError.oneOf) {
+    const contract = arm.allOf[1];
+    if (Array.isArray(contract.allOf)) {
+      const codeVariants = contract.allOf[0].oneOf;
+      const fieldVariants = contract.allOf[1].oneOf;
+      for (const codeVariant of codeVariants) {
+        appendRecord({
+          code: codeVariant.properties.code.const,
+          ruleId: codeVariant.properties.ruleId.const,
+          fields: fieldVariants.map(({ properties }) => properties.field.const),
+          relatedFields: fieldVariants.map(
+            ({ properties }) => properties.relatedFields.const,
+          ),
+          offendingKeyMode: normalizeOffendingKeyMode(contract.properties),
+        });
+      }
+      continue;
+    }
+
+    const properties = contract.properties;
+    const fieldVariants = contract.oneOf;
+    const fields = fieldVariants
+      ? fieldVariants.map((variant) => variant.properties.field.const)
+      : [properties.field.const];
+    const relatedFields = fieldVariants
+      ? fieldVariants.map((variant) => variant.properties.relatedFields.const)
+      : [properties.relatedFields.const];
+    appendRecord({
+      code: properties.code.const,
+      ruleId: properties.ruleId.const,
+      fields,
+      relatedFields,
+      offendingKeyMode: normalizeOffendingKeyMode(properties),
+    });
+  }
+
+  const identity = (record) =>
+    `${record.code}:${JSON.stringify(record.fields)}`;
+  const expectedOrder = new Map(
+    expectedSchemaValidationErrorOwnership.map((record, index) => [
+      identity(record),
+      index,
+    ]),
+  );
+  return records.sort((left, right) => {
+    const leftOrder = expectedOrder.get(identity(left));
+    const rightOrder = expectedOrder.get(identity(right));
+    if (leftOrder !== undefined || rightOrder !== undefined) {
+      return (
+        (leftOrder ?? expectedSchemaValidationErrorOwnership.length) -
+        (rightOrder ?? expectedSchemaValidationErrorOwnership.length)
+      );
+    }
+    return compareCodePoint(JSON.stringify(left), JSON.stringify(right));
+  });
+}
+
+function canonicalInvalidOutcome(errors) {
+  return {
+    status: "invalid",
+    terminalState: "validation_failed",
+    modelVersion,
+    policyPackVersion: null,
+    terminalReason: "REQUEST_INVALID",
+    decisionUseful: false,
+    errors,
+    inputState: null,
+    uncertaintyState: null,
+    uncertainties: [],
+    assumptions: [],
+    result: null,
+    publicImplementationAuthorized: false,
+    indexablePageAuthorized: false,
+  };
+}
+
+function expectedCanonicalErrorRecords() {
+  return expectedValidationErrorOwnership.flatMap((owner) =>
+    owner.fields.map((field) => ({
+      code: owner.code,
+      field,
+      ruleId: owner.ruleId,
+      relatedFields:
+        owner.relatedFieldMode === "same_as_field"
+          ? [field]
+          : clone(owner.relatedFields),
+      offendingKey:
+        owner.offendingKeyMode === "canonical_extra_key"
+          ? 'string:"audit"'
+          : null,
+    })),
+  );
+}
+
+function negativeMonotonicProjection(fixture) {
+  return {
+    id: fixture.id,
+    axis: fixture.axis,
+    metric: fixture.metric,
+    direction: fixture.direction,
+    mutateFrom: fixture.mutateFrom,
+    mutation: fixture.mutation,
+    expectedValid: fixture.expectedValid,
+    expectedViolation: fixture.expectedViolation,
+  };
+}
+
+function collectArtifactDrifts(bundle) {
+  const drifts = [];
+  const check = (code, actual, expected) => {
+    if (!isDeepStrictEqual(actual, expected)) drifts.push(code);
+  };
+
+  check("REQUEST_FIELD_ORDER_DRIFT", bundle.catalog.requestFields, expectedRequestFields);
+  check("COUNT_FIELD_ORDER_DRIFT", bundle.catalog.countFields, expectedCountFields);
+  check(
+    "VALIDATION_PHASE_PRIORITY_DRIFT",
+    bundle.catalog.validationPhases,
+    expectedValidationPhases,
+  );
+  check(
+    "CATALOG_ASSUMPTION_OWNERSHIP_DRIFT",
+    bundle.catalog.assumptions,
+    expectedAssumptionCatalog,
+  );
+  check(
+    "SCHEMA_ASSUMPTION_OWNERSHIP_DRIFT",
+    schemaAssumptionRecords(bundle.draftOutcomeSchema),
+    expectedAssumptionRecords,
+  );
+  check(
+    "FIXTURE_ASSUMPTION_OWNERSHIP_DRIFT",
+    bundle.fixtures.expectedAssumptions,
+    expectedAssumptionRecords,
+  );
+  check(
+    "CATALOG_UNCERTAINTY_OWNERSHIP_DRIFT",
+    bundle.catalog.uncertainties,
+    expectedUncertaintyOwnership,
+  );
+  const schemaUncertaintyInventory = schemaUncertaintyBindings(
+    bundle.draftOutcomeSchema,
+  );
+  check(
+    "SCHEMA_UNCERTAINTY_OWNERSHIP_DRIFT",
+    schemaUncertaintyInventory,
+    expectedSchemaUncertaintyBindings,
+  );
+  if (
+    new Set(schemaUncertaintyInventory.map(({ code }) => code)).size !==
+    schemaUncertaintyInventory.length
+  ) {
+    drifts.push("SCHEMA_UNCERTAINTY_OWNERSHIP_DRIFT");
+  }
+  check(
+    "SCHEMA_UNCERTAINTY_OWNERSHIP_DRIFT",
+    bundle.draftOutcomeSchema.$defs.UncertaintyCode.enum,
+    expectedUncertaintyCodes,
+  );
+  check(
+    "SCHEMA_UNCERTAINTY_OWNERSHIP_DRIFT",
+    schemaTerminalUncertaintyContracts(bundle.draftOutcomeSchema),
+    expectedTerminalUncertaintyContracts,
+  );
+  check(
+    "CATALOG_ERROR_OWNERSHIP_DRIFT",
+    bundle.catalog.validationErrorOwnership,
+    expectedValidationErrorOwnership,
+  );
+  check(
+    "SCHEMA_ERROR_OWNERSHIP_DRIFT",
+    bundle.draftOutcomeSchema.$defs.ValidationCode.enum,
+    expectedValidationCodes,
+  );
+  try {
+    const schemaErrorInventory = schemaValidationErrorOwnership(
+      bundle.draftOutcomeSchema,
+    );
+    check(
+      "SCHEMA_ERROR_OWNERSHIP_DRIFT",
+      schemaErrorInventory,
+      expectedSchemaValidationErrorOwnership,
+    );
+    const errorIdentities = schemaErrorInventory.map(
+      ({ code, fields }) => `${code}:${JSON.stringify(fields)}`,
+    );
+    if (new Set(errorIdentities).size !== errorIdentities.length) {
+      drifts.push("SCHEMA_ERROR_OWNERSHIP_DRIFT");
+    }
+  } catch {
+    drifts.push("SCHEMA_ERROR_OWNERSHIP_DRIFT");
+  }
+  check(
+    "CATALOG_RELATIONAL_RULE_DRIFT",
+    bundle.catalog.relationalRules,
+    expectedRelationalRules,
+  );
+  check(
+    "TRIGGER_STATE_SIGNATURE_DRIFT",
+    bundle.catalog.triggerStateSignature,
+    expectedTriggerStateSignature,
+  );
+  check(
+    "TRIGGER_WITNESS_FIXTURE_DRIFT",
+    bundle.fixtures.triggerWitnessFixtures,
+    expectedTriggerWitnessFixtures,
+  );
+  check(
+    "MONOTONIC_CATALOG_DRIFT",
+    bundle.catalog.monotonicity,
+    expectedMonotonicityCatalog,
+  );
+  check(
+    "MONOTONIC_VALID_FIXTURE_DRIFT",
+    bundle.fixtures.monotonicityFixtures[0],
+    expectedValidMonotonicFixture,
+  );
+  check(
+    "MONOTONIC_NEGATIVE_FIXTURE_DRIFT",
+    bundle.fixtures.monotonicityFixtures
+      .slice(1)
+      .map(negativeMonotonicProjection),
+    expectedNegativeMonotonicContracts,
+  );
+  check(
+    "REQUEST_PACE_ENUM_DRIFT",
+    bundle.requestSchema.$defs.KnownPace.enum,
+    ["fast", "balanced", "slow", "unknown"],
+  );
+  check(
+    "POLICY_RESULT_CONSTRAINT_DRIFT",
+    bundle.draftOutcomeSchema.$defs.PolicyPendingOutcome.properties.result,
+    { type: "null" },
+  );
+  check(
+    "INVALID_RESULT_CONSTRAINT_DRIFT",
+    bundle.draftOutcomeSchema.$defs.InvalidOutcome.properties.result,
+    { type: "null" },
+  );
+
+  try {
+    const validators = compileStrictSchemas(
+      bundle.requestSchema,
+      bundle.draftOutcomeSchema,
+    );
+    if (
+      expectedCanonicalErrorRecords().some(
+        (record) => !validators.outcome(canonicalInvalidOutcome([record])),
+      )
+    ) {
+      drifts.push("SCHEMA_ERROR_OWNERSHIP_DRIFT");
+    }
+  } catch {
+    drifts.push("SCHEMA_STRICT_COMPILE_DRIFT");
+  }
+
+  return [...new Set(drifts)];
+}
+
+const baselineArtifacts = {
+  requestSchema,
+  draftOutcomeSchema,
+  catalog,
+  fixtures,
+};
+
+function mutatedArtifacts(mutator) {
+  const artifacts = clone(baselineArtifacts);
+  mutator(artifacts);
+  return artifacts;
+}
+
+function assertExactDrifts(artifacts, expectedDrifts, label) {
+  assert.deepEqual(
+    collectArtifactDrifts(artifacts).sort(compareCodePoint),
+    [...expectedDrifts].sort(compareCodePoint),
+    label,
+  );
+}
+
+function collectBuilderErrorDrifts(output, expectedErrors) {
+  return isDeepStrictEqual(output.errors, expectedErrors)
+    ? []
+    : ["BUILDER_ERROR_OWNERSHIP_DRIFT"];
+}
+
+test("independent golden contracts match catalog, schemas, builders, and fixtures", () => {
+  assertExactDrifts(baselineArtifacts, [], "unmodified artifacts must have zero drift");
+  assert.deepEqual(assumptionRecords(), expectedAssumptionRecords);
+  assert.deepEqual(
+    schemaValidationErrorOwnership(draftOutcomeSchema),
+    expectedSchemaValidationErrorOwnership,
+  );
+
+  const expectedUncertaintyRecord = (code, sourceFields) => {
+    const owner = expectedUncertaintyOwnership.find((item) => item.code === code);
+    assert.ok(owner, `missing independent uncertainty owner for ${code}`);
+    return {
+      code,
+      sourceFields,
+      ruleId: owner.ruleId,
+      targetContracts: owner.targetContracts,
+    };
+  };
+  const arrivalUnknown = buildDraftOutcome({
+    ...fixtures.baseRequest,
+    arrivalWindow: "unknown",
+    crossCityMoves: 0,
+    airportStationTransfers: 0,
+    hotelChanges: 0,
+  });
+  assert.deepEqual(arrivalUnknown.uncertainties, [
+    expectedUncertaintyRecord("INPUT_VALUE_UNKNOWN", ["arrivalWindow"]),
+    expectedUncertaintyRecord("TRIGGER_EVALUATION_BLOCKED_BY_POLICY", []),
+  ]);
+  const placementUnknown = buildDraftOutcome({
+    ...fixtures.baseRequest,
+    totalNights: 2,
+    crossCityMoves: 1,
+    airportStationTransfers: 1,
+    hotelChanges: 0,
+  });
+  assert.deepEqual(placementUnknown.uncertainties, [
+    expectedUncertaintyRecord("EVENT_PLACEMENT_UNSPECIFIED", [
+      "totalNights",
+      "crossCityMoves",
+      "airportStationTransfers",
+    ]),
+    expectedUncertaintyRecord("TRIGGER_EVALUATION_BLOCKED_BY_POLICY", []),
+  ]);
+  const filteredUnknown = buildDraftOutcome({
+    ...fixtures.baseRequest,
+    totalNights: 30,
+    crossCityMoves: "unknown",
+    airportStationTransfers: "unknown",
+    hotelChanges: 0,
+  });
+  assert.deepEqual(filteredUnknown.uncertainties, [
+    expectedUncertaintyRecord("INPUT_VALUE_UNKNOWN", [
+      "crossCityMoves",
+      "airportStationTransfers",
+    ]),
+    expectedUncertaintyRecord("RELATIONAL_DOMAIN_FILTERED", [
+      "crossCityMoves",
+    ]),
+    expectedUncertaintyRecord("EVENT_PLACEMENT_UNSPECIFIED", [
+      "totalNights",
+      "crossCityMoves",
+      "airportStationTransfers",
+    ]),
+    expectedUncertaintyRecord("TRIGGER_EVALUATION_BLOCKED_BY_POLICY", []),
+  ]);
+
+  const relationInput = {
+    ...fixtures.baseRequest,
+    totalNights: 3,
+    crossCityMoves: 3,
+    airportStationTransfers: 5,
+    hotelChanges: 1,
+  };
+  assertSchemaResult(
+    standardValidators.request,
+    relationInput,
+    true,
+    "relation-invalid/schema-only",
+  );
+  assert.equal(validateRequest(relationInput).valid, false);
+  const expectedErrors = [
+    expectedOwnedError("RELATIONAL_COUNT_CONFLICT", "crossCityMoves"),
+    expectedOwnedError("RELATIONAL_COUNT_CONFLICT", "hotelChanges"),
+    expectedOwnedError("EVENT_TOPOLOGY_OVERFLOW", "airportStationTransfers"),
+  ];
+  assert.deepEqual(validateRequest(relationInput).errors, expectedErrors);
+  assert.deepEqual(buildDraftOutcome(relationInput).errors, expectedErrors);
+  const reversed = canonicalInvalidOutcome([...expectedErrors].reverse());
+  assertSchemaResult(
+    standardValidators.outcome,
+    reversed,
+    true,
+    "relation-order/schema-shape",
+  );
+  assert.equal(validateDraftOutcome(reversed), false);
+});
+
+test("known review mutations are killed by independent artifact clones", () => {
+  const balancedPace = mutatedArtifacts((artifacts) => {
+    artifacts.requestSchema.$defs.KnownPace.enum.push("Balanced");
+  });
+  assertExactDrifts(balancedPace, ["REQUEST_PACE_ENUM_DRIFT"], "pace enum attack");
+  const balancedValidator = compileStrictSchemas(
+    balancedPace.requestSchema,
+    balancedPace.draftOutcomeSchema,
+  ).request;
+  assert.equal(
+    balancedValidator({ ...fixtures.baseRequest, travellerPace: "Balanced" }),
+    true,
+  );
+  assert.equal(
+    validateRequest({ ...fixtures.baseRequest, travellerPace: "Balanced" }).valid,
+    false,
+  );
+
+  const policyResult = mutatedArtifacts((artifacts) => {
+    artifacts.draftOutcomeSchema.$defs.PolicyPendingOutcome.properties.result = {};
+  });
+  assertExactDrifts(
+    policyResult,
+    ["POLICY_RESULT_CONSTRAINT_DRIFT"],
+    "policy result attack",
+  );
+  const policyResultValidator = compileStrictSchemas(
+    policyResult.requestSchema,
+    policyResult.draftOutcomeSchema,
+  ).outcome;
+  assert.equal(
+    policyResultValidator({ ...buildDraftOutcome(fixtures.baseRequest), result: 1 }),
+    true,
+  );
+
+  const invalidResult = mutatedArtifacts((artifacts) => {
+    artifacts.draftOutcomeSchema.$defs.InvalidOutcome.properties.result = {};
+  });
+  assertExactDrifts(
+    invalidResult,
+    ["INVALID_RESULT_CONSTRAINT_DRIFT"],
+    "invalid result attack",
+  );
+  const invalidResultValidator = compileStrictSchemas(
+    invalidResult.requestSchema,
+    invalidResult.draftOutcomeSchema,
+  ).outcome;
+  assert.equal(
+    invalidResultValidator({
+      ...buildDraftOutcome({ ...fixtures.baseRequest, totalNights: 0 }),
+      result: 1,
+    }),
+    true,
+  );
+
+  const uncertaintyRule = mutatedArtifacts((artifacts) => {
+    artifacts.catalog.uncertainties[0].ruleId = "RR3-UNCERTAINTY-999";
+  });
+  assertExactDrifts(
+    uncertaintyRule,
+    ["CATALOG_UNCERTAINTY_OWNERSHIP_DRIFT"],
+    "uncertainty rule attack",
+  );
+  const uncertaintyMode = mutatedArtifacts((artifacts) => {
+    artifacts.catalog.uncertainties[0].sourceFieldMode = "empty";
+  });
+  assertExactDrifts(
+    uncertaintyMode,
+    ["CATALOG_UNCERTAINTY_OWNERSHIP_DRIFT"],
+    "uncertainty source mode attack",
+  );
+  const uncertaintySchemaRule = mutatedArtifacts((artifacts) => {
+    artifacts.draftOutcomeSchema.$defs.InputValueUnknownUncertainty.allOf[1]
+      .properties.ruleId.const = "RR3-UNCERTAINTY-999";
+  });
+  assertExactDrifts(
+    uncertaintySchemaRule,
+    ["SCHEMA_UNCERTAINTY_OWNERSHIP_DRIFT"],
+    "uncertainty schema rule attack",
+  );
+  const uncertaintySchemaValidator = compileStrictSchemas(
+    uncertaintySchemaRule.requestSchema,
+    uncertaintySchemaRule.draftOutcomeSchema,
+  ).outcome;
+  assert.equal(
+    uncertaintySchemaValidator(
+      buildDraftOutcome({
+        ...fixtures.baseRequest,
+        arrivalWindow: "unknown",
+        crossCityMoves: 0,
+        airportStationTransfers: 0,
+        hotelChanges: 0,
+      }),
+    ),
+    false,
+  );
+
+  const scalarRule = mutatedArtifacts((artifacts) => {
+    artifacts.draftOutcomeSchema.$defs.ValidationError.oneOf[3].allOf[1]
+      .allOf[0].oneOf[0].properties.ruleId.const = "RR3-SCALAR-999";
+  });
+  assertExactDrifts(
+    scalarRule,
+    ["SCHEMA_ERROR_OWNERSHIP_DRIFT"],
+    "scalar error rule attack",
+  );
+  const scalarValidator = compileStrictSchemas(
+    scalarRule.requestSchema,
+    scalarRule.draftOutcomeSchema,
+  ).outcome;
+  assert.equal(
+    scalarValidator(
+      canonicalInvalidOutcome([
+        expectedOwnedError("COUNT_NOT_INTEGER", "totalNights"),
+      ]),
+    ),
+    false,
+  );
+  const scalarInput = { ...fixtures.baseRequest, totalNights: 1.5 };
+  const expectedScalarErrors = [
+    expectedOwnedError("COUNT_NOT_INTEGER", "totalNights"),
+  ];
+  const emittedScalarBaseline = buildDraftOutcome(scalarInput);
+  assert.deepEqual(
+    collectBuilderErrorDrifts(emittedScalarBaseline, expectedScalarErrors),
+    [],
+  );
+  const emittedScalarRuleMutant = clone(emittedScalarBaseline);
+  emittedScalarRuleMutant.errors[0].ruleId = "RR3-SCALAR-999";
+  assert.deepEqual(
+    collectBuilderErrorDrifts(
+      emittedScalarRuleMutant,
+      expectedScalarErrors,
+    ),
+    ["BUILDER_ERROR_OWNERSHIP_DRIFT"],
+  );
+  assertSchemaResult(
+    standardValidators.outcome,
+    emittedScalarRuleMutant,
+    false,
+    "scalar-emitter-rule-attack/outcome-schema",
+  );
+  assert.equal(validateDraftOutcome(emittedScalarRuleMutant), false);
+
+  const extraErrorArm = mutatedArtifacts((artifacts) => {
+    artifacts.draftOutcomeSchema.$defs.ValidationCode.enum.push(
+      "UNDECLARED_ERROR",
+    );
+    artifacts.draftOutcomeSchema.$defs.ValidationError.oneOf.push({
+      allOf: [
+        { $ref: "#/$defs/BaseValidationError" },
+        {
+          type: "object",
+          properties: {
+            code: { const: "UNDECLARED_ERROR" },
+            field: { const: "$request" },
+            ruleId: { const: "RR3-UNDECLARED-001" },
+            relatedFields: { const: [] },
+            offendingKey: { type: "null" },
+          },
+        },
+      ],
+    });
+  });
+  assertExactDrifts(
+    extraErrorArm,
+    ["SCHEMA_ERROR_OWNERSHIP_DRIFT"],
+    "undeclared schema error arm attack",
+  );
+  const extraErrorValidator = compileStrictSchemas(
+    extraErrorArm.requestSchema,
+    extraErrorArm.draftOutcomeSchema,
+  ).outcome;
+  assert.equal(
+    extraErrorValidator(
+      canonicalInvalidOutcome([
+        {
+          code: "UNDECLARED_ERROR",
+          field: "$request",
+          ruleId: "RR3-UNDECLARED-001",
+          relatedFields: [],
+          offendingKey: null,
+        },
+      ]),
+    ),
+    true,
+  );
+
+  const extraUncertaintyArm = mutatedArtifacts((artifacts) => {
+    artifacts.draftOutcomeSchema.$defs.UncertaintyCode.enum.push(
+      "UNDECLARED_UNCERTAINTY",
+    );
+    artifacts.draftOutcomeSchema.$defs.UndeclaredUncertainty = {
+      allOf: [
+        { $ref: "#/$defs/BaseUncertaintyRecord" },
+        {
+          type: "object",
+          properties: {
+            code: { const: "UNDECLARED_UNCERTAINTY" },
+            sourceFields: { const: [] },
+            ruleId: { const: "RR3-UNDECLARED-001" },
+            targetContracts: { const: ["uncertainty.inputDomain"] },
+          },
+        },
+      ],
+    };
+    artifacts.draftOutcomeSchema.$defs.TriggerAndUndeclaredUncertainties = {
+      type: "array",
+      minItems: 2,
+      maxItems: 2,
+      prefixItems: [
+        { $ref: "#/$defs/TriggerEvaluationBlockedUncertainty" },
+        { $ref: "#/$defs/UndeclaredUncertainty" },
+      ],
+      items: false,
+    };
+    artifacts.draftOutcomeSchema.$defs.PolicyPendingOutcome.allOf[0].oneOf[0]
+      .properties.uncertainties = {
+        oneOf: [
+          { $ref: "#/$defs/TriggerOnlyUncertainties" },
+          { $ref: "#/$defs/TriggerAndUndeclaredUncertainties" },
+        ],
+      };
+  });
+  assertExactDrifts(
+    extraUncertaintyArm,
+    ["SCHEMA_UNCERTAINTY_OWNERSHIP_DRIFT"],
+    "undeclared schema uncertainty arm attack",
+  );
+  const extraUncertaintyValidator = compileStrictSchemas(
+    extraUncertaintyArm.requestSchema,
+    extraUncertaintyArm.draftOutcomeSchema,
+  ).outcome;
+  const extraUncertaintyOutcome = buildDraftOutcome(fixtures.baseRequest);
+  extraUncertaintyOutcome.uncertainties.push({
+    code: "UNDECLARED_UNCERTAINTY",
+    sourceFields: [],
+    ruleId: "RR3-UNDECLARED-001",
+    targetContracts: ["uncertainty.inputDomain"],
+  });
+  assertSchemaResult(
+    extraUncertaintyValidator,
+    extraUncertaintyOutcome,
+    true,
+    "undeclared schema uncertainty arm/outcome-schema",
+  );
+  assert.equal(validateDraftOutcome(extraUncertaintyOutcome), false);
+
+  const reversedPriority = mutatedArtifacts((artifacts) => {
+    artifacts.catalog.validationPhases.reverse();
+  });
+  assertExactDrifts(
+    reversedPriority,
+    ["VALIDATION_PHASE_PRIORITY_DRIFT"],
+    "canonical priority attack",
+  );
+  const reversedOwnerPriority = mutatedArtifacts((artifacts) => {
+    artifacts.catalog.validationErrorOwnership
+      .map((owner) => owner.canonicalPriority)
+      .reverse()
+      .forEach((priority, index) => {
+        artifacts.catalog.validationErrorOwnership[index].canonicalPriority =
+          priority;
+      });
+  });
+  assertExactDrifts(
+    reversedOwnerPriority,
+    ["CATALOG_ERROR_OWNERSHIP_DRIFT"],
+    "error owner priority attack",
+  );
+
+  const reboundArrival = mutatedArtifacts((artifacts) => {
+    const fixture = artifacts.fixtures.monotonicityFixtures.find(
+      ({ id }) => id === "MONO-ARRIVAL-REVERSED",
+    );
+    Object.assign(fixture, {
+      axis: "departureWindow",
+      direction: "non_decreasing",
+      mutation: {
+        metric: "capacity",
+        axis: "departureWindow",
+        values: [1, 2, 0, 4, 5],
+      },
+      expectedViolation: "departureWindow:capacity:non_decreasing",
+    });
+  });
+  assertExactDrifts(
+    reboundArrival,
+    ["MONOTONIC_NEGATIVE_FIXTURE_DRIFT"],
+    "arrival fixture rebound attack",
+  );
+
+  const removedViolations = mutatedArtifacts((artifacts) => {
+    for (const fixture of artifacts.fixtures.monotonicityFixtures.slice(1)) {
+      delete fixture.expectedViolation;
+    }
+  });
+  assertExactDrifts(
+    removedViolations,
+    ["MONOTONIC_NEGATIVE_FIXTURE_DRIFT"],
+    "expectedViolation removal attack",
+  );
+
+  const asymmetricWitnessRebound = mutatedArtifacts((artifacts) => {
+    const fixture = artifacts.fixtures.triggerWitnessFixtures.find(
+      ({ id }) => id === "WITNESS-ASYMMETRIC-STATE-SIGNATURE",
+    );
+    fixture.witnessMatrix = [[false, true], [true, true]];
+  });
+  assert.deepEqual(
+    classifyTriggerWitnesses(
+      asymmetricWitnessRebound.fixtures.triggerWitnessFixtures.at(-1)
+        .witnessMatrix,
+      true,
+    ),
+    expectedTriggerWitnessFixtures.at(-1).expected,
+  );
+  assertExactDrifts(
+    asymmetricWitnessRebound,
+    ["TRIGGER_WITNESS_FIXTURE_DRIFT"],
+    "asymmetric trigger fixture rebound attack",
+  );
+});
+
+test("Ajv schema validation and JS-only preflight retain separate authority", () => {
+  class ExactSevenFieldRequest {}
+  const classRequest = Object.assign(
+    new ExactSevenFieldRequest(),
+    clone(fixtures.baseRequest),
+  );
+  assertSchemaResult(
+    standardValidators.request,
+    classRequest,
+    true,
+    "class-container/schema-cannot-see-prototype",
+  );
+  assert.deepEqual(validateRequest(classRequest), {
+    valid: false,
+    errors: [
+      expectedOwnedError("REQUEST_NOT_PLAIN_OBJECT", "$request"),
+    ],
+  });
+
+  const nullPrototypeRequest = Object.assign(
+    Object.create(null),
+    clone(fixtures.baseRequest),
+  );
+  assertSchemaResult(
+    standardValidators.request,
+    nullPrototypeRequest,
+    true,
+    "null-prototype/schema",
+  );
+  assert.equal(validateRequest(nullPrototypeRequest).valid, true);
+
+  const symbolRequest = clone(fixtures.baseRequest);
+  symbolRequest[Symbol("schema-invisible")] = true;
+  assertSchemaResult(
+    standardValidators.request,
+    symbolRequest,
+    true,
+    "symbol-key/schema-cannot-see-symbol",
+  );
+  assert.equal(validateRequest(symbolRequest).valid, false);
+});
+
+test("trigger state signatures preserve length, order, and asymmetric states", () => {
+  assert.equal(triggerStateSignature([false]), "1:0");
+  assert.equal(triggerStateSignature([false, false]), "2:00");
+  assert.notEqual(
+    triggerStateSignature([false]),
+    triggerStateSignature([false, false]),
+  );
+  assert.notEqual(
+    triggerStateSignature([false, true]),
+    triggerStateSignature([true, false]),
+  );
+  assert.deepEqual(
+    classifyTriggerWitnesses(
+      [
+        [false, true],
+        [true, false],
+      ],
+      true,
+    ),
+    {
+      emit: true,
+      basis: "possible_feasible_extreme",
+      sources: ["input_domain", "event_placement"],
+    },
+  );
+});
 
 test("v3 publishes separate strict request and non-numeric draft-outcome roots", () => {
   assert.equal(requestSchema.$id, catalog.requestSchemaId);
@@ -1385,17 +3134,40 @@ test("every declared fixture is executable and no prose-only property escapes", 
     });
     executed.push(fixture.id);
   }
+  const negativeMonotonicSemantics = new Set();
   for (const fixture of fixtures.monotonicityFixtures) {
     await t.test(fixture.id, () => {
       assert.equal(fixture.assertionKind, "monotonicity_contract");
       const result = validateOrdinalMonotonicity(monotonicityCandidate(fixture));
       assert.equal(result.valid, fixture.expectedValid);
-      if (fixture.expectedViolation) {
-        assert.ok(result.violations.includes(fixture.expectedViolation));
+      if (fixture.expectedValid) {
+        assert.deepEqual(result.violations, []);
+      } else {
+        assert.equal(Object.hasOwn(fixture, "expectedViolation"), true);
+        assert.equal(typeof fixture.expectedViolation, "string");
+        assert.notEqual(fixture.expectedViolation.length, 0);
+        assert.deepEqual(result.violations, [fixture.expectedViolation]);
+        const semanticKey = [
+          fixture.axis,
+          fixture.metric,
+          fixture.direction,
+        ].join(":");
+        assert.equal(
+          negativeMonotonicSemantics.has(semanticKey),
+          false,
+          `duplicate monotonic negative semantic ${semanticKey}`,
+        );
+        negativeMonotonicSemantics.add(semanticKey);
       }
     });
     executed.push(fixture.id);
   }
+  assert.deepEqual(
+    [...negativeMonotonicSemantics].sort(compareCodePoint),
+    expectedNegativeMonotonicContracts
+      .map(({ axis, metric, direction }) => `${axis}:${metric}:${direction}`)
+      .sort(compareCodePoint),
+  );
   assert.deepEqual(executed, requiredFixtureIds);
 });
 
