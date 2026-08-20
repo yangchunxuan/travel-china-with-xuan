@@ -58,12 +58,15 @@ The Chengdu, Chongqing and Guangzhou draft packages were submitted on
 **Chengdu and Guangzhou are published.** Their reviewed copy lives in
 `content/destinations/{chengdu,guangzhou}/body.<locale>.ts`.
 
-**Chongqing is deliberately not published.** It has four qualifying support
-owners (`chongqing-upper-lower-city-orientation`,
+**Chongqing is deliberately not published as a City Hub.** It has five
+qualifying support owners in current main
+(`chongqing-upper-lower-city-orientation`,
 `chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`,
 `china-tiankeng-sinkholes-explained`, `sichuan-opera-face-changing-with-context`)
-across three sections. Phase 1 Gate B requires at least five owners across at
-least three sections, and the national guides that merely mention Chongqing
+plus `chongqing-railway-station-selector` from PR #74. The older Hub package
+still connects only the first four and has not closed its image, reciprocal-link
+or runtime gates. Gate B is necessary for a new Hub but never sufficient to
+publish one. National guides that merely mention Chongqing
 (`china-last-night-before-international-flight`,
 `china-private-transfer-or-public-transport`,
 `international-chain-or-local-hotel-china`) carry `destinations: ["china"]`, so
@@ -85,10 +88,10 @@ Gate A:
   writing, and the title adjusted to the official result rather than preserving
   four station names that may be out of date.
 
-Only once that article passes central review and enters the release baseline
-should `chongqing` be added to the hub registry with five owners across four
-sections. If it fails a factual, image or build gate, Chongqing stays held; the
-gate must not be worked around.
+That article is now live, but `chongqing` is still absent from the destination
+Hub registry. Central must reconcile the five-owner graph, images and links in
+a separate review before creating any public Hub route; the gate must not be
+worked around.
 
 ### What central review changed in the two published packages
 
@@ -118,27 +121,31 @@ gate must not be worked around.
 6. **Dates are the real release date, 2026-08-17**, not the 2026-08-15 draft
    date.
 
-## Batch three release candidates (August 20, 2026): Hangzhou and Zhangjiajie
+## Batch three published (August 20, 2026): PR #74
 
-These two hubs are **release candidates, not live pages**. They require the
-single central Draft PR to pass review and CI, then a separate central merge.
+PR #74 merged as `ef1898745a3c7a6e7cd308aa341c352f24fe9d01`.
+Its five trilingual identities are now live: the Hangzhou City Hub, the
+Zhangjiajie City Hub, `china-online-arrival-card`,
+`chongqing-railway-station-selector` and
+`zhangjiajie-national-forest-park-tickets-and-entrances`. The resulting
+production sitemap baseline is **649 `<loc>` entries**.
 
-- **Hangzhou** passed Gate B with seven published supporting owners across
+- **Hangzhou is published** with seven supporting owners across
   transport, planning, explore and culture. The original trilingual draft was
   imported as editorial evidence; reviewed runtime copy lives in
   `content/destinations/hangzhou/`. The broad owner decides Shanghai day trip
   versus stay, nights, base, gateways, spatial clusters and next city. It does
   not take the station-pair, Liangzhu sequence, White Snake evidence, Grand
   Canal interpretation or tea-provenance tasks from their existing owners.
-- **Zhangjiajie** passed Gate B from the existing itinerary, accommodation,
+- **Zhangjiajie is published** from the existing itinerary, accommodation,
   transport, accessibility, attraction-comparison and night-show cluster.
   Runtime copy lives in `content/destinations/zhangjiajie/`. It separates the
   city, Wulingyuan, the National Forest Park, Tianmen Mountain and Grand Canyon
   without reproducing the 2/3/4-day itinerary or the new dynamic park-ticket
   workflow.
-- Both candidates use real, rights-recorded repository photographs and zero AI
-  documentary travel images. Their exact production assets and evidence limits
-  are in `docs/homeground-photo-provenance.md`.
-- `chongqing-railway-station-selector` enters this same integration batch as a
-  reviewed guide, but the Chongqing destination Hub remains outside this
-  release candidate until central separately approves that public Hub.
+- Both live Hubs use real, rights-recorded repository photographs and zero AI
+  documentary travel images. Their current visual layer remains thin; exact
+  production assets and evidence limits are in
+  `docs/homeground-photo-provenance.md`.
+- The Chongqing station selector is live, but the Chongqing destination Hub
+  remains docs-only / blocked until central separately approves a public Hub.

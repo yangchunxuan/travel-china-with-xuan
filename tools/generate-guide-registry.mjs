@@ -375,6 +375,10 @@ async function writeAtomic(filePath, content) {
   await rename(temporaryPath, filePath);
 }
 
+function normalizeLineEndings(value) {
+  return value.replace(/\r\n?/gu, "\n");
+}
+
 export async function generateGuideRegistry({
   guidesRoot = path.resolve(process.cwd(), "content/guides"),
   registryOutput = path.resolve(process.cwd(), "lib/generated/guideRegistry.generated.ts"),
@@ -390,7 +394,9 @@ export async function generateGuideRegistry({
   if (check) {
     for (const [filePath, expected] of outputs) {
       const current = await readFile(filePath, "utf8").catch(() => null);
-      if (current !== expected) throw new Error(`Generated guide file is missing or stale: ${filePath}.`);
+      if (current === null || normalizeLineEndings(current) !== normalizeLineEndings(expected)) {
+        throw new Error(`Generated guide file is missing or stale: ${filePath}.`);
+      }
     }
   } else {
     await Promise.all(outputs.map(([filePath, content]) => writeAtomic(filePath, content)));

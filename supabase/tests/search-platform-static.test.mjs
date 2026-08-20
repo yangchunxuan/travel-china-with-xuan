@@ -140,8 +140,9 @@ test("every independent guide resolves to a collection in its declared section",
 });
 
 test("guide entities and freshness use the current metadata vocabulary", async () => {
-  const [adapter, entitySource] = await Promise.all([
+  const [adapter, policy, entitySource] = await Promise.all([
     source("lib/searchPlatformContentAdapter.ts"),
+    source("lib/searchPlatformGuidePolicy.ts"),
     source("content/entities/core-places.json"),
   ]);
   const entityIds = new Set(
@@ -155,12 +156,12 @@ test("guide entities and freshness use the current metadata vocabulary", async (
     ["chongqing", "city-chongqing"],
     ["shenzhen", "city-shenzhen"],
   ]) {
-    assert.match(adapter, new RegExp(`${slug}: "${entityId}"`));
+    assert.match(policy, new RegExp(`${slug}: "${entityId}"`));
     assert.ok(entityIds.has(entityId), entityId);
   }
 
   assert.match(
-    adapter,
+    policy,
     /criticalFreshnessPillars[\s\S]*?"entry-rules"[\s\S]*?"entry-practicalities"/,
   );
   for (const dynamicPillar of [
@@ -170,13 +171,16 @@ test("guide entities and freshness use the current metadata vocabulary", async (
     "transport-city-pair-routes",
     "transport-last-mile-transfers",
   ]) {
-    assert.match(adapter, new RegExp(`"${dynamicPillar}"`));
+    assert.match(policy, new RegExp(`"${dynamicPillar}"`));
   }
-  assert.match(adapter, /dynamicTicketTopicFragments[\s\S]*?"booking"/);
-  assert.match(adapter, /dynamicTicketTopicFragments[\s\S]*?"ticket"/);
-  assert.match(adapter, /function guideUpdatePolicy/);
+  assert.match(policy, /dynamicTicketTopicFragments[\s\S]*?"booking"/);
+  assert.match(policy, /dynamicTicketTopicFragments[\s\S]*?"ticket"/);
+  assert.match(policy, /function guideUpdatePolicy/);
+  assert.match(policy, /function resolveGuideEntities/);
+  assert.match(adapter, /from "\.\/searchPlatformGuidePolicy"/);
   assert.match(adapter, /updatePolicy: guideUpdatePolicy\(guide\)/);
-  assert.doesNotMatch(adapter, /guide\.pillar === "entry-rules"/);
+  assert.match(adapter, /resolveGuideEntities\(guide\.destinations\)\.entityIds/);
+  assert.doesNotMatch(policy, /guide\.pillar === "entry-rules"/);
 });
 
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {
