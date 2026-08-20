@@ -18,9 +18,9 @@ test("Tantan field note is one server-readable, seven-check article", async () =
   assert.match(page, /"@type": "Person"/);
   assert.match(page, /const personId = `\$\{studioPageUrl\}#tantan`/);
   assert.doesNotMatch(page, /\$\{studioProfileUrl\}#person/);
-  assert.match(copy, /Glass Bridge Is Not the Glass Skywalk/);
-  assert.match(copy, /玻璃桥不是玻璃栈道/);
-  assert.match(copy, /유리다리와 유리잔도는 다릅니다/);
+  assert.match(copy, /Glass Bridge, Tianmen Skywalk or National Forest Park/);
+  assert.match(copy, /大峡谷玻璃桥、天门山玻璃栈道和森林公园怎么区分/);
+  assert.match(copy, /대협곡 유리다리·톈먼산 유리잔도·국가삼림공원 구분하기/);
   assert.match(copy, /Use WhatsApp or leave your email/);
   assert.match(copy, /可以通过 WhatsApp 直接聊，或只留下一个邮箱/);
   assert.match(copy, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);
@@ -64,14 +64,15 @@ test("Tantan field note uses its own localized registry routes and metadata", as
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 
-test("Tantan story images are responsive, privacy edited and contextually linked", async () => {
+test("Tantan story uses a verified attraction hero and privacy-edited field photos", async () => {
   const page = await source("components/TantanZhangjiajieStoryPage.tsx");
   const copy = await source("lib/tantanZhangjiajieStoryI18n.ts");
   const studio = await source("components/HomegroundStudioPage.tsx");
   const zhangjiajie = await source("components/ZhangjiajieGuidePage.tsx");
 
-  assert.match(page, /tantan-hero-720\.avif/);
-  assert.match(page, /tantan-hero-1200\.webp/);
+  assert.match(page, /ZHANGJIAJIE_GLASS_BRIDGE_HERO\.path/);
+  assert.match(copy, /grand-canyon-glass-bridge\.jpg/);
+  assert.match(copy, /The Zhangjiajie Grand Canyon Glass Bridge spanning the forested canyon/);
   assert.match(page, /tantan-with-guests-\$\{kind\}-1200/);
   assert.match(page, /utm_campaign=trip-conversation/);
   assert.match(page, /utm_content=planner-contact#planner-contact/);
@@ -94,8 +95,7 @@ test("Tantan story images are responsive, privacy edited and contextually linked
   );
 
   for (const file of [
-    "public/images/guides/tantan-zhangjiajie/tantan-hero-720.avif",
-    "public/images/guides/tantan-zhangjiajie/tantan-hero-1200.webp",
+    "public/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
     "public/images/guides/tantan-zhangjiajie/tantan-with-guests-mountains-1200.avif",
     "public/images/guides/tantan-zhangjiajie/tantan-with-guests-rest-1200.webp",
   ]) {

@@ -285,8 +285,8 @@ function createStructuredData(
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
         url: guide.canonicalUrl,
-        headline: guide.headline,
-        description: guide.description,
+        headline: copy.metadata.title,
+        description: copy.metadata.description,
         image: {
           "@type": "ImageObject",
           url: guide.heroImageUrl,

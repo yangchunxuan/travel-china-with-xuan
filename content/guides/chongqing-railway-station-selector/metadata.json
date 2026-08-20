@@ -1,0 +1,57 @@
+{
+  "id": "chongqing-railway-station-selector",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "station-decision-matrix",
+  "topics": ["transport", "railways", "railway-stations"],
+  "destinations": ["chongqing"],
+  "heroImagePath": "/images/guides/chongqing-railway-station-selector/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chongqing-railway-station-selector/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/chongqing-railway-station-selector/",
+      "title": "Which Chongqing Railway Station Should You Use?",
+      "headline": "Which Chongqing Railway Station Should You Use?",
+      "description": "Choose Chongqing North, West, East or Shapingba by ticket, route, hotel area and the full station–hotel transfer, with wrong-station recovery.",
+      "heroAlt": "Exterior of Chongqing East Railway Station, with the red station name above its multi-level road approach.",
+      "navTitle": "Choose a Chongqing railway station",
+      "featuredLinkLabel": "Compare Chongqing railway stations",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chongqing", "Railway stations", "Getting around"]
+    },
+    "zh": {
+      "path": "/zh/guides/chongqing-railway-station-selector/",
+      "title": "重庆主要火车站怎么选？",
+      "headline": "重庆主要火车站怎么选？",
+      "description": "按票面站名、线路、住宿区域和车站—酒店全程接驳，选择重庆北站、西站、东站或沙坪坝站，并了解走错站后的补救。",
+      "heroAlt": "重庆东站外观，红色站名位于多层道路接驳区上方。",
+      "navTitle": "重庆主要火车站怎么选",
+      "featuredLinkLabel": "对比重庆主要铁路客站",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["重庆交通", "火车站", "市内接驳"]
+    },
+    "ko": {
+      "path": "/ko/guides/chongqing-railway-station-selector/",
+      "title": "충칭에서는 어느 기차역을 이용해야 할까?",
+      "headline": "충칭에서는 어느 기차역을 이용해야 할까?",
+      "description": "승차권, 노선, 숙소 지역과 역–호텔 전체 이동을 기준으로 충칭 북역·서역·동역·사핑바역을 고르고 잘못 간 역에서 대처하세요.",
+      "heroAlt": "다층 도로 접근부 위로 붉은 역명이 보이는 충칭동역 외관.",
+      "navTitle": "충칭 기차역 고르기",
+      "featuredLinkLabel": "충칭 주요 철도역 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["충칭 교통", "기차역", "시내 이동"]
+    }
+  }
+}

@@ -245,6 +245,11 @@ const body = {
           description: "Compare location, room type, arrival handling and current evidence before accepting a low rate.",
         },
         {
+          label: "Prepare foreign-passport check-in and refusal recovery",
+          href: "/guides/foreigners-china-hotel/",
+          description: "Confirm the exact branch, hotel registration and the recovery order if a confirmed property refuses check-in.",
+        },
+        {
           label: "Plan China with older parents",
           href: "/guides/china-itinerary-with-older-parents/",
           description: "Reduce hotel changes and build transport around the least flexible traveller.",

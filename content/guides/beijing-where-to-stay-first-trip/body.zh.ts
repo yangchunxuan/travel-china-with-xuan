@@ -456,6 +456,11 @@ const body = {
           description: "选定区域后，再比较具体分店、近期客房实况、护照入住流程和真实价值。",
         },
         {
+          label: "外国人可以入住中国任何酒店吗？",
+          href: "/zh/guides/foreigners-china-hotel/",
+          description: "确认北京准确门店的护照处理方式，并准备有记录的拒住恢复顺序。",
+        },
+        {
           label: "带年长父母游中国",
           href: "/zh/guides/china-itinerary-with-older-parents/",
           description: "重新审视北京的步行量、酒店出入、行李和整条路线的节奏。",

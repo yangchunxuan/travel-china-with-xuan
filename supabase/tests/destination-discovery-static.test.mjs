@@ -6,7 +6,7 @@ const projectRoot = new URL("../../", import.meta.url);
 const source = (relativePath) =>
   readFile(new URL(relativePath, projectRoot), "utf8");
 
-test("destination discovery consumes all five reviewed hubs in every locale", async () => {
+test("destination discovery consumes every reviewed hub in every locale", async () => {
   const [registry, collections] = await Promise.all([
     source("lib/destinationHubs.ts"),
     source("lib/searchCollectionI18n.ts"),
@@ -19,7 +19,7 @@ test("destination discovery consumes all five reviewed hubs in every locale", as
 
   assert.deepEqual(
     [...idBlock[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]),
-    ["beijing", "shanghai", "xian", "chengdu", "guangzhou"],
+    ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie"],
   );
   assert.match(
     registry,
@@ -35,7 +35,7 @@ test("destination discovery consumes all five reviewed hubs in every locale", as
   assert.equal([...collectionBlock[0].matchAll(/description:/g)].length, 3);
 
   for (const locale of ["en", "zh", "ko"]) {
-    for (const id of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
+    for (const id of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie"]) {
       const marker = `path: hubPath("${id}", "${locale}")`;
       const start = registry.indexOf(marker);
       assert.notEqual(start, -1, marker);

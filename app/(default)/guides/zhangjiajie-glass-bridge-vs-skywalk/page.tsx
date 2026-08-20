@@ -4,12 +4,17 @@ import {
   getGuideEntry,
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
+import {
+  getTantanZhangjiajieStoryCopy,
+  ZHANGJIAJIE_GLASS_BRIDGE_HERO,
+} from "../../../../lib/tantanZhangjiajieStoryI18n";
 
 const guide = getGuideEntry("zhangjiajie-glass-bridge-vs-skywalk", "en");
+const copy = getTantanZhangjiajieStoryCopy("en");
 
 export const metadata: Metadata = {
-  title: guide.title,
-  description: guide.description,
+  title: copy.title,
+  description: copy.dek,
   alternates: {
     canonical: guide.canonicalPath,
     languages: getGuideLanguagePaths(guide.id),
@@ -26,8 +31,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: guide.title,
-    description: guide.description,
+    title: copy.title,
+    description: copy.dek,
     type: "article",
     locale: guide.openGraphLocale,
     alternateLocale: ["zh_CN", "ko_KR"],
@@ -37,18 +42,18 @@ export const metadata: Metadata = {
     authors: ["Tantan"],
     images: [
       {
-        url: guide.heroImageUrl,
-        width: 1200,
-        height: 630,
-        alt: guide.heroAlt,
+        url: ZHANGJIAJIE_GLASS_BRIDGE_HERO.url,
+        width: ZHANGJIAJIE_GLASS_BRIDGE_HERO.width,
+        height: ZHANGJIAJIE_GLASS_BRIDGE_HERO.height,
+        alt: copy.heroAlt,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: guide.title,
-    description: guide.description,
-    images: [guide.heroImageUrl],
+    title: copy.title,
+    description: copy.dek,
+    images: [ZHANGJIAJIE_GLASS_BRIDGE_HERO.url],
   },
 };
 

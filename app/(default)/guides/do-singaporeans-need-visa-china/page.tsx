@@ -4,12 +4,14 @@ import {
   getGuideEntry,
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
+import { getSingaporeChinaVisaCopy } from "../../../../lib/singaporeChinaVisaI18n";
 
 const guide = getGuideEntry("do-singaporeans-need-visa-china", "en");
+const copy = getSingaporeChinaVisaCopy("en");
 
 export const metadata: Metadata = {
-  title: guide.title,
-  description: guide.description,
+  title: copy.title,
+  description: copy.metadataDescription,
   alternates: {
     canonical: guide.canonicalPath,
     languages: getGuideLanguagePaths(guide.id),
@@ -26,14 +28,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: guide.title,
-    description: guide.description,
+    title: copy.title,
+    description: copy.metadataDescription,
     type: "article",
     locale: guide.openGraphLocale,
     alternateLocale: ["zh_CN", "ko_KR"],
     url: guide.canonicalPath,
     publishedTime: guide.datePublished,
-    modifiedTime: guide.dateModified,
+    modifiedTime: copy.sourceReviewedAt,
     images: [
       {
         url: guide.heroImageUrl,
@@ -45,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: guide.title,
-    description: guide.description,
+    title: copy.title,
+    description: copy.metadataDescription,
     images: [guide.heroImageUrl],
   },
 };

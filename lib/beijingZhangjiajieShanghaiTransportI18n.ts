@@ -31,6 +31,10 @@ export interface TransportGuideCopy {
   breadcrumbLabel: string;
   breadcrumbHome: string;
   breadcrumbCurrent: string;
+  metadata: {
+    title: string;
+    description: string;
+  };
   hero: {
     eyebrow: string;
     headlineTail: string;
@@ -194,11 +198,16 @@ const english: TransportGuideCopy = {
   breadcrumbLabel: "Breadcrumb",
   breadcrumbHome: "Home",
   breadcrumbCurrent: "Beijing–Zhangjiajie–Shanghai transport",
+  metadata: {
+    title: "Beijing to Zhangjiajie: Flight or Train? Then Shanghai",
+    description:
+      "Beijing to Zhangjiajie usually favours a sensible nonstop flight. Compare that leg and the onward Zhangjiajie-to-Shanghai trip by real door-to-door time.",
+  },
   hero: {
     eyebrow: "Transport decision · Door to door",
-    headlineTail: "What the Travel Days Actually Cost",
+    headlineTail: "Beijing to Zhangjiajie: Usually Fly; Recheck Shanghai",
     lead:
-      "The fastest-looking ticket is not always the shortest travel day. Compare both legs of this route before giving away the time you meant to spend in China.",
+      "For most short first trips, use a sensible nonstop flight from Beijing to Zhangjiajie. Then judge Zhangjiajie to Shanghai separately: the exact departure, arrival airport or station, and hotel transfer can change the answer.",
     preparedBy: "Prepared by Homeground China",
     publishedLabel: "Published",
     publishedDate: "22 July 2026",
@@ -621,11 +630,16 @@ const chinese: TransportGuideCopy = {
   breadcrumbLabel: "面包屑导航",
   breadcrumbHome: "首页",
   breadcrumbCurrent: "北京—张家界—上海交通",
+  metadata: {
+    title: "北京到张家界坐飞机还是高铁？再比较张家界到上海",
+    description:
+      "北京到张家界，多数短行程更适合时间合理的直飞；张家界到上海则要按真实日期比较门到门时间、抵达机场或车站与酒店接驳。",
+  },
   hero: {
     eyebrow: "交通决策 · 门到门时间",
-    headlineTail: "两段交通真正会占掉多少时间",
+    headlineTail: "北京到张家界通常坐飞机，上海段另行判断",
     lead:
-      "票面上最快的选择，不一定让旅行日最短。先把整条路线的两段交通算清楚，再决定愿意牺牲多少在中国真正游玩的时间。",
+      "多数时间有限的第一次中国旅行，北京到张家界应优先看时间合理的直飞；张家界到上海则要单独比较真实出发时间、抵达机场或车站，以及到酒店的最后一程。",
     preparedBy: "Homeground China 整理",
     publishedLabel: "发布于",
     publishedDate: "2026 年 7 月 22 日",
@@ -1030,11 +1044,16 @@ const korean: TransportGuideCopy = {
   breadcrumbLabel: "현재 위치",
   breadcrumbHome: "홈",
   breadcrumbCurrent: "베이징–장자제–상하이 교통",
+  metadata: {
+    title: "베이징에서 장자제까지 비행기와 기차 비교, 이어서 상하이",
+    description:
+      "베이징에서 장자제까지는 알맞은 직항편이 대체로 유리합니다. 장자제에서 상하이 구간은 실제 출발 시각과 호텔까지의 총이동 시간으로 따로 비교하세요.",
+  },
   hero: {
     eyebrow: "교통 선택 · 호텔에서 호텔까지",
-    headlineTail: "이동일에 실제로 드는 시간",
+    headlineTail: "베이징→장자제는 보통 항공, 상하이 구간은 별도 판단",
     lead:
-      "표에 적힌 시간이 가장 짧다고 해서 이동일 전체가 가장 짧은 것은 아닙니다. 중국에서 실제로 여행할 시간을 허비하지 않도록 두 구간을 함께 비교합니다.",
+      "일정이 짧은 첫 중국 여행이라면 베이징에서 장자제까지는 시간이 알맞은 직항편부터 보세요. 장자제에서 상하이까지는 출발 시각, 도착 공항·역, 호텔 이동을 합쳐 따로 판단해야 합니다.",
     preparedBy: "Homeground China 작성",
     publishedLabel: "게시",
     publishedDate: "2026년 7월 22일",

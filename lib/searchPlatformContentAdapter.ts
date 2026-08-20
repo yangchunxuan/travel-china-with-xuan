@@ -141,7 +141,66 @@ const destinationEntityIds = {
   shanghai: "city-shanghai",
   chengdu: "city-chengdu",
   guilin: "city-guilin",
+  guangzhou: "city-guangzhou",
+  hangzhou: "city-hangzhou",
+  chongqing: "city-chongqing",
+  shenzhen: "city-shenzhen",
 } as const;
+
+const criticalFreshnessPillars = new Set([
+  "entry-rules",
+  "entry-practicalities",
+]);
+
+const highFreshnessPillars = new Set([
+  "essentials-payments-connectivity",
+  "timing-holidays-crowds",
+  "transport",
+  "transport-airports-rail-hubs",
+  "transport-city-pair-routes",
+  "transport-last-mile-transfers",
+  "stay-access-foreign-guests",
+]);
+
+const dynamicTicketTopicFragments = [
+  "booking",
+  "opening",
+  "reservation",
+  "ticket",
+] as const;
+
+/**
+ * Runtime freshness follows the metadata vocabulary that guides actually use.
+ * It deliberately stays conservative: stable editorial interpretation keeps
+ * the quarterly default, while entry rules, payments, transport, holidays and
+ * ticket/booking workflows are rechecked when their controlling source moves.
+ */
+function guideUpdatePolicy(guide: (typeof guideRegistry)[number]) {
+  if (criticalFreshnessPillars.has(guide.pillar)) {
+    return {
+      volatility: "critical" as const,
+      refreshCadence: "on-source-change" as const,
+      owner: "homeground-editorial",
+    };
+  }
+
+  const hasDynamicTicketTopic = guide.topics.some((topic) =>
+    dynamicTicketTopicFragments.some((fragment) => topic.includes(fragment)),
+  );
+  if (highFreshnessPillars.has(guide.pillar) || hasDynamicTicketTopic) {
+    return {
+      volatility: "high" as const,
+      refreshCadence: "on-source-change" as const,
+      owner: "homeground-editorial",
+    };
+  }
+
+  return {
+    volatility: "low" as const,
+    refreshCadence: "quarterly" as const,
+    owner: "homeground-editorial",
+  };
+}
 
 const localeKeys = {
   en: "en",
@@ -271,13 +330,7 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
         dateModified: guide.dateModified,
         lastReviewed: guide.sourceReviewedDate,
       },
-      updatePolicy: {
-        volatility:
-          guide.pillar === "entry-rules" ? "critical" : "low",
-        refreshCadence:
-          guide.pillar === "entry-rules" ? "on-source-change" : "quarterly",
-        owner: "homeground-editorial",
-      },
+      updatePolicy: guideUpdatePolicy(guide),
     } satisfies ContentNode;
   });
 }

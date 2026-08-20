@@ -6,6 +6,10 @@ import {
   getGuideLanguagePaths,
 } from "../../../../../lib/guideRegistry";
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
+import {
+  getTantanZhangjiajieStoryCopy,
+  ZHANGJIAJIE_GLASS_BRIDGE_HERO,
+} from "../../../../../lib/tantanZhangjiajieStoryI18n";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
@@ -22,10 +26,11 @@ export async function generateMetadata({
   const { locale: routeLocale } = await params;
   const locale = localizedLocale(routeLocale);
   const guide = getGuideEntry("zhangjiajie-glass-bridge-vs-skywalk", locale);
+  const copy = getTantanZhangjiajieStoryCopy(locale);
 
   return {
-    title: guide.title,
-    description: guide.description,
+    title: copy.title,
+    description: copy.dek,
     alternates: {
       canonical: guide.canonicalPath,
       languages: getGuideLanguagePaths(guide.id),
@@ -42,8 +47,8 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: guide.title,
-      description: guide.description,
+      title: copy.title,
+      description: copy.dek,
       type: "article",
       locale: guide.openGraphLocale,
       alternateLocale:
@@ -54,18 +59,18 @@ export async function generateMetadata({
       authors: ["Tantan"],
       images: [
         {
-          url: guide.heroImageUrl,
-          width: 1200,
-          height: 630,
-          alt: guide.heroAlt,
+          url: ZHANGJIAJIE_GLASS_BRIDGE_HERO.url,
+          width: ZHANGJIAJIE_GLASS_BRIDGE_HERO.width,
+          height: ZHANGJIAJIE_GLASS_BRIDGE_HERO.height,
+          alt: copy.heroAlt,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.title,
-      description: guide.description,
-      images: [guide.heroImageUrl],
+      title: copy.title,
+      description: copy.dek,
+      images: [ZHANGJIAJIE_GLASS_BRIDGE_HERO.url],
     },
   };
 }

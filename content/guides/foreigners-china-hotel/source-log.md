@@ -1,6 +1,6 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **PUBLISHED CANONICAL — UPDATED 2026-08-20**
 
 - Checked: **2026-08-13**
 - Base revision: `origin/main` at `530c1510e07ee649559be21b500b6f1967bf882c`
@@ -12,7 +12,7 @@ This is a policy-sensitive page. Core rules use Chinese central-government, Nati
 
 ## Canonical and scope audit
 
-- The exact slug is not published on `origin/main`; the inherited draft existed only at `origin/article/worker-5-foreigners-china-hotel@a5be2b6` and had no PR.
+- The exact slug is published on `origin/main` and remains the canonical owner for nationwide foreign-passport hotel check-in, hotel accommodation registration and refusal recovery.
 - `beijing-where-to-stay-first-trip` includes only a short check-in reminder. This page owns the nationwide official-rule/platform-record/front-desk-execution distinction and the refusal-recovery chain.
 - `why-are-hotels-in-china-so-cheap` owns price, value and broad property-type trade-offs.
 - `china-hotel-near-metro` owns door-to-platform location judgment.
@@ -80,7 +80,7 @@ Traveller discussions were used only to identify recurring questions. They suppo
 
 ## Asset status
 
-No hero binary is included. `image-plan.md` requires a real, authorized staffed hotel entrance or reception scene with no visible passport handoff, booking details, room number, guest screen or other personal data. No AI documentary image is permitted.
+The published hero is a real photograph of the Changchun Huatian Hotel check-in counter by N509FZ, licensed CC BY-SA 4.0 and recorded in the page sources and `image-plan.md`. The frame contains no active guest transaction, visible passport handoff, booking details, room number or guest screen. It is not AI-generated.
 
 ## Central integration re-review — 2026-08-13
 
@@ -88,3 +88,9 @@ No hero binary is included. `image-plan.md` requires a real, authorized staffed 
 - Reconfirmed that the NIA online non-hotel pilot beginning 2026-03-20 covers only Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan. The article does not generalize it to hotel check-in or to all China.
 - Replaced a China Government Network URL that now returns 404 with an accessible Xinjiang culture-and-tourism government mirror of the same reported three-agency response. The primary seven-department circular remains the controlling source.
 - Reconfirmed that no hotel, platform, refund, rebooking or complaint outcome is guaranteed. EN/ZH/KO structure remained aligned; `sourceReviewedDate` remains 2026-08-13.
+
+## Search-task update — 2026-08-20
+
+- Reopened the controlling seven-department accommodation measures, the NIA hotel/non-hotel registration explanation, the SAMR 12315 direction and the State Council boundary between 12345 and 110.
+- Added matching EN/ZH/KO FAQ answers for platform labels, a confirmed-property refusal, the hotel-versus-non-hotel 24-hour boundary, self-cancellation and the correct official channel.
+- Added contextual inbound links from the nationwide metro-hotel guide and the Beijing first-trip stay guide. The canonical boundary did not change.

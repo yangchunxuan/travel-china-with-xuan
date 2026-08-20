@@ -28,6 +28,7 @@ export interface SingaporeChinaVisaCopy {
   breadcrumbCurrent: string;
   eyebrow: string;
   title: string;
+  metadataDescription: string;
   directAnswer: string;
   directAnswerTail: string;
   heroAlt: string;
@@ -48,6 +49,7 @@ export interface SingaporeChinaVisaCopy {
   relatedLinks: { id: string; label: string; description: string }[];
   updatedLabel: string;
   updatedDate: string;
+  sourceReviewedAt: string;
   schemaAbout: string[];
 }
 
@@ -59,13 +61,18 @@ const sources: SourceLink[] = [
   },
   {
     label:
-      "Chinese Embassy in Singapore — visa-free entry FAQ and entry-document rules",
-    url: "https://sg.china-embassy.gov.cn/eng/lsfwx/zytz/202511/t20251112_11751424.htm",
+      "China National Immigration Administration — mutual visa-exemption agreements (Singapore ordinary passports)",
+    url: "https://en.nia.gov.cn/n147418/n147463/c181470/content.html",
+  },
+  {
+    label:
+      "China National Immigration Administration — FAQ for mutual visa-exemption agreements",
+    url: "https://en.nia.gov.cn/n147418/n147463/c156110/content.html",
   },
   {
     label:
       "China National Immigration Administration — online and port arrival-card options",
-    url: "https://en.nia.gov.cn/n147413/c187308/content.html",
+    url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html",
   },
 ];
 
@@ -76,11 +83,13 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   breadcrumbGuides: "Guides",
   breadcrumbCurrent: "Singapore passport: China visa",
   eyebrow: "Entry guide · Singapore",
-  title: "You Don't Need a China Visa. Here's the Harder Question.",
+  title: "Do Singaporeans Need a Visa for China? The 30-Day Rule",
+  metadataDescription:
+    "Singapore ordinary-passport holders can visit China visa-free for up to 30 days. Check the passport scope, arrival card, stay boundary and when a visa is still needed.",
   directAnswer:
-    "A Singapore passport enters China visa-free for up to 30 days — tourism, business or visiting family, no application, no fee. The two governments waived it for each other in February 2024, and it covers ordinary passports across mainland China.",
+    "Usually no. A holder of an ordinary Singapore passport may enter China visa-free for a stay of up to 30 days under the reciprocal arrangement effective since 9 February 2024. This guide covers a short tourist visit; a different passport, work, study, journalism or a stay beyond 30 days needs separate official checking.",
   directAnswerTail:
-    "So the visa is settled in one paragraph. The question that actually decides your trip is the one no embassy page will answer: what do you do with up to 30 days?",
+    "The entry rule is only the first check. The next question is how to use those days without turning the trip into a chain of transfers.",
   heroAlt:
     "Sandstone pillars layered into a deep green valley in Zhangjiajie National Forest Park.",
   heroCaption:
@@ -91,8 +100,8 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
       title: "The visa part, in full",
       lead: "There is genuinely not much to it.",
       paragraphs: [
-        "Under the mutual arrangement in force since 9 February 2024, a Singapore ordinary passport enters mainland China visa-free for up to 30 days. It covers tourism, business, visiting family or friends, exchanges and transit. The clock is counted from 00:00 on the day after you enter — so the day you land is effectively free — and each entry gets its own 30 days, with no cumulative cap on multiple visits.",
-        "What it does not cover: work, study and journalism still need the matching visa, and so does any single stay beyond 30 days. Carry an ordinary passport valid for your stay. Since November 2025, you may submit the foreigner Arrival Card online before travel; if you do not, you can scan the port QR code, use an on-site device or complete a paper card after arrival. Some traveller categories are exempt.",
+        "Under the mutual arrangement in force since 9 February 2024, a Singapore ordinary-passport holder may enter China visa-free for a stay of up to 30 days. The official summaries do not turn a different travel document, a longer stay or another regulated purpose into the same tourist exemption, so check the exact passport and purpose before departure.",
+        "Work, study, journalism and a stay beyond 30 days require the appropriate official route. Since November 2025, a traveller who needs an Arrival Card may submit it through the National Immigration Administration's official online channels before travel; otherwise the port provides QR, on-site-device and paper options. The service is free, and listed exempt categories follow the NIA notice.",
         "That is why this page spends one section on the visa and the rest on the part that actually goes wrong.",
       ],
     },
@@ -117,7 +126,7 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   ],
   reviewTitle: "Written and checked",
   reviewBody:
-    "Homeground is an independent China trip-planning studio with our own ground team. The entry facts on this page come from Singapore's ICA, the Chinese Embassy in Singapore and China's National Immigration Administration, checked 28 July 2026. Entry rules change; we re-check at least every 90 days.",
+    "Homeground is an independent China trip-planning studio with our own ground team. The entry facts on this page come from Singapore's ICA and China's National Immigration Administration, checked 20 August 2026. Entry rules change; recheck the official sources before departure.",
   reviewBoundary:
     "We plan the China trip inside the time the policy gives you. We are not a visa agency and do not file applications.",
   sourcesLabel: "Official sources",
@@ -127,12 +136,12 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
     {
       question: "Do Singaporeans need a visa for China in 2026?",
       answer:
-        "No, for stays up to 30 days for tourism, business, visiting family or friends, exchanges or transit. Work, study, journalism or a stay beyond 30 days still need the appropriate visa.",
+        "A holder of an ordinary Singapore passport may make a short tourist visit for up to 30 days without a visa under the mutual arrangement. Other travel documents, work, study, journalism and stays beyond 30 days need separate official checking.",
     },
     {
-      question: "How are the 30 days counted?",
+      question: "Can I simply remain after the 30 visa-free days?",
       answer:
-        "From 00:00 on the day after you enter, for 30 calendar days. The arrival day itself does not count against the limit, and each entry gets a fresh 30 days.",
+        "No. NIA guidance says travellers using a mutual visa-exemption agreement must leave before the visa-free stay expires. An emergency or force-majeure extension must be requested from the local exit-entry administration before expiry.",
     },
     {
       question: "Does it cover all of mainland China?",
@@ -169,7 +178,8 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
     },
   ],
   updatedLabel: "Updated",
-  updatedDate: "28 July 2026",
+  updatedDate: "20 August 2026",
+  sourceReviewedAt: "2026-08-20",
   schemaAbout: [
     "China visa policy",
     "Singapore passport",
@@ -185,11 +195,13 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   breadcrumbGuides: "指南",
   breadcrumbCurrent: "新加坡护照：中国签证",
   eyebrow: "入境指南 · 新加坡",
-  title: "去中国不需要签证。更难的问题在这里。",
+  title: "新加坡护照去中国需要签证吗？30 天互免签证规则",
+  metadataDescription:
+    "持新加坡普通护照可免签访问中国，单次停留不超过 30 天。核对护照范围、入境卡、停留边界，以及哪些情况仍需申请签证。",
   directAnswer:
-    "持新加坡护照可免签进入中国大陆，单次停留不超过30天，适用于旅游、商务或探亲访友，无需申请，也不收费。中新两国于2024年2月开始互免签证，适用范围为中国大陆全境，面向普通护照持有人。",
+    "通常不需要。根据 2024 年 2 月 9 日起生效的中新互免签证安排，持新加坡普通护照可免签进入中国，单次停留不超过 30 天。本页讨论短期旅游；其他旅行证件、工作、学习、新闻报道或超过 30 天的停留，需要按官方要求另行核对。",
   directAnswerTail:
-    "所以，签证问题一段话就说清楚了。真正决定这趟旅行的问题，是任何使领馆网页都不会替你回答的：最多30天，你要怎样安排？",
+    "入境规则只是第一步。接下来要解决的是怎样使用这些天数，而不是把旅程排成连续转场。",
   heroAlt: "张家界国家森林公园内，层层砂岩石柱耸立于深绿色山谷之中。",
   heroCaption: "免签30天。真正的行程规划从这里开始，而不是从领事馆开始。",
   sections: [
@@ -198,8 +210,8 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
       title: "签证规定，一次说清",
       lead: "确实没有太多复杂之处。",
       paragraphs: [
-        "根据2024年2月9日起生效的互免签证安排，持新加坡普通护照可免签进入中国大陆，单次停留不超过30天。适用事由包括旅游、商务、探亲访友、交流和过境。停留期限从入境次日00:00起计算，因此抵达当天实际上不计入30天；每次入境都会重新获得30天免签停留期，多次入境没有累计天数上限。",
-        "不适用的情况是：工作、学习和新闻报道仍须申请相应签证，单次停留超过30天也同样需要签证。请携带在停留期间有效的护照。自2025年11月起，可在抵达前在线填写外国人入境卡，也可在口岸通过二维码、智能设备或纸质表格填写；部分旅客可免填。",
+        "根据 2024 年 2 月 9 日起生效的互免签证安排，持新加坡普通护照可免签进入中国，单次停留不超过 30 天。官方摘要并未把其他旅行证件、更长停留或其他受监管目的自动纳入同一旅游免签范围，因此出发前要核对准确护照与出行目的。",
+        "工作、学习、新闻报道和超过 30 天的停留，需要使用相应官方途径。自 2025 年 11 月起，需要填写入境卡的旅客可提前通过国家移民管理局官方渠道在线填报；若未提前填写，也可在口岸使用二维码、智能设备或纸质入境卡。官方服务免费，免填类别以国家移民管理局公告为准。",
         "因此，本页只用一个章节讲签证，其余篇幅留给真正容易出问题的部分。",
       ],
     },
@@ -224,7 +236,7 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   ],
   reviewTitle: "撰写与核查",
   reviewBody:
-    "Homeground 是一家独立的中国旅行规划工作室，拥有自己的当地团队。本页入境信息来自新加坡移民与关卡局（ICA）、中国驻新加坡大使馆和中国国家移民管理局，并于2026年7月28日完成核查。入境规定可能变化；我们至少每90天重新核查一次。",
+    "Homeground 是一家拥有当地团队的独立中国旅行规划工作室。本页入境信息来自新加坡移民与关卡局（ICA）和中国国家移民管理局，并于 2026 年 8 月 20 日核查。入境规定可能变化，出发前请重新查看官方来源。",
   reviewBoundary:
     "我们会在政策允许的停留时间内为你规划中国行程。我们不是签证代办机构，也不代为递交申请。",
   sourcesLabel: "官方来源",
@@ -234,25 +246,29 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
       url: "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
     },
     {
-      label: "中国驻新加坡大使馆 — 免签入境常见问题与入境证件规则",
-      url: "https://sg.china-embassy.gov.cn/eng/lsfwx/zytz/202511/t20251112_11751424.htm",
+      label: "中国国家移民管理局 — 互免签证协议清单（新加坡普通护照）",
+      url: "https://en.nia.gov.cn/n147418/n147463/c181470/content.html",
+    },
+    {
+      label: "中国国家移民管理局 — 互免签证协议入境常见问题",
+      url: "https://en.nia.gov.cn/n147418/n147463/c156110/content.html",
     },
     {
       label: "中国国家移民管理局 — 入境卡线上与口岸填报方式",
-      url: "https://en.nia.gov.cn/n147413/c187308/content.html",
+      url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html",
     },
   ],
   faqTitle: "常见问题",
   faq: [
     {
-      question: "2026年，新加坡公民去中国需要签证吗？",
+      question: "2026 年，新加坡公民去中国需要签证吗？",
       answer:
-        "不需要。以旅游、商务、探亲访友、交流或过境为目的，单次停留不超过30天可免签。工作、学习、新闻报道或停留超过30天，仍须申请相应签证。",
+        "持新加坡普通护照短期旅游，单次停留不超过 30 天，可按互免签证安排免签入境。其他旅行证件、工作、学习、新闻报道或超过 30 天的停留，需要另行按官方要求核对。",
     },
     {
-      question: "30天如何计算？",
+      question: "免签 30 天到期后可以直接继续停留吗？",
       answer:
-        "从入境次日00:00起，按30个自然日计算。抵达当天不计入期限，每次入境都会重新获得30天免签停留期。",
+        "不可以。国家移民管理局说明，使用互免签证协议入境的旅客必须在免签停留期届满前离境；因紧急情况或不可抗力需要延长，应在到期前向当地公安机关出入境管理部门申请。",
     },
     {
       question: "免签范围包括整个中国大陆吗？",
@@ -289,7 +305,8 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
     },
   ],
   updatedLabel: "更新日期",
-  updatedDate: "2026年7月28日",
+  updatedDate: "2026年8月20日",
+  sourceReviewedAt: "2026-08-20",
   schemaAbout: ["中国签证政策", "新加坡护照", "中国旅行规划", "免签入境"],
 };
 
@@ -300,11 +317,13 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
   breadcrumbGuides: "가이드",
   breadcrumbCurrent: "싱가포르 여권: 중국 비자",
   eyebrow: "입국 가이드 · 싱가포르",
-  title: "중국 비자는 필요 없습니다. 더 어려운 질문은 따로 있습니다.",
+  title: "싱가포르 여권으로 중국 비자가 필요할까? 30일 무비자 규정",
+  metadataDescription:
+    "싱가포르 일반 여권 소지자는 중국을 최대 30일까지 무비자로 방문할 수 있습니다. 여권 범위, 입국카드, 체류 한도와 비자가 필요한 경우를 확인하세요.",
   directAnswer:
-    "싱가포르 여권 소지자는 관광, 비즈니스 또는 가족 방문 목적으로 중국 본토에 최대 30일까지 무비자로 입국할 수 있습니다. 신청도, 수수료도 없습니다. 양국은 2024년 2월부터 상호 비자를 면제했으며, 일반 여권 소지자는 중국 본토 전역에서 이 제도를 적용받습니다.",
+    "대체로 필요하지 않습니다. 2024년 2월 9일부터 시행된 상호 비자 면제에 따라 싱가포르 일반 여권 소지자는 중국에 최대 30일까지 무비자로 체류할 수 있습니다. 이 글은 단기 관광을 다루며, 다른 여행증명서·취업·유학·취재·30일 초과 체류는 공식 요건을 별도로 확인해야 합니다.",
   directAnswerTail:
-    "그러니 비자 문제는 한 문단이면 끝납니다. 실제 여행을 좌우하는 것은 어느 대사관 웹페이지도 대신 답해 주지 않는 질문입니다. 최대 30일 동안 무엇을 할 것인가?",
+    "입국 규정은 첫 번째 확인일 뿐입니다. 다음 단계는 이 기간을 연속 이동일로 소모하지 않도록 여행을 설계하는 일입니다.",
   heroAlt: "장자제 국가삼림공원의 짙푸른 계곡 위로 겹겹이 솟은 사암 기둥.",
   heroCaption: "30일 무비자. 진짜 여행 계획은 영사관이 아니라 여기서 시작됩니다.",
   sections: [
@@ -313,8 +332,8 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
       title: "비자 규정의 전부",
       lead: "정말 복잡할 것이 거의 없습니다.",
       paragraphs: [
-        "2024년 2월 9일부터 시행된 상호 협정에 따라 싱가포르 일반 여권 소지자는 중국 본토에 최대 30일까지 무비자로 입국할 수 있습니다. 관광, 비즈니스, 가족·친구 방문, 교류 및 환승이 대상입니다. 체류 기간은 입국 다음 날 00:00부터 계산하므로 도착일은 사실상 기간에 포함되지 않습니다. 입국할 때마다 새로운 30일이 주어지며, 여러 차례 방문하더라도 누적 체류일수 상한은 없습니다.",
-        "해당되지 않는 경우도 있습니다. 취업, 유학, 취재에는 여전히 목적에 맞는 비자가 필요하며, 한 번에 30일을 초과해 체류할 때도 마찬가지입니다. 체류 기간 동안 유효한 여권을 지참하세요. 2025년 11월부터 외국인 입국카드는 도착 전에 온라인으로 작성하거나 입국장에서 QR 코드, 기기 또는 종이 양식으로 작성할 수 있으며, 일부 여행자는 작성이 면제됩니다.",
+        "2024년 2월 9일부터 시행된 상호 협정에 따라 싱가포르 일반 여권 소지자는 중국에 최대 30일까지 무비자로 체류할 수 있습니다. 공식 요약은 다른 여행증명서, 더 긴 체류 또는 별도 규제가 있는 목적을 같은 관광 면제에 자동 포함하지 않으므로 출발 전에 정확한 여권과 목적을 확인하세요.",
+        "취업, 유학, 취재와 30일 초과 체류는 해당 공식 절차를 따라야 합니다. 2025년 11월부터 입국카드 작성 대상자는 국가이민관리국 공식 채널에서 미리 온라인으로 제출할 수 있습니다. 미리 제출하지 못하면 입국장에서 QR 코드, 현장 기기 또는 종이 카드로 작성할 수 있습니다. 공식 서비스는 무료이며 면제 대상은 NIA 공지를 따릅니다.",
         "그래서 이 페이지는 비자에 한 섹션만 할애하고, 나머지는 실제로 문제가 생기기 쉬운 부분을 다룹니다.",
       ],
     },
@@ -339,7 +358,7 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
   ],
   reviewTitle: "작성 및 검토",
   reviewBody:
-    "Homeground는 자체 현지 팀을 둔 독립 중국 여행 기획 스튜디오입니다. 이 페이지의 입국 정보는 싱가포르 이민국(ICA), 주싱가포르 중국대사관, 중국 국가이민관리국 자료를 바탕으로 하며, 2026년 7월 28일에 확인했습니다. 입국 규정은 변경될 수 있어 최소 90일마다 다시 확인합니다.",
+    "Homeground는 자체 현지 팀을 둔 독립 중국 여행 기획 스튜디오입니다. 이 페이지의 입국 정보는 싱가포르 이민국(ICA)과 중국 국가이민관리국 자료를 바탕으로 하며, 2026년 8월 20일에 확인했습니다. 입국 규정은 바뀔 수 있으므로 출발 전에 공식 출처를 다시 확인하세요.",
   reviewBoundary:
     "저희는 정책이 허용하는 기간 안에서 중국 여행을 계획합니다. 비자 대행사가 아니며 신청서를 대신 제출하지 않습니다.",
   sourcesLabel: "공식 출처",
@@ -349,12 +368,16 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
       url: "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
     },
     {
-      label: "주싱가포르 중국대사관 — 무비자 입국 FAQ 및 입국 서류 규정",
-      url: "https://sg.china-embassy.gov.cn/eng/lsfwx/zytz/202511/t20251112_11751424.htm",
+      label: "중국 국가이민관리국 — 상호 비자 면제 협정 목록(싱가포르 일반 여권)",
+      url: "https://en.nia.gov.cn/n147418/n147463/c181470/content.html",
+    },
+    {
+      label: "중국 국가이민관리국 — 상호 비자 면제 입국 FAQ",
+      url: "https://en.nia.gov.cn/n147418/n147463/c156110/content.html",
     },
     {
       label: "중국 국가이민관리국 — 온라인 및 입국장 입국카드 작성 방법",
-      url: "https://en.nia.gov.cn/n147413/c187308/content.html",
+      url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html",
     },
   ],
   faqTitle: "자주 묻는 질문",
@@ -362,12 +385,12 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
     {
       question: "2026년에 싱가포르 국민이 중국에 가려면 비자가 필요한가요?",
       answer:
-        "아니요. 관광, 비즈니스, 가족·친구 방문, 교류 또는 환승 목적으로 최대 30일까지 체류할 때는 필요하지 않습니다. 취업, 유학, 취재 또는 30일을 초과하는 체류에는 여전히 목적에 맞는 비자가 필요합니다.",
+        "싱가포르 일반 여권으로 단기 관광을 하며 최대 30일까지 체류한다면 상호 비자 면제에 따라 비자가 필요하지 않습니다. 다른 여행증명서, 취업, 유학, 취재 또는 30일 초과 체류는 공식 요건을 별도로 확인해야 합니다.",
     },
     {
-      question: "30일은 어떻게 계산하나요?",
+      question: "무비자 30일이 지나도 바로 계속 체류할 수 있나요?",
       answer:
-        "입국 다음 날 00:00부터 30일간 역일 기준으로 계산합니다. 도착일 자체는 체류 한도에 포함되지 않으며, 입국할 때마다 새로운 30일이 주어집니다.",
+        "아니요. 국가이민관리국은 상호 비자 면제로 입국한 여행자가 무비자 체류기간이 끝나기 전에 출국해야 한다고 안내합니다. 긴급 상황이나 불가항력으로 연장이 필요하면 만료 전에 현지 공안기관 출입경관리부서에 신청해야 합니다.",
     },
     {
       question: "중국 본토 전역에 적용되나요?",
@@ -404,7 +427,8 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
     },
   ],
   updatedLabel: "업데이트",
-  updatedDate: "2026년 7월 28일",
+  updatedDate: "2026년 8월 20일",
+  sourceReviewedAt: "2026-08-20",
   schemaAbout: ["중국 비자 정책", "싱가포르 여권", "중국 여행 계획", "무비자 입국"],
 };
 

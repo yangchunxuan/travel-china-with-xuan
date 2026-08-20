@@ -230,6 +230,67 @@ const body = {
       ],
     },
     {
+      id: "faq-heading",
+      type: "heading",
+      level: 2,
+      text: "外国护照酒店入住：实用问答",
+    },
+    {
+      id: "faq-platform-label-heading",
+      type: "heading",
+      level: 3,
+      text: "平台写着“不接待外国人”，还可以预订吗？",
+    },
+    {
+      id: "faq-platform-label-answer",
+      type: "paragraph",
+      text: "不要把平台标签当成法律，也不要直接忽略。保存页面，通过书面渠道联系准确门店，询问它能否按你的护照类型和到店时间办理旅馆住宿登记。答复不清楚时，付款前改选能明确确认流程的住宿。",
+    },
+    {
+      id: "faq-confirmed-refusal-heading",
+      type: "heading",
+      level: 3,
+      text: "酒店已经确认，现场仍拒绝入住怎么办？",
+    },
+    {
+      id: "faq-confirmed-refusal-answer",
+      type: "paragraph",
+      text: "只核对一次门店、日期、预订姓名、房态和旅行证件，然后请值班经理说明准确原因。在不自行取消的情况下向平台开案，并要求不要记为未到店。若短时间内无法解决，尤其是深夜或与儿童、年长旅客同行时，先转移到已确认且有人值守的替代住宿。",
+    },
+    {
+      id: "faq-registration-heading",
+      type: "heading",
+      level: 3,
+      text: "住酒店也要由旅客本人在 24 小时内登记吗？",
+    },
+    {
+      id: "faq-registration-answer",
+      type: "paragraph",
+      text: "住旅馆时，由旅馆登记住客并报送住宿信息。入住旅馆以外住所时，才由外国人本人或留宿人在入住后 24 小时内办理登记。公寓、客栈或民宿的运营类型不清楚时，应在抵达前先确认它按哪一类处理。",
+    },
+    {
+      id: "faq-self-cancel-heading",
+      type: "heading",
+      level: 3,
+      text: "被拒后应该自己取消订单吗？",
+    },
+    {
+      id: "faq-self-cancel-answer",
+      type: "paragraph",
+      text: "不要在平台书面说明取消、费用和未到店状态如何处理前自行取消，否则可能削弱交易记录。安排安全替代住宿时，保留原客服案件，并只保存后续审核真正需要的证据。",
+    },
+    {
+      id: "faq-channel-heading",
+      type: "heading",
+      level: 3,
+      text: "应该拨打哪个官方号码？",
+    },
+    {
+      id: "faq-channel-answer",
+      type: "paragraph",
+      text: "移民管理与住宿登记政策咨询用 12367，非紧急地方政府求助用 12345，有证据的消费纠纷用 12315。只有出现即时人身财产威胁、疑似犯罪或其他警务紧急情况时才用 110。这些渠道都不会保证当晚一定有房或自动退款。",
+    },
+    {
       id: "final-checklist",
       type: "callout",
       title: "只需要记住两份清单",

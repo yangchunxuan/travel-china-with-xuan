@@ -1,0 +1,57 @@
+{
+  "id": "zhangjiajie-national-forest-park-tickets-and-entrances",
+  "type": "planning",
+  "pillar": "destination-ticketing-and-navigation",
+  "audienceMarkets": ["global"],
+  "format": "ticket-gate-transport-workflow",
+  "topics": ["zhangjiajie", "national-forest-park", "tickets", "park-entrances", "shuttle-bus", "cableway", "passport-booking"],
+  "destinations": ["zhangjiajie", "wulingyuan", "hunan"],
+  "heroImagePath": "/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "purchase"
+  },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+      "title": "Zhangjiajie Forest Park Tickets, Entrances and Transport",
+      "headline": "Zhangjiajie National Forest Park: Buy the Right Ticket, Choose an Entrance and Connect the Transport",
+      "description": "Match the Zhangjiajie park ticket to a first-entry gate and time, handle passport booking, and connect shuttles with the elevator, cableways and walking routes.",
+      "heroAlt": "Quartz-sandstone pillars in Zhangjiajie National Forest Park, photographed in August 2016.",
+      "navTitle": "Zhangjiajie park tickets and gates",
+      "featuredLinkLabel": "Plan the park ticket and entrance",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Zhangjiajie", "Park tickets", "Entrances"]
+    },
+    "zh": {
+      "path": "/zh/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+      "title": "张家界国家森林公园门票、入口与景区交通怎么选",
+      "headline": "张家界国家森林公园：买对票、选对首次入园门，再接好环保车与索道电梯",
+      "description": "把门票与首次入园门和时段对应起来，处理护照购票失败，并理清环保车、百龙天梯、三条索道和步行线路的关系。",
+      "heroAlt": "2016年8月拍摄的张家界国家森林公园石英砂岩峰林。",
+      "navTitle": "张家界门票、入口与交通",
+      "featuredLinkLabel": "规划门票与首次入口",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["张家界", "景区门票", "入园门"]
+    },
+    "ko": {
+      "path": "/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+      "title": "장자제 국가삼림공원 입장권·입구·공원 교통 선택법",
+      "headline": "장자제 국가삼림공원: 입장권과 첫 입구를 고르고 셔틀·케이블카·엘리베이터를 연결하세요",
+      "description": "장자제 공원 입장권을 첫 입장 게이트와 시간대에 맞추고 여권 예매 문제를 해결하며 셔틀, 바이룽 엘리베이터, 케이블카와 도보 동선을 연결합니다.",
+      "heroAlt": "2016년 8월 촬영한 장자제 국가삼림공원의 석영사암 봉우리 숲.",
+      "navTitle": "장자제 입장권·입구·교통",
+      "featuredLinkLabel": "공원 입장권과 입구 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["장자제", "공원 입장권", "입구"]
+    }
+  }
+}

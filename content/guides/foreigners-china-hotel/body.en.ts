@@ -230,6 +230,67 @@ const body = {
       ],
     },
     {
+      id: "faq-heading",
+      type: "heading",
+      level: 2,
+      text: "Foreign-passport hotel check-in: practical FAQ",
+    },
+    {
+      id: "faq-platform-label-heading",
+      type: "heading",
+      level: 3,
+      text: "Can I book a hotel that the platform marks as not accepting foreigners?",
+    },
+    {
+      id: "faq-platform-label-answer",
+      type: "paragraph",
+      text: "Do not treat the platform label as law or ignore it as harmless. Save the listing, contact the exact branch in writing and ask whether it can process hotel accommodation registration for your passport and arrival time. If the answer is unclear, choose a property that confirms the process before payment.",
+    },
+    {
+      id: "faq-confirmed-refusal-heading",
+      type: "heading",
+      level: 3,
+      text: "What should I do if a confirmed hotel still refuses check-in?",
+    },
+    {
+      id: "faq-confirmed-refusal-answer",
+      type: "paragraph",
+      text: "Check the branch, date, booking name, room status and travel document once. Ask the duty manager for the exact reason, open a platform case without self-cancelling, prevent a no-show record and move to a staffed replacement if the refusal is not resolved quickly—especially late at night or with children or older travellers.",
+    },
+    {
+      id: "faq-registration-heading",
+      type: "heading",
+      level: 3,
+      text: "Do I personally have to register a hotel stay within 24 hours?",
+    },
+    {
+      id: "faq-registration-answer",
+      type: "paragraph",
+      text: "At a hotel, the hotel registers the guest and submits the hotel accommodation information. The foreign guest or host completes registration within 24 hours for a stay outside a hotel. If an apartment, guesthouse or minsu has an unclear operating model, establish which category it uses before arrival.",
+    },
+    {
+      id: "faq-self-cancel-heading",
+      type: "heading",
+      level: 3,
+      text: "Should I cancel the booking myself after a refusal?",
+    },
+    {
+      id: "faq-self-cancel-answer",
+      type: "paragraph",
+      text: "Not until the platform states in writing how cancellation, fees and no-show status will be handled. Self-cancelling can weaken the transaction record. Keep the original case open while arranging a safe replacement and retain only the evidence needed for review.",
+    },
+    {
+      id: "faq-channel-heading",
+      type: "heading",
+      level: 3,
+      text: "Which official number should I use?",
+    },
+    {
+      id: "faq-channel-answer",
+      type: "paragraph",
+      text: "Use 12367 for immigration and accommodation-registration policy, 12345 for non-emergency local-government help, and 12315 for a documented consumer dispute. Use 110 only for an immediate threat, suspected crime or another police emergency. None of these channels guarantees a room or refund that night.",
+    },
+    {
       id: "final-checklist",
       type: "callout",
       title: "The two checklists to remember",

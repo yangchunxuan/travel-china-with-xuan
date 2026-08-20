@@ -29,6 +29,8 @@ const zhHeadingSegments = {
   xian: ["西安旅行指南：", "住几晚、", "以哪里为基地、", "下一站去哪"],
   chengdu: ["成都旅行指南：", "先把城市", "住稳，", "再搭四川路线"],
   guangzhou: ["广州旅行指南：", "住几晚、", "住哪个区、", "走哪个门户"],
+  hangzhou: ["杭州旅行指南：", "先决定一日往返，", "还是把杭州真正住下来"],
+  zhangjiajie: ["张家界旅行指南：", "先分清市区、", "武陵源和不同山岳系统"],
 } as const satisfies Record<DestinationHubId, readonly string[]>;
 
 const ui = {

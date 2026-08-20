@@ -456,6 +456,11 @@ const body = {
           description: "지역을 고른 뒤 정확한 호텔 지점, 최근 객실 정보, 여권 체크인과 실제 가치를 비교하세요.",
         },
         {
+          label: "외국인은 중국의 어느 호텔에나 묵을 수 있나요?",
+          href: "/ko/guides/foreigners-china-hotel/",
+          description: "베이징의 정확한 지점에서 여권을 처리하는 방식을 확인하고 체크인 거절 대응 순서를 준비하세요.",
+        },
+        {
           label: "부모님과 함께하는 중국 여행",
           href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "베이징의 도보 이동, 호텔 접근성, 수하물과 전체 여정의 속도를 검토하세요.",

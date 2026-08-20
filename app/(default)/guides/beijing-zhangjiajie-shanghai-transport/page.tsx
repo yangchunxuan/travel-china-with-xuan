@@ -4,15 +4,17 @@ import {
   getGuideEntry,
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
+import { getTransportGuideCopy } from "../../../../lib/beijingZhangjiajieShanghaiTransportI18n";
 
 const guide = getGuideEntry(
   "beijing-zhangjiajie-shanghai-transport",
   "en",
 );
+const copy = getTransportGuideCopy("en");
 
 export const metadata: Metadata = {
-  title: guide.title,
-  description: guide.description,
+  title: copy.metadata.title,
+  description: copy.metadata.description,
   alternates: {
     canonical: guide.canonicalPath,
     languages: getGuideLanguagePaths(
@@ -31,8 +33,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     type: "article",
     locale: guide.openGraphLocale,
     alternateLocale: ["zh_CN", "ko_KR"],
@@ -50,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     images: [guide.heroImageUrl],
   },
 };

@@ -4,12 +4,14 @@ import {
   getGuideEntry,
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
+import { getZhangjiajieGuideCopy } from "../../../../lib/zhangjiajieGuideI18n";
 
 const guide = getGuideEntry("zhangjiajie-itinerary", "en");
+const copy = getZhangjiajieGuideCopy("en");
 
 export const metadata: Metadata = {
-  title: guide.title,
-  description: guide.description,
+  title: copy.metadata.title,
+  description: copy.metadata.description,
   alternates: {
     canonical: guide.canonicalPath,
     languages: getGuideLanguagePaths("zhangjiajie-itinerary"),
@@ -26,8 +28,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     type: "article",
     locale: guide.openGraphLocale,
     alternateLocale: ["zh_CN", "ko_KR"],
@@ -45,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: guide.title,
-    description: guide.description,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     images: [guide.heroImageUrl],
   },
 };

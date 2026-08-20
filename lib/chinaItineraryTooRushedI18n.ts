@@ -148,12 +148,12 @@ const en: ItineraryRushGuideCopy = {
   servicePath: "/china-itinerary-review/",
   transportGuidePath: "/guides/beijing-zhangjiajie-shanghai-transport/",
   metadata: {
-    title: "China Itinerary Too Rushed? A Practical Check",
+    title: "Is Your China Itinerary Too Rushed? 5 Checks Before Booking",
     description:
-      "Check whether your China itinerary is too rushed by testing city changes, door-to-door transfers, hotel moves, fixed bookings and recovery time.",
-    headline: "Is Your China Itinerary Too Rushed?",
+      "Run five checks before booking: hotel-base changes, door-to-door transfer days, hotel moves, fixed bookings and fatigue chains—then decide what to cut.",
+    headline: "Is Your China Itinerary Too Rushed? Run These 5 Checks",
     schemaDescription:
-      "A practical China itinerary check for city changes, door-to-door transfers, hotel moves, fixed bookings and recovery time.",
+      "Five practical checks for a China itinerary: hotel-base changes, door-to-door transfers, hotel moves, fixed bookings and fatigue chains.",
     socialImageAlt:
       "A softened railway platform used as a non-location-specific illustration of a transfer day.",
     openGraphLocale: "en_US",
@@ -164,7 +164,7 @@ const en: ItineraryRushGuideCopy = {
   breadcrumbCurrent: "Is this China itinerary too rushed?",
   eyebrow: "China itinerary reality check",
   heroLead:
-    "A practical check for city changes, full transfer days, hotel moves, timed visits and the pace your group can actually keep.",
+    "Before booking, test five pressure points: hotel-base changes, full transfer days, hotel moves, fixed bookings and fatigue chains. If two collide—or one can ruin a key day—the route needs another pass.",
   routeStampLabel: "What this guide checks",
   routeStamp: ["City changes", "Transfer days", "Hotel moves", "Fixed visits"],
   byLabel: "By",
@@ -175,7 +175,7 @@ const en: ItineraryRushGuideCopy = {
     "Dynamic transport and venue details should be checked again before travel.",
   quickAnswer: {
     label: "Quick answer",
-    title: "There is no fixed city count that makes a China trip rushed.",
+    title: "Do not count cities first; count the friction between them.",
     detail:
       "A route with four cities can work for one group and be a poor fit for another. The real test is the chain of base changes, door-to-door transfers, fixed bookings and recovery time between them.",
     navLabel: "Five itinerary checks",
@@ -439,12 +439,12 @@ const zh: ItineraryRushGuideCopy = {
   servicePath: "/zh/china-itinerary-review/",
   transportGuidePath: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
   metadata: {
-    title: "中国行程是不是太赶？一份现实检查",
+    title: "中国行程太赶吗？预订前用 5 项检查判断",
     description:
-      "从换城市、门到门转场、换酒店、固定预约与恢复时间，判断你的中国行程是否安排得太赶。",
-    headline: "你的中国行程是不是太赶了？",
+      "预订前检查住宿基地变化、门到门转场日、换酒店、固定预约与疲劳连锁，再决定应该删什么或调整什么。",
+    headline: "中国行程是不是太赶？先做这 5 项检查",
     schemaDescription:
-      "用换城市、门到门转场、酒店搬迁、固定预约和恢复时间，检查一份中国行程是否真正可行。",
+      "用住宿基地变化、门到门转场、换酒店、固定预约和疲劳连锁五项检查，判断中国旅行节奏是否现实。",
     socialImageAlt: "经过柔化处理的火车站站台，用于表达旅行转场日。",
     openGraphLocale: "zh_CN",
   },
@@ -454,7 +454,7 @@ const zh: ItineraryRushGuideCopy = {
   breadcrumbCurrent: "中国行程是否太赶",
   eyebrow: "中国行程现实检查",
   heroLead:
-    "从换城市、完整转场日、换酒店、定时预约，以及同行者真正能承受的节奏，检查你的路线是否合理。",
+    "预订前先检查五个压力点：住宿基地变化、完整转场日、换酒店、固定预约与疲劳连锁。若两项冲突，或一项失误就会毁掉核心日程，就应重新调整。",
   routeStampLabel: "这篇指南检查什么",
   routeStamp: ["换城市", "转场日", "换酒店", "固定预约"],
   byLabel: "作者",
@@ -464,7 +464,7 @@ const zh: ItineraryRushGuideCopy = {
   dynamicDetailsNote: "交通和场馆信息可能变化，出发前请再次核对。",
   quickAnswer: {
     label: "先说结论",
-    title: "没有一个固定的城市数量，能直接判断中国行程是否太赶。",
+    title: "先别数城市，先数城市之间的摩擦。",
     detail:
       "四座城市对一组旅客可能很从容，对另一组却可能十分脆弱。真正需要检查的是：换住宿地的次数、门到门转场、固定预约，以及这些安排之间有没有恢复时间。",
     navLabel: "五项行程检查",
@@ -697,12 +697,12 @@ const ko: ItineraryRushGuideCopy = {
   servicePath: "/ko/china-itinerary-review/",
   transportGuidePath: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
   metadata: {
-    title: "중국 여행 일정이 너무 빠듯한가요? 현실 점검 가이드",
+    title: "중국 일정이 너무 빠듯한가요? 예약 전 5가지 점검",
     description:
-      "도시 이동, 출발지부터 도착지까지의 전체 이동, 숙소 변경, 고정 예약과 회복 시간을 기준으로 중국 여행 일정이 너무 빠듯한지 확인해 보세요.",
-    headline: "중국 여행 일정이 너무 빠듯한가요?",
+      "예약 전에 숙박 거점 변경, 호텔 간 이동일, 숙소 변경, 고정 예약, 피로 누적을 확인하고 무엇을 줄일지 결정하세요.",
+    headline: "중국 일정이 너무 빠듯한가요? 5가지를 확인하세요",
     schemaDescription:
-      "도시 이동, 출발지부터 도착지까지의 전체 이동, 숙소 변경, 고정 예약과 회복 시간으로 중국 여행 일정의 현실성을 점검하는 가이드입니다.",
+      "숙박 거점 변경, 호텔 간 이동, 숙소 변경, 고정 예약과 피로 누적 다섯 가지로 중국 일정의 현실성을 점검하는 가이드입니다.",
     socialImageAlt: "이동일을 표현하기 위해 부드럽게 처리한 기차역 승강장 이미지.",
     openGraphLocale: "ko_KR",
   },
@@ -712,7 +712,7 @@ const ko: ItineraryRushGuideCopy = {
   breadcrumbCurrent: "중국 일정이 너무 빠듯한지 점검",
   eyebrow: "중국 일정 현실 점검",
   heroLead:
-    "도시 변경, 온전한 이동일, 숙소 변경, 시간 지정 예약, 그리고 일행이 실제로 감당할 수 있는 속도로 일정을 점검합니다.",
+    "예약 전에 숙박 거점 변경, 온전한 이동일, 숙소 변경, 고정 예약과 피로 누적을 확인하세요. 두 항목이 충돌하거나 하나의 실패가 핵심 일정을 망칠 수 있다면 다시 조정해야 합니다.",
   routeStampLabel: "이 가이드의 점검 항목",
   routeStamp: ["도시 변경", "이동일", "숙소 변경", "고정 일정"],
   byLabel: "작성",
@@ -722,7 +722,7 @@ const ko: ItineraryRushGuideCopy = {
   dynamicDetailsNote: "교통과 시설 정보는 변동될 수 있으므로 출발 전에 다시 확인하세요.",
   quickAnswer: {
     label: "먼저 보는 답",
-    title: "도시 수만으로 중국 여행이 빠듯한지 판단할 수는 없습니다.",
+    title: "도시 수보다 도시 사이의 마찰을 먼저 세세요.",
     detail:
       "같은 4개 도시라도 어떤 일행에게는 여유롭고 다른 일행에게는 쉽게 무너질 수 있습니다. 실제로 확인할 것은 숙박 거점 변경, 출발지부터 도착지까지의 전체 이동, 고정 예약, 그리고 그 사이의 회복 시간입니다.",
     navLabel: "다섯 가지 일정 점검",

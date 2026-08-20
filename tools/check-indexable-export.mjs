@@ -89,7 +89,7 @@ const checks = [
     htmlLang: "en",
     alternates: languageUrls.singaporeVisa,
     linkedFrom: "guides/index.html",
-    mustContain: "You Don&#x27;t Need a China Visa. Here&#x27;s the Harder Question.",
+    mustContain: "Do Singaporeans Need a Visa for China? The 30-Day Rule",
   },
   {
     route: "zh/guides/do-singaporeans-need-visa-china/",
@@ -97,9 +97,9 @@ const checks = [
     htmlLang: "zh-Hans",
     alternates: languageUrls.singaporeVisa,
     linkedFrom: "zh/guides/index.html",
-    mustContain: "去中国不需要签证。更难的问题在这里。",
+    mustContain: "新加坡护照去中国需要签证吗？30 天互免签证规则",
     mustNotContain:
-      "You Don&#x27;t Need a China Visa. Here&#x27;s the Harder Question.",
+      "Do Singaporeans Need a Visa for China? The 30-Day Rule",
   },
   {
     route: "ko/guides/do-singaporeans-need-visa-china/",
@@ -108,9 +108,9 @@ const checks = [
     alternates: languageUrls.singaporeVisa,
     linkedFrom: "ko/guides/index.html",
     mustContain:
-      "중국 비자는 필요 없습니다. 더 어려운 질문은 따로 있습니다.",
+      "싱가포르 여권으로 중국 비자가 필요할까? 30일 무비자 규정",
     mustNotContain:
-      "You Don&#x27;t Need a China Visa. Here&#x27;s the Harder Question.",
+      "Do Singaporeans Need a Visa for China? The 30-Day Rule",
   },
   {
     route: "guides/china-itinerary-with-older-parents/",

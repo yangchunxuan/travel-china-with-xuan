@@ -1,6 +1,6 @@
 # Image plan
 
-Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
+Status: **ASSET PUBLISHED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 
 ## Final central selection — 2026-08-13
 
@@ -13,7 +13,7 @@ Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 - **Accuracy boundary:** the empty counter documents a real hotel check-in setting, not a foreign guest's transaction and not proof that every traveller will be accepted.
 - **AI status:** real documentary photograph; no generative edit
 
-No hero binary is included in this draft.
+The selected hero binary is present at the recorded output path.
 
 ## Required hero
 

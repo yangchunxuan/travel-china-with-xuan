@@ -44,12 +44,12 @@ function createStructuredData(locale: HomegroundLocale) {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
         url: guide.canonicalUrl,
-        headline: guide.headline,
-        description: guide.description,
+        headline: copy.title,
+        description: copy.metadataDescription,
         inLanguage: copy.htmlLang,
         mainEntityOfPage: guide.canonicalUrl,
         datePublished: guide.datePublished,
-        dateModified: guide.dateModified,
+        dateModified: copy.sourceReviewedAt,
         image: {
           "@type": "ImageObject",
           url: guide.heroImageUrl,
@@ -150,7 +150,7 @@ export function SingaporeChinaVisaPage({
             <LegacyEditorialByline
               guideId={guide.id}
               locale={locale}
-              reviewedAt={guide.sourceReviewedDate}
+              reviewedAt={copy.sourceReviewedAt}
             />
 
             <figure className={styles.heroFigure}>
@@ -223,7 +223,7 @@ export function SingaporeChinaVisaPage({
               </div>
               <p className={styles.updated}>
                 {copy.updatedLabel}:{" "}
-                <time dateTime={guide.dateModified}>{copy.updatedDate}</time>
+                <time dateTime={copy.sourceReviewedAt}>{copy.updatedDate}</time>
               </p>
             </section>
 

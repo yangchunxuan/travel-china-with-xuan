@@ -245,6 +245,11 @@ const body = {
           description: "저렴한 요금만 보고 결정하기 전에 위치, 객실 유형, 도착 시 응대, 최신 근거를 비교하세요.",
         },
         {
+          label: "외국 여권 체크인과 거절 대처 준비",
+          href: "/ko/guides/foreigners-china-hotel/",
+          description: "정확한 지점과 호텔 숙박 등록을 확인하고, 확정 숙소가 체크인을 거절할 때의 대응 순서를 준비하세요.",
+        },
+        {
           label: "부모님과 함께하는 중국 여행 계획",
           href: "/ko/guides/china-itinerary-with-older-parents/",
           description: "숙소 변경을 줄이고 이동 제약이 가장 큰 동행에게 맞춰 교통을 계획하세요.",

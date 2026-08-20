@@ -117,3 +117,28 @@ gate must not be worked around.
    facts are named rather than buried.
 6. **Dates are the real release date, 2026-08-17**, not the 2026-08-15 draft
    date.
+
+## Batch three release candidates (August 20, 2026): Hangzhou and Zhangjiajie
+
+These two hubs are **release candidates, not live pages**. They require the
+single central Draft PR to pass review and CI, then a separate central merge.
+
+- **Hangzhou** passed Gate B with seven published supporting owners across
+  transport, planning, explore and culture. The original trilingual draft was
+  imported as editorial evidence; reviewed runtime copy lives in
+  `content/destinations/hangzhou/`. The broad owner decides Shanghai day trip
+  versus stay, nights, base, gateways, spatial clusters and next city. It does
+  not take the station-pair, Liangzhu sequence, White Snake evidence, Grand
+  Canal interpretation or tea-provenance tasks from their existing owners.
+- **Zhangjiajie** passed Gate B from the existing itinerary, accommodation,
+  transport, accessibility, attraction-comparison and night-show cluster.
+  Runtime copy lives in `content/destinations/zhangjiajie/`. It separates the
+  city, Wulingyuan, the National Forest Park, Tianmen Mountain and Grand Canyon
+  without reproducing the 2/3/4-day itinerary or the new dynamic park-ticket
+  workflow.
+- Both candidates use real, rights-recorded repository photographs and zero AI
+  documentary travel images. Their exact production assets and evidence limits
+  are in `docs/homeground-photo-provenance.md`.
+- `chongqing-railway-station-selector` enters this same integration batch as a
+  reviewed guide, but the Chongqing destination Hub remains outside this
+  release candidate until central separately approves that public Hub.

@@ -1157,3 +1157,40 @@ so the same file is not revisited.
 The CC BY-SA derivatives carry the share-alike duty; all three Wikimedia
 derivatives keep named attribution, source and licence links plus a disclosure
 of the crop and format change in the article's Sources section.
+
+## Chongqing railway-station selector (August 17, 2026)
+
+This article uses one real, location-identified Wikimedia Commons photograph
+and **0 AI-generated or AI-assisted images**. The derivative was made through
+conventional crop, resize and WebP conversion only; no scene element was
+generated, removed or composited. Repository source and hero inventories were
+checked before assignment, and this photograph is not used by another guide.
+
+| Page and role | Original source, place, creator and rights | Source SHA-256 | Published derivative and final SHA-256 | Crop and evidence boundary |
+| --- | --- | --- | --- | --- |
+| `chongqing-railway-station-selector` hero | [September 2025 at Chongqing East Railway Station 02.jpg](https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg), Chongqing East Railway Station, Nan'an District, Chongqing (29.488573, 106.665398); Renek78; 2025-09-06; [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `07cffcc0d9c5e4a08ecac6cc62d4741a27d602a35e4437f496bb7d6343a1d845` (4000 × 2252 source JPEG) | `public/images/guides/chongqing-railway-station-selector/hero-1600.webp`; 1600 × 1000; `c3ea949548065c2edcd5fae318a7cd6f36ac4a8a391904937c3deabc66e0425f` | Source box x=160, y=1, 3600 × 2250, resized at quality 84 with metadata stripped. The real station name and multi-level road approach identify Chongqing East only. The image does not make East the default station or establish current trains, entrance operation, road access, crowding or step-free travel. |
+
+## Hangzhou and Zhangjiajie destination hubs (August 20, 2026)
+
+Both hubs reuse real, already stored production assets and use **0 AI-generated
+or AI-assisted documentary images**. No new visual claim is inferred from the
+reuse: each photograph establishes landscape identity only and does not prove
+current access, weather, boats, gates, queues, tickets or transport operation.
+
+| Page and role | Source and rights basis | Published asset and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| `city-hangzhou` hero | City photograph supplied by the project owner for Homeground website use during the July 2026 redesign; the retained production file shows West Lake water, small passenger boats and wooded hills. Photographer and original capture metadata were not separately recorded, so no narrower shore, boat route or viewpoint is claimed. | Existing `public/images/home/hangzhou-1600.jpg`; 1600 × 1066; `c2833ac865a0652cc932e5e5aea6b5e9e04f06b486a9e5c1ca3d8f1664a1e057` | Identifies the broad West Lake landscape only. It does not establish a current boat service, safe route, visibility, crowd level, fare or hotel view. |
+| `city-zhangjiajie` hero | Project-owner-supplied `张家界.png`, already approved for Homeground production use and recorded at the start of this register. | Existing `public/images/home/zhangjiajie-1600.jpg`; 1600 × 954; `804c41ae605faeb67f1ef77da6d012400169a5b0e151b857e0e5e97856cec176` | Identifies the sandstone-pillar landscape in Zhangjiajie. It does not identify a gate, plateau, path or transport product and proves no current weather or access condition. |
+
+## Arrival card and Zhangjiajie park execution guides (August 20, 2026)
+
+Both guides use real, location-identified Wikimedia Commons photographs and
+**0 AI-generated or AI-assisted documentary images**. Each derivative was made
+only by resizing or a conventional centre crop, with metadata removed. Named
+attribution, source and commercial-use licence links remain in the guide source
+record and image plan.
+
+| Page and role | Original source, place, creator and rights | Published derivative and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| `china-online-arrival-card` hero | [Beijing Capital International Airport T1 Arrival hall 20161124.jpg](https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg), Beijing Capital International Airport Terminal 1 arrival hall; Tyg728; 2016-11-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/china-online-arrival-card/hero-1600.jpg`; 1600 × 1000; `2246f6c0c7628651b8714d0566b6972fe931f0ada04d05a3ba0339df14d7ee6e` | A general China-arrival setting only. It is not an immigration counter or arrival-card desk and proves no current form, queue, processing time, terminal operation or successful admission. |
+| `zhangjiajie-national-forest-park-tickets-and-entrances` hero | [Zhangjiajie National Forest Park.jpg](https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg), quartz-sandstone landscape in Zhangjiajie National Forest Park; Kuruman; 2016-08-13; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `public/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg`; 1600 × 1000; `c7f5fa0ec990da6fc8ed14c92ec6c709444e8823e4cb467c2e45109ee887ec61` | Identifies the park landscape only. It does not depict or identify a gate and proves no current ticket product, queue, shuttle, cableway, lift, opening status or weather. |
