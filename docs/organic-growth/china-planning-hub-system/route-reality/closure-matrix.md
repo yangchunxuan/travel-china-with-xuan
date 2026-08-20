@@ -1,4 +1,63 @@
-# Employee 8 blocker closure matrix
+# Route Reality v4 test-closure matrix
+
+Reviewed v3 contract:
+`article/worker-4-route-reality-v3-spec-20260821@ae493871f2baaff9e14dde1bddd2aab0f7795e17`
+
+Blocking v3 review:
+`codex/route-reality-v3-technical-review-20260821@20d24eecb95ed0c802976f1a8bff4bfaf53dde9c`
+
+## V4 summary
+
+| V3 review blocker | V4 repair | Mechanical evidence | State |
+|---|---|---|---|
+| Standard validator absent | Ajv Draft 2020-12 compiles both roots with `strict:true`, `strictTuples:true`, `allErrors:true` | Every JSON-domain scenario and matrix invokes a compiled validator | **CLOSED FOR FINAL RE-REVIEW** |
+| Schema and JS preflight coverage separate | Shared dispatcher runs schema plus semantic/preflight validation | Exact-seven-field class and symbol requests prove schema-blind properties remain preflight-owned | **CLOSED FOR FINAL RE-REVIEW** |
+| Enum and both `result:null` arms mutable | Independent schema guards plus active disposable-clone attacks | `Balanced` and both relaxed result arms each produce exact non-zero drift | **CLOSED FOR FINAL RE-REVIEW** |
+| Ownership checks self-derived | Test-only golden is independent of catalog and fixtures | Catalog, schema extraction, builder records and fixture semantics each compare to the golden | **CLOSED FOR FINAL RE-REVIEW** |
+| Error order and trigger state signature incomplete | Canonical semantic order plus `<length>:<bits>` raw signature | Reversed errors are schema-valid/semantic-invalid; `[F] != [F,F]`; asymmetric states retain both axes | **CLOSED FOR FINAL RE-REVIEW** |
+| Monotonic IDs could hide semantic rebound | Full negative-fixture records are frozen | Ten fixtures require own `expectedViolation`, exact singleton violations and unique axis × metric × direction | **CLOSED FOR FINAL RE-REVIEW** |
+| Ajv strict portability warnings | Explicit object types and seven closed placement-source arrays | Both schemas compile strictly without tuple/type relaxation | **CLOSED FOR FINAL RE-REVIEW** |
+
+### Independent ownership oracle
+
+The permanent test, not `contract-catalog.json` or `internal-examples.json`,
+owns the immutable expected contracts for request/count field order, validation
+phases, assumptions, uncertainties, validation errors, relational rules,
+trigger signatures, monotonic catalog entries and all monotonic fixture
+semantics. Error ownership includes code, rule, fields, related fields,
+offending-key mode and canonical priority. Uncertainty ownership includes rule,
+targets, source-field mode and source-field order.
+
+### Mutation attacks
+
+The unmodified artifact bundle must return zero drift. Isolated structured
+clones then reproduce every review attack and must return exact non-zero drift:
+
+1. add `Balanced` to the request pace enum;
+2. relax policy-pending `result:null`;
+3. relax invalid-outcome `result:null`;
+4. alter uncertainty rule ownership or source-field mode;
+5. alter the emitted scalar error rule or its schema owner;
+6. reverse validation or error canonical priority;
+7. retain the arrival fixture ID while rebinding it to departure; and
+8. remove every negative fixture's `expectedViolation`.
+9. add an undeclared error code and schema owner arm;
+10. add an undeclared uncertainty code, definition and terminal combination;
+11. replace the asymmetric trigger matrix while retaining its ID.
+
+Every schema mutant is compiled by a fresh Ajv instance, avoiding schema-ID
+cache reuse. The active witness also proves the attacked behavior changed.
+
+### Shared validator boundary
+
+JSON-domain fixtures go through both the real schema and the semantic layer.
+Relationally invalid requests intentionally return `schema=true` and
+`semantic=false`; their generated invalid outcomes must pass both outcome
+validators. Prototype, symbol, NaN and infinity cases remain explicit
+JavaScript-only checks because Draft 2020-12 cannot observe those runtime
+properties.
+
+## V3 foundation retained below
 
 Review source:
 `codex/route-reality-v2-technical-review-20260821@d48f39a81fe323eabc855b9f4f68188ec1729f8f`
@@ -6,9 +65,10 @@ Review source:
 Reviewed v2 source:
 `article/worker-4-china-planning-hub-system-20260820@c8ce1b259fcaa03dc018eb1483436bb8d543fd59`
 
-This matrix claims closure at the **internal contract and executable-test
-level** only. It does not claim numeric-engine, performance, runtime, product or
-publication readiness.
+The original v3 closure evidence is retained for traceability. Both revisions
+claim closure at the **internal contract and executable-test level** only. They
+do not claim numeric-engine, performance, runtime, product or publication
+readiness.
 
 ## Summary
 

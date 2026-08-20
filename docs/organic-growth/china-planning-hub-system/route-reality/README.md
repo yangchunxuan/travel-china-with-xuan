@@ -1,8 +1,8 @@
-# Route Reality v3 internal contract
+# Route Reality v4 test closure for the v3 internal contract
 
-**Ticket:** `ROUTE-REALITY-V3-SPEC-01`
+**Ticket:** `ROUTE-REALITY-V4-TEST-CLOSURE-01`
 
-**Status:** `ROUTE REALITY V3 SPEC REVIEW READY — EMPLOYEE 8 RE-REVIEW REQUIRED`
+**Status:** `ROUTE REALITY V4 REVIEW READY — EMPLOYEE 8 FINAL RE-REVIEW REQUIRED`
 
 **Model:** `route-reality-v3.0.0-internal-draft`
 
@@ -12,19 +12,21 @@
 component, API, Registry entry, sitemap entry, schema markup, telemetry,
 persistence, generated URL or deployment is authorized.
 
-## What v3 does
+## What this revision closes
 
-v3 closes the five contract blockers recorded by employee 8 in
-`codex/route-reality-v2-technical-review-20260821@d48f39a8`. It is deliberately
-smaller than a calculation engine:
+The v3 contract was reviewed at
+`codex/route-reality-v3-technical-review-20260821@20d24eecb95ed0c802976f1a8bff4bfaf53dde9c`.
+This revision closes that review's seven test-portability and mutation-resistance
+blockers without changing the model into a calculation engine:
 
-1. it validates the exact seven-field request;
-2. it validates count relationships and owns every error deterministically;
-3. it classifies input-domain and event-placement uncertainty without using a
-   numeric policy;
-4. it stops every valid request at the non-numeric `policy_pending` terminal;
-5. it executes every fixture, including invalid-type matrices, trigger-witness
-   coverage and future PolicyPack monotonicity invariants.
+1. real Ajv Draft 2020-12 validators compile both schemas under `strict:true`;
+2. shared JSON-domain fixtures pass through schema and semantic/preflight layers;
+3. independent test-owned golden contracts audit assumptions, uncertainties,
+   errors, ordering and monotonic fixtures;
+4. schema-blind prototype and symbol cases remain explicit preflight tests;
+5. trigger state signatures preserve vector length and placement order; and
+6. disposable artifact clones prove every review mutation produces non-zero
+   drift while the baseline produces zero.
 
 It does **not** calculate full sightseeing days, fragment days, transfer tax,
 buffer days, fatigue, prices, schedules, route order or alerts. Those results
@@ -40,9 +42,9 @@ numeric schema/model version are separately approved.
 | `contract-catalog.json` | Canonical fields, rule ownership, assumptions, uncertainties, terminal states, trigger basis and monotonic axes. |
 | `rules.md` | Normative validation, uncertainty, placement and output rules. |
 | `internal-examples.json` | Closed executable fixtures and matrices; no prose-only property cases. |
-| `closure-matrix.md` | One-to-one closure evidence for employee 8's five blockers. |
+| `closure-matrix.md` | One-to-one closure evidence for employee 8's seven v4 blockers and mutation attacks. |
 | `handoff.md` | Gates for a later numeric contract or any implementation review. |
-| `supabase/tests/route-reality-v3-spec.test.mjs` | Test-only preflight, qualitative contract harness and fixture dispatcher. |
+| `supabase/tests/route-reality-v3-spec.test.mjs` | Ajv Draft 2020-12 validation, test-only preflight, qualitative harness, golden oracle and mutation guards. |
 
 ## Exact request
 
@@ -60,7 +62,8 @@ Known domains and the literal `unknown` are frozen in `request.schema.json`.
 The schema root has its own stable ID and cannot validate an output object.
 
 JSON Schema cannot see JavaScript prototypes or symbol keys. The permanent
-test-only preflight therefore accepts only an ordinary object or
+test therefore runs the real schema and test-only preflight as separate layers.
+The preflight accepts only an ordinary object or
 `Object.create(null)`, reads keys with `Reflect.ownKeys` semantics, and rejects
 Date, Map, Set, arrays, class instances, boxed primitives and symbol extras.
 This preflight is a contract test, not runtime authorization.
@@ -106,8 +109,30 @@ A future trigger may be:
 - `possible_feasible_extreme` when true for some but not all witnesses, with
   `input_domain`, `event_placement`, or both recorded in that order.
 
+Each concrete state's trigger signature is the ordered raw Boolean vector
+encoded as `<length>:<bits>`. It is never sorted or reduced to `some/every`, so
+`[false]`, `[false,false]`, `[false,true]` and `[true,false]` remain distinct.
 No alert is produced in v3 because the numeric PolicyPack is absent. The
 trigger-witness fixtures only verify the future quantifier contract.
+
+## Standard validator and mutation boundary
+
+The permanent suite uses Ajv's Draft 2020-12 entry point with `strict:true`,
+`strictTuples:true` and `allErrors:true`. Both schemas must compile without a
+warning or relaxed format setting. JSON-domain positive and negative fixtures
+execute against Ajv; relationally invalid but structurally valid requests are
+expected to produce `schema=true` and `semantic=false`.
+
+Golden ownership data lives in the test, not in the catalog or fixture file.
+The catalog, schema extraction, builder output and fixture semantics are each
+compared with that independent oracle. In-memory disposable copies reproduce
+the review attacks: pace-enum expansion, both `result:null` relaxations,
+uncertainty ownership drift, scalar-error rule drift, canonical-priority
+reversal, arrival/departure fixture rebound and removal of every
+`expectedViolation`. Extra error or uncertainty codes, definitions, owner arms
+or terminal uncertainty combinations are also rejected, as is replacement of
+the asymmetric trigger witness while retaining its ID. Every mutant must
+report non-zero exact drift; the unmodified artifacts must report none.
 
 ## What remains open
 
