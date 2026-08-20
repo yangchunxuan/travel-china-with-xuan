@@ -252,3 +252,19 @@ test("nationwide owners preserve complete versus partial source reviews", async 
   assert.deepEqual([lastNight.dateModified, lastNight.sourceReviewedDate], ["2026-08-21", "2026-08-11"]);
   assert.match(lastNightLog, /not a page-complete factual re-review/u);
 });
+
+test("the foreign-hotel Chinese title keeps semantic phrases together", async () => {
+  const component = await read("components/content/EditorialGuidePage.tsx");
+
+  assert.match(component, /"foreigners-china-hotel": \[/u);
+  for (const segment of [
+    "外国人可以",
+    "入住中国",
+    "任何酒店吗？",
+    "预订、住宿登记",
+    "与被拒后的处理",
+  ]) {
+    assert.match(component, new RegExp(`"${segment}"`, "u"));
+  }
+  assert.match(component, /className=\{styles\.keepTogether\}/u);
+});
