@@ -152,6 +152,44 @@ const body = {
       tone: "decision",
     },
     {
+      id: "stay-network-links",
+      type: "internal-links",
+      title: "Verify the property after choosing the Chengdu base",
+      items: [
+        {
+          label: "Is the hotel really near the metro?",
+          href: "/guides/china-hotel-near-metro/",
+          description:
+            "Audit the useful exit, commercial-complex route, crossings and lobby instead of trusting a map radius.",
+        },
+        {
+          label: "Verify an actually usable accessible room",
+          href: "/guides/china-accessible-hotel-room-verification/",
+          description:
+            "Request room-specific measurements and evidence for the complete street-to-room route.",
+        },
+        {
+          label: "Foreign-guest booking, registration and refusal recovery",
+          href: "/guides/foreigners-china-hotel/",
+          description:
+            "Separate the national rule, a platform listing and what the named property can execute at check-in.",
+        },
+        {
+          label: "Choose the last night before an international flight",
+          href: "/guides/china-last-night-before-international-flight/",
+          description:
+            "Compare a central Chengdu night with a TFU- or CTU-side buffer from the exact flight and fallback chain.",
+        },
+      ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "Need a hotel-area and room-fit check?",
+      tone: "decision",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
+    },
+    {
       id: "gateways-heading",
       type: "heading",
       level: 2,
@@ -481,6 +519,17 @@ const body = {
       text: "Read it from the ticket. Chengdu East handles many high-speed services, but South and West are separate hubs, and the old central station is closed for reconstruction with a 2027 target — it cannot be part of a current plan.",
     },
     {
+      id: "faq-6-heading",
+      type: "heading",
+      level: 3,
+      text: "Should I stay near TFU or CTU before an international flight?",
+    },
+    {
+      id: "faq-6",
+      type: "paragraph",
+      text: "First read the exact airport and terminal from the current itinerary, then test the check-in deadline, central-hotel departure chain and fallback. An airport-side night becomes stronger when that chain is fragile, particularly for an early departure, children, older travellers or heavy luggage. Keep the central hotel when the dated journey is defensible and the final Chengdu evening still matters. Apply the nationwide last-night method linked above; TFU and CTU are not interchangeable.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -497,9 +546,10 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
-          label: "Route Finder",
-          href: "/#route-finder",
-          description: "Test which city sequence fits the nights you actually have.",
+          label: "Free human planning check",
+          href: "/#planner-contact",
+          description:
+            "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
           label: "China itinerary review",

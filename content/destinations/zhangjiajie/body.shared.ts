@@ -55,6 +55,15 @@ const copies = {
       ["Plan Zhangjiajie with older travellers", "zhangjiajie-older-travellers", "Rides, walking load, queues and recovery choices."],
       ["Compare Zhangjiajie night shows", "best-zhangjiajie-night-show", "Choose by hotel base, finish time and what the day can still absorb."],
     ],
+    stayReadingTitle: "Finish the lodging decision with the nationwide owners",
+    stayLinks: [
+      ["Test what ‘near transport’ really means", "china-hotel-near-metro", "Use the same exit-to-lobby and final-walk audit when a listing claims nearby transit; a map pin does not prove a practical Zhangjiajie transfer."],
+      ["Verify an actually usable accessible room", "china-accessible-hotel-room-verification", "Check the complete street or vehicle-drop-off to room and bathroom chain at the exact property."],
+      ["Can foreigners stay at any hotel in China?", "foreigners-china-hotel", "Keep the legal rule, platform display and the named property's current passport-registration operation separate."],
+      ["Choose the last night before an international flight", "china-last-night-before-international-flight", "Protect the local DYG or rail positioning leg, then work backwards from the actual international airport and terminal."],
+    ],
+    quoteTitle: "Need a human Zhangjiajie property-fit check?",
+    quoteBody: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
     onwardHeading: "Choose the next city by the journey it creates",
     onwardColumns: ["Next place", "Works when", "Boundary"],
     onwardRows: [
@@ -79,6 +88,7 @@ const copies = {
       ["Are Tianmen Mountain and Tianzi Mountain the same?", "No. Tianmen is a separate city-side attraction system. Tianzi Mountain is one upper scenic area within the Wulingyuan landscape."],
       ["Is the Glass Bridge inside the National Forest Park?", "No. It belongs to the Grand Canyon system in another direction. Tianmen's glass skywalks are different again."],
       ["Can Fenghuang be a quick evening add-on?", "Usually not honestly. It needs a separate transfer and becomes worthwhile when the old town receives an evening and preferably the next morning."],
+      ["Does a city-side last night protect an international departure?", "Only partly. A city night can protect an early DYG flight or Zhangjiajie West rail leg, but DYG is not a generic international-departure solution. For an international flight elsewhere, work backwards from the actual airport, terminal and check-in deadline, then decide whether another airport-side buffer is necessary. Reconfirm the dated positioning ticket, hotel handoff and fallback."],
     ],
     planningTitle: "Test the complete route, not only the mountain days",
     planningLinks: [
@@ -141,6 +151,15 @@ const copies = {
       ["带年长旅客规划张家界", "zhangjiajie-older-travellers", "乘坐工具、步行负荷、排队与补救选择。"],
       ["比较张家界夜间演出", "best-zhangjiajie-night-show", "按住宿基地、结束时间和白天剩余体力选择。"],
     ],
+    stayReadingTitle: "用全国住宿 owner 完成最后核验",
+    stayLinks: [
+      ["判断所谓‘靠近交通’是否真方便", "china-hotel-near-metro", "遇到靠近车站或交通的标签，也要核对出口、道路、接驳点和大堂；地图坐标不能证明张家界最后一程好走。"],
+      ["核验真正可用的无障碍酒店房", "china-accessible-hotel-room-verification", "按具体物业核对从街道或车辆下客点到客房及浴室的完整通路。"],
+      ["外国旅客能住中国任何酒店吗？", "foreigners-china-hotel", "把法律规则、平台显示和该物业当前能否完成护照登记分开记录。"],
+      ["选择国际航班前最后一晚", "china-last-night-before-international-flight", "先保护 DYG 或铁路定位段，再从真正的国际出境机场和航站楼倒推。"],
+    ],
+    quoteTitle: "需要人工核对张家界候选住宿？",
+    quoteBody: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备比较的城市或区域、旅客与房间数量，以及必要时的大致住宿预算。可以说明希望稍后讨论家庭或无障碍安排，但不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商；这里也不是实时库存系统，不保证价格、房态、外宾接待、房型或无障碍适用性。",
     onwardHeading: "按它创造的旅程选择下一座城市",
     onwardColumns: ["下一站", "何时成立", "边界"],
     onwardRows: [
@@ -158,6 +177,7 @@ const copies = {
       ["天门山和天子山是一个地方吗？", "不是。天门山是市区侧独立景区系统；天子山是武陵源景观中的一个山顶分区。"],
       ["玻璃桥在森林公园里面吗？", "不在。它属于另一个方向的大峡谷系统；天门山的玻璃栈道又是第三件事。"],
       ["凤凰能顺便去看一个晚上吗？", "通常不能诚实地称为顺便。它需要独立接驳，至少获得一个夜晚，最好还保留次日清晨才更值得。"],
+      ["市区最后一晚能保护国际航班吗？", "只能保护其中一段。市区住宿可以降低清早乘 DYG 航班或从张家界西站离开的风险，但 DYG 不是通用的国际离境解决方案。若国际航班从别处起飞，应从真实机场、航站楼和截止时间倒推，再判断是否还需机场侧缓冲。请重查定位票、酒店交接和备用方案。"],
     ],
     planningTitle: "检验完整路线，不只看山上几天",
     planningLinks: [
@@ -220,6 +240,15 @@ const copies = {
       ["고령 여행자와 장자제 계획", "zhangjiajie-older-travellers", "탑승·보행·대기와 회복 선택."],
       ["장자제 야간 공연 비교", "best-zhangjiajie-night-show", "숙소 거점·종료 시각·낮 체력으로 선택."],
     ],
+    stayReadingTitle: "전국 숙박 owner로 마지막 확인을 마치세요",
+    stayLinks: [
+      ["‘교통과 가까움’이 실제로 편리한지 확인", "china-hotel-near-metro", "역이나 교통 근처라는 표시도 출구·도로·승하차 지점·로비까지 확인하세요. 지도 핀은 장자제 마지막 이동을 증명하지 않습니다."],
+      ["실제로 쓸 수 있는 접근성 객실 확인", "china-accessible-hotel-room-verification", "해당 숙소의 도로나 차량 하차 지점부터 객실과 욕실까지 전체 경로를 확인하세요."],
+      ["외국인은 중국의 모든 호텔에 묵을 수 있을까?", "foreigners-china-hotel", "법적 규칙, 플랫폼 표시, 해당 숙소의 현재 여권 등록 운영을 따로 기록하세요."],
+      ["국제선 전 마지막 밤 선택", "china-last-night-before-international-flight", "DYG 또는 철도 포지셔닝 구간을 먼저 보호하고 실제 국제선 출발 공항과 터미널에서 거꾸로 계산하세요."],
+    ],
+    quoteTitle: "장자제 후보 숙소를 사람과 함께 확인하고 싶다면",
+    quoteBody: "현재 일반 플래너 창구는 첫 연락에만 이용하세요. 초기 양식에는 여행 날짜, 비교할 도시나 지역, 여행자 수와 객실 수, 필요하다면 대략적인 숙박 예산만 적으세요. 가족 또는 접근성 준비를 나중에 상의하고 싶다고 표시할 수는 있지만, 어린이의 구체적인 나이, 이동·의료·접근성 세부 정보, 여권이나 기타 신분증 정보, 예약·결제 기록, 호텔·DMC 등 공급업체에 전달하려는 식별 가능한 자료는 제출하지 마세요. 플래너가 별도의 후속 상담을 안내하며, 이런 세부 정보는 필요한 경우 적절한 동의를 받은 뒤에만 논의합니다. 별도의 목적별 동의 없이는 공급업체와 자료를 공유하지 않으며, 이 창구는 실시간 재고가 아니므로 가격·객실 가능 여부·외국인 투숙·객실 유형·접근성을 보장하지 않습니다.",
     onwardHeading: "만들어지는 여정으로 다음 도시를 고르세요",
     onwardColumns: ["다음 장소", "성립할 때", "경계"],
     onwardRows: [
@@ -237,6 +266,7 @@ const copies = {
       ["톈먼산과 톈쯔산은 같은가?", "아닙니다. 톈먼산은 시내 쪽 별도 체계이고 톈쯔산은 우링위안 상부 구역입니다."],
       ["유리다리는 국가삼림공원 안인가?", "아닙니다. 다른 방향의 대협곡 체계이며 톈먼산 유리잔도는 또 다릅니다."],
       ["펑황을 저녁에 잠깐 더할 수 있나?", "대개 솔직한 ‘잠깐’이 아닙니다. 별도 이동과 저녁, 가능하면 다음 아침을 줘야 가치가 생깁니다."],
+      ["시내 마지막 밤이 국제선 출발을 지켜 주나?", "일부 구간만 보호합니다. 시내 숙박은 이른 DYG 항공편이나 장자제서역 출발 위험을 줄일 수 있지만 DYG가 모든 국제선 출발의 해답은 아닙니다. 국제선이 다른 공항에서 출발한다면 실제 공항·터미널·체크인 마감에서 거꾸로 계산해 공항 쪽 추가 완충 숙박이 필요한지 판단하세요. 날짜가 정해진 포지셔닝 표, 호텔 인계와 대안을 다시 확인하세요."],
     ],
     planningTitle: "산에서 보낸 날만 아니라 전체 동선을 시험하세요",
     planningLinks: [
@@ -280,6 +310,8 @@ export function buildZhangjiajieBody(locale: HomegroundLocale): StructuredPageBo
       { id: "systems", type: "table", caption: c.systemsHeading, columns: c.systemsColumns, rows: c.systemsRows },
       { id: "park-boundary", type: "callout", title: c.parkTitle, body: c.parkBody, tone: "warning" },
       { id: "reading", type: "internal-links", title: c.readingTitle, items: c.links.map(([label, slug, description]) => ({ label, href: guidePath(locale, slug), description })) },
+      { id: "stay-owners", type: "internal-links", title: c.stayReadingTitle, items: c.stayLinks.map(([label, slug, description]) => ({ label, href: guidePath(locale, slug), description })) },
+      { id: "stay-quote-handoff", type: "callout", title: c.quoteTitle, body: c.quoteBody, tone: "neutral" },
       { id: "onward-heading", type: "heading", level: 2, text: c.onwardHeading },
       { id: "onward", type: "table", caption: c.onwardHeading, columns: c.onwardColumns, rows: c.onwardRows },
       { id: "recheck-heading", type: "heading", level: 2, text: c.recheckHeading },

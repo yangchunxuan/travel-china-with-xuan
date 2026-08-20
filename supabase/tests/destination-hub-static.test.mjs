@@ -35,6 +35,11 @@ test("batch three hubs are trilingual published pages with canonical boundaries"
   for (const id of ["hangzhou", "zhangjiajie"]) {
     assert.match(registry, new RegExp(`id: "${id}"`));
     assert.match(registry, new RegExp(`entityId: "city-${id}"`));
+    const entryStart = registry.indexOf(`id: "${id}"`);
+    assert.notEqual(entryStart, -1);
+    const entryHeader = registry.slice(entryStart, entryStart + 700);
+    assert.match(entryHeader, /datePublished: "2026-08-20"/);
+    assert.match(entryHeader, /dateModified: "2026-08-21"/);
     assert.match(runtime, new RegExp(`${id}: \\{[\\s\\S]*body\\.en[\\s\\S]*body\\.zh[\\s\\S]*body\\.ko`));
   }
   assert.equal(

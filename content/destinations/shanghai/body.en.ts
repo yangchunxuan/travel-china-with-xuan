@@ -228,7 +228,38 @@ const body = {
           description:
             "Compares the Bund, People's Square and the Former French Concession by walking, metro reach, evenings, luggage and crowds.",
         },
+        {
+          label: "Is the hotel really near the metro?",
+          href: "/guides/china-hotel-near-metro/",
+          description:
+            "Audit the useful exit, station interior, crossings and lobby route instead of trusting a map radius.",
+        },
+        {
+          label: "Verify an actually usable accessible room",
+          href: "/guides/china-accessible-hotel-room-verification/",
+          description:
+            "Request room-specific measurements and evidence for the complete street-to-room route.",
+        },
+        {
+          label: "Foreign-guest booking, registration and refusal recovery",
+          href: "/guides/foreigners-china-hotel/",
+          description:
+            "Separate the national rule, a platform listing and what the named property can execute at check-in.",
+        },
+        {
+          label: "Choose the last night before an international flight",
+          href: "/guides/china-last-night-before-international-flight/",
+          description:
+            "Compare a central Shanghai night with a PVG- or SHA-side buffer from the exact flight and fallback chain.",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "Need a hotel-area and room-fit check?",
+      tone: "decision",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
     },
     {
       id: "airports-heading",
@@ -623,6 +654,17 @@ const body = {
       text: "Only when the arrival time, immigration, baggage, airport transfer, exact railway station and ticket buffer all work conservatively. A separate train is not protected by the flight, so after a late or long-haul arrival a Shanghai night is usually safer.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "Should my last Shanghai night be near PVG or SHA?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "Start with the exact airport, terminal, check-in deadline and fallback chain. An airport-side night is stronger when the central transfer would be fragile, particularly for an early departure, children, older travellers or heavy luggage. Keep the central hotel when the dated journey is defensible and the final Shanghai evening still matters. Apply the nationwide last-night method linked above rather than treating all of Pudong or Hongqiao as one airport hotel zone.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -639,9 +681,10 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
-          label: "Route Finder",
-          href: "/#route-finder",
-          description: "Test which city sequence fits the nights you actually have.",
+          label: "Free human planning check",
+          href: "/#planner-contact",
+          description:
+            "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
           label: "China itinerary review",

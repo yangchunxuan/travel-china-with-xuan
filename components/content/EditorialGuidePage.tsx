@@ -37,6 +37,16 @@ import styles from "./EditorialGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 
+const zhHeadingSegments: Readonly<Record<string, readonly string[]>> = {
+  "foreigners-china-hotel": [
+    "外国人可以",
+    "入住中国",
+    "任何酒店吗？",
+    "预订、住宿登记",
+    "与被拒后的处理",
+  ],
+};
+
 const ui = {
   en: {
     skip: "Skip to the article",
@@ -189,6 +199,7 @@ export function EditorialGuidePage({
   const sectionLabel = entry.search
     ? getSearchPlatformCopy(locale).sections[entry.search.section].navLabel
     : guide.format.replaceAll("-", " ");
+  const titleSegments = locale === "zh" ? zhHeadingSegments[guide.id] : null;
 
   return (
     <div
@@ -230,7 +241,18 @@ export function EditorialGuidePage({
               <span>{sectionLabel}</span>
               <span>{copy.reviewed} {date}</span>
             </p>
-            <h1>{guide.headline}</h1>
+            <h1>
+              {titleSegments
+                ? titleSegments.map((segment, index) => (
+                    <span
+                      className={styles.keepTogether}
+                      key={`${segment}-${index}`}
+                    >
+                      {segment}
+                    </span>
+                  ))
+                : guide.headline}
+            </h1>
             <p className={styles.dek}>{guide.description}</p>
             <EditorialByline locale={locale} reviewedAt={guide.sourceReviewedDate} />
           </div>

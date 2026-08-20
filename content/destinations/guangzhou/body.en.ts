@@ -132,6 +132,44 @@ const body = {
       text: "Tianhe and Zhujiang New Town are efficient for business and the new axis, but they do not replace the old city — protect a deliberate Liwan or Yuexiu block. Pazhou is task-specific: stay near the venue only when repeated attendance justifies it. Panyu makes sense when Chimelong or Guangzhou South is the anchor, but a split adds checkout, luggage and another check-in.",
     },
     {
+      id: "stay-network-links",
+      type: "internal-links",
+      title: "Verify the property after choosing the Guangzhou base",
+      items: [
+        {
+          label: "Is the hotel really near the metro?",
+          href: "/guides/china-hotel-near-metro/",
+          description:
+            "Audit the useful exit, pedestrian-street route, crossings and lobby instead of trusting a map radius.",
+        },
+        {
+          label: "Verify an actually usable accessible room",
+          href: "/guides/china-accessible-hotel-room-verification/",
+          description:
+            "Request room-specific measurements and evidence for the complete street-to-room route.",
+        },
+        {
+          label: "Foreign-guest booking, registration and refusal recovery",
+          href: "/guides/foreigners-china-hotel/",
+          description:
+            "Separate the national rule, a platform listing and what the named property can execute at check-in.",
+        },
+        {
+          label: "Choose the last night before an international flight",
+          href: "/guides/china-last-night-before-international-flight/",
+          description:
+            "Compare a central Guangzhou night with a Baiyun-airport buffer from the exact terminal and fallback chain.",
+        },
+      ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "Need a hotel-area and room-fit check?",
+      tone: "decision",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
+    },
+    {
       id: "airport-heading",
       type: "heading",
       level: 2,
@@ -183,12 +221,6 @@ const body = {
           href: "/guides/guangzhou-baiyun-airport-t2-t3/",
           description:
             "Airline allocation, ground transport in detail and how to recover from arriving at the wrong terminal.",
-        },
-        {
-          label: "The last night before an international flight",
-          href: "/guides/china-last-night-before-international-flight/",
-          description:
-            "Whether a central hotel or an airport-side hotel protects an early or very late departure.",
         },
       ],
     },
@@ -487,6 +519,17 @@ const body = {
       text: "Book earlier, keep flexible terms, and expect stronger demand around Pazhou and the business districts. Stay near the fair only if you are attending repeatedly; otherwise keep the hotel aligned with your sightseeing and check the official session dates.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "Should I move to a Baiyun Airport hotel for the last night?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "First confirm whether the flight uses T2 or T3, then test the check-in deadline, central-hotel departure chain and fallback. An airport-side night becomes stronger when that chain is fragile, particularly for an early international departure, children, older travellers or heavy luggage. Keep the central hotel when the dated journey is defensible and the final Guangzhou evening still matters. Apply the nationwide last-night method linked above; an airport-area label does not prove an easy terminal transfer.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -503,9 +546,10 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
-          label: "Route Finder",
-          href: "/#route-finder",
-          description: "Test which city sequence fits the nights you actually have.",
+          label: "Free human planning check",
+          href: "/#planner-contact",
+          description:
+            "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
           label: "China itinerary review",

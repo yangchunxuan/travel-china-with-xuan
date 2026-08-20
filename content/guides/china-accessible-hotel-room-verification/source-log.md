@@ -1,10 +1,10 @@
 # Research and source log
 
-Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
+Status: **PUBLISHED CANONICAL — UPDATED 2026-08-21**
 
 - `topicId`: `hg-topic-0567`
 - `slug`: `china-accessible-hotel-room-verification`
-- `checked_at`: **2026-08-13**
+- `checked_at`: **2026-08-20**
 - Canonical task: verify whether one actual hotel room is usable for one traveller across the complete street-to-room-to-bathroom chain, then recover if the assigned room fails.
 - Excludes: hotel rankings, platform rankings, universal brand claims, live prices, metro-distance judgement and legal findings against an individual property.
 
@@ -34,7 +34,7 @@ The article does not claim that every existing hotel must physically match every
 
 4. National Public Service Platform for Standards Information — **GB/T 47543-2026**, *Specification on accessible tourism service — Tourism hotel*
    - https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=11FB862766387228085E1B8F974590D7
-   - The page showed **current** on 2026-08-13; published 2026-04-30 and effective 2026-08-01; supervised by the Ministry of Culture and Tourism.
+   - The page showed **current** on 2026-08-20; published 2026-04-30 and effective 2026-08-01; supervised by the Ministry of Culture and Tourism.
    - Qualification: this is a recommended `GB/T` standard and non-equivalently adopts ISO 21902:2021. The official page withholds the full adopted text for copyright reasons. No unviewed clause is asserted in the copy.
 
 5. China Disabled Persons' Federation — Ministry deployment to implement the accessibility law and construction standards
@@ -67,10 +67,10 @@ The verified localized Stay parent collection is linked first, followed by three
 
 ## Asset status
 
-No hero binary is included. See `image-plan.md`. A future documentary image must prove location and rights, be empty of guests and remove room number, key, booking, passport and other personal or access-control information. AI documentary hotel imagery is prohibited.
+The selected real documentary hero is present at `/images/guides/china-accessible-hotel-room-verification/hero-1600.webp`; its creator, CC BY-SA 4.0 basis, documented place/date and crop are recorded in `image-plan.md`. It shows only one real entrance approach and doors, not a room, bathroom, lift or complete accessible chain. The 2026-08-20 factual recheck did not reopen the Commons rights record, so the image-credit review date remains 2026-08-13. AI documentary hotel imagery is prohibited.
 
-## Central integration re-review — 2026-08-13
+## Stay-network official-source re-review — 2026-08-20
 
-- Reopened the official accessibility law, GB 55019-2021 notice and GB/T 47543-2026 status page. GB/T 47543-2026 remains a recommended standard effective 2026-08-01; no unavailable clause is quoted or inferred.
+- Reopened all six official or official-hosted sources listed above: the accessibility law; GB 55019-2021 full text and implementation notice; the GB/T 47543-2026 status record; the ministry implementation deployment; and the 2026 practical-usability report. GB/T 47543-2026 remains a recommended standard effective 2026-08-01; no unavailable clause is quoted or inferred.
 - Reconfirmed the article's boundary: law and standards do not certify a particular hotel's room, route, equipment condition or allocation. The traveller must obtain property- and room-specific evidence and retain a usable alternative.
-- EN/ZH/KO structure remained aligned. This pass changed only natural-language wording; `sourceReviewedDate` remains 2026-08-13.
+- Updated the five official factual source items carried in EN/ZH/KO to `reviewedAt: 2026-08-20` and aligned page metadata. The separate Wikimedia Commons hero credit remains dated 2026-08-13 because image rights were not part of this factual recheck.

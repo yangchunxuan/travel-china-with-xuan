@@ -191,7 +191,38 @@ const body = {
           description:
             "What courtyard character actually changes about rooms, lifts, noise, heating and vehicle access.",
         },
+        {
+          label: "Is the hotel really near the metro?",
+          href: "/guides/china-hotel-near-metro/",
+          description:
+            "Audit the useful station exit, pavement, crossings and lobby route instead of trusting a map radius.",
+        },
+        {
+          label: "Verify an actually usable accessible room",
+          href: "/guides/china-accessible-hotel-room-verification/",
+          description:
+            "Request room-specific measurements and evidence for the complete street-to-room route.",
+        },
+        {
+          label: "Foreign-guest booking, registration and refusal recovery",
+          href: "/guides/foreigners-china-hotel/",
+          description:
+            "Separate the national rule, a platform listing and what the named property can execute at check-in.",
+        },
+        {
+          label: "Choose the last night before an international flight",
+          href: "/guides/china-last-night-before-international-flight/",
+          description:
+            "Compare a central Beijing night with an airport-side buffer from the exact flight and fallback chain.",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "Need a hotel-area and room-fit check?",
+      tone: "decision",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being compared, traveller and room counts, and an approximate accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and this is not live inventory or a guarantee of price, availability, guest acceptance, room type or accessibility.",
     },
     {
       id: "gateways-heading",
@@ -629,6 +660,17 @@ const body = {
       text: "Usually not. One well-chosen base is worth more than the time lost to a hotel move. Change only when it clearly protects a very early airport or station departure, solves a mobility problem, or supports a materially different second half of a long stay.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "Should my last Beijing night be near PEK or PKX?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "Use the exact airport, terminal, check-in deadline and fallback chain. An airport-side night becomes stronger when a central transfer would be fragile, especially with an early departure, children, older travellers or heavy luggage. Keep the central hotel when the dated transfer is defensible and the final Beijing evening still matters. Apply the nationwide last-night method linked above; do not choose from the airport name alone.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -645,9 +687,10 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
-          label: "Route Finder",
-          href: "/#route-finder",
-          description: "Test which city sequence fits the nights you actually have.",
+          label: "Free human planning check",
+          href: "/#planner-contact",
+          description:
+            "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
           label: "China itinerary review",
