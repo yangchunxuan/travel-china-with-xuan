@@ -8,7 +8,9 @@ const SITE_URL = "https://homegroundchina.com";
  * at `/destinations/<slug>/`, as reserved in the Phase 1 search-platform spec.
  * They decide city-level shape — nights, base, gateways, clusters, next city —
  * and hand every execution detail to the narrower canonical guide owners
- * listed in `supportGuideIds`.
+ * listed in `supportGuideIds`. The authored inventory also retains reviewed
+ * copy that is not yet authorised for a public route, so this list must never
+ * be used to infer release status.
  */
 export const destinationHubIds = [
   "beijing",
@@ -20,6 +22,7 @@ export const destinationHubIds = [
   "zhangjiajie",
 ] as const;
 export type DestinationHubId = (typeof destinationHubIds)[number];
+export type DestinationHubLifecycle = "published" | "release-candidate";
 
 /** A node on the hand-drawn city-geography diagram. Coordinates are 0–1. */
 export interface DestinationGeographyNode {
@@ -66,12 +69,13 @@ export interface DestinationHubLocaleEntry {
 
 export interface DestinationHubEntry {
   readonly id: DestinationHubId;
+  readonly lifecycle: DestinationHubLifecycle;
   readonly entityId: string;
   readonly heroImagePath: string;
   readonly heroImageUrl: string;
   readonly imageWidth: number;
   readonly imageHeight: number;
-  readonly datePublished: string;
+  readonly datePublished: string | null;
   readonly dateModified: string;
   readonly sourceReviewedDate: string;
   /**
@@ -93,6 +97,7 @@ function hubPath(id: DestinationHubId, locale: HomegroundLocale) {
 export const destinationHubRegistry = [
   {
     id: "beijing",
+    lifecycle: "published",
     entityId: "city-beijing",
     heroImagePath: "/images/destinations/beijing/hero-1600.webp",
     heroImageUrl:
@@ -290,6 +295,7 @@ export const destinationHubRegistry = [
   },
   {
     id: "shanghai",
+    lifecycle: "published",
     entityId: "city-shanghai",
     heroImagePath: "/images/destinations/shanghai/hero-1600.webp",
     heroImageUrl:
@@ -466,6 +472,7 @@ export const destinationHubRegistry = [
   },
   {
     id: "xian",
+    lifecycle: "published",
     entityId: "city-xian",
     heroImagePath: "/images/destinations/xian/hero-1600.webp",
     heroImageUrl:
@@ -638,6 +645,7 @@ export const destinationHubRegistry = [
   },
   {
     id: "chengdu",
+    lifecycle: "published",
     entityId: "city-chengdu",
     heroImagePath: "/images/destinations/chengdu/hero-1600.webp",
     heroImageUrl:
@@ -820,6 +828,7 @@ export const destinationHubRegistry = [
   },
   {
     id: "guangzhou",
+    lifecycle: "published",
     entityId: "city-guangzhou",
     heroImagePath: "/images/destinations/guangzhou/hero-1600.webp",
     heroImageUrl:
@@ -997,12 +1006,13 @@ export const destinationHubRegistry = [
   },
   {
     id: "hangzhou",
+    lifecycle: "release-candidate",
     entityId: "city-hangzhou",
     heroImagePath: "/images/home/hangzhou-1600.jpg",
     heroImageUrl: "https://homegroundchina.com/images/home/hangzhou-1600.jpg",
     imageWidth: 1600,
     imageHeight: 1066,
-    datePublished: "2026-08-20",
+    datePublished: null,
     dateModified: "2026-08-20",
     sourceReviewedDate: "2026-08-20",
     supportGuideIds: [
@@ -1153,12 +1163,13 @@ export const destinationHubRegistry = [
   },
   {
     id: "zhangjiajie",
+    lifecycle: "release-candidate",
     entityId: "city-zhangjiajie",
     heroImagePath: "/images/home/zhangjiajie-1600.jpg",
     heroImageUrl: "https://homegroundchina.com/images/home/zhangjiajie-1600.jpg",
     imageWidth: 1600,
     imageHeight: 954,
-    datePublished: "2026-08-20",
+    datePublished: null,
     dateModified: "2026-08-20",
     sourceReviewedDate: "2026-08-20",
     supportGuideIds: [
@@ -1311,6 +1322,29 @@ export const destinationHubRegistry = [
   },
 ] as const satisfies readonly DestinationHubEntry[];
 
+export type PublishedDestinationHubId = Extract<
+  (typeof destinationHubRegistry)[number],
+  { readonly lifecycle: "published" }
+>["id"];
+
+type PublishedDestinationHubEntry = Extract<
+  (typeof destinationHubRegistry)[number],
+  { readonly lifecycle: "published" }
+>;
+
+function isPublishedDestinationHubEntry(
+  hub: (typeof destinationHubRegistry)[number],
+): hub is PublishedDestinationHubEntry {
+  return hub.lifecycle === "published";
+}
+
+export const publishedDestinationHubRegistry = destinationHubRegistry.filter(
+  isPublishedDestinationHubEntry,
+);
+
+export const publishedDestinationHubIds: readonly PublishedDestinationHubId[] =
+  publishedDestinationHubRegistry.map((hub) => hub.id);
+
 export function getDestinationHub(id: DestinationHubId): DestinationHubEntry {
   const hub = destinationHubRegistry.find((entry) => entry.id === id);
   if (!hub) throw new Error(`Unknown destination hub: ${id}`);
@@ -1341,4 +1375,18 @@ export function getDestinationHubLanguagePaths(id: DestinationHubId) {
 
 export function isDestinationHubId(value: string): value is DestinationHubId {
   return destinationHubIds.some((id) => id === value);
+}
+
+export function isPublishedDestinationHubId(
+  value: string,
+): value is PublishedDestinationHubId {
+  return publishedDestinationHubIds.some((id) => id === value);
+}
+
+export function assertPublishedDestinationHubId(
+  value: string,
+): asserts value is PublishedDestinationHubId {
+  if (!isPublishedDestinationHubId(value)) {
+    throw new Error(`Destination Hub is not published: ${value}`);
+  }
 }

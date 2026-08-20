@@ -33,13 +33,38 @@ test("batch three hubs are trilingual release candidates with canonical boundari
 
   for (const id of ["hangzhou", "zhangjiajie"]) {
     assert.match(registry, new RegExp(`id: "${id}"`));
+    assert.match(
+      registry,
+      new RegExp(`id: "${id}",\\s*lifecycle: "release-candidate"`),
+    );
     assert.match(registry, new RegExp(`entityId: "city-${id}"`));
     assert.match(runtime, new RegExp(`${id}: \\{[\\s\\S]*body\\.en[\\s\\S]*body\\.zh[\\s\\S]*body\\.ko`));
   }
+  assert.equal(
+    [...registry.matchAll(/lifecycle: "release-candidate",[\s\S]*?datePublished: null,/g)].length,
+    2,
+  );
+  assert.match(runtime, /loadPublishedDestinationHubBody/);
   assert.match(registry, /sourceReviewedDate: "2026-08-20"/);
   assert.match(hangzhouBody, /No second generic Hangzhou travel guide should be created/);
   assert.match(zhangjiajieBody, /Do not copy that volatile workflow into this broad page/);
   assert.match(readme, /release candidates, not live pages/);
+});
+
+test("Gate B review does not automatically publish a destination Hub", async () => {
+  const [registry, adapter] = await Promise.all([
+    source("lib/destinationHubs.ts"),
+    source("lib/destinationHubContentAdapter.ts"),
+  ]);
+
+  assert.equal([...registry.matchAll(/^    lifecycle: "published"/gm)].length, 5);
+  assert.equal(
+    [...registry.matchAll(/^    lifecycle: "release-candidate"/gm)].length,
+    2,
+  );
+  assert.match(adapter, /const isPublished = hub\.lifecycle === "published"/);
+  assert.match(adapter, /status: isPublished \? "published" : "review"/);
+  assert.match(adapter, /index: false,[\s\S]*?follow: false,[\s\S]*?release-candidate-central-approval-required/);
 });
 
 test("Shanghai Songjiang copy records both the rename and expanded-hub opening", async () => {

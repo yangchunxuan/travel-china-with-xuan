@@ -6,7 +6,7 @@ const projectRoot = new URL("../../", import.meta.url);
 const source = (relativePath) =>
   readFile(new URL(relativePath, projectRoot), "utf8");
 
-test("destination discovery consumes every reviewed hub in every locale", async () => {
+test("the registry retains every reviewed hub definition in every locale", async () => {
   const [registry, collections] = await Promise.all([
     source("lib/destinationHubs.ts"),
     source("lib/searchCollectionI18n.ts"),
@@ -21,6 +21,24 @@ test("destination discovery consumes every reviewed hub in every locale", async 
     [...idBlock[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]),
     ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie"],
   );
+
+  for (const id of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
+    assert.match(
+      registry,
+      new RegExp(`id: "${id}",\\s*lifecycle: "published"`),
+    );
+  }
+  for (const id of ["hangzhou", "zhangjiajie"]) {
+    assert.match(
+      registry,
+      new RegExp(`id: "${id}",\\s*lifecycle: "release-candidate"`),
+    );
+  }
+  assert.match(
+    registry,
+    /destinationHubRegistry\.filter\(\s*isPublishedDestinationHubEntry/,
+  );
+  assert.doesNotMatch(registry, /hub\.id as PublishedDestinationHubId/);
   assert.match(
     registry,
     /return locale === "en"\s*\? `\/destinations\/\$\{id\}\/`\s*: `\/\$\{locale\}\/destinations\/\$\{id\}\/`/,
@@ -57,7 +75,7 @@ test("only the explore and cities-neighborhoods surfaces mount destination disco
   ]);
 
   assert.match(component, /getSearchCollection\("explore-cities-neighborhoods"\)/);
-  assert.match(component, /destinationHubRegistry\.map\(\(hub\) =>/);
+  assert.match(component, /publishedDestinationHubRegistry\.map\(\(hub\) =>/);
   assert.match(component, /const hubCopy = hub\.locales\[locale\]/);
   assert.match(component, /<Link className=\{styles\.card\} href=\{hubCopy\.path\}>/);
   assert.match(component, /\{hubCopy\.navTitle\}/);
@@ -89,6 +107,33 @@ test("only the explore and cities-neighborhoods surfaces mount destination disco
     collectionSurface,
     /headingId="collection-title"[\s\S]*?showIntro=\{false\}/,
   );
+});
+
+test("only formally published destination hubs reach public runtime surfaces", async () => {
+  const [adapter, defaultRoute, localizedRoute, runtime, manifest, exportCheck] = await Promise.all([
+    source("lib/destinationHubContentAdapter.ts"),
+    source("app/(default)/destinations/[city]/page.tsx"),
+    source("app/(localized)/[locale]/destinations/[city]/page.tsx"),
+    source("lib/destinationHubRuntime.ts"),
+    source("lib/searchPlatformManifest.ts"),
+    source("tools/check-search-platform-export.mjs"),
+  ]);
+
+  assert.match(adapter, /destinationHubRegistry\.map\(\(hub\) =>/);
+  assert.match(adapter, /hub\.lifecycle === "published"/);
+  assert.match(adapter, /status: isPublished \? "published" : "review"/);
+  assert.match(adapter, /release-candidate-central-approval-required/);
+
+  for (const route of [defaultRoute, localizedRoute]) {
+    assert.match(route, /publishedDestinationHubIds\.map\(\(city\) =>/);
+    assert.match(route, /isPublishedDestinationHubId\(city\)/);
+    assert.doesNotMatch(route, /isDestinationHubId\(city\)/);
+  }
+  assert.match(runtime, /assertPublishedDestinationHubId\(hubId\)/);
+  assert.match(manifest, /assertPublishedDestinationHubId\(hubId\)/);
+  assert.match(exportCheck, /publishedDestinationHubIds = \[[\s\S]*?"guangzhou"/);
+  assert.match(exportCheck, /withheldDestinationHubIds = \["hangzhou", "zhangjiajie"\]/);
+  assert.match(exportCheck, /withheld destination Hub was exported/);
 });
 
 test("destination discovery is semantic, keyboard-visible and responsive", async () => {

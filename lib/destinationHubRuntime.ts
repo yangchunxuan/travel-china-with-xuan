@@ -1,5 +1,9 @@
 import { assertStructuredPageBody } from "./content-system/page-body";
-import type { DestinationHubId } from "./destinationHubs";
+import {
+  assertPublishedDestinationHubId,
+  type DestinationHubId,
+  type PublishedDestinationHubId,
+} from "./destinationHubs";
 import type { HomegroundLocale } from "./homegroundI18n";
 
 type BodyModule = { readonly default: unknown };
@@ -58,4 +62,14 @@ export async function loadDestinationHubBody(
   const loader = bodyLoaders[hubId][locale];
   const module = await loader();
   return assertStructuredPageBody(module.default);
+}
+
+/** Public routes call the lifecycle-narrowed loader; the general loader stays
+ * available for central review tooling that needs to inspect candidate copy. */
+export function loadPublishedDestinationHubBody(
+  hubId: PublishedDestinationHubId,
+  locale: HomegroundLocale,
+) {
+  assertPublishedDestinationHubId(hubId);
+  return loadDestinationHubBody(hubId, locale);
 }

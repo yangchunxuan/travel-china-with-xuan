@@ -1,19 +1,19 @@
 import { notFound } from "next/navigation";
 import { DestinationHubPage } from "../../../../../components/content/DestinationHubPage";
 import {
-  destinationHubIds,
-  isDestinationHubId,
+  isPublishedDestinationHubId,
+  publishedDestinationHubIds,
 } from "../../../../../lib/destinationHubs";
-import { loadDestinationHubBody } from "../../../../../lib/destinationHubRuntime";
+import { loadPublishedDestinationHubBody } from "../../../../../lib/destinationHubRuntime";
 import { localizedRouteLocale } from "../../../../../lib/localizedRouteLocale";
-import { getDestinationHubMetadata } from "../../../../../lib/searchPlatformManifest";
+import { getPublishedDestinationHubMetadata } from "../../../../../lib/searchPlatformManifest";
 
 export const dynamicParams = false;
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
   return (["zh", "ko"] as const).flatMap((locale) =>
-    destinationHubIds.map((city) => ({ locale, city })),
+    publishedDestinationHubIds.map((city) => ({ locale, city })),
   );
 }
 
@@ -24,8 +24,8 @@ export async function generateMetadata({
 }) {
   const { locale: routeLocale, city } = await params;
   const locale = localizedRouteLocale(routeLocale);
-  if (!isDestinationHubId(city)) notFound();
-  return getDestinationHubMetadata(city, locale);
+  if (!isPublishedDestinationHubId(city)) notFound();
+  return getPublishedDestinationHubMetadata(city, locale);
 }
 
 export default async function LocalizedDestinationHubRoute({
@@ -35,7 +35,7 @@ export default async function LocalizedDestinationHubRoute({
 }) {
   const { locale: routeLocale, city } = await params;
   const locale = localizedRouteLocale(routeLocale);
-  if (!isDestinationHubId(city)) notFound();
-  const body = await loadDestinationHubBody(city, locale);
+  if (!isPublishedDestinationHubId(city)) notFound();
+  const body = await loadPublishedDestinationHubBody(city, locale);
   return <DestinationHubPage body={body} hubId={city} locale={locale} />;
 }

@@ -1,17 +1,17 @@
 import { notFound } from "next/navigation";
 import { DestinationHubPage } from "../../../../components/content/DestinationHubPage";
 import {
-  destinationHubIds,
-  isDestinationHubId,
+  isPublishedDestinationHubId,
+  publishedDestinationHubIds,
 } from "../../../../lib/destinationHubs";
-import { loadDestinationHubBody } from "../../../../lib/destinationHubRuntime";
-import { getDestinationHubMetadata } from "../../../../lib/searchPlatformManifest";
+import { loadPublishedDestinationHubBody } from "../../../../lib/destinationHubRuntime";
+import { getPublishedDestinationHubMetadata } from "../../../../lib/searchPlatformManifest";
 
 export const dynamicParams = false;
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  return destinationHubIds.map((city) => ({ city }));
+  return publishedDestinationHubIds.map((city) => ({ city }));
 }
 
 export async function generateMetadata({
@@ -20,8 +20,8 @@ export async function generateMetadata({
   params: Promise<{ city: string }>;
 }) {
   const { city } = await params;
-  if (!isDestinationHubId(city)) notFound();
-  return getDestinationHubMetadata(city, "en");
+  if (!isPublishedDestinationHubId(city)) notFound();
+  return getPublishedDestinationHubMetadata(city, "en");
 }
 
 export default async function DestinationHubRoute({
@@ -30,7 +30,7 @@ export default async function DestinationHubRoute({
   params: Promise<{ city: string }>;
 }) {
   const { city } = await params;
-  if (!isDestinationHubId(city)) notFound();
-  const body = await loadDestinationHubBody(city, "en");
+  if (!isPublishedDestinationHubId(city)) notFound();
+  const body = await loadPublishedDestinationHubBody(city, "en");
   return <DestinationHubPage body={body} hubId={city} locale="en" />;
 }

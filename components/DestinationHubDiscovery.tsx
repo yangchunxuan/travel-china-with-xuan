@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { destinationHubRegistry } from "../lib/destinationHubs";
+import { publishedDestinationHubRegistry } from "../lib/destinationHubs";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getSearchCollection } from "../lib/searchCollectionI18n";
 import styles from "./DestinationHubDiscovery.module.css";
@@ -34,7 +34,7 @@ export function DestinationHubDiscovery({
 
         <nav aria-labelledby={headingId}>
           <ul className={styles.grid}>
-            {destinationHubRegistry.map((hub) => {
+            {publishedDestinationHubRegistry.map((hub) => {
               const hubCopy = hub.locales[locale];
 
               return (

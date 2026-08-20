@@ -16,8 +16,10 @@ import type {
 } from "./content-system/types";
 import { buildDestinationHubContentNodes } from "./destinationHubContentAdapter";
 import {
+  assertPublishedDestinationHubId,
   getDestinationHubEntry,
   type DestinationHubId,
+  type PublishedDestinationHubId,
 } from "./destinationHubs";
 import { getGuideEntry } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
@@ -512,6 +514,14 @@ export function getDestinationHubMetadata(
       images: socialImage.map((image) => image.url),
     },
   };
+}
+
+export function getPublishedDestinationHubMetadata(
+  hubId: PublishedDestinationHubId,
+  locale: HomegroundLocale,
+): Metadata {
+  assertPublishedDestinationHubId(hubId);
+  return getDestinationHubMetadata(hubId, locale);
 }
 
 export function absoluteManifestAlternates(entry: ContentManifestEntry) {

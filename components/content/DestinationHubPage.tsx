@@ -129,7 +129,7 @@ function structuredData(
         description: hub.description,
         about: { "@id": `${hub.canonicalUrl}#place` },
         inLanguage,
-        datePublished: hub.datePublished,
+        ...(hub.datePublished ? { datePublished: hub.datePublished } : {}),
         dateModified: hub.dateModified,
         publisher: { "@id": `${SITE_URL}/#organization` },
         primaryImageOfPage: {

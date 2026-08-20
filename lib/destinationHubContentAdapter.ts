@@ -68,6 +68,11 @@ export function buildDestinationHubContentNodes(): ContentNode[] {
       );
     }
 
+    // Gate B proves that the Hub has enough supporting editorial depth. It is
+    // necessary but never sufficient for release: central must promote the
+    // explicit lifecycle before routes, discovery or indexability turn on.
+    const isPublished = hub.lifecycle === "published";
+
     const locales = Object.fromEntries(
       (["en", "zh", "ko"] as const).map((locale) => {
         const copy = hub.locales[locale];
@@ -99,8 +104,14 @@ export function buildDestinationHubContentNodes(): ContentNode[] {
       entityIds: [hub.entityId, "country-china"],
       relationIds: [],
       parentContentId: "hub-explore",
-      status: "published",
-      indexability: { index: true, follow: true },
+      status: isPublished ? "published" : "review",
+      indexability: isPublished
+        ? { index: true, follow: true }
+        : {
+            index: false,
+            follow: false,
+            blockReason: "release-candidate-central-approval-required",
+          },
       locales,
       factIds: [],
       sourceIds: [],

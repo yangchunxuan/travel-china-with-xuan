@@ -22,6 +22,130 @@
     "schemaVersion": "1.0.0",
     "recordType": "entity",
     "data": {
+      "id": "province-shaanxi",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Shaanxi" },
+        "zh-Hans": { "name": "陕西省" },
+        "ko": { "name": "산시성", "aliases": ["섬서성"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-sichuan",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Sichuan" },
+        "zh-Hans": { "name": "四川省" },
+        "ko": { "name": "쓰촨성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-guangdong",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Guangdong" },
+        "zh-Hans": { "name": "广东省" },
+        "ko": { "name": "광둥성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-hunan",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Hunan" },
+        "zh-Hans": { "name": "湖南省" },
+        "ko": { "name": "후난성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-zhejiang",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Zhejiang" },
+        "zh-Hans": { "name": "浙江省" },
+        "ko": { "name": "저장성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-guangxi",
+      "entityType": "province",
+      "names": {
+        "en": {
+          "name": "Guangxi Zhuang Autonomous Region",
+          "shortName": "Guangxi"
+        },
+        "zh-Hans": { "name": "广西壮族自治区", "shortName": "广西" },
+        "ko": { "name": "광시 좡족 자치구", "shortName": "광시" }
+      },
+      "parentEntityIds": ["country-china"],
+      "attributes": { "administrativeKind": "autonomous-region" },
+      "sourceIds": [],
+      "status": "published",
+      "dates": {
+        "createdAt": "2026-08-20",
+        "updatedAt": "2026-08-20"
+      }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
       "id": "city-beijing",
       "entityType": "city",
       "names": {
@@ -30,11 +154,15 @@
         "ko": { "name": "베이징" }
       },
       "parentEntityIds": ["country-china"],
+      "attributes": {
+        "administrativeKind": "direct-administered-municipality",
+        "destinationHubLifecycle": "published"
+      },
       "sourceIds": [],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-09",
-        "updatedAt": "2026-08-09"
+        "updatedAt": "2026-08-20"
       }
     }
   },
@@ -49,12 +177,13 @@
         "zh-Hans": { "name": "西安" },
         "ko": { "name": "시안" }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-shaanxi"],
+      "attributes": { "destinationHubLifecycle": "published" },
       "sourceIds": [],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-09",
-        "updatedAt": "2026-08-09"
+        "updatedAt": "2026-08-20"
       }
     }
   },
@@ -69,12 +198,13 @@
         "zh-Hans": { "name": "张家界" },
         "ko": { "name": "장자제", "aliases": ["장가계"] }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-hunan"],
+      "attributes": { "destinationHubLifecycle": "release-candidate" },
       "sourceIds": [],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-09",
-        "updatedAt": "2026-08-09"
+        "updatedAt": "2026-08-20"
       }
     }
   },
@@ -90,6 +220,10 @@
         "ko": { "name": "상하이" }
       },
       "parentEntityIds": ["country-china"],
+      "attributes": {
+        "administrativeKind": "direct-administered-municipality",
+        "destinationHubLifecycle": "published"
+      },
       "sourceIds": [],
       "status": "published",
       "dates": {
@@ -109,12 +243,13 @@
         "zh-Hans": { "name": "成都" },
         "ko": { "name": "청두" }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-sichuan"],
+      "attributes": { "destinationHubLifecycle": "published" },
       "sourceIds": [],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-10",
-        "updatedAt": "2026-08-10"
+        "updatedAt": "2026-08-20"
       }
     }
   },
@@ -129,12 +264,16 @@
         "zh-Hans": { "name": "桂林" },
         "ko": { "name": "구이린" }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-guangxi"],
+      "attributes": {
+        "destinationHubArtifactState": "docs-only",
+        "destinationHubLifecycle": "blocked"
+      },
       "sourceIds": [],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-10",
-        "updatedAt": "2026-08-10"
+        "updatedAt": "2026-08-20"
       }
     }
   },
@@ -149,12 +288,13 @@
         "zh-Hans": { "name": "广州" },
         "ko": { "name": "광저우" }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-guangdong"],
+      "attributes": { "destinationHubLifecycle": "published" },
       "sourceIds": [],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-17",
-        "updatedAt": "2026-08-17"
+        "updatedAt": "2026-08-20"
       }
     }
   },
@@ -169,7 +309,8 @@
         "zh-Hans": { "name": "杭州" },
         "ko": { "name": "항저우" }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-zhejiang"],
+      "attributes": { "destinationHubLifecycle": "release-candidate" },
       "sourceIds": [],
       "status": "published",
       "dates": {
@@ -190,6 +331,12 @@
         "ko": { "name": "충칭" }
       },
       "parentEntityIds": ["country-china"],
+      "attributes": {
+        "administrativeKind": "direct-administered-municipality",
+        "destinationHubArtifactState": "docs-only",
+        "destinationHubLifecycle": "docs-only",
+        "destinationHubReleaseGate": "blocked"
+      },
       "sourceIds": [],
       "status": "published",
       "dates": {
@@ -209,7 +356,11 @@
         "zh-Hans": { "name": "深圳" },
         "ko": { "name": "선전" }
       },
-      "parentEntityIds": ["country-china"],
+      "parentEntityIds": ["province-guangdong"],
+      "attributes": {
+        "destinationHubArtifactState": "docs-only",
+        "destinationHubLifecycle": "blocked"
+      },
       "sourceIds": [],
       "status": "published",
       "dates": {

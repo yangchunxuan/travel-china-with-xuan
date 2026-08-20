@@ -30,6 +30,16 @@ const locales = [
   { runtime: "zh", prefix: "zh/", htmlLang: "zh-Hans", hreflang: "zh-Hans" },
   { runtime: "ko", prefix: "ko/", htmlLang: "ko", hreflang: "ko" },
 ];
+// This independent release assertion is deliberately not derived from the
+// authored Hub registry: promotion must update both runtime lifecycle and QA.
+const publishedDestinationHubIds = [
+  "beijing",
+  "shanghai",
+  "xian",
+  "chengdu",
+  "guangzhou",
+];
+const withheldDestinationHubIds = ["hangzhou", "zhangjiajie"];
 
 function routeFor(section, locale) {
   return `${locale.prefix}${section}/`;
@@ -98,6 +108,37 @@ if (missingProtectedSitemapUrls.length > 0) {
   throw new Error(
     `sitemap.xml is missing protected Phase 0 URL(s): ${missingProtectedSitemapUrls.join(", ")}`,
   );
+}
+
+for (const locale of locales) {
+  for (const city of publishedDestinationHubIds) {
+    const route = `${locale.prefix}destinations/${city}/`;
+    const canonical = `${siteUrl}/${route}`;
+    const filePath = path.join(outputRoot, route, "index.html");
+    if (!(await fileExists(filePath))) {
+      throw new Error(`/${route}: published destination Hub export is missing`);
+    }
+    if (!sitemapLocs.includes(canonical)) {
+      throw new Error(`/${route}: published destination Hub is missing from sitemap.xml`);
+    }
+    const html = await readFile(filePath, "utf8");
+    assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, `/${route}`);
+    if (/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/iu.test(html)) {
+      throw new Error(`/${route}: published destination Hub contains noindex`);
+    }
+  }
+
+  for (const city of withheldDestinationHubIds) {
+    const route = `${locale.prefix}destinations/${city}/`;
+    const canonical = `${siteUrl}/${route}`;
+    const filePath = path.join(outputRoot, route, "index.html");
+    if (await fileExists(filePath)) {
+      throw new Error(`/${route}: withheld destination Hub was exported`);
+    }
+    if (sitemapLocs.includes(canonical)) {
+      throw new Error(`/${route}: withheld destination Hub entered sitemap.xml`);
+    }
+  }
 }
 
 for (const sitemapUrl of sitemapLocs) {
