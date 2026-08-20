@@ -178,7 +178,34 @@ const body = {
           href: "/zh/guides/beijing-courtyard-hotel-or-modern-hotel/",
           description: "四合院的“有味道”，具体会改变房间、电梯、隔音、采暖和车辆进入哪些条件。",
         },
+        {
+          label: "酒店是真的靠近地铁吗？",
+          href: "/zh/guides/china-hotel-near-metro/",
+          description: "核对真正有用的出入口、路面、过街与大堂路线，不只看地图半径。",
+        },
+        {
+          label: "核验真正可用的无障碍客房",
+          href: "/zh/guides/china-accessible-hotel-room-verification/",
+          description: "为从街道到客房的完整路线索要对应房型的尺寸与证据。",
+        },
+        {
+          label: "外宾预订、住宿登记与被拒恢复",
+          href: "/zh/guides/foreigners-china-hotel/",
+          description: "分清全国规则、平台页面与这家物业前台实际能够完成的流程。",
+        },
+        {
+          label: "决定国际航班前最后一晚住哪里",
+          href: "/zh/guides/china-last-night-before-international-flight/",
+          description: "从准确航班与后备链比较北京市区最后一晚和机场侧缓冲住宿。",
+        },
       ],
+    },
+    {
+      id: "stay-quote-handoff",
+      type: "callout",
+      title: "需要人工核对住宿区和房型吗？",
+      tone: "decision",
+      body: "请提供旅行日期、人数、房间数与床型要求、准确的抵离机场或火车站、重点行程、住宿预算及币种、行李情况，以及儿童、老人、行动不便或无障碍需求。Homeground 可以人工核验区域、物业事实并取得当次书面报价。书面报价不代表实时房态、最终价格或该物业一定能够为外宾办理登记；付款和抵达前仍须向具名物业再次确认。",
     },
     {
       id: "gateways-heading",
@@ -582,6 +609,17 @@ const body = {
       text: "通常不需要。一个选对的基地，比为了靠近某一天景点而损失搬酒店时间更有价值。只有当换酒店能明确保护极早航班或火车、解决行动不便，或支持长停留中真正不同的第二阶段时，才值得考虑。",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "北京最后一晚应该住首都机场还是大兴机场附近？",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "先看准确机场、航站楼、值机截止时间与后备交通链。若从市区出发的链条很脆弱，尤其是早班机、带儿童老人或行李较多时，机场侧住宿更合理；若已核实出发当天的完整转场，且最后一个北京夜晚仍有价值，就可保留市区酒店。使用上方全国末晚指南的方法，不要只凭机场名称决定。",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -598,9 +636,9 @@ const body = {
       title: "两种继续方式",
       items: [
         {
-          label: "路线查找器",
-          href: "/zh/#route-finder",
-          description: "用现有晚数测试哪种城市顺序真正成立。",
+          label: "免费人工规划初查",
+          href: "/zh/#planner-contact",
+          description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",
         },
         {
           label: "中国行程点评",

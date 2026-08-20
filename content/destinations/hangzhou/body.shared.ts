@@ -60,6 +60,15 @@ const copies = {
       ["Separate White Snake story from site evidence", "white-snake-legend-hangzhou-zhenjiang", "Broken Bridge, Leifeng archaeology and later reconstruction have different evidence."],
       ["Choose the wider Yangtze Delta order", "shanghai-suzhou-hangzhou-nanjing-route-order", "Decide a chain, Shanghai base or two-base route before adding hotels."],
     ],
+    stayReadingTitle: "Finish the property decision with the nationwide stay owners",
+    stayLinks: [
+      ["Test whether ‘near the metro’ is useful", "china-hotel-near-metro", "Verify the exact exit and complete lobby route; a West Lake or station label is not enough."],
+      ["Verify an actually usable accessible room", "china-accessible-hotel-room-verification", "Check road or station to lobby, lift, room and bathroom before paying."],
+      ["Can foreigners stay at any hotel in China?", "foreigners-china-hotel", "Separate the legal rule, platform display and the exact property's current registration operation."],
+      ["Plan the final night before an international flight", "china-last-night-before-international-flight", "Work backwards from the named HGH terminal or the actual departure airport and flight."],
+    ],
+    quoteTitle: "Ask for a human Hangzhou property-fit check",
+    quoteBody: "Send the travel dates; traveller count; room and bed configuration; exact arrival and departure railway station or HGH terminal; fixed West Lake, Lingyin or Longjing days; accommodation budget and currency; luggage; children's ages; older-traveller or accessibility needs; and flexibility on area, room type or a fallback hotel. A planner can compare those requirements with current written property answers and organise a supplier-neutral enquiry. Every property, room, foreign-passport registration process and complete accessible route still needs human reconfirmation; this does not guarantee a live price, availability, guest acceptance, room type or accessibility.",
     onwardHeading: "Nearby does not mean it belongs inside the Hangzhou day",
     onwardColumns: ["Place", "Use it when", "Boundary"],
     onwardRows: [
@@ -84,6 +93,7 @@ const copies = {
       ["Which Hangzhou station is best?", "The one that makes the complete journey work on the actual date. East often has the broadest choice, Chengzhan can fit the old centre, West serves a different western geography and South is in Xiaoshan."],
       ["Can West Lake, Lingyin and Longjing fit in one day?", "Only as a selective, transport-aware day with limited stops. It is a poor promise for a first-time Shanghai return; overnight visitors should separate the lake and the western-hill block."],
       ["Is Liangzhu worth a day?", "Yes for archaeology, early urbanism, water management and jade interpretation. No if it is included only because it sits inside wider Hangzhou administration."],
+      ["Should the final night be near HGH?", "Not automatically. Work backwards from the international flight, named terminal, check-in requirement and a dated route. Use an HGH-side final night when a city hotel cannot preserve that margin, or when children, older travellers, accessibility needs or heavy luggage make the transfer fragile. Reconfirm the exact property's road, metro or stated shuttle operation, passport check-in and fallback; an airport label is not a live transport or room guarantee."],
     ],
     planningTitle: "Turn the city choice into a whole route",
     planningLinks: [
@@ -158,6 +168,15 @@ const copies = {
       ["分开白蛇故事与地点证据", "white-snake-legend-hangzhou-zhenjiang", "断桥、雷峰遗址和后建塔属于不同证据层。"],
       ["选择长三角整体顺序", "shanghai-suzhou-hangzhou-nanjing-route-order", "增加酒店前，先决定串联、上海基地或双基地。"],
     ],
+    stayReadingTitle: "用全国住宿 owner 完成物业决策",
+    stayLinks: [
+      ["检验‘靠近地铁’是否真的有用", "china-hotel-near-metro", "核对准确出口与到大堂的完整路线；西湖或车站标签并不足够。"],
+      ["核验真正可用的无障碍酒店房", "china-accessible-hotel-room-verification", "付款前核对从道路或车站到大堂、电梯、房间与浴室。"],
+      ["外国旅客能住中国任何酒店吗？", "foreigners-china-hotel", "分开法律规则、平台显示与具体物业当前的登记执行。"],
+      ["规划国际航班前的最后一晚", "china-last-night-before-international-flight", "从具名的HGH航站楼，或真正离境的机场与航班倒推。"],
+    ],
+    quoteTitle: "需要人工核对杭州候选物业？",
+    quoteBody: "请提供旅行日期、人数、房间数量与床型组合、准确的抵离火车站或HGH航站楼、已固定的西湖/灵隐/龙井日程、住宿预算及币种、行李情况、儿童年龄、老人或无障碍需求，以及对区域、房型或备用酒店的调整空间。规划师可以按这些条件核对物业当前书面回复，并协助组织供应商中立的询价。每家物业、每种房型、外籍住客护照登记流程和完整无障碍通路仍须人工复核；这不保证实时价格、房态、接待资格、房型或无障碍适用性。",
     onwardHeading: "离得近，不代表属于杭州这一天",
     onwardColumns: ["地点", "何时连接", "边界"],
     onwardRows: [
@@ -182,6 +201,7 @@ const copies = {
       ["哪个杭州站最好？", "实际日期下让全程最顺的那一座。东站通常选择最多，城站可适合老城，西站服务另一套西部地理，南站位于萧山。"],
       ["西湖、灵隐和龙井能一天完成吗？", "只有限制停留点并精确安排交通才勉强成立，不适合第一次从上海往返。住杭州时，应把湖区和西部山地分成两个时段。"],
       ["良渚值得一天吗？", "对考古、早期城市、水利与玉器解释有兴趣就值得；如果只是因为它行政上属于大杭州，就不值得硬加。"],
+      ["国际航班前一晚要住HGH附近吗？", "不一定。请从国际航班、准确航站楼、值机要求和出行日路线倒推。市区酒店无法保住余量，或儿童、老人、无障碍需求和大件行李让接驳变脆弱时，才优先考虑HGH一侧末晚。仍须复核具体物业的道路、地铁或其书面接驳安排、护照入住与备用方案；‘机场附近’标签不保证实时交通或房态。"],
     ],
     planningTitle: "把城市决定放回完整路线",
     planningLinks: [
@@ -249,6 +269,15 @@ const copies = {
       ["백사전 이야기와 장소 증거 나누기", "white-snake-legend-hangzhou-zhenjiang", "단교, 레이펑 유적과 후대 탑은 다른 증거입니다."],
       ["장강삼각주 전체 순서 고르기", "shanghai-suzhou-hangzhou-nanjing-route-order", "호텔을 추가하기 전 연결형·상하이 거점·두 거점을 정합니다."],
     ],
+    stayReadingTitle: "전국 숙박 owner로 숙소 결정을 마무리하세요",
+    stayLinks: [
+      ["‘지하철 근처’가 실제로 유용한지 검사", "china-hotel-near-metro", "정확한 출구와 로비까지 전체 경로를 확인하세요. 서호나 역 이름만으로는 부족합니다."],
+      ["실제로 쓸 수 있는 접근성 객실 확인", "china-accessible-hotel-room-verification", "결제 전에 도로나 역부터 로비, 엘리베이터, 객실과 욕실까지 확인하세요."],
+      ["외국인은 중국의 모든 호텔에 묵을 수 있을까?", "foreigners-china-hotel", "법적 규칙, 플랫폼 표시, 해당 숙소의 현재 등록 운영을 구분하세요."],
+      ["국제선 전 마지막 밤 계획", "china-last-night-before-international-flight", "이름이 확인된 HGH 터미널 또는 실제 출국 공항과 항공편에서 거꾸로 계산하세요."],
+    ],
+    quoteTitle: "항저우 후보 숙소를 사람과 함께 확인하고 싶다면",
+    quoteBody: "여행 날짜, 인원, 객실 수와 침대 구성, 정확한 도착·출발 기차역 또는 HGH 터미널, 확정된 서호·링인·룽징 일정, 숙박 예산과 통화, 짐, 어린이 나이, 고령자 또는 접근성 필요, 지역·객실 유형·대체 호텔에 대한 조정 가능 범위를 보내 주세요. 플래너는 이 조건과 숙소의 최신 서면 답변을 대조하고 특정 공급업체에 치우치지 않은 문의를 정리할 수 있습니다. 각 숙소와 객실, 외국인 여권 등록 절차, 전체 접근 경로는 사람이 다시 확인해야 하며 실시간 요금·객실 재고·투숙 허용·객실 유형·접근성을 보장하지 않습니다.",
     onwardHeading: "가깝다고 항저우 하루 안에 속하지는 않습니다",
     onwardColumns: ["장소", "연결할 때", "경계"],
     onwardRows: [
@@ -266,6 +295,7 @@ const copies = {
       ["어느 항저우역이 가장 좋은가?", "실제 날짜의 완전한 이동이 가장 좋은 역입니다. 동역은 선택이 많고, 청잔은 옛 도심에 맞을 수 있으며, 서역은 다른 서쪽 지리, 남역은 샤오산을 맡습니다."],
       ["서호, 링인과 룽징을 하루에 볼 수 있나?", "정류 지점을 줄이고 교통을 정확히 짜야만 가능합니다. 첫 상하이 왕복에는 좋지 않으며 숙박한다면 호수와 서쪽 구릉을 나누세요."],
       ["량주는 하루 가치가 있나?", "고고학, 초기 도시, 수리와 옥 해석이 목적이면 그렇습니다. 넓은 항저우 행정 안에 있다는 이유만이면 넣지 마세요."],
+      ["국제선 전날 HGH 근처에 묵어야 하나?", "항상 그렇지는 않습니다. 국제선 항공편, 정확한 터미널, 체크인 요건과 여행일 경로에서 거꾸로 계산하세요. 도심 호텔에서 필요한 여유를 지킬 수 없거나 어린이·고령자·접근성 필요·큰 짐 때문에 이동이 취약할 때 HGH 쪽 마지막 밤을 우선 검토합니다. 해당 숙소의 도로·지하철 또는 서면 셔틀 운영, 여권 체크인과 대안을 다시 확인하세요. ‘공항 근처’ 표시는 실시간 교통이나 객실을 보장하지 않습니다."],
     ],
     planningTitle: "도시 선택을 전체 동선으로 돌려놓기",
     planningLinks: [
@@ -310,6 +340,8 @@ export function buildHangzhouBody(locale: HomegroundLocale): StructuredPageBody 
       { id: "clusters", type: "table", caption: c.clusterHeading, columns: c.clusterColumns, rows: c.clusterRows },
       { id: "boundary", type: "callout", title: c.boundaryTitle, body: c.boundaryBody, tone: "neutral" },
       { id: "reading", type: "internal-links", title: c.readingTitle, items: c.links.map(([label, slug, description]) => ({ label, href: guidePath(locale, slug), description })) },
+      { id: "stay-owners", type: "internal-links", title: c.stayReadingTitle, items: c.stayLinks.map(([label, slug, description]) => ({ label, href: guidePath(locale, slug), description })) },
+      { id: "stay-quote-handoff", type: "callout", title: c.quoteTitle, body: c.quoteBody, tone: "neutral" },
       { id: "onward-heading", type: "heading", level: 2, text: c.onwardHeading },
       { id: "onward", type: "table", caption: c.onwardHeading, columns: c.onwardColumns, rows: c.onwardRows },
       { id: "recheck-heading", type: "heading", level: 2, text: c.recheckHeading },
