@@ -1,0 +1,887 @@
+{
+  "schemaVersion": "ten-city-entity-network-1.2",
+  "checkedAt": "2026-08-21T12:00:00+08:00",
+  "repositoryBaseline": "ef1898745a3c7a6e7cd308aa341c352f24fe9d01",
+  "runtimeMaterialization": {
+    "implementedHere": [
+      "country-province-city administrative parents in content/entities/core-places.json",
+      "seven published destination Hubs inherited from the PR #74 main baseline",
+      "ten destination-token-to-city mappings inherited from the PR #74 main baseline"
+    ],
+    "planningOnlyHere": [
+      "attraction clusters",
+      "transport nodes",
+      "stay areas",
+      "route pairs",
+      "FAQ topics",
+      "commercial and human-planning handoffs"
+    ],
+    "rule": "Planning-only nodes do not create a route, indexability or a public entity page. Hub publication is controlled by the seven-entry destination registry, not EntityV1.status."
+  },
+  "planningNodeSemantics": {
+    "arrayItemsAreInlineDefinitions": true,
+    "runtimeEntityReferences": false,
+    "idFormat": "lowercase-kebab-case",
+    "edgeByField": {
+      "attractionClusters": "city-context-for",
+      "gatewayNodes": "served-by-gateway",
+      "stayAreas": "offers-stay-base",
+      "routePairs": "route-pair-with",
+      "faqTopics": "answers-faq",
+      "entrypoints": {
+        "hotelOwner": "hands-off-to-canonical-owner",
+        "ticketOwner": "hands-off-to-canonical-owner",
+        "gatewayOwner": "hands-off-to-canonical-owner",
+        "planning": "hands-off-to-human-planning"
+      }
+    },
+    "boundaryRule": "outerBranches supplies the actual administrative host and the planning relationship whenever an attraction label could be mistaken for a central-city neighbourhood."
+  },
+  "administrativeNodes": [
+    {
+      "id": "country-china",
+      "type": "country",
+      "status": "published"
+    },
+    {
+      "id": "province-shaanxi",
+      "type": "province",
+      "parentId": "country-china",
+      "status": "published"
+    },
+    {
+      "id": "province-sichuan",
+      "type": "province",
+      "parentId": "country-china",
+      "status": "published"
+    },
+    {
+      "id": "province-guangdong",
+      "type": "province",
+      "parentId": "country-china",
+      "status": "published"
+    },
+    {
+      "id": "province-hunan",
+      "type": "province",
+      "parentId": "country-china",
+      "status": "published"
+    },
+    {
+      "id": "province-zhejiang",
+      "type": "province",
+      "parentId": "country-china",
+      "status": "published"
+    },
+    {
+      "id": "province-guangxi",
+      "type": "province",
+      "administrativeKind": "autonomous-region",
+      "parentId": "country-china",
+      "status": "published"
+    }
+  ],
+  "planningHostCrosswalk": [
+    {
+      "id": "district-huairou-beijing",
+      "hostKind": "district",
+      "administrativeContext": "Huairou District, Beijing",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-yanqing-beijing",
+      "hostKind": "district",
+      "administrativeContext": "Yanqing District, Beijing",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-pudong-shanghai",
+      "hostKind": "district",
+      "administrativeContext": "Pudong New Area, Shanghai",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-lintong-xian",
+      "hostKind": "district",
+      "administrativeContext": "Lintong District, Xi'an",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "city-huayin-weinan",
+      "hostKind": "county-level-city",
+      "administrativeContext": "Huayin, Weinan, Shaanxi",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "city-dujiangyan-chengdu",
+      "hostKind": "county-level-city",
+      "administrativeContext": "Dujiangyan, Chengdu, Sichuan",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "city-guanghan-deyang",
+      "hostKind": "county-level-city",
+      "administrativeContext": "Guanghan, Deyang, Sichuan",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "city-leshan",
+      "hostKind": "prefecture-level-city",
+      "administrativeContext": "Leshan, Sichuan",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "county-jiuzhaigou-aba",
+      "hostKind": "county",
+      "administrativeContext": "Jiuzhaigou County, Aba Tibetan and Qiang Autonomous Prefecture, Sichuan",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-panyu-guangzhou",
+      "hostKind": "district",
+      "administrativeContext": "Panyu District, Guangzhou",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-shunde-foshan",
+      "hostKind": "district",
+      "administrativeContext": "Shunde District, Foshan, Guangdong",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-yuhang-hangzhou",
+      "hostKind": "district",
+      "administrativeContext": "Yuhang District, Hangzhou",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "city-shaoxing",
+      "hostKind": "prefecture-level-city",
+      "administrativeContext": "Shaoxing, Zhejiang",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-wulingyuan-zhangjiajie",
+      "hostKind": "district",
+      "administrativeContext": "Wulingyuan District, Zhangjiajie",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "county-cili-zhangjiajie",
+      "hostKind": "county",
+      "administrativeContext": "Cili County, Zhangjiajie",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "county-fenghuang-xiangxi",
+      "hostKind": "county",
+      "administrativeContext": "Fenghuang County, Xiangxi Tujia and Miao Autonomous Prefecture, Hunan",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-wulong-chongqing",
+      "hostKind": "district",
+      "administrativeContext": "Wulong District, Chongqing",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "district-dazu-chongqing",
+      "hostKind": "district",
+      "administrativeContext": "Dazu District, Chongqing",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "county-yangshuo-guilin",
+      "hostKind": "county",
+      "administrativeContext": "Yangshuo County, Guilin, Guangxi",
+      "runtimeStatus": "planning-only"
+    },
+    {
+      "id": "county-longsheng-guilin",
+      "hostKind": "autonomous-county",
+      "administrativeContext": "Longsheng Various Nationalities Autonomous County, Guilin, Guangxi",
+      "runtimeStatus": "planning-only"
+    }
+  ],
+  "cityNetworks": [
+    {
+      "cityId": "city-beijing",
+      "names": {
+        "en": "Beijing",
+        "zh-Hans": "北京",
+        "ko": "베이징"
+      },
+      "administrativeParentId": "country-china",
+      "administrativeKind": "direct-administered-municipality",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for imperial and twentieth-century civic history, major museums and a Great Wall branch; travellers who dislike reservation-heavy days should shorten rather than stack more headline sites.",
+      "firstTripNights": "Four nights is the balanced first-time editorial baseline; add nights for multiple outer branches.",
+      "attractionClusters": [
+        "central-axis-forbidden-city-tiananmen",
+        "temple-of-heaven-south-central",
+        "summer-palace-northwest",
+        "mutianyu-or-badaling-separate-great-wall-branch"
+      ],
+      "gatewayNodes": [
+        "airport-pek",
+        "airport-pkx",
+        "station-beijing-south",
+        "station-beijing-west",
+        "station-beijing-chaoyang"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "mutianyu-great-wall-branch",
+          "administrativeHostId": "district-huairou-beijing",
+          "planningRelation": "day-trip-from-city-core"
+        },
+        {
+          "planningNodeId": "badaling-great-wall-branch",
+          "administrativeHostId": "district-yanqing-beijing",
+          "planningRelation": "day-trip-from-city-core"
+        }
+      ],
+      "stayAreas": [
+        "dongcheng-wangfujing",
+        "qianmen",
+        "sanlitun",
+        "guomao"
+      ],
+      "routePairs": [
+        "beijing-xian",
+        "beijing-chengdu",
+        "beijing-zhangjiajie"
+      ],
+      "faqTopics": [
+        "how-many-nights",
+        "pek-or-pkx",
+        "which-railway-station",
+        "which-great-wall-section",
+        "reservation-heavy-days"
+      ],
+      "entrypoints": {
+        "hotelOwner": "beijing-where-to-stay-first-trip",
+        "ticketOwner": "forbidden-city-for-foreign-visitors",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-shanghai",
+      "names": {
+        "en": "Shanghai",
+        "zh-Hans": "上海",
+        "ko": "상하이"
+      },
+      "administrativeParentId": "country-china",
+      "administrativeKind": "direct-administered-municipality",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for an international gateway, river-defined urban form and a Yangtze Delta hinge; a one-night transfer should not pretend to cover both city banks and an outer day.",
+      "firstTripNights": "Three complete city days is the balanced first-trip editorial baseline; Disneyland or another delta city is its own day.",
+      "attractionClusters": [
+        "puxi-bund-old-city",
+        "people-square-jingan",
+        "pudong-lujiazui",
+        "disneyland-separate-east-day"
+      ],
+      "gatewayNodes": [
+        "airport-shanghai-pudong-pvg",
+        "airport-shanghai-hongqiao-sha",
+        "station-shanghai-hongqiao-railway",
+        "station-shanghai-railway",
+        "station-shanghai-south-railway",
+        "station-shanghai-songjiang-railway"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "disneyland-separate-east-day",
+          "administrativeHostId": "district-pudong-shanghai",
+          "planningRelation": "separate-day-within-municipality"
+        }
+      ],
+      "stayAreas": [
+        "people-square",
+        "jingan",
+        "the-bund",
+        "lujiazui",
+        "hongqiao"
+      ],
+      "routePairs": [
+        "shanghai-hangzhou",
+        "shanghai-suzhou",
+        "shanghai-nanjing"
+      ],
+      "faqTopics": [
+        "how-many-days",
+        "puxi-or-pudong",
+        "pvg-or-sha",
+        "hongqiao-airport-or-station",
+        "day-trip-or-next-hotel"
+      ],
+      "entrypoints": {
+        "hotelOwner": "shanghai-where-to-stay-first-trip",
+        "ticketOwner": null,
+        "gatewayOwner": "pudong-airport-to-shanghai-disneyland",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-xian",
+      "names": {
+        "en": "Xi'an",
+        "zh-Hans": "西安",
+        "ko": "시안"
+      },
+      "administrativeParentId": "province-shaanxi",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for travellers who want an urban wall, museum collections and the Lintong archaeology branch in one base; skip a rushed overnight that leaves no complete city day.",
+      "firstTripNights": "Three nights usually protects one city day and one Lintong day; extra branches need separate time.",
+      "attractionClusters": [
+        "city-wall-bell-drum-tower",
+        "dayanta-south",
+        "lintong-terracotta-warriors-lishan",
+        "huashan-separate-branch"
+      ],
+      "gatewayNodes": [
+        "airport-xiy",
+        "station-xian-north",
+        "station-xian",
+        "station-xian-east"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "lintong-terracotta-warriors-lishan",
+          "administrativeHostId": "district-lintong-xian",
+          "planningRelation": "day-trip-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "huashan-separate-branch",
+          "administrativeHostId": "city-huayin-weinan",
+          "planningRelation": "outside-xian-visit-from"
+        }
+      ],
+      "stayAreas": [
+        "inside-or-near-city-wall",
+        "dayanta-south",
+        "xian-north-transfer-base"
+      ],
+      "routePairs": [
+        "beijing-xian",
+        "xian-chengdu",
+        "xian-luoyang"
+      ],
+      "faqTopics": [
+        "how-many-nights",
+        "wall-or-dayanta-base",
+        "terracotta-warriors-without-tour",
+        "museum-reservation",
+        "which-station"
+      ],
+      "entrypoints": {
+        "hotelOwner": "xian-where-to-stay-city-wall-or-dayanta",
+        "ticketOwner": "terracotta-warriors-without-tour",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-chengdu",
+      "names": {
+        "en": "Chengdu",
+        "zh-Hans": "成都",
+        "ko": "청두"
+      },
+      "administrativeParentId": "province-sichuan",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for a slower city counterweight, a first panda visit and a Sichuan gateway; shorten it if the traveller wants only remote Sichuan landscapes and no city time.",
+      "firstTripNights": "Two to three city nights; Dujiangyan, Sanxingdui, Leshan and Jiuzhaigou remain independent branches.",
+      "attractionClusters": [
+        "peoples-park-tianfu-square",
+        "panda-base-city-edge",
+        "wuhou-jinli",
+        "dujiangyan",
+        "sanxingdui-guanghan",
+        "leshan"
+      ],
+      "gatewayNodes": [
+        "airport-chengdu-tianfu",
+        "airport-chengdu-shuangliu",
+        "station-chengdu-east",
+        "station-chengdu-south",
+        "station-chengdu-west"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "dujiangyan",
+          "administrativeHostId": "city-dujiangyan-chengdu",
+          "planningRelation": "day-trip-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "sanxingdui-guanghan",
+          "administrativeHostId": "city-guanghan-deyang",
+          "planningRelation": "outside-chengdu-visit-from"
+        },
+        {
+          "planningNodeId": "leshan",
+          "administrativeHostId": "city-leshan",
+          "planningRelation": "outside-chengdu-visit-from"
+        },
+        {
+          "planningNodeId": "chengdu-jiuzhaigou-route-branch",
+          "administrativeHostId": "county-jiuzhaigou-aba",
+          "planningRelation": "long-distance-route-from"
+        }
+      ],
+      "stayAreas": [
+        "tianfu-square-chunxi-road",
+        "kuanzhai-peoples-park",
+        "chengdu-east-transfer-base"
+      ],
+      "routePairs": [
+        "xian-chengdu",
+        "chengdu-chongqing",
+        "chengdu-jiuzhaigou"
+      ],
+      "faqTopics": [
+        "how-many-nights",
+        "tfu-or-ctu",
+        "which-panda-site",
+        "sanxingdui-or-dujiangyan",
+        "what-needs-an-overnight"
+      ],
+      "entrypoints": {
+        "hotelOwner": null,
+        "ticketOwner": "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-guangzhou",
+      "names": {
+        "en": "Guangzhou",
+        "zh-Hans": "广州",
+        "ko": "광저우"
+      },
+      "administrativeParentId": "province-guangdong",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for Lingnan urban culture, food routines and a Pearl River Delta rail hinge; a traveller connecting directly to Hong Kong should decide whether Guangzhou receives real nights rather than a token stop.",
+      "firstTripNights": "Two nights protects one old-city day; three lets Liwan and the newer Pearl River axis coexist.",
+      "attractionClusters": [
+        "liwan-shamian",
+        "yuexiu-beijing-road",
+        "tianhe-zhujiang-new-town",
+        "pazhou",
+        "panyu-chimelong-separate-day"
+      ],
+      "gatewayNodes": [
+        "airport-guangzhou-baiyun",
+        "station-guangzhou",
+        "station-guangzhou-east",
+        "station-guangzhou-south",
+        "station-guangzhou-baiyun",
+        "station-guangzhou-north"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "panyu-chimelong-separate-day",
+          "administrativeHostId": "district-panyu-guangzhou",
+          "planningRelation": "separate-day-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "foshan-shunde-route-branch",
+          "administrativeHostId": "district-shunde-foshan",
+          "planningRelation": "outside-guangzhou-visit-from"
+        }
+      ],
+      "stayAreas": [
+        "liwan",
+        "yuexiu",
+        "tianhe",
+        "pazhou"
+      ],
+      "routePairs": [
+        "guangzhou-hong-kong",
+        "guangzhou-macau",
+        "guangzhou-shenzhen",
+        "guangzhou-foshan-shunde"
+      ],
+      "faqTopics": [
+        "how-many-nights",
+        "liwan-or-tianhe",
+        "baiyun-terminal",
+        "which-station",
+        "hong-kong-or-macau-next"
+      ],
+      "entrypoints": {
+        "hotelOwner": null,
+        "ticketOwner": null,
+        "gatewayOwner": "guangzhou-baiyun-airport-t2-t3",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-hangzhou",
+      "names": {
+        "en": "Hangzhou",
+        "zh-Hans": "杭州",
+        "ko": "항저우"
+      },
+      "administrativeParentId": "province-zhejiang",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for travellers deciding whether West Lake is a disciplined Shanghai day trip or the anchor of a real stay with the western hills, canal or Liangzhu.",
+      "firstTripNights": "Two nights protects lake and hills; a third creates room for a second heritage geography.",
+      "attractionClusters": [
+        "west-lake-east-north-south-shores",
+        "lingyin-longjing-western-hills",
+        "grand-canal-north",
+        "liangzhu-separate-suburban-day"
+      ],
+      "gatewayNodes": [
+        "airport-hangzhou-xiaoshan-hgh",
+        "station-hangzhou",
+        "station-hangzhou-east",
+        "station-hangzhou-west",
+        "station-hangzhou-south"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "liangzhu-separate-suburban-day",
+          "administrativeHostId": "district-yuhang-hangzhou",
+          "planningRelation": "separate-day-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "hangzhou-shaoxing-route-branch",
+          "administrativeHostId": "city-shaoxing",
+          "planningRelation": "outside-hangzhou-route-from"
+        }
+      ],
+      "stayAreas": [
+        "hubin-east-shore",
+        "wulin-square",
+        "west-lake-north",
+        "hangzhou-east-transfer-base"
+      ],
+      "routePairs": [
+        "shanghai-hangzhou",
+        "hangzhou-suzhou",
+        "hangzhou-nanjing",
+        "hangzhou-shaoxing"
+      ],
+      "faqTopics": [
+        "day-trip-or-overnight",
+        "how-many-nights",
+        "where-to-stay",
+        "which-station",
+        "west-lake-or-liangzhu"
+      ],
+      "entrypoints": {
+        "hotelOwner": null,
+        "ticketOwner": "liangzhu-ruins-park-and-museum-sequence",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-zhangjiajie",
+      "names": {
+        "en": "Zhangjiajie",
+        "zh-Hans": "张家界",
+        "ko": "장자제"
+      },
+      "administrativeParentId": "province-hunan",
+      "hubLifecycle": "published",
+      "audienceDecision": "Best for travellers willing to manage separate mountain systems and transport chains; skip or simplify when mobility, weather tolerance or gate logistics make repeated mountain days a poor fit.",
+      "firstTripNights": "Three complete sightseeing days and one deliberate base decision is the published Hub baseline.",
+      "attractionClusters": [
+        "zhangjiajie-city-tianmen",
+        "wulingyuan-forest-park",
+        "yuanjiajie-tianzi-upper-clusters",
+        "grand-canyon-separate-system"
+      ],
+      "gatewayNodes": [
+        "airport-zhangjiajie-hehua-dyg",
+        "station-zhangjiajie-west",
+        "station-zhangjiajie"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "wulingyuan-forest-park",
+          "administrativeHostId": "district-wulingyuan-zhangjiajie",
+          "planningRelation": "separate-mountain-system-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "grand-canyon-separate-system",
+          "administrativeHostId": "county-cili-zhangjiajie",
+          "planningRelation": "separate-ticket-system-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "zhangjiajie-fenghuang-route-branch",
+          "administrativeHostId": "county-fenghuang-xiangxi",
+          "planningRelation": "outside-zhangjiajie-route-from"
+        }
+      ],
+      "stayAreas": [
+        "zhangjiajie-city",
+        "wulingyuan",
+        "park-gate-specific-base"
+      ],
+      "routePairs": [
+        "beijing-zhangjiajie",
+        "zhangjiajie-shanghai",
+        "zhangjiajie-fenghuang",
+        "chongqing-zhangjiajie"
+      ],
+      "faqTopics": [
+        "how-many-days",
+        "city-or-wulingyuan",
+        "which-park-gate",
+        "tianmen-or-forest-park",
+        "weather-recovery"
+      ],
+      "entrypoints": {
+        "hotelOwner": "zhangjiajie-city-or-wulingyuan-hotel-base",
+        "ticketOwner": "zhangjiajie-national-forest-park-tickets-and-entrances",
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-chongqing",
+      "names": {
+        "en": "Chongqing",
+        "zh-Hans": "重庆",
+        "ko": "충칭"
+      },
+      "administrativeParentId": "country-china",
+      "administrativeKind": "direct-administered-municipality",
+      "hubLifecycle": "docs-only",
+      "audienceDecision": "Best for travellers interested in vertical urban form, food, night views and southwest route links; a two-night plan should not absorb both Wulong and Dazu as if they were central districts.",
+      "firstTripNights": "Two to three central-city nights; Wulong, Dazu or a cruise is a separate branch.",
+      "attractionClusters": [
+        "yuzhong-jiefangbei-chaotianmen",
+        "shibati-mountain-city-trail",
+        "nanan-nanshan",
+        "liziba-separate-cross-district",
+        "wulong",
+        "dazu"
+      ],
+      "gatewayNodes": [
+        "airport-chongqing-jiangbei-ckg",
+        "rail-station-chongqing-north",
+        "rail-station-chongqing-west",
+        "rail-station-chongqing-east",
+        "rail-station-shapingba"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "wulong",
+          "administrativeHostId": "district-wulong-chongqing",
+          "planningRelation": "outer-municipality-branch"
+        },
+        {
+          "planningNodeId": "dazu",
+          "administrativeHostId": "district-dazu-chongqing",
+          "planningRelation": "outer-municipality-branch"
+        }
+      ],
+      "stayAreas": [
+        "jiefangbei",
+        "guanyinqiao",
+        "shapingba",
+        "nanbin-road-nanping"
+      ],
+      "routePairs": [
+        "chengdu-chongqing",
+        "chongqing-zhangjiajie",
+        "chongqing-yichang-cruise"
+      ],
+      "faqTopics": [
+        "how-many-nights",
+        "jiefangbei-or-guanyinqiao",
+        "which-station",
+        "why-map-pins-mislead",
+        "wulong-or-dazu"
+      ],
+      "entrypoints": {
+        "hotelOwner": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+        "ticketOwner": null,
+        "planning": "planner-contact"
+      }
+    },
+    {
+      "cityId": "city-guilin",
+      "names": {
+        "en": "Guilin",
+        "zh-Hans": "桂林",
+        "ko": "구이린"
+      },
+      "administrativeParentId": "province-guangxi",
+      "hubLifecycle": "blocked",
+      "audienceDecision": "Best for travellers choosing among a city gateway, Li River movement, a Yangshuo base and rural karst days; it is a poor fit if all components are treated as one interchangeable landscape stop.",
+      "firstTripNights": "The internal draft separates arrival nights in Guilin from Yangshuo or Longji nights instead of publishing one universal total.",
+      "attractionClusters": [
+        "guilin-city-two-rivers-four-lakes",
+        "li-river-cruise-corridor",
+        "yangshuo-town",
+        "yulong-river-countryside",
+        "xingping",
+        "longji-separate-mountain-branch"
+      ],
+      "gatewayNodes": [
+        "airport-guilin-liangjiang-kwl",
+        "station-guilin",
+        "station-guilin-north",
+        "station-guilin-west",
+        "station-yangshuo",
+        "port-mopanshan",
+        "port-zhujiang"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "yangshuo-town",
+          "administrativeHostId": "county-yangshuo-guilin",
+          "planningRelation": "separate-base-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "yulong-river-countryside",
+          "administrativeHostId": "county-yangshuo-guilin",
+          "planningRelation": "separate-base-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "xingping",
+          "administrativeHostId": "county-yangshuo-guilin",
+          "planningRelation": "separate-town-within-prefecture-level-city"
+        },
+        {
+          "planningNodeId": "longji-separate-mountain-branch",
+          "administrativeHostId": "county-longsheng-guilin",
+          "planningRelation": "separate-overnight-branch-within-prefecture-level-city"
+        }
+      ],
+      "stayAreas": [
+        "guilin-city-centre",
+        "yangshuo-town",
+        "yulong-river-countryside",
+        "xingping",
+        "longji-village-base"
+      ],
+      "routePairs": [
+        "guilin-yangshuo",
+        "guilin-longji",
+        "guilin-guangzhou",
+        "guilin-hong-kong"
+      ],
+      "faqTopics": [
+        "guilin-or-yangshuo-base",
+        "cruise-or-rail-or-road",
+        "yangshuo-station-location",
+        "li-river-or-yulong-river",
+        "longji-day-trip-or-overnight"
+      ],
+      "entrypoints": {
+        "hotelOwner": null,
+        "ticketOwner": null,
+        "planning": "internal-only-until-gates-close"
+      }
+    },
+    {
+      "cityId": "city-shenzhen",
+      "names": {
+        "en": "Shenzhen",
+        "zh-Hans": "深圳",
+        "ko": "선전"
+      },
+      "administrativeParentId": "province-guangdong",
+      "hubLifecycle": "blocked",
+      "audienceDecision": "Best for a modern-city stay, design and technology context, or a deliberate Hong Kong border chain; it should not be reduced to a generic transfer between Guangzhou and Hong Kong.",
+      "firstTripNights": "Two nights can support one west-east city decision; border, Dapeng or business tasks change the base rather than simply adding attractions.",
+      "attractionClusters": [
+        "futian-civic-centre",
+        "luohu-huaqiangbei",
+        "nanshan-shekou-shenzhen-bay",
+        "dapeng-separate-eastern-branch"
+      ],
+      "gatewayNodes": [
+        "airport-szx",
+        "rail-station-shenzhen-north",
+        "rail-station-futian",
+        "rail-station-shenzhen",
+        "rail-station-shenzhen-east",
+        "checkpoint-luohu",
+        "checkpoint-futian",
+        "checkpoint-huanggang"
+      ],
+      "outerBranches": [
+        {
+          "planningNodeId": "dapeng-separate-eastern-branch",
+          "administrativeHostId": "city-shenzhen",
+          "locationHandleId": "area-dapeng-peninsula",
+          "planningRelation": "separate-day-within-prefecture-level-city"
+        }
+      ],
+      "stayAreas": [
+        "futian",
+        "luohu",
+        "nanshan",
+        "shekou"
+      ],
+      "routePairs": [
+        "shenzhen-hong-kong",
+        "guangzhou-shenzhen",
+        "shenzhen-macau"
+      ],
+      "faqTopics": [
+        "how-many-nights",
+        "futian-or-luohu-or-nanshan",
+        "station-versus-port",
+        "which-border",
+        "airport-station-versus-airport-north"
+      ],
+      "entrypoints": {
+        "hotelOwner": "shenzhen-where-to-stay-futian-luohu-nanshan",
+        "ticketOwner": null,
+        "planning": "internal-only-until-gates-close"
+      }
+    }
+  ],
+  "requiredRelationshipTypes": [
+    "admin-parent",
+    "city-context-for",
+    "served-by-gateway",
+    "offers-stay-base",
+    "route-pair-with",
+    "answers-faq",
+    "hands-off-to-canonical-owner",
+    "hands-off-to-human-planning"
+  ],
+  "graphInvariants": [
+    "Every city has exactly one administrative path to country-china.",
+    "Beijing, Shanghai and Chongqing connect directly to country-china and never through a same-name province node.",
+    "Every other city connects through its correct province or autonomous-region node.",
+    "Exactly Beijing, Shanghai, Xi'an, Chengdu, Guangzhou, Hangzhou and Zhangjiajie have published destination Hubs in the ef189874 baseline.",
+    "Chongqing, Guilin and Shenzhen city entities never imply public Hub routes.",
+    "Every city contract contains attraction, gateway, stay, route, FAQ and entrypoint fields even when the Hub is docs-only or blocked.",
+    "A null specialist owner records a real gap; it is not replaced by an invented URL.",
+    "No planning node is a runtime entity until central schema review and source validation are complete.",
+    "Planning arrays define scoped handles rather than claiming that a runtime entity already exists; outerBranches records the real host when a handle lies outside the central visitor core.",
+    "No city token may silently fall back to country-china when a canonical city entity exists."
+  ],
+  "pr74Release": {
+    "pullRequest": 74,
+    "head": "b66fc6cbca6f040a65db0d7e3727e3b2dac24580",
+    "mergeCommit": "ef1898745a3c7a6e7cd308aa341c352f24fe9d01",
+    "mergedAt": "2026-08-20T15:17:58Z",
+    "state": "merged-and-seven-city-hub-release-live",
+    "publishedIdentities": [
+      "destination-hangzhou",
+      "destination-zhangjiajie",
+      "china-online-arrival-card",
+      "chongqing-railway-station-selector",
+      "zhangjiajie-national-forest-park-tickets-and-entrances"
+    ],
+    "sitemapLocBaseline": 649
+  },
+  "employee8Integration": {
+    "branch": "origin/codex/seo-technical-foundation-20260820",
+    "commit": "a22beed2440be800513a0f9db588364b6eda3d91",
+    "state": "unmerged-no-pull-request-as-checked-2026-08-21",
+    "mappingOwnerAfterMerge": "lib/searchPlatformGuidePolicy.ts",
+    "compatibilityRule": "Do not test destination mappings by reading lib/searchPlatformContentAdapter.ts. After central integration, use resolveGuideEntities, destinationEntityIds, or check-guide-entity-coverage.mjs."
+  }
+}
