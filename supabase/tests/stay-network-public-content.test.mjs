@@ -36,6 +36,33 @@ const ctaBoundaryByLocale = {
   ],
 };
 
+const ctaGuaranteeByLocale = {
+  en: [
+    /not live inventory/iu,
+    /guarantee[^"\n]*price/iu,
+    /guarantee[^"\n]*availability/iu,
+    /guarantee[^"\n]*(?:foreign-)?guest acceptance/iu,
+    /guarantee[^"\n]*room type/iu,
+    /guarantee[^"\n]*accessibility/iu,
+  ],
+  zh: [
+    /不是实时库存/u,
+    /不保证[^"\n]*价格/u,
+    /不保证[^"\n]*房态/u,
+    /不保证[^"\n]*(?:外宾|外国旅客)接待/u,
+    /不保证[^"\n]*房型/u,
+    /不保证[^"\n]*无障碍适用性/u,
+  ],
+  ko: [
+    /실시간 재고가 아니/u,
+    /가격[^"\n]*보장하지 않습니다/u,
+    /객실 가능 여부[^"\n]*보장하지 않습니다/u,
+    /외국인 투숙[^"\n]*보장하지 않습니다/u,
+    /객실 유형[^"\n]*보장하지 않습니다/u,
+    /접근성[^"\n]*보장하지 않습니다/u,
+  ],
+};
+
 const legacyDirectSubmissionPatterns = [
   /For a human comparison of a shortlist, send/u,
   /Send the travel dates; traveller/u,
@@ -51,9 +78,21 @@ function assertCtaBoundary(source, locale, label) {
   for (const pattern of ctaBoundaryByLocale[locale]) {
     assert.match(source, pattern, `${label} must state ${pattern}`);
   }
+  for (const pattern of ctaGuaranteeByLocale[locale]) {
+    assert.match(source, pattern, `${label} must state ${pattern}`);
+  }
   for (const pattern of legacyDirectSubmissionPatterns) {
     assert.doesNotMatch(source, pattern, `${label} retains unsafe direct-submission copy`);
   }
+}
+
+function extractBlockText(source, id, field = "body") {
+  const start = source.indexOf(`id: "${id}"`);
+  assert.notEqual(start, -1, `${id} block missing`);
+  const match = source.slice(start, start + 5000)
+    .match(new RegExp(`${field}:\\s*"([^"]*)"`, "u"));
+  assert.ok(match, `${id}.${field} string missing`);
+  return match[1];
 }
 
 function blockSignature(source) {
@@ -67,7 +106,8 @@ test("all 38 public stay handoff files enforce the initial-form privacy boundary
   for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
     for (const locale of ["en", "zh", "ko"]) {
       const path = `content/destinations/${city}/body.${locale}.ts`;
-      assertCtaBoundary(await read(path), locale, path);
+      const source = await read(path);
+      assertCtaBoundary(extractBlockText(source, "stay-quote-handoff"), locale, path);
       checkedFiles += 1;
     }
   }
@@ -75,8 +115,11 @@ test("all 38 public stay handoff files enforce the initial-form privacy boundary
   for (const city of ["hangzhou", "zhangjiajie"]) {
     const path = `content/destinations/${city}/body.shared.ts`;
     const source = await read(path);
-    for (const locale of ["en", "zh", "ko"]) {
-      assertCtaBoundary(source, locale, `${path}/${locale}`);
+    const quoteBodies = [...source.matchAll(/quoteBody:\s*"([^"]*)"/gu)]
+      .map((match) => match[1]);
+    assert.equal(quoteBodies.length, 3, `${path} localized quote bodies`);
+    for (const [index, locale] of ["en", "zh", "ko"].entries()) {
+      assertCtaBoundary(quoteBodies[index], locale, `${path}/${locale}`);
     }
     checkedFiles += 1;
   }
@@ -92,7 +135,16 @@ test("all 38 public stay handoff files enforce the initial-form privacy boundary
   ]) {
     for (const locale of ["en", "zh", "ko"]) {
       const path = `content/guides/${owner}/body.${locale}.ts`;
-      assertCtaBoundary(await read(path), locale, path);
+      const source = await read(path);
+      const id = owner === "zhangjiajie-city-or-wulingyuan-hotel-base"
+        ? "consult"
+        : owner === "foreigners-china-hotel"
+          ? "light-help"
+          : owner === "china-last-night-before-international-flight"
+            ? "human-help-text"
+            : "stay-quote-handoff";
+      const field = owner === "china-last-night-before-international-flight" ? "text" : "body";
+      assertCtaBoundary(extractBlockText(source, id, field), locale, path);
       checkedFiles += 1;
     }
   }

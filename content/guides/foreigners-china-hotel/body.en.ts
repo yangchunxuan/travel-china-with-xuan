@@ -313,7 +313,7 @@ const body = {
       id: "light-help",
       type: "callout",
       title: "Need a human check?",
-      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being considered, traveller and room counts, an approximate accommodation budget if useful, and whether a late arrival needs later discussion. Do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and Homeground does not rank hotel apps or guarantee check-in.",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being considered, traveller and room counts, an approximate accommodation budget if useful, and whether a late arrival needs later discussion. Do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and Homeground does not rank hotel apps. This is not live inventory and does not guarantee price, availability, foreign-guest acceptance, room type or accessibility.",
       tone: "neutral",
     },
     {
