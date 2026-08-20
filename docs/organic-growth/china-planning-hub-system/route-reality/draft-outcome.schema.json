@@ -1,0 +1,1226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:homeground:route-reality:v3:draft-outcome",
+  "title": "Homeground Route Reality v3 internal draft outcome",
+  "description": "A deliberately non-numeric internal outcome contract. With no approved PolicyPack, valid requests stop at policy_pending and invalid requests stop at invalid. This schema authorizes no engine, API, page or indexable surface.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/PolicyPendingOutcome"
+    },
+    {
+      "$ref": "#/$defs/InvalidOutcome"
+    }
+  ],
+  "$defs": {
+    "ModelVersion": {
+      "const": "route-reality-v3.0.0-internal-draft"
+    },
+    "PendingPolicyPackVersion": {
+      "type": "null"
+    },
+    "InputField": {
+      "enum": [
+        "$request",
+        "totalNights",
+        "arrivalWindow",
+        "departureWindow",
+        "crossCityMoves",
+        "airportStationTransfers",
+        "hotelChanges",
+        "travellerPace"
+      ]
+    },
+    "ValidationCode": {
+      "enum": [
+        "REQUEST_NOT_PLAIN_OBJECT",
+        "MISSING_FIELD",
+        "EXTRA_FIELD",
+        "COUNT_NOT_INTEGER",
+        "COUNT_OUT_OF_RANGE",
+        "UNSUPPORTED_TIME_WINDOW",
+        "UNSUPPORTED_PACE",
+        "RELATIONAL_COUNT_CONFLICT",
+        "EVENT_TOPOLOGY_OVERFLOW"
+      ]
+    },
+    "BaseValidationError": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "field",
+        "ruleId",
+        "relatedFields",
+        "offendingKey"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/ValidationCode"
+        },
+        "field": {
+          "$ref": "#/$defs/InputField"
+        },
+        "ruleId": {
+          "type": "string",
+          "pattern": "^RR3-[A-Z]+-[0-9]{3}$"
+        },
+        "relatedFields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/InputField"
+          }
+        },
+        "offendingKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ValidationError": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "REQUEST_NOT_PLAIN_OBJECT"
+                },
+                "field": {
+                  "const": "$request"
+                },
+                "ruleId": {
+                  "const": "RR3-SHAPE-001"
+                },
+                "relatedFields": {
+                  "const": [
+                    "$request"
+                  ]
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "MISSING_FIELD"
+                },
+                "ruleId": {
+                  "const": "RR3-SHAPE-002"
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "totalNights" },
+                    "relatedFields": { "const": ["totalNights"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "arrivalWindow" },
+                    "relatedFields": { "const": ["arrivalWindow"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "departureWindow" },
+                    "relatedFields": { "const": ["departureWindow"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "crossCityMoves" },
+                    "relatedFields": { "const": ["crossCityMoves"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "airportStationTransfers" },
+                    "relatedFields": { "const": ["airportStationTransfers"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "hotelChanges" },
+                    "relatedFields": { "const": ["hotelChanges"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "travellerPace" },
+                    "relatedFields": { "const": ["travellerPace"] }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "EXTRA_FIELD"
+                },
+                "field": {
+                  "const": "$request"
+                },
+                "ruleId": {
+                  "const": "RR3-SHAPE-003"
+                },
+                "relatedFields": {
+                  "const": []
+                },
+                "offendingKey": {
+                  "type": "string",
+                  "pattern": "^(?:string:\"(?:[^\"\\\\\\u0000-\\u001F]|\\\\[\"\\\\/bfnrt]|\\\\u[0-9A-Fa-f]{4})*\"|symbol:(?:null|\"(?:[^\"\\\\\\u0000-\\u001F]|\\\\[\"\\\\/bfnrt]|\\\\u[0-9A-Fa-f]{4})*\")#(?:0|[1-9][0-9]*))$"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "offendingKey": {
+                  "type": "null"
+                }
+              },
+              "allOf": [
+                {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": { "const": "COUNT_NOT_INTEGER" },
+                        "ruleId": { "const": "RR3-SCALAR-001" }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": { "const": "COUNT_OUT_OF_RANGE" },
+                        "ruleId": { "const": "RR3-SCALAR-002" }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "field": { "const": "totalNights" },
+                        "relatedFields": { "const": ["totalNights"] }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "field": { "const": "crossCityMoves" },
+                        "relatedFields": { "const": ["crossCityMoves"] }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "field": { "const": "airportStationTransfers" },
+                        "relatedFields": { "const": ["airportStationTransfers"] }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "field": { "const": "hotelChanges" },
+                        "relatedFields": { "const": ["hotelChanges"] }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "UNSUPPORTED_TIME_WINDOW"
+                },
+                "ruleId": {
+                  "const": "RR3-SCALAR-003"
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "arrivalWindow" },
+                    "relatedFields": { "const": ["arrivalWindow"] }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "field": { "const": "departureWindow" },
+                    "relatedFields": { "const": ["departureWindow"] }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "UNSUPPORTED_PACE"
+                },
+                "field": {
+                  "const": "travellerPace"
+                },
+                "ruleId": {
+                  "const": "RR3-SCALAR-004"
+                },
+                "relatedFields": {
+                  "const": [
+                    "travellerPace"
+                  ]
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "RELATIONAL_COUNT_CONFLICT"
+                },
+                "field": {
+                  "const": "crossCityMoves"
+                },
+                "ruleId": {
+                  "const": "RR3-RELATION-001"
+                },
+                "relatedFields": {
+                  "const": [
+                    "totalNights",
+                    "crossCityMoves"
+                  ]
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "RELATIONAL_COUNT_CONFLICT"
+                },
+                "field": {
+                  "const": "hotelChanges"
+                },
+                "ruleId": {
+                  "const": "RR3-RELATION-002"
+                },
+                "relatedFields": {
+                  "const": [
+                    "totalNights",
+                    "crossCityMoves",
+                    "hotelChanges"
+                  ]
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/BaseValidationError"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "const": "EVENT_TOPOLOGY_OVERFLOW"
+                },
+                "field": {
+                  "const": "airportStationTransfers"
+                },
+                "ruleId": {
+                  "const": "RR3-TOPOLOGY-003"
+                },
+                "relatedFields": {
+                  "const": [
+                    "totalNights",
+                    "airportStationTransfers"
+                  ]
+                },
+                "offendingKey": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "AssumptionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceFields",
+        "ruleId",
+        "targetContracts"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sourceFields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/InputField"
+          }
+        },
+        "ruleId": {
+          "type": "string",
+          "pattern": "^RR3-[A-Z]+-[0-9]{3}$"
+        },
+        "targetContracts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Assumptions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "NIGHTS_CREATE_N_PLUS_ONE_CALENDAR_DAYS"
+                },
+                "sourceFields": {
+                  "const": [
+                    "totalNights"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-CALENDAR-001"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.calendarTopology"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "EDGE_WINDOWS_ARE_BROAD_CAPACITY_BANDS"
+                },
+                "sourceFields": {
+                  "const": [
+                    "arrivalWindow",
+                    "departureWindow"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-WINDOW-001"
+                },
+                "targetContracts": {
+                  "const": [
+                    "futurePolicy.edgeCapacityOrdering"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "ORDINARY_EDGE_ACCESS_NOT_SEPARATE_COMPLEX_TRANSFER"
+                },
+                "sourceFields": {
+                  "const": [
+                    "arrivalWindow",
+                    "departureWindow",
+                    "airportStationTransfers"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-TRANSFER-001"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.transferSemantics"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "CROSS_CITY_COUNTS_OVERNIGHT_BASE_CHANGE_DAYS"
+                },
+                "sourceFields": {
+                  "const": [
+                    "crossCityMoves"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-MOVE-001"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.crossCitySemantics"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "DAY_TRIPS_EXCLUDED_FROM_CROSS_CITY_MOVES"
+                },
+                "sourceFields": {
+                  "const": [
+                    "crossCityMoves"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-MOVE-002"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.crossCitySemantics"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HOTEL_CHANGES_EXCLUDE_CROSS_CITY_BASE_CHANGES"
+                },
+                "sourceFields": {
+                  "const": [
+                    "crossCityMoves",
+                    "hotelChanges"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-HOTEL-001"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.hotelChangeSemantics"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "ONE_ACCOMMODATION_EVENT_PER_TRANSITION_DAY"
+                },
+                "sourceFields": {
+                  "const": [
+                    "totalNights",
+                    "crossCityMoves",
+                    "hotelChanges"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-TOPOLOGY-001"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.accommodationTopology",
+                    "uncertainty.placement"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/AssumptionRecord"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "ONE_COMPLEX_INTERCHANGE_PER_CALENDAR_DAY"
+                },
+                "sourceFields": {
+                  "const": [
+                    "totalNights",
+                    "airportStationTransfers"
+                  ]
+                },
+                "ruleId": {
+                  "const": "RR3-TOPOLOGY-002"
+                },
+                "targetContracts": {
+                  "const": [
+                    "validation.interchangeTopology",
+                    "uncertainty.placement"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "UncertaintyCode": {
+      "enum": [
+        "INPUT_VALUE_UNKNOWN",
+        "RELATIONAL_DOMAIN_FILTERED",
+        "EVENT_PLACEMENT_UNSPECIFIED",
+        "TRIGGER_EVALUATION_BLOCKED_BY_POLICY"
+      ]
+    },
+    "BaseUncertaintyRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "sourceFields",
+        "ruleId",
+        "targetContracts"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/UncertaintyCode"
+        },
+        "sourceFields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/InputField"
+          }
+        },
+        "ruleId": {
+          "type": "string",
+          "pattern": "^RR3-[A-Z]+-[0-9]{3}$"
+        },
+        "targetContracts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "InputValueUnknownUncertainty": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseUncertaintyRecord"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "const": "INPUT_VALUE_UNKNOWN"
+            },
+            "sourceFields": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "totalNights",
+                  "arrivalWindow",
+                  "departureWindow",
+                  "crossCityMoves",
+                  "airportStationTransfers",
+                  "hotelChanges",
+                  "travellerPace"
+                ]
+              }
+            },
+            "ruleId": {
+              "const": "RR3-UNCERTAINTY-001"
+            },
+            "targetContracts": {
+              "const": [
+                "uncertainty.inputDomain"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "RelationalDomainFilteredUncertainty": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseUncertaintyRecord"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "const": "RELATIONAL_DOMAIN_FILTERED"
+            },
+            "sourceFields": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "totalNights",
+                  "crossCityMoves",
+                  "airportStationTransfers",
+                  "hotelChanges"
+                ]
+              }
+            },
+            "ruleId": {
+              "const": "RR3-UNCERTAINTY-002"
+            },
+            "targetContracts": {
+              "const": [
+                "uncertainty.feasibleDomain"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "EventPlacementUnspecifiedUncertainty": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseUncertaintyRecord"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "const": "EVENT_PLACEMENT_UNSPECIFIED"
+            },
+            "sourceFields": {
+              "enum": [
+                ["totalNights", "crossCityMoves"],
+                ["totalNights", "airportStationTransfers"],
+                ["totalNights", "hotelChanges"],
+                ["totalNights", "crossCityMoves", "airportStationTransfers"],
+                ["totalNights", "crossCityMoves", "hotelChanges"],
+                ["totalNights", "airportStationTransfers", "hotelChanges"],
+                ["totalNights", "crossCityMoves", "airportStationTransfers", "hotelChanges"]
+              ]
+            },
+            "ruleId": {
+              "const": "RR3-UNCERTAINTY-003"
+            },
+            "targetContracts": {
+              "const": [
+                "uncertainty.placement",
+                "futurePolicy.triggerWitnesses"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "TriggerEvaluationBlockedUncertainty": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseUncertaintyRecord"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "const": "TRIGGER_EVALUATION_BLOCKED_BY_POLICY"
+            },
+            "sourceFields": {
+              "const": []
+            },
+            "ruleId": {
+              "const": "RR3-POLICY-001"
+            },
+            "targetContracts": {
+              "const": [
+                "futurePolicy.numericResults",
+                "futurePolicy.alerts"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "TriggerOnlyUncertainties": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/TriggerEvaluationBlockedUncertainty"
+        }
+      ],
+      "items": false
+    },
+    "PlacementAndTriggerUncertainties": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/EventPlacementUnspecifiedUncertainty"
+        },
+        {
+          "$ref": "#/$defs/TriggerEvaluationBlockedUncertainty"
+        }
+      ],
+      "items": false
+    },
+    "InputAndTriggerUncertainties": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/InputValueUnknownUncertainty"
+        },
+        {
+          "$ref": "#/$defs/TriggerEvaluationBlockedUncertainty"
+        }
+      ],
+      "items": false
+    },
+    "InputFilterAndTriggerUncertainties": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/InputValueUnknownUncertainty"
+        },
+        {
+          "$ref": "#/$defs/RelationalDomainFilteredUncertainty"
+        },
+        {
+          "$ref": "#/$defs/TriggerEvaluationBlockedUncertainty"
+        }
+      ],
+      "items": false
+    },
+    "InputPlacementAndTriggerUncertainties": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/InputValueUnknownUncertainty"
+        },
+        {
+          "$ref": "#/$defs/EventPlacementUnspecifiedUncertainty"
+        },
+        {
+          "$ref": "#/$defs/TriggerEvaluationBlockedUncertainty"
+        }
+      ],
+      "items": false
+    },
+    "InputFilterPlacementAndTriggerUncertainties": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/InputValueUnknownUncertainty"
+        },
+        {
+          "$ref": "#/$defs/RelationalDomainFilteredUncertainty"
+        },
+        {
+          "$ref": "#/$defs/EventPlacementUnspecifiedUncertainty"
+        },
+        {
+          "$ref": "#/$defs/TriggerEvaluationBlockedUncertainty"
+        }
+      ],
+      "items": false
+    },
+    "PolicyPendingOutcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "terminalState",
+        "modelVersion",
+        "policyPackVersion",
+        "terminalReason",
+        "decisionUseful",
+        "errors",
+        "inputState",
+        "uncertaintyState",
+        "uncertainties",
+        "assumptions",
+        "result",
+        "publicImplementationAuthorized",
+        "indexablePageAuthorized"
+      ],
+      "properties": {
+        "status": {
+          "const": "policy_pending"
+        },
+        "terminalState": {
+          "enum": [
+            "policy_pending_fully_known_unique_placement",
+            "policy_pending_fully_known_placement_unresolved",
+            "policy_pending_input_unresolved",
+            "policy_pending_input_and_placement_unresolved"
+          ]
+        },
+        "modelVersion": {
+          "$ref": "#/$defs/ModelVersion"
+        },
+        "policyPackVersion": {
+          "$ref": "#/$defs/PendingPolicyPackVersion"
+        },
+        "terminalReason": {
+          "const": "NUMERIC_POLICY_PACK_NOT_APPROVED"
+        },
+        "decisionUseful": {
+          "const": false
+        },
+        "errors": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "inputState": {
+          "enum": [
+            "fully_known",
+            "contains_unknown"
+          ]
+        },
+        "uncertaintyState": {
+          "enum": [
+            "none",
+            "input_unresolved",
+            "placement_unresolved",
+            "input_and_placement_unresolved"
+          ]
+        },
+        "uncertainties": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {}
+        },
+        "assumptions": {
+          "$ref": "#/$defs/Assumptions"
+        },
+        "result": {
+          "type": "null"
+        },
+        "publicImplementationAuthorized": {
+          "const": false
+        },
+        "indexablePageAuthorized": {
+          "const": false
+        }
+      },
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "inputState": {
+                  "const": "fully_known"
+                },
+                "uncertaintyState": {
+                  "const": "none"
+                },
+                "terminalState": {
+                  "const": "policy_pending_fully_known_unique_placement"
+                },
+                "uncertainties": {
+                  "$ref": "#/$defs/TriggerOnlyUncertainties"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "inputState": {
+                  "const": "fully_known"
+                },
+                "uncertaintyState": {
+                  "const": "placement_unresolved"
+                },
+                "terminalState": {
+                  "const": "policy_pending_fully_known_placement_unresolved"
+                },
+                "uncertainties": {
+                  "$ref": "#/$defs/PlacementAndTriggerUncertainties"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "inputState": {
+                  "const": "contains_unknown"
+                },
+                "uncertaintyState": {
+                  "const": "input_unresolved"
+                },
+                "terminalState": {
+                  "const": "policy_pending_input_unresolved"
+                },
+                "uncertainties": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/InputAndTriggerUncertainties"
+                    },
+                    {
+                      "$ref": "#/$defs/InputFilterAndTriggerUncertainties"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "inputState": {
+                  "const": "contains_unknown"
+                },
+                "uncertaintyState": {
+                  "const": "input_and_placement_unresolved"
+                },
+                "terminalState": {
+                  "const": "policy_pending_input_and_placement_unresolved"
+                },
+                "uncertainties": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/InputPlacementAndTriggerUncertainties"
+                    },
+                    {
+                      "$ref": "#/$defs/InputFilterPlacementAndTriggerUncertainties"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "InvalidOutcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "terminalState",
+        "modelVersion",
+        "policyPackVersion",
+        "terminalReason",
+        "decisionUseful",
+        "errors",
+        "inputState",
+        "uncertaintyState",
+        "uncertainties",
+        "assumptions",
+        "result",
+        "publicImplementationAuthorized",
+        "indexablePageAuthorized"
+      ],
+      "properties": {
+        "status": {
+          "const": "invalid"
+        },
+        "terminalState": {
+          "const": "validation_failed"
+        },
+        "modelVersion": {
+          "$ref": "#/$defs/ModelVersion"
+        },
+        "policyPackVersion": {
+          "$ref": "#/$defs/PendingPolicyPackVersion"
+        },
+        "terminalReason": {
+          "const": "REQUEST_INVALID"
+        },
+        "decisionUseful": {
+          "const": false
+        },
+        "errors": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/ValidationError"
+          }
+        },
+        "inputState": {
+          "type": "null"
+        },
+        "uncertaintyState": {
+          "type": "null"
+        },
+        "uncertainties": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "assumptions": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "result": {
+          "type": "null"
+        },
+        "publicImplementationAuthorized": {
+          "const": false
+        },
+        "indexablePageAuthorized": {
+          "const": false
+        }
+      }
+    }
+  }
+}
