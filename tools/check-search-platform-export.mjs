@@ -30,6 +30,16 @@ const locales = [
   { runtime: "zh", prefix: "zh/", htmlLang: "zh-Hans", hreflang: "zh-Hans" },
   { runtime: "ko", prefix: "ko/", htmlLang: "ko", hreflang: "ko" },
 ];
+const publishedDestinationHubIds = [
+  "beijing",
+  "shanghai",
+  "xian",
+  "chengdu",
+  "guangzhou",
+  "hangzhou",
+  "zhangjiajie",
+];
+const blockedDestinationHubIds = ["chongqing", "guilin", "shenzhen"];
 
 function routeFor(section, locale) {
   return `${locale.prefix}${section}/`;
@@ -45,6 +55,14 @@ function collectionRoute(section, slug, locale) {
 
 function absoluteCollectionRoute(section, slug, locale) {
   return `${siteUrl}/${collectionRoute(section, slug, locale)}`;
+}
+
+function destinationRoute(id, locale) {
+  return `${locale.prefix}destinations/${id}/`;
+}
+
+function absoluteDestinationRoute(id, locale) {
+  return `${siteUrl}/${destinationRoute(id, locale)}`;
 }
 
 async function fileExists(filePath) {
@@ -98,6 +116,42 @@ if (missingProtectedSitemapUrls.length > 0) {
   throw new Error(
     `sitemap.xml is missing protected Phase 0 URL(s): ${missingProtectedSitemapUrls.join(", ")}`,
   );
+}
+
+for (const id of publishedDestinationHubIds) {
+  for (const locale of locales) {
+    const route = destinationRoute(id, locale);
+    const filePath = path.join(outputRoot, route, "index.html");
+    const context = `/${route}`;
+    const canonical = absoluteDestinationRoute(id, locale);
+    if (!(await fileExists(filePath))) {
+      throw new Error(`${context}: published destination export is missing`);
+    }
+
+    const html = await readFile(filePath, "utf8");
+    assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+    assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+    if (/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/iu.test(html)) {
+      throw new Error(`${context}: published destination contains noindex`);
+    }
+    if (!sitemapLocs.includes(canonical)) {
+      throw new Error(`${context}: published destination is missing from sitemap.xml`);
+    }
+  }
+}
+
+for (const id of blockedDestinationHubIds) {
+  for (const locale of locales) {
+    const route = destinationRoute(id, locale);
+    const filePath = path.join(outputRoot, route, "index.html");
+    const canonical = absoluteDestinationRoute(id, locale);
+    if (await fileExists(filePath)) {
+      throw new Error(`/${route}: blocked destination was exported`);
+    }
+    if (sitemapLocs.includes(canonical)) {
+      throw new Error(`/${route}: blocked destination entered sitemap.xml`);
+    }
+  }
 }
 
 for (const sitemapUrl of sitemapLocs) {
