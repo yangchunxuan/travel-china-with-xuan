@@ -22,6 +22,10 @@ import {
   searchSectionIds,
   type SearchSectionId,
 } from "./searchPlatformI18n";
+import {
+  guideUpdatePolicy,
+  resolveGuideEntities,
+} from "./searchPlatformGuidePolicy";
 
 interface LegacyGuideClassification {
   section: ContentSection;
@@ -133,75 +137,6 @@ export const legacyGuideClassifications = {
   },
 } as const satisfies Record<LegacyGuideId, LegacyGuideClassification>;
 
-const destinationEntityIds = {
-  china: "country-china",
-  beijing: "city-beijing",
-  xian: "city-xian",
-  zhangjiajie: "city-zhangjiajie",
-  shanghai: "city-shanghai",
-  chengdu: "city-chengdu",
-  guilin: "city-guilin",
-  guangzhou: "city-guangzhou",
-  hangzhou: "city-hangzhou",
-  chongqing: "city-chongqing",
-  shenzhen: "city-shenzhen",
-} as const;
-
-const criticalFreshnessPillars = new Set([
-  "entry-rules",
-  "entry-practicalities",
-]);
-
-const highFreshnessPillars = new Set([
-  "essentials-payments-connectivity",
-  "timing-holidays-crowds",
-  "transport",
-  "transport-airports-rail-hubs",
-  "transport-city-pair-routes",
-  "transport-last-mile-transfers",
-  "stay-access-foreign-guests",
-]);
-
-const dynamicTicketTopicFragments = [
-  "booking",
-  "opening",
-  "reservation",
-  "ticket",
-] as const;
-
-/**
- * Runtime freshness follows the metadata vocabulary that guides actually use.
- * It deliberately stays conservative: stable editorial interpretation keeps
- * the quarterly default, while entry rules, payments, transport, holidays and
- * ticket/booking workflows are rechecked when their controlling source moves.
- */
-function guideUpdatePolicy(guide: (typeof guideRegistry)[number]) {
-  if (criticalFreshnessPillars.has(guide.pillar)) {
-    return {
-      volatility: "critical" as const,
-      refreshCadence: "on-source-change" as const,
-      owner: "homeground-editorial",
-    };
-  }
-
-  const hasDynamicTicketTopic = guide.topics.some((topic) =>
-    dynamicTicketTopicFragments.some((fragment) => topic.includes(fragment)),
-  );
-  if (highFreshnessPillars.has(guide.pillar) || hasDynamicTicketTopic) {
-    return {
-      volatility: "high" as const,
-      refreshCadence: "on-source-change" as const,
-      owner: "homeground-editorial",
-    };
-  }
-
-  return {
-    volatility: "low" as const,
-    refreshCadence: "quarterly" as const,
-    owner: "homeground-editorial",
-  };
-}
-
 const localeKeys = {
   en: "en",
   zh: "zh-Hans",
@@ -265,19 +200,6 @@ const approvedSearchCollectionIds = new Set<SearchCollectionId>([
   "culture-festivals-arts-contemporary",
 ] as const);
 
-function guideEntities(
-  destinations: readonly string[],
-) {
-  const ids = destinations.flatMap((destination) => {
-    const id = destinationEntityIds[
-      destination as keyof typeof destinationEntityIds
-    ];
-    return id ? [id] : [];
-  });
-
-  return ids.length > 0 ? ids : ["country-china"];
-}
-
 function guideClassification(guide: (typeof guideRegistry)[number]) {
   if (guide.search) return guide.search;
   return legacyGuideClassifications[guide.id as LegacyGuideId];
@@ -314,7 +236,7 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
       family: classification.family,
       section: classification.section,
       primaryIntent: classification.primaryIntent,
-      entityIds: guideEntities(guide.destinations),
+      entityIds: resolveGuideEntities(guide.destinations).entityIds,
       relationIds: [],
       parentContentId: `collection-${getGuideCollectionId(guide)}`,
       status: "published",
