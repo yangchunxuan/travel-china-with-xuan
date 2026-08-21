@@ -11,8 +11,8 @@ const outputRoot = resolve(repositoryRoot, "content/destinations/chongqing");
 const localeConfig = {
   en: {
     draft: "hub.en.md",
-    linksTitle: "Use the narrower owner when the decision becomes executable",
-    stayTitle: "Finish the property decision with the nationwide stay owners",
+    linksTitle: "Continue with the detailed guide for the next decision",
+    stayTitle: "Verify the exact hotel before booking",
     planningTitle: "Turn the Chongqing choice into a whole route",
     sourceTitle: "Official sources and image records",
     quoteTitle: "Ask for a human Chongqing property-fit check",
@@ -21,7 +21,7 @@ const localeConfig = {
     labels: {
       orientation: ["Read Chongqing's banks and levels", "Use the bank–level–entrance–connection method before attempting a walking route."],
       stay: ["Choose a Chongqing accommodation base", "Compare Jiefangbei, Guanyinqiao and Shapingba, then verify the exact property entrance."],
-      geology: ["Understand Wulong's tiankeng landscape", "Keep geology and managed-access detail with the specialist owner."],
+      geology: ["Understand Wulong's tiankeng landscape", "Use the focused geology guide for landform terms and managed-access detail."],
       opera: ["Choose Sichuan opera with context", "Compare a named programme instead of treating face changing as the whole art form."],
       station: ["Choose the correct Chongqing railway station", "Match the dated ticket, hotel and onward corridor across North, West, Shapingba and East."],
       metro: ["Test whether ‘near the metro’ is useful", "Verify the exact exit and complete route to the lobby."],
@@ -43,8 +43,8 @@ const localeConfig = {
   },
   zh: {
     draft: "hub.zh.md",
-    linksTitle: "需要执行细节时，进入更窄的 canonical owner",
-    stayTitle: "用全国住宿 owner 完成具体物业判断",
+    linksTitle: "下一步需要细节时，继续阅读对应指南",
+    stayTitle: "预订前核对具体酒店",
     planningTitle: "把重庆选择放回整条中国路线",
     sourceTitle: "官方来源与图片记录",
     quoteTitle: "申请人工核对重庆住宿匹配度",
@@ -53,7 +53,7 @@ const localeConfig = {
     labels: {
       orientation: ["读懂重庆的江岸与高差", "开始步行前，先按江岸—高度—入口—连接方式核对路线。"],
       stay: ["选择重庆住宿基地", "比较解放碑、观音桥与沙坪坝，再核对具体物业入口。"],
-      geology: ["理解武隆天坑地貌", "地质解释和景区管理边界由专业 owner 负责。"],
+      geology: ["理解武隆天坑地貌", "通过专题地质指南了解地貌术语和景区管理边界。"],
       opera: ["有上下文地选择川剧", "比较有名称的节目，不把变脸当成整门艺术。"],
       station: ["选择正确的重庆铁路站", "按日期、车票、酒店和下一段方向比较北站、西站、沙坪坝站与东站。"],
       metro: ["核对“地铁附近”是否真的有用", "确认具体出口，以及从出口到酒店大堂的完整路线。"],
@@ -75,8 +75,8 @@ const localeConfig = {
   },
   ko: {
     draft: "hub.ko.md",
-    linksTitle: "실행 단계에서는 더 좁은 canonical owner를 사용하세요",
-    stayTitle: "전국 숙박 owner로 실제 숙소 판단을 마무리하세요",
+    linksTitle: "다음 결정을 위한 상세 가이드를 이어서 읽으세요",
+    stayTitle: "예약 전에 실제 숙소를 확인하세요",
     planningTitle: "충칭 선택을 중국 전체 동선으로 연결하세요",
     sourceTitle: "공식 출처와 이미지 기록",
     quoteTitle: "충칭 숙소 적합성을 사람에게 확인받기",
@@ -85,7 +85,7 @@ const localeConfig = {
     labels: {
       orientation: ["충칭의 강변과 높이 읽기", "걷기 전에 강변–높이–출입구–연결 방식으로 동선을 확인하세요."],
       stay: ["충칭 숙박 거점 선택", "제팡베이, 관인차오, 사핑바를 비교한 뒤 실제 숙소 출입구를 확인하세요."],
-      geology: ["우룽 톈컹 지형 이해", "지질 설명과 관리된 방문 경계는 전문 owner에서 확인하세요."],
+      geology: ["우룽 톈컹 지형 이해", "전문 지질 가이드에서 지형 용어와 관리된 방문 범위를 확인하세요."],
       opera: ["맥락과 함께 쓰촨 오페라 선택", "변검만으로 전체 예술을 설명하지 말고 이름이 있는 프로그램을 비교하세요."],
       station: ["정확한 충칭 기차역 선택", "날짜, 승차권, 호텔, 다음 이동 방향에 맞춰 북역·서역·사핑바역·동역을 비교하세요."],
       metro: ["‘지하철 근처’가 실제로 유용한지 확인", "정확한 출구와 로비까지의 전체 경로를 검증하세요."],
@@ -123,21 +123,116 @@ const stayOwnerSlugs = [
 ];
 
 const sourceItems = [
-  ["Chongqing airport passenger-terminal arrangement", "https://www.cq.gov.cn/ywdt/bmts/202512/t20251222_15262188.html", "Chongqing Municipal Government"],
-  ["2026 Q3 Chongqing railway timetable roles", "https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html", "Chongqing Municipal Government"],
-  ["Chongqing East station Line 6 access", "https://www.cq.gov.cn/ywdt/bmts/202507/t20250728_14853868.html", "Chongqing Municipal Government"],
-  ["Chongqing Station passenger-service suspension", "https://www.cq.gov.cn/ywdt/bmts/202206/t20220615_10817239.html", "Chongqing Municipal Government"],
-  ["Chongqing Station reconstruction progress", "https://jtysw.cq.gov.cn/sy_240/jdtp/202607/t20260715_15825144.html", "Chongqing Municipal Commission of Transport"],
-  ["Liziba works and staged exit closures", "https://wap.cq.gov.cn/ywdt/jrcq/202606/t20260613_15751500.html", "Chongqing Municipal Government"],
-  ["Wulong weather-related operating notices", "https://www.cq.gov.cn/ywdt/bmts/202606/t20260608_15737519.html", "Chongqing Municipal Government"],
-  ["Wulong Karst official overview", "https://english.cq.gov.cn/aboutchongqing/culture/NaturalHeritage/202606/t20260612_15751145.html", "Chongqing Municipal Government"],
-  ["Dazu Rock Carvings official overview", "https://english.cq.gov.cn/aboutchongqing/travel/5ALevelTouristAttraction/202606/t20260611_15745500.html", "Chongqing Municipal Government"],
-  ["Chongqing cruise-market operating context", "https://admin.cq.gov.cn/ywdt/jrcq/202607/t20260712_15816815.html", "Chongqing Municipal Government"],
-  ["Yuzhong, Chongqing photograph", "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg", "Wikimedia Commons / Kingswang192"],
-  ["Yangtze and Jialing river junction photograph", "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg", "Wikimedia Commons / Tauno Tõhk"],
-  ["Liziba photograph", "https://commons.wikimedia.org/wiki/File:201908_Liziba,_Chongqing.jpg", "Wikimedia Commons / MNXANL"],
-  ["Wulong natural bridges photograph", "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG", "Wikimedia Commons / Brookqi"],
-  ["Dazu Baodingshan photograph", "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_大足石刻-宝顶山摩崖造像,_Chongqing,_2023_(53563776088).jpg", "Wikimedia Commons / JL Cogburn"],
+  {
+    url: "https://www.cq.gov.cn/ywdt/bmts/202512/t20251222_15262188.html",
+    labels: { en: "Chongqing airport passenger-terminal arrangement", zh: "重庆机场客运航站楼安排", ko: "충칭공항 여객 터미널 운영 체계" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html",
+    labels: { en: "2026 Q3 Chongqing railway timetable roles", zh: "2026 年第三季度重庆铁路运行图与车站分工", ko: "2026년 3분기 충칭 철도 운행도와 역별 역할" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://www.cq.gov.cn/ywdt/bmts/202507/t20250728_14853868.html",
+    labels: { en: "Chongqing East station Line 6 access", zh: "重庆东站轨道交通 6 号线接驳", ko: "충칭동역 지하철 6호선 연결" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://www.cq.gov.cn/ywdt/bmts/202206/t20220615_10817239.html",
+    labels: { en: "Chongqing Station passenger-service suspension", zh: "重庆站暂停办理客运业务", ko: "충칭역 여객 업무 중단" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://jtysw.cq.gov.cn/sy_240/jdtp/202607/t20260715_15825144.html",
+    labels: { en: "Chongqing Station reconstruction progress", zh: "重庆站改造工程进展", ko: "충칭역 재건축 진행 상황" },
+    publishers: { en: "Chongqing Municipal Commission of Transport", zh: "重庆市交通运输委员会", ko: "충칭시 교통운수위원회" },
+  },
+  {
+    url: "https://wap.cq.gov.cn/ywdt/jrcq/202606/t20260613_15751500.html",
+    labels: { en: "Liziba works and staged exit closures", zh: "李子坝施工与分阶段出入口关闭", ko: "리쯔바 공사와 단계별 출입구 폐쇄" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://www.cq.gov.cn/ywdt/bmts/202606/t20260608_15737519.html",
+    labels: { en: "Wulong weather-related operating notices", zh: "武隆因天气调整运营的通知", ko: "우룽 기상 관련 운영 조정 공지" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://english.cq.gov.cn/aboutchongqing/culture/NaturalHeritage/202606/t20260612_15751145.html",
+    labels: { en: "Wulong Karst official overview", zh: "武隆喀斯特官方概览", ko: "우룽 카르스트 공식 개요" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://english.cq.gov.cn/aboutchongqing/travel/5ALevelTouristAttraction/202606/t20260611_15745500.html",
+    labels: { en: "Dazu Rock Carvings official overview", zh: "大足石刻官方概览", ko: "다쭈 석각 공식 개요" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://admin.cq.gov.cn/ywdt/jrcq/202607/t20260712_15816815.html",
+    labels: { en: "Chongqing cruise-market operating context", zh: "重庆游轮市场运营背景", ko: "충칭 크루즈 시장 운영 배경" },
+    publishers: { en: "Chongqing Municipal Government", zh: "重庆市人民政府", ko: "충칭시 인민정부" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
+    labels: { en: "Hero: Yuzhong by Kingswang192, CC BY 4.0; cropped, resized and converted", zh: "首图：渝中，摄影 Kingswang192，CC BY 4.0；已裁切、缩放并转码", ko: "대표 이미지: 위중, 촬영 Kingswang192, CC BY 4.0; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
+    labels: { en: "Yangtze–Jialing confluence by Tauno Tõhk, CC BY-SA 2.0; cropped, resized and converted", zh: "长江—嘉陵江交汇处，摄影 Tauno Tõhk，CC BY-SA 2.0；已裁切、缩放并转码", ko: "양쯔강–자링강 합류부, 촬영 Tauno Tõhk, CC BY-SA 2.0; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:Crown_Escalator,_Chongqing,_2017-09-21.jpg",
+    labels: { en: "Crown Escalator by Siyuwj, CC BY-SA 3.0; cropped, resized and converted", zh: "皇冠大扶梯，摄影 Siyuwj，CC BY-SA 3.0；已裁切、缩放并转码", ko: "황관 대형 에스컬레이터, 촬영 Siyuwj, CC BY-SA 3.0; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg",
+    labels: { en: "Chongqing East station by Renek78, CC0 1.0; cropped, resized and converted", zh: "重庆东站，摄影 Renek78，CC0 1.0；已裁切、缩放并转码", ko: "충칭동역, 촬영 Renek78, CC0 1.0; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:201908_Liziba,_Chongqing.jpg",
+    labels: { en: "Liziba by MNXANL, CC BY-SA 4.0; cropped, resized and converted", zh: "李子坝，摄影 MNXANL，CC BY-SA 4.0；已裁切、缩放并转码", ko: "리쯔바, 촬영 MNXANL, CC BY-SA 4.0; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG",
+    labels: { en: "Wulong natural bridge by Brookqi, released into the public domain; cropped, resized and converted", zh: "武隆天生桥，摄影 Brookqi，作者已释放至公有领域；已裁切、缩放并转码", ko: "우룽 천연교, 촬영 Brookqi, 저작자가 퍼블릭 도메인으로 공개; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_大足石刻-宝顶山摩崖造像,_Chongqing,_2023_(53563776088).jpg",
+    labels: { en: "Dazu Baodingshan by JL Cogburn, CC BY-SA 2.0; cropped, resized and converted", zh: "大足宝顶山，摄影 JL Cogburn，CC BY-SA 2.0；已裁切、缩放并转码", ko: "다쭈 바오딩산, 촬영 JL Cogburn, CC BY-SA 2.0; 자르기·크기 조정·형식 변환" },
+    publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
+  },
+  {
+    url: "https://creativecommons.org/licenses/by/4.0/",
+    labels: { en: "Licence: CC BY 4.0", zh: "许可：CC BY 4.0", ko: "라이선스: CC BY 4.0" },
+    publishers: { en: "Creative Commons", zh: "Creative Commons", ko: "Creative Commons" },
+  },
+  {
+    url: "https://creativecommons.org/licenses/by-sa/2.0/",
+    labels: { en: "Licence: CC BY-SA 2.0", zh: "许可：CC BY-SA 2.0", ko: "라이선스: CC BY-SA 2.0" },
+    publishers: { en: "Creative Commons", zh: "Creative Commons", ko: "Creative Commons" },
+  },
+  {
+    url: "https://creativecommons.org/licenses/by-sa/3.0/",
+    labels: { en: "Licence: CC BY-SA 3.0", zh: "许可：CC BY-SA 3.0", ko: "라이선스: CC BY-SA 3.0" },
+    publishers: { en: "Creative Commons", zh: "Creative Commons", ko: "Creative Commons" },
+  },
+  {
+    url: "https://creativecommons.org/licenses/by-sa/4.0/",
+    labels: { en: "Licence: CC BY-SA 4.0", zh: "许可：CC BY-SA 4.0", ko: "라이선스: CC BY-SA 4.0" },
+    publishers: { en: "Creative Commons", zh: "Creative Commons", ko: "Creative Commons" },
+  },
+  {
+    url: "https://creativecommons.org/publicdomain/zero/1.0/",
+    labels: { en: "Dedication: CC0 1.0", zh: "权利声明：CC0 1.0", ko: "권리 포기 선언: CC0 1.0" },
+    publishers: { en: "Creative Commons", zh: "Creative Commons", ko: "Creative Commons" },
+  },
 ];
 
 function cleanInline(value) {
@@ -272,22 +367,22 @@ function enrich(blocks, locale) {
     if (locale === "zh") {
       block.text = block.text.replace("“8D魔幻城市”", "“立体山城”");
     }
-    if (block.text.includes("Specialist depth remains with four owners")) {
-      block.text = "The broad Chongqing decision belongs to this destination Hub. Specialist depth remains with five published owners:";
+    if (block.text.includes("Four specialist guides cover the detailed decisions")) {
+      block.text = "Five specialist guides cover the detailed decisions:";
     }
-    if (block.text.includes("四个专题 owner 继续负责深层问题")) {
-      block.text = "宽泛的重庆整体选择由本 Destination Hub 承担。五个已发布专题 owner 继续负责深层问题：";
+    if (block.text.includes("以下四篇专题指南负责更具体的判断")) {
+      block.text = "以下五篇专题指南负责更具体的判断：";
     }
-    if (block.text.includes("세부 깊이는 다음 네 owner")) {
-      block.text = "충칭 전체를 어떻게 선택할지는 이 Destination Hub가 담당합니다. 세부 내용은 이미 공개된 다섯 개 전문 owner가 맡습니다.";
+    if (block.text.includes("다음 네 편의 전문 가이드")) {
+      block.text = "다음 다섯 편의 전문 가이드에서 더 구체적인 판단을 이어갈 수 있습니다.";
     }
-    if (block.text.startsWith("Those titles remain unlinked")) {
+    if (block.text.startsWith("Browse the current")) {
       block.text = "All five specialist URLs were verified live on 21 August 2026. Use their links below when the city-level decision becomes a station, accommodation, geology, performance or vertical-route task.";
     }
-    if (block.text.startsWith("在每一个准确生产 URL 返回")) {
+    if (block.text.startsWith("可浏览当前的")) {
       block.text = "五个专题 URL 已于2026年8月21日核实在线。城市层面的判断进入车站、住宿、地质、演出或垂直动线执行时，请使用下方相应链接。";
     }
-    if (block.text.startsWith("각 정확한 제작 URL이")) {
+    if (block.text.startsWith("현재 Homeground")) {
       block.text = "다섯 개 전문 URL은 2026년 8월 21일 모두 실제 공개 상태로 확인했습니다. 도시 선택이 역·숙박·지질·공연·수직 동선 실행으로 바뀌면 아래의 해당 링크를 사용하세요.";
     }
     if (block.text.includes("planned Dazu Shike") || block.text.includes("规划中的大足石刻高铁站") || block.text.includes("계획 중인 다쭈스커")) {
@@ -310,9 +405,9 @@ function enrich(blocks, locale) {
     (block, index) =>
       block.type === "list" &&
       blocks[index - 1]?.type === "paragraph" &&
-      (blocks[index - 1].text.includes("five published owners") ||
-        blocks[index - 1].text.includes("五个已发布专题") ||
-        blocks[index - 1].text.includes("다섯 개 전문 owner")),
+      (blocks[index - 1].text.includes("Five specialist guides") ||
+        blocks[index - 1].text.includes("以下五篇专题指南") ||
+        blocks[index - 1].text.includes("다음 다섯 편의 전문 가이드")),
   );
   if (!ownerList) throw new Error(`Specialist owner list not found for ${locale}`);
   ownerList.items.push(
@@ -399,10 +494,10 @@ function enrich(blocks, locale) {
     id: "official-sources",
     type: "sources",
     title: config.sourceTitle,
-    items: sourceItems.map(([label, url, publisher]) => ({
-      label,
+    items: sourceItems.map(({ labels, url, publishers }) => ({
+      label: labels[locale],
       url,
-      publisher,
+      publisher: publishers[locale],
       reviewedAt: "2026-08-21",
     })),
   });

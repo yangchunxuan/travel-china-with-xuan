@@ -16,7 +16,7 @@ const body = {
     {
       id: "paragraph-003",
       type: "paragraph",
-      text: "이 Destination Hub는 그 전체 결정을 돕는다. 골목과 층별 동선을 하나씩 설명하는 방향 안내서, 세 숙박지의 완전한 비교, 톈컹 지질 해설, 쓰촨 오페라 전문 가이드를 다시 쓰지 않는다."
+      text: "이 가이드는 그런 전체 결정을 돕는다. 골목과 층별 동선을 하나씩 설명하는 방향 안내서, 세 숙박지의 완전한 비교, 톈컹 지질 해설, 쓰촨 오페라 전문 가이드를 다시 쓰지는 않는다."
     },
     {
       id: "heading-004",
@@ -226,7 +226,7 @@ const body = {
     {
       id: "paragraph-020",
       type: "paragraph",
-      text: "충칭을 “8D 마법 도시”라고 부르는 것은 호텔 로비까지 가는 법, 마지막 구간의 계단 여부, 두 지도 핀 사이의 직선이 왜 긴 우회가 되는지를 설명하지 못한다. 강변–높이–출입구–연결 방식의 전체 방법과 현재 폐쇄 정보를 보려면 전문 owner Chongqing Upper and Lower City Orientation (chongqing-upper-lower-city-orientation)을 사용한다. 이 Hub는 전체 여행 선택에 필요한 판단 틀만 유지한다."
+      text: "충칭을 “8D 마법 도시”라고 부르는 것은 호텔 로비까지 가는 법, 마지막 구간의 계단 여부, 두 지도 핀 사이의 직선이 왜 긴 우회가 되는지를 설명하지 못한다. 강변–높이–출입구–연결 방식의 전체 방법과 현재 폐쇄 정보는 충칭 상·하부 도시 방향 가이드에서 확인할 수 있다. 이 글에서는 전체 여행 선택에 필요한 판단 틀만 다룬다."
     },
     {
       id: "heading-021",
@@ -295,7 +295,7 @@ const body = {
     {
       id: "paragraph-026",
       type: "paragraph",
-      text: "제팡베이–관인차오–사핑바의 완전한 비교와 숙소별 점검은 전문 owner Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba (chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba)가 담당한다. 난안의 올바른 하위 거점은 전체 동선에 따라 달라지므로 Hub 수준의 선택으로 남긴다."
+      text: "제팡베이–관인차오–사핑바의 자세한 비교와 숙소별 점검은 충칭 숙소 지역 가이드에서 이어서 확인할 수 있다. 난안은 세부 거점에 따라 이동 조건이 달라지므로 이 글의 전체 동선 비교에 남겨 둔다."
     },
     {
       id: "heading-027",
@@ -465,7 +465,7 @@ const body = {
     {
       id: "paragraph-048",
       type: "paragraph",
-      text: "쓰촨 오페라는 더 넓은 쓰촨–충칭 문화권에 속하지만 ‘변검’만으로 전체 공연을 설명할 수는 없다. 전문 owner Sichuan Opera and Face Changing, with Context (sichuan-opera-face-changing-with-context)에서 이름이 있는 프로그램을 선택하고, 공연장·출연진·순서·자막·촬영규정을 다시 확인한다."
+      text: "쓰촨 오페라는 더 넓은 쓰촨–충칭 문화권에 속하지만 ‘변검’만으로 전체 공연을 설명할 수는 없다. 쓰촨 오페라와 변검 맥락 가이드에서 이름이 있는 프로그램을 고르는 법을 확인하고, 공연장·출연진·순서·자막·촬영규정을 다시 확인한다."
     },
     {
       id: "heading-049",
@@ -547,7 +547,7 @@ const body = {
     {
       id: "paragraph-053",
       type: "paragraph",
-      text: "우룽남역 표를 샀다고 천생삼교 입구에 도착하는 것은 아니다. 먼저 방문할 장소를 정하고, 역 이동, 방문자센터, 내부교통, 보행을 그에 맞춰 설계한다. 톈컹과 싱크홀의 지질학은 전문 owner China Tiankeng and Sinkholes Explained (china-tiankeng-sinkholes-explained)가 담당한다. 이 Hub는 우룽에 하루나 1박을 쓸 가치가 있는지를 결정한다."
+      text: "우룽남역 표를 샀다고 천생삼교 입구에 도착하는 것은 아니다. 먼저 방문할 장소를 정하고, 역 이동, 방문자센터, 내부교통, 보행을 그에 맞춰 설계한다. 중국 톈컹과 싱크홀 해설은 지질 배경을 설명하고, 이 글은 우룽에 하루나 1박을 쓸 가치가 있는지 판단하도록 돕는다."
     },
     {
       id: "paragraph-054",
@@ -665,7 +665,7 @@ const body = {
     {
       id: "paragraph-069",
       type: "paragraph",
-      text: "충칭 전체를 어떻게 선택할지는 이 Destination Hub가 담당합니다. 세부 내용은 이미 공개된 다섯 개 전문 owner가 맡습니다."
+      text: "다음 다섯 편의 전문 가이드에서 더 구체적인 판단을 이어갈 수 있습니다."
     },
     {
       id: "list-070",
@@ -803,7 +803,7 @@ const body = {
     {
       id: "canonical-owner-links",
       type: "internal-links",
-      title: "실행 단계에서는 더 좁은 canonical owner를 사용하세요",
+      title: "다음 결정을 위한 상세 가이드를 이어서 읽으세요",
       items: [
         {
           label: "충칭의 강변과 높이 읽기",
@@ -818,7 +818,7 @@ const body = {
         {
           label: "우룽 톈컹 지형 이해",
           href: "/ko/guides/china-tiankeng-sinkholes-explained/",
-          description: "지질 설명과 관리된 방문 경계는 전문 owner에서 확인하세요."
+          description: "전문 지질 가이드에서 지형 용어와 관리된 방문 범위를 확인하세요."
         },
         {
           label: "맥락과 함께 쓰촨 오페라 선택",
@@ -835,7 +835,7 @@ const body = {
     {
       id: "stay-owner-links",
       type: "internal-links",
-      title: "전국 숙박 owner로 실제 숙소 판단을 마무리하세요",
+      title: "예약 전에 실제 숙소를 확인하세요",
       items: [
         {
           label: "‘지하철 근처’가 실제로 유용한지 확인",
@@ -894,93 +894,135 @@ const body = {
       title: "공식 출처와 이미지 기록",
       items: [
         {
-          label: "Chongqing airport passenger-terminal arrangement",
+          label: "충칭공항 여객 터미널 운영 체계",
           url: "https://www.cq.gov.cn/ywdt/bmts/202512/t20251222_15262188.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "2026 Q3 Chongqing railway timetable roles",
+          label: "2026년 3분기 충칭 철도 운행도와 역별 역할",
           url: "https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing East station Line 6 access",
+          label: "충칭동역 지하철 6호선 연결",
           url: "https://www.cq.gov.cn/ywdt/bmts/202507/t20250728_14853868.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing Station passenger-service suspension",
+          label: "충칭역 여객 업무 중단",
           url: "https://www.cq.gov.cn/ywdt/bmts/202206/t20220615_10817239.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing Station reconstruction progress",
+          label: "충칭역 재건축 진행 상황",
           url: "https://jtysw.cq.gov.cn/sy_240/jdtp/202607/t20260715_15825144.html",
-          publisher: "Chongqing Municipal Commission of Transport",
+          publisher: "충칭시 교통운수위원회",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Liziba works and staged exit closures",
+          label: "리쯔바 공사와 단계별 출입구 폐쇄",
           url: "https://wap.cq.gov.cn/ywdt/jrcq/202606/t20260613_15751500.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong weather-related operating notices",
+          label: "우룽 기상 관련 운영 조정 공지",
           url: "https://www.cq.gov.cn/ywdt/bmts/202606/t20260608_15737519.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong Karst official overview",
+          label: "우룽 카르스트 공식 개요",
           url: "https://english.cq.gov.cn/aboutchongqing/culture/NaturalHeritage/202606/t20260612_15751145.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Dazu Rock Carvings official overview",
+          label: "다쭈 석각 공식 개요",
           url: "https://english.cq.gov.cn/aboutchongqing/travel/5ALevelTouristAttraction/202606/t20260611_15745500.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing cruise-market operating context",
+          label: "충칭 크루즈 시장 운영 배경",
           url: "https://admin.cq.gov.cn/ywdt/jrcq/202607/t20260712_15816815.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "충칭시 인민정부",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Yuzhong, Chongqing photograph",
+          label: "대표 이미지: 위중, 촬영 Kingswang192, CC BY 4.0; 자르기·크기 조정·형식 변환",
           url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
-          publisher: "Wikimedia Commons / Kingswang192",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Yangtze and Jialing river junction photograph",
+          label: "양쯔강–자링강 합류부, 촬영 Tauno Tõhk, CC BY-SA 2.0; 자르기·크기 조정·형식 변환",
           url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
-          publisher: "Wikimedia Commons / Tauno Tõhk",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Liziba photograph",
+          label: "황관 대형 에스컬레이터, 촬영 Siyuwj, CC BY-SA 3.0; 자르기·크기 조정·형식 변환",
+          url: "https://commons.wikimedia.org/wiki/File:Crown_Escalator,_Chongqing,_2017-09-21.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "충칭동역, 촬영 Renek78, CC0 1.0; 자르기·크기 조정·형식 변환",
+          url: "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "리쯔바, 촬영 MNXANL, CC BY-SA 4.0; 자르기·크기 조정·형식 변환",
           url: "https://commons.wikimedia.org/wiki/File:201908_Liziba,_Chongqing.jpg",
-          publisher: "Wikimedia Commons / MNXANL",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong natural bridges photograph",
+          label: "우룽 천연교, 촬영 Brookqi, 저작자가 퍼블릭 도메인으로 공개; 자르기·크기 조정·형식 변환",
           url: "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG",
-          publisher: "Wikimedia Commons / Brookqi",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Dazu Baodingshan photograph",
+          label: "다쭈 바오딩산, 촬영 JL Cogburn, CC BY-SA 2.0; 자르기·크기 조정·형식 변환",
           url: "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_大足石刻-宝顶山摩崖造像,_Chongqing,_2023_(53563776088).jpg",
-          publisher: "Wikimedia Commons / JL Cogburn",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "라이선스: CC BY 4.0",
+          url: "https://creativecommons.org/licenses/by/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "라이선스: CC BY-SA 2.0",
+          url: "https://creativecommons.org/licenses/by-sa/2.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "라이선스: CC BY-SA 3.0",
+          url: "https://creativecommons.org/licenses/by-sa/3.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "라이선스: CC BY-SA 4.0",
+          url: "https://creativecommons.org/licenses/by-sa/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "권리 포기 선언: CC0 1.0",
+          url: "https://creativecommons.org/publicdomain/zero/1.0/",
+          publisher: "Creative Commons",
           reviewedAt: "2026-08-21"
         }
       ]

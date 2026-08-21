@@ -4,7 +4,7 @@ Chongqing is difficult to plan because several kinds of geography occupy the sam
 
 For a first trip, the useful question is not “Which viral viewpoint should I collect?” It is: **which part of Chongqing belongs in this route, where should I sleep, which transport hub is actually on my ticket, and how much energy will the city ask from my group?**
 
-This hub makes those decisions. It does not replace a street-by-street orientation tutorial, a complete hotel-area comparison, a tiankeng geology lesson or a full Sichuan-opera guide.
+This guide helps you make those decisions. It does not replace a street-by-street orientation tutorial, a complete hotel-area comparison, a tiankeng geology lesson or a full Sichuan-opera guide.
 
 ## The decision in one minute
 
@@ -61,7 +61,7 @@ Before walking, ask:
 3. **Which entrance is usable?** A hotel, mall, station or attraction can have entrances that solve very different height changes.
 4. **What is the vertical connector?** Rail, lift, escalator, stairs, ramp, taxi approach or an indoor passage may determine the route.
 
-Calling Chongqing an “8D magic city” does not tell a traveller how to reach the lobby, whether the final path has stairs, or why a straight line between two pins becomes a detour. Use the specialist owner **Chongqing Upper and Lower City Orientation** (`chongqing-upper-lower-city-orientation`) for the full bank–level–entrance–connection method and current closure warnings; this hub keeps only the decision framework.
+Calling Chongqing an “8D magic city” does not tell a traveller how to reach the lobby, whether the final path has stairs, or why a straight line between two pins becomes a detour. For the full bank–level–entrance–connection method and current closure warnings, continue with **Chongqing Upper and Lower City Orientation**. This guide keeps the wider trip decision here.
 
 ## 4. Where to stay: choose a task, not a famous name
 
@@ -78,7 +78,7 @@ A hotel area should reduce repeated travel for the itinerary you have. In Chongq
 
 Choose **Jiefangbei** when central Yuzhong dominates the first two mornings. Choose **Guanyinqiao** when contemporary commercial life, late dining and northern access matter more. Treat **Nan’an** as a family of bases: Nanbin Road, Nanping, Danzishi and Nanshan do not solve the same trip. **Shapingba** earns its place when a matching train, west-side schedule or Ciqikou-focused day is genuinely important.
 
-Use the specialist owner **Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba** (`chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`) for the complete three-area comparison and property checks. Nan’an remains a Hub-level choice because its correct sub-area depends on the whole route.
+For the complete three-area comparison and property checks, continue with **Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba**. Nan’an stays in this city-wide comparison because its best sub-area depends on the whole route.
 
 ## 5. Airport and railway stations: the ticket decides
 
@@ -128,7 +128,7 @@ Plan food as a neighbourhood meal near the hotel, a reserved destination meal, o
 
 Night views are strongest after daylight has explained the rivers and banks. One river-level view, one higher view or one seated cruise can be enough. Sightseeing boats, small ferries and themed sailings use different piers and schedules; verify the exact product and boarding point.
 
-Sichuan opera belongs to the wider Sichuan–Chongqing cultural region, but “face changing” is not a complete performance description. Use **Sichuan Opera and Face Changing, with Context** (`sichuan-opera-face-changing-with-context`) to choose a named programme and recheck venue, cast, running order, surtitles and photography rules.
+Sichuan opera belongs to the wider Sichuan–Chongqing cultural region, but “face changing” is not a complete performance description. **Sichuan Opera and Face Changing, with Context** explains how to choose a named programme and recheck venue, cast, running order, surtitles and photography rules.
 
 ## 8. Wulong and Dazu are not downtown attractions
 
@@ -145,7 +145,7 @@ Both are inside Chongqing Municipality. That administrative fact does not make t
 | Physical demand | Shuttles, steps, gradients and weather exposure vary | Walking and steps still matter but the day is less landscape-intensive |
 | Skip when | Only two full city days and Chongqing itself is the priority | Heritage is not a priority or the road day removes the only relaxed city day |
 
-A ticket to **Wulong South** is not a ticket to the natural-bridges entrance. Decide which sites you want, then build the station transfer, visitor centre, internal transport and walking around them. The specialist owner **China Tiankeng and Sinkholes Explained** (`china-tiankeng-sinkholes-explained`) owns the geology; this Hub owns whether Wulong deserves a day or overnight.
+A ticket to **Wulong South** is not a ticket to the natural-bridges entrance. Decide which sites you want, then build the station transfer, visitor centre, internal transport and walking around them. **China Tiankeng and Sinkholes Explained** covers the geology; this guide helps you decide whether Wulong deserves a day or an overnight.
 
 Plan **Dazu** around specific carvings. Baodingshan is the usual first priority; adding Beishan or other groups changes transport and visiting time. Check current protection work, events and opening arrangements before travel.
 
@@ -183,14 +183,14 @@ Place at least one Chongqing night before a **Yangtze cruise** when arriving by 
 
 ## 11. Current planning articles and next steps
 
-The broad Chongqing decision belongs to this destination Hub. Specialist depth remains with four owners:
+Four specialist guides cover the detailed decisions:
 
 - **Chongqing Upper and Lower City Orientation** — bank, level, entrance, connection and vertical-access logic.
 - **Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba** — full three-base comparison and property checks.
 - **China Tiankeng and Sinkholes Explained** — geological terminology and managed-access boundaries.
 - **Sichuan Opera and Face Changing, with Context** — performance choice and cultural reading.
 
-Those titles remain unlinked until each exact production URL returns HTTP 200. Browse the current [Homeground travel guide library](/guides/) or compare [route review, route build and full-trip support](/china-itinerary-review/).
+Browse the current [Homeground travel guide library](/guides/) or compare [route review, route build and full-trip support](/china-itinerary-review/).
 
 ## Frequently asked questions
 

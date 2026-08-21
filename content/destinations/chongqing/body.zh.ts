@@ -16,7 +16,7 @@ const body = {
     {
       id: "paragraph-003",
       type: "paragraph",
-      text: "这篇城市 Hub 负责帮助你做这些整体决策。它不替代逐街逐层的方向教程，不重写完整住宿区比较，也不承担天坑地质正文或川剧完整指南。"
+      text: "这篇指南帮助你做这些整体决策。它不替代逐街逐层的方向教程，不重写完整住宿区比较，也不承担天坑地质正文或川剧完整指南。"
     },
     {
       id: "heading-004",
@@ -226,7 +226,7 @@ const body = {
     {
       id: "paragraph-020",
       type: "paragraph",
-      text: "把重庆叫作“立体山城”，并不能告诉旅客怎样到达酒店大堂、最后一段是否有台阶，也不能解释为什么两个地图点之间的直线会变成长绕行。完整的江岸—层级—入口—连接方法、垂直交通和动态关闭提醒，应交给专题 owner 《重庆上下城方向指南》（chongqing-upper-lower-city-orientation）；本 Hub 只保留做全局决策所需的框架。"
+      text: "把重庆叫作“立体山城”，并不能告诉旅客怎样到达酒店大堂、最后一段是否有台阶，也不能解释为什么两个地图点之间的直线会变成长绕行。完整的江岸—层级—入口—连接方法、垂直交通和动态关闭提醒，可继续阅读《重庆上下城方向指南》；本篇只保留整段旅行所需的判断框架。"
     },
     {
       id: "heading-021",
@@ -295,7 +295,7 @@ const body = {
     {
       id: "paragraph-026",
       type: "paragraph",
-      text: "完整的解放碑—观音桥—沙坪坝三地比较和具体酒店核对，应交给专题 owner 《重庆住哪里：解放碑、观音桥还是沙坪坝》（chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba）。南岸仍保留在 Hub 层，因为其正确子区域必须结合整条路线判断。"
+      text: "完整的解放碑—观音桥—沙坪坝三地比较和具体酒店核对，可继续阅读《重庆住哪里：解放碑、观音桥还是沙坪坝》。南岸仍放在这篇全城比较中，因为最合适的子区域必须结合整条路线判断。"
     },
     {
       id: "heading-027",
@@ -465,7 +465,7 @@ const body = {
     {
       id: "paragraph-048",
       type: "paragraph",
-      text: "川剧属于更广泛的川渝文化区域，但“变脸”并不是一场完整演出的说明。专题 owner 《川剧变脸：放回完整语境》（sichuan-opera-face-changing-with-context）负责帮助旅客选择有名称的节目，并重新核对场馆、演员、节目顺序、字幕和摄影规则。"
+      text: "川剧属于更广泛的川渝文化区域，但“变脸”并不是一场完整演出的说明。《川剧变脸：放回完整语境》会帮助旅客选择有名称的节目，并重新核对场馆、演员、节目顺序、字幕和摄影规则。"
     },
     {
       id: "heading-049",
@@ -547,7 +547,7 @@ const body = {
     {
       id: "paragraph-053",
       type: "paragraph",
-      text: "买到武隆南站的车票，并不等于已经到达天生三桥入口。先决定具体景区，再围绕车站接驳、游客中心、景区内部交通和步行设计。天坑与陷穴的地质解释属于专题 owner 《中国天坑与陷穴说明》（china-tiankeng-sinkholes-explained）；本 Hub 只负责判断武隆是否值得占用一天或住一晚。"
+      text: "买到武隆南站的车票，并不等于已经到达天生三桥入口。先决定具体景区，再围绕车站接驳、游客中心、景区内部交通和步行设计。《中国天坑与陷穴说明》负责解释天坑与陷穴的地质背景；本篇帮助你判断武隆是否值得占用一天或住一晚。"
     },
     {
       id: "paragraph-054",
@@ -665,7 +665,7 @@ const body = {
     {
       id: "paragraph-069",
       type: "paragraph",
-      text: "宽泛的重庆整体选择由本 Destination Hub 承担。五个已发布专题 owner 继续负责深层问题："
+      text: "以下五篇专题指南负责更具体的判断："
     },
     {
       id: "list-070",
@@ -803,7 +803,7 @@ const body = {
     {
       id: "canonical-owner-links",
       type: "internal-links",
-      title: "需要执行细节时，进入更窄的 canonical owner",
+      title: "下一步需要细节时，继续阅读对应指南",
       items: [
         {
           label: "读懂重庆的江岸与高差",
@@ -818,7 +818,7 @@ const body = {
         {
           label: "理解武隆天坑地貌",
           href: "/zh/guides/china-tiankeng-sinkholes-explained/",
-          description: "地质解释和景区管理边界由专业 owner 负责。"
+          description: "通过专题地质指南了解地貌术语和景区管理边界。"
         },
         {
           label: "有上下文地选择川剧",
@@ -835,7 +835,7 @@ const body = {
     {
       id: "stay-owner-links",
       type: "internal-links",
-      title: "用全国住宿 owner 完成具体物业判断",
+      title: "预订前核对具体酒店",
       items: [
         {
           label: "核对“地铁附近”是否真的有用",
@@ -894,93 +894,135 @@ const body = {
       title: "官方来源与图片记录",
       items: [
         {
-          label: "Chongqing airport passenger-terminal arrangement",
+          label: "重庆机场客运航站楼安排",
           url: "https://www.cq.gov.cn/ywdt/bmts/202512/t20251222_15262188.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "2026 Q3 Chongqing railway timetable roles",
+          label: "2026 年第三季度重庆铁路运行图与车站分工",
           url: "https://www.cq.gov.cn/ywdt/jrcq/202606/t20260626_15778151.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing East station Line 6 access",
+          label: "重庆东站轨道交通 6 号线接驳",
           url: "https://www.cq.gov.cn/ywdt/bmts/202507/t20250728_14853868.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing Station passenger-service suspension",
+          label: "重庆站暂停办理客运业务",
           url: "https://www.cq.gov.cn/ywdt/bmts/202206/t20220615_10817239.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing Station reconstruction progress",
+          label: "重庆站改造工程进展",
           url: "https://jtysw.cq.gov.cn/sy_240/jdtp/202607/t20260715_15825144.html",
-          publisher: "Chongqing Municipal Commission of Transport",
+          publisher: "重庆市交通运输委员会",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Liziba works and staged exit closures",
+          label: "李子坝施工与分阶段出入口关闭",
           url: "https://wap.cq.gov.cn/ywdt/jrcq/202606/t20260613_15751500.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong weather-related operating notices",
+          label: "武隆因天气调整运营的通知",
           url: "https://www.cq.gov.cn/ywdt/bmts/202606/t20260608_15737519.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong Karst official overview",
+          label: "武隆喀斯特官方概览",
           url: "https://english.cq.gov.cn/aboutchongqing/culture/NaturalHeritage/202606/t20260612_15751145.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Dazu Rock Carvings official overview",
+          label: "大足石刻官方概览",
           url: "https://english.cq.gov.cn/aboutchongqing/travel/5ALevelTouristAttraction/202606/t20260611_15745500.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Chongqing cruise-market operating context",
+          label: "重庆游轮市场运营背景",
           url: "https://admin.cq.gov.cn/ywdt/jrcq/202607/t20260712_15816815.html",
-          publisher: "Chongqing Municipal Government",
+          publisher: "重庆市人民政府",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Yuzhong, Chongqing photograph",
+          label: "首图：渝中，摄影 Kingswang192，CC BY 4.0；已裁切、缩放并转码",
           url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
-          publisher: "Wikimedia Commons / Kingswang192",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Yangtze and Jialing river junction photograph",
+          label: "长江—嘉陵江交汇处，摄影 Tauno Tõhk，CC BY-SA 2.0；已裁切、缩放并转码",
           url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
-          publisher: "Wikimedia Commons / Tauno Tõhk",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Liziba photograph",
+          label: "皇冠大扶梯，摄影 Siyuwj，CC BY-SA 3.0；已裁切、缩放并转码",
+          url: "https://commons.wikimedia.org/wiki/File:Crown_Escalator,_Chongqing,_2017-09-21.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "重庆东站，摄影 Renek78，CC0 1.0；已裁切、缩放并转码",
+          url: "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "李子坝，摄影 MNXANL，CC BY-SA 4.0；已裁切、缩放并转码",
           url: "https://commons.wikimedia.org/wiki/File:201908_Liziba,_Chongqing.jpg",
-          publisher: "Wikimedia Commons / MNXANL",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong natural bridges photograph",
+          label: "武隆天生桥，摄影 Brookqi，作者已释放至公有领域；已裁切、缩放并转码",
           url: "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG",
-          publisher: "Wikimedia Commons / Brookqi",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Dazu Baodingshan photograph",
+          label: "大足宝顶山，摄影 JL Cogburn，CC BY-SA 2.0；已裁切、缩放并转码",
           url: "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_大足石刻-宝顶山摩崖造像,_Chongqing,_2023_(53563776088).jpg",
-          publisher: "Wikimedia Commons / JL Cogburn",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "许可：CC BY 4.0",
+          url: "https://creativecommons.org/licenses/by/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "许可：CC BY-SA 2.0",
+          url: "https://creativecommons.org/licenses/by-sa/2.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "许可：CC BY-SA 3.0",
+          url: "https://creativecommons.org/licenses/by-sa/3.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "许可：CC BY-SA 4.0",
+          url: "https://creativecommons.org/licenses/by-sa/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "权利声明：CC0 1.0",
+          url: "https://creativecommons.org/publicdomain/zero/1.0/",
+          publisher: "Creative Commons",
           reviewedAt: "2026-08-21"
         }
       ]

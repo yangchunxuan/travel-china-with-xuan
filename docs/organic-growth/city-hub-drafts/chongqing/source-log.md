@@ -26,6 +26,9 @@ asset-pending statement in that record:
 - seven real, location-specific, rights-recorded images were processed by
   crop, resize and WebP conversion only; the release uses zero AI documentary
   images;
+- central review re-opened all seven Commons records on 2026-08-21 and added
+  every selected photograph, creator, licence or public-domain status, and
+  crop/resize/format-change disclosure to the public EN/ZH/KO Sources block;
 - three aligned structured bodies, the destination registry, runtime loader,
   reciprocal links and export guards are implemented on the release branch.
 

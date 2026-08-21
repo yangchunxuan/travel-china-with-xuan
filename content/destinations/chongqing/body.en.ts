@@ -16,7 +16,7 @@ const body = {
     {
       id: "paragraph-003",
       type: "paragraph",
-      text: "This hub makes those decisions. It does not replace a street-by-street orientation tutorial, a complete hotel-area comparison, a tiankeng geology lesson or a full Sichuan-opera guide."
+      text: "This guide helps you make those decisions. It does not replace a street-by-street orientation tutorial, a complete hotel-area comparison, a tiankeng geology lesson or a full Sichuan-opera guide."
     },
     {
       id: "heading-004",
@@ -226,7 +226,7 @@ const body = {
     {
       id: "paragraph-020",
       type: "paragraph",
-      text: "Calling Chongqing an “8D magic city” does not tell a traveller how to reach the lobby, whether the final path has stairs, or why a straight line between two pins becomes a detour. Use the specialist owner Chongqing Upper and Lower City Orientation (chongqing-upper-lower-city-orientation) for the full bank–level–entrance–connection method and current closure warnings; this hub keeps only the decision framework."
+      text: "Calling Chongqing an “8D magic city” does not tell a traveller how to reach the lobby, whether the final path has stairs, or why a straight line between two pins becomes a detour. For the full bank–level–entrance–connection method and current closure warnings, continue with Chongqing Upper and Lower City Orientation. This guide keeps the wider trip decision here."
     },
     {
       id: "heading-021",
@@ -295,7 +295,7 @@ const body = {
     {
       id: "paragraph-026",
       type: "paragraph",
-      text: "Use the specialist owner Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba (chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba) for the complete three-area comparison and property checks. Nan’an remains a Hub-level choice because its correct sub-area depends on the whole route."
+      text: "For the complete three-area comparison and property checks, continue with Where to Stay in Chongqing: Jiefangbei, Guanyinqiao or Shapingba. Nan’an stays in this city-wide comparison because its best sub-area depends on the whole route."
     },
     {
       id: "heading-027",
@@ -465,7 +465,7 @@ const body = {
     {
       id: "paragraph-048",
       type: "paragraph",
-      text: "Sichuan opera belongs to the wider Sichuan–Chongqing cultural region, but “face changing” is not a complete performance description. Use Sichuan Opera and Face Changing, with Context (sichuan-opera-face-changing-with-context) to choose a named programme and recheck venue, cast, running order, surtitles and photography rules."
+      text: "Sichuan opera belongs to the wider Sichuan–Chongqing cultural region, but “face changing” is not a complete performance description. Sichuan Opera and Face Changing, with Context explains how to choose a named programme and recheck venue, cast, running order, surtitles and photography rules."
     },
     {
       id: "heading-049",
@@ -547,7 +547,7 @@ const body = {
     {
       id: "paragraph-053",
       type: "paragraph",
-      text: "A ticket to Wulong South is not a ticket to the natural-bridges entrance. Decide which sites you want, then build the station transfer, visitor centre, internal transport and walking around them. The specialist owner China Tiankeng and Sinkholes Explained (china-tiankeng-sinkholes-explained) owns the geology; this Hub owns whether Wulong deserves a day or overnight."
+      text: "A ticket to Wulong South is not a ticket to the natural-bridges entrance. Decide which sites you want, then build the station transfer, visitor centre, internal transport and walking around them. China Tiankeng and Sinkholes Explained covers the geology; this guide helps you decide whether Wulong deserves a day or an overnight."
     },
     {
       id: "paragraph-054",
@@ -665,7 +665,7 @@ const body = {
     {
       id: "paragraph-069",
       type: "paragraph",
-      text: "The broad Chongqing decision belongs to this destination Hub. Specialist depth remains with five published owners:"
+      text: "Five specialist guides cover the detailed decisions:"
     },
     {
       id: "list-070",
@@ -803,7 +803,7 @@ const body = {
     {
       id: "canonical-owner-links",
       type: "internal-links",
-      title: "Use the narrower owner when the decision becomes executable",
+      title: "Continue with the detailed guide for the next decision",
       items: [
         {
           label: "Read Chongqing's banks and levels",
@@ -818,7 +818,7 @@ const body = {
         {
           label: "Understand Wulong's tiankeng landscape",
           href: "/guides/china-tiankeng-sinkholes-explained/",
-          description: "Keep geology and managed-access detail with the specialist owner."
+          description: "Use the focused geology guide for landform terms and managed-access detail."
         },
         {
           label: "Choose Sichuan opera with context",
@@ -835,7 +835,7 @@ const body = {
     {
       id: "stay-owner-links",
       type: "internal-links",
-      title: "Finish the property decision with the nationwide stay owners",
+      title: "Verify the exact hotel before booking",
       items: [
         {
           label: "Test whether ‘near the metro’ is useful",
@@ -954,33 +954,75 @@ const body = {
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Yuzhong, Chongqing photograph",
+          label: "Hero: Yuzhong by Kingswang192, CC BY 4.0; cropped, resized and converted",
           url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
-          publisher: "Wikimedia Commons / Kingswang192",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Yangtze and Jialing river junction photograph",
+          label: "Yangtze–Jialing confluence by Tauno Tõhk, CC BY-SA 2.0; cropped, resized and converted",
           url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
-          publisher: "Wikimedia Commons / Tauno Tõhk",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Liziba photograph",
+          label: "Crown Escalator by Siyuwj, CC BY-SA 3.0; cropped, resized and converted",
+          url: "https://commons.wikimedia.org/wiki/File:Crown_Escalator,_Chongqing,_2017-09-21.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Chongqing East station by Renek78, CC0 1.0; cropped, resized and converted",
+          url: "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Liziba by MNXANL, CC BY-SA 4.0; cropped, resized and converted",
           url: "https://commons.wikimedia.org/wiki/File:201908_Liziba,_Chongqing.jpg",
-          publisher: "Wikimedia Commons / MNXANL",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Wulong natural bridges photograph",
+          label: "Wulong natural bridge by Brookqi, released into the public domain; cropped, resized and converted",
           url: "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG",
-          publisher: "Wikimedia Commons / Brookqi",
+          publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Dazu Baodingshan photograph",
+          label: "Dazu Baodingshan by JL Cogburn, CC BY-SA 2.0; cropped, resized and converted",
           url: "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_大足石刻-宝顶山摩崖造像,_Chongqing,_2023_(53563776088).jpg",
-          publisher: "Wikimedia Commons / JL Cogburn",
+          publisher: "Wikimedia Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Licence: CC BY 4.0",
+          url: "https://creativecommons.org/licenses/by/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Licence: CC BY-SA 2.0",
+          url: "https://creativecommons.org/licenses/by-sa/2.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Licence: CC BY-SA 3.0",
+          url: "https://creativecommons.org/licenses/by-sa/3.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Licence: CC BY-SA 4.0",
+          url: "https://creativecommons.org/licenses/by-sa/4.0/",
+          publisher: "Creative Commons",
+          reviewedAt: "2026-08-21"
+        },
+        {
+          label: "Dedication: CC0 1.0",
+          url: "https://creativecommons.org/publicdomain/zero/1.0/",
+          publisher: "Creative Commons",
           reviewedAt: "2026-08-21"
         }
       ]
