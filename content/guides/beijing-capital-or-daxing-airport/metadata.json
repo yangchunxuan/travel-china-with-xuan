@@ -1,0 +1,122 @@
+{
+  "id": "beijing-capital-or-daxing-airport",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "airport-decision-matrix",
+  "topics": [
+    "transport",
+    "airports",
+    "wrong-airport-recovery",
+    "first-last-night"
+  ],
+  "destinations": [
+    "beijing"
+  ],
+  "heroImagePath": "/images/guides/beijing-capital-or-daxing-airport/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-capital-or-daxing-airport/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-capital-or-daxing-airport/",
+      "title": "Beijing PEK or PKX? Choose the Airport by the Complete Trip",
+      "headline": "Beijing PEK or PKX: Which Airport Fits Your Trip?",
+      "description": "Choose PEK or PKX by the actual flight, terminal, hotel, railway connection, first or last night, luggage and a wrong-airport fallback.",
+      "heroAlt": "Long concourse inside Beijing Daxing International Airport with moving walkways and signs.",
+      "heroCredit": {
+        "text": "Beijing Daxing International Airport, Tyg728, 5 October 2019; cropped and resized by Homeground. It identifies PKX only and does not prove current operations.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABeijing_Daxing_International_Airport_Terminal_20191005.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "Choose PEK or PKX",
+      "featuredLinkLabel": "Compare Beijing's two airports",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Beijing",
+        "Airports",
+        "PEK vs PKX"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-capital-or-daxing-airport/",
+      "title": "北京首都PEK还是大兴PKX？按完整旅程选",
+      "headline": "北京首都机场还是大兴机场？",
+      "description": "按真实航班、航站楼、酒店、铁路衔接、首末晚、行李和走错机场备选，选择PEK或PKX。",
+      "heroAlt": "北京大兴国际机场内部长廊，可见自动步道和标识。",
+      "heroCredit": {
+        "text": "北京大兴国际机场，Tyg728摄于2019年10月5日；Homeground裁切并缩放。照片只确认PKX，不证明当前运营。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABeijing_Daxing_International_Airport_Terminal_20191005.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "选择首都或大兴机场",
+      "featuredLinkLabel": "对比北京双机场",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "北京交通",
+        "机场",
+        "首都或大兴"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-capital-or-daxing-airport/",
+      "title": "베이징 PEK와 PKX, 전체 여정으로 공항 고르기",
+      "headline": "베이징 수도공항과 다싱공항 중 어디가 맞을까요?",
+      "description": "실제 항공편, 터미널, 숙소, 철도 연결, 첫날·마지막 밤, 짐과 잘못 간 공항 대안으로 PEK·PKX를 고릅니다.",
+      "heroAlt": "무빙워크와 표지가 보이는 베이징 다싱국제공항 내부 통로.",
+      "heroCredit": {
+        "text": "베이징 다싱국제공항. Tyg728이 2019년 10월 5일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 PKX만 확인하며 현재 운항을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABeijing_Daxing_International_Airport_Terminal_20191005.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "PEK 또는 PKX 고르기",
+      "featuredLinkLabel": "베이징 두 공항 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "베이징 교통",
+        "공항",
+        "PEK vs PKX"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "PEK or PKX",
+      "Beijing Capital vs Daxing airport",
+      "which Beijing airport",
+      "wrong Beijing airport"
+    ],
+    "zh": [
+      "首都机场还是大兴机场",
+      "PEK和PKX区别",
+      "北京哪个机场方便",
+      "北京走错机场"
+    ],
+    "ko": [
+      "베이징 PEK PKX",
+      "수도공항 다싱공항 차이",
+      "베이징 어느 공항",
+      "베이징 공항 잘못 감"
+    ]
+  }
+}
