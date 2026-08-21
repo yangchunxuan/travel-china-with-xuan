@@ -1,6 +1,6 @@
 # Homeground 禁止重复与应合并清单
 
-生效快照：2026-08-20（保留 2026-08-11 历史锁题）
+生效快照：2026-08-21（保留 2026-08-11 历史锁题）
 
 本文件是员工 1–6、中央编辑与任何后续 SEO 代理的开题前检查表。三种语言只算一个内容身份；换语言、换标题、换问法、换人群修饰词或加年份，不会自动产生新页面资格。
 
@@ -21,13 +21,63 @@
 13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
 14. 所有准备新建并让 Google 收录的 SEO 页面原则上必须先经过 Search Map；员工 7 只有提案权。中央批准后才创建正式 GitHub Issue，之后才能交给员工 1–6 执行。
 
+## 2026-08-21 发布与员工库存锁
+
+PR [#74](https://github.com/yangchunxuan/travel-china-with-xuan/pull/74) 的以下五个身份已由 `origin/main@ef189874` 发布，三语 `liveUrls` 与 `lastVerifiedAt: 2026-08-21` 已回写主账本。它们不得再标为制作中、release candidate 或待发布：
+
+- `destination-zhangjiajie`
+- `destination-hangzhou`
+- `china-online-arrival-card`
+- `chongqing-railway-station-selector`
+- `zhangjiajie-national-forest-park-tickets-and-entrances`
+
+当前库存统计锁定为：176 个 guide identity / 522 个 guide locale URL；7 个 city hub / 21 个 URL；1 个 entry collection；合计 184 个详情身份 / 544 个详情 URL；sitemap 649。
+
+PR [#77](https://github.com/yangchunxuan/travel-china-with-xuan/pull/77) 已在 `origin/main@274d243` 更新 7 个既有 Hub 与 8 篇既有住宿指南。以下 owner 只能记为 `update-existing / updated-existing / published`，不能作为新题、新文章、新 URL 或新增 canonical 身份再次计数：
+
+- Hub：`destination-beijing`、`destination-chengdu`、`destination-guangzhou`、`destination-hangzhou`、`destination-shanghai`、`destination-xian`、`destination-zhangjiajie`。
+- Guide：`china-accessible-hotel-room-verification`、`china-last-night-before-international-flight`、`chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`、`foreigners-china-hotel`、`shanghai-where-to-stay-first-trip`、`shenzhen-where-to-stay-futian-luohu-nanshan`、`xian-where-to-stay-city-wall-or-dayanta`、`zhangjiajie-city-or-wulingyuan-hotel-base`。
+
+PR #77 共更新 15 个既有身份 / 45 个 locale 页面；canonical identity delta 与 sitemap URL delta 均为 0。PR #75 只合并 Route Reality 内部规格，仍为 `internal-only / not-published`，也不得按公开工具或文章计数。PR #76 为技术、实体与治理整合，不新增公开身份。
+
+| 员工 | 本轮分支锁 | 重复/误发布风险 |
+|---:|---|---|
+| 1 | `docs/employee-1-transport-decision-network-live-sync-20260821@16bbb71f` — **MERGED / PR #76** | 内部治理资料，不是新 owner 或开工授权 |
+| 2 | `codex/employee-2-ten-city-entity-lifecycle-repair-20260821@6707236d` — **MERGED / PR #76** | 7 Hub / 21 URL 生命周期保持；不得再次写回 offline |
+| 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` — central review pending | 十篇均是 durable draft，不是 approved/published |
+| 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` — **MERGED / PR #75 / internal only** | 不得从内部规格生成新 Hub URL、calculator、API 或公开 surface |
+| 5 | `article/worker-5-stay-network-integration-split-20260821@ea9e2453` — **MERGED AND DEPLOYED / PR #77** | 只能按既有 owner 更新计数；不是15篇新文章、实时酒店库存或报价保证 |
+| 6 | `article/worker-6-arrival-system-live-sync-20260821@73506f59` — **MERGED / PR #76** | 仅 First 24 Hours source-maintenance；不得抢员工4 canonical owner |
+| 8 | `codex/route-reality-v4-final-technical-review-20260821@e524af81` — **MERGED / PR #75 / internal only** | Route Reality 仍 not-published；public implementation/indexable authorization 仍为 false |
+
+返修分支不得与旧分支重复计数：员工1以 `16bbb71f` 为当前 docs 修订；员工2以 `6707236d` 为当前生命周期修订；员工5以 `ea9e2453` 为当前隐私闭环交付；员工6以 `73506f59` 为当前抵达状态修订；Route Reality 以员工4 v4 `9f88336e` 和员工8最终审查 `e524af81` 为当前技术证据。旧分支只保留历史证据，不能再次形成候选、文章身份或上线计数。
+
+`planning-20260820-first-24-hours` 已有 durable docs draft，执行状态为 `draft-submitted`，但中央公开决定仍 `pending-review`，发布状态 `not-published`。员工4是 collection editorial owner，canonical 保持 `hub-plan`，员工6只是 source-maintenance handoff；`china-arrival-day-booked-anchor-or-flexible-block` 仅是相邻 owner，禁止第二公开 URL。
+
+Route Reality 的 v2 阻断与 v3 测试假绿已由 v4 `9f88336e` 闭环，并由员工8 `e524af81` 判定 `TECHNICAL SPEC REVIEW PASSED`；内部规格现已随 PR #75 合并。这仍不是公开授权：numeric PolicyPack、运行时引擎、API、UI、可索引页、隐私/安全/无障碍运行时审查与发布均未批准；不得创建公开工具或城市×天数页面。
+
+### 员工3十篇 canonical 禁复用表
+
+十篇一律为 `pending-review / durable-draft-submitted / not-published`：
+
+- `du-fu-thatched-cottage-literary-memorial`：生平、复建茅屋、后世纪念、考古同属一个 owner。
+- `nanjing-jiangnan-gongyuan-examination-museum`：site-specific 遗存/复建/博物馆任务；与 `hg-topic-0727 / imperial-examination-system-at-academies` 相邻，中央须复核边界。
+- `jingdezhen-imperial-kiln-museum-archaeology`：窑址、瓷片、修复器和现代馆舍不得拆页。
+- `xian-stele-forest-text-calligraphy-rubbings`：文本、书法、刻石、拓片不得各建页。
+- `pingyao-rishengchang-draft-bank-network`：日升昌院落、汇兑网络和防伪机制同页。
+- `ningbo-tianyi-pavilion-private-library`：藏书楼、访问控制、防火、目录与后期园林同页。
+- `turpan-karez-museum-water-system`：竖井、暗渠、明渠、涝坝和游客通道同页。
+- `qufu-confucius-temple-mansion-cemetery-sequence`：**必须 merge 到 `hg-topic-0120 / qufu-three-confucian-sites-route`；禁止 draft slug 第二 URL。**
+- `shenyang-imperial-palace-three-route-reading`：只做宫殿三路 site reading；与 `hg-topic-0737 / shenyang-manchu-imperial-heritage` 相邻，中央须复核边界。
+- `guangzhou-chen-clan-academy-craft-reading`：宗族机构与七种建筑工艺同页，不按工艺拆页。
+
 ## 本轮六项执行身份：禁止换 slug、branch 或 artifact 类型后重复计数
 
 - `transport-20260811-01` ↔ `which-beijing-railway-station`：同一 Beijing station-choice 身份。
 - `destination-20260811-01` ↔ `forbidden-city-for-foreign-visitors`：同一 foreign-visitor Forbidden City 执行身份。
 - `culture-20260811-01` ↔ `first-shared-meal-in-china`：同一首次共享用餐身份。
 - `planning-20260811-01` ↔ Route Reality Checker 内部规格：仍是同一 tool 候选，不是文章身份。
-- `stay-20260811-01` ↔ 员工 5 foreign-hotel worktree：仍是同一 booking/registration/refusal owner。
+- `stay-20260811-01` ↔ 已发布 `foreigners-china-hotel`：仍是同一 booking/registration/refusal owner；旧员工分支不形成第二身份。
 - `essentials-20260811-01` ↔ `china-esim-vs-local-sim.md`：即使从独立 repo 迁入 canonical worktree、补 metadata 或扩展 locale，也仍是同一 eSIM/local SIM/local-number 选择树。
 
 | 票据 | candidateStatus | centralDecision | executionStatus | publicationStatus | 锁题证据 |
@@ -35,7 +85,7 @@
 | `transport-20260811-01` | selected | approved | release-completed | published | PR #24；`which-beijing-railway-station` 三语 live |
 | `destination-20260811-01` | selected | approved | release-completed | published | PR #24；`forbidden-city-for-foreign-visitors` 三语 live |
 | `culture-20260811-01` | selected | approved | release-completed | published | PR #31；`first-shared-meal-in-china` 三语 owner |
-| `planning-20260811-01` | selected | pending-review | specification-submitted | not-published | `SPEC REVIEW READY` 规格 `1e131ff`；不得公开实现 |
+| `planning-20260811-01` | selected | pending-review | internal-specification-merged | not-published | PR #75；v4 `9f88336e` / 员工8复核 `e524af81`；内部规格已合并但不得公开实现 |
 | `stay-20260811-01` | selected | approved | release-completed | published | PR #50；`foreigners-china-hotel` 三语 owner |
 | `essentials-20260811-01` | selected | approved | release-completed | published | PR #41；`china-esim-vs-local-sim` 三语 owner；`durableArtifact: true` |
 
@@ -43,7 +93,7 @@
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
-开工时这 14 个身份均未上线。至最新 `origin/main@cbbfdda`，14/14 均已发布。状态改变不解除锁题，本表也不把同一身份、视觉整合分支或原始员工分支重复计数。
+开工时这 14 个身份均未上线。至最新 `origin/main@274d243`，14/14 均已发布。状态改变不解除锁题，本表也不把同一身份、视觉整合分支或原始员工分支重复计数。
 
 | Canonical owner | 已占用主题与近义问法 | 应合并内容 |
 |---|---|---|
@@ -64,7 +114,7 @@
 
 ## 目的地 Hub（2026-08-16 发布）：城市级 canonical owner
 
-五个 city hub 已上线，`X travel guide` 这一类宽泛城市意图由它们独占。不得再建同城的通用城市介绍、`X 旅游攻略` 或换标题的城市百科；具体执行仍归各自更窄的 owner。
+七个 city hub 已上线，`X travel guide` 这一类宽泛城市意图由它们独占。不得再建同城的通用城市介绍、`X 旅游攻略` 或换标题的城市百科；具体执行仍归各自更窄的 owner。
 
 | Canonical owner | 占用的意图 | 应合并内容 |
 |---|---|---|
@@ -73,20 +123,22 @@
 | `/destinations/xian/`（`destination-xian`） | Xi'an travel guide、西安旅行指南、住几晚、城内与城南基地、三座铁路站、华山要不要加一天 | 通用“西安攻略”、按天数或人群拆的西安总览 |
 | `/destinations/chengdu/`（`destination-chengdu`） | Chengdu travel guide、成都旅行指南、城市住几天、住哪个区、天府与双流、哪些四川行程是独立支线 | 通用“成都攻略”、城市百科、按天数或人群拆的成都总览 |
 | `/destinations/guangzhou/`（`destination-guangzhou`） | Guangzhou travel guide、广州旅行指南、要不要住、住哪个区、白云航站楼与五个火车站、佛山顺德长隆怎么算 | 通用“广州攻略”、按天数或人群拆的广州总览 |
+| `/destinations/hangzhou/`（`destination-hangzhou`） | Hangzhou travel guide、杭州旅行指南、住几晚、住宿区域、进出门户、西湖与周边关系 | 通用“杭州攻略”、按月份/人群拆的杭州总览 |
+| `/destinations/zhangjiajie/`（`destination-zhangjiajie`） | Zhangjiajie travel guide、住几晚、城市或武陵源基地、进出门户、景点关系 | 通用“张家界攻略”；不得复写 itinerary、酒店基地、夜秀或公园门票 owner |
 
 三语只算一个内容身份。Hub 只做城市级取舍，不复述 `beijing-where-to-stay-first-trip`、`which-beijing-railway-station`、`terracotta-warriors-without-tour`、`shanghai-pudong-or-hongqiao-airport` 等既有 owner 的执行细节。
 
-**重庆暂缓（2026-08-17）**：`/destinations/chongqing/` 尚未上线，卡在 Phase 1 Gate B（现有 4 个合格 owner／3 个 section，门槛是 5／3）。解锁方式已定为发布第五个重庆为主的 owner：Topic Universe `hg-topic-0860`、canonical slug `chongqing-railway-station-selector`，三语 editorial transport guide，由员工1（交通）完成。在该文通过中央审核并进入发布基线之前，不得把重庆加入 hub 注册表，也不得降低 Gate B 或改写 Gate A。
+**重庆 Hub 仍未自动授权（2026-08-21）**：解锁依赖 `chongqing-railway-station-selector` 已经由 PR #74 三语发布，但这只关闭了内容 owner 依赖，不自动批准 `/destinations/chongqing/`。仍须中央重新执行 Gate B、runtime、真实图片和上线决定；不得因为 selector 已发布就擅自改 registry 或 sitemap。
 
-**已回填**：`docs/organic-growth/search-map.json` 已在 2026-08-20 登记五个线上 Hub、173 个 guide identity 和当前未发布库存。
+**已回填**：`docs/organic-growth/search-map.json` 已在 2026-08-21 登记七个线上 Hub、176 个 guide identity、PR #74 五个发布身份和当前 worker audit 库存。
 
-## 2026-08-20 新批准边界：不得拆页或提前发布
+## PR #74 已发布边界：不得拆页或重复开工
 
 - `destination-20260820-zhangjiajie-city-hub` ↔ `/destinations/zhangjiajie/`：拥有宽泛 Zhangjiajie travel guide、适合谁、住几晚、住哪里、进出门户、景点关系与当前 owner 路由；不得复制 `zhangjiajie-itinerary` 的 2/3/4 天、酒店基地页、夜秀页或 park ticket workflow。
 - `essentials-20260820-china-online-arrival-card` ↔ `china-online-arrival-card`：只拥有 NIA 官方 arrival-card 表单、填写时机、免费官方渠道识别和失败恢复；不得吸收签证资格、过境规则、海关申报或住宿登记。
 - `destination-20260820-zhangjiajie-forest-park-workflow` ↔ `zhangjiajie-national-forest-park-tickets-and-entrances`：只拥有 Forest Park ticket/gate/slot/passport fallback 及 shuttle/elevator/cableway 关系；不得吸收 general itinerary、Wulingyuan-vs-city hotel、Tianmen A/B/C 或 Glass Bridge comparison。
-- `planning-20260820-first-24-hours`：`defer / not-started / not-published`。它未来也只能是路由 collection；arrival-card owner 和 collection gate 未完成前，不写正文、不建公开页。
-- `chongqing-railway-station-selector` 与 Hangzhou Hub 已完成 release-candidate 整合但仍未发布；后续中央审核修正、图片复核或 locale QA 都不得重复计为新题。
+- `planning-20260820-first-24-hours`：已有 `draft-submitted` docs artifact，但 `centralDecision: pending-review / publicationStatus: not-published`。它只能作为员工4拥有、员工6维护来源的路由层；不得建第二公开 URL。
+- `chongqing-railway-station-selector` 与 Hangzhou Hub 已随 PR #74 发布；后续维护、图片复核或 locale QA 都不得重复计为新题。
 
 ## 其余已发布 canonical owners：不可撞题
 
@@ -138,7 +190,7 @@
 | Guangzhou Dim Sum Etiquette | `merge` | `how-guangzhou-morning-tea-works` | 与早茶/yum cha 同一身份 |
 | How Many Days in China: 7 vs 10 vs 14 | `update-existing` | `is-your-china-itinerary-too-rushed` | 加决策表，链接精确路线 |
 | Airport Hotel or City Hotel for Your Last Night? | `merge` | `china-last-night-before-international-flight` | 加住宿位置决策模块 |
-| Best Hotel Booking Apps for Foreigners | `update-existing` | `stay-20260811-01`（若中央批准） | 非排名平台检查；未批准则 hold |
+| Best Hotel Booking Apps for Foreigners | `update-existing` | `foreigners-china-hotel`（已发布 owner） | 只做非排名平台核验模块；更新仍须中央另批 |
 | Alipay or WeChat Pay? | `merge` | `how-to-pay-in-china-as-a-tourist` | 完整支付栈中的比较模块 |
 
 ## 本轮明确拒绝或暂缓
