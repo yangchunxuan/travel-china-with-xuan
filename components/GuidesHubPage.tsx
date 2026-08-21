@@ -9,6 +9,7 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import {
+  guidesHubDecisionSections,
   getGuidesHubCopy,
   getGuidesHubPlannerHref,
 } from "../app/(default)/guides/guidesHubI18n";
@@ -266,6 +267,44 @@ export function GuidesHubPage({
             ))}
           </div>
         </nav>
+
+        <section
+          className={styles.countryGuide}
+          aria-labelledby="china-travel-guide-title"
+        >
+          <div className={styles.countryGuideInner}>
+            <div className={styles.countryGuideIntro}>
+              <div>
+                <p className={styles.eyebrow}>{copy.countryGuide.eyebrow}</p>
+                <h2 id="china-travel-guide-title">{copy.countryGuide.title}</h2>
+              </div>
+              <p>{copy.countryGuide.introduction}</p>
+            </div>
+
+            <ol className={styles.decisionGrid}>
+              {guidesHubDecisionSections.map((section, index) => {
+                const decision = copy.countryGuide.decisions[section];
+                const sectionCopy = searchCopy.sections[section];
+
+                return (
+                  <li key={section}>
+                    <Link href={getSearchSectionPath(section, locale)}>
+                      <span className={styles.decisionNumber} aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3>{decision.title}</h3>
+                      <p>{decision.body}</p>
+                      <span className={styles.decisionAction}>
+                        {sectionCopy.navLabel}
+                        <span aria-hidden="true">→</span>
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </section>
 
         <section
           className={styles.catalog}
