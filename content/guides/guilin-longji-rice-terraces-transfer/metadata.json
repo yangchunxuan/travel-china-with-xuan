@@ -1,0 +1,123 @@
+{
+  "id": "guilin-longji-rice-terraces-transfer",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "transfer-decision-matrix",
+  "topics": [
+    "transport",
+    "road-transfer",
+    "rural-handoff",
+    "village-choice"
+  ],
+  "destinations": [
+    "guilin",
+    "longji"
+  ],
+  "heroImagePath": "/images/guides/guilin-longji-rice-terraces-transfer/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guilin-longji-rice-terraces-transfer/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/guilin-longji-rice-terraces-transfer/",
+      "title": "Guilin to Longji Rice Terraces: Choose Ping'an or Dazhai Before the Transfer",
+      "headline": "Guilin to Longji: Which Village Should the Transfer Reach?",
+      "description": "Choose Ping'an, Jinkeng/Dazhai or the Ancient Zhuang Village before booking the Guilin airport, railway-station or hotel transfer to Longji.",
+      "heroAlt": "Cable car above the green terraced landscape at Longji Rice Terraces.",
+      "heroCredit": {
+        "text": "Longji Rice Terraces, Immanuel Giel, 25 October 2014; cropped and resized by Homeground. The Commons record identifies Longji generally and does not prove current operation or a specific village.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACable_car_in_Longji_01.JPG",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "Plan the Guilin–Longji transfer",
+      "featuredLinkLabel": "Choose the correct Longji handoff",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Guilin",
+        "Longji",
+        "Transfer"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/guilin-longji-rice-terraces-transfer/",
+      "title": "桂林到龙脊梯田：接送前先选平安还是大寨",
+      "headline": "桂林到龙脊，接驳究竟该到哪个寨？",
+      "description": "预订桂林机场、火车站或酒店到龙脊的接驳前，先确定平安、金坑大寨或古壮寨。",
+      "heroAlt": "龙脊梯田绿色山地上方的索道实景。",
+      "heroCredit": {
+        "text": "龙脊梯田，Immanuel Giel摄于2014年10月25日；Homeground裁切并缩放。Commons记录只笼统确认龙脊，不证明当前运营或具体村寨。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACable_car_in_Longji_01.JPG",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "规划桂林—龙脊接驳",
+      "featuredLinkLabel": "选择正确龙脊交接点",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "桂林",
+        "龙脊",
+        "接驳"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/guilin-longji-rice-terraces-transfer/",
+      "title": "구이린–룽지 계단식 논: 이동 전에 핑안·다자이 고르기",
+      "headline": "구이린–룽지 이동은 어느 마을까지 가야 할까요?",
+      "description": "구이린 공항·기차역·숙소에서 룽지로 이동하기 전에 핑안, 진컹·다자이 또는 고장채를 정합니다.",
+      "heroAlt": "룽지 계단식 논의 푸른 산지 위를 지나는 케이블카.",
+      "heroCredit": {
+        "text": "룽지 계단식 논. Immanuel Giel이 2014년 10월 25일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. Commons 기록은 룽지 일반만 확인하며 현재 운행·특정 마을을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACable_car_in_Longji_01.JPG",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "구이린–룽지 이동 계획",
+      "featuredLinkLabel": "올바른 룽지 인계 지점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "구이린",
+        "룽지",
+        "이동"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Guilin to Longji Rice Terraces",
+      "Guilin to Pingan village",
+      "Guilin to Dazhai",
+      "Longji transfer"
+    ],
+    "zh": [
+      "桂林到龙脊梯田",
+      "桂林到平安寨",
+      "桂林到大寨",
+      "龙脊接送"
+    ],
+    "ko": [
+      "구이린 룽지 계단식 논",
+      "구이린 핑안",
+      "구이린 다자이",
+      "룽지 이동"
+    ]
+  }
+}
