@@ -201,6 +201,30 @@
   color: var(--guides-rust);
 }
 
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  padding-block-start: 2rem;
+}
+
+.loadMoreButton {
+  background: transparent;
+  border: 1px solid var(--guides-ink);
+  color: var(--guides-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 760;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus-visible {
+  background: var(--guides-ink);
+  color: var(--hg-color-on-dark);
+}
+
 .emptyPrompt,
 .noResults {
   border-block-start: 1px solid var(--guides-line);
@@ -352,6 +376,7 @@
   .resultList,
   .resultList > li,
   .readLink,
+  .loadMoreButton,
   .emptyPrompt,
   .noResults {
     border-color: var(--guides-ink);

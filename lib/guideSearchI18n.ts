@@ -36,6 +36,7 @@ export interface GuideSearchCopy {
     readonly plannerBody: string;
     readonly plannerAction: string;
     readonly readGuide: string;
+    readonly showMore: string;
     readonly updated: string;
   };
 }
@@ -51,10 +52,10 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     label: "What are you looking for?",
     placeholder: "Try “Where to stay in Zhangjiajie”",
     action: "Search guides",
-    examplesLabel: "Popular searches",
+    examplesLabel: "Suggested searches",
     examples: [
       "Where to stay in Zhangjiajie",
-      "Beijing airport to the city",
+      "Beijing South Station to the airport",
       "China with older parents",
     ],
     loadingSuggestions: "Finding the closest guides…",
@@ -90,6 +91,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
         "Share your dates, who is travelling and what matters most. We’ll help you work out the next step.",
       plannerAction: "Talk to a trip planner",
       readGuide: "Read guide",
+      showMore: "Show more guides",
       updated: "Updated",
     },
   },
@@ -103,10 +105,10 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     label: "搜索旅行问题",
     placeholder: "例如“张家界住哪里”",
     action: "搜索指南",
-    examplesLabel: "大家常搜",
+    examplesLabel: "搜索示例",
     examples: [
       "张家界住市区还是武陵源",
-      "北京机场到市区怎么走",
+      "北京南站去首都机场还是大兴机场",
       "带父母去中国怎么玩",
     ],
     loadingSuggestions: "正在为你查找…",
@@ -139,6 +141,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
         "告诉我们日期、同行人和你最在意的事情，我们可以一起看看下一步怎么安排。",
       plannerAction: "和旅行规划师聊聊",
       readGuide: "阅读指南",
+      showMore: "查看更多指南",
       updated: "更新于",
     },
   },
@@ -152,17 +155,17 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     label: "궁금한 여행 정보를 검색하세요",
     placeholder: "예: ‘장자제 숙소는 어디가 좋을까?’",
     action: "가이드 검색",
-    examplesLabel: "많이 찾는 내용",
+    examplesLabel: "추천 검색어",
     examples: [
       "장자제 시내와 우링위안 중 어디에 머물까",
-      "베이징 공항에서 시내로 가는 법",
+      "베이징남역에서 서우두공항 또는 다싱공항까지",
       "부모님과 중국 여행 일정",
     ],
     loadingSuggestions: "관련 가이드를 찾고 있습니다…",
     suggestionsUnavailable:
       "추천을 불러오는 데 시간이 걸리고 있습니다. 바로 검색할 수 있습니다.",
     noSuggestions:
-      "가까운 추천이 없습니다. 검색해서 결과를 확인해 보세요.",
+      "관련 가이드를 아직 찾지 못했습니다. 검색어를 바꾸거나 그대로 검색해 보세요.",
     emptyQueryError: "궁금한 여행 정보를 입력해 주세요.",
     suggestionsLabel: (count) => `도움이 될 만한 가이드 ${count}개`,
     page: {
@@ -190,6 +193,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
         "여행 날짜, 동행자와 가장 중요한 점을 알려 주세요. 다음 단계를 함께 정리해 드리겠습니다.",
       plannerAction: "여행 플래너와 상담하기",
       readGuide: "가이드 읽기",
+      showMore: "가이드 더 보기",
       updated: "업데이트",
     },
   },

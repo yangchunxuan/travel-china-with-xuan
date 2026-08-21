@@ -7,7 +7,10 @@ async function source(path) {
 }
 
 test("homepage guide search sits between the guide heading and cards", async () => {
-  const homepage = await source("components/HomegroundHomePage.tsx");
+  const [homepage, finderStyles] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageGuideSearch.module.css"),
+  ]);
   const header = homepage.indexOf("className={styles.travelGuidesHeader}");
   const finder = homepage.indexOf("<HomepageGuideSearch locale={locale} />");
   const cards = homepage.indexOf("className={styles.travelGuideGrid}");
@@ -24,6 +27,11 @@ test("homepage guide search sits between the guide heading and cards", async () 
     homepage,
     /guideSearchRuntime|searchPlatformManifest/,
     "the client homepage must not import the search corpus builder",
+  );
+  assert.match(
+    finderStyles,
+    /scroll-margin-top:\s*5\.75rem/,
+    "the homepage search anchor must clear the sticky header",
   );
 });
 
@@ -83,10 +91,46 @@ test("customer-facing search copy avoids internal implementation language", asyn
     "검토된 가이드 메타데이터",
     "전체 색인",
     "유료 작업 전",
+    "Popular searches",
+    "大家常搜",
+    "많이 찾는 내용",
   ]) {
     assert.ok(
       !copy.includes(internalPhrase),
       `public search copy must not expose internal phrase: ${internalPhrase}`,
     );
   }
+});
+
+test("large result sets remain reachable in every language", async () => {
+  const [results, copy] = await Promise.all([
+    source("components/GuideSearchResultsClient.tsx"),
+    source("lib/guideSearchI18n.ts"),
+  ]);
+
+  assert.match(results, /visibleResults\.length < results\.length/);
+  assert.match(results, /setResultWindow/);
+  assert.match(results, /copy\.page\.showMore/);
+  assert.match(copy, /showMore: "Show more guides"/);
+  assert.match(copy, /showMore: "查看更多指南"/);
+  assert.match(copy, /showMore: "가이드 더 보기"/);
+});
+
+test("promoted searches use questions with a direct guide match", async () => {
+  const copy = await source("lib/guideSearchI18n.ts");
+
+  assert.match(copy, /"Beijing South Station to the airport"/);
+  assert.match(copy, /"北京南站去首都机场还是大兴机场"/);
+  assert.match(copy, /"베이징남역에서 서우두공항 또는 다싱공항까지"/);
+  assert.doesNotMatch(copy, /"北京机场到市区怎么走"/);
+  assert.doesNotMatch(copy, /"베이징 공항에서 시내로 가는 법"/);
+});
+
+test("result links remain distinguishable to assistive technology", async () => {
+  const results = await source("components/GuideSearchResultsClient.tsx");
+
+  assert.match(
+    results,
+    /aria-label=\{`\$\{copy\.page\.readGuide\}: \$\{document\.h1\}`\}/,
+  );
 });

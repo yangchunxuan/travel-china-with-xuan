@@ -33,6 +33,8 @@ jobs:
       - run: npm ci
       - name: Test inquiry contract
         run: npm run test:inquiry
+      - name: Test guide search
+        run: npm run test:guide-search
       - name: Type-check
         run: npx tsc --noEmit
       - name: Audit production dependencies

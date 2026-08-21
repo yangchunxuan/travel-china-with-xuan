@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   normalizeGuideSearchText,
   searchGuideDocuments,
@@ -44,11 +44,17 @@ export function GuideSearchResultsClient({
   const copy = getGuideSearchCopy(locale);
   const platformCopy = getSearchPlatformCopy(locale);
   const trackedNoResultsRef = useRef("");
+  const [resultWindow, setResultWindow] = useState({
+    count: visibleResultLimit,
+    query: "",
+  });
   const results = useMemo(
     () => searchGuideDocuments(documents, query, locale),
     [documents, locale, query],
   );
-  const visibleResults = results.slice(0, visibleResultLimit);
+  const visibleCount =
+    resultWindow.query === query ? resultWindow.count : visibleResultLimit;
+  const visibleResults = results.slice(0, visibleCount);
   const guidesPath = locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const topicsPath = `${guidesPath}#browse-topics`;
   const plannerQuery = new URLSearchParams({
@@ -145,6 +151,7 @@ export function GuideSearchResultsClient({
                       </h3>
                       <p>{document.description}</p>
                       <Link
+                        aria-label={`${copy.page.readGuide}: ${document.h1}`}
                         className={styles.readLink}
                         href={document.path}
                         onClick={() => {
@@ -165,6 +172,25 @@ export function GuideSearchResultsClient({
                 );
               })}
             </ol>
+            {visibleResults.length < results.length ? (
+              <div className={styles.loadMoreWrap}>
+                <button
+                  className={styles.loadMoreButton}
+                  type="button"
+                  onClick={() => {
+                    setResultWindow({
+                      count: Math.min(
+                        visibleResults.length + visibleResultLimit,
+                        results.length,
+                      ),
+                      query,
+                    });
+                  }}
+                >
+                  {copy.page.showMore}
+                </button>
+              </div>
+            ) : null}
           </section>
         ) : (
           <section className={styles.noResults} aria-labelledby="search-no-results-title">
