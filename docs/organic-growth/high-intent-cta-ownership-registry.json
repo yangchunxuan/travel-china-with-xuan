@@ -1,0 +1,884 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryId": "high-intent-cta-ownership-phase-1",
+  "status": "internal-only",
+  "baseCommit": "274d243afc9fcc2ac9abd51487d06c667019cc0a",
+  "checkedAt": "2026-08-21",
+  "publicCtaChangesAuthorized": false,
+  "publicServiceLaunchAuthorized": false,
+  "allowedServiceIds": [
+    "itinerary-review",
+    "route-build",
+    "full-trip-support"
+  ],
+  "allowedIntentCodes": [
+    "hotel_fit",
+    "ticket_workflow",
+    "route_shape"
+  ],
+  "requiredCoverage": {
+    "stay": 17,
+    "high-intent-transport": 22,
+    "plan": 16,
+    "purchase-ticket": 2,
+    "uniqueContentIds": 57
+  },
+  "forbiddenClaimDefinitions": {
+    "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
+    "paid-work-before-scope-payment": "Do not imply that paid work starts before scope, delivery timing and payment are confirmed.",
+    "guaranteed-booking-or-availability": "Do not guarantee a booking, inventory, price or supplier availability.",
+    "unscoped-ground-support": "Do not imply that ground support is included before a written scope and custom quote are confirmed.",
+    "hotel-real-time-availability": "Do not claim real-time hotel or room availability.",
+    "hotel-guest-acceptance-guarantee": "Do not guarantee that a property will accept a foreign guest.",
+    "hotel-price-room-guarantee": "Do not guarantee a hotel price, room type, accessibility feature or property condition.",
+    "vehicle-driver-availability-guarantee": "Do not guarantee a vehicle, driver or transfer slot.",
+    "fixed-transfer-price-or-pickup-guarantee": "Do not promise a fixed transfer price, pickup point or pickup time without confirmation.",
+    "transport-includes-entry-tickets": "Do not imply that transport includes attraction admission, shuttles or uphill access tickets.",
+    "ticket-availability-price-guarantee": "Do not claim live ticket inventory or a guaranteed ticket price.",
+    "booking-entry-guarantee": "Do not promise successful booking or entry.",
+    "reseller-official-equivalence": "Do not describe a reseller as equivalent to an official issuer or channel.",
+    "sensitive-data-first-contact": "Do not request passport images, payment data or unredacted booking references in the first contact."
+  },
+  "entries": [
+    {
+      "contentId": "beijing-courtyard-hotel-or-modern-hotel",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "beijing-courtyard-hotel-or-modern-hotel",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "beijing-where-to-stay-first-trip",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "china-accessible-hotel-room-verification",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "china-accessible-hotel-room-verification",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "china-hotel-emergency-exit-fire-safety-check",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "china-hotel-emergency-exit-fire-safety-check",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "china-hotel-near-metro",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "china-hotel-near-metro",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "commercial-aparthotel-or-residential-rental-china",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "commercial-aparthotel-or-residential-rental-china",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "foreigners-china-hotel",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "foreigners-china-hotel",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "huangshan-summit-or-gateway-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "huangshan-summit-or-gateway-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "international-chain-or-local-hotel-china",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "international-chain-or-local-hotel-china",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "minsu-homestay-or-hotel-china",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "minsu-homestay-or-hotel-china",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "serviced-apartment-or-hotel-china",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "serviced-apartment-or-hotel-china",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shanghai-where-to-stay-first-trip",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shanghai-where-to-stay-first-trip",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shenzhen-where-to-stay-futian-luohu-nanshan",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shenzhen-where-to-stay-futian-luohu-nanshan",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "xian-where-to-stay-city-wall-or-dayanta",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "xian-where-to-stay-city-wall-or-dayanta",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "zhangjiajie-city-or-wulingyuan-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "zhangjiajie-city-or-wulingyuan-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "beijing-south-station-to-capital-or-daxing-airport",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "beijing-south-station-to-capital-or-daxing-airport",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "beijing-to-badaling-great-wall-transfer",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "beijing-to-badaling-great-wall-transfer",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "beijing-to-mutianyu-great-wall-transfer",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "beijing-to-mutianyu-great-wall-transfer",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "changbai-mountain-hubs-to-park-gates",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "changbai-mountain-hubs-to-park-gates",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "chengdu-jiuzhaigou-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chengdu-jiuzhaigou-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "china-high-speed-train-first-time-guide",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "china-high-speed-train-first-time-guide",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "chongqing-railway-station-selector",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chongqing-railway-station-selector",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "dali-station-to-old-town",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "dali-station-to-old-town",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guangzhou-baiyun-airport-t2-t3",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guangzhou-baiyun-airport-t2-t3",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guangzhou-hong-kong-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guangzhou-hong-kong-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guangzhou-macau-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guangzhou-macau-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guilin-yangshuo-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guilin-yangshuo-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guiyang-airport-and-rail-hubs",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guiyang-airport-and-rail-hubs",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "hong-kong-macau-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "hong-kong-macau-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "how-food-reaches-your-seat-on-china-train",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "how-food-reaches-your-seat-on-china-train",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "lijiang-shangri-la-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "lijiang-shangri-la-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "pudong-airport-to-shanghai-disneyland",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "pudong-airport-to-shanghai-disneyland",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shanghai-hangzhou-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shanghai-hangzhou-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shanghai-pudong-or-hongqiao-airport",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shanghai-pudong-or-hongqiao-airport",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shenzhen-hong-kong-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shenzhen-hong-kong-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "which-beijing-railway-station",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "which-beijing-railway-station",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "xiamen-hubs-to-gulangyu-ferry-terminal",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "xiamen-hubs-to-gulangyu-ferry-terminal",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "beijing-xian-chengdu-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-arrival-day-booked-anchor-or-flexible-block",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-arrival-day-booked-anchor-or-flexible-block",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-domestic-flight-fare-bundle-baggage",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-domestic-flight-fare-bundle-baggage",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-hub-and-spoke-or-multi-base-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-hub-and-spoke-or-multi-base-route",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-itinerary-with-young-children",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "route-build",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-itinerary-with-young-children",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-last-night-before-international-flight",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-last-night-before-international-flight",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-night-train-or-daytime-high-speed-rail",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-night-train-or-daytime-high-speed-rail",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-open-jaw-flights-route-planning",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-open-jaw-flights-route-planning",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-private-transfer-or-public-transport",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-private-transfer-or-public-transport",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability",
+        "unscoped-ground-support"
+      ]
+    },
+    {
+      "contentId": "china-rail-only-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "route-build",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-rail-only-route",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-regional-food-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "route-build",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-regional-food-route",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-separate-flight-tickets-self-transfer-risk",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-separate-flight-tickets-self-transfer-risk",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "guangzhou-shenzhen-hong-kong-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "guangzhou-shenzhen-hong-kong-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "kunming-dali-lijiang-shangri-la-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "kunming-dali-lijiang-shangri-la-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "shanghai-suzhou-hangzhou-nanjing-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "shanghai-suzhou-hangzhou-nanjing-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "wheelchair-accessible-china-route-planning",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "route-build",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "wheelchair-accessible-china-route-planning",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "official-or-reseller-china-tickets",
+      "ownerClass": "purchase-ticket",
+      "intentCode": "ticket_workflow",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "official-or-reseller-china-tickets",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "ticket-availability-price-guarantee",
+        "booking-entry-guarantee",
+        "reseller-official-equivalence",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "zhangjiajie-national-forest-park-tickets-and-entrances",
+      "ownerClass": "purchase-ticket",
+      "intentCode": "ticket_workflow",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "zhangjiajie-national-forest-park-tickets-and-entrances",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "ticket-availability-price-guarantee",
+        "booking-entry-guarantee",
+        "reseller-official-equivalence",
+        "sensitive-data-first-contact"
+      ]
+    }
+  ]
+}
