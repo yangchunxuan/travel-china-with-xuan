@@ -1,0 +1,24 @@
+{
+  "id": "qufu-three-confucian-sites-route",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "three-site-cultural-decision",
+  "topics": ["qufu", "confucius-temple", "kong-family-mansion", "confucius-cemetery", "world-heritage"],
+  "destinations": ["qufu", "shandong"],
+  "heroImagePath": "/images/guides/qufu-three-confucian-sites-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/qufu-three-confucian-sites-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "compare" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/qufu-three-confucian-sites-route/", "title": "Qufu's Three Confucian Sites: Temple, Mansion or Cemetery First?", "headline": "Three Properties Answer Three Different Questions", "description": "Choose an order through Qufu's Temple of Confucius, Kong Family Mansion and Cemetery by separating commemoration, household administration and burial landscape.", "heroAlt": "Dacheng Hall at the Temple of Confucius in Qufu with visitors on the terrace", "heroCredit": { "text": "Dacheng Hall, Qufu Temple of Confucius, photographed by brett Vachon on 24 July 2013; centre-cropped and resized. Visitors are incidental to an editorial place view; the temple represents only one of the three properties.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Temple_of_Confucius,_Qufu,_China_(29315106624).jpg", "licenseLabel": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" }, "navTitle": "Choose an order for Qufu's Three Sites", "featuredLinkLabel": "Temple, Mansion or Cemetery first?", "openGraphLocale": "en_US", "cardTags": ["Qufu", "Confucius", "World Heritage"] },
+    "zh": { "path": "/zh/guides/qufu-three-confucian-sites-route/", "title": "曲阜三孔怎么选顺序：孔庙、孔府还是孔林先看？", "headline": "三处遗产回答三种不同问题", "description": "按纪念与祭祀空间、家族管理和墓葬景观三条线，选择曲阜孔庙、孔府、孔林的参观顺序。", "heroAlt": "曲阜孔庙大成殿及台阶上的访客", "heroCredit": { "text": "曲阜孔庙大成殿，brett Vachon摄于2013年7月24日；经居中裁切和缩放。访客只是地点环境中的偶然元素；孔庙也只是三孔之一。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Temple_of_Confucius,_Qufu,_China_(29315106624).jpg", "licenseLabel": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" }, "navTitle": "选择曲阜三孔顺序", "featuredLinkLabel": "孔庙、孔府还是孔林先看", "openGraphLocale": "zh_CN", "cardTags": ["曲阜", "孔子", "世界遗产"] },
+    "ko": { "path": "/ko/guides/qufu-three-confucian-sites-route/", "title": "취푸 삼공 관람 순서: 공묘·공부·공림 중 어디부터?", "headline": "세 유산은 서로 다른 세 질문에 답합니다", "description": "기념·제례 공간, 가문 운영, 묘역 경관을 나눠 취푸 공묘·공부·공림의 순서를 고릅니다.", "heroAlt": "취푸 공묘 다청뎬과 기단 위 방문객들", "heroCredit": { "text": "취푸 공묘 다청뎬. brett Vachon이 2013년 7월 24일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 방문객은 장소 전경에 우연히 포함되었고, 공묘는 세 유산 중 하나일 뿐입니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Temple_of_Confucius,_Qufu,_China_(29315106624).jpg", "licenseLabel": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" }, "navTitle": "취푸 삼공 순서 고르기", "featuredLinkLabel": "공묘·공부·공림 어디부터?", "openGraphLocale": "ko_KR", "cardTags": ["취푸", "공자", "세계유산"] }
+  },
+  "searchTerms": { "en": ["Qufu Three Confucian Sites order", "Temple Mansion Cemetery Qufu guide"], "zh": ["曲阜三孔参观顺序", "孔庙孔府孔林怎么选"], "ko": ["취푸 삼공 관람 순서", "공묘 공부 공림 선택"] }
+}
