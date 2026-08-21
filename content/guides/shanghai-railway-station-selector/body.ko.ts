@@ -301,27 +301,27 @@ const body = {
       "items": [
         {
           "label": "상하이 도시 가이드부터 보기",
-          "href": "/destinations/shanghai/",
+          "href": "/ko/destinations/shanghai/",
           "description": "역을 전체 도시 계획에 넣습니다."
         },
         {
           "label": "상하이 숙소 지역 고르기",
-          "href": "/guides/shanghai-where-to-stay-first-trip/",
+          "href": "/ko/guides/shanghai-where-to-stay-first-trip/",
           "description": "실제 숙소를 마지막 문으로 사용합니다."
         },
         {
           "label": "PVG와 SHA 고르기",
-          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "href": "/ko/guides/shanghai-pudong-or-hongqiao-airport/",
           "description": "공항 결정과 기차역 선택을 분리합니다."
         },
         {
           "label": "상하이와 항저우 이동",
-          "href": "/guides/shanghai-hangzhou-transport-route/",
+          "href": "/ko/guides/shanghai-hangzhou-transport-route/",
           "description": "그 경로는 기존 양방향 역 조합 페이지를 사용합니다."
         },
         {
           "label": "중국 열차 첫 이용",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "여권, 역 진입과 탑승을 이어서 처리합니다."
         }
       ]

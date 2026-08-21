@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "先选择一日游或过夜",
-          "href": "/guides/longji-rice-terraces-day-trip-or-overnight/",
+          "href": "/zh/guides/longji-rice-terraces-day-trip-or-overnight/",
           "description": "停留时长和村寨体验留给原owner。"
         },
         {
           "label": "选择桂林抵达节点",
-          "href": "/guides/guilin-airport-or-railway-station-arrival-guide/",
+          "href": "/zh/guides/guilin-airport-or-railway-station-arrival-guide/",
           "description": "乡村接驳前明确KWL或准确火车站。"
         },
         {
           "label": "规划桂林—阳朔交通",
-          "href": "/guides/guilin-yangshuo-transport-route/",
+          "href": "/zh/guides/guilin-yangshuo-transport-route/",
           "description": "独立阳朔走廊留给原owner。"
         },
         {
           "label": "比较包车与公共交通",
-          "href": "/guides/china-private-transfer-or-public-transport/",
+          "href": "/zh/guides/china-private-transfer-or-public-transport/",
           "description": "准确村寨明确后再选方式。"
         },
         {
           "label": "理解乡村住宿为何不同",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/zh/guides/china-hotel-near-metro/",
           "description": "地铁距离规则无法描述梯田村寨交接。"
         }
       ]

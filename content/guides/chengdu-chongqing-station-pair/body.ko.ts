@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "청두 쪽 계획",
-          "href": "/destinations/chengdu/",
+          "href": "/ko/destinations/chengdu/",
           "description": "역을 청두 전체 체류 안에 넣습니다."
         },
         {
           "label": "충칭 쪽 계획",
-          "href": "/destinations/chongqing/",
+          "href": "/ko/destinations/chongqing/",
           "description": "도착역을 실제 지역과 입체 도시 동선에 맞춥니다."
         },
         {
           "label": "충칭 기차역 이해",
-          "href": "/guides/chongqing-railway-station-selector/",
+          "href": "/ko/guides/chongqing-railway-station-selector/",
           "description": "역 자체가 불분명할 때 노드 owner를 사용합니다."
         },
         {
           "label": "충칭 상·하부 도시 이해",
-          "href": "/guides/chongqing-upper-lower-city-orientation/",
+          "href": "/ko/guides/chongqing-upper-lower-city-orientation/",
           "description": "마지막 1km에 실제 수직 이동이 있을 수 있습니다."
         },
         {
           "label": "중국 고속철 첫 탑승 준비",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "전국 예약·탑승 절차는 기존 owner에 둡니다."
         }
       ]

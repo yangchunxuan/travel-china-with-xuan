@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "장자제 도시 가이드부터 보기",
-          "href": "/destinations/zhangjiajie/",
+          "href": "/ko/destinations/zhangjiajie/",
           "description": "도착 노드를 전체 목적지 계획에 넣습니다."
         },
         {
           "label": "도심과 우링위안 중 숙소 거점 고르기",
-          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "href": "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
           "description": "도착 사슬을 완성하기 전에 거점을 고릅니다."
         },
         {
           "label": "삼림공원 표와 입구 확인",
-          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "href": "/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
           "description": "명소 쪽 시간대와 입구를 기존 페이지로 넘깁니다."
         },
         {
           "label": "야간열차와 주간 고속철 비교",
-          "href": "/guides/china-night-train-or-daytime-high-speed-rail/",
+          "href": "/ko/guides/china-night-train-or-daytime-high-speed-rail/",
           "description": "장자제 도착 노드를 맞추기 전에 더 큰 철도 방식을 고릅니다."
         },
         {
           "label": "중국 열차 첫 이용",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "여권, 역 진입과 탑승 절차를 이어서 처리합니다."
         }
       ]

@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "청두 도시 가이드부터 보기",
-          "href": "/destinations/chengdu/",
+          "href": "/ko/destinations/chengdu/",
           "description": "공항을 첫 청두 여행 전체 계획에 넣습니다."
         },
         {
           "label": "청두에서 주자이거우로 이어가기",
-          "href": "/guides/chengdu-jiuzhaigou-transport-route/",
+          "href": "/ko/guides/chengdu-jiuzhaigou-transport-route/",
           "description": "실제 공항을 안 뒤 다음 이동 수단과 거점을 고릅니다."
         },
         {
           "label": "청두 판다 명소 고르기",
-          "href": "/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
+          "href": "/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
           "description": "시간 지정 명소 결정을 공항 선택과 분리합니다."
         },
         {
           "label": "항공편 전 마지막 밤 보호",
-          "href": "/guides/china-last-night-before-international-flight/",
+          "href": "/ko/guides/china-last-night-before-international-flight/",
           "description": "실제 공항과 출발 시각이 정해진 뒤 숙박 위치를 결정합니다."
         },
         {
           "label": "전용 이동과 대중교통 비교",
-          "href": "/guides/china-private-transfer-or-public-transport/",
+          "href": "/ko/guides/china-private-transfer-or-public-transport/",
           "description": "인계, 짐, 운행 시간과 대안으로 지상 구간을 판단합니다."
         }
       ]

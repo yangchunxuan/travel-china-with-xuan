@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "베이징 도시 가이드부터 보기",
-          "href": "/destinations/beijing/",
+          "href": "/ko/destinations/beijing/",
           "description": "공항을 첫 베이징 여행 전체 계획에 넣습니다."
         },
         {
           "label": "베이징 숙소 지역 고르기",
-          "href": "/guides/beijing-where-to-stay-first-trip/",
+          "href": "/ko/guides/beijing-where-to-stay-first-trip/",
           "description": "정확한 숙소를 도시 쪽 문으로 사용합니다."
         },
         {
           "label": "베이징 주요 기차역 고르기",
-          "href": "/guides/which-beijing-railway-station/",
+          "href": "/ko/guides/which-beijing-railway-station/",
           "description": "공항 연결을 만들기 전에 철도 노드를 정합니다."
         },
         {
           "label": "베이징남역에서 PEK·PKX로 이동",
-          "href": "/guides/beijing-south-station-to-capital-or-daxing-airport/",
+          "href": "/ko/guides/beijing-south-station-to-capital-or-daxing-airport/",
           "description": "실제 역이 베이징남역일 때 좁은 페이지를 사용합니다."
         },
         {
           "label": "항공편 전 마지막 밤 보호",
-          "href": "/guides/china-last-night-before-international-flight/",
+          "href": "/ko/guides/china-last-night-before-international-flight/",
           "description": "공항과 마감을 정한 뒤 숙박 위치를 고릅니다."
         }
       ]

@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "规划成都一侧",
-          "href": "/destinations/chengdu/",
+          "href": "/zh/destinations/chengdu/",
           "description": "把车站放进完整成都停留。"
         },
         {
           "label": "规划重庆一侧",
-          "href": "/destinations/chongqing/",
+          "href": "/zh/destinations/chongqing/",
           "description": "把抵达站匹配到真实区域和立体城市路线。"
         },
         {
           "label": "理解重庆各火车站",
-          "href": "/guides/chongqing-railway-station-selector/",
+          "href": "/zh/guides/chongqing-railway-station-selector/",
           "description": "车站身份不清时交给节点owner。"
         },
         {
           "label": "理解重庆上下城",
-          "href": "/guides/chongqing-upper-lower-city-orientation/",
+          "href": "/zh/guides/chongqing-upper-lower-city-orientation/",
           "description": "最后一公里可能包含真实垂直移动。"
         },
         {
           "label": "准备第一次乘中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "全国购票与乘车流程留给原owner。"
         }
       ]

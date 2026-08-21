@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "把昆明放进云南路线顺序",
-          "href": "/guides/kunming-dali-lijiang-shangri-la-route-order/",
+          "href": "/zh/guides/kunming-dali-lijiang-shangri-la-route-order/",
           "description": "多城顺序留给现有owner。"
         },
         {
           "label": "比较包车与公共交通",
-          "href": "/guides/china-private-transfer-or-public-transport/",
+          "href": "/zh/guides/china-private-transfer-or-public-transport/",
           "description": "准确游客中心交接明确后再选方式。"
         },
         {
           "label": "准备第一次中国铁路行程",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "全国购票与乘车流程单独处理。"
         },
         {
           "label": "检查中国节假日客流",
-          "href": "/guides/china-public-holidays-travel-calendar/",
+          "href": "/zh/guides/china-public-holidays-travel-calendar/",
           "description": "客流管控会改变游客中心和返程链条。"
         },
         {
           "label": "选择接驳便利的昆明酒店",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/zh/guides/china-hotel-near-metro/",
           "description": "使用准确出发节点，不只看笼统中心标签。"
         }
       ]

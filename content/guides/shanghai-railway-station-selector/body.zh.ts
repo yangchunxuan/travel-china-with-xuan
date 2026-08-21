@@ -301,27 +301,27 @@ const body = {
       "items": [
         {
           "label": "先看上海城市指南",
-          "href": "/destinations/shanghai/",
+          "href": "/zh/destinations/shanghai/",
           "description": "把车站放进完整城市行程。"
         },
         {
           "label": "选择上海住宿区域",
-          "href": "/guides/shanghai-where-to-stay-first-trip/",
+          "href": "/zh/guides/shanghai-where-to-stay-first-trip/",
           "description": "让准确酒店提供最后一扇门。"
         },
         {
           "label": "选择浦东还是虹桥机场",
-          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "href": "/zh/guides/shanghai-pudong-or-hongqiao-airport/",
           "description": "把机场选择与火车站选择分开。"
         },
         {
           "label": "安排上海与杭州交通",
-          "href": "/guides/shanghai-hangzhou-transport-route/",
+          "href": "/zh/guides/shanghai-hangzhou-transport-route/",
           "description": "该走廊使用现有双向站对页面。"
         },
         {
           "label": "第一次坐中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "继续处理护照、进站和登车。"
         }
       ]

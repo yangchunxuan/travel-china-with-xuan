@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "시안 도시 가이드부터 보기",
-          "href": "/destinations/xian/",
+          "href": "/ko/destinations/xian/",
           "description": "역 선택을 첫 시안 여행 계획 안에 배치합니다."
         },
         {
           "label": "성벽과 대안탑 중 숙소 지역 고르기",
-          "href": "/guides/xian-where-to-stay-city-wall-or-dayanta/",
+          "href": "/ko/guides/xian-where-to-stay-city-wall-or-dayanta/",
           "description": "실제 숙소 지역을 도착 쪽 마지막 문으로 사용합니다."
         },
         {
           "label": "투어 없이 병마용 방문",
-          "href": "/guides/terracotta-warriors-without-tour/",
+          "href": "/ko/guides/terracotta-warriors-without-tour/",
           "description": "도시 철도 결정에서 예약한 명소 입구로 이어갑니다."
         },
         {
           "label": "중국 고속철도 첫 이용",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "정확한 역을 고른 뒤 여권, 역 진입, 보안검사와 탑승을 처리합니다."
         },
         {
           "label": "베이징·시안·청두 순서 정하기",
-          "href": "/guides/beijing-xian-chengdu-route-order/",
+          "href": "/ko/guides/beijing-xian-chengdu-route-order/",
           "description": "광역 도시 순서와 실시간 시안역 선택을 분리합니다."
         }
       ]

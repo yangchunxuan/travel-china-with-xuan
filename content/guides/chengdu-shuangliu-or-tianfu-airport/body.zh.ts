@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "先看成都城市指南",
-          "href": "/destinations/chengdu/",
+          "href": "/zh/destinations/chengdu/",
           "description": "把机场放进完整首次成都行程。"
         },
         {
           "label": "继续安排成都到九寨沟",
-          "href": "/guides/chengdu-jiuzhaigou-transport-route/",
+          "href": "/zh/guides/chengdu-jiuzhaigou-transport-route/",
           "description": "确定真实机场后，再选择下一段方式和基地。"
         },
         {
           "label": "选择成都熊猫参观地",
-          "href": "/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
+          "href": "/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
           "description": "把限时景点决定与机场选择分开。"
         },
         {
           "label": "保护国际航班前最后一晚",
-          "href": "/guides/china-last-night-before-international-flight/",
+          "href": "/zh/guides/china-last-night-before-international-flight/",
           "description": "在机场和出发时刻确定后决定住哪里。"
         },
         {
           "label": "比较包车与公共交通",
-          "href": "/guides/china-private-transfer-or-public-transport/",
+          "href": "/zh/guides/china-private-transfer-or-public-transport/",
           "description": "按交接、行李、运营窗口和备选判断地面段。"
         }
       ]

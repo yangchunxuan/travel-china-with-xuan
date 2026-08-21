@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "先看西安城市指南",
-          "href": "/destinations/xian/",
+          "href": "/zh/destinations/xian/",
           "description": "把车站选择放进完整的第一次西安行程。"
         },
         {
           "label": "选择住城墙还是大雁塔",
-          "href": "/guides/xian-where-to-stay-city-wall-or-dayanta/",
+          "href": "/zh/guides/xian-where-to-stay-city-wall-or-dayanta/",
           "description": "让真实住宿区域决定到达侧最后一程。"
         },
         {
           "label": "不跟团去兵马俑",
-          "href": "/guides/terracotta-warriors-without-tour/",
+          "href": "/zh/guides/terracotta-warriors-without-tour/",
           "description": "从城市铁路节点继续处理预约景区入口。"
         },
         {
           "label": "第一次坐中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "选定准确车站后处理护照、进站、安检和登车。"
         },
         {
           "label": "安排北京、西安、成都顺序",
-          "href": "/guides/beijing-xian-chengdu-route-order/",
+          "href": "/zh/guides/beijing-xian-chengdu-route-order/",
           "description": "把跨城顺序与西安实时车站选择分开。"
         }
       ]

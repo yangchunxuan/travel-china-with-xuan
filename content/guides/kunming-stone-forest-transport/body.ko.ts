@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "쿤밍을 윈난 루트에 넣기",
-          "href": "/guides/kunming-dali-lijiang-shangri-la-route-order/",
+          "href": "/ko/guides/kunming-dali-lijiang-shangri-la-route-order/",
           "description": "다도시 순서는 기존 owner에 둡니다."
         },
         {
           "label": "전용차와 대중교통 비교",
-          "href": "/guides/china-private-transfer-or-public-transport/",
+          "href": "/ko/guides/china-private-transfer-or-public-transport/",
           "description": "정확한 방문자센터 인계를 안 뒤 교통 방식을 고릅니다."
         },
         {
           "label": "중국 철도 첫 여행 준비",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "전국 예약·탑승 절차를 분리합니다."
         },
         {
           "label": "중국 휴일 혼잡 확인",
-          "href": "/guides/china-public-holidays-travel-calendar/",
+          "href": "/ko/guides/china-public-holidays-travel-calendar/",
           "description": "혼잡 통제가 방문자센터·귀환 사슬을 바꿀 수 있습니다."
         },
         {
           "label": "연결 좋은 쿤밍 숙소 고르기",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/ko/guides/china-hotel-near-metro/",
           "description": "일반 도심 표시가 아니라 정확한 출발 노드를 사용합니다."
         }
       ]

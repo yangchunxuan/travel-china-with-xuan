@@ -307,27 +307,27 @@ const body = {
       "items": [
         {
           "label": "광저우 도시 가이드부터 보기",
-          "href": "/destinations/guangzhou/",
+          "href": "/ko/destinations/guangzhou/",
           "description": "역을 전체 도시 계획에 넣습니다."
         },
         {
           "label": "바이윈공항 T2·T3 확인",
-          "href": "/guides/guangzhou-baiyun-airport-t2-t3/",
+          "href": "/ko/guides/guangzhou-baiyun-airport-t2-t3/",
           "description": "공항과 광저우바이윈 기차역을 분리합니다."
         },
         {
           "label": "광저우에서 홍콩으로 이어가기",
-          "href": "/guides/guangzhou-hong-kong-transport-route/",
+          "href": "/ko/guides/guangzhou-hong-kong-transport-route/",
           "description": "광저우 노드를 안 뒤 국경 철도·항구 사슬을 처리합니다."
         },
         {
           "label": "광저우에서 마카오로 이어가기",
-          "href": "/guides/guangzhou-macau-transport-route/",
+          "href": "/ko/guides/guangzhou-macau-transport-route/",
           "description": "주하이·헝친 인계를 이 페이지에서 반복하지 않고 이어갑니다."
         },
         {
           "label": "중국 열차 첫 이용",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "역을 고른 뒤 여권, 보안검사와 탑승을 처리합니다."
         }
       ]

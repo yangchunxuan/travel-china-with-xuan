@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "당일치기·숙박 먼저 고르기",
-          "href": "/guides/longji-rice-terraces-day-trip-or-overnight/",
+          "href": "/ko/guides/longji-rice-terraces-day-trip-or-overnight/",
           "description": "체류 기간과 마을 경험은 기존 owner에 둡니다."
         },
         {
           "label": "구이린 도착 노드 고르기",
-          "href": "/guides/guilin-airport-or-railway-station-arrival-guide/",
+          "href": "/ko/guides/guilin-airport-or-railway-station-arrival-guide/",
           "description": "농촌 인계 전 KWL 또는 정확한 기차역을 정합니다."
         },
         {
           "label": "구이린–양숴 교통 계획",
-          "href": "/guides/guilin-yangshuo-transport-route/",
+          "href": "/ko/guides/guilin-yangshuo-transport-route/",
           "description": "별도 양숴 회랑은 기존 owner에 둡니다."
         },
         {
           "label": "전용차와 대중교통 비교",
-          "href": "/guides/china-private-transfer-or-public-transport/",
+          "href": "/ko/guides/china-private-transfer-or-public-transport/",
           "description": "정확한 마을을 안 뒤 교통 방식을 고릅니다."
         },
         {
           "label": "농촌 숙박이 다른 이유 이해",
-          "href": "/guides/china-hotel-near-metro/",
+          "href": "/ko/guides/china-hotel-near-metro/",
           "description": "지하철 거리 규칙으로 계단식 논 마을 인계를 설명할 수 없습니다."
         }
       ]

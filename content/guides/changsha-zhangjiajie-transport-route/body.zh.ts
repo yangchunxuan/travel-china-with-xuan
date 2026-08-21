@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "先看张家界城市指南",
-          "href": "/destinations/zhangjiajie/",
+          "href": "/zh/destinations/zhangjiajie/",
           "description": "把走廊放进完整停留。"
         },
         {
           "label": "选择市区或武陵源基地",
-          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "href": "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
           "description": "由基地owner定义最后一扇门。"
         },
         {
           "label": "选择正确森林公园入口",
-          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "href": "/zh/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
           "description": "把入口与景区内执行和城市走廊分开。"
         },
         {
           "label": "比较夜车与白天高铁",
-          "href": "/guides/china-night-train-or-daytime-high-speed-rail/",
+          "href": "/zh/guides/china-night-train-or-daytime-high-speed-rail/",
           "description": "选择实时走廊车次前先使用方式owner。"
         },
         {
           "label": "准备第一次中国铁路行程",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "购票与乘车流程留给全国owner。"
         }
       ]

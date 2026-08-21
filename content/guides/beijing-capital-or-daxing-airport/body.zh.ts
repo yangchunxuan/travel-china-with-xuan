@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "先看北京城市指南",
-          "href": "/destinations/beijing/",
+          "href": "/zh/destinations/beijing/",
           "description": "把机场放进完整首次北京行程。"
         },
         {
           "label": "选择北京住宿区域",
-          "href": "/guides/beijing-where-to-stay-first-trip/",
+          "href": "/zh/guides/beijing-where-to-stay-first-trip/",
           "description": "让准确酒店提供城市侧最后一扇门。"
         },
         {
           "label": "选择北京八座主要火车站",
-          "href": "/guides/which-beijing-railway-station/",
+          "href": "/zh/guides/which-beijing-railway-station/",
           "description": "建立机场衔接前先确定铁路节点。"
         },
         {
           "label": "从北京南站前往首都或大兴机场",
-          "href": "/guides/beijing-south-station-to-capital-or-daxing-airport/",
+          "href": "/zh/guides/beijing-south-station-to-capital-or-daxing-airport/",
           "description": "真实车站为北京南时使用这一窄页面。"
         },
         {
           "label": "保护国际航班前最后一晚",
-          "href": "/guides/china-last-night-before-international-flight/",
+          "href": "/zh/guides/china-last-night-before-international-flight/",
           "description": "确定机场和截止后选择睡眠位置。"
         }
       ]

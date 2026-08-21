@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "장자제 도시 가이드부터 보기",
-          "href": "/destinations/zhangjiajie/",
+          "href": "/ko/destinations/zhangjiajie/",
           "description": "회랑을 전체 체류 안에 넣습니다."
         },
         {
           "label": "도심 또는 우링위안 거점 고르기",
-          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "href": "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
           "description": "거점 owner가 마지막 문을 정합니다."
         },
         {
           "label": "올바른 삼림공원 입구 고르기",
-          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "href": "/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
           "description": "입구·공원 내 실행을 도시 회랑과 분리합니다."
         },
         {
           "label": "야간열차와 주간 고속철 비교",
-          "href": "/guides/china-night-train-or-daytime-high-speed-rail/",
+          "href": "/ko/guides/china-night-train-or-daytime-high-speed-rail/",
           "description": "실시간 회랑 열차를 고르기 전 교통 방식 owner를 사용합니다."
         },
         {
           "label": "중국 철도 첫 여행 준비",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/ko/guides/china-high-speed-train-first-time-guide/",
           "description": "예약·탑승 절차는 전국 owner에 둡니다."
         }
       ]

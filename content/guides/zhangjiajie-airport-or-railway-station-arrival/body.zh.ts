@@ -295,27 +295,27 @@ const body = {
       "items": [
         {
           "label": "先看张家界城市指南",
-          "href": "/destinations/zhangjiajie/",
+          "href": "/zh/destinations/zhangjiajie/",
           "description": "把抵达节点放进完整目的地计划。"
         },
         {
           "label": "选择住市区还是武陵源",
-          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "href": "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
           "description": "先定住宿基地，再补全抵达链。"
         },
         {
           "label": "确认森林公园票务与入口",
-          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "href": "/zh/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
           "description": "景区侧时段和入口交给现有页面。"
         },
         {
           "label": "比较夜车与白天高铁",
-          "href": "/guides/china-night-train-or-daytime-high-speed-rail/",
+          "href": "/zh/guides/china-night-train-or-daytime-high-speed-rail/",
           "description": "匹配张家界抵达节点前先选择更大的铁路方式。"
         },
         {
           "label": "第一次坐中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "继续处理护照、进站和登车。"
         }
       ]

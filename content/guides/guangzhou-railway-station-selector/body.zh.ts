@@ -206,7 +206,7 @@ const body = {
       "items": [
         "冻结行程，读取有效订单的完整中文站名，并在站房标识中找到同样字符或出示给铁路人员。",
         "先弄清这是南站或白云站内部走错入口、同名广场，还是到了广州另一座车站。",
-        "雇车前让工作人员打开当前订单，查看系统实际提供的改签或退票选项；不得预设结果。",
+        "叫车转站前让工作人员打开当前订单，查看系统实际提供的改签或退票选项；不得预设结果。",
         "只有正确入口仍可到达时才移动，并从可验证抵达时间中扣除安检及口岸或轮渡截止。",
         "告知酒店或口岸你实际到达的车站、仍有效的车次和现在受威胁的准确截止。",
         "原车次与安全转站都已失去时，把护照和行李留在一起，在下一可用广州节点附近找有人值守的停留点。"
@@ -307,27 +307,27 @@ const body = {
       "items": [
         {
           "label": "先看广州城市指南",
-          "href": "/destinations/guangzhou/",
+          "href": "/zh/destinations/guangzhou/",
           "description": "把车站放进完整城市行程。"
         },
         {
           "label": "确认白云机场T2或T3",
-          "href": "/guides/guangzhou-baiyun-airport-t2-t3/",
+          "href": "/zh/guides/guangzhou-baiyun-airport-t2-t3/",
           "description": "分清机场与广州白云火车站。"
         },
         {
           "label": "继续安排广州到香港",
-          "href": "/guides/guangzhou-hong-kong-transport-route/",
+          "href": "/zh/guides/guangzhou-hong-kong-transport-route/",
           "description": "确定广州节点后处理跨境铁路或口岸链。"
         },
         {
           "label": "继续安排广州到澳门",
-          "href": "/guides/guangzhou-macau-transport-route/",
+          "href": "/zh/guides/guangzhou-macau-transport-route/",
           "description": "继续处理珠海或横琴交接，不在本页复制。"
         },
         {
           "label": "第一次坐中国高铁",
-          "href": "/guides/china-high-speed-train-first-time-guide/",
+          "href": "/zh/guides/china-high-speed-train-first-time-guide/",
           "description": "选定车站后处理护照、安检和登车。"
         }
       ]
