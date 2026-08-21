@@ -1,0 +1,83 @@
+{
+  "id": "universal-beijing-foreign-visitors",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "universal-beijing",
+    "foreign-passport",
+    "official-app",
+    "one-day-route"
+  ],
+  "destinations": [
+    "beijing",
+    "tongzhou",
+    "universal-beijing-resort"
+  ],
+  "heroImagePath": "/images/guides/universal-beijing-foreign-visitors/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/universal-beijing-foreign-visitors/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/universal-beijing-foreign-visitors/",
+      "title": "Universal Beijing for Foreign Visitors: One-Day Plan",
+      "headline": "Universal Beijing with a Foreign Passport: Ticket, App and One-Day Route",
+      "description": "Prepare the identity record and official app, group the lands by priority and build recovery into a full park day.",
+      "heroAlt": "Entrance area of Universal Beijing Resort in Tongzhou",
+      "navTitle": "Universal Beijing day",
+      "featuredLinkLabel": "Plan the park day",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Beijing",
+        "Universal",
+        "Foreign visitors"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/universal-beijing-foreign-visitors/",
+      "title": "外国游客北京环球影城：护照、App与一日路线",
+      "headline": "外国护照游北京环球度假区：购票、官方App与一日路线",
+      "description": "准备一致的护照信息和官方App，按主题区优先级安排行程，并给天气、停运和排队留出恢复空间。",
+      "heroAlt": "北京通州环球度假区入口区域",
+      "navTitle": "北京环球一日游",
+      "featuredLinkLabel": "规划环球影城一天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "北京",
+        "环球影城",
+        "外国游客"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/universal-beijing-foreign-visitors/",
+      "title": "외국인 유니버설 베이징: 여권·앱·하루 동선",
+      "headline": "외국 여권으로 유니버설 베이징 가기: 티켓, 공식 앱, 하루 계획",
+      "description": "여권 정보와 공식 앱을 준비하고, 테마 구역을 우선순위로 묶어 운영 중단과 긴 대기에 대응하는 하루 동선입니다.",
+      "heroAlt": "베이징 퉁저우 유니버설 리조트 입구",
+      "navTitle": "유니버설 베이징 하루",
+      "featuredLinkLabel": "테마파크 하루 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "베이징",
+        "유니버설",
+        "외국인"
+      ]
+    }
+  }
+}
