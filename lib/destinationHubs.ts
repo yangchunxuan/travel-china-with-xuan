@@ -18,6 +18,7 @@ export const destinationHubIds = [
   "guangzhou",
   "hangzhou",
   "zhangjiajie",
+  "chongqing",
 ] as const;
 export type DestinationHubId = (typeof destinationHubIds)[number];
 
@@ -1304,6 +1305,236 @@ export const destinationHubRegistry = [
             grandcanyon: { label: "대협곡", note: "유리다리 권역; 삼림공원 안이 아님" },
             dyg: { label: "DYG 공항", note: "시내 쪽 관문" },
             weststation: { label: "장자제서역", note: "시내 중심 북쪽의 철도 관문" },
+          },
+        },
+      },
+    },
+  },
+  {
+    id: "chongqing",
+    entityId: "city-chongqing",
+    heroImagePath: "/images/destinations/chongqing/hero-1600.webp",
+    heroImageUrl:
+      "https://homegroundchina.com/images/destinations/chongqing/hero-1600.webp",
+    imageWidth: 1600,
+    imageHeight: 1000,
+    datePublished: "2026-08-21",
+    dateModified: "2026-08-21",
+    sourceReviewedDate: "2026-08-21",
+    supportGuideIds: [
+      "chongqing-upper-lower-city-orientation",
+      "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "china-tiankeng-sinkholes-explained",
+      "sichuan-opera-face-changing-with-context",
+      "chongqing-railway-station-selector",
+    ],
+    geometry: [
+      { id: "yuzhong", x: 0.5, y: 0.48, kind: "core" },
+      { id: "jiangbei", x: 0.5, y: 0.2, kind: "cluster" },
+      { id: "nanan", x: 0.55, y: 0.75, kind: "cluster" },
+      { id: "liziba", x: 0.22, y: 0.46, kind: "cluster" },
+      { id: "wulong", x: 0.82, y: 0.92, kind: "outside" },
+      { id: "dazu", x: 0.08, y: 0.72, kind: "outside" },
+      { id: "ckg", x: 0.75, y: 0.08, kind: "gateway" },
+      { id: "eaststation", x: 0.78, y: 0.63, kind: "gateway" },
+    ],
+    locales: {
+      en: {
+        path: hubPath("chongqing", "en"),
+        title: "Chongqing Travel Guide: Nights, Areas, Stations and Routes",
+        h1: "Chongqing travel guide: choose the right base, station and number of nights",
+        description:
+          "Decide how many nights Chongqing needs, where to stay, which airport or railway station is on the ticket, and whether Wulong, Dazu, Chengdu or a cruise belongs next.",
+        navTitle: "Chongqing",
+        summary:
+          "Chongqing is a steep two-river megacity inside a municipality large enough to include distant natural and cultural heritage. Most first trips need three nights for two complete urban days. Choose a base by the mornings it protects, read the exact station on the ticket, and treat Wulong or Dazu as a dedicated extension rather than another downtown pin.",
+        heroAlt:
+          "Dense Yuzhong buildings rising in layers above the river in Chongqing.",
+        heroCaption:
+          "Yuzhong's stacked buildings show why a short map distance cannot promise an easy walk. In Chongqing, the bank, street level, entrance and connector all matter.",
+        openGraphLocale: "en_US",
+        searchTerms: [
+          "Chongqing travel guide",
+          "how many nights in Chongqing",
+          "where to stay in Chongqing first trip",
+          "which Chongqing railway station",
+          "Chongqing Wulong or Dazu itinerary",
+        ],
+        geography: {
+          title: "Two rivers, four urban tasks and two distant extensions",
+          caption:
+            "Orientation diagram, not to scale. Nearby-looking banks can require a bridge or tunnel, while Wulong and Dazu remain separate full-day decisions.",
+          legend: {
+            core: "Central peninsula",
+            cluster: "Own urban block",
+            outside: "Dedicated extension",
+            gateway: "Airport or rail gateway",
+          },
+          nodes: {
+            yuzhong: {
+              label: "Yuzhong · Jiefangbei",
+              note: "Central peninsula, first orientation and strongest short-stay base",
+            },
+            jiangbei: {
+              label: "Jiangbei · Guanyinqiao",
+              note: "Modern commercial life and a northern accommodation choice",
+            },
+            nanan: {
+              label: "Nan'an · Nanshan",
+              note: "South-bank view; several levels and separate sub-areas",
+            },
+            liziba: {
+              label: "Liziba · westward cluster",
+              note: "Rail-and-building example outside the peninsula walk",
+            },
+            wulong: {
+              label: "Wulong",
+              note: "Karst landscape; station transfer, local transport and weather",
+            },
+            dazu: {
+              label: "Dazu",
+              note: "Rock-carving heritage; dedicated site sequence and road day",
+            },
+            ckg: {
+              label: "CKG airport",
+              note: "North of the urban core; follow the airline's current T3 record",
+            },
+            eaststation: {
+              label: "Chongqing East",
+              note: "Separate southeast-corridor railway gateway",
+            },
+          },
+        },
+      },
+      zh: {
+        path: hubPath("chongqing", "zh"),
+        title: "重庆旅行指南：住几晚、住哪里、车站与下一站",
+        h1: "重庆旅行指南：选对住宿基地、车站和停留晚数",
+        description:
+          "判断重庆需要住几晚、住哪个区域、票面对应哪座机场或铁路站，以及武隆、大足、成都或长江游轮是否适合作为下一段。",
+        navTitle: "重庆",
+        summary:
+          "重庆既是两江交汇、地形陡峭的超大城市，也是一座范围足以容纳远方自然与文化遗产的直辖市。大多数第一次旅行以三晚、两个完整市区日为起点。住宿基地应保护主要早晨，铁路站必须以票面为准，武隆或大足则要作为专门延伸，而不是另一枚市中心坐标。",
+        heroAlt: "重庆渝中密集建筑沿江岸层层升高。",
+        heroCaption:
+          "渝中的层叠建筑说明：地图距离短，并不等于好走。在重庆，江岸、街道高度、入口和连接方式都要核对。",
+        openGraphLocale: "zh_CN",
+        searchTerms: [
+          "重庆旅行指南",
+          "重庆住几晚",
+          "第一次去重庆住哪里",
+          "重庆用哪个火车站",
+          "重庆武隆还是大足行程",
+        ],
+        geography: {
+          title: "两条江、四个市区任务与两个远方延伸",
+          caption:
+            "方位示意图，非按比例。看似相邻的江岸仍可能需要桥梁或隧道，武隆和大足则各自是完整的一天。",
+          legend: {
+            core: "中心半岛",
+            cluster: "独立市区时段",
+            outside: "专门延伸",
+            gateway: "机场或铁路门户",
+          },
+          nodes: {
+            yuzhong: {
+              label: "渝中 · 解放碑",
+              note: "中心半岛、第一次定向与短住的主要基地",
+            },
+            jiangbei: {
+              label: "江北 · 观音桥",
+              note: "现代商业生活与北侧住宿选择",
+            },
+            nanan: {
+              label: "南岸 · 南山",
+              note: "南岸视角；包含不同高度与多个子区域",
+            },
+            liziba: {
+              label: "李子坝 · 西向分区",
+              note: "轨道穿楼案例，不在中心半岛步行线内",
+            },
+            wulong: {
+              label: "武隆",
+              note: "喀斯特景观；要计入车站、本地接驳与天气",
+            },
+            dazu: {
+              label: "大足",
+              note: "石刻遗产；需要专门的点位顺序与公路日",
+            },
+            ckg: {
+              label: "CKG 江北机场",
+              note: "位于市区核心以北；以航空公司当前 T3 记录为准",
+            },
+            eaststation: {
+              label: "重庆东站",
+              note: "独立的东南方向铁路门户",
+            },
+          },
+        },
+      },
+      ko: {
+        path: hubPath("chongqing", "ko"),
+        title: "충칭 여행 가이드: 숙박 일수·지역·역·다음 동선",
+        h1: "충칭 여행 가이드: 숙소 거점, 역과 체류 일수를 먼저 고르세요",
+        description:
+          "충칭에 몇 박 머물지, 어느 지역에 숙박할지, 승차권의 공항·기차역이 어디인지, 우룽·다쭈·청두·크루즈 중 무엇을 다음에 넣을지 결정합니다.",
+        navTitle: "충칭",
+        summary:
+          "충칭은 두 강과 가파른 지형을 가진 거대도시인 동시에 먼 자연·문화유산까지 포함하는 넓은 직할시입니다. 첫 여행은 보통 3박으로 온전한 도심 이틀을 확보하는 데서 시작합니다. 주요 아침을 지키는 숙박 거점을 고르고 승차권의 정확한 역을 읽으며, 우룽이나 다쭈는 도심의 추가 핀이 아니라 전용 일정으로 다뤄야 합니다.",
+        heroAlt: "충칭 위중의 빽빽한 건물들이 강변 위로 여러 층 겹쳐 올라가는 모습.",
+        heroCaption:
+          "위중의 겹친 건물은 지도상 거리가 짧아도 걷기 쉽다는 보장이 없음을 보여 줍니다. 충칭에서는 강변, 도로 높이, 출입구와 연결 방식을 모두 확인해야 합니다.",
+        openGraphLocale: "ko_KR",
+        searchTerms: [
+          "충칭 여행 가이드",
+          "충칭 몇 박",
+          "첫 충칭 여행 숙소 지역",
+          "충칭 어느 기차역",
+          "충칭 우룽 다쭈 일정",
+        ],
+        geography: {
+          title: "두 강, 네 개의 도심 과제와 두 개의 먼 확장",
+          caption:
+            "축척이 아닌 방위 개념도입니다. 가까워 보이는 강변도 다리나 터널이 필요하며 우룽과 다쭈는 각각 별도의 하루입니다.",
+          legend: {
+            core: "중심 반도",
+            cluster: "별도 도심 시간대",
+            outside: "전용 확장 일정",
+            gateway: "공항 또는 철도 관문",
+          },
+          nodes: {
+            yuzhong: {
+              label: "위중 · 제팡베이",
+              note: "중심 반도, 첫 방향 잡기와 짧은 체류의 주요 거점",
+            },
+            jiangbei: {
+              label: "장베이 · 관인차오",
+              note: "현대 상업생활과 북쪽 숙박 선택",
+            },
+            nanan: {
+              label: "난안 · 난산",
+              note: "남쪽 강변 시선; 서로 다른 높이와 하위 지역",
+            },
+            liziba: {
+              label: "리쯔바 · 서쪽 구역",
+              note: "철도와 건물의 결합 사례; 중심반도 도보동선 밖",
+            },
+            wulong: {
+              label: "우룽",
+              note: "카르스트 경관; 역 이동, 현지 교통과 날씨 포함",
+            },
+            dazu: {
+              label: "다쭈",
+              note: "석각 유산; 전용 유적 순서와 도로 이동 하루",
+            },
+            ckg: {
+              label: "CKG 공항",
+              note: "도심 북쪽; 항공사의 현재 T3 기록을 따름",
+            },
+            eaststation: {
+              label: "충칭동역",
+              note: "동남부 회랑의 별도 철도 관문",
+            },
           },
         },
       },

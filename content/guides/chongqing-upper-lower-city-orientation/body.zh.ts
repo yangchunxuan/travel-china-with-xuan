@@ -44,7 +44,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   ]},
   {id: "dynamic-boundary", type: "callout", title: "核验日期：2026 年 8 月 13 日", body: "文中的实物案例用于解释重庆城市形态，并不承诺每部电梯、扶梯、出口或通道始终开放。2026 年李子坝施工正说明施工和临时关闭会变化；请在出行当天查看重庆轨道交通及相关场馆的现行通知。", tone: "neutral"},
   {id: "help", type: "callout", title: "需要把一条重庆路线按三维空间核对吗？", body: "把日期、酒店与目的地的准确入口、人数、行李、步行限制和计划抵达时间发给 Homeground。我们可以标出需要确认的道路层级、出口和垂直连接，但不会承诺某部电梯、扶梯或通道届时一定开放。", tone: "decision"},
-  {id: "internal-links", type: "internal-links", title: "用合适住宿地和步行节奏规划重庆", items: [
+  {id: "internal-links", type: "internal-links", title: "用合适住宿地和步行节奏规划重庆", items: [{ label: "先从重庆城市旅行指南开始", href: "/zh/destinations/chongqing/", description: "进入本专题前，先决定住几晚、住宿基地、交通门户，以及是否加入武隆或大足。" },
     {label: "重庆住解放碑、观音桥还是沙坪坝", href: "/zh/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", description: "根据实际行程和车站连接选择住宿地。"},
     {label: "确认中国地图地点标记与入口", href: "/zh/guides/china-map-coordinate-offset-explained/", description: "用中文地址和真正可用的入口重建目的地。"},
     {label: "中国轮椅无障碍路线规划", href: "/zh/guides/wheelchair-accessible-china-route-planning/", description: "逐段确认行动连接，不要把一个无障碍标签理解为全程保证。"}

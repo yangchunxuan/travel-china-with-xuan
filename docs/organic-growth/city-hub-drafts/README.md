@@ -48,7 +48,7 @@ actually published, with their source paths, permission basis, crops and
 SHA-256 values, are recorded in `docs/homeground-photo-provenance.md` under the
 destination-hub pilot release. This batch uses **0 AI or AI-assisted images**.
 
-## Batch two (August 17, 2026): Chengdu and Guangzhou published, Chongqing held
+## Batch two (August 17, 2026): Chengdu and Guangzhou published, Chongqing held at that time
 
 The Chengdu, Chongqing and Guangzhou draft packages were submitted on
 2026-08-15 on `codex/city-hub-chengdu-draft-20260815` (`33d5879`),
@@ -58,7 +58,7 @@ The Chengdu, Chongqing and Guangzhou draft packages were submitted on
 **Chengdu and Guangzhou are published.** Their reviewed copy lives in
 `content/destinations/{chengdu,guangzhou}/body.<locale>.ts`.
 
-**Chongqing is deliberately not published as a City Hub.** It has five
+**Chongqing was deliberately not published as a City Hub at that checkpoint.** It had five
 qualifying support owners in current main
 (`chongqing-upper-lower-city-orientation`,
 `chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`,
@@ -147,5 +147,26 @@ production sitemap baseline is **649 `<loc>` entries**.
   documentary travel images. Their current visual layer remains thin; exact
   production assets and evidence limits are in
   `docs/homeground-photo-provenance.md`.
-- The Chongqing station selector is live, but the Chongqing destination Hub
-  remains docs-only / blocked until central separately approves a public Hub.
+- At the PR #74 checkpoint, the Chongqing station selector was live while the
+  destination Hub remained docs-only. That historical state is superseded by
+  the release-candidate record below.
+
+## Chongqing release candidate (August 21, 2026)
+
+The Chongqing package has now cleared the implementation gates on a branch
+based on `origin/main@274d243afc9fcc2ac9abd51487d06c667019cc0a`:
+
+- it is the eighth and only broad Chongqing canonical at
+  `/destinations/chongqing/` plus Chinese and Korean locale paths;
+- all five qualifying owners, including the railway-station selector, were
+  verified as 15 intended live locale pages and receive precise handoffs;
+- the Hub uses seven location-specific, rights-recorded real photographs and
+  zero AI documentary images;
+- all five specialist owners link back to the Hub in the matching locale;
+- the airport, rail, construction, Liziba, Wulong, Dazu and cruise boundaries
+  were rechecked, while train numbers, openings, exits and piers remain dynamic;
+- the old unverified future-Dazu-station claim is absent from runtime copy.
+
+This is a release candidate only until central merges and deploys the branch.
+It does not change the historical 649-URL production baseline recorded for
+PR #74.

@@ -209,7 +209,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",
-      items: [
+      items: [{ label: "Start with the Chongqing city guide", href: "/destinations/chongqing/", description: "Choose nights, accommodation base, gateway and whether Wulong or Dazu belongs before using this specialist guide." },
         {
           label: "China high-speed train first-time guide",
           href: "/guides/china-high-speed-train-first-time-guide/",

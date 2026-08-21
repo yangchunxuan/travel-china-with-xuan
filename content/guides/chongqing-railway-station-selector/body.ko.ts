@@ -209,7 +209,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "계속 계획하기",
-      items: [
+      items: [{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우룽·다쭈 포함 여부를 정하세요." },
         {
           label: "중국 고속철도 첫 이용 가이드",
           href: "/ko/guides/china-high-speed-train-first-time-guide/",

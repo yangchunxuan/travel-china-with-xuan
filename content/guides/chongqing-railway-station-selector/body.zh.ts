@@ -209,7 +209,7 @@ const body = {
       id: "internal-links",
       type: "internal-links",
       title: "继续规划",
-      items: [
+      items: [{ label: "先从重庆城市旅行指南开始", href: "/zh/destinations/chongqing/", description: "进入本专题前，先决定住几晚、住宿基地、交通门户，以及是否加入武隆或大足。" },
         {
           label: "第一次坐中国高铁指南",
           href: "/zh/guides/china-high-speed-train-first-time-guide/",

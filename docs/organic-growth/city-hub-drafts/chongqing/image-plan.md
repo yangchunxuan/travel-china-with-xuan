@@ -1,8 +1,23 @@
 # Image plan — Chongqing Destination Hub
 
-Status: **asset plan complete; no binary asset is added by this draft**
-Checked: **2026-08-15**
+Status: **RELEASE ASSET GATE PASSED — MERGE REQUIRES CENTRAL ACTION**
+Checked: **2026-08-21**
 Editorial rule: real places must use real, licensed photography. AI-generated or synthetic documentary, skyline, night-view, station, heritage or landscape photography is prohibited.
+
+## Release reconciliation — 2026-08-21
+
+The original candidate notes below are retained as selection history. The
+release now contains seven verified derivatives under
+`public/images/destinations/chongqing/`: Yuzhong hero, the Yangtze–Jialing
+confluence, Liziba, Wulong, Dazu, Crown Escalator and Chongqing East station.
+All are real photographs of the named place. No scene element was generated,
+added, removed or composited; processing was limited to deterministic crop,
+resize and WebP conversion. Exact creators, licences, source and derivative
+hashes are recorded in `docs/homeground-photo-provenance.md`.
+
+The responsive `DestinationGeographyDiagram` supplies the orientation graphic.
+The page does not need a fabricated map or generated transport diagram to pass
+the visual gate.
 
 ## 1. Visual purpose
 

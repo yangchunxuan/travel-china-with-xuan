@@ -51,7 +51,7 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"verify-heading",type:"heading",level:2,text:"최종 확인 목록"},
   {id:"verify",type:"list",items:["톈컹 명칭의 과학·권위 근거","정확한 현재 관리기관·운영자와 중국어 입구","연구 좌표가 아닌 현재 공개 경로","운영자의 개장, 표·예약과 최종 입장 정보","날씨, 보수, 침수, 낙석과 화재 공지","‘쉽다’가 아닌 측정 가능한 계단, 고도와 접근성","복귀 교통과 더 이른 지상 출구","야생 하강, 드론, 난간 통과나 민감 장소 지오태그 없음"]},
   {id:"help",type:"callout",title:"의미 있고 감당 가능한 카르스트 장소가 필요하다면",body:"이미 가는 지역, 이동성 한계, 지질·규모·사진 중 무엇이 중요한지 Homeground에 알려 달라. 실제 플래너가 미확인 좌표가 아니라 정식 공개 장소를 고르고 현재 경로를 다시 확인하도록 도울 수 있다.",tone:"neutral"},
-  {id:"links",type:"internal-links",title:"자연 출입을 책임 있게 계획하기",items:[
+  {id:"links",type:"internal-links",title:"자연 출입을 책임 있게 계획하기",items:[{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우룽·다쭈 포함 여부를 정하세요." },
     {label:"치롄산 공개 관문 고르기",href:"/ko/guides/qilian-mountains-public-gateways-and-access/",description:"큰 보호 경관에도 같은 경계 원칙을 적용한다."},
     {label:"중국 기후권 이해",href:"/ko/guides/china-climate-regions-for-trip-timing/",description:"한 지역의 날씨 결론을 모든 카르스트 지역에 옮기지 않는다."},
     {label:"중국 휠체어 접근 경로 계획",href:"/ko/guides/wheelchair-accessible-china-route-planning/",description:"모호한 접근성 표시를 측정 가능한 경로 근거로 바꾼다."},

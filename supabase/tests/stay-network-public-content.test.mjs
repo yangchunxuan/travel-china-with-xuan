@@ -100,10 +100,10 @@ function blockSignature(source) {
     .map((match) => `${match[1]}:${match[2]}`);
 }
 
-test("all 38 public stay handoff files enforce the initial-form privacy boundary", async () => {
+test("all 41 public stay handoff files enforce the initial-form privacy boundary", async () => {
   let checkedFiles = 0;
 
-  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
+  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "chongqing"]) {
     for (const locale of ["en", "zh", "ko"]) {
       const path = `content/destinations/${city}/body.${locale}.ts`;
       const source = await read(path);
@@ -149,7 +149,7 @@ test("all 38 public stay handoff files enforce the initial-form privacy boundary
     }
   }
 
-  assert.equal(checkedFiles, 38);
+  assert.equal(checkedFiles, 41);
 
   const boundary = await read("docs/stay-network/inquiry-and-supplier-boundary.md");
   assert.match(boundary, /The initial general form must not ask for or invite/u);
@@ -157,7 +157,7 @@ test("all 38 public stay handoff files enforce the initial-form privacy boundary
   assert.match(boundary, /does\s+not add any of those runtime capabilities/u);
 });
 
-test("the destination registry retains seven published Hubs and truthful dates", async () => {
+test("the destination registry retains eight published Hubs and truthful dates", async () => {
   const registry = await read("lib/destinationHubs.ts");
   const expected = {
     beijing: "2026-08-16",
@@ -167,23 +167,24 @@ test("the destination registry retains seven published Hubs and truthful dates",
     guangzhou: "2026-08-17",
     hangzhou: "2026-08-20",
     zhangjiajie: "2026-08-20",
+    chongqing: "2026-08-21",
   };
   assert.match(
     registry,
-    /export const destinationHubIds = \[\s*"beijing",\s*"shanghai",\s*"xian",\s*"chengdu",\s*"guangzhou",\s*"hangzhou",\s*"zhangjiajie",\s*\] as const;/u,
+    /export const destinationHubIds = \[\s*"beijing",\s*"shanghai",\s*"xian",\s*"chengdu",\s*"guangzhou",\s*"hangzhou",\s*"zhangjiajie",\s*"chongqing",\s*\] as const;/u,
   );
   for (const [id, sourceReviewedDate] of Object.entries(expected)) {
     const start = registry.indexOf(`id: "${id}"`);
     assert.notEqual(start, -1, `${id} registry entry missing`);
     const header = registry.slice(start, start + 700);
-    assert.match(header, /datePublished: "2026-08-(16|17|20)"/, `${id} must remain published`);
+    assert.match(header, /datePublished: "2026-08-(16|17|20|21)"/, `${id} must remain published`);
     assert.match(header, /dateModified: "2026-08-21"/, `${id} modified date`);
     assert.match(header, new RegExp(`sourceReviewedDate: "${sourceReviewedDate}"`), `${id} source date`);
   }
 });
 
-test("five locale-specific Hub bodies keep parity and supplier-neutral handoffs", async () => {
-  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou"]) {
+test("six locale-specific Hub bodies keep parity and supplier-neutral handoffs", async () => {
+  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "chongqing"]) {
     const localeSources = {};
     for (const locale of ["en", "zh", "ko"]) {
       const source = await read(`content/destinations/${city}/body.${locale}.ts`);

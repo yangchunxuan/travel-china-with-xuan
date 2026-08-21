@@ -17,9 +17,46 @@ test("destination hubs keep the Chinese guide phrase together on narrow screens"
   assert.match(page, /xian: \["西安旅行指南：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
   assert.match(page, /hangzhou: \["杭州旅行指南：", "先决定一日往返，", "还是把杭州真正住下来"\]/);
   assert.match(page, /zhangjiajie: \["张家界旅行指南：", "先分清市区、", "武陵源和不同山岳系统"\]/);
+  assert.match(page, /chongqing: \["重庆旅行指南：", "选对住宿基地、", "车站和停留晚数"\]/);
   assert.match(page, /titleSegments\.map\(\(segment, index\) =>/);
   assert.match(page, /className=\{styles\.keepTogether\}/);
   assert.match(styles, /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap;/);
+});
+
+test("Chongqing is one trilingual canonical Hub with verified owners and dynamic boundaries", async () => {
+  const [registry, runtime, en, zh, ko, exportCheck] = await Promise.all([
+    source("lib/destinationHubs.ts"),
+    source("lib/destinationHubRuntime.ts"),
+    source("content/destinations/chongqing/body.en.ts"),
+    source("content/destinations/chongqing/body.zh.ts"),
+    source("content/destinations/chongqing/body.ko.ts"),
+    source("tools/check-search-platform-export.mjs"),
+  ]);
+
+  assert.match(registry, /id: "chongqing"[\s\S]*?entityId: "city-chongqing"/);
+  for (const owner of [
+    "chongqing-upper-lower-city-orientation",
+    "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+    "china-tiankeng-sinkholes-explained",
+    "sichuan-opera-face-changing-with-context",
+    "chongqing-railway-station-selector",
+  ]) {
+    assert.match(registry, new RegExp(`"${owner}"`), owner);
+  }
+  assert.match(runtime, /chongqing: \{[\s\S]*?chongqing\/body\.en[\s\S]*?chongqing\/body\.zh[\s\S]*?chongqing\/body\.ko/);
+  assert.match(exportCheck, /publishedDestinationHubIds = \[[\s\S]*?"chongqing"/);
+  assert.doesNotMatch(exportCheck, /blockedDestinationHubIds = \[[^\]]*"chongqing"/);
+
+  for (const body of [en, zh, ko]) {
+    assert.match(body, /id: "canonical-owner-links"|"id": "canonical-owner-links"/);
+    assert.match(body, /id: "stay-quote-handoff"|"id": "stay-quote-handoff"/);
+    assert.match(body, /id: "official-sources"|"id": "official-sources"/);
+    assert.match(body, /\/destinations\/chongqing\/|\/zh\/destinations\/chongqing\/|\/ko\/destinations\/chongqing\//);
+    assert.doesNotMatch(body, /planned Dazu Shike|规划中的大足石刻高铁站|계획 중인 다쭈스커/u);
+  }
+  assert.match(en, /Since 23 December 2025/);
+  assert.match(zh, /自2025年12月23日起/);
+  assert.match(ko, /2025년 12월 23일부터/);
 });
 
 test("batch three hubs are trilingual published pages with canonical boundaries", async () => {
