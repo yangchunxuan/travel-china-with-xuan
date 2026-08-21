@@ -276,6 +276,7 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "china-hotel-near-metro": "stay-city-areas",
   "huangshan-summit-or-gateway-base": "stay-hotel-types-scenic-bases",
   "zhangjiajie-city-or-wulingyuan-hotel-base": "stay-hotel-types-scenic-bases",
+  "yangshuo-town-or-yulong-river-where-to-stay": "stay-hotel-types-scenic-bases",
   "china-climate-regions-for-trip-timing": "timing-months-seasons",
   "china-in-october-golden-week-or-later": "timing-holidays-crowds",
   "china-public-holidays-travel-calendar": "timing-holidays-crowds",
