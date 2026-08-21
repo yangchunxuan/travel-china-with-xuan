@@ -29,6 +29,13 @@
       "headline": "Longji Rice Terraces: Make It a Day Trip or Stay Overnight?",
       "description": "Decide whether to visit Longji Rice Terraces as a Guilin day trip or stay one night, with realistic trade-offs for weather, walking, luggage and onward travel.",
       "heroAlt": "Golden rice terraces and mountain villages at Longji in October",
+      "heroCredit": {
+        "text": "Longji Rice Terraces, photographed by Kaur Virunurm on 11 October 2023; centre-cropped to 16:10, resized and converted to WebP by Homeground. It shows a real cultivated landscape in October 2023 and does not prove current field colour, visibility, access or transport.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longji_rice_terraces_-_2023_10_11_Kaur_Virunurm.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
       "navTitle": "Longji day trip or overnight",
       "featuredLinkLabel": "Choose a Longji trip shape",
       "openGraphLocale": "en_US",
@@ -40,6 +47,13 @@
       "headline": "龙脊梯田：一日往返，还是住一晚？",
       "description": "从天气、步行、行李、出发地和后续行程判断龙脊梯田适合桂林一日往返，还是值得在山里住一晚。",
       "heroAlt": "十月的龙脊金色梯田、山村与云雾群山",
+      "heroCredit": {
+        "text": "龙脊梯田实景，Kaur Virunurm 摄于 2023 年 10 月 11 日；Homeground 居中裁成 16:10、缩放并转为 WebP。照片只说明 2023 年 10 月的真实耕作景观，不能证明当前田色、能见度、入口或交通。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longji_rice_terraces_-_2023_10_11_Kaur_Virunurm.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
       "navTitle": "龙脊一日游或住一晚",
       "featuredLinkLabel": "选择龙脊行程形态",
       "openGraphLocale": "zh_CN",
@@ -51,6 +65,13 @@
       "headline": "룽지 다랑논: 당일치기일까, 1박일까?",
       "description": "날씨, 걷기, 짐, 출발지와 다음 일정을 기준으로 룽지 다랑논을 구이린에서 당일치기할지 1박할지 결정합니다.",
       "heroAlt": "10월의 황금빛 룽지 다랑논과 산촌, 구름 낀 산",
+      "heroCredit": {
+        "text": "룽지 다랑논의 실제 풍경. Kaur Virunurm이 2023년 10월 11일 촬영했으며 Homeground가 중앙부를 16:10으로 잘라 크기를 조정하고 WebP로 변환했습니다. 2023년 10월의 경작지 모습을 보여 줄 뿐 현재 논 색, 가시거리, 출입이나 교통을 증명하지 않습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longji_rice_terraces_-_2023_10_11_Kaur_Virunurm.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
       "navTitle": "룽지 당일치기 또는 1박",
       "featuredLinkLabel": "룽지 일정 형태 고르기",
       "openGraphLocale": "ko_KR",
