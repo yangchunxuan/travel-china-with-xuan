@@ -1,0 +1,122 @@
+{
+  "id": "guangzhou-railway-station-selector",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "station-decision-matrix",
+  "topics": [
+    "transport",
+    "railways",
+    "railway-stations",
+    "wrong-station-recovery"
+  ],
+  "destinations": [
+    "guangzhou"
+  ],
+  "heroImagePath": "/images/guides/guangzhou-railway-station-selector/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guangzhou-railway-station-selector/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/guangzhou-railway-station-selector/",
+      "title": "Which Guangzhou Railway Station? South, East, Central, Baiyun or North",
+      "headline": "Which Guangzhou Railway Station Should You Use?",
+      "description": "Match Guangzhou South, East, Guangzhou, Baiyun or North to the exact ticket, hotel and Hong Kong, Macau or Guangdong onward chain.",
+      "heroAlt": "Platform at Guangzhou South Railway Station with bilingual signs and trains.",
+      "heroCredit": {
+        "text": "Guangzhou South Railway Station, Rc1959, 25 December 2025; cropped and resized by Homeground. It identifies South only and does not prove current service.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGuangzhou_South_railway_station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "Choose a Guangzhou railway station",
+      "featuredLinkLabel": "Compare five Guangzhou railway hubs",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Guangzhou",
+        "Railway stations",
+        "Greater Bay Area"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/guangzhou-railway-station-selector/",
+      "title": "广州南、东、广州站、白云还是北站？",
+      "headline": "广州五大火车站怎么选？",
+      "description": "按真实票面、酒店及香港、澳门或广东下一程，选择广州南、东、广州站、白云或北站。",
+      "heroAlt": "广州南站站台，可见双语标识和列车。",
+      "heroCredit": {
+        "text": "广州南站，Rc1959摄于2025年12月25日；Homeground裁切并缩放。照片只确认南站，不证明当前运营。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGuangzhou_South_railway_station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "选择广州火车站",
+      "featuredLinkLabel": "对比广州五大铁路枢纽",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "广州交通",
+        "火车站",
+        "大湾区"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/guangzhou-railway-station-selector/",
+      "title": "광저우남·동·광저우·바이윈·북역, 어디로 갈까?",
+      "headline": "광저우에서는 어느 기차역을 이용해야 할까요?",
+      "description": "실제 승차권, 숙소와 홍콩·마카오·광둥 다음 이동에 맞춰 광저우남·동·광저우·바이윈·북역을 고릅니다.",
+      "heroAlt": "이중 언어 표지와 열차가 보이는 광저우남역 승강장.",
+      "heroCredit": {
+        "text": "광저우남역. Rc1959가 2025년 12월 25일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 남역만 확인하며 현재 운행을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGuangzhou_South_railway_station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "광저우 기차역 고르기",
+      "featuredLinkLabel": "광저우 철도 허브 5곳 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "광저우 교통",
+        "기차역",
+        "대만구"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "which Guangzhou railway station",
+      "Guangzhou South vs East",
+      "Guangzhou Baiyun station",
+      "wrong Guangzhou station"
+    ],
+    "zh": [
+      "广州火车站怎么选",
+      "广州南站还是东站",
+      "广州白云站",
+      "广州走错火车站"
+    ],
+    "ko": [
+      "광저우 기차역 어디",
+      "광저우남역 동역",
+      "광저우바이윈역",
+      "광저우 역 잘못 감"
+    ]
+  }
+}
