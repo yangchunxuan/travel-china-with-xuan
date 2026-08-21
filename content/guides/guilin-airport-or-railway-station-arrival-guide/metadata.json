@@ -1,0 +1,98 @@
+{
+  "id": "guilin-airport-or-railway-station-arrival-guide",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "airport-rail-gateway-decision-matrix",
+  "topics": ["transport", "airports", "railways", "arrival-planning", "luggage"],
+  "destinations": ["guilin"],
+  "heroImagePath": "/images/guides/guilin-airport-or-railway-station-arrival-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guilin-airport-or-railway-station-arrival-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-08-21",
+  "sourceReviewedDate": "2026-08-21",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/guilin-airport-or-railway-station-arrival-guide/",
+      "title": "Guilin Airport or Railway Station: Arrival Guide",
+      "headline": "Guilin Airport or Railway Station: Choose the Right Gateway",
+      "description": "Choose KWL, Guilin, Guilin North or Guilin West by the live ticket, exact hotel, Yangshuo or rural onward leg, luggage and arrival time.",
+      "heroAlt": "Front of Guilin Railway Station with the Chinese and English station names above the entrance.",
+      "heroCredit": {
+        "text": "Guilin Railway Station, photographed by Rat2 on 7 February 2021; cropped to 16:10 and resized. The image identifies this one station and does not show current trains, entrances or onward services.",
+        "sourceLabel": "Original file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guilin_Railway_Station_202102.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Choose a Guilin arrival gateway",
+      "featuredLinkLabel": "Compare Guilin airport and railway gateways",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guilin", "Airport", "Railway stations"]
+    },
+    "zh": {
+      "path": "/zh/guides/guilin-airport-or-railway-station-arrival-guide/",
+      "title": "桂林两江机场、桂林站、北站还是西站？",
+      "headline": "抵达桂林：按真实酒店和下一段行程选门户",
+      "description": "结合当天票面、准确酒店、阳朔或乡村下一段、行李和抵达时段，选择桂林两江机场、桂林站、桂林北站或桂林西站。",
+      "heroAlt": "桂林站正面，入口上方可见中英文站名。",
+      "heroCredit": {
+        "text": "桂林站，Rat2 摄于 2021 年 2 月 7 日；图片裁切为 16:10 并缩放。照片只确认这一座车站，不能证明当前车次、进站口或接驳服务。",
+        "sourceLabel": "原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guilin_Railway_Station_202102.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "选择桂林抵达门户",
+      "featuredLinkLabel": "比较桂林机场和铁路门户",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["桂林交通", "机场", "火车站"]
+    },
+    "ko": {
+      "path": "/ko/guides/guilin-airport-or-railway-station-arrival-guide/",
+      "title": "구이린 공항·기차역 도착 가이드: 어느 관문을 고를까?",
+      "headline": "구이린 도착: 실제 숙소와 다음 이동으로 관문 고르기",
+      "description": "당일 표, 정확한 숙소, 양숴·농촌 지역으로의 다음 이동, 짐과 도착 시각을 기준으로 KWL·구이린역·북역·서역을 고릅니다.",
+      "heroAlt": "입구 위에 중국어와 영어 역명이 보이는 구이린역 정면.",
+      "heroCredit": {
+        "text": "구이린역. Rat2가 2021년 2월 7일 촬영했으며 16:10으로 잘라 크기를 조정했습니다. 이 사진은 한 역의 정체만 보여 주며 현재 열차, 출입구나 연계 교통을 확인하지 않습니다.",
+        "sourceLabel": "원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guilin_Railway_Station_202102.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "구이린 도착 관문 고르기",
+      "featuredLinkLabel": "구이린 공항과 기차역 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["구이린 교통", "공항", "기차역"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Guilin airport or railway station",
+      "Guilin Station vs Guilin North vs Guilin West",
+      "best Guilin arrival station for hotel or Yangshuo"
+    ],
+    "zh": [
+      "桂林机场还是火车站抵达",
+      "桂林站桂林北站桂林西站怎么选",
+      "去桂林酒店或阳朔到哪个站"
+    ],
+    "ko": [
+      "구이린 공항 기차역 도착",
+      "구이린역 북역 서역 비교",
+      "구이린 숙소 양숴 도착역"
+    ]
+  }
+}
