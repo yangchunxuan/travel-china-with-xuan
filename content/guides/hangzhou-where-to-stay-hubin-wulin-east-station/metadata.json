@@ -1,0 +1,122 @@
+{
+  "id": "hangzhou-where-to-stay-hubin-wulin-east-station",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "three-area-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "Hangzhou",
+    "West Lake",
+    "railway arrival",
+    "traffic management"
+  ],
+  "destinations": [
+    "hangzhou",
+    "zhejiang"
+  ],
+  "heroImagePath": "/images/guides/hangzhou-where-to-stay-hubin-wulin-east-station/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/hangzhou-where-to-stay-hubin-wulin-east-station/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/hangzhou-where-to-stay-hubin-wulin-east-station/",
+      "title": "Where to Stay in Hangzhou: Hubin, Wulin or East Station?",
+      "headline": "Choose Hubin, Wulin or Hangzhou East Station as Your Base",
+      "description": "Compare West Lake evenings, north-central balance and railway convenience without turning a station hotel into a default sightseeing base.",
+      "heroAlt": "Hangzhou city and the outer West Lake viewed from the Hubin lakeside area.",
+      "heroCredit": {
+        "text": "Hangzhou city and West Lake seen from the Hubin area, photographed by CatOnMars on 23 August 2025; centre-cropped, resized and converted to WebP by Homeground. It does not promise a hotel view or current lake access.",
+        "sourceLabel": "Original Hubin and West Lake photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huanglong_%26_Broken_Bridge_-_Hangzhou_City_%26_Outer_West_Lake_in_Hubin.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "navTitle": "Hangzhou: three stay areas",
+      "featuredLinkLabel": "Choose a Hangzhou base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hangzhou",
+        "West Lake",
+        "Where to stay"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/hangzhou-where-to-stay-hubin-wulin-east-station/",
+      "title": "杭州住哪里：湖滨、武林还是杭州东站？",
+      "headline": "杭州住宿基地，湖滨、武林和东站怎么选",
+      "description": "比较西湖早晚、城北平衡与铁路便利，不把车站酒店误当成默认观光基地。",
+      "heroAlt": "从杭州湖滨一带眺望城市与西湖外湖。",
+      "heroCredit": {
+        "text": "杭州湖滨一带所见城市与西湖，CatOnMars 摄于 2025 年 8 月 23 日；Homeground 居中裁切、缩放并转为 WebP。不代表任何酒店景观，也不证明当前湖边通行。",
+        "sourceLabel": "湖滨与西湖原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huanglong_%26_Broken_Bridge_-_Hangzhou_City_%26_Outer_West_Lake_in_Hubin.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "navTitle": "杭州三个住宿区域",
+      "featuredLinkLabel": "选择杭州住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "杭州",
+        "西湖",
+        "住宿区域"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/hangzhou-where-to-stay-hubin-wulin-east-station/",
+      "title": "항저우 숙소 위치: 후빈·우린·항저우동역 비교",
+      "headline": "항저우 숙박 거점, 후빈·우린·동역 중 어디가 맞을까요?",
+      "description": "서호의 아침과 저녁, 북중부 균형, 철도 편의를 비교해 역 근처 숙소를 관광 기본값으로 오해하지 않게 돕습니다.",
+      "heroAlt": "항저우 후빈 호숫가에서 바라본 도시와 서호 외호.",
+      "heroCredit": {
+        "text": "항저우 후빈에서 본 도시와 서호. CatOnMars가 2025년 8월 23일 촬영했으며 Homeground가 중앙부를 자르고 WebP로 변환했습니다. 호텔 전망이나 현재 호숫가 접근을 보장하지 않습니다.",
+        "sourceLabel": "후빈·서호 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huanglong_%26_Broken_Bridge_-_Hangzhou_City_%26_Outer_West_Lake_in_Hubin.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "navTitle": "항저우 숙소 세 지역",
+      "featuredLinkLabel": "항저우 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "항저우",
+        "서호",
+        "숙소 위치"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Hangzhou",
+      "Hubin or Wulin hotel",
+      "stay near Hangzhou East Station"
+    ],
+    "zh": [
+      "杭州住哪里",
+      "湖滨武林杭州东站住宿",
+      "第一次杭州住宿区域"
+    ],
+    "ko": [
+      "항저우 숙소 위치",
+      "후빈 우린 항저우동역 숙소",
+      "항저우 첫 여행 어디에 묵을까"
+    ]
+  }
+}
