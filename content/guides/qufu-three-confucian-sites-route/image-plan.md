@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | brett Vachon / 2013-07-24 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Temple_of_Confucius,_Qufu,_China_(29315106624).jpg), 4320×3240 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `A8329174D97D830A8B17A8761357EDEADD0F7900` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `819656656B1B6773884BADAE02784ABCAF264DABE0272184633BF8CDA278C28C` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC BY 2.0; attribution retained |
 | Derivative | `hero-1600.webp`, centre crop, resize, WebP only; SHA-256 `C119FE9FBF6CB28914D41979CBF8C84E12FAB3A6B10FB20B437D11E6303459ED` |
 | People | Incidental visitors in a wide editorial place view; no individual is the subject |

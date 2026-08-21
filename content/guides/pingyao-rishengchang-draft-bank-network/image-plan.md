@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | Gisling / 2008-10 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Rishengchang_global_money_exchange_board.JPG), 1676×2428 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `A056053DC2C5BC4D5D1DF06364CC589BEB6F305F` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `96AAB833BB48FDEABADFA9734CBC13EAB274C1855038BF473548F281DA11E193` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC BY-SA 3.0; attribution and ShareAlike retained |
 | Derivative | `hero-1600.webp`, upper-centre crop, resize, WebP only; SHA-256 `D40C50976C601DF7DEDA420A27D5F509DACF01773CD2225EFCD220A542B2B9F0` |
 | People | One incidental visitor seen from behind in a dark doorway; no portrait use |

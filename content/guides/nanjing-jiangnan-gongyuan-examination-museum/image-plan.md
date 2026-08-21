@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | ScareCriterion12 / 2018-03-08 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:%E6%B1%9F%E5%8D%97%E8%B4%A1%E9%99%A2%E6%98%8E%E8%BF%9C%E6%A5%BC%E5%8F%8A%E9%83%A8%E5%88%86%E5%8F%B7%E8%88%8D_2018-3.jpg), 6000×4000 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `D5A81CCA4F979FCEE423F0486D2EA5C08A5BF1DB` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `8241DEBF9B9F7703683EE4988A2204E1FAFADF4831817BFA9372C0D759D04A48` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC BY-SA 4.0; attribution and ShareAlike retained |
 | Derivative | `hero-1600.webp`, centre crop, resize, WebP only; SHA-256 `C785F520402566AD3BC96A320BCC18F2C45BC412B7E506E46DBF36C4F637CB9C` |
 | People | None visible in selected crop |

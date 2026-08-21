@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | w0zny / 2015-09-23 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Turpan_karez_system_IGP4205.jpg), 2848×4288 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `11970BD93F01F2C527ECBE266A70B31181B7810C` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `8B63CFD2FB5AEFC6A54E67C1C0DA48C946D41C07D4D5A105A806CA5185F87DF5` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC BY-SA 3.0; attribution and ShareAlike retained |
 | Derivative | `hero-1600.webp`, centre crop, resize, WebP only; SHA-256 `3608FDEE7BED84C7E52E97252A9089F694A4234B592D9249E9BBDA6E71FBB9CB` |
 | People | None visible |

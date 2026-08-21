@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | Mx. Granger / 2018-07-25 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Tianyi_Pavilion,_Ningbo.jpg), 4160×3120 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `5226F5C94A5522C8E5FF642326F2F0F8DBC4261B` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `A7B7D7126055CDAABEC85A7650540547BB8D645757F0A1B3C2C21E7F975C99C5` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC0 |
 | Derivative | `hero-1600.webp`, centre crop, resize, WebP only; SHA-256 `E5F4738C3646A62B14E7973CF386B058B8F802B8E13207B7B72A354BF00B3E1C` |
 | People | Small, distant visitors under the walkway; no portrait use |

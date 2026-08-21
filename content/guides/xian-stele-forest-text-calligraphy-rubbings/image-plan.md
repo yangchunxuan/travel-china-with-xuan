@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | Hiroshi Miyazaki / 2009-10-22 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Xi%27an_beilin_museum_(4104930446).jpg), 3264×2448 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `1C439E1D814CBDE777409D6AA6A331B313660E54` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `A53D0DCA74A95D84FAB4BA802C130A3AD4AFA00A5EA0B191C2E7A1E01302A641` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC BY 2.0; attribution retained |
 | Derivative | `hero-1600.webp`, centre crop, resize, WebP only; SHA-256 `990CC9DD09CD74B85BAB2ACEAA3BB0C2EFC677E2186B27AC5C993BB9FC7D3B01` |
 | People | Two incidental visitors seen from behind; no portrait use |

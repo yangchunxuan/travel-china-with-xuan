@@ -12,6 +12,7 @@ Reviewed: 2026-08-20
 | Creator / date | Fanghong / 2009-10-11 |
 | Original | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:DuFuHouse.jpg), 2560×1920 JPEG |
 | Original checksum | Wikimedia Commons SHA-1 `AA502A078F18104321159F4DD16F701610246806` (API-verified 2026-08-22) |
+| Original byte checksum | SHA-256 `05B86D2F10F9809CAD08F853103EB935799DE3D4E0B174A23C429F87F44F4A16` (direct original bytes downloaded and matched to the Commons SHA-1 on 2026-08-22) |
 | Licence | CC BY-SA 3.0; attribution and ShareAlike retained |
 | Derivative | `hero-1600.webp`, centre crop, resize, WebP only; SHA-256 `00ECE4F5B7DA4F9769725099FEA36978E78BBD39E9DDA9311AE44962E00818CC` |
 | People | None identifiable in selected crop |
