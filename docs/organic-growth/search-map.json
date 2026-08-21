@@ -2,7 +2,7 @@
   "schemaVersion": "1.2.0",
   "snapshotDate": "2026-08-21",
   "checkedAt": "2026-08-21",
-  "finalStatus": "SEARCH MAP SYNCHRONIZED — PR 75/76/77 MERGED AND DEPLOYED — PUBLICATION BOUNDARIES PRESERVED",
+  "finalStatus": "SEARCH MAP SYNCHRONIZED — ROUTE REALITY PUBLIC PRODUCT REJECTED — ENTITY NETWORK PRIORITY ACTIVE",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -165,8 +165,10 @@
         "ownerPool": "employee-4-planning",
         "proposedContentId": null,
         "candidateStatus": "selected",
-        "centralDecision": "pending-review",
-        "executionStatus": "internal-specification-merged",
+        "centralDecision": "rejected",
+        "centralDecisionEvidence": "Business owner acting as central editor explicitly rejected the public Route Reality product in the active task.",
+        "centralDecisionAt": "2026-08-21",
+        "executionStatus": "internal-specification-merged-public-product-closed",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
@@ -175,7 +177,7 @@
         "liveUrls": [],
         "lastVerifiedAt": "2026-08-21",
         "durableArtifact": true,
-        "specificationStatus": "v4-technical-specification-merged-internal-only-central-product-approval-pending",
+        "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
         "publicImplementationAuthorized": false,
         "indexablePageAuthorized": false,
         "branch": "article/worker-4-route-reality-v4-test-closure-20260821",
@@ -190,7 +192,7 @@
         "technicalReviewCommit": "e524af81e7d1ca82dcf61256039d434dee4f0753",
         "technicalReviewResult": "passed",
         "topicIdentityDelta": 0,
-        "canonicalLock": "The checker is a non-indexable specification/review task at this stage and must not generate city-by-days-by-audience URLs."
+        "canonicalLock": "The public tool is rejected. Preserve the internal specification only as historical evidence; itinerary-pace intent remains with is-your-china-itinerary-too-rushed and must not generate city-by-days-by-audience URLs."
       },
       {
         "candidateId": "stay-20260811-01",
@@ -271,7 +273,10 @@
     "routeRealityCheckerReviewGate": {
       "specOwner": "employee-4-planning",
       "handoffSignal": "SPEC REVIEW READY",
-      "specificationStatus": "v4-technical-specification-merged-internal-only-central-product-approval-pending",
+      "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
+      "publicProductDecision": "rejected",
+      "publicProductDecisionAt": "2026-08-21",
+      "publicProductDecisionEvidence": "Business owner acting as central editor explicitly rejected the product proposal in the active task.",
       "specIntegrationStatus": "merged-internal-only",
       "specIntegrationPr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
       "specMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
@@ -283,7 +288,7 @@
       "signalStatus": "observed",
       "signalObservedAt": "2026-08-11T11:18:26+08:00",
       "signalEvidence": "origin/article/worker-4-route-reality-checker-spec@1e131ff990b88c3759fb3d102f23e55aa8bbd0b0:docs/tools/china-route-reality-checker-spec.md",
-      "employee8CurrentState": "v4-technical-spec-review-passed-public-implementation-still-unapproved",
+      "employee8CurrentState": "technical-review-complete-public-product-rejected-no-further-work-authorized",
       "employee8ReviewBranch": "codex/route-reality-v4-final-technical-review-20260821",
       "employee8ReviewCommit": "e524af81e7d1ca82dcf61256039d434dee4f0753",
       "employee8ReviewResult": "TECHNICAL SPEC REVIEW PASSED — PUBLIC IMPLEMENTATION STILL REQUIRES CENTRAL APPROVAL",
@@ -316,7 +321,7 @@
       "publicToolCreationAuthorized": false,
       "indexingAuthorized": false,
       "publishingAuthorized": false,
-      "authorityToChange": "Explicit Mac central editor approval only.",
+      "authorityToChange": "A new explicit central decision would be required to reopen the rejected public product.",
       "specificationAndReviewCountAsAdditionalArticle": false
     }
   },
@@ -580,7 +585,9 @@
       ],
       "routeReality": {
         "artifactType": "internal-technical-specification",
-        "executionStatus": "internal-specification-merged",
+        "centralDecision": "rejected",
+        "centralDecisionAt": "2026-08-21",
+        "executionStatus": "internal-specification-merged-public-product-closed",
         "repositoryIntegrationStatus": "merged",
         "publicationStatus": "not-published",
         "internalOnly": true,
@@ -591,7 +598,8 @@
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
         "releaseMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
         "liveUrls": [],
-        "canonicalIdentityDelta": 0
+        "canonicalIdentityDelta": 0,
+        "disposition": "archive-internal-specification-do-not-implement-or-publish"
       },
       "employee3Inventory": {
         "statusChangedInThisRelease": false,
@@ -657,10 +665,10 @@
         "ownerPool": "planning",
         "branch": "article/worker-4-route-reality-v4-test-closure-20260821",
         "commit": "9f88336e2ea8de8da28b7ffa0dc4f3628039b909",
-        "reviewDisposition": "MERGED-PR75-internal-only-central-product-approval-pending",
+        "reviewDisposition": "MERGED-PR75-internal-only-public-product-rejected",
         "candidateStatus": "selected",
-        "centralDecision": "pending-review",
-        "executionStatus": "internal-specification-merged",
+        "centralDecision": "rejected",
+        "executionStatus": "internal-specification-merged-public-product-closed",
         "publicationStatus": "not-published",
         "durableArtifact": true,
         "publicImplementationAuthorized": false,
@@ -670,7 +678,7 @@
         "releaseMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
         "technicalReviewBranch": "codex/route-reality-v4-final-technical-review-20260821",
         "technicalReviewCommit": "e524af81e7d1ca82dcf61256039d434dee4f0753",
-        "notes": "The bounded non-numeric v4 internal specification passed employee 8 technical review. Numeric PolicyPack, runtime implementation, public page, API and indexability remain unapproved."
+        "notes": "The bounded non-numeric v4 internal specification passed employee 8 technical review and remains archived in main. The central editor rejected the public product on 2026-08-21; no further implementation, page, API or indexability work is authorized."
       },
       {
         "employee": 5,
@@ -714,10 +722,10 @@
         "ownerPool": "tool-technical-review",
         "branch": "codex/route-reality-v4-final-technical-review-20260821",
         "commit": "e524af81e7d1ca82dcf61256039d434dee4f0753",
-        "reviewDisposition": "MERGED-PR75-internal-only-public-authorization-withheld",
+        "reviewDisposition": "MERGED-PR75-internal-only-public-product-rejected",
         "candidateStatus": "selected",
-        "centralDecision": "pending-review",
-        "executionStatus": "internal-technical-review-merged",
+        "centralDecision": "rejected",
+        "executionStatus": "internal-technical-review-merged-public-product-closed",
         "publicationStatus": "not-published",
         "durableArtifact": true,
         "publicImplementationAuthorized": false,
@@ -727,7 +735,7 @@
         "releaseMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
         "technicalFoundationBranch": "codex/seo-technical-foundation-20260820",
         "technicalFoundationCommit": "a22beed2440be800513a0f9db588364b6eda3d91",
-        "notes": "Employee 8 independently killed the specified false-green mutations and passed the v4 bounded non-numeric specification. This is not product approval and authorizes no public implementation, API, page or indexability."
+        "notes": "Employee 8 independently completed the internal technical review. The central editor rejected the public product on 2026-08-21; the review is historical evidence only and authorizes no implementation, API, page or indexability."
       }
     ],
     "repairTickets": [
@@ -978,8 +986,11 @@
       "specificationOwner": "employee-4-planning",
       "branch": "article/worker-4-route-reality-v4-test-closure-20260821",
       "commit": "9f88336e2ea8de8da28b7ffa0dc4f3628039b909",
-      "specificationStatus": "v4-technical-specification-merged-internal-only-central-product-approval-pending",
+      "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
       "specIntegrationStatus": "merged-internal-only",
+      "centralDecision": "rejected",
+      "centralDecisionAt": "2026-08-21",
+      "publicProductStatus": "closed-do-not-implement",
       "employee8ReverificationStatus": "v4-final-technical-spec-review-passed-public-implementation-unapproved",
       "currentTechnicalFoundationBranch": "codex/seo-technical-foundation-20260820",
       "currentTechnicalFoundationCommit": "a22beed2440be800513a0f9db588364b6eda3d91",
@@ -1031,7 +1042,8 @@
       "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
       "releaseHeadCommit": "0f622c6a16b344ea752edcffd759081c141567e6",
       "releaseMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
-      "liveUrls": []
+      "liveUrls": [],
+      "disposition": "archive-internal-specification-only"
     },
     "cultureDraftCanonicalRegistry": [
       {
@@ -1197,7 +1209,7 @@
       "baseRef": "origin/main",
       "baseCommit": "274d243afc9fcc2ac9abd51487d06c667019cc0a",
       "previousBaseCommit": "ef1898745a3c7a6e7cd308aa341c352f24fe9d01",
-      "baseDeltaAssessment": "Latest main includes merged and deployed PR #76, #75 and #77. PR #77 updated seven existing destination Hubs and eight existing stay guides without adding a canonical identity or sitemap URL. Route Reality remains an internal-only specification and is not published.",
+      "baseDeltaAssessment": "Latest main includes merged and deployed PR #76, #75 and #77. PR #77 updated seven existing destination Hubs and eight existing stay guides without adding a canonical identity or sitemap URL. Route Reality remains an internal-only specification; the public product was rejected on 2026-08-21 and is not published.",
       "branch": "ops/seo-intelligence-post-worker-audit-20260821",
       "status": "available"
     },
@@ -1489,9 +1501,10 @@
       {
         "clusterId": "market-first-trip-route-reality",
         "userTask": "Choose, order and cut cities for a realistic first China trip.",
-        "recommendedArtifact": "tool-plus-hub",
-        "provisionalOwner": "planning-20260811-01 plus is-your-china-itinerary-too-rushed",
-        "status": "absorbed-by-current-round-no-new-ticket",
+        "recommendedArtifact": "update-existing-owner-and-national-planning-hub",
+        "provisionalOwner": "is-your-china-itinerary-too-rushed",
+        "rejectedArtifact": "planning-20260811-01 Route Reality Checker",
+        "status": "tool-rejected-route-to-existing-owner-no-new-ticket",
         "evidence": ["Google Trends core demand rise", "repeated 2026 itinerary sanity-check questions"],
         "boundary": "Do not create 7/10/14/21-day pages or city-combination permutations."
       },
@@ -4076,19 +4089,19 @@
         "pageFamily": "tool",
         "taskMode": "calculate-and-plan",
         "artifactShape": "route-reality-checker",
-        "deliveryMode": "internal-technical-specification-merged-public-implementation-unapproved",
+        "deliveryMode": "internal-technical-specification-archived-public-product-rejected",
         "specOwner": "employee-4-planning",
         "reviewGateRef": "roundExecutionControl.routeRealityCheckerReviewGate",
         "publicToolCreationAuthorized": false,
         "publicImplementationAuthorized": false,
         "indexablePageAuthorized": false,
-        "specificationStatus": "v4-technical-specification-merged-internal-only-central-product-approval-pending",
+        "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
         "status": "selected",
         "candidateStatus": "selected",
-        "centralDecision": "pending-review",
-        "centralDecisionEvidence": null,
-        "centralDecisionAt": null,
-        "executionStatus": "internal-specification-merged",
+        "centralDecision": "rejected",
+        "centralDecisionEvidence": "Business owner acting as central editor explicitly rejected the public Route Reality product in the active task.",
+        "centralDecisionAt": "2026-08-21",
+        "executionStatus": "internal-specification-merged-public-product-closed",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
@@ -4097,7 +4110,7 @@
         "liveUrls": [],
         "lastVerifiedAt": "2026-08-21",
         "durableArtifact": true,
-        "workflowException": "The internal v4 specification and technical review exist without a formal SEO execution Issue. Technical-spec approval does not authorize numeric policy, runtime implementation, a public page, indexing or publication.",
+        "workflowException": "The internal v4 specification and technical review remain as historical repository evidence without a formal SEO execution Issue. The central editor rejected the public product; no runtime implementation, page, indexing or publication may proceed.",
         "ownerPool": "employee-4-planning",
         "priorityBreakdown": {
           "userTaskAndDemandEvidence": 24,
@@ -4129,7 +4142,7 @@
         "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
         "freshnessClass": "medium-model-review-quarterly",
         "checkedAt": "2026-08-21",
-        "decision": "internal-technical-specification-merged-public-implementation-pending-central-approval",
+        "decision": "reject-public-product-archive-internal-specification",
         "parentHub": "hub-plan",
         "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning", "china-last-night-before-international-flight", "china-night-train-or-daytime-high-speed-rail"]
       },
@@ -4173,14 +4186,14 @@
         "sourceReadiness": {
           "status": "high",
           "primarySources": [],
-          "missing": "Requires editorial model alignment with the approved route checker."
+          "missing": "Any owner update must remain editorial and must not recreate the rejected Route Reality tool."
         },
         "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
         "freshnessClass": "low-quarterly",
         "checkedAt": "2026-08-11",
         "decision": "update-existing-owner-do-not-create",
         "parentHub": "hub-plan",
-        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "planning-20260811-01"]
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents"]
       },
       {
         "candidateId": "planning-20260811-03",
@@ -4229,7 +4242,7 @@
         "checkedAt": "2026-08-11",
         "decision": "hold-no-public-collection",
         "parentHub": "hub-plan",
-        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning", "planning-20260811-01"]
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning"]
       },
       {
         "candidateId": "stay-20260811-01",
@@ -5150,8 +5163,8 @@
     {
       "cluster": "China itinerary pace and generic duration",
       "canonicalOwner": "is-your-china-itinerary-too-rushed",
-      "toolOwnerIfApproved": "planning-20260811-01",
-      "boundary": "Editorial diagnosis remains canonical; tool calculates transfer tax and routes back to the article."
+      "rejectedToolCandidate": "planning-20260811-01",
+      "boundary": "Editorial diagnosis remains the sole public canonical owner. The rejected Route Reality tool must not be implemented or revived as a second public surface without a new central decision."
     },
     {
       "cluster": "China total trip cost",
@@ -5565,8 +5578,8 @@
       "selectedCandidateId": "planning-20260811-01",
       "selectedCount": 1,
       "candidateStatus": "selected",
-      "centralDecision": "pending-review",
-      "executionStatus": "internal-specification-merged",
+      "centralDecision": "rejected",
+      "executionStatus": "internal-specification-merged-public-product-closed",
       "publicationStatus": "not-published",
       "writerStartAuthorized": false
     },

@@ -1,8 +1,8 @@
 # Homeground 本轮 SEO 票据状态同步 — 2026-08-11
 
-状态：`SEARCH MAP SYNCHRONIZED — PR 75/76/77 MERGED AND DEPLOYED — PUBLICATION BOUNDARIES PRESERVED`
+状态：`SEARCH MAP SYNCHRONIZED — ROUTE REALITY PUBLIC PRODUCT REJECTED — ENTITY NETWORK PRIORITY ACTIVE`
 
-以下六张票据是 2026-08-11 的历史冻结集合，不是新的开工命令。北京站、故宫、首次共享用餐、外国游客酒店与 eSIM owner 均已发布；Route Reality Checker 仍只有内部规格。历史票不得换 slug 或换分支重开。
+以下六张票据是 2026-08-11 的历史冻结集合，不是新的开工命令。北京站、故宫、首次共享用餐、外国游客酒店与 eSIM owner 均已发布；Route Reality Checker 的内部规格已归档，公开产品已被中央否决。历史票不得换 slug 或换分支重开。
 
 本轮硬上限：票据集合冻结为以下六项，不增加第七个文章、页面或票据，也不自动递补。Route Reality Checker 的内部规格和员工 8 审查不计作新增文章。
 
@@ -17,7 +17,7 @@
 | `transport-20260811-01` | selected | approved | release-completed | published |
 | `destination-20260811-01` | selected | approved | release-completed | published |
 | `culture-20260811-01` | selected | approved | release-completed | published |
-| `planning-20260811-01` | selected | pending-review | internal-specification-merged | not-published |
+| `planning-20260811-01` | selected | rejected | internal-specification-merged-public-product-closed | not-published |
 | `stay-20260811-01` | selected | approved | release-completed | published |
 | `essentials-20260811-01` | selected | approved | release-completed | published |
 
@@ -35,7 +35,7 @@
 ## PR #75、#76、#77 合并部署回写（2026-08-21）
 
 - PR #76：技术、实体与治理资料已合并；不新增公开内容身份。
-- PR #75：Route Reality 内部规格已合并；状态仍为 `internal-only / not-published`，公开实现、API、UI、索引与发布授权仍为 `false`。
+- PR #75：Route Reality 内部规格已合并；中央于 2026-08-21 否决公开产品。状态为 `internal-only / not-published / closed`，公开实现、API、UI、索引与发布授权均为 `false`。
 - PR #77：以下 15 个既有 owner 已上线更新，统一记为 `update-existing / updated-existing / published`；45/45 locale 页面线上 200、自 canonical，新增 canonical 身份与 sitemap URL 均为 0。
 
 | 形态 | PR #77 更新的既有 owner |
@@ -50,16 +50,16 @@
 | 1 | `docs/employee-1-transport-decision-network-live-sync-20260821@16bbb71f` | **MERGED / PR #76**；内部治理资料已合并 | 不是开工批准或文章 |
 | 2 | `codex/employee-2-ten-city-entity-lifecycle-repair-20260821@6707236d` | **MERGED / PR #76**；7 Hub / 21 URL 生命周期保持 | 不得把线上 Hub 写回 offline |
 | 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` | 十篇均 durable draft；`pending-review / not-published` | metadata 日期不是上线证据 |
-| 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` | **MERGED / PR #75 / internal only**；First 24 Hours 仍待中央内容审核 | 不得创建新 Hub URL、API、UI 或公开工具 |
+| 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` | **MERGED / PR #75 / archived**；Route Reality 产品已拒绝；First 24 Hours 仍待中央内容审核 | 不得创建新 Hub URL、API、UI 或公开工具 |
 | 5 | `article/worker-5-stay-network-integration-split-20260821@ea9e2453` | **MERGED AND DEPLOYED / PR #77**；15 个既有 owner 已更新 | 不是15篇新文章、实时供应商库存或报价保证 |
 | 6 | `article/worker-6-arrival-system-live-sync-20260821@73506f59` | **MERGED / PR #76**；First 24 Hours source-maintenance handoff 已入治理资料 | 不拥有第二 canonical、不授权发布 |
-| 8 | `codex/route-reality-v4-final-technical-review-20260821@e524af81` | **MERGED / PR #75 / internal only** | Route Reality 仍 `not-published`，不等于 public implementation / indexable authorization |
+| 8 | `codex/route-reality-v4-final-technical-review-20260821@e524af81` | **MERGED / PR #75 / archived** | 技术复核仅作历史证据；产品已拒绝，不再执行公开实现 |
 
 ### 合并后的边界
 
 1. PR #75、#76、#77 已完成 CI、合并和部署，不得再次作为待整合库存或重复提交。
 2. PR #77 只改变既有页面内容与 `dateModified`，不改变 184 个公开详情身份、544 个详情 URL 或 649 个 sitemap URL 的库存口径。
-3. Route Reality 即使已随 PR #75 入库，也仍没有公开产品授权；不得据此开发、建页、索引或发布。
+3. Route Reality 已被中央明确否决；PR #75 内容只作内部历史证据，不得继续开发、建页、索引或发布。
 4. 员工3十篇文化稿本批状态完全不变，继续逐题中央内容审核；First 24 Hours 继续等待中央 canonical/public-surface 决定。
 
 ## 员工3十篇：中央审核库存与锁题
@@ -77,7 +77,7 @@
 - `shenyang-imperial-palace-three-route-reading`：需与 `hg-topic-0737 / shenyang-manchu-imperial-heritage` 复核 site-specific 边界。
 - `guangzhou-chen-clan-academy-craft-reading`
 
-本轮不批准任何新写作，不创建新 Issue。First 24 Hours 的公开与索引授权仍为 `false`；Route Reality 的内部技术规格已经通过 v4 正式复核，但是否开发或公开仍待中央另行决定。
+本轮不批准任何新写作，不创建新 Issue。First 24 Hours 的公开与索引授权仍为 `false`；Route Reality 公开产品已拒绝，不再等待实现决定。
 
 ## Ticket 1 — 员工 1 / 交通
 
@@ -191,8 +191,8 @@
 - `taskMode` / `artifactShape`: `calculate-and-plan` / `route-reality-checker`
 - `primaryEntityId`: `country-china`
 - 分数：**90/100**（24/16/12/15/15/8）
-- 状态：`candidateStatus: selected` / `centralDecision: pending-review` / `executionStatus: internal-specification-merged` / `publicationStatus: not-published`
-- 规格门禁：Issue `null`；内部规格由 [PR #75](https://github.com/yangchunxuan/travel-china-with-xuan/pull/75) 合并；`specificationStatus: v4-technical-specification-merged-internal-only-central-product-approval-pending`；`publicImplementationAuthorized: false`；`indexablePageAuthorized: false`；没有 live URL。
+- 状态：`candidateStatus: selected` / `centralDecision: rejected` / `executionStatus: internal-specification-merged-public-product-closed` / `publicationStatus: not-published`
+- 规格门禁：Issue `null`；内部规格由 [PR #75](https://github.com/yangchunxuan/travel-china-with-xuan/pull/75) 合并并归档；中央于 2026-08-21 否决公开产品；`publicImplementationAuthorized: false`；`indexablePageAuthorized: false`；没有 live URL。
 
 用户任务：旅客输入夜数、抵离时间、跨城次数、换酒店次数和节奏偏好，看到真正可用于游览的天数与风险，而不是收到另一条自动生成路线。
 
@@ -203,7 +203,7 @@
 - 不输出城市×天数×人群的独立 URL，不生成可索引排列组合。
 - 本票先交工具逻辑/测试规格；未获中央产品批准前不得建公开工具。
 
-审查门禁：规格 owner 是员工 4。员工 8 已在 `e524af81` 完成 v4 正式技术复核并判定 `TECHNICAL SPEC REVIEW PASSED`；员工 8 仍无实现、建页、公开、索引或发布权限。只有 Mac 中央编辑的明确批准可以改变 `publicToolCreationAuthorized: false`。
+关闭结论：员工 8 已在 `e524af81` 完成历史技术复核，但中央随后否决公开产品。员工4与员工8不得继续实现、建页、公开、索引或发布；未来如要重启，必须形成新的明确中央决定与 Search Map 记录。
 
 员工 4 规格应定义、仅供审查的数据与规则（不构成公开实现授权）：
 
@@ -307,7 +307,7 @@ Ticket 1、2、3、5、6 已批准并发布。中央对 Ticket 4 仍只可做：
 4. 不创建未过 Phase 1 gate 的 collection/Hub/indexable URL；
 5. tool 票据先批准逻辑与维护责任，再批准公开实现。
 6. 本轮不增加第七篇；退回、延迟或拒绝的票据不触发自动递补。
-7. Route Reality Checker 的 v4 技术规格复核已经通过，但只关闭内部规格/测试门；不授权公开引擎、API、UI、可索引页或发布。
+7. Route Reality Checker 的内部规格与复核记录保留，但公开产品已被中央否决；不得继续引擎、API、UI、可索引页或发布工作。
 8. 只有批准后才创建 GitHub Issue 正式工单；当前没有正式 SEO Issue，不得补写或虚构历史 Issue URL。
 
 Ticket 4 不得因技术规格复核通过而自动获得公开实现、建页、索引或发布授权。其他五张历史文章票已 release-completed，不产生追加任务；2026-08-20 批次中的 PR #74 五个身份已经发布，First 24 Hours 仍为 `pending-review / not-published`，其余员工返修仍须中央分别整合。
