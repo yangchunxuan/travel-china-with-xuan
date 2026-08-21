@@ -1,0 +1,123 @@
+{
+  "id": "dali-where-to-stay-old-town-xiaguan-erhai-village",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "three-area-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "Dali",
+    "Erhai",
+    "rural last mile",
+    "railway arrival"
+  ],
+  "destinations": [
+    "dali",
+    "yunnan",
+    "erhai"
+  ],
+  "heroImagePath": "/images/guides/dali-where-to-stay-old-town-xiaguan-erhai-village/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dali-where-to-stay-old-town-xiaguan-erhai-village/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dali-where-to-stay-old-town-xiaguan-erhai-village/",
+      "title": "Where to Stay in Dali: Old Town, Xiaguan or an Erhai Village?",
+      "headline": "Choose Dali Old Town, Xiaguan or One Exact Erhai Village",
+      "description": "Choose a Dali base by repeated days, arrival risk and the exact lakeside village—not a generic Erhai pin or hotel list.",
+      "heroAlt": "A crescent landmark and Bai figure display in Erhai Park on the Xiaguan side of Dali.",
+      "heroCredit": {
+        "text": "Erhai Park in Dali's Xiaguan area, photographed by Ngguls on 23 February 2026; upper-centre cropped, resized and converted to WebP by Homeground. It is not an Erhai-village or hotel recommendation.",
+        "sourceLabel": "Original Erhai Park photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260223_Erhai_Park_in_Dali,_Yunnan.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Dali: Old Town, Xiaguan or Erhai",
+      "featuredLinkLabel": "Choose a Dali base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Dali",
+        "Erhai",
+        "Where to stay"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/dali-where-to-stay-old-town-xiaguan-erhai-village/",
+      "title": "大理住哪里：古城、下关还是洱海村落？",
+      "headline": "大理住宿基地，古城、下关与具体洱海村落怎么选",
+      "description": "按重复行程、抵达风险与具体临海村落选大理住宿，不靠泛泛“洱海边”定位或酒店榜单。",
+      "heroAlt": "大理下关洱海公园内月牙地标与白族人物造型。",
+      "heroCredit": {
+        "text": "大理下关洱海公园实景，Ngguls 摄于 2026 年 2 月 23 日；Homeground 取上方中央裁切、缩放并转为 WebP。照片不代表推荐洱海村落或酒店。",
+        "sourceLabel": "洱海公园原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260223_Erhai_Park_in_Dali,_Yunnan.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "大理古城、下关或洱海",
+      "featuredLinkLabel": "选择大理住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "大理",
+        "洱海",
+        "住宿区域"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/dali-where-to-stay-old-town-xiaguan-erhai-village/",
+      "title": "다리 숙소 위치: 고성·샤관·얼하이 마을 비교",
+      "headline": "다리 숙박 거점, 고성·샤관·정확한 얼하이 마을 중 어디가 맞을까요?",
+      "description": "반복 일정, 도착 위험과 정확한 호숫가 마을을 기준으로 다리 숙소를 고릅니다. 막연한 ‘얼하이 근처’ 핀이나 호텔 순위는 쓰지 않습니다.",
+      "heroAlt": "다리 샤관 얼하이공원의 초승달 랜드마크와 바이족 인물 조형물.",
+      "heroCredit": {
+        "text": "다리 샤관의 얼하이공원 실제 모습. Ngguls가 2026년 2월 23일 촬영했으며 Homeground가 상단 중앙을 자르고 WebP로 변환했습니다. 얼하이 마을이나 호텔 추천이 아닙니다.",
+        "sourceLabel": "얼하이공원 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260223_Erhai_Park_in_Dali,_Yunnan.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "다리 고성·샤관·얼하이",
+      "featuredLinkLabel": "다리 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "다리",
+        "얼하이",
+        "숙소 위치"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Dali",
+      "Dali Old Town or Xiaguan hotel",
+      "stay in Erhai village"
+    ],
+    "zh": [
+      "大理住哪里",
+      "大理古城下关洱海村落住宿",
+      "第一次大理住宿区域"
+    ],
+    "ko": [
+      "다리 숙소 위치",
+      "다리고성 샤관 얼하이 마을 숙소",
+      "다리 첫 여행 어디에 묵을까"
+    ]
+  }
+}
