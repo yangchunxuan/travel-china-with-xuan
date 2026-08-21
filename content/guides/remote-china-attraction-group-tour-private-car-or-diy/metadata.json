@@ -1,0 +1,23 @@
+{
+  "id": "remote-china-attraction-group-tour-private-car-or-diy",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["remote-attractions", "group-tour", "private-car", "independent-travel"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/remote-china-attraction-group-tour-private-car-or-diy/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/remote-china-attraction-group-tour-private-car-or-diy/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/remote-china-attraction-group-tour-private-car-or-diy/", "title": "Remote China Attraction: Group Tour, Private Car or DIY?", "headline": "Group, Private Car or DIY: Price the Failure Points Before the Ride", "description": "Choose access for a remote China attraction by last-mile complexity, time window, recovery options and party needs—not supplier rankings.", "heroAlt": "Layered Longji rice terraces and village buildings in Longsheng County, Guangxi", "navTitle": "Remote attraction access", "featuredLinkLabel": "Choose group, car or DIY", "openGraphLocale": "en_US", "cardTags": ["Remote attractions", "Last mile", "Decision guide"] },
+    "zh": { "path": "/zh/guides/remote-china-attraction-group-tour-private-car-or-diy/", "title": "中国偏远景点：跟团、包车还是自由行？", "headline": "跟团、包车或自由行：先计算失败点，再选择车辆", "description": "按最后一程复杂度、时间窗口、恢复选项与同行需求选择偏远景点进入方式，不排名供应商。", "heroAlt": "广西龙胜县层叠的龙脊梯田与村落建筑", "navTitle": "偏远景点进入选择", "featuredLinkLabel": "选择跟团包车或自由行", "openGraphLocale": "zh_CN", "cardTags": ["偏远景点", "最后一程", "决策指南"] },
+    "ko": { "path": "/ko/guides/remote-china-attraction-group-tour-private-car-or-diy/", "title": "중국 외곽 명소: 단체투어·전용차·자유여행?", "headline": "단체, 전용차, DIY: 차보다 실패 지점을 먼저 계산하기", "description": "업체 순위가 아니라 마지막 구간 복잡도, 시간창, 회복 수단, 일행 요구로 외곽 명소 접근법을 고릅니다.", "heroAlt": "광시 룽성현의 층층이 이어진 룽지 계단식 논과 마을 건물", "navTitle": "외곽 명소 접근 선택", "featuredLinkLabel": "단체·전용차·DIY 고르기", "openGraphLocale": "ko_KR", "cardTags": ["외곽 명소", "마지막 구간", "결정 가이드"] }
+  }
+}
