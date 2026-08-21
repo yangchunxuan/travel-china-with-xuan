@@ -1,9 +1,22 @@
 # QA — Chongqing Destination Hub draft
 
-Final editorial state: **CITY HUB DRAFT READY — CENTRAL REVIEW REQUIRED**
-Checked: **2026-08-15**
-Required baseline: `cc6be75e59155935f321df0334588b52769eb6e4`
-Draft scope: `docs/organic-growth/city-hub-drafts/chongqing/` only
+Final editorial state: **CITY HUB RELEASE CANDIDATE — CENTRAL MERGE REQUIRED**
+Checked: **2026-08-21**
+Required baseline: `274d243afc9fcc2ac9abd51487d06c667019cc0a`
+Release scope: one trilingual Chongqing Destination Hub, assets, reciprocal
+links, tests and release documentation
+
+## Release reconciliation — 2026-08-21
+
+The August 15 draft metrics below remain an editorial-depth record. Release
+implementation adds three aligned structured bodies, one registry identity,
+seven verified real-photo derivatives, the fifth railway-station owner, 15
+live owner links and reciprocal Hub links. Dynamic official facts were
+rechecked; proposed-future infrastructure is not presented as operating.
+
+The branch must still pass typecheck, full tests, production build, sitemap and
+browser/mobile verification before commit. A passing branch is not a claim of
+merge, deployment or live publication.
 
 ## 1. Package manifest
 

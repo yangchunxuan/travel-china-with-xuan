@@ -132,7 +132,7 @@ const body = {
       id: "links",
       type: "internal-links",
       title: "Continue reading live performance in context",
-      items: [
+      items: [{ label: "Start with the Chongqing city guide", href: "/destinations/chongqing/", description: "Choose nights, accommodation base, gateway and whether Wulong or Dazu belongs before using this specialist guide." },
         { label: "Choose a first Inner Mongolian long-song performance", href: "/guides/inner-mongolia-long-song-first-performance/", description: "Use the same discipline of identifying format, performers and listening task." },
         { label: "Read a first Foshan lion-dance performance", href: "/guides/foshan-lion-dance-first-performance-workflow/", description: "Prepare for a live form without treating a viral technique as the whole tradition." },
         { label: "Order Beijing, Xi'an and Chengdu", href: "/guides/beijing-xian-chengdu-route-order/", description: "Decide where a Chengdu performance fits in the larger trip." },

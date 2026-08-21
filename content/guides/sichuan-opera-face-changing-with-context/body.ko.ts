@@ -132,7 +132,7 @@ const body = {
       id: "links",
       type: "internal-links",
       title: "실연을 맥락 속에서 더 읽어 보세요",
-      items: [
+      items: [{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우룽·다쭈 포함 여부를 정하세요." },
         { label: "첫 내몽골 장조 공연 고르기", href: "/ko/guides/inner-mongolia-long-song-first-performance/", description: "형식, 공연자와 듣기 과제를 식별하는 같은 원칙을 적용하세요." },
         { label: "첫 포산 사자춤 공연 읽기", href: "/ko/guides/foshan-lion-dance-first-performance-workflow/", description: "바이럴 기예 하나가 전통 전체를 대신하지 않도록 준비하세요." },
         { label: "베이징·시안·청두 순서 정하기", href: "/ko/guides/beijing-xian-chengdu-route-order/", description: "청두의 공연 저녁을 전체 여정 어디에 둘지 판단하세요." },

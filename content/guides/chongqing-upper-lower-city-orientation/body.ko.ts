@@ -44,7 +44,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   ]},
   {id: "dynamic-boundary", type: "callout", title: "확인일: 2026년 8월 13일", body: "여기에 든 물리적 사례는 충칭의 도시 형태를 설명할 뿐, 모든 엘리베이터·에스컬레이터·출구·통로가 열려 있다는 약속이 아닙니다. 2026년 리지바 공사처럼 공사와 폐쇄 상태는 바뀝니다. 당일 충칭 철도교통과 해당 시설의 최신 공지를 확인하세요.", tone: "neutral"},
   {id: "help", type: "callout", title: "충칭의 한 경로를 입체적으로 확인해야 하나요?", body: "날짜, 호텔과 목적지의 정확한 입구, 인원, 짐, 걸을 수 있는 범위와 도착 예정 시각을 Homeground에 보내 주세요. 어느 높이, 출구와 수직 연결 시설을 확인해야 하는지 표시해 드릴 수 있습니다. 다만 엘리베이터, 에스컬레이터나 통로가 계속 열려 있을 것이라고 약속할 수는 없습니다.", tone: "decision"},
-  {id: "internal-links", type: "internal-links", title: "알맞은 숙소와 속도로 충칭 계획하기", items: [
+  {id: "internal-links", type: "internal-links", title: "알맞은 숙소와 속도로 충칭 계획하기", items: [{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우룽·다쭈 포함 여부를 정하세요." },
     {label: "충칭에서 머물 지역 고르기", href: "/ko/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", description: "실제 일정과 역 접근성을 기준으로 거점을 고릅니다."},
     {label: "중국 지도 좌표와 실제 입구 확인", href: "/ko/guides/china-map-coordinate-offset-explained/", description: "중국어 주소와 이용 가능한 입구로 목적지를 다시 확인합니다."},
     {label: "중국 휠체어 접근 가능 경로 계획", href: "/ko/guides/wheelchair-accessible-china-route-planning/", description: "접근 가능 표시 하나가 전체 경로를 보장한다고 가정하지 말고 구간별로 확인합니다."}
