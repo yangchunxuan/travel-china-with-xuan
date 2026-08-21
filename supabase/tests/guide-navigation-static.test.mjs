@@ -37,14 +37,24 @@ test("global navigation separates editorial guides from paid planning", async ()
   }
 
   assert.match(header, /\| "guides"/);
+  assert.match(header, /\| "search"/);
   assert.match(
     header,
-    /const guidesAreCurrent = pageContext === "guides" \|\| pageContext === "guide"/,
+    /const guidesLandingAreCurrent =\s*pageContext === "guides" \|\| pageContext === "guide"/,
+  );
+  assert.match(
+    header,
+    /const guidesAreCurrent =\s*guidesLandingAreCurrent \|\|\s*pageContext === "search"/,
   );
   assert.equal(
-    header.match(/guidesAreCurrent \? "page" : undefined/g)?.length,
+    header.match(/guidesLandingAreCurrent \? "page" : undefined/g)?.length,
     2,
   );
+  assert.equal(
+    header.match(/pageContext === "search" \? "page" : undefined/g)?.length,
+    2,
+  );
+  assert.match(header, /getGuideSearchCopy\(locale\)/);
   assert.equal(
     header.match(/pageContext === "guides"[\s\S]{0,90}`\$\{target\.path\}guides\/`/g)
       ?.length,

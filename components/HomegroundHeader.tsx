@@ -15,6 +15,7 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
+import { getGuideSearchCopy } from "../lib/guideSearchI18n";
 import {
   getGuideEntry,
   type GuideId,
@@ -33,6 +34,7 @@ export type HomegroundPageContext =
   | "home"
   | "guide"
   | "guides"
+  | "search"
   | "studio"
   | "services"
   | "content";
@@ -174,7 +176,12 @@ export function HomegroundHeader({
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesHref = planningServicesCopy.path;
   const guideHubHref = `${copy.path}guides/`;
-  const guidesAreCurrent = pageContext === "guides" || pageContext === "guide";
+  const guideSearchCopy = getGuideSearchCopy(locale);
+  const guidesLandingAreCurrent =
+    pageContext === "guides" || pageContext === "guide";
+  const guidesAreCurrent =
+    guidesLandingAreCurrent ||
+    pageContext === "search";
   const sectionLabels = navigationSections[locale];
   const studioHref = `${copy.path}studio/`;
   const languageHash =
@@ -340,12 +347,20 @@ export function HomegroundHeader({
             <>
               <a
                 aria-current={
-                  guidesAreCurrent ? "page" : undefined
+                  guidesLandingAreCurrent ? "page" : undefined
                 }
                 href={guideHubHref}
               >
                 {sectionLabels.guides}
               </a>
+              {guidesAreCurrent ? (
+                <a
+                  aria-current={pageContext === "search" ? "page" : undefined}
+                  href={guideSearchCopy.path}
+                >
+                  {guideSearchCopy.navLabel}
+                </a>
+              ) : null}
               <a
                 aria-current={
                   pageContext === "services" ? "page" : undefined
@@ -459,13 +474,22 @@ export function HomegroundHeader({
           <>
             <a
               aria-current={
-                guidesAreCurrent ? "page" : undefined
+                guidesLandingAreCurrent ? "page" : undefined
               }
               href={guideHubHref}
               onClick={close}
             >
               {sectionLabels.guides}
             </a>
+            {guidesAreCurrent ? (
+              <a
+                aria-current={pageContext === "search" ? "page" : undefined}
+                href={guideSearchCopy.path}
+                onClick={close}
+              >
+                {guideSearchCopy.navLabel}
+              </a>
+            ) : null}
             <a
               aria-current={
                 pageContext === "services" ? "page" : undefined

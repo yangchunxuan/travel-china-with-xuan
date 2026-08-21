@@ -13,6 +13,8 @@ import {
   getGuidesHubCopy,
   getGuidesHubPlannerHref,
 } from "../app/(default)/guides/guidesHubI18n";
+import { getGuideSearchCopy } from "../lib/guideSearchI18n";
+import { getGuideSearchDocuments } from "../lib/guideSearchRuntime";
 import {
   getSearchPlatformCopy,
   getSearchSectionPath,
@@ -20,6 +22,7 @@ import {
 } from "../lib/searchPlatformI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideSearchForm } from "./GuideSearchForm";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./GuidesHubPage.module.css";
 
@@ -189,8 +192,10 @@ export function GuidesHubPage({
 }) {
   const home = getHomegroundCopy(locale);
   const copy = getGuidesHubCopy(locale);
+  const guideSearchCopy = getGuideSearchCopy(locale);
   const searchCopy = getSearchPlatformCopy(locale);
   const guides = getAllGuides(locale);
+  const guideSearchDocuments = getGuideSearchDocuments(locale);
   const entryGuides = getGuidesByPillar("entry-rules", locale);
   const planningGuides = guides.filter(
     (guide) => guide.pillar !== "entry-rules",
@@ -254,7 +259,26 @@ export function GuidesHubPage({
           </div>
         </header>
 
+        <section
+          className={styles.searchBand}
+          aria-labelledby="guide-search-title"
+        >
+          <div className={styles.searchBandInner}>
+            <div className={styles.searchBandCopy}>
+              <p className={styles.eyebrow}>{guideSearchCopy.eyebrow}</p>
+              <h2 id="guide-search-title">{guideSearchCopy.title}</h2>
+              <p>{guideSearchCopy.introduction}</p>
+            </div>
+            <GuideSearchForm
+              documents={guideSearchDocuments}
+              locale={locale}
+              surface="guides_hub"
+            />
+          </div>
+        </section>
+
         <nav
+          id="browse-topics"
           className={styles.collectionNav}
           aria-label={searchCopy.browseLabel}
         >

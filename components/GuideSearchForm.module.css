@@ -1,0 +1,271 @@
+.searchExperience {
+  min-width: 0;
+}
+
+.queryArea {
+  position: relative;
+}
+
+.form {
+  margin: 0;
+}
+
+.form > label {
+  color: var(--guides-ink, var(--hg-color-ink));
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+  margin-block-end: 0.75rem;
+}
+
+.control {
+  align-items: center;
+  background: var(--guides-card, var(--hg-color-card));
+  border: 1px solid var(--guides-line, var(--hg-color-line));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 4rem;
+  padding-inline-start: 1rem;
+}
+
+.control > svg {
+  color: var(--guides-rust, var(--hg-color-rust));
+}
+
+.control input {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--guides-ink, var(--hg-color-ink));
+  font: inherit;
+  font-size: 1rem;
+  height: 100%;
+  min-height: 3.9rem;
+  min-width: 0;
+  outline: 0;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+.control input::placeholder {
+  color: var(--guides-muted, var(--hg-color-muted));
+  opacity: 1;
+}
+
+.control:focus-within {
+  border-color: var(--guides-ink, var(--hg-color-ink));
+  box-shadow: 0 0 0 3px var(--guides-rust, var(--hg-color-rust));
+}
+
+.control button {
+  align-items: center;
+  align-self: stretch;
+  background: var(--guides-ink, var(--hg-color-ink));
+  border: 0;
+  color: var(--hg-color-on-dark);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 780;
+  gap: 0.9rem;
+  justify-content: center;
+  min-height: 3.9rem;
+  min-width: 9.2rem;
+  padding: 0.75rem 1rem;
+}
+
+.control button:hover,
+.control button:focus-visible {
+  background: var(--guides-rust, var(--hg-color-rust));
+}
+
+.suggestions {
+  background: var(--guides-card, var(--hg-color-card));
+  border: 1px solid var(--guides-ink, var(--hg-color-ink));
+  box-shadow: 0 1.2rem 2.6rem rgb(25 23 20 / 14%);
+  inset-inline: 0;
+  max-block-size: min(72vh, 38rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  position: absolute;
+  top: calc(100% - 0.2rem);
+  z-index: 20;
+}
+
+.suggestionNotice {
+  background: var(--guides-card, var(--hg-color-card));
+  border: 1px solid var(--guides-ink, var(--hg-color-ink));
+  box-shadow: 0 1.2rem 2.6rem rgb(25 23 20 / 14%);
+  color: var(--guides-muted, var(--hg-color-muted));
+  font-size: 0.78rem;
+  inset-inline: 0;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  top: calc(100% - 0.2rem);
+  z-index: 20;
+}
+
+.validationError {
+  color: #8f2f20;
+  font-size: 0.78rem;
+  font-weight: 680;
+  line-height: 1.45;
+  margin: 0.55rem 0 0;
+}
+
+.suggestions > p {
+  border-block-end: 1px solid var(--guides-line, var(--hg-color-line));
+  color: var(--guides-muted, var(--hg-color-muted));
+  font-size: 0.7rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  text-transform: uppercase;
+}
+
+.suggestions ul,
+.examples ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions li + li {
+  border-block-start: 1px solid var(--guides-line, var(--hg-color-line));
+}
+
+.suggestions li > a {
+  align-items: center;
+  color: var(--guides-ink, var(--hg-color-ink));
+  display: grid;
+  gap: 0.25rem 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 4rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+}
+
+.suggestions li > a span {
+  font-size: 0.9rem;
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+.suggestions li > a small {
+  color: var(--guides-muted, var(--hg-color-muted));
+  font-size: 0.72rem;
+  grid-column: 1;
+}
+
+.suggestions li > a svg {
+  color: var(--guides-rust, var(--hg-color-rust));
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.suggestions li > a:hover,
+.suggestions li > a:focus-visible {
+  background: var(--guides-soft, var(--hg-color-soft));
+}
+
+.allResults {
+  align-items: center;
+  background: var(--guides-soft, var(--hg-color-soft));
+  border-block-start: 1px solid var(--guides-line, var(--hg-color-line));
+  color: var(--guides-ink, var(--hg-color-ink));
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 760;
+  gap: 0.65rem;
+  justify-content: space-between;
+  min-height: 3.2rem;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.examples {
+  align-items: start;
+  display: grid;
+  gap: 0.8rem 1.25rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin-block-start: 1rem;
+}
+
+.examples > span {
+  color: var(--guides-muted, var(--hg-color-muted));
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.5;
+  padding-block: 0.35rem;
+}
+
+.examples ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.examples a {
+  border: 1px solid var(--guides-line, var(--hg-color-line));
+  color: var(--guides-ink, var(--hg-color-ink));
+  display: inline-flex;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.7rem;
+  text-decoration: none;
+}
+
+.examples a:hover,
+.examples a:focus-visible {
+  border-color: var(--guides-rust, var(--hg-color-rust));
+  color: var(--guides-rust, var(--hg-color-rust));
+}
+
+.compact .form > label {
+  margin-block-end: 0.55rem;
+}
+
+@media (max-width: 40rem) {
+  .control {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding-inline-start: 0.85rem;
+  }
+
+  .control input {
+    padding-inline: 0.75rem;
+  }
+
+  .control button {
+    grid-column: 1 / -1;
+    margin-inline-start: -0.85rem;
+    min-width: 0;
+    width: calc(100% + 0.85rem);
+  }
+
+  .examples {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control,
+  .control button,
+  .suggestions li > a,
+  .examples a {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .control,
+  .suggestions,
+  .examples a {
+    border-width: 2px;
+  }
+}

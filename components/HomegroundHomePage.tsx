@@ -51,6 +51,7 @@ import {
   type RouteJourney,
 } from "./RouteFinder";
 import { PlanningScopeSection } from "./PlanningScopeSection";
+import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import styles from "./HomegroundHomePage.module.css";
 
 /**
@@ -571,10 +572,7 @@ export function HomegroundHomePage({
           className={styles.travelGuidesSection}
           aria-labelledby="travel-guides-title"
         >
-          <nav
-            className={styles.travelGuides}
-            aria-labelledby="travel-guides-title"
-          >
+          <div className={styles.travelGuides}>
             <div className={styles.travelGuidesHeader}>
               <div className={styles.travelGuidesIntro}>
                 <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
@@ -585,6 +583,7 @@ export function HomegroundHomePage({
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
             </div>
+            <HomepageGuideSearch locale={locale} />
             <div className={styles.travelGuideGrid}>
               {featuredGuides.map((guide, index) => {
                 const typeLabel =
@@ -633,7 +632,7 @@ export function HomegroundHomePage({
                 );
               })}
             </div>
-          </nav>
+          </div>
         </section>
 
         {planningSection === "scope-v2" ? (

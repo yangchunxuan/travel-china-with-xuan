@@ -58,6 +58,10 @@ export const WEB_EVENTS_URL = trustedWebEventsUrl(configuredWebEventsUrl);
 export type HomegroundEventName =
   | "page_view"
   | "guide_cta_clicked"
+  | "guide_search_opened"
+  | "guide_search_submitted"
+  | "guide_search_result_clicked"
+  | "guide_search_no_results"
   | "planning_intent_selected"
   | "planner_started"
   | "planner_step_completed"
@@ -106,6 +110,10 @@ const allowedParameterKeys = new Set([
   "page_language",
   "page_type",
   "guide_id",
+  "search_surface",
+  "query_length",
+  "result_position",
+  "result_count",
   "cta_position",
   "planning_intent",
   "planning_starter_intent",
@@ -212,6 +220,31 @@ function sanitizeEventParameters(parameters: EventParameters) {
   });
 
   return sanitized;
+}
+
+const guideSearchPathPattern = /^\/(?:zh\/|ko\/)?guides\/search\/?$/u;
+
+function hasSensitiveGuideSearchQuery() {
+  if (typeof window === "undefined") return false;
+  return (
+    guideSearchPathPattern.test(window.location.pathname) &&
+    new URLSearchParams(window.location.search).has("q")
+  );
+}
+
+function googleEventParameters(
+  parameters: Record<string, string | number | boolean>,
+) {
+  if (!hasSensitiveGuideSearchQuery()) return parameters;
+
+  const safeLocation = `${window.location.origin}${window.location.pathname}`;
+  return {
+    ...parameters,
+    // GA otherwise derives both values from the browser address bar. Search
+    // questions are intentionally excluded even after measurement consent.
+    page_location: safeLocation,
+    page_referrer: safeLocation,
+  };
 }
 
 function sanitizeAttributionValue(
@@ -843,11 +876,16 @@ export function trackEvent(
     captureEntryAttribution();
     if (GA_MEASUREMENT_ID) {
       const gtag = ensureGtagQueue();
-      gtag("event", name, sanitized);
+      gtag("event", name, googleEventParameters(sanitized));
     }
     void dispatchFirstPartyEvent(name, sanitized);
   }
-  if (marketingAllowed) dispatchMetaEvent(name, sanitized);
+  // Meta derives the event URL from window.location and offers no reliable
+  // per-event URL override. Keep all Pixel events off query-bearing search
+  // pages so a traveller's free-text question never reaches Meta.
+  if (marketingAllowed && !hasSensitiveGuideSearchQuery()) {
+    dispatchMetaEvent(name, sanitized);
+  }
 }
 
 export function trackPageView({
