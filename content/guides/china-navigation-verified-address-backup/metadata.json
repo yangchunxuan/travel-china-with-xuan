@@ -1,0 +1,119 @@
+{
+  "id": "china-navigation-verified-address-backup",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "navigation-verification-workflow",
+  "topics": [
+    "navigation",
+    "verified-address",
+    "offline-backup",
+    "map-handoff"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-navigation-verified-address-backup/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-navigation-verified-address-backup/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-navigation-verified-address-backup/",
+      "title": "Amap, Apple Maps or Baidu Maps in China? Build a Verified Address and Navigation Backup",
+      "headline": "Amap, Apple Maps or Baidu Maps in China? Build a Verified Address and Navigation Backup",
+      "description": "Use any map as a working layer, but verify the Chinese name, branch, street address and usable entrance, then save a text-first navigation backup.",
+      "heroAlt": "Wangfujing Street in Beijing with a real Chinese street sign and storefront identifiers.",
+      "heroCredit": {
+        "text": "Wangfujing Street, Beijing, Claoisumna, 12 October 2010; cropped and resized by Homeground. The image identifies the street only, not a current route or app result.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BJ_%E5%8C%97%E4%BA%AC_Beijing_%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%A4%A7%E8%A1%97_Wangfujing_Street_China_Mobile_%E6%9D%B1%E5%9F%8E%E5%8D%80_Aug-2010.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "Verify a China address",
+      "featuredLinkLabel": "Build a navigation backup",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Navigation",
+        "Address check"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-navigation-verified-address-backup/",
+      "title": "在中国用高德、Apple 地图还是百度地图？建立已核实地址与导航备份",
+      "headline": "高德、Apple 地图还是百度地图？先核实地址，再做导航备份",
+      "description": "地图只作为工作层；先核对中文名、分店、街道地址和可用入口，再保存以文字为核心的导航备份。",
+      "heroAlt": "北京王府井大街的真实街景，可见中文路牌和店面标识。",
+      "heroCredit": {
+        "text": "北京王府井大街，Claoisumna 摄于 2010 年 10 月 12 日；Homeground 裁切并缩放。照片只确认街道，不证明当前路线或地图结果。",
+        "sourceLabel": "Commons 原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BJ_%E5%8C%97%E4%BA%AC_Beijing_%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%A4%A7%E8%A1%97_Wangfujing_Street_China_Mobile_%E6%9D%B1%E5%9F%8E%E5%8D%80_Aug-2010.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "核实中国地址",
+      "featuredLinkLabel": "建立导航备份",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "导航",
+        "地址核实"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-navigation-verified-address-backup/",
+      "title": "중국에서 Amap·Apple 지도·바이두 지도 중 무엇을 쓸까? 검증 주소와 내비게이션 백업",
+      "headline": "중국 지도는 앱보다 주소 확인이 먼저입니다",
+      "description": "어떤 지도든 작업 도구로 쓰되 중국어 명칭, 지점, 도로 주소, 실제 출입구를 확인하고 텍스트 중심의 백업을 저장하세요.",
+      "heroAlt": "중국어 도로 표지와 점포 표식이 보이는 베이징 왕푸징 거리의 실제 모습.",
+      "heroCredit": {
+        "text": "베이징 왕푸징 거리, Claoisumna 촬영(2010년 10월 12일), Homeground 자르기·크기 조정. 사진은 거리만 식별하며 현재 경로나 앱 결과를 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BJ_%E5%8C%97%E4%BA%AC_Beijing_%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%A4%A7%E8%A1%97_Wangfujing_Street_China_Mobile_%E6%9D%B1%E5%9F%8E%E5%8D%80_Aug-2010.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "중국 주소 확인",
+      "featuredLinkLabel": "내비게이션 백업 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "내비게이션",
+        "주소 확인"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Amap Apple Maps or Baidu Maps China",
+      "China address navigation backup",
+      "verify Chinese hotel address"
+    ],
+    "zh": [
+      "中国地图导航地址核实",
+      "高德 Apple 地图百度地图怎么选",
+      "中文地址导航备份"
+    ],
+    "ko": [
+      "중국 지도 앱 주소 확인",
+      "중국 내비게이션 백업",
+      "고덕지도 애플지도 바이두지도"
+    ]
+  }
+}
