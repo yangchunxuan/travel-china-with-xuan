@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station for offline use; never replace it with a map shorthand.",
-        "Write the first door as the Shanghai hotel, PVG/SHA flight or suburban address and the last door as the correct station entrance and the next airport, hotel or city.",
-        "Mark the hard cutoff—rail security plus an airport or separate-ticket cutoff—and the latest safe abandonment point.",
-        "Count Hongqiao's integrated hub, central-city transfers and Songjiang distance segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through 12306, Shanghai Railway and current Shanghai transport notices, plus change the ticket before a cross-city run or protect an airport/station-side night if it fails."
+        "Download the order that spells out 上海, 上海虹桥, 上海南 or 上海松江 and keep the train number beside it; do not send a city-only pin.",
+        "Separate the hotel-to-station movement from any station-to-PVG, SHA or next-city connection so Hongqiao's integrated hub does not conceal a second transfer.",
+        "Calculate the latest safe station entry, then apply the earlier cutoff if a flight or independently ticketed train follows.",
+        "Measure Songjiang distance, central traffic and the internal Hongqiao walk with the group's cases rather than using the scheduled rail minutes.",
+        "Use the live 12306 order and Shanghai access notices; when the cross-city margin collapses, rebook or move the night toward the correct gateway."
       ]
     },
     {
@@ -131,16 +131,16 @@ const body = {
         {
           "heading": "Leave from the Shanghai hotel, PVG/SHA flight or suburban address",
           "items": [
-            "Confirm checkout or arrival before navigating away from the Shanghai hotel, PVG/SHA flight or suburban address.",
-            "Move Hongqiao's integrated hub, central-city transfers and Songjiang distance through a legal, signed access path.",
-            "Reach the printed node early enough to protect rail security plus an airport or separate-ticket cutoff."
+            "Start with the lobby, airport baggage hall or suburban address that will release the traveller, then match it to a station-side entrance.",
+            "At Hongqiao, separate the rail building from SHA terminals; for Songjiang, include the long city approach before entering the station.",
+            "Protect the earliest of rail entry, airline bag drop and the next independently ticketed departure."
           ]
         },
         {
           "heading": "Read the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station literally",
           "items": [
-            "Save the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station with the live order status.",
-            "Ask 12306, Shanghai Railway and current Shanghai transport notices about a live exception, not a remembered pattern.",
+            "Keep the train number beside 上海, 上海虹桥, 上海南 or 上海松江 so a changed order cannot be mistaken for an old screenshot.",
+            "Check the dated service in 12306 and use Shanghai transport notices only for the station access that applies that day.",
             "Keep 上海, 上海虹桥, 上海南 or 上海松江 in the working record; a generic Shanghai pin cannot stand in for the ticket."
           ]
         },
@@ -148,8 +148,8 @@ const body = {
           "heading": "Finish at the correct station entrance and the next airport, hotel or city",
           "items": [
             "Use the signed concourse for the booked Shanghai station, then follow the current metro or licensed-pickup plan for that location.",
-            "Confirm that the correct station entrance and the next airport, hotel or city is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use change the ticket before a cross-city run or protect an airport/station-side night instead of improvising."
+            "From the actual exit, recompute PVG, SHA, the hotel or the next city booking; Hongqiao co-location helps only when the correct terminal is involved.",
+            "If an airport deadline is already lost, change the affected ticket or move to that gateway instead of betting on Shanghai traffic."
           ]
         }
       ]
@@ -172,18 +172,18 @@ const body = {
       "rows": [
         [
           "Hongqiao's integrated hub, central-city transfers and Songjiang distance",
-          "Count every queue, lift, vehicle change and final walk between the Shanghai hotel, PVG/SHA flight or suburban address and the correct station entrance and the next airport, hotel or city; prefer fewer uncertain handoffs.",
-          "A transport icon proves the correct station entrance and the next airport, hotel or city is step-free."
+          "Choose the live train whose lobby-to-platform path needs the fewest long walks and transfers. Hongqiao's scale and Songjiang's distance matter more with several cases.",
+          "A single airport-and-rail icon does not guarantee a short walk, a luggage trolley route or the right SHA terminal."
         ],
         [
           "Arrival threatens rail security plus an airport or separate-ticket cutoff",
-          "Notify the destination, consult 12306, Shanghai Railway and current Shanghai transport notices, and switch to change the ticket before a cross-city run or protect an airport/station-side night when the final handoff cannot be verified.",
-          "A daytime connection to the correct station entrance and the next airport, hotel or city remains available after a delay."
+          "Tell the airline or hotel the new arrival first, then have railway staff check whether a later train preserves the connection better than a cross-city vehicle.",
+          "A transfer that works before the evening peak may fail after a delay, and a separate flight receives no railway protection."
         ],
         [
           "A separate booking after the correct station entrance and the next airport, hotel or city",
-          "Add the exact exit, local handoff and processing time before rail security plus an airport or separate-ticket cutoff; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station."
+          "For a flight after rail, include the platform-to-concourse walk, terminal change, airline check-in and security; for another train, repeat station entry at the second node.",
+          "A combined calendar entry is not through-ticketing between China Railway and an airline or separate rail operator."
         ]
       ]
     },
@@ -198,12 +198,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station; compare it character by character with the sign in front of you.",
-        "Ask 12306, Shanghai Railway and current Shanghai transport notices whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station; promise no outcome.",
-        "If a transfer is still defensible, navigate to the correct station entrance and the next airport, hotel or city and compare verified arrival with rail security plus an airport or separate-ticket cutoff.",
-        "Tell the destination exactly what happened to the Shanghai hotel, PVG/SHA flight or suburban address, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use change the ticket before a cross-city run or protect an airport/station-side night with staffed help."
+        "Stop at the staffed area and read the order's full 上海 station label and train number, not the English navigation result.",
+        "Have railway staff distinguish a wrong Hongqiao entrance from Shanghai Station, South or Songjiang before anybody enters a taxi.",
+        "Ask what the active ticket currently permits; only then compare that option with the time and cost of crossing Shanghai.",
+        "If staff judge the correct station reachable, use its precise entrance and reserve ordinary security time plus any airline cutoff.",
+        "Notify the affected hotel, airline or next railway booking with the station where the group is physically waiting.",
+        "If no safe move remains, keep the party together and place the night near the gateway used by the replacement booking."
       ]
     },
     {
@@ -235,13 +235,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station for the traveller's real date.",
-        "Save the exact Chinese names needed between the Shanghai hotel, PVG/SHA flight or suburban address and the correct station entrance and the next airport, hotel or city.",
-        "Record the contact and operating window for the correct station entrance and the next airport, hotel or city.",
-        "Confirm current legal access through 12306, Shanghai Railway and current Shanghai transport notices.",
-        "Recount Hongqiao's integrated hub, central-city transfers and Songjiang distance for this group, not an average traveller.",
-        "Write the abandonment point before rail security plus an airport or separate-ticket cutoff.",
-        "Reopen the official sources in release week; if the chain fails, replace it with change the ticket before a cross-city run or protect an airport/station-side night."
+        "Repeat the 12306 search on the actual date and retain the selected train number.",
+        "Match the four possible Chinese station names with the hotel and any PVG or SHA booking.",
+        "Save the station entrance and airport terminal as different navigation targets.",
+        "Check current Songjiang access and construction or entrance notices for the chosen node.",
+        "Walk through the plan with every suitcase and the real time of day.",
+        "Set the point at which a railway change is safer than attempting Shanghai traffic.",
+        "In publication week, verify both the train and onward gateway; move the ticket or night if either connection has broken."
       ]
     },
     {
@@ -259,7 +259,7 @@ const body = {
     {
       "id": "faq-1-answer",
       "type": "paragraph",
-      "text": "No. 上海站 and 上海虹桥站 are separate stations in different parts of the city."
+      "text": "No. 上海站 is the central railway station, whereas 上海虹桥站 sits inside the Hongqiao transport hub beside—but not inside—the airport terminals."
     },
     {
       "id": "faq-2-question",

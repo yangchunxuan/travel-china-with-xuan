@@ -1,7 +1,7 @@
 {
   "id": "changsha-zhangjiajie-transport-route",
   "type": "planning",
-  "pillar": "transport-airports-rail-hubs",
+  "pillar": "transport-city-pair-routes",
   "audienceMarkets": [
     "global"
   ],

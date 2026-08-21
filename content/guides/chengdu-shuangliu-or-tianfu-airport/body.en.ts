@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the active CTU/TFU code, terminal, flight and airline deadline for offline use; never replace it with a map shorthand.",
-        "Write the first door as the exact Chengdu hotel, railway station or rural return point and the last door as the correct airport terminal or first Chengdu accommodation branch.",
-        "Mark the hard cutoff—airline check-in/boarding and any separate rail booking—and the latest safe abandonment point.",
-        "Count terminal walking, cross-airport distance and every bag segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through the airline, CTU/TFU airport service and current Chengdu transport, plus airline rebooking or a staffed airport-side overnight if it fails."
+        "Store the itinerary screen with CTU or TFU, terminal, flight number and airline cutoffs; send that exact record to the pickup driver.",
+        "List the hotel, railway station or returning day-trip point before the flight, then the baggage hall and first Chengdu bed after it.",
+        "Set a decision time based on check-in, security and boarding closure, and treat any separately booked train as an additional deadline.",
+        "Price and time the journey with terminal walking, the different city-side rail links and the number of cases actually carried.",
+        "If the airline confirms the traveller is at the wrong airport, seek its rebooking instructions first; otherwise choose an attended CTU- or TFU-side night."
       ]
     },
     {

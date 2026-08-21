@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the active PEK/PKX code, terminal, flight and airline deadline for offline use; never replace it with a map shorthand.",
-        "Write the first door as the exact Beijing hotel or one of eight major railway stations and the last door as the correct Capital/Daxing terminal or first Beijing hotel branch.",
-        "Mark the hard cutoff—airline check-in/boarding and any Beijing rail departure—and the latest safe abandonment point.",
-        "Count opposite sides of Beijing, terminal walking and cross-airport luggage segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through the airline, PEK/PKX service desks and current Beijing transport, plus airline rebooking or a staffed correct-airport overnight if it fails."
+        "Keep the itinerary page that shows PEK or PKX, the operating terminal and flight number; read it aloud in Chinese to any vehicle dispatcher.",
+        "Anchor the city side to the exact hotel or one of Beijing's eight named railway stations, not to a generic central-Beijing point.",
+        "Work back from the airline's check-in and boarding closure while protecting a separately booked rail departure only if its margin survives.",
+        "Calculate the north-east or south-Beijing road/rail trip, terminal circulation and baggage movement as independent time costs.",
+        "When airport staff verify a code error, follow the airline's remedy; when no safe correction remains, sleep at the airport on the active booking rather than between PEK and PKX."
       ]
     },
     {
@@ -120,21 +120,21 @@ const body = {
     {
       "id": "door-to-door-chain",
       "type": "comparison",
-      "title": "the active PEK/PKX code, terminal, flight and airline deadline is only the middle of the journey",
+      "title": "A Beijing airport code must connect the airline deadline to the real city door",
       "columns": [
         {
           "heading": "Leave from the exact Beijing hotel or one of eight major railway stations",
           "items": [
-            "Confirm checkout or arrival before navigating away from the exact Beijing hotel or one of eight major railway stations.",
-            "Move opposite sides of Beijing, terminal walking and cross-airport luggage through a legal, signed access path.",
-            "Reach the printed node early enough to protect airline check-in/boarding and any Beijing rail departure."
+        "From a hotel or named railway station, test the rail line and road journey to PEK or PKX at the actual departure hour.",
+        "Reserve time for finding the operating terminal and moving baggage after the airport train or car drops the group.",
+        "The airline's bag-drop and gate closure outrank a planned Beijing railway connection."
           ]
         },
         {
           "heading": "Read the active PEK/PKX code, terminal, flight and airline deadline literally",
           "items": [
-            "Save the active PEK/PKX code, terminal, flight and airline deadline with the live order status.",
-            "Ask the airline, PEK/PKX service desks and current Beijing transport about a live exception, not a remembered pattern.",
+            "Keep airport code, terminal, flight number and airline status on the same screen.",
+            "Use the airline for terminal assignment and official Beijing transport for the current city approach; neither source substitutes for the other.",
             "Keep PEK or PKX and the live terminal in the working record; a generic Beijing airport pin is not specific enough."
           ]
         },
@@ -142,8 +142,8 @@ const body = {
           "heading": "Finish at the correct Capital/Daxing terminal or first Beijing hotel branch",
           "items": [
             "Follow the live terminal signs to the airport rail line or licensed pickup verified for this PEK or PKX flight.",
-            "Confirm that the correct Capital/Daxing terminal or first Beijing hotel branch is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use airline rebooking or a staffed correct-airport overnight instead of improvising."
+        "After immigration or baggage claim, recalculate the hotel or railway connection from the terminal where the flight actually arrived.",
+        "If a separate train is lost, protect the Beijing night; if the flight is at risk, work through the airline before crossing between airports."
           ]
         }
       ]
@@ -166,18 +166,18 @@ const body = {
       "rows": [
         [
           "opposite sides of Beijing, terminal walking and cross-airport luggage",
-          "Count every queue, lift, vehicle change and final walk between the exact Beijing hotel or one of eight major railway stations and the correct Capital/Daxing terminal or first Beijing hotel branch; prefer fewer uncertain handoffs.",
-          "A transport icon proves the correct Capital/Daxing terminal or first Beijing hotel branch is step-free."
+        "For travellers with cases or limited mobility, count hotel-to-rail access, airport-line interchange and terminal walking. One fewer Beijing transfer can outweigh a lower fare.",
+        "An Airport Express symbol does not certify the lift route from a specific railway platform to airline check-in."
         ],
         [
           "Arrival threatens airline check-in/boarding and any Beijing rail departure",
-          "Notify the destination, consult the airline, PEK/PKX service desks and current Beijing transport, and switch to airline rebooking or a staffed correct-airport overnight when the final handoff cannot be verified.",
-          "A daytime connection to the correct Capital/Daxing terminal or first Beijing hotel branch remains available after a delay."
+        "Contact the airline with the exact code and terminal when delay erodes check-in. If it cannot protect the flight, use its documented remedy and stay at the airport involved.",
+        "A daytime airport-rail or city connection may be closed or too slow after a late international arrival."
         ],
         [
           "A separate booking after the correct Capital/Daxing terminal or first Beijing hotel branch",
-          "Add the exact exit, local handoff and processing time before airline check-in/boarding and any Beijing rail departure; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the active PEK/PKX code, terminal, flight and airline deadline."
+        "For a flight-to-train plan, include immigration, baggage delivery, terminal exit and the named Beijing station's own entry process before accepting the rail ticket.",
+        "An airline booking and a 12306 order remain unprotected even when shown on the same phone."
         ]
       ]
     },
@@ -192,12 +192,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the active PEK/PKX code, terminal, flight and airline deadline; compare it character by character with the sign in front of you.",
-        "Ask the airline, PEK/PKX service desks and current Beijing transport whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the active PEK/PKX code, terminal, flight and airline deadline; promise no outcome.",
-        "If a transfer is still defensible, navigate to the correct Capital/Daxing terminal or first Beijing hotel branch and compare verified arrival with airline check-in/boarding and any Beijing rail departure.",
-        "Tell the destination exactly what happened to the exact Beijing hotel or one of eight major railway stations, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use airline rebooking or a staffed correct-airport overnight with staffed help."
+        "Read PEK or PKX and the terminal from the airline itinerary, then show it at the staffed desk in the airport where you are.",
+        "Ask whether the error is only a terminal change or a completely different airport; the recovery paths are not comparable.",
+        "Let the airline state the available change for the active flight before buying a Capital–Daxing transfer.",
+        "Attempt the cross-airport journey only when a current arrival at the correct terminal precedes bag drop by a clearly safe amount.",
+        "Tell the hotel or Beijing railway connection which airport will now be used and cancel the deadline that cannot survive.",
+        "When the flight cannot be recovered that day, remain with the bags at the correct airport and obtain an attended overnight."
       ]
     },
     {
@@ -229,13 +229,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the active PEK/PKX code, terminal, flight and airline deadline for the traveller's real date.",
-        "Save the exact Chinese names needed between the exact Beijing hotel or one of eight major railway stations and the correct Capital/Daxing terminal or first Beijing hotel branch.",
-        "Record the contact and operating window for the correct Capital/Daxing terminal or first Beijing hotel branch.",
-        "Confirm current legal access through the airline, PEK/PKX service desks and current Beijing transport.",
-        "Recount opposite sides of Beijing, terminal walking and cross-airport luggage for this group, not an average traveller.",
-        "Write the abandonment point before airline check-in/boarding and any Beijing rail departure.",
-        "Reopen the official sources in release week; if the chain fails, replace it with airline rebooking or a staffed correct-airport overnight."
+        "Confirm PEK or PKX, terminal and operating airline on the dated itinerary.",
+        "Save the Chinese airport and exact hotel or railway-station name used on each side.",
+        "Record airline check-in, bag-drop and boarding closures rather than one generic departure time.",
+        "Verify the current airport-rail or authorised vehicle path for the hour of travel.",
+        "Recalculate terminal walking and cases for the actual party.",
+        "Set the moment when crossing Beijing must be abandoned in favour of airline recovery.",
+        "During release week, recheck the terminal assignment and remove any city connection that no longer has protection."
       ]
     },
     {

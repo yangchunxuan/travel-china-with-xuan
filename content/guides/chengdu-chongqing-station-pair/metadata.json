@@ -1,7 +1,7 @@
 {
   "id": "chengdu-chongqing-station-pair",
   "type": "planning",
-  "pillar": "transport-airports-rail-hubs",
+  "pillar": "transport-city-pair-routes",
   "audienceMarkets": [
     "global"
   ],

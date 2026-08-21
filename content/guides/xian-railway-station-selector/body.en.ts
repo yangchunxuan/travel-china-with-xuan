@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the ticket's 西安 / 西安北 / 西安东 name and train date for offline use; never replace it with a map shorthand.",
-        "Write the first door as the Xi'an hotel door or inbound transfer and the last door as the named station entrance and the next hotel or Terracotta Warriors pickup.",
-        "Mark the hard cutoff—station entry and the next timed departure—and the latest safe abandonment point.",
-        "Count North/East-side city distance, cases and a possible station change segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through 12306 and uniformed Xi'an station staff, plus rebook at the named station or protect a staffed Xi'an night if it fails."
+        "Keep an offline image of the active order showing 西安, 西安北 or 西安东 together with the date and train number; every driver needs those complete characters.",
+        "Name the hotel lobby or inbound drop-off, the station entrance and any timed Terracotta pickup as three separate addresses.",
+        "Work backwards from the station-entry and boarding margin; decide in advance when a switch between North, central and East is no longer possible.",
+        "For North or East, add the actual city transfer, walking inside the hub and suitcase handling instead of hiding them inside the rail time.",
+        "If 12306 and uniformed staff show the chosen station is no longer viable, change the order there or secure an attended Xi'an room before rebuilding the next day."
       ]
     },
     {

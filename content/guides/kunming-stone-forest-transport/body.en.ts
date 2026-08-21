@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the exact Kunming origin and official Stone Forest visitor-centre handoff for offline use; never replace it with a map shorthand.",
-        "Write the first door as Kunming South, a current bus stop or the legal vehicle pickup and the last door as Shilin West plus local transfer or the named visitor-centre/parking point.",
-        "Mark the hard cutoff—entry processing and a verifiable Kunming return—and the latest safe abandonment point.",
-        "Count last-mile waiting, family luggage, scenic traffic control and heat/rain segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through 12306, Stone Forest management and current Yunnan transport, plus return to Shilin town/station or protect a staffed Kunming night if it fails."
+        "Record the precise Kunming departure and the official Stone Forest visitor-centre or parking handoff; Shilin West by itself is only a rail endpoint.",
+        "Separate Kunming South, the current coach stop and a legal car pickup, then write the local connection required after the chosen one.",
+        "Set an arrival limit for ticket and entry processing and a second limit for reaching Kunming again by a verified route.",
+        "Estimate waiting at Shilin West, family luggage, traffic controls and hot or wet weather outside the advertised train or drive time.",
+        "Verify the current last mile with 12306, scenic management or Yunnan transport; if it disappears, return to staffed Shilin facilities or stay in Kunming."
       ]
     },
     {
@@ -120,21 +120,21 @@ const body = {
     {
       "id": "door-to-door-chain",
       "type": "comparison",
-      "title": "the exact Kunming origin and official Stone Forest visitor-centre handoff is only the middle of the journey",
+      "title": "The Stone Forest day begins only after the last mile reaches official visitor processing",
       "columns": [
         {
           "heading": "Leave from Kunming South, a current bus stop or the legal vehicle pickup",
           "items": [
-            "Confirm checkout or arrival before navigating away from Kunming South, a current bus stop or the legal vehicle pickup.",
-            "Move last-mile waiting, family luggage, scenic traffic control and heat/rain through a legal, signed access path.",
-            "Reach the printed node early enough to protect entry processing and a verifiable Kunming return."
+        "Choose the precise Kunming South entrance, current coach stop or licensed-car pickup and confirm its departure process before leaving the hotel.",
+        "For rail, reserve a separate wait at Shilin West; for road transport, agree the official parking or visitor-centre drop-off.",
+        "Arrive with enough time for scenic ticket checks and a return that can still be verified before the transport desk closes."
           ]
         },
         {
           "heading": "Read the exact Kunming origin and official Stone Forest visitor-centre handoff literally",
           "items": [
-            "Save the exact Kunming origin and official Stone Forest visitor-centre handoff with the live order status.",
-            "Ask 12306, Stone Forest management and current Yunnan transport about a live exception, not a remembered pattern.",
+            "Keep the Kunming origin and final scenic handover together, including a rail or coach number when one exists.",
+            "Use 12306 for the rail segment, scenic management for entry and Yunnan transport for current road service; a single source cannot confirm all three.",
             "Keep the exact Kunming origin and the official Stone Forest visitor-centre handoff in the plan; a Shilin map pin is not an entrance."
           ]
         },
@@ -142,8 +142,8 @@ const body = {
           "heading": "Finish at Shilin West plus local transfer or the named visitor-centre/parking point",
           "items": [
             "At Shilin West, use the current signed exit and verified local transfer; by road, confirm the official visitor-centre or parking drop-off.",
-            "Confirm that Shilin West plus local transfer or the named visitor-centre/parking point is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use return to Shilin town/station or protect a staffed Kunming night instead of improvising."
+        "On reaching Shilin West, confirm the waiting local connection before leaving the staffed station area; by car, stay with the agreed official drop-off.",
+        "If the visitor-centre link has ended, return through staffed Shilin transport or abandon the day from Kunming rather than accept an unknown ride."
           ]
         }
       ]
@@ -166,18 +166,18 @@ const body = {
       "rows": [
         [
           "last-mile waiting, family luggage, scenic traffic control and heat/rain",
-          "Count every queue, lift, vehicle change and final walk between Kunming South, a current bus stop or the legal vehicle pickup and Shilin West plus local transfer or the named visitor-centre/parking point; prefer fewer uncertain handoffs.",
-          "A transport icon proves Shilin West plus local transfer or the named visitor-centre/parking point is step-free."
+        "Families should compare the wait and loading at Shilin West with a direct legal vehicle, including heat, rain and what must be carried through the scenic entrance.",
+        "A railway icon beside Stone Forest does not prove a continuous accessible route from Shilin West to visitor processing."
         ],
         [
           "Arrival threatens entry processing and a verifiable Kunming return",
-          "Notify the destination, consult 12306, Stone Forest management and current Yunnan transport, and switch to return to Shilin town/station or protect a staffed Kunming night when the final handoff cannot be verified.",
-          "A daytime connection to Shilin West plus local transfer or the named visitor-centre/parking point remains available after a delay."
+        "If the train is late, ask scenic staff whether meaningful entry remains and local transport whether a return is still operating. End the outing when either answer is no.",
+        "The daytime Shilin West connection and visitor-centre desk may be unavailable near closing even though the railway station remains open."
         ],
         [
           "A separate booking after Shilin West plus local transfer or the named visitor-centre/parking point",
-          "Add the exact exit, local handoff and processing time before entry processing and a verifiable Kunming return; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the exact Kunming origin and official Stone Forest visitor-centre handoff."
+        "Protect the return separately: include exit from the scenic area, travel to Shilin West or the coach point and the final departure's own boarding process.",
+        "A round-trip note in an itinerary does not make the scenic area wait for rail passengers or the last-mile driver wait after closure."
         ]
       ]
     },
@@ -192,12 +192,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the exact Kunming origin and official Stone Forest visitor-centre handoff; compare it character by character with the sign in front of you.",
-        "Ask 12306, Stone Forest management and current Yunnan transport whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the exact Kunming origin and official Stone Forest visitor-centre handoff; promise no outcome.",
-        "If a transfer is still defensible, navigate to Shilin West plus local transfer or the named visitor-centre/parking point and compare verified arrival with entry processing and a verifiable Kunming return.",
-        "Tell the destination exactly what happened to Kunming South, a current bus stop or the legal vehicle pickup, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use return to Shilin town/station or protect a staffed Kunming night with staffed help."
+        "Identify whether the group is at Shilin West, Shilin town or an unofficial roadside pin; show the current rail or vehicle record to staff.",
+        "Ask scenic management for the official visitor-processing location and local transport staff for the route from the present point.",
+        "Check the active railway or coach order before purchasing a replacement last mile; any change depends on that provider's current terms.",
+        "Proceed only if staff can name the transfer and both entry and a credible Kunming return remain open.",
+        "Tell the Kunming hotel which return will actually be used and cancel any vehicle that is waiting at another endpoint.",
+        "When the attraction day is no longer recoverable, stay together at Shilin's staffed transport node and return to Kunming by a verified service."
       ]
     },
     {
@@ -229,13 +229,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the exact Kunming origin and official Stone Forest visitor-centre handoff for the traveller's real date.",
-        "Save the exact Chinese names needed between Kunming South, a current bus stop or the legal vehicle pickup and Shilin West plus local transfer or the named visitor-centre/parking point.",
-        "Record the contact and operating window for Shilin West plus local transfer or the named visitor-centre/parking point.",
-        "Confirm current legal access through 12306, Stone Forest management and current Yunnan transport.",
-        "Recount last-mile waiting, family luggage, scenic traffic control and heat/rain for this group, not an average traveller.",
-        "Write the abandonment point before entry processing and a verifiable Kunming return.",
-        "Reopen the official sources in release week; if the chain fails, replace it with return to Shilin town/station or protect a staffed Kunming night."
+        "Fix the Kunming departure point and official Stone Forest visitor-processing endpoint.",
+        "For rail, save 石林西 and the current local connection; for road, save the approved parking drop-off.",
+        "Record scenic entry hours and the operating window of the intended return.",
+        "Confirm rail, road and attraction facts with the authority that owns each one.",
+        "Adjust waiting and walking for children, cases and the forecast.",
+        "Choose a time when the visit must be abandoned to preserve a verified Kunming return.",
+        "During release week, retest the last mile in both directions and remove the option if either handoff is no longer staffed."
       ]
     },
     {

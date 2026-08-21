@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the exact Changsha/Changsha South–Zhangjiajie West live train for offline use; never replace it with a map shorthand.",
-        "Write the first door as the Changsha hotel and printed departure station and the last door as the selected downtown/Yongding or Wulingyuan property.",
-        "Mark the hard cutoff—station entry, hotel reception and any timed park gate—and the latest safe abandonment point.",
-        "Count large cases, mountain weather and the road after Zhangjiajie West segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through 12306, Hunan transport notices and the exact Zhangjiajie hotel, plus a staffed Zhangjiajie downtown night or a moved park booking if it fails."
+        "Export the dated order with 长沙 or 长沙南 and 张家界西 visible; keep it separate from announcements about future stations.",
+        "Identify the Changsha hotel pickup, the correct departure forecourt and the precise downtown or Wulingyuan property receiving the traveller.",
+        "Set the rail-entry limit first, then compare it with reception and any timed park gate to find the day's true hard stop.",
+        "Budget for heavy cases, weather on the western-Hunan road and the post–Zhangjiajie West vehicle leg outside the timetable.",
+        "Reconfirm the dated train and hotel pickup; if the park-side drive is no longer defensible, arrange a staffed downtown night and move the park booking."
       ]
     },
     {
@@ -120,21 +120,21 @@ const body = {
     {
       "id": "door-to-door-chain",
       "type": "comparison",
-      "title": "the exact Changsha/Changsha South–Zhangjiajie West live train is only the middle of the journey",
+      "title": "The Hunan rail leg ends before the Zhangjiajie base begins",
       "columns": [
         {
           "heading": "Leave from the Changsha hotel and printed departure station",
           "items": [
-            "Confirm checkout or arrival before navigating away from the Changsha hotel and printed departure station.",
-            "Move large cases, mountain weather and the road after Zhangjiajie West through a legal, signed access path.",
-            "Reach the printed node early enough to protect station entry, hotel reception and any timed park gate."
+        "Have the Changsha hotel confirm whether the vehicle should serve 长沙 or 长沙南 and which entrance is practical with luggage.",
+        "Build ordinary station-entry time around the actual departure, then reserve the remaining daylight for western Hunan's road leg.",
+        "Do not make a same-day park gate the reason to compress the Changsha checkout or rail boarding margin."
           ]
         },
         {
           "heading": "Read the exact Changsha/Changsha South–Zhangjiajie West live train literally",
           "items": [
-            "Save the exact Changsha/Changsha South–Zhangjiajie West live train with the live order status.",
-            "Ask 12306, Hunan transport notices and the exact Zhangjiajie hotel about a live exception, not a remembered pattern.",
+            "Keep 长沙 or 长沙南, 张家界西 and the train number visible in the dated order.",
+            "Use 12306 to verify the train, Hunan notices for current transport conditions and the property for its own pickup; each answers a different question.",
             "Retain 长沙 or 长沙南 and 张家界西 in the live record; Hunan city pins hide the transfers that consume the day."
           ]
         },
@@ -142,8 +142,8 @@ const body = {
           "heading": "Finish at the selected downtown/Yongding or Wulingyuan property",
           "items": [
             "Leave Zhangjiajie West through the exit agreed with the hotel and use the verified downtown or Wulingyuan transfer.",
-            "Confirm that the selected downtown/Yongding or Wulingyuan property is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use a staffed Zhangjiajie downtown night or a moved park booking instead of improvising."
+        "At West station, ask whether the promised vehicle still reaches the named downtown or Wulingyuan branch before reception closes.",
+        "If weather or delay breaks the park-side drive, secure an attended Yongding room and move the park booking rather than forcing the road."
           ]
         }
       ]
@@ -166,18 +166,18 @@ const body = {
       "rows": [
         [
           "large cases, mountain weather and the road after Zhangjiajie West",
-          "Count every queue, lift, vehicle change and final walk between the Changsha hotel and printed departure station and the selected downtown/Yongding or Wulingyuan property; prefer fewer uncertain handoffs.",
-          "A transport icon proves the selected downtown/Yongding or Wulingyuan property is step-free."
+        "A large-case group should compare the Changsha pickup, station concourse, West-station loading and property approach as four physical movements.",
+        "A hotel marker near the park does not show steps from the road or whether a late driver can reach reception."
         ],
         [
           "Arrival threatens station entry, hotel reception and any timed park gate",
-          "Notify the destination, consult 12306, Hunan transport notices and the exact Zhangjiajie hotel, and switch to a staffed Zhangjiajie downtown night or a moved park booking when the final handoff cannot be verified.",
-          "A daytime connection to the selected downtown/Yongding or Wulingyuan property remains available after a delay."
+        "Send the revised train arrival to the Zhangjiajie property while still on the rail side. Without a confirmed pickup and reception, shift the first night downtown.",
+        "A park-bound vehicle offered in daylight should not be assumed to run after the final train or during mountain-weather disruption."
         ],
         [
           "A separate booking after the selected downtown/Yongding or Wulingyuan property",
-          "Add the exact exit, local handoff and processing time before station entry, hotel reception and any timed park gate; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the exact Changsha/Changsha South–Zhangjiajie West live train."
+        "Place any timed attraction on the following day unless the rail arrival, West-station pickup, hotel check-in and rest all have independent slack.",
+        "A park ticket does not compel the railway, driver or property to absorb a late Changsha departure."
         ]
       ]
     },
@@ -192,12 +192,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the exact Changsha/Changsha South–Zhangjiajie West live train; compare it character by character with the sign in front of you.",
-        "Ask 12306, Hunan transport notices and the exact Zhangjiajie hotel whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the exact Changsha/Changsha South–Zhangjiajie West live train; promise no outcome.",
-        "If a transfer is still defensible, navigate to the selected downtown/Yongding or Wulingyuan property and compare verified arrival with station entry, hotel reception and any timed park gate.",
-        "Tell the destination exactly what happened to the Changsha hotel and printed departure station, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use a staffed Zhangjiajie downtown night or a moved park booking with staffed help."
+        "Read 长沙 or 长沙南 from the active order and ask Changsha railway staff whether the group is at that station or only at a wrong entrance.",
+        "Check what the live order permits before buying a cross-city ride between Changsha stations.",
+        "Tell the Zhangjiajie hotel the train that will actually arrive at West and ask whether its pickup still operates.",
+        "If normal rail entry can survive the transfer, navigate to the specified entrance; otherwise use the change offered by railway staff.",
+        "Cancel or move a timed park gate as soon as the first-night transfer no longer leaves sleep and check-in time.",
+        "When no verified park-side arrival remains, keep the party at a staffed Zhangjiajie downtown property and begin the mountain journey next morning."
       ]
     },
     {
@@ -229,13 +229,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the exact Changsha/Changsha South–Zhangjiajie West live train for the traveller's real date.",
-        "Save the exact Chinese names needed between the Changsha hotel and printed departure station and the selected downtown/Yongding or Wulingyuan property.",
-        "Record the contact and operating window for the selected downtown/Yongding or Wulingyuan property.",
-        "Confirm current legal access through 12306, Hunan transport notices and the exact Zhangjiajie hotel.",
-        "Recount large cases, mountain weather and the road after Zhangjiajie West for this group, not an average traveller.",
-        "Write the abandonment point before station entry, hotel reception and any timed park gate.",
-        "Reopen the official sources in release week; if the chain fails, replace it with a staffed Zhangjiajie downtown night or a moved park booking."
+        "Query the real date from the precise Changsha station to 张家界西.",
+        "Save the Changsha entrance and full Zhangjiajie property branch in Chinese.",
+        "Obtain a current reception and pickup window from that property.",
+        "Review Hunan notices for the road beyond West station.",
+        "Adjust the transfer for cases, forecast and the chosen first-night base.",
+        "Decide when a Wulingyuan arrival must become a downtown night.",
+        "Before publication, retest train and pickup together and move any park gate that no longer has a safe night before it."
       ]
     },
     {

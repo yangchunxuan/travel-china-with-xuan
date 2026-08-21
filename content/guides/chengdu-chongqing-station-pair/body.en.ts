@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the live Chengdu–Chongqing pair printed by 12306 for offline use; never replace it with a map shorthand.",
-        "Write the first door as the Chengdu hotel door and exact departure entrance and the last door as the Chongqing exit/square and final vertical-city hotel door.",
-        "Mark the hard cutoff—station entry, hotel reception and the next separate booking—and the latest safe abandonment point.",
-        "Count two station choices, Chongqing gradients and cases segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through 12306 plus staff at the two printed stations, plus change the station pair before crossing either city or protect the arrival night if it fails."
+        "Save both Chinese endpoints from the dated 12306 order; 成都东–重庆北 and another pair are not interchangeable versions of one route.",
+        "Pin the Chengdu lobby, its departure entrance, the Chongqing exit and the hillside hotel door as four separate handoffs.",
+        "Give station entry, reception and any next booking their own closing times; use the first one that can no longer be met as the recovery trigger.",
+        "Compare the two city transfers, Chongqing elevation changes and suitcase handling alongside—not inside—the train time.",
+        "Ask staff at the printed station about the active order; if the pair no longer works, alter it before crossing town or protect the Chongqing arrival night."
       ]
     },
     {
@@ -120,21 +120,21 @@ const body = {
     {
       "id": "door-to-door-chain",
       "type": "comparison",
-      "title": "the live Chengdu–Chongqing pair printed by 12306 is only the middle of the journey",
+      "title": "A fast train works only when both city-side station transfers work",
       "columns": [
         {
           "heading": "Leave from the Chengdu hotel door and exact departure entrance",
           "items": [
-            "Confirm checkout or arrival before navigating away from the Chengdu hotel door and exact departure entrance.",
-            "Move two station choices, Chongqing gradients and cases through a legal, signed access path.",
-            "Reach the printed node early enough to protect station entry, hotel reception and the next separate booking."
+        "Confirm checkout and the vehicle-accessible entrance of the ticketed Chengdu station with the hotel before departure morning.",
+        "Judge the first transfer by road or metro changes with the party's cases, not by the station's distance from a city-centre pin.",
+        "Keep an ordinary security and boarding margin even when the intercity train itself is frequent."
           ]
         },
         {
           "heading": "Read the live Chengdu–Chongqing pair printed by 12306 literally",
           "items": [
-            "Save the live Chengdu–Chongqing pair printed by 12306 with the live order status.",
-            "Ask 12306 plus staff at the two printed stations about a live exception, not a remembered pattern.",
+            "Keep the train number and both Chinese station names together; changing one endpoint creates a new door-to-door comparison.",
+            "Use 12306 for the active service and ask staff at the actual departure station about that order, not about a general corridor rule.",
             "Keep both full Chinese station names on the 12306 order; city-only pins erase the transfers that decide this corridor."
           ]
         },
@@ -142,8 +142,8 @@ const body = {
           "heading": "Finish at the Chongqing exit/square and final vertical-city hotel door",
           "items": [
             "Leave through the signed exit at the booked Chongqing station and use the verified connection to the final vertical-city address.",
-            "Confirm that the Chongqing exit/square and final vertical-city hotel door is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use change the station pair before crossing either city or protect the arrival night instead of improvising."
+        "Test the Chongqing exit against the hotel's level, road access and reception time; a nearby map pin can sit far above or below the vehicle stop.",
+        "If the final address cannot receive the arrival, choose another live station pair before boarding or keep the first Chongqing night simple."
           ]
         }
       ]
@@ -166,18 +166,18 @@ const body = {
       "rows": [
         [
           "two station choices, Chongqing gradients and cases",
-          "Count every queue, lift, vehicle change and final walk between the Chengdu hotel door and exact departure entrance and the Chongqing exit/square and final vertical-city hotel door; prefer fewer uncertain handoffs.",
-          "A transport icon proves the Chongqing exit/square and final vertical-city hotel door is step-free."
+        "With cases, compare Chengdu platform access and the Chongqing exit-to-vehicle route together. One extra lift or steep final approach can erase a shorter train.",
+        "A metro interchange symbol does not describe Chongqing's elevation, road side or the hotel's actual lobby level."
         ],
         [
           "Arrival threatens station entry, hotel reception and the next separate booking",
-          "Notify the destination, consult 12306 plus staff at the two printed stations, and switch to change the station pair before crossing either city or protect the arrival night when the final handoff cannot be verified.",
-          "A daytime connection to the Chongqing exit/square and final vertical-city hotel door remains available after a delay."
+        "If delay pushes arrival beyond reception, ask 12306 about a workable later service and ask the hotel which Chongqing station it can still receive.",
+        "A daytime ride from a Chongqing station should not be assumed available with the same entrance and route late at night."
         ],
         [
           "A separate booking after the Chongqing exit/square and final vertical-city hotel door",
-          "Add the exact exit, local handoff and processing time before station entry, hotel reception and the next separate booking; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the live Chengdu–Chongqing pair printed by 12306."
+        "When another ticket follows, budget the Chongqing exit, the vertical road transfer and a new entry process at the onward node before buying it.",
+        "Two reservations displayed in one trip plan do not create a protected Chengdu–Chongqing connection."
         ]
       ]
     },
@@ -192,12 +192,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the live Chengdu–Chongqing pair printed by 12306; compare it character by character with the sign in front of you.",
-        "Ask 12306 plus staff at the two printed stations whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the live Chengdu–Chongqing pair printed by 12306; promise no outcome.",
-        "If a transfer is still defensible, navigate to the Chongqing exit/square and final vertical-city hotel door and compare verified arrival with station entry, hotel reception and the next separate booking.",
-        "Tell the destination exactly what happened to the Chengdu hotel door and exact departure entrance, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use change the station pair before crossing either city or protect the arrival night with staffed help."
+        "Open the active 12306 order and identify whether the wrong name is at the Chengdu or Chongqing end of the pair.",
+        "Ask railway staff whether the party is outside the wrong entrance or at a separate station; do not start a city transfer before that answer.",
+        "Check the options offered for this train and passenger record, then compare them with a verified arrival at the correct platform.",
+        "If changing Chengdu stations still leaves normal entry time, use the named entrance; otherwise take the rail option staff can actually issue.",
+        "Give the Chongqing hotel the revised station and arrival hour so it can confirm the road-side drop-off and reception.",
+        "If the usable pair is gone, protect a staffed night in the city where the group is waiting and rebuild the corridor without splitting passengers or bags."
       ]
     },
     {
@@ -229,13 +229,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the live Chengdu–Chongqing pair printed by 12306 for the traveller's real date.",
-        "Save the exact Chinese names needed between the Chengdu hotel door and exact departure entrance and the Chongqing exit/square and final vertical-city hotel door.",
-        "Record the contact and operating window for the Chongqing exit/square and final vertical-city hotel door.",
-        "Confirm current legal access through 12306 plus staff at the two printed stations.",
-        "Recount two station choices, Chongqing gradients and cases for this group, not an average traveller.",
-        "Write the abandonment point before station entry, hotel reception and the next separate booking.",
-        "Reopen the official sources in release week; if the chain fails, replace it with change the station pair before crossing either city or protect the arrival night."
+        "Search the exact date and retain both station suffixes with the train number.",
+        "Pin the Chengdu entrance, Chongqing exit and hotel vehicle stop separately.",
+        "Confirm the Chongqing branch's reception time and road-side access.",
+        "Review the active order in 12306 rather than relying on corridor frequency.",
+        "Recalculate lifts, gradients and bags for the actual travellers.",
+        "Set a no-cross-city point before the Chengdu boarding margin is consumed.",
+        "In release week, rerun the pair; if either city transfer fails, select another live pairing or move the arrival night."
       ]
     },
     {

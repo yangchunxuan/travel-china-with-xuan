@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name for offline use; never replace it with a map shorthand.",
-        "Write the first door as the hotel, airport or Pearl River Delta connection and the last door as the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff.",
-        "Mark the hard cutoff—station security and the border or ferry booking after the train—and the latest safe abandonment point.",
-        "Count five dispersed hubs, large concourses and cross-city luggage segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through 12306, Guangzhou Railway and current municipal notices, plus change the live ticket before crossing Guangzhou or protect the next border-side night if it fails."
+        "Save the active order showing 广州南, 广州东, 广州, 广州白云 or 广州北; the hotel and driver need the complete suffix because 'Guangzhou station' is ambiguous.",
+        "Draw one leg from the current Pearl River Delta door to the departure square, and a second leg from the arrival square to the port, border or hotel.",
+        "Write separate latest times for railway entry and the onward ferry or border booking; the second cutoff belongs to another operator.",
+        "Estimate the Panyu, Huadu, Baiyun, Tianhe or Yuexiu road leg, concourse walk and luggage lifts before comparing train duration.",
+        "Keep 12306 and current Guangzhou notices available; if the selected node fails, prefer a ticket change or border-side night over a five-station dash."
       ]
     },
     {
@@ -137,16 +137,16 @@ const body = {
         {
           "heading": "Leave from the hotel, airport or Pearl River Delta connection",
           "items": [
-            "Confirm checkout or arrival before navigating away from the hotel, airport or Pearl River Delta connection.",
-            "Move five dispersed hubs, large concourses and cross-city luggage through a legal, signed access path.",
-            "Reach the printed node early enough to protect station security and the border or ferry booking after the train."
+            "Ask the hotel or airport dispatcher which road-side pickup is practical for the ticketed district; Panyu, Huadu and Baiyun require different assumptions.",
+            "Allow a longer internal approach at South or Baiyun, and verify the usable entrance at East, Guangzhou or North when works are active.",
+            "If a Hong Kong train, ferry or port follows, preserve that independent closing time before leaving the first address."
           ]
         },
         {
           "heading": "Read the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name literally",
           "items": [
-            "Save the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name with the live order status.",
-            "Ask 12306, Guangzhou Railway and current municipal notices about a live exception, not a remembered pattern.",
+            "Read the last character of 广州南, 广州东, 广州, 广州白云 or 广州北 before opening navigation.",
+            "Use the dated 12306 result for the train and Guangzhou notices for building access; neither can be inferred from an old route diagram.",
             "Keep the complete Chinese suffix in every handoff; a pin labelled only Guangzhou can send a vehicle to another station."
           ]
         },
@@ -154,8 +154,8 @@ const body = {
           "heading": "Finish at the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff",
           "items": [
             "Leave through the exit confirmed for this Guangzhou station, then use its current metro, taxi or onward-border handoff.",
-            "Confirm that the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use change the live ticket before crossing Guangzhou or protect the next border-side night instead of improvising."
+            "Once at the ticketed square, recalculate the border, ferry or hotel leg with current traffic and the cases actually carried.",
+            "If the port can no longer be reached, notify its operator and move the night; do not answer a station error with an unverified shortcut."
           ]
         }
       ]
@@ -178,18 +178,18 @@ const body = {
       "rows": [
         [
           "five dispersed hubs, large concourses and cross-city luggage",
-          "Count every queue, lift, vehicle change and final walk between the hotel, airport or Pearl River Delta connection and the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff; prefer fewer uncertain handoffs.",
-          "A transport icon proves the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff is step-free."
+          "For several suitcases, compare lifts and vehicle changes from the actual hotel to each train that is still for sale. A faster departure from South may lose to a simpler central station.",
+          "A metro symbol does not describe the walk across a large Guangzhou concourse or the kerb used by a legal vehicle."
         ],
         [
           "Arrival threatens station security and the border or ferry booking after the train",
-          "Notify the destination, consult 12306, Guangzhou Railway and current municipal notices, and switch to change the live ticket before crossing Guangzhou or protect the next border-side night when the final handoff cannot be verified.",
-          "A daytime connection to the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff remains available after a delay."
+          "When delay threatens a port or ferry cutoff, contact that operator first. Then ask railway staff whether retaining or changing the train preserves more of the remaining window.",
+          "The last metro, border counter or ferry check-in will not wait merely because an earlier railway service arrived late."
         ],
         [
           "A separate booking after the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff",
-          "Add the exact exit, local handoff and processing time before station security and the border or ferry booking after the train; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name."
+          "Treat the onward reservation as unprotected: include the named exit, cross-city drive, immigration or check-in queue and its own closing time.",
+          "Putting a rail and ferry reference in one itinerary does not oblige either operator to honour the other ticket."
         ]
       ]
     },
@@ -204,12 +204,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name; compare it character by character with the sign in front of you.",
-        "Ask 12306, Guangzhou Railway and current municipal notices whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name; promise no outcome.",
-        "If a transfer is still defensible, navigate to the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff and compare verified arrival with station security and the border or ferry booking after the train.",
-        "Tell the destination exactly what happened to the hotel, airport or Pearl River Delta connection, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use change the live ticket before crossing Guangzhou or protect the next border-side night with staffed help."
+        "Freeze the plan and read the entire Chinese station name on the active order; locate those characters on the building or show them to uniformed staff.",
+        "Establish whether this is the wrong gate within South or Baiyun, a similarly named square, or another Guangzhou station across town.",
+        "Open the current order with railway staff and obtain the options that are actually offered before hiring a car; a change or refund is never guaranteed.",
+        "Only if the correct entrance remains reachable should the group move, after subtracting security and any port or ferry cutoff from the verified arrival.",
+        "Update the hotel or border operator with the station reached, the train still active and the precise deadline now at risk.",
+        "When both boarding and a safe station transfer are lost, secure passports and cases at a staffed place near the next usable Guangzhou node."
       ]
     },
     {
@@ -241,13 +241,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name for the traveller's real date.",
-        "Save the exact Chinese names needed between the hotel, airport or Pearl River Delta connection and the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff.",
-        "Record the contact and operating window for the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff.",
-        "Confirm current legal access through 12306, Guangzhou Railway and current municipal notices.",
-        "Recount five dispersed hubs, large concourses and cross-city luggage for this group, not an average traveller.",
-        "Write the abandonment point before station security and the border or ferry booking after the train.",
-        "Reopen the official sources in release week; if the chain fails, replace it with change the live ticket before crossing Guangzhou or protect the next border-side night."
+        "Run a fresh 12306 search for the travel date; old compass and direction rules are irrelevant.",
+        "Write every Chinese station suffix used by the inbound and onward legs.",
+        "Give the hotel and driver the exact square or entrance, not only the station district.",
+        "Review Guangzhou Station works and Baiyun role changes in current municipal notices.",
+        "Count lifts, concourse distance and Panyu or Huadu road time for this group.",
+        "Record the last moment when changing the railway ticket can still protect the port or ferry.",
+        "During release week, retest the dated services and replace a broken border chain with a revised ticket or protected night."
       ]
     },
     {
@@ -265,7 +265,7 @@ const body = {
     {
       "id": "faq-1-answer",
       "type": "paragraph",
-      "text": "No. 广州站 and 广州南站 are separate stations in different parts of the city. Use the full Chinese ticket name."
+      "text": "No. 广州站 is the central-named station, while 广州南站 is the separate Panyu hub. The suffix on the active order must reach the driver unchanged."
     },
     {
       "id": "faq-2-question",

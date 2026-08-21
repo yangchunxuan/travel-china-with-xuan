@@ -1,7 +1,7 @@
 {
   "id": "kunming-stone-forest-transport",
   "type": "planning",
-  "pillar": "transport-airports-rail-hubs",
+  "pillar": "transport-last-mile-transfers",
   "audienceMarkets": [
     "global"
   ],

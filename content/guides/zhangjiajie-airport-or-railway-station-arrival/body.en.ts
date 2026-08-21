@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the DYG, 张家界站 or 张家界西 ticketed arrival for offline use; never replace it with a map shorthand.",
-        "Write the first door as the inbound flight/train and its real exit and the last door as the booked downtown/Yongding or Wulingyuan hotel branch.",
-        "Mark the hard cutoff—hotel reception, Tianmen booking or Forest Park entry—and the latest safe abandonment point.",
-        "Count mountain weather, road handoff, cases and different bases segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through the live airline/12306 record, Zhangjiajie transport and the exact hotel, plus a staffed downtown night or revised park-side booking if it fails."
+        "Carry the booked DYG, 张家界站 or 张家界西 record offline, including arrival time and service number; a single Zhangjiajie map result is not enough.",
+        "Write the exit where the flight or train ends and the full branch name of the downtown, Yongding or Wulingyuan property that must receive the group.",
+        "Rank reception closure, Tianmen admission and Forest Park entry by time; the earliest one becomes the stop-or-replan point.",
+        "Add weather-sensitive road time, case loading and the separate drive to each possible base before judging the main transport leg.",
+        "Confirm the handoff with the hotel and the live carrier record; if park-side arrival breaks, preserve a staffed downtown room rather than forcing the mountain transfer."
       ]
     },
     {
@@ -120,21 +120,21 @@ const body = {
     {
       "id": "door-to-door-chain",
       "type": "comparison",
-      "title": "the DYG, 张家界站 or 张家界西 ticketed arrival is only the middle of the journey",
+      "title": "Arrival is complete only when the correct Zhangjiajie base receives you",
       "columns": [
         {
           "heading": "Leave from the inbound flight/train and its real exit",
           "items": [
-            "Confirm checkout or arrival before navigating away from the inbound flight/train and its real exit.",
-            "Move mountain weather, road handoff, cases and different bases through a legal, signed access path.",
-            "Reach the printed node early enough to protect hotel reception, Tianmen booking or Forest Park entry."
+        "At DYG, central station or West, identify the physical exit before contacting the hotel; a carrier's arrival time is not a pickup time.",
+        "Tell the property how many cases must move and whether the group is bound for Yongding or Wulingyuan.",
+        "If reception, Tianmen or a park gate closes first, make that booking—not the flight or train duration—the controlling clock."
           ]
         },
         {
           "heading": "Read the DYG, 张家界站 or 张家界西 ticketed arrival literally",
           "items": [
-            "Save the DYG, 张家界站 or 张家界西 ticketed arrival with the live order status.",
-            "Ask the live airline/12306 record, Zhangjiajie transport and the exact hotel about a live exception, not a remembered pattern.",
+            "Pair DYG or the Chinese rail name with the service number and actual arrival time shown by the carrier.",
+            "Ask the named hotel which exit and vehicle they can presently serve; do not inherit a pickup instruction from another base.",
             "Do not collapse DYG, 张家界站 and 张家界西 into one Zhangjiajie pin; each creates a different first-night handoff."
           ]
         },
@@ -142,8 +142,8 @@ const body = {
           "heading": "Finish at the booked downtown/Yongding or Wulingyuan hotel branch",
           "items": [
             "Leave through the signed airport or station exit and use the transfer verified for the downtown or Wulingyuan property.",
-            "Confirm that the booked downtown/Yongding or Wulingyuan hotel branch is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use a staffed downtown night or revised park-side booking instead of improvising."
+        "After baggage collection or station exit, ask whether the confirmed vehicle can still reach the exact branch before its desk closes.",
+        "When Wulingyuan is no longer realistic, move the first night to an attended downtown property and shift the park plan deliberately."
           ]
         }
       ]
@@ -166,18 +166,18 @@ const body = {
       "rows": [
         [
           "mountain weather, road handoff, cases and different bases",
-          "Count every queue, lift, vehicle change and final walk between the inbound flight/train and its real exit and the booked downtown/Yongding or Wulingyuan hotel branch; prefer fewer uncertain handoffs.",
-          "A transport icon proves the booked downtown/Yongding or Wulingyuan hotel branch is step-free."
+        "A party with large cases should compare vehicle loading, the distance from exit to pickup and any uphill property approach, not just city-versus-park kilometres.",
+        "A hotel pin in Wulingyuan says nothing about stairs between the road and reception."
         ],
         [
           "Arrival threatens hotel reception, Tianmen booking or Forest Park entry",
-          "Notify the destination, consult the live airline/12306 record, Zhangjiajie transport and the exact hotel, and switch to a staffed downtown night or revised park-side booking when the final handoff cannot be verified.",
-          "A daytime connection to the booked downtown/Yongding or Wulingyuan hotel branch remains available after a delay."
+        "Send the delay and actual arrival node to the property. If it cannot name a late vehicle or reception process, reserve a staffed Yongding fallback before leaving the terminal.",
+        "A coach or hotel pickup advertised for daylight should not be projected into a rainy late evening."
         ],
         [
           "A separate booking after the booked downtown/Yongding or Wulingyuan hotel branch",
-          "Add the exact exit, local handoff and processing time before hotel reception, Tianmen booking or Forest Park entry; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the DYG, 张家界站 or 张家界西 ticketed arrival."
+        "Keep Tianmen and Forest Park admissions separate from the arrival day: include the road to the chosen base, check-in and sleep before protecting a morning gate.",
+        "An attraction reservation does not require an airline, railway or hotel driver to absorb a late arrival."
         ]
       ]
     },
@@ -192,12 +192,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the DYG, 张家界站 or 张家界西 ticketed arrival; compare it character by character with the sign in front of you.",
-        "Ask the live airline/12306 record, Zhangjiajie transport and the exact hotel whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the DYG, 张家界站 or 张家界西 ticketed arrival; promise no outcome.",
-        "If a transfer is still defensible, navigate to the booked downtown/Yongding or Wulingyuan hotel branch and compare verified arrival with hotel reception, Tianmen booking or Forest Park entry.",
-        "Tell the destination exactly what happened to the inbound flight/train and its real exit, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use a staffed downtown night or revised park-side booking with staffed help."
+        "Check the carrier record for DYG, 张家界站 or 张家界西 and tell the hotel the place where the group is physically standing.",
+        "Have airport or railway staff confirm whether the problem is a different exit or a different arrival facility.",
+        "Ask the carrier what can still be changed on the active booking before buying a road transfer to another node.",
+        "Call the exact hotel branch; continue only if it confirms a vehicle, reception and an arrival time that still work.",
+        "Move any Tianmen or Forest Park booking whose cutoff is now impossible instead of asking a driver to race mountain roads.",
+        "If no verified Wulingyuan handoff remains, take the group to an attended downtown bed and rebuild the park morning from there."
       ]
     },
     {
@@ -229,13 +229,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the DYG, 张家界站 or 张家界西 ticketed arrival for the traveller's real date.",
-        "Save the exact Chinese names needed between the inbound flight/train and its real exit and the booked downtown/Yongding or Wulingyuan hotel branch.",
-        "Record the contact and operating window for the booked downtown/Yongding or Wulingyuan hotel branch.",
-        "Confirm current legal access through the live airline/12306 record, Zhangjiajie transport and the exact hotel.",
-        "Recount mountain weather, road handoff, cases and different bases for this group, not an average traveller.",
-        "Write the abandonment point before hotel reception, Tianmen booking or Forest Park entry.",
-        "Reopen the official sources in release week; if the chain fails, replace it with a staffed downtown night or revised park-side booking."
+        "Verify the dated flight or train and its exact Zhangjiajie arrival label.",
+        "Send the property the service number, expected exit and number of bags.",
+        "Confirm the branch's late reception and named pickup method in writing.",
+        "Check current road or local-transport notices for downtown and Wulingyuan.",
+        "Use the forecast and actual group mobility to choose the first-night base.",
+        "Decide when a park-side arrival must convert to a downtown overnight.",
+        "In release week, retest the handoff; if the property cannot receive it, move the room and the park slot together."
       ]
     },
     {

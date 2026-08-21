@@ -27,11 +27,11 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Screenshot the exact Guilin airport/station/hotel origin and named Longji village for offline use; never replace it with a map shorthand.",
-        "Write the first door as KWL, a full Guilin station name or the exact city hotel and the last door as Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff.",
-        "Mark the hard cutoff—scenic access, hotel reception and any same-day return—and the latest safe abandonment point.",
-        "Count rural roads, weather, luggage carrying and the final village walk segment by segment instead of copying the main-leg duration.",
-        "Save a current verification path through Longji scenic management, the exact property and current transport operator, plus return to a confirmed staffed handoff or revise the village booking if it fails."
+        "Keep written proof of the Guilin pickup and whether the booking says Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village; 'Longji' alone cannot direct a driver.",
+        "Describe the start as KWL, the complete railway-station name or a hotel branch, and finish at the property's agreed vehicle-to-foot handover.",
+        "Find the earliest limit among scenic access, reception and a same-day return, then tell the operator when the group must turn back.",
+        "Allow separately for rural traffic, rain or heat, unloading cases and the uphill walk that begins after the vehicle stops.",
+        "Have the property confirm the operator and meeting point; if they cannot, retreat to a staffed checkpoint and revise the village night."
       ]
     },
     {
@@ -120,21 +120,21 @@ const body = {
     {
       "id": "door-to-door-chain",
       "type": "comparison",
-      "title": "the exact Guilin airport/station/hotel origin and named Longji village is only the middle of the journey",
+      "title": "A Longji transfer succeeds at the village handover, not at the Guilin pickup",
       "columns": [
         {
           "heading": "Leave from KWL, a full Guilin station name or the exact city hotel",
           "items": [
-            "Confirm checkout or arrival before navigating away from KWL, a full Guilin station name or the exact city hotel.",
-            "Move rural roads, weather, luggage carrying and the final village walk through a legal, signed access path.",
-            "Reach the printed node early enough to protect scenic access, hotel reception and any same-day return."
+        "Give the operator the complete KWL, railway-station or hotel-branch pickup and wait only at the point it confirms.",
+        "Ask which vehicle can pass the current mountain checkpoint and where cases must transfer to a smaller vehicle or porter arrangement.",
+        "For a day return, agree the village departure time before going uphill; for an overnight, protect reception and the final footpath in daylight."
           ]
         },
         {
           "heading": "Read the exact Guilin airport/station/hotel origin and named Longji village literally",
           "items": [
-            "Save the exact Guilin airport/station/hotel origin and named Longji village with the live order status.",
-            "Ask Longji scenic management, the exact property and current transport operator about a live exception, not a remembered pattern.",
+            "Keep the Guilin pickup and exact village in the same written confirmation from the operator or property.",
+            "Use scenic management for access conditions and the hotel for its last handover; neither can verify the other's vehicle.",
             "Keep the Guilin pickup point and Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village in writing; a Longji pin cannot identify the handoff."
           ]
         },
@@ -142,8 +142,8 @@ const body = {
           "heading": "Finish at Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff",
           "items": [
             "Meet at the Guilin exit or hotel point confirmed by the operator, then follow the property-approved handoff for the named village.",
-            "Confirm that Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff is still reachable with the bags and remaining margin.",
-            "If that handoff fails, use return to a confirmed staffed handoff or revise the village booking instead of improvising."
+        "At the village transfer point, verify the remaining stairs or path and who is meeting the luggage before releasing the first vehicle.",
+        "If the property cannot receive the group, stay at the last staffed checkpoint or return to Guilin rather than accept an unknown mountain ride."
           ]
         }
       ]
@@ -166,18 +166,18 @@ const body = {
       "rows": [
         [
           "rural roads, weather, luggage carrying and the final village walk",
-          "Count every queue, lift, vehicle change and final walk between KWL, a full Guilin station name or the exact city hotel and Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff; prefer fewer uncertain handoffs.",
-          "A transport icon proves Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff is step-free."
+        "For heavy luggage, ask exactly where the road ends in the selected village and how many metres or stairs remain to the room. Pack one night separately if needed.",
+        "A vehicle marker in Ping'an or Dazhai does not mean a car reaches the guesthouse door."
         ],
         [
           "Arrival threatens scenic access, hotel reception and any same-day return",
-          "Notify the destination, consult Longji scenic management, the exact property and current transport operator, and switch to return to a confirmed staffed handoff or revise the village booking when the final handoff cannot be verified.",
-          "A daytime connection to Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff remains available after a delay."
+        "Call the property before the vehicle leaves Guilin. If weather or delay removes the confirmed village handover, cancel that climb and retain a staffed lowland fallback.",
+        "A shuttle or porter arrangement quoted for daylight cannot be projected into a dark or rain-affected arrival."
         ],
         [
           "A separate booking after Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff",
-          "Add the exact exit, local handoff and processing time before scenic access, hotel reception and any same-day return; change the booking when that margin is weak.",
-          "One itinerary document makes the next operator protect the exact Guilin airport/station/hotel origin and named Longji village."
+        "A same-day Guilin return needs a pre-agreed pickup inside the chosen village plus reserve road time; sunset photographs are not a transport plan.",
+        "Listing a transfer and hotel together does not make the driver responsible for the property's uphill path or closing time."
         ]
       ]
     },
@@ -192,12 +192,12 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Stop moving and reopen the exact Guilin airport/station/hotel origin and named Longji village; compare it character by character with the sign in front of you.",
-        "Ask Longji scenic management, the exact property and current transport operator whether the error concerns an entrance, a local branch or an entirely different node.",
-        "Before paying to cross the area, check the live change, refund or rebooking path tied to the exact Guilin airport/station/hotel origin and named Longji village; promise no outcome.",
-        "If a transfer is still defensible, navigate to Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff and compare verified arrival with scenic access, hotel reception and any same-day return.",
-        "Tell the destination exactly what happened to KWL, a full Guilin station name or the exact city hotel, the node you will now reach, and which booking must change.",
-        "When the margin is gone, keep the group and luggage together and use return to a confirmed staffed handoff or revise the village booking with staffed help."
+        "Stop at the staffed pickup or checkpoint and read the written village name: Ping'an, Jinkeng/Dazhai and Ancient Zhuang Village lead to different roads.",
+        "Call the booked property and describe the landmark where the vehicle is waiting; let it identify the correct handover.",
+        "Ask the operator whether the present transfer can be changed or returned before paying another driver; do not assume refund rights.",
+        "Continue uphill only when the property confirms road access, reception and a luggage plan for the remaining daylight.",
+        "Tell the Guilin hotel or onward driver whether the night or return has moved and which village pickup is cancelled.",
+        "If no accountable handover exists, keep everyone and every case at the staffed point and move the booking rather than divide the group."
       ]
     },
     {
@@ -229,13 +229,13 @@ const body = {
       "type": "list",
       "ordered": false,
       "items": [
-        "Re-search the exact Guilin airport/station/hotel origin and named Longji village for the traveller's real date.",
-        "Save the exact Chinese names needed between KWL, a full Guilin station name or the exact city hotel and Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff.",
-        "Record the contact and operating window for Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff.",
-        "Confirm current legal access through Longji scenic management, the exact property and current transport operator.",
-        "Recount rural roads, weather, luggage carrying and the final village walk for this group, not an average traveller.",
-        "Write the abandonment point before scenic access, hotel reception and any same-day return.",
-        "Reopen the official sources in release week; if the chain fails, replace it with return to a confirmed staffed handoff or revise the village booking."
+        "Confirm the dated Guilin pickup and write the selected village without abbreviating Longji.",
+        "Save the property branch, mountain meeting landmark and operator contact in Chinese.",
+        "Ask who receives the group after the main vehicle stops and until what time.",
+        "Check scenic access and road notices for the weather expected that day.",
+        "Reduce baggage or arrange lawful help for the known final stairs.",
+        "Set a daylight turnaround point for a day trip and a reception cutoff for an overnight.",
+        "In release week, reconfirm the property handover; cancel the mountain leg if no named person or vehicle remains accountable."
       ]
     },
     {
