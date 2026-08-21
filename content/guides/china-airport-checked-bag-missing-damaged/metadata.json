@@ -1,0 +1,120 @@
+{
+  "id": "china-airport-checked-bag-missing-damaged",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "checked-baggage-incident-workflow",
+  "topics": [
+    "checked-baggage",
+    "missing-bag",
+    "damaged-bag",
+    "airport-report",
+    "bag-tracing"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-airport-checked-bag-missing-damaged/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-airport-checked-bag-missing-damaged/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-airport-checked-bag-missing-damaged/",
+      "title": "Checked Bag Missing or Damaged at a China Airport: Report, Trace and Continue the Trip",
+      "headline": "Checked Bag Missing or Damaged at a China Airport: Report, Trace and Continue the Trip",
+      "description": "A counter-first workflow for a checked bag missing or damaged at a China airport: preserve the tag and physical evidence, obtain a carrier report, set delivery contacts and continue with essentials.",
+      "heroAlt": "Baggage reclaim hall at Beijing Capital International Airport Terminal 2",
+      "heroCredit": {
+        "text": "Photo: 颐园居 / Wikimedia Commons / CC BY-SA 4.0",
+        "sourceLabel": "Wikimedia Commons file page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_Terminal_2_Baggage_Claim_Hall_20230827.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Checked-bag incident recovery",
+      "featuredLinkLabel": "Report a missing or damaged checked bag",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Baggage",
+        "Airport",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-airport-checked-bag-missing-damaged/",
+      "title": "中国机场托运行李未到或破损：申报、查询并继续行程",
+      "headline": "托运行李在中国机场没到或破损，如何现场申报并继续旅行",
+      "description": "先在行李厅柜台留证：保存行李条和实物证据，取得承运航司报告，设置可用配送联系，并用必需品备选继续行程。",
+      "heroAlt": "北京首都国际机场2号航站楼行李提取大厅",
+      "heroCredit": {
+        "text": "照片：颐园居 / 维基共享资源 / CC BY-SA 4.0",
+        "sourceLabel": "维基共享资源文件页",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_Terminal_2_Baggage_Claim_Hall_20230827.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "托运行李事故恢复",
+      "featuredLinkLabel": "申报托运行李未到或破损",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "行李",
+        "机场",
+        "恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-airport-checked-bag-missing-damaged/",
+      "title": "중국 공항 위탁 수하물 미도착·파손: 신고, 추적과 여행 계속하기",
+      "headline": "중국 공항에서 위탁 가방이 없거나 파손됐을 때 현장 신고와 복구",
+      "description": "수하물 구역을 떠나기 전 태그와 실물 증거를 보존하고 운항사 신고서를 받아 배송 연락처를 정한 뒤 필수품으로 일정을 이어갑니다.",
+      "heroAlt": "베이징 서우두 국제공항 2터미널 수하물 수취 홀",
+      "heroCredit": {
+        "text": "사진: 颐园居 / Wikimedia Commons / CC BY-SA 4.0",
+        "sourceLabel": "위키미디어 공용 파일 페이지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_Terminal_2_Baggage_Claim_Hall_20230827.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "위탁 수하물 사고 복구",
+      "featuredLinkLabel": "위탁 가방 미도착·파손 신고",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "수하물",
+        "공항",
+        "복구"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "checked bag missing China airport",
+      "damaged baggage China airport report",
+      "China airline baggage trace"
+    ],
+    "zh": [
+      "中国机场托运行李没到",
+      "托运行李破损申报",
+      "机场行李查询记录"
+    ],
+    "ko": [
+      "중국 공항 위탁 수하물 분실",
+      "중국 공항 수하물 파손 신고",
+      "항공사 수하물 추적"
+    ]
+  }
+}
