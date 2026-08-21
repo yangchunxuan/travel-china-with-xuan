@@ -1,8 +1,32 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-状态：`SEARCH MAP SYNCHRONIZED — ROUTE REALITY PUBLIC PRODUCT REJECTED — ENTITY NETWORK PRIORITY ACTIVE`
+状态：`CONTENT SCALE BATCH ASSIGNED — 60 CANONICAL OWNERS — CENTRAL INTEGRATION REQUIRED`
 
 本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。以下 2026-08-21 同步结论取代文内更早的发布口径；旧段落只保留历史决定，不得用于判断当前上线状态。
+
+## 2026-08-22 内容扩量批次（当前权威）
+
+- 最新基线：`origin/main@72e5d161ed8af853fbf262e7c875f8fd748645e3`，PR [#83](https://github.com/yangchunxuan/travel-china-with-xuan/pull/83) 已合并、CI 成功并部署。
+- PR #83 的深圳节点选择、桂林到达节点、阳朔住宿基地、龙脊日游/过夜四个身份均已 published；12/12 三语 URL 在线 200 并进入当前 664 URL sitemap，不得再次选同题。
+- 当前公开库存：180 个 guide identity / 534 个 guide locale URL；8 个城市 Hub / 24 URL；1 个 entry collection；合计 189 个编辑型详情身份 / 559 个 locale URL。
+- 用户/中央在本任务中明确授权开始严格内容扩量：员工1–6各10个身份，共60题、91复杂度单位。机器票据见 `docs/organic-growth/content-scale-batch-2026-08-22.json`，人类票据见 `docs/organic-growth/content-scale-batch-2026-08-22.md`。
+- 员工3的十篇既有 durable culture drafts 就是本池全部10题，只做返修与 canonical 整理，不再开第11题。曲阜旧稿必须并入 `qufu-three-confucian-sites-route`。
+- 本批只授权草稿生产；没有创建或虚构 GitHub Issue，也没有授权 PR、合并或部署。写手分支不得改主页、公开 Registry、sitemap、共享计数、字体或 indexability。
+- 本批不提高付费服务权重，不强推 US$69 / US$129，也不新增销售型 CTA。
+- Search Console 题级需求、关键词量、CPC、难度和购买概率不可用；评分使用定性旅客任务、真实覆盖缺口、来源、Homeground增量、内链和维护风险，未猜体量。
+
+### 六池派工
+
+| 员工 | 领域 | 数量 | 分支 | 当前公开状态 |
+|---:|---|---:|---|---|
+| 1 | 交通 | 10 | `article/worker-1-transport-scale-20260822` | 10题均 not-published |
+| 2 | 目的地 | 10 | `article/worker-2-destination-scale-20260822` | 10题均 not-published |
+| 3 | 文化 | 10 | `article/worker-3-culture-scale-20260822` | durable draft返修，均 not-published |
+| 4 | 规划 | 10 | `article/worker-4-planning-scale-20260822` | 10题均 not-published |
+| 5 | 住宿 | 10 | `article/worker-5-stay-scale-20260822` | 10题均 not-published |
+| 6 | 入境与实用 | 10 | `article/worker-6-essentials-scale-20260822` | 10题均 not-published |
+
+旧的“六票冻结、不补第七票”只适用于 2026-08-11 历史轮次；不得用它否定 2026-08-22 获得明确中央授权的独立60题批次。
 
 ## 2026-08-21 权威同步结论
 

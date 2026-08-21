@@ -1,6 +1,18 @@
 # Homeground 本轮 SEO 票据状态同步 — 2026-08-11
 
-状态：`SEARCH MAP SYNCHRONIZED — ROUTE REALITY PUBLIC PRODUCT REJECTED — ENTITY NETWORK PRIORITY ACTIVE`
+状态：`CONTENT SCALE BATCH ASSIGNED — 60 CANONICAL OWNERS — CENTRAL INTEGRATION REQUIRED`
+
+## 2026-08-22 当前工作票据
+
+用户/中央已批准员工1–6各10题进入草稿生产，共60个内容身份、91复杂度单位。完整标题、评分、slug、状态与分支见：
+
+- `docs/organic-growth/content-scale-batch-2026-08-22.json`
+- `docs/organic-growth/content-scale-batch-2026-08-22.md`
+- `docs/organic-growth/worker-briefs-2026-08-22/employee-1.md` 至 `employee-6.md`
+
+六个写作分支只交 durable drafts；写手不得建 PR、合并或部署。每篇必须三语、来源、真实图片、canonical boundary、原子 commit 和真实测试记录。禁止强推付费服务。PR #83 已上线的四题不得重复。
+
+中央下一步不是马上批量上线，而是按分支逐题做 canonical、事实、图片权利、三语、CI 与浏览器审核，再拆成可回滚的整合 PR。
 
 以下六张票据是 2026-08-11 的历史冻结集合，不是新的开工命令。北京站、故宫、首次共享用餐、外国游客酒店与 eSIM owner 均已发布；Route Reality Checker 的内部规格已归档，公开产品已被中央否决。历史票不得换 slug 或换分支重开。
 

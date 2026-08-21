@@ -1,8 +1,23 @@
 # Homeground 禁止重复与应合并清单
 
-生效快照：2026-08-21（保留 2026-08-11 历史锁题）
+生效快照：2026-08-22（保留 2026-08-11 历史锁题）
 
 本文件是员工 1–6、中央编辑与任何后续 SEO 代理的开题前检查表。三种语言只算一个内容身份；换语言、换标题、换问法、换人群修饰词或加年份，不会自动产生新页面资格。
+
+## 2026-08-22 六十题批次新增锁
+
+- 完整60题只以 `docs/organic-growth/content-scale-batch-2026-08-22.json` 为准；所有同义问法、反向线路和人群变体并入对应 proposedContentId。
+- PR #83 已发布 `shenzhen-airport-railway-station-border-port-selector`、`guilin-airport-or-railway-station-arrival-guide`、`yangshuo-town-or-yulong-river-where-to-stay`、`longji-rice-terraces-day-trip-or-overnight`，不得放回制作中。
+- 长城四段比较继续拒绝；本批曾研究但已删除。无新的实地数据集不得重开。
+- 虎跳峡多日徒步本批拒绝；官方未开发区域限制未解除前不得写成可执行路线。
+- 泛“中国必备App”拒绝；导航仅允许一个具名地址验证与备份 workflow owner，不做App榜单。
+- ATM 扣款/未出钞/吞卡并入 `china-atm-cash-not-dispensed` 更新队列，不建第二页。
+- 第一次24小时仍归员工4 deferred Hub/collection 方案；酒店寄存仍归 `foreigners-china-hotel` FAQ。
+- 曲阜三孔旧 draft slug `qufu-confucius-temple-mansion-cemetery-sequence` 禁止发布，必须并入 `qufu-three-confucian-sites-route`。
+- 上海迪士尼和北京环球各自只建一个护照+官方App+当日执行 owner，不按票型、项目或园区拆页。
+- 成都—重庆、长沙—张家界等走廊只建一个双向 canonical；不得为反向标题另建页。
+- 城市住宿只比较区域/基地；不得做酒店榜单、实时价格、实时房态或外宾接待保证。
+- 本批不提高付费服务权重，不强推 US$69 / US$129，不以新增销售 CTA 作为文章验收条件。
 
 ## 硬规则
 
