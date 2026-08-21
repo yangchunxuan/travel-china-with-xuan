@@ -1,0 +1,122 @@
+{
+  "id": "sanya-where-to-stay-four-bays",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "four-bay-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "Sanya",
+    "beaches",
+    "weather",
+    "resort logistics"
+  ],
+  "destinations": [
+    "sanya",
+    "hainan"
+  ],
+  "heroImagePath": "/images/guides/sanya-where-to-stay-four-bays/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/sanya-where-to-stay-four-bays/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/sanya-where-to-stay-four-bays/",
+      "title": "Where to Stay in Sanya: Sanya Bay, Dadonghai, Yalong Bay or Haitang Bay?",
+      "headline": "Choose Sanya Bay, Dadonghai, Yalong Bay or Haitang Bay",
+      "description": "Compare four Sanya bays by airport friction, urban fallback, beach focus, resort dependence and severe-weather recovery.",
+      "heroAlt": "The coastline of Sanya Bay in Sanya, Hainan.",
+      "heroCredit": {
+        "text": "Sanya Bay coastline, photographed by Zhangmoon618 on 10 February 2013; centre-cropped, resized and converted to WebP by Homeground. It is not evidence of current swimming conditions, weather or a hotel.",
+        "sourceLabel": "Original Sanya Bay photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanya_Bay_01.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "Sanya: choose one of four bays",
+      "featuredLinkLabel": "Choose a Sanya bay",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Sanya",
+        "Beaches",
+        "Where to stay"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/sanya-where-to-stay-four-bays/",
+      "title": "三亚住哪里：三亚湾、大东海、亚龙湾还是海棠湾？",
+      "headline": "三亚四个海湾住宿基地怎么选",
+      "description": "按机场摩擦、城市备选、沙滩主线、度假区依赖与恶劣天气恢复比较三亚四湾。",
+      "heroAlt": "海南三亚市三亚湾海岸线实景。",
+      "heroCredit": {
+        "text": "三亚湾海岸实景，Zhangmoon618 摄于 2013 年 2 月 10 日；Homeground 居中裁切、缩放并转为 WebP。不证明当前游泳条件、天气或任何酒店。",
+        "sourceLabel": "三亚湾原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanya_Bay_01.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "三亚四湾住宿选择",
+      "featuredLinkLabel": "选择一个三亚海湾",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "三亚",
+        "海滩",
+        "住宿区域"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/sanya-where-to-stay-four-bays/",
+      "title": "싼야 숙소: 싼야만·다둥하이·야룽만·하이탕만 비교",
+      "headline": "싼야 네 개 만 중 숙박 거점을 고르는 법",
+      "description": "공항 이동, 도시 대안, 해변 중심성, 리조트 의존도와 악천후 복구를 기준으로 네 만을 비교합니다.",
+      "heroAlt": "하이난 싼야시 싼야만 해안선의 실제 모습.",
+      "heroCredit": {
+        "text": "싼야만 해안의 실제 모습. Zhangmoon618이 2013년 2월 10일 촬영했으며 Homeground가 중앙부를 잘라 WebP로 변환했습니다. 현재 수영 조건·날씨나 특정 호텔의 증거가 아닙니다.",
+        "sourceLabel": "싼야만 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanya_Bay_01.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "싼야 네 개 만 숙소",
+      "featuredLinkLabel": "싼야 만 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "싼야",
+        "해변",
+        "숙소 위치"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Sanya",
+      "Sanya Bay Dadonghai Yalong Bay Haitang Bay",
+      "best Sanya bay first trip"
+    ],
+    "zh": [
+      "三亚住哪个湾",
+      "三亚湾大东海亚龙湾海棠湾住宿",
+      "第一次三亚住哪里"
+    ],
+    "ko": [
+      "싼야 숙소 어느 만",
+      "싼야만 다둥하이 야룽만 하이탕만",
+      "싼야 첫 여행 숙소"
+    ]
+  }
+}
