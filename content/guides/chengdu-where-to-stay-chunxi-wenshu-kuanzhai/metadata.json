@@ -1,0 +1,122 @@
+{
+  "id": "chengdu-where-to-stay-chunxi-wenshu-kuanzhai",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "three-area-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "Chengdu",
+    "neighbourhoods",
+    "luggage",
+    "night travel"
+  ],
+  "destinations": [
+    "chengdu",
+    "sichuan"
+  ],
+  "heroImagePath": "/images/guides/chengdu-where-to-stay-chunxi-wenshu-kuanzhai/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-where-to-stay-chunxi-wenshu-kuanzhai/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-where-to-stay-chunxi-wenshu-kuanzhai/",
+      "title": "Where to Stay in Chengdu: Chunxi Road, Wenshu or Kuanzhai Alley?",
+      "headline": "Choose Chunxi Road, Wenshu or Kuanzhai Alley as Your Chengdu Base",
+      "description": "Compare three central Chengdu bases by repeated days, evenings, luggage and the exact hotel entrance—not by a hotel ranking.",
+      "heroAlt": "Chunxi Road commercial street in central Chengdu viewed from an overpass.",
+      "heroCredit": {
+        "text": "Chunxi Road in Chengdu, photographed by Gong Chen on 3 May 2009 and edited by Mlogic; centre-cropped, resized and converted to WebP by Homeground. It identifies the Chunxi Road setting, not a hotel recommendation or current operation.",
+        "sourceLabel": "Original Chunxi Road photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chunxi_Road_seen_from_viaduct,_Chengdu.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Chengdu: three stay areas",
+      "featuredLinkLabel": "Choose a Chengdu base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Chengdu",
+        "Where to stay",
+        "Neighbourhoods"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-where-to-stay-chunxi-wenshu-kuanzhai/",
+      "title": "成都住哪里：春熙路、文殊院还是宽窄巷子？",
+      "headline": "第一次住成都，春熙路、文殊院和宽窄巷子怎么选",
+      "description": "不列酒店，按重复行程、晚间、行李与真实大堂入口比较成都三个中心住宿区域。",
+      "heroAlt": "从天桥望向成都市中心春熙路商业街的实景。",
+      "heroCredit": {
+        "text": "成都春熙路实景，Gong Chen 摄于 2009 年 5 月 3 日，Mlogic 编辑；Homeground 居中裁切、缩放并转为 WebP。照片只标识春熙路环境，不推荐酒店，也不证明当前运营。",
+        "sourceLabel": "春熙路原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chunxi_Road_seen_from_viaduct,_Chengdu.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "成都三个住宿区域",
+      "featuredLinkLabel": "选择成都住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "成都",
+        "住宿区域",
+        "第一次旅行"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-where-to-stay-chunxi-wenshu-kuanzhai/",
+      "title": "청두 숙소 위치: 춘시루·원수위안·콴자이샹쯔 비교",
+      "headline": "청두 첫 숙소, 춘시루·원수위안·콴자이샹쯔 중 어디가 맞을까요?",
+      "description": "호텔 순위 대신 반복 일정, 저녁, 짐과 실제 로비 입구를 기준으로 청두 중심 세 지역을 비교합니다.",
+      "heroAlt": "육교에서 바라본 청두 도심 춘시루 상업 거리의 실제 모습.",
+      "heroCredit": {
+        "text": "청두 춘시루의 실제 모습. Gong Chen이 2009년 5월 3일 촬영하고 Mlogic이 편집했으며 Homeground가 중앙부를 자르고 크기를 조정해 WebP로 변환했습니다. 특정 호텔 추천이나 현재 운영 근거가 아닙니다.",
+        "sourceLabel": "춘시루 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chunxi_Road_seen_from_viaduct,_Chengdu.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "청두 숙소 세 지역",
+      "featuredLinkLabel": "청두 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "청두",
+        "숙소 위치",
+        "첫 여행"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Chengdu",
+      "Chunxi Road or Kuanzhai Alley hotel",
+      "Wenshu Monastery area stay"
+    ],
+    "zh": [
+      "第一次去成都住哪里",
+      "春熙路文殊院宽窄巷子住宿",
+      "成都住宿区域怎么选"
+    ],
+    "ko": [
+      "청두 숙소 위치",
+      "춘시루 원수위안 콴자이샹쯔 숙소",
+      "청두 첫 여행 어디에 묵을까"
+    ]
+  }
+}
