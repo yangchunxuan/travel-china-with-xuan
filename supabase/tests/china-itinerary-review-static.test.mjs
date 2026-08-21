@@ -22,9 +22,13 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
   assert.match(copy, /Up to 10 travel days/);
   assert.match(copy, /up to 4 overnight bases/);
   assert.match(copy, /one shared route for 1–4 travellers/);
-  assert.match(page, /const reviewHref = plannerContactHref/);
-  assert.match(page, /const buildHref = plannerContactHref/);
-  assert.match(page, /const fullSupportHref = plannerContactHref/);
+  assert.match(page, /const reviewHref = serviceContactHref\("itinerary-review"\)/);
+  assert.match(page, /const buildHref = serviceContactHref\("route-build"\)/);
+  assert.match(page, /const fullSupportHref = serviceContactHref\("full-trip-support"\)/);
+  assert.match(
+    page,
+    /`\$\{homeCopy\.path\}\?\$\{routeServiceQueryKey\}=\$\{serviceId\}#planner-contact`/,
+  );
   const genericContactLine = page
     .split("\n")
     .find((line) => line.includes("const plannerContactHref"));
@@ -34,10 +38,7 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
     genericContactLine,
     /planner=destinations|free-brief|service=/,
   );
-  assert.doesNotMatch(
-    page,
-    /planner=destinations|#route-finder|service=(?:itinerary-review|route-build|full-trip-support)/,
-  );
+  assert.doesNotMatch(page, /planner=destinations|#route-finder/);
   assert.match(copy, /consultation: "Talk to a China trip planner"/);
   assert.match(copy, /consultation: "联系旅行规划师"/);
   assert.match(copy, /consultation: "중국 여행 플래너와 상담하기"/);
@@ -136,6 +137,7 @@ test("localized service intent reaches the existing enquiry mechanism", async ()
     /onPlanningIntentChange=\{handlePlanningIntentChange\}/,
   );
   assert.match(services, /routeServiceInterestByLocale/);
+  assert.match(services, /export const routeServiceQueryKey = "service"/);
   assert.match(services, /审核我的路线/);
   assert.match(services, /내 일정 검토/);
   assert.match(services, /selectedServiceAriaLabel/);

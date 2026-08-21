@@ -22,6 +22,10 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import {
+  routeServiceQueryKey,
+  type RouteServiceId,
+} from "../lib/routeServiceInterest";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -205,9 +209,11 @@ export function ChinaItineraryReviewPage({
   const homeCopy = getHomegroundCopy(locale);
   const copy = getChinaItineraryReviewCopy(locale);
   const plannerContactHref = `${homeCopy.path}#planner-contact`;
-  const reviewHref = plannerContactHref;
-  const buildHref = plannerContactHref;
-  const fullSupportHref = plannerContactHref;
+  const serviceContactHref = (serviceId: RouteServiceId) =>
+    `${homeCopy.path}?${routeServiceQueryKey}=${serviceId}#planner-contact`;
+  const reviewHref = serviceContactHref("itinerary-review");
+  const buildHref = serviceContactHref("route-build");
+  const fullSupportHref = serviceContactHref("full-trip-support");
   const rushGuideHref = `${homeCopy.path}guides/is-your-china-itinerary-too-rushed/`;
   const studioHref = `${homeCopy.path}studio/`;
   const structuredData = createStructuredData(locale, copy);

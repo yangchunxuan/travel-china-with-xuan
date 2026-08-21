@@ -92,6 +92,14 @@ test("Planning Services presents all three paths before education and links to l
     page,
     /const plannerContactHref = `\$\{(?:homeCopy|copy)\.path\}#planner-contact`/,
   );
+  assert.match(page, /const serviceContactHref = \(serviceId: RouteServiceId\)/);
+  for (const serviceId of [
+    "itinerary-review",
+    "route-build",
+    "full-trip-support",
+  ]) {
+    assert.match(page, new RegExp(`serviceContactHref\\(\\"${serviceId}\\"\\)`));
+  }
   assert.match(copy, /Review My Route/);
   assert.match(copy, /Build My Route/);
   assert.match(copy, /Full Trip Planning & Ground Support/);
@@ -174,10 +182,10 @@ test("commercial surfaces do not introduce checkout or file upload", async () =>
   assert.doesNotMatch(commercialSurface, /type=["']file["']/i);
   assert.doesNotMatch(commercialSurface, /(?:\?|&)utm_[a-z_]+=/i);
   assert.doesNotMatch(commercialSurface, /(?:\?|&)planner=/i);
-  assert.doesNotMatch(
-    commercialSurface,
-    /(?:\?|&)service=(?:itinerary-review|route-build|full-trip-support)/,
-  );
+  assert.match(servicePage, /routeServiceQueryKey/);
+  assert.match(servicePage, /serviceContactHref\("itinerary-review"\)/);
+  assert.match(servicePage, /serviceContactHref\("route-build"\)/);
+  assert.match(servicePage, /serviceContactHref\("full-trip-support"\)/);
   assert.doesNotMatch(packageJson, /"(?:@stripe\/[^"\s]+|stripe|@paypal\/[^"\s]+|paypal)"\s*:/i);
   assert.match(serviceCopy, /does not take payment/i);
   assert.match(serviceCopy, /本网站不直接收款/);
