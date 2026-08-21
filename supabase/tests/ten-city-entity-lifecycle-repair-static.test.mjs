@@ -14,9 +14,10 @@ const publishedHubIds = [
   "guangzhou",
   "hangzhou",
   "zhangjiajie",
+  "chongqing",
 ];
 
-const blockedHubIds = ["chongqing", "guilin", "shenzhen"];
+const blockedHubIds = ["guilin", "shenzhen"];
 
 const publishedDates = {
   beijing: "2026-08-16",
@@ -26,6 +27,7 @@ const publishedDates = {
   guangzhou: "2026-08-17",
   hangzhou: "2026-08-20",
   zhangjiajie: "2026-08-20",
+  chongqing: "2026-08-21",
 };
 
 const cityParents = {
@@ -78,7 +80,7 @@ test("the canonical entity registry gives all ten cities one valid administrativ
   }
 });
 
-test("the runtime contract publishes exactly seven Hubs with their original dates", async () => {
+test("the runtime contract publishes eight Hubs with truthful dates", async () => {
   const [registry, runtime, defaultRoute, localizedRoute, discovery, adapter] =
     await Promise.all([
       source("lib/destinationHubs.ts"),
@@ -130,10 +132,14 @@ test("the internal ten-city graph separates Hub lifecycle from entity existence"
   );
 
   assert.equal(byCity.size, 10);
-  for (const id of publishedHubIds) {
+  for (const id of publishedHubIds.filter((id) => id !== "chongqing")) {
     assert.equal(byCity.get(id)?.hubLifecycle, "published", id);
   }
-  assert.equal(byCity.get("chongqing")?.hubLifecycle, "docs-only");
+  assert.equal(
+    byCity.get("chongqing")?.hubLifecycle,
+    "docs-only",
+    "the pre-release governance snapshot remains historical",
+  );
   for (const id of ["guilin", "shenzhen"]) {
     assert.equal(byCity.get(id)?.hubLifecycle, "blocked", id);
   }

@@ -38,8 +38,9 @@ const publishedDestinationHubIds = [
   "guangzhou",
   "hangzhou",
   "zhangjiajie",
+  "chongqing",
 ];
-const blockedDestinationHubIds = ["chongqing", "guilin", "shenzhen"];
+const blockedDestinationHubIds = ["guilin", "shenzhen"];
 
 function routeFor(section, locale) {
   return `${locale.prefix}${section}/`;

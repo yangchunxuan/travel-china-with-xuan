@@ -132,7 +132,7 @@ const body = {
       id: "links",
       type: "internal-links",
       title: "继续在语境中理解现场表演",
-      items: [
+      items: [{ label: "先从重庆城市旅行指南开始", href: "/zh/destinations/chongqing/", description: "进入本专题前，先决定住几晚、住宿基地、交通门户，以及是否加入武隆或大足。" },
         { label: "选择第一次内蒙古长调演出", href: "/zh/guides/inner-mongolia-long-song-first-performance/", description: "同样从形式、表演者和聆听任务开始核验。" },
         { label: "看懂第一次佛山醒狮表演", href: "/zh/guides/foshan-lion-dance-first-performance-workflow/", description: "不要让一种传播性技艺代替整项传统。" },
         { label: "安排北京、西安与成都的顺序", href: "/zh/guides/beijing-xian-chengdu-route-order/", description: "判断成都的演出晚上适合放在整段行程哪里。" },

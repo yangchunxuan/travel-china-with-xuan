@@ -19,7 +19,7 @@ test("destination discovery consumes every reviewed hub in every locale", async 
 
   assert.deepEqual(
     [...idBlock[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]),
-    ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie"],
+    ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie", "chongqing"],
   );
   assert.match(
     registry,
@@ -35,7 +35,7 @@ test("destination discovery consumes every reviewed hub in every locale", async 
   assert.equal([...collectionBlock[0].matchAll(/description:/g)].length, 3);
 
   for (const locale of ["en", "zh", "ko"]) {
-    for (const id of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie"]) {
+    for (const id of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie", "chongqing"]) {
       const marker = `path: hubPath("${id}", "${locale}")`;
       const start = registry.indexOf(marker);
       assert.notEqual(start, -1, marker);

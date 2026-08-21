@@ -1,8 +1,20 @@
 # Internal-link plan — Chongqing Destination Hub
 
-Status: **draft link architecture for central review**
-Checked: **2026-08-15**
+Status: **RELEASE LINK GATE PASSED — MERGE REQUIRES CENTRAL ACTION**
+Checked: **2026-08-21**
 Rule: a body link is allowed only after the exact production URL resolves to the intended page with HTTP 200. Repository presence, a planned release, a redirect or another locale does not satisfy the gate.
+
+## Release reconciliation — 2026-08-21
+
+All five qualifying specialist owners now return the intended page in English,
+Simplified Chinese and Korean: **15 / 15 HTTP 200 checks passed**. Runtime Hub
+bodies link all five locale-correct owners, the four nationwide accommodation
+owners, itinerary review and the general trip brief. Each of the five
+specialist owners now links back to the locale-correct Chongqing Hub path.
+
+The August 15 allow-list and `BLOCKED_PENDING_EXACT_LIVE_200` rows below are
+retained as draft history and are superseded by this release reconciliation.
+No second `/guides/chongqing-travel-guide/` canonical was created.
 
 ## 1. Active body links
 

@@ -1,10 +1,36 @@
 # Source log — Chongqing Destination Hub draft
 
-Status: **DRAFT COMPLETE — CENTRAL REVIEW REQUIRED**
-Task: Homeground webpage task 08
-Checked at: **2026-08-15**
-Proposed canonical: `city-chongqing`
-Proposed path: `/destinations/chongqing/` with Chinese and Korean locale variants
+Status: **RELEASE CANDIDATE — MERGE AND PUBLICATION REQUIRE CENTRAL ACTION**
+Task: Chongqing Destination Hub release
+Release review: **2026-08-21**
+Canonical: `city-chongqing`
+Path: `/destinations/chongqing/` with Chinese and Korean locale variants
+
+## 0. Release reconciliation — 2026-08-21
+
+The sections below preserve the August 15 draft research record. The following
+release facts supersede any earlier `proposed`, `docs-only`, four-owner or
+asset-pending statement in that record:
+
+- latest release baseline: `274d243afc9fcc2ac9abd51487d06c667019cc0a`;
+- `city-chongqing` exists in `content/entities/core-places.json` as a
+  direct-administered municipality under `country-china`;
+- five qualifying owners are live, including
+  `chongqing-railway-station-selector`; all 15 EN/ZH/KO owner URLs returned the
+  intended HTTP 200 page on 2026-08-21;
+- the airport, railway, Chongqing Station construction, Liziba works, Wulong,
+  Dazu and cruise claims in the runtime body were rechecked against the
+  official sources in its default-collapsed Sources block;
+- the unstable future-Dazu-station claim was removed rather than frozen into
+  the Hub; exact trains, entrances, openings and piers remain recheck tasks;
+- seven real, location-specific, rights-recorded images were processed by
+  crop, resize and WebP conversion only; the release uses zero AI documentary
+  images;
+- three aligned structured bodies, the destination registry, runtime loader,
+  reciprocal links and export guards are implemented on the release branch.
+
+This document records release readiness, not a claim that the branch has been
+merged, deployed or observed live.
 
 ## 1. Canonical and administrative decision
 

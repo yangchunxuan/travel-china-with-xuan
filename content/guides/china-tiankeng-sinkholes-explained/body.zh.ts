@@ -51,7 +51,7 @@ const body = {schemaVersion:"1.0.0",blocks:[
   {id:"verify-heading",type:"heading",level:2,text:"最终核验清单"},
   {id:"verify",type:"list",items:["天坑名称有科学或权威依据","准确当前主管方/运营方和中文入口","当前公共路线而非科研坐标","运营方开放、门票/预约和最晚入场信息","天气、维修、洪水、落石和火险通知","可测台阶、高差和无障碍信息，而非“轻松”","返程交通和较早地面退出点","不野外下降、不飞无人机、不越栏、不标注敏感点"]},
   {id:"help",type:"callout",title:"需要一处有意义又可承受的喀斯特地点？",body:"告诉 Homeground 行程已有地区、行动能力边界，以及最关心地质、尺度还是摄影。真人规划师可以帮助选择正式公共场所并复核当期路线，而不是把你送到未经核实的坐标。",tone:"neutral"},
-  {id:"links",type:"internal-links",title:"负责任地安排自然准入",items:[
+  {id:"links",type:"internal-links",title:"负责任地安排自然准入",items:[{ label: "先从重庆城市旅行指南开始", href: "/zh/destinations/chongqing/", description: "进入本专题前，先决定住几晚、住宿基地、交通门户，以及是否加入武隆或大足。" },
     {label:"选择祁连山公共入口",href:"/zh/guides/qilian-mountains-public-gateways-and-access/",description:"在大型保护景观中使用同样严格的边界方法。"},
     {label:"理解中国气候区",href:"/zh/guides/china-climate-regions-for-trip-timing/",description:"不要把一个地区的天气结论套到所有喀斯特区域。"},
     {label:"规划中国轮椅可达路线",href:"/zh/guides/wheelchair-accessible-china-route-planning/",description:"用可测路线证据替换模糊无障碍标签。"},
