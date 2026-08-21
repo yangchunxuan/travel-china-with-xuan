@@ -1,0 +1,123 @@
+{
+  "id": "kunming-stone-forest-transport",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "transfer-decision-matrix",
+  "topics": [
+    "transport",
+    "railways",
+    "road-transfer",
+    "visitor-centre"
+  ],
+  "destinations": [
+    "kunming",
+    "stone-forest"
+  ],
+  "heroImagePath": "/images/guides/kunming-stone-forest-transport/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/kunming-stone-forest-transport/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/kunming-stone-forest-transport/",
+      "title": "Kunming to Stone Forest: Train, Bus or Car to the Correct Visitor Centre",
+      "headline": "Kunming to Stone Forest: Which Complete Transport Chain Works?",
+      "description": "Compare Kunming South–Shilin West rail, the current bus route and a legal road transfer by the exact Stone Forest visitor-centre handoff, luggage and return deadline.",
+      "heroAlt": "Exterior of Shilin West Railway Station with the Chinese station name above the entrance.",
+      "heroCredit": {
+        "text": "Shilin West Railway Station, 瑞丽江的河水, 9 June 2017; cropped and resized by Homeground. It identifies the station only and does not prove current trains or scenic access.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E7%9F%B3%E6%9E%97%E8%A5%BF%E7%AB%99.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "Plan Kunming–Stone Forest transport",
+      "featuredLinkLabel": "Reach the correct Stone Forest visitor centre",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Kunming",
+        "Stone Forest",
+        "Transfer"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/kunming-stone-forest-transport/",
+      "title": "昆明到石林：火车、巴士还是车，必须接到正确游客中心",
+      "headline": "昆明到石林，哪条完整交通链真正可行？",
+      "description": "按准确石林游客中心交接、行李和返程截止，比较昆明南—石林西铁路、当前巴士与合法道路接送。",
+      "heroAlt": "石林西站外观，入口上方可见中文站名。",
+      "heroCredit": {
+        "text": "石林西站，瑞丽江的河水摄于2017年6月9日；Homeground裁切并缩放。照片只确认此站，不证明当前车次或景区接驳。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E7%9F%B3%E6%9E%97%E8%A5%BF%E7%AB%99.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "规划昆明—石林交通",
+      "featuredLinkLabel": "到达正确石林游客中心",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "昆明",
+        "石林",
+        "接驳"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/kunming-stone-forest-transport/",
+      "title": "쿤밍–석림: 기차·버스·차로 올바른 방문자센터 가기",
+      "headline": "쿤밍–석림, 어느 전체 교통 사슬이 맞을까요?",
+      "description": "정확한 석림 방문자센터 인계, 짐과 귀환 마감으로 쿤밍남–스린서 철도, 현재 버스와 합법적 도로 이동을 비교합니다.",
+      "heroAlt": "입구 위 중국어 역명이 보이는 스린서역 외관.",
+      "heroCredit": {
+        "text": "스린서역. 瑞丽江的河水가 2017년 6월 9일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 이 역만 확인하며 현재 열차·관광지 접근을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E7%9F%B3%E6%9E%97%E8%A5%BF%E7%AB%99.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "쿤밍–석림 교통 계획",
+      "featuredLinkLabel": "올바른 석림 방문자센터 도착",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "쿤밍",
+        "석림",
+        "이동"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Kunming to Stone Forest",
+      "Kunming South to Shilin West",
+      "Stone Forest bus from Kunming",
+      "Shilin West to Stone Forest"
+    ],
+    "zh": [
+      "昆明到石林",
+      "昆明南到石林西",
+      "昆明到石林景区巴士",
+      "石林西到石林景区"
+    ],
+    "ko": [
+      "쿤밍 석림",
+      "쿤밍남 스린서",
+      "쿤밍 석림 버스",
+      "스린서 석림 관광지"
+    ]
+  }
+}
