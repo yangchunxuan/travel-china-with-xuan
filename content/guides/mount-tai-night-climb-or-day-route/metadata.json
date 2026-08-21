@@ -1,0 +1,84 @@
+{
+  "id": "mount-tai-night-climb-or-day-route",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "mount-tai",
+    "night-climb",
+    "red-gate",
+    "tianwai-village",
+    "cableway"
+  ],
+  "destinations": [
+    "taian",
+    "mount-tai",
+    "shandong"
+  ],
+  "heroImagePath": "/images/guides/mount-tai-night-climb-or-day-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/mount-tai-night-climb-or-day-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/mount-tai-night-climb-or-day-route/",
+      "title": "Mount Tai: Night Climb, Day Hike or Bus Route?",
+      "headline": "Mount Tai: Choose the Night Climb, the Historic Day Hike or the Bus-and-Cableway Route",
+      "description": "Compare darkness, weather, heritage, fatigue and descent before committing to a Mount Tai route.",
+      "heroAlt": "Jade Emperor Peak on Mount Tai in Shandong",
+      "navTitle": "Mount Tai route",
+      "featuredLinkLabel": "Choose a safer mountain day",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shandong",
+        "Mount Tai",
+        "Hiking"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/mount-tai-night-climb-or-day-route/",
+      "title": "泰山：夜爬、白天徒步还是巴士索道？",
+      "headline": "泰山路线怎么选：夜爬、红门白天徒步或巴士加索道",
+      "description": "在决定路线前比较黑暗、天气、文化遗产、体力与下山风险，不把日出当成保证。",
+      "heroAlt": "山东泰山玉皇顶",
+      "navTitle": "泰山路线",
+      "featuredLinkLabel": "选择更稳妥的登山方式",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "山东",
+        "泰山",
+        "登山"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/mount-tai-night-climb-or-day-route/",
+      "title": "타이산: 야간 등반, 낮 산행, 버스·케이블카",
+      "headline": "타이산 선택법: 야간 등반, 홍먼 낮 산행, 버스와 케이블카",
+      "description": "일출을 보장하지 않고 어둠, 날씨, 문화유산, 피로와 하산 위험을 비교해 코스를 정합니다.",
+      "heroAlt": "산둥 타이산의 옥황정",
+      "navTitle": "타이산 코스",
+      "featuredLinkLabel": "더 안전한 산행 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "산둥",
+        "타이산",
+        "산행"
+      ]
+    }
+  }
+}

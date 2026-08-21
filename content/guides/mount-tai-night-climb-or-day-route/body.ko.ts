@@ -1,0 +1,23 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "타이산의 일출은 야간 등반을 버킷리스트 장면으로 만들었지만 어둠은 산의 문화경관 대부분을 가립니다. 역사적인 홍먼 길, 톈와이춘 차량 길과 정상 케이블카는 다른 경험입니다. 극적인 소셜 사진보다 무엇을 이해하고 어떻게 내려올지를 기준으로 고르세요." },
+  { id: "answer", type: "callout", title: "바로 답하면", tone: "decision", body: "비문, 문, 사찰과 역사적 상승이 중요하고 무릎이 수천 계단을 감당하면 홍먼 낮 산행을 고릅니다. 정상 접근이 중요하거나 걷기를 줄여야 하면 공식 버스·케이블카를 이용합니다. 현행 개방, 안전한 날씨, 조명·방한, 동행과 하산 계획이 모두 있을 때만 야간 등반을 하고 일출은 보장되지 않음을 받아들이세요." },
+  { id: "routes-heading", type: "heading", level: 2, text: "세 코스는 서로 다른 타이산" },
+  { id: "routes", type: "table", caption: "코스 정체성", columns: ["코스", "핵심 경험", "주 위험"], rows: [["홍먼 낮 산행", "문·비석·사찰을 따라 전통 문화 상승", "많은 계단과 힘든 하산"], ["톈와이춘 버스+케이블카", "중톈먼과 정상 구역에 빠르게 접근", "줄, 차량/케이블카 중단과 역사길 축소"], ["홍먼 야간", "밤 상승과 가능성 있는 일출", "어둠, 추위, 혼잡, 피로와 무일출"]] },
+  { id: "heritage-heading", type: "heading", level: 2, text: "낮 산행이 산의 중요성을 보여 줍니다" },
+  { id: "heritage", type: "paragraph", text: "타이산 관리기관은 대묘–홍먼–정상 길을 전통 황제 등산로로 설명하며 계단을 따라 사찰, 문, 비석과 마애 글씨를 소개합니다. 유네스코는 수천 년 숭배, 제례, 예술과 자연이 만든 복합유산으로 봅니다. 낮에는 문 하나마다 상징적·물리적 질서가 바뀝니다." },
+  { id: "day-hike", type: "list", ordered: true, items: ["홍먼 개방, 현재 입구와 마지막 정상/하산 선택을 확인합니다.", "일찍 시작해 중저산을 읽고 경주하지 않습니다.", "중톈먼에서 무릎, 날씨와 일광을 다시 봅니다.", "케이블카가 운행하며 줄이 계획에 도움이 될 때만 사용합니다.", "피로가 결정하기 전에 하산 방식을 정합니다."] },
+  { id: "bus-heading", type: "heading", level: 2, text: "차량 코스는 정상 코스이지 모든 유산의 지름길이 아닙니다" },
+  { id: "bus", type: "paragraph", text: "공식 정보는 톈와이춘의 경관 차량이 중톈먼으로 가고 선택적으로 케이블카를 잇는다고 설명합니다. 산길은 경관 차량만 통행합니다. 정상, 제한된 시간이나 적은 계단에 좋지만 홍먼 문화 순서를 재현하지 않습니다." },
+  { id: "night-heading", type: "heading", level: 2, text: "야간 등반의 다섯 거부 조건" },
+  { id: "night", type: "table", caption: "하나만 있어도 취소", columns: ["거부", "이유"], rows: [["공식 미개방", "오래된 24시간 정보가 현행 폐쇄보다 우선할 수 없음"], ["폭풍·결빙·강풍·위험한 추위", "노출 정상과 젖거나 언 계단 위험"], ["확실한 조명·방한 없음", "폰 손전등과 불확실한 외투 대여는 안전 시스템 아님"], ["연락 계획 없는 단독", "피로·낙상·폰 고장 회복이 어려움"], ["하산 계획 없음", "지친 상태로 일출 도달은 절반의 과제"]] },
+  { id: "sunrise", type: "callout", title: "일출은 날씨 가능성이지 티켓 혜택이 아닙니다", tone: "warning", body: "구름, 안개, 비와 계절 조건이 시야를 없앨 수 있습니다. 폐쇄 우회, 표시 길 이탈, 사진 때문에 안전한 하산 시각을 넘기지 마세요. 회색 하늘이어도 야간 코스가 여전히 납득되어야 합니다." },
+  { id: "descent-heading", type: "heading", level: 2, text: "상승 전에 하산 계획" },
+  { id: "descent", type: "comparison", title: "하산 세 가지", columns: [{ heading: "걸어서", body: "길 경험은 남지만 무릎 부담과 피로가 커집니다. 체력, 일광과 날씨가 강할 때만." }, { heading: "케이블카+버스", body: "운행 시 계단을 줄이지만 줄과 중단이 있습니다. 현행 연결과 마지막 차량을 확인합니다." }, { heading: "혼합", body: "의미 있는 한 구간을 걷고 나머지는 공식 교통. 지치기 전에 연결점을 정합니다." }] },
+  { id: "failure", type: "table", caption: "문제와 회복", columns: ["문제", "대응"], rows: [["케이블카 중단", "직원 안내에 따르고 정상 체류를 줄여 안전 개방로 이용"], ["날씨 악화", "더 어려워지기 전 회귀 또는 공식 하산"], ["중톈먼 무릎 통증", "계단 목표 중지, 가능하면 공식 교통 또는 안전 하산"], ["야간 그룹 분리", "약속한 직원 있는 지점에서 재결합"], ["일출이 가림", "계획대로 내려가며 추위·혼잡 속 무한 대기 금지"]] },
+  { id: "what-to-pack", type: "list", items: ["현행 공식 코스와 날씨를 오프라인 저장합니다.", "접지 신발, 겹옷, 방수, 물과 음식을 준비합니다.", "밤에는 진짜 헤드램프와 예비 전원으로 손을 비웁니다.", "입구, 중톈먼, 정상과 하산점의 중국어 이름을 저장합니다.", "마지막 회귀 시각과 지연 가능한 숙박/후속 계획을 둡니다."] },
+  { id: "boundary", type: "callout", title: "운영시간이나 장비 대여를 보장하지 않습니다", tone: "neutral", body: "코스 시간, 표, 차량, 케이블카, 날씨 통제와 정상 시설은 변동합니다. 당일 관리기관 공지를 다시 여세요. 이 글은 코스와 위험 결정을 담당하고 고정 운영표를 만들지 않습니다." },
+  { id: "links", type: "internal-links", title: "타이산 연결", items: [{ label: "산둥반도 해안 철도", href: "/ko/guides/shandong-peninsula-coastal-city-rail-arc/", description: "타이안 산과 반도 노선을 분리합니다." }, { label: "중국 고속철 첫 이용", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "철도 도착과 여권 탑승을 처리합니다." }, { label: "부모님과 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "산 대안과 회복일을 둡니다." }, { label: "중국 공휴일", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "정상 혼잡과 취약한 일정이 겹치지 않게 합니다." }, { label: "일정이 너무 바쁜가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "상승, 하산과 다음 날 회복을 셉니다." }] },
+  { id: "sources", type: "sources", title: "일차 출처와 사진 크레디트", items: [{ label: "타이산 공식 코스와 경관 정보", url: "https://tsgw.taian.gov.cn/col/col204913/index.html", publisher: "타이산 풍경명승구 관리위원회", reviewedAt: "2026-08-22" }, { label: "타이산 세계유산", url: "https://whc.unesco.org/en/list/437", publisher: "유네스코 세계유산센터", reviewedAt: "2026-08-22" }, { label: "대표 사진: 타이산 옥황정, CC0", url: "https://commons.wikimedia.org/wiki/File:Jade_Emperor_Peak_of_Mount_Tai_%E6%B3%B0%E5%B1%B1%E7%8E%89%E7%9A%87%E9%A1%B6_2007_075.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-22" }] }
+] } as const satisfies StructuredPageBody;
+export default body;
