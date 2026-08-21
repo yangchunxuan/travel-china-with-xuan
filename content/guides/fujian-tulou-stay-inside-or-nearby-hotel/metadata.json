@@ -1,0 +1,123 @@
+{
+  "id": "fujian-tulou-stay-inside-or-nearby-hotel",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "heritage-building-or-nearby-hotel-decision",
+  "topics": [
+    "accommodation",
+    "Fujian Tulou",
+    "heritage",
+    "rural stay",
+    "fire safety",
+    "mobility"
+  ],
+  "destinations": [
+    "fujian",
+    "zhangzhou",
+    "longyan"
+  ],
+  "heroImagePath": "/images/guides/fujian-tulou-stay-inside-or-nearby-hotel/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/fujian-tulou-stay-inside-or-nearby-hotel/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/fujian-tulou-stay-inside-or-nearby-hotel/",
+      "title": "Stay in a Fujian Tulou or at a Nearby Hotel?",
+      "headline": "Choose a Tulou Night Only After Verifying the Exact Building and Room",
+      "description": "Compare a night inside a Fujian tulou with a nearby hotel by cluster, legal room, fire exit, bathroom, sound, road access and morning value.",
+      "heroAlt": "The real open courtyard and timber galleries inside Shengping Lou in Hua'an County, Fujian.",
+      "heroCredit": {
+        "text": "Inside Shengping Lou in Hua'an County, photographed by rheins on 30 November 2013; centre-cropped, resized and converted to WebP by Homeground. It shows one real tulou interior, not a bookable-room or safety guarantee.",
+        "sourceLabel": "Original Shengping Lou interior photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8D%87%E5%B9%B3%E6%A5%BC%E5%86%85_-_Interior_of_Shengping_Lou_-_2013.11_-_panoramio.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "Tulou or nearby hotel",
+      "featuredLinkLabel": "Choose a Fujian tulou stay",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Fujian Tulou",
+        "Rural stay",
+        "Heritage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/fujian-tulou-stay-inside-or-nearby-hotel/",
+      "title": "福建土楼住楼内还是附近酒店？",
+      "headline": "先核验具体土楼与房间，再决定是否住进楼内",
+      "description": "按土楼群、合法客房、消防出口、卫生间、隔音、道路接驳与清晨收益比较楼内住宿和附近酒店。",
+      "heroAlt": "福建华安县升平楼内真实天井与木构回廊。",
+      "heroCredit": {
+        "text": "福建华安县升平楼内部实景，rheins 摄于 2013 年 11 月 30 日；Homeground 居中裁切、缩放并转为 WebP。照片只展示一座真实土楼内部，不保证客房或安全条件。",
+        "sourceLabel": "升平楼内部原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8D%87%E5%B9%B3%E6%A5%BC%E5%86%85_-_Interior_of_Shengping_Lou_-_2013.11_-_panoramio.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "土楼内还是附近酒店",
+      "featuredLinkLabel": "选择福建土楼住宿",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "福建土楼",
+        "乡村住宿",
+        "文化遗产"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/fujian-tulou-stay-inside-or-nearby-hotel/",
+      "title": "푸젠 토루 안과 근처 호텔, 어디에 묵을까요?",
+      "headline": "정확한 토루와 객실을 확인한 뒤 내부 숙박을 고르세요",
+      "description": "토루 군, 합법 객실, 화재 대피, 욕실, 소음, 도로 접근과 아침 가치로 토루 안과 근처 호텔을 비교합니다.",
+      "heroAlt": "푸젠성 화안현 성핑러우 내부의 실제 중정과 목조 회랑.",
+      "heroCredit": {
+        "text": "푸젠성 화안현 성핑러우 내부. rheins가 2013년 11월 30일 촬영했으며 Homeground가 중앙부를 자르고 WebP로 변환했습니다. 실제 토루 하나의 내부일 뿐 예약 객실이나 안전 조건을 보장하지 않습니다.",
+        "sourceLabel": "성핑러우 내부 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8D%87%E5%B9%B3%E6%A5%BC%E5%86%85_-_Interior_of_Shengping_Lou_-_2013.11_-_panoramio.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "토루 안과 근처 호텔",
+      "featuredLinkLabel": "푸젠 토루 숙소 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "푸젠 토루",
+        "농촌 숙박",
+        "문화유산"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "stay in a Fujian tulou",
+      "Fujian tulou hotel or guesthouse",
+      "sleep inside tulou"
+    ],
+    "zh": [
+      "福建土楼住宿",
+      "住土楼里面还是附近酒店",
+      "土楼民宿怎么选"
+    ],
+    "ko": [
+      "푸젠 토루 숙박",
+      "토루 안 숙소와 근처 호텔",
+      "푸젠 토루에서 자기"
+    ]
+  }
+}
