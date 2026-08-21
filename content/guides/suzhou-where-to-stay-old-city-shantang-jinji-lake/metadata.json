@@ -1,0 +1,122 @@
+{
+  "id": "suzhou-where-to-stay-old-city-shantang-jinji-lake",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "three-area-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "Suzhou",
+    "classical gardens",
+    "Shantang",
+    "Jinji Lake"
+  ],
+  "destinations": [
+    "suzhou",
+    "jiangsu"
+  ],
+  "heroImagePath": "/images/guides/suzhou-where-to-stay-old-city-shantang-jinji-lake/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/suzhou-where-to-stay-old-city-shantang-jinji-lake/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/suzhou-where-to-stay-old-city-shantang-jinji-lake/",
+      "title": "Where to Stay in Suzhou: Old City, Shantang Street or Jinji Lake?",
+      "headline": "Choose Suzhou Old City, Shantang or Jinji Lake as Your Base",
+      "description": "Compare garden mornings, canal evenings and modern east-side plans while keeping hotel names, prices and inventory out of the decision.",
+      "heroAlt": "The Shantang River and historic waterside buildings in Suzhou.",
+      "heroCredit": {
+        "text": "Shantang River in Suzhou, photographed by Windmemories on 17 April 2017; centre-cropped, resized and converted to WebP by Homeground. It identifies Shantang's canal setting, not a hotel or current crowd level.",
+        "sourceLabel": "Original Shantang River photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-04-17_Shantang_River,_Suzhou_02.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Suzhou: Old City, Shantang or Jinji Lake",
+      "featuredLinkLabel": "Choose a Suzhou base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Suzhou",
+        "Shantang",
+        "Where to stay"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/suzhou-where-to-stay-old-city-shantang-jinji-lake/",
+      "title": "苏州住哪里：古城、山塘还是金鸡湖？",
+      "headline": "第一次住苏州，古城、山塘与金鸡湖怎么选",
+      "description": "按园林清晨、运河晚间与东部现代行程比较住宿基地，不列酒店、不报价格房态。",
+      "heroAlt": "苏州山塘河与沿岸历史建筑实景。",
+      "heroCredit": {
+        "text": "苏州山塘河实景，Windmemories 摄于 2017 年 4 月 17 日；Homeground 居中裁切、缩放并转为 WebP。只标识山塘河环境，不推荐酒店，也不证明当前人流。",
+        "sourceLabel": "山塘河原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-04-17_Shantang_River,_Suzhou_02.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "苏州古城、山塘或金鸡湖",
+      "featuredLinkLabel": "选择苏州住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "苏州",
+        "山塘",
+        "住宿区域"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/suzhou-where-to-stay-old-city-shantang-jinji-lake/",
+      "title": "쑤저우 숙소 위치: 고성·산탕·진지호 비교",
+      "headline": "쑤저우 첫 숙소, 고성·산탕·진지호 중 어디가 맞을까요?",
+      "description": "정원 아침, 운하 저녁과 동쪽 현대 일정을 비교하되 호텔 이름·가격·재고는 판단에서 제외합니다.",
+      "heroAlt": "쑤저우 산탕허와 강변의 역사 건축물.",
+      "heroCredit": {
+        "text": "쑤저우 산탕허의 실제 모습. Windmemories가 2017년 4월 17일 촬영했으며 Homeground가 중앙부를 잘라 WebP로 변환했습니다. 특정 호텔이나 현재 혼잡도의 증거가 아닙니다.",
+        "sourceLabel": "산탕허 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-04-17_Shantang_River,_Suzhou_02.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "쑤저우 고성·산탕·진지호",
+      "featuredLinkLabel": "쑤저우 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "쑤저우",
+        "산탕",
+        "숙소 위치"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Suzhou",
+      "Suzhou Old City or Jinji Lake hotel",
+      "Shantang Street area stay"
+    ],
+    "zh": [
+      "苏州住哪里",
+      "苏州古城山塘金鸡湖住宿",
+      "第一次苏州住宿区域"
+    ],
+    "ko": [
+      "쑤저우 숙소 위치",
+      "쑤저우 고성 산탕 진지호 숙소",
+      "쑤저우 첫 여행 어디에 묵을까"
+    ]
+  }
+}
