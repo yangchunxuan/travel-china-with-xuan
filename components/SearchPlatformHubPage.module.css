@@ -52,11 +52,173 @@
 .guideBody h3,
 .emptyState h2,
 .platformMapIntro h2,
+.decisionSequenceIntro h2,
+.stepBody h3,
+.ownerBoundaryIntro h2,
+.ownerBoundary h3,
 .cta h2 {
   font-family: var(--hg-editorial);
   font-weight: 400;
   letter-spacing: -0.045em;
   text-wrap: balance;
+}
+
+.decisionSequence {
+  display: grid;
+  gap: clamp(3rem, 8vw, 9rem);
+  grid-template-columns: minmax(18rem, 0.58fr) minmax(0, 1fr);
+  padding: clamp(4.75rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.decisionSequenceIntro {
+  align-self: start;
+  position: sticky;
+  top: 7rem;
+}
+
+.decisionSequenceIntro h2,
+.ownerBoundaryIntro h2 {
+  font-size: clamp(2.65rem, 5vw, 5rem);
+  line-height: 0.98;
+  margin: 1rem 0 0;
+  max-width: 11ch;
+}
+
+.decisionSequenceIntro > p:last-child,
+.ownerBoundaryIntro > p:last-child {
+  color: var(--hub-muted);
+  line-height: 1.72;
+  max-width: 32rem;
+}
+
+.decisionSteps {
+  border-block-start: 1px solid var(--hub-line);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.decisionSteps > li {
+  border-block-end: 1px solid var(--hub-line);
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  padding-block: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.stepNumber,
+.boundaryPosition {
+  color: var(--hub-rust);
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  margin: 0.35rem 0 0;
+}
+
+.stepBody {
+  min-width: 0;
+}
+
+.stepBody h3,
+.ownerBoundary h3 {
+  font-size: clamp(1.8rem, 3vw, 3.15rem);
+  line-height: 1.04;
+  margin: 0;
+}
+
+.stepBody > p:not(.doneWhen) {
+  color: var(--hub-muted);
+  line-height: 1.68;
+  margin: 1rem 0 0;
+  max-width: 48rem;
+}
+
+.doneWhen {
+  border-inline-start: 2px solid var(--hub-rust);
+  line-height: 1.65;
+  margin: 1.4rem 0 0;
+  max-width: 48rem;
+  padding-inline-start: 1rem;
+}
+
+.doneWhen strong {
+  color: var(--hub-rust);
+}
+
+.stepLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.stepLinks a,
+.ownerBoundary a,
+.currentOwner {
+  align-items: center;
+  border: 1px solid var(--hub-line);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 760;
+  gap: 1rem;
+  line-height: 1.35;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+}
+
+.stepLinks a:hover,
+.stepLinks a:focus-visible,
+.ownerBoundary a:hover,
+.ownerBoundary a:focus-visible {
+  border-color: var(--hub-rust);
+  color: var(--hub-rust);
+}
+
+.ownerBoundary {
+  background: var(--hub-soft);
+  display: grid;
+  gap: clamp(3rem, 8vw, 9rem);
+  grid-template-columns: minmax(18rem, 0.58fr) minmax(0, 1fr);
+  padding: clamp(4.75rem, 8vw, 8rem) max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.ownerBoundary > ul {
+  border-block-start: 1px solid var(--hub-line);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ownerBoundary > ul > li {
+  border-block-end: 1px solid var(--hub-line);
+  padding-block: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.ownerBoundary h3 {
+  font-size: clamp(1.65rem, 2.5vw, 2.55rem);
+  margin-block-start: 0.65rem;
+}
+
+.ownerBoundary li > p:not(.boundaryPosition) {
+  color: var(--hub-muted);
+  line-height: 1.65;
+  margin: 0.85rem 0 0;
+  max-width: 44rem;
+}
+
+.ownerBoundary a,
+.currentOwner {
+  margin-block-start: 1.25rem;
+}
+
+.currentOwner {
+  background: var(--hub-ink);
+  border-color: var(--hub-ink);
+  color: var(--hg-color-on-dark);
 }
 
 .hero h1 {
@@ -493,6 +655,8 @@
 @media (max-width: 980px) {
   .heroInner,
   .collectionHeading,
+  .decisionSequence,
+  .ownerBoundary,
   .cta {
     grid-template-columns: 1fr;
   }
@@ -517,6 +681,10 @@
   }
 
   .platformMapIntro {
+    position: static;
+  }
+
+  .decisionSequenceIntro {
     position: static;
   }
 }
@@ -567,6 +735,22 @@
 
   .collection {
     padding-block: 4.5rem;
+  }
+
+  .decisionSteps > li {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+  }
+
+  .stepLinks {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .stepLinks a {
+    border-radius: 0.8rem;
+    justify-content: space-between;
+    overflow-wrap: anywhere;
+    width: 100%;
   }
 
   .guideGrid > li,

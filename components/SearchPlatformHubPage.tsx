@@ -8,6 +8,10 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import {
+  getFirstTripPlanHubCopy,
+  getFirstTripPlanOwnerPath,
+} from "../lib/firstTripPlanHubI18n";
+import {
   absoluteManifestAlternates,
   getSearchHubEntry,
   getSearchHubGuides,
@@ -55,6 +59,85 @@ function guideGridClass(index: number, total: number) {
   if (trailingCount === 1 && index === total - 1) return styles.fullGuide;
   if (trailingCount === 2 && index >= total - 2) return styles.halfGuide;
   return undefined;
+}
+
+function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
+  const copy = getFirstTripPlanHubCopy(locale);
+
+  return (
+    <>
+      <section
+        className={styles.decisionSequence}
+        aria-labelledby="first-trip-sequence-title"
+      >
+        <div className={styles.decisionSequenceIntro}>
+          <p className={styles.eyebrow}>{copy.eyebrow}</p>
+          <h2 id="first-trip-sequence-title">{copy.title}</h2>
+          <p>{copy.introduction}</p>
+        </div>
+        <ol className={styles.decisionSteps}>
+          {copy.steps.map((step, index) => (
+            <li id={`first-trip-step-${step.id}`} key={step.id}>
+              <p className={styles.stepNumber} aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <div className={styles.stepBody}>
+                <h3>{step.title}</h3>
+                <p>{step.task}</p>
+                <p className={styles.doneWhen}>
+                  <strong>{copy.doneLabel}:</strong> {step.doneWhen}
+                </p>
+                <ul className={styles.stepLinks}>
+                  {step.links.map((link) => (
+                    <li key={link.ownerId}>
+                      <Link
+                        href={getFirstTripPlanOwnerPath(link.ownerId, locale)}
+                      >
+                        {link.label}
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section
+        className={styles.ownerBoundary}
+        aria-labelledby="first-trip-owner-boundary-title"
+      >
+        <div className={styles.ownerBoundaryIntro}>
+          <p className={styles.eyebrow}>Homeground</p>
+          <h2 id="first-trip-owner-boundary-title">{copy.boundary.title}</h2>
+          <p>{copy.boundary.description}</p>
+        </div>
+        <ul>
+          {copy.boundary.items.map((item, index) => (
+            <li key={item.title}>
+              <p className={styles.boundaryPosition} aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              {item.ownerId && item.linkLabel ? (
+                <Link
+                  href={getFirstTripPlanOwnerPath(item.ownerId, locale)}
+                >
+                  {item.linkLabel}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              ) : (
+                <span className={styles.currentOwner}>{copy.boundary.currentLabel}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
+  );
 }
 
 function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
@@ -197,6 +280,8 @@ export function SearchPlatformHubPage({
             })}
           </div>
         </nav>
+
+        {section === "plan" ? <FirstTripPlanSequence locale={locale} /> : null}
 
         <section className={styles.platformMap} aria-labelledby="hub-topics-title">
           <div className={styles.platformMapIntro}>
