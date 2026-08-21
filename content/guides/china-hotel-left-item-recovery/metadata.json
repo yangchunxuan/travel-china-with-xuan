@@ -1,0 +1,121 @@
+{
+  "id": "china-hotel-left-item-recovery",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "hotel-lost-property-recovery",
+  "topics": [
+    "accommodation",
+    "lost property",
+    "hotel recovery",
+    "courier",
+    "identity documents",
+    "privacy"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-hotel-left-item-recovery/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-hotel-left-item-recovery/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-hotel-left-item-recovery/",
+      "title": "Left Something at a China Hotel: Verify, Collect or Ship It",
+      "headline": "Recover an Item Left at a China Hotel Without Losing the Chain of Custody",
+      "description": "Ask the right hotel to search, verify the item safely, choose self-collection, an authorised collector or eligible shipping, and record every handoff.",
+      "heroAlt": "A real hotel front-desk registration area in Haicheng, Longhai, Fujian.",
+      "heroCredit": {
+        "text": "A hotel reception in Haicheng, Longhai, photographed by Vmenkov on 4 November 2015; centre-cropped, resized and converted to WebP by Homeground. It illustrates a staffed handoff point and does not identify a lost-property case or current hotel policy.",
+        "sourceLabel": "Original Longhai hotel-reception photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "Hotel left-item recovery",
+      "featuredLinkLabel": "Recover an item from a hotel",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hotels",
+        "Lost property",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-hotel-left-item-recovery/",
+      "title": "东西落在中国酒店：核实、自取还是寄回",
+      "headline": "物品落在酒店后，用完整保管链找回",
+      "description": "请正确酒店查找，安全核验物品，在本人领取、授权代领和合规寄递之间选择，并记录每次交接。",
+      "heroAlt": "福建龙海海澄一处真实酒店前台与住宿登记告示。",
+      "heroCredit": {
+        "text": "福建龙海海澄一处酒店前台实景，Vmenkov 摄于 2015 年 11 月 4 日；Homeground 居中裁切、缩放并转为 WebP。图片只说明有人交接点，不涉及真实失物案件，也不证明当前酒店政策。",
+        "sourceLabel": "龙海酒店前台原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "酒店遗失物品找回",
+      "featuredLinkLabel": "找回落在酒店的物品",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "酒店",
+        "遗失物品",
+        "恢复流程"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-hotel-left-item-recovery/",
+      "title": "중국 호텔에 물건을 두고 왔을 때: 확인·수령·배송",
+      "headline": "중국 호텔 유실물을 인계 기록과 함께 회수하기",
+      "description": "정확한 호텔에 수색을 요청하고 물건을 안전하게 확인한 뒤 본인 수령, 대리 수령 또는 가능 품목 배송을 선택해 모든 인계를 기록합니다.",
+      "heroAlt": "푸젠성 룽하이 하이청의 실제 호텔 프런트와 투숙 등록 안내판.",
+      "heroCredit": {
+        "text": "푸젠성 룽하이 하이청의 호텔 프런트. Vmenkov가 2015년 11월 4일 촬영했으며 Homeground가 중앙부를 자르고 WebP로 변환했습니다. 유인 인계 지점을 설명할 뿐 실제 유실물 사건이나 현재 호텔 정책을 나타내지 않습니다.",
+        "sourceLabel": "룽하이 호텔 프런트 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "navTitle": "호텔 유실물 회수",
+      "featuredLinkLabel": "호텔에 둔 물건 되찾기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "호텔",
+        "유실물",
+        "회수 절차"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "left something at China hotel",
+      "China hotel lost and found",
+      "ship item from China hotel"
+    ],
+    "zh": [
+      "东西落在酒店怎么办",
+      "酒店遗失物品寄回",
+      "酒店失物招领流程"
+    ],
+    "ko": [
+      "중국 호텔에 물건 두고 옴",
+      "중국 호텔 분실물 배송",
+      "호텔 유실물 찾기"
+    ]
+  }
+}
