@@ -340,8 +340,75 @@ for (const locale of locales) {
       `/${locale.prefix}guides/ section index`,
     );
   }
+  assertIncludes(
+    hub,
+    `action="/${locale.prefix}guides/search/"`,
+    `/${locale.prefix}guides/ search form`,
+  );
+  assertIncludes(hub, 'name="q"', `/${locale.prefix}guides/ search query field`);
+}
+
+for (const locale of locales) {
+  const homepagePath = path.join(outputRoot, locale.prefix, "index.html");
+  const homepage = await readFile(homepagePath, "utf8");
+  const context = `/${locale.prefix}`;
+  const searchIndexRoute = `${locale.prefix}guides/guide-search-index.json`;
+  const searchIndexPath = path.join(outputRoot, searchIndexRoute);
+
+  assertIncludes(
+    homepage,
+    `action="/${locale.prefix}guides/search/"`,
+    `${context} homepage guide-search form`,
+  );
+  if (!(await fileExists(searchIndexPath))) {
+    throw new Error(`/${searchIndexRoute}: homepage search index is missing`);
+  }
+
+  const documents = JSON.parse(await readFile(searchIndexPath, "utf8"));
+  if (!Array.isArray(documents) || documents.length === 0) {
+    throw new Error(`/${searchIndexRoute}: homepage search index is empty`);
+  }
+  if (documents.some((document) => document.locale !== locale.runtime)) {
+    throw new Error(
+      `/${searchIndexRoute}: homepage search index contains another locale`,
+    );
+  }
+}
+
+for (const locale of locales) {
+  const route = `${locale.prefix}guides/search/`;
+  const filePath = path.join(outputRoot, route, "index.html");
+  const context = `/${route}`;
+  const canonical = `${siteUrl}/${route}`;
+  if (!(await fileExists(filePath))) {
+    throw new Error(`${context}: guide search export is missing`);
+  }
+
+  const html = await readFile(filePath, "utf8");
+  assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+  assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+  assertIncludes(html, '<meta name="referrer" content="origin"/>', context);
+  if (!/<meta[^>]+name="robots"[^>]+content="[^"]*noindex[^"]*follow/iu.test(html)) {
+    throw new Error(`${context}: guide search route must be noindex, follow`);
+  }
+  if (sitemapLocs.includes(canonical)) {
+    throw new Error(`${context}: guide search route entered sitemap.xml`);
+  }
+
+  for (const target of locales) {
+    assertIncludes(
+      html,
+      `<link rel="alternate" hrefLang="${target.hreflang}" href="${siteUrl}/${target.prefix}guides/search/"/>`,
+      context,
+    );
+  }
+  assertIncludes(
+    html,
+    `<link rel="alternate" hrefLang="x-default" href="${siteUrl}/guides/search/"/>`,
+    context,
+  );
 }
 
 console.log(
-  `✓ ${allSections.length * locales.length} section hubs, ${allSections.length * 3 * locales.length} collection hubs and ${locales.length} Evan profiles match their export contract; every internal href/src on indexable pages resolves.`,
+  `✓ ${allSections.length * locales.length} section hubs, ${allSections.length * 3 * locales.length} collection hubs, ${locales.length} guide search routes, ${locales.length} homepage search indexes and ${locales.length} Evan profiles match their export contract; every internal href/src on indexable pages resolves.`,
 );

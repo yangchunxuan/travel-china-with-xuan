@@ -73,6 +73,32 @@ test("first-touch attribution does not turn internal links into acquisition", as
   );
 });
 
+test("free-text guide searches stay out of third-party measurement URLs", async () => {
+  const [analytics, englishRoute, localizedRoute] = await Promise.all([
+    source("lib/analytics.ts"),
+    source("app/(default)/guides/search/page.tsx"),
+    source("app/(localized)/[locale]/guides/search/page.tsx"),
+  ]);
+
+  assert.match(
+    analytics,
+    /guideSearchPathPattern[\s\S]{0,500}URLSearchParams\(window\.location\.search\)\.has\("q"\)/u,
+    "Query-bearing guide-search routes must be detected without persisting the query",
+  );
+  assert.match(
+    analytics,
+    /page_location: safeLocation,[\s\S]{0,80}page_referrer: safeLocation/u,
+    "GA events on guide search must override URL and referrer with query-free values",
+  );
+  assert.match(
+    analytics,
+    /marketingAllowed && !hasSensitiveGuideSearchQuery\(\)/u,
+    "Meta events must be suppressed while a free-text guide query is in the URL",
+  );
+  assert.match(englishRoute, /referrer: "origin"/u);
+  assert.match(localizedRoute, /referrer: "origin"/u);
+});
+
 test("first-party writes require a short-lived server credential", async () => {
   const analytics = await source("lib/analytics.ts");
 

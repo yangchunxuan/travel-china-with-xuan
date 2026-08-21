@@ -4,7 +4,7 @@
 **Date:** 2026-08-10
 **Depends on:** Phase 0 search-platform foundation
 **Scope:** Information architecture, controlled collections, topic inventory, coverage governance, and the first production workflow
-**Out of scope:** Automatic publishing, a general-purpose CMS, mass generation of destination/month combinations, and changes to the Homeground homepage
+**Out of scope:** Automatic publishing, a general-purpose CMS, mass generation of destination/month combinations, and broader changes to the Homeground homepage. The owner-approved guide finder inside the existing Travel Guides section is the sole homepage exception.
 
 > **Pilot implementation note (2026-08-10):** `docs/article-production-lite.md` is the active, deliberately smaller article-page workflow. It implements independent per-guide folders and deterministic temporary registry generation, but does not implement the proposed GitHub Issue lease, production-packet hash or full legacy migration. Those heavier controls remain future options only if real coordination failures justify them.
 
@@ -422,6 +422,12 @@ Search results use a noindex GET route:
 /zh/guides/search/?q=...
 /ko/guides/search/?q=...
 ```
+
+The same search is exposed on the three localized homepages inside the existing
+Travel Guides section, after its heading and before the featured-guide cards. It
+does not enter the hero or compete with the Route Finder. The homepage fetches a
+same-language static JSON index only after search interaction; the full corpus
+must not be bundled into the initial homepage client payload.
 
 Requirements:
 
@@ -1785,7 +1791,7 @@ The following decisions are proposed as approved defaults unless the owner chang
 6. Count three language versions as one topic.
 7. Require source packs before drafting.
 8. Do not let the writing agent select its own next topic.
-9. Keep the homepage outside Phase 1.
+9. Keep broader homepage changes outside Phase 1; expose only the approved guide finder inside the existing Travel Guides section.
 10. Preserve all existing article URLs and renderers during migration.
 
 ## 20. Definition of Phase 1 complete

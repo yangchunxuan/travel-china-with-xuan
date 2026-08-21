@@ -23,10 +23,42 @@
 
 .heroInner,
 .countryGuideInner,
+.searchBandInner,
 .entryInner,
 .ctaInner {
   margin-inline: auto;
   max-width: 1380px;
+}
+
+.searchBand {
+  background: var(--guides-soft);
+  border-block-end: 1px solid var(--guides-line);
+  padding: clamp(3rem, 6vw, 5.5rem) max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.searchBandInner {
+  align-items: center;
+  display: grid;
+  gap: clamp(2.5rem, 7vw, 8rem);
+  grid-template-columns: minmax(18rem, 0.62fr) minmax(0, 1.05fr);
+}
+
+.searchBandCopy h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.5rem, 4.5vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  margin: 1rem 0 0;
+  max-width: 10ch;
+  text-wrap: balance;
+}
+
+.searchBandCopy > p:last-child {
+  color: var(--guides-muted);
+  line-height: 1.68;
+  margin: 1.35rem 0 0;
+  max-width: 35rem;
 }
 
 .heroTopline {
@@ -622,6 +654,7 @@
 .guidesPage[data-homeground-locale="zh"] .heroGrid h1,
 .guidesPage[data-homeground-locale="zh"] .countryGuideIntro h2,
 .guidesPage[data-homeground-locale="zh"] .decisionGrid h3,
+.guidesPage[data-homeground-locale="zh"] .searchBandCopy h2,
 .guidesPage[data-homeground-locale="zh"] .catalogIntro h2,
 .guidesPage[data-homeground-locale="zh"] .entryIntro h2,
 .guidesPage[data-homeground-locale="zh"] .guideBody h3,
@@ -632,6 +665,7 @@
 .guidesPage[data-homeground-locale="ko"] .heroGrid h1,
 .guidesPage[data-homeground-locale="ko"] .countryGuideIntro h2,
 .guidesPage[data-homeground-locale="ko"] .decisionGrid h3,
+.guidesPage[data-homeground-locale="ko"] .searchBandCopy h2,
 .guidesPage[data-homeground-locale="ko"] .catalogIntro h2,
 .guidesPage[data-homeground-locale="ko"] .entryIntro h2,
 .guidesPage[data-homeground-locale="ko"] .guideBody h3,
@@ -711,6 +745,7 @@
 
   .heroGrid,
   .countryGuideIntro,
+  .searchBandInner,
   .catalogIntro,
   .entryIntro,
   .ctaGrid {
@@ -773,6 +808,7 @@
 @media (max-width: 22rem) {
   .hero,
   .countryGuide,
+  .searchBand,
   .catalog,
   .entryCollection,
   .cta {

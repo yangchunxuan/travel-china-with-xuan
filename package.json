@@ -23,6 +23,8 @@
     "sign:traffic-link": "node tools/sign-traffic-link.mjs",
     "pretest:inquiry": "npm run guide:generate",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
+    "test:guide-search": "node --experimental-strip-types --test tools/tests/guide-search.test.mjs",
+    "test:homepage-search": "node --test supabase/tests/homepage-guide-search-static.test.mjs",
     "typecheck": "npm run guide:generate && tsc --noEmit",
     "prebuild": "npm run guide:generate && npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines",
     "build": "next build",
