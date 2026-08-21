@@ -1,0 +1,82 @@
+{
+  "id": "xiamen-and-gulangyu-one-day",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "xiamen",
+    "gulangyu",
+    "one-day-route",
+    "ferry-boundary"
+  ],
+  "destinations": [
+    "xiamen",
+    "gulangyu"
+  ],
+  "heroImagePath": "/images/guides/xiamen-and-gulangyu-one-day/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xiamen-and-gulangyu-one-day/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/xiamen-and-gulangyu-one-day/",
+      "title": "Xiamen and Gulangyu in One Day: Split the Two Visits",
+      "headline": "Xiamen Island and Gulangyu in One Day: Do Not Treat Them as One Walk",
+      "description": "Choose which place gets the best hours, keep the ferry operation with its dedicated guide and avoid a rushed two-city checklist.",
+      "heroAlt": "Gulangyu Island seen from the Xiamen waterfront",
+      "navTitle": "Xiamen and Gulangyu day",
+      "featuredLinkLabel": "Split the day sensibly",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Xiamen",
+        "Gulangyu",
+        "One day"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/xiamen-and-gulangyu-one-day/",
+      "title": "厦门本岛与鼓浪屿一天：把城市日和岛日分开",
+      "headline": "一天安排厦门本岛与鼓浪屿：别把两处当成同一条步行线",
+      "description": "决定哪一处获得最好的时段，把轮渡操作交给独立指南，避免把一天压成两个地点的打卡清单。",
+      "heroAlt": "从厦门海滨望向鼓浪屿",
+      "navTitle": "厦门与鼓浪屿一天",
+      "featuredLinkLabel": "合理拆分一天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "厦门",
+        "鼓浪屿",
+        "一日游"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/xiamen-and-gulangyu-one-day/",
+      "title": "샤먼 본섬과 구랑위 하루: 두 방문을 나누는 법",
+      "headline": "샤먼 본섬과 구랑위를 하루에: 하나의 산책 코스로 착각하지 마세요",
+      "description": "어느 곳에 좋은 시간을 줄지 정하고, 페리 절차는 전용 가이드로 넘겨 촉박한 체크리스트 여행을 피합니다.",
+      "heroAlt": "샤먼 해안에서 바라본 구랑위 섬",
+      "navTitle": "샤먼·구랑위 하루",
+      "featuredLinkLabel": "하루를 현실적으로 나누기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "샤먼",
+        "구랑위",
+        "당일 여행"
+      ]
+    }
+  }
+}
