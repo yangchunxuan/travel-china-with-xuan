@@ -28,6 +28,18 @@ export interface GuidesHubCopy {
     planning: string;
     entry: string;
   };
+  countryGuide: {
+    eyebrow: string;
+    title: string;
+    introduction: string;
+    decisions: Record<
+      GuidesHubDecisionSection,
+      {
+        title: string;
+        body: string;
+      }
+    >;
+  };
   entrySection: {
     eyebrow: string;
     title: string;
@@ -47,6 +59,19 @@ export interface GuidesHubCopy {
   };
 }
 
+export const guidesHubDecisionSections = [
+  "explore",
+  "plan",
+  "when-to-go",
+  "transport",
+  "stay",
+  "essentials",
+  "culture",
+] as const;
+
+export type GuidesHubDecisionSection =
+  (typeof guidesHubDecisionSections)[number];
+
 const copies: Record<HomegroundLocale, GuidesHubCopy> = {
   en: {
     path: "/guides/",
@@ -59,7 +84,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     eyebrow: "Homeground field library",
     title: "China Travel Guides",
     introduction:
-      "Realistic routes, transfer math and destination notes for travellers who want to understand what a China trip actually asks of their time.",
+      "Use this China travel guide to choose places, build realistic routes, compare transport and hotel areas, and solve the entry and on-the-ground tasks that shape a first trip.",
     languageLabel: "Guide language",
     catalogEyebrow: "Browse the library",
     catalogTitle: "Plan with the whole day in view.",
@@ -70,6 +95,49 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       label: "Browse guide collections",
       planning: "Routes & trip planning",
       entry: "Entry & visa-free rules",
+    },
+    countryGuide: {
+      eyebrow: "China travel guide",
+      title: "Start with the decision that changes the trip.",
+      introduction:
+        "China is too large for one universal itinerary. Use these seven starting points to reach the page that owns your question, then follow its links into cities, routes and practical tasks.",
+      decisions: {
+        explore: {
+          title: "Which places belong in this trip?",
+          body:
+            "Compare cities, landscapes and heritage by the experience they add—not by forcing every famous stop into one route.",
+        },
+        plan: {
+          title: "How many places fit your time?",
+          body:
+            "Work from usable days, city order and recovery time before locking hotels or non-refundable transport.",
+        },
+        "when-to-go": {
+          title: "What changes on your dates?",
+          body:
+            "Check public holidays, weather, seasonal scenery and crowd pressure only where they change a real choice.",
+        },
+        transport: {
+          title: "What does each move really cost?",
+          body:
+            "Compare airports, railway stations and city pairs by the full door-to-door transfer, not the timetable headline.",
+        },
+        stay: {
+          title: "Which area makes the days easier?",
+          body:
+            "Choose the right city or scenic-area base first, then verify the hotel details that matter to an international traveller.",
+        },
+        essentials: {
+          title: "What must work before arrival?",
+          body:
+            "Resolve entry, payment, mobile connectivity, booking and registration questions with current, source-backed guidance.",
+        },
+        culture: {
+          title: "What makes the place mean more?",
+          body:
+            "Connect food, history, belief and living traditions to places you can actually visit instead of treating culture as trivia.",
+        },
+      },
     },
     entrySection: {
       eyebrow: "Entry rules",
@@ -124,7 +192,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     eyebrow: "Homeground 旅行指南",
     title: "中国旅行指南",
     introduction:
-      "从可行路线、门到门转场时间到目的地细节，帮你算清一次中国旅行各个环节真正需要多少时间。",
+      "从目的地取舍、现实路线、交通与住宿区域，到入境和落地后的实际操作，用这份中国旅行指南找到第一次来中国真正需要解决的问题。",
     languageLabel: "指南语言",
     catalogEyebrow: "浏览全部指南",
     catalogTitle: "把完整的一天放进规划里。",
@@ -135,6 +203,42 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       label: "浏览指南栏目",
       planning: "路线与旅行规划",
       entry: "入境与免签规则",
+    },
+    countryGuide: {
+      eyebrow: "中国旅行总指南",
+      title: "先找到真正会改变行程的决定。",
+      introduction:
+        "中国太大，不存在一条适合所有人的万能路线。请从下面七个入口找到负责你问题的页面，再继续进入具体城市、路线与操作指南。",
+      decisions: {
+        explore: {
+          title: "这趟旅行应该去哪些地方？",
+          body: "按每座城市、自然景观和文化遗产能增加什么体验来取舍，而不是把所有知名地点硬塞进一条路线。",
+        },
+        plan: {
+          title: "你的时间能放下几座城市？",
+          body: "先计算真正可用的游玩日、城市顺序和恢复时间，再锁定酒店和不可退交通。",
+        },
+        "when-to-go": {
+          title: "你的日期会改变什么？",
+          body: "只在公共假期、天气、季节景观和人流会改变真实选择时，把时间因素单独拿出来判断。",
+        },
+        transport: {
+          title: "每次转场真正花掉什么？",
+          body: "比较机场、火车站和城市之间的完整门到门时间，而不只看时刻表上的飞行或列车时间。",
+        },
+        stay: {
+          title: "住在哪个区域会更省力？",
+          body: "先选对城市或景区住宿基地，再核实国际旅客真正需要确认的酒店条件。",
+        },
+        essentials: {
+          title: "落地前必须解决什么？",
+          body: "用有来源、会更新的指南处理入境、支付、手机网络、预约和住宿登记等实际问题。",
+        },
+        culture: {
+          title: "怎样看懂景点背后的中国？",
+          body: "把饮食、历史、信仰和仍在延续的传统连接到可以亲自抵达的地方，而不是只罗列文化知识。",
+        },
+      },
     },
     entrySection: {
       eyebrow: "入境规则",
@@ -189,7 +293,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
     eyebrow: "Homeground 여행 라이브러리",
     title: "중국 여행 가이드",
     introduction:
-      "현실적인 동선, 출발지부터 목적지까지의 실제 총이동 시간과 현장 메모를 통해 각 구간에 얼마나 걸리는지 확인하세요.",
+      "여행지 선택과 현실적인 동선부터 교통, 숙소 지역, 입국과 현지 실무까지 첫 중국 여행에서 실제로 풀어야 할 문제를 이 가이드에서 찾아보세요.",
     languageLabel: "가이드 언어",
     catalogEyebrow: "전체 가이드",
     catalogTitle: "하루 전체를 보고 일정을 설계합니다.",
@@ -200,6 +304,42 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       label: "가이드 모음",
       planning: "동선과 여행 설계",
       entry: "입국 및 무비자 규정",
+    },
+    countryGuide: {
+      eyebrow: "중국 여행 종합 가이드",
+      title: "여행을 바꾸는 결정부터 시작하세요.",
+      introduction:
+        "중국은 하나의 정답 일정으로 설명하기에는 너무 큽니다. 아래 일곱 가지 출발점에서 질문의 담당 페이지를 찾은 뒤 도시, 동선과 실무 가이드로 이어 가세요.",
+      decisions: {
+        explore: {
+          title: "이번 여행에 어떤 곳을 넣을까요?",
+          body: "유명한 곳을 모두 억지로 넣기보다 도시, 자연과 유산이 여행에 더하는 경험을 비교해 선택하세요.",
+        },
+        plan: {
+          title: "주어진 시간에 몇 도시가 맞을까요?",
+          body: "호텔과 환불 불가 교통편을 확정하기 전에 실제 관광일, 도시 순서와 회복 시간을 먼저 계산하세요.",
+        },
+        "when-to-go": {
+          title: "여행 날짜가 무엇을 바꿀까요?",
+          body: "공휴일, 날씨, 계절 풍경과 혼잡도가 실제 선택을 바꾸는 경우에만 시기를 따로 판단하세요.",
+        },
+        transport: {
+          title: "한 번의 이동에 실제로 무엇이 들까요?",
+          body: "시간표의 비행·열차 시간만 보지 말고 공항, 역과 도시 사이의 전체 문전 이동을 비교하세요.",
+        },
+        stay: {
+          title: "어느 지역에 묵어야 하루가 쉬워질까요?",
+          body: "도시나 관광지의 숙박 거점을 먼저 정한 뒤 해외 여행자에게 필요한 호텔 조건을 확인하세요.",
+        },
+        essentials: {
+          title: "도착 전에 무엇을 해결해야 할까요?",
+          body: "출처가 있고 갱신되는 안내로 입국, 결제, 모바일 연결, 예약과 숙박 등록 문제를 해결하세요.",
+        },
+        culture: {
+          title: "장소의 의미를 어떻게 더 깊이 볼까요?",
+          body: "음식, 역사, 믿음과 살아 있는 전통을 실제로 방문할 수 있는 장소와 연결해 이해하세요.",
+        },
+      },
     },
     entrySection: {
       eyebrow: "입국 규정",

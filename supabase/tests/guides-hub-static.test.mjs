@@ -134,6 +134,26 @@ test("three hub routes publish localized canonical and hreflang metadata", async
   assert.match(copy, /path: "\/ko\/guides\/"/);
 });
 
+test("the existing guides owner acts as the country-level China travel guide", async () => {
+  const hub = await source("components/GuidesHubPage.tsx");
+  const copy = await source("app/(default)/guides/guidesHubI18n.ts");
+  const css = await source("components/GuidesHubPage.module.css");
+
+  assert.match(copy, /export const guidesHubDecisionSections = \[[\s\S]*?"explore"[\s\S]*?"plan"[\s\S]*?"when-to-go"[\s\S]*?"transport"[\s\S]*?"stay"[\s\S]*?"essentials"[\s\S]*?"culture"[\s\S]*?\] as const/);
+  assert.match(hub, /guidesHubDecisionSections\.map\(\(section, index\) =>/);
+  assert.match(hub, /copy\.countryGuide\.decisions\[section\]/);
+  assert.match(hub, /getSearchSectionPath\(section, locale\)/);
+  assert.match(hub, /id="china-travel-guide-title"/);
+  assert.match(copy, /title: "Start with the decision that changes the trip\."/);
+  assert.match(copy, /title: "先找到真正会改变行程的决定。"/);
+  assert.match(copy, /title: "여행을 바꾸는 결정부터 시작하세요\."/);
+  assert.doesNotMatch(hub, /\/china-travel-guide\//);
+  assert.doesNotMatch(copy, /\/china-travel-guide\//);
+  assert.doesNotMatch(hub, /\/china-itinerary-review\//);
+  assert.match(css, /\.decisionGrid li:first-child\s*\{[\s\S]*?grid-column: span 8;/);
+  assert.match(css, /@media \(max-width: 48rem\)[\s\S]*?\.decisionGrid li:last-child[\s\S]*?grid-column: span 12;/);
+});
+
 test("hub output is semantic, dated, image-sized and structured", async () => {
   const hub = await source("components/GuidesHubPage.tsx");
   const css = await source("components/GuidesHubPage.module.css");

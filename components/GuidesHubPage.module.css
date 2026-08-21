@@ -22,6 +22,7 @@
 }
 
 .heroInner,
+.countryGuideInner,
 .entryInner,
 .ctaInner {
   margin-inline: auto;
@@ -88,6 +89,8 @@
 }
 
 .heroGrid h1,
+.countryGuideIntro h2,
+.decisionGrid h3,
 .catalogIntro h2,
 .entryIntro h2,
 .guideBody h3,
@@ -157,6 +160,118 @@
   font-size: 0.72rem;
   line-height: 1.35;
   margin-block-start: 0.35rem;
+}
+
+.countryGuide {
+  background: var(--guides-soft);
+  border-block-end: 1px solid var(--guides-line);
+  padding: clamp(4.5rem, 8vw, 7.5rem) max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.countryGuideIntro {
+  align-items: end;
+  display: grid;
+  gap: clamp(2rem, 6vw, 7rem);
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.58fr);
+  margin-block-end: clamp(3rem, 5vw, 5rem);
+}
+
+.countryGuideIntro h2 {
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.98;
+  margin: 1rem 0 0;
+  max-width: 12ch;
+  scroll-margin-top: 6.5rem;
+}
+
+.countryGuideIntro > p {
+  color: var(--guides-muted);
+  font-size: 1.03rem;
+  line-height: 1.72;
+  margin: 0;
+  max-width: 36rem;
+}
+
+.decisionGrid {
+  border-block-start: 1px solid var(--guides-line);
+  border-inline-start: 1px solid var(--guides-line);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.decisionGrid li {
+  border-block-end: 1px solid var(--guides-line);
+  border-inline-end: 1px solid var(--guides-line);
+  grid-column: span 4;
+  min-width: 0;
+}
+
+.decisionGrid li:first-child {
+  grid-column: span 8;
+}
+
+.decisionGrid li:nth-last-child(-n + 2) {
+  grid-column: span 6;
+}
+
+.decisionGrid a {
+  background: var(--guides-card);
+  color: var(--guides-ink);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 18rem;
+  padding: clamp(1.4rem, 2.5vw, 2.25rem);
+  text-decoration: none;
+}
+
+.decisionGrid a:hover,
+.decisionGrid a:focus-visible {
+  background: var(--guides-paper);
+}
+
+.decisionNumber {
+  color: var(--guides-rust);
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+}
+
+.decisionGrid h3 {
+  font-size: clamp(1.8rem, 2.6vw, 2.7rem);
+  line-height: 1.02;
+  margin: auto 0 1rem;
+  max-width: 15ch;
+}
+
+.decisionGrid p {
+  color: var(--guides-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 38rem;
+}
+
+.decisionAction {
+  align-items: center;
+  border-block-start: 1px solid var(--guides-line);
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 760;
+  justify-content: space-between;
+  margin-block-start: 1.5rem;
+  padding-block-start: 1rem;
+}
+
+.decisionAction > span {
+  transition: transform 180ms ease;
+}
+
+.decisionGrid a:hover .decisionAction > span,
+.decisionGrid a:focus-visible .decisionAction > span {
+  transform: translateX(0.2rem);
 }
 
 .catalog {
@@ -505,6 +620,8 @@
 }
 
 .guidesPage[data-homeground-locale="zh"] .heroGrid h1,
+.guidesPage[data-homeground-locale="zh"] .countryGuideIntro h2,
+.guidesPage[data-homeground-locale="zh"] .decisionGrid h3,
 .guidesPage[data-homeground-locale="zh"] .catalogIntro h2,
 .guidesPage[data-homeground-locale="zh"] .entryIntro h2,
 .guidesPage[data-homeground-locale="zh"] .guideBody h3,
@@ -513,6 +630,8 @@
 }
 
 .guidesPage[data-homeground-locale="ko"] .heroGrid h1,
+.guidesPage[data-homeground-locale="ko"] .countryGuideIntro h2,
+.guidesPage[data-homeground-locale="ko"] .decisionGrid h3,
 .guidesPage[data-homeground-locale="ko"] .catalogIntro h2,
 .guidesPage[data-homeground-locale="ko"] .entryIntro h2,
 .guidesPage[data-homeground-locale="ko"] .guideBody h3,
@@ -521,6 +640,16 @@
 }
 
 @media (max-width: 64rem) {
+  .decisionGrid li,
+  .decisionGrid li:first-child,
+  .decisionGrid li:nth-last-child(-n + 2) {
+    grid-column: span 6;
+  }
+
+  .decisionGrid li:last-child {
+    grid-column: span 12;
+  }
+
   .guideSlot,
   .guideSlotLead,
   .guideSlotLead + .guideSlot,
@@ -581,6 +710,7 @@
   }
 
   .heroGrid,
+  .countryGuideIntro,
   .catalogIntro,
   .entryIntro,
   .ctaGrid {
@@ -627,10 +757,22 @@
   .entryGuideGrid .entryGuideSlot:only-child {
     grid-column: span 12;
   }
+
+  .decisionGrid li,
+  .decisionGrid li:first-child,
+  .decisionGrid li:nth-last-child(-n + 2),
+  .decisionGrid li:last-child {
+    grid-column: span 12;
+  }
+
+  .decisionGrid a {
+    min-height: 16rem;
+  }
 }
 
 @media (max-width: 22rem) {
   .hero,
+  .countryGuide,
   .catalog,
   .entryCollection,
   .cta {
@@ -666,6 +808,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .guideImage img,
+  .decisionAction > span,
   .readGuide span,
   .entryAction span,
   .ctaAction span {
@@ -676,6 +819,8 @@
   .guideLink:focus-visible .guideImage img,
   .guideLink:hover .readGuide span,
   .guideLink:focus-visible .readGuide span,
+  .decisionGrid a:hover .decisionAction > span,
+  .decisionGrid a:focus-visible .decisionAction > span,
   .entryAction:hover span,
   .entryAction:focus-visible span,
   .ctaAction:hover span,
@@ -686,6 +831,9 @@
 
 @media (prefers-contrast: more) {
   .guideGrid,
+  .decisionGrid,
+  .decisionGrid li,
+  .decisionAction,
   .guideSlot,
   .collectionNav,
   .collectionNav a,

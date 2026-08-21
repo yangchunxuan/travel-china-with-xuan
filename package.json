@@ -15,6 +15,7 @@
     "check:indexable-export": "node tools/check-indexable-export.mjs",
     "check:index-cohorts": "node tools/check-index-cohorts.mjs",
     "check:guide-entities": "node --experimental-strip-types --no-warnings tools/check-guide-entity-coverage.mjs",
+    "check:high-intent-cta-ownership": "node --experimental-strip-types --no-warnings tools/check-high-intent-cta-ownership.mjs",
     "check:search-platform-export": "node tools/check-search-platform-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
     "content:generate": "node tools/generate-content-manifest.mjs",
