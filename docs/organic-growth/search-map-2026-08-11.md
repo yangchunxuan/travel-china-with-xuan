@@ -1,8 +1,8 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-状态：`CONTENT SCALE BATCH ASSIGNED — 60 CANONICAL OWNERS — CENTRAL INTEGRATION REQUIRED`
+状态：`60 DURABLE DRAFTS SUBMITTED — COMBINED SIMULATION PASSED — CENTRAL RELEASE REVIEW REQUIRED — NOT PUBLISHED`
 
-本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。以下 2026-08-21 同步结论取代文内更早的发布口径；旧段落只保留历史决定，不得用于判断当前上线状态。
+本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。顶部 2026-08-22 内容扩量批次是当前权威；其后的 2026-08-21 及更早段落只保留历史决定，不得用于判断当前库存、执行状态或上线状态。
 
 ## 2026-08-22 内容扩量批次（当前权威）
 
@@ -26,9 +26,24 @@
 | 5 | 住宿 | 10 | `article/worker-5-stay-scale-20260822` | 10题均 not-published |
 | 6 | 入境与实用 | 10 | `article/worker-6-essentials-scale-20260822` | 10题均 not-published |
 
+### 六池交付回写
+
+| 员工 | 最终远端分支 @ SHA | 交付状态 | 发布状态 |
+|---:|---|---|---|
+| 1 | `article/worker-1-transport-scale-20260822@1a841869ffaa5c2babf94e82ae8517c90e6cd795` | 10篇 durable draft；第二轮三语去模板化、分类与locale内链纠错完成 | not-published |
+| 2 | `article/worker-2-destination-scale-20260822@5fc1afea67664d58a79196a263cb6c4248725439` | 10篇 durable draft；canonical与四项城市/片区分类纠错完成 | not-published |
+| 3 | `article/worker-3-culture-scale-20260822@0607a0e976edfd2fc7c2c200ea4a404afc751246` | 10篇 durable draft；图片原图SHA与发布前事实门补齐 | not-published |
+| 4 | `article/worker-4-planning-scale-20260822@c76d9b34d9b0ea8e270afdfbc6b7473a10eece5c` | 10篇 durable draft；九寨沟重复图已换为黄龙实景，未上线Guilin Hub死链已移除 | not-published |
+| 5 | `article/worker-5-stay-scale-20260822@a027899dabfd76ba76c1ba30c574834985c717c1` | 10篇 durable draft；三语去重与隐私/非承诺边界通过 | not-published |
+| 6 | `article/worker-6-essentials-scale-20260822@1d40d650ac6b252a57d35a89f2f39b5f3a327c27` | 10篇 durable draft；实用/入境pillar分类纠错完成 | not-published |
+
+60个身份的执行状态均已回写为 `durable-draft-submitted`，但 `releasePr: null`、`liveUrls: []`、`publicationStatus: not-published` 保持不变。它们不能因为有远端分支、metadata日期或本地浏览器验收就记作已发布。
+
+最终只读式组合模拟已通过：六分支无路径冲突，60身份/180个locale URL完整；486项测试为485通过、0失败、1项Windows平台jq跳过；production build为895个静态页面，sitemap为844个唯一URL。中央仍须应用共享taxonomy、freshness、entity、CTA、字体与计数补丁，并逐篇完成发布日事实门。
+
 旧的“六票冻结、不补第七票”只适用于 2026-08-11 历史轮次；不得用它否定 2026-08-22 获得明确中央授权的独立60题批次。
 
-## 2026-08-21 权威同步结论
+## 2026-08-21 历史同步快照（已被顶部2026-08-22口径取代）
 
 - 最新基线：`origin/main@274d243afc9fcc2ac9abd51487d06c667019cc0a`（PR [#77](https://github.com/yangchunxuan/travel-china-with-xuan/pull/77) merge commit；已包含 PR #76、#75、#77）。
 - 当前指南库存：**176 个内容身份、522 个 guide locale URL**（EN 176 / 中文 173 / 한국어 173；三篇受保护 legacy visa guide 只有英文）。三语始终只算一个身份。
@@ -57,7 +72,7 @@
 |---:|---|---|---|
 | 1 | `docs/employee-1-transport-decision-network-live-sync-20260821@16bbb71f` | **MERGED / PR #76** | 内部治理资料已合并；`not-a-public-artifact`，不新增文章或 URL |
 | 2 | `codex/employee-2-ten-city-entity-lifecycle-repair-20260821@6707236d` | **MERGED / PR #76** | 生命周期治理已合并；7 个线上 Hub / 21 URL 保持不变 |
-| 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` | **central review pending** | 十篇均 `selected / pending-review / durable-draft-submitted / not-published` |
+| 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` | **historical state; superseded by 2026-08-22 final branch** | 当时为 `pending-review / not-published`；当前执行证据见顶部 `article/worker-3-culture-scale-20260822@0607a0e` |
 | 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` | **MERGED / PR #75 / archived internal only** | `selected / rejected / internal-specification-merged-public-product-closed / not-published`；中央已否决公开产品 |
 | 5 | `article/worker-5-stay-network-integration-split-20260821@ea9e2453` | **MERGED AND DEPLOYED / PR #77** | `existing-owner / approved-existing-owner-update / updated-existing / published`；更新 15 个既有身份 / 45 个 locale URL，新增身份为 0 |
 | 6 | `article/worker-6-arrival-system-live-sync-20260821@73506f59` | **MERGED / PR #76** | 内部状态治理已合并；First 24 Hours 公开状态仍未改变 |
@@ -79,9 +94,9 @@
 
 此前 19-commit 中央组合模拟现已由三个独立 PR 取代：#76、#75、#77 均完成 Linux CI、合并与部署。最新 sitemap 仍为 649 个唯一 URL。142 个未映射实体 token 与 GSC index cohort 数据缺口仍是显式治理债务，不因 PR 合并而自动消失。
 
-### 员工3十篇 durable draft 的 canonical 锁
+### 员工3十篇 durable draft 的历史 canonical 锁（当前交付见顶部）
 
-以下记录都只是中央审核库存，不是批准或上线。metadata 的未来/占位日期不是 publication evidence。
+以下记录是2026-08-21历史审核库存；2026-08-22已完成返修并获草稿批次批准，但不是上线。metadata 的未来/占位日期不是 publication evidence。
 
 | Draft slug | Canonical 处理 | 禁止重复边界 |
 |---|---|---|

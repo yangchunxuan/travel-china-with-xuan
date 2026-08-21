@@ -1,6 +1,6 @@
 # Homeground 60题严格内容批次 — 2026-08-22
 
-状态：`ASSIGNED FOR DRAFT PRODUCTION — NOT PUBLISHED — CENTRAL INTEGRATION REQUIRED`
+状态：`60 DRAFTS DELIVERED — COMBINED SIMULATION PASSED — CENTRAL REVIEW REQUIRED — NOT PUBLISHED`
 
 机器票据权威文件：`docs/organic-growth/content-scale-batch-2026-08-22.json`
 
@@ -12,6 +12,19 @@
 - 用户在 2026-08-22 明确授权员工7锁题并派工。没有创建或虚构 GitHub Issue；写手没有 PR、合并或部署权限。
 - 本批 60 个身份、六池各10个，共 91 复杂度单位。三语始终只算一个身份。
 - Search Console 的题级证据不可用；关键词量、CPC、难度和购买概率不可用，未猜测。
+
+## 交付回写
+
+| 员工 | 最终分支 @ SHA | commits / paths | 当前状态 |
+|---:|---|---:|---|
+| 1 | `article/worker-1-transport-scale-20260822@1a841869ffaa5c2babf94e82ae8517c90e6cd795` | 13 / 90 | durable draft submitted；三语去模板化、交通分类与locale内链已修正 |
+| 2 | `article/worker-2-destination-scale-20260822@5fc1afea67664d58a79196a263cb6c4248725439` | 12 / 90 | durable draft submitted；canonical与四项城市/片区分类已修正 |
+| 3 | `article/worker-3-culture-scale-20260822@0607a0e976edfd2fc7c2c200ea4a404afc751246` | 12 / 101 | durable draft submitted；图片原图SHA与发布前事实门已补齐 |
+| 4 | `article/worker-4-planning-scale-20260822@c76d9b34d9b0ea8e270afdfbc6b7473a10eece5c` | 12 / 92 | durable draft submitted；跨批重复图片与Guilin Hub死链已修复 |
+| 5 | `article/worker-5-stay-scale-20260822@a027899dabfd76ba76c1ba30c574834985c717c1` | 10 / 90 | durable draft submitted；三语去重与住宿边界已通过 |
+| 6 | `article/worker-6-essentials-scale-20260822@1d40d650ac6b252a57d35a89f2f39b5f3a327c27` | 10 / 90 | durable draft submitted；pillar语义纠错已完成 |
+
+当前仍是 **60 个未发布身份 / 180 个未发布 locale 页面**。没有 PR、live URL、合并或部署证据；`datePublished` 只有在中央真实发布时才成立。
 
 ## 全批硬门槛
 
@@ -45,7 +58,7 @@
 
 ## 员工2 / 目的地
 
-分支：`article/worker-2-explore-scale-20260822`
+分支：`article/worker-2-destination-scale-20260822`
 
 | candidateId | workingTitle | score | units | proposedContentId |
 |---|---|---:|---:|---|
@@ -144,3 +157,16 @@
 ## 中央整合门
 
 每个分支交中央前必须同时满足：10 个唯一身份、10 个原子 commit、三语结构对应、来源与图片权利完整、无 canonical 冲突、typecheck/生成检查/定向测试/production build/diff-check真实记录、30个locale页面桌面与390px验收。任何共享硬编码计数由中央组合批次统一更新，写手不得各自改动。
+
+组合模拟实测口径是：221 个 generated guide + 19 个 protected legacy guide = 240 个 guide identity；714 个 guide locale URL；再计8个城市Hub和1个entry collection后为249个编辑型详情身份 / 739个详情URL；sitemap为844个唯一URL。完整模拟为485/486项通过、0失败、1项Windows平台jq跳过，production build生成895个静态页面。以上仍不是当前线上库存，也不构成发布授权。
+
+中央必须落实：
+
+- `lib/searchCollectionI18n.ts` 增加26条 reviewed collection override（员工4十条、员工5十条、员工6六条；员工1–3的最终metadata已能正确直连collection）。
+- CTA内部账本更新为 stay 28 / high-intent transport 34 / plan 26 / purchase-ticket 2 / unique 90；现有service-mapped仍15，generic 11，blocked/null 64，**新增付费服务映射为0**。
+- `guideFreshnessMinimums` 对15个高动态owner显式设为 high；入境类继续 critical/on-source-change。
+- 将已存在的 `shaanxi/sichuan/guangdong/hunan/zhejiang/guangxi` 六个省级token接到既有entityId；不得新造实体或用China fallback假装完成。合并后仍有实体债务，另批治理。
+- 依 `public/fonts/README.md` 重建字体子集，覆盖新增52个中文字形和16个韩文字形；不得改正文拼音或删专名绕过。
+- 把共享硬编码 guide/freshness/CTA 计数更新到组合后的真实值，并重建受跟踪生成物。
+- 逐篇执行 `PUBLICATION GATE`。员工3的 `2026-08-20` 明确是draft placeholder；其他metadata日期也不得在没有真实发布证据时直接当上线日。
+- 串行通过完整测试、production build、导出、844-URL sitemap唯一性、180个locale URL的桌面与390px验收后，才能由中央决定是否合并和部署。

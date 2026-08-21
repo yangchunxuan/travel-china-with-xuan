@@ -6,7 +6,7 @@
 
 ## 2026-08-22 六十题批次新增锁
 
-- 完整60题只以 `docs/organic-growth/content-scale-batch-2026-08-22.json` 为准；所有同义问法、反向线路和人群变体并入对应 proposedContentId。
+- 完整60题只以 `docs/organic-growth/content-scale-batch-2026-08-22.json` 为准；60个 proposedContentId 均已有远端 durable draft，仍未发布，但所有同义问法、反向线路和人群变体必须并入对应 owner，不得重复写作。
 - PR #83 已发布 `shenzhen-airport-railway-station-border-port-selector`、`guilin-airport-or-railway-station-arrival-guide`、`yangshuo-town-or-yulong-river-where-to-stay`、`longji-rice-terraces-day-trip-or-overnight`，不得放回制作中。
 - 长城四段比较继续拒绝；本批曾研究但已删除。无新的实地数据集不得重开。
 - 虎跳峡多日徒步本批拒绝；官方未开发区域限制未解除前不得写成可执行路线。
@@ -29,14 +29,14 @@
 6. 任何新 nationality entry 页必须同时满足：不同法律任务、官方一手来源、真实需求证据、明确监控 owner；不得模板复制。
 7. Search Console **可用但样本很小**：2026-07-09 至 2026-08-18 共 17 clicks、1,060 impressions、CTR 1.6%、average position 20.5；隐私过滤隐藏大量 query。它只用于基线、CTR、排名与后续蚕食验证，不作为全市场选题发现器。
 8. 关键词体量、CPC、难度与购买概率工具 **不可用**。Google Trends 只表示同一图表内的相对方向；自动补全、结果数、论坛重复提问和主观感觉都不等于搜索量。
-9. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
+9. 2026-08-11 历史轮次的 ticket set 冻结为六项，当时不增加第七票或自动递补；该规则不否定 2026-08-22 已获明确授权并已登记的独立60题批次。
 10. Route Reality Checker 的公开产品已被中央否决。内部规格与员工 8 技术/测试审查只作历史证据，不算新增文章，也不得继续实现、建页、公开、索引或发布。
 11. 城市介绍必须拥有独立的旅客决策、路线或知识网络角色；不得以通用城市百科、换标题或拼接景点列表占位。
 12. 历史、文学、后世纪念、地方口述/传说与现代旅游包装必须分别标注；不得把传说写成史实，也不得按每个朝代、人物或传说批量建薄页。
 13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
 14. 所有准备新建并让 Google 收录的 SEO 页面原则上必须先经过 Search Map；员工 7 只有提案权。中央批准后才创建正式 GitHub Issue，之后才能交给员工 1–6 执行。
 
-## 2026-08-21 发布与员工库存锁
+## 2026-08-21 历史发布与员工库存锁（当前库存见顶部2026-08-22批次）
 
 PR [#74](https://github.com/yangchunxuan/travel-china-with-xuan/pull/74) 的以下五个身份已由 `origin/main@ef189874` 发布，三语 `liveUrls` 与 `lastVerifiedAt: 2026-08-21` 已回写主账本。它们不得再标为制作中、release candidate 或待发布：
 
@@ -46,7 +46,7 @@ PR [#74](https://github.com/yangchunxuan/travel-china-with-xuan/pull/74) 的以�
 - `chongqing-railway-station-selector`
 - `zhangjiajie-national-forest-park-tickets-and-entrances`
 
-当前库存统计锁定为：176 个 guide identity / 522 个 guide locale URL；7 个 city hub / 21 个 URL；1 个 entry collection；合计 184 个详情身份 / 544 个详情 URL；sitemap 649。
+2026-08-21 当时的历史库存为：176 个 guide identity / 522 个 guide locale URL；7 个 city hub / 21 个 URL；1 个 entry collection；合计 184 个详情身份 / 544 个详情 URL；sitemap 649。该数字已被2026-08-22的 `origin/main@72e5d161`、180 guides、8 city hubs与664 URL sitemap口径取代。
 
 PR [#77](https://github.com/yangchunxuan/travel-china-with-xuan/pull/77) 已在 `origin/main@274d243` 更新 7 个既有 Hub 与 8 篇既有住宿指南。以下 owner 只能记为 `update-existing / updated-existing / published`，不能作为新题、新文章、新 URL 或新增 canonical 身份再次计数：
 
@@ -59,7 +59,7 @@ PR #77 共更新 15 个既有身份 / 45 个 locale 页面；canonical identity 
 |---:|---|---|
 | 1 | `docs/employee-1-transport-decision-network-live-sync-20260821@16bbb71f` — **MERGED / PR #76** | 内部治理资料，不是新 owner 或开工授权 |
 | 2 | `codex/employee-2-ten-city-entity-lifecycle-repair-20260821@6707236d` — **MERGED / PR #76** | 7 Hub / 21 URL 生命周期保持；不得再次写回 offline |
-| 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` — central review pending | 十篇均是 durable draft，不是 approved/published |
+| 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` — historical state | 2026-08-21 时仍待审核；已被2026-08-22最终员工3分支与60题草稿批次取代，仍未发布 |
 | 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` — **MERGED / PR #75 / archived** | 公开产品已拒绝；不得从内部规格生成新 Hub URL、calculator、API 或公开 surface |
 | 5 | `article/worker-5-stay-network-integration-split-20260821@ea9e2453` — **MERGED AND DEPLOYED / PR #77** | 只能按既有 owner 更新计数；不是15篇新文章、实时酒店库存或报价保证 |
 | 6 | `article/worker-6-arrival-system-live-sync-20260821@73506f59` — **MERGED / PR #76** | 仅 First 24 Hours source-maintenance；不得抢员工4 canonical owner |
@@ -71,9 +71,9 @@ PR #77 共更新 15 个既有身份 / 45 个 locale 页面；canonical identity 
 
 Route Reality 的内部规格与技术复核已随 PR #75 合并，但中央于 2026-08-21 否决公开产品。numeric PolicyPack、运行时引擎、API、UI、可索引页与发布工作全部关闭；不得创建公开工具或城市×天数页面。未来如要重启，必须取得新的明确中央决定。
 
-### 员工3十篇 canonical 禁复用表
+### 员工3十篇 canonical 禁复用表（2026-08-21历史状态；当前交付见顶部60题批次）
 
-十篇一律为 `pending-review / durable-draft-submitted / not-published`：
+以下状态是2026-08-21历史快照；2026-08-22已完成返修并获草稿批次批准，但十篇仍全部 `not-published`：
 
 - `du-fu-thatched-cottage-literary-memorial`：生平、复建茅屋、后世纪念、考古同属一个 owner。
 - `nanjing-jiangnan-gongyuan-examination-museum`：site-specific 遗存/复建/博物馆任务；与 `hg-topic-0727 / imperial-examination-system-at-academies` 相邻，中央须复核边界。
@@ -232,7 +232,7 @@ Route Reality 的内部规格与技术复核已随 PR #75 合并，但中央于 
 
 ## 六个已选中项自身也不得被拆分
 
-Ticket 1、2、3、5、6 已由中央批准并发布；Ticket 4 仍待产品决定。无论状态如何，锁定的 canonical 边界都不得通过换 slug、分支、语言或 artifact 类型规避。
+Ticket 1、2、3、5、6 已由中央批准并发布；Ticket 4 的公开产品已被中央拒绝并关闭。无论状态如何，锁定的 canonical 边界都不得通过换 slug、分支、语言或 artifact 类型规避。
 
 - `transport-20260811-01`：Beijing、Beijing West、Beijing South、Beijing North、Qinghe、Beijing Chaoyang、Beijing Fengtai、Beijing Tongzhou 是一个站点选择矩阵，不是一站一页。
 - `destination-20260811-01`：Forbidden City ticket/entrance/3-hour route/north exit 是一个连续执行任务。
