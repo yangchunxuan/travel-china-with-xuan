@@ -15,7 +15,7 @@
 7. Search Console **可用但样本很小**：2026-07-09 至 2026-08-18 共 17 clicks、1,060 impressions、CTR 1.6%、average position 20.5；隐私过滤隐藏大量 query。它只用于基线、CTR、排名与后续蚕食验证，不作为全市场选题发现器。
 8. 关键词体量、CPC、难度与购买概率工具 **不可用**。Google Trends 只表示同一图表内的相对方向；自动补全、结果数、论坛重复提问和主观感觉都不等于搜索量。
 9. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
-10. Route Reality Checker 的内部规格与员工 8 技术/测试审查不算新增文章；`SPEC REVIEW READY` 不是实现、建页、公开、索引或发布授权。
+10. Route Reality Checker 的公开产品已被中央否决。内部规格与员工 8 技术/测试审查只作历史证据，不算新增文章，也不得继续实现、建页、公开、索引或发布。
 11. 城市介绍必须拥有独立的旅客决策、路线或知识网络角色；不得以通用城市百科、换标题或拼接景点列表占位。
 12. 历史、文学、后世纪念、地方口述/传说与现代旅游包装必须分别标注；不得把传说写成史实，也不得按每个朝代、人物或传说批量建薄页。
 13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
@@ -38,23 +38,23 @@ PR [#77](https://github.com/yangchunxuan/travel-china-with-xuan/pull/77) 已在 
 - Hub：`destination-beijing`、`destination-chengdu`、`destination-guangzhou`、`destination-hangzhou`、`destination-shanghai`、`destination-xian`、`destination-zhangjiajie`。
 - Guide：`china-accessible-hotel-room-verification`、`china-last-night-before-international-flight`、`chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`、`foreigners-china-hotel`、`shanghai-where-to-stay-first-trip`、`shenzhen-where-to-stay-futian-luohu-nanshan`、`xian-where-to-stay-city-wall-or-dayanta`、`zhangjiajie-city-or-wulingyuan-hotel-base`。
 
-PR #77 共更新 15 个既有身份 / 45 个 locale 页面；canonical identity delta 与 sitemap URL delta 均为 0。PR #75 只合并 Route Reality 内部规格，仍为 `internal-only / not-published`，也不得按公开工具或文章计数。PR #76 为技术、实体与治理整合，不新增公开身份。
+PR #77 共更新 15 个既有身份 / 45 个 locale 页面；canonical identity delta 与 sitemap URL delta 均为 0。PR #75 只合并 Route Reality 内部规格；中央现已否决公开产品，状态为 `internal-only / not-published / closed`，不得按公开工具或文章计数。PR #76 为技术、实体与治理整合，不新增公开身份。
 
 | 员工 | 本轮分支锁 | 重复/误发布风险 |
 |---:|---|---|
 | 1 | `docs/employee-1-transport-decision-network-live-sync-20260821@16bbb71f` — **MERGED / PR #76** | 内部治理资料，不是新 owner 或开工授权 |
 | 2 | `codex/employee-2-ten-city-entity-lifecycle-repair-20260821@6707236d` — **MERGED / PR #76** | 7 Hub / 21 URL 生命周期保持；不得再次写回 offline |
 | 3 | `batch/employee-3/cultural-authority-series-20260820@a70f9088` — central review pending | 十篇均是 durable draft，不是 approved/published |
-| 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` — **MERGED / PR #75 / internal only** | 不得从内部规格生成新 Hub URL、calculator、API 或公开 surface |
+| 4 | `article/worker-4-route-reality-v4-test-closure-20260821@9f88336e` — **MERGED / PR #75 / archived** | 公开产品已拒绝；不得从内部规格生成新 Hub URL、calculator、API 或公开 surface |
 | 5 | `article/worker-5-stay-network-integration-split-20260821@ea9e2453` — **MERGED AND DEPLOYED / PR #77** | 只能按既有 owner 更新计数；不是15篇新文章、实时酒店库存或报价保证 |
 | 6 | `article/worker-6-arrival-system-live-sync-20260821@73506f59` — **MERGED / PR #76** | 仅 First 24 Hours source-maintenance；不得抢员工4 canonical owner |
-| 8 | `codex/route-reality-v4-final-technical-review-20260821@e524af81` — **MERGED / PR #75 / internal only** | Route Reality 仍 not-published；public implementation/indexable authorization 仍为 false |
+| 8 | `codex/route-reality-v4-final-technical-review-20260821@e524af81` — **MERGED / PR #75 / archived** | 技术复核只作历史证据；产品已拒绝，后续实现不得开工 |
 
 返修分支不得与旧分支重复计数：员工1以 `16bbb71f` 为当前 docs 修订；员工2以 `6707236d` 为当前生命周期修订；员工5以 `ea9e2453` 为当前隐私闭环交付；员工6以 `73506f59` 为当前抵达状态修订；Route Reality 以员工4 v4 `9f88336e` 和员工8最终审查 `e524af81` 为当前技术证据。旧分支只保留历史证据，不能再次形成候选、文章身份或上线计数。
 
 `planning-20260820-first-24-hours` 已有 durable docs draft，执行状态为 `draft-submitted`，但中央公开决定仍 `pending-review`，发布状态 `not-published`。员工4是 collection editorial owner，canonical 保持 `hub-plan`，员工6只是 source-maintenance handoff；`china-arrival-day-booked-anchor-or-flexible-block` 仅是相邻 owner，禁止第二公开 URL。
 
-Route Reality 的 v2 阻断与 v3 测试假绿已由 v4 `9f88336e` 闭环，并由员工8 `e524af81` 判定 `TECHNICAL SPEC REVIEW PASSED`；内部规格现已随 PR #75 合并。这仍不是公开授权：numeric PolicyPack、运行时引擎、API、UI、可索引页、隐私/安全/无障碍运行时审查与发布均未批准；不得创建公开工具或城市×天数页面。
+Route Reality 的内部规格与技术复核已随 PR #75 合并，但中央于 2026-08-21 否决公开产品。numeric PolicyPack、运行时引擎、API、UI、可索引页与发布工作全部关闭；不得创建公开工具或城市×天数页面。未来如要重启，必须取得新的明确中央决定。
 
 ### 员工3十篇 canonical 禁复用表
 
@@ -76,7 +76,7 @@ Route Reality 的 v2 阻断与 v3 测试假绿已由 v4 `9f88336e` 闭环，并�
 - `transport-20260811-01` ↔ `which-beijing-railway-station`：同一 Beijing station-choice 身份。
 - `destination-20260811-01` ↔ `forbidden-city-for-foreign-visitors`：同一 foreign-visitor Forbidden City 执行身份。
 - `culture-20260811-01` ↔ `first-shared-meal-in-china`：同一首次共享用餐身份。
-- `planning-20260811-01` ↔ Route Reality Checker 内部规格：仍是同一 tool 候选，不是文章身份。
+- `planning-20260811-01` ↔ Route Reality Checker 内部规格：公开产品已拒绝；内部记录不是文章身份，也不得换名称重开。
 - `stay-20260811-01` ↔ 已发布 `foreigners-china-hotel`：仍是同一 booking/registration/refusal owner；旧员工分支不形成第二身份。
 - `essentials-20260811-01` ↔ `china-esim-vs-local-sim.md`：即使从独立 repo 迁入 canonical worktree、补 metadata 或扩展 locale，也仍是同一 eSIM/local SIM/local-number 选择树。
 
@@ -85,7 +85,7 @@ Route Reality 的 v2 阻断与 v3 测试假绿已由 v4 `9f88336e` 闭环，并�
 | `transport-20260811-01` | selected | approved | release-completed | published | PR #24；`which-beijing-railway-station` 三语 live |
 | `destination-20260811-01` | selected | approved | release-completed | published | PR #24；`forbidden-city-for-foreign-visitors` 三语 live |
 | `culture-20260811-01` | selected | approved | release-completed | published | PR #31；`first-shared-meal-in-china` 三语 owner |
-| `planning-20260811-01` | selected | pending-review | internal-specification-merged | not-published | PR #75；v4 `9f88336e` / 员工8复核 `e524af81`；内部规格已合并但不得公开实现 |
+| `planning-20260811-01` | selected | rejected | internal-specification-merged-public-product-closed | not-published | PR #75；内部规格归档；中央于 2026-08-21 否决公开产品 |
 | `stay-20260811-01` | selected | approved | release-completed | published | PR #50；`foreigners-china-hotel` 三语 owner |
 | `essentials-20260811-01` | selected | approved | release-completed | published | PR #41；`china-esim-vs-local-sim` 三语 owner；`durableArtifact: true` |
 
@@ -204,7 +204,7 @@ Route Reality 的 v2 阻断与 v3 测试假绿已由 v4 `9f88336e` 闭环，并�
 
 以下方向只保留为 `research-watch`。它们不产生 `candidateId`、票据、branch reservation 或写手指令，本轮仍严格只有六票，不增加或递补第七票。
 
-- 第一次访华路线现实性归 Route Reality Checker 与 `is-your-china-itinerary-too-rushed`；不再建 7/10/14/21 天或城市组合页。
+- 第一次访华路线现实性只归 `is-your-china-itinerary-too-rushed` 与规划 Hub；Route Reality 已拒绝，不再建工具、7/10/14/21 天页或城市组合页。
 - 数字生存栈优先更新已发布 payment、高铁与本轮 eSIM owners；不得另写一篇泛“中国必备 App”汇总抢占所有任务。
 - Amap→中文地址→Didi 只研究实测 workflow/tool 或地址卡；没有地点数据和失败恢复时，不建普通 App 指南。
 - 素食、清真与严重过敏应由一个全国饮食限制 owner 加双语卡承接；必须区分偏好、宗教限制与危及生命的过敏，不按城市复制。
@@ -222,7 +222,7 @@ Ticket 1、2、3、5、6 已由中央批准并发布；Ticket 4 仍待产品决�
 - `transport-20260811-01`：Beijing、Beijing West、Beijing South、Beijing North、Qinghe、Beijing Chaoyang、Beijing Fengtai、Beijing Tongzhou 是一个站点选择矩阵，不是一站一页。
 - `destination-20260811-01`：Forbidden City ticket/entrance/3-hour route/north exit 是一个连续执行任务。
 - `culture-20260811-01`：shared meal 的 ordering/seating/sharing/paying 是一餐的顺序，不拆礼仪页。
-- `planning-20260811-01`：route reality checker 不生成城市×日数×人群可索引结果页。
+- `planning-20260811-01`：公开产品已拒绝；不得生成工具页、城市×日数×人群结果页或换名重启。
 - `stay-20260811-01`：foreign-hotel booking/registration/refusal recovery 是一个任务，不按城市复制。
 - `essentials-20260811-01`：eSIM/local SIM/local number/both 是一个选择树，不按 provider 建页。
 
