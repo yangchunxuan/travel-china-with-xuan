@@ -425,7 +425,7 @@
 .hero {
   background: var(--hg-color-canvas);
   color: var(--hg-color-ink);
-  min-height: max(680px, calc(100svh - 4.75rem));
+  min-height: 680px;
   overflow: hidden;
   position: relative;
 }
@@ -437,7 +437,7 @@
   grid-template-columns: minmax(21rem, 1.05fr) minmax(30rem, 0.95fr);
   margin: 0 auto;
   max-width: 1280px;
-  min-height: max(680px, calc(100svh - 4.75rem));
+  min-height: 680px;
   padding: clamp(3rem, 7vw, 6.5rem) 2rem;
   position: relative;
   z-index: 1;
@@ -542,6 +542,7 @@
 }
 
 .heroPlanner {
+  align-self: end;
   min-width: 0;
 }
 
@@ -1679,6 +1680,8 @@
 
 .travelGuidesSection {
   border-block-end: 1px solid #d9dbd5;
+  padding-block: clamp(3.5rem, 4vw, 4rem);
+  padding-block-start: clamp(2.5rem, 3vw, 3rem);
 }
 
 .sectionIntro,
