@@ -63,6 +63,9 @@ function guideGridClass(index: number, total: number) {
 
 function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
   const copy = getFirstTripPlanHubCopy(locale);
+  const titleParts = copy.titleNoWrap
+    ? copy.title.split(copy.titleNoWrap)
+    : undefined;
 
   return (
     <>
@@ -72,7 +75,17 @@ function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
       >
         <div className={styles.decisionSequenceIntro}>
           <p className={styles.eyebrow}>{copy.eyebrow}</p>
-          <h2 id="first-trip-sequence-title">{copy.title}</h2>
+          <h2 id="first-trip-sequence-title">
+            {titleParts?.length === 2 && copy.titleNoWrap ? (
+              <>
+                {titleParts[0]}
+                <span className={styles.keepTogether}>{copy.titleNoWrap}</span>
+                {titleParts[1]}
+              </>
+            ) : (
+              copy.title
+            )}
+          </h2>
           <p>{copy.introduction}</p>
         </div>
         <ol className={styles.decisionSteps}>

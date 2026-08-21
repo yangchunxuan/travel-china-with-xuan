@@ -38,6 +38,28 @@ test("the first-trip hub keeps one eight-step decision sequence in all locales",
   }
 });
 
+test("the Chinese sequence copy stays natural and keeps its fixed phrase together", async () => {
+  const [hub, styles] = await Promise.all([
+    source("components/SearchPlatformHubPage.tsx"),
+    source("components/SearchPlatformHubPage.module.css"),
+  ]);
+  const copy = getFirstTripPlanHubCopy("zh");
+
+  assert.equal(copy.title, "按正确顺序，一步步规划好行程。");
+  assert.equal(copy.titleNoWrap, "一步步");
+  assert.equal(
+    copy.introduction,
+    "先确认限制条件，再选择城市并安排预订。每一步都会带你进入 Homeground 现有的对应页面，不必再从零散的搜索结果中拼凑第一次来中国的完整行程。",
+  );
+  assert.equal(
+    copy.steps[0].task,
+    "预订不可退改的机票或火车票前，先核对护照、来华目的、路线和停留时间。",
+  );
+  assert.match(hub, /styles\.keepTogether/);
+  assert.match(styles, /\.keepTogether\s*\{[^}]*white-space:\s*nowrap/s);
+  assert.match(styles, /scroll-margin-top:\s*6\.5rem/);
+});
+
 test("all first-trip links resolve to the existing locale path, not a synonym page", () => {
   for (const [ownerId, ownerPath] of Object.entries(firstTripPlanOwnerPaths)) {
     assert.equal(getFirstTripPlanOwnerPath(ownerId, "en"), ownerPath);

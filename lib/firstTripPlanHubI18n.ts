@@ -64,6 +64,7 @@ interface FirstTripPlanBoundaryCopy {
 export interface FirstTripPlanHubCopy {
   eyebrow: string;
   title: string;
+  titleNoWrap?: string;
   introduction: string;
   doneLabel: string;
   steps: readonly FirstTripPlanStepCopy[];
@@ -199,15 +200,16 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
   },
   zh: {
     eyebrow: "第一次中国旅行的决策顺序",
-    title: "按正确顺序，把行程一步步搭起来。",
+    title: "按正确顺序，一步步规划好行程。",
+    titleNoWrap: "一步步",
     introduction:
-      "先解决限制条件，再选择城市和预订。每一步都会进入已经负责该问题的 Homeground 页面，不必从互不相连的搜索结果里拼出第一次中国旅行。",
+      "先确认限制条件，再选择城市并安排预订。每一步都会带你进入 Homeground 现有的对应页面，不必再从零散的搜索结果中拼凑第一次来中国的完整行程。",
     doneLabel: "满足这个条件再进入下一步",
     steps: [
       {
         id: "entry",
         title: "确认如何入境",
-        task: "购买不可退的交通前，先核对护照、来华目的、路线和停留时间。",
+        task: "预订不可退改的机票或火车票前，先核对护照、来华目的、路线和停留时间。",
         doneWhen: "你知道适用的入境路径，也知道出发前还有哪些细节必须向官方再次核实。",
         links: [{ ownerId: "entry", label: "先查看中国入境要求" }],
       },

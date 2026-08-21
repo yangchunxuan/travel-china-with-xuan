@@ -82,6 +82,11 @@
   line-height: 0.98;
   margin: 1rem 0 0;
   max-width: 11ch;
+  scroll-margin-top: 6.5rem;
+}
+
+.keepTogether {
+  white-space: nowrap;
 }
 
 .decisionSequenceIntro > p:last-child,
