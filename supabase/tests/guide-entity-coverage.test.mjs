@@ -7,6 +7,7 @@ import test from "node:test";
 import { promisify } from "node:util";
 
 import {
+  createGuideEntityCoverageReport,
   generateGuideEntityCoverage,
   parseLegacyGuideEntries,
   strictModeExitCode,
@@ -37,9 +38,11 @@ test("entity coverage includes the complete generated plus legacy runtime ledger
     legacyGuideCount: 19,
   });
   assert.equal(report.guideCount, 176);
-  assert.equal(report.guideWithUnmappedTokenCount, 85);
-  assert.equal(report.countryFallbackGuideCount, 40);
-  assert.equal(report.unmappedTokenCount, 142);
+  assert.equal(report.controlledTokenCount, 36);
+  assert.equal(report.guideWithUnmappedTokenCount, 72);
+  assert.equal(report.countryFallbackGuideCount, 7);
+  assert.equal(report.countryOnlyWithUnmappedTokenCount, 10);
+  assert.equal(report.unmappedTokenCount, 117);
   assert.equal(strictModeExitCode(report), 1);
   assert.equal(report.rows.filter((row) => row.scope === "legacy").length, 19);
   assert.ok(report.rows.some((row) =>
@@ -47,6 +50,17 @@ test("entity coverage includes the complete generated plus legacy runtime ledger
     row.scope === "legacy" &&
     row.entityIds.includes("country-china")
   ));
+});
+
+test("country-only local gaps remain visible when metadata also names China", () => {
+  const report = createGuideEntityCoverageReport([{
+    id: "masked-local-gap",
+    destinations: ["china", "unmapped-local-place"],
+    scope: "independent",
+  }]);
+  assert.equal(report.countryFallbackGuideCount, 0);
+  assert.equal(report.countryOnlyWithUnmappedTokenCount, 1);
+  assert.equal(report.guideWithUnmappedTokenCount, 1);
 });
 
 test("legacy registry extraction fails closed on non-literal coverage data", () => {

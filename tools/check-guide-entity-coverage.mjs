@@ -159,6 +159,11 @@ export function createGuideEntityCoverageReport(guides) {
     });
   const independentGuideCount = rows.filter((row) => row.scope === "independent").length;
   const legacyGuideCount = rows.filter((row) => row.scope === "legacy").length;
+  const countryOnlyWithUnmappedTokenCount = rows.filter((row) =>
+    row.unmappedTokens.length > 0 &&
+    row.entityIds.length === 1 &&
+    row.entityIds[0] === "country-china"
+  ).length;
   return {
     schemaVersion: 2,
     scope: {
@@ -170,6 +175,7 @@ export function createGuideEntityCoverageReport(guides) {
     guideCount: rows.length,
     guideWithUnmappedTokenCount: rows.filter((row) => row.unmappedTokens.length > 0).length,
     countryFallbackGuideCount: rows.filter((row) => row.usedCountryFallback).length,
+    countryOnlyWithUnmappedTokenCount,
     unmappedTokenCount: unmappedUsage.size,
     unmappedTokens: Object.fromEntries([...unmappedUsage.entries()]
       .sort(([left], [right]) => left.localeCompare(right, "en"))),

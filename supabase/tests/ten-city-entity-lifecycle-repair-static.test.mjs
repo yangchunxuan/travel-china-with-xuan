@@ -47,7 +47,13 @@ test("the canonical entity registry gives all ten cities one valid administrativ
   const byId = new Map(entities.map((entity) => [entity.id, entity]));
 
   assert.equal(new Set(entities.map((entity) => entity.id)).size, entities.length);
-  assert.equal(entities.length, 17, "China, six province-level nodes and ten cities");
+  assert.ok(
+    entities.length >= 17,
+    "The ten-city lifecycle baseline may coexist with additional reviewed entities",
+  );
+  for (const requiredId of ["country-china", ...Object.keys(cityParents)]) {
+    assert.ok(byId.has(requiredId), requiredId);
+  }
 
   for (const [cityId, parentId] of Object.entries(cityParents)) {
     assert.deepEqual(byId.get(cityId)?.parentEntityIds, [parentId], cityId);

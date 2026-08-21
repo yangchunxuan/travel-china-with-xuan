@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "source-snapshot",
+  "data": {
+    "id": "source-state-council-administrative-division-en-2014",
+    "url": "https://english.www.gov.cn/archive/china_abc/2014/08/27/content_281474983873401.htm",
+    "title": "Administrative Division",
+    "publisher": "The State Council of the People's Republic of China",
+    "sourceKind": "government",
+    "locale": "en",
+    "retrievedAt": "2026-08-21T04:16:05Z",
+    "publishedAt": "2014-08-26",
+    "contentHash": "sha256:72689bf4cbaa096851ce69895d2d9e9d6b464922a69f1af60ddc83d417f5b1e2",
+    "notes": "Official English first-level administrative division list used only to support canonical region names and administrative kinds. It does not authorize destination Hubs or public pages."
+  }
+}

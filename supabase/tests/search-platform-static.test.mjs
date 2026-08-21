@@ -83,6 +83,11 @@ test("legacy pages stay protected while independent guides can be added", async 
   assert.match(manifest, /PHASE0_SEARCH_PLATFORM_SOURCE_COMMIT/);
   assert.match(manifest, /changedPhase0Entries/);
   assert.match(manifest, /New article entries are allowed/);
+  assert.match(manifest, /stateCouncilAdministrativeDivisionSource/);
+  assert.match(
+    manifest,
+    /stateCouncilAdministrativeDivisionSource as ContentRecordEnvelope/,
+  );
 });
 
 test("every independent guide resolves to a collection in its declared section", async () => {
@@ -140,14 +145,16 @@ test("every independent guide resolves to a collection in its declared section",
 });
 
 test("guide entities and freshness use the current metadata vocabulary", async () => {
-  const [adapter, policy, entitySource] = await Promise.all([
+  const [adapter, policy, entitySource, tokenSource] = await Promise.all([
     source("lib/searchPlatformContentAdapter.ts"),
     source("lib/searchPlatformGuidePolicy.ts"),
     source("content/entities/core-places.json"),
+    source("lib/placeTokenMap.json"),
   ]);
   const entityIds = new Set(
     JSON.parse(entitySource).map((record) => record.data.id),
   );
+  const placeTokens = JSON.parse(tokenSource).tokens;
 
   for (const [slug, entityId] of [
     ["guangzhou", "city-guangzhou"],
@@ -156,7 +163,7 @@ test("guide entities and freshness use the current metadata vocabulary", async (
     ["chongqing", "city-chongqing"],
     ["shenzhen", "city-shenzhen"],
   ]) {
-    assert.match(policy, new RegExp(`${slug}: "${entityId}"`));
+    assert.equal(placeTokens[slug], entityId);
     assert.ok(entityIds.has(entityId), entityId);
   }
 
@@ -177,6 +184,7 @@ test("guide entities and freshness use the current metadata vocabulary", async (
   assert.match(policy, /dynamicTicketTopicFragments[\s\S]*?"ticket"/);
   assert.match(policy, /function guideUpdatePolicy/);
   assert.match(policy, /function resolveGuideEntities/);
+  assert.match(policy, /placeTokenMap\.json/);
   assert.match(adapter, /from "\.\/searchPlatformGuidePolicy"/);
   assert.match(adapter, /updatePolicy: guideUpdatePolicy\(guide\)/);
   assert.match(adapter, /resolveGuideEntities\(guide\.destinations\)\.entityIds/);

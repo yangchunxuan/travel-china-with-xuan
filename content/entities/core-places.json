@@ -27,10 +27,10 @@
       "names": {
         "en": { "name": "Shaanxi" },
         "zh-Hans": { "name": "陕西" },
-        "ko": { "name": "산시성" }
+        "ko": { "name": "산시성 (섬서성)", "aliases": ["산시성", "섬서성"] }
       },
       "parentEntityIds": ["country-china"],
-      "sourceIds": [],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-21",
@@ -50,7 +50,7 @@
         "ko": { "name": "쓰촨성" }
       },
       "parentEntityIds": ["country-china"],
-      "sourceIds": [],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-21",
@@ -70,7 +70,7 @@
         "ko": { "name": "광둥성" }
       },
       "parentEntityIds": ["country-china"],
-      "sourceIds": [],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-21",
@@ -90,7 +90,7 @@
         "ko": { "name": "후난성" }
       },
       "parentEntityIds": ["country-china"],
-      "sourceIds": [],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-21",
@@ -110,7 +110,7 @@
         "ko": { "name": "저장성" }
       },
       "parentEntityIds": ["country-china"],
-      "sourceIds": [],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
       "status": "published",
       "dates": {
         "createdAt": "2026-08-21",
@@ -130,7 +130,7 @@
         "ko": { "name": "광시 좡족 자치구", "aliases": ["광시"] }
       },
       "parentEntityIds": ["country-china"],
-      "sourceIds": [],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
       "status": "published",
       "attributes": {
         "administrativeKind": "autonomous-region"
@@ -139,6 +139,333 @@
         "createdAt": "2026-08-21",
         "updatedAt": "2026-08-21"
       }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-anhui",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Anhui" },
+        "zh-Hans": { "name": "安徽" },
+        "ko": { "name": "안후이성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-fujian",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Fujian" },
+        "zh-Hans": { "name": "福建" },
+        "ko": { "name": "푸젠성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-gansu",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Gansu" },
+        "zh-Hans": { "name": "甘肃" },
+        "ko": { "name": "간쑤성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-guizhou",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Guizhou" },
+        "zh-Hans": { "name": "贵州" },
+        "ko": { "name": "구이저우성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-hainan",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Hainan" },
+        "zh-Hans": { "name": "海南" },
+        "ko": { "name": "하이난성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-henan",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Henan" },
+        "zh-Hans": { "name": "河南" },
+        "ko": { "name": "허난성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-hubei",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Hubei" },
+        "zh-Hans": { "name": "湖北" },
+        "ko": { "name": "후베이성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-inner-mongolia",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Inner Mongolia Autonomous Region", "aliases": ["Inner Mongolia"] },
+        "zh-Hans": { "name": "内蒙古自治区", "aliases": ["内蒙古"] },
+        "ko": { "name": "네이멍구 자치구", "aliases": ["내몽골"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "attributes": { "administrativeKind": "autonomous-region" },
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-jiangsu",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Jiangsu" },
+        "zh-Hans": { "name": "江苏" },
+        "ko": { "name": "장쑤성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-jiangxi",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Jiangxi" },
+        "zh-Hans": { "name": "江西" },
+        "ko": { "name": "장시성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-jilin",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Jilin" },
+        "zh-Hans": { "name": "吉林" },
+        "ko": { "name": "지린성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-liaoning",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Liaoning" },
+        "zh-Hans": { "name": "辽宁" },
+        "ko": { "name": "랴오닝성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-ningxia",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Ningxia Hui Autonomous Region", "aliases": ["Ningxia"] },
+        "zh-Hans": { "name": "宁夏回族自治区", "aliases": ["宁夏"] },
+        "ko": { "name": "닝샤 후이족 자치구", "aliases": ["닝샤"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "attributes": { "administrativeKind": "autonomous-region" },
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-qinghai",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Qinghai" },
+        "zh-Hans": { "name": "青海" },
+        "ko": { "name": "칭하이성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-shandong",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Shandong" },
+        "zh-Hans": { "name": "山东" },
+        "ko": { "name": "산둥성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-shanxi",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Shanxi" },
+        "zh-Hans": { "name": "山西" },
+        "ko": { "name": "산시성 (산서성)", "aliases": ["산시성", "산서성"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-yunnan",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Yunnan" },
+        "zh-Hans": { "name": "云南" },
+        "ko": { "name": "윈난성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "region-hong-kong",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Hong Kong Special Administrative Region", "aliases": ["Hong Kong"] },
+        "zh-Hans": { "name": "香港特别行政区", "aliases": ["香港"] },
+        "ko": { "name": "홍콩 특별행정구", "aliases": ["홍콩"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "attributes": { "administrativeKind": "special-administrative-region" },
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "region-macao",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Macao Special Administrative Region", "aliases": ["Macao", "Macau"] },
+        "zh-Hans": { "name": "澳门特别行政区", "aliases": ["澳门"] },
+        "ko": { "name": "마카오 특별행정구", "aliases": ["마카오"] }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": ["source-state-council-administrative-division-en-2014"],
+      "status": "review",
+      "attributes": { "administrativeKind": "special-administrative-region" },
+      "dates": { "createdAt": "2026-08-21", "updatedAt": "2026-08-21" }
     }
   },
   {

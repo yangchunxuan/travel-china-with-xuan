@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import coreEntityRecords from "../content/entities/core-places.json" with { type: "json" };
+import stateCouncilAdministrativeDivisionSource from "../content/sources/state-council-administrative-division-en-2014.json" with { type: "json" };
 import legacyIndexablePathBaseline from "../content/legacy-indexable-path-baseline.json" with { type: "json" };
 import phase0IndexablePathBaseline from "../content/phase0-indexable-path-baseline.json" with { type: "json" };
 import indexabilityMigrations from "../content/search-platform-indexability-migrations.json" with { type: "json" };
@@ -52,6 +53,7 @@ function contentNodeRecord(node: ContentNode): ContentRecordEnvelope {
  * no second hand-maintained copy of their URLs or metadata.
  */
 export const searchPlatformManifest = buildContentManifest([
+  stateCouncilAdministrativeDivisionSource as ContentRecordEnvelope,
   ...(coreEntityRecords as ContentRecordEnvelope[]),
   ...buildLegacySystemContentNodes().map(contentNodeRecord),
   ...buildSearchHubContentNodes().map(contentNodeRecord),

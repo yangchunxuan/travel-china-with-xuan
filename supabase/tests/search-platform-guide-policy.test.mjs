@@ -78,7 +78,16 @@ test("controlled destination tokens resolve to registered entity ids", async () 
   const records = JSON.parse(
     await readFile(path.join(projectRoot, "content/entities/core-places.json"), "utf8"),
   );
+  const tokenRegistry = JSON.parse(
+    await readFile(path.join(projectRoot, "lib/placeTokenMap.json"), "utf8"),
+  );
   const registeredIds = new Set(records.map((record) => record.data.id));
+  assert.equal(tokenRegistry.schemaVersion, "1.0.0");
+  assert.equal(tokenRegistry.reviewedAt, "2026-08-21");
+  assert.deepEqual(destinationEntityIds, tokenRegistry.tokens);
+  for (const token of Object.keys(destinationEntityIds)) {
+    assert.match(token, /^[a-z0-9]+(?:-[a-z0-9]+)*$/u, token);
+  }
   for (const entityId of Object.values(destinationEntityIds)) {
     assert.ok(registeredIds.has(entityId), `unregistered entity: ${entityId}`);
   }
@@ -93,6 +102,45 @@ test("controlled destination tokens resolve to registered entity ids", async () 
     unmappedTokens: [],
     usedCountryFallback: false,
   });
+  assert.equal(destinationEntityIds.shaanxi, "province-shaanxi");
+  assert.equal(destinationEntityIds.shanxi, "province-shanxi");
+  assert.notEqual(destinationEntityIds.shaanxi, destinationEntityIds.shanxi);
+  const entityById = new Map(records.map((record) => [record.data.id, record.data]));
+  assert.notEqual(
+    entityById.get("province-shaanxi").names.ko.name,
+    entityById.get("province-shanxi").names.ko.name,
+  );
+  assert.deepEqual(resolveGuideEntities(["yunnan", "hong-kong", "macau"]), {
+    entityIds: ["province-yunnan", "region-hong-kong", "region-macao"],
+    unmappedTokens: [],
+    usedCountryFallback: false,
+  });
+});
+
+test("new regional backbone entities remain non-public review records", async () => {
+  const records = JSON.parse(
+    await readFile(path.join(projectRoot, "content/entities/core-places.json"), "utf8"),
+  );
+  const byId = new Map(records.map((record) => [record.data.id, record.data]));
+  const newIds = [...new Set(Object.entries(destinationEntityIds)
+    .filter(([token]) => [
+      "anhui", "fujian", "gansu", "guizhou", "hainan", "henan", "hubei",
+      "inner-mongolia", "jiangsu", "jiangxi", "jilin", "liaoning", "ningxia",
+      "qinghai", "shandong", "shanxi", "yunnan", "hong-kong", "macau",
+    ].includes(token))
+    .map(([, id]) => id))];
+  assert.equal(newIds.length, 19);
+  for (const id of newIds) {
+    const entity = byId.get(id);
+    assert.ok(entity, id);
+    assert.equal(entity.status, "review", id);
+    assert.deepEqual(entity.parentEntityIds, ["country-china"], id);
+    assert.deepEqual(
+      entity.sourceIds,
+      ["source-state-council-administrative-division-en-2014"],
+      id,
+    );
+  }
 });
 
 test("unknown place tokens are explicit even while the compatibility fallback remains", () => {

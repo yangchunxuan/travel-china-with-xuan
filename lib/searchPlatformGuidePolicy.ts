@@ -1,16 +1,13 @@
-export const destinationEntityIds = {
-  china: "country-china",
-  beijing: "city-beijing",
-  xian: "city-xian",
-  zhangjiajie: "city-zhangjiajie",
-  shanghai: "city-shanghai",
-  chengdu: "city-chengdu",
-  guilin: "city-guilin",
-  guangzhou: "city-guangzhou",
-  hangzhou: "city-hangzhou",
-  chongqing: "city-chongqing",
-  shenzhen: "city-shenzhen",
-} as const;
+import placeTokenMap from "./placeTokenMap.json" with { type: "json" };
+
+/**
+ * Destination metadata is resolved through a reviewed data registry rather
+ * than being coupled to the guide freshness policy. Exact-token matching is
+ * intentional: an unknown or ambiguous place must remain visible to audits.
+ */
+export const destinationEntityIds = Object.freeze(
+  placeTokenMap.tokens as Readonly<Record<string, string>>,
+);
 
 export interface GuideEntityResolution {
   entityIds: string[];
@@ -30,9 +27,7 @@ export function resolveGuideEntities(
   const entityIds: string[] = [];
   const unmappedTokens: string[] = [];
   for (const destination of destinations) {
-    const id = destinationEntityIds[
-      destination as keyof typeof destinationEntityIds
-    ];
+    const id = destinationEntityIds[destination];
     if (id) entityIds.push(id);
     else unmappedTokens.push(destination);
   }
