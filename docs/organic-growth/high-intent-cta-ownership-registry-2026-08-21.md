@@ -2,7 +2,9 @@
 
 Status: `internal-only`
 
-Baseline: `origin/main@274d243afc9fcc2ac9abd51487d06c667019cc0a`
+Baseline: `origin/main@291090c6b49565c2fff829ba62163a54008a89b9`
+
+Last inventory sync: `2026-08-22`
 
 This phase creates a fail-closed ownership ledger. It does not change a public CTA, launch a service, add a URL or authorize hotel, ticket or transfer sales claims. The machine-readable source of truth is `high-intent-cta-ownership-registry.json` in this directory.
 
@@ -10,13 +12,13 @@ This phase creates a fail-closed ownership ledger. It does not change a public C
 
 | Owner class | Identities | Specialized mapping |
 | --- | ---: | --- |
-| Stay | 17 | Blocked pending an approved stay service ID |
-| High-intent transport | 22 | Blocked pending an approved transfer service ID |
+| Stay | 18 | Blocked pending an approved stay service ID |
+| High-intent transport | 24 | Blocked pending an approved transfer service ID |
 | Plan | 16 | Mapped explicitly to an existing planning service or the generic conversation |
 | Purchase ticket | 2 | Blocked pending an approved ticket-assistance service ID |
-| Unique content identities | 57 | One owner per identity |
+| Unique content identities | 60 | One owner per identity |
 
-The 22 transport identities are the current `transport` guides whose primary intent is `plan`, `compare` or `execute`. Four informational transport identities with `understand` intent are deliberately outside this high-intent cohort.
+The 24 transport identities are the current `transport` guides whose primary intent is `plan`, `compare` or `execute`. Four informational transport identities with `understand` intent are deliberately outside this high-intent cohort.
 
 ## Explicit planning mappings
 
@@ -45,19 +47,19 @@ The registry does not derive a target from the `plan` section. Each identity is 
 
 ## Blocked inventories
 
-### Stay — 17
+### Stay — 18
 
-`beijing-courtyard-hotel-or-modern-hotel`, `beijing-where-to-stay-first-trip`, `china-accessible-hotel-room-verification`, `china-hotel-emergency-exit-fire-safety-check`, `china-hotel-near-metro`, `chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`, `commercial-aparthotel-or-residential-rental-china`, `foreigners-china-hotel`, `huangshan-summit-or-gateway-base`, `international-chain-or-local-hotel-china`, `minsu-homestay-or-hotel-china`, `serviced-apartment-or-hotel-china`, `shanghai-where-to-stay-first-trip`, `shenzhen-where-to-stay-futian-luohu-nanshan`, `xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan`, `xian-where-to-stay-city-wall-or-dayanta`, `zhangjiajie-city-or-wulingyuan-hotel-base`.
+`beijing-courtyard-hotel-or-modern-hotel`, `beijing-where-to-stay-first-trip`, `china-accessible-hotel-room-verification`, `china-hotel-emergency-exit-fire-safety-check`, `china-hotel-near-metro`, `chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`, `commercial-aparthotel-or-residential-rental-china`, `foreigners-china-hotel`, `huangshan-summit-or-gateway-base`, `international-chain-or-local-hotel-china`, `minsu-homestay-or-hotel-china`, `serviced-apartment-or-hotel-china`, `shanghai-where-to-stay-first-trip`, `shenzhen-where-to-stay-futian-luohu-nanshan`, `xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan`, `xian-where-to-stay-city-wall-or-dayanta`, `yangshuo-town-or-yulong-river-where-to-stay`, `zhangjiajie-city-or-wulingyuan-hotel-base`.
 
-### High-intent transport — 22
+### High-intent transport — 24
 
-`beijing-south-station-to-capital-or-daxing-airport`, `beijing-to-badaling-great-wall-transfer`, `beijing-to-mutianyu-great-wall-transfer`, `changbai-mountain-hubs-to-park-gates`, `chengdu-jiuzhaigou-transport-route`, `china-high-speed-train-first-time-guide`, `chongqing-railway-station-selector`, `dali-station-to-old-town`, `guangzhou-baiyun-airport-t2-t3`, `guangzhou-hong-kong-transport-route`, `guangzhou-macau-transport-route`, `guilin-yangshuo-transport-route`, `guiyang-airport-and-rail-hubs`, `hong-kong-macau-transport-route`, `how-food-reaches-your-seat-on-china-train`, `lijiang-shangri-la-transport-route`, `pudong-airport-to-shanghai-disneyland`, `shanghai-hangzhou-transport-route`, `shanghai-pudong-or-hongqiao-airport`, `shenzhen-hong-kong-transport-route`, `which-beijing-railway-station`, `xiamen-hubs-to-gulangyu-ferry-terminal`.
+`beijing-south-station-to-capital-or-daxing-airport`, `beijing-to-badaling-great-wall-transfer`, `beijing-to-mutianyu-great-wall-transfer`, `changbai-mountain-hubs-to-park-gates`, `chengdu-jiuzhaigou-transport-route`, `china-high-speed-train-first-time-guide`, `chongqing-railway-station-selector`, `dali-station-to-old-town`, `guangzhou-baiyun-airport-t2-t3`, `guangzhou-hong-kong-transport-route`, `guangzhou-macau-transport-route`, `guilin-airport-or-railway-station-arrival-guide`, `guilin-yangshuo-transport-route`, `guiyang-airport-and-rail-hubs`, `hong-kong-macau-transport-route`, `how-food-reaches-your-seat-on-china-train`, `lijiang-shangri-la-transport-route`, `pudong-airport-to-shanghai-disneyland`, `shanghai-hangzhou-transport-route`, `shanghai-pudong-or-hongqiao-airport`, `shenzhen-airport-railway-station-border-port-selector`, `shenzhen-hong-kong-transport-route`, `which-beijing-railway-station`, `xiamen-hubs-to-gulangyu-ferry-terminal`.
 
 ### Purchase ticket — 2
 
 `official-or-reseller-china-tickets`, `zhangjiajie-national-forest-park-tickets-and-entrances`.
 
-For these 41 identities, `targetServiceId` remains `null` and `authorizationStatus` remains `blocked-pending-central-authorization`. Stay uses the existing internal `hotel_fit` intent, tickets use `ticket_workflow`, and transport uses `route_shape`; these intent codes validate context only and do not authorize a public or paid service. The existing generic guide-footer conversation can remain, but no specialized CTA may claim availability, price, booking success, guest acceptance, vehicle supply or entry.
+For these 44 identities, `targetServiceId` remains `null` and `authorizationStatus` remains `blocked-pending-central-authorization`. Stay uses the existing internal `hotel_fit` intent, tickets use `ticket_workflow`, and transport uses `route_shape`; these intent codes validate context only and do not authorize a public or paid service. The existing generic guide-footer conversation can remain, but no specialized CTA may claim availability, price, booking success, guest acceptance, vehicle supply or entry.
 
 ## Fail-closed rules
 

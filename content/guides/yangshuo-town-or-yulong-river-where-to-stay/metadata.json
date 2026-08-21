@@ -1,0 +1,105 @@
+{
+  "id": "yangshuo-town-or-yulong-river-where-to-stay",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": ["global"],
+  "format": "town-or-countryside-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "luggage",
+    "family travel",
+    "rainy-day planning",
+    "Yangshuo"
+  ],
+  "destinations": ["guilin", "yangshuo"],
+  "heroImagePath": "/images/guides/yangshuo-town-or-yulong-river-where-to-stay/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yangshuo-town-or-yulong-river-where-to-stay/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-08-21",
+  "sourceReviewedDate": "2026-08-21",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+      "title": "Where to Stay in Yangshuo: Town or the Yulong River?",
+      "headline": "Stay Near Yangshuo Town or in the Yulong River Countryside?",
+      "description": "Choose a first Yangshuo base by evenings, early mornings, rain, luggage, family mobility and the exact rural last mile—not by a hotel ranking.",
+      "heroAlt": "Bamboo rafts on the Yulong River below karst hills and overhanging bamboo in Yangshuo.",
+      "heroCredit": {
+        "text": "Yulong River in Yangshuo, photographed by Liuxingy on 11 February 2024; centre-cropped to 16:10, resized and converted to WebP by Homeground. The photograph shows a real river scene, not a recommended hotel or current rafting operation.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%A1%82%E6%9E%97%E9%98%B3%E6%9C%94%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E9%81%87%E9%BE%99%E6%B2%B3%E9%A3%8E%E6%99%AF_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Yangshuo town or Yulong River",
+      "featuredLinkLabel": "Choose a Yangshuo stay base",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Yangshuo", "Where to stay", "Yulong River"]
+    },
+    "zh": {
+      "path": "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+      "title": "第一次去阳朔住哪里：阳朔镇还是遇龙河？",
+      "headline": "第一次到阳朔，住镇上还是遇龙河乡村一带？",
+      "description": "不做酒店榜单，从晚间、清晨、雨天、行李、亲子与行动便利、乡村最后一公里判断第一次阳朔住宿基地。",
+      "heroAlt": "阳朔喀斯特山峰与竹林下的遇龙河，河面可见竹排。",
+      "heroCredit": {
+        "text": "阳朔遇龙河实景，Liuxingy 摄于 2024 年 2 月 11 日；Homeground 居中裁成 16:10、缩放并转为 WebP。照片不代表推荐任何酒店，也不能证明当前竹排运营状态。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%A1%82%E6%9E%97%E9%98%B3%E6%9C%94%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E9%81%87%E9%BE%99%E6%B2%B3%E9%A3%8E%E6%99%AF_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "阳朔镇还是遇龙河",
+      "featuredLinkLabel": "选择阳朔住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["阳朔", "住宿区域", "遇龙河"]
+    },
+    "ko": {
+      "path": "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+      "title": "양숴 첫 여행 숙소: 시내와 위룽허 중 어디에 묵을까?",
+      "headline": "양숴 시내 생활권과 위룽허 전원 지역 중 어디에 묵을까요?",
+      "description": "호텔 순위 대신 저녁, 이른 아침, 비, 짐, 아이·이동 편의와 농촌의 실제 마지막 이동을 기준으로 양숴 숙박 거점을 고릅니다.",
+      "heroAlt": "양숴의 카르스트 봉우리와 늘어진 대나무 아래 위룽허를 오가는 대나무 배.",
+      "heroCredit": {
+        "text": "양숴 위룽허의 실제 풍경. Liuxingy가 2024년 2월 11일 촬영했으며 Homeground가 중앙부를 16:10으로 잘라 크기를 조정하고 WebP로 변환했습니다. 특정 숙소 추천이나 현재 대나무 배 운항을 증명하는 사진이 아닙니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%A1%82%E6%9E%97%E9%98%B3%E6%9C%94%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E9%81%87%E9%BE%99%E6%B2%B3%E9%A3%8E%E6%99%AF_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "양숴 시내·위룽허 숙소",
+      "featuredLinkLabel": "양숴 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["양숴", "숙소 위치", "위룽허"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Yangshuo",
+      "Yangshuo town or Yulong River hotel",
+      "West Street or Yulong River where to stay"
+    ],
+    "zh": [
+      "第一次去阳朔住哪里",
+      "阳朔西街还是遇龙河住宿",
+      "阳朔镇和遇龙河住哪里"
+    ],
+    "ko": [
+      "양숴 숙소 위치",
+      "양숴 시내 위룽허 숙소",
+      "시제 위룽허 어디에 묵을까"
+    ]
+  }
+}

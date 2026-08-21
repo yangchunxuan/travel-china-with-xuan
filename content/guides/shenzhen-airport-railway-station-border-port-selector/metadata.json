@@ -1,0 +1,107 @@
+{
+  "id": "shenzhen-airport-railway-station-border-port-selector",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": ["global"],
+  "format": "arrival-departure-hub-decision-matrix",
+  "topics": [
+    "transport",
+    "airports",
+    "railway-stations",
+    "border-port-orientation",
+    "wrong-hub-recovery"
+  ],
+  "destinations": ["shenzhen"],
+  "heroImagePath": "/images/guides/shenzhen-airport-railway-station-border-port-selector/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shenzhen-airport-railway-station-border-port-selector/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-08-21",
+  "sourceReviewedDate": "2026-08-21",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shenzhen-airport-railway-station-border-port-selector/",
+      "title": "Shenzhen Airport, Railway Station or Border Port?",
+      "headline": "Which Shenzhen Arrival or Departure Hub Should You Use?",
+      "description": "Choose SZX, Shenzhen North, Futian or Shenzhen Station, and avoid mixing railway stations with Futian or Luohu border checkpoints.",
+      "heroAlt": "Shenzhen North Railway Station forecourt with the Chinese and English station name visible above the entrance.",
+      "heroCredit": {
+        "text": "Shenzhen North Railway Station, photographed by Wpcpey on 23 September 2018; cropped and resized by Homeground. It identifies Shenzhen North only and does not establish current trains, entrances or transfer conditions.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shenzhen_North_Railway_Station_Outside_view_201809.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Choose a Shenzhen arrival hub",
+      "featuredLinkLabel": "Choose the right Shenzhen airport, station or port",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shenzhen", "Railway stations", "Arrival hubs"]
+    },
+    "zh": {
+      "path": "/zh/guides/shenzhen-airport-railway-station-border-port-selector/",
+      "title": "深圳机场、火车站和口岸怎么选？",
+      "headline": "深圳抵离枢纽怎么选：机场、火车站还是口岸？",
+      "description": "按票面站名、住宿位置和下一程，选择深圳机场、深圳北站、福田站或深圳站，并分清福田站与福田口岸、深圳站与罗湖口岸。",
+      "heroAlt": "深圳北站站前区域，入口上方可见中英文站名。",
+      "heroCredit": {
+        "text": "深圳北站，Wpcpey 摄于 2018 年 9 月 23 日；Homeground 裁切并缩放。照片只确认深圳北站这一地点，不能证明当前车次、入口或接驳条件。",
+        "sourceLabel": "Commons 原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shenzhen_North_Railway_Station_Outside_view_201809.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "选择深圳抵离枢纽",
+      "featuredLinkLabel": "选对深圳机场、火车站或口岸",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["深圳交通", "火车站", "抵离枢纽"]
+    },
+    "ko": {
+      "path": "/ko/guides/shenzhen-airport-railway-station-border-port-selector/",
+      "title": "선전 공항·기차역·출입경 지점, 어디를 이용할까?",
+      "headline": "선전 도착·출발 관문 고르기: 공항, 기차역, 출입경 지점",
+      "description": "SZX, 선전북역, 푸톈역, 선전역을 실제 표와 숙소에 맞추고 푸톈역·푸톈 출입경 지점, 선전역·뤄후 출입경 지점을 구분하세요.",
+      "heroAlt": "입구 위로 중국어와 영어 역명이 보이는 선전북역 앞마당.",
+      "heroCredit": {
+        "text": "선전북역. Wpcpey가 2018년 9월 23일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 선전북역이라는 장소만 확인하며 현재 열차, 출입구나 환승 조건을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shenzhen_North_Railway_Station_Outside_view_201809.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "선전 도착 관문 고르기",
+      "featuredLinkLabel": "선전 공항·역·출입경 지점 바로 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["선전", "기차역", "도착 관문"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "which Shenzhen railway station",
+      "Futian Station vs Futian Checkpoint",
+      "Shenzhen Station vs Shenzhen North",
+      "Shenzhen airport to railway station"
+    ],
+    "zh": [
+      "深圳火车站怎么选",
+      "福田站和福田口岸区别",
+      "深圳站和深圳北站区别",
+      "深圳机场到火车站怎么选"
+    ],
+    "ko": [
+      "선전 기차역 어디",
+      "푸톈역 푸톈 출입경 지점 차이",
+      "선전역 선전북역 차이",
+      "선전 공항 기차역 선택"
+    ]
+  }
+}
