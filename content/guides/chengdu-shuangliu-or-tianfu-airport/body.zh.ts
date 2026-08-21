@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责双流与天府之间的选择",
       "tone": "neutral",
       "body": "本页负责出票前CTU/TFU选择、出票后代码与航站楼确认、机场到酒店或铁路的完整链条，以及走错机场补救。它不排名航司，不固化航站楼或巴士时刻，不替所有中国航班决定最后一晚，也不重复成都—九寨沟和熊猫基地页面。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "用完整成都抵达链比较双流和天府"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "实时订单上的机场代码与航站楼决定落地点",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "成都机场链",
+        "CTU或TFU何时合适",
+        "决定机场的门到门核验",
+        "应拒绝的机场假设"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "双流与天府的航司和航站楼分配必须重查",
       "tone": "warning",
       "body": "航司可能在CTU、TFU及航站楼间调整，机场轨道和巴士窗口也会独立变化。出票后以有效订单为准；发布周复核双机场与成都当前地面交通，不发布永久航司列表。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "三种成都抵达会偏向不同机场"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从入境航班算到真实成都酒店门口",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "成都抵达方式",
+        "比较CTU与TFU的方法",
+        "必须保护的机场交接"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "拆出CTU与TFU从入境到酒店的时间"
     },
     {
       "id": "door-to-door-chain",
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "大件行李和晚落地会放大双机场差距"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护成都最后接驳，不被较短航程误导",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "机场限制",
+        "更稳妥的双机场方案",
+        "应排除的机场捷径"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "到错成都机场时，不要先横穿城市"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化会改写双流与天府的选择"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "CTU与TFU订票及出发周核验"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "确定成都机场后继续规划",
       "items": [
         {
           "label": "先看成都城市指南",

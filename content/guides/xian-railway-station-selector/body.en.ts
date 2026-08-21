@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Xi'an station choice this guide resolves",
       "tone": "neutral",
       "body": "This page owns the choice among the principal Xi'an passenger stations that appear for a traveller's real date, plus ticket-name checks, hotel-side friction and wrong-station recovery. It does not teach national 12306 booking, decide where to stay, repeat the Terracotta Warriors transfer, or publish permanent route directions by station."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Match 西安, 西安北 or 西安东 to the actual journey"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The Chinese station name on the 12306 order settles the departure",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Xi'an station or connection",
+        "Why it fits this Xi'an trip",
+        "Xi'an-side check that settles it",
+        "Station-name error to avoid"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Xi'an East makes old two-station rules unsafe",
       "tone": "warning",
       "body": "Xi'an East began passenger service in 2026, so old two-station diagrams are unsafe. Reopen 12306 and current Xi'an transport notices in the publication week; never turn one launch-day train pattern, entrance or metro connection into a permanent station role."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "City Wall, Dayanta and a missed-station rescue"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure from the Xi'an hotel door to the printed station name",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Xi'an journey",
+        "How to test this station choice",
+        "Xi'an failure to prevent"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Trace the Xi'an hotel-to-platform journey"
     },
     {
       "id": "door-to-door-chain",
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Cases and late arrivals magnify Xi'an's north–east distances"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the cross-city station margin before saving rail minutes",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Xi'an constraint",
+        "Safer Xi'an arrangement",
+        "Unsafe station shortcut"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Xi'an station: check the ticket before crossing the city"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Reconsider the Xi'an station when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Xi'an station check before purchase and departure"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue from the Xi'an station decision",
       "items": [
         {
           "label": "Start with the Xi'an city guide",

@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责哪一项上海站场选择",
       "tone": "neutral",
       "body": "本页负责四站选择、虹桥铁路—机场交接边界和走错站补救。它不比较PVG与SHA，不重复上海—杭州走廊，不选择住宿区域，也不发布单站或方向页。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "把上海、虹桥、南站或松江放进整趟旅程"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "票面完整上海站名高于泛化城市定位",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "上海铁路节点",
+        "哪种旅程会用到它",
+        "地址侧核验",
+        "必须防住的站名混淆"
       ],
       "rows": [
         [
@@ -80,7 +80,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "上海松江站与实时车次会淘汰旧捷径",
       "tone": "warning",
       "body": "上海站与上海松江不可互换，虹桥铁路—机场优势也取决于真实航站楼和时段。发布前重开12306与上海运营公告，不固化按方向分站或机场线时间。"
     },
@@ -88,16 +88,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "机场、外滩侧与松江旅程会指向不同车站"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从真实上海地址量到票面铁路节点",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "上海门到门组合",
+        "比较车站的方法",
+        "必须控制的换乘失败"
       ],
       "rows": [
         [
@@ -121,7 +121,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "连起上海酒店、车站入口和下一项硬预订"
     },
     {
       "id": "door-to-door-chain",
@@ -141,13 +141,13 @@ const body = {
           "items": [
             "连同订单实时状态保存票面的上海、上海虹桥、上海南或上海松江站。",
             "向12306、上海铁路与上海当前交通公告询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "工作记录必须保留上海、上海虹桥、上海南或上海松江；泛化的上海定位不能代替票面。"
           ]
         },
         {
           "heading": "完成到正确车站入口及下一机场、酒店或城市的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "从所订上海车站的标识通道出站，再执行该站已核实的地铁或合法接送方案。",
             "确认带着行李和剩余余量仍能到达正确车站入口及下一机场、酒店或城市。",
             "交接失败时使用跨城赶站前改签，或保护机场/车站侧过夜，不要临时冒险。"
           ]
@@ -158,16 +158,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "机场截止与大件行李可能推翻最快的上海车次"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护机场或酒店交接，再缩短铁路段",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "上海换乘限制",
+        "更抗风险的车站选择",
+        "应放弃的地图假设"
       ],
       "rows": [
         [
@@ -191,7 +191,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "走错上海车站时，比较改签与跨城赶站"
     },
     {
       "id": "recovery-steps",
@@ -210,7 +210,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化出现时，重开上海站场判断"
     },
     {
       "id": "answer-changes",
@@ -228,7 +228,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "上海车站与下一项截止核验"
     },
     {
       "id": "final-checklist",
@@ -297,7 +297,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "选定上海铁路节点后继续规划",
       "items": [
         {
           "label": "先看上海城市指南",

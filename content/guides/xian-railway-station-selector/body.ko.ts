@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "이 페이지가 맡는 범위",
+      "title": "이 글이 해결하는 시안 역 선택",
       "tone": "neutral",
       "body": "이 페이지는 실제 날짜에 나타나는 시안 주요 여객역 선택, 승차권 역명 확인, 숙소 쪽 이동 마찰과 잘못 간 역의 복구를 맡습니다. 전국 12306 예약법, 숙소 지역 선택, 병마용 이동법이나 영구적인 방향별 역 표는 다루지 않습니다."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "도시 이름이 아니라 전체 여정을 비교하세요"
+      "text": "西安·西安北·西安东을 실제 여정에 맞추세요"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "실시간 승차권과 정확한 목적지가 어떤 요령보다 우선합니다",
+      "caption": "12306 주문의 중국어 역명이 출발역을 확정합니다",
       "columns": [
-        "노드 또는 이동 사슬",
-        "후보에 넣을 때",
-        "결정을 가르는 질문",
-        "막아야 할 실수"
+        "시안 역·연결",
+        "이 시안 일정에 맞는 이유",
+        "시안 시내에서 확인할 기준",
+        "피해야 할 역명 오류"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "오늘의 운행 형태를 영구 규칙으로 만들지 마세요",
+      "title": "시안동역 개통으로 오래된 2개 역 규칙은 무효입니다",
       "tone": "warning",
       "body": "시안동역이 2026년에 여객 영업을 시작했으므로 오래된 2개 역 도식은 안전하지 않습니다. 게시 주간에 12306과 시안 교통 공지를 다시 열고 개통 초기 열차·입구·지하철 연결을 영구 역할로 만들지 마세요."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "서로 다른 답이 나오는 세 가지 여정"
+      "text": "성벽·대안탑·오도착 복구는 서로 다른 여정입니다"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "여행자의 실제 첫 문과 마지막 문에서 시작합니다",
+      "caption": "시안 호텔 문에서 승차권 역명까지 계산하세요",
       "columns": [
-        "여행 사슬",
-        "실행 가능한 판단법",
-        "막아야 할 실패"
+        "시안 여정",
+        "역 선택 확인법",
+        "막아야 할 시안 실패"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "문 앞에서 문 앞까지 이동을 완성하세요"
+      "text": "시안 호텔에서 승강장까지 연결하세요"
     },
     {
       "id": "door-to-door-chain",
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "짐, 늦은 도착과 이동 제약은 답을 바꿉니다"
+      "text": "짐과 늦은 도착은 시안 북·동쪽 이동을 더 어렵게 합니다"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "지도에서 가장 짧은 선이 아니라 가장 약한 인계를 보호합니다",
+      "caption": "철도 몇 분보다 도시 횡단 환승 여유를 지키세요",
       "columns": [
-        "제약",
-        "더 안전한 작업안",
-        "가정하면 안 되는 것"
+        "시안 제약",
+        "더 안전한 시안 계획",
+        "위험한 역 지름길"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "잘못된 노드에 갔을 때의 복구 순서"
+      "text": "시안의 다른 역에 왔다면 도시를 건너기 전에 승차권부터 확인하세요"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "이럴 때 답이 바뀝니다"
+      "text": "이럴 때 시안 역을 다시 고르세요"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "최종 예약 및 게시일 재확인 목록"
+      "text": "예약 전·출발일 시안 역 확인"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "다음 실제 결정을 이어서 해결하세요",
+      "title": "시안 역을 정한 뒤 이어서 계획하세요",
       "items": [
         {
           "label": "시안 도시 가이드부터 보기",

@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "이 페이지가 맡는 범위",
+      "title": "이 글이 맡는 CTU–TFU 선택",
       "tone": "neutral",
       "body": "이 페이지는 예약 전 CTU/TFU 선택, 예약 후 코드·터미널 확인, 공항–숙소·철도 전체 이동과 잘못 간 공항 복구를 맡습니다. 항공사 순위, 고정 터미널·버스 시간표, 모든 중국 항공편의 마지막 밤이나 청두–주자이거우·판다 명소 선택은 다루지 않습니다."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "도시 이름이 아니라 전체 여정을 비교하세요"
+      "text": "청두 전체 도착 과정으로 솽류와 톈푸를 비교하세요"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "실시간 승차권과 정확한 목적지가 어떤 요령보다 우선합니다",
+      "caption": "실시간 예약의 공항 코드와 터미널이 도착지를 정합니다",
       "columns": [
-        "노드 또는 이동 사슬",
-        "후보에 넣을 때",
-        "결정을 가르는 질문",
-        "막아야 할 실수"
+        "청두 공항 여정",
+        "CTU 또는 TFU가 맞는 때",
+        "공항 선택을 가르는 실제 문",
+        "피해야 할 공항 가정"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "오늘의 운행 형태를 영구 규칙으로 만들지 마세요",
+      "title": "CTU와 TFU의 항공사·터미널 배치는 다시 확인해야 합니다",
       "tone": "warning",
       "body": "항공사는 CTU·TFU와 터미널을 바꿀 수 있고 공항철도·버스 시간도 별도로 변합니다. 발권 후 활성 예약이 결정하며 게시 주간에 두 공항과 청두 지상 교통을 다시 확인하고 영구 항공사 목록은 게시하지 마세요."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "서로 다른 답이 나오는 세 가지 여정"
+      "text": "서로 다른 공항이 유리한 청두 도착 세 가지"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "여행자의 실제 첫 문과 마지막 문에서 시작합니다",
+      "caption": "도착 항공편에서 실제 청두 호텔 문까지 재세요",
       "columns": [
-        "여행 사슬",
-        "실행 가능한 판단법",
-        "막아야 할 실패"
+        "청두 도착 형태",
+        "CTU와 TFU 비교법",
+        "보호할 공항 인계"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "문 앞에서 문 앞까지 이동을 완성하세요"
+      "text": "CTU와 TFU의 입국 심사부터 호텔까지 추적하세요"
     },
     {
       "id": "door-to-door-chain",
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "짐, 늦은 도착과 이동 제약은 답을 바꿉니다"
+      "text": "큰 짐과 늦은 착륙은 두 청두 공항의 차이를 키웁니다"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "지도에서 가장 짧은 선이 아니라 가장 약한 인계를 보호합니다",
+      "caption": "짧아 보이는 항공편보다 마지막 청두 이동을 보호하세요",
       "columns": [
-        "제약",
-        "더 안전한 작업안",
-        "가정하면 안 되는 것"
+        "공항 제약",
+        "더 안전한 CTU/TFU 계획",
+        "버려야 할 공항 지름길"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "잘못된 노드에 갔을 때의 복구 순서"
+      "text": "잘못된 청두 공항에 왔다면 곧장 도시를 가로지르지 마세요"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "이럴 때 답이 바뀝니다"
+      "text": "이럴 때 솽류와 톈푸의 우선순위를 바꾸세요"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "최종 예약 및 게시일 재확인 목록"
+      "text": "CTU/TFU 예약 및 출발 주간 확인"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "다음 실제 결정을 이어서 해결하세요",
+      "title": "청두 공항을 정한 뒤 이어서 계획하세요",
       "items": [
         {
           "label": "청두 도시 가이드부터 보기",

@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责长沙到张家界的完整交接",
       "tone": "neutral",
       "body": "本页负责双向长沙—张家界走廊、准确铁路节点，以及交接到已经选定的基地。它不选择市区还是武陵源，不决定森林公园入口，不重复门票和游览路线，也不固化车次或旅游巴士。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "把长沙出发点与张家界抵达点一起选择"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "票面湖南车站必须支撑所选第一晚基地",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "湖南路线选项",
+        "这条链何时可用",
+        "第一晚核验",
+        "必须防住的路线假设"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "长沙与张家界停靠必须按实时日期查询",
       "tone": "warning",
       "body": "只承认12306可售出发站，规划中或施工中的长沙节点不能使用。张家界西是火车站，不是景区入口；最后道路交接必须按季节、天气与所选基地复核。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "机场抵达、南站出发与景区住宿会拆出不同路线"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从长沙起点量到市区或武陵源床位",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "湖南交通日",
+        "组装路线的方法",
+        "必须避免的住宿基地失败"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "把长沙出发接到张家界西和第一晚床位"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "连同订单实时状态保存准确长沙/长沙南—张家界西实时车次。",
             "向12306、湖南交通公告与准确张家界酒店询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "实时记录要保留长沙或长沙南及张家界西；城市级定位会隐藏当天被接驳吃掉的时间。"
           ]
         },
         {
           "heading": "完成到已选市区/永定或武陵源住宿的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "从张家界西与酒店约定的出口离开，再执行已核实的市区或武陵源接驳。",
             "确认带着行李和剩余余量仍能到达已选市区/永定或武陵源住宿。",
             "交接失败时使用有人值守的张家界市区夜或移动景区预订，不要临时冒险。"
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "晚车与去景区的行李可能把第一晚移回市区"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护张家界西到床位的交接，再选择速度",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "路线日限制",
+        "更稳妥的湖南交接",
+        "应拒绝的景区侧捷径"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "走错湖南车站时，先保住张家界抵达夜"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化需要重建长沙至张家界链条"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "长沙起点与张家界基地核验"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "固定湖南交接后继续规划",
       "items": [
         {
           "label": "先看张家界城市指南",

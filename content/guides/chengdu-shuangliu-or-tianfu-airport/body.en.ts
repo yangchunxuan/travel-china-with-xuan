@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The CTU–TFU decision this guide resolves",
       "tone": "neutral",
       "body": "This page owns pre-book CTU/TFU choice, post-book code and terminal confirmation, full airport–hotel/rail chain and wrong-airport recovery. It does not rank airlines, freeze terminal assignments or coach schedules, decide the last night for every China flight, or repeat the Chengdu–Jiuzhaigou and panda-site owners."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Test Shuangliu and Tianfu against the whole Chengdu arrival"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The IATA code and terminal on the live booking decide where you land",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Chengdu airport journey",
+        "When CTU or TFU fits",
+        "Door that settles the airport choice",
+        "Airport assumption to avoid"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Terminal and airline patterns at CTU and TFU must be rechecked",
       "tone": "warning",
       "body": "Airlines can move flights between CTU, TFU and terminals, while airport rail and coach windows change independently. The active booking controls after purchase; in the release week, recheck both airport sites and Chengdu's current ground access without publishing a permanent airline list."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Three Chengdu arrivals that favour different airports"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Begin with the inbound flight and end at the actual Chengdu hotel",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Chengdu arrival",
+        "How to compare CTU and TFU",
+        "Airport handoff at risk"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Trace immigration-to-hotel time at CTU and TFU"
     },
     {
       "id": "door-to-door-chain",
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Bags and late landings widen the CTU–TFU gap"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the final Chengdu transfer, not the shorter flight listing",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Airport constraint",
+        "Safer CTU/TFU plan",
+        "Airport shortcut to reject"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Chengdu airport: recover without racing across the city"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Switch the Chengdu airport preference when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "CTU/TFU booking and departure-week check"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue from the Chengdu airport choice",
       "items": [
         {
           "label": "Start with the Chengdu city guide",

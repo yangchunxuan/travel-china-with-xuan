@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Changsha-to-Zhangjiajie handoff this route owns",
       "tone": "neutral",
       "body": "This page owns the bidirectional Changsha–Zhangjiajie corridor, exact rail nodes and handoff to an already chosen base. It does not choose downtown versus Wulingyuan, select a Forest Park gate, repeat park tickets/routes or freeze trains and tourist coaches."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Choose the Changsha origin and Zhangjiajie arrival together"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The printed Hunan stations must support the selected first-night base",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Hunan route option",
+        "When this chain works",
+        "First-night test",
+        "Route assumption to prevent"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Changsha and Zhangjiajie stopping patterns require a live search",
       "tone": "warning",
       "body": "Only sellable 12306 origins count; an announced or construction-stage Changsha node does not. Zhangjiajie West is a rail station, not a park gate, and the final road transfer must be rechecked for season, weather and the chosen base."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Airport arrivals, South-station starts and park nights split the route"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure from the Changsha origin to the downtown or Wulingyuan bed",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Hunan travel day",
+        "How to assemble the route",
+        "Arrival-base failure to avoid"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Connect the Changsha departure to Zhangjiajie West and the first bed"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "Save the exact Changsha/Changsha South–Zhangjiajie West live train with the live order status.",
             "Ask 12306, Hunan transport notices and the exact Zhangjiajie hotel about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Retain 长沙 or 长沙南 and 张家界西 in the live record; Hunan city pins hide the transfers that consume the day."
           ]
         },
         {
           "heading": "Finish at the selected downtown/Yongding or Wulingyuan property",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Leave Zhangjiajie West through the exit agreed with the hotel and use the verified downtown or Wulingyuan transfer.",
             "Confirm that the selected downtown/Yongding or Wulingyuan property is still reachable with the bags and remaining margin.",
             "If that handoff fails, use a staffed Zhangjiajie downtown night or a moved park booking instead of improvising."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "A late train and park-bound cases can move the first night downtown"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the Zhangjiajie West-to-bed handoff before choosing speed",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Route-day constraint",
+        "Safer Hunan handoff",
+        "Park-side shortcut to reject"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Hunan station: save the Zhangjiajie arrival night"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Rebuild the Changsha–Zhangjiajie chain when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Changsha origin and Zhangjiajie base check"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after fixing the Hunan handoff",
       "items": [
         {
           "label": "Start with the Zhangjiajie city guide",

@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Guangzhou station-name decision this guide resolves",
       "tone": "neutral",
       "body": "This page owns five-station identity, ticket/hotel/onward-chain fit and wrong-station recovery. It does not repeat Baiyun Airport terminal choice, border procedure, national rail boarding or the complete Guangzhou–Hong Kong and Guangzhou–Macau corridor owners."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Match Guangzhou's five station names to the cross-city trip"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The full Chinese station suffix on 12306 controls the journey",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Guangzhou station",
+        "When this station fits",
+        "City-side test",
+        "Suffix mistake to prevent"
       ],
       "rows": [
         [
@@ -86,7 +86,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Baiyun and live stopping patterns defeat old Guangzhou station rules",
       "tone": "warning",
       "body": "Guangzhou's station roles are changing as central-city and Baiyun services evolve. Verify the actual train in 12306 and current Guangzhou notices; never infer a station from an old route map, the words 'high-speed', or a remembered Hong Kong pattern."
     },
@@ -94,16 +94,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "South, Baiyun and East-side trips need different station logic"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure between the true Guangzhou address and the ticketed station",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Guangzhou journey",
+        "How to test the station",
+        "Connection at risk"
       ],
       "rows": [
         [
@@ -127,7 +127,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Map the hotel, station square and onward Pearl River Delta handoff"
     },
     {
       "id": "door-to-door-chain",
@@ -147,13 +147,13 @@ const body = {
           "items": [
             "Save the full Guangzhou South/East/Guangzhou/Baiyun/North ticket name with the live order status.",
             "Ask 12306, Guangzhou Railway and current municipal notices about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Keep the complete Chinese suffix in every handoff; a pin labelled only Guangzhou can send a vehicle to another station."
           ]
         },
         {
           "heading": "Finish at the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Leave through the exit confirmed for this Guangzhou station, then use its current metro, taxi or onward-border handoff.",
             "Confirm that the exact Guangzhou station square and next Hong Kong, Macau or Guangdong handoff is still reachable with the bags and remaining margin.",
             "If that handoff fails, use change the live ticket before crossing Guangzhou or protect the next border-side night instead of improvising."
           ]
@@ -164,16 +164,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Cases and border deadlines change the best Guangzhou station"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the station-square and border margin before saving train minutes",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Guangzhou pressure point",
+        "Safer station plan",
+        "Suffix shortcut to reject"
       ],
       "rows": [
         [
@@ -197,7 +197,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Guangzhou station: stop before starting a cross-city race"
     },
     {
       "id": "recovery-steps",
@@ -216,7 +216,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Change the Guangzhou station choice when…"
     },
     {
       "id": "answer-changes",
@@ -234,7 +234,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Guangzhou suffix and connection check"
     },
     {
       "id": "final-checklist",
@@ -303,7 +303,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after the Guangzhou station is fixed",
       "items": [
         {
           "label": "Start with the Guangzhou city guide",

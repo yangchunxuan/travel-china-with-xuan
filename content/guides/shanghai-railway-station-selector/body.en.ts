@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Shanghai station choice this guide is responsible for",
       "tone": "neutral",
       "body": "This page owns the four-station decision, Hongqiao rail–airport handoff boundary and wrong-station recovery. It does not compare PVG and SHA, repeat the Shanghai–Hangzhou corridor, choose a hotel area or publish per-station and direction pages."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Place Shanghai, Hongqiao, South or Songjiang inside the whole trip"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The printed 上海 station name outranks a generic city pin",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Shanghai rail node",
+        "Trip pattern that brings it in",
+        "Address-side test",
+        "Name confusion to prevent"
       ],
       "rows": [
         [
@@ -80,7 +80,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Songjiang and live timetables make old Shanghai shortcuts expire",
       "tone": "warning",
       "body": "Shanghai and Shanghai Songjiang are not interchangeable, and Hongqiao's rail–airport convenience depends on the real terminal and time. Reopen 12306 and Shanghai operator notices before release; do not freeze station-by-direction rules or airport-line hours."
     },
@@ -88,16 +88,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Airport, Bund-side and Songjiang trips point to different stations"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure from the real Shanghai address through the printed rail node",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Shanghai door pair",
+        "Station comparison method",
+        "Transfer failure to contain"
       ],
       "rows": [
         [
@@ -121,7 +121,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Join the Shanghai hotel, station entrance and next fixed booking"
     },
     {
       "id": "door-to-door-chain",
@@ -141,13 +141,13 @@ const body = {
           "items": [
             "Save the printed 上海 / 上海虹桥 / 上海南 / 上海松江 station with the live order status.",
             "Ask 12306, Shanghai Railway and current Shanghai transport notices about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Keep 上海, 上海虹桥, 上海南 or 上海松江 in the working record; a generic Shanghai pin cannot stand in for the ticket."
           ]
         },
         {
           "heading": "Finish at the correct station entrance and the next airport, hotel or city",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Use the signed concourse for the booked Shanghai station, then follow the current metro or licensed-pickup plan for that location.",
             "Confirm that the correct station entrance and the next airport, hotel or city is still reachable with the bags and remaining margin.",
             "If that handoff fails, use change the ticket before a cross-city run or protect an airport/station-side night instead of improvising."
           ]
@@ -158,16 +158,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Airport deadlines and bulky cases can overturn the fastest Shanghai train"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the airport or hotel handoff before trimming the rail leg",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Shanghai transfer constraint",
+        "More resilient station choice",
+        "Map assumption to discard"
       ],
       "rows": [
         [
@@ -191,7 +191,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Shanghai station: compare rebooking with the cross-city run"
     },
     {
       "id": "recovery-steps",
@@ -210,7 +210,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Reopen the Shanghai station decision when…"
     },
     {
       "id": "answer-changes",
@@ -228,7 +228,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Shanghai station and onward-deadline check"
     },
     {
       "id": "final-checklist",
@@ -297,7 +297,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after choosing the Shanghai rail node",
       "items": [
         {
           "label": "Start with the Shanghai city guide",

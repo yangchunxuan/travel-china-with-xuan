@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Guilin-to-Longji village transfer this page owns",
       "tone": "neutral",
       "body": "This page owns the exact Guilin-origin-to-Longji-village transport handoff in either direction. It does not decide day trip versus overnight, compare village experiences in depth, choose a Guilin arrival airport/station, sell tours or freeze coach times and pickup points."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Choose Ping'an or Dazhai before choosing the vehicle"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The named Longji village and property handoff control the transfer",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Longji transfer chain",
+        "When this village route fits",
+        "Property-handoff question",
+        "Village mix-up to prevent"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Seasonal roads and village handoffs must be confirmed for Longji",
       "tone": "warning",
       "body": "Ping'an, Jinkeng/Dazhai and the Ancient Zhuang Village use different branches and final walks. Scenic access, shared transfers and road conditions change, so recheck the exact property and never publish a generic 'Longji pickup' as if it served every valley."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Airport, railway and Guilin-hotel starts lead to different village transfers"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure from the Guilin pickup to the named terrace village property",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Guilin pickup pattern",
+        "How to verify the village handoff",
+        "Mountain transfer failure"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Join the Guilin pickup, mountain vehicle and village property handoff"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "Save the exact Guilin airport/station/hotel origin and named Longji village with the live order status.",
             "Ask Longji scenic management, the exact property and current transport operator about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Keep the Guilin pickup point and Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village in writing; a Longji pin cannot identify the handoff."
           ]
         },
         {
           "heading": "Finish at Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Meet at the Guilin exit or hotel point confirmed by the operator, then follow the property-approved handoff for the named village.",
             "Confirm that Ping'an, Jinkeng/Dazhai or Ancient Zhuang Village property handoff is still reachable with the bags and remaining margin.",
             "If that handoff fails, use return to a confirmed staffed handoff or revise the village booking instead of improvising."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Mountain steps, cases and daylight decide which Longji handoff is workable"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the village property handoff before chasing the shortest drive",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Longji constraint",
+        "Safer village arrangement",
+        "Mountain shortcut to reject"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Longji handoff: stop before taking an unverified mountain road"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Change the Longji transfer when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Longji village and property-handoff check"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after the Longji transfer is fixed",
       "items": [
         {
           "label": "Choose day trip or overnight first",

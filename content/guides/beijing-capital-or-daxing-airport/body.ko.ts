@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "이 페이지가 맡는 범위",
+      "title": "이 글이 해결하는 PEK–PKX 선택",
       "tone": "neutral",
       "body": "이 페이지는 예약 전 PEK/PKX 선택, 예약 후 코드·터미널 확인, 숙소·철도 인계와 잘못 간 공항 복구를 맡습니다. 베이징남역–공항 좁은 과업, 베이징 8개 기차역 선택, 항공사 순위나 공항철도·버스·택시 시간표는 반복하지 않습니다."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "도시 이름이 아니라 전체 여정을 비교하세요"
+      "text": "베이징 전체 여정으로 수도공항과 다싱공항을 비교하세요"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "실시간 승차권과 정확한 목적지가 어떤 요령보다 우선합니다",
+      "caption": "실시간 일정의 PEK 또는 PKX가 공항을 확정합니다",
       "columns": [
-        "노드 또는 이동 사슬",
-        "후보에 넣을 때",
-        "결정을 가르는 질문",
-        "막아야 할 실수"
+        "베이징 공항 사슬",
+        "PEK 또는 PKX가 맞는 때",
+        "터미널에서 문까지 확인",
+        "막아야 할 공항 코드 오류"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "오늘의 운행 형태를 영구 규칙으로 만들지 마세요",
+      "title": "PEK와 PKX의 항공사·터미널 배치는 바뀔 수 있습니다",
       "tone": "warning",
       "body": "PEK와 PKX는 베이징 반대쪽에 있고 터미널, 공항버스와 철도 시간은 따로 바뀝니다. 발권 후 활성 코드가 결정합니다. 게시 전 두 공항과 베이징 교통 출처를 다시 열고 항공사를 영구 배정하지 마세요."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "서로 다른 답이 나오는 세 가지 여정"
+      "text": "대사관 쪽·베이징 남부·당일 환승은 답이 다릅니다"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "여행자의 실제 첫 문과 마지막 문에서 시작합니다",
+      "caption": "실시간 터미널에서 실제 베이징 문까지 재세요",
       "columns": [
-        "여행 사슬",
-        "실행 가능한 판단법",
-        "막아야 할 실패"
+        "베이징 항공 사슬",
+        "PEK와 PKX 비교법",
+        "통제할 터미널 실패"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "문 앞에서 문 앞까지 이동을 완성하세요"
+      "text": "터미널·시내 이동·베이징 호텔 문을 연결하세요"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "활성 주문 상태와 함께 활성 예약의 PEK/PKX 코드, 터미널, 항공편과 항공사 마감을 저장하세요.",
             "항공사, PEK/PKX 서비스 데스크와 현재 베이징 교통에 기억한 패턴이 아닌 실시간 예외를 문의하세요.",
-            "활성 기록을 도시 단위 지도 핀으로 바꾸지 마세요."
+            "작업 기록에는 PEK 또는 PKX와 실시간 터미널을 남기세요. 일반 ‘베이징 공항’ 핀은 충분히 정확하지 않습니다."
           ]
         },
         {
           "heading": "올바른 수도·다싱 터미널 또는 베이징 첫 숙소 지점에서 이동 완료",
           "items": [
-            "현재 표지된 출구, 합법 승차 또는 확인된 현지 연결을 이용하세요.",
+            "실시간 터미널 표지를 따라 해당 공항철도나 이 항공편에 확인된 합법 픽업 지점으로 가세요.",
             "짐과 남은 여유로 올바른 수도·다싱 터미널 또는 베이징 첫 숙소 지점에 갈 수 있는지 확인하세요.",
             "인계가 실패하면 즉흥적으로 움직이지 말고 항공사 재예약 또는 올바른 공항 쪽 직원 있는 숙박을 사용하세요."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "짐, 늦은 도착과 이동 제약은 답을 바꿉니다"
+      "text": "입국 심사·짐·늦은 착륙은 PEK와 PKX 계산을 바꿉니다"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "지도에서 가장 짧은 선이 아니라 가장 약한 인계를 보호합니다",
+      "caption": "표시 운임보다 터미널에서 호텔까지의 여유를 지키세요",
       "columns": [
-        "제약",
-        "더 안전한 작업안",
-        "가정하면 안 되는 것"
+        "베이징 공항 제약",
+        "더 안전한 터미널 계획",
+        "버려야 할 두 공항 가정"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "잘못된 노드에 갔을 때의 복구 순서"
+      "text": "다른 베이징 공항에 왔다면 도시를 건너기 전에 항공사에 연락하세요"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "이럴 때 답이 바뀝니다"
+      "text": "이럴 때 PEK와 PKX를 다시 계산하세요"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "최종 예약 및 게시일 재확인 목록"
+      "text": "PEK/PKX 터미널과 시내 이동 확인"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "다음 실제 결정을 이어서 해결하세요",
+      "title": "베이징 공항을 확정한 뒤 이어서 계획하세요",
       "items": [
         {
           "label": "베이징 도시 가이드부터 보기",

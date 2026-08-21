@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The PEK–PKX decision this guide settles",
       "tone": "neutral",
       "body": "This page owns pre-book PEK/PKX choice, post-book code and terminal confirmation, hotel/rail interaction and wrong-airport recovery. It does not repeat the narrow Beijing South–airport owner, choose among Beijing's eight railway stations, rank airlines or freeze airport trains, buses and taxi times."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Compare Capital and Daxing through the full Beijing journey"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "PEK or PKX on the live itinerary decides the airport",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Beijing airport chain",
+        "When PEK or PKX works",
+        "Terminal-to-door test",
+        "Airport-code error to prevent"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Airline and terminal assignments at PEK and PKX can move",
       "tone": "warning",
       "body": "PEK and PKX sit on opposite sides of Beijing; airline terminals, airport buses and rail hours change separately. After purchase the active code controls. Before release, reopen both airport and Beijing transport sources rather than assigning airlines permanently."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Embassy-side, southern and same-day flight chains split the answer"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure between the live terminal and the actual Beijing door",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Beijing flight chain",
+        "How to compare PEK and PKX",
+        "Terminal failure to contain"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Trace the terminal, city transfer and Beijing hotel door"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "Save the active PEK/PKX code, terminal, flight and airline deadline with the live order status.",
             "Ask the airline, PEK/PKX service desks and current Beijing transport about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Keep PEK or PKX and the live terminal in the working record; a generic Beijing airport pin is not specific enough."
           ]
         },
         {
           "heading": "Finish at the correct Capital/Daxing terminal or first Beijing hotel branch",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Follow the live terminal signs to the airport rail line or licensed pickup verified for this PEK or PKX flight.",
             "Confirm that the correct Capital/Daxing terminal or first Beijing hotel branch is still reachable with the bags and remaining margin.",
             "If that handoff fails, use airline rebooking or a staffed correct-airport overnight instead of improvising."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Immigration, cases and a late landing change the PEK–PKX calculation"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the terminal-to-hotel margin before comparing headline fares",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Beijing airport constraint",
+        "Safer terminal plan",
+        "PEK/PKX assumption to reject"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Beijing airport: contact the airline before crossing the city"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Recalculate PEK versus PKX when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "PEK/PKX terminal and transfer check"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after fixing the Beijing airport",
       "items": [
         {
           "label": "Start with the Beijing city guide",

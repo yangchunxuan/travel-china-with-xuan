@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Zhangjiajie arrival handoff this guide resolves",
       "tone": "neutral",
       "body": "This page owns DYG, central Zhangjiajie Station and Zhangjiajie West identity, their interaction with an already chosen base, late/luggage handling and wrong-node recovery. It does not choose downtown versus Wulingyuan, repeat Forest Park ticket and entrance workflow, or freeze flights, trains, coaches and taxi times."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Choose the arrival that serves Zhangjiajie city or Wulingyuan"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "The flight or rail record must match the first Zhangjiajie base",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Zhangjiajie arrival",
+        "When it serves the first base",
+        "Base-side question",
+        "Arrival mix-up to prevent"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Do not freeze Zhangjiajie's live rail and flight pattern",
       "tone": "warning",
       "body": "DYG, Zhangjiajie Station and Zhangjiajie West lead to different first road legs, while tourist transport changes with season, weather and crowd control. Verify the live arrival and hotel-side handoff; never call a rail station a Forest Park entrance."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Park-side, city-side and late arrivals need different handoffs"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Start with the booked service and finish at the exact hotel base",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "First-night pattern",
+        "How to build the arrival",
+        "Base handoff to protect"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Connect DYG or the rail station to the named first-night base"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "Save the DYG, 张家界站 or 张家界西 ticketed arrival with the live order status.",
             "Ask the live airline/12306 record, Zhangjiajie transport and the exact hotel about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Do not collapse DYG, 张家界站 and 张家界西 into one Zhangjiajie pin; each creates a different first-night handoff."
           ]
         },
         {
           "heading": "Finish at the booked downtown/Yongding or Wulingyuan hotel branch",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Leave through the signed airport or station exit and use the transfer verified for the downtown or Wulingyuan property.",
             "Confirm that the booked downtown/Yongding or Wulingyuan hotel branch is still reachable with the bags and remaining margin.",
             "If that handoff fails, use a staffed downtown night or revised park-side booking instead of improvising."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Mountain-bound luggage and late arrivals decide where the first night belongs"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the city-to-park transfer before choosing the quickest arrival",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Zhangjiajie arrival risk",
+        "Safer first-night response",
+        "Park-transfer assumption to avoid"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Zhangjiajie arrival point: protect the first night first"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Move the Zhangjiajie arrival plan when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Zhangjiajie arrival-to-base check"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue from the confirmed Zhangjiajie arrival",
       "items": [
         {
           "label": "Start with the Zhangjiajie city guide",

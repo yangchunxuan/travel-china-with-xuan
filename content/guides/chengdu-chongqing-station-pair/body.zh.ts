@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责成都与重庆的站对选择",
       "tone": "neutral",
       "body": "本页负责双向成都—重庆车站组合和酒店到酒店交接。它不重新定义重庆各站，不重复全国购票流程，不决定两城住宿区域，不固化车次，也不建立反向镜像页。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "选车次前先配对两座城市的准确车站"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "12306订单上的两个中文站名共同控制走廊",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "成渝站对",
+        "这组站对何时成立",
+        "两座城市的门到门核验",
+        "必须防住的配对错误"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "实时停靠会改变最佳成渝站对",
       "tone": "warning",
       "body": "成渝车次正在纳入不断变化的重要节点，包括重庆东。必须查询真实日期，不固化一组最快组合，不假设所有车都停新站，也不建立反向镜像。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "三种走廊旅程会奖励不同站对"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从成都门口量到重庆门口",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "成渝旅程",
+        "核验站对的方法",
+        "必须保护的双城接驳"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "连起成都出发门、两座车站与重庆地址"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "连同订单实时状态保存12306实时显示的成都—重庆票面组合。",
             "向12306与票面两站工作人员询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "12306订单必须保留两端完整中文站名；只写城市的定位会抹掉决定走廊效率的接驳。"
           ]
         },
         {
           "heading": "完成到重庆出站广场与立体城市中的最后酒店门的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "从票面重庆车站的标识出口离开，再走已核实的接驳到山城最终地址。",
             "确认带着行李和剩余余量仍能到达重庆出站广场与立体城市中的最后酒店门。",
             "交接失败时使用跨越任一城市前调整车站组合，或保护抵达夜，不要临时冒险。"
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "行李与重庆立体末段可能击败最快车次"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护两端站场接驳，再节省铁路段分钟数",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "成渝限制",
+        "更抗风险的站对",
+        "应排除的双城捷径"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "在任一城市走错站时，先重算站对"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化需要更换成渝站对"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "成渝双城站对出发前核验"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "锁定成渝站对后继续规划",
       "items": [
         {
           "label": "规划成都一侧",

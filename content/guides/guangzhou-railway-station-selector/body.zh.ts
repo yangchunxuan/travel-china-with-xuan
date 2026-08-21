@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责广州完整站名的选择",
       "tone": "neutral",
       "body": "本页负责五站身份、票面与酒店或下一程的匹配，以及走错站补救。它不重复白云机场航站楼选择、口岸流程、全国铁路乘车，也不复制广州—香港和广州—澳门完整走廊。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "把广州五座车站放进真实跨城旅程比较"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "12306上的完整中文后缀控制这趟旅程",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "广州车站",
+        "这座站何时适合",
+        "市内侧核验",
+        "必须避免的后缀错误"
       ],
       "rows": [
         [
@@ -86,7 +86,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "广州白云站与实时停靠让旧规律失效",
       "tone": "warning",
       "body": "广州中心站与白云站等角色仍在变化。必须用12306真实车次和广州当前公告核实，不能按旧线路图、“高铁”二字或记忆中的香港车次猜站。"
     },
@@ -94,16 +94,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "南站、白云站与东侧旅程需要不同站场逻辑"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从真实广州地址量到票面车站",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "广州旅程",
+        "核验车站的方法",
+        "必须保护的下一段接驳"
       ],
       "rows": [
         [
@@ -127,7 +127,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "连起酒店、站前广场与珠三角下一段"
     },
     {
       "id": "door-to-door-chain",
@@ -147,13 +147,13 @@ const body = {
           "items": [
             "连同订单实时状态保存票面广州南、广州东、广州站、广州白云或广州北的完整站名。",
             "向12306、广铁与广州当前市政公告询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "每次交接都保留完整中文后缀；只写“广州”的定位可能把车辆带到另一座站。"
           ]
         },
         {
           "heading": "完成到准确广州车站广场及香港、澳门或广东下一交接的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "从这座广州车站已确认的出口离开，再使用当前地铁、合法车辆或过境接驳。",
             "确认带着行李和剩余余量仍能到达准确广州车站广场及香港、澳门或广东下一交接。",
             "交接失败时使用跨广州前改真实票据，或保护下一口岸侧过夜，不要临时冒险。"
           ]
@@ -164,16 +164,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "行李和口岸截止会改变最合适的广州车站"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护站前广场与口岸余量，再谈节省车上时间",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "广州压力点",
+        "更稳妥的站场方案",
+        "应拒绝的后缀捷径"
       ],
       "rows": [
         [
@@ -197,7 +197,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "走错广州车站时，先停止跨城赶站"
     },
     {
       "id": "recovery-steps",
@@ -216,7 +216,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化会改写广州站场选择"
     },
     {
       "id": "answer-changes",
@@ -234,7 +234,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "广州站名后缀与下一段核验"
     },
     {
       "id": "final-checklist",
@@ -303,7 +303,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "固定广州车站后继续下一段",
       "items": [
         {
           "label": "先看广州城市指南",

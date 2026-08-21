@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责桂林到龙脊具体村寨的接驳",
       "tone": "neutral",
       "body": "本页负责双向桂林出发点到龙脊准确村寨的交通交接。它不决定一日游还是过夜，不深入比较村寨体验，不选择桂林抵达机场或车站，不卖团，也不固化巴士时刻和上车点。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "先选平安或大寨，再选择车辆"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "具名龙脊村寨与民宿交接控制整段转运",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "龙脊接驳链",
+        "这条村寨路线何时合适",
+        "住宿交接问题",
+        "必须防住的村寨混淆"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "龙脊季节道路与村寨交接必须逐次确认",
       "tone": "warning",
       "body": "平安、金坑大寨和古壮寨使用不同支线与最后步行。景区通行、拼车和道路会变化，必须复核准确住宿，不能把笼统“龙脊接送”写成服务所有山谷。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "机场、铁路站与桂林酒店出发会产生不同村寨转运"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从桂林上车点量到具名梯田村寨住宿",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "桂林上车模式",
+        "核实村寨交接的方法",
+        "必须防住的山地转运失败"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "连起桂林上车点、山路车辆与村寨住宿交接"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "连同订单实时状态保存准确桂林机场/车站/酒店出发点与龙脊村寨名。",
             "向龙脊景区管理、准确住宿与当前交通运营方询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "把桂林上车点与平安、金坑大寨或古壮寨写清楚；一个“龙脊”定位无法说明交接点。"
           ]
         },
         {
           "heading": "完成到平安、金坑大寨或古壮寨住宿交接点的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "在运营方确认的桂林出口或酒店点集合，再走住宿方认可的具名村寨交接。",
             "确认带着行李和剩余余量仍能到达平安、金坑大寨或古壮寨住宿交接点。",
             "交接失败时使用返回已确认有人值守的交接点或调整村寨预订，不要临时冒险。"
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "山路台阶、行李与天色共同决定龙脊交接是否可行"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护村寨住宿交接，再追求最短车程",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "龙脊限制",
+        "更稳妥的村寨安排",
+        "应拒绝的山路捷径"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "到错龙脊交接点时，不要进入未核实山路"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化需要更换龙脊接驳"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "龙脊村寨与住宿交接核验"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "固定龙脊转运后继续规划",
       "items": [
         {
           "label": "先选择一日游或过夜",

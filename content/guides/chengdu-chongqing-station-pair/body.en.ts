@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Chengdu–Chongqing station-pair decision",
       "tone": "neutral",
       "body": "This page owns the bidirectional Chengdu–Chongqing station-pair and hotel-to-hotel handoff. It does not redefine each Chongqing station, repeat national ticket buying, decide either city's hotel district, freeze trains or create reverse-direction pages."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Pair both cities' exact stations before choosing the train"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "Both Chinese station names on the 12306 order control this corridor",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Chengdu–Chongqing pair",
+        "When this pairing works",
+        "Two-city door test",
+        "Pairing error to prevent"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Live stops can change the best Chengdu–Chongqing station pair",
       "tone": "warning",
       "body": "Chengdu and Chongqing train patterns now include evolving major nodes, including Chongqing East. Search the exact date; do not preserve one fastest pair, assume every train calls at a new station, or create a reverse-direction mirror."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Three corridor trips that reward different station pairs"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure from the Chengdu door to the Chongqing door",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Corridor journey",
+        "How to test the pair",
+        "Two-city connection at risk"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Join the Chengdu origin, both station doors and the Chongqing address"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "Save the live Chengdu–Chongqing pair printed by 12306 with the live order status.",
             "Ask 12306 plus staff at the two printed stations about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Keep both full Chinese station names on the 12306 order; city-only pins erase the transfers that decide this corridor."
           ]
         },
         {
           "heading": "Finish at the Chongqing exit/square and final vertical-city hotel door",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "Leave through the signed exit at the booked Chongqing station and use the verified connection to the final vertical-city address.",
             "Confirm that the Chongqing exit/square and final vertical-city hotel door is still reachable with the bags and remaining margin.",
             "If that handoff fails, use change the station pair before crossing either city or protect the arrival night instead of improvising."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "Suitcases and Chongqing's vertical last mile can defeat the fastest train"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect both station transfers before saving minutes on the rail leg",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Corridor constraint",
+        "More resilient station pair",
+        "Two-city shortcut to reject"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong station in either city: reassess the pair before travelling"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Choose a different Chengdu–Chongqing pair when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Two-city station-pair check before travel"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after locking the corridor station pair",
       "items": [
         {
           "label": "Plan the Chengdu side",

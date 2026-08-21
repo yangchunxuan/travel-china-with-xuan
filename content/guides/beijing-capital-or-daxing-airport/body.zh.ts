@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页负责首都与大兴机场的选择",
       "tone": "neutral",
       "body": "本页负责出票前PEK/PKX选择、出票后代码与航站楼确认、酒店或铁路交接和走错机场补救。它不重复北京南站—机场窄任务，不选择北京八座火车站，不排名航司，也不固化机场轨道、巴士和打车时间。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "从完整北京旅程比较首都机场与大兴机场"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "实时行程中的PEK或PKX决定机场",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "北京机场链",
+        "PEK或PKX何时合适",
+        "航站楼到门口的核验",
+        "必须避免的机场代码错误"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "PEK与PKX的航司和航站楼安排可能调整",
       "tone": "warning",
       "body": "PEK和PKX位于北京不同侧，航站楼、机场巴士和轨道时间会独立变化。出票后以有效代码为准；发布前重开双机场和北京交通来源，不永久绑定航司。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "使馆区、北京南部和同日转机需要不同机场逻辑"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从实时航站楼量到真实北京门口",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "北京航班链",
+        "比较PEK与PKX的方法",
+        "必须控制的航站楼失败"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "拆出航站楼、市内接驳与北京酒店门口"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "连同订单实时状态保存有效订单的PEK/PKX代码、航站楼、航班与航司截止。",
             "向航司、PEK/PKX服务台与北京当前交通询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "工作记录必须保留PEK或PKX及实时航站楼；泛化的“北京机场”定位不够准确。"
           ]
         },
         {
           "heading": "完成到正确首都/大兴航站楼或北京首晚准确分店的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "按实时航站楼标识前往对应机场线或本航班已核实的合法接送点。",
             "确认带着行李和剩余余量仍能到达正确首都/大兴航站楼或北京首晚准确分店。",
             "交接失败时使用航司改签或正确机场侧有人值守的过夜，不要临时冒险。"
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "入境、行李与晚落地会重算PEK和PKX"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护航站楼到酒店余量，再比较票面价格",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "北京机场限制",
+        "更稳妥的航站楼方案",
+        "应拒绝的双机场假设"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "到错北京机场时，先联系航司再跨城"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化会重新计算PEK与PKX"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "PEK与PKX航站楼及接驳核验"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "固定北京机场后继续规划",
       "items": [
         {
           "label": "先看北京城市指南",

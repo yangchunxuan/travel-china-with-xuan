@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页解决哪一项西安车站选择",
       "tone": "neutral",
       "body": "本页负责真实日期下主要西安客运站的选择，并处理票面站名、酒店侧摩擦和走错站补救。它不重讲全国12306购票流程，不决定住城墙还是大雁塔，不复制兵马俑交通，也不发布永久性的“某方向固定去某站”表格。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "在西安、西安北和西安东之间按真实旅程选择"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "12306订单上的中文站名决定出发点",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "西安车站或接驳",
+        "适合这趟西安行程的原因",
+        "决定答案的西安市内核验",
+        "应避免的站名错误"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "西安东站让旧“两站规则”失效",
       "tone": "warning",
       "body": "西安东站于2026年启用，因此旧“两站模型”已不安全。发布周必须重开12306和西安当前交通公告，不能把启用初期的车次、入口或地铁衔接写成永久分工。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "城墙、大雁塔与走错站补救是三种不同旅程"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从西安酒店门口量到票面车站",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "西安旅程",
+        "核验车站选择的方法",
+        "要防住的西安失误"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "拆出西安酒店到站台的完整链条"
     },
     {
       "id": "door-to-door-chain",
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "行李和晚到会放大西安北侧与东侧距离"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护跨城转站余量，再谈节省铁路时间",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "西安限制",
+        "更稳妥的西安安排",
+        "不安全的车站捷径"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "走错西安车站时，先核票再跨城"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化出现时，重新选择西安车站"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "订票前与出发日的西安车站核对"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "选定西安车站后继续规划",
       "items": [
         {
           "label": "先看西安城市指南",

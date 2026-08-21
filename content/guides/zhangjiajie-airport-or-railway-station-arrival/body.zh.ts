@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "本页负责什么",
+      "title": "本页解决张家界抵达后的第一段交接",
       "tone": "neutral",
       "body": "本页负责DYG、张家界站和张家界西站身份，以及与既定住宿基地的交接、晚到行李和走错节点补救。它不决定住市区还是武陵源，不重复森林公园票务与入口流程，也不固化航班、车次、旅游客运或打车时间。"
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "比较完整旅程，不要只看城市名"
+      "text": "按张家界市区或武陵源首晚住宿选择抵达点"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "实时票面和准确目的地始终高于任何经验规则",
+      "caption": "航班或铁路记录必须匹配第一晚张家界基地",
       "columns": [
-        "节点或接驳链",
-        "什么情况下值得比较",
-        "真正决定答案的问题",
-        "必须避免的错误"
+        "张家界抵达点",
+        "何时适合第一晚基地",
+        "住宿侧决定问题",
+        "必须防住的抵达点混淆"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "不要把今天的运营方式写成永久规律",
+      "title": "不要冻结张家界当前航班与列车分工",
       "tone": "warning",
       "body": "DYG、张家界站和张家界西对应不同第一段道路，旅游交通还会随季节、天气和客流管控变化。核实实时抵达与酒店侧交接，绝不能把火车站写成森林公园入口。"
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "三条旅程，答案可能完全不同"
+      "text": "景区侧、市区侧和深夜抵达需要不同交接"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "从旅客真实的第一扇门和最后一扇门出发",
+      "caption": "从已订交通算到准确的第一晚酒店",
       "columns": [
-        "旅客链条",
-        "可执行的判断方法",
-        "必须防住的失败"
+        "首晚模式",
+        "搭建抵达链的方法",
+        "必须保护的住宿交接"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "把门到门旅程拆完整"
+      "text": "把DYG或铁路站接到具名首晚基地"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "连同订单实时状态保存票面的DYG、张家界站或张家界西抵达节点。",
             "向实时航司/12306记录、张家界交通与准确酒店询问实时例外，不凭记忆套规律。",
-            "不得用城市级地图定位替换有效票面。"
+            "不要把DYG、张家界站和张家界西压成一个城市定位；三者对应不同首晚交接。"
           ]
         },
         {
           "heading": "完成到已订市区/永定或武陵源酒店分店的交接",
           "items": [
-            "使用当前有标识出口、合法上车点或已核实本地接驳。",
+            "从机场或车站标识出口离开，并使用已和市区或武陵源酒店核实的接驳。",
             "确认带着行李和剩余余量仍能到达已订市区/永定或武陵源酒店分店。",
             "交接失败时使用有人值守的市区过夜或调整景区侧预订，不要临时冒险。"
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "行李、晚到和行动不便会改变答案"
+      "text": "去山区的行李和晚到会决定第一晚住哪里"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "保护最脆弱的交接点，而不是地图上最短的线",
+      "caption": "先保护市区到景区的交接，再选择最快抵达方式",
       "columns": [
-        "限制条件",
-        "更稳妥的工作方案",
-        "不要想当然"
+        "张家界抵达风险",
+        "更稳妥的首晚处理",
+        "应避免的景区接驳假设"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "走错节点后，按这个顺序补救"
+      "text": "到错张家界节点时，先保护第一晚"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "出现这些情况，答案会反转"
+      "text": "这些变化会移动张家界抵达方案"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "最终订票与发布日复核清单"
+      "text": "张家界抵达点到住宿基地核验"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "继续解决下一步真实问题",
+      "title": "确认张家界抵达点后继续规划",
       "items": [
         {
           "label": "先看张家界城市指南",

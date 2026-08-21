@@ -18,7 +18,7 @@ const body = {
     {
       "id": "scope-boundary",
       "type": "callout",
-      "title": "What this page owns",
+      "title": "The Kunming-to-Stone Forest transfer decision",
       "tone": "neutral",
       "body": "This page owns the bidirectional Kunming–Stone Forest transport chain and correct visitor-centre handoff. It does not tell the Ashima story, choose a Yunnan multi-city route, sell tickets or vehicles, rank suppliers or freeze trains, buses, fares, parking and opening hours."
     },
@@ -38,17 +38,17 @@ const body = {
       "id": "matrix-heading",
       "type": "heading",
       "level": 2,
-      "text": "Compare the complete trip, not the city label"
+      "text": "Compare train, bus and car through the correct visitor centre"
     },
     {
       "id": "decision-matrix",
       "type": "table",
-      "caption": "The live ticket and exact destination overrule every shortcut",
+      "caption": "Shilin West is a rail stop, not the Stone Forest entrance",
       "columns": [
-        "Node or chain",
-        "When it enters the shortlist",
-        "Question that decides it",
-        "Mistake to prevent"
+        "Stone Forest route",
+        "When this mode fits",
+        "Visitor-centre test",
+        "Endpoint error to prevent"
       ],
       "rows": [
         [
@@ -74,7 +74,7 @@ const body = {
     {
       "id": "dynamic-warning",
       "type": "callout",
-      "title": "Do not turn today's operating pattern into a permanent rule",
+      "title": "Recheck the Shilin West last mile and official visitor-centre access",
       "tone": "warning",
       "body": "Shilin West is not the attraction entrance, and dated bus information ages quickly. Reopen 12306 and the Stone Forest transport/ticketing pages before release; verify the legal drop-off and return rather than preserving an old station, fare or shuttle promise."
     },
@@ -82,16 +82,16 @@ const body = {
       "id": "scenarios-heading",
       "type": "heading",
       "level": 2,
-      "text": "Three journeys that produce different answers"
+      "text": "Kunming South, city-centre and car starts need different Stone Forest plans"
     },
     {
       "id": "scenario-table",
       "type": "table",
-      "caption": "Start at the traveller's real first and last doors",
+      "caption": "Measure from the Kunming origin to the signed scenic-area entry process",
       "columns": [
-        "Traveller chain",
-        "Working method",
-        "Failure to protect against"
+        "Stone Forest day pattern",
+        "How to test the route",
+        "Visitor-centre failure to prevent"
       ],
       "rows": [
         [
@@ -115,7 +115,7 @@ const body = {
       "id": "chain-heading",
       "type": "heading",
       "level": 2,
-      "text": "Build the door-to-door chain"
+      "text": "Connect Kunming, Shilin West or the road drop-off to the visitor centre"
     },
     {
       "id": "door-to-door-chain",
@@ -135,13 +135,13 @@ const body = {
           "items": [
             "Save the exact Kunming origin and official Stone Forest visitor-centre handoff with the live order status.",
             "Ask 12306, Stone Forest management and current Yunnan transport about a live exception, not a remembered pattern.",
-            "Never replace the active record with a city-level map pin."
+            "Keep the exact Kunming origin and the official Stone Forest visitor-centre handoff in the plan; a Shilin map pin is not an entrance."
           ]
         },
         {
           "heading": "Finish at Shilin West plus local transfer or the named visitor-centre/parking point",
           "items": [
-            "Use the current signed exit, legal pickup or verified local connection.",
+            "At Shilin West, use the current signed exit and verified local transfer; by road, confirm the official visitor-centre or parking drop-off.",
             "Confirm that Shilin West plus local transfer or the named visitor-centre/parking point is still reachable with the bags and remaining margin.",
             "If that handoff fails, use return to Shilin town/station or protect a staffed Kunming night instead of improvising."
           ]
@@ -152,16 +152,16 @@ const body = {
       "id": "late-heading",
       "type": "heading",
       "level": 2,
-      "text": "Luggage, late arrival and mobility can reverse the choice"
+      "text": "The Shilin West last mile can outweigh the fastest rail segment"
     },
     {
       "id": "late-table",
       "type": "table",
-      "caption": "Protect the weakest handoff, not the shortest line on a map",
+      "caption": "Protect the visitor-centre connection before comparing headline travel time",
       "columns": [
-        "Constraint",
-        "Safer working plan",
-        "Do not assume"
+        "Stone Forest constraint",
+        "Safer access plan",
+        "Shilin shortcut to reject"
       ],
       "rows": [
         [
@@ -185,7 +185,7 @@ const body = {
       "id": "recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "Wrong node: recover in this order"
+      "text": "At the wrong Shilin endpoint: return to an official staffed handoff"
     },
     {
       "id": "recovery-steps",
@@ -204,7 +204,7 @@ const body = {
       "id": "changes-heading",
       "type": "heading",
       "level": 2,
-      "text": "The answer changes when…"
+      "text": "Choose another Stone Forest route when…"
     },
     {
       "id": "answer-changes",
@@ -222,7 +222,7 @@ const body = {
       "id": "checklist-heading",
       "type": "heading",
       "level": 2,
-      "text": "Final booking and release-day checklist"
+      "text": "Stone Forest visitor-centre and last-mile check"
     },
     {
       "id": "final-checklist",
@@ -291,7 +291,7 @@ const body = {
     {
       "id": "internal-links",
       "type": "internal-links",
-      "title": "Continue the correct part of the plan",
+      "title": "Continue after the Stone Forest access is confirmed",
       "items": [
         {
           "label": "Place Kunming inside a Yunnan route",
