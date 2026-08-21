@@ -1,0 +1,122 @@
+{
+  "id": "shanghai-railway-station-selector",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "station-decision-matrix",
+  "topics": [
+    "transport",
+    "railways",
+    "railway-stations",
+    "airport-rail-connection"
+  ],
+  "destinations": [
+    "shanghai"
+  ],
+  "heroImagePath": "/images/guides/shanghai-railway-station-selector/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-railway-station-selector/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-railway-station-selector/",
+      "title": "Which Shanghai Railway Station? Shanghai, Hongqiao, South or Songjiang",
+      "headline": "Which Shanghai Railway Station Should You Use?",
+      "description": "Choose Shanghai, Hongqiao, Shanghai South or Shanghai Songjiang by the live train, exact hotel, airport connection, luggage and late arrival.",
+      "heroAlt": "High-speed trains at a platform inside Shanghai Hongqiao Railway Station.",
+      "heroCredit": {
+        "text": "Shanghai Hongqiao Railway Station, Ermell, 19 May 2015; cropped and resized by Homeground. It identifies the railway station only and does not prove current services.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AShanghai_Hongqiao_Station-20150519-RM-110424.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "Choose a Shanghai railway station",
+      "featuredLinkLabel": "Compare Shanghai's four major stations",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanghai",
+        "Railway stations",
+        "Hongqiao"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-railway-station-selector/",
+      "title": "上海站、虹桥、南站还是松江站？",
+      "headline": "上海四大火车站怎么选？",
+      "description": "按实时车次、准确酒店、机场衔接、行李和晚到，选择上海站、虹桥站、上海南站或上海松江站。",
+      "heroAlt": "上海虹桥站内站台和高铁列车。",
+      "heroCredit": {
+        "text": "上海虹桥站，Ermell摄于2015年5月19日；Homeground裁切并缩放。照片只确认铁路站，不证明当前运营。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AShanghai_Hongqiao_Station-20150519-RM-110424.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "选择上海火车站",
+      "featuredLinkLabel": "对比上海四大主要车站",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "上海交通",
+        "火车站",
+        "虹桥"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-railway-station-selector/",
+      "title": "상하이역·훙차오·남역·쑹장역, 어디로 갈까?",
+      "headline": "상하이에서는 어느 기차역을 이용해야 할까요?",
+      "description": "실시간 열차, 정확한 숙소, 공항 연결, 짐과 늦은 도착으로 상하이역·훙차오역·상하이남역·상하이쑹장역을 고릅니다.",
+      "heroAlt": "상하이훙차오역 승강장의 고속열차.",
+      "heroCredit": {
+        "text": "상하이훙차오역. Ermell이 2015년 5월 19일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 기차역만 확인하며 현재 운행을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AShanghai_Hongqiao_Station-20150519-RM-110424.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "상하이 기차역 고르기",
+      "featuredLinkLabel": "상하이 주요 역 4곳 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "상하이 교통",
+        "기차역",
+        "훙차오"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "which Shanghai railway station",
+      "Shanghai Station vs Hongqiao",
+      "Shanghai South vs Songjiang",
+      "wrong Shanghai station"
+    ],
+    "zh": [
+      "上海火车站怎么选",
+      "上海站还是虹桥站",
+      "上海南站松江站区别",
+      "上海走错火车站"
+    ],
+    "ko": [
+      "상하이 기차역 어디",
+      "상하이역 훙차오역",
+      "상하이남역 쑹장역",
+      "상하이 역 잘못 감"
+    ]
+  }
+}
