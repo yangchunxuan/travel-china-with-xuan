@@ -1,0 +1,123 @@
+{
+  "id": "zhangjiajie-airport-or-railway-station-arrival",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "arrival-hub-decision-matrix",
+  "topics": [
+    "transport",
+    "airports",
+    "railways",
+    "arrival-base",
+    "wrong-node-recovery"
+  ],
+  "destinations": [
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/zhangjiajie-airport-or-railway-station-arrival/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/zhangjiajie-airport-or-railway-station-arrival/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/zhangjiajie-airport-or-railway-station-arrival/",
+      "title": "Zhangjiajie Airport, Central Station or West Station?",
+      "headline": "Match Your Zhangjiajie Arrival to the Base You Actually Booked",
+      "description": "Match DYG, Zhangjiajie Railway Station or Zhangjiajie West to the live ticket, downtown or Wulingyuan base, park booking, luggage and late arrival.",
+      "heroAlt": "Zhangjiajie Hehua International Airport terminal and aircraft with Tianmen Mountain behind.",
+      "heroCredit": {
+        "text": "Zhangjiajie Hehua International Airport, Martin Lewison, 6 June 2018; cropped and resized by Homeground. It identifies DYG only and does not prove current operations.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AZhangjiajie_Airport_(27796134377).jpg",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      "navTitle": "Choose a Zhangjiajie arrival hub",
+      "featuredLinkLabel": "Compare Zhangjiajie airport and rail hubs",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Zhangjiajie",
+        "Airport",
+        "Railway stations"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/zhangjiajie-airport-or-railway-station-arrival/",
+      "title": "张家界机场、张家界站还是西站？",
+      "headline": "按真实住宿基地选择张家界抵达节点",
+      "description": "按实时票面、市区或武陵源基地、景区预订、行李和晚到，选择DYG、张家界站或张家界西站。",
+      "heroAlt": "张家界荷花国际机场航站楼和飞机，后方可见天门山。",
+      "heroCredit": {
+        "text": "张家界荷花国际机场，Martin Lewison摄于2018年6月6日；Homeground裁切并缩放。照片只确认DYG，不证明当前运营。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AZhangjiajie_Airport_(27796134377).jpg",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      "navTitle": "选择张家界抵达枢纽",
+      "featuredLinkLabel": "对比张家界机场与铁路枢纽",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "张家界交通",
+        "机场",
+        "火车站"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/zhangjiajie-airport-or-railway-station-arrival/",
+      "title": "장자제 공항·중앙역·서역, 어디로 도착할까?",
+      "headline": "실제로 예약한 거점에 장자제 도착 노드를 맞추세요",
+      "description": "실시간 표, 도심·우링위안 거점, 공원 예약, 짐과 늦은 도착에 맞춰 DYG·장자제역·장자제서역을 고릅니다.",
+      "heroAlt": "톈먼산을 배경으로 한 장자제 허화국제공항 터미널과 항공기.",
+      "heroCredit": {
+        "text": "장자제 허화국제공항. Martin Lewison이 2018년 6월 6일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 DYG만 확인하며 현재 운항을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AZhangjiajie_Airport_(27796134377).jpg",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      "navTitle": "장자제 도착 허브 고르기",
+      "featuredLinkLabel": "장자제 공항과 철도 허브 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "장자제 교통",
+        "공항",
+        "기차역"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Zhangjiajie airport or train station",
+      "Zhangjiajie West vs Zhangjiajie Station",
+      "DYG to Wulingyuan",
+      "which Zhangjiajie arrival"
+    ],
+    "zh": [
+      "张家界机场还是火车站",
+      "张家界西站和张家界站",
+      "荷花机场到武陵源",
+      "张家界抵达哪里"
+    ],
+    "ko": [
+      "장자제 공항 기차역",
+      "장자제서역 장자제역",
+      "DYG 우링위안",
+      "장자제 도착 어디"
+    ]
+  }
+}
