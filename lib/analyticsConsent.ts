@@ -33,6 +33,16 @@ function isConsentPreferences(
   );
 }
 
+function consentFromStorageValue(raw: string | null) {
+  if (!raw) return null;
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    return isConsentPreferences(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 export function readAnalyticsConsent():
   | AnalyticsConsentPreferences
   | null {
@@ -41,8 +51,8 @@ export function readAnalyticsConsent():
   try {
     const raw = window.localStorage.getItem(analyticsConsentStorageKey);
     if (!raw) return memoryConsent;
-    const parsed: unknown = JSON.parse(raw);
-    if (!isConsentPreferences(parsed)) {
+    const parsed = consentFromStorageValue(raw);
+    if (!parsed) {
       window.localStorage.removeItem(analyticsConsentStorageKey);
       memoryConsent = null;
       return memoryConsent;
@@ -143,6 +153,58 @@ export function hasAnalyticsConsent() {
 
 export function hasMarketingConsent() {
   return readAnalyticsConsent()?.marketing === true;
+}
+
+export function subscribeAnalyticsConsent(
+  listener: (preferences: AnalyticsConsentPreferences | null) => void,
+) {
+  if (typeof window === "undefined") return () => undefined;
+
+  const handleConsentChange = (event: Event) => {
+    const detail = (
+      event as CustomEvent<AnalyticsConsentPreferences>
+    ).detail;
+    if (isConsentPreferences(detail)) {
+      memoryConsent = detail;
+      listener(detail);
+      return;
+    }
+    listener(readAnalyticsConsent());
+  };
+  const handleStorage = (event: StorageEvent) => {
+    if (
+      event.key !== null &&
+      event.key !== analyticsConsentStorageKey
+    ) {
+      return;
+    }
+    if (
+      event.storageArea &&
+      event.storageArea !== window.localStorage
+    ) {
+      return;
+    }
+
+    const next =
+      event.key === null
+        ? null
+        : consentFromStorageValue(event.newValue);
+    memoryConsent = next;
+    listener(next);
+  };
+
+  window.addEventListener(
+    analyticsConsentChangedEventName,
+    handleConsentChange,
+  );
+  window.addEventListener("storage", handleStorage);
+  return () => {
+    window.removeEventListener(
+      analyticsConsentChangedEventName,
+      handleConsentChange,
+    );
+    window.removeEventListener("storage", handleStorage);
+  };
 }
 
 export function openAnalyticsConsentPreferences() {

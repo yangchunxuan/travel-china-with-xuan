@@ -2,10 +2,10 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import {
-  analyticsConsentChangedEventName,
   analyticsConsentOpenEventName,
   readAnalyticsConsent,
   saveAnalyticsConsent,
+  subscribeAnalyticsConsent,
   type AnalyticsConsentPreferences,
 } from "../lib/analyticsConsent";
 import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
@@ -48,11 +48,6 @@ export function AnalyticsConsent({
     setPreferences(readAnalyticsConsent());
     setHydrated(true);
 
-    const handleConsentChange = (event: Event) => {
-      const customEvent =
-        event as CustomEvent<AnalyticsConsentPreferences>;
-      setPreferences(customEvent.detail);
-    };
     const handleOpen = () => {
       const current = readAnalyticsConsent();
       setDraftAnalytics(current?.analytics ?? false);
@@ -60,16 +55,10 @@ export function AnalyticsConsent({
       setManagerOpen(true);
     };
 
-    window.addEventListener(
-      analyticsConsentChangedEventName,
-      handleConsentChange,
-    );
+    const unsubscribeConsent = subscribeAnalyticsConsent(setPreferences);
     window.addEventListener(analyticsConsentOpenEventName, handleOpen);
     return () => {
-      window.removeEventListener(
-        analyticsConsentChangedEventName,
-        handleConsentChange,
-      );
+      unsubscribeConsent();
       window.removeEventListener(analyticsConsentOpenEventName, handleOpen);
     };
   }, []);

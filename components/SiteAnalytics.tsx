@@ -16,10 +16,20 @@ import {
   trackPageView,
 } from "../lib/analytics";
 import {
-  analyticsConsentChangedEventName,
   readAnalyticsConsent,
+  subscribeAnalyticsConsent,
   type AnalyticsConsentPreferences,
 } from "../lib/analyticsConsent";
+import {
+  currentAnalyticsLocationKey,
+  subscribeAnalyticsLocationChanges,
+  thirdPartyMeasurementLocationIsSafe,
+} from "../lib/analyticsLocation";
+import {
+  consumeAnalyticsPageView,
+  createAnalyticsPageViewState,
+  resetAnalyticsPageView,
+} from "../lib/analyticsPageViews";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
 const googleScriptId = "homeground-ga4-script";
@@ -47,43 +57,92 @@ export function SiteAnalytics({
   const [preferences, setPreferences] = useState<
     AnalyticsConsentPreferences | null | undefined
   >(undefined);
-  const lastTrackedPathRef = useRef("");
+  const [locationKey, setLocationKey] = useState<string | undefined>(
+    undefined,
+  );
+  const pageViewsRef = useRef(createAnalyticsPageViewState());
 
   useEffect(() => {
-    const refreshPreferences = () => {
-      setPreferences(readAnalyticsConsent());
+    const applyPreferences = (
+      next: AnalyticsConsentPreferences | null,
+    ) => {
+      // Storage events arrive before React effects. Revoke each vendor and
+      // clear first-party state synchronously so another tab's withdrawal
+      // cannot leave an active measurement window until the next render.
+      if (!next?.analytics) {
+        disableGoogleAnalytics();
+        clearAnalyticsSessionState();
+        removeExternalScript(googleScriptId);
+        resetAnalyticsPageView(pageViewsRef.current, "first_party");
+        resetAnalyticsPageView(pageViewsRef.current, "google");
+      }
+      if (!next?.marketing) {
+        disableMetaPixel();
+        removeExternalScript(metaScriptId);
+        resetAnalyticsPageView(pageViewsRef.current, "meta");
+      }
+      setPreferences(next);
     };
-    refreshPreferences();
-    window.addEventListener(
-      analyticsConsentChangedEventName,
-      refreshPreferences,
-    );
-    return () => {
-      window.removeEventListener(
-        analyticsConsentChangedEventName,
-        refreshPreferences,
-      );
-    };
+
+    applyPreferences(readAnalyticsConsent());
+    return subscribeAnalyticsConsent(applyPreferences);
   }, []);
 
   useEffect(() => {
-    if (!ANALYTICS_ENABLED || preferences === undefined) return;
+    const disableThirdPartyBeforeUnsafeLocation = (nextHref: string) => {
+      if (thirdPartyMeasurementLocationIsSafe(nextHref)) return;
+      disableGoogleAnalytics();
+      disableMetaPixel();
+      removeExternalScript(googleScriptId);
+      removeExternalScript(metaScriptId);
+      resetAnalyticsPageView(pageViewsRef.current, "google");
+      resetAnalyticsPageView(pageViewsRef.current, "meta");
+    };
+    const refreshLocation = () => {
+      disableThirdPartyBeforeUnsafeLocation(window.location.href);
+      setLocationKey(currentAnalyticsLocationKey());
+    };
+    const unsubscribe = subscribeAnalyticsLocationChanges({
+      beforeChange: disableThirdPartyBeforeUnsafeLocation,
+      change: refreshLocation,
+    });
+    refreshLocation();
+    return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    if (
+      !ANALYTICS_ENABLED ||
+      preferences === undefined ||
+      locationKey === undefined
+    ) {
+      return;
+    }
 
     if (preferences?.analytics) {
       captureEntryAttribution();
       removeAttributionParametersFromAddressBar();
-      if (initializeGoogleAnalytics()) {
+      if (
+        thirdPartyMeasurementLocationIsSafe() &&
+        initializeGoogleAnalytics()
+      ) {
         loadExternalScript(
           googleScriptId,
           `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
             GA_MEASUREMENT_ID,
           )}`,
         );
+      } else {
+        disableGoogleAnalytics();
+        removeExternalScript(googleScriptId);
+        resetAnalyticsPageView(pageViewsRef.current, "google");
       }
     } else {
       disableGoogleAnalytics();
       clearAnalyticsSessionState();
       removeExternalScript(googleScriptId);
+      resetAnalyticsPageView(pageViewsRef.current, "first_party");
+      resetAnalyticsPageView(pageViewsRef.current, "google");
     }
 
     if (preferences?.marketing) {
@@ -91,33 +150,81 @@ export function SiteAnalytics({
       // its script loads even when the visitor allowed marketing but not
       // Homeground's first-party analytics.
       removeAttributionParametersFromAddressBar();
-      if (initializeMetaPixel()) {
+      if (
+        thirdPartyMeasurementLocationIsSafe() &&
+        initializeMetaPixel()
+      ) {
         loadExternalScript(
           metaScriptId,
           "https://connect.facebook.net/en_US/fbevents.js",
         );
+      } else {
+        disableMetaPixel();
+        removeExternalScript(metaScriptId);
+        resetAnalyticsPageView(pageViewsRef.current, "meta");
       }
     } else {
       disableMetaPixel();
       removeExternalScript(metaScriptId);
+      resetAnalyticsPageView(pageViewsRef.current, "meta");
     }
-  }, [preferences?.analytics, preferences?.marketing, preferences]);
+  }, [locationKey, preferences]);
 
   useEffect(() => {
-    const measurementAllowed = Boolean(
-      preferences?.analytics || preferences?.marketing,
-    );
-    if (!ANALYTICS_ENABLED || !measurementAllowed || !pathname) {
-      if (!measurementAllowed) lastTrackedPathRef.current = "";
+    if (
+      !ANALYTICS_ENABLED ||
+      locationKey === undefined ||
+      !pathname
+    ) {
       return;
     }
 
     const pageKey = `${locale}:${pathname}`;
-    if (lastTrackedPathRef.current === pageKey) return;
-    lastTrackedPathRef.current = pageKey;
-    trackPageView({ path: pathname, locale });
+    const queryFree = thirdPartyMeasurementLocationIsSafe();
+
+    if (preferences?.analytics) {
+      if (
+        consumeAnalyticsPageView(
+          pageViewsRef.current,
+          "first_party",
+          pageKey,
+        )
+      ) {
+        trackPageView({ path: pathname, locale, target: "first_party" });
+      }
+      if (
+        queryFree &&
+        consumeAnalyticsPageView(
+          pageViewsRef.current,
+          "google",
+          pageKey,
+        )
+      ) {
+        trackPageView({ path: pathname, locale, target: "google" });
+      } else if (!queryFree) {
+        resetAnalyticsPageView(pageViewsRef.current, "google");
+      }
+    } else {
+      resetAnalyticsPageView(pageViewsRef.current, "first_party");
+      resetAnalyticsPageView(pageViewsRef.current, "google");
+    }
+
+    if (
+      preferences?.marketing &&
+      queryFree &&
+      consumeAnalyticsPageView(
+        pageViewsRef.current,
+        "meta",
+        pageKey,
+      )
+    ) {
+      trackPageView({ path: pathname, locale, target: "meta" });
+    } else if (!preferences?.marketing || !queryFree) {
+      resetAnalyticsPageView(pageViewsRef.current, "meta");
+    }
   }, [
     locale,
+    locationKey,
     pathname,
     preferences?.analytics,
     preferences?.marketing,
