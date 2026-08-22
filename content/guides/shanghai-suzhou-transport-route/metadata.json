@@ -1,0 +1,122 @@
+{
+  "id": "shanghai-suzhou-transport-route",
+  "type": "route",
+  "pillar": "transport",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "route-decision",
+  "topics": [
+    "transport",
+    "rail",
+    "city-pair"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/shanghai-suzhou-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-suzhou-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "searchTerms": {
+    "en": [
+      "shanghai to suzhou train",
+      "suzhou day trip from shanghai",
+      "shanghai hongqiao to suzhou",
+      "which suzhou station",
+      "shanghai suzhou high speed rail"
+    ],
+    "zh": [
+      "上海到苏州高铁",
+      "苏州一日游交通",
+      "虹桥到苏州站还是苏州北站",
+      "上海去苏州怎么走"
+    ],
+    "ko": [
+      "상하이 쑤저우 기차",
+      "쑤저우 당일치기 교통",
+      "홍차오역 쑤저우역 고르기",
+      "상하이 쑤저우 고속철도"
+    ]
+  },
+  "search": {
+    "section": "transport",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-suzhou-transport-route/",
+      "title": "Shanghai and Suzhou: Which Stations Make the Short Trip Easy?",
+      "headline": "Shanghai–Suzhou: Pick the Pair That Shortens the Whole Day",
+      "description": "Match Shanghai and Suzhou stations to your hotels and plans: door-to-door time, metro connections, luggage, late trains and recovery when something goes wrong.",
+      "heroAlt": "A Fuxing high-speed train waiting at Platform 1 of Shanghai Hongqiao Railway Station.",
+      "navTitle": "Shanghai–Suzhou stations",
+      "featuredLinkLabel": "Plan the Shanghai–Suzhou hop",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanghai",
+        "Suzhou",
+        "Station choice"
+      ],
+      "heroCredit": {
+        "text": "Photo by 颜国良 Yan Guoliang (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Platform_1_at_Shanghai_Hongqiao_Railway_Station_20260320.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-suzhou-transport-route/",
+      "title": "上海到苏州：怎样选对车站，真正缩短全程？",
+      "headline": "沪苏选站：缩短的是全程，不只是车上时间",
+      "description": "按住宿区域和当天目标匹配上海与苏州两侧车站：门到门时间、地铁衔接、行李、晚到风险与出错恢复。",
+      "heroAlt": "一列复兴号动车组停靠在上海虹桥火车站1号站台。",
+      "navTitle": "沪苏车站选择",
+      "featuredLinkLabel": "规划沪苏短途",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "上海",
+        "苏州",
+        "选站"
+      ],
+      "heroCredit": {
+        "text": "摄影：颜国良（经裁切）",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Platform_1_at_Shanghai_Hongqiao_Railway_Station_20260320.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-suzhou-transport-route/",
+      "title": "상하이-쑤저우 이동: 어떤 역 조합이 실제로 가장 편할까?",
+      "headline": "상하이-쑤저우: 차안 시간이 아니라 전체 동선을 줄이는 역 조합",
+      "description": "숙소 위치와 일정에 맞춰 상하이와 쑤저우 역을 매칭합니다. 문 앞에서 문 앞까지 시간, 지하철 연결, 짐과 야간 도착 리스크, 문제 발생 시 대처까지.",
+      "heroAlt": "푸싱 고속열차가 상하이 훙차오 기차역 1번 승강장에 정차해 있습니다.",
+      "navTitle": "상하이-쑤저우 역 선택",
+      "featuredLinkLabel": "상하이-쑤저우 이동 계획",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "상하이",
+        "쑤저우",
+        "역 선택"
+      ],
+      "heroCredit": {
+        "text": "사진: Yan Guoliang (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Platform_1_at_Shanghai_Hongqiao_Railway_Station_20260320.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}
