@@ -1212,3 +1212,15 @@ record and image plan.
 | --- | --- | --- | --- |
 | `china-online-arrival-card` hero | [Beijing Capital International Airport T1 Arrival hall 20161124.jpg](https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg), Beijing Capital International Airport Terminal 1 arrival hall; Tyg728; 2016-11-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/china-online-arrival-card/hero-1600.jpg`; 1600 × 1000; `2246f6c0c7628651b8714d0566b6972fe931f0ada04d05a3ba0339df14d7ee6e` | A general China-arrival setting only. It is not an immigration counter or arrival-card desk and proves no current form, queue, processing time, terminal operation or successful admission. |
 | `zhangjiajie-national-forest-park-tickets-and-entrances` hero | [Zhangjiajie National Forest Park.jpg](https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg), quartz-sandstone landscape in Zhangjiajie National Forest Park; Kuruman; 2016-08-13; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `public/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg`; 1600 × 1000; `c7f5fa0ec990da6fc8ed14c92ec6c709444e8823e4cb467c2e45109ee887ec61` | Identifies the park landscape only. It does not depict or identify a gate and proves no current ticket product, queue, shuttle, cableway, lift, opening status or weather. |
+
+## Domestic-flight disruption recovery guide (August 22, 2026)
+
+This guide uses one real, location-identified Wikimedia Commons photograph and
+**0 AI-generated or AI-assisted documentary images**. The derivative was made
+only by cropping, resizing and WebP conversion, with metadata removed. Named
+attribution, source and commercial-use licence links remain in the guide's
+default-collapsed Sources block and image plan.
+
+| Page and role | Original source, place, creator and rights | Published derivative and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| `china-domestic-flight-schedule-change` hero | [Terminal 3 of Beijing Capital International Airport — Departure Hall](https://commons.wikimedia.org/wiki/File:20251026_Terminal_3_of_Beijing_Capital_International_Airport_-_Departure_Hall.jpg), Beijing Capital International Airport Terminal 3 departure hall; Windmemories; 2025-10-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/china-domestic-flight-schedule-change/hero-1600.webp`; 1600 × 1000; `be330e937761a2a858a09e8f952418e68c4de24ecc6dfca66f8404fd5a848fc8` | Identifies an ordinary departure hall only. It does not depict or prove a delay, cancellation, diversion, airline response, compensation outcome, current flight status or terminal operating condition. |

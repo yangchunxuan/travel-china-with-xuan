@@ -15,7 +15,7 @@ const body: StructuredPageBody = {
       items: [
         "Confirm the current status on the operating carrier's own app, hotline or the airport display — not on a forwarded message alone.",
         "Save evidence before acting: screenshot the change notice, photograph the display with something timestamped visible, keep your boarding pass and receipts.",
-        "Identify who issued your ticket (airline shop or agency), which carrier actually operates each flight, and whether connecting flights share one ticket number.",
+        "Identify who issued your ticket (airline shop or agency), which carrier actually operates each flight, and whether the connecting flights form one transport contract. One ticket number or a set of consecutive tickets may be involved.",
         "Note where you are — origin, stopover or diverted airport — and the cause the carrier officially states.",
         "Compare four exits before choosing: accept the new flight, take the free involuntary rebooking, take the refund, or switch this leg to high-speed rail while seats exist.",
         "Protect what comes after: hotels, trains, tours, transfers and any international departure.",
@@ -57,8 +57,8 @@ const body: StructuredPageBody = {
         {
           heading: "Missed connection",
           items: [
-            "One ticket number: ask the carrier to rebook the whole remaining journey.",
-            "Separate tickets: no automatic protection; contact the second seller immediately.",
+            "Confirmed through journey under one transport contract: ask the carrier to rebook the whole remaining journey.",
+            "Genuinely separate contracts: no automatic protection; contact the onward seller immediately.",
           ],
         },
       ],
@@ -87,7 +87,7 @@ const body: StructuredPageBody = {
       items: [
         "Screenshot the original booking and the exact change or cancellation notice with send time, sender and flight number visible.",
         "Photograph the airport display showing your flight delayed or cancelled, with a clock, boarding pass or date in frame.",
-        "Keep the e-ticket itinerary with ticket numbers — one ticket number means through-itinerary protection; separate numbers mean separate contracts.",
+        "Keep the e-ticket itinerary and every ticket number. Do not decide protection from the number count alone: one ticket or consecutive tickets can form a single transport contract, so ask the issuer to confirm the covered itinerary in writing.",
         "Write down staff statements: time, desk, what was offered or refused, stated reason. Ask for it in writing where possible.",
         "Keep receipts for anything you paid yourself; they support later reimbursement under carrier conditions or insurance.",
         "Do not submit any request labelled “voluntary” until you have confirmed how this disruption will be coded (below).",
@@ -131,12 +131,12 @@ const body: StructuredPageBody = {
           "Choose waiting, surface transport or refund; confirm bags before leaving",
         ],
         [
-          "Missed connection on one ticket number",
+          "Missed connection under one transport contract",
           "Per the rules above while you wait",
           "The contracting carrier must assist you onward to your destination or stopover point; changes and refunds follow the involuntary rules — not a guaranteed seat on another airline",
         ],
         [
-          "Separately issued second ticket missed",
+          "Onward flight under a genuinely separate contract missed",
           "At your own cost unless a rule above applies",
           "No automatic protection; ask the second seller for goodwill options; keep documents for a later claim against the first carrier",
         ],
@@ -170,7 +170,7 @@ const body: StructuredPageBody = {
       type: "callout",
       tone: "warning",
       title: "Not all carriers use the same windows",
-      body: "Verified conditions of carriage differ where it matters. China Eastern limits free involuntary rebooking to flights within three days either side of the original. China Southern allows domestic changes within seven days including the departure day, and adds a second fee-free change in five listed situations such as family members split across flights or a connection longer than 240 minutes. Air China grants one free involuntary change covering adjacent connecting flights without publishing a day window. Assume nothing uniform: ask staff which window applies to you.",
+      body: "Verified conditions of carriage differ where it matters. China Eastern normally uses a three-day window on either side of the original flight; if no China Eastern seat is available inside it, the nearest available China Eastern flight can still be changed free. China Southern normally uses seven days on either side for domestic flights and has the same nearest-available-flight exception when its window has no seat; it also lists five situations for a second fee-free change, such as family members split across flights or a connection longer than 240 minutes. Air China grants one free involuntary change covering adjacent connecting flights without publishing a day window. Assume nothing uniform: ask staff which rule applies to your case.",
     },
     {
       id: "who-heading",
@@ -296,7 +296,7 @@ const body: StructuredPageBody = {
     {
       id: "scenario-ahead",
       type: "paragraph",
-      text: "You are not at the airport yet — use that distance. Verify the cancellation on the carrier's own app first; advance-notice scams circulate in peak seasons. Then contact the issuing channel while options are widest: earlier flights, rebooking within the carrier's window, fee-free involuntary refunds, or rail seats before they sell. If an agency holds the ticket, open a written case with its support line at once, and ask for any connecting flights on the same ticket number to be rebooked in one request.",
+      text: "You are not at the airport yet — use that distance. Verify the cancellation on the carrier's own app first; advance-notice scams circulate in peak seasons. Then contact the issuing channel while options are widest: earlier flights, rebooking under the carrier's current rules, fee-free involuntary refunds, or rail seats before they sell. If an agency holds the ticket, open a written case with its support line at once, confirm which connecting segments belong to the same transport contract, and ask for the covered remainder to be rebooked in one request.",
     },
     {
       id: "scenario-airport-heading",
@@ -379,8 +379,8 @@ const body: StructuredPageBody = {
           "Have the counter do what it can (same-day rebooking, disruption confirmation); route money questions to the issuer with both case numbers",
         ],
         [
-          "Refund approved but not arriving — regulations require valid refund applications to be processed within seven working days, excluding bank processing time; card refunds commonly take longer on top",
-          "Record when you filed and what was promised, chase the issuer's written status, then use the payment-dispute path if the deadline passes — one major OTA page cites around fifteen business days as a general card-refund reference",
+          "Refund approved but not arriving — regulations require valid refund applications to be processed within seven working days, excluding financial-institution processing time",
+          "Record when you filed and what was promised, and chase the issuer's written status. Trip.com's general guide separately gives a seven-to-fifteen-business-day card-refund range; treat it as a reference, not a second clock to add mechanically to the regulatory period",
         ],
         [
           "No Chinese phone number — some hotlines and SMS flows assume a local number",
@@ -468,7 +468,7 @@ const body: StructuredPageBody = {
       id: "faq-sep-heading",
       type: "heading",
       level: 3,
-      text: "My connecting flight was on a separate ticket — what can the first airline do about it?",
+      text: "My onward flight was under a separate contract — what can the first airline do about it?",
     },
     {
       id: "faq-sep",
