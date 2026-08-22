@@ -1,0 +1,120 @@
+{
+  "id": "harbin-ice-and-snow-festival-opening",
+  "type": "field-note",
+  "pillar": "timing-holidays-crowds",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "verification-guide",
+  "topics": [
+    "timing",
+    "winter",
+    "verification"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/harbin-ice-and-snow-festival-opening/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/harbin-ice-and-snow-festival-opening/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "searchTerms": {
+    "en": [
+      "harbin ice and snow festival opening date",
+      "ice snow world harbin tickets",
+      "harbin ice festival trial operation",
+      "is harbin ice festival open"
+    ],
+    "zh": [
+      "哈尔滨冰雪大世界开放时间",
+      "冰雪大世界试运营",
+      "哈尔滨冰雪节门票",
+      "冰雪大世界今天开吗"
+    ],
+    "ko": [
+      "하얼빈 빙설제 오픈일정",
+      "빙설대세계 입장권",
+      "하얼빈 빙설제 운영 확인"
+    ]
+  },
+  "search": {
+    "section": "when-to-go",
+    "family": "task",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/harbin-ice-and-snow-festival-opening/",
+      "title": "Harbin Ice and Snow Festival: Verify Opening, Trial Operations and Closures",
+      "headline": "Harbin's Ice Season: Confirm What Is Actually Open Before You Go",
+      "description": "Tell apart the festival, its separate venues, trial operations, official openings and weather closures in Harbin — with an official verification chain you can re-run every year.",
+      "heroAlt": "Aerial view of the long ice slides at Harbin's Ice and Snow World beside the frozen Songhua River.",
+      "navTitle": "Verify Harbin's ice season",
+      "featuredLinkLabel": "Check Harbin opening status",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Harbin",
+        "Winter",
+        "Verification"
+      ],
+      "heroCredit": {
+        "text": "Photo by Garosio33 (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Ice_slide.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/harbin-ice-and-snow-festival-opening/",
+      "title": "哈尔滨冰雪节：如何确认正式开放、试运营与临时关闭？",
+      "headline": "冰雪季核验指南：出发前确认“真的开了什么”",
+      "description": "区分冰雪节整体、各独立场地、试运营、正式开放、单日关闭与售票状态——建立一套每年可重复执行的官方核验流程。",
+      "heroAlt": "俯瞰松花江畔哈尔滨冰雪大世界的超长冰滑梯。",
+      "navTitle": "冰雪季开放核验",
+      "featuredLinkLabel": "核查哈尔滨开放状态",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "哈尔滨",
+        "冬季",
+        "状态核验"
+      ],
+      "heroCredit": {
+        "text": "摄影：Garosio33（经裁切）",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Ice_slide.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/harbin-ice-and-snow-festival-opening/",
+      "title": "하얼빈 빙설제: 정식 개장·시험 운영·임시 휴장을 확인하는 법",
+      "headline": "하얼빈 얼음 시즌: 가기 전에 실제로 열린 것을 확인하세요",
+      "description": "페스티벌 전체, 개별 장소, 시험 운영, 정식 개장, 기상 휴장을 구분하는 공식 확인 절차를 매년 반복 실행하는 방법.",
+      "heroAlt": "결빙한 송화강 옆 하얼빈 빙설대세계의 긴 얼음 미끄럼틀을 내려다본 전경.",
+      "navTitle": "하얼빈 얼음 시즌 확인",
+      "featuredLinkLabel": "하얼빈 개장 상태 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "하얼빈",
+        "겨울",
+        "상태 확인"
+      ],
+      "heroCredit": {
+        "text": "사진: Garosio33 (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Ice_slide.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  }
+}
