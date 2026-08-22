@@ -1,0 +1,127 @@
+{
+  "id": "china-domestic-flight-schedule-change",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "recovery-guide",
+  "topics": [
+    "flight-disruption",
+    "in-trip-recovery",
+    "domestic-flights"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-domestic-flight-schedule-change/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-domestic-flight-schedule-change/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "searchTerms": {
+    "en": [
+      "china domestic flight cancelled",
+      "china flight delayed what to do",
+      "china airline changed my flight",
+      "china flight cancellation refund",
+      "china flight delay hotel",
+      "china domestic flight compensation",
+      "cancelled china flight rebook or train",
+      "ota booked china flight cancelled",
+      "missed connection after china domestic flight delay"
+    ],
+    "zh": [
+      "中国国内航班取消怎么办",
+      "航班延误航司管食宿吗",
+      "航变免费退改",
+      "航班取消改乘高铁",
+      "OTA订的机票航班取消了怎么办"
+    ],
+    "ko": [
+      "중국 국내선 결항 대처",
+      "중국 항공편 지연 보상",
+      "항공편 취소 환불 재예약",
+      "중국 고속철도 갈아타기 판단"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-domestic-flight-schedule-change/",
+      "title": "China Domestic Flight Delayed or Cancelled: Rebook, Refund, Hotel or Rail?",
+      "headline": "Your China Flight Changed. Decide With Evidence.",
+      "description": "What to do when a China domestic flight is delayed, cancelled, rescheduled or diverted: verify status, save evidence first, then choose between rebooking, refunds, hotels and high-speed rail.",
+      "heroAlt": "Departure hall of Beijing Capital International Airport Terminal 3 with passengers waiting near check-in and flight information displays.",
+      "navTitle": "Flight disruption recovery",
+      "featuredLinkLabel": "Recover a disrupted China flight",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Flight delays",
+        "Cancellations",
+        "In-trip recovery"
+      ],
+      "heroCredit": {
+        "text": "Photo by Windmemories (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20251026_Terminal_3_of_Beijing_Capital_International_Airport_-_Departure_Hall.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/china-domestic-flight-schedule-change/",
+      "title": "中国国内航班延误或取消：改签、退款、住宿还是改乘高铁？",
+      "headline": "航班变了：先留证据，再做决定",
+      "description": "国内航班延误、取消、提前改时刻或备降后的完整处置：如何核实状态、保存证据，在免费改签、非自愿退票、食宿安排和高铁之间做出选择。",
+      "heroAlt": "北京首都国际机场3号航站楼出发大厅，旅客在值机区和航班信息屏附近候机。",
+      "navTitle": "航班延误取消应对",
+      "featuredLinkLabel": "处理被打断的航班",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "航班延误",
+        "取消退改",
+        "途中应对"
+      ],
+      "heroCredit": {
+        "text": "摄影：Windmemories（经裁切）",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20251026_Terminal_3_of_Beijing_Capital_International_Airport_-_Departure_Hall.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/china-domestic-flight-schedule-change/",
+      "title": "중국 국내선 지연·취소: 재예약, 환불, 숙박 또는 고속철도?",
+      "headline": "항공편이 바뀌었다면: 증거부터 남기고 결정하세요",
+      "description": "중국 국내선이 지연, 결항, 시각 변경 또는 우회 착륙되었을 때의 전체 대처 절차: 상태 확인과 증거 보존부터 무료 재예약, 자발적 아닌 환불, 숙박 제공, 고속철도 전환 판단까지.",
+      "heroAlt": "베이징 수도 국제공항 제3터미널 출발층에서 체크인 카운터와 항공편 정보 게시판 근처에 모인 승객들.",
+      "navTitle": "항공편 지연·취소 대처",
+      "featuredLinkLabel": "중단된 항공편 복구하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "항공편 지연",
+        "결항·환불",
+        "여정 복구"
+      ],
+      "heroCredit": {
+        "text": "사진: Windmemories (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20251026_Terminal_3_of_Beijing_Capital_International_Airport_-_Departure_Hall.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}
