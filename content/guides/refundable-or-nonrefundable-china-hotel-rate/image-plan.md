@@ -1,0 +1,23 @@
+# Image plan — refundable-or-nonrefundable-china-hotel-rate
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/refundable-or-nonrefundable-china-hotel-rate/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: a standard Chinese hotel room (ink painting above the bed, entry door down a short hallway) — the concrete object of a rate decision; documentary-neutral, no incident implied.
+- Provenance:
+  - Author: N509FZ
+  - Source page: Wikimedia Commons file page for "Normal room in Beijing Hotel (20150822152029).JPG"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/5/5f/Normal_room_in_Beijing_Hotel_%2820150822152029%29.JPG
+  - License: CC BY-SA 4.0
+  - Subject/place: Beijing Hotel, standard room, Beijing
+  - Date taken (per Commons metadata): 2015-08-22
+  - Download date: 2026-08-22 (UTC+8), via upload.wikimedia.org, HTTP 200, 1,654,794 bytes
+- Processing record:
+  - Crop: full width 3264 px, vertical band top=230, height=2040 px (3264×2040) — keeps painting, bed edge and entry door; trims ceiling/floor excess
+  - Resize to 1600 × 1000, WebP quality 82 → 66,986 bytes
+  - Original SHA-256: b4fcbb5347240432f9d4eeab4a0e73da4e4b6a64c2935dfd6656858aafb4be88
+  - Output SHA-256: 9bdf6712ce2709908c08966efdbb23c4e41dc9adc897519745c5d16e7396ea6c
+- Privacy check: no people, no readable documents on the door notice at output resolution, no room number plate visible.
+- Documentary boundary: an ordinary room photo; never described as an incident or dispute scene.
+- Cropping checks: desktop center crop retains painting + door; 390px mobile crop keeps the central band (painting/door visible); no critical element at edges.
+- Attribution duty: CC BY-SA 4.0 requires attribution and share-alike carry-over; recorded here for central review before publication.

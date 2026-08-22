@@ -1,0 +1,81 @@
+{
+  "id": "refundable-or-nonrefundable-china-hotel-rate",
+  "type": "planning",
+  "pillar": "budget-and-tradeoffs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "trip-planning",
+    "hotel-rates",
+    "refund-decision",
+    "risk-tradeoff"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/refundable-or-nonrefundable-china-hotel-rate/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/refundable-or-nonrefundable-china-hotel-rate/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/refundable-or-nonrefundable-china-hotel-rate/",
+      "title": "Refundable or Non-Refundable Hotel Rate in China?",
+      "headline": "China Hotel Rates: Refundable or Non-Refundable? Decide by Dependencies",
+      "description": "Count the flights, visas and reservations your hotel night depends on, then decide whether the flexible-rate premium is worth it — with rate mechanics explained.",
+      "heroAlt": "A standard Chinese hotel room with an ink painting above the bed and the entry door visible down a short hallway.",
+      "navTitle": "Refundable or not",
+      "featuredLinkLabel": "Choose a hotel rate wisely",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Hotels",
+        "Booking"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/refundable-or-nonrefundable-china-hotel-rate/",
+      "title": "中国酒店订可退还是不可退款房价？",
+      "headline": "可退还是不可退：先数依赖，再决定要不要为灵活付差价",
+      "description": "盘点这一晚依赖的航班、签证与预约，判断灵活房价差价是否值得；讲清取消期限、时区、预付、担保卡、no-show 与部分退款。",
+      "heroAlt": "一间标准的中国酒店客房，床头上方挂着水墨画，走廊尽头是入户门。",
+      "navTitle": "可退还是不可退",
+      "featuredLinkLabel": "选对房价",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "酒店",
+        "预订"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/refundable-or-nonrefundable-china-hotel-rate/",
+      "title": "중국 호텔 예약: 환불 가능 요금과 환불 불가 요금 중 무엇을 고를까?",
+      "headline": "환불 가능 vs 환불 불가: 의존부터 세고 유연성의 값을 판단하세요",
+      "description": "숙박 밤이 의존하는 항공·비자·예약을 점검해 차액의 값을 판단하고, 취소 기한·시간대·선결제·보증 카드·노쇼·부분 환불까지 정리한 안내.",
+      "heroAlt": "침대 위 벽에 수묵화가 걸린 표준적인 중국 호텔 객실과 짧은 복도 끝의 출입문.",
+      "navTitle": "환불 가능 vs 불가",
+      "featuredLinkLabel": "요금 현명하게 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "호텔",
+        "예약"
+      ]
+    }
+  }
+}
