@@ -168,6 +168,7 @@ export const guideFreshnessMinimums = Object.freeze({
   ...searchMapGuideFreshnessMinimums,
   "china-accessible-hotel-room-verification": "high",
   "china-domestic-flight-fare-bundle-baggage": "high",
+  "china-domestic-flight-schedule-change": "critical",
   "china-hotel-emergency-exit-fire-safety-check": "high",
   "great-wall-section-selector-from-beijing": "high",
   "lunar-new-year-customs-for-visitors": "high",

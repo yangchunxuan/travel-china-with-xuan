@@ -254,6 +254,7 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "wenchang-commercial-space-city": "explore-cities-neighborhoods",
   "yiwu-market-to-factory-network": "explore-cities-neighborhoods",
   "china-booking-dispute-evidence-pack": "essentials-booking-registration-recovery",
+  "china-domestic-flight-schedule-change": "essentials-booking-registration-recovery",
   "china-customs-red-green-channels": "essentials-entry-transit",
   "china-passport-validity-and-blank-pages": "essentials-entry-transit",
   "food-plants-and-animal-products-into-china": "essentials-entry-transit",

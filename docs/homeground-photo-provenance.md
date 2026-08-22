@@ -1212,3 +1212,35 @@ record and image plan.
 | --- | --- | --- | --- |
 | `china-online-arrival-card` hero | [Beijing Capital International Airport T1 Arrival hall 20161124.jpg](https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T1_Arrival_hall_20161124.jpg), Beijing Capital International Airport Terminal 1 arrival hall; Tyg728; 2016-11-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/china-online-arrival-card/hero-1600.jpg`; 1600 × 1000; `2246f6c0c7628651b8714d0566b6972fe931f0ada04d05a3ba0339df14d7ee6e` | A general China-arrival setting only. It is not an immigration counter or arrival-card desk and proves no current form, queue, processing time, terminal operation or successful admission. |
 | `zhangjiajie-national-forest-park-tickets-and-entrances` hero | [Zhangjiajie National Forest Park.jpg](https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg), quartz-sandstone landscape in Zhangjiajie National Forest Park; Kuruman; 2016-08-13; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `public/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg`; 1600 × 1000; `c7f5fa0ec990da6fc8ed14c92ec6c709444e8823e4cb467c2e45109ee887ec61` | Identifies the park landscape only. It does not depict or identify a gate and proves no current ticket product, queue, shuttle, cableway, lift, opening status or weather. |
+
+## Domestic-flight disruption recovery guide (August 22, 2026)
+
+This guide uses one real, location-identified Wikimedia Commons photograph and
+**0 AI-generated or AI-assisted documentary images**. The derivative was made
+only by cropping, resizing and WebP conversion, with metadata removed. Named
+attribution, source and commercial-use licence links remain in the guide's
+default-collapsed Sources block and image plan.
+
+| Page and role | Original source, place, creator and rights | Published derivative and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| `china-domestic-flight-schedule-change` hero | [Terminal 3 of Beijing Capital International Airport — Departure Hall](https://commons.wikimedia.org/wiki/File:20251026_Terminal_3_of_Beijing_Capital_International_Airport_-_Departure_Hall.jpg), Beijing Capital International Airport Terminal 3 departure hall; Windmemories; 2025-10-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/china-domestic-flight-schedule-change/hero-1600.webp`; 1600 × 1000; `be330e937761a2a858a09e8f952418e68c4de24ecc6dfca66f8404fd5a848fc8` | Identifies an ordinary departure hall only. It does not depict or prove a delay, cancellation, diversion, airline response, compensation outcome, current flight status or terminal operating condition. |
+
+## Evergreen decision graphics (August 22, 2026)
+
+These seven assets are original Homeground editorial graphics made locally on
+August 22, 2026 through deterministic raster drawing. They contain no outside
+photograph, logo, map tile, font file or identifiable person and use **no
+generative AI or AI-assisted source material**. The Great Wall graphics are
+schematic decision aids rather than geographic maps or reconstructions. The
+Spring Festival graphics are planning-pressure diagrams rather than annual
+calendars, live transport displays or forecasts.
+
+| Guide and asset | Published asset, dimensions and final SHA-256 | Rights / AI use | Evidence boundary |
+| --- | --- | --- | --- |
+| `great-wall-section-selector-from-beijing` hero | `public/images/guides/great-wall-section-selector-from-beijing/hero-1600.webp`; 1600 × 1000; `90d351cc560b81c946233d48a4581feea2ec0c268193be6616ca84db45f00813` | Homeground original deterministic raster drawing; AI: no; no third-party material | Four abstract trip choices on layered ridges. Not a geographic map, named Great Wall section, current opening status or operating guarantee. |
+| `great-wall-section-selector-from-beijing` EN decision chart | `public/images/guides/great-wall-section-selector-from-beijing/section-decision-en-1440.webp`; 1440 × 900; `e2aa71d4e47a894897fa96cc8f57fe814abbaf92e95fd881e608e32c8be217b3` | Homeground original deterministic raster drawing; AI: no; no third-party material | English comparison aid only. Named choices and route markers do not establish live access, transport, night opening or map position. |
+| `great-wall-section-selector-from-beijing` ZH decision chart | `public/images/guides/great-wall-section-selector-from-beijing/section-decision-zh-1440.webp`; 1440 × 900; `312192cdf24549c04ea5881afa91ca1af0c0f3fb271fee2ac87bd7bb1af7c378` | Homeground original deterministic raster drawing; AI: no; no third-party material | Simplified Chinese comparison aid only. Named choices and route markers do not establish live access, transport, night opening or map position. |
+| `great-wall-section-selector-from-beijing` KO decision chart | `public/images/guides/great-wall-section-selector-from-beijing/section-decision-ko-1440.webp`; 1440 × 900; `f0595c727de1f85035280afab74d47ec950c9e41049cc368c1918e6de0fa1ed1` | Homeground original deterministic raster drawing; AI: no; no third-party material | Korean comparison aid only. Named choices and route markers do not establish live access, transport, night opening or map position. |
+| `lunar-new-year-customs-for-visitors` EN pressure chart | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-en-1440.webp`; 1440 × 900; `a1d727a471739088262b6e0b44b46db11011d5150450411f874c038301dfa870` | Homeground original deterministic raster drawing; AI: no; no third-party material | English planning-pressure diagram only. Not an annual calendar, live traffic state, crowd count, schedule or forecast. |
+| `lunar-new-year-customs-for-visitors` ZH pressure chart | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-zh-1440.webp`; 1440 × 900; `d682f667f86255fc6cd9b155e6fbfa44895235fd973702a006868ac94787506d` | Homeground original deterministic raster drawing; AI: no; no third-party material | Simplified Chinese planning-pressure diagram only. Not an annual calendar, live traffic state, crowd count, schedule or forecast. |
+| `lunar-new-year-customs-for-visitors` KO pressure chart | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-ko-1440.webp`; 1440 × 900; `374a543879ffd98e8f78dbd57ff59277b21c1a8c46233eee20d3ec86451b5e36` | Homeground original deterministic raster drawing; AI: no; no third-party material | Korean planning-pressure diagram only. Not an annual calendar, live traffic state, crowd count, schedule or forecast. |

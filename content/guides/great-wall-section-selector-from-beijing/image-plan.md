@@ -15,9 +15,9 @@ All assets are original Homeground editorial graphics created locally on 2026-08
 
 ### Localised hero alt
 
-- EN: `An editorial illustration of four Great Wall day-trip choices on layered mountain ridges; it is a decision graphic, not a geographic map.`
-- ZH: `以层叠山岭呈现四种长城一日游选择的编辑插画；它是决策图，不是地理地图。`
-- KO: `겹친 산등성이 위 네 가지 만리장성 당일 선택을 표현한 편집 일러스트. 지리 지도가 아닌 결정용 그림이다.`
+- EN: `An editorial illustration of four Great Wall section choices on layered mountain ridges; it is a decision graphic, not a geographic map.`
+- ZH: `以层叠山岭呈现四种长城段选择的编辑插画；它是决策图，不是地理地图。`
+- KO: `겹친 산등성이 위 네 가지 만리장성 구간 선택을 표현한 편집 일러스트. 지리 지도가 아닌 결정용 그림이다.`
 
 ## In-body decision charts
 
