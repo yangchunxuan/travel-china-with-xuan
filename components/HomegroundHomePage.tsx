@@ -21,10 +21,8 @@ import type {
   HomepageGuideRailItem,
   HomepageSearchDemo,
 } from "../lib/homepageEditorial";
-import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
 import {
   editorialOrganizationSchema,
-  editorialPersonSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import type { DestinationPlan } from "../lib/destinationPlanner";
@@ -56,7 +54,6 @@ import {
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import { HomepageGuideRail } from "./HomepageGuideRail";
-import { RotatingHeroTitle } from "./RotatingHeroTitle";
 import styles from "./HomegroundHomePage.module.css";
 
 /**
@@ -195,7 +192,6 @@ export function HomegroundHomePage({
     plannerStatus,
     handoffStatus,
   );
-  const facebookPageUrl = getHomegroundFacebookPageUrl();
   const organizationSchema = {
     ...editorialOrganizationSchema(),
     legalName: homegroundBusiness.registeredName,
@@ -214,14 +210,12 @@ export function HomegroundHomePage({
       addressRegion: "Hunan",
       addressCountry: "CN",
     },
-    ...(facebookPageUrl ? { sameAs: [facebookPageUrl] } : {}),
   };
   const identitySchema = {
     "@context": "https://schema.org",
     "@graph": [
       editorialWebsiteSchema(),
       organizationSchema,
-      editorialPersonSchema(locale),
     ],
   };
   const routeInteractionLocked =
@@ -504,13 +498,21 @@ export function HomegroundHomePage({
         >
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <RotatingHeroTitle
-                id="home-hero-title"
-                pauseLabel={copy.hero.pauseMotion}
-                phrases={copy.hero.rotatingPhrases}
-                playLabel={copy.hero.resumeMotion}
-                question={copy.hero.title}
-              />
+              <p className={styles.heroIdentity}>
+                <strong lang="en">Homeground China</strong>
+                <span>{copy.hero.eyebrow}</span>
+              </p>
+              <h1 id="home-hero-title">
+                {copy.hero.titleLines ? (
+                  copy.hero.titleLines.map((line) => (
+                    <span className={styles.heroTitleLine} key={line}>
+                      {line}
+                    </span>
+                  ))
+                ) : (
+                  copy.hero.title
+                )}
+              </h1>
               {plannerStatus !== "result" && (
                 <p className={styles.heroLead}>{copy.hero.intro}</p>
               )}

@@ -447,6 +447,34 @@
   max-width: 45rem;
 }
 
+.heroIdentity {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 1.4rem;
+}
+
+.heroIdentity strong {
+  font-family: var(--hg-brand);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.heroIdentity span {
+  color: #913b28;
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.localeRoot[data-homeground-locale="zh"] .heroIdentity span,
+.localeRoot[data-homeground-locale="ko"] .heroIdentity span {
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
 .eyebrow,
 .eyebrowDark,
 .cardLabel {

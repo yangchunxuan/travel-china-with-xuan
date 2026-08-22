@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { translations, type Lang } from "../lib/i18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { editorialOrganizationSchema } from "../lib/editorialIdentity";
 import { HeroCarousel } from "./HeroCarousel";
 import { RouteExplorer } from "./RouteExplorer";
 import { FloatingContact, SiteFooter, SiteHeader } from "./Site";
@@ -30,21 +31,12 @@ const basePath = "";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Homeground China",
+  ...editorialOrganizationSchema(),
   legalName: homegroundBusiness.registeredName,
-  alternateName: "Travel China with Xuan",
   description:
-    "Fixed-scope written China route services and custom full-trip planning and ground support.",
-  email: "yangchunxuan1@gmail.com",
+    "A China travel agency for private, tailor-made trips, with route design, stays, tickets, transport and local support.",
+  email: homegroundBusiness.serviceEmail,
   areaServed: "China",
-  founder: {
-    "@type": "Person",
-    name: "Xuan",
-    birthPlace: "Zhangjiajie, China",
-  },
-  knowsLanguage: ["en", "zh", "ko"],
-  slogan: "China, handled.",
 };
 
 const serviceIcons = [CalendarCheck, PlaneLanding, Headphones];

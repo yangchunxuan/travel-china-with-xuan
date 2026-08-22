@@ -99,16 +99,16 @@ export const homegroundStudioCopy: Record<
   en: {
     path: "/studio/",
     metadata: {
-      title: "Meet the Homeground trip-planning studio",
+      title: "Meet the Homeground China travel agency team",
       description:
         "Meet the Homeground China team: one lead planner follows the whole journey, while shared first-hand experience helps every detail work on the ground.",
       openGraphTitle: "The people behind Homeground China",
     },
-    eyebrow: "A small studio with shared field experience",
+    eyebrow: "A China travel agency with shared field experience",
     title: "One lead planner sees the whole journey. One team makes every detail work.",
     intro:
       "True tailor-made travel is not your name added to a ready-made itinerary. It begins with listening—understanding how you want to experience China. From your first conversation, your lead planner learns who you are travelling with, what you are most looking forward to and how you want each day to feel. They then bring the cities, transport and pace together into one coherent journey. You have one person who knows the trip from beginning to end; behind that conversation is a team bringing first-hand experience of looking after travellers across China into the same plan, so it does more than look beautiful on paper—it works smoothly on the ground.",
-    collageLabel: "The five people in the Homeground studio",
+    collageLabel: "The five people at Homeground China",
     peopleEyebrow: "Who does what",
     peopleTitle: "Different strengths. One planning thread.",
     peopleIntro:
@@ -117,7 +117,7 @@ export const homegroundStudioCopy: Record<
       {
         id: "evan",
         name: "Evan",
-        role: "Studio Lead & Cross-cultural Trip Planner",
+        role: "Lead & Cross-cultural Trip Planner",
         value:
           "Turns the uncertainty of a first China trip into clear choices you can discuss.",
         bio:
@@ -218,16 +218,16 @@ export const homegroundStudioCopy: Record<
   zh: {
     path: "/zh/studio/",
     metadata: {
-      title: "认识 Homeground 中国旅行规划团队",
+      title: "认识 Homeground China 旅行社团队",
       description:
         "认识 Homeground 中国旅行规划团队：一位主规划师了解你的全程，团队以真实接待经验让路线与细节落地。",
       openGraphTitle: "Homeground China 背后的旅行规划团队",
     },
-    eyebrow: "共享一线经验的小型工作室",
+    eyebrow: "共享一线经验的中国旅行社团队",
     title: "一位主规划师了解你的全程，一支团队让每个细节落地。",
     intro:
       "真正的定制，不是把你的名字放进一条现成路线，而是先听懂你想怎样看中国。负责你的主规划师会从第一次沟通开始，了解你和谁同行、最期待什么、每天想走多快，再把城市、交通和停留节奏连成一段完整旅程。你始终只需要和一位了解全程的人沟通；在背后，团队会把各自在当地接待中积累的经验带进同一份方案，让它不只看起来美好，也能在真实旅途中顺利发生。",
-    collageLabel: "Homeground 工作室的五位成员",
+    collageLabel: "Homeground China 的五位成员",
     peopleEyebrow: "每个人负责什么",
     peopleTitle: "不同的经验，一条完整的规划主线。",
     peopleIntro:
@@ -236,7 +236,7 @@ export const homegroundStudioCopy: Record<
       {
         id: "evan",
         name: "Evan",
-        role: "工作室负责人 · 跨文化行程规划",
+        role: "主规划师 · 跨文化行程规划",
         value: "把第一次中国旅行中的陌生感，变成清楚、可以讨论的选择。",
         bio:
           "Evan 毕业于韩国西江大学，也曾在台湾、泰国和马来西亚生活。长期跨文化生活让他更能理解海外客人第一次来中国时真正担心什么：城市怎么取舍、移动是否现实、沟通会不会断层。他负责梳理整体方向，并用英文或韩文把复杂问题说明白。",
@@ -336,16 +336,16 @@ export const homegroundStudioCopy: Record<
   ko: {
     path: "/ko/studio/",
     metadata: {
-      title: "Homeground 중국 여행 플래닝 팀 소개",
+      title: "Homeground China 중국 전문 여행사 팀 소개",
       description:
         "Homeground 중국 여행 플래닝 팀을 만나보세요. 한 명의 전담 플래너가 여정 전체를 이해하고, 팀의 현장 경험이 실제로 이어지는 계획을 만듭니다.",
       openGraphTitle: "Homeground China를 만드는 여행 플래닝 팀",
     },
-    eyebrow: "현장 경험을 공유하는 소규모 스튜디오",
+    eyebrow: "현장 경험을 공유하는 중국 전문 여행사 팀",
     title: "한 명의 전담 플래너가 여정 전체를 이해하고, 한 팀이 모든 디테일을 완성합니다.",
     intro:
       "진정한 맞춤 여행은 이미 만들어진 일정에 이름만 바꿔 넣는 일이 아닙니다. 먼저 어떤 방식으로 중국을 경험하고 싶은지 충분히 듣는 것에서 시작합니다. 첫 상담부터 전담 플래너가 누구와 함께하는 여행인지, 무엇을 가장 기대하는지, 하루의 속도는 어느 정도가 편안한지 세심하게 파악합니다. 그리고 도시와 교통, 머무는 시간을 하나의 자연스러운 여정으로 연결합니다. 여행자는 처음부터 끝까지 전체 일정을 이해하는 한 명의 플래너를 중심으로 편하게 소통할 수 있습니다. 그 뒤에서는 팀원들이 현지 여행을 직접 지원하며 쌓아 온 경험을 하나의 계획에 더해, 보기만 좋은 일정이 아니라 실제 여행에서도 무리 없이 이어지는 여정을 완성합니다.",
-    collageLabel: "Homeground 스튜디오의 다섯 멤버",
+    collageLabel: "Homeground China의 다섯 멤버",
     peopleEyebrow: "누가 무엇을 맡는지",
     peopleTitle: "서로 다른 강점, 하나로 이어지는 여행 설계.",
     peopleIntro:
@@ -354,7 +354,7 @@ export const homegroundStudioCopy: Record<
       {
         id: "evan",
         name: "Evan",
-        role: "스튜디오 리드 · 다문화 여행 플래너",
+        role: "리드 플래너 · 다문화 여행 설계",
         value: "첫 중국 여행의 막막함을 이해하기 쉬운 선택지로 바꿉니다.",
         bio:
           "Evan은 한국 서강대학교를 졸업했으며 대만, 태국, 말레이시아에서도 생활했습니다. 여러 문화권에서 지낸 경험 덕분에 첫 중국 여행을 준비하는 해외 여행자가 무엇을 어려워하는지 잘 이해합니다. 도시 선택과 이동 흐름을 정리하고, 복잡한 내용을 영어 또는 한국어로 명확하게 설명하는 역할을 맡습니다.",

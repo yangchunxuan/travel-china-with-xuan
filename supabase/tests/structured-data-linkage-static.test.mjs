@@ -43,6 +43,16 @@ test("the shared identity graph uses stable website, organization and person ids
     identity,
     /editorialPersonSchema\(locale:[\s\S]*?worksFor:\s*\{\s*"@id":\s*EDITORIAL_ORGANIZATION_ID\s*\}/,
   );
+  assert.match(identity, /"@type": "TravelAgency"/);
+  assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
+  assert.match(identity, /slogan: HOMEGROUND_BRAND_SLOGAN/);
+  assert.match(identity, /alternateName: \["Homeground China Journeys", "homegroundchina\.com"\]/);
+  assert.match(identity, /contentUrl: EDITORIAL_LOGO_URL/);
+  assert.match(identity, /sameAs: getHomegroundSocialProfileUrls\(\)/);
+  assert.match(
+    identity,
+    /editorialWebsiteSchema\(\)[\s\S]*?alternateName: "homegroundchina\.com"/,
+  );
   assert.doesNotMatch(identity, /SearchAction/);
 });
 
@@ -52,9 +62,10 @@ test("the homepage emits the existing identity data as one linked graph", async 
   assert.match(homepage, /const identitySchema = \{[\s\S]*?"@context": "https:\/\/schema\.org"/);
   assert.match(
     homepage,
-    /"@graph": \[[\s\S]*?editorialWebsiteSchema\(\)[\s\S]*?organizationSchema[\s\S]*?editorialPersonSchema\(locale\)/,
+    /"@graph": \[[\s\S]*?editorialWebsiteSchema\(\)[\s\S]*?organizationSchema/,
   );
   assert.match(homepage, /JSON\.stringify\(identitySchema\)/);
+  assert.doesNotMatch(homepage, /editorialPersonSchema\(locale\)/);
   assert.doesNotMatch(homepage, /SearchAction/);
 });
 

@@ -102,7 +102,7 @@ export function HomegroundFooter({
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
         <div>
-          <strong lang="en">Homeground</strong>
+          <strong lang="en">Homeground China</strong>
           <span>{copy.footer.studioLabel}</span>
         </div>
         <nav aria-label={copy.navigation.footerLabel}>

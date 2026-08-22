@@ -253,7 +253,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground is an independent China trip-planning studio drawing on our planning team’s first-hand local experience. Every figure on this page comes from the National Immigration Administration and official municipal guidance, checked 24 July 2026. We re-check monthly, because ports and country lists change.",
+      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. Every figure on this page comes from the National Immigration Administration and official municipal guidance, checked 24 July 2026. We re-check monthly, because ports and country lists change.",
     reviewBoundary:
       "We screen route structure. We do not decide immigration eligibility, file visa applications, or guarantee entry — the airline and Chinese immigration make those calls.",
     sourcesLabel: "Official sources",
@@ -422,7 +422,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "撰写与核实",
     reviewBody:
-      "Homeground 是一家独立的中国旅行规划工作室,有自己的地接团队。本页每一个数字都来自国家移民管理局与官方地方指引,核实于 2026 年 7 月 24 日。我们每月复核,因为口岸和国家名单会变。",
+      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页每一个数字都来自国家移民管理局与官方地方指引,核实于 2026 年 7 月 24 日。我们每月复核,因为口岸和国家名单会变。",
     reviewBoundary:
       "我们判断路线结构。我们不认定入境资格、不代办签证、不保证入境 —— 这些由航空公司和中国边检决定。",
     sourcesLabel: "官方来源",
@@ -584,7 +584,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "작성과 확인",
     reviewBody:
-      "Homeground는 자체 현지 팀을 둔 독립 중국 여행 설계 스튜디오입니다. 이 페이지의 모든 수치는 국가이민관리국과 공식 지방 안내에서 가져왔으며 2026년 7월 24일에 확인했습니다. 항구와 국가 명단이 바뀌기 때문에 매월 다시 확인합니다.",
+      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지의 모든 수치는 국가이민관리국과 공식 지방 안내에서 가져왔으며 2026년 7월 24일에 확인했습니다. 항구와 국가 명단이 바뀌기 때문에 매월 다시 확인합니다.",
     reviewBoundary:
       "저희는 경로 구조를 확인합니다. 입국 자격을 판정하거나 비자를 대행하거나 입국을 보장하지 않습니다. 그 판단은 항공사와 중국 출입국 당국이 합니다.",
     sourcesLabel: "공식 출처",

@@ -316,8 +316,8 @@ export function HomegroundHeader({
         >
           <HomegroundBrandMark className={styles.brandMark} />
           <span>
-            <strong lang="en">Homeground</strong>
-            <small>{copy.brandTagline}</small>
+            <strong lang="en">Homeground China</strong>
+            <small>{copy.businessDescriptor}</small>
           </span>
         </Link>
 

@@ -18,8 +18,8 @@ export function Brand() {
     <span className="brandrow">
       <HomegroundBrandMark className="brandmark" />
       <span className="brandcopy">
-        <strong>Homeground</strong>
-        <small>China</small>
+        <strong>Homeground China</strong>
+        <small>China Travel Agency</small>
       </span>
     </span>
   );

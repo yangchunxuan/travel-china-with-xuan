@@ -34,7 +34,7 @@ export function HomegroundPrivacyPage({
           >
             <HomegroundBrandMark className={styles.brandMark} />
             <span>
-              <strong lang="en">Homeground</strong>
+              <strong lang="en">Homeground China</strong>
               <small>{copy.navigation.privacyLabel}</small>
             </span>
           </Link>

@@ -24,7 +24,7 @@ test("Home planning desk leads with quick contacts and keeps three paid shortcut
   );
   assert.match(home, /trackEvent\("planning_intent_selected"/);
   assert.match(home, /homegroundBusiness\.registeredName/);
-  assert.match(home, /sameAs:\s*\[facebookPageUrl\]/);
+  assert.match(home, /editorialOrganizationSchema\(\)/);
   assert.match(
     planningDesk,
     /copy\.options\.filter\([\s\S]{0,80}\(option\) => option\.kind === "paid"/,
@@ -95,9 +95,9 @@ test("Planning Services presents all three paths before education and links to l
   assert.match(copy, /Review My Route/);
   assert.match(copy, /Build My Route/);
   assert.match(copy, /Full Trip Planning & Ground Support/);
-  assert.match(copy, /A small planning studio, with one clear planning thread\./);
-  assert.match(copy, /小型规划工作室/);
-  assert.match(copy, /작은 여행 설계 스튜디오/);
+  assert.match(copy, /A China travel agency, with one clear planning thread\./);
+  assert.match(copy, /一家中国旅行社/);
+  assert.match(copy, /중국 전문 여행사/);
 });
 
 test("English Studio keeps its service comparison and uses the unified planner contact", async () => {

@@ -9,7 +9,7 @@ import {
 const copy = getHomegroundCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.metadata.title,
+  title: { absolute: copy.metadata.title },
   description: copy.metadata.description,
   alternates: {
     canonical: "/",
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    siteName: "Homeground China",
     title: copy.metadata.openGraphTitle,
     description: copy.metadata.description,
     type: "website",
@@ -34,6 +35,12 @@ export const metadata: Metadata = {
         alt: copy.hero.socialImageAlt,
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: copy.metadata.openGraphTitle,
+    description: copy.metadata.description,
+    images: ["https://homegroundchina.com/images/home/beijing-hero-2400.jpg"],
   },
 };
 

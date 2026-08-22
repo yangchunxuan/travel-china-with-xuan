@@ -96,14 +96,17 @@ test("legal routes have canonical language alternates and appear in the sitemap 
   }
 });
 
-test("active schemas use the registered organization identity, not an unlicensed TravelAgency claim", async () => {
-  const homepage = await source("components/HomegroundHomePage.tsx");
-  const servicePage = await source(
-    "components/ChinaItineraryReviewPage.tsx",
-  );
+test("active schemas use the confirmed TravelAgency identity and retain the registered operator", async () => {
+  const [identity, homepage, servicePage] = await Promise.all([
+    source("lib/editorialIdentity.ts"),
+    source("components/HomegroundHomePage.tsx"),
+    source("components/ChinaItineraryReviewPage.tsx"),
+  ]);
 
+  assert.match(identity, /"@type": "TravelAgency"/);
+  assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
   assert.match(homepage, /homegroundBusiness\.legalName|legalName:/);
   assert.match(servicePage, /homegroundBusiness\.registeredName/);
-  assert.doesNotMatch(homepage, /"@type":\s*"TravelAgency"/);
-  assert.doesNotMatch(servicePage, /"@type":\s*"TravelAgency"/);
+  assert.match(homepage, /editorialOrganizationSchema\(\)/);
+  assert.match(servicePage, /editorialOrganizationSchema\(\)/);
 });

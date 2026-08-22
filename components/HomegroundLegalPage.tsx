@@ -80,7 +80,7 @@ export function HomegroundLegalPage({
           >
             <HomegroundBrandMark className={styles.brandMark} />
             <span>
-              <strong lang="en">Homeground</strong>
+              <strong lang="en">Homeground China</strong>
               <small>{copy.navigation.pageLabel}</small>
             </span>
           </Link>
