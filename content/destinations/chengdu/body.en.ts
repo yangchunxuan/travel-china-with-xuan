@@ -25,6 +25,55 @@ const body = {
       text: "The recurring route mistake is to call everything reachable through Chengdu a Chengdu attraction. The Panda Base sits on the city's edge and can still be a Chengdu morning. Dujiangyan is a separate city to the west. Sanxingdui is in Guanghan. Leshan is another city to the south. Jiuzhaigou is a mountain destination with its own transport chain and its own beds. Chengdu is their gateway, not their neighbourhood.",
     },
     {
+      id: "fit-heading",
+      type: "heading",
+      level: 2,
+      text: "Who gets the most from a first Chengdu stay?",
+    },
+    {
+      id: "fit-table",
+      type: "table",
+      caption: "Chengdu fit by traveller and trip purpose",
+      columns: ["Traveller", "Chengdu fit", "What earns the stop", "Main risk"],
+      rows: [
+        [
+          "First visit to China",
+          "Strong when the route has at least three nights",
+          "Pandas, everyday urban life and a clear regional contrast",
+          "Adding it to Beijing–Xi'an–Shanghai without paying for the detour",
+        ],
+        [
+          "Family or panda-first traveller",
+          "Very strong",
+          "A major panda venue with a city that still works after the visit",
+          "Treating the Panda Base as a one-hour photo stop",
+        ],
+        [
+          "Food- and neighbourhood-led traveller",
+          "Very strong",
+          "Tea houses, meals and evening streets can anchor whole blocks",
+          "Turning every dish and tea house into another booking",
+        ],
+        [
+          "Heritage or landscape traveller",
+          "Strong as a base, not as a substitute",
+          "Dujiangyan, Qingcheng Mountain, Sanxingdui and Leshan become deliberate branches",
+          "Calling four different places ‘Chengdu attractions’",
+        ],
+        [
+          "Very tight first-China sampler",
+          "Conditional",
+          "Worth it when pandas or Sichuan are a genuine priority",
+          "Losing two transfer half-days for a single headline sight",
+        ],
+      ],
+    },
+    {
+      id: "fit-1",
+      type: "paragraph",
+      text: "Chengdu is strongest for a traveller willing to let atmosphere and food occupy real time. It is weakest as a hurried panda detour inside an already compressed east-coast route. If the only non-negotiable is a panda photograph, test the flight and rail cost before adding the city; if the aim is to understand Sichuan, three Chengdu nights are the beginning rather than the whole answer.",
+    },
+    {
       id: "nights-heading",
       type: "heading",
       level: 2,
@@ -238,9 +287,9 @@ const body = {
         ],
         [
           "Chengdu Station (the old “north station”)",
-          "Closed for reconstruction",
-          "It cannot be used, whatever an old map label says",
-          "Reported at over 70% complete in mid-2026 with a 2027 target; do not plan around a reopening",
+          "Closed for reconstruction since 11 October 2022",
+          "Its former passenger services moved to other stations; an old map label does not make it usable",
+          "Do not plan around a forecast reopening — use it only after the exact station appears as bookable in 12306",
         ],
       ],
     },
@@ -266,6 +315,17 @@ const body = {
       text: "A third takes Wuhou Shrine and its historical narrative, treating the commercial streets beside it as context rather than as evidence of a preserved ancient city. Travellers who prefer contemporary urban infrastructure can swap that block for one well-connected section of the city-ring greenway instead of pretending the whole ring is a single attraction.",
     },
     {
+      id: "food-tea-heading",
+      type: "heading",
+      level: 3,
+      text: "Tea and food are the rhythm, not two more attractions",
+    },
+    {
+      id: "food-tea-1",
+      type: "paragraph",
+      text: "Choose one tea-house block and one meal that belong to the neighbourhood already in the day. A People's Park tea house can hold the late morning; a hotpot or small-dish dinner can hold the evening. Trying to tick off tea, hotpot, noodles, skewers and an opera between distant sights produces reservations, car rides and no appetite. Chengdu becomes interesting when the meal is allowed to explain the street around it.",
+    },
+    {
       id: "jinjiang-figure",
       type: "figure",
       src: "/images/destinations/chengdu/jinjiang-bridge-1200.webp",
@@ -279,6 +339,13 @@ const body = {
       id: "city-3",
       type: "paragraph",
       text: "The Panda Base belongs to the city's visitor system, but it still consumes a serious morning plus its transport. Pair it with a flexible afternoon on the same side of the city — not with a distant museum, a fixed intercity train and an evening performance on the assumption that pandas are a one-hour stop.",
+    },
+    {
+      id: "panda-morning-rule",
+      type: "callout",
+      title: "Why the panda morning must be protected",
+      tone: "decision",
+      body: "The official ticket system separates morning and afternoon entry, and the Base starts earlier in the warmer season. In hot conditions, animal-welfare decisions can move pandas indoors. An early entry therefore buys cooler conditions, more route time and a recovery margin if one area is resting or crowded; it never guarantees outdoor viewing, feeding, cubs or a particular animal's activity. Reserve the correct time window, carry the document used to book and keep the afternoon flexible.",
     },
     {
       id: "city-links",
@@ -323,10 +390,16 @@ const body = {
       columns: ["Branch", "Where it actually is", "Minimum honest shape", "Common mistake"],
       rows: [
         [
-          "Dujiangyan and Panda Valley",
+          "Panda Valley and Dujiangyan irrigation site",
           "Dujiangyan, a separate city west of Chengdu",
-          "A full day, or an overnight if Qingcheng is added",
-          "Calling Panda Valley a downtown panda alternative with no transfer cost",
+          "One full day with a clear order and current reservations",
+          "Adding Qingcheng Mountain as a third headline stop",
+        ],
+        [
+          "Dujiangyan and Qingcheng Mountain",
+          "Two substantial visitor systems in the same destination city, not adjacent gates",
+          "A narrowed long day; two days or an overnight when both matter",
+          "Assuming their shared heritage label makes the visit compact",
         ],
         [
           "Sanxingdui Museum",
@@ -338,7 +411,7 @@ const body = {
           "Leshan",
           "Another city to the south",
           "A long full day at minimum; an overnight makes it calmer",
-          "Combining it with Emei in one day from Chengdu",
+          "Adding Emei Mountain to the same day from Chengdu",
         ],
         [
           "Jiuzhaigou",
@@ -347,6 +420,11 @@ const body = {
           "Any version of the sentence “a day trip to Jiuzhaigou”",
         ],
       ],
+    },
+    {
+      id: "branches-2",
+      type: "paragraph",
+      text: "For a first route, spend each spare Chengdu day on one branch. Panda Valley and the Dujiangyan irrigation landscape can form a coherent full day. Dujiangyan plus Qingcheng Mountain is possible only as a deliberately narrowed long day; if the engineering landscape and the mountain both matter, sleep locally or give them two days. Leshan can be a long return day after choosing the land or boat experience, but Emei belongs to a separate overnight or multi-day segment.",
     },
     {
       id: "dujiangyan-figure",
@@ -374,6 +452,12 @@ const body = {
           description:
             "Air and road options, and what the journey costs before the valley starts.",
         },
+        {
+          label: "Leshan Giant Buddha: land route or boat?",
+          href: "/guides/leshan-giant-buddha-land-or-boat-visit/",
+          description:
+            "Choose the experience before the day, and recheck the dated pier, water and access notices.",
+        },
       ],
     },
     {
@@ -388,7 +472,9 @@ const body = {
       items: [
         "The airport code and terminal for every sector, with the operating carrier — Chengdu's two airports exchange services.",
         "The full Chinese station name on each rail ticket, because East, South and West are different buildings.",
+        "The Panda Base entry window, document rule and animal-welfare notices; no route can guarantee outdoor viewing or activity.",
         "Timed reservations for the Panda Base and Sanxingdui, which control the shape of those days.",
+        "Current admission and weather notices for Dujiangyan, Qingcheng Mountain and Leshan before committing to an outbound day.",
         "Jiuzhaigou access and any seasonal or weather-driven change, which can move an entire segment.",
         "Public-holiday weeks, when Sichuan's headline sites and their transport behave differently.",
       ],
@@ -530,6 +616,39 @@ const body = {
       text: "First read the exact airport and terminal from the current itinerary, then test the check-in deadline, central-hotel departure chain and fallback. An airport-side night becomes stronger when that chain is fragile, particularly for an early departure, children, older travellers or heavy luggage. Keep the central hotel when the dated journey is defensible and the final Chengdu evening still matters. Apply the nationwide last-night method linked above; TFU and CTU are not interchangeable.",
     },
     {
+      id: "faq-7-heading",
+      type: "heading",
+      level: 3,
+      text: "Why should I visit the Chengdu Panda Base in the morning?",
+    },
+    {
+      id: "faq-7",
+      type: "paragraph",
+      text: "Because the official system has a morning entry window and an early start gives more time to navigate a large site before heat or animal-welfare decisions move some viewing indoors. It is risk management, not a promise that every panda will be outside or active. Book the dated window, arrive with the correct document and keep the afternoon uncommitted.",
+    },
+    {
+      id: "faq-8-heading",
+      type: "heading",
+      level: 3,
+      text: "Can I combine Dujiangyan and Qingcheng Mountain in one day?",
+    },
+    {
+      id: "faq-8",
+      type: "paragraph",
+      text: "Only as a long, selective day: choose whether the irrigation landscape or the mountain is the anchor and shorten the other. They have separate gates, internal routes and reservations. When both are important, a local overnight or two days is the more honest plan; do not add Panda Valley as a third major visit.",
+    },
+    {
+      id: "faq-9-heading",
+      type: "heading",
+      level: 3,
+      text: "Is Leshan a day trip from Chengdu?",
+    },
+    {
+      id: "faq-9",
+      type: "paragraph",
+      text: "It can be a long full day after you choose the land route or boat experience and verify the current operating notice. An overnight makes the pace calmer and is the right starting point if Emei Mountain is also important. Leshan is never a spare Chengdu afternoon.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -564,29 +683,58 @@ const body = {
       title: "Official sources and review record",
       items: [
         {
-          label: "Chengdu Research Base of Giant Panda Breeding — visitor information",
-          url: "https://www.panda.org.cn/en/about/introduction/",
+          label: "Chengdu Research Base of Giant Panda Breeding — tickets, entry windows and document rules",
+          url: "https://www.panda.org.cn/en/service/ticket/",
           publisher: "Chengdu Research Base of Giant Panda Breeding",
-          reviewedAt: "2026-08-17",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Chengdu Panda Base — official summer heat and indoor-viewing notice",
+          url: "https://m.panda.org.cn/cn/news/notice/2026-07-16/8879.html",
+          publisher: "Chengdu Research Base of Giant Panda Breeding",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Chengdu Panda Base — official public-transport guidance",
+          url: "https://m.panda.org.cn/en/service/transit/",
+          publisher: "Chengdu Research Base of Giant Panda Breeding",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Sichuan Airport Group — July 2026 transfer of selected regional flights between TFU and CTU",
+          url: "https://www.cdairport.com/news_detail.aspx?cid=6393&page=1&t=60",
+          publisher: "Sichuan Province Airport Group",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Qingcheng Mountain–Dujiangyan official visitor portal",
+          url: "https://m.djy517.com/",
+          publisher: "Qingcheng Mountain–Dujiangyan Scenic Area",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Leshan Giant Buddha Scenic Area — official government portal and operating notices",
+          url: "https://www.leshan.gov.cn/lsswszf/bmdt/92337825/index.html",
+          publisher: "Leshan Giant Buddha Scenic Area Management Committee",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "Jiuzhaigou official arrival modes and access",
           url: "https://www.jiuzhai.com/intelligent-service/arrival-mode",
           publisher: "Jiuzhaigou Valley Scenic and Historic Interest Area",
-          reviewedAt: "2026-08-17",
+          reviewedAt: "2026-08-22",
         },
         {
-          label:
-            "Chengdu Station reconstruction reported above 70% complete with a 2027 opening target",
-          url: "http://sc.people.com.cn/n2/2026/0617/c379471-41612759.html",
-          publisher: "People's Daily Online, Sichuan channel",
-          reviewedAt: "2026-08-17",
+          label: "Chengdu municipal government — Chengdu Station passenger closure and service redistribution",
+          url: "https://cds.sczwfw.gov.cn/art/2022/10/11/art_15395_191149.html",
+          publisher: "Chengdu Municipal Government Service Network",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "China Railway 12306 — confirm the exact station before booking",
           url: "https://www.12306.cn/en/index.html",
           publisher: "China Railway 12306",
-          reviewedAt: "2026-08-17",
+          reviewedAt: "2026-08-22",
         },
       ],
     },
