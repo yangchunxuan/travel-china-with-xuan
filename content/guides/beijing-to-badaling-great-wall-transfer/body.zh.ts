@@ -39,6 +39,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "facts", type: "callout", title: "交通信息核验于2026年8月13日", tone: "neutral", body: "北京公交于2025年3月27日把877路始发站从德胜门迁至北土城；北京市交通委说明S2线自2025年10月25日起从南口站始发。高铁使用另一套铁路车站，首都机场至八达岭线路也按日期运营。出发前再次核对班次、票价与运营日。" },
   { id: "help", type: "callout", title: "需要按酒店核对路线？", tone: "decision", body: "提供日期、北京酒店或机场航站楼、人数、行动需求和晚间固定安排。Homeground可比较完整路线和实用备选方案，但不保证实时余票。" },
   { id: "links", type: "internal-links", title: "继续规划", items: [
+    { label: "先选对长城段", href: "/zh/guides/great-wall-section-selector-from-beijing/", description: "在确定这条接驳前，先比较慕田峪、八达岭、金山岭和司马台。" },
     { label: "北京应该选哪个火车站", href: "/zh/guides/which-beijing-railway-station/", description: "识别清河、北京北和其他主要枢纽。" },
     { label: "第一次去北京住哪里", href: "/zh/guides/beijing-where-to-stay-first-trip/", description: "住宿区域会改变首段。" },
     { label: "北京到慕田峪", href: "/zh/guides/beijing-to-mutianyu-great-wall-transfer/", description: "确定去慕田峪后再使用。" },

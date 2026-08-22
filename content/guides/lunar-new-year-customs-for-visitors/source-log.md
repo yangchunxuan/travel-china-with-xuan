@@ -1,100 +1,132 @@
-# Source log — Spring Festival, Chunyun and visitor boundaries
+# Source log — Chinese New Year in China for foreign travellers
 
-Status: `CENTRAL COPY, FACT, SEO AND ASSET REVIEW COMPLETE — RELEASE QA PENDING`
+Status: `INTEGRATED OWNER UPGRADE — CENTRAL REVIEW, MERGE AND DEPLOY DECISION REQUIRED`
 
-Checked at: 2026-08-13 (Asia/Shanghai)
+Checked at: 2026-08-22 (Asia/Shanghai)
 
 Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
 
-## Release-review revalidation
+## Canonical decision
 
-- On 2026-08-13, the Ministry of Transport's 2026 integrated Chunyun plan remained directly available and confirmed a separately defined 40-day transport operation from 2 February through 13 March 2026.
-- Those dates remain deliberately absent from the evergreen body. The public-holiday owner carries annual dates; this page uses the official plan only to prove that Chunyun and the statutory break are different clocks.
-- The official 12306 waitlist page remained available. The body continues to describe waitlisting as attempted fulfilment rather than a held seat or guarantee.
-- Current English results frequently repeated the 9.5-billion movement estimate or generic custom lists. The page retains its movement-count boundary and setting-specific consent model instead of competing on a superlative.
+- `origin/main` already contained this complete owner. The task is implemented as a substantial update; no new Spring Festival, Chinese New Year or Chunyun canonical was created.
+- `/guides/china-public-holidays-travel-calendar/` remains the sole owner of annual mainland days off, compensatory workdays and the yearly crowd calendar.
+- This page owns the travel decision: whether Spring Festival fits, which phases affect transport and business, why quiet streets coexist with crowded attractions, how to choose public events, and how to recover.
+- Live ticket inventory, business hours and event admission remain with the named operator.
 
-## Action disposition and conflict check
+## Upcoming date and unpublished mainland fields
 
-- Assigned action: `update-existing`; assigned owner: `lunar-new-year-customs-for-visitors`.
-- The exact owner was reserved in the central topic mapping but had no content folder on `origin/main`, the live guides collection, open article PRs or remote article branches checked on 2026-08-13. This branch therefore supplies the missing files under that exact owner instead of inventing a synonym URL.
-- The public-holiday calendar remains a separate existing owner. No holiday-date, adjusted-workday or annual crowd table is duplicated here.
+### Hong Kong Observatory — 2027 Gregorian–lunar calendar
 
-## Editorial boundary
+- URL: https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf
+- Checked: 2026-08-22
+- Fact used: the first day of the first lunar month in 2027 falls on 6 February.
 
-This page owns the relationship between Spring Festival social practices, the Chunyun transport system and a foreign visitor's public/private boundary. It does not own annual holiday dates, compensatory workdays, a live ticket forecast, a full private itinerary, a universal customs checklist or access to a household celebration.
+### Government of the Hong Kong SAR — 2027 general holidays
 
-Annual dates, compensatory workdays and the yearly crowd calendar are handed off to `/guides/china-public-holidays-travel-calendar/`. The body deliberately contains no 2026 date table and instructs editors to write “not yet published” until the relevant authorities publish a future year's arrangement.
+- URL: https://www.info.gov.hk/gia/general/202605/15/P2026051400300.htm
+- Published: 2026-05-15
+- Checked: 2026-08-22
+- Fact used: gazetted Lunar New Year's Day is Saturday, 6 February 2027.
+- Boundary: this confirms the lunar festival date. Hong Kong's holiday arrangement does **not** govern mainland China.
 
-## Official and primary sources
+### Mainland China — 2027 state at review time
 
-### UNESCO Intangible Cultural Heritage — Spring Festival social practices
+- On 2026-08-22, no State Council 2027 holiday arrangement and no 2027 integrated Chunyun plan were found.
+- The body says “not yet published” rather than predicting dates or copying 2026.
+- Update trigger: the State Council or Ministry of Transport publishes the relevant 2027 arrangement. Annual details must be entered on the public-holiday owner and linked from here.
 
-- URL: https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126
-- Checked: 2026-08-13
-- Facts used: Inscribed in 2024; the element includes preparations before the festival, family reunion, greetings, offerings, public festivities and transmission within families, communities, education and apprenticeship.
-- Boundary: The UNESCO description documents living heritage. It is not a compulsory practice list for every household, an access pass to private rituals or a certification of a tourism product.
-- Update trigger: The element page, decision or periodic-report information materially changes.
+## 2026 mainland evidence — labelled as historical operating evidence
+
+### State Council — 2026 holiday arrangement
+
+- URL: https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf
+- Checked: 2026-08-22
+- Facts used: the 2026 Spring Festival break ran for nine days and included separately announced compensatory workdays.
+- Boundary: exact 2026 dates are not repeated as future instructions.
 
 ### Ministry of Transport — 2026 integrated Chunyun plan
 
 - URL: https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html
-- Checked: 2026-08-13
-- Facts used: Chunyun is a separately organized integrated transport period spanning road, rail, civil aviation and water transport. The annual plan uses its own boundaries rather than simply copying the public-holiday break.
-- Boundary: The 2026 dates are not reproduced in the article body. They establish how the system works, not a permanent future calendar or a guarantee of any service.
-- Update trigger: A later annual Chunyun plan is issued or the integrated-transport framework changes.
+- Checked: 2026-08-22
+- Facts used: the integrated 2026 Chunyun operation covered 40 days and road, rail, civil aviation and water transport.
+- Boundary: proves that Chunyun is wider than the statutory break; does not define 2027 dates or one corridor's demand.
+
+### Shanghai Municipal Government — 2026 Chunyun travel guide
+
+- URL: https://english.shanghai.gov.cn/en-LatestNews/20260127/d764a117cb9748bb8ab1b29df52a70f6.html
+- Checked: 2026-08-22
+- Facts used: local authorities divided the travel period into pre-holiday, holiday and post-holiday phases and forecast distinct outbound/return peaks.
+- Boundary: Shanghai's 2026 forecast is used to support a four-phase planning model, not to predict another city or year.
+
+### National and Shanghai holiday outcomes
+
+- National: https://english.www.gov.cn/archive/statistics/202602/24/content_WS699da7c5c6d00ca5f9a09421.html
+- Shanghai: https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260224/5d3c35722d5f43b0a7bdc0e16e5e513f.html
+- Checked: 2026-08-22
+- Facts used: 596 million domestic trips nationally; Shanghai reported 21.67 million tourist visits and more than 2,570 cultural/tourism activities during the 2026 break.
+- Count boundary: these are trips/visits, not unique people. They demonstrate concentrated domestic tourism, not future crowd levels.
+
+## Public-event boundary
+
+### Beijing Municipal Government — 2026 temple fairs and park events
+
+- URL: https://english.beijing.gov.cn/latest/news/202602/t20260218_4524489.html
+- Checked: 2026-08-22
+- Facts used: named public events had different dates, settings and durations; some ended with the statutory break while others continued towards Lantern Festival.
+- Boundary: a `temple fair` label does not prove admission, religious character, free entry or another year's schedule. Each organiser owns ticket, capacity, bag, photography and cancellation rules.
+
+### UNESCO — Spring Festival social practices
+
+- URL: https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126
+- Checked: 2026-08-22
+- Facts used: living heritage includes preparations, reunion, greetings and public festivities.
+- Boundary: the description is not a compulsory household checklist or permission to enter private ritual.
+
+## Transport and family research
 
 ### China Railway 12306 — official waitlist FAQ
 
 - URL: https://kyfw.12306.cn/otn/gonggao/alternate.html
-- Checked: 2026-08-13
-- Facts used: The official waitlist requires an eligible verified account; the system continues attempting fulfilment until the selected cutoff, and an unfulfilled or ended request is refunded under the published process.
-- Boundary: A waitlist request is not represented as a held seat or a promise of fulfilment. No train number, fare, inventory or permanent sales window is copied.
-- Update trigger: Waitlist eligibility, fulfilment, cutoff or refund rules change.
+- Checked: 2026-08-22
+- Used for: a waitlist is attempted fulfilment until a selected cutoff, not a held seat or guarantee.
 
-## Independent academic sources
-
-### Meng Li — “Maintaining Ties and Reaffirming Unity: Family Rituals in the Age of Migration”
-
-- URL: https://www.tandfonline.com/doi/full/10.1080/15267431.2018.1475391
-- Journal: *Journal of Family Communication* 18(4), 2018, pp. 286–301
-- Checked: 2026-08-13
-- Facts used: The ethnographic study of rural–urban migrant families treats annual Spring Festival reunion as a set of celebratory and ordinary family activities that can reaffirm identity while also exposing separation and family tension.
-- Boundary: The sample does not represent every Chinese family. The article uses it to resist staging private family life as a frictionless tourist experience, not to prescribe household etiquette.
-
-### Zhenxuan Yin, Linxin Ouyang and De Wang — “Reverse traffic flows”
+### Yin, Ouyang and Wang — reverse Spring Festival flows
 
 - URL: https://journals.sagepub.com/doi/10.1177/0308518X19860537
-- Journal: *Environment and Planning A: Economy and Space* 52(2), 2020, pp. 251–254; first published online 2019
-- Checked: 2026-08-13
-- Facts used: The study used 2017–2018 Tencent Location Big Data to document reverse Spring Festival flows towards regional centres, with substantial variation among cities.
-- Boundary: The dataset and period do not support a current corridor forecast. The source rebuts a one-way “all big cities empty” story; it does not prove any 2026 route is quiet.
+- Journal: *Environment and Planning A: Economy and Space* 52(2), 2020
+- Checked: 2026-08-22
+- Used for: evidence against the one-way claim that every major city simply empties.
+- Boundary: historic location data does not forecast a current route, attraction or business.
 
-## Count and superlative boundary
+## Editorial judgments
 
-- Official transport reporting can count cross-regional movements, passenger journeys or vehicle movements across modes. These are not automatically unique-person counts.
-- Peer-reviewed literature describes Chunyun as **one of** the world's largest recurring seasonal mobility events. The page does not claim an uncontested absolute world record because international comparisons depend on definitions and datasets.
-- The assigned Chinese headline used “世界最大规模”. Evidence review changed it to “全国性春运返乡潮” because the available official and academic sources do not support an unqualified absolute world record. No journey total is converted to unique people, and no absolute record claim is made in any locale.
+- Recommend the period to travellers who value public festival culture, can use one or two bases and can tolerate substitutions.
+- Recommend another period when a first trip depends on frequent intercity moves, ordinary weekday services or many unverified must-see venues.
+- Divide pressure into pre-holiday departure demand, early reunion days, holiday sightseeing and the return wave. Exact dates remain annual.
+- Explain quiet/crowded coexistence through redistribution across neighbourhoods, transport hubs, attractions and commercial districts.
+- Never publish a national “what closes” list. Verify named businesses.
+- Prefer public programmes with named organisers over manufactured access to family celebration.
+- First enquiries must not request passports, payment details, medical information or detailed mobility information.
 
-## Homeground editorial judgments
+## Image evidence and rights
 
-- Use four separate clocks: annual public holiday, Chunyun, named venue/business and host family.
-- Delete optional transfers before relying on scarce transport; keep a route viable if a waitlist never clears.
-- A public festival programme can be appropriate for visitors without pretending to reproduce a household reunion.
-- A family invitation is specific to people, time and activity. It does not automatically include companions, cameras or publication rights.
-- When a host changes the plan, switch to a public fallback rather than asking the household to stage the ritual.
+- Existing hero: documentary photograph of Guangzhou South Railway Station on 2020-01-21 by 小溪Yang, CC BY 2.5, cropped/resized. It is historical, not a 2026/2027 crowd forecast or image of private customs.
+- New in-body graphics: three original Homeground editorial pressure maps, generated locally on 2026-08-22 in EN/ZH/KO. They contain no third-party photograph, logo, map or person.
+- Full controls and alt text are in `image-plan.md`.
 
-## Canonical separation
+## Dynamic-field register
 
-- `/guides/china-public-holidays-travel-calendar/` owns official annual dates, compensatory workdays and travel-impact timing.
-- `/guides/china-high-speed-train-first-time-guide/` owns the ordinary railway passenger process.
-- `/guides/first-shared-meal-in-china/` owns the mechanics of an ordinary shared restaurant meal.
-- This page owns only the overlap between Chunyun mobility, public Spring Festival activities and private family boundaries.
+1. Next Lunar New Year's Day.
+2. Mainland annual days off and compensatory workdays.
+3. Annual Chunyun dates and transport measures.
+4. Operator inventory, waitlist and identity rules.
+5. Named business holiday hours.
+6. Festival dates, tickets, capacity and cancellation.
+7. Weather and crowd control.
+8. Reported trip/visit counts and their definitions.
 
-## Explicit exclusions
+## Central integration notes
 
-- No 2026 holiday-date table and no prediction of a future year's dates.
-- No live ticket inventory, train/flight timetable or price.
-- No claim that Chunyun is an uncontested absolute world record.
-- No passenger-journey total described as unique people.
-- No “authentic family reunion” product, household-access promise or universal gift rule.
-- No city × date, city × custom or family-type index pages.
+- This is an existing guide identity, so guide count, sitemap identity count and canonical set should not change from this upgrade alone.
+- The integrated release includes the Search Map ownership update, editorial discovery placement, freshness policy, locale-font rebuild and release tests. This CNY owner needs no new collection override.
+- The guide registry, sitemap and production export have been regenerated and verified with the separate Great Wall owner included. Central only needs to review, merge and deploy the integrated release candidate.

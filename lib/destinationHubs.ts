@@ -101,13 +101,14 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-16",
-    dateModified: "2026-08-21",
-    sourceReviewedDate: "2026-08-16",
+    dateModified: "2026-08-22",
+    sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
       "beijing-where-to-stay-first-trip",
       "beijing-courtyard-hotel-or-modern-hotel",
       "which-beijing-railway-station",
       "beijing-south-station-to-capital-or-daxing-airport",
+      "great-wall-section-selector-from-beijing",
       "beijing-to-mutianyu-great-wall-transfer",
       "beijing-to-badaling-great-wall-transfer",
       "forbidden-city-for-foreign-visitors",
@@ -141,6 +142,13 @@ export const destinationHubRegistry = [
         heroCaption:
           "Seen from the north, the Forbidden City reads as a whole district rather than one building. That scale is the argument for giving the central axis a complete day.",
         openGraphLocale: "en_US",
+        searchTerms: [
+          "Beijing travel guide first time",
+          "how many days in Beijing",
+          "where to stay in Beijing first time",
+          "Tiananmen Square and Forbidden City itinerary",
+          "which Great Wall section from Beijing",
+        ],
         geography: {
           title: "Beijing as five directions, not a list of pins",
           caption:
@@ -194,6 +202,13 @@ export const destinationHubRegistry = [
         heroCaption:
           "从北面看过去，故宫是一整片城区，而不是一座建筑。这个尺度就是中轴线值得留出完整一天的理由。",
         openGraphLocale: "zh_CN",
+        searchTerms: [
+          "第一次去北京旅行攻略",
+          "北京需要玩几天",
+          "第一次去北京住哪里",
+          "天安门和故宫怎么安排",
+          "从北京去长城选哪一段",
+        ],
         geography: {
           title: "把北京看成五个方向，而不是一串坐标点",
           caption:
@@ -247,6 +262,13 @@ export const destinationHubRegistry = [
         heroCaption:
           "북쪽에서 보면 자금성은 건물 하나가 아니라 하나의 구역으로 읽힙니다. 이 규모가 중앙축에 온전한 하루를 주어야 하는 이유입니다.",
         openGraphLocale: "ko_KR",
+        searchTerms: [
+          "베이징 첫 여행 가이드",
+          "베이징 며칠",
+          "베이징 첫 여행 숙소",
+          "톈안먼 자금성 일정",
+          "베이징 만리장성 어느 구간",
+        ],
         geography: {
           title: "베이징은 목록이 아니라 다섯 방향입니다",
           caption:
@@ -298,8 +320,8 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-16",
-    dateModified: "2026-08-21",
-    sourceReviewedDate: "2026-08-16",
+    dateModified: "2026-08-22",
+    sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
       "shanghai-where-to-stay-first-trip",
       "shanghai-pudong-or-hongqiao-airport",
@@ -335,6 +357,13 @@ export const destinationHubRegistry = [
         heroCaption:
           "One frame holds the whole argument: older Puxi in front, the Lujiazui towers across the Huangpu. Most first-trip decisions are really about which bank a day belongs to.",
         openGraphLocale: "en_US",
+        searchTerms: [
+          "Shanghai travel guide first time",
+          "how many days in Shanghai",
+          "where to stay in Shanghai first time",
+          "Pudong or Hongqiao airport",
+          "Shanghai Disneyland and city itinerary",
+        ],
         geography: {
           title: "Read Shanghai west to east across the Huangpu",
           caption:
@@ -388,6 +417,13 @@ export const destinationHubRegistry = [
         heroCaption:
           "一张照片就说清了核心问题：前面是老浦西，黄浦江对岸是陆家嘴。第一次来上海的多数决定，其实都是在决定这一天属于哪一岸。",
         openGraphLocale: "zh_CN",
+        searchTerms: [
+          "第一次去上海旅行攻略",
+          "上海需要玩几天",
+          "第一次去上海住哪里",
+          "浦东机场还是虹桥机场",
+          "上海迪士尼和市区怎么安排",
+        ],
         geography: {
           title: "沿黄浦江由西向东读上海",
           caption: "方位示意图，非按比例。组织上海一天的是这条江，不是景点排行。",
@@ -432,6 +468,13 @@ export const destinationHubRegistry = [
         heroCaption:
           "한 장면에 핵심이 다 들어 있습니다. 앞은 오래된 푸시, 황푸강 건너는 루자쭈이입니다. 첫 여행의 결정 대부분은 결국 그날이 어느 강안에 속하는지의 문제입니다.",
         openGraphLocale: "ko_KR",
+        searchTerms: [
+          "상하이 첫 여행 가이드",
+          "상하이 며칠",
+          "상하이 첫 여행 숙소",
+          "푸둥공항 훙차오공항 차이",
+          "상하이 디즈니랜드 시내 일정",
+        ],
         geography: {
           title: "황푸강을 기준으로 서에서 동으로 읽기",
           caption:
@@ -646,12 +689,13 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-17",
-    dateModified: "2026-08-21",
-    sourceReviewedDate: "2026-08-17",
+    dateModified: "2026-08-22",
+    sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
       "chengdu-panda-base-or-dujiangyan-panda-valley",
       "sanxingdui-museum-booking-and-gallery-order",
       "chengdu-jiuzhaigou-transport-route",
+      "leshan-giant-buddha-land-or-boat-visit",
       "chengdu-greenway-city-ring",
       "sichuan-opera-face-changing-with-context",
       "beijing-xian-chengdu-route-order",

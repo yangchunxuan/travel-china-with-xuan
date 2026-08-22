@@ -39,6 +39,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "facts", type: "callout", title: "교통 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "베이징 버스 운영사는 2025년 3월 27일 877번 버스의 출발지를 더성먼에서 베이투청으로 옮겼다. 베이징시 교통 당국은 S2 노선이 2025년 10월 25일부터 난커우역에서 출발한다고 안내한다. 고속철도는 별도 철도역을 이용하며, 서우두공항과 바다링을 잇는 노선도 날짜에 따라 운행한다. 출발 전 시간표, 요금과 운행일을 다시 확인한다." },
   { id: "help", type: "callout", title: "호텔에 맞는 노선을 확인할까요?", tone: "decision", body: "날짜, 베이징 호텔 또는 공항 터미널, 인원, 이동 요구와 저녁 고정 일정을 보내 주세요. Homeground는 전체 이동과 문제가 생겼을 때의 대안을 비교할 수 있지만 실시간 좌석을 보장하지 않습니다." },
   { id: "links", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "맞는 만리장성 구간 고르기", href: "/ko/guides/great-wall-section-selector-from-beijing/", description: "이 이동편을 확정하기 전에 무톈위·바다링·진산링·쓰마타이를 비교하세요." },
     { label: "어느 베이징 기차역인가요?", href: "/ko/guides/which-beijing-railway-station/", description: "칭허, 베이징북과 다른 주요 터미널을 구분합니다." },
     { label: "첫 베이징 여행 숙소 지역", href: "/ko/guides/beijing-where-to-stay-first-trip/", description: "숙소 지역이 첫 구간을 바꿉니다." },
     { label: "베이징에서 무톈위까지", href: "/ko/guides/beijing-to-mutianyu-great-wall-transfer/", description: "무톈위를 정한 뒤에만 이용합니다." },

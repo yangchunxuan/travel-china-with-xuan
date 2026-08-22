@@ -46,6 +46,13 @@ const body = {
       text: "The useful question is not whether Beijing is worth it. It is whether this trip needs a three-night introduction, a five-night first-trip anchor or a seven-night cultural stay.",
     },
     {
+      id: "first-trip-answer",
+      type: "callout",
+      title: "The useful default for a first visit",
+      tone: "decision",
+      body: "Start with four or five hotel nights, one central base around Wangfujing or Dongdan, one complete Tiananmen–Forbidden City day, one independent Great Wall day, and one southern or northwest task. Confirm the actual arrival airport and departure station before paying for the hotel, and lock identity-linked reservations before filling the flexible neighbourhood time. Shorten this only by dropping a whole task—not by compressing the Wall and the imperial centre into the same day.",
+    },
+    {
       id: "nights-heading",
       type: "heading",
       level: 2,
@@ -100,6 +107,25 @@ const body = {
       id: "nights-3",
       type: "paragraph",
       text: "Four nights usually produce three real days and are a practical minimum for many first trips. Five nights let the Wall stay independent, stop the northwest competing with the centre and keep the arrival day light. Six or seven suit travellers who value imperial architecture, museums, hutongs or slower mornings. The extra nights buy choice and recovery, not simply more attractions.",
+    },
+    {
+      id: "booking-order-heading",
+      type: "heading",
+      level: 2,
+      text: "Book Beijing in dependency order, not in browsing order",
+    },
+    {
+      id: "booking-order-table",
+      type: "table",
+      caption: "The order that prevents one missing confirmation from breaking the city",
+      columns: ["Order", "Decision", "Why it comes here", "What stays flexible"],
+      rows: [
+        ["1", "International arrival and the confirmed onward train or flight", "They define the airport, terminal, exact station and usable hotel nights", "Airport transfer method until the live arrival time is known"],
+        ["2", "The Palace Museum and any other must-have identity-linked venue", "A sold-out date can force the central day to move; Tiananmen Square remains a separate access check", "Jingshan, Beihai, hutong and park blocks"],
+        ["3", "Great Wall section and door-to-door transport method", "The section, weather exposure and return chain occupy their own day", "Which city day becomes the weather backup"],
+        ["4", "Hotel area and property", "The gateway pair, first fixed sight and luggage route now reveal the job of the base", "Exact restaurant and evening choices"],
+        ["5", "Temple of Heaven, Summer Palace, museums and neighbourhood sequence", "These complete the route after the scarce dependencies are visible", "The movable day that absorbs weather, closure or fatigue"],
+      ],
     },
     {
       id: "stay-heading",
@@ -228,7 +254,7 @@ const body = {
       id: "gateways-heading",
       type: "heading",
       level: 2,
-      text: "Two airports and eight railway stations shape the first and last day",
+      text: "Two airports and eight major railway stations shape the first and last day",
     },
     {
       id: "gateways-1",
@@ -294,6 +320,13 @@ const body = {
       ],
     },
     {
+      id: "station-count-change",
+      type: "callout",
+      title: "Why some Beijing pages still say seven stations",
+      tone: "neutral",
+      body: "Official Beijing pages published before the end of 2025 described seven major railway stations. Beijing Tongzhou Railway Station began passenger operations on 30 December 2025, creating the current eight-station system. That does not make Tongzhou the default for a first visitor: it serves selected eastbound intercity routes from the municipal sub-centre. The train ticket and current 12306 result remain the authority.",
+    },
+    {
       id: "gateways-2",
       type: "paragraph",
       text: "PEK versus PKX has no permanent winner. PEK is usually easier for Dongzhimen and the northeast; PKX can be more logical for southern Beijing and some onward rail sequences. Airfare, landing time and the next hotel matter more than a distance comparison, and a cheap midnight arrival can cost the following morning.",
@@ -302,6 +335,18 @@ const body = {
       id: "gateways-3",
       type: "paragraph",
       text: "Rail follows the same rule. Beijing South is strongly associated with Shanghai and Beijing West with Xi'an, but the ticket remains the authority. Keep the Chinese station name alongside the English one, and plan the hotel departure only after the exact station is fixed. For a same-day station-to-airport connection, count leaving the platform, crossing the city, entering the correct terminal and preserving the airline buffer; an extra night is often more rational when the tickets are separate.",
+    },
+    {
+      id: "first-last-day-table",
+      type: "table",
+      caption: "What the first and last Beijing day can realistically do",
+      columns: ["Transport shape", "Defensible city plan", "Do not attach"],
+      rows: [
+        ["International arrival before mid-afternoon", "Immigration, baggage, transfer, check-in and one light block near the hotel if energy remains", "A passport-linked timed attraction or a cross-city evening promise"],
+        ["International arrival in the evening", "Reach the booked hotel, eat nearby and prepare the next day's documents", "A show, distant hutong booking or early Wall departure without recovery"],
+        ["Intercity rail arrival", "Use the exact station-to-hotel chain, then stay inside the hotel's local cluster", "A major attraction whose entry time assumes a perfect train and transfer"],
+        ["Rail or flight departure day", "Treat checkout, terminal or station access, security and boarding as the primary task", "A last major sight that cannot be abandoned without consequence"],
+      ],
     },
     {
       id: "transport-links",
@@ -319,6 +364,12 @@ const body = {
           href: "/guides/beijing-south-station-to-capital-or-daxing-airport/",
           description:
             "Whether a same-day station-to-airport link is defensible, and when to buy a hotel night instead.",
+        },
+        {
+          label: "Which Great Wall section should you choose from Beijing?",
+          href: "/guides/great-wall-section-selector-from-beijing/",
+          description:
+            "Compare Mutianyu, Badaling, Jinshanling and Simatai before choosing a transfer.",
         },
         {
           label: "Beijing to Mutianyu Great Wall transfer",
@@ -351,6 +402,7 @@ const body = {
       columns: [
         "Task",
         "Natural sequence",
+        "Fix before the day",
         "Honest time shape",
         "What not to attach",
       ],
@@ -358,24 +410,28 @@ const body = {
         [
           "Tiananmen–Forbidden City–Jingshan",
           "A south-to-north ceremonial and visual sequence",
+          "Palace Museum booking; verify Tiananmen Square access separately if the square is intended",
           "One substantial central day",
           "The Great Wall, an airport departure or a distant timed museum",
         ],
         [
           "Qianmen–Temple of Heaven",
           "Historic commercial approach plus a southern ritual landscape",
+          "Temple of Heaven ticket and gate choice; Qianmen remains the flexible half",
           "Half to full day depending on depth",
           "The Summer Palace as a casual add-on",
         ],
         [
           "Summer Palace and the northwest",
           "Imperial garden, lake and hill landscape",
+          "Ticket, usable entrance and exit; treat boat operation as optional",
           "A strong half day, often most of a day",
           "A tightly timed central attraction before or after",
         ],
         [
           "Great Wall",
           "One selected section with complete outward and return transport",
+          "Current opening, section, entry and complete return method",
           "An independent full day",
           "The Forbidden City, a major museum or a same-day intercity departure",
         ],
@@ -485,6 +541,19 @@ const body = {
       id: "failure-2",
       type: "paragraph",
       text: "If the Forbidden City is unavailable, keep the central geography without pretending the experience is identical: Jingshan, Beihai or a hutong block can form a coherent day, subject to current requirements. The Temple of Heaven or the Summer Palace can move into a full open day. The National Museum replaces the palace only when its own reservation is secured. This is exactly where five nights beat three: a fixed visit has somewhere else to go.",
+    },
+    {
+      id: "failure-table",
+      type: "table",
+      caption: "A Beijing fallback should preserve geography and dependencies",
+      columns: ["Failure", "Protect", "Move or replace"],
+      rows: [
+        ["Palace Museum sold out or booking unconfirmed", "The Great Wall day and onward transport", "Move the palace to another available Beijing day; otherwise use a coherent central park–hutong day, not a supposed walk-up exception"],
+        ["Great Wall weather or temporary access problem", "The section's current official safety instruction", "Use the movable city cluster and shift the Wall only if opening, transport and the later forecast are confirmed"],
+        ["National Museum reservation fails", "The central route's realistic walking and security load", "Use another confirmed museum or neighbourhood block; do not treat geographic proximity as admission"],
+        ["Arrival is late or the group is exhausted", "The next day's fixed reservation and original documents", "Delete the arrival-night attraction and keep only food and a short local walk"],
+        ["Train, terminal or flight changes", "The ticketed departure and minimum transfer chain", "Drop the last sightseeing block before changing hotels or buying a fragile same-day connection"],
+      ],
     },
     {
       id: "scenarios-heading",
@@ -671,6 +740,28 @@ const body = {
       text: "Use the exact airport, terminal, check-in deadline and fallback chain. An airport-side night becomes stronger when a central transfer would be fragile, especially with an early departure, children, older travellers or heavy luggage. Keep the central hotel when the dated transfer is defensible and the final Beijing evening still matters. Apply the nationwide last-night method linked above; do not choose from the airport name alone.",
     },
     {
+      id: "faq-8-heading",
+      type: "heading",
+      level: 3,
+      text: "Are Tiananmen Square and the Forbidden City the same reservation?",
+    },
+    {
+      id: "faq-8",
+      type: "paragraph",
+      text: "No. They have separate access ownership, and a Tiananmen Square record never replaces a Palace Museum ticket. Under the current publicly available Tiananmen measures, a valid same-day Palace Museum reservation lets the visitor enter the square without a separate square reservation; show that record at the on-site check. Recheck official notices before major events or temporary controls, and use the detailed Forbidden City guide for the Palace-only approach.",
+    },
+    {
+      id: "faq-9-heading",
+      type: "heading",
+      level: 3,
+      text: "What should I book first for a first Beijing trip?",
+    },
+    {
+      id: "faq-9",
+      type: "paragraph",
+      text: "Confirm the flights and exact onward station first, then secure the Palace Museum and any non-negotiable identity-linked venue, then fix the Great Wall section and transport, and only then choose the hotel property and flexible clusters. This order prevents a cheap hotel or a casual attraction list from controlling the scarce parts of the trip.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -687,10 +778,10 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
-          label: "Free human planning check",
+          label: "Ask a Beijing planning question",
           href: "/#planner-contact",
           description:
-            "Send the route and stay constraints for a free first look; no paid service is preselected.",
+            "Share the route and stay constraints only if one dependency still does not resolve; no paid service is preselected.",
         },
         {
           label: "China itinerary review",
@@ -706,34 +797,58 @@ const body = {
       title: "Official sources and image credit",
       items: [
         {
-          label: "Beijing subway links to the city's major railway stations and both airports",
-          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html",
+          label: "Beijing's eight-station and two-airport hub system after Tongzhou opening",
+          url: "https://www.beijing.gov.cn/ywdt/gzdt/202512/t20251229_4374283.html",
           publisher: "Beijing Municipal Government",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
-          label: "Beijing transport overview, including the airport express service",
-          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/",
+          label: "Beijing Tongzhou Railway Station began passenger operations on 30 December 2025",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
           publisher: "Beijing Municipal Government",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
-          label: "Palace Museum online booking rules",
+          label: "Capital Airport Express route through Sanyuanqiao and Dongzhimen",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/airport/202005/t20200516_1899219.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Daxing Airport Express route to Caoqiao",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/transportation/airport/202005/t20200516_1899220.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Tiananmen reservation measures and the Palace Museum exemption",
+          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          publisher: "Tiananmen Area Management Committee",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Palace Museum English ticket and international-visitor booking instructions",
+          url: "https://intl.dpm.org.cn/ticket_details.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Palace Museum Chinese ticketing, identity and entry rules",
           url: "https://www.dpm.org.cn/subject_booking/",
           publisher: "The Palace Museum",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "National Museum of China visitor reservation guidelines",
           url: "https://en.chnmuseum.cn/visit_692/",
           publisher: "National Museum of China",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "China Railway 12306 — confirm the exact station pair before booking",
           url: "https://www.12306.cn/en/index.html",
           publisher: "China Railway 12306",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
       ],
     },

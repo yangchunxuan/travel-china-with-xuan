@@ -1,97 +1,93 @@
-# SEO brief — Spring Festival, Chunyun and visitor boundaries
+# SEO brief — Chinese New Year in China for foreign travellers
 
-- Reviewed: 2026-08-13 (Asia/Shanghai)
+- Reviewed: 2026-08-22 (Asia/Shanghai)
 - Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
-- Page job: help a foreign visitor separate Chunyun, the annual public-holiday arrangement, public Spring Festival programmes and invitation-only family practice.
-- Do not create: annual date pages here, generic national custom checklists, live ticket forecasts, household-access products or city × custom pages.
+- Canonical action: `update-existing`
+- Page job: help a foreign traveller decide whether Spring Festival fits and turn the answer into a low-fragility trip.
 
-## Primary query
+## Primary query family
 
-`visiting China during Spring Festival`
+- `Chinese New Year in China travel`
+- `should I visit China during Chinese New Year`
+- `what closes during Spring Festival China`
+- `China travel during Chinese New Year`
+- `Chunyun travel China`
 
-The query expresses the real planning task better than a generic `Chinese New Year customs` definition. The title should continue to surface `Spring Festival`, `Chunyun` and the visitor boundary so the page can satisfy both practical and cultural intent.
+The page now leads with the trip decision rather than a general customs definition. `Spring Festival`, `Chinese New Year` and `Chunyun` appear naturally, with the latter explained as a separate transport period.
 
-## Related questions
+## Search questions answered
 
-1. Is Spring Festival a good time to visit China?
-2. What is Chunyun and when does it happen?
-3. Is Chunyun the same as the public-holiday period?
-4. Are trains and flights harder to book during Spring Festival?
-5. Do Chinese cities empty during Chinese New Year?
-6. Which Spring Festival activities are public for tourists?
-7. What should I do if invited to a Chinese family home?
-8. Should visitors give red envelopes or bring a gift?
-9. Can I photograph family rituals or public celebrations?
-10. Where should I check official holiday dates and compensatory workdays?
+1. Is Chinese New Year a good time to visit China?
+2. When is the next Chinese New Year, and which mainland dates are not yet published?
+3. Which days actually affect trains, flights and businesses?
+4. Do major Chinese cities become empty?
+5. Why can quiet streets coexist with crowded attractions?
+6. What remains open and what may close?
+7. Are temple fairs and lantern shows open to foreign tourists?
+8. When does a public event continue towards Lantern Festival?
+9. How many cities should a traveller attempt during Chunyun?
+10. What should a visitor do if transport, a restaurant or an invitation changes?
 
-## Search task
+## Information gain
 
-The reader needs a go/no-go framework for travel, transport recovery and respectful participation. The page should not answer with `avoid it` or a universal etiquette list; it should separate four clocks and give public/private fallbacks.
+- Gives a clear yes/no fit test instead of “avoid the holiday” or generic enthusiasm.
+- Separates lunar date, mainland holiday, Chunyun and venue clocks.
+- Publishes the known 2027 lunar date while explicitly marking mainland 2027 fields unpublished.
+- Explains the city-empty/attraction-crowded paradox with evidence and flow research.
+- Replaces a fake national closure list with a verification ladder for named venues.
+- Separates public, hosted and private culture.
+- Provides a recoverable one-base festival itinerary and failure actions.
 
-## SERP composition observed on 2026-08-13
+## Canonical boundaries
 
-The sampled English SERP mixed festival explainers, generic custom lists, date/holiday pages, news about the travel rush and forum questions about closures and transport. Many results conflate the public holiday with Chunyun or prescribe household behaviour as a national rule.
+- `/guides/china-public-holidays-travel-calendar/` owns annual mainland days off, compensatory workdays and current crowd windows.
+- `/guides/china-high-speed-train-first-time-guide/` owns the ordinary passenger process.
+- `/guides/china-night-train-or-daytime-high-speed-rail/` owns the mode/daylight trade-off.
+- `/guides/first-shared-meal-in-china/` owns an ordinary restaurant meal.
+- This page owns only the decision and operating pattern around Spring Festival.
 
-Representative results:
+Do not create:
 
-- [Travel China — During Your Trip](https://www.travelchina.org.cn/en/channel/during-your-trip) — official tourism material including a Spring Festival social-activity handbook.
-- [China Visit Guide — Spring Festival](https://chinavisitguide.com/culture/festivals/spring-festival) — commercial explainer blending festival history, customs and travel-timing claims.
-- [Go China Freely — Chinese Festival Customs for Travelers](https://gochinafreely.com/essentials/chinese-festival-customs-travelers) — broad visitor etiquette and date guidance.
-- [Associated Press — 2026 Lunar New Year travel rush](https://apnews.com/article/55e004d9db4c75cd21c21df4baaabeda) — current news framing centred on the 9.5-billion movement estimate and demand.
+- year-specific Spring Festival travel canonicals;
+- `Chinese New Year closures China` as a duplicate page;
+- separate Chunyun or temple-fair listicles that repeat this decision;
+- city × festival pages without durable, local information gain.
 
-This is a dated qualitative observation, not a ranking guarantee or traffic estimate.
+## Snippet strategy
 
-## Result gap and Homeground information gain
+The title leads with the familiar English phrase `Chinese New Year in China` and asks the decision question. The first answer makes the trade-off concrete: fewer city moves, one confirmed public anchor and a fallback. The next-date callout prevents an outdated snippet from turning 2026 arrangements into 2027 facts.
 
-- Keep Chunyun, public holiday, venue/business and household as four separate clocks.
-- Explain that movement counts are not unique-person counts and avoid absolute world-record language.
-- Make the route viable if a 12306 waitlist never clears.
-- Replace generic etiquette with a permission matrix: public, community-open, hosted or private.
-- Give a respectful failure path when transport, an event or a family invitation changes.
-- Hand annual dates and compensatory workdays to the existing public-holiday owner.
+## Internal-link plan
 
-## Natural keyword mapping
+Implemented outbound owners:
 
-| Intent | Natural phrase | Best location |
-|---|---|---|
-| Trip decision | `visiting China during Spring Festival` | title/description, lead |
-| Transport | `Chunyun travel rush`, `Spring Festival train tickets` | two systems and mobility planning |
-| Dates | `China Spring Festival holiday dates` | calendar-owner handoff only |
-| Customs | `Spring Festival customs`, `family reunion` | public/private table |
-| Etiquette | `invited to a Chinese family home`, `visitor etiquette` | scenario two and questions |
+- annual public-holiday calendar;
+- first-trip national planner;
+- first high-speed-train guide;
+- night-train/day-rail decision;
+- first shared meal.
 
-Do not freeze a year in the title or add a copied annual date table. Chinese should use `春节/春运`; Korean should use natural `춘절/춘윈` explanations without stuffing transliterations.
+Existing inbound network already included the public-holiday, rail, meal and related culture owners. Central should preserve those links and avoid sitewide exact-match anchor inflation.
 
-## Cluster, hub and implemented inbound owners
+## Cluster, hub and inbound evidence
 
-- Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
-- Canonical boundary and related-query merge rules remain in this brief and the central Search Map; no synonym URL was created.
-- Implemented and verified 2026-08-15: `china-night-train-or-daytime-high-speed-rail`, `china-public-holidays-travel-calendar`, `first-shared-meal-in-china`, and `meizhou-mazu-ancestral-temple-reading-guide` each links from its EN/ZH/KO body to this canonical guide.
-- Current trilingual body-level inbound-owner count: **4**. Future links must add a genuinely related reader path and must not replace established links.
+Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+
+- Implemented and verified 2026-08-22: `china-night-train-or-daytime-high-speed-rail`, `china-public-holidays-travel-calendar`, `first-shared-meal-in-china` and `meizhou-mazu-ancestral-temple-reading-guide` link to this canonical in EN/ZH/KO.
+- Current trilingual body-level inbound-owner count: **4**.
+- `/guides/china-public-holidays-travel-calendar/` remains the annual-date owner; these links support the travel decision without copying yearly mainland holiday fields here.
 
 ## Unique asset plan
 
-- **Implemented 2026-08-14:** `new-year-four-clock-calendar`, an accessible HTML trip sheet with updateable year/date fields for the lunar/festival date, statutory holiday/workday, transport state and named household/venue. A blank is unresolved, never permission to reuse last year's dates.
-- **Future field-evidence gap:** document one named station during a defined Chunyun period with rights-cleared public-space photography and dated operator notices, then test the worksheet against an actual booking/fallback sequence.
-- Any future custom evidence must keep public programmes, hosted participation and private household practice separate and obtain specific consent.
-- Never stage, buy or imply access to an `authentic family reunion`.
+- Preserve the licensed documentary Chunyun hero as dated historical evidence rather than a forecast.
+- Use the localized four-phase pressure graphic to explain the decision pattern without inventing an annual calendar.
+- Keep annual dates in sourced text and the calendar owner so a graphic never becomes stale operating guidance.
 
-## GSC review
+## Freshness and measurement
 
-### Day 7
-
-- Confirm indexation, canonical/hreflang and snippet language in all locales.
-- Inspect early queries for year/date intent; verify Google is not treating this as the annual calendar owner.
-- Check whether `Chunyun` needs an English gloss in the snippet.
-
-### Day 28
-
-- Segment queries into trip decision, transport, city closures, customs and invitation etiquette.
-- Compare CTR for `visiting China during Spring Festival` and `Chinese New Year travel China`.
-- Check whether public-holiday and train pages are the main discovery paths without creating cannibalization.
-
-### Day 56
-
-- Refresh the current-year SERP and official Chunyun source state.
-- Check cannibalization with the public-holiday owner; dates belong there, boundary/execution belongs here.
-- Expand only where query evidence shows a missing decision, not with a universal gifts/customs list.
+- Annual review when the State Council and Ministry of Transport publish new arrangements.
+- Source-change review for 12306 process, named events or business-operation evidence.
+- Day 7 after release: canonical/hreflang, snippet and 2027 date rendering.
+- Day 28: segment queries into go/no-go, dates, closures, Chunyun and public events.
+- Day 56: inspect cannibalisation with the annual calendar; move annual details there rather than creating another URL.
+- Measure qualified discovery into the planning hub and guide network, not raw clicks on a festival date alone.
