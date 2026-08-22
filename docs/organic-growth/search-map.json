@@ -2,7 +2,7 @@
   "schemaVersion": "1.2.0",
   "snapshotDate": "2026-08-23",
   "checkedAt": "2026-08-23T02:30:10+08:00",
-  "finalStatus": "SEARCH MAP RECONCILED THROUGH PR #89 RUNTIME RELEASE SHA 5bd1558 — 60 REMOTE DRAFT IDENTITIES RESERVED IN OPEN DRAFT PR #84; NONE PUBLISHED",
+  "finalStatus": "SEARCH MAP RECONCILED THROUGH PR #89 RUNTIME RELEASE SHA 5bd1558 — PR #91 ADDS ONE BUSINESS-OWNER-INITIATED ENGLISH RELEASE CANDIDATE; MERGE AND DEPLOYMENT NOT YET AUTHORIZED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -1122,14 +1122,14 @@
   ],
   "coverage": {
     "publishedInventory": {
-      "authority": "audited-pr89-runtime-baseline-guide-registry-and-content-metadata",
+      "authority": "audited-pr89-runtime-baseline-plus-pr91-release-candidate-guide-registry-and-content-metadata",
       "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
-      "identityCount": 182,
-      "localeUrlCount": 540,
-      "generatedIdentityCount": 163,
+      "identityCount": 183,
+      "localeUrlCount": 541,
+      "generatedIdentityCount": 164,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
-      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at baseCommit 5bd15583.",
+      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at baseCommit 5bd15583 plus the bounded PR #91 release candidate recorded below.",
       "identityIds": [
         "anshun-dixi-mask-performance-guide",
         "beijing-courtyard-hotel-or-modern-hotel",
@@ -1199,6 +1199,7 @@
         "do-you-need-a-tour-guide-in-china",
         "dougong-and-chinese-timber-frame-reading",
         "first-shared-meal-in-china",
+        "first-trip-china-airport-station-stay-map",
         "food-plants-and-animal-products-into-china",
         "forbidden-city-for-foreign-visitors",
         "foreigners-china-hotel",
