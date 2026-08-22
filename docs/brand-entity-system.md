@@ -6,6 +6,20 @@ Updated: 22 August 2026
 
 Owner-confirmed business category: **travel agency**
 
+## Production read-back — 23 August 2026
+
+PR [#89](https://github.com/yangchunxuan/travel-china-with-xuan/pull/89)
+is deployed at
+`5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e`. The English homepage was
+confirmed indexed in Search Console, the 670-URL sitemap was submitted, and
+one English-homepage re-index request was accepted. Do not repeatedly request
+indexing for `/`; monitor the branded result at 7, 14 and 28 days instead.
+
+`/zh/` and `/ko/` passed live static checks, but this read-back does not claim
+that separate Search Console URL Inspection requests were submitted for those
+two URLs. The complete production, measurement and hold record is
+[`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](./release-notes/search-analytics-privacy-production-release-20260823.md).
+
 ## Canonical identity
 
 - Brand name: `Homeground China`
@@ -85,4 +99,9 @@ After deployment:
    `Homeground China` and the canonical slogan.
 6. Record branded-query impressions, clicks and visible title/site name after
    7, 14 and 28 days. Do not repeatedly request indexing.
+
+For the 2026-08-23 release, steps 1–4 were completed for `/` and the sitemap as
+described above; they were not recorded as separate `/zh/` and `/ko/` Search
+Console submissions. Step 5 remains an external brand-alignment task and step
+6 is the active monitoring task.
 

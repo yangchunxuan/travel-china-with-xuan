@@ -2,7 +2,7 @@
 
 **Ticket:** `ROUTE-REALITY-V4-TEST-CLOSURE-01`
 
-**Status:** `ROUTE REALITY V4 REVIEW READY — EMPLOYEE 8 FINAL RE-REVIEW REQUIRED`
+**Status:** `PR #75 MERGED — TECHNICAL SPEC REVIEW PASSED — PUBLIC PRODUCT REJECTED / CLOSED`
 
 **Model:** `route-reality-v3.0.0-internal-draft`
 
@@ -11,6 +11,12 @@
 **Authorization:** internal specification and tests only. No public tool, page,
 component, API, Registry entry, sitemap entry, schema markup, telemetry,
 persistence, generated URL or deployment is authorized.
+
+**Current decision overlay (2026-08-23):** employee 8's final technical review
+passed. Central subsequently rejected the public Route Reality product while
+retaining this internal specification as evidence. The historical handoff is
+closed: no further implementation, re-review, public route or publication work
+is authorized.
 
 ## What this revision closes
 

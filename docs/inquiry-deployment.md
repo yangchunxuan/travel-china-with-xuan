@@ -1,12 +1,13 @@
 # Homeground Inquiry backend deployment
 
-Status: the production Supabase functions, private schema, Resend notification
-path and 24-hour rate-limit cleanup are deployed for the `2026-07-20.1`
-contact release. The optional-budget `2026-07-20.2` release must follow the
-additive migration and overlapping rollout below before its static frontend is
-published.
+Status: **HISTORICAL 2026-07-20.x INQUIRY DEPLOYMENT RECORD**. The production
+Supabase functions, private schema, Resend notification path and 24-hour
+rate-limit cleanup described here were recorded for the `2026-07-20.1` contact
+release. This file is not the current authority for browser analytics, privacy
+notice or search deployment state. See the
+[2026-08-23 production release record](./release-notes/search-analytics-privacy-production-release-20260823.md).
 
-Current production configuration:
+Configuration recorded for the 2026-07-20.x inquiry release:
 
 - Supabase project region: Seoul (`ap-northeast-2`).
 - Resend notification region: Tokyo (`ap-northeast-1`).
@@ -27,7 +28,10 @@ Current production configuration:
   workflow. A Gmail notification containing the optional budget may therefore
   be copied into that project; SaleSmartly access and retention must follow the
   controls below.
-- Non-essential analytics and AI chat remain disabled.
+- At this dated snapshot, non-essential analytics and AI chat were disabled.
+  The later consent-gated analytics state is recorded separately in the
+  2026-08-23 production release record; this historical line must not override
+  it.
 
 The main website remains a GitHub Pages-compatible static export. Inquiry data
 is handled by separate Supabase Edge Functions and private Postgres tables.

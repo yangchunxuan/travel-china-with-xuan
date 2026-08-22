@@ -1,5 +1,7 @@
 # Homeground 本轮 SEO 票据状态同步 — 2026-08-11
 
+> **历史快照，不是当前开工或发布状态。** 2026-08-23 的生产库存、PR #74 发布回填、PR #89 技术上线和 Search Console 状态见 [`weekly-brief-2026-08-23.md`](./weekly-brief-2026-08-23.md)。下文数字与 `not-published` 字段只保留当时证据，不得覆盖新简报。
+
 状态：`SEARCH MAP SYNCHRONIZED — CENTRAL-APPROVED BATCH NOT YET PUBLISHED`
 
 以下六张票据是 2026-08-11 的历史冻结集合，不是新的开工命令。北京站、故宫、首次共享用餐、外国游客酒店与 eSIM owner 均已发布；Route Reality Checker 仍只有内部规格。历史票不得换 slug 或换分支重开。

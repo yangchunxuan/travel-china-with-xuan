@@ -1088,7 +1088,7 @@ The four accommodation groups remain separate in code and captions. Property
 names are intentionally omitted from the public page, and no image from one
 group is represented as a room or facility belonging to another.
 
-## Chongqing Destination Hub release candidate (August 21, 2026)
+## Chongqing Destination Hub — published via PR #80 (candidate evidence dated August 21, 2026)
 
 The Chongqing Hub uses seven real, location-specific photographs and **0 AI or
 AI-assisted documentary images**. Derivatives were made only through crop,

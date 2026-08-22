@@ -10,6 +10,10 @@ The published trilingual copy lives in `content/destinations/<city>/body.<locale
 and renders at `/destinations/<city>/`, `/zh/destinations/<city>/` and
 `/ko/destinations/<city>/`.
 
+Current production state (verified 2026-08-23): all eight destination Hubs are
+published, including Chongqing via PR #80. The dated sections below preserve
+candidate and release history; none is a current hold on Chongqing.
+
 ## What central review changed before publication
 
 1. **Stale "owner pending" language removed.** All three drafts were written
@@ -59,12 +63,12 @@ The Chengdu, Chongqing and Guangzhou draft packages were submitted on
 `content/destinations/{chengdu,guangzhou}/body.<locale>.ts`.
 
 **Chongqing was deliberately not published as a City Hub at that checkpoint.** It had five
-qualifying support owners in current main
+qualifying support owners in main at that checkpoint
 (`chongqing-upper-lower-city-orientation`,
 `chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba`,
 `china-tiankeng-sinkholes-explained`, `sichuan-opera-face-changing-with-context`)
 plus `chongqing-railway-station-selector` from PR #74. The older Hub package
-still connects only the first four and has not closed its image, reciprocal-link
+still connected only the first four and had not closed its image, reciprocal-link
 or runtime gates. Gate B is necessary for a new Hub but never sufficient to
 publish one. National guides that merely mention Chongqing
 (`china-last-night-before-international-flight`,
@@ -88,10 +92,10 @@ Gate A:
   writing, and the title adjusted to the official result rather than preserving
   four station names that may be out of date.
 
-That article is now live, but `chongqing` is still absent from the destination
-Hub registry. Central must reconcile the five-owner graph, images and links in
-a separate review before creating any public Hub route; the gate must not be
-worked around.
+At that checkpoint the article was live, but `chongqing` was still absent from
+the destination Hub registry. Central therefore had to reconcile the five-owner
+graph, images and links in a separate review before creating a public Hub route;
+that review was completed before the Hub was released via PR #80.
 
 ### What central review changed in the two published packages
 
@@ -149,11 +153,11 @@ production sitemap baseline is **649 `<loc>` entries**.
   `docs/homeground-photo-provenance.md`.
 - At the PR #74 checkpoint, the Chongqing station selector was live while the
   destination Hub remained docs-only. That historical state is superseded by
-  the release-candidate record below.
+  the published release history below.
 
-## Chongqing release candidate (August 21, 2026)
+## Chongqing published Hub (released via PR #80; candidate evidence dated August 21, 2026)
 
-The Chongqing package has now cleared the implementation gates on a branch
+The Chongqing candidate package had cleared the implementation gates on a branch
 based on `origin/main@274d243afc9fcc2ac9abd51487d06c667019cc0a`:
 
 - it is the eighth and only broad Chongqing canonical at
@@ -167,6 +171,6 @@ based on `origin/main@274d243afc9fcc2ac9abd51487d06c667019cc0a`:
   were rechecked, while train numbers, openings, exits and piers remain dynamic;
 - the old unverified future-Dazu-station claim is absent from runtime copy.
 
-This is a release candidate only until central merges and deploys the branch.
-It does not change the historical 649-URL production baseline recorded for
-PR #74.
+Central subsequently merged and published the Hub via PR #80. The 649-URL count
+above remains only the historical PR #74 baseline and is not the current sitemap
+count.

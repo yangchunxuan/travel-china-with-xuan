@@ -4,6 +4,12 @@ Status: **READY FOR CENTRAL REVIEW — NO PRODUCTION CHANGE AUTHORIZED**
 
 Review completed: 2026-08-21
 
+Historical-snapshot notice: this review preserves the PR #74 / 649-URL
+technical baseline and must not be read as current production state. PR #89 and
+the 670-URL live/Search Console read-back are recorded in
+[`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](../release-notes/search-analytics-privacy-production-release-20260823.md).
+Do not replace the dated 649 evidence below with 670.
+
 Reviewer: Homeground employee 8, technical feasibility and testing
 
 Integration base: `origin/main@ef1898745a3c7a6e7cd308aa341c352f24fe9d01`

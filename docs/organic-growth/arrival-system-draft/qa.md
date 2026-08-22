@@ -55,7 +55,7 @@ English visible-body count is approximately 1,721 regex words. Chinese and Korea
 
 ## Status and source boundaries retained
 
-- The merged repository Search Map is a historical pre-release snapshot. Its old `not-published` value for the five PR #74 identities was not edited in this docs-only ticket; explicit production readback and sitemap verification dated 2026-08-21 supersede it for live-state reporting.
+- At this package's 2026-08-21 checkpoint, the merged repository Search Map was a historical pre-release snapshot. Its old `not-published` value for the five PR #74 identities was not edited in this docs-only ticket; explicit production readback and sitemap verification dated 2026-08-21 superseded it for live-state reporting. The 2026-08-23 Search Map now records those identities as published.
 - Arrival-card publication does not authorize the First 24 Hours Hub. Employee 4 planning must make the canonical implementation decision and, if approved later, own any route, Registry, and sitemap work.
 - A repository/live-state sync is not an official-source policy recheck. Official facts keep their real access dates and event-trigger labels.
 - Sitemap presence does not establish external search-engine indexation, impressions, or search volume.

@@ -1,0 +1,64 @@
+# Homeground repository documentation index
+
+Use this page to find the current authority before starting work. A source
+commit, a Pages deployment, a live HTTP response, a Search Console status and a
+Supabase activation are separate facts; never infer one from another.
+
+## Current production and brand
+
+- [Current production release record](./release-notes/search-analytics-privacy-production-release-20260823.md)
+- [Production release-record index](./release-notes/README.md)
+- [Canonical Homeground China brand entity](./brand-entity-system.md)
+
+## SEO and content ownership
+
+- [Machine-readable Search Map](./organic-growth/search-map.json)
+- [Human-readable Search Map with current overlay](./organic-growth/search-map-2026-08-11.md)
+- [Current SEO and production brief](./organic-growth/weekly-brief-2026-08-23.md)
+- [Mandatory do-not-repeat and merge-owner check](./organic-growth/do-not-repeat.md)
+
+The audited public-runtime inventory at PR #89 release SHA `5bd1558` is 182
+guide identities, 540 guide locale URLs and eight destination Hubs. The live
+sitemap read-back on 2026-08-23 was 670 unique URLs. Later documentation-only
+commits do not change those runtime counts. These are different grains and must
+not be combined into an indexation rate.
+
+## Unpublished and reserved inventory
+
+- Draft PR [#84](https://github.com/yangchunxuan/travel-china-with-xuan/pull/84)
+  contains 60 reserved trilingual guide drafts (180 locale paths), ten from
+  each of employees 1–6. It is open, still Draft, currently conflicts with
+  `main`, and has no merge, deployment or publication authorization. The exact
+  60 IDs and six source commits are in `remoteDurableDraftBatches` in the
+  machine Search Map; none belongs in the 182-guide published count.
+- Employee 3's ten drafts remain on publication/date HOLD and do not authorize
+  an eleventh topic.
+- The older 844-URL combined simulation was run on an earlier base. It is not a
+  current release target and must be recomputed after integration conflicts are
+  resolved.
+
+## Measurement and private operations
+
+- [First-party traffic activation and rollback contract](./first-party-traffic-operations.md)
+- [Private Admin insights deployment contract](./admin-insights-deployment.md)
+- [Historical inquiry deployment record](./inquiry-deployment.md)
+
+The optional first-party collector and Admin traffic endpoint are not active in
+production in the current release record. Checked-in source is not deployment
+evidence.
+
+## Internal-only products
+
+- Route Reality's internal specification was merged in PR #75 and its v4
+  technical review passed. The public product was subsequently rejected; no
+  page, API, calculator, indexable output or further implementation is
+  authorized without a new explicit central decision.
+- `First 24 Hours in China` exists as a durable trilingual internal draft with
+  central review pending. It is not published and has no route, Registry or
+  sitemap authorization.
+
+## Historical evidence
+
+Dated reviews and sitemap counts remain valid for their stated observation
+time. Do not replace historical 142-, 634- or 649-URL snapshots with the current
+670 count; use the latest production record for current state.

@@ -5,6 +5,14 @@ collector, database migrations, cron jobs, repository variables or secrets are
 deployed in any environment. Record separate read-back evidence for each
 environment.
 
+Production read-back on 2026-08-23: PR #89's hardened static browser runtime is
+deployed and the traffic backend source is checked in, but
+`NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL` is absent and the first-party collector,
+traffic migration, Edge Function revision, traffic secrets, cron jobs, RPC
+grants and `admin-traffic` activation were not deployed or remotely verified.
+The authoritative dated record is
+[`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](./release-notes/search-analytics-privacy-production-release-20260823.md).
+
 This runbook covers only the consented, bounded first-party traffic collector
 at `v1-traffic-events`, its inquiry-attribution bridge, its retention jobs and
 the fail-closed deployment posture of the companion `admin-traffic` Edge
@@ -58,7 +66,10 @@ Activation requires all of the following evidence:
   rate-limit, retention and inquiry-attribution checks;
 - an owner, rollback operator and observation window are recorded.
 
-If any gate is missing, leave both public and server switches false.
+If any gate is missing, keep `TRAFFIC_EVENTS_ENABLED=false` and do not configure
+`NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL`. Do not change the shared
+`NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED` switch in this first-party runbook
+when consent-gated GA4/Meta has a separate approved production release.
 
 ## Data boundary
 
@@ -83,7 +94,7 @@ These values are embedded in the public static bundle and are not secrets.
 
 | Variable | First-party rule |
 |---|---|
-| `NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED` | Keep `false` until the final frontend activation; only exact `true` enables the shared measurement layer. |
+| `NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED` | Shared measurement gate. Keep `false` for a first-party-only release unless consent-gated GA4/Meta is separately approved; the 2026-08-23 GA4/Meta production release requires exact `true` while the first-party endpoint remains absent. |
 | `NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL` | Exact HTTPS URL ending in `/functions/v1/v1-traffic-events`; no query, fragment, credentials or alternate origin. |
 | `NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID` | Leave unset for a first-party-only rollout. |
 | `NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID` | Leave unset for a first-party-only rollout. |
@@ -251,8 +262,9 @@ Migration 002 does not authorize the private Admin traffic API: keep
 10. Verify refusal produces no request, withdrawal stops requests, and re-grant
    creates at most the approved current-page event. Clear the staging browser
    state when complete.
-11. Run the cron and retention checks below. Leave the public switch false
-    until all staging evidence is approved.
+11. Run the cron and retention checks below. Keep the first-party endpoint out
+    of the production bundle until all staging evidence is approved. Do not
+    change a separately approved GA4/Meta shared switch in this runbook.
 
 This staging sequence deploys `admin-traffic` only to prove its disabled
 posture. Do not set `ADMIN_TRAFFIC_API_ENABLED=true` unless the private Admin
@@ -448,8 +460,10 @@ runtime. Every traffic-secret rotation is therefore a planned, fail-closed
 maintenance window.
 
 1. Set the server switch false and verify `collection_paused`.
-2. Set the public switch false and deploy it when the window is not strictly an
-   emergency. Wait for the agreed static-cache/browser overlap window.
+2. If a frontend-side first-party stop is also required, deploy without
+   `NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL` and wait for the agreed
+   static-cache/browser overlap window. Do not switch off separately approved
+   consent-gated GA4/Meta measurement as part of this rotation.
 3. Generate independent high-entropy replacement values in the approved secret
    manager. Compare secret identifiers/fingerprints there; never print values.
 4. Update all functions that read the shared project environment. In
@@ -457,7 +471,8 @@ maintenance window.
    `v1-traffic-events` and `v1-inquiries`.
 5. Redeploy the affected functions while disabled and repeat negative tests.
 6. Reactivate the server, run one staging-style synthetic session/event check,
-   then reactivate and deploy the frontend.
+   then restore the approved first-party endpoint configuration and deploy the
+   frontend.
 7. Revoke/delete old values in the secret manager only after read-back and the
    approved rollback window. Record secret version identifiers, not values.
 
