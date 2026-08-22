@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://homegroundchina.com/"),
     applicationName: "Homeground China",
-    referrer: "strict-origin-when-cross-origin",
+    referrer: "origin",
     verification: {
       other: {
         "naver-site-verification":
@@ -94,9 +94,9 @@ export default async function LocalizedRootLayout({
         )}
       </head>
       <body>
+        <SiteAnalytics locale={locale} />
         {children}
         <AnalyticsConsent locale={locale} />
-        <SiteAnalytics locale={locale} />
       </body>
     </html>
   );

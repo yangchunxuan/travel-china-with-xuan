@@ -3,7 +3,12 @@ import {
   hasAnalyticsConsent,
   hasMarketingConsent,
   readAnalyticsConsent,
+  subscribeAnalyticsConsent,
 } from "./analyticsConsent";
+import {
+  metaMeasurementLocationIsSafe,
+  thirdPartyMeasurementLocationIsSafe,
+} from "./analyticsLocation";
 
 export const ANALYTICS_ENABLED =
   process.env.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED === "true";
@@ -95,6 +100,7 @@ type MetaPixel = ((...args: unknown[]) => void) & {
   queue: unknown[][];
   loaded: boolean;
   version: string;
+  disablePushState?: boolean;
 };
 
 type AnalyticsWindow = Window & {
@@ -143,7 +149,12 @@ const safeControlledValuePattern = /^[A-Za-z0-9._/-]{1,100}$/u;
 const controlledPathPattern = /^\/[A-Za-z0-9/_-]*$/u;
 const controlledUtmPattern =
   /^[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?$/u;
-const internalUtmMediums = new Set(["owned", "organic-content"]);
+const internalUtmMediums = new Set([
+  "owned",
+  "organic-content",
+  "guide",
+  "website",
+]);
 const attributionStorageKey = "homeground-entry-attribution";
 const analyticsSessionStorageKey = "homeground-analytics-session";
 const trafficCredentialStorageKey =
@@ -151,10 +162,16 @@ const trafficCredentialStorageKey =
 const hmacSha256Pattern = /^[0-9a-f]{64}$/u;
 const sessionCredentialPattern =
   /^v1\.[0-9]{10}\.[0-9a-f]{64}$/u;
+const retryAfterMinimumSeconds = 1;
+const retryAfterMaximumSeconds = 86_400;
+const serviceUnavailableSuppressionMilliseconds = 30_000;
 let trafficCredentialRequest: {
   key: string;
   promise: Promise<TrafficSessionCredential | null>;
 } | null = null;
+let firstPartyNextAttemptAt = 0;
+let analyticsConsentGeneration = 0;
+let analyticsConsentObserverInstalled = false;
 
 export interface EntryAttribution {
   utm_source?: string;
@@ -170,6 +187,12 @@ interface TrafficSessionCredential {
   expiresAt: number;
   sessionToken: string;
   context: string;
+  consentUpdatedAt: string;
+}
+
+interface AnalyticsConsentState {
+  generation: number;
+  updatedAt: string;
 }
 
 function sanitizePagePath(value: unknown) {
@@ -225,28 +248,29 @@ function sanitizeEventParameters(parameters: EventParameters) {
   return sanitized;
 }
 
-const guideSearchPathPattern = /^\/(?:zh\/|ko\/)?guides\/search\/?$/u;
-
-function hasSensitiveGuideSearchQuery() {
-  if (typeof window === "undefined") return false;
-  return (
-    guideSearchPathPattern.test(window.location.pathname) &&
-    new URLSearchParams(window.location.search).has("q")
-  );
-}
-
 function googleEventParameters(
   parameters: Record<string, string | number | boolean>,
 ) {
-  if (!hasSensitiveGuideSearchQuery()) return parameters;
-
-  const safeLocation = `${window.location.origin}${window.location.pathname}`;
+  const safeLocation = `${window.location.origin}${sanitizePagePath(
+    window.location.pathname,
+  )}`;
+  let safeReferrer = "";
+  try {
+    if (document.referrer) {
+      const referrer = new URL(document.referrer);
+      if (referrer.protocol === "https:" || referrer.protocol === "http:") {
+        safeReferrer = referrer.origin;
+      }
+    }
+  } catch {
+    // An invalid or unavailable referrer is represented as no referrer.
+  }
   return {
     ...parameters,
-    // GA otherwise derives both values from the browser address bar. Search
-    // questions are intentionally excluded even after measurement consent.
+    // Never let GA derive query or fragment values from the browser address
+    // bar or referrer, including initial loads and SPA history navigation.
     page_location: safeLocation,
-    page_referrer: safeLocation,
+    page_referrer: safeReferrer,
   };
 }
 
@@ -382,6 +406,12 @@ export function removeAttributionParametersFromAddressBar() {
       "utm_content",
       "utm_term",
       "hg_attribution_sig",
+      "fbclid",
+      "gclid",
+      "dclid",
+      "gbraid",
+      "wbraid",
+      "msclkid",
     ]) {
       if (url.searchParams.has(key)) {
         url.searchParams.delete(key);
@@ -401,11 +431,113 @@ export function removeAttributionParametersFromAddressBar() {
 
 export function clearAnalyticsSessionState() {
   if (typeof window === "undefined") return;
+  trafficCredentialRequest = null;
   try {
     window.sessionStorage.removeItem(attributionStorageKey);
     window.sessionStorage.removeItem(analyticsSessionStorageKey);
     window.sessionStorage.removeItem(trafficCredentialStorageKey);
+  } catch {
+    // Optional reporting state must not interfere with the public experience.
+  }
+}
+
+function ensureAnalyticsConsentObserver() {
+  if (
+    typeof window === "undefined" ||
+    analyticsConsentObserverInstalled
+  ) {
+    return;
+  }
+  analyticsConsentObserverInstalled = true;
+  subscribeAnalyticsConsent((preferences) => {
+    analyticsConsentGeneration += 1;
     trafficCredentialRequest = null;
+    if (!preferences?.analytics) clearAnalyticsSessionState();
+  });
+}
+
+function currentAnalyticsConsentState(): AnalyticsConsentState | null {
+  const preferences = readAnalyticsConsent();
+  if (!preferences?.analytics) return null;
+  return {
+    generation: analyticsConsentGeneration,
+    updatedAt: preferences.updatedAt,
+  };
+}
+
+function analyticsConsentRemains(
+  expected: AnalyticsConsentState,
+) {
+  const current = readAnalyticsConsent();
+  return Boolean(
+    current?.analytics &&
+      current.updatedAt === expected.updatedAt &&
+      analyticsConsentGeneration === expected.generation,
+  );
+}
+
+function firstPartyAttemptIsSuppressed() {
+  return Date.now() < firstPartyNextAttemptAt;
+}
+
+function retryAfterDelayMilliseconds(response: Response) {
+  const value = response.headers.get("Retry-After")?.trim();
+  let seconds = Number.NaN;
+  if (value && /^\d+$/u.test(value)) {
+    const parsed = Number(value);
+    seconds = Number.isFinite(parsed)
+      ? parsed
+      : retryAfterMaximumSeconds;
+  } else if (value) {
+    const timestamp = Date.parse(value);
+    if (Number.isFinite(timestamp)) {
+      seconds = Math.ceil((timestamp - Date.now()) / 1_000);
+    }
+  }
+  if (!Number.isFinite(seconds)) seconds = retryAfterMinimumSeconds;
+  return (
+    Math.max(
+      retryAfterMinimumSeconds,
+      Math.min(retryAfterMaximumSeconds, Math.ceil(seconds)),
+    ) * 1_000
+  );
+}
+
+function applyFirstPartyResponseSuppression(response: Response) {
+  const delay =
+    response.status === 429
+      ? retryAfterDelayMilliseconds(response)
+      : response.status === 503
+        ? serviceUnavailableSuppressionMilliseconds
+        : 0;
+  if (!delay) return;
+  firstPartyNextAttemptAt = Math.max(
+    firstPartyNextAttemptAt,
+    Date.now() + delay,
+  );
+}
+
+async function discardResponseBody(response: Response) {
+  try {
+    await response.body?.cancel();
+  } catch {
+    // A response-body cleanup failure must not create another request.
+  }
+}
+
+function clearRejectedTrafficSessionCredential(
+  rejectedCredential: string,
+) {
+  if (typeof window === "undefined") return;
+  try {
+    const raw = window.sessionStorage.getItem(
+      trafficCredentialStorageKey,
+    );
+    if (!raw) return;
+    const stored = JSON.parse(raw) as Record<string, unknown>;
+    if (stored.credential === rejectedCredential) {
+      window.sessionStorage.removeItem(trafficCredentialStorageKey);
+    }
   } catch {
     // Optional reporting state must not interfere with the public experience.
   }
@@ -449,8 +581,10 @@ export function getTrafficSessionToken() {
 function ensureGtagQueue() {
   const analyticsWindow = window as AnalyticsWindow;
   analyticsWindow.dataLayer ??= [];
-  analyticsWindow.gtag ??= (...args: unknown[]) => {
-    analyticsWindow.dataLayer?.push(args);
+  analyticsWindow.gtag ??= function gtag(..._args: unknown[]) {
+    // gtag.js consumes the array-like Arguments object used by its official
+    // bootstrap. A rest-parameter Array looks similar but is not equivalent.
+    analyticsWindow.dataLayer?.push(arguments);
   };
   return analyticsWindow.gtag;
 }
@@ -460,6 +594,7 @@ export function initializeGoogleAnalytics() {
     !ANALYTICS_ENABLED ||
     !GA_MEASUREMENT_ID ||
     !hasAnalyticsConsent() ||
+    !thirdPartyMeasurementLocationIsSafe() ||
     typeof window === "undefined"
   ) {
     return false;
@@ -497,6 +632,7 @@ export function initializeGoogleAnalytics() {
     send_page_view: false,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
+    ...googleCampaignConfiguration(),
   });
   analyticsWindow.homegroundGaInitialized = true;
   return true;
@@ -530,6 +666,10 @@ function ensureMetaQueue() {
   fbq.queue = [];
   fbq.loaded = true;
   fbq.version = "2.0";
+  // Meta's supported SPA opt-out must exist before fbevents.js loads so the
+  // vendor cannot install automatic pushState/replaceState PageViews. The
+  // site sends one consent-gated, query-free PageView itself instead.
+  fbq.disablePushState = true;
   analyticsWindow.fbq = fbq;
   analyticsWindow._fbq = fbq;
   return fbq;
@@ -540,6 +680,7 @@ export function initializeMetaPixel() {
     !ANALYTICS_ENABLED ||
     !META_PIXEL_ID ||
     !hasMarketingConsent() ||
+    !metaMeasurementLocationIsSafe() ||
     typeof window === "undefined"
   ) {
     return false;
@@ -547,6 +688,8 @@ export function initializeMetaPixel() {
 
   const analyticsWindow = window as AnalyticsWindow;
   const fbq = ensureMetaQueue();
+  fbq.disablePushState = true;
+  fbq("set", "autoConfig", false, META_PIXEL_ID);
   fbq("consent", "grant");
   if (!analyticsWindow.homegroundMetaInitialized) {
     fbq("init", META_PIXEL_ID);
@@ -628,9 +771,11 @@ function trafficCredentialContext({
 function readTrafficSessionCredential({
   sessionToken,
   context,
+  consentUpdatedAt,
 }: {
   sessionToken: string;
   context: string;
+  consentUpdatedAt: string;
 }): TrafficSessionCredential | null {
   try {
     const raw = window.sessionStorage.getItem(
@@ -645,7 +790,8 @@ function readTrafficSessionCredential({
       !Number.isSafeInteger(candidate.expiresAt) ||
       candidate.expiresAt <= Date.now() + 30_000 ||
       candidate.sessionToken !== sessionToken ||
-      candidate.context !== context
+      candidate.context !== context ||
+      candidate.consentUpdatedAt !== consentUpdatedAt
     ) {
       window.sessionStorage.removeItem(
         trafficCredentialStorageKey,
@@ -663,11 +809,13 @@ async function requestTrafficSessionCredential({
   locale,
   entryPath,
   attribution,
+  consentState,
 }: {
   sessionToken: string;
   locale: HomegroundLocale;
   entryPath: string;
   attribution: EntryAttribution;
+  consentState: AnalyticsConsentState;
 }): Promise<TrafficSessionCredential | null> {
   const context = trafficCredentialContext({
     locale,
@@ -677,8 +825,15 @@ async function requestTrafficSessionCredential({
   const existing = readTrafficSessionCredential({
     sessionToken,
     context,
+    consentUpdatedAt: consentState.updatedAt,
   });
   if (existing) return existing;
+  if (
+    !analyticsConsentRemains(consentState) ||
+    firstPartyAttemptIsSuppressed()
+  ) {
+    return null;
+  }
 
   let response: Response;
   try {
@@ -704,13 +859,20 @@ async function requestTrafficSessionCredential({
   } catch {
     return null;
   }
+  if (!analyticsConsentRemains(consentState)) {
+    await discardResponseBody(response);
+    return null;
+  }
   if (!response.ok) {
-    await response.body?.cancel();
+    applyFirstPartyResponseSuppression(response);
+    await discardResponseBody(response);
+    if (!analyticsConsentRemains(consentState)) return null;
     return null;
   }
 
   try {
     const result = (await response.json()) as Record<string, unknown>;
+    if (!analyticsConsentRemains(consentState)) return null;
     const expiresAt =
       typeof result.expiresAt === "string"
         ? Date.parse(result.expiresAt)
@@ -730,6 +892,7 @@ async function requestTrafficSessionCredential({
       expiresAt,
       sessionToken,
       context,
+      consentUpdatedAt: consentState.updatedAt,
     };
     window.sessionStorage.setItem(
       trafficCredentialStorageKey,
@@ -746,8 +909,10 @@ async function trafficSessionCredential(parameters: {
   locale: HomegroundLocale;
   entryPath: string;
   attribution: EntryAttribution;
+  consentState: AnalyticsConsentState;
 }) {
-  const key = `${parameters.sessionToken}:${trafficCredentialContext(parameters)}`;
+  if (firstPartyAttemptIsSuppressed()) return null;
+  const key = `${parameters.sessionToken}:${parameters.consentState.updatedAt}:${parameters.consentState.generation}:${trafficCredentialContext(parameters)}`;
   if (!trafficCredentialRequest || trafficCredentialRequest.key !== key) {
     const promise = requestTrafficSessionCredential(parameters).finally(
       () => {
@@ -761,18 +926,69 @@ async function trafficSessionCredential(parameters: {
   return trafficCredentialRequest.promise;
 }
 
+type TrafficEventAttemptOutcome =
+  | "accepted"
+  | "unauthorized"
+  | "stopped";
+
+async function sendTrafficEventBatch({
+  payload,
+  consentState,
+}: {
+  payload: Record<string, unknown>;
+  consentState: AnalyticsConsentState;
+}): Promise<TrafficEventAttemptOutcome> {
+  if (
+    !analyticsConsentRemains(consentState) ||
+    firstPartyAttemptIsSuppressed()
+  ) {
+    return "stopped";
+  }
+
+  let response: Response;
+  try {
+    response = await fetch(WEB_EVENTS_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      credentials: "omit",
+      keepalive: true,
+      mode: "cors",
+      referrerPolicy: "no-referrer",
+    });
+  } catch {
+    return "stopped";
+  }
+  if (!analyticsConsentRemains(consentState)) {
+    await discardResponseBody(response);
+    return "stopped";
+  }
+  if (response.ok) return "accepted";
+
+  applyFirstPartyResponseSuppression(response);
+  const outcome =
+    response.status === 401 ? "unauthorized" : "stopped";
+  await discardResponseBody(response);
+  if (!analyticsConsentRemains(consentState)) return "stopped";
+  return outcome;
+}
+
 async function dispatchFirstPartyEvent(
   name: HomegroundEventName,
   parameters: Record<string, string | number | boolean>,
 ) {
+  ensureAnalyticsConsentObserver();
   if (
     !ANALYTICS_ENABLED ||
     !WEB_EVENTS_URL ||
     !hasAnalyticsConsent() ||
+    firstPartyAttemptIsSuppressed() ||
     typeof window === "undefined"
   ) {
     return;
   }
+  const consentState = currentAnalyticsConsentState();
+  if (!consentState) return;
 
   const mappedEvent = firstPartyEvent(name, parameters);
   if (!mappedEvent) return;
@@ -788,55 +1004,75 @@ async function dispatchFirstPartyEvent(
     attribution.landing_path ?? window.location.pathname,
   );
   const locale = pageLocale(parameters);
-  const sessionCredential = await trafficSessionCredential({
+  const event = {
+    eventId: window.crypto.randomUUID(),
+    type: mappedEvent.type,
+    pagePath,
+    actionCode: mappedEvent.actionCode,
+  };
+  const credentialParameters = {
     sessionToken,
     locale,
     entryPath,
     attribution,
-  });
-  if (!sessionCredential) return;
-
-  const payload = {
-    requestType: trafficEventBatchRequestType,
-    contractVersion: webEventsContract,
-    noticeVersion: analyticsConsentVersion,
-    sessionToken,
-    sessionCredential: sessionCredential.credential,
-    locale,
-    entryPath,
-    attribution: trafficAttributionPayload(attribution),
-    attributionSignature:
-      attribution.attribution_signature ?? null,
-    events: [
-      {
-        eventId: window.crypto.randomUUID(),
-        type: mappedEvent.type,
-        pagePath,
-        actionCode: mappedEvent.actionCode,
-      },
-    ],
+    consentState,
   };
+  let sessionCredential = await trafficSessionCredential(
+    credentialParameters,
+  );
+  if (
+    !sessionCredential ||
+    !analyticsConsentRemains(consentState) ||
+    firstPartyAttemptIsSuppressed()
+  ) {
+    return;
+  }
 
-  try {
-    const response = await fetch(WEB_EVENTS_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-      credentials: "omit",
-      keepalive: true,
-      mode: "cors",
-      referrerPolicy: "no-referrer",
-    });
-    if (!response.ok) {
-      if (response.status === 401) {
-        window.sessionStorage.removeItem(
-          trafficCredentialStorageKey,
-        );
-      }
-      await response.body?.cancel();
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    if (
+      !analyticsConsentRemains(consentState) ||
+      firstPartyAttemptIsSuppressed()
+    ) {
+      return;
     }
-  } catch {
-    // Measurement must never block or alter the traveller-facing interaction.
+    const outcome = await sendTrafficEventBatch({
+      consentState,
+      payload: {
+        requestType: trafficEventBatchRequestType,
+        contractVersion: webEventsContract,
+        noticeVersion: analyticsConsentVersion,
+        sessionToken,
+        sessionCredential: sessionCredential.credential,
+        locale,
+        entryPath,
+        attribution: trafficAttributionPayload(attribution),
+        attributionSignature:
+          attribution.attribution_signature ?? null,
+        events: [event],
+      },
+    });
+    if (outcome !== "unauthorized") return;
+
+    clearRejectedTrafficSessionCredential(
+      sessionCredential.credential,
+    );
+    if (
+      attempt > 0 ||
+      !analyticsConsentRemains(consentState) ||
+      firstPartyAttemptIsSuppressed()
+    ) {
+      return;
+    }
+    sessionCredential = await trafficSessionCredential(
+      credentialParameters,
+    );
+    if (
+      !sessionCredential ||
+      !analyticsConsentRemains(consentState) ||
+      firstPartyAttemptIsSuppressed()
+    ) {
+      return;
+    }
   }
 }
 
@@ -848,6 +1084,7 @@ function dispatchMetaEvent(
     !ANALYTICS_ENABLED ||
     !META_PIXEL_ID ||
     !hasMarketingConsent() ||
+    !metaMeasurementLocationIsSafe() ||
     typeof window === "undefined"
   ) {
     return;
@@ -877,31 +1114,96 @@ export function trackEvent(
   const sanitized = sanitizeEventParameters(parameters);
   if (analyticsAllowed) {
     captureEntryAttribution();
-    if (GA_MEASUREMENT_ID) {
+    if (
+      GA_MEASUREMENT_ID &&
+      thirdPartyMeasurementLocationIsSafe() &&
+      initializeGoogleAnalytics()
+    ) {
       const gtag = ensureGtagQueue();
       gtag("event", name, googleEventParameters(sanitized));
     }
     void dispatchFirstPartyEvent(name, sanitized);
   }
-  // Meta derives the event URL from window.location and offers no reliable
-  // per-event URL override. Keep all Pixel events off query-bearing search
-  // pages so a traveller's free-text question never reaches Meta.
-  if (marketingAllowed && !hasSensitiveGuideSearchQuery()) {
+  // Meta derives event URLs from window.location and document.referrer and
+  // offers no reliable per-event URL override. Keep Pixel off whenever either
+  // source carries query or fragment metadata; first-party events retain only
+  // the bounded pathname contract.
+  if (
+    marketingAllowed &&
+    metaMeasurementLocationIsSafe() &&
+    initializeMetaPixel()
+  ) {
     dispatchMetaEvent(name, sanitized);
   }
 }
 
+function googleCampaignConfiguration() {
+  const attribution = readEntryAttribution();
+  return {
+    ...(attribution.utm_source
+      ? { campaign_source: attribution.utm_source }
+      : {}),
+    ...(attribution.utm_medium
+      ? { campaign_medium: attribution.utm_medium }
+      : {}),
+    ...(attribution.utm_campaign
+      ? { campaign_name: attribution.utm_campaign }
+      : {}),
+    ...(attribution.utm_content
+      ? { campaign_content: attribution.utm_content }
+      : {}),
+  };
+}
+
+export type PageViewMeasurementTarget =
+  | "first_party"
+  | "google"
+  | "meta";
+
 export function trackPageView({
   path,
   locale,
+  target,
 }: {
   path: string;
   locale: HomegroundLocale;
+  target: PageViewMeasurementTarget;
 }) {
-  trackEvent("page_view", {
+  if (!ANALYTICS_ENABLED || typeof window === "undefined") return;
+  const parameters = sanitizeEventParameters({
     page_path: sanitizePagePath(path),
     page_language: locale,
   });
+
+  if (target === "first_party") {
+    if (hasAnalyticsConsent()) {
+      void dispatchFirstPartyEvent("page_view", parameters);
+    }
+    return;
+  }
+  if (
+    target === "google" &&
+    GA_MEASUREMENT_ID &&
+    hasAnalyticsConsent() &&
+    thirdPartyMeasurementLocationIsSafe() &&
+    initializeGoogleAnalytics()
+  ) {
+    ensureGtagQueue()(
+      "event",
+      "page_view",
+      googleEventParameters(parameters),
+    );
+    return;
+  }
+  if (
+    target === "meta" &&
+    META_PIXEL_ID &&
+    hasMarketingConsent() &&
+    metaMeasurementLocationIsSafe() &&
+    initializeMetaPixel()
+  ) {
+    dispatchMetaEvent("page_view", parameters);
+  }
 }
 
 export function trackEnquirySubmitted(

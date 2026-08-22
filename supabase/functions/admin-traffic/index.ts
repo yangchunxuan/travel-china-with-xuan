@@ -14,6 +14,7 @@ import {
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/admin-audit.ts";
 import {
+  booleanEnv,
   callSupabaseRpc,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/runtime.ts";
@@ -25,6 +26,27 @@ declare const Deno: {
 async function handleRequest(request: Request): Promise<Response> {
   const authorization = await authorizeAdminRequest(request);
   if (authorization.response) return authorization.response;
+
+  let trafficApiEnabled = false;
+  try {
+    trafficApiEnabled = booleanEnv(
+      "ADMIN_TRAFFIC_API_ENABLED",
+      false,
+    );
+  } catch {
+    return adminUnavailableResponse(
+      "traffic_not_configured",
+      authorization.requestId,
+      authorization.headers,
+    );
+  }
+  if (!trafficApiEnabled) {
+    return adminUnavailableResponse(
+      "traffic_disabled",
+      authorization.requestId,
+      authorization.headers,
+    );
+  }
 
   const finish = async (
     result: AdminAuditResult,

@@ -6,7 +6,7 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://homegroundchina.com/"),
   applicationName: "Homeground China",
-  referrer: "strict-origin-when-cross-origin",
+  referrer: "origin",
   verification: {
     other: {
       "naver-site-verification":
@@ -33,9 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <SiteAnalytics locale="en" />
         {children}
         <AnalyticsConsent locale="en" />
-        <SiteAnalytics locale="en" />
       </body>
     </html>
   );

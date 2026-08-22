@@ -53,7 +53,7 @@ test("first-touch attribution does not turn internal links into acquisition", as
 
   assert.match(
     analytics,
-    /internalUtmMediums = new Set\(\["owned", "organic-content"\]\)/,
+    /internalUtmMediums = new Set\(\[[\s\S]{0,120}"owned"[\s\S]{0,80}"organic-content"[\s\S]{0,80}"guide"[\s\S]{0,80}"website"/u,
     "Known internal link media must be excluded from acquisition fields",
   );
   assert.match(
@@ -74,29 +74,42 @@ test("first-touch attribution does not turn internal links into acquisition", as
 });
 
 test("free-text guide searches stay out of third-party measurement URLs", async () => {
-  const [analytics, englishRoute, localizedRoute] = await Promise.all([
+  const [analytics, location, englishLayout, localizedLayout] = await Promise.all([
     source("lib/analytics.ts"),
-    source("app/(default)/guides/search/page.tsx"),
-    source("app/(localized)/[locale]/guides/search/page.tsx"),
+    source("lib/analyticsLocation.ts"),
+    source("app/(default)/layout.tsx"),
+    source("app/(localized)/[locale]/layout.tsx"),
   ]);
 
   assert.match(
-    analytics,
-    /guideSearchPathPattern[\s\S]{0,500}URLSearchParams\(window\.location\.search\)\.has\("q"\)/u,
-    "Query-bearing guide-search routes must be detected without persisting the query",
+    location,
+    /thirdPartyMeasurementLocationIsSafe[\s\S]{0,500}url\.search === "" && url\.hash === ""/u,
+    "Every query- or fragment-bearing route must be ineligible for third-party measurement",
+  );
+  assert.match(
+    location,
+    /metaMeasurementLocationIsSafe[\s\S]{0,300}document\.referrer[\s\S]{0,300}referrerUrl\.search === "" && referrerUrl\.hash === ""/u,
+    "A query- or fragment-bearing referrer must also block third-party measurement",
   );
   assert.match(
     analytics,
-    /page_location: safeLocation,[\s\S]{0,80}page_referrer: safeLocation/u,
+    /page_location: safeLocation,[\s\S]{0,80}page_referrer: safeReferrer/u,
     "GA events on guide search must override URL and referrer with query-free values",
   );
   assert.match(
     analytics,
-    /marketingAllowed && !hasSensitiveGuideSearchQuery\(\)/u,
-    "Meta events must be suppressed while a free-text guide query is in the URL",
+    /marketingAllowed &&[\s\S]{0,120}metaMeasurementLocationIsSafe\(\)/u,
+    "Meta events must be suppressed for unsafe current or referring URLs",
   );
-  assert.match(englishRoute, /referrer: "origin"/u);
-  assert.match(localizedRoute, /referrer: "origin"/u);
+  assert.match(
+    analytics,
+    /fbq\.disablePushState = true[\s\S]{0,260}fbq\("set", "autoConfig", false, META_PIXEL_ID\)/u,
+    "Meta automatic history PageViews and automatic metadata collection must stay disabled",
+  );
+  for (const layout of [englishLayout, localizedLayout]) {
+    assert.match(layout, /^\s{2,4}referrer: "origin",\s*$/mu);
+    assert.doesNotMatch(layout, /strict-origin-when-cross-origin/u);
+  }
 });
 
 test("first-party writes require a short-lived server credential", async () => {
@@ -104,7 +117,11 @@ test("first-party writes require a short-lived server credential", async () => {
 
   assert.match(
     analytics,
-    /requestType: trafficSessionStartRequestType[\s\S]{0,900}session_ready/u,
+    /requestType: trafficSessionStartRequestType/u,
+  );
+  assert.match(
+    analytics,
+    /result\.state !== "session_ready"/u,
   );
   assert.match(
     analytics,
@@ -117,6 +134,11 @@ test("first-party writes require a short-lived server credential", async () => {
   assert.match(
     analytics,
     /attributionSignature:[\s\S]{0,120}attribution\.attribution_signature/u,
+  );
+  assert.match(
+    analytics,
+    /analyticsConsentRemains\(consentState\)[\s\S]{0,700}consentUpdatedAt: consentState\.updatedAt/u,
+    "A credential may be stored only while the original consent generation remains active",
   );
 });
 

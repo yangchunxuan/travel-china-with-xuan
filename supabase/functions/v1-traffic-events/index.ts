@@ -26,6 +26,7 @@ import {
 } from "../_shared/runtime.ts";
 
 declare const Deno: {
+  env: { get(name: string): string | undefined };
   serve(handler: (request: Request) => Response | Promise<Response>): void;
 };
 
@@ -48,6 +49,28 @@ interface RecordTrafficEventsRpcResponse {
   retryAfter?: number;
 }
 
+interface ConsumeTrafficSessionStartRateLimitRpcResponse {
+  outcome: "allowed" | "rate_limited";
+  retryAfter?: number;
+}
+
+const observableOperationalStatuses = new Set([401, 429, 503]);
+type ObservableTrafficRequestType =
+  | "unknown"
+  | typeof trafficSessionStartRequestType
+  | typeof trafficEventBatchRequestType;
+
+function trafficSecretIsValid(value: string): boolean {
+  return (
+    value.length >= 32 &&
+    value === value.trim() &&
+    !/[\s<>]/u.test(value) &&
+    !/(?:change[_-]?me|replace[_-]?me|placeholder|secret-min-\d+-chars)/iu.test(
+      value,
+    )
+  );
+}
+
 function validateIndependentTrafficSecrets(): void {
   const names = [
     "TRAFFIC_SESSION_HASH_SECRET",
@@ -55,9 +78,14 @@ function validateIndependentTrafficSecrets(): void {
     "TRAFFIC_SESSION_CREDENTIAL_SECRET",
     "TRAFFIC_ATTRIBUTION_LINK_SIGNING_SECRET",
   ] as const;
-  const values = names.map((name) => requiredEnv(name));
+  const values = names.map((name) => {
+    const rawValue = Deno.env.get(name);
+    const value = requiredEnv(name);
+    if (rawValue !== value) throw new Error("invalid_traffic_secrets");
+    return value;
+  });
   if (
-    values.some((value) => value.length < 32) ||
+    values.some((value) => !trafficSecretIsValid(value)) ||
     new Set(values).size !== values.length
   ) {
     throw new Error("invalid_traffic_secrets");
@@ -244,7 +272,23 @@ function errorResponse(
   headers: HeadersInit,
   fieldErrors?: Record<string, string>,
   retryAfter?: number,
+  requestType: ObservableTrafficRequestType = "unknown",
 ): Response {
+  if (observableOperationalStatuses.has(status)) {
+    try {
+      // Keep operational failures discoverable without logging request bodies,
+      // IP addresses, browser tokens, credentials or attribution labels.
+      console.warn(JSON.stringify({
+        event: "homeground_traffic_operational_response",
+        requestId,
+        status,
+        code,
+        requestType,
+      }));
+    } catch {
+      // Observability must never change the public response path.
+    }
+  }
   return jsonResponse(
     status,
     {
@@ -258,6 +302,17 @@ function errorResponse(
     },
     headers,
   );
+}
+
+function safeRetryAfter(value: unknown): number {
+  if (
+    typeof value !== "number" ||
+    !Number.isFinite(value) ||
+    value <= 0
+  ) {
+    return 1;
+  }
+  return Math.min(86_400, Math.max(1, Math.ceil(value)));
 }
 
 async function readLimitedBody(
@@ -465,6 +520,131 @@ async function handleRequest(request: Request): Promise<Response> {
       );
     }
 
+    let ipRateLimitSubjectHash: string;
+    let globalRateLimitSubjectHash: string;
+    let ipShortRateLimit: number;
+    let ipDailyRateLimit: number;
+    let globalShortRateLimit: number;
+    let globalDailyRateLimit: number;
+    try {
+      const rateLimitSecret = requiredEnv(
+        "TRAFFIC_RATE_LIMIT_HASH_SECRET",
+      );
+      ipRateLimitSubjectHash = await hmacSha256Hex(
+        rateLimitSecret,
+        `session-start-ip:v1:${requestIp(request)}`,
+      );
+      globalRateLimitSubjectHash = await hmacSha256Hex(
+        rateLimitSecret,
+        "session-start-global:v1",
+      );
+      ipShortRateLimit = positiveIntegerEnv(
+        "TRAFFIC_SESSION_START_IP_RATE_LIMIT_10_MINUTES",
+        30,
+        1,
+        2_000,
+      );
+      ipDailyRateLimit = positiveIntegerEnv(
+        "TRAFFIC_SESSION_START_IP_RATE_LIMIT_24_HOURS",
+        120,
+        1,
+        20_000,
+      );
+      globalShortRateLimit = positiveIntegerEnv(
+        "TRAFFIC_SESSION_START_GLOBAL_RATE_LIMIT_10_MINUTES",
+        200,
+        1,
+        20_000,
+      );
+      globalDailyRateLimit = positiveIntegerEnv(
+        "TRAFFIC_SESSION_START_GLOBAL_RATE_LIMIT_24_HOURS",
+        2_000,
+        1,
+        100_000,
+      );
+    } catch {
+      return errorResponse(
+        503,
+        "service_not_configured",
+        false,
+        requestId,
+        responseHeaders,
+        undefined,
+        undefined,
+        trafficSessionStartRequestType,
+      );
+    }
+
+    let rateLimitResult;
+    try {
+      rateLimitResult =
+        await callSupabaseRpc<
+          ConsumeTrafficSessionStartRateLimitRpcResponse
+        >(
+          "consume_homeground_traffic_session_start_rate_limit_v1",
+          {
+            p_ip_rate_limit_subject_hash: ipRateLimitSubjectHash,
+            p_global_rate_limit_subject_hash:
+              globalRateLimitSubjectHash,
+            p_ip_short_rate_limit: ipShortRateLimit,
+            p_ip_daily_rate_limit: ipDailyRateLimit,
+            p_global_short_rate_limit: globalShortRateLimit,
+            p_global_daily_rate_limit: globalDailyRateLimit,
+          },
+        );
+    } catch {
+      return errorResponse(
+        503,
+        "persistence_unavailable",
+        true,
+        requestId,
+        responseHeaders,
+        undefined,
+        undefined,
+        trafficSessionStartRequestType,
+      );
+    }
+
+    if (!rateLimitResult.ok || !rateLimitResult.data) {
+      return errorResponse(
+        503,
+        "persistence_unavailable",
+        true,
+        requestId,
+        responseHeaders,
+        undefined,
+        undefined,
+        trafficSessionStartRequestType,
+      );
+    }
+    if (rateLimitResult.data.outcome === "rate_limited") {
+      const retryAfter = safeRetryAfter(
+        rateLimitResult.data.retryAfter,
+      );
+      return errorResponse(
+        429,
+        "rate_limited",
+        true,
+        requestId,
+        { ...responseHeaders, "Retry-After": String(retryAfter) },
+        undefined,
+        retryAfter,
+        trafficSessionStartRequestType,
+      );
+    }
+    if (rateLimitResult.data.outcome !== "allowed") {
+      return errorResponse(
+        503,
+        "persistence_unavailable",
+        true,
+        requestId,
+        responseHeaders,
+        undefined,
+        undefined,
+        trafficSessionStartRequestType,
+      );
+    }
+
     try {
       const attribution = await acceptedAttribution(validation.value);
       const issued = await issueSessionCredential(
@@ -492,6 +672,9 @@ async function handleRequest(request: Request): Promise<Response> {
         false,
         requestId,
         responseHeaders,
+        undefined,
+        undefined,
+        trafficSessionStartRequestType,
       );
     }
   }
@@ -541,6 +724,9 @@ async function handleRequest(request: Request): Promise<Response> {
         false,
         requestId,
         responseHeaders,
+        undefined,
+        undefined,
+        trafficEventBatchRequestType,
       );
     }
     sessionHash = await hmacSha256Hex(
@@ -619,6 +805,9 @@ async function handleRequest(request: Request): Promise<Response> {
       false,
       requestId,
       responseHeaders,
+      undefined,
+      undefined,
+      trafficEventBatchRequestType,
     );
   }
 
@@ -658,6 +847,9 @@ async function handleRequest(request: Request): Promise<Response> {
       true,
       requestId,
       responseHeaders,
+      undefined,
+      undefined,
+      trafficEventBatchRequestType,
     );
   }
 
@@ -668,12 +860,15 @@ async function handleRequest(request: Request): Promise<Response> {
       true,
       requestId,
       responseHeaders,
+      undefined,
+      undefined,
+      trafficEventBatchRequestType,
     );
   }
 
   const result = persistenceResult.data;
   if (result.outcome === "rate_limited") {
-    const retryAfter = Math.max(1, Math.ceil(result.retryAfter || 1));
+    const retryAfter = safeRetryAfter(result.retryAfter);
     return errorResponse(
       429,
       "rate_limited",
@@ -682,6 +877,7 @@ async function handleRequest(request: Request): Promise<Response> {
       { ...responseHeaders, "Retry-After": String(retryAfter) },
       undefined,
       retryAfter,
+      trafficEventBatchRequestType,
     );
   }
   if (result.outcome === "idempotency_conflict") {
@@ -704,6 +900,9 @@ async function handleRequest(request: Request): Promise<Response> {
       true,
       requestId,
       responseHeaders,
+      undefined,
+      undefined,
+      trafficEventBatchRequestType,
     );
   }
 

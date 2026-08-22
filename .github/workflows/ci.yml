@@ -31,6 +31,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Test first-party traffic operations
+        run: npm run test:traffic-ops
       - name: Test inquiry contract
         run: npm run test:inquiry
       - name: Test guide search
@@ -62,12 +64,14 @@ jobs:
           NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER }}
           NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL }}
           NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL }}
-          # Consent-gated analytics. Missing IDs/endpoints keep each destination
-          # off independently; no visitor event is sent before consent.
-          NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED || 'true' }}
-          NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID || 'G-DPGR2SVC0G' }}
-          NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID: ${{ vars.NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID || '1049980710767613' }}
-          NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL || 'https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-traffic-events' }}
+          # Consent-gated analytics. The shared switch defaults to false, and
+          # every destination must be configured explicitly. Missing variables
+          # therefore keep collection off; no production identifier or endpoint
+          # is supplied by this workflow as an implicit fallback.
+          NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED: ${{ vars.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED || 'false' }}
+          NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID }}
+          NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID: ${{ vars.NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID }}
+          NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL }}
           # Public project identifiers and a publishable key only. Admin
           # authorization remains server-side (JWT + MFA + UUID allow-list).
           NEXT_PUBLIC_HOMEGROUND_ADMIN_SUPABASE_URL: https://xbymvlxethfzqcgyoieb.supabase.co
