@@ -1,6 +1,6 @@
 # Source log — Chinese New Year in China for foreign travellers
 
-Status: `SUBSTANTIAL OWNER UPGRADE COMPLETE — CENTRAL RELEASE QA REQUIRED`
+Status: `INTEGRATED OWNER UPGRADE — CENTRAL REVIEW, MERGE AND DEPLOY DECISION REQUIRED`
 
 Checked at: 2026-08-22 (Asia/Shanghai)
 
@@ -128,5 +128,5 @@ Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
 ## Central integration notes
 
 - This is an existing guide identity, so guide count, sitemap identity count and canonical set should not change from this upgrade alone.
-- No shared Registry, Search Map, sitemap, hard-coded count or font file is modified in this commit.
-- Central should regenerate the guide registry only because the separate Great Wall commit adds one new owner; this existing CNY owner needs no new collection override.
+- The integrated release includes the Search Map ownership update, editorial discovery placement, freshness policy, locale-font rebuild and release tests. This CNY owner needs no new collection override.
+- The guide registry, sitemap and production export have been regenerated and verified with the separate Great Wall owner included. Central only needs to review, merge and deploy the integrated release candidate.

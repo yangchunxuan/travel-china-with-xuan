@@ -51,7 +51,7 @@ All source pages above were reopened on 2026-08-22. Old public-health wording th
 | Morning/afternoon inspection | Morning latest 12:00; afternoon earliest 11:00 | Booking record or official rule changes |
 | Entrance and exits | Meridian Gate entrance; Shenwumen and Donghuamen visitor exits | Dated access-control notice |
 | Monday and seasonal hours | Monday closed except statutory holidays; peak 08:30/16:00/17:00, low 08:30/15:30/16:30 | Holiday, special opening, weather or security notice |
-| Tiananmen access | Separate verification required; current official channels control | Any portal, event-control or hotline update |
+| Tiananmen access | A valid same-day Palace Museum reservation currently removes the need for a duplicate square reservation; checkpoint verification, security and temporary controls still apply | Any portal, event-control or hotline update |
 | Individual galleries | May require additional ticket/reservation and may close temporarily | Current exhibition or closure notice |
 | Luggage and transport | Operational service with conditions; no guaranteed curbside pickup | Seasonal service, road-control or route change |
 

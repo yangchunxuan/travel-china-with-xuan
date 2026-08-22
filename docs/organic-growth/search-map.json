@@ -1730,7 +1730,7 @@
       },
       {
         "id": "forbidden-city-for-foreign-visitors",
-        "title": "How to Visit the Forbidden City: Tickets and a 3-Hour Route",
+        "title": "Tiananmen Square and Forbidden City: Booking, Entry and Route",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/forbidden-city-for-foreign-visitors/",
@@ -1740,12 +1740,12 @@
         "pageFamily": "task",
         "primaryEntityId": "attraction-forbidden-city",
         "secondaryEntityIds": ["city-beijing", "gate-meridian-gate", "gate-divine-prowess-gate"],
-        "queryCluster": ["forbidden city foreign visitors", "forbidden city correct entrance", "forbidden city 3 hour route", "forbidden city north gate exit", "forbidden city tickets passport"],
+        "queryCluster": ["Tiananmen Square and Forbidden City tickets", "Tiananmen Square Forbidden City route", "do I need a separate Tiananmen Square reservation with a Forbidden City ticket", "forbidden city foreign visitors", "forbidden city correct entrance", "forbidden city 3 hour route", "forbidden city north gate exit", "forbidden city tickets passport"],
         "cannibalizationOwner": "forbidden-city-for-foreign-visitors",
         "freshnessClass": "critical-on-booking-or-access-change",
-        "lastReviewedAt": "2026-08-11",
+        "lastReviewedAt": "2026-08-22",
         "status": "published-indexable",
-        "stateTransition": "selected-current-round-ticket; published-via-pr-24",
+        "stateTransition": "selected-current-round-ticket; published-via-pr-24; existing owner expanded to the Tiananmen-plus-Palace workflow on 2026-08-22; update ready for central release and not yet deployed",
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/24",
         "releaseCommit": "41f53a8b6f8370afdde666ffe0f0f1c26f127a34",
         "originMainCommit": "8769b2ffa4d2d719699bf98fb4bc215dc89bdda9",
@@ -2874,12 +2874,12 @@
       },
       {
         "candidateId": "destination-20260811-01",
-        "workingTitle": "How to Visit the Forbidden City: Tickets and a 3-Hour Route",
+        "workingTitle": "Tiananmen Square and Forbidden City: Booking, Entry and Route",
         "action": "new-page",
         "section": "explore",
         "primaryCollectionId": "explore-attractions-nature-heritage",
         "targetIntent": "execute",
-        "queryCluster": ["forbidden city foreign visitors", "forbidden city correct entrance", "forbidden city 3 hour route", "forbidden city north gate exit", "forbidden city tickets passport"],
+        "queryCluster": ["Tiananmen Square and Forbidden City tickets", "Tiananmen Square Forbidden City route", "do I need a separate Tiananmen Square reservation with a Forbidden City ticket", "forbidden city foreign visitors", "forbidden city correct entrance", "forbidden city 3 hour route", "forbidden city north gate exit", "forbidden city tickets passport"],
         "primaryEntityId": "attraction-forbidden-city",
         "secondaryEntityIds": ["city-beijing", "gate-meridian-gate", "gate-divine-prowess-gate"],
         "pageFamily": "task",
@@ -2892,13 +2892,14 @@
         "centralDecisionAt": "2026-08-11T14:11:52+08:00",
         "executionStatus": "release-completed",
         "publicationStatus": "published",
+        "stateTransition": "published-via-pr-24; existing canonical expanded to own the combined Tiananmen-plus-Palace execution task on 2026-08-22; upgraded copy ready for central release and not yet deployed",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/24",
         "liveUrls": ["https://homegroundchina.com/guides/forbidden-city-for-foreign-visitors/", "https://homegroundchina.com/zh/guides/forbidden-city-for-foreign-visitors/", "https://homegroundchina.com/ko/guides/forbidden-city-for-foreign-visitors/"],
         "publicationDate": "2026-08-11",
         "lastVerifiedAt": "2026-08-11T17:03:41+08:00",
         "durableArtifact": true,
-        "canonicalBoundary": "Passport booking, Meridian Gate entry, a realistic three-hour route and the north-gate exit remain one foreign-visitor execution task.",
+        "canonicalBoundary": "One foreign-visitor execution owner covers Palace Museum passport booking, the valid same-day Palace-reservation route through Tiananmen Square under the current published rule, security, Meridian Gate entry, a realistic palace route, north/east exits and recovery. A Tiananmen-only duplicate or second Palace Museum guide is out of scope.",
         "workflowException": "Published before the formal post-approval SEO Issue workflow was recorded; no Issue URL is inferred.",
         "approvalEvidence": "PR #24 merged to origin/main and central live acceptance completed.",
         "ownerPool": "employee-2-destination",
@@ -2919,20 +2920,20 @@
         },
         "serpGap": {
           "assessment": "moderate",
-          "observation": "Comprehensive Forbidden City guides exist. The defensible gap is a tightly bounded foreign-visitor execution path that joins reservation, south-to-north flow, realistic three-hour choices and post-exit transport.",
+          "observation": "Comprehensive Forbidden City guides exist. The defensible gap is one tightly bounded foreign-visitor execution path that correctly joins the current Tiananmen reservation exemption, Palace Museum booking, south-to-north flow, realistic route choices and post-exit transport.",
           "sampleUrls": ["https://www.travelchinaguide.com/attraction/beijing/forbidden-city/", "https://chinafootprints.com/beijing/beijing-forbidden-city"],
           "limitation": "Competitive result set is strong; publication needs genuinely current operational verification."
         },
-        "homegroundInformationGain": "Homeground can turn disconnected rules into a door-to-door decision sequence and tie the north-gate exit to the traveler’s next stop and hotel area rather than repeat palace history.",
+        "homegroundInformationGain": "Homeground turns the easily confused Tiananmen and Palace Museum reservation rules into one door-to-door decision sequence, then ties the museum exit to the traveller’s next stop rather than repeating palace history.",
         "sourceReadiness": {
           "status": "high",
-          "primarySources": ["https://www.dpm.org.cn/Visit.html?isappinstalled=0", "https://english.visitbeijing.com.cn/article/4KD1c04OUDA", "https://english.beijing.gov.cn/travellinginbeijing/citytours/202006/t20200607_1918914.html"],
-          "missing": "No release blocker remains; continue critical monitoring for booking, closure, passport and entrance changes."
+          "primarySources": ["https://intl.dpm.org.cn/ticket_details.html", "https://www.dpm.org.cn/subject_booking/", "https://www.dpm.org.cn/Visit.html", "https://www.dpm.org.cn/singles_detail/259831.html", "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html", "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html"],
+          "missing": "No release blocker remains. Continue critical monitoring for Tiananmen reservation eligibility, temporary controls, Palace booking, passport, closure and entrance changes."
         },
         "cannibalizationOwner": "forbidden-city-for-foreign-visitors",
         "freshnessClass": "critical-on-booking-or-access-change",
-        "checkedAt": "2026-08-11",
-        "decision": "central-approved-and-published-via-pr-24",
+        "checkedAt": "2026-08-22",
+        "decision": "published-via-pr-24; existing-owner expansion ready for central release on 2026-08-22",
         "parentHub": "hub-explore",
         "suggestedInternalLinks": ["beijing-where-to-stay-first-trip", "which-beijing-railway-station", "china-itinerary-with-older-parents", "is-your-china-itinerary-too-rushed"]
       },
@@ -4181,10 +4182,11 @@
         "id": "dynamic-published-forbidden-city",
         "owners": ["forbidden-city-for-foreign-visitors"],
         "priority": "critical-live-monitor",
-        "facts": ["reservation", "foreign-passport handling", "entrance/exit", "closure calendar", "linked Tiananmen requirements"],
+        "facts": ["Palace Museum reservation", "same-day Palace-reservation exemption for Tiananmen Square access", "foreign-passport handling", "entrance/exit", "closure calendar", "temporary Tiananmen controls"],
         "trigger": "official booking, access, passport or closure change",
-        "lastKnownReviewRange": "sourceReviewedDate and publication date 2026-08-11; live reverified 2026-08-11T17:03:41+08:00",
-        "status": "published-owner-monitor"
+        "lastKnownReviewRange": "sourceReviewedDate 2026-08-22; existing canonical live since 2026-08-11; expanded update ready for central release and not yet deployed",
+        "status": "published-owner-monitor",
+        "updateState": "existing-owner-expansion-ready-for-central-release-not-deployed"
       },
       {
         "id": "dynamic-approved-foreign-hotels",
@@ -4373,9 +4375,11 @@
       "doNotSplit": ["one page per provider", "data-only and local-number-only synonyms"]
     },
     {
-      "cluster": "Forbidden City foreign-visitor execution",
+      "cluster": "Tiananmen Square and Forbidden City foreign-visitor execution",
       "canonicalOwner": "forbidden-city-for-foreign-visitors",
-      "doNotSplit": ["ticket page", "entrance page", "3-hour route page", "north-gate exit page"]
+      "doNotSplit": ["Tiananmen-only reservation page", "Tiananmen plus Forbidden City route page", "Palace Museum passport-ticket page", "entrance page", "3-hour route page", "north-gate exit page"],
+      "boundarySource": "content/guides/forbidden-city-for-foreign-visitors/source-log.md",
+      "reviewedAt": "2026-08-22"
     },
     {
       "cluster": "First shared meal in China",

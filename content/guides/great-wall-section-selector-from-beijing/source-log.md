@@ -1,6 +1,6 @@
 # Source log — Great Wall section selector from Beijing
 
-Status: `EDITORIAL DRAFT COMPLETE — CENTRAL REGISTRY AND RELEASE QA REQUIRED`
+Status: `INTEGRATED RELEASE CANDIDATE — CENTRAL REVIEW, MERGE AND DEPLOY DECISION REQUIRED`
 
 Checked at: 2026-08-22 (Asia/Shanghai)
 
@@ -119,7 +119,6 @@ Recheck on source change and before any factual refresh:
 
 ## Central integration notes
 
-- Run `npm run guide:generate` after integration so `lib/guideRegistry.ts` includes the new guide. Do not hand-edit the generated file.
-- The selected pillar already maps to the reviewed `explore-attractions-nature-heritage` collection, so no `guideCollectionOverrides` entry should be necessary unless central governance decides otherwise.
-- Update hard-coded guide/entity/freshness expectations only to the actual generated totals. Do not weaken assertions.
-- Search Map, inbound links from existing transfer guides and sitemap changes remain central-owned shared work.
+- The integrated release regenerated the guide registry; the selected pillar resolves to `explore-attractions-nature-heritage` without a manual collection override.
+- Search Map ownership, reciprocal links from Beijing and both existing transfer guides, exact guide/entity/freshness counts, locale fonts, sitemap output and production export QA are included in the release branch.
+- The verified sitemap change is exactly three localized URLs for this one canonical owner. Central only needs to review, merge and deploy the integrated release candidate.
