@@ -1,0 +1,74 @@
+{
+  "id": "puzhehei-lotus-bloom-and-boat-access",
+  "type": "planning",
+  "pillar": "timing-events-natural-calendar",
+  "audienceMarkets": ["global"],
+  "format": "condition-verification-decision",
+  "topics": ["natural-calendar", "verification", "boats", "weather", "yunnan"],
+  "destinations": ["puzhehei", "qiubei", "yunnan"],
+  "heroImagePath": "/images/guides/puzhehei-lotus-bloom-and-boat-access/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/puzhehei-lotus-bloom-and-boat-access/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "when-to-go", "family": "time", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/puzhehei-lotus-bloom-and-boat-access/",
+      "title": "Puzhehei Lotus Season: Verify First, Then Choose Boat or Shore",
+      "headline": "Puzhehei Lotus Bloom: Verify Conditions and Choose Boat or Shore Access",
+      "description": "A verification ladder for the flowers, the water level, the weather and the boat routes - run it before you book and again on the morning - then a matrix for choosing water or shore.",
+      "heroAlt": "The Puzhehei lake system seen from the Qinglong Hill viewing platform, with karst peaks in haze, patches of water plants and villages along the shore.",
+      "navTitle": "Puzhehei lotus season",
+      "featuredLinkLabel": "Verify Puzhehei conditions",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Puzhehei", "Yunnan", "Seasonal"],
+      "heroCredit": {
+        "text": "Puzhehei from the Qinglong Hill viewing platform by Zhangmoon618, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puzhehei_in_Yunnan,_China.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/puzhehei-lotus-bloom-and-boat-access/",
+      "title": "普者黑荷花季：先核实，再决定上船还是留在岸上",
+      "headline": "普者黑荷花季：先核实花况，再选坐船还是岸上看",
+      "description": "一套关于花况、水位、天气与水上线路的核验阶梯——下单前跑一遍，出发当天早上再跑一遍——然后用矩阵决定走水路还是走岸上。",
+      "heroAlt": "自青龙山观景台俯瞰普者黑湖区，远处峰林隐于薄雾，水面上有成片水生植物，岸边散布村庄。",
+      "navTitle": "普者黑荷花季",
+      "featuredLinkLabel": "核验普者黑当前条件",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["普者黑", "云南", "季节"],
+      "heroCredit": {
+        "text": "自青龙山观景台俯瞰普者黑，摄影 Zhangmoon618，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puzhehei_in_Yunnan,_China.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/puzhehei-lotus-bloom-and-boat-access/",
+      "title": "푸저헤이 연꽃철: 먼저 확인하고, 배와 육지를 고르세요",
+      "headline": "푸저헤이 연꽃철: 개화 상태를 확인하고 배와 육상 동선 고르기",
+      "description": "꽃과 수위와 날씨와 수상 노선을 확인하는 사다리. 예약 전에 한 번, 가는 날 아침에 다시 한 번 돌리고, 그다음 표로 물과 육지를 고르세요.",
+      "heroAlt": "칭룽산 전망대에서 내려다본 푸저헤이 호수 지대. 약한 안개 속 카르스트 봉우리와 수생 식물 군락, 물가의 마을들.",
+      "navTitle": "푸저헤이 연꽃철",
+      "featuredLinkLabel": "푸저헤이 조건 확인하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["푸저헤이", "윈난", "계절"],
+      "heroCredit": {
+        "text": "칭룽산 전망대에서 본 푸저헤이, 촬영 Zhangmoon618, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puzhehei_in_Yunnan,_China.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    }
+  }
+}
