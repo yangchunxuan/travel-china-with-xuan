@@ -327,6 +327,11 @@ const body = {
           description: "同日“站到机场”是否站得住，以及什么时候应该改成住一晚。",
         },
         {
+          label: "从北京去长城，应该选哪一段？",
+          href: "/zh/guides/great-wall-section-selector-from-beijing/",
+          description: "先比较慕田峪、八达岭、金山岭和司马台，再选择接驳路线。",
+        },
+        {
           label: "北京到慕田峪长城怎么走",
           href: "/zh/guides/beijing-to-mutianyu-great-wall-transfer/",
           description: "慕田峪一天从酒店到酒店是怎样执行的。",
@@ -690,7 +695,7 @@ const body = {
     {
       id: "faq-8",
       type: "paragraph",
-      text: "不是。两者的通行管理不同，天安门广场记录永远不能代替故宫门票。天安门一项带日期的试行规则曾允许部分持故宫当日有效记录的游客免约广场，但故宫当前指引描述的是同时持有两份预约的路线。若广场很重要，应单独核验当前官方规则；若只去故宫，就采用故宫执行指南里的非广场进场路线。",
+      text: "不是。两者的通行管理不同，天安门广场记录永远不能代替故宫门票。按目前公开的天安门预约办法，持故宫当日有效预约记录可免另约广场，现场出示记录即可核验。重大活动或临时管控前仍要复核官方公告；只去故宫时，可采用故宫执行指南里的非广场进场路线。",
     },
     {
       id: "faq-9-heading",
@@ -746,6 +751,24 @@ const body = {
           label: "北京通州站于 2025 年 12 月 30 日开通客运",
           url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
           publisher: "北京市人民政府",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "首都机场线经三元桥连接东直门",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/airport/202005/t20200516_1899219.html",
+          publisher: "北京市人民政府",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "大兴机场线连接草桥",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/transportation/airport/202005/t20200516_1899220.html",
+          publisher: "北京市人民政府",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "天安门预约办法及故宫预约免重复预约规则",
+          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          publisher: "北京市人民政府天安门地区管理委员会",
           reviewedAt: "2026-08-22",
         },
         {

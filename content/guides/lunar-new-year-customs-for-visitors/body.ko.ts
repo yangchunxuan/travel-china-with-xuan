@@ -293,7 +293,7 @@ const body = {
       title: "계속 계획하기",
       items: [
         { "label": "중국 공휴일 여행 캘린더", "href": "/ko/guides/china-public-holidays-travel-calendar/", "description": "그해 중국 본토 휴일, 대체 근무일과 혼잡 구간을 봅니다." },
-        { "label": "첫 중국 여행 플래너", "href": "/ko/first-trip-to-china/", "description": "소수의 튼튼한 결정으로 여행 전체를 만듭니다." },
+        { "label": "첫 중국 여행 플래너", "href": "/ko/plan/", "description": "소수의 튼튼한 결정으로 여행 전체를 만듭니다." },
         { "label": "처음 타는 중국 고속철도", "href": "/ko/guides/china-high-speed-train-first-time-guide/", "description": "경로를 고른 뒤 승객 정보, 역과 탑승을 준비합니다." },
         { "label": "야간열차 또는 주간 고속철도", "href": "/ko/guides/china-night-train-or-daytime-high-speed-rail/", "description": "호텔 변경을 줄이고 쓸 수 있는 낮을 지킵니다." },
         { "label": "중국에서 처음 함께 먹는 식사", "href": "/ko/guides/first-shared-meal-in-china/", "description": "일반적인 식당 공동 식사를 가정의 재회 식사와 혼동하지 않습니다." }

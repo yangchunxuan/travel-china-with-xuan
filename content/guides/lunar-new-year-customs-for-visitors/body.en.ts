@@ -293,7 +293,7 @@ const body = {
       title: "Continue planning",
       items: [
         { "label": "China public-holiday travel calendar", "href": "/guides/china-public-holidays-travel-calendar/", "description": "Use the annual mainland days off, compensatory workdays and crowd windows." },
-        { "label": "First China trip planner", "href": "/first-trip-to-china/", "description": "Build the whole journey around a small number of sound decisions." },
+        { "label": "First China trip planner", "href": "/plan/", "description": "Build the whole journey around a small number of sound decisions." },
         { "label": "China high-speed train for first timers", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Prepare passenger records, stations and boarding after choosing the route." },
         { "label": "Night train or daytime high-speed rail", "href": "/guides/china-night-train-or-daytime-high-speed-rail/", "description": "Reduce hotel changes and protect usable daytime." },
         { "label": "First shared meal in China", "href": "/guides/first-shared-meal-in-china/", "description": "Understand an ordinary shared restaurant meal without confusing it with a household reunion." }

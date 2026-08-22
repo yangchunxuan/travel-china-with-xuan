@@ -57,10 +57,10 @@ Implemented outbound links:
 - Beijing stay-area owner.
 - Itinerary pace guide.
 
-Central inbound candidates, only where the reader path is natural:
+Implemented inbound owners:
 
-- Add one choice-stage link from the Beijing destination hub.
-- Add one reciprocal “not chosen yet?” link near the top of each existing Great Wall transfer guide.
+- The Beijing destination hub links to this selector before the two transfer owners.
+- The Badaling and Mutianyu transfer guides link back to this choice-stage owner in EN/ZH/KO.
 - Do not mass-link unrelated China pages merely to inflate internal-link counts.
 
 ## Freshness and GSC review

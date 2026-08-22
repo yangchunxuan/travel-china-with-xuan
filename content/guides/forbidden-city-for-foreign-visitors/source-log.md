@@ -18,12 +18,12 @@ Research and official-source review completed on 2026-08-22.
 
 ## The reservation-rule conflict and editorial conclusion
 
-Two official statements need to be read together instead of simplified into “one booking covers both”:
+Two official statements describe different valid cases and need to be read together:
 
-1. The Tiananmen Area Management Committee's 2021 trial measures say that a visitor holding a valid same-day Palace Museum reservation may enter Tiananmen Square without a separate square reservation. They also make clear that a square reservation does not replace attraction admission.
-2. The current Palace Museum visitor instructions describe the south-to-north route for visitors who hold both Tiananmen Square and Palace Museum reservations. The museum separately provides East and West Tongzihe approaches for Palace-only visitors.
+1. The Tiananmen Area Management Committee's currently published trial measures say that a visitor holding a valid same-day Palace Museum reservation may enter Tiananmen Square without a separate square reservation. They also make clear that a square reservation does not replace attraction admission.
+2. The Palace Museum visitor instructions describe the south-to-north route for visitors who hold both Tiananmen Square and Palace Museum reservations. That dual-record route does not revoke the Tiananmen exemption; the museum separately provides East and West Tongzihe approaches for Palace-only visitors.
 
-The guide therefore uses a conservative execution rule: the Palace Museum and Tiananmen Square are separate access tasks; a square record never substitutes for a Palace Museum ticket; if the square matters, the visitor should separately reserve it or obtain current official confirmation that the museum record qualifies on the chosen date. A Palace-only visitor should not make square access a dependency.
+The guide therefore states the current rule directly: show the valid same-day Palace Museum reservation at the square check instead of making a duplicate square reservation. A square record never substitutes for a Palace Museum ticket, and security, visitor-flow controls or temporary event restrictions can still change the on-site route. A Palace-only visitor may use the Tongzihe approach without making square access a dependency.
 
 ## Official and first-party evidence
 
@@ -36,8 +36,8 @@ The guide therefore uses a conservative execution rule: the Palace Museum and Ti
 | [Palace Museum visitor and security rules](https://www.dpm.org.cn/singles_detail/259831.html) | Palace-only East/West Tongzihe approach; dual-reservation south-to-north approach; security; luggage handling; one-way entrance/exit; temporary controls | Does not guarantee a fixed security queue, luggage acceptance, entry after a problem or a replacement ticket |
 | [Palace Museum prohibited-items catalogue](https://www.dpm.org.cn/singles_detail/259832.html) | Categories of items that cannot be taken into the museum | Travellers must check the current list; the guide does not reproduce a list that may change |
 | [Beijing 12345 passport-booking answer](https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html) | Passport booking, original-document inspection and official help context for foreign visitors | Supplements but does not override current Palace Museum rules |
-| [Tiananmen Square trial reservation measures](https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html) | The dated Palace-reservation exemption and the fact that square access does not replace attraction admission | A 2021 trial rule is not presented as a permanent guarantee |
-| [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels and visitor-facing entry points | Channel availability can vary by region or interface; the page does not by itself prove that a historic exemption applies on a specific date |
+| [Tiananmen Square trial reservation measures](https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html) | The currently published Palace-reservation exemption and the fact that square access does not replace attraction admission | Recheck after a source change and before major events or temporary controls |
+| [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels and visitor-facing entry points | Channel availability can vary by region or interface; security and temporary controls remain separate from reservation eligibility |
 
 All source pages above were reopened on 2026-08-22. Old public-health wording that remains in older page fragments was not repeated as a current visitor requirement.
 
@@ -61,7 +61,7 @@ The article instructs travellers to recheck at booking, 24–48 hours before the
 
 - Official facts: the distinct English-email and Chinese mini-program instructions, ticket-release mechanics, identity documents, non-changeable order fields, inspection periods, entrance/exits, Monday and seasonal calendar, security requirement, prohibited-item ownership, official route categories, Tiananmen's dated trial rule and current official channels.
 - Homeground judgment: use the Palace-only approach when the square is not a goal; add flexible rather than fixed security time; start the three-hour clock after inspection; protect the central axis; choose one side focus; preselect the exit, backup attraction and legal pickup point.
-- Not claimed: a universal multilingual online checkout, live availability, guaranteed email response or cancellation inventory, guaranteed foreign-card or phone flow, a foreigner walk-up exception, a fixed security wait, permanent Tiananmen exemption, every gallery opening, guaranteed luggage storage/refund or curbside taxi access.
+- Not claimed: a universal multilingual online checkout, live availability, guaranteed email response or cancellation inventory, guaranteed foreign-card or phone flow, a foreigner walk-up exception, a fixed security wait, an exemption immune from future rule changes or temporary controls, every gallery opening, guaranteed luggage storage/refund or curbside taxi access.
 
 ## Localisation and privacy
 

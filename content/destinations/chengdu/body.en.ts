@@ -602,7 +602,7 @@ const body = {
     {
       id: "faq-5",
       type: "paragraph",
-      text: "Read it from the ticket. Chengdu East handles many high-speed services, but South and West are separate hubs, and the old central station is closed for reconstruction with a 2027 target — it cannot be part of a current plan.",
+      text: "Read it from the ticket. Chengdu East handles many high-speed services, but South and West are separate hubs. The old central station has been closed for passenger service since 2022 and remains under reconstruction; do not use it until the exact station appears as bookable in 12306.",
     },
     {
       id: "faq-6-heading",

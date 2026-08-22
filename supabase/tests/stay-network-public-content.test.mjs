@@ -160,26 +160,26 @@ test("all 41 public stay handoff files enforce the initial-form privacy boundary
 test("the destination registry retains eight published Hubs and truthful dates", async () => {
   const registry = await read("lib/destinationHubs.ts");
   const expected = {
-    beijing: "2026-08-16",
-    shanghai: "2026-08-16",
-    xian: "2026-08-16",
-    chengdu: "2026-08-17",
-    guangzhou: "2026-08-17",
-    hangzhou: "2026-08-20",
-    zhangjiajie: "2026-08-20",
-    chongqing: "2026-08-21",
+    beijing: { modified: "2026-08-22", reviewed: "2026-08-22" },
+    shanghai: { modified: "2026-08-22", reviewed: "2026-08-22" },
+    xian: { modified: "2026-08-21", reviewed: "2026-08-16" },
+    chengdu: { modified: "2026-08-22", reviewed: "2026-08-22" },
+    guangzhou: { modified: "2026-08-21", reviewed: "2026-08-17" },
+    hangzhou: { modified: "2026-08-21", reviewed: "2026-08-20" },
+    zhangjiajie: { modified: "2026-08-21", reviewed: "2026-08-20" },
+    chongqing: { modified: "2026-08-21", reviewed: "2026-08-21" },
   };
   assert.match(
     registry,
     /export const destinationHubIds = \[\s*"beijing",\s*"shanghai",\s*"xian",\s*"chengdu",\s*"guangzhou",\s*"hangzhou",\s*"zhangjiajie",\s*"chongqing",\s*\] as const;/u,
   );
-  for (const [id, sourceReviewedDate] of Object.entries(expected)) {
+  for (const [id, dates] of Object.entries(expected)) {
     const start = registry.indexOf(`id: "${id}"`);
     assert.notEqual(start, -1, `${id} registry entry missing`);
     const header = registry.slice(start, start + 700);
     assert.match(header, /datePublished: "2026-08-(16|17|20|21)"/, `${id} must remain published`);
-    assert.match(header, /dateModified: "2026-08-21"/, `${id} modified date`);
-    assert.match(header, new RegExp(`sourceReviewedDate: "${sourceReviewedDate}"`), `${id} source date`);
+    assert.match(header, new RegExp(`dateModified: "${dates.modified}"`), `${id} modified date`);
+    assert.match(header, new RegExp(`sourceReviewedDate: "${dates.reviewed}"`), `${id} source date`);
   }
 });
 

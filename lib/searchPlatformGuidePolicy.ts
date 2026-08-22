@@ -169,6 +169,8 @@ export const guideFreshnessMinimums = Object.freeze({
   "china-accessible-hotel-room-verification": "high",
   "china-domestic-flight-fare-bundle-baggage": "high",
   "china-hotel-emergency-exit-fire-safety-check": "high",
+  "great-wall-section-selector-from-beijing": "high",
+  "lunar-new-year-customs-for-visitors": "high",
   "wheelchair-accessible-china-route-planning": "high",
 } as const satisfies Record<string, GuideFreshnessVolatility>);
 

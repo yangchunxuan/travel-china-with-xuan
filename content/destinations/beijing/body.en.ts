@@ -366,6 +366,12 @@ const body = {
             "Whether a same-day station-to-airport link is defensible, and when to buy a hotel night instead.",
         },
         {
+          label: "Which Great Wall section should you choose from Beijing?",
+          href: "/guides/great-wall-section-selector-from-beijing/",
+          description:
+            "Compare Mutianyu, Badaling, Jinshanling and Simatai before choosing a transfer.",
+        },
+        {
           label: "Beijing to Mutianyu Great Wall transfer",
           href: "/guides/beijing-to-mutianyu-great-wall-transfer/",
           description: "How the Mutianyu day is actually executed door to door.",
@@ -742,7 +748,7 @@ const body = {
     {
       id: "faq-8",
       type: "paragraph",
-      text: "No. They have separate access ownership, and a Tiananmen Square record never replaces a Palace Museum ticket. A dated Tiananmen rule has allowed some visitors with a valid same-day Palace record to enter the square without a second reservation, while current Palace instructions describe the route for people holding both. If the square matters, verify its current official rule separately; if only the museum matters, use the Palace-only approach explained in the Forbidden City guide.",
+      text: "No. They have separate access ownership, and a Tiananmen Square record never replaces a Palace Museum ticket. Under the current publicly available Tiananmen measures, a valid same-day Palace Museum reservation lets the visitor enter the square without a separate square reservation; show that record at the on-site check. Recheck official notices before major events or temporary controls, and use the detailed Forbidden City guide for the Palace-only approach.",
     },
     {
       id: "faq-9-heading",
@@ -800,6 +806,24 @@ const body = {
           label: "Beijing Tongzhou Railway Station began passenger operations on 30 December 2025",
           url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
           publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Capital Airport Express route through Sanyuanqiao and Dongzhimen",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/airport/202005/t20200516_1899219.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Daxing Airport Express route to Caoqiao",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/transportation/airport/202005/t20200516_1899220.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Tiananmen reservation measures and the Palace Museum exemption",
+          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          publisher: "Tiananmen Area Management Committee",
           reviewedAt: "2026-08-22",
         },
         {

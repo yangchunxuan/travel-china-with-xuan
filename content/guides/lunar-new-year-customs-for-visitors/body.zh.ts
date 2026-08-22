@@ -293,7 +293,7 @@ const body = {
       title: "继续规划",
       items: [
         { "label": "中国公共假期旅行日历", "href": "/zh/guides/china-public-holidays-travel-calendar/", "description": "查看中国内地当年放假、调休与客流窗口。" },
-        { "label": "第一次来中国旅行规划", "href": "/zh/first-trip-to-china/", "description": "用少量站得住脚的决定搭起整趟旅程。" },
+        { "label": "第一次来中国旅行规划", "href": "/zh/plan/", "description": "用少量站得住脚的决定搭起整趟旅程。" },
         { "label": "第一次坐中国高铁", "href": "/zh/guides/china-high-speed-train-first-time-guide/", "description": "选好路线后准备乘车人信息、车站与进站。" },
         { "label": "夜车还是白天高铁", "href": "/zh/guides/china-night-train-or-daytime-high-speed-rail/", "description": "减少换酒店并保护真正可用的白天。" },
         { "label": "第一次在中国吃合餐", "href": "/zh/guides/first-shared-meal-in-china/", "description": "理解普通餐厅合餐，不把它与家庭团圆饭混为一谈。" }

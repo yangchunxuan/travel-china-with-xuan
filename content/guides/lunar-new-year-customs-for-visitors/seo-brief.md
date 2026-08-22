@@ -69,6 +69,20 @@ Implemented outbound owners:
 
 Existing inbound network already included the public-holiday, rail, meal and related culture owners. Central should preserve those links and avoid sitewide exact-match anchor inflation.
 
+## Cluster, hub and inbound evidence
+
+Runtime section: `culture`; indexable collection: `culture-festivals-arts-contemporary` at `/culture/festivals-arts-contemporary/`.
+
+- Implemented and verified 2026-08-22: `china-night-train-or-daytime-high-speed-rail`, `china-public-holidays-travel-calendar`, `first-shared-meal-in-china` and `meizhou-mazu-ancestral-temple-reading-guide` link to this canonical in EN/ZH/KO.
+- Current trilingual body-level inbound-owner count: **4**.
+- `/guides/china-public-holidays-travel-calendar/` remains the annual-date owner; these links support the travel decision without copying yearly mainland holiday fields here.
+
+## Unique asset plan
+
+- Preserve the licensed documentary Chunyun hero as dated historical evidence rather than a forecast.
+- Use the localized four-phase pressure graphic to explain the decision pattern without inventing an annual calendar.
+- Keep annual dates in sourced text and the calendar owner so a graphic never becomes stale operating guidance.
+
 ## Freshness and measurement
 
 - Annual review when the State Council and Ministry of Transport publish new arrangements.

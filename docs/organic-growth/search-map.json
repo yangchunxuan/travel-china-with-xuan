@@ -1999,7 +1999,7 @@
       },
       {
         "id": "lunar-new-year-customs-for-visitors",
-        "title": "Spring Festival in China: Chunyun, Family Customs and Visitor Boundaries",
+        "title": "Chinese New Year in China: Should Foreign Travellers Visit?",
         "kind": "article",
         "locales": [
           "en",
@@ -2009,20 +2009,21 @@
         "canonicalPath": "/guides/lunar-new-year-customs-for-visitors/",
         "section": "culture",
         "primaryCollectionId": "culture-festivals-arts-contemporary",
-        "targetIntent": "understand",
+        "targetIntent": "plan",
         "pageFamily": "task",
         "primaryEntityId": "country-china",
         "secondaryEntityIds": [],
         "queryCluster": [
-          "Chinese New Year customs for visitors",
-          "Spring Festival travel etiquette China",
+          "Chinese New Year in China travel",
+          "should I visit China during Chinese New Year",
+          "what closes during Spring Festival China",
           "Chunyun and Chinese New Year travel"
         ],
         "cannibalizationOwner": "lunar-new-year-customs-for-visitors",
         "freshnessClass": "high-annual-and-venue-change",
-        "lastReviewedAt": "2026-08-14",
+        "lastReviewedAt": "2026-08-22",
         "status": "published-indexable",
-        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14; substantial-owner-upgrade-prepared-2026-08-22",
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
         "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
         "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
@@ -2937,18 +2938,18 @@
       },
       {
         "candidateId": "destination-20260811-02",
-        "workingTitle": "Mutianyu or Badaling Great Wall: Which Fits Your First Beijing Trip?",
-        "action": "reject",
+        "workingTitle": "Which Great Wall Section? Badaling, Mutianyu, Jinshanling or Simatai",
+        "action": "new-page",
         "section": "explore",
         "primaryCollectionId": "explore-attractions-nature-heritage",
         "targetIntent": "compare",
-        "queryCluster": ["mutianyu vs badaling", "which great wall section first trip", "best great wall section beijing"],
+        "queryCluster": ["best great wall section from Beijing", "Badaling vs Mutianyu vs Jinshanling vs Simatai", "which Great Wall section should I visit"],
         "primaryEntityId": "entity-great-wall-china",
         "secondaryEntityIds": ["attraction-mutianyu-great-wall", "attraction-badaling-great-wall", "city-beijing"],
         "pageFamily": "comparison",
         "taskMode": "compare",
         "artifactShape": "comparison",
-        "status": "rejected-as-standalone",
+        "status": "central-approved-release-candidate",
         "ownerPool": "employee-2-destination",
         "priorityBreakdown": {
           "userTaskAndDemandEvidence": 23,
@@ -2966,23 +2967,23 @@
           "keywordVolume": "unavailable"
         },
         "serpGap": {
-          "assessment": "low",
-          "observation": "The exact comparison is already heavily served by near-identical guides. No Homeground field dataset or differentiated access test was found in the repository.",
+          "assessment": "moderate-through-expanded-decision-model",
+          "observation": "The generic two-way comparison remains saturated. The approved owner expands the task to four sections and compares complete day shape, walking exposure, current access boundaries, crowd uncertainty, night intent and recovery rather than ranking scenery.",
           "sampleUrls": ["https://ruqintravel.com/great-wall-of-china-travel-guide/mutianyu-great-wall-vs-badaling-great-wall/", "https://greatwalltravelguide.com/badaling-vs-mutianyu-great-wall-which-should-you-choose/"],
           "limitation": "No candidate-specific usable Search Console signal; qualitative saturation judgment only."
         },
-        "homegroundInformationGain": "Potential gain exists only if Homeground first collects owned transfer, mobility and crowd-friction observations; generic comparison would add little.",
+        "homegroundInformationGain": "The page connects two existing Homeground transfer owners to a four-section choice model, distinguishes cable-car availability from accessibility, rejects stale through-hike assumptions and treats night access and crowds as dated conditions.",
         "sourceReadiness": {
-          "status": "high-for-facts-low-for-differentiation",
-          "primarySources": ["https://en.mutianyugreatwall.com/article/4DlCYuBZ75h", "https://en.mutianyugreatwall.com/article/4DlBQNxqZum"],
-          "missing": "Owned field evidence and a unique traveler decision model."
+          "status": "high-with-dynamic-recheck-boundary",
+          "primarySources": ["https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260320_4562521.html", "https://en.mutianyugreatwall.com/", "https://www.gubeiwatertown.com/Basic%20information/entrance-fees"],
+          "missing": "No release blocker; ticket products, gates, night programmes, weather closures and route continuity remain source-change triggers."
         },
-        "cannibalizationOwner": "none-rejected",
+        "cannibalizationOwner": "great-wall-section-selector-from-beijing",
         "freshnessClass": "high-on-access-or-ticket-change",
-        "checkedAt": "2026-08-11",
-        "decision": "reject-new-page-until-owned-evidence",
+        "checkedAt": "2026-08-22",
+        "decision": "central-approved-expanded-four-section-owner-release-candidate",
         "parentHub": "hub-explore",
-        "suggestedInternalLinks": ["beijing-where-to-stay-first-trip", "china-itinerary-with-older-parents"]
+        "suggestedInternalLinks": ["beijing-to-badaling-great-wall-transfer", "beijing-to-mutianyu-great-wall-transfer", "destination-beijing"]
       },
       {
         "candidateId": "destination-20260811-03",
@@ -3982,7 +3983,7 @@
       {
         "id": "destination-20260811-02",
         "pattern": "Mutianyu vs Badaling as a generic comparison",
-        "reason": "Exact SERP saturation and no owned field-evidence advantage. Reconsider only with a verified Homeground transfer/mobility/crowd dataset."
+        "reason": "Still rejected as a separate two-way canonical. Its queries merge into great-wall-section-selector-from-beijing, the centrally approved four-section decision owner."
       },
       {
         "id": "reject-nationality-template-expansion",
@@ -4452,14 +4453,16 @@
       "reviewedAt": "2026-08-14"
     },
     {
-      "cluster": "Chinese New Year customs for visitors",
+      "cluster": "Chinese New Year in China travel decision",
       "canonicalOwner": "lunar-new-year-customs-for-visitors",
       "doNotSplit": [
+        "should I visit China during Chinese New Year",
+        "what closes during Spring Festival China",
         "Spring Festival travel etiquette China",
         "Chunyun and Chinese New Year travel"
       ],
       "boundarySource": "content/guides/lunar-new-year-customs-for-visitors/seo-brief.md",
-      "reviewedAt": "2026-08-14"
+      "reviewedAt": "2026-08-22"
     },
     {
       "cluster": "Qingdao industrial history explained",

@@ -327,6 +327,11 @@ const body = {
           description: "같은 날 역–공항 연결이 성립하는지, 언제 하룻밤을 사야 하는지.",
         },
         {
+          label: "베이징에서 어느 만리장성 구간을 고를까요?",
+          href: "/ko/guides/great-wall-section-selector-from-beijing/",
+          description: "무톈위·바다링·진산링·쓰마타이를 비교한 뒤 이동편을 고르세요.",
+        },
+        {
           label: "베이징에서 무톈위 만리장성 가기",
           href: "/ko/guides/beijing-to-mutianyu-great-wall-transfer/",
           description: "무톈위 하루를 호텔에서 호텔까지 어떻게 실행하는지.",
@@ -690,7 +695,7 @@ const body = {
     {
       id: "faq-8",
       type: "paragraph",
-      text: "아닙니다. 통행 관리 주체가 다르며 톈안먼 광장 기록은 고궁박물원 표를 대신할 수 없습니다. 날짜가 적힌 톈안먼 시범 규정은 유효한 당일 고궁박물원 기록으로 일부 방문객의 광장 예약을 면제했지만, 현재 박물원 지침은 두 기록을 가진 사람의 경로를 설명합니다. 광장이 중요하면 현행 공식 규정을 별도로 확인하고, 박물원만 간다면 자금성 실행 가이드의 광장 비의존 접근을 사용하세요.",
+      text: "아닙니다. 통행 관리 주체가 다르며 톈안먼 광장 기록은 고궁박물원 표를 대신할 수 없습니다. 현재 공개된 톈안먼 예약 규정에 따르면 당일 유효한 고궁박물원 예약 기록으로 광장을 따로 예약하지 않고 현장 확인을 거쳐 들어갈 수 있습니다. 주요 행사나 임시 통제 전에는 공식 공지를 다시 확인하고, 박물원만 간다면 자금성 실행 가이드의 광장 비의존 접근을 사용하세요.",
     },
     {
       id: "faq-9-heading",
@@ -746,6 +751,24 @@ const body = {
           label: "베이징퉁저우역의 2025년 12월 30일 여객 운영 시작",
           url: "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202512/t20251231_4381067.html",
           publisher: "베이징시 인민정부",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "싼위안차오와 둥즈먼을 잇는 서우두공항선",
+          url: "https://english.beijing.gov.cn/livinginbeijing/transportation/airport/202005/t20200516_1899219.html",
+          publisher: "베이징시 인민정부",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "차오차오를 잇는 다싱공항선",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/transportation/airport/202005/t20200516_1899220.html",
+          publisher: "베이징시 인민정부",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "톈안먼 예약 규정과 고궁박물원 예약 면제",
+          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          publisher: "톈안먼 지역 관리위원회",
           reviewedAt: "2026-08-22",
         },
         {

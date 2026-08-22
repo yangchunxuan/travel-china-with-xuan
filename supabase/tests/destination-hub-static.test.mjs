@@ -128,17 +128,28 @@ test("batch two hubs keep the Chinese guide phrase together on narrow screens", 
   assert.match(page, /guangzhou: \["广州旅行指南：", "住几晚、", "住哪个区、", "走哪个门户"\]/);
 });
 
-test("batch two hubs are registered with reviewed support owners and 2026-08-17 dates", async () => {
+test("batch two hubs keep their own truthful publication and review dates", async () => {
   const registry = await source("lib/destinationHubs.ts");
 
   assert.match(registry, /id: "chengdu"/);
   assert.match(registry, /id: "guangzhou"/);
   assert.match(registry, /entityId: "city-chengdu"/);
   assert.match(registry, /entityId: "city-guangzhou"/);
-  // The published and reviewed dates must be the real release date, not the
-  // 2026-08-15 draft date carried over from the source packages.
+  const chengduHeader = registry.slice(
+    registry.indexOf('id: "chengdu"'),
+    registry.indexOf('id: "guangzhou"'),
+  );
+  const guangzhouHeader = registry.slice(
+    registry.indexOf('id: "guangzhou"'),
+    registry.indexOf('id: "hangzhou"'),
+  );
+  assert.match(chengduHeader, /datePublished: "2026-08-17"/);
+  assert.match(chengduHeader, /dateModified: "2026-08-22"/);
+  assert.match(chengduHeader, /sourceReviewedDate: "2026-08-22"/);
+  assert.match(guangzhouHeader, /datePublished: "2026-08-17"/);
+  assert.match(guangzhouHeader, /dateModified: "2026-08-21"/);
+  assert.match(guangzhouHeader, /sourceReviewedDate: "2026-08-17"/);
   assert.doesNotMatch(registry, /sourceReviewedDate: "2026-08-15"/);
-  assert.match(registry, /sourceReviewedDate: "2026-08-17"/);
 });
 
 test("Guangzhou hub states the closed T1 and the January 2026 station swap in all three locales", async () => {

@@ -102,7 +102,7 @@ export default {
     {
       id: "tiananmen-separate",
       type: "paragraph",
-      text: "The Palace Museum and Tiananmen Square have different owners, booking channels and access checks. A square reservation never replaces a Palace Museum ticket. A 2021 official Tiananmen trial rule said that a valid same-day Palace Museum reservation could qualify a visitor to enter the square without a second square reservation; current Palace instructions, however, describe the south-to-north route for visitors who hold both records. The safe conclusion is not that one booking always covers both. If the square is an intended stop, separately reserve it or verify through the current official Tiananmen portal or hotline that the museum record qualifies on that date. If the museum is the only goal, use the East or West Tongzihe approach instead of depending on square access.",
+      text: "The Palace Museum and Tiananmen Square have different owners, booking channels and access checks. A square reservation never replaces a Palace Museum ticket. Under the current publicly available Tiananmen measures, a visitor with a valid same-day Palace Museum reservation can enter the square without making a separate square reservation; show that valid record at the on-site check. This exemption does not remove security, visitor-flow controls or temporary restrictions, so recheck official notices before major events and special-control dates. If the museum is the only goal, the East or West Tongzihe approach remains a useful route that does not depend on crossing the square.",
     },
     {
       id: "approach-options",
@@ -115,7 +115,7 @@ export default {
         },
         {
           heading: "Tiananmen Square plus the Palace Museum",
-          body: "Use the current official Tiananmen channel and secure or verify the square access record before the day. Carry both records if both were issued, allow for separate security and follow the south-to-north flow from the square toward Duanmen and the Meridian Gate. Do not use the square booking as evidence of Palace admission.",
+          body: "Carry the valid same-day Palace Museum reservation for the square check; if a separate square record was also issued, carry both. Allow for security and follow the south-to-north flow from the square toward Duanmen and the Meridian Gate. Do not use a square reservation as evidence of Palace admission.",
         },
       ],
     },
@@ -343,7 +343,7 @@ export default {
       id: "faq-tiananmen",
       type: "callout",
       title: "Do I need a separate Tiananmen Square reservation?",
-      body: "Do not treat the two as one booking. The 2021 official trial rule allowed a valid same-day Palace Museum record to qualify for square entry, while current Palace instructions describe the route for travellers holding both records. If the square matters to the day, reserve it separately or obtain current official confirmation that the museum record qualifies. A square reservation never replaces the Palace Museum ticket.",
+      body: "Under the current published Tiananmen measures, no separate square reservation is needed when you hold a valid same-day Palace Museum reservation; show that record at the on-site check. Recheck official notices before major events or temporary controls. The reverse is not true: a square reservation never replaces the Palace Museum ticket.",
       tone: "neutral",
     },
     {
