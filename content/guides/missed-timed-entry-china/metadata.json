@@ -1,0 +1,81 @@
+{
+  "id": "missed-timed-entry-china",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "recovery-guide",
+  "topics": [
+    "timed-entry-recovery",
+    "museum-reservation-rules",
+    "no-show-strikes",
+    "travel-recovery"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/missed-timed-entry-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/missed-timed-entry-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-23",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/missed-timed-entry-china/",
+      "title": "Missed a Timed Entry in China: Legitimate Same-Day Recovery",
+      "headline": "Missed Your Timed Entry in China? What the Gate Rules Actually Say",
+      "description": "Two recovery paths for an expired slot, the nine-field rule card, three official venue patterns with no-show strike ladders - and why no national grace period exists.",
+      "heroAlt": "The Meridian Gate of the Forbidden City seen from below: red wall, gate arch and painted eaves under a clear sky.",
+      "navTitle": "Missed timed entry",
+      "featuredLinkLabel": "Recover a missed slot",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Museums",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/missed-timed-entry-china/",
+      "title": "错过中国景点预约时段：当天还能怎么合法补救？",
+      "headline": "错过预约时段：两条补救路径、九字段规则卡与三大场馆的真实规则",
+      "description": "提前知道会迟到与到门口才发现的两条路径；核对九个规则字段；理解故宫、国博、陕历博的时段规则与爽约阶梯——以及为什么全国没有统一宽限期。",
+      "heroAlt": "仰视故宫午门：红色宫墙、门洞与彩绘屋檐映衬晴空。",
+      "navTitle": "错过预约时段",
+      "featuredLinkLabel": "补救错过的时段",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "博物馆",
+        "故障恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/missed-timed-entry-china/",
+      "title": "중국 관광지 예약 시간을 놓쳤을 때: 당일 가능한 합법적 대처",
+      "headline": "예약 시간대를 놓쳤을 때: 게이트 규칙이 실제로 말하는 것",
+      "description": "만료된 슬롯의 두 복구 경로, 아홉 필드 확인 카드, 세 기관의 공식 패턴과 노쇼 적립식 — 그리고 전국 단일 유예시간이 없는 이유.",
+      "heroAlt": "아래에서 올려다본 자금성 오문(午門): 붉은 성벽과 문통, 채색 처마가 맑은 하늘 아래 있습니다.",
+      "navTitle": "예약 시간 놓침",
+      "featuredLinkLabel": "놓친 시간대 복구하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "박물관",
+        "문제 해결"
+      ]
+    }
+  }
+}

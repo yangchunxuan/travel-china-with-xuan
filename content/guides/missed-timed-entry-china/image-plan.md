@@ -1,0 +1,23 @@
+# Image plan — missed-timed-entry-china
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/missed-timed-entry-china/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: the Meridian Gate (午门) of the Forbidden City — the single entrance where timed-slot tickets live or die; photographed from below with no people, keeping the tone documentary and neutral.
+- Provenance:
+  - Author: Bjoertvedt
+  - Source page: Wikimedia Commons file page for "Forbidden City IMG 4296 Meridian Gate.jpg"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/9/99/Forbidden_City_IMG_4296_Meridian_Gate.jpg
+  - License: CC BY-SA 4.0
+  - Subject/place: Meridian Gate, Forbidden City, Beijing
+  - Date taken (per Commons metadata): 2017-07-10
+  - Download date: 2026-08-23 (UTC+8), via upload.wikimedia.org, HTTP 200, 2,349,731 bytes
+- Processing record:
+  - Crop: full width 4032 px, vertical band top=220, height=2520 px (4032×2520) — keeps plaque, eaves, wall and gate arch
+  - Resize to 1600 × 1000, WebP quality 82 → 174,788 bytes
+  - Original SHA-256 (as downloaded): b2f10f19f79e7001330669713c4c71704e2019741dfe2ac47d68ad97fcfffab0
+  - Output SHA-256: d92d643ab6be157bb5625c7f402cf690632eef23d084bff0d0f324a03ad9e500
+- Privacy check: zero people in frame; no tickets, QR codes or personal data.
+- Documentary boundary: an architectural photograph; body text never claims it depicts a queue, gate system screen or incident.
+- Cropping checks: desktop center crop keeps plaque + arch; 390px mobile crop retains the gate arch band; no critical element at edges.
+- Attribution duty: CC BY-SA 4.0 requires attribution and share-alike carry-over; recorded here for central review before publication.
