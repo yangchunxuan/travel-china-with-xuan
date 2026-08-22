@@ -28,8 +28,6 @@ export type HomepageGuideRailItem<Category extends string = string> =
 export interface HomepageGuideRailControlLabels {
   allCategories: string;
   categoryFilter: string;
-  previous: string;
-  next: string;
 }
 
 export interface HomepageGuideRailProps<Category extends string = string> {
@@ -46,17 +44,11 @@ export interface HomepageGuideRailProps<Category extends string = string> {
   onItemClick?: (item: HomepageGuideRailItem<Category>) => void;
 }
 
-type ArrowDisabledState = {
-  previous: boolean;
-  next: boolean;
-};
-
 /**
  * A native horizontal list for localized tours and editorial guides.
  *
  * Scrolling, snapping and links keep their browser behavior. The component
- * adds category filters and optional arrow controls without autoplay, clones
- * or analytics dependencies.
+ * adds category filters without autoplay, clones or analytics dependencies.
  */
 export function HomepageGuideRail<Category extends string = string>({
   id,
@@ -79,10 +71,6 @@ export function HomepageGuideRail<Category extends string = string>({
   const catalogRequestStartedRef = useRef(false);
   const [catalogItems, setCatalogItems] = useState(items);
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
-  const [arrowDisabled, setArrowDisabled] = useState<ArrowDisabledState>({
-    previous: true,
-    next: true,
-  });
 
   const itemCategories = new Set(catalogItems.map((item) => item.category));
   const visibleCategories = (
@@ -156,7 +144,7 @@ export function HomepageGuideRail<Category extends string = string>({
     catalogRequestStartedRef.current = false;
   }, [items]);
 
-  const updateArrowDisabled = useCallback(() => {
+  const updateCatalogProgress = useCallback(() => {
     const list = listRef.current;
 
     if (!list) return;
@@ -166,18 +154,6 @@ export function HomepageGuideRail<Category extends string = string>({
       maximumScroll,
       Math.max(0, list.scrollLeft),
     );
-    const nextState = {
-      previous: currentScroll <= 2,
-      next: maximumScroll - currentScroll <= 2,
-    };
-
-    setArrowDisabled((currentState) =>
-      currentState.previous === nextState.previous &&
-      currentState.next === nextState.next
-        ? currentState
-        : nextState,
-    );
-
     if (maximumScroll - currentScroll <= list.clientWidth * 1.25) {
       void ensureCompleteCatalog();
     }
@@ -195,8 +171,8 @@ export function HomepageGuideRail<Category extends string = string>({
     if (!list) return;
 
     list.scrollLeft = 0;
-    updateArrowDisabled();
-  }, [resolvedCategory, updateArrowDisabled]);
+    updateCatalogProgress();
+  }, [resolvedCategory, updateCatalogProgress]);
 
   useEffect(() => {
     const list = listRef.current;
@@ -204,52 +180,41 @@ export function HomepageGuideRail<Category extends string = string>({
     if (!list) return;
 
     let animationFrame: number | null = null;
-    const queueArrowUpdate = () => {
+    const queueCatalogProgressUpdate = () => {
       if (animationFrame !== null) return;
 
       animationFrame = window.requestAnimationFrame(() => {
         animationFrame = null;
-        updateArrowDisabled();
+        updateCatalogProgress();
       });
     };
 
-    queueArrowUpdate();
-    list.addEventListener("scroll", queueArrowUpdate, { passive: true });
-    window.addEventListener("resize", queueArrowUpdate);
+    queueCatalogProgressUpdate();
+    list.addEventListener("scroll", queueCatalogProgressUpdate, {
+      passive: true,
+    });
+    window.addEventListener("resize", queueCatalogProgressUpdate);
 
     const resizeObserver =
       "ResizeObserver" in window
-        ? new ResizeObserver(queueArrowUpdate)
+        ? new ResizeObserver(queueCatalogProgressUpdate)
         : null;
     resizeObserver?.observe(list);
 
     return () => {
-      list.removeEventListener("scroll", queueArrowUpdate);
-      window.removeEventListener("resize", queueArrowUpdate);
+      list.removeEventListener("scroll", queueCatalogProgressUpdate);
+      window.removeEventListener("resize", queueCatalogProgressUpdate);
       resizeObserver?.disconnect();
 
       if (animationFrame !== null) {
         window.cancelAnimationFrame(animationFrame);
       }
     };
-  }, [updateArrowDisabled]);
+  }, [updateCatalogProgress]);
 
   useEffect(() => {
-    updateArrowDisabled();
-  }, [updateArrowDisabled, visibleItems.length]);
-
-  const scrollList = (direction: -1 | 1) => {
-    const list = listRef.current;
-
-    if (!list) return;
-
-    if (direction > 0) void ensureCompleteCatalog();
-
-    list.scrollBy({
-      left: direction * list.clientWidth,
-      top: 0,
-    });
-  };
+    updateCatalogProgress();
+  }, [updateCatalogProgress, visibleItems.length]);
 
   return (
     <section
@@ -304,33 +269,13 @@ export function HomepageGuideRail<Category extends string = string>({
               </div>
             ) : null}
 
-            <div className={styles.arrows}>
+            <div className={styles.actions}>
               {viewAllHref && viewAllLabel ? (
                 <a className={styles.viewAll} href={viewAllHref}>
                   {viewAllLabel}
                   <span aria-hidden="true">→</span>
                 </a>
               ) : null}
-              <button
-                aria-controls={listId}
-                aria-label={controlLabels.previous}
-                className={styles.arrowButton}
-                disabled={arrowDisabled.previous}
-                onClick={() => scrollList(-1)}
-                type="button"
-              >
-                <span aria-hidden="true">←</span>
-              </button>
-              <button
-                aria-controls={listId}
-                aria-label={controlLabels.next}
-                className={styles.arrowButton}
-                disabled={arrowDisabled.next}
-                onClick={() => scrollList(1)}
-                type="button"
-              >
-                <span aria-hidden="true">→</span>
-              </button>
             </div>
           </div>
         </header>

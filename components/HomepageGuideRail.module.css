@@ -77,7 +77,7 @@
 }
 
 .categories,
-.arrows {
+.actions {
   align-items: center;
   display: flex;
 }
@@ -88,7 +88,7 @@
   justify-content: flex-start;
 }
 
-.arrows {
+.actions {
   flex: none;
   gap: 0.5rem;
 }
@@ -111,8 +111,7 @@
   text-decoration: underline;
 }
 
-.categoryButton,
-.arrowButton {
+.categoryButton {
   align-items: center;
   border: 1px solid var(--rail-line);
   cursor: pointer;
@@ -144,22 +143,12 @@
   color: var(--rail-card);
 }
 
-.arrowButton {
-  background: var(--rail-card);
-  border-radius: 50%;
-  color: var(--rail-ink);
-  font-size: 1.15rem;
-  padding: 0;
-}
-
-.categoryButton:hover,
-.arrowButton:not(:disabled):hover {
+.categoryButton:hover {
   border-color: var(--rail-ink);
   transform: translateY(-1px);
 }
 
 .categoryButton:focus-visible,
-.arrowButton:focus-visible,
 .viewAll:focus-visible,
 .card:focus-visible {
   outline: 3px solid var(--rail-focus);
@@ -168,11 +157,6 @@
 
 .card:focus-visible {
   outline-offset: -4px;
-}
-
-.arrowButton:disabled {
-  cursor: not-allowed;
-  opacity: 0.42;
 }
 
 .list {
@@ -337,7 +321,7 @@
     flex-direction: column;
   }
 
-  .arrows {
+  .actions {
     align-self: flex-end;
   }
 }
@@ -348,7 +332,6 @@
   }
 
   .categoryButton,
-  .arrowButton,
   .card,
   .image,
   .cardLinkLabel > span:last-child {
@@ -358,7 +341,6 @@
 
 @media (prefers-contrast: more) {
   .categoryButton,
-  .arrowButton,
   .card {
     border-width: 2px;
   }

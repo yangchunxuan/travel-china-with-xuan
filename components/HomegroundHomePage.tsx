@@ -506,9 +506,9 @@ export function HomegroundHomePage({
             <div className={styles.heroCopy}>
               <RotatingHeroTitle
                 id="home-hero-title"
-                pauseLabel={copy.hero.pauseAnimationLabel}
+                pauseLabel={copy.hero.pauseMotion}
                 phrases={copy.hero.rotatingPhrases}
-                playLabel={copy.hero.playAnimationLabel}
+                playLabel={copy.hero.resumeMotion}
                 question={copy.hero.title}
               />
               {plannerStatus !== "result" && (
@@ -580,8 +580,6 @@ export function HomegroundHomePage({
           controlLabels={{
             allCategories: copy.guides.categoryLabels.all,
             categoryFilter: copy.guides.railLabel,
-            previous: copy.guides.previousLabel,
-            next: copy.guides.nextLabel,
           }}
           eyebrow={copy.guides.eyebrow}
           id="homepage-guide-rail"

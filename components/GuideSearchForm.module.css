@@ -31,6 +31,8 @@
 
 .control > svg {
   color: var(--guides-rust, var(--hg-color-rust));
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .control input {
@@ -40,12 +42,55 @@
   color: var(--guides-ink, var(--hg-color-ink));
   font: inherit;
   font-size: 1rem;
+  grid-column: 2;
+  grid-row: 1;
   height: 100%;
   min-height: 3.9rem;
   min-width: 0;
   outline: 0;
   padding: 0.75rem 1rem;
   width: 100%;
+  z-index: 1;
+}
+
+.rotatingPlaceholder {
+  align-items: center;
+  color: var(--guides-muted, var(--hg-color-muted));
+  display: flex;
+  font-size: 1rem;
+  grid-column: 2;
+  grid-row: 1;
+  line-height: 1.35;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0.75rem 1rem;
+  pointer-events: none;
+  transform: translateY(0);
+  transition:
+    opacity 100ms ease,
+    transform 100ms ease;
+}
+
+.rotatingPlaceholder[data-phase="clearing"] {
+  opacity: 0;
+  transform: translateY(-0.12rem);
+}
+
+.placeholderText {
+  flex: none;
+  white-space: nowrap;
+}
+
+.typewriterCursor {
+  animation: typewriter-cursor 700ms steps(1, end) infinite;
+  background: currentColor;
+  block-size: 1.05em;
+  flex: none;
+  inline-size: 1px;
+  margin-inline-start: 0.13rem;
+  opacity: 0.72;
 }
 
 .control input::placeholder {
@@ -70,10 +115,24 @@
   font-size: 0.84rem;
   font-weight: 780;
   gap: 0.9rem;
+  grid-column: 3;
+  grid-row: 1;
   justify-content: center;
   min-height: 3.9rem;
   min-width: 9.2rem;
   padding: 0.75rem 1rem;
+}
+
+@keyframes typewriter-cursor {
+  0%,
+  52% {
+    opacity: 0.72;
+  }
+
+  53%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .control button:hover,
@@ -266,6 +325,7 @@
 
   .control button {
     grid-column: 1 / -1;
+    grid-row: 2;
     margin-inline-start: -0.85rem;
     min-width: 0;
     width: calc(100% + 0.85rem);
@@ -279,9 +339,20 @@
 @media (prefers-reduced-motion: reduce) {
   .control,
   .control button,
+  .rotatingPlaceholder,
   .suggestions li > a,
   .examples a {
     transition: none;
+  }
+
+  .rotatingPlaceholder {
+    opacity: 1;
+    transform: none;
+  }
+
+  .typewriterCursor {
+    animation: none;
+    display: none;
   }
 }
 

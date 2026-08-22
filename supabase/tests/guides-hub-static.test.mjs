@@ -73,6 +73,8 @@ test("homepage guide rail exposes the tour and complete localized guide catalog"
   assert.match(rail, /data-category=\{item\.category\}/);
   assert.match(rail, /data-kind=\{item\.kind\}/);
   assert.match(railCss, /scroll-snap-type:\s*x mandatory/);
+  assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
+  assert.match(rail, /className=\{styles\.actions\}/);
   assert.match(railCss, /flex-basis:\s*calc\(\(100% - var\(--rail-gap\)\) \/ 2\)/);
   assert.match(railCss, /\) \/ 4\s*\);/);
   assert.match(railCss, /@media \(prefers-reduced-motion: reduce\)/);

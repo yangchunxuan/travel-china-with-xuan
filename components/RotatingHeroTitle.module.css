@@ -5,8 +5,20 @@
   position: relative;
 }
 
-.hasControl {
-  padding-inline-end: 3.35rem;
+.motionControl {
+  background: transparent;
+  border: 0;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  inset: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.motionControl:focus-visible {
+  outline: 2px solid var(--hg-color-rust);
+  outline-offset: 0.3rem;
 }
 
 .screenReaderOnly {
@@ -89,59 +101,9 @@
   animation-play-state: paused;
 }
 
-.toggle {
-  align-items: center;
-  appearance: none;
-  background: var(--hg-color-card, #ffffff);
-  block-size: 44px;
-  border: 1px solid currentColor;
-  border-color: color-mix(in srgb, currentColor 58%, transparent);
-  border-radius: 999px;
-  color: inherit;
-  cursor: pointer;
-  display: inline-flex;
-  inline-size: 44px;
-  inset-block-start: 0.1em;
-  inset-inline-end: 0;
-  justify-content: center;
-  padding: 0;
-  position: absolute;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    transform 160ms ease;
-  z-index: 2;
-}
-
-.toggle svg {
-  block-size: 1rem;
-  fill: currentColor;
-  inline-size: 1rem;
-}
-
-.toggle:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 3px;
-}
-
-@media (hover: hover) {
-  .toggle:hover {
-    background: var(--hg-color-surface, #f2f0e9);
-    border-color: currentColor;
-    transform: translateY(-1px);
-  }
-}
-
 @media (max-width: 680px) {
-  .hasControl {
+  .root {
     inline-size: 100%;
-    padding-inline-end: 0;
-  }
-
-  .hasControl .question {
-    box-sizing: border-box;
-    inline-size: 100%;
-    padding-inline-end: 3.35rem;
   }
 
   .phraseStage {
@@ -153,27 +115,7 @@
   }
 }
 
-@media (prefers-contrast: more) {
-  .toggle {
-    border-color: currentColor;
-    border-width: 2px;
-  }
-}
-
-@media (forced-colors: active) {
-  .toggle {
-    background: ButtonFace;
-    border-color: ButtonText;
-    color: ButtonText;
-    forced-color-adjust: auto;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hasControl {
-    padding-inline-end: 0;
-  }
-
   .phraseLayer .letter {
     animation: none;
     filter: none;
@@ -181,10 +123,6 @@
     transform: none;
   }
 
-  .toggle {
-    display: none;
-    transition: none;
-  }
 }
 
 @keyframes letterEnter {

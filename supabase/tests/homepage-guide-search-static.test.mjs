@@ -39,7 +39,9 @@ test("homepage guide search is followed by the localized guide rail", async () =
     "the homepage search anchor must clear the sticky header",
   );
   assert.match(finder, /<h2 id="homepage-guide-search-title">/);
-  assert.match(finder, /aria-hidden="true"/);
+  assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
+  assert.match(finder, /showExamples=\{false\}/);
+  assert.doesNotMatch(finder, /styles\.demo|demoResults|demoQuestion/);
   assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<a/);
 });
 
@@ -87,25 +89,37 @@ test("homepage search remains keyboard- and error-accessible", async () => {
   assert.match(copy, /retrySuggestions:/);
 });
 
-test("homepage search preview is finite, pausable and based on real guides", async () => {
-  const [finder, editorial, finderStyles] = await Promise.all([
+test("homepage search placeholder demo types continuously, pauses for input and uses real questions", async () => {
+  const [finder, form, editorial, formStyles] = await Promise.all([
     source("components/HomepageGuideSearch.tsx"),
+    source("components/GuideSearchForm.tsx"),
     source("lib/homepageEditorial.ts"),
-    source("components/HomepageGuideSearch.module.css"),
+    source("components/GuideSearchForm.module.css"),
   ]);
 
-  assert.match(finder, /activeDemoIndex >= demos\.length - 1/);
-  assert.match(finder, /prefers-reduced-motion: reduce/);
-  assert.match(finder, /new IntersectionObserver/);
-  assert.match(finder, /onFocusCapture=\{\(\) => setEngaged\(true\)\}/);
-  assert.match(finder, /aria-hidden="true"/);
+  assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
+  assert.match(form, /TYPEWRITER_TARGET_MS = 620/);
+  assert.match(form, /TYPEWRITER_HOLD_MS = 610/);
+  assert.match(form, /MAX_ROTATING_PLACEHOLDERS = 3/);
+  assert.match(form, /type PlaceholderPhase = "typing" \| "holding" \| "clearing"/);
+  assert.match(form, /\(current \+ 1\) % placeholderPhrases\.length/);
+  assert.match(form, /slice\(0, placeholderCharacterCount\)/);
+  assert.match(form, /prefers-reduced-motion: reduce/);
+  assert.match(form, /new IntersectionObserver/);
+  assert.match(form, /Boolean\(currentPlaceholder\) && !focusedWithin/);
+  assert.match(
+    form,
+    /<span\s+aria-hidden="true"\s+className=\{styles\.rotatingPlaceholder\}/,
+  );
   assert.match(editorial, /getGuideSearchDocuments\(locale\)/);
   assert.match(editorial, /getGuideSearchCopy\(locale\)\.examples/);
   assert.match(editorial, /searchGuideDocuments\(documents, query, locale\)/);
   assert.match(editorial, /\.slice\(0, 1\)/);
   assert.match(editorial, /title: document\.h1/);
   assert.doesNotMatch(editorial, /searchDemoGuideIds/);
-  assert.match(finderStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(formStyles, /@keyframes typewriter-cursor/);
+  assert.match(formStyles, /\.rotatingPlaceholder\[data-phase="clearing"\]/);
+  assert.match(formStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.doesNotMatch(finder, /typewriter|setInterval|aria-live/);
 });
 
@@ -119,12 +133,31 @@ test("guide rail preserves position while lazy-loading and loads near the native
   assert.match(rail, /void ensureCompleteCatalog\(\)/);
   assert.match(
     rail,
-    /useEffect\(\(\) => \{\s*const list = listRef\.current;\s*if \(!list\) return;\s*list\.scrollLeft = 0;\s*updateArrowDisabled\(\);\s*\}, \[resolvedCategory, updateArrowDisabled\]\)/,
+    /useEffect\(\(\) => \{\s*const list = listRef\.current;\s*if \(!list\) return;\s*list\.scrollLeft = 0;\s*updateCatalogProgress\(\);\s*\}, \[resolvedCategory, updateCatalogProgress\]\)/,
   );
-  assert.doesNotMatch(
-    rail,
-    /\[resolvedCategory, updateArrowDisabled, visibleItems\.length\]/,
-  );
+  assert.match(rail, /addEventListener\("scroll", queueCatalogProgressUpdate/);
+  assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
+});
+
+test("hero title cycles the full phrase set faster without restoring the visible play button", async () => {
+  const [homepage, title, titleStyles] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("components/RotatingHeroTitle.tsx"),
+    source("components/RotatingHeroTitle.module.css"),
+  ]);
+
+  assert.match(title, /AUTO_STEP_MS = 2100/);
+  assert.match(title, /className=\{styles\.motionControl\}/);
+  assert.match(title, /aria-pressed=\{manualPaused\}/);
+  assert.doesNotMatch(title, /function PlayIcon|function PauseIcon/);
+  assert.match(title, /\(index \+ 1\) % availablePhrases\.length/);
+  assert.match(title, /availablePhrases\.map\(\(phrase, index\) =>/);
+  assert.match(title, /onMouseEnter=\{\(\) => setPointerPaused\(true\)\}/);
+  assert.match(title, /onMouseLeave=\{\(\) => setPointerPaused\(false\)\}/);
+  assert.doesNotMatch(title, /PlayIcon|PauseIcon|handleToggle/);
+  assert.doesNotMatch(titleStyles, /\.toggle|\.hasControl/);
+  assert.match(homepage, /pauseLabel=\{copy\.hero\.pauseMotion\}/);
+  assert.match(homepage, /playLabel=\{copy\.hero\.resumeMotion\}/);
 });
 
 test("customer-facing search copy avoids internal implementation language", async () => {

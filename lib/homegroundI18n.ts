@@ -56,8 +56,8 @@ export interface HomegroundCopy {
     title: string;
     titleLines?: readonly string[];
     rotatingPhrases: readonly string[];
-    pauseAnimationLabel: string;
-    playAnimationLabel: string;
+    pauseMotion: string;
+    resumeMotion: string;
     intro: string;
     trustLabel: string;
     trust: readonly string[];
@@ -91,8 +91,6 @@ export interface HomegroundCopy {
     viewAllLabel: string;
     updatedLabel: string;
     railLabel: string;
-    previousLabel: string;
-    nextLabel: string;
     typeLabels: {
       tour: string;
       route: string;
@@ -372,8 +370,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "Without the rush.",
         "With everything connected.",
       ],
-      pauseAnimationLabel: "Pause changing travel ideas",
-      playAnimationLabel: "Play changing travel ideas",
+      pauseMotion: "Pause changing headline",
+      resumeMotion: "Continue changing headline",
       intro:
         "Contact us directly on WhatsApp or Messenger, or send us an email. A travel planner will reply personally.",
       trustLabel: "What happens next",
@@ -452,8 +450,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       viewAllLabel: "View all guides",
       updatedLabel: "Updated",
       railLabel: "Browse Homeground tours and travel guides",
-      previousLabel: "Show previous guides",
-      nextLabel: "Show more guides",
       typeLabels: {
         tour: "Private tour",
         route: "Itinerary",
@@ -924,8 +920,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "不被行程追着走。",
         "一路都有人帮你接好。",
       ],
-      pauseAnimationLabel: "暂停文字变化",
-      playAnimationLabel: "播放文字变化",
+      pauseMotion: "暂停标题切换",
+      resumeMotion: "继续标题切换",
       intro:
         "可通过 WhatsApp、Messenger 直接联系我们，也可以发送邮件，旅行规划师会亲自回复。",
       trustLabel: "接下来会发生什么",
@@ -996,8 +992,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       viewAllLabel: "查看全部指南",
       updatedLabel: "更新于",
       railLabel: "浏览 Homeground 私家产品与旅行指南",
-      previousLabel: "查看前面的指南",
-      nextLabel: "查看更多指南",
       typeLabels: {
         tour: "私家旅行",
         route: "行程参考",
@@ -1433,8 +1427,8 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "일정에 쫓기지 않게.",
         "현지에서도 막힘없이.",
       ],
-      pauseAnimationLabel: "문구 전환 멈추기",
-      playAnimationLabel: "문구 전환 재생하기",
+      pauseMotion: "제목 전환 일시 정지",
+      resumeMotion: "제목 전환 계속",
       intro:
         "WhatsApp이나 Messenger로 바로 문의하거나 이메일을 보내 주세요. 전담 여행 플래너가 직접 답변합니다.",
       trustLabel: "다음 단계",
@@ -1508,8 +1502,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       viewAllLabel: "전체 가이드 보기",
       updatedLabel: "최근 업데이트",
       railLabel: "Homeground 프라이빗 여행과 중국 여행 가이드 둘러보기",
-      previousLabel: "이전 가이드 보기",
-      nextLabel: "다음 가이드 보기",
       typeLabels: {
         tour: "프라이빗 여행",
         route: "추천 일정",

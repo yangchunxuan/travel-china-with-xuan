@@ -9,10 +9,10 @@ import {
 } from "react";
 import styles from "./RotatingHeroTitle.module.css";
 
-const DEFAULT_INTERVAL_MS = 4000;
+const AUTO_STEP_MS = 2100;
 const ENTER_PHASE_MS = 760;
 const EXIT_PHASE_MS = 560;
-const MIN_HOLD_MS = 480;
+const HOLD_PHASE_MS = AUTO_STEP_MS - ENTER_PHASE_MS - EXIT_PHASE_MS;
 
 type AnimationPhase = "entering" | "holding" | "exiting";
 
@@ -24,7 +24,6 @@ type LetterStyle = CSSProperties & {
 export type RotatingHeroTitleProps = {
   className?: string;
   id?: string;
-  intervalMs?: number;
   pauseLabel?: string;
   paused?: boolean;
   phrases: readonly string[];
@@ -124,38 +123,13 @@ function AnimatedPhrase({ phrase }: { phrase: string }) {
   });
 }
 
-function PlayIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      focusable="false"
-      viewBox="0 0 24 24"
-    >
-      <path d="M8.25 5.65 18 12l-9.75 6.35V5.65Z" />
-    </svg>
-  );
-}
-
-function PauseIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      focusable="false"
-      viewBox="0 0 24 24"
-    >
-      <path d="M7 5.5h3.25v13H7zM13.75 5.5H17v13h-3.25z" />
-    </svg>
-  );
-}
-
 export function RotatingHeroTitle({
   className,
   id,
-  intervalMs = DEFAULT_INTERVAL_MS,
-  pauseLabel = "Pause title rotation",
+  pauseLabel = "Pause changing headline",
   paused = false,
   phrases,
-  playLabel = "Play title rotation",
+  playLabel = "Continue changing headline",
   question,
 }: RotatingHeroTitleProps) {
   const phraseSignature = JSON.stringify(phrases);
@@ -163,29 +137,20 @@ export function RotatingHeroTitle({
     () => phrases.map((phrase) => phrase.trim()).filter(Boolean),
     [phrases],
   );
-  const normalizedInterval = Number.isFinite(intervalMs)
-    ? Math.max(
-        intervalMs,
-        ENTER_PHASE_MS + EXIT_PHASE_MS + MIN_HOLD_MS,
-      )
-    : DEFAULT_INTERVAL_MS;
-  const holdDuration = normalizedInterval - ENTER_PHASE_MS - EXIT_PHASE_MS;
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [phase, setPhase] = useState<AnimationPhase>(() =>
     paused || availablePhrases.length <= 1 ? "holding" : "entering",
   );
-  const [userPaused, setUserPaused] = useState(false);
-  const [finished, setFinished] = useState(
-    availablePhrases.length <= 1,
-  );
   const [documentVisible, setDocumentVisible] = useState(true);
+  const [manualPaused, setManualPaused] = useState(false);
+  const [pointerPaused, setPointerPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [cycleVersion, setCycleVersion] = useState(0);
   const previousPhraseSignature = useRef(phraseSignature);
   const previousReducedMotion = useRef(false);
 
-  const lastPhraseIndex = Math.max(availablePhrases.length - 1, 0);
-  const currentPhraseIndex = Math.min(phraseIndex, lastPhraseIndex);
+  const currentPhraseIndex =
+    availablePhrases.length > 0 ? phraseIndex % availablePhrases.length : 0;
   const currentPhrase = availablePhrases[currentPhraseIndex] ?? "";
   const firstPhrase = availablePhrases[0] ?? "";
   const accessibleTitle = [question.trim(), firstPhrase]
@@ -193,8 +158,11 @@ export function RotatingHeroTitle({
     .join(" ");
   const canRotate = availablePhrases.length > 1;
   const effectivePaused =
-    paused || userPaused || !documentVisible || prefersReducedMotion;
-  const buttonShowsPlay = userPaused || finished;
+    paused ||
+    manualPaused ||
+    pointerPaused ||
+    !documentVisible ||
+    prefersReducedMotion;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(
@@ -226,7 +194,6 @@ export function RotatingHeroTitle({
       prefersReducedMotion || availablePhrases.length <= 1;
     setPhraseIndex(0);
     setPhase(shouldRemainStatic ? "holding" : "entering");
-    setFinished(shouldRemainStatic);
     setCycleVersion((version) => version + 1);
   }, [availablePhrases.length, phraseSignature, prefersReducedMotion]);
 
@@ -234,35 +201,30 @@ export function RotatingHeroTitle({
     if (prefersReducedMotion) {
       setPhraseIndex(0);
       setPhase("holding");
-      setFinished(true);
     } else if (previousReducedMotion.current && canRotate) {
       setPhraseIndex(0);
       setPhase("entering");
-      setFinished(false);
       setCycleVersion((version) => version + 1);
     }
     previousReducedMotion.current = prefersReducedMotion;
   }, [canRotate, prefersReducedMotion]);
 
   useEffect(() => {
-    if (!canRotate || effectivePaused || finished) return;
+    if (!canRotate || effectivePaused) return;
 
     const delay =
       phase === "entering"
         ? ENTER_PHASE_MS
         : phase === "exiting"
           ? EXIT_PHASE_MS
-          : holdDuration;
+          : HOLD_PHASE_MS;
     const timeout = window.setTimeout(() => {
       if (phase === "entering") {
         setPhase("holding");
-        if (currentPhraseIndex === lastPhraseIndex) {
-          setFinished(true);
-        }
       } else if (phase === "holding") {
         setPhase("exiting");
       } else {
-        setPhraseIndex((index) => Math.min(index + 1, lastPhraseIndex));
+        setPhraseIndex((index) => (index + 1) % availablePhrases.length);
         setPhase("entering");
       }
     }, delay);
@@ -270,34 +232,18 @@ export function RotatingHeroTitle({
     return () => window.clearTimeout(timeout);
   }, [
     canRotate,
-    currentPhraseIndex,
+    availablePhrases.length,
     effectivePaused,
-    finished,
-    holdDuration,
-    lastPhraseIndex,
     phase,
   ]);
 
-  const handleToggle = () => {
-    if (prefersReducedMotion || !canRotate) return;
-
-    if (finished) {
-      setPhraseIndex(0);
-      setPhase("entering");
-      setFinished(false);
-      setUserPaused(false);
-      setCycleVersion((version) => version + 1);
-      return;
-    }
-
-    setUserPaused((isPaused) => !isPaused);
-  };
-
   return (
     <div
-      className={`${styles.root} ${canRotate ? styles.hasControl : ""}`}
-      data-paused={effectivePaused || finished ? "true" : "false"}
-      data-rotation-state={finished ? "finished" : phase}
+      className={styles.root}
+      data-paused={effectivePaused ? "true" : "false"}
+      data-rotation-state={phase}
+      onMouseEnter={() => setPointerPaused(true)}
+      onMouseLeave={() => setPointerPaused(false)}
     >
       <h1 className={className} id={id}>
         <span className={styles.screenReaderOnly}>{accessibleTitle}</span>
@@ -326,16 +272,14 @@ export function RotatingHeroTitle({
           ) : null}
         </span>
       </h1>
-
-      {canRotate ? (
+      {canRotate && !prefersReducedMotion ? (
         <button
-          aria-label={buttonShowsPlay ? playLabel : pauseLabel}
-          className={styles.toggle}
-          onClick={handleToggle}
+          aria-label={manualPaused ? playLabel : pauseLabel}
+          aria-pressed={manualPaused}
+          className={styles.motionControl}
           type="button"
-        >
-          {buttonShowsPlay ? <PlayIcon /> : <PauseIcon />}
-        </button>
+          onClick={() => setManualPaused((current) => !current)}
+        />
       ) : null}
     </div>
   );
