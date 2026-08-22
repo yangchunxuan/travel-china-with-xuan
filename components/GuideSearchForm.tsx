@@ -149,6 +149,12 @@ export function GuideSearchForm({
     }
   }, [documents.length, documentsUrl, locale]);
 
+  const retryRemoteDocuments = () => {
+    inputRef.current?.focus();
+    indexRequestStartedRef.current = false;
+    void ensureRemoteDocuments();
+  };
+
   const handleFocusCapture = () => {
     setFocusedWithin(true);
     setSuggestionsDismissed(false);
@@ -323,17 +329,24 @@ export function GuideSearchForm({
         ) : null}
 
         {showSuggestionNotice ? (
-          <p
+          <div
             className={styles.suggestionNotice}
             id={suggestionsId}
             role="status"
           >
-            {indexState === "loading"
-              ? copy.loadingSuggestions
-              : indexState === "failed"
-                ? copy.suggestionsUnavailable
-                : copy.noSuggestions}
-          </p>
+            <span>
+              {indexState === "loading"
+                ? copy.loadingSuggestions
+                : indexState === "failed"
+                  ? copy.suggestionsUnavailable
+                  : copy.noSuggestions}
+            </span>
+            {indexState === "failed" ? (
+              <button type="button" onClick={retryRemoteDocuments}>
+                {copy.retrySuggestions}
+              </button>
+            ) : null}
+          </div>
         ) : null}
       </div>
 

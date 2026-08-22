@@ -40,7 +40,7 @@
   text-transform: uppercase;
 }
 
-.introduction h3 {
+.introduction h2 {
   color: var(--hg-color-ink);
   font-family: var(--hg-editorial);
   font-size: clamp(1.85rem, 3vw, 2.65rem);
@@ -64,7 +64,115 @@
   align-self: center;
 }
 
-:global([data-homeground-locale="zh"]) .introduction h3 {
+.demo {
+  border-block-start: 1px solid #d4cfc4;
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1.3fr);
+  min-inline-size: 0;
+  padding-block-start: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.demoQuestion {
+  align-content: center;
+  display: grid;
+  gap: 0.45rem;
+  min-inline-size: 0;
+  animation: demo-question-enter 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.demoQuestion span {
+  color: var(--hg-color-rust);
+  font-size: 0.67rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.demoQuestion strong {
+  color: var(--hg-color-ink);
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 450;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.demoResults {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  list-style: none;
+  margin: 0;
+  min-inline-size: 0;
+  padding: 0;
+}
+
+.demoResults li {
+  --demo-index: 0;
+  align-content: start;
+  animation: demo-result-enter 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--demo-index) * 75ms);
+  background: #fff;
+  border: 1px solid #d4cfc4;
+  display: grid;
+  gap: 0.45rem;
+  min-block-size: 7.6rem;
+  min-inline-size: 0;
+  padding: 0.85rem;
+}
+
+.demoResults li > span {
+  color: var(--hg-color-rust);
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+}
+
+.demoResults strong {
+  color: var(--hg-color-ink);
+  font-size: 0.78rem;
+  font-weight: 720;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.demoResults small {
+  align-self: end;
+  color: var(--hg-color-muted);
+  font-size: 0.66rem;
+  line-height: 1.4;
+}
+
+@keyframes demo-question-enter {
+  from {
+    filter: blur(2px);
+    opacity: 0;
+    transform: translateY(0.45rem);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes demo-result-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.55rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:global([data-homeground-locale="zh"]) .introduction h2 {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.2;
@@ -72,7 +180,7 @@
   word-break: normal;
 }
 
-:global([data-homeground-locale="ko"]) .introduction h3 {
+:global([data-homeground-locale="ko"]) .introduction h2 {
   font-family: var(--hg-ui-display);
   font-weight: 600;
   letter-spacing: -0.018em;
@@ -87,6 +195,23 @@
   text-transform: none;
 }
 
+:global([data-homeground-locale="zh"]) .demoQuestion span,
+:global([data-homeground-locale="ko"]) .demoQuestion span {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+:global([data-homeground-locale="zh"]) .demoQuestion strong {
+  font-weight: 500;
+  word-break: normal;
+}
+
+:global([data-homeground-locale="ko"]) .demoQuestion strong {
+  font-family: var(--hg-ui-display);
+  font-weight: 600;
+  word-break: keep-all;
+}
+
 @media (max-width: 52rem) {
   .finder {
     gap: 1.6rem;
@@ -96,6 +221,20 @@
   .body {
     max-inline-size: 44rem;
   }
+
+  .demo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 40rem) {
+  .demoResults {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .demoResults li {
+    min-block-size: 0;
+  }
 }
 
 @media (max-width: 30rem) {
@@ -104,7 +243,7 @@
     padding: 1.1rem;
   }
 
-  .introduction h3 {
+  .introduction h2 {
     font-size: clamp(1.72rem, 9vw, 2.15rem);
   }
 }
@@ -112,5 +251,12 @@
 @media (prefers-contrast: more) {
   .finder {
     border-width: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demoQuestion,
+  .demoResults li {
+    animation: none;
   }
 }

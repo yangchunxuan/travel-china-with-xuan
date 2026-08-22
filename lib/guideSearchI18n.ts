@@ -11,8 +11,10 @@ export interface GuideSearchCopy {
   readonly action: string;
   readonly examplesLabel: string;
   readonly examples: readonly string[];
+  readonly demoEyebrow: string;
   readonly loadingSuggestions: string;
   readonly suggestionsUnavailable: string;
+  readonly retrySuggestions: string;
   readonly noSuggestions: string;
   readonly emptyQueryError: string;
   readonly suggestionsLabel: (count: number) => string;
@@ -58,9 +60,11 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
       "Beijing South Station to the airport",
       "China with older parents",
     ],
+    demoEyebrow: "Try a specific travel question",
     loadingSuggestions: "Finding the closest guides…",
     suggestionsUnavailable:
       "Suggestions are taking longer than expected. You can still search.",
+    retrySuggestions: "Try again",
     noSuggestions: "No close match yet. Search to see all results.",
     emptyQueryError: "Tell us what you would like to know.",
     suggestionsLabel: (count) =>
@@ -111,8 +115,10 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
       "北京南站去首都机场还是大兴机场",
       "带父母去中国怎么玩",
     ],
+    demoEyebrow: "先问一个具体的旅行问题",
     loadingSuggestions: "正在为你查找…",
     suggestionsUnavailable: "建议暂时没有加载出来，你仍然可以直接搜索。",
+    retrySuggestions: "重新加载",
     noSuggestions: "暂时没有相近建议，继续搜索查看结果。",
     emptyQueryError: "请输入你想了解的问题。",
     suggestionsLabel: (count) => `这 ${count} 篇指南可能对你有帮助`,
@@ -161,9 +167,11 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
       "베이징남역에서 서우두공항 또는 다싱공항까지",
       "부모님과 중국 여행 일정",
     ],
+    demoEyebrow: "구체적인 여행 질문부터 시작해 보세요",
     loadingSuggestions: "관련 가이드를 찾고 있습니다…",
     suggestionsUnavailable:
       "추천을 불러오는 데 시간이 걸리고 있습니다. 바로 검색할 수 있습니다.",
+    retrySuggestions: "다시 불러오기",
     noSuggestions:
       "관련 가이드를 아직 찾지 못했습니다. 검색어를 바꾸거나 그대로 검색해 보세요.",
     emptyQueryError: "궁금한 여행 정보를 입력해 주세요.",

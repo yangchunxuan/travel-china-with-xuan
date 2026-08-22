@@ -16,8 +16,11 @@ import {
 } from "../lib/homegroundI18n";
 import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { getHomeFeaturedGuides } from "../lib/guideRegistry";
-import { getZhangjiajiePrivateTourHomeCard } from "../lib/zhangjiajiePrivateTourHomeCard";
+import type {
+  HomepageGuideCategory,
+  HomepageGuideRailItem,
+  HomepageSearchDemo,
+} from "../lib/homepageEditorial";
 import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
 import {
   editorialOrganizationSchema,
@@ -52,6 +55,8 @@ import {
 } from "./RouteFinder";
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
+import { HomepageGuideRail } from "./HomepageGuideRail";
+import { RotatingHeroTitle } from "./RotatingHeroTitle";
 import styles from "./HomegroundHomePage.module.css";
 
 /**
@@ -71,21 +76,6 @@ const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 const planningIntentStorageKey = "homeground-planning-intent-v1";
 const planningStarterIntentStorageKey =
   "homeground-planning-starter-intent-v1";
-
-const guideDateLocales: Record<HomegroundLocale, string> = {
-  en: "en-GB",
-  zh: "zh-CN",
-  ko: "ko-KR",
-};
-
-function formatGuideDate(date: string, locale: HomegroundLocale) {
-  return new Intl.DateTimeFormat(guideDateLocales[locale], {
-    day: "numeric",
-    month: "short",
-    timeZone: "UTC",
-    year: "numeric",
-  }).format(new Date(`${date}T00:00:00Z`));
-}
 
 function resolveFinalCta(
   copy: HomegroundCopy,
@@ -145,11 +135,15 @@ function resolveFinalCta(
 }
 
 export function HomegroundHomePage({
+  guideRailItems,
   locale = "en",
   planningSection = "scope-v2",
+  searchDemos,
 }: {
+  guideRailItems: readonly HomepageGuideRailItem[];
   locale?: HomegroundLocale;
   planningSection?: PlanningSectionVariant;
+  searchDemos: readonly HomepageSearchDemo[];
 }) {
   const [plannerStatus, setPlannerStatus] = useState<PlannerStatus>("new");
   const [routeMatch, setRouteMatch] = useState<DestinationPlan | null>(
@@ -169,14 +163,22 @@ export function HomegroundHomePage({
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
-  const featuredTourCard = getZhangjiajiePrivateTourHomeCard(locale);
-  const featuredGuides = getHomeFeaturedGuides(locale).map((guide) =>
-    guide.id === "zhangjiajie-itinerary" && featuredTourCard
-      ? { ...guide, ...featuredTourCard }
-      : guide,
-  );
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
+  const guideRailCatalogPath =
+    locale === "en"
+      ? "/guides/homepage-guide-index.json"
+      : `/${locale}/guides/homepage-guide-index.json`;
+  const guideCategoryLabels: Record<HomepageGuideCategory, string> = {
+    tour: copy.guides.categoryLabels.tour,
+    explore: copy.guides.categoryLabels.explore,
+    stay: copy.guides.categoryLabels.stay,
+    transport: copy.guides.categoryLabels.transport,
+    plan: copy.guides.categoryLabels.plan,
+    culture: copy.guides.categoryLabels.culture,
+    essentials: copy.guides.categoryLabels.essentials,
+    "when-to-go": copy.guides.categoryLabels.whenToGo,
+  };
   const plannerTarget =
     plannerStatus === "result" && routeMatch
       ? "#planner-handoff"
@@ -502,15 +504,13 @@ export function HomegroundHomePage({
         >
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <h1 id="home-hero-title">
-                {copy.hero.titleLines
-                  ? copy.hero.titleLines.map((line) => (
-                      <span className={styles.heroTitleLine} key={line}>
-                        {line}
-                      </span>
-                    ))
-                  : copy.hero.title}
-              </h1>
+              <RotatingHeroTitle
+                id="home-hero-title"
+                pauseLabel={copy.hero.pauseAnimationLabel}
+                phrases={copy.hero.rotatingPhrases}
+                playLabel={copy.hero.playAnimationLabel}
+                question={copy.hero.title}
+              />
               {plannerStatus !== "result" && (
                 <p className={styles.heroLead}>{copy.hero.intro}</p>
               )}
@@ -568,72 +568,36 @@ export function HomegroundHomePage({
           </div>
         </section>
 
-        <section
-          className={styles.travelGuidesSection}
-          aria-labelledby="travel-guides-title"
-        >
+        <div className={styles.travelGuidesSection}>
           <div className={styles.travelGuides}>
-            <div className={styles.travelGuidesHeader}>
-              <div className={styles.travelGuidesIntro}>
-                <p className={styles.cardLabel}>{copy.guides.eyebrow}</p>
-                <h2 id="travel-guides-title">{copy.guides.title}</h2>
-              </div>
-              <a className={styles.travelGuidesIndexLink} href={guidesIndexPath}>
-                {copy.guides.viewAllLabel}
-                <ArrowRight aria-hidden="true" size={18} />
-              </a>
-            </div>
-            <HomepageGuideSearch locale={locale} />
-            <div className={styles.travelGuideGrid}>
-              {featuredGuides.map((guide, index) => {
-                const typeLabel =
-                  guide.type === "field-note"
-                    ? copy.guides.typeLabels.fieldNote
-                    : copy.guides.typeLabels[guide.type];
-
-                return (
-                  <a
-                    className={`${styles.travelGuideCard} ${
-                      index === 0
-                        ? styles.travelGuideLead
-                        : styles.travelGuideCompact
-                    }`}
-                    data-guide-id={guide.id}
-                    href={guide.canonicalPath}
-                    key={guide.id}
-                  >
-                    <span className={styles.travelGuideImage}>
-                      <img
-                        src={guide.cardImagePath}
-                        alt={guide.cardImageAlt}
-                        width={guide.cardImageWidth}
-                        height={guide.cardImageHeight}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </span>
-                    <span className={styles.travelGuideContent}>
-                      <span className={styles.travelGuideMeta}>
-                        <span>{typeLabel}</span>
-                        <time dateTime={guide.dateModified}>
-                          {copy.guides.updatedLabel}{" "}
-                          {formatGuideDate(guide.dateModified, locale)}
-                        </time>
-                      </span>
-                      <strong className={styles.travelGuideTitle}>
-                        {guide.headline}
-                      </strong>
-                      <span className={styles.travelGuideCta}>
-                        {guide.featuredLinkLabel}
-                        <ArrowRight aria-hidden="true" size={17} />
-                      </span>
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
+            <HomepageGuideSearch demos={searchDemos} locale={locale} />
           </div>
-        </section>
+        </div>
+
+        <HomepageGuideRail
+          catalogUrl={guideRailCatalogPath}
+          categoryLabels={guideCategoryLabels}
+          controlLabels={{
+            allCategories: copy.guides.categoryLabels.all,
+            categoryFilter: copy.guides.railLabel,
+            previous: copy.guides.previousLabel,
+            next: copy.guides.nextLabel,
+          }}
+          eyebrow={copy.guides.eyebrow}
+          id="homepage-guide-rail"
+          items={guideRailItems}
+          onItemClick={(item) => {
+            trackEvent("homepage_guide_card_clicked", {
+              content_category: item.category,
+              content_kind: item.kind,
+              guide_id: item.id,
+              page_language: locale,
+            });
+          }}
+          title={copy.guides.title}
+          viewAllHref={guidesIndexPath}
+          viewAllLabel={copy.guides.viewAllLabel}
+        />
 
         {planningSection === "scope-v2" ? (
           <PlanningScopeSection locale={locale} />

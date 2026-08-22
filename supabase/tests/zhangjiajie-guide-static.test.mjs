@@ -125,7 +125,8 @@ test("public guide remains available to search, citation and training crawlers",
     "app/(default)/guides/zhangjiajie-itinerary/page.tsx",
   );
   const guide = await source("components/ZhangjiajieGuidePage.tsx");
-  const home = await source("components/HomegroundHomePage.tsx");
+  const homeEditorial = await source("lib/homepageEditorial.ts");
+  const homeRail = await source("components/HomepageGuideRail.tsx");
   const footer = await source("components/HomegroundFooter.tsx");
   const header = await source("components/HomegroundHeader.tsx");
 
@@ -138,9 +139,10 @@ test("public guide remains available to search, citation and training crawlers",
   assert.match(page, /index: true/);
   assert.match(page, /follow: true/);
   assert.doesNotMatch(guide, /FAQPage|HowTo|AggregateRating/);
-  assert.match(home, /getHomeFeaturedGuides\(locale\)/);
-  assert.match(home, /href=\{guide\.canonicalPath\}/);
-  assert.match(home, /guide\.featuredLinkLabel/);
+  assert.match(homeEditorial, /getAllGuides\(locale\)/);
+  assert.match(homeEditorial, /href: guide\.canonicalPath/);
+  assert.match(homeEditorial, /linkLabel: guide\.featuredLinkLabel/);
+  assert.match(homeRail, /href=\{item\.href\}/);
   assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
   assert.match(header, /getGuideEntry\([\s\S]*targetLocale[\s\S]*\)\.canonicalPath/);

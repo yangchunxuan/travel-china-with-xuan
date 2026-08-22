@@ -6,22 +6,27 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("homepage guide search sits between the guide heading and cards", async () => {
-  const [homepage, finderStyles] = await Promise.all([
+test("homepage guide search is followed by the localized guide rail", async () => {
+  const [homepage, finder, finderStyles, rail] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageGuideSearch.tsx"),
     source("components/HomepageGuideSearch.module.css"),
+    source("components/HomepageGuideRail.tsx"),
   ]);
-  const header = homepage.indexOf("className={styles.travelGuidesHeader}");
-  const finder = homepage.indexOf("<HomepageGuideSearch locale={locale} />");
-  const cards = homepage.indexOf("className={styles.travelGuideGrid}");
+  const finderPosition = homepage.indexOf(
+    "<HomepageGuideSearch demos={searchDemos} locale={locale} />",
+  );
+  const railPosition = homepage.indexOf("<HomepageGuideRail");
   const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} />");
 
-  assert.ok(header >= 0, "travel guide heading must remain present");
-  assert.ok(finder > header, "guide finder must follow the guide heading");
-  assert.ok(cards > finder, "featured cards must follow the guide finder");
+  assert.ok(finderPosition >= 0, "the guide finder must remain present");
   assert.ok(
-    planningScope > cards,
-    "guide finder and cards must remain before the planning-scope section",
+    railPosition > finderPosition,
+    "the broader guide rail must follow the guide finder",
+  );
+  assert.ok(
+    planningScope > railPosition,
+    "guide discovery must remain before the planning-scope section",
   );
   assert.doesNotMatch(
     homepage,
@@ -33,6 +38,9 @@ test("homepage guide search sits between the guide heading and cards", async () 
     /scroll-margin-top:\s*5\.75rem/,
     "the homepage search anchor must clear the sticky header",
   );
+  assert.match(finder, /<h2 id="homepage-guide-search-title">/);
+  assert.match(finder, /aria-hidden="true"/);
+  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<a/);
 });
 
 test("homepage finder lazy-loads one same-language static index", async () => {
@@ -68,10 +76,55 @@ test("homepage search remains keyboard- and error-accessible", async () => {
   assert.match(form, /event\.key === "ArrowDown"/);
   assert.match(form, /aria-invalid=\{validationError \|\| undefined\}/);
   assert.match(form, /role="alert"/);
+  assert.match(form, /retryRemoteDocuments/);
+  assert.match(form, /inputRef\.current\?\.focus\(\);/);
+  assert.match(form, /copy\.retrySuggestions/);
+  assert.match(form, /type="button"/);
   assert.match(copy, /emptyQueryError:/);
   assert.match(copy, /loadingSuggestions:/);
   assert.match(copy, /suggestionsUnavailable:/);
   assert.match(copy, /noSuggestions:/);
+  assert.match(copy, /retrySuggestions:/);
+});
+
+test("homepage search preview is finite, pausable and based on real guides", async () => {
+  const [finder, editorial, finderStyles] = await Promise.all([
+    source("components/HomepageGuideSearch.tsx"),
+    source("lib/homepageEditorial.ts"),
+    source("components/HomepageGuideSearch.module.css"),
+  ]);
+
+  assert.match(finder, /activeDemoIndex >= demos\.length - 1/);
+  assert.match(finder, /prefers-reduced-motion: reduce/);
+  assert.match(finder, /new IntersectionObserver/);
+  assert.match(finder, /onFocusCapture=\{\(\) => setEngaged\(true\)\}/);
+  assert.match(finder, /aria-hidden="true"/);
+  assert.match(editorial, /getGuideSearchDocuments\(locale\)/);
+  assert.match(editorial, /getGuideSearchCopy\(locale\)\.examples/);
+  assert.match(editorial, /searchGuideDocuments\(documents, query, locale\)/);
+  assert.match(editorial, /\.slice\(0, 1\)/);
+  assert.match(editorial, /title: document\.h1/);
+  assert.doesNotMatch(editorial, /searchDemoGuideIds/);
+  assert.match(finderStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.doesNotMatch(finder, /typewriter|setInterval|aria-live/);
+});
+
+test("guide rail preserves position while lazy-loading and loads near the native-scroll edge", async () => {
+  const rail = await source("components/HomepageGuideRail.tsx");
+
+  assert.match(
+    rail,
+    /maximumScroll - currentScroll <= list\.clientWidth \* 1\.25/,
+  );
+  assert.match(rail, /void ensureCompleteCatalog\(\)/);
+  assert.match(
+    rail,
+    /useEffect\(\(\) => \{\s*const list = listRef\.current;\s*if \(!list\) return;\s*list\.scrollLeft = 0;\s*updateArrowDisabled\(\);\s*\}, \[resolvedCategory, updateArrowDisabled\]\)/,
+  );
+  assert.doesNotMatch(
+    rail,
+    /\[resolvedCategory, updateArrowDisabled, visibleItems\.length\]/,
+  );
 });
 
 test("customer-facing search copy avoids internal implementation language", async () => {

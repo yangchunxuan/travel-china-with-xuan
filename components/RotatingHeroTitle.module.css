@@ -1,0 +1,216 @@
+.root {
+  box-sizing: border-box;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  position: relative;
+}
+
+.hasControl {
+  padding-inline-end: 3.35rem;
+}
+
+.screenReaderOnly {
+  block-size: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.visualTitle,
+.question {
+  display: block;
+}
+
+.visualTitle {
+  max-inline-size: 100%;
+}
+
+.phraseStage {
+  display: inline-grid;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-block-size: 1em;
+  vertical-align: top;
+}
+
+.phraseSizer,
+.phraseLayer {
+  grid-area: 1 / 1;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.phraseSizer {
+  display: grid;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.phraseMeasure {
+  grid-area: 1 / 1;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.phraseLayer {
+  align-self: start;
+  display: block;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.letter {
+  display: inline-block;
+  transform-origin: 50% 78%;
+}
+
+.phraseLayer[data-phase="entering"] .letter {
+  animation: letterEnter 440ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--letter-enter-delay);
+}
+
+.phraseLayer[data-phase="exiting"] .letter {
+  animation: letterExit 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: var(--letter-exit-delay);
+}
+
+.root[data-paused="true"] .letter {
+  animation-play-state: paused;
+}
+
+.toggle {
+  align-items: center;
+  appearance: none;
+  background: var(--hg-color-card, #ffffff);
+  block-size: 44px;
+  border: 1px solid currentColor;
+  border-color: color-mix(in srgb, currentColor 58%, transparent);
+  border-radius: 999px;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  inline-size: 44px;
+  inset-block-start: 0.1em;
+  inset-inline-end: 0;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+  z-index: 2;
+}
+
+.toggle svg {
+  block-size: 1rem;
+  fill: currentColor;
+  inline-size: 1rem;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .toggle:hover {
+    background: var(--hg-color-surface, #f2f0e9);
+    border-color: currentColor;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 680px) {
+  .hasControl {
+    inline-size: 100%;
+    padding-inline-end: 0;
+  }
+
+  .hasControl .question {
+    box-sizing: border-box;
+    inline-size: 100%;
+    padding-inline-end: 3.35rem;
+  }
+
+  .phraseStage {
+    inline-size: 100%;
+  }
+
+  :global([data-homeground-locale="zh"]) .question {
+    max-inline-size: 6.5em;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .toggle {
+    border-color: currentColor;
+    border-width: 2px;
+  }
+}
+
+@media (forced-colors: active) {
+  .toggle {
+    background: ButtonFace;
+    border-color: ButtonText;
+    color: ButtonText;
+    forced-color-adjust: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hasControl {
+    padding-inline-end: 0;
+  }
+
+  .phraseLayer .letter {
+    animation: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .toggle {
+    display: none;
+    transition: none;
+  }
+}
+
+@keyframes letterEnter {
+  from {
+    filter: blur(4px);
+    opacity: 0;
+    transform: translateY(0.28em);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterExit {
+  from {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    filter: blur(3px);
+    opacity: 0;
+    transform: translateY(-0.2em);
+  }
+}

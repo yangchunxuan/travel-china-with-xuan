@@ -36,81 +36,52 @@ test("guides hub is registry-driven and exposes all nineteen current guides", as
   );
 });
 
-test("homepage guide selection is explicit, ranked and stable", async () => {
-  const homepage = await source("components/HomegroundHomePage.tsx");
-  const homepageCss = await source("components/HomegroundHomePage.module.css");
-  const registry = await source("lib/guideRegistry.ts");
+test("homepage guide rail exposes the tour and complete localized guide catalog", async () => {
+  const [
+    homepage,
+    homepageRoute,
+    editorial,
+    rail,
+    railCss,
+    englishIndex,
+    localizedIndex,
+  ] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("app/(default)/page.tsx"),
+    source("lib/homepageEditorial.ts"),
+    source("components/HomepageGuideRail.tsx"),
+    source("components/HomepageGuideRail.module.css"),
+    source("app/(default)/guides/homepage-guide-index.json/route.ts"),
+    source("app/(localized)/[locale]/guides/homepage-guide-index.json/route.ts"),
+  ]);
 
-  assert.match(
-    registry,
-    /id: "is-your-china-itinerary-too-rushed"[\s\S]*?homeFeaturedRank: 2/,
-  );
-  assert.match(
-    registry,
-    /id: "zhangjiajie-itinerary"[\s\S]*?homeFeaturedRank: 1/,
-  );
-  assert.match(
-    registry,
-    /id: "zhangjiajie-glass-bridge-vs-skywalk"[\s\S]*?homeFeaturedRank: 3/,
-  );
-  assert.match(registry, /export function getHomeFeaturedGuides/);
-  assert.match(
-    registry,
-    /\.sort\(\(a, b\) => a\.homeFeaturedRank - b\.homeFeaturedRank\)/,
-  );
-  assert.match(
-    registry,
-    /cardImagePath:\s*"\/images\/guides\/tantan-zhangjiajie\/tantan-hero-1200\.jpg"/,
-  );
-  assert.match(
-    registry,
-    /id: "is-your-china-itinerary-too-rushed"[\s\S]*?cardImagePath:\s*"\/images\/guides\/china-itinerary-reality\/airport-apron-card-1200\.webp"/,
-  );
-  assert.match(registry, /const cardImagePath =/);
-  assert.match(registry, /const cardImageAlt =/);
-  assert.match(homepage, /src=\{guide\.cardImagePath\}/);
-  assert.match(homepage, /alt=\{guide\.cardImageAlt\}/);
-  assert.match(homepage, /data-guide-id=\{guide\.id\}/);
-  const guidesSectionIndex = homepage.indexOf(
-    "className={styles.travelGuidesSection}",
-  );
-  const proofSectionIndex = homepage.indexOf("className={styles.proofSection}");
+  assert.match(editorial, /const allGuides = getAllGuides\(locale\)/);
+  assert.match(editorial, /kind: "tour"/);
+  assert.match(editorial, /\.\.\.orderedGuides\.map\(\(guide\) => guideRailItem\(guide, locale\)\)/);
+  assert.match(editorial, /src: guide\.cardImagePath/);
+  assert.match(editorial, /alt: guide\.cardImageAlt/);
+  assert.match(editorial, /width: guide\.cardImageWidth/);
+  assert.match(editorial, /height: guide\.cardImageHeight/);
+  assert.match(homepageRoute, /getHomepageGuideRailItems\("en"\)\.slice\(0, 18\)/);
+  assert.match(homepage, /catalogUrl=\{guideRailCatalogPath\}/);
+  assert.match(homepage, /<HomepageGuideRail/);
+  assert.match(englishIndex, /getHomepageGuideRailItems\("en"\)/);
+  assert.match(localizedIndex, /getHomepageGuideRailItems\(locale\)/);
+  assert.match(localizedIndex, /value === "zh" \|\| value === "ko"/);
+  assert.match(rail, /fetch\(catalogUrl/);
+  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<a/);
+  assert.match(rail, /data-category=\{item\.category\}/);
+  assert.match(rail, /data-kind=\{item\.kind\}/);
+  assert.match(railCss, /scroll-snap-type:\s*x mandatory/);
+  assert.match(railCss, /flex-basis:\s*calc\(\(100% - var\(--rail-gap\)\) \/ 2\)/);
+  assert.match(railCss, /\) \/ 4\s*\);/);
+  assert.match(railCss, /@media \(prefers-reduced-motion: reduce\)/);
+
+  const guidesSectionIndex = homepage.indexOf("<HomepageGuideRail");
+  const proofSectionIndex = homepage.indexOf("<PlanningScopeSection locale={locale} />");
   assert.ok(
     guidesSectionIndex >= 0 && guidesSectionIndex < proofSectionIndex,
-    "the complete travel-guides section must appear before the planning-proof section",
-  );
-  assert.ok(
-    homepage.indexOf("featuredGuides.map", guidesSectionIndex) <
-      proofSectionIndex,
-    "the guide cards must move with the travel-guides heading",
-  );
-  assert.ok(
-    homepage.indexOf("className={styles.proofBoard}", proofSectionIndex) >
-      proofSectionIndex,
-    "the route example and handled-needs card must stay with the proof heading",
-  );
-  assert.match(
-    homepage,
-    /<h2 id="travel-guides-title">\{copy\.guides\.title\}<\/h2>/,
-  );
-  assert.match(
-    homepageCss,
-    /\[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"\][\s\S]*?aspect-ratio: 1;/,
-  );
-
-  const mobileHomepageStyles = homepageCss.slice(
-    homepageCss.indexOf("@media (max-width: 680px)"),
-    homepageCss.indexOf("@media (max-width: 360px)"),
-  );
-  assert.match(
-    mobileHomepageStyles,
-    /\.travelGuidesIntro,[\s\S]*?min-inline-size: 0;/,
-    "the mobile guide header must be allowed to shrink inside the viewport",
-  );
-  assert.match(
-    mobileHomepageStyles,
-    /\[data-homeground-locale="zh"\] \.travelGuidesIntro h2,[\s\S]*?overflow-wrap: anywhere;[\s\S]*?word-break: normal;/,
-    "long Chinese guide headings must wrap instead of widening the page",
+    "the complete travel-guide rail must appear before the planning-proof section",
   );
 });
 

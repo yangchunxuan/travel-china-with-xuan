@@ -94,11 +94,11 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
 });
 
 test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
-  const [adapter, manifest, sitemap, homepage, homeCard] = await Promise.all([
+  const [adapter, manifest, sitemap, homepageEditorial, homeCard] = await Promise.all([
     source("lib/legacySystemContentAdapter.ts"),
     source("lib/searchPlatformManifest.ts"),
     source("app/sitemap.ts"),
-    source("components/HomegroundHomePage.tsx"),
+    source("lib/homepageEditorial.ts"),
     source("lib/zhangjiajiePrivateTourHomeCard.ts"),
   ]);
 
@@ -111,9 +111,11 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
   assert.match(sitemap, /system-zhangjiajie-4-day-private-tour/);
 
-  assert.match(homepage, /getZhangjiajiePrivateTourHomeCard/);
-  assert.match(homepage, /guide\.id === "zhangjiajie-itinerary"/);
-  assert.match(homepage, /\{ \.\.\.guide, \.\.\.featuredTourCard \}/);
+  assert.match(homepageEditorial, /getZhangjiajiePrivateTourHomeCard/);
+  assert.match(homepageEditorial, /id: tour\.id/);
+  assert.match(homepageEditorial, /kind: "tour"/);
+  assert.match(homepageEditorial, /\.\.\.orderedGuides\.map/);
+  assert.doesNotMatch(homepageEditorial, /\{ \.\.\.guide, \.\.\.tour \}/);
   assert.match(
     homeCard,
     /canonicalPath: "\/tours\/zhangjiajie-4-day-private-tour\/"/,

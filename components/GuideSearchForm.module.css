@@ -95,11 +95,15 @@
 }
 
 .suggestionNotice {
+  align-items: center;
   background: var(--guides-card, var(--hg-color-card));
   border: 1px solid var(--guides-ink, var(--hg-color-ink));
   box-shadow: 0 1.2rem 2.6rem rgb(25 23 20 / 14%);
   color: var(--guides-muted, var(--hg-color-muted));
+  display: flex;
   font-size: 0.78rem;
+  gap: 1rem;
+  justify-content: space-between;
   inset-inline: 0;
   line-height: 1.5;
   margin: 0;
@@ -107,6 +111,25 @@
   position: absolute;
   top: calc(100% - 0.2rem);
   z-index: 20;
+}
+
+.suggestionNotice button {
+  background: transparent;
+  border: 0;
+  color: var(--guides-rust, var(--hg-color-rust));
+  cursor: pointer;
+  flex: 0 0 auto;
+  font: inherit;
+  font-weight: 760;
+  min-block-size: 2.75rem;
+  padding: 0.35rem 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.suggestionNotice button:hover,
+.suggestionNotice button:focus-visible {
+  color: var(--guides-ink, var(--hg-color-ink));
 }
 
 .validationError {
