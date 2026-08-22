@@ -1,0 +1,74 @@
+{
+  "id": "chaozhou-ancient-city-gates-bridge-lanes-route",
+  "type": "route",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": ["global"],
+  "format": "walking-sequence",
+  "topics": ["walking-route", "city-walls", "old-town", "heritage", "etiquette"],
+  "destinations": ["chaozhou", "guangdong"],
+  "heroImagePath": "/images/guides/chaozhou-ancient-city-gates-bridge-lanes-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chaozhou-ancient-city-gates-bridge-lanes-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "explore", "family": "relationship", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/chaozhou-ancient-city-gates-bridge-lanes-route/",
+      "title": "Chaozhou Ancient City: Which Gate First, and Can You Cross the Bridge?",
+      "headline": "Chaozhou Ancient City: Sequence the Gates, Guangji Bridge and Inner Lanes",
+      "description": "Walk the river wall, the four gates, the arch street and the lanes in an order that never doubles back - and know what to do when the bridge's pontoon section is open.",
+      "heroAlt": "Guangji Bridge across the Han River at Chaozhou with its central pontoon section opened, the moored boats drawn aside and open water between the two stone-pier halves.",
+      "navTitle": "Chaozhou old city walk",
+      "featuredLinkLabel": "Sequence the Chaozhou walk",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chaozhou", "Old city", "Walking route"],
+      "heroCredit": {
+        "text": "Guangji Bridge with the pontoon section opened, by Windmemories, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20230206_Guangji_Bridge_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/chaozhou-ancient-city-gates-bridge-lanes-route/",
+      "title": "潮州古城怎么走：先进哪座门，桥能不能过？",
+      "headline": "潮州古城怎么走：城门、广济桥与内巷的顺序",
+      "description": "把临江城墙、四座城门、牌坊街和内巷排成一条不用折返的路线，并知道浮桥开启时该怎么改。",
+      "heroAlt": "潮州广济桥中段浮桥开启，梭船移至一侧，两半石墩桥体之间露出开阔水面。",
+      "navTitle": "潮州古城步行路线",
+      "featuredLinkLabel": "排出潮州步行顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["潮州", "古城", "步行路线"],
+      "heroCredit": {
+        "text": "浮桥段开启状态下的广济桥，摄影 Windmemories，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20230206_Guangji_Bridge_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/chaozhou-ancient-city-gates-bridge-lanes-route/",
+      "title": "차오저우 고성: 어느 문부터, 그리고 다리는 건널 수 있나",
+      "headline": "차오저우 고성 걷기: 성문·광지교·골목을 잇는 순서",
+      "description": "강변 성벽과 네 성문, 패방 거리와 골목을 되돌아가지 않는 순서로 걷고, 부교가 열려 있을 때 무엇을 바꿀지 알아 둡니다.",
+      "heroAlt": "가운데 부교 구간이 열린 차오저우 광지교. 배들은 한쪽으로 물러나 있고 두 석조 교각 구간 사이로 물이 드러나 있다.",
+      "navTitle": "차오저우 고성 걷기",
+      "featuredLinkLabel": "차오저우 동선 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["차오저우", "고성", "도보 동선"],
+      "heroCredit": {
+        "text": "부교 구간이 열린 광지교, 촬영 Windmemories, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20230206_Guangji_Bridge_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}
