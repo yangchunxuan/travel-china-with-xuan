@@ -1,0 +1,48 @@
+{
+  "id": "du-fu-thatched-cottage-literary-memorial",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "literary-memorial-field-guide",
+  "topics": ["du-fu", "literary-memorial", "chengdu-history", "archaeology", "poetry"],
+  "destinations": ["chengdu", "sichuan"],
+  "heroImagePath": "/images/guides/du-fu-thatched-cottage-literary-memorial/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/du-fu-thatched-cottage-literary-memorial/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/du-fu-thatched-cottage-literary-memorial/",
+      "title": "Du Fu in Chengdu: Read the Thatched Cottage as Biography, Poetry and Memorial",
+      "headline": "Four Places Occupy One Garden",
+      "description": "Separate Du Fu's Chengdu years, the reconstructed hut, later memorial buildings and Tang archaeology on a practical museum walk.",
+      "heroAlt": "Reconstructed thatched-cottage precinct at the Du Fu Thatched Cottage Museum in Chengdu",
+      "heroCredit": { "text": "Reconstructed thatched-cottage precinct, photographed by Fanghong on 11 October 2009; centre-cropped and resized. It is a memorial reconstruction, not Du Fu's surviving Tang house.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:DuFuHouse.jpg", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" },
+      "navTitle": "Read Du Fu's Chengdu memorial", "featuredLinkLabel": "Separate hut, memorial and archaeology", "openGraphLocale": "en_US", "cardTags": ["Chengdu", "Du Fu", "Literary place"]
+    },
+    "zh": {
+      "path": "/zh/guides/du-fu-thatched-cottage-literary-memorial/",
+      "title": "成都杜甫草堂怎么读：诗人生平、诗歌记忆与纪念园林",
+      "headline": "一座园林里叠着四种地点",
+      "description": "按现场顺序分清杜甫成都经历、复建茅屋、后世纪念建筑和唐代遗址，不把纪念空间误认成原宅。",
+      "heroAlt": "成都杜甫草堂博物馆内复建的茅屋景区",
+      "heroCredit": { "text": "复建茅屋景区，Fanghong摄于2009年10月11日；经居中裁切和缩放。它是纪念性复建，不是杜甫保存至今的唐代住宅。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:DuFuHouse.jpg", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" },
+      "navTitle": "读懂成都杜甫草堂", "featuredLinkLabel": "分清茅屋、纪念建筑与遗址", "openGraphLocale": "zh_CN", "cardTags": ["成都", "杜甫", "文学地点"]
+    },
+    "ko": {
+      "path": "/ko/guides/du-fu-thatched-cottage-literary-memorial/",
+      "title": "청두 두보초당 읽기: 시인의 삶·시·기념 공간 구분하기",
+      "headline": "한 정원에 네 종류의 장소가 겹쳐 있습니다",
+      "description": "두보의 청두 시절, 재현 초가, 후대 기념 건축과 당대 유적을 현장 순서대로 구분합니다.",
+      "heroAlt": "청두 두보초당박물관 안에 재현한 초가 구역",
+      "heroCredit": { "text": "재현 초가 구역. Fanghong이 2009년 10월 11일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 두보의 당대 집이 남은 것이 아니라 기념을 위한 재현입니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:DuFuHouse.jpg", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" },
+      "navTitle": "청두 두보초당 읽기", "featuredLinkLabel": "초가·기념관·유적 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["청두", "두보", "문학 장소"]
+    }
+  },
+  "searchTerms": { "en": ["Du Fu Thatched Cottage original or rebuilt", "Du Fu Cottage Chengdu guide"], "zh": ["杜甫草堂是原来的吗", "成都杜甫草堂怎么看"], "ko": ["두보초당 원래 건물", "청두 두보초당 관람법"] }
+}
