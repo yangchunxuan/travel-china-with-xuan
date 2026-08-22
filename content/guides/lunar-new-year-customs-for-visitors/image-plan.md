@@ -6,7 +6,7 @@
 - **Source page:** https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg
 - **Creator:** 小溪Yang.
 - **Licence:** [CC BY 2.5](https://creativecommons.org/licenses/by/2.5/); credit the creator, link the file and licence, and identify the crop/resize.
-- **Place and date:** Guangzhou South Railway Station waiting hall during Chunyun; 2020-01-21. This is a pre-lockdown historical scene. Retrieved for Homeground on 2026-08-13.
+- **Place and date:** Guangzhou South Railway Station waiting hall during Chunyun; 2020-01-21. This is a pre-lockdown historical scene. Rights and source record rechecked for Homeground on 2026-08-22.
 - **Original record:** 1942 × 2590 JPEG; retrieved source SHA-256 `01c3d5218cf163fc51cd29203db0a34d89d8921da0255f65312b4d28de025ada`.
 - **Published derivative:** `public/images/guides/lunar-new-year-customs-for-visitors/hero-1600.webp`, 1600 × 1000 WebP. A substantial conventional landscape crop of the portrait source and resize were used; no person, luggage or station element was inserted, removed or generated.
 - **Crop requirement:** keep enough waiting-hall context to identify a public transport scene. Do not isolate individuals as spectacle or crop the crowd into an unsupported danger claim.
@@ -25,8 +25,22 @@
 - **ZH:** `2020年1月21日春运期间的广州南站候车大厅。这一历史场景不是2026年客流预测，也不是私人春节习俗的画面。摄影：小溪Yang，CC BY 2.5；已裁切并缩放。`
 - **KO:** `2020년 1월 21일 춘윈 기간의 광저우남역 대합실. 이 역사적 장면은 2026년 혼잡 예측도, 사적인 춘절 풍습의 모습도 아니다. 사진: 小溪Yang, CC BY 2.5; 크롭 및 크기 조정.`
 
+## In-body Spring Festival pressure maps
+
+- **EN:** `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-en-1440.webp`
+- **ZH:** `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-zh-1440.webp`
+- **KO:** `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-ko-1440.webp`
+- **Dimensions:** 1440 × 900 each.
+- **Created:** 2026-08-22 by Homeground as deterministic local editorial graphics; no generative AI.
+- **Visual job:** show four recurring pressure phases—pre-holiday departure demand, reunion days, holiday sightseeing and the return wave—without drawing exact date boundaries.
+- **Rights:** original Homeground composition. No third-party photograph, logo, timetable, map tile, person or embedded font file.
+- **Evidence boundary:** these graphics are planning patterns, not the 2027 official holiday calendar, a passenger forecast, live ticket state or claim that every city follows identical peaks.
+- Each locale has its own typeset asset; an English-text chart is not reused on Chinese or Korean pages.
+
 ## Publication controls
 
 - Keep the Commons image credit in the default-collapsed Sources block in EN, ZH and KO.
 - Keep 2026 holiday dates, Chunyun measures and ticket conditions in current text sources, never in the historical image caption.
 - Do not use generative crowd extension, face enhancement or synthetic station detail.
+- Keep the pressure-map caption stating that annual official dates belong to the State Council, transport authorities and named venues.
+- Do not add dates to the pressure-map artwork. Annual dates remain editable text on the public-holiday owner.

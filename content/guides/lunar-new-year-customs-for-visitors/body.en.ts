@@ -6,207 +6,271 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Spring Festival is simultaneously a family season, a public cultural season and a national transport operation. Chunyun—the separately announced Spring Festival travel period—starts before the public-holiday break and continues after it. Travellers therefore need two plans: one for moving through a high-demand transport system, and one for participating respectfully in customs that may be public, communal, invitation-only or entirely private."
+      text: "Chinese New Year can be a wonderful time to visit China, but it rewards a different traveller from an ordinary first trip. You may find a commuter district strangely still at breakfast and a temple fair packed by lunch; a family restaurant may be dark while the mall across the road runs a full holiday programme. Spring Festival is not one national shutdown. It is family reunion, a long transport operation and an enormous domestic travel season happening at once."
     },
     {
       id: "direct-answer",
       type: "callout",
       tone: "decision",
-      title: "The visitor’s short answer",
-      body: "Use the annual public-holiday calendar for official dates and compensatory workdays; verify current Chunyun transport and venue notices separately. Attend clearly public programmes without pretending they reproduce a household celebration. Treat reunion meals, home visits, ancestor remembrance and red-envelope exchanges as family practices unless a host explicitly includes you. A festival can be culturally important without being a tourist product."
+      title: "Should you go?",
+      body: "Go if the festival itself matters, you can keep intercity moves to a minimum, and you are happy to build each day around one confirmed public event plus a flexible fallback. Choose another period if your first trip depends on a tightly timed multi-city route, a long list of small independent restaurants, or several must-see venues with no published holiday hours. Spring Festival does not make China inaccessible; it makes weak assumptions expensive."
     },
     {
-      id: "two-systems-heading",
-      type: "heading",
-      level: 2,
-      text: "Do not collapse Chunyun and Spring Festival into one thing"
-    },
-    {
-      id: "two-systems",
-      type: "table",
-      caption: "Two overlapping systems create different planning questions",
-      columns: ["Layer", "What it is", "What a visitor must decide"],
-      rows: [
-        ["Chunyun", "A government-coordinated transport period covering road, rail, civil aviation and water transport around Spring Festival", "Whether the intercity move is necessary, bookable and recoverable"],
-        ["Spring Festival customs", "Living practices expressed through families, communities, institutions and public programmes", "Whether an activity is public, hosted or private—and what permission is needed"],
-        ["Public-holiday arrangement", "Official days off and any compensatory workdays announced for that calendar year", "Which dates may change transport, crowds, offices and opening patterns"],
-        ["Household schedule", "A family’s own reunion, visits, work, travel and rest", "Whether an invitation includes the guest, which part of the day and what expectations apply"]
-      ]
-    },
-    {
-      id: "calendar-owner",
+      id: "next-date",
       type: "callout",
       tone: "warning",
-      title: "The dates live on one annual owner page",
-      body: "This guide deliberately does not repeat a 2026 holiday table or predict a future year. Official holiday dates, compensatory workdays and the current crowd calendar belong to the China public-holidays guide. Until the State Council and relevant transport authorities publish the next arrangements, those details are not yet published—not an invitation to copy last year."
+      title: "Next festival date known; mainland holiday arrangement not yet published",
+      body: "Reviewed 22 August 2026: Lunar New Year's Day falls on Saturday, 6 February 2027, as shown by the Hong Kong Observatory's official calendar and Hong Kong's gazetted holiday list. That establishes the lunar date only. Mainland China's 2027 days off, compensatory workdays and Chunyun period had not yet been published at review time. Do not copy Hong Kong's holiday arrangement or the 2026 mainland break into a 2027 China itinerary. Use the Homeground public-holiday calendar when the State Council publishes the annual arrangement."
     },
     {
-      id: "four-clocks-heading",
+      id: "pressure-heading",
       type: "heading",
       level: 2,
-      text: "Plan against four clocks"
+      text: "The dates that affect a trip are wider than New Year's Day"
+    },
+    {
+      id: "pressure-map",
+      type: "figure",
+      src: "/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-en-1440.webp",
+      alt: "Spring Festival travel pressure chart showing pre-holiday departure demand, reunion days, holiday sightseeing and the return wave as separate phases.",
+      width: 1440,
+      height: 900,
+      caption: "A planning pattern, not the 2027 official calendar. The State Council, transport authorities and each venue publish the dates that govern a particular trip."
+    },
+    {
+      id: "pressure-table",
+      type: "table",
+      caption: "Four pressure phases; exact boundaries change every year",
+      columns: ["Phase", "What a visitor may notice", "What to protect"],
+      rows: [
+        ["Before the official holiday", "Homebound demand builds on rail, air and roads while most city businesses may still be open", "Necessary intercity seats and a recoverable hotel plan"],
+        ["New Year's Eve and early reunion days", "Some office and neighbourhood streets quieten; family-run businesses may close; family time is most private", "A confirmed meal, hotel operation and one public activity"],
+        ["Middle of the holiday", "Domestic sightseeing accelerates; major attractions, resorts, fairs and shopping districts can be intensely busy", "Dated admission, crowd tolerance and a nearby fallback"],
+        ["End of the break and return wave", "Railways, airports and expressways carry people back to work and study; large cities receive heavy inflows", "The final necessary transfer and margin before an international flight"]
+      ]
     },
     {
       id: "four-clocks",
-      type: "table",
-      caption: "A date can be ordinary on one clock and fragile on another",
-      columns: ["Clock", "Authoritative check", "Planning consequence"],
-      rows: [
-        ["Official holiday", "The annual State Council arrangement", "Public offices, domestic travel demand and venue patterns may change"],
-        ["Chunyun", "That year’s transport-authority plan and operator notices", "Demand and operating measures can extend beyond the holiday itself"],
-        ["Venue or business", "The named organiser, museum, temple fair, market or restaurant", "A public event or meal service may run on only selected dates and times"],
-        ["Family", "The host, not a generic etiquette article", "Reunion time, gifts, food, photography and overnight arrangements vary by household"]
-      ]
-    },
-    {
-      id: "new-year-four-clock-calendar",
-      type: "table",
-      caption: "Four-clock trip sheet — copy it for one current year and one exact travel date; blanks mean unresolved, not unchanged from last year",
-      columns: ["Clock", "Write the exact current field", "Attach the dated owner", "Freeze or change this decision"],
-      rows: [
-        ["Lunar and festival date", "Year: ____; lunar date and Gregorian date: ____", "Current official calendar or named public-programme notice checked on: ____", "Keep the festival date separate from the dates when a particular activity is open"],
-        ["Statutory holiday and workday", "Day off, compensatory workday or ordinary day: ____", "Annual State Council arrangement checked on: ____", "Mark office and transport assumptions for recheck; do not infer every business hour"],
-        ["Transport demand and service", "Exact corridor, sales or waitlist state, and fallback: ____", "Rail, airline, road or local operator checked on: ____", "Protect the necessary journey; release optional moves that have no recoverable seat"],
-        ["Household or venue", "Named place or host, public/hosted/private status, and time window: ____", "Organiser notice or direct host confirmation received on: ____", "Attend only the confirmed scope; invitation and opening hours do not transfer to another date or person"]
-      ]
-    },
-    {
-      id: "flow-heading",
-      type: "heading",
-      level: 2,
-      text: "Return-home travel is central, but the flow is not one-way"
-    },
-    {
-      id: "flow-patterns",
-      type: "paragraph",
-      text: "The familiar pattern is movement from places of work or study towards hometowns before the festival, followed by a return. It is not the only pattern. Peer-reviewed research documents reverse reunion, in which relatives travel to the migrant’s city, and official transport reporting also distinguishes family visits, tourism, self-driving and other flows. Do not assume every large city empties, every rural destination fills in the same way or every traveller is going home. Test the exact corridor and date."
-    },
-    {
-      id: "count-boundary",
-      type: "callout",
-      tone: "warning",
-      title: "A movement count is not a headcount—or an absolute world record",
-      body: "Official Spring Festival transport statistics may report cross-regional movements, passenger journeys or vehicle movements across multiple modes. One person can generate several counted legs. Academic writers often describe Chunyun as one of the world’s largest recurring seasonal mobility events, but comparisons depend on definitions and datasets. This page does not turn a journey total into a count of unique people or claim an uncontested global record."
-    },
-    {
-      id: "scenario-one-heading",
-      type: "heading",
-      level: 2,
-      text: "Scenario 1: travelling during Chunyun without a family invitation"
-    },
-    {
-      id: "scenario-one",
       type: "callout",
       tone: "neutral",
-      title: "Protect the journey; choose public culture",
-      body: "Two first-time visitors need one intercity rail trip near Spring Festival. They have no local family host. They reduce the route to the necessary move, check the official railway channel when sales and current services are available, and keep a later or alternative connection that still preserves their hotel. For culture, they select an officially announced museum programme or community performance. They do not buy an invented ‘authentic family reunion’ or ask a guide to obtain access to a private home."
+      title: "Plan with four clocks, not one festival date",
+      body: "The lunar date tells you when New Year's Day falls. The State Council arrangement tells you mainland days off and compensatory workdays. The annual Chunyun plan describes a longer transport period. A venue or business publishes its own opening. These clocks overlap but are not interchangeable. A blank field means ‘not announced’—never ‘same as last year’."
     },
     {
-      id: "mobility-planning",
+      id: "city-heading",
+      type: "heading",
+      level: 2,
+      text: "How can a city feel empty and crowded at the same time?"
+    },
+    {
+      id: "city-copy",
+      type: "paragraph",
+      text: "Because people and activity redistribute. Some workers and students leave their usual city; some relatives travel in the opposite direction; residents take domestic holidays; and public programmes pull visitors towards a smaller number of attractions and commercial districts. The result is spatial contrast, not a national pause. An office street can be quiet, a transport hub under pressure, a famous temple full and an ordinary residential restaurant closed—all on the same day. Academic research on reverse reunion also warns against the simple story that every large city empties."
+    },
+    {
+      id: "city-evidence",
+      type: "callout",
+      tone: "neutral",
+      title: "2026 evidence: quiet-city stories did not mean quiet attractions",
+      body: "Shanghai reported 21.67 million tourist visits and more than 2,570 cultural and tourism activities during its nine-day 2026 Spring Festival holiday. Nationally, the Ministry of Culture and Tourism reported 596 million domestic trips. Those are visit/trip measures, not unique-person counts, and they do not forecast another year. They do show why ‘everyone has gone home, so sightseeing will be empty’ is a poor plan."
+    },
+    {
+      id: "where-heading",
+      type: "heading",
+      level: 2,
+      text: "Pick a base with fallbacks, not the most ‘authentic’ promise"
+    },
+    {
+      id: "where-table",
+      type: "table",
+      caption: "Base choice changes the risk more than a generic city ranking",
+      columns: ["Base", "Why it can work", "What can disappoint"],
+      rows: [
+        ["Large city centre", "Major hotels, metro, malls and official programmes offer more replacement options", "Famous attractions and festive districts may be extremely busy; small local businesses still vary"],
+        ["Historic city with a public festival programme", "A named temple fair, lantern show or museum programme gives the trip a clear purpose", "The event may be ticketed, capacity-controlled or limited to only a few dates"],
+        ["Scenic resort", "Accommodation and holiday activities may be packaged in one place", "Holiday pricing, traffic and domestic demand can be high; the resort is not quiet countryside"],
+        ["Small town or village without a host", "Ordinary streets may be calm", "Public activities, transport and food choices can be limited; family customs are not automatically open to visitors"]
+      ]
+    },
+    {
+      id: "transport-heading",
+      type: "heading",
+      level: 2,
+      text: "Transport: reduce moves before trying to outsmart Chunyun"
+    },
+    {
+      id: "transport-copy",
+      type: "paragraph",
+      text: "Chunyun is a separately announced, multimode transport operation that begins before the statutory break and ends after it. In 2026 it ran for 40 days, while the mainland public holiday lasted nine days. The lesson is structural, not a reusable 2027 date range: the difficult ticket may sit outside the holiday box on your calendar. Search the exact station or airport pair when the official operator opens inventory, and do not let a waitlist carry non-refundable hotels and timed attractions that have no fallback."
+    },
+    {
+      id: "transport-actions",
       type: "list",
       ordered: true,
       items: [
-        "Check the annual holiday owner page, then the separately announced Chunyun period; do not assume their boundaries match.",
-        "Remove optional hotel changes and backtracking before competing for scarce transport. The easiest recovery is a move the route no longer needs.",
-        "Search the exact station or airport pair and passenger-document rules through the official operator close to booking.",
-        "Keep the first post-arrival activity replaceable. A transport arrival during a high-demand period is not a guaranteed sightseeing half-day.",
-        "Save the booking record, Chinese station or airport name, hotel address and a lawful last-mile fallback offline.",
-        "Recheck weather, operator notices and local transport before departure; a confirmed long-distance ticket does not guarantee the last connection."
+        "Delete optional backtracking and one-night city changes before booking anything.",
+        "Protect the journey into China, the one necessary intercity move and the final night before the flight home.",
+        "Use the official railway or airline record; copy the complete station or airport name in Chinese.",
+        "Treat a 12306 waitlist as attempted fulfilment, not as a held seat. Keep a route that works if it never clears.",
+        "Do not connect a long-distance arrival directly to a scarce festival event. Make the first activity replaceable.",
+        "Recheck local metro, bus and taxi access; a confirmed train does not guarantee the last kilometre."
       ]
     },
     {
-      id: "rail-waitlist",
-      type: "paragraph",
-      text: "China Railway’s official waitlist is a real fulfilment mechanism, not a reserved seat. The system continues trying until the selected cutoff; an unfulfilled or ended request is refunded under the published process. Keep the route viable if it never clears. Do not let a waitlist request silently carry a non-refundable hotel, timed attraction and onward flight."
-    },
-    {
-      id: "family-boundary-heading",
+      id: "business-heading",
       type: "heading",
       level: 2,
-      text: "Separate public celebration from family permission"
+      text: "What closes? There is no useful national list"
     },
     {
-      id: "public-private",
+      id: "business-copy",
+      type: "paragraph",
+      text: "Government offices follow the published holiday and workday arrangement, but restaurants, shops, museums and attractions make separate decisions. Large hotels, transport facilities, malls and chain businesses often maintain some holiday service; many public attractions publish special hours or programmes. A small family-run restaurant, laundry, workshop or guesthouse may close, shorten hours or reopen later than the formal holiday. None of those patterns proves what one named place will do."
+    },
+    {
+      id: "verification-ladder",
       type: "table",
-      caption: "The setting—not the label ‘Spring Festival’—decides access",
-      columns: ["Setting", "Visitor position", "Evidence before joining"],
+      caption: "Verify the places that can break your day",
+      columns: ["When", "Check", "Decision"],
       rows: [
-        ["Official museum, fair or ticketed performance", "Member of the public under the organiser’s rules", "Current notice, admission, hours, capacity and photography policy"],
-        ["Community activity open to visitors", "Guest in a living local setting", "Named organiser, public invitation and conduct rules"],
-        ["Restaurant’s public festive menu", "Customer, not participant in a household reunion", "Current booking, dietary fit, portion and service time"],
-        ["Friend’s or partner’s family meal", "Invited guest whose access has limits", "Direct host invitation, timing, who knows you are coming and whether photos are welcome"],
-        ["Home visit, ancestor remembrance or kin gift exchange", "Private unless the family says otherwise", "Specific permission from the people involved; silence is not consent"]
+        ["When choosing the city", "Did this city publish a current festival programme and do major hotels/transport offer fallbacks?", "Keep or replace the base"],
+        ["When booking", "Does the named attraction, event or restaurant accept your date and passport/contact method?", "Book only the confirmed anchor"],
+        ["About one week before", "Has the organiser posted holiday hours, reservation, capacity or cancellation rules?", "Freeze one anchor and one fallback"],
+        ["The day before", "Is the notice still current, and is the route operating?", "Go, move the time or replace the activity"],
+        ["Same day", "Has weather, crowd control or transport changed?", "Follow the named operator; do not argue from an old screenshot"]
       ]
     },
     {
-      id: "custom-variation",
-      type: "paragraph",
-      text: "UNESCO’s heritage description names widespread practices such as preparing homes and food, reunion dining, greetings and public festivities. It is a description of living heritage, not a compulsory national checklist. Customs differ by region, generation, religion, migration history and household circumstance. Some families work, travel, order food, meet on another day or do not perform a practice at all. Respecting Spring Festival includes allowing that variation."
-    },
-    {
-      id: "scenario-two",
+      id: "food-plan",
       type: "callout",
-      tone: "neutral",
-      title: "Scenario 2: invited to a friend’s family home",
-      body: "A solo visitor receives a genuine invitation. They ask the host—not the internet—when to arrive, whether the invitation includes dinner and overnight stay, whether a small gift is appropriate, what food restrictions can realistically be handled and whether anyone objects to photographs. They do not film children, money or ancestor-related practices by default. If the family plan changes, the visitor accepts a public meal or event instead of asking the host to recreate the ritual."
+      tone: "decision",
+      title: "The first three meals need less romance and more evidence",
+      body: "Confirm the hotel's breakfast or a nearby chain/convenience option, save one simple backup meal and reserve any important dinner through the restaurant's current channel. A festive banquet marketed online is not automatically available to a solo walk-in, and an invitation to a household reunion is not a restaurant booking. Once basic meals are safe, discover the places that are genuinely open."
     },
     {
-      id: "invited-questions",
+      id: "events-heading",
+      type: "heading",
+      level: 2,
+      text: "Temple fairs and lantern shows are public programmes, not a permanent national timetable"
+    },
+    {
+      id: "events-copy",
+      type: "paragraph",
+      text: "A temple fair, garden party or lantern carnival can be the best reason for a foreign visitor to come: the event is public, the organiser is named and the setting does not require access to private family life. But the label does not prove admission. Beijing's 2026 programme, for example, listed different fairs running on different subsets of the holiday, while several lantern displays continued towards the Lantern Festival. Some events were parks, some temple grounds, some commercial festivals. The next year needs a new list from the city and each organiser."
+    },
+    {
+      id: "event-check",
       type: "list",
       ordered: false,
       items: [
-        "What time should I arrive and leave, and who in the household has agreed to the visit?",
-        "Is this an invitation to one meal, a longer visit or an overnight stay?",
-        "Would a modest gift help, and are there food, alcohol or household preferences to avoid?",
-        "Should I prepare my dietary restriction in Chinese, and is a separate backup meal kinder to the host?",
-        "May I photograph people, food or decorations? Ask again before recording a prayer, offering, child or red-envelope exchange.",
-        "If plans change, what nearby public meeting point lets everyone exit without embarrassment?"
+        "Use a dated notice from the city, park, museum, temple or named organiser—not a copied listicle.",
+        "Confirm whether it is a religious site, heritage fair, commercial carnival, performance or light display; behave for the real setting.",
+        "Check ticket, reservation, passport acceptance, capacity, bag and photography rules.",
+        "Write the exact entrance and time window in Chinese; the event name may cover several venues.",
+        "Keep a second public activity nearby in case weather or capacity cancels the first.",
+        "Do not assume an event continues through Lantern Festival merely because its decorations remain."
       ]
     },
     {
-      id: "consent-boundary",
+      id: "family-heading",
+      type: "heading",
+      level: 2,
+      text: "Public celebration is not permission to enter family life"
+    },
+    {
+      id: "family-copy",
+      type: "paragraph",
+      text: "UNESCO's description of Spring Festival living heritage includes preparations, reunion, greetings and public festivities. It is not a checklist followed by every household. Families differ by region, generation, work, religion, migration and preference. Some meet before the official break, order food, travel elsewhere or do very little. Respect includes letting an ordinary or changed celebration remain ordinary."
+    },
+    {
+      id: "invitation-table",
+      type: "table",
+      caption: "The setting decides your position",
+      columns: ["Setting", "Your role", "What permission means"],
+      rows: [
+        ["Official fair, museum or ticketed show", "Member of the public", "Follow current admission, conduct and photography rules"],
+        ["Restaurant festive menu", "Customer", "A booking covers the meal, not access to a household tradition"],
+        ["Friend's family meal", "Specifically invited guest", "Ask when to arrive, who knows you are coming, food limits, gift expectations and when to leave"],
+        ["Home visit, ancestor remembrance or red-envelope exchange", "Private unless directly included", "Invitation to dinner does not transfer to companions, filming or every family activity"]
+      ]
+    },
+    {
+      id: "etiquette",
       type: "callout",
-      tone: "decision",
-      title: "Invitation is specific, not transferable",
-      body: "An invitation from one friend does not automatically include companions, a camera, social-media publication or every family activity. Ask before bringing another person and before publishing identifiable material. The respectful fallback is smaller participation, not a demand for more ‘authentic’ access."
+      tone: "neutral",
+      title: "Simple etiquette is enough",
+      body: "Use a warm ‘Happy New Year’ greeting, follow the host's lead, and ask before photographing people, offerings, children or money. A modest gift may be appropriate if the host suggests it; random red envelopes to children are not required and can be awkward. Do not demand a ritual, refuse a reasonable change of plan with drama, or publish identifiable family material without specific consent."
+    },
+    {
+      id: "sample-heading",
+      type: "heading",
+      level: 2,
+      text: "A festival-first trip that remains recoverable"
+    },
+    {
+      id: "sample-plan",
+      type: "list",
+      ordered: true,
+      items: [
+        "Base in one large city for four or five nights instead of crossing the country during the highest-pressure days.",
+        "Use the arrival day for the hotel area, a confirmed meal and an ordinary walk.",
+        "Choose one dated public festival event as the cultural anchor.",
+        "Place a major attraction on a separate reserved day, with a nearby non-ticket fallback.",
+        "Keep one unscheduled neighbourhood or park day for weather, fatigue or a changed opening.",
+        "Move to the next city only after checking the annual return-flow pattern and protecting the final international-flight margin."
+      ]
     },
     {
       id: "failure-heading",
       type: "heading",
       level: 2,
-      text: "Recover without turning pressure into someone else’s problem"
+      text: "When the holiday plan fails"
     },
     {
       id: "failure-table",
       type: "table",
-      caption: "Common failure and a respectful recovery",
-      columns: ["Failure", "Do first", "Do not do"],
+      caption: "Recover without making the festival someone else's emergency",
+      columns: ["Failure", "Do first", "Do not"],
       rows: [
-        ["Preferred train remains unavailable", "Use the pre-approved alternative date, route or mode—or cut the optional move", "Assume a waitlist must clear or buy an unsafe unofficial promise"],
-        ["Public event changes or reaches capacity", "Use another officially open public programme or an ordinary flexible day", "Pressure staff or enter a controlled area"],
-        ["Restaurant or small business closes", "Use the saved simple meal and verify another current venue", "Treat family-owned holiday closure as poor service"],
-        ["Family invitation changes", "Thank the host and move to the public fallback", "Ask for a staged meal because travel plans were built around it"],
-        ["The visitor is unsure whether a moment is private", "Put the phone away and ask quietly later", "Record first and seek permission afterwards"]
+        ["Preferred train remains unavailable", "Use the approved alternate date, route or mode, or remove the optional move", "Assume the waitlist must clear"],
+        ["Restaurant is closed", "Use the saved meal fallback and verify another current venue", "Treat a family holiday closure as personal bad service"],
+        ["Fair reaches capacity or changes", "Use the nearby public fallback", "Pressure staff or enter a controlled area"],
+        ["Family invitation changes", "Thank the host and switch to a public meal or event", "Ask the family to stage a reunion for the itinerary"],
+        ["A city feels quieter than expected", "Explore the open neighbourhood calmly and keep the confirmed anchor", "Assume every attraction must therefore be empty"],
+        ["A popular attraction is overwhelmed", "Use the reserved time or leave for the fallback", "Add more same-day transfers chasing another famous site"]
       ]
     },
     {
-      id: "final-verify-heading",
+      id: "final-decision-heading",
       type: "heading",
       level: 2,
-      text: "Final verification"
+      text: "Final decision: come for the festival, not despite it"
     },
     {
-      id: "final-verification",
-      type: "list",
-      ordered: false,
-      items: [
-        "Official holiday dates and compensatory workdays come from the current annual owner page.",
-        "The current Chunyun period and any special transport measures come from transport authorities or the named operator.",
-        "Every necessary intercity move has a viable failure path; waitlist fulfilment is not assumed.",
-        "Every public event has a named organiser, current date, access rule and cancellation check.",
-        "Every family activity rests on a direct, specific invitation rather than a tour label or cultural stereotype.",
-        "Photography, companions, food needs and departure time have been discussed with the host.",
-        "No passenger-journey statistic is described as a unique-person count or uncontested global record."
+      id: "final-decision",
+      type: "comparison",
+      title: "The trip is a good fit when more of the left column is true",
+      columns: [
+        {
+          heading: "Come during Spring Festival",
+          items: [
+            "One or two bases are enough",
+            "Public festival culture is a main interest",
+            "You can reserve anchors and release the rest",
+            "A closed restaurant or changed event will not ruin the trip",
+            "You accept that major domestic attractions may be busy"
+          ]
+        },
+        {
+          heading: "Choose another period",
+          items: [
+            "The route requires frequent intercity moves",
+            "Every meal depends on a specific small venue",
+            "Several must-see sites have no current holiday notice",
+            "You need ordinary weekday business services",
+            "The main goal is low-crowd sightseeing rather than the festival"
+          ]
+        }
       ]
     },
     {
@@ -214,37 +278,44 @@ const body = {
       type: "callout",
       tone: "neutral",
       title: "What this guide owns",
-      body: "This page explains how Chunyun mobility and Spring Festival’s public and family layers interact. It does not own annual holiday dates, compensatory workdays, a live ticket forecast, a national custom checklist or access to a private family celebration."
+      body: "This page owns the decision to visit China during Spring Festival and the interaction among transport pressure, business openings, public events and family boundaries. The public-holiday calendar owns annual mainland days off and compensatory workdays. Operators own live tickets and hours. No page can promise entry to a household celebration."
     },
     {
       id: "help-cta",
       type: "callout",
       tone: "decision",
-      title: "Need a human check?",
-      body: "Send your dates, group size and approximate budget. Homeground can help identify which moves need current verification and which festival plans need a public fallback."
+      title: "A light human check can protect the fragile parts",
+      body: "If your dates overlap Spring Festival, send the cities, necessary transfers and two or three non-negotiable experiences. Homeground can point out which assumptions need a current source and where a simple fallback is enough, without turning the holiday into a sales script."
     },
     {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",
       items: [
-        { "label": "Browse China culture guides", "href": "/culture/", "description": "Keep living practices connected to their communities and current settings." },
-        { "label": "Check China’s public-holiday travel calendar", "href": "/guides/china-public-holidays-travel-calendar/", "description": "Use the official annual dates and compensatory workdays owner." },
-        { "label": "Prepare for a first high-speed train", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Handle passenger records, stations and boarding after choosing the route." },
-        { "label": "Prepare for a first shared meal", "href": "/guides/first-shared-meal-in-china/", "description": "Understand ordinary ordering and sharing without treating a family reunion as a restaurant experience." }
+        { "label": "China public-holiday travel calendar", "href": "/guides/china-public-holidays-travel-calendar/", "description": "Use the annual mainland days off, compensatory workdays and crowd windows." },
+        { "label": "First China trip planner", "href": "/first-trip-to-china/", "description": "Build the whole journey around a small number of sound decisions." },
+        { "label": "China high-speed train for first timers", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Prepare passenger records, stations and boarding after choosing the route." },
+        { "label": "Night train or daytime high-speed rail", "href": "/guides/china-night-train-or-daytime-high-speed-rail/", "description": "Reduce hotel changes and protect usable daytime." },
+        { "label": "First shared meal in China", "href": "/guides/first-shared-meal-in-china/", "description": "Understand an ordinary shared restaurant meal without confusing it with a household reunion." }
       ]
     },
     {
       id: "sources",
       type: "sources",
-      title: "Sources and evidence",
+      title: "Sources and annual evidence",
       items: [
-        { "label": "Spring Festival social practices", "url": "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126", "publisher": "UNESCO Intangible Cultural Heritage", "reviewedAt": "2026-08-13" },
-        { "label": "2026 integrated Chunyun plan", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "Ministry of Transport of the People’s Republic of China", "reviewedAt": "2026-08-13" },
-        { "label": "China Railway waitlist FAQ", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "China Railway 12306", "reviewedAt": "2026-08-13" },
-        { "label": "Maintaining Ties and Reaffirming Unity: Family Rituals in the Age of Migration", "url": "https://www.tandfonline.com/doi/full/10.1080/15267431.2018.1475391", "publisher": "Journal of Family Communication", "reviewedAt": "2026-08-13" },
-        { "label": "Reverse traffic flows during the Spring Festival travel rush", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-13" },
-        { "label": "Hero image: Guangzhou South Chunyun waiting hall by 小溪Yang, CC BY 2.5; cropped and resized", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-13" }
+        { "label": "2027 Gregorian–lunar calendar", "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf", "publisher": "Hong Kong Observatory", "reviewedAt": "2026-08-22" },
+        { "label": "2027 Lunar New Year's Day gazetted as 6 February in Hong Kong", "url": "https://www.info.gov.hk/gia/general/202605/15/P2026051400300.htm", "publisher": "Government of the Hong Kong SAR", "reviewedAt": "2026-08-22" },
+        { "label": "2026 mainland public-holiday arrangement", "url": "https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf", "publisher": "State Council of the People's Republic of China", "reviewedAt": "2026-08-22" },
+        { "label": "2026 integrated Chunyun plan", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "Ministry of Transport of the People's Republic of China", "reviewedAt": "2026-08-22" },
+        { "label": "2026 national Spring Festival tourism results", "url": "https://english.www.gov.cn/archive/statistics/202602/24/content_WS699da7c5c6d00ca5f9a09421.html", "publisher": "State Council of the People's Republic of China", "reviewedAt": "2026-08-22" },
+        { "label": "2026 Shanghai Chunyun phases and peak forecast", "url": "https://english.shanghai.gov.cn/en-LatestNews/20260127/d764a117cb9748bb8ab1b29df52a70f6.html", "publisher": "Shanghai Municipal Government", "reviewedAt": "2026-08-22" },
+        { "label": "2026 Shanghai Spring Festival tourism and business results", "url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260224/5d3c35722d5f43b0a7bdc0e16e5e513f.html", "publisher": "Shanghai Municipal Government", "reviewedAt": "2026-08-22" },
+        { "label": "2026 Beijing temple fairs and public park events", "url": "https://english.beijing.gov.cn/latest/news/202602/t20260218_4524489.html", "publisher": "Beijing Municipal Government", "reviewedAt": "2026-08-22" },
+        { "label": "Spring Festival social practices", "url": "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126", "publisher": "UNESCO Intangible Cultural Heritage", "reviewedAt": "2026-08-22" },
+        { "label": "China Railway waitlist FAQ", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "China Railway 12306", "reviewedAt": "2026-08-22" },
+        { "label": "Reverse traffic flows during the Spring Festival travel rush", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-22" },
+        { "label": "Hero image: Guangzhou South Chunyun waiting hall by 小溪Yang, CC BY 2.5; cropped and resized", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-22" }
       ]
     }
   ]

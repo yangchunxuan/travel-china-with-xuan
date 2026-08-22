@@ -5,13 +5,16 @@
   "audienceMarkets": [
     "global"
   ],
-  "format": "festival-mobility-and-boundaries-guide",
+  "format": "festival-trip-decision-guide",
   "topics": [
     "spring-festival",
     "lunar-new-year",
     "chunyun",
     "family-customs",
-    "visitor-etiquette"
+    "visitor-etiquette",
+    "holiday-crowds",
+    "business-hours",
+    "public-events"
   ],
   "destinations": [
     "china"
@@ -21,12 +24,12 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-14",
-  "sourceReviewedDate": "2026-08-13",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
   "search": {
     "section": "culture",
     "family": "task",
-    "primaryIntent": "understand"
+    "primaryIntent": "plan"
   },
   "layout": {
     "mode": "template",
@@ -35,64 +38,67 @@
   "locales": {
     "en": {
       "path": "/guides/lunar-new-year-customs-for-visitors/",
-      "title": "Spring Festival in China: Chunyun, Family Customs and Visitor Boundaries",
-      "headline": "Spring Festival Is More Than “Chinese New Year”",
-      "description": "Understand how Chunyun mobility, family reunion and public Spring Festival events overlap—and where visitors should verify, wait for an invitation or step back.",
+      "title": "Chinese New Year in China: Should Foreign Travellers Visit?",
+      "headline": "Should You Visit China During Chinese New Year? Yes—With a Different Kind of Plan",
+      "description": "Decide whether Spring Festival suits your China trip, which days disrupt transport and business, why quiet streets can hide crowded attractions, and what to verify.",
       "heroAlt": "A crowded waiting hall at Guangzhou South Railway Station during Chunyun on 21 January 2020.",
-      "navTitle": "Spring Festival for visitors",
-      "featuredLinkLabel": "Understand Chunyun and family boundaries",
+      "navTitle": "China during Chinese New Year",
+      "featuredLinkLabel": "Plan a Spring Festival trip",
       "openGraphLocale": "en_US",
       "cardTags": [
         "Spring Festival",
         "Chunyun",
-        "Visitor etiquette"
+        "Travel decision"
       ]
     },
     "zh": {
       "path": "/zh/guides/lunar-new-year-customs-for-visitors/",
-      "title": "春节、春运与家庭习俗：外国访客的边界指南",
-      "headline": "春节不只是“中国新年”：全国性春运返乡潮如何运转",
-      "description": "理解春运、家庭团聚与公共节庆如何交叠，分清哪些信息要当年核验、哪些家庭习俗需要明确邀请，以及何时应当退后一步。",
+      "title": "外国游客春节来中国值得吗：日期、交通、营业与活动",
+      "headline": "春节值得来中国吗？值得，但要换一种旅行计划",
+      "description": "判断春节是否适合你的中国行程，弄清哪些日期真正影响交通和营业、为何街区安静但景区拥挤，以及出发前必须核验什么。",
       "heroAlt": "2020年1月21日春运期间，广州南站拥挤的候车大厅。",
-      "navTitle": "外国访客理解春节",
-      "featuredLinkLabel": "理解春运与家庭边界",
+      "navTitle": "外国游客春节来中国",
+      "featuredLinkLabel": "规划春节中国行",
       "openGraphLocale": "zh_CN",
       "cardTags": [
         "春节",
         "春运",
-        "访客礼仪"
+        "旅行决策"
       ]
     },
     "ko": {
       "path": "/ko/guides/lunar-new-year-customs-for-visitors/",
-      "title": "중국 춘절 이해하기: 춘윈, 가족 관습과 여행자의 경계",
-      "headline": "춘절은 단순한 ‘중국 설날’이 아닙니다",
-      "description": "춘윈 이동, 가족 재회와 공개 춘절 행사가 어떻게 겹치는지 이해하고, 당해 확인할 정보와 초대를 기다려야 할 가족 관습을 구분합니다.",
+      "title": "중국 설날 여행, 가도 될까: 날짜·교통·영업·행사",
+      "headline": "춘절에 중국을 여행해도 될까요? 네, 계획 방식은 달라야 합니다",
+      "description": "춘절이 내 중국 여행에 맞는지 판단하고 교통과 영업에 실제로 영향을 주는 날, 조용한 거리와 붐비는 명소의 공존, 출발 전 확인할 내용을 정리합니다.",
       "heroAlt": "2020년 1월 21일 춘윈 기간 광저우남역의 붐비는 대합실.",
-      "navTitle": "여행자를 위한 춘절",
-      "featuredLinkLabel": "춘윈과 가족의 경계 이해하기",
+      "navTitle": "중국 춘절 여행",
+      "featuredLinkLabel": "춘절 중국 여행 계획하기",
       "openGraphLocale": "ko_KR",
       "cardTags": [
         "춘절",
         "춘윈",
-        "여행 예절"
+        "여행 결정"
       ]
     }
   },
   "searchTerms": {
     "en": [
-      "Chinese New Year customs for visitors",
-      "Spring Festival travel etiquette China",
+      "Chinese New Year in China travel",
+      "should I visit China during Chinese New Year",
+      "what closes during Spring Festival China",
       "Chunyun and Chinese New Year travel"
     ],
     "zh": [
-      "春节游客礼仪",
-      "外国游客过春节注意什么",
+      "外国游客春节来中国",
+      "春节来中国旅游合适吗",
+      "春节哪些地方关门",
       "春运和春节旅行"
     ],
     "ko": [
-      "중국 춘절 여행 예절",
-      "외국인 중국 설날 풍습",
+      "중국 설날 여행",
+      "춘절에 중국 여행 가도 될까",
+      "중국 춘절 영업시간",
       "춘윈과 춘절 여행"
     ]
   }
