@@ -18,6 +18,11 @@ import {
 } from "./homegroundLegalI18n";
 import { getHomegroundPrivacyCopy } from "./homegroundPrivacyI18n";
 import { getHomegroundStudioCopy } from "./homegroundStudioI18n";
+import {
+  getLegacySystemContentLifecycle,
+  type LegacySystemContentId,
+  type LegacySystemContentLifecycleRecord,
+} from "./legacySystemContentLifecycle";
 import { getEditorialAuthor } from "./editorialIdentity";
 import {
   productPreviewCopy,
@@ -68,7 +73,7 @@ function systemNode({
   family,
   primaryIntent,
   definitions,
-  dateModified,
+  lifecycle,
   schemaTypes = ["WebPage"],
   legacyAliases = [],
   entityIds = ["country-china"],
@@ -76,12 +81,12 @@ function systemNode({
   refreshCadence = "on-source-change",
   nextReviewAt,
 }: {
-  id: string;
+  id: LegacySystemContentId;
   section: ContentSection;
   family: ContentFamily;
   primaryIntent: ContentIntent;
   definitions: Partial<Record<HomegroundLocale, SystemLocaleDefinition>>;
-  dateModified: string;
+  lifecycle: LegacySystemContentLifecycleRecord;
   schemaTypes?: readonly string[];
   legacyAliases?: readonly string[];
   entityIds?: readonly string[];
@@ -106,9 +111,9 @@ function systemNode({
     schemaTypes,
     legacyAliases,
     dates: {
-      datePublished: dateModified,
-      dateModified,
-      lastReviewed: dateModified,
+      datePublished: lifecycle.datePublished,
+      dateModified: lifecycle.dateModified,
+      lastReviewed: lifecycle.lastReviewed,
     },
     updatePolicy: {
       volatility,
@@ -235,7 +240,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "entity",
       primaryIntent: "understand",
       definitions: home,
-      dateModified: "2026-07-24",
+      lifecycle: getLegacySystemContentLifecycle("home"),
       schemaTypes: ["WebPage", "WebSite"],
     }),
     systemNode({
@@ -244,7 +249,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "service",
       primaryIntent: "purchase",
       definitions: studio,
-      dateModified: "2026-07-22",
+      lifecycle: getLegacySystemContentLifecycle("studio"),
       schemaTypes: ["AboutPage"],
     }),
     systemNode({
@@ -253,7 +258,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "entity",
       primaryIntent: "understand",
       definitions: evan,
-      dateModified: "2026-08-13",
+      lifecycle: getLegacySystemContentLifecycle("author-evan"),
       schemaTypes: ["ProfilePage", "Person"],
     }),
     systemNode({
@@ -262,7 +267,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "entity",
       primaryIntent: "understand",
       definitions: guides,
-      dateModified: "2026-08-09",
+      lifecycle: getLegacySystemContentLifecycle("guides"),
       schemaTypes: ["CollectionPage", "ItemList"],
     }),
     systemNode({
@@ -271,7 +276,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "service",
       primaryIntent: "purchase",
       definitions: itineraryReview,
-      dateModified: "2026-07-22",
+      lifecycle: getLegacySystemContentLifecycle("itinerary-review"),
       schemaTypes: ["Service"],
     }),
     systemNode({
@@ -280,7 +285,9 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "service",
       primaryIntent: "purchase",
       definitions: zhangjiajiePrivateTour,
-      dateModified: "2026-08-16",
+      lifecycle: getLegacySystemContentLifecycle(
+        "zhangjiajie-4-day-private-tour",
+      ),
       schemaTypes: ["WebPage", "TouristTrip"],
       entityIds: ["city-zhangjiajie"],
       volatility: "high",
@@ -302,7 +309,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
           openGraphLocale: "en_GB",
         },
       },
-      dateModified: "2026-07-24",
+      lifecycle: getLegacySystemContentLifecycle("entry-requirements"),
       schemaTypes: ["CollectionPage", "ItemList"],
       legacyAliases: ["/china-visa-free-uk-canada/"],
     }),
@@ -312,7 +319,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       family: "task",
       primaryIntent: "understand",
       definitions: privacy,
-      dateModified: "2026-07-24",
+      lifecycle: getLegacySystemContentLifecycle("privacy"),
     }),
   ];
 
@@ -338,7 +345,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
         family: "task",
         primaryIntent: "understand",
         definitions,
-        dateModified: "2026-07-24",
+        lifecycle: getLegacySystemContentLifecycle(pageId),
       }),
     );
   }

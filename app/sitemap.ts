@@ -44,13 +44,25 @@ function changeFrequency(entry: ContentManifestEntry) {
   return "monthly" as const;
 }
 
+/**
+ * Sitemap lastmod is a public-change signal. A review can be newer without
+ * changing the rendered document, so lastReviewed must not manufacture a
+ * lastmod date. Build and deployment time are deliberately excluded too.
+ */
+export function sitemapLastModified(entry: ContentManifestEntry) {
+  return entry.dates.dateModified ?? entry.dates.datePublished ?? undefined;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return getIndexableManifestEntries(searchPlatformManifest).map((entry) => ({
-    url: `${base}${entry.canonicalPath}`,
-    lastModified:
-      entry.dates.dateModified ?? entry.dates.datePublished ?? entry.dates.lastReviewed,
-    changeFrequency: changeFrequency(entry),
-    priority: sitemapPriority(entry),
-    alternates: { languages: absoluteManifestAlternates(entry) },
-  }));
+  return getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
+    const lastModified = sitemapLastModified(entry);
+
+    return {
+      url: `${base}${entry.canonicalPath}`,
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: changeFrequency(entry),
+      priority: sitemapPriority(entry),
+      alternates: { languages: absoluteManifestAlternates(entry) },
+    };
+  });
 }
