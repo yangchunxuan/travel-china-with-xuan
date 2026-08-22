@@ -26,6 +26,7 @@ import {
 } from "../_shared/runtime.ts";
 
 declare const Deno: {
+  env: { get(name: string): string | undefined };
   serve(handler: (request: Request) => Response | Promise<Response>): void;
 };
 
@@ -59,6 +60,17 @@ type ObservableTrafficRequestType =
   | typeof trafficSessionStartRequestType
   | typeof trafficEventBatchRequestType;
 
+function trafficSecretIsValid(value: string): boolean {
+  return (
+    value.length >= 32 &&
+    value === value.trim() &&
+    !/[\s<>]/u.test(value) &&
+    !/(?:change[_-]?me|replace[_-]?me|placeholder|secret-min-\d+-chars)/iu.test(
+      value,
+    )
+  );
+}
+
 function validateIndependentTrafficSecrets(): void {
   const names = [
     "TRAFFIC_SESSION_HASH_SECRET",
@@ -66,9 +78,14 @@ function validateIndependentTrafficSecrets(): void {
     "TRAFFIC_SESSION_CREDENTIAL_SECRET",
     "TRAFFIC_ATTRIBUTION_LINK_SIGNING_SECRET",
   ] as const;
-  const values = names.map((name) => requiredEnv(name));
+  const values = names.map((name) => {
+    const rawValue = Deno.env.get(name);
+    const value = requiredEnv(name);
+    if (rawValue !== value) throw new Error("invalid_traffic_secrets");
+    return value;
+  });
   if (
-    values.some((value) => value.length < 32) ||
+    values.some((value) => !trafficSecretIsValid(value)) ||
     new Set(values).size !== values.length
   ) {
     throw new Error("invalid_traffic_secrets");

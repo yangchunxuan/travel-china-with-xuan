@@ -6,7 +6,7 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://homegroundchina.com/"),
   applicationName: "Homeground China",
-  referrer: "strict-origin-when-cross-origin",
+  referrer: "origin",
   verification: {
     other: {
       "naver-site-verification":

@@ -114,6 +114,11 @@ do not copy them into GitHub variables or try to replace them.
 | `TRAFFIC_GLOBAL_RATE_LIMIT_24_HOURS` | Approved initial value 2000 accepted events. |
 | `ADMIN_TRAFFIC_API_ENABLED` | Independent Admin traffic read kill switch; missing or false keeps only `admin-traffic` disabled. It never overrides the separate `ADMIN_API_ENABLED` master gate. This runbook does not authorize setting it true. |
 
+The four traffic secrets must also be free of whitespace and placeholder syntax
+such as `CHANGE_ME`, `REPLACE_ME`, angle brackets or `secret-min-N-chars`.
+The collector rejects those values and any reuse across the four roles before
+it parses a request body or calls an RPC.
+
 The private Admin endpoint requires both `ADMIN_API_ENABLED=true` and
 `ADMIN_TRAFFIC_API_ENABLED=true` before it can read its fixed aggregate RPC.
 It also retains the normal JWT gateway, handler-side Auth verification, aal2,
@@ -378,18 +383,50 @@ Use the narrowest reversible control and preserve evidence:
 
 1. Before reverting or redeploying `admin-traffic`, set
    `ADMIN_TRAFFIC_API_ENABLED=false` and have an authorized, allow-listed aal2
-   administrator confirm `503 traffic_disabled`. Redeploy the last known-good
-   `admin-traffic` revision only with its normal JWT gateway. Do not disable the
-   global Admin API unless the broader Admin incident procedure requires it.
+   administrator confirm the exact `503 traffic_disabled` response with no
+   traffic aggregation RPC. A rollback target is eligible only when reviewed
+   source or a provenance-bound build artifact proves that it reads the
+   independent `ADMIN_TRAFFIC_API_ENABLED` default-off gate after authorization
+   and before `get_homeground_admin_traffic`. Redeploy the last known-good
+   `admin-traffic` revision only when it meets that invariant and only with its
+   normal JWT gateway. Read back the exact deployed revision. While the
+   independent switch remains false, repeat the authorized aal2 probe and retain
+   evidence of both the exact `503 traffic_disabled` response and zero traffic
+   aggregation RPCs. If no compatible revision exists, keep the independent
+   switch false, disable the global Admin API too when necessary, and repair
+   forward; do not reactivate an older handler that ignores the switch.
 2. Set `TRAFFIC_EVENTS_ENABLED=false` before any collector Edge rollback. Read
    back the setting and confirm an allowed-origin POST returns
    `503 collection_paused` before parsing.
 3. Set the public repository switch false and deploy a new static build so new
    page loads stop attempting collection. Existing tabs may continue calling
    the endpoint, but the server gate must reject them.
-4. If the regression is in the collector Edge revision, redeploy the last known-good
-   function only while the server gate remains false. Repeat wrong-origin,
-   disabled and contract checks before considering reactivation.
+4. If the regression is in the collector Edge revision, a rollback target is
+   eligible for reactivation only when reviewed source or a provenance-bound
+   build artifact proves both of these invariants:
+
+   - `consume_homeground_traffic_session_start_rate_limit_v1` executes after
+     session-start validation and before `issueSessionCredential`;
+   - before any request-body read, RPC or credential operation, all four traffic
+     secrets are read in their raw form and rejected unless each raw value equals
+     its trimmed value, is at least 32 characters, contains no whitespace, angle
+     brackets or placeholder marker, and is distinct from the other three.
+
+   In particular, the target must preserve the equivalent of
+   `Deno.env.get`, `trafficSecretIsValid` and
+   `validateIndependentTrafficSecrets` in that pre-parse order. A revision that
+   lacks either invariant—including a revision that accepts the former public
+   `<traffic-...-secret-min-32-chars>` examples—must remain under
+   `TRAFFIC_EVENTS_ENABLED=false`; use a separately reviewed forward repair and
+   do not reactivate it. Deploy only a compatible target while the server gate
+   remains false, then read back and record the exact deployed revision. Run
+   `npm run test:traffic-ops` against that exact source (or retain equivalent
+   provenance-bound security-control evidence), read back that the limiter RPC
+   exists and that execute remains revoked from `public`, `anon` and
+   `authenticated` while granted only to `service_role`, and repeat the
+   allowed-origin probe to confirm exact `503 collection_paused` after the
+   deploy. Only after those checks, plus wrong-origin and contract checks, may a
+   separate approval consider reactivation.
 5. If a migration is implicated, do not run `db reset`, delete tables, truncate
    data or invent a down migration during the incident. Keep collection paused,
    preserve the database and logs, and use a separately reviewed forward repair
@@ -451,7 +488,9 @@ Store the following without visitor data or credentials:
 - aggregate before/after counts and attribution queue health;
 - four cron definitions and recent success timestamps;
 - frontend consent network matrix and exported-bundle secret scan;
-- activation, observation and rollback owners;
+- activation, observation and rollback owners, exact deployed revision read-back
+  and evidence that each rollback target preserves its independent kill switch
+  and bootstrap limiter;
 - final decision: `HOLD`, `STAGING ONLY` or `PRODUCTION ACTIVE`.
 
 Passing repository tests proves configuration contracts in source. It does not

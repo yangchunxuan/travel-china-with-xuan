@@ -5,7 +5,10 @@ import {
   readAnalyticsConsent,
   subscribeAnalyticsConsent,
 } from "./analyticsConsent";
-import { thirdPartyMeasurementLocationIsSafe } from "./analyticsLocation";
+import {
+  metaMeasurementLocationIsSafe,
+  thirdPartyMeasurementLocationIsSafe,
+} from "./analyticsLocation";
 
 export const ANALYTICS_ENABLED =
   process.env.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED === "true";
@@ -677,7 +680,7 @@ export function initializeMetaPixel() {
     !ANALYTICS_ENABLED ||
     !META_PIXEL_ID ||
     !hasMarketingConsent() ||
-    !thirdPartyMeasurementLocationIsSafe() ||
+    !metaMeasurementLocationIsSafe() ||
     typeof window === "undefined"
   ) {
     return false;
@@ -1081,7 +1084,7 @@ function dispatchMetaEvent(
     !ANALYTICS_ENABLED ||
     !META_PIXEL_ID ||
     !hasMarketingConsent() ||
-    !thirdPartyMeasurementLocationIsSafe() ||
+    !metaMeasurementLocationIsSafe() ||
     typeof window === "undefined"
   ) {
     return;
@@ -1121,12 +1124,13 @@ export function trackEvent(
     }
     void dispatchFirstPartyEvent(name, sanitized);
   }
-  // Meta derives event URLs from window.location and offers no reliable
-  // per-event URL override. Keep Pixel off every query-bearing location;
-  // first-party events retain only the bounded pathname contract.
+  // Meta derives event URLs from window.location and document.referrer and
+  // offers no reliable per-event URL override. Keep Pixel off whenever either
+  // source carries query or fragment metadata; first-party events retain only
+  // the bounded pathname contract.
   if (
     marketingAllowed &&
-    thirdPartyMeasurementLocationIsSafe() &&
+    metaMeasurementLocationIsSafe() &&
     initializeMetaPixel()
   ) {
     dispatchMetaEvent(name, sanitized);
@@ -1195,7 +1199,7 @@ export function trackPageView({
     target === "meta" &&
     META_PIXEL_ID &&
     hasMarketingConsent() &&
-    thirdPartyMeasurementLocationIsSafe() &&
+    metaMeasurementLocationIsSafe() &&
     initializeMetaPixel()
   ) {
     dispatchMetaEvent("page_view", parameters);

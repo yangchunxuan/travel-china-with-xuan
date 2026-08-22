@@ -30,7 +30,7 @@ function workflowValue(contents, name) {
   return match[1].trim();
 }
 
-test("checked-in analytics examples are inert and traffic secrets are role-distinct", async () => {
+test("checked-in analytics and traffic examples are inert by construction", async () => {
   const entries = envEntries(await source(".env.example"));
 
   assert.equal(entries.get("NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED"), "false");
@@ -64,11 +64,15 @@ test("checked-in analytics examples are inert and traffic secrets are role-disti
     "TRAFFIC_ATTRIBUTION_LINK_SIGNING_SECRET",
   ];
   const exampleValues = secretNames.map((name) => entries.get(name));
-  assert.ok(exampleValues.every(Boolean));
-  assert.equal(new Set(exampleValues).size, secretNames.length);
-  for (const value of exampleValues) {
-    assert.match(value, /^<traffic-[a-z0-9-]+-secret-min-32-chars>$/u);
-  }
+  assert.deepEqual(exampleValues, secretNames.map(() => "CHANGE_ME"));
+  assert.ok(exampleValues.every((value) => value.length < 32));
+  assert.equal(new Set(exampleValues).size, 1);
+
+  const runbook = await source("docs/first-party-traffic-operations.md");
+  assert.match(
+    runbook,
+    /free of whitespace and placeholder syntax[\s\S]{0,140}`CHANGE_ME`[\s\S]{0,160}rejects those values and any reuse/u,
+  );
 });
 
 test("CI and deploy default the shared gate off and never inject destinations", async () => {
@@ -267,6 +271,38 @@ test("runbook makes pause, rollback and key rotation fail closed", async () => {
   assert.match(
     runbook,
     /Set `TRAFFIC_EVENTS_ENABLED=false` before any collector Edge rollback[\s\S]+`503 collection_paused`/u,
+  );
+  assert.match(
+    runbook,
+    /rollback target is eligible only when[\s\S]{0,280}`ADMIN_TRAFFIC_API_ENABLED`[\s\S]{0,180}before `get_homeground_admin_traffic`/u,
+  );
+  assert.match(
+    runbook,
+    /Read back the exact deployed revision[\s\S]{0,600}exact `503 traffic_disabled`[\s\S]{0,180}zero traffic[\s\S]{0,30}aggregation RPCs/u,
+  );
+  assert.match(
+    runbook,
+    /If no compatible revision exists[\s\S]{0,240}repair[\s\S]{0,40}forward[\s\S]{0,120}do not reactivate an older handler/u,
+  );
+  assert.match(
+    runbook,
+    /eligible for reactivation only when[\s\S]{0,260}`consume_homeground_traffic_session_start_rate_limit_v1`[\s\S]{0,180}before `issueSessionCredential`/u,
+  );
+  assert.match(
+    runbook,
+    /before any request-body read, RPC or credential operation[\s\S]{0,260}raw value equals[\s\S]{0,180}at least 32 characters[\s\S]{0,180}distinct from the other three/u,
+  );
+  assert.match(
+    runbook,
+    /`Deno\.env\.get`[\s\S]{0,100}`trafficSecretIsValid`[\s\S]{0,100}`validateIndependentTrafficSecrets`[\s\S]{0,220}former public[\s\S]{0,80}`<traffic-\.\.\.-secret-min-32-chars>` examples[\s\S]{0,120}`TRAFFIC_EVENTS_ENABLED=false`/u,
+  );
+  assert.match(
+    runbook,
+    /lacks either invariant[\s\S]{0,300}`TRAFFIC_EVENTS_ENABLED=false`[\s\S]{0,160}do not reactivate it/u,
+  );
+  assert.match(
+    runbook,
+    /`npm run test:traffic-ops`[\s\S]{0,280}revoked from `public`, `anon` and[\s\S]{0,100}only to `service_role`[\s\S]{0,180}exact `503 collection_paused` after the[\s\S]{0,30}deploy/u,
   );
   assert.match(
     runbook,

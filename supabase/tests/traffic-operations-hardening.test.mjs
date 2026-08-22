@@ -62,6 +62,36 @@ test("valid session bootstrap is limited before credential issuance", async () =
   assert.doesNotMatch(endpoint, /p_(?:raw_)?ip(?:_address)?:/u);
 });
 
+test("checked-in traffic secret sentinels are rejected before any RPC", async () => {
+  const [endpoint, environment] = await Promise.all([
+    source("supabase/functions/v1-traffic-events/index.ts"),
+    source(".env.example"),
+  ]);
+
+  for (const name of [
+    "TRAFFIC_SESSION_HASH_SECRET",
+    "TRAFFIC_RATE_LIMIT_HASH_SECRET",
+    "TRAFFIC_SESSION_CREDENTIAL_SECRET",
+    "TRAFFIC_ATTRIBUTION_LINK_SIGNING_SECRET",
+  ]) {
+    assert.match(environment, new RegExp(`^${name}=CHANGE_ME$`, "mu"));
+  }
+  assert.ok(endpoint.includes("function trafficSecretIsValid"));
+  assert.ok(endpoint.includes("value.length >= 32"));
+  assert.ok(endpoint.includes("!/[\\s<>]/u.test(value)"));
+  assert.ok(endpoint.includes("change[_-]?me"));
+  assert.ok(endpoint.includes("const rawValue = Deno.env.get(name)"));
+  assert.ok(endpoint.includes("if (rawValue !== value)"));
+  const secretValidation = endpoint.indexOf(
+    "validateIndependentTrafficSecrets();",
+  );
+  const firstRpc = endpoint.indexOf(
+    '"consume_homeground_traffic_session_start_rate_limit_v1"',
+    secretValidation,
+  );
+  assert.ok(secretValidation >= 0 && firstRpc > secretValidation);
+});
+
 test("session bootstrap limiter is atomic, private and charges denied attempts", async () => {
   const migration = await source(hardeningMigrationPath);
 

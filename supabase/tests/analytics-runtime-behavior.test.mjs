@@ -351,6 +351,40 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     unsubscribe();
   });
 
+  await context.test("a current fragment blocks Meta initialization and events", () => {
+    installBrowser({
+      href: "https://homegroundchina.com/guides/#PRIVATE-FRAGMENT",
+    });
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+
+    assert.equal(location.thirdPartyMeasurementLocationIsSafe(), false);
+    assert.equal(location.metaMeasurementLocationIsSafe(), false);
+    assert.equal(analytics.initializeMetaPixel(), false);
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "meta",
+    });
+    assert.equal(window.fbq, undefined);
+  });
+
+  await context.test("a query-bearing referrer blocks Meta initialization and events", () => {
+    installBrowser({
+      referrer:
+        "https://homegroundchina.com/guides/search/?q=PREVIOUS-PRIVATE-QUESTION",
+    });
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+
+    assert.equal(location.thirdPartyMeasurementLocationIsSafe(), true);
+    assert.equal(location.metaMeasurementLocationIsSafe(), false);
+    assert.equal(analytics.initializeMetaPixel(), false);
+    analytics.trackEvent("guide_search_opened", {
+      page_language: "en",
+      search_surface: "guides_hub",
+    });
+    assert.equal(window.fbq, undefined);
+  });
+
   await context.test("page views dedupe independently across grants and re-grants", () => {
     installBrowser();
     const { pageViews } = loadCompiledModules(outputDirectory);

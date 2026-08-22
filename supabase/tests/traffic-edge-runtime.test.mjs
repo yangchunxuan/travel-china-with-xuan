@@ -160,6 +160,45 @@ test("traffic Edge runtime enforces bootstrap limits and preserves event idempot
       }
     });
 
+    await t.test("placeholder and whitespace-bearing traffic secrets fail closed", async () => {
+      const name = "TRAFFIC_SESSION_HASH_SECRET";
+      const original = env.get(name);
+      const rpcCountBefore = rpcCalls.length;
+      try {
+        for (const unsafeValue of [
+          "CHANGE_ME",
+          `CHANGE_ME_${"a".repeat(32)}`,
+          `<${"b".repeat(40)}>`,
+          `${"c".repeat(32)}\n`,
+        ]) {
+          env.set(name, unsafeValue);
+          const response = await capturedHandler(request(validSessionStart()));
+          const body = await response.json();
+          assert.equal(response.status, 503);
+          assert.equal(body.error.code, "service_not_configured");
+          assert.equal(rpcCalls.length, rpcCountBefore);
+        }
+      } finally {
+        env.set(name, original);
+      }
+    });
+
+    await t.test("traffic secrets must remain role-distinct", async () => {
+      const name = "TRAFFIC_SESSION_HASH_SECRET";
+      const original = env.get(name);
+      const rpcCountBefore = rpcCalls.length;
+      try {
+        env.set(name, env.get("TRAFFIC_RATE_LIMIT_HASH_SECRET"));
+        const response = await capturedHandler(request(validSessionStart()));
+        const body = await response.json();
+        assert.equal(response.status, 503);
+        assert.equal(body.error.code, "service_not_configured");
+        assert.equal(rpcCalls.length, rpcCountBefore);
+      } finally {
+        env.set(name, original);
+      }
+    });
+
     await t.test("CORS never substitutes for the application rate limit", async () => {
       rpcReplies.push({
         name: "consume_homeground_traffic_session_start_rate_limit_v1",

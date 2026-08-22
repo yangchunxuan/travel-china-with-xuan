@@ -74,17 +74,22 @@ test("first-touch attribution does not turn internal links into acquisition", as
 });
 
 test("free-text guide searches stay out of third-party measurement URLs", async () => {
-  const [analytics, location, englishRoute, localizedRoute] = await Promise.all([
+  const [analytics, location, englishLayout, localizedLayout] = await Promise.all([
     source("lib/analytics.ts"),
     source("lib/analyticsLocation.ts"),
-    source("app/(default)/guides/search/page.tsx"),
-    source("app/(localized)/[locale]/guides/search/page.tsx"),
+    source("app/(default)/layout.tsx"),
+    source("app/(localized)/[locale]/layout.tsx"),
   ]);
 
   assert.match(
     location,
-    /thirdPartyMeasurementLocationIsSafe[\s\S]{0,500}url\.search === ""/u,
-    "Every query-bearing route must be ineligible for third-party measurement",
+    /thirdPartyMeasurementLocationIsSafe[\s\S]{0,500}url\.search === "" && url\.hash === ""/u,
+    "Every query- or fragment-bearing route must be ineligible for third-party measurement",
+  );
+  assert.match(
+    location,
+    /metaMeasurementLocationIsSafe[\s\S]{0,300}document\.referrer[\s\S]{0,300}referrerUrl\.search === "" && referrerUrl\.hash === ""/u,
+    "A query- or fragment-bearing referrer must also block third-party measurement",
   );
   assert.match(
     analytics,
@@ -93,16 +98,18 @@ test("free-text guide searches stay out of third-party measurement URLs", async 
   );
   assert.match(
     analytics,
-    /marketingAllowed &&[\s\S]{0,120}thirdPartyMeasurementLocationIsSafe\(\)/u,
-    "Meta events must be suppressed while any query is in the URL",
+    /marketingAllowed &&[\s\S]{0,120}metaMeasurementLocationIsSafe\(\)/u,
+    "Meta events must be suppressed for unsafe current or referring URLs",
   );
   assert.match(
     analytics,
     /fbq\.disablePushState = true[\s\S]{0,260}fbq\("set", "autoConfig", false, META_PIXEL_ID\)/u,
     "Meta automatic history PageViews and automatic metadata collection must stay disabled",
   );
-  assert.match(englishRoute, /referrer: "origin"/u);
-  assert.match(localizedRoute, /referrer: "origin"/u);
+  for (const layout of [englishLayout, localizedLayout]) {
+    assert.match(layout, /^\s{2,4}referrer: "origin",\s*$/mu);
+    assert.doesNotMatch(layout, /strict-origin-when-cross-origin/u);
+  }
 });
 
 test("first-party writes require a short-lived server credential", async () => {

@@ -22,6 +22,7 @@ import {
 } from "../lib/analyticsConsent";
 import {
   currentAnalyticsLocationKey,
+  metaMeasurementLocationIsSafe,
   subscribeAnalyticsLocationChanges,
   thirdPartyMeasurementLocationIsSafe,
 } from "../lib/analyticsLocation";
@@ -146,12 +147,12 @@ export function SiteAnalytics({
     }
 
     if (preferences?.marketing) {
-      // Meta reads the current page URL. Remove campaign query values before
-      // its script loads even when the visitor allowed marketing but not
-      // Homeground's first-party analytics.
+      // Meta reads the current page URL and referrer. Remove campaign query
+      // values before its script loads, then keep the Pixel off unless both
+      // browser-provided values are free of query and fragment metadata.
       removeAttributionParametersFromAddressBar();
       if (
-        thirdPartyMeasurementLocationIsSafe() &&
+        metaMeasurementLocationIsSafe() &&
         initializeMetaPixel()
       ) {
         loadExternalScript(
@@ -180,7 +181,8 @@ export function SiteAnalytics({
     }
 
     const pageKey = `${locale}:${pathname}`;
-    const queryFree = thirdPartyMeasurementLocationIsSafe();
+    const thirdPartyLocationSafe = thirdPartyMeasurementLocationIsSafe();
+    const metaLocationSafe = metaMeasurementLocationIsSafe();
 
     if (preferences?.analytics) {
       if (
@@ -193,7 +195,7 @@ export function SiteAnalytics({
         trackPageView({ path: pathname, locale, target: "first_party" });
       }
       if (
-        queryFree &&
+        thirdPartyLocationSafe &&
         consumeAnalyticsPageView(
           pageViewsRef.current,
           "google",
@@ -201,7 +203,7 @@ export function SiteAnalytics({
         )
       ) {
         trackPageView({ path: pathname, locale, target: "google" });
-      } else if (!queryFree) {
+      } else if (!thirdPartyLocationSafe) {
         resetAnalyticsPageView(pageViewsRef.current, "google");
       }
     } else {
@@ -211,7 +213,7 @@ export function SiteAnalytics({
 
     if (
       preferences?.marketing &&
-      queryFree &&
+      metaLocationSafe &&
       consumeAnalyticsPageView(
         pageViewsRef.current,
         "meta",
@@ -219,7 +221,7 @@ export function SiteAnalytics({
       )
     ) {
       trackPageView({ path: pathname, locale, target: "meta" });
-    } else if (!preferences?.marketing || !queryFree) {
+    } else if (!preferences?.marketing || !metaLocationSafe) {
       resetAnalyticsPageView(pageViewsRef.current, "meta");
     }
   }, [

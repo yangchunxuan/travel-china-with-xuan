@@ -119,7 +119,23 @@ export function thirdPartyMeasurementLocationIsSafe(
       value === undefined ? window.location.href : String(value),
       window.location.href,
     );
-    return url.search === "";
+    return url.search === "" && url.hash === "";
+  } catch {
+    return false;
+  }
+}
+
+export function metaMeasurementLocationIsSafe(
+  value?: string | URL,
+  referrerValue?: string,
+) {
+  if (!thirdPartyMeasurementLocationIsSafe(value)) return false;
+  try {
+    const referrer = referrerValue ?? document.referrer;
+    if (referrer === "") return true;
+
+    const referrerUrl = new URL(referrer, window.location.href);
+    return referrerUrl.search === "" && referrerUrl.hash === "";
   } catch {
     return false;
   }
