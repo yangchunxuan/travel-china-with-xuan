@@ -196,7 +196,7 @@ function Brand({
     <Link className={styles.brand} href={homeHref} aria-label={copy.brandAriaLabel}>
       <HomegroundBrandMark className={styles.brandMark} />
       <span className={styles.brandCopy}>
-        <strong>Homeground</strong>
+        <strong>Homeground China</strong>
         <small>{copy.brandTagline}</small>
       </span>
     </Link>

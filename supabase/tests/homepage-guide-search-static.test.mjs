@@ -139,25 +139,16 @@ test("guide rail preserves position while lazy-loading and loads near the native
   assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
 });
 
-test("hero title cycles the full phrase set faster without restoring the visible play button", async () => {
-  const [homepage, title, titleStyles] = await Promise.all([
-    source("components/HomegroundHomePage.tsx"),
-    source("components/RotatingHeroTitle.tsx"),
-    source("components/RotatingHeroTitle.module.css"),
-  ]);
+test("homepage hero keeps the brand promise static and visible", async () => {
+  const homepage = await source("components/HomegroundHomePage.tsx");
 
-  assert.match(title, /AUTO_STEP_MS = 2100/);
-  assert.match(title, /className=\{styles\.motionControl\}/);
-  assert.match(title, /aria-pressed=\{manualPaused\}/);
-  assert.doesNotMatch(title, /function PlayIcon|function PauseIcon/);
-  assert.match(title, /\(index \+ 1\) % availablePhrases\.length/);
-  assert.match(title, /availablePhrases\.map\(\(phrase, index\) =>/);
-  assert.match(title, /onMouseEnter=\{\(\) => setPointerPaused\(true\)\}/);
-  assert.match(title, /onMouseLeave=\{\(\) => setPointerPaused\(false\)\}/);
-  assert.doesNotMatch(title, /PlayIcon|PauseIcon|handleToggle/);
-  assert.doesNotMatch(titleStyles, /\.toggle|\.hasControl/);
-  assert.match(homepage, /pauseLabel=\{copy\.hero\.pauseMotion\}/);
-  assert.match(homepage, /playLabel=\{copy\.hero\.resumeMotion\}/);
+  assert.match(homepage, /<strong lang="en">Homeground China<\/strong>/);
+  assert.match(
+    homepage,
+    /<h1 id="home-hero-title">[\s\S]*copy\.hero\.titleLines/,
+  );
+  assert.doesNotMatch(homepage, /RotatingHeroTitle/);
+  assert.doesNotMatch(homepage, /pauseLabel=|playLabel=/);
 });
 
 test("customer-facing search copy avoids internal implementation language", async () => {

@@ -126,7 +126,7 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   ],
   reviewTitle: "Written and checked",
   reviewBody:
-    "Homeground is an independent China trip-planning studio with our own ground team. The entry facts on this page come from Singapore's ICA and China's National Immigration Administration, checked 20 August 2026. Entry rules change; recheck the official sources before departure.",
+    "Homeground China is a China travel agency with our own ground team. The entry facts on this page come from Singapore's ICA and China's National Immigration Administration, checked 20 August 2026. Entry rules change; recheck the official sources before departure.",
   reviewBoundary:
     "We plan the China trip inside the time the policy gives you. We are not a visa agency and do not file applications.",
   sourcesLabel: "Official sources",
@@ -236,7 +236,7 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   ],
   reviewTitle: "撰写与核查",
   reviewBody:
-    "Homeground 是一家拥有当地团队的独立中国旅行规划工作室。本页入境信息来自新加坡移民与关卡局（ICA）和中国国家移民管理局，并于 2026 年 8 月 20 日核查。入境规定可能变化，出发前请重新查看官方来源。",
+    "Homeground China 是一家拥有当地团队的中国旅行社。本页入境信息来自新加坡移民与关卡局（ICA）和中国国家移民管理局，并于 2026 年 8 月 20 日核查。入境规定可能变化，出发前请重新查看官方来源。",
   reviewBoundary:
     "我们会在政策允许的停留时间内为你规划中国行程。我们不是签证代办机构，也不代为递交申请。",
   sourcesLabel: "官方来源",
@@ -358,7 +358,7 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
   ],
   reviewTitle: "작성 및 검토",
   reviewBody:
-    "Homeground는 자체 현지 팀을 둔 독립 중국 여행 기획 스튜디오입니다. 이 페이지의 입국 정보는 싱가포르 이민국(ICA)과 중국 국가이민관리국 자료를 바탕으로 하며, 2026년 8월 20일에 확인했습니다. 입국 규정은 바뀔 수 있으므로 출발 전에 공식 출처를 다시 확인하세요.",
+    "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지의 입국 정보는 싱가포르 이민국(ICA)과 중국 국가이민관리국 자료를 바탕으로 하며, 2026년 8월 20일에 확인했습니다. 입국 규정은 바뀔 수 있으므로 출발 전에 공식 출처를 다시 확인하세요.",
   reviewBoundary:
     "저희는 정책이 허용하는 기간 안에서 중국 여행을 계획합니다. 비자 대행사가 아니며 신청서를 대신 제출하지 않습니다.",
   sourcesLabel: "공식 출처",

@@ -16,6 +16,11 @@ import {
 import { getGuideSearchCopy } from "../lib/guideSearchI18n";
 import { getGuideSearchDocuments } from "../lib/guideSearchRuntime";
 import {
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
+import {
   getSearchPlatformCopy,
   getSearchSectionPath,
   searchSectionIds,
@@ -60,16 +65,13 @@ function jsonLdForHub(locale: HomegroundLocale) {
         name: copy.metadata.openGraphTitle,
         description: copy.metadata.description,
         inLanguage: home.htmlLang,
-        isPartOf: {
-          "@type": "WebSite",
-          "@id": `${SITE_URL}/#website`,
-          name: "Homeground",
-          url: `${SITE_URL}/`,
-        },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: {
           "@id": listId,
         },
       },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       {
         "@type": "ItemList",
         "@id": listId,

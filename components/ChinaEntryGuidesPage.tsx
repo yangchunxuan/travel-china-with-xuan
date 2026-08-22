@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getGuidesByPillar } from "../lib/guideRegistry";
+import {
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ChinaEntryGuidesPage.module.css";
@@ -60,16 +65,13 @@ function createStructuredData() {
         description:
           "Current China entry rules by passport, travel purpose and route, with official-source guides for UK, US, Canadian, Singaporean and New Zealand passports and eligible transit travellers.",
         inLanguage: "en",
-        isPartOf: {
-          "@type": "WebSite",
-          "@id": `${SITE_URL}/#website`,
-          name: "Homeground",
-          url: `${SITE_URL}/`,
-        },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: {
           "@id": `${PAGE_URL}#guide-list`,
         },
       },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       {
         "@type": "ItemList",
         "@id": `${PAGE_URL}#guide-list`,

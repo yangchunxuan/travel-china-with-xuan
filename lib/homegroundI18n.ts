@@ -2,6 +2,10 @@ export const homegroundLocales = ["en", "zh", "ko"] as const;
 
 export type HomegroundLocale = (typeof homegroundLocales)[number];
 
+export const HOMEGROUND_BRAND_NAME = "Homeground China" as const;
+export const HOMEGROUND_BRAND_SLOGAN =
+  "China, your way. We’ve got your back." as const;
+
 export interface LocalizedOption {
   id: string;
   label: string;
@@ -26,6 +30,7 @@ export interface HomegroundCopy {
   };
   skipLink: string;
   brandTagline: string;
+  businessDescriptor: string;
   navigation: {
     primaryLabel: string;
     mobileLabel: string;
@@ -55,9 +60,6 @@ export interface HomegroundCopy {
     eyebrow: string;
     title: string;
     titleLines?: readonly string[];
-    rotatingPhrases: readonly string[];
-    pauseMotion: string;
-    resumeMotion: string;
     intro: string;
     trustLabel: string;
     trust: readonly string[];
@@ -327,13 +329,16 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "English",
     languageShort: "EN",
     metadata: {
-      title: "Independent China trip planning with a real planner",
+      title:
+        "Homeground China | China Travel Agency for Tailor-Made Trips",
       description:
-        "Contact a Homeground China trip planner by WhatsApp or email. Choose the help you need, with scope and price confirmed before paid work.",
-      openGraphTitle: "Homeground China — Talk to a China trip planner",
+        "Homeground China is a China travel agency for private, tailor-made trips, with practical guides, route design, stays, tickets, transport and local support.",
+      openGraphTitle:
+        "Homeground China — China, your way. We’ve got your back.",
     },
     skipLink: "Skip to main content",
-    brandTagline: "China, your way. We’ve got your back.",
+    brandTagline: HOMEGROUND_BRAND_SLOGAN,
+    businessDescriptor: "China Travel Agency",
     navigation: {
       primaryLabel: "Primary navigation",
       mobileLabel: "Mobile navigation",
@@ -361,19 +366,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "Direct contact · A human next step",
-      title: "How do you want to travel in China?",
-      rotatingPhrases: [
-        "At your pace.",
-        "With your people.",
-        "Around what you love.",
-        "Without the rush.",
-        "With everything connected.",
-      ],
-      pauseMotion: "Pause changing headline",
-      resumeMotion: "Continue changing headline",
+      eyebrow: "China travel agency · Private, tailor-made trips",
+      title: HOMEGROUND_BRAND_SLOGAN,
       intro:
-        "Contact us directly on WhatsApp or Messenger, or send us an email. A travel planner will reply personally.",
+        "Practical China travel guidance first; private route design, stays, tickets, transport and on-the-ground arrangements when you want a travel agency to carry the difficult parts.",
       trustLabel: "What happens next",
       trust: [
         "Free to enquire",
@@ -645,14 +641,14 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       uncertainRetry: "Check and try again",
     },
     footer: {
-      studioLabel: "China trip studio",
+      studioLabel: "China Travel Agency",
       privacy: "Privacy",
       facebook: "Facebook",
       copyright: (year) =>
         `© ${year} Homeground China. Tailored journeys, planned with context.`,
     },
     schemaDescription:
-      "A registered China trip-planning studio where travellers can contact a real planner by WhatsApp or email, choose fixed-scope written route services or custom full-trip support, and confirm scope before paid work begins.",
+      "Homeground China is a China travel agency for private, tailor-made trips, combining practical travel guidance with route design, stays, tickets, transport and local support.",
     finder: {
       hiddenTitle: "Find a sensible starting route",
       introEyebrow: "Start with you, not a map",
@@ -876,13 +872,14 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "简体中文",
     languageShort: "中文",
     metadata: {
-      title: "中国私人旅行规划｜联系真人规划师",
+      title: "Homeground China｜中国私人定制旅行社",
       description:
-        "通过 WhatsApp 或邮箱联系 Homeground 中国旅行规划师。按需要选择帮助方式，付费工作开始前先确认范围和价格。",
-      openGraphTitle: "Homeground China｜联系中国旅行规划师",
+        "Homeground China 是面向海外旅客的中国私人定制旅行社，提供实用旅行指南，以及路线、住宿、门票、交通和落地安排。",
+      openGraphTitle: "Homeground China｜按你的方式，游中国。一路有我们。",
     },
     skipLink: "跳到主要内容",
     brandTagline: "按你的方式，游中国。一路有我们。",
+    businessDescriptor: "中国私人定制旅行社",
     navigation: {
       primaryLabel: "主导航",
       mobileLabel: "移动端导航",
@@ -910,20 +907,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "直接联系 · 由真人继续",
-      title: "你想要怎样的中国旅行？",
-      titleLines: ["你想要怎样的", "中国旅行？"],
-      rotatingPhrases: [
-        "按自己的节奏。",
-        "和重要的人一起。",
-        "围绕真正喜欢的事。",
-        "不被行程追着走。",
-        "一路都有人帮你接好。",
-      ],
-      pauseMotion: "暂停标题切换",
-      resumeMotion: "继续标题切换",
+      eyebrow: "中国旅行社 · 私人定制行程",
+      title: "按你的方式，游中国。一路有我们。",
+      titleLines: ["按你的方式，", "游中国。", "一路有我们。"],
       intro:
-        "可通过 WhatsApp、Messenger 直接联系我们，也可以发送邮件，旅行规划师会亲自回复。",
+        "先用清楚实用的中国旅行指南帮你判断；需要旅行社承接难处理的部分时，再由我们完成私人路线、住宿、门票、交通与落地安排。",
       trustLabel: "接下来会发生什么",
       trust: [
         "提交需求免费",
@@ -1173,14 +1161,14 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       uncertainRetry: "核对并重试",
     },
     footer: {
-      studioLabel: "中国旅行规划工作室",
+      studioLabel: "中国私人定制旅行社",
       privacy: "隐私说明",
       facebook: "Facebook 主页",
       copyright: (year) =>
         `© ${year} Homeground China。每一段旅程，都从真实需求出发。`,
     },
     schemaDescription:
-      "一家已登记的中国旅行规划工作室，可通过 WhatsApp 或邮箱直接联系真人规划师，选择固定范围的书面路线服务或定制全程支持，并在付费工作开始前确认范围。",
+      "Homeground China 是面向海外旅客的中国私人定制旅行社，结合实用旅行指南与路线、住宿、门票、交通和落地安排。",
     finder: {
       hiddenTitle: "找到一条合理的初步路线",
       introEyebrow: "先看你需要什么，而不是先看地图",
@@ -1384,13 +1372,15 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     languageName: "한국어",
     languageShort: "한국어",
     metadata: {
-      title: "중국 개별 여행 설계｜사람 플래너와 상담하기",
+      title: "Homeground China | 중국 맞춤여행 전문 여행사",
       description:
-        "WhatsApp 또는 이메일로 Homeground 중국 여행 플래너에게 문의하세요. 필요한 도움을 고르고 유료 작업 전에 범위와 가격을 확인합니다.",
-      openGraphTitle: "Homeground China | 중국 여행 플래너와 상담하기",
+        "Homeground China는 해외 여행자를 위한 중국 맞춤여행 전문 여행사로, 실용 가이드와 동선·숙소·입장권·교통·현지 진행을 제공합니다.",
+      openGraphTitle:
+        "Homeground China | 중국, 나만의 방식으로. 든든하게 함께합니다.",
     },
     skipLink: "본문으로 바로가기",
     brandTagline: "중국, 나만의 방식으로. 든든하게 함께합니다.",
+    businessDescriptor: "중국 맞춤여행 전문 여행사",
     navigation: {
       primaryLabel: "주요 메뉴",
       mobileLabel: "모바일 메뉴",
@@ -1418,19 +1408,10 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "바로 문의 · 여행 플래너가 직접 답변",
-      title: "어떤 중국 여행을 원하시나요?",
-      rotatingPhrases: [
-        "내 여행 속도에 맞게.",
-        "소중한 사람과 함께.",
-        "좋아하는 것에 집중해서.",
-        "일정에 쫓기지 않게.",
-        "현지에서도 막힘없이.",
-      ],
-      pauseMotion: "제목 전환 일시 정지",
-      resumeMotion: "제목 전환 계속",
+      eyebrow: "중국 전문 여행사 · 맞춤형 자유여행",
+      title: "중국, 나만의 방식으로. 든든하게 함께합니다.",
       intro:
-        "WhatsApp이나 Messenger로 바로 문의하거나 이메일을 보내 주세요. 전담 여행 플래너가 직접 답변합니다.",
+        "먼저 실용적인 중국 여행 정보로 스스로 판단할 수 있게 돕고, 여행사가 필요한 어려운 부분은 맞춤 동선·숙소·입장권·교통·현지 진행으로 이어 갑니다.",
       trustLabel: "다음 단계",
       trust: [
         "문의는 무료",
@@ -1690,14 +1671,14 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       uncertainRetry: "확인하고 다시 시도",
     },
     footer: {
-      studioLabel: "중국 여행 플래닝 스튜디오",
+      studioLabel: "중국 맞춤여행 전문 여행사",
       privacy: "개인정보 처리 안내",
       facebook: "Facebook 페이지",
       copyright: (year) =>
         `© ${year} Homeground China. 실제 조건을 바탕으로 설계하는 맞춤 여행.`,
     },
     schemaDescription:
-      "WhatsApp 또는 이메일로 실제 플래너와 상담하고, 범위가 명확한 서면 여행 동선 서비스나 맞춤 전체 여행 지원을 선택한 뒤 유료 작업 범위를 먼저 확인하는 중국 등록 여행 플래닝 스튜디오.",
+      "Homeground China는 해외 여행자를 위한 중국 맞춤여행 전문 여행사로, 실용 가이드와 동선·숙소·입장권·교통·현지 진행을 연결합니다.",
     finder: {
       hiddenTitle: "현실적인 여행 동선 찾기",
       introEyebrow: "지도보다 사람부터",

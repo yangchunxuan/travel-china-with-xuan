@@ -10,7 +10,7 @@ export const langLabels: Record<Lang, string> = {
 
 const en = {
   meta: {
-    title: "Homeground China — Private, Fully-Handled China Trips · China, handled.",
+    title: "Homeground China | China Travel Agency for Tailor-Made Trips",
     description:
       "Private, tailor-made China trips planned by a Zhangjiajie-born local. No shopping stops, no hidden fees — payments, transport, tickets and an English-speaking guide, all handled.",
   },

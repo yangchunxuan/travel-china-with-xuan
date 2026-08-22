@@ -266,7 +266,7 @@ const en: ChinaItineraryReviewCopy = {
   },
   studio: {
     label: "Who works on your request",
-    title: "A small planning studio, with one clear planning thread.",
+    title: "A China travel agency, with one clear planning thread.",
     body:
       "A lead planner owns the written consultation. Relevant teammates can add first-hand destination and traveller-support experience without changing the published service boundary.",
     link: "Meet the people behind Homeground",
@@ -514,7 +514,7 @@ const zh: ChinaItineraryReviewCopy = {
   },
   studio: {
     label: "谁会处理你的需求",
-    title: "小型规划工作室，一条清晰的负责线。",
+    title: "一家中国旅行社，一条清晰的负责线。",
     body: "一位主规划师负责书面咨询。团队成员可以补充一线目的地和旅客接待经验，但不会改变页面公开的服务边界。",
     link: "认识 Homeground 团队",
   },
@@ -724,7 +724,7 @@ const ko: ChinaItineraryReviewCopy = {
   },
   studio: {
     label: "누가 요청을 담당하나요",
-    title: "작은 여행 설계 스튜디오, 하나의 분명한 담당 흐름.",
+    title: "중국 전문 여행사, 하나의 분명한 담당 흐름.",
     body: "한 명의 리드 플래너가 서면 컨설팅을 책임집니다. 팀원은 공개된 서비스 범위를 바꾸지 않고 현장 목적지 경험과 여행자 응대 경험을 더할 수 있습니다.",
     link: "Homeground 팀 만나기",
   },

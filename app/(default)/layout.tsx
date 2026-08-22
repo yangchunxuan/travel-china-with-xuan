@@ -5,6 +5,7 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://homegroundchina.com/"),
+  applicationName: "Homeground China",
   referrer: "strict-origin-when-cross-origin",
   verification: {
     other: {
@@ -13,11 +14,15 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Homeground China — China Trip Planning Studio",
+    default: "Homeground China | China Travel Agency",
     template: "%s — Homeground China",
   },
   description:
-    "China trip planning shaped around your party, pace and priorities, with suitable local services checked by a person after travel details are clear.",
+    "A China travel agency for private, tailor-made trips, with practical guides, route design, stays, tickets, transport and local support.",
+  openGraph: {
+    siteName: "Homeground China",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

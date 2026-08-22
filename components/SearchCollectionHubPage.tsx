@@ -20,6 +20,10 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
 import { DestinationHubDiscovery } from "./DestinationHubDiscovery";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -119,10 +123,12 @@ function jsonLd(collectionId: SearchCollectionId, locale: HomegroundLocale) {
         mainEntity: { "@id": listId },
         sameAs: Object.values(absoluteManifestAlternates(entry)),
       },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Homeground", item: `${SITE_URL}${home.path}` },
+          { "@type": "ListItem", position: 1, name: "Homeground China", item: `${SITE_URL}${home.path}` },
           { "@type": "ListItem", position: 2, name: copy.guidesLabel, item: `${SITE_URL}${home.path}guides/` },
           { "@type": "ListItem", position: 3, name: sectionCopy.navLabel, item: sectionUrl },
           { "@type": "ListItem", position: 4, name: entry.h1, item: canonicalUrl },

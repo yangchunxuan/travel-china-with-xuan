@@ -68,3 +68,7 @@ export function getHomegroundFacebookPageUrl(): string {
       defaultFacebookPageUrl,
   );
 }
+
+export function getHomegroundSocialProfileUrls(): string[] {
+  return [getHomegroundFacebookPageUrl()].filter(Boolean);
+}

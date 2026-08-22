@@ -6,6 +6,7 @@ import {
 } from "../lib/homegroundI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import { getHomegroundStudioCopy } from "../lib/homegroundStudioI18n";
+import { editorialOrganizationSchema } from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundStudioMotion } from "./HomegroundStudioMotion";
@@ -58,10 +59,7 @@ export function HomegroundStudioPage({
   const isEnglish = locale === "en";
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://homegroundchina.com/#organization",
-    name: "Homeground China",
-    url: "https://homegroundchina.com/",
+    ...editorialOrganizationSchema(),
     member: copy.members.map((member) => ({
       "@type": "Person",
       name: member.name,

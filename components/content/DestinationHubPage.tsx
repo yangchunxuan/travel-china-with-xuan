@@ -11,6 +11,12 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../../lib/homegroundI18n";
+import {
+  EDITORIAL_ORGANIZATION_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../../lib/editorialIdentity";
 import { getSearchPlatformCopy, getSearchSectionPath } from "../../lib/searchPlatformI18n";
 import type { StructuredPageBody } from "../../lib/content-system/page-body";
 import { HomegroundFooter } from "../HomegroundFooter";
@@ -110,12 +116,8 @@ function structuredData(
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": `${SITE_URL}/#organization`,
-        name: "Homeground China",
-        url: `${SITE_URL}/`,
-      },
+      editorialOrganizationSchema(),
+      editorialWebsiteSchema(),
       {
         "@type": "Place",
         "@id": `${hub.canonicalUrl}#place`,
@@ -132,7 +134,8 @@ function structuredData(
         inLanguage,
         datePublished: hub.datePublished,
         dateModified: hub.dateModified,
-        publisher: { "@id": `${SITE_URL}/#organization` },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
+        publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         primaryImageOfPage: {
           "@type": "ImageObject",
           url: hub.heroImageUrl,

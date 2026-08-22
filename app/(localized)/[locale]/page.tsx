@@ -27,7 +27,7 @@ export async function generateMetadata({
   const copy = getHomegroundCopy(locale);
 
   return {
-    title: copy.metadata.title,
+    title: { absolute: copy.metadata.title },
     description: copy.metadata.description,
     alternates: {
       canonical: copy.path,
@@ -39,6 +39,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
+      siteName: "Homeground China",
       title: copy.metadata.openGraphTitle,
       description: copy.metadata.description,
       type: "website",
@@ -52,6 +53,12 @@ export async function generateMetadata({
           alt: copy.hero.socialImageAlt,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy.metadata.openGraphTitle,
+      description: copy.metadata.description,
+      images: ["https://homegroundchina.com/images/home/beijing-hero-2400.jpg"],
     },
   };
 }

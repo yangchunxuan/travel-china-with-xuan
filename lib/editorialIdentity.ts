@@ -1,5 +1,10 @@
 import { getHomegroundStudioCopy } from "./homegroundStudioI18n";
-import type { HomegroundLocale } from "./homegroundI18n";
+import {
+  HOMEGROUND_BRAND_NAME,
+  HOMEGROUND_BRAND_SLOGAN,
+  type HomegroundLocale,
+} from "./homegroundI18n";
+import { getHomegroundSocialProfileUrls } from "./homegroundSocial";
 
 export const EDITORIAL_AUTHOR_ID = "evan" as const;
 export const EDITORIAL_PERSON_ID =
@@ -10,6 +15,8 @@ export const EDITORIAL_WEBSITE_ID =
   "https://homegroundchina.com/#website";
 
 const EDITORIAL_SITE_URL = "https://homegroundchina.com/";
+const EDITORIAL_LOGO_URL =
+  "https://homegroundchina.com/icon.svg";
 
 const profilePaths: Record<HomegroundLocale, string> = {
   en: "/studio/evan/",
@@ -108,10 +115,23 @@ export function editorialPersonSchema(locale: HomegroundLocale) {
 
 export function editorialOrganizationSchema() {
   return {
-    "@type": "Organization",
+    "@type": "TravelAgency",
     "@id": EDITORIAL_ORGANIZATION_ID,
-    name: "Homeground China",
+    name: HOMEGROUND_BRAND_NAME,
+    alternateName: ["Homeground China Journeys", "homegroundchina.com"],
     url: EDITORIAL_SITE_URL,
+    slogan: HOMEGROUND_BRAND_SLOGAN,
+    logo: {
+      "@type": "ImageObject",
+      "@id": `${EDITORIAL_SITE_URL}#logo`,
+      url: EDITORIAL_LOGO_URL,
+      contentUrl: EDITORIAL_LOGO_URL,
+      width: 256,
+      height: 256,
+      caption: HOMEGROUND_BRAND_NAME,
+    },
+    areaServed: { "@type": "Country", name: "China" },
+    sameAs: getHomegroundSocialProfileUrls(),
   };
 }
 
@@ -119,8 +139,10 @@ export function editorialWebsiteSchema() {
   return {
     "@type": "WebSite",
     "@id": EDITORIAL_WEBSITE_ID,
-    name: "Homeground China",
+    name: HOMEGROUND_BRAND_NAME,
+    alternateName: "homegroundchina.com",
     url: EDITORIAL_SITE_URL,
+    inLanguage: ["en", "zh-Hans", "ko"],
     publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
   };
 }
