@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Beijing arrive, stay and depart decision card</title>
+  <desc id="desc">A schematic card distinguishing PEK, PKX, central stay areas and major Beijing railway stations.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a74731"/></marker></defs>
+  <rect width="1200" height="675" fill="#faf9f5"/><rect width="1200" height="12" fill="#a74731"/>
+  <text x="64" y="72" fill="#7f2e1d" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">HOMEGROUND CHINA · CITY CARD 01</text>
+  <text x="64" y="136" fill="#141413" font-family="Georgia, serif" font-size="56">Beijing · 北京</text>
+  <text x="64" y="174" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="21">Write the exact airport code and railway-station name first.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="64" y="226" width="300" height="232" rx="8" fill="#fff" stroke="#d8d8d1"/>
+    <text x="92" y="270" fill="#a74731" font-size="17" font-weight="700" letter-spacing="2">ARRIVE</text>
+    <text x="92" y="320" fill="#141413" font-size="32" font-weight="700">PEK ≠ PKX</text>
+    <text x="92" y="362" fill="#5f5f5a" font-size="19">Northeast corridor</text><text x="92" y="391" fill="#5f5f5a" font-size="19">versus far-south corridor</text>
+    <line x1="380" y1="342" x2="432" y2="342" stroke="#a74731" stroke-width="4" marker-end="url(#a)"/>
+    <rect x="450" y="226" width="300" height="232" rx="8" fill="#141413"/>
+    <text x="478" y="270" fill="#b0aea5" font-size="17" font-weight="700" letter-spacing="2">STAY</text>
+    <text x="478" y="320" fill="#faf9f5" font-size="28" font-weight="700">Wangfujing /</text><text x="478" y="356" fill="#faf9f5" font-size="28" font-weight="700">Dongdan</text>
+    <text x="478" y="400" fill="#b0aea5" font-size="18">Neutral central first-visit base</text>
+    <line x1="766" y1="342" x2="818" y2="342" stroke="#a74731" stroke-width="4" marker-end="url(#a)"/>
+    <rect x="836" y="226" width="300" height="232" rx="8" fill="#fff" stroke="#d8d8d1"/>
+    <text x="864" y="270" fill="#a74731" font-size="17" font-weight="700" letter-spacing="2">DEPART</text>
+    <text x="864" y="316" fill="#141413" font-size="24" font-weight="700">South · West</text><text x="864" y="350" fill="#141413" font-size="24" font-weight="700">Chaoyang · exact ticket</text>
+    <text x="864" y="399" fill="#5f5f5a" font-size="18">Never book from “Beijing” alone.</text>
+  </g>
+  <rect x="64" y="500" width="1072" height="92" rx="8" fill="#f2e7de"/>
+  <text x="92" y="538" fill="#7f2e1d" font-family="Arial, sans-serif" font-size="17" font-weight="700">WRONG-NODE WARNING</text>
+  <text x="92" y="570" fill="#141413" font-family="Arial, sans-serif" font-size="20">Move gateway-side only when a confirmed departure or mobility risk earns the lost final evening.</text>
+  <text x="64" y="635" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="16">Schematic, not to scale · Version 1.0 · Reviewed 23 Aug 2026 · homegroundchina.com</text>
+</svg>

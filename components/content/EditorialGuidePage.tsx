@@ -24,6 +24,7 @@ import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
 import { EditorialByline } from "../EditorialByline";
+import { GuideCtaLink } from "../GuideCtaLink";
 import homeStyles from "../HomegroundHomePage.module.css";
 import {
   EDITORIAL_ORGANIZATION_ID,
@@ -200,6 +201,7 @@ export function EditorialGuidePage({
     ? getSearchPlatformCopy(locale).sections[entry.search.section].navLabel
     : guide.format.replaceAll("-", " ");
   const titleSegments = locale === "zh" ? zhHeadingSegments[guide.id] : null;
+  const plannerHref = `${homeCopy.path}?utm_source=editorial_guide&utm_medium=owned&utm_campaign=trip_conversation&utm_content=${guide.id}#planner-contact`;
 
   return (
     <div
@@ -292,10 +294,15 @@ export function EditorialGuidePage({
             <h2>{copy.ctaTitle}</h2>
             <p>{copy.ctaBody}</p>
           </div>
-          <Link href={`${homeCopy.path}#planner-contact`}>
+          <GuideCtaLink
+            guideId={guide.id}
+            href={plannerHref}
+            locale={locale}
+            position="footer"
+          >
             {copy.ctaButton}
             <ArrowRight aria-hidden="true" size={18} />
-          </Link>
+          </GuideCtaLink>
         </aside>
       </main>
 

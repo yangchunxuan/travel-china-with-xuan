@@ -13,6 +13,7 @@ const articleComponents = [
   "components/ChinaItineraryWithOlderParentsPage.tsx",
   "components/ChinaTourGuideDecisionPage.tsx",
   "components/ChinaTripCostGuidePage.tsx",
+  "components/FirstTripTenCityMapPage.tsx",
   "components/KevinPreparationStoryPage.tsx",
   "components/NightShowGuidePage.tsx",
   "components/NzVisaFreeGuidePage.tsx",
@@ -88,7 +89,7 @@ test("structured editorial and author pages link back to the website entity", as
 test("all bespoke editorial articles use the same linked identity graph", async () => {
   const components = await Promise.all(articleComponents.map(source));
 
-  assert.equal(components.length, 19);
+  assert.equal(components.length, 20);
   for (const [index, component] of components.entries()) {
     assert.match(
       component,
