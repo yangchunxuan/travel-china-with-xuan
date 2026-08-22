@@ -1,0 +1,122 @@
+{
+  "id": "pingyao-stay-inside-or-outside-old-city",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "inside-or-outside-heritage-base-decision",
+  "topics": [
+    "accommodation",
+    "Pingyao",
+    "heritage city",
+    "luggage",
+    "mobility",
+    "night travel"
+  ],
+  "destinations": [
+    "pingyao",
+    "shanxi"
+  ],
+  "heroImagePath": "/images/guides/pingyao-stay-inside-or-outside-old-city/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/pingyao-stay-inside-or-outside-old-city/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/pingyao-stay-inside-or-outside-old-city/",
+      "title": "Stay Inside or Outside Pingyao Old City?",
+      "headline": "Choose Inside or Outside Pingyao Old City by the Door-to-Room Chain",
+      "description": "Choose a Pingyao base by dawn and evening access, station arrival, luggage, paving, stairs and the exact old-city gate handoff.",
+      "heroAlt": "A real street and courtyard scene inside Pingyao Ancient City in Shanxi.",
+      "heroCredit": {
+        "text": "Inside Pingyao Ancient City, photographed by 林高志 on 11 October 2008; centre-cropped, resized and converted to WebP by Homeground. The image shows the heritage setting, not a hotel recommendation or current access condition.",
+        "sourceLabel": "Original Pingyao Ancient City photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E5%9C%8B%E5%B1%B1%E8%A5%BF%E5%B9%B3%E9%81%99%E5%8F%A4%E8%B9%9F470.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Pingyao: inside or outside",
+      "featuredLinkLabel": "Choose a Pingyao base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Pingyao",
+        "Where to stay",
+        "Heritage city"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/pingyao-stay-inside-or-outside-old-city/",
+      "title": "平遥古城住城内还是城外？",
+      "headline": "按城门到房门的真实动线选择平遥城内或城外",
+      "description": "按早晚古城体验、车站抵达、行李、石板路、楼梯与城门交接选择平遥住宿位置。",
+      "heroAlt": "山西平遥古城内街巷与传统院落实景。",
+      "heroCredit": {
+        "text": "平遥古城内实景，林高志摄于 2008 年 10 月 11 日；Homeground 居中裁切、缩放并转为 WebP。照片展示古城环境，不推荐酒店，也不证明当前通行条件。",
+        "sourceLabel": "平遥古城原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E5%9C%8B%E5%B1%B1%E8%A5%BF%E5%B9%B3%E9%81%99%E5%8F%A4%E8%B9%9F470.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "平遥城内还是城外",
+      "featuredLinkLabel": "选择平遥住宿位置",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "平遥",
+        "住宿位置",
+        "古城"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/pingyao-stay-inside-or-outside-old-city/",
+      "title": "핑야오 고성 안과 밖, 어디에 묵을까요?",
+      "headline": "성문부터 객실까지의 실제 동선으로 핑야오 숙소 고르기",
+      "description": "새벽·저녁 고성 경험, 역 도착, 짐, 포장과 계단, 정확한 성문 인계로 핑야오 안팎 숙소를 정합니다.",
+      "heroAlt": "산시성 핑야오 고성 안의 실제 골목과 전통 중정 모습.",
+      "heroCredit": {
+        "text": "핑야오 고성 내부의 실제 모습. 林高志가 2008년 10월 11일 촬영했으며 Homeground가 중앙부를 자르고 WebP로 변환했습니다. 역사 환경을 보여 줄 뿐 특정 숙소나 현재 접근 상태를 보장하지 않습니다.",
+        "sourceLabel": "핑야오 고성 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E5%9C%8B%E5%B1%B1%E8%A5%BF%E5%B9%B3%E9%81%99%E5%8F%A4%E8%B9%9F470.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "핑야오 고성 안팎",
+      "featuredLinkLabel": "핑야오 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "핑야오",
+        "숙소 위치",
+        "역사 도시"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "stay inside or outside Pingyao old city",
+      "Pingyao hotel location",
+      "Pingyao ancient city accommodation"
+    ],
+    "zh": [
+      "平遥古城住城内还是城外",
+      "平遥住宿位置",
+      "平遥古城客栈怎么选"
+    ],
+    "ko": [
+      "핑야오 고성 안팎 숙소",
+      "핑야오 숙소 위치",
+      "핑야오 고성 호텔 선택"
+    ]
+  }
+}

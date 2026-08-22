@@ -1,0 +1,121 @@
+{
+  "id": "china-hotel-room-does-not-match-booking",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "in-stay-room-mismatch-recovery",
+  "topics": [
+    "accommodation",
+    "room mismatch",
+    "hotel recovery",
+    "booking evidence",
+    "consumer complaint",
+    "relocation"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-hotel-room-does-not-match-booking/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-hotel-room-does-not-match-booking/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-hotel-room-does-not-match-booking/",
+      "title": "China Hotel Room Doesn’t Match the Booking: Verify, Change Rooms or Relocate",
+      "headline": "When a China Hotel Room Does Not Match: Verify, Change or Relocate",
+      "description": "Document the booked-versus-assigned gap, request one workable correction, set a cutoff and relocate safely when an essential room condition cannot be restored.",
+      "heroAlt": "A real guest room at Toy Story Hotel in Shanghai, used only to illustrate room-feature verification.",
+      "heroCredit": {
+        "text": "A room at Toy Story Hotel Shanghai, photographed by Edo-biscuit on 9 June 2019; centre-cropped, resized and converted to WebP by Homeground. It illustrates room-feature verification and does not allege a booking mismatch or endorse the hotel.",
+        "sourceLabel": "Original Shanghai hotel-room photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Room_of_Toy_Story_Hotel_Shanghai.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Room does not match booking",
+      "featuredLinkLabel": "Recover from a wrong hotel room",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hotels",
+        "Room mismatch",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-hotel-room-does-not-match-booking/",
+      "title": "中国酒店房间与预订不符：核验、换房还是搬离",
+      "headline": "酒店实际房间不符时，先核验，再换房或搬离",
+      "description": "对照订单与实际分房，固定证据，提出一个可执行修复和截止时间；必要条件无法恢复就安全搬离。",
+      "heroAlt": "上海玩具总动员酒店真实客房，仅用于说明客房条件核验。",
+      "heroCredit": {
+        "text": "上海玩具总动员酒店客房实景，Edo-biscuit 摄于 2019 年 6 月 9 日；Homeground 居中裁切、缩放并转为 WebP。图片只说明客房条件核验，不指称该酒店发生错房，也不构成推荐。",
+        "sourceLabel": "上海酒店客房原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Room_of_Toy_Story_Hotel_Shanghai.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "房间与预订不符",
+      "featuredLinkLabel": "处理酒店错房问题",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "酒店",
+        "房型不符",
+        "现场恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-hotel-room-does-not-match-booking/",
+      "title": "중국 호텔 객실이 예약과 다를 때: 확인·변경·이동",
+      "headline": "중국 호텔 객실 불일치, 확인 후 객실 변경 또는 이동하기",
+      "description": "예약과 배정 객실의 차이를 기록하고 실행 가능한 수정 하나와 시한을 요청한 뒤 필수 조건이 복구되지 않으면 안전하게 이동합니다.",
+      "heroAlt": "객실 조건 확인을 설명하기 위한 상하이 토이 스토리 호텔의 실제 객실.",
+      "heroCredit": {
+        "text": "상하이 토이 스토리 호텔 객실. Edo-biscuit가 2019년 6월 9일 촬영했으며 Homeground가 중앙부를 자르고 WebP로 변환했습니다. 객실 조건 확인을 설명할 뿐 해당 호텔의 예약 불일치를 주장하거나 추천하지 않습니다.",
+        "sourceLabel": "상하이 호텔 객실 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Room_of_Toy_Story_Hotel_Shanghai.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "예약과 다른 호텔 객실",
+      "featuredLinkLabel": "잘못 배정된 객실 해결하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "호텔",
+        "객실 불일치",
+        "현장 대응"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "China hotel room not as booked",
+      "wrong hotel room China",
+      "hotel room mismatch booking"
+    ],
+    "zh": [
+      "酒店房间与预订不符怎么办",
+      "酒店给错房型",
+      "酒店换房还是退房"
+    ],
+    "ko": [
+      "중국 호텔 객실 예약과 다름",
+      "중국 호텔 잘못된 객실",
+      "호텔 객실 변경 요청"
+    ]
+  }
+}
