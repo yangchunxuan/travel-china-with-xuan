@@ -1,6 +1,12 @@
 # China Route Reality Checker v4 final technical review
 
-Status: **TECHNICAL SPEC REVIEW PASSED — PUBLIC IMPLEMENTATION STILL REQUIRES CENTRAL APPROVAL**
+Status: **TECHNICAL SPEC REVIEW PASSED — PUBLIC PRODUCT SUBSEQUENTLY REJECTED / CLOSED**
+
+Current decision overlay (2026-08-23): this document records the successful
+2026-08-21 technical review of an internal, non-numeric contract. Central later
+rejected the public Route Reality product and authorized no further work. The
+internal specification remains evidence only; the older conditional approval
+language below is historical and is not an open implementation gate.
 
 Review ticket: `ROUTE-REALITY-V4-FINAL-REVIEW-03`
 
@@ -268,4 +274,4 @@ recorded without being misrepresented as passes.
 
 No PR, merge, deployment or production change is authorized by this review.
 
-**TECHNICAL SPEC REVIEW PASSED — PUBLIC IMPLEMENTATION STILL REQUIRES CENTRAL APPROVAL**
+**TECHNICAL SPEC REVIEW PASSED — PUBLIC PRODUCT SUBSEQUENTLY REJECTED / CLOSED**

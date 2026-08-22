@@ -195,7 +195,12 @@ test("shared discovery and governance expose the release without paid-service am
   const wallCandidate = searchMap.coverage.candidates
     .find((entry) => entry.candidateId === "destination-20260811-02");
   assert.equal(wallCandidate.cannibalizationOwner, "great-wall-section-selector-from-beijing");
-  assert.equal(wallCandidate.status, "central-approved-release-candidate");
+  assert.equal(wallCandidate.executionStatus, "release-completed");
+  assert.equal(wallCandidate.publicationStatus, "published");
+  assert.equal(
+    wallCandidate.releasePr,
+    "https://github.com/yangchunxuan/travel-china-with-xuan/pull/86",
+  );
 
   const publicBodies = (await Promise.all([
     "content/guides/great-wall-section-selector-from-beijing",

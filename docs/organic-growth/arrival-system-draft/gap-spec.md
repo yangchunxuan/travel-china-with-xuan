@@ -3,6 +3,9 @@
 - Baseline: `origin/main@ef1898745a3c7a6e7cd308aa341c352f24fe9d01`
 - Policy/product research cut-off: `2026-08-20`
 - Repository/production live-state sync: `2026-08-21`
+- Current Search Map overlay: `2026-08-23`; the five PR #74 identities are now
+  correctly recorded as published. Older stale-state wording below is dated
+  package evidence only.
 - Decision rule: update or merge into the current owner before proposing a new
   identity. No item below authorizes a public route.
 
@@ -13,8 +16,9 @@
 - **Evidence:** PR #74 is merged. On 2026-08-21 the EN/ZH/KO
   `china-online-arrival-card` pages each returned HTTP 200, `index, follow`, a
   self-canonical and one entry in the live 649-record sitemap. All five PR #74
-  identities × three locales were present once. The merged Search Map's
-  `not-published` values are a stale pre-release snapshot.
+  identities × three locales were present once. At that 2026-08-21 checkpoint,
+  the merged Search Map's `not-published` values were a stale pre-release
+  snapshot; they were corrected in the 2026-08-23 Search Map.
 - **Required action:** keep the three locale-correct arrival-card links active
   and retain their NIA/form/fallback source-change checks. Employee 4 / planning
   must separately receive central approval before implementing First 24 Hours.

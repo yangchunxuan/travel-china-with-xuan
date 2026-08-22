@@ -1,10 +1,22 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-状态：`SEARCH MAP SYNCHRONIZED — CENTRAL-APPROVED BATCH NOT YET PUBLISHED`
+当前状态：`SEARCH MAP RECONCILED THROUGH PR #89 RUNTIME RELEASE SHA 5bd1558 — 60 REMOTE DRAFT IDENTITIES RESERVED / NOT PUBLISHED`
 
-本快照是团队唯一的选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。2026-08-20 的同步段落取代下文保留的 2026-08-11 历史审计口径；历史段落用于追踪当时的决定，不得再用来判断当前发布状态。
+本快照是团队选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。下面的 2026-08-23 覆盖层是当前生产口径；2026-08-20 和 2026-08-11 段落继续保留为历史证据，不得再用来判断当前发布状态。
 
-## 2026-08-20 同步结论
+## 2026-08-23 当前生产覆盖层
+
+- 已审计公开运行时基线：PR #89 release SHA `5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e`；后续仅文档提交不会改变本段运行时库存口径。
+- 当前指南库存：**182 个内容身份、540 个 locale URL**；其中 163 个独立 guide 目录均三语，另有 19 个受保护 legacy guide 身份。
+- 当前已发布城市 Hub：**8 个身份、24 个 locale URL**，分别为 Beijing、Shanghai、Xi'an、Chengdu、Guangzhou、Hangzhou、Zhangjiajie、Chongqing。再计 1 个英文系统 entry collection，公开编辑型详情总数为 **191 个身份、565 个 URL**。
+- PR #74 的 Zhangjiajie Hub、Online Arrival Card、Forest Park workflow、Chongqing station selector 和 Hangzhou Hub 已全部三语发布并于 2026-08-21 完成线上读回，不得继续标作 `not-published`。
+- PR #80、#83、#86、#87 后续发布带来的 Chongqing Hub 和 6 个 guide owner 已回填机器账本；本轮 PR #89 只做技术、隐私、索引信号与流量治理修复，新增 canonical identity 为 0。
+- `First 24 Hours in China` 已形成三语 durable internal draft，状态为 `pending-review / draft-submitted / not-published`；没有 route、Registry、sitemap 或公开授权。
+- Draft PR #84 保存员工 1–6 各 10 篇，共 **60 个 durable draft identity、180 个 locale path**。它仍为 OPEN / Draft，当前与 `main` 冲突，全部不计入线上库存；精确 slug 见机器账本 `remoteDurableDraftBatches[0]`。
+- Route Reality 的内部规格已随 PR #75 合并且 v4 技术审查通过，但公开产品随后被中央否决；没有继续开发或公开授权。
+- 2026-08-23 的 live sitemap 为 **670 个唯一 URL、0 重复**；该数字不等于 Google 已收录 670 页。发布与 Search Console 状态详见 [`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](../release-notes/search-analytics-privacy-production-release-20260823.md)。
+
+## 2026-08-20 历史同步结论
 
 - 最新基线：`origin/main@cbbfddabe2513874cc4e55981e08244db7338ff9`。
 - 当前指南库存：**173 个内容身份、513 个 locale URL**；其中 154 个独立 guide 目录均三语，另有 19 个受保护 legacy guide 身份（16 个三语、3 个仅英文）。三语始终只算一个身份。
@@ -17,6 +29,8 @@
 - 本同步不虚构 GitHub Issue URL；三个新批准项的 `executionIssueUrl` 都是 `null`。中央批准只授权有边界的实现与审核，不等于合并、部署或上线。
 
 ## 1. 口径与输入审计
+
+> **以下“## 1”至文末均是 2026-08-20 / 2026-08-11 历史账本，不是当前开工或发布状态。** 当前生产与未发布预留库存只看顶部 2026-08-23 覆盖层和机器文件 `search-map.json`；不要从下文局部摘取旧的 173/513、5 Hub 或 `not-published` 状态覆盖当前记录。
 
 - 内容身份：英文、中文、韩文最多是同一内容身份的三个 locale，不按三篇计算。
 - 仓库基线：最新 `origin/main`，提交 `cbbfddabe2513874cc4e55981e08244db7338ff9`。本次平台同步工作在独立 worktree `C:/Users/User/Documents/宝格丽的agent/homeground-seo-platform-20260820` 和分支 `codex/seo-gap-platform-20260820` 完成。

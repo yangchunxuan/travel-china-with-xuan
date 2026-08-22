@@ -1,6 +1,6 @@
 # Homeground 禁止重复与应合并清单
 
-生效快照：2026-08-20（保留 2026-08-11 历史锁题）
+生效快照：2026-08-23（保留 2026-08-11 与 2026-08-20 历史锁题）
 
 本文件是员工 1–6、中央编辑与任何后续 SEO 代理的开题前检查表。三种语言只算一个内容身份；换语言、换标题、换问法、换人群修饰词或加年份，不会自动产生新页面资格。
 
@@ -15,7 +15,7 @@
 7. Search Console **可用但样本很小**：2026-07-09 至 2026-08-18 共 17 clicks、1,060 impressions、CTR 1.6%、average position 20.5；隐私过滤隐藏大量 query。它只用于基线、CTR、排名与后续蚕食验证，不作为全市场选题发现器。
 8. 关键词体量、CPC、难度与购买概率工具 **不可用**。Google Trends 只表示同一图表内的相对方向；自动补全、结果数、论坛重复提问和主观感觉都不等于搜索量。
 9. 本轮 ticket set 冻结为六项，不增加第七个文章、页面或票据；某票延迟、退回或拒绝时也不自动递补。
-10. Route Reality Checker 的内部规格与员工 8 技术/测试审查不算新增文章；`SPEC REVIEW READY` 不是实现、建页、公开、索引或发布授权。
+10. Route Reality Checker 的内部规格已随 PR #75 合并、v4 技术审查已通过，但公开产品随后被中央否决；它不算新增文章，也没有实现、建页、公开、索引、发布或继续开发授权。重开必须有新的明确中央决定。
 11. 城市介绍必须拥有独立的旅客决策、路线或知识网络角色；不得以通用城市百科、换标题或拼接景点列表占位。
 12. 历史、文学、后世纪念、地方口述/传说与现代旅游包装必须分别标注；不得把传说写成史实，也不得按每个朝代、人物或传说批量建薄页。
 13. 旅行新闻先路由到现有城市、景点、交通、实用 owner 或维护数据行；只有具有持续旅行效用且有维护 owner 时才可重新评估独立页。政治、意识形态、地缘评论、八卦与宏观流量新闻一律拒绝。
@@ -26,7 +26,7 @@
 - `transport-20260811-01` ↔ `which-beijing-railway-station`：同一 Beijing station-choice 身份。
 - `destination-20260811-01` ↔ `forbidden-city-for-foreign-visitors`：同一 foreign-visitor Forbidden City 执行身份。
 - `culture-20260811-01` ↔ `first-shared-meal-in-china`：同一首次共享用餐身份。
-- `planning-20260811-01` ↔ Route Reality Checker 内部规格：仍是同一 tool 候选，不是文章身份。
+- `planning-20260811-01` ↔ Route Reality Checker 内部规格：公开产品已拒绝并关闭；内部规格只是保留证据，不是文章身份。
 - `stay-20260811-01` ↔ 员工 5 foreign-hotel worktree：仍是同一 booking/registration/refusal owner。
 - `essentials-20260811-01` ↔ `china-esim-vs-local-sim.md`：即使从独立 repo 迁入 canonical worktree、补 metadata 或扩展 locale，也仍是同一 eSIM/local SIM/local-number 选择树。
 
@@ -35,15 +35,15 @@
 | `transport-20260811-01` | selected | approved | release-completed | published | PR #24；`which-beijing-railway-station` 三语 live |
 | `destination-20260811-01` | selected | approved | release-completed | published | PR #24；`forbidden-city-for-foreign-visitors` 三语 live |
 | `culture-20260811-01` | selected | approved | release-completed | published | PR #31；`first-shared-meal-in-china` 三语 owner |
-| `planning-20260811-01` | selected | pending-review | specification-submitted | not-published | `SPEC REVIEW READY` 规格 `1e131ff`；不得公开实现 |
+| `planning-20260811-01` | selected | rejected | internal-specification-merged-public-product-closed | not-published | PR #75 内部规格；v4 技术审查通过；公开产品否决；全部 public authorization 为 false |
 | `stay-20260811-01` | selected | approved | release-completed | published | PR #50；`foreigners-china-hotel` 三语 owner |
 | `essentials-20260811-01` | selected | approved | release-completed | published | PR #41；`china-esim-vs-local-sim` 三语 owner；`durableArtifact: true` |
 
-六票均无正式 SEO GitHub Issue，`executionIssueUrl` 为 `null`；不补写或虚构 Issue。Ticket 1、2 的证据为 [PR #24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24)，Ticket 3 为 PR #31，Ticket 5 为 PR #50，Ticket 6 为 PR #41。Ticket 4 仍只有内部规格。
+六票均无正式 SEO GitHub Issue，`executionIssueUrl` 为 `null`；不补写或虚构 Issue。Ticket 1、2 的证据为 [PR #24](https://github.com/yangchunxuan/travel-china-with-xuan/pull/24)，Ticket 3 为 PR #31，Ticket 5 为 PR #50，Ticket 6 为 PR #41。Ticket 4 的内部规格已合并且技术审查通过，但公开产品已否决并关闭。
 
 ## 本轮锁定的 14 个身份：绝对不得再选
 
-开工时这 14 个身份均未上线。至最新 `origin/main@cbbfdda`，14/14 均已发布。状态改变不解除锁题，本表也不把同一身份、视觉整合分支或原始员工分支重复计数。
+开工时这 14 个身份均未上线。至 PR #89 已审计公开运行时基线 `5bd1558`，14/14 均已发布。后续仅文档提交不改变该库存事实；状态改变也不解除锁题，本表不把同一身份、视觉整合分支或原始员工分支重复计数。
 
 | Canonical owner | 已占用主题与近义问法 | 应合并内容 |
 |---|---|---|
@@ -62,9 +62,9 @@
 | `china-hotel-near-metro` | hotel near metro China、how close to subway、luggage/family/accessibility rubric | 城市版同一距离判断、家庭版/老人版拆页 |
 | `how-to-pay-in-china-as-a-tourist` | how to pay、Alipay、WeChat、cash、cards、failure recovery | Alipay vs WeChat、单一支付方式、支付失败页 |
 
-## 目的地 Hub（2026-08-16 发布）：城市级 canonical owner
+## 目的地 Hub（更新至 2026-08-23）：城市级 canonical owner
 
-五个 city hub 已上线，`X travel guide` 这一类宽泛城市意图由它们独占。不得再建同城的通用城市介绍、`X 旅游攻略` 或换标题的城市百科；具体执行仍归各自更窄的 owner。
+八个 city hub 已上线，`X travel guide` 这一类宽泛城市意图由它们独占。不得再建同城的通用城市介绍、`X 旅游攻略` 或换标题的城市百科；具体执行仍归各自更窄的 owner。
 
 | Canonical owner | 占用的意图 | 应合并内容 |
 |---|---|---|
@@ -73,20 +73,47 @@
 | `/destinations/xian/`（`destination-xian`） | Xi'an travel guide、西安旅行指南、住几晚、城内与城南基地、三座铁路站、华山要不要加一天 | 通用“西安攻略”、按天数或人群拆的西安总览 |
 | `/destinations/chengdu/`（`destination-chengdu`） | Chengdu travel guide、成都旅行指南、城市住几天、住哪个区、天府与双流、哪些四川行程是独立支线 | 通用“成都攻略”、城市百科、按天数或人群拆的成都总览 |
 | `/destinations/guangzhou/`（`destination-guangzhou`） | Guangzhou travel guide、广州旅行指南、要不要住、住哪个区、白云航站楼与五个火车站、佛山顺德长隆怎么算 | 通用“广州攻略”、按天数或人群拆的广州总览 |
+| `/destinations/hangzhou/`（`destination-hangzhou`） | Hangzhou travel guide、杭州旅行指南、住几晚、住哪里、西湖与周边关系、上海/苏州衔接 | 通用“杭州攻略”、按天数或人群拆的杭州总览 |
+| `/destinations/zhangjiajie/`（`destination-zhangjiajie`） | Zhangjiajie travel guide、住几晚、住城里还是武陵源、门户和景点关系 | 通用“张家界攻略”、2/3/4 天行程、酒店基地或门票流程的重复总览 |
+| `/destinations/chongqing/`（`destination-chongqing`） | Chongqing travel guide、重庆旅行指南、住几晚、上下城方向、住宿区域、机场与铁路门户 | 通用“重庆攻略”、按天数或人群拆的重庆总览 |
 
 三语只算一个内容身份。Hub 只做城市级取舍，不复述 `beijing-where-to-stay-first-trip`、`which-beijing-railway-station`、`terracotta-warriors-without-tour`、`shanghai-pudong-or-hongqiao-airport` 等既有 owner 的执行细节。
 
-**重庆暂缓（2026-08-17）**：`/destinations/chongqing/` 尚未上线，卡在 Phase 1 Gate B（现有 4 个合格 owner／3 个 section，门槛是 5／3）。解锁方式已定为发布第五个重庆为主的 owner：Topic Universe `hg-topic-0860`、canonical slug `chongqing-railway-station-selector`，三语 editorial transport guide，由员工1（交通）完成。在该文通过中央审核并进入发布基线之前，不得把重庆加入 hub 注册表，也不得降低 Gate B 或改写 Gate A。
+**重庆已解锁并发布**：`chongqing-railway-station-selector` 已满足原 Gate B 补充 owner 要求，`/destinations/chongqing/` 随 PR #80 发布。原“重庆暂缓”只是 2026-08-17 的历史状态，不得再据此重做 Hub 或 station selector。
 
-**已回填**：`docs/organic-growth/search-map.json` 已在 2026-08-20 登记五个线上 Hub、173 个 guide identity 和当前未发布库存。
+**已回填**：`docs/organic-growth/search-map.json` 已在 2026-08-23 登记八个线上 Hub、182 个 guide identity，并将 PR #74 的五项从待发布改为已发布。
 
-## 2026-08-20 新批准边界：不得拆页或提前发布
+## 2026-08-20 批准边界：现已发布，仍不得拆页
 
 - `destination-20260820-zhangjiajie-city-hub` ↔ `/destinations/zhangjiajie/`：拥有宽泛 Zhangjiajie travel guide、适合谁、住几晚、住哪里、进出门户、景点关系与当前 owner 路由；不得复制 `zhangjiajie-itinerary` 的 2/3/4 天、酒店基地页、夜秀页或 park ticket workflow。
 - `essentials-20260820-china-online-arrival-card` ↔ `china-online-arrival-card`：只拥有 NIA 官方 arrival-card 表单、填写时机、免费官方渠道识别和失败恢复；不得吸收签证资格、过境规则、海关申报或住宿登记。
 - `destination-20260820-zhangjiajie-forest-park-workflow` ↔ `zhangjiajie-national-forest-park-tickets-and-entrances`：只拥有 Forest Park ticket/gate/slot/passport fallback 及 shuttle/elevator/cableway 关系；不得吸收 general itinerary、Wulingyuan-vs-city hotel、Tianmen A/B/C 或 Glass Bridge comparison。
-- `planning-20260820-first-24-hours`：`defer / not-started / not-published`。它未来也只能是路由 collection；arrival-card owner 和 collection gate 未完成前，不写正文、不建公开页。
-- `chongqing-railway-station-selector` 与 Hangzhou Hub 已完成 release-candidate 整合但仍未发布；后续中央审核修正、图片复核或 locale QA 都不得重复计为新题。
+- `planning-20260820-first-24-hours`：已有三语 durable internal draft，状态为 `pending-review / draft-submitted / not-published`。Arrival Card owner 已上线，但不会自动授权 route、Registry、sitemap 或公开页。
+- `chongqing-railway-station-selector` 与 Hangzhou Hub 已随 PR #74 发布；后续修正、图片复核或 locale QA 都不得重复计为新题。
+
+## Draft PR #84 的 60 个预留身份：不得重派或增加第 61 题
+
+员工 1–6 各 10 篇已经形成 durable drafts，共 60 个身份、180 个 locale path。精确 slug 清单与六个 source commit 以 `search-map.json` 的 `remoteDurableDraftBatches[0].identityIdsByPool` 为唯一机器权威。全部状态为 `not-published`，不计入线上 182 个 guide identity。
+
+- [Draft PR #84](https://github.com/yangchunxuan/travel-china-with-xuan/pull/84) 仍为 OPEN / Draft，当前与 `main` 冲突；旧 CI 绿灯不授权合并、部署或发布。
+- 原 draft-production 授权已经消费完毕；不得换 slug 重写、另派同题或自动增加第 61 题。
+- 员工 3 的 10 篇仍为 publication/date HOLD，不得第 11 题；发布前必须逐篇重开官方来源并替换 draft 日期。
+- Route Reality 与 First 24 Hours 明确不属于这 60 篇。
+- 旧 844-URL 模拟属于旧基线，不能作为当前合并目标；任何整合都必须基于届时最新 `main` 重算。
+
+## 2026-08-23 新增已发布 owner 锁
+
+以下 9 个 guide identity 已进入 `origin/main` 与完整 Search Map 库存。它们不再是可重新分配的选题：
+
+- `china-domestic-flight-schedule-change`：国内航班延误、取消、改签、退款、住宿、铁路替代和 OTA 恢复属于同一现场恢复任务。
+- `china-online-arrival-card`：只负责 NIA 官方免费表单、填写时机、真假渠道和失败回退；不吸收签证、海关申报或住宿登记。
+- `chongqing-railway-station-selector`：重庆北、重庆西、沙坪坝、重庆东等铁路门户属于一个站点选择 owner，不按车站拆页。
+- `great-wall-section-selector-from-beijing`：Badaling、Mutianyu、Jinshanling、Simatai 四段选择属于同一比较 owner；两篇接送执行页继续负责具体交通。
+- `guilin-airport-or-railway-station-arrival-guide`：桂林机场与主要铁路站的抵达选择、酒店/阳朔衔接属于一个 arrival owner。
+- `longji-rice-terraces-day-trip-or-overnight`：龙脊一日往返还是过夜属于一个住宿时间取舍，不按村寨或晚数复制。
+- `shenzhen-airport-railway-station-border-port-selector`：机场、铁路站和口岸选择属于一个深圳门户 selector；不按每个口岸拆页。
+- `yangshuo-town-or-yulong-river-where-to-stay`：阳朔镇/西街与遇龙河住宿取舍属于一个 owner；不按住宿区域分别建页。
+- `zhangjiajie-national-forest-park-tickets-and-entrances`：森林公园票种、入口、时段、护照回退与园内接驳关系属于一个执行 owner；行程和住宿基地继续归各自页面。
 
 ## 其余已发布 canonical owners：不可撞题
 
@@ -143,7 +170,7 @@
 
 ## 本轮明确拒绝或暂缓
 
-- `destination-20260811-02` Mutianyu vs Badaling：**reject**。当前 exact SERP 同质覆盖强，仓库没有足以区别的自有 field dataset。只有新增可验证的交通、行动能力、拥挤摩擦实测后才可重开。
+- `destination-20260811-02` 的原始 Mutianyu vs Badaling 两段薄比较：**历史 reject，已被后续中央决定取代**。中央后来把边界扩为 Badaling、Mutianyu、Jinshanling、Simatai 四段选择的单一 canonical owner `great-wall-section-selector-from-beijing`，并随 PR #86 发布。不得重开原两段页，也不得把四段拆开。
 - `transport-20260811-03` airport→rail connection checker：**hold**。没有 versioned airport/station 数据、保守规则、fail-safe 输出和维护人，不得建。
 - `planning-20260811-03` First China Trip Routes collection：**hold/noindex**。未满足 Phase 1 coverage/eligibility gate，不得创建公开 collection。
 - `essentials-20260811-02` entry eligibility checker：**hold**。没有法律数据 owner、监控 SLA、规则版本、测试与 fail-closed，不得建。
@@ -152,7 +179,7 @@
 
 以下方向只保留为 `research-watch`。它们不产生 `candidateId`、票据、branch reservation 或写手指令，本轮仍严格只有六票，不增加或递补第七票。
 
-- 第一次访华路线现实性归 Route Reality Checker 与 `is-your-china-itinerary-too-rushed`；不再建 7/10/14/21 天或城市组合页。
+- 第一次访华路线现实性继续由 `is-your-china-itinerary-too-rushed` 与 planning Hub 承接；Route Reality 公开产品已否决，不得借此重启，也不再建 7/10/14/21 天或城市组合页。
 - 数字生存栈优先更新已发布 payment、高铁与本轮 eSIM owners；不得另写一篇泛“中国必备 App”汇总抢占所有任务。
 - Amap→中文地址→Didi 只研究实测 workflow/tool 或地址卡；没有地点数据和失败恢复时，不建普通 App 指南。
 - 素食、清真与严重过敏应由一个全国饮食限制 owner 加双语卡承接；必须区分偏好、宗教限制与危及生命的过敏，不按城市复制。
@@ -165,12 +192,12 @@
 
 ## 六个已选中项自身也不得被拆分
 
-Ticket 1、2、3、5、6 已由中央批准并发布；Ticket 4 仍待产品决定。无论状态如何，锁定的 canonical 边界都不得通过换 slug、分支、语言或 artifact 类型规避。
+Ticket 1、2、3、5、6 已由中央批准并发布；Ticket 4 的公开产品已否决，内部规格归档保留。无论状态如何，锁定的 canonical 边界都不得通过换 slug、分支、语言或 artifact 类型规避。
 
 - `transport-20260811-01`：Beijing、Beijing West、Beijing South、Beijing North、Qinghe、Beijing Chaoyang、Beijing Fengtai、Beijing Tongzhou 是一个站点选择矩阵，不是一站一页。
 - `destination-20260811-01`：Forbidden City ticket/entrance/3-hour route/north exit 是一个连续执行任务。
 - `culture-20260811-01`：shared meal 的 ordering/seating/sharing/paying 是一餐的顺序，不拆礼仪页。
-- `planning-20260811-01`：route reality checker 不生成城市×日数×人群可索引结果页。
+- `planning-20260811-01`：Route Reality 公开产品已关闭；不得生成城市×日数×人群结果页，也不得改名重启。
 - `stay-20260811-01`：foreign-hotel booking/registration/refusal recovery 是一个任务，不按城市复制。
 - `essentials-20260811-01`：eSIM/local SIM/local number/both 是一个选择树，不按 provider 建页。
 

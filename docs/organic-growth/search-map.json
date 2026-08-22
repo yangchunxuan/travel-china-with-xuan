@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2.0",
-  "snapshotDate": "2026-08-20",
-  "checkedAt": "2026-08-20T20:05:18+08:00",
-  "finalStatus": "SEARCH MAP SYNCHRONIZED — CENTRAL-APPROVED BATCH NOT YET PUBLISHED",
+  "snapshotDate": "2026-08-23",
+  "checkedAt": "2026-08-23T02:30:10+08:00",
+  "finalStatus": "SEARCH MAP RECONCILED THROUGH PR #89 RUNTIME RELEASE SHA 5bd1558 — 60 REMOTE DRAFT IDENTITIES RESERVED IN OPEN DRAFT PR #84; NONE PUBLISHED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -55,7 +55,7 @@
     "automaticBackfillAllowed": false,
     "rule": "The current round is frozen to these six mapped tickets. Do not add a seventh article, page or ticket, and do not automatically replace a rejected or delayed ticket with a runner-up.",
     "branchOrWorktreeObservationChangesApproval": false,
-    "coverageSemantics": "This object preserves the 2026-08-11 frozen six-ticket round. Current published inventory, later releases and the 2026-08-20 approved implementation batch are recorded in coverage.publishedInventory, coverage.inProduction and currentBatchExecutionControl.",
+    "coverageSemantics": "This object preserves the 2026-08-11 frozen six-ticket round. Published inventory is in coverage.publishedInventory; the closed PR #74 batch is in currentBatchExecutionControl; 60 newer unpublished reservations are in remoteDurableDraftBatches; the First 24 Hours durable collection draft remains in coverage.candidates; and Route Reality's merged internal specification plus rejected public-product decision remain in routeRealityCheckerReviewGate.",
     "observedTicketStates": [
       {
         "candidateId": "transport-20260811-01",
@@ -165,25 +165,30 @@
         "ownerPool": "employee-4-planning",
         "proposedContentId": null,
         "candidateStatus": "selected",
-        "centralDecision": "pending-review",
-        "executionStatus": "specification-submitted",
+        "centralDecision": "rejected",
+        "decisionScope": "public-product-only-internal-specification-retained",
+        "centralDecisionAt": "2026-08-21",
+        "centralDecisionEvidence": "origin/ops/seo-content-scale-20260822@9b93620209da4fe97aa2a6f01979c2e4c98f237c",
+        "executionStatus": "internal-specification-merged-public-product-closed",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
-        "releasePr": null,
+        "specIntegrationPr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
+        "specMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
         "liveUrls": [],
-        "lastVerifiedAt": "2026-08-11T17:03:41+08:00",
+        "lastVerifiedAt": "2026-08-23",
         "durableArtifact": true,
-        "specificationStatus": "review-ready",
+        "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
+        "technicalReviewPath": "docs/tools/china-route-reality-checker-v4-final-technical-review.md",
+        "technicalReviewDate": "2026-08-21",
         "publicImplementationAuthorized": false,
         "indexablePageAuthorized": false,
-        "branch": "article/worker-4-route-reality-checker-spec",
-        "remoteRef": "origin/article/worker-4-route-reality-checker-spec",
-        "worktreePath": "C:/Users/User/Documents/homeground-worker-4-route-reality-spec",
-        "observedHead": "1e131ff990b88c3759fb3d102f23e55aa8bbd0b0",
+        "initialSpecificationBranch": "article/worker-4-route-reality-checker-spec",
+        "initialSpecificationRemoteRef": "origin/article/worker-4-route-reality-checker-spec",
+        "initialSpecificationCommit": "1e131ff990b88c3759fb3d102f23e55aa8bbd0b0",
         "durableArticleCommitObserved": false,
         "durableSpecificationCommit": "1e131ff990b88c3759fb3d102f23e55aa8bbd0b0",
-        "specificationPath": "docs/tools/china-route-reality-checker-spec.md",
-        "handoffSignalObserved": "SPEC REVIEW READY",
+        "currentSpecificationDirectory": "docs/organic-growth/china-planning-hub-system/route-reality/",
+        "initialHandoffSignalObserved": "SPEC REVIEW READY",
         "topicIdentityDelta": 0,
         "canonicalLock": "The checker is a non-indexable specification/review task at this stage and must not generate city-by-days-by-audience URLs."
       },
@@ -265,33 +270,53 @@
     ],
     "routeRealityCheckerReviewGate": {
       "specOwner": "employee-4-planning",
-      "handoffSignal": "SPEC REVIEW READY",
-      "specificationStatus": "review-ready",
+      "initialHandoffSignal": "SPEC REVIEW READY",
+      "centralDecision": "rejected",
+      "decisionScope": "public-product-only-internal-specification-retained",
+      "centralDecisionAt": "2026-08-21",
+      "centralDecisionEvidence": "origin/ops/seo-content-scale-20260822@9b93620209da4fe97aa2a6f01979c2e4c98f237c",
+      "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
+      "repositoryStatus": "merged-via-pr-75",
+      "specIntegrationPr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
+      "specMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
+      "technicalReviewStatus": "TECHNICAL SPEC REVIEW PASSED",
+      "technicalReviewPath": "docs/tools/china-route-reality-checker-v4-final-technical-review.md",
+      "technicalReviewDate": "2026-08-21",
+      "technicalReviewCommit": "e524af81e7d1ca82dcf61256039d434dee4f0753",
+      "technicalReviewMergedCommit": "4317ffa067361ccacc986e73acbdd64844d87f8d",
       "publicImplementationAuthorized": false,
       "indexablePageAuthorized": false,
       "publicationStatus": "not-published",
       "employee8StateBeforeSignal": "wait",
-      "signalStatus": "observed",
-      "signalObservedAt": "2026-08-11T11:18:26+08:00",
-      "signalEvidence": "origin/article/worker-4-route-reality-checker-spec@1e131ff990b88c3759fb3d102f23e55aa8bbd0b0:docs/tools/china-route-reality-checker-spec.md",
-      "employee8CurrentState": "technical-feasibility-and-test-review-only",
+      "initialSignalStatus": "observed-historical",
+      "initialSignalObservedAt": "2026-08-11T11:18:26+08:00",
+      "initialSignalEvidence": "origin/article/worker-4-route-reality-checker-spec@1e131ff990b88c3759fb3d102f23e55aa8bbd0b0:docs/tools/china-route-reality-checker-spec.md",
+      "currentSpecificationDirectory": "docs/organic-growth/china-planning-hub-system/route-reality/",
+      "employee8CurrentState": "technical-review-complete-public-product-rejected-no-further-work-authorized",
       "employee8ReviewScopeAfterSignal": ["technical-feasibility", "test-review"],
       "employee8ImplementationAuthorized": false,
       "employee8PageCreationAuthorized": false,
       "publicToolCreationAuthorized": false,
       "indexingAuthorized": false,
       "publishingAuthorized": false,
-      "authorityToChange": "Explicit Mac central editor approval only.",
+      "authorityToChange": "A new explicit central decision is required to reopen the rejected public product.",
       "specificationAndReviewCountAsAdditionalArticle": false
     }
   },
   "currentBatchExecutionControl": {
-    "checkedAt": "2026-08-20T20:30:17+08:00",
+    "checkedAt": "2026-08-23T02:30:10+08:00",
     "centralDecisionSource": "business owner acting as central editor in the active task",
     "writeIssueCreationAuthorized": false,
     "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-    "mergeAuthorized": false,
-    "deploymentAuthorized": false,
+    "mergeWasAuthorizedForRelease": true,
+    "deploymentWasAuthorizedForRelease": true,
+    "authorizationConsumed": true,
+    "newMergeAuthorized": false,
+    "newDeploymentAuthorized": false,
+    "releaseStatus": "release-completed-published-live-verified",
+    "releaseMergeCommit": "ef1898745a3c7a6e7cd308aa341c352f24fe9d01",
+    "releaseMergedAt": "2026-08-20T23:17:58+08:00",
+    "liveVerifiedAt": "2026-08-21",
     "approvedCandidateIds": [
       "destination-20260820-zhangjiajie-city-hub",
       "essentials-20260820-china-online-arrival-card",
@@ -306,47 +331,57 @@
         "artifactType": "guide",
         "candidateStatus": "selected",
         "centralDecision": "approved-for-completion",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
+        "executionStatus": "release-completed",
+        "publicationStatus": "published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "liveUrls": [],
+        "liveUrls": [
+          "https://homegroundchina.com/guides/chongqing-railway-station-selector/",
+          "https://homegroundchina.com/zh/guides/chongqing-railway-station-selector/",
+          "https://homegroundchina.com/ko/guides/chongqing-railway-station-selector/"
+        ],
         "durableArtifact": true,
         "remoteRef": "origin/article/worker-1-chongqing-railway-station-selector",
         "observedCommit": "2c68d5036217b3dc8ebfc58edcdb0dd7c9e14ca2",
-        "lastVerifiedAt": "2026-08-20T20:30:17+08:00",
+        "lastVerifiedAt": "2026-08-21",
         "blockingReview": null,
-        "completionEvidence": "Dates and current Chongqing East official evidence were refreshed, dynamic facts were recorded, and the trilingual guide was integrated on codex/seo-gap-batch-20260820."
+        "completionEvidence": "Dates and current Chongqing East official evidence were refreshed, dynamic facts were recorded, and the trilingual guide was integrated, merged via PR #74 at ef1898745a3c7a6e7cd308aa341c352f24fe9d01, then live-verified in all three locales on 2026-08-21."
       },
       {
         "contentId": "destination-hangzhou",
         "artifactType": "destination-hub",
         "candidateStatus": "selected",
         "centralDecision": "approved-for-completion",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
+        "executionStatus": "release-completed",
+        "publicationStatus": "published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "liveUrls": [],
+        "liveUrls": [
+          "https://homegroundchina.com/destinations/hangzhou/",
+          "https://homegroundchina.com/zh/destinations/hangzhou/",
+          "https://homegroundchina.com/ko/destinations/hangzhou/"
+        ],
         "durableArtifact": true,
         "remoteRef": "origin/codex/city-hub-hangzhou-draft-20260815",
         "observedCommit": "273b801e5923aba9d1c6423106527bc3bcb6e52a",
-        "lastVerifiedAt": "2026-08-20T20:30:17+08:00",
+        "lastVerifiedAt": "2026-08-21",
         "blockingReview": null,
-        "completionEvidence": "The reviewed package was converted into a trilingual runtime hub with a real owner-supplied production image and integrated on codex/seo-gap-batch-20260820."
+        "completionEvidence": "The reviewed package was converted into a trilingual runtime hub with a real owner-supplied production image, merged via PR #74 at ef1898745a3c7a6e7cd308aa341c352f24fe9d01, then live-verified in all three locales on 2026-08-21."
       }
     ],
-    "rule": "These decisions authorize bounded implementation and review only. They do not prove publication, create an Issue URL, authorize merge/deploy, or permit a generic First 24 Hours page before the arrival-card owner exists."
+    "rule": "The original decisions authorized bounded implementation and review. The subsequent PR #74 merge plus three-locale production read-back now prove publication for its five identities without creating an Issue URL. The separate First 24 Hours collection now exists only as a durable trilingual internal draft pending central review; it has no route, Registry record, sitemap entry or publication authorization."
   },
   "inputAudit": {
     "repository": {
       "path": "https://github.com/yangchunxuan/travel-china-with-xuan",
-      "worktreePath": "C:/Users/User/Documents/宝格丽的agent/homeground-seo-platform-20260820",
+      "auditWorkspace": "ephemeral local worktree; path intentionally omitted because it is not durable authority",
       "baseRef": "origin/main",
-      "baseCommit": "cbbfddabe2513874cc4e55981e08244db7338ff9",
-      "previousBaseCommit": "8769b2ffa4d2d719699bf98fb4bc215dc89bdda9",
-      "baseDeltaAssessment": "Latest main contains 154 independent guide directories, the protected 19 legacy guide identities and five published destination hubs. Three older round drafts previously marked unpublished are now present in canonical main.",
-      "branch": "codex/seo-gap-platform-20260820",
+      "auditPoint": "PR #89 runtime release SHA before this documentation-only synchronization",
+      "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
+      "previousSearchMapSnapshotCommit": "cbbfddabe2513874cc4e55981e08244db7338ff9",
+      "earlierPr24BaselineCommit": "8769b2ffa4d2d719699bf98fb4bc215dc89bdda9",
+      "baseDeltaAssessment": "At audited runtime baseCommit 5bd15583, the repository contains 163 independent guide directories, 19 protected legacy guide identities and eight published destination hubs. PR #74's five bounded identities and the later PR #80, #83, #86 and #87 releases are present; PR #89 adds no canonical identity. Later documentation-only commits do not change these runtime counts.",
+      "branch": "codex/release-state-sync-20260823",
       "status": "available"
     },
     "requiredDocs": [
@@ -379,33 +414,36 @@
       "finalSitemapRecheckedAt": "2026-08-11T17:03:41+08:00",
       "observedPr24ContentIdCount": 2,
       "observedPr24ContentIdUrlHits": 6,
-      "method": "Retained as the dated 2026-08-11 live snapshot only. The current authoritative inventory below comes from latest origin/main; this platform worktree did not reinterpret the old 142-URL count as current live state."
+      "method": "Retained as the dated 2026-08-11 live snapshot only. The authoritative inventory below comes from audited PR #89 runtime baseCommit 5bd15583; this synchronization did not reinterpret the old 142-URL count as current live state."
     },
     "currentRepositoryInventory": {
-      "status": "available-from-latest-origin-main",
-      "baseCommit": "cbbfddabe2513874cc4e55981e08244db7338ff9",
-      "generatedGuideIdentities": 154,
+      "status": "available-from-audited-pr89-runtime-baseline",
+      "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
+      "generatedGuideIdentities": 163,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 173,
-      "generatedGuideLocaleUrls": 462,
+      "publishedGuideIdentities": 182,
+      "generatedGuideLocaleUrls": 489,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 513,
-      "publishedDestinationHubIdentities": 5,
-      "publishedDestinationHubLocaleUrls": 15,
+      "guideLocaleUrls": 540,
+      "publishedDestinationHubIdentities": 8,
+      "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 179,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 529,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 191,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 565,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
         "destination-xian",
         "destination-chengdu",
-        "destination-guangzhou"
+        "destination-guangzhou",
+        "destination-hangzhou",
+        "destination-zhangjiajie",
+        "destination-chongqing"
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
-      "liveVerificationStatus": "not-rerun-by-this-local-platform-subtask",
-      "checkedAt": "2026-08-20T20:05:18+08:00"
+      "liveVerificationStatus": "repository inventory reconciled at baseCommit 5bd15583; live sitemap independently verified as 670 unique URLs with 0 duplicates",
+      "checkedAt": "2026-08-23T02:30:10+08:00"
     },
     "remoteBranches": {
       "status": "historical-2026-08-11-branch-audit",
@@ -453,10 +491,11 @@
       ],
       "unpublishedAtKickoffCount": 14,
       "publishedDuringAuditCount": 14,
-      "currentUnpublishedContentIdentityCount": 5,
-      "currentRoundPublishedTicketCount": 2,
-      "currentRoundNotPublishedTicketCount": 4,
-      "note": "The ref list and kickoff counts remain a dated 2026-08-11 audit. Current unpublished inventory is the five bounded artifacts in coverage.inProduction; shared-meal, foreign-hotel and eSIM are now published owners."
+      "auditRoundUnpublishedContentIdentityCountAtClose": 0,
+      "auditRoundPublishedTicketCount": 5,
+      "auditRoundNotPublishedInternalSpecificationCount": 1,
+      "historicalUnpublishedContentIdentityCountAt20260820Sync": 5,
+      "note": "The ref list and kickoff counts remain a dated 2026-08-11 audit and are not the global current unpublished inventory. The five artifacts observed as unpublished at the 2026-08-20 sync were released via PR #74 and coverage.inProduction is now empty. Five of the six frozen round tickets are published; Route Reality remains an internal-only, not-published specification whose public product was later rejected. The 60 newer remote draft reservations are recorded separately in remoteDurableDraftBatches."
     },
     "existingSearchMap": {
       "status": "available-from-previous-branch",
@@ -634,9 +673,9 @@
       {
         "clusterId": "market-first-trip-route-reality",
         "userTask": "Choose, order and cut cities for a realistic first China trip.",
-        "recommendedArtifact": "tool-plus-hub",
-        "provisionalOwner": "planning-20260811-01 plus is-your-china-itinerary-too-rushed",
-        "status": "absorbed-by-current-round-no-new-ticket",
+        "recommendedArtifact": "update-existing-owner-and-national-planning-hub",
+        "provisionalOwner": "is-your-china-itinerary-too-rushed",
+        "status": "tool-rejected-route-to-existing-owner-no-new-ticket",
         "evidence": ["Google Trends core demand rise", "repeated 2026 itinerary sanity-check questions"],
         "boundary": "Do not create 7/10/14/21-day pages or city-combination permutations."
       },
@@ -761,9 +800,9 @@
         "boundary": "News does not bypass the Search Map. Prefer the relevant city, attraction, transport or practical owner; expire or merge transient facts."
       }
     ],
-    "formalCandidateEffect": {
-      "currentFormalCandidateCount": 18,
-      "currentApprovedTicketCount": 6,
+    "formalCandidateEffectAt20260811Research": {
+      "formalCandidateCountAtResearch": 18,
+      "approvedTicketCountAtResearch": 6,
       "newFormalCandidatesAdded": 0,
       "seventhTicketAdded": false,
       "rule": "Opportunity clusters are discovery observations for a later scored round. They are not candidate IDs, assignments or drafting authorization."
@@ -806,13 +845,13 @@
     },
     "entityAssignments": {
       "repositoryRegistryPath": "content/entities/core-places.json",
-      "repositoryEntityIds": ["country-china", "city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai", "city-chengdu", "city-guilin", "city-guangzhou", "city-hangzhou", "city-chongqing", "city-shenzhen"],
+      "repositoryEntityIds": ["country-china", "province-shaanxi", "province-sichuan", "province-guangdong", "province-hunan", "province-zhejiang", "province-guangxi", "city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai", "city-chengdu", "city-guilin", "city-guangzhou", "city-hangzhou", "city-chongqing", "city-shenzhen"],
       "repositoryEntityEvidence": {
         "city-guangzhou": ["lib/destinationHubs.ts", "content/guides/guangzhou-baiyun-airport-t2-t3/metadata.json", "content/guides/guangzhou-hong-kong-transport-route/metadata.json"],
-        "city-zhangjiajie": ["content/guides/zhangjiajie-city-or-wulingyuan-hotel-base/metadata.json", "currentBatchExecutionControl.items.destination-20260820-zhangjiajie-city-hub"],
-        "city-hangzhou": ["content/guides/liangzhu-ruins-park-and-museum-sequence/metadata.json", "content/guides/shanghai-hangzhou-transport-route/metadata.json", "coverage.inProduction.destination-hangzhou"],
-        "city-chongqing": ["content/guides/chongqing-upper-lower-city-orientation/metadata.json", "content/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/metadata.json", "coverage.inProduction.chongqing-railway-station-selector"],
-        "city-shenzhen": ["content/guides/shenzhen-where-to-stay-futian-luohu-nanshan/metadata.json", "content/guides/shenzhen-hong-kong-transport-route/metadata.json"]
+        "city-zhangjiajie": ["lib/destinationHubs.ts", "content/guides/zhangjiajie-city-or-wulingyuan-hotel-base/metadata.json", "content/guides/zhangjiajie-national-forest-park-tickets-and-entrances/metadata.json"],
+        "city-hangzhou": ["lib/destinationHubs.ts", "content/guides/liangzhu-ruins-park-and-museum-sequence/metadata.json", "content/guides/shanghai-hangzhou-transport-route/metadata.json"],
+        "city-chongqing": ["lib/destinationHubs.ts", "content/guides/chongqing-railway-station-selector/metadata.json", "content/guides/chongqing-upper-lower-city-orientation/metadata.json", "content/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/metadata.json"],
+        "city-shenzhen": ["content/guides/shenzhen-airport-railway-station-border-port-selector/metadata.json", "content/guides/shenzhen-where-to-stay-futian-luohu-nanshan/metadata.json", "content/guides/shenzhen-hong-kong-transport-route/metadata.json"]
       },
       "publishedRepositoryEntityIds": {
         "zhangjiajie-itinerary": ["city-zhangjiajie"],
@@ -838,10 +877,10 @@
         "china-high-speed-train-first-time-guide": ["country-china"],
         "china-in-october-golden-week-or-later": ["country-china", "city-beijing", "city-shanghai", "city-xian", "city-chengdu", "city-guilin", "city-zhangjiajie"],
         "how-to-pay-in-china-as-a-tourist": ["country-china"],
-        "guangzhou-baiyun-airport-t2-t3": ["country-china"],
+        "guangzhou-baiyun-airport-t2-t3": ["city-guangzhou"],
         "pudong-airport-to-shanghai-disneyland": ["city-shanghai"],
         "lijiang-old-town-or-shuhe-where-to-stay": ["country-china"],
-        "how-guangzhou-morning-tea-works": ["country-china"],
+        "how-guangzhou-morning-tea-works": ["country-china", "city-guangzhou"],
         "how-to-read-a-suzhou-garden": ["country-china"],
         "chengdu-panda-base-or-dujiangyan-panda-valley": ["city-chengdu"],
         "china-last-night-before-international-flight": ["country-china"],
@@ -850,27 +889,247 @@
         "china-hotel-near-metro": ["country-china"],
         "which-beijing-railway-station": ["city-beijing"],
         "forbidden-city-for-foreign-visitors": ["city-beijing"],
-        "system-entry-requirements": ["country-china"]
+        "system-entry-requirements": ["country-china"],
+        "china-15-minute-neighbourhoods": ["country-china"],
+        "china-24-solar-terms-weather-food-daily-life": ["country-china"],
+        "china-community-canteens-explained": ["country-china"],
+        "desert-restoration-travellers-can-see": ["country-china"],
+        "guizhou-village-basketball-culture": ["country-china"],
+        "how-to-read-a-chinese-sponge-city": ["country-china", "city-shanghai"],
+        "how-to-read-heritage-sites-in-china": ["country-china", "city-beijing"],
+        "how-to-visit-an-archaeological-site-museum": ["country-china"],
+        "lunar-new-year-customs-for-visitors": ["country-china"],
+        "qingdao-brands-built-an-industrial-city": ["country-china"],
+        "qinling-huaihe-transition-zone": ["country-china"],
+        "shanghai-24-hour-parks-reality-check": ["city-shanghai"],
+        "shenzhen-low-altitude-city-infrastructure": ["city-shenzhen"],
+        "when-metro-construction-meets-archaeology": ["country-china", "city-beijing", "city-guangzhou", "city-hangzhou"],
+        "why-china-museums-have-stamps": ["country-china"],
+        "yangshan-automated-port-explained": ["city-shanghai"],
+        "yunnan-coffee-from-cherry-to-cup": ["country-china"],
+        "zhenjiang-vinegar-living-fermentation": ["country-china"],
+        "kaifeng-song-dynasty-urban-landscape": ["country-china"],
+        "shilin-ashima-landscape-story": ["country-china"],
+        "anshun-dixi-mask-performance-guide": ["country-china"],
+        "liaozhai-zibo-former-residence-liqu-liaozhai-city": ["country-china"],
+        "meizhou-mazu-ancestral-temple-reading-guide": ["country-china"]
       },
       "fieldSemantics": {
         "coverage.published.primaryEntityId": "Editorial overlay proposal only. Exact origin/main runtime assignments are in publishedRepositoryEntityIds above; this field is not a repository reference until resolved and validated.",
-        "coverage.inProduction.primaryEntityId": "Editorial overlay proposal for unpublished records. The current array records three centrally approved implementation owners plus the observed Chongqing selector and Hangzhou Hub artifacts; these values do not authorize a public entity or URL.",
+        "coverage.inProduction.primaryEntityId": "Legacy bounded-release overlay. The array is empty after the PR #74 production backfill; the separate remoteDurableDraftBatches ledger owns current unpublished reservations and does not itself authorize a public entity or URL.",
         "coverage.candidates.primaryEntityId": "Required candidate proposal field; may name an unresolved entity and does not authorize creation of an entity record."
       }
     },
     "freshnessSemantics": "freshnessClass is a Search Map governance override for editorial re-review risk. It does not claim to reproduce origin/main updatePolicy.",
     "note": "Assignments below are Search Map ownership assignments. They do not create public collection/entity URLs, runtime entity records or change indexability."
   },
+  "currentUnpublishedInventorySummary": {
+    "checkedAt": "2026-08-23",
+    "remoteDurableGuideDraftIdentities": 60,
+    "remoteDurableGuideDraftLocaleUrls": 180,
+    "internalCollectionDraftIdentities": 1,
+    "releaseAuthorizedProductionQueueIdentities": 0,
+    "internalNonIdentitySpecifications": 1,
+    "interpretation": "The 60 guide drafts and the First 24 Hours collection draft are reserved work, not published inventory. Route Reality is an internal non-identity specification. None of these records authorizes a merge, deployment, public route or additional topic."
+  },
+  "remoteDurableDraftBatches": [
+    {
+      "batchId": "content-scale-20260822",
+      "inventoryClass": "remote-durable-draft-reservation",
+      "identityCount": 60,
+      "localeUrlCount": 180,
+      "canonicalReservationStatus": "reserved-do-not-reassign",
+      "publishedInventoryIncluded": false,
+      "integrationReviewQueueStatus": "draft-pr-open-conflicting-with-current-main",
+      "productionReleaseQueueStatus": "not-enqueued",
+      "draftProductionAuthorization": {
+        "decision": "approved-for-draft-production",
+        "authorizedAt": "2026-08-22",
+        "scopeCompleted": true,
+        "authorizationConsumed": true,
+        "newIdentityOrAdditionalWorkAuthorized": false
+      },
+      "releaseAuthorization": {
+        "releaseAuthorized": false,
+        "mergeAuthorized": false,
+        "deploymentAuthorized": false,
+        "publicationStatus": "not-published",
+        "liveUrls": []
+      },
+      "sourceLedger": {
+        "remoteRef": "origin/ops/seo-content-scale-20260822",
+        "commit": "35b3c57873d6b91893d084a41e8c01b927b58e6a",
+        "path": "docs/organic-growth/content-scale-batch-2026-08-22.json",
+        "blobSha": "979ddd27cc23c66dc78a845e2d399fdade0f0bba"
+      },
+      "integrationReview": {
+        "pr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/84",
+        "isDraft": true,
+        "state": "open",
+        "headRef": "origin/codex/central-content-scale-60-20260822",
+        "headCommit": "f3f32206af45eec8499349ec271c5f16f4daa864",
+        "baseCommitAtDraftCreation": "72e5d161ed8af853fbf262e7c875f8fd748645e3",
+        "mergeCommit": null,
+        "mergedAt": null,
+        "mergeabilityObservedAt": "2026-08-23",
+        "mergeability": "conflicting-with-current-main",
+        "historicalQualityCheck": "success-on-the-old-base-only",
+        "requiredAction": "Rebase or rebuild against the then-current main, resolve shared governance and runtime conflicts, redo publication-day source/date/image checks, rerun every gate, and obtain a new explicit central release decision."
+      },
+      "historicalSimulation": {
+        "status": "passed-on-2026-08-22-base-not-a-current-merge-target",
+        "projectedSitemapUrlCount": 844,
+        "warning": "Do not reuse the old 240-guide, 714-locale or 844-sitemap projections after later PR #86, #87 and #89 changes; recompute from the current base."
+      },
+      "workerDeliveries": [
+        {
+          "ownerPool": "employee-1-transport",
+          "remoteRef": "origin/article/worker-1-transport-scale-20260822",
+          "headCommit": "1a841869ffaa5c2babf94e82ae8517c90e6cd795",
+          "identityCount": 10,
+          "localeUrlCount": 30,
+          "publicationStatus": "not-published",
+          "publicationGate": "central-release-review-required"
+        },
+        {
+          "ownerPool": "employee-2-destination",
+          "remoteRef": "origin/article/worker-2-destination-scale-20260822",
+          "headCommit": "5fc1afea67664d58a79196a263cb6c4248725439",
+          "identityCount": 10,
+          "localeUrlCount": 30,
+          "publicationStatus": "not-published",
+          "publicationGate": "central-release-review-required"
+        },
+        {
+          "ownerPool": "employee-3-culture",
+          "remoteRef": "origin/article/worker-3-culture-scale-20260822",
+          "headCommit": "0607a0e976edfd2fc7c2c200ea4a404afc751246",
+          "identityCount": 10,
+          "localeUrlCount": 30,
+          "publicationStatus": "not-published",
+          "publicationGate": "HOLD-central-publication-and-date-review-required",
+          "gateEvidencePath": "docs/article-batches/worker-3-culture-scale-20260822-publication-qa.md",
+          "draftDatePlaceholder": "2026-08-20",
+          "additionalTopicAuthorized": false
+        },
+        {
+          "ownerPool": "employee-4-planning",
+          "remoteRef": "origin/article/worker-4-planning-scale-20260822",
+          "headCommit": "c76d9b34d9b0ea8e270afdfbc6b7473a10eece5c",
+          "identityCount": 10,
+          "localeUrlCount": 30,
+          "publicationStatus": "not-published",
+          "publicationGate": "central-release-review-required"
+        },
+        {
+          "ownerPool": "employee-5-stay",
+          "remoteRef": "origin/article/worker-5-stay-scale-20260822",
+          "headCommit": "a027899dabfd76ba76c1ba30c574834985c717c1",
+          "identityCount": 10,
+          "localeUrlCount": 30,
+          "publicationStatus": "not-published",
+          "publicationGate": "central-release-review-required"
+        },
+        {
+          "ownerPool": "employee-6-entry-practical",
+          "remoteRef": "origin/article/worker-6-essentials-scale-20260822",
+          "headCommit": "1d40d650ac6b252a57d35a89f2f39b5f3a327c27",
+          "identityCount": 10,
+          "localeUrlCount": 30,
+          "publicationStatus": "not-published",
+          "publicationGate": "central-release-review-required"
+        }
+      ],
+      "identityIdsByPool": {
+        "employee-1-transport": [
+          "xian-railway-station-selector",
+          "chengdu-shuangliu-or-tianfu-airport",
+          "guangzhou-railway-station-selector",
+          "shanghai-railway-station-selector",
+          "zhangjiajie-airport-or-railway-station-arrival",
+          "beijing-capital-or-daxing-airport",
+          "chengdu-chongqing-station-pair",
+          "changsha-zhangjiajie-transport-route",
+          "guilin-longji-rice-terraces-transfer",
+          "kunming-stone-forest-transport"
+        ],
+        "employee-2-destination": [
+          "jiuzhaigou-one-day-sightseeing-bus-route",
+          "shanghai-disneyland-foreign-visitors",
+          "universal-beijing-foreign-visitors",
+          "bund-or-lujiazui-see-both",
+          "west-lake-walk-boat-or-bike",
+          "xiamen-and-gulangyu-one-day",
+          "mount-emei-golden-summit-or-temple-route",
+          "mount-tai-night-climb-or-day-route",
+          "shanghai-water-town-zhujiajiao-tongli-wuzhen",
+          "jingdezhen-imperial-kiln-taoxichuan-sanbao"
+        ],
+        "employee-3-culture": [
+          "du-fu-thatched-cottage-literary-memorial",
+          "guangzhou-chen-clan-academy-craft-reading",
+          "jingdezhen-imperial-kiln-museum-archaeology",
+          "nanjing-jiangnan-gongyuan-examination-museum",
+          "ningbo-tianyi-pavilion-private-library",
+          "pingyao-rishengchang-draft-bank-network",
+          "qufu-three-confucian-sites-route",
+          "shenyang-imperial-palace-three-route-reading",
+          "turpan-karez-museum-water-system",
+          "xian-stele-forest-text-calligraphy-rubbings"
+        ],
+        "employee-4-planning": [
+          "first-solo-trip-china-recoverable-route",
+          "chengdu-jiuzhaigou-huanglong-route-order",
+          "guilin-yangshuo-longji-route-order",
+          "mainland-china-hong-kong-macao-route-order",
+          "north-or-south-china-first-trip",
+          "xiamen-quanzhou-fujian-tulou-route-order",
+          "chinese-gardens-water-towns-complementary-stops",
+          "china-archaeology-ancient-capitals-route",
+          "china-buddhist-heritage-route",
+          "remote-china-attraction-group-tour-private-car-or-diy"
+        ],
+        "employee-5-stay": [
+          "chengdu-where-to-stay-chunxi-wenshu-kuanzhai",
+          "guangzhou-where-to-stay-beijing-road-liwan-tianhe",
+          "hangzhou-where-to-stay-hubin-wulin-east-station",
+          "dali-where-to-stay-old-town-xiaguan-erhai-village",
+          "suzhou-where-to-stay-old-city-shantang-jinji-lake",
+          "sanya-where-to-stay-four-bays",
+          "pingyao-stay-inside-or-outside-old-city",
+          "fujian-tulou-stay-inside-or-nearby-hotel",
+          "china-hotel-room-does-not-match-booking",
+          "china-hotel-left-item-recovery"
+        ],
+        "employee-6-entry-practical": [
+          "china-navigation-verified-address-backup",
+          "translate-china-without-chinese-offline-backups",
+          "china-airport-layover-immigration-bags-airside-overnight",
+          "china-tourist-tax-refund-workflow",
+          "china-passport-as-ticket-booking-to-gate",
+          "china-attraction-sold-out-recovery",
+          "order-food-china-without-chinese",
+          "china-public-toilets-first-time-guide",
+          "china-ride-hailing-pickup-failure-recovery",
+          "china-airport-checked-bag-missing-damaged"
+        ]
+      },
+      "excludedFromBatch": {
+        "routeReality": true,
+        "first24Hours": true
+      }
+    }
+  ],
   "coverage": {
     "publishedInventory": {
-      "authority": "latest-origin-main-guide-registry-and-content-metadata",
-      "baseCommit": "cbbfddabe2513874cc4e55981e08244db7338ff9",
-      "identityCount": 173,
-      "localeUrlCount": 513,
-      "generatedIdentityCount": 154,
+      "authority": "audited-pr89-runtime-baseline-guide-registry-and-content-metadata",
+      "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
+      "identityCount": 182,
+      "localeUrlCount": 540,
+      "generatedIdentityCount": 163,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
-      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete current guide inventory.",
+      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at baseCommit 5bd15583.",
       "identityIds": [
         "anshun-dixi-mask-performance-guide",
         "beijing-courtyard-hotel-or-modern-hotel",
@@ -898,6 +1157,7 @@
         "china-community-canteens-explained",
         "china-customs-red-green-channels",
         "china-domestic-flight-fare-bundle-baggage",
+        "china-domestic-flight-schedule-change",
         "china-esim-vs-local-sim",
         "china-high-speed-train-first-time-guide",
         "china-hotel-emergency-exit-fire-safety-check",
@@ -909,6 +1169,7 @@
         "china-last-night-before-international-flight",
         "china-map-coordinate-offset-explained",
         "china-night-train-or-daytime-high-speed-rail",
+        "china-online-arrival-card",
         "china-open-jaw-flights-route-planning",
         "china-passport-validity-and-blank-pages",
         "china-power-bank-rules-flights-trains",
@@ -927,6 +1188,7 @@
         "china-visa-free-new-zealand-citizens-2026",
         "china-visa-free-uk-citizens-2026",
         "chinese-city-walls-gates-and-urban-order",
+        "chongqing-railway-station-selector",
         "chongqing-upper-lower-city-orientation",
         "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
         "commercial-aparthotel-or-residential-rental-china",
@@ -943,10 +1205,12 @@
         "foshan-lion-dance-first-performance-workflow",
         "fujian-tulou-cluster-selection",
         "grand-canal-everyday-urban-history",
+        "great-wall-section-selector-from-beijing",
         "guangzhou-baiyun-airport-t2-t3",
         "guangzhou-hong-kong-transport-route",
         "guangzhou-macau-transport-route",
         "guangzhou-shenzhen-hong-kong-route-order",
+        "guilin-airport-or-railway-station-arrival-guide",
         "guilin-yangshuo-transport-route",
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
@@ -978,6 +1242,7 @@
         "lijiang-old-town-or-shuhe-where-to-stay",
         "lijiang-shangri-la-transport-route",
         "liye-qin-slips-local-government-records",
+        "longji-rice-terraces-day-trip-or-overnight",
         "lost-passport-in-china-exit-recovery",
         "lost-phone-in-china-digital-recovery",
         "lunar-new-year-customs-for-visitors",
@@ -1007,6 +1272,7 @@
         "shanghai-pudong-or-hongqiao-airport",
         "shanghai-suzhou-hangzhou-nanjing-route-order",
         "shanghai-where-to-stay-first-trip",
+        "shenzhen-airport-railway-station-border-port-selector",
         "shenzhen-hong-kong-transport-route",
         "shenzhen-low-altitude-city-infrastructure",
         "shenzhen-where-to-stay-futian-luohu-nanshan",
@@ -1033,6 +1299,7 @@
         "xian-where-to-stay-city-wall-or-dayanta",
         "xixia-script-and-imperial-tombs-context",
         "yangshan-automated-port-explained",
+        "yangshuo-town-or-yulong-river-where-to-stay",
         "yingge-dance-beyond-the-viral-clips",
         "yiwu-market-to-factory-network",
         "yuanyang-rice-terraces-viewpoint-and-village-route",
@@ -1042,6 +1309,7 @@
         "zhangjiajie-from-malaysia",
         "zhangjiajie-glass-bridge-vs-skywalk",
         "zhangjiajie-itinerary",
+        "zhangjiajie-national-forest-park-tickets-and-entrances",
         "zhangjiajie-older-travellers",
         "zhenjiang-vinegar-living-fermentation",
         "zhoucheng-bai-tie-dye-workshop-choice"
@@ -1745,11 +2013,14 @@
         "freshnessClass": "critical-on-booking-or-access-change",
         "lastReviewedAt": "2026-08-22",
         "status": "published-indexable",
-        "stateTransition": "selected-current-round-ticket; published-via-pr-24; existing owner expanded to the Tiananmen-plus-Palace workflow on 2026-08-22; update ready for central release and not yet deployed",
+        "stateTransition": "selected-current-round-ticket; published-via-pr-24; Tiananmen-plus-Palace owner expansion published-via-pr-86",
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/24",
         "releaseCommit": "41f53a8b6f8370afdde666ffe0f0f1c26f127a34",
         "originMainCommit": "8769b2ffa4d2d719699bf98fb4bc215dc89bdda9",
-        "liveVerifiedAt": "2026-08-11T17:03:41+08:00"
+        "liveVerifiedAt": "2026-08-11T17:03:41+08:00",
+        "latestUpdatePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/86",
+        "latestUpdateMergeCommit": "81fa3c4c5d1c612a1ca4d03163c8133d1feb12aa",
+        "latestUpdateHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "china-15-minute-neighbourhoods",
@@ -1964,7 +2235,10 @@
         "freshnessClass": "medium-conservation-project-change",
         "lastReviewedAt": "2026-08-15",
         "status": "published-indexable",
-        "stateTransition": "business-owner-direct-release-authorized-and-centrally-reviewed-2026-08-15"
+        "stateTransition": "published-via-pr-65",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/65",
+        "originMainCommit": "cc6be75e59155935f321df0334588b52769eb6e4",
+        "liveHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "how-to-visit-an-archaeological-site-museum",
@@ -2023,11 +2297,14 @@
         "freshnessClass": "high-annual-and-venue-change",
         "lastReviewedAt": "2026-08-22",
         "status": "published-indexable",
-        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14; substantial-owner-upgrade-prepared-2026-08-22",
+        "stateTransition": "published-via-pr-56; search-task-remediated-2026-08-14; substantial-owner-upgrade-published-via-pr-86",
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/56",
         "releaseCommit": "3335722db4976a1e19bd785944cc5175f1725215",
         "originMainCommit": "98bd92a745e21615c7f685374794fca5acb14c15",
-        "liveVerifiedAt": "2026-08-13"
+        "liveVerifiedAt": "2026-08-13",
+        "latestUpdatePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/86",
+        "latestUpdateMergeCommit": "81fa3c4c5d1c612a1ca4d03163c8133d1feb12aa",
+        "latestUpdateHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "qingdao-brands-built-an-industrial-city",
@@ -2345,8 +2622,10 @@
         "freshnessClass": "medium-site-and-interpretation-change",
         "lastReviewedAt": "2026-08-14",
         "status": "published-indexable",
-        "stateTransition": "topic-universe-hg-topic-0084-authorized-and-materialized-for-release-2026-08-14",
-        "originMainCommit": "6e49cf962453c4d8e2997ac0fda28d23fe6c5039"
+        "stateTransition": "published-via-pr-63",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/63",
+        "originMainCommit": "70bf5d048398ef540bb5c407de0fadd593100521",
+        "liveHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "shilin-ashima-landscape-story",
@@ -2376,8 +2655,10 @@
         "freshnessClass": "medium-operator-and-interpretation-change",
         "lastReviewedAt": "2026-08-14",
         "status": "published-indexable",
-        "stateTransition": "employee-2-research-candidate-authorized-and-materialized-for-release-2026-08-14",
-        "originMainCommit": "6e49cf962453c4d8e2997ac0fda28d23fe6c5039"
+        "stateTransition": "published-via-pr-63",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/63",
+        "originMainCommit": "70bf5d048398ef540bb5c407de0fadd593100521",
+        "liveHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "anshun-dixi-mask-performance-guide",
@@ -2407,7 +2688,10 @@
         "freshnessClass": "high-performance-and-operator-change",
         "lastReviewedAt": "2026-08-15",
         "status": "published-indexable",
-        "stateTransition": "business-owner-authorized-research-pack-materialization-and-central-release-review-2026-08-15"
+        "stateTransition": "published-via-pr-67",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/67",
+        "originMainCommit": "dcd9478631d697c70d01392c91762b7f02969042",
+        "liveHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "liaozhai-zibo-former-residence-liqu-liaozhai-city",
@@ -2438,7 +2722,10 @@
         "freshnessClass": "high-museum-attraction-and-performance-change",
         "lastReviewedAt": "2026-08-15",
         "status": "published-indexable",
-        "stateTransition": "business-owner-authorized-research-pack-materialization-and-central-release-review-2026-08-15"
+        "stateTransition": "published-via-pr-67",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/67",
+        "originMainCommit": "dcd9478631d697c70d01392c91762b7f02969042",
+        "liveHttp200VerifiedAt": "2026-08-23"
       },
       {
         "id": "meizhou-mazu-ancestral-temple-reading-guide",
@@ -2468,7 +2755,10 @@
         "freshnessClass": "high-operator-ritual-and-visitor-change",
         "lastReviewedAt": "2026-08-15",
         "status": "published-indexable",
-        "stateTransition": "business-owner-authorized-research-pack-materialization-and-central-release-review-2026-08-15"
+        "stateTransition": "published-via-pr-67",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/67",
+        "originMainCommit": "dcd9478631d697c70d01392c91762b7f02969042",
+        "liveHttp200VerifiedAt": "2026-08-23"
       }
     ],
     "hubsAndDirectories": [
@@ -2505,6 +2795,24 @@
       {
         "id": "destination-guangzhou",
         "paths": ["/destinations/guangzhou/", "/zh/destinations/guangzhou/", "/ko/destinations/guangzhou/"],
+        "status": "published-indexable",
+        "role": "destination-hub"
+      },
+      {
+        "id": "destination-hangzhou",
+        "paths": ["/destinations/hangzhou/", "/zh/destinations/hangzhou/", "/ko/destinations/hangzhou/"],
+        "status": "published-indexable",
+        "role": "destination-hub"
+      },
+      {
+        "id": "destination-zhangjiajie",
+        "paths": ["/destinations/zhangjiajie/", "/zh/destinations/zhangjiajie/", "/ko/destinations/zhangjiajie/"],
+        "status": "published-indexable",
+        "role": "destination-hub"
+      },
+      {
+        "id": "destination-chongqing",
+        "paths": ["/destinations/chongqing/", "/zh/destinations/chongqing/", "/ko/destinations/chongqing/"],
         "status": "published-indexable",
         "role": "destination-hub"
       },
@@ -2564,65 +2872,10 @@
       }
     ],
     "nonEditorialSystemPages": {
-      "identityCount": 7,
-      "scope": "The seven remaining system identities after system-guides and system-entry-requirements are counted elsewhere: home, studio, itinerary-review, privacy, business, terms and refund. They are excluded from topic ownership."
+      "identityCount": 9,
+      "scope": "The nine remaining system identities after system-guides and system-entry-requirements are counted elsewhere: home, studio, author-evan, itinerary-review, zhangjiajie-4-day-private-tour, privacy, business-information, terms and refund-delivery. They are excluded from topic ownership."
     },
-    "inProduction": [
-      {
-        "id": "destination-zhangjiajie",
-        "artifactType": "destination-hub",
-        "candidateId": "destination-20260820-zhangjiajie-city-hub",
-        "centralDecision": "approved",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
-        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "canonicalPath": "/destinations/zhangjiajie/"
-      },
-      {
-        "id": "china-online-arrival-card",
-        "artifactType": "guide",
-        "candidateId": "essentials-20260820-china-online-arrival-card",
-        "centralDecision": "approved",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
-        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "canonicalPath": "/guides/china-online-arrival-card/"
-      },
-      {
-        "id": "zhangjiajie-national-forest-park-tickets-and-entrances",
-        "artifactType": "guide",
-        "candidateId": "destination-20260820-zhangjiajie-forest-park-workflow",
-        "centralDecision": "approved",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
-        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "canonicalPath": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
-      },
-      {
-        "id": "chongqing-railway-station-selector",
-        "artifactType": "guide",
-        "candidateId": null,
-        "centralDecision": "approved-for-completion",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
-        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "canonicalPath": "/guides/chongqing-railway-station-selector/",
-        "remoteRef": "origin/article/worker-1-chongqing-railway-station-selector",
-        "observedCommit": "2c68d5036217b3dc8ebfc58edcdb0dd7c9e14ca2"
-      },
-      {
-        "id": "destination-hangzhou",
-        "artifactType": "destination-hub",
-        "candidateId": null,
-        "centralDecision": "approved-for-completion",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
-        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "canonicalPath": "/destinations/hangzhou/",
-        "remoteRef": "origin/codex/city-hub-hangzhou-draft-20260815",
-        "observedCommit": "273b801e5923aba9d1c6423106527bc3bcb6e52a"
-      }
-    ],
+    "inProduction": [],
     "roundLockedTopicsAtKickoff": [
       {
         "id": "china-high-speed-train-first-time-guide",
@@ -2892,9 +3145,12 @@
         "centralDecisionAt": "2026-08-11T14:11:52+08:00",
         "executionStatus": "release-completed",
         "publicationStatus": "published",
-        "stateTransition": "published-via-pr-24; existing canonical expanded to own the combined Tiananmen-plus-Palace execution task on 2026-08-22; upgraded copy ready for central release and not yet deployed",
+        "stateTransition": "published-via-pr-24; combined Tiananmen-plus-Palace expansion published-via-pr-86",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/24",
+        "latestUpdatePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/86",
+        "latestUpdateMergeCommit": "81fa3c4c5d1c612a1ca4d03163c8133d1feb12aa",
+        "latestUpdateHttp200VerifiedAt": "2026-08-23",
         "liveUrls": ["https://homegroundchina.com/guides/forbidden-city-for-foreign-visitors/", "https://homegroundchina.com/zh/guides/forbidden-city-for-foreign-visitors/", "https://homegroundchina.com/ko/guides/forbidden-city-for-foreign-visitors/"],
         "publicationDate": "2026-08-11",
         "lastVerifiedAt": "2026-08-11T17:03:41+08:00",
@@ -2933,7 +3189,7 @@
         "cannibalizationOwner": "forbidden-city-for-foreign-visitors",
         "freshnessClass": "critical-on-booking-or-access-change",
         "checkedAt": "2026-08-22",
-        "decision": "published-via-pr-24; existing-owner expansion ready for central release on 2026-08-22",
+        "decision": "published-via-pr-24; existing-owner expansion published-via-pr-86",
         "parentHub": "hub-explore",
         "suggestedInternalLinks": ["beijing-where-to-stay-first-trip", "which-beijing-railway-station", "china-itinerary-with-older-parents", "is-your-china-itinerary-too-rushed"]
       },
@@ -2950,7 +3206,17 @@
         "pageFamily": "comparison",
         "taskMode": "compare",
         "artifactShape": "comparison",
-        "status": "central-approved-release-candidate",
+        "status": "selected",
+        "candidateStatus": "selected",
+        "centralDecision": "approved",
+        "executionStatus": "release-completed",
+        "publicationStatus": "published",
+        "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/86",
+        "liveUrls": [
+          "https://homegroundchina.com/guides/great-wall-section-selector-from-beijing/",
+          "https://homegroundchina.com/zh/guides/great-wall-section-selector-from-beijing/",
+          "https://homegroundchina.com/ko/guides/great-wall-section-selector-from-beijing/"
+        ],
         "ownerPool": "employee-2-destination",
         "priorityBreakdown": {
           "userTaskAndDemandEvidence": 23,
@@ -2981,8 +3247,9 @@
         },
         "cannibalizationOwner": "great-wall-section-selector-from-beijing",
         "freshnessClass": "high-on-access-or-ticket-change",
-        "checkedAt": "2026-08-22",
-        "decision": "central-approved-expanded-four-section-owner-release-candidate",
+        "checkedAt": "2026-08-23",
+        "lastVerifiedAt": "2026-08-23",
+        "decision": "published-expanded-four-section-owner-via-pr-86",
         "parentHub": "hub-explore",
         "suggestedInternalLinks": ["beijing-to-badaling-great-wall-transfer", "beijing-to-mutianyu-great-wall-transfer", "destination-beijing"]
       },
@@ -3217,20 +3484,25 @@
         "publicToolCreationAuthorized": false,
         "publicImplementationAuthorized": false,
         "indexablePageAuthorized": false,
-        "specificationStatus": "review-ready",
+        "specificationStatus": "v4-technical-specification-merged-internal-only-public-product-rejected",
         "status": "selected",
         "candidateStatus": "selected",
-        "centralDecision": "pending-review",
-        "centralDecisionEvidence": null,
-        "centralDecisionAt": null,
-        "executionStatus": "specification-submitted",
+        "centralDecision": "rejected",
+        "decisionScope": "public-product-only-internal-specification-retained",
+        "centralDecisionEvidence": "origin/ops/seo-content-scale-20260822@9b93620209da4fe97aa2a6f01979c2e4c98f237c; PR #75 and the v4 review remain internal evidence only",
+        "centralDecisionAt": "2026-08-21",
+        "executionStatus": "internal-specification-merged-public-product-closed",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
-        "releasePr": null,
+        "specIntegrationPr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/75",
+        "specMergeCommit": "0b1ad8d5ea4156fa25c08c25e180f7e2dc9a564e",
+        "technicalReviewResult": "passed",
+        "technicalReviewCommit": "e524af81e7d1ca82dcf61256039d434dee4f0753",
+        "technicalReviewMergedCommit": "4317ffa067361ccacc986e73acbdd64844d87f8d",
         "liveUrls": [],
-        "lastVerifiedAt": "2026-08-11T17:03:41+08:00",
+        "lastVerifiedAt": "2026-08-23",
         "durableArtifact": true,
-        "workflowException": "Internal specification exists without a formal SEO execution Issue under the newly recorded workflow; review readiness does not authorize public implementation.",
+        "workflowException": "The internal specification was merged without a formal SEO execution Issue under the newly recorded workflow. Technical review passed, then the public product was explicitly rejected; no further work is authorized.",
         "ownerPool": "employee-4-planning",
         "priorityBreakdown": {
           "userTaskAndDemandEvidence": 24,
@@ -3255,14 +3527,14 @@
         },
         "homegroundInformationGain": "Homeground can make transfer tax explicit: arrival/departure fragments, station and airport access, hotel moves, recovery buffer and traveler pace. Outputs should link to owned route, transport and stay decisions.",
         "sourceReadiness": {
-          "status": "medium-high",
+          "status": "technical-contract-passed-policy-pack-not-approved",
           "primarySources": [],
-          "missing": "Central editor must approve the scoring model and test scenarios; no live schedule promise should be made."
+          "missing": "No numeric PolicyPack, golden numeric outputs, localization dictionaries or public implementation approval exists; no calculator, engine, API, page or live-schedule promise is authorized."
         },
         "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
         "freshnessClass": "medium-model-review-quarterly",
-        "checkedAt": "2026-08-11",
-        "decision": "selected-specification-submitted-pending-central-review",
+        "checkedAt": "2026-08-23",
+        "decision": "internal-specification-retained-public-product-rejected-no-further-work-authorized",
         "parentHub": "hub-plan",
         "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning", "china-last-night-before-international-flight", "china-night-train-or-daytime-high-speed-rail"]
       },
@@ -3306,14 +3578,14 @@
         "sourceReadiness": {
           "status": "high",
           "primarySources": [],
-          "missing": "Requires editorial model alignment with the approved route checker."
+          "missing": "Requires editorial alignment with the existing rushed-itinerary owner and national planning Hub; the rejected Route Reality ticket is not a dependency."
         },
         "cannibalizationOwner": "is-your-china-itinerary-too-rushed",
         "freshnessClass": "low-quarterly",
         "checkedAt": "2026-08-11",
         "decision": "update-existing-owner-do-not-create",
         "parentHub": "hub-plan",
-        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "planning-20260811-01"]
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents"]
       },
       {
         "candidateId": "planning-20260811-03",
@@ -3362,7 +3634,7 @@
         "checkedAt": "2026-08-11",
         "decision": "hold-no-public-collection",
         "parentHub": "hub-plan",
-        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning", "planning-20260811-01"]
+        "suggestedInternalLinks": ["is-your-china-itinerary-too-rushed", "beijing-zhangjiajie-shanghai-10-days", "china-itinerary-with-older-parents", "china-open-jaw-flights-route-planning"]
       },
       {
         "candidateId": "stay-20260811-01",
@@ -3391,7 +3663,7 @@
           "https://homegroundchina.com/zh/guides/foreigners-china-hotel/",
           "https://homegroundchina.com/ko/guides/foreigners-china-hotel/"
         ],
-        "lastVerifiedAt": "2026-08-20T20:05:18+08:00",
+        "lastVerifiedAt": "2026-08-23",
         "durableArtifact": true,
         "workflowException": "Released before the formal post-approval SEO Issue workflow was consistently recorded; no Issue URL is inferred.",
         "ownerPool": "employee-5-stay",
@@ -3714,12 +3986,16 @@
         "status": "selected",
         "candidateStatus": "selected",
         "centralDecision": "approved",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
+        "executionStatus": "release-completed",
+        "publicationStatus": "published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "liveUrls": [],
-        "lastVerifiedAt": "2026-08-20T20:30:17+08:00",
+        "liveUrls": [
+          "https://homegroundchina.com/destinations/zhangjiajie/",
+          "https://homegroundchina.com/zh/destinations/zhangjiajie/",
+          "https://homegroundchina.com/ko/destinations/zhangjiajie/"
+        ],
+        "lastVerifiedAt": "2026-08-21",
         "ownerPool": "employee-2-destination",
         "priorityBreakdown": {
           "status": "not-rescored-this-sync",
@@ -3739,7 +4015,7 @@
         "cannibalizationOwner": "destination-zhangjiajie",
         "freshnessClass": "high-gateway-and-attraction-change",
         "checkedAt": "2026-08-20",
-        "decision": "central-approved-draft-submitted",
+        "decision": "published-via-pr-74-live-verified",
         "parentHub": "hub-explore",
         "suggestedInternalLinks": [
           "zhangjiajie-itinerary",
@@ -3769,12 +4045,16 @@
         "status": "selected",
         "candidateStatus": "selected",
         "centralDecision": "approved",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
+        "executionStatus": "release-completed",
+        "publicationStatus": "published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "liveUrls": [],
-        "lastVerifiedAt": "2026-08-20T20:30:17+08:00",
+        "liveUrls": [
+          "https://homegroundchina.com/guides/china-online-arrival-card/",
+          "https://homegroundchina.com/zh/guides/china-online-arrival-card/",
+          "https://homegroundchina.com/ko/guides/china-online-arrival-card/"
+        ],
+        "lastVerifiedAt": "2026-08-21",
         "ownerPool": "employee-6-entry-practical",
         "priorityBreakdown": {
           "status": "not-rescored-this-sync",
@@ -3798,7 +4078,7 @@
         "cannibalizationOwner": "china-online-arrival-card",
         "freshnessClass": "critical-on-nia-source-change",
         "checkedAt": "2026-08-20",
-        "decision": "central-approved-draft-submitted",
+        "decision": "published-via-pr-74-live-verified",
         "parentHub": "hub-essentials",
         "suggestedInternalLinks": [
           "system-entry-requirements",
@@ -3827,12 +4107,16 @@
         "status": "selected",
         "candidateStatus": "selected",
         "centralDecision": "approved",
-        "executionStatus": "draft-submitted",
-        "publicationStatus": "not-published",
+        "executionStatus": "release-completed",
+        "publicationStatus": "published",
         "executionIssueUrl": null,
         "releasePr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/74",
-        "liveUrls": [],
-        "lastVerifiedAt": "2026-08-20T20:30:17+08:00",
+        "liveUrls": [
+          "https://homegroundchina.com/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "https://homegroundchina.com/zh/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "https://homegroundchina.com/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
+        ],
+        "lastVerifiedAt": "2026-08-21",
         "ownerPool": "employee-2-destination",
         "priorityBreakdown": {
           "status": "not-rescored-this-sync",
@@ -3852,7 +4136,7 @@
         "cannibalizationOwner": "zhangjiajie-national-forest-park-tickets-and-entrances",
         "freshnessClass": "critical-ticket-gate-and-operator-change",
         "checkedAt": "2026-08-20",
-        "decision": "central-approved-draft-submitted",
+        "decision": "published-via-pr-74-live-verified",
         "parentHub": "destination-zhangjiajie",
         "suggestedInternalLinks": [
           "zhangjiajie-itinerary",
@@ -3864,6 +4148,7 @@
       },
       {
         "candidateId": "planning-20260820-first-24-hours",
+        "proposedContentId": "first-24-hours-in-china",
         "workingTitle": "First 24 Hours in China",
         "action": "collection",
         "section": "plan",
@@ -3875,17 +4160,29 @@
         "pageFamily": "combined-decision",
         "status": "deferred",
         "candidateStatus": "deferred",
-        "centralDecision": "defer",
-        "executionStatus": "not-started",
+        "centralDecision": "pending-review",
+        "executionStatus": "draft-submitted",
         "publicationStatus": "not-published",
         "executionIssueUrl": null,
         "releasePr": null,
         "liveUrls": [],
-        "lastVerifiedAt": "2026-08-20T20:05:18+08:00",
+        "lastVerifiedAt": "2026-08-21",
+        "repositoryPresenceRecheckedAt": "2026-08-23",
+        "durableArtifact": true,
+        "draftIntegrationPr": "https://github.com/yangchunxuan/travel-china-with-xuan/pull/76",
+        "draftIntegrationMergeCommit": "6c26d3fe8d0b8c3b32b66f41f2562ebeaf86f24e",
+        "draftArtifactPaths": [
+          "docs/organic-growth/arrival-system-draft/hub.en.md",
+          "docs/organic-growth/arrival-system-draft/hub.zh.md",
+          "docs/organic-growth/arrival-system-draft/hub.ko.md"
+        ],
+        "publicImplementationAuthorized": false,
+        "indexablePageAuthorized": false,
+        "publishingAuthorized": false,
         "ownerPool": "employee-4-planning",
         "priorityBreakdown": {
           "status": "not-scored-for-execution",
-          "reason": "The collection dependency is not yet released."
+          "reason": "The arrival-card dependency is released, but this separate collection has not passed a renewed eligibility, non-duplication and routing-value decision."
         },
         "demandEvidence": {
           "status": "not-used-for-current-approval",
@@ -3894,13 +4191,13 @@
         "serpGap": "Not evaluated for release in this batch.",
         "homegroundInformationGain": "Potentially useful only as a routed collection across durable owners, not as another generic checklist that repeats them.",
         "sourceReadiness": {
-          "status": "blocked-by-owner-dependency",
-          "missing": "The online arrival-card canonical owner must exist and the collection eligibility gate must be reviewed first."
+          "status": "owner-dependency-satisfied-central-review-required",
+          "missing": "Central must review collection eligibility, source freshness and the no-duplication routing boundary before any public implementation."
         },
         "cannibalizationOwner": "hub-plan",
         "freshnessClass": "critical-arrival-workflow-dependencies",
-        "checkedAt": "2026-08-20",
-        "decision": "defer-no-writing-no-public-page",
+        "checkedAt": "2026-08-23",
+        "decision": "durable-docs-draft-central-public-authorization-pending",
         "parentHub": "hub-plan",
         "suggestedInternalLinks": [
           "china-online-arrival-card",
@@ -4095,8 +4392,8 @@
       {
         "owner": "is-your-china-itinerary-too-rushed",
         "priority": "P2",
-        "change": "If the route checker is centrally approved, add the 7/10/14-day decision module and link to it; do not create a generic duration page.",
-        "authorization": "central approval required"
+        "change": "The Route Reality public product was rejected. If a real 7/10/14-day decision gap is confirmed, update this owner or the national planning Hub directly; do not link to the rejected ticket or create a generic duration page.",
+        "authorization": "existing-owner update only with central approval; rejected tool ticket is closed"
       },
       {
         "owner": "why-are-hotels-in-china-so-cheap",
@@ -4184,9 +4481,9 @@
         "priority": "critical-live-monitor",
         "facts": ["Palace Museum reservation", "same-day Palace-reservation exemption for Tiananmen Square access", "foreign-passport handling", "entrance/exit", "closure calendar", "temporary Tiananmen controls"],
         "trigger": "official booking, access, passport or closure change",
-        "lastKnownReviewRange": "sourceReviewedDate 2026-08-22; existing canonical live since 2026-08-11; expanded update ready for central release and not yet deployed",
+        "lastKnownReviewRange": "sourceReviewedDate 2026-08-22; existing canonical live since 2026-08-11; expanded update published via PR #86 and HTTP 200 read back on 2026-08-23",
         "status": "published-owner-monitor",
-        "updateState": "existing-owner-expansion-ready-for-central-release-not-deployed"
+        "updateState": "existing-owner-expansion-published-via-pr-86"
       },
       {
         "id": "dynamic-approved-foreign-hotels",
@@ -4200,20 +4497,20 @@
       {
         "id": "dynamic-online-arrival-card",
         "owners": ["china-online-arrival-card"],
-        "priority": "P0-before-release-and-on-source-change",
+        "priority": "P0-published-on-source-change",
         "facts": ["official form URL", "service availability", "submission timing", "free-service warning", "airport fallback"],
         "trigger": "NIA notice or official form change; mandatory release-day recheck",
-        "lastKnownReviewRange": "official NIA sources checked for 2026-08-20 approval",
-        "status": "approved-owner-not-published"
+        "lastKnownReviewRange": "official NIA sources checked for approval; three-locale production read-back completed 2026-08-21",
+        "status": "published-owner-monitor"
       },
       {
         "id": "dynamic-zhangjiajie-forest-park-workflow",
         "owners": ["zhangjiajie-national-forest-park-tickets-and-entrances"],
-        "priority": "P0-before-release-and-on-operator-change",
+        "priority": "P0-published-on-operator-change",
         "facts": ["official ticket channel", "product inclusions", "passport handling", "entry gates and slots", "ticket validity", "shuttle, elevator and cableway relationship"],
         "trigger": "park or ticket-operator change; mandatory release-day recheck",
-        "lastKnownReviewRange": "source readiness medium at 2026-08-20 approval",
-        "status": "approved-owner-not-published"
+        "lastKnownReviewRange": "release sources reviewed and three-locale production read-back completed 2026-08-21",
+        "status": "published-owner-monitor"
       },
       {
         "id": "dynamic-attraction-booking-access",
@@ -4272,8 +4569,8 @@
     {
       "cluster": "China itinerary pace and generic duration",
       "canonicalOwner": "is-your-china-itinerary-too-rushed",
-      "toolOwnerIfApproved": "planning-20260811-01",
-      "boundary": "Editorial diagnosis remains canonical; tool calculates transfer tax and routes back to the article."
+      "rejectedToolCandidate": "planning-20260811-01",
+      "boundary": "is-your-china-itinerary-too-rushed is the sole public owner. The Route Reality public product was rejected; no public tool link, ticket or implementation is open."
     },
     {
       "cluster": "China total trip cost",
@@ -4691,8 +4988,9 @@
       "selectedCandidateId": "planning-20260811-01",
       "selectedCount": 1,
       "candidateStatus": "selected",
-      "centralDecision": "pending-review",
-      "executionStatus": "specification-submitted",
+      "centralDecision": "rejected",
+      "decisionScope": "public-product-only-internal-specification-retained",
+      "executionStatus": "internal-specification-merged-public-product-closed",
       "publicationStatus": "not-published",
       "writerStartAuthorized": false
     },

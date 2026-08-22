@@ -2,6 +2,12 @@
 
 Status: **ARRIVAL SYSTEM LIVE SYNC READY — CENTRAL REVIEW REQUIRED**
 
+Current-state overlay (2026-08-23): the Search Map now records all five PR #74
+identities as published. References below to a stale pre-release Search Map
+describe only this package's 2026-08-21 audit baseline. First 24 Hours itself
+remains a durable `pending-review / draft-submitted / not-published` collection
+draft with no public route or publication authorization.
+
 This package is the only proposed Homeground collection for the traveller task
 “what must I do before departure, at the Chinese port, and before the end of my
 first day?” It is a router across narrower owners, not a second copy of their
@@ -41,11 +47,12 @@ Card also returned `robots: index, follow` in all three locales. These
 production facts were checked at `2026-08-21`; sitemap presence proves
 discovery inclusion, not external search-engine indexation.
 
-The merged Search Map still preserves the five identities' pre-release
-`draft-submitted / not-published` snapshot. This package records the verified
-production state without editing that inventory. The bounded arrival system is
-now **30 live owners**, and the Hub drafts link the three correct arrival-card
-locale URLs.
+At this package's 2026-08-21 baseline, the merged Search Map still preserved the
+five identities' pre-release `draft-submitted / not-published` snapshot. This
+package recorded the verified production state without editing that inventory.
+The Search Map was corrected on 2026-08-23. The bounded arrival system had
+**30 live owners** at the package baseline, and the Hub drafts link the three
+correct arrival-card locale URLs.
 
 This live-state sync did not silently advance the 2026-08-20 policy/product
 source dates. Those rows are one day old and within their stated maximum ages;

@@ -24,9 +24,10 @@
    `zhangjiajie-national-forest-park-tickets-and-entrances`,
    `chongqing-railway-station-selector` and `destination-hangzhou`. All five ×
    EN/ZH/KO returned HTTP 200 with self-canonicals and appeared once in the live
-   sitemap. The merged Search Map retains a stale pre-release
-   `draft-submitted / not-published` snapshot; it is not current production
-   evidence.
+   sitemap. At this package's 2026-08-21 checkpoint, the merged Search Map
+   retained a stale pre-release `draft-submitted / not-published` snapshot; it
+   was not current production evidence. The 2026-08-23 Search Map has since
+   been corrected.
 2. `origin/main@ef1898745a3c7a6e7cd308aa341c352f24fe9d01` — fetched
    2026-08-21 and used for repository identity. Live
    [sitemap.xml](https://homegroundchina.com/sitemap.xml) returned HTTP 200 with

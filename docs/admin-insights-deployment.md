@@ -1,10 +1,14 @@
 # Homeground private saved-inquiry insights
 
-Status: deployed only to an independent Supabase Staging project and kept
-fail-closed. Production has not been changed. The Staging database objects and
-two Edge Functions exist, but the administrator has not completed password
-setup or TOTP, the Admin API remains disabled, public Inquiry submissions
-remain disabled, and no production hosting/security-header gate has passed.
+Status: the saved-inquiry backend is deployed only to an independent Supabase
+Staging project and kept fail-closed. The public `/admin/` static shell is live,
+but no production Admin data API or traffic API activation is recorded. The
+Staging database objects and two original Edge Functions exist, but the
+administrator has not completed password setup or TOTP, the Admin API remains
+disabled, public Inquiry submissions remain disabled, and no production
+hosting/security-header gate has passed. PR #89 added hardened traffic source
+and tests; it did not deploy Supabase production changes. See the
+[2026-08-23 production record](./release-notes/search-analytics-privacy-production-release-20260823.md).
 
 The approved product boundary is:
 
@@ -12,8 +16,15 @@ The approved product boundary is:
 - one 90-day aggregate response;
 - one operational-health response;
 - no individual enquiry, contact detail, public reference, free text, budget,
-  country, visitor event, platform metric, source attribution, CRM field,
-  search, export or write action.
+  country, CRM field, search, export or write action in the saved-inquiry
+  responses.
+
+An optional, separately gated `admin-traffic` response now exists in source. It
+is limited to one 30-day aggregate view of consented anonymous sessions,
+suppressed dimensions and at most 12 day-resolution session labels. It contains
+no IP, User-Agent, referrer, raw UTM, session hash, event ID or inquiry ID; a
+contact-channel click does not prove a message was sent. It is not active in
+production and does not change the saved-inquiry response boundary above.
 
 The HTML route is a static asset and its URL is not secret. Protection of the
 data comes from Supabase Auth, TOTP MFA, the server-side administrator UUID
@@ -25,8 +36,10 @@ The implementation and current Staging deployment are deliberately
 fail-closed:
 
 - missing public build configuration shows `私有后台尚未启用` and does not
-  call either business-data endpoint;
+  call any business-data endpoint;
 - `ADMIN_API_ENABLED` defaults to `false` at the Edge API;
+- `ADMIN_TRAFFIC_API_ENABLED` is an independent second kill switch and remains
+  false or absent; it cannot override the Admin master switch;
 - no administrator UUID or server credential belongs in the browser bundle;
 - no migration or function deployment is performed by `npm run build`;
 - the existing GitHub Pages workflow does not create an Auth user or enable
@@ -79,6 +92,7 @@ Only these Homeground business-data calls are permitted:
 ```text
 GET /functions/v1/admin-insights
 GET /functions/v1/admin-health
+GET /functions/v1/admin-traffic
 ```
 
 Supabase Auth calls for login, factor enrolment/challenge/verification, token
@@ -89,6 +103,8 @@ The frontend accepts only:
 
 - `homeground-admin-insights.v1`;
 - `homeground-admin-health.v1`.
+- `homeground-admin-traffic.v1` for the optional, independently gated 30-day
+  traffic view.
 
 It validates the full response shape, rejects forbidden field names and stops
 displaying a section when the contract is not the approved version.
@@ -117,6 +133,11 @@ the static site and therefore public:
 All four must be present and HTTPS in a production build. Partial or malformed
 configuration keeps the page disabled.
 
+The current client derives the exact `/functions/v1/admin-traffic` URL from the
+already validated `admin-insights` Supabase origin. A checked-in or repository
+variable naming that route is not an activation signal and is never a substitute
+for the two server-side kill switches.
+
 ## Server-only Edge configuration
 
 The hosted project supplies its own `SUPABASE_URL`, publishable-key dictionary
@@ -125,6 +146,7 @@ and secret-key dictionary. The application-specific settings are:
 | Variable | Rule |
 |---|---|
 | `ADMIN_API_ENABLED` | Defaults to `false`; set exactly `true` only after every activation gate passes |
+| `ADMIN_TRAFFIC_API_ENABLED` | Independent default-off gate for `admin-traffic`; it additionally requires `ADMIN_API_ENABLED=true` and must follow `docs/first-party-traffic-operations.md` |
 | `ADMIN_ALLOWED_ORIGIN` | One exact canonical HTTPS origin, normally `https://homegroundchina.com`; no path or wildcard |
 | `ADMIN_ALLOWED_USER_IDS` | Comma-separated Supabase Auth user UUIDs; never email addresses |
 | `ADMIN_ENVIRONMENT` | Controlled label such as `staging` or `production` |
@@ -267,21 +289,35 @@ load. Capture the actual production response headers as acceptance evidence.
     is still disabled.
 12. Set `ADMIN_API_ENABLED=true`, perform a read-only smoke test, then record
     the activation evidence and owner.
+13. Treat `admin-traffic` as a separate later release. Complete the first-party
+    collector runbook and remote read-back first; then enable
+    `ADMIN_TRAFFIC_API_ENABLED` only for a bounded read-only smoke test. Do not
+    infer this step from the saved-inquiry Admin activation.
 
 ## Required acceptance checks
 
-- no login -> both GETs rejected;
-- valid login at `aal1` -> both GETs rejected;
-- `aal2` but UUID not allowed -> both GETs rejected;
-- allowed UUID at `aal2` -> only the two fixed GETs succeed;
+- no login -> every configured business GET is rejected;
+- valid login at `aal1` -> every configured business GET is rejected;
+- `aal2` but UUID not allowed -> every configured business GET is rejected;
+- allowed UUID at `aal2` -> the two saved-inquiry GETs may succeed; the traffic
+  GET remains independently gated;
+- `admin-traffic` remains disabled unless both `ADMIN_API_ENABLED` and
+  `ADMIN_TRAFFIC_API_ENABLED` are exactly true;
 - wrong/missing Origin -> no usable CORS response;
-- missing/false kill switch -> no Auth or database read;
+- missing/false `ADMIN_API_ENABLED` -> no Auth or business RPC;
+- missing/false `ADMIN_TRAFFIC_API_ENABLED` while the master gate is true ->
+  shared Admin authorization may run, but no traffic RPC or traffic audit read
+  path runs;
 - every success and error response uses `Cache-Control: no-store` and
   `Pragma: no-cache`;
 - page bundle contains no secret/service-role key, monitor secret,
   administrator UUID or enquiry data;
-- response contains no ID, public reference, contact, country, budget,
-  free text, UTM, IP, User-Agent, query or referrer;
+- response contains no source-row, user, contact, inquiry, event or session-hash
+  ID and no public reference; the only label exception is the bounded,
+  window-scoped `sessionLabel` described above;
+- response contains no raw UTM fields or values, IP, User-Agent, query or
+  referrer; only the validated, bounded and suppressed source/campaign buckets
+  described above may appear;
 - all eight metric compatibility sets distinguish `Unknown` from
   `Not applicable`;
 - a compatibility denominator below five is not displayed exactly;
@@ -327,13 +363,19 @@ Do not claim that `k<5` suppression alone prevents cross-time differencing.
 
 Use the narrowest reversible control:
 
-1. set `ADMIN_API_ENABLED=false`;
-2. verify both business GETs return the disabled response without an Auth/RPC
-   call;
-3. if an account may be compromised, also disable that Auth user and remove
+1. for a traffic-view incident, set `ADMIN_TRAFFIC_API_ENABLED=false`; for a
+   broader Admin incident, set `ADMIN_API_ENABLED=false`;
+2. for a traffic-only incident, verify `admin-traffic` returns
+   `traffic_disabled` and does not call the traffic RPC or traffic audit read
+   path; shared Admin authorization may still run because it precedes the
+   independent traffic gate, and the two saved-inquiry GETs may remain
+   available;
+3. for a broader Admin incident, verify all three business GETs return the
+   Admin-disabled response without an Auth/RPC call;
+4. if an account may be compromised, also disable that Auth user and remove
    its UUID from the allow-list;
-4. revoke/rotate credentials only when their exposure is plausible;
-5. do not delete enquiries or operational evidence to hide an incident.
+5. revoke/rotate credentials only when their exposure is plausible;
+6. do not delete enquiries or operational evidence to hide an incident.
 
 The static `/admin/` HTML can remain reachable while disabled; it contains no
 business data and must display a failure state rather than cached results.
