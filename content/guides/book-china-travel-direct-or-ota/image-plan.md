@@ -1,0 +1,23 @@
+# Image plan — book-china-travel-direct-or-ota
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/book-china-travel-direct-or-ota/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: a large railway station concourse with departure boards above the gates — the physical place where official rail tickets bought on any channel are used; supports the "compare contracts, not just prices" framing without depicting any booking screen, ticket, or personal data.
+- Provenance:
+  - Author: 钉钉
+  - Source page: Wikimedia Commons file page for "Interior of Shanghai Hongqiao Railway Station 2.jpg"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/e/ef/Interior_of_Shanghai_Hongqiao_Railway_Station_2.jpg
+  - License: CC BY-SA 4.0
+  - Subject/place: Shanghai Hongqiao Railway Station, waiting hall/concourse
+  - Date taken (per Commons metadata): 2021-09-18
+  - Download date: 2026-08-22 (UTC+8), via upload.wikimedia.org, HTTP 200, 3,916,592 bytes
+- Processing record:
+  - Crop: full width 3922 px, vertical band top=340, height=2451 px (3922×2451) — keeps gates and departure boards in frame, trims excess ceiling
+  - Resize to 1600 × 1000, WebP quality 82 → 301,014 bytes
+  - Original SHA-256: 512ff2b0f5e6f45ac50d8d423de1121087b4b83af7383e29517a96eff22fd216
+  - Output SHA-256: 6d2340dfa308e04c24c6c8e8900f64852448d918e9512cac086e233c6ff2a5f1
+- Privacy check: no readable passports, bank cards, tickets, QR codes, phone numbers or identifiable close-up faces at output resolution; distant figures only.
+- Documentary boundary: a normal station scene; not described as an incident, disruption or failure scene anywhere.
+- Cropping checks: desktop hero crops center-weighted — gate numbers and boards remain visible; 390px mobile crop retains the central concourse band; no text-critical element sits at either edge.
+- Attribution duty: license requires attribution and share-alike carry-over for derivatives; attribution recorded here and available for central review before publication.

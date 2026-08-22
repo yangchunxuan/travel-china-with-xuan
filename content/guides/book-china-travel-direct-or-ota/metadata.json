@@ -1,0 +1,81 @@
+{
+  "id": "book-china-travel-direct-or-ota",
+  "type": "planning",
+  "pillar": "budget-and-tradeoffs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "trip-planning",
+    "booking-channel",
+    "ota-comparison",
+    "payment-recovery"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/book-china-travel-direct-or-ota/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/book-china-travel-direct-or-ota/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/book-china-travel-direct-or-ota/",
+      "title": "Book Direct or Through an OTA for China Travel?",
+      "headline": "Book Direct or Through an OTA for China Travel? Compare Contracts, Not Just Prices",
+      "description": "Compare contract owner, supplier confirmation, passport fit, payment proof, refund lanes and support language before choosing where to book China hotels, flights, trains and tickets.",
+      "heroAlt": "Travelers crossing a large railway station concourse with departure boards showing schedules above the gates.",
+      "navTitle": "Direct booking or OTA",
+      "featuredLinkLabel": "Compare booking channels",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Booking",
+        "Trip planning"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/book-china-travel-direct-or-ota/",
+      "title": "中国旅行预订：官网直订还是通过 OTA？",
+      "headline": "中国旅行预订：官网直订还是通过 OTA？比较合同，而不只是价格",
+      "description": "预订中国酒店、机票、火车票和门票之前，先比较合同主体、供应商确认、证件兼容、支付凭证、退改渠道与售后语言支持。",
+      "heroAlt": "旅客穿过大型火车站候车大厅，检票口上方是显示车次信息的屏幕。",
+      "navTitle": "直订还是 OTA",
+      "featuredLinkLabel": "比较预订渠道",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "预订",
+        "行程规划"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/book-china-travel-direct-or-ota/",
+      "title": "중국 여행 예약: 공식 채널과 OTA 중 어디가 나을까?",
+      "headline": "중국 여행 예약, 공식 채널과 OTA: 가격보다 계약을 먼저 비교하세요",
+      "description": "중국 호텔·항공·기차·관광지 예약 전에 계약 주체, 공급사 확정, 여권 적합성, 결제 증빙, 환불 창구와 언어 지원을 비교하는 방법.",
+      "heroAlt": "여행자들이 대형 기차역 대합실을 가로지르고 있으며 검표구 위 전광판에 열차 시각이 표시되어 있다.",
+      "navTitle": "직접 예약과 OTA",
+      "featuredLinkLabel": "예약 채널 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "예약",
+        "여행 계획"
+      ]
+    }
+  }
+}

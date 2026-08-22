@@ -1,0 +1,207 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+
+const body: StructuredPageBody = {
+  schemaVersion: "1.0.0",
+  blocks: [
+    {
+      id: "answer-first",
+      type: "lead",
+      text: "Neither channel wins on price alone, because direct and OTA bookings can attach you to different contracts, different support desks and different failure paths. Before you pay for any China hotel room, flight, train ticket or attraction product, compare who the final supplier is, whose terms govern cancellation, whether your passport fits the ID fields, what proof of payment you will hold, which channel processes changes and refunds, what language support exists after sale, and how you recover if something breaks. The right answer depends on the product and on how much recovery work you want to do yourself.",
+    },
+    {
+      id: "first-steps-heading",
+      type: "heading",
+      level: 2,
+      text: "Seven things to do before your next booking",
+    },
+    {
+      id: "first-steps-list",
+      type: "list",
+      ordered: true,
+      items: [
+        "Identify the operating supplier behind every offer: the hotel itself, the airline, China Railway, or the attraction operator. The brand of the website is not the supplier.",
+        "Open the fare or rate rules before paying and read the cancellation line first, including the deadline and its time zone.",
+        "Check that the name and document fields accept foreign passports exactly as your passport spells your name.",
+        "Confirm the charge currency, the taxes included, and whether payment goes to the platform, the supplier or an intermediary company.",
+        "Find the post-sale support entry for that specific order: app chat, hotline, email or hotel front desk, and save it with the booking reference.",
+        "Save a trackable order number in two places offline, then wait for the supplier-side confirmation, not just the payment receipt.",
+        "Decide, product by product, whether you would rather handle a failure yourself through the supplier, or hand it to a platform's support desk and follow up there.",
+      ],
+    },
+    {
+      id: "parties-heading",
+      type: "heading",
+      level: 2,
+      text: "What actually changes between direct and OTA",
+    },
+    {
+      id: "parties-p1",
+      type: "paragraph",
+      text: "The real difference is rarely the headline number. When you book directly with a hotel, airline or China Railway, your contract is normally with that operator, and its published terms govern cancellations, changes and refunds. When you book through an online travel agency (OTA), you usually hold two layers at once: the platform's booking terms, and the underlying supplier's terms. Trip.com's own terms state that a booking is additionally governed by the relevant supplier's conditions as a separate agreement, and that different products carry different change and cancellation rights shown during checkout. One order, two rulebooks.",
+    },
+    {
+      id: "parties-p2",
+      type: "paragraph",
+      text: "That second layer cuts both ways. A platform can give you one inbox, one payment record and one support desk for an entire trip, which matters when a foreign traveller faces language barriers. But the platform does not operate the flight, clean the room or open the gate. If the supplier fails, the platform's duty under China's Online Travel Services rules is to provide truthful information, keep queryable booking channels and actively assist you in defending your rights, including encouraging advance compensation by platforms in disputes. Assistance is not a substitute for the supplier's own liability, and neither is guaranteed to be quick.",
+    },
+    {
+      id: "parties-p3",
+      type: "paragraph",
+      text: "Rail is the sharpest example. China State Railway Group states that the 12306 website and app are the country's only official online train-ticket sales channel, that no third party has been authorized to sell train tickets, and that passengers should confirm the payee is China Railway Network Co., Ltd. Third-party services that appear to sell rail tickets are effectively purchasing agents working inside 12306 inventory, with added fees, bundled extras and an extra link where information can arrive late. Buying rail through an agent does not create a better contract; it adds a middleman to one.",
+    },
+    {
+      id: "matrix-heading",
+      type: "heading",
+      level: 2,
+      text: "Channel decision matrix by product",
+    },
+    {
+      id: "matrix-intro",
+      type: "paragraph",
+      text: "Use this matrix as a starting position, not a verdict. Your own priorities — a single support desk versus the shortest escalation path — legitimately flip some rows.",
+    },
+    {
+      id: "matrix-table",
+      type: "table",
+      caption: "Default channel considerations for four common China travel products",
+      columns: ["Product", "Direct channel strengths", "OTA channel strengths", "Watch-outs whichever you choose"],
+      rows: [
+        ["Hotel rooms", "Front desk and reservations department see your reservation in their own system; special requests and foreign-guest registration questions can be answered before arrival.", "One app for the whole trip; prepayment in your home currency; platform mediation if the property disputes what you were promised; review history visible.", "Rate rules differ per rate code even in the same room type; prepaid wholesale-style rates often route through a bedbank, so the front desk may hold less data about your booking."],
+        ["Domestic flights", "Airline manages schedule changes, rebooking after delays and seat/baggage add-ons without a middleman; status matches the carrier's own records.", "Multi-airline comparison; combined itineraries; platform help lines with English support on major apps.", "Voluntary refunds and changes are processed under the issuing channel's rules — Air China's conditions, like most carriers', route voluntary refunds through the original issuing carrier or its authorized sales agent. Wherever you buy, that is your processing lane."],
+        ["Train tickets", "12306 is the official seller; no agency markup; changes and refunds execute directly against your ticket record; passport-based e-ticket entry works the same for foreigners.", "Convenience if everything else is already in one app.", "China Railway states third-party platforms are not authorized sellers; expect service fees, bundled add-ons, and confirmation messages relayed through the agent rather than issued straight from 12306."],
+        ["Attraction entries and day tours", "The attraction's own channel guarantees the venue sees your real-name entry exactly as booked.", "Bundled products, English-language descriptions, instant vouchers.", "Channel authenticity, reseller reliability and real-name transfer are covered separately in our official-or-reseller guide; do not reuse hotel logic here."],
+      ],
+    },
+    {
+      id: "matrix-callout",
+      type: "callout",
+      title: "No ranking is intended",
+      body: "This page compares contract structure and recovery paths. It does not rank platforms, airlines or hotels, and it does not claim either channel is always cheaper. Prices move constantly; contract structure moves slowly, and that is what you can decide in advance.",
+      tone: "neutral",
+    },
+    {
+      id: "chain-heading",
+      type: "heading",
+      level: 2,
+      text: "Payment success is not supplier confirmation",
+    },
+    {
+      id: "chain-p1",
+      type: "paragraph",
+      text: "A payment receipt proves you paid somebody. It does not prove the hotel has your room, the airline has issued your ticket, or the train seat exists. On many OTA hotel products, especially lower-priced prepaid rates, your order may pass from the platform to a wholesaler and only reach the hotel as a rooming list entry hours later. Flights can sit in a 'processing' state while the platform requests ticket issuance from the airline. Until the operating system holds your booking, nothing is guaranteed — and most channels' own terms say so plainly.",
+    },
+    {
+      id: "chain-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "Level 1 — payment captured: your card or wallet shows a debit. Evidence: payment receipt with merchant name. This proves nothing about travel yet.",
+        "Level 2 — platform confirmation: the booking site shows 'confirmed' and sends a confirmation with a booking number. Read it: some confirmations for hotels still note the property will confirm later, and some flight prices are held pending ticketing.",
+        "Level 3 — ticketed or supplier-confirmed: flights show an e-ticket number (for airline products, typically a 13-digit number); hotels show a supplier or hotel confirmation number; trains show the 12306 e-ticket tied to your passport.",
+        "Level 4 — verifiable by you: you independently confirm at the source. For flights, retrieve the booking on the airline's own site with the record locator; for hotels, email or call the property with the confirmation number; for trains, the order appears in your 12306 account when booked there directly.",
+      ],
+    },
+    {
+      id: "chain-callout",
+      type: "callout",
+      title: "The gap that causes most first-trip failures",
+      body: "Travellers stop checking at Level 2. The dangerous cases live between Levels 2 and 3: a hotel reservation the front desk cannot find, a flight booking cancelled silently for a failed issue, a rail ticket message delayed by an agent. Close the gap the same evening you book, while you still have time to fix it.",
+      tone: "warning",
+    },
+    {
+      id: "checklist-heading",
+      type: "heading",
+      level: 2,
+      text: "The 60-second pre-payment checklist",
+    },
+    {
+      id: "checklist-table",
+      type: "table",
+      caption: "Eight checks that take less than a minute and prevent the most expensive mistakes",
+      columns: ["Check", "What to look for", "Why it matters"],
+      rows: [
+        ["Final supplier", "Operating hotel or airline named, not just the platform; for hotels, whether the rate is 'booked directly with the property' or supplied by a partner.", "Determines who must honour the booking and who can actually fix it."],
+        ["Fare or rate terms", "Cancellation deadline, change rules, no-show treatment, and whether the deadline uses local hotel time or another zone.", "Your refund rights come from these rules, not from politeness at the desk."],
+        ["Name and document fields", "Fields accept Latin letters end-to-end; surname/given-name order matches your passport; document type includes passport.", "Mismatched names are a leading cause of denied boarding and rejected check-in."],
+        ["Currency and total", "Charge currency, whether tax and service fees are included, and any card or FX fee warnings.", "Prevents surprise differences between displayed and charged amounts."],
+        ["Cancellation clock", "Exact deadline with date, hour and time zone; convert to your home zone once and write both down.", "'Free cancellation' claims are meaningless until anchored to a moment in time."],
+        ["Support entry", "How you contact this specific order: in-app chat, hotline, email, or the property directly; note opening hours.", "In a disruption you need the fastest working lane, discovered in calm conditions."],
+        ["Trackable references", "Booking number plus, for flights, the airline record locator; save them offline in two places.", "Every support conversation starts with a reference, including ones with your bank."],
+        ["Proof of payment", "Merchant name on the receipt matches the party you believe you contracted with.", "Needed for disputes, card questions and expense documentation."],
+      ],
+    },
+    {
+      id: "scenarios-heading",
+      type: "heading",
+      level: 2,
+      text: "Four failures and who to contact first",
+    },
+    {
+      id: "scenarios-intro",
+      type: "paragraph",
+      text: "When something breaks, contacting the wrong party first burns hours you may not have. Start with the owner of the broken step; escalate in parallel only after the first lane is moving.",
+    },
+    {
+      id: "scenario-table",
+      type: "table",
+      caption: "First contact and escalation for four common failures",
+      columns: ["Scenario", "Contact first", "Then"],
+      rows: [
+        ["No confirmation received after payment", "The channel that took your money: platform in-app support or the supplier's own booking office. Provide payment reference, amount and time.", "If a flight stays unticketed close to departure, ask the airline directly whether a booking exists under your name before rebooking; double-charging yourself is the classic second mistake."],
+        ["Supplier cannot find your order", "Re-verify basics with the supplier: correct property or carrier, date, exact name spelling, and any secondary confirmation number. Hotels: ask the reservations department, not only the front desk, and have them search by name and channel.", "Still missing? Return to the platform with the supplier's statement and request they chase the wholesaler or re-book equivalent lodging. Keep written timestamps for any dispute file."],
+        ["Schedule change or cancellation by supplier", "If you bought direct: the supplier's disruption line re-books or refunds under its conditions of carriage. If you bought via OTA: start with the platform's in-app change flow, but confirm what the airline or railway actually offers, because the underlying transport contract still belongs to the carrier.", "Under China's civil aviation rules, carrier-caused involuntary changes and refunds must not attract change or refund fees, and carriers or their agents must complete agreed refund procedures within seven working days of a valid application. Note the rule, but expect the processing lane to run through whoever issued the ticket."],
+        ["Refund arrives late or partially", "Ask the issuer of your refund promise (platform or supplier) for the refund reference and completion timeline first. Refund paths return to the original payment method; banks add processing time beyond the merchant's own deadline.", "If the merchant confirms release and your statement still shows nothing, raise it with your card issuer as a transaction inquiry. Keep both case numbers — merchant side and issuer side."],
+      ],
+    },
+    {
+      id: "scenarios-callout",
+      type: "callout",
+      title: "Escalation exists, but it is procedural",
+      body: "China's consumer framework gives you real lanes: civil aviation complaints handled under published timelines, tourism-complaint channels that platforms must display, and national consumer-complaint intake. They process evidence, they do not perform miracles. A dated trail of screenshots, references and promises is what makes those lanes work, so build it as you go — our evidence-pack guide shows how.",
+      tone: "decision",
+    },
+    {
+      id: "boundary-heading",
+      type: "heading",
+      level: 2,
+      text: "What this decision cannot guarantee",
+    },
+    {
+      id: "boundary-list",
+      type: "list",
+      items: [
+        "No channel choice guarantees the lowest price. Fare classes and rate codes differ by distribution channel and hour; treat any universal 'direct is cheaper' or 'OTA is cheaper' claim as marketing.",
+        "No channel choice removes supplier risk. Overbooking, sudden closures and system errors happen on both paths; what changes is who you negotiate with afterwards.",
+        "Platform guarantees vary by product and market. A 'confirmed' badge means the platform accepted your order; read the product-specific terms linked at checkout for what is actually promised if the supplier defaults.",
+        "Regulatory protections set floors, not outcomes. Seven-working-day refund processing and complaint-handling timelines discipline the market; they do not put money back into your account automatically.",
+      ],
+    },
+    {
+      id: "internal-links",
+      type: "internal-links",
+      title: "Continue planning your booking setup",
+      items: [
+        { "label": "Official or reseller attraction tickets", "href": "/guides/official-or-reseller-china-tickets/", "description": "Verify a ticket's true seller and real-name fit before paying for attractions." },
+        { "label": "Build a booking-dispute evidence pack", "href": "/guides/china-booking-dispute-evidence-pack/", "description": "Assemble the dated record that makes complaints and card inquiries work." },
+        { "label": "Foreign passports and China hotels", "href": "/guides/foreigners-china-hotel/", "description": "Check guest-registration fit before choosing which channel books your room." },
+        { "label": "Flight fare bundles and baggage", "href": "/guides/china-domestic-flight-fare-bundle-baggage/", "description": "Compare what domestic fare bundles include before deciding where to buy." },
+      ],
+    },
+    {
+      id: "sources",
+      type: "sources",
+      title: "Primary sources reviewed",
+      items: [
+        { "label": "Notice on student reservation ticketing and official-channel reminder (12306 is the only official online rail ticket platform)", "url": "http://www.china-railway.com.cn/xwzx/ywsl/202412/t20241213_139844.html", "publisher": "China State Railway Group Co., Ltd.", "reviewedAt": "2026-08-22" },
+        { "label": "2026 Spring Festival travel ticket-sales announcement (payee verification and third-party-platform warning)", "url": "http://www.china-railway.com.cn/xwzx/ywsl/202601/t20260120_151744.html", "publisher": "China State Railway Group Co., Ltd.", "reviewedAt": "2026-08-22" },
+        { "label": "Provisions on Public Air Transport Passenger Services (Ministry of Transport Order 2021 No. 3)", "url": "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html", "publisher": "Civil Aviation Administration of China", "reviewedAt": "2026-08-22" },
+        { "label": "Policy interpretation of the Provisions on Public Air Transport Passenger Services (refund within 7 working days; no fees for carrier-caused involuntary changes)", "url": "https://www.caac.gov.cn/XXGK/XXGK/ZCJD/202103/t20210315_206803.html", "publisher": "Civil Aviation Administration of China", "reviewedAt": "2026-08-22" },
+        { "label": "General Conditions of Carriage for Passengers and Baggage, April 2026 edition (refunds via issuing carrier or its authorized sales agent; refund within 7 working days excluding bank processing; refund to original payment method)", "url": "https://webresource.airchina.com.cn/zh-CN/content/trans_conditions/lk-xlysztj2023n9yb/", "publisher": "Air China Limited", "reviewedAt": "2026-08-22" },
+        { "label": "Trip.com Terms and Conditions (supplier terms form a separate agreement; confirmation and availability rules)", "url": "https://www.trip.com/contents/service-guideline/terms.html", "publisher": "Trip.com", "reviewedAt": "2026-08-22" },
+        { "label": "Interim Provisions on the Administration of Online Tourism Business Services (truthful information, queryable booking channels, platform assistance duty)", "url": "https://zwgk.mct.gov.cn/zfxxgkml/zcfg/bmgz/202012/t20201204_905349.html", "publisher": "Ministry of Culture and Tourism of the PRC", "reviewedAt": "2026-08-22" },
+      ],
+    },
+  ],
+};
+
+export default body;
