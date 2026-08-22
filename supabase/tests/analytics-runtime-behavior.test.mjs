@@ -169,6 +169,32 @@ async function waitFor(predicate, timeoutMilliseconds = 1_000) {
   }
 }
 
+async function waitForTurns(predicate, maximumTurns = 100) {
+  for (let turn = 0; turn < maximumTurns; turn += 1) {
+    if (predicate()) return;
+    await new Promise((resolve) => setImmediate(resolve));
+  }
+  throw new Error("Timed out waiting for state");
+}
+
+async function settleAsyncTurns(turns = 10) {
+  for (let turn = 0; turn < turns; turn += 1) {
+    await new Promise((resolve) => setImmediate(resolve));
+  }
+}
+
+function sessionReadyResponse(fill = "a") {
+  return new Response(
+    JSON.stringify({
+      contractVersion: "homeground-traffic-events.v1",
+      state: "session_ready",
+      sessionCredential: `v1.1999999999.${fill.repeat(64)}`,
+      expiresAt: "2033-05-18T03:33:19.000Z",
+    }),
+    { status: 200, headers: { "Content-Type": "application/json" } },
+  );
+}
+
 test("analytics runtime honors consent, query privacy and vendor queue contracts", async (context) => {
   setAnalyticsEnvironment();
   const outputDirectory = await mkdtemp(
@@ -451,6 +477,332 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     );
   });
 
+  await context.test("a 401 refreshes the credential and retries the same event once", async () => {
+    installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let sessionNumber = 0;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") {
+        sessionNumber += 1;
+        return sessionReadyResponse(sessionNumber === 1 ? "a" : "b");
+      }
+      if (requests.filter((request) => request.requestType === "events").length === 1) {
+        return new Response("{}", { status: 401 });
+      }
+      return new Response("{}", { status: 202 });
+    };
+
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => requests.length === 4);
+
+    assert.deepEqual(
+      requests.map((request) => request.requestType),
+      ["start_session", "events", "start_session", "events"],
+    );
+    assert.equal(requests[1].events[0].eventId, requests[3].events[0].eventId);
+    assert.notEqual(
+      requests[1].sessionCredential,
+      requests[3].sessionCredential,
+    );
+  });
+
+  await context.test("a second 401 stops without a retry loop", async () => {
+    installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let sessionNumber = 0;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") {
+        sessionNumber += 1;
+        return sessionReadyResponse(sessionNumber === 1 ? "a" : "b");
+      }
+      return new Response("{}", { status: 401 });
+    };
+
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => requests.length === 4);
+    await settleAsyncTurns();
+
+    assert.deepEqual(
+      requests.map((request) => request.requestType),
+      ["start_session", "events", "start_session", "events"],
+    );
+    assert.equal(requests[1].events[0].eventId, requests[3].events[0].eventId);
+  });
+
+  await context.test("concurrent 401 responses share one credential refresh", async () => {
+    installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let startNumber = 0;
+    let eventNumber = 0;
+    let resolveRefresh;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") {
+        startNumber += 1;
+        if (startNumber === 1) return sessionReadyResponse("a");
+        return new Promise((resolve) => {
+          resolveRefresh = resolve;
+        });
+      }
+      eventNumber += 1;
+      return new Response("{}", { status: eventNumber <= 2 ? 401 : 202 });
+    };
+
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "first_party",
+    });
+    analytics.trackPageView({
+      path: "/guides/beijing/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => typeof resolveRefresh === "function");
+    await settleAsyncTurns();
+    assert.equal(
+      requests.filter((request) => request.requestType === "start_session")
+        .length,
+      2,
+    );
+
+    resolveRefresh(sessionReadyResponse("b"));
+    await waitFor(
+      () =>
+        requests.filter((request) => request.requestType === "events").length ===
+        4,
+    );
+    const eventIds = requests
+      .filter((request) => request.requestType === "events")
+      .map((request) => request.events[0].eventId);
+    assert.equal(new Set(eventIds).size, 2);
+    for (const eventId of new Set(eventIds)) {
+      assert.equal(eventIds.filter((candidate) => candidate === eventId).length, 2);
+    }
+  });
+
+  await context.test("429 suppression clamps Retry-After and never schedules a resend", async (testContext) => {
+    const originalNow = Date.now;
+    let now = Date.parse("2026-08-23T00:00:00.000Z");
+    Date.now = () => now;
+    testContext.after(() => {
+      Date.now = originalNow;
+    });
+    installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let eventNumber = 0;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") return sessionReadyResponse();
+      eventNumber += 1;
+      if (eventNumber === 1) {
+        return new Response("{}", {
+          status: 429,
+          headers: { "Retry-After": "999999" },
+        });
+      }
+      if (eventNumber === 2) {
+        return new Response("{}", {
+          status: 429,
+          headers: { "Retry-After": "0" },
+        });
+      }
+      return new Response("{}", { status: 202 });
+    };
+    const track = () =>
+      analytics.trackPageView({
+        path: "/guides/",
+        locale: "en",
+        target: "first_party",
+      });
+
+    track();
+    await waitForTurns(() => requests.length === 2);
+    track();
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2);
+    now += 86_399_999;
+    track();
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2, "Retry-After must clamp to 86400 seconds");
+    now += 1;
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2, "elapsed suppression must not auto-resend");
+    track();
+    await waitForTurns(() => requests.length === 3);
+    now += 999;
+    track();
+    await settleAsyncTurns();
+    assert.equal(requests.length, 3, "Retry-After zero must clamp to one second");
+    now += 1;
+    track();
+    await waitForTurns(() => requests.length === 4);
+    assert.deepEqual(
+      requests.map((request) => request.requestType),
+      ["start_session", "events", "events", "events"],
+    );
+  });
+
+  await context.test("503 creates a short memory-only suppression without a retry loop", async (testContext) => {
+    const originalNow = Date.now;
+    let now = Date.parse("2026-08-23T00:00:00.000Z");
+    Date.now = () => now;
+    testContext.after(() => {
+      Date.now = originalNow;
+    });
+    installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let eventNumber = 0;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") return sessionReadyResponse();
+      eventNumber += 1;
+      return new Response("{}", { status: eventNumber === 1 ? 503 : 202 });
+    };
+    const track = () =>
+      analytics.trackPageView({
+        path: "/guides/",
+        locale: "en",
+        target: "first_party",
+      });
+
+    track();
+    await waitForTurns(() => requests.length === 2);
+    now += 29_999;
+    track();
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2);
+    now += 1;
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2, "503 recovery must not auto-resend");
+    track();
+    await waitForTurns(() => requests.length === 3);
+    assert.deepEqual(
+      requests.map((request) => request.requestType),
+      ["start_session", "events", "events"],
+    );
+  });
+
+  await context.test("other 4xx responses do not retry or suppress later events", async () => {
+    installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let eventNumber = 0;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") return sessionReadyResponse();
+      eventNumber += 1;
+      return new Response("{}", { status: eventNumber === 1 ? 400 : 202 });
+    };
+
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => requests.length === 2);
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2);
+    analytics.trackPageView({
+      path: "/guides/beijing/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => requests.length === 3);
+    assert.deepEqual(
+      requests.map((request) => request.requestType),
+      ["start_session", "events", "events"],
+    );
+    assert.notEqual(requests[1].events[0].eventId, requests[2].events[0].eventId);
+  });
+
+  await context.test("revocation during a 401 credential refresh prevents the retry event", async () => {
+    const browser = installBrowser({
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let startNumber = 0;
+    let resolveRefresh;
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "events") {
+        return new Response("{}", { status: 401 });
+      }
+      startNumber += 1;
+      if (startNumber === 1) return sessionReadyResponse("a");
+      return new Promise((resolve) => {
+        resolveRefresh = resolve;
+      });
+    };
+
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => typeof resolveRefresh === "function");
+    browser.emitStorage(
+      preferences({
+        analytics: false,
+        marketing: false,
+        updatedAt: "2026-08-23T00:00:01.000Z",
+      }),
+    );
+    browser.emitStorage(
+      preferences({
+        analytics: true,
+        marketing: false,
+        updatedAt: "2026-08-23T00:00:02.000Z",
+      }),
+    );
+    resolveRefresh(sessionReadyResponse("b"));
+    await settleAsyncTurns(20);
+
+    assert.deepEqual(
+      requests.map((request) => request.requestType),
+      ["start_session", "events", "start_session"],
+    );
+    assert.equal(
+      browser.sessionStorage.getItem("homeground-traffic-session-credential"),
+      null,
+    );
+  });
+
   await context.test("unchanged analytics consent still records a bounded first-party event", async () => {
     const browser = installBrowser({
       consent: preferences({ analytics: true, marketing: false }),
@@ -492,6 +844,73 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
         "homeground-traffic-session-credential",
       ),
       /"consentUpdatedAt":"2026-08-23T00:00:00.000Z"/u,
+    );
+  });
+
+  await context.test("ad click IDs are discarded before a query-free landing PageView", async () => {
+    installBrowser({
+      href:
+        "https://homegroundchina.com/guides/?fbclid=FACEBOOKSECRET&gclid=GOOGLESECRET&dclid=DISPLAYSECRET&gbraid=GBRAIDSECRET&wbraid=WBRAIDSECRET&msclkid=MICROSOFTSECRET",
+      consent: preferences({ analytics: true, marketing: true }),
+    });
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const body = JSON.parse(init.body);
+      requests.push(body);
+      if (body.requestType === "start_session") return sessionReadyResponse();
+      return new Response("{}", { status: 202 });
+    };
+
+    analytics.captureEntryAttribution();
+    analytics.removeAttributionParametersFromAddressBar();
+    assert.equal(window.location.search, "");
+    assert.equal(location.thirdPartyMeasurementLocationIsSafe(), true);
+    assert.deepEqual(
+      JSON.parse(
+        window.sessionStorage.getItem("homeground-entry-attribution"),
+      ),
+      { landing_path: "/guides/" },
+    );
+
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "google",
+    });
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "meta",
+    });
+    analytics.trackPageView({
+      path: "/guides/",
+      locale: "en",
+      target: "first_party",
+    });
+    await waitFor(() => requests.length === 2);
+
+    const googlePageView = window.dataLayer.find(
+      (command) => command[0] === "event" && command[1] === "page_view",
+    );
+    assert.equal(
+      googlePageView[2].page_location,
+      "https://homegroundchina.com/guides/",
+    );
+    assert.equal(
+      window.fbq.queue.filter((command) => command[1] === "PageView").length,
+      1,
+    );
+    assert.doesNotMatch(
+      JSON.stringify({
+        attribution: window.sessionStorage.getItem(
+          "homeground-entry-attribution",
+        ),
+        firstPartyRequests: requests,
+        googlePageView,
+        metaQueue: window.fbq.queue,
+      }),
+      /fbclid|gclid|dclid|gbraid|wbraid|msclkid|FACEBOOKSECRET|GOOGLESECRET|DISPLAYSECRET|GBRAIDSECRET|WBRAIDSECRET|MICROSOFTSECRET/u,
     );
   });
 

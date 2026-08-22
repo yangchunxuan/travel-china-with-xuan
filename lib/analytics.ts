@@ -159,10 +159,14 @@ const trafficCredentialStorageKey =
 const hmacSha256Pattern = /^[0-9a-f]{64}$/u;
 const sessionCredentialPattern =
   /^v1\.[0-9]{10}\.[0-9a-f]{64}$/u;
+const retryAfterMinimumSeconds = 1;
+const retryAfterMaximumSeconds = 86_400;
+const serviceUnavailableSuppressionMilliseconds = 30_000;
 let trafficCredentialRequest: {
   key: string;
   promise: Promise<TrafficSessionCredential | null>;
 } | null = null;
+let firstPartyNextAttemptAt = 0;
 let analyticsConsentGeneration = 0;
 let analyticsConsentObserverInstalled = false;
 
@@ -399,6 +403,12 @@ export function removeAttributionParametersFromAddressBar() {
       "utm_content",
       "utm_term",
       "hg_attribution_sig",
+      "fbclid",
+      "gclid",
+      "dclid",
+      "gbraid",
+      "wbraid",
+      "msclkid",
     ]) {
       if (url.searchParams.has(key)) {
         url.searchParams.delete(key);
@@ -461,6 +471,73 @@ function analyticsConsentRemains(
       current.updatedAt === expected.updatedAt &&
       analyticsConsentGeneration === expected.generation,
   );
+}
+
+function firstPartyAttemptIsSuppressed() {
+  return Date.now() < firstPartyNextAttemptAt;
+}
+
+function retryAfterDelayMilliseconds(response: Response) {
+  const value = response.headers.get("Retry-After")?.trim();
+  let seconds = Number.NaN;
+  if (value && /^\d+$/u.test(value)) {
+    const parsed = Number(value);
+    seconds = Number.isFinite(parsed)
+      ? parsed
+      : retryAfterMaximumSeconds;
+  } else if (value) {
+    const timestamp = Date.parse(value);
+    if (Number.isFinite(timestamp)) {
+      seconds = Math.ceil((timestamp - Date.now()) / 1_000);
+    }
+  }
+  if (!Number.isFinite(seconds)) seconds = retryAfterMinimumSeconds;
+  return (
+    Math.max(
+      retryAfterMinimumSeconds,
+      Math.min(retryAfterMaximumSeconds, Math.ceil(seconds)),
+    ) * 1_000
+  );
+}
+
+function applyFirstPartyResponseSuppression(response: Response) {
+  const delay =
+    response.status === 429
+      ? retryAfterDelayMilliseconds(response)
+      : response.status === 503
+        ? serviceUnavailableSuppressionMilliseconds
+        : 0;
+  if (!delay) return;
+  firstPartyNextAttemptAt = Math.max(
+    firstPartyNextAttemptAt,
+    Date.now() + delay,
+  );
+}
+
+async function discardResponseBody(response: Response) {
+  try {
+    await response.body?.cancel();
+  } catch {
+    // A response-body cleanup failure must not create another request.
+  }
+}
+
+function clearRejectedTrafficSessionCredential(
+  rejectedCredential: string,
+) {
+  if (typeof window === "undefined") return;
+  try {
+    const raw = window.sessionStorage.getItem(
+      trafficCredentialStorageKey,
+    );
+    if (!raw) return;
+    const stored = JSON.parse(raw) as Record<string, unknown>;
+    if (stored.credential === rejectedCredential) {
+      window.sessionStorage.removeItem(trafficCredentialStorageKey);
+    }
+  } catch {
+    // Optional reporting state must not interfere with the public experience.
+  }
 }
 
 function analyticsSessionToken() {
@@ -748,7 +825,12 @@ async function requestTrafficSessionCredential({
     consentUpdatedAt: consentState.updatedAt,
   });
   if (existing) return existing;
-  if (!analyticsConsentRemains(consentState)) return null;
+  if (
+    !analyticsConsentRemains(consentState) ||
+    firstPartyAttemptIsSuppressed()
+  ) {
+    return null;
+  }
 
   let response: Response;
   try {
@@ -774,17 +856,20 @@ async function requestTrafficSessionCredential({
   } catch {
     return null;
   }
-  if (!response.ok) {
-    await response.body?.cancel();
+  if (!analyticsConsentRemains(consentState)) {
+    await discardResponseBody(response);
     return null;
   }
-  if (!analyticsConsentRemains(consentState)) {
-    await response.body?.cancel();
+  if (!response.ok) {
+    applyFirstPartyResponseSuppression(response);
+    await discardResponseBody(response);
+    if (!analyticsConsentRemains(consentState)) return null;
     return null;
   }
 
   try {
     const result = (await response.json()) as Record<string, unknown>;
+    if (!analyticsConsentRemains(consentState)) return null;
     const expiresAt =
       typeof result.expiresAt === "string"
         ? Date.parse(result.expiresAt)
@@ -799,7 +884,6 @@ async function requestTrafficSessionCredential({
     ) {
       return null;
     }
-    if (!analyticsConsentRemains(consentState)) return null;
     const credential: TrafficSessionCredential = {
       credential: result.sessionCredential,
       expiresAt,
@@ -824,6 +908,7 @@ async function trafficSessionCredential(parameters: {
   attribution: EntryAttribution;
   consentState: AnalyticsConsentState;
 }) {
+  if (firstPartyAttemptIsSuppressed()) return null;
   const key = `${parameters.sessionToken}:${parameters.consentState.updatedAt}:${parameters.consentState.generation}:${trafficCredentialContext(parameters)}`;
   if (!trafficCredentialRequest || trafficCredentialRequest.key !== key) {
     const promise = requestTrafficSessionCredential(parameters).finally(
@@ -838,6 +923,53 @@ async function trafficSessionCredential(parameters: {
   return trafficCredentialRequest.promise;
 }
 
+type TrafficEventAttemptOutcome =
+  | "accepted"
+  | "unauthorized"
+  | "stopped";
+
+async function sendTrafficEventBatch({
+  payload,
+  consentState,
+}: {
+  payload: Record<string, unknown>;
+  consentState: AnalyticsConsentState;
+}): Promise<TrafficEventAttemptOutcome> {
+  if (
+    !analyticsConsentRemains(consentState) ||
+    firstPartyAttemptIsSuppressed()
+  ) {
+    return "stopped";
+  }
+
+  let response: Response;
+  try {
+    response = await fetch(WEB_EVENTS_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      credentials: "omit",
+      keepalive: true,
+      mode: "cors",
+      referrerPolicy: "no-referrer",
+    });
+  } catch {
+    return "stopped";
+  }
+  if (!analyticsConsentRemains(consentState)) {
+    await discardResponseBody(response);
+    return "stopped";
+  }
+  if (response.ok) return "accepted";
+
+  applyFirstPartyResponseSuppression(response);
+  const outcome =
+    response.status === 401 ? "unauthorized" : "stopped";
+  await discardResponseBody(response);
+  if (!analyticsConsentRemains(consentState)) return "stopped";
+  return outcome;
+}
+
 async function dispatchFirstPartyEvent(
   name: HomegroundEventName,
   parameters: Record<string, string | number | boolean>,
@@ -847,6 +979,7 @@ async function dispatchFirstPartyEvent(
     !ANALYTICS_ENABLED ||
     !WEB_EVENTS_URL ||
     !hasAnalyticsConsent() ||
+    firstPartyAttemptIsSuppressed() ||
     typeof window === "undefined"
   ) {
     return;
@@ -868,62 +1001,75 @@ async function dispatchFirstPartyEvent(
     attribution.landing_path ?? window.location.pathname,
   );
   const locale = pageLocale(parameters);
-  const sessionCredential = await trafficSessionCredential({
+  const event = {
+    eventId: window.crypto.randomUUID(),
+    type: mappedEvent.type,
+    pagePath,
+    actionCode: mappedEvent.actionCode,
+  };
+  const credentialParameters = {
     sessionToken,
     locale,
     entryPath,
     attribution,
     consentState,
-  });
+  };
+  let sessionCredential = await trafficSessionCredential(
+    credentialParameters,
+  );
   if (
     !sessionCredential ||
-    !analyticsConsentRemains(consentState)
+    !analyticsConsentRemains(consentState) ||
+    firstPartyAttemptIsSuppressed()
   ) {
     return;
   }
 
-  const payload = {
-    requestType: trafficEventBatchRequestType,
-    contractVersion: webEventsContract,
-    noticeVersion: analyticsConsentVersion,
-    sessionToken,
-    sessionCredential: sessionCredential.credential,
-    locale,
-    entryPath,
-    attribution: trafficAttributionPayload(attribution),
-    attributionSignature:
-      attribution.attribution_signature ?? null,
-    events: [
-      {
-        eventId: window.crypto.randomUUID(),
-        type: mappedEvent.type,
-        pagePath,
-        actionCode: mappedEvent.actionCode,
-      },
-    ],
-  };
-
-  try {
-    if (!analyticsConsentRemains(consentState)) return;
-    const response = await fetch(WEB_EVENTS_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-      credentials: "omit",
-      keepalive: true,
-      mode: "cors",
-      referrerPolicy: "no-referrer",
-    });
-    if (!response.ok) {
-      if (response.status === 401) {
-        window.sessionStorage.removeItem(
-          trafficCredentialStorageKey,
-        );
-      }
-      await response.body?.cancel();
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    if (
+      !analyticsConsentRemains(consentState) ||
+      firstPartyAttemptIsSuppressed()
+    ) {
+      return;
     }
-  } catch {
-    // Measurement must never block or alter the traveller-facing interaction.
+    const outcome = await sendTrafficEventBatch({
+      consentState,
+      payload: {
+        requestType: trafficEventBatchRequestType,
+        contractVersion: webEventsContract,
+        noticeVersion: analyticsConsentVersion,
+        sessionToken,
+        sessionCredential: sessionCredential.credential,
+        locale,
+        entryPath,
+        attribution: trafficAttributionPayload(attribution),
+        attributionSignature:
+          attribution.attribution_signature ?? null,
+        events: [event],
+      },
+    });
+    if (outcome !== "unauthorized") return;
+
+    clearRejectedTrafficSessionCredential(
+      sessionCredential.credential,
+    );
+    if (
+      attempt > 0 ||
+      !analyticsConsentRemains(consentState) ||
+      firstPartyAttemptIsSuppressed()
+    ) {
+      return;
+    }
+    sessionCredential = await trafficSessionCredential(
+      credentialParameters,
+    );
+    if (
+      !sessionCredential ||
+      !analyticsConsentRemains(consentState) ||
+      firstPartyAttemptIsSuppressed()
+    ) {
+      return;
+    }
   }
 }
 
