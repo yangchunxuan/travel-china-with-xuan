@@ -6,7 +6,21 @@ const body: StructuredPageBody = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "Work this sequence when a China domestic flight moves, delays or cancels — and touch no refund button until step five. One: confirm status on the operating carrier's own app, hotline or the airport display, never on a forwarded message alone. Two: save evidence first — screenshot the change notice, photograph the display with something timestamped visible, keep your boarding pass and every receipt. Three: identify who issued your ticket, and whether any connecting flights share its ticket number. Four: note where you are and the cause the carrier officially states; meals, hotels and free changes depend on exactly that combination. Five: compare four exits before choosing one — accept the new flight, take the free involuntary rebooking, take the fee-free involuntary refund, or move this leg to high-speed rail while seats still exist. Six: protect what comes after — hotels, trains, tours, transfers and any international departure. Seven: if channels stall, complain in writing to the carrier, then to CAAC's 12326 platform, and track every case number.",
+      text: "A China domestic flight changed on you. Work the steps below in order — most travellers lose money or options by skipping straight to step five.",
+    },
+    {
+      id: "first-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "Confirm the current status on the operating carrier's own app, hotline or the airport display — not on a forwarded message alone.",
+        "Save evidence before acting: screenshot the change notice, photograph the display with something timestamped visible, keep your boarding pass and receipts.",
+        "Identify who issued your ticket (airline shop or agency), which carrier actually operates each flight, and whether connecting flights share one ticket number.",
+        "Note where you are — origin, stopover or diverted airport — and the cause the carrier officially states.",
+        "Compare four exits before choosing: accept the new flight, take the free involuntary rebooking, take the refund, or switch this leg to high-speed rail while seats exist.",
+        "Protect what comes after: hotels, trains, tours, transfers and any international departure.",
+        "If channels stall, complain in writing to the carrier, then through CAAC's 12326 platform, and track every case number.",
+      ],
     },
     {
       id: "triage",
@@ -33,11 +47,10 @@ const body: StructuredPageBody = {
             "Ask specifically for involuntary change or refund so no fee applies.",
             "If today's last option is gone, decide hotel versus overnight rail deliberately.",
           ],
-        },
-        {
+        },        {
           heading: "Stopover or diversion",
           items: [
-            "Meals and lodging are provided regardless of cause on domestic flights.",
+            "Meals and/or accommodation are offered regardless of cause on domestic flights.",
             "Confirm checked-bag status before leaving the transit area.",
           ],
         },
@@ -89,7 +102,7 @@ const body: StructuredPageBody = {
     {
       id: "matrix-note",
       type: "paragraph",
-      text: "China's flight regularity provisions and CAAC passenger guidance distinguish situations by place and cause, and the 2026 Civil Aviation Law elevates carriers' duties to publish conditions, announce information, and arrange ticket changes plus meals or lodging. The map below is what travellers need; “carrier” means the operating airline on your boarding pass.",
+      text: "Two rule layers matter here. The public air transport passenger service regulation distinguishes the contracting carrier, the actual carrier and the ticket-selling agent, separates carrier-caused from non-carrier-caused disruption, bans refund fees on involuntary refunds, sets a seven-working-day clock for valid refund applications, and obliges the contracting carrier to help connecting passengers onward. Together with the flight regularity provisions and CAAC guidance it fixes the place-and-cause map below; “carrier” means the operating airline on your boarding pass unless stated otherwise.",
     },
     {
       id: "responsibility-matrix",
@@ -99,28 +112,28 @@ const body: StructuredPageBody = {
       rows: [
         [
           "Origin disruption, carrier cause (maintenance, crew, deployment)",
-          "Provided at the carrier's cost; reason announced within 30 minutes",
-          "Free involuntary rebooking, including onto another carrier with consent; fee-free refund of unused segments",
+          "Meals and/or accommodation under the applicable time bands and the carrier's current standards; reason announced within 30 minutes",
+          "Free rebooking or rerouting when seats are available or the receiving carrier consents — no change fee; involuntary refunds carry no refund fee",
         ],
         [
           "Origin disruption, non-carrier cause (weather, ATC, emergencies, security, passenger)",
-          "Carrier assists arranging; passenger pays",
-          "Refund stays fee-free under major carriers' conditions; rebooking windows follow each carrier's terms",
+          "Carrier assists arranging; passenger pays under the same standards",
+          "Involuntary refunds still carry no refund fee; rebooking windows follow each carrier's conditions",
         ],
         [
           "Domestic stopover delay or cancellation",
-          "Provided regardless of cause",
+          "Offered regardless of cause, under current standards",
           "Continue, rebook or refund per conditions; confirm bag status before moving",
         ],
         [
           "Diversion of a domestic flight",
-          "Provided regardless of cause",
+          "Offered regardless of cause, under current standards",
           "Choose waiting, surface transport or refund; confirm bags before leaving",
         ],
         [
           "Missed connection on one ticket number",
           "Per the rules above while you wait",
-          "Carrier rebooks remaining sectors free, endorsing to others with consent — ask for the whole journey in one request",
+          "The contracting carrier must assist you onward to your destination or stopover point; changes and refunds follow the involuntary rules — not a guaranteed seat on another airline",
         ],
         [
           "Separately issued second ticket missed",
@@ -138,7 +151,7 @@ const body: StructuredPageBody = {
     {
       id: "voluntary-intro",
       type: "paragraph",
-      text: "The same disruption can travel two pipelines. Coded involuntary — airline-caused, or flagged as a schedule change in an agency's flow — it triggers fee-free changes and refunds under the carrier's conditions. Coded voluntary, your fare's own rules apply and fees follow. Systems label this inconsistently: an agency screen may show a refund fee until the airline's irregular-flight code reaches it, and tapping “apply for refund” at the wrong moment can convert your case into a voluntary one.",
+      text: "The same disruption can travel two pipelines. Coded involuntary — airline-caused, or flagged as a schedule change in an agency's flow — it triggers fee-free changes and refunds under the carrier's conditions; regulations add that involuntary refunds carry no refund fee at all. Coded voluntary, your fare's own rules apply and fees follow. Labelling is not always consistent across airlines and agencies, so confirm how your case is being handled before money moves.",
     },
     {
       id: "voluntary-check",
@@ -146,9 +159,9 @@ const body: StructuredPageBody = {
       ordered: true,
       items: [
         "Ask the app, hotline or counter to confirm in writing that your case is processed as involuntary because of the disruption.",
-        "If a fee appears on an agency screen, pause and contact support: platforms often show zero fee once an airline-caused change registers, but the airline makes the final call.",
+        "If a fee appears on an agency screen for a disrupted flight, pause and ask the issuer to process it under the involuntary rules before paying anything.",
         "Check which rebooking window applies before accepting a new date — published windows differ between carriers (see below).",
-        "Never become a no-show while a change or refund request is open; silent abandonment is treated as voluntary and can void remaining value.",
+        "While a change or refund request is open, check the seller's stated no-show policy before abandoning any flight; unexplained absence can complicate what remains of the ticket.",
         "If you already accepted one alternative, further changes may fall back to voluntary rules. Compare first, then commit once.",
       ],
     },
@@ -196,7 +209,7 @@ const body: StructuredPageBody = {
     {
       id: "who-close",
       type: "paragraph",
-      text: "Two consequences follow. Work two channels in parallel — the carrier for services and status, the issuer for money. And put every refusal in words: “the counter cannot process refunds for agency tickets; here is what it can do” is progress you can act on, silence is not. If a written delay or cancellation certificate may matter later, demand it explicitly — regulations require prompt provision on request. Air China's conditions state such certificates are not themselves the basis for service decisions, and China Eastern issues self-service ones for up to two years after the flight. If you dispute a stated cause, CAAC's 12326 platform verifies it; confirmed errors must be reissued within seven days of your request.",
+      text: "Put every refusal in words: “the counter cannot process refunds for agency tickets; here is what it can do” is progress you can act on, silence is not. If a written delay or cancellation certificate may matter later, demand it explicitly — regulations require prompt provision on request, and at least one major carrier notes its certificate is not itself the basis for service decisions.",
     },
     {
       id: "tarmac-heading",
@@ -207,7 +220,7 @@ const body: StructuredPageBody = {
     {
       id: "tarmac",
       type: "paragraph",
-      text: "Once doors close, tarmac-delay rules apply regardless of cause: crews must update passengers roughly every 30 minutes, provide food and water when the onboard hold reaches two hours, and arrange disembarkation at three hours with no definite take-off time and safety permitting. These are floors, not targets — boarding a visibly delayed aircraft without a realistic slot justifies asking about the hold duration and onward plan first.",
+      text: "Tarmac-delay duties do not start the moment doors close. They apply once passengers wait onboard beyond the aircraft taxiing time limits published by the airport — either before departure or before opening doors after arrival. From that point the crew must update passengers roughly every 30 minutes, provide food and water when the hold reaches two hours, and arrange disembarkation at three hours with no definite take-off time and safety permitting. These are floors, not targets — boarding a visibly delayed aircraft without a realistic slot justifies asking about expected hold times first.",
     },
     {
       id: "rail-heading",
@@ -266,7 +279,7 @@ const body: StructuredPageBody = {
     {
       id: "rail-close",
       type: "paragraph",
-      text: "If rail wins, buy the ticket, then close the flight side cleanly: confirm the involuntary refund amount in writing or accept the documented credit, and keep both receipts. Foreign passports work on 12306 and at station gates, but verification steps differ from ID cards — the first-time rail guide below covers them.",
+      text: "If rail wins, buy the ticket, then close the flight side cleanly: confirm the involuntary refund amount in writing or accept the documented credit. Foreign passports work on 12306 and at station gates — the first-time rail guide below covers the differences.",
     },
     {
       id: "scenarios-heading",
@@ -283,7 +296,7 @@ const body: StructuredPageBody = {
     {
       id: "scenario-ahead",
       type: "paragraph",
-      text: "You are not at the airport yet — use that distance. Verify the cancellation on the carrier's own app first; advance-notice scams circulate in peak seasons. Then contact the issuing channel while options are widest: earlier flights, rebooking within the carrier's window, fee-free involuntary refunds, or rail seats before they sell. If an agency holds the ticket, open a written case with its support line at once. Check now whether connecting flights on the same ticket number need rebooking together — ask for the whole remaining journey in one request.",
+      text: "You are not at the airport yet — use that distance. Verify the cancellation on the carrier's own app first; advance-notice scams circulate in peak seasons. Then contact the issuing channel while options are widest: earlier flights, rebooking within the carrier's window, fee-free involuntary refunds, or rail seats before they sell. If an agency holds the ticket, open a written case with its support line at once, and ask for any connecting flights on the same ticket number to be rebooked in one request.",
     },
     {
       id: "scenario-airport-heading",
@@ -294,7 +307,7 @@ const body: StructuredPageBody = {
     {
       id: "scenario-airport",
       type: "paragraph",
-      text: "Maintenance, crew or scheduling failures are carrier causes: meals and accommodation are owed at the airline's cost, with free involuntary rebooking or refund. Work the counter and the app in parallel — they queue differently. Ask explicitly for “involuntary” processing, and if today's last realistic departure is gone, decide the night deliberately: arranged airport hotel, or refund plus an early train if that protects tomorrow better. Before leaving the counter, have staff confirm on paper or in the app that a carrier-cause cancellation occurred and your case exists — that record unlocks everything downstream.",
+      text: "Maintenance, crew or scheduling failures are carrier causes: the carrier covers meals and/or accommodation under its current standards, with free involuntary rebooking or refund. Work the counter and the app in parallel — they queue differently. Ask explicitly for “involuntary” processing, and if today's last realistic departure is gone, decide the night deliberately: arranged airport hotel, or refund plus an early train if that protects tomorrow better. Before leaving the counter, have staff confirm on paper or in the app that a carrier-cause cancellation occurred and your case exists — that record unlocks everything downstream.",
     },
     {
       id: "scenario-weather-heading",
@@ -305,7 +318,7 @@ const body: StructuredPageBody = {
     {
       id: "scenario-weather",
       type: "paragraph",
-      text: "Weather, air traffic control and similar causes flip the accommodation rule: the carrier must help arrange meals and lodging, but you pay. Decide early instead of drifting with each new estimated time. Set a trigger — when the delay has eaten the trip's purpose, or when tonight's last usable train is about to sell — and act on it: fee-free involuntary refund still applies under the major carriers' conditions, and rail often wins once queues form. During large-scale disruptions the airport operator must coordinate and disperse passengers; trust official announcements over rumour chains. If you board and hold, remember the two-hour food floor and three-hour disembarkation threshold.",
+      text: "Weather, air traffic control and similar causes flip the accommodation rule: the carrier must help arrange meals and lodging, but you pay. Decide early instead of drifting with each new estimated time. Set a trigger — when the delay has eaten the trip's purpose, or when tonight's last usable train is about to sell — and act on it: the involuntary refund carries no fee, and rail often wins once queues form. During large-scale disruptions the airport operator must coordinate and disperse passengers; trust official announcements over rumour chains.",
     },
     {
       id: "scenario-stopover-heading",
@@ -316,7 +329,7 @@ const body: StructuredPageBody = {
     {
       id: "scenario-stopover",
       type: "paragraph",
-      text: "Domestic flights delayed or cancelled at a stopover, and diversions, oblige the carrier to provide meals and lodging regardless of cause — the strictest service tier in Chinese rules. Two traps remain. Checked bags may be held airside or forwarded without you: confirm their status before leaving the transit area, and photograph bag tags. And onward decisions compress: whether you wait, take surface transport, or abandon the leg, get the carrier to state in writing what it has arranged and what it will refund. Keep every receipt even where the carrier pays.",
+      text: "Domestic flights delayed or cancelled at a stopover, and diversions, oblige the carrier to offer meals and/or accommodation regardless of cause — the strictest service tier in Chinese rules. Two traps remain. Checked bags may be held airside or forwarded without you: confirm their status before leaving the transit area, and photograph bag tags. And onward decisions compress: whether you wait, take surface transport, or abandon the leg, get the carrier to state in writing what it has arranged and what it will refund.",
     },
     {
       id: "scenario-intl-heading",
@@ -327,7 +340,7 @@ const body: StructuredPageBody = {
     {
       id: "scenario-intl",
       type: "paragraph",
-      text: "This is the highest-stakes version, because the international ticket has no protection from the domestic disruption. Split the work. On the domestic side, push for the earliest arrival: endorsement to another carrier, different routing, or overnight rail plus a morning flight. On the international side, call its own airline before check-in closes — some apply goodwill changes or paid same-day switches; none owe you anything automatic, and fees vary by fare family. Document everything: times, stated reasons, receipts. Chinese law makes carriers liable for delay damage unless they prove all reasonable measures, with a 21-day objection window and two-year litigation limit. A claim is possible but never guaranteed — protecting the international departure itself outranks optimising the domestic leg.",
+      text: "This is the highest-stakes version, because the international ticket has no protection from the domestic disruption. Split the work. On the domestic side, push for the earliest arrival: endorsement to another carrier, different routing, or overnight rail plus a morning flight. On the international side, call its own airline before check-in closes — some apply goodwill changes or paid same-day switches; none owe you anything automatic, and fees vary by fare family. Document everything: times, stated reasons, receipts. Chinese law makes carriers liable for delay damage unless they prove all reasonable measures were taken, and such claims face a two-year litigation limit — put yours in writing promptly instead of waiting on any other deadline. A claim is possible but never guaranteed — protecting the international departure itself outranks optimising the domestic leg.",
     },
     {
       id: "downstream-heading",
@@ -343,7 +356,6 @@ const body: StructuredPageBody = {
         "Separate train tickets: 12306 change-and-refund rules differ from airlines' — check before buying replacements.",
         "Tours, guides, transfers and attraction tickets: message providers early; many hold slots for guests who communicate before the deadline, few forgive silence.",
         "International departures: recalculate the whole chain backward from the airline's check-in deadline, not your planned arrival.",
-        "Keep every mitigation receipt in one dated folder — it is the evidence spine for reimbursement requests and claims.",
       ],
     },
     {
@@ -367,8 +379,8 @@ const body: StructuredPageBody = {
           "Have the counter do what it can (same-day rebooking, disruption confirmation); route money questions to the issuer with both case numbers",
         ],
         [
-          "Refund approved but not arriving — processing runs seller-side then bank-side; China Southern commits to seven working days excluding bank time; platforms quote about fifteen business days for cards",
-          "Record the promise made to you, chase the issuer's written status, then use the payment-dispute path if the deadline passes",
+          "Refund approved but not arriving — regulations require valid refund applications to be processed within seven working days, excluding bank processing time; card refunds commonly take longer on top",
+          "Record when you filed and what was promised, chase the issuer's written status, then use the payment-dispute path if the deadline passes — one major OTA page cites around fifteen business days as a general card-refund reference",
         ],
         [
           "No Chinese phone number — some hotlines and SMS flows assume a local number",
@@ -388,23 +400,12 @@ const body: StructuredPageBody = {
       id: "privacy-heading",
       type: "heading",
       level: 2,
-      text: "An evidence list that stays private",
+      text: "Keep your evidence private",
     },
     {
       id: "privacy-save",
       type: "paragraph",
-      text: "Keep one untouched master folder with everything, then a short redacted copy per recipient. The master holds: booking confirmation and e-ticket itinerary, the disruption notice, display-board photos, staff statements with times, agency chats, receipts, and any certificate. The working copy contains only what its recipient needs to act.",
-    },
-    {
-      id: "privacy-redact",
-      type: "list",
-      items: [
-        "Never post or send publicly: passport scans or numbers, full card details, boarding-pass barcodes or QR codes, home addresses, or an itinerary exposing tonight's bed.",
-        "When asking anyone to review your case, share facts, not identity: carrier, flight number, date, disruption type, stated cause, what was offered or refused, amounts.",
-        "Provide identity documents only through an organisation's own authenticated channel — app form, logged-in case system, staffed counter — never chat apps, email attachments or social media.",
-        "Cover fellow travellers' data before sharing; a shared booking implies no consent.",
-        "Treat any “customer service” account that contacts you first asking for codes, card photos or fees as hostile until verified through published channels.",
-      ],
+      text: "Keep one untouched master folder with everything, then a short redacted copy per recipient. The flight-specific rules: never post or send publicly passport scans or numbers, full card details, boarding-pass barcodes or QR codes, or an itinerary exposing tonight's bed; when asking anyone to review your case, share facts instead — carrier, flight number, date, disruption type, stated cause, what was offered or refused, amounts. Identity documents go only through an organisation's own authenticated channel. The full discipline for building redacted evidence packs, payment disputes and escalation files lives in the booking-dispute evidence-pack guide below.",
     },
     {
       id: "escalate-heading",
@@ -420,7 +421,7 @@ const body: StructuredPageBody = {
         "Open written cases with the carrier and your ticket issuer separately: one sentence of fact, one of request, evidence attached, case numbers demanded.",
         "Give first lines their regulatory room — acknowledgement within seven days, substantive reply within ten for domestic respondents. Chase in writing; daily calls reset nothing.",
         "Escalate to CAAC's Consumer Affairs Center via www.12326.cn or hotline 12326: real name required, within six months, with a specific request. Acceptance is decided within seven working days; respondents post results within ten working days of referral.",
-        "Unsatisfied? Request mediation within ten working days of that result; it completes within twenty. Beyond that lie arbitration and courts — note the two-year litigation limit and 21-day objection window for delay-damage claims.",
+        "Unsatisfied? Request mediation within ten working days of that result; it completes within twenty. Beyond that lie arbitration and courts — delay-damage claims face a two-year litigation limit, so state your claim in writing early.",
         "Report any later refund or settlement to every open case so overlapping claims close cleanly.",
       ],
     },
@@ -439,7 +440,7 @@ const body: StructuredPageBody = {
     {
       id: "faq-hotel",
       type: "paragraph",
-      text: "It depends on place and cause, not on how long you complain. At the origin, the airline pays for meals and lodging when its own failure caused the disruption; for weather, air traffic control and similar causes it must help arrange them but you pay. At a domestic stopover or after a diversion, meals and lodging are provided regardless of cause. During mass disruptions airports coordinate arrangements, and special announcements sometimes add options — check official airport channels rather than assuming either extreme.",
+      text: "It depends on place and cause, not on how long you complain. At the origin, the carrier covers meals and/or accommodation under its current standards when its own failure caused the disruption; for weather, air traffic control and similar causes it must help arrange them but you pay. At a domestic stopover or after a diversion, meals and/or accommodation are offered regardless of cause — subject to the applicable time bands, so a short hold may mean meals rather than a hotel room. During mass disruptions airports coordinate arrangements, and special announcements sometimes add options — check official airport channels rather than assuming either extreme.",
     },
     {
       id: "faq-comp-heading",
@@ -450,7 +451,7 @@ const body: StructuredPageBody = {
     {
       id: "faq-comp",
       type: "paragraph",
-      text: "No foreign compensation regime applies automatically to Chinese domestic flights, and Chinese rules set no statutory payout: each carrier's conditions must state whether delay compensation exists and on what terms. As examples of genuinely published rules, three major carriers each define tiers of ¥200 for four-to-eight-hour delays and ¥400 beyond — with different triggers. One requires the ticket bought before the delay plus actual boarding; another measures arrival delay for passengers who flew; another counts commercial causes among carrier failures. Read the operating carrier's current conditions; treat forum claims of guaranteed cash as noise.",
+      text: "No foreign compensation regime applies automatically to Chinese domestic flights, and Chinese rules set no statutory payout: each carrier's conditions must state whether delay compensation exists and on what terms. As examples of genuinely published rules, three major carriers each define tiers of ¥200 for four-to-eight-hour delays and ¥400 beyond — but the triggers differ. One requires the ticket bought before the delay plus actual boarding, within three days of the scheduled departure; another pays on arrival delay for passengers who flew; another grants a one-time payment for delays it caused, with infant tickets compensated at a tenth. Read the operating carrier's current conditions; treat forum claims of guaranteed cash as noise.",
     },
     {
       id: "faq-cert-heading",
@@ -461,7 +462,7 @@ const body: StructuredPageBody = {
     {
       id: "faq-cert",
       type: "paragraph",
-      text: "Not for the involuntary refund or rebooking itself: regulations require carriers to process those for disrupted flights, and at least one major carrier states its certificate is not the basis for such services. The certificate matters elsewhere — insurers, employers, downstream providers — so request it if anyone may ask. Apply through the carrier's app after the flight operates, use airport counters during the event, and dispute a wrong stated cause via 12326 verification; confirmed errors reissue within seven days.",
+      text: "Not for the involuntary refund or rebooking itself: regulations require carriers to process those for disrupted flights, and at least one major carrier states its certificate is not the basis for such services. The certificate matters elsewhere — insurers, employers, downstream providers — so request it if anyone may ask; how to obtain one is covered in the failure-recovery table above.",
     },
     {
       id: "faq-sep-heading",
@@ -472,7 +473,7 @@ const body: StructuredPageBody = {
     {
       id: "faq-sep",
       type: "paragraph",
-      text: "Nothing automatic: the second ticket is its own contract with its own carrier. What remains is a possible damage claim — Chinese law makes the delaying carrier liable for losses caused by delay unless it proves it took all reasonable measures, claimed within twenty-one days in writing. Travellers do recover costs this way sometimes, but outcomes are uncertain and depend on evidence discipline from minute one. That asymmetry is why experienced planners protect fragile connections structurally — protected through tickets, buffers, positioning nights — rather than trusting remedies afterwards.",
+      text: "Nothing automatic — the second ticket is its own contract, which is why the scenario section above treats this case as the highest-stakes one. What remains is a possible damage claim against the delaying carrier under the rules described there, with uncertain outcomes that depend on evidence discipline from minute one.",
     },
     {
       id: "dynamic-boundary",
@@ -534,6 +535,12 @@ const body: StructuredPageBody = {
           label: "CAAC air-travel knowledge: irregular flights (delay, cancellation, diversion duties)",
           url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217596.html",
           publisher: "Civil Aviation Administration of China",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Public air transport passenger service regulation (Arts. 24–27: involuntary changes, refund fees, seven-working-day refunds, connecting flights)",
+          url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html",
+          publisher: "Ministry of Transport / CAAC",
           reviewedAt: "2026-08-22",
         },
         {
