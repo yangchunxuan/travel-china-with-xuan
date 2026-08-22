@@ -119,7 +119,7 @@ export const homegroundPrivacyCopy: Record<
       blockers: [
         "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
         "Homeground-controlled website enquiry records are deleted no later than 12 months after they are saved. If a client relationship or legal duty requires a record, only the necessary record is retained separately under that system’s rules; it does not extend the website copy. Later email or WhatsApp conversations follow their own service and business-record rules.",
-        "Hashed identifiers are used for 24-hour rate-limit windows and are scheduled for deletion after 24 hours, normally at the next one-minute cleanup run.",
+        "Secret-keyed hashed identifiers are used for 10-minute and 24-hour rate-limit windows. Each bucket is scheduled for deletion 24 hours after its last update, normally at the next one-minute cleanup run.",
         "The full trip-brief form saves either an email address or a WhatsApp number. The homepage quick-email option saves only the email entered there. Optional analytics and marketing measurement remain off unless the visitor grants the relevant choice; AI chat remains disabled.",
       ],
     },
@@ -289,9 +289,10 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           label: "Rate-limit retention",
-          value: "24-hour window · scheduled deletion after expiry",
+          value:
+            "10-minute and 24-hour windows · deletion 24 hours after last update",
           detail:
-            "Newly accepted events—not HTTP requests—are counted against separate browser-session, client-IP and whole-site limits. The service stores secret-keyed hashes rather than raw IP or browser tokens. A one-minute recurring task removes buckets after they pass 24 hours, so deletion normally occurs on the next cleanup run.",
+            "Valid credential-bootstrap requests are counted as requests against separate client-IP and whole-site limits before a credential is issued. Event batches are counted separately by newly accepted events—not by event-batch HTTP requests or idempotent replays—against browser-session, client-IP and whole-site limits. The service stores secret-keyed hashes rather than raw IP addresses or browser tokens. A one-minute recurring task removes a bucket after its last updated_at value is 24 hours old, normally on the next cleanup run.",
         },
         {
           label: "Anonymous website-event retention",
@@ -361,7 +362,7 @@ export const homegroundPrivacyCopy: Record<
       blockers: [
         "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
         "Homeground 控制的网站咨询记录会在保存满 12 个月时删除。如果客户关系或法律义务确实要求保留记录，只把必要记录另行放在相应记录体系并按其规则保留；网站副本不会因此保存更久。之后的邮件或 WhatsApp 对话适用各自服务与业务记录规则。",
-        "经过密钥哈希的标识只用于 24 小时限流窗口；超过 24 小时后，通常会在下一次每分钟清理任务运行时删除。",
+        "经过秘密密钥哈希的标识只用于 10 分钟和 24 小时限流窗口。每个限流桶会在最后一次更新满 24 小时后安排删除，通常在下一次每分钟清理任务运行时完成。",
         "完整旅行简报表单会保存邮箱或 WhatsApp 号码中的一种；首页快速留邮箱只保存所填邮箱。访客未主动允许相应选项时，可选分析统计与营销衡量保持关闭；AI 聊天仍未启用。",
       ],
     },
@@ -518,9 +519,9 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           label: "限流数据保留",
-          value: "24 小时限流窗口 · 过期后定时删除",
+          value: "10 分钟和 24 小时窗口 · 最后更新满 24 小时后删除",
           detail:
-            "系统按新接受的事件数（不是 HTTP 请求数）同时执行浏览器会话、客户端 IP 和全站限流；不保存原始 IP 或浏览器令牌，只保存使用秘密密钥生成的哈希。每分钟运行的任务会删除超过 24 小时的限流桶，通常在下一次清理时完成。",
+            "系统会在签发凭据前，把通过格式验证的凭据启动请求按请求数计入客户端 IP 与全站两类限流；事件批次则另按新接受的事件数计费，而不是按事件批次 HTTP 请求数或重复重放次数计费，并同时执行浏览器会话、客户端 IP 和全站限流。系统不保存原始 IP 或浏览器令牌，只保存使用秘密密钥生成的哈希。每分钟运行的任务会在限流桶的 updated_at 最后更新时间满 24 小时后将其删除，通常在下一次清理时完成。",
         },
         {
           label: "匿名网站事件保留",
@@ -591,7 +592,7 @@ export const homegroundPrivacyCopy: Record<
       blockers: [
         "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
         "Homeground가 관리하는 웹사이트 문의 기록은 저장 후 12개월 안에 삭제합니다. 고객 관계나 법적 의무 때문에 기록이 필요한 경우에는 필요한 기록만 별도 보관 기준에 따라 보관하며 웹사이트 사본을 더 오래 두지 않습니다. 이후 이메일 또는 WhatsApp 대화에는 각 서비스와 업무 기록 기준이 적용됩니다.",
-        "비밀 키로 해시한 식별자는 24시간 속도 제한 창에만 사용하며 24시간이 지나면 일반적으로 다음 1분 주기 정리 작업에서 삭제합니다.",
+        "비밀 키로 해시한 식별자는 10분 및 24시간 속도 제한 창에만 사용합니다. 각 버킷은 마지막 갱신 후 24시간이 지나면 삭제 대상으로 예약되며 일반적으로 다음 1분 주기 정리 작업에서 삭제됩니다.",
         "전체 여행 브리프 양식은 이메일 주소 또는 WhatsApp 번호 중 하나를 저장하고 홈페이지의 간단 이메일 옵션은 입력한 이메일만 저장합니다. 방문자가 해당 선택을 허용하지 않으면 선택적 분석 및 마케팅 측정은 꺼진 상태로 유지되며 AI 채팅은 사용하지 않습니다.",
       ],
     },
@@ -753,9 +754,9 @@ export const homegroundPrivacyCopy: Record<
         },
         {
           label: "속도 제한 정보 보관",
-          value: "24시간 제한 창 · 만료 후 예약 삭제",
+          value: "10분 및 24시간 창 · 마지막 갱신 24시간 후 삭제",
           detail:
-            "새로 수락된 이벤트 수(HTTP 요청 수가 아님)를 기준으로 브라우저 세션, 클라이언트 IP 및 사이트 전체 제한을 동시에 적용합니다. 원본 IP나 브라우저 토큰은 저장하지 않고 비밀 키로 생성한 해시만 저장합니다. 1분마다 실행되는 작업이 24시간이 지난 버킷을 삭제하므로 일반적으로 다음 정리 때 삭제됩니다.",
+            "형식 검증을 통과한 자격 증명 시작 요청은 자격 증명을 발급하기 전에 요청 수를 기준으로 클라이언트 IP 및 사이트 전체 제한에 계산합니다. 이벤트 배치는 별도로 새로 수락된 이벤트 수를 기준으로 계산하며 이벤트 배치 HTTP 요청 수나 중복 재전송 횟수를 세지 않고 브라우저 세션, 클라이언트 IP 및 사이트 전체 제한을 적용합니다. 원본 IP나 브라우저 토큰은 저장하지 않고 비밀 키로 생성한 해시만 저장합니다. 1분마다 실행되는 작업은 버킷의 updated_at 마지막 갱신 시점에서 24시간이 지나면 일반적으로 다음 정리 때 삭제합니다.",
         },
         {
           label: "익명 웹사이트 이벤트 보관",

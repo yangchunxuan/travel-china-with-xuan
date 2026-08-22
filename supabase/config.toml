@@ -6,8 +6,9 @@ project_id = "homeground-local"
 verify_jwt = false
 
 [functions.v1-traffic-events]
-# Public first-party events use a separate default-off kill switch and enforce
-# exact Origin, a bounded contract, HMAC session hashes and server-side limits.
+# Exact Origin is a CORS boundary, not authentication. Real protection is
+# default-off, a bounded contract, application-level IP/global bootstrap
+# limits, short-lived credentials and IP/session/global event limits.
 verify_jwt = false
 
 [functions.notify-inquiries]
@@ -34,6 +35,7 @@ verify_jwt = true
 
 [functions.admin-traffic]
 # Uses the same gateway JWT, Auth /user, aal2, fixed UUID allowlist, exact
-# Origin, kill switch, strict response contract and body-free access audit as
-# the other private Admin endpoints.
+# Origin and master kill switch as the other private Admin endpoints, plus an
+# independent default-off traffic kill switch, a strict response contract and
+# body-free access audit.
 verify_jwt = true

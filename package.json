@@ -21,6 +21,7 @@
     "content:generate": "node tools/generate-content-manifest.mjs",
     "content:check": "node tools/generate-content-manifest.mjs --check",
     "sign:traffic-link": "node tools/sign-traffic-link.mjs",
+    "test:traffic-ops": "node --experimental-strip-types --test supabase/tests/traffic-edge-runtime.test.mjs supabase/tests/traffic-operations-config.test.mjs supabase/tests/traffic-operations-hardening.test.mjs",
     "pretest:inquiry": "npm run guide:generate",
     "test:inquiry": "node --experimental-strip-types --test supabase/tests/*.test.mjs",
     "test:guide-search": "node --experimental-strip-types --test tools/tests/guide-search.test.mjs",
