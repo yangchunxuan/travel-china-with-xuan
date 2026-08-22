@@ -1,65 +1,70 @@
 # Research and source log
 
-Research and official-source review completed on 2026-08-11.
+Research and official-source review completed on 2026-08-22.
 
-## Scope
+## Scope and canonical ownership
 
-- Article ID: `forbidden-city-for-foreign-visitors`
-- Pool: `explore-attractions-nature-heritage`
-- Primary task: convert booking, passport inspection, the correct entrance, a three-hour visit, north-gate exit and onward transport into one continuous execution plan.
-- Explicitly out of scope: a general history of the Forbidden City, a complete catalogue of halls, visa advice, a Beijing railway-station guide or a product-led itinerary sale.
+- Article ID: `forbidden-city-for-foreign-visitors`.
+- Canonical task: take a foreign visitor from Palace Museum booking through Tiananmen-area access, security, the Meridian Gate, a realistic museum route, the north/east exit and onward transport.
+- This is the existing Forbidden City owner. No Tiananmen-only guide, second Palace Museum guide or new canonical identity was created.
+- The Beijing destination Hub remains the city-level owner. This guide owns the attraction-level execution detail and links outward rather than duplicating the city decision system.
+- Explicitly out of scope: a complete palace history, a catalogue of every hall, live ticket inventory, a promise of security-wait time, visa advice or a paid-product landing page.
 
-## Repository and collision audit
+## Repository audit
 
-- The worktree was created from `origin/main` at `073e019478bd81166eea2e4e48fc6f040167f393` after fetching and checking all remote branches and local worktrees.
-- No existing article or remote branch was dedicated to this exact foreign-visitor execution task.
-- `beijing-where-to-stay-first-trip` contains a shorter explanation of the south entrance and north/east exits. This article expands that point into a ticket-to-transport workflow and links back to the accommodation page rather than repeating its four-area comparison.
-- `china-itinerary-with-older-parents` contains a short Palace Museum planning block. This article adds the full three-hour decision sequence and links back to the parent-travel page for pacing.
-- The October timing guide contains a concise ticket-release rule. This article uses the same official rule but does not repeat the Golden Week decision framework.
-- A Beijing railway-stations article existed only as an unpushed worker worktree at the audit. It was not linked, so no dangling internal link was created.
+- Work started from the fixed `origin/main` baseline `e99e42c71e4e9be8853afdc406dc89caeebda334`.
+- Relevant existing owners were reviewed before editing: Beijing Hub, Beijing first-trip accommodation, Beijing airport-to-city, Beijing railway-station selector, Beijing route-order, Temple of Heaven, Summer Palace, National Museum, Great Wall transport and older-parent pacing.
+- The guide keeps its existing slug and three locale paths. It adds no URL and changes no registry, sitemap, hard-coded inventory count or shared font asset.
 
-## Current search task
+## The reservation-rule conflict and editorial conclusion
 
-Current results were reviewed for queries around:
+Two official statements need to be read together instead of simplified into “one booking covers both”:
 
-- `Forbidden City foreign visitors entrance 3 hour route north gate exit`
-- `Forbidden City passport booking foreign visitor Meridian Gate exit transport`
-- `Forbidden City 3 hour itinerary what to see`
+1. The Tiananmen Area Management Committee's 2021 trial measures say that a visitor holding a valid same-day Palace Museum reservation may enter Tiananmen Square without a separate square reservation. They also make clear that a square reservation does not replace attraction admission.
+2. The current Palace Museum visitor instructions describe the south-to-north route for visitors who hold both Tiananmen Square and Palace Museum reservations. The museum separately provides East and West Tongzihe approaches for Palace-only visitors.
 
-The result set contains three recurring problems this article must correct:
-
-1. Some current pages still send every visitor through Tiananmen Square even though the Palace Museum's own rule provides East and West Tongzihe approaches when the visitor is only going to the museum.
-2. Search results and traveller reports still claim that foreign passport holders can rely on same-day on-site tickets. The standing Palace Museum rule reviewed on 2026-08-11 says that it does not sell same-day tickets.
-3. Many route pages finish at “the north gate” without converting that exit into an actual bus, pickup, luggage-collection or next-sight decision.
-4. Some three-hour routes postpone every side section until after the Inner Court. The viable branch depends on the chosen gallery or palace cluster, so the route now places an east-side gallery after the Hall of Preserving Harmony or a palace cluster around the Gate of Heavenly Purity.
+The guide therefore uses a conservative execution rule: the Palace Museum and Tiananmen Square are separate access tasks; a square record never substitutes for a Palace Museum ticket; if the square matters, the visitor should separately reserve it or obtain current official confirmation that the museum record qualifies on the chosen date. A Palace-only visitor should not make square access a dependency.
 
 ## Official and first-party evidence
 
 | Source | What it supports | Use boundary |
 | --- | --- | --- |
-| [Palace Museum official multilingual ticketing portal](https://bookingticket.dpm.org.cn/) | The first booking path for an international visitor using a passport | A visitor still needs a completed booking record; opening or submitting the form is not confirmation |
-| [Palace Museum page identifying the multilingual portal](https://intl.dpm.org.cn/news/detail/98706.html) | The Palace Museum explicitly directs visitors to `bookingticket.dpm.org.cn` for real-name reservations | The 2025 notice verifies that the portal is official; live inventory and the current transaction flow remain dynamic |
-| [Palace Museum ticketing and identity-document rules](https://www.dpm.org.cn/subject_booking/) | No same-day tickets; release at 20:00 seven days before the visit; accepted non-mainland identity documents; original document; morning and afternoon inspection periods; Meridian Gate entrance; north/east exits; no authorised third-party ticket agents | Recheck the live rules when booking and before travel |
-| [Palace Museum visit page](https://www.dpm.org.cn/Visit.html) | Seasonal hours; Monday rule; current notices; official two-hour, half-day and one-day trail categories; gates; bus stops; no dedicated car park | The three-hour route in the article is Homeground's bridge between official route lengths, not an official Palace Museum route |
-| [Palace Museum visitor rules](https://www.dpm.org.cn/singles_detail/259831.html) | Tiananmen-area approach distinction; one-way entrance and exits; security; seasonal luggage storage and free transfer; service locations | Access routes and service hours remain operational facts that need a fresh check |
-| [Palace Museum prohibited-items catalogue](https://www.dpm.org.cn/singles_detail/259832.html) | Suitcases and specified wheeled loading devices prohibited; storage may be available for qualifying items | Do not imply that every bag will be accepted or that luggage service is simpler than hotel storage |
-| [Beijing 12345 foreign-passport booking answer](https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html) | Foreign visitors may use the official Palace Museum English site with a passport; original document and manual inspection at the Meridian Gate; English hotline context | A 2025 service answer supplements, but does not override, the live Palace Museum portal |
-| [Tiananmen Square trial reservation measures](https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html) | A valid Palace Museum reservation was explicitly accepted for entry to the square without a second square reservation; a square reservation cannot replace Palace Museum admission | This is an official 2021 trial rule, not a permanent guarantee; current controls must be checked separately |
-| [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels for the square | Current channels do not by themselves confirm whether the earlier exemption applies on a specific visit date |
+| [Palace Museum official English Tickets page](https://intl.dpm.org.cn/ticket_details.html) | International visitors are currently instructed to email each full name, passport number and intended date to `bookingticket@dpm.org.cn` within seven days and at least one calendar day before the visit; it also links the museum ticket service | A sent email is not a completed reservation. Passport data should go only to the exact current official address and should not be copied to Homeground or unrelated sellers |
+| [Palace Museum ticket-service link](https://bookingticket.dpm.org.cn/) | The official site currently links this ticket service | The guide does not claim that every international visitor can complete a direct online checkout there; interfaces and foreign access can change |
+| [Palace Museum ticketing rules](https://www.dpm.org.cn/subject_booking/) | Seven-day 20:00 release; no same-day tickets; accepted documents; one-ticket-per-document boundary; non-changeable ticket/date/period/visitor; original document; inspection periods; entrance and exits; refund/no-show rules; no authorised ticket agents | Recheck the live rule before any booking or cancellation; do not imply inventory or payment success |
+| [Palace Museum Visit page](https://www.dpm.org.cn/Visit.html) | Seasonal hours; Monday rule; latest notices; official trail categories; gates, transport and no dedicated car park | The three-hour allocation is Homeground planning judgment; transport remains dynamic |
+| [Palace Museum visitor and security rules](https://www.dpm.org.cn/singles_detail/259831.html) | Palace-only East/West Tongzihe approach; dual-reservation south-to-north approach; security; luggage handling; one-way entrance/exit; temporary controls | Does not guarantee a fixed security queue, luggage acceptance, entry after a problem or a replacement ticket |
+| [Palace Museum prohibited-items catalogue](https://www.dpm.org.cn/singles_detail/259832.html) | Categories of items that cannot be taken into the museum | Travellers must check the current list; the guide does not reproduce a list that may change |
+| [Beijing 12345 passport-booking answer](https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html) | Passport booking, original-document inspection and official help context for foreign visitors | Supplements but does not override current Palace Museum rules |
+| [Tiananmen Square trial reservation measures](https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html) | The dated Palace-reservation exemption and the fact that square access does not replace attraction admission | A 2021 trial rule is not presented as a permanent guarantee |
+| [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels and visitor-facing entry points | Channel availability can vary by region or interface; the page does not by itself prove that a historic exemption applies on a specific date |
 
-## Fact boundaries used in the copy
+All source pages above were reopened on 2026-08-22. Old public-health wording that remains in older page fragments was not repeated as a current visitor requirement.
 
-- Official standing facts: advance real-name booking, accepted identity documents, original document, ticket periods, Monday closure, seasonal hours, the Meridian Gate entrance, the Gate of Divine Prowess and East Prosperity Gate exits, published visitor-trail categories, luggage rules and listed transport stops.
-- Dated operational facts: the multilingual portal, Tiananmen-area approach and exemption rules, bus listings, luggage-service hours and temporary opening or closure notices.
-- Homeground planning judgment: start the three-hour clock after inspection; protect the central route; add only one side focus at its actual branch point; use the north exit by default for this article; prepare a precise onward transport point before entry.
-- Not claimed: guaranteed ticket inventory, guaranteed same-day entry for foreign visitors, a fixed security wait, a fixed walking time, every hall being open, an adjacent north-gate subway station, a taxi always stopping at the gate or a permanent Tiananmen Square exemption.
+## Dynamic facts and recheck triggers
 
-## Dynamic-fact check
+| Fact | Current editorial value | Recheck trigger |
+| --- | --- | --- |
+| Booking channels | English page: email route within seven days and at least one calendar day ahead; Chinese rules: official mini-program with 20:00 seven-day release | Either language page, email address, portal or interface changes |
+| No-same-day rule | No same-day sale | Any change on the current ticketing rules page |
+| Identity boundary | Original booked document; ticket/date/period/visitor cannot be edited after sale | Portal or ticketing-rules change |
+| Morning/afternoon inspection | Morning latest 12:00; afternoon earliest 11:00 | Booking record or official rule changes |
+| Entrance and exits | Meridian Gate entrance; Shenwumen and Donghuamen visitor exits | Dated access-control notice |
+| Monday and seasonal hours | Monday closed except statutory holidays; peak 08:30/16:00/17:00, low 08:30/15:30/16:30 | Holiday, special opening, weather or security notice |
+| Tiananmen access | Separate verification required; current official channels control | Any portal, event-control or hotline update |
+| Individual galleries | May require additional ticket/reservation and may close temporarily | Current exhibition or closure notice |
+| Luggage and transport | Operational service with conditions; no guaranteed curbside pickup | Seasonal service, road-control or route change |
 
-Before a traveller relies on the guide, reopen the multilingual ticketing portal, ticketing rules, Visit page, latest notices and the current Tiananmen Square instructions. If any accepted document, ticket-release time, inspection period, closure rule, entrance, exit or square-access rule changes, revise all three languages together and update the review dates.
+The article instructs travellers to recheck at booking, 24–48 hours before the visit, and before leaving the hotel on a high-risk date. It does not turn the reviewed date into a live-status guarantee.
 
-## Content notes
+## Fact and judgment boundary
 
-- English, Chinese and Korean preserve the same block IDs and types while using natural local phrasing.
-- The article folder is self-contained. No homepage, registry, category page, route, template, baseline file or other article was edited.
-- No AI destination photograph was created.
+- Official facts: the distinct English-email and Chinese mini-program instructions, ticket-release mechanics, identity documents, non-changeable order fields, inspection periods, entrance/exits, Monday and seasonal calendar, security requirement, prohibited-item ownership, official route categories, Tiananmen's dated trial rule and current official channels.
+- Homeground judgment: use the Palace-only approach when the square is not a goal; add flexible rather than fixed security time; start the three-hour clock after inspection; protect the central axis; choose one side focus; preselect the exit, backup attraction and legal pickup point.
+- Not claimed: a universal multilingual online checkout, live availability, guaranteed email response or cancellation inventory, guaranteed foreign-card or phone flow, a foreigner walk-up exception, a fixed security wait, permanent Tiananmen exemption, every gallery opening, guaranteed luggage storage/refund or curbside taxi access.
+
+## Localisation and privacy
+
+- English, Chinese and Korean use the same 51 block IDs in the same order.
+- All recovery advice avoids collecting or exposing passport numbers, payment data or booking records. Screenshots are suggested only with sensitive details hidden.
+- Service language remains editorial and optional; no paid-service weight was added.

@@ -11,8 +11,8 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-11",
-  "dateModified": "2026-08-11",
-  "sourceReviewedDate": "2026-08-11",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
   "search": {
     "section": "explore",
     "family": "task",
@@ -25,36 +25,56 @@
   "locales": {
     "en": {
       "path": "/guides/forbidden-city-for-foreign-visitors/",
-      "title": "How to Visit the Forbidden City: Tickets and a 3-Hour Route",
-      "headline": "How Foreign Visitors Can Book and Visit the Forbidden City in Three Hours",
-      "description": "Use the official multilingual portal, enter at the Meridian Gate, follow a realistic three-hour route and plan the journey from the north exit.",
+      "title": "Tiananmen Square and Forbidden City: Booking, Entry and Route",
+      "headline": "How Foreign Visitors Can Plan Tiananmen Square and the Forbidden City",
+      "description": "Separate the two reservation tasks, bring the booked passport, budget for security, enter at Meridian Gate and recover if tickets, timing or access fail.",
       "heroAlt": "Hall of Supreme Harmony and its courtyard in the Forbidden City with visitors in view",
       "navTitle": "Forbidden City for foreign visitors",
-      "featuredLinkLabel": "Plan a Forbidden City visit",
+      "featuredLinkLabel": "Plan Tiananmen and the Forbidden City",
       "openGraphLocale": "en_US",
-      "cardTags": ["Beijing", "Forbidden City", "3-hour route"]
+      "cardTags": ["Beijing", "Forbidden City", "Tiananmen"]
     },
     "zh": {
       "path": "/zh/guides/forbidden-city-for-foreign-visitors/",
-      "title": "外国游客故宫参观指南：预约、入口与三小时路线",
-      "headline": "外国游客如何预约并在三小时内游览故宫",
-      "description": "通过故宫多语种订票网站预约，从午门入院，按三小时路线取舍重点，并提前安排神武门离院后的交通。",
+      "title": "天安门广场与故宫参观指南：预约、入口和路线",
+      "headline": "外国游客如何安排天安门广场与故宫参观",
+      "description": "分清两项预约，携带预约所用护照，预留安检和步行时间，从午门入院，并准备票务、迟到或临时管控的替代方案。",
       "heroAlt": "故宫太和殿与院落，画面中可见游客",
       "navTitle": "外国游客故宫指南",
-      "featuredLinkLabel": "规划故宫三小时参观",
+      "featuredLinkLabel": "规划天安门与故宫参观",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["北京", "故宫", "三小时路线"]
+      "cardTags": ["北京", "故宫", "天安门"]
     },
     "ko": {
       "path": "/ko/guides/forbidden-city-for-foreign-visitors/",
-      "title": "외국인 자금성 관람 가이드: 예약과 3시간 동선",
-      "headline": "외국인 방문객을 위한 자금성 예약·입장·3시간 관람 동선",
-      "description": "공식 다국어 예매 사이트에서 예약하고 오문으로 입장해 3시간 핵심 동선을 따른 뒤 신무문 이후 이동까지 준비합니다.",
+      "title": "톈안먼 광장과 자금성: 예약·입장·관람 동선",
+      "headline": "외국인 방문객을 위한 톈안먼 광장·자금성 실행 가이드",
+      "description": "두 예약을 구분하고 예약에 쓴 여권을 지참해 보안 검색 시간을 확보한 뒤 오문으로 입장하며, 매진·지각·통제 시 대안까지 준비합니다.",
       "heroAlt": "관람객이 보이는 자금성 태화전과 뜰",
       "navTitle": "외국인 자금성 방문 가이드",
-      "featuredLinkLabel": "자금성 3시간 방문 준비하기",
+      "featuredLinkLabel": "톈안먼과 자금성 방문 준비하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["베이징", "자금성", "3시간 동선"]
+      "cardTags": ["베이징", "자금성", "톈안먼"]
     }
+  },
+  "searchTerms": {
+    "en": [
+      "Tiananmen Square and Forbidden City tickets",
+      "Tiananmen Square Forbidden City route",
+      "Forbidden City tickets for foreigners",
+      "Palace Museum passport booking"
+    ],
+    "zh": [
+      "天安门广场和故宫门票",
+      "天安门广场故宫参观路线",
+      "外国游客故宫门票",
+      "故宫博物院护照预约"
+    ],
+    "ko": [
+      "톈안먼 광장 자금성 입장권",
+      "톈안먼 광장 자금성 관람 동선",
+      "외국인 자금성 입장권",
+      "고궁박물원 여권 예약"
+    ]
   }
 }
