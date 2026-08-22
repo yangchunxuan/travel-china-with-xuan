@@ -5,6 +5,10 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../../../lib/homegroundI18n";
+import {
+  getHomepageGuideRailItems,
+  getHomepageSearchDemos,
+} from "../../../lib/homepageEditorial";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
@@ -60,5 +64,11 @@ export default async function LocalizedHome({
   const { locale: routeLocale } = await params;
   const locale = localizedLocale(routeLocale);
 
-  return <HomegroundHomePage locale={locale} />;
+  return (
+    <HomegroundHomePage
+      guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
+      locale={locale}
+      searchDemos={getHomepageSearchDemos(locale)}
+    />
+  );
 }

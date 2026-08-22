@@ -13,6 +13,7 @@ export interface GuideSearchCopy {
   readonly examples: readonly string[];
   readonly loadingSuggestions: string;
   readonly suggestionsUnavailable: string;
+  readonly retrySuggestions: string;
   readonly noSuggestions: string;
   readonly emptyQueryError: string;
   readonly suggestionsLabel: (count: number) => string;
@@ -61,6 +62,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     loadingSuggestions: "Finding the closest guides…",
     suggestionsUnavailable:
       "Suggestions are taking longer than expected. You can still search.",
+    retrySuggestions: "Try again",
     noSuggestions: "No close match yet. Search to see all results.",
     emptyQueryError: "Tell us what you would like to know.",
     suggestionsLabel: (count) =>
@@ -113,6 +115,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     ],
     loadingSuggestions: "正在为你查找…",
     suggestionsUnavailable: "建议暂时没有加载出来，你仍然可以直接搜索。",
+    retrySuggestions: "重新加载",
     noSuggestions: "暂时没有相近建议，继续搜索查看结果。",
     emptyQueryError: "请输入你想了解的问题。",
     suggestionsLabel: (count) => `这 ${count} 篇指南可能对你有帮助`,
@@ -164,6 +167,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     loadingSuggestions: "관련 가이드를 찾고 있습니다…",
     suggestionsUnavailable:
       "추천을 불러오는 데 시간이 걸리고 있습니다. 바로 검색할 수 있습니다.",
+    retrySuggestions: "다시 불러오기",
     noSuggestions:
       "관련 가이드를 아직 찾지 못했습니다. 검색어를 바꾸거나 그대로 검색해 보세요.",
     emptyQueryError: "궁금한 여행 정보를 입력해 주세요.",

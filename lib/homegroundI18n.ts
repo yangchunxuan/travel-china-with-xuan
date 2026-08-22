@@ -55,6 +55,9 @@ export interface HomegroundCopy {
     eyebrow: string;
     title: string;
     titleLines?: readonly string[];
+    rotatingPhrases: readonly string[];
+    pauseMotion: string;
+    resumeMotion: string;
     intro: string;
     trustLabel: string;
     trust: readonly string[];
@@ -87,10 +90,23 @@ export interface HomegroundCopy {
     title: string;
     viewAllLabel: string;
     updatedLabel: string;
+    railLabel: string;
     typeLabels: {
+      tour: string;
       route: string;
       planning: string;
       fieldNote: string;
+    };
+    categoryLabels: {
+      all: string;
+      tour: string;
+      explore: string;
+      stay: string;
+      transport: string;
+      plan: string;
+      culture: string;
+      essentials: string;
+      whenToGo: string;
     };
   };
   studio: {
@@ -347,7 +363,17 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     hero: {
       eyebrow: "Direct contact · A human next step",
       title: "How do you want to travel in China?",
-      intro: "Share your dates, cities, and travel style.",
+      rotatingPhrases: [
+        "At your pace.",
+        "With your people.",
+        "Around what you love.",
+        "Without the rush.",
+        "With everything connected.",
+      ],
+      pauseMotion: "Pause changing headline",
+      resumeMotion: "Continue changing headline",
+      intro:
+        "Contact us directly on WhatsApp or Messenger, or send us an email. A travel planner will reply personally.",
       trustLabel: "What happens next",
       trust: [
         "Free to enquire",
@@ -423,10 +449,23 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "Read the questions that make a China trip work.",
       viewAllLabel: "View all guides",
       updatedLabel: "Updated",
+      railLabel: "Browse Homeground tours and travel guides",
       typeLabels: {
+        tour: "Private tour",
         route: "Itinerary",
         planning: "Planning guide",
         fieldNote: "Field note",
+      },
+      categoryLabels: {
+        all: "All",
+        tour: "Private tours",
+        explore: "Places",
+        stay: "Where to stay",
+        transport: "Getting around",
+        plan: "Routes & pace",
+        culture: "Food & culture",
+        essentials: "Travel essentials",
+        whenToGo: "When to go",
       },
     },
     studio: {
@@ -874,7 +913,17 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       eyebrow: "直接联系 · 由真人继续",
       title: "你想要怎样的中国旅行？",
       titleLines: ["你想要怎样的", "中国旅行？"],
-      intro: "从日期、城市和旅行偏好说起。",
+      rotatingPhrases: [
+        "按自己的节奏。",
+        "和重要的人一起。",
+        "围绕真正喜欢的事。",
+        "不被行程追着走。",
+        "一路都有人帮你接好。",
+      ],
+      pauseMotion: "暂停标题切换",
+      resumeMotion: "继续标题切换",
+      intro:
+        "可通过 WhatsApp、Messenger 直接联系我们，也可以发送邮件，旅行规划师会亲自回复。",
       trustLabel: "接下来会发生什么",
       trust: [
         "提交需求免费",
@@ -942,10 +991,23 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "从路线、交通到现场细节，先看清真正影响旅行的问题。",
       viewAllLabel: "查看全部指南",
       updatedLabel: "更新于",
+      railLabel: "浏览 Homeground 私家产品与旅行指南",
       typeLabels: {
+        tour: "私家旅行",
         route: "行程参考",
         planning: "规划指南",
         fieldNote: "现场笔记",
+      },
+      categoryLabels: {
+        all: "全部",
+        tour: "私家旅行",
+        explore: "城市与目的地",
+        stay: "住在哪里",
+        transport: "交通与抵达",
+        plan: "路线与节奏",
+        culture: "美食与文化",
+        essentials: "旅行必备",
+        whenToGo: "什么时候去",
       },
     },
     studio: {
@@ -1356,13 +1418,23 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     hero: {
-      eyebrow: "바로 문의 · 사람 플래너의 다음 단계",
+      eyebrow: "바로 문의 · 여행 플래너가 직접 답변",
       title: "어떤 중국 여행을 원하시나요?",
-      intro: "날짜, 도시, 여행 스타일을 알려 주세요.",
+      rotatingPhrases: [
+        "내 여행 속도에 맞게.",
+        "소중한 사람과 함께.",
+        "좋아하는 것에 집중해서.",
+        "일정에 쫓기지 않게.",
+        "현지에서도 막힘없이.",
+      ],
+      pauseMotion: "제목 전환 일시 정지",
+      resumeMotion: "제목 전환 계속",
+      intro:
+        "WhatsApp이나 Messenger로 바로 문의하거나 이메일을 보내 주세요. 전담 여행 플래너가 직접 답변합니다.",
       trustLabel: "다음 단계",
       trust: [
-        "문의 제출 무료",
-        "사람 플래너가 직접 검토",
+        "문의는 무료",
+        "여행 플래너가 직접 검토",
         "결제 전 직접 결정",
       ],
       socialImageAlt: "해자에 비친 베이징 자금성 각루",
@@ -1429,10 +1501,23 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       title: "동선과 교통, 현장 정보까지—여행을 바꾸는 질문을 먼저 확인하세요.",
       viewAllLabel: "전체 가이드 보기",
       updatedLabel: "최근 업데이트",
+      railLabel: "Homeground 프라이빗 여행과 중국 여행 가이드 둘러보기",
       typeLabels: {
+        tour: "프라이빗 여행",
         route: "추천 일정",
         planning: "여행 계획 가이드",
         fieldNote: "현장 노트",
+      },
+      categoryLabels: {
+        all: "전체",
+        tour: "프라이빗 여행",
+        explore: "도시와 여행지",
+        stay: "숙소 지역",
+        transport: "교통과 도착",
+        plan: "동선과 여행 속도",
+        culture: "음식과 문화",
+        essentials: "여행 필수 정보",
+        whenToGo: "여행 시기",
       },
     },
     studio: {

@@ -62,6 +62,7 @@ export type HomegroundEventName =
   | "guide_search_submitted"
   | "guide_search_result_clicked"
   | "guide_search_no_results"
+  | "homepage_guide_card_clicked"
   | "planning_intent_selected"
   | "planner_started"
   | "planner_step_completed"
@@ -114,6 +115,8 @@ const allowedParameterKeys = new Set([
   "query_length",
   "result_position",
   "result_count",
+  "content_category",
+  "content_kind",
   "cta_position",
   "planning_intent",
   "planning_starter_intent",

@@ -6,22 +6,27 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("homepage guide search sits between the guide heading and cards", async () => {
-  const [homepage, finderStyles] = await Promise.all([
+test("homepage guide search is followed by the localized guide rail", async () => {
+  const [homepage, finder, finderStyles, rail] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageGuideSearch.tsx"),
     source("components/HomepageGuideSearch.module.css"),
+    source("components/HomepageGuideRail.tsx"),
   ]);
-  const header = homepage.indexOf("className={styles.travelGuidesHeader}");
-  const finder = homepage.indexOf("<HomepageGuideSearch locale={locale} />");
-  const cards = homepage.indexOf("className={styles.travelGuideGrid}");
+  const finderPosition = homepage.indexOf(
+    "<HomepageGuideSearch demos={searchDemos} locale={locale} />",
+  );
+  const railPosition = homepage.indexOf("<HomepageGuideRail");
   const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} />");
 
-  assert.ok(header >= 0, "travel guide heading must remain present");
-  assert.ok(finder > header, "guide finder must follow the guide heading");
-  assert.ok(cards > finder, "featured cards must follow the guide finder");
+  assert.ok(finderPosition >= 0, "the guide finder must remain present");
   assert.ok(
-    planningScope > cards,
-    "guide finder and cards must remain before the planning-scope section",
+    railPosition > finderPosition,
+    "the broader guide rail must follow the guide finder",
+  );
+  assert.ok(
+    planningScope > railPosition,
+    "guide discovery must remain before the planning-scope section",
   );
   assert.doesNotMatch(
     homepage,
@@ -33,6 +38,11 @@ test("homepage guide search sits between the guide heading and cards", async () 
     /scroll-margin-top:\s*5\.75rem/,
     "the homepage search anchor must clear the sticky header",
   );
+  assert.match(finder, /<h2 id="homepage-guide-search-title">/);
+  assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
+  assert.match(finder, /showExamples=\{false\}/);
+  assert.doesNotMatch(finder, /styles\.demo|demoResults|demoQuestion/);
+  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<a/);
 });
 
 test("homepage finder lazy-loads one same-language static index", async () => {
@@ -68,10 +78,86 @@ test("homepage search remains keyboard- and error-accessible", async () => {
   assert.match(form, /event\.key === "ArrowDown"/);
   assert.match(form, /aria-invalid=\{validationError \|\| undefined\}/);
   assert.match(form, /role="alert"/);
+  assert.match(form, /retryRemoteDocuments/);
+  assert.match(form, /inputRef\.current\?\.focus\(\);/);
+  assert.match(form, /copy\.retrySuggestions/);
+  assert.match(form, /type="button"/);
   assert.match(copy, /emptyQueryError:/);
   assert.match(copy, /loadingSuggestions:/);
   assert.match(copy, /suggestionsUnavailable:/);
   assert.match(copy, /noSuggestions:/);
+  assert.match(copy, /retrySuggestions:/);
+});
+
+test("homepage search placeholder demo types continuously, pauses for input and uses real questions", async () => {
+  const [finder, form, editorial, formStyles] = await Promise.all([
+    source("components/HomepageGuideSearch.tsx"),
+    source("components/GuideSearchForm.tsx"),
+    source("lib/homepageEditorial.ts"),
+    source("components/GuideSearchForm.module.css"),
+  ]);
+
+  assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
+  assert.match(form, /TYPEWRITER_TARGET_MS = 620/);
+  assert.match(form, /TYPEWRITER_HOLD_MS = 610/);
+  assert.match(form, /MAX_ROTATING_PLACEHOLDERS = 3/);
+  assert.match(form, /type PlaceholderPhase = "typing" \| "holding" \| "clearing"/);
+  assert.match(form, /\(current \+ 1\) % placeholderPhrases\.length/);
+  assert.match(form, /slice\(0, placeholderCharacterCount\)/);
+  assert.match(form, /prefers-reduced-motion: reduce/);
+  assert.match(form, /new IntersectionObserver/);
+  assert.match(form, /Boolean\(currentPlaceholder\) && !focusedWithin/);
+  assert.match(
+    form,
+    /<span\s+aria-hidden="true"\s+className=\{styles\.rotatingPlaceholder\}/,
+  );
+  assert.match(editorial, /getGuideSearchDocuments\(locale\)/);
+  assert.match(editorial, /getGuideSearchCopy\(locale\)\.examples/);
+  assert.match(editorial, /searchGuideDocuments\(documents, query, locale\)/);
+  assert.match(editorial, /\.slice\(0, 1\)/);
+  assert.match(editorial, /title: document\.h1/);
+  assert.doesNotMatch(editorial, /searchDemoGuideIds/);
+  assert.match(formStyles, /@keyframes typewriter-cursor/);
+  assert.match(formStyles, /\.rotatingPlaceholder\[data-phase="clearing"\]/);
+  assert.match(formStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.doesNotMatch(finder, /typewriter|setInterval|aria-live/);
+});
+
+test("guide rail preserves position while lazy-loading and loads near the native-scroll edge", async () => {
+  const rail = await source("components/HomepageGuideRail.tsx");
+
+  assert.match(
+    rail,
+    /maximumScroll - currentScroll <= list\.clientWidth \* 1\.25/,
+  );
+  assert.match(rail, /void ensureCompleteCatalog\(\)/);
+  assert.match(
+    rail,
+    /useEffect\(\(\) => \{\s*const list = listRef\.current;\s*if \(!list\) return;\s*list\.scrollLeft = 0;\s*updateCatalogProgress\(\);\s*\}, \[resolvedCategory, updateCatalogProgress\]\)/,
+  );
+  assert.match(rail, /addEventListener\("scroll", queueCatalogProgressUpdate/);
+  assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
+});
+
+test("hero title cycles the full phrase set faster without restoring the visible play button", async () => {
+  const [homepage, title, titleStyles] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("components/RotatingHeroTitle.tsx"),
+    source("components/RotatingHeroTitle.module.css"),
+  ]);
+
+  assert.match(title, /AUTO_STEP_MS = 2100/);
+  assert.match(title, /className=\{styles\.motionControl\}/);
+  assert.match(title, /aria-pressed=\{manualPaused\}/);
+  assert.doesNotMatch(title, /function PlayIcon|function PauseIcon/);
+  assert.match(title, /\(index \+ 1\) % availablePhrases\.length/);
+  assert.match(title, /availablePhrases\.map\(\(phrase, index\) =>/);
+  assert.match(title, /onMouseEnter=\{\(\) => setPointerPaused\(true\)\}/);
+  assert.match(title, /onMouseLeave=\{\(\) => setPointerPaused\(false\)\}/);
+  assert.doesNotMatch(title, /PlayIcon|PauseIcon|handleToggle/);
+  assert.doesNotMatch(titleStyles, /\.toggle|\.hasControl/);
+  assert.match(homepage, /pauseLabel=\{copy\.hero\.pauseMotion\}/);
+  assert.match(homepage, /playLabel=\{copy\.hero\.resumeMotion\}/);
 });
 
 test("customer-facing search copy avoids internal implementation language", async () => {

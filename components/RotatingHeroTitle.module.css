@@ -1,0 +1,154 @@
+.root {
+  box-sizing: border-box;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  position: relative;
+}
+
+.motionControl {
+  background: transparent;
+  border: 0;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  inset: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.motionControl:focus-visible {
+  outline: 2px solid var(--hg-color-rust);
+  outline-offset: 0.3rem;
+}
+
+.screenReaderOnly {
+  block-size: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.visualTitle,
+.question {
+  display: block;
+}
+
+.visualTitle {
+  max-inline-size: 100%;
+}
+
+.phraseStage {
+  display: inline-grid;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-block-size: 1em;
+  vertical-align: top;
+}
+
+.phraseSizer,
+.phraseLayer {
+  grid-area: 1 / 1;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.phraseSizer {
+  display: grid;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.phraseMeasure {
+  grid-area: 1 / 1;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.phraseLayer {
+  align-self: start;
+  display: block;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.letter {
+  display: inline-block;
+  transform-origin: 50% 78%;
+}
+
+.phraseLayer[data-phase="entering"] .letter {
+  animation: letterEnter 440ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--letter-enter-delay);
+}
+
+.phraseLayer[data-phase="exiting"] .letter {
+  animation: letterExit 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: var(--letter-exit-delay);
+}
+
+.root[data-paused="true"] .letter {
+  animation-play-state: paused;
+}
+
+@media (max-width: 680px) {
+  .root {
+    inline-size: 100%;
+  }
+
+  .phraseStage {
+    inline-size: 100%;
+  }
+
+  :global([data-homeground-locale="zh"]) .question {
+    max-inline-size: 6.5em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phraseLayer .letter {
+    animation: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@keyframes letterEnter {
+  from {
+    filter: blur(4px);
+    opacity: 0;
+    transform: translateY(0.28em);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterExit {
+  from {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    filter: blur(3px);
+    opacity: 0;
+    transform: translateY(-0.2em);
+  }
+}

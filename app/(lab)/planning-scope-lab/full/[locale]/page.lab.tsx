@@ -6,6 +6,10 @@ import {
   type HomegroundLocale,
 } from "../../../../../lib/homegroundI18n";
 import { getPlanningScopeCopy } from "../../../../../lib/homegroundPlanningScopeI18n";
+import {
+  getHomepageGuideRailItems,
+  getHomepageSearchDemos,
+} from "../../../../../lib/homepageEditorial";
 
 export const dynamicParams = false;
 
@@ -38,7 +42,12 @@ export default async function PlanningScopeFullPageLab({
   return (
     <>
       <LabHtmlLang lang={copy.htmlLang} />
-      <HomegroundHomePage locale={locale} planningSection="current" />
+      <HomegroundHomePage
+        guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
+        locale={locale}
+        planningSection="current"
+        searchDemos={getHomepageSearchDemos(locale)}
+      />
     </>
   );
 }

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { HomegroundHomePage } from "../../components/HomegroundHomePage";
 import { getHomegroundCopy } from "../../lib/homegroundI18n";
+import {
+  getHomepageGuideRailItems,
+  getHomepageSearchDemos,
+} from "../../lib/homepageEditorial";
 
 const copy = getHomegroundCopy("en");
 
@@ -34,5 +38,11 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomegroundHomePage locale="en" />;
+  return (
+    <HomegroundHomePage
+      guideRailItems={getHomepageGuideRailItems("en").slice(0, 18)}
+      locale="en"
+      searchDemos={getHomepageSearchDemos("en")}
+    />
+  );
 }
