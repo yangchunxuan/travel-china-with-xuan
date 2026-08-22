@@ -5,7 +5,9 @@ import test from "node:test";
 const repositoryRoot = new URL("../../", import.meta.url);
 
 async function source(path) {
-  return readFile(new URL(path, repositoryRoot), "utf8");
+  return readFile(new URL(path, repositoryRoot), "utf8").then((contents) =>
+    contents.replace(/\r\n?/gu, "\n"),
+  );
 }
 
 function envEntries(contents) {

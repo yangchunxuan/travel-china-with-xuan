@@ -9,7 +9,9 @@ const originalTrafficMigrationPath =
   "supabase/migrations/202607310001_homeground_traffic_attribution.sql";
 
 async function source(path) {
-  return readFile(new URL(path, repositoryRoot), "utf8");
+  return readFile(new URL(path, repositoryRoot), "utf8").then((contents) =>
+    contents.replace(/\r\n?/gu, "\n"),
+  );
 }
 
 test("valid session bootstrap is limited before credential issuance", async () => {

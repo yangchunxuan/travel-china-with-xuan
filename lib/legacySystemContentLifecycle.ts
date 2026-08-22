@@ -125,10 +125,10 @@ export const legacySystemContentLifecycle = {
     dateModified: "2026-08-23",
     lastReviewed: "2026-07-31",
     evidence: {
-      commit: "ebdb015d55062c6e19d6722fbb3203d139a87b15",
+      commit: "607ec5619471346d0f05de8818075c90c1081b6c",
       changedAt: "2026-08-23",
       summary:
-        "The privacy notice added the deployed Cloudflare edge-processing disclosure and recorded that optional Cloudflare browser RUM is disabled; the separate full-review date remains 2026-07-31.",
+        "The privacy notice now records deployed Cloudflare edge processing and disabled browser RUM, and distinguishes bootstrap-request limits from accepted-event retention; the separate full-review date remains 2026-07-31.",
     },
   },
   "business-information": {
