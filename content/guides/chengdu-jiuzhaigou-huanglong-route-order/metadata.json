@@ -1,0 +1,23 @@
+{
+  "id": "chengdu-jiuzhaigou-huanglong-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["chengdu", "jiuzhaigou", "huanglong", "route-order", "altitude-buffer"],
+  "destinations": ["chengdu", "jiuzhaigou", "huanglong"],
+  "heroImagePath": "/images/guides/chengdu-jiuzhaigou-huanglong-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-jiuzhaigou-huanglong-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/chengdu-jiuzhaigou-huanglong-route-order/", "title": "Chengdu, Jiuzhaigou and Huanglong: Route Order and Buffer", "headline": "Order Chengdu, Jiuzhaigou and Huanglong Without Turning the Mountains Into a Race", "description": "Choose the order, overnight bases and altitude buffer for Chengdu, Jiuzhaigou and Huanglong while keeping live transport facts with their owners.", "heroAlt": "Travertine pools and mountain forest at Huanglong in Sichuan, photographed in October 2011", "navTitle": "Chengdu–Jiuzhaigou–Huanglong", "featuredLinkLabel": "Order the Sichuan mountain route", "openGraphLocale": "en_US", "cardTags": ["Route order", "Jiuzhaigou", "Altitude buffer"] },
+    "zh": { "path": "/zh/guides/chengdu-jiuzhaigou-huanglong-route-order/", "title": "成都、九寨沟、黄龙路线顺序与高海拔缓冲", "headline": "成都、九寨沟、黄龙怎么排，才不会把山地旅行变成赶路", "description": "安排成都、九寨沟和黄龙的先后、住宿基地与高海拔缓冲；实时交通继续交给对应owner。", "heroAlt": "2011年10月拍摄的四川黄龙彩池与山林", "navTitle": "成都—九寨沟—黄龙", "featuredLinkLabel": "安排川西山地顺序", "openGraphLocale": "zh_CN", "cardTags": ["路线顺序", "九寨沟", "高海拔缓冲"] },
+    "ko": { "path": "/ko/guides/chengdu-jiuzhaigou-huanglong-route-order/", "title": "청두·주자이거우·황룽 순서와 고도 여유", "headline": "청두·주자이거우·황룽을 산악 경주로 만들지 않는 순서", "description": "청두, 주자이거우, 황룽의 순서·숙박 거점·고도 여유를 정하고 실시간 교통 정보는 기존 owner에게 연결합니다.", "heroAlt": "2011년 10월 촬영한 쓰촨 황룽의 색채 연못과 산림", "navTitle": "청두–주자이거우–황룽", "featuredLinkLabel": "쓰촨 산악 동선 정하기", "openGraphLocale": "ko_KR", "cardTags": ["여행 순서", "주자이거우", "고도 여유"] }
+  }
+}

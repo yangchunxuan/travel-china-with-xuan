@@ -1,0 +1,53 @@
+{
+  "id": "first-solo-trip-china-recoverable-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["solo-travel", "first-trip", "route-design", "failure-recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/first-solo-trip-china-recoverable-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/first-solo-trip-china-recoverable-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/first-solo-trip-china-recoverable-route/",
+      "title": "First Solo Trip to China: Build a Route You Can Recover",
+      "headline": "A First Solo China Route That Still Works When One Thing Goes Wrong",
+      "description": "Build a first solo China trip around recoverable bases, clean transfers, payment fallbacks and a protected departure day—not bravado or a packed checklist.",
+      "heroAlt": "Shanghai Hongqiao Railway Station concourse photographed in March 2026",
+      "navTitle": "First solo China route",
+      "featuredLinkLabel": "Build a recoverable solo route",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Solo travel", "First China trip", "Recovery plan"]
+    },
+    "zh": {
+      "path": "/zh/guides/first-solo-trip-china-recoverable-route/",
+      "title": "第一次独自去中国：设计一条出错也能恢复的路线",
+      "headline": "第一次独自去中国，路线要经得起一个环节出错",
+      "description": "用可恢复的城市基地、简单转场、支付备份和受保护的离境日规划独自中国行，不靠硬撑或塞满清单。",
+      "heroAlt": "2026年3月拍摄的上海虹桥站候车大厅",
+      "navTitle": "第一次独自中国行",
+      "featuredLinkLabel": "设计可恢复的独自路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["独自旅行", "第一次来中国", "失败恢复"]
+    },
+    "ko": {
+      "path": "/ko/guides/first-solo-trip-china-recoverable-route/",
+      "title": "첫 중국 혼자 여행: 문제가 생겨도 회복되는 동선",
+      "headline": "한 가지가 틀어져도 무너지지 않는 첫 중국 혼자 여행",
+      "description": "회복하기 쉬운 거점, 단순한 이동, 결제 예비 수단과 보호된 출국일로 첫 중국 혼자 여행을 설계합니다.",
+      "heroAlt": "2026년 3월 촬영한 상하이 훙차오역 대합실",
+      "navTitle": "첫 중국 혼자 여행",
+      "featuredLinkLabel": "회복 가능한 혼자 여행 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["혼자 여행", "첫 중국 여행", "문제 회복"]
+    }
+  }
+}

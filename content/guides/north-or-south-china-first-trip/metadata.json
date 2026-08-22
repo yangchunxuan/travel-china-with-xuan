@@ -1,0 +1,23 @@
+{
+  "id": "north-or-south-china-first-trip",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["first-trip", "north-china", "south-china", "route-choice", "climate"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/north-or-south-china-first-trip/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/north-or-south-china-first-trip/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/north-or-south-china-first-trip/", "title": "North or South China for a First Trip?", "headline": "North or South China: Pick the First-Trip Story Before the Cities", "description": "Choose a northern, southern or one-jump contrast route by trip length, season, interests and gateways—not a false national stereotype.", "heroAlt": "A mountain landscape in the Qinling range near Xi'an photographed in May 2017", "navTitle": "North or south first trip", "featuredLinkLabel": "Choose the first-trip region", "openGraphLocale": "en_US", "cardTags": ["First trip", "North China", "South China"] },
+    "zh": { "path": "/zh/guides/north-or-south-china-first-trip/", "title": "第一次去中国选北方还是南方？", "headline": "第一次去中国：先选北方或南方的旅行故事，再选城市", "description": "按旅行长度、季节、兴趣与门户选择北方、南方或一次跨区对照路线，不把中国压成刻板印象。", "heroAlt": "2017年5月拍摄的西安附近秦岭山地景观", "navTitle": "第一次选北方或南方", "featuredLinkLabel": "选择第一次旅行区域", "openGraphLocale": "zh_CN", "cardTags": ["第一次旅行", "中国北方", "中国南方"] },
+    "ko": { "path": "/ko/guides/north-or-south-china-first-trip/", "title": "첫 중국 여행, 북부와 남부 중 어디?", "headline": "첫 중국 여행: 도시보다 북부·남부의 이야기를 먼저 고르기", "description": "여행 길이, 계절, 관심사, 관문으로 북부·남부 또는 한 번의 장거리 대비 동선을 고릅니다.", "heroAlt": "2017년 5월 촬영한 시안 근교 친링산맥 풍경", "navTitle": "첫 여행 북부 또는 남부", "featuredLinkLabel": "첫 여행 지역 고르기", "openGraphLocale": "ko_KR", "cardTags": ["첫 중국 여행", "중국 북부", "중국 남부"] }
+  }
+}
