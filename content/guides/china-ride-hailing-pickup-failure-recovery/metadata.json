@@ -1,0 +1,120 @@
+{
+  "id": "china-ride-hailing-pickup-failure-recovery",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "ride-pickup-recovery-workflow",
+  "topics": [
+    "ride-hailing",
+    "pickup-failure",
+    "vehicle-verification",
+    "pickup-pin",
+    "safe-fallback"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-ride-hailing-pickup-failure-recovery/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-ride-hailing-pickup-failure-recovery/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-ride-hailing-pickup-failure-recovery/",
+      "title": "China Ride-Hailing Pickup Failure: Find the Car, Fix the Pin or Use a Safe Fallback",
+      "headline": "China Ride-Hailing Pickup Failure: Find the Car, Fix the Pin or Use a Safe Fallback",
+      "description": "A post-order recovery workflow for China ride-hailing pickup failures: verify the assigned car, compare pin and physical pickup zone, communicate safely, cancel with evidence or switch transport.",
+      "heroAlt": "A Didi pickup station sign in Jinshanzui fishing village in Shanghai",
+      "heroCredit": {
+        "text": "Photo: Carrot2333 / Wikimedia Commons / CC0 1.0",
+        "sourceLabel": "Wikimedia Commons file page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:DIDI_station_in_Jinshanzui_fishing_village,_Shanghai.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "navTitle": "Ride-hailing pickup recovery",
+      "featuredLinkLabel": "Recover a failed ride pickup",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Ride-hailing",
+        "Pickup",
+        "Safety"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-ride-hailing-pickup-failure-recovery/",
+      "title": "中国网约车接驾失败：找车、修正定位或安全切换",
+      "headline": "网约车司机找不到你时，如何找车、修正定位或安全改乘",
+      "description": "下单后的网约车接驾恢复：核对指派车辆、比较定位点与实体上车区、安全沟通、留证取消或切换交通。",
+      "heroAlt": "上海金山嘴一处 Didi 上车点标识",
+      "heroCredit": {
+        "text": "照片：Carrot2333 / 维基共享资源 / CC0 1.0",
+        "sourceLabel": "维基共享资源文件页",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:DIDI_station_in_Jinshanzui_fishing_village,_Shanghai.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "navTitle": "网约车接驾恢复",
+      "featuredLinkLabel": "恢复失败的网约车接驾",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "网约车",
+        "上车点",
+        "安全"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-ride-hailing-pickup-failure-recovery/",
+      "title": "중국 호출차 픽업 실패: 차량 찾기, 핀 수정과 안전한 대안",
+      "headline": "중국 호출차 기사와 만나지 못할 때 핀을 고치고 안전하게 전환하기",
+      "description": "호출 뒤 배정 차량, 앱 핀과 실제 승차 구역을 대조하고 안전하게 연락하며 증거를 남겨 취소하거나 교통수단을 바꾸는 절차입니다.",
+      "heroAlt": "상하이 진산쭈이 어촌의 디디 승차 지점 표지",
+      "heroCredit": {
+        "text": "사진: Carrot2333 / Wikimedia Commons / CC0 1.0",
+        "sourceLabel": "위키미디어 공용 파일 페이지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:DIDI_station_in_Jinshanzui_fishing_village,_Shanghai.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "navTitle": "호출차 픽업 복구",
+      "featuredLinkLabel": "실패한 차량 픽업 복구",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "차량 호출",
+        "픽업",
+        "안전"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "China ride hailing driver cannot find me",
+      "Didi pickup pin wrong China",
+      "China ride pickup failure recovery"
+    ],
+    "zh": [
+      "网约车司机找不到我怎么办",
+      "打车定位错误怎么改",
+      "中国网约车接驾失败"
+    ],
+    "ko": [
+      "중국 호출차 기사 못 찾음",
+      "디디 픽업 핀 오류",
+      "중국 차량 호출 픽업 실패"
+    ]
+  }
+}
