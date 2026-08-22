@@ -1,0 +1,85 @@
+{
+  "id": "shanghai-water-town-zhujiajiao-tongli-wuzhen",
+  "type": "planning",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "comparison-guide",
+  "topics": [
+    "water-towns",
+    "zhujiajiao",
+    "tongli",
+    "wuzhen",
+    "shanghai-day-trip"
+  ],
+  "destinations": [
+    "shanghai",
+    "zhujiajiao",
+    "tongli",
+    "wuzhen"
+  ],
+  "heroImagePath": "/images/guides/shanghai-water-town-zhujiajiao-tongli-wuzhen/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-water-town-zhujiajiao-tongli-wuzhen/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-water-town-zhujiajiao-tongli-wuzhen/",
+      "title": "Which Water Town from Shanghai: Zhujiajiao, Tongli or Wuzhen?",
+      "headline": "Choose One Water Town from Shanghai: Zhujiajiao, Tongli or Wuzhen",
+      "description": "Compare transfer friction, gardens, living-town texture, managed night scenery and overnight value without pretending the three towns are interchangeable.",
+      "heroAlt": "Canal, stone bridge and waterfront houses in Zhujiajiao",
+      "navTitle": "Water town choice",
+      "featuredLinkLabel": "Choose one water town",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanghai",
+        "Water towns",
+        "Comparison"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-water-town-zhujiajiao-tongli-wuzhen/",
+      "title": "上海出发选哪个水乡：朱家角、同里还是乌镇？",
+      "headline": "从上海只选一个水乡：朱家角、同里或乌镇",
+      "description": "比较交通摩擦、园林、生活感、夜景经营与过夜价值，不把三座水乡当成同一种体验。",
+      "heroAlt": "朱家角的河道、石桥与临水民居",
+      "navTitle": "江南水乡选择",
+      "featuredLinkLabel": "选择一座水乡",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "上海",
+        "水乡",
+        "对比"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-water-town-zhujiajiao-tongli-wuzhen/",
+      "title": "상하이 근교 수향: 주자자오·퉁리·우전",
+      "headline": "상하이에서 수향 하나만 고른다면: 주자자오, 퉁리, 우전",
+      "description": "이동 부담, 정원, 생활감, 연출된 야경과 숙박 가치를 비교해 서로 다른 세 마을 중 하나를 고릅니다.",
+      "heroAlt": "주자자오의 운하, 돌다리와 수변 가옥",
+      "navTitle": "수향 마을 선택",
+      "featuredLinkLabel": "수향 하나 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "상하이",
+        "수향",
+        "비교"
+      ]
+    }
+  }
+}

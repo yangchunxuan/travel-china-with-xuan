@@ -1,0 +1,82 @@
+{
+  "id": "jiuzhaigou-one-day-sightseeing-bus-route",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "jiuzhaigou",
+    "sightseeing-bus",
+    "one-day-route",
+    "three-valleys"
+  ],
+  "destinations": [
+    "jiuzhaigou",
+    "sichuan"
+  ],
+  "heroImagePath": "/images/guides/jiuzhaigou-one-day-sightseeing-bus-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jiuzhaigou-one-day-sightseeing-bus-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/jiuzhaigou-one-day-sightseeing-bus-route/",
+      "title": "Jiuzhaigou in One Day: Bus, Three Valleys and Cuts",
+      "headline": "Jiuzhaigou in One Day: Use the Bus, Read the Y and Know What to Skip",
+      "description": "Plan a realistic day inside Jiuzhaigou by separating the three valleys, bus transfers, walking segments and the cuts that protect the best scenery.",
+      "heroAlt": "Five Flower Lake in Jiuzhaigou Valley, Sichuan",
+      "navTitle": "Jiuzhaigou one-day route",
+      "featuredLinkLabel": "Build a realistic park day",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Jiuzhaigou",
+        "One day",
+        "Route choice"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/jiuzhaigou-one-day-sightseeing-bus-route/",
+      "title": "九寨沟一日游：观光车、三条沟与取舍",
+      "headline": "一天看九寨沟：先读懂Y形三沟，再决定怎么坐车和删点",
+      "description": "把九寨沟三条沟、观光车换乘、步行段和必要取舍放进同一套可执行的一日路线。",
+      "heroAlt": "四川九寨沟五花海景观",
+      "navTitle": "九寨沟一日路线",
+      "featuredLinkLabel": "规划可执行的一日游",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "九寨沟",
+        "一日游",
+        "路线取舍"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/jiuzhaigou-one-day-sightseeing-bus-route/",
+      "title": "주자이거우 하루: 셔틀버스·세 계곡·포기할 곳",
+      "headline": "주자이거우를 하루에 보는 법: Y자 세 계곡과 버스부터 읽기",
+      "description": "세 계곡의 구조, 셔틀 환승, 걷는 구간과 우선순위를 한 장의 현실적인 당일 동선으로 정리했습니다.",
+      "heroAlt": "쓰촨 주자이거우의 오화해 풍경",
+      "navTitle": "주자이거우 하루 동선",
+      "featuredLinkLabel": "현실적인 하루 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "주자이거우",
+        "당일 여행",
+        "동선 선택"
+      ]
+    }
+  }
+}

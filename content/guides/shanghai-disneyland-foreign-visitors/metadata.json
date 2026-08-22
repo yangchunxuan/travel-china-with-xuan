@@ -1,0 +1,83 @@
+{
+  "id": "shanghai-disneyland-foreign-visitors",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "shanghai-disneyland",
+    "foreign-passport",
+    "official-app",
+    "one-day-route"
+  ],
+  "destinations": [
+    "shanghai",
+    "pudong",
+    "shanghai-disneyland"
+  ],
+  "heroImagePath": "/images/guides/shanghai-disneyland-foreign-visitors/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-disneyland-foreign-visitors/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-disneyland-foreign-visitors/",
+      "title": "Shanghai Disneyland for Foreign Visitors: One-Day Plan",
+      "headline": "Shanghai Disneyland with a Foreign Passport: Ticket, App and One-Day Plan",
+      "description": "Use the correct passport record, official app and a priority-based park day without relying on a frozen ride list or queue prediction.",
+      "heroAlt": "Enchanted Storybook Castle at Shanghai Disneyland",
+      "navTitle": "Shanghai Disneyland day",
+      "featuredLinkLabel": "Prepare a passport-ready park day",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanghai",
+        "Disneyland",
+        "Foreign visitors"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-disneyland-foreign-visitors/",
+      "title": "外国游客上海迪士尼一日游：护照、App与路线",
+      "headline": "外国护照游上海迪士尼：购票、官方App与一日路线",
+      "description": "从护照实名、官方渠道和App准备出发，按优先级安排一天，不把项目开放与排队时间写成保证。",
+      "heroAlt": "上海迪士尼乐园奇幻童话城堡",
+      "navTitle": "上海迪士尼一日游",
+      "featuredLinkLabel": "准备护照实名的一天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "上海",
+        "迪士尼",
+        "外国游客"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-disneyland-foreign-visitors/",
+      "title": "외국인 상하이 디즈니랜드: 여권·앱·하루 동선",
+      "headline": "외국 여권으로 상하이 디즈니랜드 가기: 예매, 공식 앱, 하루 계획",
+      "description": "여권 실명 정보와 공식 채널을 맞추고, 고정된 대기시간 예측 대신 우선순위로 하루를 운영하는 방법입니다.",
+      "heroAlt": "상하이 디즈니랜드의 인챈티드 스토리북 캐슬",
+      "navTitle": "상하이 디즈니랜드 하루",
+      "featuredLinkLabel": "여권 기반 방문 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "상하이",
+        "디즈니랜드",
+        "외국인"
+      ]
+    }
+  }
+}

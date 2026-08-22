@@ -1,0 +1,83 @@
+{
+  "id": "bund-or-lujiazui-see-both",
+  "type": "planning",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "the-bund",
+    "lujiazui",
+    "huangpu-river",
+    "shanghai-walk"
+  ],
+  "destinations": [
+    "shanghai",
+    "the-bund",
+    "lujiazui"
+  ],
+  "heroImagePath": "/images/guides/bund-or-lujiazui-see-both/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/bund-or-lujiazui-see-both/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/bund-or-lujiazui-see-both/",
+      "title": "The Bund or Lujiazui? Which Side and How to See Both",
+      "headline": "The Bund and Lujiazui: Choose the View, Then Cross the River Once",
+      "description": "Understand what each bank is for, choose the better first side and connect both without wasting the best light in transit.",
+      "heroAlt": "Lujiazui skyline seen across the Huangpu River from the Bund",
+      "navTitle": "Bund and Lujiazui",
+      "featuredLinkLabel": "Plan both riverbanks",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanghai",
+        "The Bund",
+        "Lujiazui"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/bund-or-lujiazui-see-both/",
+      "title": "外滩还是陆家嘴？两岸怎么选、怎么连",
+      "headline": "外滩与陆家嘴：先决定看什么，再只过一次江",
+      "description": "分清两岸各自的体验，选择先去哪一侧，再把两边连成一条不浪费最佳光线的路线。",
+      "heroAlt": "从上海外滩隔黄浦江望向陆家嘴天际线",
+      "navTitle": "外滩与陆家嘴",
+      "featuredLinkLabel": "规划黄浦江两岸",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "上海",
+        "外滩",
+        "陆家嘴"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/bund-or-lujiazui-see-both/",
+      "title": "와이탄 vs 루자쭈이: 어느 쪽부터, 둘 다 보는 법",
+      "headline": "와이탄과 루자쭈이: 보고 싶은 장면을 정하고 강은 한 번만 건너기",
+      "description": "두 강변의 역할을 구분하고 좋은 빛을 이동에 낭비하지 않도록 한 방향으로 연결하는 방법입니다.",
+      "heroAlt": "상하이 와이탄에서 황푸강 너머로 본 루자쭈이 스카이라인",
+      "navTitle": "와이탄과 루자쭈이",
+      "featuredLinkLabel": "두 강변 동선 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "상하이",
+        "와이탄",
+        "루자쭈이"
+      ]
+    }
+  }
+}
