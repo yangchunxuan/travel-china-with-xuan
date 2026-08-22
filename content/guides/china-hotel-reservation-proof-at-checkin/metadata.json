@@ -1,0 +1,81 @@
+{
+  "id": "china-hotel-reservation-proof-at-checkin",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "recovery-guide",
+  "topics": [
+    "hotel-checkin",
+    "missing-reservation",
+    "overbooking-relocation",
+    "travel-recovery"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-hotel-reservation-proof-at-checkin/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-hotel-reservation-proof-at-checkin/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-hotel-reservation-proof-at-checkin/",
+      "title": "China Hotel Cannot Find Your Reservation at Check-In: What to Do",
+      "headline": "China Hotel Cannot Find Your Reservation at Check-In: The First Fifteen Minutes",
+      "description": "Verify property, name and order status, put the platform and supplier chain to work, handle oversold relocation, and secure safe lodging first if the night has failed.",
+      "heroAlt": "A small Chinese hotel reception counter with official guest-registration notices listing valid identity documents.",
+      "navTitle": "Reservation not found",
+      "featuredLinkLabel": "Fix a missing reservation",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Hotels",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-hotel-reservation-proof-at-checkin/",
+      "title": "到中国酒店却查不到预订：入住现场怎么处理？",
+      "headline": "到店查不到预订：前十五分钟按顺序做",
+      "description": "核对物业、姓名与订单状态，调动平台与供应商链条，处理超售换店安置；当晚失败时先保安全住宿再谈追偿。",
+      "heroAlt": "一家中国小酒店的前台窗口，墙上张贴着列明有效身份证件的旅客登记须知。",
+      "navTitle": "查不到预订",
+      "featuredLinkLabel": "处理查不到的订单",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "酒店",
+        "故障恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-hotel-reservation-proof-at-checkin/",
+      "title": "중국 호텔 체크인 때 예약이 조회되지 않을 때 대처법",
+      "headline": "체크인 데스크에서 예약이 보이지 않을 때: 처음 15분의 순서",
+      "description": "숙소·이름·주문 상태를 검증하고 플랫폼과 공급망을 가동하며, 초과 예약 시 이동 배정을 요구하는 방법. 그날 밤이 실패했을 때는 안전한 숙소를 먼저 확보하세요.",
+      "heroAlt": "유효 신분증 종류를 안내하는 투숙 등록 게시판이 붙은 중국 소규모 호텔 접수 창구.",
+      "navTitle": "예약 조회 불가",
+      "featuredLinkLabel": "조회되지 않는 예약 처리",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "호텔",
+        "문제 해결"
+      ]
+    }
+  }
+}

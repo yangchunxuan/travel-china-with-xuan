@@ -1,0 +1,23 @@
+# Image plan — china-hotel-reservation-proof-at-checkin
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/china-hotel-reservation-proof-at-checkin/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: a small Chinese hotel reception counter beneath official guest-registration notices listing valid identity documents — the exact desk context where a reservation is searched for at check-in; documentary, no incident depicted.
+- Provenance:
+  - Author: User:Vmenkov
+  - Source page: Wikimedia Commons file page for "Longhai - Hotel reception - P1260519.JPG"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/1/13/Longhai_-_Hotel_reception_-_P1260519.JPG
+  - License: CC BY-SA 3.0
+  - Subject/place: hotel reception with 旅客登记须知 (guest registration notice) board, Longhai, Fujian province, China
+  - Date taken (per Commons metadata): 2015-11-04
+  - Download date: 2026-08-22 (UTC+8), via upload.wikimedia.org, HTTP 200, 3,028,480 bytes
+- Processing record:
+  - Crop: full width 2560 px, vertical band top=80, height=1600 px (2560×1600) — keeps both notice boards and the counter grille
+  - Resize to 1600 × 1000, WebP quality 82 → 116,316 bytes
+  - Original SHA-256: 8c90d15969e797b08f2345d7ac878406245e2c12bb915c2cf9e66ff029c84e72
+  - Output SHA-256: eb900a151223b8eb7738c4d0832cb73b35c8a8a7c2780e3bfff95092e26f6556
+- Privacy check: no persons; regulatory signage only; health-certificate documents on side boards are illegible at output resolution; no passport, card, QR code or personal data.
+- Documentary boundary: an ordinary registration-desk scene; body text never describes it as a failure scene.
+- Cropping checks: desktop center crop keeps both boards; 390px mobile crop retains the main notice board; no critical element at edges.
+- Attribution duty: CC BY-SA 3.0 requires attribution and share-alike carry-over; recorded here for central review before publication.
