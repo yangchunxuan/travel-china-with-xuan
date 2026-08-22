@@ -122,13 +122,13 @@ export const legacySystemContentLifecycle = {
   },
   privacy: {
     datePublished: "2026-07-24",
-    dateModified: "2026-08-22",
+    dateModified: "2026-08-23",
     lastReviewed: "2026-07-31",
     evidence: {
-      commit: "e7a0d19e320adc3dc3ce88eb9283f9765ea1d22f",
-      changedAt: "2026-08-22",
+      commit: "ebdb015d55062c6e19d6722fbb3203d139a87b15",
+      changedAt: "2026-08-23",
       summary:
-        "PR #88 materially updated the public brand and operator wording; the page's separate full-review date remains 2026-07-31.",
+        "The privacy notice added the deployed Cloudflare edge-processing disclosure and recorded that optional Cloudflare browser RUM is disabled; the separate full-review date remains 2026-07-31.",
     },
   },
   "business-information": {

@@ -21,16 +21,19 @@ const expectedSystemIds = [
   "zhangjiajie-4-day-private-tour",
 ];
 
-const materiallyUpdatedOnAugust22 = new Set([
-  "author-evan",
-  "entry-requirements",
-  "guides",
-  "home",
-  "itinerary-review",
-  "privacy",
-  "studio",
-  "zhangjiajie-4-day-private-tour",
-]);
+const expectedModifiedDates = {
+  "author-evan": "2026-08-22",
+  "business-information": "2026-07-24",
+  "entry-requirements": "2026-08-22",
+  guides: "2026-08-22",
+  home: "2026-08-22",
+  "itinerary-review": "2026-08-22",
+  privacy: "2026-08-23",
+  "refund-delivery": "2026-07-24",
+  studio: "2026-08-22",
+  terms: "2026-07-24",
+  "zhangjiajie-4-day-private-tour": "2026-08-22",
+};
 
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
 const commitSha = /^[0-9a-f]{40}$/;
@@ -64,7 +67,7 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
     assert.ok(record.evidence.summary.length >= 40, `${id} evidence summary`);
     assert.equal(
       record.dateModified,
-      materiallyUpdatedOnAugust22.has(id) ? "2026-08-22" : "2026-07-24",
+      expectedModifiedDates[id],
       `${id}: audited material-change date`,
     );
   }
