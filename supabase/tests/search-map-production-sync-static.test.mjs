@@ -34,7 +34,7 @@ test("the Search Map complete inventory covers every current guide directory", a
   assert.equal(searchMap.snapshotDate, "2026-08-23");
   assert.equal(
     inventory.baseCommit,
-    "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
+    "d3f9861e9fc19b318c14dc43844569f78b4f0eac",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
   assert.equal(inventory.generatedIdentityCount, 164);

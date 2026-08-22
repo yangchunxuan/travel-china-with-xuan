@@ -2,7 +2,7 @@
   "schemaVersion": "1.2.0",
   "snapshotDate": "2026-08-23",
   "checkedAt": "2026-08-23T02:30:10+08:00",
-  "finalStatus": "SEARCH MAP RECONCILED THROUGH PR #89 RUNTIME RELEASE SHA 5bd1558 — PR #91 ADDS ONE BUSINESS-OWNER-INITIATED ENGLISH RELEASE CANDIDATE; MERGE AND DEPLOYMENT NOT YET AUTHORIZED",
+  "finalStatus": "SEARCH MAP RECONCILED THROUGH PR #91 RUNTIME RELEASE SHA d3f9861 — THE BUSINESS-OWNER-INITIATED TEN-CITY ENGLISH ASSET IS PUBLISHED; 60 REMOTE DRAFT IDENTITIES IN PR #84 REMAIN UNPUBLISHED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -1122,14 +1122,14 @@
   ],
   "coverage": {
     "publishedInventory": {
-      "authority": "audited-pr89-runtime-baseline-plus-pr91-release-candidate-guide-registry-and-content-metadata",
-      "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
+      "authority": "audited-pr91-runtime-baseline-guide-registry-and-content-metadata",
+      "baseCommit": "d3f9861e9fc19b318c14dc43844569f78b4f0eac",
       "identityCount": 183,
       "localeUrlCount": 541,
       "generatedIdentityCount": 164,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
-      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at baseCommit 5bd15583 plus the bounded PR #91 release candidate recorded below.",
+      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at PR #91 runtime baseCommit d3f9861.",
       "identityIds": [
         "anshun-dixi-mask-performance-guide",
         "beijing-courtyard-hotel-or-modern-hotel",
