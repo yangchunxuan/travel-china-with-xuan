@@ -33,9 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <SiteAnalytics locale="en" />
         {children}
         <AnalyticsConsent locale="en" />
-        <SiteAnalytics locale="en" />
       </body>
     </html>
   );

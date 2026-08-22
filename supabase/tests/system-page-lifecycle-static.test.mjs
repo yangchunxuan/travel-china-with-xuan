@@ -51,8 +51,8 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
       `${id}: publication cannot follow modification`,
     );
     assert.ok(
-      record.lastReviewed <= record.dateModified,
-      `${id}: this audited snapshot cannot claim a review after its public change`,
+      record.datePublished <= record.lastReviewed,
+      `${id}: review cannot predate publication`,
     );
     assert.match(record.evidence.commit, commitSha, `${id} evidence commit`);
     assert.match(record.evidence.changedAt, isoDate, `${id} evidence date`);

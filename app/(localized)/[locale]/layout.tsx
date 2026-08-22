@@ -94,9 +94,9 @@ export default async function LocalizedRootLayout({
         )}
       </head>
       <body>
+        <SiteAnalytics locale={locale} />
         {children}
         <AnalyticsConsent locale={locale} />
-        <SiteAnalytics locale={locale} />
       </body>
     </html>
   );

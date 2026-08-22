@@ -213,9 +213,9 @@ export const homegroundPrivacyCopy: Record<
       rows: [
         {
           label: "Website hosting",
-          value: "GitHub Pages · static public site",
+          value: "GitHub Pages · Cloudflare edge delivery and security",
           detail:
-            "Serves the website and may process ordinary web-request metadata under GitHub’s terms.",
+            "GitHub Pages hosts the static site. Cloudflare provides DNS, content delivery and security at the edge. Both may process ordinary request metadata, such as IP address, request time and path, under their terms. Cloudflare Web Analytics and browser RUM are disabled.",
         },
         {
           label: "Studio inbox",
@@ -444,8 +444,9 @@ export const homegroundPrivacyCopy: Record<
       rows: [
         {
           label: "网站托管",
-          value: "GitHub Pages · 静态公开网站",
-          detail: "提供网页，并可能依据 GitHub 条款处理普通访问请求信息。",
+          value: "GitHub Pages · Cloudflare 边缘分发与安全防护",
+          detail:
+            "GitHub Pages 托管静态网站；Cloudflare 在边缘提供 DNS、内容分发和安全防护。两者可能依据各自条款处理 IP 地址、请求时间、访问路径等普通请求信息。Cloudflare Web Analytics 和浏览器 RUM 已关闭。",
         },
         {
           label: "工作室收件箱",
@@ -677,9 +678,9 @@ export const homegroundPrivacyCopy: Record<
       rows: [
         {
           label: "웹사이트 호스팅",
-          value: "GitHub Pages · 정적 공개 사이트",
+          value: "GitHub Pages · Cloudflare 엣지 전송 및 보안",
           detail:
-            "웹사이트를 제공하며 GitHub 약관에 따라 일반 웹 요청 정보를 처리할 수 있습니다.",
+            "GitHub Pages가 정적 사이트를 호스팅하고 Cloudflare가 엣지에서 DNS, 콘텐츠 전송 및 보안을 제공합니다. 두 서비스는 각 약관에 따라 IP 주소, 요청 시각, 요청 경로와 같은 일반 요청 메타데이터를 처리할 수 있습니다. Cloudflare Web Analytics와 브라우저 RUM은 비활성화되어 있습니다.",
         },
         {
           label: "스튜디오 메일함",
