@@ -1,0 +1,24 @@
+{
+  "id": "jingdezhen-imperial-kiln-museum-archaeology",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "archaeology-object-field-guide",
+  "topics": ["jingdezhen", "imperial-kiln", "ceramics", "archaeology", "museum-reading"],
+  "destinations": ["jingdezhen", "jiangxi"],
+  "heroImagePath": "/images/guides/jingdezhen-imperial-kiln-museum-archaeology/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jingdezhen-imperial-kiln-museum-archaeology/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/jingdezhen-imperial-kiln-museum-archaeology/", "title": "Jingdezhen Imperial Kiln Museum: Read Kilns, Shards and a Modern Porcelain City", "headline": "Begin With Waste, Not the Perfect Vase", "description": "Use kiln remains, roads, wells, sherd deposits and repaired vessels to understand production evidence at Jingdezhen's Imperial Kiln site.", "heroAlt": "Brick-vaulted interior of the modern Jingdezhen Imperial Kiln Museum", "heroCredit": { "text": "Interior of the modern Imperial Kiln Museum, photographed by EditQ on 25 October 2022; centre-cropped and resized. Its brick vaults interpret kiln forms but are not excavated imperial kilns.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jingdezhen_Royal_Kiln_Museum_1.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" }, "navTitle": "Read Jingdezhen's Imperial Kiln", "featuredLinkLabel": "Follow kilns, shards and repaired vessels", "openGraphLocale": "en_US", "cardTags": ["Jingdezhen", "Ceramics", "Archaeology"] },
+    "zh": { "path": "/zh/guides/jingdezhen-imperial-kiln-museum-archaeology/", "title": "景德镇御窑博物院怎么看：窑炉、瓷片与现代瓷都", "headline": "先看废品，再看完整器", "description": "从窑炉遗迹、道路、水井、瓷片堆积和修复器物读懂景德镇御窑生产证据。", "heroAlt": "景德镇御窑博物院现代砖拱室内空间", "heroCredit": { "text": "御窑博物院现代室内空间，EditQ摄于2022年10月25日；经居中裁切和缩放。砖拱借鉴窑形，但不是发掘出的御窑遗迹。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jingdezhen_Royal_Kiln_Museum_1.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" }, "navTitle": "读懂景德镇御窑", "featuredLinkLabel": "沿窑炉、瓷片与修复器读现场", "openGraphLocale": "zh_CN", "cardTags": ["景德镇", "陶瓷", "考古"] },
+    "ko": { "path": "/ko/guides/jingdezhen-imperial-kiln-museum-archaeology/", "title": "징더전 어요박물원 읽기: 가마·도편·현대 도자 도시", "headline": "완벽한 도자기보다 폐기 흔적부터 보세요", "description": "가마터·길·우물·도편 퇴적과 복원 기물을 연결해 징더전 어요의 생산 증거를 읽습니다.", "heroAlt": "징더전 어요박물원의 현대 벽돌 아치 내부", "heroCredit": { "text": "현대 어요박물원 내부. EditQ가 2022년 10월 25일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 벽돌 아치는 가마 형태를 해석한 현대 건축이지 발굴된 어요가 아닙니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jingdezhen_Royal_Kiln_Museum_1.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" }, "navTitle": "징더전 어요 읽기", "featuredLinkLabel": "가마·도편·복원 기물 연결하기", "openGraphLocale": "ko_KR", "cardTags": ["징더전", "도자기", "고고학"] }
+  },
+  "searchTerms": { "en": ["Jingdezhen Imperial Kiln Museum guide", "Jingdezhen kiln archaeology shards"], "zh": ["景德镇御窑博物院攻略", "御窑遗址瓷片怎么看"], "ko": ["징더전 어요박물원 관람", "징더전 가마 유적 도편"] }
+}

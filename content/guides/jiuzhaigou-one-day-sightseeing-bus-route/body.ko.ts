@@ -1,0 +1,26 @@
+import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+const body = { schemaVersion: "1.0.0", blocks: [
+  { id: "lead", type: "lead", text: "주자이거우는 호숫가 산책로 하나가 아닙니다. 관람 구역은 Y자 모양으로, 수정거우가 아래 줄기이고 르쩌거우와 쩌차와거우가 두 갈래입니다. 하루 일정에서는 셔틀버스가 뼈대, 걷기가 세부가 됩니다. 모든 호수를 찍는 것보다 한 번의 긴 경관 변화, 짧은 고지대 구간, 그리고 안전한 하산 시간을 지키는 편이 낫습니다." },
+  { id: "answer", type: "callout", title: "바로 답하면", tone: "decision", body: "일찍 입장해 당일 배차가 안내하는 위쪽 갈래부터 시작하세요. 고도와 장거리는 셔틀로 이동하고, 직원이 그날 연결된다고 확인한 데크만 걸으세요. 오화해·진주탄과 숲·물의 변화가 목적이면 르쩌거우에 가장 많은 시간을 줍니다. 쩌차와거우는 장해와 오채지 중심의 짧은 구간으로, 마지막 수정거우는 서로 다른 두세 곳만 고릅니다. 늦어지면 비슷한 호수와 긴 도보를 먼저 빼고 귀환 여유는 지키세요." },
+  { id: "shape-heading", type: "heading", level: 2, text: "명소보다 먼저 Y자를 읽으세요" },
+  { id: "shape", type: "table", caption: "세 계곡의 서로 다른 역할", columns: ["계곡", "첫 방문에서의 역할", "가정하면 안 되는 것"], rows: [["르쩌거우(오른쪽)", "숲·색채 호수·여울·폭포가 밀집해 가장 긴 시간을 줄 만함", "위쪽 모든 정류장과 데크가 항상 개방"], ["쩌차와거우(왼쪽)", "장해와 오채지를 중심으로 한 높은 짧은 갈래", "계절해까지 오래 걸어야 함; 공식 안내는 버스가 서지 않고 너무 멀다고 설명"], ["수정거우(줄기)", "하산 중 폭포·호수군·마을·데크를 선택", "마지막 몇 분에 몰아도 충분"]] },
+  { id: "bus-heading", type: "heading", level: 2, text: "셔틀을 당일 운영 시스템으로 보세요" },
+  { id: "bus-copy", type: "paragraph", text: "공식 자료는 세 계곡 구조와 통합 셔틀 운영을 설명합니다. 실제 배차와 하차 지점은 혼잡, 날씨, 정비와 통제에 따라 바뀔 수 있습니다. 이전 계절 지도보다 현장 기사, 전광판과 직원 안내가 우선입니다." },
+  { id: "boarding", type: "list", ordered: true, items: ["입장 후 당일 지도를 촬영하고 운영 중인 정류장만 표시합니다.", "첫 승차 전 어느 갈래로 가는 버스인지 확인합니다.", "내릴 때 다음 합법적 승차 지점과 데크 방향을 묻습니다.", "입구 이름과 귀환 계획을 오프라인으로 저장합니다.", "점심 뒤 시간을 다시 계산해 마지막 계곡에서 운행 종료를 맞지 않게 합니다."] },
+  { id: "three-plans-heading", type: "heading", level: 2, text: "정직한 하루 형태 하나를 고르세요" },
+  { id: "plans", type: "comparison", title: "우선순위가 삭제 순서를 정합니다", columns: [{ heading: "물과 숲 우선", body: "르쩌거우를 길게, 쩌차와거우를 짧게, 수정거우는 두세 곳만 봅니다. 첫 방문에서 색채 호수와 폭포가 핵심일 때 좋습니다." }, { heading: "적게 걷는 날", body: "확인된 정류장 사이를 버스로 이동하고 짧은 전망만 고릅니다. 고도, 계단과 줄 서는 시간은 여전히 남습니다." }, { heading: "사진을 천천히", body: "장소 수를 줄이고 한 곳에 오래 머뭅니다. 빈 프레임을 위해 개방 구역을 벗어나거나 데크를 막지 않습니다." }] },
+  { id: "rize-heading", type: "heading", level: 2, text: "르쩌거우: 연결된 한 구간을 지키세요" },
+  { id: "rize", type: "paragraph", text: "오화해가 대표점이지만 르쩌거우의 가치는 물, 숲, 석회화 지형과 고도 변화가 이어지는 데 있습니다. 당일 데크가 연결되면 인접한 핀마다 버스를 갈아타기보다 호수–여울–폭포 한 구간을 걸으세요. 웅묘해, 오화해, 진주탄과 경해를 똑같이 깊게 볼 필요는 없습니다." },
+  { id: "zechawa-heading", type: "heading", level: 2, text: "쩌차와거우: 고지대 이동을 간결하게" },
+  { id: "zechawa", type: "paragraph", text: "장해와 오채지는 길고 큰 산정호와 작은 색채 연못이라는 분명한 대비를 만듭니다. 공식 경로 안내는 상·하 계절해가 계절성이고 버스가 서지 않으며 도보가 너무 멀다고 밝힙니다. 건너뛰어도 실패가 아닙니다." },
+  { id: "shuzheng-heading", type: "heading", level: 2, text: "수정거우: 남은 시간을 의식적으로 쓰세요" },
+  { id: "shuzheng", type: "table", caption: "늦은 시간의 선택법", columns: ["남은 시간", "남길 것", "뺄 것"], rows: [["여유 있음", "폭포/여울 하나, 호수군 하나, 확인된 데크 한 구간", "사진만 위한 반복 정차"], ["짧음", "귀환 연결이 가장 분명한 운영 정류장", "긴 마을 우회나 불확실한 하류 도보"], ["거의 없음", "귀환 시스템에 남아 합법적 정류장이나 차창 풍경", "확인 안 된 막차에 의존하는 계획"]] },
+  { id: "cuts", type: "callout", title: "먼저 뺄 것", tone: "warning", body: "비슷한 역할의 두 번째 호수, 버스가 서지 않는 긴 도보, 밖에서도 가능한 쇼핑, 당일 안전하게 끝내기 어렵다는 위쪽 갈래를 먼저 뺍니다. 귀환 여유, 음식과 물, 방한·방수, 변경된 승차 안내를 이해할 시간은 빼지 마세요." },
+  { id: "failure-heading", type: "heading", level: 2, text: "공원이 스크린샷대로 움직이지 않을 때" },
+  { id: "failure", type: "table", caption: "문제와 회복", columns: ["문제", "대응"], rows: [["다른 갈래부터 운행", "갈래 순서만 뒤집고 우선순위와 삭제표는 유지"], ["데크/정류장 폐쇄", "운영 버스망 안에서 가장 가까운 비중복 경관 선택"], ["구름·비·눈", "가까운 물과 숲을 보고 미끄러운 도보 축소"], ["혼잡이 오전 소모", "한 갈래 깊이를 줄이고 뛰거나 끼니를 거르지 않음"], ["고도 불편이나 탈진", "상승을 멈추고 직원·의료 도움 요청"]] },
+  { id: "not-transport", type: "callout", title: "이 글은 입장 뒤부터 시작합니다", tone: "neutral", body: "청두–주자이거우 열차, 버스, 항공, 숙박과 계곡 입구 이동은 전용 교통 글의 책임입니다. 늦게 도착했다고 공원 하루를 압축하면 안 됩니다." },
+  { id: "checklist", type: "list", items: ["여행일 공식 공지와 예매 채널을 다시 엽니다.", "날씨, 고도용 옷과 임시 폐쇄를 확인합니다.", "물, 간단한 점심과 오프라인 중국어 지명을 준비합니다.", "점심 재결정 시각과 위쪽 갈래 출발 마감선을 정합니다.", "개방 데크와 당일 셔틀 안내만 따릅니다."] },
+  { id: "links", type: "internal-links", title: "주자이거우 일정 연결", items: [{ label: "청두–주자이거우 교통", href: "/ko/guides/chengdu-jiuzhaigou-transport-route/", description: "도시에서 계곡까지 이동과 도착 밤을 계획합니다." }, { label: "허브 왕복과 다중 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "쓰촨 북부에 별도 숙박 거점이 필요한지 정합니다." }, { label: "일정이 너무 바쁜가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "환승과 회복도 시간으로 셉니다." }, { label: "부모님과 중국 여행", href: "/ko/guides/china-itinerary-with-older-parents/", description: "고도, 걷기와 회복일을 조정합니다." }, { label: "중국 공휴일", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "혼잡 압력이 큰 날짜를 확인합니다." }] },
+  { id: "sources", type: "sources", title: "검토한 출처", items: [{ label: "주자이거우 공식 관람 방식과 세 계곡", url: "https://www.jiuzhai.com/intelligent-service/way-of-play", publisher: "주자이거우 풍경명승구 관리국", reviewedAt: "2026-08-22" }, { label: "주자이거우 세계유산 설명", url: "https://whc.unesco.org/en/list/637", publisher: "유네스코 세계유산센터", reviewedAt: "2026-08-22" }, { label: "셔틀 관리와 보전 사례", url: "https://whc.unesco.org/en/list/637/bestpractice", publisher: "유네스코 세계유산센터", reviewedAt: "2026-08-22" }, { label: "대표 사진: Chensiyuan의 오화해, CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-22" }] }
+] } as const satisfies StructuredPageBody;
+export default body;

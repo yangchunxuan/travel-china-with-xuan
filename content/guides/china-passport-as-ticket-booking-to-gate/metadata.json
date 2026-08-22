@@ -1,0 +1,120 @@
+{
+  "id": "china-passport-as-ticket-booking-to-gate",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "identity-handoff-workflow",
+  "topics": [
+    "passport-as-ticket",
+    "identity-check",
+    "booking-to-gate",
+    "rail",
+    "attractions"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-passport-as-ticket-booking-to-gate/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-passport-as-ticket-booking-to-gate/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-passport-as-ticket-booking-to-gate/",
+      "title": "When Your Passport Is the Ticket in China: Booking-to-Gate Workflow",
+      "headline": "When Your Passport Is the Ticket in China: Booking-to-Gate Workflow",
+      "description": "What to do after a legitimate China booking links access to your passport: preserve the identity record, verify the order and recover at staffed gates without bypassing checks.",
+      "heroAlt": "Passport identity verification and security entrance at Shanghai Hongqiao Railway Station",
+      "heroCredit": {
+        "text": "Passport identity verification and security entrance at Shanghai Hongqiao Railway Station. Photo: Shwangtianyuan / Wikimedia Commons / CC BY-SA 4.0",
+        "sourceLabel": "Wikimedia Commons file page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ID_verification_and_security_check_entrance_of_Shanghai_Hongqiao_Railway_Station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Passport-as-ticket workflow",
+      "featuredLinkLabel": "Use a passport-linked ticket",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Passport",
+        "Ticket",
+        "Gate"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-passport-as-ticket-booking-to-gate/",
+      "title": "护照就是票：在中国从预订成功到进站检票的完整流程",
+      "headline": "护照作票时，如何从订单走到检票口",
+      "description": "合法预订成功后，保存护照绑定记录、核对订单，并在自动闸机失败时通过人工通道恢复，不绕过身份核验。",
+      "heroAlt": "上海虹桥站的证件核验与安检入口",
+      "heroCredit": {
+        "text": "上海虹桥站的证件核验与安检入口。照片：Shwangtianyuan / 维基共享资源 / CC BY-SA 4.0",
+        "sourceLabel": "维基共享资源文件页",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ID_verification_and_security_check_entrance_of_Shanghai_Hongqiao_Railway_Station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "护照作票流程",
+      "featuredLinkLabel": "使用护照绑定票",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "护照",
+        "票务",
+        "检票"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-passport-as-ticket-booking-to-gate/",
+      "title": "중국에서 여권이 티켓일 때: 예약 완료부터 게이트까지",
+      "headline": "여권 연동 티켓으로 중국에서 입장하는 절차",
+      "description": "합법적인 예약 뒤 여권 연동 기록을 보존하고 주문을 확인하며 자동 게이트 실패 시 신원 확인을 우회하지 않고 직원 통로에서 해결합니다.",
+      "heroAlt": "상하이 훙차오역의 신분증 확인 및 보안검색 입구",
+      "heroCredit": {
+        "text": "상하이 훙차오역의 신분증 확인 및 보안검색 입구. 사진: Shwangtianyuan / Wikimedia Commons / CC BY-SA 4.0",
+        "sourceLabel": "위키미디어 공용 파일 페이지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ID_verification_and_security_check_entrance_of_Shanghai_Hongqiao_Railway_Station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "여권 연동 티켓 절차",
+      "featuredLinkLabel": "여권 연동 티켓 사용하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "여권",
+        "티켓",
+        "게이트"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "passport is ticket China",
+      "China booking to gate passport workflow",
+      "China train passport boarding"
+    ],
+    "zh": [
+      "中国护照作票进站",
+      "护照从预订到检票流程",
+      "外国旅客证件检票"
+    ],
+    "ko": [
+      "중국 여권 티켓 탑승",
+      "중국 예약부터 게이트 여권",
+      "중국 기차 여권 검표"
+    ]
+  }
+}

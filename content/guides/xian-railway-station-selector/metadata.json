@@ -1,0 +1,122 @@
+{
+  "id": "xian-railway-station-selector",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "station-decision-matrix",
+  "topics": [
+    "transport",
+    "railways",
+    "railway-stations",
+    "wrong-station-recovery"
+  ],
+  "destinations": [
+    "xian"
+  ],
+  "heroImagePath": "/images/guides/xian-railway-station-selector/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xian-railway-station-selector/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/xian-railway-station-selector/",
+      "title": "Which Xi'an Railway Station? Xi'an, North or East",
+      "headline": "Which Xi'an Railway Station Should You Use?",
+      "description": "Match Xi'an, Xi'an North or the newly opened Xi'an East to the exact ticket, hotel, Terracotta Warriors plan and next connection.",
+      "heroAlt": "Passenger corridor at Xi'an North Railway Station with bilingual wayfinding and travellers carrying luggage.",
+      "heroCredit": {
+        "text": "Xi'an North Railway Station, photographed by Liuxingy on 30 December 2018; cropped and resized by Homeground. It identifies this station only and does not prove current trains or access.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E8%A5%BF%E5%AE%89%E5%8C%97%E7%AB%99%E5%8C%97%E7%AB%99%E6%88%BF_02.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "Choose a Xi'an railway station",
+      "featuredLinkLabel": "Compare Xi'an railway stations",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Xi'an",
+        "Railway stations",
+        "Wrong-station recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/xian-railway-station-selector/",
+      "title": "西安站、西安北站还是西安东站？",
+      "headline": "西安坐火车该去哪个站？",
+      "description": "按真实票面、住宿、兵马俑安排和下一程，选择西安站、西安北站或新启用的西安东站。",
+      "heroAlt": "西安北站旅客通道，可见双语指引和携带行李的旅客。",
+      "heroCredit": {
+        "text": "西安北站，Liuxingy 摄于2018年12月30日；Homeground裁切并缩放。照片只确认此站，不证明当前车次或接驳。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E8%A5%BF%E5%AE%89%E5%8C%97%E7%AB%99%E5%8C%97%E7%AB%99%E6%88%BF_02.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "选择西安火车站",
+      "featuredLinkLabel": "对比西安主要火车站",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "西安交通",
+        "火车站",
+        "走错站补救"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/xian-railway-station-selector/",
+      "title": "시안역·시안북역·시안동역, 어디로 가야 할까?",
+      "headline": "시안에서는 어느 기차역을 이용해야 할까요?",
+      "description": "실제 승차권, 숙소, 병마용 일정과 다음 연결편에 맞춰 시안역·시안북역·새 시안동역을 고릅니다.",
+      "heroAlt": "이중 언어 안내 표지와 짐을 든 여행자가 보이는 시안북역 통로.",
+      "heroCredit": {
+        "text": "시안북역. Liuxingy가 2018년 12월 30일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 이 역만 확인하며 현재 열차나 접근을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E8%A5%BF%E5%AE%89%E5%8C%97%E7%AB%99%E5%8C%97%E7%AB%99%E6%88%BF_02.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "navTitle": "시안 기차역 고르기",
+      "featuredLinkLabel": "시안 주요 기차역 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "시안 교통",
+        "기차역",
+        "잘못 간 역 복구"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "which Xi'an railway station",
+      "Xi'an Station vs Xi'an North",
+      "Xi'an East railway station",
+      "wrong Xi'an train station"
+    ],
+    "zh": [
+      "西安火车站怎么选",
+      "西安站和西安北站区别",
+      "西安东站怎么去",
+      "西安走错火车站"
+    ],
+    "ko": [
+      "시안 기차역 어디",
+      "시안역 시안북역 차이",
+      "시안동역",
+      "시안 기차역 잘못 감"
+    ]
+  }
+}

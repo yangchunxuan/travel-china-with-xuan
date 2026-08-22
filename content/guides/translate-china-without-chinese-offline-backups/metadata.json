@@ -1,0 +1,120 @@
+{
+  "id": "translate-china-without-chinese-offline-backups",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "translation-recovery-workflow",
+  "topics": [
+    "translation",
+    "menus",
+    "screenshots",
+    "offline-language",
+    "communication"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/translate-china-without-chinese-offline-backups/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/translate-china-without-chinese-offline-backups/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/translate-china-without-chinese-offline-backups/",
+      "title": "Translate China Without Chinese: Menus, Screenshots, Signs and Offline Backups",
+      "headline": "Translate China Without Chinese: Menus, Screenshots, Signs and Offline Backups",
+      "description": "Use the right capture method for menus, screenshots, signs and conversations, then confirm critical details and keep offline phrase backups.",
+      "heroAlt": "A real informational street sign in Beijing's Chaoyang District with Chinese text to be read in context.",
+      "heroCredit": {
+        "text": "Informational street sign in Chaoyang District, Beijing, Scott Meltzer, 17 September 2009; cropped and resized by Homeground. It does not validate any machine translation.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Street_sign_in_China_(translation_unavailable).JPG",
+        "licenseLabel": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "navTitle": "Translate without Chinese",
+      "featuredLinkLabel": "Build an offline translation kit",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Translation",
+        "Offline backup"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/translate-china-without-chinese-offline-backups/",
+      "title": "不会中文也能在中国翻译：菜单、截图、标识与离线备份",
+      "headline": "不会中文时，如何处理菜单、截图、标识和离线沟通",
+      "description": "针对菜单、截图、标识和对话选择正确采集方式，关键事项必须复核，并准备离线短语备份。",
+      "heroAlt": "北京朝阳区一块带有中文文字的真实信息牌，需要结合现场语境阅读。",
+      "heroCredit": {
+        "text": "北京朝阳区信息牌，Scott Meltzer 摄于 2009 年 9 月 17 日；Homeground 裁切并缩放。照片不验证任何机器翻译结果。",
+        "sourceLabel": "Commons 原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Street_sign_in_China_(translation_unavailable).JPG",
+        "licenseLabel": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "navTitle": "不会中文也能翻译",
+      "featuredLinkLabel": "建立离线翻译工具包",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "翻译",
+        "离线备份"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/translate-china-without-chinese-offline-backups/",
+      "title": "중국어 없이 중국 여행 번역하기: 메뉴·스크린샷·표지판·오프라인 백업",
+      "headline": "중국어를 몰라도 메뉴와 화면, 표지판을 확인하는 방법",
+      "description": "메뉴·스크린샷·표지판·대화에 맞는 입력 방식을 고르고 중요한 내용은 재확인하며 오프라인 문장을 준비하세요.",
+      "heroAlt": "현장 맥락과 함께 읽어야 하는 중국어 문구가 적힌 베이징 차오양구의 실제 안내판.",
+      "heroCredit": {
+        "text": "베이징 차오양구 안내판, Scott Meltzer 촬영(2009년 9월 17일), Homeground 자르기·크기 조정. 사진은 어떤 기계번역 결과도 검증하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Street_sign_in_China_(translation_unavailable).JPG",
+        "licenseLabel": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "navTitle": "중국어 없이 번역",
+      "featuredLinkLabel": "오프라인 번역 키트 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "번역",
+        "오프라인 백업"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "translate Chinese menu offline",
+      "travel China without speaking Chinese",
+      "translate screenshots Chinese"
+    ],
+    "zh": [
+      "不会中文在中国怎么翻译",
+      "离线翻译中文菜单",
+      "中文截图翻译备份"
+    ],
+    "ko": [
+      "중국어 없이 중국 여행 번역",
+      "중국어 메뉴 오프라인 번역",
+      "중국어 스크린샷 번역"
+    ]
+  }
+}

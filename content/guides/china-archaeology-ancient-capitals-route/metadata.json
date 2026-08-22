@@ -1,0 +1,104 @@
+{
+  "id": "china-archaeology-ancient-capitals-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "archaeology",
+    "ancient-capitals",
+    "thematic-route",
+    "museums"
+  ],
+  "destinations": [
+    "xian",
+    "luoyang",
+    "anyang"
+  ],
+  "heroImagePath": "/images/guides/china-archaeology-ancient-capitals-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-archaeology-ancient-capitals-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-archaeology-ancient-capitals-route/",
+      "title": "An Archaeology and Ancient Capitals Route in China",
+      "headline": "China's Archaeology Route: Follow Changing Capitals, Not a List of Dynasties",
+      "description": "Build a focused Xi'an–Luoyang–Anyang archaeology route by changing evidence types, with optional extensions only when they add a new question.",
+      "heroAlt": "Visitors viewing an exhibition about early Chinese writing at the Yin Ruins in Anyang",
+      "navTitle": "Archaeology and capitals route",
+      "featuredLinkLabel": "Build the archaeology route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Archaeology",
+        "Ancient capitals",
+        "Thematic route"
+      ],
+      "heroCredit": {
+        "text": "Visitors viewing an exhibition about early Chinese writing at the Yin Ruins in Anyang. Photo: Gary Todd / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yin_Ruins_Cradle_of_Chinese_Writing_(31997749038).jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/china-archaeology-ancient-capitals-route/",
+      "title": "中国考古与古都主题路线",
+      "headline": "中国考古路线：追随都城与证据变化，不背朝代表",
+      "description": "按不同证据类型建设西安—洛阳—安阳考古主轴，只有增加新问题时才延伸。",
+      "heroAlt": "旅客在安阳殷墟观看中国早期文字主题展览",
+      "navTitle": "考古与古都路线",
+      "featuredLinkLabel": "建设考古路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "考古",
+        "古都",
+        "主题路线"
+      ],
+      "heroCredit": {
+        "text": "旅客在安阳殷墟观看中国早期文字主题展览。图片：Gary Todd / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yin_Ruins_Cradle_of_Chinese_Writing_(31997749038).jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/china-archaeology-ancient-capitals-route/",
+      "title": "중국 고고학과 옛 수도 테마 동선",
+      "headline": "중국 고고학 동선: 왕조 목록보다 수도와 증거의 변화를 따라가기",
+      "description": "서로 다른 증거 유형으로 시안–뤄양–안양 고고학 축을 만들고 새 질문이 생길 때만 연장합니다.",
+      "heroAlt": "안양 인쉬에서 중국 초기 문자 전시를 보는 관람객",
+      "navTitle": "고고학·옛 수도 동선",
+      "featuredLinkLabel": "고고학 동선 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "고고학",
+        "옛 수도",
+        "테마 동선"
+      ],
+      "heroCredit": {
+        "text": "안양 인쉬에서 중국 초기 문자 전시를 보는 관람객. 사진: Gary Todd / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yin_Ruins_Cradle_of_Chinese_Writing_(31997749038).jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  }
+}

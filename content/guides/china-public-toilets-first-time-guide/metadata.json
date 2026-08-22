@@ -1,0 +1,120 @@
+{
+  "id": "china-public-toilets-first-time-guide",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "public-toilet-first-use-guide",
+  "topics": [
+    "public-toilets",
+    "squat-toilet",
+    "seated-toilet",
+    "accessibility",
+    "toilet-kit"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-public-toilets-first-time-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-public-toilets-first-time-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-public-toilets-first-time-guide/",
+      "title": "China Public Toilets: Find One, Use Squat or Seated Toilets and Carry the Right Kit",
+      "headline": "China Public Toilets: Find One, Use Squat or Seated Toilets and Carry the Right Kit",
+      "description": "A practical first-use guide to finding public toilets in China, choosing a squat, seated or accessible cubicle, using it safely and carrying a compact backup kit.",
+      "heroAlt": "Accessible toilet interior with child and infant care fixtures at Beijing Capital International Airport Terminal 3",
+      "heroCredit": {
+        "text": "Accessible toilet interior with child and infant care fixtures at Beijing Capital International Airport Terminal 3. Photo: N509FZ / Wikimedia Commons / CC BY-SA 4.0",
+        "sourceLabel": "Wikimedia Commons file page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Accessible_toilet_at_ZBAA_T3_4F_East_(20201013170558).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "China public toilets",
+      "featuredLinkLabel": "Prepare for public toilets in China",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Toilets",
+        "Accessibility",
+        "Practical kit"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-public-toilets-first-time-guide/",
+      "title": "中国公共厕所初次使用：怎么找、蹲厕或坐厕怎么选、随身带什么",
+      "headline": "第一次用中国公共厕所：寻找、选择厕位与随身工具包",
+      "description": "实用步骤帮助旅行者找到中国公共厕所，选择蹲厕、坐厕或无障碍厕位，安全使用并准备精简备用用品。",
+      "heroAlt": "北京首都国际机场3号航站楼无障碍厕所内的儿童与婴儿护理设施",
+      "heroCredit": {
+        "text": "北京首都国际机场3号航站楼无障碍厕所内的儿童与婴儿护理设施。照片：N509FZ / 维基共享资源 / CC BY-SA 4.0",
+        "sourceLabel": "维基共享资源文件页",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Accessible_toilet_at_ZBAA_T3_4F_East_(20201013170558).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "中国公共厕所",
+      "featuredLinkLabel": "准备使用中国公共厕所",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "公共厕所",
+        "无障碍",
+        "随身用品"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-public-toilets-first-time-guide/",
+      "title": "중국 공중화장실: 찾기, 좌변기·화변기 선택과 준비물",
+      "headline": "중국 공중화장실 첫 이용: 찾고, 변기를 고르고, 준비하기",
+      "description": "중국 공중화장실을 찾고 좌변기, 화변기 또는 접근 가능한 칸을 안전하게 선택하며 작은 비상용품을 준비합니다.",
+      "heroAlt": "베이징 서우두 국제공항 3터미널 장애인용 화장실 내부의 어린이·영아 설비",
+      "heroCredit": {
+        "text": "베이징 서우두 국제공항 3터미널 장애인용 화장실 내부의 어린이·영아 설비. 사진: N509FZ / Wikimedia Commons / CC BY-SA 4.0",
+        "sourceLabel": "위키미디어 공용 파일 페이지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Accessible_toilet_at_ZBAA_T3_4F_East_(20201013170558).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "중국 공중화장실",
+      "featuredLinkLabel": "중국 공중화장실 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "화장실",
+        "접근성",
+        "준비물"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "China public toilets first time",
+      "squat toilet China travel",
+      "what to carry China toilets"
+    ],
+    "zh": [
+      "中国公共厕所使用指南",
+      "蹲厕坐厕怎么选",
+      "旅行如厕随身用品"
+    ],
+    "ko": [
+      "중국 공중화장실 사용법",
+      "중국 화변기 사용",
+      "중국 여행 화장실 준비물"
+    ]
+  }
+}

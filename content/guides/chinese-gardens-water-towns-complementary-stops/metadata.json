@@ -1,0 +1,103 @@
+{
+  "id": "chinese-gardens-water-towns-complementary-stops",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "gardens",
+    "water-towns",
+    "jiangnan",
+    "stop-selection"
+  ],
+  "destinations": [
+    "suzhou",
+    "jiangnan"
+  ],
+  "heroImagePath": "/images/guides/chinese-gardens-water-towns-complementary-stops/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chinese-gardens-water-towns-complementary-stops/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chinese-gardens-water-towns-complementary-stops/",
+      "title": "Chinese Gardens and Water Towns: Choose Complementary Stops",
+      "headline": "Gardens and Water Towns: Choose Different Questions, Not Similar Photos",
+      "description": "Pair a Chinese garden and a Jiangnan water town only when they reveal different ideas; otherwise choose the stronger single stop.",
+      "heroAlt": "A small boat passing white-walled canal houses in Zhouzhuang, Jiangsu",
+      "navTitle": "Gardens and water towns",
+      "featuredLinkLabel": "Choose complementary stops",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Gardens",
+        "Water towns",
+        "Jiangnan"
+      ],
+      "heroCredit": {
+        "text": "A small boat passing white-walled canal houses in Zhouzhuang, Jiangsu. Photo: Kristoffer Trolle / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_in_Zhouzhuang_%E5%91%A8%E5%BA%84_(%22Venice_of_China%22).jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/chinese-gardens-water-towns-complementary-stops/",
+      "title": "中国园林与江南水乡：选择互补停靠",
+      "headline": "园林与水乡：选择不同问题，不收集相似照片",
+      "description": "只有当园林与江南水乡揭示不同内容时才组合；否则留下更强的一站。",
+      "heroAlt": "一艘小船经过江苏周庄白墙河屋",
+      "navTitle": "园林与水乡选择",
+      "featuredLinkLabel": "选择互补停靠",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "园林",
+        "水乡",
+        "江南"
+      ],
+      "heroCredit": {
+        "text": "一艘小船经过江苏周庄白墙河屋。图片：Kristoffer Trolle / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_in_Zhouzhuang_%E5%91%A8%E5%BA%84_(%22Venice_of_China%22).jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/chinese-gardens-water-towns-complementary-stops/",
+      "title": "중국 정원과 수향마을: 서로 다른 경험 고르기",
+      "headline": "정원과 수향마을: 비슷한 사진 대신 다른 질문을 고르기",
+      "description": "중국 정원과 장난 수향마을이 서로 다른 생각을 보여 줄 때만 짝짓고, 아니면 더 강한 한 곳을 남깁니다.",
+      "heroAlt": "장쑤성 저우좡의 흰 벽 운하 주택을 지나는 작은 배",
+      "navTitle": "정원과 수향마을",
+      "featuredLinkLabel": "서로 다른 정거장 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "정원",
+        "수향마을",
+        "장난"
+      ],
+      "heroCredit": {
+        "text": "장쑤성 저우좡의 흰 벽 운하 주택을 지나는 작은 배. 사진: Kristoffer Trolle / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_in_Zhouzhuang_%E5%91%A8%E5%BA%84_(%22Venice_of_China%22).jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    }
+  }
+}

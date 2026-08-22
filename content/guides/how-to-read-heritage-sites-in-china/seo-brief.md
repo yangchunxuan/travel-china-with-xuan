@@ -66,8 +66,8 @@ Chinese and Korean should use natural conservation vocabulary rather than mirror
 
 - Runtime section: `culture`; indexable collection: `culture-history-people-ideas` at `/culture/history-people-ideas/`.
 - Canonical boundary and related-query merge rules remain in this brief and `canonical-boundary.md`; no city, monument or synonym URL was created.
-- Implemented and verified 2026-08-15: `anshun-dixi-mask-performance-guide`, `chinese-city-walls-gates-and-urban-order`, `how-to-visit-an-archaeological-site-museum`, `meizhou-mazu-ancestral-temple-reading-guide`, and `when-metro-construction-meets-archaeology` each link from its EN/ZH/KO body to this canonical guide.
-- Current trilingual body-level inbound-owner count: **5**. Future links must add a genuinely related reader path and must not replace established links.
+- Implemented and verified 2026-08-22: `anshun-dixi-mask-performance-guide`, `chinese-city-walls-gates-and-urban-order`, `how-to-visit-an-archaeological-site-museum`, `meizhou-mazu-ancestral-temple-reading-guide`, `pingyao-stay-inside-or-outside-old-city`, and `when-metro-construction-meets-archaeology` each link from its EN/ZH/KO body to this canonical guide.
+- Current trilingual body-level inbound-owner count: **6**. Future links must add a genuinely related reader path and must not replace established links.
 
 ## Unique asset plan
 
@@ -88,7 +88,7 @@ Chinese and Korean should use natural conservation vocabulary rather than mirror
 
 - Compare impressions and CTR by query family: definition, authenticity, archaeology, Great Wall repair and reconstruction.
 - Check whether a named-site query needs a clearer internal handoff instead of a new overlapping page.
-- Review discovery from the three implemented inbound owners and the culture collection.
+- Review discovery from the six implemented inbound owners and the culture collection.
 
 ### Day 56
 

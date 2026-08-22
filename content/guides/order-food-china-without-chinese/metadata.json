@@ -1,0 +1,120 @@
+{
+  "id": "order-food-china-without-chinese",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "food-ordering-fallback-ladder",
+  "topics": [
+    "food-ordering",
+    "paper-menu",
+    "qr-menu",
+    "counter-order",
+    "delivery-fallback"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/order-food-china-without-chinese/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/order-food-china-without-chinese/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/order-food-china-without-chinese/",
+      "title": "How to Order Food in China Without Chinese: Counter, Paper Menu, QR and Delivery Fallbacks",
+      "headline": "How to Order Food in China Without Chinese: Counter, Paper Menu, QR and Delivery Fallbacks",
+      "description": "A low-language food-ordering ladder for China: confirm the dish, quantity, price, dining method and dietary constraint at a counter, on paper, by QR or through delivery.",
+      "heroAlt": "Chinese and English food menu outside a restaurant on Shangxiajiu Pedestrian Street in Guangzhou",
+      "heroCredit": {
+        "text": "Chinese and English food menu outside a restaurant on Shangxiajiu Pedestrian Street in Guangzhou. Photo: MeiOLA 2290 WMENSZ / Wikimedia Commons / CC0 1.0",
+        "sourceLabel": "Wikimedia Commons file page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GZ_%E5%BB%A3%E5%B7%9E_Guangzhou_%E8%8D%94%E7%81%A3_Liwan_%E4%B8%8A%E4%B8%8B%E4%B9%9D%E6%AD%A5%E8%A1%8C%E8%A1%97_Shangxiajiu_Pedestrian_Street_shop_%E8%93%AE%E9%A6%99%E6%A8%93_Lian_Xiang_Lou_Restaurant_%E7%BE%8E%E9%A3%9F_Guangdong_cuisine_food_menu_June_2025_R12S_02.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "navTitle": "Order food without Chinese",
+      "featuredLinkLabel": "Use the China food-ordering ladder",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Food",
+        "Menus",
+        "Fallbacks"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/order-food-china-without-chinese/",
+      "title": "不会中文也能在中国点餐：柜台、纸质菜单、二维码与外卖备选",
+      "headline": "不会中文时，在中国如何从柜台、纸单、二维码到外卖完成点餐",
+      "description": "用低语言负担的点餐阶梯，逐项确认菜品、数量、价格、就餐方式和饮食限制，并在二维码或支付失败时恢复。",
+      "heroAlt": "广州上下九步行街餐厅外的中英文菜单",
+      "heroCredit": {
+        "text": "广州上下九步行街餐厅外的中英文菜单。照片：MeiOLA 2290 WMENSZ / 维基共享资源 / CC0 1.0",
+        "sourceLabel": "维基共享资源文件页",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GZ_%E5%BB%A3%E5%B7%9E_Guangzhou_%E8%8D%94%E7%81%A3_Liwan_%E4%B8%8A%E4%B8%8B%E4%B9%9D%E6%AD%A5%E8%A1%8C%E8%A1%97_Shangxiajiu_Pedestrian_Street_shop_%E8%93%AE%E9%A6%99%E6%A8%93_Lian_Xiang_Lou_Restaurant_%E7%BE%8E%E9%A3%9F_Guangdong_cuisine_food_menu_June_2025_R12S_02.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "navTitle": "不会中文点餐",
+      "featuredLinkLabel": "使用中国点餐阶梯",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "点餐",
+        "菜单",
+        "备选"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/order-food-china-without-chinese/",
+      "title": "중국어 없이 중국에서 음식 주문하기: 카운터·종이·QR·배달 대안",
+      "headline": "중국어를 몰라도 카운터, 종이 메뉴, QR과 배달로 주문하는 법",
+      "description": "중국에서 메뉴, 수량, 가격, 식사 방식과 식이 제한을 하나씩 확인하고 QR·결제 실패 때 다른 방식으로 복구하는 주문 단계입니다.",
+      "heroAlt": "광저우 상샤주 보행자거리 식당 밖의 중국어·영어 음식 메뉴",
+      "heroCredit": {
+        "text": "광저우 상샤주 보행자거리 식당 밖의 중국어·영어 음식 메뉴. 사진: MeiOLA 2290 WMENSZ / Wikimedia Commons / CC0 1.0",
+        "sourceLabel": "위키미디어 공용 파일 페이지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GZ_%E5%BB%A3%E5%B7%9E_Guangzhou_%E8%8D%94%E7%81%A3_Liwan_%E4%B8%8A%E4%B8%8B%E4%B9%9D%E6%AD%A5%E8%A1%8C%E8%A1%97_Shangxiajiu_Pedestrian_Street_shop_%E8%93%AE%E9%A6%99%E6%A8%93_Lian_Xiang_Lou_Restaurant_%E7%BE%8E%E9%A3%9F_Guangdong_cuisine_food_menu_June_2025_R12S_02.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "navTitle": "중국어 없이 음식 주문",
+      "featuredLinkLabel": "중국 음식 주문 단계 사용하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "음식",
+        "메뉴",
+        "대안"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "order food China without Chinese",
+      "China QR menu translation",
+      "China restaurant counter order tourist"
+    ],
+    "zh": [
+      "不会中文在中国点餐",
+      "中国餐厅二维码菜单",
+      "纸质菜单柜台点餐"
+    ],
+    "ko": [
+      "중국어 없이 중국 음식 주문",
+      "중국 QR 메뉴 번역",
+      "중국 식당 카운터 주문"
+    ]
+  }
+}

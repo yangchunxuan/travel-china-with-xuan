@@ -1,0 +1,24 @@
+{
+  "id": "turpan-karez-museum-water-system",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "infrastructure-system-field-guide",
+  "topics": ["turpan-karez", "water-heritage", "irrigation", "oasis", "museum-reading"],
+  "destinations": ["turpan", "xinjiang"],
+  "heroImagePath": "/images/guides/turpan-karez-museum-water-system/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/turpan-karez-museum-water-system/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/turpan-karez-museum-water-system/", "title": "Turpan Karez: Read the Water System Beyond the Visitor Tunnel", "headline": "The Visible Channel Is Only the Final Clue", "description": "Connect vertical shafts, underground galleries, open canals and reservoirs at Turpan's Karez Folk Custom Park without mistaking one display tunnel for the system.", "heroAlt": "A narrow flowing channel in the Turpan karez museum setting", "heroCredit": { "text": "Karez channel in a Turpan museum setting, photographed by w0zny on 23 September 2015; centre-cropped and resized. This visible channel is one interpreted segment, not the full underground network.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turpan_karez_system_IGP4205.jpg", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" }, "navTitle": "Read Turpan's karez", "featuredLinkLabel": "Follow water beyond the display tunnel", "openGraphLocale": "en_US", "cardTags": ["Turpan", "Karez", "Water heritage"] },
+    "zh": { "path": "/zh/guides/turpan-karez-museum-water-system/", "title": "吐鲁番坎儿井怎么看：别把游客通道当成整套水系", "headline": "看得见的水渠只是最后一条线索", "description": "在坎儿井民俗园把竖井、地下暗渠、明渠和涝坝连接起来，不用一段展示洞穴代替完整系统。", "heroAlt": "吐鲁番坎儿井博物馆环境内一段流动水渠", "heroCredit": { "text": "吐鲁番博物馆环境内的坎儿井水渠，w0zny摄于2015年9月23日；经居中裁切和缩放。这只是被展示的一段，不能代表完整地下网络。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turpan_karez_system_IGP4205.jpg", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" }, "navTitle": "读懂吐鲁番坎儿井", "featuredLinkLabel": "从展示通道追到完整水路", "openGraphLocale": "zh_CN", "cardTags": ["吐鲁番", "坎儿井", "水利遗产"] },
+    "ko": { "path": "/ko/guides/turpan-karez-museum-water-system/", "title": "투루판 카레즈 읽기: 관람 터널 너머의 수계를 보세요", "headline": "눈에 보이는 수로는 마지막 단서일 뿐입니다", "description": "투루판 카레즈민속원에서 수직갱·지하 수로·개방 수로·저수지를 연결하고 전시 터널을 전체로 오해하지 않습니다.", "heroAlt": "투루판 카레즈 박물관 환경의 좁은 물길", "heroCredit": { "text": "투루판 박물관 환경의 카레즈 수로. w0zny가 2015년 9월 23일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 전시된 한 구간이지 지하망 전체가 아닙니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turpan_karez_system_IGP4205.jpg", "licenseLabel": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/" }, "navTitle": "투루판 카레즈 읽기", "featuredLinkLabel": "전시 터널 너머 물길 추적하기", "openGraphLocale": "ko_KR", "cardTags": ["투루판", "카레즈", "수리 유산"] }
+  },
+  "searchTerms": { "en": ["Turpan karez museum guide", "how Turpan karez works"], "zh": ["吐鲁番坎儿井怎么参观", "坎儿井结构原理"], "ko": ["투루판 카레즈 박물관", "카레즈 작동 원리"] }
+}

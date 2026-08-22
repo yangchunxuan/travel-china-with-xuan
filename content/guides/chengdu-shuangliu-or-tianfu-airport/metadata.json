@@ -1,0 +1,122 @@
+{
+  "id": "chengdu-shuangliu-or-tianfu-airport",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "airport-decision-matrix",
+  "topics": [
+    "transport",
+    "airports",
+    "wrong-airport-recovery",
+    "first-last-night"
+  ],
+  "destinations": [
+    "chengdu"
+  ],
+  "heroImagePath": "/images/guides/chengdu-shuangliu-or-tianfu-airport/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-shuangliu-or-tianfu-airport/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-shuangliu-or-tianfu-airport/",
+      "title": "Chengdu CTU or TFU? Choose the Airport for the Whole Trip",
+      "headline": "Chengdu CTU or TFU: Which Airport Fits Your Trip?",
+      "description": "Choose Chengdu Shuangliu (CTU) or Tianfu (TFU) by the actual flight, terminal, hotel, rail or Jiuzhaigou connection, luggage and first or last night.",
+      "heroAlt": "Aerial view of Chengdu Tianfu International Airport terminal buildings and runways.",
+      "heroCredit": {
+        "text": "Chengdu Tianfu International Airport, FATIII Aviation, 2 July 2021; cropped and resized by Homeground. It identifies TFU only and does not prove current operations.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E6%88%90%E9%83%BD%E5%A4%A9%E5%BA%9C%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA_Chengdu_Tianfu_International_Airport_2.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      },
+      "navTitle": "Choose CTU or TFU",
+      "featuredLinkLabel": "Compare Chengdu's two airports",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Chengdu",
+        "Airports",
+        "CTU vs TFU"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-shuangliu-or-tianfu-airport/",
+      "title": "成都双流CTU还是天府TFU？按整段旅程选机场",
+      "headline": "成都双流机场还是天府机场？",
+      "description": "结合真实航班、航站楼、酒店、铁路或九寨沟衔接、行李和首末晚，选择成都双流CTU或天府TFU。",
+      "heroAlt": "成都天府国际机场航站楼与跑道的航拍实景。",
+      "heroCredit": {
+        "text": "成都天府国际机场，FATIII Aviation 摄于2021年7月2日；Homeground裁切并缩放。照片只确认TFU，不证明当前运营。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E6%88%90%E9%83%BD%E5%A4%A9%E5%BA%9C%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA_Chengdu_Tianfu_International_Airport_2.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      },
+      "navTitle": "选择双流或天府机场",
+      "featuredLinkLabel": "对比成都双机场",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "成都交通",
+        "机场",
+        "双流或天府"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-shuangliu-or-tianfu-airport/",
+      "title": "청두 CTU와 TFU, 전체 여정으로 공항 고르기",
+      "headline": "청두 솽류공항과 톈푸공항 중 어디가 맞을까요?",
+      "description": "실제 항공편, 터미널, 숙소, 철도·주자이거우 연결, 짐과 첫날·마지막 밤을 기준으로 CTU와 TFU를 고릅니다.",
+      "heroAlt": "청두 톈푸국제공항 터미널 건물과 활주로의 항공 사진.",
+      "heroCredit": {
+        "text": "청두 톈푸국제공항. FATIII Aviation이 2021년 7월 2일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 TFU만 확인하며 현재 운항을 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E6%88%90%E9%83%BD%E5%A4%A9%E5%BA%9C%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA_Chengdu_Tianfu_International_Airport_2.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      },
+      "navTitle": "CTU 또는 TFU 고르기",
+      "featuredLinkLabel": "청두 두 공항 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "청두 교통",
+        "공항",
+        "CTU vs TFU"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "CTU or TFU",
+      "Chengdu Shuangliu vs Tianfu airport",
+      "which Chengdu airport",
+      "wrong Chengdu airport"
+    ],
+    "zh": [
+      "成都双流还是天府机场",
+      "CTU和TFU区别",
+      "成都哪个机场方便",
+      "成都走错机场"
+    ],
+    "ko": [
+      "청두 CTU TFU",
+      "솽류 톈푸 공항 차이",
+      "청두 어느 공항",
+      "청두 공항 잘못 감"
+    ]
+  }
+}

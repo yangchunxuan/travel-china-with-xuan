@@ -1,0 +1,104 @@
+{
+  "id": "west-lake-walk-boat-or-bike",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "west-lake",
+    "hangzhou",
+    "walking",
+    "boat",
+    "cycling"
+  ],
+  "destinations": [
+    "hangzhou",
+    "west-lake"
+  ],
+  "heroImagePath": "/images/guides/west-lake-walk-boat-or-bike/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/west-lake-walk-boat-or-bike/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/west-lake-walk-boat-or-bike/",
+      "title": "West Lake Without the Full Loop: Walk, Boat or Bike?",
+      "headline": "West Lake Without Walking the Whole Loop: Choose Walk, Boat or Bike",
+      "description": "Build a West Lake visit around one shore story, a boat crossing or a bike connector, with clear exit points before fatigue takes over.",
+      "heroAlt": "West Lake and the Hangzhou skyline at dusk",
+      "navTitle": "West Lake route choice",
+      "featuredLinkLabel": "Choose a lake route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hangzhou",
+        "West Lake",
+        "Route choice"
+      ],
+      "heroCredit": {
+        "text": "West Lake and the Hangzhou skyline at dusk. Photo: Windmemories / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260424_West_Lake_and_Hangzhou_Skyline.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/west-lake-walk-boat-or-bike/",
+      "title": "不绕西湖一整圈：步行、坐船还是骑行？",
+      "headline": "不走完整个西湖：用步行、游船或骑行拼出合适路线",
+      "description": "围绕一段湖岸故事、一次水上转换或一段骑行连接安排行程，并提前设置体力退出点。",
+      "heroAlt": "暮色中的杭州西湖与城市天际线",
+      "navTitle": "西湖路线选择",
+      "featuredLinkLabel": "选择西湖游览方式",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "杭州",
+        "西湖",
+        "路线选择"
+      ],
+      "heroCredit": {
+        "text": "暮色中的杭州西湖与城市天际线。图片：Windmemories / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260424_West_Lake_and_Hangzhou_Skyline.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/west-lake-walk-boat-or-bike/",
+      "title": "서호 한 바퀴 없이 보기: 걷기·배·자전거",
+      "headline": "서호를 전부 걷지 않는 법: 걷기, 유람선, 자전거를 고르세요",
+      "description": "한 구간의 호숫가 이야기, 한 번의 수상 이동 또는 자전거 연결을 중심으로 피로 전에 빠져나올 수 있는 동선을 만듭니다.",
+      "heroAlt": "해질 무렵 항저우 서호와 도시 스카이라인",
+      "navTitle": "서호 동선 선택",
+      "featuredLinkLabel": "서호 이동 방식 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "항저우",
+        "서호",
+        "동선 선택"
+      ],
+      "heroCredit": {
+        "text": "해질 무렵 항저우 서호와 도시 스카이라인. 사진: Windmemories / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260424_West_Lake_and_Hangzhou_Skyline.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

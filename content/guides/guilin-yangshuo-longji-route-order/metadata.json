@@ -1,0 +1,106 @@
+{
+  "id": "guilin-yangshuo-longji-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "guilin",
+    "yangshuo",
+    "longji",
+    "route-order",
+    "karst",
+    "rice-terraces"
+  ],
+  "destinations": [
+    "guilin",
+    "yangshuo",
+    "longji"
+  ],
+  "heroImagePath": "/images/guides/guilin-yangshuo-longji-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guilin-yangshuo-longji-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/guilin-yangshuo-longji-route-order/",
+      "title": "Guilin, Yangshuo and Longji: Choose the Route Order",
+      "headline": "Order Guilin, Yangshuo and Longji Without Spending the Landscape Trip in Transit",
+      "description": "Choose bases, sequence and luggage handoffs across Guilin, Yangshuo and Longji while keeping each transport and stay decision with its canonical owner.",
+      "heroAlt": "A raft on the Li River between Guilin and Yangshuo beneath karst peaks",
+      "navTitle": "Guilin–Yangshuo–Longji order",
+      "featuredLinkLabel": "Order karst and rice terraces",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Route order",
+        "Karst",
+        "Rice terraces"
+      ],
+      "heroCredit": {
+        "text": "A raft on the Li River between Guilin and Yangshuo beneath karst peaks. Photo: Chensiyuan / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/guilin-yangshuo-longji-route-order/",
+      "title": "桂林、阳朔、龙脊怎么排顺序",
+      "headline": "桂林、阳朔、龙脊路线顺序：别让山水之旅都花在转场上",
+      "description": "安排桂林、阳朔和龙脊的基地、先后与行李交接；具体交通与住宿选择仍归各自canonical owner。",
+      "heroAlt": "桂林至阳朔漓江喀斯特峰林下的竹排",
+      "navTitle": "桂林—阳朔—龙脊顺序",
+      "featuredLinkLabel": "安排峰林与梯田路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "路线顺序",
+        "喀斯特",
+        "龙脊梯田"
+      ],
+      "heroCredit": {
+        "text": "桂林至阳朔漓江喀斯特峰林下的竹排。图片：Chensiyuan / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/guilin-yangshuo-longji-route-order/",
+      "title": "구이린·양숴·룽지 여행 순서",
+      "headline": "구이린·양숴·룽지 풍경 여행을 이동으로 소모하지 않는 순서",
+      "description": "구이린, 양숴, 룽지의 거점·순서·수하물 인계를 정하고 세부 교통과 숙박 선택은 기존 canonical owner로 연결합니다.",
+      "heroAlt": "카르스트 봉우리 아래 구이린과 양숴 사이 리강의 대나무배",
+      "navTitle": "구이린–양숴–룽지 순서",
+      "featuredLinkLabel": "카르스트와 계단식 논 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "여행 순서",
+        "카르스트",
+        "룽지 계단식 논"
+      ],
+      "heroCredit": {
+        "text": "카르스트 봉우리 아래 구이린과 양숴 사이 리강의 대나무배. 사진: Chensiyuan / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

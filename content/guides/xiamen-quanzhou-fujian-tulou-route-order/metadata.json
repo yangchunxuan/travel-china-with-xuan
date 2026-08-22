@@ -1,0 +1,104 @@
+{
+  "id": "xiamen-quanzhou-fujian-tulou-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "fujian",
+    "route-order",
+    "rural-access",
+    "heritage"
+  ],
+  "destinations": [
+    "xiamen",
+    "quanzhou",
+    "fujian-tulou"
+  ],
+  "heroImagePath": "/images/guides/xiamen-quanzhou-fujian-tulou-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xiamen-quanzhou-fujian-tulou-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/xiamen-quanzhou-fujian-tulou-route-order/",
+      "title": "Xiamen, Quanzhou and Fujian Tulou Route Order",
+      "headline": "Xiamen, Quanzhou and Fujian Tulou: Build the Rural Leg First",
+      "description": "Choose a practical order for Xiamen, Quanzhou and one Fujian tulou cluster without turning the rural leg into a rushed commute.",
+      "heroAlt": "Tianluokeng tulou cluster in the mountains of Nanjing County, Fujian",
+      "navTitle": "Xiamen, Quanzhou and tulou",
+      "featuredLinkLabel": "Order the Fujian route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Fujian",
+        "Route order",
+        "Tulou"
+      ],
+      "heroCredit": {
+        "text": "Tianluokeng tulou cluster in the mountains of Nanjing County, Fujian. Photo: Gisling / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snail_pit_tulou.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/xiamen-quanzhou-fujian-tulou-route-order/",
+      "title": "厦门、泉州与福建土楼路线顺序",
+      "headline": "厦门、泉州与福建土楼：先把乡村段做实",
+      "description": "为厦门、泉州与一组福建土楼选择实际顺序，不把乡村段压成匆忙通勤。",
+      "heroAlt": "福建南靖县山地中的田螺坑土楼群",
+      "navTitle": "厦门泉州土楼顺序",
+      "featuredLinkLabel": "安排福建路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "福建",
+        "路线顺序",
+        "土楼"
+      ],
+      "heroCredit": {
+        "text": "福建南靖县山地中的田螺坑土楼群。图片：Gisling / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snail_pit_tulou.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/xiamen-quanzhou-fujian-tulou-route-order/",
+      "title": "샤먼·취안저우·푸젠 토루 동선 순서",
+      "headline": "샤먼·취안저우·푸젠 토루: 농촌 구간부터 현실적으로 설계하기",
+      "description": "샤먼, 취안저우, 한 토루 클러스터를 무리한 당일 통근으로 만들지 않는 순서를 고릅니다.",
+      "heroAlt": "푸젠성 난징현 산악지대의 톈뤄컹 토루 군",
+      "navTitle": "샤먼·취안저우·토루 순서",
+      "featuredLinkLabel": "푸젠 동선 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "푸젠",
+        "동선 순서",
+        "토루"
+      ],
+      "heroCredit": {
+        "text": "푸젠성 난징현 산악지대의 톈뤄컹 토루 군. 사진: Gisling / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snail_pit_tulou.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

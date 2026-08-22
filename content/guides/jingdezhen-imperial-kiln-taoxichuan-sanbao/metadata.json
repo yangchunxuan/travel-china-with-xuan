@@ -1,0 +1,104 @@
+{
+  "id": "jingdezhen-imperial-kiln-taoxichuan-sanbao",
+  "type": "planning",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "jingdezhen",
+    "imperial-kiln",
+    "taoxichuan",
+    "sanbao",
+    "ceramics"
+  ],
+  "destinations": [
+    "jingdezhen",
+    "jiangxi"
+  ],
+  "heroImagePath": "/images/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/",
+      "title": "Jingdezhen Ceramic Districts: Imperial Kiln, Taoxichuan or Sanbao?",
+      "headline": "Jingdezhen Is Three Different Ceramic Cities: Imperial Kiln, Taoxichuan and Sanbao",
+      "description": "Choose between archaeology and old lanes, industrial-heritage creativity, or the dispersed studio valley—and connect only what your time supports.",
+      "heroAlt": "Brick arches of the Jingdezhen Imperial Kiln Museum",
+      "navTitle": "Jingdezhen ceramic districts",
+      "featuredLinkLabel": "Choose the right ceramic district",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Jingdezhen",
+        "Ceramics",
+        "District choice"
+      ],
+      "heroCredit": {
+        "text": "Brick arches of the Jingdezhen Imperial Kiln Museum. Photo: Zhu Pei / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-Jingdezhen_Imperial_Kiln_Museum.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/",
+      "title": "景德镇陶瓷片区：御窑、陶溪川还是三宝？",
+      "headline": "景德镇其实是三座陶瓷城市：御窑、陶溪川与三宝",
+      "description": "在考古老城、工业遗产创意街区和分散的工作室山谷之间选择，只连接时间真正容得下的片区。",
+      "heroAlt": "景德镇御窑博物馆的砖拱建筑",
+      "navTitle": "景德镇陶瓷片区",
+      "featuredLinkLabel": "选择合适的陶瓷片区",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "景德镇",
+        "陶瓷",
+        "片区选择"
+      ],
+      "heroCredit": {
+        "text": "景德镇御窑博物馆的砖拱建筑。图片：Zhu Pei / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-Jingdezhen_Imperial_Kiln_Museum.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/",
+      "title": "징더전 도자기 구역: 어요·타오시촨·싼바오",
+      "headline": "징더전의 서로 다른 세 도자기 도시: 어요, 타오시촨, 싼바오",
+      "description": "고고학과 옛 골목, 산업유산 창작 지구, 흩어진 작업실 계곡 중에서 시간을 감당할 수 있는 구역만 연결합니다.",
+      "heroAlt": "징더전 어요 박물관의 벽돌 아치",
+      "navTitle": "징더전 도자기 구역",
+      "featuredLinkLabel": "맞는 도자기 구역 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "징더전",
+        "도자기",
+        "구역 선택"
+      ],
+      "heroCredit": {
+        "text": "징더전 어요 박물관의 벽돌 아치. 사진: Zhu Pei / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-Jingdezhen_Imperial_Kiln_Museum.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ningbo-tianyi-pavilion-private-library",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "private-library-site-guide",
+  "topics": ["tianyi-pavilion", "private-libraries", "book-collecting", "ningbo-history", "museum-reading"],
+  "destinations": ["ningbo", "zhejiang"],
+  "heroImagePath": "/images/guides/ningbo-tianyi-pavilion-private-library/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/ningbo-tianyi-pavilion-private-library/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/ningbo-tianyi-pavilion-private-library/", "title": "Tianyi Pavilion in Ningbo: Read a Private Library Without Expecting Open Shelves", "headline": "The Building Protected Access as Carefully as Books", "description": "Read Fan Qin's library through thresholds, fire separation, family rules, catalogues and the later museum landscape in Ningbo.", "heroAlt": "Garden, pond and covered walkway in the Tianyi Pavilion Museum precinct in Ningbo", "heroCredit": { "text": "Tianyi Pavilion Museum garden, photographed by Mx. Granger on 25 July 2018; centre-cropped and resized. The present garden view does not show open access to rare-book originals.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tianyi_Pavilion,_Ningbo.jpg", "licenseLabel": "CC0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/" }, "navTitle": "Read Tianyi Pavilion", "featuredLinkLabel": "See how a private library controlled access", "openGraphLocale": "en_US", "cardTags": ["Ningbo", "Tianyi Pavilion", "Book history"] },
+    "zh": { "path": "/zh/guides/ningbo-tianyi-pavilion-private-library/", "title": "宁波天一阁怎么读：别把私人藏书楼想成开放书架", "headline": "建筑不仅护书，也控制谁能接近书", "description": "从门槛、防火、家族规则、目录和后来的博物馆园林，读懂范钦私人藏书楼。", "heroAlt": "宁波天一阁博物院园林、水池与长廊", "heroCredit": { "text": "天一阁博物院园林，Mx. Granger摄于2018年7月25日；经居中裁切和缩放。今天的园景不能证明珍贵古籍向普通访客开放翻阅。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tianyi_Pavilion,_Ningbo.jpg", "licenseLabel": "CC0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/" }, "navTitle": "读懂宁波天一阁", "featuredLinkLabel": "看私人藏书楼怎样控制访问", "openGraphLocale": "zh_CN", "cardTags": ["宁波", "天一阁", "书籍史"] },
+    "ko": { "path": "/ko/guides/ningbo-tianyi-pavilion-private-library/", "title": "닝보 톈이거 읽기: 열린 서가가 아닌 사가 장서각", "headline": "건물은 책뿐 아니라 접근 권한도 지켰습니다", "description": "문턱·방화·가문 규칙·목록과 후대 박물관 정원을 따라 판친의 사가 장서각을 읽습니다.", "heroAlt": "닝보 톈이거박물원 경내의 정원과 연못, 회랑", "heroCredit": { "text": "톈이거박물원 정원. Mx. Granger가 2018년 7월 25일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 오늘의 정원 풍경은 희귀 고서를 일반 방문객이 열람할 수 있다는 증거가 아닙니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tianyi_Pavilion,_Ningbo.jpg", "licenseLabel": "CC0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/" }, "navTitle": "닝보 톈이거 읽기", "featuredLinkLabel": "사가 장서각의 접근 통제 읽기", "openGraphLocale": "ko_KR", "cardTags": ["닝보", "톈이거", "책의 역사"] }
+  },
+  "searchTerms": { "en": ["Tianyi Pavilion Ningbo guide", "Tianyi Pavilion private library history"], "zh": ["宁波天一阁怎么参观", "天一阁私人藏书楼"], "ko": ["닝보 톈이거 관람", "톈이거 사가 장서각"] }
+}

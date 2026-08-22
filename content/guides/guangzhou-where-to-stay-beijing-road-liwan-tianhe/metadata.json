@@ -1,0 +1,122 @@
+{
+  "id": "guangzhou-where-to-stay-beijing-road-liwan-tianhe",
+  "type": "planning",
+  "pillar": "stay-location-trip-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "three-area-base-decision",
+  "topics": [
+    "accommodation",
+    "base selection",
+    "Guangzhou",
+    "Cantonese culture",
+    "business travel",
+    "heat and rain"
+  ],
+  "destinations": [
+    "guangzhou",
+    "guangdong"
+  ],
+  "heroImagePath": "/images/guides/guangzhou-where-to-stay-beijing-road-liwan-tianhe/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guangzhou-where-to-stay-beijing-road-liwan-tianhe/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/guangzhou-where-to-stay-beijing-road-liwan-tianhe/",
+      "title": "Where to Stay in Guangzhou: Beijing Road, Liwan or Tianhe?",
+      "headline": "Choose Beijing Road, Liwan or Tianhe as Your Guangzhou Base",
+      "description": "Choose a Guangzhou base by old-city days, Cantonese mornings, business appointments, heat, rain and the final walk to the lobby.",
+      "heroAlt": "A morning street scene on Beijing Road Pedestrian Street in Yuexiu, Guangzhou.",
+      "heroCredit": {
+        "text": "Beijing Road Pedestrian Street in Guangzhou, photographed by Windmemories on 22 February 2025; centre-cropped, resized and converted to WebP by Homeground. The image identifies Beijing Road only and does not recommend a hotel or prove current crowding.",
+        "sourceLabel": "Original Beijing Road photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20250222_Street_scene_of_Beijing_Road_03.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Guangzhou: three stay areas",
+      "featuredLinkLabel": "Choose a Guangzhou base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Guangzhou",
+        "Where to stay",
+        "Neighbourhoods"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/guangzhou-where-to-stay-beijing-road-liwan-tianhe/",
+      "title": "广州住哪里：北京路、荔湾还是天河？",
+      "headline": "第一次到广州，住北京路、荔湾还是天河",
+      "description": "按老城行程、广式清晨、商务地点、闷热雨天与真实大堂步行链选择广州住宿区。",
+      "heroAlt": "广州越秀北京路步行街清晨街景。",
+      "heroCredit": {
+        "text": "广州北京路步行街实景，Windmemories 摄于 2025 年 2 月 22 日；Homeground 居中裁切、缩放并转为 WebP。照片只标识北京路，不推荐酒店，也不证明当前人流。",
+        "sourceLabel": "北京路原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20250222_Street_scene_of_Beijing_Road_03.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "广州三个住宿区域",
+      "featuredLinkLabel": "选择广州住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "广州",
+        "住宿区域",
+        "广府文化"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/guangzhou-where-to-stay-beijing-road-liwan-tianhe/",
+      "title": "광저우 숙소 위치: 베이징루·리완·톈허 비교",
+      "headline": "광저우 첫 숙소, 베이징루·리완·톈허 중 어디가 맞을까요?",
+      "description": "구도심 일정, 광둥식 아침, 업무, 더위와 비, 로비까지의 실제 보행 동선으로 광저우 숙소 지역을 고릅니다.",
+      "heroAlt": "광저우 웨슈구 베이징루 보행 거리의 아침 실제 모습.",
+      "heroCredit": {
+        "text": "광저우 베이징루 보행 거리의 실제 모습. Windmemories가 2025년 2월 22일 촬영했으며 Homeground가 중앙부를 자르고 WebP로 변환했습니다. 베이징루 위치만 보여 주며 특정 호텔이나 현재 혼잡도를 증명하지 않습니다.",
+        "sourceLabel": "베이징루 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20250222_Street_scene_of_Beijing_Road_03.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "광저우 숙소 세 지역",
+      "featuredLinkLabel": "광저우 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "광저우",
+        "숙소 위치",
+        "광둥 문화"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay in Guangzhou",
+      "Beijing Road Liwan or Tianhe hotel",
+      "best Guangzhou area first visit"
+    ],
+    "zh": [
+      "广州住哪里",
+      "北京路荔湾天河住宿比较",
+      "第一次广州住宿区域"
+    ],
+    "ko": [
+      "광저우 숙소 위치",
+      "베이징루 리완 톈허 숙소",
+      "광저우 첫 여행 숙소 지역"
+    ]
+  }
+}

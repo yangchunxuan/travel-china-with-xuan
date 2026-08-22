@@ -1,0 +1,24 @@
+{
+  "id": "xian-stele-forest-text-calligraphy-rubbings",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "written-object-reading-guide",
+  "topics": ["xian-beilin", "steles", "calligraphy", "rubbings", "museum-reading"],
+  "destinations": ["xian", "shaanxi"],
+  "heroImagePath": "/images/guides/xian-stele-forest-text-calligraphy-rubbings/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xian-stele-forest-text-calligraphy-rubbings/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/xian-stele-forest-text-calligraphy-rubbings/", "title": "Xi'an Stele Forest: Read Text, Calligraphy and Rubbings Without Mixing Them Up", "headline": "One Inscription Has Four Material Lives", "description": "At Xi'an Beilin, separate wording, handwriting, carved stone and ink rubbing, then use labels to judge copies, dates and display context.", "heroAlt": "Historic red-columned gallery in the Xi'an Beilin Museum precinct", "heroCredit": { "text": "A gallery in Xi'an Beilin Museum, photographed by Hiroshi Miyazaki on 22 October 2009; centre-cropped and resized. The view identifies the museum setting, not the date of any unseen stele.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xi%27an_beilin_museum_(4104930446).jpg", "licenseLabel": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" }, "navTitle": "Read Xi'an Beilin", "featuredLinkLabel": "Separate text, calligraphy, stone and rubbing", "openGraphLocale": "en_US", "cardTags": ["Xi'an", "Steles", "Calligraphy"] },
+    "zh": { "path": "/zh/guides/xian-stele-forest-text-calligraphy-rubbings/", "title": "西安碑林怎么看：分清文本、书法、刻石与拓片", "headline": "一份碑文有四种物质生命", "description": "在西安碑林分清文字内容、书写、刻石和拓片，并借标签判断年代、复制与陈列语境。", "heroAlt": "西安碑林博物馆历史院落内的红柱廊道", "heroCredit": { "text": "西安碑林博物馆廊道，Hiroshi Miyazaki摄于2009年10月22日；经居中裁切和缩放。画面只能确认馆区环境，不能证明未入镜碑石的年代。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xi%27an_beilin_museum_(4104930446).jpg", "licenseLabel": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" }, "navTitle": "读懂西安碑林", "featuredLinkLabel": "分清文本、书法、刻石与拓片", "openGraphLocale": "zh_CN", "cardTags": ["西安", "碑刻", "书法"] },
+    "ko": { "path": "/ko/guides/xian-stele-forest-text-calligraphy-rubbings/", "title": "시안 비림 읽기: 텍스트·서예·각석·탁본 구분하기", "headline": "하나의 비문에는 네 가지 물질적 삶이 있습니다", "description": "시안 비림에서 글의 내용, 필적, 새긴 돌, 먹 탁본을 나누고 라벨로 연대와 복제 여부를 판단합니다.", "heroAlt": "시안 비림박물원 역사 경내의 붉은 기둥 회랑", "heroCredit": { "text": "시안 비림박물원 회랑. Hiroshi Miyazaki가 2009년 10월 22일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 박물관 환경만 확인할 뿐 화면 밖 비석의 연대를 증명하지 않습니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xi%27an_beilin_museum_(4104930446).jpg", "licenseLabel": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" }, "navTitle": "시안 비림 읽기", "featuredLinkLabel": "텍스트·서예·각석·탁본 구분하기", "openGraphLocale": "ko_KR", "cardTags": ["시안", "비석", "서예"] }
+  },
+  "searchTerms": { "en": ["Xi'an Stele Forest guide", "difference stele rubbing calligraphy"], "zh": ["西安碑林怎么看", "碑刻和拓片区别"], "ko": ["시안 비림 관람법", "비석 탁본 차이"] }
+}

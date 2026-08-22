@@ -1,0 +1,105 @@
+{
+  "id": "china-buddhist-heritage-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "buddhist-heritage",
+    "grottoes",
+    "temples",
+    "thematic-route"
+  ],
+  "destinations": [
+    "datong",
+    "luoyang",
+    "wutai",
+    "leshan"
+  ],
+  "heroImagePath": "/images/guides/china-buddhist-heritage-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-buddhist-heritage-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-buddhist-heritage-route/",
+      "title": "A Buddhist Heritage Route in China",
+      "headline": "China's Buddhist Heritage: Connect Caves, Temples and Living Practice",
+      "description": "Build one focused Buddhist heritage module by contrasting cave patronage, sacred landscape and living religious practice instead of collecting distant monuments.",
+      "heroAlt": "Buddhist carvings in the Longmen Grottoes beside the Yi River in Luoyang",
+      "navTitle": "Buddhist heritage route",
+      "featuredLinkLabel": "Build a Buddhist heritage module",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Buddhist heritage",
+        "Grottoes",
+        "Temples"
+      ],
+      "heroCredit": {
+        "text": "Buddhist carvings in the Longmen Grottoes beside the Yi River in Luoyang. Photo: xiquinhosilva / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:27333-Luoyang,_Longmen_Grottoes.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/china-buddhist-heritage-route/",
+      "title": "中国佛教遗产主题路线",
+      "headline": "中国佛教遗产：连接石窟、寺院与活态实践",
+      "description": "通过石窟赞助、神圣景观与活态宗教实践的对照，建设一个聚焦模块，不收集相距遥远的纪念物。",
+      "heroAlt": "洛阳龙门石窟中的佛教造像与河岸",
+      "navTitle": "佛教遗产路线",
+      "featuredLinkLabel": "建设佛教遗产模块",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "佛教遗产",
+        "石窟",
+        "寺院"
+      ],
+      "heroCredit": {
+        "text": "洛阳龙门石窟中的佛教造像与河岸。图片：xiquinhosilva / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:27333-Luoyang,_Longmen_Grottoes.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/china-buddhist-heritage-route/",
+      "title": "중국 불교유산 테마 동선",
+      "headline": "중국 불교유산: 석굴·사찰·살아 있는 수행 연결하기",
+      "description": "멀리 떨어진 기념물을 수집하지 않고 석굴 후원, 성스러운 경관, 살아 있는 종교 실천을 대비하는 한 모듈을 만듭니다.",
+      "heroAlt": "뤄양 이허 강변 룽먼 석굴의 불교 조각",
+      "navTitle": "불교유산 동선",
+      "featuredLinkLabel": "불교유산 모듈 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "불교유산",
+        "석굴",
+        "사찰"
+      ],
+      "heroCredit": {
+        "text": "뤄양 이허 강변 룽먼 석굴의 불교 조각. 사진: xiquinhosilva / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:27333-Luoyang,_Longmen_Grottoes.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    }
+  }
+}

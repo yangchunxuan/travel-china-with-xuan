@@ -1,0 +1,104 @@
+{
+  "id": "mount-emei-golden-summit-or-temple-route",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "mount-emei",
+    "golden-summit",
+    "buddhist-temples",
+    "route-choice"
+  ],
+  "destinations": [
+    "emeishan",
+    "mount-emei",
+    "sichuan"
+  ],
+  "heroImagePath": "/images/guides/mount-emei-golden-summit-or-temple-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/mount-emei-golden-summit-or-temple-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/mount-emei-golden-summit-or-temple-route/",
+      "title": "Mount Emei: Golden Summit, Temple Route or Both?",
+      "headline": "Mount Emei: Choose the Golden Summit, the Temple Mountain or a Real Two-Day Combination",
+      "description": "Separate the high summit from the forest-and-temple route, then choose a day plan or overnight combination that does not pretend the mountain is compact.",
+      "heroAlt": "Golden Summit complex on Mount Emei in Sichuan",
+      "navTitle": "Mount Emei route",
+      "featuredLinkLabel": "Choose an Emei route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Sichuan",
+        "Mount Emei",
+        "Route choice"
+      ],
+      "heroCredit": {
+        "text": "Golden Summit complex on Mount Emei in Sichuan. Photo: George N / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_04.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/mount-emei-golden-summit-or-temple-route/",
+      "title": "峨眉山：金顶、寺院路线还是两者都看？",
+      "headline": "峨眉山怎么选：只去金顶、走寺院山路，还是住一晚组合",
+      "description": "把高山金顶与林间寺院路线分开，再选择不把整座山误当成紧凑景区的一日或两日方案。",
+      "heroAlt": "四川峨眉山金顶建筑群",
+      "navTitle": "峨眉山路线",
+      "featuredLinkLabel": "选择峨眉山路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "四川",
+        "峨眉山",
+        "路线选择"
+      ],
+      "heroCredit": {
+        "text": "四川峨眉山金顶建筑群。图片：George N / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_04.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/mount-emei-golden-summit-or-temple-route/",
+      "title": "어메이산: 금정, 사찰길, 아니면 둘 다?",
+      "headline": "어메이산 선택법: 금정, 숲속 사찰길, 현실적인 1박 조합",
+      "description": "높은 금정과 숲·사찰 구간을 분리해 산 전체를 작은 공원처럼 압축하지 않는 당일 또는 1박 동선을 고릅니다.",
+      "heroAlt": "쓰촨 어메이산 금정의 건축군",
+      "navTitle": "어메이산 동선",
+      "featuredLinkLabel": "어메이산 코스 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "쓰촨",
+        "어메이산",
+        "동선 선택"
+      ],
+      "heroCredit": {
+        "text": "쓰촨 어메이산 금정의 건축군. 사진: George N / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_04.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    }
+  }
+}

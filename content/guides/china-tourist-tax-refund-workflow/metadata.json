@@ -1,0 +1,120 @@
+{
+  "id": "china-tourist-tax-refund-workflow",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "tax-refund-evidence-workflow",
+  "topics": [
+    "tourist-tax-refund",
+    "instant-refund",
+    "customs",
+    "departure",
+    "documents"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-tourist-tax-refund-workflow/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-tourist-tax-refund-workflow/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-tourist-tax-refund-workflow/",
+      "title": "China Tourist Tax Refund in 2026: Instant Refund, Customs and Departure",
+      "headline": "China Tourist Tax Refund in 2026: Instant Refund, Customs and Departure",
+      "description": "A 2026 evidence-first workflow for China's departure tax refund and instant-refund paths, including shop checks, customs verification, agency handoff and failure recovery.",
+      "heroAlt": "International departure check-in hall at Beijing Capital International Airport",
+      "heroCredit": {
+        "text": "International departure check-in hall at Beijing Capital International Airport. Photo: Ds02006 / Wikimedia Commons / public domain",
+        "sourceLabel": "Wikimedia Commons file page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PEK_Intl.JPG",
+        "licenseLabel": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "navTitle": "China tourist tax refund workflow",
+      "featuredLinkLabel": "Prepare a China tax refund",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Tax refund",
+        "Customs",
+        "Departure"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-tourist-tax-refund-workflow/",
+      "title": "2026中国境外旅客离境退税：即买即退、海关与离境流程",
+      "headline": "2026中国境外旅客离境退税：从即买即退到海关验核",
+      "description": "按证据链完成2026中国离境退税与即买即退：购货商店确认、海关验核、代理机构办理和失败恢复。",
+      "heroAlt": "北京首都国际机场国际出发值机大厅",
+      "heroCredit": {
+        "text": "北京首都国际机场国际出发值机大厅。照片：Ds02006 / 维基共享资源 / 公有领域",
+        "sourceLabel": "维基共享资源文件页",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PEK_Intl.JPG",
+        "licenseLabel": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "navTitle": "中国离境退税流程",
+      "featuredLinkLabel": "准备中国离境退税",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "离境退税",
+        "海关",
+        "出发"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-tourist-tax-refund-workflow/",
+      "title": "2026 중국 여행객 세금 환급: 즉시 환급·세관·출국 절차",
+      "headline": "2026 중국 여행객 세금 환급: 즉시 환급부터 세관 확인까지",
+      "description": "2026년 중국 출국 세금 환급과 즉시 환급을 매장 확인, 세관 검증, 환급 대행 창구와 실패 복구 순서로 준비합니다.",
+      "heroAlt": "베이징 서우두 국제공항 국제선 출발 체크인 홀",
+      "heroCredit": {
+        "text": "베이징 서우두 국제공항 국제선 출발 체크인 홀. 사진: Ds02006 / Wikimedia Commons / 퍼블릭 도메인",
+        "sourceLabel": "위키미디어 공용 파일 페이지",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PEK_Intl.JPG",
+        "licenseLabel": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "navTitle": "중국 여행객 세금 환급 절차",
+      "featuredLinkLabel": "중국 출국 세금 환급 준비",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "세금 환급",
+        "세관",
+        "출국"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "China tourist tax refund 2026",
+      "China instant tax refund customs departure",
+      "China departure tax refund workflow"
+    ],
+    "zh": [
+      "中国离境退税流程2026",
+      "即买即退海关验核",
+      "境外旅客离境退税"
+    ],
+    "ko": [
+      "중국 여행객 세금 환급 2026",
+      "중국 즉시 환급 세관 출국",
+      "중국 출국 세금 환급 절차"
+    ]
+  }
+}

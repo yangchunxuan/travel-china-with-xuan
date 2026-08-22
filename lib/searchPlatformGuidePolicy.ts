@@ -10,6 +10,12 @@ export const destinationEntityIds = {
   hangzhou: "city-hangzhou",
   chongqing: "city-chongqing",
   shenzhen: "city-shenzhen",
+  shaanxi: "province-shaanxi",
+  sichuan: "province-sichuan",
+  guangdong: "province-guangdong",
+  hunan: "province-hunan",
+  zhejiang: "province-zhejiang",
+  guangxi: "province-guangxi",
 } as const;
 
 export interface GuideEntityResolution {
@@ -170,6 +176,21 @@ export const guideFreshnessMinimums = Object.freeze({
   "china-domestic-flight-fare-bundle-baggage": "high",
   "china-hotel-emergency-exit-fire-safety-check": "high",
   "wheelchair-accessible-china-route-planning": "high",
+  "bund-or-lujiazui-see-both": "high",
+  "jingdezhen-imperial-kiln-taoxichuan-sanbao": "high",
+  "jiuzhaigou-one-day-sightseeing-bus-route": "high",
+  "mount-emei-golden-summit-or-temple-route": "high",
+  "mount-tai-night-climb-or-day-route": "high",
+  "shanghai-disneyland-foreign-visitors": "high",
+  "shanghai-water-town-zhujiajiao-tongli-wuzhen": "high",
+  "universal-beijing-foreign-visitors": "high",
+  "west-lake-walk-boat-or-bike": "high",
+  "xiamen-and-gulangyu-one-day": "high",
+  "chengdu-jiuzhaigou-huanglong-route-order": "high",
+  "mainland-china-hong-kong-macao-route-order": "high",
+  "sanya-where-to-stay-four-bays": "high",
+  "fujian-tulou-stay-inside-or-nearby-hotel": "high",
+  "china-hotel-left-item-recovery": "high",
 } as const satisfies Record<string, GuideFreshnessVolatility>);
 
 export const dynamicTicketTopicFragments = [

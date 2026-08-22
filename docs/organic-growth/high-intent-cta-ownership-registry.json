@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "registryId": "high-intent-cta-ownership-phase-1",
   "status": "internal-only",
-  "baseCommit": "291090c6b49565c2fff829ba62163a54008a89b9",
+  "baseCommit": "72e5d161ed8af853fbf262e7c875f8fd748645e3",
   "checkedAt": "2026-08-22",
   "publicCtaChangesAuthorized": false,
   "publicServiceLaunchAuthorized": false,
@@ -17,11 +17,11 @@
     "route_shape"
   ],
   "requiredCoverage": {
-    "stay": 18,
-    "high-intent-transport": 24,
-    "plan": 16,
+    "stay": 28,
+    "high-intent-transport": 34,
+    "plan": 26,
     "purchase-ticket": 2,
-    "uniqueContentIds": 60
+    "uniqueContentIds": 90
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -71,6 +71,21 @@
       ]
     },
     {
+      "contentId": "chengdu-where-to-stay-chunxi-wenshu-kuanzhai",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chengdu-where-to-stay-chunxi-wenshu-kuanzhai",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "china-accessible-hotel-room-verification",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
@@ -101,12 +116,42 @@
       ]
     },
     {
+      "contentId": "china-hotel-left-item-recovery",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "china-hotel-left-item-recovery",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "china-hotel-near-metro",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "china-hotel-near-metro",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "china-hotel-room-does-not-match-booking",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "china-hotel-room-does-not-match-booking",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "hotel-real-time-availability",
@@ -146,12 +191,72 @@
       ]
     },
     {
+      "contentId": "dali-where-to-stay-old-town-xiaguan-erhai-village",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "dali-where-to-stay-old-town-xiaguan-erhai-village",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "foreigners-china-hotel",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "foreigners-china-hotel",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "fujian-tulou-stay-inside-or-nearby-hotel",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "fujian-tulou-stay-inside-or-nearby-hotel",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guangzhou-where-to-stay-beijing-road-liwan-tianhe",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guangzhou-where-to-stay-beijing-road-liwan-tianhe",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "hangzhou-where-to-stay-hubin-wulin-east-station",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "hangzhou-where-to-stay-hubin-wulin-east-station",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "hotel-real-time-availability",
@@ -206,6 +311,36 @@
       ]
     },
     {
+      "contentId": "pingyao-stay-inside-or-outside-old-city",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "pingyao-stay-inside-or-outside-old-city",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "sanya-where-to-stay-four-bays",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "sanya-where-to-stay-four-bays",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "serviced-apartment-or-hotel-china",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
@@ -242,6 +377,21 @@
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "shenzhen-where-to-stay-futian-luohu-nanshan",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "suzhou-where-to-stay-old-city-shantang-jinji-lake",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "suzhou-where-to-stay-old-city-shantang-jinji-lake",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "hotel-real-time-availability",
@@ -311,6 +461,21 @@
       ]
     },
     {
+      "contentId": "beijing-capital-or-daxing-airport",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "beijing-capital-or-daxing-airport",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "beijing-south-station-to-capital-or-daxing-airport",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
@@ -371,12 +536,57 @@
       ]
     },
     {
+      "contentId": "changsha-zhangjiajie-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "changsha-zhangjiajie-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "chengdu-chongqing-station-pair",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chengdu-chongqing-station-pair",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "chengdu-jiuzhaigou-transport-route",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "chengdu-jiuzhaigou-transport-route",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "chengdu-shuangliu-or-tianfu-airport",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chengdu-shuangliu-or-tianfu-airport",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
@@ -476,12 +686,42 @@
       ]
     },
     {
+      "contentId": "guangzhou-railway-station-selector",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guangzhou-railway-station-selector",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "guilin-airport-or-railway-station-arrival-guide",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "guilin-airport-or-railway-station-arrival-guide",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "guilin-longji-rice-terraces-transfer",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "guilin-longji-rice-terraces-transfer",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
@@ -551,6 +791,21 @@
       ]
     },
     {
+      "contentId": "kunming-stone-forest-transport",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "kunming-stone-forest-transport",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "lijiang-shangri-la-transport-route",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
@@ -602,6 +857,21 @@
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "shanghai-pudong-or-hongqiao-airport",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shanghai-railway-station-selector",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shanghai-railway-station-selector",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
@@ -671,6 +941,36 @@
       ]
     },
     {
+      "contentId": "xian-railway-station-selector",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "xian-railway-station-selector",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "zhangjiajie-airport-or-railway-station-arrival",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "zhangjiajie-airport-or-railway-station-arrival",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "beijing-xian-chengdu-route-order",
       "ownerClass": "plan",
       "intentCode": "route_shape",
@@ -685,6 +985,34 @@
       ]
     },
     {
+      "contentId": "chengdu-jiuzhaigou-huanglong-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "chengdu-jiuzhaigou-huanglong-route-order",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-archaeology-ancient-capitals-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-archaeology-ancient-capitals-route",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
       "contentId": "china-arrival-day-booked-anchor-or-flexible-block",
       "ownerClass": "plan",
       "intentCode": "route_shape",
@@ -692,6 +1020,20 @@
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "china-arrival-day-booked-anchor-or-flexible-block",
       "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-buddhist-heritage-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-buddhist-heritage-route",
+      "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
@@ -840,6 +1182,34 @@
       ]
     },
     {
+      "contentId": "chinese-gardens-water-towns-complementary-stops",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "chinese-gardens-water-towns-complementary-stops",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "first-solo-trip-china-recoverable-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "first-solo-trip-china-recoverable-route",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
       "contentId": "guangzhou-shenzhen-hong-kong-route-order",
       "ownerClass": "plan",
       "intentCode": "route_shape",
@@ -854,6 +1224,20 @@
       ]
     },
     {
+      "contentId": "guilin-yangshuo-longji-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "guilin-yangshuo-longji-route-order",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
       "contentId": "kunming-dali-lijiang-shangri-la-route-order",
       "ownerClass": "plan",
       "intentCode": "route_shape",
@@ -861,6 +1245,48 @@
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "kunming-dali-lijiang-shangri-la-route-order",
       "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "mainland-china-hong-kong-macao-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "mainland-china-hong-kong-macao-route-order",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "north-or-south-china-first-trip",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "north-or-south-china-first-trip",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "remote-china-attraction-group-tour-private-car-or-diy",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "remote-china-attraction-group-tour-private-car-or-diy",
+      "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
@@ -889,6 +1315,20 @@
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "wheelchair-accessible-china-route-planning",
       "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "xiamen-quanzhou-fujian-tulou-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "xiamen-quanzhou-fujian-tulou-route-order",
+      "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",

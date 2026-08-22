@@ -1,0 +1,103 @@
+{
+  "id": "north-or-south-china-first-trip",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "first-trip",
+    "north-china",
+    "south-china",
+    "route-choice",
+    "climate"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/north-or-south-china-first-trip/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/north-or-south-china-first-trip/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/north-or-south-china-first-trip/",
+      "title": "North or South China for a First Trip?",
+      "headline": "North or South China: Pick the First-Trip Story Before the Cities",
+      "description": "Choose a northern, southern or one-jump contrast route by trip length, season, interests and gateways—not a false national stereotype.",
+      "heroAlt": "A mountain landscape in the Qinling range near Xi'an photographed in May 2017",
+      "navTitle": "North or south first trip",
+      "featuredLinkLabel": "Choose the first-trip region",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "First trip",
+        "North China",
+        "South China"
+      ],
+      "heroCredit": {
+        "text": "A mountain landscape in the Qinling range near Xi'an photographed in May 2017. Photo: Charlie439753 (Charlie Yan) / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Part_of_Qinling_mountains.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/north-or-south-china-first-trip/",
+      "title": "第一次去中国选北方还是南方？",
+      "headline": "第一次去中国：先选北方或南方的旅行故事，再选城市",
+      "description": "按旅行长度、季节、兴趣与门户选择北方、南方或一次跨区对照路线，不把中国压成刻板印象。",
+      "heroAlt": "2017年5月拍摄的西安附近秦岭山地景观",
+      "navTitle": "第一次选北方或南方",
+      "featuredLinkLabel": "选择第一次旅行区域",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "第一次旅行",
+        "中国北方",
+        "中国南方"
+      ],
+      "heroCredit": {
+        "text": "2017年5月拍摄的西安附近秦岭山地景观。图片：Charlie439753 (Charlie Yan) / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Part_of_Qinling_mountains.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/north-or-south-china-first-trip/",
+      "title": "첫 중국 여행, 북부와 남부 중 어디?",
+      "headline": "첫 중국 여행: 도시보다 북부·남부의 이야기를 먼저 고르기",
+      "description": "여행 길이, 계절, 관심사, 관문으로 북부·남부 또는 한 번의 장거리 대비 동선을 고릅니다.",
+      "heroAlt": "2017년 5월 촬영한 시안 근교 친링산맥 풍경",
+      "navTitle": "첫 여행 북부 또는 남부",
+      "featuredLinkLabel": "첫 여행 지역 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "첫 중국 여행",
+        "중국 북부",
+        "중국 남부"
+      ],
+      "heroCredit": {
+        "text": "2017년 5월 촬영한 시안 근교 친링산맥 풍경. 사진: Charlie439753 (Charlie Yan) / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Part_of_Qinling_mountains.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

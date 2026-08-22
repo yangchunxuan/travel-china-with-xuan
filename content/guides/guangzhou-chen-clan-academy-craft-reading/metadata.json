@@ -1,0 +1,24 @@
+{
+  "id": "guangzhou-chen-clan-academy-craft-reading",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "architectural-craft-close-reading",
+  "topics": ["chen-clan-academy", "lingnan-architecture", "building-crafts", "clan-institutions", "guangzhou"],
+  "destinations": ["guangzhou", "guangdong"],
+  "heroImagePath": "/images/guides/guangzhou-chen-clan-academy-craft-reading/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/guangzhou-chen-clan-academy-craft-reading/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-20",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "understand" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": { "path": "/guides/guangzhou-chen-clan-academy-craft-reading/", "title": "Chen Clan Academy in Guangzhou: Read a Clan Hall Through Seven Building Crafts", "headline": "Look Up Before You Enter the Galleries", "description": "Use wood, brick, stone, ceramic, lime, metal and painting to read Guangzhou's Chen Clan Academy as both clan institution and folk-arts museum.", "heroAlt": "Main hall and decorated roofline of the Chen Clan Ancestral Hall in Guangzhou", "heroCredit": { "text": "Chen Clan Ancestral Hall, photographed by Shujianyang on 7 June 2025; centre-cropped and resized. Visitors are incidental to a wide place view; the façade does not prove every component is unchanged since the 1890s.", "sourceLabel": "Source image", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_03.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" }, "navTitle": "Read Chen Clan Academy's crafts", "featuredLinkLabel": "Find seven building crafts", "openGraphLocale": "en_US", "cardTags": ["Guangzhou", "Chen Clan Academy", "Craft"] },
+    "zh": { "path": "/zh/guides/guangzhou-chen-clan-academy-craft-reading/", "title": "广州陈家祠怎么读：用七种建筑工艺看懂一座宗祠", "headline": "进展厅前，先抬头看建筑", "description": "沿木雕、砖雕、石雕、陶塑、灰塑、铜铁铸和彩绘，分清陈氏书院的宗族功能与民间工艺博物馆层。", "heroAlt": "广州陈家祠正厅与装饰密集的屋脊", "heroCredit": { "text": "陈家祠，Shujianyang摄于2025年6月7日；经居中裁切和缩放。访客只是远景环境元素；立面不能证明所有构件自1890年代以来未曾维修。", "sourceLabel": "原图", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_03.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" }, "navTitle": "用七种工艺读陈家祠", "featuredLinkLabel": "在陈家祠找七种建筑工艺", "openGraphLocale": "zh_CN", "cardTags": ["广州", "陈家祠", "工艺"] },
+    "ko": { "path": "/ko/guides/guangzhou-chen-clan-academy-craft-reading/", "title": "광저우 천자츠 읽기: 일곱 건축 공예로 보는 문중 서원", "headline": "전시실에 들어가기 전에 먼저 위를 보세요", "description": "목조·전조·석조·도소·회소·금속 주조·채색을 따라 천씨서원의 문중 기능과 민간공예박물관 층을 구분합니다.", "heroAlt": "광저우 천자츠 정전과 장식이 빽빽한 용마루", "heroCredit": { "text": "천자츠. Shujianyang이 2025년 6월 7일 촬영했으며 중앙부를 잘라 크기를 조정했습니다. 방문객은 넓은 장소 전경에 우연히 포함되었고, 정면만으로 모든 부재가 1890년대부터 그대로라고 판단할 수 없습니다.", "sourceLabel": "원본 이미지", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_03.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" }, "navTitle": "일곱 공예로 천자츠 읽기", "featuredLinkLabel": "천자츠 일곱 건축 공예 찾기", "openGraphLocale": "ko_KR", "cardTags": ["광저우", "천자츠", "공예"] }
+  },
+  "searchTerms": { "en": ["Chen Clan Academy seven crafts", "Guangzhou Chen Clan Ancestral Hall guide"], "zh": ["陈家祠七种工艺", "陈氏书院怎么参观"], "ko": ["천자츠 일곱 공예", "광저우 천씨서원 관람"] }
+}

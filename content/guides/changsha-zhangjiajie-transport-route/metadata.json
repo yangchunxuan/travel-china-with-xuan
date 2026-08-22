@@ -1,0 +1,123 @@
+{
+  "id": "changsha-zhangjiajie-transport-route",
+  "type": "planning",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "corridor-decision-matrix",
+  "topics": [
+    "transport",
+    "railways",
+    "arrival-base",
+    "park-handoff"
+  ],
+  "destinations": [
+    "changsha",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/changsha-zhangjiajie-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/changsha-zhangjiajie-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "transport",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/changsha-zhangjiajie-transport-route/",
+      "title": "Changsha to Zhangjiajie: Train, Arrival Base and Park-Side Handoff",
+      "headline": "Changsha to Zhangjiajie: Build the Full Transport Chain",
+      "description": "Choose the live Changsha–Zhangjiajie rail nodes, then finish the trip to downtown or Wulingyuan without confusing the arrival station, hotel base and park gate.",
+      "heroAlt": "Exterior of Changsha South Railway Station with the station name above the entrance.",
+      "heroCredit": {
+        "text": "Changsha South Railway Station, Doraemon.tvb, 20 June 2015; cropped and resized by Homeground. It identifies this station only and does not prove current services.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChangsha_South_Railway_Station.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "Plan Changsha–Zhangjiajie transport",
+      "featuredLinkLabel": "Connect Changsha to the right Zhangjiajie base",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Changsha",
+        "Zhangjiajie",
+        "Rail"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/changsha-zhangjiajie-transport-route/",
+      "title": "长沙到张家界：火车、抵达基地与景区侧交接",
+      "headline": "长沙到张家界，如何搭好完整交通链？",
+      "description": "选择实时长沙—张家界铁路节点，再完成前往市区或武陵源的交接，不混淆车站、住宿基地和景区入口。",
+      "heroAlt": "长沙南站外观，入口上方可见站名。",
+      "heroCredit": {
+        "text": "长沙南站，Doraemon.tvb摄于2015年6月20日；Homeground裁切并缩放。照片只确认此站，不证明当前车次。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChangsha_South_Railway_Station.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "规划长沙—张家界交通",
+      "featuredLinkLabel": "从长沙接到正确张家界基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "长沙",
+        "张家界",
+        "铁路"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/changsha-zhangjiajie-transport-route/",
+      "title": "창사–장자제: 기차, 도착 거점과 공원 쪽 인계",
+      "headline": "창사–장자제 전체 교통 사슬 만들기",
+      "description": "실시간 창사–장자제 철도 노드를 고른 뒤 역, 숙박 거점과 공원 입구를 혼동하지 않고 도심·우링위안까지 연결합니다.",
+      "heroAlt": "입구 위 역명이 보이는 창사남역 외관.",
+      "heroCredit": {
+        "text": "창사남역. Doraemon.tvb가 2015년 6월 20일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 이 역만 확인하며 현재 열차를 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChangsha_South_Railway_Station.jpg",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "창사–장자제 교통 계획",
+      "featuredLinkLabel": "창사에서 올바른 장자제 거점 연결",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "창사",
+        "장자제",
+        "철도"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Changsha to Zhangjiajie train",
+      "Changsha South to Zhangjiajie West",
+      "Zhangjiajie West to Wulingyuan",
+      "Changsha Zhangjiajie transport"
+    ],
+    "zh": [
+      "长沙到张家界高铁",
+      "长沙南到张家界西",
+      "张家界西到武陵源",
+      "长沙张家界交通"
+    ],
+    "ko": [
+      "창사 장자제 기차",
+      "창사남 장자제서",
+      "장자제서 우링위안",
+      "창사 장자제 교통"
+    ]
+  }
+}
