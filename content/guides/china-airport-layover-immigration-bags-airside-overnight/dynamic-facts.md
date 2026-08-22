@@ -1,5 +1,9 @@
 # Dynamic fact review — china-airport-layover-immigration-bags-airside-overnight
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — immigration policy, eligible ports, airline handoffs, terminal routing and overnight operations**
 Release gate: **Reopen the NIA policy and the relevant airport and operating-airline transfer pages for the exact itinerary immediately before publication**

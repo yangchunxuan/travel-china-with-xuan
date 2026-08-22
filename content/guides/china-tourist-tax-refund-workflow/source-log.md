@@ -1,6 +1,6 @@
 # Research and source log — china-tourist-tax-refund-workflow
 
-Status: **DRAFT COMPLETE — CENTRAL CONTENT REVIEW AND PUBLICATION GATE REQUIRED**
+Status: **CENTRAL FACT REVIEW PASSED — DRAFT PR ONLY, NOT PUBLISHED**
 
 Candidate: `essentials-20260822-scale-04`
 Canonical slug: `china-tourist-tax-refund-workflow`
@@ -20,13 +20,13 @@ No keyword tool, third-party estimate or forum post was used as factual authorit
 | Source | Publisher | Supports | Does not prove |
 |---|---|---|---|
 | [Departure tax refund policy upgrade effective July 2026](https://www.chinatax.gov.cn/eng/c101269/c5250095/content.html) | State Taxation Administration | The 2026 policy upgrade, electronic verification, cross-region processing and instant-refund adjustment described by the tax authority. | It does not guarantee an individual claim, amount or port execution. |
-| [Departure tax refund policy overview](https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html) | State Taxation Administration | Official eligibility and policy framework. | It is not a transaction-specific calculation. |
-| [Instant tax refund process](https://www.chinatax.gov.cn/eng/c101276/c102444/c5240464/content.html) | State Taxation Administration | The relationship between the shop advance, authorization and departure verification. | It does not promise that every store or instrument participates. |
-| [Refund-upon-departure process](https://www.chinatax.gov.cn/eng/c101276/c102444/c5240906/content.html) | State Taxation Administration | The customs-verification and refund-agency handoff. | It does not prove the layout or operating hours of a particular port. |
+| [Departure tax refund policy overview](https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html) | State Taxation Administration | 2025 background eligibility and policy framework. | Its older paper-workflow wording does not override the 2026 upgrade. |
+| [Instant tax refund process](https://www.chinatax.gov.cn/eng/c101276/c102444/c5240464/content.html) | State Taxation Administration | 2025 background on the relationship between the shop advance, authorization and departure verification. | Its older paper-workflow wording does not override the 2026 upgrade or promise participation. |
+| [Refund-upon-departure process](https://www.chinatax.gov.cn/eng/c101276/c102444/c5240906/content.html) | State Taxation Administration | 2025 background on the customs-verification and refund-agency handoff. | Its older paper-workflow wording does not override the 2026 upgrade or prove a port's current operation. |
 
 ## Publication gate
 
-Reopen all four State Taxation Administration pages and verify the exact participating store and departure-port process before publication. If a controlling source cannot be reopened, remove the affected operational detail and retain only the verification method. Update EN/ZH/KO, metadata date and dynamic-facts together.
+All four State Taxation Administration pages were reopened on 2026-08-22. The 2026 upgrade is the controlling source where it conflicts with the three 2025 background pages. The public copy now states online verification, random spot checks below RMB 10,000 and possible physical inspection only for selected applications. At release, confirm the traveller-facing store and port verification method without promising eligibility, amount, timing, fees or participation.
 
 ## Image rights and processing record
 

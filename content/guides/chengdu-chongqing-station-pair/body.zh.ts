@@ -357,7 +357,7 @@ const body = {
         },
         {
           "label": "题图：成都东站",
-          "url": "https://commons.wikimedia.org/wiki/File%3AChengdu_East_Railway_Station.JPG",
+          "url": "https://commons.wikimedia.org/wiki/File:Chengdu_East_Railway_Station.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-08-22"
         }

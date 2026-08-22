@@ -1,5 +1,9 @@
 # Dynamic-fact ledger — Mount Tai route choice
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 
 | Fact | Copy treatment | Recheck / fallback |

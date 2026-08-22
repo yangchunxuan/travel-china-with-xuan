@@ -1,5 +1,9 @@
 # Dynamic fact review — china-ride-hailing-pickup-failure-recovery
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: HOLD`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — platform UI, pickup-zone access, vehicle assignment, venue rules, roads and cancellation handling**
 Release gate: **Retest the current first-party order chat, pickup-point change, vehicle details, cancellation and safety flows and verify any named venue pickup zone before publication**

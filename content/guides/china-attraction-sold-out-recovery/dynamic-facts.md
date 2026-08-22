@@ -1,5 +1,9 @@
 # Dynamic fact review — china-attraction-sold-out-recovery
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — ticket channels, release windows, cancellation rules, identity requirements and live inventory**
 Release gate: **Reopen the exact attraction's official ticket notice and warning pages and verify recognized channels, release/cancellation rules and identity requirements before publication**

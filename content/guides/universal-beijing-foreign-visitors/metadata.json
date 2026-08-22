@@ -47,7 +47,14 @@
         "Beijing",
         "Universal",
         "Foreign visitors"
-      ]
+      ],
+      "heroCredit": {
+        "text": "Entrance area of Universal Beijing Resort in Tongzhou. Photo: Hhhh2 / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Universal_Beijing_Resort.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     },
     "zh": {
       "path": "/zh/guides/universal-beijing-foreign-visitors/",
@@ -62,7 +69,14 @@
         "北京",
         "环球影城",
         "外国游客"
-      ]
+      ],
+      "heroCredit": {
+        "text": "北京通州环球度假区入口区域。图片：Hhhh2 / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Universal_Beijing_Resort.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     },
     "ko": {
       "path": "/ko/guides/universal-beijing-foreign-visitors/",
@@ -77,7 +91,14 @@
         "베이징",
         "유니버설",
         "외국인"
-      ]
+      ],
+      "heroCredit": {
+        "text": "베이징 퉁저우 유니버설 리조트 입구. 사진: Hhhh2 / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Universal_Beijing_Resort.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     }
   }
 }

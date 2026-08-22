@@ -1,5 +1,9 @@
 # Dynamic facts — reviewed 2026-08-20
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 | Fact | Current evidence | Publication treatment |
 |---|---|---|
 | Opening, ticket and entry route | Museum's current visitor pages/notices | Never hard-code; recheck before publication and travel |

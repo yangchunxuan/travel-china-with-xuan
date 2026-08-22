@@ -1,5 +1,9 @@
 # Dynamic-fact ledger — Left Something at a China Hotel: Verify, Collect or Ship It
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Review date: **2026-08-22 (Asia/Shanghai)**
 
 | Fact or decision input | State at review | Recheck trigger | Copy treatment / fallback |

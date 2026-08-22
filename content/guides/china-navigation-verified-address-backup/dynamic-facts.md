@@ -1,5 +1,9 @@
 # Dynamic fact review — china-navigation-verified-address-backup
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **medium — consumer features, POIs, entrances and roads**
 Release gate: **Reopen the official platform/privacy pages and recheck every named destination or entrance in publication week**

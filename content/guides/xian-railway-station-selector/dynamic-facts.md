@@ -1,5 +1,9 @@
 # Dynamic fact review — xian-railway-station-selector
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — ticket inventory, station/terminal roles and local access**
 Release gate: **reopen every official source and the live ticket/flight result in the publication week**

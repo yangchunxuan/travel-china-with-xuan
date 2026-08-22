@@ -48,7 +48,14 @@
         "Shandong",
         "Mount Tai",
         "Hiking"
-      ]
+      ],
+      "heroCredit": {
+        "text": "Jade Emperor Peak on Mount Tai in Shandong. Photo: ╬ಠ益ಠ) / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Emperor_Peak_of_Mount_Tai_%E6%B3%B0%E5%B1%B1%E7%8E%89%E7%9A%87%E9%A1%B6_2007_075.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     "zh": {
       "path": "/zh/guides/mount-tai-night-climb-or-day-route/",
@@ -63,7 +70,14 @@
         "山东",
         "泰山",
         "登山"
-      ]
+      ],
+      "heroCredit": {
+        "text": "山东泰山玉皇顶。图片：╬ಠ益ಠ) / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Emperor_Peak_of_Mount_Tai_%E6%B3%B0%E5%B1%B1%E7%8E%89%E7%9A%87%E9%A1%B6_2007_075.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     "ko": {
       "path": "/ko/guides/mount-tai-night-climb-or-day-route/",
@@ -78,7 +92,14 @@
         "산둥",
         "타이산",
         "산행"
-      ]
+      ],
+      "heroCredit": {
+        "text": "산둥 타이산의 옥황정. 사진: ╬ಠ益ಠ) / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Emperor_Peak_of_Mount_Tai_%E6%B3%B0%E5%B1%B1%E7%8E%89%E7%9A%87%E9%A1%B6_2007_075.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     }
   }
 }

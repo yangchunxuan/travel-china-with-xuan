@@ -6,13 +6,13 @@ const body = {
     {
       "id": "answer-first",
       "type": "lead",
-      "text": "Build a China departure-tax-refund claim as a chain of evidence, not an expected cash amount. Before paying, confirm that the shop participates and ask which path it supports: the standard refund at departure or an instant-refund arrangement that still carries departure obligations. Keep the eligible goods, passport, invoice, refund form and payment/refund instrument together; reach the departure point early enough to complete customs verification before the refund-agency handoff."
+      "text": "Build a China departure-tax-refund claim as a chain of evidence, not an expected cash amount. Before paying, confirm that the shop participates and ask which path it supports: the standard refund at departure or an instant-refund arrangement that still carries departure obligations. Keep the eligible goods, passport, transaction records and payment/refund instrument together. Under the nationwide policy effective 1 July 2026, travellers no longer submit paper refund forms and sales invoices to customs or the refund agency; those checks are completed online."
     },
     {
       "id": "quick-answer",
       "type": "callout",
       "title": "Short answer",
-      "body": "A shop's tax-refund sign starts the check; it does not guarantee eligibility or a final amount. Verify the current rules, obtain correctly issued documents, keep goods available for customs and follow the airport or port sequence before check-in when required. Instant refund is not 'finished at the shop': departure verification and any agreed authorization or guarantee still matter.",
+      "body": "A shop's tax-refund sign starts the check; it does not guarantee eligibility or a final amount. Verify the current rules, ask the shop to record the transaction correctly and keep the goods available if customs selects the claim for inspection. For goods valued below RMB 10,000, the policy effective 1 July 2026 uses random spot checks rather than universal physical inspection. Follow the actual airport or port sequence; instant refund is not 'finished at the shop' because departure verification and any agreed authorization or guarantee still matter.",
       "tone": "decision"
     },
     {
@@ -34,8 +34,8 @@ const body = {
       "rows": [
         [
           "Participating shop, standard departure refund",
-          "Passport, sales invoice and completed refund application form",
-          "Present goods and documents to customs, then use the designated refund agency",
+          "Passport plus correctly recorded purchase and refund data",
+          "Follow the port's customs direction, present goods if selected, then use the designated refund agency",
           "Checking in the goods before learning whether customs needs to inspect them"
         ],
         [
@@ -70,12 +70,12 @@ const body = {
       "ordered": true,
       "items": [
         "Before purchase, check the State Taxation Administration's current eligibility conditions and ask the store to show its departure-tax-refund participation. Confirm whether it offers standard departure processing or instant refund.",
-        "Present the same valid passport you will use to depart. Ask the shop to check the name, document number, invoice details and goods against its system before you leave the counter.",
-        "Collect the sales invoice, departure refund application form and any instant-refund agreement or authorization. Photograph both sides, but preserve the originals in a dedicated envelope.",
-        "Keep the goods identifiable and available for customs. Do not use, consume, open, separate or check them in until you understand the current eligibility and inspection rule for that category and port.",
+        "Present the same valid passport you will use to depart. Ask the shop to check the name, document number, purchase details and goods against its system before you leave the counter.",
+        "Keep the transaction and refund records the shop provides, plus any instant-refund agreement or authorization. Photograph or save them for your own evidence. Since 1 July 2026, travellers do not submit paper refund application forms or sales invoices to customs or the refund agency; verification is online.",
+        "Keep the goods identifiable and available for customs. Claims for goods valued below RMB 10,000 are subject to random spot checks, and selected applications still require physical verification. Do not use, consume, open, separate or check the goods in until you understand the current rule and port sequence.",
         "Before departure day, locate the customs verification point and refund agency for the correct terminal or port. Ask whether verification occurs before airline check-in, especially for items intended for checked baggage.",
-        "At customs, present the passport, eligible goods, invoice and refund form as directed. A customs release or verification is a separate step from payment by the refund agency.",
-        "Proceed to the designated agency with the verified documents and requested payment/refund instrument. For instant refund, complete any release of the preauthorization or guarantee required by the current process.",
+        "At customs, follow the current electronic-verification direction and present the passport and eligible goods if the application is selected for physical inspection. Customs verification remains separate from payment by the refund agency.",
+        "Proceed to the designated agency with the requested identity and payment/refund instrument; the transaction is verified online. For instant refund, complete any release of the preauthorization or guarantee required by the current process.",
         "Keep the stamped or electronic outcome, receipts and transaction reference until the refund or guarantee status is reconciled. Record who to contact before leaving the port."
       ]
     },
@@ -92,11 +92,11 @@ const body = {
       "columns": [
         {
           "heading": "Store",
-          "body": "Confirms participation and issues the invoice, application and any instant-refund agreement against the traveller's actual passport and goods."
+          "body": "Confirms participation and records the purchase and refund data against the traveller's actual passport and goods. Keep any transaction record and instant-refund agreement it provides."
         },
         {
           "heading": "Customs",
-          "body": "Performs the required departure verification. Keep goods accessible and follow the actual port sequence; a store form does not replace this step."
+          "body": "Performs the required departure verification online and, where selected, checks the goods physically. Keep goods accessible and follow the actual port sequence."
         },
         {
           "heading": "Refund agency",
@@ -162,7 +162,7 @@ const body = {
         "Separate a store-document error from a customs-verification problem and a refund-agency payment problem. Each has a different owner.",
         "Request a written or electronic record of rejection, missing evidence or pending status instead of accepting only a verbal explanation.",
         "For instant refund, contact the named service provider promptly and follow the agreement's official correction or guarantee process.",
-        "Keep invoices, forms, goods photos, boarding pass, departure evidence and transaction references until every charge and refund line is reconciled.",
+        "Keep purchase/refund records, goods photos, boarding pass, departure evidence and transaction references until every charge and refund line is reconciled.",
         "If a deadline or eligibility condition is missed, close the trip budget without counting the refund and seek professional tax advice only for a material unresolved case."
       ]
     },
@@ -184,8 +184,8 @@ const body = {
       "type": "list",
       "items": [
         "Departure passport",
-        "Original sales invoices",
-        "Original refund forms",
+        "Purchase and refund transaction records",
+        "Any shop-issued confirmation or electronic record",
         "Instant-refund agreement and instrument if used",
         "Eligible goods kept identifiable and accessible",
         "Correct port/terminal customs location",
@@ -276,19 +276,19 @@ const body = {
           "reviewedAt": "2026-08-22"
         },
         {
-          "label": "Departure tax refund policy overview",
+          "label": "2025 policy overview (background; 2026 upgrade controls paper submission and inspections)",
           "url": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html",
           "publisher": "State Taxation Administration",
           "reviewedAt": "2026-08-22"
         },
         {
-          "label": "Instant tax refund process",
+          "label": "2025 instant-refund process (background; read with the 2026 upgrade)",
           "url": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240464/content.html",
           "publisher": "State Taxation Administration",
           "reviewedAt": "2026-08-22"
         },
         {
-          "label": "Refund-upon-departure process",
+          "label": "2025 refund-upon-departure process (background; read with the 2026 upgrade)",
           "url": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240906/content.html",
           "publisher": "State Taxation Administration",
           "reviewedAt": "2026-08-22"

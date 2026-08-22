@@ -129,7 +129,7 @@ test("all six Guangzhou hub support guides resolve the Guangzhou entity", async 
 
 test("freshness registry exhaustively covers the runtime pillar vocabulary", async () => {
   const runtime = await loadRuntimeFreshnessInputs();
-  assert.equal(runtime.size, 180);
+  assert.equal(runtime.size, 240);
   const runtimePillars = [...new Set(
     [...runtime.values()].map((guide) => guide.pillar),
   )].sort();
@@ -180,13 +180,28 @@ test("published Search Map freshness decisions cannot be downgraded", async () =
   }
 });
 
-test("explicit high-risk minima cover safety, accessibility and airline-rule guides", async () => {
+test("explicit high-risk minima cover reviewed dynamic, safety, accessibility and airline-rule guides", async () => {
   const runtime = await loadRuntimeFreshnessInputs();
   const ids = [
     "china-accessible-hotel-room-verification",
     "china-domestic-flight-fare-bundle-baggage",
     "china-hotel-emergency-exit-fire-safety-check",
     "wheelchair-accessible-china-route-planning",
+    "bund-or-lujiazui-see-both",
+    "jingdezhen-imperial-kiln-taoxichuan-sanbao",
+    "jiuzhaigou-one-day-sightseeing-bus-route",
+    "mount-emei-golden-summit-or-temple-route",
+    "mount-tai-night-climb-or-day-route",
+    "shanghai-disneyland-foreign-visitors",
+    "shanghai-water-town-zhujiajiao-tongli-wuzhen",
+    "universal-beijing-foreign-visitors",
+    "west-lake-walk-boat-or-bike",
+    "xiamen-and-gulangyu-one-day",
+    "chengdu-jiuzhaigou-huanglong-route-order",
+    "mainland-china-hong-kong-macao-route-order",
+    "sanya-where-to-stay-four-bays",
+    "fujian-tulou-stay-inside-or-nearby-hotel",
+    "china-hotel-left-item-recovery",
   ];
   for (const id of ids) {
     assert.equal(guideFreshnessMinimums[id], "high");

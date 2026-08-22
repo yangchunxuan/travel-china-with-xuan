@@ -2,12 +2,17 @@
 
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — tax rules, instant-refund arrangements, participating merchants, port processing and payment operations**
-Release gate: **Reopen all four State Taxation Administration pages and verify the exact participating store and departure-port process before publication**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
+Release gate: **The controlling 2026 State Taxation Administration policy and all three background process pages were reopened on 2026-08-22. Confirm only the traveller's actual participating store, departure port and transaction-specific method at release.**
 
 | Dynamic fact | Safe wording | Recheck trigger | If not verifiable |
 |---|---|---|---|
-| Eligibility conditions and policy dates | Attribute to the current tax-authority page | STA notice or statutory change | Remove numeric or eligibility detail and retain verification steps |
+| Paper submission from 1 July 2026 | Travellers do not submit paper refund forms or sales invoices to customs/refund agencies; verification is online | STA procedural change | Remove the workflow detail and direct readers to the current STA process |
+| Claims for goods below RMB 10,000 | Random spot checks apply; selected applications still undergo physical-goods verification | STA threshold or inspection change | Omit the threshold and say to keep goods available for possible inspection |
 | Instant-refund obligations | Use the current official process and signed agreement | Program or provider change | Use the standard departure-refund lane if officially supported |
+| Instant-refund cross-region recognition and departure window | The 2026 policy provides cross-region recognition and extends the nationwide departure period to 28 days | STA program change | Do not state the period or participating regions |
 | Port sequence and processing point | Describe as port- and terminal-specific | Airport or customs operational notice | Ask the official port desk before check-in |
 | Method, fee, exchange and settlement | Require transaction-specific confirmation | Agency, issuer or payment change | Budget without the refund |
 
@@ -24,3 +29,7 @@ Obtain correct store evidence, keep goods available for customs, complete depart
 - automatic release of an instant-refund guarantee
 
 All three public languages must be reviewed and updated together after a trigger.
+
+## Source hierarchy
+
+The State Taxation Administration's 2026 policy upgrade controls where it conflicts with the three 2025 background pages. In particular, the older pages' paper-submission and universal physical-presentation wording must not be treated as the current nationwide workflow after 1 July 2026.

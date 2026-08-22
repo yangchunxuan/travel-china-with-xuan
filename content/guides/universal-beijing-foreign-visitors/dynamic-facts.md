@@ -1,5 +1,9 @@
 # Dynamic-fact ledger — Universal Beijing foreign visitors
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 
 **PUBLICATION GATE:** recheck the official ticket path, accepted passport workflow, app/mini-program, operating calendar, attraction restrictions, photo-validation notice, Guest Services and return transport on publication day. A marketing page does not by itself prove a live operational promise.

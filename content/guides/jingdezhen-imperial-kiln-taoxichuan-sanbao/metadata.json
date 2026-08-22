@@ -47,7 +47,14 @@
         "Jingdezhen",
         "Ceramics",
         "District choice"
-      ]
+      ],
+      "heroCredit": {
+        "text": "Brick arches of the Jingdezhen Imperial Kiln Museum. Photo: Zhu Pei / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-Jingdezhen_Imperial_Kiln_Museum.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     },
     "zh": {
       "path": "/zh/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/",
@@ -62,7 +69,14 @@
         "景德镇",
         "陶瓷",
         "片区选择"
-      ]
+      ],
+      "heroCredit": {
+        "text": "景德镇御窑博物馆的砖拱建筑。图片：Zhu Pei / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-Jingdezhen_Imperial_Kiln_Museum.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     },
     "ko": {
       "path": "/ko/guides/jingdezhen-imperial-kiln-taoxichuan-sanbao/",
@@ -77,7 +91,14 @@
         "징더전",
         "도자기",
         "구역 선택"
-      ]
+      ],
+      "heroCredit": {
+        "text": "징더전 어요 박물관의 벽돌 아치. 사진: Zhu Pei / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-Jingdezhen_Imperial_Kiln_Museum.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     }
   }
 }

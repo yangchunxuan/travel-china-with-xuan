@@ -2,10 +2,22 @@
   "id": "mainland-china-hong-kong-macao-route-order",
   "type": "planning",
   "pillar": "routes-and-pace",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "decision-guide",
-  "topics": ["mainland-china", "hong-kong", "macao", "route-order", "border-crossings"],
-  "destinations": ["china", "hong-kong", "macao"],
+  "topics": [
+    "mainland-china",
+    "hong-kong",
+    "macao",
+    "route-order",
+    "border-crossings"
+  ],
+  "destinations": [
+    "china",
+    "hong-kong",
+    "macao"
+  ],
   "heroImagePath": "/images/guides/mainland-china-hong-kong-macao-route-order/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/mainland-china-hong-kong-macao-route-order/hero-1600.webp",
   "imageWidth": 1600,
@@ -13,11 +25,81 @@
   "datePublished": "2026-08-22",
   "dateModified": "2026-08-22",
   "sourceReviewedDate": "2026-08-22",
-  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
-    "en": { "path": "/guides/mainland-china-hong-kong-macao-route-order/", "title": "Mainland China, Hong Kong and Macao: Route Order", "headline": "Order Mainland China, Hong Kong and Macao Across Three Entry Systems", "description": "Choose a route order that counts every border crossing and protects mainland re-entry, without pretending to decide any traveller's eligibility.", "heroAlt": "Hong Kong–Zhuhai–Macao Bridge photographed from above the Pearl River estuary", "navTitle": "Mainland–Hong Kong–Macao order", "featuredLinkLabel": "Count the border crossings", "openGraphLocale": "en_US", "cardTags": ["Route order", "Border crossings", "Re-entry"] },
-    "zh": { "path": "/zh/guides/mainland-china-hong-kong-macao-route-order/", "title": "中国内地、香港、澳门怎么排顺序", "headline": "跨三套入境系统安排中国内地、香港与澳门", "description": "逐次计算边境离开与进入，保护内地再次入境；本页不代替主管机关判断任何旅客资格。", "heroAlt": "珠江口上空所见的港珠澳大桥", "navTitle": "内地—香港—澳门顺序", "featuredLinkLabel": "数清每次边境交接", "openGraphLocale": "zh_CN", "cardTags": ["路线顺序", "边境交接", "再次入境"] },
-    "ko": { "path": "/ko/guides/mainland-china-hong-kong-macao-route-order/", "title": "중국 본토·홍콩·마카오 여행 순서", "headline": "서로 다른 세 입경 체계를 건너는 본토·홍콩·마카오 순서", "description": "모든 출입경을 세고 본토 재입경을 보호하되 개인의 자격은 출입경 당국 자료로 확인합니다.", "heroAlt": "주장강 하구 위에서 본 홍콩–주하이–마카오 대교", "navTitle": "본토–홍콩–마카오 순서", "featuredLinkLabel": "국경 이동 횟수 세기", "openGraphLocale": "ko_KR", "cardTags": ["여행 순서", "출입경", "재입경"] }
+    "en": {
+      "path": "/guides/mainland-china-hong-kong-macao-route-order/",
+      "title": "Mainland China, Hong Kong and Macao: Route Order",
+      "headline": "Order Mainland China, Hong Kong and Macao Across Three Entry Systems",
+      "description": "Choose a route order that counts every border crossing and protects mainland re-entry, without pretending to decide any traveller's eligibility.",
+      "heroAlt": "Hong Kong–Zhuhai–Macao Bridge photographed from above the Pearl River estuary",
+      "navTitle": "Mainland–Hong Kong–Macao order",
+      "featuredLinkLabel": "Count the border crossings",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Route order",
+        "Border crossings",
+        "Re-entry"
+      ],
+      "heroCredit": {
+        "text": "Hong Kong–Zhuhai–Macao Bridge photographed from above the Pearl River estuary. Photo: Pauloleong2002 / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong%E2%80%93Zhuhai%E2%80%93Macau_Bridge_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/mainland-china-hong-kong-macao-route-order/",
+      "title": "中国内地、香港、澳门怎么排顺序",
+      "headline": "跨三套入境系统安排中国内地、香港与澳门",
+      "description": "逐次计算边境离开与进入，保护内地再次入境；本页不代替主管机关判断任何旅客资格。",
+      "heroAlt": "珠江口上空所见的港珠澳大桥",
+      "navTitle": "内地—香港—澳门顺序",
+      "featuredLinkLabel": "数清每次边境交接",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "路线顺序",
+        "边境交接",
+        "再次入境"
+      ],
+      "heroCredit": {
+        "text": "珠江口上空所见的港珠澳大桥。图片：Pauloleong2002 / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong%E2%80%93Zhuhai%E2%80%93Macau_Bridge_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/mainland-china-hong-kong-macao-route-order/",
+      "title": "중국 본토·홍콩·마카오 여행 순서",
+      "headline": "서로 다른 세 입경 체계를 건너는 본토·홍콩·마카오 순서",
+      "description": "모든 출입경을 세고 본토 재입경을 보호하되 개인의 자격은 출입경 당국 자료로 확인합니다.",
+      "heroAlt": "주장강 하구 위에서 본 홍콩–주하이–마카오 대교",
+      "navTitle": "본토–홍콩–마카오 순서",
+      "featuredLinkLabel": "국경 이동 횟수 세기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "여행 순서",
+        "출입경",
+        "재입경"
+      ],
+      "heroCredit": {
+        "text": "주장강 하구 위에서 본 홍콩–주하이–마카오 대교. 사진: Pauloleong2002 / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong%E2%80%93Zhuhai%E2%80%93Macau_Bridge_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
   }
 }

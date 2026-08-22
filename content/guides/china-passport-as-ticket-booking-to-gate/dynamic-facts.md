@@ -1,5 +1,9 @@
 # Dynamic fact review — china-passport-as-ticket-booking-to-gate
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — operator identity rules, supported documents, lane allocation and access instructions**
 Release gate: **Reopen the relevant official operator's identity and access page and test the order-to-staffed-lane handoff for every transport or attraction example before publication**

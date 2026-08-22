@@ -1,6 +1,6 @@
 # Research and source log — china-public-toilets-first-time-guide
 
-Status: **DRAFT COMPLETE — CENTRAL CONTENT REVIEW AND PUBLICATION GATE REQUIRED**
+Status: **CENTRAL FACT REVIEW PASSED — DRAFT PR ONLY, NOT PUBLISHED**
 
 Candidate: `essentials-20260822-scale-08`
 Canonical slug: `china-public-toilets-first-time-guide`
@@ -22,11 +22,11 @@ No keyword tool, third-party estimate or forum post was used as factual authorit
 | [Beijing public-toilet FAQ](https://english.beijing.gov.cn/contactus/faqs/list/202006/t20200627_1932963.html) | Beijing Municipal Government | Official visitor-facing context for locating public toilets. | It does not guarantee a particular facility's condition or opening. |
 | [Tourism toilet management guidance](https://zwgk.mct.gov.cn/zfxxgkml/ggfw/202306/t20230619_944567.html) | Ministry of Culture and Tourism | Official management context for tourism public-toilet services. | Management guidance is not a live inventory of facilities. |
 | [Public toilet classification standard](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=D42230CAB628FB034C8DCD795553B9D9) | Standardization Administration of China | The national standard reference for public-toilet classification. | A standard does not prove that every existing facility conforms or is open. |
-| [Public information sign standard](https://www.sz.gov.cn/attachment/1/1522/1522388/11901081.pdf) | Shenzhen Municipal Government publication of national standard | Reference symbols used to identify toilets and accessible facilities. | It does not locate a specific open cubicle. |
+| [Shenzhen metro toilet design and management standard](https://www.sz.gov.cn/attachment/1/1522/1522388/11901081.pdf) | Shenzhen Municipal Government | Shenzhen metro toilet types, facility requirements and the sign/direction appendix. | A Shenzhen local standard is not a universal China inventory or fixture-use direction. |
 
 ## Publication gate
 
-Reopen the official public-service and standards sources and verify every named facility or symbol against current onsite or operator information before publication. If a controlling source cannot be reopened, remove the affected operational detail and retain only the verification method. Update EN/ZH/KO, metadata date and dynamic-facts together.
+All four official sources were reopened on 2026-08-22. The earlier unsupported universal squat-toilet direction was removed from EN/ZH/KO. The page now requires the exact fixture, foot/surface markings, onsite instruction and the traveller's own stability to control the choice. It names no operating public-toilet location, and the hero credit remains explicitly limited to a dated documentary image.
 
 ## Image rights and processing record
 

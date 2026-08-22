@@ -1,5 +1,9 @@
 # Dynamic fact review — china-airport-checked-bag-missing-damaged
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **high — carrier responsibility, counter access, tracking systems, delivery instructions and claim requirements**
 Release gate: **Reopen the responsible operating carrier's current baggage-reporting and tracking pages and have central legal/editorial review remove any wording that could imply liability, compensation or deadline advice before publication**

@@ -47,7 +47,14 @@
         "Sichuan",
         "Mount Emei",
         "Route choice"
-      ]
+      ],
+      "heroCredit": {
+        "text": "Golden Summit complex on Mount Emei in Sichuan. Photo: George N / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_04.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
     },
     "zh": {
       "path": "/zh/guides/mount-emei-golden-summit-or-temple-route/",
@@ -62,7 +69,14 @@
         "四川",
         "峨眉山",
         "路线选择"
-      ]
+      ],
+      "heroCredit": {
+        "text": "四川峨眉山金顶建筑群。图片：George N / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_04.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
     },
     "ko": {
       "path": "/ko/guides/mount-emei-golden-summit-or-temple-route/",
@@ -77,7 +91,14 @@
         "쓰촨",
         "어메이산",
         "동선 선택"
-      ]
+      ],
+      "heroCredit": {
+        "text": "쓰촨 어메이산 금정의 건축군. 사진: George N / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_04.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
     }
   }
 }

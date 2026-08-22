@@ -1,5 +1,9 @@
 # Dynamic-fact ledger — Shanghai Disneyland foreign visitors
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: HOLD`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 
 **PUBLICATION GATE:** on release day reopen the resort ticket/ID rules, authorised-channel list, official app, visit calendar, park hours and any dated operating notice. Marketing copy cannot independently prove live admission or attraction operation.

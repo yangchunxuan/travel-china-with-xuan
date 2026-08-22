@@ -1,5 +1,9 @@
 # Dynamic-fact ledger — Shanghai water-town comparison
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: HOLD`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 
 | Fact | Copy treatment | Recheck / fallback |

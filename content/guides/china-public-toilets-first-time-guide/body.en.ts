@@ -12,7 +12,7 @@ const body = {
       "id": "quick-answer",
       "type": "callout",
       "title": "Short answer",
-      "body": "A squat toilet is used facing the raised hood or plumbing end, with feet on the textured platforms and clothing secured clear of the floor. Use a seated cubicle if balance, joints, clothing, pregnancy or luggage make squatting unsafe. Never stand on a seated toilet. Accessible or family facilities should be kept available for people who need their features.",
+      "body": "Read the exact fixture, foot or surface markings and any posted instructions before using a squat toilet; hood, flush-point and pipe layouts vary. Keep both feet stable and clothing clear of the floor. If you cannot identify a safe position, or balance, joints, pregnancy or luggage make squatting unsafe, use a seated cubicle or ask staff. Never stand on a seated-toilet rim. Accessible or family facilities should be kept available for people who need their features.",
       "tone": "decision"
     },
     {
@@ -73,7 +73,7 @@ const body = {
         "At the entrance, read any male/female, accessible, family, queue or temporary-closure sign. If an attendant is present, follow the posted queue and payment instruction rather than assuming access is free or staffed.",
         "Inspect a cubicle before closing the door: lock, floor, fixture type, flush, tissue/bin and a dry hook or shelf. Move to another cubicle if footing or the lock is unsafe.",
         "Secure phone, passport, coat straps and trouser hems. Keep bags on a hook, shelf or held by a companion; do not place valuables on a wet floor or toilet tank.",
-        "For a squat fixture, place feet fully on the marked/textured platforms, face the hood or pipe end, lower only as far as balance allows and use a wall or rail designed for support. Do not grip loose plumbing.",
+        "For a squat fixture, follow the exact foot or surface markings and posted instructions; the hood, flush point and pipe layout are not a universal direction guide. Lower only as far as balance allows and use only a wall or rail designed for support. If the position is unclear, change cubicles or ask staff; do not grip loose plumbing.",
         "Use the indicated flush—button, lever, pedal or sensor—and check that it completed. Follow the local bin sign for paper or hygiene products; never flush wipes, pads or bulky items.",
         "Wash with soap when available and use sanitizer as backup, not a substitute when hands are visibly soiled. Leave the cubicle ready for the next person and report a dangerous spill or broken lock to staff."
       ]
@@ -218,7 +218,7 @@ const body = {
     {
       "id": "faq-2-answer",
       "type": "paragraph",
-      "text": "Normally toward the raised hood or visible plumbing end. Use the actual fixture shape and foot platforms rather than copying another layout."
+      "text": "There is no universal direction rule. Read the exact fixture, foot or surface markings and posted instructions because hood, flush-point and pipe layouts vary. If you cannot identify a stable position, use a seated toilet or ask staff."
     },
     {
       "id": "faq-3-question",
@@ -287,9 +287,9 @@ const body = {
           "reviewedAt": "2026-08-22"
         },
         {
-          "label": "Public information sign standard",
+          "label": "Shenzhen metro toilet design and management standard",
           "url": "https://www.sz.gov.cn/attachment/1/1522/1522388/11901081.pdf",
-          "publisher": "Shenzhen Municipal Government publication of national standard",
+          "publisher": "Shenzhen Municipal Government",
           "reviewedAt": "2026-08-22"
         }
       ]

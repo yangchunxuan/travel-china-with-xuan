@@ -1,5 +1,9 @@
 # Dynamic-fact ledger — Jiuzhaigou one-day route
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 
 **PUBLICATION GATE:** reopen the official scenic-area notice, ticket channel, operating map, sightseeing-bus instructions and weather warning immediately before publication. A marketing page alone is not independent proof of a live operating fact.

@@ -46,7 +46,14 @@
         "Jiuzhaigou",
         "One day",
         "Route choice"
-      ]
+      ],
+      "heroCredit": {
+        "text": "Five Flower Lake in Jiuzhaigou Valley, Sichuan. Photo: Chensiyuan / Wikimedia Commons; cropped, resized and converted to WebP by Homeground. This dated photograph identifies the depicted place only and does not prove current opening, access, operations or conditions.",
+        "sourceLabel": "Original Wikimedia Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     },
     "zh": {
       "path": "/zh/guides/jiuzhaigou-one-day-sightseeing-bus-route/",
@@ -61,7 +68,14 @@
         "九寨沟",
         "一日游",
         "路线取舍"
-      ]
+      ],
+      "heroCredit": {
+        "text": "四川九寨沟五花海景观。图片：Chensiyuan / Wikimedia Commons；Homeground裁切、缩放并转为WebP。该历史照片只用于识别画面地点，不证明当前开放、通行、运营或现场状况。",
+        "sourceLabel": "Wikimedia Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     },
     "ko": {
       "path": "/ko/guides/jiuzhaigou-one-day-sightseeing-bus-route/",
@@ -76,7 +90,14 @@
         "주자이거우",
         "당일 여행",
         "동선 선택"
-      ]
+      ],
+      "heroCredit": {
+        "text": "쓰촨 주자이거우의 오화해 풍경. 사진: Chensiyuan / Wikimedia Commons. Homeground가 자르고 크기를 조정해 WebP로 변환했습니다. 이 과거 사진은 촬영 장소만 확인하며 현재 개방·접근·운영·현장 상태를 증명하지 않습니다.",
+        "sourceLabel": "Wikimedia Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
     }
   }
 }

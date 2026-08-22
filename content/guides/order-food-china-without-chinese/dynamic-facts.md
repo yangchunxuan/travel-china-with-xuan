@@ -1,5 +1,9 @@
 # Dynamic fact review — order-food-china-without-chinese
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: HOLD`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **medium — menu interfaces, prices, dishes, payment support and delivery operations**
 Release gate: **Retest counter, paper, QR and delivery handoffs with current official platform and payment guidance, and remove any interface detail that cannot be reproduced before publication**

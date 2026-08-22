@@ -1,5 +1,9 @@
 # Dynamic fact review — translate-china-without-chinese-offline-backups
 
+Central publication review: **2026-08-22 (Asia/Shanghai)**
+
+`PUBLICATION_GATE_STATUS: HOLD`
+
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **medium — supported languages, device features and app availability**
 Release gate: **Retest each cited translation workflow on a current supported device in airplane mode and reopen the first-party support pages before publication**

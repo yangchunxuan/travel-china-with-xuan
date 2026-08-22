@@ -38,8 +38,8 @@ The body links only to currently present Homeground owners. It does not add a st
 - Asset: `public/images/guides/chengdu-chongqing-station-pair/hero-1600.webp`
 - Entity shown: Chengdu East Railway Station exterior
 - Exact location: Chengdu East Railway Station, Chenghua District, Chengdu, Sichuan, China
-- File page: https://commons.wikimedia.org/wiki/File%3AChengdu_East_Railway_Station.JPG
-- Direct original URL: https://upload.wikimedia.org/wikipedia/commons/9/9e/Chengdu_East_Railway_Station.JPG
+- File page: https://commons.wikimedia.org/wiki/File:Chengdu_East_Railway_Station.jpg
+- Direct original URL: https://upload.wikimedia.org/wikipedia/commons/0/05/Chengdu_East_Railway_Station.jpg
 - Author: Fxqf
 - Licence: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)
 - Capture date: 2011-09-28 13:19:31

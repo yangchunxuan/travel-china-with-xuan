@@ -2,7 +2,10 @@
 
 Reviewed: **2026-08-22 (Asia/Shanghai)**
 Freshness class: **medium — facility locations, opening, maintenance, supplies and local access**
-Release gate: **Reopen the official public-service and standards sources and verify every named facility or symbol against current onsite or operator information before publication**
+
+`PUBLICATION_GATE_STATUS: PASS`
+
+Release gate: **All four official public-service and standards sources were reopened on 2026-08-22. The page names no current operating facility; readers are explicitly told to verify the actual fixture, signage and staffed fallback onsite.**
 
 | Dynamic fact | Safe wording | Recheck trigger | If not verifiable |
 |---|---|---|---|
@@ -24,3 +27,7 @@ Find early, inspect the actual cubicle, choose a fixture you can use without cli
 - medical suitability for a reader
 
 All three public languages must be reviewed and updated together after a trigger.
+
+## Central correction
+
+The earlier universal direction claim for squat toilets was removed in all three languages. Hood, flush-point and pipe layouts vary; readers must follow the exact fixture, foot/surface markings and posted instructions, or use a seated toilet or ask staff if a stable position cannot be identified.
