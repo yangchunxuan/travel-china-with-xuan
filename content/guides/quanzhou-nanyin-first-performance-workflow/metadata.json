@@ -1,0 +1,74 @@
+{
+  "id": "quanzhou-nanyin-first-performance-workflow",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "first-performance-workflow",
+  "topics": ["nanyin", "performing-arts", "intangible-cultural-heritage", "verification", "minnan"],
+  "destinations": ["quanzhou", "fujian", "china"],
+  "heroImagePath": "/images/guides/quanzhou-nanyin-first-performance-workflow/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/quanzhou-nanyin-first-performance-workflow/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/quanzhou-nanyin-first-performance-workflow/",
+      "title": "Nanyin in Quanzhou: Finding and Following Your First Performance",
+      "headline": "Nanyin in Quanzhou: How to Find a Real Performance and Follow It",
+      "description": "Where Quanzhou publishes its own dated listings, what the seventy minutes contains, where to sit, how to follow it without the dialect, and which common claims the sources do not support.",
+      "heroAlt": "A nanguan pipa lying flat, showing the bent neck and the four strings of the lute that nanyin players hold horizontally across the lap.",
+      "navTitle": "Nanyin in Quanzhou",
+      "featuredLinkLabel": "Plan a first nanyin performance",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Quanzhou", "Performing arts", "Nanyin"],
+      "heroCredit": {
+        "text": "Nanguan pipa photographed by Sean Chiu, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nanguan_pipa_(%E5%8D%97%E7%AE%A1%E7%90%B5%E7%90%B6).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/quanzhou-nanyin-first-performance-workflow/",
+      "title": "泉州南音：怎么找到第一场演出，怎么听懂它",
+      "headline": "泉州南音：找到一场真实的演出，并且听得进去",
+      "description": "泉州在哪里发布自己的带日期演出信息、七十分钟里装着什么、坐在哪里、听不懂方言怎么办，以及哪些常见说法其实没有来源支持。",
+      "heroAlt": "一把平放的南管琵琶，可以看到弯曲的琴颈和四根弦——南音演奏者正是把它横抱在腿上。",
+      "navTitle": "泉州南音",
+      "featuredLinkLabel": "安排第一场南音",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["泉州", "表演艺术", "南音"],
+      "heroCredit": {
+        "text": "南管琵琶，摄影 Sean Chiu，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nanguan_pipa_(%E5%8D%97%E7%AE%A1%E7%90%B5%E7%90%B6).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/quanzhou-nanyin-first-performance-workflow/",
+      "title": "취안저우 난인: 첫 공연을 찾고 따라가는 법",
+      "headline": "취안저우 난인: 진짜 공연을 찾아 제대로 듣기",
+      "description": "취안저우가 직접 올리는 날짜 있는 공연 정보, 70분에 담긴 것, 앉을 자리, 방언 없이 따라가는 법, 그리고 자료가 뒷받침하지 않는 흔한 이야기들.",
+      "heroAlt": "눕혀 놓은 난관 비파. 굽은 목과 네 줄이 보이며, 난인 연주자는 이 악기를 무릎 위에 가로로 안는다.",
+      "navTitle": "취안저우 난인",
+      "featuredLinkLabel": "첫 난인 공연 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["취안저우", "공연 예술", "난인"],
+      "heroCredit": {
+        "text": "난관 비파, 촬영 Sean Chiu, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nanguan_pipa_(%E5%8D%97%E7%AE%A1%E7%90%B5%E7%90%B6).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}
