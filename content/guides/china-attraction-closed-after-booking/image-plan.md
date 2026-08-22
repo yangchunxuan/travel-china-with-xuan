@@ -1,0 +1,24 @@
+# Image plan — china-attraction-closed-after-booking
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/china-attraction-closed-after-booking/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: the main entrance gate of Zhangjiajie National Forest Park (标志门) with ticket barriers and sandstone peaks behind — an empty-ticketing scene that fits "the day the gate does not open for you" without staging or depicting any incident.
+- Provenance:
+  - Author: Codas
+  - Source page: Wikimedia Commons file page for "Zhangjiajie entrance 02.jpg"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/b/b7/Zhangjiajie_entrance_02.jpg
+  - License: CC BY-SA 4.0
+  - Subject/place: Zhangjiajie National Forest Park main entrance, Hunan
+  - Date taken (per Commons metadata): 2024-10-24
+  - Download date: 2026-08-23 (UTC+8), via upload.wikimedia.org, HTTP 200, 6,150,104 bytes
+- Processing record:
+  - EXIF orientation 3 applied via auto-rotate before cropping
+  - Crop: full width 5712 px, vertical band top=300, height=3570 px (5712×3570) — keeps gate, barriers and peaks; trims excess plaza and sky
+  - Resize to 1600 × 1000, WebP quality 82 → 367,692 bytes
+  - Original SHA-256 (as downloaded): 1124f6959dcc5898a2868e2516c3b89ceebbc1907711635404fe05d6b92f94a8
+  - Output SHA-256: 9923e7f70adbcfc76631377c8345b36f6a69ac0febb24c6dbf7c4edc951a3da7
+- Privacy check: distant staff figures only, no readable tickets, QR codes or personal data.
+- Documentary boundary: an ordinary entrance scene; body text never claims it depicts a closure.
+- Cropping checks: desktop center crop retains gate + characters + peaks; 390px mobile crop keeps the gate band; no critical element at edges.
+- Attribution duty: CC BY-SA 4.0 requires attribution and share-alike carry-over; recorded here for central review before publication.

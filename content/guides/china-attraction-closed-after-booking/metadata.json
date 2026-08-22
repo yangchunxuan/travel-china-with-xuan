@@ -1,0 +1,81 @@
+{
+  "id": "china-attraction-closed-after-booking",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "recovery-guide",
+  "topics": [
+    "attraction-closure-recovery",
+    "refund-and-reschedule",
+    "same-day-replan",
+    "travel-recovery"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-attraction-closed-after-booking/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-attraction-closed-after-booking/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-23",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-attraction-closed-after-booking/",
+      "title": "Attraction Closed After You Booked in China: Refund and Replan",
+      "headline": "China Attraction Closed After Booking: Confirm, Refund and Rebuild the Day",
+      "description": "Verify closures through official channels, match refunds to each seller's terms using four documented cases, and rebuild your day without breaking independent bookings.",
+      "heroAlt": "The main entrance gate of Zhangjiajie National Forest Park with ticket barriers under sandstone peaks.",
+      "navTitle": "Attraction closed after booking",
+      "featuredLinkLabel": "Handle a closure day",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Tickets",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-attraction-closed-after-booking/",
+      "title": "中国景点订票后临时关闭：如何确认、退款并重排当天行程",
+      "headline": "订票后景点关闭：先核验，再按订单条款退款，最后重排一天",
+      "description": "用官方渠道核验七类关闭，按四种销售结构分清责任；用四个有据案例理解处理差异，并安全重建当天行程。",
+      "heroAlt": "张家界国家森林公园标志门，检票闸机后方是砂岩峰林。",
+      "navTitle": "订票后景点关闭",
+      "featuredLinkLabel": "处理关闭日",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "门票",
+        "故障恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-attraction-closed-after-booking/",
+      "title": "중국 관광지가 예약 후 폐쇄됐을 때: 확인·환불·당일 일정 재구성",
+      "headline": "예약 후 폐쇄: 공식 채널로 확인하고 주문 약관대로 환불한 뒤 하루를 다시 세우세요",
+      "description": "공식 채널로 일곱 폐쇄 유형을 검증하고 네 판매 구조로 책임을 가리며, 문서화된 사례 네 건으로 처리 차이를 이해하는 안내.",
+      "heroAlt": "장자제 국가삼림공원 표지문 입구와 검표 게이트, 그 뒤의 사암 봉우리.",
+      "navTitle": "예약 후 폐쇄",
+      "featuredLinkLabel": "폐쇄 당일 대처하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "입장권",
+        "문제 해결"
+      ]
+    }
+  }
+}
