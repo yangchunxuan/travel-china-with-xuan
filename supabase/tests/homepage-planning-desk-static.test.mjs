@@ -173,7 +173,8 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "en",
       patterns: [
-        /How do you want to travel in China/u,
+        /China, your way\. We’ve got your back\./u,
+        /China travel agency · Private, tailor-made trips/u,
         /Start with the easiest way to reach us\./u,
         /Talk on WhatsApp/u,
         /Open WhatsApp/u,
@@ -191,7 +192,8 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "zh",
       patterns: [
-        /你想要怎样的中国旅行/u,
+        /按你的方式，游中国。一路有我们。/u,
+        /中国旅行社 · 私人定制行程/u,
         /选择最方便的方式，先和我们聊聊。/u,
         /通过 WhatsApp 直接聊/u,
         /打开 WhatsApp/u,
@@ -209,7 +211,8 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
     {
       locale: "ko",
       patterns: [
-        /어떤 중국 여행을 원하시나요/u,
+        /중국, 나만의 방식으로\. 든든하게 함께합니다\./u,
+        /중국 전문 여행사 · 맞춤형 자유여행/u,
         /가장 편한 방법으로 먼저 이야기해 보세요\./u,
         /WhatsApp으로 바로 상담하기/u,
         /WhatsApp 열기/u,

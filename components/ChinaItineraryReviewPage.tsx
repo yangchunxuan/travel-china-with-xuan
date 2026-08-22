@@ -21,6 +21,11 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -125,8 +130,10 @@ function createStructuredData(
         name: copy.schema.pageName,
         description: copy.schema.pageDescription,
         inLanguage: homeCopy.htmlLang,
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: { "@id": `${pageUrl}#service` },
       },
+      editorialWebsiteSchema(),
       {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
@@ -134,11 +141,8 @@ function createStructuredData(
         serviceType: copy.schema.serviceType,
         areaServed: { "@type": "Country", name: copy.schema.countryName },
         provider: {
-          "@type": "Organization",
-          "@id": "https://homegroundchina.com/#organization",
-          name: "Homeground China",
+          ...editorialOrganizationSchema(),
           legalName: homegroundBusiness.registeredName,
-          url: "https://homegroundchina.com/",
           email: homegroundBusiness.serviceEmail,
         },
         offers: [

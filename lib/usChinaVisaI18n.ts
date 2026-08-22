@@ -134,7 +134,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground is an independent China trip-planning studio drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book.",
+      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book.",
     sourcesLabel: "Official sources",
     sources: sharedSources,
     faqTitle: "Common questions",
@@ -232,7 +232,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "撰写与核实",
     reviewBody:
-      "Homeground 是一家独立的中国旅行规划工作室,有自己的地接团队。本页依据国务院、国家移民管理局与中国驻美国大使馆公布的规则撰写。入境政策是一趟中国行里变动最快的部分;我们至少每 90 天复核本页,并为改动标注日期。订票前,请对照下列来源确认你自己的航线。",
+      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页依据国务院、国家移民管理局与中国驻美国大使馆公布的规则撰写。入境政策是一趟中国行里变动最快的部分;我们至少每 90 天复核本页,并为改动标注日期。订票前,请对照下列来源确认你自己的航线。",
     sourcesLabel: "官方来源",
     sources: sharedSources,
     faqTitle: "常见问题",
@@ -323,7 +323,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "작성과 확인",
     reviewBody:
-      "Homeground는 자체 현지 팀을 둔 독립 중국 여행 설계 스튜디오입니다. 이 페이지는 국무원, 국가이민관리국, 주미 중국대사관이 공개한 규정을 따릅니다. 입국 정책은 중국 여행에서 가장 빠르게 바뀌는 부분입니다. 저희는 최소 90일마다 이 페이지를 다시 확인하고 변경 사항에 날짜를 표기합니다. 예약 전에 아래 출처로 본인의 경로를 확인하세요.",
+      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지는 국무원, 국가이민관리국, 주미 중국대사관이 공개한 규정을 따릅니다. 입국 정책은 중국 여행에서 가장 빠르게 바뀌는 부분입니다. 저희는 최소 90일마다 이 페이지를 다시 확인하고 변경 사항에 날짜를 표기합니다. 예약 전에 아래 출처로 본인의 경로를 확인하세요.",
     sourcesLabel: "공식 출처",
     sources: sharedSources,
     faqTitle: "자주 묻는 질문",

@@ -18,6 +18,11 @@ import {
   VISA_FREE_ENTRY_TITLE,
   VISA_FREE_ENTRY_URL,
 } from "../lib/visaFreeEntry";
+import {
+  EDITORIAL_ORGANIZATION_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./VisaFreeEntryPage.module.css";
@@ -69,19 +74,18 @@ function createStructuredData() {
         inLanguage: "en",
         mainEntityOfPage: VISA_FREE_ENTRY_URL,
         author: {
-          "@id": "https://homegroundchina.com/#organization",
+          "@id": EDITORIAL_ORGANIZATION_ID,
         },
         publisher: {
-          "@id": "https://homegroundchina.com/#organization",
-          "@type": "Organization",
-          name: "Homeground China",
-          url: "https://homegroundchina.com/",
+          "@id": EDITORIAL_ORGANIZATION_ID,
         },
         breadcrumb: {
           "@id": breadcrumbId,
         },
         citation: VISA_FREE_ENTRY_SOURCES.map((source) => source.url),
       },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       {
         "@type": "BreadcrumbList",
         "@id": breadcrumbId,

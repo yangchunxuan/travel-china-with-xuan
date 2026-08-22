@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AnalyticsConsent } from "../../../components/AnalyticsConsent";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
-import type { HomegroundLocale } from "../../../lib/homegroundI18n";
+import {
+  getHomegroundCopy,
+  type HomegroundLocale,
+} from "../../../lib/homegroundI18n";
 import "../../globals.css";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
@@ -12,22 +15,36 @@ function localizedLocale(value: string): LocalizedLocale {
   notFound();
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://homegroundchina.com/"),
-  referrer: "strict-origin-when-cross-origin",
-  verification: {
-    other: {
-      "naver-site-verification":
-        "a721e6b305cee6093aa68b45b3826bffdb9aa455",
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: routeLocale } = await params;
+  const locale = localizedLocale(routeLocale);
+  const copy = getHomegroundCopy(locale);
+
+  return {
+    metadataBase: new URL("https://homegroundchina.com/"),
+    applicationName: "Homeground China",
+    referrer: "strict-origin-when-cross-origin",
+    verification: {
+      other: {
+        "naver-site-verification":
+          "a721e6b305cee6093aa68b45b3826bffdb9aa455",
+      },
     },
-  },
-  title: {
-    default: "Homeground China",
-    template: "%s — Homeground China",
-  },
-  description:
-    "China trip planning shaped around your party, pace and priorities, with suitable local services checked by a person after travel details are clear.",
-};
+    title: {
+      default: copy.metadata.title,
+      template: "%s — Homeground China",
+    },
+    description: copy.metadata.description,
+    openGraph: {
+      siteName: "Homeground China",
+      type: "website",
+    },
+  };
+}
 
 export const dynamicParams = false;
 

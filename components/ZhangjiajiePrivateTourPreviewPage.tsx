@@ -15,6 +15,12 @@ import {
   zhangjiajiePrivateTourPreviewPaths,
   zhangjiajiePrivateTourProduct,
 } from "../lib/zhangjiajiePrivateTourPreview";
+import {
+  EDITORIAL_ORGANIZATION_ID,
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
 import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
 
 export function ZhangjiajiePrivateTourPreviewPage({
@@ -59,6 +65,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             name: copy.metadataTitle,
             description: copy.metadataDescription,
             inLanguage: copy.htmlLang,
+            isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
             mainEntity: { "@id": `${pageUrl}#tour` },
           },
           {
@@ -75,10 +82,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                 ? "장자제를 처음 찾는 여행자"
                 : "First-time Zhangjiajie visitors",
             provider: {
-              "@type": "Organization",
-              "@id": "https://homegroundchina.com/#organization",
-              name: "Homeground China",
-              url: "https://homegroundchina.com/",
+              "@id": EDITORIAL_ORGANIZATION_ID,
             },
             itinerary: {
               "@type": "ItemList",
@@ -95,6 +99,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
               })),
             },
           },
+          editorialWebsiteSchema(),
+          editorialOrganizationSchema(),
           {
             "@type": "BreadcrumbList",
             "@id": `${pageUrl}#breadcrumb`,

@@ -12,6 +12,11 @@ import {
   getFirstTripPlanOwnerPath,
 } from "../lib/firstTripPlanHubI18n";
 import {
+  EDITORIAL_WEBSITE_ID,
+  editorialOrganizationSchema,
+  editorialWebsiteSchema,
+} from "../lib/editorialIdentity";
+import {
   absoluteManifestAlternates,
   getSearchHubEntry,
   getSearchHubGuides,
@@ -174,15 +179,12 @@ function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
         name: entry.h1,
         description: entry.description,
         inLanguage: home.htmlLang,
-        isPartOf: {
-          "@type": "WebSite",
-          "@id": `${SITE_URL}/#website`,
-          name: "Homeground",
-          url: `${SITE_URL}/`,
-        },
+        isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: { "@id": itemListId },
         sameAs: Object.values(absoluteManifestAlternates(entry)),
       },
+      editorialWebsiteSchema(),
+      editorialOrganizationSchema(),
       {
         "@type": "BreadcrumbList",
         "@id": `${canonicalUrl}#breadcrumb`,
@@ -190,7 +192,7 @@ function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
           {
             "@type": "ListItem",
             position: 1,
-            name: "Homeground",
+            name: "Homeground China",
             item: homeUrl,
           },
           {

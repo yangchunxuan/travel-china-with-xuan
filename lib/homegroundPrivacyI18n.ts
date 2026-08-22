@@ -264,9 +264,9 @@ export const homegroundPrivacyCopy: Record<
       rows: [
         {
           label: "Data controller and website operator",
-          value: `${homegroundBusiness.registeredName} (trading as Homeground)`,
+          value: `${homegroundBusiness.registeredName} (trading as ${homegroundBusiness.brand})`,
           detail:
-            "The registered operator is responsible for this website and the Homeground enquiry records it receives. Homeground is the public-facing brand used by this registered operator.",
+            "The registered operator is responsible for this website and the Homeground China enquiry records it receives. Homeground China is the public-facing brand used by this registered operator.",
         },
         {
           label: "Processing and storage region",
@@ -492,9 +492,9 @@ export const homegroundPrivacyCopy: Record<
       rows: [
         {
           label: "个人信息处理者与网站经营主体",
-          value: `${homegroundBusiness.registeredName}（以 Homeground 品牌开展业务）`,
+          value: `${homegroundBusiness.registeredName}（以 ${homegroundBusiness.brand} 品牌开展业务）`,
           detail:
-            "该登记主体负责本网站及其收到的 Homeground 咨询记录。Homeground 是该登记主体使用的对外品牌名称。",
+            "该登记主体负责本网站及其收到的 Homeground China 咨询记录。Homeground China 是该登记主体使用的对外品牌名称。",
         },
         {
           label: "处理与存储地区",
@@ -727,9 +727,9 @@ export const homegroundPrivacyCopy: Record<
       rows: [
         {
           label: "개인정보처리자 및 웹사이트 운영 사업자",
-          value: `${homegroundBusiness.registeredName}(Homeground 브랜드 운영)`,
+          value: `${homegroundBusiness.registeredName}(${homegroundBusiness.brand} 브랜드 운영)`,
           detail:
-            "등록 사업자가 이 웹사이트와 접수된 Homeground 문의 기록을 책임집니다. Homeground는 이 등록 사업자가 사용하는 대외 브랜드입니다.",
+            "등록 사업자가 이 웹사이트와 접수된 Homeground China 문의 기록을 책임집니다. Homeground China는 이 등록 사업자가 사용하는 대외 브랜드입니다.",
         },
         {
           label: "처리 및 저장 지역",
