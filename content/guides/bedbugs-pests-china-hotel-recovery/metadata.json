@@ -1,0 +1,81 @@
+{
+  "id": "bedbugs-pests-china-hotel-recovery",
+  "type": "planning",
+  "pillar": "stay-access-foreign-guests",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "recovery-guide",
+  "topics": [
+    "hotel-pest-recovery",
+    "containment-first",
+    "documented-reporting",
+    "travel-recovery"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/bedbugs-pests-china-hotel-recovery/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/bedbugs-pests-china-hotel-recovery/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "stay",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/bedbugs-pests-china-hotel-recovery/",
+      "title": "Bedbugs or Pests in a China Hotel: Contain, Document and Relocate",
+      "headline": "Suspect Bedbugs in a China Hotel? Stop Unpacking and Work the Containment Tree",
+      "description": "Contain luggage before anything else, record observations honestly, involve the duty manager and platform, and choose the right escape distance - without turning suspicion into accusation.",
+      "heroAlt": "A quiet Chinese hotel twin room at dusk with two made beds, armchairs by the curtained window and a writing desk.",
+      "navTitle": "Pest recovery in a hotel",
+      "featuredLinkLabel": "Handle a pest report calmly",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Hotels",
+        "Recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/bedbugs-pests-china-hotel-recovery/",
+      "title": "中国酒店疑似出现臭虫或虫害：如何控制、取证和换店",
+      "headline": "疑似臭虫：先停止拆包，按“控制—取证—交涉”的顺序处理",
+      "description": "先封存行李，再如实记录观察，联系值班经理与平台，并选择正确的撤离距离；不诊断虫种、不公开指控、不滥用杀虫剂。",
+      "heroAlt": "黄昏时安静的中国酒店双人房，两张整洁的床、窗帘旁的扶手椅与写字台。",
+      "navTitle": "虫害现场恢复",
+      "featuredLinkLabel": "冷静处理虫害报告",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "酒店",
+        "故障恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/bedbugs-pests-china-hotel-recovery/",
+      "title": "중국 호텔에서 빈대나 해충이 의심될 때: 확산 방지·기록·이동",
+      "headline": "빈대가 의심되면 짐 정리를 멈추고 확산 방지부터 시작하세요",
+      "description": "짐을 먼저 격리하고 관찰을 기록한 뒤 당직 매니저와 플랫폼을 불러들이고, 올바른 이동 거리를 고르는 방법. 진단 대신, 고발 대신, 오남용 없이.",
+      "heroAlt": "해질녘 조용한 중국 호텔 트윈룸. 정돈된 침대 두 개와 커튼 창가 안락의자, 책상.",
+      "navTitle": "해충 의심 복구",
+      "featuredLinkLabel": "해충 보고 차분히 처리하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "호텔",
+        "문제 해결"
+      ]
+    }
+  }
+}

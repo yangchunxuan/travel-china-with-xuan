@@ -1,0 +1,24 @@
+# Image plan — bedbugs-pests-china-hotel-recovery
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/bedbugs-pests-china-hotel-recovery/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: a quiet, ordinary hotel twin room at dusk — the calm scene where a traveller would inspect and contain; deliberately NOT a sensational pest close-up, NOT an insect image, NOT an alleged-infestation scene.
+- Provenance:
+  - Author: N509FZ
+  - Source page: Wikimedia Commons file page for "Normal room in Beijing Hotel (20150822151853).JPG"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/c/c1/Normal_room_in_Beijing_Hotel_%2820150822151853%29.JPG
+  - License: CC BY-SA 4.0
+  - Subject/place: Beijing Hotel, standard twin room, Beijing
+  - Date taken (per Commons metadata): 2015-08-22
+  - Download date: 2026-08-22 (UTC+8), via upload.wikimedia.org, HTTP 200, 1,424,832 bytes
+- Processing record:
+  - Crop: full width 3264 px, vertical band top=200, height=2040 px (3264×2040) — keeps beds, armchairs and window; trims dark ceiling/floor edges
+  - Resize to 1600 × 1000, WebP quality 82 → 48,428 bytes
+  - Original SHA-256: 7790224c7c80dd6629d3aca07ef3d86e2baad74669cdf5387ee68fc53412c762
+  - Output SHA-256: 1d49db5e860f34b241a6099e470410ca87fe99683bb61afd3a1c894affdc5026
+- Privacy check: no people, no documents, no personal data.
+- Documentary boundary: a normal room photograph; body text never describes it as an incident or infestation scene. Rejected candidates during selection: a furniture-showroom packing photo (staged, misrepresentable) and an FBI evidence photograph (crime-scene context) — both excluded for accuracy and tone.
+- Note on series uniqueness: same photographer/room series as `refundable-or-nonrefundable-china-hotel-rate`'s hero but a different frame with distinct composition (window/armchairs vs painting/door). Disclosed for central review.
+- Cropping checks: desktop center crop retains beds + window; 390px mobile crop keeps the bed/window band; low-light image verified legible at both widths.
+- Attribution duty: CC BY-SA 4.0 requires attribution and share-alike carry-over; recorded here for central review before publication.
