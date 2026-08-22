@@ -1,0 +1,74 @@
+{
+  "id": "xian-chengdu-transport-route",
+  "type": "route",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["global"],
+  "format": "bidirectional-route-decision",
+  "topics": ["transport", "high-speed-rail", "airports", "stations", "city-pair"],
+  "destinations": ["xian", "chengdu"],
+  "heroImagePath": "/images/guides/xian-chengdu-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xian-chengdu-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "transport", "family": "comparison", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/xian-chengdu-transport-route/",
+      "title": "Xi'an to Chengdu: Train or Flight, and Which Hub?",
+      "headline": "Xi'an and Chengdu: Rail Hubs, Flight Exceptions and Door-to-Door Time",
+      "description": "Choose rail or air between Xi'an and Chengdu in either direction by full station name, airport terminal, luggage, security, city last mile and what the published rules let you do when it goes wrong.",
+      "heroAlt": "The main departures concourse of Xi'an North Railway Station, with gate numbers and train information boards above waiting passengers.",
+      "navTitle": "Xi'an to Chengdu",
+      "featuredLinkLabel": "Choose the Xi'an-Chengdu hub",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Xi'an", "Chengdu", "Rail", "Air"],
+      "heroCredit": {
+        "text": "Station Hall of Xi'an North Railway Station by YikyuenG, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Station_Hall_of_Xi%27an_North_Railway_Station,_Xi%27an,_Shaanxi.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/xian-chengdu-transport-route/",
+      "title": "西安到成都：高铁还是航班，选哪个枢纽？",
+      "headline": "西安到成都：高铁枢纽、航空例外与门到门时间",
+      "description": "按完整站名、航站楼、行李、安检、市内最后一段和出问题时公布的规则，在西安与成都之间双向选择高铁或航班。",
+      "heroAlt": "西安北站候车大厅，检票口编号与列车信息屏悬挂在候车旅客上方。",
+      "navTitle": "西安到成都",
+      "featuredLinkLabel": "选择西安成都枢纽",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["西安", "成都", "铁路", "航空"],
+      "heroCredit": {
+        "text": "西安北站站厅，摄影 YikyuenG，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Station_Hall_of_Xi%27an_North_Railway_Station,_Xi%27an,_Shaanxi.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/xian-chengdu-transport-route/",
+      "title": "시안-청두: 고속철도인가 항공인가, 어느 거점인가",
+      "headline": "시안-청두 이동: 철도 거점, 항공편이 나은 예외와 문 앞부터의 총시간",
+      "description": "전체 역명, 공항 터미널, 짐, 보안 검색, 시내 마지막 구간, 그리고 문제가 생겼을 때 공개된 규정이 허용하는 범위를 기준으로 양방향 이동 수단을 고릅니다.",
+      "heroAlt": "시안북역 대합실. 대기 중인 승객들 위로 개찰구 번호와 열차 정보 안내판이 걸려 있다.",
+      "navTitle": "시안-청두",
+      "featuredLinkLabel": "시안-청두 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["시안", "청두", "철도", "항공"],
+      "heroCredit": {
+        "text": "시안북역 대합실, 촬영 YikyuenG, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Station_Hall_of_Xi%27an_North_Railway_Station,_Xi%27an,_Shaanxi.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  }
+}
