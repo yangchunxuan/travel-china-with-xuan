@@ -1,0 +1,74 @@
+{
+  "id": "wuhan-where-to-stay-hankou-wuchang-hanyang",
+  "type": "planning",
+  "pillar": "stay-city-areas",
+  "audienceMarkets": ["global"],
+  "format": "area-decision",
+  "topics": ["accommodation", "city-areas", "transport-fit", "river-crossings"],
+  "destinations": ["wuhan", "hubei"],
+  "heroImagePath": "/images/guides/wuhan-where-to-stay-hankou-wuchang-hanyang/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wuhan-where-to-stay-hankou-wuchang-hanyang/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": { "section": "stay", "family": "comparison", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/wuhan-where-to-stay-hankou-wuchang-hanyang/",
+      "title": "Where to Stay in Wuhan: Hankou, Wuchang or Hanyang?",
+      "headline": "Where to Stay in Wuhan: Hankou, Wuchang or Hanyang?",
+      "description": "Choose a Wuhan base from your arrival station, the bank your days sit on, your departure time and how many river crossings each combination forces - including the station pair with no direct metro.",
+      "heroAlt": "The Wuhan Yangtze River Bridge crossing from the Wuchang side toward the opposite bank, with the river and the city on both sides.",
+      "navTitle": "Where to stay in Wuhan",
+      "featuredLinkLabel": "Choose a Wuhan base",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Wuhan", "Accommodation", "Area choice"],
+      "heroCredit": {
+        "text": "Wuhan Yangtze River Bridge in 2020 by Zheng Zhou, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wuhan_Yangtze_River_Bridge_in_2020.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/wuhan-where-to-stay-hankou-wuchang-hanyang/",
+      "title": "武汉住哪里：汉口、武昌还是汉阳？",
+      "headline": "武汉住哪里：汉口、武昌还是汉阳？",
+      "description": "按抵达车站、白天行程在哪一岸、离开时间，以及每种组合会逼你过几次江来选择武汉住宿基地——包括那对没有直达地铁的车站。",
+      "heroAlt": "武汉长江大桥自武昌一侧跨江而过，两岸城区与江面同在画面中。",
+      "navTitle": "武汉住宿区域",
+      "featuredLinkLabel": "选择武汉住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["武汉", "住宿", "区域选择"],
+      "heroCredit": {
+        "text": "2020年的武汉长江大桥，摄影 Zheng Zhou，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wuhan_Yangtze_River_Bridge_in_2020.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/wuhan-where-to-stay-hankou-wuchang-hanyang/",
+      "title": "우한 숙소 위치: 한커우·우창·한양 중 어디?",
+      "headline": "우한 숙소 위치: 한커우·우창·한양 중 어디가 좋을까?",
+      "description": "도착역, 낮 일정이 놓인 강안, 출발 시각, 그리고 각 조합이 강을 몇 번 건너게 만드는지로 우한 거점을 고릅니다. 직통 지하철이 없는 역 조합도 포함합니다.",
+      "heroAlt": "우창 쪽에서 강을 건너가는 우한 창장대교와, 강 양쪽에 펼쳐진 시가지.",
+      "navTitle": "우한 숙소 지역",
+      "featuredLinkLabel": "우한 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["우한", "숙소", "지역 선택"],
+      "heroCredit": {
+        "text": "2020년의 우한 창장대교, 촬영 Zheng Zhou, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wuhan_Yangtze_River_Bridge_in_2020.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}
