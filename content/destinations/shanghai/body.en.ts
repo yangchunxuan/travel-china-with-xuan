@@ -79,6 +79,32 @@ const body = {
       text: "Within Puxi, three layers matter. The Bund, Old City and Yu Garden form a waterfront-and-historic cluster. People's Square and East Nanjing Road form a civic, museum and commercial spine. Jing'an and the broad travel area still called the Former French Concession offer a smaller scale of tree-lined streets, lane houses, shops and longer walks. Their edges overlap, but their travel jobs differ. Hongqiao is much farther west and is an airport, railway and exhibition hub rather than a sightseeing district.",
     },
     {
+      id: "label-boundaries",
+      type: "table",
+      caption: "Three familiar Shanghai labels — and the boundary each one needs",
+      columns: ["Label", "What it actually names", "Use it for", "Do not assume"],
+      rows: [
+        [
+          "The Bund",
+          "A specific Puxi riverfront and its historic street wall",
+          "A waterfront walk, the classic Pudong view and an atmospheric first evening",
+          "A hotel carrying “Bund” in its name is on the promenade or beside a convenient metro exit",
+        ],
+        [
+          "People's Square",
+          "A civic, museum and interchange anchor in central Puxi",
+          "Balancing several city directions and linking toward East Nanjing Road",
+          "It offers the same neighbourhood mood as the lane-house streets farther west",
+        ],
+        [
+          "Former French Concession",
+          "Useful historical travel shorthand across parts of today's Huangpu, Xuhui and neighbouring areas — not a current administrative district",
+          "Choosing a named street sequence, architecture theme, meal or evening base",
+          "It is one gated quarter, one metro stop or one compact hotel zone",
+        ],
+      ],
+    },
+    {
       id: "creek-figure",
       type: "figure",
       src: "/images/destinations/shanghai/suzhou-creek-1200.webp",
@@ -141,6 +167,13 @@ const body = {
       id: "days-2",
       type: "paragraph",
       text: "With two days, choose contrast over coverage. Keep one day mainly west of the river and use the second for civic Shanghai, neighbourhood Shanghai or Pudong according to interest. A third day is most valuable when it slows one layer down. A fourth improves quality by absorbing weather, closure days, a late arrival or fatigue rather than by adding distant sights.",
+    },
+    {
+      id: "short-stay-rule",
+      type: "callout",
+      title: "The short-stay rule: spend the scarce day in Shanghai",
+      tone: "decision",
+      body: "With only one complete day, keep one Puxi corridor and end at the river; do not spend the middle of it commuting to both banks, an airport-side resort and a second city. With two complete days, protect both for Shanghai unless Suzhou or Hangzhou is the trip's real priority. Disneyland is geographically in Shanghai but operationally replaces one whole city day — it never fits into the leftover evening.",
     },
     {
       id: "scenario-1-heading",
@@ -475,7 +508,7 @@ const body = {
     {
       id: "task-5",
       type: "paragraph",
-      text: "Shanghai Disneyland is an eastern-resort task involving tickets, an opening strategy, transport, children's stamina and the next morning. The Airport Link's Shanghai International Resort station may help some airport journeys, but it is not the park gate. Water towns, Songjiang, Chongming and Yangshan also consume real travel time, and Yangshan Phase IV is a working port rather than a walk-in attraction.",
+      text: "Shanghai Disneyland is inside Shanghai municipality, but it is an eastern-resort task involving dated tickets, the official operating calendar, transport, children's stamina and the next morning. In a night count it belongs to the Shanghai stay; in a sightseeing count it replaces a complete city day. The Airport Link's Shanghai International Resort station may help some airport journeys, but it is not the park gate. Water towns, Songjiang, Chongming and Yangshan also consume real travel time, and Yangshan Phase IV is a working port rather than a walk-in attraction.",
     },
     {
       id: "outer-links",
@@ -665,6 +698,17 @@ const body = {
       text: "Start with the exact airport, terminal, check-in deadline and fallback chain. An airport-side night is stronger when the central transfer would be fragile, particularly for an early departure, children, older travellers or heavy luggage. Keep the central hotel when the dated journey is defensible and the final Shanghai evening still matters. Apply the nationwide last-night method linked above rather than treating all of Pudong or Hongqiao as one airport hotel zone.",
     },
     {
+      id: "faq-8-heading",
+      type: "heading",
+      level: 3,
+      text: "Does Disneyland count as a Shanghai day?",
+    },
+    {
+      id: "faq-8",
+      type: "paragraph",
+      text: "Yes for hotel nights and city-to-city routing; no for the number of days left to understand central Shanghai. Treat the park as one full resort day, then count the Bund, Old City, museums and neighbourhoods separately. If the whole stay has only two complete days, choosing Disney means accepting one city day rather than pretending the park can share an afternoon.",
+    },
+    {
       id: "cta-heading",
       type: "heading",
       level: 2,
@@ -702,37 +746,43 @@ const body = {
           label: "Airport Link stations, transfers and journey information",
           url: "https://english.shanghai.gov.cn/en-Transportation/20241231/f66f14bbd4b549ab88e6f3aec375790c.html",
           publisher: "Shanghai Municipal Government; source: Shanghai Metro",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "Pudong and Hongqiao roles, terminals, metro, taxi and airport-to-airport transport",
           url: "https://english.shanghai.gov.cn/en-Transportation/20231214/649e06ea38f74aaeb573fa2debbe97d3.html",
           publisher: "Shanghai Municipal Government; source: Shanghai Airport Authority",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Shanghai Disney Resort — official transport information",
+          url: "https://www.shanghaidisneyresort.com/en/information/transportation",
+          publisher: "Shanghai Disney Resort",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "Songjiang South renamed Shanghai Songjiang from 22 May 2024",
           url: "https://www.shanghai.gov.cn/xbhygq/20240514/45ef2426bf66467d96a2a2927cf53579.html",
           publisher: "Shanghai Municipal Government",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "Expanded Shanghai Songjiang hub opened on 26 December 2024",
           url: "https://www.shanghai.gov.cn/nw4411/20241227/bc93ea86a3df41a3aa418d7cf7b283bb.html",
           publisher: "Shanghai Municipal Government",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "Shanghai East Railway Station construction and stated July 2027 target",
           url: "https://www.shanghai.gov.cn/nw4411/20250319/27822891077b41c48ec76ec485db79c4.html",
           publisher: "Shanghai Municipal Government",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
         {
           label: "China Railway 12306 — confirm the exact station pair before booking",
           url: "https://www.12306.cn/en/index.html",
           publisher: "China Railway 12306",
-          reviewedAt: "2026-08-16",
+          reviewedAt: "2026-08-22",
         },
       ],
     },
