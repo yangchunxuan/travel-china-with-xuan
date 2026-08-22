@@ -1,0 +1,23 @@
+# Image plan — china-atm-retained-foreign-card
+
+- Status: READY — LICENSED PHOTOGRAPH (Wikimedia Commons)
+- Planned asset: /images/guides/china-atm-retained-foreign-card/hero-1600.webp
+- Dimensions: 1600 × 1000
+- Concept: the entrance of a mainland Chinese bank's 24-hour self-service banking lobby with its bilingual sign (24小时自助银行 / Self Service Banking) and hours panel — where a retained card's recovery usually begins; no incident depicted.
+- Provenance:
+  - Author: Huangkeipais
+  - Source page: Wikimedia Commons file page for "Xinhui 新會城 仁壽路 Renshou Lu China Construction Bank 24 hour ATM self service banking.JPG"
+  - Original URL: https://upload.wikimedia.org/wikipedia/commons/…/Xinhui_….JPG (full URL recorded at download)
+  - License: CC BY-SA 3.0
+  - Subject/place: China Construction Bank 24-hour self-service banking entrance, Xinhui, Guangdong
+  - Date taken (per Commons metadata): 2009-12-24
+  - Download date: 2026-08-23 (UTC+8), via upload.wikimedia.org, HTTP 200, 916,232 bytes
+- Processing record:
+  - Crop: full width 1944 px, vertical band top=560, height=1215 px (1944×1215) — keeps the bilingual sign, LED ticker, doorway and start of the hours panel; first attempt (top=80) rejected as too sign-heavy
+  - Resize to 1600 × 1000, WebP quality 82 → 63,354 bytes
+  - Original SHA-256 (as downloaded): 9e33cc9b4af204498f7baa560624f57013b351df67cfd609aa6b89467bdbe66d
+  - Output SHA-256: bc97c61a4bde3187c42febf37e6693437b1a351eb5c561dd46bb41d40b643d46
+- Privacy check: no people; signage only; no readable account data, PIN pads or card numbers in frame.
+- Documentary boundary: an ordinary self-service-bank entrance; body text never describes it as an incident scene. The visible bank branding belongs to the photograph itself and is not presented as a recommendation or ranking of any bank.
+- Cropping checks: desktop center crop keeps sign + door; 390px mobile crop retains the doorway band; tilted handheld angle disclosed as-is (documentary).
+- Attribution duty: CC BY-SA 3.0 requires attribution and share-alike carry-over; recorded here for central review before publication.

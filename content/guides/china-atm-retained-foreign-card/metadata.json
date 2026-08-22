@@ -1,0 +1,81 @@
+{
+  "id": "china-atm-retained-foreign-card",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "payment-recovery-guide",
+  "topics": [
+    "atm-retained-card",
+    "card-recovery",
+    "payment-fallback",
+    "fraud-protection"
+  ],
+  "destinations": [
+    "china"
+  ],
+  "heroImagePath": "/images/guides/china-atm-retained-foreign-card/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-atm-retained-foreign-card/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-23",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-atm-retained-foreign-card/",
+      "title": "China ATM Kept Your Foreign Card: What to Do Now",
+      "headline": "China ATM Kept Your Foreign Card: The First Ten Minutes and the Retrieval Path",
+      "description": "Record machine, location and time; freeze the account; work the operating bank's retention procedure with your passport; and build same-day payment fallbacks without falling for scams.",
+      "heroAlt": "The entrance of a Chinese bank's 24-hour self-service banking lobby with its bilingual sign above the door.",
+      "navTitle": "ATM kept my card",
+      "featuredLinkLabel": "Recover a retained card",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "ATM",
+        "Payment recovery"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-atm-retained-foreign-card/",
+      "title": "中国 ATM 吞了境外银行卡：现在怎么办？",
+      "headline": "中国 ATM 吞卡：前十分钟、领卡流程与当天支付备选",
+      "description": "记录机器、位置与时间；冻结账户；持护照走运营银行的吞卡流程；同时搭建当天的支付备选，并避开常见骗局。",
+      "heroAlt": "一家中国银行 24 小时自助银行服务区的入口，门上方挂着双语标识。",
+      "navTitle": "ATM 吞卡",
+      "featuredLinkLabel": "处理被吞的银行卡",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "ATM",
+        "支付恢复"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-atm-retained-foreign-card/",
+      "title": "중국 ATM이 해외 카드를 삼켰을 때 해야 할 일",
+      "headline": "중국 ATM이 카드를 삼켰을 때: 첫 10분과 회수 절차",
+      "description": "기기·위치·시간 기록, 계좌 잠금, 운영 은행의 삼키기 절차를 여권으로 밟고, 사기를 피하면서 당일 결제 대체를 만드는 방법.",
+      "heroAlt": "중국 은행 24시간 자동화 코너 입구와 문 위의 이중 언어 간판.",
+      "navTitle": "ATM 카드 삼킴",
+      "featuredLinkLabel": "삼킨 카드 회수하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "ATM",
+        "결제 복구"
+      ]
+    }
+  }
+}
