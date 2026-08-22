@@ -1,0 +1,101 @@
+{
+  "id": "great-wall-section-selector-from-beijing",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "four-section-decision-guide",
+  "topics": [
+    "great-wall",
+    "beijing-day-trip",
+    "section-comparison",
+    "mobility",
+    "seasonal-opening",
+    "night-tour"
+  ],
+  "destinations": [
+    "china",
+    "beijing"
+  ],
+  "heroImagePath": "/images/guides/great-wall-section-selector-from-beijing/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/great-wall-section-selector-from-beijing/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "sourceReviewedDate": "2026-08-22",
+  "search": {
+    "section": "explore",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/great-wall-section-selector-from-beijing/",
+      "title": "Which Great Wall Section? Badaling, Mutianyu, Jinshanling or Simatai",
+      "headline": "Badaling, Mutianyu, Jinshanling or Simatai: Choose the Great Wall Day You Actually Want",
+      "description": "Compare four Great Wall sections from Beijing by transport, walking effort, crowds, scenery, night access and the traveller each one suits.",
+      "heroAlt": "An editorial illustration of four Great Wall day-trip choices on layered mountain ridges; it is a decision graphic, not a geographic map.",
+      "navTitle": "Which Great Wall section?",
+      "featuredLinkLabel": "Choose a Great Wall section",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Great Wall",
+        "Beijing",
+        "Section selector"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/great-wall-section-selector-from-beijing/",
+      "title": "长城去哪里：八达岭、慕田峪、金山岭还是司马台",
+      "headline": "八达岭、慕田峪、金山岭还是司马台：先选你真正想过的一天",
+      "description": "从交通、步行强度、拥挤、风景、夜游和适合人群比较北京周边四段长城，选出真正适合你的那一段。",
+      "heroAlt": "以层叠山岭呈现四种长城一日游选择的编辑插画；它是决策图，不是地理地图。",
+      "navTitle": "四段长城怎么选",
+      "featuredLinkLabel": "选择适合你的长城",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "长城",
+        "北京",
+        "选择指南"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/great-wall-section-selector-from-beijing/",
+      "title": "만리장성 어디로 갈까: 바다링·무톈위·진산링·쓰마타이",
+      "headline": "바다링, 무톈위, 진산링, 쓰마타이: 원하는 하루부터 고르세요",
+      "description": "베이징 근교 네 구간을 교통, 보행 강도, 혼잡, 풍경, 야간 관람과 여행자 유형으로 비교해 맞는 만리장성을 고릅니다.",
+      "heroAlt": "겹친 산등성이 위 네 가지 만리장성 당일 선택을 표현한 편집 일러스트. 지리 지도가 아닌 결정용 그림이다.",
+      "navTitle": "만리장성 구간 고르기",
+      "featuredLinkLabel": "나에게 맞는 만리장성 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "만리장성",
+        "베이징",
+        "구간 비교"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "best Great Wall section from Beijing",
+      "Badaling vs Mutianyu vs Jinshanling vs Simatai",
+      "which Great Wall section should I visit"
+    ],
+    "zh": [
+      "北京周边长城怎么选",
+      "八达岭慕田峪金山岭司马台比较",
+      "第一次去长城选哪一段"
+    ],
+    "ko": [
+      "베이징 만리장성 구간 추천",
+      "바다링 무톈위 진산링 쓰마타이 비교",
+      "처음 가는 만리장성 어디"
+    ]
+  }
+}
