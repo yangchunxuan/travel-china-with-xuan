@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Homeground China ten-city arrive, stay and depart map</title>
+  <desc id="desc">A schematic decision graphic connecting ten China gateway cities with the steps arrive, stay and depart. It is not a geographic or live transport map.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a74731"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#141413" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="#faf9f5"/>
+  <rect x="0" y="0" width="18" height="1000" fill="#a74731"/>
+
+  <text x="84" y="82" fill="#7f2e1d" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">HOMEGROUND CHINA · EDITORIAL DATA ASSET</text>
+  <text x="84" y="172" fill="#141413" font-family="Georgia, serif" font-size="72">Arrive → Stay → Depart</text>
+  <text x="84" y="226" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="28">Ten gateway cities for a first trip to China</text>
+
+  <rect x="84" y="292" width="610" height="420" rx="8" fill="#ffffff" stroke="#d8d8d1" filter="url(#shadow)"/>
+  <text x="128" y="348" fill="#141413" font-family="Georgia, serif" font-size="34">The decision chain</text>
+
+  <circle cx="150" cy="420" r="26" fill="#a74731"/>
+  <text x="150" y="429" text-anchor="middle" fill="#faf9f5" font-family="Arial, sans-serif" font-size="24" font-weight="700">1</text>
+  <text x="198" y="413" fill="#141413" font-family="Arial, sans-serif" font-size="24" font-weight="700">ARRIVE</text>
+  <text x="198" y="445" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="20">Copy the exact airport code, station or port.</text>
+
+  <line x1="150" y1="454" x2="150" y2="495" stroke="#a74731" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="150" cy="530" r="26" fill="#a74731"/>
+  <text x="150" y="539" text-anchor="middle" fill="#faf9f5" font-family="Arial, sans-serif" font-size="24" font-weight="700">2</text>
+  <text x="198" y="523" fill="#141413" font-family="Arial, sans-serif" font-size="24" font-weight="700">STAY</text>
+  <text x="198" y="555" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="20">Choose a base that fits arrival and the next day.</text>
+
+  <line x1="150" y1="564" x2="150" y2="605" stroke="#a74731" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="150" cy="640" r="26" fill="#a74731"/>
+  <text x="150" y="649" text-anchor="middle" fill="#faf9f5" font-family="Arial, sans-serif" font-size="24" font-weight="700">3</text>
+  <text x="198" y="633" fill="#141413" font-family="Arial, sans-serif" font-size="24" font-weight="700">DEPART</text>
+  <text x="198" y="665" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="20">Match the full ticketed station to the onward route.</text>
+
+  <rect x="84" y="742" width="610" height="126" rx="8" fill="#141413"/>
+  <text x="124" y="793" fill="#faf9f5" font-family="Georgia, serif" font-size="30">Same city does not mean same gateway.</text>
+  <text x="124" y="832" fill="#b0aea5" font-family="Arial, sans-serif" font-size="20">PEK ≠ PKX · PVG ≠ SHA · CTU ≠ TFU</text>
+
+  <text x="790" y="82" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">SCHEMATIC CORRIDOR VIEW · NOT TO SCALE</text>
+
+  <g fill="none" stroke="#d8d8d1" stroke-width="5" stroke-linecap="round">
+    <path d="M1185 190 L990 365 L820 530 L940 620 L1080 680 L1060 805 L1220 825 L1325 900"/>
+    <path d="M1185 190 L1390 425 L1300 550 L1080 680"/>
+    <path d="M990 365 L1390 425"/>
+    <path d="M820 530 L1060 805"/>
+    <path d="M1300 550 L1220 825"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(1185 190)">
+      <circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/>
+      <rect x="24" y="-34" width="204" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="42" y="-5" fill="#141413" font-size="22" font-weight="700">Beijing</text><text x="42" y="20" fill="#5f5f5a" font-size="16">PEK / PKX</text>
+    </g>
+    <g transform="translate(990 365)">
+      <circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/>
+      <rect x="-210" y="-34" width="184" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="-190" y="-5" fill="#141413" font-size="22" font-weight="700">Xi'an</text><text x="-190" y="20" fill="#5f5f5a" font-size="16">XIY / 3 stations</text>
+    </g>
+    <g transform="translate(1390 425)">
+      <circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/>
+      <rect x="-8" y="-94" width="170" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="10" y="-65" fill="#141413" font-size="22" font-weight="700">Shanghai</text><text x="10" y="-40" fill="#5f5f5a" font-size="16">PVG / SHA</text>
+    </g>
+    <g transform="translate(820 530)">
+      <circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/>
+      <rect x="-20" y="-96" width="188" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="0" y="-67" fill="#141413" font-size="22" font-weight="700">Chengdu</text><text x="0" y="-42" fill="#5f5f5a" font-size="16">CTU / TFU</text>
+    </g>
+    <g transform="translate(1300 550)">
+      <circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/>
+      <rect x="26" y="-14" width="188" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="44" y="15" fill="#141413" font-size="22" font-weight="700">Hangzhou</text><text x="44" y="40" fill="#5f5f5a" font-size="16">HGH / E / W</text>
+    </g>
+    <g transform="translate(940 620)">
+      <circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/>
+      <rect x="-206" y="-10" width="178" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="-188" y="19" fill="#141413" font-size="22" font-weight="700">Chongqing</text><text x="-188" y="44" fill="#5f5f5a" font-size="16">CKG / 4 stations</text>
+    </g>
+    <g transform="translate(1080 680)">
+      <circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/>
+      <rect x="26" y="-8" width="210" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="44" y="21" fill="#141413" font-size="22" font-weight="700">Zhangjiajie</text><text x="44" y="46" fill="#5f5f5a" font-size="16">City / Wulingyuan</text>
+    </g>
+    <g transform="translate(1060 805)">
+      <circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/>
+      <rect x="-250" y="-6" width="218" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="-232" y="23" fill="#141413" font-size="22" font-weight="700">Guilin / Yangshuo</text><text x="-232" y="48" fill="#5f5f5a" font-size="16">Rail / road / river</text>
+    </g>
+    <g transform="translate(1220 825)">
+      <circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/>
+      <rect x="20" y="-6" width="190" height="68" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="38" y="23" fill="#141413" font-size="22" font-weight="700">Guangzhou</text><text x="38" y="48" fill="#5f5f5a" font-size="16">CAN / 5 stations</text>
+    </g>
+    <g transform="translate(1325 900)">
+      <circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/>
+      <rect x="-236" y="22" width="226" height="54" rx="8" fill="#ffffff" stroke="#d8d8d1"/>
+      <text x="-216" y="55" fill="#141413" font-size="22" font-weight="700">Shenzhen · SZX / ports</text>
+    </g>
+  </g>
+
+  <line x1="84" y1="920" x2="694" y2="920" stroke="#d8d8d1"/>
+  <text x="84" y="954" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="17">Version 1.0 · Facts reviewed 23 Aug 2026 · homegroundchina.com</text>
+</svg>

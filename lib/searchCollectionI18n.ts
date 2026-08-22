@@ -226,6 +226,7 @@ export const searchCollections: readonly SearchCollectionDefinition[] = [
 const byId = new Map(searchCollections.map((collection) => [collection.id, collection]));
 
 const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
+  "first-trip-china-airport-station-stay-map": "transport-airports-rail-hubs",
   "zhangjiajie-itinerary": "plan-trip-length-city-order",
   "zhangjiajie-from-malaysia": "plan-traveller-theme-itineraries",
   "zhangjiajie-glass-bridge-vs-skywalk": "explore-attractions-nature-heritage",

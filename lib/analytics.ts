@@ -63,6 +63,8 @@ export const WEB_EVENTS_URL = trustedWebEventsUrl(configuredWebEventsUrl);
 export type HomegroundEventName =
   | "page_view"
   | "guide_cta_clicked"
+  | "linkable_asset_download_clicked"
+  | "linkable_asset_citation_copied"
   | "guide_search_opened"
   | "guide_search_submitted"
   | "guide_search_result_clicked"

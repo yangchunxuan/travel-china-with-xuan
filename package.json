@@ -2,6 +2,7 @@
   "name": "travel-china-with-xuan",
   "private": true,
   "scripts": {
+    "asset:ten-city": "node tools/build-first-trip-ten-city-assets.mjs",
     "guide:generate": "node tools/generate-guide-registry.mjs",
     "guide:check": "node tools/generate-guide-registry.mjs --check",
     "guide:check-parallel-merge": "node tools/check-parallel-guide-merge.mjs",

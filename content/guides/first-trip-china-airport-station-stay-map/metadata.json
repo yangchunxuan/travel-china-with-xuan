@@ -1,0 +1,61 @@
+{
+  "id": "first-trip-china-airport-station-stay-map",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "reference-map",
+  "topics": [
+    "airports",
+    "railway-stations",
+    "where-to-stay",
+    "gateway-selection",
+    "first-trip-china"
+  ],
+  "destinations": [
+    "beijing",
+    "shanghai",
+    "xian",
+    "chengdu",
+    "chongqing",
+    "guangzhou",
+    "shenzhen",
+    "hangzhou",
+    "guilin",
+    "yangshuo",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/first-trip-china-airport-station-stay-map/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/first-trip-china-airport-station-stay-map/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "sourceReviewedDate": "2026-08-23",
+  "search": {
+    "section": "transport",
+    "family": "relationship",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "bespoke"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/first-trip-china-airport-station-stay-map/",
+      "title": "China Airport, Railway Station and Where-to-Stay Map",
+      "headline": "First Trip to China: 10-City Airport, Station and Stay Map",
+      "description": "Match the right airport, railway station and first-trip stay area in ten China gateway cities, with wrong-node warnings and downloadable editorial graphics.",
+      "heroAlt": "Original schematic showing ten China gateway cities and the arrive, stay and depart decisions that connect them.",
+      "navTitle": "10-city arrival and stay map",
+      "featuredLinkLabel": "Match ten city gateways to stay areas",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "10-city map",
+        "Airports and stations",
+        "Where to stay"
+      ]
+    }
+  }
+}
