@@ -37,10 +37,20 @@ test("the homepage showcase keeps four equivalent decisions in every language", 
   }
 });
 
-test("the white homepage flows from guidance to a single bottom brand panel", async () => {
-  const [page, showcaseStyles, searchStyles, productStyles, productShowcase] = await Promise.all([
+test("the white homepage flows from guidance to one structured dark footer", async () => {
+  const [
+    page,
+    footer,
+    showcaseStyles,
+    footerStyles,
+    searchStyles,
+    productStyles,
+    productShowcase,
+  ] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomegroundFooter.tsx"),
     source("components/HomepageShowcase.module.css"),
+    source("components/HomepageFooter.module.css"),
     source("components/HomepageGuideSearch.module.css"),
     source("components/HomepageProductShowcase.module.css"),
     source("components/HomepageProductShowcase.tsx"),
@@ -50,12 +60,11 @@ test("the white homepage flows from guidance to a single bottom brand panel", as
     "<HomepageProductShowcase",
     "<HomepageGuideSearch",
     'id="homepage-decisions-title"',
-    'id="destinations"',
     "<HomepageGuideRail",
     "<PlanningScopeSection",
     'id="homepage-human-planning-title"',
     'id="faq"',
-    'className={showcaseStyles.principles}',
+    "<HomegroundFooter",
   ].map((marker) => page.indexOf(marker));
   assert.ok(orderedMarkers.every((position) => position >= 0));
   assert.deepEqual(orderedMarkers, [...orderedMarkers].sort((a, b) => a - b));
@@ -63,7 +72,18 @@ test("the white homepage flows from guidance to a single bottom brand panel", as
   assert.match(showcaseStyles, /--showcase-canvas: #fff/);
   assert.match(showcaseStyles, /--showcase-surface: #fff/);
   assert.match(showcaseStyles, /\.planningSection \{[\s\S]{0,100}background: #fff/);
-  assert.match(showcaseStyles, /\.principles \{[\s\S]{0,100}background: var\(--showcase-ink\)/);
+  assert.doesNotMatch(showcaseStyles, /\.principles\s*\{/);
+  assert.doesNotMatch(page, /className=\{showcaseStyles\.principles\}/);
+  assert.doesNotMatch(page, /<section[\s\S]{0,160}id="destinations"/);
+  assert.match(page, /destinationHubItems=\{destinationHubItems\}/);
+  assert.match(page, /variant="homepage"/);
+  assert.match(footer, /data-homeground-homepage-footer="structured-dark"/);
+  assert.match(footer, /id="destinations"/);
+  assert.match(footer, /id="studio"/);
+  assert.match(footerStyles, /\.footer \{[\s\S]{0,100}background: #141413/);
+  assert.match(footerStyles, /\.navGrid h2:focus-visible,[\s\S]{0,180}outline:/);
+  assert.doesNotMatch(footerStyles, /\.navGrid h2\s*\{[^}]*outline:\s*none/);
+  assert.doesNotMatch(footerStyles, /(?:linear|radial)-gradient|border-radius/);
   assert.match(
     searchStyles,
     /\.finder \{[\s\S]{0,260}background: var\(--hg-color-soft\)/,
@@ -125,8 +145,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   ]);
 
   assert.match(page, /aria-hidden="true"[\s\S]{0,90}decisionNumber/);
-  assert.match(page, /aria-hidden="true"[\s\S]{0,90}cityIndex/);
-  assert.match(page, /aria-hidden="true"[\s\S]{0,90}principleNumber/);
+  assert.doesNotMatch(page, /cityIndex|principleNumber/);
   assert.match(styles, /\.decisionCard:focus-visible[\s\S]{0,160}outline-offset: -2px/);
   assert.match(styles, /\.planningSectionResult \.planningIntro \{\s*display: none/);
   assert.match(styles, /\.planningSectionResult \.planningPanel[\s\S]{0,150}max-inline-size: 62rem/);

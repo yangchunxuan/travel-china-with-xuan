@@ -33,13 +33,6 @@
   overflow: clip;
 }
 
-.root > footer {
-  padding-inline: max(
-    var(--showcase-gutter),
-    calc((100% - var(--showcase-content)) / 2)
-  );
-}
-
 :global(html):has(.root),
 :global(body):has(.root) {
   background: #fff;
@@ -118,8 +111,7 @@
 }
 
 .primaryAction,
-.secondaryAction,
-.teamLink {
+.secondaryAction {
   align-items: center;
   border: 1px solid rgb(10 10 10 / 15%);
   border-radius: 999px;
@@ -157,8 +149,7 @@
 }
 
 .primaryAction:focus-visible,
-.secondaryAction:focus-visible,
-.teamLink:focus-visible {
+.secondaryAction:focus-visible {
   outline: 2px solid var(--showcase-focus);
   outline-offset: 2px;
 }
@@ -270,7 +261,6 @@
 }
 
 .decisionIntro h2,
-.principleIntro h2,
 .planningIntro h2 {
   font-family: var(--hg-ui-display);
   font-size: clamp(2.25rem, 4vw, 3rem);
@@ -282,7 +272,6 @@
 }
 
 .decisionIntro > p:last-child,
-.principleIntro > p:last-of-type,
 .planningIntro > p:last-of-type {
   color: var(--showcase-muted);
   font-size: 1rem;
@@ -374,7 +363,6 @@
 }
 
 .root :global(#homepage-guide-search-title),
-.root :global(#homepage-city-hubs-title),
 .root :global(#homepage-guide-rail-title),
 .root :global(#planning-proof-title),
 .root :global(#homepage-human-planning-title),
@@ -386,49 +374,10 @@
   line-height: 1.08;
 }
 
-.citySection {
-  --hg-home-content: var(--showcase-content);
-  --hg-home-gutter: var(--showcase-gutter);
-  --hg-home-section-space: var(--showcase-section-space);
-  background: #fff;
-  border-block-end-color: rgb(10 10 10 / 10%);
-}
-
-.citySection > div > div > p:first-child,
 .faqSection > div:first-child > p:first-child {
   color: var(--showcase-muted);
   font-weight: 500;
   letter-spacing: 0.035em;
-}
-
-.citySection nav > ul {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.cityLink {
-  display: grid;
-  font-weight: 600;
-  gap: 0.8rem;
-  grid-template-columns: 1.5rem minmax(0, 1fr) 1.125rem;
-}
-
-.cityLink .cityName,
-.cityLink .cityIndex {
-  overflow-wrap: normal;
-  word-break: keep-all;
-}
-
-.cityName {
-  white-space: nowrap;
-}
-
-.cityIndex {
-  color: rgb(10 10 10 / 35%);
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 650;
-  letter-spacing: 0.08em;
 }
 
 .planningSection {
@@ -492,86 +441,6 @@
   border-block-start: 1px solid rgb(10 10 10 / 10%);
 }
 
-.principles {
-  background: var(--showcase-ink);
-  color: #fff;
-  padding: var(--showcase-section-space)
-    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
-}
-
-.principleInner {
-  display: grid;
-  gap: 7rem;
-  grid-template-columns: minmax(19rem, 0.8fr) minmax(0, 1.2fr);
-  margin-inline: auto;
-  max-inline-size: var(--showcase-content);
-}
-
-.principleIntro {
-  align-self: start;
-  position: sticky;
-  top: calc(var(--showcase-header-height) + 3rem);
-}
-
-.principleIntro .eyebrow {
-  color: rgb(255 255 255 / 48%);
-}
-
-.principleIntro > p:last-of-type {
-  color: rgb(255 255 255 / 58%);
-  margin-inline: 0;
-}
-
-.principleList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.principleList li {
-  border-block-start: 1px solid rgb(255 255 255 / 18%);
-  display: grid;
-  gap: 1rem 1.5rem;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  padding: 1.75rem 0 2rem;
-}
-
-.principleNumber {
-  color: rgb(255 255 255 / 38%);
-  font-size: 0.72rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 650;
-  padding-block-start: 0.35rem;
-}
-
-.principleList h3 {
-  font-family: var(--hg-ui-display);
-  font-size: clamp(1.5rem, 2.3vw, 2.15rem);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.16;
-  margin: 0;
-}
-
-.principleList p {
-  color: rgb(255 255 255 / 58%);
-  font-size: 0.9rem;
-  line-height: 1.75;
-  margin: 0.75rem 0 0;
-  max-inline-size: 42rem;
-}
-
-.teamLink {
-  border-color: rgb(255 255 255 / 28%);
-  color: #fff;
-  margin-block-start: 1.75rem;
-}
-
-.teamLink:hover {
-  background: #fff;
-  color: var(--showcase-ink);
-}
-
 .root[data-homeground-locale="zh"] .heroEyebrow,
 .root[data-homeground-locale="ko"] .heroEyebrow,
 .root[data-homeground-locale="zh"] .eyebrow,
@@ -582,7 +451,6 @@
 
 .root[data-homeground-locale="zh"] .heroCopy h1,
 .root[data-homeground-locale="zh"] .decisionIntro h2,
-.root[data-homeground-locale="zh"] .principleIntro h2,
 .root[data-homeground-locale="zh"] .planningIntro h2 {
   font-weight: 500;
   letter-spacing: 0;
@@ -592,7 +460,6 @@
 
 .root[data-homeground-locale="ko"] .heroCopy h1,
 .root[data-homeground-locale="ko"] .decisionIntro h2,
-.root[data-homeground-locale="ko"] .principleIntro h2,
 .root[data-homeground-locale="ko"] .planningIntro h2 {
   font-weight: 400;
   letter-spacing: -0.016em;
@@ -611,21 +478,17 @@
 }
 
 .root[data-homeground-locale="zh"] .decisionCard h3,
-.root[data-homeground-locale="ko"] .decisionCard h3,
-.root[data-homeground-locale="zh"] .principleList h3,
-.root[data-homeground-locale="ko"] .principleList h3 {
+.root[data-homeground-locale="ko"] .decisionCard h3 {
   letter-spacing: 0;
   line-height: 1.35;
   word-break: keep-all;
 }
 
-.root[data-homeground-locale="zh"] .decisionCard h3,
-.root[data-homeground-locale="zh"] .principleList h3 {
+.root[data-homeground-locale="zh"] .decisionCard h3 {
   font-weight: 500;
 }
 
-.root[data-homeground-locale="ko"] .decisionCard h3,
-.root[data-homeground-locale="ko"] .principleList h3 {
+.root[data-homeground-locale="ko"] .decisionCard h3 {
   font-weight: 400;
 }
 
@@ -642,7 +505,6 @@
   }
 
   .heroInner,
-  .principleInner,
   .planningGrid,
   .decisionGrid {
     grid-template-columns: minmax(0, 1fr);
@@ -650,10 +512,6 @@
 
   .heroCopy {
     max-inline-size: 44rem;
-  }
-
-  .principleIntro {
-    position: static;
   }
 
   .planningPanel {
@@ -706,14 +564,12 @@
   }
 
   .decisionIntro h2,
-  .principleIntro h2,
   .planningIntro h2 {
     font-size: 1.875rem;
     line-height: 1.2;
   }
 
   .root :global(#homepage-guide-search-title),
-  .root :global(#homepage-city-hubs-title),
   .root :global(#homepage-guide-rail-title),
   .root :global(#planning-proof-title),
   .root :global(#homepage-human-planning-title),
@@ -723,13 +579,11 @@
     line-height: 1.2;
   }
 
-  .citySection,
   .faqSection {
     padding: var(--showcase-section-space) var(--showcase-gutter);
   }
 
-  .decisionGrid,
-  .citySection nav > ul {
+  .decisionGrid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -747,15 +601,6 @@
     font-size: 0.875rem;
   }
 
-  .principleInner {
-    gap: 2.75rem;
-  }
-
-  .principleList li {
-    gap: 0.8rem;
-    grid-template-columns: 1.75rem minmax(0, 1fr);
-    padding-block: 1.4rem 1.65rem;
-  }
 }
 
 @media (min-width: 64rem) {
@@ -793,8 +638,7 @@
     font-size: 2.25rem;
   }
 
-  .decisionCard,
-  .principleList li {
+  .decisionCard {
     overflow-wrap: anywhere;
   }
 }
@@ -823,8 +667,7 @@
   .heroAssurance,
   .decisionCard,
   .primaryAction,
-  .secondaryAction,
-  .teamLink {
+  .secondaryAction {
     border: 1px solid CanvasText;
   }
 }

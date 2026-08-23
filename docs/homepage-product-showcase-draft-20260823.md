@@ -21,9 +21,33 @@ The Zhangjiajie card is labelled `Private journey` / `私家行程` /
 `프라이빗 일정` and links to the existing localized published tour owner.
 This change creates no canonical identity, route or sitemap URL.
 
-The showcase sits directly after the hero, before search, decision and city
-directories. This gives the first strong China image and the real product a
-product-page position instead of burying them after the city Hub list.
+The showcase sits directly after the hero, before search and decision support.
+This gives the first strong China image and the real product a product-page
+position instead of burying them deep in the homepage.
+
+## Homepage simplification and footer decision
+
+The same Draft PR also removes two long body sections at the owner's direction:
+
+- the eight-card city directory;
+- the dark three-principle methodology panel.
+
+This is a visual relocation, not an SEO deletion. All eight reviewed,
+locale-matched destination-Hub links move into the homepage footer and still
+consume the single published destination registry. The existing
+`#destinations` and `#studio` navigation targets remain valid in that footer.
+
+The new homepage-only footer follows the restrained visual grammar observed on
+the current [Anthropic homepage](https://www.anthropic.com/): a full-width dark
+field, one brand rail, compact navigation columns, muted secondary type and
+unframed social icons. Homeground's own copy, routes, identity, fonts and brand
+mark remain original; no Anthropic trademark, text or asset is copied.
+
+The social row reserves X, Instagram, Facebook and YouTube. A profile becomes a
+link only after its exact public URL passes the platform allow-list. Facebook is
+already verified from the repository authority record. X, Instagram and
+YouTube remain visibly reserved but non-clickable until their exact URLs are
+configured; the implementation does not publish guessed or `#` links.
 
 ## Map boundary
 
@@ -50,13 +74,18 @@ article placement as a consequence of this homepage decision.
 
 ## Draft validation
 
-- Homepage-specific static tests: 21/21 passed.
+- Homepage, footer, brand, accessibility and deployment-contract tests: 49/49
+  passed.
 - Product/map placement contract: passed.
 - TypeScript: passed.
 - Source and production-export Chinese/Korean font coverage: passed.
 - Production build: 752/752 static pages generated; export and internal-link
   checks passed.
-- Visual QA: desktop 1440px and mobile 390px product and guide states checked
-  without horizontal overflow.
+- Production export: 739 HTML files and 136 client JavaScript files checked.
+- Visual QA: English, Chinese and Korean at desktop 1440px and mobile 390px;
+  no horizontal overflow, console warning or console error.
+- Full local suite: 577 passed, 1 skipped and 1 pre-existing Windows CRLF
+  checksum mismatch in the unchanged ten-city downloadable text asset. Linux CI
+  remains authoritative for that byte-integrity check.
 
 These checks describe the draft branch only and are not production evidence.

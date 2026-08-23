@@ -694,48 +694,6 @@ export function HomegroundHomePage({
           </nav>
         </section>
 
-        <section
-          className={`${styles.cityHubSection} ${showcaseStyles.citySection}`}
-          id="destinations"
-          aria-labelledby="homepage-city-hubs-title"
-        >
-          <div className={styles.cityHubInner}>
-            <div className={styles.cityHubIntro}>
-              <p className={styles.eyebrowDark}>{copy.cities.eyebrow}</p>
-              <h2 id="homepage-city-hubs-title" tabIndex={-1}>
-                {copy.cities.title}
-              </h2>
-              <p>{copy.cities.intro}</p>
-            </div>
-            <nav aria-label={copy.cities.listLabel}>
-              <ul className={styles.cityHubList}>
-                {destinationHubItems.map((city) => {
-                  const cityIndex = destinationHubItems.indexOf(city);
-                  return (
-                    <li key={city.id}>
-                      <a
-                        className={`${styles.cityHubLink} ${showcaseStyles.cityLink}`}
-                        href={city.href}
-                      >
-                        <span
-                          aria-hidden="true"
-                          className={showcaseStyles.cityIndex}
-                        >
-                          {String(cityIndex + 1).padStart(2, "0")}
-                        </span>
-                        <span className={showcaseStyles.cityName}>
-                          {city.label}
-                        </span>
-                        <ArrowRight aria-hidden="true" size={18} />
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </div>
-        </section>
-
         <HomepageGuideRail
           catalogUrl={guideRailCatalogPath}
           categoryLabels={guideCategoryLabels}
@@ -934,47 +892,13 @@ export function HomegroundHomePage({
           </div>
         </section>
 
-        <section
-          className={showcaseStyles.principles}
-          id="studio"
-          aria-labelledby="studio-title"
-        >
-          <div className={showcaseStyles.principleInner}>
-            <div className={showcaseStyles.principleIntro}>
-              <p className={showcaseStyles.eyebrow}>
-                {showcase.principles.eyebrow}
-              </p>
-              <h2 id="studio-title" tabIndex={-1}>
-                {showcase.principles.title}
-              </h2>
-              <p>{showcase.principles.intro}</p>
-              <a className={showcaseStyles.teamLink} href={studioPath}>
-                {showcase.principles.teamAction}
-                <ArrowRight aria-hidden="true" size={17} />
-              </a>
-            </div>
-
-            <ol className={showcaseStyles.principleList}>
-              {showcase.principles.items.map((principle, index) => (
-                <li key={principle.title}>
-                  <span
-                    aria-hidden="true"
-                    className={showcaseStyles.principleNumber}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3>{principle.title}</h3>
-                    <p>{principle.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
       </main>
 
-      <HomegroundFooter locale={locale} />
+      <HomegroundFooter
+        destinationHubItems={destinationHubItems}
+        locale={locale}
+        variant="homepage"
+      />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(identitySchema) }} />
     </div>

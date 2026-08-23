@@ -25,16 +25,6 @@ interface HomepageShowcaseCopy {
       readonly action: string;
     }[];
   };
-  readonly principles: {
-    readonly eyebrow: string;
-    readonly title: string;
-    readonly intro: string;
-    readonly teamAction: string;
-    readonly items: readonly {
-      readonly title: string;
-      readonly body: string;
-    }[];
-  };
   readonly planning: {
     readonly eyebrow: string;
     readonly title: string;
@@ -89,30 +79,6 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         },
       ],
     },
-    principles: {
-      eyebrow: "How we judge a route",
-      title: "A China trip should work beyond the screen.",
-      intro:
-        "A useful plan still makes sense after luggage, queues and the last mile are added.",
-      teamAction: "Meet the Homeground team",
-      items: [
-        {
-          title: "Plan the whole travel day.",
-          body:
-            "We count the airport, station, luggage, check-in, queues and last mile—not only the time at the sight.",
-        },
-        {
-          title: "Say what was checked—and when.",
-          body:
-            "Rules, schedules and booking conditions change. For time-sensitive guidance, we show the review date, cite sources and flag what to check again before travel.",
-        },
-        {
-          title: "Keep one planning thread.",
-          body:
-            "Cities, stays, transport and daily pace should answer to the same journey—not separate recommendations.",
-        },
-      ],
-    },
     planning: {
       eyebrow: "A local planner, when you want one",
       title: "Keep what already works. Hand us the difficult parts.",
@@ -161,26 +127,6 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         },
       ],
     },
-    principles: {
-      eyebrow: "我们如何判断一条路线",
-      title: "一趟中国旅行，不能只在屏幕上看起来合理。",
-      intro: "真正有用的方案，是把行李、排队和最后一公里算进去后仍然成立。",
-      teamAction: "认识 Homeground 团队",
-      items: [
-        {
-          title: "按完整旅行日来安排。",
-          body: "不只算景区里的时间，也把机场、车站、行李、入住、排队与最后一公里算进去。",
-        },
-        {
-          title: "说明核对了什么、何时核对。",
-          body: "规定、班次和预约条件会变化。对时效性强的指南，我们标明核对日期、列出来源，并提示出发前需要再次确认的内容。",
-        },
-        {
-          title: "整趟行程只用一条逻辑。",
-          body: "城市、住宿、交通和每天节奏应服务于同一趟旅行，而不是各说各话。",
-        },
-      ],
-    },
     planning: {
       eyebrow: "需要时，交给中国本地旅行规划师",
       title: "留下已经安排好的，把难处理的部分交给我们。",
@@ -226,26 +172,6 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
           title: "일정이 너무 빠듯한지 확인하기",
           body: "예약을 확정하기 전에 도시 순서, 숙소 변경 횟수와 이동 후 여유 시간을 확인합니다.",
           action: "무리 없는 일정 만들기",
-        },
-      ],
-    },
-    principles: {
-      eyebrow: "동선을 판단하는 기준",
-      title: "중국 여행은 화면 밖에서도 실제로 성립해야 합니다.",
-      intro: "짐, 대기와 마지막 이동까지 더해도 성립하는 일정이 실제로 쓸 수 있는 일정입니다.",
-      teamAction: "Homeground 팀 만나기",
-      items: [
-        {
-          title: "여행일 전체를 설계합니다.",
-          body: "관광지 안의 시간뿐 아니라 공항, 역, 짐, 체크인, 대기와 마지막 이동까지 함께 봅니다.",
-        },
-        {
-          title: "무엇을 언제 확인했는지 밝힙니다.",
-          body: "규정, 운행 일정과 예약 조건은 달라질 수 있습니다. 시의성이 중요한 가이드는 검토 날짜와 출처를 밝히고, 출발 전 다시 확인할 항목을 표시합니다.",
-        },
-        {
-          title: "하나의 여행 흐름을 지킵니다.",
-          body: "도시, 숙소, 교통과 하루의 속도가 따로 놀지 않고 같은 여행을 완성해야 합니다.",
         },
       ],
     },

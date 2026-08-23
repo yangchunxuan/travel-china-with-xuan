@@ -7,6 +7,12 @@ import {
   HOMEGROUND_BRAND_SLOGAN,
   getHomegroundCopy,
 } from "../../lib/homegroundI18n.ts";
+import {
+  trustedFacebookPageUrl,
+  trustedInstagramProfileUrl,
+  trustedXProfileUrl,
+  trustedYouTubeProfileUrl,
+} from "../../lib/homegroundSocial.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) => readFile(new URL(path, repositoryRoot), "utf8");
@@ -96,6 +102,52 @@ test("the shared graph has one TravelAgency identity and one website name", asyn
   );
   assert.match(social, /getHomegroundSocialProfileUrls/u);
   assert.match(social, /getHomegroundFacebookPageUrl\(\)/u);
+  assert.match(social, /getHomegroundSocialProfiles/u);
+  assert.match(social, /getHomegroundXProfileUrl\(\)/u);
+  assert.match(social, /getHomegroundInstagramProfileUrl\(\)/u);
+  assert.match(social, /getHomegroundYouTubeProfileUrl\(\)/u);
+});
+
+test("homepage social profiles accept only exact public profile URLs", async () => {
+  assert.equal(
+    trustedFacebookPageUrl(
+      "https://www.facebook.com/profile.php?id=61591910731724",
+    ),
+    "https://www.facebook.com/profile.php?id=61591910731724",
+  );
+  assert.equal(
+    trustedXProfileUrl("https://www.x.com/homegroundchina/"),
+    "https://x.com/homegroundchina",
+  );
+  assert.equal(
+    trustedInstagramProfileUrl("https://instagram.com/homegroundchina"),
+    "https://www.instagram.com/homegroundchina/",
+  );
+  assert.equal(
+    trustedYouTubeProfileUrl("https://youtube.com/@homegroundchina"),
+    "https://www.youtube.com/@homegroundchina",
+  );
+
+  for (const unsafe of [
+    "http://x.com/homegroundchina",
+    "https://x.com/homegroundchina/status/1",
+    "https://homegroundchina.com/x",
+    "https://homegroundchina@x.com/homegroundchina",
+    "https://instagram.com/homegroundchina?hl=en",
+    "https://instagram.com/homeground..china",
+    "https://instagram.com/.homegroundchina",
+    "https://youtube.com/watch?v=not-a-profile",
+  ]) {
+    assert.equal(trustedXProfileUrl(unsafe), "");
+    assert.equal(trustedInstagramProfileUrl(unsafe), "");
+    assert.equal(trustedYouTubeProfileUrl(unsafe), "");
+  }
+
+  const footer = await source("components/HomegroundFooter.tsx");
+  assert.match(footer, /socialProfiles\.map\(\(profile\) =>/u);
+  assert.match(footer, /profile\.url \? \(/u);
+  assert.match(footer, /data-social-profile-status="pending"/u);
+  assert.doesNotMatch(footer, /href=["{]#(?:["}])/u);
 });
 
 test("active brand surfaces no longer publish superseded identities", async () => {
