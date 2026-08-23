@@ -14,10 +14,10 @@ export interface HomepageProductShowcaseCopy {
 
 const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
   en: {
-    eyebrow: "Private tours in China",
-    title: "Choose the route that fits your trip.",
-    intro: (productCount) =>
-      `Compare ${productCount} private journeys across China. Each page sets out the duration, stays, transport, day-by-day plan and published prices. Choose a route, then we confirm rooms, vehicle and admissions for your dates.`,
+    eyebrow: "Private China Tours",
+    title: "A route that works, with every cost made clear.",
+    intro: (_productCount) =>
+      "No shopping stops and no unlisted extras introduced along the way. Each itinerary clearly sets out the day-by-day plan, accommodation standard, transport, guide arrangements, included admissions and starting price. Once we have your dates, we check current availability and confirm the final inclusions, exclusions and total price in writing before payment.",
     countLabel: (productCount) => `${productCount} journeys`,
     durationLabel: (days, nights) =>
       `${days} ${days === 1 ? "day" : "days"} · ${nights} ${nights === 1 ? "night" : "nights"}`,
@@ -28,10 +28,10 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
     productListLabel: "Homeground China private tours",
   },
   zh: {
-    eyebrow: "中国私家旅行产品",
-    title: "选一条适合你的路线。",
-    intro: (productCount) =>
-      `这里有 ${productCount} 条可以直接比较的私家路线。每一页都写清天数、住宿、交通、每日安排和公开价格；选中之后，再按真实日期核对房间、车辆和门票。`,
+    eyebrow: "中国私人团",
+    title: "路线走得通，费用也说得清。",
+    intro: (_productCount) =>
+      "不安排购物店，也不把自费项目留到途中才告诉你。每条路线都写清每天怎么玩、住宿标准、交通方式、导游安排、所含门票和基础价格。确定日期后，我们会核对实际余位，并在付款前书面确认最终包含项、不包含项和总价。",
     countLabel: (productCount) => `${productCount} 条路线`,
     durationLabel: (days, nights) => `${days}天 · ${nights}晚`,
     productLabel: "私家行程",
@@ -41,10 +41,10 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
     productListLabel: "Homeground 中国私家旅行产品",
   },
   ko: {
-    eyebrow: "중국 프라이빗 투어",
-    title: "내 여행에 맞는 코스를 골라 보세요.",
-    intro: (productCount) =>
-      `중국 각지를 잇는 ${productCount}개의 프라이빗 일정을 한눈에 비교할 수 있습니다. 각 페이지에 기간, 숙박, 이동, 날짜별 일정과 공개 요금을 명확히 안내하며, 코스를 고르면 실제 날짜의 객실, 차량과 입장권을 확인합니다.`,
+    eyebrow: "중국 단독여행",
+    title: "일정도 비용도, 출발 전에 분명하게.",
+    intro: (_productCount) =>
+      "쇼핑 일정이 없으며, 여행 중 사전에 안내되지 않은 추가 비용을 요구하지 않습니다. 각 상품에는 일자별 일정, 숙박 기준, 이동 방식, 가이드 일정, 포함 입장권과 기준 요금이 명시됩니다. 출발일을 알려 주시면 실제 예약 가능 여부를 확인하고, 결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내합니다.",
     countLabel: (productCount) => `${productCount}개 일정`,
     durationLabel: (days, nights) => `${days}일 · ${nights}박`,
     productLabel: "프라이빗 투어",

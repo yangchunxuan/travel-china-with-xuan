@@ -509,7 +509,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "Is this a fixed group tour?",
           answer:
-            "No. You do not have to join a fixed group. Homeground can plan for solo travellers, couples, families, friends or a private group travelling together.",
+            "Not by default. The published price is for a private itinerary for you and your companions; we will not place you in a shared tour without telling you. If keeping the price down matters more, tell us which shared arrangements you would consider. We can check small-group tours, shared transfers or public transport options and identify every shared element in writing before payment.",
         },
         {
           question: "Can I get in touch if I only have a rough idea?",
@@ -1050,7 +1050,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "这是固定跟团游吗？",
           answer:
-            "不是。你不需要参加固定团。Homeground 可以为个人、情侣、家庭、朋友或自组小团提供规划。",
+            "默认不是。页面价格按你和同行者的私家行程设计，不会在未说明的情况下临时并入陌生人的旅游团。如果你更希望控制预算，可以告诉我们愿意接受哪些共享安排；我们会另行核对小团、拼车或公共交通方案，并在付款前写清哪些环节需要与其他游客共同使用。",
         },
         {
           question: "我只有一个大概想法，也可以联系吗？",
@@ -1560,7 +1560,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "정해진 단체 패키지여행인가요?",
           answer:
-            "아니요. 정해진 단체 패키지에 참여할 필요가 없습니다. Homeground는 혼자, 커플, 가족, 친구 또는 단독 소그룹 여행을 계획할 수 있습니다.",
+            "기본은 아닙니다. 공개 요금은 예약한 일행만을 위한 단독 일정 기준이며, 사전 안내 없이 다른 팀과 합류시키지 않습니다. 비용을 낮추는 것이 더 중요하다면 소그룹 투어, 합승 차량 또는 대중교통 중 허용 가능한 방식을 알려 주세요. 가능한 대안을 확인한 뒤 공동 이용 구간을 결제 전에 서면으로 명시합니다.",
         },
         {
           question: "아직 대략적인 생각만 있어도 문의할 수 있나요?",

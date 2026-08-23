@@ -182,13 +182,35 @@ test("the homepage product showcase exposes all nine published tours without gui
   assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
   assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
 
+  const trustCopy = {
+    en: {
+      noShopping: /No shopping stops/,
+      writtenScope: /final inclusions, exclusions and total price in writing before payment/,
+      budgetAlternative: /small-group tours, shared transfers or public transport options/,
+    },
+    zh: {
+      noShopping: /不安排购物店/,
+      writtenScope: /付款前书面确认最终包含项、不包含项和总价/,
+      budgetAlternative: /小团、拼车或公共交通方案/,
+    },
+    ko: {
+      noShopping: /쇼핑 일정이 없으며/,
+      writtenScope: /결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내/,
+      budgetAlternative: /소그룹 투어, 합승 차량 또는 대중교통/,
+    },
+  };
+
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageProductShowcaseCopy(locale);
+    const homeCopy = getHomegroundCopy(locale);
     assert.ok(copy.title.length > 8);
     assert.ok(copy.intro(9).length > 60);
     assert.match(copy.countLabel(9), /9/);
     assert.match(copy.durationLabel(5, 4), /5/);
     assert.ok(copy.availabilityNote.length > 30);
+    assert.match(copy.intro(9), trustCopy[locale].noShopping);
+    assert.match(copy.intro(9), trustCopy[locale].writtenScope);
+    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].budgetAlternative);
   }
 });
 
