@@ -1299,3 +1299,55 @@ facts, names and trademarks are excluded from that grant.
 | National web PNG | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1.png`; 1600 × 1000; `a1376cd3712dd8caf05a9d4b2fd029ac03e43b72695dfd64769bef285d7171fe` | Deterministic derivative; CC BY 4.0; AI: no | Same editorial schematic and limitations as the hero. |
 | National high-density PNG | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1@2x.png`; 3200 × 2000; `c8af8bb338306c21171820a593a62b4d4403b9bb160d339daa705d82d6ae1cb4` | Deterministic derivative; CC BY 4.0; AI: no | Same editorial schematic and limitations as the hero. |
 | Complete download pack | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip`; `ffeb9b0aa82bc101266ee280a7c388a4bf60b8fccf6d89e411f45eb5e8eed028` | Deterministic 30-file ZIP with ten city-card pairs, data, licence, sources and checksums; CC BY 4.0 scope is stated inside the pack | Operational facts can change. The included `SHA256SUMS.txt` verifies the 29 content files packaged before the ZIP itself. |
+
+## Private-tour product photographs (August 23, 2026)
+
+These five product assets are real photographs. Three were reused from existing
+Homeground worktrees after their source, licence and derivative checksum were
+rechecked; two Harbin photographs were downloaded directly from their Commons
+file records and conventionally cropped/resized. No scene element was generated,
+added, removed or composited; this batch therefore contains **0 / 5
+AI-generated or AI-assisted images**.
+
+| Product and role | Original source, place or object, creator and rights | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| `shanghai-suzhou-5-day-private-tour` — Zhujiajiao | [1 zhujiajiao ancient water town 2023.jpg](https://commons.wikimedia.org/wiki/File:1_zhujiajiao_ancient_water_town_2023.jpg), Zhujiajiao, Qingpu District, Shanghai; Chensiyuan; 2023-12-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/tours/shanghai-suzhou-5-day-private-tour/zhujiajiao-water-town.jpg`; 1920 × 1280; `2c4bd8e200fd3834eeab1618787d39e8f3ddf2bdac0dd26890a7a18cf25406be` | Identifies a real Zhujiajiao canal scene. It does not prove current boat operation, admission, crowding, water level or the route taken by this product. |
+| `shanghai-suzhou-5-day-private-tour` — Humble Administrator's Garden | [Humble Administrator's Garden.JPG](https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden.JPG), Humble Administrator's Garden, Suzhou; Han Duyi; 2009; [Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0/) | `public/images/tours/shanghai-suzhou-5-day-private-tour/humble-administrators-garden.jpg`; 1280 × 1707; `5d9cd6a6611e17b458ebdbcc69dcb73b5974bf745356b591a5d86a0dc3af70e0` | Identifies the garden's lotus pond and planted landscape. It does not prove current flowers, weather, opening, ticket inventory, route or accessibility. |
+| `harbin-winter-5-day-private-tour` — Ice and Snow World | [Harbin Ice & Snow Festival 2026 — Ice slide](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Ice_slide.jpg), Harbin Ice and Snow World; Garosio33; 2026-01-15; [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `public/images/tours/harbin-winter-5-day-private-tour/ice-slide-1600.webp`; 1600 × 1000; `6ff4eb7ce5b59edef2dca421ab061696cf312fa7af37736ab70ac7adc9d55a72` | Shows the real ice-slide complex at the source date. It proves no later season's opening date, operating status, ticket, temperature or programme. |
+| `harbin-winter-5-day-private-tour` — Saint Sophia Cathedral | [Saint Sophia Cathedral, Harbin 4.jpg](https://commons.wikimedia.org/wiki/File:Saint_Sophia_Cathedral,_Harbin_4.jpg), Saint Sophia Cathedral square, Harbin; Yan Enming; 2018-01-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Source SHA-256 `55b1b91f116b0e89703579e44ddd26d27c9eb8fd54645addb784de661ea34077`; `public/images/tours/harbin-winter-5-day-private-tour/saint-sophia-winter-1600.jpg`; 1600 × 1000; `3939ff07079a4eb2b58ef427f5a23b569d056ae70dc47ad8eb809233e68e9003` | Shows the cathedral and a snow-covered square at night on the source date. It proves no current access, lighting schedule, weather, renovation or event arrangement. |
+| `harbin-winter-5-day-private-tour` — Central Street | [Central Street (Zhongyang Dajie), Harbin 16.jpg](https://commons.wikimedia.org/wiki/File:Central_Street_(Zhongyang_Dajie),_Harbin_16.jpg), Central Street, Harbin; Yan Enming; 2018-01-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Source SHA-256 `f5db24f5f740b2368129d53abdd64a082d5dd0c95824baafbd5efece93eef722`; `public/images/tours/harbin-winter-5-day-private-tour/central-street-winter-1600.jpg`; 1600 × 1000; `c3679264ae48bb1d3eecf927518f559c39c49d2f32c073b10cc5e9dbd8a4fecd` | Shows a real snowy street scene at the source date. It proves no current business, street programme, snow conditions, crowd or accessibility. |
+
+### Shanghai–Suzhou–Hangzhou product carousel and day media
+
+The six-day Shanghai–Suzhou–Hangzhou product uses five existing real
+photographs in its interactive hero. Its day-by-day sequence reuses documented
+Homeground photographs and adds four location-verified real photographs for
+Panmen, Suzhou Museum, Pingjiang Road and Lingyin–Feilai Peak. The earlier route
+schematic and the unverified `hangzhou-west-lake.jpg` candidate are not used.
+No image was generated, extended or composited, so this product contains
+**0 AI-generated or AI-assisted images**.
+
+| Role | Existing production asset and SHA-256 | Existing provenance record | Evidence boundary |
+| --- | --- | --- | --- |
+| Shanghai hero | `public/images/destinations/shanghai/hero-1600.webp`; `379eee1ab33b9150b2279f924c39b83e4812c377b481c581296d82711f0911a7` | Destination hub pilot — Shanghai hero | Shanghai skyline and two-bank relationship only. |
+| The Bund | `public/images/destinations/shanghai/bund-architecture-1200.webp`; `70db0b89112ca78aa4ab9564e0e2b04d88a5b4c56825949d3ec53c62dad11d02` | Destination hub pilot — Shanghai Bund figure | Historic street-wall character only. |
+| Suzhou | `public/images/tours/shanghai-suzhou-5-day-private-tour/humble-administrators-garden.jpg`; `5d9cd6a6611e17b458ebdbcc69dcb73b5974bf745356b591a5d86a0dc3af70e0` | Private-tour product photographs — Humble Administrator's Garden | Identifies the garden, not current flowers, weather, access or ticket inventory. |
+| Hangzhou tea landscape | `public/images/guides/tea-landscape-regions-of-china/hero-1600.webp`; `850cc08ba0c9269eee658fd7db34f46e14494a3d02ecef28f224d83802eb0561` | Employee 3 production-material hero completion — Meijiawu | Identifies the broad Meijiawu tea-garden setting only. |
+| West Lake | `public/images/home/hangzhou-1600.jpg`; `c2833ac865a0652cc932e5e5aea6b5e9e04f06b486a9e5c1ca3d8f1664a1e057` | City destination hubs — Hangzhou hero | Identifies the broad West Lake landscape only; no route, boat or weather guarantee. |
+
+The mobile day modules also reuse the documented Shanghai hero, Bund, Suzhou
+Creek, Humble Administrator's Garden, West Lake, Broken Bridge and Hangzhou East
+station assets. Their day-primary assignments are unique, so D3 and D4 no longer
+resolve to the same Suzhou photograph.
+
+| Day media role | Original source, creator and rights | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| D3 — Panmen | [Panmen.JPG](https://commons.wikimedia.org/wiki/File:Panmen.JPG), Suzhou Panmen; 劉善謙; 2010-01-28; public-domain dedication. Source SHA-256 `bd58e8bb528da199ee1c0cf0b283d4b1afb878afbfb1ef6b0606adcd53fc13b9` | `public/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/panmen-1600.webp`; 1600 × 1000; `ce1f05a14d61a3bf49b3fd67b276c0b4c7a102149327a48de194c72a7bb49e65` | Identifies Panmen's wall, gate and waterway on the source date. Panmen is one of the published D3 choices; the image does not imply that it is selected for every booking. |
+| D4 — Suzhou Museum | [Suzhoumuseum.jpg](https://commons.wikimedia.org/wiki/File:Suzhoumuseum.jpg), Suzhou Museum garden court; Universe729; photographed 2006-10-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Source SHA-256 `9c4128e1b55f40321721dce1242494c6cbc4798a375a74b2687382a1107c69d0` | `public/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/suzhou-museum-1600.webp`; 1600 × 1000; `fbf3fbb3fdc6666f272982c8a16eeaa628b8aa7e2e975a3f99944aacff3e7296` | Identifies one museum courtyard view only; it does not prove current opening, reservation availability, exhibitions or access. |
+| D4 — Pingjiang Road | [A stone arch bridge in Pingjiang Road, Suzhou.jpg](https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_Pingjiang_Road,_Suzhou.jpg), Pingjiang Road; kevinmcgill; 2012-01-04; [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Source SHA-256 `41eb910e80e988751ee1ed340408203210d9bb2f62b4e75e2b8a38f9a793151a` | `public/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/pingjiang-road-1600.webp`; 1600 × 1000; `82362bd9d04c19906444c1c7418cc86f4fa65019a0a118587f9fe3854f67ae8f` | Identifies one canal, bridge and streetscape on Pingjiang Road at the source date; it does not prove current crowding, businesses or walking conditions. |
+| D5 — Lingyin–Feilai Peak | Homeground local file `/Users/yangchunxuan/Desktop/Facebook图片素材/杭州优选素材/03_灵隐寺寺院与古建/杭州灵隐寺飞来峰石刻.jpg`; owner-organised library authorised for Homeground website use on 2026-08-10; photographer and capture date not separately recorded. Source SHA-256 `1177419941f3f9b49d65b4404c87b3eeb8fea066e5b58a873070befabc34bd32` | `public/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/lingyin-feilai-peak-1600.webp`; 1600 × 1000; `8ee2e09170e0fbd6ae2807ea97269ff4f5e4e02edc30eb3cb37401758ddb9655` | Library-labelled Feilai Peak Buddhist carvings beside Lingyin Temple only; not proof of current access, opening, route or crowding. |
+
+These four derivatives were centre-cropped to 16:10, resized and converted to
+WebP without copying source EXIF, GPS or device metadata. The three
+Creative-Commons derivatives retain their stated licences; no scene content was
+added, removed or generated.
