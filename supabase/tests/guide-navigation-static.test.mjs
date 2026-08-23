@@ -17,31 +17,52 @@ const articleComponents = [
   "components/ChinaItineraryWithOlderParentsPage.tsx",
 ];
 
-test("global navigation keeps one four-item information architecture", async () => {
-  const [header, footer, css] = await Promise.all([
+test("global navigation keeps one distinct four-item information architecture", async () => {
+  const [header, footer, css, model] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundFooter.tsx"),
     source("components/HomegroundHeader.module.css"),
+    source("lib/homegroundNavigationModel.ts"),
   ]);
 
-  for (const label of ["Travel guides", "旅行指南", "여행 가이드"]) {
-    assert.match(header, new RegExp(label));
-    assert.match(footer, new RegExp(label));
+  for (const label of [
+    "Destinations",
+    "目的地",
+    "여행지",
+    "First trip",
+    "第一次去中国",
+    "첫 중국 여행",
+    "All guides",
+    "全部指南",
+    "전체 가이드",
+    "How we plan",
+    "我们如何规划",
+    "여행 설계 방식",
+  ]) {
+    assert.match(model, new RegExp(label));
   }
 
   assert.match(header, /\| "guides"/);
   assert.match(header, /\| "search"/);
+  assert.match(header, /\| "plan"/);
   assert.match(header, /\| "destinations"/);
   assert.match(header, /\| "destination"/);
   assert.match(header, /pageContext === "guide" \|\|/);
   assert.match(header, /const guidesAreExact =/);
-  assert.match(header, /data-active=\{guidesAreCurrent \? "true" : undefined\}/);
-  assert.match(header, /const destinationsHref = `\$\{copy\.path\}explore\/`/);
-  assert.match(header, /copy\.cities\.eyebrow/);
-  assert.match(header, /copy\.navigation\.planning/);
-  assert.match(header, /copy\.navigation\.faq/);
+  assert.match(header, /getHomegroundNavigationModel\(locale, copy\.path\)/);
+  assert.match(header, /primaryNavigation\.items\.map/);
+  assert.match(header, /const firstTripIsCurrent = pageContext === "plan"/);
+  assert.doesNotMatch(header, /copy\.cities\.eyebrow/);
+  assert.doesNotMatch(header, /copy\.navigation\.faq/);
   assert.doesNotMatch(header, /getGuideSearchCopy|Trip planning services|旅行规划服务|여행 설계 서비스/);
-  assert.equal(header.match(/aria-hidden="true">0[1-4]/g)?.length, 4);
+  assert.doesNotMatch(header, /String\(index \+ 1\)\.padStart/);
+  assert.match(
+    model,
+    /homegroundPrimaryNavigationIds = \[[\s\S]*"destinations"[\s\S]*"first-trip"[\s\S]*"guides"[\s\S]*"studio"/,
+  );
+  for (const pathSegment of ["explore/", "plan/", "guides/", "studio/"]) {
+    assert.match(model, new RegExp(`pathSegment: "${pathSegment}"`));
+  }
   assert.equal(
     header.match(/pageContext === "guides"[\s\S]{0,90}`\$\{target\.path\}guides\/`/g)
       ?.length,
@@ -59,6 +80,7 @@ test("global navigation keeps one four-item information architecture", async () 
     /@media \(max-width: 1179\.98px\)[\s\S]*?\.mobileNav \{[\s\S]*?position: fixed;/,
   );
   assert.match(css, /:focus-visible/);
+  assert.match(css, /\.mobileNavCopy small \{/);
 });
 
 test("all public page families use the shared header", async () => {

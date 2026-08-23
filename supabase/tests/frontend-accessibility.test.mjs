@@ -249,13 +249,10 @@ test("all production same-page links preserve planner history depth", async () =
     );
   }
 
-  assert.match(header, /const studioHref = `\$\{copy\.path\}studio\/`/);
+  assert.match(header, /getHomegroundNavigationModel\(locale, copy\.path\)/);
   assert.doesNotMatch(header, /href="#studio"/);
-  assert.match(header, /const faqHref = pageContext === "home" \? "#faq"/);
-  assert.equal(
-    header.match(/handleHomegroundHashClick\(event, "#faq"\)/g)?.length,
-    2,
-  );
+  assert.doesNotMatch(header, /copy\.navigation\.faq/);
+  assert.doesNotMatch(header, /handleHomegroundHashClick\(event, "#faq"\)/);
 });
 
 test("same-page navigation moves keyboard focus to its content target", async () => {

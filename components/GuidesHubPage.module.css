@@ -148,52 +148,6 @@
   max-width: 34rem;
 }
 
-.collectionNav {
-  border-block-end: 1px solid var(--guides-line);
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-
-.collectionNav > div {
-  display: grid;
-  grid-template-columns: repeat(9, minmax(8.2rem, 1fr));
-  margin-inline: auto;
-  max-width: 1380px;
-  min-width: 76rem;
-}
-
-.collectionNav a {
-  border-inline-end: 1px solid var(--guides-line);
-  color: var(--guides-ink);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 5.7rem;
-  padding: 1rem 1.15rem;
-  text-decoration: none;
-}
-
-.collectionNav a:first-child {
-  border-inline-start: 1px solid var(--guides-line);
-}
-
-.collectionNav a:hover,
-.collectionNav a:focus-visible {
-  background: var(--guides-soft);
-}
-
-.collectionNav span {
-  font-size: 0.82rem;
-  font-weight: 760;
-}
-
-.collectionNav small {
-  color: var(--guides-muted);
-  font-size: 0.72rem;
-  line-height: 1.35;
-  margin-block-start: 0.35rem;
-}
-
 .countryGuide {
   background: var(--guides-soft);
   border-block-end: 1px solid var(--guides-line);
@@ -712,27 +666,6 @@
 }
 
 @media (max-width: 48rem) {
-  .collectionNav {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      #000 0,
-      #000 calc(100% - 2.75rem),
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      #000 0,
-      #000 calc(100% - 2.75rem),
-      transparent 100%
-    );
-    scroll-padding-inline: 1rem;
-    scroll-snap-type: x proximity;
-  }
-
-  .collectionNav a {
-    scroll-snap-align: start;
-  }
-
   .heroTopline {
     align-items: flex-start;
     flex-direction: column;
@@ -872,8 +805,6 @@
   .decisionGrid li,
   .decisionAction,
   .guideSlot,
-  .collectionNav,
-  .collectionNav a,
   .guideCount,
   .readGuide,
   .guideTags li {

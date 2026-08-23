@@ -23,11 +23,11 @@ import {
 import {
   getSearchPlatformCopy,
   getSearchSectionPath,
-  searchSectionIds,
 } from "../lib/searchPlatformI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { GuideSearchForm } from "./GuideSearchForm";
+import { SearchSectionNavigator } from "./SearchSectionNavigator";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./GuidesHubPage.module.css";
 
@@ -278,20 +278,7 @@ export function GuidesHubPage({
           </div>
         </section>
 
-        <nav
-          id="browse-topics"
-          className={styles.collectionNav}
-          aria-label={searchCopy.browseLabel}
-        >
-          <div>
-            {searchSectionIds.map((section) => (
-              <Link href={getSearchSectionPath(section, locale)} key={section}>
-                <span>{searchCopy.sections[section].shortLabel}</span>
-                <small>{searchCopy.sections[section].eyebrow}</small>
-              </Link>
-            ))}
-          </div>
-        </nav>
+        <SearchSectionNavigator id="browse-topics" locale={locale} />
 
         <section
           className={styles.countryGuide}

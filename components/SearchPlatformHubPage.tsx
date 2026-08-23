@@ -31,6 +31,7 @@ import {
 import { DestinationHubDiscovery } from "./DestinationHubDiscovery";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { SearchSectionNavigator } from "./SearchSectionNavigator";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./SearchPlatformHubPage.module.css";
 
@@ -245,9 +246,11 @@ export function SearchPlatformHubPage({
   const pageContext =
     section === "explore"
       ? "destinations"
-      : section === "services" || section === "plan"
-        ? "services"
-        : "guides";
+      : section === "plan"
+        ? "plan"
+        : section === "services"
+          ? "services"
+          : "guides";
 
   return (
     <div
@@ -284,23 +287,7 @@ export function SearchPlatformHubPage({
           </div>
         </header>
 
-        <nav className={styles.sectionIndex} aria-label={copy.browseLabel}>
-          <div className={styles.sectionIndexInner}>
-            {searchSectionIds.map((candidate) => {
-              const candidateCopy = copy.sections[candidate];
-              return (
-                <Link
-                  aria-current={candidate === section ? "page" : undefined}
-                  href={getSearchSectionPath(candidate, locale)}
-                  key={candidate}
-                >
-                  <span>{candidateCopy.shortLabel}</span>
-                  <small>{candidateCopy.eyebrow}</small>
-                </Link>
-              );
-            })}
-          </div>
-        </nav>
+        <SearchSectionNavigator currentSection={section} locale={locale} />
 
         {section === "plan" ? <FirstTripPlanSequence locale={locale} /> : null}
 

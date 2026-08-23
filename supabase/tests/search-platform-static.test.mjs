@@ -207,7 +207,8 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.doesNotMatch(adapter, /hasPublishedChildren \? "published"/);
   assert.match(hubPage, /section === "explore"/);
   assert.match(hubPage, /\? "destinations"/);
-  assert.match(hubPage, /section === "services" \|\| section === "plan"/);
+  assert.match(hubPage, /section === "plan"[\s\S]*?\? "plan"/);
+  assert.match(hubPage, /section === "services"[\s\S]*?\? "services"/);
   assert.match(hubPage, /pageContext=\{pageContext\}/);
   assert.match(hubPage, /position: 3/);
   assert.match(hubPage, /loading="lazy"/);
