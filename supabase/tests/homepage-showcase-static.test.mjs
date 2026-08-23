@@ -210,7 +210,23 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   );
   assert.match(
     styles,
-    /\.heroCopy h1 \{[\s\S]{0,100}font-family: var\(--hg-ui-display\)/,
+    /\.heroCopy h1 \{[\s\S]{0,100}font-family: var\(--hg-editorial\)[\s\S]{0,100}font-weight: 400/,
+  );
+  assert.match(
+    styles,
+    /\.decisionIntro h2,[\s\S]{0,100}font-family: var\(--hg-editorial\)/,
+  );
+  assert.match(
+    styles,
+    /\.root :global\(#homepage-guide-search-title\),[\s\S]{0,260}font-family: var\(--hg-editorial\)/,
+  );
+  assert.match(
+    styles,
+    /\.root\[data-homeground-locale="zh"\] :global\(#homepage-guide-search-title\),[\s\S]{0,500}font-weight: 500/,
+  );
+  assert.match(
+    styles,
+    /\.root\[data-homeground-locale="ko"\] :global\(#homepage-guide-search-title\),[\s\S]{0,500}font-weight: 400/,
   );
   assert.doesNotMatch(styles, /\.root h2\s*\{[^}]*font-family:\s*var\(--sans\)/);
   assert.match(

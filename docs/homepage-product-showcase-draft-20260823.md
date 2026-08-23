@@ -60,6 +60,25 @@ The eight reviewed city Hubs remain in the structured dark footer. The ten-city
 airport–station–stay map remains public through its guide, transport Hub and
 download pack; it is not restored to the homepage product slot.
 
+## Homepage typography boundary
+
+The redesign keeps Homeground's established localized type system rather than
+substituting one Latin-style interface face across all languages:
+
+- English editorial headlines use Georgia at regular weight;
+- Chinese editorial headlines use the self-hosted `Homeground Serif SC`
+  subset at weight 500;
+- Korean editorial headlines use the self-hosted `Homeground MaruBuri` subset
+  at weight 400;
+- navigation, buttons, form controls and body copy remain in each locale's
+  sans-serif interface stack.
+
+This mapping applies consistently to the homepage hero, major section titles,
+guide discovery titles, planning titles, FAQ title and product titles. It fixes
+the draft-only regression where Chinese and Korean showcase headings selected
+the UI font while product headings selected the editorial font. The font files
+were already valid and complete; no font asset was replaced.
+
 ## Required release evidence
 
 Before this Draft PR can be marked Ready, central must retain evidence for:
@@ -79,6 +98,8 @@ These rules describe the draft branch only and are not production evidence.
 - Homepage, product, accessibility and adjacent-guide targeted tests: 44/44
   passed.
 - TypeScript, source font coverage and production build: passed.
+- Homepage typography regression test: passed; the hero and major section
+  titles are pinned to the editorial token, including locale-correct weights.
 - Production build: 776/776 static pages generated.
 - Production export: 763 HTML files and 139 client JavaScript files checked;
   all internal links and all 27 locale-matched homepage product links resolve.
