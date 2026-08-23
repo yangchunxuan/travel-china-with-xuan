@@ -26,6 +26,7 @@ import {
   type SearchCollectionId,
 } from "./searchCollectionI18n";
 import { buildLegacySystemContentNodes } from "./legacySystemContentAdapter";
+import { buildPrivateTourContentNodes } from "./privateTourContentAdapter";
 import {
   buildLegacyGuideContentNodes,
   buildSearchCollectionContentNodes,
@@ -57,6 +58,7 @@ export const searchPlatformManifest = buildContentManifest([
   ...buildSearchHubContentNodes().map(contentNodeRecord),
   ...buildSearchCollectionContentNodes().map(contentNodeRecord),
   ...buildDestinationHubContentNodes().map(contentNodeRecord),
+  ...buildPrivateTourContentNodes().map(contentNodeRecord),
   ...buildLegacyGuideContentNodes().map(contentNodeRecord),
 ]);
 
