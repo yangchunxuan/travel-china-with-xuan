@@ -1269,7 +1269,7 @@ const chongqingWulong: PrivateTourProduct = {
     "/images/tours/chongqing-wulong-5-day-private-tour/gallery-hongyadong-qiansimen-1600.webp",
     l(
       "Hongya Cave and Qiansimen Bridge illuminated beside the Jialing River",
-      "嘉陵江畔亮灯的洪崖洞与千厮门大桥",
+      "嘉陵江畔亮灯的洪崖洞与跨江大桥",
       "자링강변에 불이 켜진 훙야둥과 첸쓰먼대교",
     ),
     l(
