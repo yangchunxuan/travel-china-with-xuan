@@ -1,4 +1,6 @@
 .section {
+  --homepage-product-muted: #666666;
+
   background: #fff;
   border-block-end: 1px solid rgb(10 10 10 / 10%);
   padding: var(--showcase-section-space)
@@ -33,7 +35,7 @@
 }
 
 .count {
-  color: rgb(10 10 10 / 46%);
+  color: var(--homepage-product-muted);
 }
 
 .introGrid {
@@ -110,7 +112,7 @@
 
 .cardMeta {
   align-items: center;
-  color: rgb(10 10 10 / 50%);
+  color: var(--homepage-product-muted);
   display: flex;
   font-size: 0.72rem;
   font-weight: 600;
@@ -175,7 +177,7 @@
 
 .availabilityNote {
   border-block-start: 1px solid rgb(10 10 10 / 11%);
-  color: rgb(10 10 10 / 52%);
+  color: var(--homepage-product-muted);
   font-size: 0.75rem;
   line-height: 1.6;
   margin: 3.5rem 0 0;

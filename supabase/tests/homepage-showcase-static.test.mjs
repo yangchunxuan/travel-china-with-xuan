@@ -14,6 +14,31 @@ const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) =>
   readFile(new URL(path, repositoryRoot), "utf8");
 
+function relativeLuminance(hex) {
+  const channels = hex
+    .slice(1)
+    .match(/.{2}/g)
+    .map((channel) => Number.parseInt(channel, 16) / 255)
+    .map((channel) =>
+      channel <= 0.04045
+        ? channel / 12.92
+        : ((channel + 0.055) / 1.055) ** 2.4,
+    );
+  return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+}
+
+function contrastRatio(foreground, background) {
+  const lighter = Math.max(
+    relativeLuminance(foreground),
+    relativeLuminance(background),
+  );
+  const darker = Math.min(
+    relativeLuminance(foreground),
+    relativeLuminance(background),
+  );
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
 test("the homepage showcase keeps four equivalent decisions in every language", () => {
   const expectedIds = ["explore", "stay", "transport", "plan"];
 
@@ -103,6 +128,19 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     /\.finder \{[\s\S]{0,260}background: var\(--hg-color-soft\)/,
   );
   assert.match(productStyles, /\.section \{[\s\S]{0,120}background: #fff/);
+  const productMuted = productStyles.match(
+    /--homepage-product-muted:\s*(#[0-9a-f]{6})/i,
+  )?.[1];
+  assert.ok(productMuted);
+  assert.ok(contrastRatio(productMuted, "#ffffff") >= 4.5);
+  for (const selector of ["count", "cardMeta", "availabilityNote"]) {
+    assert.match(
+      productStyles,
+      new RegExp(
+        `\\.${selector} \\{[\\s\\S]{0,160}color: var\\(--homepage-product-muted\\)`,
+      ),
+    );
+  }
   assert.match(productShowcase, /data-homepage-offer-kind="tour"/);
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
   assert.match(productStyles, /\.productGrid \{[\s\S]{0,180}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);

@@ -1,6 +1,8 @@
 # Homepage private-tour catalog draft — 23 August 2026
 
-Status: **Draft PR #99 only. Not merged, deployed or published.**
+Status: **Design and release-evidence record for PR #99.** A source commit, PR
+merge and GitHub Pages deployment are separate facts; verify the current state
+from GitHub rather than inferring it from this document.
 
 ## Owner decision
 
@@ -99,7 +101,7 @@ and vertical translation; no blur filter is used on mobile GPUs.
 
 ## Required release evidence
 
-Before this Draft PR can be marked Ready, central must retain evidence for:
+The PR release gate requires central to retain evidence for:
 
 - three-language product count, unique links and exported HTML discovery;
 - TypeScript, homepage/product tests, full test suite and production build;
