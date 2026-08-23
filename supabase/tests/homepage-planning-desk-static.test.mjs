@@ -374,12 +374,13 @@ test("the first planning view is contact-only while paid shortcuts stay availabl
 });
 
 test("the planning-desk motion stays purposeful, responsive and reduced-motion safe", async () => {
-  const [home, planningDesk, finder, styles, finderStyles, brandMark] =
+  const [home, planningDesk, finder, styles, headerStyles, finderStyles, brandMark] =
     await Promise.all([
       source("components/HomegroundHomePage.tsx"),
       source("components/HomepagePlanningDesk.tsx"),
       source("components/RouteFinder.tsx"),
       source("components/HomegroundHomePage.module.css"),
+      source("components/HomegroundHeader.module.css"),
       source("components/RouteFinder.module.css"),
       source("components/HomegroundBrandMark.tsx"),
     ]);
@@ -405,18 +406,20 @@ test("the planning-desk motion stays purposeful, responsive and reduced-motion s
   );
   assert.match(reducedMotionBlock, /animation:\s*none/u);
   assert.match(styles, /@media \(hover: hover\) and \(pointer: fine\)/u);
-  assert.match(styles, /animation:\s*brandMarkIn\b/u);
-  assert.match(styles, /animation:\s*brandTextIn\b/u);
+  assert.doesNotMatch(headerStyles, /animation:\s*brand(?:Mark|Text)In\b/u);
   assert.match(brandMark, /data-homeground-brand-mark="paired-path"/u);
   assert.equal(brandMark.match(/<rect\b/gu)?.length, 2);
   assert.match(brandMark, /fill="#a84731"/u);
   assert.match(brandMark, /fill="#d19e8f"/u);
-  assert.match(styles, /\.brand:hover\s+\.brandMark/u);
-  assert.match(styles, /\.brand:focus-visible\s+\.brandMark/u);
-  assert.match(reducedMotionBlock, /\.brandMark/u);
-  const brandMotion = styles.slice(
-    styles.indexOf(".brandMark {", styles.indexOf("prefers-reduced-motion: no-preference")),
-    styles.indexOf(".hero:not(.heroResult)", styles.indexOf("prefers-reduced-motion: no-preference")),
+  assert.match(headerStyles, /\.brand:hover\s+\.brandMark/u);
+  assert.match(headerStyles, /\.brand:focus-visible\s+\.brandMark/u);
+  const headerReducedMotionBlock = headerStyles.slice(
+    headerStyles.indexOf("@media (prefers-reduced-motion: reduce)"),
+  );
+  assert.match(headerReducedMotionBlock, /\.brandMark/u);
+  const brandMotion = headerStyles.slice(
+    headerStyles.indexOf(".brandMark {"),
+    headerStyles.indexOf(".desktopNav"),
   );
   assert.doesNotMatch(
     brandMotion,

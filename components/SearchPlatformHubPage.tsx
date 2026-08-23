@@ -242,6 +242,12 @@ export function SearchPlatformHubPage({
   );
   const languagePaths = getSearchHubLanguagePaths(section);
   const schema = jsonLdForHub(section, locale);
+  const pageContext =
+    section === "explore"
+      ? "destinations"
+      : section === "services" || section === "plan"
+        ? "services"
+        : "guides";
 
   return (
     <div
@@ -255,7 +261,7 @@ export function SearchPlatformHubPage({
       <HomegroundHeader
         languagePaths={languagePaths}
         locale={locale}
-        pageContext="guides"
+        pageContext={pageContext}
       />
 
       <main id="hub-main" tabIndex={-1}>
@@ -435,7 +441,7 @@ export function SearchPlatformHubPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guides" />
+      <HomegroundFooter locale={locale} pageContext={pageContext} />
       <script
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),

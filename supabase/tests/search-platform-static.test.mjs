@@ -205,7 +205,10 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.match(adapter, /const approvedSearchHubIds = new Set<SearchSectionId>/);
   assert.match(adapter, /approvedSearchHubIds\.has\(section\)/);
   assert.doesNotMatch(adapter, /hasPublishedChildren \? "published"/);
-  assert.match(hubPage, /pageContext="guides"/);
+  assert.match(hubPage, /section === "explore"/);
+  assert.match(hubPage, /\? "destinations"/);
+  assert.match(hubPage, /section === "services" \|\| section === "plan"/);
+  assert.match(hubPage, /pageContext=\{pageContext\}/);
   assert.match(hubPage, /position: 3/);
   assert.match(hubPage, /loading="lazy"/);
   assert.match(hubPage, /fetchPriority="auto"/);

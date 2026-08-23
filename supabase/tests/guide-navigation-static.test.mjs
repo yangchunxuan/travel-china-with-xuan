@@ -17,44 +17,31 @@ const articleComponents = [
   "components/ChinaItineraryWithOlderParentsPage.tsx",
 ];
 
-test("global navigation separates editorial guides from paid planning", async () => {
+test("global navigation keeps one four-item information architecture", async () => {
   const [header, footer, css] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundFooter.tsx"),
-    source("components/HomegroundHomePage.module.css"),
+    source("components/HomegroundHeader.module.css"),
   ]);
 
-  for (const label of [
-    "Travel guides",
-    "Trip planning services",
-    "旅行指南",
-    "旅行规划服务",
-    "여행 가이드",
-    "여행 설계 서비스",
-  ]) {
+  for (const label of ["Travel guides", "旅行指南", "여행 가이드"]) {
     assert.match(header, new RegExp(label));
     assert.match(footer, new RegExp(label));
   }
 
   assert.match(header, /\| "guides"/);
   assert.match(header, /\| "search"/);
-  assert.match(
-    header,
-    /const guidesLandingAreCurrent =\s*pageContext === "guides" \|\| pageContext === "guide"/,
-  );
-  assert.match(
-    header,
-    /const guidesAreCurrent =\s*guidesLandingAreCurrent \|\|\s*pageContext === "search"/,
-  );
-  assert.equal(
-    header.match(/guidesLandingAreCurrent \? "page" : undefined/g)?.length,
-    2,
-  );
-  assert.equal(
-    header.match(/pageContext === "search" \? "page" : undefined/g)?.length,
-    2,
-  );
-  assert.match(header, /getGuideSearchCopy\(locale\)/);
+  assert.match(header, /\| "destinations"/);
+  assert.match(header, /\| "destination"/);
+  assert.match(header, /pageContext === "guide" \|\|/);
+  assert.match(header, /const guidesAreExact =/);
+  assert.match(header, /data-active=\{guidesAreCurrent \? "true" : undefined\}/);
+  assert.match(header, /const destinationsHref = `\$\{copy\.path\}explore\/`/);
+  assert.match(header, /copy\.cities\.eyebrow/);
+  assert.match(header, /copy\.navigation\.planning/);
+  assert.match(header, /copy\.navigation\.faq/);
+  assert.doesNotMatch(header, /getGuideSearchCopy|Trip planning services|旅行规划服务|여행 설계 서비스/);
+  assert.equal(header.match(/aria-hidden="true">0[1-4]/g)?.length, 4);
   assert.equal(
     header.match(/pageContext === "guides"[\s\S]{0,90}`\$\{target\.path\}guides\/`/g)
       ?.length,
@@ -65,12 +52,38 @@ test("global navigation separates editorial guides from paid planning", async ()
   assert.match(footer, /href=\{guideHubPath\}/);
   assert.doesNotMatch(footer, /guideId|getGuideEntry/);
 
-  assert.match(css, /\.desktopNav a \{[\s\S]*?min-height: 2\.75rem;/);
+  assert.match(css, /\.headerInner \{[\s\S]*?display: grid;[\s\S]*?grid-template-columns:/);
+  assert.match(css, /\.desktopNav a \{[\s\S]*?white-space: nowrap;/);
   assert.match(
     css,
-    /\.mobileNav > a:not\(\.mobileCta\) \{[\s\S]*?padding: 0\.9rem 0\.2rem;/,
+    /@media \(max-width: 1179\.98px\)[\s\S]*?\.mobileNav \{[\s\S]*?position: fixed;/,
   );
   assert.match(css, /:focus-visible/);
+});
+
+test("all public page families use the shared header", async () => {
+  const [tenDay, tenDayStyles, privacy, legal, guidesHub, header] = await Promise.all([
+    source("components/TenDayChinaRouteGuidePage.tsx"),
+    source("components/TenDayChinaRouteGuidePage.module.css"),
+    source("components/HomegroundPrivacyPage.tsx"),
+    source("components/HomegroundLegalPage.tsx"),
+    source("components/GuidesHubPage.tsx"),
+    source("components/HomegroundHeader.tsx"),
+  ]);
+
+  for (const page of [tenDay, privacy, legal]) {
+    assert.match(page, /<HomegroundHeader/);
+  }
+  assert.doesNotMatch(tenDay, /<header className=\{styles\.siteHeader\}/);
+  assert.doesNotMatch(privacy, /<header className=\{styles\.header\}/);
+  assert.doesNotMatch(legal, /<header className=\{styles\.header\}/);
+  assert.doesNotMatch(guidesHub, /showLanguageNav=\{false\}/);
+  assert.match(tenDay, /plannerTracking=\{\{ guideId, position: "header" \}\}/);
+  assert.match(header, /trackEvent\("guide_cta_clicked"/);
+  assert.match(
+    tenDayStyles,
+    /\.fitGrid,[\s\S]{0,180}grid-template-columns: minmax\(0, 1fr\);/,
+  );
 });
 
 test("sitemap publishes manifest-backed localized guide hubs with hreflang", async () => {

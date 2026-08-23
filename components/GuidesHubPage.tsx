@@ -224,7 +224,6 @@ export function GuidesHubPage({
       <HomegroundHeader
         locale={locale}
         pageContext="guides"
-        showLanguageNav={false}
       />
 
       <main id="guides-main" tabIndex={-1}>

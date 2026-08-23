@@ -200,6 +200,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     styles,
     navigation,
     header,
+    headerStyles,
     sharedStyles,
     finder,
     planningDesk,
@@ -209,6 +210,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     source("components/HomepageShowcase.module.css"),
     source("lib/homegroundNavigation.ts"),
     source("components/HomegroundHeader.tsx"),
+    source("components/HomegroundHeader.module.css"),
     source("components/HomegroundHomePage.module.css"),
     source("components/RouteFinder.tsx"),
     source("components/HomepagePlanningDesk.tsx"),
@@ -235,12 +237,12 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.match(page, /scrollTarget\.scrollIntoView/);
   assert.match(page, /focusTarget\.focus\(\{ preventScroll: true \}\)/);
   assert.match(
-    sharedStyles,
-    /\.siteHeader\[data-homeground-header-context="home"\] \{[\s\S]{0,180}backdrop-filter: blur\(12px\)[\s\S]{0,120}background: rgb\(255 255 255 \/ 85%\)[\s\S]{0,180}position: fixed/,
+    headerStyles,
+    /\.siteHeader\[data-homeground-header-context="home"\] \{[\s\S]{0,120}position: fixed/,
   );
   assert.match(
-    sharedStyles,
-    /\.siteHeader\[data-homeground-header-context="home"\] \.headerInner \{[\s\S]{0,140}background: transparent[\s\S]{0,120}height: 4rem[\s\S]{0,100}max-width: 1280px/,
+    headerStyles,
+    /\.headerInner \{[\s\S]{0,220}grid-template-columns:[\s\S]{0,160}height: var\(--homeground-header-height\)[\s\S]{0,160}max-inline-size: 90rem/,
   );
   assert.match(styles, /--showcase-content: 77rem/);
   assert.match(styles, /--showcase-section-space: 6rem/);
@@ -289,11 +291,16 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     /\.primaryAction,[\s\S]{0,260}min-block-size: var\(--showcase-button-height\)/,
   );
   assert.match(
-    sharedStyles,
-    /@media \(max-width: 1099\.98px\)[\s\S]{0,1800}\.mobileNav \{[\s\S]{0,260}inset: 0[\s\S]{0,180}min-height: 100dvh/,
+    headerStyles,
+    /@media \(max-width: 1179\.98px\)[\s\S]{0,1600}\.mobileNav \{[\s\S]{0,260}inset: var\(--homeground-header-height\) 0 0[\s\S]{0,180}min-block-size: calc\(100dvh - var\(--homeground-header-height\)\)/,
   );
   assert.match(header, /document\.documentElement\.style\.overflow = "hidden"/);
-  assert.match(header, /window\.innerWidth >= 1100/);
+  assert.match(header, /window\.innerWidth < 1180/);
+  assert.match(header, /element\.inert = true/);
+  assert.match(header, /activeBranch !== document\.body/);
+  assert.match(header, /aria-modal=\{open \? "true" : undefined\}/);
+  assert.match(header, /role=\{open \? "dialog" : undefined\}/);
+  assert.match(headerStyles, /\.siteHeader\[data-menu-open="true"\][\s\S]{0,80}z-index: 1400/);
   assert.match(header, /aria-label=\{copy\.navigation\.homeLabel\}[\s\S]{0,80}onClick=\{close\}/);
   assert.match(page, /const alignHashTarget = \(\) =>/);
   assert.match(page, /attempts < 120/);

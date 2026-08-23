@@ -11,6 +11,8 @@ const homegroundHeaderPath = "components/HomegroundHeader.tsx";
 const homegroundPagePath = "components/HomegroundHomePage.tsx";
 const homegroundPageStylesPath =
   "components/HomegroundHomePage.module.css";
+const homegroundHeaderStylesPath =
+  "components/HomegroundHeader.module.css";
 const homegroundNavigationPath = "lib/homegroundNavigation.ts";
 const routeServiceInterestPath = "lib/routeServiceInterest.ts";
 
@@ -222,12 +224,11 @@ test("all production same-page links preserve planner history depth", async () =
   const header = await source(homegroundHeaderPath);
   const page = await source(homegroundPagePath);
   const handoff = await source(plannerHandoffPath);
-  const combined = `${header}\n${page}\n${handoff}`;
+  const combined = `${page}\n${handoff}`;
 
   for (const target of [
     "#main-content",
     "#route-finder",
-    "#faq",
   ]) {
     const escaped = target.replace("-", "\\-");
     const hrefCount =
@@ -250,6 +251,11 @@ test("all production same-page links preserve planner history depth", async () =
 
   assert.match(header, /const studioHref = `\$\{copy\.path\}studio\/`/);
   assert.doesNotMatch(header, /href="#studio"/);
+  assert.match(header, /const faqHref = pageContext === "home" \? "#faq"/);
+  assert.equal(
+    header.match(/handleHomegroundHashClick\(event, "#faq"\)/g)?.length,
+    2,
+  );
 });
 
 test("same-page navigation moves keyboard focus to its content target", async () => {
@@ -285,13 +291,13 @@ test("language changes preserve a completed planner result", async () => {
 });
 
 test("the sticky header is opaque over mobile hero text", async () => {
-  const styles = await source(homegroundPageStylesPath);
+  const styles = await source(homegroundHeaderStylesPath);
   const headerStart = styles.indexOf(".siteHeader {");
   const headerEnd = styles.indexOf("\n}", headerStart);
   const headerStyles = styles.slice(headerStart, headerEnd);
 
-  assert.match(headerStyles, /background:\s*var\(--hg-color-surface\)/);
-  assert.doesNotMatch(headerStyles, /rgb\([^)]*\/\s*[0-9]+%/);
+  assert.match(headerStyles, /background:\s*#fff/);
+  assert.doesNotMatch(headerStyles, /background:\s*rgb\([^)]*\/\s*[0-9]+%/);
 });
 
 test("success keeps the full public reference as secondary three-language copy", async () => {

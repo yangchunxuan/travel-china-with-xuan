@@ -440,7 +440,7 @@ export function ShanghaiJiangnanImaginePage({
       <HomegroundHeader
         languagePaths={localized.paths}
         locale={locale}
-        pageContext="services"
+        pageContext="tour"
       />
 
       <main id="tour-details">
@@ -595,7 +595,7 @@ export function ShanghaiJiangnanImaginePage({
         </aside>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="services" />
+      <HomegroundFooter locale={locale} pageContext="tour" />
       <PrivateTourMotion />
       <script
         dangerouslySetInnerHTML={{

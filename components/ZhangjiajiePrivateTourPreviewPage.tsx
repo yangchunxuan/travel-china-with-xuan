@@ -217,7 +217,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
       <HomegroundHeader
         languagePaths={languagePaths}
         locale={locale}
-        pageContext={published ? "services" : "guide"}
+        pageContext={published ? "tour" : "guide"}
       />
 
       <main id="tour-details">
@@ -527,7 +527,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
 
       <HomegroundFooter
         locale={locale}
-        pageContext={published ? "services" : "content"}
+        pageContext={published ? "tour" : "content"}
       />
       {structuredData ? (
         <script
