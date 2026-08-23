@@ -1,7 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import styles from "./HomepageGuideRail.module.css";
+
+const noExcludedItemIds: readonly string[] = [];
 
 export interface HomepageGuideRailImage {
   src: string;
@@ -37,6 +46,7 @@ export interface HomepageGuideRailProps<Category extends string = string> {
   description?: string;
   items: readonly HomepageGuideRailItem<Category>[];
   catalogUrl?: string;
+  excludedItemIds?: readonly string[];
   categoryLabels: Readonly<Record<Category, string>>;
   controlLabels: HomepageGuideRailControlLabels;
   viewAllHref?: string;
@@ -57,6 +67,7 @@ export function HomepageGuideRail<Category extends string = string>({
   description,
   items,
   catalogUrl,
+  excludedItemIds = noExcludedItemIds,
   categoryLabels,
   controlLabels,
   viewAllHref,
@@ -69,7 +80,15 @@ export function HomepageGuideRail<Category extends string = string>({
   const listId = `${sectionId}-items`;
   const listRef = useRef<HTMLOListElement>(null);
   const catalogRequestStartedRef = useRef(false);
-  const [catalogItems, setCatalogItems] = useState(items);
+  const excludedItemIdSet = useMemo(
+    () => new Set(excludedItemIds),
+    [excludedItemIds],
+  );
+  const initialItems = useMemo(
+    () => items.filter((item) => !excludedItemIdSet.has(item.id)),
+    [excludedItemIdSet, items],
+  );
+  const [catalogItems, setCatalogItems] = useState(initialItems);
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
 
   const itemCategories = new Set(catalogItems.map((item) => item.category));
@@ -96,53 +115,55 @@ export function HomepageGuideRail<Category extends string = string>({
       if (!response.ok) throw new Error("Guide catalog request failed");
       const payload: unknown = await response.json();
       if (!Array.isArray(payload)) throw new Error("Guide catalog was invalid");
-      const completeItems = payload.filter(
-        (item): item is HomepageGuideRailItem<Category> =>
-          Boolean(item) &&
-          typeof item === "object" &&
-          "id" in item &&
-          typeof item.id === "string" &&
-          "kind" in item &&
-          (item.kind === "tour" || item.kind === "guide") &&
-          "category" in item &&
-          typeof item.category === "string" &&
-          "title" in item &&
-          typeof item.title === "string" &&
-          "eyebrow" in item &&
-          typeof item.eyebrow === "string" &&
-          "description" in item &&
-          typeof item.description === "string" &&
-          "href" in item &&
-          typeof item.href === "string" &&
-          item.href.startsWith("/") &&
-          "linkLabel" in item &&
-          typeof item.linkLabel === "string" &&
-          "image" in item &&
-          Boolean(item.image) &&
-          typeof item.image === "object" &&
-          "src" in item.image &&
-          typeof item.image.src === "string" &&
-          item.image.src.startsWith("/") &&
-          "alt" in item.image &&
-          typeof item.image.alt === "string" &&
-          "width" in item.image &&
-          typeof item.image.width === "number" &&
-          "height" in item.image &&
-          typeof item.image.height === "number",
-      );
-      if (completeItems.length < items.length) {
+      const completeItems = payload
+        .filter(
+          (item): item is HomepageGuideRailItem<Category> =>
+            Boolean(item) &&
+            typeof item === "object" &&
+            "id" in item &&
+            typeof item.id === "string" &&
+            "kind" in item &&
+            (item.kind === "tour" || item.kind === "guide") &&
+            "category" in item &&
+            typeof item.category === "string" &&
+            "title" in item &&
+            typeof item.title === "string" &&
+            "eyebrow" in item &&
+            typeof item.eyebrow === "string" &&
+            "description" in item &&
+            typeof item.description === "string" &&
+            "href" in item &&
+            typeof item.href === "string" &&
+            item.href.startsWith("/") &&
+            "linkLabel" in item &&
+            typeof item.linkLabel === "string" &&
+            "image" in item &&
+            Boolean(item.image) &&
+            typeof item.image === "object" &&
+            "src" in item.image &&
+            typeof item.image.src === "string" &&
+            item.image.src.startsWith("/") &&
+            "alt" in item.image &&
+            typeof item.image.alt === "string" &&
+            "width" in item.image &&
+            typeof item.image.width === "number" &&
+            "height" in item.image &&
+            typeof item.image.height === "number",
+        )
+        .filter((item) => !excludedItemIdSet.has(item.id));
+      if (completeItems.length < initialItems.length) {
         throw new Error("Guide catalog was incomplete");
       }
       setCatalogItems(completeItems);
     } catch {
       catalogRequestStartedRef.current = false;
     }
-  }, [catalogUrl, items.length]);
+  }, [catalogUrl, excludedItemIdSet, initialItems.length]);
 
   useEffect(() => {
-    setCatalogItems(items);
+    setCatalogItems(initialItems);
     catalogRequestStartedRef.current = false;
-  }, [items]);
+  }, [initialItems]);
 
   const updateCatalogProgress = useCallback(() => {
     const list = listRef.current;

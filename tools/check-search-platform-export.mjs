@@ -44,6 +44,7 @@ const blockedDestinationHubIds = ["guilin", "shenzhen"];
 const tenCityMapPath = "/guides/first-trip-china-airport-station-stay-map/";
 const tenCityPackPath =
   "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip";
+const zhangjiajieTourSlug = "zhangjiajie-4-day-private-tour";
 const transportGuideSlug = "beijing-zhangjiajie-shanghai-transport";
 const zhangjiajieHubGuideSlugs = [
   "zhangjiajie-itinerary",
@@ -211,14 +212,14 @@ for (const locale of locales) {
 
   assertIncludes(
     homepageHtml,
-    `href="${tenCityMapPath}"`,
-    `${context} homepage ten-city map discovery`,
+    `href="/${locale.prefix}tours/${zhangjiajieTourSlug}/"`,
+    `${context} homepage published-tour discovery`,
   );
-  assertIncludes(
-    homepageHtml,
-    `href="${tenCityPackPath}"`,
-    `${context} homepage complete ten-city pack download`,
-  );
+  if (homepageHtml.includes(`href="${tenCityPackPath}"`)) {
+    throw new Error(
+      `${context}: the internal asset download displaced the homepage product showcase`,
+    );
+  }
 }
 
 {

@@ -56,7 +56,7 @@ import {
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import { HomepageGuideRail } from "./HomepageGuideRail";
-import { TenCityMapFeature } from "./TenCityMapFeature";
+import { HomepageProductShowcase } from "./HomepageProductShowcase";
 import styles from "./HomegroundHomePage.module.css";
 import showcaseStyles from "./HomepageShowcase.module.css";
 
@@ -77,6 +77,17 @@ const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 const planningIntentStorageKey = "homeground-planning-intent-v1";
 const planningStarterIntentStorageKey =
   "homeground-planning-starter-intent-v1";
+
+const homepageProductShowcaseGuideIds = [
+  "longji-rice-terraces-day-trip-or-overnight",
+  "forbidden-city-for-foreign-visitors",
+  "yangshuo-town-or-yulong-river-where-to-stay",
+] as const;
+
+const homepageProductShowcaseExcludedItemIds = [
+  "zhangjiajie-4-day-private-tour",
+  ...homepageProductShowcaseGuideIds,
+] as const;
 
 export function HomegroundHomePage({
   destinationHubItems,
@@ -110,6 +121,19 @@ export function HomegroundHomePage({
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
   const showcase = getHomepageShowcaseCopy(locale);
+  const featuredTour = guideRailItems.find(
+    (item) =>
+      item.kind === "tour" &&
+      item.id === "zhangjiajie-4-day-private-tour",
+  );
+  const productShowcaseGuides = homepageProductShowcaseGuideIds.flatMap(
+    (id) => {
+      const guide = guideRailItems.find(
+        (item) => item.kind === "guide" && item.id === id,
+      );
+      return guide ? [guide] : [];
+    },
+  );
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const studioPath =
@@ -604,6 +628,22 @@ export function HomegroundHomePage({
           </div>
         </section>
 
+        {featuredTour ? (
+          <HomepageProductShowcase
+            guides={productShowcaseGuides}
+            locale={locale}
+            onItemClick={(item) => {
+              trackEvent("homepage_guide_card_clicked", {
+                content_category: item.category,
+                content_kind: item.kind,
+                guide_id: item.id,
+                page_language: locale,
+              });
+            }}
+            tour={featuredTour}
+          />
+        ) : null}
+
         <div
           className={`${styles.travelGuidesSection} ${showcaseStyles.searchSection}`}
         >
@@ -696,12 +736,6 @@ export function HomegroundHomePage({
           </div>
         </section>
 
-        <TenCityMapFeature
-          headingId="homepage-ten-city-map-title"
-          locale={locale}
-          placement="homepage"
-        />
-
         <HomepageGuideRail
           catalogUrl={guideRailCatalogPath}
           categoryLabels={guideCategoryLabels}
@@ -710,6 +744,7 @@ export function HomegroundHomePage({
             categoryFilter: copy.guides.railLabel,
           }}
           eyebrow={copy.guides.eyebrow}
+          excludedItemIds={homepageProductShowcaseExcludedItemIds}
           id="homepage-guide-rail"
           items={guideRailItems}
           onItemClick={(item) => {

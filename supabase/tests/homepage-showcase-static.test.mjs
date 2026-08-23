@@ -6,6 +6,7 @@ import {
   getHomepageDecisionPath,
   getHomepageShowcaseCopy,
 } from "../../lib/homepageShowcaseI18n.ts";
+import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) =>
@@ -37,18 +38,19 @@ test("the homepage showcase keeps four equivalent decisions in every language", 
 });
 
 test("the white homepage flows from guidance to a single bottom brand panel", async () => {
-  const [page, showcaseStyles, searchStyles, mapStyles] = await Promise.all([
+  const [page, showcaseStyles, searchStyles, productStyles, productShowcase] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageShowcase.module.css"),
     source("components/HomepageGuideSearch.module.css"),
-    source("components/TenCityMapFeature.module.css"),
+    source("components/HomepageProductShowcase.module.css"),
+    source("components/HomepageProductShowcase.tsx"),
   ]);
 
   const orderedMarkers = [
+    "<HomepageProductShowcase",
     "<HomepageGuideSearch",
     'id="homepage-decisions-title"',
     'id="destinations"',
-    "<TenCityMapFeature",
     "<HomepageGuideRail",
     "<PlanningScopeSection",
     'id="homepage-human-planning-title"',
@@ -66,12 +68,39 @@ test("the white homepage flows from guidance to a single bottom brand panel", as
     searchStyles,
     /\.finder \{[\s\S]{0,260}background: var\(--hg-color-soft\)/,
   );
-  assert.match(
-    mapStyles,
-    /\.feature\[data-ten-city-map-placement="homepage"\] \{[\s\S]{0,120}background: #fff/,
-  );
+  assert.match(productStyles, /\.section \{[\s\S]{0,120}background: #fff/);
+  assert.match(productShowcase, /data-homepage-offer-kind="tour"/);
+  assert.match(productShowcase, /data-homepage-offer-kind="guide"/);
+  assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
+});
+
+test("the homepage product showcase distinguishes the real tour from guide placeholders", async () => {
+  const [page, productShowcase, rail] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageProductShowcase.tsx"),
+    source("components/HomepageGuideRail.tsx"),
+  ]);
+
+  assert.match(page, /const homepageProductShowcaseGuideIds = \[[\s\S]*?longji-rice-terraces-day-trip-or-overnight[\s\S]*?forbidden-city-for-foreign-visitors[\s\S]*?yangshuo-town-or-yulong-river-where-to-stay/);
+  assert.match(page, /item\.kind === "tour"[\s\S]{0,100}item\.id === "zhangjiajie-4-day-private-tour"/);
+  assert.match(page, /excludedItemIds=\{homepageProductShowcaseExcludedItemIds\}/);
+  assert.match(productShowcase, /\{copy\.productLabel\}/);
+  assert.match(productShowcase, /\{copy\.guideLabel\}/);
+  assert.match(productShowcase, /\{copy\.featuredTitle\}/);
+  assert.doesNotMatch(productShowcase, /className=\{styles\.featuredTitle\}>\{tour\.title\}/);
+  assert.match(productShowcase, /fetchPriority="high"/);
+  assert.match(productShowcase, /loading="eager"/);
+  assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
+  assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
+
+  for (const locale of ["en", "zh", "ko"]) {
+    const copy = getHomepageProductShowcaseCopy(locale);
+    assert.notEqual(copy.productLabel, copy.guideLabel);
+    assert.ok(copy.title.length > 12);
+    assert.ok(copy.intro.length > 24);
+  }
 });
 
 test("showcase navigation and result layouts remain keyboard and state safe", async () => {

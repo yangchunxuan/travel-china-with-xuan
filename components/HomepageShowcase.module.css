@@ -375,7 +375,6 @@
 
 .root :global(#homepage-guide-search-title),
 .root :global(#homepage-city-hubs-title),
-.root :global(#homepage-ten-city-map-title),
 .root :global(#homepage-guide-rail-title),
 .root :global(#planning-proof-title),
 .root :global(#homepage-human-planning-title),
@@ -715,7 +714,6 @@
 
   .root :global(#homepage-guide-search-title),
   .root :global(#homepage-city-hubs-title),
-  .root :global(#homepage-ten-city-map-title),
   .root :global(#homepage-guide-rail-title),
   .root :global(#planning-proof-title),
   .root :global(#homepage-human-planning-title),
