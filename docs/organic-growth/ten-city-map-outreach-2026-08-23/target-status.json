@@ -9,6 +9,17 @@
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "productionVerificationRequiredBeforeSend": true,
+    "productionVerification": {
+      "status": "passed",
+      "verifiedAt": "2026-08-23",
+      "runtimeMergeSha": "0031b17b7f2ecbf4d4a192a2d8422cc6dff538df",
+      "deploymentRunUrl": "https://github.com/yangchunxuan/travel-china-with-xuan/actions/runs/32619692635",
+      "canonicalHttpStatus": 200,
+      "downloadHttpStatus": 200,
+      "licenseHttpStatus": 200,
+      "sitemapUrlCount": 671,
+      "sitemapUniqueUrlCount": 671
+    },
     "limitations": [
       "Original schematic and editorial matrix, not a navigational map.",
       "Not a live timetable, fare, operating-status or entry-policy service.",

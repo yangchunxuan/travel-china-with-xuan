@@ -6,7 +6,8 @@ Supabase activation are separate facts; never infer one from another.
 
 ## Current production and brand
 
-- [Current production release record](./release-notes/homepage-city-discovery-production-release-20260823.md)
+- [Current production release record](./release-notes/authority-map-and-hub-links-production-release-20260823.md)
+- [Earlier same-day homepage discovery release](./release-notes/homepage-city-discovery-production-release-20260823.md)
 - [Search, analytics and privacy release baseline](./release-notes/search-analytics-privacy-production-release-20260823.md)
 - [Production release-record index](./release-notes/README.md)
 - [Canonical Homeground China brand entity](./brand-entity-system.md)
@@ -18,15 +19,20 @@ Supabase activation are separate facts; never infer one from another.
 - [Current SEO and production brief](./organic-growth/weekly-brief-2026-08-23.md)
 - [Mandatory do-not-repeat and merge-owner check](./organic-growth/do-not-repeat.md)
 
-## Latest homepage discovery release
+## Latest authority and discovery release
+
+- [Authority-map and Hub-link production record](./release-notes/authority-map-and-hub-links-production-release-20260823.md)
+  — the reviewed Zhangjiajie, transport and visa cohort now points to existing
+  owners; the ten-city reusable map and complete CC BY 4.0 download pack are
+  live. The release created zero canonical identities or sitemap URLs.
 
 - [Homepage destination-Hub discovery handoff](./organic-growth/homepage-city-hub-discovery-20260823.md)
   — eight existing Hubs now receive direct, locale-matched homepage links in
   production. The release created zero canonical identities or sitemap URLs.
 
-The audited public-runtime inventory at PR #89 release SHA `5bd1558` is 182
-guide identities, 540 guide locale URLs and eight destination Hubs. The live
-sitemap read-back on 2026-08-23 was 670 unique URLs. Later documentation-only
+The current PR #96 runtime retains the PR #91-established inventory of 183
+guide identities, 541 guide locale URLs and eight destination Hubs. The live
+sitemap read-back on 2026-08-23 was 671 unique URLs. Later documentation-only
 commits do not change those runtime counts. These are different grains and must
 not be combined into an indexation rate.
 
@@ -37,7 +43,7 @@ not be combined into an indexation rate.
   each of employees 1–6. It is open, still Draft, currently conflicts with
   `main`, and has no merge, deployment or publication authorization. The exact
   60 IDs and six source commits are in `remoteDurableDraftBatches` in the
-  machine Search Map; none belongs in the 182-guide published count.
+  machine Search Map; none belongs in the 183-guide published count.
 - Employee 3's ten drafts remain on publication/date HOLD and do not authorize
   an eleventh topic.
 - The older 844-URL combined simulation was run on an earlier base. It is not a
@@ -67,5 +73,5 @@ evidence.
 ## Historical evidence
 
 Dated reviews and sitemap counts remain valid for their stated observation
-time. Do not replace historical 142-, 634- or 649-URL snapshots with the current
-670 count; use the latest production record for current state.
+time. Do not replace historical 142-, 634-, 649- or 670-URL snapshots with the
+current 671 count; use the latest production record for current state.

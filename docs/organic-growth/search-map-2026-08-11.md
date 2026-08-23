@@ -1,20 +1,20 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-当前状态：`SEARCH MAP RECONCILED THROUGH PR #89 RUNTIME RELEASE SHA 5bd1558 — 60 REMOTE DRAFT IDENTITIES RESERVED / NOT PUBLISHED`
+当前状态：`SEARCH MAP RECONCILED THROUGH PR #96 RUNTIME RELEASE SHA 0031b17 — 60 REMOTE DRAFT IDENTITIES RESERVED / NOT PUBLISHED`
 
 本快照是团队选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。下面的 2026-08-23 覆盖层是当前生产口径；2026-08-20 和 2026-08-11 段落继续保留为历史证据，不得再用来判断当前发布状态。
 
 ## 2026-08-23 当前生产覆盖层
 
-- 已审计公开运行时基线：PR #89 release SHA `5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e`；后续仅文档提交不会改变本段运行时库存口径。
-- 当前指南库存：**182 个内容身份、540 个 locale URL**；其中 163 个独立 guide 目录均三语，另有 19 个受保护 legacy guide 身份。
-- 当前已发布城市 Hub：**8 个身份、24 个 locale URL**，分别为 Beijing、Shanghai、Xi'an、Chengdu、Guangzhou、Hangzhou、Zhangjiajie、Chongqing。再计 1 个英文系统 entry collection，公开编辑型详情总数为 **191 个身份、565 个 URL**。
+- 已审计公开运行时基线：PR #96 release SHA `0031b17b7f2ecbf4d4a192a2d8422cc6dff538df`；后续仅文档提交不会改变本段运行时库存口径。
+- 当前指南库存：**183 个内容身份、541 个 locale URL**；其中 164 个独立 guide 目录（163 个三语、十城地图 1 个仅英文），另有 19 个受保护 legacy guide 身份。
+- 当前已发布城市 Hub：**8 个身份、24 个 locale URL**，分别为 Beijing、Shanghai、Xi'an、Chengdu、Guangzhou、Hangzhou、Zhangjiajie、Chongqing。再计 1 个英文系统 entry collection，公开编辑型详情总数为 **192 个身份、566 个 URL**。
 - PR #74 的 Zhangjiajie Hub、Online Arrival Card、Forest Park workflow、Chongqing station selector 和 Hangzhou Hub 已全部三语发布并于 2026-08-21 完成线上读回，不得继续标作 `not-published`。
-- PR #80、#83、#86、#87 后续发布带来的 Chongqing Hub 和 6 个 guide owner 已回填机器账本；本轮 PR #89 只做技术、隐私、索引信号与流量治理修复，新增 canonical identity 为 0。
+- PR #80、#83、#86、#87 后续发布带来的 Chongqing Hub 和 6 个 guide owner 已回填机器账本；PR #89 只做技术、隐私、索引信号与流量治理修复。PR #91 新增十城地图英文 owner；PR #93 与 #96 只增强既有身份的发现、Hub 反链和可复用下载包，二者新增 canonical identity 均为 0。
 - `First 24 Hours in China` 已形成三语 durable internal draft，状态为 `pending-review / draft-submitted / not-published`；没有 route、Registry、sitemap 或公开授权。
 - Draft PR #84 保存员工 1–6 各 10 篇，共 **60 个 durable draft identity、180 个 locale path**。它仍为 OPEN / Draft，当前与 `main` 冲突，全部不计入线上库存；精确 slug 见机器账本 `remoteDurableDraftBatches[0]`。
 - Route Reality 的内部规格已随 PR #75 合并且 v4 技术审查通过，但公开产品随后被中央否决；没有继续开发或公开授权。
-- 2026-08-23 的 live sitemap 为 **670 个唯一 URL、0 重复**；该数字不等于 Google 已收录 670 页。发布与 Search Console 状态详见 [`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](../release-notes/search-analytics-privacy-production-release-20260823.md)。
+- 2026-08-23 PR #96 部署后的 live sitemap 为 **671 个唯一 URL、0 重复**；该数字不等于 Google 已收录 671 页。最新发布证据见 [`docs/release-notes/authority-map-and-hub-links-production-release-20260823.md`](../release-notes/authority-map-and-hub-links-production-release-20260823.md)，Search Console 状态仍以 [`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](../release-notes/search-analytics-privacy-production-release-20260823.md) 的已核验证据为准。
 
 ## 2026-08-20 历史同步结论
 
