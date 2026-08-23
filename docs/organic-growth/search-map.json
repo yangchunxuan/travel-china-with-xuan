@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2.0",
   "snapshotDate": "2026-08-23",
-  "checkedAt": "2026-08-23T02:30:10+08:00",
-  "finalStatus": "SEARCH MAP RECONCILED THROUGH PR #91 RUNTIME RELEASE SHA d3f9861 — THE BUSINESS-OWNER-INITIATED TEN-CITY ENGLISH ASSET IS PUBLISHED; 60 REMOTE DRAFT IDENTITIES IN PR #84 REMAIN UNPUBLISHED",
+  "checkedAt": "2026-08-23T13:24:58+08:00",
+  "finalStatus": "SEARCH MAP RECONCILED THROUGH CURRENT MAIN SHA c0020bf — PR #96 MAP/HUB RELEASE AND THE LATER-MERGED PR #95 NINE-GUIDE RELEASE ARE LIVE; 60 REMOTE DRAFT IDENTITIES IN PR #84 REMAIN UNPUBLISHED",
   "identityPolicy": {
     "rule": "One content identity may have en, zh and ko locale variants; locale URLs are not separate topics.",
     "canonicalOwnerRule": "One user task and query cluster has one canonical owner. Synonyms, audience variants and city-by-month permutations do not create new identities.",
@@ -376,12 +376,12 @@
       "path": "https://github.com/yangchunxuan/travel-china-with-xuan",
       "auditWorkspace": "ephemeral local worktree; path intentionally omitted because it is not durable authority",
       "baseRef": "origin/main",
-      "auditPoint": "PR #89 runtime release SHA before this documentation-only synchronization",
-      "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
+      "auditPoint": "current main after the successful PR #95 Pages deployment and public read-back, retaining the earlier PR #96 asset release",
+      "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
       "previousSearchMapSnapshotCommit": "cbbfddabe2513874cc4e55981e08244db7338ff9",
       "earlierPr24BaselineCommit": "8769b2ffa4d2d719699bf98fb4bc215dc89bdda9",
-      "baseDeltaAssessment": "At audited runtime baseCommit 5bd15583, the repository contains 163 independent guide directories, 19 protected legacy guide identities and eight published destination hubs. PR #74's five bounded identities and the later PR #80, #83, #86 and #87 releases are present; PR #89 adds no canonical identity. Later documentation-only commits do not change these runtime counts.",
-      "branch": "codex/release-state-sync-20260823",
+      "baseDeltaAssessment": "At audited runtime baseCommit c0020bf, the repository contains 173 independent guide directories, 19 protected legacy guide identities and eight published destination hubs. PR #91 added the English ten-city map identity; PR #93 added homepage discovery links; PR #96 added Hub backlinks, map distribution surfaces and the complete asset pack without creating another canonical identity; the later-merged PR #95 added nine trilingual guide identities.",
+      "branch": "codex/authority-map-release-record-20260823",
       "status": "available"
     },
     "requiredDocs": [
@@ -414,23 +414,23 @@
       "finalSitemapRecheckedAt": "2026-08-11T17:03:41+08:00",
       "observedPr24ContentIdCount": 2,
       "observedPr24ContentIdUrlHits": 6,
-      "method": "Retained as the dated 2026-08-11 live snapshot only. The authoritative inventory below comes from audited PR #89 runtime baseCommit 5bd15583; this synchronization did not reinterpret the old 142-URL count as current live state."
+      "method": "Retained as the dated 2026-08-11 live snapshot only. The authoritative inventory below comes from audited current main baseCommit c0020bf; this synchronization did not reinterpret the old 142-URL count as current live state."
     },
     "currentRepositoryInventory": {
-      "status": "available-from-audited-pr89-runtime-baseline",
-      "baseCommit": "5bd15583c7c03dadc819d19bb4fc2c7f3ceb1b9e",
-      "generatedGuideIdentities": 163,
+      "status": "available-from-audited-current-main-runtime-baseline",
+      "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
+      "generatedGuideIdentities": 173,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 182,
-      "generatedGuideLocaleUrls": 489,
+      "publishedGuideIdentities": 192,
+      "generatedGuideLocaleUrls": 517,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 540,
+      "guideLocaleUrls": 568,
       "publishedDestinationHubIdentities": 8,
       "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 191,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 565,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 201,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 593,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
@@ -442,8 +442,8 @@
         "destination-chongqing"
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
-      "liveVerificationStatus": "repository inventory reconciled at baseCommit 5bd15583; live sitemap independently verified as 670 unique URLs with 0 duplicates",
-      "checkedAt": "2026-08-23T02:30:10+08:00"
+      "liveVerificationStatus": "repository inventory reconciled at baseCommit c0020bf; live sitemap independently verified as 698 unique URLs with 0 duplicates; PR #96 map links remain present after the later PR #95 deployment",
+      "checkedAt": "2026-08-23T13:24:58+08:00"
     },
     "remoteBranches": {
       "status": "historical-2026-08-11-branch-audit",
@@ -1122,14 +1122,14 @@
   ],
   "coverage": {
     "publishedInventory": {
-      "authority": "audited-nine-guide-central-release-runtime-guide-registry-and-content-metadata",
-      "baseCommit": "d0fb96706fea2928ede94cc667745d5dcad389b2",
+      "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
+      "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
       "identityCount": 192,
       "localeUrlCount": 568,
       "generatedIdentityCount": 173,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
-      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory after the nine-guide central release, based on main commit d0fb967.",
+      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at current main commit c0020bf after the nine-guide central release and the PR #96 authority-map release.",
       "identityIds": [
         "anshun-dixi-mask-performance-guide",
         "beijing-copper-pot-mutton-ordering-workflow",

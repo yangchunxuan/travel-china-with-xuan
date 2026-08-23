@@ -6,10 +6,11 @@ evidence.
 
 ## Current production record
 
-- [2026-08-23 homepage city-discovery production release](./homepage-city-discovery-production-release-20260823.md)
+- [2026-08-23 authority-map and Hub-link production release](./authority-map-and-hub-links-production-release-20260823.md)
 
 ## Earlier same-day baseline
 
+- [2026-08-23 homepage city-discovery production release](./homepage-city-discovery-production-release-20260823.md)
 - [2026-08-23 search, analytics and privacy production release](./search-analytics-privacy-production-release-20260823.md)
 
 ## Interpretation rules

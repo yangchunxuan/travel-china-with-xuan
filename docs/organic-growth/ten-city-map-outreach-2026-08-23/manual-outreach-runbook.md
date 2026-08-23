@@ -16,6 +16,14 @@ Asset URLs, which must be checked on production immediately before any send:
 
 The outreach purpose is to offer a genuinely useful, attributed source or correction aid. A recipient may ignore it, cite it, download it, adapt it under the published licence, or reply without linking. No outcome is promised.
 
+Production gate: **PASSED on 2026-08-23**. The asset shipped at merge SHA
+`0031b17b7f2ecbf4d4a192a2d8422cc6dff538df`; it remained live after the later
+nine-guide deployment at current runtime SHA
+`c0020bfa6905b496bb8398c6104e8377d7d26a4b`. The canonical page, ZIP and licence
+returned HTTP 200, and the current live sitemap contained 698 unique URLs. This
+shared gate does not replace the current-page review or Gmail Sent duplicate
+check required immediately before each individual message.
+
 ## Non-negotiable operating rules
 
 1. Do not bulk-send, mail-merge or send the same template to multiple targets. Open the target's current page and write one message for that page and audience.
