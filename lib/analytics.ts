@@ -70,6 +70,7 @@ export type HomegroundEventName =
   | "guide_search_result_clicked"
   | "guide_search_no_results"
   | "homepage_guide_card_clicked"
+  | "homepage_product_card_clicked"
   | "planning_intent_selected"
   | "planner_started"
   | "planner_step_completed"
@@ -119,6 +120,8 @@ const allowedParameterKeys = new Set([
   "page_language",
   "page_type",
   "guide_id",
+  "product_slug",
+  "product_position",
   "search_surface",
   "query_length",
   "result_position",

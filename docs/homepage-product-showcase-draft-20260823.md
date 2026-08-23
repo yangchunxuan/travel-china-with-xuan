@@ -1,91 +1,93 @@
-# Homepage product showcase draft — 23 August 2026
+# Homepage private-tour catalog draft — 23 August 2026
 
 Status: **Draft PR #99 only. Not merged, deployed or published.**
 
 ## Owner decision
 
-The large ten-city map promotion no longer occupies the homepage product slot.
-The homepage now gives that position to bookable travel products:
+The homepage product slot is a real product catalog, not a mixture of one tour
+and editorial placeholders. It now presents all nine published private-tour
+owners as equal cards:
 
-- one real, published product leads the section:
-  `zhangjiajie-4-day-private-tour`;
-- three existing guides temporarily complete the visual row:
-  `longji-rice-terraces-day-trip-or-overnight`,
-  `forbidden-city-for-foreign-visitors`, and
-  `yangshuo-town-or-yulong-river-where-to-stay`;
-- guide cards must remain visibly labelled `Travel guide` / `旅行指南` /
-  `여행 가이드`; they are not products and must not receive prices,
-  availability claims or booking language.
+- the eight EN/ZH/KO products in `lib/privateTourProducts.ts`;
+- the existing EN/ZH/KO Zhangjiajie 4-day product.
 
-The Zhangjiajie card is labelled `Private journey` / `私家行程` /
-`프라이빗 일정` and links to the existing localized published tour owner.
-This change creates no canonical identity, route or sitemap URL.
+Every card links directly to its locale-matched published tour page. The three
+guides previously used as temporary placeholders return to the editorial guide
+rail and keep their guide identity. This homepage change creates no canonical
+identity, route or sitemap URL.
 
-The showcase sits directly after the hero, before search and decision support.
-This gives the first strong China image and the real product a product-page
-position instead of burying them deep in the homepage.
+## Customer-facing design
 
-## Homepage simplification and footer decision
+- Desktop shows a restrained 3-by-3 white catalog; tablet uses two columns and
+  mobile uses compact image-and-copy rows.
+- Each card shows the product type, duration, official localized title, a short
+  route description and a single `View itinerary and prices` action.
+- The homepage does not repeat prices. Group-size, package, season and date
+  conditions remain on the product owner page, with a short disclosure beneath
+  the catalog.
+- Harbin retains its date-specific winter wording. The homepage does not imply
+  year-round availability.
+- All nine cards are server-rendered links. There is no carousel, filter,
+  collapsed inventory or JavaScript-only discovery.
+- Product images lazy-load below the homepage hero. The two Shanghai products
+  receive distinct, already-published images through the catalog adapter.
 
-The same Draft PR also removes two long body sections at the owner's direction:
+## Data boundary
 
-- the eight-card city directory;
-- the dark three-principle methodology panel.
+`lib/homepagePrivateTourCatalog.ts` is the only homepage adapter. It projects a
+small card object from the published product authorities before crossing the
+server/client boundary; complete itineraries, package rows, prices, galleries
+and unused language content are not serialized into the homepage client.
 
-This is a visual relocation, not an SEO deletion. All eight reviewed,
-locale-matched destination-Hub links move into the homepage footer and still
-consume the single published destination registry. The existing
-`#destinations` and `#studio` navigation targets remain valid in that footer.
+The eight new products continue to come from `privateTourProducts.ts` and the
+legacy Zhangjiajie product continues to use its published product JSON and home
+card. The adapter does not duplicate a second list of their titles, paths or
+descriptions.
 
-The new homepage-only footer follows the restrained visual grammar observed on
-the current [Anthropic homepage](https://www.anthropic.com/): a full-width dark
-field, one brand rail, compact navigation columns, muted secondary type and
-unframed social icons. Homeground's own copy, routes, identity, fonts and brand
-mark remain original; no Anthropic trademark, text or asset is copied.
+## Navigation and analytics
 
-The social row reserves X, Instagram, Facebook and YouTube. A profile becomes a
-link only after its exact public URL passes the platform allow-list. Facebook is
-already verified from the repository authority record. X, Instagram and
-YouTube remain visibly reserved but non-clickable until their exact URLs are
-configured; the implementation does not publish guessed or `#` links.
+The homepage footer's former singular `Zhangjiajie private journey` link is now
+the plural `Private tours` / `私家旅行产品` / `프라이빗 투어` and returns to
+`#travel-products`. Hash navigation moves keyboard focus to the catalog title.
 
-## Map boundary
+Product clicks use `homepage_product_card_clicked` with only controlled values:
+locale, product slug, card position, product kind and number of nights. Guide
+clicks keep their existing guide event and are no longer used for product cards.
 
-The ten-city airport–station–stay map, its source table and its CC BY 4.0
-download pack remain public. They continue to be distributed by the transport
-Hub and the indexed Beijing–Zhangjiajie–Shanghai transport guide. Only the
-large homepage promotion is removed.
+## Homepage simplification boundary
 
-Do not delete the map guide, download pack, schema, source record or transport
-article placement as a consequence of this homepage decision.
+The eight reviewed city Hubs remain in the structured dark footer. The ten-city
+airport–station–stay map remains public through its guide, transport Hub and
+download pack; it is not restored to the homepage product slot.
 
-## Runtime rules
+## Required release evidence
 
-- `HomepageProductShowcase` renders one `tour` card and separate `guide`
-  cards with explicit machine-readable kinds.
-- The same four identities are excluded from the following guide rail,
-  including after the full guide catalogue lazy-loads, so the homepage does
-  not repeat them.
-- The three guide images were selected from existing licensed assets because
-  they are immediately recognisable as China: Longji rice terraces, the
-  Forbidden City and the Yulong River landscape.
-- Future published products may replace guide placeholders one at a time.
-  A guide must never be silently relabelled as a product.
+Before this Draft PR can be marked Ready, central must retain evidence for:
 
-## Draft validation
+- three-language product count, unique links and exported HTML discovery;
+- TypeScript, homepage/product tests, full test suite and production build;
+- source and production-export Chinese/Korean font coverage;
+- English, Chinese and Korean visual QA at desktop and 390px mobile widths;
+- no horizontal overflow, console error or console warning;
+- unchanged canonical and sitemap identity sets except for changes already
+  published by the separate product release.
 
-- Homepage, footer, brand, accessibility and deployment-contract tests: 49/49
+These rules describe the draft branch only and are not production evidence.
+
+## Current draft validation
+
+- Homepage, product, accessibility and adjacent-guide targeted tests: 44/44
   passed.
-- Product/map placement contract: passed.
-- TypeScript: passed.
-- Source and production-export Chinese/Korean font coverage: passed.
-- Production build: 752/752 static pages generated; export and internal-link
-  checks passed.
-- Production export: 739 HTML files and 136 client JavaScript files checked.
-- Visual QA: English, Chinese and Korean at desktop 1440px and mobile 390px;
-  no horizontal overflow, console warning or console error.
-- Full local suite: 577 passed, 1 skipped and 1 pre-existing Windows CRLF
-  checksum mismatch in the unchanged ten-city downloadable text asset. Linux CI
+- TypeScript, source font coverage and production build: passed.
+- Production build: 776/776 static pages generated.
+- Production export: 763 HTML files and 139 client JavaScript files checked;
+  all internal links and all 27 locale-matched homepage product links resolve.
+- Exported EN/ZH/KO homepages each contain exactly nine unique product links
+  and nine unique product-card images.
+- Full local suite: 588 passed, 1 skipped and 1 known Windows CRLF checksum
+  mismatch in the unchanged ten-city downloadable attribution text. Linux CI
   remains authoritative for that byte-integrity check.
-
-These checks describe the draft branch only and are not production evidence.
+- Visual QA: EN/ZH/KO at 1440px desktop and 390px mobile passed with nine
+  products, locale-correct links, distinct Shanghai images, seasonal Harbin
+  wording, visible keyboard focus, no horizontal overflow and no console
+  warnings or errors.

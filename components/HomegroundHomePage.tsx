@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -26,6 +26,7 @@ import type {
   HomepageGuideRailItem,
   HomepageSearchDemo,
 } from "../lib/homepageEditorial";
+import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import {
   editorialOrganizationSchema,
   editorialWebsiteSchema,
@@ -78,28 +79,19 @@ const planningIntentStorageKey = "homeground-planning-intent-v1";
 const planningStarterIntentStorageKey =
   "homeground-planning-starter-intent-v1";
 
-const homepageProductShowcaseGuideIds = [
-  "longji-rice-terraces-day-trip-or-overnight",
-  "forbidden-city-for-foreign-visitors",
-  "yangshuo-town-or-yulong-river-where-to-stay",
-] as const;
-
-const homepageProductShowcaseExcludedItemIds = [
-  "zhangjiajie-4-day-private-tour",
-  ...homepageProductShowcaseGuideIds,
-] as const;
-
 export function HomegroundHomePage({
   destinationHubItems,
   guideRailItems,
   locale = "en",
   planningSection = "scope-v2",
+  privateTourItems,
   searchDemos,
 }: {
   destinationHubItems: readonly HomepageDestinationHubItem[];
   guideRailItems: readonly HomepageGuideRailItem[];
   locale?: HomegroundLocale;
   planningSection?: PlanningSectionVariant;
+  privateTourItems: readonly HomepagePrivateTourItem[];
   searchDemos: readonly HomepageSearchDemo[];
 }) {
   const [plannerStatus, setPlannerStatus] = useState<PlannerStatus>("new");
@@ -121,18 +113,9 @@ export function HomegroundHomePage({
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
   const showcase = getHomepageShowcaseCopy(locale);
-  const featuredTour = guideRailItems.find(
-    (item) =>
-      item.kind === "tour" &&
-      item.id === "zhangjiajie-4-day-private-tour",
-  );
-  const productShowcaseGuides = homepageProductShowcaseGuideIds.flatMap(
-    (id) => {
-      const guide = guideRailItems.find(
-        (item) => item.kind === "guide" && item.id === id,
-      );
-      return guide ? [guide] : [];
-    },
+  const productShowcaseExcludedItemIds = useMemo(
+    () => privateTourItems.map((item) => item.id),
+    [privateTourItems],
   );
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
@@ -628,19 +611,19 @@ export function HomegroundHomePage({
           </div>
         </section>
 
-        {featuredTour ? (
+        {privateTourItems.length > 0 ? (
           <HomepageProductShowcase
-            guides={productShowcaseGuides}
             locale={locale}
-            onItemClick={(item) => {
-              trackEvent("homepage_guide_card_clicked", {
-                content_category: item.category,
+            onItemClick={(item, position) => {
+              trackEvent("homepage_product_card_clicked", {
                 content_kind: item.kind,
-                guide_id: item.id,
                 page_language: locale,
+                product_position: position,
+                product_slug: item.id,
+                total_nights: item.nights,
               });
             }}
-            tour={featuredTour}
+            products={privateTourItems}
           />
         ) : null}
 
@@ -702,7 +685,7 @@ export function HomegroundHomePage({
             categoryFilter: copy.guides.railLabel,
           }}
           eyebrow={copy.guides.eyebrow}
-          excludedItemIds={homepageProductShowcaseExcludedItemIds}
+          excludedItemIds={productShowcaseExcludedItemIds}
           id="homepage-guide-rail"
           items={guideRailItems}
           onItemClick={(item) => {

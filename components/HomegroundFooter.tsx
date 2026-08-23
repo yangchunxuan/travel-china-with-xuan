@@ -40,7 +40,7 @@ const footerSections: Record<
     homegroundHeading: string;
     socialLabel: string;
     socialPending: string;
-    privateJourney: string;
+    privateTours: string;
     operatorPrefix: string;
     operatorSuffix: string;
     codeLabel: string;
@@ -56,7 +56,7 @@ const footerSections: Record<
     homegroundHeading: "Homeground",
     socialLabel: "Follow Homeground",
     socialPending: "profile link pending",
-    privateJourney: "Zhangjiajie private journey",
+    privateTours: "Private tours",
     operatorPrefix: "Homeground is operated by",
     operatorSuffix: ".",
     codeLabel: "Unified Social Credit Code",
@@ -71,7 +71,7 @@ const footerSections: Record<
     homegroundHeading: "Homeground",
     socialLabel: "关注 Homeground",
     socialPending: "账号链接待配置",
-    privateJourney: "张家界私家行程",
+    privateTours: "私家旅行产品",
     operatorPrefix: "Homeground 由",
     operatorSuffix: "运营。",
     codeLabel: "统一社会信用代码",
@@ -86,7 +86,7 @@ const footerSections: Record<
     homegroundHeading: "Homeground",
     socialLabel: "Homeground 팔로우",
     socialPending: "프로필 링크 설정 대기",
-    privateJourney: "장자제 프라이빗 일정",
+    privateTours: "프라이빗 투어",
     operatorPrefix: "Homeground는",
     operatorSuffix: "에서 운영합니다.",
     codeLabel: "통일사회신용코드",
@@ -145,7 +145,6 @@ export function HomegroundFooter({
   const studioPath = `${copy.path}studio/`;
   const facebookPageUrl = getHomegroundFacebookPageUrl();
   const socialProfiles = getHomegroundSocialProfiles();
-  const privateJourneyPath = `${copy.path}tours/zhangjiajie-4-day-private-tour/`;
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
   const handleSectionClick = (
@@ -184,8 +183,13 @@ export function HomegroundFooter({
                   <a href={guideHubPath}>{sectionLabels.guides}</a>
                 </li>
                 <li>
-                  <a href={privateJourneyPath}>
-                    {sectionLabels.privateJourney}
+                  <a
+                    href={sectionHref("#travel-products")}
+                    onClick={(event) =>
+                      handleSectionClick(event, "#travel-products")
+                    }
+                  >
+                    {sectionLabels.privateTours}
                   </a>
                 </li>
                 <li>

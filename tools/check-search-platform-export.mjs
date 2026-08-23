@@ -44,7 +44,17 @@ const blockedDestinationHubIds = ["guilin", "shenzhen"];
 const tenCityMapPath = "/guides/first-trip-china-airport-station-stay-map/";
 const tenCityPackPath =
   "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip";
-const zhangjiajieTourSlug = "zhangjiajie-4-day-private-tour";
+const homepagePublishedTourSlugs = [
+  "shanghai-suzhou-hangzhou-6-day-private-tour",
+  "chengdu-pandas-sanxingdui-5-day-private-tour",
+  "xian-terracotta-warriors-5-day-private-tour",
+  "chongqing-wulong-5-day-private-tour",
+  "guilin-yangshuo-5-day-private-tour",
+  "harbin-winter-5-day-private-tour",
+  "shanghai-suzhou-5-day-private-tour",
+  "beijing-highlights-5-day-private-tour",
+  "zhangjiajie-4-day-private-tour",
+];
 const transportGuideSlug = "beijing-zhangjiajie-shanghai-transport";
 const zhangjiajieHubGuideSlugs = [
   "zhangjiajie-itinerary",
@@ -210,11 +220,13 @@ for (const locale of locales) {
     }
   }
 
-  assertIncludes(
-    homepageHtml,
-    `href="/${locale.prefix}tours/${zhangjiajieTourSlug}/"`,
-    `${context} homepage published-tour discovery`,
-  );
+  for (const slug of homepagePublishedTourSlugs) {
+    assertIncludes(
+      homepageHtml,
+      `href="/${locale.prefix}tours/${slug}/"`,
+      `${context} homepage published-tour discovery: ${slug}`,
+    );
+  }
   if (homepageHtml.includes(`href="${tenCityPackPath}"`)) {
     throw new Error(
       `${context}: the internal asset download displaced the homepage product showcase`,

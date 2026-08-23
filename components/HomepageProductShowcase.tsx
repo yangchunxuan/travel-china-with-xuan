@@ -2,21 +2,22 @@
 
 import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { getHomepageProductShowcaseCopy } from "../lib/homepageProductShowcaseI18n";
-import type { HomepageGuideRailItem } from "../lib/homepageEditorial";
 import styles from "./HomepageProductShowcase.module.css";
 
 interface HomepageProductShowcaseProps {
   readonly locale: HomegroundLocale;
-  readonly tour: HomepageGuideRailItem;
-  readonly guides: readonly HomepageGuideRailItem[];
-  readonly onItemClick?: (item: HomepageGuideRailItem) => void;
+  readonly products: readonly HomepagePrivateTourItem[];
+  readonly onItemClick?: (
+    item: HomepagePrivateTourItem,
+    position: number,
+  ) => void;
 }
 
 export function HomepageProductShowcase({
   locale,
-  tour,
-  guides,
+  products,
   onItemClick,
 }: HomepageProductShowcaseProps) {
   const copy = getHomepageProductShowcaseCopy(locale);
@@ -26,91 +27,74 @@ export function HomepageProductShowcase({
       aria-labelledby="homepage-products-title"
       className={styles.section}
       data-homeground-locale={locale}
+      data-homepage-product-count={products.length}
       data-homepage-product-showcase="true"
       id="travel-products"
     >
       <div className={styles.inner}>
         <header className={styles.intro}>
-          <p className={styles.eyebrow}>{copy.eyebrow}</p>
-          <h2 id="homepage-products-title">{copy.title}</h2>
-          <p className={styles.lead}>{copy.intro}</p>
+          <div className={styles.sectionMeta}>
+            <p className={styles.eyebrow}>{copy.eyebrow}</p>
+            <p className={styles.count}>{copy.countLabel(products.length)}</p>
+          </div>
+          <div className={styles.introGrid}>
+            <h2 id="homepage-products-title" tabIndex={-1}>
+              {copy.title}
+            </h2>
+            <p className={styles.lead}>{copy.intro(products.length)}</p>
+          </div>
         </header>
 
-        <article
-          className={styles.featured}
-          data-homepage-offer-kind="tour"
-        >
-          <a
-            className={styles.featuredLink}
-            href={tour.href}
-            onClick={() => onItemClick?.(tour)}
-          >
-            <span className={styles.featuredImageFrame}>
-              <img
-                alt={tour.image.alt}
-                className={styles.featuredImage}
-                decoding="async"
-                fetchPriority="high"
-                height={tour.image.height}
-                loading="eager"
-                src={tour.image.src}
-                width={tour.image.width}
-              />
-            </span>
-            <div className={styles.featuredCopy}>
-              <span className={styles.kindLabel}>{copy.productLabel}</span>
-              <h3 className={styles.featuredTitle}>{copy.featuredTitle}</h3>
-              <p className={styles.featuredSubtitle}>
-                {copy.featuredSubtitle}
-              </p>
-              <p className={styles.featuredMeta}>{copy.featuredMeta}</p>
-              <p className={styles.featuredDescription}>
-                {tour.description}
-              </p>
-              <span className={styles.featuredAction}>
-                <span>{tour.linkLabel}</span>
-                <ArrowRight aria-hidden="true" size={19} />
-              </span>
-            </div>
-          </a>
-        </article>
-
-        <div className={styles.guideIntro}>
-          <h3>{copy.guideHeading}</h3>
-          <p>{copy.guideIntro}</p>
-        </div>
-
-        <ol aria-label={copy.guideListLabel} className={styles.guideGrid}>
-          {guides.map((guide) => (
-            <li data-homepage-offer-kind="guide" key={guide.id}>
+        <ul aria-label={copy.productListLabel} className={styles.productGrid}>
+          {products.map((product, index) => (
+            <li
+              data-homepage-offer-kind="tour"
+              data-homepage-product-slug={product.id}
+              key={product.id}
+            >
               <a
-                className={styles.guideCard}
-                href={guide.href}
-                onClick={() => onItemClick?.(guide)}
+                className={styles.productCard}
+                href={product.href}
+                onClick={() => onItemClick?.(product, index + 1)}
               >
-                <span className={styles.guideImageFrame}>
+                <span className={styles.imageFrame}>
                   <img
-                    alt={guide.image.alt}
-                    className={styles.guideImage}
+                    alt={product.image.alt}
+                    className={styles.image}
                     decoding="async"
-                    height={guide.image.height}
+                    height={product.image.height}
                     loading="lazy"
-                    src={guide.image.src}
-                    width={guide.image.width}
+                    src={product.image.src}
+                    style={
+                      product.image.objectPosition
+                        ? { objectPosition: product.image.objectPosition }
+                        : undefined
+                    }
+                    width={product.image.width}
                   />
                 </span>
-                <div className={styles.guideCopy}>
-                  <span className={styles.kindLabel}>{copy.guideLabel}</span>
-                  <h4 className={styles.guideTitle}>{guide.title}</h4>
-                  <span className={styles.guideAction}>
-                    <span>{guide.linkLabel}</span>
-                    <ArrowRight aria-hidden="true" size={17} />
+                <div className={styles.cardCopy}>
+                  <div className={styles.cardMeta}>
+                    <span>{copy.productLabel}</span>
+                    <span>
+                      {copy.durationLabel(product.days, product.nights)}
+                    </span>
+                  </div>
+                  <h3 className={styles.cardTitle}>{product.title}</h3>
+                  <p className={styles.cardDescription}>
+                    {product.description}
+                  </p>
+                  <span className={styles.cardAction}>
+                    <span>{copy.actionLabel}</span>
+                    <ArrowRight aria-hidden="true" size={18} />
                   </span>
                 </div>
               </a>
             </li>
           ))}
-        </ol>
+        </ul>
+
+        <p className={styles.availabilityNote}>{copy.availabilityNote}</p>
       </div>
     </section>
   );

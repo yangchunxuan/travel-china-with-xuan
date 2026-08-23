@@ -39,12 +39,11 @@ not be combined into an indexation rate.
 
 ## Unpublished and reserved inventory
 
-- [Homepage product-showcase draft](./homepage-product-showcase-draft-20260823.md)
+- [Homepage private-tour catalog draft](./homepage-product-showcase-draft-20260823.md)
   records the unmerged PR #99 decision to replace the large homepage map
-  promotion with one real Zhangjiajie product and three clearly labelled guide
-  placeholders, remove two long body sections and relocate the eight-city
-  discovery network into a compact homepage footer. The map asset remains
-  public through its transport owners.
+  promotion with all nine published private-tour owners, remove the temporary
+  guide placeholders and keep the eight-city discovery network in the compact
+  homepage footer. The map asset remains public through its transport owners.
 
 - Draft PR [#84](https://github.com/yangchunxuan/travel-china-with-xuan/pull/84)
   contains 60 reserved trilingual guide drafts (180 locale paths), ten from

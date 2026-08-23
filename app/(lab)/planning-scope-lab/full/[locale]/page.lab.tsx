@@ -11,6 +11,7 @@ import {
   getHomepageGuideRailItems,
   getHomepageSearchDemos,
 } from "../../../../../lib/homepageEditorial";
+import { getHomepagePrivateTourItems } from "../../../../../lib/homepagePrivateTourCatalog";
 
 export const dynamicParams = false;
 
@@ -48,6 +49,7 @@ export default async function PlanningScopeFullPageLab({
         guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
         locale={locale}
         planningSection="current"
+        privateTourItems={getHomepagePrivateTourItems(locale)}
         searchDemos={getHomepageSearchDemos(locale)}
       />
     </>

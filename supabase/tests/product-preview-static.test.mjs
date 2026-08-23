@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import sharp from "sharp";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const source = (relativePath) =>
@@ -94,11 +95,12 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
 });
 
 test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
-  const [adapter, manifest, sitemap, homepageEditorial, homeCard] = await Promise.all([
+  const [adapter, manifest, sitemap, homepageEditorial, homepageCatalog, homeCard] = await Promise.all([
     source("lib/legacySystemContentAdapter.ts"),
     source("lib/searchPlatformManifest.ts"),
     source("app/sitemap.ts"),
     source("lib/homepageEditorial.ts"),
+    source("lib/homepagePrivateTourCatalog.ts"),
     source("lib/zhangjiajiePrivateTourHomeCard.ts"),
   ]);
 
@@ -116,6 +118,12 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(homepageEditorial, /kind: "tour"/);
   assert.match(homepageEditorial, /\.\.\.orderedGuides\.map/);
   assert.doesNotMatch(homepageEditorial, /\{ \.\.\.guide, \.\.\.tour \}/);
+  assert.match(homepageCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
+  assert.match(homepageCatalog, /zhangjiajieProduct\.duration\.days/);
+  assert.equal(
+    homepageCatalog.match(/id: zhangjiajieCard\.id/g)?.length,
+    1,
+  );
   assert.match(
     homeCard,
     /canonicalPath: "\/tours\/zhangjiajie-4-day-private-tour\/"/,
@@ -129,6 +137,16 @@ test("manifest, sitemap and homepage expose the product independently of the gui
     /canonicalPath: "\/ko\/tours\/zhangjiajie-4-day-private-tour\/"/,
   );
   assert.match(homeCard, /return cards\[locale\]/);
+
+  const heroPath = path.join(
+    projectRoot,
+    "public/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
+  );
+  const metadata = await sharp(heroPath).metadata();
+  assert.equal(metadata.width, 1920);
+  assert.equal(metadata.height, 1280);
+  assert.match(homeCard, /cardImageWidth: 1920/);
+  assert.match(homeCard, /cardImageHeight: 1280/);
 });
 
 test("production pruning removes previews but retains published routes and product assets", async () => {

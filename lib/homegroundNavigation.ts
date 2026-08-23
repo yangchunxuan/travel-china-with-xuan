@@ -5,6 +5,7 @@ export type HomegroundHashTarget =
   | "#planner-contact"
   | "#route-finder"
   | "#planner-handoff"
+  | "#travel-products"
   | "#destinations"
   | "#planning-proof"
   | "#studio"
@@ -48,6 +49,7 @@ export function handleHomegroundHashClick(
     "#planner-contact": "planning-intent-title",
     "#route-finder": "route-finder-title",
     "#planner-handoff": "planner-handoff-title",
+    "#travel-products": "homepage-products-title",
     "#destinations": "homepage-city-hubs-title",
     "#planning-proof": "planning-proof-title",
     "#studio": "studio-title",

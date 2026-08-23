@@ -7,6 +7,7 @@ import {
   getHomepageShowcaseCopy,
 } from "../../lib/homepageShowcaseI18n.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
+import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) =>
@@ -90,36 +91,55 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   );
   assert.match(productStyles, /\.section \{[\s\S]{0,120}background: #fff/);
   assert.match(productShowcase, /data-homepage-offer-kind="tour"/);
-  assert.match(productShowcase, /data-homepage-offer-kind="guide"/);
+  assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
+  assert.match(productStyles, /\.productGrid \{[\s\S]{0,180}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.doesNotMatch(productStyles, /\.featured\s*\{|\.guideGrid\s*\{/);
   assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
 });
 
-test("the homepage product showcase distinguishes the real tour from guide placeholders", async () => {
-  const [page, productShowcase, rail] = await Promise.all([
+test("the homepage product showcase exposes all nine published tours without guide placeholders", async () => {
+  const [page, productShowcase, catalog, rail, defaultRoute, localizedRoute, labRoute] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageProductShowcase.tsx"),
+    source("lib/homepagePrivateTourCatalog.ts"),
     source("components/HomepageGuideRail.tsx"),
+    source("app/(default)/page.tsx"),
+    source("app/(localized)/[locale]/page.tsx"),
+    source("app/(lab)/planning-scope-lab/full/[locale]/page.lab.tsx"),
   ]);
 
-  assert.match(page, /const homepageProductShowcaseGuideIds = \[[\s\S]*?longji-rice-terraces-day-trip-or-overnight[\s\S]*?forbidden-city-for-foreign-visitors[\s\S]*?yangshuo-town-or-yulong-river-where-to-stay/);
-  assert.match(page, /item\.kind === "tour"[\s\S]{0,100}item\.id === "zhangjiajie-4-day-private-tour"/);
-  assert.match(page, /excludedItemIds=\{homepageProductShowcaseExcludedItemIds\}/);
+  assert.equal(privateTourProducts.length + 1, 9);
+  assert.match(catalog, /privateTourProducts\.map/);
+  assert.match(catalog, /localizePrivateTourProduct\(product, locale\)/);
+  assert.match(catalog, /zhangjiajieProduct\.short_description\[contentLocale\]/);
+  assert.match(catalog, /description: localized\.lede/);
+  assert.doesNotMatch(catalog, /shanghai-suzhou-hangzhou-6-day-private-tour|chengdu-pandas-sanxingdui-5-day-private-tour/);
+  assert.doesNotMatch(page, /homepageProductShowcaseGuideIds|productShowcaseGuides|featuredTour/);
+  assert.match(page, /products=\{privateTourItems\}/);
+  assert.match(page, /excludedItemIds=\{productShowcaseExcludedItemIds\}/);
+  assert.match(page, /homepage_product_card_clicked/);
+  assert.match(productShowcase, /products\.map\(\(product, index\)/);
   assert.match(productShowcase, /\{copy\.productLabel\}/);
-  assert.match(productShowcase, /\{copy\.guideLabel\}/);
-  assert.match(productShowcase, /\{copy\.featuredTitle\}/);
-  assert.doesNotMatch(productShowcase, /className=\{styles\.featuredTitle\}>\{tour\.title\}/);
-  assert.match(productShowcase, /fetchPriority="high"/);
-  assert.match(productShowcase, /loading="eager"/);
+  assert.match(productShowcase, /\{product\.title\}/);
+  assert.match(productShowcase, /\{product\.description\}/);
+  assert.match(productShowcase, /loading="lazy"/);
+  assert.doesNotMatch(productShowcase, /fetchPriority=|loading="eager"|\bguides\b|\bguideLabel\b/);
+  for (const route of [defaultRoute, localizedRoute, labRoute]) {
+    assert.match(route, /getHomepagePrivateTourItems/);
+    assert.match(route, /privateTourItems=\{getHomepagePrivateTourItems\(/);
+  }
   assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
   assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
 
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageProductShowcaseCopy(locale);
-    assert.notEqual(copy.productLabel, copy.guideLabel);
-    assert.ok(copy.title.length > 12);
-    assert.ok(copy.intro.length > 24);
+    assert.ok(copy.title.length > 8);
+    assert.ok(copy.intro(9).length > 60);
+    assert.match(copy.countLabel(9), /9/);
+    assert.match(copy.durationLabel(5, 4), /5/);
+    assert.ok(copy.availabilityNote.length > 30);
   }
 });
 

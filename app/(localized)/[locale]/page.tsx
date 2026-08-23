@@ -10,6 +10,7 @@ import {
   getHomepageGuideRailItems,
   getHomepageSearchDemos,
 } from "../../../lib/homepageEditorial";
+import { getHomepagePrivateTourItems } from "../../../lib/homepagePrivateTourCatalog";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
@@ -77,6 +78,7 @@ export default async function LocalizedHome({
       destinationHubItems={getHomepageDestinationHubItems(locale)}
       guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
       locale={locale}
+      privateTourItems={getHomepagePrivateTourItems(locale)}
       searchDemos={getHomepageSearchDemos(locale)}
     />
   );
