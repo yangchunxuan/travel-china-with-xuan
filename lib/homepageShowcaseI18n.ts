@@ -12,8 +12,6 @@ interface HomepageShowcaseCopy {
     readonly fixedLines: readonly string[];
     readonly joiner: "" | " ";
     readonly phrases: readonly string[];
-    readonly pauseLabel: string;
-    readonly playLabel: string;
   };
   readonly heroLinksLabel: string;
   readonly heroPrimary: string;
@@ -53,8 +51,6 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         "Real travel time counts.",
         "The hard parts, handled.",
       ],
-      pauseLabel: "Pause changing headline",
-      playLabel: "Continue changing headline",
     },
     heroLinksLabel: "Explore Homeground China",
     heroPrimary: "Explore China travel guides",
@@ -118,8 +114,6 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         "真实路程也算进去。",
         "难处理的交给我们。",
       ],
-      pauseLabel: "暂停标题切换",
-      playLabel: "继续标题切换",
     },
     heroLinksLabel: "浏览 Homeground China",
     heroPrimary: "浏览中国旅行指南",
@@ -178,8 +172,6 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         "실제 이동 시간까지 계산합니다.",
         "어려운 부분은 저희가 챙깁니다.",
       ],
-      pauseLabel: "제목 전환 일시 정지",
-      playLabel: "제목 전환 계속",
     },
     heroLinksLabel: "Homeground China 둘러보기",
     heroPrimary: "중국 여행 가이드 보기",

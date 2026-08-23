@@ -56,8 +56,6 @@ test("the homepage showcase keeps four equivalent decisions in every language", 
     assert.equal(new Set(headline.phrases).size, headline.phrases.length);
     assert.ok(headline.fixedLines.every((line) => line.trim().length > 0));
     assert.ok(headline.phrases.every((phrase) => phrase.trim().length > 0));
-    assert.ok(headline.pauseLabel.length > 4);
-    assert.ok(headline.playLabel.length > 4);
     assert.equal(
       [...headline.fixedLines, headline.phrases[0]].join(headline.joiner),
       identityCopy.hero.title,

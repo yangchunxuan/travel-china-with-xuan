@@ -542,9 +542,7 @@ export function HomegroundHomePage({
                 className={showcaseStyles.heroTitle}
                 fixedLines={showcase.heroHeadline.fixedLines}
                 id="home-hero-title"
-                pauseLabel={showcase.heroHeadline.pauseLabel}
                 phrases={showcase.heroHeadline.phrases}
-                playLabel={showcase.heroHeadline.playLabel}
               />
               <p className={`${styles.heroLead} ${showcaseStyles.heroLead}`}>
                 {showcase.heroBody}
