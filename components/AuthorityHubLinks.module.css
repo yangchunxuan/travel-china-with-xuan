@@ -1,0 +1,110 @@
+.panel {
+  align-items: end;
+  background: var(--hg-color-soft, #f2eee6);
+  border: 1px solid var(--hg-color-line, #d8d8d1);
+  border-radius: 1rem;
+  color: var(--hg-color-ink, #141413);
+  display: grid;
+  gap: clamp(1.4rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, auto);
+  margin-block: clamp(2.5rem, 6vw, 5rem);
+  padding: clamp(1.35rem, 3vw, 2.4rem);
+}
+
+.panel > div {
+  max-inline-size: 45rem;
+}
+
+.eyebrow {
+  color: var(--hg-color-rust, #a74731);
+  font-size: 0.7rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.panel h2 {
+  color: inherit;
+  font-family: var(--hg-editorial, Georgia, serif);
+  font-size: clamp(1.75rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0.55rem 0 0;
+  text-wrap: balance;
+}
+
+.body {
+  color: var(--hg-color-muted, #5f5f5a);
+  line-height: 1.68;
+  margin: 0.85rem 0 0;
+}
+
+.linkGroup {
+  display: grid;
+  gap: 0.55rem;
+  min-inline-size: min(100%, 17rem);
+}
+
+.panel a {
+  align-items: center;
+  background: var(--hg-color-card, #fff);
+  border: 1px solid var(--hg-color-line, #d8d8d1);
+  border-radius: 0.75rem;
+  color: inherit;
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 740;
+  gap: 1rem;
+  justify-content: space-between;
+  line-height: 1.35;
+  min-block-size: 2.75rem;
+  padding: 0.72rem 0.9rem;
+  text-decoration: none;
+}
+
+.panel a:hover,
+.panel a:focus-visible {
+  border-color: var(--hg-color-rust, #a74731);
+  color: var(--hg-color-rust, #a74731);
+}
+
+.panel a:focus-visible {
+  outline: 3px solid var(--hg-color-focus, #d77049);
+  outline-offset: 3px;
+}
+
+.panel a span {
+  flex: none;
+}
+
+.primaryLink {
+  background: var(--hg-color-charcoal, #20201e) !important;
+  border-color: var(--hg-color-charcoal, #20201e) !important;
+  color: var(--hg-color-on-dark, #faf9f5) !important;
+}
+
+.primaryLink:hover,
+.primaryLink:focus-visible {
+  background: var(--hg-color-charcoal-hover, #34342f) !important;
+}
+
+@media (max-width: 760px) {
+  .panel {
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .linkGroup,
+  .panel > a {
+    inline-size: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .panel,
+  .panel a {
+    border: 1px solid CanvasText;
+  }
+}

@@ -21,9 +21,11 @@ import {
   type TransportGuideCopy,
 } from "../lib/beijingZhangjiajieShanghaiTransportI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { TenCityMapFeature } from "./TenCityMapFeature";
 import styles from "./TransportGuidePage.module.css";
 
 const GUIDE_ID = "beijing-zhangjiajie-shanghai-transport" as const;
@@ -314,6 +316,14 @@ export function TransportGuidePage({
 
               <p className={styles.boundaryNote}>{copy.quick.boundary}</p>
             </section>
+
+            <TenCityMapFeature
+              headingId="transport-article-ten-city-map-title"
+              locale={locale}
+              placement="article"
+            />
+
+            <AuthorityHubLinks kind="transport-route" locale={locale} />
 
             <section
               className={styles.timeMath}
