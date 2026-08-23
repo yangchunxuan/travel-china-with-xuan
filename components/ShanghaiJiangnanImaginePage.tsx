@@ -7,6 +7,10 @@ import {
   type PrivateTourLocale,
   type PrivateTourProduct,
 } from "../lib/privateTourProducts";
+import {
+  getLocalizedPrivateTourPhotoCredits,
+  privateTourPhotoCreditCopy,
+} from "../lib/privateTourPhotoCredits";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -296,7 +300,10 @@ function buildGenericPageCopy(
     heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · NO SHOPPING`,
     heroPromise: product.eyebrow,
     facts: [
-      { label: "Journey", value: `${product.days} days / ${product.nights} nights` },
+      {
+        label: "Journey",
+        value: `${product.days} days / ${product.nights} nights`,
+      },
       { label: "Touring", value: "Guide and vehicle details shown day by day" },
       { label: "Stay", value: `${product.nights} nights · breakfast included` },
       { label: "Public prices", value: "2 or 4 travellers" },
@@ -351,6 +358,11 @@ export function ShanghaiJiangnanImaginePage({
 }) {
   const localized = localizePrivateTourProduct(product, locale);
   const copy = getPageCopy(localized);
+  const photoCreditCopy = privateTourPhotoCreditCopy[locale];
+  const photoCredits = getLocalizedPrivateTourPhotoCredits(
+    product.slug,
+    locale,
+  );
   const homePath = locale === "en" ? "/" : `/${locale}/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
   const inquiryHref = `${homePath}?utm_source=private_tour_product&utm_medium=website&utm_campaign=${product.slug}#planner-contact`;
@@ -447,7 +459,10 @@ export function ShanghaiJiangnanImaginePage({
         <section aria-labelledby="product-title" className={styles.hero}>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <nav aria-label={copy.breadcrumbLabel} className={styles.breadcrumb}>
+              <nav
+                aria-label={copy.breadcrumbLabel}
+                className={styles.breadcrumb}
+              >
                 <ol>
                   <li>
                     <Link href={homePath}>{copy.homeLabel}</Link>
@@ -498,7 +513,10 @@ export function ShanghaiJiangnanImaginePage({
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.routeSection}`} data-tour-reveal>
+        <section
+          className={`${styles.section} ${styles.routeSection}`}
+          data-tour-reveal
+        >
           <div className={styles.sectionInner}>
             <div className={`${styles.sectionHeading} ${styles.routeHeading}`}>
               <p className={styles.sectionEyebrow}>{copy.routeEyebrow}</p>
@@ -531,7 +549,10 @@ export function ShanghaiJiangnanImaginePage({
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.scopeSection}`} data-tour-reveal>
+        <section
+          className={`${styles.section} ${styles.scopeSection}`}
+          data-tour-reveal
+        >
           <div className={styles.sectionInner}>
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.scopeEyebrow}</p>
@@ -562,6 +583,39 @@ export function ShanghaiJiangnanImaginePage({
                 </ul>
               </section>
             </div>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.creditSection}`}>
+          <div className={styles.sectionInner}>
+            <details className={styles.photoCredits}>
+              <summary>{photoCreditCopy.title}</summary>
+              <div className={styles.photoCreditBody}>
+                <p>{photoCreditCopy.intro}</p>
+                {photoCredits.length > 0 ? (
+                  <ul>
+                    {photoCredits.map((item) => (
+                      <li key={item.sourceUrl}>
+                        <a
+                          href={item.sourceUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          {item.subject}
+                        </a>
+                        <span>
+                          {photoCreditCopy.by} {item.author} ·{" "}
+                          <a href={item.licenseUrl} rel="license">
+                            {item.licenseLabel}
+                          </a>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                <p>{photoCreditCopy.localNote}</p>
+              </div>
+            </details>
           </div>
         </section>
 

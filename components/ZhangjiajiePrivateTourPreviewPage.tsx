@@ -23,6 +23,24 @@ import {
 } from "../lib/editorialIdentity";
 import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
 
+const photoCreditCopy = {
+  en: {
+    title: "Photo credits",
+    local:
+      "All photographs were selected from the Homeground project library and authorised by the site owner for this website. Only routine cropping, resizing and format conversion were applied.",
+  },
+  zh: {
+    title: "图片来源与授权",
+    local:
+      "全部照片由网站负责人从 Homeground 项目素材库选用并授权用于本站，仅做常规裁切、缩放和格式转换。",
+  },
+  ko: {
+    title: "사진 출처 및 라이선스",
+    local:
+      "모든 사진은 사이트 소유자가 Homeground 프로젝트 자료실에서 선택해 이 웹사이트 사용을 승인했습니다. 일반적인 자르기, 크기 조정과 형식 변환만 적용했습니다.",
+  },
+} as const;
+
 export function ZhangjiajiePrivateTourPreviewPage({
   locale,
   published = false,
@@ -31,6 +49,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
   published?: boolean;
 }) {
   const copy = productPreviewCopy[locale];
+  const photoCopy = photoCreditCopy[locale];
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
   const isKo = locale === "ko";
@@ -90,11 +109,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
               itemListElement: product.route.map((day, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
-                name: isZh
-                  ? day.title_zh
-                  : isKo
-                    ? day.title_ko
-                    : day.title_en,
+                name: isZh ? day.title_zh : isKo ? day.title_ko : day.title_en,
                 description: copy.daySummaries[index],
               })),
             },
@@ -138,26 +153,6 @@ export function ZhangjiajiePrivateTourPreviewPage({
       }
     >
   > = {
-    1: {
-      alt: isZh
-        ? "张家界荷花国际机场停机坪上的客机与登机桥，远处可见天门山"
-        : isKo
-          ? "장자제 허화 국제공항 계류장의 여객기와 탑승교, 그 너머로 보이는 톈먼산"
-          : "Passenger aircraft and boarding bridges at Zhangjiajie Hehua International Airport, with Tianmen Mountain beyond the apron",
-      caption: isZh
-        ? "张家界荷花国际机场 · 第1天抵达节点参考（照片不代表私人接站服务）"
-        : isKo
-          ? "장자제 허화 국제공항 · 1일 차 도착 지점 참고(사진은 전용 픽업 서비스를 보여 주는 것이 아님)"
-          : "Zhangjiajie Hehua International Airport · Day 1 arrival reference (the photograph does not depict the private transfer)",
-      credit: {
-        author: "Martin Lewison",
-        license: "CC BY-SA 2.0",
-        licenseHref: "https://creativecommons.org/licenses/by-sa/2.0/",
-        sourceHref:
-          "https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg",
-      },
-      src: "/product-previews/zhangjiajie-4-day-private-tour/route/day-1-hehua-airport.jpg",
-    },
     2: {
       alt: isZh
         ? "百龙天梯沿张家界国家森林公园的砂岩崖壁升起"
@@ -198,6 +193,57 @@ export function ZhangjiajiePrivateTourPreviewPage({
       src: "/product-previews/zhangjiajie-4-day-private-tour/hero/tianmen-cave-and-stairs.jpg",
     },
   };
+  const accommodationSummaries = {
+    en: {
+      "city-candidate-01":
+        "A bright twin-room reference for the practical city-stay tier. The exact property, room and outlook are confirmed for the travel dates.",
+      "premium-villa":
+        "One strong living-room reference shows the extra space expected from this tier. The exact accommodation and room allocation are confirmed for the travel dates.",
+      "signature-villa":
+        "A selected set of room, bathroom and shared-space references conveys the character of this more distinctive stay without implying that every feature belongs to one bookable room.",
+    },
+    zh: {
+      "city-candidate-01":
+        "这张明亮的双床房照片用于说明实用型市区住宿档；具体酒店、房型和窗景会按实际日期确认。",
+      "premium-villa":
+        "保留一张质感较好的客厅照片，用于说明这一档应有的空间感；具体住宿和房间分配按实际日期确认。",
+      "signature-villa":
+        "精选的客房、浴室与公共空间照片用于呈现更具特色的住宿氛围，不代表所有设施都属于同一间可预订客房。",
+    },
+    ko: {
+      "city-candidate-01":
+        "밝은 트윈룸 사진 한 장으로 실용적인 시내 숙박 등급을 보여 줍니다. 실제 숙소, 객실과 전망은 여행 날짜에 맞춰 확정합니다.",
+      "premium-villa":
+        "공간감이 잘 드러나는 거실 사진 한 장만 남겼습니다. 실제 숙소와 객실 배정은 여행 날짜에 맞춰 확정합니다.",
+      "signature-villa":
+        "선별한 객실, 욕실과 공용 공간 사진으로 개성 있는 숙박 분위기를 보여 주되, 모든 요소가 하나의 예약 가능한 객실에 속한다고 의미하지는 않습니다.",
+    },
+  } as const;
+  const safeAccommodationImages = new Set([
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/city-candidate-01-twin-window.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/family-villa-living.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-terrace.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-suite.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-fireplace-room.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-garden-lounge.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-bathtub.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-red-room.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-colour-room.jpg",
+    "/product-previews/zhangjiajie-4-day-private-tour/accommodations/signature-villa-vanity.jpg",
+  ]);
+  const accommodationOptions = copy.accommodationOptions
+    .filter((option) => option.id !== "city-candidate-02")
+    .map((option) => ({
+      ...option,
+      images: option.images.filter((photo) =>
+        safeAccommodationImages.has(photo.src),
+      ),
+      summary:
+        accommodationSummaries[locale][
+          option.id as keyof (typeof accommodationSummaries)[typeof locale]
+        ] ?? option.summary,
+    }))
+    .filter((option) => option.images.length > 0);
 
   return (
     <div
@@ -226,7 +272,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
           aria-labelledby="product-title"
         >
           <div className={editorialStyles.heroCopy}>
-            <nav className={editorialStyles.breadcrumb} aria-label={copy.breadcrumbLabel}>
+            <nav
+              className={editorialStyles.breadcrumb}
+              aria-label={copy.breadcrumbLabel}
+            >
               <ol>
                 <li>
                   <Link href={homePath}>{copy.homeLabel}</Link>
@@ -248,7 +297,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </a>
           </div>
 
-          <figure className={`${editorialStyles.heroFigure} ${styles.heroFigure}`}>
+          <figure
+            className={`${editorialStyles.heroFigure} ${styles.heroFigure}`}
+          >
             <div className={styles.heroImage}>
               <Image
                 alt={
@@ -269,7 +320,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
         </section>
 
         <article className={`${editorialStyles.article} ${styles.article}`}>
-          <section className={styles.contentSection} aria-labelledby="why-private-title">
+          <section
+            className={styles.contentSection}
+            aria-labelledby="why-private-title"
+          >
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.whyEyebrow}</p>
               <h2 id="why-private-title">{copy.whyTitle}</h2>
@@ -304,7 +358,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
                     <div className={styles.dayMarker}>
                       {isKo ? null : <span>{isZh ? "第" : "Day"}</span>}
                       <strong>{day.day}</strong>
-                      {isZh ? <span>天</span> : isKo ? <span>일 차</span> : null}
+                      {isZh ? (
+                        <span>天</span>
+                      ) : isKo ? (
+                        <span>일 차</span>
+                      ) : null}
                     </div>
                     <div
                       className={`${styles.dayCopy} ${
@@ -320,7 +378,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
                               : day.title_en}
                         </h3>
                         <span className={styles.dayStatus}>
-                          {day.guide_planned ? copy.guideLabel : copy.arrivalLabel}
+                          {day.guide_planned
+                            ? copy.guideLabel
+                            : copy.arrivalLabel}
                         </span>
                       </div>
                       <p>{copy.daySummaries[index]}</p>
@@ -366,7 +426,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </ol>
           </section>
 
-          <section className={styles.contentSection} aria-labelledby="stays-title">
+          <section
+            className={styles.contentSection}
+            aria-labelledby="stays-title"
+          >
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.staysEyebrow}</p>
               <h2 id="stays-title">{copy.staysTitle}</h2>
@@ -380,7 +443,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
               </div>
             </aside>
             <div className={styles.stayGrid}>
-              {copy.accommodationOptions.map((option) => (
+              {accommodationOptions.map((option) => (
                 <section className={styles.stayCard} key={option.id}>
                   <div className={styles.stayHeading}>
                     <div>
@@ -410,7 +473,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </div>
           </section>
 
-          <section className={styles.contentSection} aria-labelledby="prices-title">
+          <section
+            className={styles.contentSection}
+            aria-labelledby="prices-title"
+          >
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.pricesEyebrow}</p>
               <h2 id="prices-title">{copy.pricesTitle}</h2>
@@ -423,7 +489,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
             />
           </section>
 
-          <section className={styles.contentSection} aria-labelledby="faq-title">
+          <section
+            className={styles.contentSection}
+            aria-labelledby="faq-title"
+          >
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.faqEyebrow}</p>
               <h2 id="faq-title">{copy.faqTitle}</h2>
@@ -438,7 +507,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </dl>
           </section>
 
-          <section className={styles.contentSection} aria-labelledby="scope-title">
+          <section
+            className={styles.contentSection}
+            aria-labelledby="scope-title"
+          >
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.scopeEyebrow}</p>
               <h2 id="scope-title">{copy.scopeTitle}</h2>
@@ -470,7 +542,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
             <p className={styles.scopeNote}>{copy.confirmationNote}</p>
           </section>
 
-          <section className={styles.contentSection} aria-labelledby="payment-title">
+          <section
+            className={styles.contentSection}
+            aria-labelledby="payment-title"
+          >
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.paymentEyebrow}</p>
               <h2 id="payment-title">{copy.paymentTitle}</h2>
@@ -501,9 +576,21 @@ export function ZhangjiajiePrivateTourPreviewPage({
               ))}
             </ul>
           </details>
+
+          <details className={styles.sources}>
+            <summary>{photoCopy.title}</summary>
+            <ul>
+              <li>
+                <span>{photoCopy.local}</span>
+              </li>
+            </ul>
+          </details>
         </article>
 
-        <aside className={`${editorialStyles.cta} ${styles.finalCta}`} aria-labelledby="final-cta-title">
+        <aside
+          className={`${editorialStyles.cta} ${styles.finalCta}`}
+          aria-labelledby="final-cta-title"
+        >
           <div>
             <p className={editorialStyles.ctaLabel}>{copy.finalEyebrow}</p>
             <h2 id="final-cta-title">{copy.finalTitle}</h2>
