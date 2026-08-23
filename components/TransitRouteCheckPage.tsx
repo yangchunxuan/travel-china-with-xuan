@@ -13,6 +13,7 @@ import {
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./TransitRouteCheckPage.module.css";
@@ -348,6 +349,8 @@ export function TransitRouteCheckPage({
                 ))}
               </dl>
             </section>
+
+            <AuthorityHubLinks kind="entry" locale={locale} />
           </div>
 
           <section className={styles.finalCta} aria-labelledby="guide-cta-title">

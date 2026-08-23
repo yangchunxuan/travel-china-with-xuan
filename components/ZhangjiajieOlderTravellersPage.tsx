@@ -13,6 +13,7 @@ import {
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./ZhangjiajieOlderTravellersPage.module.css";
@@ -306,6 +307,8 @@ export function ZhangjiajieOlderTravellersPage({
                 ))}
               </dl>
             </section>
+
+            <AuthorityHubLinks kind="zhangjiajie" locale={locale} />
           </div>
 
           <section className={styles.finalCta} aria-labelledby="guide-cta-title">

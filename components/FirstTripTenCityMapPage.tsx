@@ -15,6 +15,7 @@ import {
   editorialPersonSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { EditorialByline } from "./EditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -27,10 +28,21 @@ import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./FirstTripTenCityMapPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+const ASSET_LICENCE_URL = "https://creativecommons.org/licenses/by/4.0/";
+const ASSET_CREDIT_TEXT =
+  "Homeground China, First Trip to China: 10-City Airport, Station and Stay Map, CC BY 4.0.";
+const ASSET_COPYRIGHT_NOTICE = `© 2026 ${homegroundBusiness.registeredName}, operating as Homeground China.`;
 export const FIRST_TRIP_TEN_CITY_GUIDE_ID =
   "first-trip-china-airport-station-stay-map" as GuideId;
 
 const downloads = [
+  {
+    label: "Complete ten-city asset pack",
+    description: "National map, all ten city cards, data, licence and checksums",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip",
+    format: "ZIP",
+    contentKind: "complete-ten-city-pack",
+  },
   {
     label: "National schematic",
     description: "Editable vector for editorial layouts",
@@ -60,46 +72,46 @@ const downloads = [
     contentKind: "ten-city-data-csv",
   },
   {
-    label: "Beijing city card",
-    description: "Editable single-city graphic",
-    href: "/downloads/homeground-china-beijing-arrive-stay-depart-v1.svg",
-    format: "SVG",
-    contentKind: "beijing-card-svg",
+    label: "Ten-city source data",
+    description: "Structured gateway, stay and warning records",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.json",
+    format: "JSON",
+    contentKind: "ten-city-data-json",
   },
   {
-    label: "Beijing city card",
-    description: "1200 × 675 web graphic",
-    href: "/downloads/homeground-china-beijing-arrive-stay-depart-v1.png",
-    format: "PNG",
-    contentKind: "beijing-card-png",
+    label: "Licence",
+    description: "CC BY 4.0 terms and scope exclusions",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-LICENSE.txt",
+    format: "TXT",
+    contentKind: "asset-licence",
   },
   {
-    label: "Shanghai city card",
-    description: "Editable single-city graphic",
-    href: "/downloads/homeground-china-shanghai-arrive-stay-depart-v1.svg",
-    format: "SVG",
-    contentKind: "shanghai-card-svg",
+    label: "Pack readme",
+    description: "Contents, intended use and current-use warning",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-README.txt",
+    format: "TXT",
+    contentKind: "asset-readme",
   },
   {
-    label: "Shanghai city card",
-    description: "1200 × 675 web graphic",
-    href: "/downloads/homeground-china-shanghai-arrive-stay-depart-v1.png",
-    format: "PNG",
-    contentKind: "shanghai-card-png",
+    label: "Attribution and embed notes",
+    description: "Copy-ready credit, HTML and accessible alt text",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-ATTRIBUTION-AND-EMBED.txt",
+    format: "TXT",
+    contentKind: "asset-attribution",
   },
   {
-    label: "Zhangjiajie city card",
-    description: "Editable single-city graphic",
-    href: "/downloads/homeground-china-zhangjiajie-arrive-stay-depart-v1.svg",
-    format: "SVG",
-    contentKind: "zhangjiajie-card-svg",
+    label: "Source and method index",
+    description: "Official source links and review date",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-SOURCES.txt",
+    format: "TXT",
+    contentKind: "asset-sources",
   },
   {
-    label: "Zhangjiajie city card",
-    description: "1200 × 675 web graphic",
-    href: "/downloads/homeground-china-zhangjiajie-arrive-stay-depart-v1.png",
-    format: "PNG",
-    contentKind: "zhangjiajie-card-png",
+    label: "SHA-256 checksums",
+    description: "Verify every file contained in the ZIP",
+    href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-SHA256SUMS.txt",
+    format: "TXT",
+    contentKind: "asset-checksums",
   },
 ] as const satisfies readonly LinkableAssetDownload[];
 
@@ -128,6 +140,9 @@ function assetMimeType(href: string) {
   if (href.endsWith(".svg")) return "image/svg+xml";
   if (href.endsWith(".png")) return "image/png";
   if (href.endsWith(".csv")) return "text/csv";
+  if (href.endsWith(".json")) return "application/json";
+  if (href.endsWith(".txt")) return "text/plain";
+  if (href.endsWith(".zip")) return "application/zip";
   return "application/octet-stream";
 }
 
@@ -168,6 +183,10 @@ function structuredData() {
         height: guide.imageHeight,
         caption: "Ten-city arrive, stay and depart schematic by Homeground China",
         creator: { "@id": EDITORIAL_ORGANIZATION_ID },
+        license: ASSET_LICENCE_URL,
+        acquireLicensePage: guide.canonicalUrl,
+        creditText: ASSET_CREDIT_TEXT,
+        copyrightNotice: ASSET_COPYRIGHT_NOTICE,
       },
       {
         "@type": "Dataset",
@@ -181,6 +200,10 @@ function structuredData() {
         inLanguage: "en",
         isAccessibleForFree: true,
         creator: { "@id": EDITORIAL_ORGANIZATION_ID },
+        license: ASSET_LICENCE_URL,
+        acquireLicensePage: guide.canonicalUrl,
+        creditText: ASSET_CREDIT_TEXT,
+        copyrightNotice: ASSET_COPYRIGHT_NOTICE,
         spatialCoverage: { "@type": "Country", name: "China" },
         variableMeasured: [
           "gateway node",
@@ -194,6 +217,10 @@ function structuredData() {
           name: download.label,
           encodingFormat: assetMimeType(download.href),
           contentUrl: `${SITE_URL}${download.href}`,
+          license: ASSET_LICENCE_URL,
+          acquireLicensePage: guide.canonicalUrl,
+          creditText: ASSET_CREDIT_TEXT,
+          copyrightNotice: ASSET_COPYRIGHT_NOTICE,
         })),
       },
       {
@@ -336,6 +363,47 @@ export function FirstTripTenCityMapPage() {
             </div>
           </section>
 
+          <section className={`${styles.section} ${styles.downloadSection}`} id="downloads" aria-labelledby="downloads-title">
+            <div className={styles.downloadIntro}>
+              <Database aria-hidden="true" size={25} />
+              <div className={styles.sectionHeader}>
+                <p className={styles.miniLabel}>National map · 10 city cards · Data</p>
+                <h2 id="downloads-title">Download and reuse the complete asset pack</h2>
+                <p>The ZIP contains the national schematic, ten city cards, CSV, JSON, source notes, licence, attribution examples and file checksums.</p>
+              </div>
+            </div>
+            <LinkableAssetActions assets={downloads} citation={citation} guideId={guide.id} />
+            <div className={styles.licencePanel} id="licence">
+              <div>
+                <p className={styles.miniLabel}>Open reuse licence</p>
+                <h3>Original map graphics and compiled data: CC BY 4.0</h3>
+              </div>
+              <div>
+                <p>
+                  You may share and adapt Homeground China&apos;s original map
+                  graphics, city cards, annotations and compiled dataset,
+                  including commercially, with reasonable attribution.
+                </p>
+                <ul>
+                  <li>Credit Homeground China and link this canonical page and the licence where practical.</li>
+                  <li>Say when you have changed the material; do not imply endorsement.</li>
+                  <li>Third-party names, trademarks, source pages and facts are not relicensed.</li>
+                  <li>The asset is schematic and not a live timetable, route guarantee or navigation product.</li>
+                </ul>
+                <p>
+                  <a href={ASSET_LICENCE_URL}>
+                    Read the Creative Commons Attribution 4.0 licence
+                  </a>
+                  {" · "}
+                  <a download href="/downloads/homeground-china-10-city-arrival-stay-departure-v1-LICENSE.txt">
+                    Download the pack licence
+                  </a>
+                </p>
+                <small>{ASSET_COPYRIGHT_NOTICE}</small>
+              </div>
+            </div>
+          </section>
+
           <aside className={styles.commercialCta}>
             <div>
               <p className={styles.miniLabel}>Protect the bookings</p>
@@ -389,18 +457,6 @@ export function FirstTripTenCityMapPage() {
             </div>
           </section>
 
-          <section className={`${styles.section} ${styles.downloadSection}`} id="downloads" aria-labelledby="downloads-title">
-            <div className={styles.downloadIntro}>
-              <Database aria-hidden="true" size={25} />
-              <div className={styles.sectionHeader}>
-                <p className={styles.miniLabel}>National map · City cards · Data</p>
-                <h2 id="downloads-title">Download the editorial asset pack</h2>
-                <p>Quote the matrix with a link to this page. For embedding or adapting a graphic, contact Homeground China for the current file and written reuse terms.</p>
-              </div>
-            </div>
-            <LinkableAssetActions assets={downloads} citation={citation} guideId={guide.id} />
-          </section>
-
           <section className={styles.methodSection} aria-labelledby="method-title">
             <div>
               <p className={styles.miniLabel}>Method</p>
@@ -414,7 +470,7 @@ export function FirstTripTenCityMapPage() {
             </ul>
           </section>
 
-          <details className={styles.sources}>
+          <details className={styles.sources} id="sources">
             <summary><span>Official sources reviewed</span><b>{assetData.sources.length}</b></summary>
             <ol>
               {assetData.sources.map((source) => (

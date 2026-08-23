@@ -1,0 +1,53 @@
+SOURCE AND METHOD INDEX
+
+Canonical method and live source ledger: https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/#sources
+Facts reviewed: 2026-08-23
+
+01. China Railway 12306 — China Railway passenger service and live journey search
+    https://www.12306.cn/en/index.html
+02. Civil Aviation Administration of China — National airport statistics and airport context
+    https://www.caac.gov.cn/PHONE/XXGK_17/XXGK/TJSJ/202602/t20260226_230119.html
+03. Beijing Municipal Government — Beijing airport codes and passenger-service entry points
+    https://english.beijing.gov.cn/specials/beijingservice/
+04. Beijing Municipal Government — Seven Beijing railway stations and their metro access
+    https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html
+05. Shanghai Airport Authority — Pudong International Airport passenger information
+    https://www.shairport.com/enpd/
+06. Shanghai Airport Authority — Hongqiao International Airport passenger information
+    https://www.shairport.com/enhq/
+07. Xi'an Municipal Government — Xi'an Xianyang Airport Terminal 5 opening
+    https://en.xa.gov.cn/MediaCenter/News/1892494226718523393.html
+08. Xi'an Municipal Government — Xi'an East Railway Station opening and transfer guidance
+    https://en.xa.gov.cn/MediaCenter/News/2072253459180654594.html
+09. Chengdu Airport Group — Current Chengdu airport service adjustment
+    https://www.cdairport.com/news_detail.aspx?cid=6393&page=1&t=60
+10. GoChengdu / Chengdu authorities — Chengdu railway-station identities
+    https://www.gochengdu.cn/en/article/column_167083285087556/4577
+11. Guangzhou Municipal Government — Guangzhou Baiyun Airport Terminal 3 opening
+    https://www.gz.gov.cn/xw/gzyw/content/post_10520548.html
+12. Guangzhou Municipal Government — International and regional flight move to Terminal 3
+    https://www.gz.gov.cn/zwfw/zxfw/jtfw/content/post_10658828.html
+13. Guangzhou Municipal Government — Current roles of Guangzhou and Guangzhou Baiyun railway stations
+    https://www.gz.gov.cn/guangzhouinternational/home/citynews/content/post_10663571.html
+14. Hangzhou Xiaoshan International Airport — Current Hangzhou Airport T3 and T4 use and T2 works
+    https://www.hzairport.com/tender/detail/id/5983.html
+15. Hangzhou Xiaoshan International Airport — Hangzhou Airport metro lines
+    https://www.hzairport.com/guide/subway.html
+16. Chongqing Municipal Government — Chongqing Airport T3B passenger process
+    https://www.cq.gov.cn/gzh/csts/202503/t20250328_14452741_app.html
+17. Chongqing Municipal Transport Commission — Chongqing East Railway Station opening
+    https://jtysw.cq.gov.cn/sy_240/jdtp/202506/t20250627_14753977.html
+18. Guilin Liangjiang International Airport — Guilin Liangjiang Airport ground transport
+    https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html
+19. Shenzhen Port Office — Shenzhen checkpoints and passenger services
+    https://ka.sz.gov.cn/bmfw/katgfw/index.html
+20. Li River Scenic Area — Yangshuo Station location and distinct Li River ports
+    https://www.lijiangriver.com.cn/page/article/lyfw.jtcx
+21. Shenzhen Municipal Government — Current Shenzhen Airport T3 and satellite-hall passenger facilities
+    https://www.sz.gov.cn/en_szgov/life/transport/flight/index.html
+22. Shenzhen Municipal Government — Shenzhen airport and city railway-station context
+    https://www.sz.gov.cn/en_szgov/life/transport/trains/
+23. Hunan Airport Group — Zhangjiajie Hehua Airport and current terminal context
+    https://www.hunanairport.cn/content/zjjAirPort.html
+24. Hunan Department of Culture and Tourism — Five Wulingyuan ticket-gate identities
+    https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716245.html

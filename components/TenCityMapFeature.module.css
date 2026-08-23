@@ -1,0 +1,144 @@
+.feature {
+  align-items: stretch;
+  background: var(--hg-color-charcoal, #20201e);
+  color: var(--hg-color-on-dark, #faf9f5);
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+  margin: 0;
+  overflow: hidden;
+}
+
+.feature[data-ten-city-map-placement="homepage"],
+.feature[data-ten-city-map-placement="transport-hub"] {
+  padding: clamp(1rem, 3vw, 2rem)
+    max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.feature[data-ten-city-map-placement="article"] {
+  border-radius: 1rem;
+  margin-block: clamp(3rem, 7vw, 6rem);
+}
+
+.imageLink {
+  background: #faf9f5;
+  display: block;
+  min-block-size: 100%;
+  overflow: hidden;
+}
+
+.imageLink img {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: contain;
+}
+
+.imageLink:focus-visible,
+.actions a:focus-visible,
+.licence a:focus-visible {
+  outline: 3px solid var(--hg-color-focus, #e5835d);
+  outline-offset: -3px;
+}
+
+.copy {
+  align-content: center;
+  display: grid;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.eyebrow {
+  color: #e8a58b;
+  font-size: 0.7rem;
+  font-weight: 780;
+  letter-spacing: 0.13em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  color: inherit;
+  font-family: var(--hg-editorial, Georgia, serif);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 0.7rem 0 0;
+  text-wrap: balance;
+}
+
+.copy > p:not(.eyebrow, .licence) {
+  color: rgb(250 249 245 / 72%);
+  line-height: 1.7;
+  margin: 1.1rem 0 0;
+}
+
+.actions {
+  display: grid;
+  gap: 0.65rem;
+  margin-block-start: 1.5rem;
+}
+
+.actions a {
+  align-items: center;
+  border: 1px solid rgb(250 249 245 / 28%);
+  border-radius: 0.75rem;
+  color: inherit;
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 740;
+  gap: 1rem;
+  justify-content: space-between;
+  min-block-size: 2.75rem;
+  padding: 0.72rem 0.9rem;
+  text-decoration: none;
+}
+
+.actions a:first-child {
+  background: var(--hg-color-rust, #a74731);
+  border-color: var(--hg-color-rust, #a74731);
+}
+
+.actions a:hover {
+  border-color: #e8a58b;
+}
+
+.actions strong,
+.actions small {
+  display: block;
+}
+
+.actions small {
+  color: rgb(250 249 245 / 62%);
+  font-size: 0.68rem;
+  margin-block-start: 0.15rem;
+}
+
+.licence {
+  color: rgb(250 249 245 / 58%);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  margin: 1rem 0 0;
+}
+
+.licence a {
+  color: inherit;
+  text-underline-offset: 0.16em;
+}
+
+@media (max-width: 860px) {
+  .feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .imageLink {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (forced-colors: active) {
+  .feature,
+  .actions a {
+    border: 1px solid CanvasText;
+  }
+}

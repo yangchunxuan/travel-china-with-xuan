@@ -241,6 +241,11 @@ export function getSearchHubGuides(
   section: SearchSectionId,
   locale: HomegroundLocale,
 ) {
+  const pinnedLeadGuideId =
+    section === "transport" && locale === "en"
+      ? "first-trip-china-airport-station-stay-map"
+      : undefined;
+
   return searchPlatformManifest.entries
     .filter(
       (entry) =>
@@ -256,6 +261,8 @@ export function getSearchHubGuides(
     })
     .sort(
       (left, right) =>
+        Number(right.guide.id === pinnedLeadGuideId) -
+          Number(left.guide.id === pinnedLeadGuideId) ||
         (right.manifest.dates.dateModified ?? "").localeCompare(
           left.manifest.dates.dateModified ?? "",
         ) || left.manifest.path.localeCompare(right.manifest.path),
