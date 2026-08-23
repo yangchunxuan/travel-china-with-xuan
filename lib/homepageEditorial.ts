@@ -10,6 +10,11 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "./homegroundI18n";
+import {
+  destinationHubIds,
+  getDestinationHubEntry,
+  type DestinationHubId,
+} from "./destinationHubs";
 import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeCard";
 
 export type HomepageGuideCategory =
@@ -46,6 +51,12 @@ export interface HomepageSearchDemo {
     readonly title: string;
     readonly label: string;
   }[];
+}
+
+export interface HomepageDestinationHubItem {
+  readonly id: DestinationHubId;
+  readonly label: string;
+  readonly href: string;
 }
 
 const editorialLeadOrder: readonly GuideId[] = [
@@ -195,5 +206,18 @@ export function getHomepageSearchDemos(
       }));
 
     return results.length > 0 ? [{ query, results }] : [];
+  });
+}
+
+export function getHomepageDestinationHubItems(
+  locale: HomegroundLocale,
+): readonly HomepageDestinationHubItem[] {
+  return destinationHubIds.map((id) => {
+    const hub = getDestinationHubEntry(id, locale);
+    return {
+      id,
+      label: hub.navTitle,
+      href: hub.canonicalPath,
+    };
   });
 }

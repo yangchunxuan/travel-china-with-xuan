@@ -111,6 +111,12 @@ export interface HomegroundCopy {
       whenToGo: string;
     };
   };
+  cities: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    listLabel: string;
+  };
   studio: {
     eyebrow: string;
     title: string;
@@ -463,6 +469,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         essentials: "Travel essentials",
         whenToGo: "When to go",
       },
+    },
+    cities: {
+      eyebrow: "Destination guides",
+      title: "Start with the city, then fit the trip around it.",
+      intro:
+        "Compare how many nights to stay, where to base yourself, the main gateways and which nearby stops connect well.",
+      listLabel: "Explore China city guides",
     },
     studio: {
       eyebrow: "What happens after you contact us",
@@ -998,6 +1011,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         whenToGo: "什么时候去",
       },
     },
+    cities: {
+      eyebrow: "城市旅行指南",
+      title: "先看懂一座城市，再把整趟行程接起来。",
+      intro:
+        "比较适合停留几晚、住哪个区域、从哪里进出，以及附近哪些地方适合一起安排。",
+      listLabel: "浏览中国城市旅行指南",
+    },
     studio: {
       eyebrow: "联系之后会发生什么",
       title: "范围和费用，先确认再付费。",
@@ -1500,6 +1520,13 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         essentials: "여행 필수 정보",
         whenToGo: "여행 시기",
       },
+    },
+    cities: {
+      eyebrow: "도시 여행 가이드",
+      title: "도시를 먼저 이해하고, 전체 여정을 연결하세요.",
+      intro:
+        "권장 숙박 일수, 숙소 지역, 주요 관문과 함께 묶기 좋은 주변 여행지를 비교하세요.",
+      listLabel: "중국 도시 여행 가이드 둘러보기",
     },
     studio: {
       eyebrow: "연락한 다음에는",

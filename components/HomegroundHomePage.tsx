@@ -17,6 +17,7 @@ import {
 import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import type {
+  HomepageDestinationHubItem,
   HomepageGuideCategory,
   HomepageGuideRailItem,
   HomepageSearchDemo,
@@ -132,11 +133,13 @@ function resolveFinalCta(
 }
 
 export function HomegroundHomePage({
+  destinationHubItems,
   guideRailItems,
   locale = "en",
   planningSection = "scope-v2",
   searchDemos,
 }: {
+  destinationHubItems: readonly HomepageDestinationHubItem[];
   guideRailItems: readonly HomepageGuideRailItem[];
   locale?: HomegroundLocale;
   planningSection?: PlanningSectionVariant;
@@ -575,6 +578,34 @@ export function HomegroundHomePage({
             <HomepageGuideSearch demos={searchDemos} locale={locale} />
           </div>
         </div>
+
+        <section
+          className={styles.cityHubSection}
+          aria-labelledby="homepage-city-hubs-title"
+        >
+          <div className={styles.cityHubInner}>
+            <div className={styles.cityHubIntro}>
+              <p className={styles.eyebrowDark}>{copy.cities.eyebrow}</p>
+              <h2 id="homepage-city-hubs-title">{copy.cities.title}</h2>
+              <p>{copy.cities.intro}</p>
+            </div>
+            <nav aria-label={copy.cities.listLabel}>
+              <ul className={styles.cityHubList}>
+                {destinationHubItems.map((city) => (
+                  <li key={city.id}>
+                    <a
+                      className={styles.cityHubLink}
+                      href={city.href}
+                    >
+                      <span>{city.label}</span>
+                      <ArrowRight aria-hidden="true" size={18} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </section>
 
         <HomepageGuideRail
           catalogUrl={guideRailCatalogPath}
