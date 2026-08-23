@@ -103,7 +103,7 @@ export const legacySystemContentLifecycle = {
     dateModified: "2026-08-23",
     lastReviewed: "2026-08-16",
     evidence: {
-      commit: "e7a0d19e320adc3dc3ce88eb9283f9765ea1d22f",
+      commit: "a0ab67e1037f7919fa0b41369d4787e89bae5022",
       changedAt: "2026-08-23",
       summary:
         "Live QA replaced two inaccessible Zhangjiajie source links; images, prices and the remaining source set were not re-reviewed.",

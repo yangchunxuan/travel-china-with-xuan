@@ -74,6 +74,10 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
 
   assert.equal(records.privacy.lastReviewed, "2026-07-31");
   assert.equal(records["zhangjiajie-4-day-private-tour"].lastReviewed, "2026-08-16");
+  assert.equal(
+    records["zhangjiajie-4-day-private-tour"].evidence.commit,
+    "a0ab67e1037f7919fa0b41369d4787e89bae5022",
+  );
   for (const id of ["business-information", "terms", "refund-delivery"]) {
     assert.equal(records[id].dateModified, "2026-07-24");
     assert.equal(records[id].lastReviewed, "2026-07-24");
