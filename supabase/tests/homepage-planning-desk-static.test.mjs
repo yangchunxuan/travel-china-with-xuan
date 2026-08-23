@@ -338,7 +338,10 @@ test("the first planning view is contact-only while paid shortcuts stay availabl
   assert.doesNotMatch(home, /beijing-hero/u);
   assert.doesNotMatch(home, /heroPicture|photoCaption/u);
   assert.doesNotMatch(home, /className=\{styles\.heroFacts\}/u);
-  assert.match(home, /className=\{styles\.heroLead\}/u);
+  assert.match(
+    home,
+    /className=\{`\$\{styles\.heroLead\} \$\{showcaseStyles\.heroLead\}`\}/u,
+  );
   assert.match(planningDesk, /<HomepageQuickContact/u);
   assert.match(planningDesk, /contactOnly\s*\?/u);
   assert.match(
