@@ -5,47 +5,6 @@
   position: relative;
 }
 
-.root[data-has-control="true"] {
-  align-items: end;
-  column-gap: 0.75rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 2.75rem;
-}
-
-.motionControl {
-  align-items: center;
-  align-self: end;
-  background: #fff;
-  border: 1px solid rgb(10 10 10 / 16%);
-  border-radius: 999px;
-  color: rgb(10 10 10 / 58%);
-  cursor: pointer;
-  display: inline-flex;
-  grid-column: 2;
-  grid-row: 1;
-  block-size: 2.75rem;
-  inline-size: 2.75rem;
-  justify-content: center;
-  margin-block-end: 0.08em;
-  padding: 0;
-  z-index: 2;
-  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.motionControl:hover {
-  border-color: rgb(10 10 10 / 38%);
-  color: #0a0a0a;
-}
-
-.motionControl:active {
-  transform: scale(0.96);
-}
-
-.motionControl:focus-visible {
-  outline: 3px solid var(--hg-color-focus, #2563eb);
-  outline-offset: 3px;
-}
-
 .screenReaderOnly {
   block-size: 1px;
   border: 0;
@@ -145,20 +104,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .root[data-has-control="true"] {
-    display: block;
-  }
-
-  .motionControl {
-    display: none;
-  }
-
   .phraseLayer .letter {
     animation: none;
     opacity: 1;
     transform: none;
   }
-
 }
 
 @keyframes letterEnter {

@@ -139,7 +139,7 @@ test("guide rail preserves position while lazy-loading and loads near the native
   assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
 });
 
-test("homepage hero keeps one canonical brand promise behind a controllable rotating ending", async () => {
+test("homepage hero keeps one canonical brand promise behind a two-second rotating ending", async () => {
   const [homepage, header, title, titleStyles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomegroundHeader.tsx"),
@@ -153,7 +153,7 @@ test("homepage hero keeps one canonical brand promise behind a controllable rota
   assert.match(homepage, /canonicalTitle=\{copy\.hero\.title\}/);
   assert.match(homepage, /fixedLines=\{showcase\.heroHeadline\.fixedLines\}/);
   assert.match(homepage, /phrases=\{showcase\.heroHeadline\.phrases\}/);
-  assert.match(title, /AUTO_STEP_MS = 4300/);
+  assert.match(title, /AUTO_STEP_MS = 2000/);
   assert.match(title, /className=\{\[styles\.heading, className\]/);
   assert.match(
     title,
@@ -164,12 +164,11 @@ test("homepage hero keeps one canonical brand promise behind a controllable rota
   assert.match(title, /new IntersectionObserver/);
   assert.match(title, /document\.visibilityState === "visible"/);
   assert.match(title, /prefers-reduced-motion: reduce/);
-  assert.match(title, /focusPaused/);
-  assert.match(title, /<Pause aria-hidden="true"/);
-  assert.match(title, /<Play aria-hidden="true"/);
+  assert.doesNotMatch(title, /manualPaused|focusPaused|pointerPaused/);
+  assert.doesNotMatch(title, /<button|<Pause|<Play|motionControl/);
   assert.doesNotMatch(title, /aria-live|role="status"/);
   assert.match(title, /className=\{styles\.phraseSizer\}/);
-  assert.match(titleStyles, /block-size: 2\.75rem/);
+  assert.doesNotMatch(titleStyles, /motionControl|data-has-control/);
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.doesNotMatch(titleStyles, /filter: blur/);
 });

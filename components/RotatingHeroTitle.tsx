@@ -7,10 +7,9 @@ import {
   useRef,
   useState,
 } from "react";
-import { Pause, Play } from "lucide-react";
 import styles from "./RotatingHeroTitle.module.css";
 
-const AUTO_STEP_MS = 4300;
+const AUTO_STEP_MS = 2000;
 const ENTER_PHASE_MS = 760;
 const EXIT_PHASE_MS = 560;
 const HOLD_PHASE_MS = AUTO_STEP_MS - ENTER_PHASE_MS - EXIT_PHASE_MS;
@@ -27,10 +26,8 @@ export type RotatingHeroTitleProps = {
   className?: string;
   fixedLines: readonly string[];
   id?: string;
-  pauseLabel?: string;
   paused?: boolean;
   phrases: readonly string[];
-  playLabel?: string;
 };
 
 const cjkCharacterPattern =
@@ -130,10 +127,8 @@ export function RotatingHeroTitle({
   className,
   fixedLines,
   id,
-  pauseLabel = "Pause changing headline",
   paused = false,
   phrases,
-  playLabel = "Continue changing headline",
 }: RotatingHeroTitleProps) {
   const phraseSignature = JSON.stringify({ fixedLines, phrases });
   const availableFixedLines = useMemo(
@@ -149,10 +144,7 @@ export function RotatingHeroTitle({
     paused || availablePhrases.length <= 1 ? "holding" : "entering",
   );
   const [documentVisible, setDocumentVisible] = useState(true);
-  const [focusPaused, setFocusPaused] = useState(false);
   const [inViewport, setInViewport] = useState(true);
-  const [manualPaused, setManualPaused] = useState(false);
-  const [pointerPaused, setPointerPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [cycleVersion, setCycleVersion] = useState(0);
   const previousPhraseSignature = useRef(phraseSignature);
@@ -165,9 +157,6 @@ export function RotatingHeroTitle({
   const canRotate = availablePhrases.length > 1;
   const effectivePaused =
     paused ||
-    manualPaused ||
-    pointerPaused ||
-    focusPaused ||
     !documentVisible ||
     !inViewport ||
     prefersReducedMotion;
@@ -266,18 +255,9 @@ export function RotatingHeroTitle({
   return (
     <div
       className={styles.root}
-      data-has-control={canRotate && !prefersReducedMotion ? "true" : "false"}
       data-paused={effectivePaused ? "true" : "false"}
       data-rotation-state={phase}
       ref={rootRef}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-          setFocusPaused(false);
-        }
-      }}
-      onFocusCapture={() => setFocusPaused(true)}
-      onMouseEnter={() => setPointerPaused(true)}
-      onMouseLeave={() => setPointerPaused(false)}
     >
       <h1
         className={[styles.heading, className].filter(Boolean).join(" ")}
@@ -318,29 +298,6 @@ export function RotatingHeroTitle({
           ) : null}
         </span>
       </h1>
-      {canRotate && !prefersReducedMotion ? (
-        <button
-          aria-label={manualPaused ? playLabel : pauseLabel}
-          className={styles.motionControl}
-          title={manualPaused ? playLabel : pauseLabel}
-          type="button"
-          onClick={() => {
-            if (manualPaused) {
-              setManualPaused(false);
-              setFocusPaused(false);
-              setPointerPaused(false);
-            } else {
-              setManualPaused(true);
-            }
-          }}
-        >
-          {manualPaused ? (
-            <Play aria-hidden="true" size={16} strokeWidth={1.75} />
-          ) : (
-            <Pause aria-hidden="true" size={16} strokeWidth={1.75} />
-          )}
-        </button>
-      ) : null}
     </div>
   );
 }
