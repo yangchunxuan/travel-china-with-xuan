@@ -9,6 +9,18 @@ earlier [homepage city-discovery release](./homepage-city-discovery-production-r
 remains the historical record for the eight direct homepage destination-Hub
 links.
 
+## Current-production overlay
+
+PR #96 was followed by the later merge of [PR #95](https://github.com/yangchunxuan/travel-china-with-xuan/pull/95).
+The current public runtime is therefore merge SHA
+`c0020bfa6905b496bb8398c6104e8377d7d26a4b`, deployed successfully by
+[Pages run 32620067524](https://github.com/yangchunxuan/travel-china-with-xuan/actions/runs/32620067524)
+at `2026-08-23 13:22:08 +08:00`. PR #95 added nine trilingual guide identities
+and 27 locale URLs. A fresh public read-back found 192 guide identities, 568
+guide locale URLs and a 698/698 unique sitemap; the PR #96 homepage map link
+remained present. The 671 figure below is the exact historical read-back at the
+PR #96 release point, not the current sitemap count.
+
 ## Release identity
 
 | Field | Verified value |
