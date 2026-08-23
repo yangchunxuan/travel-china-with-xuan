@@ -1,0 +1,35 @@
+.destinationRoot {
+  --hg-color-canvas: #fff;
+  --hg-color-surface: #fff;
+  --hg-color-card: #fff;
+  --hg-color-soft: #f5f5f4;
+  --hg-color-line: #d5d9e2;
+  --hg-color-ink: #0a0a0a;
+  --hg-color-muted: #686b70;
+
+  background: var(--hg-color-canvas);
+}
+
+.destinationRoot .destinationCta {
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
+  color: var(--hg-color-ink);
+}
+
+.destinationRoot .destinationCta > div > p:first-child {
+  color: var(--hg-color-rust);
+}
+
+.destinationRoot .destinationCta > div > p:last-child {
+  color: var(--hg-color-muted);
+}
+
+.destinationRoot .destinationCta > a {
+  background: var(--hg-color-ink);
+  color: #fff;
+}
+
+.destinationRoot .destinationCta > a:hover,
+.destinationRoot .destinationCta > a:focus-visible {
+  background: #202124;
+}

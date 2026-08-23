@@ -1,11 +1,11 @@
 .page {
-  --guides-paper: var(--hg-color-canvas);
-  --guides-card: var(--hg-color-card);
-  --guides-soft: var(--hg-color-soft);
-  --guides-line: var(--hg-color-line);
-  --guides-ink: var(--hg-color-ink);
-  --guides-muted: var(--hg-color-muted);
-  --guides-rust: var(--hg-color-rust);
+  --guides-paper: #fff;
+  --guides-card: #fff;
+  --guides-soft: #f5f5f4;
+  --guides-line: #d5d9e2;
+  --guides-ink: #0a0a0a;
+  --guides-muted: #686b70;
+  --guides-rust: #a84731;
   background: var(--guides-paper);
   color: var(--guides-ink);
   min-height: 100vh;
@@ -284,13 +284,14 @@
 }
 
 .plannerHandoff {
-  background: var(--guides-ink);
-  color: var(--hg-color-on-dark);
+  background: var(--guides-soft);
+  border: 1px solid var(--guides-line);
+  color: var(--guides-ink);
   padding: clamp(1.5rem, 3.5vw, 2.75rem);
 }
 
 .plannerHandoff > p:first-child {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--guides-rust);
   font-size: 0.7rem;
   font-weight: 760;
   letter-spacing: 0.1em;
@@ -305,12 +306,13 @@
 }
 
 .plannerHandoff > p:not(:first-child) {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--guides-muted);
 }
 
 .plannerHandoff a {
-  border-color: var(--hg-color-on-dark);
-  color: var(--hg-color-on-dark);
+  background: var(--guides-ink);
+  border-color: var(--guides-ink);
+  color: #fff;
   gap: 1rem;
   justify-content: space-between;
   margin-block-start: 2rem;
@@ -319,8 +321,8 @@
 
 .plannerHandoff a:hover,
 .plannerHandoff a:focus-visible {
-  background: var(--hg-color-on-dark);
-  color: var(--guides-ink);
+  background: #202124;
+  color: #fff;
 }
 
 .page[data-homeground-locale="zh"] .hero h1,

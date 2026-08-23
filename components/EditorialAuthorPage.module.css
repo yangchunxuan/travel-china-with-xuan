@@ -1,9 +1,9 @@
 .page {
-  --ink: #181816;
-  --muted: #68645e;
-  --line: #d9d4cc;
-  --paper: #f7f4ee;
-  --rust: #a64632;
+  --ink: #0a0a0a;
+  --muted: #686b70;
+  --line: #d5d9e2;
+  --paper: #fff;
+  --rust: #a84731;
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
@@ -54,7 +54,7 @@
 .articles a { display: flex; flex-direction: column; gap: .75rem; min-height: 12rem; padding: 1.5rem; text-decoration: none; }
 .articles span { font-size: 1.25rem; font-weight: 780; line-height: 1.25; }
 .articles small { color: var(--muted); line-height: 1.55; }
-.articles a:hover, .articles a:focus-visible { background: #eee8de; }
+.articles a:hover, .articles a:focus-visible { background: #f5f5f4; }
 .articles a:focus-visible { outline: 2px solid var(--rust); outline-offset: -2px; }
 
 @media (max-width: 760px) {
