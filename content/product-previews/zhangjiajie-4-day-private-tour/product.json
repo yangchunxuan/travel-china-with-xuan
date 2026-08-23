@@ -3,7 +3,7 @@
   "product_id": "zjj-4d3n-private-2026",
   "status": "published",
   "public_eligible": true,
-  "updated_at": "2026-08-16T01:28:39+08:00",
+  "updated_at": "2026-08-24T04:12:13+08:00",
   "title": {
     "zh-CN": "张家界4天3晚：峰林、玻璃桥与天门山",
     "en": "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain",
@@ -21,6 +21,10 @@
   "group_basis": {
     "minimum_adults": 2,
     "room_basis": "two_adults_sharing_one_room"
+  },
+  "service_policy": {
+    "shopping_stops": false,
+    "added_services_require_prior_agreement": true
   },
   "price_display": {
     "mode": "from_price",
@@ -88,6 +92,11 @@
       "label_zh": "最终确认单列明的成人门票和标准景交",
       "fact_id": "ticket-bundle-itemization",
       "claim_status": "needs_confirmation"
+    },
+    {
+      "label_zh": "不安排购物店；任何升级或新增服务在收费前确认",
+      "fact_id": "no-shopping-prior-agreement",
+      "claim_status": "working_standard"
     }
   ],
   "draft_exclusions": [

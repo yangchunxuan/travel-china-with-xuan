@@ -509,7 +509,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "Is this a fixed group tour?",
           answer:
-            "Not by default. The published price is for a private itinerary for you and your companions; we will not place you in a shared tour without telling you. If keeping the price down matters more, tell us which shared arrangements you would consider. We can check small-group tours, shared transfers or public transport options and identify every shared element in writing before payment.",
+            "No. Every published tour and price is for you and your companions, not a shared tour group. Some itineraries use public trains, cruises or transport within attractions; those shared elements are listed on the product page and in the written confirmation. If you ask us to explore a lower-cost alternative, we will explain what could change and quote any suitable option separately. We will not add a shared arrangement without your agreement, and every shared element will be confirmed in writing before payment.",
         },
         {
           question: "Can I get in touch if I only have a rough idea?",
@@ -1050,7 +1050,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "这是固定跟团游吗？",
           answer:
-            "默认不是。页面价格按你和同行者的私家行程设计，不会在未说明的情况下临时并入陌生人的旅游团。如果你更希望控制预算，可以告诉我们愿意接受哪些共享安排；我们会另行核对小团、拼车或公共交通方案，并在付款前写清哪些环节需要与其他游客共同使用。",
+            "不是。页面上的行程和价格按你和同行者单独安排，不会临时并入陌生人的旅游团。部分路线会使用高铁、游船或景区交通，这些共享环节会在产品页和书面确认中列明。如果你希望进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价。未经你同意不会增加共享安排，所有共享环节都会在付款前书面说明。",
         },
         {
           question: "我只有一个大概想法，也可以联系吗？",
@@ -1560,7 +1560,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           question: "정해진 단체 패키지여행인가요?",
           answer:
-            "기본은 아닙니다. 공개 요금은 예약한 일행만을 위한 단독 일정 기준이며, 사전 안내 없이 다른 팀과 합류시키지 않습니다. 비용을 낮추는 것이 더 중요하다면 소그룹 투어, 합승 차량 또는 대중교통 중 허용 가능한 방식을 알려 주세요. 가능한 대안을 확인한 뒤 공동 이용 구간을 결제 전에 서면으로 명시합니다.",
+            "아닙니다. 홈페이지에 공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준입니다. 일부 일정은 열차, 유람선 또는 관광지 내부 교통을 다른 이용객과 함께 이용하며, 해당 구간은 상품 페이지와 확인서에 명시합니다. 비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적을 안내합니다. 동의 없이 공동 이용 방식을 추가하지 않으며, 모든 공동 이용 구간은 결제 전에 서면으로 확인합니다.",
         },
         {
           question: "아직 대략적인 생각만 있어도 문의할 수 있나요?",

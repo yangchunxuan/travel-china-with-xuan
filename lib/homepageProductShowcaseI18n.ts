@@ -15,9 +15,9 @@ export interface HomepageProductShowcaseCopy {
 const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
   en: {
     eyebrow: "Private China Tours",
-    title: "A route that works, with every cost made clear.",
+    title: "A workable route, with the scope and final price clear before you pay.",
     intro: (_productCount) =>
-      "No shopping stops and no unlisted extras introduced along the way. Each itinerary clearly sets out the day-by-day plan, accommodation standard, transport, guide arrangements, included admissions and starting price. Once we have your dates, we check current availability and confirm the final inclusions, exclusions and total price in writing before payment.",
+      "Start with a published itinerary showing the day-by-day route, accommodation plan, transport, guide arrangements, included tickets and starting price. Once we have your dates, we check availability and confirm the final inclusions, exclusions and total in writing before payment. There are no shopping stops; any optional upgrade or added service is agreed before it is charged.",
     countLabel: (productCount) => `${productCount} journeys`,
     durationLabel: (days, nights) =>
       `${days} ${days === 1 ? "day" : "days"} · ${nights} ${nights === 1 ? "night" : "nights"}`,
@@ -29,9 +29,9 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
   },
   zh: {
     eyebrow: "中国私人团",
-    title: "路线走得通，费用也说得清。",
+    title: "路线走得通，付款前把范围和价格写清楚。",
     intro: (_productCount) =>
-      "不安排购物店，也不把自费项目留到途中才告诉你。每条路线都写清每天怎么玩、住宿标准、交通方式、导游安排、所含门票和基础价格。确定日期后，我们会核对实际余位，并在付款前书面确认最终包含项、不包含项和总价。",
+      "先从公开路线查看每天怎么走、住宿安排、交通、导游、所含门票和起价。确定日期后，我们会核对可订情况，并在付款前书面确认最终包含项、不包含项和总价。行程不安排购物店；任何升级或新增服务，都会在收费前先由你确认。",
     countLabel: (productCount) => `${productCount} 条路线`,
     durationLabel: (days, nights) => `${days}天 · ${nights}晚`,
     productLabel: "私家行程",
@@ -41,10 +41,10 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
     productListLabel: "Homeground 中国私家旅行产品",
   },
   ko: {
-    eyebrow: "중국 단독여행",
-    title: "일정도 비용도, 출발 전에 분명하게.",
+    eyebrow: "중국 프라이빗 투어",
+    title: "일정은 현실적으로, 포함 범위와 최종 금액은 결제 전에 명확하게.",
     intro: (_productCount) =>
-      "쇼핑 일정이 없으며, 여행 중 사전에 안내되지 않은 추가 비용을 요구하지 않습니다. 각 상품에는 일자별 일정, 숙박 기준, 이동 방식, 가이드 일정, 포함 입장권과 기준 요금이 명시됩니다. 출발일을 알려 주시면 실제 예약 가능 여부를 확인하고, 결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내합니다.",
+      "공개 일정에서 동선, 숙박 기준, 이동 방식, 가이드 일정, 포함 입장권과 시작가를 먼저 확인하세요. 출발일을 알려 주시면 예약 가능 여부를 확인하고, 결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내합니다. 쇼핑 일정은 없으며, 선택 업그레이드나 추가 서비스는 비용이 발생하기 전에 먼저 동의를 받습니다.",
     countLabel: (productCount) => `${productCount}개 일정`,
     durationLabel: (days, nights) => `${days}일 · ${nights}박`,
     productLabel: "프라이빗 투어",

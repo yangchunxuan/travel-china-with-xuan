@@ -50,6 +50,10 @@ export interface PrivateTourProduct {
   slug: string;
   days: number;
   nights: number;
+  servicePolicy: Readonly<{
+    shoppingStops: false;
+    addedServicesRequirePriorAgreement: true;
+  }>;
   title: LocalizedText;
   eyebrow: LocalizedText;
   lede: LocalizedText;
@@ -120,6 +124,7 @@ export interface LocalizedPrivateTourProduct {
   highlights: readonly string[];
   days: number;
   nights: number;
+  servicePolicy: PrivateTourProduct["servicePolicy"];
   itinerary: readonly { day: number; title: string; description: string }[];
   hotelNote: string;
   serviceNote: string;
@@ -337,12 +342,17 @@ const commonExclusions = (
   );
 
 const PUBLISHED = "2026-08-23";
+const standardServicePolicy = Object.freeze({
+  shoppingStops: false,
+  addedServicesRequirePriorAgreement: true,
+} as const);
 
 const shanghaiSuzhouHangzhou: PrivateTourProduct = {
   id: "private-tour-shanghai-suzhou-hangzhou-6d5n",
   slug: "shanghai-suzhou-hangzhou-6-day-private-tour",
   days: 6,
   nights: 5,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Shanghai, Suzhou & Hangzhou: 6-Day Private Tour",
     "上海·苏州·杭州 6 天 5 晚私家团",
@@ -767,6 +777,7 @@ const chengdu: PrivateTourProduct = {
   slug: "chengdu-pandas-sanxingdui-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Chengdu, Pandas & Sanxingdui: 5-Day Private Tour", "成都·大熊猫·三星堆 5 天 4 晚私家团", "청두·판다·싼싱두이 5일 프라이빗 투어"),
   eyebrow: l("Wildlife, archaeology and living Chengdu", "熊猫、古蜀文明与成都生活", "판다와 고대 문명, 청두의 일상"),
   lede: l("See the pandas early, give Sanxingdui the time it deserves, and balance two major day trips with Chengdu's relaxed parks and teahouses.", "早场看熊猫，用完整一天读懂三星堆，再以人民公园和都江堰平衡城市生活与古代工程。", "이른 시간 판다를 만나고 싼싱두이를 온전히 둘러본 뒤, 청두의 공원과 두장옌까지 균형 있게 경험합니다."),
@@ -856,6 +867,7 @@ const xian: PrivateTourProduct = {
   slug: "xian-terracotta-warriors-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Xi'an & the Terracotta Warriors: 5-Day Private Tour", "西安·兵马俑 5 天 4 晚私家团", "시안·병마용 5일 프라이빗 투어"),
   eyebrow: l("Imperial history, city walls and Muslim Quarter lanes", "从秦汉遗址走进古城街巷", "제국의 역사에서 구시가 골목까지"),
   lede: l("Give the Terracotta Warriors a full day, then connect Xi'an's city wall, Tang-era landmarks and Muslim Quarter with private transport and an English-speaking guide.", "用完整一天游览兵马俑与华清宫，再把城墙、大雁塔和回民街串成一条清晰的古都脉络。", "병마용을 하루 동안 깊이 보고, 성벽과 당대 유적, 회민거리를 전용 차량과 영어 가이드로 연결합니다."),
@@ -951,6 +963,7 @@ const chongqingWulong: PrivateTourProduct = {
   slug: "chongqing-wulong-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Chongqing & Wulong: 5-Day Private Tour", "重庆·武隆 5 天 4 晚私家团", "충칭·우룽 5일 프라이빗 투어"),
   eyebrow: l("Vertical city, karst landscapes", "山城夜色与武隆喀斯特", "수직 도시와 카르스트 풍경"),
   lede: l("Pair Chongqing's layered cityscape with an overnight journey into Wulong, including the Three Natural Bridges and your choice of Fairy Mountain or Furong Cave.", "先读懂重庆的立体城市景观，再住进武隆仙女山度假区，游览天生三桥，并在仙女山与芙蓉洞之间选择一项。", "충칭의 입체적인 도시 풍경과 우룽 1박을 연결해 천생삼교, 선녀산 또는 부용동 중 한 곳을 경험합니다."),
@@ -1044,6 +1057,7 @@ const guilinYangshuo: PrivateTourProduct = {
   slug: "guilin-yangshuo-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Guilin & Yangshuo: 5-Day Private Tour", "桂林·阳朔 5 天 4 晚私家团", "구이린·양숴 5일 프라이빗 투어"),
   eyebrow: l("River landscapes at an unhurried pace", "沿漓江慢慢进入山水之间", "리강을 따라 천천히 만나는 산수"),
   lede: l("Cruise the Li River into Yangshuo, slow down among the countryside and return to Guilin with a flexible final sightseeing choice.", "乘漓江游船从桂林进入阳朔，在乡村山水里放慢节奏，再返回桂林完成一项轻松游览。", "리강 유람선으로 양숴에 들어가 전원 풍경을 여유롭게 즐기고, 구이린으로 돌아와 마지막 명소를 선택합니다."),
@@ -1123,6 +1137,7 @@ const harbinWinter: PrivateTourProduct = {
   slug: "harbin-winter-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Harbin Ice & Snow: 5-Day Private Tour", "哈尔滨冰雪 5 天 4 晚私家团", "하얼빈 빙설 5일 프라이빗 투어"),
   eyebrow: l("A date-specific winter journey", "只在明确冰雪窗口内安排", "기간이 정해진 겨울 여행"),
   lede: l("Experience Harbin's winter architecture, frozen river activities and Ice and Snow World with heated private transport and an itinerary timed for daylight and the night display.", "在明确冰雪季窗口内，用暖风车辆衔接城市建筑、松花江冰雪体验与冰雪大世界夜景。", "정해진 빙설 시즌에 난방 전용 차량으로 도심 건축, 쑹화강 체험과 빙설대세계 야경을 연결합니다."),
@@ -1207,6 +1222,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
   slug: "shanghai-suzhou-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Shanghai & Suzhou: 5-Day Private Tour", "上海·苏州 5 天 4 晚私家团", "상하이·쑤저우 5일 프라이빗 투어"),
   eyebrow: l("Modern Shanghai, one focused Suzhou day", "住在上海，留一天给苏州", "상하이에 머물며 쑤저우를 하루 깊게"),
   lede: l("Stay in one Shanghai hotel while combining the Bund, a water town and a high-speed-rail day trip to Suzhou's gardens and lanes.", "上海连住 4 晚，在外滩、朱家角与城市地标之外，用高铁往返苏州，避免跨城搬运行李。", "상하이 한 호텔에 4박하며 와이탄과 수향마을을 보고, 고속철도로 쑤저우 정원과 골목을 당일치기로 다녀옵니다."),
@@ -1305,6 +1321,7 @@ const beijing: PrivateTourProduct = {
   slug: "beijing-highlights-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l("Beijing Highlights: 5-Day Private Tour", "北京经典 5 天 4 晚私家团", "베이징 핵심 5일 프라이빗 투어"),
   eyebrow: l("One itinerary, two ways to travel", "同一条路线，两种服务方式", "하나의 일정, 두 가지 여행 방식"),
   lede: l("Cover Beijing's imperial landmarks and the Great Wall with private transport, choosing either an English-guided package or a lower-touch version with remote support and no on-site guide.", "用私车串联北京皇城地标与八达岭长城，并在“D2–D4 英语导游”与“现场无导游、提供远程支持”两种版本之间选择。", "전용 차량으로 베이징의 황실 유적과 만리장성을 둘러보며, D2~D4 영어 가이드 포함 또는 현장 가이드 없이 원격 지원을 받는 버전 중 선택합니다."),
@@ -1498,6 +1515,7 @@ export function localizePrivateTourProduct(
     highlights: product.highlights[locale],
     days: product.days,
     nights: product.nights,
+    servicePolicy: product.servicePolicy,
     itinerary: product.itinerary.map((item) => ({
       day: item.day,
       title: item.title[locale],
