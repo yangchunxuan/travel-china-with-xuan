@@ -155,6 +155,31 @@ for (const id of blockedDestinationHubIds) {
   }
 }
 
+for (const locale of locales) {
+  const homepagePath = path.join(outputRoot, locale.prefix, "index.html");
+  const context = locale.prefix ? `/${locale.prefix}` : "/";
+  if (!(await fileExists(homepagePath))) {
+    throw new Error(`${context}: homepage export is missing`);
+  }
+
+  const homepageHtml = await readFile(homepagePath, "utf8");
+  for (const id of publishedDestinationHubIds) {
+    assertIncludes(
+      homepageHtml,
+      `href="/${destinationRoute(id, locale)}"`,
+      `${context} homepage destination discovery`,
+    );
+  }
+  for (const id of blockedDestinationHubIds) {
+    const blockedHref = `href="/${destinationRoute(id, locale)}"`;
+    if (homepageHtml.includes(blockedHref)) {
+      throw new Error(
+        `${context}: blocked destination entered homepage discovery: ${blockedHref}`,
+      );
+    }
+  }
+}
+
 for (const sitemapUrl of sitemapLocs) {
   const url = new URL(sitemapUrl);
   const route = url.pathname.replace(/^\/+|\/+$/gu, "");

@@ -7,6 +7,7 @@ import {
 } from "../../../../../lib/homegroundI18n";
 import { getPlanningScopeCopy } from "../../../../../lib/homegroundPlanningScopeI18n";
 import {
+  getHomepageDestinationHubItems,
   getHomepageGuideRailItems,
   getHomepageSearchDemos,
 } from "../../../../../lib/homepageEditorial";
@@ -43,6 +44,7 @@ export default async function PlanningScopeFullPageLab({
     <>
       <LabHtmlLang lang={copy.htmlLang} />
       <HomegroundHomePage
+        destinationHubItems={getHomepageDestinationHubItems(locale)}
         guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
         locale={locale}
         planningSection="current"
