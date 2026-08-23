@@ -19,10 +19,11 @@ const expectedHubIds = [
   "chongqing",
 ];
 
-test("homepage city discovery consumes the complete published hub registry", async () => {
-  const [homepage, editorial, registry, englishPage, localizedPage, labPage] =
+test("the homepage footer consumes the complete published hub registry", async () => {
+  const [homepage, footer, editorial, registry, englishPage, localizedPage, labPage] =
     await Promise.all([
       source("components/HomegroundHomePage.tsx"),
+      source("components/HomegroundFooter.tsx"),
       source("lib/homepageEditorial.ts"),
       source("lib/destinationHubs.ts"),
       source("app/(default)/page.tsx"),
@@ -61,16 +62,21 @@ test("homepage city discovery consumes the complete published hub registry", asy
     labPage,
     /destinationHubItems=\{getHomepageDestinationHubItems\(locale\)\}/,
   );
-  assert.match(homepage, /destinationHubItems\.map\(\(city\) =>/);
-  assert.match(homepage, /<a[\s\S]*?href=\{city\.href\}/);
-  assert.match(homepage, /<nav aria-label=\{copy\.cities\.listLabel\}>/);
-  assert.match(homepage, /<ul className=\{styles\.cityHubList\}>/);
-  assert.match(homepage, /<li key=\{city\.id\}>/);
+  assert.match(homepage, /destinationHubItems=\{destinationHubItems\}/);
+  assert.match(homepage, /variant="homepage"/);
+  assert.doesNotMatch(homepage, /destinationHubItems\.map\(\(city\) =>/);
+  assert.doesNotMatch(homepage, /<section[\s\S]{0,160}id="destinations"/);
+  assert.match(footer, /destinationHubItems\.map\(\(city\) =>/);
+  assert.match(footer, /<a href=\{city\.href\}>\{city\.label\}<\/a>/);
+  assert.match(footer, /aria-label=\{copy\.cities\.listLabel\}/);
+  assert.match(footer, /id="destinations"/);
+  assert.match(footer, /id="homepage-city-hubs-title"/);
+  assert.match(footer, /<li key=\{city\.id\}>/);
   assert.doesNotMatch(homepage, /destinations\/(?:guilin|shenzhen)/);
 });
 
-test("homepage city discovery has useful copy and keyboard-visible links in every language", async () => {
-  const styles = await source("components/HomegroundHomePage.module.css");
+test("homepage footer city discovery has localized labels and keyboard-visible links", async () => {
+  const styles = await source("components/HomepageFooter.module.css");
 
   for (const locale of ["en", "zh", "ko"]) {
     const cities = getHomegroundCopy(locale).cities;
@@ -80,11 +86,11 @@ test("homepage city discovery has useful copy and keyboard-visible links in ever
     assert.ok(cities.listLabel.trim().length > 0);
   }
 
-  assert.match(styles, /\.cityHubList\s*\{[\s\S]*?list-style:\s*none/);
-  assert.match(styles, /\.cityHubLink:focus-visible\s*\{[\s\S]*?outline:/);
+  assert.match(styles, /\.navGrid ul,[\s\S]*?list-style:\s*none/);
+  assert.match(styles, /\.navGrid a:focus-visible[\s\S]*?outline:/);
   assert.match(
     styles,
-    /@media \(max-width: 820px\)[\s\S]*?\.cityHubList\s*\{[\s\S]*?repeat\(2, minmax\(0, 1fr\)\)/,
+    /@media \(max-width: 39\.999rem\)[\s\S]*?\.navGrid\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\)/,
   );
-  assert.match(styles, /\.cityHubLink span\s*\{[\s\S]*?overflow-wrap:\s*anywhere/);
+  assert.match(styles, /\.navGrid a,[\s\S]*?overflow-wrap:\s*anywhere/);
 });

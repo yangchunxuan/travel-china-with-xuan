@@ -184,7 +184,15 @@ test("planner CTAs preserve the result while moving to the human handoff", async
 
   assert.match(navigation, /event\.preventDefault\(\)/);
   assert.match(navigation, /window\.history\.replaceState/);
-  assert.match(navigation, /targetElement\.scrollIntoView/);
+  assert.match(navigation, /scrollTarget\.scrollIntoView/);
+  assert.match(
+    navigation,
+    /target === "#planner-contact"[\s\S]{0,220}getElementById\("planning-intent-title"\)/,
+  );
+  assert.match(
+    navigation,
+    /behavior: "instant"/,
+  );
   assert.match(
     navigation,
     /"#main-content": "main-content"/,
@@ -245,7 +253,11 @@ test("all production same-page links preserve planner history depth", async () =
 });
 
 test("same-page navigation moves keyboard focus to its content target", async () => {
-  const page = await source(homegroundPagePath);
+  const [page, footer] = await Promise.all([
+    source(homegroundPagePath),
+    source("components/HomegroundFooter.tsx"),
+  ]);
+  const focusTargets = `${page}\n${footer}`;
 
   assert.match(page, /<main id="main-content" tabIndex=\{-1\}>/);
   for (const headingId of [
@@ -254,7 +266,7 @@ test("same-page navigation moves keyboard focus to its content target", async ()
     "faq-title",
   ]) {
     assert.match(
-      page,
+      focusTargets,
       new RegExp(`<h2 id="${headingId}" tabIndex=\\{-1\\}>`),
     );
   }

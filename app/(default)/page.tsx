@@ -6,6 +6,7 @@ import {
   getHomepageGuideRailItems,
   getHomepageSearchDemos,
 } from "../../lib/homepageEditorial";
+import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog";
 
 const copy = getHomegroundCopy("en");
 
@@ -51,6 +52,7 @@ export default function Home() {
       destinationHubItems={getHomepageDestinationHubItems("en")}
       guideRailItems={getHomepageGuideRailItems("en").slice(0, 18)}
       locale="en"
+      privateTourItems={getHomepagePrivateTourItems("en")}
       searchDemos={getHomepageSearchDemos("en")}
     />
   );

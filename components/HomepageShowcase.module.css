@@ -1,0 +1,688 @@
+.root {
+  /* One homepage system: x.ai-scale rhythm, Homeground typography and brand. */
+  --showcase-canvas: #fff;
+  --showcase-surface: #fff;
+  --showcase-card: #fff;
+  --showcase-hover: rgb(10 10 10 / 5%);
+  --showcase-line: #d5d9e2;
+  --showcase-ink: #0a0a0a;
+  --showcase-muted: #686b70;
+  --showcase-subtle: #f9f8f6;
+  --showcase-focus: #2563eb;
+  --showcase-content: 77rem;
+  --showcase-gutter: 1rem;
+  --showcase-section-space: 6rem;
+  --showcase-radius: 1.5rem;
+  --showcase-button-height: 2.75rem;
+  --showcase-header-height: 4rem;
+  --hg-color-canvas: var(--showcase-canvas);
+  --hg-color-surface: var(--showcase-surface);
+  --hg-color-card: var(--showcase-card);
+  --hg-color-soft: var(--showcase-subtle);
+  --hg-color-line: var(--showcase-line);
+  --hg-color-ink: var(--showcase-ink);
+  --hg-color-muted: var(--showcase-muted);
+  --hg-color-charcoal: var(--showcase-ink);
+  --hg-color-charcoal-hover: #202124;
+  --hg-color-on-dark: #fff;
+  --hg-color-rust: var(--showcase-ink);
+  --hg-color-dark-rust: var(--showcase-ink);
+  --hg-color-focus: var(--showcase-focus);
+  background: var(--showcase-canvas);
+  color: var(--showcase-ink);
+  overflow: clip;
+}
+
+:global(html):has(.root),
+:global(body):has(.root) {
+  background: #fff;
+}
+
+.hero {
+  background: #fff;
+  padding: 14rem var(--showcase-gutter) 5rem;
+}
+
+.heroInner {
+  align-items: stretch;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-inline: auto;
+  max-inline-size: var(--showcase-content);
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-inline-size: 38rem;
+  min-inline-size: 0;
+}
+
+.heroEyebrow {
+  color: var(--showcase-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.heroEyebrowShort {
+  display: none;
+}
+
+.heroTitle {
+  font-family: var(--hg-editorial);
+  font-size: clamp(3.4rem, 4.45vw, 3.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  margin: 0;
+  max-inline-size: 16ch;
+  text-wrap: balance;
+}
+
+.heroLead {
+  color: var(--showcase-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 1.5rem 0 0;
+  max-inline-size: 31rem;
+  text-wrap: pretty;
+}
+
+.heroActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 2rem;
+}
+
+.heroActionShort {
+  display: none;
+}
+
+.primaryAction,
+.secondaryAction {
+  align-items: center;
+  border: 1px solid rgb(10 10 10 / 15%);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  justify-content: center;
+  min-block-size: var(--showcase-button-height);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.primaryAction {
+  background: var(--showcase-ink);
+  border-color: var(--showcase-ink);
+  color: #fff;
+}
+
+.secondaryAction {
+  background: transparent;
+  color: var(--showcase-ink);
+}
+
+.primaryAction:hover {
+  filter: brightness(0.9);
+}
+
+.secondaryAction:hover {
+  background: var(--showcase-hover);
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible {
+  outline: 2px solid var(--showcase-focus);
+  outline-offset: 2px;
+}
+
+.decisionCard:focus-visible {
+  outline: 2px solid var(--showcase-focus);
+  outline-offset: -2px;
+}
+
+.heroAssurance {
+  align-items: center;
+  display: flex;
+  min-inline-size: 0;
+}
+
+.heroAssurance ul {
+  inline-size: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.heroAssurance li + li {
+  border-block-start: 1px solid rgb(213 217 226 / 30%);
+}
+
+.heroAssurance a {
+  align-items: start;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-block-size: 5rem;
+  padding-block: 1rem;
+  text-decoration: none;
+}
+
+.heroAssuranceCopy {
+  display: grid;
+  gap: 0.25rem;
+  min-inline-size: 0;
+}
+
+.heroAssuranceCopy strong {
+  font-family: var(--hg-ui-display);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.heroAssuranceCopy small {
+  color: var(--showcase-muted);
+  display: -webkit-box;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.heroAssurance a svg {
+  color: rgb(10 10 10 / 38%);
+  margin-block-start: 0.3rem;
+  transition:
+    color 150ms ease;
+}
+
+.heroAssurance a:hover .heroAssuranceCopy strong,
+.heroAssurance a:focus-visible .heroAssuranceCopy strong {
+  color: rgb(10 10 10 / 62%);
+}
+
+.heroAssurance a:hover svg,
+.heroAssurance a:focus-visible svg {
+  color: var(--showcase-ink);
+}
+
+.heroAssurance a:focus-visible {
+  outline: 2px solid var(--showcase-focus);
+  outline-offset: 2px;
+}
+
+.searchSection {
+  background: #fff;
+  border-block: 1px solid rgb(10 10 10 / 10%);
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+}
+
+.decisions {
+  background: #fff;
+  color: var(--showcase-ink);
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+}
+
+.decisionIntro {
+  margin-inline: auto;
+  max-inline-size: 42rem;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--showcase-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.decisionIntro h2,
+.planningIntro h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin: 1rem 0 0;
+  text-wrap: balance;
+}
+
+.decisionIntro > p:last-child,
+.planningIntro > p:last-of-type {
+  color: var(--showcase-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 1.5rem auto 0;
+  max-inline-size: 36rem;
+  text-wrap: pretty;
+}
+
+.decisionGrid {
+  background: rgb(10 10 10 / 6%);
+  border: 1px solid rgb(10 10 10 / 6%);
+  border-radius: var(--showcase-radius);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 3.5rem auto 0;
+  max-inline-size: var(--showcase-content);
+  overflow: hidden;
+  padding: 0;
+}
+
+.decisionGrid li {
+  background: rgb(10 10 10 / 6%);
+  min-inline-size: 0;
+}
+
+.decisionCard {
+  background: var(--showcase-subtle);
+  block-size: 100%;
+  color: var(--showcase-ink);
+  display: flex;
+  flex-direction: column;
+  min-block-size: 17.5rem;
+  padding: 2.5rem;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.decisionNumber {
+  color: rgb(10 10 10 / 38%);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.decisionCard h3 {
+  font-family: var(--hg-ui-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 1.5rem 0 0;
+  text-wrap: balance;
+}
+
+.decisionCard p {
+  color: var(--showcase-muted);
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin: 1rem 0 2rem;
+}
+
+.decisionAction {
+  align-items: center;
+  color: var(--showcase-ink);
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 650;
+  gap: 0.6rem;
+  justify-content: space-between;
+  margin-block-start: auto;
+}
+
+.decisionAction svg {
+  color: rgb(10 10 10 / 35%);
+  transition: transform 180ms ease;
+}
+
+.decisionCard:hover {
+  background: var(--showcase-hover);
+}
+
+.decisionCard:hover .decisionAction svg {
+  color: var(--showcase-ink);
+}
+
+.root :global(#homepage-guide-search-title),
+.root :global(#homepage-guide-rail-title),
+.root :global(#planning-proof-title),
+.root :global(#homepage-human-planning-title),
+.root :global(#faq-title) {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.root[data-homeground-locale="zh"] :global(#homepage-guide-search-title),
+.root[data-homeground-locale="zh"] :global(#homepage-guide-rail-title),
+.root[data-homeground-locale="zh"] :global(#planning-proof-title),
+.root[data-homeground-locale="zh"] :global(#homepage-human-planning-title),
+.root[data-homeground-locale="zh"] :global(#faq-title) {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.root[data-homeground-locale="ko"] :global(#homepage-guide-search-title),
+.root[data-homeground-locale="ko"] :global(#homepage-guide-rail-title),
+.root[data-homeground-locale="ko"] :global(#planning-proof-title),
+.root[data-homeground-locale="ko"] :global(#homepage-human-planning-title),
+.root[data-homeground-locale="ko"] :global(#faq-title) {
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  line-height: 1.2;
+}
+
+.faqSection > div:first-child > p:first-child {
+  color: var(--showcase-muted);
+  font-weight: 500;
+  letter-spacing: 0.035em;
+}
+
+.planningSection {
+  background: #fff;
+  color: var(--showcase-ink);
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+  scroll-margin-top: calc(var(--showcase-header-height) + 1.5rem);
+}
+
+.planningGrid {
+  align-items: start;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(24rem, 1.2fr);
+  margin-inline: auto;
+  max-inline-size: var(--showcase-content);
+}
+
+.planningIntro {
+  padding-block-start: 1rem;
+}
+
+.planningIntro > p:last-of-type {
+  margin-inline: 0;
+}
+
+.planningTeamLink {
+  align-items: center;
+  color: var(--showcase-ink);
+  display: inline-flex;
+  font-size: 0.84rem;
+  font-weight: 650;
+  gap: 0.55rem;
+  margin-block-start: 1.5rem;
+  min-block-size: 2.75rem;
+  text-underline-offset: 0.2em;
+}
+
+.planningPanel {
+  min-inline-size: 0;
+}
+
+.planningSectionResult .planningGrid {
+  grid-template-columns: minmax(0, 1fr);
+  max-inline-size: 68rem;
+}
+
+.planningSectionResult .planningIntro {
+  display: none;
+}
+
+.planningSectionResult .planningPanel {
+  inline-size: 100%;
+  margin-inline: auto;
+  max-inline-size: 62rem;
+}
+
+.faqSection {
+  background: #fff;
+  border-block-start: 1px solid rgb(10 10 10 / 10%);
+}
+
+.root[data-homeground-locale="zh"] .heroEyebrow,
+.root[data-homeground-locale="ko"] .heroEyebrow,
+.root[data-homeground-locale="zh"] .eyebrow,
+.root[data-homeground-locale="ko"] .eyebrow {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.root[data-homeground-locale="zh"] .heroTitle,
+.root[data-homeground-locale="zh"] .decisionIntro h2,
+.root[data-homeground-locale="zh"] .planningIntro h2 {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.root[data-homeground-locale="ko"] .heroTitle,
+.root[data-homeground-locale="ko"] .decisionIntro h2,
+.root[data-homeground-locale="ko"] .planningIntro h2 {
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.root[data-homeground-locale="zh"] .heroTitle {
+  font-size: clamp(3rem, 4.25vw, 3.65rem);
+  max-inline-size: 9em;
+}
+
+.root[data-homeground-locale="ko"] .heroTitle {
+  font-size: clamp(2.8rem, 4vw, 3.5rem);
+  max-inline-size: 11em;
+}
+
+.root[data-homeground-locale="zh"] .decisionCard h3,
+.root[data-homeground-locale="ko"] .decisionCard h3 {
+  letter-spacing: 0;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.root[data-homeground-locale="zh"] .decisionCard h3 {
+  font-weight: 500;
+}
+
+.root[data-homeground-locale="ko"] .decisionCard h3 {
+  font-weight: 400;
+}
+
+@media (max-width: 70rem) {
+  .heroInner,
+  .planningGrid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .hero {
+    padding-block-start: 12rem;
+  }
+
+  .heroInner,
+  .planningGrid,
+  .decisionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroCopy {
+    max-inline-size: 44rem;
+  }
+
+  .planningPanel {
+    max-inline-size: 48rem;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .root {
+    --showcase-gutter: 1rem;
+    --showcase-section-space: 4rem;
+  }
+
+  .hero {
+    padding-block: 10rem 4rem;
+  }
+
+  .heroInner {
+    gap: 4rem;
+  }
+
+  .heroTitle,
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    max-inline-size: 100%;
+  }
+
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
+    line-height: 1.2;
+  }
+
+  .heroLead {
+    font-size: 0.96rem;
+    margin-block-start: 1.25rem;
+  }
+
+  .heroActions {
+    margin-block-start: 1.5rem;
+  }
+
+  .decisionIntro {
+    text-align: start;
+  }
+
+  .decisionIntro > p:last-child {
+    margin-inline: 0;
+  }
+
+  .decisionIntro h2,
+  .planningIntro h2 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .root :global(#homepage-guide-search-title),
+  .root :global(#homepage-guide-rail-title),
+  .root :global(#planning-proof-title),
+  .root :global(#homepage-human-planning-title),
+  .root :global(#faq-title) {
+    font-size: 1.875rem;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .faqSection {
+    padding: var(--showcase-section-space) var(--showcase-gutter);
+  }
+
+  .decisionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .decisionGrid {
+    border-radius: 1.25rem;
+    margin-block-start: 2.5rem;
+  }
+
+  .decisionCard {
+    min-block-size: 16rem;
+    padding: 2rem;
+  }
+
+  .decisionNumber {
+    font-size: 0.875rem;
+  }
+
+}
+
+@media (min-width: 64rem) {
+  .root {
+    --showcase-gutter: 1.5rem;
+  }
+
+  .root[data-homeground-locale="en"] .heroTitle {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .heroTitle,
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 22.5rem) {
+  .heroEyebrowLong {
+    display: none;
+  }
+
+  .heroEyebrowShort {
+    display: inline;
+  }
+
+  .heroTitle,
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .decisionCard {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 25rem) {
+  .heroActionLong {
+    display: none;
+  }
+
+  .heroActionShort {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryAction,
+  .secondaryAction,
+  .decisionCard,
+  .decisionAction svg {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .heroAssurance,
+  .decisionCard,
+  .primaryAction,
+  .secondaryAction {
+    border: 1px solid CanvasText;
+  }
+}

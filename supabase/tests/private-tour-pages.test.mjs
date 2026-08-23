@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import sharp from "sharp";
 
 import { buildContentManifest } from "../../lib/content-system/manifest.ts";
 import {
@@ -124,6 +125,35 @@ test("eight private tours resolve to all three static route families", async () 
     localizedRoute,
     /<ShanghaiJiangnanImaginePage\s+product=\{product\}\s+locale=\{locale\}\s*\/>/,
   );
+});
+
+test("homepage tour images declare their real intrinsic dimensions", async () => {
+  const usedImagePaths = new Set();
+
+  for (const product of privateTourProducts) {
+    const heroPath = path.join(projectRoot, "public", product.heroImage.src.slice(1));
+    const heroMetadata = await sharp(heroPath).metadata();
+    assert.equal(heroMetadata.width, product.heroImage.width, product.slug);
+    assert.equal(heroMetadata.height, product.heroImage.height, product.slug);
+
+    const homepageImage = usedImagePaths.has(product.heroImage.src)
+      ? product.gallery.find(
+          (image) =>
+            image.src !== product.heroImage.src &&
+            !usedImagePaths.has(image.src),
+        ) ?? product.heroImage
+      : product.heroImage;
+    usedImagePaths.add(homepageImage.src);
+
+    const homepageImagePath = path.join(
+      projectRoot,
+      "public",
+      homepageImage.src.slice(1),
+    );
+    const homepageMetadata = await sharp(homepageImagePath).metadata();
+    assert.equal(homepageMetadata.width, homepageImage.width, product.slug);
+    assert.equal(homepageMetadata.height, homepageImage.height, product.slug);
+  }
 });
 
 test("public price tiers stay complete, positive and conversion-safe", () => {

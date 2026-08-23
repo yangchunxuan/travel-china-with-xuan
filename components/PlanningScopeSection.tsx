@@ -59,9 +59,9 @@ export function PlanningScopeSection({
             alt=""
             className={styles.image}
             decoding="async"
-            height="1066"
+            height="1200"
             loading="lazy"
-            src="/images/home/hangzhou-1600.jpg"
+            src="/images/home/hangzhou-west-lake-leifeng-1600.webp"
             width="1600"
           />
         </div>

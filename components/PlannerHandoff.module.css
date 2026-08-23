@@ -29,10 +29,10 @@
 }
 
 .eyebrow {
-  color: #7b2d1c;
+  color: var(--hg-color-muted);
   font-size: 0.74rem;
-  font-weight: 760;
-  letter-spacing: 0.13em;
+  font-weight: 650;
+  letter-spacing: 0.035em;
   margin: 0;
   text-transform: uppercase;
 }
@@ -73,7 +73,7 @@
 }
 
 .boundary {
-  border-inline-start: 3px solid #a7462d;
+  border-inline-start: 1px solid var(--hg-color-line);
   color: var(--hg-color-muted);
   font-size: 0.9rem;
   line-height: 1.6;
@@ -83,9 +83,8 @@
 }
 
 .serviceIntent {
-  background: #f7ebe4;
-  border: 1px solid #d7b8a9;
-  border-inline-start: 4px solid #a7462d;
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.75rem;
   display: grid;
   gap: 0.25rem;
@@ -95,7 +94,7 @@
 }
 
 .serviceIntent span {
-  color: #7b2d1c;
+  color: var(--hg-color-muted);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.09em;
@@ -117,9 +116,9 @@
 
 .card {
   background: #fff;
-  border: 1px solid #c5d0c8;
-  border-radius: 1.25rem;
-  box-shadow: 0 18px 48px rgb(20 20 19 / 10%);
+  border: 1px solid var(--hg-color-line);
+  border-radius: 1.5rem;
+  box-shadow: none;
   min-inline-size: 0;
   padding: clamp(1.1rem, 3.2vw, 1.8rem);
 }
@@ -127,7 +126,7 @@
 .embedded .card {
   background: transparent;
   border: 0;
-  border-block-start: 1px solid #c5d0c8;
+  border-block-start: 1px solid var(--hg-color-line);
   border-radius: 0;
   box-shadow: none;
   padding: clamp(1.25rem, 3vw, 1.75rem) 0 0;
@@ -180,7 +179,7 @@
 }
 
 .responsibilityHint {
-  color: #4d5e55;
+  color: var(--hg-color-muted);
   font-size: 0.79rem;
   line-height: 1.55;
   margin: 0.25rem 0 0;
@@ -196,7 +195,7 @@
 .responsibilityOption {
   align-items: center;
   background: #fff;
-  border: 1px solid #99aa9f;
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.75rem;
   color: var(--hg-color-ink);
   cursor: pointer;
@@ -219,7 +218,7 @@
 }
 
 .responsibilityOption:hover {
-  border-color: #536d60;
+  border-color: var(--hg-color-ink);
 }
 
 .responsibilityOption:focus-within {
@@ -249,10 +248,10 @@
 }
 
 .responsibilityScopeHint {
-  background: var(--hg-color-canvas, #faf9f5);
-  border: 1px solid #d8dfda;
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.7rem;
-  color: #4d5e55;
+  color: var(--hg-color-muted);
   font-size: 0.79rem;
   line-height: 1.55;
   margin: 0.65rem 0 0;
@@ -289,7 +288,7 @@
 .contactMethodOption {
   align-items: center;
   background: #fff;
-  border: 1px solid #99aa9f;
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.75rem;
   color: var(--hg-color-ink);
   cursor: pointer;
@@ -304,7 +303,7 @@
 }
 
 .contactMethodOption:hover {
-  border-color: #536d60;
+  border-color: var(--hg-color-ink);
 }
 
 .contactMethodOption:focus-within {
@@ -353,7 +352,7 @@
 }
 
 .optionalDetailsHint {
-  color: #4d5e55;
+  color: var(--hg-color-muted);
   font-size: 0.79rem;
   line-height: 1.55;
   margin: -0.65rem 0 0;
@@ -383,7 +382,7 @@
 .field input,
 .field textarea {
   background: #fff;
-  border: 1px solid #99aa9f;
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.75rem;
   color: var(--hg-color-ink);
   box-sizing: border-box;
@@ -406,7 +405,7 @@
 
 .field input:hover,
 .field textarea:hover {
-  border-color: #536d60;
+  border-color: var(--hg-color-ink);
 }
 
 .field input:focus-visible,
@@ -423,7 +422,7 @@
 }
 
 .hint {
-  color: #4d5e55;
+  color: var(--hg-color-muted);
   font-size: 0.79rem;
   line-height: 1.55;
   margin: 0.45rem 0 0;
@@ -459,7 +458,7 @@
 .privacy a,
 .inlineLink,
 .routeLink {
-  color: #7b2d1c;
+  color: var(--hg-color-ink);
   display: inline-block;
   font-size: 0.83rem;
   font-weight: 720;
@@ -514,15 +513,15 @@
 .secondaryAction,
 .retryButton {
   background: #fff;
-  border: 1px solid #82958a;
+  border: 1px solid var(--hg-color-line);
   color: var(--hg-color-ink);
   inline-size: fit-content;
 }
 
 .secondaryAction:hover,
 .retryButton:hover {
-  background: #f1f4f1;
-  border-color: #536d60;
+  background: var(--hg-color-soft);
+  border-color: var(--hg-color-ink);
 }
 
 .primaryAction:focus-visible,
@@ -576,11 +575,10 @@
 }
 
 .previousRequest {
-  background: #f6f0e7;
-  border: 1px solid #d7c3a8;
-  border-inline-start: 4px solid #966338;
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.7rem;
-  color: #5a412d;
+  color: var(--hg-color-muted);
   font-size: 0.83rem;
   line-height: 1.6;
   padding: 0.75rem 0.85rem;
@@ -588,10 +586,10 @@
 
 .routeEditingNotice {
   align-items: flex-start;
-  background: #f6f0e7;
-  border: 1px solid #d7c3a8;
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
   border-radius: 0.75rem;
-  color: #5a412d;
+  color: var(--hg-color-muted);
   display: grid;
   font-size: 0.84rem;
   gap: 0.65rem;
@@ -653,7 +651,7 @@
 }
 
 .leaveWarning {
-  border-inline-start: 3px solid #a7462d;
+  border-inline-start: 3px solid var(--hg-color-line);
   padding-inline-start: 0.7rem;
 }
 
@@ -686,9 +684,9 @@
 }
 
 .unavailableNote {
-  background: #f5f1ea;
+  background: var(--hg-color-soft);
   border-radius: 0.65rem;
-  color: #584d42;
+  color: var(--hg-color-muted);
   padding: 0.65rem 0.75rem;
 }
 

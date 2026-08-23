@@ -64,6 +64,9 @@ jobs:
           NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER: ${{ vars.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER }}
           NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL }}
           NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL }}
+          NEXT_PUBLIC_HOMEGROUND_X_PROFILE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_X_PROFILE_URL }}
+          NEXT_PUBLIC_HOMEGROUND_INSTAGRAM_PROFILE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_INSTAGRAM_PROFILE_URL }}
+          NEXT_PUBLIC_HOMEGROUND_YOUTUBE_PROFILE_URL: ${{ vars.NEXT_PUBLIC_HOMEGROUND_YOUTUBE_PROFILE_URL }}
           # Consent-gated analytics. The shared switch defaults to false, and
           # every destination must be configured explicitly. Missing variables
           # therefore keep collection off; no production identifier or endpoint

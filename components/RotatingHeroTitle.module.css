@@ -5,20 +5,45 @@
   position: relative;
 }
 
+.root[data-has-control="true"] {
+  align-items: end;
+  column-gap: 0.75rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2.75rem;
+}
+
 .motionControl {
-  background: transparent;
-  border: 0;
-  border-radius: 0.2rem;
+  align-items: center;
+  align-self: end;
+  background: #fff;
+  border: 1px solid rgb(10 10 10 / 16%);
+  border-radius: 999px;
+  color: rgb(10 10 10 / 58%);
   cursor: pointer;
-  inset: 0;
+  display: inline-flex;
+  grid-column: 2;
+  grid-row: 1;
+  block-size: 2.75rem;
+  inline-size: 2.75rem;
+  justify-content: center;
+  margin-block-end: 0.08em;
   padding: 0;
-  position: absolute;
   z-index: 2;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.motionControl:hover {
+  border-color: rgb(10 10 10 / 38%);
+  color: #0a0a0a;
+}
+
+.motionControl:active {
+  transform: scale(0.96);
 }
 
 .motionControl:focus-visible {
-  outline: 2px solid var(--hg-color-rust);
-  outline-offset: 0.3rem;
+  outline: 3px solid var(--hg-color-focus, #2563eb);
+  outline-offset: 3px;
 }
 
 .screenReaderOnly {
@@ -34,9 +59,16 @@
   white-space: nowrap;
 }
 
+.heading,
 .visualTitle,
-.question {
+.fixedLine {
   display: block;
+}
+
+.heading {
+  grid-column: 1;
+  grid-row: 1;
+  min-inline-size: 0;
 }
 
 .visualTitle {
@@ -47,7 +79,7 @@
   display: inline-grid;
   inline-size: fit-content;
   max-inline-size: 100%;
-  min-block-size: 1em;
+  overflow: hidden;
   vertical-align: top;
 }
 
@@ -56,8 +88,7 @@
   grid-area: 1 / 1;
   max-inline-size: 100%;
   min-inline-size: 0;
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 .phraseSizer {
@@ -98,7 +129,9 @@
 }
 
 .root[data-paused="true"] .letter {
-  animation-play-state: paused;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 680px) {
@@ -109,16 +142,19 @@
   .phraseStage {
     inline-size: 100%;
   }
-
-  :global([data-homeground-locale="zh"]) .question {
-    max-inline-size: 6.5em;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .root[data-has-control="true"] {
+    display: block;
+  }
+
+  .motionControl {
+    display: none;
+  }
+
   .phraseLayer .letter {
     animation: none;
-    filter: none;
     opacity: 1;
     transform: none;
   }
@@ -127,13 +163,11 @@
 
 @keyframes letterEnter {
   from {
-    filter: blur(4px);
     opacity: 0;
     transform: translateY(0.28em);
   }
 
   to {
-    filter: blur(0);
     opacity: 1;
     transform: translateY(0);
   }
@@ -141,13 +175,11 @@
 
 @keyframes letterExit {
   from {
-    filter: blur(0);
     opacity: 1;
     transform: translateY(0);
   }
 
   to {
-    filter: blur(3px);
     opacity: 0;
     transform: translateY(-0.2em);
   }

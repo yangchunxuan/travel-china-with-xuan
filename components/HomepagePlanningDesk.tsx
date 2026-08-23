@@ -109,7 +109,7 @@ export function HomepagePlanningIntentSelector({
       }`}
       data-planning-view="intent"
     >
-      <header className={styles.intentHeader}>
+      <header className={styles.intentHeader} id="planner-contact">
         <h2 id="planning-intent-title" tabIndex={-1}>
           {contactOnly ? copy.contactPanelLabel : copy.title}
         </h2>

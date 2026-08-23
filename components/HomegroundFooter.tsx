@@ -1,5 +1,6 @@
 "use client";
 
+import { Facebook, Instagram, Youtube } from "lucide-react";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -16,9 +17,16 @@ import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
-import { getHomegroundFacebookPageUrl } from "../lib/homegroundSocial";
+import {
+  getHomegroundFacebookPageUrl,
+  getHomegroundSocialProfiles,
+  type HomegroundSocialPlatform,
+} from "../lib/homegroundSocial";
+import type { HomepageDestinationHubItem } from "../lib/homepageEditorial";
 import type { HomegroundPageContext } from "./HomegroundHeader";
+import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import styles from "./HomegroundHomePage.module.css";
+import homepageStyles from "./HomepageFooter.module.css";
 
 const footerSections: Record<
   HomegroundLocale,
@@ -26,6 +34,13 @@ const footerSections: Record<
     guides: string;
     services: string;
     legalLabel: string;
+    legalHeading: string;
+    exploreHeading: string;
+    destinationsHeading: string;
+    homegroundHeading: string;
+    socialLabel: string;
+    socialPending: string;
+    privateTours: string;
     operatorPrefix: string;
     operatorSuffix: string;
     codeLabel: string;
@@ -35,6 +50,13 @@ const footerSections: Record<
     guides: "Travel guides",
     services: "Trip planning services",
     legalLabel: "Business and service information",
+    legalHeading: "Legal",
+    exploreHeading: "Explore",
+    destinationsHeading: "Destinations",
+    homegroundHeading: "Homeground",
+    socialLabel: "Follow Homeground",
+    socialPending: "profile link pending",
+    privateTours: "Private tours",
     operatorPrefix: "Homeground is operated by",
     operatorSuffix: ".",
     codeLabel: "Unified Social Credit Code",
@@ -43,6 +65,13 @@ const footerSections: Record<
     guides: "旅行指南",
     services: "旅行规划服务",
     legalLabel: "经营与服务信息",
+    legalHeading: "法律与经营信息",
+    exploreHeading: "探索",
+    destinationsHeading: "目的地",
+    homegroundHeading: "Homeground",
+    socialLabel: "关注 Homeground",
+    socialPending: "账号链接待配置",
+    privateTours: "私家旅行产品",
     operatorPrefix: "Homeground 由",
     operatorSuffix: "运营。",
     codeLabel: "统一社会信用代码",
@@ -51,18 +80,46 @@ const footerSections: Record<
     guides: "여행 가이드",
     services: "여행 설계 서비스",
     legalLabel: "사업자 및 서비스 안내",
+    legalHeading: "법률 및 사업자 정보",
+    exploreHeading: "둘러보기",
+    destinationsHeading: "여행지",
+    homegroundHeading: "Homeground",
+    socialLabel: "Homeground 팔로우",
+    socialPending: "프로필 링크 설정 대기",
+    privateTours: "프라이빗 투어",
     operatorPrefix: "Homeground는",
     operatorSuffix: "에서 운영합니다.",
     codeLabel: "통일사회신용코드",
   },
 };
 
+function FooterSocialIcon({
+  platform,
+}: {
+  platform: HomegroundSocialPlatform;
+}) {
+  switch (platform) {
+    case "instagram":
+      return <Instagram aria-hidden="true" size={22} strokeWidth={1.6} />;
+    case "facebook":
+      return <Facebook aria-hidden="true" size={22} strokeWidth={1.6} />;
+    case "youtube":
+      return <Youtube aria-hidden="true" size={23} strokeWidth={1.6} />;
+    default:
+      return <span aria-hidden="true">X</span>;
+  }
+}
+
 export function HomegroundFooter({
   locale = "en",
   pageContext = "home",
+  variant = "default",
+  destinationHubItems = [],
 }: {
   locale?: HomegroundLocale;
   pageContext?: HomegroundPageContext;
+  variant?: "default" | "homepage";
+  destinationHubItems?: readonly HomepageDestinationHubItem[];
 }) {
   const copy = getHomegroundCopy(locale);
   const privacyPath =
@@ -87,6 +144,7 @@ export function HomegroundFooter({
   const consentCopy = getAnalyticsConsentCopy(locale);
   const studioPath = `${copy.path}studio/`;
   const facebookPageUrl = getHomegroundFacebookPageUrl();
+  const socialProfiles = getHomegroundSocialProfiles();
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
   const handleSectionClick = (
@@ -97,6 +155,169 @@ export function HomegroundFooter({
       handleHomegroundHashClick(event, hash);
     }
   };
+
+  if (variant === "homepage") {
+    return (
+      <footer
+        className={homepageStyles.footer}
+        data-homeground-homepage-footer="structured-dark"
+      >
+        <div className={homepageStyles.inner}>
+          <a
+            aria-label={copy.navigation.homeLabel}
+            className={homepageStyles.brand}
+            href={copy.path}
+          >
+            <HomegroundBrandMark className={homepageStyles.brandMark} />
+            <span>
+              <strong lang="en">Homeground China</strong>
+              <small>{copy.businessDescriptor}</small>
+            </span>
+          </a>
+
+          <div className={homepageStyles.navGrid}>
+            <nav aria-label={sectionLabels.exploreHeading}>
+              <h2>{sectionLabels.exploreHeading}</h2>
+              <ul>
+                <li>
+                  <a href={guideHubPath}>{sectionLabels.guides}</a>
+                </li>
+                <li>
+                  <a
+                    href={sectionHref("#travel-products")}
+                    onClick={(event) =>
+                      handleSectionClick(event, "#travel-products")
+                    }
+                  >
+                    {sectionLabels.privateTours}
+                  </a>
+                </li>
+                <li>
+                  <a href={planningServicesPath}>{sectionLabels.services}</a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav aria-label={copy.cities.listLabel} id="destinations">
+              <h2 id="homepage-city-hubs-title" tabIndex={-1}>
+                {sectionLabels.destinationsHeading}
+              </h2>
+              <ul>
+                {destinationHubItems.map((city) => (
+                  <li key={city.id}>
+                    <a href={city.href}>{city.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav aria-label={sectionLabels.homegroundHeading} id="studio">
+              <h2 id="studio-title" tabIndex={-1}>
+                {sectionLabels.homegroundHeading}
+              </h2>
+              <ul>
+                <li>
+                  <a href={studioPath}>{copy.navigation.studio}</a>
+                </li>
+                <li>
+                  <a
+                    href={sectionHref("#faq")}
+                    onClick={(event) => handleSectionClick(event, "#faq")}
+                  >
+                    {copy.navigation.faq}
+                  </a>
+                </li>
+                <li>
+                  <a href={businessPath}>{legalCopy.related.business}</a>
+                </li>
+                <li>
+                  <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
+                    {legalCopy.related.contact}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav aria-label={sectionLabels.legalLabel}>
+              <h2>{sectionLabels.legalHeading}</h2>
+              <ul>
+                <li>
+                  <a href={termsPath}>{legalCopy.related.terms}</a>
+                </li>
+                <li>
+                  <a href={privacyPath}>{legalCopy.related.privacy}</a>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={openAnalyticsConsentPreferences}
+                  >
+                    {consentCopy.manage}
+                  </button>
+                </li>
+                <li>
+                  <a href={refundPath}>{legalCopy.related.refund}</a>
+                </li>
+                {locale === "en" ? (
+                  <li>
+                    <a href="/guides/china-entry-requirements/">
+                      {copy.navigation.visa}
+                    </a>
+                  </li>
+                ) : null}
+              </ul>
+            </nav>
+          </div>
+
+          <div className={homepageStyles.meta}>
+            <div className={homepageStyles.copyrightSocial}>
+              <p>{copy.footer.copyright(new Date().getFullYear())}</p>
+              <nav aria-label={sectionLabels.socialLabel}>
+                <ul>
+                  {socialProfiles.map((profile) => (
+                    <li key={profile.platform}>
+                      {profile.url ? (
+                        <a
+                          aria-label={profile.label}
+                          href={profile.url}
+                          rel="me noreferrer"
+                          target="_blank"
+                        >
+                          <FooterSocialIcon platform={profile.platform} />
+                        </a>
+                      ) : (
+                        <span
+                          aria-label={`${profile.label}: ${sectionLabels.socialPending}`}
+                          className={homepageStyles.socialPending}
+                          data-social-profile-status="pending"
+                          role="img"
+                          title={`${profile.label}: ${sectionLabels.socialPending}`}
+                        >
+                          <FooterSocialIcon platform={profile.platform} />
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+
+            <p className={homepageStyles.operator}>
+              {sectionLabels.operatorPrefix}{" "}
+              <a href={businessPath} lang="zh-Hans">
+                {homegroundBusiness.publicName}
+              </a>
+              {sectionLabels.operatorSuffix}
+              <span>
+                {sectionLabels.codeLabel}: {" "}
+                {homegroundBusiness.unifiedSocialCreditCode}
+              </span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 
   return (
     <footer className={styles.footer}>

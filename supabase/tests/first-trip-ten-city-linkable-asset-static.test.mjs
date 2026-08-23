@@ -376,7 +376,7 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
   assert.match(analytics, /\| "linkable_asset_citation_copied"/);
 });
 
-test("the reusable map feature is wired into every homepage and the indexed transport article", async () => {
+test("the reusable map remains in the indexed transport article without occupying the homepage product slot", async () => {
   const [feature, homepage, transport] = await Promise.all([
     source("components/TenCityMapFeature.tsx"),
     source("components/HomegroundHomePage.tsx"),
@@ -387,6 +387,7 @@ test("the reusable map feature is wired into every homepage and the indexed tran
   assert.match(feature, new RegExp(`/downloads/${filePrefix}\\.zip`));
   assert.doesNotMatch(feature, /rel="license"/);
   assert.match(feature, /CC BY 4\.0/);
-  assert.match(homepage, /<TenCityMapFeature[\s\S]*?locale=\{locale\}[\s\S]*?placement="homepage"/);
+  assert.doesNotMatch(homepage, /<TenCityMapFeature/);
+  assert.match(homepage, /<HomepageProductShowcase/);
   assert.match(transport, /<TenCityMapFeature[\s\S]*?locale=\{locale\}[\s\S]*?placement="article"/);
 });

@@ -303,7 +303,10 @@ function completeAnswers(
 function plannerUrl(value: QuestionKey | "result"): string {
   const url = new URL(window.location.href);
   url.searchParams.set(plannerQueryKey, value);
-  url.hash = "route-finder";
+  url.hash =
+    value === "result" && window.location.hash === "#planner-handoff"
+      ? "planner-handoff"
+      : "route-finder";
   return `${url.pathname}${url.search}${url.hash}`;
 }
 

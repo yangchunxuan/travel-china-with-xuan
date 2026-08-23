@@ -603,6 +603,9 @@ test("environment template covers the public form and server functions", async (
     "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER",
     "NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL",
     "NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL",
+    "NEXT_PUBLIC_HOMEGROUND_X_PROFILE_URL",
+    "NEXT_PUBLIC_HOMEGROUND_INSTAGRAM_PROFILE_URL",
+    "NEXT_PUBLIC_HOMEGROUND_YOUTUBE_PROFILE_URL",
     "SUPABASE_URL",
     "SUPABASE_SECRET_KEYS",
     "SUPABASE_SERVICE_ROLE_KEY",
@@ -675,6 +678,9 @@ test("GitHub Pages build receives only explicit public Inquiry variables", async
     "NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER",
     "NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL",
     "NEXT_PUBLIC_HOMEGROUND_FACEBOOK_PAGE_URL",
+    "NEXT_PUBLIC_HOMEGROUND_X_PROFILE_URL",
+    "NEXT_PUBLIC_HOMEGROUND_INSTAGRAM_PROFILE_URL",
+    "NEXT_PUBLIC_HOMEGROUND_YOUTUBE_PROFILE_URL",
   ]) {
     assert.match(
       workflow,
@@ -751,7 +757,7 @@ test("frontend launch gates and permanent privacy entry stay connected", async (
   assert.match(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_INTAKE_ENABLED/);
   assert.doesNotMatch(planner, /NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER/);
   assert.doesNotMatch(planner, /wa\.me/);
-  assert.match(homePage, /<HomegroundFooter locale=\{locale\}/);
+  assert.match(homePage, /<HomegroundFooter[\s\S]{0,160}locale=\{locale\}/);
   assert.match(footer, /legalCopy\.related\.privacy/);
   assert.match(footer, /privacyPath/);
 });

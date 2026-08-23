@@ -7,6 +7,7 @@ Current website derivatives:
 
 - `public/images/home/beijing-hero-1200.jpg`
 - `public/images/home/beijing-hero-2400.jpg`
+- `public/images/home/hangzhou-west-lake-leifeng-1600.webp`
 - `public/images/home/zhangjiajie-1600.jpg`
 - `public/images/guides/beijing-zhangjiajie-shanghai-10-days/airport-transfer-1800.jpg`
 - `public/images/guides/beijing-zhangjiajie-shanghai-10-days/zhangjiajie-base-1800.jpg`
@@ -1199,6 +1200,19 @@ current access, weather, boats, gates, queues, tickets or transport operation.
 | --- | --- | --- | --- |
 | `city-hangzhou` hero | City photograph supplied by the project owner for Homeground website use during the July 2026 redesign; the retained production file shows West Lake water, small passenger boats and wooded hills. Photographer and original capture metadata were not separately recorded, so no narrower shore, boat route or viewpoint is claimed. | Existing `public/images/home/hangzhou-1600.jpg`; 1600 × 1066; `c2833ac865a0652cc932e5e5aea6b5e9e04f06b486a9e5c1ca3d8f1664a1e057` | Identifies the broad West Lake landscape only. It does not establish a current boat service, safe route, visibility, crowd level, fare or hotel view. |
 | `city-zhangjiajie` hero | Project-owner-supplied `张家界.png`, already approved for Homeground production use and recorded at the start of this register. | Existing `public/images/home/zhangjiajie-1600.jpg`; 1600 × 954; `804c41ae605faeb67f1ef77da6d012400169a5b0e151b857e0e5e97856cec176` | Identifies the sandstone-pillar landscape in Zhangjiajie. It does not identify a gate, plateau, path or transport product and proves no current weather or access condition. |
+
+### Homepage planning photograph refresh (August 23, 2026)
+
+The homepage planning section uses one real, location-identified Pexels
+photograph and **0 AI-generated or AI-assisted documentary images**. The
+published derivative was made only through metadata removal and WebP
+conversion. Pexels permits free website and promotional use and modification
+under the [Pexels licence](https://www.pexels.com/license/); attribution is not
+required, but the creator, source and licence are retained here for provenance.
+
+| Page and role | Original source, place, creator and rights | Source SHA-256 | Published derivative and final SHA-256 | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Homepage planning section | [View of the West Lake and the Leifeng Pagoda in Hangzhou, China](https://www.pexels.com/photo/view-of-the-west-lake-and-the-leifeng-pagoda-in-hangzhou-china-20700881/); West Lake and Leifeng Pagoda, Hangzhou; miyou 77; [Pexels licence](https://www.pexels.com/license/) | `fbe25079f18b5bcdf61dfd695403d5f0984966e5c1b750d296bb70e00af2484f` (1600 × 1200 source JPEG) | `public/images/home/hangzhou-west-lake-leifeng-1600.webp`; 1600 × 1200; `ee3fb42946b73a6c116ed39a033abcb77728be1089f097fd32e4905a88993bb2` | Identifies West Lake and Leifeng Pagoda as an unmistakably Chinese planning setting. It does not prove current weather, visibility, boat operation, opening, access, crowding, fare or hotel view. |
 
 ## Arrival card and Zhangjiajie park execution guides (August 20, 2026)
 

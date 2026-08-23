@@ -384,7 +384,6 @@ export function HomepageQuickContact({
 
   return (
     <div
-      id="planner-contact"
       className={`${styles.quickContact} ${
         variant === "hero" ? styles.quickContactHero : ""
       }`}

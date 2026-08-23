@@ -37,7 +37,15 @@ read-back on 2026-08-23 was 698 unique URLs. Later documentation-only
 commits do not change those runtime counts. These are different grains and must
 not be combined into an indexation rate.
 
-## Unpublished and reserved inventory
+## Release records and reserved inventory
+
+- [Homepage private-tour catalog draft](./homepage-product-showcase-draft-20260823.md)
+  records PR #99's decision to replace the large homepage map
+  promotion with all nine published private-tour owners, remove the temporary
+  guide placeholders and keep the eight-city discovery network in the compact
+  homepage footer. The map asset remains public through its transport owners.
+  The design record is not evidence of a merge or Pages deployment; establish
+  those states from the GitHub PR and deployment read-back.
 
 - Draft PR [#84](https://github.com/yangchunxuan/travel-china-with-xuan/pull/84)
   contains 60 reserved trilingual guide drafts (180 locale paths), ten from
