@@ -203,7 +203,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "Choose the base with the accommodation owners",
+      title: "Choose the base with the detailed accommodation guides",
       items: [
         {
           label: "Where to stay in Beijing on a first trip",
@@ -351,7 +351,7 @@ const body = {
     {
       id: "transport-links",
       type: "internal-links",
-      title: "Hand the gateway decision to its owner",
+      title: "Choose the exact gateway with the detailed guide",
       items: [
         {
           label: "Which Beijing railway station do you need?",
@@ -499,7 +499,7 @@ const body = {
     {
       id: "sight-links",
       type: "internal-links",
-      title: "Open the execution owner when a cluster becomes a booking",
+      title: "Open the detailed guide when a cluster becomes a booking",
       items: [
         {
           label: "The Forbidden City for foreign visitors",
@@ -629,7 +629,7 @@ const body = {
     {
       id: "route-links",
       type: "internal-links",
-      title: "Continue with the route owners",
+      title: "Continue with the detailed route guides",
       items: [
         {
           label: "Beijing, Xi'an and Chengdu: choose the route order",
@@ -748,7 +748,7 @@ const body = {
     {
       id: "faq-8",
       type: "paragraph",
-      text: "No. They have separate access ownership, and a Tiananmen Square record never replaces a Palace Museum ticket. Under the current publicly available Tiananmen measures, a valid same-day Palace Museum reservation lets the visitor enter the square without a separate square reservation; show that record at the on-site check. Recheck official notices before major events or temporary controls, and use the detailed Forbidden City guide for the Palace-only approach.",
+      text: "No. They have separate authorities, booking channels and access checks, and a Tiananmen Square record never replaces a Palace Museum ticket. Under the current publicly available Tiananmen measures, a valid same-day Palace Museum reservation lets the visitor enter the square without a separate square reservation; show that record at the on-site check. Recheck official notices before major events or temporary controls, and use the detailed Forbidden City guide for the Palace-only approach.",
     },
     {
       id: "faq-9-heading",

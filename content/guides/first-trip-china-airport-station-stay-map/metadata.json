@@ -56,6 +56,36 @@
         "Airports and stations",
         "Where to stay"
       ]
+    },
+    "zh": {
+      "path": "/zh/guides/first-trip-china-airport-station-stay-map/",
+      "title": "第一次来中国：10城机场、火车站与住宿区域地图",
+      "headline": "第一次来中国：10城机场、火车站与住宿区域地图",
+      "description": "把中国10座门户城市的机场、火车站和适合初次到访的住宿区域对应起来，避开同城错站，并下载可复用的地图与数据。",
+      "heroAlt": "Homeground 原创中文示意图，展示中国10座门户城市从抵达到住宿再到离开的判断关系。",
+      "navTitle": "10城抵达与住宿地图",
+      "featuredLinkLabel": "看懂10座城市的门户与住宿区域",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "10城地图",
+        "机场与火车站",
+        "住宿区域"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/first-trip-china-airport-station-stay-map/",
+      "title": "첫 중국 여행: 10개 도시 공항·기차역·숙박 지도",
+      "headline": "첫 중국 여행: 10개 도시 공항·기차역·숙박 지도",
+      "description": "중국의 주요 10개 도시에서 정확한 공항·기차역과 첫 여행에 알맞은 숙박 지역을 연결하고, 같은 도시의 다른 관문을 혼동하지 않도록 돕는 지도와 데이터입니다.",
+      "heroAlt": "중국의 주요 10개 도시에서 도착 관문, 숙박 지역, 다음 출발의 관계를 보여 주는 Homeground의 한국어 원본 도식.",
+      "navTitle": "10개 도시 도착·숙박 지도",
+      "featuredLinkLabel": "10개 도시의 관문과 숙박 지역 연결하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "10개 도시 지도",
+        "공항과 기차역",
+        "숙박 지역"
+      ]
     }
   }
 }

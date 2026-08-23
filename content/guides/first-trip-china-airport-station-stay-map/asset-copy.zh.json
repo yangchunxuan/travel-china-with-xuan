@@ -1,0 +1,163 @@
+{
+  "locale": "zh",
+  "cities": [
+    {
+      "id": "beijing",
+      "name": "北京",
+      "secondaryName": "Beijing",
+      "gatewaySummary": "PEK · PKX · 北京南站 · 北京西站 · 北京朝阳站",
+      "stayDefault": "第一次到访，王府井 / 东单通常是便于游览市中心的起点",
+      "warning": "首都机场（PEK）与大兴机场（PKX）分属不同方向；北京南站、西站和朝阳站也不能互相替代。",
+      "oneMoveRule": "通常只需保留一个市中心住宿点。",
+      "lastNightRule": "只有当已确认的出发节点、时间窗口或行动不便风险明显较高时，才考虑最后一晚移到机场或车站附近。",
+      "graphicSummary": "PEK / PKX"
+    },
+    {
+      "id": "shanghai",
+      "name": "上海",
+      "secondaryName": "Shanghai",
+      "gatewaySummary": "PVG · SHA · 上海虹桥站 · 上海站 · 上海南站 · 上海松江站",
+      "stayDefault": "人民广场 / 南京东路可作为兼顾市中心与交通的初始选择",
+      "warning": "浦东机场（PVG）不是虹桥机场（SHA）；虹桥机场和虹桥火车站虽相连，却对应不同的已订行程。",
+      "oneMoveRule": "除非停留很短且完全由门户交通决定，否则通常只住一个区域。",
+      "lastNightRule": "只有出发时间非常早或接驳风险明显较高时，才值得移到机场或车站附近。",
+      "graphicSummary": "PVG / SHA"
+    },
+    {
+      "id": "xian",
+      "name": "西安",
+      "secondaryName": "Xi'an",
+      "gatewaySummary": "XIY · 西安北站 · 西安站 · 西安东站",
+      "stayDefault": "想体验历史城区的夜晚，可先考虑城墙内或城墙附近",
+      "warning": "西安咸阳机场、西安北站、西安东站和西安站是不同节点；请逐字核对票面全名。",
+      "oneMoveRule": "大多数第一次到访只需一个住宿点。",
+      "lastNightRule": "只有航班时间和同行者需求确实需要时，才安排咸阳机场附近的缓冲住宿。",
+      "graphicSummary": "XIY / 3座车站"
+    },
+    {
+      "id": "chengdu",
+      "name": "成都",
+      "secondaryName": "Chengdu",
+      "gatewaySummary": "TFU · CTU · 成都东站 · 成都南站 · 成都西站",
+      "stayDefault": "春熙路 / 太古里便于安排市中心的晚间活动",
+      "warning": "天府机场（TFU）与双流机场（CTU）的进城路线差别很大；成都东站又是独立的铁路节点。",
+      "oneMoveRule": "市区保留一个住宿点，远郊行程单独留足时间。",
+      "lastNightRule": "先核对真实机场代码、出发时段和保守接驳时间，再决定是否住机场附近。",
+      "graphicSummary": "CTU / TFU"
+    },
+    {
+      "id": "guangzhou",
+      "name": "广州",
+      "secondaryName": "Guangzhou",
+      "gatewaySummary": "CAN · 广州站 · 广州东站 · 广州南站 · 广州白云站 · 广州北站",
+      "stayDefault": "第一次到访，可先把北京路 / 越秀作为市中心假设",
+      "warning": "各火车站必须与票面站名完全一致；只看“广州”两个字不够。",
+      "oneMoveRule": "除非展会或城南路线占据大部分时间，否则通常只住一个区域。",
+      "lastNightRule": "早班从白云机场出发时，可在复核航站楼和地面交通后再考虑机场住宿。",
+      "graphicSummary": "CAN / 5座车站"
+    },
+    {
+      "id": "hangzhou",
+      "name": "杭州",
+      "secondaryName": "Hangzhou",
+      "gatewaySummary": "HGH · 杭州站 · 杭州东站 · 杭州西站 · 杭州南站",
+      "stayDefault": "湖滨 / 西湖东岸通常便于兼顾西湖和城市交通",
+      "warning": "机场、东站和西站分处不同方向；“住西湖边”也不是一个精确的酒店位置。",
+      "oneMoveRule": "大多数第一次到访只需一个住宿点。",
+      "lastNightRule": "只有已确认的萧山机场出发时间和接驳风险确有需要时，才移到机场附近。",
+      "graphicSummary": "HGH / 东站 / 西站"
+    },
+    {
+      "id": "zhangjiajie",
+      "name": "张家界",
+      "secondaryName": "Zhangjiajie",
+      "gatewaySummary": "DYG · 张家界西站 · 张家界站",
+      "stayDefault": "按已确认的景点顺序，在张家界市区与武陵源之间选择",
+      "warning": "机场、火车站、天门山、森林公园各入口和大峡谷都是不同节点。",
+      "oneMoveRule": "最多安排一次有目的的换住宿，避免每天在市区和景区之间往返。",
+      "lastNightRule": "如果次日很早从荷花机场起飞，最后一晚回到市区可能降低风险。",
+      "graphicSummary": "市区 / 武陵源"
+    },
+    {
+      "id": "chongqing",
+      "name": "重庆",
+      "secondaryName": "Chongqing",
+      "gatewaySummary": "CKG · 重庆北站 · 重庆西站 · 重庆东站 · 沙坪坝站",
+      "stayDefault": "第一次到访若以两江夜景和核心城区为主，可先考虑解放碑",
+      "warning": "北站、西站、东站和沙坪坝站不能互换；立体地形也会让地图直线距离产生误导。",
+      "oneMoveRule": "通常只需一个经过核实、进出省力的住宿点。",
+      "lastNightRule": "只有江北机场早班机，或行李与行动不便风险较高时，才考虑机场住宿。",
+      "graphicSummary": "CKG / 4座车站"
+    },
+    {
+      "id": "guilin-yangshuo",
+      "name": "桂林 / 阳朔",
+      "secondaryName": "Guilin / Yangshuo",
+      "gatewaySummary": "KWL · 桂林站 · 桂林北站 · 桂林西站 · 阳朔站 · 磨盘山码头 · 竹江码头",
+      "stayDefault": "门户交通前后住桂林；田园段按需求选择阳朔县城或遇龙河一带",
+      "warning": "阳朔站不在阳朔县城；铁路、公路和漓江游船抵达的位置各不相同。",
+      "oneMoveRule": "有计划地在桂林与阳朔之间换一次住宿，通常是合理的。",
+      "lastNightRule": "机场住宿只用于控制离境风险；最后一晚住桂林市区有时已经足够。",
+      "graphicSummary": "铁路 / 公路 / 漓江"
+    },
+    {
+      "id": "shenzhen",
+      "name": "深圳",
+      "secondaryName": "Shenzhen",
+      "gatewaySummary": "SZX · 深圳北站 · 福田站 · 深圳站 / 罗湖 · 深圳东站 · 3个口岸",
+      "stayDefault": "第一次到访、商务和综合交通需求，可先以福田为起点",
+      "warning": "福田火车站不是福田口岸；深圳站虽在罗湖旁边，也不等于出入境手续本身。",
+      "oneMoveRule": "根据已订的口岸、火车或航班链路选择一个住宿点。",
+      "lastNightRule": "只有深圳机场早班机或衔接风险高于最后一晚留在市区的价值时，才移到机场附近。",
+      "graphicSummary": "SZX / 口岸"
+    }
+  ],
+  "sources": [
+    {"id": "china-railway", "label": "中国铁路客运服务与实时行程查询", "publisher": "中国铁路12306"},
+    {"id": "caac", "label": "全国机场统计与机场背景资料", "publisher": "中国民用航空局"},
+    {"id": "beijing-airports", "label": "北京机场代码与旅客服务入口", "publisher": "北京市人民政府"},
+    {"id": "beijing-rail", "label": "北京七座主要火车站及地铁接驳", "publisher": "北京市人民政府"},
+    {"id": "shanghai-pvg", "label": "上海浦东国际机场旅客信息", "publisher": "上海机场（集团）有限公司"},
+    {"id": "shanghai-sha", "label": "上海虹桥国际机场旅客信息", "publisher": "上海机场（集团）有限公司"},
+    {"id": "xian-t5", "label": "西安咸阳国际机场T5航站楼启用信息", "publisher": "西安市人民政府"},
+    {"id": "xian-east", "label": "西安东站启用与换乘指引", "publisher": "西安市人民政府"},
+    {"id": "chengdu-airports", "label": "成都双机场当前航班转场调整", "publisher": "四川省机场集团"},
+    {"id": "chengdu-rail", "label": "成都主要火车站的名称与位置", "publisher": "成都国际传播中心 / 成都有关部门"},
+    {"id": "guangzhou-t3", "label": "广州白云国际机场T3航站楼启用信息", "publisher": "广州市人民政府"},
+    {"id": "guangzhou-terminal-move", "label": "国际及地区航班转至T3的通知", "publisher": "广州市人民政府"},
+    {"id": "guangzhou-rail", "label": "广州站与广州白云站的当前分工", "publisher": "广州市人民政府"},
+    {"id": "hangzhou-terminal", "label": "杭州机场T3、T4使用情况与T2改造", "publisher": "杭州萧山国际机场"},
+    {"id": "hangzhou-metro", "label": "杭州机场地铁线路", "publisher": "杭州萧山国际机场"},
+    {"id": "chongqing-t3b", "label": "重庆机场T3B旅客流程", "publisher": "重庆市人民政府"},
+    {"id": "chongqing-east", "label": "重庆东站启用信息", "publisher": "重庆市交通运输委员会"},
+    {"id": "guilin", "label": "桂林两江国际机场地面交通", "publisher": "桂林两江国际机场"},
+    {"id": "shenzhen-ports", "label": "深圳各口岸及旅客服务", "publisher": "深圳市人民政府口岸办公室"},
+    {"id": "guilin-yangshuo", "label": "阳朔站位置及不同漓江码头", "publisher": "桂林漓江风景名胜区"},
+    {"id": "shenzhen-air", "label": "深圳机场T3与卫星厅当前旅客设施", "publisher": "深圳市人民政府"},
+    {"id": "shenzhen-rail", "label": "深圳机场及市内火车站信息", "publisher": "深圳市人民政府"},
+    {"id": "zhangjiajie-air", "label": "张家界荷花国际机场及当前航站楼信息", "publisher": "湖南机场集团"},
+    {"id": "zhangjiajie-gates", "label": "武陵源五个门票站的名称与位置", "publisher": "湖南省文化和旅游厅"}
+  ],
+  "graphic": {
+    "assetLabel": "HOMEGROUND CHINA · 编辑数据图",
+    "title": "抵达 → 住宿 → 出发",
+    "subtitle": "第一次来中国：10座门户城市",
+    "decisionChain": "一条判断链",
+    "steps": [
+      {"label": "抵达", "description": "抄下票面上的机场代码、车站或口岸全名。"},
+      {"label": "住宿", "description": "选择同时方便抵达和第二天行程的住宿区域。"},
+      {"label": "出发", "description": "按后续车票上的车站全名安排完整接驳。"}
+    ],
+    "mismatchHeadline": "同一座城市，不等于同一个门户。",
+    "corridorLabel": "走廊关系示意 · 非比例地图",
+    "versionLabel": "版本",
+    "reviewedLabel": "事实核对",
+    "cityCardLabel": "城市卡",
+    "confirmGateway": "先核对门户全名，再选择住宿区域。",
+    "arriveDepart": "抵达 / 出发",
+    "startWith": "住宿起点",
+    "oneMoveRule": "换住宿原则",
+    "wrongNodeWarning": "错站提醒",
+    "schematicLabel": "示意图，非比例地图"
+  }
+}

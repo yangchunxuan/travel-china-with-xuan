@@ -28,7 +28,7 @@ const body: StructuredPageBody = {
       columns: ["Place on the booking", "What it is", "Do not transfer from it"],
       rows: [
         ["张家界国家森林公园 / 武陵源核心景区", "The multi-gate sandstone-forest park covered by this guide", "Do not assume its ticket enters Tianmen Mountain or the Grand Canyon."],
-        ["天门山国家森林公园", "A separate mountain attraction reached from Zhangjiajie city", "Its A/B/C route labels, cableway and entry appointment are separate owners."],
+        ["天门山国家森林公园", "A separate mountain attraction reached from Zhangjiajie city", "Its A/B/C route labels, cableway and entry appointment belong in a separate Tianmen Mountain guide."],
         ["张家界大峡谷 / 玻璃桥", "A separate Grand Canyon and Glass Bridge attraction", "Its ticket and time slot are not a Forest Park gate reservation."],
         ["黄龙洞 or 宝峰湖", "Separate Wulingyuan-area attractions", "Nearby location does not put them inside the Forest Park admission."],
       ],
@@ -184,7 +184,7 @@ const body: StructuredPageBody = {
       id: "route-boundary",
       type: "callout",
       title: "A chain can begin at one gate and end near another—but do not improvise it",
-      body: "Multi-gate geography makes one-way days possible, but shuttle suspensions, lift closures, weather, queues and last departures can break the return. Keep the named exit, luggage location and fallback vehicle in the plan. The separate Zhangjiajie itinerary owns how to distribute these chains across two, three or four days.",
+      body: "Multi-gate geography makes one-way days possible, but shuttle suspensions, lift closures, weather, queues and last departures can break the return. Keep the named exit, luggage location and fallback vehicle in the plan. Use the separate Zhangjiajie itinerary guide to distribute these chains across two, three or four days.",
       tone: "warning",
     },
     {
@@ -249,7 +249,7 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "Continue planning without mixing up separate decisions",
       items: [
-        { label: "How many days in Zhangjiajie?", href: "/guides/zhangjiajie-itinerary/", description: "Use the itinerary owner to distribute park chains across the trip." },
+        { label: "How many days in Zhangjiajie?", href: "/guides/zhangjiajie-itinerary/", description: "Use the itinerary guide to distribute park chains across the trip." },
         { label: "Stay in Zhangjiajie city or Wulingyuan?", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Choose the hotel base separately from the park transaction." },
         { label: "Zhangjiajie Glass Bridge or mountain skywalk?", href: "/guides/zhangjiajie-glass-bridge-vs-skywalk/", description: "Keep the separate Grand Canyon and mountain attractions distinct." },
         { label: "Beijing to Zhangjiajie transport", href: "/guides/beijing-zhangjiajie-shanghai-transport/", description: "Plan the intercity arrival before the gate transfer." },

@@ -1,6 +1,8 @@
 # Research and source log
 
-Research and official-source review completed on 2026-08-22.
+Full official-source review completed on 2026-08-22. The dated Gate of Supreme
+Harmony conservation notice was added and checked separately on 2026-08-23;
+that targeted check does not advance the page-level `sourceReviewedDate`.
 
 ## Scope and canonical ownership
 
@@ -38,8 +40,12 @@ The guide therefore states the current rule directly: show the valid same-day Pa
 | [Beijing 12345 passport-booking answer](https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html) | Passport booking, original-document inspection and official help context for foreign visitors | Supplements but does not override current Palace Museum rules |
 | [Tiananmen Square trial reservation measures](https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html) | The currently published Palace-reservation exemption and the fact that square access does not replace attraction admission | Recheck after a source change and before major events or temporary controls |
 | [Beijing government Tiananmen Square page](https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html) | Current official reservation channels and visitor-facing entry points | Channel availability can vary by region or interface; security and temporary controls remain separate from reservation eligibility |
+| [Palace Museum Gate of Supreme Harmony conservation notice](https://www.dpm.org.cn/announce_detail/379422.html) | The gate has been closed for conservation work since 3 August 2026 | This is a temporary access condition, not a permanent route rule; follow the current on-site diversion and recheck the official notice before visiting |
 
-All source pages above were reopened on 2026-08-22. Old public-health wording that remains in older page fragments was not repeated as a current visitor requirement.
+The original source set above was reopened on 2026-08-22. The Gate of Supreme
+Harmony notice was opened on 2026-08-23 when Live QA identified the missing
+closure warning. Old public-health wording that remains in older page fragments
+was not repeated as a current visitor requirement.
 
 ## Dynamic facts and recheck triggers
 
@@ -53,6 +59,7 @@ All source pages above were reopened on 2026-08-22. Old public-health wording th
 | Monday and seasonal hours | Monday closed except statutory holidays; peak 08:30/16:00/17:00, low 08:30/15:30/16:30 | Holiday, special opening, weather or security notice |
 | Tiananmen access | A valid same-day Palace Museum reservation currently removes the need for a duplicate square reservation; checkpoint verification, security and temporary controls still apply | Any portal, event-control or hotline update |
 | Individual galleries | May require additional ticket/reservation and may close temporarily | Current exhibition or closure notice |
+| Gate of Supreme Harmony | Closed for conservation work from 3 August 2026; the route sequence does not promise that the gate itself is open | Any reopening, revised diversion or new conservation notice |
 | Luggage and transport | Operational service with conditions; no guaranteed curbside pickup | Seasonal service, road-control or route change |
 
 The article instructs travellers to recheck at booking, 24–48 hours before the visit, and before leaving the hotel on a high-risk date. It does not turn the reviewed date into a live-status guarantee.
@@ -65,6 +72,6 @@ The article instructs travellers to recheck at booking, 24–48 hours before the
 
 ## Localisation and privacy
 
-- English, Chinese and Korean use the same 51 block IDs in the same order.
+- English, Chinese and Korean use the same 52 block IDs in the same order.
 - All recovery advice avoids collecting or exposing passport numbers, payment data or booking records. Screenshots are suggested only with sensitive details hidden.
 - Service language remains editorial and optional; no paid-service weight was added.

@@ -98,7 +98,7 @@
           "dayCount": 40,
           "status": "official",
           "sourceId": "mot-2026-spring-festival-plan",
-          "sourceUrl": "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html",
+          "sourceUrl": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html",
           "boundary": "Transport pressure period only; not a 40-day public holiday."
         }
       ]
@@ -111,7 +111,7 @@
         "zh": "尚未发布",
         "ko": "아직 발표되지 않음"
       },
-      "checkedAt": "2026-08-11",
+      "checkedAt": "2026-08-23",
       "sourceId": null,
       "sourceUrl": null,
       "holidays": [],

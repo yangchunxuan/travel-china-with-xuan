@@ -350,7 +350,7 @@ const body = {
     {
       id: "city-links",
       type: "internal-links",
-      title: "Hand the city decisions to their owners",
+      title: "Use the detailed guides for city-level decisions",
       items: [
         {
           label: "Chengdu Panda Base or Dujiangyan Panda Valley?",
@@ -439,7 +439,7 @@ const body = {
     {
       id: "branch-links",
       type: "internal-links",
-      title: "Open the branch owner before booking it",
+      title: "Open the detailed side-trip guide before booking",
       items: [
         {
           label: "Sanxingdui Museum: booking and gallery order",
@@ -521,7 +521,7 @@ const body = {
     {
       id: "next-links",
       type: "internal-links",
-      title: "Continue with the route owners",
+      title: "Continue with the detailed route guides",
       items: [
         {
           label: "Beijing, Xi'an and Chengdu: choose the route order",

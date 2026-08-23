@@ -29,6 +29,11 @@
   max-width: 1380px;
 }
 
+.heroInner > * {
+  max-width: 100%;
+  min-width: 0;
+}
+
 .indexLabel,
 .eyebrow {
   font-size: 0.72rem;
@@ -663,7 +668,7 @@
   .decisionSequence,
   .ownerBoundary,
   .cta {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .scope {
@@ -711,6 +716,20 @@
   .hubPage[data-homeground-locale="ko"] .hero h1 {
     font-size: clamp(2.85rem, 13.6vw, 4.2rem);
     max-width: 100%;
+  }
+
+  .hero h1,
+  .lede {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hubPage[data-homeground-locale="zh"] .hero h1 {
+    word-break: normal;
+  }
+
+  .hubPage[data-homeground-locale="zh"] .hero h1.segmentedTitle {
+    word-break: normal;
   }
 
   .sectionIndexInner {

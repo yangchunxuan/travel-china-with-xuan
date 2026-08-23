@@ -40,7 +40,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "lanzhou-warning", type: "callout", title: "환승은 방문이 아닙니다", tone: "warning", body: "정오에 란저우에서 열차를 한 번 갈아타고 그날을 '란저우에서 보낸 하루'라고 부르는 것이 이 동선에서 시간이 조용히 새는 가장 흔한 방식입니다. 란저우가 환승일 뿐이라면 환승으로 예약하고 짐은 들고 다니세요. 그럴듯해 보이게 하려고 숙소를 잡지 마세요. 반대로 란저우에 하룻밤을 준다면 온전한 하룻밤을 주세요. 22시에 도착해 다음 날 7시에 떠나는 것은 숙박비이지 일정이 아닙니다." },
 
   { id: "longleg-heading", type: "heading", level: 2, text: "긴 구간이 이 여행의 진짜 비용입니다" },
-  { id: "longleg-copy", type: "paragraph", text: "란저우에서 둔황까지는 어떤 수단으로도 깁니다. 그리고 그 수단들은 검색 결과가 암시하는 만큼 동등하지 않습니다. 고속 선택지는 란저우–우루무치 고속철도인데, 2014년 12월 26일 전 구간 개통해 란저우에서 시닝을 거쳐 우루무치까지 가지만 둔황에는 서지 않습니다. 둔황역까지 실제로 들어가는 열차는 일반 단선인 둔황철도로 진입합니다. 그리고 둔황에는 자체 공항이 있습니다. 중국민용항공국은 둔황 모가오국제공항을 간쑤의 국제(구안) 운수공항으로 분류하고 있어, 이 구간을 비행기로 가는 것은 탁상공론이 아니라 실제 선택지입니다." },
+  { id: "longleg-copy", type: "paragraph", text: "란저우에서 둔황까지는 어떤 수단으로도 깁니다. 그리고 그 수단들은 검색 결과가 암시하는 만큼 동등하지 않습니다. 고속 선택지는 란저우–우루무치 고속철도인데, 2014년 12월 26일 전 구간 개통해 란저우에서 시닝을 거쳐 우루무치까지 가지만 둔황에는 서지 않습니다. 둔황역까지 실제로 들어가는 열차는 일반 단선인 둔황철도로 진입합니다. 중국민용항공국 자료는 둔황에 공항이 있다는 사실을 확인할 뿐, 여행 날짜에 란저우–둔황 직항 여객편이 있다는 뜻은 아닙니다. 직항 운항 여부는 실시간 시간표 문제이므로 항공편을 선택지로 보기 전에 항공사에서 확인하세요." },
   { id: "longleg-list", type: "list", ordered: true, items: [
     "먼저 둔황 시내 밖에 도착해도 괜찮은지 정하세요. 괜찮지 않다면 선택지는 '둔황역행 열차'와 '항공편'만 남고 류위안난은 바로 탈락합니다.",
     "류위안난을 받아들인다면 둔황까지의 도로 이동을 나중 문제가 아니라 그 여정의 일부로 계산하고, 열차가 실제로 도착하는 시각에 무엇이 운행하는지 확인하세요.",
@@ -98,7 +98,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "둔황철도 전 구간 개통 운영", url: "https://www.yidaiyilu.gov.cn/p/113261.html", publisher: "중국 일대일로망", reviewedAt: "2026-08-22" },
     { label: "란저우 중촨공항 순환선 철도 투입 운영. T1·T2 사용 중지", url: "http://www.sasac.gov.cn/n2588025/n2588129/c33097533/content.html", publisher: "국무원 국유자산감독관리위원회", reviewedAt: "2026-08-22" },
     { label: "란저우 중촨국제공항 3기 완공 운영. T3 2025년 3월 20일 개시", url: "https://www.ndrc.gov.cn/xwdt/ztzl/dtfzgz/202504/t20250403_1397004.html", publisher: "국가발전개혁위원회", reviewedAt: "2026-08-22" },
-    { label: "둔황 모가오국제공항, 간쑤의 국제(구안) 운수공항으로 분류", url: "http://www.caac.gov.cn/GYMH/MHGK/GJKAYSJC/XBDQ/GS/202404/t20240417_223898.html", publisher: "중국민용항공국", reviewedAt: "2026-08-22" },
+    { label: "둔황 모가오국제공항, 간쑤의 국제(구안) 운수공항으로 분류", url: "http://www.caac.gov.cn/GYMH/MHGK/GJKAYSJC/XBDQ/GS/202404/t20240417_223898.html", publisher: "중국민용항공국", reviewedAt: "2026-08-23" },
     { label: "란저우–우루무치 고속철도 개통일, 경로, 연장", url: "http://www.qinghai.gov.cn/dmqh/system/2024/12/27/030061694.shtml", publisher: "칭하이성 인민정부", reviewedAt: "2026-08-22" },
     { label: "대표 이미지: 둔황역, 촬영 Hanno Böck, CC0 퍼블릭 도메인 기증, 자르기 후 WebP 변환", url: "https://commons.wikimedia.org/wiki/File:Dunhuang-station.jpg", publisher: "위키미디어 공용", reviewedAt: "2026-08-22" },
     { label: "대표 이미지 라이선스: CC0 1.0 Universal", url: "https://creativecommons.org/publicdomain/zero/1.0/", publisher: "Creative Commons", reviewedAt: "2026-08-22" },

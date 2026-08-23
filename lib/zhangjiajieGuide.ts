@@ -11,8 +11,8 @@ export const ZHANGJIAJIE_GUIDE_SOURCES = [
     url: "https://www.wlynews.cn/content/646942/52/15207818.html",
   },
   {
-    name: "Zhangjiajie UNESCO Global Geopark: official two-day route",
-    url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620135033852.html",
+    name: "Hunan Department of Culture and Tourism: official two- and three-day Wulingyuan routes",
+    url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022touristroute/202209/t20220907_28658210.html",
   },
   {
     name: "Hunan Department of Culture and Tourism: Zhangjiajie transport baseline",

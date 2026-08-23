@@ -98,6 +98,19 @@ test("the shared graph has one TravelAgency identity and one website name", asyn
   assert.match(social, /getHomegroundFacebookPageUrl\(\)/u);
 });
 
+test("the editorial author profile uses the controlled Chinese hreflang", async () => {
+  const identity = await source("lib/editorialIdentity.ts");
+
+  assert.match(
+    identity,
+    /getEditorialAuthorLanguagePaths[\s\S]*return \{[\s\S]*en: profilePaths\.en,[\s\S]*"zh-Hans": profilePaths\.zh,[\s\S]*ko: profilePaths\.ko,[\s\S]*\};/u,
+  );
+  assert.doesNotMatch(
+    identity,
+    /getEditorialAuthorLanguagePaths[\s\S]*return \{[\s\S]*\n\s*zh: profilePaths\.zh,/u,
+  );
+});
+
 test("active brand surfaces no longer publish superseded identities", async () => {
   const paths = [
     "app/(default)/layout.tsx",

@@ -18,9 +18,9 @@ const body = {
     {
       id: "scope-boundary",
       type: "callout",
-      title: "What this guide owns",
+      title: "What this guide covers",
       tone: "neutral",
-      body: "This page chooses among KWL, Guilin, Guilin North and Guilin West for an arrival or departure tied to an exact accommodation address. It explains name errors, luggage, late arrival and recovery. It does not rank every train, publish a timetable or fare, recommend drivers, compare individual hotels, or decide whether rail, road or a Li River cruise is best between Guilin and Yangshuo. That city-pair choice remains in the linked Guilin–Yangshuo guide. Yangshuo Station appears here only to prevent a naming mistake and send that decision to its existing owner.",
+      body: "This page chooses among KWL, Guilin, Guilin North and Guilin West for an arrival or departure tied to an exact accommodation address. It explains name errors, luggage, late arrival and recovery. It does not rank every train, publish a timetable or fare, recommend drivers, compare individual hotels, or decide whether rail, road or a Li River cruise is best between Guilin and Yangshuo. That city-pair choice remains in the linked Guilin–Yangshuo guide. Yangshuo Station appears here only to prevent a naming mistake and direct you to that detailed guide.",
     },
     {
       id: "record-check",
@@ -362,7 +362,7 @@ const body = {
         {
           label: "Compare Guilin and Yangshuo by rail, road or river",
           href: "/guides/guilin-yangshuo-transport-route/",
-          description: "Use the existing city-pair owner after the gateway and real Yangshuo address are known.",
+          description: "Use the detailed city-pair guide after the gateway and real Yangshuo address are known.",
         },
         {
           label: "Use China's high-speed trains for the first time",

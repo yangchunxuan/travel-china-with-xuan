@@ -82,7 +82,7 @@ This section does not pre-claim a build result. The commands, output counts and 
 - [UNESCO Wulingyuan](https://whc.unesco.org/en/list/640/) — protected landscape identity.
 - [Zhangjiajie municipal government](https://www.zjj.gov.cn/) — official city context.
 - [Railway 12306](https://www.12306.cn/en/index.html) — current trains; dynamic.
-- [Civil Aviation Administration airport directory material](https://www.caac.gov.cn/GYMH/MHGK/JCJSDT/201511/t20151130_11065.html) — DYG gateway identity.
+- [Hunan Airport Group: Zhangjiajie Hehua International Airport](https://www.hunanairport.cn/content/zjjAirPort.html) — DYG gateway identity; replaced the retired CAAC URL on 2026-08-23.
 - Limitation: the live Hub still lacks an independent source/asset ledger. The sources above are embedded in the merged body and should be expanded as live-page maintenance, not treated as a reason to withdraw the route.
 
 ### Chongqing

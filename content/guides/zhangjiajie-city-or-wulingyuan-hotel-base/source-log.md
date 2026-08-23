@@ -26,24 +26,20 @@ Google result pages and current forum discussions were checked to learn the task
 
 ## Official and first-party ledger
 
-1. Zhangjiajie UNESCO Global Geopark, two-day route: <https://zhangjiajieuggp.org.cn/html/2026/2026032620135033852.html>
-   - Supports the East Gate/South Gate distinction and Wulingyuan as the official example base for consecutive park days.
-   - Limit: a sample route, not a universal lodging instruction or live opening notice.
-2. Zhangjiajie UNESCO Global Geopark, three-day route: <https://zhangjiajieuggp.org.cn/html/2026/2026032620161311924.html>
-   - Supports the forest-park cluster and proximity logic for Baofeng Lake and Huanglong Cave.
-   - Limit: does not freeze admission, show or transport operations.
-3. Hunan Provincial Department of Culture and Tourism, Tianmen Mountain transport reference: <https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716284.html>
+1. Hunan Provincial Department of Culture and Tourism, Tianmen Mountain transport reference: <https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716284.html>
    - Establishes the city cableway lower-station node and city-side orientation.
    - Limit: published 2022; route and shuttle details require a travel-date check.
-4. Hunan Provincial Department of Transport, city–scenic passenger routes: <https://jtt.hunan.gov.cn/xxgk/gzdt/szdt1/202506/t20250610_33706126.html>
+2. Hunan Provincial Department of Transport, city–scenic passenger routes: <https://jtt.hunan.gov.cn/xxgk/gzdt/szdt1/202506/t20250610_33706126.html>
    - Establishes an official city-to-scenic transport network covering the forest park, Wulingyuan and major arrival hubs.
    - Limit: existence of a route is not a schedule promise.
-5. Hunan Provincial Department of Transport, East Gate–South Gate ring bus: <https://jtt.hunan.gov.cn/jtt/xxgk/gzdt/szdt1/202506/t20250610_33706127.html>
+3. Hunan Provincial Department of Transport, East Gate–South Gate ring bus: <https://jtt.hunan.gov.cn/jtt/xxgk/gzdt/szdt1/202506/t20250610_33706127.html>
    - Supports the distinction and connection between the Wulingyuan East Gate and Forest Park South Gate.
    - Limit: current frequency, fare and stop must be checked.
-6. China Railway 12306: <https://www.12306.cn/>
+4. China Railway 12306: <https://www.12306.cn/>
    - First-party dated ticket and exact station check.
    - Limit: no sample train is turned into a permanent timetable.
+
+The two Zhangjiajie UNESCO Global Geopark sample-route URLs previously shown here and on the public page were removed on 2026-08-23 because normal Chrome connections failed with `ERR_SSL_VERSION_OR_CIPHER_MISMATCH`. No unverified mirror was substituted. The visible copy now states that the base recommendations are Homeground planning judgments; the remaining official sources support only the named geography and transport relationships.
 
 ## Dynamic review before central publication
 
@@ -51,7 +47,7 @@ Recheck the official scenic notice, ticket entrance, roads/cableways, any requir
 
 ## Independent information-object audit
 
-The three locale bodies carry the same 22 block IDs/types. The editorial audit identifies 42 useful objects: six input steps, five base-matrix decisions, the multiple-gate warning, four edge-night decisions, three Scenario A comparisons, Scenario B, seven move-cost items, a move threshold, four disruption recoveries, eight booking checks and the dynamic-fact boundary. This exceeds the 22-object baseline without counting headings, links or sources.
+The three locale bodies carry the same 23 block IDs/types. The editorial audit identifies 42 useful objects: six input steps, five base-matrix decisions, the multiple-gate warning, four edge-night decisions, three Scenario A comparisons, Scenario B, seven move-cost items, a move threshold, four disruption recoveries, eight booking checks and the dynamic-fact boundary. This exceeds the 22-object baseline without counting headings, links or sources.
 
 ## Locale and link audit
 
@@ -61,8 +57,8 @@ English, Chinese and Korean are complete, natural editions with exact block-ID/t
 
 Official facts identify route nodes and transport systems. “Move only if it buys a meaningful morning, removes at least two likely cross-area journeys or protects a departure” is explicitly Homeground planning judgment. No specific property, fare, room availability or travel-time promise is made.
 
-## Central integration re-review — 2026-08-13
+## Live-source remediation re-review — 2026-08-23
 
-- Reopened the official geopark route pages, Hunan transport references and 12306 boundary. The sources still support the gate/base distinction and existence of transport links, but not a permanent timetable, fare or transfer duration.
+- Removed the two TLS-incompatible geopark route pages from all three visible source lists and structured-data citations. Reopened the Hunan transport references and retained their narrow boundary: they support named gateways and documented transport links, not an official lodging recommendation, permanent timetable, fare or transfer duration.
 - Reconfirmed the canonical boundary: this page selects a lodging base from an already chosen attraction order. It does not replace the itinerary, ticketing, live transport or older-traveller guides.
-- EN/ZH/KO structure remained aligned. This pass changed only natural-language wording; `sourceReviewedDate` remains 2026-08-13.
+- EN/ZH/KO structure and source counts remain aligned. The visible dynamic-review paragraph and surviving source review dates now record 2026-08-23.

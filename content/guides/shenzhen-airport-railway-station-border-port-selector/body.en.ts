@@ -18,9 +18,9 @@ const body = {
     {
       id: "scope-boundary",
       type: "callout",
-      title: "What this guide owns",
+      title: "What this guide covers",
       tone: "neutral",
-      body: "This page chooses a Shenzhen arrival or departure hub and helps recover from the wrong one. It does not reproduce the national high-speed-train process, publish fares or a timetable, decide Hong Kong entry eligibility, rank every border crossing, or choose between Futian, Luohu and Nanshan as hotel bases. Use the linked owners for those jobs. Other Shenzhen stations remain valid when they are printed on a live ticket; this is a decision guide for the principal international-visitor anchors, not an exhaustive station directory.",
+      body: "This page chooses a Shenzhen arrival or departure hub and helps recover from the wrong one. It does not reproduce the national high-speed-train process, publish fares or a timetable, decide Hong Kong entry eligibility, rank every border crossing, or choose between Futian, Luohu and Nanshan as hotel bases. Use the linked detailed guides for those jobs. Other Shenzhen stations remain valid when they are printed on a live ticket; this is a decision guide for the principal international-visitor anchors, not an exhaustive station directory.",
     },
     {
       id: "five-name-check",
@@ -107,7 +107,7 @@ const body = {
     {
       id: "rail-copy",
       type: "paragraph",
-      text: "Before booking, search the exact route and date in the official railway channel. Put every workable train into a door-to-door comparison: hotel to the Shenzhen platform, scheduled rail time, and destination platform to the next door. North often supplies the widest principal-hub shortlist; Futian can remove a cross-city transfer for a central stay; Shenzhen Station can fit Luohu and some live services. None is a permanent direction rule. If the live ticket instead says 深圳东, 深圳坪山, 光明城, 平湖 or another exact station, follow it and verify that separate access rather than renaming it ‘Shenzhen Station’. The national first-time rail guide owns passport, ticket purchase, station entry and boarding.",
+      text: "Before booking, search the exact route and date in the official railway channel. Put every workable train into a door-to-door comparison: hotel to the Shenzhen platform, scheduled rail time, and destination platform to the next door. North often supplies the widest principal-hub shortlist; Futian can remove a cross-city transfer for a central stay; Shenzhen Station can fit Luohu and some live services. None is a permanent direction rule. If the live ticket instead says 深圳东, 深圳坪山, 光明城, 平湖 or another exact station, follow it and verify that separate access rather than renaming it ‘Shenzhen Station’. Use the national first-time rail guide for passport, ticket purchase, station entry and boarding.",
     },
     {
       id: "border-heading",
@@ -204,7 +204,7 @@ const body = {
         "Calculate arrival at the correct passenger entrance with a normal check-in, station-entry or border margin. Do not count arrival at a road curb as arrival at the platform or gate.",
         "If the original booking remains clearly usable, take a verified metro or legal road route. Keep passports, luggage and the group together and share one meeting point.",
         "If the margin is unsafe, solve the booking before crossing the city: use the official airline/railway channel or staff for current change, refund or rebooking choices. A different Shenzhen station cannot simply accept the old ticket.",
-        "If the error involves a checkpoint, move to the Shenzhen–Hong Kong route owner and current port/MTR sources. Crossing hours and the Hong Kong last mile—not name similarity—decide the recovery.",
+        "If the error involves a checkpoint, open the Shenzhen–Hong Kong route guide and current port/MTR sources. Crossing hours and the Hong Kong last mile—not name similarity—decide the recovery.",
       ],
     },
     {

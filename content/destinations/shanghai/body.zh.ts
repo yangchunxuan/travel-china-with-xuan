@@ -253,7 +253,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "把住宿决定交给对应 owner",
+      title: "用对应详细指南选择住宿",
       items: [
         {
           label: "第一次去上海住哪里？",
@@ -358,7 +358,7 @@ const body = {
     {
       id: "airport-links",
       type: "internal-links",
-      title: "把抵达决定交给对应 owner",
+      title: "用对应详细指南选择抵达门户",
       items: [
         {
           label: "上海该飞浦东还是虹桥？",
@@ -428,7 +428,7 @@ const body = {
     {
       id: "regional-links",
       type: "internal-links",
-      title: "长三角结构交给对应 owner",
+      title: "用对应详细指南安排长三角顺序",
       items: [
         {
           label: "上海到杭州：车站与路线",

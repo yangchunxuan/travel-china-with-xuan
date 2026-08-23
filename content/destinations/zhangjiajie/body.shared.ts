@@ -37,7 +37,7 @@ const copies = {
       ["Road transfer", "The last mile between gateway, city and Wulingyuan", "Accepting an unlicensed pickup or a vague hotel name without a Chinese address"],
     ],
     systemsHeading: "Four names that must not collapse into one attraction",
-    systemsColumns: ["System", "What it owns", "Do not confuse it with"],
+    systemsColumns: ["System", "What it covers", "Do not confuse it with"],
     systemsRows: [
       ["Zhangjiajie National Forest Park / Wulingyuan core", "Multiple gates, lower valleys, upper plateaus, park shuttles, lifts and cableways", "Tianmen Mountain or the Grand Canyon"],
       ["Tianmen Mountain", "A city-side ticket and transport system normally consuming its own substantial block", "Tianzi Mountain inside the Wulingyuan landscape"],
@@ -45,8 +45,8 @@ const copies = {
       ["Fenghuang", "A separate historic-town destination and onward-route decision", "An evening neighbourhood inside Zhangjiajie"],
     ],
     parkTitle: "The National Forest Park still needs a gate-and-transport decision",
-    parkBody: "The Hub explains where the park sits in the trip. The dedicated ticket, entrance and in-park transport owner decides which gate to use first, what the booked product includes, how shuttles connect to lifts or cableways, and how to recover when the passport, time slot or entrance plan fails. Do not copy that volatile workflow into this broad page.",
-    readingTitle: "Continue with the canonical owner for the next decision",
+    parkBody: "This city guide explains where the park sits in the trip. The dedicated ticket, entrance and in-park transport guide helps you choose the first gate, understand what the booked product includes, connect shuttles with lifts or cableways, and recover when the passport, time slot or entrance plan fails. Use that detailed guide for this volatile workflow.",
+    readingTitle: "Open the detailed guide for the next decision",
     links: [
       ["See what fits in 2, 3 or 4 days", "zhangjiajie-itinerary", "The exact day allocation and what to omit."],
       ["Choose Zhangjiajie city or Wulingyuan", "zhangjiajie-city-or-wulingyuan-hotel-base", "Compare the two hotel bases and when a split is worth the luggage move."],
@@ -55,7 +55,7 @@ const copies = {
       ["Plan Zhangjiajie with older travellers", "zhangjiajie-older-travellers", "Rides, walking load, queues and recovery choices."],
       ["Compare Zhangjiajie night shows", "best-zhangjiajie-night-show", "Choose by hotel base, finish time and what the day can still absorb."],
     ],
-    stayReadingTitle: "Finish the lodging decision with the nationwide owners",
+    stayReadingTitle: "Finish the lodging decision with the nationwide stay guides",
     stayLinks: [
       ["Test what ‘near transport’ really means", "china-hotel-near-metro", "Use the same exit-to-lobby and final-walk audit when a listing claims nearby transit; a map pin does not prove a practical Zhangjiajie transfer."],
       ["Verify an actually usable accessible room", "china-accessible-hotel-room-verification", "Check the complete street or vehicle-drop-off to room and bathroom chain at the exact property."],
@@ -96,7 +96,7 @@ const copies = {
       ["Review an existing China itinerary", "../china-itinerary-review", "Check whether the chosen nights really contain the promised complete days."],
     ],
     sourcesTitle: "Official and primary sources",
-    sourceLabels: ["Wulingyuan Scenic and Historic Interest Area", "Zhangjiajie municipal government", "China Railway 12306 date-specific search", "Zhangjiajie Hehua Airport identity", "Owner-supplied real Zhangjiajie hero photograph and rights record"],
+    sourceLabels: ["Wulingyuan Scenic and Historic Interest Area", "Zhangjiajie municipal government", "China Railway 12306 date-specific search", "Zhangjiajie Hehua Airport identity", "Homeground's real Zhangjiajie hero photograph and rights record"],
   },
   zh: {
     lead: "张家界不是一座只有一个门的公园。这个目的地名同时包含城市门户、武陵源与国家森林公园、市区旁的天门山，以及另一个方向的大峡谷。多数第一次旅行以三个完整游览日最稳；真正的规划问题是哪些系统值得占用这些天，以及哪个住宿基地能保护每天第一次出发。",
@@ -141,8 +141,8 @@ const copies = {
       ["凤凰", "独立古城目的地与下一段路线决策", "张家界里面的夜间街区"],
     ],
     parkTitle: "国家森林公园仍需单独决定门票、入口与园内交通",
-    parkBody: "本 Hub 只解释森林公园在整趟旅程里的位置。专门的门票—入口—园内交通 owner 负责首入门、所购产品包含什么、环保车怎样接电梯或索道，以及护照、时段或入口计划失败后的补救。不要把这套高动态流程复制到泛目的地页。",
-    readingTitle: "下一步交给对应 canonical owner",
+    parkBody: "本城市指南只解释森林公园在整趟旅程里的位置。具体首入门、所购产品包含什么、环保车怎样接电梯或索道，以及护照、时段或入口计划失败后的补救，请使用专门的门票、入口与园内交通指南。",
+    readingTitle: "下一步打开对应的详细指南",
     links: [
       ["查看2、3、4天到底能安排什么", "zhangjiajie-itinerary", "逐日分配与主动舍弃。"],
       ["选择张家界市区还是武陵源", "zhangjiajie-city-or-wulingyuan-hotel-base", "比较两个住宿基地，以及什么时候值得搬行李。"],
@@ -151,7 +151,7 @@ const copies = {
       ["带年长旅客规划张家界", "zhangjiajie-older-travellers", "乘坐工具、步行负荷、排队与补救选择。"],
       ["比较张家界夜间演出", "best-zhangjiajie-night-show", "按住宿基地、结束时间和白天剩余体力选择。"],
     ],
-    stayReadingTitle: "用全国住宿 owner 完成最后核验",
+    stayReadingTitle: "用全国住宿指南完成最后核验",
     stayLinks: [
       ["判断所谓‘靠近交通’是否真方便", "china-hotel-near-metro", "遇到靠近车站或交通的标签，也要核对出口、道路、接驳点和大堂；地图坐标不能证明张家界最后一程好走。"],
       ["核验真正可用的无障碍酒店房", "china-accessible-hotel-room-verification", "按具体物业核对从街道或车辆下客点到客房及浴室的完整通路。"],
@@ -230,8 +230,8 @@ const copies = {
       ["펑황", "별도 고성 목적지와 다음 동선 결정", "장자제 안의 저녁 동네"],
     ],
     parkTitle: "국가삼림공원은 티켓·입구·공원 내 교통 결정을 따로 해야 합니다",
-    parkBody: "허브는 공원이 전체 여행에서 어디에 놓이는지만 설명합니다. 전용 티켓–입구–공원 교통 owner가 첫 게이트, 구매 상품 포함, 셔틀과 엘리베이터·케이블카 관계, 여권·시간대·입구 계획 실패 대처를 맡습니다. 이 변동성 높은 절차를 넓은 목적지 페이지에 복사하지 않습니다.",
-    readingTitle: "다음 결정은 해당 canonical owner로 이어가세요",
+    parkBody: "이 도시 가이드는 공원이 전체 여행에서 어디에 놓이는지를 설명합니다. 첫 게이트, 구매 상품의 포함 항목, 셔틀과 엘리베이터·케이블카 연결, 여권·시간대·입구 계획 실패 대처는 전용 티켓·입구·공원 교통 가이드에서 확인하세요.",
+    readingTitle: "다음 결정에 맞는 상세 가이드를 여세요",
     links: [
       ["2·3·4일에 가능한 것 보기", "zhangjiajie-itinerary", "정확한 날짜 배분과 뺄 것."],
       ["장자제 시내 또는 우링위안 고르기", "zhangjiajie-city-or-wulingyuan-hotel-base", "두 숙소 거점과 짐 이동 가치 비교."],
@@ -240,7 +240,7 @@ const copies = {
       ["고령 여행자와 장자제 계획", "zhangjiajie-older-travellers", "탑승·보행·대기와 회복 선택."],
       ["장자제 야간 공연 비교", "best-zhangjiajie-night-show", "숙소 거점·종료 시각·낮 체력으로 선택."],
     ],
-    stayReadingTitle: "전국 숙박 owner로 마지막 확인을 마치세요",
+    stayReadingTitle: "전국 숙박 가이드로 마지막 확인을 마치세요",
     stayLinks: [
       ["‘교통과 가까움’이 실제로 편리한지 확인", "china-hotel-near-metro", "역이나 교통 근처라는 표시도 출구·도로·승하차 지점·로비까지 확인하세요. 지도 핀은 장자제 마지막 이동을 증명하지 않습니다."],
       ["실제로 쓸 수 있는 접근성 객실 확인", "china-accessible-hotel-room-verification", "해당 숙소의 도로나 차량 하차 지점부터 객실과 욕실까지 전체 경로를 확인하세요."],
@@ -274,16 +274,16 @@ const copies = {
       ["기존 중국 일정 검토", "../china-itinerary-review", "예약한 박수가 약속한 온전한 날을 실제로 담는지 확인합니다."],
     ],
     sourcesTitle: "공식·1차 출처",
-    sourceLabels: ["우링위안 경관·역사 지구", "장자제시 인민정부", "중국철도 12306 날짜별 검색", "장자제 허화공항 식별", "소유자가 제공한 실제 장자제 대표 사진과 권리 기록"],
+    sourceLabels: ["우링위안 경관·역사 지구", "장자제시 인민정부", "중국철도 12306 날짜별 검색", "장자제 허화공항 식별", "Homeground의 실제 장자제 대표 사진과 권리 기록"],
   },
 } as const;
 
 const sourceUrls = [
-  ["https://whc.unesco.org/en/list/640/", "UNESCO World Heritage Centre"],
-  ["https://www.zjj.gov.cn/", "People's Government of Zhangjiajie Municipality"],
-  ["https://www.12306.cn/en/index.html", "China Railway 12306"],
-  ["https://www.caac.gov.cn/GYMH/MHGK/JCJSDT/201511/t20151130_11065.html", "Civil Aviation Administration of China"],
-  ["https://homegroundchina.com/guides/zhangjiajie-itinerary/", "Homeground field editorial record"],
+  ["https://whc.unesco.org/en/list/640/", "UNESCO World Heritage Centre", "2026-08-20"],
+  ["https://www.zjj.gov.cn/", "People's Government of Zhangjiajie Municipality", "2026-08-20"],
+  ["https://www.12306.cn/en/index.html", "China Railway 12306", "2026-08-20"],
+  ["https://www.hunanairport.cn/content/zjjAirPort.html", "Hunan Airport Group", "2026-08-23"],
+  ["https://homegroundchina.com/guides/zhangjiajie-itinerary/", "Homeground field editorial record", "2026-08-20"],
 ] as const;
 
 function guidePath(locale: HomegroundLocale, slug: string) {
@@ -328,7 +328,7 @@ export function buildZhangjiajieBody(locale: HomegroundLocale): StructuredPageBo
           : guidePath(locale, target),
         description,
       })) },
-      { id: "sources", type: "sources", title: c.sourcesTitle, items: sourceUrls.map(([url, publisher], index) => ({ label: c.sourceLabels[index], url, publisher, reviewedAt: "2026-08-20" })) },
+      { id: "sources", type: "sources", title: c.sourcesTitle, items: sourceUrls.map(([url, publisher, reviewedAt], index) => ({ label: c.sourceLabels[index], url, publisher, reviewedAt })) },
     ],
   };
 }

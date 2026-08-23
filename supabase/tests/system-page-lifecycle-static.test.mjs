@@ -32,7 +32,7 @@ const expectedModifiedDates = {
   "refund-delivery": "2026-07-24",
   studio: "2026-08-22",
   terms: "2026-07-24",
-  "zhangjiajie-4-day-private-tour": "2026-08-22",
+  "zhangjiajie-4-day-private-tour": "2026-08-23",
 };
 
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
@@ -73,6 +73,7 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
   }
 
   assert.equal(records.privacy.lastReviewed, "2026-07-31");
+  assert.equal(records["zhangjiajie-4-day-private-tour"].lastReviewed, "2026-08-16");
   for (const id of ["business-information", "terms", "refund-delivery"]) {
     assert.equal(records[id].dateModified, "2026-07-24");
     assert.equal(records[id].lastReviewed, "2026-07-24");

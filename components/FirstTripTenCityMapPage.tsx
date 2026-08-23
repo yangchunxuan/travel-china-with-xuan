@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Database, MapPinned, TriangleAlert } from "lucide-react";
-import assetData from "../content/guides/first-trip-china-airport-station-stay-map/asset-data.en.json";
+import assetDataEn from "../content/guides/first-trip-china-airport-station-stay-map/asset-data.en.json";
+import assetCopyZh from "../content/guides/first-trip-china-airport-station-stay-map/asset-copy.zh.json";
+import assetCopyKo from "../content/guides/first-trip-china-airport-station-stay-map/asset-copy.ko.json";
 import {
   getGuideEntry,
   getGuideLanguagePaths,
@@ -15,7 +17,9 @@ import {
   editorialPersonSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
+import { getFirstTripTenCityMapCopy } from "../lib/firstTripTenCityMapI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { EditorialByline } from "./EditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -35,106 +39,120 @@ const ASSET_COPYRIGHT_NOTICE = `© 2026 ${homegroundBusiness.registeredName}, op
 export const FIRST_TRIP_TEN_CITY_GUIDE_ID =
   "first-trip-china-airport-station-stay-map" as GuideId;
 
-const downloads = [
+const downloadSpecs = [
   {
-    label: "Complete ten-city asset pack",
-    description: "National map, all ten city cards, data, licence and checksums",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip",
     format: "ZIP",
     contentKind: "complete-ten-city-pack",
   },
   {
-    label: "National schematic",
-    description: "Editable vector for editorial layouts",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.svg",
     format: "SVG",
     contentKind: "national-map-svg",
   },
   {
-    label: "National schematic",
-    description: "1600 × 1000 for ordinary web use",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.png",
     format: "PNG",
     contentKind: "national-map-png",
   },
   {
-    label: "National schematic",
-    description: "3200 × 2000 high-density file",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1@2x.png",
     format: "2× PNG",
     contentKind: "national-map-png-2x",
   },
   {
-    label: "Ten-city source table",
-    description: "Copyable gateway, stay and warning rows",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.csv",
     format: "CSV",
     contentKind: "ten-city-data-csv",
   },
   {
-    label: "Ten-city source data",
-    description: "Structured gateway, stay and warning records",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1.json",
     format: "JSON",
     contentKind: "ten-city-data-json",
   },
   {
-    label: "Licence",
-    description: "CC BY 4.0 terms and scope exclusions",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-LICENSE.txt",
     format: "TXT",
     contentKind: "asset-licence",
   },
   {
-    label: "Pack readme",
-    description: "Contents, intended use and current-use warning",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-README.txt",
     format: "TXT",
     contentKind: "asset-readme",
   },
   {
-    label: "Attribution and embed notes",
-    description: "Copy-ready credit, HTML and accessible alt text",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-ATTRIBUTION-AND-EMBED.txt",
     format: "TXT",
     contentKind: "asset-attribution",
   },
   {
-    label: "Source and method index",
-    description: "Official source links and review date",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-SOURCES.txt",
     format: "TXT",
     contentKind: "asset-sources",
   },
   {
-    label: "SHA-256 checksums",
-    description: "Verify every file contained in the ZIP",
     href: "/downloads/homeground-china-10-city-arrival-stay-departure-v1-SHA256SUMS.txt",
     format: "TXT",
     contentKind: "asset-checksums",
   },
-] as const satisfies readonly LinkableAssetDownload[];
-
-const spotlightCards = [
-  {
-    city: "Beijing",
-    src: "/images/guides/first-trip-china-airport-station-stay-map/beijing-card-1200.webp",
-    alt: "Beijing arrive, stay and depart card distinguishing PEK, PKX and the main railway station choices.",
-    note: "Two airports and several railway gateways make the city name alone unsafe booking information.",
-  },
-  {
-    city: "Shanghai",
-    src: "/images/guides/first-trip-china-airport-station-stay-map/shanghai-card-1200.webp",
-    alt: "Shanghai arrive, stay and depart card distinguishing PVG, SHA and the main railway stations.",
-    note: "The Hongqiao airport–rail complex is convenient only when it matches the confirmed ticket.",
-  },
-  {
-    city: "Zhangjiajie",
-    src: "/images/guides/first-trip-china-airport-station-stay-map/zhangjiajie-card-1200.webp",
-    alt: "Zhangjiajie arrive, stay and depart card distinguishing the city, Wulingyuan and separate scenic anchors.",
-    note: "The useful sleep location follows tomorrow's confirmed sight, not the destination label.",
-  },
 ] as const;
+
+const spotlightIds = ["beijing", "shanghai", "zhangjiajie"] as const;
+
+function localizePath(path: string, locale: HomegroundLocale) {
+  return locale === "en" ? path : `/${locale}${path}`;
+}
+
+function heroImagePath(locale: HomegroundLocale) {
+  const suffix = locale === "en" ? "" : `.${locale}`;
+  return `/images/guides/first-trip-china-airport-station-stay-map/hero-1600${suffix}.webp`;
+}
+
+function spotlightImagePath(
+  city: (typeof spotlightIds)[number],
+  locale: HomegroundLocale,
+) {
+  const suffix = locale === "en" ? "" : `.${locale}`;
+  return `/images/guides/first-trip-china-airport-station-stay-map/${city}-card-1200${suffix}.webp`;
+}
+
+function assetDataFor(locale: HomegroundLocale) {
+  if (locale === "en") {
+    return {
+      ...assetDataEn,
+      cities: assetDataEn.cities.map((city) => ({
+        ...city,
+        secondaryName: city.nameZh,
+        graphicSummary: city.gatewaySummary,
+      })),
+    };
+  }
+
+  const localized = locale === "zh" ? assetCopyZh : assetCopyKo;
+  const cityById = new Map(localized.cities.map((city) => [city.id, city]));
+  const sourceById = new Map(localized.sources.map((source) => [source.id, source]));
+
+  return {
+    ...assetDataEn,
+    cities: assetDataEn.cities.map((city) => ({
+      ...city,
+      ...cityById.get(city.id),
+    })),
+    sources: assetDataEn.sources.map((source) => ({
+      ...source,
+      ...sourceById.get(source.id),
+    })),
+  };
+}
+
+function downloadsFor(locale: HomegroundLocale) {
+  const labels = getFirstTripTenCityMapCopy(locale).downloads.items;
+  return downloadSpecs.map((download, index) => ({
+    ...download,
+    label: labels[index][0],
+    description: labels[index][1],
+  })) satisfies readonly LinkableAssetDownload[];
+}
 
 function assetMimeType(href: string) {
   if (href.endsWith(".svg")) return "image/svg+xml";
@@ -146,42 +164,68 @@ function assetMimeType(href: string) {
   return "application/octet-stream";
 }
 
-function structuredData() {
-  const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, "en");
+function formattedReviewDate(locale: HomegroundLocale, reviewedAt: string) {
+  return new Intl.DateTimeFormat(
+    locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB",
+    { dateStyle: "medium", timeZone: "UTC" },
+  ).format(new Date(`${reviewedAt}T00:00:00Z`));
+}
+
+function citationFor(
+  locale: HomegroundLocale,
+  version: string,
+  canonicalUrl: string,
+) {
+  if (locale === "zh") {
+    return `Homeground China（2026），《第一次来中国：10城机场、火车站与住宿区域地图》，版本 ${version}，事实复核于2026年8月23日。${canonicalUrl}`;
+  }
+  if (locale === "ko") {
+    return `Homeground China(2026), 「첫 중국 여행: 10개 도시 공항·기차역·숙박 지도」, 버전 ${version}, 2026년 8월 23일 검토. ${canonicalUrl}`;
+  }
+  return `Homeground China (2026), “First Trip to China: 10-City Airport, Station and Stay Map,” version ${version}, reviewed 23 August 2026. ${canonicalUrl}`;
+}
+
+function structuredData(locale: HomegroundLocale) {
+  const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, locale);
+  const data = assetDataFor(locale);
+  const copy = getFirstTripTenCityMapCopy(locale);
+  const downloads = downloadsFor(locale);
+  const guideHub = localizePath("/guides/", locale);
+  const transportHub = localizePath("/transport/", locale);
+  const localHeroUrl = `${SITE_URL}${heroImagePath(locale)}`;
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       editorialWebsiteSchema(),
       editorialOrganizationSchema(),
-      editorialPersonSchema("en"),
+      editorialPersonSchema(locale),
       {
         "@type": "Article",
         "@id": `${guide.canonicalUrl}#article`,
         url: guide.canonicalUrl,
         headline: guide.headline,
         description: guide.description,
-        image: {
-          "@id": `${guide.canonicalUrl}#primary-image`,
-        },
+        image: { "@id": `${guide.canonicalUrl}#primary-image` },
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
-        inLanguage: "en",
+        inLanguage: copy.htmlLang,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
         reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         mainEntityOfPage: guide.canonicalUrl,
-        citation: assetData.sources.map((source) => source.url),
+        citation: data.sources.map((source) => source.url),
         about: { "@id": `${guide.canonicalUrl}#dataset` },
       },
       {
         "@type": "ImageObject",
         "@id": `${guide.canonicalUrl}#primary-image`,
-        url: guide.heroImageUrl,
-        contentUrl: guide.heroImageUrl,
+        url: localHeroUrl,
+        contentUrl: localHeroUrl,
         width: guide.imageWidth,
         height: guide.imageHeight,
-        caption: "Ten-city arrive, stay and depart schematic by Homeground China",
+        caption: copy.schema.imageCaption,
         creator: { "@id": EDITORIAL_ORGANIZATION_ID },
         license: ASSET_LICENCE_URL,
         acquireLicensePage: guide.canonicalUrl,
@@ -191,27 +235,23 @@ function structuredData() {
       {
         "@type": "Dataset",
         "@id": `${guide.canonicalUrl}#dataset`,
-        name: "Homeground China 10-city arrival, stay and departure matrix",
-        description:
-          "A reviewed decision dataset covering airport, railway-station and port nodes, first-trip stay areas, wrong-node warnings and last-night rules for ten China gateway cities.",
+        name: copy.schema.datasetName,
+        description: copy.schema.datasetDescription,
         url: guide.canonicalUrl,
-        version: assetData.version,
-        dateModified: assetData.reviewedAt,
-        inLanguage: "en",
+        version: data.version,
+        dateModified: data.reviewedAt,
+        inLanguage: copy.htmlLang,
         isAccessibleForFree: true,
         creator: { "@id": EDITORIAL_ORGANIZATION_ID },
         license: ASSET_LICENCE_URL,
         acquireLicensePage: guide.canonicalUrl,
         creditText: ASSET_CREDIT_TEXT,
         copyrightNotice: ASSET_COPYRIGHT_NOTICE,
-        spatialCoverage: { "@type": "Country", name: "China" },
-        variableMeasured: [
-          "gateway node",
-          "first-trip stay area",
-          "wrong-node warning",
-          "one-move rule",
-          "last-night rule",
-        ],
+        spatialCoverage: {
+          "@type": "Country",
+          name: locale === "zh" ? "中国" : locale === "ko" ? "중국" : "China",
+        },
+        variableMeasured: copy.schema.variables,
         distribution: downloads.map((download) => ({
           "@type": "DataDownload",
           name: download.label,
@@ -226,9 +266,9 @@ function structuredData() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Travel guides", item: `${SITE_URL}/guides/` },
-          { "@type": "ListItem", position: 3, name: "Transport", item: `${SITE_URL}/transport/` },
+          { "@type": "ListItem", position: 1, name: copy.breadcrumbs.home, item: `${SITE_URL}${localizePath("/", locale)}` },
+          { "@type": "ListItem", position: 2, name: copy.breadcrumbs.guides, item: `${SITE_URL}${guideHub}` },
+          { "@type": "ListItem", position: 3, name: copy.breadcrumbs.transport, item: `${SITE_URL}${transportHub}` },
           { "@type": "ListItem", position: 4, name: guide.navTitle, item: guide.canonicalUrl },
         ],
       },
@@ -236,25 +276,32 @@ function structuredData() {
   };
 }
 
-export function FirstTripTenCityMapPage() {
-  const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, "en");
-  const citation = `Homeground China (2026), “First Trip to China: 10-City Airport, Station and Stay Map,” version ${assetData.version}, reviewed 23 August 2026. ${guide.canonicalUrl}`;
-  const ctaHref =
-    "/china-itinerary-review/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=route_review&utm_content=matrix_cta#choose-service";
-  const briefHref =
-    "/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=trip_conversation&utm_content=footer_cta#planner-contact";
-  const schema = structuredData();
+export function FirstTripTenCityMapPage({
+  locale = "en",
+}: {
+  locale?: HomegroundLocale;
+}) {
+  const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, locale);
+  const data = assetDataFor(locale);
+  const copy = getFirstTripTenCityMapCopy(locale);
+  const downloads = downloadsFor(locale);
+  const citation = citationFor(locale, data.version, guide.canonicalUrl);
+  const localePrefix = locale === "en" ? "" : `/${locale}`;
+  const ctaHref = `${localePrefix}/china-itinerary-review/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=route_review&utm_content=matrix_cta#choose-service`;
+  const briefHref = `${localePrefix}/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=trip_conversation&utm_content=footer_cta#planner-contact`;
+  const schema = structuredData(locale);
+  const reviewDate = formattedReviewDate(locale, data.reviewedAt);
 
   return (
-    <div className={`${homeStyles.localeRoot} ${styles.pageRoot}`} lang="en">
+    <div className={`${homeStyles.localeRoot} ${styles.pageRoot}`} lang={copy.htmlLang}>
       <a className={styles.skipLink} href="#ten-city-data">
-        Skip to the ten-city matrix
+        {copy.skipLink}
       </a>
 
       <HomegroundHeader
         guideId={guide.id}
         languagePaths={getGuideLanguagePaths(guide.id)}
-        locale="en"
+        locale={locale}
         pageContext="guide"
       />
 
@@ -263,16 +310,16 @@ export function FirstTripTenCityMapPage() {
           <div className={styles.heroCopy}>
             <nav className={styles.breadcrumb} aria-label="Breadcrumb">
               <ol>
-                <li><Link href="/">Home</Link></li>
-                <li><span aria-hidden="true">/</span><Link href="/guides/">Travel guides</Link></li>
-                <li><span aria-hidden="true">/</span><Link href="/transport/">Transport</Link></li>
+                <li><Link href={localizePath("/", locale)}>{copy.breadcrumbs.home}</Link></li>
+                <li><span aria-hidden="true">/</span><Link href={localizePath("/guides/", locale)}>{copy.breadcrumbs.guides}</Link></li>
+                <li><span aria-hidden="true">/</span><Link href={localizePath("/transport/", locale)}>{copy.breadcrumbs.transport}</Link></li>
                 <li aria-current="page"><span aria-hidden="true">/</span>{guide.navTitle}</li>
               </ol>
             </nav>
-            <p className={styles.eyebrow}>Original map · Downloadable data · 10 cities</p>
+            <p className={styles.eyebrow}>{copy.eyebrow}</p>
             <h1>{guide.headline}</h1>
             <p className={styles.dek}>{guide.description}</p>
-            <EditorialByline locale="en" reviewedAt={assetData.reviewedAt} />
+            <EditorialByline locale={locale} reviewedAt={data.reviewedAt} />
           </div>
 
           <figure className={styles.heroFigure}>
@@ -282,76 +329,72 @@ export function FirstTripTenCityMapPage() {
               height={guide.imageHeight}
               priority
               sizes="(max-width: 900px) 100vw, 48vw"
-              src={guide.heroImagePath}
+              src={heroImagePath(locale)}
               width={guide.imageWidth}
             />
-            <figcaption>Original Homeground schematic. Orientation only; not to scale or live navigation.</figcaption>
+            <figcaption>{copy.heroCaption}</figcaption>
           </figure>
         </header>
 
-        <section className={styles.dataStrip} aria-label="Dataset scope">
-          <div><strong>10</strong><span>gateway cities</span></div>
-          <div><strong>{assetData.reviewedGatewayNodeCount}</strong><span>airport, rail and port nodes reviewed</span></div>
-          <div><strong>{assetData.reviewedStayAreaCount}</strong><span>stay areas compared</span></div>
-          <div><strong>23 Aug 2026</strong><span>last full source review</span></div>
+        <section className={styles.dataStrip} aria-label={copy.matrix.aria}>
+          <div><strong>10</strong><span>{copy.dataStrip.cities}</span></div>
+          <div><strong>{data.reviewedGatewayNodeCount}</strong><span>{copy.dataStrip.nodes}</span></div>
+          <div><strong>{data.reviewedStayAreaCount}</strong><span>{copy.dataStrip.areas}</span></div>
+          <div><strong>{reviewDate}</strong><span>{copy.dataStrip.reviewed}</span></div>
         </section>
 
         <article className={styles.article} id="ten-city-data">
           <section className={styles.intro}>
-            <p className={styles.lead}>
-              Do not choose a China hotel from the city name alone. Write the
-              exact airport, railway station or border crossing on the booking,
-              then choose a stay area that keeps both arrival and the next
-              departure sensible.
-            </p>
+            <p className={styles.lead}>{copy.lead}</p>
             <aside className={styles.warning}>
               <TriangleAlert aria-hidden="true" size={22} />
               <div>
-                <strong>A decision diagram, not live navigation</strong>
-                <p>
-                  Stay areas are editorial defaults, not universal hotel
-                  recommendations. Terminals, trains, checkpoints and local
-                  transfers can change; verify the ticket and operator's current
-                  information before paying.
-                </p>
+                <strong>{copy.warning.title}</strong>
+                <p>{copy.warning.body}</p>
               </div>
             </aside>
           </section>
 
           <section className={styles.section} aria-labelledby="flow-title">
             <div className={styles.sectionHeader}>
-              <p className={styles.miniLabel}>One repeatable method</p>
-              <h2 id="flow-title">Read every city in the same order</h2>
+              <p className={styles.miniLabel}>{copy.flow.label}</p>
+              <h2 id="flow-title">{copy.flow.title}</h2>
             </div>
             <ol className={styles.flow}>
-              <li><span>1</span><strong>Arrive</strong><p>Copy the exact airport code, railway station or port from the confirmed ticket.</p></li>
-              <li><span>2</span><strong>Stay</strong><p>Use the default only when it also works for your sights, luggage and next departure.</p></li>
-              <li><span>3</span><strong>Depart</strong><p>Choose the onward ticket by its named station and complete transfer chain.</p></li>
+              {copy.flow.steps.map((step, index) => (
+                <li key={step.label}>
+                  <span>{index + 1}</span>
+                  <strong>{step.label}</strong>
+                  <p>{step.body}</p>
+                </li>
+              ))}
             </ol>
           </section>
 
           <section className={styles.section} aria-labelledby="matrix-title">
             <div className={styles.sectionHeader}>
-              <p className={styles.miniLabel}>Copyable source table</p>
-              <h2 id="matrix-title">The arrive–stay–depart matrix</h2>
-              <p>Version {assetData.version}. The compact view names decision-critical gateways; the underlying review covers all {assetData.reviewedGatewayNodeCount} nodes.</p>
+              <p className={styles.miniLabel}>{copy.matrix.label}</p>
+              <h2 id="matrix-title">{copy.matrix.title}</h2>
+              <p>
+                {locale === "en" ? `Version ${data.version}. ` : `v${data.version}。`}
+                {copy.matrix.descriptionPrefix} {data.reviewedGatewayNodeCount} {copy.matrix.descriptionSuffix}
+              </p>
             </div>
-            <div className={styles.tableScroll} tabIndex={0} role="region" aria-label="Ten-city airport, station and stay matrix">
+            <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={copy.matrix.aria}>
               <table>
-                <caption>Ten-city first-trip gateway and stay-area matrix, reviewed 23 August 2026</caption>
+                <caption>{copy.matrix.caption}</caption>
                 <thead>
                   <tr>
-                    <th scope="col">City</th>
-                    <th scope="col">Named gateways</th>
-                    <th scope="col">Neutral first-trip stay default</th>
-                    <th scope="col">Wrong-node warning</th>
-                    <th scope="col">Last-night rule</th>
+                    {copy.matrix.headers.map((header) => <th scope="col" key={header}>{header}</th>)}
                   </tr>
                 </thead>
                 <tbody>
-                  {assetData.cities.map((city) => (
+                  {data.cities.map((city) => (
                     <tr key={city.id}>
-                      <th scope="row"><Link href={city.guidePath}>{city.name}</Link><small>{city.nameZh}</small></th>
+                      <th scope="row">
+                        <Link href={localizePath(city.guidePath, locale)}>{city.name}</Link>
+                        <small>{city.secondaryName}</small>
+                      </th>
                       <td>{city.gatewaySummary}</td>
                       <td>{city.stayDefault}</td>
                       <td>{city.warning}</td>
@@ -367,36 +410,36 @@ export function FirstTripTenCityMapPage() {
             <div className={styles.downloadIntro}>
               <Database aria-hidden="true" size={25} />
               <div className={styles.sectionHeader}>
-                <p className={styles.miniLabel}>National map · 10 city cards · Data</p>
-                <h2 id="downloads-title">Download and reuse the complete asset pack</h2>
-                <p>The ZIP contains the national schematic, ten city cards, CSV, JSON, source notes, licence, attribution examples and file checksums.</p>
+                <p className={styles.miniLabel}>{copy.downloads.label}</p>
+                <h2 id="downloads-title">{copy.downloads.title}</h2>
+                <p>{copy.downloads.body}</p>
               </div>
             </div>
-            <LinkableAssetActions assets={downloads} citation={citation} guideId={guide.id} />
+            <LinkableAssetActions
+              assets={downloads}
+              citation={citation}
+              copy={{
+                citationLabel: copy.downloads.citationLabel,
+                copyButton: copy.downloads.copyButton,
+                copiedButton: copy.downloads.copiedButton,
+                copiedStatus: copy.downloads.copiedStatus,
+              }}
+              guideId={guide.id}
+              locale={locale}
+            />
             <div className={styles.licencePanel} id="licence">
               <div>
-                <p className={styles.miniLabel}>Open reuse licence</p>
-                <h3>Original map graphics and compiled data: CC BY 4.0</h3>
+                <p className={styles.miniLabel}>{copy.licence.label}</p>
+                <h3>{copy.licence.title}</h3>
               </div>
               <div>
+                <p>{copy.licence.intro}</p>
+                <ul>{copy.licence.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
                 <p>
-                  You may share and adapt Homeground China&apos;s original map
-                  graphics, city cards, annotations and compiled dataset,
-                  including commercially, with reasonable attribution.
-                </p>
-                <ul>
-                  <li>Credit Homeground China and link this canonical page and the licence where practical.</li>
-                  <li>Say when you have changed the material; do not imply endorsement.</li>
-                  <li>Third-party names, trademarks, source pages and facts are not relicensed.</li>
-                  <li>The asset is schematic and not a live timetable, route guarantee or navigation product.</li>
-                </ul>
-                <p>
-                  <a href={ASSET_LICENCE_URL}>
-                    Read the Creative Commons Attribution 4.0 licence
-                  </a>
+                  <a href={ASSET_LICENCE_URL}>{copy.licence.readLicence}</a>
                   {" · "}
                   <a download href="/downloads/homeground-china-10-city-arrival-stay-departure-v1-LICENSE.txt">
-                    Download the pack licence
+                    {copy.licence.downloadLicence}
                   </a>
                 </p>
                 <small>{ASSET_COPYRIGHT_NOTICE}</small>
@@ -406,36 +449,36 @@ export function FirstTripTenCityMapPage() {
 
           <aside className={styles.commercialCta}>
             <div>
-              <p className={styles.miniLabel}>Protect the bookings</p>
-              <h2>Have us check your airport–station–hotel chain.</h2>
-              <p>A US$69 human route review checks city order, gateway names, hotel bases, transfer logic and pace before the remaining bookings become expensive to change.</p>
+              <p className={styles.miniLabel}>{copy.routeReview.label}</p>
+              <h2>{copy.routeReview.title}</h2>
+              <p>{copy.routeReview.body}</p>
             </div>
-            <GuideCtaLink href={ctaHref} guideId={guide.id} locale="en" position="inline">
-              Request a route review — US$69
+            <GuideCtaLink href={ctaHref} guideId={guide.id} locale={locale} position="inline">
+              {copy.routeReview.button}
               <ArrowRight aria-hidden="true" size={18} />
             </GuideCtaLink>
           </aside>
 
           <section className={styles.section} aria-labelledby="cards-title">
             <div className={styles.sectionHeader}>
-              <p className={styles.miniLabel}>Ten consistent decision cards</p>
-              <h2 id="cards-title">Use the default, then test the exception</h2>
+              <p className={styles.miniLabel}>{copy.cards.label}</p>
+              <h2 id="cards-title">{copy.cards.title}</h2>
             </div>
             <div className={styles.cityGrid}>
-              {assetData.cities.map((city, index) => (
+              {data.cities.map((city, index) => (
                 <article className={styles.cityCard} key={city.id}>
                   <div className={styles.cityCardTop}>
                     <span>{String(index + 1).padStart(2, "0")}</span>
-                    <p>{city.nameZh}</p>
+                    <p>{city.secondaryName}</p>
                   </div>
                   <h3>{city.name}</h3>
                   <dl>
-                    <div><dt>Arrive / depart</dt><dd>{city.gatewaySummary}</dd></div>
-                    <div><dt>Start with</dt><dd>{city.stayDefault}</dd></div>
-                    <div><dt>One-move rule</dt><dd>{city.oneMoveRule}</dd></div>
+                    <div><dt>{copy.cards.fields[0]}</dt><dd>{city.gatewaySummary}</dd></div>
+                    <div><dt>{copy.cards.fields[1]}</dt><dd>{city.stayDefault}</dd></div>
+                    <div><dt>{copy.cards.fields[2]}</dt><dd>{city.oneMoveRule}</dd></div>
                   </dl>
                   <p className={styles.cardWarning}><TriangleAlert aria-hidden="true" size={17} />{city.warning}</p>
-                  <Link href={city.guidePath}>Open the detailed guide <ArrowRight aria-hidden="true" size={16} /></Link>
+                  <Link href={localizePath(city.guidePath, locale)}>{copy.cards.openGuide} <ArrowRight aria-hidden="true" size={16} /></Link>
                 </article>
               ))}
             </div>
@@ -443,14 +486,14 @@ export function FirstTripTenCityMapPage() {
 
           <section className={styles.section} aria-labelledby="spotlight-title">
             <div className={styles.sectionHeader}>
-              <p className={styles.miniLabel}>Ready for editorial layouts</p>
-              <h2 id="spotlight-title">Three high-confusion city graphics</h2>
-              <p>Beijing covers a two-airport decision, Shanghai a combined airport–rail district, and Zhangjiajie a stay-base decision that changes the following day.</p>
+              <p className={styles.miniLabel}>{copy.spotlight.label}</p>
+              <h2 id="spotlight-title">{copy.spotlight.title}</h2>
+              <p>{copy.spotlight.body}</p>
             </div>
             <div className={styles.spotlightGrid}>
-              {spotlightCards.map((card) => (
+              {copy.spotlight.cards.map((card, index) => (
                 <figure key={card.city}>
-                  <Image alt={card.alt} height={675} loading="lazy" sizes="(max-width: 760px) 100vw, 48vw" src={card.src} width={1200} />
+                  <Image alt={card.alt} height={675} loading="lazy" sizes="(max-width: 760px) 100vw, 48vw" src={spotlightImagePath(spotlightIds[index], locale)} width={1200} />
                   <figcaption><strong>{card.city}</strong><span>{card.note}</span></figcaption>
                 </figure>
               ))}
@@ -459,25 +502,20 @@ export function FirstTripTenCityMapPage() {
 
           <section className={styles.methodSection} aria-labelledby="method-title">
             <div>
-              <p className={styles.miniLabel}>Method</p>
-              <h2 id="method-title">What the data does—and does not—claim</h2>
+              <p className={styles.miniLabel}>{copy.method.label}</p>
+              <h2 id="method-title">{copy.method.title}</h2>
             </div>
-            <ul>
-              <li>City selection combines international-entry value, common multi-city routes, gateway complexity and Homeground's ability to maintain the facts.</li>
-              <li>Airport, station and port identities use official operator or government sources. Stay defaults and move rules are Homeground editorial judgements.</li>
-              <li>No timetable, guaranteed transfer duration, airline–terminal assignment or border opening hour is frozen into this asset.</li>
-              <li>High-risk gateway facts are reviewed monthly, on a material operator change, and within 72 hours before an outreach batch uses the asset.</li>
-            </ul>
+            <ul>{copy.method.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
           </section>
 
           <details className={styles.sources} id="sources">
-            <summary><span>Official sources reviewed</span><b>{assetData.sources.length}</b></summary>
+            <summary><span>{copy.sources}</span><b>{data.sources.length}</b></summary>
             <ol>
-              {assetData.sources.map((source) => (
+              {data.sources.map((source) => (
                 <li key={source.id}>
                   <a href={source.url}>{source.label}</a>
                   <span>{source.publisher}</span>
-                  <time dateTime={assetData.reviewedAt}>{assetData.reviewedAt}</time>
+                  <time dateTime={data.reviewedAt}>{reviewDate}</time>
                 </li>
               ))}
             </ol>
@@ -487,17 +525,17 @@ export function FirstTripTenCityMapPage() {
         <aside className={styles.footerCta}>
           <MapPinned aria-hidden="true" size={30} />
           <div>
-            <p className={styles.miniLabel}>Plan with a local team</p>
-            <h2>Tell us the trip you are considering.</h2>
-            <p>Share your dates, group size and rough budget. A real person will help you work out a sensible route and the support you actually need.</p>
+            <p className={styles.miniLabel}>{copy.footer.label}</p>
+            <h2>{copy.footer.title}</h2>
+            <p>{copy.footer.body}</p>
           </div>
-          <GuideCtaLink href={briefHref} guideId={guide.id} locale="en" position="footer">
-            Start my trip brief <ArrowRight aria-hidden="true" size={18} />
+          <GuideCtaLink href={briefHref} guideId={guide.id} locale={locale} position="footer">
+            {copy.footer.button} <ArrowRight aria-hidden="true" size={18} />
           </GuideCtaLink>
         </aside>
       </main>
 
-      <HomegroundFooter locale="en" pageContext="guide" />
+      <HomegroundFooter locale={locale} pageContext="guide" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     </div>
   );

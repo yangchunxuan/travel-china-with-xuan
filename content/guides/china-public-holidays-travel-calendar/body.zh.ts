@@ -11,7 +11,7 @@ const body = {
     {
       id: "status-summary",
       type: "comparison",
-      title: "日历状态（核对日期：2026年8月11日）",
+      title: "日历状态（核对日期：2026年8月23日）",
       columns: [
         {
           heading: "2026年——已正式发布",
@@ -229,7 +229,7 @@ const body = {
       type: "callout",
       tone: "warning",
       title: "2027年：尚未发布",
-      body: "截至2026年8月11日，2027年官方公众假期和调休工作日安排尚未发布。应把年度日历保留为一项未解决的规划依赖，不要把节日本身的日期或上一年的调休日期当成订票承诺。",
+      body: "截至2026年8月23日，2027年官方公众假期和调休工作日安排尚未发布。应把年度日历保留为一项未解决的规划依赖，不要把节日本身的日期或上一年的调休日期当成订票承诺。",
     },
     {
       id: "update-mechanism",
@@ -281,7 +281,7 @@ const body = {
       title: "已核对的官方来源",
       items: [
         { label: "2026年部分节假日安排", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "国务院办公厅", reviewedAt: "2026-08-11" },
-        { label: "2026年春运安排", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
+        { label: "2026年综合运输春运安全生产和服务保障总体方案", url: "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", publisher: "交通运输部", reviewedAt: "2026-08-23" },
         { label: "2026年清明假期交通回顾", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
         { label: "2026年劳动节交通新闻发布会", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
         { label: "现行铁路售票规则", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "中国铁路12306", reviewedAt: "2026-08-11" },

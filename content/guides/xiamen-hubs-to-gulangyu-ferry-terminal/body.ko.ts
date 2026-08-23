@@ -18,7 +18,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "가족 또는 큰 가방", items: ["가장 빠듯한 연결 피하기", "각 여행자가 신분 서류 소지", "늦으면 샤먼섬 첫날 밤 고려"] },
   ]},
   { id: "order-heading", type: "heading", level: 2, text: "도로 이동 시간을 정하기 전에 주문을 점검하세요" },
-  { id: "order-copy", type: "paragraph", text: "완료된 주문을 열어 운항일, 출발 시각, 본토의 전체 터미널명, 섬 도착 부두, 여행 서류를 읽습니다. 검색 결과 화면이나 결제하지 않은 장바구니로 계획하지 마세요. 여권이 수동 확인으로 넘어갔다면 공식 채널이 승인하기 전까지 미완료로 봅니다. 체크인 때 같은 여권과 주문 기록을 준비하고 모든 여행자의 서류 상태를 한 장의 일행 체크리스트에 넣습니다." },
+  { id: "order-copy", type: "paragraph", text: "완료된 주문을 열어 운항일, 출발 시각, 본토의 전체 터미널명, 섬 도착 부두, 여행 서류를 읽습니다. 검색 결과 화면이나 결제하지 않은 장바구니로 계획하지 마세요. 여권이 온라인에서 확인되지 않거나 시스템이 수동 처리를 요구하면 공식 FAQ에 따라 여권 원본을 가지고 유인 매표소에 가서 현장 확인 후 표를 수령하세요. 체크인 때 같은 여권과 주문 기록을 준비하고 모든 여행자의 서류 상태를 한 장의 일행 체크리스트에 넣습니다." },
   { id: "arrival-heading", type: "heading", level: 2, text: "실제 도착을 기준으로 배편을 고르세요" },
   { id: "arrival-matrix", type: "table", caption: "연결 여유는 페리 터미널 이전부터 시작됩니다", columns: ["도착 형태", "더 안전한 선택", "이유"], rows: [
     ["오전 항공편이나 열차", "명시적인 지연 여유가 있는 더 늦은 배편", "수하물, 승강장 출구, 도로 정체는 페리 시간표 밖입니다"],
@@ -36,7 +36,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["표와 신분 불일치", "공식 직원에게 묻고 다른 사람 신분에 묶인 재판매 표 사지 않기"],
     ["날씨 중단", "샤먼 페리 공지를 따르고 경로 변경 전 섬 숙소에 알리기"],
   ]},
-  { id: "facts", type: "callout", title: "변경 가능 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "현재 FAQ는 온라인 구매자를 공식 위챗 또는 알리페이 채널로 안내한다. 외국인은 실명 인증된 알리페이 계정에 여권 정보를 입력할 수 있지만 일부 서류는 현장 확인이 필요하다. 예매 기간은 승선일을 포함해 15일이며 매일 오전 9시에 15일째 표가 열린다. 검표는 출항 20분 전에 시작하고 10분 전에 마감한다. 출도 표에는 보통 20일 안에 현재 관광객 노선 규정에 맞는 무료 귀환 1회가 포함되지만 귀환 시간이나 선착장을 미리 확정해 주는 것은 아니다. 같은 FAQ 안에 오래된 안내도 남아 있어 결제 전 최신 채널과 노선을 다시 확인해야 한다." },
+  { id: "facts", type: "callout", title: "여권 유인 창구 절차는 8월 23일, 나머지 교통 정보는 2026년 8월 13일 확인", tone: "neutral", body: "현재 FAQ는 온라인 구매자를 공식 위챗 또는 알리페이 채널로 안내합니다. 외국인은 실명 인증된 알리페이 계정에 여권 정보를 입력할 수 있습니다. 여권을 온라인에서 확인할 수 없거나 수동 처리가 필요하면 여권 원본을 가지고 유인 매표소에서 현장 확인 후 표를 수령해야 합니다. 예매 기간은 승선일을 포함해 15일이고 매일 오전 9시에 15일째 표가 열립니다. 검표는 출항 20분 전에 시작하고 10분 전에 마감합니다. 날짜가 정해진 출도 표에는 보통 20일 안에 현재 관광객 노선 규정에 맞는 무료 귀환 1회가 포함되지만 귀환 시간이나 선착장을 미리 확정해 주는 것은 아닙니다. 같은 FAQ 안에 오래된 안내도 남아 있어 결제 전 최신 채널과 노선을 다시 확인해야 합니다." },
   { id: "help", type: "callout", title: "도착 지점과 페리를 맞출까요?", tone: "decision", body: "날짜, 항공편이나 열차, 표의 양쪽 터미널, 섬 호텔, 인원과 짐을 보내 주세요. Homeground는 환승과 지연에 대비한 여유를 확인할 수 있으며 좌석은 공식 운영사가 관리합니다." },
   { id: "links", type: "internal-links", title: "계속 계획하기", items: [
     { label: "중국 고속철도 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "페리 환승 전 철도 도착을 준비합니다." },
@@ -46,7 +46,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "샤먼 숙소 고르기", href: "/ko/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/", description: "페리, 짐, 이른·늦은 시간, 해변과 다음 이동을 기준으로 중산루·구랑위 숙박·쩡춰안을 비교합니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
-    { label: "공식 온라인 구매 FAQ: 최신 채널, 여권, 귀환 유효기간", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "샤먼 페리", reviewedAt: "2026-08-13" },
+    { label: "공식 온라인 구매 FAQ: 최신 채널, 유인 매표소 여권 확인·표 수령, 귀환 유효기간", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "샤먼 페리", reviewedAt: "2026-08-23" },
     { label: "2026년 공식 공지: 예매 기간 15일", url: "https://www.xmferry.com/xwzx/zxgg/32338.htm", publisher: "샤먼 페리", reviewedAt: "2026-08-13" },
     { label: "공식 검표 및 귀환 FAQ", url: "https://xmferry.com/wybm/wshlk/chch/index.htm", publisher: "샤먼 페리", reviewedAt: "2026-08-13" },
     { label: "대표 사진: HualinXMN의 크루즈센터 버스 구역, CC BY 4.0, 크롭 편집", url: "https://commons.wikimedia.org/wiki/File:Cruise_Center_Bus_Station(Xiamen)._20190203.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },

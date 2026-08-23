@@ -11,7 +11,7 @@ const body = {
     {
       id: "status-summary",
       type: "comparison",
-      title: "달력 상태 — 2026년 8월 11일 확인",
+      title: "달력 상태 — 2026년 8월 23일 확인",
       columns: [
         {
           heading: "2026년 — 공식 발표",
@@ -229,7 +229,7 @@ const body = {
       type: "callout",
       tone: "warning",
       title: "2027년: 아직 발표되지 않음",
-      body: "2026년 8월 11일 기준으로 2027년 공식 공휴일과 대체 근무일 일정은 아직 발표되지 않았습니다. 연간 달력을 해결되지 않은 계획 변수로 남겨 두고, 명절 날짜나 전년도 근무일을 예약 확정 정보로 바꾸지 마세요.",
+      body: "2026년 8월 23일 기준으로 2027년 공식 공휴일과 대체 근무일 일정은 아직 발표되지 않았습니다. 연간 달력을 해결되지 않은 계획 변수로 남겨 두고, 명절 날짜나 전년도 근무일을 예약 확정 정보로 바꾸지 마세요.",
     },
     {
       id: "update-mechanism",
@@ -281,7 +281,7 @@ const body = {
       title: "확인한 공식 출처",
       items: [
         { label: "2026년 공휴일 일정", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "중국 국무원 판공청", reviewedAt: "2026-08-11" },
-        { label: "2026년 춘윈 계획", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-11" },
+        { label: "2026년 종합운송 춘윈 안전·서비스 보장 종합계획", url: "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-23" },
         { label: "2026년 청명절 교통 보고", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-11" },
         { label: "2026년 노동절 교통 브리핑", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-11" },
         { label: "현행 철도 승차권 규정", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "중국철도 12306", reviewedAt: "2026-08-11" },

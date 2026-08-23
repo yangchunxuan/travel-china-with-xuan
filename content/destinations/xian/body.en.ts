@@ -159,7 +159,7 @@ const body = {
     {
       id: "stay-1",
       type: "paragraph",
-      text: "At hub level the choice is between a Bell Tower or central old-city base, the Yongningmen edge and the Dayanta or Xiaozhai side. “Inside the City Wall” is not precise enough: the exact gate, metro exit, road crossing and vehicle entrance matter more than the marketing label.",
+      text: "For a first-trip city overview, the choice is between a Bell Tower or central old-city base, the Yongningmen edge and the Dayanta or Xiaozhai side. “Inside the City Wall” is not precise enough: the exact gate, metro exit, road crossing and vehicle entrance matter more than the marketing label.",
     },
     {
       id: "stay-table",
@@ -207,7 +207,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "Compare exact bases with the accommodation owner",
+      title: "Compare exact bases with the detailed accommodation guide",
       items: [
         {
           label: "Where to stay in Xi'an: City Wall, Bell Tower or Dayanta?",
@@ -385,7 +385,7 @@ const body = {
     {
       id: "sight-links",
       type: "internal-links",
-      title: "Open the execution owner when a cluster becomes a booking",
+      title: "Open the detailed guide when a cluster becomes a booking",
       items: [
         {
           label: "Visiting the Terracotta Army without a tour",
@@ -503,7 +503,7 @@ const body = {
     {
       id: "route-links",
       type: "internal-links",
-      title: "Continue with the route owners",
+      title: "Continue with the detailed route guides",
       items: [
         {
           label: "Beijing, Xi'an and Chengdu: choose the route order",

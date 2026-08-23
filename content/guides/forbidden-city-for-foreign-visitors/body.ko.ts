@@ -198,6 +198,13 @@ export default {
       text: "고궁박물원 공식 사이트는 2시간, 반일, 하루 추천 동선을 제공합니다. 아래 계획은 2시간과 반일 사이를 연결한 Homeground의 3시간 실행안입니다. 남쪽에서 북쪽으로 이어지는 중앙 동선을 지키고, 관심 있는 추가 관람 구역 한 곳만 더한 뒤 북문에서 끝냅니다. 3시간은 오문에서 여권 확인을 마친 뒤부터 계산하며 호텔 출발, 톈안먼 일대 보안 검색, 티켓 문제 해결과 퇴장 후 교통은 포함하지 않습니다.",
     },
     {
+      id: "gate-conservation-notice",
+      type: "callout",
+      title: "태화문 현재 우회 안내",
+      body: "태화문은 2026년 8월 3일부터 보수 공사로 폐쇄되어 있습니다. 현장 안내에 따라 양옆 우회로를 이용하세요. 아래 동선은 구역의 순서일 뿐 태화문 건물 자체의 개방을 보장하지 않습니다.",
+      tone: "warning",
+    },
+    {
       id: "route-table",
       type: "table",
       caption: "오문에서 신무문까지 이어지는 3시간 동선",
@@ -448,6 +455,12 @@ export default {
           url: "https://www.dpm.org.cn/Visit.html",
           publisher: "고궁박물원",
           reviewedAt: "2026-08-22",
+        },
+        {
+          label: "태화문 2026년 8월 3일 보수 공사 폐쇄 공지",
+          url: "https://www.dpm.org.cn/announce_detail/379422.html",
+          publisher: "고궁박물원",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "고궁박물원 관람·보안 검색·짐 보관 규정",

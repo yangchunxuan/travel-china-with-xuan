@@ -133,7 +133,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1600,
     imageHeight: 954,
     datePublished: "2026-07-20",
-    dateModified: "2026-07-22",
+    dateModified: "2026-08-23",
     sourceReviewedDate: "2026-07-21",
     locales: {
       en: {
@@ -1200,18 +1200,33 @@ export function getGuideEntry(id: GuideId, locale: HomegroundLocale = "en") {
   if (!localized) {
     throw new Error(`Guide "${id}" is not available in locale "${locale}".`);
   }
+  const localizedTenCityMapHero =
+    guide.id === "first-trip-china-airport-station-stay-map" && locale !== "en"
+      ? `/images/guides/first-trip-china-airport-station-stay-map/hero-1600.${locale}.webp`
+      : undefined;
   const cardImagePath =
-    "cardImagePath" in guide ? guide.cardImagePath : guide.heroImagePath;
-  const cardImageWidth =
-    "cardImageWidth" in guide ? guide.cardImageWidth : guide.imageWidth;
-  const cardImageHeight =
-    "cardImageHeight" in guide ? guide.cardImageHeight : guide.imageHeight;
+    localizedTenCityMapHero ??
+    ("cardImagePath" in guide ? guide.cardImagePath : guide.heroImagePath);
+  const cardImageWidth = localizedTenCityMapHero
+    ? guide.imageWidth
+    : "cardImageWidth" in guide
+      ? guide.cardImageWidth
+      : guide.imageWidth;
+  const cardImageHeight = localizedTenCityMapHero
+    ? guide.imageHeight
+    : "cardImageHeight" in guide
+      ? guide.cardImageHeight
+      : guide.imageHeight;
   const cardImageAlt =
     "cardImageAlt" in localized ? localized.cardImageAlt : localized.heroAlt;
 
   return {
     ...guide,
     ...localized,
+    heroImagePath: localizedTenCityMapHero ?? guide.heroImagePath,
+    heroImageUrl: localizedTenCityMapHero
+      ? `${SITE_URL}${localizedTenCityMapHero}`
+      : guide.heroImageUrl,
     cardImagePath,
     cardImageWidth,
     cardImageHeight,

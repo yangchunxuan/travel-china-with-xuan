@@ -198,6 +198,13 @@ export default {
       text: "故宫官网提供两小时、半日和一日推荐路线。下面这条路线是 Homeground 在前两者之间设计的三小时执行方案：保留从南向北的中轴顺序，为一项侧线兴趣留时间，并在北门结束。三小时从午门完成护照检票后开始，不包括从酒店出发、天安门地区安检、票务问题处理和离院后的交通。",
     },
     {
+      id: "gate-conservation-notice",
+      type: "callout",
+      title: "太和门当前绕行提示",
+      body: "太和门自2026年8月3日起封闭施工。请按现场指引从两侧绕行；下列路线表示游览区段顺序，不代表太和门建筑本身开放。",
+      tone: "warning",
+    },
+    {
       id: "route-table",
       type: "table",
       caption: "从午门到神武门的三小时路线",
@@ -448,6 +455,12 @@ export default {
           url: "https://www.dpm.org.cn/Visit.html",
           publisher: "故宫博物院",
           reviewedAt: "2026-08-22",
+        },
+        {
+          label: "太和门自2026年8月3日起封闭施工公告",
+          url: "https://www.dpm.org.cn/announce_detail/379422.html",
+          publisher: "故宫博物院",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "故宫参观、安检与行李寄存规则",

@@ -69,14 +69,19 @@ test("batch three hubs are trilingual published pages with canonical boundaries"
     source("docs/organic-growth/city-hub-drafts/README.md"),
   ]);
 
-  for (const id of ["hangzhou", "zhangjiajie"]) {
+  const expectedDates = {
+    hangzhou: { modified: "2026-08-23", reviewed: "2026-08-20" },
+    zhangjiajie: { modified: "2026-08-23", reviewed: "2026-08-20" },
+  };
+  for (const [id, dates] of Object.entries(expectedDates)) {
     assert.match(registry, new RegExp(`id: "${id}"`));
     assert.match(registry, new RegExp(`entityId: "city-${id}"`));
     const entryStart = registry.indexOf(`id: "${id}"`);
     assert.notEqual(entryStart, -1);
     const entryHeader = registry.slice(entryStart, entryStart + 700);
     assert.match(entryHeader, /datePublished: "2026-08-20"/);
-    assert.match(entryHeader, /dateModified: "2026-08-21"/);
+    assert.match(entryHeader, new RegExp(`dateModified: "${dates.modified}"`));
+    assert.match(entryHeader, new RegExp(`sourceReviewedDate: "${dates.reviewed}"`));
     assert.match(runtime, new RegExp(`${id}: \\{[\\s\\S]*body\\.en[\\s\\S]*body\\.zh[\\s\\S]*body\\.ko`));
   }
   assert.equal(
@@ -84,11 +89,16 @@ test("batch three hubs are trilingual published pages with canonical boundaries"
     2,
     "Hangzhou and Zhangjiajie retain their real publication date",
   );
-  assert.match(registry, /sourceReviewedDate: "2026-08-20"/);
   assert.match(adapter, /status: "published"/);
   assert.match(adapter, /indexability: \{ index: true, follow: true \}/);
-  assert.match(hangzhouBody, /No second generic Hangzhou travel guide should be created/);
-  assert.match(zhangjiajieBody, /Do not copy that volatile workflow into this broad page/);
+  assert.match(
+    hangzhouBody,
+    /Use this as the overview rather than looking for a second generic Hangzhou travel guide/,
+  );
+  assert.match(
+    zhangjiajieBody,
+    /Use that detailed guide for this volatile workflow/,
+  );
   assert.match(readme, /Batch three published \(August 20, 2026\): PR #74/);
   assert.match(readme, /five trilingual identities are now live/);
   assert.ok(readme.includes("649 `<loc>` entries"));
@@ -144,10 +154,10 @@ test("batch two hubs keep their own truthful publication and review dates", asyn
     registry.indexOf('id: "hangzhou"'),
   );
   assert.match(chengduHeader, /datePublished: "2026-08-17"/);
-  assert.match(chengduHeader, /dateModified: "2026-08-22"/);
+  assert.match(chengduHeader, /dateModified: "2026-08-23"/);
   assert.match(chengduHeader, /sourceReviewedDate: "2026-08-22"/);
   assert.match(guangzhouHeader, /datePublished: "2026-08-17"/);
-  assert.match(guangzhouHeader, /dateModified: "2026-08-21"/);
+  assert.match(guangzhouHeader, /dateModified: "2026-08-23"/);
   assert.match(guangzhouHeader, /sourceReviewedDate: "2026-08-17"/);
   assert.doesNotMatch(registry, /sourceReviewedDate: "2026-08-15"/);
 });

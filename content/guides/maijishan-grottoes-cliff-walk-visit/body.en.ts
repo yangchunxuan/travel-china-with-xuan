@@ -76,7 +76,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
 
   { id: "links", type: "internal-links", title: "Continue planning", items: [
     { label: "Visiting the Mogao Caves independently", href: "/guides/mogao-caves-independent-visit-workflow/", description: "The other Dunhuang Academy site with a reservation-first workflow, kept as its own guide." },
-    { label: "Yungang Grottoes: cave order and the museum", href: "/guides/yungang-grottoes-cave-order-and-museum/", description: "A very different site with its own owner; this page makes no comparison between them." },
+    { label: "Yungang Grottoes: cave order and the museum", href: "/guides/yungang-grottoes-cave-order-and-museum/", description: "Use the separate Yungang guide for that very different site; this page makes no comparison between them." },
     { label: "Wheelchair-accessible route planning in China", href: "/guides/wheelchair-accessible-china-route-planning/", description: "If step-free travel is a requirement rather than a preference." },
     { label: "Hub-and-spoke or multi-base routes", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Where a Tianshui day sits in a wider corridor." },
     { label: "China's climate regions and when to travel", href: "/guides/china-climate-regions-for-trip-timing/", description: "Because rain here changes the walk, not just the photographs." },

@@ -19,6 +19,22 @@ const sourceDataPath = path.join(
   "first-trip-china-airport-station-stay-map",
   "asset-data.en.json",
 );
+const localizedCopyPaths = {
+  zh: path.join(
+    projectRoot,
+    "content",
+    "guides",
+    "first-trip-china-airport-station-stay-map",
+    "asset-copy.zh.json",
+  ),
+  ko: path.join(
+    projectRoot,
+    "content",
+    "guides",
+    "first-trip-china-airport-station-stay-map",
+    "asset-copy.ko.json",
+  ),
+};
 const filePrefix = "homeground-china-10-city-arrival-stay-departure-v1";
 const guideUrl =
   "https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/";
@@ -38,6 +54,14 @@ await Promise.all([
 ]);
 
 const assetData = JSON.parse(await readFile(sourceDataPath, "utf8"));
+const localizedCopies = Object.fromEntries(
+  await Promise.all(
+    Object.entries(localizedCopyPaths).map(async ([locale, filePath]) => [
+      locale,
+      JSON.parse(await readFile(filePath, "utf8")),
+    ]),
+  ),
+);
 const reviewMatch = /^(\d{4})-(\d{2})-(\d{2})$/u.exec(assetData.reviewedAt);
 if (!reviewMatch) {
   throw new Error(`Invalid reviewedAt date: ${assetData.reviewedAt}`);
@@ -242,6 +266,133 @@ for (const city of assetData.cities) {
       .webp({ quality: 88, smartSubsample: true })
       .toFile(path.join(imageRoot, `${city.id}-card-1200.webp`)),
   ]);
+}
+
+function localizedReviewLabel(locale) {
+  if (locale === "zh") return `${reviewYear}年${reviewMonth}月${reviewDay}日`;
+  return `${reviewYear}년 ${reviewMonth}월 ${reviewDay}일`;
+}
+
+function localizedFontFamilies(locale) {
+  return locale === "zh"
+    ? {
+        sans: "Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif",
+        serif: "Noto Serif SC, SimSun, serif",
+      }
+    : {
+        sans: "Malgun Gothic, Noto Sans CJK KR, Arial, sans-serif",
+        serif: "Noto Serif KR, Batang, serif",
+      };
+}
+
+function localizedNationalMap(copy, locale) {
+  const fonts = localizedFontFamilies(locale);
+  const cityById = new Map(copy.cities.map((city) => [city.id, city]));
+  const city = (id) => cityById.get(id);
+  const title = locale === "zh" ? "Homeground China 10城抵达、住宿与出发地图" : "Homeground China 10개 도시 도착·숙박·출발 지도";
+  const description = locale === "zh"
+    ? "连接中国10座门户城市与抵达、住宿、出发判断顺序的中文示意图；不是地理比例图或实时交通图。"
+    : "중국의 주요 10개 도시와 도착, 숙박, 출발 판단 순서를 연결한 한국어 도식이며 지리 축척 지도나 실시간 교통 지도가 아닙니다.";
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">${escapeXml(title)}</title><desc id="desc">${escapeXml(description)}</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a74731"/></marker><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#141413" flood-opacity="0.08"/></filter></defs>
+  <rect width="1600" height="1000" fill="#faf9f5"/><rect x="0" y="0" width="18" height="1000" fill="#a74731"/>
+  <text x="84" y="82" fill="#7f2e1d" font-family="${fonts.sans}" font-size="22" font-weight="700" letter-spacing="2">${escapeXml(copy.graphic.assetLabel)}</text>
+  <text x="84" y="172" fill="#141413" font-family="${fonts.serif}" font-size="68">${escapeXml(copy.graphic.title)}</text>
+  <text x="84" y="226" fill="#5f5f5a" font-family="${fonts.sans}" font-size="28">${escapeXml(copy.graphic.subtitle)}</text>
+  <rect x="84" y="292" width="610" height="420" rx="8" fill="#ffffff" stroke="#d8d8d1" filter="url(#shadow)"/>
+  <text x="124" y="350" fill="#141413" font-family="${fonts.serif}" font-size="38">${escapeXml(copy.graphic.decisionChain)}</text>
+  ${copy.graphic.steps.map((step, index) => {
+    const centerY = 420 + index * 110;
+    const descriptionY = centerY + 26;
+    const descriptionLines = wrapLocalizedText(
+      step.description,
+      locale,
+      29,
+      2,
+    );
+    const connector = index < 2
+      ? `<line x1="150" y1="${centerY + 34}" x2="150" y2="${centerY + 75}" stroke="#a74731" stroke-width="3" marker-end="url(#arrow)"/>`
+      : "";
+    return `<circle cx="150" cy="${centerY}" r="26" fill="#a74731"/><text x="150" y="${centerY + 9}" text-anchor="middle" fill="#faf9f5" font-family="${fonts.sans}" font-size="24" font-weight="700">${index + 1}</text><text x="198" y="${centerY - 7}" fill="#141413" font-family="${fonts.sans}" font-size="24" font-weight="700">${escapeXml(step.label)}</text><text fill="#5f5f5a" font-family="${fonts.sans}" font-size="18">${svgTextLines(descriptionLines, 198, descriptionY, 22)}</text>${connector}`;
+  }).join("")}
+  <rect x="84" y="742" width="610" height="126" rx="8" fill="#141413"/><text x="124" y="793" fill="#faf9f5" font-family="${fonts.serif}" font-size="28">${escapeXml(copy.graphic.mismatchHeadline)}</text><text x="124" y="832" fill="#b0aea5" font-family="${fonts.sans}" font-size="20">PEK ≠ PKX · PVG ≠ SHA · CTU ≠ TFU</text>
+  <text x="790" y="82" fill="#5f5f5a" font-family="${fonts.sans}" font-size="18" font-weight="700" letter-spacing="1">${escapeXml(copy.graphic.corridorLabel)}</text>
+  <g fill="none" stroke="#d8d8d1" stroke-width="5" stroke-linecap="round"><path d="M1185 190 L990 365 L820 530 L940 620 L1080 680 L1060 805 L1220 825 L1325 900"/><path d="M1185 190 L1390 425 L1300 550 L1080 680"/><path d="M990 365 L1390 425"/><path d="M820 530 L1060 805"/><path d="M1300 550 L1220 825"/></g>
+  <g font-family="${fonts.sans}">
+    <g transform="translate(1185 190)"><circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/><rect x="24" y="-34" width="204" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="42" y="-5" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("beijing").name)}</text><text x="42" y="20" fill="#5f5f5a" font-size="16">${escapeXml(city("beijing").graphicSummary)}</text></g>
+    <g transform="translate(990 365)"><circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/><rect x="-210" y="-34" width="184" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="-190" y="-5" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("xian").name)}</text><text x="-190" y="20" fill="#5f5f5a" font-size="16">${escapeXml(city("xian").graphicSummary)}</text></g>
+    <g transform="translate(1390 425)"><circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/><rect x="-8" y="-94" width="170" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="10" y="-65" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("shanghai").name)}</text><text x="10" y="-40" fill="#5f5f5a" font-size="16">${escapeXml(city("shanghai").graphicSummary)}</text></g>
+    <g transform="translate(820 530)"><circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/><rect x="-20" y="-96" width="188" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="0" y="-67" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("chengdu").name)}</text><text x="0" y="-42" fill="#5f5f5a" font-size="16">${escapeXml(city("chengdu").graphicSummary)}</text></g>
+    <g transform="translate(1300 550)"><circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/><rect x="26" y="-14" width="188" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="44" y="15" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("hangzhou").name)}</text><text x="44" y="40" fill="#5f5f5a" font-size="16">${escapeXml(city("hangzhou").graphicSummary)}</text></g>
+    <g transform="translate(940 620)"><circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/><rect x="-206" y="-10" width="178" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="-188" y="19" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("chongqing").name)}</text><text x="-188" y="44" fill="#5f5f5a" font-size="16">${escapeXml(city("chongqing").graphicSummary)}</text></g>
+    <g transform="translate(1080 680)"><circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/><rect x="26" y="-8" width="210" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="44" y="21" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("zhangjiajie").name)}</text><text x="44" y="46" fill="#5f5f5a" font-size="16">${escapeXml(city("zhangjiajie").graphicSummary)}</text></g>
+    <g transform="translate(1060 805)"><circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/><rect x="-250" y="-6" width="218" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="-232" y="23" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("guilin-yangshuo").name)}</text><text x="-232" y="48" fill="#5f5f5a" font-size="16">${escapeXml(city("guilin-yangshuo").graphicSummary)}</text></g>
+    <g transform="translate(1220 825)"><circle r="17" fill="#141413"/><circle r="7" fill="#faf9f5"/><rect x="20" y="-6" width="190" height="68" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="38" y="23" fill="#141413" font-size="22" font-weight="700">${escapeXml(city("guangzhou").name)}</text><text x="38" y="48" fill="#5f5f5a" font-size="16">${escapeXml(city("guangzhou").graphicSummary)}</text></g>
+    <g transform="translate(1325 900)"><circle r="17" fill="#a74731"/><circle r="7" fill="#faf9f5"/><rect x="-236" y="22" width="226" height="54" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="-216" y="55" fill="#141413" font-size="20" font-weight="700">${escapeXml(`${city("shenzhen").name} · ${city("shenzhen").graphicSummary}`)}</text></g>
+  </g>
+  <line x1="84" y1="920" x2="694" y2="920" stroke="#d8d8d1"/><text x="84" y="954" fill="#5f5f5a" font-family="${fonts.sans}" font-size="17">${escapeXml(`${copy.graphic.versionLabel} ${assetData.version} · ${copy.graphic.reviewedLabel} ${localizedReviewLabel(locale)} · CC BY 4.0 · homegroundchina.com`)}</text>
+</svg>`;
+}
+
+function wrapLocalizedText(value, locale, limit, maxLines) {
+  const segments = [...new Intl.Segmenter(locale, { granularity: "word" }).segment(value)]
+    .map((part) => part.segment);
+  const lines = [];
+  let current = "";
+  const units = (text) => [...text].reduce(
+    (total, character) => total + (/^[\u0000-\u007f]$/u.test(character) ? 0.58 : 1),
+    0,
+  );
+  for (const segment of segments) {
+    const candidate = `${current}${segment}`;
+    if (!current || units(candidate) <= limit) current = candidate;
+    else {
+      lines.push(current.trim());
+      current = segment.trimStart();
+    }
+  }
+  if (current) lines.push(current.trim());
+  if (lines.length > maxLines) {
+    throw new Error(`Localized card copy exceeds ${maxLines} lines (${locale}): ${value}`);
+  }
+  return lines;
+}
+
+function localizedCityCard(city, index, copy, locale) {
+  const fonts = localizedFontFamilies(locale);
+  const cardLineLimit = locale === "zh" ? 13 : 14;
+  const gatewayLines = wrapLocalizedText(city.gatewaySummary, locale, cardLineLimit, 5);
+  const stayLines = wrapLocalizedText(city.stayDefault, locale, cardLineLimit, 5);
+  const moveLines = wrapLocalizedText(city.oneMoveRule, locale, cardLineLimit, 5);
+  const warningLines = wrapLocalizedText(city.warning, locale, 48, 2);
+  const title = `${city.name} · ${city.secondaryName}`;
+  const titleSize = title.length > 18 ? 40 : 50;
+  const accessibleTitle = locale === "zh" ? `${city.name}抵达、住宿与出发判断卡` : `${city.name} 도착·숙박·출발 판단 카드`;
+  const accessibleDescription = locale === "zh"
+    ? `比较${city.name}的主要门户、初次到访住宿起点和错站提醒。`
+    : `${city.name}의 주요 관문, 첫 여행 숙박 시작점과 다른 관문 주의 사항을 비교합니다.`;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc"><title id="title">${escapeXml(accessibleTitle)}</title><desc id="desc">${escapeXml(accessibleDescription)}</desc><rect width="1200" height="675" fill="#faf9f5"/><rect width="1200" height="12" fill="#a74731"/><text x="64" y="72" fill="#7f2e1d" font-family="${fonts.sans}" font-size="18" font-weight="700" letter-spacing="1">HOMEGROUND CHINA · ${escapeXml(copy.graphic.cityCardLabel)} ${String(index + 1).padStart(2, "0")}</text><text x="64" y="136" fill="#141413" font-family="${fonts.serif}" font-size="${titleSize}">${escapeXml(title)}</text><text x="64" y="174" fill="#5f5f5a" font-family="${fonts.sans}" font-size="21">${escapeXml(copy.graphic.confirmGateway)}</text><g font-family="${fonts.sans}"><rect x="64" y="218" width="330" height="238" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="92" y="260" fill="#a74731" font-size="17" font-weight="700" letter-spacing="1">${escapeXml(copy.graphic.arriveDepart)}</text><text fill="#141413" font-size="20" font-weight="700">${svgTextLines(gatewayLines, 92, 304, 28)}</text><rect x="435" y="218" width="330" height="238" rx="8" fill="#141413"/><text x="463" y="260" fill="#b0aea5" font-size="17" font-weight="700" letter-spacing="1">${escapeXml(copy.graphic.startWith)}</text><text fill="#faf9f5" font-size="20" font-weight="700">${svgTextLines(stayLines, 463, 304, 28)}</text><rect x="806" y="218" width="330" height="238" rx="8" fill="#fff" stroke="#d8d8d1"/><text x="834" y="260" fill="#a74731" font-size="17" font-weight="700" letter-spacing="1">${escapeXml(copy.graphic.oneMoveRule)}</text><text fill="#141413" font-size="20" font-weight="700">${svgTextLines(moveLines, 834, 304, 28)}</text></g><rect x="64" y="492" width="1072" height="96" rx="8" fill="#f2e7de"/><text x="92" y="528" fill="#7f2e1d" font-family="${fonts.sans}" font-size="17" font-weight="700">${escapeXml(copy.graphic.wrongNodeWarning)}</text><text fill="#141413" font-family="${fonts.sans}" font-size="18">${svgTextLines(warningLines, 92, 558, 24)}</text><text x="64" y="635" fill="#5f5f5a" font-family="${fonts.sans}" font-size="16">${escapeXml(`${copy.graphic.schematicLabel} · ${copy.graphic.versionLabel} ${assetData.version} · CC BY 4.0 · ${copy.graphic.reviewedLabel} ${localizedReviewLabel(locale)} · homegroundchina.com`)}</text></svg>`;
+}
+
+for (const [locale, copy] of Object.entries(localizedCopies)) {
+  const cityById = new Map(copy.cities.map((city) => [city.id, city]));
+  await sharp(Buffer.from(localizedNationalMap(copy, locale)), { density: 144 })
+    .resize(1600, 1000)
+    .webp({ quality: 88, smartSubsample: true })
+    .toFile(path.join(imageRoot, `hero-1600.${locale}.webp`));
+
+  for (const cityId of originalCityCards) {
+    const city = cityById.get(cityId);
+    const index = assetData.cities.findIndex((candidate) => candidate.id === cityId);
+    if (!city || index < 0) throw new Error(`Missing localized ${locale} city card: ${cityId}`);
+    await sharp(Buffer.from(localizedCityCard(city, index, copy, locale)), { density: 144 })
+      .resize(1200, 675)
+      .webp({ quality: 88, smartSubsample: true })
+      .toFile(path.join(imageRoot, `${cityId}-card-1200.${locale}.webp`));
+  }
 }
 
 const jsonName = `${filePrefix}.json`;

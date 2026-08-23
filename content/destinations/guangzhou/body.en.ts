@@ -178,7 +178,7 @@ const body = {
     {
       id: "airport-1",
       type: "paragraph",
-      text: "This is the single most out-of-date fact in older Guangzhou advice. From 7 May 2026, Baiyun's eleven domestic airlines moved out of Terminal 1 to Terminal 3, and T1 — in service for nearly twenty-two years — ceased passenger operations for an upgrade. A renovation design was selected in July 2026 and no reopening date has been announced, so a reopening cannot be planned around. At the same time, the metro's Airport South station and the intercity railway's Baiyun Airport South station, both tied to T1, stopped serving passengers.",
+      text: "This is the single most out-of-date fact in older Guangzhou advice. From 7 May 2026, Baiyun's eleven domestic airlines moved out of Terminal 1 to Terminal 3, and T1 — in service for nearly twenty-two years — ceased passenger operations for an upgrade. No reopening date has been announced, so a reopening cannot be planned around. At the same time, the metro's Airport South station and the intercity railway's Baiyun Airport South station, both tied to T1, stopped serving passengers.",
     },
     {
       id: "airport-table",
@@ -214,7 +214,7 @@ const body = {
     {
       id: "airport-links",
       type: "internal-links",
-      title: "Hand the terminal decision to its owner",
+      title: "Choose the exact terminal with the detailed guide",
       items: [
         {
           label: "Guangzhou Baiyun Airport: T2 or T3?",
@@ -276,12 +276,12 @@ const body = {
     {
       id: "stations-2",
       type: "paragraph",
-      text: "For Hong Kong, search Guangzhou South first and Guangzhou East separately for the exact date. For Shenzhen, match the Guangzhou station to the Shenzhen endpoint rather than to habit. Passport, luggage and boarding procedure belong to the high-speed train guide; this hub owns only the station overview.",
+      text: "For Hong Kong, search Guangzhou South first and Guangzhou East separately for the exact date. For Shenzhen, match the Guangzhou station to the Shenzhen endpoint rather than to habit. Use the high-speed train guide for passport, luggage and boarding procedures; this city guide covers only the station overview.",
     },
     {
       id: "station-links",
       type: "internal-links",
-      title: "Continue with the transport owners",
+      title: "Continue with the detailed transport guides",
       items: [
         {
           label: "Using China's high-speed trains for the first time",
@@ -407,7 +407,7 @@ const body = {
     {
       id: "extension-links",
       type: "internal-links",
-      title: "Decide the regional order with its owner",
+      title: "Decide the regional order with the detailed guide",
       items: [
         {
           label: "Guangzhou, Shenzhen and Hong Kong: route order",

@@ -340,7 +340,7 @@ const body = {
     {
       id: "city-links",
       type: "internal-links",
-      title: "把城市里的具体决定交给对应 owner",
+      title: "用对应详细指南完成城市内的具体决定",
       items: [
         {
           label: "成都熊猫基地还是都江堰熊猫谷？",
@@ -425,7 +425,7 @@ const body = {
     {
       id: "branch-links",
       type: "internal-links",
-      title: "订支线之前，先打开对应 owner",
+      title: "预订支线前，先打开对应详细指南",
       items: [
         {
           label: "三星堆博物馆：预约与展厅顺序",
@@ -505,7 +505,7 @@ const body = {
     {
       id: "next-links",
       type: "internal-links",
-      title: "继续交给路线 owner",
+      title: "继续阅读对应路线指南",
       items: [
         {
           label: "北京、西安与成都：怎样排顺序",

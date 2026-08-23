@@ -40,7 +40,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "lanzhou-warning", type: "callout", title: "换乘不等于到访", tone: "warning", body: "中午在兰州换一次车，然后把这一天称作“在兰州的一天”，是这条路线最常见的隐性时间流失。如果兰州只是换乘，就按换乘来订，行李随身，不要为了让它显得合理而再订一间房。反过来，如果你确实给了兰州一晚，就给它完整的一晚——22点到、次日7点走，那是一笔住宿账单，不是一站行程。" },
 
   { id: "longleg-heading", type: "heading", level: 2, text: "长途那一段才是这趟行程真正的成本" },
-  { id: "longleg-copy", type: "paragraph", text: "兰州到敦煌，无论哪种方式都很长，而这些方式并不像搜索结果暗示的那样等价。高速选项走的是兰新高铁——2014年12月26日全线开通，自兰州经西宁至乌鲁木齐——但它不停敦煌。真正开到敦煌站的列车会驶入敦煌铁路，那是一条普速单线。而敦煌本身有机场：中国民用航空局把敦煌莫高国际机场列入甘肃的国际（口岸）运输机场，所以飞这一段是真实选项，不是纸上谈兵。" },
+  { id: "longleg-copy", type: "paragraph", text: "兰州到敦煌，无论哪种方式都很长，而这些方式并不像搜索结果暗示的那样等价。高速选项走的是兰新高铁——2014年12月26日全线开通，自兰州经西宁至乌鲁木齐——但它不停敦煌。真正开到敦煌站的列车会驶入敦煌铁路，那是一条普速单线。中国民用航空局可以证明敦煌有机场，但这不能证明你的出行日一定有兰州—敦煌直飞客运航班。是否有直飞属于实时班表问题；把航空当作可用选项前，必须向航空公司核实。" },
   { id: "longleg-list", type: "list", ordered: true, items: [
     "先决定你是否接受落在敦煌城区之外。如果不接受，选项就只剩“到敦煌站的列车”或“航班”，柳园南直接出局。",
     "如果你接受柳园南，请把到敦煌的公路接驳算进这段行程本身，而不是事后再说，并核实你的列车实际到达的那个时刻有什么在运行。",
@@ -98,7 +98,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "敦煌铁路全线开通运营", url: "https://www.yidaiyilu.gov.cn/p/113261.html", publisher: "中国一带一路网", reviewedAt: "2026-08-22" },
     { label: "兰州中川机场环线铁路投运，T1、T2航站楼暂停使用", url: "http://www.sasac.gov.cn/n2588025/n2588129/c33097533/content.html", publisher: "国务院国有资产监督管理委员会", reviewedAt: "2026-08-22" },
     { label: "兰州中川国际机场三期建成投运，T3航站楼2025年3月20日启用", url: "https://www.ndrc.gov.cn/xwdt/ztzl/dtfzgz/202504/t20250403_1397004.html", publisher: "国家发展和改革委员会", reviewedAt: "2026-08-22" },
-    { label: "敦煌莫高国际机场列入甘肃国际（口岸）运输机场", url: "http://www.caac.gov.cn/GYMH/MHGK/GJKAYSJC/XBDQ/GS/202404/t20240417_223898.html", publisher: "中国民用航空局", reviewedAt: "2026-08-22" },
+    { label: "敦煌莫高国际机场列入甘肃国际（口岸）运输机场", url: "http://www.caac.gov.cn/GYMH/MHGK/GJKAYSJC/XBDQ/GS/202404/t20240417_223898.html", publisher: "中国民用航空局", reviewedAt: "2026-08-23" },
     { label: "兰新高铁开通日期、走向与里程", url: "http://www.qinghai.gov.cn/dmqh/system/2024/12/27/030061694.shtml", publisher: "青海省人民政府", reviewedAt: "2026-08-22" },
     { label: "题图：敦煌站，摄影 Hanno Böck，CC0 公共领域贡献；已裁切并转换为WebP", url: "https://commons.wikimedia.org/wiki/File:Dunhuang-station.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-22" },
     { label: "题图许可：CC0 1.0 通用", url: "https://creativecommons.org/publicdomain/zero/1.0/", publisher: "Creative Commons", reviewedAt: "2026-08-22" },

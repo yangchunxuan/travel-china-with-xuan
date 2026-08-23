@@ -419,7 +419,7 @@ const body: StructuredPageBody = {
       ordered: true,
       items: [
         "Open written cases with the carrier and your ticket issuer separately: one sentence of fact, one of request, evidence attached, case numbers demanded.",
-        "Give first lines their regulatory room — acknowledgement within seven days, substantive reply within ten for domestic respondents. Chase in writing; daily calls reset nothing.",
+        "For a complaint sent directly to the carrier or ticket issuer, the rules require prompt acceptance or an explanation if it is not accepted, and a handling result with a proposed solution within 10 working days. They do not set a separate seven-day first-line acceptance period. Chase in writing; repeated calls do not create a record.",
         "Escalate to CAAC's Consumer Affairs Center via www.12326.cn or hotline 12326: real name required, within six months, with a specific request. Acceptance is decided within seven working days; respondents post results within ten working days of referral.",
         "Unsatisfied? Request mediation within ten working days of that result; it completes within twenty. Beyond that lie arbitration and courts — delay-damage claims face a two-year litigation limit, so state your claim in writing early.",
         "Report any later refund or settlement to every open case so overlapping claims close cleanly.",
@@ -538,10 +538,10 @@ const body: StructuredPageBody = {
           reviewedAt: "2026-08-22",
         },
         {
-          label: "Public air transport passenger service regulation (Arts. 24–27: involuntary changes, refund fees, seven-working-day refunds, connecting flights)",
+          label: "Public air transport passenger service regulation (Arts. 24–27 and 52: ticket recovery, refunds and direct-complaint handling)",
           url: "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html",
           publisher: "Ministry of Transport / CAAC",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Provisions on the Administration of Flight Regularity (English translation, MOT Order No. 56 of 2016)",
@@ -559,7 +559,7 @@ const body: StructuredPageBody = {
           label: "CAAC air-travel knowledge: complaints and rights protection (12326 platform scope and timelines)",
           url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217603.html",
           publisher: "Civil Aviation Administration of China",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Air China general conditions of carriage for passengers and baggage (April 2026 edition)",

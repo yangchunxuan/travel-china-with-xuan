@@ -284,8 +284,8 @@ test("the CSV and visible matrix carry every city", async () => {
   const csvRows = csv.trim().split(/\r?\n/u);
 
   assert.equal(csvRows.length, 11);
+  assert.ok(component.includes("data.cities.map"));
   for (const city of data.cities) {
-    assert.ok(component.includes("assetData.cities.map"));
     assert.ok(
       csv.includes(city.name.split(" /")[0]),
       `CSV must include ${city.name}`,
@@ -298,11 +298,13 @@ test("the CSV and visible matrix carry every city", async () => {
 });
 
 test("the page emits linked Article, Dataset and licensed downloadable-asset schema", async () => {
-  const [component, actions, analytics] = await Promise.all([
+  const [component, actions, analytics, i18n] = await Promise.all([
     source("components/FirstTripTenCityMapPage.tsx"),
     source("components/LinkableAssetActions.tsx"),
     source("lib/analytics.ts"),
+    source("lib/firstTripTenCityMapI18n.ts"),
   ]);
+  const visibleCopy = `${component}\n${i18n}`;
 
   assert.match(component, /"@type": "Article"/);
   assert.match(component, /"@type": "Dataset"/);
@@ -318,7 +320,7 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
     /isPartOf: \{ "@id": EDITORIAL_WEBSITE_ID \}/,
   );
   assert.match(component, /<GuideCtaLink/);
-  assert.match(component, /US\$69 human route review/);
+  assert.match(i18n, /US\$69 human route review/);
   assert.match(component, new RegExp(`${filePrefix}\\.zip`));
   assert.match(component, new RegExp(`${filePrefix}\\.json`));
   assert.match(component, new RegExp(`${filePrefix}-LICENSE\\.txt`));
@@ -366,14 +368,73 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
     "free reuse terms and downloads must be visible before the commercial route-review CTA",
   );
   assert.match(component, /id="licence"/);
-  assert.match(component, /including commercially/);
-  assert.match(component, /do not imply endorsement/);
-  assert.match(component, /Third-party names, trademarks, source pages and facts are not relicensed/);
+  assert.match(visibleCopy, /including commercially/);
+  assert.match(visibleCopy, /do not imply endorsement/);
+  assert.match(visibleCopy, /Third-party names, trademarks, source pages and facts are not relicensed/);
   assert.match(actions, /download/);
+  assert.match(actions, /page_language: locale/);
   assert.match(actions, /linkable_asset_download_clicked/);
   assert.match(actions, /linkable_asset_citation_copied/);
   assert.match(analytics, /\| "linkable_asset_download_clicked"/);
   assert.match(analytics, /\| "linkable_asset_citation_copied"/);
+});
+
+test("the bespoke map publishes full ZH and KO equivalents with localized graphics", async () => {
+  const [metadataSource, zhSource, koSource, route, component, i18n, builder, registry] =
+    await Promise.all([
+      source("content/guides/first-trip-china-airport-station-stay-map/metadata.json"),
+      source("content/guides/first-trip-china-airport-station-stay-map/asset-copy.zh.json"),
+      source("content/guides/first-trip-china-airport-station-stay-map/asset-copy.ko.json"),
+      source("app/(localized)/[locale]/guides/first-trip-china-airport-station-stay-map/page.tsx"),
+      source("components/FirstTripTenCityMapPage.tsx"),
+      source("lib/firstTripTenCityMapI18n.ts"),
+      source("tools/build-first-trip-ten-city-assets.mjs"),
+      source("lib/guideRegistry.ts"),
+    ]);
+  const metadata = JSON.parse(metadataSource);
+  const en = JSON.parse(await source(dataPath));
+  const zh = JSON.parse(zhSource);
+  const ko = JSON.parse(koSource);
+
+  assert.deepEqual(Object.keys(metadata.locales), ["en", "zh", "ko"]);
+  assert.equal(metadata.locales.zh.path, "/zh/guides/first-trip-china-airport-station-stay-map/");
+  assert.equal(metadata.locales.ko.path, "/ko/guides/first-trip-china-airport-station-stay-map/");
+  assert.match(metadata.locales.zh.description, /机场|火车站|住宿区域/u);
+  assert.match(metadata.locales.ko.description, /공항|기차역|숙박/u);
+  assert.deepEqual(zh.cities.map((city) => city.id), en.cities.map((city) => city.id));
+  assert.deepEqual(ko.cities.map((city) => city.id), en.cities.map((city) => city.id));
+  assert.deepEqual(zh.sources.map((item) => item.id), en.sources.map((item) => item.id));
+  assert.deepEqual(ko.sources.map((item) => item.id), en.sources.map((item) => item.id));
+  assert.match(route, /localizedLocale/);
+  assert.match(route, /FirstTripTenCityMapPage locale=\{locale\}/);
+  assert.match(route, /hero-1600\.\$\{locale\}\.webp/);
+  assert.match(route, /openGraph:[\s\S]*images:[\s\S]*localizedHero/);
+  assert.match(route, /twitter:[\s\S]*images:[\s\S]*localizedHero/);
+  assert.match(component, /getGuideLanguagePaths\(guide\.id\)/);
+  assert.match(component, /getGuideEntry\(FIRST_TRIP_TEN_CITY_GUIDE_ID, locale\)/);
+  assert.match(component, /heroImagePath\(locale\)/);
+  assert.match(component, /spotlightImagePath\(spotlightIds\[index\], locale\)/);
+  assert.match(i18n, /不要只看到城市名就决定住哪里/u);
+  assert.match(i18n, /도시 이름만 보고 중국 숙소를 고르지 마세요/u);
+  assert.match(builder, /localizedNationalMap/);
+  assert.match(builder, /localizedCityCard/);
+  assert.match(builder, /descriptionLines\s*=\s*wrapLocalizedText/);
+  assert.match(builder, /svgTextLines\(descriptionLines,\s*198,\s*descriptionY,\s*22\)/);
+  assert.match(registry, /localizedTenCityMapHero/);
+  assert.match(registry, /hero-1600\.\$\{locale\}\.webp/);
+  assert.match(
+    registry,
+    /const cardImagePath\s*=\s*localizedTenCityMapHero\s*\?\?/u,
+  );
+  assert.match(registry, /return \{[\s\S]*\n\s*cardImagePath,/u);
+
+  const localizedImages = ["zh", "ko"].flatMap((locale) => [
+    `${imageRoot}hero-1600.${locale}.webp`,
+    ...["beijing", "shanghai", "zhangjiajie"].map(
+      (city) => `${imageRoot}${city}-card-1200.${locale}.webp`,
+    ),
+  ]);
+  await Promise.all(localizedImages.map((file) => access(new URL(file, projectRoot))));
 });
 
 test("the reusable map feature is wired into every homepage and the indexed transport article", async () => {

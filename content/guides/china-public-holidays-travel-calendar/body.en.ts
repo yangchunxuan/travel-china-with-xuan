@@ -11,7 +11,7 @@ const body = {
     {
       id: "status-summary",
       type: "comparison",
-      title: "Calendar status checked August 11, 2026",
+      title: "Calendar status checked August 23, 2026",
       columns: [
         {
           heading: "2026 — official",
@@ -229,7 +229,7 @@ const body = {
       type: "callout",
       tone: "warning",
       title: "2027: not yet published",
-      body: "As of August 11, 2026, the official 2027 public-holiday and compensatory-workday schedule has not yet been published. Keep the annual calendar as an unresolved planning dependency. Do not convert festival dates or last year's workdays into a booking promise.",
+      body: "As of August 23, 2026, the official 2027 public-holiday and compensatory-workday schedule has not yet been published. Keep the annual calendar as an unresolved planning dependency. Do not convert festival dates or last year's workdays into a booking promise.",
     },
     {
       id: "update-mechanism",
@@ -281,7 +281,7 @@ const body = {
       title: "Official sources reviewed",
       items: [
         { label: "2026 public-holiday schedule", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "General Office of the State Council", reviewedAt: "2026-08-11" },
-        { label: "2026 Spring Festival transport plan", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
+        { label: "2026 integrated Spring Festival transport safety and service plan", url: "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-23" },
         { label: "2026 Qingming transport review", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
         { label: "2026 Labour Day transport briefing", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
         { label: "Current railway ticket rules", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "China Railway 12306", reviewedAt: "2026-08-11" },

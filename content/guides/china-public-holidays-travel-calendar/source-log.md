@@ -1,8 +1,11 @@
 # Source log — China public holidays and travel crowds
 
-Status: `RELEASE REVIEW COMPLETE — OFFICIAL SOURCES RECHECKED 2026-08-11`
+Status: `RELEASE REVIEW COMPLETE — SPRING FESTIVAL SOURCE REPLACED AND RECHECKED 2026-08-23`
 
-Checked at: 2026-08-11 (Asia/Shanghai)
+Checked at: 2026-08-23 (Asia/Shanghai) for the Spring Festival source replacement and 2027
+publication-status check; remaining source records retain their stated 2026-08-11 review.
+This updates `dateModified`; the page-level `sourceReviewedDate` remains 2026-08-11 because the
+complete source set was not re-audited.
 
 Canonical owner: `/guides/china-public-holidays-travel-calendar/`
 
@@ -30,9 +33,9 @@ This guide owns the nationwide annual calendar: official public-holiday periods,
 ### state-council-2027-status
 
 - Publisher/source pool: State Council policy database and official government search
-- Version: availability check at 2026-08-11
+- Version: availability check at 2026-08-23
 - URL: not applicable because no 2027 annual schedule has been published
-- Checked at: 2026-08-11
+- Checked at: 2026-08-23
 - Fact used: the 2027 official schedule is **not yet published / 尚未发布 / 아직 발표되지 않음**.
 - Boundary: no dates may be inferred from the lunar calendar, prior-year arrangements, media forecasts, or booking platforms.
 - Update trigger: publication of an official General Office of the State Council notice for 2027.
@@ -40,11 +43,12 @@ This guide owns the nationwide annual calendar: official public-holiday periods,
 ### mot-2026-spring-festival-plan
 
 - Publisher: Ministry of Transport of the People's Republic of China
-- Title: 2026年春运将于2月2日启动 全社会跨区域人员流动量预计将达95亿人次
-- Published: 2026-01-26
-- URL: https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html
-- Checked at: 2026-08-11
-- Fact used: the 2026 Spring Festival transport season ran from February 2 to March 13, a 40-day transport period.
+- Title: 交通运输部等八部门关于印发《2026年综合运输春运安全生产和服务保障总体方案》的通知
+- Published: 2026-01-24
+- URL: https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html
+- Checked at: 2026-08-23; HTTP 200 in normal browser and command-line checks
+- Fact used: the official 2026 integrated Spring Festival transport plan defines the transport
+  season as February 2 to March 13, a 40-day period.
 - Boundary: this does not turn the whole 40 days into public holidays and does not prove identical conditions on every route.
 - Update trigger: the next official Spring Festival transport plan or a correction to the 2026 notice.
 

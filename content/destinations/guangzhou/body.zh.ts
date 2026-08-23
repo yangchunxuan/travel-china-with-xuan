@@ -174,7 +174,7 @@ const body = {
     {
       id: "airport-1",
       type: "paragraph",
-      text: "这是旧广州攻略里最容易过时的一条。2026 年 5 月 7 日起，白云机场 11 家国内航司从 T1 全部转场至 T3，服役近二十二年的 T1 停止客运并进入改造。2026 年 7 月已确定改造设计方案，但没有公布复航日期，因此不能按“快要重开”来规划。与此同时，与 T1 相连的地铁机场南站和城际白云机场南站也不再停靠办客。",
+      text: "这是旧广州攻略里最容易过时的一条。2026 年 5 月 7 日起，白云机场 11 家国内航司从 T1 全部转场至 T3，服役近二十二年的 T1 停止客运并进入改造。目前没有公布复航日期，因此不能按“快要重开”来规划。与此同时，与 T1 相连的地铁机场南站和城际白云机场南站也不再停靠办客。",
     },
     {
       id: "airport-table",
@@ -210,7 +210,7 @@ const body = {
     {
       id: "airport-links",
       type: "internal-links",
-      title: "把航站楼决定交给对应 owner",
+      title: "用对应详细指南选择准确航站楼",
       items: [
         {
           label: "广州白云机场：T2 还是 T3？",
@@ -276,7 +276,7 @@ const body = {
     {
       id: "station-links",
       type: "internal-links",
-      title: "继续交给交通 owner",
+      title: "继续阅读对应交通指南",
       items: [
         {
           label: "第一次坐中国高铁",
@@ -402,7 +402,7 @@ const body = {
     {
       id: "extension-links",
       type: "internal-links",
-      title: "区域顺序交给对应 owner",
+      title: "用对应详细指南决定区域顺序",
       items: [
         {
           label: "广州、深圳与香港：顺序怎么排",

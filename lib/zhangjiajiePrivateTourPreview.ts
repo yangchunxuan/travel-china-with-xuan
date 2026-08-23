@@ -357,14 +357,14 @@ export const productPreviewCopy = {
         url: "https://whc.unesco.org/en/list/640/",
       },
       {
-        label: "Two-day Zhangjiajie Global Geopark route",
-        publisher: "Zhangjiajie UNESCO Global Geopark",
-        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620135033852.html",
+        label: "Official two- and three-day Wulingyuan routes",
+        publisher: "Hunan Provincial Department of Culture and Tourism",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022touristroute/202209/t20220907_28658210.html",
       },
       {
-        label: "Three-day Zhangjiajie Global Geopark route",
-        publisher: "Zhangjiajie UNESCO Global Geopark",
-        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620161311924.html",
+        label: "Official Zhangjiajie three-day planning guidance",
+        publisher: "Hunan Provincial Department of Culture and Tourism",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220816_27584142.html",
       },
       {
         label: "Tianmen Mountain visitor-transport reference",
@@ -712,14 +712,14 @@ export const productPreviewCopy = {
         url: "https://whc.unesco.org/en/list/640/",
       },
       {
-        label: "张家界世界地质公园二日游路线",
-        publisher: "张家界世界地质公园",
-        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620135033852.html",
+        label: "武陵源二日与三日官方路线",
+        publisher: "湖南省文化和旅游厅",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022touristroute/202209/t20220907_28658210.html",
       },
       {
-        label: "张家界世界地质公园三日游路线",
-        publisher: "张家界世界地质公园",
-        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620161311924.html",
+        label: "张家界三日游官方规划参考",
+        publisher: "湖南省文化和旅游厅",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220816_27584142.html",
       },
       {
         label: "天门山景区交通参考",
@@ -1070,14 +1070,14 @@ export const productPreviewCopy = {
         url: "https://whc.unesco.org/en/list/640/",
       },
       {
-        label: "장자제 세계지질공원 2일 코스",
-        publisher: "장자제 유네스코 세계지질공원",
-        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620135033852.html",
+        label: "우링위안 공식 2일·3일 동선",
+        publisher: "후난성 문화관광청",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022touristroute/202209/t20220907_28658210.html",
       },
       {
-        label: "장자제 세계지질공원 3일 코스",
-        publisher: "장자제 유네스코 세계지질공원",
-        url: "https://zhangjiajieuggp.org.cn/html/2026/2026032620161311924.html",
+        label: "장자제 공식 3일 일정 참고",
+        publisher: "후난성 문화관광청",
+        url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220816_27584142.html",
       },
       {
         label: "톈먼산 방문객 교통 자료",

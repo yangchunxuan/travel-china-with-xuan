@@ -253,7 +253,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "Choose the base with the accommodation owner",
+      title: "Choose the base with the detailed accommodation guide",
       items: [
         {
           label: "Where to stay in Shanghai on a first trip",
@@ -362,7 +362,7 @@ const body = {
     {
       id: "airport-links",
       type: "internal-links",
-      title: "Hand the arrival decision to its owner",
+      title: "Choose the arrival gateway with the detailed guide",
       items: [
         {
           label: "Pudong or Hongqiao airport for Shanghai",
@@ -434,7 +434,7 @@ const body = {
     {
       id: "regional-links",
       type: "internal-links",
-      title: "Decide the delta structure with its owners",
+      title: "Decide the delta structure with the detailed route guides",
       items: [
         {
           label: "Shanghai–Hangzhou station and route guide",

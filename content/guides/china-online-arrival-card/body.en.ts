@@ -191,8 +191,8 @@ const body: StructuredPageBody = {
     {
       id: "boundary-table",
       type: "table",
-      caption: "The arrival card owns one task, not the whole border journey",
-      columns: ["Task", "Controlling owner", "This guide's boundary"],
+      caption: "The arrival card covers one task, not the whole border journey",
+      columns: ["Task", "Responsible authority", "What this guide covers"],
       rows: [
         ["Visa, visa-free or transit eligibility", "NIA, the competent Chinese mission and the operating carrier for its boarding check", "No passport-specific eligibility is copied into the arrival-card workflow"],
         ["Online arrival-card information", "National Immigration Administration", "This page explains the free channels, preparation, exemptions and recovery"],
@@ -223,7 +223,7 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "Continue the arrival plan without duplicating the rules",
       items: [
-        { label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Check visa, visa-free and transit owners separately from the arrival card." },
+        { label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Check visa, visa-free and transit rules in the separate entry guide." },
         { label: "Passport validity and blank pages", href: "/guides/china-passport-validity-and-blank-pages/", description: "Audit the physical passport and separate airline, visa and border rules." },
         { label: "China Customs red or green channel", href: "/guides/china-customs-red-green-channels/", description: "Decide whether baggage needs a Customs declaration after immigration." },
         { label: "Can a China arrival day support a timed booking?", href: "/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "Protect the first day without assuming the online card removes border-processing uncertainty." },

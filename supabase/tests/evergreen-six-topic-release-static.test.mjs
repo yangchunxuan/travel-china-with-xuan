@@ -79,7 +79,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
   ));
   assert.deepEqual(
     [forbiddenCity.datePublished, forbiddenCity.dateModified, forbiddenCity.sourceReviewedDate],
-    ["2026-08-11", "2026-08-22", "2026-08-22"],
+    ["2026-08-11", "2026-08-23", "2026-08-22"],
   );
   assert.match(forbiddenCity.locales.en.title, /Tiananmen Square and Forbidden City/u);
 });
@@ -98,6 +98,9 @@ test("six trilingual owners retain one localized editorial structure", async () 
     assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.zh), `${root}/zh`);
     assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.ko), `${root}/ko`);
     assert.ok(blockSignature(bodies.en).length >= 25, `${root} substantial structure`);
+    if (root.endsWith("forbidden-city-for-foreign-visitors")) {
+      assert.equal(blockSignature(bodies.en).length, 52, `${root} recorded block count`);
+    }
   }
 });
 
@@ -173,7 +176,7 @@ test("shared discovery and governance expose the release without paid-service am
     const start = destinationRegistry.indexOf(`id: "${city}"`);
     const end = destinationRegistry.indexOf("\n  {\n    id:", start + 1);
     const entry = destinationRegistry.slice(start, end < 0 ? undefined : end);
-    assert.match(entry, /dateModified: "2026-08-22"/u, `${city} modified`);
+    assert.match(entry, /dateModified: "2026-08-23"/u, `${city} modified`);
     assert.match(entry, /sourceReviewedDate: "2026-08-22"/u, `${city} reviewed`);
   }
 

@@ -19,7 +19,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Terrace area", "Named area and village, not only ‘Longji’", "‘The driver knows the best place’"],
     ["Vehicle endpoint", "Named parking area or drop-off plus the remaining walk", "‘The hotel is inside the scenic area’"],
     ["Walking plan", "Surface, stairs, elevation change and turnaround point", "‘Easy for everyone’"],
-    ["Entry", "Current entrance, passport method, ticket scope and any internal transport", "A screenshot with no date or official owner"],
+    ["Entry", "Current entrance, passport method, ticket scope and any internal transport", "A screenshot with no date or official source"],
     ["Return", "Named pickup place, responsible operator and a conservative departure cutoff", "‘Call us when you finish’"],
   ]},
   { id: "day-heading", type: "heading", level: 2, text: "What a good Longji day trip actually looks like" },
@@ -107,7 +107,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "Respect for working fields, irrigation paths, homes and village privacy."
   ]},
   { id: "links", type: "internal-links", title: "Connect Longji to the rest of the route", items: [
-    { label: "Guilin to Yangshuo: train, road or river", href: "/guides/guilin-yangshuo-transport-route/", description: "Keep the separate Guilin–Yangshuo transport decision with its existing owner." },
+    { label: "Guilin to Yangshuo: train, road or river", href: "/guides/guilin-yangshuo-transport-route/", description: "Keep the separate Guilin–Yangshuo transport decision in its detailed route guide." },
     { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test whether Longji creates a one-night hotel move or a fragile fixed connection." },
     { label: "China itinerary with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Design the walking, rest and vehicle plan around the least mobile traveller." },
     { label: "Yuanyang Rice Terraces viewpoint and village route", href: "/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "Compare another living terrace system without treating the two destinations as substitutes." },

@@ -198,6 +198,13 @@ export default {
       text: "The Palace Museum publishes two-hour, half-day and one-day visitor trails. The plan below is Homeground's three-hour option between the first two official route lengths: it protects the south-to-north central sequence, leaves room for one side interest and finishes at the north gate. The three hours begin after passport inspection at the Meridian Gate. They do not include travel from the hotel, Tiananmen-area security, ticket troubleshooting or transport after exit.",
     },
     {
+      id: "gate-conservation-notice",
+      type: "callout",
+      title: "Current diversion at the Gate of Supreme Harmony",
+      body: "The Gate of Supreme Harmony has been closed for conservation work since 3 August 2026. Follow the on-site diversion around the gate. The route below shows the sequence of areas, not a promise that the gate building itself is open.",
+      tone: "warning",
+    },
+    {
       id: "route-table",
       type: "table",
       caption: "A realistic three-hour route from the Meridian Gate to the north exit",
@@ -448,6 +455,12 @@ export default {
           url: "https://www.dpm.org.cn/Visit.html",
           publisher: "The Palace Museum",
           reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Gate of Supreme Harmony conservation closure from 3 August 2026",
+          url: "https://www.dpm.org.cn/announce_detail/379422.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Palace Museum visitor, security and luggage rules",

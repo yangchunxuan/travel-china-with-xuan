@@ -100,13 +100,13 @@ export const legacySystemContentLifecycle = {
   },
   "zhangjiajie-4-day-private-tour": {
     datePublished: "2026-08-16",
-    dateModified: "2026-08-22",
+    dateModified: "2026-08-23",
     lastReviewed: "2026-08-16",
     evidence: {
       commit: "e7a0d19e320adc3dc3ce88eb9283f9765ea1d22f",
-      changedAt: "2026-08-22",
+      changedAt: "2026-08-23",
       summary:
-        "PR #88 linked the public tour to the canonical Homeground China TravelAgency and WebSite entities.",
+        "Live QA replaced two inaccessible Zhangjiajie source links; images, prices and the remaining source set were not re-reviewed.",
     },
   },
   "entry-requirements": {

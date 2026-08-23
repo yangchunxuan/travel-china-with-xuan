@@ -4,7 +4,8 @@ Status: **COPY READY — ASSETS NEEDED — CENTRAL WILL EDIT**
 
 - `topicId`: `hg-topic-0580`
 - `slug`: `china-hotel-emergency-exit-fire-safety-check`
-- `checked_at`: **2026-08-13**
+- `checked_at`: **2026-08-23** for the emergency-call order; remaining standards and legal
+  boundaries retain their 2026-08-13 review
 - Canonical task: a five-minute traveller check from the actually assigned room, including night-time, smoke, limited-mobility and route-failure recovery.
 - Excludes: rating an individual hotel's legal compliance, publishing sensitive floor plans, testing fire systems, naming “safest hotels,” platform rankings and real-time hotel availability.
 
@@ -66,7 +67,9 @@ The text separates:
 - Distinct structure: timed five-minute check → night set-up → active-smoke decision → mobility/sensory/family variants → pre-incident fault recovery → privacy boundary.
 - Scenarios: night alarm with smoke outside; wheelchair user above ground level; deaf solo guest; family with children or older relatives.
 - Recovery before an emergency: define the exact fault → duty-manager inspection → walk the cleared route → inspect a replacement room's route → relocate if no route works → preserve narrow, redacted evidence after safety is restored.
-- Active incident rule: call 119 and follow current emergency direction; do not wait for platform support, film evidence, collect luggage or return.
+- Active incident rule: call 119 first; when safe, notify hotel staff; follow fire-rescue and current
+  on-site emergency direction. Do not wait for platform support, film evidence, collect luggage or
+  return.
 
 ## Internal links
 
@@ -91,3 +94,13 @@ No hero binary is included. See `image-plan.md`. Any future photograph must have
 - Replaced two National Fire and Rescue pages that returned HTTP 412 to automated checks with accessible official Jiangsu Fire and Rescue guidance supporting the same hotel-orientation and 119 facts.
 - Reconfirmed that this is a narrow guest orientation check, not a compliance inspection or promise that a route is safe. Active-fire advice continues to defer to 119, responders and on-site emergency direction.
 - EN/ZH/KO structure remained aligned. This pass changed only natural-language wording and clarified escalation language; `sourceReviewedDate` remains 2026-08-13.
+
+## Live QA correction — 2026-08-23
+
+- Rechecked the Ministry of Emergency Management and Jiangsu Fire and Rescue public guidance used
+  for the active-fire sequence.
+- Corrected all three languages so smoke or fire triggers a call to **119 first**; hotel staff are
+  notified when it is safe to do so. “119 or staff” is no longer presented as an either/or choice.
+- The visible source cards supporting this instruction now carry their per-source 2026-08-23
+  review date. `metadata.json` records `dateModified: 2026-08-23`, while the page-level
+  `sourceReviewedDate` remains 2026-08-13 because the complete source set was not re-audited.
