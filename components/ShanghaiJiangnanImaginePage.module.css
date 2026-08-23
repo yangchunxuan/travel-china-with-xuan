@@ -184,7 +184,9 @@
   line-height: 1.35;
   min-height: 2.75rem;
   padding: 0.65rem 0.75rem;
-  transition: background-color 180ms ease, border-color 180ms ease,
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
     color 180ms ease;
 }
 
@@ -218,8 +220,11 @@
   min-height: 4.5rem;
   padding: 0.75rem 0.85rem;
   text-align: start;
-  transition: background-color 180ms ease, border-color 180ms ease,
-    color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .priceChoices button:hover {
@@ -377,7 +382,9 @@
     rotate(calc((var(--deck-depth) - 1) * 1.25deg))
     scale(calc(1 - var(--deck-depth) * 0.035));
   transform-origin: 50% 92%;
-  transition: opacity 460ms ease, transform 460ms cubic-bezier(0.2, 0.72, 0.2, 1);
+  transition:
+    opacity 460ms ease,
+    transform 460ms cubic-bezier(0.2, 0.72, 0.2, 1);
   z-index: calc(10 - var(--deck-depth));
 }
 
@@ -559,6 +566,36 @@
   min-height: 2.25rem;
 }
 
+.routeMediaEmpty {
+  align-content: end;
+  aspect-ratio: 16 / 10;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 72%), transparent 58%),
+    var(--im-soft);
+  border: 1px solid var(--im-line);
+  border-radius: 1rem;
+  display: grid;
+  gap: 0.7rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.routeMediaEmpty span {
+  color: var(--im-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.routeMediaEmpty strong {
+  color: var(--im-ink);
+  font-family: var(--font-editorial-serif), serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
 .routeList {
   display: grid;
   list-style: none;
@@ -669,6 +706,71 @@
   background: var(--im-white);
 }
 
+.creditSection {
+  background: var(--im-white);
+  border-block-start: 1px solid var(--im-line);
+  padding-block: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.photoCredits {
+  color: var(--im-muted);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  max-width: 58rem;
+}
+
+.photoCredits summary {
+  align-items: center;
+  color: var(--im-ink);
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  min-height: 2.75rem;
+  width: fit-content;
+}
+
+.photoCredits summary:focus-visible {
+  border-radius: 0.2rem;
+  outline: 2px solid var(--im-ink);
+  outline-offset: 3px;
+}
+
+.photoCreditBody {
+  border-block-start: 1px solid var(--im-line);
+  margin-block-start: 0.5rem;
+  padding-block-start: 1.25rem;
+}
+
+.photoCreditBody > p {
+  margin: 0;
+  max-width: 50rem;
+}
+
+.photoCreditBody > p:last-child {
+  margin-block-start: 1.25rem;
+}
+
+.photoCreditBody ul {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.photoCreditBody li {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.photoCreditBody a {
+  color: var(--im-ink);
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
 .scopeGrid ul {
   display: grid;
   gap: 0;
@@ -750,7 +852,9 @@
 :global(html[data-tour-motion="ready"]) .page [data-tour-reveal] {
   opacity: 0;
   transform: translateY(1.75rem);
-  transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.72, 0.2, 1);
+  transition:
+    opacity 620ms ease,
+    transform 620ms cubic-bezier(0.2, 0.72, 0.2, 1);
 }
 
 :global(html[data-tour-motion="ready"])
@@ -1055,7 +1159,6 @@
   .priceConsoleActions {
     padding-inline: 0.85rem;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
