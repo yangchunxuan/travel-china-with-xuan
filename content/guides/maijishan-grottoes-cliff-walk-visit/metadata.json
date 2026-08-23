@@ -1,0 +1,74 @@
+{
+  "id": "maijishan-grottoes-cliff-walk-visit",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "visit-readiness-decision",
+  "topics": ["grottoes", "heritage", "reservations", "accessibility", "self-assessment"],
+  "destinations": ["tianshui", "gansu"],
+  "heroImagePath": "/images/guides/maijishan-grottoes-cliff-walk-visit/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/maijishan-grottoes-cliff-walk-visit/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "sourceReviewedDate": "2026-08-23",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/maijishan-grottoes-cliff-walk-visit/",
+      "title": "Maijishan Grottoes: Can You Do the Cliff Walkways?",
+      "headline": "Maijishan Grottoes: Booking and Cliff-Walk Reality",
+      "description": "Reserve a timed slot, understand the two ticket types, and judge the narrow elevated walkways honestly using the site's own published rules and engineering figures - before you buy.",
+      "heroAlt": "The Maijishan cliff rising above temple roofs, its face carved with cave openings and lined with tiers of walkway.",
+      "navTitle": "Maijishan Grottoes",
+      "featuredLinkLabel": "Judge the Maijishan walkways",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Maijishan", "Grottoes", "Gansu"],
+      "heroCredit": {
+        "text": "Maijishan Grottoes by Tgasrio, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maijishan_grottoes.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/maijishan-grottoes-cliff-walk-visit/",
+      "title": "麦积山石窟：你走得了那条崖壁栈道吗？",
+      "headline": "麦积山石窟：预约、悬崖栈道与真实参观难度",
+      "description": "先订好分时预约、弄清两种票型，再用景区自己公布的须知与工程数据，诚实判断这条狭窄高处栈道是否适合你。",
+      "heroAlt": "麦积山崖体高耸于寺院屋顶之上，崖面布满洞窟开口与层层栈道。",
+      "navTitle": "麦积山石窟",
+      "featuredLinkLabel": "判断麦积山栈道",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["麦积山", "石窟", "甘肃"],
+      "heroCredit": {
+        "text": "麦积山石窟，摄影 Tgasrio，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maijishan_grottoes.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/maijishan-grottoes-cliff-walk-visit/",
+      "title": "마이지산 석굴: 절벽 잔도를 걸을 수 있을까?",
+      "headline": "마이지산 석굴: 예약·절벽 잔도·실제 관람 난이도",
+      "description": "시간대 예약을 먼저 잡고 두 가지 표를 구분한 뒤, 현장이 공개한 관람 수칙과 공학 수치로 좁고 높은 잔도가 자신에게 맞는지 정직하게 판단하세요.",
+      "heroAlt": "사원 지붕 위로 솟은 마이지산 절벽. 암벽에 석굴 입구가 뚫려 있고 잔도가 층층이 이어져 있다.",
+      "navTitle": "마이지산 석굴",
+      "featuredLinkLabel": "마이지산 잔도 판단하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["마이지산", "석굴", "간쑤"],
+      "heroCredit": {
+        "text": "마이지산 석굴, 촬영 Tgasrio, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maijishan_grottoes.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  }
+}

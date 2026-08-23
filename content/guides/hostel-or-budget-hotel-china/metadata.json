@@ -1,0 +1,74 @@
+{
+  "id": "hostel-or-budget-hotel-china",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "property-type-decision",
+  "topics": ["accommodation", "hostels", "budget-hotels", "check-in", "verification"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/hostel-or-budget-hotel-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/hostel-or-budget-hotel-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "sourceReviewedDate": "2026-08-23",
+  "search": { "section": "stay", "family": "comparison", "primaryIntent": "compare" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/hostel-or-budget-hotel-china/",
+      "title": "Hostel or Budget Hotel in China? Ask These Ten Things First",
+      "headline": "Hostel or Budget Hotel for Independent Travel in China?",
+      "description": "Separate the dormitory bed, the hostel private room and the budget hotel room, then verify front desk hours, documents, bathroom, luggage and late arrival with the specific property before you pay.",
+      "heroAlt": "A guest registration notice board issued by a local public security bureau, mounted above a hotel reception desk in China.",
+      "navTitle": "Hostel or budget hotel",
+      "featuredLinkLabel": "Compare hostel and budget hotel",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Accommodation", "Hostels", "Budget hotels"],
+      "heroCredit": {
+        "text": "Reception desk of a hotel in Longhai City, with the local guest registration notice, by Vmenkov, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/hostel-or-budget-hotel-china/",
+      "title": "中国自由行住青旅还是经济型酒店？先问这十件事",
+      "headline": "中国自由行住青旅还是经济型酒店？",
+      "description": "先把多人间床位、青旅私人房和经济型酒店房间分开，再在付款前向这家具体住宿核实前台时间、证件、浴室、行李与晚到安排。",
+      "heroAlt": "中国某旅馆前台上方张贴的当地公安机关旅客登记须知告示牌。",
+      "navTitle": "青旅还是经济型酒店",
+      "featuredLinkLabel": "比较青旅与经济型酒店",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["住宿", "青旅", "经济型酒店"],
+      "heroCredit": {
+        "text": "龙海市一家旅馆前台的旅客登记须知，摄影 Vmenkov，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/hostel-or-budget-hotel-china/",
+      "title": "중국 자유여행, 호스텔인가 저가 호텔인가? 먼저 물을 열 가지",
+      "headline": "중국 자유여행: 호스텔과 저가 호텔 중 무엇이 맞을까?",
+      "description": "도미토리 침대와 호스텔 개인실과 저가 호텔 객실을 먼저 분리하고, 결제 전에 프런트 시간·서류·욕실·짐·늦은 도착을 그 숙소에 직접 확인하세요.",
+      "heroAlt": "중국의 한 여관 프런트 위에 걸린, 현지 공안기관이 발행한 숙박객 등록 안내판.",
+      "navTitle": "호스텔인가 저가 호텔인가",
+      "featuredLinkLabel": "호스텔과 저가 호텔 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["숙소", "호스텔", "저가 호텔"],
+      "heroCredit": {
+        "text": "룽하이시 한 여관 프런트의 숙박객 등록 안내판, 촬영 Vmenkov, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    }
+  }
+}
