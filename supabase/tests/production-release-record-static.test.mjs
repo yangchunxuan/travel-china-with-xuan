@@ -11,6 +11,33 @@ async function source(relativePath) {
 
 const releasePath =
   "docs/release-notes/search-analytics-privacy-production-release-20260823.md";
+const homepageReleasePath =
+  "docs/release-notes/homepage-city-discovery-production-release-20260823.md";
+
+test("the current homepage discovery record locks the exact PR 93 release evidence", async () => {
+  const [release, docsIndex, releaseIndex, handoff] = await Promise.all([
+    source(homepageReleasePath),
+    source("docs/README.md"),
+    source("docs/release-notes/README.md"),
+    source("docs/organic-growth/homepage-city-hub-discovery-20260823.md"),
+  ]);
+
+  assert.match(release, /DEPLOYED AND LIVE-VERIFIED/u);
+  assert.match(release, /pull\/93/u);
+  assert.match(release, /1e66811216fedb4bbea521bd894c5aba9518a434/u);
+  assert.match(release, /actions\/runs\/32616980439/u);
+  assert.match(release, /New canonical identities \| `0`/u);
+  assert.match(release, /24\/24 present/u);
+  assert.match(release, /671 `<loc>` values; 671 unique; 0 duplicates/u);
+  assert.match(release, /No Search Console indexing request was submitted/u);
+  for (const text of [docsIndex, releaseIndex, handoff]) {
+    assert.match(
+      text,
+      /homepage-city-discovery-production-release-20260823\.md/u,
+    );
+  }
+  assert.doesNotMatch(handoff, /NOT MERGED OR DEPLOYED/u);
+});
 
 test("the current production record locks the exact PR 89 release evidence", async () => {
   const release = await source(releasePath);

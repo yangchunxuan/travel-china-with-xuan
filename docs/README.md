@@ -6,7 +6,8 @@ Supabase activation are separate facts; never infer one from another.
 
 ## Current production and brand
 
-- [Current production release record](./release-notes/search-analytics-privacy-production-release-20260823.md)
+- [Current production release record](./release-notes/homepage-city-discovery-production-release-20260823.md)
+- [Search, analytics and privacy release baseline](./release-notes/search-analytics-privacy-production-release-20260823.md)
 - [Production release-record index](./release-notes/README.md)
 - [Canonical Homeground China brand entity](./brand-entity-system.md)
 
@@ -17,12 +18,11 @@ Supabase activation are separate facts; never infer one from another.
 - [Current SEO and production brief](./organic-growth/weekly-brief-2026-08-23.md)
 - [Mandatory do-not-repeat and merge-owner check](./organic-growth/do-not-repeat.md)
 
-## Pending central integration
+## Latest homepage discovery release
 
 - [Homepage destination-Hub discovery handoff](./organic-growth/homepage-city-hub-discovery-20260823.md)
-  — eight existing Hubs receive direct, locale-matched homepage links; this is
-  a zero-identity navigation change and is not production evidence until
-  central merges and deploys it.
+  — eight existing Hubs now receive direct, locale-matched homepage links in
+  production. The release created zero canonical identities or sitemap URLs.
 
 The audited public-runtime inventory at PR #89 release SHA `5bd1558` is 182
 guide identities, 540 guide locale URLs and eight destination Hubs. The live
