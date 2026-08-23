@@ -5,7 +5,7 @@ rule. Each item names what must be re-checked, where, and what changes if it mov
 
 | # | Dynamic fact as used in the body | Source of record | Re-check cadence | What breaks if it changes |
 | --- | --- | --- | --- | --- |
-| 1 | Xi'an and Chengdu each have four separately ticketable stations with the listed Chinese names and telegraph codes | 12306 station dictionary | Quarterly, and whenever a new line opens in either city | The station table and the "eight ticketable stations" framing |
+| 1 | The 12306 station dictionary contains four separate station identities for each city with the listed Chinese names and telegraph codes; the body explicitly does not treat dictionary presence as proof of passenger operation | 12306 station dictionary | Quarterly, and whenever a new line opens in either city | The station table and the "eight station identities" framing |
 | 2 | Xi'an East appears in the station dictionary but the body does not claim it sells anything on a given date | 12306 search for the traveller's date | Quarterly | Only the hedge; the body already tells the reader to confirm |
 | 3 | 12306 sells and endorses 05:00–01:00, and to 23:30 on Tuesdays; queries and refunds run 24 hours | 12306 English FAQ | Quarterly | The "cannot book late at night" recovery row |
 | 4 | Refund service fee tiers and the RMB 2 minimum | 12306 English FAQ; 12306 states it may adjust refund rules temporarily | Quarterly, and on any published rule change | The abandonment row of the recovery table |
@@ -21,6 +21,7 @@ rule. Each item names what must be re-checked, where, and what changes if it mov
 | 14 | Hong Kong, Macao and Taiwan services have been reassigned between the two Chengdu airports since 2023 | Chengdu airport operator announcements | On every review | The body states only that assignments have been adjusted and must be read from the reader's own booking, so a further change does not falsify it |
 | 15 | Metro Line 19 and Airport Shuttle Line 5 connect Shuangliu and Tianfu | Chengdu airport operator inter-airport guide, published 2024-03-30 | Quarterly | One sentence in the airport section |
 | 16 | Metro Line 18 links Chengdu South Railway Station with Tianfu Airport | Sichuan Provincial People's Government, 2023-05-30 | Quarterly | The international-departure row and the first worked example |
+| 17 | The old central Chengdu Station stopped passenger service in 2022 for reconstruction and must not be treated as usable merely because its name remains in the station dictionary | Chengdu Municipal Government Service Network closure and redistribution notice; current 12306 date search remains the final operational check | On every review and before any traveller uses it | The Chengdu row in the station table and the distinction between a dictionary identity and a current operating station |
 
 ## Deliberately excluded from the body as too dynamic to publish
 

@@ -12,8 +12,8 @@ Claim-to-source table written before the body was drafted; reverse verification 
 - **URL:** https://kyfw.12306.cn/otn/resources/js/framework/station_name.js
 - **Published / updated:** not dated by the publisher; served live and versioned by the site
 - **Retrieved:** 2026-08-22, Asia/Taipei
-- **Supports:** that 12306 sells tickets for four separately named Xi'an stations (西安北 EAY,
-  西安东 XDY, 西安 XAY, 西安西 EGY) and four separately named Chengdu stations (成都东 ICW,
+- **Supports:** that the dictionary contains four separately named Xi'an station identities (西安北 EAY,
+  西安东 XDY, 西安 XAY, 西安西 EGY) and four separately named Chengdu station identities (成都东 ICW,
   成都南 CNW, 成都 CDW, 成都西 CMW); that all four Xi'an entries carry city `西安` and all four
   Chengdu entries carry city `成都`, which is what makes the same-city endorsement exception
   relevant here; the exact Chinese names and telegraph codes reproduced in the station table.
@@ -169,13 +169,29 @@ Claim-to-source table written before the body was drafted; reverse verification 
   are **not** reproduced in the body.
 - **Dynamic:** no for the opening; the timings quoted in the source are obsolete by design.
 
+## 11. Chengdu Municipal Government Service Network — Chengdu Station passenger closure
+
+- **Institution:** Chengdu Municipal Government Service Network (成都市政府服务网)
+- **Page title:** notice recording the suspension of passenger service at Chengdu Station and
+  redistribution of its existing trains
+- **URL:** https://cds.sczwfw.gov.cn/art/2022/10/11/art_15395_191149.html
+- **Published:** 2022-10-11
+- **Retrieved:** 2026-08-23, Asia/Shanghai; cross-checked against the already published Chengdu
+  destination Hub and the current 12306 verification rule
+- **Supports:** that the old central Chengdu Station stopped handling passengers in 2022 for
+  reconstruction and that travellers must not infer current operation from the continued presence
+  of `成都 / CDW` in the station dictionary.
+- **Cannot support:** a reopening date, a future timetable, or that any train is bookable today.
+- **Dynamic:** yes. The body requires a current 12306 date search before the station can re-enter a
+  live itinerary.
+
 ---
 
 ## Claim-to-source table (reverse verification, run after drafting)
 
 | Claim in the body | Source | Verified |
 | --- | --- | --- |
-| Four ticketable Xi'an stations, four ticketable Chengdu stations, with those Chinese names and codes | 1 | yes |
+| Four Xi'an and four Chengdu station identities in the dictionary, with those Chinese names and codes; dictionary presence is not proof of operation | 1 | yes |
 | All four Xi'an stations share one city, and likewise Chengdu | 1 | yes |
 | Xi'an–Chengdu HSR opened 6 December 2017, Xi'an North to Chengdu East | 10 | yes |
 | Security applies to all passengers and everything carried | 2 | yes |
@@ -195,6 +211,7 @@ Claim-to-source table written before the body was drafted; reverse verification 
 | International passenger flights consolidated at Tianfu from 26 March 2023 | 7 | yes |
 | Metro Line 19 and Airport Shuttle Line 5 connect the two Chengdu airports | 8 | yes |
 | Metro Line 18 links Chengdu South Railway Station with Tianfu Airport | 9 | yes |
+| Old central Chengdu Station stopped passenger service in 2022 and is not a current itinerary assumption | 11 | yes |
 | Hero image licence and authorship | image-plan.md | yes |
 
 ## Absolute expressions audited after drafting
