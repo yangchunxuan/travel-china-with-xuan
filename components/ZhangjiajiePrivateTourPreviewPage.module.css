@@ -1,11 +1,20 @@
 .previewRoot {
+  --hg-color-canvas: #fff;
+  --hg-color-surface: #fff;
+  --hg-color-card: #fff;
+  --hg-color-soft: #f5f5f4;
+  --hg-color-line: #d5d9e2;
+  --hg-color-ink: #0a0a0a;
+  --hg-color-muted: #686b70;
+
+  background: var(--hg-color-canvas);
   min-width: 0;
   overflow-x: clip;
 }
 
 .previewBar {
   align-items: center;
-  background: var(--hg-color-rust-soft);
+  background: var(--hg-color-soft);
   border-block-end: 1px solid var(--hg-color-line);
   color: var(--hg-color-dark-rust);
   display: flex;
@@ -462,7 +471,7 @@
 }
 
 .priceCardFeatured {
-  background: var(--hg-color-rust-soft);
+  background: var(--hg-color-soft);
 }
 
 .featuredLabel {
@@ -626,7 +635,28 @@
 }
 
 .finalCta {
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
+  color: var(--hg-color-ink);
   margin-block-start: clamp(3rem, 7vw, 7rem);
+}
+
+.previewRoot .finalCta > div > p:first-child {
+  color: var(--hg-color-rust);
+}
+
+.previewRoot .finalCta > div > p:last-child {
+  color: var(--hg-color-muted);
+}
+
+.previewRoot .finalCta > a {
+  background: var(--hg-color-ink);
+  color: #fff;
+}
+
+.previewRoot .finalCta > a:hover,
+.previewRoot .finalCta > a:focus-visible {
+  background: #202124;
 }
 
 .sources {

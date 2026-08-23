@@ -1,11 +1,11 @@
 .pageRoot {
-  --entry-paper: var(--hg-color-canvas);
-  --entry-card: var(--hg-color-card);
-  --entry-soft: var(--hg-color-soft);
-  --entry-line: var(--hg-color-line);
-  --entry-ink: var(--hg-color-ink);
-  --entry-muted: var(--hg-color-muted);
-  --entry-rust: var(--hg-color-rust);
+  --entry-paper: #fff;
+  --entry-card: #fff;
+  --entry-soft: #f5f5f4;
+  --entry-line: #d5d9e2;
+  --entry-ink: #0a0a0a;
+  --entry-muted: #686b70;
+  --entry-rust: #a84731;
   background: var(--entry-paper);
   color: var(--entry-ink);
   min-height: 100vh;
@@ -117,8 +117,8 @@
 }
 
 .rulePanel {
-  background: var(--entry-ink);
-  color: var(--hg-color-on-dark);
+  background: var(--entry-soft);
+  color: var(--entry-ink);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -126,7 +126,7 @@
 }
 
 .rulePanel > p {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--entry-rust);
   font-size: 0.72rem;
   font-weight: 760;
   letter-spacing: 0.12em;
@@ -135,7 +135,7 @@
 }
 
 .rulePanel ol {
-  border-block-start: 1px solid var(--hg-color-on-dark-line);
+  border-block-start: 1px solid var(--entry-line);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -143,7 +143,7 @@
 
 .rulePanel li {
   align-items: start;
-  border-block-end: 1px solid var(--hg-color-on-dark-line);
+  border-block-end: 1px solid var(--entry-line);
   display: grid;
   gap: 1rem;
   grid-template-columns: 2.4rem 1fr;
@@ -151,7 +151,7 @@
 }
 
 .rulePanel li > span {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--entry-muted);
   font-size: 0.7rem;
   font-weight: 780;
   padding-block-start: 0.25rem;
@@ -165,7 +165,7 @@
 }
 
 .rulePanel small {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--entry-muted);
   display: block;
   font-size: 0.8rem;
   line-height: 1.55;
@@ -327,13 +327,21 @@
 
 .ruleTypes,
 .cta {
-  background: var(--entry-ink);
-  color: var(--hg-color-on-dark);
+  color: var(--entry-ink);
   padding: clamp(5rem, 9vw, 9rem) max(1rem, calc((100vw - 1280px) / 2));
 }
 
+.ruleTypes {
+  background: var(--entry-soft);
+}
+
+.cta {
+  background: var(--entry-paper);
+  border-block-start: 1px solid var(--entry-line);
+}
+
 .darkEyebrow {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--entry-rust);
 }
 
 .ruleTypesIntro,
@@ -352,19 +360,19 @@
 }
 
 .ruleTypeGrid {
-  border-block-start: 1px solid var(--hg-color-on-dark-line);
+  border-block-start: 1px solid var(--entry-line);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-block-start: clamp(3.5rem, 6vw, 6rem);
 }
 
 .ruleTypeGrid article {
-  border-block-end: 1px solid var(--hg-color-on-dark-line);
+  border-block-end: 1px solid var(--entry-line);
   padding: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .ruleTypeGrid article + article {
-  border-inline-start: 1px solid var(--hg-color-on-dark-line);
+  border-inline-start: 1px solid var(--entry-line);
 }
 
 .ruleTypeGrid article > span {
@@ -381,7 +389,7 @@
 
 .ruleTypeGrid p,
 .cta > div > div > p {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--entry-muted);
   font-size: 0.95rem;
   line-height: 1.72;
   margin: 1rem 0 0;
@@ -413,8 +421,8 @@
 
 .cta a {
   align-items: center;
-  background: var(--hg-color-on-dark);
-  color: var(--entry-ink);
+  background: var(--entry-ink);
+  color: #fff;
   display: flex;
   font-size: 0.86rem;
   font-weight: 780;
@@ -424,6 +432,11 @@
   min-height: 3.3rem;
   padding: 0.8rem 1rem 0.8rem 1.15rem;
   text-decoration: none;
+}
+
+.cta a:hover,
+.cta a:focus-visible {
+  background: #202124;
 }
 
 .pageRoot :where(a, button, summary):focus-visible {

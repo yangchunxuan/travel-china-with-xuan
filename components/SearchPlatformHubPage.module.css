@@ -1,11 +1,11 @@
 .hubPage {
-  --hub-paper: var(--hg-color-canvas);
-  --hub-card: var(--hg-color-card);
-  --hub-soft: var(--hg-color-soft);
-  --hub-line: var(--hg-color-line);
-  --hub-ink: var(--hg-color-ink);
-  --hub-muted: var(--hg-color-muted);
-  --hub-rust: var(--hg-color-rust);
+  --hub-paper: #fff;
+  --hub-card: #fff;
+  --hub-soft: #f5f5f4;
+  --hub-line: #d5d9e2;
+  --hub-ink: #0a0a0a;
+  --hub-muted: #686b70;
+  --hub-rust: #a84731;
   background: var(--hub-paper);
   color: var(--hub-ink);
   min-height: 100vh;
@@ -534,8 +534,8 @@
 }
 
 .platformMap {
-  background: var(--hub-ink);
-  color: var(--hg-color-on-dark);
+  background: var(--hub-soft);
+  color: var(--hub-ink);
   display: grid;
   gap: clamp(3rem, 8vw, 9rem);
   grid-template-columns: minmax(18rem, 0.58fr) minmax(0, 1fr);
@@ -549,28 +549,28 @@
 }
 
 .platformMapIntro .eyebrow {
-  color: var(--hg-color-peach);
+  color: var(--hub-rust);
 }
 
 .platformMapIntro h2 {
-  color: var(--hg-color-on-dark);
+  color: var(--hub-ink);
 }
 
 .platformMapIntro > p:last-child {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--hub-muted);
   line-height: 1.72;
   max-width: 31rem;
 }
 
 .platformMap ul {
-  border-block-start: 1px solid var(--hg-color-on-dark-line);
+  border-block-start: 1px solid var(--hub-line);
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .platformMap li {
-  border-block-end: 1px solid var(--hg-color-on-dark-line);
+  border-block-end: 1px solid var(--hub-line);
 }
 
 .platformMap a {
@@ -585,7 +585,7 @@
 
 .platformMap a:hover span,
 .platformMap a:focus-visible span {
-  color: var(--hg-color-peach);
+  color: var(--hub-rust);
 }
 
 .platformMap span {
@@ -594,7 +594,7 @@
 }
 
 .platformMap small {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--hub-muted);
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -654,7 +654,7 @@
 }
 
 .secondaryAction {
-  border: 1px solid var(--hub-line);
+  border: 1px solid var(--hub-muted);
 }
 
 @media (max-width: 980px) {
@@ -710,6 +710,16 @@
   .hubPage[data-homeground-locale="zh"] .hero h1,
   .hubPage[data-homeground-locale="ko"] .hero h1 {
     font-size: clamp(2.85rem, 13.6vw, 4.2rem);
+    max-width: 100%;
+  }
+
+  .hubPage[data-homeground-locale="zh"] .hero h1.segmentedTitle {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .titleSegment {
     max-width: 100%;
   }
 
