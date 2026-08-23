@@ -234,7 +234,7 @@ export function DestinationHubPage({
       <HomegroundHeader
         languagePaths={getDestinationHubLanguagePaths(hubId)}
         locale={locale}
-        pageContext="content"
+        pageContext="destination"
       />
 
       <main>

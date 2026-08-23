@@ -7,12 +7,11 @@ import {
   type HomegroundLegalPageId,
 } from "../lib/homegroundLegalI18n";
 import {
-  homegroundLocales,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
+import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./HomegroundLegalPage.module.css";
 
 const baseUrl = "https://homegroundchina.com";
@@ -44,6 +43,11 @@ export function HomegroundLegalPage({
   const copy = getHomegroundLegalCopy(pageId, locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `/${locale}/privacy/`;
+  const languagePaths = {
+    en: getHomegroundLegalCopy(pageId, "en").pagePath,
+    zh: getHomegroundLegalCopy(pageId, "zh").pagePath,
+    ko: getHomegroundLegalCopy(pageId, "ko").pagePath,
+  };
   const schema = {
     "@context": "https://schema.org",
     "@type": pageId === "business-information" ? "AboutPage" : "WebPage",
@@ -71,51 +75,11 @@ export function HomegroundLegalPage({
         {copy.skipLink}
       </a>
 
-      <header className={styles.header}>
-        <div className={styles.headerInner}>
-          <Link
-            className={styles.brand}
-            href={copy.homePath}
-            aria-label={copy.navigation.homeLabel}
-          >
-            <HomegroundBrandMark className={styles.brandMark} />
-            <span>
-              <strong lang="en">Homeground China</strong>
-              <small>{copy.navigation.pageLabel}</small>
-            </span>
-          </Link>
-
-          <div className={styles.headerActions}>
-            <nav
-              className={styles.languageNav}
-              aria-label={copy.navigation.languageLabel}
-            >
-              {homegroundLocales.map((targetLocale) => {
-                const target = getHomegroundLegalCopy(
-                  pageId,
-                  targetLocale,
-                );
-                return (
-                  <Link
-                    aria-current={
-                      targetLocale === locale ? "page" : undefined
-                    }
-                    href={target.pagePath}
-                    hrefLang={target.htmlLang}
-                    key={targetLocale}
-                    lang={target.htmlLang}
-                  >
-                    {target.languageShort}
-                  </Link>
-                );
-              })}
-            </nav>
-            <Link className={styles.homeCta} href={`${copy.homePath}#route-finder`}>
-              {copy.navigation.homeCta}
-            </Link>
-          </div>
-        </div>
-      </header>
+      <HomegroundHeader
+        languagePaths={languagePaths}
+        locale={locale}
+        pageContext="content"
+      />
 
       <main id="legal-content">
         <section className={styles.hero} aria-labelledby="legal-title">

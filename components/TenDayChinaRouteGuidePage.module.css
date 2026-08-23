@@ -43,142 +43,6 @@
   transform: translateY(0);
 }
 
-.siteHeader {
-  background: rgb(255 254 250 / 94%);
-  border-block-end: 1px solid var(--line);
-  inset-block-start: 0;
-  position: sticky;
-  z-index: 50;
-}
-
-@supports (backdrop-filter: blur(16px)) {
-  .siteHeader {
-    backdrop-filter: blur(16px);
-  }
-}
-
-.headerInner {
-  align-items: center;
-  display: flex;
-  gap: 1.25rem;
-  margin-inline: auto;
-  min-height: 4.75rem;
-  padding-inline: 1.25rem;
-  width: min(100%, 78rem);
-}
-
-.brand {
-  align-items: center;
-  display: inline-flex;
-  gap: 0.75rem;
-  margin-inline-end: auto;
-  min-height: 2.75rem;
-  text-decoration: none;
-}
-
-.brandMark {
-  display: block;
-  flex: none;
-  height: 2rem;
-  width: 2rem;
-}
-
-.brandCopy {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.brandCopy strong {
-  color: var(--green);
-  font-family: var(--display);
-  font-size: 1.08rem;
-  font-weight: 600;
-}
-
-.brandCopy small {
-  color: var(--rust);
-  font-size: 0.61rem;
-  font-weight: 750;
-  letter-spacing: 0.06em;
-  margin-block-start: 0.25rem;
-  text-transform: uppercase;
-}
-
-.primaryNav {
-  align-items: center;
-  display: flex;
-  gap: 1.75rem;
-}
-
-.primaryNav a {
-  color: #47554e;
-  font-size: 0.82rem;
-  font-weight: 650;
-  min-height: 2.75rem;
-  padding-block: 0.8rem;
-  text-decoration: none;
-}
-
-.primaryNav a:hover,
-.primaryNav a:focus-visible {
-  color: var(--rust-dark);
-}
-
-.languageNav {
-  align-items: center;
-  border-inline-start: 1px solid var(--line);
-  display: flex;
-  gap: 0.15rem;
-  padding-inline-start: 0.85rem;
-}
-
-.languageNav a {
-  align-items: center;
-  color: var(--muted);
-  display: inline-flex;
-  font-size: 0.68rem;
-  font-weight: 720;
-  justify-content: center;
-  min-height: 2.75rem;
-  padding-inline: 0.3rem;
-  text-decoration: none;
-}
-
-.languageNav a:hover,
-.languageNav a:focus-visible,
-.languageNav a[aria-current="page"] {
-  color: var(--rust-dark);
-}
-
-.languageNav a[aria-current="page"] {
-  text-decoration: underline;
-  text-decoration-thickness: 0.12rem;
-  text-underline-offset: 0.32rem;
-}
-
-.headerCta {
-  align-items: center;
-  background: var(--rust);
-  border: 1px solid var(--rust);
-  border-radius: 999px;
-  color: #fff;
-  display: inline-flex;
-  font-size: 0.8rem;
-  font-weight: 760;
-  justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.65rem 1.15rem;
-  text-decoration: none;
-  transition: background-color 150ms ease, border-color 150ms ease;
-}
-
-.headerCta:hover,
-.headerCta:focus-visible {
-  background: var(--rust-dark);
-  border-color: var(--rust-dark);
-}
-
 .hero {
   background: #faf8f4;
   border-block-end: 1px solid var(--line);
@@ -1532,10 +1396,6 @@
 }
 
 @media (max-width: 64rem) {
-  .primaryNav {
-    display: none;
-  }
-
   .heroGrid {
     align-items: start;
     grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
@@ -1564,24 +1424,6 @@
 }
 
 @media (max-width: 48rem) {
-  .headerInner {
-    gap: 0.75rem;
-    min-height: 4.25rem;
-    padding-inline: 1rem;
-  }
-
-  .brandCopy small {
-    display: none;
-  }
-
-  .headerCta {
-    padding-inline: 0.9rem;
-  }
-
-  .languageNav {
-    padding-inline-start: 0.55rem;
-  }
-
   .hero {
     min-height: auto;
   }
@@ -1658,7 +1500,21 @@
   .tradeoffGrid,
   .fitGrid,
   .questionList {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fitGrid > *,
+  .diagnosticList li > *,
+  .methodGrid > * {
+    min-width: 0;
+  }
+
+  .pageRoot[data-homeground-locale="zh"] :is(
+      .fitGrid,
+      .diagnosticList,
+      .methodGrid
+    ) {
+    word-break: normal;
   }
 
   .countCard,
@@ -1719,7 +1575,7 @@
 
   .diagnosticList li {
     gap: 0.75rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .evidenceFigure figcaption {
@@ -1743,7 +1599,7 @@
   }
 
   .methodGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .methodGrid li {
@@ -1770,35 +1626,7 @@
   }
 }
 
-@media (max-width: 32rem) {
-  .brandCopy {
-    display: none;
-  }
-
-  .headerInner {
-    gap: 0.45rem;
-  }
-
-  .languageNav {
-    border-inline-start: 0;
-    padding-inline-start: 0;
-  }
-
-  .languageNav a {
-    font-size: 0.64rem;
-    padding-inline: 0.2rem;
-  }
-
-  .headerCta {
-    padding-inline: 0.7rem;
-  }
-}
-
 @media (max-width: 25rem) {
-  .headerCta {
-    font-size: 0.72rem;
-  }
-
   .heroMetric {
     grid-template-columns: auto 1fr;
   }
@@ -1818,7 +1646,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .skipLink,
-  .headerCta,
   .ctaAction a {
     transition: none;
   }

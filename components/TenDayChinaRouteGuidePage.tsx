@@ -24,33 +24,29 @@ import {
   localePath,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
-import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
+import { HomegroundHeader } from "./HomegroundHeader";
 
 const guideId = "beijing-zhangjiajie-shanghai-10-days" as const;
 
 const navigationSections: Record<
   HomegroundLocale,
-  { guides: string; services: string }
+  { guides: string }
 > = {
   en: {
     guides: "Travel guides",
-    services: "Trip planning services",
   },
   zh: {
     guides: "旅行指南",
-    services: "旅行规划服务",
   },
   ko: {
     guides: "여행 가이드",
-    services: "여행 설계 서비스",
   },
 };
 
@@ -186,24 +182,6 @@ function createStructuredData(
   };
 }
 
-function Brand({
-  copy,
-  homeHref,
-}: {
-  copy: TenDayGuideCopy;
-  homeHref: string;
-}) {
-  return (
-    <Link className={styles.brand} href={homeHref} aria-label={copy.brandAriaLabel}>
-      <HomegroundBrandMark className={styles.brandMark} />
-      <span className={styles.brandCopy}>
-        <strong>Homeground China</strong>
-        <small>{copy.brandTagline}</small>
-      </span>
-    </Link>
-  );
-}
-
 export function TenDayChinaRouteGuidePage({
   locale = "en",
 }: {
@@ -214,7 +192,6 @@ export function TenDayChinaRouteGuidePage({
   const homeHref = localePath(locale);
   const localePrefix = locale === "en" ? "" : `/${locale}`;
   const guideHubHref = `${homeHref}guides/`;
-  const planningServicesHref = getChinaItineraryReviewCopy(locale).path;
   const sectionLabels = navigationSections[locale];
   const plannerHref = `${homeHref}?utm_source=${guideId}&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const zhangjiajieGuideHref = `${localePrefix}/guides/zhangjiajie-itinerary/#quick-answer`;
@@ -229,11 +206,6 @@ export function TenDayChinaRouteGuidePage({
   ).canonicalPath;
   const transportCopy = transportRelatedCopy[locale];
   const languagePaths = getGuideLanguagePaths(guideId);
-  const languageOptions = [
-    { locale: "en", label: "EN", href: languagePaths.en },
-    { locale: "zh", label: "中文", href: languagePaths["zh-Hans"] },
-    { locale: "ko", label: "한국어", href: languagePaths.ko },
-  ] as const;
   const structuredDataForLocale = createStructuredData(locale, copy);
 
   return (
@@ -246,38 +218,14 @@ export function TenDayChinaRouteGuidePage({
         {copy.skipLink}
       </a>
 
-      <header className={styles.siteHeader}>
-        <div className={styles.headerInner}>
-          <Brand copy={copy} homeHref={homeHref} />
-          <nav className={styles.primaryNav} aria-label={copy.navigation.primaryLabel}>
-            <Link href={guideHubHref}>{sectionLabels.guides}</Link>
-            <Link href={planningServicesHref}>{sectionLabels.services}</Link>
-            <a href={`${homeHref}#studio`}>{copy.navigation.studio}</a>
-            <a href={`${homeHref}#faq`}>{copy.navigation.questions}</a>
-          </nav>
-          <nav className={styles.languageNav} aria-label={copy.navigation.languageLabel}>
-            {languageOptions.map((option) => (
-              <Link
-                aria-current={option.locale === locale ? "page" : undefined}
-                href={option.href}
-                hrefLang={option.locale === "zh" ? "zh-Hans" : option.locale}
-                key={option.locale}
-              >
-                {option.label}
-              </Link>
-            ))}
-          </nav>
-          <GuideCtaLink
-            className={styles.headerCta}
-            guideId={guideId}
-            href={plannerHref}
-            locale={locale}
-            position="header"
-          >
-            {copy.navigation.cta}
-          </GuideCtaLink>
-        </div>
-      </header>
+      <HomegroundHeader
+        guideId={guideId}
+        languagePaths={languagePaths}
+        locale={locale}
+        pageContext="guide"
+        plannerHrefOverride={plannerHref}
+        plannerTracking={{ guideId, position: "header" }}
+      />
 
       <main id="article-content" tabIndex={-1}>
         <article>

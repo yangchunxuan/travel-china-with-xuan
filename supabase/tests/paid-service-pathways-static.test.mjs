@@ -121,7 +121,7 @@ test("English Studio keeps its service comparison and uses the unified planner c
   );
 });
 
-test("global navigation exposes localized Planning Services and current-page state", async () => {
+test("global navigation keeps services behind the planning state and CTA", async () => {
   const [header, footer, servicePage] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundFooter.tsx"),
@@ -130,12 +130,10 @@ test("global navigation exposes localized Planning Services and current-page sta
 
   assert.match(header, /export type HomegroundPageContext =[\s\S]*\| "services"/);
   assert.match(header, /pageContext\?: HomegroundPageContext/);
-  assert.match(header, /getChinaItineraryReviewCopy\(locale\)/);
-  assert.match(header, /services: "Trip planning services"/);
-  assert.match(header, /services: "旅行规划服务"/);
-  assert.match(header, /services: "여행 설계 서비스"/);
   assert.match(header, /getChinaItineraryReviewCopy\(targetLocale\)\.path/);
-  assert.match(header, /pageContext\s*===\s*"services"\s*\?\s*"page"/);
+  assert.match(header, /pageContext === "studio" \|\| pageContext === "services"/);
+  assert.doesNotMatch(header, /services: "Trip planning services"/);
+  assert.match(header, /className=\{styles\.headerCta\}/);
   assert.match(header, /allowedServiceHashes/);
   assert.match(header, /"#review-my-route"/);
   assert.match(header, /"#build-my-route"/);

@@ -1,11 +1,9 @@
-import Link from "next/link";
 import {
   getHomegroundPrivacyCopy,
-  homegroundPrivacyLocales,
   type HomegroundPrivacyLocale,
 } from "../lib/homegroundPrivacyI18n";
-import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
+import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./HomegroundPrivacyPage.module.css";
 
 export function HomegroundPrivacyPage({
@@ -14,6 +12,11 @@ export function HomegroundPrivacyPage({
   locale?: HomegroundPrivacyLocale;
 }) {
   const copy = getHomegroundPrivacyCopy(locale);
+  const languagePaths = {
+    en: getHomegroundPrivacyCopy("en").pagePath,
+    zh: getHomegroundPrivacyCopy("zh").pagePath,
+    ko: getHomegroundPrivacyCopy("ko").pagePath,
+  };
 
   return (
     <div
@@ -25,48 +28,11 @@ export function HomegroundPrivacyPage({
         {copy.skipLink}
       </a>
 
-      <header className={styles.header}>
-        <div className={styles.headerInner}>
-          <Link
-            className={styles.brand}
-            href={copy.homePath}
-            aria-label={copy.navigation.homeLabel}
-          >
-            <HomegroundBrandMark className={styles.brandMark} />
-            <span>
-              <strong lang="en">Homeground China</strong>
-              <small>{copy.navigation.privacyLabel}</small>
-            </span>
-          </Link>
-
-          <div className={styles.headerActions}>
-            <nav
-              className={styles.languageNav}
-              aria-label={copy.navigation.languageLabel}
-            >
-              {homegroundPrivacyLocales.map((targetLocale) => {
-                const target = getHomegroundPrivacyCopy(targetLocale);
-                return (
-                  <Link
-                    aria-current={
-                      targetLocale === locale ? "page" : undefined
-                    }
-                    href={target.pagePath}
-                    hrefLang={target.htmlLang}
-                    key={targetLocale}
-                    lang={target.htmlLang}
-                  >
-                    {target.languageShort}
-                  </Link>
-                );
-              })}
-            </nav>
-            <Link className={styles.homeCta} href={copy.homePath}>
-              {copy.navigation.homeCta}
-            </Link>
-          </div>
-        </div>
-      </header>
+      <HomegroundHeader
+        languagePaths={languagePaths}
+        locale={locale}
+        pageContext="content"
+      />
 
       <main id="privacy-content">
         <section className={styles.hero} aria-labelledby="privacy-title">

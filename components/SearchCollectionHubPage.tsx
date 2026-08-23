@@ -167,6 +167,12 @@ export function SearchCollectionHubPage({
     (candidate) => candidate.section === collection.section && candidate.id !== collection.id,
   );
   const schema = jsonLd(collectionId, locale);
+  const pageContext =
+    collection.section === "explore"
+      ? "destination"
+      : collection.section === "services" || collection.section === "plan"
+        ? "services"
+        : "guides";
 
   return (
     <div
@@ -178,7 +184,7 @@ export function SearchCollectionHubPage({
       <HomegroundHeader
         languagePaths={getSearchCollectionLanguagePaths(collectionId)}
         locale={locale}
-        pageContext="guides"
+        pageContext={pageContext}
       />
 
       <main id="collection-main" tabIndex={-1}>
@@ -298,7 +304,7 @@ export function SearchCollectionHubPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guides" />
+      <HomegroundFooter locale={locale} pageContext={pageContext} />
       <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} type="application/ld+json" />
     </div>
   );

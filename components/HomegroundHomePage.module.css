@@ -1,6 +1,5 @@
 /* Shared presentation for the English, Chinese and Korean homepages. */
 .skipLink,
-.siteHeader,
 .hero,
 .travelGuidesSection,
 .proofSection,
@@ -103,18 +102,15 @@
 .localeRoot[data-homeground-locale="zh"] .eyebrow,
 .localeRoot[data-homeground-locale="zh"] .eyebrowDark,
 .localeRoot[data-homeground-locale="zh"] .cardLabel,
-.localeRoot[data-homeground-locale="zh"] .brand small,
 .localeRoot[data-homeground-locale="ko"] .eyebrow,
 .localeRoot[data-homeground-locale="ko"] .eyebrowDark,
-.localeRoot[data-homeground-locale="ko"] .cardLabel,
-.localeRoot[data-homeground-locale="ko"] .brand small {
+.localeRoot[data-homeground-locale="ko"] .cardLabel {
   text-transform: none;
 }
 
 .localeRoot[data-homeground-locale="zh"] .eyebrow,
 .localeRoot[data-homeground-locale="zh"] .eyebrowDark,
 .localeRoot[data-homeground-locale="zh"] .cardLabel,
-.localeRoot[data-homeground-locale="zh"] .brand small,
 .localeRoot[data-homeground-locale="zh"] .sampleRouteImage span,
 .localeRoot[data-homeground-locale="zh"] .planningExtract dt,
 .localeRoot[data-homeground-locale="zh"] .footerTop > div:first-child span {
@@ -127,7 +123,6 @@
 .localeRoot[data-homeground-locale="ko"] .eyebrow,
 .localeRoot[data-homeground-locale="ko"] .eyebrowDark,
 .localeRoot[data-homeground-locale="ko"] .cardLabel,
-.localeRoot[data-homeground-locale="ko"] .brand small,
 .localeRoot[data-homeground-locale="ko"] .sampleRouteImage span,
 .localeRoot[data-homeground-locale="ko"] .planningExtract dt,
 .localeRoot[data-homeground-locale="ko"] .footerTop > div:first-child span {
@@ -135,12 +130,6 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: none;
-}
-
-.localeRoot[data-homeground-locale="zh"] .brand small,
-.localeRoot[data-homeground-locale="ko"] .brand small {
-  font-size: 0.68rem;
-  line-height: 1.35;
 }
 
 .localeRoot[data-homeground-locale="zh"] .sampleRouteHeading h3,
@@ -194,330 +183,6 @@
 .studioSection,
 .faqSection {
   scroll-margin-top: 5.75rem;
-}
-
-.siteHeader {
-  background: var(--hg-color-surface);
-  border-bottom: 1px solid var(--hg-color-line);
-  color: var(--hg-color-ink);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-/* The homepage alone uses the fixed, low-chrome x.ai-style navigation. */
-.siteHeader[data-homeground-header-context="home"] {
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  background: rgb(255 255 255 / 85%);
-  border-bottom-color: transparent;
-  inset-inline: 0;
-  position: fixed;
-}
-
-.siteHeader[data-homeground-header-context="home"] .headerInner {
-  background: transparent;
-  height: 4rem;
-  max-width: 1280px;
-  padding-inline: 1.5rem;
-  position: relative;
-}
-
-.siteHeader[data-homeground-header-context="home"] .headerInner::after {
-  background: rgb(10 10 10 / 8%);
-  block-size: 1px;
-  bottom: 0;
-  content: "";
-  inset-inline: 0;
-  pointer-events: none;
-  position: absolute;
-}
-
-.siteHeader[data-homeground-header-context="home"] .desktopNav {
-  gap: 0.25rem;
-  margin-left: 1.5rem;
-  margin-right: auto;
-}
-
-.siteHeader[data-homeground-header-context="home"] .desktopNav a {
-  color: rgb(10 10 10 / 68%);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  padding-inline: 0.75rem;
-  transition: color 150ms ease;
-}
-
-.siteHeader[data-homeground-header-context="home"] .desktopNav a:hover,
-.siteHeader[data-homeground-header-context="home"] .desktopNav a:focus-visible {
-  color: var(--hg-color-ink);
-}
-
-.siteHeader[data-homeground-header-context="home"] .headerActions {
-  gap: 0.5rem;
-}
-
-.siteHeader[data-homeground-header-context="home"] .brand {
-  gap: 0.5rem;
-}
-
-.siteHeader[data-homeground-header-context="home"] .brandMark {
-  height: 2rem;
-  width: 2rem;
-}
-
-.siteHeader[data-homeground-header-context="home"] .brand strong {
-  font-size: 1.05rem;
-}
-
-.siteHeader[data-homeground-header-context="home"] .brand small {
-  font-size: 0.52rem;
-}
-
-.siteHeader[data-homeground-header-context="home"] .languageNav {
-  background: transparent;
-  border-color: rgb(10 10 10 / 15%);
-}
-
-.siteHeader[data-homeground-header-context="home"] .languageNav a[aria-current] {
-  box-shadow: none;
-}
-
-.siteHeader[data-homeground-header-context="home"] .headerCta {
-  block-size: 2.25rem;
-  box-sizing: border-box;
-  flex: none;
-  font-weight: 500;
-  min-height: 2.25rem;
-  padding: 0 1rem;
-  white-space: nowrap;
-}
-
-.siteHeader[data-homeground-header-context="home"] .mobileNav {
-  max-height: calc(100dvh - 4rem);
-  top: 4rem;
-}
-
-.headerCtaShort {
-  display: none;
-}
-
-.headerInner {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  gap: 1.4rem;
-  height: 4.75rem;
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 0 2rem;
-  width: 100%;
-}
-
-.brand {
-  align-items: center;
-  display: inline-flex;
-  gap: 0.7rem;
-  min-height: 2.75rem;
-  min-width: 0;
-  text-decoration: none;
-}
-
-.brand > span:last-child {
-  display: grid;
-  line-height: 1.05;
-}
-
-.brand > span:last-child,
-.brand strong,
-.brand small,
-.brandMark {
-  transform-origin: center;
-}
-
-.brand strong {
-  font-family: var(--hg-brand);
-  font-size: 1.28rem;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-}
-
-.brand small {
-  color: var(--hg-color-muted);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  margin-top: 0.24rem;
-  text-transform: uppercase;
-}
-
-.brandMark {
-  display: block;
-  flex: none;
-  height: 2.25rem;
-  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
-  width: 2.25rem;
-}
-
-.brand:focus-visible .brandMark {
-  transform: scale(1.035);
-}
-
-.desktopNav {
-  align-items: center;
-  display: flex;
-  gap: 1.45rem;
-  margin-left: auto;
-}
-
-.desktopNav a {
-  align-items: center;
-  color: var(--hg-color-ink);
-  display: inline-flex;
-  font-size: 0.83rem;
-  font-weight: 680;
-  min-height: 2.75rem;
-  text-decoration: none;
-}
-
-.desktopNav a:hover {
-  color: #9e3f29;
-}
-
-.desktopNav a[aria-current="page"] {
-  color: #8b3928;
-  text-decoration: underline;
-  text-decoration-thickness: 0.1em;
-  text-underline-offset: 0.4em;
-}
-
-.headerActions {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-}
-
-.languageNav {
-  align-items: center;
-  background: var(--hg-color-soft);
-  border: 1px solid var(--hg-color-line);
-  border-radius: 999px;
-  display: flex;
-  padding: 0.18rem;
-}
-
-.languageNav a {
-  align-items: center;
-  border-radius: 999px;
-  color: var(--hg-color-muted);
-  display: inline-flex;
-  font-size: 0.68rem;
-  font-weight: 760;
-  justify-content: center;
-  min-height: 2.25rem;
-  min-width: 2.5rem;
-  padding: 0.4rem 0.62rem;
-  text-decoration: none;
-}
-
-.languageNav a:hover,
-.languageNav a:focus-visible {
-  color: #7f321f;
-}
-
-.languageNav a[aria-current] {
-  background: var(--hg-color-card);
-  box-shadow: 0 1px 4px rgb(20 20 19 / 10%);
-  color: var(--hg-color-ink);
-}
-
-.headerCta,
-.mobileCta {
-  align-items: center;
-  background: var(--hg-color-charcoal);
-  border-radius: 999px;
-  color: var(--hg-color-on-dark);
-  display: inline-flex;
-  font-size: 0.83rem;
-  font-weight: 760;
-  justify-content: center;
-  min-height: 2.7rem;
-  padding: 0.65rem 1rem;
-  text-decoration: none;
-}
-
-.headerCta:hover,
-.mobileCta:hover {
-  background: var(--hg-color-charcoal-hover);
-}
-
-.menuButton {
-  align-items: center;
-  background: transparent;
-  border: 1px solid #cfd2cc;
-  border-radius: 50%;
-  color: var(--hg-color-ink);
-  display: none;
-  flex: none;
-  height: 2.75rem;
-  justify-content: center;
-  padding: 0;
-  width: 2.75rem;
-}
-
-.mobileNav {
-  background: var(--hg-color-surface);
-  border-bottom: 1px solid var(--hg-color-line);
-  display: grid;
-  gap: 0;
-  left: 0;
-  max-height: calc(100dvh - 4.75rem);
-  overflow-y: auto;
-  padding: 0.65rem 1rem 1.25rem;
-  position: absolute;
-  right: 0;
-  top: 4.75rem;
-}
-
-.mobileNav[hidden] {
-  display: none;
-}
-
-.mobileNav > a:not(.mobileCta) {
-  border-bottom: 1px solid #e2e2dc;
-  font-weight: 680;
-  padding: 0.9rem 0.2rem;
-  text-decoration: none;
-}
-
-.mobileNav > a[aria-current="page"] {
-  color: #8b3928;
-}
-
-.mobileLanguageNav {
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding: 0.9rem 0;
-}
-
-.mobileLanguageNav a {
-  align-items: center;
-  border: 1px solid #d7d9d2;
-  border-radius: 999px;
-  display: flex;
-  font-size: 0.78rem;
-  font-weight: 720;
-  justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.45rem;
-  text-decoration: none;
-}
-
-.mobileLanguageNav a[aria-current] {
-  background: var(--hg-color-charcoal);
-  border-color: var(--hg-color-charcoal);
-  color: var(--hg-color-on-dark);
 }
 
 .hero {
@@ -1656,10 +1321,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .brand:hover .brandMark {
-    transform: scale(1.035);
-  }
-
   .intentOption:hover {
     background: #fffdfa;
     border-color: var(--hg-color-ink);
@@ -2711,33 +2372,9 @@
 }
 
 @media (max-width: 1180px) {
-  .desktopNav {
-    gap: 1rem;
-  }
-
   .heroGrid {
     gap: 2rem;
     grid-template-columns: minmax(18rem, 1fr) minmax(29rem, 0.95fr);
-  }
-}
-
-@media (max-width: 1099.98px) {
-  .desktopNav,
-  .headerCta,
-  .languageNav {
-    display: none;
-  }
-
-  .headerActions {
-    margin-left: auto;
-  }
-
-  .menuButton {
-    display: inline-flex;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .headerCta {
-    display: inline-flex;
   }
 }
 
@@ -2848,39 +2485,6 @@
     font-size: clamp(2.375rem, 10vw, 2.75rem);
     line-height: 1.2;
     max-width: 100%;
-  }
-
-  .headerInner {
-    height: 4.25rem;
-    padding: 0 1rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .headerInner {
-    height: 5rem;
-    padding-inline: 1rem;
-  }
-
-  .brand strong {
-    font-size: 1.12rem;
-  }
-
-  .brand small {
-    font-size: 0.64rem;
-  }
-
-  .brandMark {
-    height: 2rem;
-    width: 2rem;
-  }
-
-  .mobileNav {
-    max-height: calc(100dvh - 4.25rem);
-    top: 4.25rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileNav {
-    max-height: calc(100dvh - 5rem);
-    top: 5rem;
   }
 
   .heroGrid {
@@ -3119,25 +2723,6 @@
     max-width: 100%;
   }
 
-  .headerInner {
-    gap: 0.5rem;
-    padding-inline: 0.75rem;
-  }
-
-  .brand {
-    gap: 0.5rem;
-  }
-
-  .brandMark {
-    height: 1.8rem;
-    width: 1.8rem;
-  }
-
-  .menuButton {
-    height: 2.75rem;
-    width: 2.75rem;
-  }
-
   .heroGrid,
   .travelGuidesSection,
   .proofSection,
@@ -3185,142 +2770,8 @@
   }
 }
 
-@media (min-width: 640px) and (max-width: 1099.98px) {
-  .siteHeader[data-homeground-header-context="home"] .headerInner {
-    height: 4.75rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .menuButton {
-    height: 2.75rem;
-    width: 2.75rem;
-  }
-}
-
-@media (max-width: 1099.98px) {
-  .siteHeader[data-homeground-header-context="home"] .headerInner {
-    z-index: 2;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .headerCta {
-    font-size: 0.875rem;
-    font-weight: 500;
-    min-height: 2.25rem;
-    padding-inline: 0.9rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .headerCtaLong {
-    display: none;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .headerCtaShort {
-    display: inline;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileNav {
-    background: #fff;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    inset: 0;
-    max-height: 100dvh;
-    min-height: 100dvh;
-    overflow-y: auto;
-    padding: 5.75rem 1.5rem 2rem;
-    position: fixed;
-    z-index: 1;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileNav[hidden] {
-    display: none;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileNav > a:not(.mobileCta) {
-    align-items: center;
-    border: 0;
-    display: flex;
-    font-size: 1.125rem;
-    font-weight: 500;
-    line-height: 1.55;
-    min-height: 3.25rem;
-    padding: 0.75rem 0;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileLanguageNav {
-    border-block-start: 1px solid rgb(10 10 10 / 8%);
-    margin-block-start: auto;
-    padding: 1.5rem 0 1rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileLanguageNav a {
-    min-height: 2.75rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileCta {
-    min-height: 2.75rem;
-    width: 100%;
-  }
-
-  .siteHeader[data-homeground-header-context="home"][data-menu-open="true"] .headerCta {
-    display: none;
-  }
-
-  .siteHeader[data-homeground-header-context="home"][data-menu-open="true"] .headerInner::after {
-    display: none;
-  }
-}
-
-@media (max-width: 639px) {
-  .siteHeader[data-homeground-header-context="home"] .headerInner {
-    gap: 0.5rem;
-    height: 5rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .menuButton {
-    height: 3rem;
-    width: 3rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .brand small {
-    display: block;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .mobileNav {
-    padding-block-start: 6rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .siteHeader[data-homeground-header-context="home"] .headerInner {
-    gap: 0.5rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .brand {
-    flex: none;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .brand > span:last-child {
-    display: none;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .brand small {
-    display: none;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .brand strong {
-    font-size: 0.95rem;
-  }
-
-  .siteHeader[data-homeground-header-context="home"] .headerCta {
-    padding-inline: 0.7rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .skipLink,
-  .brand > span:last-child,
-  .brand strong,
-  .brand small,
-  .brandMark,
   .faqList summary span,
   .travelGuideCard,
   .travelGuidesIndexLink,
@@ -3347,23 +2798,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .brandMark {
-    animation: brandMarkIn 560ms cubic-bezier(0.16, 1, 0.3, 1) 80ms backwards;
-  }
-
-  .brand strong,
-  .brand small {
-    animation: brandTextIn 500ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  }
-
-  .brand strong {
-    animation-delay: 150ms;
-  }
-
-  .brand small {
-    animation-delay: 220ms;
-  }
-
   .hero:not(.heroResult) .eyebrow,
   .hero:not(.heroResult) .heroCopy h1,
   .hero:not(.heroResult) .heroFacts {
@@ -3417,30 +2851,6 @@
 
   .intentForm[data-has-selection="true"] .intentContinueButton svg {
     animation: intentArrowReady 420ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-}
-
-@keyframes brandMarkIn {
-  from {
-    opacity: 0;
-    transform: scale(0.78);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes brandTextIn {
-  from {
-    opacity: 0;
-    transform: translateX(-6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
