@@ -1,0 +1,74 @@
+{
+  "id": "xian-lanzhou-dunhuang-silk-road-route",
+  "type": "planning",
+  "pillar": "plan-trip-length-city-order",
+  "audienceMarkets": ["global"],
+  "format": "route-order-decision",
+  "topics": ["trip-planning", "route-order", "silk-road", "pacing", "rail", "air"],
+  "destinations": ["xian", "lanzhou", "dunhuang", "gansu"],
+  "heroImagePath": "/images/guides/xian-lanzhou-dunhuang-silk-road-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xian-lanzhou-dunhuang-silk-road-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "sourceReviewedDate": "2026-08-23",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/xian-lanzhou-dunhuang-silk-road-route/",
+      "title": "Xi'an, Lanzhou and Dunhuang: How Many Nights, in What Order?",
+      "headline": "Xi'an, Lanzhou and Dunhuang: Building a Practical Silk Road Route",
+      "description": "Decide direction, gateways, the long Lanzhou-Dunhuang leg and how many nights each place earns - including when Lanzhou is a real stop and when it is only a change of trains.",
+      "heroAlt": "The forecourt and main building of Dunhuang Railway Station under a clear desert sky.",
+      "navTitle": "Silk Road route order",
+      "featuredLinkLabel": "Shape the Silk Road route",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Silk Road", "Gansu", "Route order", "Pacing"],
+      "heroCredit": {
+        "text": "Dunhuang Railway Station by Hanno Böck, cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dunhuang-station.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/xian-lanzhou-dunhuang-silk-road-route/",
+      "title": "西安、兰州、敦煌：住几晚，按什么顺序？",
+      "headline": "西安、兰州、敦煌：怎样排出一条现实可行的丝路路线",
+      "description": "决定方向、门户、兰州到敦煌的长途段，以及每个地方值几晚——包括兰州什么时候是真正的一站，什么时候只是一次换乘。",
+      "heroAlt": "晴朗天空下的敦煌站站前广场与主体建筑。",
+      "navTitle": "丝路路线顺序",
+      "featuredLinkLabel": "排出丝路路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["丝绸之路", "甘肃", "路线顺序", "节奏"],
+      "heroCredit": {
+        "text": "敦煌站，摄影 Hanno Böck，已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dunhuang-station.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/xian-lanzhou-dunhuang-silk-road-route/",
+      "title": "시안·란저우·둔황: 며칠씩, 어떤 순서로?",
+      "headline": "시안·란저우·둔황: 현실적인 실크로드 동선 짜기",
+      "description": "방향과 관문, 긴 란저우-둔황 구간, 그리고 각 도시가 받을 숙박 수를 정합니다. 란저우가 진짜 목적지일 때와 환승일 뿐일 때를 구분합니다.",
+      "heroAlt": "맑은 사막 하늘 아래 둔황역 역전 광장과 역사 본관.",
+      "navTitle": "실크로드 동선 순서",
+      "featuredLinkLabel": "실크로드 동선 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["실크로드", "간쑤", "동선 순서", "일정 배분"],
+      "heroCredit": {
+        "text": "둔황역, 촬영 Hanno Böck, 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dunhuang-station.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  }
+}
