@@ -17,6 +17,13 @@ Supabase activation are separate facts; never infer one from another.
 - [Current SEO and production brief](./organic-growth/weekly-brief-2026-08-23.md)
 - [Mandatory do-not-repeat and merge-owner check](./organic-growth/do-not-repeat.md)
 
+## Pending central integration
+
+- [Homepage destination-Hub discovery handoff](./organic-growth/homepage-city-hub-discovery-20260823.md)
+  — eight existing Hubs receive direct, locale-matched homepage links; this is
+  a zero-identity navigation change and is not production evidence until
+  central merges and deploys it.
+
 The audited public-runtime inventory at PR #89 release SHA `5bd1558` is 182
 guide identities, 540 guide locale URLs and eight destination Hubs. The live
 sitemap read-back on 2026-08-23 was 670 unique URLs. Later documentation-only

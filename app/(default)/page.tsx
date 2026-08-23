@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HomegroundHomePage } from "../../components/HomegroundHomePage";
 import { getHomegroundCopy } from "../../lib/homegroundI18n";
 import {
+  getHomepageDestinationHubItems,
   getHomepageGuideRailItems,
   getHomepageSearchDemos,
 } from "../../lib/homepageEditorial";
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <HomegroundHomePage
+      destinationHubItems={getHomepageDestinationHubItems("en")}
       guideRailItems={getHomepageGuideRailItems("en").slice(0, 18)}
       locale="en"
       searchDemos={getHomepageSearchDemos("en")}

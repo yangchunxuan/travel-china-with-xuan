@@ -6,6 +6,7 @@ import {
   type HomegroundLocale,
 } from "../../../lib/homegroundI18n";
 import {
+  getHomepageDestinationHubItems,
   getHomepageGuideRailItems,
   getHomepageSearchDemos,
 } from "../../../lib/homepageEditorial";
@@ -73,6 +74,7 @@ export default async function LocalizedHome({
 
   return (
     <HomegroundHomePage
+      destinationHubItems={getHomepageDestinationHubItems(locale)}
       guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
       locale={locale}
       searchDemos={getHomepageSearchDemos(locale)}
