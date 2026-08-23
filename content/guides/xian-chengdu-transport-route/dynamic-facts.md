@@ -1,6 +1,6 @@
 # Dynamic facts — xian-chengdu-transport-route
 
-Reviewed 2026-08-22, Asia/Taipei. Nothing in this file may be presented in the body as a permanent
+Reviewed 2026-08-23, Asia/Shanghai. Nothing in this file may be presented in the body as a permanent
 rule. Each item names what must be re-checked, where, and what changes if it moves.
 
 | # | Dynamic fact as used in the body | Source of record | Re-check cadence | What breaks if it changes |

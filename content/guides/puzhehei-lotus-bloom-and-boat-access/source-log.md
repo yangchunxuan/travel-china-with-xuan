@@ -1,7 +1,8 @@
 # Source log — puzhehei-lotus-bloom-and-boat-access
 
-All retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8). Claim-to-source table written before
-drafting; reverse verification run afterwards.
+Initial retrieval was 2026-08-22; the live operator and CMA pages were rechecked on 2026-08-23,
+Asia/Shanghai (UTC+8). Claim-to-source table written before drafting; reverse verification run
+afterwards.
 
 ---
 
@@ -14,7 +15,7 @@ drafting; reverse verification run afterwards.
 - **URL:** https://www.qbpzh.net/tourism.html
 - **Published / updated:** undated live page; the site's news index carries items dated to
   August 2026, so it is current
-- **Retrieved:** 2026-08-22
+- **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - **Scenic area opening: 1 May – 31 Oct 08:00–17:30; 1 Nov – 30 Apr 08:30–17:00.**
   - **Boat operation: 1 May – 31 Oct 08:00–17:30; 1 Nov – 30 Apr 08:00–17:30.**
@@ -40,7 +41,7 @@ drafting; reverse verification run afterwards.
 
 ## 2. Puzhehei scenic area operator — home page, announcements and route list: **VERIFIED**
 
-- **URL:** https://www.qbpzh.net/ · **Retrieved:** 2026-08-22
+- **URL:** https://www.qbpzh.net/ · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** that the operator publishes 景区公告 (announcements) and 近期动态 (recent news)
   channels, which is the rung of the ladder that carries current conditions; and the list of water
   products: East line by willow-leaf boat, East line mini tour, Middle line by covered pleasure
@@ -54,7 +55,7 @@ drafting; reverse verification run afterwards.
 
 - **Page title:** 普者黑东线（乘柳叶小舟）
 - **URL:** https://www.qbpzh.net/project_detail/c-_detailId%3D1846819502897463296.html
-- **Published:** 2025-08-18 · **Retrieved:** 2026-08-22
+- **Published:** 2025-08-18 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - The route runs **Qinglong Hill to Pucaotang, one way**, by willow-leaf small boat.
   - Named features along it: 蒲草塘, 仙人湖, 情人桥, 普者黑湖, 青龙山, passing the traditional
@@ -70,14 +71,15 @@ drafting; reverse verification run afterwards.
 
 ## 4. China Meteorological Administration: **VERIFIED as a channel**
 
-- **URLs:** https://www.cma.gov.cn/en/ and https://weather.cma.cn/ · **Retrieved:** 2026-08-22
+- **URLs:** https://www.cma.gov.cn/en/ and https://weather.cma.cn/ · **Retrieved:** 2026-08-22 ·
+  **Rechecked:** 2026-08-23
 - **Supports:** that CMA is the national meteorological authority and publishes public forecasts,
   hazardous-weather alerts and an early-warning service — which is why the ladder sends readers
   there rather than to a general app, and tells them to look for warnings and not only a forecast.
 - **Cannot support:** any forecast for any date. **No weather figure appears anywhere in the body.**
 - **Dynamic:** by definition.
 
-## 5. Qiubei county government: **NOT REACHABLE**
+## 5. Qiubei county government: **OPTIONAL CROSS-CHECK, NOT QUOTED**
 
 | Host | Organisation | Result on 2026-08-22 |
 | --- | --- | --- |
@@ -86,10 +88,11 @@ drafting; reverse verification run afterwards.
 | `http://www.zgpzh.gov.cn` (中国普者黑, 丘北县委宣传部), linked from the operator's own site | Qiubei county publicity department | connection failed |
 | `https://www.wenshan.gov.cn/`, `https://www.yn.gov.cn/` | Wenshan prefecture and Yunnan province | connection failed |
 
-**Consequence, stated in the body:** the county rung of the verification ladder is written as a step
-the reader should take — "cross-check with the county's own government and publicity channels" —
-and **nothing is quoted from it**. The operator's site does link to both county sites, which
-confirms they are the right addresses even though they could not be opened from here.
+The table records the initial 2026-08-22 retrieval limitation for audit purposes. The traveler-facing
+body does not describe that internal retrieval history and quotes no county claim. It treats county
+channels only as an optional cross-check for surrounding roads and public notices; the scenic-area
+operator remains the source of record for boats, reservations and visitor rules. The live operator
+sources were rechecked successfully on 2026-08-23.
 
 ---
 
@@ -113,16 +116,18 @@ confirms they are the right addresses even though they could not be opened from 
 | Operator's own summer-versus-autumn-and-winter characterisation | 3 | yes |
 | East, Middle and West are the three main lines | 3 | yes |
 | East line ticket includes four free shuttle rides that day, valid from first check-in | 3 | yes |
-| The operator publishes announcement and news channels where conditions appear first | 2 | yes |
+| The operator publishes announcement and recent-news channels for current notices | 2 | yes |
 | CMA is the national meteorological authority with public forecasts and warnings | 4 | yes |
-| Puzhehei is a connected system of karst lakes, ponds and village waterways rather than one body of water | 3, read as a route description; presented in the body as how the operator's own route reads | yes, framed as inference from the source |
+| The body makes no water-level or route-navigability inference from the landscape or route description | editorial boundary checked against 1–3 | yes |
 | Hero image licence, authorship and date | image-plan.md | yes |
 
 ## Absolute expressions audited after drafting
 
-The body contains **no bloom date, no bloom state, no water level, no price, no weather figure and
-no claim about any specific day**. Three explicit refusals are stated in their own section. The one
-categorical claim is a negative: that nobody can honestly say in advance when the lotus will peak.
+The body contains **no bloom date, no bloom state, no water-level estimate, no price, no weather
+figure and no claim about any specific day**. It does not infer boat access from rain, visible water,
+a photograph, hill access or the night-tour listing. Three explicit refusals are stated in their
+own section. The one categorical claim is a negative: that nobody can honestly say in advance when
+the lotus will peak.
 
 The phrase "the flowers do not read calendars" is the only rhetorical flourish, and it makes a true
 point rather than a factual claim.

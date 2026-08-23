@@ -6,14 +6,14 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "To hear nanyin in Quanzhou, find a dated listing published by the city rather than a schedule copied from a travel page, then turn up at one of two small rooms and sit close. The municipal troupe's programmes run about seventy minutes and start either mid-evening or mid-afternoon. You will hear slow melodies on a bamboo dongxiao and a crooked-neck lute held flat across the lap, with ballads sung in the Quanzhou dialect. This page explains how to find a real date, what the seventy minutes contains, and which claims about nanyin you should not believe.",
+      text: "To hear nanyin in Quanzhou, begin with a current, dated listing published by the city rather than a schedule copied from a travel page. That official listing controls the venue, start time, stated duration and price for your performance. You will hear slow melodies on a bamboo dongxiao and a crooked-neck lute held flat across the lap, with ballads sung in the Quanzhou dialect. This page explains how to find the listing, what to listen for, and which claims about nanyin you should not believe.",
     },
     {
       id: "answer",
       type: "callout",
       title: "The short version",
       tone: "decision",
-      body: "Nanyin in a theatre is programmed by the Quanzhou Nanyin Inheritance Centre, and the dates appear in two places the city itself publishes: the culture bureau's monthly schedule of public-welfare performances, and the municipal government's city-calendar entries. Both name the venue, the troupe, the duration and the ticket price for that specific run. Check them for your dates, in that order. Do not plan around any calendar that is not dated, including this page - which deliberately publishes no dates at all.",
+      body: "Nanyin theatre programmes appear in two places the city publishes: the culture bureau's schedule for a named month and the municipal government's city-calendar entries. Start with the current month's official schedule, then open the dated entry for your programme if one is available. The current official listing for your performance - not any historical example on this page - controls its venue, start time, stated duration and price.",
     },
     {
       id: "hear-heading",
@@ -24,7 +24,7 @@ const body = {
     {
       id: "hear-p1",
       type: "paragraph",
-      text: "UNESCO, which inscribed nanyin on the Representative List in 2009, describes it as a musical performing art central to the culture of the Minnan people of southern Fujian and to Minnan communities overseas, built on slow, simple and elegant melodies. Two instruments are singled out as distinctive: a bamboo flute called the dongxiao, and a crooked-neck lute called the pipa which is played horizontally rather than upright. Around them sit more ordinary wind, string and percussion instruments. Nothing is amplified in the way a modern concert is, and nothing is fast.",
+      text: "UNESCO, which inscribed nanyin on the Representative List in 2009, describes it as a musical performing art central to the culture of the Minnan people of southern Fujian and to Minnan communities overseas, built on slow, simple and elegant melodies. Two instruments are singled out as distinctive: a bamboo flute called the dongxiao, and a crooked-neck lute called the pipa which is played horizontally rather than upright. Around them sit more ordinary wind, string and percussion instruments. The character UNESCO emphasises is measured, simple and elegant rather than hurried.",
     },
     {
       id: "hear-p2",
@@ -71,7 +71,7 @@ const body = {
     {
       id: "who-p1",
       type: "paragraph",
-      text: "The ticketed performances a visitor is most likely to attend are given by the Quanzhou Nanyin Inheritance Centre, the municipal troupe, in two rooms that both carry nanyin in their names: a larger hall and a small theatre. The small one is unusually small. The provincial account describes a room on the upper floor with no modern stage lighting or sound system, where the audience sits at no distance at all, and which is named for a shrine inside it - nanyin practitioners revere Meng Chang as the founding patron of the music, the same figure UNESCO names as the god of music worshipped at spring and autumn ceremonies. Performers there play with a gilded lion under their feet and palace lanterns beside them.",
+      text: "The ticketed performances a visitor is most likely to attend are given by the municipal Quanzhou Nanyin Inheritance Centre. The June 2026 monthly schedule and a May 2026 city-calendar example name the Nanyin Art Garden; older official material also documents a small theatre. Let the current listing decide your venue. A January 2025 provincial account described that small theatre as an upstairs room that at the time had no modern stage lighting or sound system, with the audience at very close range, and named for a shrine inside it - nanyin practitioners revere Meng Chang as the founding patron of the music, the same figure UNESCO names as the god of music worshipped at spring and autumn ceremonies. Performers there were described with a gilded lion under their feet and palace lanterns beside them.",
     },
     {
       id: "who-p2",
@@ -83,7 +83,7 @@ const body = {
       type: "callout",
       title: "A theatre ticket is one context, not the context",
       tone: "neutral",
-      body: "UNESCO records nanyin as performed at spring and autumn ceremonies, at weddings and funerals, and during festivities in courtyards, markets and streets. The provincial account adds red-brick houses, teahouses and guesthouses to the list of places it is heard. A ticketed seventy-minute programme is a real and convenient way in, and it is also the most formal setting the music has. If you hear it drifting out of a temple courtyard while you are walking, that is not a lesser version of what you paid for.",
+      body: "UNESCO records nanyin as performed at spring and autumn ceremonies, at weddings and funerals, and during festivities in courtyards, markets and streets. The provincial account adds red-brick houses, teahouses and guesthouses to the list of places it is heard. A ticketed programme is a real and convenient way in, and it is also the most formal setting the music has. If you hear it drifting out of a temple courtyard while you are walking, that is not a lesser version of what you paid for.",
     },
     {
       id: "find-heading",
@@ -105,7 +105,7 @@ const body = {
         [
           "The culture bureau's monthly performance schedule",
           "A table of public-welfare performances by the municipal arts troupes for one named month, published in advance",
-          "Whether nanyin is running at all in that month, on which dates, in which of the two rooms, at what time and price",
+          "Whether nanyin is running at all in that month, on which dates, at which venue, at what time, for what stated duration and price",
           "Anything about a month it does not cover, or about availability - it is a schedule, not a booking system",
         ],
         [
@@ -119,17 +119,17 @@ const body = {
     {
       id: "find-p2",
       type: "paragraph",
-      text: "Read the monthly schedule first to find out whether anything is on, then look for the city-calendar entry for the specific programme you want. Both are published by city bodies, which is the point: a listing that survives contact with a government website is a listing someone is accountable for.",
+      text: "Read the current month's official schedule first to find out whether anything is on, then look for the city-calendar entry for the specific programme you want. For planning, the current dated official listing controls; the older examples in the source list only show how these channels have been used. If two official pages differ, use the newer entry's enquiry channel to confirm.",
     },
     {
       id: "find-list",
       type: "list",
       items: [
-        "Every nanyin entry in the sample of official listings consulted for this page ran seventy minutes. Treat that as the shape of the evening, not as a guarantee for yours.",
-        "Start times in those listings were mid-evening for the larger hall and mid-afternoon for the small theatre. Check which room your listing names, because it changes when your day ends.",
-        "Prices differed between programmes in the same month, and public-welfare performances were cheaper than the main-hall runs. Read the price on the listing rather than assuming a standard ticket.",
+        "The dated official examples cited below, spanning July 2025 to June 2026, listed seventy minutes. That is a historical sample, not a standard or a prediction: use the duration in your current listing.",
+        "Those same examples include afternoon and evening starts, while one special-event entry offered six time slots in a single day. There is no reliable venue-to-time rule; use the start time in your current listing.",
+        "Prices varied across the cited historical examples. Read the price on the current listing rather than assuming a standard ticket.",
         "The city-calendar entries carry an enquiry telephone number. It is the right way to ask whether a run has sold out, and it is not reproduced here because published numbers change.",
-        "Programme titles change constantly. Do not search for a title you saw somewhere; search for the venue and the troupe.",
+        "Programme titles change. Start with the current monthly schedule; if you need to search further, use the venue and troupe shown there rather than an old title.",
       ],
     },
     {
@@ -141,7 +141,7 @@ const body = {
     {
       id: "watch-p1",
       type: "paragraph",
-      text: "Sit close. This is music built for a room, and in the small theatre there is no amplification to carry it to the back. If you have a choice of tier, the cheaper seats in a small room are often better than the same money spent on distance in a large one.",
+      text: "Choose a seat for a comfortable view of the players. A January 2025 provincial feature described one small-theatre setup as close-range and without a modern sound system at that time. It does not establish today's equipment or acoustics, so use current venue and seating information rather than assuming amplification status.",
     },
     {
       id: "watch-p2",
@@ -155,7 +155,7 @@ const body = {
         "The clappers are not decoration. The player holding them sits centrally and sets the rhythm for everyone, closer to a conductor than a percussionist.",
         "The pipa leads the ensemble and plays the skeletal notes of the piece. The notation nanyin uses is even called the pipa fingering score - which tells you where the music's centre of gravity is.",
         "Watch the dongxiao player's breathing rather than their fingers. The long lines are the point, and they are what makes the tempo feel deliberate rather than slow.",
-        "The room itself is part of it. In the small theatre, the shrine, the lanterns and the absence of a sound system are not a heritage set dressing - they are the working conditions the music was written for.",
+        "The room can be part of the experience. A January 2025 feature described the small theatre's shrine and lanterns, and said that room then had no modern sound system. Treat that as a description of that setting at that time, not as a guarantee about today's equipment.",
       ],
       type: "list",
     },
@@ -207,7 +207,7 @@ const body = {
         ],
         [
           "That it has been performed unbroken for a thousand years",
-          "No source consulted here says that. What is documented is that migration from the Central Plains across several dynasties brought musical culture into the Minnan region, where it fused with local music; that more than three thousand scores and songs have been collected and organised; and that the form is alive now, in societies, schools and a professional troupe",
+          "The official sources cited below do not support that wording. What is documented is that migration from the Central Plains across several dynasties brought musical culture into the Minnan region, where it fused with local music; that more than three thousand scores and songs have been collected and organised; and that the form is alive now, in societies, schools and a professional troupe",
         ],
         [
           "That there is one correct ensemble",
@@ -258,8 +258,8 @@ const body = {
     {
       id: "limits-list",
       items: [
-        "No performance calendar, permanent or otherwise. Programmes, dates and prices change every month, and a copied calendar is the single most common reason visitors arrive at a dark theatre.",
-        "No ticket prices. Prices differed between programmes in the same month in the listings consulted, so any figure printed here would be wrong for most readers.",
+        "Do not rely on a copied performance calendar. Programmes, dates and prices change, and an old listing can leave you at a dark theatre.",
+        "No ticket prices. Prices varied across the cited historical examples, so the current official listing is the only safe source for your performance.",
         "No booking, no resale links, no claim that we can secure seats.",
         "No history of nanyin beyond what is needed to hear it well. The origin story is a genuine scholarly subject and this is a guide to attending a performance.",
       ],
@@ -291,7 +291,7 @@ const body = {
           description: "Another performance a visitor meets first as a spectacle, and what changes when you know the frame.",
         },
         {
-          label: "Xiamen, Quanzhou and the Fujian tulou in one route",
+          label: "How to choose a Fujian tulou cluster",
           href: "/guides/fujian-tulou-cluster-selection/",
           description: "Choosing which tulou cluster to add if Quanzhou is part of a wider Fujian trip.",
         },
@@ -311,37 +311,43 @@ const body = {
           label: "Nanyin, Representative List of the Intangible Cultural Heritage of Humanity (file 00199)",
           url: "https://ich.unesco.org/en/RL/nanyin-00199",
           publisher: "UNESCO",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Hear a piece of nanyin: a thousand years of elegance",
           url: "https://www.fj.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202501/t20250117_6703931.htm",
           publisher: "Fujian Provincial People's Government portal",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
-          label: "Monthly schedule of public-welfare performances by Quanzhou municipal arts troupes",
-          url: "https://cbtb.quanzhou.gov.cn/xwdt/bjdt/202502/t20250226_3143384.htm",
+          label: "June schedule of public-welfare performances by Quanzhou municipal state-owned arts troupes",
+          url: "https://cbtb.quanzhou.gov.cn/xwdt/bjdt/202606/t20260601_3296534.htm",
           publisher: "Quanzhou Municipal Bureau of Culture, Radio, Television and Tourism",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
+        },
+        {
+          label: "City calendar: Nanyin Meets Puppetry",
+          url: "https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286252.htm",
+          publisher: "Quanzhou Municipal People's Government",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "City calendar: a nanyin programme at the Nanyin Art Garden",
           url: "https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286287.htm",
           publisher: "Quanzhou Municipal People's Government",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "City calendar: a public-welfare nanyin programme",
           url: "https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286281.htm",
           publisher: "Quanzhou Municipal People's Government",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "City calendar: a nanyin study programme",
           url: "https://www.quanzhou.gov.cn/lyb/csrl/202507/t20250729_3194354.htm",
           publisher: "Quanzhou Municipal People's Government",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
       ],
     },

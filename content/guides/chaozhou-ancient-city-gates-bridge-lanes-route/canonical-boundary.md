@@ -9,7 +9,8 @@
 
 A traveller inside or arriving at Chaozhou needs to choose **which gate to enter by and which
 direction to walk**, so that the arch street, the inner lanes, the riverside wall and Guangji
-Bridge connect into one route that never doubles back.
+Bridge form a legible north-to-south route. Short lane visits are optional side trips; the page
+does not promise a closed loop or a route with no backtracking.
 
 ## Slug and task occupancy check
 
@@ -22,7 +23,7 @@ near-synonym directory (`chaozhou-*`, `guangji-bridge-*`, `paifang-street-*`).
 
 | Adjacent owner | Status | What it keeps | What this page must not take |
 | --- | --- | --- | --- |
-| A future Guangji Bridge owner | not on any ref today | The bridge's own ticketing, opening times and light-show calendar | **Any opening time, ticket, price or event date.** This page states only the structural fact that the pontoon section closes in the morning and opens in the evening, because that changes whether the route is walkable, and then tells the reader to confirm on the day |
+| A future Guangji Bridge owner | not on any ref today | The bridge's own ticketing, opening times, access pattern and light-show calendar | **Any opening time, ticket, price, event date or promise that either half of a disconnected bridge is open to pedestrians.** This page tells the reader to use the current official notice and on-site staff instruction |
 | A future Chaozhou food owner | not on any ref today | Chaoshan food | All food. Tea appears once, as etiquette, not as a recommendation |
 | A future Chaozhou city hub | not on any ref today | The city overview, arrival transport and accommodation | Arrival transport, stations, accommodation areas, a top-sights list |
 | `yingge-dance-beyond-the-viral-clips` | published on origin/main | The Yingge dance tradition | Any description of the performance. Linked once and explicitly deferred to |
@@ -36,8 +37,8 @@ near-synonym directory (`chaozhou-*`, `guangji-bridge-*`, `paifang-street-*`).
 - No Chaozhou food content, and no restaurant or teahouse named.
 - No arrival transport, no station or airport, no accommodation areas.
 - No top-sights list; the page is a sequence, not an inventory.
-- No reverse-direction duplicate: the loop is explicitly stated to work in either direction, and
-  the fallback table says so again.
+- No reverse-direction duplicate: this page owns one north-to-south planning sequence and does not
+  claim that it forms a loop or works without any short lane backtracking.
 - No Yingge dance description.
 
 ## Residents and private space

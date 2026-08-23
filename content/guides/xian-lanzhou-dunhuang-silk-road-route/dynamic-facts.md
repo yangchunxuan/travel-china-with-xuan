@@ -1,6 +1,6 @@
 # Dynamic facts — xian-lanzhou-dunhuang-silk-road-route
 
-Reviewed 2026-08-22, Asia/Taipei. Nothing here may be presented in the body as a permanent rule.
+Reviewed 2026-08-23, Asia/Shanghai. Nothing here may be presented in the body as a permanent rule.
 
 | # | Dynamic fact as used in the body | Source of record | Re-check cadence | What breaks if it moves |
 | --- | --- | --- | --- | --- |

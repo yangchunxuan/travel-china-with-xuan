@@ -1,7 +1,13 @@
 # Source log — chaozhou-ancient-city-gates-bridge-lanes-route
 
-All retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8). Claim-to-source table written before
-drafting; reverse verification run afterwards.
+Initial retrieval was 2026-08-22, Asia/Taipei (UTC+8). Dynamic claims and the finished body were
+rechecked on 2026-08-23.
+
+The 2026-08-23 operational refresh also checked Chaozhou municipal material describing the eighteen
+boats as connected by day for pedestrian passage and opened at night for navigation. That confirms
+the broad day/night pattern but does **not** establish current admission to either half of a
+disconnected bridge. The body therefore directs readers to the bank unless staff explicitly admit
+them and makes no permanent claim about wall access or price.
 
 ---
 
@@ -36,7 +42,7 @@ verified, and the article publishes no operational information of any kind.
   Compilation Committee Office), credited jointly on the page
 - **Page title:** 诗意潮州｜潮州古城墙
 - **URL:** http://dfz.gd.gov.cn/zjgd/content/post_3058024.html
-- **Published:** 2020-08-03 · **Retrieved:** 2026-08-22
+- **Published:** 2020-08-03 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - "三山一水护城廓"; only the **east-facing wall** survives, beginning at 金山 at the north end and
     running south to 南门, where it joins the south dyke.
@@ -67,7 +73,7 @@ verified, and the article publishes no operational information of any kind.
   name and title
 - **Page title:** 潮州广济桥：千年古桥见证历史，饱经岁月风采更盛
 - **URL:** http://www.qb.gd.gov.cn/jrqx/content/post_1250040.html
-- **Published:** 2024-07-03 · **Retrieved:** 2026-08-22
+- **Published:** 2024-07-03 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - Founded **Southern Song Qiandao 7 (1171)** as 康济桥 — one stone pier plus 86 shuttle boats
     chained into a pontoon.
@@ -90,7 +96,7 @@ verified, and the article publishes no operational information of any kind.
 - **Institution:** same office, carrying a 潮州日报 report quoting the local historian 陈贤武
 - **Page title:** 潮州古城：人文荟萃冠岭东 烟火最是故乡浓
 - **URL:** http://www.qb.gd.gov.cn/mlgd/content/post_981941.html
-- **Published:** 2022-06-24 · **Retrieved:** 2026-08-22
+- **Published:** 2022-06-24 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - 广济门城楼 is the city's landmark, its first-floor eaves carrying the plaque 岭东首邑.
   - The old city **still holds its Song-era street-block pattern**.
@@ -141,7 +147,7 @@ supported by the same indexed material, and is not load-bearing for any route in
 | Guangji Gate is three storeys, five bays, one of few surviving Ming gate towers, facing the bridge | 1 | yes |
 | The four gate names | 1 (two of four) + corroboration | partial, disclosed |
 | Bridge combines beam, arch and pontoon forms | 2 | yes |
-| Eighteen-boat pontoon; closes in the morning, opens in the evening | 2 | yes |
+| Eighteen-boat pontoon; connected for daytime passage and opened in the evening for navigation | 2 plus 2026-08-23 municipal cross-check | yes as a general pattern; current operation remains dynamic |
 | Founded 1171; boats reduced to eighteen in the sixteenth century | 2 | yes |
 | The moving section let shipping through and floodwater pass | 2 | yes |
 | Restoration completed 2007; now a pedestrian sightseeing bridge | 2 | yes |
@@ -154,13 +160,10 @@ supported by the same indexed material, and is not load-bearing for any route in
 
 ## Absolute expressions audited after drafting
 
-The body contains **no opening time, no ticket, no price, no event date and no journey duration
-other than the two soft pacing estimates** ("roughly half a day", "ninety minutes"), which are
-presented as pace guidance rather than as facts about the site. The one categorical instruction —
-walk the arch street in a single direction — is editorial. Every historical figure traces to
-source 1, 2 or 3. The word "always" appears once, about the riverside wall walk being available at
-no cost, which follows from it being a public wall rather than a ticketed attraction; if that ever
-changes, the fallback table's last row changes with it.
+The body contains **no opening time, no ticket, no price or event date**. The half-day and ninety-
+minute figures are soft pacing estimates. It no longer promises a loop, no-backtracking route,
+permanent wall access, entry to either half of a disconnected bridge, or a universal meaning behind
+a tea invitation.
 
 ## Sources deliberately not used
 

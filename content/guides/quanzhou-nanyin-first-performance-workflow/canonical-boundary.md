@@ -41,8 +41,9 @@ near-synonym directory, or any nanyin or nanguan guide. No canonical conflict.**
 
 - **No performance calendar of any kind**, real-time or permanent. This is the brief's central
   prohibition for this topic and it is refused in writing, with the reason, in all three languages.
-- **No dates, programme titles, ticket prices or telephone numbers**, in any language. Verified by
-  grep across the three bodies.
+- **No individual performance dates, current programme titles, ticket prices or telephone
+  numbers**, in any language. Source-publication months and the historical sample range are context,
+  not a usable calendar.
 - **No booking, no resale links, no claim that Homeground can obtain or check seats.**
 - **No absorption of the string puppetry guide.**
 - **No general history of nanyin** beyond what is needed to hear one performance well; the article
@@ -58,7 +59,7 @@ reader who will meet these claims elsewhere.
 | Forbidden claim | How the draft handles it |
 | --- | --- |
 | "Tang-dynasty music preserved intact" | Replaced by the provincial source's own attributed wording — that **scholars generally hold** nanyin closely related to Tang and Song music — plus the specific organological observations (the dongxiao described as following the Tang chiba system, and so on). The table says explicitly that this is a set of attributed positions, **not** a claim that a Tang repertoire survives unchanged |
-| "Unbroken for a thousand years" | The table states that **no source consulted says this**, and gives what is documented instead: dynastic migration and fusion, three thousand-plus collected pieces, and a currently living practice. The provincial source's headline does use "a thousand years" rhetorically; that phrase appears **only** inside the source list as part of the page title |
+| "Unbroken for a thousand years" | The table states that **none of the cited official sources says this**, and gives what is documented instead: dynastic migration and fusion, three thousand-plus collected pieces, and a currently living practice. The provincial source's headline does use "a thousand years" rhetorically; that phrase appears **only** inside the source list as part of the page title |
 | "A fixed ensemble at every performance" | Answered directly from UNESCO, which records **two** vocal formats. The five-position seating is given using the provincial source's own hedge — "the most classic form" — and the body draws attention to that word |
 | "A frozen museum piece" (the mirror-image error) | Answered with the troupe's recent national awards, a 2023 national broadcast, and UNESCO's own recording of **urban development as a threatening factor** — a statement about a living practice under pressure |
 
@@ -68,9 +69,11 @@ Three things on this page are not available in one place elsewhere:
 
 1. **A named method for finding a real date**, distinguishing the culture bureau's monthly schedule
    from the municipal city-calendar entries and saying what each one settles and does not settle.
-2. **A cross-listing regularity**: four independent official listings spanning July 2025 to April
-   2026 all give the same troupe, the same venue and **seventy minutes**, with start times splitting
-   by room. Published as the shape of an evening, explicitly not as a guarantee.
+2. **A rule for using historical examples safely**: the cited official pages from July 2025 through
+   June 2026 list seventy minutes, but the page labels this only as a historical sample. A June
+   monthly schedule shows afternoon and evening starts at the same venue, while a May special-event
+   page lists six starts in one day, so the body rejects a venue-to-timeslot rule and tells travellers
+   that their current official listing controls duration, venue, time and price.
 3. **A claims table** that puts the four repeated assertions about nanyin next to what the sources
    actually say — including the negative finding that nothing consulted supports the thousand-year
    claim.
@@ -194,7 +197,7 @@ mobile 390×844.
 | Tables render | 4 | 4 | 4 |
 | Hero loads, 1600×1000 natural | yes | yes | yes |
 | Hero rendered at 1280 / 390 | 480×300 / 390×244 | same | same |
-| Sources block collapsed, count 6 | "SOURCES (6)" | "资料来源 (6)" | "자료 출처 (6)" |
+| Sources entries in the updated bodies | 7 | 7 | 7 |
 | Self-canonical correct | yes | yes | yes |
 | Page-level horizontal overflow at 390 | **none** (scrollWidth 390 = viewport) | none | none |
 | Page-level horizontal overflow at 1280 | none (scrollWidth 1265) | none | none |

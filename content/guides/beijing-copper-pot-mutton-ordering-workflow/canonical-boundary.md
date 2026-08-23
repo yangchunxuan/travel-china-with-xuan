@@ -65,12 +65,12 @@ than quietly omitting a timing, the article **makes the absence the point**:
 
 - A dedicated warning callout in all three languages states that no Chinese food-safety authority
   publishes such a figure and that this page will not invent one.
-- In its place it gives the **sourced principle**: Beijing CDC's thorough-cooking description
-  (poultry until juices run clear with no pink; eggs and seafood fully boiling; soups and stews
-  boiled at least a minute; large pieces longer) and its statement that most micro-organisms
-  struggle to survive above 70 °C or below 4 °C.
-- It adds a Homeground editorial instruction that is clearly ours: longer for children, older
-  relatives, pregnant and immunocompromised diners.
+- In its place it gives the only conclusion those sources safely support: cook food thoroughly,
+  while explicitly warning that poultry, soup and broad 70 °C statements cannot be converted into
+  a seconds, colour or temperature endpoint for thin mutton slices.
+- For children, older adults, pregnant people and immunocompromised diners, it recommends asking
+  staff to handle or confirm thorough cooking, or choosing a kitchen-cooked dish, rather than
+  inventing a longer personal timing rule.
 - `source-log.md` records that the widely repeated "seven seconds" and "as soon as it changes
   colour" claims trace to no authority found here, **including the Commons caption on a sibling
   image file**, which is explicitly ruled out as a source.

@@ -6,14 +6,14 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "A Beijing copper-pot mutton meal is ordered in rounds, not all at once. Take the pot with its broth, one plate of mutton for every two people, two vegetables, one starch and a sesame-paste dip. Vegetables in first, then the meat, cook everything through, and order the second round only when the first has gone. That sequence is the whole method. The rest of this page decodes the meat section of the menu, shows how four Beijing houses answer the same questions differently, and gives you sentences to say at the table.",
+      text: "Order a Beijing copper-pot mutton meal in rounds. For two people, begin with the pot, one plate of mutton, two vegetables and a sesame-paste dip each; hold the starch until you know you still want it. A vegetables-first round is an optional way to start lighter, not a safety rule. Add meat in small batches, follow the restaurant's cooking guidance and order more only after seeing the first portions.",
     },
     {
       id: "answer",
       type: "callout",
       title: "The default first order, for two people",
       tone: "decision",
-      body: "One copper pot with the house broth. One plate of mutton described as leg or upper shoulder, with fat running through the lean. One leaf vegetable and one absorbent item - Chinese cabbage and frozen tofu are the pairing Beijing's market regulator names. One sesame-paste dip each. One starch, ordered but held back. Nothing else until you have eaten that. Then add meat one plate at a time, for as long as you are still hungry.",
+      body: "One copper pot with the house broth. One plate labelled leg or upper shoulder - the two cuts named in Beijing's market-regulator guide. Add one leaf vegetable, one absorbent item such as frozen tofu and one sesame-paste dip each. Order starch later. Once you have seen the portion size and finished most of the first round, add meat one plate at a time.",
     },
     {
       id: "what-heading",
@@ -24,26 +24,7 @@ const body = {
     {
       id: "what-p1",
       type: "paragraph",
-      text: "The pot in front of you is a single ring of broth around a charcoal chimney. No divider, no second compartment and, in the older houses, no red oil. Beijing's market regulator describes the base as plain water with ginger slices, spring onion, goji berries and dried shrimp - a broth built to stay out of the way. When the mutton is thin and fresh, the pot's job is to cook it, not season it. That is the largest difference from the Sichuan and Chongqing pots most visitors meet first, where the broth carries the flavour and the dip is often only oil and garlic. Here the order is reversed.",
-    },
-    {
-      id: "what-p2",
-      type: "paragraph",
-      text: "The pot is a specific object with named parts. The Ministry of Commerce entry for Yitiaolong, a Beijing halal house serving instant-boiled mutton since 1785, describes the copper pot it has kept since 1897 as having a clearly formed jar belly, ear curtain and gourd door - the swollen lower bowl, the flared lip ringing the chimney, and the shaped opening at the base of the flue where charcoal is fed. Donglaishun, whose technique joined the national intangible heritage list in 2008, tells the Dongcheng district government the same thing in one sentence: it kept the old Beijing habit of cooking in a copper pot, and uses machine-made charcoal because it burns long and does not pollute.",
-    },
-    {
-      id: "pot-list-heading",
-      type: "heading",
-      level: 3,
-      text: "Two things the pot tells you before you order",
-    },
-    {
-      id: "pot-list",
-      type: "list",
-      items: [
-        "A charcoal chimney means uneven heat: the broth boils hardest closest to the flue and slowest at the rim near you, so cook where the water is moving.",
-        "One undivided ring means everything shares a liquid, so strong-smelling items change the pot for the whole table.",
-      ],
+      text: "The documented Beijing version uses one ring of broth around a charcoal chimney. Beijing's market regulator describes a base of plain water with ginger, spring onion, goji berries and dried shrimp, with much of the seasoning supplied by the dip. Individual restaurants may use a different broth; the officially documented Yangfang Shengli method, for example, names a bone broth.",
     },
     {
       id: "menu-heading",
@@ -54,7 +35,7 @@ const body = {
     {
       id: "menu-p1",
       type: "paragraph",
-      text: "The meat section is where most first orders go wrong, because its words describe three things at once: which part of the animal, how it was cut, and whether anything was added. Beijing's market regulator names two cuts for the pot - leg and upper shoulder - chosen because fat runs through the lean rather than sitting at the edge. Those two are the safe defaults, and a house offering nothing else is not a lesser house. Everything past them is preference, not upgrade.",
+      text: "Meat-section labels can describe the cut, the slicing method or whether a retail product was prepared with other ingredients. Beijing's market regulator names leg and upper shoulder for the pot. Use those as two clear starting terms, not as a quality ranking, and ask how the restaurant prepared today's plate.",
     },
     {
       id: "menu-table",
@@ -69,17 +50,17 @@ const body = {
         ],
         [
           "Upper shoulder (yang shang nao)",
-          "The regulator's other named cut; generally softer and more marbled than leg",
-          "The same question, then order one of each and compare",
+          "The other cut named in the same regulator guide; the source gives no quality ranking against leg",
+          "Is it hand-cut fresh, or a frozen roll?",
         ],
         [
           "Hand-cut (shou qie)",
           "A knife-work claim. Yangfang Shengli's heritage listing names four techniques - splitting, boning, paring, slicing - and a hand-cut crescent as its signature",
-          "Nothing. Order it and look: hand-cut slices are irregular in outline",
+          "How was today's plate cut and prepared? Shape alone does not prove the method",
         ],
         [
           "Roll (yang rou juan)",
-          "Frozen into a block and sliced from it - a legitimate method, not a shortcut. Says nothing about what was in the block",
+          "Frozen into a block and sliced from it; the label alone does not establish what was in the block",
           "Is this whole-cut mutton, or a prepared roll?",
         ],
         [
@@ -99,7 +80,7 @@ const body = {
       type: "callout",
       title: "The one place this vocabulary does not transfer",
       tone: "warning",
-      body: "The clearest published account of pure mutton versus a prepared mutton product comes from Beijing's market regulator, and it is written about packaged food sold in shops: pure mutton is divided, frozen and sliced with nothing added, while a prepared roll may have other ingredients and additives worked in. The regulator states plainly that no standard currently sets a minimum meat content for prepared products, so the proportion varies between manufacturers. That advisory tells you to read the product name and the ingredient list. A restaurant plate has neither. Ask instead.",
+      body: "Beijing's market regulator explained pure versus prepared mutton in a 2020 advisory about packaged retail food: pure mutton was described as divided, frozen and sliced with nothing added, while a prepared roll could contain other ingredients and additives. The advisory said that, at publication, no standard set a minimum meat content for those prepared products. That dated retail statement is not a current restaurant-menu rule. A restaurant plate has no retail ingredient list, so ask in plain language what today's plate contains.",
     },
     {
       id: "houses-heading",
@@ -142,16 +123,11 @@ const body = {
         [
           "Yitiaolong, Beijing municipal heritage list 2007, via the Ministry of Commerce",
           "Not specified; a charcoal-fired copper pot named as continuous practice since 1785",
-          "Tan sheep from the Gansu area, small-framed and not gamey",
+          "The record names Tan sheep from the Gansu area",
           "Hand-cut, plus a cold-pressing method for the frozen rolls",
           "Several dips, each blended from dozens of ingredients; a crab-shell sesame flatbread",
         ],
       ],
-    },
-    {
-      id: "houses-p2",
-      type: "paragraph",
-      text: "Two conclusions follow. If you want the plain-water version you read about, you may have to go looking for it - a bone broth is not a corruption but one house's documented signature. And the sourcing claims are real claims, made in public records rather than on a wall: Yangfang Shengli names Xilingol mutton, Yitiaolong names Gansu Tan sheep. A house that has said this in a government record can be asked about it at the table.",
     },
     {
       id: "amount-heading",
@@ -185,8 +161,8 @@ const body = {
         [
           "Three to four",
           "Two plates, ideally two cuts; two vegetables; one absorbent item; a dip each",
-          "Meat by the plate, alternating with vegetables so the broth stays clean",
-          "Noodles, dumplings, anything that clouds the pot",
+          "Meat one plate at a time, after seeing the first portions",
+          "Noodles and dumplings until you know how much room is left",
         ],
         [
           "Five or more",
@@ -195,11 +171,6 @@ const body = {
           "A second pot, unless the table cannot reach one",
         ],
       ],
-    },
-    {
-      id: "amount-p2",
-      type: "paragraph",
-      text: "Example, written to show the arithmetic rather than to report a real meal. Four people order two plates of meat, three vegetables and four dips. The plates turn out generous, so the second round is one plate rather than two. Total: three plates for four people, decided after seeing the first two. Had the plates been small it would have been five. Neither number could have been chosen from the menu.",
     },
     {
       id: "dip-heading",
@@ -224,10 +195,10 @@ const body = {
       items: [
         "If it arrives already mixed, taste before adding anything. Many houses have balanced it and additions only make it saltier.",
         "If it arrives as plain sesame paste beside a condiment tray, the tray is the point. Add the other two a little at a time, stirring, and stop when it coats the back of a spoon.",
-        "Chive-flower sauce is what most first-timers dislike on the first taste and miss by the third mouthful. Add half what you think you want, eat some meat with it, then reconsider.",
-        "If you truly do not want sesame paste, ask what else the house has. A soy-and-vinegar bowl with coriander and chilli oil is a normal alternative, and asking is not an insult.",
-        "Do not thin the dip with broth from the pot. The bowl should be thick enough to cling, and liquid lifted from a working pot is not clean.",
-        "Pickled sweet garlic sits beside the dip rather than in it, and it is not a garnish. Whole cloves cured in sweet vinegar reset the palate between rounds of fat.",
+        "Chive-flower sauce is assertive. Add a little, taste it with the meat, then decide whether to add more.",
+        "If you do not want sesame paste, ask what other dip the restaurant can provide.",
+        "Do not thin the dip with broth unless the restaurant recommends it; adding broth makes the seasoning harder to control.",
+        "Pickled sweet garlic is normally served beside the dip; eat it separately rather than stirring it into the bowl.",
       ],
     },
     {
@@ -239,7 +210,7 @@ const body = {
     {
       id: "cook-p1",
       type: "paragraph",
-      text: "There is a published order here, and it is not the one most people improvise. Beijing's market regulator states it as vegetables before meat. The reason is practical: leaf vegetables and frozen tofu entering a clean pot leave the broth better than they found it, while meat first leaves scum and fat that everything afterwards sits in. Starting with vegetables also gives the pot the minutes it needs to reach a real boil.",
+      text: "Beijing's market regulator says diners may follow a vegetables-before-meat order. Treat that as an optional way to start lighter and learn the pot, not as a food-safety requirement. If the restaurant gives a different sequence for its broth or ingredients, follow the staff's guidance.",
     },
     {
       id: "cook-list-heading",
@@ -251,36 +222,31 @@ const body = {
       id: "cook-list",
       type: "list",
       items: [
-        "Wait for a genuine rolling boil at the chimney ring, not a simmer. This is the step people skip, and it costs the whole meal.",
-        "Vegetables and frozen tofu first. Cabbage stems before leaves; frozen tofu takes longest and can go in early and stay in.",
+        "Wait for the broth to return to a proper boil before each small batch, following the staff's instructions for that pot.",
+        "If you choose the vegetables-first option, add cabbage stems before leaves and ask staff how long frozen tofu should remain in the pot.",
         "Then meat, a few slices at a time, spread out. A whole plate dropped in at once drops the temperature and welds itself into a lump.",
         "Keep one pair of chopsticks for raw meat and eat with a different pair. Beijing's disease-control guidance defines raw as anything still needing heat, cooked as anything you can eat directly, and asks for separate tools between the two. A shared pot is exactly where that applies.",
-        "Use the serving chopsticks if the house provides them. Beijing's health commission puts the rule as serve with the communal pair and eat with your own, citing shared-utensil transmission of Helicobacter pylori - which it reports at a national average infection rate of 59 per cent.",
-        "Skim the surface when it greys over. Most houses will do it if you catch someone's eye.",
+        "Use serving chopsticks if the house provides them. Beijing's health commission puts the rule simply: serve with the communal pair and eat with your own.",
+        "If the broth needs skimming or topping up, ask the staff rather than diagnosing it yourself.",
       ],
     },
     {
       id: "cook-callout",
       type: "callout",
-      title: "There is no authoritative number of seconds",
+      title: "No authoritative seconds, colour or temperature endpoint",
       tone: "warning",
-      body: "You will be told that mutton is done the moment it changes colour, or after some confident count of seconds. No Chinese food-safety authority publishes that figure, and this page will not invent one. What is published is the principle: cook food through. Beijing's disease-control guidance describes thorough cooking as poultry cooked until the juices run clear with no pink inside, eggs and seafood brought fully to the boil, and soups and stews boiled at least a minute, with large pieces needing longer - and separately notes that most micro-organisms struggle to survive above 70 degrees Celsius or below 4. Applied to a copper pot: a genuine boil, thin slices, a few at a time, and no piece leaving the pot while any part of it is still red. If you are cooking for a child, an older relative, someone pregnant or anyone immunocompromised, cook their portions longer than your own.",
+      body: "None of the official sources used here gives a validated number of seconds, colour test or temperature endpoint for thin mutton slices in a copper pot. The general guidance is to cook food thoroughly, but poultry, soup and broad 70-degree statements cannot be converted into a precise endpoint for this dish. Keep the broth boiling, add only a few slices at a time and follow the restaurant's cooking instructions. Children, older adults, pregnant people, immunocompromised diners and anyone who needs extra food-safety caution should not rely on a personal colour or seconds test: ask staff to handle or confirm thorough cooking, or choose a fully cooked dish.",
     },
     {
       id: "cook-p2",
       type: "paragraph",
-      text: "One thing to know before the end. Beijing's market regulator warns that a hotpot broth boiled for a long time is relatively high in purines and fat, and that people with gout or high blood lipids should be cautious about drinking it. Late-stage broth is also where noodles are traditionally cooked, so the noodles carry it. That is a reason to decide, rather than drift, about the meal's last twenty minutes.",
+      text: "Beijing's market regulator warns that hotpot broth boiled for a long time is relatively high in purines and fat, and advises people with gout or high blood lipids to be cautious about drinking it. If that applies to you, do not treat the broth as a drink; follow your clinician's dietary advice.",
     },
     {
       id: "lang-heading",
       type: "heading",
       level: 2,
       text: "Sentences that actually get used",
-    },
-    {
-      id: "lang-p1",
-      type: "paragraph",
-      text: "Copper-pot houses are loud and the staff are busy, so a long polite sentence loses to a short clear one. Say these, or point at the row.",
     },
     {
       id: "lang-table",
@@ -310,11 +276,6 @@ const body = {
       text: "When the plan breaks",
     },
     {
-      id: "repair-p1",
-      type: "paragraph",
-      text: "Four situations account for almost every copper-pot evening that goes sideways. None is a disaster, and each has a move.",
-    },
-    {
       id: "repair-table",
       type: "table",
       caption: "Four common failures and the move that fixes each",
@@ -328,56 +289,18 @@ const body = {
         [
           "No English, no pictures, no numbers you recognise",
           "You are reading a document when the meal needs four decisions",
-          "Use the leg-and-upper-shoulder line from the card above, name the three vegetables, ask for sesame dip, stop. That order is complete in any copper-pot house in the city.",
+          "Use the leg-and-upper-shoulder line from the card above, name the vegetables and ask for sesame dip. Confirm which cuts and portions that restaurant actually offers.",
         ],
         [
           "The cut you wanted is sold out",
-          "Hand-cut mutton is limited by how much was cut that day - a sign of a kitchen working properly",
-          "Take whichever named cut is left. If both are gone, ask what the house recommends today; a house that sells out of hand-cut mutton has told you something about itself.",
+          "Availability varies by restaurant and day; a sold-out label does not prove anything about quality or preparation",
+          "Ask which cuts are available now and how they were prepared, then choose from the answer.",
         ],
         [
           "The broth turns cloudy and grey halfway through",
-          "Too much meat went in at once, or nobody has skimmed",
-          "Skim it, ask for a top-up, go back to a few slices at a time. Do not compensate with more heat.",
+          "You cannot determine the cause from appearance alone",
+          "Ask staff whether the broth should be skimmed or topped up, then return to small batches.",
         ],
-      ],
-    },
-    {
-      id: "culture-heading",
-      type: "heading",
-      level: 2,
-      text: "Why the meal is shaped this way",
-    },
-    {
-      id: "culture-p1",
-      type: "paragraph",
-      text: "The parts that feel like ceremony are mostly solved problems. Thin slicing exists because a shallow, unevenly heated pot cooks thin meat well and thick meat badly - and the Dongcheng district government notes that watching the Donglaishun master slice became a spectacle in its own right. Vegetables before meat exists because one undivided ring of broth is a shared resource. Even the geography is functional: Yangfang Shengli's listing traces the tradition to a sheep market on the north-western approach to the capital, where animals arriving from the grasslands were traded before reaching the city.",
-    },
-    {
-      id: "culture-p2",
-      type: "paragraph",
-      text: "Two of the three houses named here are halal Muslim restaurants, a plain fact about who built this tradition in Beijing and stated in their own official records. It is not a certification claim, and this page does not verify certification or handle allergens - if either matters, ask the house and read its posted credentials. What the history does tell you is that the copper pot is not a costume: Yitiaolong's record describes the same charcoal-fired pot in continuous use since the eighteenth century.",
-    },
-    {
-      id: "limits-heading",
-      type: "heading",
-      level: 2,
-      text: "What this page deliberately will not do",
-    },
-    {
-      id: "limits-list-heading",
-      type: "heading",
-      level: 3,
-      text: "Four refusals",
-    },
-    {
-      id: "limits-list",
-      type: "list",
-      items: [
-        "No restaurant ranking, booking or prices. Houses are named only where a government record documents their method, and naming is not recommending.",
-        "No cooking times in seconds. The published guidance is a principle, not a stopwatch, and inventing a number would be the one thing here that could hurt someone.",
-        "No allergen or dietary guarantee. Sesame paste is central, chive-flower sauce and fermented bean curd are fermented allium and soy products, and a shared pot cannot be made free of anything.",
-        "No page for each cut. Two cuts are named by the regulator and both work; the rest is preference.",
       ],
     },
     {
@@ -421,49 +344,49 @@ const body = {
           label: "A complete guide to old Beijing instant-boiled mutton",
           url: "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202512/t20251215_4342165.html",
           publisher: "Beijing Municipal Administration for Market Regulation",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Consumer advisory on buying beef and mutton",
           url: "https://scjgj.beijing.gov.cn/hdjl/xfts/202001/t20200120_1619155.html",
           publisher: "Beijing Municipal Administration for Market Regulation",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Autumn and winter food-safety risk controls for caterers",
           url: "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202510/t20251027_4241346.html",
           publisher: "Beijing Municipal Administration for Market Regulation",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "The Donglaishun instant-boiled mutton technique",
           url: "https://www.bjdch.gov.cn/ztzl/cyqn/jsmsjy/202407/t20240730_3762490.html",
           publisher: "Dongcheng District People's Government, Beijing",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Yangfang Shengli instant-boiled mutton, Changping intangible heritage",
           url: "https://www.beijing.gov.cn/renwen/bjgk/cpgk/cpfy/202304/t20230403_2965858.html",
           publisher: "Beijing Municipal Government portal",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Yitiaolong, China Time-honoured Brand record",
           url: "https://zhlzh.mofcom.gov.cn/news/entp_view/5037",
           publisher: "Ministry of Commerce of the People's Republic of China",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Beijing CDC reminder: food safety at festive meals",
           url: "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html",
           publisher: "Beijing Center for Disease Prevention and Control",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
         {
           label: "Table manners: separate serving",
           url: "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202106/t20210623_2419757.html",
           publisher: "Beijing Municipal Health Commission",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-23",
         },
       ],
     },

@@ -1,11 +1,11 @@
 # Dynamic facts — puzhehei-lotus-bloom-and-boat-access
 
-Reviewed 2026-08-22, Asia/Taipei.
+Reviewed 2026-08-23, Asia/Shanghai.
 
-This is a high-volatility topic handled by refusing to publish the volatile things. The brief names
-bloom state, water level, boat routes and weather as facts that must be re-verified on the day of
-publication; **all four are excluded from the body entirely** and are instead the subject of the
-verification ladder the article teaches.
+This is a high-volatility topic handled by separating published operating information from
+conditions that require a same-day check. The body lists only the operator's currently published
+route products and visitor rules. It does **not** publish a current bloom state, water level,
+forecast or assurance that a named boat route will run on a particular day.
 
 ## Published, and therefore needing review
 
@@ -20,12 +20,12 @@ verification ladder the article teaches.
 | 7 | East line ticket includes four free shuttle rides that day | Same | Quarterly | One sentence, and part of the "do both, in the right order" argument |
 | 8 | The shuttle network, its entrances and the lotus boulevard stop | Operator's visitor-services page | Quarterly | The shore-day fallback list |
 | 9 | Boat and visitor rules, and the water-splashing etiquette | Same | Quarterly | The rules list and the mobility callout |
-| 10 | Qiubei county channels are the right county rung of the ladder | The operator's own outbound links to both county sites | On every review; **they could not be opened from this network** | Only the confidence in that rung, not the method |
+| 10 | County channels are an optional cross-check for surrounding roads and public notices, not the source of boat operations | Qiubei county government/publicity channels linked by the operator | On every review | Only the wording of that optional cross-check |
 
 ## Deliberately excluded from the body — the whole point of the page
 
 - **Bloom state, in any form.** No peak date, no date range, no "usually mid-July", nothing.
-- **Water level.** Named repeatedly as the variable that matters, and never given a number.
+- **Water level.** No number, visual estimate or causal inference about route navigability appears.
 - **Which boat routes are running.** Treated as a same-day check, never as a published fact.
 - **Weather.** No forecast, no seasonal rainfall figure, no temperature.
 - **Prices**, including ticket prices and concession rates seen on the operator's pages.
@@ -36,9 +36,10 @@ verification ladder the article teaches.
 ## Freshness note for central
 
 Rows 3 and 4 are the highest-value items and the most likely to change quietly, because reservation
-systems get restructured. Row 10 is the standing repair job: if `www.ynqb.gov.cn` or
-`www.zgpzh.gov.cn` becomes reachable, verify the county rung directly and update the review callout
-in all three languages.
+systems get restructured. On 2026-08-23 the operator's visitor-services, home and East-line pages,
+and the CMA weather channel, all returned successfully. The operator still publishes five shuttle
+lines, and its East-line page still states that the ticket includes four same-day shuttle rides.
+Those published details do not establish same-day route operation or water conditions.
 
 Nothing in this article should ever be updated by adding a bloom date. If a future editor feels the
 urge, the correct response is to strengthen the ladder instead.

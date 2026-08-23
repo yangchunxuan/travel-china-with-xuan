@@ -1,8 +1,9 @@
 # Source log — beijing-copper-pot-mutton-ordering-workflow
 
-All retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8), except where noted. The claim-to-source
-table was written before drafting; reverse verification was run afterwards against the finished
-three-language bodies.
+Initial retrieval was 2026-08-22. The eight cited official pages were rechecked on 2026-08-23,
+Asia/Shanghai (UTC+8): seven returned directly, while the Yangfang Shengli page remained available
+through the Beijing government portal after a direct `curl` timeout. The claim-to-source table was
+then rerun against the finished three-language bodies.
 
 **No search-result summary, AI answer or SEO article was used as a fact source anywhere on this
 page.** Search was used only to locate candidate government URLs; every source below was then
@@ -16,7 +17,7 @@ quoted.
 - **Institution:** 北京市市场监督管理局 (Beijing Municipal Administration for Market Regulation)
 - **Page title:** 天凉好涮肉！老北京涮羊肉全攻略
 - **URL:** https://scjgj.beijing.gov.cn/zwxx/scjgdt/202512/t20251215_4342165.html
-- **Published:** 2025-12-13 (page timestamp 2025-12-15) · **Retrieved:** 2026-08-22
+- **Published:** 2025-12-13 (page timestamp 2025-12-15) · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - **Broth base: plain water with ginger slices, spring onion sections, goji berries and dried shrimp.**
   - **Cuts named for the pot: 羊腿肉 (leg) and 羊上脑 (upper shoulder), 肥瘦相间** — fat interleaved
@@ -38,7 +39,7 @@ quoted.
 
 - **Page title:** 关于选购牛羊肉的消费提示
 - **URL:** https://scjgj.beijing.gov.cn/hdjl/xfts/202001/t20200120_1619155.html
-- **Published:** 2020-01-20 · **Retrieved:** 2026-08-22
+- **Published:** 2020-01-20 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - **纯牛羊肉:** slaughtered, then divided and trimmed with **nothing added**, sold directly; cut
     physically into blocks, rolls or slices; **100 per cent pure**; a primary agricultural product.
@@ -66,7 +67,7 @@ quoted.
 
 - **Page title:** 秋冬食安敲黑板！北京餐饮经营者，这些风险防控要点请收好
 - **URL:** https://scjgj.beijing.gov.cn/zwxx/scjgdt/202510/t20251027_4241346.html
-- **Published:** 2025-10-27 · **Retrieved:** 2026-08-22
+- **Published:** 2025-10-27 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** 生熟分开 in both storage and tools (a board used for raw meat must not then cut cold
   dishes); 烧熟煮透; the general cross-contamination principle between raw meat and ready-to-eat
   food.
@@ -81,7 +82,7 @@ quoted.
 
 - **Page title:** 北京疾控提醒您：美味佳肴 别忘了食品安全
 - **URL:** https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html
-- **Published:** 2024-02-10 · **Publisher of record:** 北京市疾病预防控制中心 · **Retrieved:** 2026-08-22
+- **Published:** 2024-02-10 · **Publisher of record:** 北京市疾病预防控制中心 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - **Definition of 生熟分开:** "raw" means raw material still requiring heat treatment (raw meat,
     poultry, eggs, seafood, vegetables); "cooked" means food eaten directly. **Utensils and
@@ -99,25 +100,23 @@ quoted.
 
 - **Page title:** 餐桌文明——分餐制 · **Article source credited on the page:** 北京朝阳医院
 - **URL:** https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202106/t20210623_2419757.html
-- **Published:** 2021-06-23 · **Retrieved:** 2026-08-22
+- **Published:** 2021-06-23 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** shared-plate eating spreads pathogens via utensils, naming hand-foot-and-mouth
   virus, **Helicobacter pylori**, viral hepatitis and norovirus; **China's average H. pylori
   infection rate is given as 59 per cent, and 40 per cent in children**; H. pylori is described as
   classed by the WHO as a group one carcinogen; the practical rule **"公筷（勺）夹菜，私筷（勺）
   进食"** — serve with the communal pair, eat with your own.
-- **Used with restraint:** the body cites the 59 per cent figure and the serving-chopstick rule, and
-  nothing else. The 40 per cent figure for children and the WHO carcinogen classification are **not
-  used in any of the three languages** — both were cut during the length edit and not restored, and
-  a grep for "carcinogen", "致癌" and "발암" across the three bodies returns zero. Nothing beyond the
-  page is claimed.
-- **Dynamic:** medium — an epidemiological figure with a publication date. It is attributed to its
-  publisher and its date in the source list rather than presented as a current measurement.
+- **Used with restraint:** the body uses only the serving-chopstick rule. The page's 59 per cent and
+  40 per cent figures and WHO classification are deliberately excluded; a 2021 article is not used
+  as a current prevalence measurement.
+- **Dynamic:** low for the practical serving rule. The epidemiological figures are not published in
+  the body.
 
 ## 6. Dongcheng District People's Government, Beijing — Donglaishun technique: **VERIFIED, read in full**
 
 - **Page title:** 东来顺涮羊肉制作技艺
 - **URL:** https://www.bjdch.gov.cn/ztzl/cyqn/jsmsjy/202407/t20240730_3762490.html
-- **Published:** 2024-07-16 (page timestamp 2024-07-30) · **Retrieved:** 2026-08-22
+- **Published:** 2024-07-16 (page timestamp 2024-07-30) · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** Donglaishun founded in Guangxu 29 (1903) at the north gate of the old Dong'an
   Market; founder 丁德山; a master knife chef recruited from 正阳楼 outside Qianmen, **whose
   distinctive expertise covered the sheep's place of origin, the cut of meat used and the slicing
@@ -139,7 +138,7 @@ quoted.
 - **Page title:** 阳坊胜利涮羊肉 (Changping district intangible heritage)
 - **Source credited on the page:** 昌平区政务服务管理局
 - **URL:** https://www.beijing.gov.cn/renwen/bjgk/cpgk/cpfy/202304/t20230403_2965858.html
-- **Published:** 2023-04-03 · **Retrieved:** 2026-08-22
+- **Published:** 2023-04-03 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** Yangfang lay on an important north-western route into the capital region from the
   Yuan onward, and by Ming and Qing the Hui community area and 贯市 had formed the **阳坊羊市集**
   (Yangfang sheep market); founder 李锡厚, formerly of the 光裕镖局, returned home and founded
@@ -157,7 +156,7 @@ quoted.
 - **Institution:** 中华人民共和国商务部, 中华老字号信息管理 platform (site identifier bm22000001)
 - **Entry:** 北京壹条龙清真餐饮有限公司, brand 壹条龙
 - **URL:** https://zhlzh.mofcom.gov.cn/news/entp_view/5037
-- **Published / updated:** undated entry on a live official register · **Retrieved:** 2026-08-22
+- **Published / updated:** undated entry on a live official register · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** founded in Qianlong 50 (**1785**), a well-known halal (清真) restaurant in Beijing,
   **recognised in the Ministry of Commerce's first batch of 中华老字号 in 2006**; originally named
   南恒顺羊肉馆; **over 220 years of instant-boiled mutton, continuously using the traditional copper
@@ -193,17 +192,15 @@ and treats every other cut word as a question to ask rather than a fact to publi
 | Leg and upper shoulder are the cuts named for the pot; fat runs through the lean | 1 | yes |
 | Cabbage, crown daisy and frozen tofu are the named sides | 1 | yes |
 | Classic dip is sesame paste, fermented bean curd and chive-flower sauce | 1 | yes |
-| Vegetables before meat | 1 | yes |
+| Vegetables before meat is an optional sequence (可遵循), not a safety rule | 1 | yes |
 | Long-boiled broth is high in purines and fat; caution for gout and high blood lipids | 1 | yes |
 | Pure mutton is divided, frozen, sliced, nothing added | 2 | yes |
 | A prepared roll may have other ingredients and additives worked in | 2 | yes |
-| No standard currently sets a minimum meat content for prepared products | 2 | yes |
+| The 2020 advisory said no minimum meat-content standard existed at publication; the body does not present that as the current 2026 position | 2 | yes |
 | 调理 / 风味 are the regulator's markers **on packaged retail meat only** | 2 | yes, and the limit is stated in the body |
 | Raw and cooked must use separate tools; definition of raw and cooked | 4 | yes |
-| Poultry until juices run clear, no pink; soups boiled at least a minute | 4 | yes |
-| Most micro-organisms struggle above 70 °C or below 4 °C | 4 | yes |
+| General guidance is to cook thoroughly; no sourced seconds, colour test or temperature endpoint exists here for thin mutton slices | 4, plus explicit scope check | yes |
 | Serve with the communal pair, eat with your own | 5 | yes |
-| H. pylori national average infection rate 59 per cent | 5 | yes |
 | Donglaishun kept the copper pot; machine-made charcoal burns long and does not pollute | 6 | yes |
 | Donglaishun on the national heritage list in 2008 | 6 | yes |
 | The founding master's expertise covered origin, cut and slicing | 6 | yes |
@@ -216,37 +213,25 @@ and treats every other cut word as a question to ask rather than a fact to publi
 | Yangfang sheep market on the north-western approach to the capital | 7 | yes |
 | Yitiaolong has served instant-boiled mutton since 1785 | 8 | yes |
 | The 1897 copper pot has a jar belly, ear curtain and gourd door | 8 | yes |
-| Gansu Tan sheep, small-framed and not gamey | 8 | yes |
+| The Yitiaolong record names Tan sheep from the Gansu area; the body does not repeat its meat-quality adjectives | 8 | yes |
 | Hand-cut, plus a cold-pressing method for the frozen rolls | 8 | yes |
 | Several dips each blended from dozens of ingredients | 8 | yes |
 | Crab-shell sesame flatbread as the staple | 8 | yes |
 | Yitiaolong on the Beijing municipal heritage list in 2007 | 8 | yes |
-| Two of the three named houses are halal Muslim restaurants | 8 for Yitiaolong; Donglaishun and Yangfang Shengli are documented in a Hui-community and halal context by 6 and 7 | **partially** — see the audit note below |
 | Hero image authorship, licence, subject and hashes | image-plan.md | yes |
-
-### Audit note on the halal sentence
-
-Source 8 states 清真 explicitly for Yitiaolong. Source 7 states that Yangfang's sheep market grew out
-of a **Hui community area**, which is context rather than a statement about the restaurant company
-today. Because "two of the three are halal Muslim restaurants" could not be verified to the same
-standard for all three, the sentence in all three languages is written as a statement about **who
-built this tradition in Beijing**, is immediately followed by an explicit refusal to verify anyone's
-certification, and names no certification body. **Central review is invited to tighten or remove
-this sentence** if it prefers a stricter standard; nothing else in the article depends on it.
 
 ## Absolute expressions audited after drafting
 
-- **No cooking time in seconds appears in any language.** The one place a reader expects one is a
-  callout whose entire subject is the absence of such a figure.
+- **No cooking time, colour test or temperature endpoint for thin mutton appears in any language.**
+  The safety callout explicitly says the cited general guidance cannot be converted into one and
+  directs diners to restaurant guidance; higher-risk diners are told not to self-judge.
 - **No price, no queue time, no opening hour, no branch address.**
 - **No claim that any house is best, most authentic or original.** The four-way table is explicitly
   labelled as not a ranking in all three languages.
 - **No national generalisation from one operator.** Every house-specific fact in the comparison
   table is attributed to that house's own record in the same cell.
-- **No allergen or dietary guarantee.** Refused explicitly.
-- The word "always" does not carry any factual load anywhere in the body; the three "not specified"
-  cells in the comparison table are deliberate, and record that a source is silent rather than
-  filling the gap.
+- **No halal, allergen or dietary guarantee.** The unverified multi-house halal generalisation was
+  removed completely.
 
 ## Sources deliberately not used
 

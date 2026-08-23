@@ -22,7 +22,7 @@ No ref contains `content/guides/hostel-or-budget-hotel-china/` or a near-synonym
 
 | Adjacent owner | Status | What it keeps | What this page must not take |
 | --- | --- | --- | --- |
-| `foreigners-china-hotel` | published on origin/main | Foreign-guest registration in full | The registration FAQ. This page states only the structural rule from the Measures — that registration is compulsory, that ID must be checked, and that overseas guests are filed within 24 hours — because that is *why* capability differs by property. It then links out and explicitly refuses to make any national claim about document acceptance |
+| `foreigners-china-hotel` | published on origin/main | Foreign-guest registration in full | The registration FAQ. This page states the structural rules from the Measures and one scoped national-policy baseline — accommodation operators must not refuse overseas guests merely for a claimed lack of “foreign-related qualification” — because both shape the hostel-versus-budget-hotel decision. It makes no property-level check-in guarantee, then links out for the full registration and escalation steps |
 | `minsu-homestay-or-hotel-china` | published on origin/main | The minsu-versus-hotel decision | Any minsu material |
 | `serviced-apartment-or-hotel-china` | published on origin/main | The long-stay apartment decision | Any serviced-apartment material |
 | `international-chain-or-local-hotel-china` | published on origin/main | The chain-versus-local axis | Any brand or chain comparison |
@@ -36,22 +36,25 @@ No ref contains `content/guides/hostel-or-budget-hotel-china/` or a near-synonym
 - No hostel or hotel rankings, and no property is named anywhere.
 - No nightly rates and no daily-average price claims.
 - No city, month, nationality or age variant pages, and no such framing in the copy.
-- **No national generalisation about whether hostels accept foreign guests.** The draft has a
-  dedicated callout refusing to make that claim, and every document, age, gender, deposit,
-  front-desk and curfew rule is presented as a per-property question with an explicit note that
-  the answer applies to that property only.
+- **No property-level guarantee that a hostel can complete a particular check-in.** The draft states
+  one scoped national-policy baseline against refusal merely for a claimed lack of “foreign-related
+  qualification,” while every document, age, gender, deposit, front-desk and curfew question still
+  requires confirmation from the specific property.
 - No absorption of the foreign-guest registration FAQ.
 
 ## What this page is allowed to state nationally, and why
 
-Exactly one class of fact: what the **Measures for Public Security Administration of the Hotel
-Industry** themselves say, because they are a State Council-approved administrative regulation
-published in the State Council Gazette and they state their own scope. The draft uses them for six
-points — universal application across property types and ownership forms, compulsory registration
-with ID inspection, the 24-hour filing step for overseas guests, the safekeeping requirement, the
-prohibition on transferring a bed, and the explicit provision for provincial implementing rules.
-That last point is the source-backed reason the rest of the page is a checklist rather than a set
-of answers.
+Two tightly bounded classes of fact. First, what the **Measures for Public Security Administration
+of the Hotel Industry** themselves say, because they are a State Council-approved administrative
+regulation and state their own scope. The draft uses them for six points — universal application
+across property types and ownership forms, compulsory registration with ID inspection, the 24-hour
+filing step for overseas guests, the safekeeping requirement, the prohibition on transferring a bed,
+and the explicit provision for provincial implementing rules. Second, the 2024 national-policy
+baseline from the State Council website response and the seven-department notice: accommodation
+operators must not refuse overseas guests merely for a claimed lack of “foreign-related
+qualification.” Neither source is stretched into a guarantee about a specific property's systems,
+staffing, document handling or other booking conditions. That boundary is why the rest of the page
+is a checklist rather than a set of answers.
 
 ## Internal links used
 

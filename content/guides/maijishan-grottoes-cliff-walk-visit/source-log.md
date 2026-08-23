@@ -1,7 +1,7 @@
 # Source log — maijishan-grottoes-cliff-walk-visit
 
-All retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8). Claim-to-source table written before
-drafting; reverse verification run afterwards.
+Initial retrieval was 2026-08-22, Asia/Taipei (UTC+8). Dynamic claims and the finished body were
+rechecked on 2026-08-23.
 
 ---
 
@@ -13,7 +13,7 @@ drafting; reverse verification run afterwards.
 - **URL:** https://www.dha.ac.cn/skxl/mjssk.htm
 - **Published / updated:** undated live page; the same site's announcement index carries items dated
   to August 2026, so the site is current
-- **Retrieved:** 2026-08-22
+- **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - Open all year. **Peak season 1 April – 31 October, 08:30–17:30. Off season 1 November –
     31 March, 09:00–17:00.**
@@ -48,7 +48,7 @@ drafting; reverse verification run afterwards.
   Heritage Bureau) director 程亮
 - **Page title:** 潜心护宝 让"东方微笑"绽放新光彩——甘肃天水麦积山石窟文物保护谱写新篇章
 - **URL:** https://www.dha.ac.cn/info/1018/5848.htm
-- **Published:** 2024-09-20 · **Retrieved:** 2026-08-22
+- **Published:** 2024-09-20 · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:**
   - **221 surviving caves, 10,632 statues of various kinds, more than 1,000 m² of wall painting**;
     the epithet 东方雕塑陈列馆.
@@ -89,7 +89,7 @@ drafting; reverse verification run afterwards.
 
 ## 3. Dunhuang Academy — announcements index
 
-- **URL:** https://www.dha.ac.cn/xwzx/tzgg.htm · **Retrieved:** 2026-08-22
+- **URL:** https://www.dha.ac.cn/xwzx/tzgg.htm · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23
 - **Supports:** that the Academy publishes weather-driven closure and delayed-opening notices for
   the sites it administers, which is why the body treats partial closure as a live possibility
   rather than an abstraction.
@@ -99,7 +99,7 @@ drafting; reverse verification run afterwards.
 
 ## 4. Maijishan Grottoes official ticketing site
 
-- **URL:** http://www.mjssk.cn/ · **Retrieved:** 2026-08-22, HTTP 200
+- **URL:** http://www.mjssk.cn/ · **Retrieved:** 2026-08-22 · **Rechecked:** 2026-08-23, HTTP 200
 - **Supports:** that an official ticketing site exists at the address the Academy publishes, and is
   the right place to read what each ticket type admits you to.
 - **Cannot support:** its contents. The site is a JavaScript single-page application and returned
@@ -107,25 +107,20 @@ drafting; reverse verification run afterwards.
   reader there rather than reproducing anything.
 - **Dynamic:** yes.
 
-## 5. Tianshui municipal and Gansu provincial sources: **NOT REACHABLE**
+## 5. Tianshui Municipal People's Government — current visitor notice: **VERIFIED 2026-08-23**
 
-| Host or URL | Organisation | Result on 2026-08-22 |
-| --- | --- | --- |
-| `https://www.tianshui.gov.cn/`, `http://www.tianshui.gov.cn/` | 天水市人民政府 | connection failed on both schemes |
-| `https://www.tianshui.gov.cn/wlj/info/2152/258622.htm` (Maijishan visitor notice) | 天水市文化和旅游局 | fetch tool returned `ECONNREFUSED 60.165.152.61:443` |
-| `https://www.tianshui.gov.cn/mjs/...` (麦积山大景区管理委员会 pages) | Maijishan Grand Scenic Area Administrative Committee, under Tianshui Municipal Government | not reachable, same host |
-| `https://www.gansu.gov.cn/`, `https://wlt.gansu.gov.cn/`, `https://wwj.gansu.gov.cn/` | 甘肃省人民政府 and its culture/heritage bureaus | HTTP **412** behind a JavaScript bot challenge, on both plain fetch and the fetch tool, with full browser headers |
-| `http://wwj.gansu.gov.cn/wwj/c105438/202502/174085778.shtml` (Maijishan conservation article) | 甘肃省文物局 | HTTP 412 |
+- **URL:** https://www.tianshui.gov.cn/info/1981/1250082.htm
+- **Published:** 2026-04-24 · **Rechecked:** 2026-08-23
+- **Supports:** strict timed reservation through the official account; check-in at the Maijishan
+  visitor centre during the reserved slot; parking at the visitor centre and taking the scenic-area
+  shuttle onward.
+- **Cannot support:** live availability on a reader's date, a guarantee that same-day inventory is
+  unavailable, ticket inclusions, or the current state of any cave or walkway section.
+- **Dynamic:** high. The operator's live booking interface remains the source of record for a date.
 
-**Consequence, stated in the body:** the timed-reservation system, the WeChat booking channel, the
-visitor-centre check-in and the shuttle arrangement are **corroborated from indexed municipal pages
-rather than directly verified**. They are also consistent with source 1, which independently names
-the same 峡门 visitor service centre. Nothing else in the article depends on them, and the body
-carries the disclosure in all three languages.
-
-The Gansu provincial voice is present through source 2, where the Gansu Provincial Cultural
-Heritage Bureau's director speaks on the record, but that is a quotation inside a first-party
-publication rather than a page on a provincial government host.
+The Dunhuang Academy independently names the same 峡门 visitor service centre. To prevent confusion
+with Fujian's Xiamen city, all three languages now retain the Chinese characters and identify it as a
+Maijishan entrance facility.
 
 ## 6. UNESCO
 
@@ -159,17 +154,15 @@ as the brief requires.
 | Concessions processed in person at the visitor service centre window, daily window, same day only | 1 | yes |
 | Every visitor rule quoted in the walkway table | 1 | yes |
 | An official ticketing site exists at the published address | 1, 4 | yes |
-| Timed reservation, WeChat channel, visitor-centre check-in, park-and-shuttle | indexed Tianshui municipal pages, consistent with 1 | **corroborated, disclosed** |
+| Timed reservation, official account, visitor-centre check-in, park-and-shuttle | 5, consistent with 1 | yes |
 | Hero image licence and authorship | image-plan.md | yes |
 
 ## Absolute expressions audited after drafting
 
 The body contains **no ticket price, no capacity figure, no cave list, no bus route number and no
-journey time**. The engineering figures are the only hard numbers, and each is attributed to the
-research institute. Three explicit refusals are stated in their own section: no specific cave, no
-quota, and no assertion about the walkway's condition on the reader's date. The one health-related
-sentence names a condition only because the operator names it, and immediately redirects the reader
-to their own clinician.
+journey time**. It no longer says that high-season same-day booking is effectively impossible. The
+engineering figures are attributed to the research institute, and the health-related sentence names
+conditions only because the operator does before redirecting the reader to their own clinician.
 
 ## Sources deliberately not used
 

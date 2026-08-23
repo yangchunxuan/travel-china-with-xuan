@@ -1,6 +1,6 @@
 # Source log — quanzhou-nanyin-first-performance-workflow
 
-All retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8). The claim-to-source table was written
+All retrieval timestamps 2026-08-23, Asia/Taipei (UTC+8). The claim-to-source table was written
 before drafting; reverse verification was run afterwards against the finished three-language bodies.
 
 **No search-result summary, AI answer or SEO article was used as a fact source.** Search located
@@ -15,7 +15,7 @@ anything that could not be fetched was dropped rather than quoted.
 - **Page title:** Nanyin
 - **URL:** https://ich.unesco.org/en/RL/nanyin-00199
 - **Nomination file:** No. 00199 · **Inscription decision:** 4.COM 13.20
-- **Published:** inscribed 2009 (4.COM); the page is a maintained record · **Retrieved:** 2026-08-22
+- **Published:** inscribed 2009 (4.COM); the page is a maintained record · **Retrieved:** 2026-08-23
 - **Supports:**
   - **Inscribed in 2009** on the Representative List of the Intangible Cultural Heritage of Humanity.
   - A **musical performing art central to the culture of the Minnan people of southern Fujian** and
@@ -43,7 +43,7 @@ anything that could not be fetched was dropped rather than quoted.
   tourism economy section
 - **Page title:** 听一曲南音 品千年典雅——走进闽派文艺精品系列报道之泉州南音
 - **URL:** https://www.fj.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202501/t20250117_6703931.htm
-- **Published:** 2025-01-17 · **Retrieved:** 2026-08-22
+- **Published:** 2025-01-17 · **Retrieved:** 2026-08-23
 - **Supports:**
   - The Chinese names and behaviour of the three parts: **指 (指套)** has words, score and pipa
     fingering but is **generally not sung and is placed at the opening as pure ensemble playing**;
@@ -88,56 +88,58 @@ anything that could not be fetched was dropped rather than quoted.
 - **Dynamic:** low for the descriptive material; the ecosystem counts are as-of-2025 figures and are
   attributed to the source rather than presented as current measurements.
 
-## 3. Quanzhou Municipal Bureau of Culture, Radio, Television and Tourism — monthly schedule: **VERIFIED, read in full**
+## 3. Quanzhou Municipal Bureau of Culture, Radio, Television and Tourism — current cited monthly schedule: **VERIFIED, read in full**
 
-- **Page title:** 3月份泉州市文艺院团公益性文艺演出活动日程表
-- **URL:** https://cbtb.quanzhou.gov.cn/xwdt/bjdt/202502/t20250226_3143384.htm
-- **Published:** 2025-02-26 · **Retrieved:** 2026-08-22
+- **Page title:** 6月份市直国有文艺院团公益性文艺演出活动日程表
+- **URL:** https://cbtb.quanzhou.gov.cn/xwdt/bjdt/202606/t20260601_3296534.htm
+- **Published:** 2026-06-01 · **Retrieved:** 2026-08-23
 - **Supports:**
-  - That the city **publishes a monthly, dated, in-advance table** of public-welfare performances by
-    municipal arts troupes, with columns for date, time, venue, programme, duration, troupe and
-    ticket price.
-  - **Nanyin is programmed by 泉州市南音传承中心** at two venues named for nanyin — a larger art
-    garden and a small theatre — with **every nanyin entry in that month running 70 minutes**,
-    evening starts at the larger venue and afternoon starts at the small theatre, and **prices
-    differing between programmes within the same month**.
+  - That the city **publishes a dated table for a named month** of public-welfare performances by
+    municipal state-owned arts troupes, with columns for date, time, venue, programme, duration,
+    troupe and ticket price.
+  - The June 2026 historical example programmes **泉州市南音传承中心 at 南音艺苑**. Its nanyin rows
+    state 70 minutes and include **both 16:00 and 19:30 starts at the same venue**, with different
+    prices across programmes. This directly prevents a venue-to-timeslot inference.
   - That **several separate troupes appear on the same schedule at separate theatres**, including
     the Gaojia and Dacheng opera centre, the Minnan song-and-dance centre, **the string puppetry
     centre at its own puppet theatres**, and the Fujian Liyuan opera centre at its own theatre.
     This is the basis for the "you booked at the wrong theatre" row.
-- **Cannot support:** any month it does not cover; availability; and **no date, programme title or
-  price from this page is reproduced in the body.**
-- **Dynamic:** **high.** It is a one-month schedule. Used only as evidence of the channel's
-  existence, structure and regularities.
+- **Cannot support:** any month it does not cover, availability, a fixed duration, a standard price,
+  or any rule connecting a venue to a start time. No individual performance date, programme title
+  or price from this page is reproduced in the body.
+- **Dynamic:** **high.** It is a one-month historical schedule. The body tells travellers that the
+  current schedule for their own month controls.
 
-## 4–6. Quanzhou Municipal People's Government — city-calendar entries: **VERIFIED, all three read in full**
+## 4–7. Quanzhou Municipal People's Government — city-calendar entries: **VERIFIED, all four read in full**
 
 | # | Page title | URL | Published |
 | --- | --- | --- | --- |
-| 4 | 《诗与弦》专场 | https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286287.htm | 2026-04-24 |
-| 5 | 公益性专场 | https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286281.htm | 2026-04-24 |
-| 6 | 南音研学专场 | https://www.quanzhou.gov.cn/lyb/csrl/202507/t20250729_3194354.htm | 2025-07-29 |
+| 4 | 《南音“偶”遇》 | https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286252.htm | 2026-04-24 |
+| 5 | 《诗与弦》专场 | https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286287.htm | 2026-04-24 |
+| 6 | 公益性专场 | https://www.quanzhou.gov.cn/lyb/csrl/202604/t20260424_3286281.htm | 2026-04-24 |
+| 7 | 南音研学专场 | https://www.quanzhou.gov.cn/lyb/csrl/202507/t20250729_3194354.htm | 2025-07-29 |
 
-- **All retrieved:** 2026-08-22. Source credited on each: 泉州市文旅局 / 市文旅局.
+- **All retrieved:** 2026-08-23. Source credited on each: 泉州市文旅局 / 市文旅局.
 - **Support, jointly:** that the city calendar publishes **one short page per production** carrying
-  演出时间, 演出地点, 演出单位, 演出时长, 票价 and 咨询电话; that **all three name the same troupe and
-  the same venue**; that **all three state a duration of 70 minutes**; that start times are 19:30 or
-  16:00; and that **ticket prices differ between the three** while the enquiry number is the same.
+  演出时间, 演出地点, 演出单位, 演出时长, 票价 and 咨询电话. All four historical examples name the
+  same troupe and venue and state 70 minutes, but their dates, programmes, time patterns and prices
+  vary. In particular, 《南音“偶”遇》 lists **six start times in one day**, so these pages cannot
+  support a single expected time slot.
 - **Cannot support:** whether any of these runs repeat, or today's availability.
-- **Dynamic:** **high** for every specific value. **No date, programme title or price from these
-  pages appears in the body**, and the enquiry telephone number is deliberately **not reproduced**,
-  because published numbers change and a stale number is worse than none.
-- **Why three were read rather than one:** a single listing would make "70 minutes" an anecdote.
-  Three listings spanning July 2025 to April 2026, all giving 70 minutes for the same troupe at the
-  same venue, make it a **regularity worth telling a reader about** — which is how it is framed, as
-  the shape of an evening rather than a guarantee.
+- **Dynamic:** **high** for every specific value. **No individual performance date, programme title
+  or price from these pages appears in the body**, and the enquiry telephone number is deliberately
+  **not reproduced**, because published numbers change and a stale number is worse than none.
+- **How the sample is used:** together with source 3, these pages show only that the cited historical
+  examples from July 2025 through June 2026 stated 70 minutes. The body labels that observation as a
+  historical sample, not a standard, expected structure or prediction. Every traveller is directed
+  back to the current official listing for duration, venue, time and price.
 
-## 7. Sources sought and **not** used
+## 8. Sources sought and **not** used
 
 | What was sought | Result | Consequence |
 | --- | --- | --- |
 | `http://cbtb.quanzhou.gov.cn/lyfw/mjyy/201607/t20160711_1906161.htm` — the culture bureau's own nanyin explainer | **HTTP 500** on direct fetch | Dropped entirely. Nothing is quoted from it, and the descriptive material rests on sources 1 and 2 instead |
-| A dedicated official page for the Quanzhou Nanyin Inheritance Centre or the nanyin venues | Not reachable as a first-party site from this network | The troupe and its two venues are described **only** from what sources 2–6 state about them. No opening hours, address, seating capacity or booking channel is claimed |
+| A dedicated official page for the Quanzhou Nanyin Inheritance Centre or the nanyin venues | No maintained dedicated page was identified | The troupe and historical venues are described **only** from what sources 2–7 state about them. No opening hours, address, seating capacity or booking channel is claimed |
 | Commons images of nanyin performance in Quanzhou | None exist; Commons holds nanyin images from Singapore and Taiwan only | See `image-plan.md`. **No image is presented as showing a Quanzhou venue** |
 
 ---
@@ -165,36 +167,43 @@ anything that could not be fetched was dropped rather than quoted.
 | The dongxiao follows the Tang chiba system; sanxian from a Qin-Han drum; erxian keeps an early bowed form | 2 | yes, and attributed in the body |
 | Scholars generally hold nanyin closely related to Tang and Song music | 2 | yes, and **the attribution is preserved in all three languages** |
 | Migration across dynasties brought music into Minnan, where it fused with local music | 2 | yes |
-| The small theatre has no modern lighting or sound; audience at no distance; shrine, gilded lion, palace lanterns; Meng Chang revered as Langjun | 2 | yes |
+| A January 2025 feature described the small theatre as then having no modern lighting or sound; audience at no distance; shrine, gilded lion, palace lanterns; Meng Chang revered as Langjun | 2 | yes, with date and historical qualification preserved in all three languages |
 | 400+ societies, 70+ transmission sites, 6,000+ practitioners | 2 | yes |
 | Nanyin entered classrooms in 1989; first undergraduate and postgraduate provision | 2 | yes |
 | A 1946-born tradition-bearer on singing from birth to death, and on learning the speech | 2 | yes |
 | New work has won national quyi awards; a nanyin-based song on the 2023 national broadcast | 2 | yes |
-| The city publishes a dated monthly schedule with venue, troupe, duration and price columns | 3 | yes |
-| The city calendar publishes one page per production with duration, price and an enquiry number | 4, 5, 6 | yes |
-| Nanyin programmes in the listings consulted ran 70 minutes | 3, 4, 5, 6 | yes, four independent listings |
-| Larger venue starts in the evening, small theatre in the afternoon | 3, 4, 5, 6 | yes |
-| Prices differed between programmes in the same month | 3, 4, 5 | yes |
+| The city publishes a dated schedule for a named month with venue, troupe, duration and price columns | 3 | yes |
+| The city calendar publishes dated pages for individual productions with duration, price and an enquiry number | 4, 5, 6, 7 | yes |
+| The cited historical examples from July 2025 through June 2026 state 70 minutes | 3, 4, 5, 6, 7 | yes, and never presented as a standard or prediction |
+| Afternoon and evening starts can occur at the same venue; one special page lists six starts in a day; no venue-to-timeslot rule | 3, 4 | yes |
+| Prices varied across the cited historical examples | 3, 4, 5, 6, 7 | yes |
 | Puppetry, Gaojia opera and Liyuan opera are separate troupes at separate theatres | 3 | yes |
 | Hero image authorship, licence and subject | image-plan.md | yes |
 
 ## Absolute expressions audited after drafting
 
-- **No performance date, programme title, ticket price or telephone number appears in any of the
-  three languages.** Grepped and confirmed.
+- **No individual performance date, current programme title, ticket price or telephone number
+  appears in any of the three languages.** Source-publication months and the historical sample range
+  are context, not a performance calendar.
 - **No claim that nanyin is Tang-dynasty music preserved intact.** The article has a dedicated table
   row saying the opposite, and every Tang-related statement in the body carries its attribution
   ("scholars generally hold", "is described as following").
-- **No claim of a thousand unbroken years.** The article states in all three languages that no
-  source consulted says this. The provincial source's headline uses "a thousand years" as a
+- **No claim of a thousand unbroken years.** The article states in all three languages that none of
+  the cited official sources says this. The provincial source's headline uses "a thousand years" as a
   rhetorical phrase; it is reproduced only inside the source list as part of the page title, never
   as a claim.
 - **No claim of a fixed ensemble.** Two vocal formats are given from source 1, and the seating is
   labelled a convention using the source's own word "classic".
+- **No claim of a fixed 70-minute structure.** The number appears only in a dated historical sample
+  observation followed immediately by the instruction to use the current listing.
+- **No venue-to-timeslot regularity.** The body explicitly rejects one and points to current data.
+- **No blanket no-amplification claim.** The equipment statement is dated to the January 2025
+  provincial feature, limited to one small-theatre setup at that time, and followed by a warning not
+  to infer today's equipment status.
 - **No real-time or permanent calendar.** Refused explicitly, with the reason.
 - **No claim that Homeground can book, hold or check seats.**
-- The only categorical statements are negatives: that no source says X, and that this page will not
-  publish Y.
+- Operational values are never generalised: the current dated official listing controls duration,
+  venue, start time and price in all three languages.
 
 ## Sources deliberately not used
 

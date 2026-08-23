@@ -1,7 +1,8 @@
 # Source log — wuhan-where-to-stay-hankou-wuchang-hanyang
 
-All retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8). Claim-to-source table written before
-drafting; reverse verification run afterwards.
+Initial retrieval timestamps 2026-08-22, Asia/Taipei (UTC+8). The ferry-deck status was rechecked
+2026-08-23, Asia/Shanghai (UTC+8). Claim-to-source table written before drafting; reverse
+verification run afterwards and repeated for the updated ferry claim.
 
 ---
 
@@ -81,18 +82,21 @@ and the area meant by it is covered by Jiang'an, Jianghan and Qiaokou.
   readers to confirm for their date.
 - **Dynamic:** high.
 
-## 6. Wuhan Municipal Transport Bureau — the Yangtze ferry
+## 6. Wuhan official sources — the Yangtze ferry
 
-- **Page title:** 坐武汉轮渡上不了甲板？网友：一块五的快乐少了一半
-- **URL:** https://jtj.wuhan.gov.cn/jtzx/zwdt/202410/t20241023_2472496.shtml
-- **Published:** 2024-10-23 · **Retrieved:** 2026-08-22
-- **Supports:** that the standard cross-river ferry fare is **1.5 yuan**; that a crossing observed
-  from Wuhan Guan wharf took about **15 minutes**; that since the 2024 flood season the **upper
-  deck has been closed** for safety, with an attributed statement from a ferry operator
-  representative; that a separate, higher-priced sightseeing cruise exists and is a different
-  product.
-- **Cannot support:** current schedules, or whether the deck has since reopened. The body frames
-  the ferry as transport rather than a viewing platform and dates the closure.
+- **Historical status page:** Wuhan Municipal Transport Bureau, 坐武汉轮渡上不了甲板？网友：一块五的快乐少了一半,
+  https://jtj.wuhan.gov.cn/jtzx/zwdt/202410/t20241023_2472496.shtml,
+  published 2024-10-23, retrieved 2026-08-22.
+- **Current-status page:** Wuhan municipal government portal, 供需两旺 消费活力澎湃——从“五一”假期看武汉市场动能,
+  https://tc.wuhan.gov.cn/sy/lbxw/202605/t20260506_2760485.shtml,
+  published 2026-05-06, retrieved 2026-08-23; the page identifies 长江日报 as its source.
+- **Supports:** the 2024 page records the standard cross-river fare of **1.5 yuan**, an observed
+  crossing of about **15 minutes**, and the upper-deck closure that began during the 2024 flood
+  season. The 2026 municipal page says the upper deck had **returned after a two-year absence** and
+  again gives the 1.5-yuan fare. Read together, they support the current body wording: the deck had
+  reopened by May 2026, but it remains part of a working transport service.
+- **Cannot support:** a current schedule or a guarantee that the deck will be accessible on every
+  date. The body therefore tells the reader to check the current notice.
 - **Dynamic:** high.
 
 ## 7. China Railway 12306 — station dictionary
@@ -130,7 +134,7 @@ and the area meant by it is covered by Jiang'an, Jianghan and Qiaokou.
 | No direct metro Hankou Station to Wuhan Station; minimum 55 minutes | 4 | yes |
 | The Xingang western extension targets under 25 minutes and is not open | 4 | yes |
 | Hankou Station to Tianhe Airport in 12 minutes by commuter rail; 41 minutes on Line 2 | 5 | yes |
-| Ferry fare 1.5 yuan; roughly 15 minutes; upper deck closed since the 2024 flood season | 6 | yes |
+| Ferry fare 1.5 yuan; roughly 15 minutes; upper deck returned by May 2026 after a two-year absence | 6 | yes |
 | Hero image licence and authorship | image-plan.md | yes |
 
 ## Absolute expressions audited after drafting
