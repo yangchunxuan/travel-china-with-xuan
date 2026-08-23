@@ -1244,3 +1244,21 @@ calendars, live transport displays or forecasts.
 | `lunar-new-year-customs-for-visitors` EN pressure chart | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-en-1440.webp`; 1440 × 900; `a1d727a471739088262b6e0b44b46db11011d5150450411f874c038301dfa870` | Homeground original deterministic raster drawing; AI: no; no third-party material | English planning-pressure diagram only. Not an annual calendar, live traffic state, crowd count, schedule or forecast. |
 | `lunar-new-year-customs-for-visitors` ZH pressure chart | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-zh-1440.webp`; 1440 × 900; `d682f667f86255fc6cd9b155e6fbfa44895235fd973702a006868ac94787506d` | Homeground original deterministic raster drawing; AI: no; no third-party material | Simplified Chinese planning-pressure diagram only. Not an annual calendar, live traffic state, crowd count, schedule or forecast. |
 | `lunar-new-year-customs-for-visitors` KO pressure chart | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-ko-1440.webp`; 1440 × 900; `374a543879ffd98e8f78dbd57ff59277b21c1a8c46233eee20d3ec86451b5e36` | Homeground original deterministic raster drawing; AI: no; no third-party material | Korean planning-pressure diagram only. Not an annual calendar, live traffic state, crowd count, schedule or forecast. |
+
+## Ten-city arrival, stay and departure map package (August 23, 2026)
+
+This asset family is original Homeground editorial work. It combines four
+hand-authored SVG source layouts with seven city cards produced by a
+deterministic repository generator. It uses **0 generative-AI or AI-assisted
+visual material**, **0 third-party photographs**, **0 map tiles** and **0
+external font files**. The original graphics, annotations and compiled data are
+released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); source
+facts, names and trademarks are excluded from that grant.
+
+| Page and role | Published asset and final SHA-256 | Rights / generation | Evidence boundary |
+| --- | --- | --- | --- |
+| `first-trip-china-airport-station-stay-map` hero | `public/images/guides/first-trip-china-airport-station-stay-map/hero-1600.webp`; 1600 × 1000; `5f084a1f9260634613bfffa35abef82cfa40b60b577675fc0840efec602c42fe` | Homeground original SVG rendered deterministically; CC BY 4.0; AI: no | Ten-city gateway relationship schematic only. Not to scale, live navigation, a timetable, transfer guarantee or current terminal assignment. |
+| National editable source | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1.svg`; `3020790273f1eda536a21f32ef381bbdeba455323ada244296e3805a821884ce` | Homeground original vector; CC BY 4.0; AI: no | Same editorial schematic and limitations as the hero. |
+| National web PNG | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1.png`; 1600 × 1000; `a1376cd3712dd8caf05a9d4b2fd029ac03e43b72695dfd64769bef285d7171fe` | Deterministic derivative; CC BY 4.0; AI: no | Same editorial schematic and limitations as the hero. |
+| National high-density PNG | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1@2x.png`; 3200 × 2000; `c8af8bb338306c21171820a593a62b4d4403b9bb160d339daa705d82d6ae1cb4` | Deterministic derivative; CC BY 4.0; AI: no | Same editorial schematic and limitations as the hero. |
+| Complete download pack | `public/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip`; `ffeb9b0aa82bc101266ee280a7c388a4bf60b8fccf6d89e411f45eb5e8eed028` | Deterministic 30-file ZIP with ten city-card pairs, data, licence, sources and checksums; CC BY 4.0 scope is stated inside the pack | Operational facts can change. The included `SHA256SUMS.txt` verifies the 29 content files packaged before the ZIP itself. |

@@ -1,0 +1,19 @@
+SUGGESTED ATTRIBUTION AND EMBED
+
+Plain text
+Homeground China, "First Trip to China: 10-City Airport, Station and Stay Map,"
+version 1.0, https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/, CC BY 4.0.
+
+Rights holder
+张家界市永定区本境文化交流工作室（个体工商户）, operating as Homeground China
+
+HTML
+<a href="https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/">Homeground China 10-city airport, station and stay map</a>,
+version 1.0, licensed under
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+
+If modified, add: "Adapted from the Homeground China map; changes were made."
+
+Accessibility
+When embedding a graphic, keep useful alt text. Suggested national-map alt:
+"Schematic connecting ten China gateway cities with arrive, stay and depart decisions."

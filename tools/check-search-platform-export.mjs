@@ -41,6 +41,26 @@ const publishedDestinationHubIds = [
   "chongqing",
 ];
 const blockedDestinationHubIds = ["guilin", "shenzhen"];
+const tenCityMapPath = "/guides/first-trip-china-airport-station-stay-map/";
+const tenCityPackPath =
+  "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip";
+const transportGuideSlug = "beijing-zhangjiajie-shanghai-transport";
+const zhangjiajieHubGuideSlugs = [
+  "zhangjiajie-itinerary",
+  "zhangjiajie-older-travellers",
+  "best-zhangjiajie-night-show",
+  "zhangjiajie-glass-bridge-vs-skywalk",
+];
+const routeTrioGuideSlug = "beijing-zhangjiajie-shanghai-10-days";
+const localizedVisaGuideSlugs = [
+  "do-us-citizens-need-visa-china-2026",
+  "do-singaporeans-need-visa-china",
+  "china-240-hour-visa-free-transit-route-check",
+];
+const englishOnlyVisaGuideSlugs = [
+  "china-visa-free-uk-citizens-2026",
+  "china-visa-free-canadian-citizens-2026",
+];
 
 function routeFor(section, locale) {
   return `${locale.prefix}${section}/`;
@@ -64,6 +84,16 @@ function destinationRoute(id, locale) {
 
 function absoluteDestinationRoute(id, locale) {
   return `${siteUrl}/${destinationRoute(id, locale)}`;
+}
+
+function guideRoute(slug, locale) {
+  return `${locale.prefix}guides/${slug}/`;
+}
+
+function entryOwnerPath(locale) {
+  return locale.runtime === "en"
+    ? "/guides/china-entry-requirements/"
+    : `/${locale.prefix}essentials/entry-transit/`;
 }
 
 async function fileExists(filePath) {
@@ -178,6 +208,98 @@ for (const locale of locales) {
       );
     }
   }
+
+  assertIncludes(
+    homepageHtml,
+    `href="${tenCityMapPath}"`,
+    `${context} homepage ten-city map discovery`,
+  );
+  assertIncludes(
+    homepageHtml,
+    `href="${tenCityPackPath}"`,
+    `${context} homepage complete ten-city pack download`,
+  );
+}
+
+{
+  const transportHubPath = path.join(outputRoot, "transport", "index.html");
+  const transportHub = await readFile(transportHubPath, "utf8");
+  assertIncludes(
+    transportHub,
+    `href="${tenCityMapPath}"`,
+    "/transport/ ten-city map lead guide",
+  );
+  assertIncludes(
+    transportHub,
+    `"position":1,"url":"${siteUrl}${tenCityMapPath}"`,
+    "/transport/ structured lead-guide order",
+  );
+}
+
+for (const locale of locales) {
+  const route = guideRoute(transportGuideSlug, locale);
+  const filePath = path.join(outputRoot, route, "index.html");
+  const context = `/${route}`;
+  const html = await readFile(filePath, "utf8");
+
+  assertIncludes(html, `href="${tenCityMapPath}"`, `${context} ten-city map`);
+  assertIncludes(html, `href="${tenCityPackPath}"`, `${context} ten-city pack`);
+  assertIncludes(
+    html,
+    `href="/${routeFor("transport", locale)}"`,
+    `${context} transport guide owner`,
+  );
+  for (const id of ["beijing", "zhangjiajie", "shanghai"]) {
+    assertIncludes(
+      html,
+      `href="/${destinationRoute(id, locale)}"`,
+      `${context} ${id} destination owner`,
+    );
+  }
+}
+
+for (const locale of locales) {
+  for (const slug of zhangjiajieHubGuideSlugs) {
+    const route = guideRoute(slug, locale);
+    const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+    assertIncludes(
+      html,
+      `href="/${destinationRoute("zhangjiajie", locale)}"`,
+      `/${route} Zhangjiajie destination owner`,
+    );
+  }
+
+  const route = guideRoute(routeTrioGuideSlug, locale);
+  const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+  for (const id of ["beijing", "zhangjiajie", "shanghai"]) {
+    assertIncludes(
+      html,
+      `href="/${destinationRoute(id, locale)}"`,
+      `/${route} ${id} destination owner`,
+    );
+  }
+}
+
+for (const locale of locales) {
+  for (const slug of localizedVisaGuideSlugs) {
+    const route = guideRoute(slug, locale);
+    const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+    assertIncludes(
+      html,
+      `href="${entryOwnerPath(locale)}"`,
+      `/${route} entry owner`,
+    );
+  }
+}
+
+for (const slug of englishOnlyVisaGuideSlugs) {
+  const route = `guides/${slug}/`;
+  const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+  assertIncludes(
+    html,
+    'href="/guides/china-entry-requirements/"',
+    `/${route} entry owner`,
+  );
 }
 
 for (const sitemapUrl of sitemapLocs) {

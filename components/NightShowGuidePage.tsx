@@ -26,6 +26,7 @@ import {
 import { getNightShowGuideCopy } from "../lib/nightShowGuideCopy";
 import type { NightShowGuideCopy } from "../lib/nightShowGuideCopy.types";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -568,6 +569,8 @@ export function NightShowGuidePage({
                 ))}
               </div>
             </section>
+
+            <AuthorityHubLinks kind="zhangjiajie" locale={locale} />
 
             <section className={styles.sourcesSection} id="sources" aria-labelledby="sources-title">
               <h2 className={styles.visuallyHidden} id="sources-title">{copy.research.hiddenTitle}</h2>

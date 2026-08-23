@@ -29,6 +29,7 @@ import { getTenDayGuideCopy } from "../lib/tenDayGuideCopy";
 import type { TenDayGuideCopy } from "../lib/tenDayGuideCopy.types";
 import styles from "./TenDayChinaRouteGuidePage.module.css";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -696,6 +697,8 @@ export function TenDayChinaRouteGuidePage({
                 ))}
               </div>
             </section>
+
+            <AuthorityHubLinks kind="route-trio" locale={locale} />
 
             <section className={styles.finalCta} aria-labelledby="cta-title">
               <div>

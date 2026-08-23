@@ -15,6 +15,7 @@ import {
   ZHANGJIAJIE_GLASS_BRIDGE_HERO,
 } from "../lib/tantanZhangjiajieStoryI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -294,6 +295,8 @@ export function TantanZhangjiajieStoryPage({
               </section>
             </div>
           </div>
+
+          <AuthorityHubLinks kind="zhangjiajie" locale={locale} />
 
           <section className={styles.finalCta} aria-labelledby="story-cta-title">
             <div>

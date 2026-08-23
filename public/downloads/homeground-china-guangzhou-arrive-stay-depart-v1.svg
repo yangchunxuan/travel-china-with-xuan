@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Guangzhou arrive, stay and depart decision card</title>
+  <desc id="desc">A Homeground China schematic card comparing the named gateways, first-trip stay default and wrong-node warning for Guangzhou.</desc>
+  <rect width="1200" height="675" fill="#faf9f5"/><rect width="1200" height="12" fill="#a74731"/>
+  <text x="64" y="72" fill="#7f2e1d" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">HOMEGROUND CHINA · CITY CARD 05</text>
+  <text x="64" y="136" fill="#141413" font-family="Georgia, serif" font-size="52">Guangzhou · 广州</text>
+  <text x="64" y="174" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="21">Confirm the named gateway before choosing the stay area.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="64" y="218" width="330" height="238" rx="8" fill="#fff" stroke="#d8d8d1"/>
+    <text x="92" y="260" fill="#a74731" font-size="17" font-weight="700" letter-spacing="2">ARRIVE / DEPART</text>
+    <text fill="#141413" font-size="20" font-weight="700"><tspan x="92" y="304">CAN · Guangzhou · East</tspan><tspan x="92" y="332">· South · Baiyun ·</tspan><tspan x="92" y="360">North</tspan></text>
+    <rect x="435" y="218" width="330" height="238" rx="8" fill="#141413"/>
+    <text x="463" y="260" fill="#b0aea5" font-size="17" font-weight="700" letter-spacing="2">START WITH</text>
+    <text fill="#faf9f5" font-size="20" font-weight="700"><tspan x="463" y="304">Beijing Road / Yuexiu</tspan><tspan x="463" y="332">as a central</tspan><tspan x="463" y="360">first-visit hypothesis</tspan></text>
+    <rect x="806" y="218" width="330" height="238" rx="8" fill="#fff" stroke="#d8d8d1"/>
+    <text x="834" y="260" fill="#a74731" font-size="17" font-weight="700" letter-spacing="2">ONE-MOVE RULE</text>
+    <text fill="#141413" font-size="20" font-weight="700"><tspan x="834" y="304">Keep one base unless</tspan><tspan x="834" y="332">an event or south-side</tspan><tspan x="834" y="360">route dominates.</tspan></text>
+  </g>
+  <rect x="64" y="492" width="1072" height="96" rx="8" fill="#f2e7de"/>
+  <text x="92" y="528" fill="#7f2e1d" font-family="Arial, sans-serif" font-size="17" font-weight="700">WRONG-NODE WARNING</text>
+  <text fill="#141413" font-family="Arial, sans-serif" font-size="18"><tspan x="92" y="558">The railway stations must match the ticket; the city name alone is not enough.</tspan></text>
+  <text x="64" y="635" fill="#5f5f5a" font-family="Arial, sans-serif" font-size="16">Schematic, not to scale · Version 1.0 · CC BY 4.0 · Reviewed 23 Aug 2026 · homegroundchina.com</text>
+</svg>

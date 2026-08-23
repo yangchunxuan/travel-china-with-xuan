@@ -55,6 +55,7 @@ import {
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import { HomepageGuideRail } from "./HomepageGuideRail";
+import { TenCityMapFeature } from "./TenCityMapFeature";
 import styles from "./HomegroundHomePage.module.css";
 
 /**
@@ -606,6 +607,12 @@ export function HomegroundHomePage({
             </nav>
           </div>
         </section>
+
+        <TenCityMapFeature
+          headingId="homepage-ten-city-map-title"
+          locale={locale}
+          placement="homepage"
+        />
 
         <HomepageGuideRail
           catalogUrl={guideRailCatalogPath}

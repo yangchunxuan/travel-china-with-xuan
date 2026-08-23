@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "ten-city-map-manual-outreach-2026-08-23",
+  "lastReviewed": "2026-08-23",
+  "purpose": "Public-safe operating queue for manual, recipient-specific outreach around the Homeground China ten-city arrival, stay and departure map.",
+  "asset": {
+    "canonicalUrl": "https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/",
+    "downloadUrl": "https://homegroundchina.com/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "productionVerificationRequiredBeforeSend": true,
+    "limitations": [
+      "Original schematic and editorial matrix, not a navigational map.",
+      "Not a live timetable, fare, operating-status or entry-policy service.",
+      "Dynamic facts must be confirmed with the relevant operator or authority."
+    ]
+  },
+  "guardrails": {
+    "manualOneToOneOnly": true,
+    "bulkSendAllowed": false,
+    "mailMergeAllowed": false,
+    "requestDofollowAllowed": false,
+    "requestReciprocalLinkAllowed": false,
+    "gmailSentDuplicateCheckRequired": true,
+    "gmailSentIsSendEvidence": true,
+    "repositoryStoresGmailIds": false,
+    "repositoryStoresPrivateReplies": false,
+    "repositoryStoresNonPublicPersonalData": false,
+    "publicBusinessContactsOnly": true,
+    "senderRule": "While homegroundchina.com mail authentication is unverified, use only an existing operator-controlled real-name mailbox; do not impersonate a domain mailbox.",
+    "followUp": {
+      "maximumPerOriginalThread": 1,
+      "waitBusinessDaysMinimum": 7,
+      "waitBusinessDaysMaximum": 10,
+      "sameThreadRequired": true,
+      "onlyWhenNoReplyBounceDeclineOrPolicyBlock": true
+    }
+  },
+  "statusDefinitions": {
+    "monitor": "A prior contact may exist; Gmail Sent must be checked and a second first-touch is forbidden.",
+    "ready-after-live": "Recipient and angle are usable only after the production asset, ZIP and licence pass live verification and Gmail Sent is clear.",
+    "needs-one-item": "Exactly one named prerequisite must be completed before promotion to ready-after-live.",
+    "hold": "Do not send with the current asset and angle; re-review only after the named trigger exists."
+  },
+  "counts": {
+    "total": 25,
+    "monitor": 4,
+    "ready-after-live": 9,
+    "needs-one-item": 3,
+    "hold": 9
+  },
+  "targets": [
+    {
+      "id": "HG-001",
+      "name": "China Admissions",
+      "status": "monitor",
+      "publicContact": {
+        "page": "https://www.china-admissions.com/support/",
+        "email": null,
+        "route": "support centre"
+      },
+      "personalizedHook": "Help international students turn admission into a workable first arrival by relating the booked gateway to a sensible first stay area, without replacing university or visa advice.",
+      "sendPrerequisites": [
+        "Search Gmail Sent for the organisation name and domain.",
+        "Do not send a new first-touch if any matching campaign thread exists."
+      ],
+      "nextAction": "Verify possible prior contact in Gmail Sent; monitor or apply the single follow-up rule.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-002",
+      "name": "The Helpful Panda",
+      "status": "monitor",
+      "publicContact": {
+        "page": "https://thehelpfulpanda.com/contact/",
+        "email": "admin@thehelpfulpanda.com",
+        "route": "contact form or public business email"
+      },
+      "personalizedHook": "Offer the map as a practical visual companion to first-time China advice on airports, trains, apps and accommodation, not as a link exchange.",
+      "sendPrerequisites": [
+        "Search Gmail Sent for the organisation name, domain and public email.",
+        "Do not create a second first-touch."
+      ],
+      "nextAction": "Verify possible prior contact; if valid and unanswered, follow up once with the live package only.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-003",
+      "name": "Sapore di Cina",
+      "status": "monitor",
+      "publicContact": {
+        "page": "https://www.saporedicina.com/english/contact/",
+        "email": "info@saporedicina.com",
+        "route": "collaboration form or public business email"
+      },
+      "personalizedHook": "Their visa, route and stay readers can reuse a licensed ten-city gateway visual with a canonical source.",
+      "sendPrerequisites": [
+        "Search Gmail Sent for the organisation name, domain and public email.",
+        "Do not send another first-touch."
+      ],
+      "nextAction": "Verify possible prior contact and monitor; any single follow-up should add the live licence/package, not request placement.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-004",
+      "name": "TripZilla",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.tripzilla.com/contact-us",
+        "email": null,
+        "route": "contact form"
+      },
+      "personalizedHook": "Help Southeast Asian first-time visitors compare the correct China gateway and first-night base through one compact decision asset.",
+      "sendPrerequisites": [
+        "Verify the canonical page, ZIP and licence on production.",
+        "Search Gmail Sent for TripZilla and tripzilla.com.",
+        "Tailor the note to one current China article."
+      ],
+      "nextAction": "Submit one manual editorial/resource note through the current contact form.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-006",
+      "name": "The Broke Backpacker",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.thebrokebackpacker.com/contact-us/",
+        "email": "hello@thebrokebackpacker.com",
+        "route": "feedback and corrections"
+      },
+      "personalizedHook": "Frame the asset as correction support for budget travellers who can lose time and money by choosing the wrong airport, station or overnight area.",
+      "sendPrerequisites": [
+        "Verify live asset and licence.",
+        "Identify and cite one current recipient article.",
+        "Search Gmail Sent for the domain and email."
+      ],
+      "nextAction": "Send one concise correction/resource note, not a routine guest-post or partnership pitch.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-007",
+      "name": "SmartShanghai",
+      "status": "monitor",
+      "publicContact": {
+        "page": "https://www.smartshanghai.com/contact/?e=101",
+        "email": null,
+        "route": "general feedback or wrong-information route"
+      },
+      "personalizedHook": "Use the Shanghai card as a compact correction/reference aid for PVG, SHA, Shanghai/Hongqiao railway choices and first stay areas.",
+      "sendPrerequisites": [
+        "Search Gmail Sent for SmartShanghai and smartshanghai.com.",
+        "Do not start a second thread."
+      ],
+      "nextAction": "Verify possible prior contact and monitor; use the single follow-up rule only if appropriate.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-008",
+      "name": "The Travel Intern",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://thetravelintern.com/contact/",
+        "email": null,
+        "route": "contact form"
+      },
+      "personalizedHook": "A Singapore-based multi-city China audience can use the downloadable cards to compare arrival nodes and practical first-night areas.",
+      "sendPrerequisites": [
+        "Verify live package and licence.",
+        "Search Gmail Sent for the organisation and domain.",
+        "Reference one current China article."
+      ],
+      "nextAction": "Submit one tailored manual resource note through the form.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-010",
+      "name": "China Briefing",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.china-briefing.com/news/meet-china-briefing",
+        "email": "editor@china-briefing.com",
+        "route": "public editorial email"
+      },
+      "personalizedHook": "Offer international business visitors a supporting visual for gateway, railway and first-night-location decisions without presenting legal, tax or immigration advice.",
+      "sendPrerequisites": [
+        "Verify live package and licence.",
+        "Identify a current inbound-business or mobility page with clear fit.",
+        "Search Gmail Sent for the domain and email."
+      ],
+      "nextAction": "Send only if a specific current page-level use remains defensible.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-011",
+      "name": "TripSavvy",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.tripsavvy.com/about-us-4777100",
+        "email": null,
+        "route": "current editorial feedback route on the public page"
+      },
+      "personalizedHook": "Offer one source-backed update to a named China airport, station or arrival paragraph, with the map as supporting evidence rather than a broad claim that the guide is outdated.",
+      "sendPrerequisites": [
+        "Verify the specific fact against a primary source.",
+        "Verify the live asset and licence.",
+        "Search Gmail Sent for TripSavvy and tripsavvy.com."
+      ],
+      "nextAction": "Send one factual correction through the current public feedback channel.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-012",
+      "name": "Chengdu-Expat",
+      "status": "needs-one-item",
+      "publicContact": {
+        "page": "https://chengdu-expat.com/write-for-us-at-chengdu-expat/",
+        "email": "info@chengdu-expat.com",
+        "route": "public contributor/business email"
+      },
+      "personalizedHook": "Clarify CTU versus TFU, Chengdu East/South and practical stay areas for newcomers and short-stay visitors.",
+      "sendPrerequisites": [
+        "Production Chengdu card exists in the live licensed package and passes visual review.",
+        "Gmail Sent duplicate check is clear."
+      ],
+      "missingItem": "A visually verified production Chengdu card inside the live licensed package.",
+      "nextAction": "Promote to ready-after-live only after the Chengdu card is verified on production.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-013",
+      "name": "DestinAsian",
+      "status": "needs-one-item",
+      "publicContact": {
+        "page": "https://destinasian.com/contribute",
+        "email": "editor@destinasian.com",
+        "route": "public contributor email"
+      },
+      "personalizedHook": "Propose an original post-trip story about the design and time value of the right gateway and first-night base; use the map only as supporting material.",
+      "sendPrerequisites": [
+        "Real named author, short bio and relevant published clips are available.",
+        "Original post-trip pitch is under 100 words and follows current guidelines.",
+        "No already-published article is submitted."
+      ],
+      "missingItem": "A real author package: name, short bio and relevant published clips.",
+      "nextAction": "Do not contact until the real author package and original story angle are ready.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-014",
+      "name": "Go Overseas",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.gooverseas.com/contact-go-overseas",
+        "email": "PR@GoOverseas.com",
+        "route": "press and content PR"
+      },
+      "personalizedHook": "Show how students, teachers and programme participants can match their booked China campus/city to the right arrival gateway and stay area.",
+      "sendPrerequisites": [
+        "Verify live asset and licence.",
+        "Identify one current China programme or article.",
+        "Search Gmail Sent for the domain and email."
+      ],
+      "nextAction": "Send one editorial resource note; do not ask for sponsored coverage.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-017",
+      "name": "LTL Beijing",
+      "status": "needs-one-item",
+      "publicContact": {
+        "page": "https://ltl-beijing.com/",
+        "email": null,
+        "route": "public general contact page; editorial route not yet verified"
+      },
+      "personalizedHook": "Give incoming language students a Beijing airport, railway and first-night orientation, with wider cards for multi-campus travellers.",
+      "sendPrerequisites": [
+        "A current editorial/content recipient or public submission route is verified.",
+        "Live package passes verification.",
+        "Gmail Sent duplicate check is clear."
+      ],
+      "missingItem": "A currently verified editorial/content recipient or submission route.",
+      "nextAction": "Do not use student-adviser contacts for an editorial link pitch; find the correct public route first.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-018",
+      "name": "Hostelworld",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.hostelworldgroup.com/contact-us",
+        "email": "corporate@hostelworld.com",
+        "route": "public press/corporate email"
+      },
+      "personalizedHook": "Potential future fit is a hostel-neighbourhood or traveller-friction asset, not the current map alone.",
+      "sendPrerequisites": [
+        "A hostel-neighbourhood or anonymised traveller-friction dataset exists.",
+        "A named editorial or press use case and recipient are re-verified."
+      ],
+      "nextAction": "Hold; do not send a cold corporate map pitch.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-019",
+      "name": "THE Student",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.timeshighereducation.com/student/contact-us",
+        "email": "THEStudent@timeshighereducation.com",
+        "route": "public student editorial contact"
+      },
+      "personalizedHook": "Future fit requires a genuine student or international-education author explaining a China arrival problem in the publication's own remit.",
+      "sendPrerequisites": [
+        "A qualifying student, alumni, agent or university-professional author exists.",
+        "The article follows current contributor and AI rules."
+      ],
+      "nextAction": "Hold until an eligible author and education-specific story exist.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-020",
+      "name": "Expat Focus",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.expatfocus.com/contact",
+        "email": null,
+        "route": "public contact page"
+      },
+      "personalizedHook": "Future fit is a relocation-specific China gateway and housing-area resource backed by lived experience, not a general first-trip map.",
+      "sendPrerequisites": [
+        "A relocation-specific asset exists.",
+        "Current entry/residency sources and lived-experience reporting are available."
+      ],
+      "nextAction": "Hold until the asset matches long-term relocation intent.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-021",
+      "name": "GoAbroad",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.goabroad.com/contact",
+        "email": null,
+        "route": "public contact form"
+      },
+      "personalizedHook": "Future fit is a student/programme arrival worksheet with verified examples and participant voice.",
+      "sendPrerequisites": [
+        "A programme/campus arrival workflow exists.",
+        "Verified programme examples and an editorially eligible contributor angle exist."
+      ],
+      "nextAction": "Hold; the current tourist map does not yet match the core programme-selection audience.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-022",
+      "name": "Never Ending Footsteps",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.neverendingfootsteps.com/contact-us/",
+        "email": null,
+        "route": "contact form"
+      },
+      "personalizedHook": "Offer a brief free reference for avoiding wrong-node transfers, respecting the site's independent, first-hand and unsponsored approach and disclosing deterministic editorial graphics.",
+      "sendPrerequisites": [
+        "Verify live asset and licence.",
+        "Search Gmail Sent for the organisation and domain.",
+        "Remove all sponsorship, free-trip, generic guest-post and custom-itinerary language."
+      ],
+      "nextAction": "Submit one brief, specific manual form message.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-023",
+      "name": "The World of Chinese",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.theworldofchinese.com/contact-us/",
+        "email": "editor@theworldofchinese.com",
+        "route": "public editorial email"
+      },
+      "personalizedHook": "Future fit is an original human-centred language or culture story in which movement between the ten cities is materially relevant.",
+      "sendPrerequisites": [
+        "An original reported culture/language story exists.",
+        "Human sources and a clear editorial angle are available."
+      ],
+      "nextAction": "Hold; a tactical map alone is not a sufficient pitch.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-024",
+      "name": "Sleeping in Airports",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.sleepinginairports.net/update-airport-guide.htm",
+        "email": "guides@sleepinginairports.com",
+        "route": "airport guide update form or public guide email"
+      },
+      "personalizedHook": "Submit a gateway-specific, source-backed correction for a named China airport guide and use the map to explain the airport-station-stay relationship.",
+      "sendPrerequisites": [
+        "Verify the exact recipient airport guide and current official fact.",
+        "Verify the live asset and licence.",
+        "Search Gmail Sent for the domain and email."
+      ],
+      "nextAction": "Prefer one focused guide-update form submission; do not send a generic backlink pitch.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-025",
+      "name": "AFAR",
+      "status": "ready-after-live",
+      "publicContact": {
+        "page": "https://www.afar.com/about/pitch-guidelines",
+        "email": "mbaran@afar.com",
+        "route": "public Travel News/Intel editorial email"
+      },
+      "personalizedHook": "Offer an Intel source note or a tightly reported angle on how wrong-node choices consume a first China trip; the map supports the story but is not itself the story.",
+      "sendPrerequisites": [
+        "Verify live asset and licence.",
+        "Follow the current pitch guidelines exactly.",
+        "For a full pitch, supply an honest real-author bio, expertise and relevant clips.",
+        "Search Gmail Sent for AFAR, afar.com and the public email."
+      ],
+      "nextAction": "Send only a guideline-compliant source note or fully qualified pitch; no unsolicited completed story or coverage demand.",
+      "followUpAllowedAfterSend": true
+    },
+    {
+      "id": "HG-026",
+      "name": "Fodor's",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.fodors.com/about-us",
+        "email": null,
+        "route": "current writer pitch form linked from the public page"
+      },
+      "personalizedHook": "Future fit requires a genuinely original, locally reported service story, not a request to place an already-published map.",
+      "sendPrerequisites": [
+        "An original local-reporting proposal exists.",
+        "The current form and pitching guidelines are followed."
+      ],
+      "nextAction": "Hold until a distinct qualifying editorial pitch exists.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-027",
+      "name": "Travel Tomorrow",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://traveltomorrow.com/get-in-touch/",
+        "email": null,
+        "route": "public contact page; editorial route not yet verified"
+      },
+      "personalizedHook": "Future fit is a documented European-traveller or industry trend showing the cost of wrong gateway choices, supported by an original dataset.",
+      "sendPrerequisites": [
+        "A current named editor or editorial route is verified.",
+        "A timely policy, trend or original-data news peg exists."
+      ],
+      "nextAction": "Hold until both editorial channel and news value are established.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-028",
+      "name": "Nomadic Matt",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.nomadicmatt.com/about-matt/",
+        "email": "matt@nomadicmatt.com",
+        "route": "public business contact"
+      },
+      "personalizedHook": "Future fit is first-hand route testing or an original budget/time-loss dataset that supports independent, unsponsored travel advice.",
+      "sendPrerequisites": [
+        "First-hand route tests or a defensible original dataset exist.",
+        "No sponsorship, freebies or generic guest-post language is used."
+      ],
+      "nextAction": "Hold; a schematic alone cannot substantiate tested budget or route performance.",
+      "followUpAllowedAfterSend": false
+    },
+    {
+      "id": "HG-030",
+      "name": "That's Shanghai / That's Beijing",
+      "status": "hold",
+      "publicContact": {
+        "page": "https://www.thatsmags.com/",
+        "email": null,
+        "route": "publication site; current editorial route not yet verified"
+      },
+      "personalizedHook": "Future fit is a city-edition correction or story for Shanghai or Beijing, not a broad national map pitch.",
+      "sendPrerequisites": [
+        "A Shanghai- or Beijing-specific correction/story hook exists.",
+        "A current public editorial form or editor is verified on the day of contact."
+      ],
+      "nextAction": "Hold until the city-level angle and editorial channel are both verified.",
+      "followUpAllowedAfterSend": false
+    }
+  ]
+}

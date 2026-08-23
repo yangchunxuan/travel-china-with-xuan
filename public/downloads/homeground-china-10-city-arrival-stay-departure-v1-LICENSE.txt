@@ -1,0 +1,35 @@
+HOMEGROUND CHINA TEN-CITY MAP ASSET LICENCE
+
+Asset: First Trip to China: 10-City Airport, Station and Stay Map
+Version: 1.0
+Canonical source: https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+Licence summary/deed: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Licensor: 张家界市永定区本境文化交流工作室（个体工商户）, operating as Homeground China
+
+You may share and adapt the original Homeground map graphics, city cards,
+layout, annotations and compiled data for any purpose, including commercially,
+provided that you:
+
+1. credit Homeground China;
+2. link to the canonical source page and the CC BY 4.0 licence where practical;
+3. state whether you changed the material; and
+4. do not imply that Homeground China endorses you or your use.
+
+Suggested credit:
+Homeground China, "First Trip to China: 10-City Airport, Station and Stay Map,"
+version 1.0, https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/, CC BY 4.0.
+
+Scope and exclusions
+- The licence covers Homeground's original expression and any database rights
+  Homeground may hold in the compiled dataset. Facts themselves may not be
+  protected by copyright.
+- It does not relicense third-party names, source pages, trademarks or facts.
+- "Homeground China" remains a source identifier and brand name, not a licence
+  for misleading endorsement or a standalone logo/trademark use.
+- No warranty is given that a gateway, route or operating condition remains
+  current. Verify decision-critical facts before use.
+
+CC BY 4.0 is the governing licence. This summary does not replace its legal
+code and does not add restrictions beyond that licence.
