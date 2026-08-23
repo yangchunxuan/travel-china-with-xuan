@@ -1,10 +1,10 @@
 .localeRoot {
-  --legal-accent: var(--hg-color-rust);
-  --legal-border: var(--hg-color-line);
-  --legal-ink: var(--hg-color-ink);
-  --legal-muted: var(--hg-color-muted);
-  --legal-paper: var(--hg-color-canvas);
-  --legal-soft: var(--hg-color-soft);
+  --legal-accent: #a84731;
+  --legal-border: #d5d9e2;
+  --legal-ink: #0a0a0a;
+  --legal-muted: #686b70;
+  --legal-paper: #fff;
+  --legal-soft: #f5f5f4;
   background: var(--legal-paper);
   color: var(--legal-ink);
   min-block-size: 100vh;

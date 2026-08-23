@@ -1,11 +1,11 @@
 .studioPage {
-  --studio-paper: var(--hg-color-canvas);
-  --studio-warm: var(--hg-color-soft);
-  --studio-ink: var(--hg-color-ink);
-  --studio-muted: var(--hg-color-muted);
-  --studio-green: var(--hg-color-charcoal-secondary);
-  --studio-rust: var(--hg-color-rust);
-  --studio-peach: var(--hg-color-peach);
+  --studio-paper: #fff;
+  --studio-warm: #f5f5f4;
+  --studio-ink: #0a0a0a;
+  --studio-muted: #686b70;
+  --studio-green: #0a0a0a;
+  --studio-rust: #a84731;
+  --studio-line: #d5d9e2;
   background: var(--studio-paper);
   color: var(--studio-ink);
   min-height: 100vh;
@@ -29,7 +29,7 @@
 }
 
 .eyebrowLight {
-  color: var(--hg-color-on-dark);
+  color: var(--studio-rust);
 }
 
 .hero {
@@ -92,7 +92,7 @@
 }
 
 .collagePortrait {
-  background: #d9d3c8;
+  background: var(--studio-warm);
   margin: 0;
   min-height: 0;
   overflow: hidden;
@@ -113,7 +113,7 @@
 
 .collagePortrait figcaption {
   align-items: center;
-  background: rgb(247 245 239 / 94%);
+  background: rgb(255 255 255 / 94%);
   bottom: 0;
   color: var(--studio-ink);
   display: flex;
@@ -169,7 +169,7 @@
 }
 
 .peopleSection {
-  background: var(--hg-color-surface);
+  background: #fff;
   padding: clamp(5rem, 9vw, 9rem) max(1rem, calc((100vw - 1320px) / 2));
 }
 
@@ -265,7 +265,7 @@
 .memberPhoto {
   align-self: start;
   aspect-ratio: 4 / 5;
-  background: #d9d3c8;
+  background: var(--studio-warm);
   grid-area: photo;
   margin: 0;
   overflow: hidden;
@@ -360,8 +360,8 @@
 }
 
 .trustSection {
-  background: var(--studio-green);
-  color: var(--hg-color-on-dark);
+  background: var(--studio-warm);
+  color: var(--studio-ink);
   display: grid;
   gap: clamp(3.5rem, 7vw, 8rem);
   grid-template-columns: minmax(300px, 0.78fr) minmax(480px, 1.22fr);
@@ -374,7 +374,7 @@
 }
 
 .trustIntro > p:last-child {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--studio-muted);
   line-height: 1.78;
   margin: 2rem 0 0;
   max-width: 580px;
@@ -390,7 +390,8 @@
 
 .trustPoints li {
   align-items: start;
-  background: rgb(255 255 255 / 5.5%);
+  background: #fff;
+  border: 1px solid var(--studio-line);
   display: grid;
   gap: 1.25rem;
   grid-template-columns: 2rem minmax(0, 1fr) auto;
@@ -419,7 +420,7 @@
 }
 
 .trustPoints li > span {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--studio-muted);
   font-size: 0.68rem;
   font-weight: 800;
   padding-top: 0.25rem;
@@ -434,24 +435,25 @@
 }
 
 .trustPoints p {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--studio-muted);
   font-size: 0.9rem;
   line-height: 1.62;
   margin: 0.45rem 0 0;
 }
 
 .trustPoints svg {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--studio-muted);
   margin-top: 0.1rem;
 }
 
 .ctaSection {
-  background: var(--studio-peach);
+  background: #fff;
+  border-block-start: 1px solid var(--studio-line);
   padding: clamp(5rem, 9vw, 8.5rem) max(1rem, calc((100vw - 1320px) / 2));
 }
 
 .ctaSection > .eyebrow {
-  color: #7f2e1d;
+  color: var(--studio-rust);
   margin-bottom: 1.25rem;
 }
 
@@ -467,7 +469,7 @@
 }
 
 .ctaGrid p {
-  color: #503d34;
+  color: var(--studio-muted);
   line-height: 1.72;
   margin: 0 0 1.6rem;
   max-width: 520px;
@@ -510,20 +512,19 @@
 
 .ctaGrid .ctaSecondary {
   background: transparent;
-  border: 1px solid #644236;
+  border: 1px solid var(--studio-muted);
   color: var(--studio-ink);
 }
 
 .ctaGrid .ctaSecondary:hover {
-  background: rgb(255 255 255 / 30%);
+  background: var(--studio-warm);
   transform: translateY(-2px);
 }
 
 .ctaGrid .ctaPrimary:focus-visible,
 .ctaGrid .ctaSecondary:focus-visible {
-  outline: 3px solid #fff;
+  outline: 3px solid var(--hg-color-focus);
   outline-offset: 2px;
-  box-shadow: 0 0 0 5px var(--studio-ink);
 }
 
 @keyframes studioHeroEnter {

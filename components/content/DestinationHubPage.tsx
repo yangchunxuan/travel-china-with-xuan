@@ -25,6 +25,7 @@ import { PageFamilyRenderer } from "./PageFamilyRenderer";
 import { EditorialByline } from "../EditorialByline";
 import homeStyles from "../HomegroundHomePage.module.css";
 import styles from "./EditorialGuidePage.module.css";
+import destinationStyles from "./DestinationHubPage.module.css";
 import { DestinationGeographyDiagram } from "./DestinationGeographyDiagram";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -223,7 +224,7 @@ export function DestinationHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.pageRoot}`}
+      className={`${homeStyles.localeRoot} ${styles.pageRoot} ${destinationStyles.destinationRoot}`}
       data-homeground-locale={locale}
       lang={homeCopy.htmlLang}
     >
@@ -308,7 +309,10 @@ export function DestinationHubPage({
           ) : null}
         </article>
 
-        <aside className={styles.cta} data-similarity-ignore>
+        <aside
+          className={`${styles.cta} ${destinationStyles.destinationCta}`}
+          data-similarity-ignore
+        >
           <div>
             <p className={styles.ctaLabel}>{copy.ctaLabel}</p>
             <h2>{copy.ctaTitle}</h2>
