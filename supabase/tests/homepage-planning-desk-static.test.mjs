@@ -958,17 +958,23 @@ test("standard scope, payment boundary and out-of-scope pricing remain explicit"
   assert.doesNotMatch(home, /HomepagePlanningUpgrade/u);
 });
 
-test("the homepage planning example keeps its Hangzhou image and three-language copy aligned", async () => {
+test("the homepage planning example keeps its image and localized copy aligned", async () => {
   const home = await source("components/HomegroundHomePage.tsx");
   const english = getHomegroundCopy("en").proof;
   const chinese = getHomegroundCopy("zh").proof;
   const korean = getHomegroundCopy("ko").proof;
 
-  assert.match(home, /src="\/images\/home\/hangzhou-1600\.jpg"/u);
+  assert.match(
+    home,
+    /src="\/images\/home\/hangzhou-west-lake-leifeng-1600\.webp"/u,
+  );
   assert.match(home, /width="1600"/u);
-  assert.match(home, /height="1066"/u);
-  assert.doesNotMatch(home, /zhangjiajie-1600\.jpg/u);
-
+  assert.match(home, /height="1200"/u);
+  assert.match(english.imageAlt, /Leifeng Pagoda above West Lake/u);
+  assert.match(chinese.imageAlt, /西湖/u);
+  assert.match(chinese.imageAlt, /雷峰塔/u);
+  assert.match(korean.imageAlt, /서호/u);
+  assert.match(korean.imageAlt, /뇌봉탑/u);
   assert.match(english.imageBadge, /Hangzhou/u);
   assert.match(english.extract[0].detail, /Shanghai → Hangzhou/u);
   assert.match(chinese.imageBadge, /杭州/u);

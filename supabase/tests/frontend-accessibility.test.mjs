@@ -184,7 +184,15 @@ test("planner CTAs preserve the result while moving to the human handoff", async
 
   assert.match(navigation, /event\.preventDefault\(\)/);
   assert.match(navigation, /window\.history\.replaceState/);
-  assert.match(navigation, /targetElement\.scrollIntoView/);
+  assert.match(navigation, /scrollTarget\.scrollIntoView/);
+  assert.match(
+    navigation,
+    /target === "#planner-contact"[\s\S]{0,220}getElementById\("planning-intent-title"\)/,
+  );
+  assert.match(
+    navigation,
+    /behavior: "instant"/,
+  );
   assert.match(
     navigation,
     /"#main-content": "main-content"/,

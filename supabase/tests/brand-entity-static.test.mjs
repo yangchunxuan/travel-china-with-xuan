@@ -70,7 +70,7 @@ test("homepage metadata, visible identity and social cards reinforce Homeground 
   assert.match(header, /<strong lang="en">Homeground China<\/strong>/u);
   assert.match(header, /<small>\{copy\.businessDescriptor\}<\/small>/u);
   assert.match(footer, /<strong lang="en">Homeground China<\/strong>/u);
-  assert.match(homepage, /<strong lang="en">Homeground China<\/strong>/u);
+  assert.match(homepage, /<HomegroundHeader/u);
   assert.match(homepage, /<h1 id="home-hero-title">/u);
   assert.match(homepage, /copy\.hero\.titleLines/u);
   assert.match(homepage, /styles\.heroTitleLine/u);

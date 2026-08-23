@@ -140,9 +140,13 @@ test("guide rail preserves position while lazy-loading and loads near the native
 });
 
 test("homepage hero keeps the brand promise static and visible", async () => {
-  const homepage = await source("components/HomegroundHomePage.tsx");
+  const [homepage, header] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("components/HomegroundHeader.tsx"),
+  ]);
 
-  assert.match(homepage, /<strong lang="en">Homeground China<\/strong>/);
+  assert.match(homepage, /<HomegroundHeader/);
+  assert.match(header, /<strong lang="en">Homeground China<\/strong>/);
   assert.match(
     homepage,
     /<h1 id="home-hero-title">[\s\S]*copy\.hero\.titleLines/,

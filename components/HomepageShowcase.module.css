@@ -1,0 +1,832 @@
+.root {
+  /* One homepage system: x.ai-scale rhythm, Homeground typography and brand. */
+  --showcase-canvas: #fff;
+  --showcase-surface: #fff;
+  --showcase-card: #fff;
+  --showcase-hover: rgb(10 10 10 / 5%);
+  --showcase-line: #d5d9e2;
+  --showcase-ink: #0a0a0a;
+  --showcase-muted: #686b70;
+  --showcase-subtle: #f9f8f6;
+  --showcase-focus: #2563eb;
+  --showcase-content: 77rem;
+  --showcase-gutter: 1rem;
+  --showcase-section-space: 6rem;
+  --showcase-radius: 1.5rem;
+  --showcase-button-height: 2.75rem;
+  --showcase-header-height: 4rem;
+  --hg-color-canvas: var(--showcase-canvas);
+  --hg-color-surface: var(--showcase-surface);
+  --hg-color-card: var(--showcase-card);
+  --hg-color-soft: var(--showcase-subtle);
+  --hg-color-line: var(--showcase-line);
+  --hg-color-ink: var(--showcase-ink);
+  --hg-color-muted: var(--showcase-muted);
+  --hg-color-charcoal: var(--showcase-ink);
+  --hg-color-charcoal-hover: #202124;
+  --hg-color-on-dark: #fff;
+  --hg-color-rust: var(--showcase-ink);
+  --hg-color-dark-rust: var(--showcase-ink);
+  --hg-color-focus: var(--showcase-focus);
+  background: var(--showcase-canvas);
+  color: var(--showcase-ink);
+  overflow: clip;
+}
+
+.root > footer {
+  padding-inline: max(
+    var(--showcase-gutter),
+    calc((100% - var(--showcase-content)) / 2)
+  );
+}
+
+:global(html):has(.root),
+:global(body):has(.root) {
+  background: #fff;
+}
+
+.hero {
+  background: #fff;
+  padding: 14rem var(--showcase-gutter) 5rem;
+}
+
+.heroInner {
+  align-items: stretch;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-inline: auto;
+  max-inline-size: var(--showcase-content);
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-inline-size: 38rem;
+  min-inline-size: 0;
+}
+
+.heroEyebrow {
+  color: var(--showcase-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.heroEyebrowShort {
+  display: none;
+}
+
+.heroCopy h1 {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(3.4rem, 4.45vw, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  margin: 0;
+  max-inline-size: 11ch;
+  text-wrap: balance;
+}
+
+.heroCopy h1 > span {
+  display: block;
+}
+
+.heroCopy > h1 + p,
+.heroLead {
+  color: var(--showcase-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 1.5rem 0 0;
+  max-inline-size: 31rem;
+  text-wrap: pretty;
+}
+
+.heroActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 2rem;
+}
+
+.heroActionShort {
+  display: none;
+}
+
+.primaryAction,
+.secondaryAction,
+.teamLink {
+  align-items: center;
+  border: 1px solid rgb(10 10 10 / 15%);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  justify-content: center;
+  min-block-size: var(--showcase-button-height);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.primaryAction {
+  background: var(--showcase-ink);
+  border-color: var(--showcase-ink);
+  color: #fff;
+}
+
+.secondaryAction {
+  background: transparent;
+  color: var(--showcase-ink);
+}
+
+.primaryAction:hover {
+  filter: brightness(0.9);
+}
+
+.secondaryAction:hover {
+  background: var(--showcase-hover);
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible,
+.teamLink:focus-visible {
+  outline: 2px solid var(--showcase-focus);
+  outline-offset: 2px;
+}
+
+.decisionCard:focus-visible {
+  outline: 2px solid var(--showcase-focus);
+  outline-offset: -2px;
+}
+
+.heroAssurance {
+  align-items: center;
+  display: flex;
+  min-inline-size: 0;
+}
+
+.heroAssurance ul {
+  inline-size: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.heroAssurance li + li {
+  border-block-start: 1px solid rgb(213 217 226 / 30%);
+}
+
+.heroAssurance a {
+  align-items: start;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-block-size: 5rem;
+  padding-block: 1rem;
+  text-decoration: none;
+}
+
+.heroAssuranceCopy {
+  display: grid;
+  gap: 0.25rem;
+  min-inline-size: 0;
+}
+
+.heroAssuranceCopy strong {
+  font-family: var(--hg-ui-display);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.heroAssuranceCopy small {
+  color: var(--showcase-muted);
+  display: -webkit-box;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.heroAssurance a svg {
+  color: rgb(10 10 10 / 38%);
+  margin-block-start: 0.3rem;
+  transition:
+    color 150ms ease;
+}
+
+.heroAssurance a:hover .heroAssuranceCopy strong,
+.heroAssurance a:focus-visible .heroAssuranceCopy strong {
+  color: rgb(10 10 10 / 62%);
+}
+
+.heroAssurance a:hover svg,
+.heroAssurance a:focus-visible svg {
+  color: var(--showcase-ink);
+}
+
+.heroAssurance a:focus-visible {
+  outline: 2px solid var(--showcase-focus);
+  outline-offset: 2px;
+}
+
+.searchSection {
+  background: #fff;
+  border-block: 1px solid rgb(10 10 10 / 10%);
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+}
+
+.decisions {
+  background: #fff;
+  color: var(--showcase-ink);
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+}
+
+.decisionIntro {
+  margin-inline: auto;
+  max-inline-size: 42rem;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--showcase-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.decisionIntro h2,
+.principleIntro h2,
+.planningIntro h2 {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin: 1rem 0 0;
+  text-wrap: balance;
+}
+
+.decisionIntro > p:last-child,
+.principleIntro > p:last-of-type,
+.planningIntro > p:last-of-type {
+  color: var(--showcase-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 1.5rem auto 0;
+  max-inline-size: 36rem;
+  text-wrap: pretty;
+}
+
+.decisionGrid {
+  background: rgb(10 10 10 / 6%);
+  border: 1px solid rgb(10 10 10 / 6%);
+  border-radius: var(--showcase-radius);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 3.5rem auto 0;
+  max-inline-size: var(--showcase-content);
+  overflow: hidden;
+  padding: 0;
+}
+
+.decisionGrid li {
+  background: rgb(10 10 10 / 6%);
+  min-inline-size: 0;
+}
+
+.decisionCard {
+  background: var(--showcase-subtle);
+  block-size: 100%;
+  color: var(--showcase-ink);
+  display: flex;
+  flex-direction: column;
+  min-block-size: 17.5rem;
+  padding: 2.5rem;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.decisionNumber {
+  color: rgb(10 10 10 / 38%);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.decisionCard h3 {
+  font-family: var(--hg-ui-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 1.5rem 0 0;
+  text-wrap: balance;
+}
+
+.decisionCard p {
+  color: var(--showcase-muted);
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin: 1rem 0 2rem;
+}
+
+.decisionAction {
+  align-items: center;
+  color: var(--showcase-ink);
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 650;
+  gap: 0.6rem;
+  justify-content: space-between;
+  margin-block-start: auto;
+}
+
+.decisionAction svg {
+  color: rgb(10 10 10 / 35%);
+  transition: transform 180ms ease;
+}
+
+.decisionCard:hover {
+  background: var(--showcase-hover);
+}
+
+.decisionCard:hover .decisionAction svg {
+  color: var(--showcase-ink);
+}
+
+.root :global(#homepage-guide-search-title),
+.root :global(#homepage-city-hubs-title),
+.root :global(#homepage-ten-city-map-title),
+.root :global(#homepage-guide-rail-title),
+.root :global(#planning-proof-title),
+.root :global(#homepage-human-planning-title),
+.root :global(#faq-title) {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.citySection {
+  --hg-home-content: var(--showcase-content);
+  --hg-home-gutter: var(--showcase-gutter);
+  --hg-home-section-space: var(--showcase-section-space);
+  background: #fff;
+  border-block-end-color: rgb(10 10 10 / 10%);
+}
+
+.citySection > div > div > p:first-child,
+.faqSection > div:first-child > p:first-child {
+  color: var(--showcase-muted);
+  font-weight: 500;
+  letter-spacing: 0.035em;
+}
+
+.citySection nav > ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cityLink {
+  display: grid;
+  font-weight: 600;
+  gap: 0.8rem;
+  grid-template-columns: 1.5rem minmax(0, 1fr) 1.125rem;
+}
+
+.cityLink .cityName,
+.cityLink .cityIndex {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.cityName {
+  white-space: nowrap;
+}
+
+.cityIndex {
+  color: rgb(10 10 10 / 35%);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+}
+
+.planningSection {
+  background: #fff;
+  color: var(--showcase-ink);
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+  scroll-margin-top: calc(var(--showcase-header-height) + 1.5rem);
+}
+
+.planningGrid {
+  align-items: start;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(24rem, 1.2fr);
+  margin-inline: auto;
+  max-inline-size: var(--showcase-content);
+}
+
+.planningIntro {
+  padding-block-start: 1rem;
+}
+
+.planningIntro > p:last-of-type {
+  margin-inline: 0;
+}
+
+.planningTeamLink {
+  align-items: center;
+  color: var(--showcase-ink);
+  display: inline-flex;
+  font-size: 0.84rem;
+  font-weight: 650;
+  gap: 0.55rem;
+  margin-block-start: 1.5rem;
+  min-block-size: 2.75rem;
+  text-underline-offset: 0.2em;
+}
+
+.planningPanel {
+  min-inline-size: 0;
+}
+
+.planningSectionResult .planningGrid {
+  grid-template-columns: minmax(0, 1fr);
+  max-inline-size: 68rem;
+}
+
+.planningSectionResult .planningIntro {
+  display: none;
+}
+
+.planningSectionResult .planningPanel {
+  inline-size: 100%;
+  margin-inline: auto;
+  max-inline-size: 62rem;
+}
+
+.faqSection {
+  background: #fff;
+  border-block-start: 1px solid rgb(10 10 10 / 10%);
+}
+
+.principles {
+  background: var(--showcase-ink);
+  color: #fff;
+  padding: var(--showcase-section-space)
+    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+}
+
+.principleInner {
+  display: grid;
+  gap: 7rem;
+  grid-template-columns: minmax(19rem, 0.8fr) minmax(0, 1.2fr);
+  margin-inline: auto;
+  max-inline-size: var(--showcase-content);
+}
+
+.principleIntro {
+  align-self: start;
+  position: sticky;
+  top: calc(var(--showcase-header-height) + 3rem);
+}
+
+.principleIntro .eyebrow {
+  color: rgb(255 255 255 / 48%);
+}
+
+.principleIntro > p:last-of-type {
+  color: rgb(255 255 255 / 58%);
+  margin-inline: 0;
+}
+
+.principleList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.principleList li {
+  border-block-start: 1px solid rgb(255 255 255 / 18%);
+  display: grid;
+  gap: 1rem 1.5rem;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  padding: 1.75rem 0 2rem;
+}
+
+.principleNumber {
+  color: rgb(255 255 255 / 38%);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  padding-block-start: 0.35rem;
+}
+
+.principleList h3 {
+  font-family: var(--hg-ui-display);
+  font-size: clamp(1.5rem, 2.3vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+  margin: 0;
+}
+
+.principleList p {
+  color: rgb(255 255 255 / 58%);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin: 0.75rem 0 0;
+  max-inline-size: 42rem;
+}
+
+.teamLink {
+  border-color: rgb(255 255 255 / 28%);
+  color: #fff;
+  margin-block-start: 1.75rem;
+}
+
+.teamLink:hover {
+  background: #fff;
+  color: var(--showcase-ink);
+}
+
+.root[data-homeground-locale="zh"] .heroEyebrow,
+.root[data-homeground-locale="ko"] .heroEyebrow,
+.root[data-homeground-locale="zh"] .eyebrow,
+.root[data-homeground-locale="ko"] .eyebrow {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.root[data-homeground-locale="zh"] .heroCopy h1,
+.root[data-homeground-locale="zh"] .decisionIntro h2,
+.root[data-homeground-locale="zh"] .principleIntro h2,
+.root[data-homeground-locale="zh"] .planningIntro h2 {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.root[data-homeground-locale="ko"] .heroCopy h1,
+.root[data-homeground-locale="ko"] .decisionIntro h2,
+.root[data-homeground-locale="ko"] .principleIntro h2,
+.root[data-homeground-locale="ko"] .planningIntro h2 {
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.root[data-homeground-locale="zh"] .heroCopy h1 {
+  font-size: clamp(3rem, 4.25vw, 3.65rem);
+  max-inline-size: 6.5em;
+}
+
+.root[data-homeground-locale="ko"] .heroCopy h1 {
+  font-size: clamp(2.8rem, 4vw, 3.5rem);
+  max-inline-size: 8.5em;
+}
+
+.root[data-homeground-locale="zh"] .decisionCard h3,
+.root[data-homeground-locale="ko"] .decisionCard h3,
+.root[data-homeground-locale="zh"] .principleList h3,
+.root[data-homeground-locale="ko"] .principleList h3 {
+  letter-spacing: 0;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.root[data-homeground-locale="zh"] .decisionCard h3,
+.root[data-homeground-locale="zh"] .principleList h3 {
+  font-weight: 500;
+}
+
+.root[data-homeground-locale="ko"] .decisionCard h3,
+.root[data-homeground-locale="ko"] .principleList h3 {
+  font-weight: 400;
+}
+
+@media (max-width: 70rem) {
+  .heroInner,
+  .planningGrid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .hero {
+    padding-block-start: 12rem;
+  }
+
+  .heroInner,
+  .principleInner,
+  .planningGrid,
+  .decisionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroCopy {
+    max-inline-size: 44rem;
+  }
+
+  .principleIntro {
+    position: static;
+  }
+
+  .planningPanel {
+    max-inline-size: 48rem;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .root {
+    --showcase-gutter: 1rem;
+    --showcase-section-space: 4rem;
+  }
+
+  .hero {
+    padding-block: 10rem 4rem;
+  }
+
+  .heroInner {
+    gap: 4rem;
+  }
+
+  .heroCopy h1,
+  .root[data-homeground-locale="zh"] .heroCopy h1,
+  .root[data-homeground-locale="ko"] .heroCopy h1 {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    max-inline-size: 100%;
+  }
+
+  .root[data-homeground-locale="zh"] .heroCopy h1,
+  .root[data-homeground-locale="ko"] .heroCopy h1 {
+    line-height: 1.2;
+  }
+
+  .heroCopy > h1 + p {
+    font-size: 0.96rem;
+    margin-block-start: 1.25rem;
+  }
+
+  .heroActions {
+    margin-block-start: 1.5rem;
+  }
+
+  .decisionIntro {
+    text-align: start;
+  }
+
+  .decisionIntro > p:last-child {
+    margin-inline: 0;
+  }
+
+  .decisionIntro h2,
+  .principleIntro h2,
+  .planningIntro h2 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .root :global(#homepage-guide-search-title),
+  .root :global(#homepage-city-hubs-title),
+  .root :global(#homepage-ten-city-map-title),
+  .root :global(#homepage-guide-rail-title),
+  .root :global(#planning-proof-title),
+  .root :global(#homepage-human-planning-title),
+  .root :global(#faq-title) {
+    font-size: 1.875rem;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .citySection,
+  .faqSection {
+    padding: var(--showcase-section-space) var(--showcase-gutter);
+  }
+
+  .decisionGrid,
+  .citySection nav > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .decisionGrid {
+    border-radius: 1.25rem;
+    margin-block-start: 2.5rem;
+  }
+
+  .decisionCard {
+    min-block-size: 16rem;
+    padding: 2rem;
+  }
+
+  .decisionNumber {
+    font-size: 0.875rem;
+  }
+
+  .principleInner {
+    gap: 2.75rem;
+  }
+
+  .principleList li {
+    gap: 0.8rem;
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    padding-block: 1.4rem 1.65rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .root {
+    --showcase-gutter: 1.5rem;
+  }
+
+  .root[data-homeground-locale="en"] .heroCopy h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .heroCopy h1,
+  .root[data-homeground-locale="zh"] .heroCopy h1,
+  .root[data-homeground-locale="ko"] .heroCopy h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 22.5rem) {
+  .heroEyebrowLong {
+    display: none;
+  }
+
+  .heroEyebrowShort {
+    display: inline;
+  }
+
+  .heroCopy h1,
+  .root[data-homeground-locale="zh"] .heroCopy h1,
+  .root[data-homeground-locale="ko"] .heroCopy h1 {
+    font-size: 2.25rem;
+  }
+
+  .decisionCard,
+  .principleList li {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 25rem) {
+  .heroActionLong {
+    display: none;
+  }
+
+  .heroActionShort {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryAction,
+  .secondaryAction,
+  .decisionCard,
+  .decisionAction svg {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .heroAssurance,
+  .decisionCard,
+  .primaryAction,
+  .secondaryAction,
+  .teamLink {
+    border: 1px solid CanvasText;
+  }
+}

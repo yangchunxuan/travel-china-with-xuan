@@ -60,6 +60,7 @@ const allowedHeaderHashes = new Set([
   "#planner-contact",
   "#route-finder",
   "#planner-handoff",
+  "#destinations",
   "#planning-proof",
   "#studio",
   "#faq",
@@ -78,19 +79,22 @@ const allowedPlannerQueries = new Set([
 const allowedServiceQueries = new Set<string>(routeServiceIds);
 const navigationSections: Record<
   HomegroundLocale,
-  { guides: string; services: string }
+  { guides: string; services: string; mobileCta: string }
 > = {
   en: {
     guides: "Travel guides",
     services: "Trip planning services",
+    mobileCta: "Plan",
   },
   zh: {
     guides: "旅行指南",
     services: "旅行规划服务",
+    mobileCta: "规划",
   },
   ko: {
     guides: "여행 가이드",
     services: "여행 설계 서비스",
+    mobileCta: "상담",
   },
 };
 
@@ -184,8 +188,14 @@ export function HomegroundHeader({
     pageContext === "search";
   const sectionLabels = navigationSections[locale];
   const studioHref = `${copy.path}studio/`;
-  const languageHash =
-    activeHash || (plannerStatus === "new" ? "" : plannerTarget);
+  const plannerFlowHashes = new Set([
+    "#planner-contact",
+    "#route-finder",
+    "#planner-handoff",
+  ]);
+  const languageHash = plannerFlowHashes.has(activeHash)
+    ? plannerTarget
+    : activeHash || (plannerStatus === "new" ? "" : plannerTarget);
   const overriddenLanguagePathFor = (targetLocale: HomegroundLocale) =>
     languagePaths?.[targetLocale] ??
     (targetLocale === "zh" ? languagePaths?.["zh-Hans"] : undefined);
@@ -271,15 +281,51 @@ export function HomegroundHeader({
   useEffect(() => {
     if (!open) return;
 
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") return;
-      setOpen(false);
-      menuButtonRef.current?.focus();
+    const previousRootOverflow = document.documentElement.style.overflow;
+    if (pageContext === "home") {
+      document.documentElement.style.overflow = "hidden";
+    }
+
+    const handleOpenMenuKeydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== "Tab" || pageContext !== "home") return;
+      const header = menuButtonRef.current?.closest("header");
+      if (!header) return;
+      const focusable = Array.from(
+        header.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => element.getClientRects().length > 0);
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (!first || !last) return;
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
 
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
-  }, [open]);
+    const closeMenuAtDesktop = () => {
+      if (window.innerWidth >= 1100) setOpen(false);
+    };
+
+    window.addEventListener("keydown", handleOpenMenuKeydown);
+    window.addEventListener("resize", closeMenuAtDesktop);
+    return () => {
+      window.removeEventListener("keydown", handleOpenMenuKeydown);
+      window.removeEventListener("resize", closeMenuAtDesktop);
+      document.documentElement.style.overflow = previousRootOverflow;
+    };
+  }, [open, pageContext]);
 
   const close = () => setOpen(false);
   const handleLanguageChange = (
@@ -307,12 +353,17 @@ export function HomegroundHeader({
   };
 
   return (
-    <header className={styles.siteHeader}>
+    <header
+      className={styles.siteHeader}
+      data-homeground-header-context={pageContext}
+      data-menu-open={open ? "true" : "false"}
+    >
       <div className={styles.headerInner}>
         <Link
           className={styles.brand}
           href={copy.path}
           aria-label={copy.navigation.homeLabel}
+          onClick={close}
         >
           <HomegroundBrandMark className={styles.brandMark} />
           <span>
@@ -328,11 +379,16 @@ export function HomegroundHeader({
           {pageContext === "home" ? (
             <>
               <a href={guideHubHref}>{sectionLabels.guides}</a>
-              <a href={planningServicesHref}>
-                {sectionLabels.services}
+              <a
+                href="#destinations"
+                onClick={(event) =>
+                  handleHomegroundHashClick(event, "#destinations")
+                }
+              >
+                {copy.cities.eyebrow}
               </a>
               <a href={studioHref}>
-                {copy.navigation.studio}
+                {copy.navigation.planning}
               </a>
               <a
                 href="#faq"
@@ -417,13 +473,19 @@ export function HomegroundHeader({
           <a
             className={styles.headerCta}
             href={plannerHref}
+            aria-label={plannerCta}
             onClick={(event) => {
               if (pageContext === "home") {
                 handleHomegroundHashClick(event, plannerTarget);
               }
             }}
           >
-            {plannerCta}
+            <span className={styles.headerCtaLong} aria-hidden="true">
+              {plannerCta}
+            </span>
+            <span className={styles.headerCtaShort} aria-hidden="true">
+              {sectionLabels.mobileCta}
+            </span>
           </a>
           <button
             ref={menuButtonRef}
@@ -454,11 +516,17 @@ export function HomegroundHeader({
             <a href={guideHubHref} onClick={close}>
               {sectionLabels.guides}
             </a>
-            <a href={planningServicesHref} onClick={close}>
-              {sectionLabels.services}
+            <a
+              href="#destinations"
+              onClick={(event) => {
+                close();
+                handleHomegroundHashClick(event, "#destinations");
+              }}
+            >
+              {copy.cities.eyebrow}
             </a>
             <a href={studioHref} onClick={close}>
-              {copy.navigation.studio}
+              {copy.navigation.planning}
             </a>
             <a
               href="#faq"

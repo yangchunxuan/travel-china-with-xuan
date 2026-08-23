@@ -1,19 +1,19 @@
 .finder {
   --guides-card: #fff;
   --guides-ink: var(--hg-color-ink);
-  --guides-line: #c9c5ba;
-  --guides-muted: #5f5d57;
-  --guides-paper: #eee9e0;
+  --guides-line: var(--hg-color-line);
+  --guides-muted: var(--hg-color-muted);
+  --guides-paper: #fff;
   --guides-rust: var(--hg-color-rust);
-  --guides-soft: #f4f0e8;
-  background: #eee9e0;
-  border: 1px solid #d4cfc4;
-  border-radius: 1.15rem;
+  --guides-soft: var(--hg-color-soft);
+  background: var(--hg-color-soft);
+  border: 1px solid rgb(10 10 10 / 6%);
+  border-radius: 1rem;
   display: grid;
-  gap: clamp(1.8rem, 4vw, 4.5rem);
+  gap: clamp(2rem, 4vw, 4rem);
   grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
   min-inline-size: 0;
-  padding: clamp(1.4rem, 3.2vw, 2.65rem);
+  padding: clamp(1.5rem, 3.2vw, 2.5rem);
   position: relative;
   scroll-margin-top: 5.75rem;
   z-index: 3;
@@ -31,10 +31,10 @@
 }
 
 .eyebrow {
-  color: var(--hg-color-rust);
-  font-size: 0.7rem;
-  font-weight: 780;
-  letter-spacing: 0.1em;
+  color: var(--hg-color-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
   line-height: 1.4;
   margin: 0;
   text-transform: uppercase;
@@ -101,8 +101,8 @@
 
 @media (max-width: 30rem) {
   .finder {
-    border-radius: 0.95rem;
-    padding: 1.1rem;
+    border-radius: 1rem;
+    padding: 1.25rem;
   }
 
   .introduction h2 {

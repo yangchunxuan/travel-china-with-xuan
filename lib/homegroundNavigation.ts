@@ -5,6 +5,7 @@ export type HomegroundHashTarget =
   | "#planner-contact"
   | "#route-finder"
   | "#planner-handoff"
+  | "#destinations"
   | "#planning-proof"
   | "#studio"
   | "#faq";
@@ -32,7 +33,14 @@ export function handleHomegroundHashClick(
     "",
     `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`,
   );
-  targetElement.scrollIntoView({ block: "start" });
+  const scrollTarget =
+    target === "#planner-contact"
+      ? document.getElementById("planning-intent-title") ?? targetElement
+      : targetElement;
+  scrollTarget.scrollIntoView({
+    block: "start",
+    behavior: "instant",
+  });
   window.dispatchEvent(new Event("hashchange"));
 
   const focusTargetId: Record<HomegroundHashTarget, string> = {
@@ -40,6 +48,7 @@ export function handleHomegroundHashClick(
     "#planner-contact": "planning-intent-title",
     "#route-finder": "route-finder-title",
     "#planner-handoff": "planner-handoff-title",
+    "#destinations": "homepage-city-hubs-title",
     "#planning-proof": "planning-proof-title",
     "#studio": "studio-title",
     "#faq": "faq-title",

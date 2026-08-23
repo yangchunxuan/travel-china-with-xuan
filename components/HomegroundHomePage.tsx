@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
+  ArrowUpRight,
   BedDouble,
   FileCheck2,
   MapPinned,
@@ -11,9 +12,12 @@ import {
 } from "lucide-react";
 import {
   getHomegroundCopy,
-  type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  getHomepageDecisionPath,
+  getHomepageShowcaseCopy,
+} from "../lib/homepageShowcaseI18n";
 import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import type {
@@ -37,10 +41,7 @@ import {
   type HomepagePlanningIntentId,
   type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
-import {
-  HomegroundHeader,
-  resolvePlannerCta,
-} from "./HomegroundHeader";
+import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
 import {
@@ -57,6 +58,7 @@ import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import { HomepageGuideRail } from "./HomepageGuideRail";
 import { TenCityMapFeature } from "./TenCityMapFeature";
 import styles from "./HomegroundHomePage.module.css";
+import showcaseStyles from "./HomepageShowcase.module.css";
 
 /**
  * Which build of section three to render.
@@ -75,63 +77,6 @@ const handledIcons = [TrainFront, BedDouble, Tickets, FileCheck2] as const;
 const planningIntentStorageKey = "homeground-planning-intent-v1";
 const planningStarterIntentStorageKey =
   "homeground-planning-starter-intent-v1";
-
-function resolveFinalCta(
-  copy: HomegroundCopy,
-  plannerStatus: PlannerStatus,
-  handoffStatus: HandoffStatus,
-): { label: string; title: string } {
-  if (plannerStatus === "new") {
-    return {
-      label: copy.finalCta.newLabel,
-      title: copy.finalCta.newTitle,
-    };
-  }
-  if (plannerStatus === "in-progress") {
-    return {
-      label: copy.finalCta.inProgressLabel,
-      title: copy.finalCta.inProgressTitle,
-    };
-  }
-
-  switch (handoffStatus) {
-    case "disabled":
-      return {
-        label: copy.navigation.plannerCta.disabled,
-        title: copy.handoff.disabledTitle,
-      };
-    case "validation-error":
-      return {
-        label: copy.navigation.plannerCta.validationError,
-        title: copy.handoff.errorSummary,
-      };
-    case "submitting":
-      return {
-        label: copy.navigation.plannerCta.submitting,
-        title: copy.handoff.submitting,
-      };
-    case "success":
-      return {
-        label: copy.navigation.plannerCta.success,
-        title: copy.handoff.successTitle,
-      };
-    case "failed":
-      return {
-        label: copy.navigation.plannerCta.failed,
-        title: copy.handoff.failureTitle,
-      };
-    case "uncertain":
-      return {
-        label: copy.navigation.plannerCta.uncertain,
-        title: copy.handoff.uncertainTitle,
-      };
-    default:
-      return {
-        label: copy.finalCta.resultLabel,
-        title: copy.finalCta.resultTitle,
-      };
-  }
-}
 
 export function HomegroundHomePage({
   destinationHubItems,
@@ -164,8 +109,37 @@ export function HomegroundHomePage({
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
+  const showcase = getHomepageShowcaseCopy(locale);
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
+  const studioPath =
+    locale === "en" ? "/studio/" : `/${locale}/studio/`;
+  const heroLinks = [
+    {
+      href: guidesIndexPath,
+      title: copy.guides.eyebrow,
+      body: copy.guides.title,
+      hashTarget: null,
+    },
+    {
+      href: "#destinations",
+      title: copy.cities.eyebrow,
+      body: copy.cities.intro,
+      hashTarget: "#destinations" as const,
+    },
+    {
+      href: studioPath,
+      title: copy.navigation.planning,
+      body: copy.studio.title,
+      hashTarget: null,
+    },
+    {
+      href: "#faq",
+      title: copy.faq.eyebrow,
+      body: copy.faq.title,
+      hashTarget: "#faq" as const,
+    },
+  ] as const;
   const guideRailCatalogPath =
     locale === "en"
       ? "/guides/homepage-guide-index.json"
@@ -186,16 +160,6 @@ export function HomegroundHomePage({
       : plannerStatus === "in-progress"
         ? "#route-finder"
         : "#planner-contact";
-  const plannerCta = resolvePlannerCta(
-    copy,
-    plannerStatus,
-    handoffStatus,
-  );
-  const finalCta = resolveFinalCta(
-    copy,
-    plannerStatus,
-    handoffStatus,
-  );
   const organizationSchema = {
     ...editorialOrganizationSchema(),
     legalName: homegroundBusiness.registeredName,
@@ -258,6 +222,45 @@ export function HomegroundHomePage({
       setRetainedRouteServiceInterest(null);
     }
   }, [locale, planningIntent]);
+
+  useEffect(() => {
+    if (plannerStatus !== "result") return;
+
+    const resultHash = window.location.hash;
+    const plannerFlowHashes = new Set([
+      "",
+      "#planner-contact",
+      "#route-finder",
+      "#planner-handoff",
+    ]);
+    if (!plannerFlowHashes.has(resultHash)) return;
+
+    const focusTargetId =
+      resultHash === "#planner-handoff"
+        ? "planner-handoff-title"
+        : "route-finder-title";
+    const scrollTargetId =
+      resultHash === "#planner-handoff"
+        ? "planner-handoff"
+        : "route-finder";
+    let frame = 0;
+    let attempts = 0;
+    const revealResult = () => {
+      const scrollTarget = document.getElementById(scrollTargetId);
+      const focusTarget = document.getElementById(focusTargetId);
+      if (scrollTarget && focusTarget) {
+        scrollTarget.scrollIntoView({ block: "start", behavior: "instant" });
+        focusTarget.focus({ preventScroll: true });
+        return;
+      }
+      attempts += 1;
+      if (attempts < 8) {
+        frame = window.requestAnimationFrame(revealResult);
+      }
+    };
+    frame = window.requestAnimationFrame(revealResult);
+    return () => window.cancelAnimationFrame(frame);
+  }, [locale, plannerStatus]);
 
   useEffect(() => {
     const syncPlanningIntent = (event?: PopStateEvent) => {
@@ -449,6 +452,7 @@ export function HomegroundHomePage({
       "#planner-contact",
       "#route-finder",
       "#planner-handoff",
+      "#destinations",
       "#planning-proof",
       "#studio",
       "#faq",
@@ -456,24 +460,41 @@ export function HomegroundHomePage({
     const hash = window.location.hash;
     if (!allowedHashes.has(hash)) return;
 
-    let secondFrame = 0;
-    const firstFrame = window.requestAnimationFrame(() => {
-      secondFrame = window.requestAnimationFrame(() => {
-        document
-          .getElementById(hash.slice(1))
-          ?.scrollIntoView({ block: "start" });
-      });
+    let frame = 0;
+    let attempts = 0;
+    let cancelled = false;
+    const alignHashTarget = () => {
+      if (cancelled) return;
+      const hashTarget = document.getElementById(hash.slice(1));
+      const scrollTarget =
+        hash === "#planner-contact"
+          ? document.getElementById("planning-intent-title") ?? hashTarget
+          : hashTarget;
+      if (scrollTarget) {
+        scrollTarget.scrollIntoView({
+          block: "start",
+          behavior: "instant",
+        });
+        return;
+      }
+      attempts += 1;
+      if (attempts < 120) {
+        frame = window.requestAnimationFrame(alignHashTarget);
+      }
+    };
+    void document.fonts.ready.then(() => {
+      if (!cancelled) frame = window.requestAnimationFrame(alignHashTarget);
     });
 
     return () => {
-      window.cancelAnimationFrame(firstFrame);
-      window.cancelAnimationFrame(secondFrame);
+      cancelled = true;
+      window.cancelAnimationFrame(frame);
     };
   }, [locale, planningIntent]);
 
   return (
     <div
-      className={styles.localeRoot}
+      className={`${styles.localeRoot} ${showcaseStyles.root}`}
       lang={copy.htmlLang}
       data-homeground-locale={locale}
     >
@@ -495,16 +516,18 @@ export function HomegroundHomePage({
 
       <main id="main-content" tabIndex={-1}>
         <section
-          className={`${styles.hero} ${
-            plannerStatus === "result" ? styles.heroResult : ""
-          }`}
+          className={showcaseStyles.hero}
           aria-labelledby="home-hero-title"
         >
-          <div className={styles.heroGrid}>
-            <div className={styles.heroCopy}>
-              <p className={styles.heroIdentity}>
-                <strong lang="en">Homeground China</strong>
-                <span>{copy.hero.eyebrow}</span>
+          <div className={showcaseStyles.heroInner}>
+            <div className={showcaseStyles.heroCopy}>
+              <p className={showcaseStyles.heroEyebrow}>
+                <span className={showcaseStyles.heroEyebrowLong}>
+                  {copy.hero.eyebrow}
+                </span>
+                <span className={showcaseStyles.heroEyebrowShort}>
+                  {copy.businessDescriptor}
+                </span>
               </p>
               <h1 id="home-hero-title">
                 {copy.hero.titleLines ? (
@@ -517,12 +540,292 @@ export function HomegroundHomePage({
                   copy.hero.title
                 )}
               </h1>
-              {plannerStatus !== "result" && (
-                <p className={styles.heroLead}>{copy.hero.intro}</p>
-              )}
+              <p className={styles.heroLead}>{showcase.heroBody}</p>
+              <div className={showcaseStyles.heroActions}>
+                <a
+                  className={showcaseStyles.primaryAction}
+                  href={guidesIndexPath}
+                  aria-label={showcase.heroPrimary}
+                >
+                  <span className={showcaseStyles.heroActionLong}>
+                    {showcase.heroPrimary}
+                  </span>
+                  <span className={showcaseStyles.heroActionShort} aria-hidden="true">
+                    {showcase.heroPrimaryShort}
+                  </span>
+                </a>
+                <a
+                  className={showcaseStyles.secondaryAction}
+                  href={plannerTarget}
+                  aria-label={showcase.heroSecondary}
+                  onClick={(event) =>
+                    handleHomegroundHashClick(event, plannerTarget)
+                  }
+                >
+                  <span className={showcaseStyles.heroActionLong}>
+                    {showcase.heroSecondary}
+                  </span>
+                  <span className={showcaseStyles.heroActionShort} aria-hidden="true">
+                    {showcase.heroSecondaryShort}
+                  </span>
+                </a>
+              </div>
             </div>
 
-            <div className={styles.heroPlanner}>
+            <nav
+              className={showcaseStyles.heroAssurance}
+              aria-label={showcase.heroLinksLabel}
+            >
+              <ul>
+                {heroLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={
+                        link.hashTarget
+                          ? (event) =>
+                              handleHomegroundHashClick(
+                                event,
+                                link.hashTarget,
+                              )
+                          : undefined
+                      }
+                    >
+                      <span className={showcaseStyles.heroAssuranceCopy}>
+                        <strong>{link.title}</strong>
+                        <small>{link.body}</small>
+                      </span>
+                      <ArrowUpRight aria-hidden="true" size={17} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <div
+          className={`${styles.travelGuidesSection} ${showcaseStyles.searchSection}`}
+        >
+          <div className={styles.travelGuides}>
+            <HomepageGuideSearch demos={searchDemos} locale={locale} />
+          </div>
+        </div>
+
+        <section
+          className={showcaseStyles.decisions}
+          aria-labelledby="homepage-decisions-title"
+        >
+          <div className={showcaseStyles.decisionIntro}>
+            <div>
+              <p className={showcaseStyles.eyebrow}>
+                {showcase.decisions.eyebrow}
+              </p>
+              <h2 id="homepage-decisions-title">
+                {showcase.decisions.title}
+              </h2>
+            </div>
+            <p>{showcase.decisions.intro}</p>
+          </div>
+          <nav aria-label={showcase.decisions.listLabel}>
+            <ol className={showcaseStyles.decisionGrid}>
+              {showcase.decisions.cards.map((card, index) => (
+                <li key={card.id}>
+                  <a
+                    className={showcaseStyles.decisionCard}
+                    href={getHomepageDecisionPath(locale, card.id)}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={showcaseStyles.decisionNumber}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3>{card.title}</h3>
+                    <p>{card.body}</p>
+                    <span className={showcaseStyles.decisionAction}>
+                      {card.action}
+                      <ArrowRight aria-hidden="true" size={18} />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </section>
+
+        <section
+          className={`${styles.cityHubSection} ${showcaseStyles.citySection}`}
+          id="destinations"
+          aria-labelledby="homepage-city-hubs-title"
+        >
+          <div className={styles.cityHubInner}>
+            <div className={styles.cityHubIntro}>
+              <p className={styles.eyebrowDark}>{copy.cities.eyebrow}</p>
+              <h2 id="homepage-city-hubs-title" tabIndex={-1}>
+                {copy.cities.title}
+              </h2>
+              <p>{copy.cities.intro}</p>
+            </div>
+            <nav aria-label={copy.cities.listLabel}>
+              <ul className={styles.cityHubList}>
+                {destinationHubItems.map((city) => {
+                  const cityIndex = destinationHubItems.indexOf(city);
+                  return (
+                    <li key={city.id}>
+                      <a
+                        className={`${styles.cityHubLink} ${showcaseStyles.cityLink}`}
+                        href={city.href}
+                      >
+                        <span
+                          aria-hidden="true"
+                          className={showcaseStyles.cityIndex}
+                        >
+                          {String(cityIndex + 1).padStart(2, "0")}
+                        </span>
+                        <span className={showcaseStyles.cityName}>
+                          {city.label}
+                        </span>
+                        <ArrowRight aria-hidden="true" size={18} />
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <TenCityMapFeature
+          headingId="homepage-ten-city-map-title"
+          locale={locale}
+          placement="homepage"
+        />
+
+        <HomepageGuideRail
+          catalogUrl={guideRailCatalogPath}
+          categoryLabels={guideCategoryLabels}
+          controlLabels={{
+            allCategories: copy.guides.categoryLabels.all,
+            categoryFilter: copy.guides.railLabel,
+          }}
+          eyebrow={copy.guides.eyebrow}
+          id="homepage-guide-rail"
+          items={guideRailItems}
+          onItemClick={(item) => {
+            trackEvent("homepage_guide_card_clicked", {
+              content_category: item.category,
+              content_kind: item.kind,
+              guide_id: item.id,
+              page_language: locale,
+            });
+          }}
+          title={copy.guides.title}
+          viewAllHref={guidesIndexPath}
+          viewAllLabel={copy.guides.viewAllLabel}
+        />
+
+        {planningSection === "scope-v2" ? (
+          <PlanningScopeSection locale={locale} />
+        ) : (
+        <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
+          <div className={styles.sectionIntro}>
+            <p className={styles.eyebrowDark}>{copy.proof.eyebrow}</p>
+            <h2 id="planning-proof-title" tabIndex={-1}>
+              {copy.proof.title}
+            </h2>
+            <p>{copy.proof.intro}</p>
+          </div>
+
+          <div className={styles.proofBoard}>
+            <article className={styles.sampleRoute} aria-labelledby="sample-route-title">
+              <div className={styles.sampleRouteImage}>
+                <img
+                  src="/images/home/hangzhou-west-lake-leifeng-1600.webp"
+                  alt={copy.proof.imageAlt}
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                />
+                <span>{copy.proof.imageBadge}</span>
+              </div>
+              <div className={styles.sampleRouteHeading}>
+                <div>
+                  <p className={styles.cardLabel}>{copy.proof.cardLabel}</p>
+                  <h3 id="sample-route-title">{copy.proof.cardTitle}</h3>
+                </div>
+                <span>{copy.proof.cardTag}</span>
+              </div>
+
+              <dl className={styles.planningExtract}>
+                {copy.proof.extract.map((item) => (
+                  <div key={item.term}>
+                    <dt>{item.term}</dt>
+                    <dd>{item.detail}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className={styles.planningPoint}>
+                <strong>{copy.proof.pointLabel}</strong>
+                <p>{copy.proof.point}</p>
+              </div>
+            </article>
+
+            <aside className={styles.handledCard} aria-labelledby="handled-title">
+              <p className={styles.cardLabel}>{copy.proof.handledLabel}</p>
+              <h3 id="handled-title">{copy.proof.handledTitle}</h3>
+              <ul>
+                {copy.proof.handled.map((item, index) => {
+                  const Icon = handledIcons[index];
+                  return (
+                    <li key={item.title}>
+                      <Icon aria-hidden="true" size={20} />
+                      <span>
+                        <strong>{item.title}</strong>
+                        {item.detail}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </aside>
+          </div>
+
+        </section>
+        )}
+
+        <section
+          className={`${showcaseStyles.planningSection} ${
+            plannerStatus === "result"
+              ? showcaseStyles.planningSectionResult
+              : ""
+          }`}
+          aria-labelledby={
+            plannerStatus === "result"
+              ? "route-finder-title"
+              : "homepage-human-planning-title"
+          }
+        >
+          <div className={showcaseStyles.planningGrid}>
+            <div className={showcaseStyles.planningIntro}>
+              <p className={showcaseStyles.eyebrow}>
+                {showcase.planning.eyebrow}
+              </p>
+              <h2 id="homepage-human-planning-title">
+                {showcase.planning.title}
+              </h2>
+              <p>{showcase.planning.body}</p>
+              <a
+                className={showcaseStyles.planningTeamLink}
+                href={studioPath}
+              >
+                {showcase.planning.teamAction}
+                <ArrowRight aria-hidden="true" size={16} />
+              </a>
+            </div>
+
+            <div className={showcaseStyles.planningPanel}>
               <RouteFinder
                 id="route-finder"
                 locale={locale}
@@ -574,171 +877,11 @@ export function HomegroundHomePage({
           </div>
         </section>
 
-        <div className={styles.travelGuidesSection}>
-          <div className={styles.travelGuides}>
-            <HomepageGuideSearch demos={searchDemos} locale={locale} />
-          </div>
-        </div>
-
         <section
-          className={styles.cityHubSection}
-          aria-labelledby="homepage-city-hubs-title"
+          className={`${styles.faqSection} ${showcaseStyles.faqSection}`}
+          id="faq"
+          aria-labelledby="faq-title"
         >
-          <div className={styles.cityHubInner}>
-            <div className={styles.cityHubIntro}>
-              <p className={styles.eyebrowDark}>{copy.cities.eyebrow}</p>
-              <h2 id="homepage-city-hubs-title">{copy.cities.title}</h2>
-              <p>{copy.cities.intro}</p>
-            </div>
-            <nav aria-label={copy.cities.listLabel}>
-              <ul className={styles.cityHubList}>
-                {destinationHubItems.map((city) => (
-                  <li key={city.id}>
-                    <a
-                      className={styles.cityHubLink}
-                      href={city.href}
-                    >
-                      <span>{city.label}</span>
-                      <ArrowRight aria-hidden="true" size={18} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </section>
-
-        <TenCityMapFeature
-          headingId="homepage-ten-city-map-title"
-          locale={locale}
-          placement="homepage"
-        />
-
-        <HomepageGuideRail
-          catalogUrl={guideRailCatalogPath}
-          categoryLabels={guideCategoryLabels}
-          controlLabels={{
-            allCategories: copy.guides.categoryLabels.all,
-            categoryFilter: copy.guides.railLabel,
-          }}
-          eyebrow={copy.guides.eyebrow}
-          id="homepage-guide-rail"
-          items={guideRailItems}
-          onItemClick={(item) => {
-            trackEvent("homepage_guide_card_clicked", {
-              content_category: item.category,
-              content_kind: item.kind,
-              guide_id: item.id,
-              page_language: locale,
-            });
-          }}
-          title={copy.guides.title}
-          viewAllHref={guidesIndexPath}
-          viewAllLabel={copy.guides.viewAllLabel}
-        />
-
-        {planningSection === "scope-v2" ? (
-          <PlanningScopeSection locale={locale} />
-        ) : (
-        <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
-          <div className={styles.sectionIntro}>
-            <p className={styles.eyebrowDark}>{copy.proof.eyebrow}</p>
-            <h2 id="planning-proof-title" tabIndex={-1}>
-              {copy.proof.title}
-            </h2>
-            <p>{copy.proof.intro}</p>
-          </div>
-
-          <div className={styles.proofBoard}>
-            <article className={styles.sampleRoute} aria-labelledby="sample-route-title">
-              <div className={styles.sampleRouteImage}>
-                <img
-                  src="/images/home/hangzhou-1600.jpg"
-                  alt={copy.proof.imageAlt}
-                  width="1600"
-                  height="1066"
-                  loading="lazy"
-                />
-                <span>{copy.proof.imageBadge}</span>
-              </div>
-              <div className={styles.sampleRouteHeading}>
-                <div>
-                  <p className={styles.cardLabel}>{copy.proof.cardLabel}</p>
-                  <h3 id="sample-route-title">{copy.proof.cardTitle}</h3>
-                </div>
-                <span>{copy.proof.cardTag}</span>
-              </div>
-
-              <dl className={styles.planningExtract}>
-                {copy.proof.extract.map((item) => (
-                  <div key={item.term}>
-                    <dt>{item.term}</dt>
-                    <dd>{item.detail}</dd>
-                  </div>
-                ))}
-              </dl>
-
-              <div className={styles.planningPoint}>
-                <strong>{copy.proof.pointLabel}</strong>
-                <p>{copy.proof.point}</p>
-              </div>
-            </article>
-
-            <aside className={styles.handledCard} aria-labelledby="handled-title">
-              <p className={styles.cardLabel}>{copy.proof.handledLabel}</p>
-              <h3 id="handled-title">{copy.proof.handledTitle}</h3>
-              <ul>
-                {copy.proof.handled.map((item, index) => {
-                  const Icon = handledIcons[index];
-                  return (
-                    <li key={item.title}>
-                      <Icon aria-hidden="true" size={20} />
-                      <span>
-                        <strong>{item.title}</strong>
-                        {item.detail}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </aside>
-          </div>
-
-        </section>
-        )}
-
-        <section className={styles.studioSection} id="studio" aria-labelledby="studio-title">
-          <div className={styles.studioIntro}>
-            <p className={styles.eyebrow}>{copy.studio.eyebrow}</p>
-            <h2 id="studio-title" tabIndex={-1}>
-              {copy.studio.title}
-            </h2>
-            <p>{copy.studio.intro}</p>
-          </div>
-
-          <ol className={styles.studioRoles}>
-            {copy.studio.roles.map((role, index) => (
-              <li key={role.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{role.title}</h3>
-                  <p>{role.detail}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <a
-            className={styles.studioLink}
-            href={`${copy.path}#planner-contact`}
-          >
-            {copy.studio.cta}
-            <ArrowRight aria-hidden="true" size={17} />
-          </a>
-
-        </section>
-
-        <section className={styles.faqSection} id="faq" aria-labelledby="faq-title">
           <div className={styles.faqIntro}>
             <p className={styles.eyebrowDark}>{copy.faq.eyebrow}</p>
             <h2 id="faq-title" tabIndex={-1}>
@@ -747,7 +890,7 @@ export function HomegroundHomePage({
             {copy.faq.intro && <p>{copy.faq.intro}</p>}
           </div>
           <div className={styles.faqList}>
-            {copy.faq.items.map((item) => (
+            {copy.faq.items.slice(0, 3).map((item) => (
               <details key={item.question}>
                 <summary>{item.question}<span aria-hidden="true">+</span></summary>
                 <p>{item.answer}</p>
@@ -756,22 +899,43 @@ export function HomegroundHomePage({
           </div>
         </section>
 
-        <section className={styles.finalCta} aria-labelledby="final-cta-title">
-          <MapPinned aria-hidden="true" size={32} />
-          <div>
-            <p className={styles.cardLabel}>
-              {finalCta.label}
-            </p>
-            <h2 id="final-cta-title">{finalCta.title}</h2>
+        <section
+          className={showcaseStyles.principles}
+          id="studio"
+          aria-labelledby="studio-title"
+        >
+          <div className={showcaseStyles.principleInner}>
+            <div className={showcaseStyles.principleIntro}>
+              <p className={showcaseStyles.eyebrow}>
+                {showcase.principles.eyebrow}
+              </p>
+              <h2 id="studio-title" tabIndex={-1}>
+                {showcase.principles.title}
+              </h2>
+              <p>{showcase.principles.intro}</p>
+              <a className={showcaseStyles.teamLink} href={studioPath}>
+                {showcase.principles.teamAction}
+                <ArrowRight aria-hidden="true" size={17} />
+              </a>
+            </div>
+
+            <ol className={showcaseStyles.principleList}>
+              {showcase.principles.items.map((principle, index) => (
+                <li key={principle.title}>
+                  <span
+                    aria-hidden="true"
+                    className={showcaseStyles.principleNumber}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3>{principle.title}</h3>
+                    <p>{principle.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
-          <a
-            href={plannerTarget}
-            onClick={(event) =>
-              handleHomegroundHashClick(event, plannerTarget)
-            }
-          >
-            {plannerCta} <ArrowRight aria-hidden="true" size={18} />
-          </a>
         </section>
       </main>
 
