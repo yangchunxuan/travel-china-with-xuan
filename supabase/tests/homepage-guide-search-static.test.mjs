@@ -168,6 +168,19 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.doesNotMatch(title, /<button|<Pause|<Play|motionControl/);
   assert.doesNotMatch(title, /aria-live|role="status"/);
   assert.match(title, /className=\{styles\.phraseSizer\}/);
+  assert.equal(
+    title.match(/<AnimatedPhrase phrase=\{(?:phrase|currentPhrase)\} \/>/g)
+      ?.length,
+    2,
+  );
+  assert.match(
+    title,
+    /className=\{styles\.phraseMeasure\}[\s\S]{0,180}<AnimatedPhrase phrase=\{phrase\} \/>/,
+  );
+  assert.doesNotMatch(
+    title,
+    /className=\{styles\.phraseMeasure\}[\s\S]{0,180}>\s*\{phrase\}\s*<\/span>/,
+  );
   assert.doesNotMatch(titleStyles, /motionControl|data-has-control/);
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.doesNotMatch(titleStyles, /filter: blur/);

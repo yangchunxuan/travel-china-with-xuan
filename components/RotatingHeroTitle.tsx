@@ -283,7 +283,7 @@ export function RotatingHeroTitle({
                     className={styles.phraseMeasure}
                     key={`${phrase}-${index}`}
                   >
-                    {phrase}
+                    <AnimatedPhrase phrase={phrase} />
                   </span>
                 ))}
               </span>
