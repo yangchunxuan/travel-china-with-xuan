@@ -1,8 +1,12 @@
 # Homepage destination-Hub discovery handoff — 2026-08-23
 
-Status: **READY FOR CENTRAL INTEGRATION — NOT MERGED OR DEPLOYED**
+Status: **DEPLOYED AND LIVE-VERIFIED**
 
 Branch: `codex/homepage-city-hub-links-20260823`
+
+Release evidence: PR [#93](https://github.com/yangchunxuan/travel-china-with-xuan/pull/93),
+runtime merge SHA `1e66811216fedb4bbea521bd894c5aba9518a434` and
+[Pages run 32616980439](https://github.com/yangchunxuan/travel-china-with-xuan/actions/runs/32616980439).
 
 ## Outcome
 
@@ -45,7 +49,7 @@ cards. The production-export audit separately requires all eight localized
 links in each of the three exported homepages and rejects unpublished Guilin or
 Shenzhen Hub links.
 
-## Validation on the branch
+## Release validation
 
 - TypeScript: pass.
 - Homepage and related destination/accessibility tests: 28/28 pass.
@@ -56,15 +60,17 @@ Shenzhen Hub links.
 - Browser QA: English desktop at 1440px and all three languages at 390px;
   eight links visible, correct two-column mobile layout and no horizontal
   overflow.
-- Current-base sitemap export: 671 unique locations; this branch does not
-  modify its source or add a URL.
+- Live sitemap after deployment: 671 locations, 671 unique and 0 duplicates;
+  this release did not modify its source or add a URL.
 
-## Central integration steps
+## Production read-back
 
-1. Rebase or update the branch against the latest `main` without replacing the
-   destination Registry authority.
-2. Rerun `npm run test:inquiry`, `npm run typecheck` and `npm run build`.
-3. After merge and deployment, read back `/`, `/zh/` and `/ko/` and verify the
-   eight language-matched destination links in live HTML.
-4. Record deployment evidence separately. Only then may this handoff be marked
-   deployed; do not infer indexation from a successful release.
+- `/`, `/zh/` and `/ko/` each returned HTTP 200 after Pages completed.
+- All 24 expected locale-matched Hub links were present in live HTML.
+- All three localized headings were present.
+- No unpublished Guilin or Shenzhen destination-Hub link was present.
+- Successful deployment and link discovery do not prove that Google has
+  crawled, indexed or ranked any Hub.
+
+The durable release record is
+[`homepage-city-discovery-production-release-20260823.md`](../release-notes/homepage-city-discovery-production-release-20260823.md).
