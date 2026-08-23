@@ -57,13 +57,14 @@ test("the three homepages present one travel-agency brand with localized copy", 
 });
 
 test("homepage metadata, visible identity and social cards reinforce Homeground China", async () => {
-  const [defaultPage, localizedPage, header, footer, homepage] =
+  const [defaultPage, localizedPage, header, footer, homepage, rotatingTitle] =
     await Promise.all([
       source("app/(default)/page.tsx"),
       source("app/(localized)/[locale]/page.tsx"),
       source("components/HomegroundHeader.tsx"),
       source("components/HomegroundFooter.tsx"),
       source("components/HomegroundHomePage.tsx"),
+      source("components/RotatingHeroTitle.tsx"),
     ]);
 
   for (const page of [defaultPage, localizedPage]) {
@@ -77,9 +78,17 @@ test("homepage metadata, visible identity and social cards reinforce Homeground 
   assert.match(header, /<small>\{copy\.businessDescriptor\}<\/small>/u);
   assert.match(footer, /<strong lang="en">Homeground China<\/strong>/u);
   assert.match(homepage, /<HomegroundHeader/u);
-  assert.match(homepage, /<h1 id="home-hero-title">/u);
-  assert.match(homepage, /copy\.hero\.titleLines/u);
-  assert.match(homepage, /styles\.heroTitleLine/u);
+  assert.match(homepage, /<RotatingHeroTitle/u);
+  assert.match(homepage, /canonicalTitle=\{copy\.hero\.title\}/u);
+  assert.match(
+    rotatingTitle,
+    /<h1[\s\S]{0,180}className=\{\[styles\.heading, className\]/u,
+  );
+  assert.match(
+    rotatingTitle,
+    /<span className=\{styles\.screenReaderOnly\}>\{canonicalTitle\}<\/span>/u,
+  );
+  assert.doesNotMatch(rotatingTitle, /aria-live/u);
   assert.doesNotMatch(homepage, /editorialPersonSchema/u);
 });
 

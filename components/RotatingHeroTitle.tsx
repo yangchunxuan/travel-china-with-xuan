@@ -7,9 +7,10 @@ import {
   useRef,
   useState,
 } from "react";
+import { Pause, Play } from "lucide-react";
 import styles from "./RotatingHeroTitle.module.css";
 
-const AUTO_STEP_MS = 2100;
+const AUTO_STEP_MS = 4300;
 const ENTER_PHASE_MS = 760;
 const EXIT_PHASE_MS = 560;
 const HOLD_PHASE_MS = AUTO_STEP_MS - ENTER_PHASE_MS - EXIT_PHASE_MS;
@@ -22,13 +23,14 @@ type LetterStyle = CSSProperties & {
 };
 
 export type RotatingHeroTitleProps = {
+  canonicalTitle: string;
   className?: string;
+  fixedLines: readonly string[];
   id?: string;
   pauseLabel?: string;
   paused?: boolean;
   phrases: readonly string[];
   playLabel?: string;
-  question: string;
 };
 
 const cjkCharacterPattern =
@@ -124,15 +126,20 @@ function AnimatedPhrase({ phrase }: { phrase: string }) {
 }
 
 export function RotatingHeroTitle({
+  canonicalTitle,
   className,
+  fixedLines,
   id,
   pauseLabel = "Pause changing headline",
   paused = false,
   phrases,
   playLabel = "Continue changing headline",
-  question,
 }: RotatingHeroTitleProps) {
-  const phraseSignature = JSON.stringify(phrases);
+  const phraseSignature = JSON.stringify({ fixedLines, phrases });
+  const availableFixedLines = useMemo(
+    () => fixedLines.map((line) => line.trim()).filter(Boolean),
+    [fixedLines],
+  );
   const availablePhrases = useMemo(
     () => phrases.map((phrase) => phrase.trim()).filter(Boolean),
     [phrases],
@@ -142,26 +149,27 @@ export function RotatingHeroTitle({
     paused || availablePhrases.length <= 1 ? "holding" : "entering",
   );
   const [documentVisible, setDocumentVisible] = useState(true);
+  const [focusPaused, setFocusPaused] = useState(false);
+  const [inViewport, setInViewport] = useState(true);
   const [manualPaused, setManualPaused] = useState(false);
   const [pointerPaused, setPointerPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [cycleVersion, setCycleVersion] = useState(0);
   const previousPhraseSignature = useRef(phraseSignature);
   const previousReducedMotion = useRef(false);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const currentPhraseIndex =
     availablePhrases.length > 0 ? phraseIndex % availablePhrases.length : 0;
   const currentPhrase = availablePhrases[currentPhraseIndex] ?? "";
-  const firstPhrase = availablePhrases[0] ?? "";
-  const accessibleTitle = [question.trim(), firstPhrase]
-    .filter(Boolean)
-    .join(" ");
   const canRotate = availablePhrases.length > 1;
   const effectivePaused =
     paused ||
     manualPaused ||
     pointerPaused ||
+    focusPaused ||
     !documentVisible ||
+    !inViewport ||
     prefersReducedMotion;
 
   useEffect(() => {
@@ -175,6 +183,18 @@ export function RotatingHeroTitle({
     mediaQuery.addEventListener("change", updatePreference);
     return () =>
       mediaQuery.removeEventListener("change", updatePreference);
+  }, []);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInViewport(entry?.isIntersecting ?? true),
+      { threshold: 0.1 },
+    );
+    observer.observe(root);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -210,6 +230,12 @@ export function RotatingHeroTitle({
   }, [canRotate, prefersReducedMotion]);
 
   useEffect(() => {
+    if (effectivePaused && phase !== "holding") {
+      setPhase("holding");
+    }
+  }, [effectivePaused, phase]);
+
+  useEffect(() => {
     if (!canRotate || effectivePaused) return;
 
     const delay =
@@ -240,16 +266,36 @@ export function RotatingHeroTitle({
   return (
     <div
       className={styles.root}
+      data-has-control={canRotate && !prefersReducedMotion ? "true" : "false"}
       data-paused={effectivePaused ? "true" : "false"}
       data-rotation-state={phase}
+      ref={rootRef}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setFocusPaused(false);
+        }
+      }}
+      onFocusCapture={() => setFocusPaused(true)}
       onMouseEnter={() => setPointerPaused(true)}
       onMouseLeave={() => setPointerPaused(false)}
     >
-      <h1 className={className} id={id}>
-        <span className={styles.screenReaderOnly}>{accessibleTitle}</span>
-        <span aria-hidden="true" className={styles.visualTitle}>
-          <span className={styles.question}>{question}</span>
-          {firstPhrase ? (
+      <h1
+        className={[styles.heading, className].filter(Boolean).join(" ")}
+        id={id}
+      >
+        <span className={styles.screenReaderOnly}>{canonicalTitle}</span>
+        <span
+          aria-hidden="true"
+          className={styles.visualTitle}
+          data-homeground-rotating-title="true"
+          data-nosnippet=""
+        >
+          {availableFixedLines.map((line, index) => (
+            <span className={styles.fixedLine} key={`${line}-${index}`}>
+              {line}
+            </span>
+          ))}
+          {currentPhrase ? (
             <span className={styles.phraseStage}>
               <span className={styles.phraseSizer}>
                 {availablePhrases.map((phrase, index) => (
@@ -275,11 +321,25 @@ export function RotatingHeroTitle({
       {canRotate && !prefersReducedMotion ? (
         <button
           aria-label={manualPaused ? playLabel : pauseLabel}
-          aria-pressed={manualPaused}
           className={styles.motionControl}
+          title={manualPaused ? playLabel : pauseLabel}
           type="button"
-          onClick={() => setManualPaused((current) => !current)}
-        />
+          onClick={() => {
+            if (manualPaused) {
+              setManualPaused(false);
+              setFocusPaused(false);
+              setPointerPaused(false);
+            } else {
+              setManualPaused(true);
+            }
+          }}
+        >
+          {manualPaused ? (
+            <Play aria-hidden="true" size={16} strokeWidth={1.75} />
+          ) : (
+            <Pause aria-hidden="true" size={16} strokeWidth={1.75} />
+          )}
+        </button>
       ) : null}
     </div>
   );

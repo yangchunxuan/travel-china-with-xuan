@@ -8,6 +8,13 @@ export type HomepageDecisionId =
 
 interface HomepageShowcaseCopy {
   readonly heroBody: string;
+  readonly heroHeadline: {
+    readonly fixedLines: readonly string[];
+    readonly joiner: "" | " ";
+    readonly phrases: readonly string[];
+    readonly pauseLabel: string;
+    readonly playLabel: string;
+  };
   readonly heroLinksLabel: string;
   readonly heroPrimary: string;
   readonly heroPrimaryShort: string;
@@ -37,6 +44,18 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   en: {
     heroBody:
       "Practical China travel guides for choosing cities, where to stay and how to connect them—plus a team on the ground when you want help bringing the whole trip together.",
+    heroHeadline: {
+      fixedLines: ["China, your", "way."],
+      joiner: " ",
+      phrases: [
+        "We’ve got your back.",
+        "Every stop connects.",
+        "Real travel time counts.",
+        "The hard parts, handled.",
+      ],
+      pauseLabel: "Pause changing headline",
+      playLabel: "Continue changing headline",
+    },
     heroLinksLabel: "Explore Homeground China",
     heroPrimary: "Explore China travel guides",
     heroPrimaryShort: "Explore guides",
@@ -90,6 +109,18 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   zh: {
     heroBody:
       "先用实用指南选择城市、住宿区域和交通衔接；需要时，再由中国本地旅行规划师帮你把整趟行程串起来。",
+    heroHeadline: {
+      fixedLines: ["按你的方式，", "游中国。"],
+      joiner: "",
+      phrases: [
+        "一路有我们。",
+        "每一站都接得上。",
+        "真实路程也算进去。",
+        "难处理的交给我们。",
+      ],
+      pauseLabel: "暂停标题切换",
+      playLabel: "继续标题切换",
+    },
     heroLinksLabel: "浏览 Homeground China",
     heroPrimary: "浏览中国旅行指南",
     heroPrimaryShort: "看旅行指南",
@@ -138,6 +169,18 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   ko: {
     heroBody:
       "도시와 숙박 지역, 이동 방법을 고를 수 있는 실용 가이드부터, 필요할 때 전체 일정을 연결해 주는 중국 현지 여행 플래너까지 함께합니다.",
+    heroHeadline: {
+      fixedLines: ["중국, 나만의", "방식으로."],
+      joiner: " ",
+      phrases: [
+        "든든하게 함께합니다.",
+        "도시와 도시를 자연스럽게 잇습니다.",
+        "실제 이동 시간까지 계산합니다.",
+        "어려운 부분은 저희가 챙깁니다.",
+      ],
+      pauseLabel: "제목 전환 일시 정지",
+      playLabel: "제목 전환 계속",
+    },
     heroLinksLabel: "Homeground China 둘러보기",
     heroPrimary: "중국 여행 가이드 보기",
     heroPrimaryShort: "여행 가이드",

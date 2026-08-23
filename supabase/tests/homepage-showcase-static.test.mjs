@@ -6,6 +6,7 @@ import {
   getHomepageDecisionPath,
   getHomepageShowcaseCopy,
 } from "../../lib/homepageShowcaseI18n.ts";
+import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 
@@ -18,12 +19,24 @@ test("the homepage showcase keeps four equivalent decisions in every language", 
 
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageShowcaseCopy(locale);
+    const identityCopy = getHomegroundCopy(locale);
+    const headline = copy.heroHeadline;
     assert.deepEqual(
       copy.decisions.cards.map((card) => card.id),
       expectedIds,
     );
     assert.equal(new Set(copy.decisions.cards.map((card) => card.title)).size, 4);
     assert.ok(copy.heroBody.length > 40);
+    assert.equal(headline.phrases.length, 4);
+    assert.equal(new Set(headline.phrases).size, headline.phrases.length);
+    assert.ok(headline.fixedLines.every((line) => line.trim().length > 0));
+    assert.ok(headline.phrases.every((phrase) => phrase.trim().length > 0));
+    assert.ok(headline.pauseLabel.length > 4);
+    assert.ok(headline.playLabel.length > 4);
+    assert.equal(
+      [...headline.fixedLines, headline.phrases[0]].join(headline.joiner),
+      identityCopy.hero.title,
+    );
     assert.notEqual(copy.heroLinksLabel, copy.decisions.listLabel);
     for (const card of copy.decisions.cards) {
       assert.ok(card.body.length > 20);
@@ -202,6 +215,10 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     /\.heroInner \{[\s\S]{0,180}grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/,
   );
   assert.match(page, /className=\{showcaseStyles\.heroAssurance\}/);
+  assert.match(
+    page,
+    /className=\{`\$\{styles\.heroLead\} \$\{showcaseStyles\.heroLead\}`\}/,
+  );
   assert.match(page, /heroLinks\.map/);
   assert.match(page, /aria-label=\{showcase\.heroLinksLabel\}/);
   assert.match(
@@ -210,7 +227,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   );
   assert.match(
     styles,
-    /\.heroCopy h1 \{[\s\S]{0,100}font-family: var\(--hg-editorial\)[\s\S]{0,100}font-weight: 400/,
+    /\.heroTitle \{[\s\S]{0,100}font-family: var\(--hg-editorial\)[\s\S]{0,100}font-weight: 400/,
   );
   assert.match(
     styles,

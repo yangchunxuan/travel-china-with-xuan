@@ -58,6 +58,7 @@ import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import { HomepageGuideRail } from "./HomepageGuideRail";
 import { HomepageProductShowcase } from "./HomepageProductShowcase";
+import { RotatingHeroTitle } from "./RotatingHeroTitle";
 import styles from "./HomegroundHomePage.module.css";
 import showcaseStyles from "./HomepageShowcase.module.css";
 
@@ -536,18 +537,18 @@ export function HomegroundHomePage({
                   {copy.businessDescriptor}
                 </span>
               </p>
-              <h1 id="home-hero-title">
-                {copy.hero.titleLines ? (
-                  copy.hero.titleLines.map((line) => (
-                    <span className={styles.heroTitleLine} key={line}>
-                      {line}
-                    </span>
-                  ))
-                ) : (
-                  copy.hero.title
-                )}
-              </h1>
-              <p className={styles.heroLead}>{showcase.heroBody}</p>
+              <RotatingHeroTitle
+                canonicalTitle={copy.hero.title}
+                className={showcaseStyles.heroTitle}
+                fixedLines={showcase.heroHeadline.fixedLines}
+                id="home-hero-title"
+                pauseLabel={showcase.heroHeadline.pauseLabel}
+                phrases={showcase.heroHeadline.phrases}
+                playLabel={showcase.heroHeadline.playLabel}
+              />
+              <p className={`${styles.heroLead} ${showcaseStyles.heroLead}`}>
+                {showcase.heroBody}
+              </p>
               <div className={showcaseStyles.heroActions}>
                 <a
                   className={showcaseStyles.primaryAction}

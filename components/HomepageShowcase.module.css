@@ -73,22 +73,17 @@
   display: none;
 }
 
-.heroCopy h1 {
+.heroTitle {
   font-family: var(--hg-editorial);
   font-size: clamp(3.4rem, 4.45vw, 3.75rem);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 1.1;
   margin: 0;
-  max-inline-size: 11ch;
+  max-inline-size: 16ch;
   text-wrap: balance;
 }
 
-.heroCopy h1 > span {
-  display: block;
-}
-
-.heroCopy > h1 + p,
 .heroLead {
   color: var(--showcase-muted);
   font-size: 1rem;
@@ -469,7 +464,7 @@
   text-transform: none;
 }
 
-.root[data-homeground-locale="zh"] .heroCopy h1,
+.root[data-homeground-locale="zh"] .heroTitle,
 .root[data-homeground-locale="zh"] .decisionIntro h2,
 .root[data-homeground-locale="zh"] .planningIntro h2 {
   font-weight: 500;
@@ -478,7 +473,7 @@
   word-break: keep-all;
 }
 
-.root[data-homeground-locale="ko"] .heroCopy h1,
+.root[data-homeground-locale="ko"] .heroTitle,
 .root[data-homeground-locale="ko"] .decisionIntro h2,
 .root[data-homeground-locale="ko"] .planningIntro h2 {
   font-weight: 400;
@@ -487,14 +482,14 @@
   word-break: keep-all;
 }
 
-.root[data-homeground-locale="zh"] .heroCopy h1 {
+.root[data-homeground-locale="zh"] .heroTitle {
   font-size: clamp(3rem, 4.25vw, 3.65rem);
-  max-inline-size: 6.5em;
+  max-inline-size: 9em;
 }
 
-.root[data-homeground-locale="ko"] .heroCopy h1 {
+.root[data-homeground-locale="ko"] .heroTitle {
   font-size: clamp(2.8rem, 4vw, 3.5rem);
-  max-inline-size: 8.5em;
+  max-inline-size: 11em;
 }
 
 .root[data-homeground-locale="zh"] .decisionCard h3,
@@ -553,20 +548,20 @@
     gap: 4rem;
   }
 
-  .heroCopy h1,
-  .root[data-homeground-locale="zh"] .heroCopy h1,
-  .root[data-homeground-locale="ko"] .heroCopy h1 {
+  .heroTitle,
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
     font-size: 2.25rem;
     line-height: 1.1;
     max-inline-size: 100%;
   }
 
-  .root[data-homeground-locale="zh"] .heroCopy h1,
-  .root[data-homeground-locale="ko"] .heroCopy h1 {
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
     line-height: 1.2;
   }
 
-  .heroCopy > h1 + p {
+  .heroLead {
     font-size: 0.96rem;
     margin-block-start: 1.25rem;
   }
@@ -628,16 +623,16 @@
     --showcase-gutter: 1.5rem;
   }
 
-  .root[data-homeground-locale="en"] .heroCopy h1 {
+  .root[data-homeground-locale="en"] .heroTitle {
     font-size: 3.75rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 40rem) and (max-width: 63.999rem) {
-  .heroCopy h1,
-  .root[data-homeground-locale="zh"] .heroCopy h1,
-  .root[data-homeground-locale="ko"] .heroCopy h1 {
+  .heroTitle,
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
     font-size: 3rem;
     line-height: 1;
   }
@@ -652,9 +647,9 @@
     display: inline;
   }
 
-  .heroCopy h1,
-  .root[data-homeground-locale="zh"] .heroCopy h1,
-  .root[data-homeground-locale="ko"] .heroCopy h1 {
+  .heroTitle,
+  .root[data-homeground-locale="zh"] .heroTitle,
+  .root[data-homeground-locale="ko"] .heroTitle {
     font-size: 2.25rem;
   }
 

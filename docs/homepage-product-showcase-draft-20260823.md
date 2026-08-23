@@ -79,6 +79,24 @@ the draft-only regression where Chinese and Korean showcase headings selected
 the UI font while product headings selected the editorial font. The font files
 were already valid and complete; no font asset was replaced.
 
+## Homepage headline motion boundary
+
+The hero keeps one canonical, locale-matched brand promise as its only `h1`.
+The visible rendering holds the first two lines still and rotates four short
+Homeground endings at a 4.3-second cadence. English, Chinese and Korean each use
+native copy rather than displaying translated text from another locale.
+
+The animated rendering is excluded from live-region announcements and search
+snippets; screen readers receive the stable canonical promise once. A visible
+44px pause/play control supports persistent manual pause. Rotation also pauses
+temporarily while the hero has pointer or keyboard focus, is outside the
+viewport, or the page is hidden. `prefers-reduced-motion` shows the first ending
+without animation or a redundant control.
+
+All endings share a hidden layout sizer, so a longer later phrase cannot move
+the hero, product catalog or following content. The animation uses only opacity
+and vertical translation; no blur filter is used on mobile GPUs.
+
 ## Required release evidence
 
 Before this Draft PR can be marked Ready, central must retain evidence for:
@@ -112,3 +130,8 @@ These rules describe the draft branch only and are not production evidence.
   products, locale-correct links, distinct Shanghai images, seasonal Harbin
   wording, visible keyboard focus, no horizontal overflow and no console
   warnings or errors.
+- Rotating-headline QA: EN/ZH/KO at 1440px, 390px and 360px completed all four
+  phrases with zero hero, lead or product-section movement and zero horizontal
+  overflow. Mouse pause/play, keyboard Space, focus-visible, temporary
+  hover/focus pause and off-screen pause/resume passed; the three consoles had
+  no warning, error, failed image or failed stylesheet request.

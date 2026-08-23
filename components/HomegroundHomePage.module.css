@@ -610,11 +610,6 @@
   max-width: 12.5ch;
 }
 
-.heroTitleLine {
-  display: block;
-  white-space: nowrap;
-}
-
 .heroLead {
   color: var(--hg-color-muted);
   font-size: clamp(1rem, 1.8vw, 1.15rem);
