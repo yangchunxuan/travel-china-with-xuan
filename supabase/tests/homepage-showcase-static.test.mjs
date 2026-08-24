@@ -149,7 +149,17 @@ test("the white homepage flows from guidance to one structured dark footer", asy
 });
 
 test("the homepage product showcase exposes all nine published tours without guide placeholders", async () => {
-  const [page, productShowcase, catalog, rail, defaultRoute, localizedRoute, labRoute] = await Promise.all([
+  const [
+    page,
+    productShowcase,
+    catalog,
+    rail,
+    defaultRoute,
+    localizedRoute,
+    labRoute,
+    zhangjiajieProductSource,
+    zhangjiajiePreviewSource,
+  ] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageProductShowcase.tsx"),
     source("lib/homepagePrivateTourCatalog.ts"),
@@ -157,9 +167,28 @@ test("the homepage product showcase exposes all nine published tours without gui
     source("app/(default)/page.tsx"),
     source("app/(localized)/[locale]/page.tsx"),
     source("app/(lab)/planning-scope-lab/full/[locale]/page.lab.tsx"),
+    source("content/product-previews/zhangjiajie-4-day-private-tour/product.json"),
+    source("lib/zhangjiajiePrivateTourPreview.ts"),
   ]);
 
-  assert.equal(privateTourProducts.length + 1, 9);
+  const zhangjiajieProduct = JSON.parse(zhangjiajieProductSource);
+  const expectedTourSlugs = [
+    "beijing-highlights-5-day-private-tour",
+    "chengdu-pandas-sanxingdui-5-day-private-tour",
+    "chongqing-wulong-5-day-private-tour",
+    "guilin-yangshuo-5-day-private-tour",
+    "harbin-winter-5-day-private-tour",
+    "shanghai-suzhou-5-day-private-tour",
+    "shanghai-suzhou-hangzhou-6-day-private-tour",
+    "xian-terracotta-warriors-5-day-private-tour",
+    "zhangjiajie-4-day-private-tour",
+  ];
+  const actualTourSlugs = [
+    ...privateTourProducts.map((product) => product.slug),
+    zhangjiajieProduct.seo.slug,
+  ];
+  assert.equal(new Set(actualTourSlugs).size, 9);
+  assert.deepEqual([...actualTourSlugs].sort(), expectedTourSlugs);
   assert.match(catalog, /privateTourProducts\.map/);
   assert.match(catalog, /localizePrivateTourProduct\(product, locale\)/);
   assert.match(catalog, /zhangjiajieProduct\.short_description\[contentLocale\]/);
@@ -182,14 +211,98 @@ test("the homepage product showcase exposes all nine published tours without gui
   assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
   assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
 
+  const trustCopy = {
+    en: {
+      noShopping: /no shopping stops/i,
+      writtenScope: /final inclusions, exclusions and total in writing before payment/,
+      priorAgreement: /optional upgrade or added service is agreed before it is charged/,
+      privateBasis: /published tour and price is for you and your companions/,
+      sharedTransit: /public trains, cruises or transport within attractions/,
+      lowerCost: /lower-cost alternative, we will explain what could change and quote any suitable option separately/,
+      consent: /not add a shared arrangement without your agreement/,
+    },
+    zh: {
+      noShopping: /不安排购物店/,
+      writtenScope: /付款前书面确认最终包含项、不包含项和总价/,
+      priorAgreement: /任何升级或新增服务，都会在收费前先由你确认/,
+      privateBasis: /页面上的行程和价格按你和同行者单独安排/,
+      sharedTransit: /高铁、游船或景区交通/,
+      lowerCost: /进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价/,
+      consent: /未经你同意不会增加共享安排/,
+    },
+    ko: {
+      noShopping: /쇼핑 일정은 없으며/,
+      writtenScope: /결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내/,
+      priorAgreement: /선택 업그레이드나 추가 서비스는 비용이 발생하기 전에 먼저 동의를 받습니다/,
+      privateBasis: /공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준/,
+      sharedTransit: /열차, 유람선 또는 관광지 내부 교통/,
+      lowerCost: /비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적/,
+      consent: /동의 없이 공동 이용 방식을 추가하지 않으며/,
+    },
+  };
+
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageProductShowcaseCopy(locale);
+    const homeCopy = getHomegroundCopy(locale);
     assert.ok(copy.title.length > 8);
     assert.ok(copy.intro(9).length > 60);
     assert.match(copy.countLabel(9), /9/);
     assert.match(copy.durationLabel(5, 4), /5/);
     assert.ok(copy.availabilityNote.length > 30);
+    assert.match(copy.intro(9), trustCopy[locale].noShopping);
+    assert.match(copy.intro(9), trustCopy[locale].writtenScope);
+    assert.match(copy.intro(9), trustCopy[locale].priorAgreement);
+    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].privateBasis);
+    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].sharedTransit);
+    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].lowerCost);
+    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].consent);
+    assert.doesNotMatch(
+      homeCopy.faq.items[0].answer,
+      /small-group tours|shared transfers|小团|拼车|소그룹|합승/i,
+    );
   }
+
+  for (const product of privateTourProducts) {
+    assert.equal(product.servicePolicy.shoppingStops, false);
+    assert.equal(product.servicePolicy.addedServicesRequirePriorAgreement, true);
+    const publicPolicyCopy = {
+      en: [product.serviceNote.en, ...product.packages.map((item) => item.summary.en)].join(" "),
+      zh: [product.serviceNote.zh, ...product.packages.map((item) => item.summary.zh)].join(" "),
+      ko: [product.serviceNote.ko, ...product.packages.map((item) => item.summary.ko)].join(" "),
+    };
+    assert.match(publicPolicyCopy.en, /No shopping stops/);
+    assert.match(publicPolicyCopy.zh, /无购物店安排/);
+    assert.match(publicPolicyCopy.ko, /쇼핑 일정은 없습니다|쇼핑 일정이 없습니다/);
+  }
+
+  assert.equal(zhangjiajieProduct.service_policy.shopping_stops, false);
+  assert.equal(
+    zhangjiajieProduct.service_policy.added_services_require_prior_agreement,
+    true,
+  );
+  assert.deepEqual(
+    zhangjiajieProduct.draft_inclusions.find(
+      (item) => item.fact_id === "no-shopping-prior-agreement",
+    ),
+    {
+      label_zh: "不安排购物店；任何升级或新增服务在收费前确认",
+      fact_id: "no-shopping-prior-agreement",
+      claim_status: "working_standard",
+    },
+  );
+
+  assert.match(
+    zhangjiajiePreviewSource,
+    /No shopping stops; optional upgrades or added services require your agreement before they are charged/,
+  );
+  assert.match(
+    zhangjiajiePreviewSource,
+    /不安排购物店；任何升级或新增服务都须在收费前由你确认/,
+  );
+  assert.match(
+    zhangjiajiePreviewSource,
+    /쇼핑 일정 없음; 선택 업그레이드나 추가 서비스는 비용 청구 전에 동의를 받음/,
+  );
 });
 
 test("showcase navigation and result layouts remain keyboard and state safe", async () => {

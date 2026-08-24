@@ -50,6 +50,10 @@ export interface PrivateTourProduct {
   slug: string;
   days: number;
   nights: number;
+  servicePolicy: Readonly<{
+    shoppingStops: false;
+    addedServicesRequirePriorAgreement: true;
+  }>;
   title: LocalizedText;
   eyebrow: LocalizedText;
   lede: LocalizedText;
@@ -120,6 +124,7 @@ export interface LocalizedPrivateTourProduct {
   highlights: readonly string[];
   days: number;
   nights: number;
+  servicePolicy: PrivateTourProduct["servicePolicy"];
   itinerary: readonly { day: number; title: string; description: string }[];
   hotelNote: string;
   serviceNote: string;
@@ -360,6 +365,10 @@ const commonExclusions = (
   );
 
 const PUBLISHED = "2026-08-23";
+const standardServicePolicy = Object.freeze({
+  shoppingStops: false,
+  addedServicesRequirePriorAgreement: true,
+} as const);
 const MODIFIED = "2026-08-24";
 
 const shanghaiSuzhouHangzhou: PrivateTourProduct = {
@@ -367,6 +376,7 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
   slug: "shanghai-suzhou-hangzhou-6-day-private-tour",
   days: 6,
   nights: 5,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Shanghai, Suzhou & Hangzhou: 6-Day Private Tour",
     "上海·苏州·杭州 6 天 5 晚私家团",
@@ -678,6 +688,7 @@ const chengdu: PrivateTourProduct = {
   slug: "chengdu-pandas-sanxingdui-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Chengdu, Pandas & Sanxingdui: 5-Day Private Tour",
     "成都·大熊猫·三星堆 5 天 4 晚私家团",
@@ -920,6 +931,7 @@ const xian: PrivateTourProduct = {
   slug: "xian-terracotta-warriors-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Xi'an & the Terracotta Warriors: 5-Day Private Tour",
     "西安·兵马俑 5 天 4 晚私家团",
@@ -1151,6 +1163,7 @@ const chongqingWulong: PrivateTourProduct = {
   slug: "chongqing-wulong-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Chongqing & Wulong: 5-Day Private Tour",
     "重庆·武隆 5 天 4 晚私家团",
@@ -1387,6 +1400,7 @@ const guilinYangshuo: PrivateTourProduct = {
   slug: "guilin-yangshuo-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Guilin & Yangshuo: 5-Day Private Tour",
     "桂林·阳朔 5 天 4 晚私家团",
@@ -1637,6 +1651,7 @@ const harbinWinter: PrivateTourProduct = {
   slug: "harbin-winter-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Harbin Ice & Snow: 5-Day Private Tour",
     "哈尔滨冰雪 5 天 4 晚私家团",
@@ -1838,6 +1853,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
   slug: "shanghai-suzhou-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Shanghai & Suzhou: 5-Day Private Tour",
     "上海·苏州 5 天 4 晚私家团",
@@ -2103,6 +2119,7 @@ const beijing: PrivateTourProduct = {
   slug: "beijing-highlights-5-day-private-tour",
   days: 5,
   nights: 4,
+  servicePolicy: standardServicePolicy,
   title: l(
     "Beijing Highlights: 5-Day Private Tour",
     "北京经典 5 天 4 晚私家团",
@@ -2498,6 +2515,7 @@ export function localizePrivateTourProduct(
     highlights: product.highlights[locale],
     days: product.days,
     nights: product.nights,
+    servicePolicy: product.servicePolicy,
     itinerary: product.itinerary.map((item) => ({
       day: item.day,
       title: item.title[locale],

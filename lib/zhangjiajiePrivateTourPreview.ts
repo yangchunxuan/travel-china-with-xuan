@@ -334,6 +334,7 @@ export const productPreviewCopy = {
       "Private guide on sightseeing Days 2–4",
       "Three nights in the selected accommodation tier",
       "Adult admission and standard scenic transport named in the confirmation",
+      "No shopping stops; optional upgrades or added services require your agreement before they are charged",
     ],
     excludedTitle: "Kept outside the base price",
     excludedItems: [
@@ -684,6 +685,7 @@ export const productPreviewCopy = {
       "第2至第4天私人导游",
       "所选住宿档位的3晚住宿",
       "确认单中逐项列明的成人门票与标准景交",
+      "不安排购物店；任何升级或新增服务都须在收费前由你确认",
     ],
     excludedTitle: "不放进基础价格",
     excludedItems: [
@@ -1045,6 +1047,7 @@ export const productPreviewCopy = {
       "관광일인 2–4일 차 전담 가이드",
       "선택한 숙소 등급의 3박",
       "확인서에 명시한 성인 입장권과 기본 관광지 내 교통",
+      "쇼핑 일정 없음; 선택 업그레이드나 추가 서비스는 비용 청구 전에 동의를 받음",
     ],
     excludedTitle: "기본 가격에 포함하지 않는 항목",
     excludedItems: [
