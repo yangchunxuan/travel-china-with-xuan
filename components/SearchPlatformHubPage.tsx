@@ -18,6 +18,8 @@ import {
 } from "../lib/editorialIdentity";
 import {
   absoluteManifestAlternates,
+  getSearchCollectionEntry,
+  getSearchCollectionGuides,
   getSearchHubEntry,
   getSearchHubGuides,
   getSearchHubLanguagePaths,
@@ -25,13 +27,13 @@ import {
 import {
   getSearchPlatformCopy,
   getSearchSectionPath,
-  searchSectionIds,
   type SearchSectionId,
 } from "../lib/searchPlatformI18n";
-import { DestinationHubDiscovery } from "./DestinationHubDiscovery";
+import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
+import { DestinationsHubPage } from "./DestinationsHubPage";
+import { TravelServicesHubPage } from "./TravelServicesHubPage";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import { SearchSectionNavigator } from "./SearchSectionNavigator";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./SearchPlatformHubPage.module.css";
 
@@ -162,12 +164,15 @@ function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
 function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
   const home = getHomegroundCopy(locale);
   const copy = getSearchPlatformCopy(locale);
+  const navigation = getHomegroundNavigationModel(locale, home.path);
   const entry = getSearchHubEntry(section, locale);
   const guides = getSearchHubGuides(section, locale);
   const canonicalUrl = `${SITE_URL}${entry.canonicalPath}`;
   const homeUrl = `${SITE_URL}${home.path}`;
-  const guidesPath = `${home.path}guides/`;
-  const guidesUrl = `${SITE_URL}${guidesPath}`;
+  const parentNavigationId = "guides";
+  const parent = navigation.items.find((item) => item.id === parentNavigationId);
+  if (!parent) throw new Error(`Missing ${parentNavigationId} navigation item.`);
+  const parentUrl = `${SITE_URL}${parent.href}`;
   const itemListId = `${canonicalUrl}#published-guides`;
 
   return {
@@ -199,8 +204,8 @@ function jsonLdForHub(section: SearchSectionId, locale: HomegroundLocale) {
           {
             "@type": "ListItem",
             position: 2,
-            name: copy.guidesLabel,
-            item: guidesUrl,
+            name: parent.label,
+            item: parentUrl,
           },
           {
             "@type": "ListItem",
@@ -232,25 +237,38 @@ export function SearchPlatformHubPage({
   section: SearchSectionId;
   locale?: HomegroundLocale;
 }) {
+  if (section === "explore") {
+    return <DestinationsHubPage locale={locale} />;
+  }
+  if (section === "services") {
+    return <TravelServicesHubPage locale={locale} />;
+  }
+
   const home = getHomegroundCopy(locale);
   const copy = getSearchPlatformCopy(locale);
   const sectionCopy = copy.sections[section];
   const entry = getSearchHubEntry(section, locale);
   const guides = getSearchHubGuides(section, locale);
   const visibleGuides = guides;
-  const collections = searchCollections.filter(
-    (collection) => collection.section === section,
-  );
+  const collections = searchCollections.filter((collection) => {
+    if (collection.section !== section) return false;
+    const collectionEntry = getSearchCollectionEntry(collection.id, locale);
+    return (
+      collectionEntry.status === "published" &&
+      collectionEntry.indexability.index &&
+      getSearchCollectionGuides(collection.id, locale).length > 0
+    );
+  });
   const languagePaths = getSearchHubLanguagePaths(section);
   const schema = jsonLdForHub(section, locale);
+  const navigation = getHomegroundNavigationModel(locale, home.path);
+  const parentNavigationId = "guides";
+  const parent = navigation.items.find((item) => item.id === parentNavigationId);
+  if (!parent) throw new Error(`Missing ${parentNavigationId} navigation item.`);
   const pageContext =
-    section === "explore"
-      ? "destinations"
-      : section === "plan"
-        ? "plan"
-        : section === "services"
-          ? "services"
-          : "guides";
+    section === "plan"
+      ? "plan"
+      : "guides";
 
   return (
     <div
@@ -271,7 +289,13 @@ export function SearchPlatformHubPage({
         <header className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroCopy}>
-              <p className={styles.indexLabel}>{copy.indexLabel}</p>
+              <nav className={styles.breadcrumb} aria-label={copy.breadcrumbLabel}>
+                <ol>
+                  <li><Link href={home.path}>{home.navigation.homeLabel}</Link></li>
+                  <li><span aria-hidden="true">/</span><Link href={parent.href}>{parent.label}</Link></li>
+                  <li aria-current="page"><span aria-hidden="true">/</span>{sectionCopy.navLabel}</li>
+                </ol>
+              </nav>
               <p className={styles.eyebrow}>{sectionCopy.eyebrow}</p>
               <h1>{sectionCopy.title}</h1>
               <p className={styles.lede}>{sectionCopy.description}</p>
@@ -287,15 +311,13 @@ export function SearchPlatformHubPage({
           </div>
         </header>
 
-        <SearchSectionNavigator currentSection={section} locale={locale} />
-
         {section === "plan" ? <FirstTripPlanSequence locale={locale} /> : null}
 
+        {collections.length > 0 ? (
         <section className={styles.platformMap} aria-labelledby="hub-topics-title">
           <div className={styles.platformMapIntro}>
-            <p className={styles.eyebrow}>{sectionCopy.eyebrow}</p>
-            <h2 id="hub-topics-title">{sectionCopy.scopeTitle}</h2>
-            <p>{sectionCopy.description}</p>
+            <h2 id="hub-topics-title">{copy.questionGroupsTitle}</h2>
+            <p>{copy.questionGroupsIntroduction}</p>
           </div>
           <ul>
             {collections.map((collection) => (
@@ -309,18 +331,11 @@ export function SearchPlatformHubPage({
             ))}
           </ul>
         </section>
-
-        {section === "explore" ? (
-          <DestinationHubDiscovery
-            headingId="explore-destination-hubs-title"
-            locale={locale}
-          />
         ) : null}
 
         <section className={styles.collection} aria-labelledby="hub-collection-title">
           <div className={styles.collectionHeading}>
             <div>
-              <p className={styles.eyebrow}>{sectionCopy.navLabel}</p>
               <h2 id="hub-collection-title">{copy.collectionTitle}</h2>
             </div>
             <div className={styles.collectionSummary}>
@@ -382,30 +397,6 @@ export function SearchPlatformHubPage({
             </div>
           )}
 
-        </section>
-
-        <section className={styles.platformMap} aria-labelledby="platform-map-title">
-          <div className={styles.platformMapIntro}>
-            <p className={styles.eyebrow}>{copy.browseLabel}</p>
-            <h2 id="platform-map-title">{copy.indexTitle}</h2>
-            <p>{copy.indexIntroduction}</p>
-          </div>
-          <ul>
-            {searchSectionIds
-              .filter((candidate) => candidate !== section)
-              .map((candidate) => {
-                const candidateCopy = copy.sections[candidate];
-                return (
-                  <li key={candidate}>
-                    <Link href={getSearchSectionPath(candidate, locale)}>
-                      <span>{candidateCopy.navLabel}</span>
-                      <small>{candidateCopy.description}</small>
-                      <b aria-hidden="true">↗</b>
-                    </Link>
-                  </li>
-                );
-              })}
-          </ul>
         </section>
 
         <section className={styles.cta} aria-labelledby="hub-cta-title">

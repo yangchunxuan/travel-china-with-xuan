@@ -87,7 +87,7 @@ test("the runtime contract publishes eight Hubs with truthful dates", async () =
       source("lib/destinationHubRuntime.ts"),
       source("app/(default)/destinations/[city]/page.tsx"),
       source("app/(localized)/[locale]/destinations/[city]/page.tsx"),
-      source("components/DestinationHubDiscovery.tsx"),
+      source("components/DestinationsHubPage.tsx"),
       source("lib/destinationHubContentAdapter.ts"),
     ]);
 
@@ -115,7 +115,7 @@ test("the runtime contract publishes eight Hubs with truthful dates", async () =
 
   assert.match(defaultRoute, /destinationHubIds\.map\(\(city\) => \(\{ city \}\)\)/);
   assert.match(localizedRoute, /destinationHubIds\.map\(\(city\) => \(\{ locale, city \}\)\)/);
-  assert.match(discovery, /destinationHubRegistry\.map\(\(hub\) =>/);
+  assert.match(discovery, /destinationHubRegistry\.map\(\(hub, index\) =>/);
   assert.match(adapter, /destinationHubRegistry\.map\(\(hub\) =>/);
   assert.match(adapter, /status: "published"/);
   assert.match(adapter, /indexability: \{ index: true, follow: true \}/);

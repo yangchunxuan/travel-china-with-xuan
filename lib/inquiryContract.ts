@@ -53,6 +53,11 @@ import {
   supportedDestinationInquiryFormVersions,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./inquiryVersions.ts";
+import {
+  getPrivateTourInquiryContext,
+  type PrivateTourInquiryContext,
+  // @ts-ignore Source-TypeScript runtimes require the explicit extension.
+} from "./privateTourInquiryContext.ts";
 
 export {
   budgetDestinationInquiryFormVersion,
@@ -191,6 +196,7 @@ export interface NormalizedHomepageEmailInquiryPayload {
     channel: "email";
     email: string;
   };
+  productInterest: PrivateTourInquiryContext | null;
   privacyNoticeVersion: typeof homepageEmailPrivacyNoticeVersion;
   attribution: NormalizedInquiryAttribution;
   experiment: null;
@@ -382,6 +388,14 @@ export function semanticInquiryPayload(
       entryPath: value.entryPath,
       locale: value.locale,
       contact,
+      ...(value.productInterest
+        ? {
+            productInterest: {
+              slug: value.productInterest.slug,
+              name: value.productInterest.name,
+            },
+          }
+        : {}),
       privacyNoticeVersion: value.privacyNoticeVersion,
       attribution: {
         landingPath: value.attribution.landingPath,
@@ -501,6 +515,7 @@ function validateAndNormalizeHomepageEmailInquiry(
       "entryPath",
       "locale",
       "contact",
+      "productInterest",
       "privacyNoticeVersion",
       "attribution",
       "experiment",
@@ -554,6 +569,37 @@ function validateAndNormalizeHomepageEmailInquiry(
         fieldErrors["contact.email"] = "invalid";
       } else {
         email = normalizedEmail;
+      }
+    }
+  }
+
+  let productInterest: PrivateTourInquiryContext | null = null;
+  if (input.productInterest !== undefined && input.productInterest !== null) {
+    if (!isPlainObject(input.productInterest)) {
+      fieldErrors.productInterest = "invalid";
+    } else {
+      hasOnlyKeys(
+        input.productInterest,
+        ["slug", "name"],
+        "productInterest",
+        fieldErrors,
+      );
+      const expected =
+        isOneOf(input.locale, inquiryLocales) &&
+        typeof input.productInterest.slug === "string"
+          ? getPrivateTourInquiryContext(
+              input.productInterest.slug,
+              input.locale,
+            )
+          : null;
+      if (
+        !expected ||
+        typeof input.productInterest.name !== "string" ||
+        input.productInterest.name !== expected.name
+      ) {
+        fieldErrors.productInterest = "invalid";
+      } else {
+        productInterest = expected;
       }
     }
   }
@@ -624,6 +670,7 @@ function validateAndNormalizeHomepageEmailInquiry(
       entryPath: "homepage_email",
       locale: input.locale,
       contact: { channel: "email", email },
+      productInterest,
       privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
       attribution: normalizedAttribution,
       experiment: null,

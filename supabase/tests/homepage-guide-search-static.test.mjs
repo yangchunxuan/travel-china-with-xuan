@@ -228,6 +228,55 @@ test("large result sets remain reachable in every language", async () => {
   assert.match(copy, /showMore: "가이드 더 보기"/);
 });
 
+test("static guide search hydrates query-neutral before syncing the browser query", async () => {
+  const results = await source("components/GuideSearchResultsClient.tsx");
+
+  assert.match(
+    results,
+    /const urlRawQuery = \(searchParams\.get\("q"\) \?\? ""\)\.trim\(\)\.slice\(0, 120\);/,
+    "the browser query must be read separately from rendered state",
+  );
+  assert.match(
+    results,
+    /const \[rawQuery, setRawQuery\] = useState\(""\);/,
+    "SSR and the first client render must share the same query-neutral snapshot",
+  );
+  assert.match(
+    results,
+    /useEffect\(\(\) => \{\s*setRawQuery\(urlRawQuery\);\s*\}, \[urlRawQuery\]\);/,
+    "the URL query must be applied only after hydration",
+  );
+  assert.match(
+    results,
+    /<GuideSearchForm\s+key=\{`\$\{locale\}:\$\{rawQuery\}`\}/,
+    "the search input must remount with the hydrated query after direct visits and submissions",
+  );
+  assert.match(
+    results,
+    /const query = normalizeGuideSearchText\(rawQuery, locale\);/,
+    "results must derive from the hydration-safe state rather than directly from useSearchParams",
+  );
+});
+
+test("search language switching preserves the current query with safe URL encoding", async () => {
+  const [header, page, copy] = await Promise.all([
+    source("components/GuideSearchHeader.tsx"),
+    source("components/GuideSearchResultsPage.tsx"),
+    source("lib/guideSearchI18n.ts"),
+  ]);
+
+  assert.match(header, /const browserQuery = \(searchParams\.get\("q"\) \?\? ""\)\.trim\(\)\.slice\(0, 120\);/);
+  assert.match(header, /const \[query, setQuery\] = useState\(""\);/);
+  assert.match(header, /setQuery\(browserQuery\)/);
+  assert.match(header, /languagePaths=\{getGuideSearchLanguagePaths\(query\)\}/);
+  assert.match(page, /<GuideSearchHeader locale=\{locale\} \/>/);
+  assert.match(page, /fallback=\{/);
+  assert.match(copy, /new URLSearchParams\(\{ q: query \}\)\.toString\(\)/);
+  assert.match(copy, /`\?\$\{new URLSearchParams/);
+  assert.match(copy, /\$\{copies\.zh\.path\}\$\{querySuffix\}/);
+  assert.match(copy, /\$\{copies\.ko\.path\}\$\{querySuffix\}/);
+});
+
 test("promoted searches use questions with a direct guide match", async () => {
   const copy = await source("lib/guideSearchI18n.ts");
 

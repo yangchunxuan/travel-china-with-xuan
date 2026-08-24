@@ -340,6 +340,8 @@ export type ValidationResult<T> =
 
 export interface ContentManifestEntryV1 {
   readonly contentId: string;
+  /** Canonical parent node used to resolve visible and structured hierarchy. */
+  readonly parentContentId: string | null;
   readonly family: ContentFamily;
   readonly section: ContentSection;
   readonly primaryIntent: ContentIntent;

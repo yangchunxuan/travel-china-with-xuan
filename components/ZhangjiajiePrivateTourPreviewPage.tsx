@@ -22,6 +22,10 @@ import {
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
+import {
+  buildPrivateTourInquiryHref,
+  getPrivateTourInquiryContext,
+} from "../lib/privateTourInquiryContext";
 
 const photoCreditCopy = {
   en: {
@@ -63,9 +67,18 @@ export function ZhangjiajiePrivateTourPreviewPage({
   const languagePaths = published
     ? zhangjiajiePrivateTourPaths
     : zhangjiajiePrivateTourPreviewPaths;
-  const inquiryHref = `${homePath}?utm_source=${
-    published ? "private_tour" : "product_preview"
-  }&utm_medium=website&utm_campaign=zhangjiajie_4d3n#planner-contact`;
+  const inquiryContext = getPrivateTourInquiryContext(
+    "zhangjiajie-4-day-private-tour",
+    locale,
+  );
+  if (!inquiryContext) {
+    throw new Error("Missing controlled Zhangjiajie inquiry context.");
+  }
+  const inquiryHref = buildPrivateTourInquiryHref(
+    homePath,
+    inquiryContext.slug,
+    published ? "private_tour" : "product_preview",
+  );
   const publicPricing = getZhangjiajiePrivateTourPublicPricing(locale);
   const publicPriceCopy = {
     checkingPrice: copy.checkingPrice,
@@ -276,6 +289,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
         languagePaths={languagePaths}
         locale={locale}
         pageContext={published ? "tour" : "guide"}
+        plannerHrefOverride={published ? inquiryHref : undefined}
       />
 
       <main id="tour-details">
@@ -309,10 +323,27 @@ export function ZhangjiajiePrivateTourPreviewPage({
             <p className={`${editorialStyles.dek} ${styles.heroLede}`}>
               {copy.heroLede}
             </p>
-            <a className={styles.articleJump} href="#four-day-route">
-              {copy.secondaryCta}
-              <ArrowDown aria-hidden="true" size={18} />
-            </a>
+            <div className={styles.heroDecisionBar}>
+              <div>
+                <p>{copy.pricesEyebrow}</p>
+                <ZhangjiajiePrivateTourPriceWindow
+                  copy={publicPriceCopy}
+                  locale={locale}
+                  pricing={publicPricing}
+                  variant="summary"
+                />
+              </div>
+              <div>
+                <a className={styles.priceJump} href="#prices-title">
+                  {copy.pricesTitle}
+                  <ArrowDown aria-hidden="true" size={18} />
+                </a>
+                <a className={styles.articleJump} href="#four-day-route">
+                  {copy.secondaryCta}
+                  <ArrowDown aria-hidden="true" size={18} />
+                </a>
+              </div>
+            </div>
           </div>
 
           <figure

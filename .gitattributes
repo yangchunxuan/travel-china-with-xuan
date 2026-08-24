@@ -1,0 +1,6 @@
+# Download checksums are part of the public asset contract. Keep text payloads
+# byte-identical on Windows, macOS and Linux checkouts.
+public/downloads/*.txt text eol=lf
+public/downloads/*.csv text eol=lf
+public/downloads/*.json text eol=lf
+public/downloads/*.svg text eol=lf

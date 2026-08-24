@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { getAllGuides } from "../lib/guideRegistry";
 import {
-  getAllGuides,
-  getGuidesByPillar,
-} from "../lib/guideRegistry";
+  getGuidesHubPageLanguagePaths,
+  getGuidesHubPagePath,
+  getGuidesHubPagination,
+} from "../lib/guidesHubPagination";
 import {
   getHomegroundCopy,
-  homegroundLocales,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import {
@@ -27,11 +28,11 @@ import {
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { GuideSearchForm } from "./GuideSearchForm";
-import { SearchSectionNavigator } from "./SearchSectionNavigator";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./GuidesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+const GUIDE_LIST_FRAGMENT = "#guide-list";
 type HubGuide = ReturnType<typeof getAllGuides>[number];
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
@@ -48,12 +49,17 @@ function formatGuideDate(value: string, locale: HomegroundLocale) {
   }).format(new Date(`${value}T00:00:00Z`));
 }
 
-function jsonLdForHub(locale: HomegroundLocale) {
+function jsonLdForHub(locale: HomegroundLocale, page: number) {
   const copy = getGuidesHubCopy(locale);
   const home = getHomegroundCopy(locale);
-  const guides = getAllGuides(locale);
-  const canonicalUrl = `${SITE_URL}${copy.path}`;
+  const { pageGuides, startIndex } = getGuidesHubPagination(locale, page);
+  const canonicalPath = getGuidesHubPagePath(locale, page);
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
   const listId = `${canonicalUrl}#item-list`;
+  const pageName =
+    page === 1
+      ? copy.metadata.openGraphTitle
+      : `${copy.metadata.openGraphTitle} — ${copy.pagination.pageTitle(page)}`;
 
   return {
     "@context": "https://schema.org",
@@ -62,7 +68,7 @@ function jsonLdForHub(locale: HomegroundLocale) {
         "@type": "CollectionPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: copy.metadata.openGraphTitle,
+        name: pageName,
         description: copy.metadata.description,
         inLanguage: home.htmlLang,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
@@ -75,11 +81,11 @@ function jsonLdForHub(locale: HomegroundLocale) {
       {
         "@type": "ItemList",
         "@id": listId,
-        numberOfItems: guides.length,
+        numberOfItems: pageGuides.length,
         itemListOrder: "https://schema.org/ItemListOrderDescending",
-        itemListElement: guides.map((guide, index) => ({
+        itemListElement: pageGuides.map((guide, index) => ({
           "@type": "ListItem",
-          position: index + 1,
+          position: startIndex + index + 1,
           url: guide.canonicalUrl,
           item: {
             "@type": "Article",
@@ -99,8 +105,42 @@ function jsonLdForHub(locale: HomegroundLocale) {
           },
         })),
       },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Homeground China",
+            item: `${SITE_URL}${home.path}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: copy.title,
+            item: `${SITE_URL}${copy.path}`,
+          },
+          ...(page > 1
+            ? [
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: copy.pagination.pageTitle(page),
+                  item: canonicalUrl,
+                },
+              ]
+            : []),
+        ],
+      },
     ],
   };
+}
+
+function getGuidesHubPaginationHref(
+  locale: HomegroundLocale,
+  page: number,
+) {
+  return `${getGuidesHubPagePath(locale, page)}${GUIDE_LIST_FRAGMENT}`;
 }
 
 function GuideCard({
@@ -189,28 +229,30 @@ function GuideCard({
 
 export function GuidesHubPage({
   locale = "en",
+  page = 1,
 }: {
   locale?: HomegroundLocale;
+  page?: number;
 }) {
   const home = getHomegroundCopy(locale);
   const copy = getGuidesHubCopy(locale);
   const guideSearchCopy = getGuideSearchCopy(locale);
   const searchCopy = getSearchPlatformCopy(locale);
-  const guides = getAllGuides(locale);
   const guideSearchDocuments = getGuideSearchDocuments(locale);
-  const entryGuides = getGuidesByPillar("entry-rules", locale);
-  const planningGuides = guides.filter(
-    (guide) => guide.pillar !== "entry-rules",
+  const { guides, pageCount, pageGuides } = getGuidesHubPagination(
+    locale,
+    page,
   );
-  const schema = jsonLdForHub(locale);
-  const tailCount = Math.max(0, planningGuides.length - 2);
+  const schema = jsonLdForHub(locale, page);
+  const tailCount = Math.max(0, pageGuides.length - 2);
   const tailRemainder = tailCount % 3;
   const wideTailIndex =
-    tailRemainder === 1 ? planningGuides.length - 1 : -1;
+    tailRemainder === 1 ? pageGuides.length - 1 : -1;
   const halfTailStart =
     tailRemainder === 2
-      ? planningGuides.length - 2
-      : planningGuides.length;
+      ? pageGuides.length - 2
+      : pageGuides.length;
+  const pageNumbers = Array.from({ length: pageCount }, (_, index) => index + 1);
 
   return (
     <div
@@ -222,7 +264,9 @@ export function GuidesHubPage({
         {home.skipLink}
       </a>
       <HomegroundHeader
+        languagePaths={getGuidesHubPageLanguagePaths(page)}
         locale={locale}
+        navigationIsExact={page === 1}
         pageContext="guides"
       />
 
@@ -231,27 +275,6 @@ export function GuidesHubPage({
           <div className={styles.heroInner}>
             <div className={styles.heroTopline}>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <nav
-                className={styles.languageNav}
-                aria-label={copy.languageLabel}
-              >
-                {homegroundLocales.map((targetLocale) => {
-                  const targetHome = getHomegroundCopy(targetLocale);
-                  const targetCopy = getGuidesHubCopy(targetLocale);
-
-                  return (
-                    <a
-                      aria-current={targetLocale === locale ? "page" : undefined}
-                      href={targetCopy.path}
-                      hrefLang={targetHome.htmlLang}
-                      key={targetLocale}
-                      lang={targetHome.htmlLang}
-                    >
-                      {targetHome.languageShort}
-                    </a>
-                  );
-                })}
-              </nav>
             </div>
             <div className={styles.heroGrid}>
               <h1>{copy.title}</h1>
@@ -270,19 +293,20 @@ export function GuidesHubPage({
               <h2 id="guide-search-title">{guideSearchCopy.title}</h2>
               <p>{guideSearchCopy.introduction}</p>
             </div>
-            <GuideSearchForm
-              documents={guideSearchDocuments}
-              locale={locale}
-              surface="guides_hub"
-            />
+            <div className={styles.searchFormCompact}>
+              <GuideSearchForm
+                documents={guideSearchDocuments}
+                locale={locale}
+                surface="guides_hub"
+              />
+            </div>
           </div>
         </section>
-
-        <SearchSectionNavigator id="browse-topics" locale={locale} />
 
         <section
           className={styles.countryGuide}
           aria-labelledby="china-travel-guide-title"
+          id="browse-topics"
         >
           <div className={styles.countryGuideInner}>
             <div className={styles.countryGuideIntro}>
@@ -290,7 +314,13 @@ export function GuidesHubPage({
                 <p className={styles.eyebrow}>{copy.countryGuide.eyebrow}</p>
                 <h2 id="china-travel-guide-title">{copy.countryGuide.title}</h2>
               </div>
-              <p>{copy.countryGuide.introduction}</p>
+              <div className={styles.countryGuideContext}>
+                <p>{copy.countryGuide.introduction}</p>
+                <Link href={getSearchSectionPath("explore", locale)}>
+                  {copy.destinationAction}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
 
             <ol className={styles.decisionGrid}>
@@ -304,10 +334,14 @@ export function GuidesHubPage({
                       <span className={styles.decisionNumber} aria-hidden="true">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <h3>{decision.title}</h3>
-                      <p>{decision.body}</p>
+                      <span className={styles.decisionCopy}>
+                        <h3>{decision.title}</h3>
+                        <p>{decision.body}</p>
+                      </span>
                       <span className={styles.decisionAction}>
-                        {sectionCopy.navLabel}
+                        <span className={styles.decisionActionLabel}>
+                          {sectionCopy.navLabel}
+                        </span>
                         <span aria-hidden="true">→</span>
                       </span>
                     </Link>
@@ -315,12 +349,32 @@ export function GuidesHubPage({
                 );
               })}
             </ol>
+
+            <Link
+              className={styles.entryHandoff}
+              href={
+                locale === "en"
+                  ? "/guides/china-entry-requirements/"
+                  : getSearchSectionPath("essentials", locale)
+              }
+            >
+              <span>
+                <strong>{copy.entrySection.title}</strong>
+                <small>{copy.entrySection.introduction}</small>
+              </span>
+              <span className={styles.entryAction}>
+                {copy.entrySection.action}
+                <span aria-hidden="true">→</span>
+              </span>
+            </Link>
           </div>
         </section>
 
         <section
           className={styles.catalog}
           aria-labelledby="guides-catalog-title"
+          id="guide-list"
+          tabIndex={-1}
         >
           <div className={styles.catalogIntro}>
             <div>
@@ -330,7 +384,7 @@ export function GuidesHubPage({
             <div className={styles.catalogSummary}>
               <p>{copy.catalogIntroduction}</p>
               <p className={styles.guideCount}>
-                {copy.guideCount(planningGuides.length)}
+                {copy.guideCount(guides.length)}
               </p>
             </div>
           </div>
@@ -338,10 +392,10 @@ export function GuidesHubPage({
           <ol
             className={styles.guideGrid}
             data-odd-count={
-              planningGuides.length % 2 === 1 ? "true" : "false"
+              pageGuides.length % 2 === 1 ? "true" : "false"
             }
           >
-            {planningGuides.map((guide, index) => (
+            {pageGuides.map((guide, index) => (
               <GuideCard
                 guide={guide}
                 index={index}
@@ -360,52 +414,65 @@ export function GuidesHubPage({
               />
             ))}
           </ol>
-        </section>
 
-        <section
-          className={styles.entryCollection}
-          aria-labelledby="entry-guides-title"
-        >
-          <div className={styles.entryInner}>
-            <div className={styles.entryIntro}>
-              <div>
-                <p className={styles.entryEyebrow}>
-                  {copy.entrySection.eyebrow}
-                </p>
-                <h2 id="entry-guides-title">{copy.entrySection.title}</h2>
-              </div>
-              <div>
-                <p>{copy.entrySection.introduction}</p>
-                {locale === "en" ? (
-                  <Link
-                    className={styles.entryAction}
-                    href="/guides/china-entry-requirements/"
-                  >
-                    {copy.entrySection.action}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                ) : null}
-              </div>
+          <nav className={styles.pagination} aria-label={copy.pagination.label}>
+            <p>{copy.pagination.status(page, pageCount, guides.length)}</p>
+            <div className={styles.paginationControls}>
+              {page > 1 ? (
+                <Link
+                  className={styles.paginationStep}
+                  href={getGuidesHubPaginationHref(locale, page - 1)}
+                  rel="prev"
+                >
+                  <span aria-hidden="true">←</span>
+                  {copy.pagination.previous}
+                </Link>
+              ) : (
+                <span
+                  aria-disabled="true"
+                  className={`${styles.paginationStep} ${styles.paginationDisabled}`}
+                >
+                  <span aria-hidden="true">←</span>
+                  {copy.pagination.previous}
+                </span>
+              )}
+
+              <ol className={styles.paginationPages}>
+                {pageNumbers.map((pageNumber) => (
+                  <li key={pageNumber}>
+                    {pageNumber === page ? (
+                      <span aria-current="page">
+                        {copy.pagination.page(pageNumber)}
+                      </span>
+                    ) : (
+                      <Link href={getGuidesHubPaginationHref(locale, pageNumber)}>
+                        {copy.pagination.page(pageNumber)}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ol>
+
+              {page < pageCount ? (
+                <Link
+                  className={styles.paginationStep}
+                  href={getGuidesHubPaginationHref(locale, page + 1)}
+                  rel="next"
+                >
+                  {copy.pagination.next}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              ) : (
+                <span
+                  aria-disabled="true"
+                  className={`${styles.paginationStep} ${styles.paginationDisabled}`}
+                >
+                  {copy.pagination.next}
+                  <span aria-hidden="true">→</span>
+                </span>
+              )}
             </div>
-
-            <ol
-              className={`${styles.guideGrid} ${styles.entryGuideGrid}`}
-              data-odd-count={
-                entryGuides.length % 2 === 1 ? "true" : "false"
-              }
-            >
-              {entryGuides.map((guide, index) => (
-                <GuideCard
-                  guide={guide}
-                  index={index + planningGuides.length}
-                  key={guide.id}
-                  labels={copy}
-                  locale={locale}
-                  slotClassName={styles.entryGuideSlot}
-                />
-              ))}
-            </ol>
-          </div>
+          </nav>
         </section>
 
         <section className={styles.cta} aria-labelledby="guides-cta-title">

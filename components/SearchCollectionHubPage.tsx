@@ -20,11 +20,11 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
 import {
   editorialOrganizationSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
-import { DestinationHubDiscovery } from "./DestinationHubDiscovery";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -66,6 +66,9 @@ const labels = {
     nearby: "Related collections",
     open: "Open guide",
     updated: "Updated",
+    cityDirectoryTitle: "Looking for a city overview?",
+    cityDirectoryBody: "The Destinations directory owns the complete city hubs: nights, stay areas, arrival points and sensible next stops.",
+    cityDirectoryAction: "View all destinations",
   },
   zh: {
     breadcrumb: "当前位置",
@@ -76,6 +79,9 @@ const labels = {
     nearby: "相关专题",
     open: "打开指南",
     updated: "更新于",
+    cityDirectoryTitle: "想先看一座城市的完整总览？",
+    cityDirectoryBody: "“目的地”目录统一收录城市 Hub：停留晚数、住宿区域、进出门户与合理的下一站。",
+    cityDirectoryAction: "查看全部目的地",
   },
   ko: {
     breadcrumb: "현재 위치",
@@ -86,6 +92,9 @@ const labels = {
     nearby: "관련 주제",
     open: "가이드 열기",
     updated: "업데이트",
+    cityDirectoryTitle: "도시 전체 개요를 찾고 있나요?",
+    cityDirectoryBody: "여행지 디렉터리의 도시 허브에서 숙박일, 숙소 지역, 도착 지점과 다음 도시를 한 번에 확인할 수 있습니다.",
+    cityDirectoryAction: "전체 여행지 보기",
   },
 } as const;
 
@@ -105,9 +114,32 @@ function jsonLd(collectionId: SearchCollectionId, locale: HomegroundLocale) {
   const copy = getSearchPlatformCopy(locale);
   const sectionCopy = copy.sections[collection.section];
   const home = getHomegroundCopy(locale);
+  const navigation = getHomegroundNavigationModel(locale, home.path);
   const canonicalUrl = `${SITE_URL}${entry.canonicalPath}`;
   const sectionUrl = `${SITE_URL}${getSearchSectionPath(collection.section, locale)}`;
   const listId = `${canonicalUrl}#guides`;
+  const parentNavigationId =
+    collection.section === "services"
+      ? "studio"
+      : collection.section === "explore"
+        ? "destinations"
+        : "guides";
+  const parent = navigation.items.find((item) => item.id === parentNavigationId);
+  if (!parent) throw new Error(`Missing ${parentNavigationId} navigation item.`);
+  const parentIsSection = collection.section === "explore";
+  const breadcrumbItems = [
+    { "@type": "ListItem", position: 1, name: home.navigation.homeLabel, item: `${SITE_URL}${home.path}` },
+    { "@type": "ListItem", position: 2, name: parent.label, item: `${SITE_URL}${parent.href}` },
+    ...(!parentIsSection
+      ? [{ "@type": "ListItem", position: 3, name: sectionCopy.navLabel, item: sectionUrl }]
+      : []),
+    {
+      "@type": "ListItem",
+      position: parentIsSection ? 3 : 4,
+      name: entry.h1,
+      item: canonicalUrl,
+    },
+  ];
 
   return {
     "@context": "https://schema.org",
@@ -127,12 +159,7 @@ function jsonLd(collectionId: SearchCollectionId, locale: HomegroundLocale) {
       editorialOrganizationSchema(),
       {
         "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Homeground China", item: `${SITE_URL}${home.path}` },
-          { "@type": "ListItem", position: 2, name: copy.guidesLabel, item: `${SITE_URL}${home.path}guides/` },
-          { "@type": "ListItem", position: 3, name: sectionCopy.navLabel, item: sectionUrl },
-          { "@type": "ListItem", position: 4, name: entry.h1, item: canonicalUrl },
-        ],
+        itemListElement: breadcrumbItems,
       },
       {
         "@type": "ItemList",
@@ -160,19 +187,38 @@ export function SearchCollectionHubPage({
   const collectionCopy = collection.locales[locale];
   const home = getHomegroundCopy(locale);
   const platform = getSearchPlatformCopy(locale);
+  const navigation = getHomegroundNavigationModel(locale, home.path);
   const sectionCopy = platform.sections[collection.section];
   const ui = labels[locale];
   const guides = getSearchCollectionGuides(collectionId, locale);
-  const siblings = searchCollections.filter(
-    (candidate) => candidate.section === collection.section && candidate.id !== collection.id,
-  );
+  const siblings = searchCollections.filter((candidate) => {
+    if (candidate.section !== collection.section || candidate.id === collection.id) {
+      return false;
+    }
+    const candidateEntry = getSearchCollectionEntry(candidate.id, locale);
+    return (
+      candidateEntry.status === "published" &&
+      candidateEntry.indexability.index &&
+      getSearchCollectionGuides(candidate.id, locale).length > 0
+    );
+  });
   const schema = jsonLd(collectionId, locale);
   const pageContext =
     collection.section === "explore"
       ? "destination"
-      : collection.section === "services" || collection.section === "plan"
+      : collection.section === "services"
         ? "services"
+        : collection.section === "plan"
+          ? "plan"
+          : "guides";
+  const parentNavigationId =
+    collection.section === "services"
+      ? "studio"
+      : collection.section === "explore"
+        ? "destinations"
         : "guides";
+  const parent = navigation.items.find((item) => item.id === parentNavigationId);
+  if (!parent) throw new Error(`Missing ${parentNavigationId} navigation item.`);
 
   return (
     <div
@@ -191,12 +237,15 @@ export function SearchCollectionHubPage({
         <header className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroCopy}>
-              <nav aria-label={ui.breadcrumb}>
-                <p className={styles.indexLabel}>
-                  <Link href={`${home.path}guides/`}>{platform.guidesLabel}</Link>
-                  <span aria-hidden="true"> · </span>
-                  <Link href={getSearchSectionPath(collection.section, locale)}>{sectionCopy.navLabel}</Link>
-                </p>
+              <nav className={styles.breadcrumb} aria-label={ui.breadcrumb}>
+                <ol>
+                  <li><Link href={home.path}>{home.navigation.homeLabel}</Link></li>
+                  <li><span aria-hidden="true">/</span><Link href={parent.href}>{parent.label}</Link></li>
+                  {collection.section !== "explore" ? (
+                    <li><span aria-hidden="true">/</span><Link href={getSearchSectionPath(collection.section, locale)}>{sectionCopy.navLabel}</Link></li>
+                  ) : null}
+                  <li aria-current="page"><span aria-hidden="true">/</span>{collectionCopy.label}</li>
+                </ol>
               </nav>
               <p className={styles.eyebrow}>{ui.collection}</p>
               <h1
@@ -218,11 +267,18 @@ export function SearchCollectionHubPage({
         </header>
 
         {collectionId === "explore-cities-neighborhoods" ? (
-          <DestinationHubDiscovery
-            headingId="collection-title"
-            locale={locale}
-            showIntro={false}
-          />
+          <aside className={styles.directoryHandoff}>
+            <div>
+              <p className={styles.eyebrow}>{sectionCopy.navLabel}</p>
+              <h2>{ui.cityDirectoryTitle}</h2>
+            </div>
+            <div>
+              <p>{ui.cityDirectoryBody}</p>
+              <Link href={getSearchSectionPath("explore", locale)}>
+                {ui.cityDirectoryAction}<span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </aside>
         ) : null}
 
         <section className={styles.collection} aria-labelledby="collection-guides-title">
@@ -276,6 +332,7 @@ export function SearchCollectionHubPage({
           )}
         </section>
 
+        {siblings.length > 0 ? (
         <section className={styles.platformMap} aria-labelledby="collection-related-title">
           <div className={styles.platformMapIntro}>
             <p className={styles.eyebrow}>{sectionCopy.eyebrow}</p>
@@ -294,6 +351,7 @@ export function SearchCollectionHubPage({
             ))}
           </ul>
         </section>
+        ) : null}
 
         <section className={styles.cta} aria-labelledby="collection-cta-title">
           <div><p className={styles.eyebrow}>Homeground</p><h2 id="collection-cta-title">{platform.nextTitle}</h2></div>

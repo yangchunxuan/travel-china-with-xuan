@@ -215,6 +215,7 @@ function entriesForNode(node: ContentNode): ContentManifestEntry[] {
       const locale = schemaLocaleToSiteLocale[schemaLocale];
       const entry: ContentManifestEntry = {
         contentId: node.id,
+        parentContentId: node.parentContentId ?? null,
         family: node.family,
         section: node.section,
         primaryIntent: node.primaryIntent,

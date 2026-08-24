@@ -29,22 +29,41 @@ export interface HomegroundStudioCopy {
   eyebrow: string;
   title: string;
   intro: string;
+  overview: {
+    title: string;
+    stages: readonly {
+      label: string;
+      title: string;
+      detail: string;
+    }[];
+    termsLabel: string;
+    termsTitle: string;
+    terms: readonly { label: string; value: string }[];
+  };
   collageLabel: string;
   peopleEyebrow: string;
   peopleTitle: string;
   peopleIntro: string;
+  peopleDetailsLabel: string;
   members: readonly StudioMember[];
   trust: {
     eyebrow: string;
     title: string;
     body: string;
+    inputsTitle: string;
+    inputs: readonly string[];
+    stepsTitle: string;
     points: readonly { title: string; detail: string }[];
+    deliverablesTitle: string;
+    deliverables: readonly string[];
+    boundary: string;
   };
   cta: {
     label: string;
     title: string;
     body: string;
     button: string;
+    secondaryButton: string;
   };
   homeLink: string;
 }
@@ -99,20 +118,60 @@ export const homegroundStudioCopy: Record<
   en: {
     path: "/studio/",
     metadata: {
-      title: "Meet the Homeground China travel agency team",
+      title: "How Homeground Plans China Trips",
       description:
-        "Meet the Homeground China team: one lead planner follows the whole journey, while shared first-hand experience helps every detail work on the ground.",
-      openGraphTitle: "The people behind Homeground China",
+        "See how Homeground turns real dates, travellers, priorities and fixed bookings into a coherent China route, written scope and usable plan.",
+      openGraphTitle: "How Homeground Plans a China Trip",
     },
-    eyebrow: "A China travel agency with shared field experience",
-    title: "One lead planner sees the whole journey. One team makes every detail work.",
+    eyebrow: "How we plan your China trip",
+    title: "From your real constraints to a plan you can use.",
     intro:
-      "True tailor-made travel is not your name added to a ready-made itinerary. It begins with listening—understanding how you want to experience China. From your first conversation, your lead planner learns who you are travelling with, what you are most looking forward to and how you want each day to feel. They then bring the cities, transport and pace together into one coherent journey. You have one person who knows the trip from beginning to end; behind that conversation is a team bringing first-hand experience of looking after travellers across China into the same plan, so it does more than look beautiful on paper—it works smoothly on the ground.",
+      "Tell us what is fixed, what matters and what is still open. One lead planner turns that brief into a coherent route, checks it against real travel conditions and confirms the exact work before anything paid begins.",
+    overview: {
+      title: "The whole planning thread, at a glance",
+      stages: [
+        {
+          label: "01 / Inputs",
+          title: "Your trip as it really is",
+          detail:
+            "Dates, travellers, must-sees, pace, mobility needs, fixed bookings and open questions.",
+        },
+        {
+          label: "02 / Steps",
+          title: "Brief → fit check → written work",
+          detail:
+            "A human planner checks what connects, what conflicts and which decisions come first.",
+        },
+        {
+          label: "03 / Deliverables",
+          title: "A review, route structure or full-trip scope",
+          detail:
+            "You receive the written output agreed for the service, not a generic attraction list.",
+        },
+      ],
+      termsLabel: "04 / Terms",
+      termsTitle: "Timing, scope and fee are clear first",
+      terms: [
+        {
+          label: "Timing",
+          value: "Delivery date confirmed before payment",
+        },
+        {
+          label: "Standard scope",
+          value: "Up to 10 travel days · 4 overnight bases · 1 shared route for 1–4 travellers",
+        },
+        {
+          label: "Fee",
+          value: "US$69 review · US$129 route build · custom full-trip quote",
+        },
+      ],
+    },
     collageLabel: "The five people at Homeground China",
     peopleEyebrow: "Who does what",
     peopleTitle: "Different strengths. One planning thread.",
     peopleIntro:
-      "The useful question is not only where someone has travelled. It is what they notice before your journey reaches the ground.",
+      "Your lead planner keeps one conversation moving. The wider team contributes route, destination, operations and guest-care experience when the trip needs it.",
+    peopleDetailsLabel: "Read background and experience",
     members: [
       {
         id: "evan",
@@ -187,51 +246,109 @@ export const homegroundStudioCopy: Record<
       },
     ],
     trust: {
-      eyebrow: "How the team works",
-      title: "One person knows the whole trip. The team strengthens the plan.",
+      eyebrow: "The working method",
+      title: "What happens after you share the trip basics.",
       body:
-        "You keep one clear conversation with a lead planner who knows the journey from beginning to end. Behind them, the team brings together what we have learned from route planning and looking after travellers on the ground. Some details are tested against the full journey; others against real transport, waiting times and local conditions. The point is not for you to learn our workflow—it is for every recommendation to come from real experience and belong to one coherent plan.",
+        "You keep one clear conversation with a lead planner who knows the journey from beginning to end. The fixed-price services cover written route work; booking and support during travel require a separately agreed full-trip scope.",
+      inputsTitle: "What to send",
+      inputs: [
+        "Travel dates and arrival or departure points",
+        "Who is travelling, preferred pace and mobility or room needs",
+        "Must-see places and ideas you would be comfortable dropping",
+        "Fixed bookings, useful budget context and any decision deadline",
+      ],
+      stepsTitle: "What we do",
       points: [
         {
-          title: "We start by listening",
-          detail: "Who you are travelling with, what matters most and how you want each day to feel become the starting point—not an afterthought.",
+          title: "Read the brief",
+          detail:
+            "A planner identifies what is fixed, what is flexible and which missing details affect the route.",
         },
         {
-          title: "One person knows the whole journey",
-          detail: "From the first conversation to the finished plan, your lead planner keeps the cities, transport, pace and priorities connected.",
+          title: "Test the whole journey",
+          detail:
+            "City order, nights, transfers, pace and on-the-ground constraints are checked as one connected trip.",
         },
         {
-          title: "Real experience shapes the details",
-          detail: "The team brings relevant planning and on-the-ground experience into the same itinerary, so it works beyond the page.",
+          title: "Confirm before paid work",
+          detail:
+            "We reply with the suitable service, written scope, fixed fee or custom quote and expected delivery date.",
         },
       ],
-      },
-      cta: {
-       label: "Next step",
-       title: "Tell us the places you do not want to miss.",
-       body:
-         "Use WhatsApp or leave your email. A planner can ask what is still open and explain the suitable next step; paid work begins only after scope and price are confirmed.",
-       button: "Talk to a China trip planner",
+      deliverablesTitle: "What you receive",
+      deliverables: [
+        "Review My Route: a written day-by-day workable, tight or fragile assessment",
+        "Build My Route: city order, night allocation, transfer logic and booking priorities",
+        "Full Trip: a trip-specific written scope for planning, arrangements and ground support",
+        "Clear assumptions, trade-offs and next decisions for the agreed service",
+      ],
+      boundary:
+        "This first brief is free to send and this page does not take payment. The published US$69 and US$129 fees apply only after Homeground confirms the standard scope.",
+    },
+    cta: {
+      label: "Next step",
+      title: "Tell us the places you do not want to miss.",
+      body:
+        "Use WhatsApp or leave your email. A planner can ask what is still open and explain the suitable next step; paid work begins only after scope, fee and delivery timing are confirmed.",
+      button: "Talk to a China trip planner",
+      secondaryButton: "Compare planning services",
     },
     homeLink: "Meet the people behind the plan",
   },
   zh: {
     path: "/zh/studio/",
     metadata: {
-      title: "认识 Homeground China 旅行社团队",
+      title: "Homeground 如何规划中国旅行",
       description:
-        "认识 Homeground 中国旅行规划团队：一位主规划师了解你的全程，团队以真实接待经验让路线与细节落地。",
-      openGraphTitle: "Homeground China 背后的旅行规划团队",
+        "了解 Homeground 怎样把真实日期、同行者、优先事项与已有预订整理成连贯路线、明确服务范围和可执行方案。",
+      openGraphTitle: "Homeground 怎样规划一趟中国旅行",
     },
-    eyebrow: "共享一线经验的中国旅行社团队",
-    title: "一位主规划师了解你的全程，一支团队让每个细节落地。",
+    eyebrow: "我们怎样规划你的中国旅行",
+    title: "从真实限制出发，做成一份你能使用的方案。",
     intro:
-      "真正的定制，不是把你的名字放进一条现成路线，而是先听懂你想怎样看中国。负责你的主规划师会从第一次沟通开始，了解你和谁同行、最期待什么、每天想走多快，再把城市、交通和停留节奏连成一段完整旅程。你始终只需要和一位了解全程的人沟通；在背后，团队会把各自在当地接待中积累的经验带进同一份方案，让它不只看起来美好，也能在真实旅途中顺利发生。",
+      "告诉我们哪些已经确定、什么最重要、还有哪些问题没有答案。一位主规划师会把这些信息整理成连贯路线，结合真实旅行条件复核，并在任何付费工作开始前确认具体服务。",
+    overview: {
+      title: "一眼看懂完整规划流程",
+      stages: [
+        {
+          label: "01 / 输入信息",
+          title: "从你的真实行程出发",
+          detail: "日期、同行者、必去地点、节奏、行动需求、已订项目与待定问题。",
+        },
+        {
+          label: "02 / 规划步骤",
+          title: "简报 → 人工确认 → 书面成果",
+          detail: "规划师判断哪些能顺利衔接、哪里有冲突，以及哪些决定最优先。",
+        },
+        {
+          label: "03 / 交付成果",
+          title: "路线审核、路线结构或全程服务范围",
+          detail: "你收到的是双方确认过的书面成果，不是一份通用景点清单。",
+        },
+      ],
+      termsLabel: "04 / 服务条件",
+      termsTitle: "先确认时间、范围和费用",
+      terms: [
+        {
+          label: "交付时间",
+          value: "付款前确认预计交付日期",
+        },
+        {
+          label: "标准范围",
+          value: "最多 10 个旅行日 · 4 个过夜住宿地 · 1–4 位同行者共用 1 条路线",
+        },
+        {
+          label: "费用",
+          value: "路线审核 US$69 · 路线规划 US$129 · 全程服务单独报价",
+        },
+      ],
+    },
     collageLabel: "Homeground China 的五位成员",
     peopleEyebrow: "每个人负责什么",
     peopleTitle: "不同的经验，一条完整的规划主线。",
     peopleIntro:
-      "真正重要的不只是一个人去过哪里，而是他能否在行程落地之前，发现对应的问题。",
+      "主规划师负责一条清楚的沟通主线；路线、目的地、执行与客户关怀经验会在行程需要时进入同一份方案。",
+    peopleDetailsLabel: "查看背景与经验",
     members: [
       {
         id: "evan",
@@ -305,51 +422,106 @@ export const homegroundStudioCopy: Record<
       },
     ],
     trust: {
-      eyebrow: "团队如何协作",
-      title: "一位联系人，不止一个人的经验。",
+      eyebrow: "具体工作方式",
+      title: "发来旅行基本信息后，会发生什么。",
       body:
-        "你始终和一位了解全程的主规划师沟通；团队则把各自在路线规划和当地接待中积累的经验带进同一份方案。有人从全程看城市衔接与节奏，有人从现场看交通、等待和实际条件。你不需要理解这些分工，只需要知道：每个建议都来自真实经验，也始终服务于同一段完整旅程。",
+        "你始终和一位了解全程的主规划师沟通。固定价格服务提供书面路线成果；预订安排和旅行中支持需要另行确认全程服务范围。",
+      inputsTitle: "你需要提供什么",
+      inputs: [
+        "旅行日期、抵达与离开地点",
+        "同行者、理想节奏、行动或房间需求",
+        "一定想去的地方，以及可以舍弃的想法",
+        "已确定的预订、可选预算背景与决定期限",
+      ],
+      stepsTitle: "我们会怎样处理",
       points: [
         {
-          title: "先听懂你的旅行",
-          detail: "和谁同行、最期待什么、每天想走多快，都会成为路线的起点，而不是最后补上的备注。",
+          title: "阅读旅行简报",
+          detail: "规划师先分清哪些已经确定、哪些可以调整，以及哪些缺失信息会影响路线。",
         },
         {
-          title: "始终有一位了解全程的人",
-          detail: "从第一次沟通到方案落定，主规划师始终掌握城市、交通、节奏和你的优先级。",
+          title: "把全程放在一起复核",
+          detail: "城市顺序、住宿晚数、交通衔接、节奏和现场条件会作为同一段旅程一起检查。",
         },
         {
-          title: "真实经验进入每个细节",
-          detail: "团队把相关的规划与当地接待经验带进同一份方案，让路线不只停留在页面上。",
+          title: "付费工作前先确认",
+          detail: "我们会回复合适的服务、书面范围、固定费用或单独报价，以及预计交付日期。",
         },
       ],
-      },
-      cta: {
-       label: "下一步",
-       title: "先告诉我们，你不想错过哪些地方。",
-       body:
-         "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会继续确认必要信息并说明适合怎样继续；任何付费工作开始前都会先确认范围和价格。",
-       button: "联系旅行规划师",
+      deliverablesTitle: "你会收到什么",
+      deliverables: [
+        "路线审核：按天标出可执行、偏紧或脆弱，并说明原因",
+        "路线规划：城市顺序、住宿晚数、交通逻辑与预订优先级",
+        "全程服务：针对实际旅程书面确认规划、安排与落地支持范围",
+        "在约定服务内清楚标出假设、取舍与下一步决定",
+      ],
+      boundary:
+        "发送第一份简报不收费，本页也不会收款。公开的 US$69 与 US$129 费用只在 Homeground 人工确认符合标准范围后适用。",
+    },
+    cta: {
+      label: "下一步",
+      title: "先告诉我们，你不想错过哪些地方。",
+      body:
+        "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会继续确认必要信息并说明适合怎样继续；任何付费工作开始前都会先确认范围、费用和交付时间。",
+      button: "联系旅行规划师",
+      secondaryButton: "比较旅行规划服务",
     },
     homeLink: "认识参与规划与落地的人",
   },
   ko: {
     path: "/ko/studio/",
     metadata: {
-      title: "Homeground China 중국 전문 여행사 팀 소개",
+      title: "Homeground의 중국 여행 설계 방식",
       description:
-        "Homeground 중국 여행 플래닝 팀을 만나보세요. 한 명의 전담 플래너가 여정 전체를 이해하고, 팀의 현장 경험이 실제로 이어지는 계획을 만듭니다.",
-      openGraphTitle: "Homeground China를 만드는 여행 플래닝 팀",
+        "실제 날짜, 여행자, 우선순위와 확정 예약을 Homeground가 어떻게 자연스러운 중국 동선, 명확한 작업 범위와 실행 가능한 계획으로 만드는지 확인하세요.",
+      openGraphTitle: "Homeground가 중국 여행을 설계하는 방법",
     },
-    eyebrow: "현장 경험을 공유하는 중국 전문 여행사 팀",
-    title: "한 명의 전담 플래너가 여정 전체를 이해하고, 한 팀이 모든 디테일을 완성합니다.",
+    eyebrow: "중국 여행을 설계하는 방법",
+    title: "실제 조건에서 출발해 바로 활용할 수 있는 계획으로.",
     intro:
-      "진정한 맞춤 여행은 이미 만들어진 일정에 이름만 바꿔 넣는 일이 아닙니다. 먼저 어떤 방식으로 중국을 경험하고 싶은지 충분히 듣는 것에서 시작합니다. 첫 상담부터 전담 플래너가 누구와 함께하는 여행인지, 무엇을 가장 기대하는지, 하루의 속도는 어느 정도가 편안한지 세심하게 파악합니다. 그리고 도시와 교통, 머무는 시간을 하나의 자연스러운 여정으로 연결합니다. 여행자는 처음부터 끝까지 전체 일정을 이해하는 한 명의 플래너를 중심으로 편하게 소통할 수 있습니다. 그 뒤에서는 팀원들이 현지 여행을 직접 지원하며 쌓아 온 경험을 하나의 계획에 더해, 보기만 좋은 일정이 아니라 실제 여행에서도 무리 없이 이어지는 여정을 완성합니다.",
+      "확정된 것, 가장 중요한 것, 아직 열려 있는 질문을 알려 주세요. 한 명의 전담 플래너가 이를 자연스러운 동선으로 연결하고 실제 여행 조건에 맞춰 검토한 뒤, 유료 작업 전에 정확한 서비스 내용을 먼저 확인합니다.",
+    overview: {
+      title: "전체 설계 과정을 한눈에",
+      stages: [
+        {
+          label: "01 / 입력 정보",
+          title: "여행의 실제 조건부터",
+          detail: "날짜, 동행자, 필수 장소, 속도, 이동 지원, 확정 예약과 열린 질문을 받습니다.",
+        },
+        {
+          label: "02 / 진행 단계",
+          title: "브리프 → 적합성 확인 → 서면 작업",
+          detail: "플래너가 연결되는 부분과 충돌하는 부분, 먼저 결정할 항목을 확인합니다.",
+        },
+        {
+          label: "03 / 결과물",
+          title: "일정 검토, 동선 구조 또는 전체 여행 범위",
+          detail: "일반적인 명소 목록이 아니라 합의한 서비스에 맞는 서면 결과물을 받습니다.",
+        },
+      ],
+      termsLabel: "04 / 서비스 조건",
+      termsTitle: "일정, 범위와 요금을 먼저 확인합니다",
+      terms: [
+        {
+          label: "납품 일정",
+          value: "결제 전에 예상 납품일 확인",
+        },
+        {
+          label: "표준 범위",
+          value: "최대 10일 · 4개 숙박 거점 · 1–4명이 함께 이용하는 1개 동선",
+        },
+        {
+          label: "요금",
+          value: "일정 검토 US$69 · 동선 설계 US$129 · 전체 여행 맞춤 견적",
+        },
+      ],
+    },
     collageLabel: "Homeground China의 다섯 멤버",
     peopleEyebrow: "누가 무엇을 맡는지",
     peopleTitle: "서로 다른 강점, 하나로 이어지는 여행 설계.",
     peopleIntro:
-      "중요한 것은 단지 어디를 여행했는지가 아니라, 실제 여행 전에 어떤 문제를 먼저 발견할 수 있는가입니다.",
+      "전담 플래너가 하나의 명확한 대화를 이어 갑니다. 필요할 때 동선, 목적지, 운영과 고객 케어 경험이 같은 계획에 더해집니다.",
+    peopleDetailsLabel: "배경과 경험 보기",
     members: [
       {
         id: "evan",
@@ -423,31 +595,49 @@ export const homegroundStudioCopy: Record<
       },
     ],
     trust: {
-      eyebrow: "팀이 일하는 방식",
-      title: "한 명은 여정 전체를 알고, 팀은 계획을 더 단단하게 만듭니다.",
+      eyebrow: "실제 진행 방식",
+      title: "여행 기본 정보를 보낸 다음 진행되는 일.",
       body:
-        "여행자는 처음부터 끝까지 전체 일정을 이해하는 전담 플래너를 중심으로 편하게 소통합니다. 그 뒤에서는 팀이 일정 설계와 현지 고객 응대에서 쌓은 경험을 하나의 계획에 더합니다. 어떤 부분은 전체 동선과 속도를 기준으로, 또 어떤 부분은 실제 교통과 대기 시간, 현지 조건을 기준으로 살핍니다. 여행자가 우리의 업무 방식을 이해해야 하는 것이 아니라, 모든 제안이 실제 경험에서 나오고 하나의 자연스러운 여정으로 이어지는 것이 중요합니다.",
+        "처음부터 끝까지 전체 여정을 아는 전담 플래너와 한 흐름으로 소통합니다. 고정 요금 서비스는 서면 동선 작업이며, 예약과 여행 중 지원은 별도로 합의한 전체 여행 범위가 필요합니다.",
+      inputsTitle: "보내 주실 정보",
+      inputs: [
+        "여행 날짜와 도착·출발 지점",
+        "동행자, 원하는 속도, 이동 또는 객실 관련 요구",
+        "꼭 가고 싶은 장소와 포기해도 괜찮은 아이디어",
+        "확정 예약, 선택적 예산 정보와 결정 기한",
+      ],
+      stepsTitle: "저희가 하는 일",
       points: [
         {
-          title: "먼저 여행자를 이해합니다",
-          detail: "누구와 함께하는지, 무엇이 가장 중요한지, 하루를 어떤 속도로 보내고 싶은지가 계획의 출발점이 됩니다.",
+          title: "여행 브리프 확인",
+          detail: "확정된 것과 조정 가능한 것, 동선에 영향을 주는 누락 정보를 먼저 구분합니다.",
         },
         {
-          title: "한 명이 여정 전체를 압니다",
-          detail: "첫 상담부터 계획이 완성될 때까지, 전담 플래너가 도시, 교통, 여행 속도와 우선순위를 하나로 연결합니다.",
+          title: "여정 전체 검토",
+          detail: "도시 순서, 숙박 일수, 이동, 속도와 현지 조건을 하나로 연결된 여행으로 확인합니다.",
         },
         {
-          title: "현장 경험이 디테일을 완성합니다",
-          detail: "팀의 관련 여행 설계와 현지 응대 경험을 같은 일정에 더해, 화면 밖 실제 여행에서도 자연스럽게 이어지도록 합니다.",
+          title: "유료 작업 전 확인",
+          detail: "알맞은 서비스, 서면 범위, 고정 요금 또는 맞춤 견적과 예상 납품일을 안내합니다.",
         },
       ],
-      },
-      cta: {
-       label: "다음 단계",
-       title: "놓치고 싶지 않은 장소를 먼저 알려 주세요.",
-       body:
-         "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 필요한 내용을 이어서 확인하고 알맞은 다음 단계를 안내합니다. 유료 작업 전에는 범위와 가격을 먼저 확인합니다.",
-       button: "중국 여행 플래너와 상담하기",
+      deliverablesTitle: "받게 되는 결과물",
+      deliverables: [
+        "일정 검토: 날짜별 실행 가능·빠듯함·취약함 판단과 이유",
+        "동선 설계: 도시 순서, 숙박 일수, 이동 논리와 예약 우선순위",
+        "전체 여행: 실제 여정에 맞춘 계획·준비·현지 지원의 서면 범위",
+        "합의한 서비스 안에서 명확히 표시한 가정, 선택의 영향과 다음 결정",
+      ],
+      boundary:
+        "첫 브리프는 무료로 보낼 수 있으며 이 페이지에서는 결제하지 않습니다. 공개된 US$69와 US$129 요금은 Homeground가 표준 범위를 확인한 뒤에만 적용됩니다.",
+    },
+    cta: {
+      label: "다음 단계",
+      title: "놓치고 싶지 않은 장소를 먼저 알려 주세요.",
+      body:
+        "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 필요한 내용을 이어서 확인하고 알맞은 다음 단계를 안내합니다. 유료 작업 전에는 범위, 요금과 납품 일정을 먼저 확인합니다.",
+      button: "중국 여행 플래너와 상담하기",
+      secondaryButton: "여행 설계 서비스 비교",
     },
     homeLink: "여행을 설계하고 실행하는 팀 만나기",
   },

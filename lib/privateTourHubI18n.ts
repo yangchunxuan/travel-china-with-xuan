@@ -24,6 +24,13 @@ const copy = {
     title: "China private tours, compared clearly.",
     introduction:
       "Start with the geography, pace and experiences that matter to you. Every route below has its own published itinerary; this page helps you compare them before opening the details.",
+    quickCompareEyebrow: "Nine-route overview",
+    quickCompareTitle: "Compare the essentials before opening a tour.",
+    quickCompareIntroduction:
+      "Trip length and prices use the same published two-traveller basis. The fit and hotel-movement notes come directly from each itinerary.",
+    quickFitLabel: "Best for",
+    quickMovementLabel: "Bases and movement",
+    quickAction: "Open route",
     summaryLabel: "Choose in three moves",
     summaryTitle: "Find the route that fits the trip you actually want.",
     summarySteps: [
@@ -49,6 +56,9 @@ const copy = {
       `These are ${count} equal, published products. Price presentation can differ by product; the comparison here does not replace the final written quote or availability check.`,
     tourCount: (count: number) => `${count} published private tours`,
     duration: (days: number, nights: number) => `${days} days · ${nights} nights`,
+    startingPriceLabel: "Published from price",
+    perPersonLabel: "per person",
+    groupBasis: (travelers: number) => `based on ${travelers} travellers`,
     paceLabel: "Pace and bases",
     fitLabel: "Best fit",
     highlightsLabel: "Core experiences",
@@ -76,6 +86,13 @@ const copy = {
     title: "先把路线比清楚，再选适合自己的中国旅行。",
     introduction:
       "先看地域、节奏和真正想体验的内容。下面每条路线都有完整正式页；这里负责把差别放在一起，让你做选择，而不是再复制一遍行程。",
+    quickCompareEyebrow: "9 条路线总览",
+    quickCompareTitle: "先比较关键差别，再打开完整产品。",
+    quickCompareIntroduction:
+      "天数和起价统一采用公开的两人同行口径；适合人群与住宿移动说明直接来自每条正式行程。",
+    quickFitLabel: "更适合",
+    quickMovementLabel: "住宿与移动",
+    quickAction: "打开路线",
     summaryLabel: "三步做选择",
     summaryTitle: "找出真正适合这趟旅行的路线。",
     summarySteps: [
@@ -101,6 +118,9 @@ const copy = {
       `以下 ${count} 条都是同等正式的已发布产品。不同产品的价格展示方式可以不同；这里的比较不替代最终书面报价和可订状态核对。`,
     tourCount: (count: number) => `${count} 条已发布私家团`,
     duration: (days: number, nights: number) => `${days} 天 · ${nights} 晚`,
+    startingPriceLabel: "公开起价",
+    perPersonLabel: "每人",
+    groupBasis: (travelers: number) => `按 ${travelers} 人同行`,
     paceLabel: "节奏与住宿地",
     fitLabel: "更适合谁",
     highlightsLabel: "核心体验",
@@ -128,6 +148,13 @@ const copy = {
     title: "중국 프라이빗 투어, 차이를 분명하게 비교하세요.",
     introduction:
       "지역, 여행 속도와 원하는 경험부터 살펴보세요. 아래 모든 여정에는 정식 상세 페이지가 있으며, 이 페이지는 상세 내용을 반복하기보다 선택에 필요한 차이를 한곳에서 보여 줍니다.",
+    quickCompareEyebrow: "9개 동선 한눈에 보기",
+    quickCompareTitle: "상세 상품을 열기 전에 핵심 차이를 비교하세요.",
+    quickCompareIntroduction:
+      "여행 기간과 시작가는 공개된 2인 기준으로 통일했습니다. 추천 여행자와 숙소 이동 정보는 각 정식 일정에서 가져왔습니다.",
+    quickFitLabel: "추천 여행자",
+    quickMovementLabel: "숙박 거점과 이동",
+    quickAction: "동선 열기",
     summaryLabel: "세 단계로 고르기",
     summaryTitle: "내가 원하는 여행에 맞는 동선을 찾으세요.",
     summarySteps: [
@@ -154,6 +181,9 @@ const copy = {
       `아래 ${count}개는 모두 동등하게 공개된 정식 상품입니다. 상품마다 가격 표시 방식은 다를 수 있으며, 이 비교는 최종 서면 견적이나 예약 가능 여부 확인을 대신하지 않습니다.`,
     tourCount: (count: number) => `공개된 프라이빗 투어 ${count}개`,
     duration: (days: number, nights: number) => `${days}일 · ${nights}박`,
+    startingPriceLabel: "공개 시작가",
+    perPersonLabel: "1인",
+    groupBasis: (travelers: number) => `${travelers}인 기준`,
     paceLabel: "속도와 숙박 거점",
     fitLabel: "추천 여행자",
     highlightsLabel: "핵심 경험",

@@ -22,9 +22,18 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
   assert.match(copy, /Up to 10 travel days/);
   assert.match(copy, /up to 4 overnight bases/);
   assert.match(copy, /one shared route for 1–4 travellers/);
-  assert.match(page, /const reviewHref = plannerContactHref/);
-  assert.match(page, /const buildHref = plannerContactHref/);
-  assert.match(page, /const fullSupportHref = plannerContactHref/);
+  assert.match(
+    page,
+    /const reviewHref = buildRouteServiceContactHref\([\s\S]{0,100}"itinerary-review"/,
+  );
+  assert.match(
+    page,
+    /const buildHref = buildRouteServiceContactHref\([\s\S]{0,100}"route-build"/,
+  );
+  assert.match(
+    page,
+    /const fullSupportHref = buildRouteServiceContactHref\([\s\S]{0,100}"full-trip-support"/,
+  );
   const genericContactLine = page
     .split("\n")
     .find((line) => line.includes("const plannerContactHref"));
@@ -34,10 +43,7 @@ test("route planning keeps the three commercial paths and fixed-scope boundaries
     genericContactLine,
     /planner=destinations|free-brief|service=/,
   );
-  assert.doesNotMatch(
-    page,
-    /planner=destinations|#route-finder|service=(?:itinerary-review|route-build|full-trip-support)/,
-  );
+  assert.doesNotMatch(page, /planner=destinations|#route-finder/);
   assert.match(copy, /consultation: "Talk to a China trip planner"/);
   assert.match(copy, /consultation: "联系旅行规划师"/);
   assert.match(copy, /consultation: "중국 여행 플래너와 상담하기"/);
@@ -102,6 +108,9 @@ test("localized metadata, canonical paths, hreflang and structured data agree", 
   assert.match(page, /price: "69"/);
   assert.match(page, /price: "129"/);
   assert.match(page, /inLanguage: homeCopy\.htmlLang/);
+  assert.match(page, /name: copy\.breadcrumb\.studio,[\s\S]*?item: studioUrl/);
+  assert.match(page, /name: copy\.breadcrumb\.services,[\s\S]*?item: servicesUrl/);
+  assert.match(page, /position: 4,[\s\S]*?name: copy\.schema\.pageName/);
   assert.doesNotMatch(page, /AggregateRating|ReviewCount/);
   assert.match(defaultRoute, /languages: getChinaItineraryReviewLanguagePaths\(\)/);
   assert.match(localizedRoute, /canonical: copy\.path/);
@@ -109,6 +118,31 @@ test("localized metadata, canonical paths, hreflang and structured data agree", 
   assert.match(copy, /"zh-Hans": zh\.path/);
   assert.match(copy, /"x-default": en\.path/);
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
+});
+
+test("route planning returns travellers through How We Plan and Travel Services", async () => {
+  const [page, copy, styles] = await Promise.all([
+    source("components/ChinaItineraryReviewPage.tsx"),
+    source("lib/chinaItineraryReviewI18n.ts"),
+    source("components/ChinaItineraryReviewPage.module.css"),
+  ]);
+
+  assert.match(page, /const studioHref = `\$\{homeCopy\.path\}studio\/`/);
+  assert.match(page, /const servicesHref = `\$\{homeCopy\.path\}services\/`/);
+  assert.match(page, /<Link href=\{studioHref\}>\{copy\.breadcrumb\.studio\}<\/Link>/);
+  assert.match(page, /<Link href=\{servicesHref\}>\{copy\.breadcrumb\.services\}<\/Link>/);
+  assert.match(page, /className=\{styles\.serviceReturn\}[\s\S]*?copy\.breadcrumb\.returnToServices/);
+  for (const label of [
+    "How We Plan",
+    "Travel Services",
+    "我们如何规划",
+    "旅行服务",
+    "여행 설계 방식",
+    "여행 서비스",
+  ]) {
+    assert.match(copy, new RegExp(label));
+  }
+  assert.match(styles, /\.serviceReturn/);
 });
 
 test("localized service intent reaches the existing enquiry mechanism", async () => {

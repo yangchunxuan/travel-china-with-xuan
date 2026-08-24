@@ -29,6 +29,10 @@ import {
   type HomegroundPrimaryNavigationId,
 } from "../lib/homegroundNavigationModel";
 import { routeServiceIds } from "../lib/routeServiceInterest";
+import {
+  isPrivateTourInquirySlug,
+  privateTourInquiryQueryKey,
+} from "../lib/privateTourInquiryContext";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
@@ -68,6 +72,12 @@ interface HomegroundHeaderProps {
    * Missing locales are omitted instead of linking to an unrelated homepage.
    */
   languagePaths?: Partial<Record<HomegroundLanguagePathKey, string>>;
+  /**
+   * Marks a primary-navigation landing page as the exact current page.
+   * Descendants such as /guides/page/2/ remain in the same section, but are
+   * exposed to assistive technology as a location rather than the section root.
+   */
+  navigationIsExact?: boolean;
 }
 
 const allowedHeaderHashes = new Set([
@@ -97,6 +107,7 @@ function preservedHomeQuery(plannerStatus: PlannerStatus): string {
   const preserved = new URLSearchParams();
   const planner = current.searchParams.get("planner");
   const service = current.searchParams.get("service");
+  const privateTour = current.searchParams.get(privateTourInquiryQueryKey);
 
   if (planner && allowedPlannerQueries.has(planner)) {
     preserved.set("planner", planner);
@@ -105,6 +116,9 @@ function preservedHomeQuery(plannerStatus: PlannerStatus): string {
   }
   if (service && allowedServiceQueries.has(service)) {
     preserved.set("service", service);
+  }
+  if (isPrivateTourInquirySlug(privateTour)) {
+    preserved.set(privateTourInquiryQueryKey, privateTour);
   }
 
   const query = preserved.toString();
@@ -151,6 +165,7 @@ export function HomegroundHeader({
   plannerHrefOverride,
   plannerTracking,
   languagePaths,
+  navigationIsExact = false,
 }: HomegroundHeaderProps) {
   const [open, setOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
@@ -175,6 +190,7 @@ export function HomegroundHeader({
       ? plannerTarget
       : `${copy.path}#planner-contact`
   );
+  const faqHref = pageContext === "home" ? "#faq" : `${copy.path}#faq`;
   const primaryNavigation = getHomegroundNavigationModel(locale, copy.path);
   const guidesAreCurrent =
     pageContext === "guides" ||
@@ -182,7 +198,7 @@ export function HomegroundHeader({
     pageContext === "search" ||
     pageContext === "plan";
   const guidesAreExact =
-    pageContext === "guides" && showLanguageNav && !languagePaths;
+    pageContext === "guides" && navigationIsExact;
   const destinationsAreCurrent =
     pageContext === "destinations" || pageContext === "destination";
   const destinationsAreExact = pageContext === "destinations";
@@ -391,7 +407,11 @@ export function HomegroundHeader({
   const close = () => setOpen(false);
   const trackNavigationClick = (
     item: HomegroundPrimaryNavigationId | "faq",
-    surface: "desktop-primary" | "mobile-primary" | "mobile-utility",
+    surface:
+      | "desktop-primary"
+      | "desktop-utility"
+      | "mobile-primary"
+      | "mobile-utility",
   ) => {
     trackEvent("navigation_clicked", {
       navigation_item: item,
@@ -466,7 +486,9 @@ export function HomegroundHeader({
             const state = navItemState(item.id);
             return (
               <a
-                aria-current={state.exact ? "page" : undefined}
+                aria-current={
+                  state.exact ? "page" : state.active ? "location" : undefined
+                }
                 data-active={state.active ? "true" : undefined}
                 href={item.href}
                 key={item.id}
@@ -479,6 +501,23 @@ export function HomegroundHeader({
         </nav>
 
         <div className={styles.headerActions}>
+          <a
+            aria-current={
+              pageContext === "home" && activeHash === "#faq"
+                ? "location"
+                : undefined
+            }
+            className={styles.desktopUtilityLink}
+            href={faqHref}
+            onClick={(event) => {
+              trackNavigationClick("faq", "desktop-utility");
+              if (pageContext === "home") {
+                handleHomegroundHashClick(event, "#faq");
+              }
+            }}
+          >
+            {copy.navigation.faq}
+          </a>
           <nav
             className={styles.languageNav}
             aria-label={copy.navigation.languageLabel}
@@ -540,6 +579,16 @@ export function HomegroundHeader({
             aria-expanded={open}
             aria-controls="homeground-mobile-navigation"
             onClick={() => setOpen((current) => !current)}
+            onKeyDown={(event) => {
+              if (
+                event.repeat ||
+                (event.key !== "Enter" && event.key !== " ")
+              ) {
+                return;
+              }
+              event.preventDefault();
+              setOpen((current) => !current);
+            }}
           >
             {open ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
           </button>
@@ -558,7 +607,9 @@ export function HomegroundHeader({
               const state = navItemState(item.id);
               return (
                 <a
-                  aria-current={state.exact ? "page" : undefined}
+                  aria-current={
+                    state.exact ? "page" : state.active ? "location" : undefined
+                  }
                   data-active={state.active ? "true" : undefined}
                   href={item.href}
                   key={item.id}
@@ -585,7 +636,7 @@ export function HomegroundHeader({
                     : undefined
                 }
                 className={styles.mobileUtilityLink}
-                href={pageContext === "home" ? "#faq" : `${copy.path}#faq`}
+                href={faqHref}
                 onClick={(event) => {
                   trackNavigationClick("faq", "mobile-utility");
                   close();

@@ -22,6 +22,7 @@ test("global navigation records only controlled anonymous dimensions", async () 
   assert.match(header, /navigation_surface: surface/);
   assert.match(header, /page_language: locale/);
   assert.match(header, /trackNavigationClick\(item\.id, "desktop-primary"\)/);
+  assert.match(header, /trackNavigationClick\("faq", "desktop-utility"\)/);
   assert.match(header, /trackNavigationClick\(item\.id, "mobile-primary"\)/);
   assert.match(header, /trackNavigationClick\("faq", "mobile-utility"\)/);
   assert.doesNotMatch(

@@ -29,6 +29,14 @@ import {
   inquirySubmitSurfaceByLocale,
 } from "../lib/inquiryVersions";
 import type { HomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
+import {
+  buildPrivateTourMailtoHref,
+  getPrivateTourInquiryContext,
+  privateTourInquiryContactCopy,
+  privateTourInquiryQueryKey,
+  type PrivateTourInquiryContext,
+} from "../lib/privateTourInquiryContext";
 import styles from "./HomegroundHomePage.module.css";
 
 const homegroundInquiryApiHostname =
@@ -130,14 +138,20 @@ function privacyPath(locale: HomegroundLocale): string {
   return "/privacy/";
 }
 
-function whatsappMessage(locale: HomegroundLocale): string {
+function whatsappMessage(
+  locale: HomegroundLocale,
+  privateTourInterest: PrivateTourInquiryContext | null,
+): string {
+  const productLine = privateTourInterest
+    ? `\n${privateTourInquiryContactCopy[locale].whatsappLine}: ${privateTourInterest.name}\n${privateTourInquiryContactCopy[locale].referenceLabel}: ${privateTourInterest.slug}`
+    : "";
   if (locale === "zh") {
-    return "你好 Homeground，我正在计划中国旅行，想先和你们聊聊。";
+    return `你好 Homeground，我正在计划中国旅行，想先和你们聊聊。${productLine}`;
   }
   if (locale === "ko") {
-    return "안녕하세요 Homeground, 중국 여행을 계획 중이라 먼저 상담하고 싶습니다.";
+    return `안녕하세요 Homeground, 중국 여행을 계획 중이라 먼저 상담하고 싶습니다.${productLine}`;
   }
-  return "Hello Homeground, I’m planning a trip to China and would like to talk.";
+  return `Hello Homeground, I’m planning a trip to China and would like to talk.${productLine}`;
 }
 
 export function HomepageQuickContact({
@@ -170,6 +184,8 @@ export function HomepageQuickContact({
   const [emailValidationError, setEmailValidationError] = useState(false);
   const [showRetry, setShowRetry] = useState(false);
   const [publicReference, setPublicReference] = useState("");
+  const [privateTourInterest, setPrivateTourInterest] =
+    useState<PrivateTourInquiryContext | null>(null);
 
   const apiUrl = trustedInquiryApiUrl(
     process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL?.trim() || "",
@@ -189,13 +205,44 @@ export function HomepageQuickContact({
   const whatsappUrl =
     directWhatsAppEnabled && whatsappNumber
       ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          whatsappMessage(locale),
+          whatsappMessage(locale, privateTourInterest),
         )}`
       : "";
   const messengerUrl = trustedMessengerUrl(
     process.env.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL?.trim() ||
       defaultMessengerUrl,
   );
+  const fallbackMailto = buildPrivateTourMailtoHref(
+    homegroundBusiness.serviceEmail,
+    locale,
+    privateTourInterest,
+  );
+
+  useEffect(() => {
+    const syncPrivateTourInterest = () => {
+      const parameters = new URL(window.location.href).searchParams;
+      setPrivateTourInterest(
+        getPrivateTourInquiryContext(
+          parameters.get(privateTourInquiryQueryKey),
+          locale,
+        ),
+      );
+    };
+
+    syncPrivateTourInterest();
+    window.addEventListener("popstate", syncPrivateTourInterest);
+    window.addEventListener(
+      "homeground:locationchange",
+      syncPrivateTourInterest,
+    );
+    return () => {
+      window.removeEventListener("popstate", syncPrivateTourInterest);
+      window.removeEventListener(
+        "homeground:locationchange",
+        syncPrivateTourInterest,
+      );
+    };
+  }, [locale]);
   useEffect(() => {
     if (status !== "success") return;
     const frame = window.requestAnimationFrame(() => {
@@ -224,6 +271,12 @@ export function HomepageQuickContact({
       email: email.trim(),
     },
     privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    productInterest: privateTourInterest
+      ? {
+          slug: privateTourInterest.slug,
+          name: privateTourInterest.name,
+        }
+      : null,
     attribution: {
       landingPath: inquirySubmitSurfaceByLocale[locale],
     },
@@ -388,6 +441,15 @@ export function HomepageQuickContact({
         variant === "hero" ? styles.quickContactHero : ""
       }`}
     >
+      {privateTourInterest && (
+        <aside
+          className={styles.quickContactProductInterest}
+          aria-label={privateTourInquiryContactCopy[locale].surfaceLabel}
+        >
+          <span>{privateTourInquiryContactCopy[locale].surfaceLabel}</span>
+          <strong>{privateTourInterest.name}</strong>
+        </aside>
+      )}
       <div className={styles.quickContactGrid}>
         <article
           className={`${styles.quickContactCard} ${styles.quickContactWhatsapp}`}
@@ -481,9 +543,15 @@ export function HomepageQuickContact({
           <h3>{contactCopy.emailTitle}</h3>
 
           {!emailIntakeReady ? (
-            <p className={styles.quickContactUnavailable}>
-              {contactCopy.emailUnavailable}
-            </p>
+            <div className={styles.quickContactEmailFallback}>
+              <p className={styles.quickContactUnavailable}>
+                {contactCopy.emailUnavailable}
+              </p>
+              <a href={fallbackMailto}>
+                {contactCopy.emailFallbackAction}
+                <ArrowUpRight aria-hidden="true" size={18} />
+              </a>
+            </div>
           ) : status === "success" ? (
             <div
               className={styles.quickContactSuccess}

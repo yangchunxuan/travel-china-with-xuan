@@ -172,3 +172,13 @@ export function getRouteServiceInterest(
   const id = value as RouteServiceId;
   return { id, ...routeServiceInterestByLocale[locale][id] };
 }
+
+export function buildRouteServiceContactHref(
+  homePath: string,
+  serviceId: RouteServiceId,
+): string {
+  const parameters = new URLSearchParams({
+    [routeServiceQueryKey]: serviceId,
+  });
+  return `${homePath}?${parameters.toString()}#planner-contact`;
+}

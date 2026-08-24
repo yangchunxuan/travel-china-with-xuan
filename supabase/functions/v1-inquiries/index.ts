@@ -459,7 +459,14 @@ async function handleRequest(request: Request): Promise<Response> {
           p_contact_email: payload.contact.email,
           p_privacy_notice_version: payload.privacyNoticeVersion,
           p_landing_path: payload.attribution.landingPath,
-          p_attribution: {},
+          p_attribution: payload.productInterest
+            ? {
+                productInterest: {
+                  slug: payload.productInterest.slug,
+                  name: payload.productInterest.name,
+                },
+              }
+            : {},
           p_idempotency_key_hash: idempotencyKeyHash,
           p_payload_hash: payloadHash,
           p_rate_limit_subject_hash: rateLimitSubjectHash,

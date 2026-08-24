@@ -767,11 +767,9 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
     quickContact.match(/rel="noopener noreferrer"/gu)?.length,
     2,
   );
-  assert.doesNotMatch(
-    quickContact,
-    /mailto:|fallbackEmail/u,
-    "homepage email must remain an on-site form in every Hero state",
-  );
+  assert.match(quickContact, /buildPrivateTourMailtoHref/u);
+  assert.match(quickContact, /href=\{fallbackMailto\}/u);
+  assert.match(quickContact, /contactCopy\.emailFallbackAction/u);
   assert.match(
     quickContact,
     /const buildPayload = \(\) => \(\{[\s\S]{0,500}entryPath: "homepage_email"[\s\S]{0,500}contact:\s*\{\s*channel: "email",\s*email: email\.trim\(\)/u,
@@ -780,13 +778,13 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
     quickContact,
     /attribution:\s*\{\s*landingPath: inquirySubmitSurfaceByLocale\[locale\],\s*\}/u,
   );
+  const payloadBuilderStart = quickContact.indexOf("const buildPayload");
   const payloadBuilder = quickContact.slice(
-    quickContact.indexOf("const buildPayload"),
-    quickContact.indexOf("const dispatch"),
+    payloadBuilderStart,
+    quickContact.indexOf("const dispatch =", payloadBuilderStart),
   );
   for (const forbidden of [
     /\bjourney\b/u,
-    /\bname\b/u,
     /\bphone(?:Raw|E164)?\b/u,
     /\bnote\b/u,
     /\butm(?:Source|Medium|Campaign)\b/u,
@@ -795,6 +793,10 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
   ]) {
     assert.doesNotMatch(payloadBuilder, forbidden);
   }
+  assert.match(
+    payloadBuilder,
+    /productInterest:\s*privateTourInterest[\s\S]{0,140}slug: privateTourInterest\.slug[\s\S]{0,100}name: privateTourInterest\.name/u,
+  );
   assert.match(
     quickContact,
     /if \(response\.ok\) \{[\s\S]{0,300}success\?\.state === "submitted"[\s\S]{0,180}typeof success\.publicReference === "string"[\s\S]{0,220}setStatus\("success"\)/u,

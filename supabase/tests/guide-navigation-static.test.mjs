@@ -32,9 +32,9 @@ test("global navigation keeps one distinct four-item information architecture", 
     "Private Tours",
     "私家团",
     "프라이빗 투어",
-    "Travel Guides",
-    "旅行指南",
-    "여행 가이드",
+    "Travel Advice",
+    "实用指南",
+    "실용 가이드",
     "How We Plan",
     "我们如何规划",
     "여행 설계 방식",
@@ -61,6 +61,7 @@ test("global navigation keeps one distinct four-item information architecture", 
   assert.match(header, /const toursAreCurrent =/);
   assert.match(header, /const toursAreExact = pageContext === "tours"/);
   assert.doesNotMatch(header, /copy\.cities\.eyebrow/);
+  assert.match(header, /className=\{styles\.desktopUtilityLink\}[\s\S]*copy\.navigation\.faq/);
   assert.match(header, /className=\{styles\.mobileUtilityLink\}[\s\S]*copy\.navigation\.faq/);
   assert.match(header, /\? "location"/);
   assert.doesNotMatch(header, /getGuideSearchCopy|Trip planning services|旅行规划服务|여행 설계 서비스/);
@@ -95,13 +96,15 @@ test("global navigation keeps one distinct four-item information architecture", 
 
   assert.match(css, /\.headerInner \{[\s\S]*?display: grid;[\s\S]*?grid-template-columns:/);
   assert.match(css, /\.desktopNav a \{[\s\S]*?white-space: nowrap;/);
+  assert.match(css, /\.desktopUtilityLink \{[\s\S]*?white-space: nowrap;/);
   assert.match(
     css,
-    /@media \(max-width: 1179\.98px\)[\s\S]*?\.mobileNav \{[\s\S]*?position: fixed;/,
+    /@media \(max-width: 1179\.98px\)[\s\S]*?\.desktopUtilityLink,[\s\S]*?display: none;[\s\S]*?\.mobileNav \{[\s\S]*?position: fixed;/,
   );
   assert.match(css, /:focus-visible/);
   assert.match(css, /\.mobileNavCopy small \{/);
   assert.match(css, /\.mobileUtilityLink \{/);
+  assert.match(css, /\.mobileLanguageNav a \{[\s\S]*?white-space: nowrap;/);
   assert.match(css, /max-height: 560px/);
 });
 

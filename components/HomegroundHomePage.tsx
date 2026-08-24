@@ -120,20 +120,22 @@ export function HomegroundHomePage({
   );
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
+  const destinationsIndexPath =
+    locale === "en" ? "/explore/" : `/${locale}/explore/`;
   const studioPath =
     locale === "en" ? "/studio/" : `/${locale}/studio/`;
   const heroLinks = [
+    {
+      href: destinationsIndexPath,
+      title: copy.cities.eyebrow,
+      body: copy.cities.intro,
+      hashTarget: null,
+    },
     {
       href: guidesIndexPath,
       title: copy.guides.eyebrow,
       body: copy.guides.title,
       hashTarget: null,
-    },
-    {
-      href: "#destinations",
-      title: copy.cities.eyebrow,
-      body: copy.cities.intro,
-      hashTarget: "#destinations" as const,
     },
     {
       href: studioPath,
@@ -550,7 +552,7 @@ export function HomegroundHomePage({
               <div className={showcaseStyles.heroActions}>
                 <a
                   className={showcaseStyles.primaryAction}
-                  href={guidesIndexPath}
+                  href={destinationsIndexPath}
                   aria-label={showcase.heroPrimary}
                 >
                   <span className={showcaseStyles.heroActionLong}>
@@ -865,7 +867,7 @@ export function HomegroundHomePage({
             {copy.faq.intro && <p>{copy.faq.intro}</p>}
           </div>
           <div className={styles.faqList}>
-            {copy.faq.items.slice(0, 3).map((item) => (
+            {copy.faq.items.slice(0, 7).map((item) => (
               <details key={item.question}>
                 <summary>{item.question}<span aria-hidden="true">+</span></summary>
                 <p>{item.answer}</p>

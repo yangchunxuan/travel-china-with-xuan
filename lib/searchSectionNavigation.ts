@@ -47,10 +47,10 @@ const copies: Record<HomegroundLocale, SearchSectionNavigationCopy> = {
     eyebrow: "Find your way around China",
     title: "Start with a place—or with the question.",
     introduction:
-      "Destinations organizes China by regions, cities and sights. All Guides is the complete library of published articles and practical answers.",
+      "Destinations is the place directory for choosing cities and connections. Travel Advice is the searchable library for solving entry, transport, stay and timing questions.",
     knowledge: {
       eyebrow: "Travel knowledge",
-      title: "Browse the planning map",
+      title: "Browse travel questions",
       description:
         "Seven connected ways to understand where to go and how the trip works.",
     },
@@ -58,15 +58,15 @@ const copies: Record<HomegroundLocale, SearchSectionNavigationCopy> = {
       eyebrow: "Browse by place",
       title: "Destinations",
       description:
-        "Move from regions to cities and sights, then see the routes and nearby places that connect them.",
+        "Choose a city or place, then see nights, stay areas, arrival points and sensible next stops.",
       action: "Explore destinations",
     },
     allGuides: {
-      eyebrow: "Search the library",
-      title: "All Guides",
+      eyebrow: "Solve a travel problem",
+      title: "Travel Advice",
       description:
-        "Search every published article and practical answer across transport, stays, entry, culture and more.",
-      action: "Open all guides",
+        "Search practical answers across entry, transport, stays, timing, culture and first-trip planning.",
+      action: "Open Travel Advice",
     },
     utility: {
       eyebrow: "Utility",
@@ -85,23 +85,23 @@ const copies: Record<HomegroundLocale, SearchSectionNavigationCopy> = {
     eyebrow: "选择查找方式",
     title: "按地点找，或按问题找。",
     introduction:
-      "「目的地」按地区、城市和景点组织；「全部指南」是完整的文章与实用答案库。两者内容相连，但入口用途不同。",
+      "“目的地”是按城市与连接关系组织的地点目录；“实用指南”用于搜索入境、交通、住宿和时间等旅行问题。",
     knowledge: {
       eyebrow: "旅行知识",
-      title: "从七类旅行决定继续",
+      title: "按旅行问题继续",
       description: "把去哪里、何时去、怎么走、住哪里和实际准备放进同一张知识地图。",
     },
     destinations: {
       eyebrow: "按地点浏览",
       title: "目的地",
-      description: "从地区到城市再到景点，并查看相互连接的路线与周边目的地。",
+      description: "选择城市或地点，再查看停留晚数、住宿区域、进出门户和合理的下一站。",
       action: "浏览目的地",
     },
     allGuides: {
-      eyebrow: "搜索完整资料库",
-      title: "全部指南",
-      description: "搜索所有已发布文章和实用答案，覆盖交通、住宿、入境、文化等主题。",
-      action: "打开全部指南",
+      eyebrow: "解决旅行问题",
+      title: "实用指南",
+      description: "搜索入境、交通、住宿、出行时间、文化和第一次旅行规划的明确答案。",
+      action: "打开实用指南",
     },
     utility: {
       eyebrow: "实用功能",
@@ -120,23 +120,23 @@ const copies: Record<HomegroundLocale, SearchSectionNavigationCopy> = {
     eyebrow: "찾는 방법을 선택하세요",
     title: "장소에서 시작하거나, 질문에서 시작하세요.",
     introduction:
-      "여행지는 지역·도시·명소 순으로 정리하고, 전체 가이드는 공개된 모든 글과 실용 답변을 모은 자료실입니다.",
+      "여행지는 도시와 연결 관계를 고르는 장소 디렉터리이고, 실용 가이드는 입국·교통·숙소·시기 문제를 푸는 검색 자료실입니다.",
     knowledge: {
       eyebrow: "여행 지식",
-      title: "일곱 가지 여행 판단으로 둘러보기",
+      title: "여행 질문별로 둘러보기",
       description: "어디로 갈지부터 시기, 이동, 숙소와 실제 준비까지 하나의 지도로 연결합니다.",
     },
     destinations: {
       eyebrow: "장소별 탐색",
       title: "여행지",
-      description: "지역에서 도시와 명소로 이동하며 연결 동선과 가까운 여행지를 함께 확인하세요.",
+      description: "도시나 장소를 고른 뒤 숙박일, 숙소 지역, 도착 지점과 다음 여행지를 확인하세요.",
       action: "여행지 둘러보기",
     },
     allGuides: {
-      eyebrow: "전체 자료 검색",
-      title: "전체 가이드",
-      description: "교통, 숙소, 입국, 문화 등 모든 주제의 공개 글과 실용 답변을 검색하세요.",
-      action: "전체 가이드 열기",
+      eyebrow: "여행 문제 해결",
+      title: "실용 가이드",
+      description: "입국, 교통, 숙소, 여행 시기, 문화와 첫 여행 계획에 관한 명확한 답을 검색하세요.",
+      action: "실용 가이드 열기",
     },
     utility: {
       eyebrow: "실용 기능",

@@ -42,6 +42,80 @@
   margin: 0 0 clamp(3.25rem, 6vw, 6.5rem);
 }
 
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0 0 clamp(3.25rem, 6vw, 6.5rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  color: var(--hub-muted);
+  display: flex;
+  font-size: 0.74rem;
+  font-weight: 680;
+  gap: 0.55rem;
+  line-height: 1.45;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--hub-rust);
+  text-decoration-color: currentColor;
+}
+
+.directoryHandoff {
+  align-items: end;
+  border-block-end: 1px solid var(--hub-line);
+  display: grid;
+  gap: clamp(2rem, 7vw, 8rem);
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.55fr);
+  padding: clamp(3rem, 6vw, 5.5rem) max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.directoryHandoff h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin: 1rem 0 0;
+  max-width: 13ch;
+}
+
+.directoryHandoff > div:last-child > p {
+  color: var(--hub-muted);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+}
+
+.directoryHandoff a {
+  align-items: center;
+  border-block-end: 1px solid var(--hub-ink);
+  color: var(--hub-ink);
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 760;
+  justify-content: space-between;
+  min-height: 2.8rem;
+  text-decoration: none;
+}
+
+.directoryHandoff a:hover,
+.directoryHandoff a:focus-visible {
+  border-color: var(--hub-rust);
+  color: var(--hub-rust);
+}
+
 .eyebrow {
   color: var(--hub-rust);
   margin: 0;

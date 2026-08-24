@@ -39,7 +39,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     items: {
       destinations: {
         label: "Destinations",
-        description: "Regions, cities and places",
+        description: "Choose cities and see how they connect",
         pathSegment: "explore/",
       },
       tours: {
@@ -48,8 +48,8 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "tours/",
       },
       guides: {
-        label: "Travel Guides",
-        description: "Entry, transport, stays and first trips",
+        label: "Travel Advice",
+        description: "Search entry, transport, stay and timing answers",
         pathSegment: "guides/",
       },
       studio: {
@@ -64,7 +64,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     items: {
       destinations: {
         label: "目的地",
-        description: "按地区、城市和景点开始",
+        description: "按城市与地点浏览，了解怎样连接",
         pathSegment: "explore/",
       },
       tours: {
@@ -73,8 +73,8 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "tours/",
       },
       guides: {
-        label: "旅行指南",
-        description: "入境、交通、住宿与第一次旅行",
+        label: "实用指南",
+        description: "搜索入境、交通、住宿与时间问题",
         pathSegment: "guides/",
       },
       studio: {
@@ -89,7 +89,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     items: {
       destinations: {
         label: "여행지",
-        description: "지역, 도시, 명소에서 시작",
+        description: "도시와 장소를 고르고 연결 동선 확인",
         pathSegment: "explore/",
       },
       tours: {
@@ -98,8 +98,8 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "tours/",
       },
       guides: {
-        label: "여행 가이드",
-        description: "입국, 교통, 숙소와 첫 중국 여행",
+        label: "실용 가이드",
+        description: "입국, 교통, 숙소와 시기 답변 검색",
         pathSegment: "guides/",
       },
       studio: {

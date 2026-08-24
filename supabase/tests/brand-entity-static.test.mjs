@@ -153,9 +153,13 @@ test("homepage social profiles accept only exact public profile URLs", async () 
   }
 
   const footer = await source("components/HomegroundFooter.tsx");
+  assert.match(
+    footer,
+    /getHomegroundSocialProfiles\(\)\.filter\([\s\S]*Boolean\(profile\.url\)/u,
+  );
   assert.match(footer, /socialProfiles\.map\(\(profile\) =>/u);
-  assert.match(footer, /profile\.url \? \(/u);
-  assert.match(footer, /data-social-profile-status="pending"/u);
+  assert.match(footer, /href=\{profile\.url\}/u);
+  assert.doesNotMatch(footer, /socialPending|data-social-profile-status="pending"/u);
   assert.doesNotMatch(footer, /href=["{]#(?:["}])/u);
 });
 

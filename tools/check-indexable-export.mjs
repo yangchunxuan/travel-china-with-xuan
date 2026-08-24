@@ -154,6 +154,40 @@ function assertIncludes(source, needle, context) {
   }
 }
 
+async function assertCrawlableInternalLink(check) {
+  const targetHref = `href="${routePathFromCanonical(check.canonical)}"`;
+  const sourcePath = path.join(outputRoot, check.linkedFrom);
+  const sourcePage = await readFile(sourcePath, "utf8");
+
+  if (sourcePage.includes(targetHref)) return;
+
+  const isGuideHub = /^(?:zh\/|ko\/)?guides\/index\.html$/.test(
+    check.linkedFrom,
+  );
+  if (!isGuideHub) {
+    assertIncludes(sourcePage, targetHref, `${check.route} internal link`);
+    return;
+  }
+
+  const paginationPaths = [
+    ...sourcePage.matchAll(
+      /href="(\/(?:zh\/|ko\/)?guides\/page\/\d+\/)"/g,
+    ),
+  ].map((match) => match[1]);
+
+  for (const paginationPath of new Set(paginationPaths)) {
+    const paginationPage = await readFile(
+      path.join(outputRoot, paginationPath, "index.html"),
+      "utf8",
+    );
+    if (paginationPage.includes(targetHref)) return;
+  }
+
+  throw new Error(
+    `${check.route} internal link: not found on ${check.linkedFrom} or any pagination page linked from it`,
+  );
+}
+
 const sitemap = await readFile(path.join(outputRoot, "sitemap.xml"), "utf8");
 
 for (const check of checks) {
@@ -179,15 +213,7 @@ for (const check of checks) {
     );
   }
 
-  const sourcePage = await readFile(
-    path.join(outputRoot, check.linkedFrom),
-    "utf8",
-  );
-  assertIncludes(
-    sourcePage,
-    `href="${routePathFromCanonical(check.canonical)}"`,
-    `${check.route} internal link`,
-  );
+  await assertCrawlableInternalLink(check);
 
   if (check.mustContain) {
     assertIncludes(html, check.mustContain, check.route);

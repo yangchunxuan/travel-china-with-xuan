@@ -287,6 +287,19 @@ export function getSearchCollectionEntry(
   return entry;
 }
 
+/**
+ * A review collection remains reachable at its stable URL, but it must not be
+ * promoted as an indexable guide's visible or structured-data parent. This
+ * helper is the single gate used by guide hierarchy rendering.
+ */
+export function getPublishedSearchCollectionEntry(
+  collectionId: SearchCollectionId,
+  locale: HomegroundLocale,
+): ContentManifestEntry | null {
+  const entry = getSearchCollectionEntry(collectionId, locale);
+  return entry.status === "published" && entry.indexability.index ? entry : null;
+}
+
 export function getSearchCollectionLanguagePaths(
   collectionId: SearchCollectionId,
 ) {

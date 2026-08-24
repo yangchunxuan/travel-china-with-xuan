@@ -131,7 +131,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("beijing", "en"),
         title: "Beijing Travel Guide: Nights, Areas, Stations, Next City",
-        h1: "Beijing travel guide: build the city around complete days, not a landmark list",
+        h1: "Beijing: build the city around complete days, not a landmark list",
         description:
           "How many nights Beijing really needs, which area should be your base, how PEK, PKX and eight railway stations reshape the first and last day, and which city should follow.",
         navTitle: "Beijing",
@@ -192,7 +192,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("beijing", "zh"),
         title: "北京旅行指南：住几晚、住哪里、机场车站与下一站",
-        h1: "北京旅行指南：先分配完整的一天，再安排景点",
+        h1: "北京：先分配完整的一天，再安排景点",
         description:
           "北京到底需要住几晚、选哪个区域做基地、首都机场与大兴机场和八座主要铁路站怎样改变首末两天，以及北京之后适合接哪座城市。",
         navTitle: "北京",
@@ -252,7 +252,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("beijing", "ko"),
         title: "베이징 여행 가이드: 숙박 일수·지역·기차역·다음 도시",
-        h1: "베이징 여행 가이드: 명소 목록보다 온전한 하루를 먼저 배분하세요",
+        h1: "베이징: 명소 목록보다 온전한 하루를 먼저 배분하세요",
         description:
           "베이징에 몇 박이 필요한지, 어느 지역을 거점으로 삼을지, PEK·PKX와 여덟 개 주요 기차역이 첫날과 마지막 날을 어떻게 바꾸는지, 다음 도시는 어디가 좋은지 정리합니다.",
         navTitle: "베이징",
@@ -346,7 +346,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("shanghai", "en"),
         title: "Shanghai Travel Guide: Days, Areas, Airports, Next City",
-        h1: "Shanghai travel guide: how many complete days, which bank, which gateway",
+        h1: "Shanghai: how many complete days, which bank, which gateway",
         description:
           "Decide how many complete Shanghai days you have, whether to base in Puxi or Pudong, how PVG, SHA and the Airport Link change arrival, and whether Suzhou or Hangzhou is a day trip or the next hotel.",
         navTitle: "Shanghai",
@@ -407,7 +407,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("shanghai", "zh"),
         title: "上海旅行指南：几个完整日、住哪一岸、机场与下一站",
-        h1: "上海旅行指南：先算完整游览日，再决定住哪一岸",
+        h1: "上海：先算完整游览日，再决定住哪一岸",
         description:
           "上海真正能有几个完整游览日、住浦西还是浦东、浦东与虹桥机场和机场联络线怎样改变抵达，以及苏州杭州应当当日往返还是直接换城。",
         navTitle: "上海",
@@ -457,7 +457,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("shanghai", "ko"),
         title: "상하이 여행 가이드: 온전한 일수·지역·공항·다음 도시",
-        h1: "상하이 여행 가이드: 온전한 하루를 먼저 세고, 어느 강안에 묵을지 정하세요",
+        h1: "상하이: 온전한 하루를 먼저 세고, 어느 강안에 묵을지 정하세요",
         description:
           "상하이에서 온전한 관광일이 며칠인지, 푸시와 푸둥 중 어디에 묵을지, PVG·SHA와 공항연락선이 도착을 어떻게 바꾸는지, 쑤저우와 항저우는 당일치기인지 다음 도시인지 정리합니다.",
         navTitle: "상하이",
@@ -540,7 +540,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("xian", "en"),
         title: "Xi'an Travel Guide: Nights, Base, Stations and Next City",
-        h1: "Xi'an travel guide: how many nights, which base, and what comes next",
+        h1: "Xi'an: how many nights, which base, and what comes next",
         description:
           "Three nights is the balanced Xi'an stay. Compare bases inside and south of the City Wall, read XIY and three railway stations correctly, and decide whether Mount Hua earns another day.",
         navTitle: "Xi'an",
@@ -587,7 +587,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("xian", "zh"),
         title: "西安旅行指南：住几晚、住哪里、车站与下一站",
-        h1: "西安旅行指南：住几晚、以哪里为基地、下一站去哪",
+        h1: "西安：住几晚、以哪里为基地、下一站去哪",
         description:
           "西安通常三晚最平衡。比较城墙内与城南两类住宿基地，正确理解咸阳机场与三座铁路站，并判断华山值不值得再加一天。",
         navTitle: "西安",
@@ -634,7 +634,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("xian", "ko"),
         title: "시안 여행 가이드: 숙박 일수·거점·기차역·다음 도시",
-        h1: "시안 여행 가이드: 몇 박, 어느 거점, 그리고 다음 도시",
+        h1: "시안: 몇 박, 어느 거점, 그리고 다음 도시",
         description:
           "시안은 보통 3박이 균형점입니다. 성벽 안과 성 남쪽 거점을 비교하고, XIY 공항과 세 기차역을 정확히 읽고, 화산에 하루를 더 쓸지 판단하세요.",
         navTitle: "시안",
@@ -716,7 +716,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("chengdu", "en"),
         title: "Chengdu Travel Guide: Nights, Base, Airports, Sichuan Next",
-        h1: "Chengdu travel guide: settle the city first, then build the Sichuan route",
+        h1: "Chengdu: settle the city first, then build the Sichuan route",
         description:
           "How many complete days Chengdu itself needs, which base protects them, why TFU and CTU are separate decisions, and which Sichuan trips are branches rather than half-days.",
         navTitle: "Chengdu",
@@ -778,7 +778,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("chengdu", "zh"),
         title: "成都旅行指南：住几晚、住哪里、机场与四川下一站",
-        h1: "成都旅行指南：先把城市住稳，再搭四川路线",
+        h1: "成都：先把城市住稳，再搭四川路线",
         description:
           "成都本身需要几个完整日、哪个基地能保住这些日子、天府与双流为什么是两个独立决定，以及哪些四川行程是独立支线而不是半天。",
         navTitle: "成都",
@@ -820,7 +820,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("chengdu", "ko"),
         title: "청두 여행 가이드: 숙박 일수·거점·공항·쓰촨 다음 코스",
-        h1: "청두 여행 가이드: 도시를 먼저 정하고 쓰촨 동선을 붙이세요",
+        h1: "청두: 도시를 먼저 정하고 쓰촨 동선을 붙이세요",
         description:
           "청두 자체에 온전한 며칠이 필요한지, 어느 거점이 그 시간을 지켜 주는지, TFU와 CTU가 왜 별개의 결정인지, 어떤 쓰촨 일정이 반나절이 아니라 독립된 갈래인지 정리합니다.",
         navTitle: "청두",
@@ -897,7 +897,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("guangzhou", "en"),
         title: "Guangzhou Travel Guide: Nights, Base, Terminal, Station",
-        h1: "Guangzhou travel guide: decide whether the city gets nights, then pick the terminal and the station",
+        h1: "Guangzhou: decide whether the city gets nights, then pick the terminal and the station",
         description:
           "Whether Guangzhou deserves its own nights, which district to base in, how Baiyun's terminals and five railway stations change the plan, and what Foshan, Shunde or Chimelong really cost.",
         navTitle: "Guangzhou",
@@ -956,7 +956,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("guangzhou", "zh"),
         title: "广州旅行指南：住不住、住哪里、哪个航站楼、哪个车站",
-        h1: "广州旅行指南：住几晚、住哪个区、走哪个门户",
+        h1: "广州：住几晚、住哪个区、走哪个门户",
         description:
           "广州值不值得单独住几晚、以哪个城区为基地、白云机场航站楼与五个火车站怎样改变计划，以及佛山、顺德和长隆真正要花多少时间。",
         navTitle: "广州",
@@ -998,7 +998,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("guangzhou", "ko"),
         title: "광저우 여행 가이드: 숙박 여부·지역·터미널·기차역",
-        h1: "광저우 여행 가이드: 묵을지부터 정하고 터미널과 역을 고르세요",
+        h1: "광저우: 묵을지부터 정하고 터미널과 역을 고르세요",
         description:
           "광저우에 따로 묵을 가치가 있는지, 어느 지역을 거점으로 삼을지, 바이윈공항 터미널과 다섯 기차역이 계획을 어떻게 바꾸는지, 포산·순더·침롱이 실제로 얼마를 쓰는지 정리합니다.",
         navTitle: "광저우",
@@ -1073,7 +1073,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("hangzhou", "en"),
         title: "Hangzhou Travel Guide: Day Trip, Nights, Areas and Routes",
-        h1: "Hangzhou travel guide: decide whether the city is a day trip or a real stay",
+        h1: "Hangzhou: decide whether the city is a day trip or a real stay",
         description:
           "Choose a Shanghai day trip or two- to three-night Hangzhou stay, then match the hotel area, station, West Lake cluster, western hills, Grand Canal and Liangzhu.",
         navTitle: "Hangzhou",
@@ -1115,7 +1115,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("hangzhou", "zh"),
         title: "杭州旅行指南：一日往返、住几晚、住宿区域与路线",
-        h1: "杭州旅行指南：先决定一日往返，还是把杭州真正住下来",
+        h1: "杭州：先决定一日往返，还是把杭州真正住下来",
         description:
           "判断从上海一日往返还是在杭州住两至三晚，再选择住宿区域、铁路站、西湖分区、西部山地、大运河与良渚。",
         navTitle: "杭州",
@@ -1156,7 +1156,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("hangzhou", "ko"),
         title: "항저우 여행 가이드: 당일치기·숙박 일수·지역·동선",
-        h1: "항저우 여행 가이드: 당일치기인지 제대로 머물 도시인지 먼저 정하세요",
+        h1: "항저우: 당일치기인지 제대로 머물 도시인지 먼저 정하세요",
         description:
           "상하이 당일치기와 항저우 2~3박을 비교하고 숙소 지역, 기차역, 서호 구역, 서쪽 구릉, 대운하와 량주를 맞춥니다.",
         navTitle: "항저우",
@@ -1232,7 +1232,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("zhangjiajie", "en"),
         title: "Zhangjiajie Travel Guide: Days, Bases, Parks and Routes",
-        h1: "Zhangjiajie travel guide: separate the city, Wulingyuan and the mountain systems",
+        h1: "Zhangjiajie: separate the city, Wulingyuan and the mountain systems",
         description:
           "Choose 2, 3 or 4 full days, Zhangjiajie city or Wulingyuan as a base, then connect the National Forest Park, Tianmen Mountain, Grand Canyon and the next city.",
         navTitle: "Zhangjiajie",
@@ -1273,7 +1273,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("zhangjiajie", "zh"),
         title: "张家界旅行指南：玩几天、住哪里、景区关系与路线",
-        h1: "张家界旅行指南：先分清市区、武陵源和不同山岳系统",
+        h1: "张家界：先分清市区、武陵源和不同山岳系统",
         description:
           "选择2、3或4个完整游览日，决定住张家界市区还是武陵源，再串联森林公园、天门山、大峡谷与下一座城市。",
         navTitle: "张家界",
@@ -1314,7 +1314,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("zhangjiajie", "ko"),
         title: "장자제 여행 가이드: 일정·숙소 거점·공원·다음 도시",
-        h1: "장자제 여행 가이드: 시내, 우링위안과 서로 다른 산악 체계를 나누세요",
+        h1: "장자제: 시내, 우링위안과 서로 다른 산악 체계를 나누세요",
         description:
           "2·3·4일의 온전한 관광일과 장자제 시내 또는 우링위안 거점을 정한 뒤 국가삼림공원, 톈먼산, 대협곡과 다음 도시를 연결합니다.",
         navTitle: "장자제",
@@ -1386,7 +1386,7 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("chongqing", "en"),
         title: "Chongqing Travel Guide: Nights, Areas, Stations and Routes",
-        h1: "Chongqing travel guide: choose the right base, station and number of nights",
+        h1: "Chongqing: choose the right base, station and number of nights",
         description:
           "Decide how many nights Chongqing needs, where to stay, which airport or railway station is on the ticket, and whether Wulong, Dazu, Chengdu or a cruise belongs next.",
         navTitle: "Chongqing",
@@ -1453,7 +1453,7 @@ export const destinationHubRegistry = [
       zh: {
         path: hubPath("chongqing", "zh"),
         title: "重庆旅行指南：住几晚、住哪里、车站与下一站",
-        h1: "重庆旅行指南：选对住宿基地、车站和停留晚数",
+        h1: "重庆：选对住宿基地、车站和停留晚数",
         description:
           "判断重庆需要住几晚、住哪个区域、票面对应哪座机场或铁路站，以及武隆、大足、成都或长江游轮是否适合作为下一段。",
         navTitle: "重庆",
@@ -1519,7 +1519,7 @@ export const destinationHubRegistry = [
       ko: {
         path: hubPath("chongqing", "ko"),
         title: "충칭 여행 가이드: 숙박 일수·지역·역·다음 동선",
-        h1: "충칭 여행 가이드: 숙소 거점, 역과 체류 일수를 먼저 고르세요",
+        h1: "충칭: 숙소 거점, 역과 체류 일수를 먼저 고르세요",
         description:
           "충칭에 몇 박 머물지, 어느 지역에 숙박할지, 승차권의 공항·기차역이 어디인지, 우룽·다쭈·청두·크루즈 중 무엇을 다음에 넣을지 결정합니다.",
         navTitle: "충칭",
@@ -1612,6 +1612,15 @@ export function getDestinationHubLanguagePaths(id: DestinationHubId) {
   return Object.fromEntries(
     homegroundLocales.map((locale) => [locale, hub.locales[locale].path]),
   ) as Record<HomegroundLocale, string>;
+}
+
+export function getDestinationHubsForGuide(
+  guideId: GuideId,
+  locale: HomegroundLocale = "en",
+) {
+  return destinationHubRegistry
+    .filter((hub) => (hub.supportGuideIds as readonly GuideId[]).includes(guideId))
+    .map((hub) => getDestinationHubEntry(hub.id, locale));
 }
 
 export function isDestinationHubId(value: string): value is DestinationHubId {

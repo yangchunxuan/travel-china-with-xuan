@@ -372,7 +372,7 @@ export function buildSearchHubContentNodes(): ContentNode[] {
           schemaLocale,
           {
             path: getSearchSectionPath(section, locale),
-            title: copy.navLabel,
+            title: copy.metadataTitle ?? copy.navLabel,
             description: copy.description,
             h1: copy.title,
             bodyResource: `search-hub:${section}`,
@@ -393,7 +393,12 @@ export function buildSearchHubContentNodes(): ContentNode[] {
       primaryIntent: hubIntent[section],
       entityIds: ["country-china"],
       relationIds: [],
-      parentContentId: "system-guides",
+      parentContentId:
+        section === "explore"
+          ? "system-home"
+          : section === "services"
+            ? "system-studio"
+            : "system-guides",
       status: approvedForIndex ? "published" : "review",
       indexability: approvedForIndex
         ? { index: true, follow: true }

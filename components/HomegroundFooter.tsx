@@ -40,15 +40,15 @@ const footerSections: Record<
     destinationsHeading: string;
     homegroundHeading: string;
     socialLabel: string;
-    socialPending: string;
     privateTours: string;
+    allDestinations: string;
     operatorPrefix: string;
     operatorSuffix: string;
     codeLabel: string;
   }
 > = {
   en: {
-    guides: "Travel guides",
+    guides: "Travel Advice",
     services: "Trip planning services",
     legalLabel: "Business and service information",
     legalHeading: "Legal",
@@ -56,14 +56,14 @@ const footerSections: Record<
     destinationsHeading: "Destinations",
     homegroundHeading: "Homeground",
     socialLabel: "Follow Homeground",
-    socialPending: "profile link pending",
     privateTours: "Private tours",
+    allDestinations: "All destinations",
     operatorPrefix: "Homeground is operated by",
     operatorSuffix: ".",
     codeLabel: "Unified Social Credit Code",
   },
   zh: {
-    guides: "旅行指南",
+    guides: "实用指南",
     services: "旅行规划服务",
     legalLabel: "经营与服务信息",
     legalHeading: "法律与经营信息",
@@ -71,14 +71,14 @@ const footerSections: Record<
     destinationsHeading: "目的地",
     homegroundHeading: "Homeground",
     socialLabel: "关注 Homeground",
-    socialPending: "账号链接待配置",
     privateTours: "私家团",
+    allDestinations: "全部目的地",
     operatorPrefix: "Homeground 由",
     operatorSuffix: "运营。",
     codeLabel: "统一社会信用代码",
   },
   ko: {
-    guides: "여행 가이드",
+    guides: "실용 가이드",
     services: "여행 설계 서비스",
     legalLabel: "사업자 및 서비스 안내",
     legalHeading: "법률 및 사업자 정보",
@@ -86,8 +86,8 @@ const footerSections: Record<
     destinationsHeading: "여행지",
     homegroundHeading: "Homeground",
     socialLabel: "Homeground 팔로우",
-    socialPending: "프로필 링크 설정 대기",
     privateTours: "프라이빗 투어",
+    allDestinations: "전체 여행지",
     operatorPrefix: "Homeground는",
     operatorSuffix: "에서 운영합니다.",
     codeLabel: "통일사회신용코드",
@@ -142,11 +142,14 @@ export function HomegroundFooter({
   const planningServicesPath = planningServicesCopy.path;
   const guideHubPath = `${copy.path}guides/`;
   const tourHubPath = `${copy.path}tours/`;
+  const destinationsHubPath = `${copy.path}explore/`;
   const sectionLabels = footerSections[locale];
   const consentCopy = getAnalyticsConsentCopy(locale);
   const studioPath = `${copy.path}studio/`;
   const facebookPageUrl = getHomegroundFacebookPageUrl();
-  const socialProfiles = getHomegroundSocialProfiles();
+  const socialProfiles = getHomegroundSocialProfiles().filter(
+    (profile) => Boolean(profile.url),
+  );
   const [activeHash, setActiveHash] = useState("");
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
@@ -219,6 +222,9 @@ export function HomegroundFooter({
                 {sectionLabels.destinationsHeading}
               </h2>
               <ul>
+                <li>
+                  <a href={destinationsHubPath}>{sectionLabels.allDestinations}</a>
+                </li>
                 {destinationHubItems.map((city) => (
                   <li key={city.id}>
                     <a href={city.href}>{city.label}</a>
@@ -291,11 +297,11 @@ export function HomegroundFooter({
           <div className={homepageStyles.meta}>
             <div className={homepageStyles.copyrightSocial}>
               <p>{copy.footer.copyright(new Date().getFullYear())}</p>
-              <nav aria-label={sectionLabels.socialLabel}>
-                <ul>
-                  {socialProfiles.map((profile) => (
-                    <li key={profile.platform}>
-                      {profile.url ? (
+              {socialProfiles.length > 0 ? (
+                <nav aria-label={sectionLabels.socialLabel}>
+                  <ul>
+                    {socialProfiles.map((profile) => (
+                      <li key={profile.platform}>
                         <a
                           aria-label={profile.label}
                           href={profile.url}
@@ -304,21 +310,11 @@ export function HomegroundFooter({
                         >
                           <FooterSocialIcon platform={profile.platform} />
                         </a>
-                      ) : (
-                        <span
-                          aria-label={`${profile.label}: ${sectionLabels.socialPending}`}
-                          className={homepageStyles.socialPending}
-                          data-social-profile-status="pending"
-                          role="img"
-                          title={`${profile.label}: ${sectionLabels.socialPending}`}
-                        >
-                          <FooterSocialIcon platform={profile.platform} />
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              ) : null}
             </div>
 
             <p className={homepageStyles.operator}>
@@ -346,6 +342,11 @@ export function HomegroundFooter({
           <span>{copy.footer.studioLabel}</span>
         </div>
         <nav aria-label={copy.navigation.footerLabel}>
+          {pageContext === "destinations" ? (
+            <span aria-current="page">{sectionLabels.allDestinations}</span>
+          ) : (
+            <a href={destinationsHubPath}>{sectionLabels.allDestinations}</a>
+          )}
           {pageContext === "guides" ? (
             <span aria-current="page">{sectionLabels.guides}</span>
           ) : (

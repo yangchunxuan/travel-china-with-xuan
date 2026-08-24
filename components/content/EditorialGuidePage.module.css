@@ -157,6 +157,62 @@
   padding: clamp(1.75rem, 4vw, 3.5rem);
 }
 
+.relatedDestinations {
+  border-block-start: 1px solid var(--hg-color-line);
+  display: grid;
+  gap: clamp(2rem, 7vw, 7rem);
+  grid-template-columns: minmax(16rem, 0.55fr) minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1380px;
+  padding: clamp(3rem, 6vw, 5.5rem) max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.relatedDestinations > div > p {
+  color: var(--hg-color-rust);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+}
+
+.relatedDestinations h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+  max-width: 12ch;
+}
+
+.relatedDestinations ul {
+  border-block-start: 1px solid var(--hg-color-ink);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.relatedDestinations li {
+  border-block-end: 1px solid var(--hg-color-line);
+}
+
+.relatedDestinations a {
+  align-items: center;
+  color: var(--hg-color-ink);
+  display: flex;
+  font-size: 0.86rem;
+  font-weight: 720;
+  justify-content: space-between;
+  min-height: 3.4rem;
+  text-decoration: none;
+}
+
+.relatedDestinations a:hover,
+.relatedDestinations a:focus-visible {
+  color: var(--hg-color-rust);
+}
+
 .cta > div {
   flex: 1 1 28rem;
 }
@@ -224,6 +280,10 @@
 
   .cta {
     margin-inline: 1rem;
+  }
+
+  .relatedDestinations {
+    grid-template-columns: 1fr;
   }
 }
 

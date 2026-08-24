@@ -253,6 +253,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: studio,
       lifecycle: getLegacySystemContentLifecycle("studio"),
       schemaTypes: ["AboutPage"],
+      parentContentId: "system-home",
     }),
     systemNode({
       id: "author-evan",
@@ -262,6 +263,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: evan,
       lifecycle: getLegacySystemContentLifecycle("author-evan"),
       schemaTypes: ["ProfilePage", "Person"],
+      parentContentId: "system-studio",
     }),
     systemNode({
       id: "guides",
@@ -271,6 +273,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: guides,
       lifecycle: getLegacySystemContentLifecycle("guides"),
       schemaTypes: ["CollectionPage", "ItemList"],
+      parentContentId: "system-home",
     }),
     systemNode({
       id: "itinerary-review",
@@ -280,6 +283,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: itineraryReview,
       lifecycle: getLegacySystemContentLifecycle("itinerary-review"),
       schemaTypes: ["Service"],
+      parentContentId: "hub-services",
     }),
     systemNode({
       id: "zhangjiajie-4-day-private-tour",

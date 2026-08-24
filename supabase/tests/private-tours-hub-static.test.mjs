@@ -90,6 +90,10 @@ test("hub copy and language ownership are complete and self-consistent", () => {
     assert.ok(copy.metadata.title.length > 0);
     assert.ok(copy.metadata.description.length > 40);
     assert.ok(copy.title.length > 0);
+    assert.ok(copy.quickCompareTitle.length > 0);
+    assert.ok(copy.quickCompareIntroduction.length > 40);
+    assert.ok(copy.quickFitLabel.length > 0);
+    assert.ok(copy.quickMovementLabel.length > 0);
     assert.equal(copy.summarySteps.length, 3);
     assert.ok(
       copy.tourCount(expectedPublishedCount).includes(
@@ -146,6 +150,18 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /numberOfItems: products\.length/);
   assert.match(component, /itemListElement: products\.map/);
   assert.match(component, /products\.map\(\(product, index\)/);
+  assert.match(component, /<section className=\{styles\.quickCompare\} aria-labelledby="tour-quick-compare-title">/);
+  assert.match(component, /<ol className=\{styles\.quickList\}>/);
+  assert.match(component, /function CompactTourComparison/);
+  assert.ok(
+    component.indexOf("className={styles.quickCompare}") <
+      component.indexOf("className={styles.catalog}"),
+    "the compact comparison must precede the long product cards",
+  );
+  assert.match(component, /product\.startingPrice\.formatted/);
+  assert.match(component, /copy\.groupBasis\(product\.startingPrice\.travelers\)/);
+  assert.match(component, /<dt>\{copy\.quickFitLabel\}<\/dt>/);
+  assert.match(component, /<dt>\{copy\.quickMovementLabel\}<\/dt>/);
   assert.match(component, /<nav[^>]*className=\{styles\.breadcrumb\}/);
   assert.match(component, /<PrivateTourCatalogLink[^>]*href=\{product\.href\}/);
   assert.match(component, /product\.comparison\.route/);
@@ -163,6 +179,14 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(styles, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
   assert.match(styles, /@media \(max-width: 48rem\)/);
   assert.match(styles, /\.catalogGrid \{[\s\S]*?grid-template-columns: 1fr/);
+  assert.match(styles, /\.quickLink \{[\s\S]*?grid-template-columns:/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.quickLink \{[\s\S]*?grid-template-columns: 1\.6rem minmax\(0, 1fr\)/);
+  assert.match(
+    styles,
+    /@media \(max-width: 40rem\)\s*\{[\s\S]*?\.catalog\s*\{[\s\S]*?display:\s*none;/,
+    "phones must expose the compact list as the only accessible tour catalog",
+  );
+  assert.doesNotMatch(styles, /\.quick(?:List|Details|Link)[^{]*\{[^}]*display:\s*none/);
   assert.doesNotMatch(styles, /overflow-x:\s*(?:auto|scroll)|scroll-snap/);
   assert.doesNotMatch(styles, /last-child:nth-child\(odd\)/);
 

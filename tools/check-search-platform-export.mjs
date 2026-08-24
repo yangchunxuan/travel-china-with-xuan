@@ -94,6 +94,16 @@ function guideRoute(slug, locale) {
   return `${locale.prefix}guides/${slug}/`;
 }
 
+function guidesHubPageRoute(page, locale) {
+  return page === 1
+    ? `${locale.prefix}guides/`
+    : `${locale.prefix}guides/page/${page}/`;
+}
+
+function absoluteGuidesHubPageRoute(page, locale) {
+  return `${siteUrl}/${guidesHubPageRoute(page, locale)}`;
+}
+
 function tourHubRoute(locale) {
   return `${locale.prefix}tours/`;
 }
@@ -650,14 +660,37 @@ for (const section of allSections) {
   }
 }
 
+const guidesHubPageCounts = new Map();
 for (const locale of locales) {
   const hubPath = path.join(outputRoot, `${locale.prefix}guides/`, "index.html");
   const hub = await readFile(hubPath, "utf8");
-  for (const section of allSections) {
+  const linkedPageNumbers = [
+    ...hub.matchAll(
+      new RegExp(
+        `href="/${locale.prefix}guides/page/(\\d+)/(?:#guide-list)?"`,
+        "gu",
+      ),
+    ),
+  ].map((match) => Number(match[1]));
+  guidesHubPageCounts.set(
+    locale.runtime,
+    Math.max(1, ...linkedPageNumbers),
+  );
+  // Travel Advice owns problem-solving content, not the destination directory,
+  // private tours, services or unpublished tool shells. Those have their own
+  // purpose-built entry points and must not be recreated as a nine-card index.
+  for (const section of [
+    "plan",
+    "transport",
+    "when-to-go",
+    "stay",
+    "essentials",
+    "culture",
+  ]) {
     assertIncludes(
       hub,
       `href="/${locale.prefix}${section}/"`,
-      `/${locale.prefix}guides/ section index`,
+      `/${locale.prefix}guides/ task handoff`,
     );
   }
   assertIncludes(
@@ -666,6 +699,103 @@ for (const locale of locales) {
     `/${locale.prefix}guides/ search form`,
   );
   assertIncludes(hub, 'name="q"', `/${locale.prefix}guides/ search query field`);
+}
+
+for (const locale of locales) {
+  const pageCount = guidesHubPageCounts.get(locale.runtime) ?? 1;
+  const guidePathPrefix = `/${locale.prefix}guides/`;
+  const expectedGuidePaths = sitemapLocs
+    .map((url) => new URL(url).pathname)
+    .filter((pathname) => {
+      if (!pathname.startsWith(guidePathPrefix)) return false;
+      const remainder = pathname.slice(guidePathPrefix.length);
+      return (
+        pathname !== entryOwnerPath(locale) &&
+        remainder.length > 1 &&
+        /^.[^/]*\/$/u.test(remainder)
+      );
+    });
+  const expectedGuidePathSet = new Set(expectedGuidePaths);
+  const discoveredGuidePaths = [];
+
+  for (let page = 1; page <= pageCount; page += 1) {
+    const route = guidesHubPageRoute(page, locale);
+    const context = `/${route}`;
+    const canonical = absoluteGuidesHubPageRoute(page, locale);
+    const filePath = path.join(outputRoot, route, "index.html");
+    if (!(await fileExists(filePath))) {
+      throw new Error(`${context}: paginated guide catalog export is missing`);
+    }
+
+    const html = await readFile(filePath, "utf8");
+    assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+    if (/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/iu.test(html)) {
+      throw new Error(`${context}: indexable guide catalog page contains noindex`);
+    }
+    if (!sitemapLocs.includes(canonical)) {
+      throw new Error(`${context}: indexable guide catalog page is missing from sitemap.xml`);
+    }
+
+    if (page > 1) {
+      const locIndex = sitemap.indexOf(`<loc>${canonical}</loc>`);
+      const urlStart = sitemap.lastIndexOf("<url>", locIndex);
+      const urlEnd = sitemap.indexOf("</url>", locIndex);
+      const sitemapEntry = sitemap.slice(urlStart, urlEnd + 6);
+      if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/u.test(sitemapEntry)) {
+        throw new Error(`${context}: paginated sitemap entry has no content-derived lastmod`);
+      }
+    }
+
+    for (const target of locales) {
+      if (page > (guidesHubPageCounts.get(target.runtime) ?? 1)) continue;
+      assertIncludes(
+        html,
+        `<link rel="alternate" hrefLang="${target.hreflang}" href="${absoluteGuidesHubPageRoute(page, target)}"/>`,
+        `${context} ${target.hreflang} page-equivalent alternate`,
+      );
+    }
+    if (page <= (guidesHubPageCounts.get("en") ?? 1)) {
+      assertIncludes(
+        html,
+        `<link rel="alternate" hrefLang="x-default" href="${absoluteGuidesHubPageRoute(page, locales[0])}"/>`,
+        `${context} x-default page-equivalent alternate`,
+      );
+    }
+
+    const itemCount = Number(html.match(/"numberOfItems":(\d+)/u)?.[1] ?? "0");
+    if (itemCount < 1 || itemCount > 24) {
+      throw new Error(
+        `${context}: ItemList must expose between 1 and 24 guides; received ${itemCount}`,
+      );
+    }
+    const itemList = jsonLdNodes(html, context).find((node) =>
+      nodeHasType(node, "ItemList"),
+    );
+    const structuredGuidePaths = (itemList?.itemListElement ?? []).map(
+      (item) => new URL(item.url).pathname,
+    );
+    if (structuredGuidePaths.length !== itemCount) {
+      throw new Error(
+        `${context}: ${structuredGuidePaths.length} ItemList entries disagree with numberOfItems ${itemCount}`,
+      );
+    }
+    for (const guidePath of structuredGuidePaths) {
+      if (!expectedGuidePathSet.has(guidePath)) {
+        throw new Error(`${context}: ItemList exposes a non-indexable guide ${guidePath}`);
+      }
+      assertIncludes(html, `href="${guidePath}"`, `${context} ${guidePath}`);
+    }
+    discoveredGuidePaths.push(...structuredGuidePaths);
+  }
+
+  if (new Set(discoveredGuidePaths).size !== discoveredGuidePaths.length) {
+    throw new Error(`/${locale.prefix}guides/: a guide card appears on more than one page`);
+  }
+  assertSameStringSet(
+    discoveredGuidePaths,
+    expectedGuidePaths,
+    `/${locale.prefix}guides/ paginated guide crawlability`,
+  );
 }
 
 for (const locale of locales) {

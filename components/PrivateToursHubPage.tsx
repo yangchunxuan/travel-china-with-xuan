@@ -135,6 +135,13 @@ function TourComparisonCard({
           <div className={styles.tourBody}>
             <p className={styles.routeLine}>{product.comparison.route}</p>
             <h2>{product.title}</h2>
+            <p className={styles.startingPrice}>
+              <span>{copy.startingPriceLabel}</span>
+              <strong>{product.startingPrice.formatted}</strong>
+              <small>
+                {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+              </small>
+            </p>
             <p className={styles.description}>{product.description}</p>
 
             <dl className={styles.comparisonList}>
@@ -164,6 +171,61 @@ function TourComparisonCard({
           </div>
         </PrivateTourCatalogLink>
       </article>
+    </li>
+  );
+}
+
+function CompactTourComparison({
+  product,
+  index,
+  locale,
+  publishedTourCount,
+}: {
+  product: PublishedPrivateTourCatalogItem;
+  index: number;
+  locale: HomegroundLocale;
+  publishedTourCount: number;
+}) {
+  const copy = getPrivateTourHubCopy(locale, publishedTourCount);
+
+  return (
+    <li data-tour-id={product.id}>
+      <PrivateTourCatalogLink
+        className={styles.quickLink}
+        href={product.href}
+        locale={locale}
+        position={index + 1}
+        productSlug={product.slug}
+      >
+        <span className={styles.quickNumber} aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div className={styles.quickIdentity}>
+          <p>{product.comparison.route}</p>
+          <h3>{product.title}</h3>
+          <p className={styles.quickFacts}>
+            <span>{copy.duration(product.days, product.nights)}</span>
+            <span>
+              <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
+              <strong>{product.startingPrice.formatted}</strong>{" "}
+              {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+            </span>
+          </p>
+        </div>
+        <dl className={styles.quickDetails}>
+          <div>
+            <dt>{copy.quickFitLabel}</dt>
+            <dd>{product.comparison.fit}</dd>
+          </div>
+          <div>
+            <dt>{copy.quickMovementLabel}</dt>
+            <dd>{product.comparison.pace}</dd>
+          </div>
+        </dl>
+        <span className={styles.quickAction}>
+          <span>{copy.quickAction}</span><span aria-hidden="true">→</span>
+        </span>
+      </PrivateTourCatalogLink>
     </li>
   );
 }
@@ -215,22 +277,25 @@ export function PrivateToursHubPage({
           </div>
         </header>
 
-        <section className={styles.selection} aria-labelledby="tour-selection-title">
-          <div className={styles.selectionInner}>
-            <div className={styles.selectionHeading}>
-              <p className={styles.eyebrow}>{copy.summaryLabel}</p>
-              <h2 id="tour-selection-title">{copy.summaryTitle}</h2>
+        <section className={styles.quickCompare} aria-labelledby="tour-quick-compare-title">
+          <div className={styles.quickIntro}>
+            <div>
+              <p className={styles.eyebrow}>{copy.quickCompareEyebrow}</p>
+              <h2 id="tour-quick-compare-title">{copy.quickCompareTitle}</h2>
             </div>
-            <ol className={styles.selectionSteps}>
-              {copy.summarySteps.map((step) => (
-                <li key={step.number}>
-                  <span aria-hidden="true">{step.number}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </li>
-              ))}
-            </ol>
+            <p>{copy.quickCompareIntroduction}</p>
           </div>
+          <ol className={styles.quickList}>
+            {products.map((product, index) => (
+              <CompactTourComparison
+                key={product.id}
+                product={product}
+                index={index}
+                locale={locale}
+                publishedTourCount={products.length}
+              />
+            ))}
+          </ol>
         </section>
 
         <section className={styles.catalog} aria-labelledby="tour-catalog-title">
@@ -256,6 +321,24 @@ export function PrivateToursHubPage({
               />
             ))}
           </ol>
+        </section>
+
+        <section className={styles.selection} aria-labelledby="tour-selection-title">
+          <div className={styles.selectionInner}>
+            <div className={styles.selectionHeading}>
+              <p className={styles.eyebrow}>{copy.summaryLabel}</p>
+              <h2 id="tour-selection-title">{copy.summaryTitle}</h2>
+            </div>
+            <ol className={styles.selectionSteps}>
+              {copy.summarySteps.map((step) => (
+                <li key={step.number}>
+                  <span aria-hidden="true">{step.number}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
 
         <section className={styles.finalSection} aria-labelledby="tour-final-title">

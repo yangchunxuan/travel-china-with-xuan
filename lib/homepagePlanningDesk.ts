@@ -132,6 +132,7 @@ export interface HomepagePlanningDeskCopy {
     failed: string;
     uncertain: string;
     emailUnavailable: string;
+    emailFallbackAction: string;
   };
   serviceShortcutLabel: string;
   serviceShortcutIntro: string;
@@ -240,6 +241,7 @@ const en: HomepagePlanningDeskCopy = {
       "We could not confirm whether your email was saved. Retry with the same email to check safely.",
     emailUnavailable:
       "The email form is temporarily unavailable.",
+    emailFallbackAction: "Email Homeground directly",
   },
   serviceShortcutLabel: "Already know what you need?",
   serviceShortcutIntro:
@@ -547,6 +549,7 @@ const zh: HomepagePlanningDeskCopy = {
     uncertain:
       "目前无法确认邮箱是否已保存。使用同一个邮箱重试，可以安全核对结果。",
     emailUnavailable: "邮箱表单暂时不可用。",
+    emailFallbackAction: "直接发送邮件",
   },
   serviceShortcutLabel: "已经知道自己需要什么？",
   serviceShortcutIntro:
@@ -850,6 +853,7 @@ const ko: HomepagePlanningDeskCopy = {
       "이메일 저장 여부를 확인하지 못했습니다. 같은 이메일로 다시 시도하면 안전하게 확인할 수 있습니다.",
     emailUnavailable:
       "이메일 양식을 잠시 사용할 수 없습니다.",
+    emailFallbackAction: "Homeground에 직접 이메일 보내기",
   },
   serviceShortcutLabel: "필요한 서비스를 이미 알고 있나요?",
   serviceShortcutIntro:

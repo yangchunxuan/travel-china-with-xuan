@@ -1,7 +1,7 @@
 import zhangjiajieProduct from "../content/product-previews/zhangjiajie-4-day-private-tour/product.json" with { type: "json" };
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
-import { getPrivateTourPaths, localizePrivateTourProduct, privateTourProducts, type LocalizedPrivateTourImage, type LocalizedValue } from "./privateTourProducts.ts";
+import { formatPrivateTourPrice, getPrivateTourPaths, localizePrivateTourProduct, privateTourProducts, type LocalizedPrivateTourImage, type LocalizedValue } from "./privateTourProducts.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeCard.ts";
 
@@ -35,6 +35,13 @@ export interface PublishedPrivateTourCatalogItem {
     readonly pace: string;
     readonly fit: string;
     readonly highlights: readonly string[];
+  };
+  readonly startingPrice: {
+    readonly cny: number;
+    readonly amount: number;
+    readonly currency: "CNY" | "USD" | "KRW";
+    readonly formatted: string;
+    readonly travelers: number;
   };
   readonly dateModified: string;
 }
@@ -248,6 +255,12 @@ export function getPublishedPrivateTourCatalog(
   const usedImagePaths = new Set<string>();
   const structuredItems = privateTourProducts.map((product) => {
     const localized = localizePrivateTourProduct(product, locale);
+    const lowestPrice = localized.packages
+      .flatMap((tourPackage) => tourPackage.rows)
+      .filter((row) => row.travelers === 2)
+      .reduce((lowest, candidate) =>
+        candidate.cny < lowest.cny ? candidate : lowest,
+      );
     const image = chooseDistinctCatalogImage(localized, usedImagePaths);
     usedImagePaths.add(image.src);
 
@@ -272,6 +285,13 @@ export function getPublishedPrivateTourCatalog(
         ...localizedProfile(localized.slug, locale),
         highlights: localized.highlights.slice(0, 3),
       },
+      startingPrice: {
+        cny: lowestPrice.cny,
+        amount: lowestPrice.amount,
+        currency: lowestPrice.currency,
+        formatted: lowestPrice.formatted,
+        travelers: lowestPrice.travelers,
+      },
       dateModified: localized.dateModified,
     } satisfies PublishedPrivateTourCatalogItem;
   });
@@ -280,6 +300,10 @@ export function getPublishedPrivateTourCatalog(
   const contentLocale = zhangjiajieContentLocale[locale];
   const zhangjiajieSlug = zhangjiajieProduct.seo.slug;
   const zhangjiajiePaths = getPrivateTourPaths(zhangjiajieSlug);
+  const zhangjiajieStartingPrice = formatPrivateTourPrice(
+    zhangjiajieProduct.price_display.from_price_per_person,
+    locale,
+  );
 
   return Object.freeze([
     ...structuredItems,
@@ -308,6 +332,10 @@ export function getPublishedPrivateTourCatalog(
               ? day.title_zh
               : day.title_ko,
         ),
+      },
+      startingPrice: {
+        ...zhangjiajieStartingPrice,
+        travelers: zhangjiajieProduct.group_basis.minimum_adults,
       },
       dateModified: zhangjiajieCard.dateModified,
     } satisfies PublishedPrivateTourCatalogItem,
@@ -356,12 +384,18 @@ export function assertPublishedPrivateTourCatalogIntegrity(): true {
         item.comparison.route,
         item.comparison.pace,
         item.comparison.fit,
+        item.startingPrice.formatted,
       ];
       if (required.some((value) => value.trim().length === 0)) {
         throw new Error(`Incomplete ${locale} copy for ${item.slug}.`);
       }
       if (item.comparison.highlights.length < 3) {
         throw new Error(`At least three highlights are required for ${item.slug}.`);
+      }
+      if (item.startingPrice.travelers !== 2) {
+        throw new Error(
+          `Catalog prices must use the shared two-traveller basis: ${item.slug}.`,
+        );
       }
     }
   }

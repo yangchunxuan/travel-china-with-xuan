@@ -64,6 +64,76 @@
   text-decoration: none;
 }
 
+.heroDecisionBar {
+  border-block: 1px solid var(--hg-color-line);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, auto);
+  margin-block-start: 1.75rem;
+  padding-block: 1rem;
+}
+
+.heroDecisionBar > div:first-child > p {
+  color: var(--hg-color-muted);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.heroDecisionBar > div:last-child {
+  align-content: center;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.compactPrice {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  margin: 0;
+}
+
+.compactPrice > span,
+.compactPrice > small {
+  color: var(--hg-color-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.compactPrice > strong {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.priceJump {
+  align-items: center;
+  color: var(--hg-color-ink);
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 760;
+  gap: 0.65rem;
+  justify-content: space-between;
+  min-block-size: 2.35rem;
+  text-decoration: none;
+}
+
+.priceJump:hover,
+.priceJump:focus-visible {
+  color: var(--hg-color-dark-rust);
+}
+
+.heroDecisionBar .articleJump {
+  font-size: 0.78rem;
+  justify-content: space-between;
+  margin-block-start: 0;
+  min-block-size: 2.35rem;
+}
+
 .articleJump:hover,
 .articleJump:focus-visible {
   color: var(--hg-color-rust);
@@ -759,6 +829,10 @@
     overflow-wrap: anywhere;
     text-wrap: wrap;
     word-break: normal;
+  }
+
+  .heroDecisionBar {
+    grid-template-columns: 1fr;
   }
 
   .benefitGrid,

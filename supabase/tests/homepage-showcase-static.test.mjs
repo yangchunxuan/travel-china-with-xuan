@@ -119,6 +119,7 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(footer, /id="destinations"/);
   assert.match(footer, /id="studio"/);
   assert.match(footerStyles, /\.footer \{[\s\S]{0,100}background: #141413/);
+  assert.match(page, /copy\.faq\.items\.slice\(0, 7\)\.map/);
   assert.match(footerStyles, /\.navGrid h2:focus-visible,[\s\S]{0,180}outline:/);
   assert.doesNotMatch(footerStyles, /\.navGrid h2\s*\{[^}]*outline:\s*none/);
   assert.doesNotMatch(footerStyles, /(?:linear|radial)-gradient|border-radius/);
@@ -271,6 +272,19 @@ test("the homepage product showcase exposes every published tour without guide p
     assert.doesNotMatch(
       homeCopy.faq.items[0].answer,
       /small-group tours|shared transfers|小团|拼车|소그룹|합승/i,
+    );
+    assert.equal(homeCopy.faq.items.length, 7);
+    const priorityQuestions = homeCopy.faq.items
+      .slice(1, 4)
+      .map((item) => item.question)
+      .join(" ");
+    assert.match(
+      priorityQuestions,
+      locale === "en"
+        ? /contact[\s\S]*bookings[\s\S]*limited mobility/i
+        : locale === "zh"
+          ? /联系[\s\S]*预订[\s\S]*行动不便/
+          : /문의[\s\S]*예약[\s\S]*이동이 불편/,
     );
   }
 

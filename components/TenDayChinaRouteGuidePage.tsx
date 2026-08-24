@@ -46,7 +46,7 @@ const navigationSections: Record<
     guides: "旅行指南",
   },
   ko: {
-    guides: "여행 가이드",
+    guides: "실용 가이드",
   },
 };
 

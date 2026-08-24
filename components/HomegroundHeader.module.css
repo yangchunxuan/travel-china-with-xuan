@@ -144,6 +144,25 @@
   min-inline-size: 0;
 }
 
+.desktopUtilityLink {
+  align-items: center;
+  color: #666660;
+  display: inline-flex;
+  flex: none;
+  font-size: 0.76rem;
+  font-weight: 650;
+  min-block-size: 2.75rem;
+  padding-inline: 0.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.desktopUtilityLink:hover,
+.desktopUtilityLink:focus-visible,
+.desktopUtilityLink[aria-current] {
+  color: var(--hg-color-ink, #141413);
+}
+
 .languageNav {
   align-items: center;
   background: #f4f4f1;
@@ -257,6 +276,18 @@
   min-block-size: 2.75rem;
   padding-inline: 0.5rem;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 22.5rem) {
+  .mobileLanguageNav {
+    gap: 0.3rem;
+  }
+
+  .mobileLanguageNav a {
+    font-size: 0.72rem;
+    padding-inline: 0.25rem;
+  }
 }
 
 .mobileLanguageNav a[aria-current] {
@@ -270,6 +301,37 @@
   outline-offset: 3px;
 }
 
+/*
+ * Keep the full four-item navigation at compact desktop widths. FAQ remains
+ * available from the homepage and mobile menu; hiding only this utility link
+ * prevents it from colliding with the final primary item around 1180px.
+ */
+@media (min-width: 1180px) and (max-width: 1320px) {
+  .headerInner {
+    gap: 0.75rem;
+    grid-template-columns: minmax(13rem, 1fr) auto minmax(13rem, 1fr);
+    padding-inline: 1rem;
+  }
+
+  .desktopNav a {
+    font-size: 0.8rem;
+    padding-inline: 0.58rem;
+  }
+
+  .desktopUtilityLink {
+    display: none;
+  }
+
+  .headerActions {
+    gap: 0.4rem;
+  }
+
+  .headerCta {
+    font-size: 0.76rem;
+    padding-inline: 0.85rem;
+  }
+}
+
 @media (max-width: 1179.98px) {
   .siteHeader {
     --homeground-header-height: 4rem;
@@ -281,6 +343,7 @@
   }
 
   .desktopNav,
+  .desktopUtilityLink,
   .languageNav {
     display: none;
   }

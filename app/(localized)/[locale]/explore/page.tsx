@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SearchPlatformHubPage } from "../../../../components/SearchPlatformHubPage";
+import { DestinationsHubPage } from "../../../../components/DestinationsHubPage";
 import { localizedRouteLocale } from "../../../../lib/localizedRouteLocale";
 import { getSearchHubMetadata } from "../../../../lib/searchPlatformManifest";
 
@@ -20,5 +20,5 @@ export default async function LocalizedExploreHubPage({
 }) {
   const { locale: routeLocale } = await params;
   const locale = localizedRouteLocale(routeLocale);
-  return <SearchPlatformHubPage locale={locale} section="explore" />;
+  return <DestinationsHubPage locale={locale} />;
 }

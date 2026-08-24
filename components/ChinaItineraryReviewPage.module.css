@@ -86,6 +86,23 @@
   min-height: 2.75rem;
 }
 
+.serviceReturn {
+  align-items: center;
+  color: var(--review-muted);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 720;
+  gap: 0.55rem;
+  margin-block-end: 1.1rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.serviceReturn:hover,
+.serviceReturn:focus-visible {
+  color: var(--review-rust);
+}
+
 .heroGrid {
   align-items: center;
   display: grid;

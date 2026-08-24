@@ -897,7 +897,7 @@ const ko: TourGuideDecisionCopy = {
   skipLink: "선택 가이드로 바로 가기",
   breadcrumb: {
     home: "홈",
-    guides: "여행 가이드",
+    guides: "실용 가이드",
     current: "가이드가 필요할까",
   },
 
