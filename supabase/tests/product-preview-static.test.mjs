@@ -22,6 +22,7 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
     defaultPublicRoute,
     localizedPublicRoute,
     productHelper,
+    productPage,
   ] = await Promise.all([
     source(productPath).then(JSON.parse),
     source(pricingPath).then(JSON.parse),
@@ -34,6 +35,7 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
       "app/(localized)/[locale]/tours/zhangjiajie-4-day-private-tour/page.tsx",
     ),
     source("lib/zhangjiajiePrivateTourPreview.ts"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
   ]);
 
   assert.equal(product.status, "published");
@@ -96,6 +98,16 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   );
   assert.match(productHelper, /ko: \{/);
   assert.match(productHelper, /htmlLang: "ko"/);
+  assert.match(productPage, /const tourHubPath = `\$\{homePath\}tours\//);
+  assert.match(productPage, /const structuredData = published\s*\?/);
+  assert.match(
+    productPage,
+    /\{published \? \(\s*<li>\s*<Link href=\{tourHubPath\}>/s,
+  );
+  assert.match(
+    productPage,
+    /position: 2,\s*name: tourHubLabel,\s*item: `https:\/\/homegroundchina\.com\$\{tourHubPath\}`/s,
+  );
 });
 
 test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
@@ -105,6 +117,7 @@ test("manifest, sitemap and homepage expose the product independently of the gui
     sitemap,
     homepageEditorial,
     homepageCatalog,
+    publishedCatalog,
     homeCard,
   ] = await Promise.all([
     source("lib/legacySystemContentAdapter.ts"),
@@ -112,6 +125,7 @@ test("manifest, sitemap and homepage expose the product independently of the gui
     source("app/sitemap.ts"),
     source("lib/homepageEditorial.ts"),
     source("lib/homepagePrivateTourCatalog.ts"),
+    source("lib/publishedPrivateTourCatalog.ts"),
     source("lib/zhangjiajiePrivateTourHomeCard.ts"),
   ]);
 
@@ -120,6 +134,7 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(adapter, /family: "service"/);
   assert.match(adapter, /primaryIntent: "purchase"/);
   assert.match(adapter, /schemaTypes: \["WebPage", "TouristTrip"\]/);
+  assert.match(adapter, /parentContentId: "tour-hub"/);
   assert.match(
     manifest,
     /\.\.\.buildLegacySystemContentNodes\(\)\.map\(contentNodeRecord\)/,
@@ -135,9 +150,14 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(homepageEditorial, /kind: "tour"/);
   assert.match(homepageEditorial, /\.\.\.orderedGuides\.map/);
   assert.doesNotMatch(homepageEditorial, /\{ \.\.\.guide, \.\.\.tour \}/);
-  assert.match(homepageCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
-  assert.match(homepageCatalog, /zhangjiajieProduct\.duration\.days/);
-  assert.equal(homepageCatalog.match(/id: zhangjiajieCard\.id/g)?.length, 1);
+  assert.match(homepageCatalog, /getPublishedPrivateTourCatalog\(locale\)/);
+  assert.doesNotMatch(homepageCatalog, /getZhangjiajiePrivateTourHomeCard/);
+  assert.match(publishedCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
+  assert.match(publishedCatalog, /zhangjiajieProduct\.duration\.days/);
+  assert.equal(
+    publishedCatalog.match(/source: "zhangjiajie-tour"/g)?.length,
+    1,
+  );
   assert.match(
     homeCard,
     /canonicalPath: "\/tours\/zhangjiajie-4-day-private-tour\/"/,
@@ -183,6 +203,9 @@ test("production pruning removes previews but retains published routes and produ
   );
 
   for (const requiredOutput of [
+    "tours/index.html",
+    "zh/tours/index.html",
+    "ko/tours/index.html",
     "tours/zhangjiajie-4-day-private-tour/index.html",
     "zh/tours/zhangjiajie-4-day-private-tour/index.html",
     "ko/tours/zhangjiajie-4-day-private-tour/index.html",

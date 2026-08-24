@@ -1,6 +1,7 @@
 "use client";
 
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -71,7 +72,7 @@ const footerSections: Record<
     homegroundHeading: "Homeground",
     socialLabel: "关注 Homeground",
     socialPending: "账号链接待配置",
-    privateTours: "私家旅行产品",
+    privateTours: "私家团",
     operatorPrefix: "Homeground 由",
     operatorSuffix: "运营。",
     codeLabel: "统一社会信用代码",
@@ -140,11 +141,13 @@ export function HomegroundFooter({
   const planningServicesCopy = getChinaItineraryReviewCopy(locale);
   const planningServicesPath = planningServicesCopy.path;
   const guideHubPath = `${copy.path}guides/`;
+  const tourHubPath = `${copy.path}tours/`;
   const sectionLabels = footerSections[locale];
   const consentCopy = getAnalyticsConsentCopy(locale);
   const studioPath = `${copy.path}studio/`;
   const facebookPageUrl = getHomegroundFacebookPageUrl();
   const socialProfiles = getHomegroundSocialProfiles();
+  const [activeHash, setActiveHash] = useState("");
   const sectionHref = (hash: HomegroundHashTarget) =>
     pageContext === "home" ? hash : `${copy.path}${hash}`;
   const handleSectionClick = (
@@ -155,6 +158,24 @@ export function HomegroundFooter({
       handleHomegroundHashClick(event, hash);
     }
   };
+
+  useEffect(() => {
+    if (pageContext !== "home") {
+      setActiveHash("");
+      return;
+    }
+
+    const syncHash = () => setActiveHash(window.location.hash);
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    window.addEventListener("popstate", syncHash);
+    window.addEventListener("homeground:locationchange", syncHash);
+    return () => {
+      window.removeEventListener("hashchange", syncHash);
+      window.removeEventListener("popstate", syncHash);
+      window.removeEventListener("homeground:locationchange", syncHash);
+    };
+  }, [pageContext]);
 
   if (variant === "homepage") {
     return (
@@ -183,12 +204,7 @@ export function HomegroundFooter({
                   <a href={guideHubPath}>{sectionLabels.guides}</a>
                 </li>
                 <li>
-                  <a
-                    href={sectionHref("#travel-products")}
-                    onClick={(event) =>
-                      handleSectionClick(event, "#travel-products")
-                    }
-                  >
+                  <a href={tourHubPath}>
                     {sectionLabels.privateTours}
                   </a>
                 </li>
@@ -221,6 +237,9 @@ export function HomegroundFooter({
                 </li>
                 <li>
                   <a
+                    aria-current={
+                      activeHash === "#faq" ? "location" : undefined
+                    }
                     href={sectionHref("#faq")}
                     onClick={(event) => handleSectionClick(event, "#faq")}
                   >
@@ -332,6 +351,11 @@ export function HomegroundFooter({
           ) : (
             <a href={guideHubPath}>{sectionLabels.guides}</a>
           )}
+          {pageContext === "tours" ? (
+            <span aria-current="page">{sectionLabels.privateTours}</span>
+          ) : (
+            <a href={tourHubPath}>{sectionLabels.privateTours}</a>
+          )}
           {locale === "en" ? (
             <a href="/guides/china-entry-requirements/">
               {copy.navigation.visa}
@@ -352,6 +376,9 @@ export function HomegroundFooter({
             <a href={studioPath}>{copy.navigation.studio}</a>
           )}
           <a
+            aria-current={
+              activeHash === "#faq" ? "location" : undefined
+            }
             href={sectionHref("#faq")}
             onClick={(event) => handleSectionClick(event, "#faq")}
           >

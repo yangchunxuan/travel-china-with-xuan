@@ -364,6 +364,7 @@ export function ShanghaiJiangnanImaginePage({
     locale,
   );
   const homePath = locale === "en" ? "/" : `/${locale}/`;
+  const tourHubPath = `${homePath}tours/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
   const inquiryHref = `${homePath}?utm_source=private_tour_product&utm_medium=website&utm_campaign=${product.slug}#planner-contact`;
   const rows = localized.packages.flatMap((tourPackage) => tourPackage.rows);
@@ -432,6 +433,12 @@ export function ShanghaiJiangnanImaginePage({
           {
             "@type": "ListItem",
             position: 2,
+            name: copy.productLabel,
+            item: `https://homegroundchina.com${tourHubPath}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: localized.title,
             item: pageUrl,
           },
@@ -468,7 +475,11 @@ export function ShanghaiJiangnanImaginePage({
                     <Link href={homePath}>{copy.homeLabel}</Link>
                     <span aria-hidden="true">/</span>
                   </li>
-                  <li>{copy.productLabel}</li>
+                  <li>
+                    <Link href={tourHubPath}>{copy.productLabel}</Link>
+                    <span aria-hidden="true">/</span>
+                  </li>
+                  <li aria-current="page">{localized.title}</li>
                 </ol>
               </nav>
               <p className={styles.heroMeta}>{copy.heroMeta}</p>

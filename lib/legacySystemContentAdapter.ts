@@ -77,6 +77,7 @@ function systemNode({
   schemaTypes = ["WebPage"],
   legacyAliases = [],
   entityIds = ["country-china"],
+  parentContentId = null,
   volatility = "low",
   refreshCadence = "on-source-change",
   nextReviewAt,
@@ -90,6 +91,7 @@ function systemNode({
   schemaTypes?: readonly string[];
   legacyAliases?: readonly string[];
   entityIds?: readonly string[];
+  parentContentId?: string | null;
   volatility?: ContentNode["updatePolicy"]["volatility"];
   refreshCadence?: ContentNode["updatePolicy"]["refreshCadence"];
   nextReviewAt?: string;
@@ -101,7 +103,7 @@ function systemNode({
     primaryIntent,
     entityIds,
     relationIds: [],
-    parentContentId: null,
+    parentContentId,
     status: "published",
     indexability: { index: true, follow: true },
     locales: localizedVersions(id, definitions),
@@ -290,6 +292,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       ),
       schemaTypes: ["WebPage", "TouristTrip"],
       entityIds: ["city-zhangjiajie"],
+      parentContentId: "tour-hub",
       volatility: "high",
       refreshCadence: "weekly",
       nextReviewAt: "2026-08-31",

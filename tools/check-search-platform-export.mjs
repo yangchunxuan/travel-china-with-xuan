@@ -1,5 +1,6 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
 
 const outputRoot = path.join(process.cwd(), "out");
 const siteUrl = "https://homegroundchina.com";
@@ -44,17 +45,9 @@ const blockedDestinationHubIds = ["guilin", "shenzhen"];
 const tenCityMapPath = "/guides/first-trip-china-airport-station-stay-map/";
 const tenCityPackPath =
   "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip";
-const homepagePublishedTourSlugs = [
-  "shanghai-suzhou-hangzhou-6-day-private-tour",
-  "chengdu-pandas-sanxingdui-5-day-private-tour",
-  "xian-terracotta-warriors-5-day-private-tour",
-  "chongqing-wulong-5-day-private-tour",
-  "guilin-yangshuo-5-day-private-tour",
-  "harbin-winter-5-day-private-tour",
-  "shanghai-suzhou-5-day-private-tour",
-  "beijing-highlights-5-day-private-tour",
-  "zhangjiajie-4-day-private-tour",
-];
+const homepagePublishedTourSlugs = getPublishedPrivateTourCatalog("en").map(
+  (product) => product.slug,
+);
 const transportGuideSlug = "beijing-zhangjiajie-shanghai-transport";
 const zhangjiajieHubGuideSlugs = [
   "zhangjiajie-itinerary",
@@ -101,6 +94,22 @@ function guideRoute(slug, locale) {
   return `${locale.prefix}guides/${slug}/`;
 }
 
+function tourHubRoute(locale) {
+  return `${locale.prefix}tours/`;
+}
+
+function absoluteTourHubRoute(locale) {
+  return `${siteUrl}/${tourHubRoute(locale)}`;
+}
+
+function tourDetailRoute(slug, locale) {
+  return `${locale.prefix}tours/${slug}/`;
+}
+
+function absoluteTourDetailRoute(slug, locale) {
+  return `${siteUrl}/${tourDetailRoute(slug, locale)}`;
+}
+
 function entryOwnerPath(locale) {
   return locale.runtime === "en"
     ? "/guides/china-entry-requirements/"
@@ -127,6 +136,44 @@ async function exportedTargetExists(pathname) {
 function assertIncludes(source, needle, context) {
   if (!source.includes(needle)) {
     throw new Error(`${context}: missing ${needle}`);
+  }
+}
+
+function jsonLdNodes(html, context) {
+  return [
+    ...html.matchAll(
+      /<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gsu,
+    ),
+  ].flatMap((match, index) => {
+    let document;
+    try {
+      document = JSON.parse(match[1]);
+    } catch (error) {
+      throw new Error(
+        `${context}: JSON-LD block ${index + 1} is invalid (${error.message})`,
+      );
+    }
+    return document["@graph"] ?? [document];
+  });
+}
+
+function nodeHasType(node, expectedType) {
+  const types = Array.isArray(node?.["@type"])
+    ? node["@type"]
+    : [node?.["@type"]];
+  return types.includes(expectedType);
+}
+
+function assertSameStringSet(actualValues, expectedValues, context) {
+  const actual = [...new Set(actualValues)].sort();
+  const expected = [...new Set(expectedValues)].sort();
+  if (
+    actual.length !== expected.length ||
+    actual.some((value, index) => value !== expected[index])
+  ) {
+    throw new Error(
+      `${context}: expected [${expected.join(", ")}], received [${actual.join(", ")}]`,
+    );
   }
 }
 
@@ -231,6 +278,119 @@ for (const locale of locales) {
     throw new Error(
       `${context}: the internal asset download displaced the homepage product showcase`,
     );
+  }
+}
+
+for (const locale of locales) {
+  const route = tourHubRoute(locale);
+  const filePath = path.join(outputRoot, route, "index.html");
+  const context = `/${route}`;
+  const canonical = absoluteTourHubRoute(locale);
+  if (!(await fileExists(filePath))) {
+    throw new Error(`${context}: private-tour hub export is missing`);
+  }
+
+  const html = await readFile(filePath, "utf8");
+  assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+  assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+  if (/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/iu.test(html)) {
+    throw new Error(`${context}: published private-tour hub contains noindex`);
+  }
+  if (!sitemapLocs.includes(canonical)) {
+    throw new Error(`${context}: private-tour hub is missing from sitemap.xml`);
+  }
+
+  for (const target of locales) {
+    assertIncludes(
+      html,
+      `<link rel="alternate" hrefLang="${target.hreflang}" href="${absoluteTourHubRoute(target)}"/>`,
+      `${context} ${target.hreflang} alternate`,
+    );
+  }
+  assertIncludes(
+    html,
+    `<link rel="alternate" hrefLang="x-default" href="${absoluteTourHubRoute(locales[0])}"/>`,
+    `${context} x-default alternate`,
+  );
+
+  const schemaNodes = jsonLdNodes(html, context);
+  const collectionPage = schemaNodes.find((node) =>
+    nodeHasType(node, "CollectionPage"),
+  );
+  const itemList = schemaNodes.find((node) => nodeHasType(node, "ItemList"));
+  if (!collectionPage) {
+    throw new Error(`${context}: CollectionPage schema is missing`);
+  }
+  if (!itemList) {
+    throw new Error(`${context}: ItemList schema is missing`);
+  }
+  if (collectionPage.url !== canonical) {
+    throw new Error(`${context}: CollectionPage URL is not self-canonical`);
+  }
+  if (itemList.numberOfItems !== homepagePublishedTourSlugs.length) {
+    throw new Error(
+      `${context}: ItemList must declare exactly ${homepagePublishedTourSlugs.length} published products`,
+    );
+  }
+  if (!Array.isArray(itemList.itemListElement)) {
+    throw new Error(`${context}: ItemList elements are missing`);
+  }
+
+  const expectedAbsoluteDetails = homepagePublishedTourSlugs.map((slug) =>
+    absoluteTourDetailRoute(slug, locale),
+  );
+  const structuredDetailUrls = itemList.itemListElement.map(
+    (entry) => entry?.item?.url ?? entry?.url,
+  );
+  assertSameStringSet(
+    structuredDetailUrls,
+    expectedAbsoluteDetails,
+    `${context} structured private-tour details`,
+  );
+
+  const visibleDetailHrefs = [...html.matchAll(/\bhref="([^"]+)"/giu)]
+    .map((match) => match[1])
+    .filter((href) =>
+      /^\/(?:zh\/|ko\/)?tours\/[^/]+\/$/u.test(href),
+    );
+  const expectedDetailHrefs = homepagePublishedTourSlugs.map(
+    (slug) => `/${tourDetailRoute(slug, locale)}`,
+  );
+  assertSameStringSet(
+    visibleDetailHrefs,
+    expectedDetailHrefs,
+    `${context} visible private-tour detail links`,
+  );
+
+  for (const slug of homepagePublishedTourSlugs) {
+    const detailRoute = tourDetailRoute(slug, locale);
+    const detailContext = `/${detailRoute}`;
+    const detailCanonical = absoluteTourDetailRoute(slug, locale);
+    const detailHtml = await readFile(
+      path.join(outputRoot, detailRoute, "index.html"),
+      "utf8",
+    );
+    assertIncludes(
+      detailHtml,
+      `href="/${route}"`,
+      `${detailContext} visible private-tour hub return`,
+    );
+
+    const breadcrumb = jsonLdNodes(detailHtml, detailContext).find((node) =>
+      nodeHasType(node, "BreadcrumbList"),
+    );
+    const breadcrumbItems = breadcrumb?.itemListElement;
+    if (!Array.isArray(breadcrumbItems)) {
+      throw new Error(`${detailContext}: BreadcrumbList schema is missing`);
+    }
+    const hubCrumb = breadcrumbItems.find((item) => item?.position === 2);
+    const pageCrumb = breadcrumbItems.find((item) => item?.position === 3);
+    if (hubCrumb?.item !== canonical) {
+      throw new Error(`${detailContext}: breadcrumb does not return to its locale hub`);
+    }
+    if (pageCrumb?.item !== detailCanonical) {
+      throw new Error(`${detailContext}: terminal breadcrumb is not self-canonical`);
+    }
   }
 }
 

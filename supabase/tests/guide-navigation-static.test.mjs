@@ -29,13 +29,13 @@ test("global navigation keeps one distinct four-item information architecture", 
     "Destinations",
     "目的地",
     "여행지",
-    "First trip",
-    "第一次去中国",
-    "첫 중국 여행",
-    "All guides",
-    "全部指南",
-    "전체 가이드",
-    "How we plan",
+    "Private Tours",
+    "私家团",
+    "프라이빗 투어",
+    "Travel Guides",
+    "旅行指南",
+    "여행 가이드",
+    "How We Plan",
     "我们如何规划",
     "여행 설계 방식",
   ]) {
@@ -45,22 +45,32 @@ test("global navigation keeps one distinct four-item information architecture", 
   assert.match(header, /\| "guides"/);
   assert.match(header, /\| "search"/);
   assert.match(header, /\| "plan"/);
+  assert.match(header, /\| "tours"/);
+  assert.match(header, /\| "tour"/);
   assert.match(header, /\| "destinations"/);
   assert.match(header, /\| "destination"/);
   assert.match(header, /pageContext === "guide" \|\|/);
   assert.match(header, /const guidesAreExact =/);
   assert.match(header, /getHomegroundNavigationModel\(locale, copy\.path\)/);
   assert.match(header, /primaryNavigation\.items\.map/);
-  assert.match(header, /const firstTripIsCurrent = pageContext === "plan"/);
+  assert.match(header, /pageContext === "plan"/);
+  assert.match(
+    header,
+    /const guidesAreCurrent =[^;]*pageContext === "plan"/s,
+  );
+  assert.match(header, /const toursAreCurrent =/);
+  assert.match(header, /const toursAreExact = pageContext === "tours"/);
   assert.doesNotMatch(header, /copy\.cities\.eyebrow/);
-  assert.doesNotMatch(header, /copy\.navigation\.faq/);
+  assert.match(header, /className=\{styles\.mobileUtilityLink\}[\s\S]*copy\.navigation\.faq/);
+  assert.match(header, /\? "location"/);
   assert.doesNotMatch(header, /getGuideSearchCopy|Trip planning services|旅行规划服务|여행 설계 서비스/);
   assert.doesNotMatch(header, /String\(index \+ 1\)\.padStart/);
   assert.match(
     model,
-    /homegroundPrimaryNavigationIds = \[[\s\S]*"destinations"[\s\S]*"first-trip"[\s\S]*"guides"[\s\S]*"studio"/,
+    /homegroundPrimaryNavigationIds = \[[\s\S]*"destinations"[\s\S]*"tours"[\s\S]*"guides"[\s\S]*"studio"/,
   );
-  for (const pathSegment of ["explore/", "plan/", "guides/", "studio/"]) {
+  assert.doesNotMatch(model, /"first-trip"|pathSegment: "plan\/"/);
+  for (const pathSegment of ["explore/", "tours/", "guides/", "studio/"]) {
     assert.match(model, new RegExp(`pathSegment: "${pathSegment}"`));
   }
   assert.equal(
@@ -69,8 +79,18 @@ test("global navigation keeps one distinct four-item information architecture", 
     1,
   );
   assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 2);
+  assert.match(
+    header,
+    /pageContext === "tours" \|\| pageContext === "tour"[\s\S]{0,80}`\$\{target\.path\}tours\/`/,
+  );
+  assert.match(
+    header,
+    /pageContext === "home" \? "#faq" : `\$\{copy\.path\}#faq`/,
+  );
   assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
+  assert.match(footer, /const tourHubPath = `\$\{copy\.path\}tours\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
+  assert.match(footer, /href=\{tourHubPath\}/);
   assert.doesNotMatch(footer, /guideId|getGuideEntry/);
 
   assert.match(css, /\.headerInner \{[\s\S]*?display: grid;[\s\S]*?grid-template-columns:/);
@@ -81,6 +101,8 @@ test("global navigation keeps one distinct four-item information architecture", 
   );
   assert.match(css, /:focus-visible/);
   assert.match(css, /\.mobileNavCopy small \{/);
+  assert.match(css, /\.mobileUtilityLink \{/);
+  assert.match(css, /max-height: 560px/);
 });
 
 test("all public page families use the shared header", async () => {

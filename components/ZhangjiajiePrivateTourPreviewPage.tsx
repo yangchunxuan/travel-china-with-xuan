@@ -54,6 +54,12 @@ export function ZhangjiajiePrivateTourPreviewPage({
   const isZh = locale === "zh";
   const isKo = locale === "ko";
   const homePath = locale === "en" ? "/" : `/${locale}/`;
+  const tourHubPath = `${homePath}tours/`;
+  const tourHubLabel = isZh
+    ? "私家团"
+    : isKo
+      ? "프라이빗 투어"
+      : "Private tours";
   const languagePaths = published
     ? zhangjiajiePrivateTourPaths
     : zhangjiajiePrivateTourPreviewPaths;
@@ -129,6 +135,12 @@ export function ZhangjiajiePrivateTourPreviewPage({
               {
                 "@type": "ListItem",
                 position: 2,
+                name: tourHubLabel,
+                item: `https://homegroundchina.com${tourHubPath}`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
                 name: copy.previewBreadcrumb,
                 item: pageUrl,
               },
@@ -281,6 +293,12 @@ export function ZhangjiajiePrivateTourPreviewPage({
                   <Link href={homePath}>{copy.homeLabel}</Link>
                   <span aria-hidden="true">/</span>
                 </li>
+                {published ? (
+                  <li>
+                    <Link href={tourHubPath}>{tourHubLabel}</Link>
+                    <span aria-hidden="true">/</span>
+                  </li>
+                ) : null}
                 <li aria-current="page">{copy.previewBreadcrumb}</li>
               </ol>
             </nav>

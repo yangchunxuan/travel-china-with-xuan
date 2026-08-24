@@ -9,6 +9,7 @@ import {
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) =>
@@ -148,11 +149,12 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
 });
 
-test("the homepage product showcase exposes all nine published tours without guide placeholders", async () => {
+test("the homepage product showcase exposes every published tour without guide placeholders", async () => {
   const [
     page,
     productShowcase,
     catalog,
+    publishedCatalog,
     rail,
     defaultRoute,
     localizedRoute,
@@ -163,6 +165,7 @@ test("the homepage product showcase exposes all nine published tours without gui
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageProductShowcase.tsx"),
     source("lib/homepagePrivateTourCatalog.ts"),
+    source("lib/publishedPrivateTourCatalog.ts"),
     source("components/HomepageGuideRail.tsx"),
     source("app/(default)/page.tsx"),
     source("app/(localized)/[locale]/page.tsx"),
@@ -173,26 +176,30 @@ test("the homepage product showcase exposes all nine published tours without gui
 
   const zhangjiajieProduct = JSON.parse(zhangjiajieProductSource);
   const expectedTourSlugs = [
-    "beijing-highlights-5-day-private-tour",
-    "chengdu-pandas-sanxingdui-5-day-private-tour",
-    "chongqing-wulong-5-day-private-tour",
-    "guilin-yangshuo-5-day-private-tour",
-    "harbin-winter-5-day-private-tour",
-    "shanghai-suzhou-5-day-private-tour",
-    "shanghai-suzhou-hangzhou-6-day-private-tour",
-    "xian-terracotta-warriors-5-day-private-tour",
-    "zhangjiajie-4-day-private-tour",
-  ];
-  const actualTourSlugs = [
     ...privateTourProducts.map((product) => product.slug),
     zhangjiajieProduct.seo.slug,
-  ];
-  assert.equal(new Set(actualTourSlugs).size, 9);
+  ].sort();
+  const actualTourSlugs = getPublishedPrivateTourCatalog("en").map(
+    (product) => product.slug,
+  );
+  assert.equal(new Set(actualTourSlugs).size, expectedTourSlugs.length);
   assert.deepEqual([...actualTourSlugs].sort(), expectedTourSlugs);
-  assert.match(catalog, /privateTourProducts\.map/);
-  assert.match(catalog, /localizePrivateTourProduct\(product, locale\)/);
-  assert.match(catalog, /zhangjiajieProduct\.short_description\[contentLocale\]/);
-  assert.match(catalog, /description: localized\.lede/);
+  for (const locale of ["en", "zh", "ko"]) {
+    assert.deepEqual(
+      getPublishedPrivateTourCatalog(locale)
+        .map((product) => product.slug)
+        .sort(),
+      expectedTourSlugs,
+      locale,
+    );
+  }
+  assert.match(catalog, /getPublishedPrivateTourCatalog\(locale\)/);
+  assert.doesNotMatch(catalog, /privateTourProducts|getZhangjiajiePrivateTourHomeCard/);
+  assert.match(publishedCatalog, /privateTourProducts\.map/);
+  assert.match(publishedCatalog, /localizePrivateTourProduct\(product, locale\)/);
+  assert.match(publishedCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
+  assert.match(publishedCatalog, /zhangjiajieProduct\.short_description\[contentLocale\]/);
+  assert.match(publishedCatalog, /description: localized\.lede/);
   assert.doesNotMatch(catalog, /shanghai-suzhou-hangzhou-6-day-private-tour|chengdu-pandas-sanxingdui-5-day-private-tour/);
   assert.doesNotMatch(page, /homepageProductShowcaseGuideIds|productShowcaseGuides|featuredTour/);
   assert.match(page, /products=\{privateTourItems\}/);
@@ -241,17 +248,22 @@ test("the homepage product showcase exposes all nine published tours without gui
     },
   };
 
+  const publishedTourCount = getPublishedPrivateTourCatalog("en").length;
+
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageProductShowcaseCopy(locale);
     const homeCopy = getHomegroundCopy(locale);
     assert.ok(copy.title.length > 8);
-    assert.ok(copy.intro(9).length > 60);
-    assert.match(copy.countLabel(9), /9/);
+    assert.ok(copy.intro(publishedTourCount).length > 60);
+    assert.match(
+      copy.countLabel(publishedTourCount),
+      new RegExp(String(publishedTourCount)),
+    );
     assert.match(copy.durationLabel(5, 4), /5/);
     assert.ok(copy.availabilityNote.length > 30);
-    assert.match(copy.intro(9), trustCopy[locale].noShopping);
-    assert.match(copy.intro(9), trustCopy[locale].writtenScope);
-    assert.match(copy.intro(9), trustCopy[locale].priorAgreement);
+    assert.match(copy.intro(publishedTourCount), trustCopy[locale].noShopping);
+    assert.match(copy.intro(publishedTourCount), trustCopy[locale].writtenScope);
+    assert.match(copy.intro(publishedTourCount), trustCopy[locale].priorAgreement);
     assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].privateBasis);
     assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].sharedTransit);
     assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].lowerCost);

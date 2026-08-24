@@ -5,7 +5,11 @@ import type {
 } from "./content-system/types";
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { getPrivateTourHubCopy } from "./privateTourHubI18n.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { localizePrivateTourProduct, privateTourProducts } from "./privateTourProducts.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { isReservedPrivateTourSlug } from "./privateTourMetadata.ts";
 
@@ -24,8 +28,70 @@ function reviewedSearchTerms(
   return [...new Set([title, `${days} day China private tour`, ...highlights])];
 }
 
+function buildPrivateTourHubNode(): ContentNode {
+  const localizedVersions = Object.fromEntries(
+    locales.map((locale) => {
+      const copy = getPrivateTourHubCopy(
+        locale,
+        getPublishedPrivateTourCatalog(locale).length,
+      );
+      return [
+        schemaLocale[locale],
+        {
+          path: copy.path,
+          title: copy.metadata.title,
+          description: copy.metadata.description,
+          h1: copy.title,
+          bodyResource: "private-tour-hub:tours",
+          searchTerms: [
+            copy.metadata.title,
+            copy.catalogTitle,
+            locale === "en"
+              ? "compare China private tours"
+              : locale === "zh"
+                ? "比较中国私家团"
+                : "중국 프라이빗 투어 비교",
+          ],
+          localizationStatus: locale === "en" ? "source" : "localized",
+          openGraphLocale:
+            locale === "en" ? "en_US" : locale === "zh" ? "zh_CN" : "ko_KR",
+          ctaId: "trip-brief",
+        } satisfies LocaleVersion,
+      ];
+    }),
+  ) as ContentNode["locales"];
+
+  return {
+    id: "tour-hub",
+    section: "services",
+    family: "comparison",
+    primaryIntent: "compare",
+    entityIds: ["country-china"],
+    relationIds: [],
+    parentContentId: null,
+    status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions,
+    factIds: [],
+    sourceIds: [],
+    mediaIds: [],
+    schemaTypes: ["CollectionPage", "ItemList"],
+    legacyAliases: [],
+    dates: {
+      datePublished: "2026-08-24",
+      dateModified: "2026-08-24",
+      lastReviewed: "2026-08-24",
+    },
+    updatePolicy: {
+      volatility: "high",
+      refreshCadence: "weekly",
+      owner: "homeground-commerce",
+    },
+  } satisfies ContentNode;
+}
+
 export function buildPrivateTourContentNodes(): ContentNode[] {
-  return privateTourProducts
+  const productNodes = privateTourProducts
     .filter((product) => !isReservedPrivateTourSlug(product.slug))
     .map((product) => {
       const localizedVersions = Object.fromEntries(
@@ -62,7 +128,7 @@ export function buildPrivateTourContentNodes(): ContentNode[] {
         // records are reviewed and added independently.
         entityIds: ["country-china"],
         relationIds: [],
-        parentContentId: null,
+        parentContentId: "tour-hub",
         status: "published",
         indexability: { index: true, follow: true },
         locales: localizedVersions,
@@ -83,4 +149,6 @@ export function buildPrivateTourContentNodes(): ContentNode[] {
         },
       } satisfies ContentNode;
     });
+
+  return [buildPrivateTourHubNode(), ...productNodes];
 }
