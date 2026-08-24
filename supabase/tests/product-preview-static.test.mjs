@@ -25,9 +25,7 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   ] = await Promise.all([
     source(productPath).then(JSON.parse),
     source(pricingPath).then(JSON.parse),
-    source(
-      "app/(default)/preview/zhangjiajie-4-day-private-tour/page.tsx",
-    ),
+    source("app/(default)/preview/zhangjiajie-4-day-private-tour/page.tsx"),
     source(
       "app/(localized)/[locale]/preview/zhangjiajie-4-day-private-tour/page.tsx",
     ),
@@ -53,14 +51,20 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
     "2026-09-30T15:59:59.000Z",
   );
   assert.equal(product.price_display.valid_until, pricing.valid_until);
-  assert.equal(pricing.approved_decision_id, product.price_display.approved_decision_id);
+  assert.equal(
+    pricing.approved_decision_id,
+    product.price_display.approved_decision_id,
+  );
   assert.match(pricing.public_notes.ko, /성인/);
   assert.ok(pricing.tiers.every((tier) => tier.name_ko));
 
   assert.match(defaultPreviewRoute, /process\.env\.NODE_ENV === "production"/);
   assert.match(defaultPreviewRoute, /notFound\(\)/);
   assert.match(defaultPreviewRoute, /index: false, follow: false/);
-  assert.match(localizedPreviewRoute, /process\.env\.NODE_ENV === "production"/);
+  assert.match(
+    localizedPreviewRoute,
+    /process\.env\.NODE_ENV === "production"/,
+  );
   assert.match(localizedPreviewRoute, /value === "zh" \|\| value === "ko"/);
   assert.match(localizedPreviewRoute, /index: false, follow: false/);
 
@@ -95,7 +99,14 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
 });
 
 test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
-  const [adapter, manifest, sitemap, homepageEditorial, homepageCatalog, homeCard] = await Promise.all([
+  const [
+    adapter,
+    manifest,
+    sitemap,
+    homepageEditorial,
+    homepageCatalog,
+    homeCard,
+  ] = await Promise.all([
     source("lib/legacySystemContentAdapter.ts"),
     source("lib/searchPlatformManifest.ts"),
     source("app/sitemap.ts"),
@@ -109,8 +120,14 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(adapter, /family: "service"/);
   assert.match(adapter, /primaryIntent: "purchase"/);
   assert.match(adapter, /schemaTypes: \["WebPage", "TouristTrip"\]/);
-  assert.match(manifest, /\.\.\.buildLegacySystemContentNodes\(\)\.map\(contentNodeRecord\)/);
-  assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
+  assert.match(
+    manifest,
+    /\.\.\.buildLegacySystemContentNodes\(\)\.map\(contentNodeRecord\)/,
+  );
+  assert.match(
+    sitemap,
+    /getIndexableManifestEntries\(searchPlatformManifest\)/,
+  );
   assert.match(sitemap, /system-zhangjiajie-4-day-private-tour/);
 
   assert.match(homepageEditorial, /getZhangjiajiePrivateTourHomeCard/);
@@ -120,10 +137,7 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.doesNotMatch(homepageEditorial, /\{ \.\.\.guide, \.\.\.tour \}/);
   assert.match(homepageCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
   assert.match(homepageCatalog, /zhangjiajieProduct\.duration\.days/);
-  assert.equal(
-    homepageCatalog.match(/id: zhangjiajieCard\.id/g)?.length,
-    1,
-  );
+  assert.equal(homepageCatalog.match(/id: zhangjiajieCard\.id/g)?.length, 1);
   assert.match(
     homeCard,
     /canonicalPath: "\/tours\/zhangjiajie-4-day-private-tour\/"/,
@@ -186,7 +200,7 @@ test("production pruning removes previews but retains published routes and produ
   }
 });
 
-test("preview uses the established editorial design and complete, distinct stay-photo sets", async () => {
+test("preview uses the established editorial design and renders only the visual-gate stay set", async () => {
   const [page, copy, css, imagePlan] = await Promise.all([
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
     source("lib/zhangjiajiePrivateTourPreview.ts"),
@@ -237,10 +251,22 @@ test("preview uses the established editorial design and complete, distinct stay-
   assert.match(imagePlan, /route\/day-2-bailong-elevator\.jpg/);
   assert.match(page, /hero\/tianmen-cave-and-stairs\.jpg/);
   assert.match(page, /hero\/grand-canyon-glass-bridge\.jpg/);
-  assert.match(page, /route\/day-1-hehua-airport\.jpg/);
+  assert.doesNotMatch(page, /route\/day-1-hehua-airport\.jpg/);
   assert.match(page, /route\/day-2-bailong-elevator\.jpg/);
-  assert.match(page, /Martin Lewison/);
-  assert.match(page, /creativecommons\.org\/licenses\/by-sa\/2\.0/);
+  assert.doesNotMatch(page, /Martin Lewison/);
+  assert.doesNotMatch(page, /creativecommons\.org\/licenses\/by-sa\/2\.0/);
+  assert.match(page, /safeAccommodationImages/);
+  assert.match(page, /option\.id !== "city-candidate-02"/);
+  assert.match(page, /city-candidate-01-twin-window\.jpg/);
+  assert.match(page, /family-villa-living\.jpg/);
+  assert.match(page, /signature-villa-suite\.jpg/);
+  assert.doesNotMatch(page, /city-candidate-01-twin-entry\.jpg/);
+  assert.doesNotMatch(page, /city-candidate-02-(?:twin|double|bathroom)/);
+  assert.doesNotMatch(page, /family-villa-(?:twin|double|terrace)\.jpg/);
+  assert.doesNotMatch(
+    page,
+    /signature-villa-(?:four-poster|shower|lounge-detail)\.jpg/,
+  );
   assert.match(copy, /Spacious Premium Stay/);
   assert.match(copy, /宽敞高级住宿/);
   assert.match(copy, /Not limited to the stays shown here/);
@@ -253,10 +279,19 @@ test("preview uses the established editorial design and complete, distinct stay-
     copy,
     /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱|city-nihao|city-west/i,
   );
-  assert.match(imagePlan, /deterministic publication edits, not\s+AI-generated or AI-assisted/);
-  assert.doesNotMatch(copy, /previewAssetNote|Internal preview photographs|内部预览照片/);
+  assert.match(
+    imagePlan,
+    /deterministic publication edits, not\s+AI-generated or AI-assisted/,
+  );
+  assert.doesNotMatch(
+    copy,
+    /previewAssetNote|Internal preview photographs|内部预览照片/,
+  );
   assert.doesNotMatch(page, /styles\.previewAssetNote|copy\.previewAssetNote/);
-  assert.doesNotMatch(copy, /Check dates and room availability|查询日期与可订房型/);
+  assert.doesNotMatch(
+    copy,
+    /Check dates and room availability|查询日期与可订房型/,
+  );
   assert.doesNotMatch(
     [copy, page, css].join("\n"),
     /guideBridge|Still deciding whether Zhangjiajie needs two, three or four|还在比较张家界到底需要2、3还是4个完整游览日/,
@@ -318,8 +353,8 @@ test("approved prices cross the client boundary as a public projection only", as
   ]);
 
   assert.deepEqual(
-    pricing.tiers.map((tier) =>
-      tier.from_price_per_person ?? tier.price_per_person,
+    pricing.tiers.map(
+      (tier) => tier.from_price_per_person ?? tier.price_per_person,
     ),
     [5390, 6090, 7090],
   );
@@ -341,10 +376,7 @@ test("approved prices cross the client boundary as a public projection only", as
     priceWindow,
     /now <= new Date\(pricing\.validUntil\)\.getTime\(\)/,
   );
-  assert.match(
-    priceWindow,
-    /useState<PriceWindowStatus>\("checking"\)/,
-  );
+  assert.match(priceWindow, /useState<PriceWindowStatus>\("checking"\)/);
   assert.match(priceWindow, /copy\.expiredPrice/);
   assert.match(priceWindow, /copy\.validThrough/);
   assert.doesNotMatch(
@@ -360,7 +392,10 @@ test("approved prices cross the client boundary as a public projection only", as
     priceWindow,
     /product\.json|pricing\.json|approved_decision_id|approved-public-pricing-20260815|zhangjiajiePrivateTourProduct|zhangjiajiePrivateTourPricing/,
   );
-  assert.doesNotMatch(page, /data\/internal|source\/private|gross_margin|supplier_cost|CAC|negotiation_floor/);
+  assert.doesNotMatch(
+    page,
+    /data\/internal|source\/private|gross_margin|supplier_cost|CAC|negotiation_floor/,
+  );
 });
 
 test("post-prune scan rejects preview labels and internal product markers across all of out", async () => {

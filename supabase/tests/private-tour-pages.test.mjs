@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -26,8 +27,7 @@ const source = (relativePath) =>
   readFile(path.join(projectRoot, relativePath), "utf8");
 const locales = ["en", "zh", "ko"];
 const reservedStaticSlug = "zhangjiajie-4-day-private-tour";
-const shanghaiJiangnanSlug =
-  "shanghai-suzhou-hangzhou-6-day-private-tour";
+const shanghaiJiangnanSlug = "shanghai-suzhou-hangzhou-6-day-private-tour";
 
 const forbiddenPublicGroupRanges = {
   en: /\b2\s*(?:-|–|—|~|to|through)\s*9\s*(?:travell?ers?|guests?|people)\b/i,
@@ -47,10 +47,7 @@ function stringValues(value) {
 function objectKeys(value) {
   if (!value || typeof value !== "object") return [];
   if (Array.isArray(value)) return value.flatMap(objectKeys);
-  return [
-    ...Object.keys(value),
-    ...Object.values(value).flatMap(objectKeys),
-  ];
+  return [...Object.keys(value), ...Object.values(value).flatMap(objectKeys)];
 }
 
 function assertLocalizedTextComplete(value, context) {
@@ -75,7 +72,10 @@ async function assertPublicImageExists(src, context) {
 
 test("eight private tours resolve to all three static route families", async () => {
   assert.equal(privateTourProducts.length, 8);
-  assert.equal(new Set(privateTourProducts.map((product) => product.slug)).size, 8);
+  assert.equal(
+    new Set(privateTourProducts.map((product) => product.slug)).size,
+    8,
+  );
   assert.equal(isReservedPrivateTourSlug(reservedStaticSlug), true);
   assert.equal(getPrivateTourProduct(reservedStaticSlug), undefined);
 
@@ -131,17 +131,21 @@ test("homepage tour images declare their real intrinsic dimensions", async () =>
   const usedImagePaths = new Set();
 
   for (const product of privateTourProducts) {
-    const heroPath = path.join(projectRoot, "public", product.heroImage.src.slice(1));
+    const heroPath = path.join(
+      projectRoot,
+      "public",
+      product.heroImage.src.slice(1),
+    );
     const heroMetadata = await sharp(heroPath).metadata();
     assert.equal(heroMetadata.width, product.heroImage.width, product.slug);
     assert.equal(heroMetadata.height, product.heroImage.height, product.slug);
 
     const homepageImage = usedImagePaths.has(product.heroImage.src)
-      ? product.gallery.find(
+      ? (product.gallery.find(
           (image) =>
             image.src !== product.heroImage.src &&
             !usedImagePaths.has(image.src),
-        ) ?? product.heroImage
+        ) ?? product.heroImage)
       : product.heroImage;
     usedImagePaths.add(homepageImage.src);
 
@@ -229,7 +233,7 @@ test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices
   );
 });
 
-test("the other seven tours provide complete trilingual route media for every day", async () => {
+test("the other seven tours keep complete itineraries and only publish verified route media", async () => {
   const products = privateTourProducts.filter(
     (product) => product.slug !== shanghaiJiangnanSlug,
   );
@@ -247,10 +251,16 @@ test("the other seven tours provide complete trilingual route media for every da
       `${product.slug} itinerary days`,
     );
     assert.ok(Array.isArray(product.routeMedia), `${product.slug} routeMedia`);
+    assert.ok(product.routeMedia.length > 0, `${product.slug} routeMedia`);
+    const mediaDays = product.routeMedia.map(({ day }) => day);
     assert.deepEqual(
-      product.routeMedia.map(({ day }) => day),
-      expectedDays,
-      `${product.slug} must provide route media for every itinerary day in order`,
+      mediaDays,
+      [...new Set(mediaDays)].sort((left, right) => left - right),
+      `${product.slug} route-media days must be unique and ordered`,
+    );
+    assert.ok(
+      mediaDays.every((dayNumber) => expectedDays.includes(dayNumber)),
+      `${product.slug} route media must belong to an itinerary day`,
     );
 
     for (const group of product.routeMedia) {
@@ -281,6 +291,78 @@ test("the other seven tours provide complete trilingual route media for every da
       assertPublicImageExists(src, context),
     ),
   );
+});
+
+test("the nine private-tour identities do not repeat an image path or image bytes", async () => {
+  const zhangjiajiePageSource = await source(
+    "components/ZhangjiajiePrivateTourPreviewPage.tsx",
+  );
+  const zhangjiajieAccommodationPaths = [
+    ...new Set(
+      zhangjiajiePageSource.match(
+        /\/product-previews\/zhangjiajie-4-day-private-tour\/accommodations\/[^"']+/g,
+      ) ?? [],
+    ),
+  ];
+  const registryMedia = privateTourProducts.flatMap((product) => [
+    { owner: `${product.slug}/hero`, src: product.heroImage.src },
+    ...product.gallery.map((image, index) => ({
+      owner: `${product.slug}/gallery-${index + 1}`,
+      src: image.src,
+    })),
+    ...product.routeMedia.flatMap((group) =>
+      group.variants.map((variant, index) => ({
+        owner: `${product.slug}/day-${group.day}-${index + 1}`,
+        src: variant.image.src,
+      })),
+    ),
+  ]);
+  const zhangjiajieMedia = [
+    {
+      owner: `${reservedStaticSlug}/hero`,
+      src: "/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
+    },
+    {
+      owner: `${reservedStaticSlug}/day-2`,
+      src: "/product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
+    },
+    {
+      owner: `${reservedStaticSlug}/day-3`,
+      src: "/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
+    },
+    {
+      owner: `${reservedStaticSlug}/day-4`,
+      src: "/product-previews/zhangjiajie-4-day-private-tour/hero/tianmen-cave-and-stairs.jpg",
+    },
+    ...zhangjiajieAccommodationPaths.map((src, index) => ({
+      owner: `${reservedStaticSlug}/accommodation-${index + 1}`,
+      src,
+    })),
+  ];
+  const allMedia = [...registryMedia, ...zhangjiajieMedia];
+  const ownersByPath = new Map();
+  const ownersByHash = new Map();
+
+  for (const media of allMedia) {
+    const previousPathOwner = ownersByPath.get(media.src);
+    assert.equal(
+      previousPathOwner,
+      undefined,
+      `${media.src} is repeated by ${previousPathOwner} and ${media.owner}`,
+    );
+    ownersByPath.set(media.src, media.owner);
+
+    const filePath = path.join(projectRoot, "public", media.src.slice(1));
+    const buffer = await readFile(filePath);
+    const hash = createHash("sha256").update(buffer).digest("hex");
+    const previousHashOwner = ownersByHash.get(hash);
+    assert.equal(
+      previousHashOwner,
+      undefined,
+      `${media.src} repeats the bytes used by ${previousHashOwner}`,
+    );
+    ownersByHash.set(hash, media.owner);
+  }
 });
 
 test("traveler-facing pages do not advertise a 2-to-9 group range", async () => {
@@ -326,9 +408,10 @@ test("Shanghai Suzhou Hangzhou assigns stable, unique primary media to all six d
   );
   assert.equal(new Set(primarySources).size, 6);
   assert.notEqual(primarySources[2], primarySources[3]);
-  assert.equal(localized.routeMedia[2].variants.length, 2);
-  assert.equal(localized.routeMedia[3].variants.length, 3);
-  assert.equal(localized.routeMedia[4].variants.length, 3);
+  assert.ok(
+    localized.routeMedia.every(({ variants }) => variants.length === 1),
+    "each day should use one deliberate, non-repeating primary image",
+  );
 
   const [interactive, css] = await Promise.all([
     source("components/ShanghaiJiangnanImagineInteractive.tsx"),
@@ -336,54 +419,51 @@ test("Shanghai Suzhou Hangzhou assigns stable, unique primary media to all six d
   ]);
   assert.match(interactive, /matchMedia\("\(max-width: 760px\)"\)\.matches/);
   assert.match(interactive, /product\.routeMedia\b/);
+  assert.match(interactive, /assigned\?\.variants\.length \? assigned : null/);
+  assert.doesNotMatch(interactive, /index % routeImages\.length/);
   assert.match(css, /\.routeMobileStage > span\[data-active="true"\]/);
-  assert.doesNotMatch(css, /\.routeList li\[aria-current="step"\]\s*\{[^}]*transform:/s);
+  assert.match(css, /\.routeMediaEmpty/);
+  assert.doesNotMatch(
+    css,
+    /\.routeList li\[aria-current="step"\]\s*\{[^}]*transform:/s,
+  );
   assert.match(css, /\.routeSection\s*\{\s*background: var\(--im-white\)/s);
   assert.match(css, /\.scopeSection\s*\{\s*background: var\(--im-white\)/s);
   assert.match(css, /\.finalCta\s*\{[^}]*background: var\(--im-white\)/s);
 });
 
 test("product-page motion degrades safely and the Jiangnan body stays white above the footer", async () => {
-  const [
-    motion,
-    jiangnanInteractive,
-    jiangnanPage,
-    jiangnanCss,
-    homeCss,
-  ] = await Promise.all([
-    source("components/PrivateTourMotion.tsx"),
-    source("components/ShanghaiJiangnanImagineInteractive.tsx"),
-    source("components/ShanghaiJiangnanImaginePage.tsx"),
-    source("components/ShanghaiJiangnanImaginePage.module.css"),
-    source("components/HomegroundHomePage.module.css"),
-  ]);
+  const [motion, jiangnanInteractive, jiangnanPage, jiangnanCss, homeCss] =
+    await Promise.all([
+      source("components/PrivateTourMotion.tsx"),
+      source("components/ShanghaiJiangnanImagineInteractive.tsx"),
+      source("components/ShanghaiJiangnanImaginePage.tsx"),
+      source("components/ShanghaiJiangnanImaginePage.module.css"),
+      source("components/HomegroundHomePage.module.css"),
+    ]);
 
   assert.match(motion, /prefers-reduced-motion: reduce/);
   assert.match(motion, /element\.dataset\.tourRevealed = "true"/);
   assert.match(jiangnanInteractive, /prefers-reduced-motion: reduce/);
   assert.match(jiangnanCss, /@media \(prefers-reduced-motion: reduce\)/);
 
-  for (const selector of [
-    "page",
-    "routeSection",
-    "scopeSection",
-    "finalCta",
-  ]) {
+  for (const selector of ["page", "routeSection", "scopeSection", "finalCta"]) {
     assert.match(
       jiangnanCss,
-      new RegExp(`\\.${selector}\\s*\\{[^}]*background: var\\(--im-white\\)`, "s"),
+      new RegExp(
+        `\\.${selector}\\s*\\{[^}]*background: var\\(--im-white\\)`,
+        "s",
+      ),
       `${selector} must remain white`,
     );
   }
   assert.match(jiangnanPage, /<\/main>\s*<HomegroundFooter\b/s);
-  assert.match(
-    homeCss,
-    /\.footer\s*\{[^}]*background: var\(--hg-color-ink\)/s,
-  );
+  assert.match(homeCss, /\.footer\s*\{[^}]*background: var\(--hg-color-ink\)/s);
 });
 
 test("traveler-facing product data does not expose internal commercial terms", () => {
-  const forbiddenKeys = /^(cost|costs|profit|margin|markup|commission|supplier|operatorPayment|procurement)$/i;
+  const forbiddenKeys =
+    /^(cost|costs|profit|margin|markup|commission|supplier|operatorPayment|procurement)$/i;
   const forbiddenText =
     /地接|成本|利润|毛利|采购价|结算价|supplier cost|operator payment|gross margin|markup|wholesale|commission/i;
 
@@ -395,7 +475,11 @@ test("traveler-facing product data does not expose internal commercial terms", (
     for (const locale of locales) {
       const localized = localizePrivateTourProduct(product, locale);
       const publicCopy = stringValues(localized).join("\n");
-      assert.doesNotMatch(publicCopy, forbiddenText, `${product.slug}/${locale}`);
+      assert.doesNotMatch(
+        publicCopy,
+        forbiddenText,
+        `${product.slug}/${locale}`,
+      );
     }
     assert.match(product.bookingNote.en, /starting price/i);
     assert.match(product.bookingNote.zh, /起价/);
@@ -410,7 +494,9 @@ test("metadata, hreflang and manifest expose exactly 24 additive tour entries", 
   assert.ok(nodes.every((node) => node.id.startsWith("tour-")));
   assert.ok(nodes.every((node) => node.family === "service"));
   assert.ok(nodes.every((node) => node.primaryIntent === "purchase"));
-  assert.ok(nodes.every((node) => node.updatePolicy.refreshCadence === "weekly"));
+  assert.ok(
+    nodes.every((node) => node.updatePolicy.refreshCadence === "weekly"),
+  );
 
   const localeVersions = nodes.flatMap((node) => Object.values(node.locales));
   assert.equal(localeVersions.length, 24);
@@ -422,9 +508,13 @@ test("metadata, hreflang and manifest expose exactly 24 additive tour entries", 
       entry.bodyResource.startsWith("private-tour:"),
     ),
   );
-  assert.ok(localeVersions.every((entry) => !entry.path.includes(reservedStaticSlug)));
+  assert.ok(
+    localeVersions.every((entry) => !entry.path.includes(reservedStaticSlug)),
+  );
 
-  const coreEntities = JSON.parse(await source("content/entities/core-places.json"));
+  const coreEntities = JSON.parse(
+    await source("content/entities/core-places.json"),
+  );
   const isolatedManifest = buildContentManifest([
     ...coreEntities,
     ...nodes.map((node) => ({

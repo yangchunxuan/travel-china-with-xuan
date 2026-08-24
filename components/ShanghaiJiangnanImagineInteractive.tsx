@@ -214,7 +214,11 @@ export function ShanghaiJiangnanPriceConsole({
           </div>
         ) : null}
         <p>{copy.chooseGroup}</p>
-        <div className={styles.priceChoices} role="group" aria-label={copy.chooseGroup}>
+        <div
+          className={styles.priceChoices}
+          role="group"
+          aria-label={copy.chooseGroup}
+        >
           {tourPackage.rows.map((row) => (
             <button
               aria-pressed={row.travelers === travellers}
@@ -235,8 +239,8 @@ export function ShanghaiJiangnanPriceConsole({
           {activeRow.formatted}
         </strong>
         <small>
-          {copy.perPerson} · {copy.group(activeRow.travelers)} · {copy.privateTour} ·{" "}
-          {tourPackage.label} · {copy.flightsSeparate}
+          {copy.perPerson} · {copy.group(activeRow.travelers)} ·{" "}
+          {copy.privateTour} · {tourPackage.label} · {copy.flightsSeparate}
         </small>
       </div>
 
@@ -338,25 +342,18 @@ export function ShanghaiJiangnanRouteExplorer({
   const [activeIndex, setActiveIndex] = useState(0);
   const explorerRef = useRef<HTMLDivElement>(null);
   const copy = interactionCopy[product.locale];
-  const routeImages = useMemo(
-    () => [product.heroImage, ...product.gallery],
-    [product.gallery, product.heroImage],
-  );
   const routeMedia = useMemo(
     () =>
-      product.itinerary.map((day, index) => {
-        const assigned = product.routeMedia.find((group) => group.day === day.day);
-        if (assigned?.variants.length) return assigned;
-        const fallback = routeImages[index % routeImages.length];
-        return {
-          day: day.day,
-          variants: [{ label: copy.dayLabel(day.day), image: fallback }],
-        };
+      product.itinerary.map((day) => {
+        const assigned = product.routeMedia.find(
+          (group) => group.day === day.day,
+        );
+        return assigned?.variants.length ? assigned : null;
       }),
-    [copy, product.itinerary, product.routeMedia, routeImages],
+    [product.itinerary, product.routeMedia],
   );
-  const activeImage =
-    routeMedia[activeIndex]?.variants[0]?.image ?? routeImages[0];
+  const activeDay = product.itinerary[activeIndex] ?? product.itinerary[0];
+  const activeImage = routeMedia[activeIndex]?.variants[0]?.image;
 
   useEffect(() => {
     const explorer = explorerRef.current;
@@ -370,7 +367,10 @@ export function ShanghaiJiangnanRouteExplorer({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          visibility.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0);
+          visibility.set(
+            entry.target,
+            entry.isIntersecting ? entry.intersectionRatio : 0,
+          );
         });
         const mostVisible = Array.from(visibility.entries()).sort(
           (left, right) => right[1] - left[1],
@@ -412,30 +412,42 @@ export function ShanghaiJiangnanRouteExplorer({
                 </div>
                 <h3>{day.title}</h3>
                 <p>{day.description}</p>
-                <ShanghaiJiangnanMobileDayMedia
-                  dayLabel={copy.dayLabel(day.day)}
-                  scenesLabel={copy.routeScenes}
-                  variants={dayMedia.variants}
-                />
+                {dayMedia ? (
+                  <ShanghaiJiangnanMobileDayMedia
+                    dayLabel={copy.dayLabel(day.day)}
+                    scenesLabel={copy.routeScenes}
+                    variants={dayMedia.variants}
+                  />
+                ) : null}
               </article>
             </li>
           );
         })}
       </ol>
 
-      <figure className={styles.routeMedia}>
-        <div className={styles.routeImageFrame}>
-          <Image
-            alt={activeImage.alt}
-            fill
-            key={`${activeIndex}-${activeImage.src}`}
-            sizes="(max-width: 860px) 92vw, 48vw"
-            src={activeImage.src}
-            style={{ objectPosition: activeImage.objectPosition }}
-          />
-        </div>
-        <figcaption>{activeImage.caption}</figcaption>
-      </figure>
+      {activeImage ? (
+        <figure className={styles.routeMedia}>
+          <div className={styles.routeImageFrame}>
+            <Image
+              alt={activeImage.alt}
+              fill
+              key={`${activeIndex}-${activeImage.src}`}
+              sizes="(max-width: 860px) 92vw, 48vw"
+              src={activeImage.src}
+              style={{ objectPosition: activeImage.objectPosition }}
+            />
+          </div>
+          <figcaption>{activeImage.caption}</figcaption>
+        </figure>
+      ) : (
+        <aside
+          aria-live="polite"
+          className={`${styles.routeMedia} ${styles.routeMediaEmpty}`}
+        >
+          <span>{copy.dayLabel(activeDay.day)}</span>
+          <strong>{activeDay.title}</strong>
+        </aside>
+      )}
     </div>
   );
 }

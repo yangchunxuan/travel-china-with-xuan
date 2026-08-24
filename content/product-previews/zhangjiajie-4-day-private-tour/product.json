@@ -40,7 +40,9 @@
       "title_zh": "抵达张家界，先把脚步放慢",
       "title_en": "Arrive in Zhangjiajie, Then Exhale",
       "title_ko": "장자제에 도착해 천천히 시작하기",
-      "summary_zh": "机场或高铁站接客，送往最终确认的酒店，自由活动。",
+      "summary_en": "Meet the driver at the confirmed Zhangjiajie airport or railway station and travel with your luggage by private vehicle to the confirmed stay. No guide or fixed sightseeing is planned, leaving room for arrival and check-in; stay overnight at the confirmed Zhangjiajie property.",
+      "summary_zh": "在已确认的张家界机场或车站与司机会合，行李随行，乘私车前往已确认住宿。当天不安排导游和固定景点，为抵达与入住留出余量；当晚入住已确认的张家界住宿。",
+      "summary_ko": "확정된 장자제 공항 또는 기차역에서 기사를 만나 수하물과 함께 전용 차량으로 확정된 숙소에 이동합니다. 이날은 가이드와 고정 관광을 넣지 않아 도착과 체크인에 여유를 두며, 확정된 장자제 숙소에서 숙박합니다.",
       "guide_planned": false,
       "fact_ids": ["day-one-transfer-no-guide"]
     },
@@ -49,7 +51,9 @@
       "title_zh": "走进砂岩峰林：袁家界与天子山",
       "title_en": "Into the Sandstone Forest: Yuanjiajie and Tianzi Mountain",
       "title_ko": "사암 봉우리 사이로: 위안자제와 톈쯔산",
-      "summary_zh": "百龙天梯、袁家界、天子山及天子山索道等核心游览。",
+      "summary_en": "Start from the confirmed stay with the guide and private vehicle, then transfer to Zhangjiajie National Forest Park. Connect the Bailong Elevator, Yuanjiajie, Tianzi Mountain and the cableway in the order supported by current operation, before returning by private vehicle to the confirmed Zhangjiajie stay for the night.",
+      "summary_zh": "从已确认住宿出发，由导游和私车前往张家界国家森林公园；百龙天梯、袁家界、天子山与索道按当天实际运营可执行的顺序衔接，结束后乘私车返回已确认住宿。",
+      "summary_ko": "확정된 숙소에서 가이드와 전용 차량으로 출발해 장자제 국가삼림공원으로 이동합니다. 백룡천제, 원가계, 천자산과 케이블카를 당일 운영에 맞는 순서로 연결하고, 전용 차량으로 확정된 장자제 숙소에 돌아와 숙박합니다.",
       "guide_planned": true,
       "fact_ids": ["guide-three-days"]
     },
@@ -58,7 +62,9 @@
       "title_zh": "跨过峡谷，再选洞穴或湖面",
       "title_en": "Cross the Canyon, Then Choose Cave or Lake",
       "title_ko": "대협곡을 건넌 뒤, 동굴 또는 호수 선택",
-      "summary_zh": "大峡谷玻璃桥，之后安排黄龙洞或宝峰湖二选一；以最终确认单为准。",
+      "summary_en": "Leave the confirmed stay with the guide and private vehicle for the Grand Canyon Glass Bridge. Continue to the written choice of Huanglong Cave or Baofeng Lake—only one is included—then return by private vehicle to the confirmed Zhangjiajie stay for the night.",
+      "summary_zh": "从已确认住宿出发，由导游和私车前往张家界大峡谷玻璃桥；随后游览书面确认的黄龙洞或宝峰湖其中一项，仅包含一项，结束后乘私车返回已确认住宿。",
+      "summary_ko": "확정된 숙소에서 가이드와 전용 차량으로 장자제 대협곡 유리다리에 이동합니다. 이어 서면으로 확정된 황룡동굴 또는 보봉호 중 한 곳만 방문하고, 전용 차량으로 확정된 장자제 숙소에 돌아와 숙박합니다.",
       "guide_planned": true,
       "fact_ids": ["ticket-bundle-itemization"]
     },
@@ -67,7 +73,9 @@
       "title_zh": "以天门山收尾，再启程",
       "title_en": "Tianmen Mountain, Then Onward",
       "title_ko": "톈먼산으로 마무리하고 다음 여정으로",
-      "summary_zh": "按票源采用A/B/C线游览，结束后送机场或车站。",
+      "summary_en": "Check out of the confirmed stay and keep your luggage in the private vehicle. Follow the Tianmen Mountain A, B or C route secured for the booking, then continue by private vehicle to the confirmed airport or railway station; the mountain-and-departure sequence is accepted only when the confirmed ticket and departure details leave a workable connection.",
+      "summary_zh": "从已确认住宿退房，行李随私车同行；按订单实际订到的天门山 A、B 或 C 线游览，结束后乘私车前往已确认的机场或车站。仅在已确认门票与返程信息能够合理衔接时执行山岳加返程安排，不强行赶行程。",
+      "summary_ko": "확정된 숙소에서 체크아웃하고 수하물은 전용 차량에 싣습니다. 예약에서 실제 확보한 톈먼산 A·B·C 코스 중 하나를 이용한 뒤 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 확정된 입장권과 출발편이 무리 없이 연결될 때에만 산악 일정과 출발을 함께 진행합니다.",
       "guide_planned": true,
       "fact_ids": ["guide-three-days", "ticket-bundle-itemization"]
     }
