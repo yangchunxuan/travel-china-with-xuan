@@ -28,7 +28,7 @@ test("Studio leads with the traveler planning thread and moves the team later", 
   assert.match(page, /aria-labelledby="planning-method-title"/);
 });
 
-test("all Studio locales expose inputs, deliverables, timing, scope and fees", async () => {
+test("all Studio openings expose inputs, deliverables and timing without price or fixed-scope promotion", async () => {
   const { homegroundStudioCopy, getStudioLanguagePaths } = await import(
     "../../lib/homegroundStudioI18n.ts"
   );
@@ -49,16 +49,15 @@ test("all Studio locales expose inputs, deliverables, timing, scope and fees", a
   for (const [locale, copy] of Object.entries(homegroundStudioCopy)) {
     assert.equal(copy.path, expectedPaths[locale]);
     assert.equal(copy.overview.stages.length, 3);
-    assert.equal(copy.overview.terms.length, 3);
+    assert.equal(copy.overview.terms.length, 1);
     assert.equal(copy.trust.inputs.length, 4);
     assert.equal(copy.trust.points.length, 3);
     assert.equal(copy.trust.deliverables.length, 4);
 
     const opening = JSON.stringify(copy.overview);
-    assert.match(opening, /US\$69/);
-    assert.match(opening, /US\$129/);
-    assert.match(opening, /10/);
-    assert.match(opening, /1–4/);
+    assert.doesNotMatch(opening, /US\$(?:69|129)/);
+    assert.doesNotMatch(opening, /10 travel days|10 个旅行日|최대 10일/);
+    assert.doesNotMatch(opening, /1–4/);
     assert.match(opening, locale === "en" ? /before payment/i : locale === "zh" ? /付款前/ : /결제 전에/);
   }
 });

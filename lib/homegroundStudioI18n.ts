@@ -149,20 +149,12 @@ export const homegroundStudioCopy: Record<
             "You receive the written output agreed for the service, not a generic attraction list.",
         },
       ],
-      termsLabel: "04 / Terms",
-      termsTitle: "Timing, scope and fee are clear first",
+      termsLabel: "04 / Timing",
+      termsTitle: "Confirm the delivery date before paid work begins",
       terms: [
         {
           label: "Timing",
           value: "Delivery date confirmed before payment",
-        },
-        {
-          label: "Standard scope",
-          value: "Up to 10 travel days · 4 overnight bases · 1 shared route for 1–4 travellers",
-        },
-        {
-          label: "Fee",
-          value: "US$69 review · US$129 route build · custom full-trip quote",
         },
       ],
     },
@@ -326,20 +318,12 @@ export const homegroundStudioCopy: Record<
           detail: "你收到的是双方确认过的书面成果，不是一份通用景点清单。",
         },
       ],
-      termsLabel: "04 / 服务条件",
-      termsTitle: "先确认时间、范围和费用",
+      termsLabel: "04 / 交付时间",
+      termsTitle: "开始付费工作前，先确认预计交付时间",
       terms: [
         {
           label: "交付时间",
           value: "付款前确认预计交付日期",
-        },
-        {
-          label: "标准范围",
-          value: "最多 10 个旅行日 · 4 个过夜住宿地 · 1–4 位同行者共用 1 条路线",
-        },
-        {
-          label: "费用",
-          value: "路线审核 US$69 · 路线规划 US$129 · 全程服务单独报价",
         },
       ],
     },
@@ -499,20 +483,12 @@ export const homegroundStudioCopy: Record<
           detail: "일반적인 명소 목록이 아니라 합의한 서비스에 맞는 서면 결과물을 받습니다.",
         },
       ],
-      termsLabel: "04 / 서비스 조건",
-      termsTitle: "일정, 범위와 요금을 먼저 확인합니다",
+      termsLabel: "04 / 납품 일정",
+      termsTitle: "유료 작업 전에 예상 납품일을 먼저 확인합니다",
       terms: [
         {
           label: "납품 일정",
           value: "결제 전에 예상 납품일 확인",
-        },
-        {
-          label: "표준 범위",
-          value: "최대 10일 · 4개 숙박 거점 · 1–4명이 함께 이용하는 1개 동선",
-        },
-        {
-          label: "요금",
-          value: "일정 검토 US$69 · 동선 설계 US$129 · 전체 여행 맞춤 견적",
         },
       ],
     },
