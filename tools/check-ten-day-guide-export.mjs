@@ -1,5 +1,9 @@
 import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
+import {
+  getGuideCatalogRoutePattern,
+  isCanonicalGuideCatalogPageName,
+} from "./guide-catalog-pagination-contract.mjs";
 
 const projectRoot = process.cwd();
 const outputRoot = path.join(projectRoot, "out");
@@ -84,6 +88,103 @@ async function isFile(filePath) {
 
 function exportPathForRoute(route) {
   return path.join(outputRoot, route.slice(1), "index.html");
+}
+
+function catalogGuideCardHrefs(html) {
+  const hrefs = [];
+
+  for (const match of html.matchAll(/<li\b[^>]*>/gi)) {
+    if (attributes(match[0]).get("data-guide-id") !== guideSlug) continue;
+
+    const cardStart = (match.index ?? 0) + match[0].length;
+    const articleEnd = html.indexOf("</article>", cardStart);
+    const cardMarkup = html.slice(
+      cardStart,
+      articleEnd >= 0 ? articleEnd : cardStart + 4_000,
+    );
+    const firstAnchor = tags(cardMarkup, "a")[0];
+    hrefs.push(firstAnchor ? attributes(firstAnchor).get("href") ?? null : null);
+  }
+
+  return hrefs;
+}
+
+async function guideCatalogPages(guideHubRoute) {
+  const paginationRoutePattern = getGuideCatalogRoutePattern(guideHubRoute);
+  const queuedRoutes = [guideHubRoute];
+  const visitedRoutes = new Set();
+  const catalogPages = [];
+
+  while (queuedRoutes.length > 0) {
+    const route = queuedRoutes.shift();
+    if (!route || visitedRoutes.has(route)) continue;
+    visitedRoutes.add(route);
+
+    const filePath = exportPathForRoute(route);
+    if (!(await isFile(filePath))) {
+      fail(`${route}: linked guide-catalog page has no export`);
+      continue;
+    }
+
+    const html = await readFile(filePath, "utf8");
+    catalogPages.push({ route, filePath, html });
+
+    for (const anchorTag of tags(html, "a")) {
+      const href = attributes(anchorTag).get("href");
+      if (!href) continue;
+
+      let target;
+      try {
+        target = new URL(href, siteUrl);
+      } catch {
+        continue;
+      }
+      if (
+        target.origin === siteUrl &&
+        paginationRoutePattern.test(target.pathname) &&
+        !visitedRoutes.has(target.pathname)
+      ) {
+        queuedRoutes.push(target.pathname);
+      }
+    }
+  }
+
+  const paginationRoot = path.join(
+    outputRoot,
+    guideHubRoute.slice(1),
+    "page",
+  );
+
+  let entries = [];
+  try {
+    entries = await readdir(paginationRoot, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+
+  const exportedPageDirectories = entries
+    .filter((entry) => entry.isDirectory())
+    .sort((left, right) => left.name.localeCompare(right.name, "en", { numeric: true }));
+
+  for (const entry of exportedPageDirectories) {
+    const route = `${guideHubRoute}page/${entry.name}/`;
+    if (!isCanonicalGuideCatalogPageName(entry.name)) {
+      fail(`${route}: non-canonical pagination export directory`);
+      continue;
+    }
+    const pagePath = path.join(
+      paginationRoot,
+      entry.name,
+      "index.html",
+    );
+    if (!(await isFile(pagePath))) {
+      fail(`${route}: pagination directory has no index export`);
+    } else if (!visitedRoutes.has(route)) {
+      fail(`${route}: orphan pagination export is not linked from the guide catalog`);
+    }
+  }
+
+  return catalogPages;
 }
 
 function alternateLinks(markup, linkTagName = "link") {
@@ -276,13 +377,29 @@ async function checkHomepageGuidePaths() {
       continue;
     }
 
-    const guideHubHtml = await readFile(guideHubPath, "utf8");
-    const guideLinks = tags(guideHubHtml, "a")
-      .map((tag) => attributes(tag).get("href") ?? "")
-      .filter((href) => normalizeAbsoluteUrl(href) === expectedGuideUrl);
+    const catalogPages = await guideCatalogPages(guideHubRoute);
+    const cardOccurrences = [];
+    for (const catalogPage of catalogPages) {
+      for (const href of catalogGuideCardHrefs(catalogPage.html)) {
+        cardOccurrences.push({
+          href,
+          page: path.relative(outputRoot, catalogPage.filePath),
+        });
+      }
+    }
 
-    if (guideLinks.length === 0) {
-      fail(`${guideHubRoute}: missing guide entry for ${locale.route}`);
+    if (cardOccurrences.length === 0) {
+      fail(
+        `${guideHubRoute}: missing data-guide-id=${guideSlug} card across the reachable paginated catalog`,
+      );
+    } else if (cardOccurrences.length > 1) {
+      fail(
+        `${guideHubRoute}: duplicate data-guide-id=${guideSlug} cards on ${cardOccurrences.map(({ page }) => page).join(", ")}`,
+      );
+    } else if (normalizeAbsoluteUrl(cardOccurrences[0].href ?? "") !== expectedGuideUrl) {
+      fail(
+        `${guideHubRoute}: data-guide-id=${guideSlug} card points to ${String(cardOccurrences[0].href)}, expected ${locale.route}`,
+      );
     }
   }
 }
@@ -410,6 +527,6 @@ if (failures.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    "✓ Ten-day guide export has three indexable, reciprocal localized pages, homepage-to-hub paths, matching sitemap entries, and no broken root-path links.",
+    "✓ Ten-day guide export has three indexable, reciprocal localized pages, homepage-to-paginated-catalog paths, matching sitemap entries, and no broken root-path links.",
   );
 }

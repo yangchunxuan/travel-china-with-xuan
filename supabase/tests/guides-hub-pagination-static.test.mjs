@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import {
+  getGuideCatalogRoutePattern,
+  isCanonicalGuideCatalogPageName,
+} from "../../tools/guide-catalog-pagination-contract.mjs";
 
 const projectRoot = new URL("../../", import.meta.url);
 const source = (relativePath) =>
@@ -34,8 +38,40 @@ test("a compact six-problem handoff follows search before each 24-card SSR batch
   assert.doesNotMatch(page, /className=\{styles\.entryCollection\}/);
 });
 
+test("guide catalog pagination accepts every canonical page from 2 upward", () => {
+  const routePattern = getGuideCatalogRoutePattern("/guides/");
+
+  for (const route of [
+    "/guides/",
+    "/guides/page/2/",
+    "/guides/page/9/",
+    "/guides/page/10/",
+    "/guides/page/19/",
+    "/guides/page/100/",
+  ]) {
+    assert.equal(routePattern.test(route), true, route);
+  }
+  for (const route of [
+    "/guides/page/1/",
+    "/guides/page/01/",
+    "/guides/page/02/",
+    "/guides/page/0/",
+    "/guides/page/-2/",
+    "/zh/guides/page/2/",
+  ]) {
+    assert.equal(routePattern.test(route), false, route);
+  }
+
+  for (const pageName of ["2", "9", "10", "19", "100"]) {
+    assert.equal(isCanonicalGuideCatalogPageName(pageName), true, pageName);
+  }
+  for (const pageName of ["0", "1", "01", "02", "010", "-2", "two"]) {
+    assert.equal(isCanonicalGuideCatalogPageName(pageName), false, pageName);
+  }
+});
+
 test("every guide batch is crawlable through real static links, indexable routes and sitemap entries", async () => {
-  const [page, styles, pagination, englishRoute, localizedRoute, sitemap, exportCheck] = await Promise.all([
+  const [page, styles, pagination, englishRoute, localizedRoute, sitemap, exportCheck, tenDayExportCheck] = await Promise.all([
     source("components/GuidesHubPage.tsx"),
     source("components/GuidesHubPage.module.css"),
     source("lib/guidesHubPagination.ts"),
@@ -43,6 +79,7 @@ test("every guide batch is crawlable through real static links, indexable routes
     source("app/(localized)/[locale]/guides/page/[page]/page.tsx"),
     source("app/sitemap.ts"),
     source("tools/check-indexable-export.mjs"),
+    source("tools/check-ten-day-guide-export.mjs"),
   ]);
 
   assert.doesNotMatch(page, /^"use client";/);
@@ -82,6 +119,18 @@ test("every guide batch is crawlable through real static links, indexable routes
   assert.doesNotMatch(sitemap, /#guide-list/);
   assert.match(exportCheck, /assertCrawlableInternalLink/);
   assert.match(exportCheck, /guides\\\/page\\\/\\d\+/);
+  assert.match(tenDayExportCheck, /async function guideCatalogPages/);
+  assert.match(tenDayExportCheck, /const queuedRoutes = \[guideHubRoute\]/);
+  assert.match(tenDayExportCheck, /getGuideCatalogRoutePattern\(guideHubRoute\)/);
+  assert.match(tenDayExportCheck, /paginationRoutePattern\.test\(target\.pathname\)/);
+  assert.match(tenDayExportCheck, /isCanonicalGuideCatalogPageName\(entry\.name\)/);
+  assert.match(tenDayExportCheck, /non-canonical pagination export directory/);
+  assert.match(tenDayExportCheck, /orphan pagination export is not linked from the guide catalog/);
+  assert.match(tenDayExportCheck, /function catalogGuideCardHrefs/);
+  assert.match(tenDayExportCheck, /attributes\(match\[0\]\)\.get\("data-guide-id"\) !== guideSlug/);
+  assert.match(tenDayExportCheck, /cardOccurrences\.length === 0/);
+  assert.match(tenDayExportCheck, /cardOccurrences\.length > 1/);
+  assert.match(tenDayExportCheck, /normalizeAbsoluteUrl\(cardOccurrences\[0\]\.href/);
 
   for (const route of [englishRoute, localizedRoute]) {
     assert.match(route, /export const dynamicParams = false/);
