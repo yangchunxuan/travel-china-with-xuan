@@ -148,8 +148,7 @@
   gap: 0.75rem;
 }
 
-.copyrightSocial a,
-.socialPending {
+.copyrightSocial a {
   align-items: center;
   color: #b0aea5;
   display: inline-flex;
@@ -164,16 +163,10 @@
   color: #faf9f5;
 }
 
-.copyrightSocial a > span,
-.socialPending > span {
+.copyrightSocial a > span {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1;
-}
-
-.socialPending {
-  color: #85837c;
-  cursor: default;
 }
 
 .operator {
@@ -259,9 +252,5 @@
 @media (forced-colors: active) {
   .footer {
     border-block-start: 1px solid CanvasText;
-  }
-
-  .socialPending {
-    color: GrayText;
   }
 }

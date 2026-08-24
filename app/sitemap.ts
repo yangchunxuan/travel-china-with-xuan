@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getIndexableManifestEntries } from "../lib/content-system/manifest";
 import type { ContentManifestEntry } from "../lib/content-system/types";
+import { getGuidesHubIndexablePaginationPages } from "../lib/guidesHubPagination";
 import {
   absoluteManifestAlternates,
   searchPlatformManifest,
@@ -56,7 +57,7 @@ export function sitemapLastModified(entry: ContentManifestEntry) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
+  const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
 
     return {
@@ -67,4 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: absoluteManifestAlternates(entry) },
     };
   });
+
+  const guidePaginationEntries = getGuidesHubIndexablePaginationPages().map(
+    ({ locale, path, lastModified, languages }) => ({
+      url: `${base}${path}`,
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: "weekly" as const,
+      priority: locale === "en" ? 0.7 : 0.65,
+      alternates: { languages },
+    }),
+  );
+
+  return [...manifestEntries, ...guidePaginationEntries];
 }

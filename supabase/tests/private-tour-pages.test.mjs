@@ -21,6 +21,10 @@ import {
   getPrivateTourRouteParams,
   isReservedPrivateTourSlug,
 } from "../../lib/privateTourMetadata.ts";
+import {
+  getPrivateTourHubLanguagePaths,
+  privateTourHubPaths,
+} from "../../lib/privateTourHubI18n.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const source = (relativePath) =>
@@ -70,18 +74,17 @@ async function assertPublicImageExists(src, context) {
   assert.ok(fileStats?.isFile(), `${context} is missing: ${src}`);
 }
 
-test("eight private tours resolve to all three static route families", async () => {
-  assert.equal(privateTourProducts.length, 8);
+test("every registry private tour resolves to all three static route families", async () => {
   assert.equal(
     new Set(privateTourProducts.map((product) => product.slug)).size,
-    8,
+    privateTourProducts.length,
   );
   assert.equal(isReservedPrivateTourSlug(reservedStaticSlug), true);
   assert.equal(getPrivateTourProduct(reservedStaticSlug), undefined);
 
   for (const locale of locales) {
     const params = getPrivateTourRouteParams(locale);
-    assert.equal(params.length, 8, locale);
+    assert.equal(params.length, privateTourProducts.length, locale);
     assert.ok(params.every(({ slug }) => slug !== reservedStaticSlug));
   }
 
@@ -125,6 +128,22 @@ test("eight private tours resolve to all three static route families", async () 
     localizedRoute,
     /<ShanghaiJiangnanImaginePage\s+product=\{product\}\s+locale=\{locale\}\s*\/>/,
   );
+});
+
+test("all published tour templates return through the localized tours hub", async () => {
+  const [batchTemplate, zhangjiajieTemplate] = await Promise.all([
+    source("components/ShanghaiJiangnanImaginePage.tsx"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
+  ]);
+
+  assert.match(batchTemplate, /const tourHubPath = `\$\{homePath\}tours\/`/);
+  assert.match(batchTemplate, /<Link href=\{tourHubPath\}>\{copy\.productLabel\}<\/Link>/);
+  assert.match(batchTemplate, /position: 3,\s*name: localized\.title/s);
+  assert.match(batchTemplate, /<li aria-current="page">\{localized\.title\}<\/li>/);
+
+  assert.match(zhangjiajieTemplate, /const tourHubPath = `\$\{homePath\}tours\/`/);
+  assert.match(zhangjiajieTemplate, /\{published \? \(\s*<li>\s*<Link href=\{tourHubPath\}>/s);
+  assert.match(zhangjiajieTemplate, /position: 3,\s*name: copy\.previewBreadcrumb/s);
 });
 
 test("homepage tour images declare their real intrinsic dimensions", async () => {
@@ -233,11 +252,11 @@ test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices
   );
 });
 
-test("the other seven tours keep complete itineraries and only publish verified route media", async () => {
+test("the remaining tours keep complete itineraries and only publish verified route media", async () => {
   const products = privateTourProducts.filter(
     (product) => product.slug !== shanghaiJiangnanSlug,
   );
-  assert.equal(products.length, 7);
+  assert.equal(products.length, privateTourProducts.length - 1);
 
   const imagesToCheck = [];
   for (const product of products) {
@@ -293,7 +312,7 @@ test("the other seven tours keep complete itineraries and only publish verified 
   );
 });
 
-test("the nine private-tour identities do not repeat an image path or image bytes", async () => {
+test("published private-tour identities do not repeat an image path or image bytes", async () => {
   const zhangjiajiePageSource = await source(
     "components/ZhangjiajiePrivateTourPreviewPage.tsx",
   );
@@ -487,29 +506,74 @@ test("traveler-facing product data does not expose internal commercial terms", (
   }
 });
 
-test("metadata, hreflang and manifest expose exactly 24 additive tour entries", async () => {
+test("manifest distinguishes one tours hub from every registry product and detail locale", async () => {
   const nodes = buildPrivateTourContentNodes();
-  assert.equal(nodes.length, 8);
-  assert.equal(new Set(nodes.map((node) => node.id)).size, 8);
-  assert.ok(nodes.every((node) => node.id.startsWith("tour-")));
-  assert.ok(nodes.every((node) => node.family === "service"));
-  assert.ok(nodes.every((node) => node.primaryIntent === "purchase"));
+  const hubNodes = nodes.filter((node) => node.id === "tour-hub");
+  const productNodes = nodes.filter((node) => node.id !== "tour-hub");
+  const expectedProductCount = privateTourProducts.length;
+
+  assert.equal(nodes.length, expectedProductCount + 1);
+  assert.equal(
+    new Set(nodes.map((node) => node.id)).size,
+    expectedProductCount + 1,
+  );
+  assert.equal(hubNodes.length, 1);
+  assert.equal(productNodes.length, expectedProductCount);
+
+  const hubNode = hubNodes[0];
+  assert.equal(hubNode.section, "services");
+  assert.equal(hubNode.family, "comparison");
+  assert.equal(hubNode.primaryIntent, "compare");
+  assert.equal(hubNode.parentContentId, null);
+  assert.deepEqual(hubNode.schemaTypes, ["CollectionPage", "ItemList"]);
+  assert.equal(hubNode.status, "published");
+  assert.deepEqual(hubNode.indexability, { index: true, follow: true });
+  assert.equal(hubNode.updatePolicy.refreshCadence, "weekly");
+  assert.deepEqual(
+    Object.fromEntries(
+      Object.entries(hubNode.locales).map(([locale, entry]) => [
+        locale,
+        entry.path,
+      ]),
+    ),
+    {
+      en: privateTourHubPaths.en,
+      "zh-Hans": privateTourHubPaths.zh,
+      ko: privateTourHubPaths.ko,
+    },
+  );
   assert.ok(
-    nodes.every((node) => node.updatePolicy.refreshCadence === "weekly"),
+    Object.values(hubNode.locales).every(
+      (entry) => entry.bodyResource === "private-tour-hub:tours",
+    ),
   );
 
-  const localeVersions = nodes.flatMap((node) => Object.values(node.locales));
-  assert.equal(localeVersions.length, 24);
-  assert.ok(nodes.every((node) => node.status === "published"));
-  assert.ok(nodes.every((node) => node.indexability.index));
-  assert.ok(nodes.every((node) => node.indexability.follow));
+  assert.ok(productNodes.every((node) => node.id.startsWith("tour-")));
+  assert.ok(productNodes.every((node) => node.family === "service"));
+  assert.ok(productNodes.every((node) => node.primaryIntent === "purchase"));
+  assert.ok(productNodes.every((node) => node.parentContentId === "tour-hub"));
   assert.ok(
-    localeVersions.every((entry) =>
+    productNodes.every(
+      (node) => node.updatePolicy.refreshCadence === "weekly",
+    ),
+  );
+
+  const detailLocaleVersions = productNodes.flatMap((node) =>
+    Object.values(node.locales),
+  );
+  assert.equal(detailLocaleVersions.length, expectedProductCount * locales.length);
+  assert.ok(productNodes.every((node) => node.status === "published"));
+  assert.ok(productNodes.every((node) => node.indexability.index));
+  assert.ok(productNodes.every((node) => node.indexability.follow));
+  assert.ok(
+    detailLocaleVersions.every((entry) =>
       entry.bodyResource.startsWith("private-tour:"),
     ),
   );
   assert.ok(
-    localeVersions.every((entry) => !entry.path.includes(reservedStaticSlug)),
+    detailLocaleVersions.every(
+      (entry) => !entry.path.includes(reservedStaticSlug),
+    ),
   );
 
   const coreEntities = JSON.parse(
@@ -523,10 +587,26 @@ test("metadata, hreflang and manifest expose exactly 24 additive tour entries", 
       data: node,
     })),
   ]);
-  const tourEntries = isolatedManifest.entries.filter((entry) =>
-    entry.contentId.startsWith("tour-"),
+  const hubEntries = isolatedManifest.entries.filter(
+    (entry) => entry.contentId === "tour-hub",
   );
-  assert.equal(tourEntries.length, 24);
+  const productNodeIds = new Set(productNodes.map((node) => node.id));
+  const tourEntries = isolatedManifest.entries.filter((entry) =>
+    productNodeIds.has(entry.contentId),
+  );
+  assert.equal(hubEntries.length, 3);
+  assert.equal(tourEntries.length, productNodes.length * locales.length);
+  assert.deepEqual(
+    Object.fromEntries(hubEntries.map((entry) => [entry.locale, entry.path])),
+    {
+      en: privateTourHubPaths.en,
+      zh: privateTourHubPaths.zh,
+      ko: privateTourHubPaths.ko,
+    },
+  );
+  for (const hubEntry of hubEntries) {
+    assert.deepEqual(hubEntry.alternates, getPrivateTourHubLanguagePaths());
+  }
 
   for (const product of privateTourProducts) {
     const languages = getPrivateTourLanguagePaths(product);

@@ -15,6 +15,10 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../../lib/homegroundI18n";
+import { getHomegroundNavigationModel } from "../../lib/homegroundNavigationModel";
+import {
+  getPublishedSearchCollectionEntry,
+} from "../../lib/searchPlatformManifest";
 import {
   getSearchPlatformCopy,
   getSearchSectionPath,
@@ -34,6 +38,7 @@ import {
   editorialPersonSchema,
   editorialWebsiteSchema,
 } from "../../lib/editorialIdentity";
+import { getDestinationHubsForGuide } from "../../lib/destinationHubs";
 import styles from "./EditorialGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -77,7 +82,7 @@ const ui = {
     skip: "본문으로 이동",
     breadcrumb: "현재 위치",
     home: "홈",
-    guides: "여행 가이드",
+    guides: "실용 가이드",
     reviewed: "자료 확인",
     ctaLabel: "현지 팀과 여행 설계",
     ctaTitle: "생각 중인 중국 여행을 알려 주세요.",
@@ -97,13 +102,36 @@ function structuredData(
     block.type === "sources" ? block.items.map((item) => item.url) : [],
   );
   const homePath = getHomegroundCopy(locale).path;
-  const guidesPath = `${homePath}guides/`;
+  const homeCopy = getHomegroundCopy(locale);
+  const navigation = getHomegroundNavigationModel(locale, homePath);
   const collectionId = getGuideCollectionId(guide);
   const collection = getSearchCollection(collectionId);
   const platformCopy = getSearchPlatformCopy(locale);
   const sectionCopy = platformCopy.sections[collection.section];
   const sectionPath = getSearchSectionPath(collection.section, locale);
   const collectionPath = getSearchCollectionPath(collection, locale);
+  const publishedCollectionEntry = getPublishedSearchCollectionEntry(
+    collectionId,
+    locale,
+  );
+  const parentNavigationId =
+    collection.section === "explore"
+      ? "destinations"
+      : collection.section === "services"
+        ? "studio"
+        : "guides";
+  const parent = navigation.items.find((item) => item.id === parentNavigationId);
+  if (!parent) throw new Error(`Missing ${parentNavigationId} navigation item.`);
+  const visibleAncestors = [
+    { name: copy.home, path: homePath },
+    { name: parent.label, path: parent.href },
+    ...(collection.section !== "explore"
+      ? [{ name: sectionCopy.navLabel, path: sectionPath }]
+      : []),
+    ...(publishedCollectionEntry
+      ? [{ name: collection.locales[locale].label, path: collectionPath }]
+      : []),
+  ];
   const inLanguage = locale === "zh" ? "zh-Hans" : locale;
 
   return {
@@ -137,33 +165,15 @@ function structuredData(
       {
         "@type": "BreadcrumbList",
         itemListElement: [
+          ...visibleAncestors.map((ancestor, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: ancestor.name,
+            item: `${SITE_URL}${ancestor.path}`,
+          })),
           {
             "@type": "ListItem",
-            position: 1,
-            name: copy.home,
-            item: `${SITE_URL}${homePath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: copy.guides,
-            item: `${SITE_URL}${guidesPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: sectionCopy.navLabel,
-            item: `${SITE_URL}${sectionPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name: collection.locales[locale].label,
-            item: `${SITE_URL}${collectionPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 5,
+            position: visibleAncestors.length + 1,
             name: guide.navTitle,
             item: guide.canonicalUrl,
           },
@@ -185,13 +195,31 @@ export function EditorialGuidePage({
   const guide = getGuideEntry(entry.id, locale);
   const copy = ui[locale];
   const homeCopy = getHomegroundCopy(locale);
-  const guidesPath = `${homeCopy.path}guides/`;
+  const navigation = getHomegroundNavigationModel(locale, homeCopy.path);
   const collectionId = getGuideCollectionId(guide);
   const collection = getSearchCollection(collectionId);
   const platformCopy = getSearchPlatformCopy(locale);
   const sectionCopy = platformCopy.sections[collection.section];
   const sectionPath = getSearchSectionPath(collection.section, locale);
   const collectionPath = getSearchCollectionPath(collection, locale);
+  const publishedCollectionEntry = getPublishedSearchCollectionEntry(
+    collectionId,
+    locale,
+  );
+  const parentNavigationId =
+    collection.section === "explore"
+      ? "destinations"
+      : collection.section === "services"
+        ? "studio"
+        : "guides";
+  const parent = navigation.items.find((item) => item.id === parentNavigationId);
+  if (!parent) throw new Error(`Missing ${parentNavigationId} navigation item.`);
+  const pageContext =
+    collection.section === "explore"
+      ? "destination"
+      : collection.section === "services"
+        ? "services"
+        : "guide";
   const date = new Intl.DateTimeFormat(
     locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-US",
     { dateStyle: "long", timeZone: "UTC" },
@@ -202,6 +230,13 @@ export function EditorialGuidePage({
     : guide.format.replaceAll("-", " ");
   const titleSegments = locale === "zh" ? zhHeadingSegments[guide.id] : null;
   const plannerHref = `${homeCopy.path}?utm_source=editorial_guide&utm_medium=owned&utm_campaign=trip_conversation&utm_content=${guide.id}#planner-contact`;
+  const relatedDestinations = getDestinationHubsForGuide(guide.id, locale);
+  const relatedDestinationCopy =
+    locale === "zh"
+      ? { label: "相关目的地", title: "把这个答案放回具体城市。" }
+      : locale === "ko"
+        ? { label: "관련 여행지", title: "이 답을 실제 도시 동선에 연결하세요." }
+        : { label: "Related destinations", title: "Put this answer back into a real city stay." };
 
   return (
     <div
@@ -217,7 +252,7 @@ export function EditorialGuidePage({
         guideId={guide.id}
         languagePaths={getGuideLanguagePaths(guide.id)}
         locale={locale}
-        pageContext="guide"
+        pageContext={pageContext}
       />
 
       <main>
@@ -233,9 +268,13 @@ export function EditorialGuidePage({
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}>
               <ol>
                 <li><Link href={homeCopy.path}>{copy.home}</Link></li>
-                <li><span aria-hidden="true">/</span><Link href={guidesPath}>{copy.guides}</Link></li>
-                <li><span aria-hidden="true">/</span><Link href={sectionPath}>{sectionCopy.navLabel}</Link></li>
-                <li><span aria-hidden="true">/</span><Link href={collectionPath}>{collection.locales[locale].label}</Link></li>
+                <li><span aria-hidden="true">/</span><Link href={parent.href}>{parent.label}</Link></li>
+                {collection.section !== "explore" ? (
+                  <li><span aria-hidden="true">/</span><Link href={sectionPath}>{sectionCopy.navLabel}</Link></li>
+                ) : null}
+                {publishedCollectionEntry ? (
+                  <li><span aria-hidden="true">/</span><Link href={collectionPath}>{collection.locales[locale].label}</Link></li>
+                ) : null}
                 <li aria-current="page"><span aria-hidden="true">/</span>{guide.navTitle}</li>
               </ol>
             </nav>
@@ -288,6 +327,13 @@ export function EditorialGuidePage({
           <PageFamilyRenderer body={body} />
         </article>
 
+        {relatedDestinations.length > 0 ? (
+          <aside className={styles.relatedDestinations}>
+            <div><p>{relatedDestinationCopy.label}</p><h2>{relatedDestinationCopy.title}</h2></div>
+            <ul>{relatedDestinations.map((destination) => <li key={destination.id}><Link href={destination.canonicalPath}>{destination.navTitle}<span aria-hidden="true">→</span></Link></li>)}</ul>
+          </aside>
+        ) : null}
+
         <aside className={styles.cta} data-similarity-ignore>
           <div>
             <p className={styles.ctaLabel}>{copy.ctaLabel}</p>
@@ -306,7 +352,7 @@ export function EditorialGuidePage({
         </aside>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guide" />
+      <HomegroundFooter locale={locale} pageContext={pageContext} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -817,7 +817,7 @@ const ko: ChinaHotelValueCopy = {
   skipLink: "본문으로 건너뛰기",
   breadcrumb: {
     home: "홈",
-    guides: "여행 가이드",
+    guides: "실용 가이드",
     current: "중국 호텔이 싼 이유",
   },
 

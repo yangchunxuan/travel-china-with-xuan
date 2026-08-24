@@ -24,7 +24,15 @@ import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
+import {
+  getHomegroundNavigationModel,
+  type HomegroundPrimaryNavigationId,
+} from "../lib/homegroundNavigationModel";
 import { routeServiceIds } from "../lib/routeServiceInterest";
+import {
+  isPrivateTourInquirySlug,
+  privateTourInquiryQueryKey,
+} from "../lib/privateTourInquiryContext";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
@@ -35,8 +43,10 @@ export type HomegroundPageContext =
   | "guide"
   | "guides"
   | "search"
+  | "plan"
   | "studio"
   | "services"
+  | "tours"
   | "tour"
   | "destinations"
   | "destination"
@@ -62,6 +72,12 @@ interface HomegroundHeaderProps {
    * Missing locales are omitted instead of linking to an unrelated homepage.
    */
   languagePaths?: Partial<Record<HomegroundLanguagePathKey, string>>;
+  /**
+   * Marks a primary-navigation landing page as the exact current page.
+   * Descendants such as /guides/page/2/ remain in the same section, but are
+   * exposed to assistive technology as a location rather than the section root.
+   */
+  navigationIsExact?: boolean;
 }
 
 const allowedHeaderHashes = new Set([
@@ -86,29 +102,12 @@ const allowedPlannerQueries = new Set([
   "result",
 ]);
 const allowedServiceQueries = new Set<string>(routeServiceIds);
-const navigationSections: Record<
-  HomegroundLocale,
-  { guides: string; mobileCta: string }
-> = {
-  en: {
-    guides: "Travel guides",
-    mobileCta: "Plan",
-  },
-  zh: {
-    guides: "旅行指南",
-    mobileCta: "规划",
-  },
-  ko: {
-    guides: "여행 가이드",
-    mobileCta: "상담",
-  },
-};
-
 function preservedHomeQuery(plannerStatus: PlannerStatus): string {
   const current = new URL(window.location.href);
   const preserved = new URLSearchParams();
   const planner = current.searchParams.get("planner");
   const service = current.searchParams.get("service");
+  const privateTour = current.searchParams.get(privateTourInquiryQueryKey);
 
   if (planner && allowedPlannerQueries.has(planner)) {
     preserved.set("planner", planner);
@@ -117,6 +116,9 @@ function preservedHomeQuery(plannerStatus: PlannerStatus): string {
   }
   if (service && allowedServiceQueries.has(service)) {
     preserved.set("service", service);
+  }
+  if (isPrivateTourInquirySlug(privateTour)) {
+    preserved.set(privateTourInquiryQueryKey, privateTour);
   }
 
   const query = preserved.toString();
@@ -163,6 +165,7 @@ export function HomegroundHeader({
   plannerHrefOverride,
   plannerTracking,
   languagePaths,
+  navigationIsExact = false,
 }: HomegroundHeaderProps) {
   const [open, setOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
@@ -187,24 +190,39 @@ export function HomegroundHeader({
       ? plannerTarget
       : `${copy.path}#planner-contact`
   );
-  const guideHubHref = `${copy.path}guides/`;
+  const faqHref = pageContext === "home" ? "#faq" : `${copy.path}#faq`;
+  const primaryNavigation = getHomegroundNavigationModel(locale, copy.path);
   const guidesAreCurrent =
     pageContext === "guides" ||
     pageContext === "guide" ||
-    pageContext === "search";
+    pageContext === "search" ||
+    pageContext === "plan";
   const guidesAreExact =
-    pageContext === "guides" && showLanguageNav && !languagePaths;
-  const sectionLabels = navigationSections[locale];
-  const studioHref = `${copy.path}studio/`;
-  const destinationsHref = `${copy.path}explore/`;
-  const faqHref = pageContext === "home" ? "#faq" : `${copy.path}#faq`;
+    pageContext === "guides" && navigationIsExact;
   const destinationsAreCurrent =
     pageContext === "destinations" || pageContext === "destination";
   const destinationsAreExact = pageContext === "destinations";
+  const toursAreCurrent =
+    pageContext === "tours" || pageContext === "tour";
+  const toursAreExact = pageContext === "tours";
   const planningIsCurrent =
     pageContext === "studio" || pageContext === "services";
   const planningIsExact = pageContext === "studio";
-  const faqIsCurrent = pageContext === "home" && activeHash === "#faq";
+  const navItemState = (id: HomegroundPrimaryNavigationId) => {
+    switch (id) {
+      case "destinations":
+        return {
+          active: destinationsAreCurrent,
+          exact: destinationsAreExact,
+        };
+      case "tours":
+        return { active: toursAreCurrent, exact: toursAreExact };
+      case "guides":
+        return { active: guidesAreCurrent, exact: guidesAreExact };
+      case "studio":
+        return { active: planningIsCurrent, exact: planningIsExact };
+    }
+  };
   const plannerFlowHashes = new Set([
     "#planner-contact",
     "#route-finder",
@@ -231,13 +249,17 @@ export function HomegroundHeader({
       ? getGuideEntry(guideId, targetLocale).canonicalPath
       : pageContext === "guides"
         ? `${target.path}guides/`
-        : pageContext === "services"
-          ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
-          : pageContext === "studio"
-            ? `${target.path}studio/`
-            : plannerStatus === "result" && !languageQuery
-              ? `${target.path}?planner=result${languageHash}`
-              : `${target.path}${languageQuery}${languageHash}`;
+        : pageContext === "plan"
+          ? `${target.path}plan/`
+          : pageContext === "tours" || pageContext === "tour"
+            ? `${target.path}tours/`
+            : pageContext === "services"
+              ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
+              : pageContext === "studio"
+                ? `${target.path}studio/`
+                : plannerStatus === "result" && !languageQuery
+                  ? `${target.path}?planner=result${languageHash}`
+                  : `${target.path}${languageQuery}${languageHash}`;
   };
 
   useEffect(() => {
@@ -383,6 +405,20 @@ export function HomegroundHeader({
   }, [open]);
 
   const close = () => setOpen(false);
+  const trackNavigationClick = (
+    item: HomegroundPrimaryNavigationId | "faq",
+    surface:
+      | "desktop-primary"
+      | "desktop-utility"
+      | "mobile-primary"
+      | "mobile-utility",
+  ) => {
+    trackEvent("navigation_clicked", {
+      navigation_item: item,
+      navigation_surface: surface,
+      page_language: locale,
+    });
+  };
   const trackPlannerClick = () => {
     if (!plannerTracking) return;
     trackEvent("guide_cta_clicked", {
@@ -446,32 +482,35 @@ export function HomegroundHeader({
           className={styles.desktopNav}
           aria-label={copy.navigation.primaryLabel}
         >
+          {primaryNavigation.items.map((item) => {
+            const state = navItemState(item.id);
+            return (
+              <a
+                aria-current={
+                  state.exact ? "page" : state.active ? "location" : undefined
+                }
+                data-active={state.active ? "true" : undefined}
+                href={item.href}
+                key={item.id}
+                onClick={() => trackNavigationClick(item.id, "desktop-primary")}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        <div className={styles.headerActions}>
           <a
-            aria-current={guidesAreExact ? "page" : undefined}
-            data-active={guidesAreCurrent ? "true" : undefined}
-            href={guideHubHref}
-          >
-            {sectionLabels.guides}
-          </a>
-          <a
-            aria-current={destinationsAreExact ? "page" : undefined}
-            data-active={destinationsAreCurrent ? "true" : undefined}
-            href={destinationsHref}
-          >
-            {copy.cities.eyebrow}
-          </a>
-          <a
-            aria-current={planningIsExact ? "page" : undefined}
-            data-active={planningIsCurrent ? "true" : undefined}
-            href={studioHref}
-          >
-            {copy.navigation.planning}
-          </a>
-          <a
-            aria-current={faqIsCurrent ? "location" : undefined}
-            data-active={faqIsCurrent ? "true" : undefined}
+            aria-current={
+              pageContext === "home" && activeHash === "#faq"
+                ? "location"
+                : undefined
+            }
+            className={styles.desktopUtilityLink}
             href={faqHref}
             onClick={(event) => {
+              trackNavigationClick("faq", "desktop-utility");
               if (pageContext === "home") {
                 handleHomegroundHashClick(event, "#faq");
               }
@@ -479,9 +518,6 @@ export function HomegroundHeader({
           >
             {copy.navigation.faq}
           </a>
-        </nav>
-
-        <div className={styles.headerActions}>
           <nav
             className={styles.languageNav}
             aria-label={copy.navigation.languageLabel}
@@ -528,7 +564,7 @@ export function HomegroundHeader({
               {plannerCta}
             </span>
             <span className={styles.headerCtaShort} aria-hidden="true">
-              {sectionLabels.mobileCta}
+              {primaryNavigation.mobileCta}
             </span>
           </a>
           <button
@@ -543,6 +579,16 @@ export function HomegroundHeader({
             aria-expanded={open}
             aria-controls="homeground-mobile-navigation"
             onClick={() => setOpen((current) => !current)}
+            onKeyDown={(event) => {
+              if (
+                event.repeat ||
+                (event.key !== "Enter" && event.key !== " ")
+              ) {
+                return;
+              }
+              event.preventDefault();
+              setOpen((current) => !current);
+            }}
           >
             {open ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
           </button>
@@ -556,92 +602,99 @@ export function HomegroundHeader({
           aria-label={copy.navigation.mobileLabel}
           hidden={!open}
         >
-        <a
-          aria-current={guidesAreExact ? "page" : undefined}
-          data-active={guidesAreCurrent ? "true" : undefined}
-          href={guideHubHref}
-          onClick={close}
-        >
-          <span>{sectionLabels.guides}</span>
-          <span aria-hidden="true">01</span>
-        </a>
-        <a
-          aria-current={destinationsAreExact ? "page" : undefined}
-          data-active={destinationsAreCurrent ? "true" : undefined}
-          href={destinationsHref}
-          onClick={close}
-        >
-          <span>{copy.cities.eyebrow}</span>
-          <span aria-hidden="true">02</span>
-        </a>
-        <a
-          aria-current={planningIsExact ? "page" : undefined}
-          data-active={planningIsCurrent ? "true" : undefined}
-          href={studioHref}
-          onClick={close}
-        >
-          <span>{copy.navigation.planning}</span>
-          <span aria-hidden="true">03</span>
-        </a>
-        <a
-          aria-current={faqIsCurrent ? "location" : undefined}
-          data-active={faqIsCurrent ? "true" : undefined}
-          href={faqHref}
-          onClick={(event) => {
-            close();
-            if (pageContext === "home") {
-              handleHomegroundHashClick(event, "#faq");
-            }
-          }}
-        >
-          <span>{copy.navigation.faq}</span>
-          <span aria-hidden="true">04</span>
-        </a>
-        <div
-          className={styles.mobileLanguageNav}
-          role="group"
-          aria-label={copy.navigation.languageLabel}
-          hidden={!showLanguageNav}
-          style={showLanguageNav ? undefined : { display: "none" }}
-        >
-          {availableLanguageLocales.map((targetLocale) => {
-            const target = getHomegroundCopy(targetLocale);
-            const languageHref = languageHrefFor(targetLocale);
-            return (
+          <div className={styles.mobilePrimaryLinks}>
+            {primaryNavigation.items.map((item) => {
+              const state = navItemState(item.id);
+              return (
+                <a
+                  aria-current={
+                    state.exact ? "page" : state.active ? "location" : undefined
+                  }
+                  data-active={state.active ? "true" : undefined}
+                  href={item.href}
+                  key={item.id}
+                  onClick={() => {
+                    trackNavigationClick(item.id, "mobile-primary");
+                    close();
+                  }}
+                >
+                  <span className={styles.mobileNavCopy}>
+                    <strong>{item.label}</strong>
+                    <small>{item.description}</small>
+                  </span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              );
+            })}
+          </div>
+          <div className={styles.mobileUtility}>
+            <div className={styles.mobileUtilityRow}>
               <a
                 aria-current={
-                  targetLocale === locale
-                    ? pageContext === "home"
-                      ? "page"
-                      : "true"
+                  pageContext === "home" && activeHash === "#faq"
+                    ? "location"
                     : undefined
                 }
-                href={languageHref}
-                hrefLang={target.htmlLang}
-                key={targetLocale}
-                lang={target.htmlLang}
-                onClick={(event) =>
-                  handleLanguageChange(event, targetLocale)
-                }
+                className={styles.mobileUtilityLink}
+                href={faqHref}
+                onClick={(event) => {
+                  trackNavigationClick("faq", "mobile-utility");
+                  close();
+                  if (pageContext === "home") {
+                    handleHomegroundHashClick(event, "#faq");
+                  }
+                }}
               >
-                {target.languageShort}
+                <span>{copy.navigation.faq}</span>
+                <span aria-hidden="true">→</span>
               </a>
-            );
-          })}
-        </div>
-        <a
-          className={styles.mobileCta}
-          href={plannerHref}
-          onClick={(event) => {
-            trackPlannerClick();
-            close();
-            if (pageContext === "home") {
-              handleHomegroundHashClick(event, plannerTarget);
-            }
-          }}
-        >
-          {plannerCta}
-        </a>
+              <div
+                className={styles.mobileLanguageNav}
+                role="group"
+                aria-label={copy.navigation.languageLabel}
+                hidden={!showLanguageNav}
+                style={showLanguageNav ? undefined : { display: "none" }}
+              >
+                {availableLanguageLocales.map((targetLocale) => {
+                  const target = getHomegroundCopy(targetLocale);
+                  const languageHref = languageHrefFor(targetLocale);
+                  return (
+                    <a
+                      aria-current={
+                        targetLocale === locale
+                          ? pageContext === "home"
+                            ? "page"
+                            : "true"
+                          : undefined
+                      }
+                      href={languageHref}
+                      hrefLang={target.htmlLang}
+                      key={targetLocale}
+                      lang={target.htmlLang}
+                      onClick={(event) =>
+                        handleLanguageChange(event, targetLocale)
+                      }
+                    >
+                      {target.languageShort}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+            <a
+              className={styles.mobileCta}
+              href={plannerHref}
+              onClick={(event) => {
+                trackPlannerClick();
+                close();
+                if (pageContext === "home") {
+                  handleHomegroundHashClick(event, plannerTarget);
+                }
+              }}
+            >
+              {plannerCta}
+            </a>
+          </div>
         </nav>
       </div>
     </header>

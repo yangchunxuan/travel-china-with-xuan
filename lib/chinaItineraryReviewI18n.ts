@@ -10,7 +10,14 @@ export interface ChinaItineraryReviewCopy {
   };
   navigationLabel: string;
   skipLink: string;
-  breadcrumb: { home: string; current: string; ariaLabel: string };
+  breadcrumb: {
+    home: string;
+    studio: string;
+    services: string;
+    current: string;
+    returnToServices: string;
+    ariaLabel: string;
+  };
   hero: {
     eyebrow: string;
     title: string;
@@ -157,7 +164,10 @@ const en: ChinaItineraryReviewCopy = {
   skipLink: "Skip to China route planning",
   breadcrumb: {
     home: "Home",
-    current: "Planning services",
+    studio: "How We Plan",
+    services: "Travel Services",
+    current: "Route review and planning",
+    returnToServices: "Back to all travel services",
     ariaLabel: "Breadcrumb",
   },
   hero: {
@@ -436,7 +446,14 @@ const zh: ChinaItineraryReviewCopy = {
   },
   navigationLabel: "路线规划服务",
   skipLink: "跳到中国路线规划内容",
-  breadcrumb: { home: "首页", current: "路线规划服务", ariaLabel: "面包屑导航" },
+  breadcrumb: {
+    home: "首页",
+    studio: "我们如何规划",
+    services: "旅行服务",
+    current: "路线审核与规划",
+    returnToServices: "返回全部旅行服务",
+    ariaLabel: "面包屑导航",
+  },
   hero: {
     eyebrow: "中国旅行路线审核与规划",
     title: "先把路线理顺，再继续预订。",
@@ -646,7 +663,14 @@ const ko: ChinaItineraryReviewCopy = {
   },
   navigationLabel: "일정 설계 서비스",
   skipLink: "중국 일정 설계 내용으로 건너뛰기",
-  breadcrumb: { home: "홈", current: "일정 설계 서비스", ariaLabel: "이동 경로" },
+  breadcrumb: {
+    home: "홈",
+    studio: "여행 설계 방식",
+    services: "여행 서비스",
+    current: "일정 검토 및 동선 설계",
+    returnToServices: "전체 여행 서비스로 돌아가기",
+    ariaLabel: "이동 경로",
+  },
   hero: {
     eyebrow: "중국 여행 일정 검토 및 동선 설계",
     title: "예약을 더 하기 전에 동선부터 제대로 잡으세요.",

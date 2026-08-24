@@ -187,10 +187,82 @@
 
 @media (max-width: 640px) {
   .geography {
-    padding: 1.25rem;
+    margin-block: 1.75rem;
+    padding: 0.85rem;
+  }
+
+  .geography h2 {
+    font-size: 1.3rem;
+    line-height: 1.15;
+    margin-block-end: 0.7rem;
+  }
+
+  .plot {
+    max-height: 13rem;
   }
 
   .key {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 0.6rem;
+    margin-block-start: 0.9rem;
+    margin-inline: -0.85rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 0.85rem 0.55rem;
+    scroll-padding-inline: 0.85rem;
+    scroll-snap-type: inline proximity;
+    scrollbar-width: thin;
+  }
+
+  .key li {
+    background: #fff;
+    border: 1px solid #d5d9e2;
+    flex: 0 0 min(76vw, 15rem);
+    padding: 0.65rem;
+    scroll-snap-align: start;
+  }
+
+  .keyIndex {
+    height: 1.35rem;
+    width: 1.35rem;
+  }
+
+  .keyLabel {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .keyNote {
+    font-size: 0.76rem;
+    line-height: 1.35;
+    margin-block-start: 0.1rem;
+  }
+
+  .legend {
+    display: grid;
+    font-size: 0.72rem;
+    gap: 0.45rem 0.7rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-block-start: 0.75rem;
+    padding-block-start: 0.7rem;
+  }
+
+  .caption {
+    font-size: 0.76rem;
+    line-height: 1.4;
+    margin-block-start: 0.75rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .geography {
+    margin-inline: -0.25rem;
+    padding-inline: 0.7rem;
+  }
+
+  .key {
+    margin-inline: -0.7rem;
+    padding-inline: 0.7rem;
+    scroll-padding-inline: 0.7rem;
   }
 }

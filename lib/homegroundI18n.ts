@@ -447,9 +447,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "China travel guides",
-      title: "Read the questions that make a China trip work.",
-      viewAllLabel: "View all guides",
+      eyebrow: "Travel answers",
+      title: "Search the practical questions that make a China trip work.",
+      viewAllLabel: "Open Travel Advice",
       updatedLabel: "Updated",
       railLabel: "Browse Homeground tours and travel guides",
       typeLabels: {
@@ -471,11 +471,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     cities: {
-      eyebrow: "Destination guides",
+      eyebrow: "Choose a city",
       title: "Start with the city, then fit the trip around it.",
       intro:
         "Compare how many nights to stay, where to base yourself, the main gateways and which nearby stops connect well.",
-      listLabel: "Explore China city guides",
+      listLabel: "Explore China destinations",
     },
     studio: {
       eyebrow: "What happens after you contact us",
@@ -512,21 +512,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "No. Every published tour and price is for you and your companions, not a shared tour group. Some itineraries use public trains, cruises or transport within attractions; those shared elements are listed on the product page and in the written confirmation. If you ask us to explore a lower-cost alternative, we will explain what could change and quote any suitable option separately. We will not add a shared arrangement without your agreement, and every shared element will be confirmed in writing before payment.",
         },
         {
-          question: "Can I get in touch if I only have a rough idea?",
-          answer:
-            "Yes. Start with your dates, party size and any cities already decided. We can work through what is still open in the conversation.",
-        },
-        {
-          question: "What if flights, hotels or part of the trip are already booked?",
-          answer:
-            "You do not need to start over. We work around confirmed arrangements and point out possible timing conflicts, demanding transfers or missing pieces.",
-        },
-        {
-          question: "Can Homeground help with only one part of the trip?",
-          answer:
-            "Yes. You can ask us to look at the whole trip or only the part that is hardest to arrange, such as the city combination, transport connections, where to stay or one specific stretch of the journey.",
-        },
-        {
           question: "What happens after I contact you?",
           answer:
             "A planner first understands the problem you need to solve. If continuing together makes sense, we confirm the service, scope and price before any paid work begins.",
@@ -543,9 +528,19 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "Yes. Tell us early about walking, stairs, early starts, room setup, food requirements or rest needs. These conditions directly shape the route and each day’s schedule.",
         },
         {
-          question: "What if flights or a few cities are already booked?",
+          question: "Can I get in touch if I only have a rough idea?",
           answer:
-            "Keep them. Include the fixed airports, dates and must-visit places in your brief or our follow-up so the planner can protect them.",
+            "Yes. Start with your dates, party size and any cities already decided. We can work through what is still open in the conversation.",
+        },
+        {
+          question: "What if flights, hotels or part of the trip are already booked?",
+          answer:
+            "You do not need to start over. We work around confirmed arrangements and point out possible timing conflicts, demanding transfers or missing pieces.",
+        },
+        {
+          question: "Can Homeground help with only one part of the trip?",
+          answer:
+            "Yes. You can ask us to look at the whole trip or only the part that is hardest to arrange, such as the city combination, transport connections, where to stay or one specific stretch of the journey.",
         },
       ],
     },
@@ -988,9 +983,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "中国旅行指南",
-      title: "从路线、交通到现场细节，先看清真正影响旅行的问题。",
-      viewAllLabel: "查看全部指南",
+      eyebrow: "旅行问题与答案",
+      title: "搜索路线、交通与现场细节中真正影响旅行的问题。",
+      viewAllLabel: "打开实用指南",
       updatedLabel: "更新于",
       railLabel: "浏览 Homeground 私家产品与旅行指南",
       typeLabels: {
@@ -1012,11 +1007,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     cities: {
-      eyebrow: "城市旅行指南",
+      eyebrow: "选择城市",
       title: "先看懂一座城市，再把整趟行程接起来。",
       intro:
         "比较适合停留几晚、住哪个区域、从哪里进出，以及附近哪些地方适合一起安排。",
-      listLabel: "浏览中国城市旅行指南",
+      listLabel: "浏览中国目的地",
     },
     studio: {
       eyebrow: "联系之后会发生什么",
@@ -1053,21 +1048,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "不是。页面上的行程和价格按你和同行者单独安排，不会临时并入陌生人的旅游团。部分路线会使用高铁、游船或景区交通，这些共享环节会在产品页和书面确认中列明。如果你希望进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价。未经你同意不会增加共享安排，所有共享环节都会在付款前书面说明。",
         },
         {
-          question: "我只有一个大概想法，也可以联系吗？",
-          answer:
-            "可以。先告诉我们人数、时间和已经确定的城市即可。还没想清楚的部分，可以在后续聊天中一起梳理。",
-        },
-        {
-          question: "我已经订好了机票、酒店或部分行程，怎么办？",
-          answer:
-            "不需要重新开始。我们会围绕已经确定的安排继续规划，并指出可能存在的时间冲突、转场负担或遗漏事项。",
-        },
-        {
-          question: "Homeground 可以只帮我处理一部分吗？",
-          answer:
-            "可以。你可以把整趟旅行交给我们，也可以只讨论最难安排的部分，例如城市组合、交通衔接、住宿区域或某一段具体行程。",
-        },
-        {
           question: "联系之后会发生什么？",
           answer:
             "规划师会先了解你现在最需要解决的问题。如果适合继续合作，我们会在任何付费工作开始前说明服务内容、范围和价格。",
@@ -1081,6 +1061,21 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
           question: "可以考虑孩子、父母或行动不便者的需求吗？",
           answer:
             "可以。请尽早告诉我们步行、台阶、早起、房型、饮食或休息方面的限制，这些条件会直接影响路线和每日安排。",
+        },
+        {
+          question: "我只有一个大概想法，也可以联系吗？",
+          answer:
+            "可以。先告诉我们人数、时间和已经确定的城市即可。还没想清楚的部分，可以在后续聊天中一起梳理。",
+        },
+        {
+          question: "我已经订好了机票、酒店或部分行程，怎么办？",
+          answer:
+            "不需要重新开始。我们会围绕已经确定的安排继续规划，并指出可能存在的时间冲突、转场负担或遗漏事项。",
+        },
+        {
+          question: "Homeground 可以只帮我处理一部分吗？",
+          answer:
+            "可以。你可以把整趟旅行交给我们，也可以只讨论最难安排的部分，例如城市组合、交通衔接、住宿区域或某一段具体行程。",
         },
       ],
     },
@@ -1498,9 +1493,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       ],
     },
     guides: {
-      eyebrow: "중국 여행 가이드",
-      title: "동선과 교통, 현장 정보까지—여행을 바꾸는 질문을 먼저 확인하세요.",
-      viewAllLabel: "전체 가이드 보기",
+      eyebrow: "여행 질문과 답변",
+      title: "동선, 교통과 현장 정보에서 여행을 바꾸는 질문을 검색하세요.",
+      viewAllLabel: "실용 가이드 열기",
       updatedLabel: "최근 업데이트",
       railLabel: "Homeground 프라이빗 여행과 중국 여행 가이드 둘러보기",
       typeLabels: {
@@ -1522,11 +1517,11 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       },
     },
     cities: {
-      eyebrow: "도시 여행 가이드",
+      eyebrow: "도시 선택",
       title: "도시를 먼저 이해하고, 전체 여정을 연결하세요.",
       intro:
         "권장 숙박 일수, 숙소 지역, 주요 관문과 함께 묶기 좋은 주변 여행지를 비교하세요.",
-      listLabel: "중국 도시 여행 가이드 둘러보기",
+      listLabel: "중국 여행지 둘러보기",
     },
     studio: {
       eyebrow: "연락한 다음에는",
@@ -1563,21 +1558,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "아닙니다. 홈페이지에 공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준입니다. 일부 일정은 열차, 유람선 또는 관광지 내부 교통을 다른 이용객과 함께 이용하며, 해당 구간은 상품 페이지와 확인서에 명시합니다. 비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적을 안내합니다. 동의 없이 공동 이용 방식을 추가하지 않으며, 모든 공동 이용 구간은 결제 전에 서면으로 확인합니다.",
         },
         {
-          question: "아직 대략적인 생각만 있어도 문의할 수 있나요?",
-          answer:
-            "네. 인원, 일정과 이미 정한 도시부터 알려 주세요. 아직 결정하지 못한 내용은 이후 대화에서 함께 정리할 수 있습니다.",
-        },
-        {
-          question: "항공권, 호텔이나 일부 일정을 이미 예약했다면요?",
-          answer:
-            "처음부터 다시 시작할 필요는 없습니다. 확정된 일정을 기준으로 계속 계획하면서 시간 충돌, 부담스러운 이동이나 빠진 부분을 알려 드립니다.",
-        },
-        {
-          question: "Homeground에 여행의 한 부분만 맡길 수도 있나요?",
-          answer:
-            "네. 여행 전체를 맡기거나 도시 조합, 교통 연결, 숙박 지역 또는 특정 구간처럼 가장 어려운 부분만 의논할 수 있습니다.",
-        },
-        {
           question: "문의한 다음에는 어떻게 진행되나요?",
           answer:
             "플래너가 먼저 지금 해결해야 할 문제를 파악합니다. 함께 진행하는 것이 적합하다면 유료 작업을 시작하기 전에 서비스 내용, 범위와 비용을 안내합니다.",
@@ -1592,6 +1572,21 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "아이, 부모님 또는 이동이 불편한 일행도 고려할 수 있나요?",
           answer:
             "네. 도보, 계단, 이른 출발, 객실 구성, 식사나 휴식에 필요한 조건을 미리 알려 주세요. 이러한 조건은 동선과 하루 일정을 직접 바꿉니다.",
+        },
+        {
+          question: "아직 대략적인 생각만 있어도 문의할 수 있나요?",
+          answer:
+            "네. 인원, 일정과 이미 정한 도시부터 알려 주세요. 아직 결정하지 못한 내용은 이후 대화에서 함께 정리할 수 있습니다.",
+        },
+        {
+          question: "항공권, 호텔이나 일부 일정을 이미 예약했다면요?",
+          answer:
+            "처음부터 다시 시작할 필요는 없습니다. 확정된 일정을 기준으로 계속 계획하면서 시간 충돌, 부담스러운 이동이나 빠진 부분을 알려 드립니다.",
+        },
+        {
+          question: "Homeground에 여행의 한 부분만 맡길 수도 있나요?",
+          answer:
+            "네. 여행 전체를 맡기거나 도시 조합, 교통 연결, 숙박 지역 또는 특정 구간처럼 가장 어려운 부분만 의논할 수 있습니다.",
         },
       ],
     },

@@ -8,6 +8,7 @@ import {
 } from "../lib/homegroundI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideSearchHeader } from "./GuideSearchHeader";
 import { GuideSearchResultsClient } from "./GuideSearchResultsClient";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./GuideSearchResultsPage.module.css";
@@ -31,11 +32,17 @@ export function GuideSearchResultsPage({
       <a className={homeStyles.skipLink} href="#guide-search-main">
         {home.skipLink}
       </a>
-      <HomegroundHeader
-        languagePaths={getGuideSearchLanguagePaths()}
-        locale={locale}
-        pageContext="search"
-      />
+      <Suspense
+        fallback={
+          <HomegroundHeader
+            languagePaths={getGuideSearchLanguagePaths()}
+            locale={locale}
+            pageContext="search"
+          />
+        }
+      >
+        <GuideSearchHeader locale={locale} />
+      </Suspense>
 
       <main id="guide-search-main" tabIndex={-1}>
         <header className={styles.hero}>

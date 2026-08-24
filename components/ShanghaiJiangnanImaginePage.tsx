@@ -17,6 +17,11 @@ import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
 import { PrivateTourMotion } from "./PrivateTourMotion";
 import {
+  buildPrivateTourInquiryHref,
+  buildPrivateTourMailtoHref,
+  getPrivateTourInquiryContext,
+} from "../lib/privateTourInquiryContext";
+import {
   ShanghaiJiangnanHeroDeck,
   ShanghaiJiangnanPriceConsole,
   ShanghaiJiangnanRouteExplorer,
@@ -364,8 +369,17 @@ export function ShanghaiJiangnanImaginePage({
     locale,
   );
   const homePath = locale === "en" ? "/" : `/${locale}/`;
+  const tourHubPath = `${homePath}tours/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
-  const inquiryHref = `${homePath}?utm_source=private_tour_product&utm_medium=website&utm_campaign=${product.slug}#planner-contact`;
+  const inquiryContext = getPrivateTourInquiryContext(product.slug, locale);
+  if (!inquiryContext) {
+    throw new Error(`Missing controlled inquiry context for ${product.slug}.`);
+  }
+  const inquiryHref = buildPrivateTourInquiryHref(
+    homePath,
+    inquiryContext.slug,
+    "private_tour_product",
+  );
   const rows = localized.packages.flatMap((tourPackage) => tourPackage.rows);
   const lowestRow = rows.reduce((lowest, row) =>
     row.amount < lowest.amount ? row : lowest,
@@ -432,6 +446,12 @@ export function ShanghaiJiangnanImaginePage({
           {
             "@type": "ListItem",
             position: 2,
+            name: copy.productLabel,
+            item: `https://homegroundchina.com${tourHubPath}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: localized.title,
             item: pageUrl,
           },
@@ -453,6 +473,7 @@ export function ShanghaiJiangnanImaginePage({
         languagePaths={localized.paths}
         locale={locale}
         pageContext="tour"
+        plannerHrefOverride={inquiryHref}
       />
 
       <main id="tour-details">
@@ -468,7 +489,11 @@ export function ShanghaiJiangnanImaginePage({
                     <Link href={homePath}>{copy.homeLabel}</Link>
                     <span aria-hidden="true">/</span>
                   </li>
-                  <li>{copy.productLabel}</li>
+                  <li>
+                    <Link href={tourHubPath}>{copy.productLabel}</Link>
+                    <span aria-hidden="true">/</span>
+                  </li>
+                  <li aria-current="page">{localized.title}</li>
                 </ol>
               </nav>
               <p className={styles.heroMeta}>{copy.heroMeta}</p>
@@ -639,7 +664,11 @@ export function ShanghaiJiangnanImaginePage({
               </GuideCtaLink>
               <a
                 className={styles.finalEmail}
-                href={`mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(localized.title)}`}
+                href={buildPrivateTourMailtoHref(
+                  homegroundBusiness.serviceEmail,
+                  locale,
+                  inquiryContext,
+                )}
               >
                 <Mail aria-hidden="true" size={16} />
                 {copy.email}

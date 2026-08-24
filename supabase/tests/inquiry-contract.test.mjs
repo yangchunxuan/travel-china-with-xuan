@@ -27,6 +27,7 @@ import {
   tripPaceIds,
   validateAndNormalizeInquiry,
 } from "../../lib/inquiryContract.ts";
+import { getPrivateTourInquiryContext } from "../../lib/privateTourInquiryContext.ts";
 
 const validationConfig = {
   allowedFormVersions: [
@@ -167,6 +168,7 @@ test("homepage email normalizes one email and no inferred traveller data", () =>
         channel: "email",
         email: "Traveller@example.com",
       },
+      productInterest: null,
       privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
       attribution: {
         landingPath: inquirySubmitSurfaceByLocale[locale],
@@ -202,6 +204,54 @@ test("homepage email normalizes one email and no inferred traveller data", () =>
     ]) {
       assert.equal(canonical.includes(forbidden), false, forbidden);
     }
+  }
+});
+
+test("homepage email accepts only a canonical published-tour identity", () => {
+  for (const locale of ["en", "zh", "ko"]) {
+    const expected = getPrivateTourInquiryContext(
+      "zhangjiajie-4-day-private-tour",
+      locale,
+    );
+    assert.ok(expected);
+    const payload = validHomepageEmailPayload(locale);
+    payload.productInterest = expected;
+    const result = validateAndNormalizeInquiry(payload, validationConfig);
+    assert.equal(result.ok, true, locale);
+    if (!result.ok) continue;
+    assert.deepEqual(result.value.productInterest, expected);
+    assert.match(
+      canonicalizeJson(semanticInquiryPayload(result.value)),
+      /productInterest/u,
+    );
+  }
+
+  const forgedName = validHomepageEmailPayload();
+  forgedName.productInterest = {
+    slug: "zhangjiajie-4-day-private-tour",
+    name: "Anything supplied by the query string",
+  };
+  const forgedNameResult = validateAndNormalizeInquiry(
+    forgedName,
+    validationConfig,
+  );
+  assert.equal(forgedNameResult.ok, false);
+  if (!forgedNameResult.ok) {
+    assert.equal(forgedNameResult.fieldErrors.productInterest, "invalid");
+  }
+
+  const unknownSlug = validHomepageEmailPayload();
+  unknownSlug.productInterest = {
+    slug: "invented-private-tour",
+    name: "Invented private tour",
+  };
+  const unknownSlugResult = validateAndNormalizeInquiry(
+    unknownSlug,
+    validationConfig,
+  );
+  assert.equal(unknownSlugResult.ok, false);
+  if (!unknownSlugResult.ok) {
+    assert.equal(unknownSlugResult.fieldErrors.productInterest, "invalid");
   }
 });
 

@@ -33,3 +33,420 @@
 .destinationRoot .destinationCta > a:focus-visible {
   background: #202124;
 }
+
+.decisionIndex,
+.ownerLinks {
+  border-block-start: 1px solid var(--hg-color-line);
+  margin-block-start: clamp(3rem, 7vw, 6rem);
+  padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.decisionIntro {
+  align-items: end;
+  display: grid;
+  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.45fr);
+  margin-block-end: 2rem;
+}
+
+.decisionIntro > div > p:first-child,
+.ownerLinks > div > p:first-child {
+  color: var(--hg-color-rust);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.decisionIntro > div > p:last-child,
+.ownerLinks > div > p:last-child {
+  color: var(--hg-color-muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 48rem;
+}
+
+.decisionIntro h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0 0 1rem;
+  max-width: 18ch;
+}
+
+.decisionIntro > a {
+  align-items: center;
+  border-block-end: 1px solid var(--hg-color-ink);
+  color: var(--hg-color-ink);
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 760;
+  justify-content: space-between;
+  min-height: 2.8rem;
+  text-decoration: none;
+}
+
+.signalGrid {
+  border-block-start: 1px solid var(--hg-color-ink);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.signalCard {
+  border-block-end: 1px solid var(--hg-color-line);
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.signalCard:nth-child(odd) {
+  border-inline-end: 1px solid var(--hg-color-line);
+  padding-inline-start: 0;
+}
+
+.signalCard > p:first-child {
+  color: var(--hg-color-rust);
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 760;
+  gap: 0.75rem;
+  letter-spacing: 0.07em;
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.signalCard h3 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.45rem, 2.3vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  margin: 0 0 1.15rem;
+  text-wrap: balance;
+}
+
+.signalCard strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-block-end: 0.45rem;
+}
+
+.signalCard > p:last-child {
+  color: var(--hg-color-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 40rem;
+}
+
+.ownerLinks {
+  display: grid;
+  gap: clamp(2rem, 7vw, 7rem);
+  grid-template-columns: minmax(16rem, 0.55fr) minmax(0, 1fr);
+}
+
+.ownerLinks h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0 0 1rem;
+}
+
+.ownerLinks ul {
+  border-block-start: 1px solid var(--hg-color-ink);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ownerLinks li {
+  border-block-end: 1px solid var(--hg-color-line);
+}
+
+.ownerLinks a {
+  align-items: center;
+  color: var(--hg-color-ink);
+  display: flex;
+  font-size: 0.86rem;
+  font-weight: 700;
+  gap: 1rem;
+  justify-content: space-between;
+  min-height: 3.4rem;
+  text-decoration: none;
+}
+
+.ownerLinks a:hover,
+.ownerLinks a:focus-visible,
+.decisionIntro > a:hover,
+.decisionIntro > a:focus-visible {
+  color: var(--hg-color-rust);
+}
+
+.evidencePanel {
+  border-block: 1px solid var(--hg-color-line);
+  margin-block-start: clamp(2.5rem, 5vw, 4rem);
+  padding-block: 0.85rem 1.1rem;
+}
+
+.evidenceHeader {
+  align-items: baseline;
+  color: var(--hg-color-ink);
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.evidenceHeader h2,
+.evidenceHeader p {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.evidenceHeader h2 {
+  font-family: var(--sans);
+  font-weight: 760;
+}
+
+.evidenceHeader p {
+  color: var(--hg-color-muted);
+  font-weight: 500;
+  margin-inline-start: auto;
+}
+
+.evidenceBody {
+  display: grid;
+  gap: 1rem 1.5rem;
+  grid-template-columns: minmax(14rem, 0.48fr) minmax(0, 1fr);
+  margin-block-start: 0.75rem;
+}
+
+.evidenceBody p {
+  color: var(--hg-color-muted);
+  font-size: 0.78rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.evidenceBody ul {
+  display: grid;
+  gap: 0.45rem 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.evidenceBody a {
+  color: var(--hg-color-ink);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-decoration-color: var(--hg-color-line);
+  text-underline-offset: 0.2em;
+}
+
+.evidenceBody a:hover,
+.evidenceBody a:focus-visible {
+  color: var(--hg-color-rust);
+}
+
+@media (max-width: 48rem) {
+  .destinationHero {
+    gap: 1.2rem;
+    padding-block: 1.2rem 1.6rem;
+  }
+
+  .destinationHeroCopy nav ol {
+    font-size: 0.72rem;
+    gap: 0.35rem;
+    margin-block-end: 1.15rem;
+  }
+
+  .destinationHeroCopy > p:first-of-type {
+    font-size: 0.68rem;
+    gap: 0.45rem 0.7rem;
+    margin-block-end: 0.65rem;
+  }
+
+  .destinationHeroCopy h1 {
+    font-size: clamp(2.25rem, 10.8vw, 3.25rem);
+    line-height: 0.98;
+    max-width: 16ch;
+  }
+
+  .destinationHeroCopy > p:nth-of-type(2) {
+    font-size: 0.95rem;
+    line-height: 1.48;
+    margin-block-start: 0.9rem;
+  }
+
+  .destinationHeroFigure img {
+    aspect-ratio: 16 / 9;
+    max-block-size: 18rem;
+    object-fit: cover;
+  }
+
+  .destinationArticle {
+    padding-block: 2rem 2.5rem;
+  }
+
+  .destinationArticle .destinationOpening {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .destinationArticle .destinationOpening h2 {
+    font-size: 1.9rem;
+    line-height: 1.02;
+    margin-block: 2rem 0.85rem;
+  }
+
+  .destinationArticle .destinationOpening p {
+    margin-block: 0.8rem;
+  }
+
+  .decisionIntro,
+  .ownerLinks {
+    align-items: start;
+    gap: 1.2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .decisionIndex,
+  .ownerLinks {
+    margin-block-start: 2rem;
+    padding-block-start: 1.65rem;
+  }
+
+  .decisionIntro {
+    margin-block-end: 1rem;
+  }
+
+  .decisionIntro h2,
+  .ownerLinks h2 {
+    font-size: 2rem;
+    line-height: 1.02;
+    margin-block-end: 0.7rem;
+  }
+
+  .decisionIntro > div > p:last-child,
+  .ownerLinks > div > p:last-child {
+    font-size: 0.88rem;
+    line-height: 1.48;
+  }
+
+  .decisionIntro > a {
+    font-size: 0.74rem;
+    min-height: 2.35rem;
+  }
+
+  .signalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .signalCard,
+  .signalCard:nth-child(odd) {
+    border-inline-end: 0;
+    padding-block: 1.15rem;
+    padding-inline: 0;
+  }
+
+  .signalCard > p:first-child {
+    font-size: 0.66rem;
+    margin-block-end: 0.65rem;
+  }
+
+  .signalCard h3 {
+    font-size: 1.45rem;
+    line-height: 1.05;
+    margin-block-end: 0.65rem;
+  }
+
+  .signalCard strong {
+    font-size: 0.82rem;
+  }
+
+  .signalCard > p:last-child {
+    font-size: 0.88rem;
+    line-height: 1.48;
+  }
+
+  .ownerLinks a {
+    font-size: 0.78rem;
+    min-height: 2.8rem;
+  }
+
+  .evidencePanel {
+    padding-block: 0.75rem 0.9rem;
+  }
+
+  .evidenceHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .evidenceHeader h2,
+  .evidenceHeader p,
+  .evidenceBody p,
+  .evidenceBody a {
+    font-size: 0.7rem;
+  }
+
+  .evidenceHeader p {
+    margin-inline-start: 0;
+  }
+
+  .evidenceBody,
+  .evidenceBody ul {
+    grid-template-columns: 1fr;
+  }
+
+  .evidenceBody {
+    gap: 0.65rem;
+    margin-block-start: 0.6rem;
+  }
+
+  .destinationCta {
+    gap: 1.15rem;
+    margin-block-end: 2.5rem;
+    padding: 1.25rem;
+  }
+
+  .destinationCta h2 {
+    font-size: 1.75rem;
+  }
+
+  .destinationCta > div > p:last-child {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-block-start: 0.7rem;
+  }
+
+  .destinationCta > a {
+    font-size: 0.78rem;
+    min-block-size: 2.65rem;
+    padding: 0.65rem 0.9rem;
+  }
+}
+
+@media (max-width: 22rem) {
+  .destinationHero,
+  .destinationArticle {
+    padding-inline: 0.75rem;
+  }
+
+  .destinationHeroCopy h1 {
+    font-size: 2.2rem;
+  }
+
+  .destinationArticle .destinationOpening h2,
+  .decisionIntro h2,
+  .ownerLinks h2 {
+    font-size: 1.8rem;
+  }
+}

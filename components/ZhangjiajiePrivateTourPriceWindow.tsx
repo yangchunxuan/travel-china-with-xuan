@@ -50,10 +50,12 @@ export function ZhangjiajiePrivateTourPriceWindow({
   locale,
   copy,
   pricing,
+  variant = "full",
 }: {
   locale: ProductPreviewLocale;
   copy: PriceCopy;
   pricing: PublicPricing;
+  variant?: "full" | "summary";
 }) {
   const [status, setStatus] = useState<PriceWindowStatus>("checking");
 
@@ -86,6 +88,25 @@ export function ZhangjiajiePrivateTourPriceWindow({
       >
         <strong>{copy.expiredPrice}</strong>
       </div>
+    );
+  }
+
+  if (variant === "summary") {
+    const startingTier = pricing.tiers
+      .map((tier) => ({ ...tier, displayedPrice: tier.fromPrice ?? tier.price }))
+      .filter((tier): tier is typeof tier & { displayedPrice: number } =>
+        typeof tier.displayedPrice === "number",
+      )
+      .reduce((lowest, tier) =>
+        tier.displayedPrice < lowest.displayedPrice ? tier : lowest,
+      );
+
+    return (
+      <p aria-live="polite" className={styles.compactPrice}>
+        <span>{copy.fromLabel}</span>
+        <strong>CNY {formatPrice(startingTier.displayedPrice, locale)}</strong>
+        <small>{copy.perPerson}</small>
+      </p>
     );
   }
 

@@ -49,24 +49,24 @@ test("destination discovery consumes every reviewed hub in every locale", async 
   }
 });
 
-test("only the explore and cities-neighborhoods surfaces mount destination discovery", async () => {
-  const [component, exploreSurface, collectionSurface] = await Promise.all([
-    source("components/DestinationHubDiscovery.tsx"),
+test("the destination index owns city hubs while the article collection only hands back to it", async () => {
+  const [destinationIndex, platformSurface, collectionSurface] = await Promise.all([
+    source("components/DestinationsHubPage.tsx"),
     source("components/SearchPlatformHubPage.tsx"),
     source("components/SearchCollectionHubPage.tsx"),
   ]);
 
-  assert.match(component, /getSearchCollection\("explore-cities-neighborhoods"\)/);
-  assert.match(component, /destinationHubRegistry\.map\(\(hub\) =>/);
-  assert.match(component, /const hubCopy = hub\.locales\[locale\]/);
-  assert.match(component, /<Link className=\{styles\.card\} href=\{hubCopy\.path\}>/);
-  assert.match(component, /\{hubCopy\.navTitle\}/);
-  assert.match(component, /\{hubCopy\.title\}/);
-  assert.match(component, /\{hubCopy\.description\}/);
-  assert.doesNotMatch(component, /const labels\s*=/);
-
-  assert.match(exploreSurface, /section === "explore" \? \(/);
-  assert.match(exploreSurface, /headingId="explore-destination-hubs-title"/);
+  assert.match(destinationIndex, /destinationHubRegistry\.map\(\(hub, index\) =>/);
+  assert.match(destinationIndex, /<h3>\{city\.navTitle\}<\/h3>/);
+  assert.doesNotMatch(
+    destinationIndex,
+    /getSearchHubGuides|GuideSearchForm|SearchSectionNavigator/,
+  );
+  assert.match(
+    platformSurface,
+    /if \(section === "explore"\) \{[\s\S]*?<DestinationsHubPage locale=\{locale\} \/>/,
+  );
+  assert.doesNotMatch(platformSurface, /<DestinationHubDiscovery/);
   assert.match(
     collectionSurface,
     /collectionId === "explore-cities-neighborhoods" \? \(/,
@@ -85,27 +85,27 @@ test("only the explore and cities-neighborhoods surfaces mount destination disco
     collectionSurface,
     /className=\{locale === "zh" \? styles\.segmentedTitle : undefined\}/,
   );
-  assert.match(
-    collectionSurface,
-    /headingId="collection-title"[\s\S]*?showIntro=\{false\}/,
-  );
+  assert.match(collectionSurface, /className=\{styles\.directoryHandoff\}/);
+  assert.match(collectionSurface, /\{ui\.cityDirectoryTitle\}/);
+  assert.match(collectionSurface, /getSearchSectionPath\("explore", locale\)/);
+  assert.doesNotMatch(collectionSurface, /DestinationHubDiscovery/);
 });
 
 test("destination discovery is semantic, keyboard-visible and responsive", async () => {
   const [component, styles] = await Promise.all([
-    source("components/DestinationHubDiscovery.tsx"),
-    source("components/DestinationHubDiscovery.module.css"),
+    source("components/DestinationsHubPage.tsx"),
+    source("components/DestinationsHubPage.module.css"),
   ]);
 
-  assert.match(component, /<section[\s\S]*?aria-labelledby=\{headingId\}/);
-  assert.match(component, /<nav aria-labelledby=\{headingId\}>/);
-  assert.match(component, /<ul className=\{styles\.grid\}>/);
+  assert.match(component, /<section className=\{styles\.cities\} aria-labelledby="city-hubs-title">/);
+  assert.match(component, /<ol className=\{styles\.cityGrid\}>/);
   assert.match(component, /<li key=\{hub\.id\}>/);
-  assert.match(component, /const HubTitle = showIntro \? "h3" : "h2"/);
-  assert.match(component, /<HubTitle>\{hubCopy\.title\}<\/HubTitle>/);
-  assert.match(styles, /\.card h2,\s*\.card h3/);
-  assert.match(styles, /\.card:focus-visible\s*\{[\s\S]*?outline:\s*3px solid/);
-  assert.match(styles, /grid-template-columns:\s*repeat\(5, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /@media \(max-width: 600px\)[\s\S]*?grid-template-columns:\s*1fr/);
+  assert.match(component, /<Link href=\{city\.path\}>/);
+  assert.match(styles, /\.cityGrid a:focus-visible[\s\S]*?outline:\s*3px solid/);
+  assert.match(styles, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.cityGrid,[\s\S]*?grid-template-columns:\s*1fr/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.hero \{[\s\S]*?padding-block:\s*1\.25rem 1\.8rem/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.scope ul \{[\s\S]*?grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.sectionIntro \{[\s\S]*?margin-block-end:\s*1\.35rem/);
   assert.match(styles, /overflow-wrap:\s*anywhere/);
 });

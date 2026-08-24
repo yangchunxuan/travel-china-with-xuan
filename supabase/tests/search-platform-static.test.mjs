@@ -139,6 +139,30 @@ test("every independent guide resolves to a collection in its declared section",
   );
 });
 
+test("review collections stay reachable but are never promoted as guide parents", async () => {
+  const [guidePage, manifest] = await Promise.all([
+    source("components/content/EditorialGuidePage.tsx"),
+    source("lib/searchPlatformManifest.ts"),
+  ]);
+
+  assert.match(manifest, /export function getPublishedSearchCollectionEntry/);
+  assert.match(
+    manifest,
+    /entry\.status === "published" && entry\.indexability\.index \? entry : null/,
+  );
+  assert.match(guidePage, /getPublishedSearchCollectionEntry/);
+  assert.match(guidePage, /\.\.\.\(publishedCollectionEntry[\s\S]*?collection\.locales\[locale\]\.label/);
+  assert.match(
+    guidePage,
+    /\{publishedCollectionEntry \? \([\s\S]*?<Link href=\{collectionPath\}>[\s\S]*?\) : null\}/,
+  );
+  assert.equal(
+    (guidePage.match(/const publishedCollectionEntry = getPublishedSearchCollectionEntry/g) ?? []).length,
+    2,
+    "visible and JSON-LD hierarchies must use the same publication gate",
+  );
+});
+
 test("guide entities and freshness use the current metadata vocabulary", async () => {
   const [adapter, policy, entitySource] = await Promise.all([
     source("lib/searchPlatformContentAdapter.ts"),
@@ -184,11 +208,12 @@ test("guide entities and freshness use the current metadata vocabulary", async (
 });
 
 test("sitemap, language navigation and compatibility aliases consume platform data", async () => {
-  const [sitemap, header, aliases, hubPage, adapter] = await Promise.all([
+  const [sitemap, header, aliases, hubPage, servicesPage, adapter] = await Promise.all([
     source("app/sitemap.ts"),
     source("components/HomegroundHeader.tsx"),
     source("lib/searchPlatformAliases.ts"),
     source("components/SearchPlatformHubPage.tsx"),
+    source("components/TravelServicesHubPage.tsx"),
     source("lib/searchPlatformContentAdapter.ts"),
   ]);
 
@@ -200,15 +225,21 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.match(header, /Boolean\(overriddenLanguagePathFor\(targetLocale\)\)/);
   assert.match(aliases, /mode: "canonical-shell"/);
   assert.match(aliases, /china-visa-free-uk-canada/);
-  assert.match(adapter, /parentContentId: "system-guides"/);
+  assert.match(
+    adapter,
+    /section === "explore"[\s\S]*?"system-home"[\s\S]*?section === "services"[\s\S]*?"system-studio"[\s\S]*?"system-guides"/,
+  );
   assert.match(adapter, /const dateModified = sectionGuides\.reduce/);
   assert.match(adapter, /const approvedSearchHubIds = new Set<SearchSectionId>/);
   assert.match(adapter, /approvedSearchHubIds\.has\(section\)/);
   assert.doesNotMatch(adapter, /hasPublishedChildren \? "published"/);
-  assert.match(hubPage, /section === "explore"/);
-  assert.match(hubPage, /\? "destinations"/);
-  assert.match(hubPage, /section === "services" \|\| section === "plan"/);
+  assert.match(hubPage, /if \(section === "explore"\)/);
+  assert.match(hubPage, /<DestinationsHubPage locale=\{locale\} \/>/);
+  assert.match(hubPage, /if \(section === "services"\)/);
+  assert.match(hubPage, /<TravelServicesHubPage locale=\{locale\} \/>/);
+  assert.match(hubPage, /section === "plan"[\s\S]*?\? "plan"/);
   assert.match(hubPage, /pageContext=\{pageContext\}/);
+  assert.match(servicesPage, /pageContext="services"/);
   assert.match(hubPage, /position: 3/);
   assert.match(hubPage, /loading="lazy"/);
   assert.match(hubPage, /fetchPriority="auto"/);

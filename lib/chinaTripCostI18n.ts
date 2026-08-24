@@ -683,7 +683,7 @@ const ko: ChinaTripCostCopy = {
   },
 
   skipLink: "본문으로 건너뛰기",
-  breadcrumb: { home: "홈", guides: "여행 가이드", current: "중국 여행 비용" },
+  breadcrumb: { home: "홈", guides: "실용 가이드", current: "중국 여행 비용" },
 
   hero: {
     eyebrow: "비용 가이드",

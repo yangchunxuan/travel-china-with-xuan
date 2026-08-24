@@ -28,7 +28,7 @@ const assetPath = "/images/guides/tantan-zhangjiajie";
 const guideHubLabels: Record<HomegroundLocale, string> = {
   en: "Travel guides",
   zh: "旅行指南",
-  ko: "여행 가이드",
+  ko: "실용 가이드",
 };
 
 function guideHubPath(locale: HomegroundLocale) {

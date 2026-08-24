@@ -77,6 +77,7 @@ function systemNode({
   schemaTypes = ["WebPage"],
   legacyAliases = [],
   entityIds = ["country-china"],
+  parentContentId = null,
   volatility = "low",
   refreshCadence = "on-source-change",
   nextReviewAt,
@@ -90,6 +91,7 @@ function systemNode({
   schemaTypes?: readonly string[];
   legacyAliases?: readonly string[];
   entityIds?: readonly string[];
+  parentContentId?: string | null;
   volatility?: ContentNode["updatePolicy"]["volatility"];
   refreshCadence?: ContentNode["updatePolicy"]["refreshCadence"];
   nextReviewAt?: string;
@@ -101,7 +103,7 @@ function systemNode({
     primaryIntent,
     entityIds,
     relationIds: [],
-    parentContentId: null,
+    parentContentId,
     status: "published",
     indexability: { index: true, follow: true },
     locales: localizedVersions(id, definitions),
@@ -251,6 +253,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: studio,
       lifecycle: getLegacySystemContentLifecycle("studio"),
       schemaTypes: ["AboutPage"],
+      parentContentId: "system-home",
     }),
     systemNode({
       id: "author-evan",
@@ -260,6 +263,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: evan,
       lifecycle: getLegacySystemContentLifecycle("author-evan"),
       schemaTypes: ["ProfilePage", "Person"],
+      parentContentId: "system-studio",
     }),
     systemNode({
       id: "guides",
@@ -269,6 +273,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: guides,
       lifecycle: getLegacySystemContentLifecycle("guides"),
       schemaTypes: ["CollectionPage", "ItemList"],
+      parentContentId: "system-home",
     }),
     systemNode({
       id: "itinerary-review",
@@ -278,6 +283,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       definitions: itineraryReview,
       lifecycle: getLegacySystemContentLifecycle("itinerary-review"),
       schemaTypes: ["Service"],
+      parentContentId: "hub-services",
     }),
     systemNode({
       id: "zhangjiajie-4-day-private-tour",
@@ -290,6 +296,7 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       ),
       schemaTypes: ["WebPage", "TouristTrip"],
       entityIds: ["city-zhangjiajie"],
+      parentContentId: "tour-hub",
       volatility: "high",
       refreshCadence: "weekly",
       nextReviewAt: "2026-08-31",

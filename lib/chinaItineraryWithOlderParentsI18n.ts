@@ -1242,7 +1242,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
     skipLink: "가이드 본문으로 이동",
     breadcrumbLabel: "이동 경로",
     breadcrumbHome: "홈",
-    breadcrumbGuides: "여행 가이드",
+    breadcrumbGuides: "실용 가이드",
     breadcrumbCurrent: "부모님과 중국 여행",
   },
   hero: {

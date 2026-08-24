@@ -39,7 +39,11 @@ export function GuideSearchResultsClient({
   locale: HomegroundLocale;
 }) {
   const searchParams = useSearchParams();
-  const rawQuery = (searchParams.get("q") ?? "").trim().slice(0, 120);
+  const urlRawQuery = (searchParams.get("q") ?? "").trim().slice(0, 120);
+  // Static export cannot know a visitor's query string. Keep the server and
+  // first client render query-neutral, then apply the browser URL after mount
+  // so a direct `?q=` visit cannot produce a hydration mismatch.
+  const [rawQuery, setRawQuery] = useState("");
   const query = normalizeGuideSearchText(rawQuery, locale);
   const copy = getGuideSearchCopy(locale);
   const platformCopy = getSearchPlatformCopy(locale);
@@ -66,6 +70,10 @@ export function GuideSearchResultsClient({
   const plannerPath = `${locale === "en" ? "/" : `/${locale}/`}?${plannerQuery.toString()}#planner-contact`;
 
   useEffect(() => {
+    setRawQuery(urlRawQuery);
+  }, [urlRawQuery]);
+
+  useEffect(() => {
     if (!query || results.length > 0 || trackedNoResultsRef.current === query) {
       return;
     }
@@ -81,6 +89,7 @@ export function GuideSearchResultsClient({
   return (
     <>
       <GuideSearchForm
+        key={`${locale}:${rawQuery}`}
         compact
         documents={documents}
         initialQuery={rawQuery}

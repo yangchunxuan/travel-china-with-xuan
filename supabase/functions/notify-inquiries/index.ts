@@ -9,6 +9,11 @@ import {
   SUPABASE_RPC_TIMEOUT_MILLISECONDS,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/runtime.ts";
+import {
+  getPrivateTourInquiryContext,
+  type PrivateTourInquiryContext,
+  // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
+} from "../../../lib/privateTourInquiryContext.ts";
 
 declare const Deno: {
   serve(handler: (request: Request) => Response | Promise<Response>): void;
@@ -72,6 +77,35 @@ const destinationLabels: Record<string, string> = {
 function ensureHeaderSafe(value: string, name: string): string {
   if (/[\r\n]/u.test(value)) throw new Error(`invalid_env:${name}`);
   return value;
+}
+
+function homepageProductInterest(
+  job: NotificationJob,
+): PrivateTourInquiryContext | null {
+  if (!Object.prototype.hasOwnProperty.call(job.answers, "productInterest")) {
+    return null;
+  }
+  const value = job.answers.productInterest;
+  if (
+    typeof value !== "object" ||
+    value === null ||
+    Array.isArray(value)
+  ) {
+    throw new Error("invalid_job:homepage_product_interest");
+  }
+  const record = value as Record<string, unknown>;
+  if (
+    Object.keys(record).length !== 2 ||
+    typeof record.slug !== "string" ||
+    typeof record.name !== "string"
+  ) {
+    throw new Error("invalid_job:homepage_product_interest");
+  }
+  const expected = getPrivateTourInquiryContext(record.slug, job.locale);
+  if (!expected || record.name !== expected.name) {
+    throw new Error("invalid_job:homepage_product_interest");
+  }
+  return expected;
 }
 
 function ensureMailboxAddress(value: string, name: string): string {
@@ -494,14 +528,16 @@ async function sendThroughResend(
   if (job.route_id === "homepage-email") {
     const homepageAnswerKeys = Object.keys(job.answers);
     const homepageSnapshotKeys = Object.keys(job.route_snapshot);
+    const productInterest = homepageProductInterest(job);
     if (
       job.reply_channel !== "email" ||
       job.contact_phone_e164 !== null ||
       job.departure_country !== null ||
       job.rough_budget_per_person !== null ||
       job.note !== null ||
-      homepageAnswerKeys.length !== 1 ||
-      homepageAnswerKeys[0] !== "informationStatus" ||
+      homepageAnswerKeys.length !== (productInterest ? 2 : 1) ||
+      !homepageAnswerKeys.includes("informationStatus") ||
+      (productInterest && !homepageAnswerKeys.includes("productInterest")) ||
       job.answers.informationStatus !== "not_provided" ||
       homepageSnapshotKeys.length !== 3 ||
       !homepageSnapshotKeys.includes("kind") ||
@@ -513,14 +549,23 @@ async function sendThroughResend(
     ) {
       throw new Error("invalid_job:homepage_email_shape");
     }
-    subject =
-      `[Homeground][Homepage email] ${job.public_reference} · ${locale}`;
+    subject = productInterest
+      ? `[Homeground][Private tour] ${job.public_reference} · ${locale} · ${ensureHeaderSafe(productInterest.name, "product_name")}`
+      : `[Homeground][Homepage email] ${job.public_reference} · ${locale}`;
     text = [
-      "A visitor left an email address on the Homeground homepage and asked for a human reply.",
+      productInterest
+        ? "A visitor left an email address and asked about a published private tour."
+        : "A visitor left an email address on the Homeground homepage and asked for a human reply.",
       "No itinerary, traveller, date, destination, budget or free-text details were collected.",
       "",
       `Reference: ${job.public_reference}`,
       `Language: ${locale}`,
+      ...(productInterest
+        ? [
+            `Published tour: ${productInterest.name}`,
+            `Product reference: ${productInterest.slug}`,
+          ]
+        : []),
       `Traveller contact: ${contact.display}`,
       `Received: ${job.inquiry_created_at}`,
       `First response due: ${job.first_response_due_at}`,
@@ -529,11 +574,21 @@ async function sendThroughResend(
       "The Gmail thread and its Sent message are the handling record.",
     ].join("\n");
     html = `
-      <p>A visitor left an email address on the Homeground homepage and asked for a human reply.</p>
+      <p>${
+        productInterest
+          ? "A visitor left an email address and asked about a published private tour."
+          : "A visitor left an email address on the Homeground homepage and asked for a human reply."
+      }</p>
       <p><strong>No itinerary details were collected.</strong></p>
       <dl>
         <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
         <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
+        ${
+          productInterest
+            ? `<dt>Published tour</dt><dd>${escapeHtml(productInterest.name)}</dd>
+        <dt>Product reference</dt><dd>${escapeHtml(productInterest.slug)}</dd>`
+            : ""
+        }
         <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
         <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
         <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>

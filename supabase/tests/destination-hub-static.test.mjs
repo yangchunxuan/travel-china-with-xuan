@@ -6,18 +6,18 @@ const projectRoot = new URL("../../", import.meta.url);
 const source = (relativePath) =>
   readFile(new URL(relativePath, projectRoot), "utf8");
 
-test("destination hubs keep the Chinese guide phrase together on narrow screens", async () => {
+test("destination hubs keep each Chinese city name together on narrow screens", async () => {
   const [page, styles] = await Promise.all([
     source("components/content/DestinationHubPage.tsx"),
     source("components/content/EditorialGuidePage.module.css"),
   ]);
 
-  assert.match(page, /beijing: \["北京旅行指南：", "先分配", "完整的一天，", "再安排景点"\]/);
-  assert.match(page, /shanghai: \["上海旅行指南：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
-  assert.match(page, /xian: \["西安旅行指南：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
-  assert.match(page, /hangzhou: \["杭州旅行指南：", "先决定一日往返，", "还是把杭州真正住下来"\]/);
-  assert.match(page, /zhangjiajie: \["张家界旅行指南：", "先分清市区、", "武陵源和不同山岳系统"\]/);
-  assert.match(page, /chongqing: \["重庆旅行指南：", "选对住宿基地、", "车站和停留晚数"\]/);
+  assert.match(page, /beijing: \["北京：", "先分配", "完整的一天，", "再安排景点"\]/);
+  assert.match(page, /shanghai: \["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
+  assert.match(page, /xian: \["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
+  assert.match(page, /hangzhou: \["杭州：", "先决定一日往返，", "还是把杭州真正住下来"\]/);
+  assert.match(page, /zhangjiajie: \["张家界：", "先分清市区、", "武陵源和不同山岳系统"\]/);
+  assert.match(page, /chongqing: \["重庆：", "选对住宿基地、", "车站和停留晚数"\]/);
   assert.match(page, /titleSegments\.map\(\(segment, index\) =>/);
   assert.match(page, /className=\{styles\.keepTogether\}/);
   assert.match(styles, /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap;/);
@@ -121,11 +121,117 @@ test("Shanghai Songjiang copy records both the rename and expanded-hub opening",
   assert.match(bodies[2], /2024년 5월 상하이쑹장역으로 이름이 바뀌었고/);
 });
 
-test("batch two hubs keep the Chinese guide phrase together on narrow screens", async () => {
+test("batch two hubs keep their Chinese city names together on narrow screens", async () => {
   const page = await source("components/content/DestinationHubPage.tsx");
 
-  assert.match(page, /chengdu: \["成都旅行指南：", "先把城市", "住稳，", "再搭四川路线"\]/);
-  assert.match(page, /guangzhou: \["广州旅行指南：", "住几晚、", "住哪个区、", "走哪个门户"\]/);
+  assert.match(page, /chengdu: \["成都：", "先把城市", "住稳，", "再搭四川路线"\]/);
+  assert.match(page, /guangzhou: \["广州：", "住几晚、", "住哪个区、", "走哪个门户"\]/);
+});
+
+test("strict city projections do not emit empty or duplicated opening decisions", async () => {
+  const [page, projection, styles] = await Promise.all([
+    source("components/content/DestinationHubPage.tsx"),
+    source("lib/destinationOverviewProjection.ts"),
+    source("components/content/DestinationHubPage.module.css"),
+  ]);
+
+  assert.match(projection, /guangzhou: \{[\s\S]*?nights: \["decision-heading"\]/);
+  assert.match(
+    projection,
+    /projectedSignalHeadingIds\.has\(heading\.id\)[\s\S]*?blocks: projectedPrelude/,
+    "a section already projected as a decision signal must not appear in the opening",
+  );
+  assert.match(
+    projection,
+    /coarseList[\s\S]*?items: coarseList\.items\.slice\(0, 4\)/,
+    "Chongqing's opening decision list stays useful but capped",
+  );
+  assert.match(
+    projection,
+    /evidence\.length > 0 \? \[projectedHeading, \.\.\.evidence\] : \[\]/,
+    "a heading without projected evidence must be omitted",
+  );
+  assert.doesNotMatch(page, /<details\b/);
+  assert.match(page, /<aside[\s\S]*?aria-labelledby="destination-evidence-title"/);
+  assert.match(page, /<h2 id="destination-evidence-title">\{copy\.evidenceSummary\}<\/h2>/);
+  assert.match(page, /<time dateTime=\{hub\.sourceReviewedDate\}>\{date\}<\/time>/);
+  assert.match(page, /visibleSources\.map/);
+  assert.match(page, /\.slice\(0, 4\)/);
+  assert.match(styles, /\.evidencePanel/);
+  assert.doesNotMatch(page, /supportGuideIds\.map/);
+});
+
+test("Guangzhou drops only its repeated projected lead while source research stays intact", async () => {
+  const [{ projectDestinationOpening }, guangzhou, beijing, sourceBody] =
+    await Promise.all([
+      import("../../lib/destinationOverviewProjection.ts"),
+      import("../../content/destinations/guangzhou/body.en.ts"),
+      import("../../content/destinations/beijing/body.en.ts"),
+      source("content/destinations/guangzhou/body.en.ts"),
+    ]);
+
+  const guangzhouOpening = projectDestinationOpening(guangzhou.default, "guangzhou");
+  const beijingOpening = projectDestinationOpening(beijing.default, "beijing");
+
+  assert.equal(
+    guangzhouOpening.blocks.some((block) => block.type === "lead"),
+    false,
+    "the hero already makes Guangzhou's city-role argument",
+  );
+  assert.equal(
+    beijingOpening.blocks.some((block) => block.type === "lead"),
+    true,
+    "the Guangzhou-only projection rule must not alter other cities",
+  );
+  assert.match(sourceBody, /id: "lead"/);
+  assert.match(sourceBody, /Guangzhou is three things at once/);
+});
+
+test("destination projections remove source chapter numbers without editing research bodies", async () => {
+  const [projection, chongqingZh] = await Promise.all([
+    source("lib/destinationOverviewProjection.ts"),
+    source("content/destinations/chongqing/body.zh.ts"),
+  ]);
+
+  const literal = projection.match(
+    /const sourceSectionNumberPrefix = (\/\^[^\n]+\/u);/,
+  )?.[1];
+  assert.ok(literal, "projection owns an explicit source-heading prefix regex");
+  const finalSlash = literal.lastIndexOf("/");
+  const prefix = new RegExp(
+    literal.slice(1, finalSlash),
+    literal.slice(finalSlash + 1),
+  );
+  for (const [sourceHeading, expected] of [
+    ["2. 重庆需要住几晚？", "重庆需要住几晚？"],
+    ["2、住哪里", "住哪里"],
+    ["2．机场和铁路站", "机场和铁路站"],
+    ["2) Where next", "Where next"],
+    ["12） 다음 도시", "다음 도시"],
+  ]) {
+    assert.equal(sourceHeading.replace(prefix, "").trim(), expected);
+  }
+  assert.equal("2026 travel facts".replace(prefix, ""), "2026 travel facts");
+
+  assert.match(
+    projection,
+    /sourceHeading: stripSourceSectionNumber\(sections\[0\]\.heading\.text\)/,
+  );
+  assert.match(
+    projection,
+    /\.map\(\(\{ heading \}\) => stripSourceSectionNumber\(heading\.text\)\)/,
+  );
+  assert.match(
+    projection,
+    /const projectedHeading:[\s\S]*?text: stripSourceSectionNumber\(heading\.text\)/,
+  );
+  assert.match(
+    projection,
+    /evidence\.length > 0 \? \[projectedHeading, \.\.\.evidence\] : \[\]/,
+  );
+
+  assert.match(chongqingZh, /text: "2\. 重庆需要住几晚？"/);
+  assert.match(chongqingZh, /text: "10\. 重庆之后去哪里"/);
 });
 
 test("batch two hubs keep their own truthful publication and review dates", async () => {
@@ -192,4 +298,40 @@ test("Chengdu hub refuses to treat the closed central station as usable", async 
   assert.match(bodies[0], /Closed for reconstruction/);
   assert.match(bodies[1], /改扩建中，未办理客运/);
   assert.match(bodies[2], /재건축으로 여객 취급 중단/);
+});
+
+test("city hubs use a compact mobile-only projection without dropping decisions or evidence", async () => {
+  const [page, styles, geography] = await Promise.all([
+    source("components/content/DestinationHubPage.tsx"),
+    source("components/content/DestinationHubPage.module.css"),
+    source("components/content/DestinationGeographyDiagram.module.css"),
+  ]);
+
+  assert.match(page, /className=\{`\$\{styles\.hero\} \$\{destinationStyles\.destinationHero\}`\}/);
+  assert.match(page, /className=\{`\$\{styles\.article\} \$\{destinationStyles\.destinationArticle\}`\}/);
+  assert.match(page, /openingBody\.blocks\.length > 0/);
+  assert.match(page, /<div className=\{destinationStyles\.destinationOpening\}>/);
+  assert.match(page, /overviewSignals\.map\(\(signal, index\) =>/);
+  assert.match(page, /hub\.supportGuideIds\.slice\(0, 6\)/);
+  assert.match(page, /detailedAnswersLabel: "Deeper answers"/);
+  assert.match(page, /detailedAnswersLabel: "深入答案"/u);
+  assert.match(page, /detailedAnswersLabel: "더 깊은 답변"/u);
+  assert.match(page, /<p>\{copy\.detailedAnswersLabel\}<\/p>/);
+  assert.doesNotMatch(
+    page,
+    /className=\{destinationStyles\.ownerLinks\}[\s\S]*?<p>\{copy\.decisionsLabel\}<\/p>/,
+  );
+  assert.doesNotMatch(page, /<details\b/);
+  assert.match(page, /className=\{destinationStyles\.evidencePanel\}/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.destinationHero \{[\s\S]*?padding-block:\s*1\.2rem 1\.6rem/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.destinationArticle \{[\s\S]*?padding-block:\s*2rem 2\.5rem/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.signalCard,[\s\S]*?padding-block:\s*1\.15rem/);
+  assert.doesNotMatch(styles, /\.signalGrid[^{]*\{[^}]*display:\s*none/);
+  assert.doesNotMatch(styles, /\.ownerLinks[^{]*\{[^}]*display:\s*none/);
+  assert.doesNotMatch(styles, /\.evidencePanel\s*\{[^}]*display:\s*none/);
+
+  assert.match(geography, /@media \(max-width: 640px\)[\s\S]*?\.key \{[\s\S]*?overflow-x:\s*auto/);
+  assert.match(geography, /scroll-snap-type:\s*inline proximity/);
+  assert.match(geography, /\.key li \{[\s\S]*?flex:\s*0 0 min\(76vw, 15rem\)/);
+  assert.doesNotMatch(geography, /\.key(?:Label|Note)?[^{]*\{[^}]*display:\s*none/);
 });

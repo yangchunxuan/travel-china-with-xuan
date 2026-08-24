@@ -41,7 +41,7 @@ interface HomepageShowcaseCopy {
 const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   en: {
     heroBody:
-      "Practical China travel guides for choosing cities, where to stay and how to connect them—plus a team on the ground when you want help bringing the whole trip together.",
+      "Choose a city in the Destinations directory, then use practical travel advice for stays, transport and timing—plus a team on the ground when you want help connecting the trip.",
     heroHeadline: {
       fixedLines: ["China, your", "way."],
       joiner: " ",
@@ -53,8 +53,8 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       ],
     },
     heroLinksLabel: "Explore Homeground China",
-    heroPrimary: "Explore China travel guides",
-    heroPrimaryShort: "Explore guides",
+    heroPrimary: "Explore China destinations",
+    heroPrimaryShort: "Choose a city",
     heroSecondary: "Talk to a trip planner",
     heroSecondaryShort: "Plan my trip",
     decisions: {
@@ -104,7 +104,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   },
   zh: {
     heroBody:
-      "先用实用指南选择城市、住宿区域和交通衔接；需要时，再由中国本地旅行规划师帮你把整趟行程串起来。",
+      "先在“目的地”选择城市，再用实用指南解决住宿、交通和出行时间；需要时，由中国本地旅行规划师把整趟行程串起来。",
     heroHeadline: {
       fixedLines: ["按你的方式，", "游中国。"],
       joiner: "",
@@ -116,8 +116,8 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       ],
     },
     heroLinksLabel: "浏览 Homeground China",
-    heroPrimary: "浏览中国旅行指南",
-    heroPrimaryShort: "看旅行指南",
+    heroPrimary: "浏览中国目的地",
+    heroPrimaryShort: "选择城市",
     heroSecondary: "联系旅行规划师",
     heroSecondaryShort: "规划行程",
     decisions: {
@@ -162,7 +162,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   },
   ko: {
     heroBody:
-      "도시와 숙박 지역, 이동 방법을 고를 수 있는 실용 가이드부터, 필요할 때 전체 일정을 연결해 주는 중국 현지 여행 플래너까지 함께합니다.",
+      "여행지 디렉터리에서 도시를 고른 뒤 숙소, 교통과 시기는 실용 가이드에서 해결하세요. 필요하면 중국 현지 플래너가 전체 일정을 연결합니다.",
     heroHeadline: {
       fixedLines: ["중국, 나만의", "방식으로."],
       joiner: " ",
@@ -174,8 +174,8 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       ],
     },
     heroLinksLabel: "Homeground China 둘러보기",
-    heroPrimary: "중국 여행 가이드 보기",
-    heroPrimaryShort: "여행 가이드",
+    heroPrimary: "중국 여행지 보기",
+    heroPrimaryShort: "도시 선택",
     heroSecondary: "여행 플래너와 상담하기",
     heroSecondaryShort: "여행 계획",
     decisions: {

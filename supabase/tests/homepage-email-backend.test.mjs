@@ -8,13 +8,16 @@ async function source(path) {
   return readFile(new URL(path, repositoryRoot), "utf8");
 }
 
-test("homepage email has a dedicated private persistence path with no traveller facts", async () => {
-  const [migration, rpcFixMigration, endpoint] = await Promise.all([
+test("homepage email has a dedicated private persistence path with no free-text traveller facts", async () => {
+  const [migration, rpcFixMigration, productContextMigration, endpoint] = await Promise.all([
     source(
       "supabase/migrations/202607270001_homeground_homepage_email.sql",
     ),
     source(
       "supabase/migrations/202607270002_homeground_homepage_email_rpc_fix.sql",
+    ),
+    source(
+      "supabase/migrations/202608240001_homeground_private_tour_email_context.sql",
     ),
     source("supabase/functions/v1-inquiries/index.ts"),
   ]);
@@ -87,7 +90,10 @@ test("homepage email has a dedicated private persistence path with no traveller 
     homepageBranch,
     /p_contact_email:\s*payload\.contact\.email/u,
   );
-  assert.match(homepageBranch, /p_attribution:\s*\{\}/u);
+  assert.match(
+    homepageBranch,
+    /p_attribution:\s*payload\.productInterest[\s\S]{0,220}slug: payload\.productInterest\.slug[\s\S]{0,120}name: payload\.productInterest\.name[\s\S]{0,100}: \{\}/u,
+  );
   for (const forbidden of [
     /payload\.journey/u,
     /payload\.routeSnapshot/u,
@@ -99,6 +105,18 @@ test("homepage email has a dedicated private persistence path with no traveller 
   ]) {
     assert.doesNotMatch(homepageBranch, forbidden);
   }
+  assert.match(
+    productContextMigration,
+    /p_attribution is distinct from expected_attribution/u,
+  );
+  assert.match(
+    productContextMigration,
+    /answers_json = homepage_answers/u,
+  );
+  assert.match(
+    productContextMigration,
+    /when 'zhangjiajie-4-day-private-tour'[\s\S]+张家界4天3晚/u,
+  );
 });
 
 test("homepage email reports success only after persistence returns a saved reference", async () => {
@@ -151,6 +169,9 @@ test("homepage email notifications cannot silently acquire itinerary fields", as
   assert.match(homepageBranch, /job\.departure_country !== null/u);
   assert.match(homepageBranch, /job\.rough_budget_per_person !== null/u);
   assert.match(homepageBranch, /job\.note !== null/u);
+  assert.match(homepageBranch, /homepageProductInterest\(job\)/u);
+  assert.match(homepageBranch, /Published tour/u);
+  assert.match(homepageBranch, /Product reference/u);
   assert.match(homepageBranch, /No itinerary[\s\S]+details were collected\./u);
   assert.doesNotMatch(homepageBranch, /routeSummary\(|routeAnswers\(/u);
 

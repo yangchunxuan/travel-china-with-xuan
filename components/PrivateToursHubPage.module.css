@@ -1,0 +1,909 @@
+.toursPage {
+  --tour-paper: #fff;
+  --tour-soft: #f5f5f4;
+  --tour-ink: #0a0a0a;
+  --tour-muted: #64676c;
+  --tour-line: #d8d9db;
+  --tour-accent: #a84731;
+  background: var(--tour-paper);
+  color: var(--tour-ink);
+  min-height: 100vh;
+}
+
+.toursPage main {
+  display: block;
+}
+
+.hero,
+.selection,
+.quickCompare,
+.catalog,
+.finalSection {
+  padding-inline: max(1rem, calc((100vw - 1380px) / 2));
+}
+
+.hero {
+  border-block-end: 1px solid var(--tour-line);
+  padding-block: clamp(2rem, 5vw, 4.5rem) clamp(4.75rem, 9vw, 9rem);
+}
+
+.heroInner,
+.selectionInner,
+.finalInner {
+  margin-inline: auto;
+  max-width: 1380px;
+}
+
+.breadcrumb ol {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0 0 clamp(3.75rem, 8vw, 8rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  color: var(--tour-muted);
+  font-size: 0.75rem;
+  font-weight: 680;
+  letter-spacing: 0.04em;
+}
+
+.breadcrumb li + li::before {
+  color: #a0a2a5;
+  content: "/";
+  margin-inline-end: 0.55rem;
+}
+
+.breadcrumb a {
+  align-items: center;
+  color: var(--tour-ink);
+  display: inline-flex;
+  min-height: 2.75rem;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.3rem;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.heroGrid,
+.catalogIntro,
+.finalInner {
+  align-items: end;
+  display: grid;
+  gap: clamp(2.5rem, 7vw, 8.5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.54fr);
+}
+
+.eyebrow,
+.finalEyebrow {
+  color: var(--tour-accent);
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.14em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.quickIntro h2,
+.quickIdentity h3,
+.selectionHeading h2,
+.catalogIntro h2,
+.tourBody h2,
+.finalInner h2 {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.hero h1 {
+  font-size: clamp(3.75rem, 7.3vw, 7.7rem);
+  line-height: 0.9;
+  margin: 1.15rem 0 0;
+  max-width: 10ch;
+}
+
+.heroGrid > p {
+  color: var(--tour-muted);
+  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  line-height: 1.72;
+  margin: 0 0 0.35rem;
+  max-width: 36rem;
+}
+
+.quickCompare {
+  border-block-end: 1px solid var(--tour-line);
+  padding-block: clamp(3.5rem, 7vw, 7rem);
+}
+
+.quickIntro {
+  align-items: end;
+  display: grid;
+  gap: clamp(2rem, 7vw, 8.5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.54fr);
+  margin: 0 auto clamp(2.25rem, 5vw, 4rem);
+  max-width: 1380px;
+}
+
+.quickIntro h2 {
+  font-size: clamp(2.55rem, 4.7vw, 4.9rem);
+  font-weight: 400;
+  line-height: 0.98;
+  margin: 0.9rem 0 0;
+  max-width: 14ch;
+}
+
+.quickIntro > p {
+  color: var(--tour-muted);
+  line-height: 1.68;
+  margin: 0;
+}
+
+.quickList {
+  border-block-start: 1px solid var(--tour-ink);
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1380px;
+  padding: 0;
+}
+
+.quickList > li {
+  border-block-end: 1px solid var(--tour-line);
+}
+
+.quickLink {
+  align-items: start;
+  color: var(--tour-ink);
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 2.25rem minmax(14rem, 0.78fr) minmax(20rem, 1.22fr) 7.5rem;
+  min-width: 0;
+  padding-block: 1.35rem;
+  text-decoration: none;
+}
+
+.quickLink:hover,
+.quickLink:focus-visible {
+  background: var(--tour-soft);
+  outline: 0;
+}
+
+.quickLink:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--tour-accent);
+}
+
+.quickNumber,
+.quickIdentity > p:first-child,
+.quickDetails dt {
+  color: var(--tour-accent);
+  font-size: 0.67rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quickNumber {
+  padding-block-start: 0.15rem;
+}
+
+.quickIdentity {
+  min-width: 0;
+}
+
+.quickIdentity > p:first-child {
+  line-height: 1.45;
+  margin: 0;
+}
+
+.quickIdentity h3 {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.05;
+  margin: 0.55rem 0 0;
+}
+
+.quickFacts {
+  color: var(--tour-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  font-weight: 680;
+  gap: 0.35rem 0.8rem;
+  line-height: 1.45;
+  margin: 0.7rem 0 0;
+}
+
+.quickFacts span + span {
+  border-inline-start: 1px solid var(--tour-line);
+  padding-inline-start: 0.8rem;
+}
+
+.quickFacts strong {
+  color: var(--tour-ink);
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.quickDetails {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  min-width: 0;
+}
+
+.quickDetails > div {
+  min-width: 0;
+}
+
+.quickDetails dt {
+  color: var(--tour-muted);
+}
+
+.quickDetails dd {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0.45rem 0 0;
+}
+
+.quickAction {
+  align-items: center;
+  display: flex;
+  font-size: 0.74rem;
+  font-weight: 760;
+  gap: 0.65rem;
+  justify-content: flex-end;
+  min-height: 2rem;
+  white-space: nowrap;
+}
+
+.quickAction span {
+  color: var(--tour-accent);
+  font-size: 1rem;
+}
+
+.selection {
+  background: var(--tour-soft);
+  border-block-end: 1px solid var(--tour-line);
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+.selectionHeading {
+  align-items: end;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(14rem, 0.4fr) minmax(0, 1fr);
+}
+
+.selectionHeading h2 {
+  font-size: clamp(2.55rem, 5vw, 5.1rem);
+  line-height: 0.96;
+  margin: 0;
+  max-width: 14ch;
+}
+
+.selectionSteps {
+  border-block-start: 1px solid var(--tour-line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: clamp(3.5rem, 7vw, 7rem) 0 0;
+  padding: 0;
+}
+
+.selectionSteps li {
+  border-inline-end: 1px solid var(--tour-line);
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.8rem);
+}
+
+.selectionSteps li:first-child {
+  padding-inline-start: 0;
+}
+
+.selectionSteps li:last-child {
+  border-inline-end: 0;
+  padding-inline-end: 0;
+}
+
+.selectionSteps li > span {
+  color: var(--tour-accent);
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+}
+
+.selectionSteps h3 {
+  font-size: clamp(1.18rem, 1.6vw, 1.45rem);
+  margin: 2.8rem 0 0;
+}
+
+.selectionSteps p {
+  color: var(--tour-muted);
+  line-height: 1.68;
+  margin: 0.85rem 0 0;
+  max-width: 28rem;
+}
+
+.catalog {
+  padding-block: clamp(5rem, 9vw, 9.5rem);
+}
+
+.catalogIntro {
+  margin: 0 auto clamp(3.75rem, 7vw, 7rem);
+  max-width: 1380px;
+}
+
+.catalogIntro h2 {
+  font-size: clamp(2.8rem, 5.4vw, 5.6rem);
+  line-height: 0.96;
+  margin: 1.1rem 0 0;
+  max-width: 11ch;
+}
+
+.catalogNote > p:first-child {
+  color: var(--tour-muted);
+  font-size: 1rem;
+  line-height: 1.72;
+  margin: 0;
+}
+
+.catalogNote > p:last-child {
+  border-block-start: 1px solid var(--tour-line);
+  color: var(--tour-accent);
+  font-size: 0.74rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  margin: 1.5rem 0 0;
+  padding-block-start: 1rem;
+  text-transform: uppercase;
+}
+
+.catalogGrid {
+  border-block-start: 1px solid var(--tour-line);
+  border-inline-start: 1px solid var(--tour-line);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1380px;
+  padding: 0;
+}
+
+.catalogItem {
+  border-block-end: 1px solid var(--tour-line);
+  border-inline-end: 1px solid var(--tour-line);
+  min-width: 0;
+}
+
+.tourCard,
+.tourLink {
+  height: 100%;
+}
+
+.tourLink {
+  color: var(--tour-ink);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.tourImage {
+  aspect-ratio: 16 / 9.5;
+  background: var(--tour-soft);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tourImage img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  width: 100%;
+}
+
+.tourLink:hover .tourImage img,
+.tourLink:focus-visible .tourImage img {
+  transform: scale(1.025);
+}
+
+.tourImage figcaption {
+  align-items: center;
+  background: rgb(255 255 255 / 94%);
+  bottom: 0;
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 760;
+  justify-content: space-between;
+  left: 0;
+  letter-spacing: 0.04em;
+  padding: 0.8rem 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.tourImage figcaption span:first-child {
+  color: var(--tour-accent);
+}
+
+.tourBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.8rem);
+}
+
+.routeLine {
+  color: var(--tour-accent);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tourBody h2 {
+  font-size: clamp(2rem, 3.25vw, 3.5rem);
+  line-height: 1;
+  margin: 1.2rem 0 0;
+  max-width: 16ch;
+}
+
+.description {
+  color: var(--tour-muted);
+  line-height: 1.7;
+  margin: 1.25rem 0 0;
+  max-width: 42rem;
+}
+
+.startingPrice {
+  border-block: 1px solid var(--tour-line);
+  display: grid;
+  gap: 0.35rem;
+  margin: 1.5rem 0 0;
+  padding-block: 1rem;
+}
+
+.startingPrice > span,
+.startingPrice > small {
+  color: var(--tour-muted);
+  font-size: 0.7rem;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
+.startingPrice > span {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.startingPrice > strong {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.comparisonList {
+  border-block-start: 1px solid var(--tour-line);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 2rem 0 0;
+}
+
+.comparisonList > div {
+  min-width: 0;
+  padding: 1.25rem 1.25rem 0 0;
+}
+
+.comparisonList > div + div {
+  border-inline-start: 1px solid var(--tour-line);
+  padding-inline: 1.25rem 0;
+}
+
+.comparisonList dt,
+.highlights > p {
+  color: var(--tour-muted);
+  font-size: 0.68rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.comparisonList dd {
+  font-size: 0.88rem;
+  line-height: 1.62;
+  margin: 0.65rem 0 0;
+}
+
+.highlights {
+  border-block-start: 1px solid var(--tour-line);
+  margin-block-start: 1.5rem;
+  padding-block-start: 1.25rem;
+}
+
+.highlights > p {
+  margin: 0;
+}
+
+.highlights ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+}
+
+.highlights li {
+  background: var(--tour-soft);
+  border: 1px solid var(--tour-line);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  padding: 0.42rem 0.58rem;
+}
+
+.viewTour {
+  align-items: center;
+  border-block-start: 1px solid var(--tour-ink);
+  display: flex;
+  font-size: 0.84rem;
+  font-weight: 780;
+  justify-content: space-between;
+  margin-block-start: auto;
+  min-height: 3.5rem;
+  padding-block-start: 1rem;
+}
+
+.viewTour > span {
+  color: var(--tour-accent);
+  font-size: 1.1rem;
+  transition: transform 180ms ease;
+}
+
+.tourLink:hover .viewTour > span,
+.tourLink:focus-visible .viewTour > span {
+  transform: translateX(0.25rem);
+}
+
+.finalSection {
+  background: #111;
+  color: #fff;
+  padding-block: clamp(5rem, 9vw, 9rem);
+}
+
+.finalInner {
+  align-items: end;
+}
+
+.finalEyebrow {
+  color: #d78974;
+}
+
+.finalInner h2 {
+  font-size: clamp(2.8rem, 5.5vw, 5.7rem);
+  line-height: 0.96;
+  margin: 1rem 0 0;
+  max-width: 12ch;
+}
+
+.finalInner > div:last-child > p {
+  color: #bebebe;
+  line-height: 1.72;
+  margin: 0 0 1.8rem;
+}
+
+.finalAction {
+  align-items: center;
+  border-block-end: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  font-size: 0.86rem;
+  font-weight: 760;
+  justify-content: space-between;
+  min-height: 3rem;
+  text-decoration: none;
+}
+
+.finalAction span {
+  color: #d78974;
+  transition: transform 180ms ease;
+}
+
+.finalAction:hover span,
+.finalAction:focus-visible span {
+  transform: translateX(0.25rem);
+}
+
+.toursPage[data-homeground-locale="zh"] .hero h1,
+.toursPage[data-homeground-locale="zh"] .quickIntro h2,
+.toursPage[data-homeground-locale="zh"] .quickIdentity h3,
+.toursPage[data-homeground-locale="zh"] .selectionHeading h2,
+.toursPage[data-homeground-locale="zh"] .catalogIntro h2,
+.toursPage[data-homeground-locale="zh"] .tourBody h2,
+.toursPage[data-homeground-locale="zh"] .finalInner h2 {
+  letter-spacing: 0;
+}
+
+.toursPage[data-homeground-locale="ko"] .hero h1,
+.toursPage[data-homeground-locale="ko"] .quickIntro h2,
+.toursPage[data-homeground-locale="ko"] .quickIdentity h3,
+.toursPage[data-homeground-locale="ko"] .selectionHeading h2,
+.toursPage[data-homeground-locale="ko"] .catalogIntro h2,
+.toursPage[data-homeground-locale="ko"] .tourBody h2,
+.toursPage[data-homeground-locale="ko"] .finalInner h2 {
+  letter-spacing: -0.018em;
+}
+
+@media (max-width: 64rem) {
+  .quickLink {
+    grid-template-columns: 2.25rem minmax(13rem, 0.75fr) minmax(16rem, 1fr);
+  }
+
+  .quickAction {
+    grid-column: 2 / -1;
+    justify-content: flex-start;
+  }
+
+  .comparisonList {
+    grid-template-columns: 1fr;
+  }
+
+  .comparisonList > div,
+  .comparisonList > div + div {
+    border-inline-start: 0;
+    padding-inline: 0;
+  }
+
+  .comparisonList > div + div {
+    border-block-start: 1px solid var(--tour-line);
+    margin-block-start: 1.1rem;
+    padding-block-start: 1.1rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .heroGrid,
+  .quickIntro,
+  .selectionHeading,
+  .catalogIntro,
+  .finalInner {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 14.5vw, 4.6rem);
+  }
+
+  .hero {
+    padding-block: 1.25rem 2.75rem;
+  }
+
+  .breadcrumb ol {
+    margin-block-end: 1.75rem;
+  }
+
+  .heroGrid {
+    gap: 1.35rem;
+  }
+
+  .catalog {
+    padding-block: 2.75rem 4.5rem;
+  }
+
+  .quickCompare {
+    padding-block: 2.5rem 3.25rem;
+  }
+
+  .quickIntro {
+    gap: 1rem;
+    margin-block-end: 1.5rem;
+  }
+
+  .quickIntro h2 {
+    font-size: clamp(2.05rem, 10vw, 3.05rem);
+    margin-block-start: 0.55rem;
+  }
+
+  .quickIntro > p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .quickLink {
+    gap: 0.6rem 0.8rem;
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    padding-inline-end: 1.4rem;
+    padding-block: 0.95rem;
+    position: relative;
+  }
+
+  .quickIdentity > p:first-child,
+  .quickIdentity h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .quickIdentity > p:first-child {
+    -webkit-line-clamp: 1;
+  }
+
+  .quickIdentity h3 {
+    font-size: 1.3rem;
+    margin-block-start: 0.3rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .quickFacts {
+    font-size: 0.68rem;
+    gap: 0.2rem 0.55rem;
+    margin-block-start: 0.45rem;
+  }
+
+  .quickFacts span + span {
+    padding-inline-start: 0.55rem;
+  }
+
+  .quickDetails {
+    gap: 0.65rem;
+    grid-column: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quickDetails dd {
+    display: -webkit-box;
+    font-size: 0.76rem;
+    line-height: 1.4;
+    margin-block-start: 0.2rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .quickAction {
+    inset-block-start: 0.8rem;
+    inset-inline-end: 0.1rem;
+    min-height: 1.5rem;
+    position: absolute;
+  }
+
+  .quickAction > span:first-child {
+    display: none;
+  }
+
+  .catalogIntro {
+    gap: 1.35rem;
+    margin-block-end: 2rem;
+  }
+
+  .catalogIntro h2 {
+    font-size: clamp(2.15rem, 11vw, 3.35rem);
+  }
+
+  .selectionSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .selectionSteps li,
+  .selectionSteps li:first-child,
+  .selectionSteps li:last-child {
+    border-block-end: 1px solid var(--tour-line);
+    border-inline-end: 0;
+    padding: 1.75rem 0;
+  }
+
+  .selectionSteps li:last-child {
+    border-block-end: 0;
+  }
+
+  .selectionSteps h3 {
+    margin-block-start: 1.4rem;
+  }
+
+  .catalogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tourImage {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/*
+ * On phones the compact comparison is the complete product chooser. Keeping
+ * the image-led catalog out of the rendered accessibility tree prevents the
+ * same nine destinations and links from being announced twice, while wider
+ * layouts retain both the comparison table and the editorial cards.
+ */
+@media (max-width: 40rem) {
+  .catalog {
+    display: none;
+  }
+}
+
+@media (max-width: 22rem) {
+  .hero,
+  .selection,
+  .quickCompare,
+  .catalog,
+  .finalSection {
+    padding-inline: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 3.1rem;
+  }
+
+  .tourBody {
+    padding: 1.25rem;
+  }
+
+  .tourBody h2 {
+    font-size: 1.85rem;
+  }
+
+  .highlights ul {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .finalAction {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tourImage img,
+  .viewTour > span,
+  .finalAction span {
+    transition: none;
+  }
+
+  .tourLink:hover .tourImage img,
+  .tourLink:focus-visible .tourImage img,
+  .tourLink:hover .viewTour > span,
+  .tourLink:focus-visible .viewTour > span,
+  .finalAction:hover span,
+  .finalAction:focus-visible span {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .breadcrumb a,
+  .selectionSteps,
+  .selectionSteps li,
+  .catalogGrid,
+  .catalogItem,
+  .comparisonList,
+  .comparisonList > div + div,
+  .highlights,
+  .highlights li,
+  .viewTour {
+    border-color: currentColor;
+  }
+}

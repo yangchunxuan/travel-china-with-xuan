@@ -27,6 +27,7 @@ import {
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { buildRouteServiceContactHref } from "../lib/routeServiceInterest";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -119,6 +120,14 @@ function createStructuredData(
     copy.path,
     "https://homegroundchina.com/",
   ).href;
+  const studioUrl = new URL(
+    `${homeCopy.path}studio/`,
+    "https://homegroundchina.com/",
+  ).href;
+  const servicesUrl = new URL(
+    `${homeCopy.path}services/`,
+    "https://homegroundchina.com/",
+  ).href;
 
   return {
     "@context": "https://schema.org",
@@ -180,6 +189,18 @@ function createStructuredData(
           {
             "@type": "ListItem",
             position: 2,
+            name: copy.breadcrumb.studio,
+            item: studioUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: copy.breadcrumb.services,
+            item: servicesUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
             name: copy.schema.pageName,
             item: pageUrl,
           },
@@ -209,11 +230,21 @@ export function ChinaItineraryReviewPage({
   const homeCopy = getHomegroundCopy(locale);
   const copy = getChinaItineraryReviewCopy(locale);
   const plannerContactHref = `${homeCopy.path}#planner-contact`;
-  const reviewHref = plannerContactHref;
-  const buildHref = plannerContactHref;
-  const fullSupportHref = plannerContactHref;
+  const reviewHref = buildRouteServiceContactHref(
+    homeCopy.path,
+    "itinerary-review",
+  );
+  const buildHref = buildRouteServiceContactHref(
+    homeCopy.path,
+    "route-build",
+  );
+  const fullSupportHref = buildRouteServiceContactHref(
+    homeCopy.path,
+    "full-trip-support",
+  );
   const rushGuideHref = `${homeCopy.path}guides/is-your-china-itinerary-too-rushed/`;
   const studioHref = `${homeCopy.path}studio/`;
+  const servicesHref = `${homeCopy.path}services/`;
   const structuredData = createStructuredData(locale, copy);
 
   return (
@@ -234,12 +265,18 @@ export function ChinaItineraryReviewPage({
               <nav className={styles.breadcrumb} aria-label={copy.breadcrumb.ariaLabel}>
                 <ol>
                   <li><Link href={homeCopy.path}>{copy.breadcrumb.home}</Link></li>
+                  <li><Link href={studioHref}>{copy.breadcrumb.studio}</Link></li>
+                  <li><Link href={servicesHref}>{copy.breadcrumb.services}</Link></li>
                   <li aria-current="page">{copy.breadcrumb.current}</li>
                 </ol>
               </nav>
 
               <div className={styles.heroGrid}>
                 <div className={styles.heroCopy}>
+                  <Link className={styles.serviceReturn} href={servicesHref}>
+                    <span aria-hidden="true">←</span>
+                    {copy.breadcrumb.returnToServices}
+                  </Link>
                   <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
                   <h1>{copy.hero.title}</h1>
                   <p className={styles.heroLead}>{copy.hero.lead}</p>

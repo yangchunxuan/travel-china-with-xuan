@@ -8,7 +8,7 @@ export const malaysiaZhangjiajieGuideCopyKo = {
   breadcrumb: {
     label: "현재 위치",
     home: "홈",
-    guides: "여행 가이드",
+    guides: "실용 가이드",
     current: "말레이시아 출발 장자제",
   },
   toc: {

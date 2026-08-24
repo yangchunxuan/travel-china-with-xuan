@@ -71,6 +71,8 @@ export type HomegroundEventName =
   | "guide_search_no_results"
   | "homepage_guide_card_clicked"
   | "homepage_product_card_clicked"
+  | "navigation_clicked"
+  | "tour_catalog_product_clicked"
   | "planning_intent_selected"
   | "planner_started"
   | "planner_step_completed"
@@ -122,6 +124,8 @@ const allowedParameterKeys = new Set([
   "guide_id",
   "product_slug",
   "product_position",
+  "navigation_item",
+  "navigation_surface",
   "search_surface",
   "query_length",
   "result_position",

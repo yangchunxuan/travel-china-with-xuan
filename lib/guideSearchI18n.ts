@@ -45,8 +45,8 @@ export interface GuideSearchCopy {
 const copies: Record<HomegroundLocale, GuideSearchCopy> = {
   en: {
     path: "/guides/search/",
-    navLabel: "Search guides",
-    eyebrow: "China travel guides",
+    navLabel: "Search Travel Advice",
+    eyebrow: "Practical China travel guides",
     title: "What would you like to know?",
     introduction:
       "Search for practical answers on where to stay, how to get around and how long to spend in each place.",
@@ -73,7 +73,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
         "Find practical China travel guides by city, route, hotel area, transport and trip length.",
       breadcrumbLabel: "Breadcrumb",
       homeLabel: "Home",
-      guidesLabel: "Travel guides",
+      guidesLabel: "Travel Advice",
       title: "Search China travel guides.",
       introduction:
         "Look up a city, route or travel question and find the guides most relevant to your trip.",
@@ -99,8 +99,8 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
   },
   zh: {
     path: "/zh/guides/search/",
-    navLabel: "搜索指南",
-    eyebrow: "中国旅行指南",
+    navLabel: "搜索实用指南",
+    eyebrow: "中国旅行实用指南",
     title: "你想先了解什么？",
     introduction:
       "住哪里、怎么走、玩几天，或者哪种安排更适合你？直接搜索你正在考虑的问题。",
@@ -125,7 +125,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
         "按城市、路线、住宿区域、交通方式和行程天数，查找实用的中国旅行指南。",
       breadcrumbLabel: "当前位置",
       homeLabel: "首页",
-      guidesLabel: "旅行指南",
+      guidesLabel: "实用指南",
       title: "搜索中国旅行指南。",
       introduction:
         "输入城市、路线或旅行问题，找到与你这趟旅行最相关的内容。",
@@ -150,8 +150,8 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
   },
   ko: {
     path: "/ko/guides/search/",
-    navLabel: "가이드 검색",
-    eyebrow: "중국 여행 가이드",
+    navLabel: "실용 가이드 검색",
+    eyebrow: "중국 여행 실용 가이드",
     title: "무엇이 궁금하신가요?",
     introduction:
       "어디에 머물지, 어떻게 이동할지, 며칠이 적당할지 궁금하신가요? 지금 고민 중인 내용을 검색해 보세요.",
@@ -178,7 +178,7 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
         "도시, 이동 경로, 숙소 지역, 교통편과 여행 일수로 실용적인 중국 여행 가이드를 찾아보세요.",
       breadcrumbLabel: "현재 위치",
       homeLabel: "홈",
-      guidesLabel: "여행 가이드",
+      guidesLabel: "실용 가이드",
       title: "중국 여행 가이드 검색",
       introduction:
         "도시, 이동 경로 또는 여행 질문을 입력하고 내 여행에 맞는 가이드를 찾아보세요.",
@@ -207,13 +207,18 @@ export function getGuideSearchCopy(locale: HomegroundLocale) {
   return copies[locale];
 }
 
-export function getGuideSearchLanguagePaths() {
+export function getGuideSearchLanguagePaths(rawQuery = "") {
+  const query = rawQuery.trim().slice(0, 120);
+  const querySuffix = query
+    ? `?${new URLSearchParams({ q: query }).toString()}`
+    : "";
+
   return {
-    en: copies.en.path,
-    ko: copies.ko.path,
-    "zh-Hans": copies.zh.path,
-    "x-default": copies.en.path,
-  } as const;
+    en: `${copies.en.path}${querySuffix}`,
+    ko: `${copies.ko.path}${querySuffix}`,
+    "zh-Hans": `${copies.zh.path}${querySuffix}`,
+    "x-default": `${copies.en.path}${querySuffix}`,
+  };
 }
 
 export function getGuideSearchIndexPath(locale: HomegroundLocale) {
