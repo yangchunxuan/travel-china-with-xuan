@@ -110,6 +110,14 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(showcaseStyles, /--showcase-canvas: #fff/);
   assert.match(showcaseStyles, /--showcase-surface: #fff/);
   assert.match(showcaseStyles, /\.planningSection \{[\s\S]{0,100}background: #fff/);
+  assert.match(
+    showcaseStyles,
+    /\.root :global\(#planning-proof\) \{[\s\S]{0,80}padding-block-end: 0/,
+  );
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \.planningIntro h2 \{[\s\S]{0,100}line-break: strict;[\s\S]{0,60}word-break: normal/,
+  );
   assert.doesNotMatch(showcaseStyles, /\.principles\s*\{/);
   assert.doesNotMatch(page, /className=\{showcaseStyles\.principles\}/);
   assert.doesNotMatch(page, /<section[\s\S]{0,160}id="destinations"/);
@@ -148,6 +156,36 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
+});
+
+test("the planning-scope film loads near the viewport and keeps an accessible poster fallback", async () => {
+  const [planningScope, planningScopeStyles] = await Promise.all([
+    source("components/PlanningScopeSection.tsx"),
+    source("components/PlanningScopeSection.module.css"),
+  ]);
+
+  assert.match(planningScope, /new IntersectionObserver/);
+  assert.match(planningScope, /rootMargin: "400px 0px"/);
+  assert.match(planningScope, /prefers-reduced-motion: reduce/);
+  assert.match(planningScope, /connection\?\.saveData/);
+  assert.match(planningScope, /autoPlay/);
+  assert.match(planningScope, /loop/);
+  assert.match(planningScope, /muted/);
+  assert.match(planningScope, /playsInline/);
+  assert.match(planningScope, /preload="none"/);
+  assert.match(planningScope, /aria-hidden="true"/);
+  assert.doesNotMatch(planningScope, /\bcontrols\b/);
+  assert.match(
+    planningScope,
+    /planning-scope-garden-mobile\.mp4[\s\S]*planning-scope-garden-desktop\.mp4/,
+  );
+  assert.match(
+    planningScope,
+    /planning-scope-garden-mobile\.jpg[\s\S]*planning-scope-garden-desktop\.jpg/,
+  );
+  assert.match(planningScopeStyles, /\.visual \{[\s\S]{0,120}aspect-ratio: 2\.5 \/ 1/);
+  assert.match(planningScopeStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(planningScopeStyles, /\.video \{[\s\S]{0,80}display: none/);
 });
 
 test("the homepage product showcase exposes every published tour without guide placeholders", async () => {
