@@ -193,12 +193,13 @@ export function GuideSearchForm({
     document.addEventListener("visibilitychange", updateVisibility);
 
     const experience = searchExperienceRef.current;
-    const observer = experience
-      ? new IntersectionObserver(
-          ([entry]) => setPlaceholderInView(Boolean(entry?.isIntersecting)),
-          { rootMargin: "160px 0px" },
-        )
-      : null;
+    const observer =
+      experience && typeof window.IntersectionObserver === "function"
+        ? new window.IntersectionObserver(
+            ([entry]) => setPlaceholderInView(Boolean(entry?.isIntersecting)),
+            { rootMargin: "160px 0px" },
+          )
+        : null;
     if (experience && observer) observer.observe(experience);
 
     return () => {

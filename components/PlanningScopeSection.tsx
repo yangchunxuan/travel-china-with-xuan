@@ -53,49 +53,93 @@ export function PlanningScopeSection({
     const video = videoRef.current;
     if (!visual || !video) return;
 
-    const reducedMotion = window.matchMedia(
+    const motionPreference = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
-    ).matches;
+    );
     const connection = (navigator as NavigatorWithConnection).connection;
     const slowConnection =
       connection?.effectiveType === "slow-2g" ||
       connection?.effectiveType === "2g";
 
-    if (reducedMotion || connection?.saveData || slowConnection) return;
+    if (
+      connection?.saveData ||
+      slowConnection ||
+      typeof window.IntersectionObserver !== "function"
+    ) {
+      return;
+    }
 
-    const loadObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry?.isIntersecting) return;
-        setVideoSourcesEnabled(true);
-        loadObserver.disconnect();
-      },
-      { rootMargin: "400px 0px" },
-    );
-    const playbackObserver = new IntersectionObserver(
-      ([entry]) => {
-        const shouldPlay = Boolean(
-          entry?.isIntersecting && entry.intersectionRatio >= 0.12,
-        );
-        videoInViewRef.current = shouldPlay;
+    let loadObserver: IntersectionObserver | null = null;
+    let playbackObserver: IntersectionObserver | null = null;
 
-        if (!shouldPlay) {
-          video.pause();
-          return;
-        }
+    const disconnectObservers = () => {
+      loadObserver?.disconnect();
+      playbackObserver?.disconnect();
+      loadObserver = null;
+      playbackObserver = null;
+    };
 
-        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-          void video.play().catch(() => undefined);
-        }
-      },
-      { threshold: [0, 0.12] },
-    );
+    const startObservers = () => {
+      if (motionPreference.matches || playbackObserver) return;
 
-    loadObserver.observe(visual);
-    playbackObserver.observe(visual);
+      loadObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry?.isIntersecting) return;
+          setVideoSourcesEnabled(true);
+          loadObserver?.disconnect();
+          loadObserver = null;
+        },
+        { rootMargin: "400px 0px" },
+      );
+      playbackObserver = new IntersectionObserver(
+        ([entry]) => {
+          const shouldPlay = Boolean(
+            entry?.isIntersecting && entry.intersectionRatio >= 0.12,
+          );
+          videoInViewRef.current = shouldPlay;
+
+          if (!shouldPlay) {
+            video.pause();
+            return;
+          }
+
+          if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            void video.play().catch(() => undefined);
+          }
+        },
+        { threshold: [0, 0.12] },
+      );
+
+      loadObserver.observe(visual);
+      playbackObserver.observe(visual);
+    };
+
+    const handleMotionPreference = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        disconnectObservers();
+        videoInViewRef.current = false;
+        video.pause();
+        setVideoHasPlayed(false);
+        return;
+      }
+
+      startObservers();
+    };
+
+    if (typeof motionPreference.addEventListener === "function") {
+      motionPreference.addEventListener("change", handleMotionPreference);
+    } else {
+      motionPreference.addListener(handleMotionPreference);
+    }
+    startObservers();
 
     return () => {
-      loadObserver.disconnect();
-      playbackObserver.disconnect();
+      if (typeof motionPreference.removeEventListener === "function") {
+        motionPreference.removeEventListener("change", handleMotionPreference);
+      } else {
+        motionPreference.removeListener(handleMotionPreference);
+      }
+      disconnectObservers();
       video.pause();
     };
   }, []);
@@ -133,7 +177,6 @@ export function PlanningScopeSection({
         <div className={styles.visual} ref={visualRef}>
           <video
             aria-hidden="true"
-            autoPlay
             className={styles.video}
             disablePictureInPicture
             disableRemotePlayback
@@ -154,7 +197,6 @@ export function PlanningScopeSection({
             }}
             onPlaying={() => setVideoHasPlayed(true)}
             playsInline
-            poster="/images/home/planning-scope-garden-desktop.jpg"
             preload="none"
             ref={videoRef}
             tabIndex={-1}
