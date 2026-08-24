@@ -2,6 +2,7 @@ import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import {
   getGuideCatalogRoutePattern,
+  getSameOriginAnchorPathnames,
   isCanonicalGuideCatalogPageName,
 } from "./guide-catalog-pagination-contract.mjs";
 
@@ -70,9 +71,9 @@ function tags(html, name) {
   return html.match(new RegExp(`<${name}\\b[^>]*>`, "gi")) ?? [];
 }
 
-function normalizeAbsoluteUrl(value) {
+function normalizeAbsoluteUrl(value, currentRoute = "/") {
   try {
-    return new URL(value, siteUrl).href;
+    return new URL(value, new URL(currentRoute, siteUrl)).href;
   } catch {
     return null;
   }
@@ -129,22 +130,12 @@ async function guideCatalogPages(guideHubRoute) {
     const html = await readFile(filePath, "utf8");
     catalogPages.push({ route, filePath, html });
 
-    for (const anchorTag of tags(html, "a")) {
-      const href = attributes(anchorTag).get("href");
-      if (!href) continue;
-
-      let target;
-      try {
-        target = new URL(href, siteUrl);
-      } catch {
-        continue;
-      }
+    for (const pathname of getSameOriginAnchorPathnames(html, route, siteUrl)) {
       if (
-        target.origin === siteUrl &&
-        paginationRoutePattern.test(target.pathname) &&
-        !visitedRoutes.has(target.pathname)
+        paginationRoutePattern.test(pathname) &&
+        !visitedRoutes.has(pathname)
       ) {
-        queuedRoutes.push(target.pathname);
+        queuedRoutes.push(pathname);
       }
     }
   }
@@ -364,7 +355,7 @@ async function checkHomepageGuidePaths() {
     const homepageHtml = await readFile(homepagePath, "utf8");
     const guideHubLinks = tags(homepageHtml, "a")
       .map((tag) => attributes(tag).get("href") ?? "")
-      .filter((href) => normalizeAbsoluteUrl(href) === expectedGuideHubUrl);
+      .filter((href) => normalizeAbsoluteUrl(href, homepageRoute) === expectedGuideHubUrl);
 
     if (guideHubLinks.length === 0) {
       fail(
@@ -384,6 +375,7 @@ async function checkHomepageGuidePaths() {
         cardOccurrences.push({
           href,
           page: path.relative(outputRoot, catalogPage.filePath),
+          route: catalogPage.route,
         });
       }
     }
@@ -396,7 +388,12 @@ async function checkHomepageGuidePaths() {
       fail(
         `${guideHubRoute}: duplicate data-guide-id=${guideSlug} cards on ${cardOccurrences.map(({ page }) => page).join(", ")}`,
       );
-    } else if (normalizeAbsoluteUrl(cardOccurrences[0].href ?? "") !== expectedGuideUrl) {
+    } else if (
+      normalizeAbsoluteUrl(
+        cardOccurrences[0].href ?? "",
+        cardOccurrences[0].route,
+      ) !== expectedGuideUrl
+    ) {
       fail(
         `${guideHubRoute}: data-guide-id=${guideSlug} card points to ${String(cardOccurrences[0].href)}, expected ${locale.route}`,
       );

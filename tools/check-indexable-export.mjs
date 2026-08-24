@@ -1,5 +1,9 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import {
+  getGuideCatalogRoutePattern,
+  getSameOriginAnchorPathnames,
+} from "./guide-catalog-pagination-contract.mjs";
 
 const outputRoot = path.join(process.cwd(), "out");
 const siteUrl = "https://homegroundchina.com";
@@ -155,11 +159,17 @@ function assertIncludes(source, needle, context) {
 }
 
 async function assertCrawlableInternalLink(check) {
-  const targetHref = `href="${routePathFromCanonical(check.canonical)}"`;
+  const targetPathname = routePathFromCanonical(check.canonical);
   const sourcePath = path.join(outputRoot, check.linkedFrom);
   const sourcePage = await readFile(sourcePath, "utf8");
+  const sourceRoute = check.linkedFrom === "index.html"
+    ? "/"
+    : `/${check.linkedFrom.replace(/index\.html$/, "")}`;
 
-  if (sourcePage.includes(targetHref)) return;
+  if (
+    getSameOriginAnchorPathnames(sourcePage, sourceRoute, siteUrl)
+      .includes(targetPathname)
+  ) return;
 
   const isGuideHub = /^(?:zh\/|ko\/)?guides\/index\.html$/.test(
     check.linkedFrom,
@@ -169,18 +179,37 @@ async function assertCrawlableInternalLink(check) {
     return;
   }
 
-  const paginationPaths = [
-    ...sourcePage.matchAll(
-      /href="(\/(?:zh\/|ko\/)?guides\/page\/\d+\/)"/g,
-    ),
-  ].map((match) => match[1]);
+  const guideHubRoute = sourceRoute;
+  const routePattern = getGuideCatalogRoutePattern(guideHubRoute);
+  const queuedRoutes = [guideHubRoute];
+  const visitedRoutes = new Set();
 
-  for (const paginationPath of new Set(paginationPaths)) {
-    const paginationPage = await readFile(
-      path.join(outputRoot, paginationPath, "index.html"),
-      "utf8",
+  while (queuedRoutes.length > 0) {
+    const route = queuedRoutes.shift();
+    if (!route || visitedRoutes.has(route)) continue;
+    visitedRoutes.add(route);
+
+    const catalogPage = route === guideHubRoute
+      ? sourcePage
+      : await readFile(
+          path.join(outputRoot, route.slice(1), "index.html"),
+          "utf8",
+        );
+    const anchorPathnames = getSameOriginAnchorPathnames(
+      catalogPage,
+      route,
+      siteUrl,
     );
-    if (paginationPage.includes(targetHref)) return;
+    if (anchorPathnames.includes(targetPathname)) return;
+
+    for (const pathname of anchorPathnames) {
+      if (
+        routePattern.test(pathname) &&
+        !visitedRoutes.has(pathname)
+      ) {
+        queuedRoutes.push(pathname);
+      }
+    }
   }
 
   throw new Error(

@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
   getGuideCatalogRoutePattern,
+  getSameOriginAnchorPathnames,
   isCanonicalGuideCatalogPageName,
 } from "../../tools/guide-catalog-pagination-contract.mjs";
 
@@ -70,6 +71,32 @@ test("guide catalog pagination accepts every canonical page from 2 upward", () =
   }
 });
 
+test("catalog traversal reads only real same-origin anchors relative to the current page", () => {
+  const markup = `
+    <link rel="canonical" href="/guides/page/99/">
+    <!-- <a href="/guides/page/90/">Stale comment</a> -->
+    <script>const stale = '<a href="/guides/page/91/">';</script>
+    <div data-anchor="<a href='/guides/page/92/'>fake</a>"></div>
+    <div data-copy='href="/guides/page/98/"'></div>
+    <a data-copy='fake href="/guides/page/97/" and 2 > 1' href="/guides/page/2/">Real two</a>
+    <a href="page/2/#guide-list">Two</a>
+    <a href='page/10/?view=compact#guide-list'>Ten</a>
+    <a href="https://example.com/guides/page/3/">External</a>
+  `;
+  assert.deepEqual(
+    getSameOriginAnchorPathnames(markup, "/guides/", "https://homegroundchina.com"),
+    ["/guides/page/2/", "/guides/page/2/", "/guides/page/10/"],
+  );
+  assert.deepEqual(
+    getSameOriginAnchorPathnames(
+      '<a href="../3/#guide-list">Three</a>',
+      "/guides/page/2/",
+      "https://homegroundchina.com",
+    ),
+    ["/guides/page/3/"],
+  );
+});
+
 test("every guide batch is crawlable through real static links, indexable routes and sitemap entries", async () => {
   const [page, styles, pagination, englishRoute, localizedRoute, sitemap, exportCheck, tenDayExportCheck] = await Promise.all([
     source("components/GuidesHubPage.tsx"),
@@ -118,11 +145,17 @@ test("every guide batch is crawlable through real static links, indexable routes
   assert.doesNotMatch(pagination, /#guide-list/);
   assert.doesNotMatch(sitemap, /#guide-list/);
   assert.match(exportCheck, /assertCrawlableInternalLink/);
-  assert.match(exportCheck, /guides\\\/page\\\/\\d\+/);
+  assert.match(exportCheck, /getGuideCatalogRoutePattern/);
+  assert.match(exportCheck, /getSameOriginAnchorPathnames/);
+  assert.match(exportCheck, /const queuedRoutes = \[guideHubRoute\]/);
+  assert.match(exportCheck, /getSameOriginAnchorPathnames\(sourcePage, sourceRoute, siteUrl\)/);
+  assert.match(exportCheck, /routePattern\.test\(pathname\)/);
+  assert.match(exportCheck, /route\.slice\(1\)/);
   assert.match(tenDayExportCheck, /async function guideCatalogPages/);
   assert.match(tenDayExportCheck, /const queuedRoutes = \[guideHubRoute\]/);
   assert.match(tenDayExportCheck, /getGuideCatalogRoutePattern\(guideHubRoute\)/);
-  assert.match(tenDayExportCheck, /paginationRoutePattern\.test\(target\.pathname\)/);
+  assert.match(tenDayExportCheck, /getSameOriginAnchorPathnames\(html, route, siteUrl\)/);
+  assert.match(tenDayExportCheck, /paginationRoutePattern\.test\(pathname\)/);
   assert.match(tenDayExportCheck, /isCanonicalGuideCatalogPageName\(entry\.name\)/);
   assert.match(tenDayExportCheck, /non-canonical pagination export directory/);
   assert.match(tenDayExportCheck, /orphan pagination export is not linked from the guide catalog/);
@@ -130,7 +163,7 @@ test("every guide batch is crawlable through real static links, indexable routes
   assert.match(tenDayExportCheck, /attributes\(match\[0\]\)\.get\("data-guide-id"\) !== guideSlug/);
   assert.match(tenDayExportCheck, /cardOccurrences\.length === 0/);
   assert.match(tenDayExportCheck, /cardOccurrences\.length > 1/);
-  assert.match(tenDayExportCheck, /normalizeAbsoluteUrl\(cardOccurrences\[0\]\.href/);
+  assert.match(tenDayExportCheck, /normalizeAbsoluteUrl\(\s*cardOccurrences\[0\]\.href/);
 
   for (const route of [englishRoute, localizedRoute]) {
     assert.match(route, /export const dynamicParams = false/);
