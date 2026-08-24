@@ -403,6 +403,15 @@
   scroll-margin-top: calc(var(--showcase-header-height) + 1.5rem);
 }
 
+/*
+ * Planning scope and human planning are one continuous decision path. The
+ * following section already supplies the full vertical rhythm, so avoid
+ * stacking a second section-sized gap between the outcomes and next step.
+ */
+.root :global(#planning-proof) {
+  padding-block-end: 0;
+}
+
 .planningGrid {
   align-items: start;
   display: grid;
@@ -471,6 +480,11 @@
   letter-spacing: 0;
   line-height: 1.2;
   word-break: keep-all;
+}
+
+.root[data-homeground-locale="zh"] .planningIntro h2 {
+  line-break: strict;
+  word-break: normal;
 }
 
 .root[data-homeground-locale="ko"] .heroTitle,

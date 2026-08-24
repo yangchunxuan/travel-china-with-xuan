@@ -105,7 +105,8 @@ test("homepage search placeholder demo types continuously, pauses for input and 
   assert.match(form, /\(current \+ 1\) % placeholderPhrases\.length/);
   assert.match(form, /slice\(0, placeholderCharacterCount\)/);
   assert.match(form, /prefers-reduced-motion: reduce/);
-  assert.match(form, /new IntersectionObserver/);
+  assert.match(form, /typeof window\.IntersectionObserver === "function"/);
+  assert.match(form, /new window\.IntersectionObserver/);
   assert.match(form, /Boolean\(currentPlaceholder\) && !focusedWithin/);
   assert.match(
     form,

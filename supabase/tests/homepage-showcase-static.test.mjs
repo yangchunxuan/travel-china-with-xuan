@@ -14,6 +14,46 @@ import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCa
 const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) =>
   readFile(new URL(path, repositoryRoot), "utf8");
+const asset = (path) => readFile(new URL(path, repositoryRoot));
+
+function jpegDimensions(buffer) {
+  assert.equal(buffer.readUInt16BE(0), 0xffd8, "asset must be a JPEG");
+
+  let offset = 2;
+  while (offset + 9 < buffer.length) {
+    if (buffer[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = buffer[offset + 1];
+    const length = buffer.readUInt16BE(offset + 2);
+    if ([0xc0, 0xc1, 0xc2].includes(marker)) {
+      return {
+        height: buffer.readUInt16BE(offset + 5),
+        width: buffer.readUInt16BE(offset + 7),
+      };
+    }
+    offset += 2 + length;
+  }
+
+  throw new Error("JPEG dimensions were not found");
+}
+
+function topLevelMp4Boxes(buffer) {
+  const boxes = new Map();
+  let offset = 0;
+
+  while (offset + 8 <= buffer.length) {
+    const size = buffer.readUInt32BE(offset);
+    const type = buffer.toString("ascii", offset + 4, offset + 8);
+    if (size < 8 || offset + size > buffer.length) break;
+    boxes.set(type, offset);
+    offset += size;
+  }
+
+  return boxes;
+}
 
 function relativeLuminance(hex) {
   const channels = hex
@@ -110,6 +150,14 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(showcaseStyles, /--showcase-canvas: #fff/);
   assert.match(showcaseStyles, /--showcase-surface: #fff/);
   assert.match(showcaseStyles, /\.planningSection \{[\s\S]{0,100}background: #fff/);
+  assert.match(
+    showcaseStyles,
+    /\.root :global\(#planning-proof\) \{[\s\S]{0,80}padding-block-end: 0/,
+  );
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \.planningIntro h2 \{[\s\S]{0,100}line-break: strict;[\s\S]{0,60}word-break: normal/,
+  );
   assert.doesNotMatch(showcaseStyles, /\.principles\s*\{/);
   assert.doesNotMatch(page, /className=\{showcaseStyles\.principles\}/);
   assert.doesNotMatch(page, /<section[\s\S]{0,160}id="destinations"/);
@@ -148,6 +196,71 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
+});
+
+test("the planning-scope film loads near the viewport and keeps an accessible poster fallback", async () => {
+  const [planningScope, planningScopeStyles] = await Promise.all([
+    source("components/PlanningScopeSection.tsx"),
+    source("components/PlanningScopeSection.module.css"),
+  ]);
+
+  assert.match(planningScope, /new IntersectionObserver/);
+  assert.match(
+    planningScope,
+    /typeof window\.IntersectionObserver !== "function"/,
+  );
+  assert.match(planningScope, /rootMargin: "400px 0px"/);
+  assert.match(planningScope, /prefers-reduced-motion: reduce/);
+  assert.match(planningScope, /addEventListener\("change", handleMotionPreference\)/);
+  assert.match(planningScope, /video\.pause\(\);[\s\S]{0,80}setVideoHasPlayed\(false\)/);
+  assert.match(planningScope, /connection\?\.saveData/);
+  assert.doesNotMatch(planningScope, /\bautoPlay\b/);
+  assert.match(planningScope, /video\.load\(\)/);
+  assert.match(planningScope, /loop/);
+  assert.match(planningScope, /muted/);
+  assert.match(planningScope, /playsInline/);
+  assert.match(planningScope, /preload="none"/);
+  assert.match(planningScope, /aria-hidden="true"/);
+  assert.doesNotMatch(planningScope, /\bcontrols\b/);
+  assert.doesNotMatch(planningScope, /<video[\s\S]*?\bposter=/);
+  assert.match(
+    planningScope,
+    /planning-scope-garden-mobile\.mp4[\s\S]*planning-scope-garden-desktop\.mp4/,
+  );
+  assert.match(
+    planningScope,
+    /planning-scope-garden-mobile\.jpg[\s\S]*planning-scope-garden-desktop\.jpg/,
+  );
+  assert.match(planningScopeStyles, /\.visual \{[\s\S]{0,120}aspect-ratio: 2\.5 \/ 1/);
+  assert.match(planningScopeStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(planningScopeStyles, /\.video \{[\s\S]{0,80}display: none/);
+});
+
+test("the planning-scope media assets are responsive, silent, fast-start and bounded", async () => {
+  const [desktopPoster, mobilePoster, desktopVideo, mobileVideo] = await Promise.all([
+    asset("public/images/home/planning-scope-garden-desktop.jpg"),
+    asset("public/images/home/planning-scope-garden-mobile.jpg"),
+    asset("public/videos/home/planning-scope-garden-desktop.mp4"),
+    asset("public/videos/home/planning-scope-garden-mobile.mp4"),
+  ]);
+
+  assert.deepEqual(jpegDimensions(desktopPoster), { width: 1600, height: 640 });
+  assert.deepEqual(jpegDimensions(mobilePoster), { width: 960, height: 720 });
+  assert.ok(desktopPoster.length < 200_000);
+  assert.ok(mobilePoster.length < 150_000);
+  assert.ok(desktopVideo.length < 5_000_000);
+  assert.ok(mobileVideo.length < 3_500_000);
+  assert.ok(mobileVideo.length < desktopVideo.length);
+
+  for (const video of [desktopVideo, mobileVideo]) {
+    const boxes = topLevelMp4Boxes(video);
+    assert.ok(boxes.has("ftyp"));
+    assert.ok(boxes.has("moov"));
+    assert.ok(boxes.has("mdat"));
+    assert.ok(boxes.get("moov") < boxes.get("mdat"), "moov must precede mdat");
+    assert.ok(video.includes(Buffer.from("avc1")), "video must use H.264/AVC");
+    assert.equal(video.includes(Buffer.from("mp4a")), false, "ambient film must be silent");
+  }
 });
 
 test("the homepage product showcase exposes every published tour without guide placeholders", async () => {
