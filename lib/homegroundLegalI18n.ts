@@ -196,11 +196,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "Business information",
         title: "Who operates Homeground",
         intro:
-          "Homeground is the public-facing brand of the registered individual business shown below in Zhangjiajie, Hunan, China. From one Homeground entry point, travellers can request a US$69 route review, a US$129 route build or custom full-trip planning and ground support.",
+          "Homeground is a China travel-planning brand operated by a legally registered business in Zhangjiajie, mainland China. From one Homeground entry point, travellers can request a US$69 route review, a US$129 route build or custom full-trip planning and ground support.",
       },
       callout: {
         label: "A clear way to begin",
-        title: "A real registered operator, with the scope confirmed before payment.",
+        title: "A verifiable registered business, with the scope confirmed before payment.",
         body:
           "Start with one trip brief. Homeground will clarify what you need and confirm the next step in writing. For accepted work, the service, price, scope, delivery timing and payment details are set out before you pay.",
       },
@@ -213,11 +213,6 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "Registered name",
               value: homegroundBusiness.registeredName,
             },
-            { label: "Legal form", value: homegroundBusiness.legalForm },
-            {
-              label: "Composition form",
-              value: homegroundBusiness.compositionForm,
-            },
             {
               label: "Unified Social Credit Code",
               value: homegroundBusiness.unifiedSocialCreditCode,
@@ -229,12 +224,6 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               label: "Registered place of business",
               value: homegroundBusiness.registeredAddress,
-            },
-            {
-              label: "Relevant registered business scope",
-              value: homegroundBusiness.relevantBusinessScope,
-              detail:
-                "This is the registered business item relevant to Homeground’s current written-consultation services.",
             },
             {
               label: "Registration authority",
@@ -323,11 +312,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "经营主体信息",
         title: "谁在运营 Homeground",
         intro:
-          "Homeground 是由下方张家界登记个体工商户运营的对外品牌。通过同一个 Homeground 入口，旅行者可以申请 69 美元路线审核、129 美元路线规划，或按实际行程定制的全程规划与落地支持。",
+          "Homeground 是由中国大陆张家界依法登记的经营主体运营的中国旅行规划品牌。通过同一个 Homeground 入口，旅行者可以申请 69 美元路线审核、129 美元路线规划，或按实际行程定制的全程规划与落地支持。",
       },
       callout: {
         label: "清楚地开始",
-        title: "真实登记的经营主体，付款前把服务范围说清楚。",
+        title: "真实可核验的中国经营主体，付款前把服务范围说清楚。",
         body:
           "先提交一份旅行简报，Homeground 会梳理你的需求，并以书面方式确认下一步。对于确认承接的服务，付款前会清楚列明服务内容、价格、范围、交付时间与付款信息。",
       },
@@ -337,8 +326,6 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           title: "登记信息",
           facts: [
             { label: "登记名称", value: homegroundBusiness.registeredName },
-            { label: "主体类型", value: homegroundBusiness.legalForm },
-            { label: "组成形式", value: homegroundBusiness.compositionForm },
             {
               label: "统一社会信用代码",
               value: homegroundBusiness.unifiedSocialCreditCode,
@@ -347,12 +334,6 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               label: "经营场所",
               value: homegroundBusiness.registeredAddress,
-            },
-            {
-              label: "与本网站相关的登记经营范围",
-              value: homegroundBusiness.relevantBusinessScope,
-              detail:
-                "这是与 Homeground 当前书面路线咨询服务相关的登记经营项目。",
             },
             {
               label: "登记机关",
@@ -434,11 +415,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "사업자 정보",
         title: "Homeground 운영 사업자",
         intro:
-          "Homeground는 중국 후난성 장자제에 등록된 아래 개인사업자가 운영하는 브랜드입니다. 하나의 Homeground 창구에서 US$69 일정 검토, US$129 동선 설계 또는 맞춤 전체 여행 설계 및 현지 지원을 요청할 수 있습니다.",
+          "Homeground는 중국 본토 장자제에 합법적으로 등록된 사업자가 운영하는 중국 여행 설계 브랜드입니다. 하나의 Homeground 창구에서 US$69 일정 검토, US$129 동선 설계 또는 맞춤 전체 여행 설계 및 현지 지원을 요청할 수 있습니다.",
       },
       callout: {
         label: "명확한 시작",
-        title: "등록된 실제 사업자가 결제 전에 서비스 범위를 명확히 안내합니다.",
+        title: "중국에서 등록 정보를 확인할 수 있으며, 결제 전에 서비스 범위를 명확히 안내합니다.",
         body:
           "여행 브리프 하나로 시작하세요. Homeground가 필요한 내용을 정리하고 다음 단계를 서면으로 확인합니다. 수락한 업무는 결제 전에 서비스 내용, 가격, 범위, 제공 일정과 결제 정보를 안내합니다.",
       },
@@ -448,8 +429,6 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           title: "등록 정보",
           facts: [
             { label: "등록 사업자명", value: homegroundBusiness.registeredName },
-            { label: "사업자 유형", value: homegroundBusiness.legalForm },
-            { label: "운영 형태", value: homegroundBusiness.compositionForm },
             {
               label: "통일사회신용코드",
               value: homegroundBusiness.unifiedSocialCreditCode,
@@ -458,12 +437,6 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               label: "등록 사업장 주소",
               value: homegroundBusiness.registeredAddress,
-            },
-            {
-              label: "현재 웹사이트와 관련된 등록 업무 범위",
-              value: homegroundBusiness.relevantBusinessScope,
-              detail:
-                "Homeground의 현재 서면 일정 컨설팅과 관련된 등록 업무 항목입니다.",
             },
             {
               label: "등록 기관",

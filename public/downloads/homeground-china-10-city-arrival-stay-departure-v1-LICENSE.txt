@@ -6,7 +6,7 @@ Canonical source: https://homegroundchina.com/guides/first-trip-china-airport-st
 Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 Licence summary/deed: https://creativecommons.org/licenses/by/4.0/
 Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
-Licensor: 张家界市永定区本境文化交流工作室（个体工商户）, operating as Homeground China
+Licensor: 张家界市永定区本境文化交流工作室, operating as Homeground China
 
 You may share and adapt the original Homeground map graphics, city cards,
 layout, annotations and compiled data for any purpose, including commercially,

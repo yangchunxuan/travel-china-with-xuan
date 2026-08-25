@@ -37,6 +37,6 @@ The first-trip stay defaults, one-move rules and last-night rules are Homeground
 - Canonical page: `https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/`
 - Distribution: national SVG/PNG, ten SVG/PNG city cards, CSV, portable JSON, documentation, checksums and ZIP.
 - Licence: Homeground's original map graphics, layout, annotations and compiled data are available under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- Rights holder: 张家界市永定区本境文化交流工作室（个体工商户）, operating as Homeground China.
+- Rights holder: 张家界市永定区本境文化交流工作室, operating as Homeground China.
 - Dynamic-fact warning: the package is a reviewed editorial schematic, not a live timetable, terminal assignment, route guarantee, border-status feed or navigation product. Recheck decision-critical facts with the current operator.
 - Rebuild command: `npm run asset:ten-city`. The generator normalises public text files to LF and writes a deterministic ZIP dated from `asset-data.en.json.reviewedAt`.
