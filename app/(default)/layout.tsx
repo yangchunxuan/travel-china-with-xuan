@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     other: {
       "naver-site-verification":
         "a721e6b305cee6093aa68b45b3826bffdb9aa455",
+      "p:domain_verify": "ed1535ad23b359f2d828a60b4c89ba98",
     },
   },
   title: {
