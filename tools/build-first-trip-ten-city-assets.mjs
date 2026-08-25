@@ -26,7 +26,7 @@ const licenceUrl = "https://creativecommons.org/licenses/by/4.0/";
 const licenceLegalCodeUrl =
   "https://creativecommons.org/licenses/by/4.0/legalcode";
 const licensor =
-  "张家界市永定区本境文化交流工作室（个体工商户）, operating as Homeground China";
+  "张家界市永定区本境文化交流工作室, operating as Homeground China";
 const creditText =
   "Homeground China, First Trip to China: 10-City Airport, Station and Stay Map, CC BY 4.0.";
 const copyrightNotice = `© 2026 ${licensor}.`;

@@ -5,7 +5,7 @@ Homeground China, "First Trip to China: 10-City Airport, Station and Stay Map,"
 version 1.0, https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/, CC BY 4.0.
 
 Rights holder
-张家界市永定区本境文化交流工作室（个体工商户）, operating as Homeground China
+张家界市永定区本境文化交流工作室, operating as Homeground China
 
 HTML
 <a href="https://homegroundchina.com/guides/first-trip-china-airport-station-stay-map/">Homeground China 10-city airport, station and stay map</a>,

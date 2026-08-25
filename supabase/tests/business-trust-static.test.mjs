@@ -29,7 +29,7 @@ test("verified business identity is centralized and displayed in the shared foot
 
   assert.match(
     business,
-    /张家界市永定区本境文化交流工作室（个体工商户）/,
+    /registeredName: "张家界市永定区本境文化交流工作室"/,
   );
   assert.match(
     business,
@@ -38,19 +38,43 @@ test("verified business identity is centralized and displayed in the shared foot
   assert.match(business, /92430802MAE0TE500J/);
   assert.match(business, /https:\/\/www\.gsxt\.gov\.cn\/index\.html/);
   assert.match(footer, /homegroundBusiness\.publicName/);
-  assert.doesNotMatch(footer, /registered individual business|등록 개인사업자/);
+  for (const retiredLabel of [
+    ["registered", "individual", "business"].join(" "),
+    ["개인", "사업자"].join(""),
+  ]) {
+    assert.equal(footer.includes(retiredLabel), false);
+  }
   assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
   assert.match(footer, /business-information/);
   assert.match(footer, /refund-delivery/);
 });
 
-test("legal copy leads with registered trust and keeps each paid scope explicit", async () => {
+test("legal copy leads with verifiable registered trust and keeps each paid scope explicit", async () => {
+  const business = await source("lib/homegroundBusiness.ts");
   const legal = await source("lib/homegroundLegalI18n.ts");
   const service = await source("lib/chinaItineraryReviewI18n.ts");
 
-  assert.match(legal, /A real registered operator/);
-  assert.match(legal, /真实登记的经营主体/);
-  assert.match(legal, /등록된 실제 사업자/);
+  assert.match(legal, /A verifiable registered business/);
+  assert.match(legal, /真实可核验的中国经营主体/);
+  assert.match(legal, /중국에서 등록 정보를 확인할 수 있으며/);
+  for (const retiredLabel of [
+    ["individual", "business"].join(" "),
+    ["个体", "工商户"].join(""),
+    ["개인", "사업자"].join(""),
+    ["Legal", "form"].join(" "),
+    ["主体", "类型"].join(""),
+    ["사업자", "유형"].join(" "),
+  ]) {
+    assert.equal(legal.includes(retiredLabel), false);
+  }
+  for (const retiredScopeCopy of [
+    ["Relevant registered", "business scope"].join(" "),
+    ["与本网站相关的", "登记经营范围"].join(""),
+    ["현재 웹사이트와 관련된", "등록 업무 범위"].join(" "),
+  ]) {
+    assert.equal(legal.includes(retiredScopeCopy), false);
+  }
+  assert.doesNotMatch(business, /relevantBusinessScope/);
   assert.match(legal, /Bring the whole trip to Homeground/);
   assert.match(legal, /把整趟旅行的需求交给 Homeground/);
   assert.match(legal, /전체 여행에 필요한 내용을 Homeground에 알려 주세요/);

@@ -234,7 +234,7 @@ test("the complete downloadable pack is deterministic, checksummed and contains 
   assert.match(creditText, /Homeground China[\s\S]*CC BY 4\.0/);
   assert.match(
     copyrightNotice,
-    /张家界市永定区本境文化交流工作室（个体工商户）[\s\S]*Homeground China/,
+    /张家界市永定区本境文化交流工作室[\s\S]*Homeground China/,
   );
 });
 
