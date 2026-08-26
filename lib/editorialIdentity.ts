@@ -95,7 +95,11 @@ export function getEditorialAuthor(locale: HomegroundLocale) {
 }
 
 export function getEditorialAuthorLanguagePaths() {
-  return { ...profilePaths };
+  return {
+    en: profilePaths.en,
+    "zh-Hans": profilePaths.zh,
+    ko: profilePaths.ko,
+  };
 }
 
 export function editorialPersonSchema(locale: HomegroundLocale) {

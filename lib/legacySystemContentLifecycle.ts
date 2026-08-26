@@ -35,6 +35,14 @@ export interface LegacySystemContentLifecycleRecord {
 }
 
 /**
+ * Exact timestamp of the evidenced PR #88 author-profile change. When a
+ * ProfilePage emits dateModified, Google expects a complete DateTime with a
+ * timezone; sitemap lifecycle data intentionally keeps the calendar date.
+ */
+export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
+  "2026-08-22T22:33:16+08:00";
+
+/**
  * Publication dates preserve the repository's established public lifecycle.
  * PR #88 materially updated Homeground China identity, visible copy, metadata,
  * or structured data on the affected system identities. Shared header chrome
@@ -67,11 +75,11 @@ export const legacySystemContentLifecycle = {
   },
   "author-evan": {
     datePublished: "2026-08-13",
-    dateModified: "2026-08-22",
+    dateModified: EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT.slice(0, 10),
     lastReviewed: "2026-08-13",
     evidence: {
       commit: "e7a0d19e320adc3dc3ce88eb9283f9765ea1d22f",
-      changedAt: "2026-08-22",
+      changedAt: EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT.slice(0, 10),
       summary:
         "PR #88 updated the author profile's organization relationship and brand identity.",
     },

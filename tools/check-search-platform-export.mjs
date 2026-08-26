@@ -1,9 +1,13 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle.ts";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
+import { isIsoDateTimeWithTimezone } from "./lib/iso-date-time.mjs";
 
 const outputRoot = path.join(process.cwd(), "out");
 const siteUrl = "https://homegroundchina.com";
+const editorialPersonId = `${siteUrl}/studio/evan/#person`;
+const editorialWebsiteId = `${siteUrl}/#website`;
 const allSections = [
   "explore",
   "plan",
@@ -172,6 +176,20 @@ function nodeHasType(node, expectedType) {
     ? node["@type"]
     : [node?.["@type"]];
   return types.includes(expectedType);
+}
+
+function assertIsoDateTimeWithTimezone(value, context) {
+  if (!isIsoDateTimeWithTimezone(value)) {
+    throw new Error(
+      `${context}: expected a valid ISO DateTime with an explicit timezone, received ${JSON.stringify(value)}`,
+    );
+  }
+}
+
+function sitemapUrlEntry(sitemapXml, location) {
+  return [...sitemapXml.matchAll(/<url>([\s\S]*?)<\/url>/gu)]
+    .map((match) => match[1])
+    .find((entry) => entry.includes(`<loc>${location}</loc>`));
 }
 
 function assertSameStringSet(actualValues, expectedValues, context) {
@@ -599,6 +617,7 @@ for (const section of allSections) {
   }
 }
 
+const authorProfileModifiedValues = new Set();
 for (const locale of locales) {
   const route = `${locale.prefix}studio/evan/`;
   const filePath = path.join(outputRoot, route, "index.html");
@@ -609,11 +628,88 @@ for (const locale of locales) {
   }
   const html = await readFile(filePath, "utf8");
   assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
-  assertIncludes(html, '"@type":"ProfilePage"', context);
-  assertIncludes(html, '"@type":"Person"', context);
-  if (!sitemap.includes(`<loc>${canonical}</loc>`)) {
+  for (const target of locales) {
+    assertIncludes(
+      html,
+      `<link rel="alternate" hrefLang="${target.hreflang}" href="${siteUrl}/${target.prefix}studio/evan/"/>`,
+      context,
+    );
+  }
+  assertIncludes(
+    html,
+    `<link rel="alternate" hrefLang="x-default" href="${siteUrl}/studio/evan/"/>`,
+    context,
+  );
+
+  const nodes = jsonLdNodes(html, context);
+  const profilePages = nodes.filter((node) => nodeHasType(node, "ProfilePage"));
+  const authorPeople = nodes.filter(
+    (node) =>
+      nodeHasType(node, "Person") && node["@id"] === editorialPersonId,
+  );
+  const websites = nodes.filter(
+    (node) =>
+      nodeHasType(node, "WebSite") && node["@id"] === editorialWebsiteId,
+  );
+  if (profilePages.length !== 1) {
+    throw new Error(
+      `${context}: expected exactly one ProfilePage node, received ${profilePages.length}`,
+    );
+  }
+  if (authorPeople.length !== 1) {
+    throw new Error(
+      `${context}: expected exactly one Evan Person node, received ${authorPeople.length}`,
+    );
+  }
+  if (websites.length !== 1) {
+    throw new Error(
+      `${context}: expected exactly one Homeground WebSite node, received ${websites.length}`,
+    );
+  }
+
+  const profilePage = profilePages[0];
+  const authorPerson = authorPeople[0];
+  if (profilePage["@id"] !== `${canonical}#webpage`) {
+    throw new Error(`${context}: ProfilePage @id does not match the canonical URL`);
+  }
+  if (profilePage.url !== canonical) {
+    throw new Error(`${context}: ProfilePage URL does not match the canonical URL`);
+  }
+  if (profilePage.inLanguage !== locale.htmlLang) {
+    throw new Error(
+      `${context}: ProfilePage inLanguage is ${JSON.stringify(profilePage.inLanguage)}, expected ${locale.htmlLang}`,
+    );
+  }
+  if (profilePage.mainEntity?.["@id"] !== authorPerson["@id"]) {
+    throw new Error(`${context}: ProfilePage does not identify Evan as mainEntity`);
+  }
+  if (profilePage.isPartOf?.["@id"] !== websites[0]["@id"]) {
+    throw new Error(`${context}: ProfilePage does not link to the Homeground WebSite`);
+  }
+  if (authorPerson.url !== canonical) {
+    throw new Error(`${context}: Evan Person URL does not match the locale canonical`);
+  }
+  assertIsoDateTimeWithTimezone(profilePage.dateModified, context);
+  if (profilePage.dateModified !== EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT) {
+    throw new Error(
+      `${context}: ProfilePage dateModified does not match its evidenced lifecycle timestamp`,
+    );
+  }
+  authorProfileModifiedValues.add(profilePage.dateModified);
+  const sitemapEntry = sitemapUrlEntry(sitemap, canonical);
+  if (!sitemapEntry) {
     throw new Error(`${context}: Evan profile is missing from sitemap.xml`);
   }
+  assertIncludes(
+    sitemapEntry,
+    `<lastmod>${EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT.slice(0, 10)}</lastmod>`,
+    `${context} sitemap entry`,
+  );
+}
+if (authorProfileModifiedValues.size !== 1) {
+  throw new Error(
+    `Evan profile locales disagree on dateModified: ${[...authorProfileModifiedValues].join(", ")}`,
+  );
 }
 
 for (const section of allSections) {
