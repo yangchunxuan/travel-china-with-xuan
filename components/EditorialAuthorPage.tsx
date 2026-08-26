@@ -11,6 +11,7 @@ import {
 } from "../lib/editorialIdentity";
 import { guideRegistry } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
+import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -40,7 +41,7 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
         name: author.copy.title,
         description: author.copy.introduction,
         inLanguage: home.htmlLang,
-        dateModified: "2026-08-13",
+        dateModified: EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: { "@id": EDITORIAL_PERSON_ID },
       },

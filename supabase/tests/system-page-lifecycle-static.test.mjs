@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import { isIsoDateTimeWithTimezone } from "../../tools/lib/iso-date-time.mjs";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const source = (relativePath) =>
@@ -86,6 +87,49 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
       (record) => record.lastReviewed !== record.dateModified,
     ),
     "A public modification must not automatically become a claimed full review",
+  );
+});
+
+test("the author ProfilePage has one evidenced DateTime with a timezone", async () => {
+  const [lifecycleModule, authorPage] = await Promise.all([
+    import("../../lib/legacySystemContentLifecycle.ts"),
+    source("components/EditorialAuthorPage.tsx"),
+  ]);
+  const modifiedAt = lifecycleModule.EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT;
+  const authorLifecycle =
+    lifecycleModule.legacySystemContentLifecycle["author-evan"];
+
+  assert.equal(modifiedAt, "2026-08-22T22:33:16+08:00");
+  assert.equal(isIsoDateTimeWithTimezone(modifiedAt), true);
+  for (const valid of [
+    "2000-02-29T00:00:00Z",
+    "2024-02-29T23:59:59.123+14:00",
+    "2026-08-22T12:00:00-08:30",
+  ]) {
+    assert.equal(isIsoDateTimeWithTimezone(valid), true, valid);
+  }
+  for (const invalid of [
+    "2026-08-22",
+    "2026-08-22T12:00:00",
+    "1900-02-29T12:00:00Z",
+    "2026-02-30T12:00:00+08:00",
+    "2026-13-01T12:00:00+08:00",
+    "2026-08-00T12:00:00+08:00",
+    "2026-08-22T24:00:00+08:00",
+    "2026-08-22T12:60:00+08:00",
+    "2026-08-22T12:00:60+08:00",
+    "2026-08-22T12:00:00+14:01",
+    "2026-08-22T12:00:00+23:59",
+    "2026-08-22T12:00:00+08:60",
+  ]) {
+    assert.equal(isIsoDateTimeWithTimezone(invalid), false, invalid);
+  }
+  assert.equal(modifiedAt.slice(0, 10), authorLifecycle.dateModified);
+  assert.equal(modifiedAt.slice(0, 10), authorLifecycle.evidence.changedAt);
+  assert.match(authorPage, /dateModified: EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT/);
+  assert.doesNotMatch(
+    authorPage,
+    /dateModified:\s*["']\d{4}-\d{2}-\d{2}["']/,
   );
 });
 

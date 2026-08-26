@@ -84,6 +84,25 @@ test("structured editorial and author pages link back to the website entity", as
       /isPartOf:\s*\{\s*"@id":\s*EDITORIAL_WEBSITE_ID\s*\}/,
     );
   }
+
+  assert.match(author, /EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT/);
+  assert.match(
+    author,
+    /dateModified:\s*EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT/,
+  );
+});
+
+test("the author profile advertises the canonical Simplified Chinese hreflang", async () => {
+  const identity = await source("lib/editorialIdentity.ts");
+
+  assert.match(
+    identity,
+    /getEditorialAuthorLanguagePaths\(\)[\s\S]*?"zh-Hans": profilePaths\.zh/,
+  );
+  assert.doesNotMatch(
+    identity,
+    /getEditorialAuthorLanguagePaths\(\)[\s\S]*?return \{ \.\.\.profilePaths \};/,
+  );
 });
 
 test("all bespoke editorial articles use the same linked identity graph", async () => {
