@@ -18,7 +18,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "家庭或大箱子", items: ["避开最紧衔接", "每位旅客保管自己的证件", "晚到可先住厦门本岛"] },
   ]},
   { id: "order-heading", type: "heading", level: 2, text: "计算公路接驳前先审订单" },
-  { id: "order-copy", type: "paragraph", text: "打开已经完成的订单，逐项读取航行日期、出发时间、大陆一侧完整码头、岛上抵达码头和旅客证件。不要根据搜索结果截图或未付款购物车做计划。如果系统把护照送去人工核验，在官方渠道确认前都应视为未完成。值船时携带同一本护照和订单记录，并把每位同行者的证件状态放进同一张清单。" },
+  { id: "order-copy", type: "paragraph", text: "打开已经完成的订单，逐项读取航行日期、出发时间、大陆一侧完整码头、岛上抵达码头和旅客证件。不要根据搜索结果截图或未付款购物车做计划。如果购票所用护照号码无法在线核验，携带护照原件到人工售票处核验证件并取票。值船时携带同一本护照和订单记录，并把每位同行者的证件状态放进同一张清单。" },
   { id: "arrival-heading", type: "heading", level: 2, text: "按真实抵达时间选择船班" },
   { id: "arrival-matrix", type: "table", caption: "衔接缓冲从到达码头之前开始", columns: ["抵达模式", "更稳妥的选择", "原因"], rows: [
     ["上午航班或火车", "选择更晚的船，并明确留出延误余量", "取行李、出站和道路拥堵都不在船期内"],
@@ -36,7 +36,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["船票与证件不符", "找官方服务人员，不买绑定他人身份的转售票"],
     ["天气中断", "看厦门轮渡通知，改线前先通知岛上住宿"],
   ]},
-  { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月13日", tone: "neutral", body: "当前FAQ引导线上购票者使用官方微信或支付宝渠道；外国游客可用已实名认证的支付宝账号录入护照信息，部分证件仍需人工核验。预售期为15天（含乘船当日），每天9:00开放第15日船票。开航前20分钟开始检票、前10分钟停止检票。去程票通常包含20天内一次符合当期游客航线规则的免费返程，但不等于预订了固定返程船班或永久固定码头。官网同页仍有较旧说法，因此付款前应再次核对当前渠道与航线。" },
+  { id: "facts", type: "callout", title: "护照核验于2026年8月31日复核；预售与检票规则核验于2026年8月13日", tone: "neutral", body: "当前FAQ引导线上购票者使用官方微信或支付宝渠道；外国游客可用已实名认证的支付宝账号录入护照信息。若购票所用护照号码无法在线核验，FAQ要求旅客携带证件原件到人工售票处核验并取票。预售期为15天（含乘船当日），每天9:00开放第15日船票。开航前20分钟开始检票、前10分钟停止检票。去程票通常包含20天内一次符合当期游客航线规则的免费返程，但不等于预订了固定返程船班或永久固定码头。官网同页仍有较旧说法，因此付款前应再次核对当前渠道与航线。" },
   { id: "help", type: "callout", title: "需要匹配枢纽和船票？", tone: "decision", body: "提供日期、航班或火车、票面两端码头、岛上酒店、人数和行李。Homeground可核对交接与时间缓冲，船票余位仍以官方运营方为准。" },
   { id: "links", type: "internal-links", title: "继续规划", items: [
     { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "在轮渡交接前准备铁路抵达。" },
@@ -46,7 +46,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "选择厦门住宿基地", href: "/zh/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/", description: "从轮渡、行李、清晨与夜晚、海边活动和后续交通比较中山路、鼓浪屿过夜与曾厝垵。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
-    { label: "官方网络购票FAQ：当前渠道、护照与返程有效期", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "厦门轮渡有限公司", reviewedAt: "2026-08-13" },
+    { label: "官方网络购票FAQ：当前渠道、护照核验与返程有效期", url: "https://xmferry.com/wybm/wshlk/wlgpp/index.htm", publisher: "厦门轮渡有限公司", reviewedAt: "2026-08-31" },
     { label: "2026年官方通知：预售期调整为15天", url: "https://www.xmferry.com/xwzx/zxgg/32338.htm", publisher: "厦门轮渡有限公司", reviewedAt: "2026-08-13" },
     { label: "官方检票与返程FAQ", url: "https://xmferry.com/wybm/wshlk/chch/index.htm", publisher: "厦门轮渡有限公司", reviewedAt: "2026-08-13" },
     { label: "首图：HualinXMN拍摄邮轮中心公交区域，CC BY 4.0，已裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:Cruise_Center_Bus_Station(Xiamen)._20190203.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },

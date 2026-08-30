@@ -1,8 +1,8 @@
 # Source log — China public holidays and travel crowds
 
-Status: `RELEASE REVIEW COMPLETE — OFFICIAL SOURCES RECHECKED 2026-08-11`
+Status: `RELEASE REVIEW COMPLETE — SPRING FESTIVAL SOURCE RECHECKED 2026-08-31`
 
-Checked at: 2026-08-11 (Asia/Shanghai)
+Checked at: 2026-08-31 (Asia/Shanghai). The Spring Festival transport-period source was replaced on this date; the per-source dates below preserve the earlier checks for unaffected facts.
 
 Canonical owner: `/guides/china-public-holidays-travel-calendar/`
 
@@ -37,13 +37,13 @@ This guide owns the nationwide annual calendar: official public-holiday periods,
 - Boundary: no dates may be inferred from the lunar calendar, prior-year arrangements, media forecasts, or booking platforms.
 - Update trigger: publication of an official General Office of the State Council notice for 2027.
 
-### mot-2026-spring-festival-plan
+### ndrc-2026-spring-festival-schedule
 
-- Publisher: Ministry of Transport of the People's Republic of China
-- Title: 2026年春运将于2月2日启动 全社会跨区域人员流动量预计将达95亿人次
-- Published: 2026-01-26
-- URL: https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html
-- Checked at: 2026-08-11
+- Publisher: National Development and Reform Commission of the People's Republic of China
+- Title: 国家发展改革委等部门联合召开2026年全国春运电视电话会议
+- Published: 2026-01-21
+- URL: https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html
+- Checked at: 2026-08-31
 - Fact used: the 2026 Spring Festival transport season ran from February 2 to March 13, a 40-day transport period.
 - Boundary: this does not turn the whole 40 days into public holidays and does not prove identical conditions on every route.
 - Update trigger: the next official Spring Festival transport plan or a correction to the 2026 notice.

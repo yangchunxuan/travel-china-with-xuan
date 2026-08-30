@@ -252,6 +252,223 @@ test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices
   );
 });
 
+test("live-QA tour fact and safety corrections stay complete in all three locales", () => {
+  const product = (slug) => {
+    const result = getPrivateTourProduct(slug);
+    assert.ok(result, slug);
+    assert.equal(result.dateModified, "2026-08-31", `${slug} freshness`);
+    return result;
+  };
+  const requireFragments = (value, fragments, context) => {
+    for (const fragment of fragments) {
+      assert.ok(value.includes(fragment), `${context}: missing ${fragment}`);
+    }
+  };
+  const itineraryDay = (localized, day, context) => {
+    const result = localized.itinerary.find((entry) => entry.day === day);
+    assert.ok(result, `${context}/day-${day}`);
+    return result;
+  };
+
+  const harbin = product("harbin-winter-5-day-private-tour");
+  const harbinRules = {
+    en: {
+      dayTwo: ["named, managed", "confirms open that day", "Never enter unmanaged river ice"],
+      service: ["do not replace professional cold-weather clothing", "insulated snow boots"],
+      booking: [
+        "below −20°C",
+        "professional cold-weather clothing",
+        "wind chill",
+        "may be shortened or cancelled",
+        "named, managed activity",
+        "never enter unmanaged river ice",
+      ],
+      impossibleGuarantee: /will never be (?:shortened|cancelled)/i,
+    },
+    zh: {
+      dayTwo: ["由正规机构管理", "确认当天开放", "不得自行进入未管理冰面"],
+      service: ["不能替代专业防寒服", "保暖雪地靴"],
+      booking: [
+        "−20°C 以下",
+        "专业防寒服",
+        "风寒",
+        "可能因",
+        "缩短或取消",
+        "由正规机构管理",
+        "不得自行进入未管理冰面",
+      ],
+      impossibleGuarantee: /(?:绝不会|永不)(?:缩短|取消)/,
+    },
+    ko: {
+      dayTwo: ["정식으로 관리", "당일 개장을 확인", "관리되지 않는 강 얼음 위에는 들어가지 않습니다"],
+      service: ["전문 방한복", "대신하지 않습니다"],
+      booking: [
+        "영하 20°C 이하",
+        "전문 방한복",
+        "체감온도",
+        "단축되거나 취소될 수",
+        "정식으로 관리",
+        "관리되지 않는 강 얼음 위에는 들어가지 마세요",
+      ],
+      impossibleGuarantee: /절대 (?:단축|취소)되지/,
+    },
+  };
+  for (const locale of locales) {
+    const localized = localizePrivateTourProduct(harbin, locale);
+    const rules = harbinRules[locale];
+    requireFragments(
+      itineraryDay(localized, 2, `harbin/${locale}`).description,
+      rules.dayTwo,
+      `harbin/${locale}/day-2`,
+    );
+    requireFragments(localized.serviceNote, rules.service, `harbin/${locale}/serviceNote`);
+    requireFragments(localized.bookingNote, rules.booking, `harbin/${locale}/bookingNote`);
+    assert.doesNotMatch(localized.bookingNote, rules.impossibleGuarantee);
+  }
+
+  const shanghai = product("shanghai-suzhou-5-day-private-tour");
+  const shanghaiRules = {
+    en: {
+      common: [
+        "9 July 2026",
+        "14 November 2027",
+        "advance reservation and ticket purchase",
+        "only the ticketed Ancient Civilizations of the Americas exhibition",
+        "permanent collection is at the East Museum",
+      ],
+      dayOnly: "Only one option is included",
+      bookingOnly: "not both",
+    },
+    zh: {
+      common: [
+        "2026 年 7 月 9 日",
+        "2027 年 11 月 14 日",
+        "提前预约购票",
+        "仅开放需购票的“世界树之巅：美洲古代文明大展”",
+        "常设展在东馆",
+      ],
+      dayOnly: "仅包含一项",
+      bookingOnly: "仅包含",
+    },
+    ko: {
+      common: [
+        "2026년 7월 9일",
+        "2027년 11월 14일",
+        "사전 예약 및 입장권 구매",
+        "유료 ‘아메리카 고대문명 대전’만 운영",
+        "상설전시는 동관",
+      ],
+      dayOnly: "한 곳만 포함",
+      bookingOnly: "한 곳만 포함",
+    },
+  };
+  for (const locale of locales) {
+    const localized = localizePrivateTourProduct(shanghai, locale);
+    const dayThree = itineraryDay(localized, 3, `shanghai/${locale}`);
+    const rules = shanghaiRules[locale];
+    requireFragments(dayThree.description, rules.common, `shanghai/${locale}/day-3`);
+    assert.ok(dayThree.description.includes(rules.dayOnly));
+    requireFragments(localized.bookingNote, rules.common, `shanghai/${locale}/bookingNote`);
+    assert.ok(localized.bookingNote.includes(rules.bookingOnly));
+  }
+
+  const xian = product("xian-terracotta-warriors-5-day-private-tour");
+  const xianRules = {
+    en: {
+      title: "Muslim Quarter and Xi'an Museum complex",
+      highlight: "Xi'an Museum complex, including the Small Wild Goose Pagoda heritage area",
+      description: [
+        "Xi'an Museum complex",
+        "Jianfu Temple site",
+        "Small Wild Goose Pagoda heritage area",
+        "which areas are open and included",
+      ],
+      falseChoice: /choose between|either[- ]or|choice of Xi'an Museum|Xi'an Museum or (?:the )?Small Wild Goose Pagoda/i,
+    },
+    zh: {
+      title: "回民街与西安博物院景区",
+      highlight: "西安博物院景区（含小雁塔历史文化片区）",
+      description: ["西安博物院景区", "荐福寺遗址", "小雁塔历史文化片区", "开放并纳入行程"],
+      falseChoice: /二选一|西安博物院或小雁塔/,
+    },
+    ko: {
+      title: "회민거리와 시안박물원 단지",
+      highlight: "소안탑 역사문화 구역을 포함한 시안박물원 단지",
+      description: ["시안박물원 단지", "젠푸사 유적", "소안탑 역사문화 구역", "개방되고 일정에 포함"],
+      falseChoice: /중 한 곳|시안박물원 또는 소안탑/,
+    },
+  };
+  for (const locale of locales) {
+    const localized = localizePrivateTourProduct(xian, locale);
+    const dayFour = itineraryDay(localized, 4, `xian/${locale}`);
+    const rules = xianRules[locale];
+    assert.equal(dayFour.title, rules.title);
+    assert.ok(localized.highlights.includes(rules.highlight));
+    requireFragments(dayFour.description, rules.description, `xian/${locale}/day-4`);
+    assert.doesNotMatch(
+      `${dayFour.title}\n${localized.highlights.join("\n")}\n${dayFour.description}`,
+      rules.falseChoice,
+    );
+  }
+
+  const chongqing = product("chongqing-wulong-5-day-private-tour");
+  const chongqingRules = {
+    en: {
+      standard: ["current standard admission", "official transfer bus", "Tianlong revolving elevator"],
+      conditionalService: ["exit battery car", "glass viewing platform", "included only when written"],
+      conditionalExclusion: ["exit battery car", "glass viewing platform", "unless written"],
+      dayFour: [
+        "either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package",
+        "Only one is included, not both",
+      ],
+      booking: ["either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package", "not both"],
+    },
+    zh: {
+      standard: ["当前标准票", "官方中转车", "天龙旋梯"],
+      conditionalService: ["出口电瓶车", "玻璃眺台", "仅在确认单写明时包含"],
+      conditionalExclusion: ["出口电瓶车", "玻璃眺台", "确认单未写明"],
+      dayFour: ["仙女山门票", "芙蓉洞门票及索道套票", "两者仅含其一", "不同时包含"],
+      booking: ["仅包含仙女山门票或芙蓉洞门票及索道套票其中一项"],
+    },
+    ko: {
+      standard: ["현재 표준 입장권", "공식 환승버스", "톈룽 회전 엘리베이터"],
+      conditionalService: ["출구 전동카트", "유리 전망대", "경우에만 포함"],
+      conditionalExclusion: ["출구 전동카트", "유리 전망대", "명시되지 않은"],
+      dayFour: ["선녀산 입장권", "부용동 입장권·케이블카 패키지", "둘 중 하나만 포함", "모두 포함하지 않습니다"],
+      booking: ["중 하나만 포함"],
+    },
+  };
+  for (const locale of locales) {
+    const localized = localizePrivateTourProduct(chongqing, locale);
+    const rules = chongqingRules[locale];
+    requireFragments(
+      itineraryDay(localized, 3, `chongqing/${locale}`).description,
+      rules.standard,
+      `chongqing/${locale}/day-3-standard-ticket`,
+    );
+    requireFragments(
+      localized.serviceNote,
+      rules.conditionalService,
+      `chongqing/${locale}/serviceNote-conditional-extras`,
+    );
+    requireFragments(
+      localized.exclusions.join("\n"),
+      rules.conditionalExclusion,
+      `chongqing/${locale}/exclusions-conditional-extras`,
+    );
+    requireFragments(
+      itineraryDay(localized, 4, `chongqing/${locale}`).description,
+      rules.dayFour,
+      `chongqing/${locale}/day-4-one-option`,
+    );
+    requireFragments(
+      localized.bookingNote,
+      rules.booking,
+      `chongqing/${locale}/bookingNote-one-option`,
+    );
+  }
+});
+
 test("the remaining tours keep complete itineraries and only publish verified route media", async () => {
   const products = privateTourProducts.filter(
     (product) => product.slug !== shanghaiJiangnanSlug,

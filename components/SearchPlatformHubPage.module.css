@@ -685,7 +685,12 @@
   .decisionSequence,
   .ownerBoundary,
   .cta {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroInner > * {
+    max-width: 100%;
+    min-width: 0;
   }
 
   .scope {
@@ -726,7 +731,12 @@
   }
 
   .hero h1 {
-    font-size: clamp(3.1rem, 16vw, 4.8rem);
+    font-size: clamp(2.6rem, 12.8vw, 4.2rem);
+  }
+
+  .hubPage[data-homeground-locale="en"] .hero h1 {
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .hubPage[data-homeground-locale="zh"] .hero h1,

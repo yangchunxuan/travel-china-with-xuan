@@ -97,8 +97,9 @@
           "endDate": "2026-03-13",
           "dayCount": 40,
           "status": "official",
-          "sourceId": "mot-2026-spring-festival-plan",
-          "sourceUrl": "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html",
+          "checkedAt": "2026-08-31",
+          "sourceId": "ndrc-2026-spring-festival-schedule",
+          "sourceUrl": "https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html",
           "boundary": "Transport pressure period only; not a 40-day public holiday."
         }
       ]

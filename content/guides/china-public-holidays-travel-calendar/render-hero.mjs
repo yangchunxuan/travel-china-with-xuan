@@ -121,7 +121,7 @@ const svg = `
     <text x="40" y="585" class="panel-copy">The calendar does not predict crowd levels.</text>
   </g>
   <text x="60" y="890" class="source">General Office of the State Council · 国办发明电〔2025〕7号 · checked 2026-08-11</text>
-  <text x="60" y="922" class="source">Spring Festival transport period: Ministry of Transport · rendered from holiday-calendar.json</text>
+  <text x="60" y="922" class="source">Spring Festival transport period: National Development and Reform Commission · rendered from holiday-calendar.json</text>
   <text x="60" y="965" class="source">Solid band = official days off · outlined corner badge = compensatory weekend workday · no dates are forecast</text>
 </svg>`;
 

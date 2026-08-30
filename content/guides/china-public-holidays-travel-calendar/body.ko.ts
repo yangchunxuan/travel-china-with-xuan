@@ -93,7 +93,7 @@ const body = {
     {
       id: "spring-detail",
       type: "paragraph",
-      text: "교통운수부가 발표한 2026년 춘윈은 2월 2일부터 3월 13일까지입니다. 귀성 이동이 공식 연휴 전후로 퍼지기 때문에 2월 15~23일 공휴일보다 훨씬 깁니다. 장거리 교통 확인 범위를 넓혀야 한다는 근거이지, 모든 노선이 40일 내내 똑같이 붐빈다는 뜻은 아닙니다.",
+      text: "중국 국가발전개혁위원회가 발표한 전국 춘윈 회의 공지에 따르면 2026년 춘윈은 2월 2일부터 3월 13일까지입니다. 귀성 이동이 공식 연휴 전후로 퍼지기 때문에 2월 15~23일 공휴일보다 훨씬 깁니다. 장거리 교통 확인 범위를 넓혀야 한다는 근거이지, 모든 노선이 40일 내내 똑같이 붐빈다는 뜻은 아닙니다.",
     },
     {
       id: "spring-checks",
@@ -281,7 +281,7 @@ const body = {
       title: "확인한 공식 출처",
       items: [
         { label: "2026년 공휴일 일정", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "중국 국무원 판공청", reviewedAt: "2026-08-11" },
-        { label: "2026년 춘윈 계획", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-11" },
+        { label: "2026년 전국 춘윈 화상·전화 회의", url: "https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html", publisher: "중국 국가발전개혁위원회", reviewedAt: "2026-08-31" },
         { label: "2026년 청명절 교통 보고", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-11" },
         { label: "2026년 노동절 교통 브리핑", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "중국 교통운수부", reviewedAt: "2026-08-11" },
         { label: "현행 철도 승차권 규정", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "중국철도 12306", reviewedAt: "2026-08-11" },
