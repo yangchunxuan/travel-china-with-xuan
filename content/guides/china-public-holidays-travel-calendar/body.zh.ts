@@ -93,7 +93,7 @@ const body = {
     {
       id: "spring-detail",
       type: "paragraph",
-      text: "交通运输部公布的2026年春运期为2月2日至3月13日。它远长于2月15日至23日的公众假期，因为探亲出行会分散在正式假期前后。这说明长途交通需要扩大核查日期范围，但不代表每条线路在40天里都同样繁忙。",
+      text: "根据国家发展改革委发布的全国春运会议通知，2026年春运期为2月2日至3月13日。它远长于2月15日至23日的公众假期，因为探亲出行会分散在正式假期前后。这说明长途交通需要扩大核查日期范围，但不代表每条线路在40天里都同样繁忙。",
     },
     {
       id: "spring-checks",
@@ -281,7 +281,7 @@ const body = {
       title: "已核对的官方来源",
       items: [
         { label: "2026年部分节假日安排", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "国务院办公厅", reviewedAt: "2026-08-11" },
-        { label: "2026年春运安排", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
+        { label: "2026年全国春运电视电话会议", url: "https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html", publisher: "国家发展改革委", reviewedAt: "2026-08-31" },
         { label: "2026年清明假期交通回顾", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
         { label: "2026年劳动节交通新闻发布会", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
         { label: "现行铁路售票规则", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "中国铁路12306", reviewedAt: "2026-08-11" },

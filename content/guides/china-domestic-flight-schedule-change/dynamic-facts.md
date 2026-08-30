@@ -1,6 +1,6 @@
 # Dynamic facts — china-domestic-flight-schedule-change
 
-Review date for every dynamic fact in this article: **2026-08-22** (re-verified during rework the same day). Facts below were checked against primary sources fetched that day (see source-log.md). Anything not listed here is structural guidance rather than a volatile claim.
+The complaint-escalation row was rechecked on **2026-08-31**; unaffected dynamic facts retain their per-row **2026-08-22** dates. Facts below were checked against the primary sources identified in `source-log.md`. Anything not listed here is structural guidance rather than a volatile claim.
 
 ## Publication-date record
 
@@ -27,7 +27,7 @@ carrier clauses and confirmed that date for this release review.
 | China Southern's normal domestic window is ±7 days incl. departure day; if no China Southern seat is available inside it, the nearest available China Southern flight remains fee-free. A second free change exists in five listed situations | GCC §§8.3.2–8.3.3, effective 2024-12-28 under §15.1 | 2026-08-22 |
 | Air China: one free involuntary change incl. adjacent connections; no published day-window | April 2026 edition GCC | 2026-08-22 |
 | Platform reference: Trip.com's general guide cites 7–15 business days for card refunds. This is a non-binding reference and is not mechanically added to the regulation's seven-working-day processing period, which already excludes financial-institution time | Trip.com official guide (updated 2026-06-25). Claims about button-coding side effects, zero-fee display behaviour or no-show voiding tickets were removed in rework as unsupported | 2026-08-22 |
-| Complaint chain: first-line ack ≤7 days, substantive reply ≤10 days (domestic respondents); 12326 real-name complaints within six months; acceptance ≤7 working days; respondent result ≤10 working days; mediation request ≤10 working days after result, completed ≤20 working days | Provisions Arts. 44–46; CAAC complaint Q&A page | 2026-08-22 |
+| Complaint chain: the traveller first opens separate written cases through the airline and/or ticket issuer's own published channels and follows the response time stated by each channel. No uniform seven-day acceptance clock is asserted for those first-line cases. If escalated to the CAAC Consumer Affairs Center through 12326: real-name complaint within six months; Center acceptance decision ≤7 working days; respondent result ≤10 working days after referral; mediation request ≤10 working days after result, completed ≤20 working days | CAAC complaint Q&A page; first-line and Center stages are deliberately separated | 2026-08-31 |
 | Delay-damage liability with all-reasonable-measures defence; **two-year litigation limit**; passenger delay claims carry **no statutory objection deadline in this article** — readers are advised to submit written claims promptly | Civil Aviation Law Arts. 132, 143 (effective 2026-07-01). Art. 142's written-objection periods apply to checked baggage (7 days) and cargo (14 days) only | 2026-08-22 |
 
 ## Known gaps central should recheck before publication

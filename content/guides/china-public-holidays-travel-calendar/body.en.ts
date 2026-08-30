@@ -93,7 +93,7 @@ const body = {
     {
       id: "spring-detail",
       type: "paragraph",
-      text: "The Ministry of Transport set the 2026 Spring Festival travel season from February 2 to March 13. That period is much longer than the February 15–23 public holiday because family-reunion journeys spread around the official break. It is evidence to widen the transport check, not a claim that every route is equally busy for 40 days.",
+      text: "China's national 2026 Spring Festival transport period ran from February 2 to March 13, according to the National Development and Reform Commission's dated meeting notice. That period is much longer than the February 15–23 public holiday because family-reunion journeys spread around the official break. It is evidence to widen the transport check, not a claim that every route is equally busy for 40 days.",
     },
     {
       id: "spring-checks",
@@ -281,7 +281,7 @@ const body = {
       title: "Official sources reviewed",
       items: [
         { label: "2026 public-holiday schedule", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "General Office of the State Council", reviewedAt: "2026-08-11" },
-        { label: "2026 Spring Festival transport plan", url: "https://www.mot.gov.cn/jiaotongyaowen/202601/t20260126_4198781.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
+        { label: "2026 national Spring Festival transport-period meeting", url: "https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html", publisher: "National Development and Reform Commission", reviewedAt: "2026-08-31" },
         { label: "2026 Qingming transport review", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
         { label: "2026 Labour Day transport briefing", url: "https://www.mot.gov.cn/xinwen/xinwenfabuhui/202604/t20260424_4204258.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
         { label: "Current railway ticket rules", url: "https://kyfw.12306.cn/otn/gonggao/saleTicketMeans.html?linktypeid=means2", publisher: "China Railway 12306", reviewedAt: "2026-08-11" },

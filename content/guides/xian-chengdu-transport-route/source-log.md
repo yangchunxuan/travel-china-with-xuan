@@ -1,6 +1,7 @@
 # Source log — xian-chengdu-transport-route
 
-All retrieval timestamps are 2026-08-22, Asia/Taipei (UTC+8), unless stated otherwise.
+All retrieval timestamps are 2026-08-22, Asia/Taipei (UTC+8), unless stated otherwise. The two
+Live QA correction sources below were retrieved 2026-08-31, Asia/Shanghai.
 Claim-to-source table written before the body was drafted; reverse verification performed after.
 
 ---
@@ -45,6 +46,24 @@ Claim-to-source table written before the body was drafted; reverse verification 
 - **Cannot support:** anything about specific trains, stations, fares or times; airline rules;
   airport procedure; the length of any queue.
 - **Dynamic:** partly — 12306 states it may adjust refund rules temporarily. Logged.
+
+## 2A. China Railway 12306 — mistaken-purchase free-refund conditions
+
+- **Institution:** China Railway 12306
+- **Page title:** 购票信息单 — 误购免费退票服务
+- **URL:** https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/orderWarmTips.html?hiddenNav=true&tabIndex=6
+- **Published / updated:** undated live service explanation
+- **Retrieved:** 2026-08-31, Asia/Shanghai
+- **Supports:** registered users may request the service for a ticket paid electronically or with
+  points through the 12306 website, app or Alipay mini-program, with a travel date of 2 February
+  2026 or later, on a domestic passenger train or a cross-border train starting or ending at Hong
+  Kong West Kowloon. Purchase must have succeeded within the previous 30 minutes and scheduled
+  departure must remain at least four hours away; one qualifying order is allowed per calendar
+  day. Changed tickets, period or ride-count passes, reservation and waitlist purchases, air–rail
+  or water–rail products, group tickets and Railway e-Pass tickets are excluded.
+- **Cannot support:** a general cooling-off right, a free refund after either time boundary, or
+  eligibility for every ticket or sales channel.
+- **Dynamic:** yes; recheck before relying on the exception.
 
 ## 3. China Railway 12306 — official ticket channel
 
@@ -185,6 +204,20 @@ Claim-to-source table written before the body was drafted; reverse verification 
 - **Dynamic:** yes. The body requires a current 12306 date search before the station can re-enter a
   live itinerary.
 
+## 12. Chengdu Airport — partial Hong Kong, Macao and Taiwan flight move
+
+- **Institution:** Sichuan Province Airport Group / Chengdu Shuangliu and Tianfu International Airport operator
+- **Page title:** 7月30日起，成都双流国际机场和天府国际机场部分港澳台地区航班有调整
+- **URL:** https://www.cdairport.com/news_detail.aspx?cid=6393&page=1&t=60
+- **Published:** 2026-07-15
+- **Retrieved:** 2026-08-31, Asia/Shanghai
+- **Supports:** from 06:00 on 30 July 2026, some Hong Kong, Macao and Taiwan flights moved from
+  Tianfu T1 to Shuangliu T1; after the adjustment both Chengdu airports operate those regional
+  flights; travellers must confirm the airport and terminal on their booking.
+- **Cannot support:** that every regional flight moved, any individual flight assignment, or a
+  permanent allocation that overrides a current booking.
+- **Dynamic:** yes; recheck on every content review and before a traveller relies on an airport.
+
 ---
 
 ## Claim-to-source table (reverse verification, run after drafting)
@@ -198,6 +231,7 @@ Claim-to-source table written before the body was drafted; reverse verification 
 | Endorsement cannot change departure/arrival station except same-city stations | 2 | yes |
 | Change of destination needs at least 48 hours | 2 | yes |
 | Refund fee tiers 0 / 5% / 10% / 20%, minimum RMB 2 | 2 | yes |
+| Mistaken-purchase free refund: registered user; electronic/points payment; travel date from 2 February 2026; domestic or Hong Kong West Kowloon start/end train; within 30 minutes of purchase; at least four hours before departure; one order/day; no changed, period/ride-count, reservation, waitlist, air–rail/water–rail, group or Railway e-Pass tickets | 2A | yes |
 | Free cabin luggage 20 / 10 / 35 kg; 160 cm, 200 cm rod, 130 cm EMU; 20 kg per item; folding wheelchairs excluded | 2 | yes |
 | Sales and endorsement 05:00–01:00, Tuesday to 23:30; queries and refunds 24 h | 2 | yes |
 | Lost booking passport has a published station procedure | 2 | yes |
@@ -209,6 +243,7 @@ Claim-to-source table written before the body was drafted; reverse verification 
 | Line 14 opened 2021 and was through-linked with the airport intercity railway, connecting airport and Xi'an North | 6 | yes |
 | One operator runs both Chengdu airports | 7, 8 | yes |
 | International passenger flights consolidated at Tianfu from 26 March 2023 | 7 | yes |
+| From 30 July 2026 some Hong Kong, Macao and Taiwan flights moved to Shuangliu T1 and both Chengdu airports operate regional flights | 12 | yes |
 | Metro Line 19 and Airport Shuttle Line 5 connect the two Chengdu airports | 8 | yes |
 | Metro Line 18 links Chengdu South Railway Station with Tianfu Airport | 9 | yes |
 | Old central Chengdu Station stopped passenger service in 2022 and is not a current itinerary assumption | 11 | yes |

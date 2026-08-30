@@ -419,7 +419,7 @@ const body: StructuredPageBody = {
       ordered: true,
       items: [
         "Open written cases with the carrier and your ticket issuer separately: one sentence of fact, one of request, evidence attached, case numbers demanded.",
-        "Give first lines their regulatory room — acknowledgement within seven days, substantive reply within ten for domestic respondents. Chase in writing; daily calls reset nothing.",
+        "Use the carrier or ticket issuer's published complaint channel, ask for a case number and ask when that specific channel will respond. This guide does not apply the 12326 Center's seven-working-day acceptance clock to a first-line airline or issuer case. Chase in writing; daily calls reset nothing.",
         "Escalate to CAAC's Consumer Affairs Center via www.12326.cn or hotline 12326: real name required, within six months, with a specific request. Acceptance is decided within seven working days; respondents post results within ten working days of referral.",
         "Unsatisfied? Request mediation within ten working days of that result; it completes within twenty. Beyond that lie arbitration and courts — delay-damage claims face a two-year litigation limit, so state your claim in writing early.",
         "Report any later refund or settlement to every open case so overlapping claims close cleanly.",
@@ -559,7 +559,7 @@ const body: StructuredPageBody = {
           label: "CAAC air-travel knowledge: complaints and rights protection (12326 platform scope and timelines)",
           url: "https://www.caac.gov.cn/INDEX/HLFW/HKLXCS/202303/t20230316_217603.html",
           publisher: "Civil Aviation Administration of China",
-          reviewedAt: "2026-08-22",
+          reviewedAt: "2026-08-31",
         },
         {
           label: "Air China general conditions of carriage for passengers and baggage (April 2026 edition)",

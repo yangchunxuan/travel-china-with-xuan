@@ -246,6 +246,39 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.doesNotMatch(hubPage, /loading=\{index === 0 \? "eager"/);
 });
 
+test("shared search hubs keep long mobile hero titles inside the viewport", async () => {
+  const styles = await source("components/SearchPlatformHubPage.module.css");
+
+  assert.match(
+    styles,
+    /@media \(max-width: 980px\)[\s\S]*?\.heroInner,[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/,
+  );
+  assert.match(
+    styles,
+    /@media \(max-width: 980px\)[\s\S]*?\.heroInner > \* \{[\s\S]*?max-width:\s*100%;[\s\S]*?min-width:\s*0;/,
+  );
+  const mobileHeroRule = styles.match(
+    /@media \(max-width: 680px\)[\s\S]*?\.hero h1 \{([^}]*)\}/,
+  );
+  assert.ok(mobileHeroRule, "missing the mobile hero title rule");
+  assert.match(
+    mobileHeroRule[1],
+    /font-size:\s*clamp\(2\.6rem,\s*12\.8vw,\s*4\.2rem\);/,
+  );
+
+  const englishMobileHeroRule = styles.match(
+    /@media \(max-width: 680px\)[\s\S]*?\.hubPage\[data-homeground-locale="en"\] \.hero h1 \{([^}]*)\}/,
+  );
+  assert.ok(englishMobileHeroRule, "missing the English mobile title wrapping rule");
+  assert.match(englishMobileHeroRule[1], /overflow-wrap:\s*normal;/);
+  assert.match(englishMobileHeroRule[1], /word-break:\s*normal;/);
+  assert.doesNotMatch(
+    englishMobileHeroRule[1],
+    /overflow-wrap:\s*anywhere|word-break:\s*break-all/,
+  );
+  assert.doesNotMatch(styles, /\.hubPage\s*\{[^}]*overflow-x:\s*hidden;/);
+});
+
 test("new structured content uses a finite semantic page-family renderer", async () => {
   const [renderer, bodySchema, rendererStyles, guideStyles] = await Promise.all([
     source("components/content/PageFamilyRenderer.tsx"),

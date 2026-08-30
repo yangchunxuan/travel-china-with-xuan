@@ -957,19 +957,19 @@ const xian: PrivateTourProduct = {
       "Xi'an City Wall",
       "Terracotta Warriors and Huaqing Palace",
       "Great Mosque and Muslim Quarter",
-      "A choice of Xi'an Museum or Small Wild Goose Pagoda",
+      "Xi'an Museum complex, including the Small Wild Goose Pagoda heritage area",
     ],
     [
       "西安城墙",
       "兵马俑与华清宫",
       "西安大清真寺与回民街",
-      "西安博物院或小雁塔二选一",
+      "西安博物院景区（含小雁塔历史文化片区）",
     ],
     [
       "시안 성벽",
       "병마용과 화청궁",
       "시안 대청진사와 회민거리",
-      "시안박물원 또는 소안탑 중 한 곳",
+      "소안탑 역사문화 구역을 포함한 시안박물원 단지",
     ],
   ),
   itinerary: [
@@ -1003,14 +1003,14 @@ const xian: PrivateTourProduct = {
     day(
       4,
       l(
-        "Muslim Quarter and museum choice",
-        "回民街与博物馆选择",
-        "회민거리와 박물관 선택",
+        "Muslim Quarter and Xi'an Museum complex",
+        "回民街与西安博物院景区",
+        "회민거리와 시안박물원 단지",
       ),
       l(
-        "Begin at the Xi'an hotel and use the guide, walking sections and private vehicle to connect the Great Mosque and Muslim Quarter. Continue to the confirmed choice of Xi'an Museum or the Small Wild Goose Pagoda, then return to the same hotel for the final night.",
-        "从西安酒店出发，由导游带领步行游览大清真寺与回民街，需要用车的路段由私车衔接；随后前往已确认的西安博物院或小雁塔其中一项，当晚返回同一家酒店。",
-        "시안 호텔에서 출발해 가이드와 함께 대청진사와 회민거리를 걷고, 차량이 필요한 구간은 전용 차량으로 연결합니다. 이어 확정된 시안박물원 또는 소안탑 중 한 곳을 방문한 뒤 같은 호텔로 돌아와 마지막 밤을 보냅니다.",
+        "Begin at the Xi'an hotel and use the guide, walking sections and private vehicle to connect the Great Mosque and Muslim Quarter. Continue to the Xi'an Museum complex, whose grounds include the museum building, Jianfu Temple site and Small Wild Goose Pagoda heritage area. The written confirmation will state which areas are open and included on the visit date, before the return to the same hotel for the final night.",
+        "从西安酒店出发，由导游带领步行游览大清真寺与回民街，需要用车的路段由私车衔接；随后游览西安博物院景区，该院区由博物馆展馆、荐福寺遗址和小雁塔历史文化片区组成。书面确认会写明出行当天开放并纳入行程的具体区域，游览后返回同一家酒店。",
+        "시안 호텔에서 출발해 가이드와 함께 대청진사와 회민거리를 걷고, 차량이 필요한 구간은 전용 차량으로 연결합니다. 이어 박물관 전시관, 젠푸사 유적과 소안탑 역사문화 구역으로 구성된 시안박물원 단지를 방문합니다. 방문일에 개방되고 일정에 포함되는 구역은 서면 확인서에 명시하며, 관람 후 같은 호텔로 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
@@ -1155,7 +1155,7 @@ const xian: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-08-31",
 };
 
 const chongqingWulong: PrivateTourProduct = {
@@ -1227,9 +1227,9 @@ const chongqingWulong: PrivateTourProduct = {
       3,
       l("Chongqing to Wulong", "重庆前往武隆", "충칭에서 우룽으로"),
       l(
-        "Check out of the Chongqing hotel and keep your luggage in the private vehicle for the journey to Wulong. After arrival, use the attraction's operating transport and walking route to explore the Three Natural Bridges, then continue to the confirmed hotel in the Fairy Mountain resort area for the night.",
-        "从重庆酒店退房，行李随私车前往武隆。抵达后按景区实际运营的景交与步行路线游览天生三桥，再前往已确认的仙女山度假区酒店入住。",
-        "충칭 호텔에서 체크아웃하고 수하물을 전용 차량에 실어 우룽으로 이동합니다. 도착 후 관광지의 실제 운영 교통과 도보 동선에 따라 천생삼교를 둘러보고, 확정된 선녀산 리조트 지역 호텔에서 숙박합니다.",
+        "Check out of the Chongqing hotel and keep your luggage in the private vehicle for the journey to Wulong. At the Three Natural Bridges, the current standard admission includes the official transfer bus and Tianlong revolving elevator; follow the attraction's operating route and walking sections. Continue to the confirmed hotel in the Fairy Mountain resort area for the night.",
+        "从重庆酒店退房，行李随私车前往武隆。天生三桥当前标准票包含官方中转车和天龙旋梯，抵达后按景区实际运营路线及步行路段游览；随后前往已确认的仙女山度假区酒店入住。",
+        "충칭 호텔에서 체크아웃하고 수하물을 전용 차량에 실어 우룽으로 이동합니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함되며, 현장 운영 동선과 도보 구간에 따라 관람합니다. 이후 확정된 선녀산 리조트 지역 호텔에서 숙박합니다.",
       ),
     ),
     day(
@@ -1240,9 +1240,9 @@ const chongqingWulong: PrivateTourProduct = {
         "우룽 선택 일정 후 귀환",
       ),
       l(
-        "Check out of the Wulong hotel and keep your luggage with the private vehicle. Visit the confirmed choice of Fairy Mountain or Furong Cave—only one is included—then return by road to Chongqing and check in there for the final night.",
-        "从武隆酒店退房，行李随私车同行。游览已书面确认的仙女山或芙蓉洞其中一项，仅包含一项；结束后乘车返回重庆，当晚入住重庆。",
-        "우룽 호텔에서 체크아웃하고 수하물은 전용 차량에 싣습니다. 서면으로 확정된 선녀산 또는 부용동 중 한 곳만 둘러본 뒤 차량으로 충칭에 돌아와 마지막 밤을 보냅니다.",
+        "Check out of the Wulong hotel and keep your luggage with the private vehicle. Visit only the confirmed Day 4 choice; the written confirmation must state whether it includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package. Only one is included, not both. Then return by road to Chongqing and check in there for the final night.",
+        "从武隆酒店退房，行李随私车同行。D4 仅游览书面确认的一项，确认单须明确写出包含仙女山门票，还是芙蓉洞门票及索道套票；两者仅含其一，不同时包含。结束后乘车返回重庆，当晚入住重庆。",
+        "우룽 호텔에서 체크아웃하고 수하물은 전용 차량에 싣습니다. D4에는 서면으로 확정된 한 곳만 방문하며, 확인서에 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 무엇이 포함되는지 명시합니다. 둘 중 하나만 포함하며 두 항목을 모두 포함하지 않습니다. 이후 차량으로 충칭에 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
@@ -1261,21 +1261,33 @@ const chongqingWulong: PrivateTourProduct = {
     "충칭 3박과 우룽 1박 모두 중국 씨트립 기준 4다이아 등급 호텔과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
   ),
   serviceNote: l(
-    "Private transfers on Days 1 and 5, with an English guide and private vehicle on Days 2–4. Listed adult admission tickets for the Three Natural Bridges and one Day 4 attraction are included. No shopping stops.",
-    "D1/D5 司机接送，D2–D4 英语导游与重庆—武隆段私车；含天生三桥及 D4 二选一项目中的一项成人基础门票，全程无购物店安排。",
-    "D1·D5 픽업·샌딩, D2~D4 영어 가이드와 충칭~우룽 전용 차량, 천생삼교와 D4 선택 관광지 한 곳의 성인 기본 입장권이 포함되며 쇼핑 일정은 없습니다.",
+    "Private transfers on Days 1 and 5, with an English guide and private vehicle on Days 2–4. The current Three Natural Bridges standard admission includes the official transfer bus and Tianlong revolving elevator. The exit battery car and glass viewing platform are included only when written in the confirmation. Day 4 includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, as named in the confirmation. No shopping stops.",
+    "D1/D5 司机接送，D2–D4 英语导游与重庆—武隆段私车。天生三桥当前标准票包含官方中转车和天龙旋梯；出口电瓶车、玻璃眺台仅在确认单写明时包含。D4 确认单须明确包含仙女山门票，还是芙蓉洞门票及索道套票。全程无购物店安排。",
+    "D1·D5 픽업·샌딩, D2~D4 영어 가이드와 충칭~우룽 전용 차량이 포함됩니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함됩니다. 출구 전동카트와 유리 전망대는 확인서에 적힌 경우에만 포함됩니다. D4 확인서에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 무엇이 포함되는지 명시합니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
-    ["The Day 4 attraction not selected", "Unlisted night cruises and shows"],
-    ["D4 未选择的另一景点", "未列夜游或演出"],
-    ["D4에 선택하지 않은 다른 관광지", "일정에 없는 야간 유람선과 공연"],
+    [
+      "Three Natural Bridges exit battery car and glass viewing platform unless written in the confirmation",
+      "The Day 4 attraction not selected",
+      "Unlisted night cruises and shows",
+    ],
+    [
+      "确认单未写明的天生三桥出口电瓶车和玻璃眺台",
+      "D4 未选择的另一景点",
+      "未列夜游或演出",
+    ],
+    [
+      "확인서에 명시되지 않은 천생삼교 출구 전동카트와 유리 전망대",
+      "D4에 선택하지 않은 다른 관광지",
+      "일정에 없는 야간 유람선과 공연",
+    ],
   ),
   bookingNote: l(
-    "Day 4 includes either Fairy Mountain or Furong Cave, not both; your choice will be written into the confirmation. Mountain weather and walking ability can affect the final plan. " +
+    "Day 4 includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, not both; the included option will be written into the confirmation. Mountain weather and walking ability can affect the final plan. " +
       commonBookingNote.en,
-    "D4 仅包含仙女山或芙蓉洞其中一项，选择会明确写入确认单；山区天气与客人体力可能影响执行。" +
+    "D4 仅包含仙女山门票或芙蓉洞门票及索道套票其中一项，包含项会明确写入确认单；山区天气与客人体力可能影响执行。" +
       commonBookingNote.zh,
-    "D4에는 선녀산 또는 부용동 중 한 곳만 포함되며 선택 사항은 확인서에 명시됩니다. 산악 날씨와 보행 능력에 따라 일정이 조정될 수 있습니다. " +
+    "D4에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 하나만 포함되며 포함 항목은 확인서에 명시됩니다. 산악 날씨와 보행 능력에 따라 일정이 조정될 수 있습니다. " +
       commonBookingNote.ko,
   ),
   heroImage: image(
@@ -1392,7 +1404,7 @@ const chongqingWulong: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-08-31",
 };
 
 const guilinYangshuo: PrivateTourProduct = {
@@ -1710,9 +1722,9 @@ const harbinWinter: PrivateTourProduct = {
         "하얼빈 구도심과 쑹화강",
       ),
       l(
-        "Start from the Harbin hotel with the English-speaking guide and heated private vehicle. Visit the exterior of Saint Sophia Cathedral, continue along Central Street and then take part in the confirmed Songhua River ice-and-snow experience under the day's operating conditions; return to the same Harbin hotel.",
-        "从哈尔滨酒店出发，由英语导游和暖风车辆先游览圣索菲亚教堂外观，再前往中央大街，随后按当天实际运营条件参加已确认的松花江冰雪体验；结束后返回同一家哈尔滨酒店。",
-        "하얼빈 호텔에서 영어 가이드와 난방 전용 차량으로 출발합니다. 성 소피아 성당 외관, 중앙대가를 차례로 둘러본 뒤 당일 운영 조건에 따라 확정된 쑹화강 빙설 체험을 진행하고 같은 하얼빈 호텔로 돌아옵니다.",
+        "Start from the Harbin hotel with the English-speaking guide and heated private vehicle. Visit the exterior of Saint Sophia Cathedral and Central Street, then use only a named, managed Songhua River ice-and-snow activity that its operator confirms open that day. Never enter unmanaged river ice. Return to the same Harbin hotel.",
+        "从哈尔滨酒店出发，由英语导游和暖风车辆先游览圣索菲亚教堂外观与中央大街，随后只参加书面列名、由正规机构管理且经运营方确认当天开放的松花江冰雪项目；不得自行进入未管理冰面。结束后返回同一家哈尔滨酒店。",
+        "하얼빈 호텔에서 영어 가이드와 난방 전용 차량으로 출발해 성 소피아 성당 외관과 중앙대가를 둘러봅니다. 이후 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 쑹화강 빙설 프로그램만 이용합니다. 관리되지 않는 강 얼음 위에는 들어가지 않습니다. 일정 후 같은 하얼빈 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -1753,9 +1765,9 @@ const harbinWinter: PrivateTourProduct = {
     "명시된 빙설 기간 동안 하얼빈의 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
   ),
   serviceNote: l(
-    "Winter arrival and departure transfers, a heated private vehicle and English guide on Days 2–4, listed adult admission tickets, hot water, headsets and basic heat patches are included. No shopping stops.",
-    "含 D1/D5 冬季车辆接送，D2–D4 英语导游与暖风车辆，行程所列成人基础门票、预约、热水、耳麦与基础暖贴，全程无购物店安排。",
-    "D1·D5 겨울 차량 픽업·샌딩, D2~D4 영어 가이드와 난방 차량, 일정에 명시된 성인 기본 입장권, 온수, 수신기와 기본 핫팩이 포함되며 쇼핑 일정은 없습니다.",
+    "Winter arrival and departure transfers, a heated private vehicle and English guide on Days 2–4, listed adult admission tickets, hot water, headsets and basic heat patches are included. These aids do not replace professional cold-weather clothing, insulated snow boots, gloves and face protection. No shopping stops.",
+    "含 D1/D5 冬季车辆接送，D2–D4 英语导游与暖风车辆，行程所列成人基础门票、预约、热水、耳麦与基础暖贴；这些用品不能替代专业防寒服、保暖雪地靴、手套和面部防护。全程无购物店安排。",
+    "D1·D5 겨울 차량 픽업·샌딩, D2~D4 영어 가이드와 난방 차량, 일정에 명시된 성인 기본 입장권, 온수, 수신기와 기본 핫팩이 포함됩니다. 이러한 보조품은 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 대신하지 않습니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -1775,9 +1787,9 @@ const harbinWinter: PrivateTourProduct = {
     ],
   ),
   bookingNote: l(
-    "The published per-person starting prices cover groups of 2 and 4 travellers, exclude flights and apply only to check-ins from 6 January to 5 February 2027, Sunday through Thursday, on non-holiday dates after the main ice attractions have opened. Other group sizes require manual confirmation. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates require a new quote.",
-    "页面仅公开 2 人和 4 人的每人起价，往返机票另计；其他人数须人工确认。该价格仅适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期变化，均须重新报价。",
-    "공개된 항공권 제외 1인 시작가는 2명과 4명 기준이며, 그 외 인원은 수동 확인이 필요합니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일, 일~목요일 체크인, 비공휴일에만 적용됩니다. 금·토요일 숙박, 크리스마스, 신정, 춘절, 빙설제 핵심 주말 또는 개장일 변경 시 반드시 재견적이 필요합니다.",
+    "Harbin winter temperatures can fall below −20°C. Wear professional cold-weather clothing, insulated snow boots, gloves and face protection. Outdoor sessions may be shortened or cancelled because of wind chill, ice conditions or an operator safety decision. Heated vehicles, hot water and basic heat patches are supplements, not replacements. On the Songhua River, use only a named, managed activity that its operator confirms open that day; never enter unmanaged river ice. The published per-person starting prices cover groups of 2 and 4 travellers, exclude flights and apply only to check-ins from 6 January to 5 February 2027, Sunday through Thursday, on non-holiday dates after the main ice attractions have opened. Other group sizes require manual confirmation. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates require a new quote.",
+    "哈尔滨冬季可能出现 −20°C 以下严寒，请穿专业防寒服、保暖雪地靴、手套并做好面部防护。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消；暖风车辆、热水和基础暖贴只能辅助，不能替代专业防寒装备。松花江冰上项目只参加书面列名、由正规机构管理且经运营方确认当天开放的项目，不得自行进入未管理冰面。页面仅公开 2 人和 4 人的每人起价，往返机票另计；其他人数须人工确认。该价格仅适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期变化，均须重新报价。",
+    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 공개된 항공권 제외 1인 시작가는 2명과 4명 기준이며, 그 외 인원은 수동 확인이 필요합니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일, 일~목요일 체크인, 비공휴일에만 적용됩니다. 금·토요일 숙박, 크리스마스, 신정, 춘절, 빙설제 핵심 주말 또는 개장일 변경 시 반드시 재견적이 필요합니다.",
   ),
   heroImage: image(
     "/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
@@ -1845,7 +1857,7 @@ const harbinWinter: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-08-31",
 };
 
 const shanghaiSuzhou: PrivateTourProduct = {
@@ -1916,9 +1928,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
         "주자자오와 도심 선택 일정",
       ),
       l(
-        "Leave the Shanghai hotel by private vehicle for Zhujiajiao water town. After the confirmed visit, return to central Shanghai for either Tianzifang or the Shanghai Museum People's Square branch—only one is included—then return to the same hotel.",
-        "从上海酒店乘私车前往朱家角水乡，完成已确认游览后返回上海市区；再前往田子坊或上海博物馆人民广场馆其中一项，仅包含一项，结束后返回同一家酒店。",
-        "상하이 호텔에서 전용 차량으로 주자자오 수향마을에 이동합니다. 확정된 관람 후 상하이 도심으로 돌아와 톈쯔팡 또는 상하이박물관 인민광장관 중 한 곳만 방문하고 같은 호텔로 돌아옵니다.",
+        "Leave the Shanghai hotel by private vehicle for Zhujiajiao water town. After the confirmed visit, return to central Shanghai for either Tianzifang or, when its exhibition period, opening day, advance reservation and ticket purchase are confirmed, the Shanghai Museum People's Square branch. From 9 July 2026 to 14 November 2027, that branch hosts only the ticketed Ancient Civilizations of the Americas exhibition; the permanent collection is at the East Museum. Only one option is included, then return to the same hotel.",
+        "从上海酒店乘私车前往朱家角水乡，完成已确认游览后返回上海市区；再在田子坊与上海博物馆人民广场馆二选一。2026 年 7 月 9 日至 2027 年 11 月 14 日期间，人民广场馆仅开放需购票的“世界树之巅：美洲古代文明大展”，常设展在东馆；须确认展期与开放日并提前预约购票，仅包含一项，结束后返回同一家酒店。",
+        "상하이 호텔에서 전용 차량으로 주자자오 수향마을에 이동합니다. 확정된 관람 후 도심으로 돌아와 톈쯔팡과 상하이박물관 인민광장관 중 한 곳을 선택합니다. 2026년 7월 9일부터 2027년 11월 14일까지 인민광장관은 유료 ‘아메리카 고대문명 대전’만 운영하고 상설전시는 동관에서 열립니다. 전시 기간과 개관일을 확인하고 사전 예약 및 입장권 구매를 완료해야 하며, 한 곳만 포함한 뒤 같은 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -1963,11 +1975,11 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ],
   ),
   bookingNote: l(
-    "Day 3 includes either Tianzifang or Shanghai Museum People's Square, not both; the choice will be written into your confirmation. Train station, departure, seat class and ticket conditions will also be confirmed before payment. " +
+    "Day 3 includes either Tianzifang or the Shanghai Museum People's Square branch, not both. A museum choice requires written confirmation of the exhibition period and opening day, plus advance reservation and ticket purchase; from 9 July 2026 to 14 November 2027, the branch hosts only the ticketed Ancient Civilizations of the Americas exhibition, while the permanent collection is at the East Museum. Train station, departure, seat class and ticket conditions will also be confirmed before payment. " +
       commonBookingNote.en,
-    "D3 仅包含田子坊或上海博物馆人民广场馆其中一项，选择会写入确认单；车站、车次、席别和退改条件也会在付款前确认。" +
+    "D3 仅包含田子坊或上海博物馆人民广场馆其中一项。选择人民广场馆时，确认单须写明展期与开放日，并提前预约购票；2026 年 7 月 9 日至 2027 年 11 月 14 日期间，该馆仅开放需购票的“世界树之巅：美洲古代文明大展”，常设展在东馆。车站、车次、席别和退改条件也会在付款前确认。" +
       commonBookingNote.zh,
-    "D3에는 톈쯔팡 또는 상하이박물관 인민광장관 중 한 곳만 포함되며 확인서에 명시됩니다. 역, 열차편, 좌석 등급과 취소 조건도 결제 전에 확정합니다. " +
+    "D3에는 톈쯔팡 또는 상하이박물관 인민광장관 중 한 곳만 포함됩니다. 인민광장관을 선택할 때는 확인서에 전시 기간과 개관일을 명시하고 사전 예약 및 입장권 구매를 완료해야 합니다. 2026년 7월 9일부터 2027년 11월 14일까지 이 관은 유료 ‘아메리카 고대문명 대전’만 운영하며 상설전시는 동관에서 열립니다. 역, 열차편, 좌석 등급과 취소 조건도 결제 전에 확정합니다. " +
       commonBookingNote.ko,
   ),
   heroImage: image(
@@ -2111,7 +2123,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-08-31",
 };
 
 const beijing: PrivateTourProduct = {

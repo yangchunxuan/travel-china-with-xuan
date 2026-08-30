@@ -29,7 +29,7 @@ The text separates:
 2. Jiangsu Fire and Rescue — hotel fire-safety manual
    - https://js.119.gov.cn/202203/jsxfww-menu-xfyw_c_14fe56261ca24eee8c18.html
    - Supports reading the room-door route diagram, knowing stairs, exits, alarms and extinguishers, evacuating promptly and calling 119.
-   - Qualification: stable public education from 2022. Incident actions are still framed by current conditions and official/on-site direction rather than as a rigid universal sequence.
+   - Qualification: stable public education from 2022. The 119 call is immediate; evacuation or shelter decisions still depend on current conditions and fire-rescue/on-site direction rather than a rigid universal route sequence.
 
 3. Jiangsu Fire and Rescue — hotel and travel safety reminder
    - https://js.119.gov.cn/202304/jsxfww-menu-gzdt_c_b3e63cdc24684e22bf6e.html
@@ -91,3 +91,9 @@ No hero binary is included. See `image-plan.md`. Any future photograph must have
 - Replaced two National Fire and Rescue pages that returned HTTP 412 to automated checks with accessible official Jiangsu Fire and Rescue guidance supporting the same hotel-orientation and 119 facts.
 - Reconfirmed that this is a narrow guest orientation check, not a compliance inspection or promise that a route is safe. Active-fire advice continues to defer to 119, responders and on-site emergency direction.
 - EN/ZH/KO structure remained aligned. This pass changed only natural-language wording and clarified escalation language; `sourceReviewedDate` remains 2026-08-13.
+
+## Live QA correction — 2026-08-31
+
+- Reopened both Jiangsu Fire and Rescue pages. They continue to support prompt evacuation and an immediate 119 call during a fire emergency.
+- Corrected the smoke scenario in EN/ZH/KO so the order is unambiguous: call 119 immediately; notify hotel staff only when doing so is safe and does not delay the call, evacuation or a rescue request.
+- The legal and standards facts were not silently re-dated; their earlier per-source review date remains visible. `sourceReviewedDate` advances because the incident action and its supporting official sources were materially re-verified.

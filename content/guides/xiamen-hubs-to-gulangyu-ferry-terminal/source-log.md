@@ -2,7 +2,7 @@
 
 Status: **READY — COPY, SOURCES AND LICENSED ASSET COMPLETE**
 `topicId`: `hg-topic-0344`
-`checked_at`: **2026-08-13**
+`checked_at`: **2026-08-31** for passport verification; unaffected timetable and return facts retain their per-fact 2026-08-13 dates.
 
 ## Canonical boundary and search gap
 
@@ -12,7 +12,7 @@ Searches reviewed: `Xiamen airport to Gulangyu ferry`, `Xiamen North to Gulangyu
 
 ## Dynamic facts used
 
-- The current Xiamen Ferry FAQ says its website is not selling tickets and directs visitors to its official WeChat account `xmferry` or the Alipay service account “屿见厦门轮渡”. Foreign visitors can use a verified Alipay account and passport details; some documents require manual verification. `checked_at: 2026-08-13`.
+- The current Xiamen Ferry FAQ says its website is not selling tickets and directs visitors to its official WeChat account `xmferry` or the Alipay service account “屿见厦门轮渡”. Foreign visitors can use a verified Alipay account and passport details. If the number used to buy with a passport cannot be verified online, the traveller must take the original document to a manual ticket counter for verification and ticket collection. `checked_at: 2026-08-31`.
 - Since 1 February 2026, the visitor-ferry sales window is 15 days including the sailing date; inventory for day 15 opens at 09:00. `checked_at: 2026-08-13`.
 - Check-in opens 20 minutes before departure and closes 10 minutes before departure. A dated outbound booking normally includes one free return within 20 days using an eligible current visitor route; the return is not a reserved sailing or permanent pier promise. `checked_at: 2026-08-13`.
 - The FAQ page contains older answers that still mention website sales. This page follows the newer answer at the top of the FAQ and tells readers to recheck the official channel rather than treating any purchase method or route as permanent. `checked_at: 2026-08-13`.
