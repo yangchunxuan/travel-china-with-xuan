@@ -191,7 +191,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "把住宿决定交给对应 owner",
+      title: "用详细住宿指南比较北京住宿区域",
       items: [
         {
           label: "第一次去北京住哪里？",
@@ -314,7 +314,7 @@ const body = {
     {
       id: "transport-links",
       type: "internal-links",
-      title: "把门户决定交给对应 owner",
+      title: "继续查看机场与车站详细指南",
       items: [
         {
           label: "你到底需要哪座北京火车站？",
@@ -452,7 +452,7 @@ const body = {
     {
       id: "sight-links",
       type: "internal-links",
-      title: "当景点簇变成具体预订时，打开执行 owner",
+      title: "准备预订时，打开对应的详细指南",
       items: [
         {
           label: "外国旅客怎样参观故宫",
@@ -579,7 +579,7 @@ const body = {
     {
       id: "route-links",
       type: "internal-links",
-      title: "继续交给路线 owner",
+      title: "继续查看详细路线指南",
       items: [
         {
           label: "北京、西安与成都：怎样排顺序",

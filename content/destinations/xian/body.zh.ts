@@ -202,7 +202,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "把具体基地比较交给住宿 owner",
+      title: "用详细住宿指南比较西安住宿区域",
       items: [
         {
           label: "西安住哪里：城墙内、钟楼还是大雁塔？",
@@ -369,7 +369,7 @@ const body = {
     {
       id: "sight-links",
       type: "internal-links",
-      title: "当景点簇变成具体预订时，打开执行 owner",
+      title: "准备预订时，打开对应的详细指南",
       items: [
         {
           label: "不跟团怎么看兵马俑",
@@ -484,7 +484,7 @@ const body = {
     {
       id: "route-links",
       type: "internal-links",
-      title: "继续交给路线 owner",
+      title: "继续查看详细路线指南",
       items: [
         {
           label: "北京、西安与成都：怎样排顺序",

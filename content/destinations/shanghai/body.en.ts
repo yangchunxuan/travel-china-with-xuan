@@ -253,7 +253,7 @@ const body = {
     {
       id: "stay-links",
       type: "internal-links",
-      title: "Choose the base with the accommodation owner",
+      title: "Compare Shanghai bases in the detailed stay guide",
       items: [
         {
           label: "Where to stay in Shanghai on a first trip",
@@ -362,7 +362,7 @@ const body = {
     {
       id: "airport-links",
       type: "internal-links",
-      title: "Hand the arrival decision to its owner",
+      title: "Continue with the detailed airport and transfer guides",
       items: [
         {
           label: "Pudong or Hongqiao airport for Shanghai",
@@ -434,7 +434,7 @@ const body = {
     {
       id: "regional-links",
       type: "internal-links",
-      title: "Decide the delta structure with its owners",
+      title: "Choose a Yangtze Delta route with the detailed guides",
       items: [
         {
           label: "Shanghai–Hangzhou station and route guide",
