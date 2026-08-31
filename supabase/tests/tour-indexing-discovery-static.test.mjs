@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
+import { getLegacySystemContentLifecycle } from "../../lib/legacySystemContentLifecycle.ts";
 import { buildPrivateTourContentNodes } from "../../lib/privateTourContentAdapter.ts";
 
 function source(path) {
@@ -93,4 +94,12 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
     dateModified: "2026-09-01",
     lastReviewed: "2026-08-31",
   });
+
+  const classic = getLegacySystemContentLifecycle(
+    "zhangjiajie-4-day-private-tour",
+  );
+  assert.equal(classic.datePublished, "2026-08-16");
+  assert.equal(classic.dateModified, "2026-09-01");
+  assert.equal(classic.lastReviewed, "2026-08-16");
+  assert.equal(classic.evidence.commit, "d3ffdf16b272b76e0dfc5848ac2fcde7bc37b0e3");
 });

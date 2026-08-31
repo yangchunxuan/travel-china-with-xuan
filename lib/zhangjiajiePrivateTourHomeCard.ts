@@ -1,4 +1,10 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { getLegacySystemContentLifecycle } from "./legacySystemContentLifecycle.ts";
+
+const dateModified = getLegacySystemContentLifecycle(
+  "zhangjiajie-4-day-private-tour",
+).dateModified;
 
 const cards = {
   en: {
@@ -13,7 +19,7 @@ const cards = {
       "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park.",
     cardImageWidth: 1920,
     cardImageHeight: 1280,
-    dateModified: "2026-08-24",
+    dateModified,
   },
   zh: {
     id: "zhangjiajie-4-day-private-tour",
@@ -25,7 +31,7 @@ const cards = {
     cardImageAlt: "阳光照亮张家界国家森林公园的砂岩峰柱与深谷。",
     cardImageWidth: 1920,
     cardImageHeight: 1280,
-    dateModified: "2026-08-24",
+    dateModified,
   },
   ko: {
     id: "zhangjiajie-4-day-private-tour",
@@ -38,7 +44,7 @@ const cards = {
       "햇살이 비치는 장자제 국가삼림공원의 사암 봉우리와 숲이 우거진 깊은 계곡.",
     cardImageWidth: 1920,
     cardImageHeight: 1280,
-    dateModified: "2026-08-24",
+    dateModified,
   },
 } as const;
 
