@@ -33,6 +33,18 @@ const locales = ["en", "zh", "ko"];
 const reservedStaticSlug = "zhangjiajie-4-day-private-tour";
 const shanghaiJiangnanSlug = "shanghai-suzhou-hangzhou-6-day-private-tour";
 
+test("the Zhangjiajie product title owns price and inclusions rather than itinerary intent", async () => {
+  const previewCopy = await source("lib/zhangjiajiePrivateTourPreview.ts");
+  assert.match(
+    previewCopy,
+    /metadataTitle: "Zhangjiajie 4-Day Private Tour: Price & Inclusions"/,
+  );
+  assert.doesNotMatch(
+    previewCopy,
+    /metadataTitle: "Zhangjiajie 4-Day Private Tour:[^"]*Itinerary/i,
+  );
+});
+
 const forbiddenPublicGroupRanges = {
   en: /\b2\s*(?:-|–|—|~|to|through)\s*9\s*(?:travell?ers?|guests?|people)\b/i,
   zh: /2\s*(?:-|–|—|~|至|到)\s*9\s*人/,
