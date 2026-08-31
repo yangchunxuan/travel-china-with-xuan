@@ -565,3 +565,35 @@ test("all three locales explain reply choice and optional trip details", () => {
   assert.match(korean.roughBudgetError, /100자/);
   assert.match(korean.roughBudgetError, /한 줄/);
 });
+
+test("homepage header and footer keep primary pointer targets at least 44px", async () => {
+  const [headerStyles, footerStyles] = await Promise.all([
+    source(homegroundHeaderStylesPath),
+    source("components/HomepageFooter.module.css"),
+  ]);
+
+  assert.match(
+    headerStyles,
+    /\.brand \{[\s\S]{0,220}min-block-size:\s*2\.75rem/,
+  );
+  assert.match(
+    headerStyles,
+    /\.languageNav a \{[\s\S]{0,360}min-block-size:\s*2\.75rem;[\s\S]{0,80}min-inline-size:\s*2\.75rem/,
+  );
+  assert.match(
+    headerStyles,
+    /@media \(max-width: 639\.98px\)[\s\S]{0,360}\.headerCta \{[\s\S]{0,100}min-block-size:\s*2\.75rem/,
+  );
+  assert.match(
+    footerStyles,
+    /\.brand \{[\s\S]{0,220}min-block-size:\s*2\.75rem/,
+  );
+  assert.match(
+    footerStyles,
+    /\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,360}min-block-size:\s*2\.75rem;[\s\S]{0,80}min-inline-size:\s*2\.75rem/,
+  );
+  assert.match(
+    footerStyles,
+    /\.copyrightSocial a \{[\s\S]{0,260}min-block-size:\s*2\.75rem;[\s\S]{0,80}min-inline-size:\s*2\.75rem/,
+  );
+});
