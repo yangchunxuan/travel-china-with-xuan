@@ -1,5 +1,6 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { homepagePrivateTourSlugs } from "../lib/homepagePrivateTourCatalog.ts";
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle.ts";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
 import { isIsoDateTimeWithTimezone } from "./lib/iso-date-time.mjs";
@@ -49,9 +50,10 @@ const blockedDestinationHubIds = ["guilin", "shenzhen"];
 const tenCityMapPath = "/guides/first-trip-china-airport-station-stay-map/";
 const tenCityPackPath =
   "/downloads/homeground-china-10-city-arrival-stay-departure-v1.zip";
-const homepagePublishedTourSlugs = getPublishedPrivateTourCatalog("en").map(
+const publishedTourSlugs = getPublishedPrivateTourCatalog("en").map(
   (product) => product.slug,
 );
+const homepagePublishedTourSlugs = [...homepagePrivateTourSlugs];
 const transportGuideSlug = "beijing-zhangjiajie-shanghai-transport";
 const zhangjiajieHubGuideSlugs = [
   "zhangjiajie-itinerary",
@@ -302,6 +304,19 @@ for (const locale of locales) {
       `${context} homepage published-tour discovery: ${slug}`,
     );
   }
+  assertIncludes(
+    homepageHtml,
+    `data-homepage-product-count="${homepagePublishedTourSlugs.length}"`,
+    `${context} homepage published-tour count`,
+  );
+  const homepageProductSlugs = [
+    ...homepageHtml.matchAll(/data-homepage-product-slug="([^"]+)"/giu),
+  ].map((match) => match[1]);
+  assertSameStringSet(
+    homepageProductSlugs,
+    homepagePublishedTourSlugs,
+    `${context} homepage published-tour cards`,
+  );
   if (homepageHtml.includes(`href="${tenCityPackPath}"`)) {
     throw new Error(
       `${context}: the internal asset download displaced the homepage product showcase`,
@@ -355,16 +370,16 @@ for (const locale of locales) {
   if (collectionPage.url !== canonical) {
     throw new Error(`${context}: CollectionPage URL is not self-canonical`);
   }
-  if (itemList.numberOfItems !== homepagePublishedTourSlugs.length) {
+  if (itemList.numberOfItems !== publishedTourSlugs.length) {
     throw new Error(
-      `${context}: ItemList must declare exactly ${homepagePublishedTourSlugs.length} published products`,
+      `${context}: ItemList must declare exactly ${publishedTourSlugs.length} published products`,
     );
   }
   if (!Array.isArray(itemList.itemListElement)) {
     throw new Error(`${context}: ItemList elements are missing`);
   }
 
-  const expectedAbsoluteDetails = homepagePublishedTourSlugs.map((slug) =>
+  const expectedAbsoluteDetails = publishedTourSlugs.map((slug) =>
     absoluteTourDetailRoute(slug, locale),
   );
   const structuredDetailUrls = itemList.itemListElement.map(
@@ -381,7 +396,7 @@ for (const locale of locales) {
     .filter((href) =>
       /^\/(?:zh\/|ko\/)?tours\/[^/]+\/$/u.test(href),
     );
-  const expectedDetailHrefs = homepagePublishedTourSlugs.map(
+  const expectedDetailHrefs = publishedTourSlugs.map(
     (slug) => `/${tourDetailRoute(slug, locale)}`,
   );
   assertSameStringSet(
@@ -390,7 +405,7 @@ for (const locale of locales) {
     `${context} visible private-tour detail links`,
   );
 
-  for (const slug of homepagePublishedTourSlugs) {
+  for (const slug of publishedTourSlugs) {
     const detailRoute = tourDetailRoute(slug, locale);
     const detailContext = `/${detailRoute}`;
     const detailCanonical = absoluteTourDetailRoute(slug, locale);

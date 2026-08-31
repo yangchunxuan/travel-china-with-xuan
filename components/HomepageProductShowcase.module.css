@@ -56,6 +56,10 @@
   text-wrap: balance;
 }
 
+.keepTogether {
+  white-space: nowrap;
+}
+
 .lead {
   align-self: end;
   color: var(--showcase-muted);

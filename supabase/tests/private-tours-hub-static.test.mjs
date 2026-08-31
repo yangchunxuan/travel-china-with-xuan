@@ -95,6 +95,9 @@ test("hub copy and language ownership are complete and self-consistent", () => {
     assert.ok(copy.metadata.description.length > 40);
     assert.ok(copy.title.length > 0);
     assert.ok(copy.quickCompareTitle.length > 0);
+    assert.ok(
+      copy.quickCompareEyebrow.includes(String(expectedPublishedCount)),
+    );
     assert.ok(copy.quickCompareIntroduction.length > 40);
     assert.ok(copy.quickFitLabel.length > 0);
     assert.ok(copy.quickMovementLabel.length > 0);
@@ -113,6 +116,7 @@ test("hub copy and language ownership are complete and self-consistent", () => {
       futureCopy.metadata.description,
       futureCopy.metadata.openGraphTitle,
       futureCopy.eyebrow,
+      futureCopy.quickCompareEyebrow,
       futureCopy.catalogTitle,
       futureCopy.catalogIntroduction,
       futureCopy.tourCount(futureCount),
@@ -195,8 +199,9 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.doesNotMatch(styles, /last-child:nth-child\(odd\)/);
 
   assert.match(homepageCatalog, /getPublishedPrivateTourCatalog\(locale\)/);
+  assert.match(homepageCatalog, /homepagePrivateTourSlugs\.map/);
   assert.doesNotMatch(
     homepageCatalog,
-    /zhangjiajie-4-day-private-tour|shanghai-suzhou-hangzhou-6-day-private-tour/,
+    /privateTourProducts|getZhangjiajiePrivateTourHomeCard/,
   );
 });

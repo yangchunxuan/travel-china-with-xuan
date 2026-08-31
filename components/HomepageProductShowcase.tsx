@@ -22,6 +22,9 @@ export function HomepageProductShowcase({
   onItemClick,
 }: HomepageProductShowcaseProps) {
   const copy = getHomepageProductShowcaseCopy(locale);
+  const titleParts = copy.titleNoWrap
+    ? copy.title.split(copy.titleNoWrap)
+    : undefined;
 
   return (
     <section
@@ -40,7 +43,17 @@ export function HomepageProductShowcase({
           </div>
           <div className={styles.introGrid}>
             <h2 id="homepage-products-title" tabIndex={-1}>
-              {copy.title}
+              {titleParts?.length === 2 && copy.titleNoWrap ? (
+                <>
+                  {titleParts[0]}
+                  <span className={styles.keepTogether}>
+                    {copy.titleNoWrap}
+                  </span>
+                  {titleParts[1]}
+                </>
+              ) : (
+                copy.title
+              )}
             </h2>
             <p className={styles.lead}>{copy.intro(products.length)}</p>
           </div>

@@ -3,6 +3,7 @@ import type { HomegroundLocale } from "./homegroundI18n";
 export interface HomepageProductShowcaseCopy {
   readonly eyebrow: string;
   readonly title: string;
+  readonly titleNoWrap?: string;
   readonly intro: (productCount: number) => string;
   readonly countLabel: (productCount: number) => string;
   readonly durationLabel: (days: number, nights: number) => string;
@@ -29,6 +30,7 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
   zh: {
     eyebrow: "精选私家行程",
     title: "路线走得通，付款前把范围和价格写清楚。",
+    titleNoWrap: "付款前",
     intro: (_productCount) =>
       "先从公开路线查看每天怎么走、住宿安排、交通、导游、所含门票和起价。确定日期后，我们会核对可订情况，并在付款前书面确认最终包含项、不包含项和总价。行程不安排购物店；任何升级或新增服务，都会在收费前先由你确认。",
     countLabel: (productCount) => `${productCount} 条路线`,
