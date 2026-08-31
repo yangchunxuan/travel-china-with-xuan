@@ -192,6 +192,10 @@ export function HomegroundHeader({
   );
   const faqHref = pageContext === "home" ? "#faq" : `${copy.path}#faq`;
   const primaryNavigation = getHomegroundNavigationModel(locale, copy.path);
+  const plannerCtaAccessibleLabel =
+    plannerStatus === "new"
+      ? plannerCta
+      : `${primaryNavigation.mobileCta}: ${plannerCta}`;
   const guidesAreCurrent =
     pageContext === "guides" ||
     pageContext === "guide" ||
@@ -551,8 +555,9 @@ export function HomegroundHeader({
           </nav>
           <a
             className={styles.headerCta}
+            data-label-mode={plannerStatus === "new" ? "full" : "compact"}
             href={plannerHref}
-            aria-label={plannerCta}
+            aria-label={plannerCtaAccessibleLabel}
             onClick={(event) => {
               trackPlannerClick();
               if (pageContext === "home") {

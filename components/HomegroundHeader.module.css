@@ -40,6 +40,7 @@
   gap: 0.58rem;
   inline-size: fit-content;
   justify-self: start;
+  min-block-size: 2.75rem;
   min-inline-size: 0;
   text-decoration: none;
 }
@@ -151,7 +152,9 @@
   flex: none;
   font-size: 0.76rem;
   font-weight: 650;
+  justify-content: center;
   min-block-size: 2.75rem;
+  min-inline-size: 2.75rem;
   padding-inline: 0.25rem;
   text-decoration: none;
   white-space: nowrap;
@@ -181,8 +184,8 @@
   font-size: 0.72rem;
   font-weight: 720;
   justify-content: center;
-  min-block-size: 2.12rem;
-  min-inline-size: 2.42rem;
+  min-block-size: 2.75rem;
+  min-inline-size: 2.75rem;
   padding-inline: 0.55rem;
   text-decoration: none;
   white-space: nowrap;
@@ -228,6 +231,20 @@
 
 .headerCtaShort {
   display: none;
+}
+
+/*
+ * Planner states can make the English and Korean CTA substantially wider
+ * after a visitor starts the form. Keep the complete state text as the
+ * accessible name, while reusing the established short visual label so the
+ * live state cannot collide with the primary navigation.
+ */
+.headerCta[data-label-mode="compact"] .headerCtaLong {
+  display: none;
+}
+
+.headerCta[data-label-mode="compact"] .headerCtaShort {
+  display: inline;
 }
 
 .menuButton {
@@ -304,9 +321,10 @@
 /*
  * Keep the full four-item navigation at compact desktop widths. FAQ remains
  * available from the homepage and mobile menu; hiding only this utility link
- * prevents it from colliding with the final primary item around 1180px.
+ * prevents it from colliding with the final primary item at compact desktop
+ * widths while preserving the full header from 1360px upward.
  */
-@media (min-width: 1180px) and (max-width: 1320px) {
+@media (min-width: 1180px) and (max-width: 1359.98px) {
   .headerInner {
     gap: 0.75rem;
     grid-template-columns: minmax(13rem, 1fr) auto minmax(13rem, 1fr);
@@ -323,7 +341,7 @@
   }
 
   .headerActions {
-    gap: 0.4rem;
+    gap: 0.5rem;
   }
 
   .headerCta {
@@ -540,7 +558,7 @@
   }
 
   .headerCta {
-    min-block-size: 2.4rem;
+    min-block-size: 2.75rem;
     padding-inline: 0.8rem;
   }
 
