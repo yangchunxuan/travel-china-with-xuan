@@ -82,6 +82,10 @@ test("hub copy and language ownership are complete and self-consistent", () => {
     "x-default": "/tours/",
   });
 
+  const englishCopy = getPrivateTourHubCopy("en", expectedPublishedCount);
+  assert.equal(englishCopy.metadata.title, "Private China Tours");
+  assert.match(englishCopy.title, /private China tours/i);
+
   for (const locale of locales) {
     const copy = getPrivateTourHubCopy(locale, expectedPublishedCount);
     const futureCount = expectedPublishedCount + 1;

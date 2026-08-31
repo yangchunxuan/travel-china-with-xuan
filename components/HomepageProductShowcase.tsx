@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { getHomepageProductShowcaseCopy } from "../lib/homepageProductShowcaseI18n";
+import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import styles from "./HomepageProductShowcase.module.css";
 
 interface HomepageProductShowcaseProps {
@@ -94,7 +95,12 @@ export function HomepageProductShowcase({
           ))}
         </ul>
 
-        <p className={styles.availabilityNote}>{copy.availabilityNote}</p>
+        <div className={styles.showcaseFooter}>
+          <a className={styles.hubLink} href={privateTourHubPaths[locale]}>
+            <span>{copy.hubActionLabel}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ import {
 } from "../../lib/homepageShowcaseI18n.ts";
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
+import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 
@@ -181,7 +182,7 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   )?.[1];
   assert.ok(productMuted);
   assert.ok(contrastRatio(productMuted, "#ffffff") >= 4.5);
-  for (const selector of ["count", "cardMeta", "availabilityNote"]) {
+  for (const selector of ["count", "cardMeta"]) {
     assert.match(
       productStyles,
       new RegExp(
@@ -190,8 +191,36 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     );
   }
   assert.match(productShowcase, /data-homepage-offer-kind="tour"/);
+  assert.match(productShowcase, /href=\{privateTourHubPaths\[locale\]\}/);
+  assert.match(productShowcase, /\{copy\.hubActionLabel\}/);
+  assert.doesNotMatch(productShowcase, /availabilityNote/);
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
   assert.match(productStyles, /\.productGrid \{[\s\S]{0,180}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(
+    productStyles,
+    /\.showcaseFooter \{[\s\S]{0,100}align-items: flex-start/,
+  );
+  assert.match(
+    productStyles,
+    /\.showcaseFooter \{[\s\S]{0,180}justify-content: flex-end/,
+  );
+  assert.doesNotMatch(
+    productStyles,
+    /\.showcaseFooter \{[^}]*border-block-start/,
+  );
+  assert.doesNotMatch(productStyles, /\.availabilityNote/);
+  assert.match(
+    productStyles,
+    /\.hubLink \{[\s\S]{0,240}font-size: 0\.78rem;[\s\S]{0,80}font-weight: 750/,
+  );
+  assert.match(
+    productStyles,
+    /\.hubLink:hover \{[\s\S]{0,100}text-decoration: underline/,
+  );
+  assert.match(
+    productStyles,
+    /\.hubLink:focus-visible \{[\s\S]{0,100}outline: 3px solid/,
+  );
   assert.doesNotMatch(productStyles, /\.featured\s*\{|\.guideGrid\s*\{/);
   assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
@@ -374,7 +403,7 @@ test("the homepage product showcase exposes every published tour without guide p
       new RegExp(String(publishedTourCount)),
     );
     assert.match(copy.durationLabel(5, 4), /5/);
-    assert.ok(copy.availabilityNote.length > 30);
+    assert.ok(copy.hubActionLabel.length > 8);
     assert.match(copy.intro(publishedTourCount), trustCopy[locale].noShopping);
     assert.match(copy.intro(publishedTourCount), trustCopy[locale].writtenScope);
     assert.match(copy.intro(publishedTourCount), trustCopy[locale].priorAgreement);
@@ -400,6 +429,24 @@ test("the homepage product showcase exposes every published tour without guide p
           : /문의[\s\S]*예약[\s\S]*이동이 불편/,
     );
   }
+
+  assert.equal(
+    getHomepageProductShowcaseCopy("en").hubActionLabel,
+    "Compare all our private China tours",
+  );
+  assert.equal(
+    getHomepageProductShowcaseCopy("zh").hubActionLabel,
+    "查看并比较全部中国私家团",
+  );
+  assert.equal(
+    getHomepageProductShowcaseCopy("ko").hubActionLabel,
+    "중국 프라이빗 투어 전체 비교하기",
+  );
+  assert.deepEqual(privateTourHubPaths, {
+    en: "/tours/",
+    zh: "/zh/tours/",
+    ko: "/ko/tours/",
+  });
 
   for (const product of privateTourProducts) {
     assert.equal(product.servicePolicy.shoppingStops, false);

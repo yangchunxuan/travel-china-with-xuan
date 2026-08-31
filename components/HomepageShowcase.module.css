@@ -231,6 +231,7 @@
   border-block: 1px solid rgb(10 10 10 / 10%);
   padding: var(--showcase-section-space)
     max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+  padding-block-start: 3.5rem;
 }
 
 .decisions {
@@ -582,6 +583,10 @@
 
   .heroActions {
     margin-block-start: 1.5rem;
+  }
+
+  .searchSection {
+    padding-block-start: 2rem;
   }
 
   .decisionIntro {

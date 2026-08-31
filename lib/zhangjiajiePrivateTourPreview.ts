@@ -27,7 +27,7 @@ export const zhangjiajiePrivateTourPaths = {
 export const productPreviewCopy = {
   en: {
     htmlLang: "en",
-    metadataTitle: "Zhangjiajie 4-Day Private Tour: Itinerary & 2026 Price",
+    metadataTitle: "Zhangjiajie 4-Day Private Tour: Price & Inclusions",
     metadataDescription:
       "A private 4-day Zhangjiajie route through Wulingyuan, the Glass Bridge and Tianmen Mountain, with flexible stay choices and a date-checked written quote.",
     previewLabel: "Local editorial preview · not open for booking",

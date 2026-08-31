@@ -11,17 +11,17 @@ const copy = {
     htmlLang: "en",
     path: privateTourHubPaths.en,
     metadata: {
-      title: "China Private Tours",
+      title: "Private China Tours",
       description: (count: number) =>
         `Compare ${count} published private China tours by route, trip length, pace and traveller fit, from Beijing and Xi’an to Zhangjiajie and Jiangnan.`,
       openGraphTitle: (count: number) =>
-        `China Private Tours — Compare ${count} Published Routes`,
+        `Private China Tours — Compare ${count} Published Routes`,
     },
     breadcrumbLabel: "Breadcrumb",
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Private tours",
     eyebrow: (count: number) => `${count} published private journeys`,
-    title: "China private tours, compared clearly.",
+    title: "Compare private China tours by route, pace and travel style.",
     introduction:
       "Start with the geography, pace and experiences that matter to you. Every route below has its own published itinerary; this page helps you compare them before opening the details.",
     quickCompareEyebrow: "Nine-route overview",

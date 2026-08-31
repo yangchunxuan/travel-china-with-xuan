@@ -5,6 +5,7 @@
   border-block-end: 1px solid rgb(10 10 10 / 10%);
   padding: var(--showcase-section-space)
     max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
+  padding-block-end: 2rem;
 }
 
 .inner {
@@ -175,13 +176,35 @@
   outline-offset: 3px;
 }
 
-.availabilityNote {
-  border-block-start: 1px solid rgb(10 10 10 / 11%);
-  color: var(--homepage-product-muted);
-  font-size: 0.75rem;
-  line-height: 1.6;
-  margin: 3.5rem 0 0;
-  padding-block-start: 1rem;
+.showcaseFooter {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: 1rem;
+}
+
+.hubLink {
+  align-items: center;
+  color: var(--showcase-ink);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-weight: 750;
+  gap: 0.55rem;
+  min-block-size: 2.75rem;
+  padding-inline: 0.45rem;
+  text-decoration: none;
+  text-underline-offset: 0.22em;
+}
+
+.hubLink:hover {
+  color: var(--showcase-muted);
+  text-decoration: underline;
+}
+
+.hubLink:focus-visible {
+  outline: 3px solid var(--showcase-focus);
+  outline-offset: 3px;
 }
 
 .section[data-homeground-locale="zh"] .eyebrow,
@@ -234,6 +257,7 @@
 @media (max-width: 39.999rem) {
   .section {
     padding: var(--showcase-section-space) var(--showcase-gutter);
+    padding-block-end: 1rem;
   }
 
   .intro h2 {
@@ -303,8 +327,10 @@
     white-space: nowrap;
   }
 
-  .availabilityNote {
-    margin-block-start: 2rem;
+  .showcaseFooter {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-block-start: 1rem;
   }
 }
 
