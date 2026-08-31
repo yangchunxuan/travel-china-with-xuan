@@ -191,6 +191,23 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "첫 베이징 여행에서 영어 가이드 포함 또는 원격 지원형을 선택하고 싶은 여행자.",
     ),
   },
+  "zhangjiajie-forest-4-day-private-tour": {
+    route: l(
+      "Zhangjiajie · Tianzi Mountain · Yuanjiajie · Golden Whip Stream",
+      "张家界 · 天子山 · 袁家界 · 金鞭溪",
+      "장자제 · 톈쯔산 · 위안자제 · 금편계",
+    ),
+    pace: l(
+      "One villa base with two walking-focused sightseeing days and buffered arrival and departure days.",
+      "同一处别墅连住 3 晚，中间安排两个以步行为主的完整游览日，抵达与离开日保留缓冲。",
+      "한 빌라에서 3박하며 가운데 이틀은 걷기 중심으로 관광하고 도착일과 출발일에는 여유를 둡니다.",
+    ),
+    fit: l(
+      "Budget-conscious walkers who want the forest park without cable cars, elevators or elective add-ons.",
+      "想控制预算、能够步行，并愿意用徒步替代索道、电梯和自选加项的旅客。",
+      "예산을 아끼면서 케이블카·엘리베이터·추가 옵션 대신 걷기를 선택할 수 있는 여행자.",
+    ),
+  },
   "zhangjiajie-4-day-private-tour": {
     route: l(
       "Zhangjiajie · Wulingyuan · Glass Bridge · Tianmen Mountain",

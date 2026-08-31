@@ -11,6 +11,7 @@ export const privateTourInquirySlugs = [
   "harbin-winter-5-day-private-tour",
   "shanghai-suzhou-5-day-private-tour",
   "beijing-highlights-5-day-private-tour",
+  "zhangjiajie-forest-4-day-private-tour",
   "zhangjiajie-4-day-private-tour",
 ] as const;
 
@@ -64,6 +65,11 @@ const privateTourInquiryNames: Readonly<
     en: "Beijing Highlights: 5-Day Private Tour",
     zh: "北京经典 5 天 4 晚私家团",
     ko: "베이징 핵심 5일 프라이빗 투어",
+  },
+  "zhangjiajie-forest-4-day-private-tour": {
+    en: "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
+    zh: "张家界森林公园 4 天 3 晚固定路线私家团",
+    ko: "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
   },
   "zhangjiajie-4-day-private-tour": {
     en: "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain",
