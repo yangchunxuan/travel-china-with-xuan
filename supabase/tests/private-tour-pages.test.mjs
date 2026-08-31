@@ -224,6 +224,41 @@ test("public price tiers stay complete, positive and conversion-safe", () => {
   }
 });
 
+test("Zhangjiajie forest fixed route keeps its price and service boundary", () => {
+  const product = getPrivateTourProduct(
+    "zhangjiajie-forest-4-day-private-tour",
+  );
+  assert.ok(product);
+  assert.equal(product.id, "private-tour-zhangjiajie-forest-fixed-4d3n");
+  assert.equal(product.days, 4);
+  assert.equal(product.nights, 3);
+  assert.deepEqual(
+    product.itinerary.map(({ day }) => day),
+    [1, 2, 3, 4],
+  );
+  assert.equal(product.packages.length, 1);
+  assert.equal(product.packages[0].id, "fixed-route-english-guided");
+  assert.deepEqual(product.packages[0].prices, [
+    { travelers: 2, cnyPerPerson: 4199 },
+    { travelers: 4, cnyPerPerson: 2399 },
+  ]);
+
+  const zh = localizePrivateTourProduct(product, "zh");
+  assert.match(zh.hotelNote, /三晚固定入住同一处指定碧桂园家庭别墅/);
+  assert.match(zh.itinerary[1].description, /天子山北门/);
+  assert.match(zh.itinerary[1].description, /不乘索道或电梯/);
+  assert.match(zh.itinerary[2].description, /十里画廊开放游览段步行往返/);
+  assert.match(zh.itinerary[2].description, /普通夜场由客人自由游览/);
+  assert.match(zh.itinerary[2].description, /没有现场导游/);
+  assert.match(zh.serviceNote, /D2 全天及 D3 白天英语导游/);
+  assert.match(zh.serviceNote, /必买保险/);
+  assert.match(zh.exclusions.join("\n"), /百龙天梯/);
+  assert.match(zh.exclusions.join("\n"), /十里画廊小火车/);
+  assert.match(zh.bookingNote, /固定路线/);
+  assert.match(zh.bookingNote, /不设置自选景点，也不在现场临时加项/);
+  assert.doesNotMatch(zh.bookingNote, /二选一/);
+});
+
 test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices", () => {
   const product = getPrivateTourProduct(shanghaiJiangnanSlug);
   assert.ok(product);

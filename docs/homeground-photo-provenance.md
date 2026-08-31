@@ -1432,3 +1432,24 @@ premium/signature-stay frames from the public layouts. Days without an accurate,
 saleable photograph now use a text-led route panel instead of recycling a hero
 or gallery image. The files may remain in the repository as historical source
 material, but the product pages do not render them.
+
+## Zhangjiajie forest fixed-route product media (August 31, 2026)
+
+The `zhangjiajie-forest-4-day-private-tour` page uses seven real photographs
+selected from the project owner's organised Zhangjiajie and Country Garden
+villa libraries. The owner authorised these organised libraries for Homeground
+website use; this project-entry permission is not independent proof of the
+original photographer's copyright and should be re-cleared before paid media,
+print, resale or partner distribution. Processing was limited to deterministic
+16:10 crop, resize and JPEG encoding. No scene content was added, removed or
+generated, so this page contains **0 AI-generated or AI-assisted images**.
+
+| Product role | Original local path and source SHA-256 | Published derivative and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- |
+| Hero — forest pillars | `/Users/yangchunxuan/Desktop/Facebook图片素材/张家界优选素材/01_国家森林公园与峰林/国家森林公园峰林_173.jpg`; `45a183c16aca18f0e5143874ce64d592dc5636a96050c04817e9e4927485e550` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/hero-morning-pillars-1600.jpg`; 1600 × 1000; `b6e31b217206d92090e20f7c5ee1245304500b2ecec24d361be4cbf825200245` | Zhangjiajie forest-pillar landscape only; no exact viewpoint, weather or visibility promise. |
+| Gallery — misted pillars | `/Users/yangchunxuan/Desktop/Facebook图片素材/张家界优选素材/01_国家森林公园与峰林/国家森林公园峰林_203.jpg`; `3fe7b0f865d3b2157d3a269ccbe425162d49017eb44a2a1c7fde89e037a3365c` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/gallery-mist-pillars-1600.jpg`; 1600 × 1000; `9e759e48eab61d743dc1d4a22eaf1f6c4c82cba40f661fb516435c07ff6ea217` | Mountain atmosphere only; no fog, weather or identical view is promised. |
+| Gallery — villa living room | `/Users/yangchunxuan/张家界4天3晚私家定制产品资料库/assets/accommodations/family-villa/01_客厅落地窗_主推.JPG`; `0294a4c1e69c10e68c354a387fc5fcbab08be2e2682d77f495c59c880a9e9b2a` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/gallery-villa-living-room-1600.jpg`; 1600 × 1000; `925c3bb8bf50d3bfd6f584a60d74439e8186d24c6b772a32e6a4926fe8507802` | Shows the designated villa resource collection, not a guaranteed unit or room allocation. |
+| D1 — villa twin room | `/Users/yangchunxuan/张家界4天3晚私家定制产品资料库/assets/accommodations/family-villa/02_双床房_主推.jpg`; `385c5defa24d057cc48788b04065125c70885166ac6028d88ae52e0004efb72f` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/day-1-villa-twin-room-1600.jpg`; 1600 × 1000; `acd5c42d677a674932ebfe7ab063f09b7cb725552891cd0aff90857268d9e90c` | Shows one twin-room example; final villa, bed split, breakfast and foreign-guest registration require written confirmation. |
+| D2 — high pillars | `/Users/yangchunxuan/Desktop/Facebook图片素材/张家界优选素材/01_国家森林公园与峰林/国家森林公园峰林_234.jpg`; `b673c8d2decbc40e91cb1fd3d99c4147fcb747558a5e94cb38d1759dbbf2e523` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/day-2-tianzi-pillars-1600.jpg`; 1600 × 1000; `9f8fe740467d31f4c6e5e60311bddad21ef2c272335c22be899643058f36b4a9` | Represents Day 2 peak terrain only; it does not identify a particular platform or the operating order. |
+| D3 — forest stream | `/Users/yangchunxuan/Desktop/Facebook图片素材/张家界优选素材/04_金鞭溪与溪谷/溪谷水景_210.jpg`; `0337671c91e055f6907ddab63ab0c599126b7eec7c38fb27c48c19a87f623114` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/day-3-golden-whip-stream-1600.jpg`; 1600 × 1000; `12f03e18fd4548f50ef0a4eb75d5003aec5f31d8c0aa8b733dc1b5b2a269b20d` | Represents the forest-stream walking environment; water level, weather and visibility vary. |
+| D4 — villa terrace | `/Users/yangchunxuan/张家界4天3晚私家定制产品资料库/assets/accommodations/family-villa/04_露台草坪_主推.JPG`; `ab1f0d59eeccfe4cd6febf1c8a81d72a063d7e553bccfc48c7beec315865122c` | `public/images/tours/zhangjiajie-forest-4-day-private-tour/day-4-villa-terrace-1600.jpg`; 1600 × 1000; `d4adc5c79603511eba99541caeb03ca978542f1d94c028a5a0e71c4132bba474` | Shows a terrace in the designated villa resource collection; it does not guarantee a particular outlook or unit. |

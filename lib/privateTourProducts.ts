@@ -2412,6 +2412,271 @@ const beijing: PrivateTourProduct = {
   dateModified: MODIFIED,
 };
 
+const zhangjiajieForestFixedRoute: PrivateTourProduct = {
+  id: "private-tour-zhangjiajie-forest-fixed-4d3n",
+  slug: "zhangjiajie-forest-4-day-private-tour",
+  days: 4,
+  nights: 3,
+  servicePolicy: standardServicePolicy,
+  title: l(
+    "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
+    "张家界森林公园 4 天 3 晚固定路线私家团",
+    "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+  ),
+  eyebrow: l(
+    "One villa · Two walking days · No paid mountain transport",
+    "三晚同住别墅 · 两天步行看峰林 · 不坐收费山地交通",
+    "한 빌라 3박 · 이틀간 걷는 산림 코스 · 유료 산악 교통 미이용",
+  ),
+  lede: l(
+    "A lower-priced private route for travellers who want Zhangjiajie’s forest landscapes without cable cars, elevators or last-minute add-ons. Stay in the same Country Garden villa for all three nights, use the north gate for the high peaks, then walk the east-gate valleys before an evening at Seventy-Two Wonder Tower.",
+    "这是一条不坐索道、电梯，也不靠临时加项抬价的张家界低价私家路线。三晚固定入住同一处碧桂园别墅；第二天从北门看高山峰林，第三天从东门步行溪谷，再夜游七十二奇楼。",
+    "케이블카와 엘리베이터, 현장 추가 옵션 없이 장자제의 산림 풍경을 보는 합리적인 프라이빗 코스입니다. 3박 모두 같은 컨트리 가든 빌라에 머물고, 둘째 날은 북문 산악 코스, 셋째 날은 동문 계곡 산책과 칠십이기루 야경을 이어갑니다.",
+  ),
+  summary: l(
+    "Three nights in a designated Country Garden family villa with breakfast, private station or airport transfers, private transport on the fixed route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+    "含指定碧桂园家庭别墅 3 晚及早餐、机场或车站接送、固定路线私车、D2 全天与 D3 白天英语导游，以及行程所列成人门票。七十二奇楼夜场为自由活动，含专车送达、夜间接回与远程协助。",
+    "지정 컨트리 가든 패밀리 빌라 3박과 조식, 공항·역 픽업 및 샌딩, 고정 일정 전용 차량, D2 종일과 D3 주간 영어 가이드, 명시된 성인 입장권이 포함됩니다. 칠십이기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다.",
+  ),
+  highlights: lists(
+    [
+      "Tianzi Mountain, Yangjiajie and Yuanjiajie from the north gate",
+      "Ten-Mile Gallery on foot and the eastern Golden Whip Stream",
+      "A self-guided evening at Seventy-Two Wonder Tower with private transfers",
+      "The same designated Country Garden villa for all three nights",
+    ],
+    [
+      "从北门串联天子山、杨家界与袁家界",
+      "全程步行十里画廊，并游览金鞭溪东段",
+      "七十二奇楼夜场自由游览，含专车往返",
+      "三晚固定入住同一处指定碧桂园别墅",
+    ],
+    [
+      "북문에서 톈쯔산·양자제·위안자제를 연결",
+      "십리화랑을 걸어서 왕복하고 금편계 동쪽 구간 산책",
+      "전용 차량 왕복이 포함된 칠십이기루 자유 야간 관람",
+      "3박 모두 같은 지정 컨트리 가든 빌라 이용",
+    ],
+  ),
+  itinerary: [
+    day(
+      1,
+      l("Arrive and settle in", "抵达张家界并入住", "장자제 도착 및 체크인"),
+      l(
+        "Meet the driver at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station and travel by private vehicle to the designated Country Garden villa. Check in and rest; no scenic-area visit is scheduled. This villa remains the group’s base for all three nights.",
+        "司机在张家界荷花机场或张家界西站接客，乘专车前往指定碧桂园别墅。办理入住后休息，当天不安排景区；三晚均以这处别墅为固定住宿，不中途换酒店。",
+        "장자제 허화공항 또는 장자제서역에서 기사를 만나 전용 차량으로 지정 컨트리 가든 빌라로 이동합니다. 체크인 후 쉬며 관광지는 넣지 않습니다. 3박 모두 같은 빌라를 거점으로 이용합니다.",
+      ),
+    ),
+    day(
+      2,
+      l(
+        "Tianzi Mountain, Yangjiajie and Yuanjiajie",
+        "天子山、杨家界与袁家界",
+        "톈쯔산·양자제·위안자제",
+      ),
+      l(
+        "Leave the villa at about 07:45 for Tianzi Mountain North Gate. Use the included scenic shuttles via Sancha Junction to visit Dianjiangtai, the Tianzi Mountain core area, the short Natural Great Wall walk in Yangjiajie, and Yuanjiajie’s main viewpoints before returning by shuttle to the north gate and then by private vehicle to the villa at about 18:30. Allow roughly 10–11 hours door to door and 4–7 km of walking. No cable car or elevator is used; the operating order may change for official closures, last-shuttle times, weather, safety or crowd control without casually removing the listed core stops.",
+        "约 07:45 从别墅出发前往天子山北门，使用已含的景区环保车，经三岔口游览点将台、天子山核心区域、杨家界天然长城短线和袁家界主要观景点；随后乘环保车返回北门，再乘专车回别墅，正常约 18:30 抵达。门到门约 10–11 小时，步行约 4–7 公里。当天不乘索道或电梯；如遇官方关闭、末班环保车、天气、安全或限流，执行顺序可以调整，但不会为普通进度随意删减已列核心内容。",
+        "07:45경 빌라에서 출발해 톈쯔산 북문으로 이동합니다. 포함된 관광 셔틀을 이용해 싼차 교차점, 뎬장타이, 톈쯔산 핵심 구역, 양자제 천연장성 짧은 산책로와 위안자제 주요 전망대를 둘러본 뒤 북문으로 돌아와 전용 차량으로 18:30경 빌라에 도착합니다. 총 10~11시간, 도보 약 4~7km의 일정입니다. 케이블카와 엘리베이터는 이용하지 않으며, 공식 폐쇄·막차·날씨·안전·혼잡 통제 시 핵심 장소를 임의로 빼지 않는 범위에서 순서를 조정할 수 있습니다.",
+      ),
+    ),
+    day(
+      3,
+      l(
+        "Ten-Mile Gallery, Golden Whip Stream and the night lights",
+        "十里画廊、金鞭溪与七十二奇楼夜景",
+        "십리화랑·금편계·칠십이기루 야경",
+      ),
+      l(
+        "Leave at about 07:30 for the east gate. Walk the open section of Ten-Mile Gallery out and back, take the included shuttle to Water Winding Four Gates, and walk the eastern Golden Whip Stream out and back toward the Tiaoyutan area. After a simple lunch break, visit the World Geopark Museum when open, then return to the villa at about 15:00. At about 17:30, the driver takes the group to Seventy-Two Wonder Tower; explore the regular evening session independently and meet the driver at the agreed point at about 20:30. The English-speaking guide covers the daytime route only; the evening includes private drop-off, pickup and remote assistance. The Ten-Mile Gallery mini-train is not used.",
+        "约 07:30 从别墅出发前往东门。十里画廊开放游览段步行往返，再乘已含的环保车前往水绕四门，沿金鞭溪东段步行至跳鱼潭附近后原路返回。简单午餐休息后，在开放时参观世界地质公园博物馆，正常约 15:00 回别墅休息。约 17:30 由司机送往七十二奇楼，普通夜场由客人自由游览，约 20:30 在约定地点会合返回。英语导游只陪同白天路线；夜场含专车送达、接回和远程协助，但没有现场导游。当天不乘十里画廊小火车。",
+        "07:30경 동문으로 출발합니다. 십리화랑의 개방 구간을 걸어서 왕복한 뒤 포함된 셔틀로 수요사문에 이동하고, 금편계 동쪽 구간을 도약담 부근까지 왕복 산책합니다. 간단한 점심 휴식 후 운영 중이면 세계지질공원박물관을 관람하고 15:00경 빌라에서 쉽니다. 17:30경 기사가 칠십이기루로 이동시키며, 일반 야간 회차는 자유 관람 후 20:30경 약속 장소에서 다시 만나 돌아옵니다. 영어 가이드는 주간 일정까지만 동행하고 야간에는 전용 차량 왕복과 원격 지원만 제공됩니다. 십리화랑 미니 열차는 이용하지 않습니다.",
+      ),
+    ),
+    day(
+      4,
+      l("Breakfast and departure", "早餐后从容离开", "조식 후 출발"),
+      l(
+        "Have breakfast at the villa and rest until the confirmed pickup time. Check out and travel by private vehicle to Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station. No attraction is added on departure day, reducing the risk of a rushed connection.",
+        "在别墅用早餐，并按已确认的接送时间自由休息。退房后乘专车前往张家界荷花机场或张家界西站。离开日不再增加景区，避免因游览造成赶车或赶飞机风险。",
+        "빌라에서 조식 후 확정된 픽업 시간까지 쉬고 체크아웃합니다. 전용 차량으로 장자제 허화공항 또는 장자제서역에 이동하며, 항공편이나 열차 연결을 서두르지 않도록 출발일에는 관광지를 추가하지 않습니다.",
+      ),
+    ),
+  ],
+  hotelNote: l(
+    "Three nights in the same designated Country Garden family villa, with breakfast and twin sharing as the base arrangement; the accommodation is not changed during the route. The exact villa unit, bedroom allocation, foreign-guest registration, breakfast arrangement and any single-room difference are confirmed before payment.",
+    "三晚固定入住同一处指定碧桂园家庭别墅，基础口径为两人一间并含早餐，行程中不更换住宿。具体别墅单元、卧室分配、外宾登记、早餐安排和单房差均在付款前确认。",
+    "3박 모두 같은 지정 컨트리 가든 패밀리 빌라에 머물며 기본은 2인 1실과 조식 포함입니다. 일정 중 숙소를 바꾸지 않으며, 정확한 빌라 동·객실 배정·외국인 숙박 등록·조식과 1인실 차액은 결제 전에 확정합니다.",
+  ),
+  serviceNote: l(
+    "Includes driver transfers on Days 1 and 4, private transport throughout the listed route, an English-speaking guide for all of Day 2 and the daytime route on Day 3, the adult Wulingyuan admission-and-shuttle package with required insurance, and standard evening admission to Seventy-Two Wonder Tower with insurance. The Day 3 evening is self-guided with private drop-off, pickup and remote assistance. No shopping stops.",
+    "含 D1/D4 司机接送、行程所列私车、D2 全天及 D3 白天英语导游、成人武陵源门票与环保车联票及必买保险、七十二奇楼普通夜场票及保险。D3 夜场为自由活动，含专车送达、接回和远程协助。全程无购物店安排。",
+    "D1·D4 기사 이동, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 영어 가이드, 필수 보험이 포함된 성인 우링위안 입장권·셔틀 패키지, 보험이 포함된 칠십이기루 일반 야간 입장권이 포함됩니다. D3 야간은 자유 관람이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
+  ),
+  exclusions: commonExclusions(
+    [
+      "Bailong Elevator, Tianzi Mountain Cableway and Yangjiajie Cableway",
+      "Ten-Mile Gallery mini-train and any other paid scenic transport",
+      "An on-site guide during the Seventy-Two Wonder Tower evening",
+      "Paid museum experiences, shows or any item not listed in the fixed route",
+    ],
+    [
+      "百龙天梯、天子山索道与杨家界索道",
+      "十里画廊小火车及其他收费景区交通",
+      "七十二奇楼夜场现场导游",
+      "博物馆收费体验、另购演出及固定路线未列项目",
+    ],
+    [
+      "백룡 엘리베이터, 톈쯔산 케이블카와 양자제 케이블카",
+      "십리화랑 미니 열차 및 기타 유료 관광지 교통",
+      "칠십이기루 야간 현장 가이드",
+      "박물관 유료 체험, 별도 공연 및 고정 일정에 명시되지 않은 항목",
+    ],
+  ),
+  bookingNote: l(
+    "This is a fixed route with no elective attraction swap or last-minute add-on. The exact villa, room plan, vehicle and ticket inventory must be reconfirmed for the selected non-holiday dates before payment. The published per-person starting prices cover groups of 2 and 4 travellers; flights are not included. Other group sizes and all child prices require a manual quote based on age, bed use and vehicle seats.",
+    "本产品为固定路线，不设置自选景点，也不在现场临时加项。指定非节假日的别墅、房间分配、车型与票务库存须在付款前再次确认。网页仅公开 2 人和 4 人的每人起价，往返机票另计；其他人数及所有儿童价格均须按年龄、占床和车辆座位人工核价。",
+    "이 상품은 관광지 선택 교체나 현장 추가 옵션이 없는 고정 코스입니다. 선택한 비공휴일의 빌라·객실 구성·차량과 입장권 재고는 결제 전에 다시 확인합니다. 공개된 항공권 제외 1인 시작가는 2명과 4명 기준이며, 다른 인원과 모든 아동 요금은 나이·침대 사용·차량 좌석에 따라 별도 견적이 필요합니다.",
+  ),
+  heroImage: image(
+    "/images/tours/zhangjiajie-forest-4-day-private-tour/hero-morning-pillars-1600.jpg",
+    l(
+      "Layered sandstone pillars in Zhangjiajie National Forest Park",
+      "张家界国家森林公园层叠的砂岩峰柱",
+      "장자제 국립삼림공원의 겹겹이 이어진 사암 봉우리",
+    ),
+    l(
+      "The fixed route spends its first full touring day among the high forest pillars.",
+      "固定路线的第一个完整游览日深入高山峰林。",
+      "고정 일정의 첫 종일 관광은 높은 산림 봉우리 지대에서 진행됩니다.",
+    ),
+    1600,
+    1000,
+  ),
+  gallery: [
+    image(
+      "/images/tours/zhangjiajie-forest-4-day-private-tour/gallery-mist-pillars-1600.jpg",
+      l(
+        "Mist moving between Zhangjiajie’s forest pillars",
+        "云雾穿行于张家界峰林之间",
+        "장자제 봉우리 사이로 흐르는 안개",
+      ),
+      l(
+        "Visibility and weather change quickly in the mountains; the photograph describes the landscape, not a guaranteed view.",
+        "山区能见度与天气变化较快；照片用于呈现地貌，不代表保证出现同样景观。",
+        "산악 지역의 날씨와 시야는 빠르게 변하므로 사진은 지형을 보여 줄 뿐 동일한 전망을 보장하지 않습니다.",
+      ),
+      1600,
+      1000,
+    ),
+    image(
+      "/images/tours/zhangjiajie-forest-4-day-private-tour/gallery-villa-living-room-1600.jpg",
+      l(
+        "Living room in the designated Country Garden villa collection",
+        "指定碧桂园别墅资源中的客厅",
+        "지정 컨트리 가든 빌라 객실군의 거실",
+      ),
+      l(
+        "A villa reference image; the exact unit and bedroom allocation are written into the booking confirmation.",
+        "此图为别墅资源实拍参考；具体单元与卧室分配以订单确认单为准。",
+        "빌라 실제 참고 사진이며 정확한 동과 객실 배정은 예약 확인서에 기재합니다.",
+      ),
+      1600,
+      1000,
+    ),
+  ],
+  routeMedia: [
+    routeGroup(
+      1,
+      routeVariant(
+        l("Country Garden villa", "碧桂园别墅", "컨트리 가든 빌라"),
+        "/images/tours/zhangjiajie-forest-4-day-private-tour/day-1-villa-twin-room-1600.jpg",
+        l(
+          "Twin bedroom in the designated Country Garden villa collection",
+          "指定碧桂园别墅资源中的双床卧室",
+          "지정 컨트리 가든 빌라 객실군의 트윈룸",
+        ),
+        l(
+          "The same villa base is used for all three nights; the exact room split is confirmed before payment.",
+          "三晚均使用同一处别墅住宿；具体房间分配在付款前确认。",
+          "3박 모두 같은 빌라를 사용하며 정확한 객실 배정은 결제 전에 확정합니다.",
+        ),
+      ),
+    ),
+    routeGroup(
+      2,
+      routeVariant(
+        l("High forest pillars", "高山峰林", "고산 봉우리 숲"),
+        "/images/tours/zhangjiajie-forest-4-day-private-tour/day-2-tianzi-pillars-1600.jpg",
+        l(
+          "A steep forest pillar rising above the Zhangjiajie valley",
+          "从张家界山谷中拔地而起的峰柱",
+          "장자제 계곡 위로 솟은 가파른 사암 봉우리",
+        ),
+        l(
+          "The photograph represents Day 2’s peak terrain and does not claim a particular viewpoint or viewing order.",
+          "照片用于呈现 D2 的峰林地貌，不把画面标成某个具体观景台或固定观看顺序。",
+          "사진은 D2의 봉우리 지형을 보여 주며 특정 전망대나 관람 순서를 뜻하지 않습니다.",
+        ),
+      ),
+    ),
+    routeGroup(
+      3,
+      routeVariant(
+        l("Golden Whip Stream valley", "金鞭溪谷", "금편계 계곡"),
+        "/images/tours/zhangjiajie-forest-4-day-private-tour/day-3-golden-whip-stream-1600.jpg",
+        l(
+          "A forest stream and footbridge in Zhangjiajie’s valley landscape",
+          "张家界溪谷中的森林、溪流与步道桥",
+          "장자제 계곡의 숲과 물길, 산책로 다리",
+        ),
+        l(
+          "The valley scene introduces the eastern Golden Whip Stream walk; water levels and visibility vary with weather.",
+          "溪谷画面用于呈现金鞭溪东段步行环境；水量与能见度会随天气变化。",
+          "계곡 풍경은 금편계 동쪽 산책 환경을 보여 주며 수량과 시야는 날씨에 따라 달라집니다.",
+        ),
+      ),
+    ),
+    routeGroup(
+      4,
+      routeVariant(
+        l("A quiet departure morning", "从容离开的早晨", "여유로운 출발 아침"),
+        "/images/tours/zhangjiajie-forest-4-day-private-tour/day-4-villa-terrace-1600.jpg",
+        l(
+          "Garden terrace at the designated Country Garden villa collection",
+          "指定碧桂园别墅资源中的花园露台",
+          "지정 컨트리 가든 빌라 객실군의 정원 테라스",
+        ),
+        l(
+          "Departure day is left free of sightseeing so the transfer can follow the confirmed flight or train.",
+          "离开日不再加景点，接送时间按已确认航班或高铁安排。",
+          "출발일에는 관광지를 넣지 않고 확정된 항공편이나 열차에 맞춰 이동합니다.",
+        ),
+      ),
+    ),
+  ],
+  packages: [
+    guidedPackage(
+      "fixed-route-english-guided",
+      "guided",
+      l(
+        "Fixed route with English guide",
+        "固定路线英语导游版",
+        "영어 가이드 포함 고정 코스",
+      ),
+      l(
+        "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+        "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
+        "D2 종일과 D3 주간 일정에는 영어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
+      ),
+      [4199, 2399],
+    ),
+  ],
+  datePublished: "2026-08-31",
+  dateModified: "2026-08-31",
+};
+
 export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
   [
     shanghaiSuzhouHangzhou,
@@ -2422,6 +2687,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     harbinWinter,
     shanghaiSuzhou,
     beijing,
+    zhangjiajieForestFixedRoute,
   ],
 );
 
@@ -2437,6 +2703,8 @@ const englishMetadataDescriptions: Readonly<Record<string, string>> =
       "Five-day private Shanghai and Suzhou tour with a Ctrip 4-Diamond stay, guided sightseeing, private transfers and return high-speed rail.",
     "beijing-highlights-5-day-private-tour":
       "Five-day private Beijing tour with a Ctrip 4-Diamond stay, airport transfers, three touring days and listed admissions. Guided and no-guide options.",
+    "zhangjiajie-forest-4-day-private-tour":
+      "Four-day fixed-route Zhangjiajie forest tour with one villa base, private transport, two guided sightseeing days and listed adult admissions.",
   });
 
 export const privateTourProductsBySlug: Readonly<
