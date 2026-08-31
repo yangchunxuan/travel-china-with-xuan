@@ -214,13 +214,28 @@ test("Hangzhou and Zhangjiajie shared bodies carry three localized stay handoffs
 
 test("five city stay owners keep locale parity, links and factual review dates", async () => {
   const owners = {
-    "shanghai-where-to-stay-first-trip": "2026-08-12",
-    "xian-where-to-stay-city-wall-or-dayanta": "2026-08-12",
-    "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": "2026-08-12",
-    "shenzhen-where-to-stay-futian-luohu-nanshan": "2026-08-13",
-    "zhangjiajie-city-or-wulingyuan-hotel-base": "2026-08-13",
+    "shanghai-where-to-stay-first-trip": {
+      modified: "2026-08-21",
+      reviewed: "2026-08-12",
+    },
+    "xian-where-to-stay-city-wall-or-dayanta": {
+      modified: "2026-09-01",
+      reviewed: "2026-08-12",
+    },
+    "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": {
+      modified: "2026-08-21",
+      reviewed: "2026-08-12",
+    },
+    "shenzhen-where-to-stay-futian-luohu-nanshan": {
+      modified: "2026-08-21",
+      reviewed: "2026-08-13",
+    },
+    "zhangjiajie-city-or-wulingyuan-hotel-base": {
+      modified: "2026-08-21",
+      reviewed: "2026-08-13",
+    },
   };
-  for (const [owner, expectedSourceDate] of Object.entries(owners)) {
+  for (const [owner, expectedDates] of Object.entries(owners)) {
     const localeSources = {};
     for (const locale of ["en", "zh", "ko"]) {
       const source = await read(`content/guides/${owner}/body.${locale}.ts`);
@@ -237,8 +252,8 @@ test("five city stay owners keep locale parity, links and factual review dates",
     assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.zh));
     assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.ko));
     const metadata = JSON.parse(await read(`content/guides/${owner}/metadata.json`));
-    assert.equal(metadata.dateModified, "2026-08-21");
-    assert.equal(metadata.sourceReviewedDate, expectedSourceDate);
+    assert.equal(metadata.dateModified, expectedDates.modified);
+    assert.equal(metadata.sourceReviewedDate, expectedDates.reviewed);
   }
 });
 

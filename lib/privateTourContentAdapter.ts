@@ -79,8 +79,8 @@ function buildPrivateTourHubNode(): ContentNode {
     legacyAliases: [],
     dates: {
       datePublished: "2026-08-24",
-      dateModified: "2026-08-24",
-      lastReviewed: "2026-08-24",
+      dateModified: "2026-08-31",
+      lastReviewed: "2026-08-31",
     },
     updatePolicy: {
       volatility: "high",
@@ -140,7 +140,7 @@ export function buildPrivateTourContentNodes(): ContentNode[] {
         dates: {
           datePublished: product.datePublished,
           dateModified: product.dateModified,
-          lastReviewed: product.dateModified,
+          lastReviewed: product.lastReviewed ?? product.dateModified,
         },
         updatePolicy: {
           volatility: "high",

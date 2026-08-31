@@ -26,6 +26,8 @@ import {
   buildPrivateTourInquiryHref,
   getPrivateTourInquiryContext,
 } from "../lib/privateTourInquiryContext";
+import { getLegacySystemContentLifecycle } from "../lib/legacySystemContentLifecycle";
+import { ZhangjiajieTourComparisonLink } from "./ZhangjiajieTourComparisonLink";
 
 const photoCreditCopy = {
   en: {
@@ -92,6 +94,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
   };
   const canonicalPath = languagePaths[locale];
   const pageUrl = `https://homegroundchina.com${canonicalPath}`;
+  const lifecycle = getLegacySystemContentLifecycle(
+    "zhangjiajie-4-day-private-tour",
+  );
   const structuredData = published
     ? {
         "@context": "https://schema.org",
@@ -103,6 +108,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
             name: copy.metadataTitle,
             description: copy.metadataDescription,
             inLanguage: copy.htmlLang,
+            datePublished: lifecycle.datePublished,
+            dateModified: lifecycle.dateModified,
             isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
             mainEntity: { "@id": `${pageUrl}#tour` },
           },
@@ -588,7 +595,15 @@ export function ZhangjiajiePrivateTourPreviewPage({
                 </ul>
               </section>
             </div>
-            <p className={styles.scopeNote}>{copy.confirmationNote}</p>
+            <p className={styles.scopeNote}>
+              {copy.confirmationNote}
+              {published ? (
+                <ZhangjiajieTourComparisonLink
+                  currentRoute="classic"
+                  locale={locale}
+                />
+              ) : null}
+            </p>
           </section>
 
           <section

@@ -249,6 +249,8 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "继续处理张家界的其他旅行问题",
       items: [
+        { label: "比较 4 天森林公园固定路线私家团", href: "/zh/tours/zhangjiajie-forest-4-day-private-tour/", description: "三晚同住一处别墅，从北门走高山峰林、从东门走溪谷，全程不乘索道或电梯。" },
+        { label: "比较张家界 4 天经典私家游", href: "/zh/tours/zhangjiajie-4-day-private-tour/", description: "选择包含百龙天梯、大峡谷玻璃桥与天门山的经典景点组合。" },
         { label: "张家界需要几天？", href: "/zh/guides/zhangjiajie-itinerary/", description: "由行程页把公园交通链分配到整趟旅行。" },
         { label: "住张家界市区还是武陵源？", href: "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "酒店基地与景区交易分开决定。" },
         { label: "张家界玻璃桥还是山顶玻璃栈道？", href: "/zh/guides/zhangjiajie-glass-bridge-vs-skywalk/", description: "分清大峡谷与山岳景点。" },

@@ -377,6 +377,7 @@ export default {
       type: "internal-links",
       title: "병마용 하루를 전체 중국 여행에 연결하세요",
       items: [ { label: "시안 도시 허브", href: "/ko/destinations/xian/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 다음 도시를 먼저 정하세요." },
+        { label: "병마용 하루가 포함된 시안 5일 프라이빗 투어 보기", href: "/ko/tours/xian-terracotta-warriors-5-day-private-tour/", description: "자유 관람 방식과 린퉁 방문, 시내 이동, 영어 가이드 3일을 묶은 프라이빗 코스를 비교하세요." },
         {
           label: "처음 타는 중국 고속철도",
           href: "/ko/guides/china-high-speed-train-first-time-guide/",

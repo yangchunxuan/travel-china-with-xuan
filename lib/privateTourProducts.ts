@@ -70,6 +70,7 @@ export interface PrivateTourProduct {
   packages: readonly PrivateTourPackage[];
   datePublished: string;
   dateModified: string;
+  lastReviewed?: string;
 }
 
 export interface LocalizedPrivateTourImage {
@@ -2674,7 +2675,8 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-08-31",
+  dateModified: "2026-09-01",
+  lastReviewed: "2026-08-31",
 };
 
 export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
