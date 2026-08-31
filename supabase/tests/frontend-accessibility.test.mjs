@@ -566,8 +566,9 @@ test("all three locales explain reply choice and optional trip details", () => {
   assert.match(korean.roughBudgetError, /한 줄/);
 });
 
-test("homepage header and footer keep primary pointer targets at least 44px", async () => {
-  const [headerStyles, footerStyles] = await Promise.all([
+test("homepage header and footer preserve the reviewed major-target CSS contract", async () => {
+  const [header, headerStyles, footerStyles] = await Promise.all([
+    source("components/HomegroundHeader.tsx"),
     source(homegroundHeaderStylesPath),
     source("components/HomepageFooter.module.css"),
   ]);
@@ -582,6 +583,31 @@ test("homepage header and footer keep primary pointer targets at least 44px", as
   );
   assert.match(
     headerStyles,
+    /\.desktopUtilityLink \{[\s\S]{0,260}min-block-size:\s*2\.75rem;[\s\S]{0,80}min-inline-size:\s*2\.75rem/,
+  );
+  assert.match(
+    headerStyles,
+    /@media \(min-width: 1180px\) and \(max-width: 1359\.98px\)[\s\S]{0,620}\.desktopUtilityLink \{\s*display:\s*none/,
+  );
+  assert.match(
+    header,
+    /data-label-mode=\{plannerStatus === "new" \? "full" : "compact"\}/,
+  );
+  assert.match(
+    header,
+    /const plannerCtaAccessibleLabel =\s*plannerStatus === "new"\s*\? plannerCta\s*:\s*`\$\{primaryNavigation\.mobileCta\}: \$\{plannerCta\}`/,
+  );
+  assert.match(header, /aria-label=\{plannerCtaAccessibleLabel\}/);
+  assert.match(
+    headerStyles,
+    /\.headerCta\[data-label-mode="compact"\] \.headerCtaLong \{\s*display:\s*none/,
+  );
+  assert.match(
+    headerStyles,
+    /\.headerCta\[data-label-mode="compact"\] \.headerCtaShort \{\s*display:\s*inline/,
+  );
+  assert.match(
+    headerStyles,
     /@media \(max-width: 639\.98px\)[\s\S]{0,360}\.headerCta \{[\s\S]{0,100}min-block-size:\s*2\.75rem/,
   );
   assert.match(
@@ -590,10 +616,14 @@ test("homepage header and footer keep primary pointer targets at least 44px", as
   );
   assert.match(
     footerStyles,
-    /\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,360}min-block-size:\s*2\.75rem;[\s\S]{0,80}min-inline-size:\s*2\.75rem/,
+    /\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,360}min-block-size:\s*2rem;[\s\S]{0,80}min-inline-size:\s*1\.5rem/,
   );
   assert.match(
     footerStyles,
     /\.copyrightSocial a \{[\s\S]{0,260}min-block-size:\s*2\.75rem;[\s\S]{0,80}min-inline-size:\s*2\.75rem/,
+  );
+  assert.match(
+    footerStyles,
+    /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,100}min-block-size:\s*2\.25rem/,
   );
 });

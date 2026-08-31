@@ -97,8 +97,8 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.4;
-  min-block-size: 2.75rem;
-  min-inline-size: 2.75rem;
+  min-block-size: 2rem;
+  min-inline-size: 1.5rem;
   max-inline-size: 100%;
   overflow-wrap: anywhere;
   padding: 0;
@@ -221,6 +221,7 @@
   .navGrid a,
   .navGrid button {
     font-size: 0.8rem;
+    min-block-size: 2.25rem;
   }
 
   .meta {

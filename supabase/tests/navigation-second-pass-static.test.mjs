@@ -5,7 +5,7 @@ import test from "node:test";
 const repositoryRoot = new URL("../../", import.meta.url);
 const source = (path) => readFile(new URL(path, repositoryRoot), "utf8");
 
-test("compact desktop header keeps four primary choices without the FAQ collision", async () => {
+test("compact desktop header preserves the reviewed navigation CSS contract", async () => {
   const [header, styles, guides] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundHeader.module.css"),
@@ -14,11 +14,11 @@ test("compact desktop header keeps four primary choices without the FAQ collisio
 
   assert.match(
     styles,
-    /@media \(min-width: 1180px\) and \(max-width: 1320px\)[\s\S]*?\.desktopUtilityLink \{\s*display: none;/,
+    /@media \(min-width: 1180px\) and \(max-width: 1359\.98px\)[\s\S]*?\.desktopUtilityLink \{\s*display: none;/,
   );
   assert.match(
     styles,
-    /@media \(min-width: 1180px\) and \(max-width: 1320px\)[\s\S]*?\.desktopNav a \{[\s\S]*?padding-inline: 0\.58rem;/,
+    /@media \(min-width: 1180px\) and \(max-width: 1359\.98px\)[\s\S]*?\.desktopNav a \{[\s\S]*?padding-inline: 0\.58rem;/,
   );
   assert.equal(
     (header.match(/state\.exact \? "page" : state\.active \? "location"/g) ?? [])
