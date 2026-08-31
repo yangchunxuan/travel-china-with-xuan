@@ -24,7 +24,7 @@ const copy = {
     title: "Compare private China tours by route, pace and travel style.",
     introduction:
       "Start with the geography, pace and experiences that matter to you. Every route below has its own published itinerary; this page helps you compare them before opening the details.",
-    quickCompareEyebrow: "Nine-route overview",
+    quickCompareEyebrow: (count: number) => `${count}-route overview`,
     quickCompareTitle: "Compare the essentials before opening a tour.",
     quickCompareIntroduction:
       "Trip length and prices use the same published two-traveller basis. The fit and hotel-movement notes come directly from each itinerary.",
@@ -86,7 +86,7 @@ const copy = {
     title: "先把路线比清楚，再选适合自己的中国旅行。",
     introduction:
       "先看地域、节奏和真正想体验的内容。下面每条路线都有完整正式页；这里负责把差别放在一起，让你做选择，而不是再复制一遍行程。",
-    quickCompareEyebrow: "9 条路线总览",
+    quickCompareEyebrow: (count: number) => `${count} 条路线总览`,
     quickCompareTitle: "先比较关键差别，再打开完整产品。",
     quickCompareIntroduction:
       "天数和起价统一采用公开的两人同行口径；适合人群与住宿移动说明直接来自每条正式行程。",
@@ -148,7 +148,7 @@ const copy = {
     title: "중국 프라이빗 투어, 차이를 분명하게 비교하세요.",
     introduction:
       "지역, 여행 속도와 원하는 경험부터 살펴보세요. 아래 모든 여정에는 정식 상세 페이지가 있으며, 이 페이지는 상세 내용을 반복하기보다 선택에 필요한 차이를 한곳에서 보여 줍니다.",
-    quickCompareEyebrow: "9개 동선 한눈에 보기",
+    quickCompareEyebrow: (count: number) => `${count}개 동선 한눈에 보기`,
     quickCompareTitle: "상세 상품을 열기 전에 핵심 차이를 비교하세요.",
     quickCompareIntroduction:
       "여행 기간과 시작가는 공개된 2인 기준으로 통일했습니다. 추천 여행자와 숙소 이동 정보는 각 정식 일정에서 가져왔습니다.",
@@ -210,6 +210,8 @@ export function getPrivateTourHubCopy(
         localized.metadata.openGraphTitle(publishedTourCount),
     },
     eyebrow: localized.eyebrow(publishedTourCount),
+    quickCompareEyebrow:
+      localized.quickCompareEyebrow(publishedTourCount),
     catalogTitle: localized.catalogTitle(publishedTourCount),
     catalogIntroduction:
       localized.catalogIntroduction(publishedTourCount),

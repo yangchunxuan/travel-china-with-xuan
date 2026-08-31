@@ -7,6 +7,10 @@ import {
   getHomepageShowcaseCopy,
 } from "../../lib/homepageShowcaseI18n.ts";
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
+import {
+  getHomepagePrivateTourItems,
+  homepagePrivateTourSlugs,
+} from "../../lib/homepagePrivateTourCatalog.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
@@ -292,10 +296,11 @@ test("the planning-scope media assets are responsive, silent, fast-start and bou
   }
 });
 
-test("the homepage product showcase exposes every published tour without guide placeholders", async () => {
+test("the homepage shows six stable private tours while the hub keeps the complete catalog", async () => {
   const [
     page,
     productShowcase,
+    productShowcaseStyles,
     catalog,
     publishedCatalog,
     rail,
@@ -307,6 +312,7 @@ test("the homepage product showcase exposes every published tour without guide p
   ] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageProductShowcase.tsx"),
+    source("components/HomepageProductShowcase.module.css"),
     source("lib/homepagePrivateTourCatalog.ts"),
     source("lib/publishedPrivateTourCatalog.ts"),
     source("components/HomepageGuideRail.tsx"),
@@ -336,19 +342,57 @@ test("the homepage product showcase exposes every published tour without guide p
       locale,
     );
   }
+
+  const homepageSelectionSource = catalog.match(
+    /export const homepagePrivateTourSlugs = \[([\s\S]*?)\] as const;/,
+  );
+  assert.ok(homepageSelectionSource, "homepage tour selection must stay explicit");
+  const homepageTourSlugs = [
+    ...homepageSelectionSource[1].matchAll(/"([^"]+)"/g),
+  ].map((match) => match[1]);
+  assert.deepEqual(homepageTourSlugs, [
+    "zhangjiajie-4-day-private-tour",
+    "beijing-highlights-5-day-private-tour",
+    "shanghai-suzhou-hangzhou-6-day-private-tour",
+    "chengdu-pandas-sanxingdui-5-day-private-tour",
+    "xian-terracotta-warriors-5-day-private-tour",
+    "guilin-yangshuo-5-day-private-tour",
+  ]);
+  assert.equal(new Set(homepageTourSlugs).size, 6);
+  assert.ok(homepageTourSlugs.every((slug) => expectedTourSlugs.includes(slug)));
+  assert.ok(homepageTourSlugs.length < expectedTourSlugs.length);
+  assert.deepEqual(homepageTourSlugs, [...homepagePrivateTourSlugs]);
+  for (const locale of ["en", "zh", "ko"]) {
+    const homepageItems = getHomepagePrivateTourItems(locale);
+    assert.equal(homepageItems.length, 6, locale);
+    assert.deepEqual(
+      homepageItems.map((product) => product.id),
+      homepageTourSlugs,
+      locale,
+    );
+    assert.equal(new Set(homepageItems.map((product) => product.href)).size, 6, locale);
+    assert.equal(new Set(homepageItems.map((product) => product.image.src)).size, 6, locale);
+  }
   assert.match(catalog, /getPublishedPrivateTourCatalog\(locale\)/);
+  assert.match(catalog, /homepagePrivateTourSlugs\.map/);
+  assert.match(catalog, /Missing homepage private tour/);
   assert.doesNotMatch(catalog, /privateTourProducts|getZhangjiajiePrivateTourHomeCard/);
   assert.match(publishedCatalog, /privateTourProducts\.map/);
   assert.match(publishedCatalog, /localizePrivateTourProduct\(product, locale\)/);
   assert.match(publishedCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
   assert.match(publishedCatalog, /zhangjiajieProduct\.short_description\[contentLocale\]/);
   assert.match(publishedCatalog, /description: localized\.lede/);
-  assert.doesNotMatch(catalog, /shanghai-suzhou-hangzhou-6-day-private-tour|chengdu-pandas-sanxingdui-5-day-private-tour/);
   assert.doesNotMatch(page, /homepageProductShowcaseGuideIds|productShowcaseGuides|featuredTour/);
   assert.match(page, /products=\{privateTourItems\}/);
   assert.match(page, /excludedItemIds=\{productShowcaseExcludedItemIds\}/);
   assert.match(page, /homepage_product_card_clicked/);
   assert.match(productShowcase, /products\.map\(\(product, index\)/);
+  assert.match(productShowcase, /copy\.titleNoWrap/);
+  assert.match(productShowcase, /className=\{styles\.keepTogether\}/);
+  assert.match(
+    productShowcaseStyles,
+    /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap/,
+  );
   assert.match(productShowcase, /\{copy\.productLabel\}/);
   assert.match(productShowcase, /\{product\.title\}/);
   assert.match(productShowcase, /\{product\.description\}/);
@@ -404,6 +448,10 @@ test("the homepage product showcase exposes every published tour without guide p
     );
     assert.match(copy.durationLabel(5, 4), /5/);
     assert.ok(copy.hubActionLabel.length > 8);
+    assert.equal(copy.titleNoWrap, locale === "zh" ? "付款前" : undefined);
+    if (copy.titleNoWrap) {
+      assert.equal(copy.title.split(copy.titleNoWrap).length, 2);
+    }
     assert.match(copy.intro(publishedTourCount), trustCopy[locale].noShopping);
     assert.match(copy.intro(publishedTourCount), trustCopy[locale].writtenScope);
     assert.match(copy.intro(publishedTourCount), trustCopy[locale].priorAgreement);
@@ -560,7 +608,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.match(page, /aria-label=\{showcase\.heroLinksLabel\}/);
   assert.match(
     styles,
-    /@media \(max-width: 39\.999rem\)[\s\S]{0,2200}\.decisionNumber \{\s*font-size: 0\.875rem/,
+    /@media \(max-width: 39\.999rem\)[\s\S]*?\.decisionNumber \{[\s\S]*?font-size: 0\.875rem/,
   );
   assert.match(
     styles,
@@ -612,5 +660,51 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.doesNotMatch(
     `${page}\n${styles}`,
     /\b(?:xAI|Grok)\b/,
+  );
+});
+
+test("homepage decision cards compact only at the phone breakpoint", async () => {
+  const [page, styles] = await Promise.all([
+    source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageShowcase.module.css"),
+  ]);
+  const phoneStart = styles.indexOf("@media (max-width: 39.999rem)");
+  const phoneEnd = styles.indexOf("@media (min-width: 64rem)", phoneStart);
+  assert.ok(phoneStart >= 0 && phoneEnd > phoneStart);
+  const phoneStyles = styles.slice(phoneStart, phoneEnd);
+  const desktopStyles = styles.slice(0, phoneStart);
+
+  assert.match(
+    desktopStyles,
+    /\.decisionGrid \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/,
+  );
+  assert.match(
+    desktopStyles,
+    /\.decisionCard \{[\s\S]*?min-block-size: 17\.5rem;[\s\S]*?padding: 2\.5rem/,
+  );
+  assert.match(phoneStyles, /\.decisions \{\s*padding-block: 2\.5rem/);
+  assert.match(
+    phoneStyles,
+    /\.decisionGrid \{[\s\S]*?grid-template-columns: minmax\(0, 1fr\);[\s\S]*?margin-block-start: 1\.5rem/,
+  );
+  assert.match(
+    phoneStyles,
+    /\.decisionCard \{[\s\S]*?display: grid;[\s\S]*?grid-template-columns: 2rem minmax\(0, 1fr\);[\s\S]*?min-block-size: 9rem;[\s\S]*?padding: 1\.25rem/,
+  );
+  assert.match(
+    phoneStyles,
+    /\.decisionCard h3 \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 1;[\s\S]*?margin: 0/,
+  );
+  assert.match(
+    phoneStyles,
+    /\.decisionCard p \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 2;[\s\S]*?line-height: 1\.55;[\s\S]*?margin: 0\.625rem 0 0/,
+  );
+  assert.doesNotMatch(
+    phoneStyles,
+    /(?:display:\s*none|-webkit-line-clamp|(?:^|[;{]\s*)block-size:\s*\d)/m,
+  );
+  assert.match(
+    page,
+    /<nav aria-label=\{showcase\.decisions\.listLabel\}>[\s\S]*?<ol[\s\S]*?<li key=\{card\.id\}>[\s\S]*?<a[\s\S]*?href=\{getHomepageDecisionPath\(locale, card\.id\)\}[\s\S]*?<h3>\{card\.title\}<\/h3>[\s\S]*?<p>\{card\.body\}<\/p>[\s\S]*?decisionAction/,
   );
 });

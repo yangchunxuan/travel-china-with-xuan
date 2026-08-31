@@ -1,5 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
-import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog";
+// @ts-ignore TS5097: export checks execute this module via type stripping.
+import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
 
 export interface HomepagePrivateTourItem {
   readonly id: string;
@@ -19,22 +20,51 @@ export interface HomepagePrivateTourItem {
 }
 
 /**
+ * Stable homepage edit: two priority routes plus four complementary choices.
+ * The complete published catalog remains available on the tours hub.
+ */
+export const homepagePrivateTourSlugs = [
+  "zhangjiajie-4-day-private-tour",
+  "beijing-highlights-5-day-private-tour",
+  "shanghai-suzhou-hangzhou-6-day-private-tour",
+  "chengdu-pandas-sanxingdui-5-day-private-tour",
+  "xian-terracotta-warriors-5-day-private-tour",
+  "guilin-yangshuo-5-day-private-tour",
+] as const;
+
+/**
  * Backwards-compatible homepage projection of the single published catalog.
  * Comparison fields stay available to the hub without expanding homepage cards.
  */
 export function getHomepagePrivateTourItems(
   locale: HomegroundLocale,
 ): readonly HomepagePrivateTourItem[] {
-  return getPublishedPrivateTourCatalog(locale).map((product) =>
-    ({
-      id: product.id,
-      kind: "tour",
-      title: product.title,
-      description: product.description,
-      days: product.days,
-      nights: product.nights,
-      href: product.href,
-      image: product.image,
-    }) satisfies HomepagePrivateTourItem,
+  const publishedProducts = getPublishedPrivateTourCatalog(locale);
+  const publishedProductsBySlug = new Map(
+    publishedProducts.map((product) => [product.slug, product] as const),
+  );
+
+  const selectedProducts = homepagePrivateTourSlugs.map((slug) => {
+    const product = publishedProductsBySlug.get(slug);
+    if (!product) {
+      throw new Error(`Missing homepage private tour: ${slug}`);
+    }
+    return product;
+  });
+
+  return Object.freeze(
+    selectedProducts.map(
+      (product) =>
+        ({
+          id: product.id,
+          kind: "tour",
+          title: product.title,
+          description: product.description,
+          days: product.days,
+          nights: product.nights,
+          href: product.href,
+          image: product.image,
+        }) satisfies HomepagePrivateTourItem,
+    ),
   );
 }
