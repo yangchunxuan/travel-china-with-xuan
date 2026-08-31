@@ -598,11 +598,6 @@ const body = {
       title: "이어가는 두 가지 방법",
       items: [
         {
-          label: "시안·병마용 5일 프라이빗 투어 보기",
-          href: "/ko/tours/xian-terracotta-warriors-5-day-private-tour/",
-          description: "시안의 주요 구역과 린퉁 하루를 하나의 예약 가능한 코스로 연결합니다.",
-        },
-        {
           label: "무료 사람 검토",
           href: "/ko/#planner-contact",
           description: "동선과 숙박 조건을 보내 무료로 먼저 검토받으세요. 유료 서비스는 미리 선택되지 않습니다.",

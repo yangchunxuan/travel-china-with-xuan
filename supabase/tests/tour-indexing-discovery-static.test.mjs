@@ -30,7 +30,7 @@ const localizedTargets = {
   },
 };
 
-test("decision guides and Xi'an destination expose localized product links", () => {
+test("decision guides expose localized product links in rendered content", () => {
   for (const [locale, targets] of Object.entries(localizedTargets)) {
     assert.match(
       source(
@@ -43,7 +43,9 @@ test("decision guides and Xi'an destination expose localized product links", () 
       new RegExp(targets.xian.replaceAll("/", "\\/"), "u"),
     );
     assert.match(
-      source(`content/destinations/xian/body.${locale}.ts`),
+      source(
+        `content/guides/xian-where-to-stay-city-wall-or-dayanta/body.${locale}.ts`,
+      ),
       new RegExp(targets.xian.replaceAll("/", "\\/"), "u"),
     );
 
@@ -63,6 +65,16 @@ test("decision guides and Xi'an destination expose localized product links", () 
 
 test("the two Zhangjiajie products expose one localized comparison link each", () => {
   const comparisonSource = source("components/ZhangjiajieTourComparisonLink.tsx");
+  const classicPage = source("components/ZhangjiajiePrivateTourPreviewPage.tsx");
+  const sharedProductPage = source("components/ShanghaiJiangnanImaginePage.tsx");
+
+  assert.match(classicPage, /currentRoute="classic"/u);
+  assert.match(classicPage, /ZhangjiajieTourComparisonLink/u);
+  assert.match(sharedProductPage, /currentRoute="forest"/u);
+  assert.match(
+    sharedProductPage,
+    /product\.slug === "zhangjiajie-forest-4-day-private-tour"/u,
+  );
 
   for (const targets of Object.values(localizedTargets)) {
     assert.match(

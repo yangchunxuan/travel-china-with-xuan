@@ -598,11 +598,6 @@ const body = {
       title: "两种继续方式",
       items: [
         {
-          label: "查看西安与兵马俑 5 天私家团",
-          href: "/zh/tours/xian-terracotta-warriors-5-day-private-tour/",
-          description: "把西安各片区与完整临潼游览日接成一条可预订路线。",
-        },
-        {
           label: "免费人工规划初查",
           href: "/zh/#planner-contact",
           description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",

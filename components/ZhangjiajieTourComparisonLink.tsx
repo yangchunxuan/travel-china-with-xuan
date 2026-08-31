@@ -64,7 +64,9 @@ export function ZhangjiajieTourComparisonLink({
 
   return (
     <>
-      {localized.intro} <Link href={paths[targetRoute][locale]}>{localized.label}</Link>
+      {localized.intro}
+      {locale === "zh" ? "" : " "}
+      <Link href={paths[targetRoute][locale]}>{localized.label}</Link>
       {locale === "zh" ? "。" : locale === "ko" ? "도 함께 비교해 보세요." : "."}
     </>
   );
