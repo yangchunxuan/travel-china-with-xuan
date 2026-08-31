@@ -249,6 +249,8 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "장자제의 다른 여행 결정도 이어서 확인하세요",
       items: [
+        { label: "4일 국립삼림공원 고정 코스 비교", href: "/ko/tours/zhangjiajie-forest-4-day-private-tour/", description: "3박 모두 한 빌라에 머물며 북문 고산 코스와 동문 계곡 산책을 연결하고 케이블카와 엘리베이터는 이용하지 않습니다." },
+        { label: "장자제 4일 클래식 프라이빗 투어 비교", href: "/ko/tours/zhangjiajie-4-day-private-tour/", description: "백룡 엘리베이터, 대협곡 유리다리와 톈먼산을 포함한 대표 명소 코스를 선택합니다." },
         { label: "장자제에 며칠이 필요할까?", href: "/ko/guides/zhangjiajie-itinerary/", description: "일정 글에서 공원 이동 사슬을 전체 여행에 배분하세요." },
         { label: "장자제 시내와 우링위안 중 어디에 숙박할까?", href: "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "숙박 거점은 공원 거래와 별도로 선택하세요." },
         { label: "장자제 유리다리와 산 정상 유리잔도 비교", href: "/ko/guides/zhangjiajie-glass-bridge-vs-skywalk/", description: "대협곡과 산악 관광지를 구분하세요." },

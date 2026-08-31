@@ -16,6 +16,7 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
 import { PrivateTourMotion } from "./PrivateTourMotion";
+import { ZhangjiajieTourComparisonLink } from "./ZhangjiajieTourComparisonLink";
 import {
   buildPrivateTourInquiryHref,
   buildPrivateTourMailtoHref,
@@ -582,7 +583,15 @@ export function ShanghaiJiangnanImaginePage({
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.scopeEyebrow}</p>
               <h2>{copy.scopeTitle}</h2>
-              <p>{localized.bookingNote}</p>
+              <p>
+                {localized.bookingNote}
+                {product.slug === "zhangjiajie-forest-4-day-private-tour" ? (
+                  <ZhangjiajieTourComparisonLink
+                    currentRoute="forest"
+                    locale={locale}
+                  />
+                ) : null}
+              </p>
             </div>
             <div className={styles.scopeGrid}>
               <section>

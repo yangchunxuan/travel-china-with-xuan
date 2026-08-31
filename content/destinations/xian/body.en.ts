@@ -619,6 +619,12 @@ const body = {
       title: "Two ways to continue",
       items: [
         {
+          label: "Explore the 5-day Xi'an and Terracotta Warriors private tour",
+          href: "/tours/xian-terracotta-warriors-5-day-private-tour/",
+          description:
+            "See the city clusters and full Lintong day assembled into one bookable route.",
+        },
+        {
           label: "Free human planning check",
           href: "/#planner-contact",
           description:

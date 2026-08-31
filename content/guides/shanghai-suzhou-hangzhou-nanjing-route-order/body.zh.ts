@@ -64,6 +64,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责四城顺序，以及单向走廊、上海基地、双基地混合之间的选择。城市交通指南负责具体方式；苏州园林指南负责访问本身；机场指南负责浦东与虹桥。" },
   { id: "help-cta", type: "callout", tone: "decision", title: "需要检查长三角路线？", body: "请提供抵达和离境机场、日期、酒店偏好、行李和每城一个重点。有效审核应找出最弱酒店，以及耗时最长的酒店到车站完整转移。" },
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [ { label: "上海城市总览", href: "/zh/destinations/shanghai/", description: "在敲定这类细节之前，先决定几个完整游览日、住哪一岸和走哪个门户。" },
+    { label: "查看上海—苏州—杭州 6 天私家路线", href: "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", description: "如果三座城市都需要完整本地时间，可比较这条单向推进的产品路线。" },
     { label: "规划上海—杭州交通", href: "/zh/guides/shanghai-hangzhou-transport-route/", description: "城市顺序确定后再选车站。" },
     { label: "读懂一次苏州园林访问", href: "/zh/guides/how-to-read-a-suzhou-garden/", description: "增加酒店前先给苏州明确目的。" },
     { label: "选择浦东还是虹桥", href: "/zh/guides/shanghai-pudong-or-hongqiao-airport/", description: "航班机场可能推翻最佳路线。" },

@@ -377,6 +377,7 @@ export default {
       type: "internal-links",
       title: "把兵马俑这一天接入整趟中国行程",
       items: [ { label: "西安城市总览", href: "/zh/destinations/xian/", description: "在敲定这类细节之前，先决定住几晚、以哪里为基地和下一站去哪。" },
+        { label: "查看含完整兵马俑游览日的西安 5 天私家团", href: "/zh/tours/xian-terracotta-warriors-5-day-private-tour/", description: "比较自由行执行方式与一条包含临潼游览、城市交通和三天英语导游的完整私家路线。" },
         {
           label: "第一次乘中国高铁",
           href: "/zh/guides/china-high-speed-train-first-time-guide/",

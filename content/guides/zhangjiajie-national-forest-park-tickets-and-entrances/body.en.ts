@@ -249,6 +249,8 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "Continue planning without mixing up separate decisions",
       items: [
+        { label: "Compare the 4-day forest-first fixed private route", href: "/tours/zhangjiajie-forest-4-day-private-tour/", description: "Use the north gate for high peaks, the east gate for valley walks and one villa for all three nights, without cable cars or elevators." },
+        { label: "Compare the classic 4-day private tour", href: "/tours/zhangjiajie-4-day-private-tour/", description: "Choose the broader route with Bailong Elevator, the Glass Bridge and Tianmen Mountain." },
         { label: "How many days in Zhangjiajie?", href: "/guides/zhangjiajie-itinerary/", description: "Use the itinerary owner to distribute park chains across the trip." },
         { label: "Stay in Zhangjiajie city or Wulingyuan?", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Choose the hotel base separately from the park transaction." },
         { label: "Zhangjiajie Glass Bridge or mountain skywalk?", href: "/guides/zhangjiajie-glass-bridge-vs-skywalk/", description: "Keep the separate Grand Canyon and mountain attractions distinct." },

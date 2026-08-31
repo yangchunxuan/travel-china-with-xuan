@@ -517,7 +517,7 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-16",
-    dateModified: "2026-08-21",
+    dateModified: "2026-09-01",
     sourceReviewedDate: "2026-08-16",
     supportGuideIds: [
       "terracotta-warriors-without-tour",
