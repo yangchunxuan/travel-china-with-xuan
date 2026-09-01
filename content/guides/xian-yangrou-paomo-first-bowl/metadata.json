@@ -1,0 +1,74 @@
+{
+  "id": "xian-yangrou-paomo-first-bowl",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "ordering-workflow",
+  "topics": ["yangrou-paomo", "xian-food", "ordering", "hui-food-traditions", "regional-food"],
+  "destinations": ["xian", "china"],
+  "heroImagePath": "/images/guides/xian-yangrou-paomo-first-bowl/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xian-yangrou-paomo-first-bowl/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/xian-yangrou-paomo-first-bowl/",
+      "title": "Xi'an Yangrou Paomo: How to Order and Eat It",
+      "headline": "Xi'an Yangrou Paomo for First-Timers: Choose the Meat, Break the Bread and Order One Bowl",
+      "description": "Choose lamb or beef, confirm the broth, break only the bread you need, read four soup styles, and recover when a Xi'an paomo order goes wrong.",
+      "heroAlt": "A bowl of Xi'an yangrou paomo with torn bread, lamb, glass noodles and chilli paste.",
+      "navTitle": "Xi'an paomo",
+      "featuredLinkLabel": "Order Xi'an paomo",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Xi'an", "Regional food", "Ordering"],
+      "heroCredit": {
+        "text": "A bowl identified by the source as Xi'an cuisine: yangrou paomo; photographed by Danielinblue, centre-cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yangrou_Paomo.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/xian-yangrou-paomo-first-bowl/",
+      "title": "第一次吃西安羊肉泡馍：怎么点、怎么掰",
+      "headline": "第一次吃西安羊肉泡馍：选牛羊肉、掰馍与点一碗的完整流程",
+      "description": "先确认牛羊肉和锅汤，只掰自己吃得完的馍，看懂干拔、口汤、水围城与单走，并处理点错肉、掰太大或份量过多。",
+      "heroAlt": "一碗西安羊肉泡馍，碗里有掰碎的馍、羊肉、粉丝和一小勺辣酱。",
+      "navTitle": "西安泡馍",
+      "featuredLinkLabel": "学会点西安泡馍",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["西安", "地域饮食", "点单"],
+      "heroCredit": {
+        "text": "来源标注为西安饮食羊肉泡馍的一碗成品，摄影 Danielinblue，已居中裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yangrou_Paomo.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/xian-yangrou-paomo-first-bowl/",
+      "title": "시안 양러우파오모: 주문하고 먹는 법",
+      "headline": "처음 먹는 시안 양러우파오모: 고기 선택, 빵 뜯기, 한 그릇 주문",
+      "description": "양고기·소고기와 육수를 확인하고 먹을 만큼만 빵을 뜯으세요. 네 가지 국물 방식과 주문이 어긋났을 때의 복구법까지 설명합니다.",
+      "heroAlt": "뜯은 빵, 양고기, 당면과 고추장이 담긴 시안 양러우파오모 한 그릇.",
+      "navTitle": "시안 파오모",
+      "featuredLinkLabel": "시안 파오모 주문하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["시안", "지역 음식", "주문"],
+      "heroCredit": {
+        "text": "출처가 시안 음식 양러우파오모로 설명한 한 그릇, 촬영 Danielinblue, 중앙 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yangrou_Paomo.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    }
+  }
+}
