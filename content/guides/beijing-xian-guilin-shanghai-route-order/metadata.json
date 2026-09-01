@@ -1,0 +1,53 @@
+{
+  "id": "beijing-xian-guilin-shanghai-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "module-worth-decision",
+  "topics": ["beijing", "xian", "guilin", "yangshuo", "shanghai", "route-order", "transfer-tax"],
+  "destinations": ["beijing", "xian", "guilin", "yangshuo", "shanghai"],
+  "heroImagePath": "/images/guides/beijing-xian-guilin-shanghai-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-xian-guilin-shanghai-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-xian-guilin-shanghai-route-order/",
+      "title": "Beijing, Xi'an, Guilin and Shanghai: Add Guilin?",
+      "headline": "Beijing, Xi'an, Guilin and Shanghai: Make the Landscape Module Earn Its Transfers",
+      "description": "Decide whether Guilin and Yangshuo add enough distinct value to justify two long handoffs, another base and a weather-sensitive block.",
+      "heroAlt": "Original editorial diagram testing whether a Guilin and Yangshuo landscape module earns its place beside Beijing, Xi'an and Shanghai.",
+      "navTitle": "Add Guilin to the classic route?",
+      "featuredLinkLabel": "Test the Guilin landscape module",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Route choice", "Guilin", "Transfer tax"]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-xian-guilin-shanghai-route-order/",
+      "title": "北京、西安、桂林、上海怎么排：要加桂林吗？",
+      "headline": "北京、西安、桂林、上海怎么排：让山水模块证明它值得两次长转场",
+      "description": "判断桂林和阳朔的独特价值，是否足以抵消两次长距离衔接、一次换基地和天气敏感区块。",
+      "heroAlt": "原创编辑示意图：检验桂林和阳朔山水模块是否值得加入北京、西安、上海路线。",
+      "navTitle": "经典三城要不要加桂林",
+      "featuredLinkLabel": "检验桂林山水模块",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["路线取舍", "桂林", "转场成本"]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-xian-guilin-shanghai-route-order/",
+      "title": "베이징·시안·구이린·상하이: 구이린을 넣을까?",
+      "headline": "베이징·시안·구이린·상하이: 산수 구간이 두 번의 장거리 이동을 감수할 가치가 있을까",
+      "description": "구이린·양숴의 고유한 가치가 두 번의 장거리 연결, 추가 숙박 거점과 날씨 변수까지 감수할 만큼 큰지 판단합니다.",
+      "heroAlt": "구이린과 양숴 산수 구간이 베이징, 시안, 상하이 노선에 들어갈 가치가 있는지 검토하는 오리지널 편집 도식.",
+      "navTitle": "클래식 노선에 구이린 추가하기",
+      "featuredLinkLabel": "구이린 산수 구간 검토하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["동선 선택", "구이린", "이동 부담"]
+    }
+  }
+}
