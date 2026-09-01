@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Three-city route order editorial diagram</title>
+  <desc id="desc">Three city bases connect in one direction between two international gateways, while transfer blocks sit below protected sightseeing blocks.</desc>
+  <rect width="1600" height="1000" fill="#102a43"/>
+  <circle cx="1390" cy="90" r="270" fill="#f4b942" opacity="0.16"/>
+  <circle cx="180" cy="930" r="310" fill="#2cb1bc" opacity="0.13"/>
+  <path d="M210 500 C430 280 540 720 800 500 C1050 290 1170 700 1390 500" fill="none" stroke="#f4b942" stroke-width="24" stroke-linecap="round"/>
+  <path d="M1300 430 L1400 500 L1300 570" fill="none" stroke="#f4b942" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#2cb1bc" stroke-width="20">
+    <rect x="235" y="365" width="250" height="270" rx="50"/>
+    <rect x="675" y="365" width="250" height="270" rx="50"/>
+    <rect x="1115" y="365" width="250" height="270" rx="50"/>
+  </g>
+  <g fill="#102a43">
+    <circle cx="360" cy="480" r="54"/>
+    <circle cx="800" cy="480" r="54"/>
+    <circle cx="1240" cy="480" r="54"/>
+  </g>
+  <g fill="#2cb1bc">
+    <rect x="290" y="570" width="140" height="20" rx="10"/>
+    <rect x="730" y="570" width="140" height="20" rx="10"/>
+    <rect x="1170" y="570" width="140" height="20" rx="10"/>
+  </g>
+  <g fill="#ffffff" opacity="0.92">
+    <path d="M145 465h70v70h-70z"/>
+    <path d="M1385 465h70v70h-70z"/>
+  </g>
+  <g fill="#2cb1bc" opacity="0.8">
+    <rect x="500" y="760" width="190" height="34" rx="17"/>
+    <rect x="910" y="760" width="190" height="34" rx="17"/>
+  </g>
+  <g fill="#ffffff" opacity="0.88">
+    <rect x="258" y="720" width="190" height="34" rx="17"/>
+    <rect x="706" y="720" width="190" height="34" rx="17"/>
+    <rect x="1152" y="720" width="190" height="34" rx="17"/>
+  </g>
+</svg>

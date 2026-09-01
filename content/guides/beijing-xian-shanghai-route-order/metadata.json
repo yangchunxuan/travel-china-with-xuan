@@ -1,0 +1,60 @@
+{
+  "id": "beijing-xian-shanghai-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["beijing", "xian", "shanghai", "route-order", "gateways", "transfer-days"],
+  "destinations": ["beijing", "xian", "shanghai"],
+  "heroImagePath": "/images/guides/beijing-xian-shanghai-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-xian-shanghai-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-xian-shanghai-route-order/",
+      "title": "Beijing, Xi'an and Shanghai: Choose the Route Order",
+      "headline": "Beijing, Xi'an and Shanghai: Choose the Route Order Without Inventing Extra Days",
+      "description": "Choose gateways, direction and protected sightseeing days for Beijing, Xi'an and Shanghai without treating transfers as free time.",
+      "heroAlt": "Original editorial diagram showing three city bases connected in one direction between two international gateways.",
+      "navTitle": "Beijing–Xi'an–Shanghai order",
+      "featuredLinkLabel": "Order Beijing, Xi'an and Shanghai",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Route order", "Gateways", "Usable days"]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-xian-shanghai-route-order/",
+      "title": "北京、西安、上海怎么排：先定进出门户",
+      "headline": "北京、西安、上海路线顺序：别凭空多算游览日",
+      "description": "用进出境门户、路线方向和受保护的完整日安排北京、西安、上海，不把转场当成免费时间。",
+      "heroAlt": "原创编辑示意图：三个城市基地沿单向路线连接两端国际门户。",
+      "navTitle": "北京—西安—上海顺序",
+      "featuredLinkLabel": "安排北京、西安、上海顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["路线顺序", "进出门户", "有效游览日"]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-xian-shanghai-route-order/",
+      "title": "베이징·시안·상하이 순서: 입출국 도시부터",
+      "headline": "베이징·시안·상하이 동선: 이동일을 관광일로 부풀리지 않는 법",
+      "description": "입출국 도시, 이동 방향, 온전히 지킬 관광일을 기준으로 세 도시를 배열하고 환승 시간을 공짜 시간처럼 세지 않습니다.",
+      "heroAlt": "두 국제 관문 사이에서 세 도시 거점을 한 방향으로 연결한 오리지널 편집 도식.",
+      "navTitle": "베이징–시안–상하이 순서",
+      "featuredLinkLabel": "세 도시의 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["동선 순서", "입출국 도시", "실제 관광일"]
+    }
+  }
+}
