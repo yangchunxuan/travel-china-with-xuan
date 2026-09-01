@@ -1,0 +1,86 @@
+{
+  "id": "hangzhou-tea-villages-and-museum-selector",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "place-role-selector",
+  "topics": ["hangzhou-tea-hills", "longjing-village", "meijiawu", "china-national-tea-museum", "working-landscape", "opening-hours"],
+  "destinations": ["hangzhou"],
+  "heroImagePath": "/images/guides/hangzhou-tea-villages-and-museum-selector/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/hangzhou-tea-villages-and-museum-selector/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "explore",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "searchTerms": {
+    "en": ["Longjing Village or Meijiawu", "which Hangzhou tea village", "Longjing Meijiawu or China National Tea Museum", "Hangzhou tea fields visit"],
+    "zh": ["龙井村还是梅家坞", "杭州茶村怎么选", "龙井村梅家坞中国茶叶博物馆", "杭州茶山参观"],
+    "ko": ["룽징촌 메이자우 어디", "항저우 차 마을 추천", "룽징촌 메이자우 중국차박물관", "항저우 차밭 여행"]
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/hangzhou-tea-villages-and-museum-selector/",
+      "title": "Longjing Village, Meijiawu or China National Tea Museum?",
+      "headline": "Hangzhou Tea Hills: Longjing Village, Meijiawu or the Tea Museum?",
+      "description": "Compare Longjing Village, Meijiawu and China National Tea Museum by landscape, walking effort and evidence, with two-campus and weather fallback checks.",
+      "heroAlt": "Houses below terraced tea fields in Hangzhou's Longjing tea district",
+      "heroCredit": {
+        "text": "Longjing tea district in Hangzhou, photographed by Niklas Dougherty on 20 October 2017. Homeground centre-cropped the photograph to 16:10, resized it and converted it to WebP. It identifies houses and tea fields within the wider Longjing district, not the administrative boundary of Longjing Village, and does not prove current harvest activity, public path access, tea origin, business quality or weather.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longjing_tea_village_Hangzhou.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Choose a Hangzhou tea stop",
+      "featuredLinkLabel": "Choose a tea village or museum",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Hangzhou", "Longjing", "Tea museum"]
+    },
+    "zh": {
+      "path": "/zh/guides/hangzhou-tea-villages-and-museum-selector/",
+      "title": "龙井村、梅家坞还是中国茶叶博物馆？杭州茶区怎么选",
+      "headline": "杭州茶山：龙井村、梅家坞，还是中国茶叶博物馆？",
+      "description": "比较龙井村、梅家坞与中国茶叶博物馆的景观、步行和证据差异，并核对两馆区与天气替代方案。",
+      "heroAlt": "杭州龙井茶区山坡层叠茶田下方的房屋",
+      "heroCredit": {
+        "text": "杭州龙井茶区实景，Niklas Dougherty 摄于 2017 年 10 月 20 日；Homeground 居中裁成 16:10、缩放并转为 WebP。照片能确认龙井茶区内房屋与茶田的空间关系，不能确认龙井村行政边界，也不能证明当前采茶活动、公共步道、茶叶产地、商户品质或天气。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longjing_tea_village_Hangzhou.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "选择杭州茶村或茶博",
+      "featuredLinkLabel": "选择茶村或博物馆",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["杭州", "龙井", "茶叶博物馆"]
+    },
+    "ko": {
+      "path": "/ko/guides/hangzhou-tea-villages-and-museum-selector/",
+      "title": "룽징촌·메이자우·중국차박물관, 항저우 차 여행 어디로 갈까?",
+      "headline": "항저우 차 산지: 룽징촌, 메이자우, 중국차박물관 중 고르기",
+      "description": "룽징촌·메이자우·중국차박물관을 경관, 걷기, 자료로 비교하고 두 관구 구분과 날씨 대안까지 확인합니다.",
+      "heroAlt": "항저우 룽징 차 지구의 계단식 차밭 아래 자리한 집들",
+      "heroCredit": {
+        "text": "Niklas Dougherty가 2017년 10월 20일 촬영한 항저우 룽징 차 지구. Homeground가 중앙부를 16:10으로 잘라 크기를 조정하고 WebP로 변환했습니다. 룽징 차 지구 안의 집과 차밭 관계는 보여 주지만 룽징촌 행정 경계를 확인해 주지는 않으며, 현재 찻잎 수확, 공공 보행로, 차 원산지, 업체 품질이나 날씨도 증명하지 않습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longjing_tea_village_Hangzhou.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "항저우 차 마을·박물관 선택",
+      "featuredLinkLabel": "차 마을 또는 박물관 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["항저우", "룽징", "중국차박물관"]
+    }
+  }
+}
