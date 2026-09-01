@@ -1,0 +1,81 @@
+{
+  "id": "medical-emergency-in-china-for-travellers",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "emergency-call-handoff-recovery",
+  "topics": ["medical emergency", "120 ambulance", "emergency handoff", "traveller health"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/medical-emergency-in-china-for-travellers/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/medical-emergency-in-china-for-travellers/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "searchTerms": {
+    "en": [
+      "medical emergency in china tourist",
+      "ambulance number china 120",
+      "how to call ambulance in china",
+      "china emergency room foreign tourist",
+      "what to tell 120 china"
+    ],
+    "zh": [
+      "外国游客在中国遇到医疗急救",
+      "中国120怎么拨打",
+      "外国人中国叫救护车",
+      "120急救电话要说什么"
+    ],
+    "ko": [
+      "중국 여행 의료 응급상황",
+      "중국 구급차 120 전화",
+      "중국에서 구급차 부르는 법",
+      "중국 120 신고 내용"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/medical-emergency-in-china-for-travellers/",
+      "title": "Medical Emergency in China: Call 120 and Prepare the Handoff",
+      "headline": "Call 120 First—Do Not Wait for Translation, Payment or Insurance",
+      "description": "For mainland China: call 120, give a usable location and condition report, prepare the handoff, and recover if language or contact fails.",
+      "heroAlt": "Editorial diagram linking a 120 call to location, ambulance handoff, and a compact medical record.",
+      "navTitle": "Medical emergency in China",
+      "featuredLinkLabel": "Use the 120 emergency handoff",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Call 120", "Emergency handoff", "Failure recovery"]
+    },
+    "zh": {
+      "path": "/zh/guides/medical-emergency-in-china-for-travellers/",
+      "title": "外国游客在中国内地遇到医疗急救：拨打120与交接步骤",
+      "headline": "先拨120，不要为了翻译、付款或保险确认而延误呼救",
+      "description": "适用于中国内地：向120说清可定位地址与伤病情况，准备现场和医院交接，并在语言或联络失败时恢复。",
+      "heroAlt": "编辑示意图把120呼叫连接到地点、救护交接和精简医疗记录。",
+      "navTitle": "外国游客中国医疗急救",
+      "featuredLinkLabel": "执行120急救交接",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["拨打120", "急救交接", "失败恢复"]
+    },
+    "ko": {
+      "path": "/ko/guides/medical-emergency-in-china-for-travellers/",
+      "title": "중국 본토 여행 중 의료 응급상황: 120 신고와 인계 절차",
+      "headline": "번역·결제·보험 확인을 기다리지 말고 먼저 120에 전화하세요",
+      "description": "중국 본토에서 120에 위치와 상태를 전달하고 현장·병원 인계를 준비하며 언어 또는 연락 실패에 대처하는 순서입니다.",
+      "heroAlt": "120 신고가 위치 확인, 구급 인계, 간단한 의료 기록으로 이어지는 편집용 도식.",
+      "navTitle": "중국 여행 의료 응급상황",
+      "featuredLinkLabel": "120 응급 인계 절차 실행",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["120 신고", "응급 인계", "실패 복구"]
+    }
+  }
+}
