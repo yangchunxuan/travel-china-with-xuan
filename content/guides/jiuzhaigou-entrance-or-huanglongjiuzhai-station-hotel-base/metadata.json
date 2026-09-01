@@ -1,0 +1,107 @@
+{
+  "id": "jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "rail-gateway-or-scenic-base-decision",
+  "topics": [
+    "accommodation",
+    "Jiuzhaigou",
+    "Zhangzha Town",
+    "Huanglongjiuzhai Railway Station",
+    "rail gateway",
+    "scenic-area entrance",
+    "park opening, reservation, road and transfer verification",
+    "Sichuan"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base/",
+      "title": "Stay Near Jiuzhaigou Entrance or Huanglongjiuzhai Station?",
+      "headline": "Jiuzhaigou Entrance or Huanglongjiuzhai Station: Choose by Arrival, Park Day and Departure",
+      "description": "Compare Jiuzhaigou's entrance-side lodging belt with a Huanglongjiuzhai Station night by arrival, full park day, early train, luggage and disruption risk.",
+      "heroAlt": "Empty platform and mountain setting at Huanglongjiuzhai Railway Station in December 2024",
+      "heroCredit": {
+        "text": "Huanglongjiuzhai Railway Station platform, photographed by Underbar dk on 8 December 2024 and uploaded on 2 February 2025; centre-cropped, resized and converted to WebP by Homeground under the same licence. The image does not prove current trains, transfers, accommodation or access conditions.",
+        "sourceLabel": "Original Huanglongjiuzhai Railway Station platform photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huanglongjiuzhai_Railway_Station,_December_2024,_10.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Jiuzhaigou entrance or station base",
+      "featuredLinkLabel": "Choose a Jiuzhaigou hotel base",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Jiuzhaigou", "Hotel base", "Rail gateway"]
+    },
+    "zh": {
+      "path": "/zh/guides/jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base/",
+      "title": "九寨沟住沟口还是黄龙九寨站附近？",
+      "headline": "九寨沟沟口还是黄龙九寨站：按抵达、游园日与离开任务选择住宿",
+      "description": "从抵达接驳、完整景区日、早班列车、行李与中断风险，比较九寨沟沟口外住宿带和黄龙九寨站过渡夜。",
+      "heroAlt": "2024年12月黄龙九寨站空旷站台与山景实拍",
+      "heroCredit": {
+        "text": "Underbar dk 于 2024 年 12 月 8 日拍摄、2025 年 2 月 2 日上传的黄龙九寨站站台实景；Homeground 依同一许可作居中裁切、缩放与 WebP 转换。图片不证明当前列车、接驳、住宿或通行状况。",
+        "sourceLabel": "黄龙九寨站站台原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huanglongjiuzhai_Railway_Station,_December_2024,_10.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "九寨沟沟口或车站住宿",
+      "featuredLinkLabel": "选择九寨沟住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["九寨沟", "住宿基地", "铁路门户"]
+    },
+    "ko": {
+      "path": "/ko/guides/jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base/",
+      "title": "주자이거우 숙소, 입구와 황룽주자이역 중 어디가 좋을까?",
+      "headline": "주자이거우 입구 또는 황룽주자이역: 도착·관광일·출발 일정으로 고르는 숙박 거점",
+      "description": "도착 환승, 온전한 관광일, 이른 열차, 짐과 운행 차질을 기준으로 주자이거우 입구 밖 숙박 지역과 황룽주자이역 경유 1박을 비교합니다.",
+      "heroAlt": "2024년 12월 황룽주자이역의 빈 승강장과 산악 풍경을 담은 실제 사진",
+      "heroCredit": {
+        "text": "Underbar dk가 2024년 12월 8일 촬영하고 2025년 2월 2일 올린 황룽주자이역 승강장 사진입니다. Homeground는 같은 라이선스에 따라 중앙부를 자르고 크기를 조정해 WebP로 변환했습니다. 현재 열차, 환승, 숙소 또는 이동 가능 상태를 증명하지 않습니다.",
+        "sourceLabel": "황룽주자이역 승강장 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huanglongjiuzhai_Railway_Station,_December_2024,_10.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "주자이거우 입구·역 숙박 거점",
+      "featuredLinkLabel": "주자이거우 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["주자이거우", "숙박 거점", "철도 관문"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Jiuzhaigou entrance hotel area",
+      "Huanglongjiuzhai station hotel",
+      "late arrival Jiuzhaigou where to stay"
+    ],
+    "zh": [
+      "九寨沟住沟口还是川主寺",
+      "黄龙九寨站附近住宿",
+      "晚到黄龙九寨站住哪里"
+    ],
+    "ko": [
+      "주자이거우 입구 숙소",
+      "황룽주자이역 숙소",
+      "구채구 숙소 위치"
+    ]
+  }
+}
