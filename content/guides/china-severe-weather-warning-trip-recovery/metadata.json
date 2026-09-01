@@ -1,0 +1,82 @@
+{
+  "id": "china-severe-weather-warning-trip-recovery",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "weather-alert-booking-state-recovery",
+  "topics": ["weather warning", "trip disruption", "transport status", "booking recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-severe-weather-warning-trip-recovery/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-severe-weather-warning-trip-recovery/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "searchTerms": {
+    "en": [
+      "china weather warning what to do",
+      "china typhoon travel disruption",
+      "china rain warning train cancelled",
+      "china weather alert flight status",
+      "china attraction closed weather",
+      "china trip severe weather recovery"
+    ],
+    "zh": [
+      "外国游客遇到中国天气预警怎么办",
+      "中国暴雨预警行程取消",
+      "台风预警火车航班怎么查",
+      "景点因天气关闭怎么处理"
+    ],
+    "ko": [
+      "중국 여행 기상특보 대처",
+      "중국 태풍 여행 일정 변경",
+      "중국 폭우 열차 취소 확인",
+      "중국 날씨 경보 예약 환불"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-severe-weather-warning-trip-recovery/",
+      "title": "Mainland China Weather Warning: Stay, Move or Rebook?",
+      "headline": "A Weather Alert Is a Safety Signal, Not an Automatic Cancellation",
+      "description": "For mainland China: decode an official weather warning, protect yourself, verify each booking state, and recover the trip without guessing.",
+      "heroAlt": "Editorial diagram linking a weather alert to safety, booking verification, and a documented recovery route.",
+      "navTitle": "China weather-warning recovery",
+      "featuredLinkLabel": "Recover after a weather warning",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Weather warning", "Booking status", "Trip recovery"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-severe-weather-warning-trip-recovery/",
+      "title": "中国内地天气预警来了怎么办：留守、转移还是改行程",
+      "headline": "天气预警先改变安全判断，不会自动取消每一笔预订",
+      "description": "适用于中国内地：看懂官方天气预警，先保护人身安全，再逐项核实交通、住宿和景点状态，保存证据并恢复行程。",
+      "heroAlt": "编辑示意图把天气预警连接到安全判断、预订核实和有记录的恢复路径。",
+      "navTitle": "中国天气预警行程恢复",
+      "featuredLinkLabel": "天气预警后恢复行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["天气预警", "预订状态", "行程恢复"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-severe-weather-warning-trip-recovery/",
+      "title": "중국 본토 기상특보를 받았다면: 머물기, 이동하기, 예약 바꾸기",
+      "headline": "기상특보는 안전 신호이지 모든 예약의 자동 취소가 아닙니다",
+      "description": "중국 본토 기준으로 공식 기상특보를 읽고 안전을 확보한 뒤 교통·숙소·관광지 상태를 각각 확인하고 일정을 복구합니다.",
+      "heroAlt": "기상특보에서 안전 판단, 예약 확인, 기록을 남기는 복구 경로로 이어지는 편집용 도식.",
+      "navTitle": "중국 기상특보 일정 복구",
+      "featuredLinkLabel": "기상특보 뒤 일정 복구하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["기상특보", "예약 상태", "일정 복구"]
+    }
+  }
+}
