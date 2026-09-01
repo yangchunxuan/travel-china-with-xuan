@@ -3,25 +3,17 @@
   "registryId": "high-intent-cta-ownership-phase-1",
   "status": "internal-only",
   "baseCommit": "d0fb96706fea2928ede94cc667745d5dcad389b2",
-  "checkedAt": "2026-08-23",
+  "checkedAt": "2026-09-01",
   "publicCtaChangesAuthorized": false,
   "publicServiceLaunchAuthorized": false,
-  "allowedServiceIds": [
-    "itinerary-review",
-    "route-build",
-    "full-trip-support"
-  ],
-  "allowedIntentCodes": [
-    "hotel_fit",
-    "ticket_workflow",
-    "route_shape"
-  ],
+  "allowedServiceIds": ["itinerary-review", "route-build", "full-trip-support"],
+  "allowedIntentCodes": ["hotel_fit", "ticket_workflow", "route_shape"],
   "requiredCoverage": {
     "stay": 20,
-    "high-intent-transport": 25,
-    "plan": 17,
+    "high-intent-transport": 27,
+    "plan": 18,
     "purchase-ticket": 2,
-    "uniqueContentIds": 64
+    "uniqueContentIds": 67
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -416,6 +408,21 @@
       ]
     },
     {
+      "contentId": "chengdu-chongqing-station-pair",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chengdu-chongqing-station-pair",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
       "contentId": "china-high-speed-train-first-time-guide",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
@@ -437,6 +444,21 @@
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "chongqing-railway-station-selector",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "chongqing-zhangjiajie-transport-route",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "chongqing-zhangjiajie-transport-route",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
@@ -722,6 +744,20 @@
       "targetServiceId": "itinerary-review",
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "beijing-xian-chengdu-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "chengdu-chongqing-zhangjiajie-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "chengdu-chongqing-zhangjiajie-route-order",
       "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "automatic-or-instant-result",

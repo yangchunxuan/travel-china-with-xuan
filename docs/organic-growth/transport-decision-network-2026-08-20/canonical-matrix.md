@@ -68,6 +68,17 @@ Priority means research/architecture priority, not publication authorization.
 | P2 | `hg-topic-0312` / `guangzhou-shenzhen-transport-route` | Only a proven two-city station/base choice unrelated to HK crossing | GZ–SZ–HK route order; Shenzhen–HK; mirror pages | Wrong station/base within two-city trip | Independent-intent proof and no route-order cannibalization | `HOLD-RESEARCH / DEFER` |
 | P3 | `hg-topic-0314`, `0315`, `0322`, `0325`, `0326` and other city pairs | Only if each produces a distinct door-to-door decision | Route-order repeats, direction mirrors and city-name substitutions | Must be route-specific, not generic | New demand evidence, primary sources, images, Hub coverage | `HOLD-RESEARCH / DEFER` |
 
+## 2026-09-01 central override — Southwest N=3 only
+
+This dated decision supersedes only the `hg-topic-0305` hold row above. It does not activate any other proposed city pair or `hg-topic-0342`.
+
+- `chengdu-chongqing-station-pair` is the sole canonical owner for the bidirectional Chengdu–Chongqing ticketed station pair and hotel-to-hotel execution. The never-published proposal slug `chengdu-chongqing-transport-route` is retired as an alias; no second URL or redirect-only identity is created.
+- `chengdu-chongqing-zhangjiajie-route-order` alone decides whether all three cities fit, their direction, night allocation and which city to remove.
+- `chongqing-zhangjiajie-transport-route` alone executes the ticketed Chongqing node ↔ Zhangjiajie West corridor and handoff to an already chosen exact hotel address.
+- `chongqing-railway-station-selector` retains generic Chongqing station choice and wrong-station recovery. `zhangjiajie-city-or-wulingyuan-hotel-base` retains hotel-base choice. `hg-topic-0342` retains the independent Zhangjiajie West→Wulingyuan last-mile research boundary.
+- Do not create a fourth Chengdu–Zhangjiajie direct page, reverse-direction mirrors or city-by-night variants without new independent demand evidence and another central decision.
+- These are approved release-candidate boundaries, not proof of merge, deployment, live URLs or Google indexation.
+
 ## Canonical boundary tests
 
 Apply all tests before an Issue or branch is created.

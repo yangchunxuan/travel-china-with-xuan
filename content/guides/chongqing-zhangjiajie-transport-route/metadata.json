@@ -1,0 +1,101 @@
+{
+  "id": "chongqing-zhangjiajie-transport-route",
+  "type": "route",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["global"],
+  "format": "route-decision",
+  "topics": ["transport", "city-pair"],
+  "destinations": ["chongqing", "zhangjiajie"],
+  "heroImagePath": "/images/guides/chongqing-zhangjiajie-transport-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chongqing-zhangjiajie-transport-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "searchTerms": {
+    "en": [
+      "chongqing to zhangjiajie train",
+      "zhangjiajie to chongqing train",
+      "chongqing zhangjiajie transport",
+      "zhangjiajie west station hotel transfer"
+    ],
+    "zh": [
+      "重庆到张家界高铁",
+      "张家界到重庆高铁",
+      "重庆张家界交通",
+      "张家界西站酒店接驳"
+    ],
+    "ko": [
+      "충칭 장자제 기차",
+      "장자제 충칭 기차",
+      "충칭 장자제 이동",
+      "장자제서역 호텔 이동"
+    ]
+  },
+  "search": {
+    "section": "transport",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chongqing-zhangjiajie-transport-route/",
+      "title": "Chongqing–Zhangjiajie Train: Station-to-Hotel Transport Chain",
+      "headline": "Chongqing–Zhangjiajie: From the Ticketed Station to the Exact Hotel Address",
+      "description": "Execute the Chongqing–Zhangjiajie corridor in either direction: exact ticketed station, Zhangjiajie West, chosen hotel address, luggage, late arrival and recovery.",
+      "heroAlt": "Sandstone pillars of the Zhangjiajie landform rising above forest in Wulingyuan.",
+      "navTitle": "Chongqing–Zhangjiajie chain",
+      "featuredLinkLabel": "Build the Chongqing–Zhangjiajie chain",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chongqing", "Zhangjiajie", "Rail transfer"],
+      "heroCredit": {
+        "text": "Photo by 颐园居 (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wulingyuan,_Zhangjiajie,_Hunan_20230702.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/chongqing-zhangjiajie-transport-route/",
+      "title": "重庆—张家界高铁：从票面车站接到准确酒店地址",
+      "headline": "渝张交通链：票面节点、张家界西与酒店门口",
+      "description": "双向执行渝张走廊：核对票面准确车站，经张家界西接到已选酒店地址，并处理行李、晚到与中断恢复。",
+      "heroAlt": "武陵源张家界的砂岩峰柱从森林中拔起。",
+      "navTitle": "渝张交通链",
+      "featuredLinkLabel": "搭好渝张交通链",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["重庆", "张家界", "铁路接驳"],
+      "heroCredit": {
+        "text": "摄影：颐园居（经裁切）",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wulingyuan,_Zhangjiajie,_Hunan_20230702.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/chongqing-zhangjiajie-transport-route/",
+      "title": "충칭–장자제 열차: 표에 적힌 역에서 정확한 숙소 주소까지",
+      "headline": "충칭–장자제 이동: 표의 역, 장자제서역, 숙소 문 앞",
+      "description": "충칭–장자제 구간을 양방향으로 준비합니다. 승차권의 정확한 역, 장자제서역, 선택한 숙소 주소, 수하물, 늦은 도착과 문제 대응을 다룹니다.",
+      "heroAlt": "우링위안의 사암 기봉이 숲 위로 솟아 있습니다.",
+      "navTitle": "충칭–장자제 이동",
+      "featuredLinkLabel": "충칭–장자제 이동 사슬 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["충칭", "장자제", "철도 환승"],
+      "heroCredit": {
+        "text": "사진: YiYuanJu (cropped)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wulingyuan,_Zhangjiajie,_Hunan_20230702.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

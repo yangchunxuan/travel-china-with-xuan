@@ -9,34 +9,50 @@ import { resolveGuideEntities } from "../../lib/searchPlatformGuidePolicy.ts";
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 
 async function loadSearchMap() {
-  return JSON.parse(await readFile(
-    path.join(projectRoot, "docs/organic-growth/search-map.json"),
-    "utf8",
-  ));
+  return JSON.parse(
+    await readFile(
+      path.join(projectRoot, "docs/organic-growth/search-map.json"),
+      "utf8",
+    ),
+  );
 }
 
 async function loadJson(relativePath) {
-  return JSON.parse(await readFile(path.join(projectRoot, relativePath), "utf8"));
+  return JSON.parse(
+    await readFile(path.join(projectRoot, relativePath), "utf8"),
+  );
 }
 
-test("the Search Map complete inventory covers every current guide directory", async () => {
+test("published inventory and explicit release candidates cover every current guide directory", async () => {
   const searchMap = await loadSearchMap();
-  const guideDirectories = (await readdir(
-    path.join(projectRoot, "content/guides"),
-    { withFileTypes: true },
-  ))
+  const guideDirectories = (
+    await readdir(path.join(projectRoot, "content/guides"), {
+      withFileTypes: true,
+    })
+  )
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
     .sort();
   const inventory = searchMap.coverage.publishedInventory;
   const inventoryIds = new Set(inventory.identityIds);
+  const candidateIds = new Set(
+    searchMap.centralReleaseCandidateBatches.flatMap((batch) =>
+      batch.identities.map((entry) => entry.id),
+    ),
+  );
+  const publishedGuideDirectories = guideDirectories.filter(
+    (id) => !candidateIds.has(id),
+  );
 
-  assert.equal(searchMap.snapshotDate, "2026-08-23");
+  assert.equal(searchMap.snapshotDate, "2026-09-01");
   assert.equal(
     inventory.baseCommit,
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
-  assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
+  assert.equal(
+    inventory.generatedIdentityCount,
+    publishedGuideDirectories.length,
+  );
   assert.equal(inventory.generatedIdentityCount, 173);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
   assert.equal(inventory.identityCount, 192);
@@ -45,13 +61,27 @@ test("the Search Map complete inventory covers every current guide directory", a
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(
     inventory.identityIds,
-    [...inventory.identityIds].sort((left, right) => left.localeCompare(right, "en")),
+    [...inventory.identityIds].sort((left, right) =>
+      left.localeCompare(right, "en"),
+    ),
     "the complete inventory must remain deterministically sorted",
   );
   assert.deepEqual(
-    guideDirectories.filter((id) => !inventoryIds.has(id)),
+    guideDirectories.filter(
+      (id) => !inventoryIds.has(id) && !candidateIds.has(id),
+    ),
     [],
-    "every current guide directory must be in the complete Search Map inventory",
+    "every current guide directory must be either published or an explicit release candidate",
+  );
+  assert.deepEqual(
+    [...candidateIds].filter((id) => inventoryIds.has(id)),
+    [],
+    "not-yet-published release candidates must not be fabricated as published inventory",
+  );
+  assert.deepEqual(
+    [...candidateIds].filter((id) => !guideDirectories.includes(id)),
+    [],
+    "every release candidate must have a current guide directory",
   );
   assert.equal(
     inventory.identityIds.filter((id) => !guideDirectories.includes(id)).length,
@@ -86,15 +116,29 @@ test("all eight destination Hubs are published and the old PR 74 queue is empty"
     searchMap.currentBatchExecutionControl.releaseStatus,
     "release-completed-published-live-verified",
   );
-  assert.equal(searchMap.currentBatchExecutionControl.authorizationConsumed, true);
-  assert.equal(searchMap.currentBatchExecutionControl.newMergeAuthorized, false);
-  assert.equal(searchMap.currentBatchExecutionControl.newDeploymentAuthorized, false);
+  assert.equal(
+    searchMap.currentBatchExecutionControl.authorizationConsumed,
+    true,
+  );
+  assert.equal(
+    searchMap.currentBatchExecutionControl.newMergeAuthorized,
+    false,
+  );
+  assert.equal(
+    searchMap.currentBatchExecutionControl.newDeploymentAuthorized,
+    false,
+  );
 
   const inventoryWork = new Map(
-    searchMap.currentBatchExecutionControl.inventoryWork
-      .map((entry) => [entry.contentId, entry]),
+    searchMap.currentBatchExecutionControl.inventoryWork.map((entry) => [
+      entry.contentId,
+      entry,
+    ]),
   );
-  for (const id of ["chongqing-railway-station-selector", "destination-hangzhou"]) {
+  for (const id of [
+    "chongqing-railway-station-selector",
+    "destination-hangzhou",
+  ]) {
     assert.equal(inventoryWork.get(id)?.publicationStatus, "published", id);
     assert.equal(inventoryWork.get(id)?.liveUrls?.length, 3, id);
   }
@@ -130,7 +174,7 @@ test("published PR 74 candidates and the durable First 24 Hours draft stay disti
   }
 });
 
-test("the 60-guide remote batch is reserved but excluded from published inventory", async () => {
+test("the remaining 59-guide remote batch is reserved and distinct from the released overlap", async () => {
   const searchMap = await loadSearchMap();
   assert.equal(searchMap.remoteDurableDraftBatches.length, 1);
   const batch = searchMap.remoteDurableDraftBatches[0];
@@ -139,27 +183,50 @@ test("the 60-guide remote batch is reserved but excluded from published inventor
   const uniqueIds = new Set(allIds);
 
   assert.equal(batch.batchId, "content-scale-20260822");
-  assert.equal(batch.identityCount, 60);
-  assert.equal(batch.localeUrlCount, 180);
+  assert.equal(batch.identityCount, 59);
+  assert.equal(batch.localeUrlCount, 177);
   assert.equal(idsByPool.length, 6);
-  assert.ok(idsByPool.every((ids) => ids.length === 10));
-  assert.equal(uniqueIds.size, 60);
+  assert.deepEqual(
+    idsByPool.map((ids) => ids.length),
+    [9, 10, 10, 10, 10, 10],
+  );
+  assert.equal(uniqueIds.size, 59);
   assert.equal(batch.workerDeliveries.length, 6);
-  assert.ok(batch.workerDeliveries.every((delivery) =>
-    delivery.identityCount === 10 &&
-    delivery.localeUrlCount === 30 &&
-    delivery.publicationStatus === "not-published"
-  ));
+  assert.deepEqual(
+    batch.workerDeliveries.map((delivery) => [
+      delivery.identityCount,
+      delivery.localeUrlCount,
+    ]),
+    [
+      [9, 27],
+      [10, 30],
+      [10, 30],
+      [10, 30],
+      [10, 30],
+      [10, 30],
+    ],
+  );
+  assert.ok(
+    batch.workerDeliveries.every(
+      (delivery) => delivery.publicationStatus === "not-published",
+    ),
+  );
   assert.equal(batch.releaseAuthorization.releaseAuthorized, false);
   assert.equal(batch.releaseAuthorization.mergeAuthorized, false);
   assert.equal(batch.releaseAuthorization.deploymentAuthorized, false);
   assert.equal(batch.draftProductionAuthorization.authorizationConsumed, true);
-  assert.equal(batch.draftProductionAuthorization.newIdentityOrAdditionalWorkAuthorized, false);
+  assert.equal(
+    batch.draftProductionAuthorization.newIdentityOrAdditionalWorkAuthorized,
+    false,
+  );
   assert.equal(batch.integrationReview.pr.endsWith("/pull/84"), true);
   assert.equal(batch.integrationReview.isDraft, true);
-  assert.equal(batch.integrationReview.state, "open");
+  assert.equal(batch.integrationReview.state, "closed-unmerged");
   assert.equal(batch.integrationReview.mergeCommit, null);
-  assert.equal(batch.integrationReview.mergeability, "conflicting-with-current-main");
+  assert.equal(
+    batch.integrationReview.mergeability,
+    "closed-unmerged-not-a-current-merge-target",
+  );
 
   const employee3 = batch.workerDeliveries.find(
     (delivery) => delivery.ownerPool === "employee-3-culture",
@@ -171,22 +238,76 @@ test("the 60-guide remote batch is reserved but excluded from published inventor
   assert.equal(employee3?.additionalTopicAuthorized, false);
   assert.equal(employee3?.draftDatePlaceholder, "2026-08-20");
 
-  const publishedIds = new Set(searchMap.coverage.publishedInventory.identityIds);
-  assert.deepEqual(allIds.filter((id) => publishedIds.has(id)), []);
-  const currentGuideDirectories = new Set((await readdir(
-    path.join(projectRoot, "content/guides"),
-    { withFileTypes: true },
-  )).filter((entry) => entry.isDirectory()).map((entry) => entry.name));
-  assert.deepEqual(allIds.filter((id) => currentGuideDirectories.has(id)), []);
+  const publishedIds = new Set(
+    searchMap.coverage.publishedInventory.identityIds,
+  );
+  assert.deepEqual(
+    allIds.filter((id) => publishedIds.has(id)),
+    [],
+  );
+  const currentGuideDirectories = new Set(
+    (
+      await readdir(path.join(projectRoot, "content/guides"), {
+        withFileTypes: true,
+      })
+    )
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name),
+  );
+  assert.deepEqual(
+    allIds.filter((id) => currentGuideDirectories.has(id)),
+    [],
+  );
   assert.deepEqual(searchMap.currentUnpublishedInventorySummary, {
-    checkedAt: "2026-08-23",
-    remoteDurableGuideDraftIdentities: 60,
-    remoteDurableGuideDraftLocaleUrls: 180,
+    checkedAt: "2026-09-01",
+    remoteDurableGuideDraftIdentities: 59,
+    remoteDurableGuideDraftLocaleUrls: 177,
+    centralReleaseCandidateIdentities: 3,
+    centralReleaseCandidateLocaleUrls: 9,
     internalCollectionDraftIdentities: 1,
     releaseAuthorizedProductionQueueIdentities: 0,
     internalNonIdentitySpecifications: 1,
     interpretation: searchMap.currentUnpublishedInventorySummary.interpretation,
   });
+});
+
+test("the Southwest route cluster is approved as three not-yet-published canonical identities", async () => {
+  const searchMap = await loadSearchMap();
+  assert.equal(searchMap.centralReleaseCandidateBatches.length, 1);
+  const batch = searchMap.centralReleaseCandidateBatches[0];
+  const ids = batch.identities.map((entry) => entry.id).sort();
+
+  assert.equal(batch.batchId, "southwest-route-cluster-20260901");
+  assert.equal(batch.identityCount, 3);
+  assert.equal(batch.localeUrlCount, 9);
+  assert.equal(batch.publicationStatus, "not-published");
+  assert.deepEqual(ids, [
+    "chengdu-chongqing-station-pair",
+    "chengdu-chongqing-zhangjiajie-route-order",
+    "chongqing-zhangjiajie-transport-route",
+  ]);
+  assert.ok(
+    batch.identities.every(
+      (entry) =>
+        entry.publicationStatus === "not-published" &&
+        entry.indexablePageAuthorized === true &&
+        entry.localePaths.length === 3,
+    ),
+  );
+  assert.equal(batch.centralDecision.clusterBoundaryApproved, true);
+  assert.equal(batch.centralDecision.reservedOverlapResolved, true);
+  assert.equal(batch.centralDecision.searchMapApproved, true);
+  assert.equal(batch.centralDecision.indexablePagesAuthorized, true);
+  assert.equal(batch.centralDecision.mergeAuthorized, false);
+  assert.equal(batch.centralDecision.deploymentAuthorized, false);
+  assert.equal(batch.sourceIntegrity.reportedRefObserved, false);
+  assert.equal(batch.sourceIntegrity.reportedCommitObserved, false);
+  assert.equal(
+    searchMap.remoteDurableDraftBatches[0].identityIdsByPool[
+      "employee-1-transport"
+    ].includes("chengdu-chongqing-station-pair"),
+    false,
+  );
 });
 
 test("entity evidence and detailed published assignments match current repository sources", async () => {
@@ -198,25 +319,43 @@ test("entity evidence and detailed published assignments match current repositor
     entityRecords.map((record) => record.data.id),
   );
 
-  for (const evidencePaths of Object.values(assignments.repositoryEntityEvidence)) {
+  for (const evidencePaths of Object.values(
+    assignments.repositoryEntityEvidence,
+  )) {
     for (const evidencePath of evidencePaths) {
       await access(path.join(projectRoot, evidencePath));
     }
   }
 
-  const detailedIds = searchMap.coverage.published.map((entry) => entry.id).sort();
-  assert.deepEqual(Object.keys(assignments.publishedRepositoryEntityIds).sort(), detailedIds);
-  const generatedDirectories = new Set((await readdir(
-    path.join(projectRoot, "content/guides"),
-    { withFileTypes: true },
-  )).filter((entry) => entry.isDirectory()).map((entry) => entry.name));
+  const detailedIds = searchMap.coverage.published
+    .map((entry) => entry.id)
+    .sort();
+  assert.deepEqual(
+    Object.keys(assignments.publishedRepositoryEntityIds).sort(),
+    detailedIds,
+  );
+  const generatedDirectories = new Set(
+    (
+      await readdir(path.join(projectRoot, "content/guides"), {
+        withFileTypes: true,
+      })
+    )
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name),
+  );
   const knownNonGeneratedIds = new Set([
-    ...searchMap.coverage.publishedInventory.identityIds
-      .filter((id) => !generatedDirectories.has(id)),
+    ...searchMap.coverage.publishedInventory.identityIds.filter(
+      (id) => !generatedDirectories.has(id),
+    ),
     "system-entry-requirements",
   ]);
   for (const id of detailedIds) {
-    const metadataPath = path.join(projectRoot, "content/guides", id, "metadata.json");
+    const metadataPath = path.join(
+      projectRoot,
+      "content/guides",
+      id,
+      "metadata.json",
+    );
     try {
       const metadata = JSON.parse(await readFile(metadataPath, "utf8"));
       assert.deepEqual(
@@ -236,34 +375,52 @@ test("entity evidence and detailed published assignments match current repositor
   assert.equal(searchMap.coverage.nonEditorialSystemPages.identityCount, 9);
   assert.equal(expectedNonEditorial.length, 9);
   for (const id of expectedNonEditorial) {
-    assert.match(searchMap.coverage.nonEditorialSystemPages.scope, new RegExp(id));
+    assert.match(
+      searchMap.coverage.nonEditorialSystemPages.scope,
+      new RegExp(id),
+    );
   }
 });
 
 test("Route Reality remains internal evidence after the public product rejection", async () => {
   const searchMap = await loadSearchMap();
   const routeId = "planning-20260811-01";
-  const round = searchMap.roundExecutionControl.observedTicketStates
-    .find((entry) => entry.candidateId === routeId);
-  const candidate = searchMap.coverage.candidates
-    .find((entry) => entry.candidateId === routeId);
-  const pool = searchMap.poolDecisions
-    .find((entry) => entry.selectedCandidateId === routeId);
+  const round = searchMap.roundExecutionControl.observedTicketStates.find(
+    (entry) => entry.candidateId === routeId,
+  );
+  const candidate = searchMap.coverage.candidates.find(
+    (entry) => entry.candidateId === routeId,
+  );
+  const pool = searchMap.poolDecisions.find(
+    (entry) => entry.selectedCandidateId === routeId,
+  );
   const gate = searchMap.roundExecutionControl.routeRealityCheckerReviewGate;
-  const opportunity = searchMap.externalDemandResearch.opportunityClusters
-    .find((entry) => entry.clusterId === "market-first-trip-route-reality");
-  const ownership = searchMap.queryTaskOwnership
-    .find((entry) => entry.cluster === "China itinerary pace and generic duration");
-  const ownerUpdate = searchMap.queues.pendingUpdates
-    .find((entry) => entry.owner === "is-your-china-itinerary-too-rushed");
+  const opportunity = searchMap.externalDemandResearch.opportunityClusters.find(
+    (entry) => entry.clusterId === "market-first-trip-route-reality",
+  );
+  const ownership = searchMap.queryTaskOwnership.find(
+    (entry) => entry.cluster === "China itinerary pace and generic duration",
+  );
+  const ownerUpdate = searchMap.queues.pendingUpdates.find(
+    (entry) => entry.owner === "is-your-china-itinerary-too-rushed",
+  );
 
   for (const record of [round, candidate, pool, gate]) {
     assert.equal(record?.centralDecision, "rejected");
-    assert.equal(record?.decisionScope, "public-product-only-internal-specification-retained");
+    assert.equal(
+      record?.decisionScope,
+      "public-product-only-internal-specification-retained",
+    );
     assert.equal(record?.publicationStatus, "not-published");
   }
-  assert.equal(round.executionStatus, "internal-specification-merged-public-product-closed");
-  assert.equal(candidate.executionStatus, "internal-specification-merged-public-product-closed");
+  assert.equal(
+    round.executionStatus,
+    "internal-specification-merged-public-product-closed",
+  );
+  assert.equal(
+    candidate.executionStatus,
+    "internal-specification-merged-public-product-closed",
+  );
   assert.equal(gate.specIntegrationPr.endsWith("/pull/75"), true);
   assert.equal(gate.technicalReviewStatus, "TECHNICAL SPEC REVIEW PASSED");
   for (const field of [
@@ -284,7 +441,10 @@ test("Route Reality remains internal evidence after the public product rejection
     opportunity.recommendedArtifact,
     "update-existing-owner-and-national-planning-hub",
   );
-  assert.equal(opportunity.provisionalOwner, "is-your-china-itinerary-too-rushed");
+  assert.equal(
+    opportunity.provisionalOwner,
+    "is-your-china-itinerary-too-rushed",
+  );
   assert.equal(
     opportunity.status,
     "tool-rejected-route-to-existing-owner-no-new-ticket",
@@ -296,14 +456,19 @@ test("Route Reality remains internal evidence after the public product rejection
   assert.match(ownerUpdate.change, /public product was rejected/u);
   assert.match(ownerUpdate.authorization, /tool ticket is closed/u);
   for (const adjacentId of ["planning-20260811-02", "planning-20260811-03"]) {
-    const adjacent = searchMap.coverage.candidates
-      .find((entry) => entry.candidateId === adjacentId);
-    assert.equal(adjacent.suggestedInternalLinks.includes(routeId), false, adjacentId);
+    const adjacent = searchMap.coverage.candidates.find(
+      (entry) => entry.candidateId === adjacentId,
+    );
+    assert.equal(
+      adjacent.suggestedInternalLinks.includes(routeId),
+      false,
+      adjacentId,
+    );
   }
   assert.doesNotMatch(
-    searchMap.coverage.candidates
-      .find((entry) => entry.candidateId === "planning-20260811-02")
-      .sourceReadiness.missing,
+    searchMap.coverage.candidates.find(
+      (entry) => entry.candidateId === "planning-20260811-02",
+    ).sourceReadiness.missing,
     /approved route checker/u,
   );
   await access(path.join(projectRoot, gate.technicalReviewPath));
@@ -312,7 +477,9 @@ test("Route Reality remains internal evidence after the public product rejection
 
 test("every repaired published owner keeps final release evidence", async () => {
   const searchMap = await loadSearchMap();
-  const published = new Map(searchMap.coverage.published.map((entry) => [entry.id, entry]));
+  const published = new Map(
+    searchMap.coverage.published.map((entry) => [entry.id, entry]),
+  );
   const expected = new Map([
     ["forbidden-city-for-foreign-visitors", [24, 86]],
     ["lunar-new-year-customs-for-visitors", [56, 86]],
@@ -329,7 +496,11 @@ test("every repaired published owner keeps final release evidence", async () => 
     assert.equal(entry?.status, "published-indexable", id);
     assert.equal(entry?.releasePr?.endsWith(`/pull/${releasePr}`), true, id);
     if (latestUpdatePr) {
-      assert.equal(entry?.latestUpdatePr?.endsWith(`/pull/${latestUpdatePr}`), true, id);
+      assert.equal(
+        entry?.latestUpdatePr?.endsWith(`/pull/${latestUpdatePr}`),
+        true,
+        id,
+      );
     }
     assert.doesNotMatch(
       entry.stateTransition,

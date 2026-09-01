@@ -1,8 +1,16 @@
 # Homeground Search Map 快照 — 2026-08-11
 
-当前状态：`SEARCH MAP RECONCILED THROUGH CURRENT MAIN SHA c0020bf — PR #96 MAP/HUB RELEASE AND LATER-MERGED PR #95 NINE-GUIDE RELEASE LIVE — 60 REMOTE DRAFT IDENTITIES RESERVED / NOT PUBLISHED`
+当前状态：`SEARCH MAP RECONCILED THROUGH ORIGIN/MAIN c13d83e — 59 PR #84 REMOTE DRAFT IDENTITIES RESERVED / NOT PUBLISHED — SOUTHWEST N=3 CENTRAL RELEASE CANDIDATE / NOT PUBLISHED`
 
 本快照是团队选题与搜索任务主账本的人类可读版本。机器可读权威文件是 `docs/organic-growth/search-map.json`。下面的 2026-08-23 覆盖层是当前生产口径；2026-08-20 和 2026-08-11 段落继续保留为历史证据，不得再用来判断当前发布状态。
+
+## 2026-09-01 中央候选覆盖层
+
+- `chengdu-chongqing-station-pair` 已从 PR #84 的员工1预留池解除，并与从旧员工分支找回的同名稿绑定；历史提案别名 `chengdu-chongqing-transport-route` 退役，不建立第二个 URL。
+- `chengdu-chongqing-zhangjiajie-route-order`、`chengdu-chongqing-station-pair`、`chongqing-zhangjiajie-transport-route` 组成一个严格 N=3 的中央发布候选：一个三城取舍/顺序 owner，加两个铁路走廊执行 owner。
+- 三项共 9 个 locale path 目前仍是 `not-published`，不得提前计入 published inventory、live sitemap 或 Google 收录。当前 main 的本地生产构建为 749 个唯一 sitemap URL；加入三项后为 759。除 9 个三语文章 URL 外，跨过目录分页阈值会自动生成 `/guides/page/9/`，因此预期 sitemap 总增量是 10；该分页页不是第 4 个内容身份。页面边界与未来 indexable 身份已批准，但本记录本身不证明合并或部署。
+- 报告中的来源分支 `article/chengdu-chongqing-zhangjiajie-cluster-20260901` 与提交 `bd1c02994d85deeb2ba6f1c3e69f4310c85ade38` 未能在 fetch 后的远端、本地 refs 或可恢复对象中找到。两篇旧稿按各自真实分支恢复，三城顺序页由中央重建，不将其冒充为该缺失提交的产物。
+- 不创建第4篇成都—张家界直连页；没有独立需求证据前，这个问法由三城顺序 owner 回答。
 
 ## 2026-08-23 当前生产覆盖层
 
@@ -12,7 +20,7 @@
 - PR #74 的 Zhangjiajie Hub、Online Arrival Card、Forest Park workflow、Chongqing station selector 和 Hangzhou Hub 已全部三语发布并于 2026-08-21 完成线上读回，不得继续标作 `not-published`。
 - PR #80、#83、#86、#87 后续发布带来的 Chongqing Hub 和 6 个 guide owner 已回填机器账本；PR #89 只做技术、隐私、索引信号与流量治理修复。PR #91 新增十城地图英文 owner；PR #93 与 #96 只增强既有身份的发现、Hub 反链和可复用下载包，二者新增 canonical identity 均为 0。随后合并的 PR #95 新增 9 个三语 guide identity、27 个 locale URL。
 - `First 24 Hours in China` 已形成三语 durable internal draft，状态为 `pending-review / draft-submitted / not-published`；没有 route、Registry、sitemap 或公开授权。
-- Draft PR #84 保存员工 1–6 各 10 篇，共 **60 个 durable draft identity、180 个 locale path**。它仍为 OPEN / Draft，当前与 `main` 冲突，全部不计入线上库存；精确 slug 见机器账本 `remoteDurableDraftBatches[0]`。
+- PR #84 已关闭且未合并。解除一项重叠预留后，原员工批次还剩 **59 个 durable draft identity、177 个 locale path**，全部不计入线上库存；精确 slug 见机器账本 `remoteDurableDraftBatches[0]`。
 - Route Reality 的内部规格已随 PR #75 合并且 v4 技术审查通过，但公开产品随后被中央否决；没有继续开发或公开授权。
 - 2026-08-23 最新 main 部署后的 live sitemap 为 **698 个唯一 URL、0 重复**；PR #96 刚发布时的 671 只保留为历史快照。698 不等于 Google 已收录 698 页。最新发布证据见 [`docs/release-notes/authority-map-and-hub-links-production-release-20260823.md`](../release-notes/authority-map-and-hub-links-production-release-20260823.md)，Search Console 状态仍以 [`docs/release-notes/search-analytics-privacy-production-release-20260823.md`](../release-notes/search-analytics-privacy-production-release-20260823.md) 的已核验证据为准。
 
