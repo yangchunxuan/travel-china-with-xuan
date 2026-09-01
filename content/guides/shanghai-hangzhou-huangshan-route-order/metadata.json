@@ -1,0 +1,53 @@
+{
+  "id": "shanghai-hangzhou-huangshan-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["shanghai", "hangzhou", "huangshan", "route-order", "gateway", "mountain-buffer"],
+  "destinations": ["shanghai", "hangzhou", "huangshan"],
+  "heroImagePath": "/images/guides/shanghai-hangzhou-huangshan-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-hangzhou-huangshan-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-hangzhou-huangshan-route-order/",
+      "title": "Shanghai, Hangzhou and Huangshan: Which Order Works?",
+      "headline": "Shanghai, Hangzhou and Huangshan: Put the Mountain Before the Timetable",
+      "description": "Choose the route direction by the real flight gateway, Huangshan's multi-step access chain and a protected exit buffer.",
+      "heroAlt": "Original editorial diagram showing Shanghai, Hangzhou and Huangshan as three route locks rather than a timetable.",
+      "navTitle": "Shanghai–Hangzhou–Huangshan order",
+      "featuredLinkLabel": "Order Shanghai, Hangzhou and Huangshan",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Route order", "Huangshan", "Gateway"]
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-hangzhou-huangshan-route-order/",
+      "title": "上海、杭州、黄山怎么排顺序？",
+      "headline": "上海、杭州、黄山怎么排：先确定黄山这段，再看车程",
+      "description": "按真实进出机场、黄山多段换乘链和离境缓冲，选择正向、反向或上海往返路线。",
+      "heroAlt": "原创编辑示意图：上海、杭州、黄山被表示为三个需要依次核实的路线锁点。",
+      "navTitle": "上海杭州黄山顺序",
+      "featuredLinkLabel": "安排上海、杭州和黄山顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["路线顺序", "黄山", "进出门户"]
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-hangzhou-huangshan-route-order/",
+      "title": "상하이·항저우·황산은 어떤 순서가 좋을까?",
+      "headline": "상하이·항저우·황산: 열차보다 산악 구간을 먼저 정하세요",
+      "description": "실제 입출국 공항, 황산의 여러 단계 이동, 출국 전 여유 시간을 기준으로 정방향·역방향·상하이 왕복을 고릅니다.",
+      "heroAlt": "상하이, 항저우, 황산을 시간표가 아닌 세 개의 동선 잠금 지점으로 나타낸 오리지널 편집 도식.",
+      "navTitle": "상하이·항저우·황산 순서",
+      "featuredLinkLabel": "상하이·항저우·황산 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["동선 순서", "황산", "입출국 관문"]
+    }
+  }
+}
