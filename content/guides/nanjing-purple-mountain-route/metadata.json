@@ -1,0 +1,86 @@
+{
+  "id": "nanjing-purple-mountain-route",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "multi-zone-route-decision",
+  "topics": ["nanjing-purple-mountain", "ming-xiaoling", "sun-yat-sen-mausoleum", "linggu", "same-day-route", "reservation", "shuttle-network"],
+  "destinations": ["nanjing"],
+  "heroImagePath": "/images/guides/nanjing-purple-mountain-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/nanjing-purple-mountain-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "searchTerms": {
+    "en": ["Ming Xiaoling Sun Yat-sen Mausoleum Linggu one day", "can I visit all three Purple Mountain heritage sites", "Ming Xiaoling and Sun Yat-sen Mausoleum same day", "which Purple Mountain heritage zone to skip"],
+    "zh": ["明孝陵中山陵灵谷景区一天", "紫金山三个文化遗产片区能否一天走完", "明孝陵和中山陵同一天", "紫金山三个片区删掉哪一个"],
+    "ko": ["명효릉 중산릉 링구 하루", "쯔진산 세 문화유산 구역 하루 가능", "명효릉 중산릉 같은 날", "쯔진산 세 구역 중 어디를 뺄까"]
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/nanjing-purple-mountain-route/",
+      "title": "Can You Visit Ming Xiaoling, Sun Yat-sen Mausoleum and Linggu in One Day?",
+      "headline": "Ming Xiaoling, Sun Yat-sen Mausoleum and Linggu: Two Zones or Three?",
+      "description": "Choose two or three Purple Mountain heritage zones, move in one direction, protect the Mausoleum reservation and recover when shuttles or stamina fail.",
+      "heroAlt": "Nanjing city blocks and Xuanwu Lake with Purple Mountain on the right horizon",
+      "heroCredit": {
+        "text": "Nanjing View by alexrudd, photographed from Zifeng Tower on 12 October 2013. Homeground centre-cropped the image to 16:10, resized it and converted it to WebP. It shows Nanjing, Xuanwu Lake and Purple Mountain on the right horizon; it does not identify the three scenic zones, prove walking distances or show the current skyline.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nanjing_View.png",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "navTitle": "Choose two or three Purple Mountain heritage zones",
+      "featuredLinkLabel": "Can the three Purple Mountain heritage zones fit in one day?",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Nanjing", "Ming Xiaoling", "Purple Mountain"]
+    },
+    "zh": {
+      "path": "/zh/guides/nanjing-purple-mountain-route/",
+      "title": "明孝陵、中山陵与灵谷景区能否一天走完？",
+      "headline": "明孝陵、中山陵和灵谷景区：选两区还是三区？",
+      "description": "决定紫金山一天看两区还是三区，按单向动线减少折返，并处理中山陵预约、接驳变化和体力不足。",
+      "heroAlt": "南京城区与玄武湖，紫金山位于右侧远方",
+      "heroCredit": {
+        "text": "alexrudd 于 2013 年 10 月 12 日从紫峰大厦拍摄《Nanjing View》。Homeground 居中裁成 16:10、缩放并转为 WebP。照片展示南京城区、玄武湖及右侧远方的紫金山，不能识别三个景区，也不能证明步行距离或当前天际线。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nanjing_View.png",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "navTitle": "紫金山三个文化遗产片区怎样取舍",
+      "featuredLinkLabel": "紫金山三个片区能否一天走完",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["南京", "明孝陵", "紫金山"]
+    },
+    "ko": {
+      "path": "/ko/guides/nanjing-purple-mountain-route/",
+      "title": "명효릉·중산릉·링구를 하루에 볼 수 있을까?",
+      "headline": "명효릉·중산릉·링구: 두 구역과 세 구역 중 선택하기",
+      "description": "쯔진산의 두 구역과 세 구역 중 선택하고 한 방향으로 이동하며, 중산릉 예약·셔틀 변경·체력 저하에 대응합니다.",
+      "heroAlt": "난징 도심과 쉬안우호, 오른쪽 먼 지평선의 쯔진산",
+      "heroCredit": {
+        "text": "alexrudd가 2013년 10월 12일 쯔펑타워에서 촬영한 ‘Nanjing View’. Homeground가 중앙부를 16:10으로 자르고 크기를 조정해 WebP로 변환했습니다. 난징 도심, 쉬안우호와 오른쪽 먼 지평선의 쯔진산을 보여 주지만 세 관광 구역, 도보 거리나 현재 스카이라인을 증명하지는 않습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nanjing_View.png",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "navTitle": "쯔진산 세 문화유산 구역 중 선택하기",
+      "featuredLinkLabel": "쯔진산 세 구역을 하루에 볼 수 있을까",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["난징", "명효릉", "쯔진산"]
+    }
+  }
+}
