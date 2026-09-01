@@ -1,0 +1,53 @@
+{
+  "id": "beijing-datong-pingyao-xian-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["beijing", "datong", "pingyao", "xian", "route-order", "hotel-changes"],
+  "destinations": ["beijing", "datong", "pingyao", "xian"],
+  "heroImagePath": "/images/guides/beijing-datong-pingyao-xian-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-datong-pingyao-xian-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-datong-pingyao-xian-route-order/",
+      "title": "Beijing, Datong, Pingyao and Xi'an: Which Stops Stay?",
+      "headline": "Beijing, Datong, Pingyao and Xi'an: Is the Shanxi Detour Worth Two Hotel Changes?",
+      "description": "Choose Datong, Pingyao, both or neither by their distinct heritage value, protected visit blocks and hotel-change cost.",
+      "heroAlt": "Original editorial diagram showing Datong and Pingyao as two optional bases between Beijing and Xi'an.",
+      "navTitle": "Datong and Pingyao detour",
+      "featuredLinkLabel": "Choose Datong, Pingyao or both",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Route choice", "Shanxi", "Hotel changes"]
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-datong-pingyao-xian-route-order/",
+      "title": "北京—大同—平遥—西安：山西段留哪一站？",
+      "headline": "北京、大同、平遥、西安怎么排：山西段值得换两次酒店吗？",
+      "description": "从独特遗产价值、受保护参观时段和换酒店成本，决定只去大同、只去平遥、两地都去或都不去。",
+      "heroAlt": "原创编辑示意图：大同和平遥作为北京与西安之间的两个可选住宿点。",
+      "navTitle": "大同和平遥取舍",
+      "featuredLinkLabel": "选择大同、平遥或两地都去",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["路线取舍", "山西", "换酒店"]
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-datong-pingyao-xian-route-order/",
+      "title": "베이징–다퉁–핑야오–시안: 어느 도시를 남길까?",
+      "headline": "베이징·다퉁·핑야오·시안: 산시 구간은 숙소를 두 번 옮길 가치가 있을까?",
+      "description": "서로 다른 유산의 가치, 온전히 확보할 방문 시간, 숙소 이동 비용으로 다퉁·핑야오·둘 다·둘 다 제외 중 하나를 고릅니다.",
+      "heroAlt": "베이징과 시안 사이에 다퉁과 핑야오를 선택형 거점으로 표시한 오리지널 편집 도식.",
+      "navTitle": "다퉁·핑야오 선택",
+      "featuredLinkLabel": "다퉁, 핑야오 또는 둘 다 선택하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["동선 선택", "산시", "숙소 이동"]
+    }
+  }
+}
