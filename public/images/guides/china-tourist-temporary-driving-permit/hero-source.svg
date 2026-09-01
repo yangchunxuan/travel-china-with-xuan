@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Two checks before a visitor drives a rental car</title>
+  <desc id="desc">An abstract licence card passes through a permit gate, then a separate rental gate, with public transport shown as a fallback.</desc>
+  <rect width="1600" height="1000" rx="72" fill="#F4F1E8"/>
+  <circle cx="220" cy="190" r="120" fill="#DCEAE2"/>
+  <circle cx="1400" cy="820" r="180" fill="#E8DDD0"/>
+  <path d="M170 520H470" stroke="#243D35" stroke-width="30" stroke-linecap="round"/>
+  <path d="M430 465L500 520 430 575" fill="none" stroke="#243D35" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="105" y="345" width="330" height="235" rx="34" fill="#FFFDF7" stroke="#243D35" stroke-width="18"/>
+  <circle cx="190" cy="445" r="42" fill="#C96E4B"/>
+  <rect x="260" y="408" width="125" height="22" rx="11" fill="#667A72"/>
+  <rect x="260" y="452" width="95" height="22" rx="11" fill="#A5B5AE"/>
+  <rect x="145" y="515" width="230" height="18" rx="9" fill="#D7C4AD"/>
+  <rect x="520" y="230" width="300" height="545" rx="54" fill="#243D35"/>
+  <rect x="565" y="290" width="210" height="425" rx="34" fill="#F4F1E8"/>
+  <path d="M625 505l55 58 106-132" fill="none" stroke="#2E8A68" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="670" cy="350" r="34" fill="#C96E4B"/>
+  <path d="M845 520h235" stroke="#243D35" stroke-width="30" stroke-linecap="round"/>
+  <path d="M1040 465l70 55-70 55" fill="none" stroke="#243D35" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1130" y="300" width="365" height="430" rx="44" fill="#FFFDF7" stroke="#243D35" stroke-width="18"/>
+  <rect x="1190" y="360" width="245" height="125" rx="22" fill="#E8DDD0"/>
+  <circle cx="1245" cy="510" r="38" fill="#C96E4B"/>
+  <circle cx="1385" cy="510" r="38" fill="#C96E4B"/>
+  <path d="M1195 510h235l-34-82h-150z" fill="#667A72"/>
+  <rect x="1200" y="590" width="230" height="22" rx="11" fill="#667A72"/>
+  <rect x="1200" y="635" width="165" height="22" rx="11" fill="#A5B5AE"/>
+  <path d="M670 805v80h330" fill="none" stroke="#C96E4B" stroke-width="24" stroke-linecap="round" stroke-dasharray="22 30"/>
+  <rect x="1000" y="790" width="260" height="150" rx="32" fill="#FFFDF7" stroke="#C96E4B" stroke-width="16"/>
+  <rect x="1050" y="828" width="160" height="58" rx="18" fill="#C96E4B"/>
+  <circle cx="1090" cy="906" r="22" fill="#243D35"/>
+  <circle cx="1170" cy="906" r="22" fill="#243D35"/>
+</svg>

@@ -1,0 +1,81 @@
+{
+  "id": "china-tourist-temporary-driving-permit",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "eligibility-dossier-and-rental-gates",
+  "topics": ["temporary driving permit", "foreign driving licence", "car rental", "road travel"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-tourist-temporary-driving-permit/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-tourist-temporary-driving-permit/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "searchTerms": {
+    "en": [
+      "can tourists drive in china",
+      "china temporary driving permit tourist",
+      "rent a car china foreign licence",
+      "is international driving permit valid in china",
+      "temporary chinese driving licence documents"
+    ],
+    "zh": [
+      "外国游客中国临时驾驶许可",
+      "外国驾照在中国内地租车",
+      "临时机动车驾驶许可材料",
+      "外国游客中国自驾"
+    ],
+    "ko": [
+      "중국 여행자 임시 운전허가",
+      "외국 면허 중국 렌터카",
+      "중국 본토 여행 운전",
+      "중국 임시 운전허가 서류"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-tourist-temporary-driving-permit/",
+      "title": "Temporary Driving Permit in China: Can a Tourist Rent a Car?",
+      "headline": "Confirm the Mainland China Driving-Authority Route Before You Drive",
+      "description": "Check the mainland China temporary-driving-permit route, build the local document pack, confirm rental acceptance, and keep a no-drive fallback.",
+      "heroAlt": "Editorial diagram showing a foreign licence entering a permit check before a separate rental-car check.",
+      "navTitle": "China temporary driving permit",
+      "featuredLinkLabel": "Check the tourist driving-permit route",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Driving permit", "Document pack", "Rental check"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-tourist-temporary-driving-permit/",
+      "title": "外国游客在中国内地自驾：临时驾驶许可与租车双重核验",
+      "headline": "在中国内地开车前，先确认本人适用的驾驶授权路径",
+      "description": "判断是否走临时机动车驾驶许可路径，准备当地材料，分别确认许可和租车接受条件，并保留不开车的替代方案。",
+      "heroAlt": "编辑示意图显示境外驾照先经过许可核验，再经过独立的租车核验。",
+      "navTitle": "外国游客中国临时驾驶许可",
+      "featuredLinkLabel": "核对临时驾驶许可与租车条件",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["驾驶许可", "材料包", "租车核验"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-tourist-temporary-driving-permit/",
+      "title": "중국 본토 여행자 임시 운전허가: 면허와 렌터카를 따로 확인하기",
+      "headline": "중국 본토에서 운전하기 전에 본인에게 적용되는 허가 경로를 확인하세요",
+      "description": "임시 운전허가 대상과 현지 서류를 확인하고 렌터카 인수 조건을 별도로 검증한 뒤 운전하지 못할 때의 대안까지 준비합니다.",
+      "heroAlt": "해외 운전면허가 허가 확인을 거친 뒤 별도의 렌터카 확인으로 이어지는 편집용 도식.",
+      "navTitle": "중국 여행자 임시 운전허가",
+      "featuredLinkLabel": "임시 운전허가와 렌터카 조건 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["운전허가", "서류 준비", "렌터카 확인"]
+    }
+  }
+}
