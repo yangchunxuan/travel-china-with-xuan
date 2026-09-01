@@ -1,0 +1,107 @@
+{
+  "id": "chengdu-chongqing-station-pair",
+  "type": "planning",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["global"],
+  "format": "corridor-decision-matrix",
+  "topics": [
+    "transport",
+    "railways",
+    "station-pairs",
+    "hotel-door-connections",
+    "luggage"
+  ],
+  "destinations": ["chengdu", "chongqing"],
+  "heroImagePath": "/images/guides/chengdu-chongqing-station-pair/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-chongqing-station-pair/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "transport",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-chongqing-station-pair/",
+      "title": "Chengdu to Chongqing by Train: Choose the Right Station Pair, Not Just the Fastest Train",
+      "headline": "Chengdu to Chongqing: Which Railway Station Pair Works?",
+      "description": "Build the Chengdu–Chongqing train trip from the exact hotel doors, live 12306 stations, luggage and late-arrival fallback—not the shortest timetable alone.",
+      "heroAlt": "Exterior of Chengdu East Railway Station with the station name above the entrance.",
+      "heroCredit": {
+        "text": "Chengdu East Railway Station, Fxqf, 28 September 2011; cropped and resized by Homeground. It identifies this station only and does not prove current trains.",
+        "sourceLabel": "Original Commons file",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChengdu_East_Railway_Station.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "Choose a Chengdu–Chongqing station pair",
+      "featuredLinkLabel": "Compare Chengdu–Chongqing railway station pairs",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chengdu", "Chongqing", "Rail"]
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-chongqing-station-pair/",
+      "title": "成都到重庆坐火车：先选对车站组合，不只看最快车次",
+      "headline": "成都到重庆，哪组火车站真正合适？",
+      "description": "从准确酒店入口、12306实时车站、行李和晚到备选构建成都—重庆铁路，不只比较最短车程。",
+      "heroAlt": "成都东站外观，入口上方可见站名。",
+      "heroCredit": {
+        "text": "成都东站，Fxqf摄于2011年9月28日；Homeground裁切并缩放。照片只确认此站，不证明当前车次。",
+        "sourceLabel": "Commons原始文件",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChengdu_East_Railway_Station.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "选择成都—重庆车站组合",
+      "featuredLinkLabel": "比较成都—重庆铁路车站组合",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["成都", "重庆", "铁路"]
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-chongqing-station-pair/",
+      "title": "청두–충칭 기차: 가장 빠른 열차보다 올바른 역 조합 고르기",
+      "headline": "청두–충칭, 어느 기차역 조합이 맞을까요?",
+      "description": "정확한 숙소 문, 12306 실시간 역, 짐과 늦은 도착 대안으로 청두–충칭 철도를 설계합니다.",
+      "heroAlt": "입구 위 역명이 보이는 청두동역 외관.",
+      "heroCredit": {
+        "text": "청두동역. Fxqf가 2011년 9월 28일 촬영했으며 Homeground가 잘라 크기를 조정했습니다. 사진은 이 역만 확인하며 현재 열차를 증명하지 않습니다.",
+        "sourceLabel": "Commons 원본 파일",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChengdu_East_Railway_Station.JPG",
+        "licenseLabel": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "navTitle": "청두–충칭 역 조합 고르기",
+      "featuredLinkLabel": "청두–충칭 철도역 조합 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["청두", "충칭", "철도"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Chengdu to Chongqing train",
+      "Chengdu East to Chongqing North",
+      "which Chengdu Chongqing station pair",
+      "Chengdu Chongqing hotel to hotel train"
+    ],
+    "zh": [
+      "成都到重庆高铁",
+      "成都东到重庆北",
+      "成都重庆车站组合怎么选",
+      "成都重庆酒店到酒店火车"
+    ],
+    "ko": [
+      "청두 충칭 기차",
+      "청두동 충칭북",
+      "청두 충칭 역 조합",
+      "청두 충칭 숙소 이동 기차"
+    ]
+  }
+}

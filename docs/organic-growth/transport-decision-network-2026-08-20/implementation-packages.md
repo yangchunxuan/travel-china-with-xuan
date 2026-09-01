@@ -178,7 +178,9 @@ This is completed governance readback, not a new article.
 
 ### W2-A — `hg-topic-0305` / `chengdu-chongqing-transport-route`
 
-**Status:** `HOLD / DEFER — NO WRITING AUTHORIZATION`.
+**Historical status (2026-08-20):** `HOLD / DEFER — NO WRITING AUTHORIZATION`.
+
+**2026-09-01 central override:** the exact durable slug `chengdu-chongqing-station-pair` replaces this never-published proposed slug and may proceed only as part of the N=3 Southwest release candidate. Generic station selection/recovery remains with `chongqing-railway-station-selector`; the old slug must not become a route or redirect-only identity. This override does not activate any other Wave 2 package.
 
 - Own one bidirectional hotel-to-hotel decision: exact Chengdu station, exact Chongqing station, rail leg, vertical Chongqing arrival, and next booking.
 - Exclude the three-city route-order owner, standalone station comparisons, flights, fixed fares/times and reverse-page duplication.

@@ -136,7 +136,7 @@ An airport-to-hotel/rail chain is a research-first gap, not an authorized articl
 
 `hg-topic-0859` remains `HOLD / DEFER`; its station roster must not be asserted without release-day railway or municipal passenger-service evidence.
 
-`hg-topic-0305` Chengdu–Chongqing remains `HOLD / DEFER`; the previously recorded boundary is preserved without activation or expansion.
+Historical state: `hg-topic-0305` Chengdu–Chongqing was `HOLD / DEFER` on 2026-08-20. The 2026-09-01 central override activates only its later durable slug `chengdu-chongqing-station-pair` inside the Southwest N=3 release candidate. The old proposed slug is retired; this statement does not activate another city pair.
 
 ### Hold/do not create
 
@@ -245,12 +245,12 @@ Recovery must separate three questions: “Which node am I at?”, “Which hote
 
 ### Gap and recovery
 
-The current selector already owns wrong-station recovery; no recovery spin-off is needed. `hg-topic-0305` Chengdu–Chongqing becomes useful only as the door-to-door station-pair and hotel-base decision between two cities. CKG airport execution remains a separate research gap and must not be added to the railway selector.
+The current selector already owns generic wrong-station recovery; no recovery spin-off is needed. Under the 2026-09-01 central override, `chengdu-chongqing-station-pair` owns only the bidirectional ticketed station pair and hotel-to-hotel execution between the two cities. It may refer corridor-specific failures back to the selector, but may not reteach the generic recovery workflow. CKG airport execution remains a separate research gap and must not be added to the railway selector.
 
 ### Hold/do not create
 
 - The selector deployment is verified. The existing Chongqing Hub gate remains independent; this package cannot publish the Hub.
-- Hold Chengdu–Chongqing and Chongqing–Zhangjiajie until Hub/canonical routing is stable.
+- Historical hold replaced on 2026-09-01 only for the N=3 central candidate: the Chengdu–Chongqing and Chongqing–Zhangjiajie corridor owners may proceed together with the three-city order owner. All other nearby pairs remain held.
 - Do not create one page per Chongqing station, airport content inside the rail owner, or a second upper/lower-city explainer.
 
 ## Guilin

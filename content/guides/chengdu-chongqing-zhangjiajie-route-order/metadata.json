@@ -1,0 +1,67 @@
+{
+  "id": "chengdu-chongqing-zhangjiajie-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "route-order-decision-guide",
+  "topics": [
+    "chengdu",
+    "chongqing",
+    "zhangjiajie",
+    "route-order",
+    "night-allocation",
+    "usable-sightseeing-days"
+  ],
+  "destinations": ["chengdu", "chongqing", "zhangjiajie"],
+  "heroImagePath": "/images/guides/chengdu-chongqing-zhangjiajie-route-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-chongqing-zhangjiajie-route-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-chongqing-zhangjiajie-route-order/",
+      "title": "Chengdu, Chongqing and Zhangjiajie: Choose the Route Order",
+      "headline": "Chengdu, Chongqing and Zhangjiajie: Keep All Three or Cut One?",
+      "description": "Choose the direction, protected sightseeing days and night priorities for Chengdu, Chongqing and Zhangjiajie—and identify which city to cut.",
+      "heroAlt": "Chongqing North Railway Station, one possible real node on a Chengdu–Chongqing–Zhangjiajie route; it does not represent every route.",
+      "navTitle": "Chengdu–Chongqing–Zhangjiajie order",
+      "featuredLinkLabel": "Choose the three-city route order",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Route order", "Night priorities", "Cut one city"]
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-chongqing-zhangjiajie-route-order/",
+      "title": "成都、重庆、张家界怎么排顺序：三城都去还是删一城",
+      "headline": "成都、重庆、张家界路线顺序：先算有效游览日，再分夜数",
+      "description": "用进出门户、有效游览日和各城不可替代的重点，决定成都、重庆、张家界的方向、夜数，以及该删哪一城。",
+      "heroAlt": "重庆北站是成都—重庆—张家界路线中可能使用的一个真实节点，并不代表所有路线。",
+      "navTitle": "成都—重庆—张家界顺序",
+      "featuredLinkLabel": "决定成都、重庆、张家界的顺序",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["路线顺序", "夜数重点", "删减城市"]
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-chongqing-zhangjiajie-route-order/",
+      "title": "청두·충칭·장자제 여행 순서: 세 도시를 모두 갈지 하나를 뺄지",
+      "headline": "청두·충칭·장자제 동선: 실제 관광일을 계산한 뒤 숙박일을 나누세요",
+      "description": "입출국 관문, 실제 관광 가능일, 도시별 고유한 우선순위로 청두·충칭·장자제의 방향과 숙박일, 뺄 도시를 정합니다.",
+      "heroAlt": "충칭북역은 청두–충칭–장자제 동선에서 이용할 수 있는 실제 거점 중 하나이며 모든 동선을 대표하지는 않습니다.",
+      "navTitle": "청두–충칭–장자제 순서",
+      "featuredLinkLabel": "세 도시의 여행 순서 정하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["여행 순서", "숙박 우선순위", "도시 줄이기"]
+    }
+  }
+}

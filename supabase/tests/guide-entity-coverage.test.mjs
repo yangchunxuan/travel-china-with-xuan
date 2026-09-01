@@ -14,7 +14,10 @@ import {
 
 const execFileAsync = promisify(execFile);
 const projectRoot = path.resolve(import.meta.dirname, "../..");
-const checkerPath = path.join(projectRoot, "tools/check-guide-entity-coverage.mjs");
+const checkerPath = path.join(
+  projectRoot,
+  "tools/check-guide-entity-coverage.mjs",
+);
 
 function legacyRegistrySource(destinations) {
   return [
@@ -32,29 +35,34 @@ function legacyRegistrySource(destinations) {
 test("entity coverage includes the complete generated plus legacy runtime ledger", async () => {
   const report = await generateGuideEntityCoverage();
   assert.deepEqual(report.scope, {
-    runtimeGuideCount: 192,
-    independentGuideCount: 173,
+    runtimeGuideCount: 195,
+    independentGuideCount: 176,
     legacyGuideCount: 19,
   });
-  assert.equal(report.guideCount, 192);
+  assert.equal(report.guideCount, 195);
   assert.equal(report.guideWithUnmappedTokenCount, 94);
   assert.equal(report.countryFallbackGuideCount, 44);
   assert.equal(report.unmappedTokenCount, 148);
   assert.equal(strictModeExitCode(report), 1);
   assert.equal(report.rows.filter((row) => row.scope === "legacy").length, 19);
-  assert.ok(report.rows.some((row) =>
-    row.contentId === "guide-do-us-citizens-need-visa-china-2026" &&
-    row.scope === "legacy" &&
-    row.entityIds.includes("country-china")
-  ));
+  assert.ok(
+    report.rows.some(
+      (row) =>
+        row.contentId === "guide-do-us-citizens-need-visa-china-2026" &&
+        row.scope === "legacy" &&
+        row.entityIds.includes("country-china"),
+    ),
+  );
 });
 
 test("legacy registry extraction fails closed on non-literal coverage data", () => {
-  assert.deepEqual(parseLegacyGuideEntries(legacyRegistrySource(["china"])), [{
-    id: "legacy-one",
-    destinations: ["china"],
-    scope: "legacy",
-  }]);
+  assert.deepEqual(parseLegacyGuideEntries(legacyRegistrySource(["china"])), [
+    {
+      id: "legacy-one",
+      destinations: ["china"],
+      scope: "legacy",
+    },
+  ]);
   const nonLiteralSource = [
     'const inheritedDestinations = ["china"];',
     "export const legacyGuideRegistry = [",
@@ -81,7 +89,11 @@ test("CLI strict mode fails on unmapped debt while the default inventory remains
     }),
     "utf8",
   );
-  await writeFile(legacyRegistryPath, legacyRegistrySource(["unmapped-place"]), "utf8");
+  await writeFile(
+    legacyRegistryPath,
+    legacyRegistrySource(["unmapped-place"]),
+    "utf8",
+  );
 
   const commonArguments = [
     "--experimental-strip-types",

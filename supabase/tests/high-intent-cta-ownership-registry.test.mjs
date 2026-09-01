@@ -28,14 +28,14 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
 
   assert.deepEqual(report.counts, {
     stay: 20,
-    "high-intent-transport": 25,
-    plan: 17,
+    "high-intent-transport": 27,
+    plan: 18,
     "purchase-ticket": 2,
   });
-  assert.equal(report.uniqueContentIds, 64);
-  assert.equal(report.authorizedExistingService, 15);
+  assert.equal(report.uniqueContentIds, 67);
+  assert.equal(report.authorizedExistingService, 16);
   assert.equal(report.authorizedGenericConversation, 2);
-  assert.equal(report.blockedPendingAuthorization, 47);
+  assert.equal(report.blockedPendingAuthorization, 49);
   assert.equal(registry.publicCtaChangesAuthorized, false);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
 });
@@ -65,7 +65,9 @@ test("unknown content identities fail closed", () => {
 
 test("unknown service identities fail closed", () => {
   const unknownService = mutateRegistry((copy) => {
-    const entry = copy.entries.find((candidate) => candidate.ownerClass === "plan");
+    const entry = copy.entries.find(
+      (candidate) => candidate.ownerClass === "plan",
+    );
     entry.targetServiceId = "ticket-booking";
   });
 
@@ -77,7 +79,9 @@ test("unknown service identities fail closed", () => {
 
 test("blocked stay, ticket or transfer intents cannot acquire a service mapping", () => {
   const unauthorized = mutateRegistry((copy) => {
-    const entry = copy.entries.find((candidate) => candidate.ownerClass === "stay");
+    const entry = copy.entries.find(
+      (candidate) => candidate.ownerClass === "stay",
+    );
     entry.targetServiceId = "route-build";
     entry.authorizationStatus = "authorized-existing-service";
   });
