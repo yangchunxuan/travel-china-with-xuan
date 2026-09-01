@@ -1,0 +1,23 @@
+# Source log — animal-bite-rabies-exposure-china
+
+All sources were opened or rechecked on **2026-09-01**. Forum and social posts were used only to identify traveller wording; none supports a medical claim.
+
+| # | Source | Authority / status | Used for | Not used for |
+|---:|---|---|---|---|
+| 1 | [Rabies Exposure Prevention and Treatment Work Specification (2023 edition)](https://www.ndcpa.gov.cn/jbkzzx/c100081/common/content/content_1715172596229992448.html) | National Disease Control and Prevention Administration / National Health Commission; current Chinese national work specification found in this review | Exposure definitions, clinician classification, wound treatment, vaccination and passive-immunisation framework, previous-vaccination handoff | Individual classification, product choice, clinic stock or a traveller-specific regimen |
+| 2 | [China CDC English rabies prevention explainer](https://en.chinacdc.cn/in_focus/202310/t20231025_270302.html) | Chinese Center for Disease Control and Prevention; official English explainer | Accessible English summary of prompt wound washing and professional PEP | A substitute for the Chinese standard or a local clinic directory |
+| 3 | [Rabies fact sheet](https://www.who.int/news-room/fact-sheets/detail/rabies) | World Health Organization | International safety baseline: immediate washing for at least 15 minutes, prompt PEP assessment, vaccine and indicated immunoglobulin/monoclonal antibodies | A China clinic, inventory or individual treatment promise |
+| 4 | [Protocol for well-performed rabies PEP delivery](https://www.who.int/publications/i/item/B09018) | World Health Organization; normative guidance published 2024 | Record-quality and clinician-led assessment boundary | A self-treatment decision tree for this travel article |
+| 5 | [What to do after a dog bite](https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202604/t20260408_4576299.html) | Beijing municipal government reproducing National Health Commission guidance, dated 2026-04-08 | Current public-facing reminder to wash for about 15 minutes and seek professional care promptly | A nationwide clinic directory, opening-hour or stock claim |
+| 6 | [Beijing rabies-exposure prophylaxis clinic directory](https://www.beijing.gov.cn/fwcj/chang/5d137a6be42c49809b5e9ce60e84999d.html) | Beijing Municipal Government / municipal health-authority service; live directory opened 2026-09-01 | Verifies the exact service name `狂犬病暴露预防处置门诊` and demonstrates that an official local directory may expose address, telephone and service-time fields | A directory for any place outside Beijing, a promise that a listing is open now, or a product-stock guarantee |
+| 7 | [Measures for the Administration of Pre-hospital Medical Emergency Care](https://www.nhc.gov.cn/wjw/c100221/202201/26ea3c97e82d466f9aa2b4a9901ae187.shtml) | National Health Commission regulation; Article 13 names 120 as the nationwide pre-hospital medical emergency call number | Supports the 120 emergency override for severe or life-threatening injury | Arrival time, language, fee, insurance, clinical outcome or use as a clinic/product inquiry line |
+
+## Language and authority reconciliation
+
+The Chinese national specification is the primary national technical framework used here. China CDC's English page and WHO's English pages are reader aids and international guidance. Their immediate actions align except for the disclosed “about” versus “at least” wording. The article translates that shared floor naturally into English, Chinese and Korean but does not invent an official Korean edition. If a future official-language version conflicts, the difference must be recorded in `dynamic-facts.md` and shown to readers until the issuer or treating clinician clarifies it.
+
+The Beijing directory is a current, official example of the local discovery route, not a national list. Publication QA must replace the city context with the traveller's actual local health-commission or CDC source and phone the facility; a visible listing does not prove current opening, assessment access or product availability.
+
+## Demand research record
+
+Google was sampled on 2026-09-01 with `rabies exposure bite in China traveler what to do`. Results mixed traveller-health pages, general bite advice, academic epidemiology and commercial guides; the immediate China-specific handoff was not consistently answered. Recent public traveller discussions ask whether a small scratch, prior vaccination, a pet that looks well, missing documents or an onward journey changes the need for care. Those discussions establish question language only.

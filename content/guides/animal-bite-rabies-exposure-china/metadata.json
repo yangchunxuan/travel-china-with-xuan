@@ -1,0 +1,82 @@
+{
+  "id": "animal-bite-rabies-exposure-china",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "urgent-health-recovery-workflow",
+  "topics": ["animal bite", "rabies exposure", "medical handoff", "failure recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/animal-bite-rabies-exposure-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/animal-bite-rabies-exposure-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "searchTerms": {
+    "en": [
+      "animal bite in china what to do",
+      "dog bite china rabies vaccine",
+      "cat scratch china rabies",
+      "rabies exposure china traveller",
+      "rabies vaccine after bite china",
+      "bat contact china rabies"
+    ],
+    "zh": [
+      "外国游客在中国被动物咬伤怎么办",
+      "中国狂犬病暴露处置",
+      "被猫抓伤狂犬疫苗",
+      "犬伤门诊怎么找"
+    ],
+    "ko": [
+      "중국 여행 동물 물림 대처",
+      "중국 개 물림 광견병 예방접종",
+      "중국 고양이 할퀸 뒤 치료",
+      "중국 광견병 노출 진료"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "in-trip"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/animal-bite-rabies-exposure-china/",
+      "title": "Animal Bite in China: Wash Now and Get a Rabies Assessment",
+      "headline": "Check for Emergencies, Then Wash and Get a Rabies Assessment",
+      "description": "What to do after animal exposure in China: emergency triage, separate skin and eye washing, prompt assessment, records and access recovery.",
+      "heroAlt": "Editorial diagram showing water and soap, medical assessment, and a treatment record as three steps after an animal exposure in China.",
+      "navTitle": "Animal bite and rabies response",
+      "featuredLinkLabel": "Respond to an animal bite",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Animal bite", "Rabies assessment", "Urgent recovery"]
+    },
+    "zh": {
+      "path": "/zh/guides/animal-bite-rabies-exposure-china/",
+      "title": "在中国被动物咬伤或抓伤：立即冲洗并评估狂犬病暴露",
+      "headline": "先排除紧急伤情，再正确冲洗并接受狂犬病暴露评估",
+      "description": "在中国被动物咬抓伤或接触唾液后的应对：紧急分流、区分皮肤和眼部冲洗、尽快评估，并保存临床交接记录。",
+      "heroAlt": "编辑示意图以清水肥皂、医疗评估和治疗记录表示动物暴露后的三个步骤。",
+      "navTitle": "动物暴露与狂犬病应对",
+      "featuredLinkLabel": "处理动物咬抓伤",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["动物咬抓伤", "狂犬病评估", "紧急处置"]
+    },
+    "ko": {
+      "path": "/ko/guides/animal-bite-rabies-exposure-china/",
+      "title": "중국에서 동물에게 물리거나 긁혔다면: 즉시 씻고 광견병 노출 평가받기",
+      "headline": "응급 위험을 먼저 확인한 뒤 올바르게 씻고 광견병 노출 평가받기",
+      "description": "중국에서 동물 노출 뒤 응급 위험을 가리고 피부와 눈 세척을 구분해 신속히 평가받고 임상 인계 기록을 지키는 절차입니다.",
+      "heroAlt": "물과 비누, 의료 평가, 진료 기록으로 동물 노출 뒤 세 단계를 보여 주는 편집용 도식.",
+      "navTitle": "동물 노출·광견병 대응",
+      "featuredLinkLabel": "동물 물림에 대응하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["동물 물림", "광견병 평가", "긴급 대응"]
+    }
+  }
+}
