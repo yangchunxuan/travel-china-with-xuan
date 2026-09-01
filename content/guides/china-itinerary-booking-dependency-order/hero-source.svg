@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Provisional route evidence gates</title>
+  <desc id="desc">A language-neutral editorial diagram showing a route skeleton moving through four evidence gates, with one unresolved branch remaining provisional.</desc>
+  <rect width="1600" height="1000" fill="#F6F0E6"/>
+  <path d="M0 770 C260 690 400 860 650 755 C930 637 1110 800 1600 660 L1600 1000 L0 1000 Z" fill="#DDE8E0"/>
+  <path d="M115 220 C350 95 525 135 690 260 C850 380 1028 320 1190 208 C1320 118 1430 165 1510 260" fill="none" stroke="#D8CDBD" stroke-width="18" stroke-linecap="round" stroke-dasharray="3 38"/>
+  <g fill="none" stroke="#183D3D" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 575 H420" stroke-dasharray="20 25"/>
+    <path d="M505 575 H760"/>
+    <path d="M845 575 H1100"/>
+    <path d="M1185 575 H1450"/>
+  </g>
+  <g fill="#F6F0E6" stroke="#183D3D" stroke-width="12">
+    <circle cx="150" cy="575" r="38"/>
+    <circle cx="462" cy="575" r="38"/>
+    <circle cx="802" cy="575" r="38"/>
+    <circle cx="1142" cy="575" r="38"/>
+    <circle cx="1450" cy="575" r="38"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#183D3D">
+    <text x="462" y="586">1</text>
+    <text x="802" y="586">2</text>
+    <text x="1142" y="586">3</text>
+    <text x="1450" y="586">4</text>
+  </g>
+  <g transform="translate(380 315)">
+    <rect width="164" height="128" rx="18" fill="#FFFDF8" stroke="#B05A3C" stroke-width="10"/>
+    <path d="M32 46 H132 M32 82 H106" stroke="#B05A3C" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 14"/>
+  </g>
+  <g transform="translate(720 315)">
+    <rect width="164" height="128" rx="18" fill="#FFFDF8" stroke="#D19A2A" stroke-width="10"/>
+    <path d="M34 42 H130 M34 82 H95" stroke="#D19A2A" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="125" cy="88" r="14" fill="#D19A2A" stroke="none"/>
+  </g>
+  <g transform="translate(1060 315)">
+    <path d="M20 18 H144 V112 H20 Z" fill="#FFFDF8" stroke="#287A70" stroke-width="10"/>
+    <path d="M54 64 L75 84 L116 43" fill="none" stroke="#287A70" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(1370 315)">
+    <path d="M80 10 L145 38 V86 C145 128 117 153 80 169 C43 153 15 128 15 86 V38 Z" fill="#183D3D"/>
+    <path d="M47 84 L70 107 L116 59" fill="none" stroke="#F6F0E6" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M802 613 C802 720 690 736 690 835" fill="none" stroke="#B05A3C" stroke-width="12" stroke-dasharray="18 18" stroke-linecap="round"/>
+  <circle cx="690" cy="850" r="42" fill="#FFFDF8" stroke="#B05A3C" stroke-width="12"/>
+  <path d="M673 833 L707 867 M707 833 L673 867" stroke="#B05A3C" stroke-width="11" stroke-linecap="round"/>
+  <g fill="#183D3D">
+    <circle cx="150" cy="760" r="10"/>
+    <circle cx="242" cy="760" r="10"/>
+    <circle cx="334" cy="760" r="10"/>
+  </g>
+</svg>
