@@ -1,0 +1,81 @@
+{
+  "id": "bringing-dog-or-cat-into-china",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "pet-document-port-quarantine-decision",
+  "topics": ["pet entry", "China Customs", "animal quarantine", "rabies documents"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/bringing-dog-or-cat-into-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/bringing-dog-or-cat-into-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "searchTerms": {
+    "en": [
+      "bring dog into china",
+      "bring cat into china",
+      "china pet quarantine",
+      "china pet microchip requirements",
+      "china customs pet documents"
+    ],
+    "zh": [
+      "外国旅客携带宠物入境中国",
+      "犬猫入境中国检疫",
+      "宠物入境中国芯片证明",
+      "中国海关宠物隔离口岸"
+    ],
+    "ko": [
+      "중국 입국 반려견 반입",
+      "중국 입국 반려묘 반입",
+      "중국 반려동물 검역",
+      "중국 세관 반려동물 서류"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/bringing-dog-or-cat-into-china/",
+      "title": "Bringing a Dog or Cat into China: Documents and Quarantine",
+      "headline": "Do Not Fly Until the Pet, Paperwork and Arrival Port Form One Valid Plan",
+      "description": "Check China's dog and cat entry branches, match the microchip and official documents, confirm the port, and prepare a humane failure fallback.",
+      "heroAlt": "Editorial diagram linking a dog and cat, microchip record, document folder and China arrival-port decision.",
+      "navTitle": "Dog or cat entry into China",
+      "featuredLinkLabel": "Check a pet entry plan",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Pet documents", "Port check", "Quarantine"]
+    },
+    "zh": {
+      "path": "/zh/guides/bringing-dog-or-cat-into-china/",
+      "title": "携犬或猫入境中国：证件、口岸与隔离检疫决策",
+      "headline": "宠物、文件与实际入境口岸形成同一套有效方案后再起飞",
+      "description": "核对犬猫入境分支、芯片与官方文件，向实际口岸确认，并为退回、截留或隔离准备不伤害动物的失败预案。",
+      "heroAlt": "编辑示意图连接犬猫、芯片记录、文件夹和中国入境口岸决策。",
+      "navTitle": "犬猫入境中国",
+      "featuredLinkLabel": "核对宠物入境方案",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["宠物文件", "口岸确认", "隔离检疫"]
+    },
+    "ko": {
+      "path": "/ko/guides/bringing-dog-or-cat-into-china/",
+      "title": "반려견·반려묘 중국 입국: 서류, 입국항, 검역 판단",
+      "headline": "동물·서류·실제 입국항이 하나의 유효한 계획이 된 뒤 출발하세요",
+      "description": "중국의 개·고양이 입국 분기를 확인하고 마이크로칩과 공식 서류를 맞춘 뒤 입국항에 확인하며 인도적인 실패 대안을 준비합니다.",
+      "heroAlt": "개와 고양이, 마이크로칩 기록, 서류 묶음, 중국 입국항 판단을 잇는 편집용 도식.",
+      "navTitle": "중국 반려동물 입국",
+      "featuredLinkLabel": "반려동물 입국 계획 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["반려동물 서류", "입국항 확인", "격리검역"]
+    }
+  }
+}

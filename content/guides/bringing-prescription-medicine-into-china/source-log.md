@@ -1,0 +1,27 @@
+# Source log — bringing-prescription-medicine-into-china
+
+All sources were opened or rechecked on **2026-09-04**. Google results, People Also Ask prompts and traveller discussions were sampled on 2026-09-01 and used only to identify recurring questions. No Customs, medicine, quantity, document or clearance claim relies on a forum, commercial list or search snippet.
+
+| # | Source | Authority / status | Used for | Not used for |
+|---:|---|---|---|---|
+| 1 | [Customs Clearance of Inward/Outward Passengers' Carried Baggage](https://english.customs.gov.cn/statics/3a12c746-51e1-4d94-8fc1-44a573fad090.html) | General Administration of Customs; official English guidance | Truthful declaration, personal-use/reasonable-quantity definitions, declare-channel fallback when uncertain | A medicine whitelist, fixed supply or clearance guarantee |
+| 2 | [GACC current service guide: supervision of inbound/outbound passenger baggage](https://online.customs.gov.cn/static/pages/guides/000629014002/000629014002.html) | General Administration of Customs online service portal; current Chinese guide | 12360, on-site process, red/green channels, Customs Law basis and non-release/return handling | A claim that every ordinary medicine must use the red channel |
+| 3 | [Requirements for carrying medicines for personal use](https://english.cq.gov.cn/services/entryandexit/FAQs/202606/t20260629_15782389.html) | Chongqing Municipal Government English page, attributed to Chongqing Customs, dated 2026-06-29 | Ordinary medicine baseline; Article 44 traveller documents and one-prescription maximum; Category II wording; proactive-declaration advice; on-site review | A national brand list, universal days of supply or guaranteed release |
+| 4 | [2025 medicinal narcotic and psychotropic drug catalogues, Announcement No. 55](https://yjj.sh.gov.cn/qtgzwj/20250728/80ad6017cd9d41daa4181ddb4a044c9c.html) | Shanghai Drug Administration official mirror of the NMPA/MPS/NHC joint announcement | Current catalogue edition, issuing authorities, attachments, effective date and exact scope notes—including named salts, stereoisomers, esters or ethers and form/compound conditions where the relevant note says so | Classifying a foreign brand without its active ingredient or deciding an individual case |
+| 5 | [Regulation on Narcotic Drugs and Psychotropic Substances](https://xzfg.moj.gov.cn/front/law/detail?LawID=1744) | Ministry of Justice national administrative-regulations database; current text includes the 2024-12-06 third revision | Articles 3 and 44: dynamic categories; treatment exception; diagnosis and identity evidence; maximum amount of one prescription; Customs review | Medical advice or a guarantee that documents compel clearance |
+| 6 | [Customs Law of the People's Republic of China](https://english.customs.gov.cn/statics/644dcaee-ca91-483a-86f4-bdc23695e3c3.html) | General Administration of Customs; official English law text | Articles 46–47: personal-use/reasonable-quantity limit, truthful declaration and inspection | Individual legal advice, penalties prediction or a medicine-specific quantity |
+| 7 | [NMPA permit for importing narcotic drugs and specified psychotropic drugs](https://zwfw.nmpa.gov.cn/web/taskview/11100000MB0341032Y100017212800101) | National Medical Products Administration government-service portal | Shows an organisational import service with business/import materials, distinct from Article 44 personal carriage | A tourist application path or proof that an individual's medicine is admissible |
+
+## Authority and conflict reconciliation
+
+The national regulation and current joint controlled-drug catalogues determine the legal category; GACC owns the passenger Customs process. The 2026 Chongqing English FAQ is recent and operationally useful, but is a municipal English publication attributed to Chongqing Customs. Its advice to carry medical evidence and proactively declare is presented as risk-control advice, not rewritten as a universal red-channel mandate for every ordinary medicine.
+
+The same official FAQ first describes addictive narcotic and psychotropic substances as prohibited, then states Article 44's bounded medical-treatment route. The page keeps both layers together. It never says that a prescription converts every prohibited substance into an admissible medicine, and it never says that all prescription medicine is prohibited.
+
+The NMPA import-permit service is kept only as a boundary source. Its organisational eligibility and materials cannot be turned into a tourist application requirement or used to infer personal clearance.
+
+If the catalogue ingredient, dosage form, quantity, port advice or source language cannot be reconciled, the article gives no conclusion: the traveller records the precise ingredient and contacts Customs 12360 or the intended arrival Customs office. The officer's on-site review remains decisive.
+
+## Demand research record
+
+Google was sampled on 2026-09-01 for `bring prescription medicine into China`, `China customs prescription medication`, `controlled medication China travel` and `declare medicine China airport`. People Also Ask and related searches centred on prohibited medicines, whether to declare, which documents to carry and brand-name examples. Results mixed government pages with embassy summaries, relocation articles, commercial legal explainers and forum reassurance. The information gain is an ingredient-first stop/go workflow with an official-confirmation route; no search volume, click probability or clearance rate is asserted.

@@ -1,0 +1,81 @@
+{
+  "id": "bringing-prescription-medicine-into-china",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": ["global"],
+  "format": "ingredient-document-customs-decision",
+  "topics": ["prescription medicine", "China Customs", "controlled medicine", "traveller documents"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/bringing-prescription-medicine-into-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/bringing-prescription-medicine-into-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "searchTerms": {
+    "en": [
+      "bring prescription medicine into china",
+      "china customs prescription medication",
+      "controlled medicine china travel",
+      "declare medicine china airport",
+      "medicine documents china customs"
+    ],
+    "zh": [
+      "外国旅客携带处方药入境中国",
+      "入境中国药品海关申报",
+      "麻醉药品精神药品旅客携带入境",
+      "外国人带药入境需要什么材料"
+    ],
+    "ko": [
+      "중국 입국 처방약 반입",
+      "중국 세관 의약품 신고",
+      "중국 여행 규제 의약품",
+      "중국 입국 약 처방전 서류"
+    ]
+  },
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/bringing-prescription-medicine-into-china/",
+      "title": "Bringing Prescription Medicine into China: A Customs Checklist",
+      "headline": "Check the Active Ingredient Before You Pack Prescription Medicine",
+      "description": "Check active ingredients, prepare medical evidence, choose a China Customs declaration path, and stop when official confirmation is missing.",
+      "heroAlt": "Editorial diagram showing an ingredient label, document pack and China Customs declaration checkpoint.",
+      "navTitle": "Prescription medicine into China",
+      "featuredLinkLabel": "Check medicine before China Customs",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Ingredient check", "Document pack", "Customs decision"]
+    },
+    "zh": {
+      "path": "/zh/guides/bringing-prescription-medicine-into-china/",
+      "title": "外国旅客携处方药入境中国：成分、材料与海关申报路径",
+      "headline": "打包处方药前，先按有效成分核对而不是只看商品名",
+      "description": "以有限且可执行的中国海关路径，核对有效成分、准备医疗材料、决定如何申报，并在无法取得官方确认时停止携带。",
+      "heroAlt": "编辑示意图展示有效成分标签、材料包和中国海关申报检查点。",
+      "navTitle": "处方药入境中国",
+      "featuredLinkLabel": "核对药品与海关路径",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["成分核对", "材料包", "海关路径"]
+    },
+    "ko": {
+      "path": "/ko/guides/bringing-prescription-medicine-into-china/",
+      "title": "중국 입국 시 처방약 반입: 성분·서류·세관 신고 경로",
+      "headline": "처방약을 챙기기 전에 상품명이 아닌 유효성분부터 확인하세요",
+      "description": "유효성분 확인, 의료 서류 준비, 세관 신고 경로 선택, 공식 확인이 없을 때 반입을 멈추는 중국 입국 절차입니다.",
+      "heroAlt": "유효성분 표시, 서류 묶음, 중국 세관 신고 확인 지점을 잇는 편집용 도식.",
+      "navTitle": "중국 입국 처방약 반입",
+      "featuredLinkLabel": "의약품과 세관 경로 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["성분 확인", "서류 준비", "세관 판단"]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Call 120 and prepare an emergency handoff</title>
+  <desc id="desc">An editorial sequence connects a 120 phone call to a location pin, response vehicle and records folder.</desc>
+  <rect width="1600" height="1000" rx="72" fill="#F4F1E8"/>
+  <circle cx="165" cy="155" r="110" fill="#DCEAE2"/>
+  <circle cx="1435" cy="850" r="175" fill="#E8DDD0"/>
+  <path d="M330 500H1280" stroke="#243D35" stroke-width="30" stroke-linecap="round"/>
+  <path d="M1225 445l75 55-75 55" fill="none" stroke="#243D35" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="95" y="260" width="310" height="480" rx="56" fill="#243D35"/>
+  <rect x="135" y="315" width="230" height="330" rx="34" fill="#FFFDF7"/>
+  <text x="250" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="118" font-weight="700" fill="#C96E4B">120</text>
+  <circle cx="250" cy="690" r="22" fill="#F4F1E8"/>
+  <path d="M590 270c-88 0-160 72-160 160 0 128 160 282 160 282s160-154 160-282c0-88-72-160-160-160z" fill="#C96E4B"/>
+  <circle cx="590" cy="430" r="62" fill="#FFFDF7"/>
+  <rect x="810" y="360" width="330" height="225" rx="42" fill="#FFFDF7" stroke="#243D35" stroke-width="18"/>
+  <path d="M870 500h215l-42-92H925z" fill="#667A72"/>
+  <circle cx="910" cy="570" r="38" fill="#C96E4B"/>
+  <circle cx="1042" cy="570" r="38" fill="#C96E4B"/>
+  <rect x="950" y="395" width="42" height="96" rx="10" fill="#2E8A68"/>
+  <rect x="923" y="422" width="96" height="42" rx="10" fill="#2E8A68"/>
+  <rect x="1245" y="300" width="270" height="300" rx="38" fill="#FFFDF7" stroke="#243D35" stroke-width="18"/>
+  <path d="M1285 350h88l32 36h70v155h-190z" fill="#DCEAE2"/>
+  <rect x="1318" y="420" width="120" height="18" rx="9" fill="#667A72"/>
+  <rect x="1318" y="462" width="92" height="18" rx="9" fill="#A5B5AE"/>
+  <path d="M300 760c250 130 660 150 1040-35" fill="none" stroke="#C96E4B" stroke-width="20" stroke-linecap="round" stroke-dasharray="20 30"/>
+</svg>
