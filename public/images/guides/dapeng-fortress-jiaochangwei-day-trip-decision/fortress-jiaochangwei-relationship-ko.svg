@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">다펑소청과 자오창웨이의 관계를 설명하는 편집 도식</title>
+  <desc id="desc">축척 없는 도식으로 문화유산 성곽 마을 다펑소청과 해안 관광 마을 자오창웨이를 나누고, 두 곳 사이에서는 실시간 지도와 현장 안내를 이용하라고 설명한다.</desc>
+  <rect width="1600" height="1000" fill="#f5f0e7"/>
+  <path d="M0 785 C245 720 425 845 650 782 C905 712 1092 810 1310 746 C1435 710 1518 730 1600 695 V1000 H0 Z" fill="#b9d9d3"/>
+  <path d="M0 810 C235 748 414 875 658 807 C905 744 1096 843 1322 780 C1434 748 1522 760 1600 727" fill="none" stroke="#fff" stroke-width="7" opacity=".72"/>
+  <text x="800" y="78" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="42" font-weight="700" fill="#173d3a">가깝지만, 가야 할 이유는 다른 두 곳</text>
+  <text x="800" y="128" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" fill="#52615d">같은 관광지가 아닙니다 · 축척 없는 편집 도식</text>
+
+  <g transform="translate(115 220)">
+    <rect width="520" height="435" rx="30" fill="#fffaf2" stroke="#8b5538" stroke-width="5"/>
+    <path d="M90 122 H430 V286 H90 Z" fill="#c78559"/>
+    <path d="M66 122 L260 36 L454 122 Z" fill="#8b5538"/>
+    <path d="M214 176 H306 V286 H214 Z" fill="#5f3928"/>
+    <path d="M90 122 H430" stroke="#f6d9b8" stroke-width="9" stroke-dasharray="21 16"/>
+    <text x="260" y="342" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="34" font-weight="700" fill="#5f3928">다펑소청</text>
+    <text x="260" y="385" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="22" fill="#75594a">보호 문화유산 · 공공 골목</text>
+    <text x="260" y="416" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="22" fill="#75594a">실내는 별도 운영</text>
+  </g>
+
+  <g transform="translate(965 220)">
+    <rect width="520" height="435" rx="30" fill="#f2fbfa" stroke="#1e6c6b" stroke-width="5"/>
+    <circle cx="118" cy="91" r="45" fill="#efb64f"/>
+    <path d="M50 242 C150 180 236 279 330 220 C396 178 449 199 483 220 V290 H50 Z" fill="#58aaa5"/>
+    <path d="M50 282 C150 220 236 319 330 260 C396 218 449 239 483 260" fill="none" stroke="#d9f1ec" stroke-width="8"/>
+    <rect x="113" y="185" width="88" height="86" fill="#e08760"/>
+    <path d="M95 185 L157 142 L219 185 Z" fill="#a85f48"/>
+    <rect x="270" y="172" width="108" height="99" fill="#e4ba72"/>
+    <path d="M250 172 L324 125 L398 172 Z" fill="#a87346"/>
+    <text x="260" y="342" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="34" font-weight="700" fill="#174e4d">자오창웨이</text>
+    <text x="260" y="385" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="22" fill="#456b69">해안 마을 · 해변 가장자리</text>
+    <text x="260" y="416" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="22" fill="#456b69">관광 상업 공간</text>
+  </g>
+
+  <path d="M690 410 H910" fill="none" stroke="#304f4c" stroke-width="7" stroke-dasharray="18 16"/>
+  <path d="M894 392 L925 410 L894 428" fill="none" stroke="#304f4c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M706 392 L675 410 L706 428" fill="none" stroke="#304f4c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="655" y="454" width="290" height="106" rx="22" fill="#fff" stroke="#b9aaa0" stroke-width="3"/>
+  <text x="800" y="496" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="23" font-weight="700" fill="#304f4c">실시간 지도와</text>
+  <text x="800" y="533" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="23" fill="#52615d">현장 안내를 따르세요</text>
+
+  <g transform="translate(300 705)">
+    <rect width="1000" height="145" rx="28" fill="#173d3a" opacity=".94"/>
+    <text x="500" y="51" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="28" font-weight="700" fill="#fff">해안 방어사가 핵심이면 소청을 먼저 지키세요</text>
+    <text x="500" y="93" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" fill="#d9eee9">날씨·접근·귀환 여유가 남을 때만 바다를 더합니다</text>
+    <text x="500" y="127" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="21" fill="#f3d5ae">도보 시간·입구·무장애 연결을 보장하지 않습니다</text>
+  </g>
+  <text x="800" y="930" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="22" fill="#52615d">Homeground 편집 도식 · 길찾기 지도가 아닙니다</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Editorial relationship diagram for Dapeng Fortress and Jiaochangwei</title>
+  <desc id="desc">A not-to-scale diagram separates Dapeng Fortress, a protected historic settlement, from Jiaochangwei, a coastal village and tourism strip, and tells readers to use current maps and onsite signs between them.</desc>
+  <rect width="1600" height="1000" fill="#f5f0e7"/>
+  <path d="M0 785 C245 720 425 845 650 782 C905 712 1092 810 1310 746 C1435 710 1518 730 1600 695 V1000 H0 Z" fill="#b9d9d3"/>
+  <path d="M0 810 C235 748 414 875 658 807 C905 744 1096 843 1322 780 C1434 748 1522 760 1600 727" fill="none" stroke="#fff" stroke-width="7" opacity=".72"/>
+  <text x="800" y="78" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="42" font-weight="700" fill="#173d3a">Two adjacent places, two different reasons to go</text>
+  <text x="800" y="128" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="25" fill="#52615d">相邻，但不是同一个景点 · NOT TO SCALE / 非比例示意</text>
+
+  <g transform="translate(115 220)">
+    <rect width="520" height="435" rx="30" fill="#fffaf2" stroke="#8b5538" stroke-width="5"/>
+    <path d="M90 122 H430 V286 H90 Z" fill="#c78559"/>
+    <path d="M66 122 L260 36 L454 122 Z" fill="#8b5538"/>
+    <path d="M214 176 H306 V286 H214 Z" fill="#5f3928"/>
+    <path d="M90 122 H430" stroke="#f6d9b8" stroke-width="9" stroke-dasharray="21 16"/>
+    <text x="260" y="337" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="34" font-weight="700" fill="#5f3928">Dapeng Fortress</text>
+    <text x="260" y="377" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="30" fill="#5f3928">大鹏所城</text>
+    <text x="260" y="414" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="22" fill="#75594a">protected heritage · public lanes · separate interiors</text>
+  </g>
+
+  <g transform="translate(965 220)">
+    <rect width="520" height="435" rx="30" fill="#f2fbfa" stroke="#1e6c6b" stroke-width="5"/>
+    <circle cx="118" cy="91" r="45" fill="#efb64f"/>
+    <path d="M50 242 C150 180 236 279 330 220 C396 178 449 199 483 220 V290 H50 Z" fill="#58aaa5"/>
+    <path d="M50 282 C150 220 236 319 330 260 C396 218 449 239 483 260" fill="none" stroke="#d9f1ec" stroke-width="8"/>
+    <rect x="113" y="185" width="88" height="86" fill="#e08760"/>
+    <path d="M95 185 L157 142 L219 185 Z" fill="#a85f48"/>
+    <rect x="270" y="172" width="108" height="99" fill="#e4ba72"/>
+    <path d="M250 172 L324 125 L398 172 Z" fill="#a87346"/>
+    <text x="260" y="337" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="34" font-weight="700" fill="#174e4d">Jiaochangwei</text>
+    <text x="260" y="377" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="30" fill="#174e4d">较场尾</text>
+    <text x="260" y="414" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="22" fill="#456b69">coastal village · beach edge · tourism businesses</text>
+  </g>
+
+  <path d="M690 410 H910" fill="none" stroke="#304f4c" stroke-width="7" stroke-dasharray="18 16"/>
+  <path d="M894 392 L925 410 L894 428" fill="none" stroke="#304f4c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M706 392 L675 410 L706 428" fill="none" stroke="#304f4c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="655" y="454" width="290" height="106" rx="22" fill="#fff" stroke="#b9aaa0" stroke-width="3"/>
+  <text x="800" y="496" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="23" font-weight="700" fill="#304f4c">Use live maps + onsite signs</text>
+  <text x="800" y="533" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="22" fill="#52615d">实时导航＋现场指引</text>
+
+  <g transform="translate(300 705)">
+    <rect width="1000" height="145" rx="28" fill="#173d3a" opacity=".94"/>
+    <text x="500" y="51" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="28" font-weight="700" fill="#fff">History is the anchor? Keep the fortress first.</text>
+    <text x="500" y="93" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="25" fill="#d9eee9">海防历史是主因：先保留所城</text>
+    <text x="500" y="127" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="21" fill="#f3d5ae">Add the coast only when weather, access and your return window still work.</text>
+  </g>
+  <text x="800" y="930" text-anchor="middle" font-family="Arial, 'Noto Sans SC', sans-serif" font-size="22" fill="#52615d">Homeground editorial diagram · no walking-time, entrance or accessibility guarantee</text>
+</svg>
