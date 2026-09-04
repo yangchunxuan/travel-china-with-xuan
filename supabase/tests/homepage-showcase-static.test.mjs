@@ -139,6 +139,12 @@ test("the homepage separates tour conversion, destination discovery and three pa
       );
     }
   }
+
+  assert.deepEqual(
+    getHomepageShowcaseCopy("en").heroHeadline.fixedLines,
+    ["China, your way."],
+    "The English hero promise must not be split into two forced lines",
+  );
 });
 
 test("the white homepage flows from guidance to one structured dark footer", async () => {

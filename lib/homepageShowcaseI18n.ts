@@ -35,7 +35,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
     heroBody:
       "Start with a route that fits, then shape it around your dates.",
     heroHeadline: {
-      fixedLines: ["China, your", "way."],
+      fixedLines: ["China, your way."],
       joiner: " ",
       phrases: [
         "We’ve got your back.",
