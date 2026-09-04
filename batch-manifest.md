@@ -5,7 +5,7 @@
 - Base audited: `origin/main` at `c13d83e1abc8f5f25ee2250de11eed8c424a0196`
 - Working branch: `article/worker-3-seo-batch-20260901`
 - Scope: Culture / Food / Local Understanding
-- Status: six canonical owners selected; production proceeds one article at a time.
+- Status: six canonical owners completed in sequence; central editorial review required.
 
 ## Research method and limits
 
@@ -274,3 +274,17 @@ This order deliberately alternates task shapes after the first two food workflow
 - The Silk Museum page will not become a Hangzhou itinerary, silk-shopping guide, or workshop booking page.
 - None of the six will create city-by-month, audience-by-month, or synonym pages.
 
+## Batch completion ledger
+
+Production remained serial: each guide completed research, EN/ZH/KO copy, targeted validation, a traveler blind review, an SEO/technical adversarial review, P1/P2 correction and an atomic commit before the next guide began.
+
+| Rank | Canonical owner | Traveler task solved | Delivery status |
+|---|---|---|---|
+| 1 | `chongqing-hotpot-first-order` | Choose the broth, control a first round, cook without slogan-based timing and recover from excess heat or ordering mistakes | Complete; dual-review PASS |
+| 2 | `xian-yangrou-paomo-first-bowl` | Choose lamb or beef, confirm the bread-breaking service, read broth vocabulary and finish one bowl without inventing a universal ritual | Complete; dual-review PASS |
+| 3 | `beijing-peking-opera-first-performance` | Choose between a named highlights programme and a full-repertoire performance, verify subtitles/rules and know what to watch | Complete; dual-review PASS |
+| 4 | `yunnan-wild-mushroom-hotpot-safe-ordering` | Refuse visual self-identification, verify kitchen controls, follow a batch-specific process and escalate suspected poisoning | Complete; dual-review PASS |
+| 5 | `chengdu-wuhou-shrine-reading-route` | Separate historical record, later memorial architecture, literary memory and the modern visitor zone along a usable route | Complete; dual-review PASS |
+| 6 | `china-national-silk-museum-cocoon-to-conservation-route` | Follow sericulture, weaving, object labels and conservation as an evidence chain rather than a beauty checklist | Complete; dual-review PASS |
+
+All six have `metadata.json`, `canonical-boundary.md`, `dynamic-facts.md`, `source-log.md`, `image-plan.md` and aligned `body.en.ts`, `body.zh.ts`, `body.ko.ts`. No central Search Map, registry, homepage, template, sitemap or production-setting file was edited. The branch is ready for central editorial review, not publication.
