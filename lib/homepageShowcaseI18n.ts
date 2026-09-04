@@ -85,9 +85,9 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       joiner: "",
       phrases: [
         "一路有我们。",
-        "每一站都接得上。",
-        "真实路程也算进去。",
-        "难处理的交给我们。",
+        "每站都接得上",
+        "路程也算进去",
+        "难题交给我们",
       ],
     },
     heroPrimary: "比较中国私家团",

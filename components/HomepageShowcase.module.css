@@ -78,6 +78,7 @@
   letter-spacing: -0.045em;
   line-height: 1.1;
   margin: 0;
+  margin-inline: auto;
   max-inline-size: 17ch;
   text-wrap: balance;
 }
@@ -347,7 +348,11 @@
 
 .root[data-homeground-locale="zh"] .heroTitle {
   font-size: clamp(3rem, 4.25vw, 3.65rem);
-  max-inline-size: 9em;
+  inline-size: 6.1em;
+  margin-inline: auto;
+  max-inline-size: 100%;
+  text-align: start;
+  text-wrap: wrap;
 }
 
 .root[data-homeground-locale="ko"] .heroTitle {

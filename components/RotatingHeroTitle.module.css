@@ -103,7 +103,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 39.999rem) {
   .phraseLayer .letter,
   .phraseLayer[data-phase="entering"] .letter,
   .phraseLayer[data-phase="exiting"] .letter {

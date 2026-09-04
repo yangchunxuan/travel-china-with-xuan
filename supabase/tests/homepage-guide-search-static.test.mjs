@@ -144,12 +144,15 @@ test("guide rail preserves position while lazy-loading and loads near the native
 });
 
 test("homepage hero keeps one canonical brand promise behind a two-second rotating ending", async () => {
-  const [homepage, header, title, titleStyles] = await Promise.all([
-    source("components/HomegroundHomePage.tsx"),
-    source("components/HomegroundHeader.tsx"),
-    source("components/RotatingHeroTitle.tsx"),
-    source("components/RotatingHeroTitle.module.css"),
-  ]);
+  const [homepage, header, title, titleStyles, showcaseStyles, showcaseCopy] =
+    await Promise.all([
+      source("components/HomegroundHomePage.tsx"),
+      source("components/HomegroundHeader.tsx"),
+      source("components/RotatingHeroTitle.tsx"),
+      source("components/RotatingHeroTitle.module.css"),
+      source("components/HomepageShowcase.module.css"),
+      source("lib/homepageShowcaseI18n.ts"),
+    ]);
 
   assert.match(homepage, /<HomegroundHeader/);
   assert.match(header, /<strong lang="en">Homeground China<\/strong>/);
@@ -189,13 +192,35 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(
     titleStyles,
-    /@media \(max-width: 480px\)[\s\S]*?\.phraseLayer\[data-phase="entering"\][\s\S]*?phraseFadeIn[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?phraseFadeOut/,
+    /@media \(max-width: 39\.999rem\)[\s\S]*?\.phraseLayer\[data-phase="entering"\][\s\S]*?phraseFadeIn[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?phraseFadeOut/,
   );
   assert.match(
     titleStyles,
     /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.phraseLayer\[data-phase="entering"\],[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?animation: none/,
   );
   assert.doesNotMatch(titleStyles, /filter: blur/);
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \.heroTitle \{[\s\S]*?inline-size: 6\.1em;[\s\S]*?margin-inline: auto;[\s\S]*?max-inline-size: 100%;[\s\S]*?text-align: start;/,
+    "Chinese hero lines must share one deliberate left edge at every breakpoint",
+  );
+  for (const phrase of [
+    "一路有我们。",
+    "每站都接得上",
+    "路程也算进去",
+    "难题交给我们",
+  ]) {
+    assert.ok(Array.from(phrase).length <= 6);
+    assert.ok(
+      showcaseCopy.includes(`"${phrase}"`),
+      `mobile Chinese rotating phrase must stay within six characters: ${phrase}`,
+    );
+  }
+  assert.match(
+    showcaseStyles,
+    /\.heroTitle \{[\s\S]*?margin: 0;[\s\S]*?margin-inline: auto;/,
+    "the title must stay centered inside full-width responsive wrappers",
+  );
 });
 
 test("customer-facing search copy avoids internal implementation language", async () => {
