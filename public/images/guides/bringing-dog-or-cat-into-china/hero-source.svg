@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Verify a pet, documents and arrival-port branch</title>
+  <desc id="desc">An editorial diagram connects abstract dog and cat silhouettes to a microchip record, document folder and forked arrival-port decision.</desc>
+  <rect width="1600" height="1000" rx="72" fill="#F4F1E8"/>
+  <circle cx="142" cy="150" r="102" fill="#D9E8E2"/>
+  <circle cx="1452" cy="850" r="174" fill="#E9DCCF"/>
+  <path d="M390 505H1190" stroke="#243D35" stroke-width="26" stroke-linecap="round"/>
+  <path d="M1132 453l72 52-72 52" fill="none" stroke="#243D35" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="86" y="250" width="390" height="500" rx="54" fill="#FFFDF7" stroke="#243D35" stroke-width="18"/>
+  <path d="M170 526c0-88 58-158 132-158 70 0 124 58 130 136-31-25-63-35-98-28-24-52-91-68-130-25-19 21-31 47-34 75z" fill="#C96E4B"/>
+  <circle cx="241" cy="410" r="58" fill="#243D35"/>
+  <path d="M197 378l-35-52 68 22M285 378l35-52-68 22" fill="#243D35" stroke="#243D35" stroke-width="14" stroke-linejoin="round"/>
+  <circle cx="224" cy="405" r="7" fill="#FFFDF7"/>
+  <circle cx="260" cy="405" r="7" fill="#FFFDF7"/>
+  <path d="M242 420l-10 11h20z" fill="#FFFDF7"/>
+  <path d="M162 610c14-68 61-110 126-110 70 0 119 45 131 112" fill="none" stroke="#243D35" stroke-width="32" stroke-linecap="round"/>
+  <path d="M194 548l-34-64 68 18" fill="#243D35" stroke="#243D35" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M384 548l34-64-68 18" fill="#243D35" stroke="#243D35" stroke-width="12" stroke-linejoin="round"/>
+  <rect x="585" y="270" width="390" height="460" rx="50" fill="#243D35"/>
+  <rect x="644" y="332" width="270" height="126" rx="28" fill="#D9E8E2"/>
+  <rect x="682" y="365" width="108" height="60" rx="12" fill="#C96E4B"/>
+  <path d="M704 350v-24M734 350v-24M764 350v-24M704 464v-24M734 464v-24M764 464v-24M666 376h-24M666 406h-24M830 376h-24M830 406h-24" stroke="#FFFDF7" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="847" cy="381" r="8" fill="#667A72"/>
+  <circle cx="875" cy="381" r="8" fill="#667A72"/>
+  <circle cx="847" cy="412" r="8" fill="#667A72"/>
+  <circle cx="875" cy="412" r="8" fill="#667A72"/>
+  <path d="M650 525h108l42 43h108v105H650z" fill="#FFFDF7"/>
+  <path d="M702 605h152" stroke="#A5B5AE" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="916" cy="650" r="43" fill="#C96E4B"/>
+  <path d="M895 650l15 15 30-36" fill="none" stroke="#FFFDF7" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1132" y="226" width="382" height="548" rx="54" fill="#FFFDF7" stroke="#243D35" stroke-width="18"/>
+  <path d="M1322 320v148M1322 468l-104 104M1322 468l104 104" fill="none" stroke="#243D35" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1218" cy="624" r="67" fill="#D9E8E2"/>
+  <path d="M1187 624l22 22 44-53" fill="none" stroke="#2E8A68" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1426" cy="624" r="67" fill="#E9DCCF"/>
+  <circle cx="1426" cy="624" r="35" fill="none" stroke="#C96E4B" stroke-width="13"/>
+  <path d="M1426 604v22l18 13" fill="none" stroke="#C96E4B" stroke-width="12" stroke-linecap="round"/>
+  <path d="M270 804c260 112 734 126 1058-16" fill="none" stroke="#C96E4B" stroke-width="18" stroke-linecap="round" stroke-dasharray="18 29"/>
+</svg>
