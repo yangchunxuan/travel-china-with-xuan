@@ -9,19 +9,43 @@
   "topics": [
     "hub-and-spoke",
     "multi-base",
+    "day-trip",
+    "overnight-stop",
+    "stop-classification",
+    "booking-verification",
     "hotel-changes",
     "route-pace"
   ],
   "destinations": [
     "china"
   ],
+  "searchTerms": {
+    "en": [
+      "China day trip or overnight",
+      "one hub or multiple bases in China",
+      "when should a city become a travel base",
+      "China hub-and-spoke vs multi-base routes count the returns"
+    ],
+    "zh": [
+      "中国一日往返还是住一晚",
+      "中国旅行一个基地还是多个基地",
+      "一座城市什么时候值得设为住宿基地",
+      "中心基地还是多基地串联 先数清重复往返"
+    ],
+    "ko": [
+      "중국 당일치기 또는 1박",
+      "중국 여행 한 거점 또는 여러 거점",
+      "도시를 여행 거점으로 정해야 할 때",
+      "중국 거점형 vs 다거점 동선 반복 이동을 세기"
+    ]
+  },
   "heroImagePath": "/images/guides/china-hub-and-spoke-or-multi-base-route/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/china-hub-and-spoke-or-multi-base-route/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-12",
-  "dateModified": "2026-08-13",
-  "sourceReviewedDate": "2026-08-12",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-01",
   "search": {
     "section": "plan",
     "family": "combined-decision",
@@ -34,46 +58,46 @@
   "locales": {
     "en": {
       "path": "/guides/china-hub-and-spoke-or-multi-base-route/",
-      "title": "China Route Planning: One Hub or Multiple Bases?",
-      "headline": "China Hub-and-Spoke vs Multi-Base Routes: Count the Returns",
-      "description": "Choose one China travel base, several bases or a hybrid by repeated station trips, hotel friction, luggage and forward route geometry.",
-      "heroAlt": "Original editorial illustration comparing a central travel hub with a multi-base route.",
+      "title": "One Hub or Multiple Bases in China? A Four-Way Stop Test",
+      "headline": "Day Trip, One Night, True Base or Cut? Give Every Stop a Role",
+      "description": "Classify each stop as a day trip, one-night stay, true base or cut by counting complete travel blocks, luggage, early/late value and recovery.",
+      "heroAlt": "Original editorial diagram comparing a day-trip spoke, one-night stop, forward bases and a removed branch.",
       "navTitle": "Hub or multi-base route",
-      "featuredLinkLabel": "Choose the route architecture",
+      "featuredLinkLabel": "Test each stop's role",
       "openGraphLocale": "en_US",
       "cardTags": [
         "Route planning",
-        "Travel base",
+        "Day trip or overnight",
         "Hotel changes"
       ]
     },
     "zh": {
       "path": "/zh/guides/china-hub-and-spoke-or-multi-base-route/",
-      "title": "中国路线规划：一个基地还是多个住宿点？",
-      "headline": "中心基地还是多基地串联：先数清重复往返",
-      "description": "从重复进站、换酒店摩擦、行李和向前路线几何，选择一个基地、多个基地或混合结构。",
-      "heroAlt": "比较中心基地往返与多基地串联的原创编辑插图。",
+      "title": "中国行程用一个基地还是多地住宿？四类落脚点判断",
+      "headline": "一日访问、住一晚、设为真正基地，还是删掉？",
+      "description": "把候选停留点分为一日访问、住一晚、真正基地或删减，并核算完整转场、行李、早晚价值和失败恢复。",
+      "heroAlt": "比较一日访问、住一晚、向前串联基地与删除支线的原创编辑示意图。",
       "navTitle": "单基地或多基地",
-      "featuredLinkLabel": "选择路线结构",
+      "featuredLinkLabel": "判断每个落脚点的角色",
       "openGraphLocale": "zh_CN",
       "cardTags": [
         "路线规划",
-        "旅行基地",
+        "一日访问或过夜",
         "换酒店"
       ]
     },
     "ko": {
       "path": "/ko/guides/china-hub-and-spoke-or-multi-base-route/",
-      "title": "중국 여행, 한 거점인가 여러 거점인가?",
-      "headline": "중국 거점형 vs 다거점 동선: 반복 이동을 세기",
-      "description": "역 왕복, 숙소 이동, 짐과 전진형 지리를 기준으로 한 거점, 여러 거점 또는 혼합형을 고릅니다.",
-      "heroAlt": "중앙 거점과 다거점 연결 동선을 비교한 오리지널 편집 일러스트.",
+      "title": "중국 여행, 한 거점인가 여러 거점인가? 네 가지 경유지 판단",
+      "headline": "당일치기·1박·진정한 거점·제외: 후보지마다 역할 정하기",
+      "description": "후보지를 당일치기, 1박, 진정한 거점 또는 제외로 나누고 전체 이동 블록, 짐, 아침·저녁 가치와 실패 복구를 함께 계산합니다.",
+      "heroAlt": "당일치기 왕복, 1박, 전진형 거점과 제외된 지선을 비교한 자체 제작 편집 도식.",
       "navTitle": "한 거점 또는 여러 거점",
-      "featuredLinkLabel": "동선 구조 선택",
+      "featuredLinkLabel": "각 경유지 역할 판단",
       "openGraphLocale": "ko_KR",
       "cardTags": [
         "동선 계획",
-        "여행 거점",
+        "당일치기 또는 1박",
         "숙소 이동"
       ]
     }

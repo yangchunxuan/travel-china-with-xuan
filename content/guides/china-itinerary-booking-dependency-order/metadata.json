@@ -1,0 +1,53 @@
+{
+  "id": "china-itinerary-booking-dependency-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "provisional-route-decision",
+  "topics": ["trip-planning", "rail-booking", "booking-dependencies", "failure-recovery"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-itinerary-booking-dependency-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-itinerary-booking-dependency-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-itinerary-booking-dependency-order/",
+      "title": "Plan China Before Train Tickets Go on Sale",
+      "headline": "Build a Provisional China Route Before Domestic Rail Is Bookable",
+      "description": "Separate confirmed constraints, cancellable placeholders and later rail checks before a provisional China route becomes executable.",
+      "heroAlt": "Original editorial diagram showing a provisional route moving through evidence gates before it becomes executable.",
+      "navTitle": "Plan before rail is bookable",
+      "featuredLinkLabel": "Build a provisional route safely",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Route planning", "Rail", "Booking order"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-itinerary-booking-dependency-order/",
+      "title": "中国火车票尚未开售，行程怎么先规划？",
+      "headline": "国内铁路尚不可预订时，先建立可逆的暂定路线",
+      "description": "分清已确认限制、可取消占位和后续铁路核验，并定义一条暂定中国路线何时才真正可执行。",
+      "heroAlt": "原创编辑示意图：暂定路线经过证据关卡后，才转为可执行路线。",
+      "navTitle": "车票开售前先规划",
+      "featuredLinkLabel": "稳妥建立暂定路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["路线规划", "铁路", "预订顺序"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-itinerary-booking-dependency-order/",
+      "title": "중국 기차표 판매 전, 무엇을 먼저 확정할까?",
+      "headline": "중국 국내 철도 예매 전, 되돌릴 수 있는 잠정 동선 만들기",
+      "description": "확정 조건, 취소 가능한 자리 확보와 이후 철도 검증을 구분하고 잠정 중국 동선이 언제 실행 가능한지 판단합니다.",
+      "heroAlt": "잠정 동선이 근거 확인 단계를 거쳐 실행 가능한 동선으로 바뀌는 과정을 보여 주는 오리지널 편집 도식.",
+      "navTitle": "열차 판매 전 동선 계획",
+      "featuredLinkLabel": "안전한 잠정 동선 만들기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["동선 계획", "철도", "예약 순서"]
+    }
+  }
+}
