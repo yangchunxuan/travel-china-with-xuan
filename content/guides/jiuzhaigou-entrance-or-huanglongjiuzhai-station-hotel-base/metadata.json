@@ -1,5 +1,13 @@
 {
   "id": "jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base",
+  "candidateId": "stay-seo-20260901-03",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "stay-hotel-types-scenic-bases",
+  "primaryEntityId": "attraction-jiuzhaigou",
+  "secondaryEntityIds": ["town-zhangzha", "transport-node-huanglongjiuzhai-station", "county-jiuzhaigou", "province-sichuan"],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "stay-hotel-types-scenic-bases",
   "audienceMarkets": ["global"],

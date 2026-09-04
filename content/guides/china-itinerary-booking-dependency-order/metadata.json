@@ -1,5 +1,13 @@
 {
   "id": "china-itinerary-booking-dependency-order",
+  "candidateId": "w4-seo-20260901-05",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "plan-budget-pace-decisions",
+  "primaryEntityId": "country-china",
+  "secondaryEntityIds": [],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "routes-and-pace",
   "audienceMarkets": ["global"],

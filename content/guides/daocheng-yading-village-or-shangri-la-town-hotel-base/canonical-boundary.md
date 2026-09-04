@@ -40,14 +40,7 @@ No homepage, destination Hub, Search Map, registry, sitemap or template is modif
 
 ## Entity boundary
 
-The current central entity registry has no dedicated IDs for Daocheng Yading, Yading Village, Shangri-La Town in Daocheng or Daocheng County. Metadata therefore uses the explicit country-level classification `china`; the resolver returns `country-china` without invoking its unknown-token fallback. This article must not map to Chengdu or to Shangri-La City in Yunnan.
-
-Future central candidates, not created in this branch:
-
-- primary: `attraction-daocheng-yading`
-- secondary: `town-shangri-la-daocheng`, `village-yading`, `county-daocheng`
-
-`province-sichuan` already exists in the central place registry, but the shared guide destination-token resolver does not yet expose a `sichuan` mapping. Connecting that existing entity is a future central resolver decision, not an article-local change.
+The central registry now resolves this owner to `attraction-daocheng-yading`, with `county-daocheng`, `town-shangri-la-daocheng`, `village-yading` and `province-sichuan` as controlled context. The scenic area and the village are distinct entities: the scenic area belongs to Daocheng County, while Yading Village belongs to Shangri-La Town. This prevents the graph from incorrectly treating the whole scenic area as a child of the village. The page must not map to Chengdu or to Shangri-La City in Yunnan.
 
 ## Status
 

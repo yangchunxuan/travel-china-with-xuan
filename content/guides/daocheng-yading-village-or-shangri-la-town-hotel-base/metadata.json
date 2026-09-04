@@ -1,5 +1,13 @@
 {
   "id": "daocheng-yading-village-or-shangri-la-town-hotel-base",
+  "candidateId": "stay-seo-20260901-02",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "stay-hotel-types-scenic-bases",
+  "primaryEntityId": "attraction-daocheng-yading",
+  "secondaryEntityIds": ["town-shangri-la-daocheng", "village-yading", "county-daocheng", "province-sichuan"],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "stay-hotel-types-scenic-bases",
   "audienceMarkets": ["global"],

@@ -17,11 +17,11 @@
     "route_shape"
   ],
   "requiredCoverage": {
-    "stay": 20,
+    "stay": 26,
     "high-intent-transport": 25,
-    "plan": 17,
+    "plan": 22,
     "purchase-ticket": 2,
-    "uniqueContentIds": 64
+    "uniqueContentIds": 75
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -952,6 +952,166 @@
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
         "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "beijing-datong-pingyao-xian-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "beijing-datong-pingyao-xian-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "beijing-xian-guilin-shanghai-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "beijing-xian-guilin-shanghai-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "beijing-xian-shanghai-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "beijing-xian-shanghai-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-itinerary-booking-dependency-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-itinerary-booking-dependency-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "shanghai-hangzhou-huangshan-route-order",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "shanghai-hangzhou-huangshan-route-order",
+      "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "canton-fair-pazhou-tianhe-yuexiu-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "canton-fair-pazhou-tianhe-yuexiu-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "daocheng-yading-village-or-shangri-la-town-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "daocheng-yading-village-or-shangri-la-town-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "downtown-dunhuang-or-mingsha-mountain-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "downtown-dunhuang-or-mingsha-mountain-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "wuzhen-west-scenic-area-inside-or-outside-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "wuzhen-west-scenic-area-inside-or-outside-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "xian-or-huayin-mount-hua-hotel-base",
+      "ownerClass": "stay",
+      "intentCode": "hotel_fit",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "xian-or-huayin-mount-hua-hotel-base",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact"
       ]
     },
     {

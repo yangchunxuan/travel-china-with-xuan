@@ -261,9 +261,9 @@ test("Wuzhen West owner separates identities, entitlements and recovery", async 
   assert.match(canonical, /Wuzhen versus Zhujiajiao, Tongli/iu);
   assert.match(canonical, /East Scenic Area.*West Scenic Area/iu);
   assert.match(canonical, /shanghai-water-town-zhujiajiao-tongli-wuzhen/iu);
-  assert.match(canonical, /destinations: \["china"\].*country-china/isu);
-  assert.match(canonical, /attraction-wuzhen-west-scenic-area.*town-wuzhen.*county-level-city-tongxiang.*city-jiaxing.*province-zhejiang/isu);
-  assert.match(canonical, /(?:does not|must not) modify.*entity graph.*Search Map.*registry.*Hub.*sitemap.*templates/isu);
+  assert.match(canonical, /`attraction-wuzhen-west-scenic-area` as the primary entity/iu);
+  assert.match(canonical, /West Scenic Area.*Wuzhen Town.*Tongxiang.*Jiaxing.*Zhejiang.*China/isu);
+  assert.match(canonical, /does not modify the Search Map, destination Hub, sitemap or templates/iu);
 
   const ledger = await source(`content/guides/${slug}/dynamic-facts.md`);
   assert.match(ledger, /2026-09-04 \(Asia\/Shanghai\)/u);

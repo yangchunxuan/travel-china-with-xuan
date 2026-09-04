@@ -62,7 +62,7 @@ test("Mount Hua stay owner has scoped high-volatility metadata", async () => {
   assert.equal(metadata.heroImageUrl, `https://homegroundchina.com/images/guides/${slug}/hero-1600.webp`);
   assert.deepEqual([metadata.imageWidth, metadata.imageHeight], [1600, 1000]);
   assert.deepEqual(guideUpdatePolicy(metadata), {
-    volatility: "high",
+    volatility: "critical",
     refreshCadence: "on-source-change",
     owner: "homeground-editorial",
   });
@@ -252,14 +252,13 @@ test("Mount Hua owner gives a complete accommodation decision without taking the
   const canonical = await source(`content/guides/${slug}/canonical-boundary.md`);
   assert.match(canonical, /already decided to visit Mount Hua/iu);
   assert.match(canonical, /does not own.*extra Xi’an day.*climbing route.*ticket.*timetable.*Summit lodging/isu);
-  assert.match(canonical, /destinations: \["china"\].*country-china.*geographically wrong/isu);
-  assert.match(canonical, /unresolved entity debt, not completed entity coverage/iu);
-  assert.match(canonical, /city-huayin.*mountain-huashan.*station-huashan-north/isu);
-  assert.match(canonical, /does not modify the central entity graph, Search Map, registry, Hub, sitemap or templates/iu);
+  assert.match(canonical, /primary subject as `natural-feature-huashan`/iu);
+  assert.match(canonical, /`city-huayin`.*`transport-node-huashan-north-station`.*`city-xian`.*`province-shaanxi`/isu);
+  assert.match(canonical, /Huayin's parent is Weinan/iu);
 
   const ledger = await source(`content/guides/${slug}/dynamic-facts.md`);
   assert.match(ledger, /2026-09-04 \(Asia\/Shanghai\)/u);
-  assert.match(ledger, /high volatility \/ on-source-change/iu);
+  assert.match(ledger, /critical volatility \/ on-source-change/iu);
   assert.match(ledger, /No fixed train, bus, shuttle, ropeway or park timetable/iu);
   assert.match(ledger, /No current official confirmation found/iu);
 

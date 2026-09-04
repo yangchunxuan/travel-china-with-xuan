@@ -66,13 +66,7 @@ The article connects two different visitor entities through one World Heritage p
 - Dujiangyan Irrigation System: a working water-management system whose three principal components are read together.
 - Mount Qingcheng Front Mountain: the selected visitor-management area for a path-and-Daoist-temple experience.
 
-Only `chengdu` appears in public metadata because it is the approved destination token. The following are editorial entity proposals for later central review and are not introduced as uncontrolled metadata values:
-
-- `place-dujiangyan-irrigation-system`
-- `place-mount-qingcheng`
-- `visitor-zone-qingcheng-front-mountain`
-- `visitor-zone-qingcheng-back-mountain`
-- `heritage-property-mount-qingcheng-dujiangyan`
+The governed primary remains `city-dujiangyan` because this page owns the allocation decision between two peer visitor places rather than either attraction alone. Controlled supporting entities now identify `heritage-site-dujiangyan-irrigation-system` and `natural-feature-qingcheng-mountain`, alongside Chengdu and Sichuan context. Candidate structured entities consume those governed IDs directly; the frozen legacy destination resolver remains at Chengdu. Front Mountain and Back Mountain remain editorial route zones rather than new standalone entities until a separately governed content identity needs them.
 
 The relationship diagram is an editorial model, not a geographic map. It contains no measured distance, route line, transfer time, entrance position or accessibility claim.
 

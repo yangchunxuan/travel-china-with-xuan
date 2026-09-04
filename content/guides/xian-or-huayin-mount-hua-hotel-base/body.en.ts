@@ -218,7 +218,7 @@ const body = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "Continue with the owner of the next decision",
+      title: "Continue with the guide for your next decision",
       items: [
         { label: "Xi’an travel planning", href: "/destinations/xian/", description: "Decide whether Mount Hua belongs in the Xi’an itinerary and how much city time to protect." },
         { label: "Where to stay within Xi’an", href: "/guides/xian-where-to-stay-city-wall-or-dayanta/", description: "After choosing a Xi’an base, compare the City Wall and Dayanta areas." },

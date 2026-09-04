@@ -1,5 +1,13 @@
 {
   "id": "chongqing-hotpot-first-order",
+  "candidateId": "w3-seo-20260901-01",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "culture-regional-food",
+  "primaryEntityId": "dish-chongqing-hotpot",
+  "secondaryEntityIds": ["city-chongqing", "country-china"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "culture-regional-food",
   "audienceMarkets": ["global"],

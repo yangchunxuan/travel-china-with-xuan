@@ -105,7 +105,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "停留在公共街巷，尊重关闭的门槛；拍摄可识别人物前先询问，并在返程余量仍完整时离开。",
   ]},
   { id: "facts", type: "callout", title: "证据边界，复核于2026年9月4日", tone: "neutral", body: "政府、文物、博物馆、规划、交通和安全来源能够证明两地身份、所城历史与保护属性、具名博物馆场所、机构级场馆名录时间、2026年季节性车辆管制、有文件记录的2026年项目计划和安全限制。去或不去的分支、默认先看所城、过夜触发条件、时间保护原则和删减顺序，均为 Homeground 编辑判断；它们不是官方线路名称、行程耗时保证、无障碍认证，也不承诺入场、水质或活动运营。" },
-  { id: "links", type: "internal-links", title: "让相邻的深圳决策各归其真正负责人", items: [
+  { id: "links", type: "internal-links", title: "相邻的深圳决策请查看对应指南", items: [
     { label: "选择深圳住宿基地：福田、罗湖还是南山", href: "/zh/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "主要城市住宿基地应另行选择；本页不推荐酒店，也不会把较场尾设为默认住宿地。" },
     { label: "选择深圳机场、火车站或口岸", href: "/zh/guides/shenzhen-airport-railway-station-border-port-selector/", description: "保护正确的固定出发任务，避免把距离较远的东部一日和错误的枢纽叠在一起。" },
     { label: "安排广州、深圳和香港的先后顺序", href: "/zh/guides/guangzhou-shenzhen-hong-kong-route-order/", description: "跨城顺序交给对应页面；不要让这篇本地决策页承担三城总行程。" },

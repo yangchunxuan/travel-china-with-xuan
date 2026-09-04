@@ -1,7 +1,7 @@
 # Source log — Dapeng Fortress and Jiaochangwei day-trip decision
 
 Prepared and checked: 2026-09-04 (Asia/Shanghai)
-Status: factual research complete; image set partial because no exact rights-cleared Jiaochangwei photograph is available.
+Status: factual research complete; image set publication-safe within a fortress-only documentary scope, with an exact rights-cleared Jiaochangwei photograph retained as an optional enhancement.
 
 ## Research method
 
@@ -70,7 +70,7 @@ All five photographs are used under CC BY-SA 4.0. Homeground cropped/resized eac
 - [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/) — licence terms.
 - `fortress-jiaochangwei-relationship.svg` and `fortress-jiaochangwei-relationship-ko.svg` — original Homeground editorial diagrams, created 2026-09-04; not photographs or measured maps.
 
-No exact, rights-cleared Jiaochangwei coast/village-edge photograph was found. The article is therefore `ASSETS PARTIAL`. The diagram can explain the entity distinction but cannot replace documentary photography.
+No exact, rights-cleared Jiaochangwei coast/village-edge photograph was found. No substitute is used. The article remains publication-safe because every photograph is expressly scoped to Dapeng Fortress, the relationship diagram is identified as a non-documentary editorial aid, and the page does not use an image to prove Jiaochangwei conditions.
 
 ## Claims deliberately excluded
 
@@ -87,7 +87,7 @@ No exact, rights-cleared Jiaochangwei coast/village-edge photograph was found. T
 
 ## Publication recheck
 
-Reopen the museum directory, formal traffic notice, live reservation interface, Dapeng weather/safety notices and any current construction notice. Repeat the remote canonical audit. Do not remove the `ASSETS PARTIAL` note until central supplies and rights-checks an exact Jiaochangwei image.
+Reopen the museum directory, formal traffic notice, live reservation interface, Dapeng weather/safety notices and any current construction notice. Repeat the remote canonical audit. If an exact Jiaochangwei image is added later, require exact-location and publication-rights verification before it enters the page; never loosen the current fortress-only documentary scope to fill the optional slot.
 
 ## Adversarial review record
 
@@ -95,7 +95,8 @@ Reopen the museum directory, formal traffic notice, live reservation interface, 
 - Final traveller blind review: `TRAVELER PASS — P1=0, P2=0`. The public-facing internal asset-status block and repeated decision material were removed before the pass; the finished body retains the four-way choice and recovery path.
 - Final SEO/technical adversarial review and post-edit delta regression: `SEO/TECH PASS — P1=0, P2=0`. EN/ZH/KO remain 42 blocks in identical order, with 25 sources and three locale-correct internal links; the Korean primary place name is consistently `다펑소청`, with `다펑 요새` used once as a first-mention gloss.
 - Final trilingual editorial review: `TRILINGUAL PASS — P1=0, P2=0`. The reviewer-confirmed fixes align the named interior count, nineteenth-century naval-history wording and Korean decision copy.
-- Asset status remains `ASSETS PARTIAL`: no exact, rights-cleared Jiaochangwei coast/village-edge photograph was available, and no substitute beach photograph is used.
+- Asset status is `PUBLICATION-SAFE SCOPED SET`: no exact, rights-cleared Jiaochangwei coast/village-edge photograph was available, no substitute beach photograph is used, and no visual claim depends on the missing enhancement.
+- Central taxonomy reconciliation (2026-09-04) assigns the governed Dapeng New District owner and Dapeng Fortress/Jiaochangwei/Shenzhen/Guangdong context directly to the pending candidate. The frozen legacy resolver remains at Shenzhen, and the Search Map and Hub were not changed.
 
 ## Validation record
 

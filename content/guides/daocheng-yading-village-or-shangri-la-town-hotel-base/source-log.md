@@ -71,7 +71,7 @@ Final verification after review fixes on **2026-09-01**:
 - `npm run guide:check` — **PASS**, 175 independent guide folders verified.
 - `npm run content:check` — **PASS**, current generated content manifest verified.
 - `npm run typecheck` — **PASS**.
-- `npm run check:guide-entities -- --strict` — command completed and reported the existing global 94-guide unmapped-token inventory. This owner resolves explicitly to `country-china`, has no unmapped token and does not invoke country fallback. No central entity or Search Map file was changed.
+- Article-branch entity check (2026-09-01) reported the then-existing legacy destination resolution. Central reconciliation on 2026-09-04 now assigns explicit governed primary and secondary IDs for Daocheng County, Shangri-La Town, Yading Village and Daocheng Yading Scenic Area. Candidate structured entities use those governed IDs; the frozen legacy resolver and published Search Map assignments are not expanded.
 - `git diff --cached --check` — **PASS** for the exact article, Hero and dedicated-test file set.
 
 A full production build is reserved for the completed six-guide branch and is not claimed here.

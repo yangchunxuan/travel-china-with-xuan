@@ -3,7 +3,7 @@ import {
   destinationHubRegistry,
   type DestinationHubEntry,
 } from "./destinationHubs";
-import { getGuideEntry } from "./guideRegistry";
+import { getGuideEntry, getIndexApprovedGuides } from "./guideRegistry";
 import { getGuideCollectionId } from "./searchCollectionI18n";
 
 const localeKeys = {
@@ -36,10 +36,12 @@ export function evaluateDestinationHubEligibility(
 ): DestinationHubEligibility {
   const sections = new Set<string>();
   let supportGuideCount = 0;
+  const approvedGuideIds = new Set(getIndexApprovedGuides().map((guide) => guide.id));
 
   for (const guideId of hub.supportGuideIds) {
     // Throws when a support guide is renamed or removed, so a hub can never
     // silently claim eligibility from a guide that no longer exists.
+    if (!approvedGuideIds.has(guideId)) continue;
     const localised = (["en", "zh", "ko"] as const).map((locale) =>
       getGuideEntry(guideId, locale),
     );

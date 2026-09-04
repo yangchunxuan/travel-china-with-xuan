@@ -1,5 +1,13 @@
 {
   "id": "chengdu-wuhou-shrine-reading-route",
+  "candidateId": "w3-seo-20260901-05",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "culture-history-people-ideas",
+  "primaryEntityId": "attraction-wuhou-shrine",
+  "secondaryEntityIds": ["city-chengdu", "province-sichuan", "country-china"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "culture-history-people-ideas",
   "audienceMarkets": ["global"],

@@ -199,7 +199,7 @@ const body = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "Continue with the owner of the next decision",
+      title: "Continue with the guide for your next decision",
       items: [
         { label: "Hangzhou travel planning", href: "/destinations/hangzhou/", description: "Keep Wuzhen in the correct regional context: it is in Tongxiang, Jiaxing, not central Hangzhou." },
         { label: "Verify an accessible hotel room", href: "/guides/china-accessible-hotel-room-verification/", description: "Check the continuous street-to-room route, measurements and a usable backup room." },

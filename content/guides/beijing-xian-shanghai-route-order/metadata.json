@@ -1,5 +1,13 @@
 {
   "id": "beijing-xian-shanghai-route-order",
+  "candidateId": "w4-seo-20260901-01",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "plan-trip-length-city-order",
+  "primaryEntityId": "country-china",
+  "secondaryEntityIds": ["city-beijing", "city-xian", "city-shanghai"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "routes-and-pace",
   "audienceMarkets": ["global"],

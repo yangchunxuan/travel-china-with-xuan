@@ -223,7 +223,7 @@ const body = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "Continue with the owner of the next decision",
+      title: "Continue with the guide for your next decision",
       items: [
         { label: "Mogao Caves independent visit workflow", href: "/guides/mogao-caves-independent-visit-workflow/", description: "Handle official booking, foreign-passport verification, the Digital Exhibition Center sequence and visit-day recovery." },
         { label: "Xi'an–Lanzhou–Dunhuang Silk Road route", href: "/guides/xian-lanzhou-dunhuang-silk-road-route/", description: "Choose city order, total nights and gateway logic before selecting the within-Dunhuang base." },

@@ -1,5 +1,13 @@
 {
   "id": "canton-fair-pazhou-tianhe-yuexiu-hotel-base",
+  "candidateId": "stay-seo-20260901-01",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "stay-city-areas",
+  "primaryEntityId": "venue-canton-fair-complex",
+  "secondaryEntityIds": ["neighborhood-pazhou-guangzhou", "district-tianhe-guangzhou", "district-yuexiu-guangzhou", "city-guangzhou", "province-guangdong"],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "stay-city-areas",
   "audienceMarkets": ["global"],

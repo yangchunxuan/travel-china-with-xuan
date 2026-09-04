@@ -320,10 +320,10 @@ test("Dunhuang owner enforces the first-stop correction, source parity and canon
     /183 `origin\/article\/\*` plus `origin\/codex\/\*`/u,
     /origin\/main@c13d83e1abc8f5f25ee2250de11eed8c424a0196/u,
   ], "canonical audit");
-  assert.match(canonical, /primary entity: `county-level-city-dunhuang`/iu);
-  assert.match(canonical, /attraction-mogao-caves.*attraction-mingsha-crescent-spring.*station-dunhuang.*airport-dunhuang-mogao.*city-jiuquan.*province-gansu/isu);
-  assert.match(canonical, /entity debt/iu);
-  assert.match(canonical, /must not.*entity graph.*Search Map.*registry.*destination Hub.*sitemap.*templates/isu);
+  assert.match(canonical, /Primary entity: `city-dunhuang`/iu);
+  assert.match(canonical, /heritage-site-mogao-caves.*attraction-mingsha-crescent-spring.*transport-node-dunhuang-station.*transport-node-dunhuang-mogao-airport.*city-jiuquan.*province-gansu/isu);
+  assert.match(canonical, /Explicit governed metadata.*Candidate structured entities.*frozen legacy destination resolver/isu);
+  assert.match(canonical, /does not modify the Search Map, destination Hub, sitemap or templates/iu);
 
   const dynamic = await source(`content/guides/${slug}/dynamic-facts.md`);
   assert.match(dynamic, /2026-09-04 \(Asia\/Shanghai\)/u);

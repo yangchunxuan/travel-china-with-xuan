@@ -9,7 +9,7 @@ import {
   getEditorialAuthor,
   getEditorialAuthorLanguagePaths,
 } from "../lib/editorialIdentity";
-import { guideRegistry } from "../lib/guideRegistry";
+import { getIndexApprovedGuides } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -22,8 +22,7 @@ const SITE_URL = "https://homegroundchina.com";
 export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLocale }) {
   const home = getHomegroundCopy(locale);
   const author = getEditorialAuthor(locale);
-  const recent = [...guideRegistry]
-    .filter((guide) => Boolean(guide.locales[locale]))
+  const recent = [...getIndexApprovedGuides(locale)]
     .sort((a, b) => b.dateModified.localeCompare(a.dateModified))
     .slice(0, 6)
     .map((guide) => guide.locales[locale]!);

@@ -23,8 +23,8 @@ const body = {
       id: "scope",
       type: "callout",
       tone: "neutral",
-      title: "What this owner decides",
-      body: "This guide owns the general choice among a no-local-night visit, exactly one overnight, a true base with repeated local starts and removal; it also compares returning-hub and forward-base geometry. It does not prescribe city combinations, train numbers, universal night counts or a public Route Reality score. Named destination guides still own local access and accommodation decisions; the rushed-itinerary guide owns whole-trip overload.",
+      title: "What this guide decides",
+      body: "This guide covers the general choice among a no-local-night visit, exactly one overnight, a true base with repeated local starts and removal; it also compares returning-hub and forward-base geometry. It does not prescribe city combinations, train numbers, universal night counts or a public Route Reality score. Named destination guides still cover local access and accommodation decisions; the rushed-itinerary guide handles whole-trip overload.",
     },
     { id: "role-heading", type: "heading", level: 2, text: "Give the stop a job before giving it a night" },
     {
@@ -192,7 +192,7 @@ const body = {
       items: [
         "Delete the stop in a copy of the route. If no protected priority disappears, keep it deleted.",
         "Replace its activity with a lower-dependency experience in an existing base. If the trip still meets the same purpose, avoid the hotel move.",
-        "Ask what absorbs a delay. If the answer is the next city's only full day, the optional stop is spending recovery the route does not own.",
+        "Ask what absorbs a delay. If the answer is the next city's only full day, the optional stop is spending recovery time the route does not have.",
         "Keep a rejected stop in a future-trip list, not as an unbooked promise inside the current itinerary.",
       ],
     },
@@ -201,7 +201,7 @@ const body = {
       type: "callout",
       tone: "warning",
       title: "Architecture and overload are different checks",
-      body: "This four-role test decides what each stop should be. Afterward, the rushed-itinerary owner must still test the complete trip's usable days, consecutive transfers, fatigue and buffers. A logically classified route can still contain too many logically classified stops.",
+      body: "This four-role test decides what each stop should be. Afterward, the rushed-itinerary guide must still test the complete trip's usable days, consecutive transfers, fatigue and buffers. A logically classified route can still contain too many logically classified stops.",
     },
     { id: "geometry-heading", type: "heading", level: 2, text: "Onward geometry can reverse the answer" },
     {

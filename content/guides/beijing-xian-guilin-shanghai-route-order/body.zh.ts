@@ -97,7 +97,7 @@ const body = {
       caption: "“阳朔站”这个名称可能掩盖后续还需一段道路衔接。这张授权图片只证明拍摄日期时的车站身份，不能证明当前车次、接驳、酒店路线或已经抵达县城。",
     },
     {
-      id: "regional-owner-handoff", type: "callout", tone: "neutral", title: "宏观文章应在区域边界处停笔",
+      id: "regional-handoff", type: "callout", tone: "neutral", title: "宏观文章应在区域边界处停笔",
       body: "桂林/阳朔证明自己值得加入后，再使用独立的桂林门户指南和桂林—阳朔交通页面。只有确切端点、住宿基地和当前运营都已明确，才决定区域内部顺序；这些执行选择不属于本文的宏观判断范围。",
     },
     { id: "travellers-heading", type: "heading", level: 2, text: "三类旅客，会让同一个第四站呈现不同结论" },

@@ -1,13 +1,14 @@
 # Image plan — Beijing, Xi'an, Guilin and Shanghai route order
 
-Status: `ORIGINAL EDITORIAL HERO COMPLETE — TWO LICENSED NODE FIGURES CLEARED — LANDSCAPE RIGHTS GAP OPEN`
+Status: `ORIGINAL LANGUAGE-NEUTRAL HERO COMPLETE — TWO LICENSED NODE FIGURES CLEARED — LANDSCAPE ENHANCEMENT OPTIONAL`
 
 ## Hero
 
 - Asset: `hero-source.svg` → `/images/guides/beijing-xian-guilin-shanghai-route-order/hero-1600.webp`.
-- Output: 1600 × 1000 WebP; SHA-256 `6869e22b19c4c20438d7ae2e09b4c5bd799e76eee181bd8ad3f417ee02cba8c1`.
-- Role: a fourth-stop decision diagram showing the three-city spine, the regional landscape module and its value/usable-block/recovery gates.
+- Output: 1600 × 1000 WebP; SHA-256 `e0dddaf6cf07c57d9e03c6a00fb3be41ad7f3fc82f173123f8251bf2a5233b51`.
+- Role: a language-neutral fourth-stop decision diagram showing a three-node spine, an optional landscape module and three independent decision gates. It contains no visible words, numbers or place labels.
 - Rights: original Homeground editorial asset. It is explicitly not a map, timetable, duration graphic or documentary photograph.
+- Locale handling: the same text-free image is safe for EN/ZH/KO; each locale supplies its own headline and alt text outside the bitmap.
 
 ## Cleared explanatory figures
 
@@ -16,12 +17,10 @@ Status: `ORIGINAL EDITORIAL HERO COMPLETE — TWO LICENSED NODE FIGURES CLEARED 
 
 Change notices: the Guilin Station derivative uses the source crop `{ left: 0, top: 100, width: 2016, height: 1260 }`, resized to 1600 × 1000 and encoded as WebP at quality 86. The Yangshuo Station derivative uses a centre crop from 4:3 to 16:10, resized to 1600 × 1000 and converted to WebP. Neither derivative adds, composites or generatively alters documentary content.
 
-## Central documentary request
+## Optional documentary enhancements
 
 1. A location-verified Li River or Yangshuo karst landscape with publication rights and capture date, used only to show the module's distinct scenery.
 2. Current Guilin airport or named-station signage if a gateway explainer is added.
 3. A real public Li River operations notice or pier sign, if permission allows, without implying that the depicted product operates on every date.
 
-The owner-authorised local photo library is not used here because its original photographer rights are not independently proved. No AI documentary photograph, generic karst from another province, wrong station, tour screenshot, identifiable traveller or weather-promise image may fill the gap.
-
-The current editorial hero contains English visible labels. Before publication, central must either approve one English-labelled decision graphic across locales or commission matching Chinese and Korean variants; localized alt text alone does not localize visible copy.
+The owner-authorised local photo library is not used here because its original photographer rights are not independently proved. These additions are optional rather than publication gates: the hero is explicitly editorial, while the two cleared node photographs have exact identity and licence records. No AI documentary photograph, generic karst from another province, wrong station, tour screenshot, identifiable traveller or weather-promise image may fill an enhancement slot.

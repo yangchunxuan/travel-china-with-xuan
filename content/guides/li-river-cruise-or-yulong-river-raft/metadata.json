@@ -1,5 +1,13 @@
 {
   "id": "li-river-cruise-or-yulong-river-raft",
+  "candidateId": "dest-seo-20260901-08",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "explore-attractions-nature-heritage",
+  "primaryEntityId": "natural-feature-li-river",
+  "secondaryEntityIds": ["natural-feature-yulong-river", "city-guilin", "county-yangshuo", "province-guangxi"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
   "audienceMarkets": ["global"],

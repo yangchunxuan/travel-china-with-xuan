@@ -46,10 +46,14 @@ export function resolveGuideEntities(
 }
 
 export type GuideFreshnessVolatility = "low" | "medium" | "high" | "critical";
+export type GuideRefreshCadence =
+  | "quarterly"
+  | "on-source-change"
+  | "every-session";
 
 export interface GuideFreshnessPolicy {
   readonly volatility: GuideFreshnessVolatility;
-  readonly refreshCadence: "quarterly" | "on-source-change";
+  readonly refreshCadence: GuideRefreshCadence;
   readonly owner: "homeground-editorial";
 }
 
@@ -182,6 +186,107 @@ export const guideFreshnessMinimums = Object.freeze({
   "xian-lanzhou-dunhuang-silk-road-route": "high",
 } as const satisfies Record<string, GuideFreshnessVolatility>);
 
+/**
+ * Per-guide decisions for the centrally reviewed 2026-09-01 batch. These are
+ * explicit because a broad editorial pillar cannot represent fair-session,
+ * safety, attraction-operation and multi-city route volatility precisely.
+ */
+export const guideUpdatePolicyOverrides = Object.freeze({
+  "animal-bite-rabies-exposure-china": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "beijing-datong-pingyao-xian-route-order": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "beijing-peking-opera-first-performance": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "beijing-xian-guilin-shanghai-route-order": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "beijing-xian-shanghai-route-order": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "bringing-dog-or-cat-into-china": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "bringing-prescription-medicine-into-china": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "canton-fair-pazhou-tianhe-yuexiu-hotel-base": {
+    volatility: "critical", refreshCadence: "every-session",
+  },
+  "chengdu-wuhou-shrine-reading-route": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "china-hub-and-spoke-or-multi-base-route": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "china-itinerary-booking-dependency-order": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "china-national-silk-museum-cocoon-to-conservation-route": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "china-severe-weather-warning-trip-recovery": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "china-tourist-temporary-driving-permit": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "chongqing-hotpot-first-order": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "daocheng-yading-village-or-shangri-la-town-hotel-base": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "dapeng-fortress-jiaochangwei-day-trip-decision": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "downtown-dunhuang-or-mingsha-mountain-hotel-base": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "dujiangyan-qingcheng-mountain-same-day-or-separate": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "hangzhou-tea-villages-and-museum-selector": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "li-river-cruise-or-yulong-river-raft": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "medical-emergency-in-china-for-travellers": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "nanjing-purple-mountain-route": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "quanzhou-old-city-maritime-heritage-walk": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "shanghai-hangzhou-huangshan-route-order": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "wuzhen-west-scenic-area-inside-or-outside-hotel-base": {
+    volatility: "high", refreshCadence: "on-source-change",
+  },
+  "xian-or-huayin-mount-hua-hotel-base": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+  "xian-yangrou-paomo-first-bowl": {
+    volatility: "medium", refreshCadence: "quarterly",
+  },
+  "yunnan-wild-mushroom-hotpot-safe-ordering": {
+    volatility: "critical", refreshCadence: "on-source-change",
+  },
+} as const satisfies Record<
+  string,
+  { readonly volatility: GuideFreshnessVolatility; readonly refreshCadence: GuideRefreshCadence }
+>);
+
 export const dynamicTicketTopicFragments = [
   "booking",
   "opening",
@@ -237,6 +342,19 @@ export function guideUpdatePolicy(
     volatility,
     guideFreshnessMinimums[guide.id as keyof typeof guideFreshnessMinimums],
   );
+
+  const override = guideUpdatePolicyOverrides[
+    guide.id as keyof typeof guideUpdatePolicyOverrides
+  ];
+  volatility = moreConservativeVolatility(volatility, override?.volatility);
+
+  if (override) {
+    return {
+      volatility,
+      refreshCadence: override.refreshCadence,
+      owner: "homeground-editorial",
+    };
+  }
 
   return policyByVolatility[volatility];
 }

@@ -54,7 +54,7 @@ test("Daocheng Yading base owner has complete metadata and companion files", asy
   assert.deepEqual([metadata.imageWidth, metadata.imageHeight], [1600, 1000]);
 
   assert.deepEqual(guideUpdatePolicy(metadata), {
-    volatility: "high",
+    volatility: "critical",
     refreshCadence: "on-source-change",
     owner: "homeground-editorial",
   });
@@ -203,12 +203,9 @@ test("Daocheng Yading owner keeps links, sources, entity names and claims bounde
   assert.match(canonical, /after a traveller has already decided to visit/iu);
   assert.match(canonical, /not Shangri-La City in Yunnan/iu);
   assert.match(canonical, /No homepage, destination Hub, Search Map/iu);
-  assert.match(canonical, /explicit country-level classification `china`/iu);
-  assert.match(canonical, /`province-sichuan` already exists/iu);
-  const futureCandidateList = canonical
-    .split("Future central candidates, not created in this branch:")[1]
-    .split("`province-sichuan` already exists")[0];
-  assert.doesNotMatch(futureCandidateList, /`province-sichuan`/iu);
+  assert.match(canonical, /central registry now resolves.*`attraction-daocheng-yading`/isu);
+  assert.match(canonical, /`county-daocheng`.*`town-shangri-la-daocheng`.*`village-yading`.*`province-sichuan`/isu);
+  assert.match(canonical, /scenic area belongs to Daocheng County.*Yading Village belongs to Shangri-La Town/isu);
 
   const ledger = await source(`content/guides/${slug}/dynamic-facts.md`);
   assert.match(ledger, /Critical \/ daily/u);

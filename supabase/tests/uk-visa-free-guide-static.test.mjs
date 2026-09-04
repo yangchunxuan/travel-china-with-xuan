@@ -54,7 +54,10 @@ test("English-only guide publishes truthful locale metadata and sitemap entries"
   );
   assert.match(registry, /locales: Partial<Record<HomegroundLocale/);
   assert.match(registry, /getGuideAvailableLocales/);
-  assert.match(registry, /\.filter\(\(entry\) => Boolean\(entry\.locales\[locale\]\)\)/);
+  assert.match(
+    registry,
+    /isGuideIndexApproved\(entry\) && Boolean\(entry\.locales\[locale\]\)/,
+  );
   assert.match(route, /languages: getGuideLanguagePaths\(guide\.id\)/);
   assert.doesNotMatch(route, /alternateLocale/);
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);

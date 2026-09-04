@@ -1,5 +1,18 @@
 {
   "id": "shanghai-hangzhou-huangshan-route-order",
+  "candidateId": "w4-seo-20260901-03",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "plan-trip-length-city-order",
+  "primaryEntityId": "country-china",
+  "secondaryEntityIds": [
+    "city-shanghai",
+    "city-hangzhou",
+    "city-huangshan",
+    "natural-feature-huangshan"
+  ],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "routes-and-pace",
   "audienceMarkets": ["global"],
@@ -11,7 +24,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-09-01",
-  "dateModified": "2026-09-01",
+  "dateModified": "2026-09-04",
   "sourceReviewedDate": "2026-09-01",
   "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },

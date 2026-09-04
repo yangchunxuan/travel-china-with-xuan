@@ -58,13 +58,9 @@ This page begins only after West Scenic Area is selected. It must not absorb eit
 
 ## Entity handling
 
-Metadata should use `destinations: ["china"]` for this article-only commit. The intended entity chain is unresolved central debt:
+The central registry uses `attraction-wuzhen-west-scenic-area` as the primary entity, with `town-wuzhen`, `city-tongxiang` and `province-zhejiang` as controlled context. The parent chain is West Scenic Area → Wuzhen Town → Tongxiang → Jiaxing → Zhejiang → China.
 
-- primary: `attraction-wuzhen-west-scenic-area`
-- secondary: `town-wuzhen`
-- parent chain: `county-level-city-tongxiang` → `city-jiaxing` → `province-zhejiang` → `country-china`
-
-Wuzhen must not resolve as an attraction or neighbourhood of Hangzhou. A Hangzhou route relationship does not change administrative parentage. The article branch must not modify the central entity graph, Search Map, guide registry, destination Hub, sitemap or templates.
+Wuzhen must not resolve as an attraction or neighbourhood of Hangzhou. A Hangzhou route relationship does not change administrative parentage. This reconciliation does not modify the Search Map, destination Hub, sitemap or templates.
 
 ## Internal-link boundary
 
@@ -75,4 +71,4 @@ Appropriate published owners, where context requires them:
 - `/guides/china-hub-and-spoke-or-multi-base-route/` for deciding whether one extra hotel move is worth its luggage cost.
 - `/destinations/hangzhou/` only as wider route context, while explicitly preserving that Wuzhen is in Tongxiang, Jiaxing and is not a Hangzhou urban attraction.
 
-Reciprocal links and central entity reconciliation are central-integration work, not part of this article-only owner.
+Reciprocal links remain separate central-integration work and are not created by this taxonomy reconciliation.

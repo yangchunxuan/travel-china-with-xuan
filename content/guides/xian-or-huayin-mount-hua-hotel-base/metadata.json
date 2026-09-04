@@ -1,5 +1,13 @@
 {
   "id": "xian-or-huayin-mount-hua-hotel-base",
+  "candidateId": "stay-seo-20260901-04",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "stay-hotel-types-scenic-bases",
+  "primaryEntityId": "natural-feature-huashan",
+  "secondaryEntityIds": ["city-huayin", "city-xian", "province-shaanxi", "transport-node-huashan-north-station"],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "stay-hotel-types-scenic-bases",
   "audienceMarkets": ["global"],

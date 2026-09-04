@@ -1,5 +1,13 @@
 {
   "id": "xian-yangrou-paomo-first-bowl",
+  "candidateId": "w3-seo-20260901-02",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "culture-regional-food",
+  "primaryEntityId": "dish-yangrou-paomo",
+  "secondaryEntityIds": ["city-xian", "province-shaanxi", "country-china"],
+  "freshnessClass": "medium",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "culture-regional-food",
   "audienceMarkets": ["global"],

@@ -42,7 +42,7 @@ const body = {
       id: "rail-boundary",
       type: "callout",
       title: "Do not turn one railway window into a national calendar",
-      body: "As reviewed on 1 September 2026, ordinary sale timing and a limited advance-request pilot for eligible Beijing–Shanghai trains coexist. China Railway controls the exact state for each segment. This page records only whether your edge is unknown, requested, waitlisted or issued; the rail guide owns current windows, identity verification, purchase, change and refund procedures.",
+      body: "As reviewed on 1 September 2026, ordinary sale timing and a limited advance-request pilot for eligible Beijing–Shanghai trains coexist. China Railway controls the exact state for each segment. This page records only whether your edge is unknown, requested, waitlisted or issued; use the rail guide for current windows, identity verification, purchase, change and refund procedures.",
       tone: "warning",
     },
     {
@@ -92,14 +92,14 @@ const body = {
         ["State", "Provisional, conditionally committed or operator-confirmed?", "Provisional"],
         ["Dependents", "What becomes unsafe if it fails?", "Third-city hotel, timed visit and onward airport transfer"],
         ["Reversal consequence", "Money, time or scarce inventory lost if changed?", "Hotel remains cancellable until its recorded deadline"],
-        ["Trigger and owner", "When and where will it be checked?", "Search the exact date and station pair in Railway 12306 when available"],
+        ["Trigger and responsible source or person", "When and where will it be checked?", "Search the exact date and station pair in Railway 12306 when available"],
         ["Fallback", "What changes first if it fails?", "Move the flexible visit, change the base date or remove the weakest stop"],
       ],
     },
     {
       id: "identity-prep",
       type: "paragraph",
-      text: "Some preparation removes friction without committing money. Create one passport-based identity record and complete the current railway identity process before the relevant window. China Railway currently supports eligible foreign-passport verification online or at a station, but it does not promise how quickly an individual case will clear. “Account created” and “passenger verified for purchase” therefore belong in separate ledger rows. The passport-name guide owns field-by-field correction and document-change recovery.",
+      text: "Some preparation removes friction without committing money. Create one passport-based identity record and complete the current railway identity process before the relevant window. China Railway currently supports eligible foreign-passport verification online or at a station, but it does not promise how quickly an individual case will clear. “Account created” and “passenger verified for purchase” therefore belong in separate ledger rows. Use the passport-name guide for field-by-field correction and document-change recovery.",
     },
     {
       id: "commit-heading",
@@ -140,7 +140,7 @@ const body = {
     {
       id: "triggers-text",
       type: "paragraph",
-      text: "A single reminder labelled “book China” is too vague. Different operators release and change information on different schedules. Even two Beijing museums currently using seven-day reservation windows publish different release times, entry periods and missed-reservation consequences. That coincidence does not create a seven-day rule for China. Record the exact owner and trigger for each trip-defining item, and re-read the live terms when the trigger arrives.",
+      text: "A single reminder labelled “book China” is too vague. Different operators release and change information on different schedules. Even two Beijing museums currently using seven-day reservation windows publish different release times, entry periods and missed-reservation consequences. That coincidence does not create a seven-day rule for China. Record the exact responsible source or person and trigger for each trip-defining item, and re-read the live terms when the trigger arrives.",
     },
     {
       id: "trigger-table",
@@ -293,7 +293,7 @@ const body = {
         { "label": "Prepare for a first high-speed train", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Check current sale states, passport verification, purchase, station and boarding execution." },
         { "label": "Compare open-jaw and same-city flights", "href": "/guides/china-open-jaw-flights-route-planning/", "description": "Decide whether different international gateways remove a return journey." },
         { "label": "Check China's official holiday calendar", "href": "/guides/china-public-holidays-travel-calendar/", "description": "Verify the published holiday and adjusted-workday dates without relying on a crowd score." },
-        { "label": "Verify official and reseller attraction tickets", "href": "/guides/official-or-reseller-china-tickets/", "description": "Identify the ticket owner and distinguish a seller order from owner-confirmed admission." },
+        { "label": "Verify official and reseller attraction tickets", "href": "/guides/official-or-reseller-china-tickets/", "description": "Identify the responsible ticket issuer and distinguish a seller order from admission confirmed by the attraction or operator." },
         { "label": "Protect a flexible arrival day", "href": "/guides/china-arrival-day-booked-anchor-or-flexible-block/", "description": "Decide whether the arrival chain can support a timed reservation." },
         { "label": "Keep passport names consistent", "href": "/guides/passport-name-across-china-bookings/", "description": "Prepare one identity record for flights, rail, hotels and real-name bookings." }
       ],

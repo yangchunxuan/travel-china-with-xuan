@@ -349,5 +349,1355 @@
         "updatedAt": "2026-08-21"
       }
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-shanxi",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Shanxi" },
+        "zh-Hans": { "name": "山西" },
+        "ko": { "name": "산시성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-jiangsu",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Jiangsu" },
+        "zh-Hans": { "name": "江苏" },
+        "ko": { "name": "장쑤성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-fujian",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Fujian" },
+        "zh-Hans": { "name": "福建" },
+        "ko": { "name": "푸젠성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-yunnan",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Yunnan" },
+        "zh-Hans": { "name": "云南" },
+        "ko": { "name": "윈난성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-anhui",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Anhui" },
+        "zh-Hans": { "name": "安徽" },
+        "ko": { "name": "안후이성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "province-gansu",
+      "entityType": "province",
+      "names": {
+        "en": { "name": "Gansu" },
+        "zh-Hans": { "name": "甘肃" },
+        "ko": { "name": "간쑤성" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "prefecture-ganzi",
+      "entityType": "prefecture",
+      "names": {
+        "en": { "name": "Garzê Tibetan Autonomous Prefecture", "aliases": ["Ganzi"] },
+        "zh-Hans": { "name": "甘孜藏族自治州", "aliases": ["甘孜州"] },
+        "ko": { "name": "간쯔 티베트족 자치주", "aliases": ["간쯔"] }
+      },
+      "parentEntityIds": ["province-sichuan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "prefecture-aba",
+      "entityType": "prefecture",
+      "names": {
+        "en": { "name": "Ngawa Tibetan and Qiang Autonomous Prefecture", "aliases": ["Aba"] },
+        "zh-Hans": { "name": "阿坝藏族羌族自治州", "aliases": ["阿坝州"] },
+        "ko": { "name": "아바 티베트족 창족 자치주", "aliases": ["아바"] }
+      },
+      "parentEntityIds": ["province-sichuan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-jinzhong",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Jinzhong" },
+        "zh-Hans": { "name": "晋中" },
+        "ko": { "name": "진중" }
+      },
+      "parentEntityIds": ["province-shanxi"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-weinan",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Weinan" },
+        "zh-Hans": { "name": "渭南" },
+        "ko": { "name": "웨이난" }
+      },
+      "parentEntityIds": ["province-shaanxi"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-jiaxing",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Jiaxing" },
+        "zh-Hans": { "name": "嘉兴" },
+        "ko": { "name": "자싱" }
+      },
+      "parentEntityIds": ["province-zhejiang"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-jiuquan",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Jiuquan" },
+        "zh-Hans": { "name": "酒泉" },
+        "ko": { "name": "주취안" }
+      },
+      "parentEntityIds": ["province-gansu"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-nanjing",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Nanjing" },
+        "zh-Hans": { "name": "南京" },
+        "ko": { "name": "난징" }
+      },
+      "parentEntityIds": ["province-jiangsu"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-quanzhou",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Quanzhou" },
+        "zh-Hans": { "name": "泉州" },
+        "ko": { "name": "취안저우" }
+      },
+      "parentEntityIds": ["province-fujian"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-kunming",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Kunming" },
+        "zh-Hans": { "name": "昆明" },
+        "ko": { "name": "쿤밍" }
+      },
+      "parentEntityIds": ["province-yunnan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-datong",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Datong" },
+        "zh-Hans": { "name": "大同" },
+        "ko": { "name": "다퉁" }
+      },
+      "parentEntityIds": ["province-shanxi"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-huangshan",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Huangshan City" },
+        "zh-Hans": { "name": "黄山市" },
+        "ko": { "name": "황산시" }
+      },
+      "parentEntityIds": ["province-anhui"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-dujiangyan",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Dujiangyan" },
+        "zh-Hans": { "name": "都江堰" },
+        "ko": { "name": "두장옌" }
+      },
+      "parentEntityIds": ["city-chengdu"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "administrativeKind": "county-level-city" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-huayin",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Huayin" },
+        "zh-Hans": { "name": "华阴" },
+        "ko": { "name": "화인" }
+      },
+      "parentEntityIds": ["city-weinan"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "administrativeKind": "county-level-city" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-tongxiang",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Tongxiang" },
+        "zh-Hans": { "name": "桐乡" },
+        "ko": { "name": "퉁샹" }
+      },
+      "parentEntityIds": ["city-jiaxing"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "administrativeKind": "county-level-city" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "city-dunhuang",
+      "entityType": "city",
+      "names": {
+        "en": { "name": "Dunhuang" },
+        "zh-Hans": { "name": "敦煌" },
+        "ko": { "name": "둔황" }
+      },
+      "parentEntityIds": ["city-jiuquan"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "administrativeKind": "county-level-city" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "county-pingyao",
+      "entityType": "county",
+      "names": {
+        "en": { "name": "Pingyao County" },
+        "zh-Hans": { "name": "平遥县" },
+        "ko": { "name": "핑야오현" }
+      },
+      "parentEntityIds": ["city-jinzhong"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "county-yangshuo",
+      "entityType": "county",
+      "names": {
+        "en": { "name": "Yangshuo County", "aliases": ["Yangshuo"] },
+        "zh-Hans": { "name": "阳朔县", "aliases": ["阳朔"] },
+        "ko": { "name": "양숴현", "aliases": ["양숴"] }
+      },
+      "parentEntityIds": ["city-guilin"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "county-daocheng",
+      "entityType": "county",
+      "names": {
+        "en": { "name": "Daocheng County" },
+        "zh-Hans": { "name": "稻城县" },
+        "ko": { "name": "다오청현" }
+      },
+      "parentEntityIds": ["prefecture-ganzi"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "county-jiuzhaigou",
+      "entityType": "county",
+      "names": {
+        "en": { "name": "Jiuzhaigou County" },
+        "zh-Hans": { "name": "九寨沟县" },
+        "ko": { "name": "주자이거우현" }
+      },
+      "parentEntityIds": ["prefecture-aba"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "county-songpan",
+      "entityType": "county",
+      "names": {
+        "en": { "name": "Songpan County" },
+        "zh-Hans": { "name": "松潘县" },
+        "ko": { "name": "쑹판현" }
+      },
+      "parentEntityIds": ["prefecture-aba"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "town-shangri-la-daocheng",
+      "entityType": "town",
+      "names": {
+        "en": { "name": "Shangri-La Town", "aliases": ["Riwa"] },
+        "zh-Hans": { "name": "香格里拉镇", "aliases": ["日瓦"] },
+        "ko": { "name": "샹그릴라진", "aliases": ["르와"] }
+      },
+      "parentEntityIds": ["county-daocheng"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "town-chuanzhusi",
+      "entityType": "town",
+      "names": {
+        "en": { "name": "Chuanzhusi Town" },
+        "zh-Hans": { "name": "川主寺镇" },
+        "ko": { "name": "촨주쓰진" }
+      },
+      "parentEntityIds": ["county-songpan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "town-zhangzha",
+      "entityType": "town",
+      "names": {
+        "en": { "name": "Zhangzha Town" },
+        "zh-Hans": { "name": "漳扎镇" },
+        "ko": { "name": "장자진" }
+      },
+      "parentEntityIds": ["county-jiuzhaigou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "town-wuzhen",
+      "entityType": "town",
+      "names": {
+        "en": { "name": "Wuzhen Town", "aliases": ["Wuzhen"] },
+        "zh-Hans": { "name": "乌镇镇", "aliases": ["乌镇"] },
+        "ko": { "name": "우전진", "aliases": ["우전"] }
+      },
+      "parentEntityIds": ["city-tongxiang"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "village-yading",
+      "entityType": "village",
+      "names": {
+        "en": { "name": "Yading Village" },
+        "zh-Hans": { "name": "亚丁村" },
+        "ko": { "name": "야딩촌" }
+      },
+      "parentEntityIds": ["town-shangri-la-daocheng"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "natural-feature-huangshan",
+      "entityType": "natural-feature",
+      "names": {
+        "en": { "name": "Mount Huangshan", "aliases": ["Yellow Mountain"] },
+        "zh-Hans": { "name": "黄山" },
+        "ko": { "name": "황산" }
+      },
+      "parentEntityIds": ["city-huangshan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "natural-feature-huashan",
+      "entityType": "natural-feature",
+      "names": {
+        "en": { "name": "Mount Hua", "aliases": ["Huashan"] },
+        "zh-Hans": { "name": "华山" },
+        "ko": { "name": "화산" }
+      },
+      "parentEntityIds": ["city-huayin"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "natural-feature-qingcheng-mountain",
+      "entityType": "natural-feature",
+      "names": {
+        "en": { "name": "Mount Qingcheng" },
+        "zh-Hans": { "name": "青城山" },
+        "ko": { "name": "칭청산" }
+      },
+      "parentEntityIds": ["city-dujiangyan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-dujiangyan-irrigation-system",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Dujiangyan Irrigation System" },
+        "zh-Hans": { "name": "都江堰水利工程" },
+        "ko": { "name": "두장옌 수리시설" }
+      },
+      "parentEntityIds": ["city-dujiangyan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "natural-feature-li-river",
+      "entityType": "natural-feature",
+      "names": {
+        "en": { "name": "Li River" },
+        "zh-Hans": { "name": "漓江" },
+        "ko": { "name": "리강" }
+      },
+      "parentEntityIds": ["city-guilin"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "natural-feature-yulong-river",
+      "entityType": "natural-feature",
+      "names": {
+        "en": { "name": "Yulong River" },
+        "zh-Hans": { "name": "遇龙河" },
+        "ko": { "name": "위룽허" }
+      },
+      "parentEntityIds": ["county-yangshuo"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "culture-topic-peking-opera",
+      "entityType": "culture-topic",
+      "names": {
+        "en": { "name": "Peking Opera", "aliases": ["Jingju"] },
+        "zh-Hans": { "name": "京剧" },
+        "ko": { "name": "경극" }
+      },
+      "parentEntityIds": ["country-china"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-wuhou-shrine",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Chengdu Wuhou Shrine", "aliases": ["Wuhou Shrine"] },
+        "zh-Hans": { "name": "成都武侯祠", "aliases": ["武侯祠"] },
+        "ko": { "name": "청두 무후사", "aliases": ["무후사"] }
+      },
+      "parentEntityIds": ["city-chengdu"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "district-dapeng-new-district",
+      "entityType": "district",
+      "names": {
+        "en": { "name": "Dapeng New District" },
+        "zh-Hans": { "name": "大鹏新区" },
+        "ko": { "name": "다펑신구" }
+      },
+      "parentEntityIds": ["city-shenzhen"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-dapeng-fortress",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Dapeng Fortress" },
+        "zh-Hans": { "name": "大鹏所城" },
+        "ko": { "name": "다펑소청" }
+      },
+      "parentEntityIds": ["district-dapeng-new-district"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "village-jiaochangwei",
+      "entityType": "village",
+      "names": {
+        "en": { "name": "Jiaochangwei" },
+        "zh-Hans": { "name": "较场尾" },
+        "ko": { "name": "자오창웨이" }
+      },
+      "parentEntityIds": ["district-dapeng-new-district"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "district-xihu-hangzhou",
+      "entityType": "district",
+      "names": {
+        "en": { "name": "Xihu District" },
+        "zh-Hans": { "name": "西湖区" },
+        "ko": { "name": "시후구" }
+      },
+      "parentEntityIds": ["city-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "village-longjing-hangzhou",
+      "entityType": "village",
+      "names": {
+        "en": { "name": "Longjing Village" },
+        "zh-Hans": { "name": "龙井村" },
+        "ko": { "name": "룽징촌" }
+      },
+      "parentEntityIds": ["district-xihu-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "village-meijiawu-hangzhou",
+      "entityType": "village",
+      "names": {
+        "en": { "name": "Meijiawu Village" },
+        "zh-Hans": { "name": "梅家坞村" },
+        "ko": { "name": "메이자우촌" }
+      },
+      "parentEntityIds": ["district-xihu-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "organization-china-national-tea-museum",
+      "entityType": "organization",
+      "names": {
+        "en": { "name": "China National Tea Museum" },
+        "zh-Hans": { "name": "中国茶叶博物馆" },
+        "ko": { "name": "중국차박물관" }
+      },
+      "parentEntityIds": ["city-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-tea-museum-shuangfeng-campus",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "China National Tea Museum, Shuangfeng Campus" },
+        "zh-Hans": { "name": "中国茶叶博物馆双峰馆区" },
+        "ko": { "name": "중국차박물관 솽펑관구" }
+      },
+      "parentEntityIds": ["district-xihu-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-tea-museum-longjing-campus",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "China National Tea Museum, Longjing Campus" },
+        "zh-Hans": { "name": "中国茶叶博物馆龙井馆区" },
+        "ko": { "name": "중국차박물관 룽징관구" }
+      },
+      "parentEntityIds": ["district-xihu-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "district-licheng-quanzhou",
+      "entityType": "district",
+      "names": {
+        "en": { "name": "Licheng District" },
+        "zh-Hans": { "name": "鲤城区" },
+        "ko": { "name": "리청구" }
+      },
+      "parentEntityIds": ["city-quanzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "neighborhood-quanzhou-old-city",
+      "entityType": "neighborhood",
+      "names": {
+        "en": { "name": "Quanzhou Old City" },
+        "zh-Hans": { "name": "泉州古城" },
+        "ko": { "name": "취안저우 고성" }
+      },
+      "parentEntityIds": ["district-licheng-quanzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-kaiyuan-temple-quanzhou",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Kaiyuan Temple, Quanzhou" },
+        "zh-Hans": { "name": "泉州开元寺" },
+        "ko": { "name": "취안저우 카이위안사" }
+      },
+      "parentEntityIds": ["neighborhood-quanzhou-old-city"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-qingjing-mosque-quanzhou",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Qingjing Mosque" },
+        "zh-Hans": { "name": "清净寺" },
+        "ko": { "name": "칭징사" }
+      },
+      "parentEntityIds": ["neighborhood-quanzhou-old-city"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-deji-gate-quanzhou",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Deji Gate Site" },
+        "zh-Hans": { "name": "德济门遗址" },
+        "ko": { "name": "더지먼 유적" }
+      },
+      "parentEntityIds": ["neighborhood-quanzhou-old-city"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-tianhou-temple-quanzhou",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Tianhou Temple, Quanzhou" },
+        "zh-Hans": { "name": "泉州天后宫" },
+        "ko": { "name": "취안저우 톈허우궁" }
+      },
+      "parentEntityIds": ["neighborhood-quanzhou-old-city"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "neighborhood-west-street-quanzhou",
+      "entityType": "neighborhood",
+      "names": {
+        "en": { "name": "West Street, Quanzhou" },
+        "zh-Hans": { "name": "泉州西街" },
+        "ko": { "name": "취안저우 시제" }
+      },
+      "parentEntityIds": ["neighborhood-quanzhou-old-city"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "dish-chongqing-hotpot",
+      "entityType": "dish",
+      "names": {
+        "en": { "name": "Chongqing Hotpot" },
+        "zh-Hans": { "name": "重庆火锅" },
+        "ko": { "name": "충칭 훠궈" }
+      },
+      "parentEntityIds": ["city-chongqing"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "dish-yangrou-paomo",
+      "entityType": "dish",
+      "names": {
+        "en": { "name": "Yangrou Paomo", "aliases": ["Xi'an Lamb Paomo"] },
+        "zh-Hans": { "name": "羊肉泡馍" },
+        "ko": { "name": "양러우파오모" }
+      },
+      "parentEntityIds": ["city-xian"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "dish-yunnan-wild-mushroom-hotpot",
+      "entityType": "dish",
+      "names": {
+        "en": { "name": "Yunnan Wild Mushroom Hotpot" },
+        "zh-Hans": { "name": "云南野生菌火锅" },
+        "ko": { "name": "윈난 야생버섯 훠궈" }
+      },
+      "parentEntityIds": ["province-yunnan"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "practical-topic-wild-mushroom-food-safety",
+      "entityType": "practical-topic",
+      "names": {
+        "en": { "name": "Wild Mushroom Food Safety" },
+        "zh-Hans": { "name": "野生菌食品安全" },
+        "ko": { "name": "야생버섯 식품 안전" }
+      },
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "organization-china-national-silk-museum",
+      "entityType": "organization",
+      "names": {
+        "en": { "name": "China National Silk Museum" },
+        "zh-Hans": { "name": "中国丝绸博物馆" },
+        "ko": { "name": "중국실크박물관" }
+      },
+      "parentEntityIds": ["city-hangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "culture-topic-silk",
+      "entityType": "culture-topic",
+      "names": {
+        "en": { "name": "Silk" },
+        "zh-Hans": { "name": "丝绸" },
+        "ko": { "name": "실크", "aliases": ["비단"] }
+      },
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-zhongshan-scenic-area",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Zhongshan Scenic Area", "aliases": ["Purple Mountain Scenic Area"] },
+        "zh-Hans": { "name": "钟山风景区", "aliases": ["紫金山风景区"] },
+        "ko": { "name": "중산 풍경구", "aliases": ["쯔진산 풍경구"] }
+      },
+      "parentEntityIds": ["city-nanjing"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-ming-xiaoling",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Ming Xiaoling Mausoleum" },
+        "zh-Hans": { "name": "明孝陵" },
+        "ko": { "name": "명효릉" }
+      },
+      "parentEntityIds": ["attraction-zhongshan-scenic-area"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-sun-yat-sen-mausoleum",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Sun Yat-sen Mausoleum" },
+        "zh-Hans": { "name": "中山陵" },
+        "ko": { "name": "중산릉" }
+      },
+      "parentEntityIds": ["attraction-zhongshan-scenic-area"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-linggu-scenic-area",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Linggu Scenic Area" },
+        "zh-Hans": { "name": "灵谷景区" },
+        "ko": { "name": "링구 풍경구" }
+      },
+      "parentEntityIds": ["attraction-zhongshan-scenic-area"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-daocheng-yading",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Daocheng Yading Scenic Area" },
+        "zh-Hans": { "name": "稻城亚丁景区" },
+        "ko": { "name": "다오청 야딩 관광지" }
+      },
+      "parentEntityIds": ["county-daocheng"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-jiuzhaigou",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Jiuzhaigou Scenic Area" },
+        "zh-Hans": { "name": "九寨沟景区" },
+        "ko": { "name": "주자이거우 관광지" }
+      },
+      "parentEntityIds": ["county-jiuzhaigou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-wuzhen-west-scenic-area",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Wuzhen West Scenic Area", "aliases": ["Wuzhen Xizha"] },
+        "zh-Hans": { "name": "乌镇西栅景区", "aliases": ["西栅"] },
+        "ko": { "name": "우전 서책 관광지", "aliases": ["서책"] }
+      },
+      "parentEntityIds": ["town-wuzhen"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "heritage-site-mogao-caves",
+      "entityType": "heritage-site",
+      "names": {
+        "en": { "name": "Mogao Caves" },
+        "zh-Hans": { "name": "莫高窟" },
+        "ko": { "name": "막고굴" }
+      },
+      "parentEntityIds": ["city-dunhuang"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "attraction-mingsha-crescent-spring",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "Mingsha Mountain and Crescent Spring Scenic Area" },
+        "zh-Hans": { "name": "鸣沙山月牙泉景区" },
+        "ko": { "name": "명사산 월아천 관광지" }
+      },
+      "parentEntityIds": ["city-dunhuang"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "transport-node-huanglongjiuzhai-station",
+      "entityType": "transport-node",
+      "names": {
+        "en": { "name": "Huanglongjiuzhai Railway Station" },
+        "zh-Hans": { "name": "黄龙九寨站" },
+        "ko": { "name": "황룽주자이역" }
+      },
+      "parentEntityIds": ["town-chuanzhusi"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "transportMode": "rail" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "transport-node-huashan-north-station",
+      "entityType": "transport-node",
+      "names": {
+        "en": { "name": "Huashan North Railway Station" },
+        "zh-Hans": { "name": "华山北站" },
+        "ko": { "name": "화산북역" }
+      },
+      "parentEntityIds": ["city-huayin"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "transportMode": "rail" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "transport-node-dunhuang-station",
+      "entityType": "transport-node",
+      "names": {
+        "en": { "name": "Dunhuang Railway Station" },
+        "zh-Hans": { "name": "敦煌站" },
+        "ko": { "name": "둔황역" }
+      },
+      "parentEntityIds": ["city-dunhuang"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "transportMode": "rail" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "transport-node-dunhuang-mogao-airport",
+      "entityType": "transport-node",
+      "names": {
+        "en": { "name": "Dunhuang Mogao International Airport" },
+        "zh-Hans": { "name": "敦煌莫高国际机场" },
+        "ko": { "name": "둔황 모가오 국제공항" }
+      },
+      "parentEntityIds": ["city-dunhuang"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "transportMode": "air" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "district-haizhu-guangzhou",
+      "entityType": "district",
+      "names": {
+        "en": { "name": "Haizhu District" },
+        "zh-Hans": { "name": "海珠区" },
+        "ko": { "name": "하이주구" }
+      },
+      "parentEntityIds": ["city-guangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "neighborhood-pazhou-guangzhou",
+      "entityType": "neighborhood",
+      "names": {
+        "en": { "name": "Pazhou" },
+        "zh-Hans": { "name": "琶洲" },
+        "ko": { "name": "파저우" }
+      },
+      "parentEntityIds": ["district-haizhu-guangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "district-tianhe-guangzhou",
+      "entityType": "district",
+      "names": {
+        "en": { "name": "Tianhe District" },
+        "zh-Hans": { "name": "天河区" },
+        "ko": { "name": "톈허구" }
+      },
+      "parentEntityIds": ["city-guangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "district-yuexiu-guangzhou",
+      "entityType": "district",
+      "names": {
+        "en": { "name": "Yuexiu District" },
+        "zh-Hans": { "name": "越秀区" },
+        "ko": { "name": "웨슈구" }
+      },
+      "parentEntityIds": ["city-guangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "recordType": "entity",
+    "data": {
+      "id": "venue-canton-fair-complex",
+      "entityType": "attraction",
+      "names": {
+        "en": { "name": "China Import and Export Fair Complex", "aliases": ["Canton Fair Complex"] },
+        "zh-Hans": { "name": "中国进出口商品交易会展馆", "aliases": ["广交会展馆"] },
+        "ko": { "name": "중국수출입상품교역회 전시장", "aliases": ["캔톤페어 전시장"] }
+      },
+      "parentEntityIds": ["neighborhood-pazhou-guangzhou"],
+      "sourceIds": [],
+      "status": "published",
+      "attributes": { "placeKind": "exhibition-venue" },
+      "dates": { "createdAt": "2026-09-04", "updatedAt": "2026-09-04" }
+    }
   }
 ]

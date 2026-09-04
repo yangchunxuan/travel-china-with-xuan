@@ -56,6 +56,7 @@ export type LocalizationStatus =
 export type Volatility = "static" | "low" | "medium" | "high" | "critical";
 export type RefreshCadence =
   | "on-source-change"
+  | "every-session"
   | "weekly"
   | "monthly"
   | "quarterly"
@@ -238,6 +239,15 @@ export interface ContentNodeV1 {
   readonly legacyAliases?: readonly string[];
   readonly dates?: ContentDates;
   readonly updatePolicy: UpdatePolicy;
+  /** Guide release governance. Required as a complete bundle on guide-* nodes. */
+  readonly candidateId?: string | null;
+  readonly editorialStatus?: "provisional" | "approved" | "retired";
+  readonly primaryCollectionId?: string | null;
+  readonly primaryEntityId?: string | null;
+  readonly secondaryEntityIds?: readonly string[];
+  readonly freshnessClass?: "low" | "medium" | "high" | "critical";
+  readonly lastVerified?: string | null;
+  readonly indexApproved?: boolean;
 }
 export type ContentNode = ContentNodeV1;
 
@@ -372,6 +382,14 @@ export interface ContentManifestEntryV1 {
   readonly indexability: Indexability;
   readonly dates: ContentDates;
   readonly updatePolicy: UpdatePolicy;
+  readonly candidateId?: string | null;
+  readonly editorialStatus?: "provisional" | "approved" | "retired";
+  readonly primaryCollectionId?: string | null;
+  readonly primaryEntityId?: string | null;
+  readonly secondaryEntityIds?: readonly string[];
+  readonly freshnessClass?: "low" | "medium" | "high" | "critical";
+  readonly lastVerified?: string | null;
+  readonly indexApproved?: boolean;
 }
 export type ContentManifestEntry = ContentManifestEntryV1;
 

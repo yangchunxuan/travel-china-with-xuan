@@ -87,6 +87,7 @@ export const volatilities = [
 
 export const refreshCadences = [
   "on-source-change",
+  "every-session",
   "weekly",
   "monthly",
   "quarterly",

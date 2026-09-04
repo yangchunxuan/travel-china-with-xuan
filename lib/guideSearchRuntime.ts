@@ -7,7 +7,7 @@ import {
   buildGuideSearchDocuments,
   type GuideSearchCollectionDefinition,
 } from "./guideSearch";
-import { guideRegistry } from "./guideRegistry";
+import { getIndexApprovedGuides } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
 import {
   getGuideCollectionId,
@@ -22,7 +22,7 @@ const entities = (coreEntityRecords as ContentRecordEnvelope[]).flatMap(
 const collectionRegistry: GuideSearchCollectionDefinition[] =
   searchCollections.map((collection) => ({
     id: collection.id,
-    guideContentIds: guideRegistry
+    guideContentIds: getIndexApprovedGuides()
       .filter((guide) => getGuideCollectionId(guide) === collection.id)
       .map((guide) => `guide-${guide.id}`),
     locales: {

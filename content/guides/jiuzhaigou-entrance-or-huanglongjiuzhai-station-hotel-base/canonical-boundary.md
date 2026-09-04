@@ -30,6 +30,6 @@ It also does not turn Songpan Station, Jiuzhaigou county seat/Nanping, Huanglong
 
 ## Entity handling
 
-Metadata intentionally uses `destinations: ["china"]`, which resolves to `country-china` without fallback or an unmapped token. `county-jiuzhaigou-aba` exists only as a planning reference, not a runtime guide entity. `attraction-jiuzhaigou-valley`, `town-zhangzha-jiuzhaigou`, `transport-node-huanglongjiuzhai-station`, `town-chuanzhusi-songpan` and any county-level runtime mapping are future central decisions, not created or mapped in this article branch.
+The central registry now separates `attraction-jiuzhaigou`, `town-zhangzha` and `county-jiuzhaigou` from `transport-node-huanglongjiuzhai-station`, `town-chuanzhusi` and `county-songpan`. Both county chains run through `prefecture-aba` to `province-sichuan`. Explicit governed primary and secondary IDs carry that candidate structure; the frozen legacy destination resolver is not expanded.
 
-No homepage, destination Hub, Search Map, registry, shared entity map, template, sitemap or production setting is modified.
+No homepage, destination Hub, Search Map, template, sitemap or production setting is modified by this reconciliation.

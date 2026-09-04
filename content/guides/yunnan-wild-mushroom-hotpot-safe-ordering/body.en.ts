@@ -56,7 +56,7 @@ const body = {
     {
       id: "menu-p1",
       type: "paragraph",
-      text: "In everyday Yunnan restaurant language, `野生菌` means wild mushrooms or fungi, while `人工栽培菌` refers to cultivated products. A translated menu may flatten both into ‘mushroom’. A house name can also cover more than one biological species, and the same-looking specimen can be hard for non-specialists to distinguish. You are not performing taxonomy at the table. Your task is to make the restaurant own the classification, keep the order simple and refuse what cannot be described. A phone photograph, image-search result or bilingual menu icon is not an identification method.",
+      text: "In everyday Yunnan restaurant language, 野生菌 means wild mushrooms or fungi, while 人工栽培菌 refers to cultivated products. A translated menu may flatten both into ‘mushroom’. A house name can also cover more than one biological species, and the same-looking specimen can be hard for non-specialists to distinguish. You are not performing taxonomy at the table. Your task is to make the restaurant state the classification, keep the order simple and refuse what cannot be described. A phone photograph, image-search result or bilingual menu icon is not an identification method.",
     },
     {
       id: "menu-table",
@@ -161,7 +161,7 @@ const body = {
     {
       id: "myths-p1",
       type: "paragraph",
-      text: "`见手青` (jiànshǒuqīng) appears in the 2026 Yunnan warning as the food involved in a poisoning case after insufficient cooking. That name does not let a traveller identify a cooked plate or predict its risk. The same warning uses the case to show neurological harm; Homeground does not turn it into a challenge dish. If a seller promotes visions, secrecy or undercooking as part of the experience, leave rather than negotiate a shorter timer.",
+      text: "见手青 (jiànshǒuqīng) appears in the 2026 Yunnan warning as the food involved in a poisoning case after insufficient cooking. That name does not let a traveller identify a cooked plate or predict its risk. The same warning uses the case to show neurological harm; Homeground does not turn it into a challenge dish. If a seller promotes visions, secrecy or undercooking as part of the experience, leave rather than negotiate a shorter timer.",
     },
     {
       id: "table-heading",
@@ -197,7 +197,7 @@ const body = {
       type: "callout",
       title: "Stop eating and seek urgent professional help",
       tone: "warning",
-      body: "After a mushroom meal, dizziness, nausea, vomiting, abdominal pain, diarrhoea, agitation, weakness, double vision, altered vision, confusion or hallucinations require prompt medical assessment. Symptoms can differ by toxin and diner; do not wait for everyone at the table to feel the same. Call China's medical emergency number `120` or go promptly to the nearest suitable hospital. Tell responders that wild mushrooms may be involved.",
+      body: "After a mushroom meal, dizziness, nausea, vomiting, abdominal pain, diarrhoea, agitation, weakness, double vision, altered vision, confusion or hallucinations require prompt medical assessment. Symptoms can differ by toxin and diner; do not wait for everyone at the table to feel the same. Call China's medical emergency number 120 or go promptly to the nearest suitable hospital. Tell responders that wild mushrooms may be involved.",
     },
     {
       id: "emergency-list",
@@ -205,7 +205,7 @@ const body = {
       ordered: true,
       items: [
         "Stop the meal. Do not taste another piece to compare symptoms and do not let unaffected companions finish the pot.",
-        "Call `120` or seek urgent medical care; follow the dispatcher or clinician rather than an online remedy. Do not drive yourself if vision, confusion, weakness or coordination is affected.",
+        "Call 120 or seek urgent medical care; follow the dispatcher or clinician rather than an online remedy. Do not drive yourself if vision, confusion, weakness or coordination is affected.",
         "State the restaurant name and branch, meal time, first symptom time, number of diners and every mushroom or dish name you recorded.",
         "Ask the restaurant to preserve the retained food sample and order record. Keep remaining food only if it can be secured without exposing anyone to another taste.",
         "Save clear photographs of the menu/labels, the receipt and any remaining ingredient. A photo assists investigation; it does not replace medical care or laboratory identification.",
@@ -215,7 +215,7 @@ const body = {
     {
       id: "emergency-p1",
       type: "paragraph",
-      text: "Do not let a sleep-and-wait plan, an internet remedy or an argument with the restaurant delay `120` or transport. Official pages reviewed here are not uniform about immediate first-aid details, so this guide does not tell a traveller to perform or avoid a particular intervention. Follow instructions tailored to the person's condition by the `120` dispatcher or clinician. A retained sample can help professionals investigate; it does not protect the diner in real time. Keep every diner contactable because clinical or public-health staff may need the complete exposure history.",
+      text: "Do not let a sleep-and-wait plan, an internet remedy or an argument with the restaurant delay 120 or transport. Official pages reviewed here are not uniform about immediate first-aid details, so this guide does not tell a traveller to perform or avoid a particular intervention. Follow instructions tailored to the person's condition by the 120 dispatcher or clinician. A retained sample can help professionals investigate; it does not protect the diner in real time. Keep every diner contactable because clinical or public-health staff may need the complete exposure history.",
     },
     {
       id: "language-heading",
@@ -239,7 +239,7 @@ const body = {
         ["Reject a mixture", "我们不混吃多种野生菌。可以只点一种，并单独加工吗？"],
         ["Ask about kitchen preparation", "这种菌进锅前，厨房已经做了什么预处理？"],
         ["Confirm sample retention", "这份菌和这桌的订单有留样、留记录吗？"],
-        ["Make staff own the release", "请由工作人员下锅并告诉我们什么时候可以吃；我们不会中途加新的菌。"],
+        ["Keep cooking control with staff", "请由工作人员下锅并告诉我们什么时候可以吃；我们不会中途加新的菌。"],
         ["Cultivated fallback", "如果这些不能确认，请给我们只含人工栽培菌的锅或菜。"],
         ["Dietary check", "汤底、蘸料和配菜里有鸡汤、猪油、牛肉、奶、花生、芝麻或___吗？会交叉接触吗？"],
         ["No alcohol", "我们吃菌时不喝酒，请给无酒精饮料。"],

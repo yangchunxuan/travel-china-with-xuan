@@ -101,13 +101,15 @@ search task only; they do not prove schedules, subtitles, ticket procedures or a
   - https://www.reddit.com/r/travelchina/comments/19cloyq — asks where to see Peking Opera in Beijing.
 - Not used to prove operations, quality or a theatre ranking.
 
-## Hero source
+## Hero source and publication crop
 
 - File: `Beijing Opera (13) (55212897878).jpg`
 - Photographer: Richard Mortel; taken 2026-03-18; Commons/Flickr licence review 2026-05-08.
 - URL: https://commons.wikimedia.org/wiki/File:Beijing_Opera_(13)_(55212897878).jpg
 - Licence: CC BY 4.0; geotag 39.894738, 116.394530.
 - Exact play, troupe, roles and performance phase are not identified and are not asserted.
+- Publication crop: extract `{ left: 1369, top: 1284, width: 1514, height: 946 }` from the 4000 × 2252 original; resize to 1600 × 1000 and encode as WebP quality 86. Output SHA-256: `F729CC80031FF87630D825D3C55E050F3A78D53D400C9A77E26DFF2E5F5BB099`.
+- Scope control: the published crop contains costume, sleeves, hands and false-beard detail only. Every face, the audience and the identifying venue backdrop are outside the crop. The credit names the photographer and modification but does not imply endorsement by the photographer, performers, troupe or venue.
 
 ## Claim ledger
 

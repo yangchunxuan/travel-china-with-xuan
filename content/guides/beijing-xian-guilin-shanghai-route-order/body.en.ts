@@ -37,7 +37,7 @@ const body = {
       rows: [
         ["Enter the region", "Actual flight or train, exact Guilin-area gateway, baggage and first staffed bed", "Transfer block; no fixed visit"],
         ["Reach the experience", "Hotel, pier, station or legal road pickup and the current product direction", "Do not call a station arrival a river or countryside visit"],
-        ["Move or retain the base", "Whether Guilin city, Yangshuo town, Xingping or another verified bed owns the night", "Delegate the internal order and avoid an assumed hotel change"],
+        ["Move or retain the base", "Where you will actually sleep: Guilin, Yangshuo, Xingping or another verified base", "Delegate the internal order and avoid an assumed hotel change"],
         ["Operate the landscape block", "Named Li River, Yulong River or land-based priority plus current restrictions", "Keep an alternative that still justifies the region"],
         ["Leave the region", "Exact station or airport, luggage chain, next city bed and fixed commitment", "Protect a staffed urban buffer before the international flight"],
       ],
@@ -65,7 +65,7 @@ const body = {
     {
       id: "gate-outcomes", type: "table", caption: "A gate has a decision, not points", columns: ["Result", "Meaning", "Next action"],
       rows: [
-        ["All three pass", "The landscape module changes the trip, owns real time and has a safe exit", "Proceed to the regional gateway and internal-sequence guides"],
+        ["All three pass", "The landscape module materially improves the trip, has protected time and has a safe exit", "Proceed to the regional gateway and internal-sequence guides"],
         ["Value passes; usable block fails", "The interest is real but this trip cannot protect it", "Replace a weaker city, add genuine time or save Guilin for another trip"],
         ["Value and time pass; recovery fails", "The route works only when every operation is punctual", "Move the module away from departure or cut it"],
         ["Value fails", "The fourth stop is collection rather than purpose", "Keep the three-city spine"],
@@ -83,7 +83,7 @@ const body = {
       ],
     },
     {
-      id: "last-water-warning", type: "callout", tone: "decision", title: "Do not let the last water activity own the international departure",
+      id: "last-water-warning", type: "callout", tone: "decision", title: "Do not let the last water activity control the international departure",
       body: "Official 2026 notices show that Li River sections can suspend and reopen at different times when conditions change. That is evidence for a recovery rule, not a prediction. The final water-dependent block should be followed by a verified exit and an urban flight buffer; a cruise, raft, road handoff and separate international ticket should never form one mandatory chain.",
     },
     { id: "nodes-heading", type: "heading", level: 2, text: "Keep the macro module while naming every real regional node" },
@@ -97,7 +97,7 @@ const body = {
       caption: "The name Yangshuo Station can hide another road handoff. This licensed image identifies the station on its capture date; it proves no current train, shuttle, hotel route or county-town arrival.",
     },
     {
-      id: "regional-owner-handoff", type: "callout", tone: "neutral", title: "Stop the macro article at the regional boundary",
+      id: "regional-handoff", type: "callout", tone: "neutral", title: "Stop the macro article at the regional boundary",
       body: "Once Guilin/Yangshuo earns a place, use the separate Guilin gateway guide and Guilin–Yangshuo transport guide. Decide the region's internal sequence only after the exact endpoints, base and current operations are known. Those execution choices sit outside this macro decision.",
     },
     { id: "travellers-heading", type: "heading", level: 2, text: "Three travellers reveal when the same fourth stop changes status" },

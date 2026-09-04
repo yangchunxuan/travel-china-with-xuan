@@ -1,21 +1,23 @@
 # Image plan — beijing-peking-opera-first-performance
 
-## Published Hero
+## Published hero — non-identifying crop
 
 | Field | Record |
 | --- | --- |
-| Object | Costumed Peking Opera performers standing together on a Beijing stage; the photograph does not identify the play, troupe, roles or whether this is curtain call, presentation or performance action |
-| Place identity | Commons geotag places the camera at 39.894738, 116.394530 in Beijing; visible backdrop says `京剧` and `全国首家京剧主题体验馆` |
+| Object | Close detail of embroidered Peking Opera costumes, sleeves, hands and long false beards on a Beijing stage; faces and venue signage are outside the published crop, and the photograph does not identify the play, troupe, roles or performance phase |
+| Source identity | The Commons file is categorised as Peking Opera and geotagged at 39.894738, 116.394530 in Beijing; the original frame's backdrop includes `京剧`. The published crop does not show the venue wording and does not identify or recommend the venue. |
 | Photographer | Richard Mortel (Prof. Mortel) |
 | Original source | https://commons.wikimedia.org/wiki/File:Beijing_Opera_(13)_(55212897878).jpg; originally on Flickr photo 55212897878 |
 | Date | 2026-03-18 20:31; Commons licence review 2026-05-08 |
 | Rights | CC BY 4.0; credit, licence link and modification notice required |
 | Original | 4000 × 2252 JPEG; SHA-256 `63DC5E783C0A8DD7F27D8344104B3611E5B5736A7800C61135DCD4C089CB269C` |
-| Processing | Centre crop to 1600 × 1000, WebP quality 82; output SHA-256 `791CA8D74161A162B74E76F48A834CCD9C1D22B4DF8A505120361CB9A29A119F` |
-| People/privacy | Recognisable professional performers in a public stage setting; no names supplied by source, so captions do not identify them. Central rights review should retain the public-performance context and avoid endorsement claims |
-| EN alt | Peking Opera performers in elaborate costumes standing on a stage photographed in Beijing. |
-| ZH alt | 多位身着精细戏服的京剧演员站在北京一处舞台上。 |
-| KO alt | 화려한 경극 의상을 입은 배우들이 베이징에서 촬영된 무대 위에 서 있다. |
+| Processing | From the 4000 × 2252 original, extract `{ left: 1369, top: 1284, width: 1514, height: 946 }`, resize to 1600 × 1000, encode as WebP quality 86 / effort 6 and strip metadata; output SHA-256 `F729CC80031FF87630D825D3C55E050F3A78D53D400C9A77E26DFF2E5F5BB099` |
+| People/privacy | The published crop removes every face, the audience and the venue's identifying backdrop. Hands, costume textiles and false beards remain as non-identifying performance details. Attribution does not state or imply that the photographer, performers, troupe or venue endorses Homeground or its advice. |
+| EN alt | Close view of richly embroidered Peking Opera costumes, sleeves, hands and long false beards on a Beijing stage. |
+| ZH alt | 北京一处舞台上的京剧戏服刺绣、衣袖、演员双手与长髯细节。 |
+| KO alt | 베이징 무대에서 촬영된 경극 의상의 자수, 소매, 배우의 손과 긴 수염 디테일. |
+
+Publication disposition: **PASS FOR IMAGE RIGHTS AND NON-ENDORSEMENT SCOPE**. The source page identifies a Beijing Peking Opera image and a current CC BY 4.0 licence review. The crop removes the recognisable people and venue branding that created the avoidable endorsement risk, while metadata retains the photographer, source, licence link and modification disclosure.
 
 ## Explanatory assets for central acquisition
 

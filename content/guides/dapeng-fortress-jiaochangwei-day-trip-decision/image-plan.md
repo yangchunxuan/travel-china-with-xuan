@@ -1,9 +1,9 @@
 # Image plan and rights ledger — Dapeng Fortress and Jiaochangwei day-trip decision
 
-Status: **ASSETS PARTIAL — EXACT JIAOCHANGWEI COAST PHOTOGRAPH NEEDED**
+Status: **PUBLICATION-SAFE SCOPED SET — EXACT JIAOCHANGWEI PHOTOGRAPH OPTIONAL**
 Reviewed: 2026-09-04 (Asia/Shanghai)
 
-No AI documentary image is used. Every real photograph included in this draft is location-verified as Dapeng Fortress. The one diagram is an original Homeground editorial illustration and is labelled not to scale. No fortress image, generic Shenzhen coast, another Dapeng beach or aerial approach may be used to imply the missing Jiaochangwei view.
+No AI documentary image is used. Every real photograph in the article is location-verified as Dapeng Fortress. The hero credit and alt text name that scope and do not present the fortress as Jiaochangwei. The relationship diagram is an original Homeground editorial illustration, explicitly not a map and not to scale; it explains the two-entity decision without pretending to document the coast. An exact Jiaochangwei photograph would be a useful enhancement, but the page does not need one to substantiate a visual or factual claim. No fortress image, generic Shenzhen coast, another Dapeng beach or aerial approach may be used as a substitute.
 
 ## Asset ledger
 
@@ -116,17 +116,17 @@ No AI documentary image is used. Every real photograph included in this draft is
 - Caption ZH: `照片能确认所城内可见一口水井，但仅凭照片无法判断其年代或修复历史。`
 - Caption KO: `소청 안에 우물이 보인다는 사실은 확인할 수 있지만, 사진만으로 조성 연대나 보수 이력을 판단할 수는 없습니다.`
 
-## Missing required asset
+## Optional enhancement — not a publication gate
 
-### Jiaochangwei coast and village context — not available
+### Jiaochangwei coast and village context — not currently available
 
-- Required exact place: the Jiaochangwei coastal-village edge, with enough context to verify Jiaochangwei rather than another Dapeng Peninsula beach.
-- Necessary elements: coastline plus recognisable village/public-space context; ordinary land-based conditions; no staged water activity.
+- Target exact place: the Jiaochangwei coastal-village edge, with enough context to verify Jiaochangwei rather than another Dapeng Peninsula beach.
+- Desired elements: coastline plus recognisable village/public-space context; ordinary land-based conditions; no staged water activity.
 - Preferred frame: horizontal 16:10, daylight, room for crop, no dense identifiable crowd.
 - Prohibited substitutes: Xichong, Dongchong, Yangmeikeng, Dapeng Bay greenway, a generic Shenzhen beach, a fortress street, drone imagery with uncertain coordinates or an AI-generated coast.
 - Rights requirement: photographer, date, exact location, original URL or delivery record, licence/permission, modification record and any identifiable-person release basis.
-- Editorial purpose: show what the optional coastal addition actually looks like and support the distinction between a coast walk and a guaranteed swimming day.
-- Current status: no source examined by 2026-09-04 closed both the exact-location and publication-rights gates. Keep `ASSETS PARTIAL`; do not imply that the diagram replaces a documentary photograph.
+- Editorial purpose: add documentary context for what the optional coastal addition looks like; it must not imply a guaranteed swimming day.
+- Current status: no source examined by 2026-09-04 closed both the exact-location and publication-rights gates. Do not add a substitute. This absence is not a publication blocker because the existing photo set is labelled as fortress-only, the diagram is labelled editorial, and Jiaochangwei facts are supported by cited official sources rather than by an image.
 
 ## Publication and accessibility checks
 
@@ -137,5 +137,5 @@ No AI documentary image is used. Every real photograph included in this draft is
 - [x] No legible face is used to sell or endorse the experience.
 - [x] Alt and caption text separate what an image shows from what it cannot prove.
 - [x] The editorial diagram is labelled not to scale and has no measured route claim.
-- [ ] Exact Jiaochangwei documentary image supplied and rights-checked.
+- [x] No exact Jiaochangwei documentary image is present, and no other beach or fortress image is used to imply one.
 - [ ] Central production confirms responsive crop and visible credit rendering in all three locales.

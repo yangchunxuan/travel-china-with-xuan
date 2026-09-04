@@ -12,7 +12,7 @@ const body = {
       body: "Lock the flight gateway. Lock the Huangshan visit shape and the base choice through the existing Huangshan guide. Then decide whether Hangzhou is a genuine hinge, a pass-through or the first stop to remove. Search dated transport only after those decisions survive.",
     },
     {
-      id: "scope-boundary", type: "callout", tone: "neutral", title: "A route-order owner, not three destination guides",
+      id: "scope-boundary", type: "callout", tone: "neutral", title: "A route-order guide, not three destination guides",
       body: "This page decides the sequence and recovery space among the three named places. It does not choose a Shanghai or Hangzhou hotel area, prescribe a Yellow Mountain hike, compare summit and Tangkou rooms, or publish live trains, flights, prices or opening times.",
     },
     { id: "nodes-heading", type: "heading", level: 2, text: "First replace the three city names with the places the journey actually touches" },
@@ -57,7 +57,7 @@ const body = {
       ],
     },
     {
-      id: "base-handoff", type: "callout", tone: "neutral", title: "The summit-versus-gateway choice has another owner",
+      id: "base-handoff", type: "callout", tone: "neutral", title: "The summit-versus-gateway choice is covered in a separate guide",
       body: "A summit room can support divided mountain segments and early or late observation; Tangkou can protect the south-gate handoff; Tunxi can protect rail and urban time. Those are accommodation decisions. Here they matter only because each result changes the first and last safe transfer in the three-place route.",
     },
     {
@@ -89,7 +89,7 @@ const body = {
     },
     {
       id: "trace-reverse", type: "callout", tone: "neutral", title: "Trace B: verified approach to Huangshan, then Shanghai departure",
-      body: "The traveller reaches Huangshan from a confirmed earlier node, has one named Hangzhou priority and flies internationally from Shanghai. Huangshan → Hangzhou → Shanghai is the safer direction because the final city, not the mountain, owns the departure buffer. If descent or the road handoff slips, the traveller drops the flexible Hangzhou activity or shortens that stay; the Shanghai buffer and international flight are not compressed. If Hangzhou's only purpose cannot survive that recovery rule, it becomes a pass-through or is removed.",
+      body: "The traveller reaches Huangshan from a confirmed earlier node, has one named Hangzhou priority and flies internationally from Shanghai. Huangshan → Hangzhou → Shanghai is the safer direction because the departure buffer stays in the final city, not on the mountain. If descent or the road handoff slips, the traveller drops the flexible Hangzhou activity or shortens that stay; the Shanghai buffer and international flight are not compressed. If Hangzhou's only purpose cannot survive that recovery rule, it becomes a pass-through or is removed.",
     },
     {
       id: "trace-roundtrip", type: "callout", tone: "warning", title: "Trace C: Shanghai round trip with a fixed international departure",
@@ -116,7 +116,7 @@ const body = {
         "On the day: the operating authority's instructions override this evergreen framework. A forecast never guarantees sunrise or cloud sea.",
       ],
     },
-    { id: "final-heading", type: "heading", level: 2, text: "The route is ready only when every handoff has an owner and a fallback" },
+    { id: "final-heading", type: "heading", level: 2, text: "The route is ready only when every handoff has a named check and fallback" },
     {
       id: "final-verification", type: "table", caption: "Final dated handoff", columns: ["Decision", "Primary verifier", "If still unknown"],
       rows: [
@@ -133,7 +133,7 @@ const body = {
     },
     {
       id: "help-cta", type: "callout", tone: "decision", title: "Need a human to test the three locks?",
-      body: "Leave the travel dates, party size, approximate budget, actual arrival and departure airports, luggage and whether sunrise or a complete West Lake block matters more. Homeground can identify the weak handoff without inventing a live timetable or handing over a full private itinerary for free.",
+      body: "Leave the travel dates, party size, approximate budget, actual arrival and departure airports, luggage and whether sunrise or a complete West Lake block matters more. Homeground can identify the weak handoff and explain what still needs dated verification before you commit.",
     },
     {
       id: "internal-links", type: "internal-links", title: "Continue planning", items: [

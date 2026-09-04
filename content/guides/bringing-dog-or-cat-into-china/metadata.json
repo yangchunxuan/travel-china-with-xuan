@@ -1,5 +1,13 @@
 {
   "id": "bringing-dog-or-cat-into-china",
+  "candidateId": "e6-20260901-06",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "essentials-entry-transit",
+  "primaryEntityId": "country-china",
+  "secondaryEntityIds": [],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "entry-practicalities",
   "audienceMarkets": ["global"],

@@ -38,3 +38,5 @@ Checked: 2026-09-01, Asia/Shanghai
 ## Image sources
 
 All image source pages, raw/output hashes, licences, transformations, alt text and evidence boundaries are in `image-plan.md`. Images prove photographed place context at the capture date, not current access, harvest, tea origin or service quality.
+
+Central taxonomy reconciliation on 2026-09-04 keeps Hangzhou as the umbrella owner while adding controlled supporting identities for Xihu District, Longjing Village, Meijiawu, China National Tea Museum and its two campuses. Candidate structured entities consume the governed IDs directly, while the frozen legacy resolver remains at Hangzhou; the Search Map and Hangzhou Hub were not changed.

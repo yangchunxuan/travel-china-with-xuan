@@ -20,4 +20,4 @@ No fixed train, coach or park timetable, fare, room price, inventory, rating, wa
 
 ## Refresh policy
 
-The metadata topics include opening, reservation, road and transfer verification, so the guide policy should resolve to **high volatility / on-source-change**. Refresh immediately after a new scenic-area management notice, rail or station change, transfer-channel change, road disruption, accommodation policy change, or a material correction to the legal outside-stay rule.
+The metadata topics include opening, reservation, road, rail-gateway transfer, accessibility and accommodation execution, so the guide policy resolves to **critical volatility / on-source-change**. Refresh immediately after a new scenic-area management notice, rail or station change, transfer-channel change, road disruption, accommodation policy change, or a material correction to the legal outside-stay rule.

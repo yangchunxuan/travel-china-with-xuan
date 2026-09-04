@@ -29,7 +29,7 @@ Do not confuse Mount Hua / Huashan (华山) with Mount Huangshan (黄山). `huan
 
 ## Entity handling
 
-Metadata intentionally uses `destinations: ["china"]`, resolving only to `country-china`, because the current central resolver has no approved Huayin, Mount Hua or Huashan North Station entity and resolving this page as `city-xian` would be geographically wrong. This is an unresolved entity debt, not completed entity coverage. Future central candidates are `city-huayin`, `mountain-huashan` and `station-huashan-north`, with the station and mountain located in/served from Huayin, then Weinan and Shaanxi. This article branch does not modify the central entity graph, Search Map, registry, Hub, sitemap or templates.
+The central registry resolves the primary subject as `natural-feature-huashan`, with `city-huayin`, `transport-node-huashan-north-station`, `city-xian` and `province-shaanxi` as controlled context. Mount Hua and Huashan North Station both belong to Huayin; Huayin's parent is Weinan, then Shaanxi. This avoids the geographically wrong alternatives of treating Mount Hua as an Xi’an attraction or confusing it with Mount Huangshan. The reconciliation does not modify the Search Map, Hub, sitemap or templates.
 
 ## Published internal owners
 

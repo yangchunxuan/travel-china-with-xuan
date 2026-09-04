@@ -61,7 +61,7 @@ test("Jiuzhaigou entrance-versus-station owner has complete high-volatility meta
   assert.deepEqual([metadata.imageWidth, metadata.imageHeight], [1600, 1000]);
 
   assert.deepEqual(guideUpdatePolicy(metadata), {
-    volatility: "high",
+    volatility: "critical",
     refreshCadence: "on-source-change",
     owner: "homeground-editorial",
   });
@@ -260,15 +260,16 @@ test("Jiuzhaigou owner preserves source order, localized links and canonical sco
   assert.match(canonical, /`chengdu-jiuzhaigou-transport-route` owns.*exact rail station.*named onward transfer.*booking handoff.*return.*transport disruption/isu);
   assert.match(canonical, /never republishes a timetable, fare, coach-booking walkthrough or complete station-to-valley route/iu);
   assert.match(canonical, /does not own or guarantee park tickets.*current opening hours.*exact trains or transfers.*road status.*prices.*inventory.*foreign-guest acceptance.*room type.*accessibility suitability/isu);
-  assert.match(canonical, /No homepage, destination Hub, Search Map, registry/iu);
-  assert.match(canonical, /Metadata intentionally uses `destinations: \["china"\]`.*`country-china`.*without fallback or an unmapped token/isu);
+  assert.match(canonical, /central registry now separates.*`attraction-jiuzhaigou`.*`transport-node-huanglongjiuzhai-station`/isu);
+  assert.match(canonical, /`town-zhangzha`.*`county-jiuzhaigou`.*`town-chuanzhusi`.*`county-songpan`/isu);
+  assert.match(canonical, /Explicit governed primary and secondary IDs.*frozen legacy destination resolver/isu);
 
   const ledger = await source(`content/guides/${slug}/dynamic-facts.md`);
   assert.match(ledger, /2026-09-01 \(Asia\/Shanghai\)/u);
   assert.match(ledger, /Critical \/ before every booking and travel day/u);
   assert.match(ledger, /not a guaranteed duration/iu);
   assert.match(ledger, /No fixed train, coach or park timetable, fare, room price, inventory, rating, walk time, capacity, refund promise or hotel availability is published/iu);
-  assert.match(ledger, /high volatility \/ on-source-change/iu);
+  assert.match(ledger, /critical volatility \/ on-source-change/iu);
 
   const log = await source(`content/guides/${slug}/source-log.md`);
   assert.match(log, /Google was observed in a Korea-localized Chrome session/iu);

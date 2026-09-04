@@ -1,5 +1,13 @@
 {
   "id": "dapeng-fortress-jiaochangwei-day-trip-decision",
+  "candidateId": "dest-seo-20260901-04",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "explore-cities-neighborhoods",
+  "primaryEntityId": "district-dapeng-new-district",
+  "secondaryEntityIds": ["heritage-site-dapeng-fortress", "village-jiaochangwei", "city-shenzhen", "province-guangdong"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "explore-cities-neighborhoods",
   "audienceMarkets": ["global"],

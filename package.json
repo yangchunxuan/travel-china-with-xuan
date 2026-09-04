@@ -5,6 +5,8 @@
     "asset:ten-city": "node tools/build-first-trip-ten-city-assets.mjs",
     "guide:generate": "node tools/generate-guide-registry.mjs",
     "guide:check": "node tools/generate-guide-registry.mjs --check",
+    "guide:coverage": "node --experimental-strip-types --no-warnings tools/generate-guide-coverage-inventory.mjs",
+    "guide:coverage:check": "node --experimental-strip-types --no-warnings tools/generate-guide-coverage-inventory.mjs --check",
     "guide:check-parallel-merge": "node tools/check-parallel-guide-merge.mjs",
     "postinstall": "npm run guide:generate",
     "predev": "npm run guide:generate",

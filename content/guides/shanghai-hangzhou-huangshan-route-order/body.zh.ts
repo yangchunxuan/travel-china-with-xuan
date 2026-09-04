@@ -133,7 +133,7 @@ const body = {
     },
     {
       id: "help-cta", type: "callout", tone: "decision", title: "需要人工帮你检验这三重锁定吗？",
-      body: "请留下旅行日期、人数、大致预算、实际抵达及离境机场、行李情况，并说明日出和完整西湖时段哪一个更重要。Homeground可以帮你找出最薄弱的交接，但不会虚构实时班次，也不会免费交付一份完整私人行程。",
+      body: "请留下旅行日期、人数、大致预算、实际抵达及离境机场、行李情况，并说明日出和完整西湖时段哪一个更重要。Homeground可以帮你找出最薄弱的交接环节，并说明在确认预订前还需要核实哪些有日期的信息。",
     },
     {
       id: "internal-links", type: "internal-links", title: "继续规划", items: [

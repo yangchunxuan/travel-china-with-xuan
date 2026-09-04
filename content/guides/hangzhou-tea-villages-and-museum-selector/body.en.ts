@@ -123,8 +123,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "Respect for residents, workers, private plots and photography restrictions."
   ]},
   { id: "links", type: "internal-links", title: "Connect this decision to the wider trip", items: [
-    { label: "Tea landscapes across China", href: "/guides/tea-landscape-regions-of-china/", description: "Use the national comparison owner for regional tea landscapes and cultural context, not for this Hangzhou site choice." },
-    { label: "Shanghai to Hangzhou transport", href: "/guides/shanghai-hangzhou-transport-route/", description: "Keep the city-to-city rail and station task with its transport owner." },
+    { label: "Tea landscapes across China", href: "/guides/tea-landscape-regions-of-china/", description: "Use the national comparison guide for regional tea landscapes and cultural context, not for this Hangzhou site choice." },
+    { label: "Shanghai to Hangzhou transport", href: "/guides/shanghai-hangzhou-transport-route/", description: "Keep the city-to-city rail and station task with the transport guide." },
     { label: "Liangzhu Museum and Ruins Park sequence", href: "/guides/liangzhu-ruins-park-and-museum-sequence/", description: "Plan a different Hangzhou heritage day where museum evidence and outdoor landscape also play distinct roles." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image records", items: [

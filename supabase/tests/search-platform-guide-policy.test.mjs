@@ -129,7 +129,7 @@ test("all six Guangzhou hub support guides resolve the Guangzhou entity", async 
 
 test("freshness registry exhaustively covers the runtime pillar vocabulary", async () => {
   const runtime = await loadRuntimeFreshnessInputs();
-  assert.equal(runtime.size, 192);
+  assert.equal(runtime.size, 221);
   const runtimePillars = [...new Set(
     [...runtime.values()].map((guide) => guide.pillar),
   )].sort();

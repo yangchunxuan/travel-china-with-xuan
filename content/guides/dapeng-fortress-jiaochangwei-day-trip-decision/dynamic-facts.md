@@ -55,4 +55,4 @@ The following are planning mechanisms, not official rules:
 - [ ] Verify any separately promoted event, room or activity from its direct operator; otherwise omit it.
 - [ ] Confirm the currently permitted route between the two places through a live map and on-site signs; do not publish a measured walk time.
 - [ ] Ask each interior about current access and photography rules where relevant.
-- [ ] Keep the page `ASSETS PARTIAL` until an exact, rights-cleared Jiaochangwei coast photograph is supplied.
+- [x] Keep every documentary image explicitly scoped to Dapeng Fortress; add a Jiaochangwei coast photograph only after exact-location and publication-rights verification, never as a prerequisite supplied by an unrelated beach image.

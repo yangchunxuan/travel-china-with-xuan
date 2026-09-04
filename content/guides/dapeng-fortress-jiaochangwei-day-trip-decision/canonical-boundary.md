@@ -53,12 +53,7 @@ The article does not claim search volume, conversion probability or a stable Peo
 
 `city-shenzhen` contains the broader destination context. Dapeng Fortress is a nationally protected historic settlement and museum-managed heritage place within Dapeng New District. Jiaochangwei is an adjacent coastal village and tourism area with accommodation, food and a beach edge. Within the Pengcheng Village conservation plan, a fortress-centred core protection area of about 11.27 hectares sits inside the wider 99.62-hectare village planning boundary. Those are village-planning layers, not proof that Jiaochangwei forms part of the nationally protected cultural-relic unit, a museum room or a fortress gate.
 
-Only `shenzhen` appears in public metadata because it is the approved controlled destination token. The following editorial entity proposals are recorded for later central approval and must not be introduced as uncontrolled metadata values in this branch:
-
-- `district-dapeng-new-district`
-- `place-dapeng-fortress`
-- `place-jiaochangwei`
-- `area-dapeng-peninsula`
+Central reconciliation now gives this decision a governed primary owner of `district-dapeng-new-district`, with `heritage-site-dapeng-fortress`, `village-jiaochangwei`, `city-shenzhen` and `province-guangdong` as controlled supporting context. Candidate structured entities consume those governed IDs directly; the frozen legacy destination resolver remains at the broad Shenzhen assignment. This taxonomy update does not add a separate Dapeng Peninsula entity because the article does not need a new, independently governed peninsula owner.
 
 ## Boundary against existing and remote owners
 
@@ -79,4 +74,4 @@ Only `shenzhen` appears in public metadata because it is the approved controlled
 
 ## Publication conditions
 
-This copy is publishable only when central review confirms the current official venue notice, vehicle-reservation notice and weather/safety source of record. The photo set is intentionally partial: all included real photographs are accurately identified as Dapeng Fortress, but no rights-cleared, location-verified Jiaochangwei coast photograph was found. The page must remain marked `ASSETS PARTIAL` until central supplies one; no nearby beach, aerial approach or generic Shenzhen coast image may substitute.
+This copy is publishable only when central review confirms the current official venue notice, vehicle-reservation notice and weather/safety source of record. The documentary photo set is intentionally fortress-only: every real photograph is accurately identified as Dapeng Fortress, while the two-place relationship is shown only through a clearly labelled, not-to-scale editorial diagram. No rights-cleared, location-verified Jiaochangwei coast photograph was found, but no factual or visual claim depends on one. If a coast image is added later, exact-location and publication-rights verification are mandatory; no nearby beach, aerial approach or generic Shenzhen coast image may substitute.

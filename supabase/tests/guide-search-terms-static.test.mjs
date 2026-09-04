@@ -51,6 +51,14 @@ test("reviewed guide releases export localized search language", async () => {
       "utf8",
     ),
   );
+  const governance = JSON.parse(
+    await readFile(path.join(projectRoot, "content/guide-governance.json"), "utf8"),
+  );
+  const pendingCandidateIds = new Set(
+    governance.candidates
+      .filter((candidate) => candidate.centralDecision !== "approved")
+      .map((candidate) => candidate.guideId),
+  );
   const guidesRoot = path.join(projectRoot, "content/guides");
   const guideDirectories = (
     await readdir(guidesRoot, { withFileTypes: true })
@@ -80,6 +88,14 @@ test("reviewed guide releases export localized search language", async () => {
     const owners = searchMap.coverage.published.filter(
       (entry) => entry.id === guideId,
     );
+    if (pendingCandidateIds.has(guideId)) {
+      assert.equal(
+        owners.length,
+        0,
+        `${guideId}: pending candidate must not be presented as a published Search Map owner`,
+      );
+      continue;
+    }
     assert.equal(owners.length, 1, `${guideId}: expected one published Search Map owner`);
     assert.equal(owners[0].title, metadata.locales.en.title, `${guideId}: Search Map title drift`);
     assert.equal(owners[0].pageFamily, metadata.search.family, `${guideId}: Search Map family drift`);
@@ -92,6 +108,7 @@ test("reviewed guide releases export localized search language", async () => {
     const inboundOwners = [];
     for (const ownerId of guideDirectories) {
       if (ownerId === guideId) continue;
+      if (pendingCandidateIds.has(ownerId)) continue;
       const ownerRoot = path.join(guidesRoot, ownerId);
       const localizedPaths = {
         en: `/guides/${guideId}/`,

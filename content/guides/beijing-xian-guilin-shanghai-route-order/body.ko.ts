@@ -97,7 +97,7 @@ const body = {
       caption: "양숴역이라는 이름 뒤에는 추가 도로 이동이 숨어 있을 수 있습니다. 이 허가된 사진은 촬영일 당시의 역을 확인할 뿐, 현재 운행 열차, 셔틀, 호텔 이동 또는 양숴 중심부 도착을 입증하지 않습니다.",
     },
     {
-      id: "regional-owner-handoff", type: "callout", tone: "neutral", title: "거시적 판단은 지역 경계에서 멈추세요",
+      id: "regional-handoff", type: "callout", tone: "neutral", title: "거시적 판단은 지역 경계에서 멈추세요",
       body: "구이린·양숴가 일정에 들어갈 자격을 얻었다면 별도의 구이린 관문 가이드와 구이린–양숴 교통 가이드를 이용하세요. 정확한 출발·도착 지점, 숙박 거점, 현재 운영 상태를 확인한 뒤에만 지역 내부 순서를 정합니다. 그런 실행 선택은 이 글의 전체 동선 판단 범위에 포함되지 않습니다.",
     },
     { id: "travellers-heading", type: "heading", level: 2, text: "세 여행자를 보면 같은 네 번째 목적지의 지위가 어떻게 달라지는지 알 수 있습니다" },

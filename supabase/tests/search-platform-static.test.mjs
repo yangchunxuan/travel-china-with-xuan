@@ -202,8 +202,13 @@ test("guide entities and freshness use the current metadata vocabulary", async (
   assert.match(policy, /function guideUpdatePolicy/);
   assert.match(policy, /function resolveGuideEntities/);
   assert.match(adapter, /from "\.\/searchPlatformGuidePolicy"/);
-  assert.match(adapter, /updatePolicy: guideUpdatePolicy\(guide\)/);
+  assert.match(adapter, /const updatePolicy = guideUpdatePolicy\(guide\)/);
+  assert.match(adapter, /\n\s*updatePolicy,\s*\n/);
   assert.match(adapter, /resolveGuideEntities\(guide\.destinations\)\.entityIds/);
+  assert.match(
+    adapter,
+    /governance\.source === "candidate"[\s\S]*?\[governance\.primaryEntityId!, \.\.\.governance\.secondaryEntityIds\][\s\S]*?: resolvedEntities/,
+  );
   assert.doesNotMatch(policy, /guide\.pillar === "entry-rules"/);
 });
 

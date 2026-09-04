@@ -94,7 +94,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
 
   { id: "operations-heading", type: "heading", level: 2, text: "Which facts must be checked again on the actual week?" },
-  { id: "operations-copy", type: "paragraph", text: "The physical relationship among the three zones is durable; the operating layer is not. In 2026 the operator published different service guides for Spring Festival, Qingming/Spring Holiday and May Day, including special hours, access restrictions, traffic controls and shuttle lines. A July 2026 operator report described a `1+2+4+N` shuttle layout. These sources prove that the system is actively managed, not that one captured timetable will remain valid for your date." },
+  { id: "operations-copy", type: "paragraph", text: "The physical relationship among the three zones is durable; the operating layer is not. In 2026 the operator published different service guides for Spring Festival, Qingming/Spring Holiday and May Day, including special hours, access restrictions, traffic controls and shuttle lines. A July 2026 operator report described a 1+2+4+N shuttle layout. These sources prove that the system is actively managed, not that one captured timetable will remain valid for your date." },
   { id: "operations-table", type: "table", caption: "Durable map versus live operating screen", columns: ["Decision", "Use durable evidence for", "Recheck live for"], rows: [
     ["Zone order", "Ming Xiaoling west, Mausoleum central, Linggu east", "Open entrances, road controls and the day's legal transfer"],
     ["Mausoleum", "392-step ceremonial axis and historical role", "Reservation channel, time slot and accessible upper areas"],
@@ -136,7 +136,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "If the shuttle or reservation fails, use a complete two-zone or one-zone recovery rather than an unofficial workaround."
   ]},
   { id: "links", type: "internal-links", title: "Connect this mountain decision to the wider trip", items: [
-    { label: "Order Shanghai, Suzhou, Hangzhou and Nanjing", href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "Use the regional owner to decide whether Nanjing belongs in the trip; use this page only after the city is fixed." },
+    { label: "Order Shanghai, Suzhou, Hangzhou and Nanjing", href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "Use the regional route guide to decide whether Nanjing belongs in the trip; use this page only after the city is fixed." },
     { label: "Compare Chinese city walls, gates and urban order", href: "/guides/chinese-city-walls-gates-and-urban-order/", description: "Keep Nanjing's wall evidence with its own cross-city comparison rather than adding it to Purple Mountain day." },
   ]},
   { id: "sources", type: "sources", title: "Official, heritage and image sources", items: [

@@ -27,17 +27,47 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   );
 
   assert.deepEqual(report.counts, {
-    stay: 20,
+    stay: 26,
     "high-intent-transport": 25,
-    plan: 17,
+    plan: 22,
     "purchase-ticket": 2,
   });
-  assert.equal(report.uniqueContentIds, 64);
-  assert.equal(report.authorizedExistingService, 15);
+  assert.equal(report.uniqueContentIds, 75);
+  assert.equal(report.authorizedExistingService, 20);
   assert.equal(report.authorizedGenericConversation, 2);
-  assert.equal(report.blockedPendingAuthorization, 47);
+  assert.equal(report.blockedPendingAuthorization, 53);
   assert.equal(registry.publicCtaChangesAuthorized, false);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
+});
+
+test("the central batch records every new stay and plan owner, not just aggregate counts", () => {
+  const expectedOwners = {
+    "beijing-datong-pingyao-xian-route-order": "plan",
+    "beijing-xian-guilin-shanghai-route-order": "plan",
+    "beijing-xian-shanghai-route-order": "plan",
+    "china-itinerary-booking-dependency-order": "plan",
+    "shanghai-hangzhou-huangshan-route-order": "plan",
+    "canton-fair-pazhou-tianhe-yuexiu-hotel-base": "stay",
+    "daocheng-yading-village-or-shangri-la-town-hotel-base": "stay",
+    "downtown-dunhuang-or-mingsha-mountain-hotel-base": "stay",
+    "jiuzhaigou-entrance-or-huanglongjiuzhai-station-hotel-base": "stay",
+    "wuzhen-west-scenic-area-inside-or-outside-hotel-base": "stay",
+    "xian-or-huayin-mount-hua-hotel-base": "stay",
+  };
+
+  for (const [contentId, ownerClass] of Object.entries(expectedOwners)) {
+    const entry = registry.entries.find((candidate) => candidate.contentId === contentId);
+    assert.ok(entry, `missing CTA owner ${contentId}`);
+    assert.equal(entry.ownerClass, ownerClass, contentId);
+    assert.equal(entry.originContentId, contentId, contentId);
+    if (ownerClass === "stay") {
+      assert.equal(entry.authorizationStatus, "blocked-pending-central-authorization", contentId);
+      assert.equal(entry.targetServiceId, null, contentId);
+    } else {
+      assert.equal(entry.authorizationStatus, "authorized-existing-service", contentId);
+      assert.equal(entry.targetServiceId, "itinerary-review", contentId);
+    }
+  }
 });
 
 test("duplicate CTA owners fail closed", () => {

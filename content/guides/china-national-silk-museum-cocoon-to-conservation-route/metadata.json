@@ -1,5 +1,13 @@
 {
   "id": "china-national-silk-museum-cocoon-to-conservation-route",
+  "candidateId": "w3-seo-20260901-06",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "culture-history-people-ideas",
+  "primaryEntityId": "organization-china-national-silk-museum",
+  "secondaryEntityIds": ["culture-topic-silk", "city-hangzhou", "province-zhejiang", "country-china"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "culture-history-people-ideas",
   "audienceMarkets": ["global"],

@@ -1,5 +1,19 @@
 {
   "id": "nanjing-purple-mountain-route",
+  "candidateId": "dest-seo-20260901-10",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "explore-attractions-nature-heritage",
+  "primaryEntityId": "attraction-zhongshan-scenic-area",
+  "secondaryEntityIds": [
+    "heritage-site-ming-xiaoling",
+    "attraction-sun-yat-sen-mausoleum",
+    "attraction-linggu-scenic-area",
+    "city-nanjing",
+    "province-jiangsu"
+  ],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
   "audienceMarkets": ["global"],

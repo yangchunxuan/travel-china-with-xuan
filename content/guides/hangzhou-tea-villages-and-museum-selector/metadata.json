@@ -1,5 +1,13 @@
 {
   "id": "hangzhou-tea-villages-and-museum-selector",
+  "candidateId": "dest-seo-20260901-09",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "explore-attractions-nature-heritage",
+  "primaryEntityId": "city-hangzhou",
+  "secondaryEntityIds": ["district-xihu-hangzhou", "village-longjing-hangzhou", "village-meijiawu-hangzhou", "organization-china-national-tea-museum", "attraction-tea-museum-shuangfeng-campus", "attraction-tea-museum-longjing-campus", "province-zhejiang"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
   "audienceMarkets": ["global"],

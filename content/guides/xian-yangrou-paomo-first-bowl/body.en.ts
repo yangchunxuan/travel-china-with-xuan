@@ -52,7 +52,7 @@ const body = {
     {
       id: "choice-p1",
       type: "paragraph",
-      text: "The label `yangrou paomo` names lamb, while many established Xi'an records and menus discuss beef and lamb paomo together. That does not make the two interchangeable for an allergy, religious rule or personal boundary. A beef topping does not disclose the stock, fat or shared preparation. Likewise, the word `qingzhen` (清真) belongs to a business's actual practice and current status; it cannot be inferred from a bowl photograph or from the absence of pork on one menu line. Ask the chosen restaurant, not an image-search caption.",
+      text: "The label yangrou paomo names lamb, while many established Xi'an records and menus discuss beef and lamb paomo together. That does not make the two interchangeable for an allergy, religious rule or personal boundary. A beef topping does not disclose the stock, fat or shared preparation. Likewise, the word qingzhen (清真) belongs to a business's actual practice and current status; it cannot be inferred from a bowl photograph or from the absence of pork on one menu line. Ask the chosen restaurant, not an image-search caption.",
     },
     {
       id: "diet-warning",
@@ -102,7 +102,7 @@ const body = {
     {
       id: "break-p1",
       type: "paragraph",
-      text: "The Lao Sun Jia, Tong Sheng Xiang and Lao Liu Jia records all describe small pieces; two use the memorable phrase `黄豆粒大小`, roughly soybean-sized. That is useful evidence for those lineages, but it is not permission to mock a beginner or reject a different shop's instruction. Start by splitting the bread, then pinch off compact pieces of similar size. Avoid powder, thin flakes and a few large blocks: the practical goal is a batch the kitchen can cook evenly according to its own method. Show staff an early sample if you are unsure instead of spending twenty minutes on the wrong size.",
+      text: "The Lao Sun Jia, Tong Sheng Xiang and Lao Liu Jia records all describe small pieces; two use the memorable phrase 黄豆粒大小, roughly soybean-sized. That is useful evidence for those lineages, but it is not permission to mock a beginner or reject a different shop's instruction. Start by splitting the bread, then pinch off compact pieces of similar size. Avoid powder, thin flakes and a few large blocks: the practical goal is a batch the kitchen can cook evenly according to its own method. Show staff an early sample if you are unsure instead of spending twenty minutes on the wrong size.",
     },
     {
       id: "break-table",
@@ -169,7 +169,7 @@ const body = {
     {
       id: "styles-p1",
       type: "paragraph",
-      text: "Tong Sheng Xiang and Lao Liu Jia official brand records describe all four, but even their vocabulary differs: one says `干泡`, another `干拔`. A translated menu may flatten them into ‘dry’, ‘soup’ or ‘separate’. Point to the Chinese term and ask what today's kitchen means. If the restaurant offers only one house style, accept that answer or choose a different dish; heritage documentation is not a coupon that obliges the cook to reproduce four versions on demand.",
+      text: "Tong Sheng Xiang and Lao Liu Jia official brand records describe all four, but even their vocabulary differs: one says 干泡, another 干拔. A translated menu may flatten them into ‘dry’, ‘soup’ or ‘separate’. Point to the Chinese term and ask what today's kitchen means. If the restaurant offers only one house style, accept that answer or choose a different dish; heritage documentation is not a coupon that obliges the cook to reproduce four versions on demand.",
     },
     {
       id: "eat-heading",

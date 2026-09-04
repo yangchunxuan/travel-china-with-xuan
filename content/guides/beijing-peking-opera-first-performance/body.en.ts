@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "For a first Peking Opera (`京剧`, Jingju) in Beijing, choose the exact programme before choosing the famous theatre. A short visitor-oriented showcase is useful when you want several visual and musical techniques in one compact evening. A named `折子戏` programme gives complete scenes or excerpts and is not an inferior imitation. A clearly labelled `全本` or `整本` production is better when you want sustained plot and singing and can prepare beforehand. A gala or selected-arias concert is another product again. Before paying, verify the title, troupe, format, expected running time, synopsis, language support, seat sightline, entry document, photography rule and change terms for that date.",
+      text: "For a first Peking Opera (京剧, Jingju) in Beijing, choose the exact programme before choosing the famous theatre. A short visitor-oriented showcase is useful when you want several visual and musical techniques in one compact evening. A named 折子戏 programme gives complete scenes or excerpts and is not an inferior imitation. A clearly labelled 全本 or 整本 production is better when you want sustained plot and singing and can prepare beforehand. A gala or selected-arias concert is another product again. Before paying, verify the title, troupe, format, expected running time, synopsis, language support, seat sightline, entry document, photography rule and change terms for that date.",
     },
     {
       id: "answer",
@@ -52,7 +52,7 @@ const body = {
     {
       id: "format-p1",
       type: "paragraph",
-      text: "Short does not mean false, and long does not guarantee clarity or quality. An official China ICH research account of repertoire transmission includes many `折子戏` and fewer `全本戏`: excerpts are part of how the form is performed and passed on, not merely pieces cut for foreigners. Conversely, a performance using genuine costumes and techniques can still be packaged as a modern tourism presentation. The cultural form and the commercial product are two layers. Ask the seller to name both.",
+      text: "Short does not mean false, and long does not guarantee clarity or quality. An official China ICH research account of repertoire transmission includes many 折子戏 and fewer 全本戏: excerpts are part of how the form is performed and passed on, not merely pieces cut for foreigners. Conversely, a performance using genuine costumes and techniques can still be packaged as a modern tourism presentation. The cultural form and the commercial product are two layers. Ask the seller to name both.",
     },
     {
       id: "listing-heading",
@@ -78,7 +78,7 @@ const body = {
     {
       id: "listing-p1",
       type: "paragraph",
-      text: "A current official calendar can be a starting point, not the whole decision. Rechecked on 4 September 2026, Beijing's municipal notice for that week listed several named Beijing Jingju Theatre productions at Chang'an Grand Theatre, with dates, troupe and venue. It separately listed a programme titled `经典折子戏专场` at Tianleyuan; that row did not identify the genre, so it proves only that ‘excerpt programme’ is an actual listing label—not that this event itself was Peking Opera. The notice warned that details could change and did not supply subtitles, running time, ticket stock or photography. Continue to the named organiser or venue's exact listing.",
+      text: "A current official calendar can be a starting point, not the whole decision. Rechecked on 4 September 2026, Beijing's municipal notice for that week listed several named Beijing Jingju Theatre productions at Chang'an Grand Theatre, with dates, troupe and venue. It separately listed a programme titled 经典折子戏专场 at Tianleyuan; that row did not identify the genre, so it proves only that ‘excerpt programme’ is an actual listing label—not that this event itself was Peking Opera. The notice warned that details could change and did not supply subtitles, running time, ticket stock or photography. Continue to the named organiser or venue's exact listing.",
     },
     {
       id: "listing-warning",
@@ -106,7 +106,7 @@ const body = {
         "Copy the exact Chinese title from the official listing, including the scene name after any separator.",
         "Read a short synopsis from the troupe, theatre, museum or reliable reference; avoid a full modern translation you do not have permission to reproduce.",
         "Mark who is on stage at the scene's beginning, who enters later, and the decision or conflict that changes the scene.",
-        "Note whether the listing emphasises vocal performance, civil drama (`文戏`) or martial action (`武戏`), but treat these as useful orientations rather than rigid boxes.",
+        "Note whether the listing emphasises vocal performance, civil drama (文戏) or martial action (武戏), but treat these as useful orientations rather than rigid boxes.",
         "Save the synopsis offline. A theatre signal failure should not make the performance unintelligible.",
       ],
     },
@@ -119,7 +119,7 @@ const body = {
     {
       id: "roles-table",
       type: "table",
-      caption: "A first orientation to `生旦净丑`",
+      caption: "A first orientation to 生旦净丑",
       columns: ["Role family", "First thing to notice", "What not to conclude"],
       rows: [
         ["生 (sheng)", "Male-role performance differentiated by age, status, voice and movement", "Every unpainted male face is the same character type"],
@@ -138,7 +138,7 @@ const body = {
       type: "callout",
       title: "Do not name a character from costume alone",
       tone: "neutral",
-      body: "If the official programme does not identify the actor, role and scene, describe only what you can observe: a `净`-style painted face, long water sleeves, armour, a beard movement or a fan. Different productions and characters can share visual vocabulary. This is also the rule for photographs: do not turn an unlabeled stage image into evidence of a specific play.",
+      body: "If the official programme does not identify the actor, role and scene, describe only what you can observe: a 净-style painted face, long water sleeves, armour, a beard movement or a fan. Different productions and characters can share visual vocabulary. This is also the rule for photographs: do not turn an unlabeled stage image into evidence of a specific play.",
     },
     {
       id: "first-ten-heading",
@@ -151,7 +151,7 @@ const body = {
       type: "list",
       ordered: true,
       items: [
-        "Locate the musicians if visible. `文场` commonly centres melodic strings and winds, while `武场` percussion marks action and structure; the exact layout varies.",
+        "Locate the musicians if visible. 文场 commonly centres melodic strings and winds, while 武场 percussion marks action and structure; the exact layout varies.",
         "Listen for the drum and percussion cue before an entrance, turn, pose or burst of action. Sound often tells you that a movement matters before subtitles do.",
         "Identify the first character from the programme, then watch how everyone else makes space, approaches, kneels, sits or turns toward that person.",
         "Choose one channel at a time: voice during a long sung passage, footwork and sleeves during movement, then the subtitle at a pause. Do not keep your eyes fixed above the stage.",
@@ -161,7 +161,7 @@ const body = {
     {
       id: "first-ten-p1",
       type: "paragraph",
-      text: "Peking Opera is conventionally described through `唱念做打`: singing, reciting, acting/movement and martial technique. It is not necessary for every scene to display all four in equal proportion. The musical frame also matters. National and theatre sources distinguish melodic `文场` from percussion `武场`, with the drum master coordinating musicians and stage action. For a first audience, hearing a cue connect to a turn or entrance is a more durable discovery than memorising an entire instrument list.",
+      text: "Peking Opera is conventionally described through 唱念做打: singing, reciting, acting/movement and martial technique. It is not necessary for every scene to display all four in equal proportion. The musical frame also matters. National and theatre sources distinguish melodic 文场 from percussion 武场, with the drum master coordinating musicians and stage action. For a first audience, hearing a cue connect to a turn or entrance is a more durable discovery than memorising an entire instrument list.",
     },
     {
       id: "stage-heading",
@@ -222,7 +222,7 @@ const body = {
       items: [
         "Silence and darken the phone before the lights change. A bright screen distracts performers and nearby viewers even when no photo is taken.",
         "Assume photography, audio and video are prohibited until the exact venue expressly allows them. NCPA's prohibition is clear for NCPA, not wording to paste onto every Beijing theatre.",
-        "Applaud with the room at a completed aria, scene, interval or curtain. You are not required to shout `好` to prove respect or cultural knowledge.",
+        "Applaud with the room at a completed aria, scene, interval or curtain. You are not required to shout 好 to prove respect or cultural knowledge.",
         "If others call approval during a performance, listen to when it happens; do not imitate over dialogue or a quiet musical line you cannot yet read.",
         "Confirm late-admission and re-entry rules. Some productions may hold latecomers until a suitable break, and a ticket does not guarantee immediate seating after curtain.",
         "Photograph displays, makeup demonstrations or performers only where permission covers that object and those people; a public lobby is not blanket consent.",
@@ -247,7 +247,7 @@ const body = {
       rows: [
         ["One free evening, curious but unsure", "A named excerpt programme or clearly described compact showcase with verified synopsis and language access", "No named content, troupe or current operational confirmation"],
         ["Story-first theatre viewer", "An explicitly labelled full or linked production whose synopsis you can prepare", "Unknown duration, no safe interval plan or a plot you cannot identify"],
-        ["Movement and martial-action viewer", "A named `武戏` scene or mixed excerpt bill that specifies the scene rather than promising generic acrobatics", "A promotional stunt reel with no play, performers or stage context"],
+        ["Movement and martial-action viewer", "A named 武戏 scene or mixed excerpt bill that specifies the scene rather than promising generic acrobatics", "A promotional stunt reel with no play, performers or stage context"],
         ["Voice and music listener", "A vocal-centred scene, full production or named-arias event, chosen with full knowledge of whether it is staged drama or concert form", "Buying a gala while expecting continuous dramatic action"],
       ],
     },

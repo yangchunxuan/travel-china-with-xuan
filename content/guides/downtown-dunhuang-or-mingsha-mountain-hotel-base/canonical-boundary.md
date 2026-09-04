@@ -39,18 +39,18 @@ The pre-production audit was run against `origin/main@c13d83e1abc8f5f25ee2250de1
 
 The remote audit found no exact `downtown Dunhuang versus Mingsha Mountain hotel base` canonical. Later remote changes remain a publication trigger: if another branch acquires this exact intent, central editorial must merge or reject rather than publish two owners.
 
-## Taxonomy and entity debt
+## Taxonomy and entity mapping
 
 - Search section: `stay`
 - Collection/pillar: `stay-city-areas`
 - Family: `comparison`
 - Primary intent: `plan`
 - Freshness: high, re-review on ticket, gate, access, weather-response or property-operation change
-- Intended primary entity: `county-level-city-dunhuang`
-- Intended secondary entities: `attraction-mogao-caves`, `attraction-mingsha-crescent-spring`, `station-dunhuang`, `airport-dunhuang-mogao`, `city-jiuquan`, `province-gansu`
-- Administrative containment for future entity work: Dunhuang → Jiuquan → Gansu → China
+- Primary entity: `city-dunhuang` (a county-level city)
+- Context entities: `heritage-site-mogao-caves`, `attraction-mingsha-crescent-spring`, `transport-node-dunhuang-station`, `transport-node-dunhuang-mogao-airport`, `city-jiuquan`, `province-gansu`
+- Administrative containment: Dunhuang → Jiuquan → Gansu → China
 
-Current metadata deliberately retains `destinations: ["china"]`, so the current resolver exposes only `country-china`. Dunhuang's county-level city identity, its Jiuquan and Gansu containment, attractions, station and airport are explicit **entity debt**. This article branch must not edit the entity graph, Search Map, registry, destination Hub, sitemap, templates or other central files.
+Explicit governed metadata now identifies Dunhuang, the two named visitor sites and both transport nodes. Candidate structured entities use those primary and secondary IDs directly; the frozen legacy destination resolver is not expanded. This taxonomy reconciliation does not modify the Search Map, destination Hub, sitemap or templates.
 
 ## Editorial decision boundary
 

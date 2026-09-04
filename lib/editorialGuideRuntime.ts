@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   getGuideEntry,
   getGuideLanguagePaths,
-  guideRegistry,
+  getIndexApprovedGuides,
   type GuideEntry,
   type GuideId,
 } from "./guideRegistry";
@@ -27,7 +27,7 @@ export function getTemplateGuideBySlug(
   locale: HomegroundLocale,
 ): GuideEntry | null {
   return (
-    guideRegistry.find(
+    getIndexApprovedGuides(locale).find(
       (guide) =>
         guide.layout?.mode === "template" &&
         guide.locales[locale] &&
@@ -37,7 +37,7 @@ export function getTemplateGuideBySlug(
 }
 
 export function getTemplateGuideParams(locale: HomegroundLocale) {
-  return guideRegistry.flatMap((guide) => {
+  return getIndexApprovedGuides(locale).flatMap((guide) => {
     const localized = guide.locales[locale];
     return guide.layout?.mode === "template" && localized
       ? [{ slug: slugFromPath(localized.path) }]

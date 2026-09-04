@@ -164,12 +164,25 @@ function checkReferences(records: readonly ContentRecordEnvelope[]) {
         record.data.parentContentId ? [record.data.parentContentId] : [],
       );
       for (const id of record.data.entityIds) requireReference(owner, "entity", id);
+      if (record.data.primaryEntityId) {
+        requireReference(owner, "entity", record.data.primaryEntityId);
+      }
+      for (const id of record.data.secondaryEntityIds ?? []) {
+        requireReference(owner, "entity", id);
+      }
       for (const id of record.data.relationIds ?? []) requireReference(owner, "relation", id);
       for (const id of record.data.factIds ?? []) requireReference(owner, "fact", id);
       for (const id of record.data.sourceIds) requireReference(owner, "source-snapshot", id);
       for (const id of record.data.mediaIds ?? []) requireReference(owner, "media-asset", id);
       if (record.data.parentContentId) {
         requireReference(owner, "content-node", record.data.parentContentId);
+      }
+      if (record.data.primaryCollectionId) {
+        requireReference(
+          owner,
+          "content-node",
+          `collection-${record.data.primaryCollectionId}`,
+        );
       }
     }
 
@@ -246,6 +259,28 @@ function entriesForNode(node: ContentNode): ContentManifestEntry[] {
         indexability: node.indexability,
         dates: node.dates ?? {},
         updatePolicy: node.updatePolicy,
+        ...(node.candidateId !== undefined ? { candidateId: node.candidateId } : {}),
+        ...(node.editorialStatus !== undefined
+          ? { editorialStatus: node.editorialStatus }
+          : {}),
+        ...(node.primaryCollectionId !== undefined
+          ? { primaryCollectionId: node.primaryCollectionId }
+          : {}),
+        ...(node.primaryEntityId !== undefined
+          ? { primaryEntityId: node.primaryEntityId }
+          : {}),
+        ...(node.secondaryEntityIds !== undefined
+          ? { secondaryEntityIds: sortedUnique(node.secondaryEntityIds) }
+          : {}),
+        ...(node.freshnessClass !== undefined
+          ? { freshnessClass: node.freshnessClass }
+          : {}),
+        ...(node.lastVerified !== undefined
+          ? { lastVerified: node.lastVerified }
+          : {}),
+        ...(node.indexApproved !== undefined
+          ? { indexApproved: node.indexApproved }
+          : {}),
       };
       return [entry];
     });
@@ -365,6 +400,7 @@ export function getIndexableManifestEntries(
     (entry) =>
       entry.status === "published" &&
       entry.indexability.index &&
+      (!entry.contentId.startsWith("guide-") || entry.indexApproved === true) &&
       (locale === undefined || entry.locale === locale),
   );
 }

@@ -1,47 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Shanghai Hangzhou Huangshan route dependency diagram</title>
-  <desc id="desc">An editorial diagram showing a gateway lock, a city hinge and a mountain access chain. It is not to scale.</desc>
+  <title id="title">Language-neutral route dependency diagram</title>
+  <desc id="desc">Three connected visual stages represent a gateway, an optional city hinge and a mountain access chain with an exit buffer. The illustration contains no visible words, map scale or timetable.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b2030"/>
-      <stop offset="0.52" stop-color="#153f48"/>
-      <stop offset="1" stop-color="#6b5a36"/>
+      <stop offset="0" stop-color="#092733"/>
+      <stop offset="0.52" stop-color="#174950"/>
+      <stop offset="1" stop-color="#745b31"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#07131b" flood-opacity="0.55"/>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cde9df"/>
+      <stop offset="1" stop-color="#74aa99"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#041318" flood-opacity="0.5"/>
     </filter>
   </defs>
+
   <rect width="1600" height="1000" fill="url(#bg)"/>
-  <path d="M0 748 C250 618 410 704 620 580 C820 462 997 514 1180 386 C1338 276 1444 306 1600 214 L1600 1000 L0 1000 Z" fill="#d0ad64" opacity="0.12"/>
-  <g fill="none" stroke="#f0d89f" stroke-width="12" stroke-linecap="round" opacity="0.88">
-    <path d="M300 510 H650"/>
-    <path d="M950 510 H1300"/>
+  <circle cx="1390" cy="170" r="310" fill="#efd49a" opacity="0.08"/>
+  <path d="M0 790 C230 650 430 730 640 612 C842 498 1016 544 1190 430 C1360 320 1462 350 1600 274 V1000 H0 Z" fill="#e0bd70" opacity="0.13"/>
+
+  <g fill="none" stroke="#f2d89d" stroke-width="14" stroke-linecap="round" opacity="0.95">
+    <path d="M430 500 H655"/>
+    <path d="M945 500 H1170"/>
   </g>
-  <g fill="#f0d89f">
-    <path d="M646 510 l-36 -23 v46 z"/>
-    <path d="M1296 510 l-36 -23 v46 z"/>
+  <g fill="#f2d89d">
+    <path d="M648 500 l-38 -25 v50 z"/>
+    <path d="M1163 500 l-38 -25 v50 z"/>
   </g>
+
   <g filter="url(#shadow)">
-    <rect x="95" y="310" width="320" height="390" rx="34" fill="#f4eee2"/>
-    <rect x="640" y="310" width="320" height="390" rx="34" fill="#e8f1e9"/>
-    <rect x="1185" y="310" width="320" height="390" rx="34" fill="#f3e7ca"/>
+    <circle cx="285" cy="500" r="190" fill="#f7f0e5"/>
+    <circle cx="800" cy="500" r="190" fill="#eaf2e9"/>
+    <circle cx="1315" cy="500" r="190" fill="#f3e5c5"/>
   </g>
-  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
-    <text x="255" y="420" font-size="34" font-weight="700" fill="#152d3a">GATEWAY LOCK</text>
-    <text x="255" y="485" font-size="24" fill="#38505b">airport · ticket · buffer</text>
-    <circle cx="255" cy="585" r="50" fill="#1b6573"/>
-    <path d="M232 585 h46 M255 562 v46" stroke="#f4eee2" stroke-width="9" stroke-linecap="round"/>
 
-    <text x="800" y="420" font-size="34" font-weight="700" fill="#1f463c">HANGZHOU HINGE</text>
-    <text x="800" y="485" font-size="24" fill="#47665f">protected stay or remove</text>
-    <path d="M735 590 q65 -100 130 0 q-65 74 -130 0" fill="#4e8b75"/>
-    <circle cx="800" cy="575" r="20" fill="#e8f1e9"/>
-
-    <text x="1345" y="420" font-size="34" font-weight="700" fill="#574625">MOUNTAIN LOCK</text>
-    <text x="1345" y="485" font-size="24" fill="#77643a">road · gate · shuttle · path</text>
-    <path d="M1255 625 l74 -122 40 62 38 -48 72 108 z" fill="#9b7d3f"/>
-    <path d="M1310 535 l19 -32 13 20" fill="none" stroke="#f3e7ca" stroke-width="8"/>
+  <!-- Gateway: a threshold with two possible directions, not a named airport or station. -->
+  <g transform="translate(285 500)" fill="none" stroke="#1b6573" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-82 96 V-48 Q0-126 82-48 V96"/>
+    <path d="M0 96 V-22"/>
+    <path d="M0 -22 L-36 14"/>
+    <path d="M0 -22 L36 14"/>
+    <circle cx="0" cy="-22" r="13" fill="#1b6573" stroke="none"/>
   </g>
-  <text x="110" y="865" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#f5e7c5">ORDER THE DEPENDENCIES, THEN SEARCH THE DATED TRANSPORT</text>
-  <text x="110" y="915" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#d1c5a7">Editorial decision diagram · not a map · no timetable or duration claim</text>
+
+  <!-- City hinge: a protected central block with a reversible decision loop. -->
+  <g transform="translate(800 500)">
+    <path d="M-105 25 Q0-125 105 25 Q0 122-105 25 Z" fill="url(#lake)"/>
+    <circle cx="0" cy="10" r="35" fill="#eaf2e9"/>
+    <path d="M-118 -46 A142 142 0 0 1 94 -82" fill="none" stroke="#34705f" stroke-width="15" stroke-linecap="round"/>
+    <path d="M89 -112 L128 -78 L80 -63 Z" fill="#34705f"/>
+    <path d="M118 55 A142 142 0 0 1 -91 91" fill="none" stroke="#34705f" stroke-width="15" stroke-linecap="round"/>
+    <path d="M-88 121 L-127 87 L-79 72 Z" fill="#34705f"/>
+  </g>
+
+  <!-- Mountain: a multi-stage approach ending in a separate exit buffer. -->
+  <g transform="translate(1315 500)">
+    <path d="M-138 98 L-45 -74 L4 0 L50 -58 L142 98 Z" fill="#9a793d"/>
+    <path d="M-72 -24 L-45 -74 L-20 -36" fill="none" stroke="#f7edda" stroke-width="12" stroke-linecap="round"/>
+    <path d="M-112 122 C-68 76-25 76 12 42 C45 12 76 -6 118 -16" fill="none" stroke="#654c27" stroke-width="12" stroke-linecap="round" stroke-dasharray="3 27"/>
+    <path d="M88 -84 l37 -20 37 20 v39 c0 43-26 73-37 82-11-9-37-39-37-82z" fill="#1b6573" stroke="#f7edda" stroke-width="8"/>
+    <path d="M108 -42 l14 14 24-31" fill="none" stroke="#f7edda" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Small neutral legend made only from shapes: dependency, flexible hinge, protected buffer. -->
+  <g transform="translate(540 835)" opacity="0.92">
+    <circle cx="0" cy="0" r="13" fill="#f2d89d"/>
+    <path d="M25 0 H145" stroke="#f2d89d" stroke-width="8" stroke-linecap="round"/>
+    <path d="M145 0 l-24-15 v30 z" fill="#f2d89d"/>
+    <circle cx="260" cy="0" r="44" fill="none" stroke="#a7d0c1" stroke-width="10" stroke-dasharray="34 14"/>
+    <path d="M420 -34 l34-18 34 18 v38 c0 40-24 66-34 75-10-9-34-35-34-75z" fill="#1b6573" stroke="#f2d89d" stroke-width="7"/>
+  </g>
 </svg>

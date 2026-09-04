@@ -115,10 +115,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "If a component site is unavailable, reduce the historical claim instead of inventing an equivalent substitute.",
     "Do not claim that this walk covers the Maritime Trade Office, docks, bridges, kilns or the complete 22-site system.",
   ]},
-  { id: "links", type: "internal-links", title: "Keep separate Quanzhou and Fujian tasks with their real owners", items: [
-    { label: "Attend a first Quanzhou Nanyin performance", href: "/guides/quanzhou-nanyin-first-performance-workflow/", description: "Use the performance owner to verify a real event and understand audience etiquette; do not assume a show belongs to this daytime heritage walk." },
+  { id: "links", type: "internal-links", title: "Use the right guide for each separate Quanzhou and Fujian task", items: [
+    { label: "Attend a first Quanzhou Nanyin performance", href: "/guides/quanzhou-nanyin-first-performance-workflow/", description: "Use the performance guide to verify a real event and understand audience etiquette; do not assume a show belongs to this daytime heritage walk." },
     { label: "Watch Quanzhou string puppetry for the first time", href: "/guides/quanzhou-string-puppetry-first-audience/", description: "Plan the theatre or performance task separately from the old-city walk." },
-    { label: "Read qiaopi letters, remittances and migration", href: "/guides/qiaopi-letters-remittances-and-migration/", description: "Use the migration-history owner for the later family-letter and remittance network rather than stretching this Song–Yuan walk across centuries." },
+    { label: "Read qiaopi letters, remittances and migration", href: "/guides/qiaopi-letters-remittances-and-migration/", description: "Use the qiaopi migration-history guide for the later family-letter and remittance network rather than stretching this Song–Yuan walk across centuries." },
     { label: "Choose a Fujian Tulou cluster", href: "/guides/fujian-tulou-cluster-selection/", description: "Use the rural-heritage selector for a separate Fujian decision rather than treating tulou as another Quanzhou old-city stop." },
   ]},
   { id: "sources", type: "sources", title: "Official, heritage and image sources", items: [

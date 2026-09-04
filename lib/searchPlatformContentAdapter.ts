@@ -1,8 +1,10 @@
 import {
+  getIndexApprovedGuides,
   guideRegistry,
   type GuideId,
   type LegacyGuideId,
 } from "./guideRegistry";
+import { getEffectiveGuideGovernance } from "./guideGovernance";
 import type {
   ContentFamily,
   ContentIntent,
@@ -208,6 +210,21 @@ function guideClassification(guide: (typeof guideRegistry)[number]) {
 export function buildLegacyGuideContentNodes(): ContentNode[] {
   return guideRegistry.map((guide) => {
     const classification = guideClassification(guide);
+    const governance = getEffectiveGuideGovernance(guide);
+    const reviewedCollectionId = getGuideCollectionId(guide);
+    if (
+      governance.primaryCollectionId !== null &&
+      governance.primaryCollectionId !== reviewedCollectionId
+    ) {
+      throw new Error(
+        `Guide ${guide.id} governance collection ${governance.primaryCollectionId} does not match runtime assignment ${reviewedCollectionId}.`,
+      );
+    }
+    const resolvedEntities = resolveGuideEntities(guide.destinations).entityIds;
+    const governedEntityIds = governance.source === "candidate"
+      ? [governance.primaryEntityId!, ...governance.secondaryEntityIds]
+      : resolvedEntities;
+    const updatePolicy = guideUpdatePolicy(guide);
     const locales = Object.fromEntries(
       Object.entries(guide.locales).map(([siteLocale, localized]) => {
         if (!localized) return [];
@@ -236,11 +253,17 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
       family: classification.family,
       section: classification.section,
       primaryIntent: classification.primaryIntent,
-      entityIds: resolveGuideEntities(guide.destinations).entityIds,
+      entityIds: governedEntityIds,
       relationIds: [],
-      parentContentId: `collection-${getGuideCollectionId(guide)}`,
-      status: "published",
-      indexability: { index: true, follow: true },
+      parentContentId: `collection-${reviewedCollectionId}`,
+      status: governance.editorialStatus === "approved" ? "published" : "review",
+      indexability: governance.indexApproved
+        ? { index: true, follow: true }
+        : {
+            index: false,
+            follow: true,
+            blockReason: `Guide release gate is ${governance.centralDecision}/${governance.editorialStatus}.`,
+          },
       locales,
       factIds: [],
       sourceIds: [],
@@ -252,14 +275,25 @@ export function buildLegacyGuideContentNodes(): ContentNode[] {
         dateModified: guide.dateModified,
         lastReviewed: guide.sourceReviewedDate,
       },
-      updatePolicy: guideUpdatePolicy(guide),
+      updatePolicy,
+      candidateId: governance.candidateId,
+      editorialStatus: governance.editorialStatus,
+      primaryCollectionId: reviewedCollectionId,
+      primaryEntityId: governance.primaryEntityId ?? resolvedEntities[0] ?? null,
+      secondaryEntityIds:
+        governance.source === "candidate"
+          ? governance.secondaryEntityIds
+          : resolvedEntities.slice(1),
+      freshnessClass: governance.freshnessClass ?? updatePolicy.volatility,
+      lastVerified: governance.lastVerified ?? guide.sourceReviewedDate,
+      indexApproved: governance.indexApproved,
     } satisfies ContentNode;
   });
 }
 
 export function buildSearchCollectionContentNodes(): ContentNode[] {
   return searchCollections.map((collection) => {
-    const collectionGuides = guideRegistry.filter(
+    const collectionGuides = getIndexApprovedGuides().filter(
       (guide) => getGuideCollectionId(guide) === collection.id,
     );
     const hasEnoughReviewedGuides =
@@ -351,7 +385,7 @@ export function buildSearchCollectionContentNodes(): ContentNode[] {
 
 export function buildSearchHubContentNodes(): ContentNode[] {
   return searchSectionIds.map((section) => {
-    const sectionGuides = guideRegistry.filter(
+    const sectionGuides = getIndexApprovedGuides().filter(
       (guide) => guideClassification(guide).section === section,
     );
     const approvedForIndex = approvedSearchHubIds.has(section);

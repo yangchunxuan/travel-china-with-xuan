@@ -2,7 +2,7 @@
 
 **Full source review and current-channel recheck:** 2026-09-04 (Asia/Shanghai)
 
-**Freshness class:** high volatility / on-source-change
+**Freshness class:** critical volatility / on-source-change
 
 **Editorial rule:** recheck Critical items before every publication, booking decision and travel day. Never convert a dated sample into a permanent promise.
 

@@ -43,13 +43,27 @@ const cityParents = {
   "city-chongqing": "country-china",
 };
 
+const originalEntityIds = [
+  "country-china",
+  "province-shaanxi",
+  "province-sichuan",
+  "province-guangdong",
+  "province-hunan",
+  "province-zhejiang",
+  "province-guangxi",
+  ...Object.keys(cityParents),
+];
+
 test("the canonical entity registry gives all ten cities one valid administrative chain", async () => {
   const records = JSON.parse(await source("content/entities/core-places.json"));
   const entities = records.map((record) => record.data);
   const byId = new Map(entities.map((entity) => [entity.id, entity]));
 
   assert.equal(new Set(entities.map((entity) => entity.id)).size, entities.length);
-  assert.equal(entities.length, 17, "China, six province-level nodes and ten cities");
+  assert.equal(originalEntityIds.length, 17);
+  for (const entityId of originalEntityIds) {
+    assert.ok(byId.has(entityId), `${entityId} remains in the extensible registry`);
+  }
 
   for (const [cityId, parentId] of Object.entries(cityParents)) {
     assert.deepEqual(byId.get(cityId)?.parentEntityIds, [parentId], cityId);

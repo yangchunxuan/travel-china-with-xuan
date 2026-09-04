@@ -1,5 +1,13 @@
 {
   "id": "yunnan-wild-mushroom-hotpot-safe-ordering",
+  "candidateId": "w3-seo-20260901-04",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "culture-regional-food",
+  "primaryEntityId": "dish-yunnan-wild-mushroom-hotpot",
+  "secondaryEntityIds": ["practical-topic-wild-mushroom-food-safety", "province-yunnan", "city-kunming", "country-china"],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "culture-regional-food",
   "audienceMarkets": ["global"],

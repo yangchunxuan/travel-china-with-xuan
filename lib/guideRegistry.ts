@@ -8,6 +8,11 @@ import {
   generatedGuideIds,
   generatedGuideRegistry,
 } from "./generated/guideRegistry.generated";
+import {
+  assertGuideGovernanceCoverage,
+  isGuideIndexApproved,
+  type ExplicitGuideGovernanceFields,
+} from "./guideGovernance";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -82,7 +87,7 @@ export interface GuideLocaleEntry {
   cardTags?: readonly string[];
 }
 
-export interface GuideEntry {
+export interface GuideEntry extends Partial<ExplicitGuideGovernanceFields> {
   id: GuideId;
   /** Kept for compatibility with existing article and homepage consumers. */
   type: "route" | "planning" | "field-note";
@@ -1171,6 +1176,8 @@ export const guideRegistry: readonly GuideEntry[] = [
   ...generatedGuides,
 ];
 
+assertGuideGovernanceCoverage(guideRegistry);
+
 const registeredIds = new Set<string>();
 const registeredPaths = new Set<string>();
 for (const guide of guideRegistry) {
@@ -1227,14 +1234,20 @@ export function getFeaturedGuides(locale: HomegroundLocale = "en", limit = 3) {
 
 export function getHomeFeaturedGuides(locale: HomegroundLocale = "en") {
   return guideRegistry
-    .filter((entry) => "homeFeaturedRank" in entry)
+    .filter(
+      (entry) =>
+        isGuideIndexApproved(entry) && "homeFeaturedRank" in entry,
+    )
     .sort((a, b) => a.homeFeaturedRank - b.homeFeaturedRank)
     .map((entry) => getGuideEntry(entry.id, locale));
 }
 
 export function getAllGuides(locale: HomegroundLocale = "en") {
   return guideRegistry
-    .filter((entry) => Boolean(entry.locales[locale]))
+    .filter(
+      (entry) =>
+        isGuideIndexApproved(entry) && Boolean(entry.locales[locale]),
+    )
     .map((entry, registryIndex) => ({
       entry,
       registryIndex,
@@ -1248,6 +1261,14 @@ export function getAllGuides(locale: HomegroundLocale = "en") {
         a.registryIndex - b.registryIndex,
     )
     .map(({ entry }) => getGuideEntry(entry.id, locale));
+}
+
+export function getIndexApprovedGuides(locale?: HomegroundLocale) {
+  return guideRegistry.filter(
+    (entry) =>
+      isGuideIndexApproved(entry) &&
+      (locale === undefined || Boolean(entry.locales[locale])),
+  );
 }
 
 export function getGuidesByPillar(

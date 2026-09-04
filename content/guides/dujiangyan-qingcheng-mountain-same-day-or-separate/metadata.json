@@ -1,5 +1,18 @@
 {
   "id": "dujiangyan-qingcheng-mountain-same-day-or-separate",
+  "candidateId": "dest-seo-20260901-06",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "explore-attractions-nature-heritage",
+  "primaryEntityId": "city-dujiangyan",
+  "secondaryEntityIds": [
+    "heritage-site-dujiangyan-irrigation-system",
+    "natural-feature-qingcheng-mountain",
+    "city-chengdu",
+    "province-sichuan"
+  ],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "explore-attractions-nature-heritage",
   "audienceMarkets": ["global"],

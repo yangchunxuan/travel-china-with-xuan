@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "Chengdu Wuhou Shrine is worth visiting if you read it as a layered memorial, not as a preserved Three Kingdoms palace or a walk-through version of *Romance of the Three Kingdoms*. Start under the gate marked `漢昭烈廟` (simplified: `汉昭烈庙`)—Han Zhaolie Temple, named for Liu Bei—then use a dated Tang stele, the Qing-period hall hierarchy, a relocated Sanyi Temple, Huiling and modern Jinli to ask a different question at every stop. The historical people are real; the visible architecture, statues, literary scenes and visitor street belong to different centuries and kinds of evidence. With that key, even a traveller who has never read the novel can make sense of the site.",
+      text: "Chengdu Wuhou Shrine is worth visiting if you read it as a layered memorial, not as a preserved Three Kingdoms palace or a walk-through version of Romance of the Three Kingdoms. Start under the gate marked 漢昭烈廟 (simplified: 汉昭烈庙)—Han Zhaolie Temple, named for Liu Bei—then use a dated Tang stele, the Qing-period hall hierarchy, a relocated Sanyi Temple, Huiling and modern Jinli to ask a different question at every stop. The historical people are real; the visible architecture, statues, literary scenes and visitor street belong to different centuries and kinds of evidence. With that key, even a traveller who has never read the novel can make sense of the site.",
     },
     {
       id: "answer",
@@ -36,7 +36,7 @@ const body = {
     {
       id: "gate-p1",
       type: "paragraph",
-      text: "Look up before entering. The plaque uses the traditional characters `漢昭烈廟` (simplified: `汉昭烈庙`), Han Zhaolie Temple: Zhaolie is Liu Bei’s posthumous imperial title. Yet residents and visitors commonly call the whole complex Wuhou Shrine, using Zhuge Liang’s title, Marquis Wu. That mismatch is not a sign that you found the wrong entrance. It is the first physical clue that several memorial identities were combined and that popular memory did not follow the official hierarchy neatly.",
+      text: "Look up before entering. The plaque uses the traditional characters 漢昭烈廟 (simplified: 汉昭烈庙), Han Zhaolie Temple: Zhaolie is Liu Bei’s posthumous imperial title. Yet residents and visitors commonly call the whole complex Wuhou Shrine, using Zhuge Liang’s title, Marquis Wu. That mismatch is not a sign that you found the wrong entrance. It is the first physical clue that several memorial identities were combined and that popular memory did not follow the official hierarchy neatly.",
     },
     {
       id: "gate-p2",
@@ -48,7 +48,7 @@ const body = {
       type: "callout",
       title: "First observation: record two names",
       tone: "neutral",
-      body: "Photograph or note the visible `漢昭烈廟` plaque only if the current sign permits it, then find `武侯祠` over the passage farther inside. The two labels mark a useful conceptual movement: from the emperor’s memorial zone to the narrower shrine for his minister. Do not turn the plaques into construction dates; names and fabric have their own histories.",
+      body: "Photograph or note the visible 漢昭烈廟 plaque only if the current sign permits it, then find 武侯祠 over the passage farther inside. The two labels mark a useful conceptual movement: from the emperor’s memorial zone to the narrower shrine for his minister. Do not turn the plaques into construction dates; names and fabric have their own histories.",
     },
     {
       id: "stele-heading",
@@ -59,7 +59,7 @@ const body = {
     {
       id: "stele-p1",
       type: "paragraph",
-      text: "Inside the first courtyard, look for the stele titled `蜀丞相诸葛武侯祠堂碑`—the *Stele of the Ancestral Hall of Zhuge, Marquis Wu*. It was erected in 809, almost six centuries after Liu Bei’s death. The museum identifies Pei Du as the author, Liu Gongchuo as the calligrapher and Lu Jian as the carver. Later admirers called it the `三绝碑`, often rendered ‘Three-Success’ or ‘Three-Excellence Stele,’ because text, calligraphy and carving were each esteemed.",
+      text: "Inside the first courtyard, look for the stele titled 蜀丞相诸葛武侯祠堂碑—the Stele of the Ancestral Hall of Zhuge, Marquis Wu. It was erected in 809, almost six centuries after Liu Bei’s death. The museum identifies Pei Du as the author, Liu Gongchuo as the calligrapher and Lu Jian as the carver. Later admirers called it the 三绝碑, often rendered ‘Three-Success’ or ‘Three-Excellence Stele,’ because text, calligraphy and carving were each esteemed.",
     },
     {
       id: "stele-p2",
@@ -114,12 +114,12 @@ const body = {
     {
       id: "zhuge-p1",
       type: "paragraph",
-      text: "The passage after Liu Bei Hall carries the `武侯祠` plaque and functions as the threshold into the narrower shrine. Beyond it, Zhuge Liang Hall sits lower and is smaller than the emperor’s hall. The museum explains this as a Qing compromise: front hall ‘court’ etiquette preserved ruler–minister hierarchy, while the rear hall gave Zhuge Liang and descendants a more self-contained memorial space. You can read that spatial contrast without deciding which man was ‘more important.’ Architecture is showing a later answer to competing duties and affections.",
+      text: "The passage after Liu Bei Hall carries the 武侯祠 plaque and functions as the threshold into the narrower shrine. Beyond it, Zhuge Liang Hall sits lower and is smaller than the emperor’s hall. The museum explains this as a Qing compromise: front hall ‘court’ etiquette preserved ruler–minister hierarchy, while the rear hall gave Zhuge Liang and descendants a more self-contained memorial space. You can read that spatial contrast without deciding which man was ‘more important.’ Architecture is showing a later answer to competing duties and affections.",
     },
     {
       id: "zhuge-p2",
       type: "paragraph",
-      text: "This is also where novel knowledge can distort looking. If you arrive expecting an all-knowing strategist from *Romance of the Three Kingdoms*, every fan, robe or inscription may seem to confirm the character. Reverse the method: identify what the museum dates; separate a historical office or documented action from moral praise; then ask whether a familiar trait comes from the historical record, later worship, opera, the novel or screen adaptation. The shrine preserves the career of Zhuge Liang’s reputation as much as it explains the man.",
+      text: "This is also where novel knowledge can distort looking. If you arrive expecting an all-knowing strategist from Romance of the Three Kingdoms, every fan, robe or inscription may seem to confirm the character. Reverse the method: identify what the museum dates; separate a historical office or documented action from moral praise; then ask whether a familiar trait comes from the historical record, later worship, opera, the novel or screen adaptation. The shrine preserves the career of Zhuge Liang’s reputation as much as it explains the man.",
     },
     {
       id: "zhuge-warning",
@@ -137,7 +137,7 @@ const body = {
     {
       id: "sanyi-p1",
       type: "paragraph",
-      text: "No. Liu Bei, Guan Yu and Zhang Fei were historical people, but the hall’s architecture and images are later memorial evidence. The museum itself says the figures here were shaped from *Romance of the Three Kingdoms*. That means the completed peach-garden setting, vows and familiar symbolism should be read as literary and performance tradition, not as something this hall independently proves happened. The novel is a major cultural work, not a disguised excavation report.",
+      text: "No. Liu Bei, Guan Yu and Zhang Fei were historical people, but the hall’s architecture and images are later memorial evidence. The museum itself says the figures here were shaped from Romance of the Three Kingdoms. That means the completed peach-garden setting, vows and familiar symbolism should be read as literary and performance tradition, not as something this hall independently proves happened. The novel is a major cultural work, not a disguised excavation report.",
     },
     {
       id: "sanyi-p2",
@@ -165,12 +165,12 @@ const body = {
     {
       id: "huiling-p1",
       type: "paragraph",
-      text: "Huiling is the point where the route comes closest to a third-century event. The museum quotes the *Records of the Three Kingdoms*: Liu Bei died at Yong’an in 223, his coffin returned to Chengdu, and he was buried at Huiling in the eighth month. The official site identifies the mound here as Huiling and describes later gates, a spirit way and a resting hall around it. That gives you a historical burial statement joined to a long-maintained place identity.",
+      text: "Huiling is the point where the route comes closest to a third-century event. The museum quotes the Records of the Three Kingdoms: Liu Bei died at Yong’an in 223, his coffin returned to Chengdu, and he was buried at Huiling in the eighth month. The official site identifies the mound here as Huiling and describes later gates, a spirit way and a resting hall around it. That gives you a historical burial statement joined to a long-maintained place identity.",
     },
     {
       id: "huiling-p2",
       type: "paragraph",
-      text: "Keep the conclusion at that level. The reviewed museum sources do not say that tourists are looking into an excavated chamber, that grave goods have confirmed every tradition or that each brick, wall and gate survives from 223. A burial place can retain powerful continuity while its approach, enclosure, inscription and repaired fabric belong to later protection. Look for the mound form, the `惠陵` or imperial-tomb labels and the relationship to the shrine axis; do not search for an exposed tomb interior.",
+      text: "Keep the conclusion at that level. The reviewed museum sources do not say that tourists are looking into an excavated chamber, that grave goods have confirmed every tradition or that each brick, wall and gate survives from 223. A burial place can retain powerful continuity while its approach, enclosure, inscription and repaired fabric belong to later protection. Look for the mound form, the 惠陵 or imperial-tomb labels and the relationship to the shrine axis; do not search for an exposed tomb interior.",
     },
     {
       id: "huiling-test",
@@ -248,7 +248,7 @@ const body = {
       type: "callout",
       title: "Personal photos are not a site-wide promise",
       tone: "warning",
-      body: "The current rules explicitly ban unapproved commercial shooting and livestream selling and forbid touching or climbing on heritage. They do not amount to blanket permission for personal photography in every room. Read the sign at each doorway, follow staff instructions, keep away from barriers and never use a photograph of a statue as a verified likeness. Ask: `这里可以拍照吗？不用闪光灯。`—‘May I take a photo here? I will not use flash.’",
+      body: "The current rules explicitly ban unapproved commercial shooting and livestream selling and forbid touching or climbing on heritage. They do not amount to blanket permission for personal photography in every room. Read the sign at each doorway, follow staff instructions, keep away from barriers and never use a photograph of a statue as a verified likeness. Ask: ‘这里可以拍照吗？不用闪光灯。’—‘May I take a photo here? I will not use flash.’",
     },
     {
       id: "phrase-table",

@@ -29,11 +29,13 @@ FreshnessClass: **critical-on-gacc-country-lab-port-or-quarantine-change**
 ## Publication-time mandatory checks
 
 1. Reopen GACC's carried-item quarantine service guide and Announcements No. 5, No. 64, No. 31 and No. 133.
-2. Verify the current designated-origin list, recognised-laboratory list and ports with isolation facilities from an accessible official source.
-3. Use the service guide's consultation route or 12360 to reach the actual arrival Customs office; ask about the exact origin, transit, chip, certificates, report, forms, port and terminal.
-4. Confirm whether the carrier calls the itinerary the No. 133 international-through-flight service; do not infer that status from a connection or through-checked bag.
-5. Confirm the exporting authority's China certificate/endorsement process and every carrier/airport's animal-transport process separately; for Australia, reopen both current Micor entries.
+2. Confirm that changing designated-origin, recognised-laboratory and isolation-facility lists are still kept out of evergreen body copy and that the official current-list/consultation route remains available.
+3. Preserve the explicit instruction that each traveller must use the service guide's consultation route or 12360 and the actual arrival Customs office for the exact origin, transit, chip, certificates, report, forms, port and terminal before the animal flies.
+4. Preserve the instruction that each traveller must confirm whether the carrier calls the itinerary the No. 133 international-through-flight service; never infer that status from a connection or through-checked bag.
+5. Preserve the separate case-level check with the exporting authority and every carrier/airport; for Australia, recheck both current Micor entries before publication and require the traveller to recheck them for the actual journey.
 6. Reconcile the pet-specific No. 5 framework with the incomplete general summaries and any local conflict; preserve dated copies without treating a summary as repeal.
 7. Recheck every number and sequence: one pet, 30 days, 14 days, second-vaccination/blood-draw order, one-year result plus revaccination exception, and the 0.5 wording.
 8. Verify the current baggage-declaration and dog/cat registration-form format and filing place.
 9. Confirm that EN, ZH and KO carry identical branch conditions, consequences, conflicts and no-go recovery.
+
+These are two distinct controls: the publication check validates the guide's current rules, official verification route and fail-closed wording; the traveller-specific execution check validates one real animal and itinerary. Publication never constitutes Customs, airline or port pre-clearance.

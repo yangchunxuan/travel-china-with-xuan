@@ -21,6 +21,7 @@ async function loadJson(relativePath) {
 
 test("the Search Map complete inventory covers every current guide directory", async () => {
   const searchMap = await loadSearchMap();
+  const governance = await loadJson("content/guide-governance.json");
   const guideDirectories = (await readdir(
     path.join(projectRoot, "content/guides"),
     { withFileTypes: true },
@@ -30,13 +31,24 @@ test("the Search Map complete inventory covers every current guide directory", a
     .sort();
   const inventory = searchMap.coverage.publishedInventory;
   const inventoryIds = new Set(inventory.identityIds);
+  const pendingNewGuideIds = new Set(
+    governance.candidates
+      .filter((candidate) =>
+        candidate.centralDecision !== "approved" &&
+        candidate.candidateAction !== "update-existing"
+      )
+      .map((candidate) => candidate.guideId),
+  );
+  const baselineDirectories = guideDirectories.filter(
+    (id) => !pendingNewGuideIds.has(id),
+  );
 
   assert.equal(searchMap.snapshotDate, "2026-08-23");
   assert.equal(
     inventory.baseCommit,
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
-  assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
+  assert.equal(inventory.generatedIdentityCount, baselineDirectories.length);
   assert.equal(inventory.generatedIdentityCount, 173);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
   assert.equal(inventory.identityCount, 192);
@@ -49,9 +61,19 @@ test("the Search Map complete inventory covers every current guide directory", a
     "the complete inventory must remain deterministically sorted",
   );
   assert.deepEqual(
-    guideDirectories.filter((id) => !inventoryIds.has(id)),
+    baselineDirectories.filter((id) => !inventoryIds.has(id)),
     [],
-    "every current guide directory must be in the complete Search Map inventory",
+    "every frozen-baseline guide directory must remain in the published Search Map inventory",
+  );
+  assert.deepEqual(
+    guideDirectories.filter((id) => !inventoryIds.has(id)).sort(),
+    [...pendingNewGuideIds].sort(),
+    "only centrally pending new candidates may be absent from the published inventory",
+  );
+  assert.deepEqual(
+    [...pendingNewGuideIds].filter((id) => inventoryIds.has(id)),
+    [],
+    "pending candidates must not be represented as published Search Map inventory",
   );
   assert.equal(
     inventory.identityIds.filter((id) => !guideDirectories.includes(id)).length,
@@ -191,11 +213,44 @@ test("the 60-guide remote batch is reserved but excluded from published inventor
 
 test("entity evidence and detailed published assignments match current repository sources", async () => {
   const searchMap = await loadSearchMap();
+  const governance = await loadJson("content/guide-governance.json");
   const assignments = searchMap.taxonomy.entityAssignments;
   const entityRecords = await loadJson("content/entities/core-places.json");
+  const entityRecordsById = new Map(
+    entityRecords.map((record) => [record.data.id, record.data]),
+  );
+  const pendingEntityIds = new Set();
+  const addPendingEntity = (entityId) => {
+    if (!entityId || pendingEntityIds.has(entityId)) return;
+    pendingEntityIds.add(entityId);
+    for (const parentId of entityRecordsById.get(entityId)?.parentEntityIds ?? []) {
+      addPendingEntity(parentId);
+    }
+  };
+  for (const candidate of governance.candidates.filter(
+    (record) => record.centralDecision !== "approved",
+  )) {
+    const metadata = await loadJson(`content/guides/${candidate.guideId}/metadata.json`);
+    for (const entityId of [
+      metadata.primaryEntityId,
+      ...(metadata.secondaryEntityIds ?? []),
+      ...resolveGuideEntities(metadata.destinations).entityIds,
+    ]) {
+      addPendingEntity(entityId);
+    }
+  }
+  const repositoryEntityIds = entityRecords.map((record) => record.data.id);
   assert.deepEqual(
-    assignments.repositoryEntityIds,
-    entityRecords.map((record) => record.data.id),
+    assignments.repositoryEntityIds.filter((id) => !entityRecordsById.has(id)),
+    [],
+    "every published Search Map entity must still exist in the controlled registry",
+  );
+  assert.deepEqual(
+    repositoryEntityIds.filter(
+      (id) => !assignments.repositoryEntityIds.includes(id) && !pendingEntityIds.has(id),
+    ),
+    [],
+    "registry growth outside the published Search Map must be justified by a governed pending candidate",
   );
 
   for (const evidencePaths of Object.values(assignments.repositoryEntityEvidence)) {
@@ -219,10 +274,19 @@ test("entity evidence and detailed published assignments match current repositor
     const metadataPath = path.join(projectRoot, "content/guides", id, "metadata.json");
     try {
       const metadata = JSON.parse(await readFile(metadataPath, "utf8"));
+      const documented = assignments.publishedRepositoryEntityIds[id];
+      const resolved = resolveGuideEntities(metadata.destinations).entityIds;
       assert.deepEqual(
-        [...assignments.publishedRepositoryEntityIds[id]].sort(),
-        [...resolveGuideEntities(metadata.destinations).entityIds].sort(),
-        id,
+        documented.filter((entityId) => !resolved.includes(entityId)),
+        [],
+        `${id}: a published Search Map entity disappeared from runtime resolution`,
+      );
+      assert.deepEqual(
+        resolved.filter(
+          (entityId) => !documented.includes(entityId) && !pendingEntityIds.has(entityId),
+        ),
+        [],
+        `${id}: runtime entity expansion is not attributable to a governed pending candidate`,
       );
     } catch (error) {
       if (error?.code !== "ENOENT") throw error;

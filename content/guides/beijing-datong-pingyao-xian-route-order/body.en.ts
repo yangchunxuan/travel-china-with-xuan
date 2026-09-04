@@ -16,7 +16,7 @@ const body = {
         ["Neither", "Beijing and Xi'an hold the trip-defining priorities or the rail/hotel chain is weak", "Less thematic breadth, but more depth and a simpler recovery path"],
       ],
     },
-    { id: "scope-boundary", type: "callout", tone: "neutral", title: "This is not an ancient-China checklist", body: "This page owns the keep/cut and order decision for these four named bases. It does not provide live trains, a Shanxi sightseeing itinerary, attraction tickets, or the nationwide archaeology route." },
+    { id: "scope-boundary", type: "callout", tone: "neutral", title: "This is not an ancient-China checklist", body: "This guide helps you decide which of these four bases to keep or cut, and in what order. It does not provide live trains, a Shanxi sightseeing itinerary, attraction tickets, or the nationwide archaeology route." },
     { id: "roles-heading", type: "heading", level: 2, text: "Datong and Pingyao are not substitute versions of the same stop" },
     { id: "roles-context", type: "paragraph", text: "UNESCO describes Yungang as a major achievement of Buddhist cave art associated with the Northern Wei period. The Ancient City of Ping Yao is a separate World Heritage property valued for a traditional Han Chinese city form and its role in Chinese banking and commerce. Those statements explain why a traveller might want both; they do not prove that both fit the available nights, that every component is open, or that a package-tour sequence is operational on your date." },
     {

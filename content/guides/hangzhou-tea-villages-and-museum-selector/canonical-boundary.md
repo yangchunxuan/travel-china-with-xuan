@@ -40,6 +40,6 @@ Reviewed: 2026-09-01, Asia/Shanghai
 
 Checked current `origin/main`, Search Map reservations, unmerged `origin/article/*` and `origin/codex/*` identities on 2026-09-01. No exact three-way tea-village/museum owner was found. The article must remain a place-role selector and not split Longjing, Meijiawu or the two museum campuses into near-synonym pages.
 
-## Central integration dependency
+## Central taxonomy reconciliation
 
-This article records only the centrally approved `hangzhou` destination token. Adding the article to Hangzhou Hub `supportGuideIds`, Search Map production counts, entity-detail mappings and generated registry files belongs to central integration and is intentionally not changed on this article branch.
+The governed primary remains `city-hangzhou` because this is a selector among several peer places rather than a page owned by any one village or museum campus. Controlled supporting entities now distinguish Xihu District, Longjing Village, Meijiawu, China National Tea Museum and its Shuangfeng and Longjing campuses. Candidate structured entities consume those governed IDs directly; the frozen legacy destination resolver remains at Hangzhou. This taxonomy reconciliation does not change the Hangzhou Hub, Search Map or publication approval.

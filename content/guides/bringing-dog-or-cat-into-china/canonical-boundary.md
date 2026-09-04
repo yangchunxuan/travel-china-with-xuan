@@ -37,6 +37,8 @@ The exact slug and task were absent from the baseline guide directory and genera
 - Do not treat an incomplete general summary as repeal of the pet-specific Announcement No. 5; use its conditional branches plus current dynamic lists without promising release.
 - Apply Announcement No. 133's facility-port gate only when the carrier confirms the itinerary is its defined international-through-flight service; do not infer that status from an ordinary connection.
 
-## Publication gate
+## Publication and traveller-specific execution gates
 
-Central should not publish until a fresh check confirms the current GACC designated-origin list, recognised-laboratory list and ports with isolation facilities, the current declaration/registration forms, and the actual arrival port's handling of the chosen branch. For an Australia-origin animal, recheck the current Micor dog/cat entry; for a claimed No. 133 itinerary, obtain the carrier's classification and first-port handoff. Failure to reach an official contact is not approval; the plan remains no-go until a humane, document-complete route is confirmed.
+Publication requires a fresh check that the authoritative GACC consultation route and governing rules remain current, that this page still avoids freezing changing origin/laboratory/port lists, and that every language preserves the same conditional and humane no-go logic. It does **not** require one airport to pre-clear every future traveller's unpublished itinerary; this is a generic decision guide, not a case approval or a current facility directory.
+
+Before an individual animal flies, the traveller must separately confirm the current designated-origin and recognised-laboratory branches, any isolation-facility requirement, current declaration/registration forms, and the actual arrival port's handling of the exact itinerary. For an Australia-origin animal, recheck the current Micor dog/cat entry; for a claimed No. 133 itinerary, obtain the carrier's classification and first-port handoff. Failure to reach the responsible official contact is not approval: that individual plan remains no-go until a humane, document-complete route is confirmed.

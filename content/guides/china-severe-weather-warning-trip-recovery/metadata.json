@@ -1,5 +1,13 @@
 {
   "id": "china-severe-weather-warning-trip-recovery",
+  "candidateId": "e6-20260901-02",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "essentials-booking-registration-recovery",
+  "primaryEntityId": "country-china",
+  "secondaryEntityIds": [],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "entry-practicalities",
   "audienceMarkets": ["global"],

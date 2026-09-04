@@ -1,5 +1,13 @@
 {
   "id": "animal-bite-rabies-exposure-china",
+  "candidateId": "e6-20260901-01",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "essentials-entry-transit",
+  "primaryEntityId": "country-china",
+  "secondaryEntityIds": [],
+  "freshnessClass": "critical",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "entry-practicalities",
   "audienceMarkets": ["global"],

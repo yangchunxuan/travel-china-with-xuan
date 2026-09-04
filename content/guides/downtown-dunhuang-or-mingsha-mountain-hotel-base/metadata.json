@@ -1,5 +1,13 @@
 {
   "id": "downtown-dunhuang-or-mingsha-mountain-hotel-base",
+  "candidateId": "stay-seo-20260901-06",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "stay-city-areas",
+  "primaryEntityId": "city-dunhuang",
+  "secondaryEntityIds": ["province-gansu", "heritage-site-mogao-caves", "attraction-mingsha-crescent-spring", "transport-node-dunhuang-station", "transport-node-dunhuang-mogao-airport"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-04",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "stay-city-areas",
   "audienceMarkets": ["global"],

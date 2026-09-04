@@ -1,5 +1,13 @@
 {
   "id": "quanzhou-old-city-maritime-heritage-walk",
+  "candidateId": "dest-seo-20260901-11",
+  "editorialStatus": "provisional",
+  "primaryCollectionId": "explore-cities-neighborhoods",
+  "primaryEntityId": "neighborhood-quanzhou-old-city",
+  "secondaryEntityIds": ["district-licheng-quanzhou", "heritage-site-kaiyuan-temple-quanzhou", "heritage-site-qingjing-mosque-quanzhou", "heritage-site-deji-gate-quanzhou", "heritage-site-tianhou-temple-quanzhou", "neighborhood-west-street-quanzhou", "city-quanzhou", "province-fujian"],
+  "freshnessClass": "high",
+  "lastVerified": "2026-09-01",
+  "indexApproved": false,
   "type": "planning",
   "pillar": "explore-cities-neighborhoods",
   "audienceMarkets": ["global"],

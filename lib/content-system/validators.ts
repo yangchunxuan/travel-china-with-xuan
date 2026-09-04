@@ -372,6 +372,33 @@ function checkContentDates(value: unknown, path: string, issues: ValidationIssue
   for (const key of ["datePublished", "dateModified", "lastReviewed"] as const) {
     if (key in record) checkDate(record[key], `${path}.${key}`, issues, true);
   }
+  const today = new Date().toISOString().slice(0, 10);
+  for (const key of ["datePublished", "dateModified"] as const) {
+    if (
+      typeof record[key] === "string" &&
+      isStrictCalendarDate(record[key]) &&
+      record[key] > today
+    ) {
+      issue(
+        issues,
+        `${path}.${key}`,
+        "future_content_date",
+        `${key} cannot be in the future.`,
+      );
+    }
+  }
+  if (
+    typeof record.datePublished === "string" &&
+    typeof record.dateModified === "string" &&
+    record.dateModified < record.datePublished
+  ) {
+    issue(
+      issues,
+      `${path}.dateModified`,
+      "date_order_invalid",
+      "dateModified cannot be earlier than datePublished.",
+    );
+  }
 }
 
 function checkUpdatePolicy(value: unknown, path: string, issues: ValidationIssue[]) {
@@ -596,6 +623,14 @@ function checkContentNode(value: unknown, path: string, issues: ValidationIssue[
       "schemaTypes",
       "legacyAliases",
       "dates",
+      "candidateId",
+      "editorialStatus",
+      "primaryCollectionId",
+      "primaryEntityId",
+      "secondaryEntityIds",
+      "freshnessClass",
+      "lastVerified",
+      "indexApproved",
     ],
     required,
     path,
@@ -661,6 +696,134 @@ function checkContentNode(value: unknown, path: string, issues: ValidationIssue[
   if ("dates" in record) checkContentDates(record.dates, `${path}.dates`, issues);
   checkUpdatePolicy(record.updatePolicy, `${path}.updatePolicy`, issues);
 
+  const guideGovernanceFields = [
+    "candidateId",
+    "editorialStatus",
+    "primaryCollectionId",
+    "primaryEntityId",
+    "secondaryEntityIds",
+    "freshnessClass",
+    "lastVerified",
+    "indexApproved",
+  ] as const;
+  const suppliedGuideGovernanceFields = guideGovernanceFields.filter(
+    (key) => key in record,
+  );
+  if (record.id?.toString().startsWith("guide-") && suppliedGuideGovernanceFields.length !== guideGovernanceFields.length) {
+    issue(
+      issues,
+      path,
+      "incomplete_guide_governance",
+      "Guide content nodes require the complete release-governance bundle.",
+    );
+  }
+  if (suppliedGuideGovernanceFields.length > 0) {
+    if (record.candidateId !== null) checkId(record.candidateId, `${path}.candidateId`, issues);
+    checkEnum(
+      record.editorialStatus,
+      ["provisional", "approved", "retired"] as const,
+      `${path}.editorialStatus`,
+      issues,
+    );
+    if (record.primaryCollectionId !== null) {
+      checkId(record.primaryCollectionId, `${path}.primaryCollectionId`, issues);
+    }
+    if (record.primaryEntityId !== null) {
+      checkId(record.primaryEntityId, `${path}.primaryEntityId`, issues);
+    }
+    checkStringArray(record.secondaryEntityIds, `${path}.secondaryEntityIds`, issues, { ids: true });
+    checkEnum(
+      record.freshnessClass,
+      ["low", "medium", "high", "critical"] as const,
+      `${path}.freshnessClass`,
+      issues,
+    );
+    checkDate(record.lastVerified, `${path}.lastVerified`, issues, true);
+    checkBoolean(record.indexApproved, `${path}.indexApproved`, issues);
+    if (record.indexApproved === true && record.editorialStatus !== "approved") {
+      issue(
+        issues,
+        `${path}.indexApproved`,
+        "index_approval_without_editorial_approval",
+        "Guide index approval requires editorialStatus=approved.",
+      );
+    }
+    if (Array.isArray(record.entityIds)) {
+      const declaredEntityIds = record.entityIds;
+      if (
+        typeof record.primaryEntityId === "string" &&
+        !declaredEntityIds.includes(record.primaryEntityId)
+      ) {
+        issue(
+          issues,
+          `${path}.primaryEntityId`,
+          "primary_entity_not_in_entity_ids",
+          "primaryEntityId must also appear in entityIds.",
+        );
+      }
+      if (Array.isArray(record.secondaryEntityIds)) {
+        record.secondaryEntityIds.forEach((entityId, index) => {
+          if (typeof entityId === "string" && !declaredEntityIds.includes(entityId)) {
+            issue(
+              issues,
+              `${path}.secondaryEntityIds[${index}]`,
+              "secondary_entity_not_in_entity_ids",
+              "Every secondary entity must also appear in entityIds.",
+            );
+          }
+        });
+      }
+    }
+    if (
+      typeof record.primaryCollectionId === "string" &&
+      record.parentContentId !== `collection-${record.primaryCollectionId}`
+    ) {
+      issue(
+        issues,
+        `${path}.primaryCollectionId`,
+        "collection_parent_mismatch",
+        "primaryCollectionId must match parentContentId.",
+      );
+    }
+    if (typeof record.primaryCollectionId === "string") {
+      const expectedSection = record.primaryCollectionId.startsWith("timing-")
+        ? "when-to-go"
+        : record.primaryCollectionId.split("-", 1)[0];
+      if (record.section !== expectedSection) {
+        issue(
+          issues,
+          `${path}.primaryCollectionId`,
+          "collection_section_mismatch",
+          `The collection belongs to section ${expectedSection}.`,
+        );
+      }
+    }
+    if (
+      typeof record.lastVerified === "string" &&
+      isRecord(record.dates) &&
+      record.dates.lastReviewed !== record.lastVerified
+    ) {
+      issue(
+        issues,
+        `${path}.lastVerified`,
+        "verification_date_mismatch",
+        "lastVerified must equal dates.lastReviewed.",
+      );
+    }
+    if (
+      typeof record.freshnessClass === "string" &&
+      isRecord(record.updatePolicy) &&
+      record.updatePolicy.volatility !== record.freshnessClass
+    ) {
+      issue(
+        issues,
+        `${path}.freshnessClass`,
+        "freshness_policy_mismatch",
+        "freshnessClass must equal updatePolicy.volatility.",
+      );
+    }
+  }
+
   const status = record.status as ContentStatus;
   const indexability = isRecord(record.indexability) ? record.indexability : null;
   if (indexability?.index === true && status !== "published") {
@@ -669,6 +832,18 @@ function checkContentNode(value: unknown, path: string, issues: ValidationIssue[
       `${path}.indexability.index`,
       "unpublished_indexable",
       "Only published content can be indexable.",
+    );
+  }
+  if (
+    record.id?.toString().startsWith("guide-") &&
+    indexability?.index === true &&
+    record.indexApproved !== true
+  ) {
+    issue(
+      issues,
+      `${path}.indexability.index`,
+      "guide_index_gate_bypass",
+      "A guide content node cannot be indexable without indexApproved=true.",
     );
   }
   if (indexability?.index === true && locales) {
