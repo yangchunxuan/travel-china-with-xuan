@@ -1,0 +1,86 @@
+{
+  "id": "dujiangyan-qingcheng-mountain-same-day-or-separate",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "destination-allocation-decision",
+  "topics": ["dujiangyan", "mount-qingcheng", "qingcheng-front-mountain", "chengdu-day-trip", "world-heritage", "same-day-or-separate", "weather-recovery", "slow-travel"],
+  "destinations": ["chengdu"],
+  "heroImagePath": "/images/guides/dujiangyan-qingcheng-mountain-same-day-or-separate/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dujiangyan-qingcheng-mountain-same-day-or-separate/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": {
+    "section": "explore",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "searchTerms": {
+    "en": ["Dujiangyan and Qingcheng Mountain same day", "Dujiangyan or Mount Qingcheng", "Qingcheng Mountain day trip from Chengdu", "Dujiangyan Qingcheng one day or two"],
+    "zh": ["都江堰青城山一天还是两天", "都江堰和青城山怎么选", "青城前山都江堰一日游取舍", "成都出发都江堰青城山安排"],
+    "ko": ["두장옌 칭청산 하루에 같이", "두장옌 또는 칭청산 선택", "청두 칭청산 당일치기", "두장옌 칭청산 1일 2일"]
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dujiangyan-qingcheng-mountain-same-day-or-separate/",
+      "title": "Dujiangyan + Mount Qingcheng: Same Day or Separate?",
+      "headline": "Dujiangyan and Mount Qingcheng: combine in one day or split them?",
+      "description": "Decide whether Dujiangyan and Mount Qingcheng Front Mountain fit one day, what each visit must keep, when to split them and how to recover from closures.",
+      "heroAlt": "Baopingkou diversion passage and an adjacent traditional building beside fast-moving water at the Dujiangyan Irrigation System",
+      "heroCredit": {
+        "text": "‘都江堰宝瓶口’ by Jason / Tainanian, photographed on 25 October 2019. Homeground cropped the image to 16:10, resized it and converted it to WebP. The source identifies the Baopingkou context but does not independently identify every visible building or establish the water level, route access or operating conditions on your date.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%83%BD%E6%B1%9F%E5%A0%B0%E5%AE%9D%E7%93%B6%E5%8F%A3.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "Dujiangyan and Qingcheng in one or two days",
+      "featuredLinkLabel": "Can Dujiangyan and Mount Qingcheng share one day?",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chengdu", "Dujiangyan", "Mount Qingcheng"]
+    },
+    "zh": {
+      "path": "/zh/guides/dujiangyan-qingcheng-mountain-same-day-or-separate/",
+      "title": "都江堰与青城山：一天走完，还是分开安排？",
+      "headline": "都江堰与青城山：放在同一天，还是分开安排？",
+      "description": "判断都江堰与青城前山能否合在一天，理解两处各自必须保留什么、何时应拆成两天，以及关闭或天气变化时怎样恢复。",
+      "heroAlt": "都江堰水利工程中宝瓶口泄流通道、相邻传统建筑与快速流动的水面",
+      "heroCredit": {
+        "text": "Jason / Tainanian 于 2019 年 10 月 25 日拍摄《都江堰宝瓶口》。Homeground 将照片裁成 16:10、缩放并转为 WebP。来源可确认宝瓶口的空间背景，但不能独立确认画面中每一座建筑的身份，也不能证明出行当天水位、路线开放或运营状况。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%83%BD%E6%B1%9F%E5%A0%B0%E5%AE%9D%E7%93%B6%E5%8F%A3.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "都江堰与青城山一天还是两天",
+      "featuredLinkLabel": "都江堰与青城山能否安排在同一天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["成都", "都江堰", "青城山"]
+    },
+    "ko": {
+      "path": "/ko/guides/dujiangyan-qingcheng-mountain-same-day-or-separate/",
+      "title": "두장옌과 칭청산: 하루에 함께 볼까, 나눌까?",
+      "headline": "두장옌과 칭청산: 하루에 묶을까, 나눌까?",
+      "description": "두장옌과 칭청산 앞산을 하루에 볼 수 있는지, 각 방문에서 무엇을 지켜야 하는지, 언제 나눌지와 폐쇄 시 회복 방법을 결정합니다.",
+      "heroAlt": "두장옌 관개 시설의 바오핑커우 수로와 인접한 전통 건물, 빠르게 흐르는 물",
+      "heroCredit": {
+        "text": "Jason / Tainanian이 2019년 10월 25일 촬영한 ‘都江堰宝瓶口’. Homeground가 16:10으로 자르고 크기를 조정해 WebP로 변환했습니다. 출처는 바오핑커우의 공간적 맥락을 확인해 주지만 화면 속 모든 건물의 정체를 독립적으로 확인해 주지는 않으며, 여행 당일 수위·동선 개방·운영 상태도 증명하지 않습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%83%BD%E6%B1%9F%E5%A0%B0%E5%AE%9D%E7%93%B6%E5%8F%A3.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "두장옌과 칭청산 하루 또는 이틀",
+      "featuredLinkLabel": "두장옌과 칭청산을 하루에 함께 볼 수 있을까",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["청두", "두장옌", "칭청산"]
+    }
+  }
+}

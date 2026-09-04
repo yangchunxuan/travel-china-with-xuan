@@ -1,0 +1,86 @@
+{
+  "id": "dapeng-fortress-jiaochangwei-day-trip-decision",
+  "type": "planning",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": ["global"],
+  "format": "destination-day-trip-decision",
+  "topics": ["dapeng-fortress", "jiaochangwei", "shenzhen-day-trip", "dapeng-new-district", "coastal-village", "heritage-settlement", "day-trip-or-overnight", "weather-recovery"],
+  "destinations": ["shenzhen"],
+  "heroImagePath": "/images/guides/dapeng-fortress-jiaochangwei-day-trip-decision/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dapeng-fortress-jiaochangwei-day-trip-decision/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": {
+    "section": "explore",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "searchTerms": {
+    "en": ["is Dapeng Fortress worth visiting", "Dapeng Fortress and Jiaochangwei day trip", "Shenzhen eastern coast day trip", "Dapeng day trip or overnight"],
+    "zh": ["大鹏所城较场尾一日游值不值得", "深圳大鹏所城和较场尾怎么选", "大鹏一日游还是住一晚", "深圳东部一日游取舍"],
+    "ko": ["다펑소청 자오창웨이 당일치기 가치", "선전 다펑소청 자오창웨이 함께 보기", "다펑 당일치기 또는 1박", "선전 동부 해안 당일 여행 선택"]
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dapeng-fortress-jiaochangwei-day-trip-decision/",
+      "title": "Dapeng Fortress + Jiaochangwei: Full Day or Skip?",
+      "headline": "Choose a full day, fortress only, overnight or skip Shenzhen's eastern edge",
+      "description": "Decide whether Dapeng Fortress and Jiaochangwei deserve a full Shenzhen day, what each place adds, when to stay overnight and what to cut if conditions change.",
+      "heroAlt": "East Gate tower and brick wall of Dapeng Fortress framed by large trees, with visitors in the paved forecourt",
+      "heroCredit": {
+        "text": "‘Dapeng Fortress, Shenzhen’ by Dinkun Chen, photographed on 10 November 2022. Homeground cropped the image to 16:10, resized it and converted it to WebP. It shows the fortress gate and present public space; it does not establish current interior access, traffic, crowd levels or the condition of Jiaochangwei beach.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dapeng_Fortress,_Shenzhen.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Decide on a Dapeng Fortress day trip",
+      "featuredLinkLabel": "Is Dapeng Fortress and Jiaochangwei worth a full Shenzhen day?",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shenzhen", "Dapeng Fortress", "Day trip"]
+    },
+    "zh": {
+      "path": "/zh/guides/dapeng-fortress-jiaochangwei-day-trip-decision/",
+      "title": "大鹏所城与较场尾：整天、只看所城、过夜还是跳过？",
+      "headline": "用四个分支决定是否把深圳东部留给这趟行程",
+      "description": "判断大鹏所城与较场尾是否值得占用深圳一整天，理解两地各自提供什么、何时应住一晚，以及条件变化时先删哪一段。",
+      "heroAlt": "大树下的大鹏所城东门城楼与砖墙，前方铺装空地有少量游客",
+      "heroCredit": {
+        "text": "Dinkun Chen 于 2022 年 11 月 10 日拍摄《Dapeng Fortress, Shenzhen》。Homeground 将照片裁成 16:10、缩放并转为 WebP。它展示所城城门与现今公共空间，不能证明室内当前开放、交通、客流或较场尾海滩状况。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dapeng_Fortress,_Shenzhen.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "判断大鹏所城一日游是否值得",
+      "featuredLinkLabel": "大鹏所城与较场尾值得占用深圳一整天吗",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["深圳", "大鹏所城", "一日游"]
+    },
+    "ko": {
+      "path": "/ko/guides/dapeng-fortress-jiaochangwei-day-trip-decision/",
+      "title": "다펑소청과 자오창웨이: 하루·요새만·1박·제외 중 고르기",
+      "headline": "선전 동부를 온전히 쓸지 네 가지 갈래로 결정하기",
+      "description": "다펑소청과 자오창웨이에 선전 하루를 쓸지, 두 장소가 각각 무엇을 더하는지, 언제 1박할지, 상황이 바뀌면 무엇부터 뺄지 결정합니다.",
+      "heroAlt": "큰 나무 아래 보이는 다펑소청 동문 누각과 벽돌 성벽, 앞쪽 포장 공간의 방문객들",
+      "heroCredit": {
+        "text": "Dinkun Chen이 2022년 11월 10일 촬영한 ‘Dapeng Fortress, Shenzhen’. Homeground가 16:10으로 자르고 크기를 조정해 WebP로 변환했습니다. 성문과 현재의 공공 공간을 보여 주지만 실내의 현재 개방 여부, 교통, 혼잡도나 자오창웨이 해변 상태를 증명하지는 않습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dapeng_Fortress,_Shenzhen.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "다펑소청 당일치기 선택",
+      "featuredLinkLabel": "다펑소청과 자오창웨이에 선전 하루를 쓸 가치가 있을까",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["선전", "다펑소청", "당일치기"]
+    }
+  }
+}

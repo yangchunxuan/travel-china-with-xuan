@@ -1,0 +1,86 @@
+{
+  "id": "quanzhou-old-city-maritime-heritage-walk",
+  "type": "planning",
+  "pillar": "explore-cities-neighborhoods",
+  "audienceMarkets": ["global"],
+  "format": "evidence-led-heritage-walk",
+  "topics": ["quanzhou-old-city", "kaiyuan-temple", "qingjing-mosque", "deji-gate", "tianhou-temple", "maritime-heritage", "unesco-buffer-zone", "half-day-walk"],
+  "destinations": ["quanzhou"],
+  "heroImagePath": "/images/guides/quanzhou-old-city-maritime-heritage-walk/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/quanzhou-old-city-maritime-heritage-walk/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "searchTerms": {
+    "en": ["Quanzhou old city maritime heritage walk", "Kaiyuan Temple Qingjing Mosque walking route", "Quanzhou UNESCO old city component sites", "what to skip in Quanzhou old city"],
+    "zh": ["泉州古城海丝遗产步行路线", "开元寺清净寺怎么一起走", "泉州古城世界遗产点怎么选", "泉州古城时间不够删哪一站"],
+    "ko": ["취안저우 고성 해양유산 도보 코스", "카이위안사 칭징사 같이 걷기", "취안저우 고성 유네스코 유산 선택", "취안저우 고성 시간 부족하면 어디를 뺄까"]
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/quanzhou-old-city-maritime-heritage-walk/",
+      "title": "Quanzhou Old City Walk: Which Maritime Stops Matter?",
+      "headline": "Choose the Faith Route, the Port Route or the Full Four-Stop Walk",
+      "description": "Choose Kaiyuan Temple, Qingjing Mosque, Deji Gate and Tianhou Temple by evidence, then shorten Quanzhou's old-city walk without losing its port story.",
+      "heroAlt": "The twin pagodas of Kaiyuan Temple rising above the tiled roofs of Quanzhou's West Street district",
+      "heroCredit": {
+        "text": "‘Xi Jie (West Street), Quanzhou Aug 2023’ by HMGiovanniV, photographed on 9 August 2023. Homeground centre-cropped the image to 16:10, resized it and converted it to WebP. It shows West Street and Kaiyuan Temple's twin pagodas; it does not prove World Heritage component boundaries, the route, current traffic or crowd levels.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xi_Jie_(West_Street),_Quanzhou_Aug_2023.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Choose a Quanzhou maritime-heritage walk",
+      "featuredLinkLabel": "Which Quanzhou old-city heritage stops belong in one walk?",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Quanzhou", "Old City", "Maritime heritage"]
+    },
+    "zh": {
+      "path": "/zh/guides/quanzhou-old-city-maritime-heritage-walk/",
+      "title": "泉州古城怎么走：四处海丝遗产点怎样取舍？",
+      "headline": "宗教交汇线、港城南段，还是四站一起走？",
+      "description": "按证据选择开元寺、清净寺、德济门和天后宫，并在缩短泉州古城步行线时保住港城故事。",
+      "heroAlt": "泉州西街片区的红瓦屋顶上方，开元寺东西双塔清晰可见",
+      "heroCredit": {
+        "text": "HMGiovanniV 于 2023 年 8 月 9 日拍摄《Xi Jie (West Street), Quanzhou Aug 2023》。Homeground 居中裁成 16:10、缩放并转为 WebP。照片展示西街和开元寺双塔，不能证明世界遗产点边界、本文路线、当前交通或客流。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xi_Jie_(West_Street),_Quanzhou_Aug_2023.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "选择泉州古城海丝遗产步行线",
+      "featuredLinkLabel": "泉州古城四处海丝遗产点怎样取舍",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["泉州", "古城", "海丝遗产"]
+    },
+    "ko": {
+      "path": "/ko/guides/quanzhou-old-city-maritime-heritage-walk/",
+      "title": "취안저우 고성 도보: 해양유산 네 곳을 어떻게 고를까?",
+      "headline": "종교 교류 코스, 항구 남부 코스, 네 지점 전체 중 고르기",
+      "description": "카이위안사·칭징사·더지먼·톈허우궁을 증거별로 고르고, 항구도시 이야기를 잃지 않게 구시가지 도보를 줄입니다.",
+      "heroAlt": "취안저우 시제(西街)의 붉은 기와지붕 너머로 솟아 있는 카이위안사의 동서 쌍탑",
+      "heroCredit": {
+        "text": "HMGiovanniV가 2023년 8월 9일 촬영한 ‘Xi Jie (West Street), Quanzhou Aug 2023’. Homeground가 중앙부를 16:10으로 자르고 크기를 조정해 WebP로 변환했습니다. 시제와 카이위안사 쌍탑을 보여 주지만 세계유산 구성요소의 경계, 이 글의 동선, 현재 교통이나 혼잡도를 증명하지는 않습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xi_Jie_(West_Street),_Quanzhou_Aug_2023.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "취안저우 고성 해양유산 도보 선택",
+      "featuredLinkLabel": "취안저우 고성 유산 네 곳을 어떻게 고를까",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["취안저우", "고성", "해양유산"]
+    }
+  }
+}
