@@ -1,0 +1,106 @@
+{
+  "id": "xian-or-huayin-mount-hua-hotel-base",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "city-or-scenic-gateway-base-decision",
+  "topics": [
+    "accommodation",
+    "Xi'an",
+    "Huayin",
+    "Mount Hua",
+    "Huashan North Railway Station",
+    "first entry, last descent, opening, reservation, ropeway, trail, rail and luggage verification",
+    "Shaanxi"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/xian-or-huayin-mount-hua-hotel-base/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/xian-or-huayin-mount-hua-hotel-base/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": {
+    "section": "stay",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/xian-or-huayin-mount-hua-hotel-base/",
+      "title": "Stay in Xi’an or Huayin for Mount Hua?",
+      "headline": "Choose a Mount Hua Base by First Entry, Last Descent and Luggage",
+      "description": "Choose between a Xi’an base and a Huayin night for Mount Hua using your confirmed entry, descent chain, luggage plan, next journey and disruption fallback.",
+      "heroAlt": "Mount Hua rising behind buildings near Huashan North Railway Station in a real 2022 photograph",
+      "heroCredit": {
+        "text": "Mount Hua photographed from a train at Huashan North Railway Station by A Chinese ID on 2 April 2022; centre-cropped, resized and converted to WebP by Homeground under the same licence. The image does not prove current trains, access, accommodation or mountain operations.",
+        "sourceLabel": "Original Mount Hua from Huashan North Railway Station photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Hua,_shot_from_the_train_G1888_in_Huashanbei_Station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Xi’an or Huayin for Mount Hua",
+      "featuredLinkLabel": "Choose your Mount Hua hotel base",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Mount Hua", "Huayin", "Hotel base"]
+    },
+    "zh": {
+      "path": "/zh/guides/xian-or-huayin-mount-hua-hotel-base/",
+      "title": "去华山住西安还是华阴？",
+      "headline": "按首个入山节点、最后下山链与行李选择华山住宿基地",
+      "description": "依据已确认的检票入口、下山接驳、行李安排、下一程和中断预案，判断华山行程应连住西安还是在华阴过夜。",
+      "heroAlt": "2022年从华山北站附近列车上拍摄的城市建筑与华山实景",
+      "heroCredit": {
+        "text": "A Chinese ID 于 2022 年 4 月 2 日在华山北站列车上拍摄的华山实景；Homeground 依同一许可作居中裁切、缩放与 WebP 转换。图片不证明当前列车、通行、住宿或景区运营状况。",
+        "sourceLabel": "华山北站列车上拍摄的华山原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Hua,_shot_from_the_train_G1888_in_Huashanbei_Station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "华山住西安或华阴",
+      "featuredLinkLabel": "选择华山住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["华山", "华阴", "住宿基地"]
+    },
+    "ko": {
+      "path": "/ko/guides/xian-or-huayin-mount-hua-hotel-base/",
+      "title": "화산 여행 숙소, 시안과 화인 중 어디가 좋을까?",
+      "headline": "첫 입산 지점·마지막 하산 연결·짐으로 정하는 화산 숙박 거점",
+      "description": "확정한 검표 입구, 하산 연결, 짐 계획, 다음 이동과 운행 차질 대안을 기준으로 시안 연박과 화인 숙박을 비교합니다.",
+      "heroAlt": "2022년 화산북역 부근 열차에서 바라본 시가지 건물과 화산의 실제 모습",
+      "heroCredit": {
+        "text": "A Chinese ID가 2022년 4월 2일 화산북역의 열차에서 촬영한 화산 사진입니다. Homeground는 같은 라이선스에 따라 중앙부를 자르고 크기를 조정해 WebP로 변환했습니다. 현재 열차, 접근, 숙소 또는 산악 운영 상태를 증명하지 않습니다.",
+        "sourceLabel": "화산북역 열차에서 촬영한 화산 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Hua,_shot_from_the_train_G1888_in_Huashanbei_Station.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "화산 시안·화인 숙박",
+      "featuredLinkLabel": "화산 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["화산", "화인", "숙박 거점"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "stay in Xian or Huayin for Mount Hua",
+      "Huashan day trip or overnight",
+      "where to stay before Mount Hua"
+    ],
+    "zh": [
+      "华山前一晚住西安还是华阴",
+      "华山一日游还是住华阴",
+      "爬华山住哪里"
+    ],
+    "ko": [
+      "화산 여행 전날 시안 화인 숙소",
+      "화산 당일치기와 화인 숙박 비교",
+      "화산 여행 숙소 위치"
+    ]
+  }
+}
