@@ -154,6 +154,12 @@ export function RotatingHeroTitle({
   const currentPhraseIndex =
     availablePhrases.length > 0 ? phraseIndex % availablePhrases.length : 0;
   const currentPhrase = availablePhrases[currentPhraseIndex] ?? "";
+  const initialTitleSegments = [
+    ...availableFixedLines,
+    availablePhrases[0] ?? "",
+  ].filter(Boolean);
+  const segmentJoiner =
+    initialTitleSegments.join(" ") === canonicalTitle.trim() ? " " : "";
   const canRotate = availablePhrases.length > 1;
   const effectivePaused =
     paused ||
@@ -260,33 +266,22 @@ export function RotatingHeroTitle({
       ref={rootRef}
     >
       <h1
+        aria-label={canonicalTitle}
         className={[styles.heading, className].filter(Boolean).join(" ")}
+        data-homeground-rotating-title="true"
         id={id}
       >
-        <span className={styles.screenReaderOnly}>{canonicalTitle}</span>
-        <span
-          aria-hidden="true"
-          className={styles.visualTitle}
-          data-homeground-rotating-title="true"
-          data-nosnippet=""
-        >
+        <span className={styles.visualTitle}>
           {availableFixedLines.map((line, index) => (
             <span className={styles.fixedLine} key={`${line}-${index}`}>
               {line}
+              {index < availableFixedLines.length - 1 || currentPhrase
+                ? segmentJoiner
+                : null}
             </span>
           ))}
           {currentPhrase ? (
-            <span className={styles.phraseStage}>
-              <span className={styles.phraseSizer}>
-                {availablePhrases.map((phrase, index) => (
-                  <span
-                    className={styles.phraseMeasure}
-                    key={`${phrase}-${index}`}
-                  >
-                    <AnimatedPhrase phrase={phrase} />
-                  </span>
-                ))}
-              </span>
+            <span className={styles.phraseStage} data-nosnippet="">
               <span
                 className={styles.phraseLayer}
                 data-phase={phase}
@@ -298,6 +293,44 @@ export function RotatingHeroTitle({
           ) : null}
         </span>
       </h1>
+      <div
+        aria-hidden="true"
+        className={[
+          styles.heading,
+          styles.measurementHeading,
+          className,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        data-homeground-title-measurement="true"
+        data-nosnippet=""
+      >
+        <span className={styles.visualTitle}>
+          {availableFixedLines.map((line, index) => (
+            <span className={styles.fixedLine} key={`${line}-${index}`}>
+              {line}
+              {index < availableFixedLines.length - 1 ||
+              availablePhrases.length > 0
+                ? segmentJoiner
+                : null}
+            </span>
+          ))}
+          {availablePhrases.length > 0 ? (
+            <span className={styles.phraseStage}>
+              <span className={styles.phraseSizer}>
+                {availablePhrases.map((phrase, index) => (
+                  <span
+                    className={styles.phraseMeasure}
+                    key={`${phrase}-${index}`}
+                  >
+                    <AnimatedPhrase phrase={phrase} />
+                  </span>
+                ))}
+              </span>
+            </span>
+          ) : null}
+        </span>
+      </div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ const expectedModifiedDates = {
   "business-information": "2026-07-24",
   "entry-requirements": "2026-08-22",
   guides: "2026-08-22",
-  home: "2026-08-22",
+  home: "2026-09-04",
   "itinerary-review": "2026-08-22",
   privacy: "2026-08-23",
   "refund-delivery": "2026-07-24",
@@ -161,6 +161,11 @@ test("the legacy adapter consumes lifecycle records instead of cloning one date"
 test("sitemap lastmod uses public lifecycle dates, never review or build time", async () => {
   const sitemap = await source("app/sitemap.ts");
 
+  assert.match(
+    sitemap,
+    /entry\.contentId === "system-guides"[\s\S]*?getGuidesHubPageLastModified\(entry\.locale, 1\)/,
+    "each localized Guides base URL must derive lastmod from its current first page",
+  );
   assert.match(
     sitemap,
     /entry\.dates\.dateModified \?\? entry\.dates\.datePublished \?\? undefined/,

@@ -432,13 +432,7 @@ export function GuideSearchForm({
               placeholder={placeholderPhrases.length > 0 ? "" : copy.placeholder}
               required
               value={input}
-              aria-controls={
-                showSuggestions || showSuggestionNotice
-                  ? suggestionsId
-                  : undefined
-              }
               aria-describedby={validationError ? errorId : undefined}
-              aria-expanded={showSuggestions || showSuggestionNotice}
               aria-invalid={validationError || undefined}
               onChange={(event) => {
                 setInput(event.target.value);

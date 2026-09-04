@@ -661,6 +661,32 @@
   margin-block-start: 0.15rem;
 }
 
+.planningLinks a {
+  align-items: flex-start;
+  color: var(--hg-color-ink);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  width: 100%;
+}
+
+.planningLinks a:hover {
+  color: var(--hg-color-rust);
+}
+
+.planningLinks a:focus-visible {
+  border-radius: 0.2rem;
+  outline: 2px solid var(--hg-color-ink);
+  outline-offset: 3px;
+}
+
+.planningLinks a svg {
+  flex: none;
+  margin-block-start: 0.25rem;
+}
+
 .listDash {
   background: var(--hg-color-rust);
   block-size: 2px;

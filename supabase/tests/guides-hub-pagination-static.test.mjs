@@ -71,6 +71,20 @@ test("guide catalog pagination accepts every canonical page from 2 upward", () =
   }
 });
 
+test("pagination lastmod includes the pages changed by a cross-page guide move", async () => {
+  const pagination = await source("lib/guidesHubPagination.ts");
+
+  assert.match(pagination, /const guidesHubMembershipChanges = \[/);
+  assert.match(
+    pagination,
+    /date: "2026-09-04"[\s\S]*?firstPage: 1[\s\S]*?lastPage: 7[\s\S]*?first-shared-meal-in-china moved from page 7 to page 1/,
+  );
+  assert.match(pagination, /change\.locales\.includes\(locale\)/);
+  assert.match(pagination, /page < change\.firstPage/);
+  assert.match(pagination, /page > change\.lastPage/);
+  assert.match(pagination, /latestGuideChange > latestMembershipChange/);
+});
+
 test("catalog traversal reads only real same-origin anchors relative to the current page", () => {
   const markup = `
     <link rel="canonical" href="/guides/page/99/">
@@ -172,8 +186,15 @@ test("every guide batch is crawlable through real static links, indexable routes
     assert.match(route, /canonical: canonicalPath/);
     assert.match(route, /index: true/);
     assert.match(route, /follow: true/);
+    assert.match(route, /const description = paginationDescription\(/);
+    assert.match(route, /description,/);
+    assert.doesNotMatch(route, /description: copy\.metadata\.description/);
     assert.match(route, /<GuidesHubPage/);
   }
+
+  assert.match(englishRoute, /China travel guides \$\{firstGuide\}–\$\{lastGuide\} of \$\{totalGuideCount\}/);
+  assert.match(localizedRoute, /第 \$\{firstGuide\}–\$\{lastGuide\} 篇/);
+  assert.match(localizedRoute, /\$\{firstGuide\}–\$\{lastGuide\}편/);
 
   assert.match(page, /languagePaths=\{getGuidesHubPageLanguagePaths\(page\)\}/);
 });

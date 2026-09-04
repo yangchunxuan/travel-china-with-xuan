@@ -798,6 +798,34 @@
   margin-block-start: 0.25rem;
 }
 
+.scopeGrid.planningLinks li > a {
+  align-items: flex-start;
+  color: var(--im-ink);
+  display: flex;
+  flex: 1 1 auto;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-block-start: 0;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  width: 100%;
+}
+
+.scopeGrid.planningLinks li > a:hover {
+  color: var(--im-rust);
+}
+
+.scopeGrid.planningLinks li > a:focus-visible {
+  border-radius: 0.2rem;
+  outline: 2px solid var(--im-ink);
+  outline-offset: 3px;
+}
+
+.scopeGrid.planningLinks li > a svg {
+  flex: none;
+  margin-block-start: 0.25rem;
+}
+
 .finalCta {
   background: var(--im-white);
   border-block-start: 1px solid var(--im-line);

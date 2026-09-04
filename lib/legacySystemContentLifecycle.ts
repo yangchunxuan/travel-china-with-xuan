@@ -53,13 +53,13 @@ export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
 export const legacySystemContentLifecycle = {
   home: {
     datePublished: "2026-07-24",
-    dateModified: "2026-08-22",
+    dateModified: "2026-09-04",
     lastReviewed: "2026-07-24",
     evidence: {
-      commit: "e7a0d19e320adc3dc3ce88eb9283f9765ea1d22f",
-      changedAt: "2026-08-22",
+      commit: "3112cc762123cddbeb20d8bdca349356d481f1ad",
+      changedAt: "2026-09-04",
       summary:
-        "PR #88 updated the homepage's visible travel-agency identity, metadata and structured data after the discovery redesign in PR #85.",
+        "PR #120 clarified the homepage's distinct guide-search, private-tour and planning paths and materially rebalanced the visible hero.",
     },
   },
   studio: {

@@ -7,6 +7,22 @@ import {
 export const GUIDES_HUB_PAGE_SIZE = 24;
 const SITE_URL = "https://homegroundchina.com";
 
+/**
+ * A guide can move across several catalog pages when its public copy is
+ * updated because the catalog is ordered by dateModified. Record the affected
+ * page window so sitemap lastmod describes the rendered pagination, rather
+ * than only the newest guide that happens to remain on each current page.
+ */
+const guidesHubMembershipChanges = [
+  {
+    date: "2026-09-04",
+    locales: homegroundLocales,
+    firstPage: 1,
+    lastPage: 7,
+    reason: "first-shared-meal-in-china moved from page 7 to page 1",
+  },
+] as const;
+
 export function getGuidesHubPageCount(locale: HomegroundLocale) {
   return Math.max(
     1,
@@ -87,10 +103,28 @@ export function getGuidesHubPageLastModified(
   page: number,
 ) {
   const { pageGuides } = getGuidesHubPagination(locale, page);
-  return pageGuides.reduce<string | undefined>((latest, guide) => {
+  const latestGuideChange = pageGuides.reduce<string | undefined>((latest, guide) => {
     const candidate = guide.dateModified ?? guide.datePublished;
     return !latest || candidate > latest ? candidate : latest;
   }, undefined);
+  const latestMembershipChange = guidesHubMembershipChanges.reduce<
+    string | undefined
+  >((latest, change) => {
+    if (
+      !change.locales.includes(locale) ||
+      page < change.firstPage ||
+      page > change.lastPage
+    ) {
+      return latest;
+    }
+    return !latest || change.date > latest ? change.date : latest;
+  }, undefined);
+
+  if (!latestGuideChange) return latestMembershipChange;
+  if (!latestMembershipChange) return latestGuideChange;
+  return latestGuideChange > latestMembershipChange
+    ? latestGuideChange
+    : latestMembershipChange;
 }
 
 /**

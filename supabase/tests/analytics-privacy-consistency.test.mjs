@@ -46,6 +46,10 @@ test("optional measurement is fail-closed and consent gated", async () => {
     /saveAnalyticsConsent/,
     "The public site must provide an explicit consent control",
   );
+  assert.match(consent, /data-homeground-consent-bootstrap="true"/);
+  assert.match(consent, /analyticsConsentStorageKey/);
+  assert.match(consent, /data-homeground-consent-stored/);
+  assert.doesNotMatch(consent, /if \(!hydrated\) return null/);
 });
 
 test("first-touch attribution does not turn internal links into acquisition", async () => {
@@ -185,6 +189,11 @@ test("both public layouts mount consent and localized analytics", async () => {
       contents,
       /<AnalyticsConsent locale=/,
       `${layout} must mount the privacy-choice control`,
+    );
+    assert.match(
+      contents,
+      /suppressHydrationWarning/,
+      `${layout} must acknowledge the pre-hydration consent marker on html`,
     );
   }
 });

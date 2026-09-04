@@ -76,7 +76,12 @@ test("homepage search remains keyboard- and error-accessible", async () => {
     source("lib/guideSearchI18n.ts"),
   ]);
 
-  assert.match(form, /aria-expanded=\{showSuggestions \|\| showSuggestionNotice\}/);
+  assert.doesNotMatch(form, /role="combobox"/);
+  assert.doesNotMatch(form, /aria-autocomplete=/);
+  assert.doesNotMatch(form, /aria-expanded=\{showSuggestions/);
+  assert.doesNotMatch(form, /aria-controls=\{/);
+  assert.match(form, /className=\{styles\.suggestions\}[\s\S]*?role="region"/);
+  assert.match(form, /<p role="status" aria-live="polite">/);
   assert.match(form, /event\.key === "Escape"/);
   assert.match(form, /event\.key === "ArrowDown"/);
   assert.match(form, /aria-invalid=\{validationError \|\| undefined\}/);
@@ -172,12 +177,14 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.match(homepage, /fixedLines=\{showcase\.heroHeadline\.fixedLines\}/);
   assert.match(homepage, /phrases=\{showcase\.heroHeadline\.phrases\}/);
   assert.match(title, /AUTO_STEP_MS = 2000/);
-  assert.match(title, /className=\{\[styles\.heading, className\]/);
   assert.match(
     title,
-    /<span className=\{styles\.screenReaderOnly\}>\{canonicalTitle\}<\/span>/,
+    /<h1[\s\S]{0,160}aria-label=\{canonicalTitle\}[\s\S]{0,240}className=\{\[styles\.heading, className\]/,
   );
+  assert.doesNotMatch(title, /screenReaderOnly/);
   assert.match(title, /data-homeground-rotating-title="true"/);
+  assert.match(title, /data-homeground-title-measurement="true"/);
+  assert.match(title, /initialTitleSegments\.join\(" "\) === canonicalTitle\.trim\(\)/);
   assert.match(title, /data-nosnippet=""/);
   assert.match(title, /new IntersectionObserver/);
   assert.match(title, /document\.visibilityState === "visible"/);
@@ -186,6 +193,25 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.doesNotMatch(title, /<button|<Pause|<Play|motionControl/);
   assert.doesNotMatch(title, /aria-live|role="status"/);
   assert.match(title, /className=\{styles\.phraseSizer\}/);
+  const visibleHeading = title.slice(
+    title.indexOf("<h1"),
+    title.indexOf("</h1>") + "</h1>".length,
+  );
+  const openingHeadingTag = visibleHeading.slice(
+    0,
+    visibleHeading.indexOf(">") + 1,
+  );
+  assert.doesNotMatch(openingHeadingTag, /data-nosnippet/u);
+  assert.match(
+    visibleHeading,
+    /className=\{styles\.phraseStage\} data-nosnippet=""/u,
+  );
+  assert.doesNotMatch(visibleHeading, /phraseSizer|phraseMeasure/);
+  assert.equal(
+    visibleHeading.match(/<AnimatedPhrase phrase=\{currentPhrase\} \/>/g)
+      ?.length,
+    1,
+  );
   assert.equal(
     title.match(/<AnimatedPhrase phrase=\{(?:phrase|currentPhrase)\} \/>/g)
       ?.length,
@@ -203,8 +229,12 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(
     titleStyles,
-    /\.root \{[\s\S]*?inline-size: 100%;[\s\S]*?max-inline-size: 100%;/,
+    /\.root \{[\s\S]*?display: grid;[\s\S]*?inline-size: 100%;[\s\S]*?max-inline-size: 100%;/,
     "the rotating title wrapper must not shrink away from the shared title axis",
+  );
+  assert.match(
+    titleStyles,
+    /\.measurementHeading \{[\s\S]*?pointer-events: none;[\s\S]*?visibility: hidden;/,
   );
   assert.match(
     titleStyles,

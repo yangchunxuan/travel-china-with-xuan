@@ -65,7 +65,12 @@ export default async function LocalizedRootLayout({
   const htmlLang = locale === "zh" ? "zh-Hans" : "ko";
 
   return (
-    <html lang={htmlLang} dir="ltr" data-scroll-behavior="smooth">
+    <html
+      lang={htmlLang}
+      dir="ltr"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         {locale === "zh" ? (
           <link

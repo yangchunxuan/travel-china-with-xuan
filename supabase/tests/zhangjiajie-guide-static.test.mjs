@@ -131,7 +131,8 @@ test("public guide remains available to search, citation and training crawlers",
   const header = await source("components/HomegroundHeader.tsx");
 
   assert.match(robots, /User-agent: \*\s+Allow: \//);
-  assert.match(robots, /Disallow: \/admin\//);
+  assert.doesNotMatch(robots, /Disallow: \/admin\//);
+  assert.match(robots, /page-level noindex/);
   assert.doesNotMatch(
     robots,
     /(?:GPTBot|ClaudeBot|Google-Extended)[\s\S]*Disallow:/,

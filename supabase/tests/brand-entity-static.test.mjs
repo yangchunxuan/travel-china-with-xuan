@@ -86,8 +86,11 @@ test("homepage metadata, visible identity and social cards reinforce Homeground 
   );
   assert.match(
     rotatingTitle,
-    /<span className=\{styles\.screenReaderOnly\}>\{canonicalTitle\}<\/span>/u,
+    /<h1[\s\S]{0,180}aria-label=\{canonicalTitle\}/u,
   );
+  assert.match(rotatingTitle, /data-homeground-title-measurement="true"/u);
+  assert.match(rotatingTitle, /aria-hidden="true"[\s\S]{0,260}data-homeground-title-measurement/u);
+  assert.doesNotMatch(rotatingTitle, /styles\.screenReaderOnly/u);
   assert.doesNotMatch(rotatingTitle, /aria-live/u);
   assert.doesNotMatch(homepage, /editorialPersonSchema/u);
 });

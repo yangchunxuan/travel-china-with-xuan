@@ -2,9 +2,21 @@
   "schemaVersion": "1.0.0",
   "registryId": "high-intent-cta-ownership-phase-1",
   "status": "internal-only",
-  "baseCommit": "d0fb96706fea2928ede94cc667745d5dcad389b2",
-  "checkedAt": "2026-08-23",
-  "publicCtaChangesAuthorized": false,
+  "baseCommit": "3112cc762123cddbeb20d8bdca349356d481f1ad",
+  "checkedAt": "2026-09-04",
+  "publicCtaChangesAuthorized": true,
+  "authorizedPublicCtaContentIds": [
+    "beijing-courtyard-hotel-or-modern-hotel",
+    "beijing-where-to-stay-first-trip",
+    "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+    "shanghai-where-to-stay-first-trip",
+    "xian-where-to-stay-city-wall-or-dayanta",
+    "zhangjiajie-city-or-wulingyuan-hotel-base",
+    "beijing-south-station-to-capital-or-daxing-airport",
+    "chongqing-railway-station-selector",
+    "guilin-airport-or-railway-station-arrival-guide",
+    "shanghai-hangzhou-transport-route"
+  ],
   "publicServiceLaunchAuthorized": false,
   "allowedServiceIds": [
     "itinerary-review",
@@ -16,6 +28,55 @@
     "ticket_workflow",
     "route_shape"
   ],
+  "requiredPublicCtaCount": 10,
+  "publicCtaTargetAnchors": {
+    "itinerary-review": "review-my-route",
+    "full-trip-support": "full-trip-support"
+  },
+  "publicCtaCopy": {
+    "en": {
+      "full-trip-support": {
+        "label": "Existing planning service",
+        "title": "Need this stay choice checked in the full route?",
+        "body": "Full Trip Planning & Ground Support can include this stay decision within a written scope and custom quote. It does not promise live rooms, a fixed hotel price or guest acceptance.",
+        "button": "See scoped full-trip support"
+      },
+      "itinerary-review": {
+        "label": "Existing itinerary service",
+        "title": "Already have a day-by-day route?",
+        "body": "Review My Route checks this connection in the context of your existing itinerary. It does not book transport, supply a vehicle or guarantee a pickup, ticket or timetable.",
+        "button": "See the itinerary review scope"
+      }
+    },
+    "zh": {
+      "full-trip-support": {
+        "label": "现有规划服务",
+        "title": "需要把住宿选择放进整段路线核对吗？",
+        "body": "整段旅行规划与落地支持可在书面范围和定制报价内处理这项住宿决策，但不承诺实时房态、固定酒店价格或一定接待外宾。",
+        "button": "查看整段旅行支持范围"
+      },
+      "itinerary-review": {
+        "label": "现有行程服务",
+        "title": "已经有逐日行程了吗？",
+        "body": "行程复核会把这段衔接放回你已有的整条路线检查，但不代订交通、不提供车辆，也不保证接送点、票务或时刻表。",
+        "button": "查看行程复核范围"
+      }
+    },
+    "ko": {
+      "full-trip-support": {
+        "label": "현재 제공 중인 여행 설계 서비스",
+        "title": "숙소 선택을 전체 동선과 함께 점검할까요?",
+        "body": "전체 여행 설계 및 현지 지원은 서면 범위와 맞춤 견적 안에서 이 숙소 선택을 함께 검토할 수 있습니다. 실시간 객실 재고나 예약 가능 여부, 고정 객실 요금 또는 외국인 투숙 가능 여부를 보장하지 않습니다.",
+        "button": "전체 여행 지원 범위 보기"
+      },
+      "itinerary-review": {
+        "label": "현재 제공 중인 일정 서비스",
+        "title": "이미 날짜별 일정이 있나요?",
+        "body": "일정 검토는 기존 전체 동선 안에서 이 연결을 점검합니다. 교통편을 대신 예약하거나 차량을 제공하는 서비스가 아니며, 픽업 장소·시간, 교통편 티켓 또는 운행 시간표를 보장하지 않습니다.",
+        "button": "일정 검토 범위 보기"
+      }
+    }
+  },
   "requiredCoverage": {
     "stay": 20,
     "high-intent-transport": 25,
@@ -44,10 +105,10 @@
       "contentId": "beijing-courtyard-hotel-or-modern-hotel",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "beijing-courtyard-hotel-or-modern-hotel",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -59,10 +120,10 @@
       "contentId": "beijing-where-to-stay-first-trip",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "beijing-where-to-stay-first-trip",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -119,10 +180,10 @@
       "contentId": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -239,10 +300,10 @@
       "contentId": "shanghai-where-to-stay-first-trip",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "shanghai-where-to-stay-first-trip",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -299,10 +360,10 @@
       "contentId": "xian-where-to-stay-city-wall-or-dayanta",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "xian-where-to-stay-city-wall-or-dayanta",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -329,10 +390,10 @@
       "contentId": "zhangjiajie-city-or-wulingyuan-hotel-base",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "zhangjiajie-city-or-wulingyuan-hotel-base",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -344,10 +405,10 @@
       "contentId": "beijing-south-station-to-capital-or-daxing-airport",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "beijing-south-station-to-capital-or-daxing-airport",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
         "fixed-transfer-price-or-pickup-guarantee",
@@ -434,10 +495,10 @@
       "contentId": "chongqing-railway-station-selector",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "chongqing-railway-station-selector",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
         "fixed-transfer-price-or-pickup-guarantee",
@@ -509,10 +570,10 @@
       "contentId": "guilin-airport-or-railway-station-arrival-guide",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "guilin-airport-or-railway-station-arrival-guide",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
         "fixed-transfer-price-or-pickup-guarantee",
@@ -614,10 +675,10 @@
       "contentId": "shanghai-hangzhou-transport-route",
       "ownerClass": "high-intent-transport",
       "intentCode": "route_shape",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "itinerary-review",
+      "ctaPlacement": "existing-guide-footer",
       "originContentId": "shanghai-hangzhou-transport-route",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
         "fixed-transfer-price-or-pickup-guarantee",

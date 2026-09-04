@@ -1,5 +1,14 @@
 # Homeground production photo provenance
 
+Responsive private-tour catalog card derivatives created on September 4, 2026
+are locked to their ten already recorded source images in
+`docs/homeground-private-tour-card-derivatives.json`. That machine-readable
+ledger records each source path and SHA-256, the four output dimensions, and a
+family SHA-256 over the 320/640/960/1380 WebP byte streams. It also points back
+to the exact provenance record and records the applicable rights basis. These
+are resize derivatives only; they do not create new rights or broaden the
+evidence claims already attached to the source photographs below.
+
 The project owner supplied the source photographs directly for use in the
 Homeground website during the July 2026 redesign.
 

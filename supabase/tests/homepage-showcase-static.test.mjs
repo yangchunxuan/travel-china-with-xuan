@@ -417,6 +417,9 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(productShowcase, /\{product\.title\}/);
   assert.match(productShowcase, /\{product\.description\}/);
   assert.match(productShowcase, /loading="lazy"/);
+  assert.match(productShowcase, /sizes=\{homepageProductImageSizes\}/);
+  assert.match(productShowcase, /privateTourCardImageSrcSet\(product\.id\)/);
+  assert.match(productShowcase, /privateTourCardImageSource\(product\.id, 640\)/);
   assert.doesNotMatch(productShowcase, /fetchPriority=|loading="eager"|\bguides\b|\bguideLabel\b/);
   for (const route of [defaultRoute, localizedRoute, labRoute]) {
     assert.match(route, /getHomepagePrivateTourItems/);

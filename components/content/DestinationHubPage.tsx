@@ -31,6 +31,10 @@ import homeStyles from "../HomegroundHomePage.module.css";
 import styles from "./EditorialGuidePage.module.css";
 import destinationStyles from "./DestinationHubPage.module.css";
 import { DestinationGeographyDiagram } from "./DestinationGeographyDiagram";
+import {
+  getDestinationPublishedRouteLinks,
+  getExistingContentCommercialCopy,
+} from "../../lib/existingContentCommercialLinks";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -238,6 +242,8 @@ export function DestinationHubPage({
   ).format(new Date(`${hub.sourceReviewedDate}T00:00:00.000Z`));
   const schema = structuredData(hub, locale, body);
   const titleSegments = locale === "zh" ? zhHeadingSegments[hubId] : null;
+  const commercialCopy = getExistingContentCommercialCopy(locale);
+  const publishedRouteLinks = getDestinationPublishedRouteLinks(hubId, locale);
 
   return (
     <div
@@ -362,6 +368,32 @@ export function DestinationHubPage({
                 const guide = getGuideEntry(guideId, locale);
                 return <li key={guideId}><Link href={guide.canonicalPath}>{guide.navTitle}<span aria-hidden="true">→</span></Link></li>;
               })}
+            </ul>
+          </section>
+
+          <section
+            className={destinationStyles.ownerLinks}
+            aria-labelledby="destination-published-routes-title"
+          >
+            <div>
+              <p>{commercialCopy.hubLabel}</p>
+              <h2 id="destination-published-routes-title">
+                {commercialCopy.hubTitle}
+              </h2>
+              <p>
+                {hubId === "guangzhou"
+                  ? commercialCopy.noLocalHubBody
+                  : commercialCopy.hubBody}
+              </p>
+            </div>
+            <ul>
+              {publishedRouteLinks.map((route) => (
+                <li key={route.id}>
+                  <Link href={route.href}>
+                    {route.label}<span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </section>
 
