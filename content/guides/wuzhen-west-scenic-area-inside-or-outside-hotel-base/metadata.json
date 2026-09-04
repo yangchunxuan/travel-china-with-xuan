@@ -1,0 +1,107 @@
+{
+  "id": "wuzhen-west-scenic-area-inside-or-outside-hotel-base",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "controlled-scenic-area-inside-or-outside-base-decision",
+  "topics": [
+    "accommodation",
+    "Wuzhen",
+    "Wuzhen West Scenic Area",
+    "Xizha",
+    "Tongxiang",
+    "Jiaxing",
+    "operator identity, booking, ticket, admission, re-entry, check-in, luggage, late arrival and access verification",
+    "Zhejiang"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/wuzhen-west-scenic-area-inside-or-outside-hotel-base/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/wuzhen-west-scenic-area-inside-or-outside-hotel-base/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": {
+    "section": "stay",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/wuzhen-west-scenic-area-inside-or-outside-hotel-base/",
+      "title": "Wuzhen West Scenic Area: Stay Inside or Outside?",
+      "headline": "Choose a Wuzhen West Scenic Area Base by Entry, Luggage and Late Arrival",
+      "description": "Choose an inside or outside Wuzhen West Scenic Area stay by verifying operator identity, admission and re-entry, central check-in, luggage and late arrival.",
+      "heroAlt": "Real evening view of illuminated waterside buildings and a bridge in Wuzhen West Scenic Area in 2017",
+      "heroCredit": {
+        "text": "Wuzhen West Scenic Area at night, photographed by N509FZ on 31 December 2017; cropped, resized and converted to WebP by Homeground under the same licence. The image does not prove any property's location, admission or re-entry rights, current opening, lighting, luggage service or room quality.",
+        "sourceLabel": "Original Night in Wuzhen Xizha photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Night_in_Wuzhen_Xizha_(20171231174337).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Wuzhen West: inside or outside",
+      "featuredLinkLabel": "Choose your Wuzhen West stay",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Wuzhen West", "Inside or outside", "Hotel base"]
+    },
+    "zh": {
+      "path": "/zh/guides/wuzhen-west-scenic-area-inside-or-outside-hotel-base/",
+      "title": "乌镇西栅住宿：住景区内还是景区外？",
+      "headline": "按入园、行李与晚到链选择乌镇西栅住宿基地",
+      "description": "核对运营方身份、首次入园与再入园、集中办理入住、行李交接和晚到路径，再决定住乌镇西栅景区内还是景区外。",
+      "heroAlt": "2017年乌镇西栅水岸建筑与桥梁亮灯后的真实夜景",
+      "heroCredit": {
+        "text": "N509FZ 于 2017 年 12 月 31 日拍摄的乌镇西栅夜景；Homeground 依同一许可作裁切、缩放与 WebP 转换。图片不证明任何物业的位置、入园或再入园权益，也不证明当前开放、灯光、行李服务或客房品质。",
+        "sourceLabel": "乌镇西栅夜景原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Night_in_Wuzhen_Xizha_(20171231174337).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "乌镇西栅景区内外住宿",
+      "featuredLinkLabel": "选择乌镇西栅住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["乌镇西栅", "景区内外", "住宿基地"]
+    },
+    "ko": {
+      "path": "/ko/guides/wuzhen-west-scenic-area-inside-or-outside-hotel-base/",
+      "title": "우전 서책 숙소, 관광지 안과 밖 중 어디가 좋을까?",
+      "headline": "입장·짐·늦은 도착으로 고르는 우전 서책 숙박 거점",
+      "description": "운영사 소속, 최초 입장과 재입장, 통합 체크인, 짐 인계와 늦은 도착 동선을 확인해 우전 서책 안팎 숙소를 고릅니다.",
+      "heroAlt": "2017년 우전 서책의 불 밝힌 수변 건물과 다리를 담은 실제 야경",
+      "heroCredit": {
+        "text": "N509FZ가 2017년 12월 31일 촬영한 우전 서책 야경입니다. Homeground는 같은 라이선스에 따라 자르고 크기를 조정해 WebP로 변환했습니다. 이 사진은 숙소 위치, 입장·재입장 권리, 현재 개방·조명, 짐 서비스 또는 객실 품질을 증명하지 않습니다.",
+        "sourceLabel": "우전 서책 야경 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Night_in_Wuzhen_Xizha_(20171231174337).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "우전 서책 안팎 숙소",
+      "featuredLinkLabel": "우전 서책 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["우전 서책", "안팎 숙소", "숙박 거점"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "stay inside or outside Wuzhen West Scenic Area",
+      "Wuzhen Xizha hotel ticket re-entry",
+      "Wuzhen West Scenic Area hotel check in luggage"
+    ],
+    "zh": [
+      "乌镇西栅住景区内还是景区外",
+      "乌镇西栅酒店门票再入园",
+      "乌镇西栅景区住宿入住行李"
+    ],
+    "ko": [
+      "우전 서책 관광지 안 숙소 밖 숙소",
+      "우전 서책 호텔 입장권 재입장",
+      "우전 서책 숙소 체크인 짐"
+    ]
+  }
+}
