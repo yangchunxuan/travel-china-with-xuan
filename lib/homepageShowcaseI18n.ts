@@ -1,10 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 
-export type HomepageDecisionId =
-  | "explore"
-  | "stay"
-  | "transport"
-  | "plan";
+export type HomepageGuidePathId = "stay" | "transport" | "plan";
 
 interface HomepageShowcaseCopy {
   readonly heroBody: string;
@@ -13,21 +9,17 @@ interface HomepageShowcaseCopy {
     readonly joiner: "" | " ";
     readonly phrases: readonly string[];
   };
-  readonly heroLinksLabel: string;
   readonly heroPrimary: string;
-  readonly heroPrimaryShort: string;
   readonly heroSecondary: string;
-  readonly heroSecondaryShort: string;
-  readonly decisions: {
-    readonly eyebrow: string;
-    readonly title: string;
-    readonly intro: string;
+  readonly heroDestinationPrompt: string;
+  readonly heroDestinationAction: string;
+  readonly guidePaths: {
     readonly listLabel: string;
-    readonly cards: readonly {
-      readonly id: HomepageDecisionId;
+    readonly prompt: string;
+    readonly items: readonly {
+      readonly id: HomepageGuidePathId;
       readonly title: string;
       readonly body: string;
-      readonly action: string;
     }[];
   };
   readonly planning: {
@@ -41,7 +33,7 @@ interface HomepageShowcaseCopy {
 const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   en: {
     heroBody:
-      "Choose a city in the Destinations directory, then use practical travel advice for stays, transport and timing—plus a team on the ground when you want help connecting the trip.",
+      "Compare published private journeys with the pace, hotel moves, transport and day-by-day plan already set out. If none fits as written, talk to a China-based planner about adapting it around your dates.",
     heroHeadline: {
       fixedLines: ["China, your", "way."],
       joiner: " ",
@@ -52,45 +44,28 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         "The hard parts, handled.",
       ],
     },
-    heroLinksLabel: "Explore Homeground China",
-    heroPrimary: "Explore China destinations",
-    heroPrimaryShort: "Choose a city",
+    heroPrimary: "Compare private China tours",
     heroSecondary: "Talk to a trip planner",
-    heroSecondaryShort: "Plan my trip",
-    decisions: {
-      eyebrow: "Plan with real choices",
-      title: "Build the trip one decision at a time.",
-      intro:
-        "Skip the generic must-see list. Start with the choice that changes the day.",
-      listLabel: "Choose a China travel planning topic",
-      cards: [
-        {
-          id: "explore",
-          title: "Choose the first city",
-          body:
-            "Compare who each city suits, how many nights it needs and what connects next.",
-          action: "Explore destinations",
-        },
+    heroDestinationPrompt: "Still deciding where to go?",
+    heroDestinationAction: "Explore China destinations",
+    guidePaths: {
+      listLabel: "Browse China travel guides by decision",
+      prompt: "Or start with the decision in front of you",
+      items: [
         {
           id: "stay",
-          title: "Choose the right base",
-          body:
-            "Match a stay area to the days you will walk, the gateway you use and the evenings you want.",
-          action: "Compare stay areas",
+          title: "Choose a place to stay",
+          body: "Hotel areas and neighbourhood trade-offs",
         },
         {
           id: "transport",
-          title: "Choose the right airport or station",
-          body:
-            "Check which airport, railway station or border crossing your route actually uses before booking.",
-          action: "Plan arrivals and transfers",
+          title: "Get the arrival right",
+          body: "Airports, railway stations and transfers",
         },
         {
           id: "plan",
-          title: "Check whether the route is too rushed",
-          body:
-            "Review city order, hotel changes and travel-day downtime before bookings lock the trip in.",
-          action: "Build a realistic route",
+          title: "Test the route",
+          body: "City order, trip length and travel pace",
         },
       ],
     },
@@ -104,7 +79,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   },
   zh: {
     heroBody:
-      "先在“目的地”选择城市，再用实用指南解决住宿、交通和出行时间；需要时，由中国本地旅行规划师把整趟行程串起来。",
+      "先比较已经写清每天安排的中国私家团：天数、住宿、交通和公开起价都可以直接查看。没有一条完全合适时，再和中国本地旅行规划师讨论怎样按真实日期调整。",
     heroHeadline: {
       fixedLines: ["按你的方式，", "游中国。"],
       joiner: "",
@@ -115,40 +90,28 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         "难处理的交给我们。",
       ],
     },
-    heroLinksLabel: "浏览 Homeground China",
-    heroPrimary: "浏览中国目的地",
-    heroPrimaryShort: "选择城市",
+    heroPrimary: "比较中国私家团",
     heroSecondary: "联系旅行规划师",
-    heroSecondaryShort: "规划行程",
-    decisions: {
-      eyebrow: "从真实选择开始规划",
-      title: "一次解决一个真实选择，把旅程接起来。",
-      intro: "不从泛泛的必去榜单开始，而从真正改变一天安排的选择开始。",
-      listLabel: "选择中国旅行规划主题",
-      cards: [
-        {
-          id: "explore",
-          title: "先选第一座城市",
-          body: "比较每座城市适合谁、需要几晚，以及下一站怎么接。",
-          action: "浏览城市与目的地",
-        },
+    heroDestinationPrompt: "还没决定先去哪？",
+    heroDestinationAction: "浏览中国目的地",
+    guidePaths: {
+      listLabel: "按当前问题浏览中国旅行指南",
+      prompt: "也可以从眼前的问题开始",
+      items: [
         {
           id: "stay",
-          title: "再选住宿区域",
-          body: "按真正会步行的日程、抵达节点和想要的夜晚来选住宿地。",
-          action: "比较住宿区域",
+          title: "选住宿区域",
+          body: "酒店位置、街区与往返代价",
         },
         {
           id: "transport",
-          title: "选对机场和火车站",
-          body: "预订前分清同城不同机场、火车站和口岸，避免走错节点耽误行程。",
-          action: "规划抵达与转场",
+          title: "先把抵达走对",
+          body: "机场、火车站与转场",
         },
         {
           id: "plan",
-          title: "判断路线会不会太赶",
-          body: "预订前检查城市顺序、换酒店次数，以及转场后是否留有缓冲时间。",
-          action: "规划可行路线",
+          title: "检查路线节奏",
+          body: "城市顺序、天数与行程松紧",
         },
       ],
     },
@@ -162,7 +125,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   },
   ko: {
     heroBody:
-      "여행지 디렉터리에서 도시를 고른 뒤 숙소, 교통과 시기는 실용 가이드에서 해결하세요. 필요하면 중국 현지 플래너가 전체 일정을 연결합니다.",
+      "일자별 일정과 숙소 변경, 교통, 공개 시작가가 정리된 중국 프라이빗 투어부터 비교해 보세요. 공개된 일정이 맞지 않는다면 중국 현지 플래너와 실제 여행 날짜에 맞춰 어떻게 조정할지 상담할 수 있습니다.",
     heroHeadline: {
       fixedLines: ["중국, 나만의", "방식으로."],
       joiner: " ",
@@ -173,40 +136,28 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
         "어려운 부분은 저희가 챙깁니다.",
       ],
     },
-    heroLinksLabel: "Homeground China 둘러보기",
-    heroPrimary: "중국 여행지 보기",
-    heroPrimaryShort: "도시 선택",
+    heroPrimary: "중국 프라이빗 투어 비교하기",
     heroSecondary: "여행 플래너와 상담하기",
-    heroSecondaryShort: "여행 계획",
-    decisions: {
-      eyebrow: "실제 선택부터 계획하기",
-      title: "하나의 실제 결정씩, 여행을 완성하세요.",
-      intro: "막연한 필수 명소 목록 대신, 실제 하루를 바꾸는 선택부터 시작합니다.",
-      listLabel: "중국 여행 계획 주제 선택",
-      cards: [
-        {
-          id: "explore",
-          title: "첫 도시 고르기",
-          body: "각 도시가 누구에게 맞는지, 며칠이 필요한지, 다음 도시와 어떻게 이어지는지 비교합니다.",
-          action: "도시·여행지 보기",
-        },
+    heroDestinationPrompt: "아직 어디로 갈지 고민 중인가요?",
+    heroDestinationAction: "중국 여행지 둘러보기",
+    guidePaths: {
+      listLabel: "지금의 결정에 따라 중국 여행 가이드 둘러보기",
+      prompt: "지금 고민 중인 항목부터 살펴보세요",
+      items: [
         {
           id: "stay",
           title: "숙소 지역 고르기",
-          body: "실제로 걸을 일정, 도착 지점과 원하는 저녁 시간에 맞춰 숙소 지역을 고릅니다.",
-          action: "숙소 지역 비교하기",
+          body: "호텔 위치, 동네와 왕복 동선",
         },
         {
           id: "transport",
-          title: "맞는 공항·기차역 고르기",
-          body: "예약 전에 실제 이용할 공항, 기차역 또는 육로 출입국 지점을 확인해 이동일의 실수를 줄입니다.",
-          action: "도착·환승 계획하기",
+          title: "도착 동선 확인하기",
+          body: "공항, 기차역과 환승",
         },
         {
           id: "plan",
-          title: "일정이 너무 빠듯한지 확인하기",
-          body: "예약을 확정하기 전에 도시 순서, 숙소 변경 횟수와 이동 후 여유 시간을 확인합니다.",
-          action: "무리 없는 일정 만들기",
+          title: "여행 속도 점검하기",
+          body: "도시 순서, 여행 일수와 일정 여유",
         },
       ],
     },
@@ -224,9 +175,9 @@ export function getHomepageShowcaseCopy(locale: HomegroundLocale) {
   return copies[locale];
 }
 
-export function getHomepageDecisionPath(
+export function getHomepageGuidePath(
   locale: HomegroundLocale,
-  decision: HomepageDecisionId,
+  decision: HomepageGuidePathId,
 ) {
   return locale === "en"
     ? `/${decision}/`

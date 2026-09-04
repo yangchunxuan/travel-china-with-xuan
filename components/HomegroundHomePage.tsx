@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
-  ArrowUpRight,
   BedDouble,
   FileCheck2,
   MapPinned,
@@ -14,10 +13,7 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import {
-  getHomepageDecisionPath,
-  getHomepageShowcaseCopy,
-} from "../lib/homepageShowcaseI18n";
+import { getHomepageShowcaseCopy } from "../lib/homepageShowcaseI18n";
 import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import type {
@@ -27,6 +23,7 @@ import type {
   HomepageSearchDemo,
 } from "../lib/homepageEditorial";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
+import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import {
   editorialOrganizationSchema,
   editorialWebsiteSchema,
@@ -124,32 +121,6 @@ export function HomegroundHomePage({
     locale === "en" ? "/explore/" : `/${locale}/explore/`;
   const studioPath =
     locale === "en" ? "/studio/" : `/${locale}/studio/`;
-  const heroLinks = [
-    {
-      href: destinationsIndexPath,
-      title: copy.cities.eyebrow,
-      body: copy.cities.intro,
-      hashTarget: null,
-    },
-    {
-      href: guidesIndexPath,
-      title: copy.guides.eyebrow,
-      body: copy.guides.title,
-      hashTarget: null,
-    },
-    {
-      href: studioPath,
-      title: copy.navigation.planning,
-      body: copy.studio.title,
-      hashTarget: null,
-    },
-    {
-      href: "#faq",
-      title: copy.faq.eyebrow,
-      body: copy.faq.title,
-      hashTarget: "#faq" as const,
-    },
-  ] as const;
   const guideRailCatalogPath =
     locale === "en"
       ? "/guides/homepage-guide-index.json"
@@ -552,63 +523,29 @@ export function HomegroundHomePage({
               <div className={showcaseStyles.heroActions}>
                 <a
                   className={showcaseStyles.primaryAction}
-                  href={destinationsIndexPath}
-                  aria-label={showcase.heroPrimary}
+                  href={privateTourHubPaths[locale]}
                 >
-                  <span className={showcaseStyles.heroActionLong}>
-                    {showcase.heroPrimary}
-                  </span>
-                  <span className={showcaseStyles.heroActionShort} aria-hidden="true">
-                    {showcase.heroPrimaryShort}
-                  </span>
+                  {showcase.heroPrimary}
+                  <ArrowRight aria-hidden="true" size={16} />
                 </a>
                 <a
                   className={showcaseStyles.secondaryAction}
                   href={plannerTarget}
-                  aria-label={showcase.heroSecondary}
                   onClick={(event) =>
                     handleHomegroundHashClick(event, plannerTarget)
                   }
                 >
-                  <span className={showcaseStyles.heroActionLong}>
-                    {showcase.heroSecondary}
-                  </span>
-                  <span className={showcaseStyles.heroActionShort} aria-hidden="true">
-                    {showcase.heroSecondaryShort}
-                  </span>
+                  {showcase.heroSecondary}
                 </a>
               </div>
+              <p className={showcaseStyles.heroDestinationPrompt}>
+                <span>{showcase.heroDestinationPrompt}</span>
+                <a href={destinationsIndexPath}>
+                  {showcase.heroDestinationAction}
+                  <ArrowRight aria-hidden="true" size={15} />
+                </a>
+              </p>
             </div>
-
-            <nav
-              className={showcaseStyles.heroAssurance}
-              aria-label={showcase.heroLinksLabel}
-            >
-              <ul>
-                {heroLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={
-                        link.hashTarget
-                          ? (event) =>
-                              handleHomegroundHashClick(
-                                event,
-                                link.hashTarget,
-                              )
-                          : undefined
-                      }
-                    >
-                      <span className={showcaseStyles.heroAssuranceCopy}>
-                        <strong>{link.title}</strong>
-                        <small>{link.body}</small>
-                      </span>
-                      <ArrowUpRight aria-hidden="true" size={17} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
           </div>
         </section>
 
@@ -632,51 +569,13 @@ export function HomegroundHomePage({
           className={`${styles.travelGuidesSection} ${showcaseStyles.searchSection}`}
         >
           <div className={styles.travelGuides}>
-            <HomepageGuideSearch demos={searchDemos} locale={locale} />
+            <HomepageGuideSearch
+              demos={searchDemos}
+              guidePaths={showcase.guidePaths}
+              locale={locale}
+            />
           </div>
         </div>
-
-        <section
-          className={showcaseStyles.decisions}
-          aria-labelledby="homepage-decisions-title"
-        >
-          <div className={showcaseStyles.decisionIntro}>
-            <div>
-              <p className={showcaseStyles.eyebrow}>
-                {showcase.decisions.eyebrow}
-              </p>
-              <h2 id="homepage-decisions-title">
-                {showcase.decisions.title}
-              </h2>
-            </div>
-            <p>{showcase.decisions.intro}</p>
-          </div>
-          <nav aria-label={showcase.decisions.listLabel}>
-            <ol className={showcaseStyles.decisionGrid}>
-              {showcase.decisions.cards.map((card, index) => (
-                <li key={card.id}>
-                  <a
-                    className={showcaseStyles.decisionCard}
-                    href={getHomepageDecisionPath(locale, card.id)}
-                  >
-                    <span
-                      aria-hidden="true"
-                      className={showcaseStyles.decisionNumber}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3>{card.title}</h3>
-                    <p>{card.body}</p>
-                    <span className={showcaseStyles.decisionAction}>
-                      {card.action}
-                      <ArrowRight aria-hidden="true" size={18} />
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        </section>
 
         <HomepageGuideRail
           catalogUrl={guideRailCatalogPath}

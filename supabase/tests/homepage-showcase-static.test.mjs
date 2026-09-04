@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import {
-  getHomepageDecisionPath,
+  getHomepageGuidePath,
   getHomepageShowcaseCopy,
 } from "../../lib/homepageShowcaseI18n.ts";
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
@@ -85,18 +85,28 @@ function contrastRatio(foreground, background) {
   return (lighter + 0.05) / (darker + 0.05);
 }
 
-test("the homepage showcase keeps four equivalent decisions in every language", () => {
-  const expectedIds = ["explore", "stay", "transport", "plan"];
+test("the homepage separates tour conversion, destination discovery and three parallel guide paths", async () => {
+  const homepage = await source("components/HomegroundHomePage.tsx");
+  const expectedIds = ["stay", "transport", "plan"];
+
+  assert.match(
+    homepage,
+    /const destinationsIndexPath =\s*locale === "en" \? "\/explore\/" : `\/\$\{locale\}\/explore\/`/,
+  );
+  assert.match(
+    homepage,
+    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<a href=\{destinationsIndexPath\}>/,
+  );
 
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageShowcaseCopy(locale);
     const identityCopy = getHomegroundCopy(locale);
     const headline = copy.heroHeadline;
     assert.deepEqual(
-      copy.decisions.cards.map((card) => card.id),
+      copy.guidePaths.items.map((item) => item.id),
       expectedIds,
     );
-    assert.equal(new Set(copy.decisions.cards.map((card) => card.title)).size, 4);
+    assert.equal(new Set(copy.guidePaths.items.map((item) => item.title)).size, 3);
     assert.ok(copy.heroBody.length > 40);
     assert.equal(headline.phrases.length, 4);
     assert.equal(new Set(headline.phrases).size, headline.phrases.length);
@@ -106,15 +116,20 @@ test("the homepage showcase keeps four equivalent decisions in every language", 
       [...headline.fixedLines, headline.phrases[0]].join(headline.joiner),
       identityCopy.hero.title,
     );
-    assert.notEqual(copy.heroLinksLabel, copy.decisions.listLabel);
-    for (const card of copy.decisions.cards) {
-      assert.ok(card.body.length > 20);
-      assert.ok(card.action.length > 4);
+    assert.notEqual(copy.heroPrimary, copy.heroDestinationAction);
+    assert.ok(copy.heroDestinationPrompt.length > 4);
+    assert.ok(copy.guidePaths.prompt.length > 4);
+    assert.equal(
+      privateTourHubPaths[locale],
+      locale === "en" ? "/tours/" : `/${locale}/tours/`,
+    );
+    for (const item of copy.guidePaths.items) {
+      assert.ok(item.body.length > 8);
       assert.equal(
-        getHomepageDecisionPath(locale, card.id),
+        getHomepageGuidePath(locale, item.id),
         locale === "en"
-          ? `/${card.id}/`
-          : `/${locale}/${card.id}/`,
+          ? `/${item.id}/`
+          : `/${locale}/${item.id}/`,
       );
     }
   }
@@ -142,7 +157,6 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   const orderedMarkers = [
     "<HomepageProductShowcase",
     "<HomepageGuideSearch",
-    'id="homepage-decisions-title"',
     "<HomepageGuideRail",
     "<PlanningScopeSection",
     'id="homepage-human-planning-title"',
@@ -562,9 +576,8 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     source("components/HomepageQuickContact.tsx"),
   ]);
 
-  assert.match(page, /aria-hidden="true"[\s\S]{0,90}decisionNumber/);
+  assert.doesNotMatch(page, /decisionNumber|homepage-decisions-title/);
   assert.doesNotMatch(page, /cityIndex|principleNumber/);
-  assert.match(styles, /\.decisionCard:focus-visible[\s\S]{0,160}outline-offset: -2px/);
   assert.match(styles, /\.planningSectionResult \.planningIntro \{\s*display: none/);
   assert.match(styles, /\.planningSectionResult \.planningPanel[\s\S]{0,150}max-inline-size: 62rem/);
   assert.match(navigation, /"#destinations": "homepage-city-hubs-title"/);
@@ -593,30 +606,23 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.match(styles, /--showcase-section-space: 6rem/);
   assert.match(
     styles,
-    /\.hero \{[\s\S]{0,100}padding: 14rem var\(--showcase-gutter\) 5rem/,
+    /\.hero \{[\s\S]{0,100}padding: 11\.5rem var\(--showcase-gutter\) 4rem/,
   );
   assert.match(
     styles,
-    /\.heroInner \{[\s\S]{0,180}grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/,
+    /\.heroCopy \{[\s\S]{0,180}align-items: center[\s\S]{0,180}text-align: center/,
   );
-  assert.match(page, /className=\{showcaseStyles\.heroAssurance\}/);
+  assert.doesNotMatch(page, /heroAssurance|heroLinks\.map/);
   assert.match(
     page,
     /className=\{`\$\{styles\.heroLead\} \$\{showcaseStyles\.heroLead\}`\}/,
   );
-  assert.match(page, /heroLinks\.map/);
-  assert.match(page, /aria-label=\{showcase\.heroLinksLabel\}/);
-  assert.match(
-    styles,
-    /@media \(max-width: 39\.999rem\)[\s\S]*?\.decisionNumber \{[\s\S]*?font-size: 0\.875rem/,
-  );
+  assert.match(page, /href=\{privateTourHubPaths\[locale\]\}/);
+  assert.match(page, /className=\{showcaseStyles\.heroDestinationPrompt\}/);
+  assert.doesNotMatch(page, /aria-label=\{showcase\.hero(?:Primary|Secondary)\}/);
   assert.match(
     styles,
     /\.heroTitle \{[\s\S]{0,100}font-family: var\(--hg-editorial\)[\s\S]{0,100}font-weight: 400/,
-  );
-  assert.match(
-    styles,
-    /\.decisionIntro h2,[\s\S]{0,100}font-family: var\(--hg-editorial\)/,
   );
   assert.match(
     styles,
@@ -663,48 +669,27 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   );
 });
 
-test("homepage decision cards compact only at the phone breakpoint", async () => {
-  const [page, styles] = await Promise.all([
+test("homepage guide paths are parallel, compact and remain ordinary discoverable links", async () => {
+  const [page, finder, finderStyles, pageStyles, showcaseStyles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageGuideSearch.tsx"),
+    source("components/HomepageGuideSearch.module.css"),
+    source("components/HomegroundHomePage.module.css"),
     source("components/HomepageShowcase.module.css"),
   ]);
-  const phoneStart = styles.indexOf("@media (max-width: 39.999rem)");
-  const phoneEnd = styles.indexOf("@media (min-width: 64rem)", phoneStart);
-  assert.ok(phoneStart >= 0 && phoneEnd > phoneStart);
-  const phoneStyles = styles.slice(phoneStart, phoneEnd);
-  const desktopStyles = styles.slice(0, phoneStart);
-
+  assert.match(page, /guidePaths=\{showcase\.guidePaths\}/);
   assert.match(
-    desktopStyles,
-    /\.decisionGrid \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/,
+    finder,
+    /<nav className=\{styles\.guidePaths\} aria-label=\{guidePaths\.listLabel\}>[\s\S]*?<ul>[\s\S]*?<li key=\{item\.id\}>[\s\S]*?<a href=\{getHomepageGuidePath\(locale, item\.id\)\}>/,
   );
-  assert.match(
-    desktopStyles,
-    /\.decisionCard \{[\s\S]*?min-block-size: 17\.5rem;[\s\S]*?padding: 2\.5rem/,
-  );
-  assert.match(phoneStyles, /\.decisions \{\s*padding-block: 2\.5rem/);
-  assert.match(
-    phoneStyles,
-    /\.decisionGrid \{[\s\S]*?grid-template-columns: minmax\(0, 1fr\);[\s\S]*?margin-block-start: 1\.5rem/,
-  );
-  assert.match(
-    phoneStyles,
-    /\.decisionCard \{[\s\S]*?display: grid;[\s\S]*?grid-template-columns: 2rem minmax\(0, 1fr\);[\s\S]*?min-block-size: 9rem;[\s\S]*?padding: 1\.25rem/,
-  );
-  assert.match(
-    phoneStyles,
-    /\.decisionCard h3 \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 1;[\s\S]*?margin: 0/,
-  );
-  assert.match(
-    phoneStyles,
-    /\.decisionCard p \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 2;[\s\S]*?line-height: 1\.55;[\s\S]*?margin: 0\.625rem 0 0/,
-  );
-  assert.doesNotMatch(
-    phoneStyles,
-    /(?:display:\s*none|-webkit-line-clamp|(?:^|[;{]\s*)block-size:\s*\d)/m,
-  );
-  assert.match(
-    page,
-    /<nav aria-label=\{showcase\.decisions\.listLabel\}>[\s\S]*?<ol[\s\S]*?<li key=\{card\.id\}>[\s\S]*?<a[\s\S]*?href=\{getHomepageDecisionPath\(locale, card\.id\)\}[\s\S]*?<h3>\{card\.title\}<\/h3>[\s\S]*?<p>\{card\.body\}<\/p>[\s\S]*?decisionAction/,
-  );
+  assert.doesNotMatch(finder, /<ol|decisionNumber|String\(index \+ 1\)/);
+  assert.match(finderStyles, /\.guidePaths ul \{[\s\S]{0,140}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(finderStyles, /@media \(max-width: 42rem\)[\s\S]{0,140}\.guidePaths ul \{[\s\S]{0,80}grid-template-columns: minmax\(0, 1fr\)/);
+  assert.match(finderStyles, /\.guidePaths a \{[\s\S]{0,220}min-block-size: 5\.5rem/);
+  assert.doesNotMatch(finderStyles, /\.guidePaths[^}]*overflow:\s*hidden/);
+  assert.doesNotMatch(finderStyles, /\.(?:finder|formArea)\s*\{[^}]*overflow:\s*hidden/);
+  assert.doesNotMatch(pageStyles, /\.travelGuides(?:Section)?\s*\{[^}]*overflow:\s*hidden/);
+  assert.doesNotMatch(showcaseStyles, /\.searchSection\s*\{[^}]*overflow:\s*hidden/);
+  assert.match(finder, /<strong>\{item\.title\}<\/strong>[\s\S]{0,80}<small>\{item\.body\}<\/small>/);
+  assert.doesNotMatch(finder, /<a[^>]*aria-label=/);
 });

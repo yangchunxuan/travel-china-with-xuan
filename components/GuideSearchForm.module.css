@@ -23,9 +23,11 @@
   align-items: center;
   background: var(--guides-card, var(--hg-color-card));
   border: 1px solid var(--guides-line, var(--hg-color-line));
+  border-radius: 0.75rem;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   min-height: 4rem;
+  overflow: hidden;
   padding-inline-start: 1rem;
 }
 
@@ -55,7 +57,7 @@
 
 .rotatingPlaceholder {
   align-items: center;
-  color: var(--guides-muted, var(--hg-color-muted));
+  color: #5d6065;
   display: flex;
   font-size: 1rem;
   grid-column: 2;
@@ -94,7 +96,7 @@
 }
 
 .control input::placeholder {
-  color: var(--guides-muted, var(--hg-color-muted));
+  color: #5d6065;
   opacity: 1;
 }
 
@@ -315,11 +317,16 @@
 
 @media (max-width: 40rem) {
   .control {
+    min-height: 3.25rem;
+  }
+
+  .control {
     grid-template-columns: auto minmax(0, 1fr);
     padding-inline-start: 0.85rem;
   }
 
   .control input {
+    min-height: 3.2rem;
     padding-inline: 0.75rem;
   }
 
@@ -327,6 +334,7 @@
     grid-column: 1 / -1;
     grid-row: 2;
     margin-inline-start: -0.85rem;
+    min-height: 3.2rem;
     min-width: 0;
     width: calc(100% + 0.85rem);
   }

@@ -14,7 +14,7 @@ test("homepage guide search is followed by the localized guide rail", async () =
     source("components/HomepageGuideRail.tsx"),
   ]);
   const finderPosition = homepage.indexOf(
-    "<HomepageGuideSearch demos={searchDemos} locale={locale} />",
+    "<HomepageGuideSearch",
   );
   const railPosition = homepage.indexOf("<HomepageGuideRail");
   const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} />");
@@ -39,6 +39,9 @@ test("homepage guide search is followed by the localized guide rail", async () =
     "the homepage search anchor must clear the sticky header",
   );
   assert.match(finder, /<h2 id="homepage-guide-search-title">/);
+  assert.match(finder, /className=\{styles\.guidePaths\}/);
+  assert.match(finder, /<nav[\s\S]*?<ul>[\s\S]*?<li[\s\S]*?<a href=/);
+  assert.doesNotMatch(finder, /<ol|decisionNumber/);
   assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
   assert.match(finder, /showExamples=\{false\}/);
   assert.doesNotMatch(finder, /styles\.demo|demoResults|demoQuestion/);
@@ -184,6 +187,14 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   );
   assert.doesNotMatch(titleStyles, /motionControl|data-has-control/);
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(
+    titleStyles,
+    /@media \(max-width: 480px\)[\s\S]*?\.phraseLayer\[data-phase="entering"\][\s\S]*?phraseFadeIn[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?phraseFadeOut/,
+  );
+  assert.match(
+    titleStyles,
+    /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.phraseLayer\[data-phase="entering"\],[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?animation: none/,
+  );
   assert.doesNotMatch(titleStyles, /filter: blur/);
 });
 
