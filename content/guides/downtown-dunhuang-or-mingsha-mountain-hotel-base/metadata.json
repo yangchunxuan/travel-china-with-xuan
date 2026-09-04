@@ -1,0 +1,107 @@
+{
+  "id": "downtown-dunhuang-or-mingsha-mountain-hotel-base",
+  "type": "planning",
+  "pillar": "stay-city-areas",
+  "audienceMarkets": ["global"],
+  "format": "timed-attraction-and-evening-base-decision",
+  "topics": [
+    "accommodation",
+    "Dunhuang",
+    "Mingsha Mountain and Crescent Spring",
+    "Mogao Caves Digital Exhibition Center",
+    "Dunhuang Railway Station",
+    "Dunhuang Mogao International Airport",
+    "Mogao reservation, Mingsha gate access, opening, weather, arrival, departure, luggage and property-proof verification",
+    "Gansu"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/downtown-dunhuang-or-mingsha-mountain-hotel-base/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/downtown-dunhuang-or-mingsha-mountain-hotel-base/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": {
+    "section": "stay",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/downtown-dunhuang-or-mingsha-mountain-hotel-base/",
+      "title": "Stay in Downtown Dunhuang or Near Mingsha Mountain?",
+      "headline": "Choose a Dunhuang Base by Your Mogao Slot, Desert Evening and Departure",
+      "description": "Choose downtown Dunhuang or the Mingsha Mountain entrance area using your fixed Mogao slot, desert evening, arrival, departure, luggage and property proof.",
+      "heroAlt": "Real late-afternoon photograph of the dunes at Mingsha Mountain near Dunhuang in 2021",
+      "heroCredit": {
+        "text": "Mingsha Mountain, photographed by Yanxutong1215 on 13 April 2021; cropped, resized and converted to WebP by Homeground under the same licence. The image proves only the real dune landscape, not any hotel, room view, access route, weather, sunset or current operating condition.",
+        "sourceLabel": "Original Mingsha Mountain photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:鸣沙山.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Dunhuang: downtown or Mingsha",
+      "featuredLinkLabel": "Choose your Dunhuang hotel base",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Dunhuang", "Downtown or Mingsha", "Hotel base"]
+    },
+    "zh": {
+      "path": "/zh/guides/downtown-dunhuang-or-mingsha-mountain-hotel-base/",
+      "title": "敦煌住市区还是鸣沙山附近？",
+      "headline": "按莫高窟时段、沙漠傍晚与离开节点选择住宿基地",
+      "description": "用已确认的莫高窟时段、鸣沙山傍晚计划、抵离节点、行李和物业证据，在敦煌市区与鸣沙山入口一带之间选择住宿。",
+      "heroAlt": "2021年敦煌鸣沙山沙丘的真实傍晚照片",
+      "heroCredit": {
+        "text": "Yanxutong1215 于 2021 年 4 月 13 日拍摄的鸣沙山；Homeground 依同一许可作裁切、缩放与 WebP 转换。图片只证明真实沙丘景观，不证明任何酒店、客房景观、通行路线、天气、日落或当前运营情况。",
+        "sourceLabel": "鸣沙山原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:鸣沙山.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "敦煌市区或鸣沙山住宿",
+      "featuredLinkLabel": "选择敦煌住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["敦煌", "市区或鸣沙山", "住宿基地"]
+    },
+    "ko": {
+      "path": "/ko/guides/downtown-dunhuang-or-mingsha-mountain-hotel-base/",
+      "title": "둔황 숙소, 시내와 명사산 근처 중 어디가 좋을까?",
+      "headline": "막고굴 예약 시간·사막 저녁·출발 지점으로 정하는 숙박 거점",
+      "description": "확정된 막고굴 시간, 명사산 저녁 일정, 도착·출발 지점, 짐과 숙소 증빙을 기준으로 둔황 시내와 명사산 입구 일대 중 숙박 거점을 고릅니다.",
+      "heroAlt": "2021년 둔황 명사산의 모래언덕을 담은 실제 늦은 오후 사진",
+      "heroCredit": {
+        "text": "Yanxutong1215가 2021년 4월 13일 촬영한 명사산입니다. Homeground는 같은 라이선스에 따라 자르고 크기를 조정해 WebP로 변환했습니다. 이 사진은 실제 모래언덕만 보여 줄 뿐 호텔, 객실 전망, 접근 동선, 날씨, 일몰 또는 현재 운영 상태를 증명하지 않습니다.",
+        "sourceLabel": "명사산 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:鸣沙山.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "둔황 시내 또는 명사산 숙소",
+      "featuredLinkLabel": "둔황 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["둔황", "시내 또는 명사산", "숙박 거점"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Dunhuang downtown or Mingsha Mountain where to stay",
+      "hotel near Mogao Caves Digital Exhibition Center",
+      "Dunhuang hotel base Mogao Caves Mingsha Mountain"
+    ],
+    "zh": [
+      "敦煌市区还是鸣沙山附近住宿",
+      "莫高窟数字展示中心附近住宿",
+      "敦煌莫高窟鸣沙山住宿基地"
+    ],
+    "ko": [
+      "둔황 시내 명사산 근처 숙소",
+      "막고굴 디지털 전시센터 근처 숙소",
+      "둔황 막고굴 명사산 숙박 거점"
+    ]
+  }
+}
