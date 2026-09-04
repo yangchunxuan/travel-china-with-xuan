@@ -1,0 +1,74 @@
+{
+  "id": "chengdu-wuhou-shrine-reading-route",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "evidence-layered-site-reading-route",
+  "topics": ["wuhou-shrine", "three-kingdoms", "chengdu", "historical-memory", "literature"],
+  "destinations": ["chengdu", "sichuan", "china"],
+  "heroImagePath": "/images/guides/chengdu-wuhou-shrine-reading-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-wuhou-shrine-reading-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-wuhou-shrine-reading-route/",
+      "title": "Chengdu Wuhou Shrine: Read History, Memory and the Novel",
+      "headline": "Chengdu Wuhou Shrine: A Route Through History, Memorial and Three Kingdoms Fiction",
+      "description": "Follow a site-reading route that separates recorded history, later memorial architecture, Three Kingdoms fiction and modern Jinli presentation.",
+      "heroAlt": "The cropped entrance roof and gold traditional-character ‘漢昭烈廟’ plaque at Chengdu Wuhou Shrine, with no visitors visible.",
+      "navTitle": "Read Chengdu Wuhou Shrine",
+      "featuredLinkLabel": "Separate history, memorial and fiction at Chengdu Wuhou Shrine",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chengdu", "Wuhou Shrine", "Three Kingdoms"],
+      "heroCredit": {
+        "text": "Wuhou Shrine cultural-heritage-zone entrance, photographed 30 August 2023 by Kcx36; cropped to remove visitors and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%AD%A6%E4%BE%AF%E7%A5%A0%E6%96%87%E7%89%A9%E5%8C%BA%E5%A4%A7%E9%97%A8.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-wuhou-shrine-reading-route/",
+      "title": "成都武侯祠怎么看：分清三国史、祠庙记忆与《三国演义》",
+      "headline": "成都武侯祠现场阅读路线：历史、纪念与三国文学怎样分层",
+      "description": "沿一条可执行的现场路线，分清可核验历史、后世纪念建筑、《三国演义》塑形与锦里的现代旅游呈现。",
+      "heroAlt": "成都武侯祠文物区入口屋顶与金字繁体“漢昭烈廟”匾额的裁切画面，画面中无游客。",
+      "navTitle": "读懂成都武侯祠",
+      "featuredLinkLabel": "在成都武侯祠分清历史、纪念与文学",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["成都", "武侯祠", "三国"],
+      "heroCredit": {
+        "text": "Kcx36于2023年8月30日拍摄的武侯祠文物区入口；已裁切移除游客并转换为WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%AD%A6%E4%BE%AF%E7%A5%A0%E6%96%87%E7%89%A9%E5%8C%BA%E5%A4%A7%E9%97%A8.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-wuhou-shrine-reading-route/",
+      "title": "청두 무후사 관람법: 삼국 역사·추모·소설 구분하기",
+      "headline": "청두 무후사 현장 읽기: 역사, 추모 공간, 삼국지연의의 층위",
+      "description": "검증 가능한 역사, 후대의 추모 건축, 삼국지연의의 인물상, 현대 진리 관광 연출을 현장 동선에서 구분합니다.",
+      "heroAlt": "관람객이 보이지 않도록 자른 청두 무후사 문화재 구역 입구 지붕과 금색 전통 한자 ‘漢昭烈廟’ 현판.",
+      "navTitle": "청두 무후사 읽기",
+      "featuredLinkLabel": "청두 무후사에서 역사·추모·문학 구분하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["청두", "무후사", "삼국 시대"],
+      "heroCredit": {
+        "text": "Kcx36이 2023년 8월 30일 촬영한 무후사 문화재 구역 입구; 인물을 제외하도록 자른 뒤 WebP로 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%AD%A6%E4%BE%AF%E7%A5%A0%E6%96%87%E7%89%A9%E5%8C%BA%E5%A4%A7%E9%97%A8.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

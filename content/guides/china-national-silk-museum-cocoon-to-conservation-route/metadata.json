@@ -1,0 +1,74 @@
+{
+  "id": "china-national-silk-museum-cocoon-to-conservation-route",
+  "type": "planning",
+  "pillar": "culture-history-people-ideas",
+  "audienceMarkets": ["global"],
+  "format": "museum-process-evidence-route",
+  "topics": ["china-national-silk-museum", "silk", "sericulture", "weaving", "textile-conservation"],
+  "destinations": ["hangzhou", "zhejiang", "china"],
+  "heroImagePath": "/images/guides/china-national-silk-museum-cocoon-to-conservation-route/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-national-silk-museum-cocoon-to-conservation-route/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-national-silk-museum-cocoon-to-conservation-route/",
+      "title": "China National Silk Museum: A Cocoon-to-Conservation Route",
+      "headline": "China National Silk Museum: Follow Silk from Cocoon to Conservation",
+      "description": "Follow an evidence-led Hangzhou museum route through sericulture, looms, textile labels, Silk Road context and conservation.",
+      "heroAlt": "The glass-fronted entrance of the China National Silk Museum in Hangzhou, with its Chinese name above the doors and an empty fountain court.",
+      "navTitle": "Read the China National Silk Museum",
+      "featuredLinkLabel": "Follow silk from cocoon to conservation in Hangzhou",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Hangzhou", "Silk Museum", "Textile conservation"],
+      "heroCredit": {
+        "text": "China National Silk Museum entrance, photographed 12 November 2017 by Siyuwj; cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:China_Silk_Museum,_2017-11-12_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/china-national-silk-museum-cocoon-to-conservation-route/",
+      "title": "中国丝绸博物馆怎么逛：从蚕茧、织机到文物修复",
+      "headline": "中国丝绸博物馆现场路线：从蚕茧与织机读到文物修复",
+      "description": "沿一条证据优先的杭州馆内路线，读懂蚕桑、织机、织物标签、丝绸之路证据与纺织品保护。",
+      "heroAlt": "杭州中国丝绸博物馆玻璃立面入口，门上方可见中文馆名，前方喷泉广场无人。",
+      "navTitle": "读懂中国丝绸博物馆",
+      "featuredLinkLabel": "在杭州从蚕茧一路读到文物修复",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["杭州", "中国丝绸博物馆", "纺织品修复"],
+      "heroCredit": {
+        "text": "Siyuwj于2017年11月12日拍摄的中国丝绸博物馆入口；已裁切并转换为WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:China_Silk_Museum,_2017-11-12_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/china-national-silk-museum-cocoon-to-conservation-route/",
+      "title": "중국실크박물관 관람법: 누에고치부터 직물 보존까지",
+      "headline": "중국실크박물관 현장 동선: 누에고치·직기·실크로드·보존",
+      "description": "항저우에서 양잠, 직기, 직물 라벨, 실크로드의 증거와 섬유 보존을 하나의 증거 중심 동선으로 읽습니다.",
+      "heroAlt": "항저우 중국실크박물관의 유리 정면 출입구와 문 위 중국어 관명, 사람이 없는 분수 광장.",
+      "navTitle": "중국실크박물관 읽기",
+      "featuredLinkLabel": "항저우에서 누에고치부터 직물 보존까지 따라가기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["항저우", "중국실크박물관", "직물 보존"],
+      "heroCredit": {
+        "text": "Siyuwj가 2017년 11월 12일 촬영한 중국실크박물관 입구; 크롭 후 WebP로 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:China_Silk_Museum,_2017-11-12_01.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}

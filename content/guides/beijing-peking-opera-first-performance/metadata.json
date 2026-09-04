@@ -1,0 +1,74 @@
+{
+  "id": "beijing-peking-opera-first-performance",
+  "type": "planning",
+  "pillar": "culture-festivals-arts-contemporary",
+  "audienceMarkets": ["global"],
+  "format": "performance-selection-viewing-guide",
+  "topics": ["peking-opera", "jingju", "beijing", "performing-arts", "first-performance"],
+  "destinations": ["beijing", "china"],
+  "heroImagePath": "/images/guides/beijing-peking-opera-first-performance/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/beijing-peking-opera-first-performance/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "compare" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/beijing-peking-opera-first-performance/",
+      "title": "Peking Opera in Beijing: Choose Your First Performance",
+      "headline": "Peking Opera in Beijing: Choose a Highlights Show, Excerpt Programme or Full Play",
+      "description": "Compare Beijing Peking Opera formats, verify subtitles and venue rules, prepare the plot, and recover if the programme changes or language support fails.",
+      "heroAlt": "Peking Opera performers in elaborate costumes standing on a stage photographed in Beijing.",
+      "navTitle": "Choose Peking Opera in Beijing",
+      "featuredLinkLabel": "Choose a first Peking Opera performance",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Beijing", "Peking Opera", "First performance"],
+      "heroCredit": {
+        "text": "Peking Opera performers on a Beijing stage, photographed by Richard Mortel; centre-cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_Opera_(13)_(55212897878).jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/beijing-peking-opera-first-performance/",
+      "title": "第一次在北京看京剧：怎么选演出",
+      "headline": "第一次在北京看京剧：旅游展示、折子戏与全本戏怎么选",
+      "description": "先分清北京京剧演出的形式，再核实字幕、时长和场馆规则；学会准备剧情，并在节目变更或字幕失效时恢复计划。",
+      "heroAlt": "多位身着精细戏服的京剧演员站在北京一处舞台上。",
+      "navTitle": "选择北京京剧演出",
+      "featuredLinkLabel": "选择第一场京剧",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["北京", "京剧", "初次观演"],
+      "heroCredit": {
+        "text": "北京舞台上的京剧演员，摄影 Richard Mortel；已居中裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_Opera_(13)_(55212897878).jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/beijing-peking-opera-first-performance/",
+      "title": "베이징 경극 첫 관람: 공연 고르는 법",
+      "headline": "베이징 경극 첫 관람: 관광 하이라이트·절자희·전막극 고르기",
+      "description": "베이징 경극 형식을 비교하고 자막·공연 시간·공연장 규정을 확인하세요. 줄거리 준비와 프로그램 변경 또는 자막 실패 복구법도 안내합니다.",
+      "heroAlt": "화려한 경극 의상을 입은 배우들이 베이징에서 촬영된 무대 위에 서 있다.",
+      "navTitle": "베이징 경극 고르기",
+      "featuredLinkLabel": "첫 경극 공연 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["베이징", "경극", "첫 관람"],
+      "heroCredit": {
+        "text": "베이징 무대의 경극 배우들, Richard Mortel 촬영; 중앙 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_Opera_(13)_(55212897878).jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  }
+}

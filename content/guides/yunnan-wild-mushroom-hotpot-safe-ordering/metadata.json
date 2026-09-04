@@ -1,0 +1,74 @@
+{
+  "id": "yunnan-wild-mushroom-hotpot-safe-ordering",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "food-safety-ordering-workflow",
+  "topics": ["yunnan-wild-mushrooms", "hotpot", "food-safety", "ordering", "regional-food"],
+  "destinations": ["yunnan", "kunming", "china"],
+  "heroImagePath": "/images/guides/yunnan-wild-mushroom-hotpot-safe-ordering/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yunnan-wild-mushroom-hotpot-safe-ordering/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/yunnan-wild-mushroom-hotpot-safe-ordering/",
+      "title": "Yunnan Wild-Mushroom Hotpot: Reduce Ordering Risk",
+      "headline": "Yunnan Wild-Mushroom Hotpot: A Conservative Ordering and Emergency Guide",
+      "description": "Reduce avoidable risk: separate wild from cultivated mushrooms, reject unexplained mixed pots, verify the restaurant process and prepare for symptoms.",
+      "heroAlt": "A table of mushroom dishes at a Kunming restaurant, with a broth pot partly visible at the lower right.",
+      "navTitle": "Yunnan mushroom hotpot",
+      "featuredLinkLabel": "Reduce risk when ordering Yunnan mushroom hotpot",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Yunnan", "Wild mushrooms", "Food safety"],
+      "heroCredit": {
+        "text": "Still from a China News Service report filmed at a Kunming wild-mushroom-hotpot restaurant in 2020; cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%88%E5%88%B0%E4%BA%91%E5%8D%97%E8%8F%8C%E8%8F%87%E5%AD%A3_%E6%95%99%E4%BD%A0%E9%87%8E%E7%94%9F%E8%8C%B8%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.webm",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/yunnan-wild-mushroom-hotpot-safe-ordering/",
+      "title": "云南野生菌火锅：怎样降低点单风险",
+      "headline": "云南野生菌火锅：保守点单、控制批次与应急指南",
+      "description": "降低可避免的风险：分清野生菌与栽培菌，拒绝解释不清的混合锅，核实餐厅流程，并准备疑似症状应对。",
+      "heroAlt": "昆明一家餐厅的菌类菜肴摆满桌面，右下角露出一部分汤锅。",
+      "navTitle": "云南野生菌火锅",
+      "featuredLinkLabel": "降低云南菌子火锅的点单风险",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["云南", "野生菌", "食品安全"],
+      "heroCredit": {
+        "text": "中国新闻社2020年在昆明一家主营野生菌火锅的餐厅拍摄的视频画面；已裁切并转换为WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%88%E5%88%B0%E4%BA%91%E5%8D%97%E8%8F%8C%E8%8F%87%E5%AD%A3_%E6%95%99%E4%BD%A0%E9%87%8E%E7%94%9F%E8%8C%B8%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.webm",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/yunnan-wild-mushroom-hotpot-safe-ordering/",
+      "title": "윈난 야생버섯 훠궈: 주문 위험을 줄이는 법",
+      "headline": "윈난 야생버섯 훠궈: 보수적 주문, 조리 회차 관리, 응급 대응",
+      "description": "피할 수 있는 위험을 줄이세요. 야생·재배 버섯을 구분하고 설명 없는 혼합 냄비를 거절하며 식당 절차와 의심 증상 대응을 확인합니다.",
+      "heroAlt": "쿤밍의 한 식당 테이블에 버섯 요리가 놓여 있고 오른쪽 아래에 육수 냄비 일부가 보인다.",
+      "navTitle": "윈난 야생버섯 훠궈",
+      "featuredLinkLabel": "윈난 버섯 훠궈 주문 위험 줄이기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["윈난", "야생버섯", "식품 안전"],
+      "heroCredit": {
+        "text": "중국신문사가 2020년 쿤밍의 야생버섯 훠궈 전문 식당에서 촬영한 영상의 정지 화면; 자르기 및 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%88%E5%88%B0%E4%BA%91%E5%8D%97%E8%8F%8C%E8%8F%87%E5%AD%A3_%E6%95%99%E4%BD%A0%E9%87%8E%E7%94%9F%E8%8C%B8%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.webm",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  }
+}

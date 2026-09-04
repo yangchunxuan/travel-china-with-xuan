@@ -1,0 +1,74 @@
+{
+  "id": "chongqing-hotpot-first-order",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": ["global"],
+  "format": "ordering-workflow",
+  "topics": ["chongqing-hotpot", "ordering", "food-safety", "regional-food", "dining-etiquette"],
+  "destinations": ["chongqing", "china"],
+  "heroImagePath": "/images/guides/chongqing-hotpot-first-order/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chongqing-hotpot-first-order/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": { "section": "culture", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/chongqing-hotpot-first-order/",
+      "title": "Chongqing Hotpot for First-Timers: How to Order",
+      "headline": "Chongqing Hotpot for First-Timers: Choose a Pot, Order Portions and Cook Safely",
+      "description": "Choose broth, build a sensible first round, decode tripe and tofu, cook safely without timing myths, and recover when the meal is too spicy or too large.",
+      "heroAlt": "A steaming nine-section metal hotpot filled with red broth, with plates of raw meat around the table.",
+      "navTitle": "Chongqing hotpot",
+      "featuredLinkLabel": "Order Chongqing hotpot",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Chongqing", "Food culture", "Ordering"],
+      "heroCredit": {
+        "text": "A nine-section hotpot in Chongqing, photographed by N509FZ, centre-cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:3x3_hot_pot_in_Chongqing_(20180217161707).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/chongqing-hotpot-first-order/",
+      "title": "第一次吃重庆火锅：怎么选锅、点菜和烫熟",
+      "headline": "第一次吃重庆火锅：选锅、控制份量与安全烫食",
+      "description": "分清红汤、鸳鸯和清汤，先点一轮不过量的菜，看懂毛肚与豆制品，避开不安全的秒数口诀，并处理太辣、点多或锅底混汤。",
+      "heroAlt": "一口装着红汤的九格金属火锅正在冒热气，桌边摆着几盘生肉。",
+      "navTitle": "重庆火锅",
+      "featuredLinkLabel": "学会点重庆火锅",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["重庆", "饮食文化", "点单"],
+      "heroCredit": {
+        "text": "摄于重庆的一口九格火锅，摄影 N509FZ，已居中裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:3x3_hot_pot_in_Chongqing_(20180217161707).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/chongqing-hotpot-first-order/",
+      "title": "처음 먹는 충칭 훠궈: 냄비와 재료 주문법",
+      "headline": "처음 먹는 충칭 훠궈: 냄비 선택, 양 조절, 안전하게 익히기",
+      "description": "홍탕·분할 냄비·맑은 탕을 고르고 첫 주문량을 조절하며, 마오두와 두부류를 읽고, 위험한 초 단위 속설 없이 익힌 뒤 너무 맵거나 많이 시킨 상황을 복구하는 법.",
+      "heroAlt": "붉은 육수가 든 아홉 칸 금속 훠궈에서 김이 오르고 식탁 둘레에는 생고기 접시가 놓여 있다.",
+      "navTitle": "충칭 훠궈",
+      "featuredLinkLabel": "충칭 훠궈 주문하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["충칭", "음식 문화", "주문"],
+      "heroCredit": {
+        "text": "충칭의 아홉 칸 훠궈, 촬영 N509FZ, 중앙 자르기 후 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:3x3_hot_pot_in_Chongqing_(20180217161707).jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  }
+}
