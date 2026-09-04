@@ -318,22 +318,15 @@
 }
 
 .root[data-homeground-locale="zh"] {
-  /* Keep the eyebrow and all headline rows on one editorial axis. */
+  /* Keep every headline row on one centered editorial measure. */
   --showcase-zh-hero-measure: clamp(18.3rem, 25.925vw, 22.265rem);
 }
 
-.root[data-homeground-locale="zh"] .heroEyebrow,
 .root[data-homeground-locale="ko"] .heroEyebrow,
 .root[data-homeground-locale="zh"] .eyebrow,
 .root[data-homeground-locale="ko"] .eyebrow {
   letter-spacing: 0.02em;
   text-transform: none;
-}
-
-.root[data-homeground-locale="zh"] .heroEyebrow {
-  inline-size: min(100%, var(--showcase-zh-hero-measure));
-  margin-inline: auto;
-  text-align: start;
 }
 
 .root[data-homeground-locale="zh"] .heroTitle,
@@ -392,6 +385,12 @@
 
   .planningPanel {
     max-inline-size: 48rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .root[data-homeground-locale="zh"] .hero {
+    padding-block-start: 10.5rem;
   }
 }
 

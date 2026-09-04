@@ -502,14 +502,16 @@ export function HomegroundHomePage({
         >
           <div className={showcaseStyles.heroInner}>
             <div className={showcaseStyles.heroCopy}>
-              <p className={showcaseStyles.heroEyebrow}>
-                <span className={showcaseStyles.heroEyebrowLong}>
-                  {copy.hero.eyebrow}
-                </span>
-                <span className={showcaseStyles.heroEyebrowShort}>
-                  {copy.businessDescriptor}
-                </span>
-              </p>
+              {locale !== "zh" ? (
+                <p className={showcaseStyles.heroEyebrow}>
+                  <span className={showcaseStyles.heroEyebrowLong}>
+                    {copy.hero.eyebrow}
+                  </span>
+                  <span className={showcaseStyles.heroEyebrowShort}>
+                    {copy.businessDescriptor}
+                  </span>
+                </p>
+              ) : null}
               <RotatingHeroTitle
                 canonicalTitle={copy.hero.title}
                 className={showcaseStyles.heroTitle}

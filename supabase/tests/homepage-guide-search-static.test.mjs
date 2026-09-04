@@ -210,9 +210,9 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
     "the Chinese hero must expose one fluid measure for its title group",
   );
   assert.match(
-    showcaseStyles,
-    /\.root\[data-homeground-locale="zh"\] \.heroEyebrow \{[\s\S]*?inline-size: min\(100%, var\(--showcase-zh-hero-measure\)\);[\s\S]*?text-align: start;/,
-    "the Chinese hero eyebrow must use the shared editorial axis",
+    homepage,
+    /\{locale !== "zh" \? \([\s\S]*?className=\{showcaseStyles\.heroEyebrow\}[\s\S]*?\) : null\}/,
+    "the Chinese homepage must remove the hero eyebrow without leaving an empty element",
   );
   assert.match(
     showcaseStyles,
@@ -223,6 +223,11 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
     showcaseStyles,
     /@media \(max-width: 39\.999rem\)[\s\S]*?\.root\[data-homeground-locale="zh"\] \{[\s\S]*?--showcase-zh-hero-measure: 13\.725rem;/,
     "the shared Chinese hero axis must track the mobile title size",
+  );
+  assert.match(
+    showcaseStyles,
+    /@media \(min-width: 40rem\)[\s\S]*?\.root\[data-homeground-locale="zh"\] \.hero \{[\s\S]*?padding-block-start: 10\.5rem;/,
+    "the Chinese hero must reclaim the removed eyebrow space above mobile widths",
   );
   for (const phrase of [
     "一路有我们。",
