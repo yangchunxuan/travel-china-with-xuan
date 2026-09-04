@@ -1,0 +1,41 @@
+# Dynamic facts ledger
+
+**Full source review:** 2026-09-04 (Asia/Shanghai)
+
+**Freshness class:** high volatility / on-source-change (including operator or product changes)
+
+**Editorial rule:** recheck every Critical item for the traveller's exact dates, occupants and booked product before publication and before the cancellation deadline. Conflicting official text is a reason to narrow the claim and obtain written confirmation, not a reason to select the most favourable version.
+
+| Fact or claim | Volatility | Official / primary source | Last checked | Publication rule |
+|---|---|---|---|---|
+| The official booking catalogue distinguishes `景区内`, `景区外` and `乌村` as location filters and also exposes `旗下酒店` as a separate operator attribute | High | Wuzhen official booking hotel list | 2026-09-04 | Use only to teach identity verification. Never infer that geographic “inside” automatically proves operator status or a particular room entitlement. |
+| A 2025-03-16 operator notice says guests in West Scenic Area hotels and homestays receive West Scenic Area admission according to actual registered occupancy, with Waterside Youth Hostel (水巷青年旅馆) excluded | Critical | Wuzhen operator notice `id=2115` | 2026-09-04 | Treat as a dated programme statement. The exact room/product, number of admissions and guest eligibility still require written confirmation. |
+| The legacy guest notice says guests at Wuzhen Tourism properties must first buy admission unless their room type gives a ticket | Critical / contradictory | Wuzhen scenic-area guest notice | 2026-09-04 | This conflicts with the 2025 notice. Do not publish a universal “included” or “not included” answer. Show the traveller what to ask. |
+| A dated official product page displayed a ticket-included room while the same page also repeated the generic first-admission-purchase wording | Critical / contradictory | Wuzhen official booking room page for a 2026-05-09 sample | 2026-09-04 | Evidence that the room/product line controls. It is not current inventory, price or an entitlement for another product/date. |
+| Ticket quantity differs by room/product and can differ for family occupancy | Critical | Exact official product terms and operator written confirmation | 2026-09-04 | Record named occupants and the number/type of admissions in writing; never infer one ticket per bed or per booking. |
+| Ordinary admission is described as valid for one entry on the day | Critical | Wuzhen visitor information page | 2026-09-04 | Do not treat a normal ticket as a re-entry pass. Confirm the separate registered-guest procedure. |
+| The legacy guest notice describes temporary re-entry credentials using a room card and identity document; other operator text also refers to registered-stay evidence and face/identity checks | Critical / process-sensitive | Wuzhen guest notice and visitor information | 2026-09-04 | The foreign-passport fallback when a domestic-ID or face-verification flow fails is not clearly documented. Obtain a written manual route and carry the original passport without publishing its details. |
+| Operator-managed West Scenic Area hotel check-in is described as centralized at the West Scenic Area Visitor Service Centre, with Wucun using a different sales/check-in point | Critical | Wuzhen scenic-area guest notice; exact product page | 2026-09-04 | Confirm the actual first desk, its current service window and the next handoff. A hotel's map pin is not the first check-in point. |
+| Operator material promotes luggage service and an inside-stay handoff | Critical / service-specific | Wuzhen 2025 promotional page `id=2116`; exact product terms | 2026-09-04 | Confirm bag count/size, handoff point, cutoff, receipt, delivery point, liability and late-arrival fallback. Do not promise automatic transfer. |
+| Late-arrival retention, payment, cancellation and change terms appear on the legacy notice and product pages | Critical / transaction-specific | Wuzhen guest notice; exact booking confirmation | 2026-09-04 | Do not publish a fixed arrival cutoff or refund rule. Save the exact confirmation and obtain a dated written late-arrival instruction. |
+| The scenic area's stone paving can make wheeled luggage, strollers and mobility routes harder | Medium / route-specific | Wuzhen scenic-area guest notice; named property's current route evidence | 2026-09-04 | Describe a friction, not legal accessibility compliance. Request an unbroken route video/measurements and use the dedicated accessibility owner. |
+| Registered hotel guests use valid travel documents and the hotel completes accommodation registration; the operator guest notice explicitly lists passports for foreign guests | High | Exit and Entry Administration Law Article 39; Wuzhen guest notice | 2026-09-04 | Bring the original valid passport and reconfirm property execution. Do not claim an OTA “accepts foreigners” label is law or proof of future check-in. |
+| Zhejiang's 2026 online registration pilot covers accommodation outside hotels | Critical legal scope | National Immigration Administration 2026 policy interpretation | 2026-09-04 | It does not replace hotel registration at a hotel and must not be presented as a workaround for a hotel front desk. |
+| Government policy says authorities/platforms should not use a supposed special qualification to restrict accommodation operators from receiving overseas guests | High policy / execution variable | State Council response; 2024 seven-department Ministry of Commerce notice | 2026-09-04 | Separate the rule from actual front-desk capability. If staff cannot complete check-in, use the national refusal-recovery owner rather than arguing that a platform label guarantees execution. |
+| Visitor shuttle entitlement for registered guests is described through room-card or registration evidence | Critical / product and route specific | Wuzhen visitor information page | 2026-09-04 | Reconfirm route, operating period, eligibility, boarding point and accessibility; never publish it as an unlimited transport guarantee. |
+
+## Official-page contradictions requiring visible disclosure
+
+1. **Admission inclusion:** the 2025-03-16 announcement describes admission for actual registered occupants at West Scenic Area hotels/homestays, while the older guest notice says first admission is normally purchased unless the room type expressly includes it.
+2. **One official product page, two messages:** the sampled room title includes West Scenic Area admission, but the page also carries a generic first-purchase statement. Product-specific terms and written operator confirmation must control the traveller's decision.
+3. **Occupancy is not ticket quantity:** family room and multi-occupant products may enumerate different admission quantities. “Inside” and “family room” are not enough.
+4. **Re-entry identity method:** official wording refers to room-card/registration evidence and identity or face checks, but no reviewed page clearly explains the manual foreign-passport recovery path if the default flow fails.
+5. **Marketing versus executable service:** the 2025 promotion describes morning/evening access and luggage convenience; it does not by itself establish current check-in cutoffs, bag custody, transfer timing, accessibility or future operating status.
+
+## Excluded evergreen claims
+
+No fixed room price, inventory, rating, admission price, included-ticket quantity, operating hour, check-in cutoff, cancellation/refund term, shuttle schedule, luggage cutoff, delivery time, walking time, foreign-guest acceptance, room type or accessibility guarantee is published. No claim says every property physically inside West Scenic Area is operator-managed, or that every operator-managed room is inside or carries identical benefits.
+
+## Change triggers
+
+Re-review immediately if the official hotel catalogue, inside/outside or operator labels, admission campaign, re-entry technology, visitor-centre check-in point, luggage service, shuttle operation, foreign-guest registration guidance, construction/access route, named product terms or operator ownership changes. Also re-review if any official contradiction is removed or replaced, because the article's safe wording may then be unnecessarily narrow.

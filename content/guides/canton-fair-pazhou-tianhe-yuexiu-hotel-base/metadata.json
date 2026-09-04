@@ -1,0 +1,105 @@
+{
+  "id": "canton-fair-pazhou-tianhe-yuexiu-hotel-base",
+  "type": "planning",
+  "pillar": "stay-city-areas",
+  "audienceMarkets": ["global"],
+  "format": "event-led-three-area-stay-decision",
+  "topics": [
+    "accommodation",
+    "Canton Fair",
+    "Pazhou",
+    "business travel",
+    "hotel location",
+    "Guangzhou"
+  ],
+  "destinations": ["guangzhou"],
+  "heroImagePath": "/images/guides/canton-fair-pazhou-tianhe-yuexiu-hotel-base/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/canton-fair-pazhou-tianhe-yuexiu-hotel-base/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/canton-fair-pazhou-tianhe-yuexiu-hotel-base/",
+      "title": "Pazhou, Tianhe or Yuexiu for the Canton Fair?",
+      "headline": "Choose a Canton Fair Hotel Base by Fair Days and Evening Work",
+      "description": "Compare Pazhou, Tianhe and Yuexiu by hall access, fair-day count, meetings, badge plans, late returns, luggage and shuttle failure.",
+      "heroAlt": "Aerial view of the Canton Fair Complex and nearby Pazhou buildings in Guangzhou",
+      "heroCredit": {
+        "text": "Canton Fair Complex areas A, B and C and the exhibition-centre wharf, photographed by Tim Wu on 1 July 2023; conventionally centre-cropped, resized and converted to WebP by Homeground. The image does not show live fair access, hotel availability or a current transport service.",
+        "sourceLabel": "Original Canton Fair Complex aerial photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_View,_Canton_Fair_Complex_20230701-A.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "Canton Fair hotel base",
+      "featuredLinkLabel": "Choose a Canton Fair stay area",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guangzhou", "Canton Fair", "Hotel base"]
+    },
+    "zh": {
+      "path": "/zh/guides/canton-fair-pazhou-tianhe-yuexiu-hotel-base/",
+      "title": "参加广交会住琶洲、天河还是越秀？",
+      "headline": "按参展天数与晚间商务安排选择广交会住宿基地",
+      "description": "从展馆分区、参展天数、会后商务、办证、晚归、行李与班车失效预案，比较琶洲、天河和越秀。",
+      "heroAlt": "广州广交会展馆与琶洲周边建筑的航拍实景",
+      "heroCredit": {
+        "text": "广交会展馆 A、B、C 区及会展中心码头，Tim Wu 摄于 2023 年 7 月 1 日；Homeground 仅作常规居中裁切、缩放和 WebP 转换。图片不证明实时入场安排、酒店房态或当前交通服务。",
+        "sourceLabel": "广交会展馆航拍原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_View,_Canton_Fair_Complex_20230701-A.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "广交会住宿基地",
+      "featuredLinkLabel": "选择广交会住宿区域",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["广州", "广交会", "住宿基地"]
+    },
+    "ko": {
+      "path": "/ko/guides/canton-fair-pazhou-tianhe-yuexiu-hotel-base/",
+      "title": "캔톤페어 숙소, 파저우·톈허·웨슈 중 어디가 좋을까?",
+      "headline": "전시회 일정과 저녁 업무로 고르는 캔톤페어 숙박 거점",
+      "description": "전시장 구역, 참가 일수, 미팅, 배지 수령, 늦은 귀가, 짐과 셔틀 실패 대안을 기준으로 파저우·톈허·웨슈를 비교합니다.",
+      "heroAlt": "광저우 캔톤페어 전시장과 파저우 일대 건물을 담은 실제 항공 사진",
+      "heroCredit": {
+        "text": "캔톤페어 전시장 A·B·C 구역과 전시센터 선착장을 Tim Wu가 2023년 7월 1일 촬영했습니다. Homeground는 중앙부를 일반 방식으로 자르고 크기를 조정해 WebP로 변환했습니다. 현재 입장, 호텔 객실 또는 교통 운행을 증명하는 사진은 아닙니다.",
+        "sourceLabel": "캔톤페어 전시장 항공 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_View,_Canton_Fair_Complex_20230701-A.jpg",
+        "licenseLabel": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "navTitle": "캔톤페어 숙박 거점",
+      "featuredLinkLabel": "캔톤페어 숙소 지역 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["광저우", "캔톤페어", "숙박 거점"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "where to stay for Canton Fair",
+      "Pazhou or Tianhe hotel Canton Fair",
+      "Canton Fair hotel area comparison"
+    ],
+    "zh": [
+      "参加广交会住哪里",
+      "广交会住琶洲还是天河",
+      "广交会酒店区域选择"
+    ],
+    "ko": [
+      "캔톤페어 숙소 위치",
+      "광저우 전시회 파저우 톈허 숙소",
+      "캔톤페어 호텔 지역 선택"
+    ]
+  }
+}

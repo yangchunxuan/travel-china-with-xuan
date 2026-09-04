@@ -1,0 +1,106 @@
+{
+  "id": "daocheng-yading-village-or-shangri-la-town-hotel-base",
+  "type": "planning",
+  "pillar": "stay-hotel-types-scenic-bases",
+  "audienceMarkets": ["global"],
+  "format": "scenic-village-or-gateway-base-decision",
+  "topics": [
+    "accommodation",
+    "Daocheng Yading",
+    "Yading Village",
+    "Shangri-La Town",
+    "scenic-area base",
+    "park opening, reservation and transport verification",
+    "Sichuan"
+  ],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/daocheng-yading-village-or-shangri-la-town-hotel-base/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/daocheng-yading-village-or-shangri-la-town-hotel-base/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "sourceReviewedDate": "2026-09-01",
+  "search": {
+    "section": "stay",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/daocheng-yading-village-or-shangri-la-town-hotel-base/",
+      "title": "Daocheng Yading: Yading Village or Shangri-La Town (Riwa)?",
+      "headline": "Choose a Daocheng Yading Base by Arrival, Altitude and Sight Order",
+      "description": "For Daocheng Yading, compare Yading Village and Shangri-La Town (Riwa) by arrival, relative altitude, sight order, luggage, park transport and recovery.",
+      "heroAlt": "Real landscape of Yading Village, fields and mountain slopes in Daocheng, Sichuan",
+      "heroCredit": {
+        "text": "Yading Village in Daocheng, Sichuan, photographed by fsyzh and uploaded on 14 September 2009; conventionally centre-cropped, resized and converted to WebP by Homeground. The image does not prove current accommodation, road, park-entry or transport conditions.",
+        "sourceLabel": "Original Yading Village landscape photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%9A%E4%B8%81%E6%9D%91_-_panoramio.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "Daocheng Yading hotel base",
+      "featuredLinkLabel": "Choose a Daocheng Yading base",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Daocheng Yading", "Scenic base", "Sichuan"]
+    },
+    "zh": {
+      "path": "/zh/guides/daocheng-yading-village-or-shangri-la-town-hotel-base/",
+      "title": "稻城亚丁住亚丁村还是香格里拉镇（日瓦）？",
+      "headline": "按抵达时间、高原适应与游览顺序选择稻城亚丁住宿基地",
+      "description": "从抵达时间、相对海拔、一日或两日游览顺序、行李、景区交通与故障预案，比较亚丁村和香格里拉镇。",
+      "heroAlt": "四川稻城亚丁村、田野与山坡的真实景观",
+      "heroCredit": {
+        "text": "四川稻城亚丁村实景，fsyzh 摄并于 2009 年 9 月 14 日上传；Homeground 仅作常规居中裁切、缩放和 WebP 转换。图片不证明当前住宿、道路、景区入园或交通状况。",
+        "sourceLabel": "亚丁村景观原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%9A%E4%B8%81%E6%9D%91_-_panoramio.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "稻城亚丁住宿基地",
+      "featuredLinkLabel": "选择稻城亚丁住宿基地",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["稻城亚丁", "景区住宿", "四川"]
+    },
+    "ko": {
+      "path": "/ko/guides/daocheng-yading-village-or-shangri-la-town-hotel-base/",
+      "title": "다오청 야딩 숙소, 야딩촌과 샹그릴라진(르와) 중 어디가 좋을까?",
+      "headline": "도착 시각·고도 적응·관광 순서로 고르는 다오청 야딩 숙박 거점",
+      "description": "도착 시각, 상대적 고도, 1일·2일 관광 순서, 짐, 관광지 교통과 문제 발생 시 대안을 기준으로 두 거점을 비교합니다.",
+      "heroAlt": "쓰촨성 다오청 야딩촌의 들판과 산비탈을 담은 실제 풍경",
+      "heroCredit": {
+        "text": "쓰촨성 다오청 야딩촌을 fsyzh가 촬영해 2009년 9월 14일 올린 사진입니다. Homeground는 중앙부를 일반 방식으로 자르고 크기를 조정해 WebP로 변환했습니다. 현재 숙소, 도로, 입장 또는 교통 상태를 증명하는 사진은 아닙니다.",
+        "sourceLabel": "야딩촌 풍경 원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%9A%E4%B8%81%E6%9D%91_-_panoramio.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "다오청 야딩 숙박 거점",
+      "featuredLinkLabel": "다오청 야딩 숙박 거점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["다오청 야딩", "관광지 숙소", "쓰촨"]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "Yading Village or Shangri-La Town hotel",
+      "where to stay for Daocheng Yading",
+      "stay inside Yading Village or Riwa"
+    ],
+    "zh": [
+      "稻城亚丁住亚丁村还是香格里拉镇",
+      "亚丁村住宿还是日瓦住宿",
+      "稻城亚丁住宿基地选择"
+    ],
+    "ko": [
+      "다오청 야딩 숙소 위치",
+      "야딩촌 샹그릴라진 숙소 비교",
+      "다오청 야딩 어디서 숙박"
+    ]
+  }
+}
