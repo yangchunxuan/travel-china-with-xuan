@@ -14,7 +14,7 @@ test("homepage guide search is followed by the localized guide rail", async () =
     source("components/HomepageGuideRail.tsx"),
   ]);
   const finderPosition = homepage.indexOf(
-    "<HomepageGuideSearch demos={searchDemos} locale={locale} />",
+    "<HomepageGuideSearch",
   );
   const railPosition = homepage.indexOf("<HomepageGuideRail");
   const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} />");
@@ -39,6 +39,9 @@ test("homepage guide search is followed by the localized guide rail", async () =
     "the homepage search anchor must clear the sticky header",
   );
   assert.match(finder, /<h2 id="homepage-guide-search-title">/);
+  assert.match(finder, /className=\{styles\.guidePaths\}/);
+  assert.match(finder, /<nav[\s\S]*?<ul>[\s\S]*?<li[\s\S]*?<a href=/);
+  assert.doesNotMatch(finder, /<ol|decisionNumber/);
   assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
   assert.match(finder, /showExamples=\{false\}/);
   assert.doesNotMatch(finder, /styles\.demo|demoResults|demoQuestion/);
@@ -101,6 +104,7 @@ test("homepage search placeholder demo types continuously, pauses for input and 
   assert.match(form, /TYPEWRITER_TARGET_MS = 620/);
   assert.match(form, /TYPEWRITER_HOLD_MS = 610/);
   assert.match(form, /MAX_ROTATING_PLACEHOLDERS = 3/);
+  assert.match(form, /data-guide-search-surface=\{surface\}/);
   assert.match(form, /type PlaceholderPhase = "typing" \| "holding" \| "clearing"/);
   assert.match(form, /\(current \+ 1\) % placeholderPhrases\.length/);
   assert.match(form, /slice\(0, placeholderCharacterCount\)/);
@@ -120,6 +124,16 @@ test("homepage search placeholder demo types continuously, pauses for input and 
   assert.doesNotMatch(editorial, /searchDemoGuideIds/);
   assert.match(formStyles, /@keyframes typewriter-cursor/);
   assert.match(formStyles, /\.rotatingPlaceholder\[data-phase="clearing"\]/);
+  assert.match(
+    formStyles,
+    /\.searchExperience\[data-guide-search-surface="homepage"\] \.control \{[\s\S]{0,100}border-radius: 0\.75rem;[\s\S]{0,100}overflow: hidden;/,
+  );
+  assert.match(
+    formStyles,
+    /@media \(max-width: 40rem\)[\s\S]*?\.searchExperience\[data-guide-search-surface="homepage"\] \.control \{[\s\S]{0,80}min-height: 3\.25rem;/,
+  );
+  const sharedControlBlock = formStyles.match(/(?:^|\n)\.control \{([^}]*)\}/)?.[1] ?? "";
+  assert.doesNotMatch(sharedControlBlock, /border-radius|overflow/);
   assert.match(formStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.doesNotMatch(finder, /typewriter|setInterval|aria-live/);
 });
@@ -141,12 +155,15 @@ test("guide rail preserves position while lazy-loading and loads near the native
 });
 
 test("homepage hero keeps one canonical brand promise behind a two-second rotating ending", async () => {
-  const [homepage, header, title, titleStyles] = await Promise.all([
-    source("components/HomegroundHomePage.tsx"),
-    source("components/HomegroundHeader.tsx"),
-    source("components/RotatingHeroTitle.tsx"),
-    source("components/RotatingHeroTitle.module.css"),
-  ]);
+  const [homepage, header, title, titleStyles, showcaseStyles, showcaseCopy] =
+    await Promise.all([
+      source("components/HomegroundHomePage.tsx"),
+      source("components/HomegroundHeader.tsx"),
+      source("components/RotatingHeroTitle.tsx"),
+      source("components/RotatingHeroTitle.module.css"),
+      source("components/HomepageShowcase.module.css"),
+      source("lib/homepageShowcaseI18n.ts"),
+    ]);
 
   assert.match(homepage, /<HomegroundHeader/);
   assert.match(header, /<strong lang="en">Homeground China<\/strong>/);
@@ -184,7 +201,62 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   );
   assert.doesNotMatch(titleStyles, /motionControl|data-has-control/);
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(
+    titleStyles,
+    /\.root \{[\s\S]*?inline-size: 100%;[\s\S]*?max-inline-size: 100%;/,
+    "the rotating title wrapper must not shrink away from the shared title axis",
+  );
+  assert.match(
+    titleStyles,
+    /@media \(max-width: 39\.999rem\)[\s\S]*?\.phraseLayer\[data-phase="entering"\][\s\S]*?phraseFadeIn[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?phraseFadeOut/,
+  );
+  assert.match(
+    titleStyles,
+    /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.phraseLayer\[data-phase="entering"\],[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?animation: none/,
+  );
   assert.doesNotMatch(titleStyles, /filter: blur/);
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \{[\s\S]*?--showcase-zh-hero-measure: clamp\(18\.3rem, 25\.925vw, 22\.265rem\);/,
+    "the Chinese hero must expose one fluid measure for its title group",
+  );
+  assert.match(
+    homepage,
+    /\{locale !== "zh" \? \([\s\S]*?className=\{showcaseStyles\.heroEyebrow\}[\s\S]*?\) : null\}/,
+    "the Chinese homepage must remove the hero eyebrow without leaving an empty element",
+  );
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \.heroTitle \{[\s\S]*?inline-size: min\(100%, var\(--showcase-zh-hero-measure\)\);[\s\S]*?margin-inline: auto;[\s\S]*?max-inline-size: 100%;[\s\S]*?text-align: start;/,
+    "Chinese hero lines must share one deliberate left edge at every breakpoint",
+  );
+  assert.match(
+    showcaseStyles,
+    /@media \(max-width: 39\.999rem\)[\s\S]*?\.root\[data-homeground-locale="zh"\] \{[\s\S]*?--showcase-zh-hero-measure: 13\.725rem;/,
+    "the shared Chinese hero axis must track the mobile title size",
+  );
+  assert.match(
+    showcaseStyles,
+    /@media \(min-width: 40rem\)[\s\S]*?\.root\[data-homeground-locale="zh"\] \.hero \{[\s\S]*?padding-block-start: 10\.5rem;/,
+    "the Chinese hero must reclaim the removed eyebrow space above mobile widths",
+  );
+  for (const phrase of [
+    "一路有我们。",
+    "每站都接得上",
+    "路程也算进去",
+    "难题交给我们",
+  ]) {
+    assert.ok(Array.from(phrase).length <= 6);
+    assert.ok(
+      showcaseCopy.includes(`"${phrase}"`),
+      `mobile Chinese rotating phrase must stay within six characters: ${phrase}`,
+    );
+  }
+  assert.match(
+    showcaseStyles,
+    /\.heroTitle \{[\s\S]*?margin: 0;[\s\S]*?margin-inline: auto;/,
+    "the title must stay centered inside full-width responsive wrappers",
+  );
 });
 
 test("customer-facing search copy avoids internal implementation language", async () => {

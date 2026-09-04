@@ -64,6 +64,99 @@
   align-self: center;
 }
 
+.guidePaths {
+  border-block-start: 1px solid rgb(10 10 10 / 10%);
+  grid-column: 1 / -1;
+  min-inline-size: 0;
+  padding-block-start: 1.25rem;
+}
+
+.guidePaths > p {
+  color: var(--guides-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  line-height: 1.4;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.guidePaths ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guidePaths li {
+  min-inline-size: 0;
+}
+
+.guidePaths li + li {
+  border-inline-start: 1px solid rgb(10 10 10 / 10%);
+}
+
+.guidePaths a {
+  align-items: start;
+  color: var(--guides-ink);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-block-size: 5.5rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.guidePaths li:first-child a {
+  padding-inline-start: 0;
+}
+
+.guidePaths li:last-child a {
+  padding-inline-end: 0;
+}
+
+.guidePaths a > span {
+  display: grid;
+  gap: 0.3rem;
+  min-inline-size: 0;
+}
+
+.guidePaths strong {
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.guidePaths small {
+  color: var(--guides-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.guidePaths svg {
+  color: rgb(10 10 10 / 35%);
+  margin-block-start: 0.15rem;
+  transition:
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.guidePaths a:hover {
+  background: rgb(10 10 10 / 4%);
+}
+
+.guidePaths a:hover svg {
+  color: var(--guides-ink);
+  transform: translate(2px, -2px);
+}
+
+.guidePaths a:focus-visible {
+  outline: 2px solid var(--hg-color-focus);
+  outline-offset: 2px;
+}
+
 :global([data-homeground-locale="zh"]) .introduction h2 {
   font-weight: 500;
   letter-spacing: 0;
@@ -81,7 +174,9 @@
 }
 
 :global([data-homeground-locale="zh"]) .eyebrow,
-:global([data-homeground-locale="ko"]) .eyebrow {
+:global([data-homeground-locale="ko"]) .eyebrow,
+:global([data-homeground-locale="zh"]) .guidePaths > p,
+:global([data-homeground-locale="ko"]) .guidePaths > p {
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -99,10 +194,29 @@
 
 }
 
+@media (max-width: 42rem) {
+  .guidePaths ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guidePaths li + li {
+    border-block-start: 1px solid rgb(10 10 10 / 10%);
+    border-inline-start: 0;
+  }
+
+  .guidePaths a,
+  .guidePaths li:first-child a,
+  .guidePaths li:last-child a {
+    min-block-size: 4.75rem;
+    padding: 0.85rem 0;
+  }
+}
+
 @media (max-width: 30rem) {
   .finder {
     border-radius: 1rem;
-    padding: 1.25rem;
+    gap: 1.25rem;
+    padding: 1.1rem;
   }
 
   .introduction h2 {
@@ -113,5 +227,18 @@
 @media (prefers-contrast: more) {
   .finder {
     border-width: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guidePaths a,
+  .guidePaths svg {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .guidePaths a:focus-visible {
+    outline: 2px solid CanvasText;
   }
 }

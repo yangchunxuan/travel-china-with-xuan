@@ -97,7 +97,7 @@ test("city hubs are bounded overview projections rather than hidden mega guides"
   assert.doesNotMatch(projection, /PageFamilyRenderer/);
 });
 
-test("homepage entry cards point to the two exact top-level tasks", async () => {
+test("homepage keeps destination discovery distinct from private tours", async () => {
   const [homePage, copy] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("lib/homegroundI18n.ts"),
@@ -106,11 +106,15 @@ test("homepage entry cards point to the two exact top-level tasks", async () => 
   assert.match(homePage, /const destinationsIndexPath =/);
   assert.match(
     homePage,
-    /href: destinationsIndexPath,[\s\S]*?title: copy\.cities\.eyebrow/,
+    /className=\{showcaseStyles\.primaryAction\}[\s\S]{0,100}href=\{privateTourHubPaths\[locale\]\}/,
+  );
+  assert.match(
+    homePage,
+    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<a href=\{destinationsIndexPath\}>/,
   );
   assert.doesNotMatch(
     homePage,
-    /href: "#destinations",[\s\S]*?title: copy\.cities\.eyebrow/,
+    /href=\{"#destinations"\}/,
   );
   assert.match(copy, /eyebrow: "Travel answers"/);
   assert.match(copy, /eyebrow: "选择城市"/);

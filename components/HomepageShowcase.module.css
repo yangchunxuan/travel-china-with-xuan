@@ -1,5 +1,5 @@
 .root {
-  /* One homepage system: x.ai-scale rhythm, Homeground typography and brand. */
+  /* One homepage system: editorial-scale rhythm, Homeground typography and brand. */
   --showcase-canvas: #fff;
   --showcase-surface: #fff;
   --showcase-card: #fff;
@@ -12,7 +12,6 @@
   --showcase-content: 77rem;
   --showcase-gutter: 1rem;
   --showcase-section-space: 6rem;
-  --showcase-radius: 1.5rem;
   --showcase-button-height: 2.75rem;
   --showcase-header-height: 4rem;
   --hg-color-canvas: var(--showcase-canvas);
@@ -40,24 +39,23 @@
 
 .hero {
   background: #fff;
-  padding: 14rem var(--showcase-gutter) 5rem;
+  padding: 11.5rem var(--showcase-gutter) 4rem;
 }
 
 .heroInner {
-  align-items: stretch;
-  display: grid;
-  gap: 5rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-inline: auto;
   max-inline-size: var(--showcase-content);
 }
 
 .heroCopy {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-inline-size: 38rem;
+  margin-inline: auto;
+  max-inline-size: 58rem;
   min-inline-size: 0;
+  text-align: center;
 }
 
 .heroEyebrow {
@@ -80,7 +78,8 @@
   letter-spacing: -0.045em;
   line-height: 1.1;
   margin: 0;
-  max-inline-size: 16ch;
+  margin-inline: auto;
+  max-inline-size: 17ch;
   text-wrap: balance;
 }
 
@@ -89,7 +88,8 @@
   font-size: 1rem;
   line-height: 1.7;
   margin: 1.5rem 0 0;
-  max-inline-size: 31rem;
+  margin-inline: auto;
+  max-inline-size: 43rem;
   text-wrap: pretty;
 }
 
@@ -98,11 +98,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
   margin-block-start: 2rem;
-}
-
-.heroActionShort {
-  display: none;
 }
 
 .primaryAction,
@@ -136,7 +133,7 @@
 }
 
 .primaryAction:hover {
-  filter: brightness(0.9);
+  background: #242424;
 }
 
 .secondaryAction:hover {
@@ -144,86 +141,36 @@
 }
 
 .primaryAction:focus-visible,
-.secondaryAction:focus-visible {
+.secondaryAction:focus-visible,
+.heroDestinationPrompt a:focus-visible {
   outline: 2px solid var(--showcase-focus);
   outline-offset: 2px;
 }
 
-.decisionCard:focus-visible {
-  outline: 2px solid var(--showcase-focus);
-  outline-offset: -2px;
-}
-
-.heroAssurance {
+.heroDestinationPrompt {
   align-items: center;
-  display: flex;
-  min-inline-size: 0;
-}
-
-.heroAssurance ul {
-  inline-size: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.heroAssurance li + li {
-  border-block-start: 1px solid rgb(213 217 226 / 30%);
-}
-
-.heroAssurance a {
-  align-items: start;
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: minmax(0, 1fr) auto;
-  min-block-size: 5rem;
-  padding-block: 1rem;
-  text-decoration: none;
-}
-
-.heroAssuranceCopy {
-  display: grid;
-  gap: 0.25rem;
-  min-inline-size: 0;
-}
-
-.heroAssuranceCopy strong {
-  font-family: var(--hg-ui-display);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.heroAssuranceCopy small {
   color: var(--showcase-muted);
-  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 0.875rem;
-  line-height: 1.43;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  gap: 0.25rem 0.5rem;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 1rem 0 0;
 }
 
-.heroAssurance a svg {
-  color: rgb(10 10 10 / 38%);
-  margin-block-start: 0.3rem;
-  transition:
-    color 150ms ease;
-}
-
-.heroAssurance a:hover .heroAssuranceCopy strong,
-.heroAssurance a:focus-visible .heroAssuranceCopy strong {
-  color: rgb(10 10 10 / 62%);
-}
-
-.heroAssurance a:hover svg,
-.heroAssurance a:focus-visible svg {
+.heroDestinationPrompt a {
+  align-items: center;
   color: var(--showcase-ink);
+  display: inline-flex;
+  font-weight: 600;
+  gap: 0.35rem;
+  min-block-size: 2.75rem;
+  text-underline-offset: 0.18em;
 }
 
-.heroAssurance a:focus-visible {
-  outline: 2px solid var(--showcase-focus);
-  outline-offset: 2px;
+.heroDestinationPrompt a:hover {
+  text-decoration-thickness: 2px;
 }
 
 .searchSection {
@@ -232,19 +179,6 @@
   padding: var(--showcase-section-space)
     max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
   padding-block-start: 3.5rem;
-}
-
-.decisions {
-  background: #fff;
-  color: var(--showcase-ink);
-  padding: var(--showcase-section-space)
-    max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
-}
-
-.decisionIntro {
-  margin-inline: auto;
-  max-inline-size: 42rem;
-  text-align: center;
 }
 
 .eyebrow {
@@ -256,7 +190,6 @@
   text-transform: uppercase;
 }
 
-.decisionIntro h2,
 .planningIntro h2 {
   font-family: var(--hg-editorial);
   font-size: clamp(2.25rem, 4vw, 3rem);
@@ -267,7 +200,6 @@
   text-wrap: balance;
 }
 
-.decisionIntro > p:last-child,
 .planningIntro > p:last-of-type {
   color: var(--showcase-muted);
   font-size: 1rem;
@@ -275,87 +207,6 @@
   margin: 1.5rem auto 0;
   max-inline-size: 36rem;
   text-wrap: pretty;
-}
-
-.decisionGrid {
-  background: rgb(10 10 10 / 6%);
-  border: 1px solid rgb(10 10 10 / 6%);
-  border-radius: var(--showcase-radius);
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  list-style: none;
-  margin: 3.5rem auto 0;
-  max-inline-size: var(--showcase-content);
-  overflow: hidden;
-  padding: 0;
-}
-
-.decisionGrid li {
-  background: rgb(10 10 10 / 6%);
-  min-inline-size: 0;
-}
-
-.decisionCard {
-  background: var(--showcase-subtle);
-  block-size: 100%;
-  color: var(--showcase-ink);
-  display: flex;
-  flex-direction: column;
-  min-block-size: 17.5rem;
-  padding: 2.5rem;
-  text-decoration: none;
-  transition: background-color 180ms ease;
-}
-
-.decisionNumber {
-  color: rgb(10 10 10 / 38%);
-  font-size: 0.875rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
-}
-
-.decisionCard h3 {
-  font-family: var(--hg-ui-display);
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin: 1.5rem 0 0;
-  text-wrap: balance;
-}
-
-.decisionCard p {
-  color: var(--showcase-muted);
-  font-size: 0.875rem;
-  line-height: 1.75;
-  margin: 1rem 0 2rem;
-}
-
-.decisionAction {
-  align-items: center;
-  color: var(--showcase-ink);
-  display: flex;
-  font-size: 0.8rem;
-  font-weight: 650;
-  gap: 0.6rem;
-  justify-content: space-between;
-  margin-block-start: auto;
-}
-
-.decisionAction svg {
-  color: rgb(10 10 10 / 35%);
-  transition: transform 180ms ease;
-}
-
-.decisionCard:hover {
-  background: var(--showcase-hover);
-}
-
-.decisionCard:hover .decisionAction svg {
-  color: var(--showcase-ink);
 }
 
 .root :global(#homepage-guide-search-title),
@@ -466,7 +317,11 @@
   border-block-start: 1px solid rgb(10 10 10 / 10%);
 }
 
-.root[data-homeground-locale="zh"] .heroEyebrow,
+.root[data-homeground-locale="zh"] {
+  /* Keep every headline row on one centered editorial measure. */
+  --showcase-zh-hero-measure: clamp(18.3rem, 25.925vw, 22.265rem);
+}
+
 .root[data-homeground-locale="ko"] .heroEyebrow,
 .root[data-homeground-locale="zh"] .eyebrow,
 .root[data-homeground-locale="ko"] .eyebrow {
@@ -475,7 +330,6 @@
 }
 
 .root[data-homeground-locale="zh"] .heroTitle,
-.root[data-homeground-locale="zh"] .decisionIntro h2,
 .root[data-homeground-locale="zh"] .planningIntro h2 {
   font-weight: 500;
   letter-spacing: 0;
@@ -489,7 +343,6 @@
 }
 
 .root[data-homeground-locale="ko"] .heroTitle,
-.root[data-homeground-locale="ko"] .decisionIntro h2,
 .root[data-homeground-locale="ko"] .planningIntro h2 {
   font-weight: 400;
   letter-spacing: -0.016em;
@@ -499,7 +352,11 @@
 
 .root[data-homeground-locale="zh"] .heroTitle {
   font-size: clamp(3rem, 4.25vw, 3.65rem);
-  max-inline-size: 9em;
+  inline-size: min(100%, var(--showcase-zh-hero-measure));
+  margin-inline: auto;
+  max-inline-size: 100%;
+  text-align: start;
+  text-wrap: wrap;
 }
 
 .root[data-homeground-locale="ko"] .heroTitle {
@@ -507,23 +364,7 @@
   max-inline-size: 11em;
 }
 
-.root[data-homeground-locale="zh"] .decisionCard h3,
-.root[data-homeground-locale="ko"] .decisionCard h3 {
-  letter-spacing: 0;
-  line-height: 1.35;
-  word-break: keep-all;
-}
-
-.root[data-homeground-locale="zh"] .decisionCard h3 {
-  font-weight: 500;
-}
-
-.root[data-homeground-locale="ko"] .decisionCard h3 {
-  font-weight: 400;
-}
-
 @media (max-width: 70rem) {
-  .heroInner,
   .planningGrid {
     gap: 3rem;
   }
@@ -534,18 +375,22 @@
     padding-block-start: 12rem;
   }
 
-  .heroInner,
-  .planningGrid,
-  .decisionGrid {
+  .planningGrid {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .heroCopy {
-    max-inline-size: 44rem;
+    max-inline-size: 52rem;
   }
 
   .planningPanel {
     max-inline-size: 48rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .root[data-homeground-locale="zh"] .hero {
+    padding-block-start: 10.5rem;
   }
 }
 
@@ -555,16 +400,12 @@
     --showcase-section-space: 4rem;
   }
 
-  .decisions {
-    padding-block: 2.5rem;
+  .root[data-homeground-locale="zh"] {
+    --showcase-zh-hero-measure: 13.725rem;
   }
 
   .hero {
-    padding-block: 10rem 4rem;
-  }
-
-  .heroInner {
-    gap: 4rem;
+    padding-block: 9rem 4.5rem;
   }
 
   .heroTitle,
@@ -589,25 +430,14 @@
     margin-block-start: 1.5rem;
   }
 
+  .heroDestinationPrompt {
+    margin-block-start: 0.75rem;
+  }
+
   .searchSection {
     padding-block-start: 2rem;
   }
 
-  .decisionIntro {
-    text-align: start;
-  }
-
-  .decisionIntro > p:last-child {
-    line-height: 1.55;
-    margin-block-start: 0.75rem;
-    margin-inline: 0;
-  }
-
-  .decisionIntro h2 {
-    margin-block-start: 0.5rem;
-  }
-
-  .decisionIntro h2,
   .planningIntro h2 {
     font-size: 1.875rem;
     line-height: 1.2;
@@ -625,46 +455,6 @@
 
   .faqSection {
     padding: var(--showcase-section-space) var(--showcase-gutter);
-  }
-
-  .decisionGrid {
-    border-radius: 1.25rem;
-    grid-template-columns: minmax(0, 1fr);
-    margin-block-start: 1.5rem;
-  }
-
-  .decisionCard {
-    column-gap: 0.75rem;
-    display: grid;
-    grid-template-columns: 2rem minmax(0, 1fr);
-    min-block-size: 9rem;
-    padding: 1.25rem;
-  }
-
-  .decisionCard h3 {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-  }
-
-  .decisionCard p {
-    grid-column: 2;
-    grid-row: 2;
-    line-height: 1.55;
-    margin: 0.625rem 0 0;
-  }
-
-  .decisionAction {
-    grid-column: 2;
-    grid-row: 3;
-    margin-block-start: 0.75rem;
-  }
-
-  .decisionNumber {
-    align-self: center;
-    font-size: 0.875rem;
-    grid-column: 1;
-    grid-row: 1;
   }
 
 }
@@ -704,34 +494,17 @@
     font-size: 2.25rem;
   }
 
-  .decisionCard {
-    overflow-wrap: anywhere;
-  }
-}
-
-@media (max-width: 25rem) {
-  .heroActionLong {
-    display: none;
-  }
-
-  .heroActionShort {
-    display: inline;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .primaryAction,
-  .secondaryAction,
-  .decisionCard,
-  .decisionAction svg {
+  .secondaryAction {
     animation: none;
     transition: none;
   }
 }
 
 @media (forced-colors: active) {
-  .heroAssurance,
-  .decisionCard,
   .primaryAction,
   .secondaryAction {
     border: 1px solid CanvasText;

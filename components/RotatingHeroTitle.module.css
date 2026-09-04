@@ -1,6 +1,6 @@
 .root {
   box-sizing: border-box;
-  inline-size: fit-content;
+  inline-size: 100%;
   max-inline-size: 100%;
   position: relative;
 }
@@ -94,20 +94,59 @@
 }
 
 @media (max-width: 680px) {
-  .root {
-    inline-size: 100%;
-  }
-
   .phraseStage {
     inline-size: 100%;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .phraseLayer .letter {
+@media (max-width: 39.999rem) {
+  .phraseLayer .letter,
+  .phraseLayer[data-phase="entering"] .letter,
+  .phraseLayer[data-phase="exiting"] .letter {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .phraseLayer[data-phase="entering"] {
+    animation: phraseFadeIn 280ms ease-out both;
+  }
+
+  .phraseLayer[data-phase="exiting"] {
+    animation: phraseFadeOut 260ms ease-in both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phraseLayer,
+  .phraseLayer[data-phase="entering"],
+  .phraseLayer[data-phase="exiting"],
+  .phraseLayer .letter,
+  .phraseLayer[data-phase="entering"] .letter,
+  .phraseLayer[data-phase="exiting"] .letter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes phraseFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes phraseFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 

@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import {
-  getHomepageDecisionPath,
+  getHomepageGuidePath,
   getHomepageShowcaseCopy,
 } from "../../lib/homepageShowcaseI18n.ts";
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
@@ -85,19 +85,35 @@ function contrastRatio(foreground, background) {
   return (lighter + 0.05) / (darker + 0.05);
 }
 
-test("the homepage showcase keeps four equivalent decisions in every language", () => {
-  const expectedIds = ["explore", "stay", "transport", "plan"];
+test("the homepage separates tour conversion, destination discovery and three parallel guide paths", async () => {
+  const homepage = await source("components/HomegroundHomePage.tsx");
+  const expectedIds = ["stay", "transport", "plan"];
+  const heroBodyLengthLimits = { en: 72, zh: 28, ko: 44 };
+  const productIntroLengthLimits = { en: 82, zh: 36, ko: 44 };
+
+  assert.match(
+    homepage,
+    /const destinationsIndexPath =\s*locale === "en" \? "\/explore\/" : `\/\$\{locale\}\/explore\/`/,
+  );
+  assert.match(
+    homepage,
+    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<a href=\{destinationsIndexPath\}>/,
+  );
 
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageShowcaseCopy(locale);
     const identityCopy = getHomegroundCopy(locale);
+    const productCopy = getHomepageProductShowcaseCopy(locale);
     const headline = copy.heroHeadline;
     assert.deepEqual(
-      copy.decisions.cards.map((card) => card.id),
+      copy.guidePaths.items.map((item) => item.id),
       expectedIds,
     );
-    assert.equal(new Set(copy.decisions.cards.map((card) => card.title)).size, 4);
-    assert.ok(copy.heroBody.length > 40);
+    assert.equal(new Set(copy.guidePaths.items.map((item) => item.title)).size, 3);
+    assert.ok(copy.heroBody.length >= 18);
+    assert.ok(copy.heroBody.length <= heroBodyLengthLimits[locale]);
+    assert.ok(productCopy.intro(6).length >= 18);
+    assert.ok(productCopy.intro(6).length <= productIntroLengthLimits[locale]);
     assert.equal(headline.phrases.length, 4);
     assert.equal(new Set(headline.phrases).size, headline.phrases.length);
     assert.ok(headline.fixedLines.every((line) => line.trim().length > 0));
@@ -106,15 +122,20 @@ test("the homepage showcase keeps four equivalent decisions in every language", 
       [...headline.fixedLines, headline.phrases[0]].join(headline.joiner),
       identityCopy.hero.title,
     );
-    assert.notEqual(copy.heroLinksLabel, copy.decisions.listLabel);
-    for (const card of copy.decisions.cards) {
-      assert.ok(card.body.length > 20);
-      assert.ok(card.action.length > 4);
+    assert.notEqual(copy.heroPrimary, copy.heroDestinationAction);
+    assert.ok(copy.heroDestinationPrompt.length > 4);
+    assert.ok(copy.guidePaths.prompt.length > 4);
+    assert.equal(
+      privateTourHubPaths[locale],
+      locale === "en" ? "/tours/" : `/${locale}/tours/`,
+    );
+    for (const item of copy.guidePaths.items) {
+      assert.ok(item.body.length > 8);
       assert.equal(
-        getHomepageDecisionPath(locale, card.id),
+        getHomepageGuidePath(locale, item.id),
         locale === "en"
-          ? `/${card.id}/`
-          : `/${locale}/${card.id}/`,
+          ? `/${item.id}/`
+          : `/${locale}/${item.id}/`,
       );
     }
   }
@@ -142,7 +163,6 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   const orderedMarkers = [
     "<HomepageProductShowcase",
     "<HomepageGuideSearch",
-    'id="homepage-decisions-title"',
     "<HomepageGuideRail",
     "<PlanningScopeSection",
     'id="homepage-human-planning-title"',
@@ -405,29 +425,20 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
   assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
 
-  const trustCopy = {
+  const faqTrustCopy = {
     en: {
-      noShopping: /no shopping stops/i,
-      writtenScope: /final inclusions, exclusions and total in writing before payment/,
-      priorAgreement: /optional upgrade or added service is agreed before it is charged/,
       privateBasis: /published tour and price is for you and your companions/,
       sharedTransit: /public trains, cruises or transport within attractions/,
       lowerCost: /lower-cost alternative, we will explain what could change and quote any suitable option separately/,
       consent: /not add a shared arrangement without your agreement/,
     },
     zh: {
-      noShopping: /不安排购物店/,
-      writtenScope: /付款前书面确认最终包含项、不包含项和总价/,
-      priorAgreement: /任何升级或新增服务，都会在收费前先由你确认/,
       privateBasis: /页面上的行程和价格按你和同行者单独安排/,
       sharedTransit: /高铁、游船或景区交通/,
       lowerCost: /进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价/,
       consent: /未经你同意不会增加共享安排/,
     },
     ko: {
-      noShopping: /쇼핑 일정은 없으며/,
-      writtenScope: /결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내/,
-      priorAgreement: /선택 업그레이드나 추가 서비스는 비용이 발생하기 전에 먼저 동의를 받습니다/,
       privateBasis: /공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준/,
       sharedTransit: /열차, 유람선 또는 관광지 내부 교통/,
       lowerCost: /비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적/,
@@ -441,7 +452,8 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     const copy = getHomepageProductShowcaseCopy(locale);
     const homeCopy = getHomegroundCopy(locale);
     assert.ok(copy.title.length > 8);
-    assert.ok(copy.intro(publishedTourCount).length > 60);
+    assert.ok(copy.intro(publishedTourCount).length >= 18);
+    assert.ok(copy.intro(publishedTourCount).length <= 82);
     assert.match(
       copy.countLabel(publishedTourCount),
       new RegExp(String(publishedTourCount)),
@@ -452,13 +464,14 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     if (copy.titleNoWrap) {
       assert.equal(copy.title.split(copy.titleNoWrap).length, 2);
     }
-    assert.match(copy.intro(publishedTourCount), trustCopy[locale].noShopping);
-    assert.match(copy.intro(publishedTourCount), trustCopy[locale].writtenScope);
-    assert.match(copy.intro(publishedTourCount), trustCopy[locale].priorAgreement);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].privateBasis);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].sharedTransit);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].lowerCost);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].consent);
+    assert.match(
+      copy.title,
+      locale === "en" ? /before you pay/i : locale === "zh" ? /付款前/ : /결제 전에/,
+    );
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].privateBasis);
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].sharedTransit);
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].lowerCost);
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].consent);
     assert.doesNotMatch(
       homeCopy.faq.items[0].answer,
       /small-group tours|shared transfers|小团|拼车|소그룹|합승/i,
@@ -499,6 +512,12 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   for (const product of privateTourProducts) {
     assert.equal(product.servicePolicy.shoppingStops, false);
     assert.equal(product.servicePolicy.addedServicesRequirePriorAgreement, true);
+    assert.match(product.bookingNote.en, /starting prices?/i);
+    assert.match(product.bookingNote.en, /quote|before payment|written/i);
+    assert.match(product.bookingNote.zh, /起价/);
+    assert.match(product.bookingNote.zh, /报价|付款前|核价/);
+    assert.match(product.bookingNote.ko, /시작가/);
+    assert.match(product.bookingNote.ko, /견적|결제 전|재견적/);
     const publicPolicyCopy = {
       en: [product.serviceNote.en, ...product.packages.map((item) => item.summary.en)].join(" "),
       zh: [product.serviceNote.zh, ...product.packages.map((item) => item.summary.zh)].join(" "),
@@ -562,9 +581,8 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     source("components/HomepageQuickContact.tsx"),
   ]);
 
-  assert.match(page, /aria-hidden="true"[\s\S]{0,90}decisionNumber/);
+  assert.doesNotMatch(page, /decisionNumber|homepage-decisions-title/);
   assert.doesNotMatch(page, /cityIndex|principleNumber/);
-  assert.match(styles, /\.decisionCard:focus-visible[\s\S]{0,160}outline-offset: -2px/);
   assert.match(styles, /\.planningSectionResult \.planningIntro \{\s*display: none/);
   assert.match(styles, /\.planningSectionResult \.planningPanel[\s\S]{0,150}max-inline-size: 62rem/);
   assert.match(navigation, /"#destinations": "homepage-city-hubs-title"/);
@@ -593,30 +611,23 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.match(styles, /--showcase-section-space: 6rem/);
   assert.match(
     styles,
-    /\.hero \{[\s\S]{0,100}padding: 14rem var\(--showcase-gutter\) 5rem/,
+    /\.hero \{[\s\S]{0,100}padding: 11\.5rem var\(--showcase-gutter\) 4rem/,
   );
   assert.match(
     styles,
-    /\.heroInner \{[\s\S]{0,180}grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/,
+    /\.heroCopy \{[\s\S]{0,180}align-items: center[\s\S]{0,180}text-align: center/,
   );
-  assert.match(page, /className=\{showcaseStyles\.heroAssurance\}/);
+  assert.doesNotMatch(page, /heroAssurance|heroLinks\.map/);
   assert.match(
     page,
     /className=\{`\$\{styles\.heroLead\} \$\{showcaseStyles\.heroLead\}`\}/,
   );
-  assert.match(page, /heroLinks\.map/);
-  assert.match(page, /aria-label=\{showcase\.heroLinksLabel\}/);
-  assert.match(
-    styles,
-    /@media \(max-width: 39\.999rem\)[\s\S]*?\.decisionNumber \{[\s\S]*?font-size: 0\.875rem/,
-  );
+  assert.match(page, /href=\{privateTourHubPaths\[locale\]\}/);
+  assert.match(page, /className=\{showcaseStyles\.heroDestinationPrompt\}/);
+  assert.doesNotMatch(page, /aria-label=\{showcase\.hero(?:Primary|Secondary)\}/);
   assert.match(
     styles,
     /\.heroTitle \{[\s\S]{0,100}font-family: var\(--hg-editorial\)[\s\S]{0,100}font-weight: 400/,
-  );
-  assert.match(
-    styles,
-    /\.decisionIntro h2,[\s\S]{0,100}font-family: var\(--hg-editorial\)/,
   );
   assert.match(
     styles,
@@ -663,48 +674,27 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   );
 });
 
-test("homepage decision cards compact only at the phone breakpoint", async () => {
-  const [page, styles] = await Promise.all([
+test("homepage guide paths are parallel, compact and remain ordinary discoverable links", async () => {
+  const [page, finder, finderStyles, pageStyles, showcaseStyles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageGuideSearch.tsx"),
+    source("components/HomepageGuideSearch.module.css"),
+    source("components/HomegroundHomePage.module.css"),
     source("components/HomepageShowcase.module.css"),
   ]);
-  const phoneStart = styles.indexOf("@media (max-width: 39.999rem)");
-  const phoneEnd = styles.indexOf("@media (min-width: 64rem)", phoneStart);
-  assert.ok(phoneStart >= 0 && phoneEnd > phoneStart);
-  const phoneStyles = styles.slice(phoneStart, phoneEnd);
-  const desktopStyles = styles.slice(0, phoneStart);
-
+  assert.match(page, /guidePaths=\{showcase\.guidePaths\}/);
   assert.match(
-    desktopStyles,
-    /\.decisionGrid \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/,
+    finder,
+    /<nav className=\{styles\.guidePaths\} aria-label=\{guidePaths\.listLabel\}>[\s\S]*?<ul>[\s\S]*?<li key=\{item\.id\}>[\s\S]*?<a href=\{getHomepageGuidePath\(locale, item\.id\)\}>/,
   );
-  assert.match(
-    desktopStyles,
-    /\.decisionCard \{[\s\S]*?min-block-size: 17\.5rem;[\s\S]*?padding: 2\.5rem/,
-  );
-  assert.match(phoneStyles, /\.decisions \{\s*padding-block: 2\.5rem/);
-  assert.match(
-    phoneStyles,
-    /\.decisionGrid \{[\s\S]*?grid-template-columns: minmax\(0, 1fr\);[\s\S]*?margin-block-start: 1\.5rem/,
-  );
-  assert.match(
-    phoneStyles,
-    /\.decisionCard \{[\s\S]*?display: grid;[\s\S]*?grid-template-columns: 2rem minmax\(0, 1fr\);[\s\S]*?min-block-size: 9rem;[\s\S]*?padding: 1\.25rem/,
-  );
-  assert.match(
-    phoneStyles,
-    /\.decisionCard h3 \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 1;[\s\S]*?margin: 0/,
-  );
-  assert.match(
-    phoneStyles,
-    /\.decisionCard p \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 2;[\s\S]*?line-height: 1\.55;[\s\S]*?margin: 0\.625rem 0 0/,
-  );
-  assert.doesNotMatch(
-    phoneStyles,
-    /(?:display:\s*none|-webkit-line-clamp|(?:^|[;{]\s*)block-size:\s*\d)/m,
-  );
-  assert.match(
-    page,
-    /<nav aria-label=\{showcase\.decisions\.listLabel\}>[\s\S]*?<ol[\s\S]*?<li key=\{card\.id\}>[\s\S]*?<a[\s\S]*?href=\{getHomepageDecisionPath\(locale, card\.id\)\}[\s\S]*?<h3>\{card\.title\}<\/h3>[\s\S]*?<p>\{card\.body\}<\/p>[\s\S]*?decisionAction/,
-  );
+  assert.doesNotMatch(finder, /<ol|decisionNumber|String\(index \+ 1\)/);
+  assert.match(finderStyles, /\.guidePaths ul \{[\s\S]{0,140}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(finderStyles, /@media \(max-width: 42rem\)[\s\S]{0,140}\.guidePaths ul \{[\s\S]{0,80}grid-template-columns: minmax\(0, 1fr\)/);
+  assert.match(finderStyles, /\.guidePaths a \{[\s\S]{0,220}min-block-size: 5\.5rem/);
+  assert.doesNotMatch(finderStyles, /\.guidePaths[^}]*overflow:\s*hidden/);
+  assert.doesNotMatch(finderStyles, /\.(?:finder|formArea)\s*\{[^}]*overflow:\s*hidden/);
+  assert.doesNotMatch(pageStyles, /\.travelGuides(?:Section)?\s*\{[^}]*overflow:\s*hidden/);
+  assert.doesNotMatch(showcaseStyles, /\.searchSection\s*\{[^}]*overflow:\s*hidden/);
+  assert.match(finder, /<strong>\{item\.title\}<\/strong>[\s\S]{0,80}<small>\{item\.body\}<\/small>/);
+  assert.doesNotMatch(finder, /<a[^>]*aria-label=/);
 });

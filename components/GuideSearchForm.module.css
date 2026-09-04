@@ -29,6 +29,11 @@
   padding-inline-start: 1rem;
 }
 
+.searchExperience[data-guide-search-surface="homepage"] .control {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
 .control > svg {
   color: var(--guides-rust, var(--hg-color-rust));
   grid-column: 1;
@@ -96,6 +101,11 @@
 .control input::placeholder {
   color: var(--guides-muted, var(--hg-color-muted));
   opacity: 1;
+}
+
+.searchExperience[data-guide-search-surface="homepage"] .rotatingPlaceholder,
+.searchExperience[data-guide-search-surface="homepage"] .control input::placeholder {
+  color: #5d6065;
 }
 
 .control:focus-within {
@@ -314,6 +324,10 @@
 }
 
 @media (max-width: 40rem) {
+  .searchExperience[data-guide-search-surface="homepage"] .control {
+    min-height: 3.25rem;
+  }
+
   .control {
     grid-template-columns: auto minmax(0, 1fr);
     padding-inline-start: 0.85rem;
@@ -323,12 +337,20 @@
     padding-inline: 0.75rem;
   }
 
+  .searchExperience[data-guide-search-surface="homepage"] .control input {
+    min-height: 3.2rem;
+  }
+
   .control button {
     grid-column: 1 / -1;
     grid-row: 2;
     margin-inline-start: -0.85rem;
     min-width: 0;
     width: calc(100% + 0.85rem);
+  }
+
+  .searchExperience[data-guide-search-surface="homepage"] .control button {
+    min-height: 3.2rem;
   }
 
   .examples {
