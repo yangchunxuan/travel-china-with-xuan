@@ -37,6 +37,24 @@ function resolvedPage(value: string, locale: LocalizedLocale) {
   return page;
 }
 
+function paginationDescription(
+  locale: LocalizedLocale,
+  page: number,
+  pageCount: number,
+  startIndex: number,
+  pageGuideCount: number,
+  totalGuideCount: number,
+) {
+  const firstGuide = startIndex + 1;
+  const lastGuide = startIndex + pageGuideCount;
+
+  if (locale === "zh") {
+    return `浏览 Homeground 中国旅行实用指南第 ${page}/${pageCount} 页（第 ${firstGuide}–${lastGuide} 篇，共 ${totalGuideCount} 篇）：继续查找入境、交通、住宿、出行时间与路线规划的明确答案。`;
+  }
+
+  return `Homeground 중국 여행 실용 가이드 ${page}/${pageCount}페이지(전체 ${totalGuideCount}편 중 ${firstGuide}–${lastGuide}편)입니다. 입국·교통·숙소·여행 시기·일정 계획에 관한 답을 계속 살펴보세요.`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -48,11 +66,20 @@ export async function generateMetadata({
   const copy = getGuidesHubCopy(locale);
   const canonicalPath = getGuidesHubPagePath(locale, page);
   const pageLabel = copy.pagination.pageTitle(page);
-  const socialImage = getGuidesHubPagination(locale, page).pageGuides[0];
+  const pagination = getGuidesHubPagination(locale, page);
+  const socialImage = pagination.pageGuides[0];
+  const description = paginationDescription(
+    locale,
+    page,
+    pagination.pageCount,
+    pagination.startIndex,
+    pagination.pageGuides.length,
+    pagination.guides.length,
+  );
 
   return {
     title: `${copy.metadata.title} | ${pageLabel}`,
-    description: copy.metadata.description,
+    description,
     alternates: {
       canonical: canonicalPath,
       languages: getGuidesHubPageLanguagePaths(page),
@@ -69,7 +96,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: `${copy.metadata.openGraphTitle} — ${pageLabel}`,
-      description: copy.metadata.description,
+      description,
       type: "website",
       locale: locale === "zh" ? "zh_CN" : "ko_KR",
       alternateLocale:
@@ -87,7 +114,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${copy.metadata.openGraphTitle} — ${pageLabel}`,
-      description: copy.metadata.description,
+      description,
       images: [socialImage.heroImageUrl],
     },
   };

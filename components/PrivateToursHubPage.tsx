@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   getHomegroundCopy,
@@ -17,6 +16,10 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
 import { PrivateTourCatalogLink } from "./PrivateTourCatalogLink";
+import {
+  privateTourCardImageSource,
+  privateTourCardImageSrcSet,
+} from "./privateTourCardImages";
 import styles from "./PrivateToursHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -115,14 +118,16 @@ function TourComparisonCard({
           productSlug={product.slug}
         >
           <figure className={styles.tourImage}>
-            <Image
-              src={product.image.src}
+            <img
               alt={product.image.alt}
-              width={product.image.width}
+              decoding="async"
               height={product.image.height}
+              loading="lazy"
+              sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 88.25rem) calc((100vw - 2rem) / 2), 43.125rem"
+              src={privateTourCardImageSource(product.id, 960)}
+              srcSet={privateTourCardImageSrcSet(product.id)}
               style={{ objectPosition: product.image.objectPosition }}
-              priority={index === 0}
-              sizes="(max-width: 768px) 100vw, (max-width: 1380px) 50vw, 690px"
+              width={product.image.width}
             />
             <figcaption>
               <span aria-hidden="true">

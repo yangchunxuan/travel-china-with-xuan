@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-04",
+  "familyDigestMethod": "SHA-256 of the four derivative file byte streams concatenated in width order: 320, 640, 960, 1380",
+  "records": [
+    {
+      "productId": "shanghai-suzhou-hangzhou-6-day-private-tour",
+      "sourcePath": "public/images/destinations/shanghai/hero-1600.webp",
+      "sourceSha256": "379eee1ab33b9150b2279f924c39b83e4812c377b481c581296d82711f0911a7",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/destinations/shanghai/hero-1600.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "f68ac3ee3eded48da08982be5a11d37eafd20e7672286275fd814fd90fb94048"
+    },
+    {
+      "productId": "chengdu-pandas-sanxingdui-5-day-private-tour",
+      "sourcePath": "public/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
+      "sourceSha256": "5d0237c4981997802243d3730b547dc579d5118bb186063ebe8fda13c641bff6",
+      "rightsBasis": "Wikimedia Commons, George Lu, CC BY 2.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "5d0237c4981997802243d3730b547dc579d5118bb186063ebe8fda13c641bff6",
+      "rightsEvidenceNeedle": "CC BY 2.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "cf3ec2fd3a5a385283d7cd25d9e6431cf9574a3e3e3002d5cc2aa597c90f6edd"
+    },
+    {
+      "productId": "xian-terracotta-warriors-5-day-private-tour",
+      "sourcePath": "public/images/destinations/xian/hero-1600.webp",
+      "sourceSha256": "8f887864968e68da48a49300727b4ad70271de10fe093d39690f764138449666",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/destinations/xian/hero-1600.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "5c5f0773c465293bd777ae7145df23ec0f40c1dd7d758875da7ed07b0dfd8de0"
+    },
+    {
+      "productId": "chongqing-wulong-5-day-private-tour",
+      "sourcePath": "public/images/tours/chongqing-wulong-5-day-private-tour/gallery-hongyadong-qiansimen-1600.webp",
+      "sourceSha256": "5012d18e483d49550a0f156486fee3325c46bc0dcca84751c7e37d736581d6c8",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "5012d18e483d49550a0f156486fee3325c46bc0dcca84751c7e37d736581d6c8",
+      "rightsEvidenceNeedle": "The project owner authorised selecting real photographs from the organised",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "56b0cd561981ec60e757a91b7e7ad68f9439a682314ccbc6a78f4c0b91a44bb6"
+    },
+    {
+      "productId": "guilin-yangshuo-5-day-private-tour",
+      "sourcePath": "public/images/guides/yangshuo-town-or-yulong-river-where-to-stay/hero-1600.webp",
+      "sourceSha256": "9c22593ff64729770349a5cd10164d4daed1aa18efaa9ab39f68a1a1ceafaff6",
+      "rightsBasis": "Wikimedia Commons, Liuxingy, CC BY-SA 4.0",
+      "provenancePath": "content/guides/yangshuo-town-or-yulong-river-where-to-stay/source-log.md",
+      "provenanceNeedle": "9c22593ff64729770349a5cd10164d4daed1aa18efaa9ab39f68a1a1ceafaff6",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "d87f8f61beec44e0d400630a203366d565678cf0116283a8ad262e7067bdb746"
+    },
+    {
+      "productId": "harbin-winter-5-day-private-tour",
+      "sourcePath": "public/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
+      "sourceSha256": "fcccd7b780e4dfa0c490387738a8ab85496b3e7155189fda397b8653cae2691e",
+      "rightsBasis": "Wikimedia Commons, Garosio33, CC0 1.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "fcccd7b780e4dfa0c490387738a8ab85496b3e7155189fda397b8653cae2691e",
+      "rightsEvidenceNeedle": "CC0 1.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "0618b7d45318428b3fc7ce35960a2ba08f887f45a08e4841002ef2995ba42e25"
+    },
+    {
+      "productId": "shanghai-suzhou-5-day-private-tour",
+      "sourcePath": "public/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+      "sourceSha256": "a6c5b39c96a98a7f4732138f97b55d96d402f15349f857cb94dccddf8dea2e23",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "a6c5b39c96a98a7f4732138f97b55d96d402f15349f857cb94dccddf8dea2e23",
+      "rightsEvidenceNeedle": "The project owner authorised selecting real photographs from the organised",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "950854ba52dafb93ad829806726d78413a51779df56fd44521575fd781046298"
+    },
+    {
+      "productId": "beijing-highlights-5-day-private-tour",
+      "sourcePath": "public/images/destinations/beijing/hero-1600.webp",
+      "sourceSha256": "96b24543521bddf2deb9d06371177a2cba0690589751318a76573e1841e6aac8",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/destinations/beijing/hero-1600.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "dbb0bf4c8319d05a663e527be8de966c8036d683f6fcc2fe1f97cfaaff470f56"
+    },
+    {
+      "productId": "zhangjiajie-forest-4-day-private-tour",
+      "sourcePath": "public/images/tours/zhangjiajie-forest-4-day-private-tour/hero-morning-pillars-1600.jpg",
+      "sourceSha256": "b6e31b217206d92090e20f7c5ee1245304500b2ecec24d361be4cbf825200245",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "b6e31b217206d92090e20f7c5ee1245304500b2ecec24d361be4cbf825200245",
+      "rightsEvidenceNeedle": "The owner authorised these organised libraries for Homeground",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x863"],
+      "familySha256": "dbfa7ff726e7d8c5d381baba80ab639af6aac24aec1fae4f9e1dfe45fdda663d"
+    },
+    {
+      "productId": "zhangjiajie-4-day-private-tour",
+      "sourcePath": "public/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
+      "sourceSha256": "6c7471aeb35cab0c74971778d75e9a519b27648eba0d6ebe85a08ae9e7e67f39",
+      "rightsBasis": "Site-owner-selected organized-library image approved for this release; original authorship is not independently asserted",
+      "provenancePath": "content/product-previews/zhangjiajie-4-day-private-tour/image-preview-plan.md",
+      "provenanceNeedle": "hero/sunlit-forest-pillars-174.jpg",
+      "rightsEvidenceNeedle": "The site owner selected the organized-library images",
+      "dimensions": ["320x213", "640x427", "960x640", "1380x920"],
+      "familySha256": "674f8b3e90713a002213252f27c1008966284a185f7699283219e95019c2de13"
+    }
+  ]
+}

@@ -25,6 +25,19 @@ function resolvedPage(value: string) {
   return page;
 }
 
+function paginationDescription(
+  page: number,
+  pageCount: number,
+  startIndex: number,
+  pageGuideCount: number,
+  totalGuideCount: number,
+) {
+  const firstGuide = startIndex + 1;
+  const lastGuide = startIndex + pageGuideCount;
+
+  return `Browse page ${page} of ${pageCount}, covering China travel guides ${firstGuide}–${lastGuide} of ${totalGuideCount}: practical answers on entry, transport, stays, timing and trip planning.`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -35,11 +48,19 @@ export async function generateMetadata({
   const copy = getGuidesHubCopy("en");
   const canonicalPath = getGuidesHubPagePath("en", page);
   const pageLabel = copy.pagination.pageTitle(page);
-  const socialImage = getGuidesHubPagination("en", page).pageGuides[0];
+  const pagination = getGuidesHubPagination("en", page);
+  const socialImage = pagination.pageGuides[0];
+  const description = paginationDescription(
+    page,
+    pagination.pageCount,
+    pagination.startIndex,
+    pagination.pageGuides.length,
+    pagination.guides.length,
+  );
 
   return {
     title: `${copy.metadata.title} | ${pageLabel}`,
-    description: copy.metadata.description,
+    description,
     alternates: {
       canonical: canonicalPath,
       languages: getGuidesHubPageLanguagePaths(page),
@@ -56,7 +77,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: `${copy.metadata.openGraphTitle} — ${pageLabel}`,
-      description: copy.metadata.description,
+      description,
       type: "website",
       locale: "en_US",
       alternateLocale: ["zh_CN", "ko_KR"],
@@ -73,7 +94,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${copy.metadata.openGraphTitle} — ${pageLabel}`,
-      description: copy.metadata.description,
+      description,
       images: [socialImage.heroImageUrl],
     },
   };

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
+
+# Admin pages remain crawlable so their page-level noindex can be read.
+# Authentication, not robots.txt, protects the owner console.
 
 Sitemap: https://homegroundchina.com/sitemap.xml

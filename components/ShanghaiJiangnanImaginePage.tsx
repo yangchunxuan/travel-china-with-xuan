@@ -28,6 +28,10 @@ import {
   ShanghaiJiangnanRouteExplorer,
 } from "./ShanghaiJiangnanImagineInteractive";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
+import {
+  getExistingContentCommercialCopy,
+  getProductPlanningContext,
+} from "../lib/existingContentCommercialLinks";
 
 export const SHANGHAI_JIANGNAN_TOUR_SLUG =
   "shanghai-suzhou-hangzhou-6-day-private-tour";
@@ -369,6 +373,11 @@ export function ShanghaiJiangnanImaginePage({
     product.slug,
     locale,
   );
+  const planningContext = getProductPlanningContext(
+    product.slug as Parameters<typeof getProductPlanningContext>[0],
+    locale,
+  );
+  const commercialCopy = getExistingContentCommercialCopy(locale);
   const homePath = locale === "en" ? "/" : `/${locale}/`;
   const tourHubPath = `${homePath}tours/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
@@ -616,6 +625,61 @@ export function ShanghaiJiangnanImaginePage({
                   ))}
                 </ul>
               </section>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section} data-tour-reveal>
+          <div className={styles.sectionInner}>
+            <div className={styles.sectionHeading}>
+              <p className={styles.sectionEyebrow}>{commercialCopy.productLabel}</p>
+              <h2>{commercialCopy.productTitle}</h2>
+              <p>{commercialCopy.productBody}</p>
+            </div>
+            <div className={`${styles.scopeGrid} ${styles.planningLinks}`}>
+              {planningContext.destinations.length > 0 ? (
+                <section>
+                  <h3>{commercialCopy.destinations}</h3>
+                  <ul>
+                    {planningContext.destinations.map((link) => (
+                      <li key={link.id}>
+                        <Link href={link.href}>
+                          <span>{link.label}</span>
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
+              <section>
+                <h3>{commercialCopy.guides}</h3>
+                <ul>
+                  {planningContext.guides.map((link) => (
+                    <li key={link.id}>
+                      <Link href={link.href}>
+                        <span>{link.label}</span>
+                        <ArrowRight aria-hidden="true" size={17} />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              {planningContext.relatedProducts.length > 0 ? (
+                <section>
+                  <h3>{commercialCopy.related}</h3>
+                  <ul>
+                    {planningContext.relatedProducts.map((link) => (
+                      <li key={link.id}>
+                        <Link href={link.href}>
+                          <span>{link.label}</span>
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
             </div>
           </div>
         </section>

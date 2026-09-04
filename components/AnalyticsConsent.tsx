@@ -3,6 +3,8 @@
 import { useEffect, useId, useRef, useState } from "react";
 import {
   analyticsConsentOpenEventName,
+  analyticsConsentStorageKey,
+  analyticsConsentVersion,
   readAnalyticsConsent,
   saveAnalyticsConsent,
   subscribeAnalyticsConsent,
@@ -11,6 +13,25 @@ import {
 import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import styles from "./AnalyticsConsent.module.css";
+
+const storedConsentAttribute = "data-homeground-consent-stored";
+const storedConsentBootstrap = `(()=>{try{const raw=localStorage.getItem(${JSON.stringify(
+  analyticsConsentStorageKey,
+)});if(!raw)return;const value=JSON.parse(raw);if(value&&value.version===${JSON.stringify(
+  analyticsConsentVersion,
+)}&&value.necessary===true&&typeof value.analytics==="boolean"&&typeof value.marketing==="boolean"&&typeof value.updatedAt==="string"&&Number.isFinite(Date.parse(value.updatedAt))){document.documentElement.setAttribute(${JSON.stringify(
+  storedConsentAttribute,
+)},"true")}}catch{}})();`;
+
+function markStoredConsent(
+  preferences: AnalyticsConsentPreferences | null,
+) {
+  if (typeof document === "undefined") return;
+  document.documentElement.toggleAttribute(
+    storedConsentAttribute,
+    preferences !== null,
+  );
+}
 
 function privacyPath(locale: HomegroundLocale) {
   if (locale === "zh") return "/zh/privacy/";
@@ -37,7 +58,6 @@ export function AnalyticsConsent({
   const bodyId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
-  const [hydrated, setHydrated] = useState(false);
   const [preferences, setPreferences] =
     useState<AnalyticsConsentPreferences | null>(null);
   const [managerOpen, setManagerOpen] = useState(false);
@@ -45,8 +65,9 @@ export function AnalyticsConsent({
   const [draftMarketing, setDraftMarketing] = useState(false);
 
   useEffect(() => {
-    setPreferences(readAnalyticsConsent());
-    setHydrated(true);
+    const initialPreferences = readAnalyticsConsent();
+    markStoredConsent(initialPreferences);
+    setPreferences(initialPreferences);
 
     const handleOpen = () => {
       const current = readAnalyticsConsent();
@@ -55,7 +76,10 @@ export function AnalyticsConsent({
       setManagerOpen(true);
     };
 
-    const unsubscribeConsent = subscribeAnalyticsConsent(setPreferences);
+    const unsubscribeConsent = subscribeAnalyticsConsent((next) => {
+      markStoredConsent(next);
+      setPreferences(next);
+    });
     window.addEventListener(analyticsConsentOpenEventName, handleOpen);
     return () => {
       unsubscribeConsent();
@@ -116,6 +140,7 @@ export function AnalyticsConsent({
 
   const choose = (analytics: boolean, marketing: boolean) => {
     const next = saveAnalyticsConsent({ analytics, marketing });
+    markStoredConsent(next);
     setPreferences(next);
     setDraftAnalytics(next.analytics);
     setDraftMarketing(next.marketing);
@@ -128,10 +153,12 @@ export function AnalyticsConsent({
     setManagerOpen(true);
   };
 
-  if (!hydrated) return null;
-
   return (
     <>
+      <script
+        data-homeground-consent-bootstrap="true"
+        dangerouslySetInnerHTML={{ __html: storedConsentBootstrap }}
+      />
       {!preferences && !managerOpen ? (
         <section
           className={styles.banner}

@@ -1,8 +1,11 @@
 import assert from "node:assert/strict";
-import { readFile, stat } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import sharp from "sharp";
 
+import { privateTourCardImageWidths } from "../../components/privateTourCardImages.ts";
 import zhangjiajieProduct from "../../content/product-previews/zhangjiajie-4-day-private-tour/product.json" with { type: "json" };
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 import {
@@ -24,6 +27,8 @@ const expectedSlugs = [
   zhangjiajieProduct.seo.slug,
 ].sort();
 const expectedPublishedCount = expectedSlugs.length;
+const reviewedDerivativeRightsSha256 =
+  "2fc40d80d3f115d041587f69b56c403b71b619c7d18f6deea711e58aa8fa64de";
 
 test("published private-tour catalog contains every current source in every locale", async () => {
   assert.equal(assertPublishedPrivateTourCatalogIntegrity(), true);
@@ -65,7 +70,135 @@ test("published private-tour catalog contains every current source in every loca
       const imagePath = path.join(projectRoot, "public", item.image.src.slice(1));
       const imageStats = await stat(imagePath).catch(() => undefined);
       assert.ok(imageStats?.isFile(), `${locale}: missing ${item.image.src}`);
+
+      if (locale === "en") {
+        for (const width of privateTourCardImageWidths) {
+          const thumbnailPath = path.join(
+            projectRoot,
+            "public/images/private-tour-cards",
+            `${item.id}-${width}.webp`,
+          );
+          const thumbnailStats = await stat(thumbnailPath).catch(
+            () => undefined,
+          );
+          assert.ok(
+            thumbnailStats?.isFile() && thumbnailStats.size > 0,
+            `missing responsive private-tour card image: ${item.id}-${width}`,
+          );
+        }
+      }
     }
+  }
+});
+
+test("responsive card derivatives are locked to documented sources, dimensions and bytes", async () => {
+  const ledger = JSON.parse(
+    await source("docs/homeground-private-tour-card-derivatives.json"),
+  );
+  const catalog = getPublishedPrivateTourCatalog("en");
+  const records = new Map(
+    ledger.records.map((record) => [record.productId, record]),
+  );
+
+  assert.equal(ledger.schemaVersion, 1);
+  assert.equal(ledger.records.length, expectedPublishedCount);
+  assert.equal(records.size, expectedPublishedCount);
+  assert.deepEqual([...records.keys()].sort(), expectedSlugs);
+  const reviewedRights = ledger.records.map(
+    ({
+      productId,
+      rightsBasis,
+      provenancePath,
+      provenanceNeedle,
+      rightsEvidenceNeedle,
+    }) => ({
+      productId,
+      rightsBasis,
+      provenancePath,
+      provenanceNeedle,
+      rightsEvidenceNeedle,
+    }),
+  );
+  assert.equal(
+    createHash("sha256")
+      .update(JSON.stringify(reviewedRights))
+      .digest("hex"),
+    reviewedDerivativeRightsSha256,
+    "derivative rights mapping changed without explicit review",
+  );
+
+  const derivativeDirectory = path.join(
+    projectRoot,
+    "public/images/private-tour-cards",
+  );
+  const expectedDerivativeFiles = catalog
+    .flatMap((product) =>
+      privateTourCardImageWidths.map(
+        (width) => `${product.id}-${width}.webp`,
+      ),
+    )
+    .sort();
+  assert.equal(expectedDerivativeFiles.length, 40);
+  assert.deepEqual(
+    (await readdir(derivativeDirectory)).sort(),
+    expectedDerivativeFiles,
+    "responsive card image directory must contain the exact 10 x 4 allowlist",
+  );
+
+  for (const product of catalog) {
+    const record = records.get(product.id);
+    assert.ok(record, `missing derivative ledger record: ${product.id}`);
+    assert.equal(record.sourcePath, `public${product.image.src}`);
+
+    const sourceBytes = await readFile(
+      path.join(projectRoot, record.sourcePath),
+    );
+    assert.equal(
+      createHash("sha256").update(sourceBytes).digest("hex"),
+      record.sourceSha256,
+      `source hash drift: ${product.id}`,
+    );
+    assert.ok(record.rightsBasis?.trim(), `missing rights basis: ${product.id}`);
+    assert.ok(record.provenancePath?.trim(), `missing provenance path: ${product.id}`);
+    assert.ok(record.provenanceNeedle?.trim(), `missing provenance marker: ${product.id}`);
+    assert.ok(record.rightsEvidenceNeedle?.trim(), `missing rights marker: ${product.id}`);
+    const provenance = await readFile(
+      path.join(projectRoot, record.provenancePath),
+      "utf8",
+    );
+    assert.ok(
+      provenance.includes(record.provenanceNeedle),
+      `source is no longer present in its rights record: ${product.id}`,
+    );
+    assert.ok(
+      provenance.includes(record.rightsEvidenceNeedle),
+      `rights basis is no longer present in its provenance record: ${product.id}`,
+    );
+
+    const familyHash = createHash("sha256");
+    const actualDimensions = [];
+    for (const width of privateTourCardImageWidths) {
+      const derivativePath = path.join(
+        projectRoot,
+        "public/images/private-tour-cards",
+        `${product.id}-${width}.webp`,
+      );
+      const bytes = await readFile(derivativePath);
+      familyHash.update(bytes);
+      const metadata = await sharp(bytes).metadata();
+      actualDimensions.push(`${metadata.width}x${metadata.height}`);
+    }
+
+    assert.deepEqual(
+      actualDimensions,
+      record.dimensions,
+      `derivative dimension drift: ${product.id}`,
+    );
+    assert.equal(
+      familyHash.digest("hex"),
+      record.familySha256,
+      `derivative byte drift: ${product.id}`,
+    );
   }
 });
 
@@ -176,8 +309,12 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /product\.comparison\.pace/);
   assert.match(component, /product\.comparison\.fit/);
   assert.match(component, /<span aria-hidden="true">[\s\S]*?padStart\(2, "0"\)/);
-  assert.match(component, /priority=\{index === 0\}/);
-  assert.match(component, /sizes="\(max-width: 768px\) 100vw/);
+  assert.match(component, /loading="lazy"/);
+  assert.doesNotMatch(component, /fetchPriority=/);
+  assert.match(component, /privateTourCardImageSrcSet\(product\.id\)/);
+  assert.match(component, /privateTourCardImageSource\(product\.id, 960\)/);
+  assert.match(component, /sizes="\(max-width: 48rem\)/);
+  assert.doesNotMatch(component, /priority=|from "next\/image"/);
   const measuredLink = await source("components/PrivateTourCatalogLink.tsx");
   assert.match(measuredLink, /trackEvent\("tour_catalog_product_clicked"/);
   assert.match(measuredLink, /product_slug: productSlug/);

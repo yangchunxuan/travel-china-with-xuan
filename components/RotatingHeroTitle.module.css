@@ -1,21 +1,9 @@
 .root {
   box-sizing: border-box;
+  display: grid;
   inline-size: 100%;
   max-inline-size: 100%;
   position: relative;
-}
-
-.screenReaderOnly {
-  block-size: 1px;
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  inline-size: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
 }
 
 .heading,
@@ -27,7 +15,13 @@
 .heading {
   grid-column: 1;
   grid-row: 1;
+  max-inline-size: 100%;
   min-inline-size: 0;
+}
+
+.measurementHeading {
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .visualTitle {

@@ -40,6 +40,11 @@ import {
 } from "../../lib/editorialIdentity";
 import { getDestinationHubsForGuide } from "../../lib/destinationHubs";
 import styles from "./EditorialGuidePage.module.css";
+import {
+  getAuthorizedGuideServiceCta,
+  getExistingContentCommercialCopy,
+  getGuidePublishedRouteLinks,
+} from "../../lib/existingContentCommercialLinks";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -231,6 +236,9 @@ export function EditorialGuidePage({
   const titleSegments = locale === "zh" ? zhHeadingSegments[guide.id] : null;
   const plannerHref = `${homeCopy.path}?utm_source=editorial_guide&utm_medium=owned&utm_campaign=trip_conversation&utm_content=${guide.id}#planner-contact`;
   const relatedDestinations = getDestinationHubsForGuide(guide.id, locale);
+  const publishedRouteLinks = getGuidePublishedRouteLinks(guide.id, locale);
+  const commercialCopy = getExistingContentCommercialCopy(locale);
+  const serviceCta = getAuthorizedGuideServiceCta(guide.id, locale);
   const relatedDestinationCopy =
     locale === "zh"
       ? { label: "相关目的地", title: "把这个答案放回具体城市。" }
@@ -334,19 +342,39 @@ export function EditorialGuidePage({
           </aside>
         ) : null}
 
+        {publishedRouteLinks.length > 0 ? (
+          <aside className={styles.relatedDestinations}>
+            <div>
+              <p>{commercialCopy.guideLabel}</p>
+              <h2>{commercialCopy.guideTitle}</h2>
+            </div>
+            <ul>
+              {publishedRouteLinks.map((route) => (
+                <li key={route.id}>
+                  <Link href={route.href}>
+                    {route.label}<span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        ) : null}
+
         <aside className={styles.cta} data-similarity-ignore>
           <div>
-            <p className={styles.ctaLabel}>{copy.ctaLabel}</p>
-            <h2>{copy.ctaTitle}</h2>
-            <p>{copy.ctaBody}</p>
+            <p className={styles.ctaLabel}>
+              {serviceCta?.label ?? copy.ctaLabel}
+            </p>
+            <h2>{serviceCta?.title ?? copy.ctaTitle}</h2>
+            <p>{serviceCta?.body ?? copy.ctaBody}</p>
           </div>
           <GuideCtaLink
             guideId={guide.id}
-            href={plannerHref}
+            href={serviceCta?.href ?? plannerHref}
             locale={locale}
             position="footer"
           >
-            {copy.ctaButton}
+            {serviceCta?.button ?? copy.ctaButton}
             <ArrowRight aria-hidden="true" size={18} />
           </GuideCtaLink>
         </aside>

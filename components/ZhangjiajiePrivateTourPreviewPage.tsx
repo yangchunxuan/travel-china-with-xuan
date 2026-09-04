@@ -28,6 +28,10 @@ import {
 } from "../lib/privateTourInquiryContext";
 import { getLegacySystemContentLifecycle } from "../lib/legacySystemContentLifecycle";
 import { ZhangjiajieTourComparisonLink } from "./ZhangjiajieTourComparisonLink";
+import {
+  getExistingContentCommercialCopy,
+  getProductPlanningContext,
+} from "../lib/existingContentCommercialLinks";
 
 const photoCreditCopy = {
   en: {
@@ -55,6 +59,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
   published?: boolean;
 }) {
   const copy = productPreviewCopy[locale];
+  const commercialCopy = getExistingContentCommercialCopy(locale);
+  const planningContext = getProductPlanningContext(
+    "zhangjiajie-4-day-private-tour",
+    locale,
+  );
   const photoCopy = photoCreditCopy[locale];
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
@@ -626,6 +635,47 @@ export function ZhangjiajiePrivateTourPreviewPage({
               ))}
             </ol>
           </section>
+
+          {published ? (
+            <section
+              className={styles.contentSection}
+              aria-labelledby="destination-planning-title"
+            >
+              <div className={styles.sectionHeading}>
+                <p className={styles.sectionEyebrow}>{commercialCopy.productLabel}</p>
+                <h2 id="destination-planning-title">{commercialCopy.productTitle}</h2>
+                <p>{commercialCopy.productBody}</p>
+              </div>
+              <div className={`${styles.scopeGrid} ${styles.planningLinks}`}>
+                <section>
+                  <h3>{commercialCopy.destinations}</h3>
+                  <ul>
+                    {planningContext.destinations.map((link) => (
+                      <li key={link.id}>
+                        <Link href={link.href}>
+                          <span>{link.label}</span>
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+                <section>
+                  <h3>{commercialCopy.guides}</h3>
+                  <ul>
+                    {planningContext.guides.map((link) => (
+                      <li key={link.id}>
+                        <Link href={link.href}>
+                          <span>{link.label}</span>
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            </section>
+          ) : null}
 
           <details className={styles.sources}>
             <summary>{copy.sourcesTitle}</summary>

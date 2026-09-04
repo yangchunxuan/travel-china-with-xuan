@@ -7,7 +7,7 @@ const body: StructuredPageBody = {
       id: "answer-first",
       type: "lead",
       text:
-        "For a first shared meal in China, do not try to perform a perfect set of ‘Chinese table manners.’ Follow the table. Let the organiser indicate seats, state dietary needs before the order is sent, take shared food in small amounts, use serving utensils when they are provided, and clarify the bill instead of assuming. The common structure is several dishes for the table, but who orders, when rice arrives, whether tea is charged and who pays can change with the region, restaurant, family and purpose of the meal.",
+        "For a first group meal in China, do not try to perform a perfect set of ‘Chinese table manners.’ Follow the table. Let the organiser indicate seats, state dietary needs before the order is sent, take small amounts from the dishes in the centre, use serving utensils when they are provided, and clarify the bill instead of assuming. The common structure is several dishes for the table, but who orders, when rice arrives, whether tea is charged and who pays can change with the region, restaurant, family and purpose of the meal.",
     },
     {
       id: "scope-heading",
@@ -61,7 +61,7 @@ const body: StructuredPageBody = {
     {
       id: "meal-map",
       type: "table",
-      caption: "A first shared meal from arrival to goodbye",
+      caption: "A first group meal from arrival to goodbye",
       columns: ["Moment", "What may happen", "Your safest default"],
       rows: [
         [
@@ -146,7 +146,7 @@ const body: StructuredPageBody = {
       id: "order-body",
       type: "paragraph",
       text:
-        "A shared meal is usually assembled as a group rather than as one entrée per person. The person who knows the restaurant, invited the group or can operate the menu may lead. That does not make other diners silent passengers: preferences, allergies, religious restrictions and budget limits are useful before the order is sent. A paper menu, a QR menu and staff ordering are all possible; no one interface can be assumed nationwide.",
+        "A group meal with dishes to share is usually assembled for the table rather than as one entrée per person. The person who knows the restaurant, invited the group or can operate the menu may lead. That does not make other diners silent passengers: preferences, allergies, religious restrictions and budget limits are useful before the order is sent. A paper menu, a QR menu and staff ordering are all possible; no one interface can be assumed nationwide.",
     },
     {
       id: "ordering-table",
@@ -237,7 +237,7 @@ const body: StructuredPageBody = {
     {
       id: "sharing-table",
       type: "table",
-      caption: "How to handle the shared centre of the table",
+      caption: "How to handle the dishes in the centre of the table",
       columns: ["What you see", "Useful action", "What not to assume"],
       rows: [
         [
@@ -280,7 +280,7 @@ const body: StructuredPageBody = {
       type: "list",
       items: [
         "Do not leave chopsticks standing vertically in rice or another dish; place them on a rest or beside your bowl.",
-        "Do not point at a person, drum on bowls or search through a shared dish for one preferred piece.",
+        "Do not point at a person, drum on bowls or search through a dish in the centre for one preferred piece.",
         "Take a manageable bite to your bowl rather than holding food above the table while talking.",
         "If chopsticks are difficult, ask for a spoon or fork. Practical control is more courteous than dropping food repeatedly to prove a point.",
       ],
@@ -295,7 +295,7 @@ const body: StructuredPageBody = {
       id: "pace-body",
       type: "paragraph",
       text:
-        "Take a small portion, eat it from your own bowl or plate, and return to dishes you enjoy. This leaves room for everyone and for later dishes. A shared meal can be lively or quiet; volume, slurping, toasts and phone use vary too much to describe as one Chinese personality. Notice what this table is doing. A sincere comment about a dish or local flavour is warmer than praising every plate mechanically.",
+        "Take a small portion, eat it from your own bowl or plate, and return to dishes you enjoy. This leaves room for everyone and for later dishes. A group meal can be lively or quiet; volume, slurping, toasts and phone use vary too much to describe as one Chinese personality. Notice what this table is doing. A sincere comment about a dish or local flavour is warmer than praising every plate mechanically.",
     },
     {
       id: "leftover-myth",
@@ -396,13 +396,13 @@ const body: StructuredPageBody = {
       type: "callout",
       title: "The goal is participation, not imitation",
       body:
-        "A good first shared meal is one where the table can understand your needs and you can notice how this particular group cares for one another. If you want human help choosing restaurants for a China route, explaining allergies or finding a local food experience that fits your group, Homeground can discuss the context without pretending one table represents the whole country.",
+        "A good first group meal is one where the table can understand your needs and you can notice how this particular group cares for one another. If you want human help choosing restaurants for a China route, explaining allergies or finding a local food experience that fits your group, Homeground can discuss the context without pretending one table represents the whole country.",
       tone: "decision",
     },
     {
       id: "internal-links",
       type: "internal-links",
-      title: "Continue from one shared table",
+      title: "Continue from one table",
       items: [
         { label: "Prepare for Lunar New Year customs as a visitor", href: "/guides/lunar-new-year-customs-for-visitors/", description: "Carry the same observe-first approach into a family festival without treating one household as a national script." },
         { label: "Understand China's community canteens", href: "/guides/china-community-canteens-explained/", description: "Compare a shared restaurant table with a neighbourhood public-service model without assuming access or eligibility." },

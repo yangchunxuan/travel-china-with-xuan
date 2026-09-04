@@ -5,6 +5,10 @@ import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { getHomepageProductShowcaseCopy } from "../lib/homepageProductShowcaseI18n";
 import { privateTourHubPaths } from "../lib/privateTourHubI18n";
+import {
+  privateTourCardImageSource,
+  privateTourCardImageSrcSet,
+} from "./privateTourCardImages";
 import styles from "./HomepageProductShowcase.module.css";
 
 interface HomepageProductShowcaseProps {
@@ -15,6 +19,9 @@ interface HomepageProductShowcaseProps {
     position: number,
   ) => void;
 }
+
+const homepageProductImageSizes =
+  "(max-width: 39.999rem) 6.5rem, (max-width: 63.999rem) calc((100vw - 3.5rem) / 2), (max-width: 79.999rem) calc((100vw - 6rem) / 3), 24.667rem";
 
 export function HomepageProductShowcase({
   locale,
@@ -78,7 +85,9 @@ export function HomepageProductShowcase({
                     decoding="async"
                     height={product.image.height}
                     loading="lazy"
-                    src={product.image.src}
+                    sizes={homepageProductImageSizes}
+                    src={privateTourCardImageSource(product.id, 640)}
+                    srcSet={privateTourCardImageSrcSet(product.id)}
                     style={
                       product.image.objectPosition
                         ? { objectPosition: product.image.objectPosition }

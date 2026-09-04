@@ -188,7 +188,6 @@ export function HomegroundFooter({
       >
         <div className={homepageStyles.inner}>
           <a
-            aria-label={copy.navigation.homeLabel}
             className={homepageStyles.brand}
             href={copy.path}
           >
